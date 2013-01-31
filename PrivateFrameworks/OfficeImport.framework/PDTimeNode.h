@@ -21,11 +21,10 @@
 }
 
 
-- (void)dealloc;
-- (id)init;
-- (void)setVideo:(id)arg1;
 - (void)setBehavior:(id)arg1;
 - (id)behavior;
+- (void)dealloc;
+- (id)init;
 - (void)setTimeConditions:(id)arg1;
 - (id)timeConditions;
 - (id)sequential;
@@ -50,5 +49,6 @@
 - (id)scaleBehavior;
 - (void)setScaleBehavior:(id)arg1;
 - (void)setSequential:(id)arg1;
+- (void)setVideo:(id)arg1;
 
 @end

@@ -15,7 +15,9 @@
 @property(retain) NSError * error;
 
 
-- (void)setError:(id)arg1;
+- (void)dealloc;
+- (id)error;
+- (id)request;
 - (void)setRequest:(id)arg1;
 - (void)requestDidFinish:(id)arg1;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
@@ -23,8 +25,6 @@
 - (id)initWithMediaItem:(id)arg1;
 - (void)resolveError:(id)arg1;
 - (id)mediaItem;
-- (void)dealloc;
-- (id)request;
-- (id)error;
+- (void)setError:(id)arg1;
 
 @end

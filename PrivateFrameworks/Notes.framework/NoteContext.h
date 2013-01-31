@@ -32,8 +32,8 @@
 @property(readonly) BOOL isIndexing;
 @property(readonly) NSManagedObjectContext * managedObjectContext;
 
-+ (BOOL)databaseIsCorrupt:(id)arg1;
 + (BOOL)shouldLogIndexing;
++ (BOOL)databaseIsCorrupt:(id)arg1;
 
 - (void)invalidate;
 - (id)managedObjectModel;
@@ -43,24 +43,6 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
-- (id)storeOptions;
-- (void)clearCaches;
-- (id)allNotesWithoutBodiesInCollection:(id)arg1;
-- (id)allNotesInCollection:(id)arg1;
-- (unsigned int)countOfNotesInCollection:(id)arg1;
-- (void)deleteNote:(id)arg1;
-- (void)deleteChanges:(id)arg1;
-- (BOOL)saveOutsideApp:(id*)arg1;
-- (void)enableChangeLogging:(BOOL)arg1;
-- (id)newlyAddedAccount;
-- (id)accountForAccountId:(id)arg1;
-- (id)allAccounts;
-- (BOOL)deleteAccount:(id)arg1;
-- (id)localAccount;
-- (id)allVisibleNotesInCollection:(id)arg1;
-- (BOOL)deleteStore:(id)arg1;
-- (id)newlyAddedStore;
-- (id)storeForObjectID:(id)arg1;
 - (BOOL)isIndexing;
 - (BOOL)deleteIndexFile;
 - (BOOL)noteIsSafeToAccess:(id)arg1;
@@ -132,11 +114,29 @@
 - (id)urlForPersistentStore;
 - (void)_createLocalAccount:(id*)arg1 andStore:(id*)arg2;
 - (BOOL)forceDeleteAccount:(id)arg1;
+- (id)allNotesInCollection:(id)arg1;
+- (unsigned int)countOfNotesInCollection:(id)arg1;
+- (void)deleteNote:(id)arg1;
+- (void)deleteChanges:(id)arg1;
+- (BOOL)saveOutsideApp:(id*)arg1;
+- (void)enableChangeLogging:(BOOL)arg1;
+- (id)newlyAddedAccount;
+- (id)accountForAccountId:(id)arg1;
+- (id)allAccounts;
+- (BOOL)deleteAccount:(id)arg1;
+- (id)localAccount;
+- (id)allNotesWithoutBodiesInCollection:(id)arg1;
 - (id)notesForIntegerIds:(id)arg1;
 - (void)deleteNoteRegardlessOfConstraints:(id)arg1;
 - (id)newlyAddedNote;
+- (id)allVisibleNotesInCollection:(id)arg1;
+- (BOOL)deleteStore:(id)arg1;
+- (id)newlyAddedStore;
+- (id)storeForObjectID:(id)arg1;
 - (id)propertyValueForKey:(id)arg1;
 - (id)rootDirectory;
 - (void)setPropertyValue:(id)arg1 forKey:(id)arg2;
+- (id)storeOptions;
+- (void)clearCaches;
 
 @end

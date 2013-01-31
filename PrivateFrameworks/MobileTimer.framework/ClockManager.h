@@ -19,15 +19,13 @@
 @property(readonly) NSArray * scheduledLocalNotificationsCache;
 @property(readonly) ObjectUpdates * updatesToLocalNotificationsCache;
 
++ (id)sharedManager;
 + (int)sectionFromClockAppURL:(id)arg1;
 + (id)urlForClockAppSection:(int)arg1;
 + (void)saveAndNotifyForUserPreferences:(BOOL)arg1 localNotifications:(BOOL)arg2;
 + (void)loadUserPreferences;
-+ (id)sharedManager;
 
 - (void)dealloc;
-- (void)cancelLocalNotification:(id)arg1;
-- (void)scheduleLocalNotification:(id)arg1;
 - (void)setIgnoringNotificationPostRequests:(BOOL)arg1;
 - (void)setRunningInAssistantPlugin:(BOOL)arg1;
 - (void)setRunningInSpringBoard:(BOOL)arg1;
@@ -42,5 +40,7 @@
 - (BOOL)upgrade;
 - (id)scheduledLocalNotificationsCache;
 - (void)postUserPreferencesChangedNotification;
+- (void)cancelLocalNotification:(id)arg1;
+- (void)scheduleLocalNotification:(id)arg1;
 
 @end

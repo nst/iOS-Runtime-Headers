@@ -19,6 +19,7 @@
 
 - (void)invalidate;
 - (id)userInfo;
+- (long)order;
 - (double)interval;
 - (id)fireDate;
 - (double)timeInterval;
@@ -26,11 +27,10 @@
 - (struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); })context;
 - (void)setFireDate:(id)arg1;
 - (BOOL)isValid;
-- (double)_cffireTime;
-- (void)fire;
 - (void)setFireTime:(double)arg1;
 - (double)fireTime;
 - (struct __CFString { }*)copyDebugDescription;
-- (long)order;
+- (double)_cffireTime;
+- (void)fire;
 
 @end

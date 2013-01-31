@@ -14,8 +14,8 @@
 
 
 - (void)dealloc;
-- (void)layoutSubviews;
 - (void)setAccountDescription:(id)arg1;
+- (void)layoutSubviews;
 - (id)placeholderImageSizeLabel;
 - (id)imageSizeLabel;
 - (id)accountLabel;

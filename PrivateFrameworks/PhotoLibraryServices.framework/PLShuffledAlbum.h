@@ -51,15 +51,11 @@
 + (struct NSObject { Class x1; }*)unshuffledAlbum:(struct NSObject { Class x1; }*)arg1;
 + (struct NSObject { Class x1; }*)shuffledAlbum:(struct NSObject { Class x1; }*)arg1 startingAsset:(id)arg2;
 
-- (id)localizedTitle;
 - (id)name;
 - (id)description;
 - (void)dealloc;
 - (id)init;
 - (unsigned int)count;
-- (id)kind;
-- (id)title;
-- (BOOL)isEmpty;
 - (void)replaceObjectInShuffledAssetsAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)removeObjectFromShuffledAssetsAtIndex:(unsigned int)arg1;
 - (void)insertObject:(id)arg1 inShuffledAssetsAtIndex:(unsigned int)arg2;
@@ -114,5 +110,9 @@
 - (BOOL)isCloudSharedAlbum;
 - (int)kindValue;
 - (BOOL)isCameraAlbum;
+- (id)kind;
+- (id)title;
+- (BOOL)isEmpty;
+- (id)localizedTitle;
 
 @end

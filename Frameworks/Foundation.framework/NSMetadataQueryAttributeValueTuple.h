@@ -12,8 +12,8 @@
 
 - (void)dealloc;
 - (unsigned int)count;
-- (id)attribute;
 - (id)value;
 - (id)_init:(id)arg1 attribute:(id)arg2 value:(id)arg3 count:(unsigned int)arg4;
+- (id)attribute;
 
 @end

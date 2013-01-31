@@ -33,21 +33,14 @@
 @property int encryptionBehavior;
 
 
-- (void)setSignature:(id)arg1;
-- (id)authToken;
-- (void)setAuthToken:(id)arg1;
+- (void)setGuid:(id)arg1;
 - (id)guid;
-- (unsigned long long)itemID;
+- (void)setRequestURL:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (double)progress;
-- (void)setProgress:(double)arg1;
-- (void)setProtocolFileSize:(unsigned long long)arg1;
-- (unsigned long long)protocolFileSize;
-- (id)localPath;
-- (void)setItemID:(unsigned long long)arg1;
-- (id)signature;
+- (void)setFileHash:(id)arg1;
+- (id)fileHash;
 - (id)requestorID;
 - (void)setEncryptionBehavior:(int)arg1;
 - (int)fd;
@@ -55,10 +48,17 @@
 - (void)setRequestorID:(id)arg1;
 - (int)encryptionBehavior;
 - (void)setFd:(int)arg1;
-- (void)setFileHash:(id)arg1;
-- (id)fileHash;
-- (void)setRequestURL:(id)arg1;
+- (id)localPath;
 - (id)requestURL;
-- (void)setGuid:(id)arg1;
+- (void)setSignature:(id)arg1;
+- (void)setItemID:(unsigned long long)arg1;
+- (void)setProtocolFileSize:(unsigned long long)arg1;
+- (unsigned long long)protocolFileSize;
+- (double)progress;
+- (void)setProgress:(double)arg1;
+- (id)signature;
+- (unsigned long long)itemID;
+- (id)authToken;
+- (void)setAuthToken:(id)arg1;
 
 @end

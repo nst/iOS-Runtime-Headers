@@ -15,16 +15,16 @@
 @property(retain) UILabel * titleLabel;
 
 
-- (id)linkTitle;
-- (id)linkURL;
-- (void)setLinkURL:(id)arg1;
-- (void)setLinkTitle:(id)arg1;
-- (void)setTitleLabel:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)titleLabel;
 - (void)layoutSubviews;
+- (id)linkTitle;
+- (id)linkURL;
+- (void)setLinkURL:(id)arg1;
+- (void)setLinkTitle:(id)arg1;
+- (void)setTitleLabel:(id)arg1;
 
 @end

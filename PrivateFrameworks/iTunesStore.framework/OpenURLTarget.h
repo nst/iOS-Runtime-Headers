@@ -15,10 +15,10 @@
 }
 
 
+- (id)copyURLForURL:(id)arg1;
+- (id)initWithTargetIdentifier:(id)arg1;
 - (int)compare:(id)arg1;
 - (id)description;
 - (id)init;
-- (id)copyURLForURL:(id)arg1;
-- (id)initWithTargetIdentifier:(id)arg1;
 
 @end

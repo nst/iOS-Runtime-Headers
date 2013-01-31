@@ -9,7 +9,6 @@
     NSHashTable *_observers;
 }
 
-+ (void)initialize;
 + (void)setEffectivePushSettings:(unsigned int)arg1 forBundleID:(id)arg2;
 + (unsigned int)effectivePushSettingsForBundleID:(id)arg1;
 + (id)allNotificationEnabledBundleIDs;
@@ -17,9 +16,8 @@
 + (id)uniqueIdentifierForNotification:(id)arg1;
 + (id)pushStoreForBundleID:(id)arg1;
 + (id)notificationsForBundleID:(id)arg1;
++ (void)initialize;
 
-- (void)addObserver:(id)arg1;
-- (id)initWithBundleID:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)dealloc;
 - (id)storedNotifications;
@@ -27,5 +25,7 @@
 - (void)notifyPushSettingsChanged;
 - (void)notifyPushStoreCleared;
 - (void)notifyPushStoreUpdated;
+- (void)addObserver:(id)arg1;
+- (id)initWithBundleID:(id)arg1;
 
 @end

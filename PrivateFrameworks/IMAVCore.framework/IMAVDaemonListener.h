@@ -17,13 +17,13 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)forwardInvocation:(id)arg1;
-- (id)methodSignatureForSelector:(SEL)arg1;
 - (id)handlers;
 - (void)removeHandler:(id)arg1;
 - (void)setupComplete:(BOOL)arg1 info:(id)arg2;
 - (void)_noteDisconnected;
 - (BOOL)isSetupComplete;
 - (void)addHandler:(id)arg1;
+- (void)forwardInvocation:(id)arg1;
+- (id)methodSignatureForSelector:(SEL)arg1;
 
 @end

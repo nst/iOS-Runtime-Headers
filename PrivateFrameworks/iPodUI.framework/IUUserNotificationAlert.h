@@ -24,6 +24,11 @@
 @property(copy) id completionHandler;
 
 
+- (id)buttonTitleForKey:(struct __CFString { }*)arg1;
+- (void)_dismissWithResponseDictionary:(id)arg1 flags:(unsigned long)arg2;
+- (void)_redisplayIfNeeded;
+- (void)_setValue:(id)arg1 forUserNotificationKey:(struct __CFString { }*)arg2;
+- (void)setButtonTitle:(id)arg1 forKey:(struct __CFString { }*)arg2;
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
@@ -35,10 +40,5 @@
 - (id)title;
 - (void)show;
 - (void)setTitle:(id)arg1;
-- (id)buttonTitleForKey:(struct __CFString { }*)arg1;
-- (void)_dismissWithResponseDictionary:(id)arg1 flags:(unsigned long)arg2;
-- (void)_redisplayIfNeeded;
-- (void)_setValue:(id)arg1 forUserNotificationKey:(struct __CFString { }*)arg2;
-- (void)setButtonTitle:(id)arg1 forKey:(struct __CFString { }*)arg2;
 
 @end

@@ -16,7 +16,6 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsInLogicalUnits:(id)arg1;
 
 - (void)dealloc;
-- (void)done;
 - (id)getGdi;
 - (void)setIgnoreEMFPlusRecords:(BOOL)arg1;
 - (void)setIgnoreEMFRecords:(BOOL)arg1;
@@ -101,5 +100,6 @@
 - (int)playSetMapMode:(unsigned int)arg1 :(const char *)arg2;
 - (int)playSetBkMode:(unsigned int)arg1 :(const char *)arg2;
 - (int)playSetBkColour:(unsigned int)arg1 :(const char *)arg2;
+- (void)done;
 
 @end

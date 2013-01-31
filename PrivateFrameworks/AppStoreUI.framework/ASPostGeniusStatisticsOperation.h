@@ -14,6 +14,8 @@
 + (void)load;
 
 - (void)setScriptOptions:(id)arg1;
+- (void)cancel;
+- (void)dealloc;
 - (BOOL)shouldIgnorePostInterval;
 - (id)_copyOperationForConfiguration:(id)arg1 bodyData:(id)arg2;
 - (BOOL)_copyRequestBody:(id*)arg1 forDictionary:(id)arg2 returningError:(id*)arg3;
@@ -30,8 +32,6 @@
 - (BOOL)_shouldSendStatistics;
 - (id)_configuration;
 - (id)_activeDataStoreConsumer;
-- (void)cancel;
-- (void)dealloc;
 - (void)run;
 
 @end

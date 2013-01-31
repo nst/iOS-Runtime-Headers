@@ -15,15 +15,15 @@
 @property(copy) NSArray * sinfs;
 
 
-- (void)setSinfs:(id)arg1;
-- (void)setSICData:(id)arg1;
-- (void)setPlayerGUID:(id)arg1;
-- (id)sinfs;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)playerGUID;
 - (id)SICData;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+- (void)setSinfs:(id)arg1;
+- (void)setSICData:(id)arg1;
+- (void)setPlayerGUID:(id)arg1;
+- (id)sinfs;
 
 @end

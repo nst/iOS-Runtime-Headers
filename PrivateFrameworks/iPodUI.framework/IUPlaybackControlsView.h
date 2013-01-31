@@ -6,13 +6,13 @@
 }
 
 
+- (void)_appDefaultsChanged:(id)arg1;
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)hideGeniusButton;
 - (void)handleChangeToShuffleType:(unsigned int)arg1;
 - (void)handleChangeToRepeatType:(unsigned int)arg1;
 - (unsigned int)shuffleType;
 - (unsigned int)repeatType;
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_appDefaultsChanged:(id)arg1;
 
 @end

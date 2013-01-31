@@ -18,6 +18,7 @@
 - (void)loadView;
 - (float)marginForTableView:(id)arg1;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (unsigned int)entityType;
 - (id)reminderEditorDelegate;
 - (id)reminder;
 - (void)setReminder:(id)arg1;
@@ -44,6 +45,5 @@
 - (BOOL)_canDetachSingleOccurrence;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (unsigned int)entityType;
 
 @end

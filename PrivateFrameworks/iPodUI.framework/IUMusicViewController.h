@@ -12,6 +12,7 @@
 + (Class)tableViewCellClass;
 + (id)tableViewBackgroundColor;
 
+- (BOOL)shouldShowStoreButton;
 - (void)dealloc;
 - (id)init;
 - (id)moreListTableCell;
@@ -20,6 +21,5 @@
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (void)reloadData;
-- (BOOL)shouldShowStoreButton;
 
 @end

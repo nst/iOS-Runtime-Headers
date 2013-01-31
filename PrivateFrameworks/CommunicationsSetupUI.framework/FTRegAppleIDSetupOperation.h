@@ -44,6 +44,11 @@
 @property BOOL timedOut;
 
 
+- (int)type;
+- (void)dealloc;
+- (id)error;
+- (void)setAccount:(id)arg1;
+- (id)account;
 - (void)_notifySuccess;
 - (void)setTimedOut:(BOOL)arg1;
 - (BOOL)timedOut;
@@ -77,10 +82,6 @@
 - (void)_notifySuccess:(BOOL)arg1 error:(id)arg2;
 - (void)setSelectedAliases:(id)arg1;
 - (id)regController;
-- (void)setError:(id)arg1;
-- (void)setFinished:(BOOL)arg1;
-- (int)type;
-- (void)dealloc;
 - (void)cancelSetup;
 - (BOOL)isFinished;
 - (void)setHandler:(id)arg1;
@@ -89,8 +90,7 @@
 - (void)setCancelled:(BOOL)arg1;
 - (BOOL)cancelled;
 - (void)setType:(int)arg1;
-- (void)setAccount:(id)arg1;
-- (id)account;
-- (id)error;
+- (void)setFinished:(BOOL)arg1;
+- (void)setError:(id)arg1;
 
 @end

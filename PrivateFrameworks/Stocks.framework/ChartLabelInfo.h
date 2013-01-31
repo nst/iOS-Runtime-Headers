@@ -25,14 +25,14 @@
 - (void)setString:(id)arg1;
 - (id)string;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (float)position;
-- (void)setPosition:(float)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
 - (BOOL)immutable;
 - (void)retainStringAndSizeFromLabelInfo:(id)arg1;
 - (void)setStringToYearWithAbsoluteTime:(double)arg1 timeZone:(id)arg2;
 - (void)setStringToMonthAndDayWithAbsoluteTime:(double)arg1 timeZone:(id)arg2;
+- (float)position;
+- (void)setPosition:(float)arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })size;
 - (void)setImmutable:(BOOL)arg1;
 
 @end

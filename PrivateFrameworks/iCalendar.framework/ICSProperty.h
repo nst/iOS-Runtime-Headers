@@ -12,15 +12,6 @@
 
 
 - (void)setParameters:(id)arg1;
-- (unsigned int)type;
-- (id)description;
-- (void)dealloc;
-- (id)parameters;
-- (id)stringValue;
-- (id)value;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)ICSStringWithOptions:(unsigned int)arg1;
 - (void)_setParsedValues:(id)arg1 type:(unsigned int)arg2;
 - (BOOL)isMultiValued;
 - (void)addParameter:(id)arg1 withRawValue:(id)arg2 options:(unsigned int)arg3;
@@ -29,6 +20,15 @@
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (void)removeParameterValueForName:(id)arg1;
 - (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (unsigned int)type;
+- (id)description;
+- (void)dealloc;
+- (id)parameters;
+- (id)ICSStringWithOptions:(unsigned int)arg1;
+- (id)stringValue;
+- (id)value;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setParameterValue:(id)arg1 forName:(id)arg2;
 - (void)setValue:(id)arg1 type:(int)arg2;
 - (id)parameterValueForName:(id)arg1;

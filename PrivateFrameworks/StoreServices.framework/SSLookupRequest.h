@@ -17,11 +17,6 @@
 @property(readonly) SSLookupProperties * _lookupProperties;
 
 
-- (void)startWithLookupBlock:(id)arg1;
-- (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
-- (void)setLocalizationStyle:(int)arg1;
-- (void)setKeyProfile:(id)arg1;
-- (void)setAuthenticatesIfNeeded:(BOOL)arg1;
 - (int)localizationStyle;
 - (id)keyProfile;
 - (BOOL)authenticatesIfNeeded;
@@ -35,5 +30,10 @@
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)start;
+- (void)setAuthenticatesIfNeeded:(BOOL)arg1;
+- (void)startWithLookupBlock:(id)arg1;
+- (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
+- (void)setLocalizationStyle:(int)arg1;
+- (void)setKeyProfile:(id)arg1;
 
 @end

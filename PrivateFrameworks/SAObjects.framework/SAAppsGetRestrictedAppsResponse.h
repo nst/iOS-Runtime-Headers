@@ -14,9 +14,9 @@
 + (id)getRestrictedAppsResponseWithDictionary:(id)arg1 context:(id)arg2;
 + (id)getRestrictedAppsResponse;
 
-- (id)groupIdentifier;
 - (void)setRestrictedApps:(id)arg1;
 - (id)restrictedApps;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

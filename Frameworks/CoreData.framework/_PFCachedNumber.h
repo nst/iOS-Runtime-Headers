@@ -9,8 +9,8 @@
 + (id)alloc;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)value:(const void*)arg1 withObjCType:(const char *)arg2;
 + (id)valueWithBytes:(const void*)arg1 objCType:(const char *)arg2;
++ (id)value:(const void*)arg1 withObjCType:(const char *)arg2;
 
 - (BOOL)boolValue;
 - (int)intValue;
@@ -23,7 +23,8 @@
 - (id)copy;
 - (unsigned int)unsignedIntegerValue;
 - (id)autorelease;
-- (id)objectID;
+- (unsigned char)unsignedCharValue;
+- (unsigned long)unsignedLongValue;
 - (const char *)objCType;
 - (unsigned long long)unsignedLongLongValue;
 - (id)stringValue;
@@ -40,8 +41,7 @@
 - (BOOL)charValue;
 - (long)longValue;
 - (id)descriptionWithLocale:(id)arg1;
-- (unsigned char)unsignedCharValue;
-- (unsigned long)unsignedLongValue;
 - (id)initWithBytes:(const void*)arg1 objCType:(const char *)arg2;
+- (id)objectID;
 
 @end

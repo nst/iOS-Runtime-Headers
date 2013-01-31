@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableArray, NSMutableSet;
+@class NSRecursiveLock, NSMutableArray, NSMutableSet;
 
 @interface AXEventTapManager : NSObject  {
     NSMutableArray *_eventTaps;
@@ -19,12 +19,16 @@
   /* Error parsing encoded ivar type info: @? */
     id _installationCallback;
 
+    NSRecursiveLock *_eventTapLock;
 }
 
 @property(copy) id installationCallback;
 
 + (id)sharedManager;
 
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (id)installationCallback;
 - (void)removeEventTap:(id)arg1;
 - (id)installEventTap:(id)arg1;
@@ -36,8 +40,5 @@
 - (void)_enumerateEventTapPairsUsingBlock:(id)arg1;
 - (void)_setEventTapCallback:(void*)arg1;
 - (void)_reorderEventTaps;
-- (id)description;
-- (void)dealloc;
-- (id)init;
 
 @end

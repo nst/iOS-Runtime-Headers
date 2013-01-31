@@ -26,7 +26,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)setFilename:(id)arg1;
 - (BOOL)writeToURL:(id)arg1 options:(unsigned int)arg2 originalContentsURL:(id)arg3 error:(id*)arg4;
 - (id)regularFileContents;
 - (BOOL)isRegularFile;
@@ -70,6 +69,7 @@
 - (id)initRegularFileWithContents:(id)arg1;
 - (id)fileAttributes;
 - (BOOL)isDirectory;
+- (void)setFilename:(id)arg1;
 - (id)filename;
 
 @end

@@ -6,6 +6,7 @@
 }
 
 
+- (BOOL)canBeConvertedToEncoding:(unsigned int)arg1;
 - (unsigned int)retainCount;
 - (unsigned int)hash;
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
@@ -24,12 +25,11 @@
 - (int)compare:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
+- (const char *)lossyCString;
+- (id)initWithCharactersNoCopy:(unsigned short*)arg1 length:(unsigned int)arg2;
 - (unsigned int)smallestEncoding;
 - (unsigned int)fastestEncoding;
 - (const char *)_fastCStringContents:(BOOL)arg1;
 - (unsigned int)cStringLength;
-- (BOOL)canBeConvertedToEncoding:(unsigned int)arg1;
-- (const char *)lossyCString;
-- (id)initWithCharactersNoCopy:(unsigned short*)arg1 length:(unsigned int)arg2;
 
 @end

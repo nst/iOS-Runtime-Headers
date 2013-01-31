@@ -21,14 +21,6 @@
 @property int tag;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (void)setParentViewController:(id)arg1;
-- (id)viewController;
-- (int)tag;
-- (void)setTag:(int)arg1;
-- (id)parentViewController;
 - (BOOL)shouldHideContainerNavigationBar;
 - (void)setDefaultControllerIdentifier:(id)arg1;
 - (BOOL)hideIndexBar;
@@ -46,5 +38,13 @@
 - (id)copyQueryForQuery:(id)arg1;
 - (int)allowedMediaTypesForMediaTypes:(int)arg1;
 - (void)dismissWithSuccess:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)setParentViewController:(id)arg1;
+- (id)viewController;
+- (int)tag;
+- (void)setTag:(int)arg1;
+- (id)parentViewController;
 
 @end

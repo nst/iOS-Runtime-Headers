@@ -16,6 +16,10 @@
 @property(retain) NSString * path;
 
 
+- (id)path;
+- (unsigned int)type;
+- (id)description;
+- (void)dealloc;
 - (void)refreshInfo;
 - (BOOL)hasDCIMParent;
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 type:(unsigned int)arg4 storageID:(unsigned long)arg5 objectHandle:(unsigned long)arg6;
@@ -26,13 +30,9 @@
 - (unsigned long)objHandle;
 - (BOOL)deleteItemFromCamera:(id)arg1;
 - (void)enumerateContent;
-- (void)setInfo:(id)arg1;
-- (id)path;
-- (unsigned int)type;
-- (id)description;
-- (void)dealloc;
 - (void)setPath:(id)arg1;
 - (id)info;
 - (void)finalize;
+- (void)setInfo:(id)arg1;
 
 @end

@@ -21,8 +21,9 @@
 }
 
 
-- (void)setStatusText:(id)arg1;
-- (id)statusText;
+- (void)translate;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (struct __CFDictionary { }*)chunkDictionary;
 - (struct __CFArray { }*)chunkArray;
 - (void)addText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 token:(int)arg4 focused:(BOOL)arg5;
@@ -38,12 +39,11 @@
 - (void)addText:(id)arg1 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 token:(int)arg3 focused:(BOOL)arg4;
 - (BOOL)currentUnread;
 - (BOOL)anyUnread;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)deepCopyWithZone:(struct _NSZone { }*)arg1;
 - (int)displayMode;
 - (int)contractionMode;
 - (BOOL)showDotsSevenAndEight;
-- (void)translate;
+- (void)setStatusText:(id)arg1;
+- (id)statusText;
 
 @end

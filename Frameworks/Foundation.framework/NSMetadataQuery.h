@@ -20,10 +20,9 @@
 - (void)setPredicate:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)predicate;
+- (BOOL)isStarted;
 - (void)finalize;
 - (void)_update;
-- (BOOL)isStarted;
 - (id)groupedResults;
 - (id)valueLists;
 - (unsigned int)indexOfResult:(id)arg1;
@@ -57,5 +56,6 @@
 - (id)groupingAttributes;
 - (id)valueListAttributes;
 - (void)_recreateQuery;
+- (id)predicate;
 
 @end

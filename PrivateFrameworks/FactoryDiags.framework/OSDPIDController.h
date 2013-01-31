@@ -42,6 +42,8 @@
 
 - (void)reset;
 - (void)dealloc;
+- (void)setSampleRate:(double)arg1;
+- (double)sampleRate;
 - (float)setpoint;
 - (float)kd;
 - (float)ki;
@@ -58,7 +60,5 @@
 - (void)stop;
 - (double)priority;
 - (void)start;
-- (void)setSampleRate:(double)arg1;
-- (double)sampleRate;
 
 @end

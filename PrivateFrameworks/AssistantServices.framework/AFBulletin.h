@@ -5,19 +5,19 @@
 @class BBBulletin;
 
 @interface AFBulletin : NSObject  {
-    BOOL _read;
     BBBulletin *_bulletin;
+    BOOL _read;
 }
 
 @property(getter=isRead) BOOL read;
 @property(retain) BBBulletin * bulletin;
 
 
-- (void)setBulletin:(id)arg1;
 - (void).cxx_destruct;
-- (id)dictionaryRepresentation;
-- (id)bulletin;
-- (BOOL)isRead;
 - (void)setRead:(BOOL)arg1;
+- (BOOL)isRead;
+- (id)bulletin;
+- (void)setBulletin:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

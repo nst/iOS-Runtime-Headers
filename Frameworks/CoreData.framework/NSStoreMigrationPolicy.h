@@ -31,6 +31,7 @@
 - (void)setPersistentStoreCoordinator:(id)arg1;
 - (id)persistentStoreCoordinator;
 - (void)dealloc;
+- (id)sourceType;
 - (void)setResourceBundles:(id)arg1;
 - (id)destinationConfigurationForMigration:(id)arg1 sourceMetadata:(id)arg2 error:(id*)arg3;
 - (void)setDestinationConfiguration:(id)arg1;
@@ -72,6 +73,5 @@
 - (id)mappingModel;
 - (id)destinationModel;
 - (id)sourceModel;
-- (id)sourceType;
 
 @end

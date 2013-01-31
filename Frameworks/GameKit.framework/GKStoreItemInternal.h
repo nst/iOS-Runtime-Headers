@@ -5,13 +5,13 @@
 @class NSString, NSDate, NSNumber, NSURL;
 
 @interface GKStoreItemInternal : GKInternalRepresentation  {
-    NSNumber *_adamID;
-    NSURL *_viewItemURL;
-    NSDate *_expirationDate;
-    float _averageUserRating;
-    NSString *_priceDisplay;
     NSString *_artistName;
+    float _averageUserRating;
+    NSNumber *_adamID;
     unsigned int _numberOfUserRatings;
+    NSString *_priceDisplay;
+    NSDate *_expirationDate;
+    NSURL *_viewItemURL;
 }
 
 @property(retain) NSNumber * adamID;
@@ -24,12 +24,16 @@
 
 + (id)codedPropertyKeys;
 
-- (void)setNumberOfUserRatings:(unsigned int)arg1;
-- (void)setArtistName:(id)arg1;
-- (void)setPriceDisplay:(id)arg1;
-- (void)setAverageUserRating:(float)arg1;
-- (void)setExpirationDate:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)isValid;
 - (void)setViewItemURL:(id)arg1;
+- (void)setExpirationDate:(id)arg1;
+- (void)setPriceDisplay:(id)arg1;
+- (void)setNumberOfUserRatings:(unsigned int)arg1;
+- (void)setAverageUserRating:(float)arg1;
+- (void)setArtistName:(id)arg1;
 - (id)viewItemURL;
 - (void)setAdamID:(id)arg1;
 - (id)expirationDate;
@@ -38,9 +42,5 @@
 - (float)averageUserRating;
 - (id)priceDisplay;
 - (id)artistName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (BOOL)isValid;
 
 @end

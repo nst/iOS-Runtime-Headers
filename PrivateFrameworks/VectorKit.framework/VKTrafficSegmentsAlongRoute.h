@@ -13,12 +13,12 @@
 }
 
 
-- (void)reset;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)segmentSpeedAtIndex:(unsigned int)arg1;
 - (void)addSegmentAt:(struct { unsigned int x1; float x2; })arg1 forColor:(BOOL)arg2;
 - (const struct TrafficSegment { struct { unsigned int x_1_1_1; float x_1_1_2; } x1; BOOL x2; }*)segmentAtIndex:(unsigned int)arg1;
 - (unsigned int)segmentCount;
+- (void)reset;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 
 @end

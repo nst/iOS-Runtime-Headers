@@ -23,12 +23,12 @@
 @property(readonly) struct { double x1; double x2; double x3; double x4; } bounds;
 
 
-- (void)dealloc;
-- (struct { double x1; double x2; double x3; double x4; })bounds;
-- (struct { double x1; double x2; })coordinate;
 - (void)_setCoordinates:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
 - (id)boundingMapRegion;
+- (void)dealloc;
+- (struct { double x1; double x2; })coordinate;
 - (struct { float x1; float x2; }*)points;
 - (unsigned int)pointCount;
+- (struct { double x1; double x2; double x3; double x4; })bounds;
 
 @end

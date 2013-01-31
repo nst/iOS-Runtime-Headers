@@ -17,7 +17,7 @@
 - (id)linkButton;
 - (void)_linkPressed;
 - (float)footerHeightForWidth:(float)arg1 inTableView:(id)arg2;
-- (void)layoutSubviews;
 - (id)initWithAttributes:(id)arg1;
+- (void)layoutSubviews;
 
 @end

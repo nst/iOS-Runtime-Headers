@@ -25,12 +25,6 @@
 - (void)setTarget:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)keys;
-- (void)clearText;
-- (void)setPrompt:(id)arg1;
-- (id)text;
-- (void)setText:(id)arg1;
-- (void)addContentToLayer:(id)arg1;
 - (void)setKeyAction:(SEL)arg1;
 - (void)orderIn;
 - (void)deleteLetter;
@@ -45,5 +39,11 @@
 - (void)keyPressed:(id)arg1;
 - (id)shiftMappingDict;
 - (void)setDoneAction:(SEL)arg1;
+- (void)addContentToLayer:(id)arg1;
+- (id)keys;
+- (void)clearText;
+- (void)setPrompt:(id)arg1;
+- (id)text;
+- (void)setText:(id)arg1;
 
 @end

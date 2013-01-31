@@ -13,11 +13,11 @@
 + (id)objectLineWithDictionary:(id)arg1 context:(id)arg2;
 + (id)objectLine;
 
-- (id)groupIdentifier;
+- (id)encodedClassName;
 - (id)image;
 - (id)text;
 - (void)setText:(id)arg1;
 - (void)setImage:(id)arg1;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -22,7 +22,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)keyEnumerator;
 - (BOOL)isEqualToDictionary:(id)arg1;
-- (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
 - (id)newWithKey:(id)arg1 object:(id)arg2;
+- (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
 
 @end

@@ -28,9 +28,6 @@
 - (void)setName:(id)arg1;
 - (id)name;
 - (void)dealloc;
-- (int)key;
-- (bool)isEmpty;
-- (bool)isHidden;
 - (id)defaultSeriesNameForIndex:(int)arg1;
 - (bool)hasErrorBars;
 - (bool)hasTrendlines;
@@ -67,5 +64,8 @@
 - (id)categoryData;
 - (id)lastCachedName;
 - (id)graphicProperties;
+- (int)key;
+- (bool)isEmpty;
+- (bool)isHidden;
 
 @end

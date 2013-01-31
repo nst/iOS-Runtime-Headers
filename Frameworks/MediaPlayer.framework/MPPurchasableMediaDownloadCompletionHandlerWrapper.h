@@ -29,6 +29,9 @@
 @property(readonly) MPPurchasableMediaDownload * purchasableMediaDownload;
 
 
+- (void)dealloc;
+- (void)setCompletionHandler:(id)arg1;
+- (id)completionHandler;
 - (id)purchasableMediaDownload;
 - (void)setPurchaseHandler:(id)arg1;
 - (id)purchaseHandler;
@@ -36,8 +39,5 @@
 - (void)purchasableMediaDownloadDidCancel:(id)arg1;
 - (void)purchasableMediaDownload:(id)arg1 didPurchase:(id)arg2;
 - (void)purchasableMediaDownload:(id)arg1 didFinishWithError:(id)arg2;
-- (void)dealloc;
-- (void)setCompletionHandler:(id)arg1;
-- (id)completionHandler;
 
 @end

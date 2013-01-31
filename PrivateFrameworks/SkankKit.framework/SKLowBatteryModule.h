@@ -6,7 +6,7 @@
 }
 
 
-- (void)addContentToLayer:(id)arg1;
 - (void)exit:(id)arg1;
+- (void)addContentToLayer:(id)arg1;
 
 @end

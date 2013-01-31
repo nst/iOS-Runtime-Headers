@@ -13,8 +13,8 @@
 }
 
 
-- (void)dealloc;
 - (void)setAttributesInTextStorage:(id)arg1;
 - (id)initWithAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)dealloc;
 
 @end

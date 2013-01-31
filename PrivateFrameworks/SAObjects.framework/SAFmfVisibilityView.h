@@ -13,11 +13,11 @@
 + (id)visibilityViewWithDictionary:(id)arg1 context:(id)arg2;
 + (id)visibilityView;
 
-- (id)groupIdentifier;
-- (BOOL)visible;
-- (void)setVisible:(BOOL)arg1;
+- (id)encodedClassName;
 - (id)searchContext;
 - (void)setSearchContext:(id)arg1;
-- (id)encodedClassName;
+- (BOOL)visible;
+- (void)setVisible:(BOOL)arg1;
+- (id)groupIdentifier;
 
 @end

@@ -16,8 +16,7 @@
 - (void)reset;
 - (void)dealloc;
 - (id)init;
-- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1 inTextContentView:(id)arg2;
-- (BOOL)hasContent;
+- (id)attachments;
 - (id)_imageURLForPart:(id)arg1 partID:(id)arg2;
 - (id)_nodeForImagePart:(id)arg1 forRichContentView:(id)arg2;
 - (id)_htmlForMessagePart:(id)arg1;
@@ -26,6 +25,7 @@
 - (id)newContentViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMessageComposition:(id)arg1;
 - (id)messageComposition;
-- (id)attachments;
+- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1 inTextContentView:(id)arg2;
+- (BOOL)hasContent;
 
 @end

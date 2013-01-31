@@ -2,19 +2,19 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray, NSString, NSData, NSObject<OS_dispatch_group>, GKMatchRequestInternal, NSDictionary;
+@class NSArray, NSString, GKMatchRequestInternal, NSData, NSDictionary, NSObject<OS_dispatch_group>;
 
 @interface GKMatchResponse : GKResponse  {
-    NSData *_sessionToken;
-    NSArray *_matches;
-    int _state;
     NSData *_cdxTicket;
     NSArray *_relayPushes;
+    NSArray *_matches;
+    int _state;
+    int _sequence;
+    GKMatchRequestInternal *_matchRequest;
+    NSDictionary *_serverRequest;
+    NSData *_sessionToken;
     NSString *_rid;
     NSObject<OS_dispatch_group> *_matchingGroup;
-    GKMatchRequestInternal *_matchRequest;
-    int _sequence;
-    NSDictionary *_serverRequest;
 }
 
 @property(retain) NSString * rid;
@@ -30,11 +30,16 @@
 
 + (id)codedPropertyKeys;
 
+- (int)state;
+- (BOOL)isCancelled;
+- (void)dealloc;
+- (BOOL)isFinished;
+- (void)setState:(int)arg1;
+- (void)setMatchingGroup:(id)arg1;
+- (id)matchingGroup;
 - (void)setServerRequest:(id)arg1;
 - (id)serverRequest;
 - (int)sequence;
-- (void)setMatchingGroup:(id)arg1;
-- (id)matchingGroup;
 - (void)setRelayPushes:(id)arg1;
 - (void)setCdxTicket:(id)arg1;
 - (BOOL)transitionToState:(int)arg1;
@@ -49,10 +54,5 @@
 - (void)setRid:(id)arg1;
 - (id)rid;
 - (id)matchRequest;
-- (int)state;
-- (BOOL)isCancelled;
-- (void)dealloc;
-- (BOOL)isFinished;
-- (void)setState:(int)arg1;
 
 @end

@@ -11,14 +11,14 @@
 @property(retain) GKGameRecord * gameRecord;
 
 
+- (void)dealloc;
+- (float)heightForHeaderInTableView:(id)arg1;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)setGameRecord:(id)arg1;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
 - (id)gameRecord;
 - (int)rowCountInTableView:(id)arg1;
 - (void)refreshDataWithCompletionHandlerAndError:(id)arg1;
-- (void)dealloc;
-- (float)heightForHeaderInTableView:(id)arg1;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 
 @end

@@ -22,7 +22,7 @@
 - (double)timeIntervalSinceReferenceDate;
 - (id)nsDate;
 - (id)initWithNSDate:(id)arg1;
-- (id)descriptionWithLocale:(id)arg1;
 - (int)dayOfCommonEra;
+- (id)descriptionWithLocale:(id)arg1;
 
 @end

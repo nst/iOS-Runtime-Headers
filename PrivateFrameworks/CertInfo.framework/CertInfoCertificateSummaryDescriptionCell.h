@@ -10,8 +10,8 @@
 
 
 - (void)dealloc;
+- (void)setLabelsAndValues:(id)arg1;
 - (float)rowHeight;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)setLabelsAndValues:(id)arg1;
 
 @end

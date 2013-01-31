@@ -29,7 +29,6 @@
 - (void)dealloc;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (unsigned int)count;
-- (id)initWithContainer:(id)arg1 key:(id)arg2 mutableOrderedSet:(id)arg3;
 - (BOOL)isEqualToOrderedSet:(id)arg1;
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (unsigned int)indexOfObject:(id)arg1 inSortedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 options:(unsigned int)arg3 usingComparator:(id)arg4;
@@ -81,5 +80,6 @@
 - (id)descriptionWithLocale:(id)arg1;
 - (void)replaceObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withObjects:(const id*)arg2 count:(unsigned int)arg3;
 - (void)setObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)initWithContainer:(id)arg1 key:(id)arg2 mutableOrderedSet:(id)arg3;
 
 @end

@@ -14,9 +14,9 @@
 + (id)setSessionObjectsWithDictionary:(id)arg1 context:(id)arg2;
 + (id)setSessionObjects;
 
-- (id)groupIdentifier;
 - (void)setObjects:(id)arg1;
-- (id)objects;
 - (id)encodedClassName;
+- (id)groupIdentifier;
+- (id)objects;
 
 @end

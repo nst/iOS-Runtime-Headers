@@ -2,13 +2,16 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class EASession, NSThread, NSCondition, EAAccessory;
+@class EAAccessory, NSRecursiveLock, EASession;
 
 @interface EAOutputStream : NSOutputStream  {
     id _delegate;
     int _sock;
     EAAccessory *_accessory;
     EASession *_session;
+    NSRecursiveLock *_statusLock;
+    NSRecursiveLock *_runloopLock;
+    struct __CFSocket { } *_cfSocket;
     BOOL _isOpenCompletedEventSent;
     BOOL _hasSpaceAvailableEventSent;
     BOOL _hasSpaceAvailable;
@@ -16,17 +19,23 @@
     unsigned int _streamStatus;
     struct __CFRunLoop { } *_runLoop;
     struct __CFRunLoopSource { } *_runLoopSource;
-    NSThread *_writeAvailableThread;
-    BOOL _isWriteAvailableThreadCancelled;
-    NSCondition *_writeAvailableThreadRunCondition;
+    struct __CFRunLoopSource { } *_socketRunLoopSource;
 }
 
 
 - (void)_scheduleCallback;
+- (void)open;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)_streamEventTrigger;
 - (void)close;
+- (void)_streamWriteable;
+- (void)endStream;
+- (id)initWithAccessory:(id)arg1 forSession:(id)arg2 socket:(int)arg3;
+- (void)_performAtEndOfStreamValidation;
+- (void)openCompleted;
+- (void)_accessoryDidDisconnect:(id)arg1;
 - (BOOL)hasSpaceAvailable;
 - (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
 - (id)streamError;
@@ -35,13 +44,5 @@
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;
-- (void)open;
-- (void)endStream;
-- (id)initWithAccessory:(id)arg1 forSession:(id)arg2 socket:(int)arg3;
-- (void)_performAtEndOfStreamValidation;
-- (void)openCompleted;
-- (void)_writeAvailableThread;
-- (void)_accessoryDidDisconnect:(id)arg1;
-- (void)_streamEventTrigger;
 
 @end

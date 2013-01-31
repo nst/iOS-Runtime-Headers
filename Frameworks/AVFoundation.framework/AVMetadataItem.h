@@ -21,20 +21,20 @@
 @property(readonly) <NSObject><NSCopying> * value;
 @property(readonly) NSDictionary * extraAttributes;
 
-+ (id)metadataItemsFromArray:(id)arg1 withLocale:(id)arg2;
 + (id)metadataItemsFromArray:(id)arg1 withKey:(id)arg2 keySpace:(id)arg3;
++ (id)metadataItemsFromArray:(id)arg1 withLocale:(id)arg2;
 + (id)_figMetadataPropertyFromMetadataItems:(id)arg1;
 + (id)metadataItemsFromArray:(id)arg1 withStringValue:(id)arg2;
 + (id)metadataItemsFromArray:(id)arg1 filteredAndSortedAccordingToPreferredLanguages:(id)arg2;
 
-- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
-- (id)keySpace;
+- (id)numberValue;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)dataValue;
 - (id)extraAttributes;
 - (id)commonKey;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
@@ -46,8 +46,8 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (id)value;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
-- (id)numberValue;
-- (id)dataValue;
+- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
+- (id)keySpace;
 - (void)cancelLoading;
 - (id)_initWithFigMetadataDictionary:(id)arg1;
 - (id)_initWithReader:(struct OpaqueFigMetadataReader { }*)arg1 itemIndex:(long)arg2;

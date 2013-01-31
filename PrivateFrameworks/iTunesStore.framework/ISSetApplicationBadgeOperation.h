@@ -13,12 +13,12 @@
 @property(retain) NSString * bundleIdentifier;
 
 
-- (void)setBundleIdentifier:(id)arg1;
-- (id)uniqueKey;
 - (id)bundleIdentifier;
 - (void)dealloc;
 - (void)run;
 - (id)badgeValue;
 - (void)setBadgeValue:(id)arg1;
+- (id)uniqueKey;
+- (void)setBundleIdentifier:(id)arg1;
 
 @end

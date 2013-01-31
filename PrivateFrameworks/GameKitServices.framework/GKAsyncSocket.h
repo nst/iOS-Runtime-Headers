@@ -14,8 +14,6 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)setReceiveDataHandler:(id)arg1;
-- (id)syncQueue;
 - (void)invalidate;
 - (void)setSyncQueue:(id)arg1;
 - (id)connectedHandler;
@@ -28,5 +26,7 @@
 - (void)setSocketName:(id)arg1;
 - (void)setConnectedHandler:(id)arg1;
 - (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)setReceiveDataHandler:(id)arg1;
+- (id)syncQueue;
 
 @end

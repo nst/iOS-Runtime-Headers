@@ -50,13 +50,16 @@
     double previousCellTechDuration;
     double currentCellTechDuration;
     unsigned int terminationReason;
+    unsigned int callNonce;
+    BOOL isSender;
+    long startTime;
 }
 
 @property float localVideoDegradeTime;
 @property float remoteVideoDegradeTime;
 
-+ (void)initialize;
 + (id)statsSingleton;
++ (void)initialize;
 
 - (void)reset;
 - (void)dealloc;
@@ -100,6 +103,6 @@
 - (void)setRemoteVideoDegradeTime:(float)arg1;
 - (void)setLocalVideoDegradeTime:(float)arg1;
 - (void)updateCellTech:(id)arg1;
-- (void)callStart;
+- (void)callStartIsSender:(bool)arg1 forTime:(long)arg2;
 
 @end

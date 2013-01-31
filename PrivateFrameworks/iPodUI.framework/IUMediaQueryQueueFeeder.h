@@ -21,6 +21,23 @@
 
 + (id)imageCache;
 
+- (void)setFocusedItem:(id)arg1;
+- (id)focusedItem;
+- (unsigned int)unshuffledIndexOfAVItem:(id)arg1;
+- (id)prefixMediaItems;
+- (void)_performWhileIgnoringShuffleChanges:(id)arg1;
+- (void)setPrefixMediaItems:(id)arg1;
+- (unsigned int)_shuffleItemsInFeederQueryWithShuffleType:(unsigned int)arg1 initialIndex:(unsigned int)arg2;
+- (BOOL)_reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2 force:(BOOL)arg3;
+- (unsigned int)indexOfMediaItem:(id)arg1;
+- (id)mediaItemAtIndex:(unsigned int)arg1;
+- (void)_handleMediaLibraryDidChange;
+- (void)dealloc;
+- (id)init;
+- (id)pathAtIndex:(unsigned int)arg1;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (id)preferredLanguages;
+- (id)query;
 - (void)_libraryDidChangeNotification:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)archiveAVControllerPlaybackQueue:(id)arg1 toArchiver:(id)arg2;
@@ -40,22 +57,5 @@
 - (id)copyRawItemAtIndex:(unsigned int)arg1;
 - (unsigned int)itemCount;
 - (unsigned int)nonRepeatingItemCount;
-- (void)dealloc;
-- (id)init;
-- (void)_applicationWillEnterForeground:(id)arg1;
-- (id)preferredLanguages;
-- (id)query;
-- (void)setFocusedItem:(id)arg1;
-- (id)focusedItem;
-- (unsigned int)unshuffledIndexOfAVItem:(id)arg1;
-- (id)prefixMediaItems;
-- (void)_performWhileIgnoringShuffleChanges:(id)arg1;
-- (void)setPrefixMediaItems:(id)arg1;
-- (unsigned int)_shuffleItemsInFeederQueryWithShuffleType:(unsigned int)arg1 initialIndex:(unsigned int)arg2;
-- (BOOL)_reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2 force:(BOOL)arg3;
-- (unsigned int)indexOfMediaItem:(id)arg1;
-- (id)mediaItemAtIndex:(unsigned int)arg1;
-- (void)_handleMediaLibraryDidChange;
-- (id)pathAtIndex:(unsigned int)arg1;
 
 @end

@@ -21,13 +21,13 @@
 @property(retain) NSMutableArray * laneTypes;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)laneTypes;
 - (id)laneDirections;
 - (id)laneDividers;
@@ -50,6 +50,6 @@
 - (void)setLaneTypes:(id)arg1;
 - (void)setLaneDirections:(id)arg1;
 - (void)setLaneDividers:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

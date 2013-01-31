@@ -34,28 +34,28 @@
 @property BOOL timeoutDisabled;
 
 
+- (void)dealloc;
+- (id)initWithXPCConnection:(id)arg1;
+- (void)sendMessage:(id)arg1 withReply:(id)arg2;
 - (void)setTimeoutDisabled:(BOOL)arg1;
 - (BOOL)timeoutDisabled;
+- (id)messageHandler;
+- (void)_handleXPCError:(id)arg1;
+- (void)setMessageHandler:(id)arg1;
+- (void)shutdown;
+- (void)sendMessage:(id)arg1;
+- (id)eventQueue;
 - (void)setDisconnectHandler:(id)arg1;
 - (id)disconnectHandler;
 - (id)initWithServiceName:(id)arg1 onQueue:(id)arg2;
 - (void)_handleXPCMessage:(id)arg1;
 - (void)_sendMessage:(id)arg1 handler:(id)arg2;
 - (void)_setEventHandlerOnConnection:(id)arg1;
-- (void)dealloc;
-- (id)initWithXPCConnection:(id)arg1;
-- (void)sendMessage:(id)arg1 withReply:(id)arg2;
-- (void)setContext:(id)arg1;
-- (id)context;
-- (id)eventQueue;
 - (int)_outstandingMessages;
 - (void)_removeMessage:(id)arg1;
 - (void)_registerMessage:(id)arg1;
+- (void)setContext:(id)arg1;
+- (id)context;
 - (id)serviceName;
-- (void)sendMessage:(id)arg1;
-- (id)messageHandler;
-- (void)_handleXPCError:(id)arg1;
-- (void)setMessageHandler:(id)arg1;
-- (void)shutdown;
 
 @end

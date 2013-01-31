@@ -12,10 +12,10 @@
 
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
-- (id)message;
+- (id)initWithMessage:(id)arg1;
 - (void)_setMessage:(id)arg1;
 - (int)_compareToChatItem:(id)arg1;
 - (int)_reverseCompareToChatItem:(id)arg1;
-- (id)initWithMessage:(id)arg1;
+- (id)message;
 
 @end

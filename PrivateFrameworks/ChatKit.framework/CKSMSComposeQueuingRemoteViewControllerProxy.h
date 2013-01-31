@@ -15,11 +15,11 @@
 
 - (void)dealloc;
 - (id)init;
+- (id)queuedInvocations;
+- (void)setQueuedInvocations:(id)arg1;
 - (void)setServiceViewControllerProxy:(id)arg1;
 - (id)serviceViewControllerProxy;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (id)queuedInvocations;
-- (void)setQueuedInvocations:(id)arg1;
 
 @end

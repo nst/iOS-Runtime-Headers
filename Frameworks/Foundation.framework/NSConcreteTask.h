@@ -27,20 +27,20 @@
 }
 
 
-- (void)setArguments:(id)arg1;
-- (void)terminate;
-- (void)setEnvironment:(id)arg1;
-- (int)processIdentifier;
 - (BOOL)resume;
 - (void)dealloc;
 - (id)init;
+- (id)terminationHandler;
 - (void)setTerminationHandler:(id)arg1;
 - (BOOL)isRunning;
 - (void)finalize;
 - (id)arguments;
 - (BOOL)suspend;
 - (id)environment;
-- (id)terminationHandler;
+- (void)setArguments:(id)arg1;
+- (void)terminate;
+- (void)setEnvironment:(id)arg1;
+- (int)processIdentifier;
 - (void)setStartsNewProcessGroup:(BOOL)arg1;
 - (int)_procid;
 - (void)terminateTask;

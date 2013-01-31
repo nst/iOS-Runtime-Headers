@@ -6,11 +6,11 @@
 }
 
 
-- (void)encodeWithCoder:(id)arg1;
 - (void)setDictionaryValue:(id)arg1 forKey:(id)arg2;
 - (id)dictionaryValueForKey:(id)arg1;
 - (BOOL)validateRequiredAttributesForObject:(id)arg1 error:(id*)arg2;
 - (void)setValuesWithObject:(id)arg1;
 - (id)objectOfClass:(Class)arg1;
+- (void)encodeWithCoder:(id)arg1;
 
 @end

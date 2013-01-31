@@ -5,16 +5,16 @@
 @interface WebCache : NSObject  {
 }
 
-+ (void)setDisabled:(BOOL)arg1;
-+ (void)initialize;
-+ (void)removeImageFromCacheForURL:(id)arg1;
-+ (void)empty;
 + (bool)addImageToCache:(struct CGImage { }*)arg1 forURL:(id)arg2;
 + (void)clearCachedCredentials;
 + (void)sizeOfDeadResources:(int*)arg1;
 + (void)emptyInMemoryResources;
 + (id)statistics;
++ (void)empty;
 + (BOOL)isDisabled;
++ (void)setDisabled:(BOOL)arg1;
++ (void)initialize;
++ (void)removeImageFromCacheForURL:(id)arg1;
 
 
 @end

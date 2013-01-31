@@ -2,15 +2,25 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class HSCloudClient;
+@class HSCloudClient, NSObject<OS_dispatch_queue>;
 
 @interface MPCloudController : NSObject  {
-    BOOL _isCloudEnabled;
-    BOOL _isUpdateInProgress;
+    NSObject<OS_dispatch_queue> *_accessQueue;
+    BOOL _canShowCloudDownloadButtons;
     HSCloudClient *_cloudClient;
+    BOOL _isCloudEnabled;
+    BOOL _isCellularDataActive;
+    BOOL _isShowingAllMusic;
+    BOOL _isUpdateInProgress;
+    BOOL _isWiFiEnabled;
+    BOOL _isObservingDataStatusChanges;
+    BOOL _isObservingWiFiChanges;
+    int _preferencesChangedNotifyToken;
+    BOOL _preferencesChangedNotifyTokenIsValid;
     BOOL _isInitialImport;
 }
 
+@property(readonly) BOOL canShowCloudDownloadButtons;
 @property(readonly) BOOL canShowCloudTracks;
 @property(readonly) BOOL isCloudEnabled;
 @property(readonly) BOOL hasCloudLockerAccount;
@@ -18,29 +28,36 @@
 @property(readonly) BOOL isInitialImport;
 @property(readonly) BOOL isGeniusEnabled;
 
-+ (void)setCanObserveWiFiChanges:(BOOL)arg1;
-+ (BOOL)canObserveWiFiChanges;
++ (BOOL)shouldProhibitActionsForCurrentNetworkConditions;
++ (void)migrateCellularDataPreferencesIfNeeded;
++ (BOOL)isMediaApplication;
 + (id)sharedCloudController;
 + (BOOL)isCellularDataRestricted;
 
-- (void)becomeActive;
-- (void)resignActive;
+- (void)dealloc;
+- (id)init;
+- (void)_handleTelephonyNotificationWithName:(id)arg1 userInfo:(id)arg2;
 - (void)updatePlaylistWithSagaID:(unsigned long long)arg1 itemSagaIDs:(id)arg2 completionHandler:(id)arg3;
 - (BOOL)isUpdateInProgress;
 - (BOOL)isInitialImport;
 - (BOOL)canShowCloudTracks;
+- (BOOL)canShowCloudDownloadButtons;
 - (void)removePlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)loadUpdateProgressWithCompletionHandler:(id)arg1;
 - (void)incrementItemProperty:(id)arg1 forSagaID:(unsigned long long)arg2;
 - (void)_initializeUpdateInProgressState;
+- (void)becomeActive;
 - (void)addGeniusPlaylistWithName:(id)arg1 seedItemSagaIDs:(id)arg2 itemSagaIDs:(id)arg3 completionHandler:(id)arg4;
 - (void)addPlaylistWithName:(id)arg1 completionHandler:(id)arg2;
+- (void)_wifiEnabledDidChangeNotification:(id)arg1;
+- (void)_onQueue_updateCanShowCloudDownloadButtonsWithNotification:(BOOL)arg1;
+- (BOOL)_currentIsShowingAllMusic;
+- (void)_cellularNetworkAllowedDidChangeNotification:(id)arg1;
 - (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (BOOL)hasCloudLockerAccount;
 - (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
 - (BOOL)isCloudEnabled;
 - (BOOL)isGeniusEnabled;
-- (void)dealloc;
-- (id)init;
+- (void)resignActive;
 
 @end

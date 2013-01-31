@@ -43,9 +43,9 @@
 @property BOOL hasSlideNumberPlaceholder;
 
 
+- (unsigned int)textLength;
 - (BOOL)isCancelled;
 - (void)dealloc;
-- (unsigned int)textLength;
 - (BOOL)hasSlideNumberPlaceholder;
 - (BOOL)hasCurrentSourceMasterStyleInfoVector;
 - (void)setMasterStyles:(id)arg1 slideMaster:(id)arg2;

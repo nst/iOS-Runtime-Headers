@@ -6,11 +6,11 @@
 }
 
 
+- (id)publishingBundle;
 - (BOOL)_canPerformWithSuppliedActivityItems:(id)arg1;
 - (id)_activityImage;
 - (id)activityTitle;
 - (id)activityType;
 - (id)_beforeActivity;
-- (id)publishingBundle;
 
 @end

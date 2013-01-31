@@ -9,8 +9,8 @@
 @property BOOL isDisabled;
 
 
-- (void)disable;
 - (void)setIsDisabled:(BOOL)arg1;
 - (BOOL)isDisabled;
+- (void)disable;
 
 @end

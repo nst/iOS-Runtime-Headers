@@ -22,9 +22,9 @@
 - (id)managerOptions;
 - (void)dealloc;
 - (int)count;
-- (void)setCount:(int)arg1;
 - (void)setQueue:(id)arg1;
 - (id)queue;
+- (void)setCount:(int)arg1;
 - (void)setDownloadKinds:(id)arg1;
 - (id)initWithQueue:(id)arg1;
 

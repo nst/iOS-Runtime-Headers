@@ -10,10 +10,10 @@
 @property(copy) NSString * aceId;
 @property(copy) NSString * refId;
 
-+ (id)cancelSpeech;
 + (id)cancelSpeechWithDictionary:(id)arg1 context:(id)arg2;
++ (id)cancelSpeech;
 
-- (id)groupIdentifier;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

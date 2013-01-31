@@ -12,7 +12,6 @@
 
 - (void)dealloc;
 - (long long)count;
-- (id)initWithPath:(id)arg1;
 - (id)_objectWrapperFromQueueQuery:(struct sqlite3_stmt { }*)arg1 outSize:(long long*)arg2;
 - (struct sqlite3_stmt { }*)_statementLabel:(id)arg1 query:(const char *)arg2;
 - (void)commitObjectsWrappers:(id)arg1;
@@ -22,5 +21,6 @@
 - (id)objectWrappersWithZeroSizeMaxCount:(long long)arg1;
 - (id)smallestObjectWrappersTargetTotalSize:(long long)arg1 maxCount:(long long)arg2;
 - (void)appendObjectWrappers:(id)arg1;
+- (id)initWithPath:(id)arg1;
 
 @end

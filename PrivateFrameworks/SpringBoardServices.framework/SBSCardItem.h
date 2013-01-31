@@ -23,6 +23,7 @@
 @property(copy) NSDictionary * userInfo;
 
 
+- (void)setIconData:(id)arg1;
 - (id)identifier;
 - (id)description;
 - (unsigned int)hash;
@@ -30,6 +31,13 @@
 - (id)userInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)sortDate;
+- (id)initWithIdentifier:(id)arg1 iconData:(id)arg2 title:(id)arg3 body:(id)arg4 classification:(int)arg5 bundleName:(id)arg6 userInfo:(id)arg7;
+- (id)bundleName;
+- (BOOL)requiresPasscode;
+- (id)initWithIdentifier:(id)arg1 iconData:(id)arg2 title:(id)arg3 body:(id)arg4 requiresPasscode:(BOOL)arg5 bundleName:(id)arg6 userInfo:(id)arg7;
+- (void)setBundleName:(id)arg1;
+- (void)setRequiresPasscode:(BOOL)arg1;
 - (id)iconData;
 - (void)setBody:(id)arg1;
 - (void)setUserInfo:(id)arg1;
@@ -39,13 +47,5 @@
 - (void)setTitle:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)sortDate;
-- (void)setIconData:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 iconData:(id)arg2 title:(id)arg3 body:(id)arg4 classification:(int)arg5 bundleName:(id)arg6 userInfo:(id)arg7;
-- (id)bundleName;
-- (BOOL)requiresPasscode;
-- (id)initWithIdentifier:(id)arg1 iconData:(id)arg2 title:(id)arg3 body:(id)arg4 requiresPasscode:(BOOL)arg5 bundleName:(id)arg6 userInfo:(id)arg7;
-- (void)setBundleName:(id)arg1;
-- (void)setRequiresPasscode:(BOOL)arg1;
 
 @end

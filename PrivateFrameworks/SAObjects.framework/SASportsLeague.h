@@ -16,9 +16,7 @@
 + (id)leagueWithDictionary:(id)arg1 context:(id)arg2;
 + (id)league;
 
-- (id)groupIdentifier;
 - (id)identifier;
-- (void)setIdentifier:(id)arg1;
 - (void)setSport:(id)arg1;
 - (id)sport;
 - (void)setSeason:(id)arg1;
@@ -28,5 +26,7 @@
 - (void)setDiplayedText:(id)arg1;
 - (id)diplayedText;
 - (id)encodedClassName;
+- (void)setIdentifier:(id)arg1;
+- (id)groupIdentifier;
 
 @end

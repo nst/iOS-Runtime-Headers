@@ -33,16 +33,16 @@
     } _thirdTextureLayerProperties;
 }
 
-+ (void)purge;
 + (id)textureWithName:(id)arg1 style:(id)arg2 levelOfDetail:(unsigned int)arg3;
++ (void)purge;
 
-- (void)dealloc;
-- (id)initWithName:(id)arg1;
 - (id)_createVKImageForName:(id)arg1;
 - (void)_addTextureLayerWithName:(id)arg1 properties:(struct { int x1; float x2; })arg2;
 - (void)_addColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)_buildWithStyle:(id)arg1 levelOfDetail:(unsigned int)arg2;
 - (BOOL)loadTexture;
 - (BOOL)decodeTexture;
+- (void)dealloc;
+- (id)initWithName:(id)arg1;
 
 @end

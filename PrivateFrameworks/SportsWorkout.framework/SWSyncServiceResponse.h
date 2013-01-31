@@ -28,16 +28,16 @@
 @property(readonly) NSString * errorCode;
 
 
-- (id)email;
 - (void)dealloc;
 - (id)pin;
+- (id)errorCode;
+- (id)token;
 - (id)status;
+- (id)email;
 - (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
-- (id)errorCode;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
-- (id)token;
 - (id)serviceException;
 - (id)screenName;
 - (id)pinStatus;

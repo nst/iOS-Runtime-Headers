@@ -31,16 +31,6 @@
 @property(readonly) NSArray * thumbnailImages;
 
 
-- (id)viewItemURL;
-- (void)loadTellAFriendMessageWithCompletionHandler:(id)arg1;
-- (id)expirationDate;
-- (id)bundleVersion;
-- (int)numberOfUserRatings;
-- (float)averageUserRating;
-- (id)priceDisplay;
-- (id)artistName;
-- (void)requestDidFinish:(id)arg1;
-- (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (id)imageCollection;
 - (id)genreName;
 - (BOOL)isGameCenterEnabled;
@@ -52,19 +42,14 @@
 - (id)tellAFriendBodyMIMEType;
 - (id)tellAFriendBody;
 - (id)relatedItemsForRelationType:(id)arg1;
-- (id)releaseDate;
 - (id)mediaKind;
 - (id)playableMedia;
 - (id)initWithItemDictionary:(id)arg1;
-- (id)buyParameters;
 - (id)softwareType;
 - (BOOL)isRestricted;
 - (id)bundleIdentifier;
 - (id)description;
 - (void)dealloc;
-- (id)ITunesStoreIdentifier;
-- (id)contentRating;
-- (id)seasonNumber;
 - (id)viewReviewsURL;
 - (id)sendGiftURL;
 - (id)thumbnailImages;
@@ -99,8 +84,23 @@
 - (id)artistIdentifier;
 - (id)preOrderIdentifier;
 - (id)defaultItemOffer;
+- (id)ITunesStoreIdentifier;
+- (id)contentRating;
+- (id)seasonNumber;
 - (id)valueForProperty:(id)arg1;
 - (id)shortDescription;
 - (id)itemTitle;
+- (void)requestDidFinish:(id)arg1;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
+- (id)buyParameters;
+- (id)releaseDate;
+- (id)viewItemURL;
+- (void)loadTellAFriendMessageWithCompletionHandler:(id)arg1;
+- (id)expirationDate;
+- (id)bundleVersion;
+- (int)numberOfUserRatings;
+- (float)averageUserRating;
+- (id)priceDisplay;
+- (id)artistName;
 
 @end

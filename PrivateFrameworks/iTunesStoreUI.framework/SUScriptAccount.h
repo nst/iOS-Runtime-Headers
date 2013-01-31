@@ -19,10 +19,9 @@
 @property(retain) id socialEnabled;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
-- (void)setKind:(id)arg1;
 - (id)socialEnabled;
 - (void)setSocialEnabled:(id)arg1;
 - (void)setPurchaseHistoryEnabled:(id)arg1;
@@ -41,13 +40,14 @@
 - (id)dsID;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (id)identifier;
 - (void)dealloc;
 - (id)init;
-- (id)kind;
-- (void)setIdentifier:(id)arg1;
-- (id)attributeKeys;
 - (void)setAccount:(id)arg1;
 - (id)account;
+- (id)kind;
+- (void)setIdentifier:(id)arg1;
+- (void)setKind:(id)arg1;
 
 @end

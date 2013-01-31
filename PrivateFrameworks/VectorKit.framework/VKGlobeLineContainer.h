@@ -36,10 +36,6 @@
 @property(retain) <VKRouteMatchedAnnotationPresentation> * routeLineSplitAnnotation;
 
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (void)update;
 - (void)clearLineSelection;
 - (void)_updateRouteSplit;
 - (void)_recreateLineIfNeeded:(id)arg1;
@@ -62,5 +58,9 @@
 - (void)removePersistentOverlay:(id)arg1;
 - (id)persistentOverlays;
 - (void)setTrafficEnabled:(BOOL)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)update;
 
 @end

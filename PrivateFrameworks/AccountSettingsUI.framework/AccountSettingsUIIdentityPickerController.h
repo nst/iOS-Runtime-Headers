@@ -15,13 +15,8 @@
 @property(readonly) NSString * property;
 
 
-- (id)specifiers;
 - (void)dealloc;
-- (id)property;
-- (void)viewDidLoad;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
+- (id)specifiers;
 - (id)_identitySpecifiers;
 - (BOOL)_allowIdentitySelection;
 - (void)_updateCell:(id)arg1 selected:(BOOL)arg2;
@@ -33,5 +28,10 @@
 - (BOOL)_isPropertyEnabled;
 - (struct __SecIdentity { }*)_selectedIdentity;
 - (void)_finishedFetchingIdentities:(id)arg1;
+- (void)viewDidLoad;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
+- (id)property;
 
 @end

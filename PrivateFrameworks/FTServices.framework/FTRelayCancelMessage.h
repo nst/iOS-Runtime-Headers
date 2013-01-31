@@ -27,7 +27,9 @@
 @property(copy) NSNumber * peerRelayPort;
 
 
-- (id)bagKey;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)messageBody;
 - (void)setRelayConnectionID:(id)arg1;
 - (id)relayConnectionID;
 - (id)peerRelayPort;
@@ -41,14 +43,12 @@
 - (void)setSelfRelayIP:(id)arg1;
 - (void)setRelayType:(id)arg1;
 - (id)requiredKeys;
+- (id)bagKey;
+- (id)reason;
 - (id)peerPushToken;
 - (void)setPeerPushToken:(id)arg1;
 - (void)setReason:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setPeerID:(id)arg1;
 - (id)peerID;
-- (id)reason;
-- (id)messageBody;
 
 @end

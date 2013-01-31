@@ -39,8 +39,13 @@
 
 + (id)NameForReason:(unsigned int)arg1;
 
-- (void)setReason:(unsigned int)arg1;
-- (void)setValid:(BOOL)arg1;
+- (void)invalidate;
+- (void)setInvalidationHandler:(id)arg1;
+- (void)setName:(id)arg1;
+- (id)name;
+- (void)dealloc;
+- (id)init;
+- (void)setFlags:(unsigned int)arg1;
 - (id)acquisitionHandler;
 - (id)initWithBundleIdentifier:(id)arg1 flags:(unsigned int)arg2 reason:(unsigned int)arg3 name:(id)arg4 withHandler:(id)arg5;
 - (void)queue_notifyAssertionAcquired:(BOOL)arg1;
@@ -49,17 +54,12 @@
 - (void)queue_registerWithServer;
 - (void)setAcquisitionHandler:(id)arg1;
 - (void)queue_invalidate:(BOOL)arg1;
-- (void)invalidate;
-- (void)setInvalidationHandler:(id)arg1;
-- (void)setName:(id)arg1;
-- (id)name;
-- (void)dealloc;
-- (id)init;
 - (id)initWithPID:(int)arg1 flags:(unsigned int)arg2 reason:(unsigned int)arg3 name:(id)arg4 withHandler:(id)arg5;
 - (BOOL)valid;
 - (unsigned int)flags;
 - (unsigned int)reason;
+- (void)setReason:(unsigned int)arg1;
+- (void)setValid:(BOOL)arg1;
 - (id)invalidationHandler;
-- (void)setFlags:(unsigned int)arg1;
 
 @end

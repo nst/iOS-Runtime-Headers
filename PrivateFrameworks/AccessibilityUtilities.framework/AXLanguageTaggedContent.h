@@ -20,6 +20,9 @@
 @property(retain) NSLinguisticTagger * linguisticTagger;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)initWithContent:(id)arg1;
 - (id)userPreferredLangID;
 - (id)unpredictedAmbiguousLangMaps;
 - (void)updateTagsForLocalePrefChange;
@@ -44,9 +47,6 @@
 - (void)setUnpredictedAmbiguousLangMaps:(id)arg1;
 - (void)setTags:(id)arg1;
 - (void)setLinguisticTagger:(id)arg1;
-- (id)description;
-- (void)dealloc;
 - (id)content;
-- (id)initWithContent:(id)arg1;
 
 @end

@@ -12,11 +12,11 @@
 
 
 - (id)initWithOpenURLRequest:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)run;
 - (id)openURLRequest;
 - (id)_newSortedTargetsArray;
 - (BOOL)_openURL:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)run;
 
 @end

@@ -14,15 +14,15 @@
 
 
 - (void)dealloc;
-- (id)initWithDocument:(id)arg1;
-- (id)document;
-- (unsigned char)level;
-- (void)setLevel:(unsigned char)arg1;
 - (BOOL)isStartNumberOverridden;
 - (id)mutableListLevel;
 - (void)setStartNumber:(long)arg1;
 - (long)startNumber;
 - (id)listLevel;
 - (BOOL)isListLevelOverridden;
+- (id)initWithDocument:(id)arg1;
+- (id)document;
+- (unsigned char)level;
+- (void)setLevel:(unsigned char)arg1;
 
 @end

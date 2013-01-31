@@ -15,6 +15,14 @@
 @property(getter=isVisible) BOOL visible;
 
 
+- (void)dealloc;
+- (id)init;
+- (BOOL)isVisible;
+- (void)setVisible:(BOOL)arg1;
+- (float)heightForFooterInTableView:(id)arg1;
+- (id)title;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (void)setTitle:(id)arg1;
 - (void)setTimeScopeSegmentedControl:(id)arg1;
 - (id)timeScopeSegmentedControl;
 - (void)headerSegmentedControlChanged:(id)arg1;
@@ -25,13 +33,5 @@
 - (int)rowCountInTableView:(id)arg1;
 - (void)setTimeScope:(int)arg1;
 - (int)timeScope;
-- (void)dealloc;
-- (id)init;
-- (BOOL)isVisible;
-- (void)setVisible:(BOOL)arg1;
-- (float)heightForFooterInTableView:(id)arg1;
-- (id)title;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)setTitle:(id)arg1;
 
 @end

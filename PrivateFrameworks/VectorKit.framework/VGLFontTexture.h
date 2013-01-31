@@ -6,8 +6,8 @@
 }
 
 
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)pushSubImage:(void*)arg1 x:(int)arg2 y:(int)arg3 size:(int)arg4;
 - (BOOL)loadTexture;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

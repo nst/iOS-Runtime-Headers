@@ -24,6 +24,7 @@
 + (id)spellCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 + (id)orthographyCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 orthography:(id)arg2;
 
+- (unsigned long long)resultType;
 - (id)URL;
 - (id)description;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeAtIndex:(unsigned int)arg1;
@@ -36,7 +37,6 @@
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned long long)resultType;
 - (void*)underlyingResult;
 - (id)regularExpression;
 - (id)replacementString;

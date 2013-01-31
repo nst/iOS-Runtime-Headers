@@ -27,11 +27,6 @@
 }
 
 
-- (id)perform;
-- (id)cancel;
-- (void)dealloc;
-- (id)modelIdentifier;
-- (void)_reset;
 - (void)_handleRecognitionCompleted:(struct __VSRecognition { }*)arg1 withResults:(struct __CFArray { }*)arg2 error:(struct __CFError { }*)arg3;
 - (void)_handleRecognitionStarted:(struct __VSRecognition { }*)arg1;
 - (void)_handleRecognitionPrepared:(struct __VSRecognition { }*)arg1;
@@ -61,5 +56,10 @@
 - (id)_debugDumpPath;
 - (BOOL)_hasDeferredStartCallback;
 - (void)_continueAfterDeferredStart;
+- (id)perform;
+- (id)cancel;
+- (void)dealloc;
+- (id)modelIdentifier;
+- (void)_reset;
 
 @end

@@ -16,12 +16,12 @@
 
 + (int)partialFeedType;
 
+- (void)loadRequest:(id)arg1 withDelegate:(id)arg2 accountAuthRequired:(BOOL)arg3;
+- (void)didParseData;
+- (void)failWithError:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)failWithError:(id)arg1;
-- (void)loadRequest:(id)arg1 withDelegate:(id)arg2 accountAuthRequired:(BOOL)arg3;
-- (void)didParseData;
 - (int)parseData:(id)arg1;
 
 @end

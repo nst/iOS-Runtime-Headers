@@ -7,9 +7,9 @@
 @interface GKSignInDataSource : GKSectionArrayDataSource  {
     GKTextField *_usernameField;
     GKTextField *_passwordField;
-    GKSignInButtonSection *_signInButtonSection;
     GKSignInHeaderSection *_signInHeaderSection;
     GKGame *_game;
+    GKSignInButtonSection *_signInButtonSection;
     GKSignInInputSection *_signInInputSection;
 }
 
@@ -21,9 +21,13 @@
 @property(retain) GKGame * game;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)passwordField;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)signInInputSection;
-- (id)signInHeaderSection;
 - (id)signInButtonSection;
+- (id)signInHeaderSection;
 - (void)updatePlaceholderTextForEnvironment;
 - (void)setSignInButtonSection:(id)arg1;
 - (void)setSignInInputSection:(id)arg1;
@@ -35,9 +39,5 @@
 - (void)prepareSections;
 - (void)setGame:(id)arg1;
 - (id)game;
-- (id)description;
-- (void)dealloc;
-- (id)passwordField;
-- (int)numberOfSectionsInTableView:(id)arg1;
 
 @end

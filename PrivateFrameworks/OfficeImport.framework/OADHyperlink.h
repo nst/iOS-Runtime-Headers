@@ -26,7 +26,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setAction:(id)arg1;
 - (void)setDoAddToHistory:(BOOL)arg1;
 - (BOOL)doAddToHistory;
 - (void)setIsVisited:(BOOL)arg1;
@@ -43,5 +42,6 @@
 - (id)tooltip;
 - (int)targetMode;
 - (id)targetLocation;
+- (void)setAction:(id)arg1;
 
 @end

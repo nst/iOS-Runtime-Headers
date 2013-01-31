@@ -16,18 +16,9 @@
 @property(copy) NSNumber * minute;
 @property(copy) NSArray * removedFrequency;
 
-+ (id)update;
 + (id)updateWithDictionary:(id)arg1 context:(id)arg2;
++ (id)update;
 
-- (id)groupIdentifier;
-- (void)setMinute:(id)arg1;
-- (void)setHour:(id)arg1;
-- (id)enabled;
-- (id)minute;
-- (id)hour;
-- (id)label;
-- (void)setLabel:(id)arg1;
-- (void)setEnabled:(id)arg1;
 - (void)setRemovedFrequency:(id)arg1;
 - (id)removedFrequency;
 - (void)setAddedFrequency:(id)arg1;
@@ -38,5 +29,14 @@
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (void)setMinute:(id)arg1;
+- (void)setHour:(id)arg1;
+- (id)enabled;
+- (id)minute;
+- (id)hour;
+- (id)label;
+- (void)setLabel:(id)arg1;
+- (void)setEnabled:(id)arg1;
+- (id)groupIdentifier;
 
 @end

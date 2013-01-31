@@ -20,7 +20,6 @@
 + (id)musicStoreItemKinds;
 + (id)bookStoreItemKinds;
 
-- (void)addObserver:(id)arg1;
 - (id)initWithItemKinds:(id)arg1;
 - (void)reloadFromServer;
 - (void)removeObserver:(id)arg1;
@@ -33,5 +32,6 @@
 - (void)_handleMessage:(id)arg1 fromServerConnection:(id)arg2;
 - (void)_connectAsObserver;
 - (id)preorders;
+- (void)addObserver:(id)arg1;
 
 @end

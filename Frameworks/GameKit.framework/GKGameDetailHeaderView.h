@@ -14,8 +14,8 @@
 @property BOOL landscapeStyle;
 @property(readonly) int gameIconStyle;
 
-+ (id)ratableHeaderView;
 + (id)headerView;
++ (id)ratableHeaderView;
 
 - (void)applyStoreItem:(id)arg1 toBuyButton:(id)arg2 titleView:(id)arg3;
 - (int)gameIconStyle;

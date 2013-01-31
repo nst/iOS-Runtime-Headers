@@ -38,11 +38,16 @@
 + (id)performRequestURL:(id)arg1 method:(id)arg2 timeout:(double)arg3 userAgent:(id)arg4 contentType:(id)arg5 data:(id)arg6 identity:(struct __SecIdentity { }*)arg7 outPermanentlyRedirectedURL:(id*)arg8 outError:(id*)arg9;
 + (id)transactionWithURL:(id)arg1 method:(id)arg2;
 
-- (id)userAgent;
-- (id)responseData;
+- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
+- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
+- (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
+- (void)setMethod:(id)arg1;
 - (id)data;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (id)error;
+- (id)contentType;
+- (void)setContentType:(id)arg1;
 - (void)setCMSSignatureHeaderName:(id)arg1;
 - (id)CMSSignatureHeaderName;
 - (BOOL)_shouldAllowTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2;
@@ -51,6 +56,8 @@
 - (void)performSynchronously;
 - (void)setIdentity:(struct __SecIdentity { }*)arg1;
 - (id)initWithURL:(id)arg1 method:(id)arg2;
+- (struct __SecIdentity { }*)copyIdentity;
+- (void)setUserAgent:(id)arg1;
 - (id)method;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
@@ -60,17 +67,10 @@
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (void)setData:(id)arg1;
-- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
-- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
-- (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
-- (void)setMethod:(id)arg1;
-- (struct __SecIdentity { }*)copyIdentity;
-- (void)setUserAgent:(id)arg1;
-- (void)setContentType:(id)arg1;
+- (id)responseData;
+- (id)userAgent;
 - (double)timeout;
 - (void)setTimeout:(double)arg1;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
-- (id)error;
-- (id)contentType;
 
 @end

@@ -21,10 +21,10 @@
 - (id)initWithConcern:(id)arg1;
 - (void)setItemIdentifier:(unsigned long long)arg1;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
-- (unsigned long long)itemIdentifier;
 - (void)dealloc;
-- (void)run;
 - (void)setCommentText:(id)arg1;
 - (id)commentText;
+- (void)run;
+- (unsigned long long)itemIdentifier;
 
 @end

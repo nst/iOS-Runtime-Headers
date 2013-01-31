@@ -10,12 +10,12 @@
 + (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 
-- (void)setButtons:(id)arg1;
 - (id)newNativeViewController;
 - (id)_nativeViewController;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (id)buttons;
 - (id)attributeKeys;
+- (id)buttons;
+- (void)setButtons:(id)arg1;
 
 @end

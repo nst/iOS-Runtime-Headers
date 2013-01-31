@@ -11,6 +11,8 @@
 
 + (id)sharedInstance;
 
+- (void)dealloc;
+- (id)init;
 - (void)_noteNewUsageNotification:(id)arg1;
 - (void)_noteNewAvailableNotification:(id)arg1;
 - (void)_processUsageNotifications;
@@ -20,7 +22,5 @@
 - (void)addUsageNotificationForSession:(id)arg1 appleID:(id)arg2 alias:(id)arg3 deviceName:(id)arg4 serviceType:(int)arg5;
 - (void)addAvailableNotificationForSession:(id)arg1 appleID:(id)arg2 alias:(id)arg3 deviceName:(id)arg4 serviceType:(int)arg5;
 - (void)removeNotificationsForSession:(id)arg1;
-- (void)dealloc;
-- (id)init;
 
 @end

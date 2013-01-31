@@ -41,6 +41,15 @@
 + (void)updateGameRecords:(id)arg1 withCompletionHandlerAndError:(id)arg2;
 + (id)cacheKeyForPlayer:(id)arg1 game:(id)arg2;
 
+- (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)description;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (unsigned int)numberOfCategories;
 - (BOOL)played;
 - (unsigned int)maxAchievementPoints;
 - (void)setInternal:(id)arg1;
@@ -54,14 +63,5 @@
 - (id)player;
 - (void)setGame:(id)arg1;
 - (id)game;
-- (id)description;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (unsigned int)numberOfCategories;
-- (id)valueForUndefinedKey:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 
 @end

@@ -13,11 +13,11 @@
 + (id)sharedInstance;
 
 - (id)init;
-- (void)performBlock:(id)arg1;
 - (BOOL)isCurrentThreadDBThread;
 - (void)performBlock:(id)arg1 waitUntilDone:(BOOL)arg2;
 - (void)performBlock:(id)arg1 afterDelay:(double)arg2;
 - (id)thread;
 - (void)_threadedMain;
+- (void)performBlock:(id)arg1;
 
 @end

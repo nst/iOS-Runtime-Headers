@@ -7,12 +7,12 @@
  */
 
 @interface UIActivityItemImageRep : NSObject  {
+    id _asset;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _dataProvider;
 
-    id _asset;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */

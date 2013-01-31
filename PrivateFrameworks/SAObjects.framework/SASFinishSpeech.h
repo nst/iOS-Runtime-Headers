@@ -16,13 +16,13 @@
 + (id)finishSpeechWithDictionary:(id)arg1 context:(id)arg2;
 + (id)finishSpeech;
 
-- (id)groupIdentifier;
-- (id)endpoint;
 - (void)setPacketCount:(int)arg1;
 - (int)packetCount;
 - (void)setOrderedContext:(id)arg1;
 - (id)orderedContext;
 - (void)setEndpoint:(id)arg1;
 - (id)encodedClassName;
+- (id)endpoint;
+- (id)groupIdentifier;
 
 @end

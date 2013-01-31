@@ -16,9 +16,9 @@
 - (id)description;
 - (id)userInfo;
 - (void)dealloc;
-- (id)object;
-- (id)_init;
 - (id)_initWithAlbum:(id)arg1;
 - (id)album;
+- (id)object;
+- (id)_init;
 
 @end

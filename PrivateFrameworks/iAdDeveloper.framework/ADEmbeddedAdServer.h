@@ -39,11 +39,6 @@
 + (id)creativesForAdBundleAtURL:(id)arg1 matchingRequest:(id)arg2;
 + (BOOL)adBundleAtURL:(id)arg1 matchesRequest:(id)arg2;
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
-- (unsigned short)port;
 - (id)urlString;
 - (void)setAlwaysRegenerateWebArchives:(BOOL)arg1;
 - (BOOL)alwaysRegenerateWebArchives;
@@ -60,7 +55,10 @@
 - (id)_webResourceForPath:(id)arg1 url:(id)arg2;
 - (id)_webResourcesInDirectory:(id)arg1 baseURL:(id)arg2;
 - (id)adManifests;
+- (id)defaultDisplayPolicy;
 - (id)adDataForAdBundleAtPath:(id)arg1 creative:(id)arg2 allowWebArchive:(BOOL)arg3;
+- (id)_handleMescalSignSAPSetupRequest:(id)arg1 message:(id)arg2;
+- (id)_handleMescalSignSAPSetupCertificateRequest:(id)arg1 message:(id)arg2;
 - (id)_handleRewardsCodeResultRequest:(id)arg1 message:(id)arg2;
 - (id)_handleRewardRequest:(id)arg1 message:(id)arg2;
 - (id)_handleHeartbeatTokenRequest:(id)arg1 message:(id)arg2;
@@ -108,6 +106,12 @@
 - (void)httpServer:(id)arg1 closedConnection:(id)arg2 withError:(id)arg3;
 - (void)httpServer:(id)arg1 closedConnection:(id)arg2;
 - (void)httpServer:(id)arg1 receivedConnection:(id)arg2;
+- (void)httpServerListenSocketFailed:(id)arg1;
 - (void)resetNetworkSetup;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (unsigned short)port;
 
 @end

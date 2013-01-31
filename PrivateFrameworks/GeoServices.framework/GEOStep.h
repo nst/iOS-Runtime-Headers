@@ -82,11 +82,6 @@
 @property(retain) NSString * notice;
 
 
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
 - (id)maneuverNames;
 - (int)maneuverEndZilchIndex;
 - (unsigned int)maneuverEndIndex;
@@ -95,6 +90,13 @@
 - (unsigned int)maneuverStartIndex;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (unsigned int)distance;
+- (void)setDistance:(unsigned int)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (int)hintFirstAnnouncementIndex;
 - (BOOL)hasHintFirstAnnouncementIndex;
 - (id)signposts;
@@ -166,9 +168,7 @@
 - (id)notice;
 - (BOOL)hasNotice;
 - (void)setNotice:(id)arg1;
-- (unsigned int)distance;
-- (void)setDistance:(unsigned int)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 - (void)setInstructions:(id)arg1;
 - (id)instructions;
 

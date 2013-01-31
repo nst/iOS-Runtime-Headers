@@ -29,18 +29,6 @@
 @property(readonly) NSURL * absoluteImageURL;
 
 
-- (void)setName:(id)arg1;
-- (id)name;
-- (BOOL)complete;
-- (void)setHeight:(int)arg1;
-- (int)height;
-- (int)y;
-- (int)x;
-- (id)absoluteImageURL;
-- (id)mimeType;
-- (id)dataRepresentation:(BOOL)arg1;
-- (void)setWidth:(int)arg1;
-- (int)width;
 - (id)altDisplayString;
 - (int)naturalWidth;
 - (int)naturalHeight;
@@ -66,6 +54,18 @@
 - (id)align;
 - (void)setBorder:(id)arg1;
 - (id)border;
+- (void)setName:(id)arg1;
+- (id)name;
+- (BOOL)complete;
+- (void)setHeight:(int)arg1;
+- (int)height;
+- (int)y;
+- (int)x;
+- (id)absoluteImageURL;
+- (id)mimeType;
+- (id)dataRepresentation:(BOOL)arg1;
+- (void)setWidth:(int)arg1;
+- (int)width;
 - (BOOL)showsTapHighlight;
 - (BOOL)alwaysAttemptToShowTapHighlight;
 - (void)recursivelyRemoveMailAttributes;

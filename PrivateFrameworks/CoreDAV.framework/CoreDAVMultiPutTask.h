@@ -29,6 +29,8 @@
 
 
 - (void)dealloc;
+- (id)httpMethod;
+- (id)requestBody;
 - (void)fillOutDataWithUUIDsToAddActions:(id)arg1 hrefsToModDeleteActions:(id)arg2;
 - (id)hrefToStatus;
 - (id)uuidToStatus;
@@ -41,7 +43,5 @@
 - (id)nextCTag;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)httpMethod;
-- (id)requestBody;
 
 @end

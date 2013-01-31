@@ -29,8 +29,6 @@
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 + (float)minimumRowHeight;
 
-- (id)representedObject;
-- (void)setRepresentedObject:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForAccessoryViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIsDeleteConfirmationVisible:(BOOL)arg1;
 - (BOOL)isDeleteConfirmationVisible;
@@ -57,5 +55,7 @@
 - (void)setView:(id)arg1;
 - (id)view;
 - (void)reloadData;
+- (id)representedObject;
+- (void)setRepresentedObject:(id)arg1;
 
 @end

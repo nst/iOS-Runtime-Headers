@@ -17,8 +17,9 @@
 @property MPAVController * player;
 
 
-- (void)setPlayer:(id)arg1;
-- (id)player;
+- (void)cancel;
+- (void)dealloc;
+- (void)setLayer:(id)arg1;
 - (void)setVideoView:(id)arg1;
 - (void)scheduleSnapshotWithSize:(struct CGSize { float x1; float x2; })arg1 orientation:(int)arg2 time:(float)arg3 delegate:(id)arg4;
 - (void)_takeSnapshot:(id)arg1;
@@ -27,8 +28,7 @@
 - (void)_timeDidJump:(id)arg1;
 - (void)_restoreOriginalTime;
 - (void)_startNextSnapshot;
-- (void)cancel;
-- (void)dealloc;
-- (void)setLayer:(id)arg1;
+- (void)setPlayer:(id)arg1;
+- (id)player;
 
 @end

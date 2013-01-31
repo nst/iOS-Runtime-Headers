@@ -18,13 +18,13 @@
 @property(readonly) VGLCenterLineMesh * strokeMesh;
 
 
-- (void)dealloc;
-- (id)style;
 - (id)_textureForName:(id)arg1;
 - (id)strokeMesh;
 - (id)initWithStyle:(id)arg1 tile:(id)arg2;
 - (id)polygonStyle;
 - (unsigned int)triangleCount;
 - (id)texture;
+- (void)dealloc;
+- (id)style;
 
 @end

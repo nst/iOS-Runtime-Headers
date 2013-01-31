@@ -20,10 +20,10 @@
 
 
 - (id).cxx_construct;
-- (int)width;
 - (int)preprocessHeightWithState:(id)arg1;
 - (int)preprocessWidthWithState:(id)arg1;
 - (id)initWithChartSheet:(id)arg1 parent:(id)arg2;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (int)width;
 
 @end

@@ -40,25 +40,10 @@
 @property(retain) UIButton * disclosureButton;
 
 
-- (id)_gkDescriptionWithChildren:(int)arg1;
-- (void)setDisclosureButton:(id)arg1;
-- (BOOL)groupHighlightEnabled;
-- (void)setContentsInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (id)initWithReuseIdentifier:(id)arg1 tableViewStyle:(int)arg2;
-- (id)disclosureButton;
-- (BOOL)leaveAccessorySpace;
-- (void)setGroupSelectedOrHighlighted:(BOOL)arg1 isHighlight:(BOOL)arg2 animated:(BOOL)arg3;
-- (void)setGroupHighlightEnabled:(BOOL)arg1;
-- (BOOL)isSelectable;
-- (id)initWithReuseIdentifier:(id)arg1 tableViewStyle:(int)arg2 backgroundStyle:(int)arg3;
-- (void)setLeaveAccessorySpace:(BOOL)arg1;
-- (void)configureBackgroundView;
-- (BOOL)isGroupedTableView;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInsets;
-- (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)description;
 - (void)dealloc;
+- (void)setTheme:(id)arg1;
+- (id)theme;
 - (int)backgroundStyle;
 - (void)setBackgroundStyle:(int)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
@@ -76,7 +61,22 @@
 - (id)contents;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)setTheme:(id)arg1;
-- (id)theme;
+- (id)_gkDescriptionWithChildren:(int)arg1;
+- (void)setDisclosureButton:(id)arg1;
+- (BOOL)groupHighlightEnabled;
+- (void)setContentsInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)initWithReuseIdentifier:(id)arg1 tableViewStyle:(int)arg2;
+- (id)disclosureButton;
+- (BOOL)leaveAccessorySpace;
+- (void)setGroupSelectedOrHighlighted:(BOOL)arg1 isHighlight:(BOOL)arg2 animated:(BOOL)arg3;
+- (void)setGroupHighlightEnabled:(BOOL)arg1;
+- (BOOL)isSelectable;
+- (id)initWithReuseIdentifier:(id)arg1 tableViewStyle:(int)arg2 backgroundStyle:(int)arg3;
+- (void)setLeaveAccessorySpace:(BOOL)arg1;
+- (void)configureBackgroundView;
+- (BOOL)isGroupedTableView;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInsets;
+- (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 
 @end

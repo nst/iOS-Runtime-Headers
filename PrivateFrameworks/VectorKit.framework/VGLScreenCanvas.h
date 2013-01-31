@@ -6,8 +6,8 @@
 
 @interface VGLScreenCanvas : UIView <VGLCanvas> {
     VGLContext *_targetContext;
-    int _canvasWidth;
-    int _canvasHeight;
+    unsigned int _canvasWidth;
+    unsigned int _canvasHeight;
     BOOL _useDepthBuffer;
     BOOL _useStencilBuffer;
     BOOL _useMultisampling;
@@ -35,15 +35,9 @@
 @property(readonly) struct CGSize { float x1; float x2; } sizeInPixels;
 @property(readonly) VGLContext * vglContext;
 
-+ (Class)layerClass;
 + (Class)contextClass;
++ (Class)layerClass;
 
-- (void)dealloc;
-- (float)contentScale;
-- (void)didReceiveMemoryWarning;
-- (void)layoutSubviews;
-- (struct CGSize { float x1; float x2; })size;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })glClearColor;
 - (void)setUseStencilBuffer:(BOOL)arg1;
 - (BOOL)useStencilBuffer;
@@ -66,6 +60,12 @@
 - (BOOL)currentSceneRequiresMSAA;
 - (void)_destroyFramebuffer;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(id)arg2;
+- (void)dealloc;
 - (void)didEnterBackground;
+- (float)contentScale;
+- (void)didReceiveMemoryWarning;
+- (void)layoutSubviews;
+- (struct CGSize { float x1; float x2; })size;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

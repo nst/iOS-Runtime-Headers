@@ -26,9 +26,6 @@
 @property <VKAnchorDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (struct { double x1; double x2; })coordinate;
 - (id)initWithMercatorPoint:(struct { double x1; double x2; double x3; })arg1;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1;
 - (void)worldPointDidChange;
@@ -39,6 +36,9 @@
 - (BOOL)isMercator;
 - (struct { double x1; double x2; double x3; })mercatorPoint;
 - (struct { double x1; double x2; double x3; })worldPoint;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (struct { double x1; double x2; })coordinate;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
 
 @end

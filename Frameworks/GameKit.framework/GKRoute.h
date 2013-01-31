@@ -11,11 +11,11 @@
 }
 
 
+- (id)initWithString:(id)arg1;
+- (void)dealloc;
 - (BOOL)matchesURL:(id)arg1;
 - (BOOL)matchesURL:(id)arg1 parameters:(id*)arg2;
 - (id)nonParameterCharacterSet;
 - (id)initWithString:(id)arg1 scheme:(id)arg2;
-- (id)initWithString:(id)arg1;
-- (void)dealloc;
 
 @end

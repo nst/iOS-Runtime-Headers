@@ -33,13 +33,9 @@
 + (id)thumbnailsWithContentsOfFile:(id)arg1 format:(int)arg2;
 + (BOOL)saveBakedThumbnailsOfImages:(id)arg1 toFile:(id)arg2 format:(int)arg3 orientation:(int*)arg4 options:(id)arg5 delegate:(id)arg6;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRect;
 - (id)description;
 - (void)dealloc;
 - (int)count;
-- (id)options;
-- (int)bitsPerComponent;
-- (struct CGSize { float x1; float x2; })size;
 - (unsigned long)thumbnailLength;
 - (id)initWithContentsOfFile:(id)arg1 format:(int)arg2;
 - (id)initWithData:(id)arg1 format:(int)arg2;
@@ -57,5 +53,9 @@
 - (id)initWithImages:(id)arg1 format:(int)arg2 orientation:(int*)arg3 options:(id)arg4 delegate:(id)arg5;
 - (BOOL)saveToFile:(id)arg1;
 - (int)format;
+- (id)options;
+- (int)bitsPerComponent;
+- (struct CGSize { float x1; float x2; })size;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRect;
 
 @end

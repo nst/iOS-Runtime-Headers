@@ -23,10 +23,10 @@
 + (id)privilegeItemWithNameSpace:(id)arg1 andName:(id)arg2;
 + (id)copyParseRules;
 
+- (void)write:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)invert;
 - (id)initWithPrincipal:(id)arg1 shouldInvert:(BOOL)arg2 action:(int)arg3 withPrivileges:(id)arg4;
 - (void)setInherited:(id)arg1;
 - (void)setProtectedItem:(id)arg1;
@@ -39,6 +39,6 @@
 - (id)inherited;
 - (id)grant;
 - (id)principal;
-- (void)write:(id)arg1;
+- (id)invert;
 
 @end

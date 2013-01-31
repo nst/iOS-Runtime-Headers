@@ -33,18 +33,9 @@
 + (int)defaultStyleForSiri:(BOOL)arg1;
 + (int)defaultStyle;
 
-- (id)statusView;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (void)setInterfaceOrientation:(int)arg1;
-- (BOOL)isFirstResponder;
-- (int)style;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)becomeFirstResponder;
-- (BOOL)resignFirstResponder;
-- (int)interfaceOrientation;
-- (void)setUserInteractionEnabled:(BOOL)arg1;
 - (void)setShowingEntryStatusWarning:(BOOL)arg1;
 - (BOOL)isShowingEntryStatusWarning;
 - (id)passcode;
@@ -75,5 +66,14 @@
 - (BOOL)playsKeyboardClicks;
 - (void)setPlaysKeyboardClicks:(BOOL)arg1;
 - (id)entryView;
+- (void)setInterfaceOrientation:(int)arg1;
+- (BOOL)isFirstResponder;
+- (int)style;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)becomeFirstResponder;
+- (BOOL)resignFirstResponder;
+- (int)interfaceOrientation;
+- (void)setUserInteractionEnabled:(BOOL)arg1;
+- (id)statusView;
 
 @end

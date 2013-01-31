@@ -56,10 +56,10 @@
 - (BOOL)isEmbedded;
 - (void)setContextDictionary:(id)arg1;
 - (id)contextDictionary;
+- (BOOL)shouldLoadProgressively;
 - (BOOL)shouldShowFormAccessory;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })scrollContentInsets;
 - (BOOL)flashesScrollIndicators;
-- (BOOL)shouldLoadProgressively;
 - (void)setScrollContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setShouldLoadProgressively:(BOOL)arg1;
 - (void)setShouldShowFormAccessory:(BOOL)arg1;

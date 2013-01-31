@@ -32,8 +32,6 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)cachedParentServerId;
 - (id)cachedParentFolderId;
 - (int)meetingClassType;
@@ -63,6 +61,8 @@
 - (void)setObject:(id)arg1 forDCCPT:(int)arg2;
 - (void)clearPlaceHolder;
 - (void)applyPlaceHolder;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setOrganizer:(id)arg1;
 
 @end

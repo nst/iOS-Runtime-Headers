@@ -19,10 +19,10 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (id)error;
 - (id)initWithPath:(id)arg1;
 - (void)_setFilterUnderbars:(BOOL)arg1;
 - (BOOL)_filtersUnderbars;
 - (void)_setError:(id)arg1;
-- (id)error;
 
 @end

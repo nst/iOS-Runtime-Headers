@@ -9,8 +9,8 @@
 }
 
 
-- (void)dealloc;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 token:(int)arg2 pool:(id)arg3;
 - (BOOL)loadTexture;
+- (void)dealloc;
 
 @end

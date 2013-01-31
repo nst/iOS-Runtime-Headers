@@ -19,8 +19,7 @@
 - (void)insertMessagePart:(id)arg1;
 - (void)reset;
 - (void)dealloc;
-- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1 inTextContentView:(id)arg2;
-- (BOOL)hasContent;
+- (id)attachments;
 - (id)contentEntryView;
 - (void)updateComposition;
 - (id)newContentViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -29,6 +28,7 @@
 - (void)setMessageComposition:(id)arg1;
 - (id)messageComposition;
 - (void)setOutgoingBubbleColor:(int)arg1;
-- (id)attachments;
+- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1 inTextContentView:(id)arg2;
+- (BOOL)hasContent;
 
 @end

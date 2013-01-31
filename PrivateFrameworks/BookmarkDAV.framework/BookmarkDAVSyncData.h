@@ -36,7 +36,8 @@
 - (void)dealloc;
 - (void)setClientVersion:(unsigned int)arg1;
 - (id)principalURL;
-- (BOOL)hasChanges;
+- (id)etag;
+- (void)setEtag:(id)arg1;
 - (void)setCtag:(id)arg1;
 - (id)ctag;
 - (id)homeURL;
@@ -49,8 +50,6 @@
 - (id)bulkRequests;
 - (id)pushTransports;
 - (id)pushKey;
-- (id)etag;
-- (void)setEtag:(id)arg1;
 - (void)setAccountPrsId:(id)arg1;
 - (BOOL)supportsSyncCollection;
 - (id)accountPrsId;
@@ -77,5 +76,6 @@
 - (void)setHomeURL:(id)arg1;
 - (void)writeToBookmarkDB;
 - (id)initWithBookmarkDatabase:(void*)arg1;
+- (BOOL)hasChanges;
 
 @end

@@ -25,10 +25,9 @@
 + (id)_alertItemsController;
 
 - (void)dismiss:(int)arg1;
+- (BOOL)dismissOnLock;
 - (void)dealloc;
 - (id)init;
-- (void)dismiss;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)setAllowedBundleIDs:(id)arg1;
 - (id)allowedBundleIDs;
 - (BOOL)pendInSetupIfNotAllowed;
@@ -81,6 +80,7 @@
 - (void)setPendInSetupIfNotAllowed:(BOOL)arg1;
 - (void)setAllowInSetup:(BOOL)arg1;
 - (Class)alertSheetClass;
-- (BOOL)dismissOnLock;
+- (void)dismiss;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 
 @end

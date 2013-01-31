@@ -4,25 +4,27 @@
 
 @interface IUiPodAVController : MPAVController  {
     unsigned int _scheduledTrackExpirationCallback : 1;
-    int _extendedModeNotifyToken;
 }
 
-+ (id)sharedInstance;
 + (id)sharedIPCAppInstance;
++ (id)sharedInstance;
 
-- (BOOL)isInExtendedMode;
+- (void)_setRentalIsPlaying:(BOOL)arg1 forItem:(id)arg2;
+- (void)_scheduleExpirationTimerIfNecessary;
+- (void)_endPlaybackIfNeededForCurrentNetwork;
+- (void)_movieExpirationCheckCallback;
+- (void)_appDefaultsChangedNotification:(id)arg1;
+- (void)_availableMediaLibrariesDidChangeNotification:(id)arg1;
+- (void)play;
+- (void)dealloc;
+- (id)init;
+- (void)_matchCellularRestrictedDidChangeNotification:(id)arg1;
+- (void)_downloadCancelledNotification:(id)arg1;
+- (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)_itemWillChange:(id)arg1;
 - (void)airPlayVideoEnded;
 - (void)_itemReadyToPlay:(id)arg1;
 - (BOOL)currentItemIsRental;
 - (BOOL)showPlaybackStateOverlaysOnTVOut;
-- (void)dealloc;
-- (id)init;
-- (void)play;
-- (void)_setRentalIsPlaying:(BOOL)arg1 forItem:(id)arg2;
-- (void)_scheduleExpirationTimerIfNecessary;
-- (void)_movieExpirationCheckCallback;
-- (void)_appDefaultsChangedNotification:(id)arg1;
-- (void)_availableMediaLibrariesDidChangeNotification:(id)arg1;
 
 @end

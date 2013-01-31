@@ -26,6 +26,9 @@
 - (id)name;
 - (unsigned int)indexOfObject:(id)arg1;
 - (void)dealloc;
+- (void)setController:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setOldSectionNumber:(unsigned int)arg1;
 - (unsigned int)oldSectionNumber;
 - (unsigned int)sectionOffset;
@@ -37,8 +40,5 @@
 - (unsigned int)numberOfObjects;
 - (id)indexTitle;
 - (void)clearSectionObjectsCache;
-- (void)setController:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

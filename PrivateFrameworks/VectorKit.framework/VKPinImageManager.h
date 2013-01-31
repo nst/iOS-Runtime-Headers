@@ -11,10 +11,10 @@
 
 + (id)sharedManager;
 
+- (id)bounceImagesType:(int)arg1 style:(int)arg2;
+- (id)imageType:(unsigned int)arg1 style:(int)arg2;
 - (void)dealloc;
 - (id)init;
 - (void)didReceiveMemoryWarning:(id)arg1;
-- (id)bounceImagesType:(int)arg1 style:(int)arg2;
-- (id)imageType:(unsigned int)arg1 style:(int)arg2;
 
 @end

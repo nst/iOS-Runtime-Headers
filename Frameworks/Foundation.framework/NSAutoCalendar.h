@@ -15,6 +15,7 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (id)initWithCalendarIdentifier:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -43,6 +44,5 @@
 - (id)gregorianStartDate;
 - (void)setMinimumDaysInFirstWeek:(unsigned int)arg1;
 - (void)setFirstWeekday:(unsigned int)arg1;
-- (id)initWithCalendarIdentifier:(id)arg1;
 
 @end

@@ -14,11 +14,11 @@
 
 + (id)codedPropertyKeys;
 
+- (id)description;
+- (void)dealloc;
 - (void)setLocalScore:(id)arg1;
 - (id)localScore;
 - (id)scores;
 - (void)setScores:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

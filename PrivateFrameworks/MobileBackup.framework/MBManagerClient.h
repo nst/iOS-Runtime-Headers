@@ -11,12 +11,12 @@
 }
 
 
+- (void)setLogLevel:(int)arg1;
 - (id)restoreState;
 - (void)invalidate;
 - (void)setDelegate:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
-- (void)_establishConnection;
 - (void)repair;
 - (BOOL)releaseLockWithBackupUDID:(id)arg1 owner:(id)arg2 error:(id*)arg3;
 - (BOOL)acquireLockWithBackupUDID:(id)arg1 owner:(id)arg2 timeout:(double)arg3 error:(id*)arg4;
@@ -73,6 +73,6 @@
 - (BOOL)setupBackupWithPasscode:(id)arg1 error:(id*)arg2;
 - (id)restoreFilesForDomain:(id)arg1 relativePath:(id)arg2 pendingOnly:(BOOL)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 error:(id*)arg5;
 - (id)initWithDelegate:(id)arg1 eventQueue:(id)arg2;
-- (void)setLogLevel:(int)arg1;
+- (void)_establishConnection;
 
 @end

@@ -21,14 +21,14 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (double)tint;
-- (id)color;
-- (bool)isValid;
 - (unsigned int)themeIndex;
 - (unsigned int)colorIndex;
 - (int)systemColorID;
 - (BOOL)isEqualToColorReference:(id)arg1;
 - (id)initWithColor:(id)arg1 resources:(id)arg2;
 - (id)initWithResources:(id)arg1;
+- (double)tint;
+- (id)color;
+- (bool)isValid;
 
 @end

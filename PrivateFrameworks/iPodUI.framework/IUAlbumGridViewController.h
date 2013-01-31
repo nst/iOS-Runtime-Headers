@@ -37,33 +37,6 @@
 
 + (BOOL)supportsViewControllerStyle:(int)arg1;
 
-- (void)imageCache:(id)arg1 loadedImage:(id)arg2 forRequest:(id)arg3;
-- (void)dealloc;
-- (id)init;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)setEditing:(BOOL)arg1;
-- (id)tableView:(id)arg1 indexPathForSectionIndexTitle:(id)arg2 atIndex:(int)arg3;
-- (BOOL)editing;
-- (void)tableViewDidFinishReload:(id)arg1;
-- (void)setContext:(id)arg1;
-- (void)alertViewCancel:(id)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (id)sectionIndexTitlesForTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (BOOL)scrollViewShouldScrollToTop:(id)arg1;
-- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewWillBeginDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
-- (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)reloadData;
 - (void)setSegmentedViewController:(id)arg1;
 - (id)videoDetailViewController;
 - (void)setVideoDetailViewController:(id)arg1;
@@ -107,5 +80,32 @@
 - (struct CGPoint { float x1; float x2; })actualImageOriginForCellContext:(id)arg1;
 - (struct CGSize { float x1; float x2; })thumbnailSizeForAlbumGridCellContext:(id)arg1;
 - (unsigned int)albumsPerRowForAlbumGridCellContext:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)setEditing:(BOOL)arg1;
+- (id)tableView:(id)arg1 indexPathForSectionIndexTitle:(id)arg2 atIndex:(int)arg3;
+- (BOOL)editing;
+- (void)tableViewDidFinishReload:(id)arg1;
+- (void)setContext:(id)arg1;
+- (void)alertViewCancel:(id)arg1;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (id)sectionIndexTitlesForTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (BOOL)scrollViewShouldScrollToTop:(id)arg1;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewWillBeginDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)reloadData;
+- (void)imageCache:(id)arg1 loadedImage:(id)arg2 forRequest:(id)arg3;
 
 @end

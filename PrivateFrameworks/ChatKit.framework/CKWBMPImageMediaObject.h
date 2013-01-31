@@ -7,7 +7,7 @@
 
 + (id)mimeTypesToFileExtensions;
 
-- (int)mediaType;
 - (id)imageData;
+- (int)mediaType;
 
 @end

@@ -11,14 +11,14 @@
 }
 
 
-- (void)dealloc;
-- (id)init;
-- (BOOL)isLoading;
-- (void)reloadData;
 - (void)addVideo:(id)arg1;
 - (void)_nextBatch;
 - (unsigned int)maxVideosToSave;
 - (void)searchRequest:(id)arg1 receivedVideos:(id)arg2 startIndex:(unsigned int)arg3 videosRemaining:(unsigned int)arg4;
 - (void)searchRequest:(id)arg1 foundBatchURL:(id)arg2;
+- (void)dealloc;
+- (id)init;
+- (BOOL)isLoading;
+- (void)reloadData;
 
 @end

@@ -153,10 +153,21 @@
 
 + (id)controllerForServiceType:(int)arg1;
 
+- (void)dealloc;
+- (id)init;
+- (id)activeAccounts;
+- (id)accounts;
 - (BOOL)addAlias:(id)arg1;
 - (BOOL)validateAlias:(id)arg1;
 - (id)vettedAliases;
 - (id)aliases;
+- (void)accountRemoved:(id)arg1;
+- (BOOL)unvalidateAlias:(id)arg1;
+- (BOOL)hasAlias:(id)arg1;
+- (void)systemApplicationDidEnterBackground;
+- (void)clearAllCaches;
+- (int)serviceType;
+- (void)setServiceType:(int)arg1;
 - (void)refreshSystemAccount;
 - (int)systemAccountType;
 - (id)systemAccount;
@@ -320,23 +331,12 @@
 - (void)nukeAllCallerIDSettings;
 - (void)removeAllHandlers;
 - (id)appleIDAccounts;
-- (void)dealloc;
-- (id)init;
-- (void)connect;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)openURL:(id)arg1;
-- (int)serviceType;
-- (void)setServiceType:(int)arg1;
-- (void)accountRemoved:(id)arg1;
-- (BOOL)unvalidateAlias:(id)arg1;
-- (BOOL)hasAlias:(id)arg1;
 - (id)displayAccount;
 - (id)alertHandler;
 - (void)setAlertHandler:(id)arg1;
-- (void)systemApplicationDidEnterBackground;
-- (id)activeAccounts;
-- (id)accounts;
-- (void)clearAllCaches;
+- (void)connect;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)openURL:(id)arg1;
 - (BOOL)isConnected;
 
 @end

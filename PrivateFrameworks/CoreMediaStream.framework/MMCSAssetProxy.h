@@ -17,8 +17,7 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)asset;
-- (void)setAsset:(id)arg1;
+- (id)initWithAsset:(id)arg1;
 - (void)setFD:(int)arg1;
 - (int)FD;
 - (void)discardFileDescriptor;
@@ -26,6 +25,7 @@
 - (int)openNewFileDescriptor;
 - (void)setEngine:(id)arg1;
 - (id)engine;
-- (id)initWithAsset:(id)arg1;
+- (id)asset;
+- (void)setAsset:(id)arg1;
 
 @end

@@ -14,6 +14,7 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
+- (void)addVertex:(struct CAMeshVertex { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CAPoint3D { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })arg1;
 - (void)removeFaceAtIndex:(unsigned long)arg1;
 - (void)addFace:(struct CAMeshFace { unsigned int x1[4]; float x2[4]; })arg1;
 - (void)removeVertexAtIndex:(unsigned long)arg1;
@@ -23,6 +24,5 @@
 - (void)replaceVertexAtIndex:(unsigned long)arg1 withVertex:(struct CAMeshVertex { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CAPoint3D { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })arg2;
 - (int)subdivisionSteps;
 - (id)depthNormalization;
-- (void)addVertex:(struct CAMeshVertex { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CAPoint3D { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })arg1;
 
 @end

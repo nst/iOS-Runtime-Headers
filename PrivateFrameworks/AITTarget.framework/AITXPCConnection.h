@@ -24,28 +24,28 @@
 @property struct dispatch_queue_s { }* internalQueue;
 
 
-- (void*)currentMessage;
-- (id)initWithConnection:(struct _xpc_connection_s { }*)arg1 delegate:(id)arg2;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (struct _xpc_connection_s { }*)connection;
-- (BOOL)available;
-- (struct dispatch_queue_s { }*)dispatchQueue;
-- (void)setDispatchQueue:(struct dispatch_queue_s { }*)arg1;
-- (int)pid;
-- (void)setConnection:(struct _xpc_connection_s { }*)arg1;
-- (void)setInternalQueue:(struct dispatch_queue_s { }*)arg1;
-- (struct dispatch_queue_s { }*)internalQueue;
-- (id)initWithConnection:(struct _xpc_connection_s { }*)arg1 delegate:(id)arg2 dispatchQueue:(struct dispatch_queue_s { }*)arg3;
-- (void)closeConnection;
-- (void)_handleEvent:(void*)arg1;
 - (void)setCurrentMessage:(void*)arg1;
 - (void)barrierWithCompletionHandler:(id)arg1;
 - (void)sendMessage:(id)arg1 userInfo:(id)arg2 replyHandler:(id)arg3;
 - (id)_deserializeMessage:(void*)arg1;
 - (void)sendMessage:(id)arg1 userInfo:(id)arg2;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (void)setBundleId:(id)arg1;
 - (id)bundleId;
+- (void*)currentMessage;
+- (void)closeConnection;
+- (void)_handleEvent:(void*)arg1;
+- (BOOL)available;
+- (int)pid;
+- (void)setConnection:(struct _xpc_connection_s { }*)arg1;
+- (void)setInternalQueue:(struct dispatch_queue_s { }*)arg1;
+- (struct dispatch_queue_s { }*)internalQueue;
+- (id)initWithConnection:(struct _xpc_connection_s { }*)arg1 delegate:(id)arg2 dispatchQueue:(struct dispatch_queue_s { }*)arg3;
+- (struct _xpc_connection_s { }*)connection;
+- (id)initWithConnection:(struct _xpc_connection_s { }*)arg1 delegate:(id)arg2;
+- (struct dispatch_queue_s { }*)dispatchQueue;
+- (void)setDispatchQueue:(struct dispatch_queue_s { }*)arg1;
 
 @end

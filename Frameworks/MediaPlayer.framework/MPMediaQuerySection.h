@@ -18,18 +18,18 @@
 @property unsigned int sectionIndexTitleIndex;
 
 
-- (void)setSectionIndexTitleIndex:(unsigned int)arg1;
-- (unsigned int)sectionIndexTitleIndex;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)title;
 - (id)_init;
 - (void)setTitle:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSectionIndexTitleIndex:(unsigned int)arg1;
+- (unsigned int)sectionIndexTitleIndex;
 
 @end

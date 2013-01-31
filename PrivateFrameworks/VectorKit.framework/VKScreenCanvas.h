@@ -4,7 +4,7 @@
 
 @class VKWorld, VKCamera, VKScene, VKLayoutContext, NSArray, NSMutableArray;
 
-@interface VKScreenCanvas : VGLScreenCanvas <VKCameraDelegate, VKWorldDelegate, VKCameraControllerCanvasDelegate> {
+@interface VKScreenCanvas : VGLScreenCanvas <VKWorldDelegate, VKCameraControllerCanvasDelegate, VKCameraDelegate> {
     VKWorld *_world;
     VKCamera *_camera;
     VKScene *_scene;
@@ -32,24 +32,12 @@
 
 + (Class)contextClass;
 
-- (int)state;
-- (void)dealloc;
-- (void)_applicationDidBecomeActive:(id)arg1;
-- (void)forceLayout;
-- (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (void)willMoveToWindow:(id)arg1;
-- (void)layoutSubviews;
-- (void)didMoveToWindow;
-- (void)setHidden:(BOOL)arg1;
-- (void)setNeedsLayout;
-- (void)setNeedsDisplay;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)camera;
 - (id)cameraControllers;
 - (void)setDebugFramesPerSecond:(float)arg1;
 - (void)removeCameraController:(id)arg1;
 - (void)worldDisplayDidChange:(id)arg1;
 - (void)worldLayoutDidChange:(id)arg1;
+- (void)takeSnapshotIfNeeded;
 - (BOOL)_updateDisplayStatus:(id)arg1;
 - (id)world;
 - (id)cameraController:(id)arg1 presentationForAnnotation:(id)arg2;
@@ -74,5 +62,18 @@
 - (void)cameraDidChange:(id)arg1;
 - (void)didDrawView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(id)arg2;
+- (int)state;
+- (void)dealloc;
+- (id)camera;
+- (void)_applicationDidBecomeActive:(id)arg1;
+- (void)forceLayout;
+- (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
+- (void)willMoveToWindow:(id)arg1;
+- (void)layoutSubviews;
+- (void)didMoveToWindow;
+- (void)setHidden:(BOOL)arg1;
+- (void)setNeedsLayout;
+- (void)setNeedsDisplay;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

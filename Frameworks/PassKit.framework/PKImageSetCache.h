@@ -12,6 +12,8 @@
 }
 
 
+- (void)dealloc;
+- (id)init;
 - (void)purgeAllCaches;
 - (void)garbageCollectCacheForImageSet:(int)arg1;
 - (id)_keyForImageSet:(int)arg1 displayProfile:(id)arg2;
@@ -19,7 +21,5 @@
 - (void)flushUniqueID:(id)arg1 forImageSet:(int)arg2 withDisplayProfile:(id)arg3 purge:(BOOL)arg4;
 - (void)cacheImages:(id)arg1 forDisplayProfile:(id)arg2;
 - (id)checkoutImageSet:(int)arg1 forDisplayProfile:(id)arg2 withUniqueID:(id)arg3;
-- (void)dealloc;
-- (id)init;
 
 @end

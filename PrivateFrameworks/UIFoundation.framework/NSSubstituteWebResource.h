@@ -13,14 +13,14 @@
 }
 
 
-- (id)textEncodingName;
 - (id)initWithData:(id)arg1 URL:(id)arg2 MIMEType:(id)arg3 textEncodingName:(id)arg4 frameName:(id)arg5;
+- (id)webResource;
+- (id)frameName;
+- (Class)_webResourceClass;
 - (id)URL;
 - (id)data;
 - (void)dealloc;
 - (id)MIMEType;
-- (id)webResource;
-- (id)frameName;
-- (Class)_webResourceClass;
+- (id)textEncodingName;
 
 @end

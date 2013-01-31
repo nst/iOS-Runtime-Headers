@@ -14,10 +14,10 @@
 
 + (id)program;
 
-- (id)init;
 - (float)alphaScale;
 - (void)setAlphaScale:(float)arg1;
 - (int)textureSampler;
 - (void)setTextureSampler:(int)arg1;
+- (id)init;
 
 @end

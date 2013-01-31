@@ -13,8 +13,8 @@
     SKLayerModule *_currentMainModule;
     NSTimer *_rebootTimer;
     AVController *_avController;
-    bool_muted;
     float _volume;
+    bool_muted;
 }
 
 @property float volume;
@@ -30,17 +30,13 @@
 + (BOOL)useSystemSwitchBoardLaunchD;
 + (BOOL)bundleIsSwitchBoard:(id)arg1;
 
-- (bool)muted;
+- (void)showWindow;
+- (void)setVolume:(float)arg1;
+- (float)volume;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
-- (void)run;
-- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toLayer:(id)arg2;
-- (BOOL)handleEvent:(struct __GSEvent { }*)arg1;
-- (void)_startWindowServerIfNecessary;
-- (void)setMuted:(bool)arg1;
-- (void)showModule:(id)arg1;
 - (void)cancelReboot;
 - (void)beginRebootCountdown;
 - (void)registerForSystemPowerNotifications;
@@ -57,9 +53,13 @@
 - (id)baseLayer;
 - (void)doScreenCapture;
 - (id)mainLayer;
-- (void)setVolume:(float)arg1;
-- (float)volume;
 - (void)quit;
-- (void)showWindow;
+- (void)showModule:(id)arg1;
+- (void)setMuted:(bool)arg1;
+- (void)run;
+- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toLayer:(id)arg2;
+- (BOOL)handleEvent:(struct __GSEvent { }*)arg1;
+- (void)_startWindowServerIfNecessary;
+- (bool)muted;
 
 @end

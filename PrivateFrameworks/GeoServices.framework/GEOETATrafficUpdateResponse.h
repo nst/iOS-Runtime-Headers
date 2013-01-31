@@ -17,15 +17,13 @@
 @property(retain) NSMutableArray * routes;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)setStatus:(int)arg1;
-- (int)status;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setHasStatus:(BOOL)arg1;
 - (BOOL)hasStatus;
 - (id)routes;
@@ -34,6 +32,8 @@
 - (unsigned int)routesCount;
 - (void)addRoute:(id)arg1;
 - (void)setRoutes:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (void)setStatus:(int)arg1;
+- (int)status;
+- (id)dictionaryRepresentation;
 
 @end

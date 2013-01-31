@@ -13,11 +13,11 @@
 + (id)movieSnippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)movieSnippet;
 
-- (id)groupIdentifier;
-- (void)setMovie:(id)arg1;
-- (id)movie;
 - (void)setPlayTrailer:(BOOL)arg1;
 - (BOOL)playTrailer;
 - (id)encodedClassName;
+- (void)setMovie:(id)arg1;
+- (id)movie;
+- (id)groupIdentifier;
 
 @end

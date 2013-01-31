@@ -14,9 +14,9 @@
 }
 
 
+- (Class)client;
 - (void)reset;
 - (void)dealloc;
-- (Class)client;
 - (void)addDualDrawable:(id)arg1;
 - (id)oaxState;
 - (void)setShapeType:(unsigned short)arg1 forId:(id)arg2;

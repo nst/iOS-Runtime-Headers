@@ -7,8 +7,8 @@
 
 + (void)initialize;
 
+- (void)_getTargetTime:(double*)arg1 cachedPath:(id*)arg2;
 - (BOOL)canRequestSynchronously;
 - (id)copyRawImageReturningError:(id*)arg1;
-- (void)_getTargetTime:(double*)arg1 cachedPath:(id*)arg2;
 
 @end

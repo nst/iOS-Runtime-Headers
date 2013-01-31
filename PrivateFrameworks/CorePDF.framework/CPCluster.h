@@ -28,6 +28,8 @@
 + (unsigned int*)createOrderIndexFor:(double*)arg1 ofSize:(unsigned int)arg2;
 + (void)clusterTextLine:(id)arg1;
 
+- (void)dealloc;
+- (id)init;
 - (void)tryLevel0SplitBetween:(double)arg1 and:(double)arg2 usingHints:(struct { unsigned int x1; double x2; double x3; double x4; }*)arg3;
 - (void)makeWords:(struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)arg1 count:(unsigned int)arg2 fromCharacterSequence:(id)arg3 charOffset:(unsigned int)arg4;
 - (void)findClustersFromCharacterSequence:(id)arg1 withSpaceHint:(BOOL)arg2;
@@ -58,8 +60,6 @@
 - (id)initWithProfile:(const struct { double x1; unsigned int x2; double x3; double x4; unsigned int x5; double x6; double x7; BOOL x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; double x17; double x18; double x19; BOOL x20; }*)arg1;
 - (unsigned int)levels;
 - (void)dispose;
-- (void)dealloc;
-- (id)init;
 - (void)finalize;
 
 @end

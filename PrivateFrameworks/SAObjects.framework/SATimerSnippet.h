@@ -9,12 +9,12 @@
 
 @property(copy) NSArray * timers;
 
-+ (id)snippet;
 + (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
++ (id)snippet;
 
-- (id)groupIdentifier;
 - (void)setTimers:(id)arg1;
 - (id)timers;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -21,6 +21,20 @@
 
 + (BOOL)accessInstanceVariablesDirectly;
 
+- (void)setValue:(id)arg1 forKey:(id)arg2;
+- (id)valueForKey:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setRemoteViewController:(id)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (BOOL)shouldAutomaticallyForwardRotationMethods;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (BOOL)_remoteControllerIsPresented;
 - (void)setGameCenterDelegate:(id)arg1;
 - (id)gameCenterDelegate;
@@ -39,19 +53,5 @@
 - (void)setLeaderboardCategory:(id)arg1;
 - (void)notifyDelegateOnWillFinish;
 - (void)setViewState:(int)arg1;
-- (void)setValue:(id)arg1 forKey:(id)arg2;
-- (id)valueForKey:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)setRemoteViewController:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
-- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
-- (BOOL)shouldAutomaticallyForwardRotationMethods;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (unsigned int)supportedInterfaceOrientations;
 
 @end

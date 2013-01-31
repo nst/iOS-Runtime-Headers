@@ -16,8 +16,8 @@
 @property(readonly) NSString * accessKeyPurposeStatement;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)accessKeyPurposeStatement;
 - (id)accessKeyFacebookPermissions;
@@ -29,8 +29,8 @@
 - (void)setAccountType:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)init;
-- (id)attributeKeys;
 
 @end

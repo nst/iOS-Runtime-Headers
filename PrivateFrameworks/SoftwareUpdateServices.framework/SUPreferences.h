@@ -12,6 +12,7 @@
 
 + (id)sharedInstance;
 
+- (int)logLevel;
 - (void)dealloc;
 - (id)init;
 - (BOOL)_getBooleanPreferenceForKey:(id)arg1 withDefaultValue:(BOOL)arg2;
@@ -19,6 +20,5 @@
 - (int)_defaultLogLevel;
 - (void)_loadPreferences;
 - (BOOL)disableUserWiFiOnlyPeriod;
-- (int)logLevel;
 
 @end

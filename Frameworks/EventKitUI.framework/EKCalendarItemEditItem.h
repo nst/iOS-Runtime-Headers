@@ -22,6 +22,7 @@
 - (id)delegate;
 - (void)reset;
 - (void)dealloc;
+- (BOOL)isInline;
 - (id)footerView;
 - (void)applicationDidResume;
 - (void)setSelectedResponder:(id)arg1;
@@ -57,10 +58,9 @@
 - (int)numberOfSubsections;
 - (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
+- (id)calendarItem;
 - (id)viewForActionSheet;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (BOOL)isInline;
-- (id)calendarItem;
 
 @end

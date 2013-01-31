@@ -18,6 +18,11 @@
 
 + (void)initialize;
 
+- (void)setCompareSelector:(SEL)arg1;
+- (SEL)compareSelector;
+- (id)initWithCompareSelector:(SEL)arg1;
+- (void)_insertObjectInSortOrder:(id)arg1;
+- (id)initWithCapacity:(unsigned int)arg1 compareSelector:(SEL)arg2;
 - (BOOL)conformsToProtocol:(id)arg1;
 - (id)initWithObjects:(id)arg1;
 - (void)removeLastObject;
@@ -39,10 +44,5 @@
 - (void)removeObjectAtIndex:(unsigned int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setCompareSelector:(SEL)arg1;
-- (SEL)compareSelector;
-- (id)initWithCompareSelector:(SEL)arg1;
-- (void)_insertObjectInSortOrder:(id)arg1;
-- (id)initWithCapacity:(unsigned int)arg1 compareSelector:(SEL)arg2;
 
 @end

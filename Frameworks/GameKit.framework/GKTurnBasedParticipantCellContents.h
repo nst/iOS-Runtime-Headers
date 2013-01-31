@@ -16,6 +16,8 @@
 
 + (id)turnBasedParticipantCellContentWithTheme:(id)arg1;
 
+- (void)dealloc;
+- (void)prepareForReuse;
 - (void)setParticipant:(id)arg1;
 - (id)participant;
 - (id)players;
@@ -24,7 +26,5 @@
 - (BOOL)shouldShowPhoto;
 - (void)setPlayers:(id)arg1;
 - (void)updateLines;
-- (void)dealloc;
-- (void)prepareForReuse;
 
 @end

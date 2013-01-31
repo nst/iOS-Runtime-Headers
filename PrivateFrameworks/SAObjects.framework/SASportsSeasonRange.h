@@ -14,13 +14,13 @@
 + (id)seasonRangeWithDictionary:(id)arg1 context:(id)arg2;
 + (id)seasonRange;
 
-- (id)groupIdentifier;
+- (void)setSeasonType:(id)arg1;
+- (id)seasonType;
+- (id)encodedClassName;
 - (void)setEnd:(id)arg1;
 - (void)setStart:(id)arg1;
 - (id)end;
 - (id)start;
-- (void)setSeasonType:(id)arg1;
-- (id)seasonType;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

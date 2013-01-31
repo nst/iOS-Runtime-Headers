@@ -43,6 +43,7 @@
 
 - (void)dealloc;
 - (id)init;
+- (void)setLabelText:(id)arg1;
 - (void)setCell:(id)arg1;
 - (id)cell;
 - (void)setAllowsEditing:(BOOL)arg1;
@@ -116,6 +117,5 @@
 - (void)setUpdateDelegate:(id)arg1;
 - (void)setAbCellStyle:(int)arg1;
 - (void)reloadFromModel;
-- (void)setLabelText:(id)arg1;
 
 @end

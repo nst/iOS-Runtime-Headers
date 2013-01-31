@@ -39,21 +39,8 @@
 @property(retain) NSMutableDictionary * peers;
 @property(retain) GKDiscoveryBonjour * bonjour;
 
++ (id)parseDeviceIDFromServiceName:(id)arg1;
 
-- (void)forgetParticipant:(id)arg1 deviceID:(id)arg2;
-- (void)stopBrowsing;
-- (void)startBrowsingLocalPlayer:(id)arg1;
-- (void)stopAdvertising;
-- (id)startAdvertisingLocalPlayer:(id)arg1 discoveryInfo:(id)arg2;
-- (void)sendDataToParticipant:(id)arg1 deviceID:(id)arg2 data:(id)arg3 withCompletionHandler:(id)arg4;
-- (void)setReceiveDataHandler:(id)arg1;
-- (void)setPlayerLostHandler:(id)arg1;
-- (void)setPlayerFoundHandler:(id)arg1;
-- (void)setDeviceID:(id)arg1;
-- (id)peers;
-- (void)setPeers:(id)arg1;
-- (id)playerID;
-- (void)setPlayerID:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)setBonjour:(id)arg1;
@@ -74,5 +61,19 @@
 - (id)playerLostHandler;
 - (id)playerFoundHandler;
 - (id)deviceID;
+- (void)forgetParticipant:(id)arg1 deviceID:(id)arg2;
+- (void)stopBrowsing;
+- (void)startBrowsingLocalPlayer:(id)arg1;
+- (void)stopAdvertising;
+- (id)startAdvertisingLocalPlayer:(id)arg1 discoveryInfo:(id)arg2;
+- (void)sendDataToParticipant:(id)arg1 deviceID:(id)arg2 data:(id)arg3 withCompletionHandler:(id)arg4;
+- (void)setReceiveDataHandler:(id)arg1;
+- (void)setPlayerLostHandler:(id)arg1;
+- (void)setPlayerFoundHandler:(id)arg1;
+- (void)setDeviceID:(id)arg1;
+- (id)peers;
+- (void)setPeers:(id)arg1;
+- (id)playerID;
+- (void)setPlayerID:(id)arg1;
 
 @end

@@ -27,7 +27,6 @@
 + (id)getProcessIds;
 + (BOOL)isProcessRunning:(int)arg1;
 
-- (BOOL)terminate;
 - (int)compare:(id)arg1;
 - (id)name;
 - (id)description;
@@ -35,11 +34,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (struct timeval { int x1; int x2; })startTime;
-- (BOOL)isRunning;
-- (void)update;
-- (void)finalize;
-- (id)arguments;
 - (int)compareByUserAppName:(id)arg1;
 - (BOOL)signal:(int)arg1;
 - (id)initWithPid:(int)arg1;
@@ -60,5 +54,11 @@
 - (BOOL)isMachO;
 - (int)cpuType;
 - (int)pid;
+- (struct timeval { int x1; int x2; })startTime;
+- (BOOL)isRunning;
+- (void)update;
+- (void)finalize;
+- (id)arguments;
+- (BOOL)terminate;
 
 @end

@@ -26,17 +26,11 @@
 }
 
 
+- (int)repeatCount;
+- (double)acceleration;
 - (int)type;
 - (void)dealloc;
 - (id)init;
-- (void)setSpeed:(double)arg1;
-- (double)speed;
-- (void)setRepeatCount:(int)arg1;
-- (void)setType:(int)arg1;
-- (double)duration;
-- (void)setDuration:(double)arg1;
-- (int)repeatCount;
-- (double)acceleration;
 - (void)setDeceleration:(double)arg1;
 - (double)deceleration;
 - (void)setAcceleration:(double)arg1;
@@ -67,5 +61,11 @@
 - (id)groupId;
 - (void)setChildTimeNodeList:(id)arg1;
 - (BOOL)hasDuration;
+- (void)setSpeed:(double)arg1;
+- (double)speed;
+- (void)setRepeatCount:(int)arg1;
+- (void)setType:(int)arg1;
+- (double)duration;
+- (void)setDuration:(double)arg1;
 
 @end

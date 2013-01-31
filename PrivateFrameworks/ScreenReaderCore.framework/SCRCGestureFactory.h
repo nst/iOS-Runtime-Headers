@@ -198,6 +198,8 @@
 @property BOOL thumbRejectionEnabled;
 
 
+- (void)reset;
+- (void)dealloc;
 - (void)setThumbRejectionEnabled:(BOOL)arg1;
 - (BOOL)thumbRejectionEnabled;
 - (id)gestureStateString;
@@ -233,8 +235,7 @@
 - (void)_enterTrackingMode:(id)arg1;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 delegate:(id)arg2 threadKey:(id)arg3;
 - (unsigned int)fingerCount;
-- (void)reset;
-- (void)dealloc;
+- (float)distance;
 - (float)velocity;
 - (void)setOrientation:(int)arg1;
 - (int)direction;
@@ -243,6 +244,5 @@
 - (int)orientation;
 - (struct CGPoint { float x1; float x2; })startLocation;
 - (struct CGPoint { float x1; float x2; })endLocation;
-- (float)distance;
 
 @end

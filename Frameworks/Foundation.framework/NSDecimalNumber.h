@@ -13,12 +13,12 @@
     unsigned short _mantissa[0];
 }
 
-+ (id)numberWithUnsignedChar:(unsigned char)arg1;
 + (id)numberWithBool:(BOOL)arg1;
 + (id)numberWithInt:(int)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)numberWithChar:(BOOL)arg1;
-+ (id)decimalNumberWithString:(id)arg1;
++ (id)decimalNumberWithString:(id)arg1 locale:(id)arg2;
++ (id)numberWithUnsignedShort:(unsigned short)arg1;
++ (id)numberWithShort:(short)arg1;
 + (id)numberWithUnsignedLongLong:(unsigned long long)arg1;
 + (id)numberWithUnsignedInteger:(unsigned int)arg1;
 + (id)numberWithLong:(long)arg1;
@@ -28,7 +28,7 @@
 + (id)numberWithInteger:(int)arg1;
 + (id)numberWithLongLong:(long long)arg1;
 + (id)numberWithDouble:(double)arg1;
-+ (id)numberWithShort:(short)arg1;
++ (id)numberWithUnsignedChar:(unsigned char)arg1;
 + (void)setDefaultBehavior:(id)arg1;
 + (id)one;
 + (id)maximumDecimalNumber;
@@ -38,8 +38,8 @@
 + (id)notANumber;
 + (id)decimalNumberWithDecimal:(struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; })arg1;
 + (id)zero;
-+ (id)decimalNumberWithString:(id)arg1 locale:(id)arg2;
-+ (id)numberWithUnsignedShort:(unsigned short)arg1;
++ (id)numberWithChar:(BOOL)arg1;
++ (id)decimalNumberWithString:(id)arg1;
 + (id)two;
 
 - (BOOL)boolValue;
@@ -50,6 +50,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copy;
+- (unsigned char)unsignedCharValue;
+- (unsigned long)unsignedLongValue;
 - (const char *)objCType;
 - (unsigned long long)unsignedLongLongValue;
 - (long long)longLongValue;
@@ -60,14 +62,6 @@
 - (double)doubleValue;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned short)unsignedShortValue;
-- (short)shortValue;
-- (BOOL)charValue;
-- (long)longValue;
-- (id)descriptionWithLocale:(id)arg1;
-- (bool)_getCString:(char *)arg1 length:(int)arg2 multiplier:(double)arg3;
-- (unsigned char)unsignedCharValue;
-- (unsigned long)unsignedLongValue;
 - (id)decimalNumberByRoundingAccordingToBehavior:(id)arg1;
 - (id)decimalNumberByMultiplyingByPowerOf10:(short)arg1;
 - (id)decimalNumberByRaisingToPower:(unsigned int)arg1;
@@ -87,5 +81,11 @@
 - (id)initWithString:(id)arg1 locale:(id)arg2;
 - (id)decimalNumberByDividingBy:(id)arg1;
 - (struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; })decimalValue;
+- (unsigned short)unsignedShortValue;
+- (short)shortValue;
+- (BOOL)charValue;
+- (long)longValue;
+- (id)descriptionWithLocale:(id)arg1;
+- (bool)_getCString:(char *)arg1 length:(int)arg2 multiplier:(double)arg3;
 
 @end

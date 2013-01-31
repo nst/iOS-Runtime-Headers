@@ -14,9 +14,9 @@
 @property(retain) <MFDAStreamingContentConsumer> * streamConsumer;
 
 
-- (void)setError:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)error;
 - (void)searchResultFetchedWithResponses:(id)arg1;
 - (void)didEndStreamingForMailMessage:(id)arg1;
 - (void)consumeData:(char *)arg1 length:(int)arg2 format:(int)arg3 mailMessage:(id)arg4;
@@ -26,6 +26,6 @@
 - (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;
 - (void)waitUntilDone;
 - (BOOL)waitUntilDoneBeforeDate:(id)arg1;
-- (id)error;
+- (void)setError:(id)arg1;
 
 @end

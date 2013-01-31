@@ -10,9 +10,9 @@
 
 
 - (void)disposeGlyphStack;
-- (void)sync;
 - (struct CGSize { float x1; float x2; })customAdvanceForIndex:(long)arg1;
 - (id)initWithInterface:(id)arg1;
+- (void)sync;
 - (void)moveGlyphsFromRange:(struct { int x1; int x2; })arg1 toIndex:(long)arg2;
 - (void)swapGlyphsAtIndex:(long)arg1 withIndex:(long)arg2;
 - (void)insertGlyphsAtRange:(struct { int x1; int x2; })arg1;

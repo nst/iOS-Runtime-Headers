@@ -23,8 +23,8 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
+- (id)personID;
 - (struct sqlite3 { }*)db;
-- (void)beginTransaction;
 - (void)setDbWasRecreated:(BOOL)arg1;
 - (void)setStatementQueue:(id)arg1;
 - (void)setStatements:(struct __CFDictionary { }*)arg1;
@@ -53,7 +53,7 @@
 - (void)setPersistentObject:(id)arg1 forKey:(id)arg2;
 - (id)persistentObjectForKey:(id)arg1;
 - (void)shutDownForDestruction:(BOOL)arg1 completionBlock:(id)arg2;
-- (id)personID;
 - (void)endTransaction;
+- (void)beginTransaction;
 
 @end

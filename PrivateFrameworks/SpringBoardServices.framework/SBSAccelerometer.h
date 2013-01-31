@@ -18,14 +18,17 @@
 @property <SBSAccelerometerDelegate> * delegate;
 
 
-- (BOOL)orientationEventsEnabled;
-- (float)zThreshold;
-- (float)yThreshold;
-- (float)xThreshold;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
+- (void)accelerometer:(id)arg1 didChangeDeviceOrientation:(int)arg2;
+- (int)currentDeviceOrientation;
+- (void)setOrientationEventsEnabled:(BOOL)arg1;
+- (BOOL)orientationEventsEnabled;
+- (float)zThreshold;
+- (float)yThreshold;
+- (float)xThreshold;
 - (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
 - (void)setZThreshold:(float)arg1;
 - (void)setYThreshold:(float)arg1;
@@ -34,8 +37,5 @@
 - (double)updateInterval;
 - (BOOL)accelerometerEventsEnabled;
 - (void)setAccelerometerEventsEnabled:(BOOL)arg1;
-- (void)accelerometer:(id)arg1 didChangeDeviceOrientation:(int)arg2;
-- (int)currentDeviceOrientation;
-- (void)setOrientationEventsEnabled:(BOOL)arg1;
 
 @end

@@ -15,6 +15,7 @@
 
 
 - (void)dealloc;
+- (void)removeAction:(id)arg1;
 - (void)setAction:(id)arg1 hidden:(BOOL)arg2;
 - (BOOL)isActionHidden:(id)arg1;
 - (id)actionWithActionGrouping:(int)arg1 atIndex:(int)arg2;
@@ -36,6 +37,5 @@
 - (int)groupingCountForProperty:(int)arg1;
 - (id)actionsForProperty:(int)arg1 withActionGroupingAtIndex:(int)arg2;
 - (id)actionsForProperty:(int)arg1 withActionGrouping:(int)arg2;
-- (void)removeAction:(id)arg1;
 
 @end

@@ -12,16 +12,16 @@
 
 @property BOOL forceMMS;
 
++ (double)maxTrimDurationForVideo;
 + (double)maxTrimDurationForAudio;
 + (id)_copyEntityForAddressString:(id)arg1;
 + (id)_newMessageWithComposition:(id)arg1 guid:(id)arg2;
 + (id)_xpcConnection;
 + (double)maxTrimDurationForMediaType:(int)arg1;
-+ (double)maxTrimDurationForVideo;
 
-- (id)recipient;
-- (id)groupID;
 - (void)dealloc;
+- (int)buttonColor;
+- (id)recipients;
 - (void)addRecipientAddress:(id)arg1;
 - (BOOL)isValidAddress:(id)arg1;
 - (int)_maxAttachmentCount;
@@ -52,7 +52,7 @@
 - (id)unsentComposition;
 - (id)serviceDisplayName;
 - (void)addMessage:(id)arg1;
-- (id)recipients;
-- (int)buttonColor;
+- (id)recipient;
+- (id)groupID;
 
 @end

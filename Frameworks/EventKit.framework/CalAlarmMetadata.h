@@ -18,14 +18,14 @@
 
 + (id)metadataWithData:(id)arg1;
 
+- (void)setSummary:(id)arg1;
+- (id)summary;
+- (id)dataRepresentation;
 - (id)description;
 - (void)dealloc;
 - (id)attach;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setSummary:(id)arg1;
-- (id)summary;
-- (id)dataRepresentation;
 - (void)applyToAlarm:(id)arg1;
 - (id)initWithICSAlarm:(id)arg1;
 - (void)setAttach:(id)arg1;

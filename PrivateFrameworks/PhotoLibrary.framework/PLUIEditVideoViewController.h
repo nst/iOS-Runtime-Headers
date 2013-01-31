@@ -20,11 +20,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (id)initWithProperties:(id)arg1;
-- (BOOL)_displaysFullScreen;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)navigationItem;
 - (void)setViewClass:(Class)arg1;
 - (id)initWithPhoto:(id)arg1 trimTitle:(id)arg2;
 - (BOOL)parentInPopoverException;
@@ -45,5 +40,10 @@
 - (float)videoViewScrubberYOrigin:(id)arg1 forOrientation:(int)arg2;
 - (void)_trimVideo:(id)arg1;
 - (id)uiipc_imagePickerController;
+- (id)initWithProperties:(id)arg1;
+- (BOOL)_displaysFullScreen;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)navigationItem;
 
 @end

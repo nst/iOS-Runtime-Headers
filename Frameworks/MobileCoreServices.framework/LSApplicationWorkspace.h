@@ -17,6 +17,7 @@
 - (id)applicationsAvailableForHandlingURLScheme:(id)arg1;
 - (id)publicURLSchemes;
 - (id)deviceIdentifierForAdvertising;
+- (void)clearAdvertisingIdentifier;
 - (BOOL)invalidateIconCache:(id)arg1;
 - (BOOL)unregisterApplication:(id)arg1;
 - (BOOL)registerApplication:(id)arg1;

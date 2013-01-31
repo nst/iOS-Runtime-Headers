@@ -30,8 +30,8 @@
 @property(copy) NSString * status;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (void)setItemFunction:(id)arg1;
 - (id)itemFunction;
@@ -43,9 +43,9 @@
 - (void)_finishItemWithItem:(id)arg1;
 - (id)_newPlaceholderWithMIMEType:(id)arg1;
 - (id)nativeActivityItemProvider;
-- (void)setItem:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (void)setStatus:(id)arg1;
 - (id)status;
@@ -53,6 +53,6 @@
 - (float)progress;
 - (id)MIMEType;
 - (void)setProgress:(float)arg1;
-- (id)attributeKeys;
+- (void)setItem:(id)arg1;
 
 @end

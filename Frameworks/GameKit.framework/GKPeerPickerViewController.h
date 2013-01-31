@@ -56,6 +56,28 @@
 @property(retain) NSTimer * invitationWaitTimer;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (int)state;
+- (void)dealloc;
+- (void)didPresentAlertView:(id)arg1;
+- (void)dismiss;
+- (BOOL)isVisible;
+- (BOOL)isAnimating;
+- (void)loadView;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)setAnimating:(BOOL)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)setState:(int)arg1;
+- (void)didReceiveMemoryWarning;
+- (void)show;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)setBluetoothStatus:(int)arg1;
 - (id)searchingForServicesString;
 - (void)session:(id)arg1 didFailWithError:(id)arg2;
@@ -129,27 +151,5 @@
 - (void)setConnectionTypesMask:(unsigned int)arg1;
 - (void)setStatusView:(id)arg1;
 - (id)statusView;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (int)state;
-- (void)dealloc;
-- (void)didPresentAlertView:(id)arg1;
-- (void)dismiss;
-- (BOOL)isVisible;
-- (BOOL)isAnimating;
-- (void)loadView;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)setAnimating:(BOOL)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)setState:(int)arg1;
-- (void)didReceiveMemoryWarning;
-- (void)show;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 
 @end

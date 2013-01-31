@@ -13,6 +13,12 @@
 
 
 - (void)dealloc;
+- (void)setTile:(id)arg1;
+- (id)tile;
+- (void)_handleCompletionWithStatus:(int)arg1;
+- (void)wallpaperImageViewControllerDidCancel:(id)arg1;
+- (void)wallpaperImageViewControllerDidFinishSaving:(id)arg1;
+- (void)wallpaperImageViewControllerDidCropWallpaper:(id)arg1;
 - (BOOL)_dismissActivityFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (BOOL)_canPerformWithSuppliedActivityItems:(id)arg1;
@@ -21,11 +27,5 @@
 - (id)activityImage;
 - (id)activityTitle;
 - (id)activityType;
-- (void)setTile:(id)arg1;
-- (id)tile;
-- (void)_handleCompletionWithStatus:(int)arg1;
-- (void)wallpaperImageViewControllerDidCancel:(id)arg1;
-- (void)wallpaperImageViewControllerDidFinishSaving:(id)arg1;
-- (void)wallpaperImageViewControllerDidCropWallpaper:(id)arg1;
 
 @end

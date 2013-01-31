@@ -30,11 +30,11 @@
 + (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
 + (id)newWithMessage:(id)arg1;
 
+- (void)archive;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (id)message;
-- (void)archive;
+- (id)initWithMessage:(id)arg1;
 - (void)setCompositionSpecification:(id)arg1;
 - (void)setCellDataOnly:(BOOL)arg1;
 - (void)deliverAsynchronously;
@@ -53,6 +53,6 @@
 - (int)deliverSynchronously;
 - (id)compositionSpecification;
 - (id)account;
-- (id)initWithMessage:(id)arg1;
+- (id)message;
 
 @end

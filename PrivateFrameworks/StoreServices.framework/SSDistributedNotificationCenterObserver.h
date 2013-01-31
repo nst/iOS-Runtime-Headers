@@ -26,7 +26,7 @@
 - (id)name;
 - (void)dealloc;
 - (id)initWithName:(id)arg1 queue:(id)arg2 block:(id)arg3;
-- (id)dispatchQueue;
 - (id)block;
+- (id)dispatchQueue;
 
 @end

@@ -20,6 +20,10 @@
 }
 
 
+- (id)data;
+- (id)description;
+- (void)dealloc;
+- (int)setRange:(struct _PTPRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (long long)copyFromBuffer:(void*)arg1 numBytes:(long long)arg2;
 - (long long)copyHeaderToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2;
 - (long long)copyDataToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2 fromOffset:(unsigned long long)arg3;
@@ -41,11 +45,7 @@
 - (long long)copyToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2;
 - (unsigned long)transactionID;
 - (id)contentForTCP;
-- (id)data;
-- (id)description;
-- (void)dealloc;
 - (struct _PTPRange { unsigned long long x1; unsigned long long x2; })range;
 - (void)setData:(id)arg1;
-- (int)setRange:(struct _PTPRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

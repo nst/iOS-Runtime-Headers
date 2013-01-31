@@ -13,7 +13,6 @@
 @property(retain) NSDictionary * setters;
 
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)setters;
@@ -25,5 +24,6 @@
 - (id)requestBody;
 - (int)commandCode;
 - (int)taskStatusForExchangeStatus:(int)arg1;
+- (void)finishWithError:(id)arg1;
 
 @end

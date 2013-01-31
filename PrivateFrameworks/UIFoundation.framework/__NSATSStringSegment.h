@@ -15,6 +15,8 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (id)initWithOriginalString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)_setOriginalString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (oneway void)release;
@@ -23,7 +25,5 @@
 - (const unsigned short*)_fastCharacterContents;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
-- (id)initWithOriginalString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)_setOriginalString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 
 @end

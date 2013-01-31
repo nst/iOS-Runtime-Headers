@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CTCarrier;
+@class CTCarrier, CTRadioAccessTechnology;
 
 @interface CTTelephonyNetworkInfo : NSObject  {
     void *_internal;
@@ -16,14 +16,18 @@
   /* Error parsing encoded ivar type info: @? */
     id _subscriberCellularProviderDidUpdateNotifier;
 
+    CTRadioAccessTechnology *_radioAccessTechnology;
 }
 
 @property(retain) CTCarrier * subscriberCellularProvider;
 @property(copy) id subscriberCellularProviderDidUpdateNotifier;
+@property(retain) CTRadioAccessTechnology * radioAccessTechnology;
 
 
 - (void)dealloc;
 - (id)init;
+- (void)setRadioAccessTechnology:(id)arg1;
+- (id)radioAccessTechnology;
 - (void)postUpdatesIfNecessary;
 - (void)handleNotificationFromConnection:(void*)arg1 ofType:(id)arg2 withInfo:(id)arg3;
 - (id)subscriberCellularProviderDidUpdateNotifier;

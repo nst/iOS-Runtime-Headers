@@ -17,7 +17,6 @@
 + (id)createTimingInstanceWithStartTime:(float)arg1;
 
 - (id)description;
-- (BOOL)isRunning;
 - (float)totalTime;
 - (float)stopTiming;
 - (float)startTiming;
@@ -25,5 +24,6 @@
 - (void)setTotalTime:(float)arg1;
 - (void)setStopTiming:(float)arg1;
 - (void)setStartTiming:(float)arg1;
+- (BOOL)isRunning;
 
 @end

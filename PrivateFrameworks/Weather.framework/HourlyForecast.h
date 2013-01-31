@@ -17,12 +17,12 @@
 @property float percentPrecipitation;
 
 
-- (id)description;
-- (void)dealloc;
 - (void)setPercentPrecipitation:(float)arg1;
 - (float)percentPrecipitation;
 - (id)time24Hour;
 - (void)setTime24Hour:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setTemperature:(id)arg1;
 - (id)temperature;
 - (void)setConditionCode:(int)arg1;

@@ -25,17 +25,16 @@
     } _synthesizerFlags;
 }
 
-+ (void)_localeDidChange;
 + (BOOL)isSystemSpeaking;
 + (id)availableLanguageCodes;
 + (id)availableVoices;
 + (id)availableVoicesForLanguageCode:(id)arg1;
++ (void)_localeDidChange;
 
-- (float)rate;
-- (id)setRate:(float)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)dealloc;
-- (id)init;
+- (id)setVolume:(float)arg1;
+- (float)volume;
+- (id)setPitch:(float)arg1;
+- (float)pitch;
 - (void)_handleSpeech:(struct __VSSpeech { }*)arg1 willSpeakMarkType:(int)arg2 inRange:(struct { int x1; int x2; })arg3;
 - (void)_handleSpeech:(struct __VSSpeech { }*)arg1 completed:(BOOL)arg2 phonemesSpoken:(struct __CFString { }*)arg3 withError:(id)arg4;
 - (void)_handleSpeechContinued:(struct __VSSpeech { }*)arg1;
@@ -64,10 +63,11 @@
 - (id)startSpeakingAttributedString:(id)arg1 toURL:(id)arg2 withLanguageCode:(id)arg3;
 - (id)initForInputFeedback;
 - (id)stopSpeakingAtNextBoundary:(int)arg1;
-- (id)setVolume:(float)arg1;
-- (float)volume;
-- (id)setPitch:(float)arg1;
-- (float)pitch;
 - (int)footprint;
+- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)setRate:(float)arg1;
+- (float)rate;
 
 @end

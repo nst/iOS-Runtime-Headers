@@ -49,9 +49,11 @@
 + (id)generateMachineUUIDString;
 + (BOOL)doBasicSanityCheckForUbiquityRootURL:(id)arg1 withError:(id*)arg2;
 + (id)createDefaultLocalPeerID;
++ (void)removeUbiquityMetadataFromStore:(id)arg1;
 
 - (void)dealloc;
 - (id)init;
+- (id)options;
 - (BOOL)needsMetadataRecovery;
 - (void)_setUbiquityRootLocation:(id)arg1 storeName:(id)arg2 localPeerID:(id)arg3 andModelVersionHash:(id)arg4;
 - (BOOL)migrateMetadataRoot:(id*)arg1;
@@ -64,6 +66,5 @@
 - (BOOL)ubiquityEnabled;
 - (BOOL)validateOptionsWithError:(id*)arg1;
 - (id)initWithPersistentStoreCoordinator:(id)arg1 andStoreOptions:(id)arg2 forPersistentStoreOfType:(id)arg3 atURL:(id)arg4;
-- (id)options;
 
 @end

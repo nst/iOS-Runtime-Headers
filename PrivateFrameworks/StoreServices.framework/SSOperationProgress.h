@@ -31,6 +31,7 @@
 
 
 - (void)setCurrentValue:(long long)arg1;
+- (int)operationType;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -51,11 +52,10 @@
 - (void)setNormalizedMaxValue:(long long)arg1;
 - (void)setNormalizedCurrentValue:(long long)arg1;
 - (void)setCanPause:(BOOL)arg1;
-- (void)snapshot;
-- (void)setMaxValue:(long long)arg1;
-- (int)operationType;
 - (double)estimatedTimeRemaining;
 - (void)_updateStatisticsFromSnapshots;
 - (long long)maxValue;
+- (void)snapshot;
+- (void)setMaxValue:(long long)arg1;
 
 @end

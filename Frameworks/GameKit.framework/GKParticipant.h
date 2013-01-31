@@ -22,6 +22,14 @@
 @property int kind;
 
 
+- (id)description;
+- (void)dealloc;
+- (void)setStatus:(int)arg1;
+- (int)status;
+- (int)kind;
+- (id)image;
+- (id)title;
+- (void)setImage:(id)arg1;
 - (id)statusString;
 - (BOOL)cancelBoxVisible;
 - (BOOL)progressIndicatorVisible;
@@ -31,13 +39,5 @@
 - (void)setPlayer:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)setPlayer:(id)arg1;
 - (id)player;
-- (id)description;
-- (void)dealloc;
-- (void)setStatus:(int)arg1;
-- (int)status;
-- (int)kind;
-- (id)image;
-- (id)title;
-- (void)setImage:(id)arg1;
 
 @end

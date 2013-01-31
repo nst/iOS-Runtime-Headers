@@ -32,11 +32,11 @@
     BOOL mLoadingMessageVisible;
 }
 
-+ (id)baseDate;
 + (id)cssStyleCache;
 + (void)setBaseDate1904:(BOOL)arg1;
 + (id)borderWidthCache;
 + (id)borderStyleCache;
++ (id)baseDate;
 
 - (void)dealloc;
 - (bool)isMultiPage;

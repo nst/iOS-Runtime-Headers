@@ -26,11 +26,7 @@
 - (id)identifier;
 - (id)description;
 - (void)dealloc;
-- (void)setVersion:(unsigned int)arg1;
-- (unsigned int)version;
-- (id)displayName;
-- (void)setIdentifier:(id)arg1;
-- (id)dictionaryRepresentation;
+- (void)setDisplayName:(id)arg1;
 - (void)setRequirementsMask:(unsigned int)arg1;
 - (unsigned int)requirementsMask;
 - (void)setSnippetLogoPath:(id)arg1;
@@ -41,7 +37,11 @@
 - (id)initWithSource:(id)arg1 localizedAttribution:(id)arg2 logoPath:(id)arg3 snippetLogoPath:(id)arg4;
 - (id)attributionApps;
 - (void)setAttributionApps:(id)arg1;
-- (void)setDisplayName:(id)arg1;
+- (void)setVersion:(unsigned int)arg1;
+- (unsigned int)version;
+- (id)displayName;
+- (void)setIdentifier:(id)arg1;
+- (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 
 @end

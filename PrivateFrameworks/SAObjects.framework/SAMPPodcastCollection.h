@@ -13,12 +13,12 @@
 + (id)podcastCollectionWithDictionary:(id)arg1 context:(id)arg2;
 + (id)podcastCollection;
 
-- (id)groupIdentifier;
-- (id)artist;
-- (void)setArtist:(id)arg1;
 - (void)setSortArtist:(id)arg1;
 - (id)sortArtist;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setArtist:(id)arg1;
+- (id)artist;
+- (id)groupIdentifier;
 
 @end

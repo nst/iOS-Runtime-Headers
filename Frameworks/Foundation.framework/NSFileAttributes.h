@@ -61,7 +61,7 @@
 - (id)objectForKey:(id)arg1;
 - (void)dealloc;
 - (unsigned int)count;
-- (unsigned int)filePosixPermissions;
+- (unsigned long long)fileSize;
 - (id)fileType;
 - (id)fileModificationDate;
 - (id)keyEnumerator;
@@ -72,6 +72,6 @@
 - (id)fileGroupOwnerAccountName;
 - (unsigned int)fileOwnerAccountNumber;
 - (id)fileOwnerAccountName;
-- (unsigned long long)fileSize;
+- (unsigned int)filePosixPermissions;
 
 @end

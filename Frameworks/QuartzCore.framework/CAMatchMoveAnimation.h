@@ -24,11 +24,11 @@
 
 + (id)defaultValueForKey:(id)arg1;
 
+- (void)setAdditive:(BOOL)arg1;
+- (BOOL)isAdditive;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
 - (void)setKeyPath:(id)arg1;
 - (id)keyPath;
-- (void)setAdditive:(BOOL)arg1;
-- (BOOL)isAdditive;
 - (void)setAppliesRotation:(BOOL)arg1;
 - (void)setAppliesScale:(BOOL)arg1;
 - (void)setAppliesY:(BOOL)arg1;

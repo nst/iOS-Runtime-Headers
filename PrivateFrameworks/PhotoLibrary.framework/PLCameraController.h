@@ -74,6 +74,7 @@
         unsigned int supportsPanorama : 1; 
         unsigned int supportsVideoStillCapture : 1; 
         unsigned int hasFlash : 1; 
+        unsigned int hasBackCamera : 1; 
         unsigned int hasFrontCamera : 1; 
         unsigned int deferStartVideoCapture : 1; 
         unsigned int inCall : 1; 
@@ -164,25 +165,12 @@
 
 + (id)sharedInstance;
 
-- (id)currentSession;
-- (void)_serverDied:(id)arg1;
-- (void)_applicationSuspended:(id)arg1;
+- (void)autofocus;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)currentDevice;
 - (void)dealloc;
 - (id)init;
-- (void)_applicationDidBecomeActive:(id)arg1;
-- (void)_applicationWillEnterForeground:(id)arg1;
-- (void)setCameraDevice:(int)arg1;
-- (int)cameraDevice;
-- (void)stopVideoCapture;
-- (void)startVideoCapture;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
-- (void)autofocus;
-- (void)stopPreview;
-- (void)startPreview;
 - (void)_setDelaySuspend:(BOOL)arg1;
 - (void)setCaptureOrientation:(int)arg1;
 - (float)zoomFactor;
@@ -236,6 +224,7 @@
 - (BOOL)_modeUsesCompassHeading;
 - (BOOL)convertSampleBufferToJPEG;
 - (void)setConvertSampleBufferToJPEG:(BOOL)arg1;
+- (BOOL)hasRearCamera;
 - (BOOL)hasFrontCamera;
 - (void)_setDefaultPrewarmDate:(id)arg1;
 - (void)setCameraMode:(int)arg1;
@@ -347,6 +336,19 @@
 - (void)_synchronizeHDRSettings;
 - (void)setIsCameraApp:(BOOL)arg1;
 - (BOOL)isCameraApp;
+- (void)stopPreview;
+- (void)startPreview;
+- (void)_applicationDidBecomeActive:(id)arg1;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)setCameraDevice:(int)arg1;
+- (int)cameraDevice;
+- (void)stopVideoCapture;
+- (void)startVideoCapture;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
+- (void)_serverDied:(id)arg1;
+- (void)_applicationSuspended:(id)arg1;
+- (id)currentSession;
 - (BOOL)isReady;
 - (void)captureOutput:(id)arg1 didDropSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 fromConnection:(id)arg3;
 - (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;

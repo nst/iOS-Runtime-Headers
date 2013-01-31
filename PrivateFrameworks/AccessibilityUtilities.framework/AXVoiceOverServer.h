@@ -7,10 +7,10 @@
 
 + (id)server;
 
+- (void)dealloc;
+- (id)init;
 - (id)_serviceName;
 - (void)triggerCommand:(int)arg1;
 - (BOOL)_connectIfNecessary;
-- (void)dealloc;
-- (id)init;
 
 @end

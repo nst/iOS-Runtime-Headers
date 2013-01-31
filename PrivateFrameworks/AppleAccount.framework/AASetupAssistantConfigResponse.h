@@ -23,6 +23,7 @@
 @property(readonly) BOOL setupAssistantServerEnabled;
 @property(readonly) NSString * loginDelegatesURL;
 @property(readonly) NSString * activeEmailDomain;
+@property(readonly) NSString * upgradeStatusURL;
 
 
 - (void).cxx_destruct;
@@ -34,6 +35,7 @@
 - (id)aboutURL;
 - (id)xmlUI;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
+- (id)upgradeStatusURL;
 - (id)upgradeIOSTermsUI;
 - (id)loginDelegatesURL;
 - (id)createDelegateAccountsURL;

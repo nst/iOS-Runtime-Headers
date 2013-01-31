@@ -10,8 +10,8 @@
 
 
 - (id)init;
-- (BOOL)handleEvent:(struct __GSEvent { }*)arg1;
-- (void)SetProject:(id)arg1;
 - (void)quit;
+- (void)SetProject:(id)arg1;
+- (BOOL)handleEvent:(struct __GSEvent { }*)arg1;
 
 @end

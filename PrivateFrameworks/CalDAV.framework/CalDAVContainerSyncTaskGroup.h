@@ -33,13 +33,21 @@
 
 
 - (void)dealloc;
-- (id)calendar;
-- (void)setCalendar:(id)arg1;
 - (id)todoFilterEndDate;
 - (id)todoFilterStartDate;
 - (id)eventFilterEndDate;
 - (id)eventFilterStartDate;
 - (BOOL)supportsExtendedCalendarQuery;
+- (BOOL)shouldFetchMoreETags;
+- (BOOL)shouldFetchResourceWithEtag:(id)arg1 propertiesToValues:(id)arg2;
+- (void)applyAdditionalPropertiesFromPostTask:(id)arg1;
+- (void)applyAdditionalPropertiesFromPutTask:(id)arg1;
+- (id)copyGetTaskWithURL:(id)arg1;
+- (id)copyMultiGetTaskWithURLs:(id)arg1;
+- (id)copyGetEtagTaskWithPropertiesToFind:(id)arg1;
+- (id)copyAdditionalResourcePropertiesToFetch;
+- (id)copyPutTaskWithPayloadItem:(id)arg1 forAction:(id)arg2;
+- (id)dataContentType;
 - (void)setFallbackOnMultiGetError:(BOOL)arg1;
 - (BOOL)fallbackOnMultiGetError;
 - (void)setSupportsExtendedCalendarQuery:(BOOL)arg1;
@@ -61,15 +69,7 @@
 - (id)initWithFolderURL:(id)arg1 previousCTag:(id)arg2 previousSyncToken:(id)arg3 actions:(id)arg4 accountInfoProvider:(id)arg5 taskManager:(id)arg6 appSpecificCalendarItemClass:(Class)arg7;
 - (void)setSyncTodos:(BOOL)arg1;
 - (void)setSyncEvents:(BOOL)arg1;
-- (BOOL)shouldFetchMoreETags;
-- (BOOL)shouldFetchResourceWithEtag:(id)arg1 propertiesToValues:(id)arg2;
-- (void)applyAdditionalPropertiesFromPostTask:(id)arg1;
-- (void)applyAdditionalPropertiesFromPutTask:(id)arg1;
-- (id)copyGetTaskWithURL:(id)arg1;
-- (id)copyMultiGetTaskWithURLs:(id)arg1;
-- (id)copyGetEtagTaskWithPropertiesToFind:(id)arg1;
-- (id)copyAdditionalResourcePropertiesToFetch;
-- (id)copyPutTaskWithPayloadItem:(id)arg1 forAction:(id)arg2;
-- (id)dataContentType;
+- (id)calendar;
+- (void)setCalendar:(id)arg1;
 
 @end

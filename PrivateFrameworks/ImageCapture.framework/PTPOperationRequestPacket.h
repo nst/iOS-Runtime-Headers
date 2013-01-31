@@ -11,6 +11,7 @@
 }
 
 
+- (id)description;
 - (void)setParameter5:(unsigned long)arg1;
 - (void)setParameter4:(unsigned long)arg1;
 - (void)setPparameter:(unsigned long)arg1 atIndex:(unsigned long)arg2;
@@ -42,6 +43,5 @@
 - (id)initWithTCPBuffer:(void*)arg1;
 - (unsigned long)transactionID;
 - (id)contentForTCP;
-- (id)description;
 
 @end

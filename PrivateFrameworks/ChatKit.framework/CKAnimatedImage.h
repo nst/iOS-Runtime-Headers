@@ -15,12 +15,12 @@
 
 - (id)description;
 - (void)dealloc;
-- (id)image;
-- (void)setImage:(id)arg1;
 - (void)setDurations:(id)arg1;
 - (id)_initWithImage:(id)arg1 durations:(id)arg2;
 - (id)frames;
 - (id)initWithImages:(id)arg1 durations:(id)arg2;
 - (id)durations;
+- (id)image;
+- (void)setImage:(id)arg1;
 
 @end

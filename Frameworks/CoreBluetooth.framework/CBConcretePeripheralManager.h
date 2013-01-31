@@ -14,8 +14,9 @@
 }
 
 
-- (void)stopAdvertising;
 - (void)dealloc;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
+- (void)stopAdvertising;
 - (void)handleReadyForUpdates:(id)arg1;
 - (void)handleAdvertisingStopped:(id)arg1;
 - (void)handleAdvertisingStarted:(id)arg1;
@@ -36,6 +37,5 @@
 - (void)xpcConnectionDidReset:(id)arg1;
 - (void)handleStateUpdated:(id)arg1;
 - (void)sendMsg:(int)arg1 args:(id)arg2;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 
 @end

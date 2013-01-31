@@ -9,12 +9,12 @@
 }
 
 
-- (void)reset;
-- (void)dealloc;
-- (id)init;
 - (void)forEachFeature:(id)arg1;
 - (void)removeDeadFeatures;
 - (unsigned int)getFeatures:(struct LabelFeature {}**)arg1 forTile:(id)arg2 ofType:(int)arg3;
 - (unsigned int)maximumFeatureCountForTile:(id)arg1 ofType:(int)arg2;
+- (void)reset;
+- (void)dealloc;
+- (id)init;
 
 @end

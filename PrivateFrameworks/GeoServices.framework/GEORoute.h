@@ -83,15 +83,6 @@
 @property(retain) NSData * unpackedLatLngVertices;
 
 
-- (int)routeType;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)debugDescription;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
 - (id)steps;
 - (unsigned int)stepsCount;
 - (unsigned int*)trafficColorOffsets;
@@ -106,6 +97,17 @@
 - (BOOL)hasName;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (void)setName:(id)arg1;
+- (id)name;
+- (id)debugDescription;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (unsigned int)distance;
+- (void)setDistance:(unsigned int)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (unsigned int)pointCount;
 - (BOOL)isComplete;
 - (BOOL)isContingentRouteFor:(id)arg1 afterPoint:(unsigned int)arg2 mainRoutes:(id)arg3;
 - (id)zilchDataFromStepIndex:(unsigned int)arg1;
@@ -182,9 +184,7 @@
 - (id)phoneticName;
 - (BOOL)hasPhoneticName;
 - (void)setPhoneticName:(id)arg1;
-- (unsigned int)distance;
-- (void)setDistance:(unsigned int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (unsigned int)pointCount;
+- (id)dictionaryRepresentation;
+- (int)routeType;
 
 @end

@@ -10,7 +10,6 @@
 }
 
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
 - (id)messageID;
 - (int)handleStreamOperation:(int)arg1 forCodePage:(int)arg2 tag:(int)arg3 withParentItem:(id)arg4 withData:(char *)arg5 dataLength:(int)arg6;
@@ -20,5 +19,6 @@
 - (id)requestBody;
 - (int)commandCode;
 - (id)attachmentName;
+- (void)finishWithError:(id)arg1;
 
 @end

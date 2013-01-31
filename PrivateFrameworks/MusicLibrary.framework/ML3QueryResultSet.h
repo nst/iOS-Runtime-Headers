@@ -35,7 +35,7 @@
 - (void)enumerateSectionsUsingBlock:(id)arg1;
 - (void)enumeratePersistentIDsUsingBlock:(id)arg1;
 - (id)query;
-- (void)enumerateSectionHeadersUsingBlock:(id)arg1;
 - (id)sectionIndexTitles;
+- (void)enumerateSectionHeadersUsingBlock:(id)arg1;
 
 @end

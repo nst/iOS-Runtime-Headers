@@ -43,24 +43,6 @@
 - (oneway void)release;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (unsigned int)count;
-- (void)_setProcessingIdempotentKVO:(BOOL)arg1;
-- (void)willChange;
-- (void)_assignOrderKeysUsingCount:(unsigned int)arg1;
-- (void)_updateOrderKeysFromOrderOfObjectIDs:(id)arg1;
-- (id)_newOrderKeys;
-- (void)_populateOrderKeysUsingSnapshot:(id)arg1 orderKeys:(id)arg2 newIndexes:(unsigned int**)arg3 reorderedIndexes:(char **)arg4;
-- (unsigned int)_orderKeyForObject:(id)arg1;
-- (BOOL)_hasOrderKeys;
-- (Class)classForArchiver;
-- (id)replacementObjectForCoder:(id)arg1;
-- (BOOL)_isIdenticalFault:(id)arg1;
-- (BOOL)_shouldProcessKVOChange;
-- (id)initWithSource:(id)arg1 destinations:(id)arg2 forRelationship:(id)arg3 inContext:(id)arg4;
-- (id)relationship;
-- (void)turnIntoFault;
-- (BOOL)isFault;
-- (void)willRead;
-- (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
 - (id)initWithOrderedSet:(id)arg1;
 - (BOOL)isEqualToOrderedSet:(id)arg1;
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
@@ -94,5 +76,23 @@
 - (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
 - (void)getObjects:(id*)arg1;
 - (id)descriptionWithLocale:(id)arg1;
+- (void)_setProcessingIdempotentKVO:(BOOL)arg1;
+- (void)willChange;
+- (void)_assignOrderKeysUsingCount:(unsigned int)arg1;
+- (void)_updateOrderKeysFromOrderOfObjectIDs:(id)arg1;
+- (id)_newOrderKeys;
+- (void)_populateOrderKeysUsingSnapshot:(id)arg1 orderKeys:(id)arg2 newIndexes:(unsigned int**)arg3 reorderedIndexes:(char **)arg4;
+- (unsigned int)_orderKeyForObject:(id)arg1;
+- (BOOL)_hasOrderKeys;
+- (Class)classForArchiver;
+- (id)replacementObjectForCoder:(id)arg1;
+- (BOOL)_isIdenticalFault:(id)arg1;
+- (BOOL)_shouldProcessKVOChange;
+- (id)initWithSource:(id)arg1 destinations:(id)arg2 forRelationship:(id)arg3 inContext:(id)arg4;
+- (id)relationship;
+- (void)turnIntoFault;
+- (BOOL)isFault;
+- (void)willRead;
+- (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
 
 @end

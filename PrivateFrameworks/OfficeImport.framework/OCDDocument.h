@@ -17,9 +17,9 @@
 @property(readonly) OADBlipCollection * blips;
 
 
+- (id)summary;
 - (void)dealloc;
 - (id)init;
-- (id)summary;
 - (void)setWriter:(id)arg1;
 - (id)writer;
 - (id)reader;

@@ -10,6 +10,8 @@
 @property unsigned int mapType;
 
 
+- (void)setMapType:(unsigned int)arg1;
+- (unsigned int)mapType;
 - (void)dealloc;
 - (id)init;
 - (void)didMoveToSuperview;
@@ -17,7 +19,5 @@
 - (void)_layoutLabel;
 - (id)_attributesWithStroke:(BOOL)arg1;
 - (void)_prepareLabel;
-- (void)setMapType:(unsigned int)arg1;
-- (unsigned int)mapType;
 
 @end

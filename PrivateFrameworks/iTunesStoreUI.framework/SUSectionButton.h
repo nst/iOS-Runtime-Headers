@@ -28,12 +28,9 @@
 @property int tag;
 
 
-- (void)setImageURL:(id)arg1;
-- (id)imageURL;
 - (void)setImageURLScale:(float)arg1;
 - (void)setDisplayTitle:(id)arg1;
 - (void)setAccessibilityTitle:(id)arg1;
-- (id)displayTitle;
 - (id)accessibilityTitle;
 - (float)imageURLScale;
 - (void)applyToBarButtonItem:(id)arg1;
@@ -46,5 +43,8 @@
 - (int)tag;
 - (void)setTag:(int)arg1;
 - (void)setImage:(id)arg1;
+- (id)displayTitle;
+- (void)setImageURL:(id)arg1;
+- (id)imageURL;
 
 @end

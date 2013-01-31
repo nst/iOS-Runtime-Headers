@@ -10,13 +10,13 @@
 }
 
 
-- (BOOL)canReload;
-- (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (void)dealloc;
 - (void)setValues:(id)arg1 titleDictionary:(id)arg2;
 - (id)controlValue;
 - (id)newControl;
-- (void)dealloc;
+- (BOOL)canReload;
+- (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (void)setValue:(id)arg1;
 - (void)prepareForReuse;
 - (void)setBackgroundView:(id)arg1;

@@ -29,6 +29,12 @@
 @property(copy) NSArray * responseBindings;
 
 
+- (id)protocolVersion;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setService:(id)arg1;
+- (id)messageBody;
 - (id)URIs;
 - (id)responseCertificate;
 - (void)setURIs:(id)arg1;
@@ -39,7 +45,7 @@
 - (void)setRealm:(id)arg1;
 - (id)responseBindings;
 - (id)userID;
-- (id)bagKey;
+- (id)service;
 - (void)setResponseCertificate:(id)arg1;
 - (id)authenticationInfo;
 - (id)csr;
@@ -53,15 +59,9 @@
 - (BOOL)wantsCompressedBody;
 - (id)requiredKeys;
 - (BOOL)wantsBinaryPush;
-- (void)setProtocolVersion:(id)arg1;
-- (id)protocolVersion;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
 - (int)command;
-- (id)service;
-- (void)setService:(id)arg1;
-- (id)messageBody;
+- (id)bagKey;
+- (void)setProtocolVersion:(id)arg1;
 - (id)realm;
 
 @end

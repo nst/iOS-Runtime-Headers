@@ -10,11 +10,11 @@
 }
 
 
-- (void)dealloc;
-- (void)highlight;
 - (void)willDetachWebNodeHighlight:(id)arg1;
 - (void)didAttachWebNodeHighlight:(id)arg1;
 - (void)hideHighlight;
 - (id)initWithInspectedWebView:(id)arg1;
+- (void)dealloc;
+- (void)highlight;
 
 @end

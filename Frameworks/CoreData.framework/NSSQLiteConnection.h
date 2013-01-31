@@ -35,15 +35,21 @@
     unsigned long long _debugInode;
 }
 
++ (void)initialize;
 + (void)__INode_Changed_AllThatIsLeftToUsIsHonor__;
 + (void)_setDebugFlags:(int)arg1;
 + (const char *)_databaseOpenURLStringForURL:(id)arg1;
 + (int)readMagicWordFromPath:(const char *)arg1;
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 + (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id*)arg5;
-+ (void)initialize;
 
+- (void)deleteRow:(id)arg1;
+- (void)insertRow:(id)arg1;
 - (void)dealloc;
+- (void)disconnect;
+- (void)connect;
+- (void)finalize;
+- (void)commitTransaction;
 - (void**)_buffersForRegisteredFunctions;
 - (struct sqlite3_stmt { }*)_vmstatement;
 - (long long)_getCurrentAutoVacuumValue;
@@ -80,6 +86,7 @@
 - (void)_ensureNoFetchInProgress;
 - (void)_ensureNoStatementPrepared;
 - (BOOL)isLocalFS;
+- (void)dropUbiquityTables;
 - (id)ubiquityTableValueForKey:(id)arg1;
 - (id)ubiquityTableKeysAndValues;
 - (void)setUbiquityTableValue:(id)arg1 forKey:(id)arg2;
@@ -124,13 +131,7 @@
 - (void)prepareSQLStatement:(id)arg1;
 - (BOOL)isFetchInProgress;
 - (void)endFetch;
-- (id)_adapter;
-- (void)disconnect;
-- (void)connect;
-- (void)finalize;
-- (void)commitTransaction;
-- (void)deleteRow:(id)arg1;
-- (void)insertRow:(id)arg1;
 - (BOOL)isOpen;
+- (id)_adapter;
 
 @end

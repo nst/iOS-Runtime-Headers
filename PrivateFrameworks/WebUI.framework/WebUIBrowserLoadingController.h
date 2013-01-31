@@ -74,6 +74,13 @@
 - (void)_setForwardURL:(id)arg1;
 - (void)_setBackURL:(id)arg1;
 - (id)browserView;
+- (void)webView:(id)arg1 didPopStateWithinPageForFrame:(id)arg2;
+- (void)webView:(id)arg1 didReplaceStateWithinPageForFrame:(id)arg2;
+- (void)webView:(id)arg1 didPushStateWithinPageForFrame:(id)arg2;
+- (void)webView:(id)arg1 didRunInsecureContent:(id)arg2;
+- (void)webViewDidDisplayInsecureContent:(id)arg1;
+- (void)webView:(id)arg1 didCancelClientRedirectForFrame:(id)arg2;
+- (void)webView:(id)arg1 willPerformClientRedirectToURL:(id)arg2 delay:(double)arg3 fireDate:(id)arg4 forFrame:(id)arg5;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1;
@@ -104,12 +111,5 @@
 - (id)title;
 - (void)reload;
 - (void)setTitle:(id)arg1;
-- (void)webView:(id)arg1 didPopStateWithinPageForFrame:(id)arg2;
-- (void)webView:(id)arg1 didReplaceStateWithinPageForFrame:(id)arg2;
-- (void)webView:(id)arg1 didPushStateWithinPageForFrame:(id)arg2;
-- (void)webView:(id)arg1 didRunInsecureContent:(id)arg2;
-- (void)webViewDidDisplayInsecureContent:(id)arg1;
-- (void)webView:(id)arg1 didCancelClientRedirectForFrame:(id)arg2;
-- (void)webView:(id)arg1 willPerformClientRedirectToURL:(id)arg2 delay:(double)arg3 fireDate:(id)arg4 forFrame:(id)arg5;
 
 @end

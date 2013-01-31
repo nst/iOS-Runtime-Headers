@@ -10,11 +10,11 @@
 }
 
 
+- (void)dealloc;
 - (void)prime;
 - (id)initWithStorageID:(unsigned long)arg1 device:(id)arg2;
 - (void)refreshInfo;
 - (id)tempArrayOfAllObjectHandlesToBeIgnored;
 - (id)tempArrayOfAllObjectHandles;
-- (void)dealloc;
 
 @end

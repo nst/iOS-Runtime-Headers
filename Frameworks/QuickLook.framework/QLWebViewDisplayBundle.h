@@ -30,6 +30,25 @@
 
 + (int)backgroundTypeForUTI:(id)arg1 andMode:(int)arg2;
 
+- (void)cancelLoad;
+- (void)dealloc;
+- (void)setPreviewMode:(int)arg1;
+- (struct CGPoint { float x1; float x2; })originForPDFPageLabelViewWithHandler:(id)arg1 proposedOrigin:(struct CGPoint { float x1; float x2; })arg2;
+- (void)pdfViewHandlerCompletedLayoutAndIsUnlocked:(id)arg1;
+- (id)alertViewForUIWebPDFViewHandler:(id)arg1;
+- (void)uiWebView:(id)arg1 resource:(id)arg2 didFailLoadingWithError:(id)arg3 fromDataSource:(id)arg4;
+- (void)uiWebView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;
+- (void)uiWebView:(id)arg1 didFirstLayoutInFrame:(id)arg2;
+- (void)webViewDidFinishLoad:(id)arg1;
+- (id)uiWebView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
+- (void)uiWebView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
+- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
+- (int)pageCount;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidLayoutSubviews;
+- (void)didReceiveMemoryWarning;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)userInteractedWithScrubView:(id)arg1;
 - (void)scrubView:(id)arg1 didSelectPageAtIndex:(unsigned int)arg2;
 - (struct CGSize { float x1; float x2; })scrubView:(id)arg1 pageSizeAtIndex:(unsigned int)arg2;
@@ -56,24 +75,5 @@
 - (id)printPageHelper;
 - (id)pdfPreviewData;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
-- (void)dealloc;
-- (struct CGPoint { float x1; float x2; })originForPDFPageLabelViewWithHandler:(id)arg1 proposedOrigin:(struct CGPoint { float x1; float x2; })arg2;
-- (void)pdfViewHandlerCompletedLayoutAndIsUnlocked:(id)arg1;
-- (id)alertViewForUIWebPDFViewHandler:(id)arg1;
-- (void)uiWebView:(id)arg1 resource:(id)arg2 didFailLoadingWithError:(id)arg3 fromDataSource:(id)arg4;
-- (void)uiWebView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;
-- (void)uiWebView:(id)arg1 didFirstLayoutInFrame:(id)arg2;
-- (void)webViewDidFinishLoad:(id)arg1;
-- (id)uiWebView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
-- (void)uiWebView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
-- (int)pageCount;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidLayoutSubviews;
-- (void)didReceiveMemoryWarning;
-- (void)scrollViewDidScroll:(id)arg1;
-- (void)cancelLoad;
-- (void)setPreviewMode:(int)arg1;
 
 @end

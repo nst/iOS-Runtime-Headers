@@ -9,8 +9,8 @@
 
 
 - (int)type;
+- (id)initWithType:(int)arg1 position:(int)arg2;
 - (int)position;
 - (void)setPosition:(int)arg1;
-- (id)initWithType:(int)arg1 position:(int)arg2;
 
 @end

@@ -12,9 +12,9 @@
 
 
 - (id)init;
-- (int)indicatorStyle;
-- (void)setIndicatorStyle:(int)arg1;
 - (int)numberOfVideos;
 - (void)setNumberOfVideos:(int)arg1;
+- (int)indicatorStyle;
+- (void)setIndicatorStyle:(int)arg1;
 
 @end

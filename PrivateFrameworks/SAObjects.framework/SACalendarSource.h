@@ -7,13 +7,13 @@
 
 @property BOOL strict;
 
-+ (id)source;
 + (id)sourceWithDictionary:(id)arg1 context:(id)arg2;
++ (id)source;
 
-- (id)groupIdentifier;
 - (void)setStrict:(BOOL)arg1;
 - (BOOL)strict;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

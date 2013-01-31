@@ -17,14 +17,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)second;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)p_SetSecond:(id)arg1;
 - (void)p_SetFirst:(id)arg1;
 - (id)initWithPair:(id)arg1;
 - (id)initWithFirst:(id)arg1 second:(id)arg2;
 - (id)first;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)second;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

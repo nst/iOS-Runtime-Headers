@@ -42,15 +42,6 @@
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
-- (void)_applicationWillEnterForeground:(id)arg1;
-- (void)_applicationDidEnterBackground:(id)arg1;
-- (void)takePicture;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)prepareForDefaultImageSnapshot;
 - (void)resumePhotoStreams;
 - (void)pausePhotoStreams;
 - (void)setTestPictureRepeatDelay:(double)arg1;
@@ -95,5 +86,14 @@
 - (void)cameraViewDidFinishOpeningIrisForPreview:(id)arg1;
 - (void)cameraViewFinishedTakingPicture:(id)arg1;
 - (BOOL)cameraViewShouldShowPreviewAfterSelection:(id)arg1;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)_applicationDidEnterBackground:(id)arg1;
+- (void)takePicture;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)prepareForDefaultImageSnapshot;
 
 @end

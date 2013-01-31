@@ -16,14 +16,6 @@
 @property int lastAuthorizationStatus;
 
 
-- (void)dealloc;
-- (void)stop;
-- (void)start;
-- (void)setLastAuthorizationStatus:(int)arg1;
-- (int)lastAuthorizationStatus;
-- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
-- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
-- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)setIsWaitingForAuthorization:(BOOL)arg1;
 - (BOOL)isWaitingForAuthorization;
 - (id)initWithListener:(id)arg1;
@@ -34,5 +26,13 @@
 - (BOOL)handleExternalAuthorizationStatusChange:(int)arg1;
 - (void)createLocationManager;
 - (void)setEnableHighAccuracy:(BOOL)arg1;
+- (void)dealloc;
+- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
+- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
+- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
+- (void)stop;
+- (void)start;
+- (void)setLastAuthorizationStatus:(int)arg1;
+- (int)lastAuthorizationStatus;
 
 @end

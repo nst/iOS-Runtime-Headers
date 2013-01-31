@@ -17,10 +17,10 @@
 
 - (id)data;
 - (void)dealloc;
-- (void)setData:(id)arg1;
-- (void)setCommand:(unsigned char)arg1;
-- (unsigned char)command;
 - (void)setSubCommand:(unsigned char)arg1;
 - (unsigned char)subCommand;
+- (void)setCommand:(unsigned char)arg1;
+- (unsigned char)command;
+- (void)setData:(id)arg1;
 
 @end

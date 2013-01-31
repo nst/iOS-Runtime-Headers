@@ -28,8 +28,8 @@
 @property(readonly) NSString * groupingTypeTitle;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)groupingTypeTitle;
 - (id)groupingTypePodcastTitle;
@@ -43,21 +43,21 @@
 - (id)comparisonTypeContains;
 - (id)nativeQuery;
 - (id)makeFilterPredicateWithProperty:(id)arg1 value:(id)arg2 comparisonType:(id)arg3;
-- (void)setGroupingType:(id)arg1;
-- (void)setFilterPredicates:(id)arg1;
-- (id)groupingType;
-- (id)filterPredicates;
 - (void)_beginWatchingLibraryIfNecessary;
-- (id)collections;
-- (void)removeFilterPredicate:(id)arg1;
-- (id)canFilterByProperty:(id)arg1;
 - (void)_libraryChangedNotification:(id)arg1;
-- (void)addFilterPredicate:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (void)dealloc;
-- (void)_resetCaches;
-- (id)items;
 - (id)attributeKeys;
+- (void)dealloc;
+- (id)items;
+- (void)removeFilterPredicate:(id)arg1;
+- (id)groupingType;
+- (id)filterPredicates;
+- (id)collections;
+- (void)addFilterPredicate:(id)arg1;
+- (void)setGroupingType:(id)arg1;
+- (void)setFilterPredicates:(id)arg1;
+- (id)canFilterByProperty:(id)arg1;
+- (void)_resetCaches;
 
 @end

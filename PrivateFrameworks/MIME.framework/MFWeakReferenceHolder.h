@@ -14,8 +14,8 @@
 
 - (void)dealloc;
 - (id)init;
+- (id)retainedReference;
 - (BOOL)isZeroingWeakReference;
 - (id)_initWithObject:(id)arg1 allowNonZeroing:(BOOL)arg2;
-- (id)retainedReference;
 
 @end

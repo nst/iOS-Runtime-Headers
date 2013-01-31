@@ -23,9 +23,6 @@
 @property(retain) VKAttributedRouteMatch * routeMatch;
 
 
-- (void)reset;
-- (void)dealloc;
-- (id)init;
 - (id)projectedRouteMatch;
 - (struct { double x1; double x2; })projectedLocation;
 - (void)_updateCourseAndPositionFromRouteMatch;
@@ -36,5 +33,8 @@
 - (void)projectFromLocation:(id)arg1 routeMatch:(id)arg2 speedMultiplier:(double)arg3;
 - (BOOL)projectedLocationOnRoute;
 - (double)projectedCourse;
+- (void)reset;
+- (void)dealloc;
+- (id)init;
 
 @end

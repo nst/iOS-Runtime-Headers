@@ -19,11 +19,11 @@
 @property(getter=_weakReference,readonly) AVWeakReference * weakReference;
 
 
-- (id)player;
 - (void)invalidate;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)finalize;
+- (id)player;
 - (void)_resetNextFireTime;
 - (id)initWithPlayer:(id)arg1 queue:(id)arg2;
 - (void)_handleTimeDiscontinuity;

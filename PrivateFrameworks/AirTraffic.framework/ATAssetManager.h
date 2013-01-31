@@ -18,7 +18,8 @@
 - (void)reset;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEmpty;
+- (id)assets;
+- (unsigned int)currentAsset;
 - (BOOL)dataclassIsEmpty:(id)arg1;
 - (void)removeCompletedStoreAsset:(id)arg1;
 - (void)fixUpInstallOnlyAssetsForDataclass:(id)arg1;
@@ -42,7 +43,6 @@
 - (void)enqueueAssets:(id)arg1;
 - (unsigned int)currentAssetForDataclass:(id)arg1;
 - (unsigned int)totalAssetCountForDataclass:(id)arg1;
-- (id)assets;
-- (unsigned int)currentAsset;
+- (BOOL)isEmpty;
 
 @end

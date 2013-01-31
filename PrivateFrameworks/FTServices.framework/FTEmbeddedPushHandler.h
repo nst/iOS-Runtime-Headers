@@ -12,6 +12,7 @@
 }
 
 
+- (void)dealloc;
 - (void)setRegistered:(BOOL)arg1;
 - (void)_acceptIncomingPushes;
 - (void)_ignoreIncomingPushes;
@@ -48,6 +49,5 @@
 - (void)updateTopics;
 - (int)connectionStatus;
 - (id)pushToken;
-- (void)dealloc;
 
 @end

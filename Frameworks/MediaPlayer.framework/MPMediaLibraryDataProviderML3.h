@@ -28,6 +28,20 @@
 
 + (id)_unadjustedValueForMPProperty:(id)arg1 withDefaultValue:(id)arg2;
 
+- (id)lastModifiedDate;
+- (id)name;
+- (void)dealloc;
+- (id)initWithLibrary:(id)arg1;
+- (id)ubiquitousBookmarkDomainVersionAnchorToken;
+- (void)setUbiquitousBookmarkDomainVersionAnchorToken:(id)arg1;
+- (unsigned long long)ubiquitousBookmarkEntityRevisionAnchor;
+- (void)setUbiquitousBookmarkEntityRevisionAnchor:(unsigned long long)arg1;
+- (unsigned long long)syncGenerationID;
+- (BOOL)writable;
+- (void)setLibrary:(id)arg1;
+- (BOOL)performTransactionWithBlock:(id)arg1;
+- (id)library;
+- (id)uniqueIdentifier;
 - (void)_coalesceEvents;
 - (BOOL)_removeEntitiesWithIdentifiers:(long long*)arg1 count:(unsigned int)arg2 entityClass:(Class)arg3;
 - (void)_loadProperties:(id)arg1 ofEntityWithIdentifier:(long long)arg2 ML3EntityClass:(Class)arg3 completionBlock:(id)arg4;
@@ -83,19 +97,5 @@
 - (void)enumerateItemIdentifiersForQueryCriteria:(id)arg1 cancelBlock:(id)arg2 usingBlock:(id)arg3;
 - (void)loadValueForAggregateFunction:(id)arg1 onItemsForProperty:(id)arg2 queryCriteria:(id)arg3 completionBlock:(id)arg4;
 - (void)loadValueForAggregateFunction:(id)arg1 onCollectionsForProperty:(id)arg2 queryCriteria:(id)arg3 completionBlock:(id)arg4;
-- (id)name;
-- (void)dealloc;
-- (id)initWithLibrary:(id)arg1;
-- (id)ubiquitousBookmarkDomainVersionAnchorToken;
-- (void)setUbiquitousBookmarkDomainVersionAnchorToken:(id)arg1;
-- (unsigned long long)ubiquitousBookmarkEntityRevisionAnchor;
-- (void)setUbiquitousBookmarkEntityRevisionAnchor:(unsigned long long)arg1;
-- (unsigned long long)syncGenerationID;
-- (BOOL)writable;
-- (void)setLibrary:(id)arg1;
-- (BOOL)performTransactionWithBlock:(id)arg1;
-- (id)library;
-- (id)uniqueIdentifier;
-- (id)lastModifiedDate;
 
 @end

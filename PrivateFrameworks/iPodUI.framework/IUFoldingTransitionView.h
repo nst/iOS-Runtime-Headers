@@ -30,13 +30,6 @@
 @property(readonly) double duration;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (int)transitionDirection;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (double)duration;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalFrame;
 - (struct CGPoint { float x1; float x2; })_anchorPointForPivotEdge:(int)arg1;
 - (void)_prepareForFold;
@@ -60,5 +53,12 @@
 - (void)setFinalFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setTransitionDirection:(int)arg1;
 - (void)performTransitionWithDuration:(double)arg1 afterDelay:(double)arg2;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (int)transitionDirection;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (double)duration;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

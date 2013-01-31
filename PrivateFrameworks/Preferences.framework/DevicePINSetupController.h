@@ -7,9 +7,9 @@
 }
 
 
-- (BOOL)canBeShownFromSuspendedState;
 - (BOOL)popupStyleIsModal;
 - (BOOL)usePopupStyle;
+- (BOOL)canBeShownFromSuspendedState;
 - (BOOL)success;
 
 @end

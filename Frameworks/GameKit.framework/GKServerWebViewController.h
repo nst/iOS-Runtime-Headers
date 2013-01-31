@@ -60,6 +60,24 @@
 @property(retain) NSString * rightButtonTitle;
 
 
+- (void)dealloc;
+- (void)setStatus:(int)arg1;
+- (int)status;
+- (void)setCompletionHandler:(id)arg1;
+- (void)webViewDidFinishLoad:(id)arg1;
+- (void)webViewDidStartLoad:(id)arg1;
+- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
+- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
+- (void)setWebView:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)webView;
+- (id)backgroundView;
+- (void)setBackgroundView:(id)arg1;
+- (id)completionHandler;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (BOOL)dismissOnAuthenticate;
 - (id)alert;
 - (void)setAddedSheetFrame:(BOOL)arg1;
@@ -107,23 +125,5 @@
 - (void)setDismissOnAuthenticate:(BOOL)arg1;
 - (id)playerID;
 - (void)setPlayerID:(id)arg1;
-- (void)dealloc;
-- (void)setStatus:(int)arg1;
-- (int)status;
-- (void)setCompletionHandler:(id)arg1;
-- (void)webViewDidFinishLoad:(id)arg1;
-- (void)webViewDidStartLoad:(id)arg1;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
-- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
-- (void)setWebView:(id)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)webView;
-- (id)backgroundView;
-- (void)setBackgroundView:(id)arg1;
-- (id)completionHandler;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 
 @end

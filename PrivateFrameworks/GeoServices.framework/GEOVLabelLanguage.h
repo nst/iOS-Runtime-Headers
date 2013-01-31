@@ -15,19 +15,19 @@
 @property(retain) NSString * languageLocale;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (unsigned int)endOffset;
-- (id)dictionaryRepresentation;
-- (unsigned int)startOffset;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)languageLocale;
 - (void)setLanguageLocale:(id)arg1;
 - (void)setEndOffset:(unsigned int)arg1;
 - (void)setStartOffset:(unsigned int)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned int)endOffset;
+- (id)dictionaryRepresentation;
+- (unsigned int)startOffset;
 
 @end

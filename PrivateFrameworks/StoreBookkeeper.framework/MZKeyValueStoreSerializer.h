@@ -11,6 +11,7 @@
 @property(retain) MZKeyValueStoreTransaction * transaction;
 
 
+- (void)dealloc;
 - (id)payloadWithNode:(id)arg1;
 - (id)baseDictionary;
 - (BOOL)_isRemoveAllSinceDomainVersion;
@@ -21,8 +22,7 @@
 - (id)initWithTransaction:(id)arg1;
 - (id)transaction;
 - (void)setTransaction:(id)arg1;
-- (void)dealloc;
-- (id)keys;
 - (id)payload;
+- (id)keys;
 
 @end

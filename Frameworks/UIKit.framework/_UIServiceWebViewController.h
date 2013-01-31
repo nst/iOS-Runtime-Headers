@@ -24,6 +24,7 @@
 - (void)_setupRemoteInspectorDetailsForRequestingProcess;
 - (id)localizedApplicationNameForProcess:(int)arg1;
 - (BOOL)_isInternalInstall;
+- (void)_webContentSizeWithReplyHandler:(id)arg1;
 - (void)configureWithEncodedSettings:(id)arg1;
 - (void)setShouldDecidePolicyRemotely:(BOOL)arg1;
 - (void)loadUserTypedAddress:(id)arg1;
@@ -34,6 +35,7 @@
 - (void)goBack;
 - (void)stopLoading;
 - (id)_makeAlertView;
+- (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)loadView;

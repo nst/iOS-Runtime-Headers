@@ -16,23 +16,23 @@
 @property(readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; }* tileKeys;
 
 
-- (unsigned int)identifier;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setIdentifier:(unsigned int)arg1;
-- (id)dictionaryRepresentation;
-- (int)style;
-- (void)setStyle:(int)arg1;
 - (void)addTileKey:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3; })tileKeyAtIndex:(unsigned int)arg1;
 - (unsigned int)tileKeysCount;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (unsigned int)identifier;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
 - (void)setTileKeys:(struct { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 count:(unsigned int)arg2;
 - (void)clearTileKeys;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3; }*)tileKeys;
-- (BOOL)readFrom:(id)arg1;
+- (void)setIdentifier:(unsigned int)arg1;
+- (id)dictionaryRepresentation;
+- (int)style;
+- (void)setStyle:(int)arg1;
 
 @end

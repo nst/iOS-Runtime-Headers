@@ -25,7 +25,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (BOOL)active;
 - (BOOL)_forceChatLogging;
 - (BOOL)_disableAV;
 - (id)_parentalControls;
@@ -45,5 +44,6 @@
 - (void)_updateParentalSettings;
 - (void)setShouldPostNotifications:(BOOL)arg1;
 - (BOOL)okToConnectAccount:(id)arg1;
+- (BOOL)active;
 
 @end

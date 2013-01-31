@@ -23,8 +23,6 @@
 + (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 
-- (void)setImageURL:(id)arg1;
-- (id)imageURL;
 - (void)_setImage:(id)arg1;
 - (id)initWithPageSection:(id)arg1;
 - (id)newPageSection;
@@ -33,15 +31,17 @@
 - (id)_segmentedControl;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (id)identifier;
 - (id)userInfo;
 - (void)dealloc;
+- (id)canvas;
 - (void)setUserInfo:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (id)image;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)attributeKeys;
-- (id)canvas;
+- (void)setImageURL:(id)arg1;
+- (id)imageURL;
 
 @end

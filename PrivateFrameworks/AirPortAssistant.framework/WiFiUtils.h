@@ -21,12 +21,12 @@
 + (id)sharedInstance;
 + (BOOL)stringArray:(id)arg1 containsBSSID:(id)arg2;
 + (int)barsForRSSI:(int)arg1;
++ (BOOL)networkIsApple:(id)arg1 productID:(unsigned int*)arg2;
 + (BOOL)scanInfoIsIBSS:(id)arg1;
 + (BOOL)scanInfoIs5GHz:(id)arg1;
 + (void)sharedInstanceRelease;
 + (BOOL)networkIsSecure:(id)arg1 secMode:(int*)arg2 isEnterprise:(BOOL*)arg3;
 + (id)getNetworkPassword:(id)arg1;
-+ (BOOL)networkIsApple:(id)arg1 productID:(unsigned int*)arg2;
 + (id)sharedInstanceRef;
 
 - (void)dealloc;

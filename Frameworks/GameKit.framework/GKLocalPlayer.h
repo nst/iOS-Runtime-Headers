@@ -60,7 +60,7 @@
 @property(retain) NSArray * friendRequests;
 @property(retain) NSString * lastUsernameAttempted;
 @property(getter=isPurpleBuddyAccount) BOOL purpleBuddyAccount;
-@property BOOL allowMultiplayerInvites;
+@property(readonly) BOOL allowNearbyMultiplayer;
 @property(getter=isNewToGameCenter) BOOL newToGameCenter;
 @property(retain) NSSet * friendTestSet;
 @property(copy) id authenticationCompletionHandler;
@@ -83,6 +83,15 @@
 + (id)accountName;
 + (id)localPlayer;
 
+- (void)dealloc;
+- (id)init;
+- (void)setStatus:(id)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (id)rootViewController;
+- (void)setRootViewController:(id)arg1;
+- (void)applicationWillEnterForeground:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)alertUserInStoreDemoModeEnabled;
 - (void)alertAndSendFriendRequest:(id)arg1 destination:(id)arg2;
 - (void)showEditAccountRestrictedAlert;
@@ -195,14 +204,5 @@
 - (void)signOutWithCompletionHandler:(id)arg1;
 - (BOOL)isFriend;
 - (BOOL)isAuthenticated;
-- (void)dealloc;
-- (id)init;
-- (void)setStatus:(id)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)rootViewController;
-- (void)setRootViewController:(id)arg1;
-- (void)applicationWillEnterForeground:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

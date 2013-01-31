@@ -20,13 +20,13 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isRunning;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (struct OpaqueFigRecorder { }*)recorder;
 - (void)addOutput:(id)arg1;
 - (void)addInput:(id)arg1;
 - (BOOL)canAddInput:(id)arg1;
 - (void)setSessionPreset:(id)arg1;
+- (BOOL)isRunning;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (struct OpaqueFigRecorder { }*)recorder;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
 - (void)_beginSessionUpdates;
 - (void)stopRunning;

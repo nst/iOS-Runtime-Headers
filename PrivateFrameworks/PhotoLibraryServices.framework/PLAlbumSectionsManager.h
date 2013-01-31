@@ -25,7 +25,6 @@
 
 
 - (void)dealloc;
-- (unsigned int)numberOfSections;
 - (void)processAlbumDidChangeNotification:(id)arg1 withHandler:(id)arg2;
 - (id)assetIndexesForIndexPaths:(id)arg1;
 - (unsigned int)assetIndexForIndexPath:(id)arg1;
@@ -38,5 +37,6 @@
 - (void)setAlbum:(id)arg1;
 - (struct NSObject { Class x1; }*)album;
 - (id)sectioningComparator;
+- (unsigned int)numberOfSections;
 
 @end

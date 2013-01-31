@@ -10,11 +10,11 @@
 }
 
 
+- (BOOL)running;
 - (void)reset;
 - (void)dealloc;
+- (void)updateTime:(id)arg1;
 - (void)stop;
 - (void)start;
-- (void)updateTime:(id)arg1;
-- (BOOL)running;
 
 @end

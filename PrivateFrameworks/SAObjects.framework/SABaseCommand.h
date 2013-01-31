@@ -13,11 +13,11 @@
 + (id)baseCommandWithDictionary:(id)arg1 context:(id)arg2;
 + (id)baseCommand;
 
-- (id)groupIdentifier;
 - (void)setRefId:(id)arg1;
 - (id)refId;
 - (void)setAceId:(id)arg1;
 - (id)aceId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

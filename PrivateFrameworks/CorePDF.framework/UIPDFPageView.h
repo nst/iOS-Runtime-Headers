@@ -106,6 +106,13 @@
 @property BOOL allowTwoFingerSelection;
 
 
+- (float)margin;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (void)removeAnnotation:(id)arg1;
+- (void)addAnnotation:(id)arg1;
 - (void)setAllowTwoFingerSelection:(BOOL)arg1;
 - (BOOL)allowTwoFingerSelection;
 - (BOOL)showPDFAnnotations;
@@ -176,10 +183,6 @@
 - (void)addPage:(id)arg1;
 - (struct CGPoint { float x1; float x2; })convertPointFromPDFPageSpace:(struct CGPoint { float x1; float x2; })arg1;
 - (id)annotationController;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
 - (unsigned int)pageIndex;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectFromPDFPageSpace:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectToPDFPageSpace:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -203,8 +206,5 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setNeedsDisplay;
-- (float)margin;
-- (void)removeAnnotation:(id)arg1;
-- (void)addAnnotation:(id)arg1;
 
 @end

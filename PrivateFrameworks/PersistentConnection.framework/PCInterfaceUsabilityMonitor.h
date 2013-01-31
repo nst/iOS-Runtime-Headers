@@ -34,6 +34,7 @@
 + (BOOL)isPoorLinkQuality:(int)arg1;
 + (id)stringForLinkQuality:(int)arg1;
 
+- (int)linkQuality;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
@@ -64,6 +65,5 @@
 - (BOOL)isInterfaceUsable;
 - (BOOL)isInternetReachable;
 - (void)setTrackUsability:(BOOL)arg1;
-- (int)linkQuality;
 
 @end

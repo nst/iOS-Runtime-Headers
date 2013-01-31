@@ -148,12 +148,15 @@
 @property(retain) UITableViewCell * partiallySelectedCell;
 
 
-- (id)messageFont;
+- (BOOL)allowsDeletion;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
-- (BOOL)hasChanges;
+- (void*)addressBook;
+- (void)setAllowsActions:(BOOL)arg1;
+- (void)setAllowsSounds:(BOOL)arg1;
+- (void)setDisplayedProperties:(struct __CFArray { }*)arg1;
 - (id)message;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (BOOL)allowsEditing;
@@ -197,7 +200,9 @@
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)reloadData;
-- (void*)addressBook;
+- (id)messageFont;
+- (void)setAddressBook:(void*)arg1;
+- (BOOL)hasChanges;
 - (void)setIgnoreVibrationsDidChangeNotification:(BOOL)arg1;
 - (BOOL)ignoreVibrationsDidChangeNotification;
 - (void)setSelectedPropertyForCellWithoutLabelDivider:(BOOL)arg1;
@@ -434,11 +439,6 @@
 - (BOOL)isMe;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (void)setAllowsActions:(BOOL)arg1;
-- (void)setAllowsSounds:(BOOL)arg1;
-- (void)setDisplayedProperties:(struct __CFArray { }*)arg1;
 - (id)alternateName;
-- (BOOL)allowsDeletion;
-- (void)setAddressBook:(void*)arg1;
 
 @end

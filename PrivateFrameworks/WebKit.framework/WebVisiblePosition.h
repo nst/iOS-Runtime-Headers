@@ -11,10 +11,21 @@
 + (id)_wrapVisiblePositionIfValid:(struct VisiblePosition { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_1_1_1; int x_1_1_2; unsigned int x_1_1_3 : 3; unsigned int x_1_1_4 : 1; } x1; int x2; })arg1;
 + (id)_wrapVisiblePosition:(struct VisiblePosition { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_1_1_1; int x_1_1_2; unsigned int x_1_1_3 : 3; unsigned int x_1_1_4 : 1; } x1; int x2; })arg1;
 
+- (BOOL)atAlphaNumericBoundaryInDirection:(int)arg1;
+- (BOOL)requiresContextForWordBoundary;
+- (id)nextDocumentBoundaryInDirection:(int)arg1;
+- (id)nextParagraphBoundaryInDirection:(int)arg1;
+- (id)nextLineBoundaryInDirection:(int)arg1;
+- (id)nextSentenceBoundaryInDirection:(int)arg1;
+- (id)nextWordBoundaryInDirection:(int)arg1;
+- (id)nextCharacterBoundaryInDirection:(int)arg1;
+- (BOOL)directionIsDownstream:(int)arg1;
+- (struct VisiblePosition { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_1_1_1; int x_1_1_2; unsigned int x_1_1_3 : 3; unsigned int x_1_1_4 : 1; } x1; int x2; })_visiblePosition;
 - (int)compare:(id)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (int)textDirection;
 - (void)setAffinity:(int)arg1;
 - (id)positionAtStartOrEndOfWord;
 - (id)enclosingRangeWithCorrectionIndicator;
@@ -28,16 +39,5 @@
 - (BOOL)atBoundaryOfGranularity:(int)arg1 inDirection:(int)arg2;
 - (int)affinity;
 - (BOOL)isEditable;
-- (int)textDirection;
-- (BOOL)atAlphaNumericBoundaryInDirection:(int)arg1;
-- (BOOL)requiresContextForWordBoundary;
-- (id)nextDocumentBoundaryInDirection:(int)arg1;
-- (id)nextParagraphBoundaryInDirection:(int)arg1;
-- (id)nextLineBoundaryInDirection:(int)arg1;
-- (id)nextSentenceBoundaryInDirection:(int)arg1;
-- (id)nextWordBoundaryInDirection:(int)arg1;
-- (id)nextCharacterBoundaryInDirection:(int)arg1;
-- (BOOL)directionIsDownstream:(int)arg1;
-- (struct VisiblePosition { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_1_1_1; int x_1_1_2; unsigned int x_1_1_3 : 3; unsigned int x_1_1_4 : 1; } x1; int x2; })_visiblePosition;
 
 @end

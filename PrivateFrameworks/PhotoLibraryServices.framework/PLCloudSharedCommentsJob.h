@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSString, NSDictionary;
+@class NSDictionary, NSString, NSArray;
 
 @interface PLCloudSharedCommentsJob : PLCloudSharingJob  {
-    NSDictionary *_mstreamdInfoDictionary;
-    int _jobType;
-    NSString *_commentGUID;
     NSArray *_msASComments;
-    NSString *_assetGUID;
+    int _jobType;
     NSString *_albumGUID;
+    NSString *_assetGUID;
+    NSString *_commentGUID;
+    NSDictionary *_mstreamdInfoDictionary;
 }
 
 @property int jobType;
@@ -28,7 +28,6 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)run;
 - (void)executeDeleteCommentFromServer;
 - (void)executePublishCommentToServer;
 - (void)executeProcessServerNotificationOfCommentChanges;
@@ -49,5 +48,6 @@
 - (int)daemonOperation;
 - (void)runDaemonSide;
 - (id)initFromXPCObject:(id)arg1;
+- (void)run;
 
 @end

@@ -28,6 +28,9 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void*)addressBook;
+- (id)bannerView;
+- (void)setModel:(id)arg1;
 - (id)model;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tableView:(id)arg1 frameForSectionIndexGivenProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (int)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(int)arg3;
@@ -41,8 +44,7 @@
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)setModel:(id)arg1;
-- (void*)addressBook;
+- (void)setAddressBook:(void*)arg1;
 - (unsigned int)displayedMemberIndexForIndexPath:(id)arg1 inTableView:(id)arg2;
 - (int)globalRowForBanner;
 - (struct __CFDictionary { }*)sectionHeaderSortingIndices;
@@ -56,7 +58,5 @@
 - (int)globalRowForDisplayedMemberIndex:(unsigned int)arg1;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (id)bannerView;
-- (void)setAddressBook:(void*)arg1;
 
 @end

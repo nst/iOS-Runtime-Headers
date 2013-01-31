@@ -12,8 +12,8 @@
 
 + (id)defaultFileLogger;
 
-- (id)initWithFilePath:(id)arg1;
 - (void)dealloc;
+- (id)initWithFilePath:(id)arg1;
 - (id)filePath;
 - (void)setFilePath:(id)arg1;
 - (void)log:(id)arg1;

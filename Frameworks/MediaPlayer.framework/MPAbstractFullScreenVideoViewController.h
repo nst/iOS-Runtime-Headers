@@ -13,8 +13,15 @@
 }
 
 
-- (void)setPlayer:(id)arg1;
-- (void)setItem:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)_applicationDidBecomeActive:(id)arg1;
+- (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (int)statusBarStyle;
 - (void)_hideOverlayWithAnimation:(BOOL)arg1;
 - (BOOL)transportControls:(id)arg1 releasedHeldButtonPart:(unsigned long long)arg2;
 - (BOOL)transportControls:(id)arg1 heldButtonPart:(unsigned long long)arg2;
@@ -52,15 +59,8 @@
 - (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2 force:(BOOL)arg3;
 - (BOOL)controlsOverlayVisible;
 - (BOOL)canShowControlsOverlay;
+- (void)setItem:(id)arg1;
 - (void)setCanShowControlsOverlay:(BOOL)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)_applicationDidBecomeActive:(id)arg1;
-- (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (int)statusBarStyle;
+- (void)setPlayer:(id)arg1;
 
 @end

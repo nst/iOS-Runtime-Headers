@@ -11,7 +11,6 @@
 
 + (void)__setUsePort:(BOOL)arg1;
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
 - (id)httpMethod;
 - (id)versionArray;
@@ -26,5 +25,6 @@
 - (BOOL)processContext:(id)arg1;
 - (id)requestBody;
 - (int)commandCode;
+- (void)finishWithError:(id)arg1;
 
 @end

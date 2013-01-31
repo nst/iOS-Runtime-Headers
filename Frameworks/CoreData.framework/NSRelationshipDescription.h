@@ -23,6 +23,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)_setLazyDestinationEntityName:(id)arg1;
 - (BOOL)_validateValuesAreOfDestinationEntity:(id)arg1 source:(id)arg2;
 - (void)_versionHash:(char *)arg1 inStyle:(unsigned int)arg2 proxyContext:(id)arg3;
@@ -50,7 +52,5 @@
 - (unsigned int)_propertyType;
 - (unsigned int)deleteRule;
 - (BOOL)_isRelationship;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

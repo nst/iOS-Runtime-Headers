@@ -19,10 +19,14 @@
 + (id)sharedInstanceForServiceType:(id)arg1;
 + (id)sharedInstanceForCallbackWhileLocked:(void*)arg1;
 
-- (id)initWithServiceType:(id)arg1;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (void)_refresh;
 - (void)_setValue:(void*)arg1 forKey:(id)arg2;
+- (void)_notifyTarget:(unsigned int)arg1;
+- (void*)_getValueForKey:(id)arg1;
+- (void)_synchronize;
+- (id)initWithServiceType:(id)arg1;
 - (id)cachedUsername;
 - (void)setCachedUsername:(id)arg1;
 - (void)setTimestampSkew:(double)arg1;
@@ -31,9 +35,5 @@
 - (void)_setCallback:(int (*)())arg1 withContext:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
 - (void)_initializeSystemConfigPrefs:(id)arg1;
 - (void)_keepAlive;
-- (void)_refresh;
-- (void)_notifyTarget:(unsigned int)arg1;
-- (void*)_getValueForKey:(id)arg1;
-- (void)_synchronize;
 
 @end

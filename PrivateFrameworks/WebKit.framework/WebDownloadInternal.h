@@ -7,9 +7,11 @@
 }
 
 
+- (void)download:(id)arg1 didCancelAuthenticationChallenge:(id)arg2;
+- (void)download:(id)arg1 didBeginChildDownload:(id)arg2;
+- (id)download:(id)arg1 shouldBeginChildDownloadOfSource:(id)arg2 delegate:(id*)arg3;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)dealloc;
-- (void)setRealDelegate:(id)arg1;
 - (void)downloadDidFinish:(id)arg1;
 - (void)download:(id)arg1 didCreateDestination:(id)arg2;
 - (void)download:(id)arg1 decideDestinationWithSuggestedFilename:(id)arg2;
@@ -20,8 +22,6 @@
 - (id)download:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)downloadDidBegin:(id)arg1;
 - (void)download:(id)arg1 didFailWithError:(id)arg2;
-- (void)download:(id)arg1 didCancelAuthenticationChallenge:(id)arg2;
-- (void)download:(id)arg1 didBeginChildDownload:(id)arg2;
-- (id)download:(id)arg1 shouldBeginChildDownloadOfSource:(id)arg2 delegate:(id*)arg3;
+- (void)setRealDelegate:(id)arg1;
 
 @end

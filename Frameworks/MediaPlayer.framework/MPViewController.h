@@ -39,10 +39,22 @@
 @property(readonly) UIView * view;
 
 
-- (void)setPlayer:(id)arg1;
-- (id)player;
-- (void)setItem:(id)arg1;
-- (void)clearWeakReferencesToObject:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (void)setOrientation:(int)arg1;
+- (id)item;
+- (id)popViewControllerAnimated:(BOOL)arg1;
+- (void)addChildViewController:(id)arg1;
+- (void)removeChildViewController:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)_canReloadView;
+- (void)setIdleTimerDisabled:(BOOL)arg1;
+- (void)setView:(id)arg1;
+- (int)orientation;
 - (BOOL)registeredForPlayerNotifications;
 - (void)setAppearing:(BOOL)arg1;
 - (BOOL)idleTimerDisabled;
@@ -76,21 +88,9 @@
 - (void)willChangeToInterfaceOrientation:(int)arg1;
 - (void)beginIgnoringChangeTypes:(unsigned int)arg1;
 - (void)endIgnoringChangeTypes:(unsigned int)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
-- (void)setOrientation:(int)arg1;
-- (id)item;
-- (id)popViewControllerAnimated:(BOOL)arg1;
-- (void)addChildViewController:(id)arg1;
-- (void)removeChildViewController:(id)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)_canReloadView;
-- (void)setIdleTimerDisabled:(BOOL)arg1;
-- (void)setView:(id)arg1;
-- (int)orientation;
+- (void)clearWeakReferencesToObject:(id)arg1;
+- (void)setItem:(id)arg1;
+- (void)setPlayer:(id)arg1;
+- (id)player;
 
 @end

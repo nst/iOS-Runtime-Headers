@@ -9,6 +9,9 @@
 }
 
 
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)accounts;
 - (void)killDaemon;
 - (void)deleteAccountWithIdentifier:(id)arg1;
 - (void)saveAccount:(id)arg1 setActive:(BOOL)arg2;
@@ -18,11 +21,8 @@
 - (void)_sendMessage:(id)arg1 withReplySync:(id)arg2;
 - (void)_sendMessage:(id)arg1 withReply:(id)arg2;
 - (void)_clearConnection;
-- (void).cxx_destruct;
-- (void)dealloc;
 - (void)fetchSupportedLanguageCodes:(id)arg1;
 - (void)setActiveAccountIdentifier:(id)arg1;
-- (id)accounts;
 - (id)_connection;
 
 @end

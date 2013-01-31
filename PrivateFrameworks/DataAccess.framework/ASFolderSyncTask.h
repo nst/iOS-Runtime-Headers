@@ -13,7 +13,6 @@
 @property BOOL requireChangedFolders;
 
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
 - (void)setRequireChangedFolders:(BOOL)arg1;
 - (BOOL)requireChangedFolders;
@@ -24,5 +23,6 @@
 - (id)requestBody;
 - (int)commandCode;
 - (int)taskStatusForExchangeStatus:(int)arg1;
+- (void)finishWithError:(id)arg1;
 
 @end

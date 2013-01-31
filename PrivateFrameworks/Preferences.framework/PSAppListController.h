@@ -6,8 +6,6 @@
 }
 
 
-- (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
-- (id)specifiers;
 - (id)specifiersFromDictionary:(id)arg1 stringsTable:(id)arg2;
 - (id)radioGroupSpecifiersFromDictionary:(id)arg1 stringsTable:(id)arg2;
 - (id)childPaneSpecifierFromDictionary:(id)arg1 stringsTable:(id)arg2;
@@ -23,6 +21,8 @@
 - (void)postThirdPartySettingDidChangeNotificationForSpecifier:(id)arg1;
 - (id)_valueFromUIValue:(id)arg1 specifier:(id)arg2;
 - (id)_uiValueFromValue:(id)arg1 specifier:(id)arg2;
+- (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
+- (id)specifiers;
 - (id)bundle;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 

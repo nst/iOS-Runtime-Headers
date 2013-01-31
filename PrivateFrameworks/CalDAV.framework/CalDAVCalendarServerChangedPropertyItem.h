@@ -19,12 +19,12 @@
 - (id)typeAttribute;
 - (id)changedParameters;
 - (id)nameAttribute;
+- (void)parserFoundAttributes:(id)arg1;
+- (id)copyParseRules;
+- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)addChangedParameter:(id)arg1;
 - (void)setChangedParameters:(id)arg1;
 - (void)setTypeAttribute:(id)arg1;
 - (void)setNameAttribute:(id)arg1;
-- (void)parserFoundAttributes:(id)arg1;
-- (id)copyParseRules;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 
 @end

@@ -19,8 +19,6 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
-- (void)stop;
-- (void)start;
 - (id)_createMessageForService:(id)arg1 arguments:(id)arg2;
 - (void)_registerConnection:(id)arg1 onQueue:(id)arg2;
 - (void)_simulateServicesMethod:(id)arg1 arguments:(id)arg2 callback:(id)arg3;
@@ -34,6 +32,8 @@
 - (void)_callServicesMethod:(id)arg1 arguments:(id)arg2 callback:(id)arg3;
 - (void)setupResponseConnectionOnQueue:(id)arg1;
 - (BOOL)isCanceled;
+- (void)stop;
+- (void)start;
 - (id)_connection;
 
 @end

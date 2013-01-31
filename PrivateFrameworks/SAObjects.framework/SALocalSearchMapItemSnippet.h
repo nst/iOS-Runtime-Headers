@@ -16,9 +16,6 @@
 + (id)mapItemSnippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)mapItemSnippet;
 
-- (id)groupIdentifier;
-- (void)setItems:(id)arg1;
-- (id)items;
 - (void)setUserCurrentLocation:(id)arg1;
 - (id)userCurrentLocation;
 - (void)setSearchRegionCenter:(id)arg1;
@@ -28,5 +25,8 @@
 - (void)setProviderCommand:(id)arg1;
 - (id)providerCommand;
 - (id)encodedClassName;
+- (void)setItems:(id)arg1;
+- (id)items;
+- (id)groupIdentifier;
 
 @end

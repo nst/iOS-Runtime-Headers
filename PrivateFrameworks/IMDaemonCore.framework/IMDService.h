@@ -41,14 +41,8 @@
 @property(readonly) int serviceProtocolVersion;
 
 
-- (id)internalName;
 - (id)description;
 - (void)dealloc;
-- (id)initWithBundle:(id)arg1;
-- (id)bundle;
-- (id)defaultAccountSettings;
-- (id)serviceDefaults;
-- (id)serviceProperties;
 - (BOOL)serviceSupportsPresence;
 - (BOOL)serviceChatsIgnoreLoginStatus;
 - (BOOL)serviceRequiresHost;
@@ -82,7 +76,13 @@
 - (BOOL)shouldForceAccountsConnected;
 - (Class)sessionClass;
 - (void)delayedSaveSettings;
+- (id)internalName;
+- (id)defaultAccountSettings;
+- (id)serviceDefaults;
+- (id)serviceProperties;
 - (void)systemDidStartBackup;
 - (void)systemDidEnterMemoryPressure;
+- (id)initWithBundle:(id)arg1;
+- (id)bundle;
 
 @end

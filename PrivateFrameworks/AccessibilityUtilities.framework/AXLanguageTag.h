@@ -26,6 +26,10 @@
 
 + (id)tagWithDialect:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 content:(id)arg3 predictedByTagger:(BOOL)arg4;
 
+- (void)setContent:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)wasPredicted;
 - (BOOL)canBeSpokenByLanguage:(id)arg1;
 - (void)addAmbiguousDialects:(id)arg1;
@@ -39,11 +43,7 @@
 - (void)setUnambiguousDialect:(id)arg1;
 - (void)addAmbiguousDialect:(id)arg1;
 - (void)setWasPredicted:(BOOL)arg1;
-- (id)description;
-- (void)dealloc;
 - (id)content;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (void)setContent:(id)arg1;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

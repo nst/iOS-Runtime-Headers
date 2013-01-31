@@ -14,6 +14,7 @@
 @property(readonly) VKAnnotationMarker * draggingAnnotationMarker;
 
 
+- (void)annotationMarker:(id)arg1 didChangeDragState:(int)arg2 fromOldState:(int)arg3;
 - (void)dealloc;
 - (id)dragDelegate;
 - (void)animateAnnotationRepresentation:(id)arg1 fromCoordinate:(struct { double x1; double x2; })arg2 duration:(double)arg3;
@@ -25,6 +26,5 @@
 - (id)draggingAnnotationMarker;
 - (void)setDragDelegate:(id)arg1;
 - (void)draggingTouchMovedToPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)annotationMarker:(id)arg1 didChangeDragState:(int)arg2 fromOldState:(int)arg3;
 
 @end

@@ -24,7 +24,6 @@
 + (void)clearSharedIdentifierUpdater;
 + (id)sharedWeatherIdentifierUpdater;
 
-- (void)dealloc;
 - (void)setParsedCities:(id)arg1;
 - (id)parsedCities;
 - (void)setRequestedCities:(id)arg1;
@@ -34,5 +33,6 @@
 - (void)handleCompletionForCity:(id)arg1 withUpdateDetail:(int)arg2;
 - (id)aggregateDictionaryDomain;
 - (void)updateWeatherForCity:(id)arg1;
+- (void)dealloc;
 
 @end

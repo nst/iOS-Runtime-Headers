@@ -20,17 +20,11 @@
 @property(readonly) NSString * inviteMessage;
 @property(retain) GKTurnBasedParticipantInternal * internal;
 
-+ (BOOL)matchOutcomeIsValidForDoneState:(int)arg1;
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
++ (BOOL)matchOutcomeIsValidForDoneState:(int)arg1;
 
-- (BOOL)isWinner;
-- (id)matchOutcomeString;
-- (id)matchStatusString;
-- (id)basicMatchOutcomeString;
-- (id)lastTurnDate;
-- (id)initWithInternalRepresentation:(id)arg1;
-- (void)setInternal:(id)arg1;
-- (id)internal;
+- (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)description;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (unsigned int)hash;
@@ -40,7 +34,13 @@
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)setStatus:(int)arg1;
 - (int)status;
-- (id)valueForUndefinedKey:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (BOOL)isWinner;
+- (id)matchOutcomeString;
+- (id)matchStatusString;
+- (id)basicMatchOutcomeString;
+- (id)lastTurnDate;
+- (id)initWithInternalRepresentation:(id)arg1;
+- (void)setInternal:(id)arg1;
+- (id)internal;
 
 @end

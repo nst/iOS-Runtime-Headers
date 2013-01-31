@@ -122,15 +122,6 @@
 @property <VKLabelManagerDelegate> * delegate;
 
 
-- (void)setStylesheet:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (id)init;
-- (id)stylesheet;
-- (void)_didReceiveMemoryWarning:(id)arg1;
 - (id)desiredLocale;
 - (void)setDebugSkipLabels:(BOOL)arg1;
 - (BOOL)debugSkipLabels;
@@ -174,5 +165,14 @@
 - (void)setLocalizeLabels:(BOOL)arg1;
 - (BOOL)localizeLabels;
 - (void)setLabelMarkerSelectionEnabled:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)init;
+- (id)stylesheet;
+- (void)_didReceiveMemoryWarning:(id)arg1;
+- (void)setStylesheet:(id)arg1;
 
 @end

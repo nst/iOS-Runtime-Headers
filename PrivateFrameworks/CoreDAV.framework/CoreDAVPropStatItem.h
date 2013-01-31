@@ -21,13 +21,13 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (void)setStatus:(id)arg1;
-- (id)status;
 - (void)setProp:(id)arg1;
 - (id)prop;
 - (void)setResponseDescription:(id)arg1;
 - (void)setErrorItem:(id)arg1;
 - (id)responseDescription;
 - (id)errorItem;
+- (void)setStatus:(id)arg1;
+- (id)status;
 
 @end

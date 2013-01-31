@@ -17,7 +17,7 @@
 
 + (id)URLBagForContext:(id)arg1;
 
-- (void)loadWithCompletionBlock:(id)arg1;
+- (void)loadValueForKey:(id)arg1 completionBlock:(id)arg2;
 - (void)invalidate;
 - (void)dealloc;
 - (id)init;
@@ -28,7 +28,7 @@
 - (void)_loadWithCompletionBlock:(id)arg1;
 - (id)URLBagContext;
 - (id)initWithURLBagContext:(id)arg1;
+- (void)loadWithCompletionBlock:(id)arg1;
 - (id)_connection;
-- (void)loadValueForKey:(id)arg1 completionBlock:(id)arg2;
 
 @end

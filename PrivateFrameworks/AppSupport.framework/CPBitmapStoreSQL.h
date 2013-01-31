@@ -16,13 +16,6 @@
 
 - (void)dealloc;
 - (struct sqlite3 { }*)db;
-- (void)removeImagesInGroups:(id)arg1;
-- (struct CGImage { }*)copyImageForKey:(id)arg1 inGroup:(id)arg2;
-- (int)setVersion:(int)arg1;
-- (void)purge;
-- (id)initWithPath:(id)arg1 version:(int)arg2;
-- (int)version;
-- (void)commitTransaction;
 - (struct sqlite3_stmt { }*)commitStmt;
 - (struct sqlite3_stmt { }*)beginStmt;
 - (void)createDbAt:(const char *)arg1;
@@ -37,5 +30,12 @@
 - (void*)openAndMmap:(id)arg1 withInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg2;
 - (BOOL)findImageWithKey:(id)arg1 inGroup:(id)arg2 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg3;
 - (id)imageNameForKey:(id)arg1 inGroup:(id)arg2;
+- (void)removeImagesInGroups:(id)arg1;
+- (struct CGImage { }*)copyImageForKey:(id)arg1 inGroup:(id)arg2;
+- (int)setVersion:(int)arg1;
+- (void)purge;
+- (id)initWithPath:(id)arg1 version:(int)arg2;
+- (int)version;
+- (void)commitTransaction;
 
 @end

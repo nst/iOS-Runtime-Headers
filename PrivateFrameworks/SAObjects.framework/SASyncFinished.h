@@ -13,7 +13,7 @@
 + (id)finished;
 + (id)finishedWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

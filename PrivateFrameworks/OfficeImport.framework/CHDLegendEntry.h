@@ -12,12 +12,12 @@
 
 
 - (void)dealloc;
-- (id)font;
-- (void)setFont:(id)arg1;
 - (unsigned int)entryIndex;
 - (unsigned int)fontIndex;
 - (void)setEntryIndex:(unsigned int)arg1;
 - (id)initWithResources:(id)arg1;
 - (void)setFontIndex:(unsigned int)arg1;
+- (id)font;
+- (void)setFont:(id)arg1;
 
 @end

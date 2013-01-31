@@ -2,25 +2,25 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class MZKeyValueStoreTransaction, NSError, NSObject<OS_dispatch_queue>, MZUPPBagContext, MZKeyValueStoreController, <MZUniversalPlaybackPositionDataSource>, <MZUniversalPlaybackPositionTransactionContext>, NSString, NSMutableDictionary;
+@class NSError, MZUPPBagContext, MZKeyValueStoreController, NSObject<OS_dispatch_queue>, MZKeyValueStoreTransaction, <MZUniversalPlaybackPositionDataSource>, <MZUniversalPlaybackPositionTransactionContext>, NSString, NSMutableDictionary;
 
 @interface MZUniversalPlaybackPositionSyncHandler : NSObject <MZKeyValueStoreControllerDelegate, MZKeyValueStoreTransactionProcessing> {
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_syncOperationQueue;
-    NSMutableDictionary *_metadataItemsToCommitToDataSource;
-    NSMutableDictionary *_metadataItemsToCommitToKVSStorage;
-    NSMutableDictionary *_metadataItemsFromDataSource;
-    NSMutableDictionary *_metadataItemsFromKVSStorage;
-    NSError *_fatalSyncError;
-    BOOL _syncInProgress;
     MZUPPBagContext *_bagContext;
-    NSString *_responseDomainVersion;
     <MZUniversalPlaybackPositionDataSource> *_dataSource;
+    NSMutableDictionary *_metadataItemsToCommitToKVSStorage;
+    NSError *_fatalSyncError;
+    NSMutableDictionary *_metadataItemsFromKVSStorage;
+    NSMutableDictionary *_metadataItemsToCommitToDataSource;
+    BOOL _syncInProgress;
+    NSString *_responseDomainVersion;
     BOOL _canceled;
-    MZKeyValueStoreTransaction *_currentKVSTransaction;
+    NSMutableDictionary *_metadataItemsFromDataSource;
     MZKeyValueStoreController *_kvsController;
-    <MZUniversalPlaybackPositionTransactionContext> *_dataSourceTransactionContext;
     NSMutableDictionary *_reportedItemVersionForIdentifier;
+    <MZUniversalPlaybackPositionTransactionContext> *_dataSourceTransactionContext;
+    MZKeyValueStoreTransaction *_currentKVSTransaction;
 }
 
 @property(retain) <MZUniversalPlaybackPositionDataSource> * dataSource;
@@ -39,6 +39,10 @@
 @property(retain) NSError * fatalSyncError;
 
 
+- (void)setBagContext:(id)arg1;
+- (id)bagContext;
+- (void)cancel;
+- (void)dealloc;
 - (int)_mergeMetadataItemFromSetResponse:(id)arg1;
 - (void)_signalKVSTransactionCompletion:(id)arg1;
 - (id)newKVSTransactionWithType:(int)arg1 keys:(id)arg2;
@@ -89,12 +93,8 @@
 - (BOOL)keyValueStoreController:(id)arg1 shouldScheduleTransaction:(id)arg2;
 - (void)synchronizeWithCompletionHandler:(id)arg1;
 - (id)initWithDataSource:(id)arg1 bagContext:(id)arg2;
-- (void)cancel;
-- (void)dealloc;
 - (id)dataSource;
 - (void)setDataSource:(id)arg1;
-- (void)setBagContext:(id)arg1;
-- (id)bagContext;
 - (void)timeout;
 
 @end

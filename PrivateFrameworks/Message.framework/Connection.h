@@ -41,7 +41,6 @@
 @property(readonly) BOOL loginDisabled;
 @property(readonly) BOOL usesOpportunisticSockets;
 
-+ (void)initialize;
 + (void)setLogActivityOnHosts:(id)arg1;
 + (id)logActivityOnHosts;
 + (void)setLogActivityOnPorts:(id)arg1;
@@ -50,18 +49,15 @@
 + (BOOL)logAllSocketActivity;
 + (void)setLogClasses:(id)arg1;
 + (id)logClasses;
-+ (void)flushLog;
 + (void)logBytes:(const char *)arg1 length:(int)arg2;
 + (void)readLoggingDefaults;
 + (BOOL)shouldTryFallbacksAfterError:(id)arg1;
++ (void)initialize;
++ (void)flushLog;
 
-- (BOOL)loginDisabled;
+- (BOOL)writeData:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (void)disconnect;
-- (BOOL)isValid;
-- (BOOL)hasBytesAvailable;
-- (BOOL)writeData:(id)arg1;
 - (double)lastUsedTime;
 - (BOOL)startCompression;
 - (BOOL)startTLSForAccount:(id)arg1;
@@ -86,5 +82,9 @@
 - (id)securityProtocol;
 - (BOOL)authenticateUsingAccount:(id)arg1;
 - (BOOL)connectUsingFallbacksForAccount:(id)arg1;
+- (void)disconnect;
+- (BOOL)isValid;
+- (BOOL)loginDisabled;
+- (BOOL)hasBytesAvailable;
 
 @end

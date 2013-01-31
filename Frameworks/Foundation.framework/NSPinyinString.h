@@ -23,7 +23,6 @@
 + (id)_prefixesForInputString:(id)arg1;
 + (id)_alternativesForInputString:(id)arg1;
 
-- (unsigned int)score;
 - (id)description;
 - (unsigned int)hash;
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
@@ -34,6 +33,7 @@
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (unsigned int)score;
 - (id)initWithString:(id)arg1 syllableCount:(unsigned int)arg2 lastSyllableIsPartial:(BOOL)arg3 score:(unsigned int)arg4 replacementCount:(unsigned int)arg5 transpositionCount:(unsigned int)arg6 insertionCount:(unsigned int)arg7 deletionCount:(unsigned int)arg8 rangeCount:(unsigned int)arg9 ranges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg10;
 - (id)nonPinyinIndexSet;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })nonPinyinRangeAtIndex:(unsigned int)arg1;

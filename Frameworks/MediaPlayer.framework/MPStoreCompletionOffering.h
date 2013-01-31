@@ -20,6 +20,8 @@
 + (void)setDefaultOfferVariant:(int)arg1;
 + (int)defaultOfferVariant;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)linkOffering;
 - (int)preferredStoreOfferVariant;
 - (void)setPreferredStoreOfferVariant:(int)arg1;
@@ -28,7 +30,5 @@
 - (void)setPurchaseableCollectionOffering:(id)arg1;
 - (id)_getPurchaseableCollectionOffering;
 - (id)initWithCollectionResponseDictionary:(id)arg1 localItemsQuery:(id)arg2;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

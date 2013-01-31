@@ -60,22 +60,24 @@
 @property <EAAccessoryDelegate> * delegate;
 
 
-- (void)addSession:(id)arg1;
-- (void)setConnected:(BOOL)arg1;
-- (void)setSerialNumber:(id)arg1;
-- (id)serialNumber;
-- (void)setManufacturer:(id)arg1;
-- (id)manufacturer;
-- (BOOL)connected;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)setName:(id)arg1;
 - (id)name;
 - (void)dealloc;
 - (id)init;
+- (unsigned int)capabilities;
+- (void)setConnected:(BOOL)arg1;
+- (void)setSerialNumber:(id)arg1;
+- (id)serialNumber;
+- (void)setManufacturer:(id)arg1;
+- (id)manufacturer;
+- (BOOL)connected;
+- (void)addSession:(id)arg1;
+- (void)setCapabilities:(unsigned int)arg1;
+- (void)removeSession:(id)arg1;
 - (void)setMacAddress:(id)arg1;
 - (id)macAddress;
-- (void)removeSession:(id)arg1;
 - (int)iPodOutOptionsMask;
 - (unsigned int)eqIndex;
 - (id)eqNames;
@@ -107,7 +109,5 @@
 - (void)setIPodOutOptionsMask:(int)arg1;
 - (int (*)())cfAccessoryPortPropertyCallback;
 - (unsigned int)connectionID;
-- (void)setCapabilities:(unsigned int)arg1;
-- (unsigned int)capabilities;
 
 @end

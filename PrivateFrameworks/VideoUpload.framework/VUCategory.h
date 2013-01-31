@@ -14,9 +14,9 @@
 
 + (id)categoryWithDisplayName:(id)arg1 value:(id)arg2;
 
+- (void)setDisplayName:(id)arg1;
 - (id)displayName;
 - (id)value;
 - (void)setValue:(id)arg1;
-- (void)setDisplayName:(id)arg1;
 
 @end

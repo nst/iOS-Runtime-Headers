@@ -11,10 +11,10 @@
 @property <GKAchievementViewControllerDelegate> * achievementDelegate;
 
 
+- (void)dealloc;
+- (id)init;
 - (void)setAchievementDelegate:(id)arg1;
 - (id)achievementDelegate;
 - (void)notifyDelegateOnWillFinish;
-- (void)dealloc;
-- (id)init;
 
 @end

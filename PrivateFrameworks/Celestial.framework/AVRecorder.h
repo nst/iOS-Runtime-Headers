@@ -7,15 +7,8 @@
 }
 
 
-- (id)attributeForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)filePath;
-- (void)setFilePath:(id)arg1;
-- (void)stop;
-- (BOOL)isActive;
-- (BOOL)start;
-- (void)deactivate;
 - (BOOL)audioCurrentAverageDecibelLevels:(float*)arg1 andPeakDecibelLevels:(float*)arg2;
 - (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2;
 - (unsigned int)audioNumDeviceChannels;
@@ -27,6 +20,13 @@
 - (BOOL)activate:(id*)arg1;
 - (void)implNotification:(id)arg1;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
+- (id)filePath;
+- (void)setFilePath:(id)arg1;
+- (void)stop;
+- (BOOL)isActive;
+- (BOOL)start;
+- (void)deactivate;
+- (id)attributeForKey:(id)arg1;
 - (BOOL)takePhoto;
 - (double)recordedDuration;
 - (BOOL)isRecording;

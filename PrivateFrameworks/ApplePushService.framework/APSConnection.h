@@ -36,25 +36,32 @@
 @property(readonly) NSObject<OS_dispatch_queue> * delegateQueue;
 @property(readonly) NSObject<OS_dispatch_queue> * ivarQueue;
 
++ (struct __SecIdentity { }*)copyIdentity;
 + (void)requestCourierConnection;
 + (void)notifySafeToSendFilter;
 + (id)connectionsDebuggingState;
 + (double)keepAliveIntervalForEnvironmentName:(id)arg1;
 + (void)_setTokenState;
 + (void)_blockingXPCCallWithArgumentBlock:(id)arg1 resultHandler:(id)arg2;
-+ (struct __SecIdentity { }*)copyIdentity;
 
+- (void)_disconnect;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)_callDelegateOnIvarQueueWithBlock:(id)arg1;
+- (void)setMessageSize:(unsigned int)arg1;
+- (unsigned int)messageSize;
+- (void)setSubtopic:(id)arg1 forEnabledTopic:(id)arg2;
+- (void)setIgnoredTopics:(id)arg1;
+- (id)initWithEnvironmentName:(id)arg1 queue:(id)arg2;
+- (void)setEnableCriticalReliability:(BOOL)arg1;
+- (void)_cancelConnection;
 - (void)sendOutgoingMessage:(id)arg1;
 - (void)cancelOutgoingMessage:(id)arg1;
 - (void)setEnabledTopics:(id)arg1;
 - (void)removeFromRunLoop;
 - (id)publicToken;
 - (id)initWithEnvironmentName:(id)arg1;
-- (void)_connectIfNecessary;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (void)_callDelegateOnIvarQueueWithBlock:(id)arg1;
 - (id)ivarQueue;
 - (void)sendFakeMessage:(id)arg1;
 - (BOOL)hasIdentity;
@@ -77,16 +84,9 @@
 - (void)setEnableStatusNotifications:(BOOL)arg1;
 - (void)_disconnectFromDealloc;
 - (id)initWithEnvironmentName:(id)arg1 namedDelegatePort:(id)arg2 queue:(id)arg3;
-- (void)setSubtopic:(id)arg1 forEnabledTopic:(id)arg2;
-- (void)setIgnoredTopics:(id)arg1;
-- (id)initWithEnvironmentName:(id)arg1 queue:(id)arg2;
-- (void)_disconnect;
-- (void)setEnableCriticalReliability:(BOOL)arg1;
-- (void)setMessageSize:(unsigned int)arg1;
-- (unsigned int)messageSize;
-- (void)_cancelConnection;
+- (void)_connectIfNecessary;
+- (void)scheduleInRunLoop:(id)arg1;
 - (id)delegateQueue;
 - (BOOL)isConnected;
-- (void)scheduleInRunLoop:(id)arg1;
 
 @end

@@ -29,20 +29,6 @@
 @property(readonly) NSURL * absoluteLinkURL;
 
 
-- (void)setTarget:(id)arg1;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)target;
-- (id)type;
-- (void)setShape:(id)arg1;
-- (id)protocol;
-- (id)port;
-- (id)shape;
-- (id)rel;
-- (id)absoluteLinkURL;
-- (id)host;
-- (id)text;
-- (void)setType:(id)arg1;
 - (id)search;
 - (id)pathname;
 - (id)hostname;
@@ -62,6 +48,20 @@
 - (void)setCharset:(id)arg1;
 - (id)charset;
 - (id)href;
+- (void)setTarget:(id)arg1;
+- (void)setName:(id)arg1;
+- (id)name;
+- (id)target;
+- (id)type;
+- (void)setShape:(id)arg1;
+- (id)protocol;
+- (id)port;
+- (id)shape;
+- (id)rel;
+- (id)absoluteLinkURL;
+- (id)host;
+- (id)text;
+- (void)setType:(id)arg1;
 - (BOOL)alwaysAttemptToShowTapHighlight;
 
 @end

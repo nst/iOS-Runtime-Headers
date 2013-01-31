@@ -9,8 +9,6 @@
 }
 
 
-- (void)dealloc;
-- (void)clearCaches;
 - (id)sourceKeysForRenderKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (int)defaultMinimumZoomLevel;
 - (unsigned int)mapLayerForZoomLevelRange;
@@ -22,5 +20,7 @@
 - (BOOL)maximumZoomLevelBoundsCamera;
 - (BOOL)minimumZoomLevelBoundsCamera;
 - (id)initWithTileSet:(id)arg1;
+- (void)dealloc;
+- (void)clearCaches;
 
 @end

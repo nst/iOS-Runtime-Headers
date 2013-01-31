@@ -17,15 +17,15 @@
 + (id)createAssistantWithDictionary:(id)arg1 context:(id)arg2;
 + (id)createAssistant;
 
-- (void)setValidationData:(id)arg1;
-- (id)validationData;
-- (id)groupIdentifier;
-- (void)setLanguage:(id)arg1;
-- (id)language;
-- (void)setConnectionType:(id)arg1;
-- (id)connectionType;
 - (void)setActivationToken:(id)arg1;
 - (id)activationToken;
 - (id)encodedClassName;
+- (void)setValidationData:(id)arg1;
+- (id)validationData;
+- (void)setConnectionType:(id)arg1;
+- (id)connectionType;
+- (void)setLanguage:(id)arg1;
+- (id)language;
+- (id)groupIdentifier;
 
 @end

@@ -16,13 +16,12 @@
 
 + (id)defaultSession;
 
+- (id)localName;
 - (void)dealloc;
 - (id)init;
 - (id)networkName;
-- (id)connections;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;
-- (id)localName;
 - (struct OpaqueMIDIEndpoint { }*)destinationEndpoint;
 - (struct OpaqueMIDIEndpoint { }*)sourceEndpoint;
 - (void)contactsChanged;
@@ -37,6 +36,7 @@
 - (void)refreshBonjourName;
 - (void)updateFromEntity;
 - (void)setStateToEntity;
+- (id)connections;
 - (BOOL)addConnection:(id)arg1;
 - (BOOL)removeConnection:(id)arg1;
 

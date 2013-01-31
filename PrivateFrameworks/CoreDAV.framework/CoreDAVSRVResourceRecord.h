@@ -23,13 +23,13 @@
 - (id)target;
 - (id)description;
 - (void)dealloc;
+- (id)weight;
+- (void)setWeight:(id)arg1;
+- (void)setServiceString:(id)arg1;
+- (id)serviceString;
 - (void)setPriority:(id)arg1;
 - (id)priority;
 - (id)port;
-- (void)setServiceString:(id)arg1;
-- (id)serviceString;
 - (void)setPort:(id)arg1;
-- (id)weight;
-- (void)setWeight:(id)arg1;
 
 @end

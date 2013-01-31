@@ -22,6 +22,12 @@
 
 + (id)codedPropertyKeys;
 
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (void)setSource:(id)arg1;
+- (id)source;
+- (id)reason;
 - (void)setRid:(id)arg1;
 - (id)rid;
 - (void)setReason2:(id)arg1;
@@ -31,11 +37,5 @@
 - (id)reasonID;
 - (id)playerID;
 - (void)setPlayerID:(id)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setSource:(id)arg1;
-- (id)source;
-- (id)reason;
 
 @end

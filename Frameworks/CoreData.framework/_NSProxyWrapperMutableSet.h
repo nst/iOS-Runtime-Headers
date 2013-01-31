@@ -13,11 +13,11 @@
 - (void)removeAllObjects;
 - (void)addObject:(id)arg1;
 - (void)dealloc;
-- (id)initWithContainer:(id)arg1 key:(id)arg2 mutableSet:(id)arg3 mutationMethods:(id)arg4;
 - (void)minusSet:(id)arg1;
 - (void)intersectSet:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
 - (void)removeObject:(id)arg1;
 - (void)setSet:(id)arg1;
+- (id)initWithContainer:(id)arg1 key:(id)arg2 mutableSet:(id)arg3 mutationMethods:(id)arg4;
 
 @end

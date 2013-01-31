@@ -23,6 +23,10 @@
 + (void)endScanningForLibraries;
 + (void)beginScanningForLibraries;
 
+- (id)name;
+- (void)dealloc;
+- (void)disconnect;
+- (id)uniqueIdentifier;
 - (void)setRentalPlaybackStartDateForItemID:(unsigned long long)arg1;
 - (void)updateUbiquitousValuesForTrackWithKey:(id)arg1 mediaPropertyValues:(id)arg2;
 - (void)setTokenData:(id)arg1 forAuthorizedDSID:(unsigned long long)arg2;
@@ -48,16 +52,12 @@
 - (void)loadQueryCriteria:(id)arg1 hasCollectionsWithCompletionBlock:(id)arg2;
 - (void)loadQueryCriteria:(id)arg1 hasItemsWithCompletionBlock:(id)arg2;
 - (id)itemResultSetForQueryCriteria:(id)arg1;
+- (BOOL)requiresAuthentication;
 - (void)performUbiquitousDatabaseUpdateTransaction:(id)arg1;
 - (void)downloadItemWithIdentifier:(long long)arg1 completionHandler:(id)arg2;
 - (BOOL)hasGeniusMixes;
 - (void)connectWithAuthenticationData:(id)arg1 completionBlock:(id)arg2 progressHandler:(id)arg3;
 - (void)_didEnterBackgroundNotification:(id)arg1;
 - (void)_willEnterForegroundNotification:(id)arg1;
-- (id)name;
-- (void)dealloc;
-- (void)disconnect;
-- (id)uniqueIdentifier;
-- (BOOL)requiresAuthentication;
 
 @end

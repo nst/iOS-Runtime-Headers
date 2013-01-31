@@ -20,14 +20,12 @@
 }
 
 
+- (id)styleSheet;
 - (void)setName:(id)arg1;
 - (id)name;
 - (int)type;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)hidden;
-- (void)setHidden:(BOOL)arg1;
-- (id)styleSheet;
 - (id)initWithStyleSheet:(id)arg1 id:(id)arg2 type:(int)arg3;
 - (id)tableCellProperties;
 - (id)tableRowProperties;
@@ -41,5 +39,7 @@
 - (id)paragraphProperties;
 - (id)id;
 - (id)baseStyle;
+- (BOOL)hidden;
+- (void)setHidden:(BOOL)arg1;
 
 @end

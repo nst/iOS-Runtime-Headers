@@ -23,10 +23,6 @@
 + (id)_UTTypes;
 + (id)_figMIMETypes;
 
-- (id)initWithURL:(id)arg1 options:(id)arg2;
-- (unsigned long long)downloadToken;
-- (id)tracks;
-- (id)lyrics;
 - (id)URL;
 - (id)description;
 - (void)dealloc;
@@ -35,10 +31,15 @@
 - (id)availableChapterLocales;
 - (id)cacheKey;
 - (void)finalize;
+- (unsigned long long)downloadToken;
+- (id)initWithURL:(id)arg1 options:(id)arg2;
+- (id)tracks;
+- (id)lyrics;
 - (id)requestForStreamingKeyForContext:(id)arg1 appID:(id)arg2 assetID:(id)arg3 options:(id)arg4 errorOut:(id*)arg5;
 - (void)_handleURLRequest:(id)arg1;
 - (void)_finishLoadingURLRequestWithResponseProperties:(id)arg1 context:(id)arg2;
 - (id)resourceLoader;
+- (BOOL)_shouldOptimizeAccessForLinearMoviePlayback;
 - (id)SHA1Digest;
 - (id)downloadDestinationURL;
 - (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;

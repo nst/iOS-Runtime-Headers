@@ -33,6 +33,7 @@
 @property BOOL needImage;
 
 
+- (id)init;
 - (void)setMagnification:(float)arg1;
 - (float)magnification;
 - (void)move;
@@ -50,7 +51,6 @@
 - (BOOL)needImage;
 - (void)setPageView:(id)arg1;
 - (id)pageView;
-- (id)init;
 - (void)hide;
 
 @end

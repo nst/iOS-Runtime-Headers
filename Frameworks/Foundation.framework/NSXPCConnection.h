@@ -49,11 +49,9 @@
 @property(readonly) unsigned int effectiveGroupIdentifier;
 
 + (id)currentConnection;
-+ (void)beginTransaction;
 + (void)endTransaction;
++ (void)beginTransaction;
 
-- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
-- (int)processIdentifier;
 - (void)invalidate;
 - (id)remoteObjectProxy;
 - (struct { unsigned int x1[8]; })auditToken;
@@ -78,7 +76,8 @@
 - (void)finalize;
 - (void)start;
 - (void)suspend;
-- (id)serviceName;
+- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
+- (int)processIdentifier;
 - (id)remoteObjectInterface;
 - (void)_setUUID:(id)arg1;
 - (unsigned int)effectiveGroupIdentifier;
@@ -104,5 +103,6 @@
 - (void)_sendDesistForProxyNumber:(unsigned long long)arg1;
 - (void)_sendInvocation:(id)arg1 proxyNumber:(unsigned long long)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4 timeout:(double)arg5;
 - (id)initWithListenerEndpoint:(id)arg1;
+- (id)serviceName;
 
 @end

@@ -22,19 +22,15 @@
 @property(retain) NSString * imageURL;
 @property(retain) GKAchievementDescriptionInternal * internal;
 
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
 + (id)placeholderCompletedAchievementImage;
 + (id)incompleteAchievementImage;
 + (void)loadAchievementDescriptionsWithCompletionHandler:(id)arg1;
 + (void)loadAchievementDescriptionWithIdentifier:(id)arg1 forGame:(id)arg2 withCompletionHandler:(id)arg3;
 + (void)loadAchievementDescriptionsForGame:(id)arg1 withCompletionHandler:(id)arg2;
-+ (BOOL)instancesRespondToSelector:(SEL)arg1;
 
-- (void)setImageURL:(id)arg1;
-- (void)loadImageWithCompletionHandler:(id)arg1;
-- (id)initWithInternalRepresentation:(id)arg1;
-- (void)setInternal:(id)arg1;
-- (id)imageURL;
-- (id)internal;
+- (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)description;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (unsigned int)hash;
@@ -46,7 +42,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setImage:(id)arg1;
-- (id)valueForUndefinedKey:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (void)setImageURL:(id)arg1;
+- (void)loadImageWithCompletionHandler:(id)arg1;
+- (id)initWithInternalRepresentation:(id)arg1;
+- (void)setInternal:(id)arg1;
+- (id)imageURL;
+- (id)internal;
 
 @end

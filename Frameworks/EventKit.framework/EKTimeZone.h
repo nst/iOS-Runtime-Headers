@@ -13,8 +13,8 @@
     double _offset;
 }
 
-+ (id)timeZoneWithName:(id)arg1;
 + (id)timeZoneWithNSTimeZone:(id)arg1;
++ (id)timeZoneWithName:(id)arg1;
 
 - (id)name;
 - (id)description;
@@ -23,10 +23,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (double)secondsFromGMTForDate:(id)arg1;
-- (double)secondsFromGMT;
-- (id)abbreviation;
-- (id)initWithName:(id)arg1;
-- (id)abbreviationForDate:(id)arg1;
 - (id)_abbreviationForIndex:(unsigned int)arg1;
 - (unsigned int)_indexForAbsoluteTime:(double)arg1;
 - (id)abbreviationForAbsoluteTime:(double)arg1;
@@ -34,5 +30,9 @@
 - (double)nextDaylightSavingTimeTransitionAfterAbsoluteTime:(double)arg1;
 - (double)secondsFromGMTForAbsoluteTime:(double)arg1;
 - (id)NSTimeZone;
+- (double)secondsFromGMT;
+- (id)abbreviation;
+- (id)initWithName:(id)arg1;
+- (id)abbreviationForDate:(id)arg1;
 
 @end

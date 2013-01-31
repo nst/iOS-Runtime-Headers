@@ -10,9 +10,9 @@
 @property(readonly) MKPolygon * polygon;
 
 
+- (void)createPath;
 - (id)polygon;
 - (id)initWithPolygon:(id)arg1;
 - (void)fillPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2;
-- (void)createPath;
 
 @end

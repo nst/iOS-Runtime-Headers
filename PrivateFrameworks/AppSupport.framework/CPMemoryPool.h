@@ -11,17 +11,15 @@
     } _lock;
     NSMutableArray *_files;
     char *_label;
-    unsigned long _slotSize;
-    BOOL _swappable;
+    unsigned long _slotLength;
 }
 
-@property(readonly) unsigned long slotSize;
+@property(readonly) unsigned long slotLength;
 
 
 - (void)dealloc;
-- (unsigned long)slotSize;
-- (id)initWithLabel:(const char *)arg1 slotSize:(unsigned long)arg2 swappable:(BOOL)arg3;
-- (void)sync;
-- (id)nextSlot;
+- (unsigned long)slotLength;
+- (id)initWithLabel:(const char *)arg1 slotLength:(unsigned long)arg2;
+- (id)nextSlotWithBytes:(const void*)arg1 length:(unsigned long)arg2;
 
 @end

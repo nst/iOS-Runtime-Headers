@@ -30,18 +30,10 @@
 + (id)softwareApplicationDownloadKinds;
 + (id)mediaDownloadKinds;
 
-- (void)downloadManagerNetworkUsageDidChange:(id)arg1;
-- (void)downloadManagerDownloadsDidChange:(id)arg1;
-- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
-- (id)downloads;
-- (id)downloadManager;
-- (void)addObserver:(id)arg1;
 - (BOOL)canCancelDownload:(id)arg1;
-- (void)downloadManager:(id)arg1 downloadsDidChange:(id)arg2;
 - (BOOL)reloadFromServer;
 - (id)downloadKinds;
 - (BOOL)isUsingNetwork;
-- (BOOL)cancelDownload:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)dealloc;
 - (id)init;
@@ -64,6 +56,14 @@
 - (id)_initWithDownloadManagerOptions:(id)arg1;
 - (id)initWithDownloadKinds:(id)arg1;
 - (void)_handleDownloadsDidChange:(id)arg1;
+- (BOOL)cancelDownload:(id)arg1;
+- (void)downloadManager:(id)arg1 downloadsDidChange:(id)arg2;
+- (void)downloadManagerNetworkUsageDidChange:(id)arg1;
+- (void)downloadManagerDownloadsDidChange:(id)arg1;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
+- (id)downloads;
+- (id)downloadManager;
+- (void)addObserver:(id)arg1;
 - (void)getDownloadsUsingBlock:(id)arg1;
 
 @end

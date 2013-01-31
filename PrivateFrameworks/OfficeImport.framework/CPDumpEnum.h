@@ -12,9 +12,9 @@
 
 
 - (void)dealloc;
-- (id)valueForName:(id)arg1;
 - (id)nameForValue:(long)arg1;
 - (id)typeName;
 - (id)initWithTypeName:(id)arg1 pairs:(struct CPDumpEnumPair { int x1; id x2; }*)arg2;
+- (id)valueForName:(id)arg1;
 
 @end

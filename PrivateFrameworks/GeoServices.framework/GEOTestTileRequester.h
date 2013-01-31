@@ -11,7 +11,7 @@
 + (unsigned char)tileProviderIdentifier;
 
 - (void)dealloc;
-- (void)start;
 - (void)_sendResults:(id)arg1;
+- (void)start;
 
 @end

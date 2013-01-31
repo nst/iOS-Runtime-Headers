@@ -20,7 +20,6 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)status;
 - (BOOL)remoteWipe;
 - (id)policies;
 - (void)setPolicyType:(id)arg1;
@@ -30,5 +29,6 @@
 - (id)initWithPolicyType:(id)arg1;
 - (void)_setStatus:(id)arg1;
 - (id)asParseRules;
+- (id)status;
 
 @end

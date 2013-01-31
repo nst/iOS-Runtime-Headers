@@ -16,10 +16,11 @@
 @property float shadowBlurRadius;
 @property(retain) id shadowColor;
 
-+ (void)initialize;
 + (id)defaultShadowColor;
 + (id)shadow;
++ (void)initialize;
 
+- (id)initWithShadow:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -33,6 +34,5 @@
 - (struct CGSize { float x1; float x2; })shadowOffset;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithShadow:(id)arg1;
 
 @end

@@ -26,6 +26,7 @@
 - (id)description;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)imageData;
 - (void)setImageCacheKey:(id)arg1;
 - (void)setURLTitle:(id)arg1;
 - (void)setStartTimeInMilliseconds:(unsigned int)arg1;
@@ -38,6 +39,5 @@
 - (void)setURL:(id)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)imageData;
 
 @end

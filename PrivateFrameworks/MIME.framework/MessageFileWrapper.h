@@ -16,11 +16,20 @@
 }
 
 
+- (void)setCreator:(unsigned long)arg1;
 - (id)path;
 - (id)URL;
 - (unsigned long)type;
 - (id)description;
 - (void)dealloc;
+- (BOOL)isPlaceholder;
+- (unsigned long)creator;
+- (id)messageID;
+- (id)meetingStorePersistentID;
+- (id)symbolicLinkDestination;
+- (BOOL)isImageFile;
+- (id)contentID;
+- (void)setContentID:(id)arg1;
 - (id)initSymbolicLinkWithDestination:(id)arg1;
 - (BOOL)isUnzippableFile;
 - (BOOL)isPDFFile;
@@ -32,7 +41,8 @@
 - (void)setFinderFlags:(unsigned short)arg1;
 - (void)setFileProtection:(id)arg1;
 - (void)_isImage:(BOOL*)arg1 orPDFFile:(BOOL*)arg2;
-- (void)setFilename:(id)arg1;
+- (void)setMessageID:(id)arg1;
+- (void)setMimeType:(id)arg1;
 - (void)setPath:(id)arg1;
 - (id)regularFileContents;
 - (BOOL)isRegularFile;
@@ -43,15 +53,6 @@
 - (void)setMeetingStorePersistentID:(id)arg1;
 - (void)setEventUniqueID:(id)arg1;
 - (void)setICSRepresentation:(id)arg1;
-- (void)setMimeType:(id)arg1;
-- (BOOL)isPlaceholder;
-- (void)setCreator:(unsigned long)arg1;
-- (id)messageID;
-- (id)meetingStorePersistentID;
-- (id)symbolicLinkDestination;
-- (BOOL)isImageFile;
-- (id)contentID;
-- (void)setContentID:(id)arg1;
 - (void)setFileAttributes:(id)arg1;
 - (BOOL)isSymbolicLink;
 - (id)fileWrappers;
@@ -60,9 +61,8 @@
 - (id)initRegularFileWithContents:(id)arg1;
 - (id)fileAttributes;
 - (BOOL)isDirectory;
-- (unsigned long)creator;
+- (void)setFilename:(id)arg1;
 - (id)filename;
-- (void)setMessageID:(id)arg1;
 - (float)minimumZoomFontSize;
 - (BOOL)isZip;
 - (BOOL)isRFC822;

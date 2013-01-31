@@ -10,11 +10,11 @@
 + (id)mapHorizontalAlignmentValue:(int)arg1;
 + (id)mapUnderlineValue:(int)arg1;
 
-- (int)value;
 - (id)mapVerticalAlignment;
 - (id)mapHorizontalAlignment;
 - (id)cssStringForName:(id)arg1;
 - (id)initWithEnum:(int)arg1;
 - (id)mapUnderline;
+- (int)value;
 
 @end

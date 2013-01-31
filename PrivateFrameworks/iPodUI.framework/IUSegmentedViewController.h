@@ -41,30 +41,6 @@
 @property(retain) UIView * leftView;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)segmentedControl;
-- (id)accessoryView;
-- (void)setAccessoryView:(id)arg1;
-- (BOOL)editable;
-- (void)setEditable:(BOOL)arg1;
-- (void)setTransientViewController:(id)arg1;
-- (void)setSelectedIndex:(unsigned int)arg1;
-- (unsigned int)selectedIndex;
-- (id)transientViewController;
-- (void)setSelectedViewController:(id)arg1;
-- (id)selectedViewController;
-- (void)setViewControllers:(id)arg1;
-- (id)viewControllers;
-- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
-- (BOOL)_canReloadView;
-- (void)loadView;
-- (void)viewDidLoad;
-- (id)leftView;
-- (void)setLeftView:(id)arg1;
-- (void)setNavigationBar:(id)arg1;
-- (id)navigationBar;
 - (struct CGSize { float x1; float x2; })accessoryViewOffset;
 - (int)segmentedControlAlignment;
 - (void)_popTopViewController:(id)arg1;
@@ -90,5 +66,29 @@
 - (void)setAutoHidesSegmentedControl:(BOOL)arg1;
 - (void)setSegmentedControlAlignment:(int)arg1;
 - (void)cancelEditing;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)segmentedControl;
+- (id)accessoryView;
+- (void)setAccessoryView:(id)arg1;
+- (BOOL)editable;
+- (void)setEditable:(BOOL)arg1;
+- (void)setTransientViewController:(id)arg1;
+- (void)setSelectedIndex:(unsigned int)arg1;
+- (unsigned int)selectedIndex;
+- (id)transientViewController;
+- (void)setSelectedViewController:(id)arg1;
+- (id)selectedViewController;
+- (void)setViewControllers:(id)arg1;
+- (id)viewControllers;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
+- (BOOL)_canReloadView;
+- (void)loadView;
+- (void)viewDidLoad;
+- (id)leftView;
+- (void)setLeftView:(id)arg1;
+- (void)setNavigationBar:(id)arg1;
+- (id)navigationBar;
 
 @end

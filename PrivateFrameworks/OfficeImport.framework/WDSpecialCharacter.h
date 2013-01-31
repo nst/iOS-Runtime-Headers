@@ -11,11 +11,11 @@
 
 
 - (void)dealloc;
-- (id)properties;
 - (void)clearProperties;
 - (int)characterType;
 - (void)setCharacterType:(int)arg1;
 - (id)initWithParagraph:(id)arg1;
 - (int)runType;
+- (id)properties;
 
 @end

@@ -6,7 +6,7 @@
 }
 
 
-- (id)uniqueKey;
 - (void)run;
+- (id)uniqueKey;
 
 @end

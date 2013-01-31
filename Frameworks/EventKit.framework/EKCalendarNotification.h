@@ -32,15 +32,13 @@
 - (id)name;
 - (int)type;
 - (void)dealloc;
-- (void)setObjectID:(id)arg1;
-- (id)objectID;
+- (void)setURI:(id)arg1;
+- (id)URI;
+- (id)emailAddress;
 - (id)title;
 - (id)initWithType:(int)arg1;
 - (void)setType:(int)arg1;
 - (void)setTitle:(id)arg1;
-- (id)emailAddress;
-- (void)setURI:(id)arg1;
-- (id)URI;
 - (BOOL)hiddenFromNotificationCenter;
 - (struct CGColor { }*)dotColor;
 - (BOOL)needsAlert;
@@ -49,5 +47,7 @@
 - (void)setHiddenFromNotificationCenter:(BOOL)arg1;
 - (BOOL)alerted;
 - (void)setEmailAddress:(id)arg1;
+- (void)setObjectID:(id)arg1;
+- (id)objectID;
 
 @end

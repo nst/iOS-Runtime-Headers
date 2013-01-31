@@ -37,23 +37,14 @@
 
 + (id)purchaseWithBuyParameters:(id)arg1;
 
-- (id)initWithItem:(id)arg1;
 - (id)itemOffer;
 - (void)setDownloadProperties:(id)arg1;
-- (id)downloadProperties;
 - (id)initWithItem:(id)arg1 offer:(id)arg2;
-- (id)buyParameters;
 - (void)setNetworkConstraints:(id)arg1;
-- (void)setValue:(id)arg1 forDownloadProperty:(id)arg2;
 - (id)accountIdentifier;
 - (id)valueForDownloadProperty:(id)arg1;
 - (id)requestProperties;
-- (void)setRequestProperties:(id)arg1;
-- (void)setBuyParameters:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
-- (long long)placeholderDownloadIdentifier;
-- (void)setDownloadPolicy:(id)arg1;
-- (void)setIgnoresForcedPasswordRestriction:(BOOL)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
@@ -74,5 +65,14 @@
 - (id)item;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)setRequestProperties:(id)arg1;
+- (void)setDownloadPolicy:(id)arg1;
+- (void)setValue:(id)arg1 forDownloadProperty:(id)arg2;
+- (void)setIgnoresForcedPasswordRestriction:(BOOL)arg1;
+- (void)setBuyParameters:(id)arg1;
+- (long long)placeholderDownloadIdentifier;
+- (id)buyParameters;
+- (id)downloadProperties;
+- (id)initWithItem:(id)arg1;
 
 @end

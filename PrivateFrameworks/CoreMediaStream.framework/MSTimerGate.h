@@ -10,9 +10,9 @@
 
 
 - (id)init;
+- (void)disable;
 - (BOOL)enabled;
 - (void)enable;
 - (void)setEnabled:(BOOL)arg1;
-- (void)disable;
 
 @end

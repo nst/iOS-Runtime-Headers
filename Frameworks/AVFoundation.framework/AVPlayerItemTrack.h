@@ -13,8 +13,6 @@
 
 + (id)playerItemTrackWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(int)arg2 asset:(id)arg3 playerItem:(id)arg4;
 
-- (int)trackID;
-- (id)assetTrack;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -22,6 +20,8 @@
 - (void)finalize;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;
+- (id)assetTrack;
+- (int)trackID;
 - (id)_audioVolumeCurve;
 - (id)fallbackTrack;
 - (id)_initWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(int)arg2 asset:(id)arg3 playerItem:(id)arg4;

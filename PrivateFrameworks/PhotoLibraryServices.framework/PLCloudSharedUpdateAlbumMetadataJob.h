@@ -13,14 +13,14 @@
 + (void)updateAlbumMetadata:(id)arg1;
 
 - (id)description;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
-- (void)run;
 - (id)_argumentsDictionaryFromXPCEvent:(id)arg1;
 - (id)_argumentsDictionaryAsData:(id)arg1;
 - (void)encodeToXPCObject:(id)arg1;
 - (int)daemonOperation;
 - (void)runDaemonSide;
 - (id)initFromXPCObject:(id)arg1;
+- (void)run;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 
 @end

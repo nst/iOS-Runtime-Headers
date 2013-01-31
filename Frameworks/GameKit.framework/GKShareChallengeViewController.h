@@ -6,6 +6,10 @@
 }
 
 
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (BOOL)_useTallerPopoverContentSize;
 - (void)sendFriendRequestToPlayer:(id)arg1;
 - (void)sendFriendRequestPressed:(id)arg1;
@@ -20,9 +24,5 @@
 - (BOOL)usesCrossfade;
 - (void)prepareDataSource;
 - (Class)dataSourceClass;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 
 @end

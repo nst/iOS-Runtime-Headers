@@ -42,6 +42,17 @@
 
 
 - (void)performFlip;
+- (void)setFrontView:(id)arg1;
+- (void)setEdgeConstraints:(struct CGSize { float x1; float x2; })arg1;
+- (void)setDidStopSelector:(SEL)arg1;
+- (void)setBackView:(id)arg1;
+- (void)resetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (SEL)didStopSelector;
+- (struct CGSize { float x1; float x2; })_visibilityTranslationWithSuperviewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 viewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 edgeConstraints:(struct CGSize { float x1; float x2; })arg3;
+- (void)_prepareForInitialFlip;
+- (void)_tick;
+- (struct CGSize { float x1; float x2; })edgeConstraints;
+- (id)timingFunction;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
@@ -53,16 +64,5 @@
 - (float)duration;
 - (void)setDuration:(float)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)timingFunction;
-- (void)setFrontView:(id)arg1;
-- (void)setEdgeConstraints:(struct CGSize { float x1; float x2; })arg1;
-- (void)setDidStopSelector:(SEL)arg1;
-- (void)setBackView:(id)arg1;
-- (void)resetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (SEL)didStopSelector;
-- (struct CGSize { float x1; float x2; })_visibilityTranslationWithSuperviewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 viewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 edgeConstraints:(struct CGSize { float x1; float x2; })arg3;
-- (void)_prepareForInitialFlip;
-- (void)_tick;
-- (struct CGSize { float x1; float x2; })edgeConstraints;
 
 @end

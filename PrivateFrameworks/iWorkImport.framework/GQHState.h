@@ -36,10 +36,6 @@
 }
 
 
-- (id).cxx_construct;
-- (void)dealloc;
-- (void)setScale:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })scale;
 - (struct __CFString { }*)addCacheForCellStyle:(id)arg1 fillStyle:(id)arg2 cellClass:(Class)arg3 vectorStyles:(id*)arg4 groupLevel:(unsigned short)arg5 hasFormula:(BOOL)arg6 baseClassString:(struct __CFString { }*)arg7 cssCachedStyle:(id)arg8;
 - (struct __CFString { }*)cachedClassStringForCellStyle:(id)arg1 fillStyle:(id)arg2 cellClass:(Class)arg3 vectorStyles:(id*)arg4 groupLevel:(unsigned short)arg5 hasFormula:(BOOL)arg6;
 - (BOOL)multiColumned;
@@ -85,9 +81,13 @@
 - (BOOL)useOutline;
 - (unsigned int)textScale;
 - (id)tableState;
+- (id).cxx_construct;
+- (void)dealloc;
 - (id)initWithState:(id)arg1;
 - (int)outlineLevel;
 - (void)setOutlineLevel:(int)arg1;
 - (int)paragraphCount;
+- (void)setScale:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })scale;
 
 @end

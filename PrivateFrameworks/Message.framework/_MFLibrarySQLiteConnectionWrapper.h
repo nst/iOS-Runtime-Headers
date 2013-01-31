@@ -17,11 +17,11 @@
 + (id)wrapperWithConnection:(id)arg1 forWriting:(BOOL)arg2;
 
 - (void)dealloc;
-- (id)connection;
+- (BOOL)writer;
 - (unsigned int)refcount;
 - (id)initWithConnection:(id)arg1 forWriting:(BOOL)arg2;
 - (unsigned int)decrementRefcount;
 - (unsigned int)incrementRefcount;
-- (BOOL)writer;
+- (id)connection;
 
 @end

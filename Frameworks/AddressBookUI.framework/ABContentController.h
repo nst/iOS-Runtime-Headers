@@ -15,10 +15,11 @@
 
 - (void)dealloc;
 - (id)init;
+- (void*)addressBook;
 - (void)displayScrollerIndicators;
 - (id)contentView;
 - (void)reload;
-- (void*)addressBook;
+- (void)setAddressBook:(void*)arg1;
 - (void)preloadController;
 - (BOOL)contentViewIsVisible;
 - (void)cleanUpContentLayer;
@@ -26,6 +27,5 @@
 - (id)contentControllerDelegate;
 - (void)back:(BOOL)arg1 save:(BOOL)arg2;
 - (id)initWithContentControllerDelegate:(id)arg1 addressBook:(void*)arg2;
-- (void)setAddressBook:(void*)arg1;
 
 @end

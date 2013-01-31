@@ -13,11 +13,13 @@
     double _synchronizationTime;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSObject<OS_dispatch_queue> *_internalQueue;
+    int _pid;
 }
 
 @property <ADXPCConnectionDelegate> * delegate;
 @property(readonly) BOOL available;
 @property(copy) NSString * bundleId;
+@property(readonly) int pid;
 @property NSObject<OS_xpc_object> * connection;
 @property NSObject<OS_xpc_object> * currentMessage;
 @property unsigned int synchronizationPort;
@@ -26,15 +28,21 @@
 @property NSObject<OS_dispatch_queue> * internalQueue;
 
 
-- (id)currentMessage;
-- (id)initWithConnection:(id)arg1 delegate:(id)arg2;
+- (void)setCurrentMessage:(id)arg1;
+- (void)barrierWithCompletionHandler:(id)arg1;
+- (void)sendMessage:(id)arg1 userInfo:(id)arg2 replyHandler:(id)arg3;
+- (id)_deserializeMessage:(id)arg1;
+- (void)sendMessage:(id)arg1 userInfo:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (id)connection;
+- (void)setBundleId:(id)arg1;
+- (id)bundleId;
+- (id)currentMessage;
+- (void)closeConnection;
+- (void)_handleEvent:(id)arg1;
 - (BOOL)available;
-- (id)dispatchQueue;
-- (void)setDispatchQueue:(id)arg1;
+- (int)pid;
 - (void)setConnection:(id)arg1;
 - (void)setInternalQueue:(id)arg1;
 - (id)internalQueue;
@@ -46,14 +54,9 @@
 - (void)beginFence;
 - (id)initWithConnection:(id)arg1 delegate:(id)arg2 dispatchQueue:(id)arg3;
 - (void)commitFence;
-- (void)closeConnection;
-- (void)_handleEvent:(id)arg1;
-- (void)setCurrentMessage:(id)arg1;
-- (void)barrierWithCompletionHandler:(id)arg1;
-- (void)sendMessage:(id)arg1 userInfo:(id)arg2 replyHandler:(id)arg3;
-- (id)_deserializeMessage:(id)arg1;
-- (void)sendMessage:(id)arg1 userInfo:(id)arg2;
-- (void)setBundleId:(id)arg1;
-- (id)bundleId;
+- (id)connection;
+- (id)initWithConnection:(id)arg1 delegate:(id)arg2;
+- (id)dispatchQueue;
+- (void)setDispatchQueue:(id)arg1;
 
 @end

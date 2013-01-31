@@ -21,32 +21,32 @@
 + (id)stringForRatingSystem:(int)arg1;
 + (int)ratingSystemFromString:(id)arg1;
 
-- (void)setRatingLabel:(id)arg1;
-- (id)ratingLabel;
 - (void)setShouldHideWhenRestricted:(BOOL)arg1;
 - (id)ratingSystemLogo;
-- (BOOL)_isRatingSystemForMusic:(int)arg1;
-- (BOOL)isExplicitContent;
-- (BOOL)_isRatingSystemForTV:(int)arg1;
-- (BOOL)_isRatingSystemForMovies:(int)arg1;
-- (BOOL)_isRatingSystemForApps:(int)arg1;
 - (BOOL)shouldHideWhenRestricted;
 - (BOOL)isRestricted;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setRatingSystem:(int)arg1;
-- (void)setRatingDescription:(id)arg1;
-- (id)ratingDescription;
-- (int)ratingSystem;
 - (void)_setValueCopy:(id)arg1 forProperty:(id)arg2;
 - (id)contentRatingDictionary;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+- (void)setRank:(int)arg1;
+- (int)rank;
+- (void)setRatingSystem:(int)arg1;
+- (void)setRatingDescription:(id)arg1;
+- (id)ratingDescription;
+- (int)ratingSystem;
 - (id)valueForProperty:(id)arg1;
 - (void)_setValue:(id)arg1 forProperty:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
-- (void)setRank:(int)arg1;
-- (int)rank;
+- (BOOL)_isRatingSystemForMusic:(int)arg1;
+- (BOOL)isExplicitContent;
+- (BOOL)_isRatingSystemForTV:(int)arg1;
+- (BOOL)_isRatingSystemForMovies:(int)arg1;
+- (BOOL)_isRatingSystemForApps:(int)arg1;
+- (void)setRatingLabel:(id)arg1;
+- (id)ratingLabel;
 
 @end

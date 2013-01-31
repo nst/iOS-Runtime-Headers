@@ -26,12 +26,8 @@
 
 + (id)sharedInstance;
 
-- (BOOL)isConnecting;
 - (void)dealloc;
 - (id)init;
-- (void)forwardInvocation:(id)arg1;
-- (id)methodSignatureForSelector:(SEL)arg1;
-- (id)listener;
 - (id)_remoteMessageQueue;
 - (void)_noteSetupComplete;
 - (void)_remoteObjectDiedNotification:(id)arg1;
@@ -52,6 +48,10 @@
 - (BOOL)__isLocalObjectValidOnQueue:(id)arg1;
 - (BOOL)removeListenerID:(id)arg1;
 - (BOOL)addListenerID:(id)arg1;
+- (id)listener;
+- (void)forwardInvocation:(id)arg1;
+- (id)methodSignatureForSelector:(SEL)arg1;
+- (BOOL)isConnecting;
 - (BOOL)isConnected;
 
 @end

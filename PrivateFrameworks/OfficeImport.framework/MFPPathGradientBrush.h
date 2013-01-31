@@ -17,12 +17,12 @@
 
 - (id).cxx_construct;
 - (void)dealloc;
-- (void)setPath:(struct CGPath { }*)arg1;
 - (id)endColor;
 - (id)startColor;
 - (void)createShading;
 - (void)setSurroundColors:(id)arg1;
 - (void)setCenterPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setCenterColor:(id)arg1;
+- (void)setPath:(struct CGPath { }*)arg1;
 
 @end

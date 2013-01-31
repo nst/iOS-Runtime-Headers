@@ -21,8 +21,6 @@
 - (id)isDeleted;
 - (id)description;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)originalEvent;
 - (void)_loadAttributesFromCalEvent:(void*)arg1 withKnownExceptionDate:(id)arg2 forAccount:(id)arg3;
 - (id)_transformedExceptionStartDateForActiveSync:(id)arg1 isFloating:(BOOL)arg2;
@@ -49,5 +47,7 @@
 - (void)setObject:(id)arg1 forDCCPT:(int)arg2;
 - (void)clearPlaceHolder;
 - (void)applyPlaceHolder;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

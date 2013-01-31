@@ -22,7 +22,6 @@
 @property(readonly) NSString * transitionName;
 
 
-- (BOOL)matchesURL:(id)arg1;
 - (BOOL)matchesURLBagKey:(id)arg1;
 - (id)transitionName;
 - (BOOL)shouldShowNavigationBar;
@@ -31,5 +30,6 @@
 - (int)cornerRadius;
 - (id)initWithDictionary:(id)arg1;
 - (struct CGSize { float x1; float x2; })size;
+- (BOOL)matchesURL:(id)arg1;
 
 @end

@@ -14,9 +14,9 @@
 
 @property(readonly) NSData * data;
 
-+ (id)UUIDWithCFUUID:(struct __CFUUID { }*)arg1;
 + (id)UUIDWithData:(id)arg1;
 + (id)UUIDWithString:(id)arg1;
++ (id)UUIDWithCFUUID:(struct __CFUUID { }*)arg1;
 
 - (id)initWithString:(id)arg1;
 - (id)data;

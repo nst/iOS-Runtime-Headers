@@ -22,9 +22,9 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
+- (void)shutDownCompletionBlock:(id)arg1;
 - (void)setContext:(id)arg1;
 - (id)context;
-- (void)shutDownCompletionBlock:(id)arg1;
 - (id)serviceName;
 
 @end

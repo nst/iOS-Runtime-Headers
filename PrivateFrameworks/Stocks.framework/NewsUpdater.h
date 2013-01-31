@@ -18,15 +18,15 @@
 + (id)sharedNewsUpdater;
 + (id)_newsItemCollectionCache;
 
+- (void)didParseData;
+- (void)failWithError:(id)arg1;
+- (id)aggregateDictionaryDomain;
+- (void)resetLocale;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
 - (void)cancel;
 - (id)init;
-- (void)failWithError:(id)arg1;
-- (id)aggregateDictionaryDomain;
-- (void)resetLocale;
-- (void)didParseData;
 - (void)saveLastResponse;
 - (BOOL)fetchNewsForStock:(id)arg1;
 - (void)loadNewsCacheFromDiskForSymbol:(id)arg1;

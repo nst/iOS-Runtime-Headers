@@ -11,9 +11,9 @@
 - (void)removeAllObjects;
 - (unsigned int)addObject:(id)arg1;
 - (id)init;
-- (void)removeObjectAtIndex:(unsigned int)arg1;
 - (unsigned int)defaultWorkbookStyleIndex;
 - (void)setDefaultWorkbookStyleIndex:(unsigned int)arg1;
 - (id)defaultWorkbookStyle;
+- (void)removeObjectAtIndex:(unsigned int)arg1;
 
 @end

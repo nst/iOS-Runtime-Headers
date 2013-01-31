@@ -15,6 +15,7 @@
 - (id)event;
 - (void)setEvent:(id)arg1;
 - (void)loadView;
+- (unsigned int)entityType;
 - (BOOL)showAttachments;
 - (void)refreshStartAndEndDates;
 - (BOOL)saveCalendarItemWithSpan:(int)arg1 error:(id*)arg2;
@@ -30,6 +31,5 @@
 - (id)preferredTitle;
 - (BOOL)_canDetachSingleOccurrence;
 - (void)setShowAttachments:(BOOL)arg1;
-- (unsigned int)entityType;
 
 @end

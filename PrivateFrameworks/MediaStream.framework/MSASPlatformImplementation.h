@@ -7,14 +7,16 @@
 
 
 - (id)pathAlbumSharingDir;
-- (id)albumSharingDaemon;
 - (BOOL)deviceHasEnoughDiskSpaceRemainingToOperate;
+- (id)albumSharingDaemon;
 - (BOOL)personIDUsesProductionPushEnvironment:(id)arg1;
 - (id)_accountForPersonID:(id)arg1;
 - (id)baseSharingURLForPersonID:(id)arg1;
 - (id)pushTokenForPersonID:(id)arg1;
 - (int)MMCSConcurrentConnectionsCount;
+- (id)MMCSDownloadSocketOptionsForPersonID:(id)arg1;
 - (BOOL)MSASPersonIDIsAllowedToDownloadAssets:(id)arg1;
+- (id)MMCSUploadSocketOptionsForPersonID:(id)arg1;
 - (BOOL)MSASIsAllowedToUploadAssets;
 - (BOOL)MSASIsAllowedToTransferMetadata;
 - (id)personIDsEnabledForAlbumSharing;

@@ -16,10 +16,10 @@
 + (id)protocolVersion;
 + (Class)responseClass;
 
+- (id)urlString;
 - (void)performRequestWithHandler:(id)arg1;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)urlString;
 - (BOOL)flushCache;
 - (id)urlCredential;
 - (id)initWithURLString:(id)arg1;

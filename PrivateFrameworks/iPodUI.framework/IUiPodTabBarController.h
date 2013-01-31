@@ -22,26 +22,11 @@
 @property(readonly) UIViewController * topViewController;
 @property BOOL allowsSearch;
 
-+ (Class)_moreNavigationControllerClass;
 + (id)_newNavigationControllerWithRootContextIdentifier:(id)arg1 style:(int)arg2;
 + (id)defaultIdentifiers;
++ (Class)_moreNavigationControllerClass;
 
 - (id)selectedIdentifier;
-- (void)_mediaLibraryDidChangeNotification:(id)arg1;
-- (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
-- (void)_enabledMediaTypesDidChangeNotification:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)tabBar:(id)arg1 willShowCustomizationSheet:(id)arg2 withNavigationBar:(id)arg3;
-- (void)tabBar:(id)arg1 didEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
-- (void)_setSelectedViewController:(id)arg1;
-- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
-- (id)topViewController;
-- (void)dismissModalViewControllerAnimated:(BOOL)arg1;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
-- (int)style;
-- (void)setStyle:(int)arg1;
-- (id)identifiers;
 - (void)setAllowsSearch:(BOOL)arg1;
 - (BOOL)allowsSearch;
 - (void)switchToShortcutIdentifier:(id)arg1;
@@ -56,6 +41,7 @@
 - (BOOL)_shouldPushContextDuringSwitch:(id)arg1;
 - (BOOL)_pushContextForSpecifier:(id)arg1 unlessMatchesFinalIdentifier:(id)arg2 animated:(BOOL)arg3;
 - (void)_switchToContextBehindCurrentController:(id)arg1 withRootControllerIdentifier:(id)arg2 withPlaybackDataSource:(id)arg3;
+- (id)identifiers;
 - (id)_navigationControllerForIdentifier:(id)arg1 outIndex:(unsigned int*)arg2;
 - (void)_setNavigationControllerDelegates:(id)arg1;
 - (id)_copyTabBarOrdering;
@@ -76,5 +62,19 @@
 - (id)modalContext;
 - (void)selectControllerWithIdentifier:(id)arg1;
 - (void)_availableMediaLibrariesDidChangeNotification:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)tabBar:(id)arg1 willShowCustomizationSheet:(id)arg2 withNavigationBar:(id)arg3;
+- (void)tabBar:(id)arg1 didEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
+- (void)_setSelectedViewController:(id)arg1;
+- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
+- (id)topViewController;
+- (void)dismissModalViewControllerAnimated:(BOOL)arg1;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (void)_mediaLibraryDidChangeNotification:(id)arg1;
+- (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
+- (void)_enabledMediaTypesDidChangeNotification:(id)arg1;
 
 @end

@@ -36,10 +36,6 @@
 @property double presentationCourse;
 
 
-- (void)dealloc;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)setScale:(float)arg1;
-- (float)scale;
 - (BOOL)shouldShowCourse;
 - (BOOL)shouldBillboard;
 - (BOOL)isStale;
@@ -52,6 +48,10 @@
 - (id)_newDropShadowMesh;
 - (void)_updatePuckStyle;
 - (void)drawWithContext:(id)arg1;
+- (void)dealloc;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)setScale:(float)arg1;
+- (float)scale;
 
 @end

@@ -52,11 +52,6 @@
 @property VGLContext * context;
 
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (void)setContext:(id)arg1;
-- (id)context;
 - (BOOL)link;
 - (union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })matrix;
 - (void)setUniformFloatVec:(int)arg1 curr:(float*)arg2 next:(const float*)arg3 count:(int)arg4;
@@ -75,6 +70,11 @@
 - (void)printInfoLog;
 - (int)uniformLocation:(const char *)arg1;
 - (void)validateUniforms;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)dealloc;
 - (int)token;
+- (void)setContext:(id)arg1;
+- (id)context;
 
 @end

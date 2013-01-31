@@ -10,13 +10,15 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)defaultInstance;
 + (void)initialize;
++ (id)defaultInstance;
 
 - (unsigned int)retainCount;
 - (id)retain;
 - (void)release;
 - (id)autorelease;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)doCleanupForURL:(id)arg1;
 - (id)temporaryLinksDirectoryForStore:(id)arg1;
 - (void)removeDirectory:(id)arg1;
@@ -24,7 +26,5 @@
 - (void)_doCleanupForDir:(id)arg1 exceptURLs:(id)arg2;
 - (void)_deleteIfNecessary:(id)arg1;
 - (id)_init__;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 
 @end

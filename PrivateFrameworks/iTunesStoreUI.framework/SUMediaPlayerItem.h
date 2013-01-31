@@ -35,7 +35,6 @@
 - (void)setPlaybackPingURLs:(id)arg1;
 - (id)playbackPingURLs;
 - (void)setPlayableDuration:(double)arg1;
-- (double)playableDuration;
 - (void)setInitialOrientation:(int)arg1;
 - (int)initialOrientation;
 - (void)setDownloadPingURLs:(id)arg1;
@@ -46,13 +45,11 @@
 - (id)backgroundImageURL;
 - (void)resetBookmarkedStartTime;
 - (double)bookmarkedStartTime;
-- (id)initWithItem:(id)arg1;
 - (void)setBookmarkedStartTime:(double)arg1;
 - (id)_newPingURLsWithArray:(id)arg1;
 - (void)setItemType:(int)arg1;
 - (void)setItemIdentifier:(unsigned long long)arg1;
 - (int)itemType;
-- (unsigned long long)itemIdentifier;
 - (id)URL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -61,5 +58,8 @@
 - (void)setSubtitle:(id)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
+- (unsigned long long)itemIdentifier;
+- (id)initWithItem:(id)arg1;
+- (double)playableDuration;
 
 @end

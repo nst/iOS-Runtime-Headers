@@ -13,12 +13,12 @@
 @property(readonly) DOMCSSRule * parentRule;
 
 
+- (id)parentRule;
+- (id)parentStyleSheet;
 - (unsigned short)type;
 - (void)dealloc;
 - (void)finalize;
 - (void)setCssText:(id)arg1;
 - (id)cssText;
-- (id)parentRule;
-- (id)parentStyleSheet;
 
 @end

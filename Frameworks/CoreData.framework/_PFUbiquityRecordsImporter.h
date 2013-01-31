@@ -23,7 +23,6 @@
     NSMutableDictionary *_pendingNotificationUserInfo;
     BOOL _allowBaselineRoll;
     unsigned int _pendingImportOperationsCount;
-    NSSet *_failedPendingTransactionLogLocations;
 }
 
 @property(readonly) NSOperationQueue * importQueue;
@@ -38,10 +37,10 @@
 @property BOOL throttleNotifications;
 @property BOOL allowBaselineRoll;
 
++ (void)initialize;
 + (void)afterDelay:(double)arg1 executeBlockOnRootQueue:(id)arg2;
 + (BOOL)canProcessContentsOfUbiquityRootPath:(id)arg1;
 + (void)executeBlockOnRootQueue:(id)arg1;
-+ (void)initialize;
 
 - (id)description;
 - (void)dealloc;
@@ -54,6 +53,7 @@
 - (void)scheduleBaselineRollResponseOperationForBaselineAtLocation:(id)arg1;
 - (int)compareScoreKnowledgeVector:(id)arg1 withScoreDictionary:(id)arg2;
 - (void)filePresenter:(id)arg1 wasNotifiedOfTransactionLogLocation:(id)arg2;
+- (void)cancelAllOperationsForStoreName:(id)arg1;
 - (BOOL)startMonitor:(id*)arg1;
 - (void)awakeFromLaunch:(BOOL)arg1;
 - (void)rollResponseOperation:(id)arg1 encounteredAnError:(id)arg2 whileTryingToAdoptBaseline:(id)arg3;
@@ -75,6 +75,7 @@
 - (void)scheduleRecoveryTimer;
 - (void)postImportNotificationForStoreName:(id)arg1 andLocalPeerID:(id)arg2 withUserInfo:(id)arg3;
 - (BOOL)shouldThrottleNotificationsWithOperation:(id)arg1;
+- (void)checkStoresAndContainer;
 - (BOOL)scanOperationFinished:(id)arg1 withDiscoveredLogLocation:(id)arg2 error:(id*)arg3;
 - (void)recoverFailedLogs;
 - (void)executeBlockOnPrivateQueue:(id)arg1;

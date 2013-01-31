@@ -19,6 +19,14 @@
 @property(readonly) unsigned int realShuffleType;
 
 
+- (unsigned int)indexOfObject:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)objectAtIndex:(unsigned int)arg1;
+- (unsigned int)count;
+- (id)items;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)sourceMediaQuery;
 - (void)unshuffle;
 - (void)shuffleItemsWithInitialIndex:(unsigned int)arg1;
@@ -41,14 +49,6 @@
 - (void)setFocusedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })focusedRange;
 - (unsigned int)realShuffleType;
-- (unsigned int)indexOfObject:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (unsigned int)count;
 - (void)_resetCaches;
-- (id)items;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

@@ -9,12 +9,12 @@
 }
 
 
-- (void)setLoading:(BOOL)arg1;
 - (id)newTermsAndConditionsFooter;
 - (id)newNoItemsOverlayLabel;
 - (void)reloadForChangedRowCount:(int)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)loadView;
+- (void)setLoading:(BOOL)arg1;
 
 @end

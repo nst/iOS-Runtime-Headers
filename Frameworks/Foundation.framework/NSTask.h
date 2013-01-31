@@ -12,18 +12,18 @@
 + (id)launchedTaskWithDictionary:(id)arg1;
 + (id)currentTaskDictionary;
 
-- (void)setArguments:(id)arg1;
-- (void)terminate;
-- (void)setEnvironment:(id)arg1;
-- (int)processIdentifier;
 - (BOOL)resume;
 - (id)init;
+- (id)terminationHandler;
 - (void)setTerminationHandler:(id)arg1;
 - (BOOL)isRunning;
 - (id)arguments;
 - (BOOL)suspend;
 - (id)environment;
-- (id)terminationHandler;
+- (void)setArguments:(id)arg1;
+- (void)terminate;
+- (void)setEnvironment:(id)arg1;
+- (int)processIdentifier;
 - (id)standardError;
 - (id)standardOutput;
 - (id)standardInput;

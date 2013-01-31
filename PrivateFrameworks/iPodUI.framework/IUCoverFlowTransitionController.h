@@ -13,8 +13,6 @@
 @property BOOL rotate;
 
 
-- (void)performTransition:(unsigned int)arg1;
-- (void)dealloc;
 - (void)coverFlowWillTransitionOut:(id)arg1 animate:(BOOL)arg2;
 - (void)coverFlowWillTransitionIn:(id)arg1 animate:(BOOL)arg2;
 - (void)prepareForCoverFlowTransitionIn:(id)arg1 animate:(BOOL)arg2;
@@ -24,5 +22,7 @@
 - (void)coverFlowDidTransitionIn:(id)arg1;
 - (id)coverFlowControllerInitialTransitionImage:(id)arg1;
 - (BOOL)rotate;
+- (void)dealloc;
+- (void)performTransition:(unsigned int)arg1;
 
 @end

@@ -37,6 +37,26 @@
 @property(readonly) NSSet * accessKeys;
 
 
+- (id)accountTypeDescription;
+- (BOOL)accessGranted;
+- (void)setVisibility:(int)arg1;
+- (int)visibility;
+- (id)identifier;
+- (id)description;
+- (void).cxx_destruct;
+- (id)supportedDataclasses;
+- (id)initWithIdentifier:(id)arg1 description:(id)arg2;
+- (id)credentialProtectionPolicy;
+- (BOOL)supportsMultipleAccounts;
+- (void)setCredentialType:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)credentialType;
+- (id)accountStore;
+- (void)setObjectID:(id)arg1;
+- (id)objectID;
+- (void)setAccountStore:(id)arg1;
 - (void)setCredentialProtectionPolicy:(id)arg1;
 - (void)setCredentialAvailability:(int)arg1;
 - (void)setAccountTypeDescription:(id)arg1;
@@ -45,25 +65,5 @@
 - (id)syncableDataclasses;
 - (id)accessKeys;
 - (int)supportsAuthentication;
-- (id)accountTypeDescription;
-- (BOOL)accessGranted;
-- (id)identifier;
-- (id)description;
-- (void).cxx_destruct;
-- (id)initWithIdentifier:(id)arg1 description:(id)arg2;
-- (void)setObjectID:(id)arg1;
-- (id)objectID;
-- (void)setIdentifier:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)credentialType;
-- (BOOL)supportsMultipleAccounts;
-- (void)setCredentialType:(id)arg1;
-- (void)setVisibility:(int)arg1;
-- (int)visibility;
-- (id)accountStore;
-- (void)setAccountStore:(id)arg1;
-- (id)supportedDataclasses;
-- (id)credentialProtectionPolicy;
 
 @end

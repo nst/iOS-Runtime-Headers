@@ -34,8 +34,6 @@
 - (unsigned int)operation;
 - (void)cancel;
 - (void)dealloc;
-- (void)cleanup;
-- (void)start;
 - (void)set_BOMCopier:(void*)arg1;
 - (void*)_BOMCopier;
 - (void)setInProgress:(BOOL)arg1;
@@ -48,6 +46,8 @@
 - (id)_temporaryCopierPath;
 - (id)inputURL;
 - (void)_fillOutputURLFromInputURL;
+- (void)cleanup;
+- (void)start;
 - (id)outputURL;
 
 @end

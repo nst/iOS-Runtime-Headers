@@ -11,13 +11,13 @@
 @property BOOL getScheduleChanges;
 
 
+- (void)setAdditionalProperties:(id)arg1 onDataItem:(id)arg2;
+- (id)copyAdditionalPropElements;
 - (id)initWithURLs:(id)arg1 atContainerURL:(id)arg2 getScheduleTags:(BOOL)arg3 getScheduleChanges:(BOOL)arg4;
 - (id)initWithURLs:(id)arg1 atContainerURL:(id)arg2 getScheduleTags:(BOOL)arg3 getScheduleChanges:(BOOL)arg4 appSpecificCalendarItemClass:(Class)arg5;
 - (BOOL)getScheduleChanges;
 - (BOOL)getScheduleTags;
 - (void)setGetScheduleChanges:(BOOL)arg1;
 - (void)setGetScheduleTags:(BOOL)arg1;
-- (void)setAdditionalProperties:(id)arg1 onDataItem:(id)arg2;
-- (id)copyAdditionalPropElements;
 
 @end

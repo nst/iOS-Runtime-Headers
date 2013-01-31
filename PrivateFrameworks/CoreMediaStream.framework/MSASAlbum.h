@@ -33,23 +33,25 @@
 @property(retain) id context;
 @property(readonly) BOOL useForeignCtag;
 
++ (id)album;
 + (id)albumWithAlbum:(id)arg1;
 + (BOOL)supportsSecureCoding;
-+ (id)album;
 
 - (id)description;
 - (unsigned int)hash;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
-- (void)setURLString:(id)arg1;
-- (id)URLString;
-- (void)setContext:(id)arg1;
-- (id)context;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
+- (void)setGUID:(id)arg1;
+- (id)ownerFullName;
+- (id)ownerLastName;
+- (id)ownerFirstName;
+- (id)ownerEmail;
+- (int)relationshipState;
+- (id)publicURLString;
+- (id)GUID;
+- (id)metadataValueForKey:(id)arg1;
 - (void)setPublicURLString:(id)arg1;
 - (BOOL)useForeignCtag;
 - (void)setForeignCtag:(id)arg1;
@@ -62,15 +64,13 @@
 - (void)setOwnerEmail:(id)arg1;
 - (void)setCtag:(id)arg1;
 - (id)ctag;
-- (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
-- (void)setGUID:(id)arg1;
-- (id)ownerFullName;
-- (id)ownerLastName;
-- (id)ownerFirstName;
-- (id)ownerEmail;
-- (int)relationshipState;
-- (id)publicURLString;
-- (id)metadataValueForKey:(id)arg1;
-- (id)GUID;
+- (void)setURLString:(id)arg1;
+- (id)URLString;
+- (void)setContext:(id)arg1;
+- (id)context;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 
 @end

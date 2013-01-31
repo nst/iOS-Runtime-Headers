@@ -19,16 +19,12 @@
 @property BOOL shouldTriggerDownloads;
 
 
-- (void)setShouldProcessProtocol:(BOOL)arg1;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
 - (void)setShouldProcessDialogs:(BOOL)arg1;
 - (void)setShouldProcessAuthenticationDialogs:(BOOL)arg1;
 - (BOOL)shouldProcessDialogs;
 - (BOOL)shouldProcessAuthenticationDialogs;
 - (void)setShouldPostFooterSectionChanged:(BOOL)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (BOOL)shouldProcessProtocol;
 - (void)setShouldTriggerDownloads:(BOOL)arg1;
 - (void)setShouldProcessAccount:(BOOL)arg1;
 - (void)_checkInAppPurchaseQueueForAction:(id)arg1;
@@ -41,5 +37,9 @@
 - (BOOL)shouldTriggerDownloads;
 - (BOOL)shouldProcessAccount;
 - (BOOL)shouldPostFooterSectionChanged;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (BOOL)shouldProcessProtocol;
+- (void)setShouldProcessProtocol:(BOOL)arg1;
 
 @end

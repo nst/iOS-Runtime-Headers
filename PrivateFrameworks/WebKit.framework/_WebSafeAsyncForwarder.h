@@ -9,9 +9,9 @@
 }
 
 
+- (id)initWithForwarder:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (id)initWithForwarder:(id)arg1;
 
 @end

@@ -14,10 +14,10 @@
 + (void)_web_defaultsDidChange;
 + (void)_web_addDefaultsChangeObserver;
 + (void)_ensureAndLockPreferredLanguageLock;
-+ (id)_IMAppObjectForKey:(id)arg1;
 + (void)_IMSetObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
 + (id)_IMAgentObjectForKey:(id)arg1;
 + (id)_IMObjectForKey:(id)arg1 inDomain:(id)arg2;
++ (id)_IMAppObjectForKey:(id)arg1;
 + (id)_webkit_preferredLanguageCode;
 + (BOOL)shouldShowCNFRegistrationServerLogs;
 + (void)setShouldShowCNFRegistrationServerLogs:(BOOL)arg1;
@@ -36,22 +36,22 @@
 
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)valueForKey:(id)arg1;
-- (void)addSuiteNamed:(id)arg1;
-- (void)setInteger:(int)arg1 forKey:(id)arg2;
+- (id)arrayForKey:(id)arg1;
+- (id)stringArrayForKey:(id)arg1;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)objectForKey:(id)arg1;
 - (oneway void)release;
 - (id)init;
-- (id)dataForKey:(id)arg1;
+- (id)stringForKey:(id)arg1;
 - (id)dictionaryRepresentation;
 - (int)integerForKey:(id)arg1;
 - (id)persistentDomainForName:(id)arg1;
 - (BOOL)synchronize;
 - (float)floatForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1;
-- (id)arrayForKey:(id)arg1;
-- (id)stringArrayForKey:(id)arg1;
+- (void)addSuiteNamed:(id)arg1;
+- (void)setInteger:(int)arg1 forKey:(id)arg2;
 - (BOOL)objectIsForcedForKey:(id)arg1 inDomain:(id)arg2;
 - (BOOL)objectIsForcedForKey:(id)arg1;
 - (void)removePersistentDomainForName:(id)arg1;
@@ -78,7 +78,7 @@
 - (void)setPersistentDomain:(id)arg1 forName:(id)arg2;
 - (id)initWithUser:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
-- (id)stringForKey:(id)arg1;
+- (id)dataForKey:(id)arg1;
 - (void)_mapkit_setTrackingAnimationDuration:(double)arg1;
 - (double)_mapkit_trackingAnimationDuration;
 - (BOOL)delayedSynchronize;

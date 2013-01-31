@@ -44,16 +44,11 @@
 @property unsigned int pendingItemsCount;
 @property unsigned int pendingItemsType;
 
-+ (id)entityName;
 + (id)cloudSharedAlbumWithGUID:(id)arg1 inLibrary:(id)arg2;
 + (id)allCloudSharedAlbumsInLibrary:(id)arg1;
 + (id)entityInManagedObjectContext:(id)arg1;
++ (id)entityName;
 
-- (void)awakeFromInsert;
-- (id)activityViewController:(id)arg1 itemsForActivityType:(id)arg2;
-- (id)activityViewControllerSubject:(id)arg1;
-- (id)activityViewController:(id)arg1 thumbnailForActivityType:(id)arg2;
-- (id)activityViewControllerPlaceholderItems:(id)arg1;
 - (void)persistRecoveryMetadata;
 - (id)_localizedRemoteOwnerAllowsEmail:(BOOL)arg1;
 - (id)albumDirectoryPath;
@@ -80,5 +75,10 @@
 - (void)updateCloudLastInterestingChangeDateWithDate:(id)arg1;
 - (id)cloudOwnerDisplayNameIncludingEmail:(BOOL)arg1 allowsEmail:(BOOL)arg2;
 - (id)localizedSharedByLabelAllowsEmail:(BOOL)arg1;
+- (id)activityViewController:(id)arg1 itemsForActivityType:(id)arg2;
+- (id)activityViewControllerSubject:(id)arg1;
+- (id)activityViewController:(id)arg1 thumbnailForActivityType:(id)arg2;
+- (id)activityViewControllerPlaceholderItems:(id)arg1;
+- (void)awakeFromInsert;
 
 @end

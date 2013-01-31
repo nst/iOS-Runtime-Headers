@@ -35,8 +35,12 @@
 
 + (Class)_activityIndicatorClass;
 
-- (id)_navigationBar;
 - (void)dealloc;
+- (id)initWithMapView:(id)arg1;
+- (void)setMapView:(id)arg1;
+- (id)mapView;
+- (void)set_state:(int)arg1;
+- (int)_state;
 - (int)_activityIndicatorStyle;
 - (id)_imageView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -48,6 +52,7 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)setState:(int)arg1;
+- (id)_navigationBar;
 - (void)set_trackingFollowWithHeadingImage:(id)arg1;
 - (void)set_trackingFollowImage:(id)arg1;
 - (void)set_trackingNoneImage:(id)arg1;
@@ -78,12 +83,7 @@
 - (id)initWithWorldView:(id)arg1 forceSilverStyle:(BOOL)arg2;
 - (id)_initWithUserTrackingView:(id)arg1 forceSilverStyle:(BOOL)arg2;
 - (void)_setUserTrackingView:(id)arg1;
-- (void)_goToNextMode:(id)arg1;
 - (id)_trackingNoneImage;
-- (id)initWithMapView:(id)arg1;
-- (void)setMapView:(id)arg1;
-- (id)mapView;
-- (void)set_state:(int)arg1;
-- (int)_state;
+- (void)_goToNextMode:(id)arg1;
 
 @end

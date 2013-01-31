@@ -9,8 +9,8 @@
 }
 
 
-- (void)dealloc;
 - (id)initWithTimestamp:(double)arg1 latitude:(double)arg2 longitude:(double)arg3 accuracy:(double)arg4;
 - (id)initWithGeolocationPosition:(struct PassRefPtr<WebCore::GeolocationPosition> { struct GeolocationPosition {} *x1; })arg1;
+- (void)dealloc;
 
 @end

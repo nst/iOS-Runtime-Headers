@@ -12,7 +12,8 @@
 }
 
 
-- (int)statusSize;
+- (void)dealloc;
+- (id)init;
 - (BOOL)setStatusCells:(const char *)arg1 length:(int)arg2;
 - (BOOL)setMainCells:(const char *)arg1 length:(int)arg2;
 - (int)mainSize;
@@ -25,9 +26,8 @@
 - (BOOL)unloadDriver;
 - (int)loadDriverWithIOElement:(id)arg1;
 - (unsigned int)interfaceVersion;
-- (void)dealloc;
-- (id)init;
 - (int)brailleInputMode;
 - (id)modelIdentifier;
+- (int)statusSize;
 
 @end

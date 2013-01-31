@@ -13,17 +13,17 @@
 @property(retain) NSString * resourceName;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)type;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)setType:(int)arg1;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setResourceName:(id)arg1;
 - (id)resourceName;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
+- (void)setType:(int)arg1;
 
 @end

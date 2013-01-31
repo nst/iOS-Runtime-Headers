@@ -31,37 +31,39 @@
 + (id)_restrictionsHeaderValue;
 + (void)_addITunesStoreHeadersToRequest:(id)arg1 withBagContext:(id)arg2 accountIdentifier:(id)arg3;
 
-- (void)handleResponse:(id)arg1;
 - (void)setAuthenticatedDSID:(id)arg1;
 - (id)authenticatedDSID;
+- (id)newRequestWithURL:(id)arg1;
 - (void)setUrlKnownToBeTrusted:(BOOL)arg1;
 - (void)setNeedsAuthentication:(BOOL)arg1;
 - (BOOL)needsAuthentication;
 - (id)authenticatedAccountDSID;
-- (void)dealloc;
-- (id)init;
-- (void)_setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
-- (void)run;
 - (void)setUseUserSpecificURLBag:(BOOL)arg1;
 - (void)setShouldSendXTokenHeader:(BOOL)arg1;
 - (void)setCanSendGUIDParameter:(BOOL)arg1;
 - (void)_addStandardQueryParametersForURL:(id)arg1;
+- (id)_resolvedURL;
 - (id)_urlFromURLBagForRequestProperties:(id)arg1 inBagContext:(id)arg2;
+- (id)_resolvedURLInBagContext:(id)arg1 URLBag:(id*)arg2;
 - (BOOL)needsURLBag;
 - (BOOL)useUserSpecificURLBag;
-- (BOOL)canSendGUIDParameter;
 - (BOOL)urlKnownToBeTrusted;
 - (BOOL)_isErrorTokenError:(id)arg1;
 - (void)_runURLOperation;
 - (BOOL)_authenticateReturningError:(id*)arg1 promptAlways:(BOOL)arg2;
 - (id)_account;
 - (BOOL)shouldSendXTokenHeader;
+- (BOOL)canSendGUIDParameter;
 - (id)_copyURLBagContext;
 - (BOOL)_canSendTokenToURL:(id)arg1;
 - (void)setNeedsURLBag:(BOOL)arg1;
 - (BOOL)handleRedirectFromDataProvider:(id)arg1 error:(id*)arg2;
 - (BOOL)shouldFollowRedirectWithRequest:(id)arg1 returningError:(id*)arg2;
-- (id)newRequestWithURL:(id)arg1;
 - (id)_copyAuthenticationContext;
+- (void)dealloc;
+- (id)init;
+- (void)_setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
+- (void)handleResponse:(id)arg1;
+- (void)run;
 
 @end

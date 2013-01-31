@@ -15,13 +15,13 @@
 @property id delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)popViewControllerWithTransition:(int)arg1;
 - (id)initWithApplication:(id)arg1 window:(id)arg2;
 - (void)_popAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)_rootController;
 - (id)_animatePopWithTransition:(int)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)popViewControllerWithTransition:(int)arg1;
 
 @end

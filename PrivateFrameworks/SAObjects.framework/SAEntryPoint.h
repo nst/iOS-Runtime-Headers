@@ -13,10 +13,10 @@
 + (id)entryPointWithDictionary:(id)arg1 context:(id)arg2;
 + (id)entryPoint;
 
-- (id)groupIdentifier;
+- (id)encodedClassName;
 - (id)longitude;
 - (id)latitude;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 - (void)setLongitude:(id)arg1;
 - (void)setLatitude:(id)arg1;
 

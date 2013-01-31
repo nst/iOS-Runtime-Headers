@@ -21,10 +21,8 @@
 
 + (BOOL)canHandleContentType:(id)arg1;
 
-- (void)setBaseURL:(id)arg1;
 - (void)dealloc;
-- (id)baseURL;
-- (id)initWithData:(id)arg1;
+- (id)rootElement;
 - (id)rootElementGenerator;
 - (void)setRootElementGenerator:(id)arg1;
 - (void)setRootErrorGenerator:(id)arg1;
@@ -34,6 +32,8 @@
 - (BOOL)processData:(id)arg1 forTask:(id)arg2;
 - (void)setParseHints:(id)arg1;
 - (id)initWithRootElementNameSpace:(id)arg1 name:(id)arg2 parseClass:(Class)arg3 baseURL:(id)arg4;
-- (id)rootElement;
+- (id)baseURL;
+- (id)initWithData:(id)arg1;
+- (void)setBaseURL:(id)arg1;
 
 @end

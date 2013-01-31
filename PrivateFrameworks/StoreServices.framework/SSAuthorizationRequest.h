@@ -17,8 +17,6 @@
 
 
 - (id)accountIdentifier;
-- (void)setKeybagPath:(id)arg1;
-- (id)initWithAuthorizationToken:(id)arg1 accountIdentifier:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)keybagPath;
@@ -26,7 +24,9 @@
 - (void)startWithCompletionBlock:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)start;
 - (id)authorizationToken;
+- (BOOL)start;
+- (void)setKeybagPath:(id)arg1;
+- (id)initWithAuthorizationToken:(id)arg1 accountIdentifier:(id)arg2;
 
 @end

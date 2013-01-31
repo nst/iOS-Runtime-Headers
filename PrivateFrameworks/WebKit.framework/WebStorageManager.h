@@ -5,16 +5,16 @@
 @interface WebStorageManager : NSObject  {
 }
 
-+ (id)_storageDirectoryPath;
 + (void)setStorageDatabaseIdleInterval:(double)arg1;
 + (id)sharedWebStorageManager;
++ (id)_storageDirectoryPath;
 
-- (id)init;
 - (void)syncFileSystemAndTrackerDatabase;
 - (void)syncLocalStorage;
 - (void)deleteAllOrigins;
 - (void)deleteOrigin:(id)arg1;
 - (id)origins;
 - (unsigned long long)diskUsageForOrigin:(id)arg1;
+- (id)init;
 
 @end

@@ -10,9 +10,9 @@
 
 + (id)sharedInstance;
 
-- (void)cleanupIfNecessaryWithCompletionHandler:(id)arg1;
-- (void)_mediaLibraryDisplayValuesWillChangeNotification:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)cleanupIfNecessaryWithCompletionHandler:(id)arg1;
+- (void)_mediaLibraryDisplayValuesWillChangeNotification:(id)arg1;
 
 @end

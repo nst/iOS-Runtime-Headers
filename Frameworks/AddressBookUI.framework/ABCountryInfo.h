@@ -15,11 +15,11 @@
 @property(copy) NSString * phoneticCountryName;
 
 
+- (void)setCountryCode:(id)arg1;
+- (id)countryCode;
 - (void)setPhoneticCountryName:(id)arg1;
 - (id)phoneticCountryName;
 - (void)setCountryName:(id)arg1;
 - (id)countryName;
-- (void)setCountryCode:(id)arg1;
-- (id)countryCode;
 
 @end

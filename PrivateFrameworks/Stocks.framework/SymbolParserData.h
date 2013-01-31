@@ -18,10 +18,10 @@
 
 - (id)dictionary;
 - (void).cxx_destruct;
+- (void)setBufferString:(id)arg1;
+- (id)bufferString;
 - (id)symbols;
 - (void)setSymbols:(id)arg1;
 - (void)setDictionary:(id)arg1;
-- (void)setBufferString:(id)arg1;
-- (id)bufferString;
 
 @end

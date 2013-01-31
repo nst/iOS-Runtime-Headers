@@ -20,20 +20,22 @@
 
 + (id)routesPreferringMirroring;
 
-- (void)_mirroringSwitchValueDidChange:(id)arg1;
-- (id)_effectivePickedRouteReturningActualPickedRouteType:(int*)arg1;
-- (BOOL)_wirelessDisplayCapableRouteIsPicked;
-- (id)initWithType:(unsigned int)arg1 displayMirroringRoutes:(BOOL)arg2;
-- (id)_displayedRoutes;
-- (id)_availableRoutes;
-- (id)_pickedRoute;
-- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
-- (id)audioDeviceController;
 - (void)dealloc;
 - (void)viewDidAppear:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (void)_mirroringSwitchValueDidChange:(id)arg1;
+- (id)_effectivePickedRouteReturningActualPickedRouteType:(int*)arg1;
+- (BOOL)_wirelessDisplayCapableRouteIsPicked;
+- (id)initWithType:(unsigned int)arg1 displayMirroringRoutes:(BOOL)arg2;
+- (id)_displayedRoutes;
+- (void)_debugButtonAction:(id)arg1;
+- (id)_availableRoutes;
+- (BOOL)_shouldShowDebugButton;
+- (id)_pickedRoute;
+- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
+- (id)audioDeviceController;
 
 @end

@@ -14,19 +14,20 @@
 
 + (id)processInfo;
 
-- (void)setArguments:(id)arg1;
-- (int)processIdentifier;
-- (void)setProcessName:(id)arg1;
 - (double)systemUptime;
 - (void)dealloc;
 - (id)init;
+- (unsigned int)activeProcessorCount;
+- (id)userName;
 - (id)hostName;
 - (unsigned int)processorCount;
 - (id)processName;
 - (id)arguments;
 - (id)userHomeDirectory;
 - (id)environment;
-- (id)userName;
+- (void)setArguments:(id)arg1;
+- (int)processIdentifier;
+- (void)setProcessName:(id)arg1;
 - (BOOL)automaticTerminationSupportEnabled;
 - (void)setAutomaticTerminationSupportEnabled:(BOOL)arg1;
 - (void)enableAutomaticTermination:(id)arg1;
@@ -43,7 +44,6 @@
 - (id)userFullName;
 - (id)globallyUniqueString;
 - (unsigned int)operatingSystem;
-- (unsigned int)activeProcessorCount;
 - (void)_enableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
 - (void)_disableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
 

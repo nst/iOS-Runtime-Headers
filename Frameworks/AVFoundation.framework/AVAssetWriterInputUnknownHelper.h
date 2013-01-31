@@ -6,9 +6,9 @@
 }
 
 
-- (void)setMetadata:(id)arg1;
 - (int)status;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setMetadata:(id)arg1;
 - (BOOL)_canAddTrackAssociationWithTrackOfInput:(id)arg1 type:(id)arg2 exceptionReason:(id*)arg3;
 - (BOOL)_compareLanguageCode:(id)arg1 withExtendedLanguageTag:(id)arg2;
 - (BOOL)_validateLanguageCode:(id)arg1;

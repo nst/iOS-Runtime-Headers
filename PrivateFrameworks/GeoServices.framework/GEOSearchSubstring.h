@@ -13,19 +13,19 @@
 @property int endIndex;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setEndIndex:(int)arg1;
 - (int)endIndex;
 - (void)setBeginIndex:(int)arg1;
 - (int)beginIndex;
 - (void)setStringType:(int)arg1;
 - (int)stringType;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

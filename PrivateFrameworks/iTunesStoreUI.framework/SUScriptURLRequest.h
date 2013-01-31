@@ -18,14 +18,14 @@
 - (id)copyNativeRequestProperties;
 - (id)initWithNativeRequestProperties:(id)arg1;
 - (id)URLBagKey;
-- (void)setURLBagKey:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)init;
 - (id)URLs;
 - (void)setURLs:(id)arg1;
-- (id)attributeKeys;
+- (void)setURLBagKey:(id)arg1;
 - (void)setTimeoutInterval:(id)arg1;
 - (id)timeoutInterval;
 

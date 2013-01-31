@@ -51,8 +51,8 @@
 - (id)_localizedNameForVibrationWithIdentifier:(id)arg1;
 - (id)_vibrationPatterns;
 - (id)currentVibrationIdentifierForAlertType:(int)arg1;
-- (id)defaultVibrationIdentifierForAlertType:(int)arg1;
 - (id)_currentVibrationIdentifierForAlertType:(int)arg1 accountIdentifier:(id)arg2;
+- (id)defaultVibrationIdentifierForAlertType:(int)arg1;
 - (void)_makeSystemVibrationDataMigrationVersionCurrentIfNecessary;
 - (id)_copySystemWideVibrationPatternPreferenceKeyForAlertType:(int)arg1 accountIdentifier:(id)arg2;
 - (void)setCurrentVibrationIdentifier:(id)arg1 forAlertType:(int)arg2 accountIdentifier:(id)arg3;
@@ -77,10 +77,10 @@
 - (id)currentVibrationIdentifierForType:(int)arg1;
 - (void)dealloc;
 - (id)init;
+- (BOOL)refresh;
 - (void)_handleUserGeneratedVibrationsDidChangeNotification;
 - (id)nameOfVibrationWithIdentifier:(id)arg1;
 - (void)setAllowsAutoRefresh:(BOOL)arg1;
 - (BOOL)vibrationWithIdentifierIsValid:(id)arg1;
-- (BOOL)refresh;
 
 @end

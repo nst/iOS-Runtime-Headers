@@ -18,11 +18,11 @@
 
 
 - (id).cxx_construct;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
 - (void)setRelative:(BOOL)arg1;
 - (void)setFrom:(struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })arg1;
 - (BOOL)isRelative;
 - (struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })from;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

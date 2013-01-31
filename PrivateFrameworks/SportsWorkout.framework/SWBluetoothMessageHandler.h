@@ -28,10 +28,10 @@
 + (id)newMessageHandler;
 
 - (id)init;
+- (BOOL)rssi;
 - (BOOL)isActive;
 - (void)activate;
 - (void)deactivate;
-- (BOOL)rssi;
 - (void)requestRSSI;
 - (void)_handleScanDidEnd;
 - (void)startReadingInput;

@@ -16,8 +16,6 @@
 - (void)dealloc;
 - (id)init;
 - (unsigned int)count;
-- (BOOL)update;
-- (void)finalize;
 - (id)procInfoWithPID:(int)arg1;
 - (id)newestProcInfoSatisfyingCondition:(SEL)arg1 forTarget:(id)arg2;
 - (id)newestProcInfoWithName:(id)arg1;
@@ -36,5 +34,7 @@
 - (id)newestProcInfoSatisfyingCondition:(SEL)arg1 forTarget:(id)arg2 withContext:(void*)arg3;
 - (void)_populateFromSystem;
 - (BOOL)updateFromSystem;
+- (BOOL)update;
+- (void)finalize;
 
 @end

@@ -19,7 +19,6 @@
 + (id)defaultTextPropertyWithResources:(id)arg1;
 
 - (void)dealloc;
-- (int)key;
 - (bool)isShowSeriesLabel;
 - (bool)isShowPercentageLabel;
 - (bool)isShowValueLabel;
@@ -39,5 +38,6 @@
 - (id)runs;
 - (id)contentFormat;
 - (unsigned int)contentFormatId;
+- (int)key;
 
 @end

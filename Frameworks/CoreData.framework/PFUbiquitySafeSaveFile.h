@@ -21,7 +21,7 @@
 
 @property(readonly) PFUbiquityLocation * permanentLocation;
 @property(readonly) PFUbiquityLocation * safeSaveLocation;
-@property(readonly) PFUbiquityLocation * currentLocation;
+@property(retain) PFUbiquityLocation * currentLocation;
 @property(readonly) NSString * localPeerID;
 @property(readonly) NSError * safeSaveError;
 @property(readonly) BOOL continueCheckingUpload;

@@ -12,10 +12,10 @@
 @property(copy) NSString * accessKey;
 
 
-- (id)form;
 - (void)setAlign:(id)arg1;
 - (id)align;
 - (void)setAccessKey:(id)arg1;
 - (id)accessKey;
+- (id)form;
 
 @end

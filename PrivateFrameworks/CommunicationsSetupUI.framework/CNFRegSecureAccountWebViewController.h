@@ -14,6 +14,9 @@
 @property(retain) IMAccount * account;
 
 
+- (void)dealloc;
+- (void)setAccount:(id)arg1;
+- (id)account;
 - (void)_showRegistrationFailureWithError:(id)arg1;
 - (void)_incrementSigninFailureCount;
 - (void)_resetSigninFailureCount;
@@ -27,10 +30,7 @@
 - (void)_handleTimeout;
 - (id)initWithRegController:(id)arg1 account:(id)arg2;
 - (void)_setupAccountHandlers;
-- (void)dealloc;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
-- (void)setAccount:(id)arg1;
-- (id)account;
 
 @end

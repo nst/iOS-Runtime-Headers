@@ -17,13 +17,13 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)predicateFormat;
-- (id)predicateWithSubstitutionVariables:(id)arg1;
-- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_predicateBlock;
 - (id)initWithBlock:(id)arg1;
 - (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
+- (id)predicateFormat;
+- (id)predicateWithSubstitutionVariables:(id)arg1;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 
 @end

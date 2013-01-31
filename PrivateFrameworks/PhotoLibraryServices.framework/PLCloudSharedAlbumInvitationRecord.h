@@ -17,19 +17,19 @@
 @property(retain) PLCloudSharedAlbum * album;
 @property(retain) NSString * inviteeEmail;
 
-+ (id)entityName;
 + (id)cloudSharedAlbumInvitationRecordsWithAlbumGUID:(id)arg1 inLibrary:(id)arg2;
 + (id)cloudSharedAlbumInvitationRecordWithGUID:(id)arg1 inLibrary:(id)arg2;
 + (id)insertNewInvitationRecordIntoAlbum:(id)arg1 withFirstName:(id)arg2 lastName:(id)arg3 email:(id)arg4 inLibrary:(id)arg5;
 + (id)entityInManagedObjectContext:(id)arg1;
++ (id)entityName;
 
 - (void)dealloc;
 - (id)init;
-- (void)awakeFromInsert;
 - (id)invitationStateDescription;
 - (void)setInviteeEmail:(id)arg1;
 - (id)inviteeEmail;
 - (id)inviteeDisplayNameIncludingEmail:(BOOL)arg1;
 - (void)delete;
+- (void)awakeFromInsert;
 
 @end

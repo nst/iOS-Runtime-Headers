@@ -19,9 +19,6 @@
 @property(getter=_localeIdentifier,setter=_setLocaleIdentifier:,copy) NSString * _localeIdentifier;
 
 
-- (id)localizedTitle;
-- (BOOL)isDownloadable;
-- (id)price;
 - (void)dealloc;
 - (id)init;
 - (id)copyXPCEncoding;
@@ -41,5 +38,8 @@
 - (id)downloadContentVersion;
 - (id)downloadContentLengths;
 - (id)productIdentifier;
+- (id)price;
+- (BOOL)isDownloadable;
+- (id)localizedTitle;
 
 @end

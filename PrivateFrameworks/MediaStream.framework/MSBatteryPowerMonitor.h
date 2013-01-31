@@ -15,15 +15,15 @@
 
 + (id)defaultMonitor;
 
+- (double)currentLevel;
+- (void)setCurrentLevel:(double)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)updateBatteryConnectedStateWithBatteryEntry:(unsigned int)arg1;
 - (void)setExternalPowerConnected:(BOOL)arg1;
-- (BOOL)isExternalPowerConnected;
 - (BOOL)_updateBatteryConnectedStateWithBatteryEntry:(unsigned int)arg1;
 - (void)updateBatteryLevelWithBatteryEntry:(unsigned int)arg1;
 - (double)batteryPercentRemaining;
-- (double)currentLevel;
-- (void)setCurrentLevel:(double)arg1;
+- (BOOL)isExternalPowerConnected;
 
 @end

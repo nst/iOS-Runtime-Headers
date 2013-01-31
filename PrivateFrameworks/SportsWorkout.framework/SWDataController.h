@@ -16,9 +16,9 @@
 
 + (id)sharedDataController;
 
-- (id)achievements;
 - (void)dealloc;
 - (id)init;
+- (id)achievements;
 - (void)performMigrationIfNecessary;
 - (void)clearAchievementForName:(id)arg1;
 - (void)importExistingWorkoutSnapshotsWithCompletionBlock:(id)arg1;

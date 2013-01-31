@@ -14,13 +14,13 @@
 + (id)windSpeedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)windSpeed;
 
-- (id)groupIdentifier;
-- (id)value;
-- (void)setValue:(id)arg1;
 - (void)setWindDirectionDegree:(id)arg1;
 - (id)windDirectionDegree;
 - (void)setWindDirection:(id)arg1;
 - (id)windDirection;
 - (id)encodedClassName;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (id)groupIdentifier;
 
 @end

@@ -11,16 +11,16 @@
 @property(copy) NSString * actionType;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)initWithActionType:(id)arg1;
 - (void)performAction;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)attributeKeys;
 - (id)actionType;
 - (void)setActionType:(id)arg1;
 

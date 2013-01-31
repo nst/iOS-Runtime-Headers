@@ -18,10 +18,6 @@
 
 - (id)selectedIdentifier;
 - (void)setSelectedIdentifier:(id)arg1;
-- (void)_enabledMediaTypesDidChangeNotification:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (BOOL)editable;
 - (id)selectedViewControllerContext;
 - (void)setViewControllersWithContexts:(id)arg1;
 - (void)_resetViewControllersWithContexts:(id)arg1;
@@ -34,5 +30,9 @@
 - (id)copyArchivableContexts;
 - (void)setModalContext:(id)arg1;
 - (void)_availableMediaLibrariesDidChangeNotification:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (BOOL)editable;
+- (void)_enabledMediaTypesDidChangeNotification:(id)arg1;
 
 @end

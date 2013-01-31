@@ -6,8 +6,8 @@
 }
 
 
-- (void)removeBackgroundImage;
 - (void)addSubview:(id)arg1;
 - (void)layoutSubviews;
+- (void)removeBackgroundImage;
 
 @end

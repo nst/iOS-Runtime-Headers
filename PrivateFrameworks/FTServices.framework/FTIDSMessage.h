@@ -29,6 +29,9 @@
 @property(copy) NSData * IDCertificate;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (struct __SecKey { }*)identityPublicKey;
 - (void)setProvisionCertificate:(id)arg1;
 - (void)setProvisionPrivateKey:(struct __SecKey { }*)arg1;
@@ -55,11 +58,8 @@
 - (BOOL)wantsHTTPHeaders;
 - (BOOL)wantsCompressedBody;
 - (BOOL)wantsBinaryPush;
+- (int)command;
 - (void)setPushToken:(id)arg1;
 - (id)pushToken;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
-- (int)command;
 
 @end

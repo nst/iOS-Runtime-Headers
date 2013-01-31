@@ -14,10 +14,10 @@
 }
 
 
+- (void)restoreAttributesOfTextStorage:(id)arg1;
+- (id)initWithTextStorage:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (void)restoreAttributesOfTextStorage:(id)arg1;
-- (id)initWithTextStorage:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 
 @end

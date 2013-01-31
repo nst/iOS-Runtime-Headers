@@ -13,8 +13,6 @@
 
 
 - (void).cxx_destruct;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
-- (void)setShouldIncludeAppIdInRequest:(id)arg1;
 - (void)_presentAccessRequestForAccountType:(id)arg1 client:(id)arg2 withHandler:(id)arg3;
 - (id)signedRequest:(id)arg1 withAccount:(id)arg2 applicationID:(id)arg3 timestamp:(id)arg4;
 - (void)signURLRequest:(id)arg1 withAccount:(id)arg2 applicationID:(id)arg3 timestamp:(id)arg4 handler:(id)arg5;
@@ -25,5 +23,7 @@
 - (id)ckForAccountType:(id)arg1;
 - (id)initWithClient:(id)arg1 database:(id)arg2;
 - (void)setClientBundleID:(id)arg1 withHandler:(id)arg2;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)setShouldIncludeAppIdInRequest:(id)arg1;
 
 @end

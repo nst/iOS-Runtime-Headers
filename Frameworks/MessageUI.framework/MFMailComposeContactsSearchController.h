@@ -21,16 +21,16 @@
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
-- (void)_finishSearch;
-- (void)setTaskID:(id)arg1;
-- (void)_cancelSearchAndNotify:(BOOL)arg1;
-- (void)searchWithString:(id)arg1;
-- (void)cancelSearch;
 - (void)endedNetworkActivity;
 - (void)beganNetworkActivity;
 - (void)finishedTaskWithID:(id)arg1;
 - (void)finishedSearchingForType:(int)arg1;
 - (void)consumeSearchResults:(id)arg1 type:(int)arg2 taskID:(id)arg3;
 - (id)taskID;
+- (void)_finishSearch;
+- (void)setTaskID:(id)arg1;
+- (void)_cancelSearchAndNotify:(BOOL)arg1;
+- (void)searchWithString:(id)arg1;
+- (void)cancelSearch;
 
 @end

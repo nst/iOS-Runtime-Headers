@@ -13,9 +13,9 @@
 
 + (id)composition;
 
-- (id)tracks;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;
+- (id)tracks;
 - (id)mutableTrackCompatibleWithTrack:(id)arg1;
 - (void)removeTrack:(id)arg1;
 - (id)addMutableTrackWithMediaType:(id)arg1 preferredTrackID:(int)arg2;

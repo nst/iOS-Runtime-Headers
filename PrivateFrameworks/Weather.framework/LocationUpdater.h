@@ -24,8 +24,6 @@
 + (void)clearSharedLocationUpdater;
 + (id)sharedLocationUpdater;
 
-- (void)cancel;
-- (void)dealloc;
 - (id)currentCity;
 - (void)setCurrentCity:(id)arg1;
 - (void)enableProgressIndicator:(BOOL)arg1;
@@ -39,5 +37,7 @@
 - (void)handleCompletionForCity:(id)arg1 withUpdateDetail:(int)arg2;
 - (void)didProcessDocument;
 - (id)aggregateDictionaryDomain;
+- (void)cancel;
+- (void)dealloc;
 
 @end

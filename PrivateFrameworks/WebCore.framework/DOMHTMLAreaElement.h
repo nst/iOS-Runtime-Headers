@@ -24,15 +24,6 @@
 @property(readonly) NSURL * absoluteLinkURL;
 
 
-- (void)setTarget:(id)arg1;
-- (id)target;
-- (void)setShape:(id)arg1;
-- (id)protocol;
-- (id)port;
-- (id)absoluteQuadsWithOwner:(id)arg1;
-- (id)shape;
-- (id)absoluteLinkURL;
-- (id)host;
 - (id)boundingBoxesWithOwner:(id)arg1;
 - (struct _WKQuad { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; })absoluteQuadWithOwner:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingBoxWithOwner:(id)arg1;
@@ -52,6 +43,15 @@
 - (void)setCoords:(id)arg1;
 - (id)coords;
 - (id)href;
+- (void)setTarget:(id)arg1;
+- (id)target;
+- (void)setShape:(id)arg1;
+- (id)protocol;
+- (id)port;
+- (id)absoluteQuadsWithOwner:(id)arg1;
+- (id)shape;
+- (id)absoluteLinkURL;
+- (id)host;
 - (id)absoluteQuadsAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

@@ -21,9 +21,7 @@
 @property BOOL _isSleeping;
 
 
-- (void)reachabilityDidChange:(id)arg1;
 - (void)dealloc;
-- (void)clear;
 - (void)systemWillSleep;
 - (void)systemDidWake;
 - (void)set_isSleeping:(BOOL)arg1;
@@ -47,5 +45,7 @@
 - (void)goConnectedWithLocalSocketAddress:(id)arg1 remoteSocketAddress:(id)arg2;
 - (void)_setup;
 - (BOOL)isImmediatelyReachable;
+- (void)clear;
+- (void)reachabilityDidChange:(id)arg1;
 
 @end

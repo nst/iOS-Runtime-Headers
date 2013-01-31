@@ -11,9 +11,6 @@
 
 
 - (void)dealloc;
-- (id)addRow;
-- (id)initWithText:(id)arg1;
-- (id)properties;
 - (void)clearRows;
 - (id)newCellIterator;
 - (id)newRowIterator;
@@ -26,5 +23,8 @@
 - (id)rowAt:(int)arg1;
 - (int)rowCount;
 - (int)blockType;
+- (id)addRow;
+- (id)initWithText:(id)arg1;
+- (id)properties;
 
 @end

@@ -19,10 +19,6 @@
 @property(setter=showCity:,retain) City * city;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)bundle;
 - (id)_secondaryBigIcon;
 - (void)setBigIcon:(unsigned int)arg1 dayNightChanged:(BOOL)arg2;
 - (void)refreshLocalization;
@@ -37,6 +33,10 @@
 - (id)_bigIcon;
 - (void)cityDidFinishWeatherUpdate:(id)arg1;
 - (void)cityDidStartWeatherUpdate:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)bundle;
 - (id)city;
 
 @end

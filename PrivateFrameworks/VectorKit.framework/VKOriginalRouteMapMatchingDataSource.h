@@ -16,10 +16,10 @@
 @property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } sectionRange;
 
 
-- (id).cxx_construct;
-- (void)dealloc;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })sectionRange;
 - (id)initWithFromSections:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)forEachMapMatchingSection:(id)arg1;
+- (id).cxx_construct;
+- (void)dealloc;
 
 @end

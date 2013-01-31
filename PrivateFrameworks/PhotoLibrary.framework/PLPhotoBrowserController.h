@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UITransitionView, PLPhotoScrubber, PLVideoView, UINavigationController, PLPublishingAgent, UIPageController, NSOrderedSet, PLCommentsButton, NSString, NSObject<PLAssetContainer>, NSNumberFormatter, PLCropOverlay, UIAlertView, UILongPressGestureRecognizer, PLVideoRemaker, UINavigationBar, PLAirTunesServiceBrowser, PLManagedAsset, UIViewController, NSMutableSet, PLLibraryImageDataProvider, UIBarButtonItem, UIWindow, UIScrollView, UIPopoverController, UIView, NSArray, PLSlideshowSettingsViewController, PLPictureFramePlugin, UIImage, PLAirPlayBackgroundView, UIImageView, PLEditPhotoController, PLProgressView, UIActionSheet, NSTimer, <PLPhotoBrowserControllerDelegate>, PLAirTunesService, UIToolbar, PLPhotoTileViewController, PLActivityViewController, NSMutableDictionary, UIProgressHUD;
+@class UITransitionView, PLPhotoScrubber, PLVideoView, UINavigationController, PLPublishingAgent, UIPageController, NSOrderedSet, PLCommentsButton, NSString, NSObject<PLAssetContainer>, AirPlayDiagnosticsPopoverController, NSNumberFormatter, PLCropOverlay, UIAlertView, UILongPressGestureRecognizer, PLVideoRemaker, UINavigationBar, PLAirTunesServiceBrowser, PLManagedAsset, UIViewController, NSMutableSet, PLLibraryImageDataProvider, UIBarButtonItem, UIWindow, UIScrollView, UIPopoverController, UIView, NSArray, PLSlideshowSettingsViewController, PLPictureFramePlugin, UIImage, PLAirPlayBackgroundView, UIImageView, PLEditPhotoController, PLProgressView, UIActionSheet, NSTimer, <PLPhotoBrowserControllerDelegate>, PLAirTunesService, UIToolbar, PLPhotoTileViewController, PLActivityViewController, NSMutableDictionary, UIProgressHUD;
 
 @interface PLPhotoBrowserController : UIViewController <ABPeoplePickerNavigationControllerDelegate, PLAlbumChangeObserver, PLAirTunesServicePhotoBrowsingDataSource, PLPublishingActivityDelegate, PLActivityViewControllerDelegate, UIPageControllerDelegate, PLPhotoTileViewControllerDelegate, PLVideoViewDelegate, UIScrollViewDelegate, UIToolbarDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIActionSheetDelegate, PhotoScrubberDataSource, UIPopoverControllerDelegate, PLUIEditImageViewControllerDelegate, PLSlideshowSettingsViewControllerDelegate, PLSlideshowPluginDelegate, PLAirTunesServicePickerViewControllerDelegate, AirPlayRemoteSlideshowDelegate, PLDismissableViewController> {
-    <PLPhotoBrowserControllerDelegate> *_delegate;
+    <PLPhotoBrowserControllerDelegate> *__delegate;
     struct NSObject { Class x1; } *_album;
     NSMutableDictionary *_tileCache;
     UIPageController *_pageController;
@@ -167,6 +167,7 @@
     BOOL _commentsTableWasVisible;
     id _activityTarget;
     SEL _activityAction;
+    AirPlayDiagnosticsPopoverController *_airplayDiagnosticsPopoverController;
     BOOL shouldShowOverlaysWhenViewAppears;
     BOOL shouldShowOverlaysWhenViewDisappears;
 }
@@ -200,53 +201,11 @@
 
 + (void)setPageControllerScrollViewClass:(Class)arg1;
 
-- (void)viewDidAppear;
 - (id)_navigationController;
 - (void)_dismissModalViewControllerAnimated:(BOOL)arg1;
-- (id)_navigationBar;
-- (void)_fadeOut;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
-- (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
-- (void)_applicationDidBecomeActive:(id)arg1;
-- (void)_applicationWillResignActive:(id)arg1;
-- (id)_visibleViewController;
-- (void)pageControllerDidEndPaging:(id)arg1;
-- (void)pageControllerWillBeginPaging:(id)arg1;
-- (Class)_pageControllerScrollViewClass;
-- (id)pageController;
-- (id)pageController:(id)arg1 viewControllerAtIndex:(int)arg2;
-- (void)setRotationDisabled:(BOOL)arg1;
-- (void)_longPressRecognized:(id)arg1;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (id)rotatingFooterView;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)copy:(id)arg1;
-- (void)transitionViewDidComplete:(id)arg1 fromView:(id)arg2 toView:(id)arg3;
-- (double)durationForTransition:(int)arg1;
-- (BOOL)isEditing;
-- (void)viewWillLayoutSubviews;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)willPresentActionSheet:(id)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (int)statusBarStyle;
-- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (void)applicationWillEnterForeground:(id)arg1;
-- (void)applicationDidEnterBackground:(id)arg1;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewWillBeginDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
-- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)setAlbum:(id)arg1;
 - (struct NSObject { Class x1; }*)album;
 - (void)albumDidChange:(id)arg1;
@@ -307,6 +266,7 @@
 - (id)initWithImageDataProvider:(id)arg1;
 - (BOOL)airplayRemoteSlideshow:(id)arg1 handleEvent:(id)arg2;
 - (BOOL)airplayRemoteSlideshow:(id)arg1 requestAssetWithInfo:(id)arg2 completion:(id)arg3;
+- (void)airTunesServicePickerViewControllerDidSelectDebugOption:(id)arg1;
 - (void)slideshowPluginDidDisplayFinalImage:(id)arg1;
 - (void)slideshowPluginReadyToBegin:(id)arg1;
 - (id)slideshowSettingsViewController:(id)arg1 slideshowSettingsForAirPlayService:(id)arg2;
@@ -364,10 +324,12 @@
 - (void)_configureTVOutPageController;
 - (void)_updateTVOutAfterAnimation;
 - (void)_endAirTunesPicker;
-- (void)_displayAirTunesPopoverRelativeToView:(id)arg1;
+- (void)_displayAirTunesPopover:(id)arg1 relativeToView:(id)arg2;
 - (id)airTunesButton;
 - (void)_showPeoplePicker;
 - (void)setAirTunesMode:(int)arg1;
+- (void)_airplayDebugOptionWasClicked:(id)arg1;
+- (BOOL)_shouldShowDebugAirplayOption;
 - (void)deleteOrRemoveCurrentPhoto:(id)arg1;
 - (void)saveCurrentPhoto:(id)arg1;
 - (void)publishToYouTubeClicked;
@@ -375,6 +337,7 @@
 - (void)_setImageAsHomeScreenAndLockScreenClicked:(id)arg1;
 - (void)_setImageAsHomeScreenClicked:(id)arg1;
 - (void)_setImageAsLockScreenClicked:(id)arg1;
+- (void)_dismissAirplayDiagnosticsPopover;
 - (void)_dismissAirtunesServicePickerPopover;
 - (void)setNavigationBarDisabled:(BOOL)arg1;
 - (void)updateCommentsButtonVisibility;
@@ -552,6 +515,7 @@
 - (id)currentVideoView;
 - (void)updateOverlays;
 - (void)_didLoadImage:(id)arg1 forObjectID:(id)arg2;
+- (id)airplayDiagnosticsPopoverController;
 - (void)animateToIndex;
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1 currentImageIndex:(unsigned int)arg2;
 - (void)setCurrentAsset:(id)arg1;
@@ -621,5 +585,47 @@
 - (void)setPageControllerScrollView:(id)arg1;
 - (void)_capabilitiesChanged;
 - (id)photoCountFormatter;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
+- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
+- (void)_applicationDidBecomeActive:(id)arg1;
+- (void)_applicationWillResignActive:(id)arg1;
+- (id)_visibleViewController;
+- (void)pageControllerDidEndPaging:(id)arg1;
+- (void)pageControllerWillBeginPaging:(id)arg1;
+- (Class)_pageControllerScrollViewClass;
+- (id)pageController;
+- (id)pageController:(id)arg1 viewControllerAtIndex:(int)arg2;
+- (void)setRotationDisabled:(BOOL)arg1;
+- (void)_longPressRecognized:(id)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (id)rotatingFooterView;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)copy:(id)arg1;
+- (void)transitionViewDidComplete:(id)arg1 fromView:(id)arg2 toView:(id)arg3;
+- (double)durationForTransition:(int)arg1;
+- (BOOL)isEditing;
+- (void)viewWillLayoutSubviews;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)willPresentActionSheet:(id)arg1;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (int)statusBarStyle;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (void)applicationWillEnterForeground:(id)arg1;
+- (void)applicationDidEnterBackground:(id)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewWillBeginDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (id)_navigationBar;
+- (void)_fadeOut;
+- (void)viewDidAppear;
 
 @end

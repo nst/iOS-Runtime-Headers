@@ -11,16 +11,16 @@
 @property(copy) NSArray * urls;
 @property int version;
 
-+ (id)attribution;
 + (id)attributionWithDictionary:(id)arg1 context:(id)arg2;
++ (id)attribution;
 
-- (id)groupIdentifier;
-- (void)setVersion:(int)arg1;
-- (int)version;
-- (void)setUrls:(id)arg1;
-- (id)urls;
 - (void)setAttributionId:(id)arg1;
 - (id)attributionId;
 - (id)encodedClassName;
+- (void)setUrls:(id)arg1;
+- (id)urls;
+- (void)setVersion:(int)arg1;
+- (int)version;
+- (id)groupIdentifier;
 
 @end

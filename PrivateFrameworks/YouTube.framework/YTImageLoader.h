@@ -30,9 +30,6 @@
 
 + (id)sharedImageLoader;
 
-- (id)notificationCenter;
-- (void)saveCache:(id)arg1;
-- (id)init;
 - (void)_locked_imageLoadStarted:(id)arg1;
 - (void)_loadingStatusChanged;
 - (void)_postImageLoadedNotification:(id)arg1;
@@ -54,5 +51,8 @@
 - (void)_startLoader;
 - (void)_setImageData:(id)arg1 videoID:(id)arg2 forURL:(id)arg3 cacheLocked:(BOOL)arg4;
 - (void)_imageLoadFinished:(id)arg1;
+- (id)init;
+- (void)saveCache:(id)arg1;
+- (id)notificationCenter;
 
 @end

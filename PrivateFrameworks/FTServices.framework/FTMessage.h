@@ -95,12 +95,19 @@
 @property(setter=_setCachedBody:,retain) NSDictionary * _cachedBody;
 
 
+- (id)userInfo;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setCreationDate:(id)arg1;
+- (id)creationDate;
+- (id)messageBody;
+- (id)topic;
 - (struct __SecKey { }*)identityPublicKey;
 - (void)setClientInfo:(id)arg1;
 - (struct __SecKey { }*)identityPrivateKey;
 - (id)responseAlertInfo;
 - (void)setDSAuthID:(id)arg1;
-- (id)bagKey;
 - (id)_cachedBody;
 - (id)deliveryAcknowledgementBlock;
 - (void)_setUsingOutgoingPush:(BOOL)arg1;
@@ -157,23 +164,16 @@
 - (void)setDeliveryAcknowledgementBlock:(id)arg1;
 - (void)setServiceData:(id)arg1;
 - (void)setTopic:(id)arg1;
-- (id)pushToken;
-- (id)userInfo;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)topic;
+- (int)command;
+- (id)bagKey;
 - (void)setUserInfo:(id)arg1;
 - (void)setCompletionBlock:(id)arg1;
 - (void)setContext:(id)arg1;
 - (id)context;
-- (int)command;
-- (id)messageBody;
+- (id)pushToken;
 - (double)timeout;
 - (void)setTimeout:(double)arg1;
 - (id)completionBlock;
-- (void)setCreationDate:(id)arg1;
-- (id)creationDate;
 - (void)setUniqueID:(unsigned int)arg1;
 - (unsigned int)uniqueID;
 

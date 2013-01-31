@@ -13,12 +13,12 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)stop;
-- (void)start;
 - (void)_finishSendingClientComposedMessageForMarkup:(id)arg1 subject:(id)arg2 handles:(id)arg3 attachments:(id)arg4 guid:(id)arg5 forceService:(id)arg6 forceSMS:(BOOL)arg7;
 - (id)_serviceForHandles:(id)arg1;
 - (void)_startListeningForClientComposeNotifications;
 - (void)_stopListeningForClientComposeNotifications;
 - (void)_sendClientComposedMessageForMarkup:(id)arg1 subject:(id)arg2 recipients:(id)arg3 attachments:(id)arg4 guid:(id)arg5 forceSMS:(BOOL)arg6;
+- (void)stop;
+- (void)start;
 
 @end

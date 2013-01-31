@@ -15,7 +15,6 @@
 + (id)units;
 + (id)unitsWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
 - (void)setTemperatureUnits:(id)arg1;
 - (id)temperatureUnits;
 - (void)setSpeedUnits:(id)arg1;
@@ -25,5 +24,6 @@
 - (void)setDistanceUnits:(id)arg1;
 - (id)distanceUnits;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -12,10 +12,10 @@
 + (id)assistantDestroyedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)assistantDestroyed;
 
-- (id)groupIdentifier;
 - (void)setAssistantId:(id)arg1;
 - (id)assistantId;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -19,19 +19,19 @@
 + (BOOL)_attachmentIsViewable:(id)arg1;
 + (id)cellControllersForAttachments:(id)arg1 givenExistingControllers:(id)arg2;
 
+- (void)tearDown;
+- (id)attachment;
+- (void)setAttachment:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (id)cell;
-- (id)attachment;
-- (void)setAttachment:(id)arg1;
-- (id)initWithAttachment:(id)arg1;
 - (void)_presentPreviewOnMainThreadWithInfo:(id)arg1;
 - (id)_downloadProgressStringWithDownloadedBytes:(id)arg1 outOfTotalBytes:(id)arg2;
 - (void)_presentPreviewWithURL:(id)arg1 filename:(id)arg2;
 - (void)_clearDownloadID;
 - (void)_cleanupDocumentController;
+- (id)initWithAttachment:(id)arg1;
 - (void)cellSelected;
-- (void)tearDown;
 
 @end

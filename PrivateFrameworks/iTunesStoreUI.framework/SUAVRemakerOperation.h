@@ -17,7 +17,6 @@
 - (BOOL)stopRunLoop;
 - (id)remakerOutput;
 - (void)_beginObservingAVRemaker:(id)arg1;
-- (void)_updateProgress:(id)arg1;
 - (void)_endObservingAVRemaker;
 - (id)_newDestinationURLForSourceURL:(id)arg1;
 - (id)initWithSourceURL:(id)arg1 remakerMode:(id)arg2 options:(id)arg3;
@@ -25,5 +24,6 @@
 - (void)dealloc;
 - (id)init;
 - (void)run;
+- (void)_updateProgress:(id)arg1;
 
 @end

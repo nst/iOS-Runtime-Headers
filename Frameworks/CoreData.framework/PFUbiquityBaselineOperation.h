@@ -23,6 +23,7 @@
 
 - (id)description;
 - (void)dealloc;
+- (id)model;
 - (id)initWithStoreName:(id)arg1 localPeerID:(id)arg2 modelVersionHash:(id)arg3 andRootLocation:(id)arg4;
 - (void)storeWillBeRemoved:(id)arg1;
 - (id)modelVersionHash;
@@ -31,6 +32,5 @@
 - (id)ubiquityRootLocation;
 - (id)localPeerID;
 - (id)store;
-- (id)model;
 
 @end

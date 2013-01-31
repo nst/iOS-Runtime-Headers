@@ -9,13 +9,13 @@
 }
 
 
-- (unsigned int)indexOfSectionForSectionIndexTitleAtIndex:(unsigned int)arg1;
-- (void)dealloc;
-- (unsigned int)numberOfSections;
 - (id)titleOfIndexBarSectionAtIndex:(unsigned int)arg1;
 - (unsigned int)numberOfIndexBarTitles;
 - (id)initWithMediaQuerySectionInfo:(id)arg1;
 - (id)titleOfSectionAtIndex:(unsigned int)arg1;
 - (unsigned int)indexOfSectionAtIndex:(unsigned int)arg1;
+- (void)dealloc;
+- (unsigned int)numberOfSections;
+- (unsigned int)indexOfSectionForSectionIndexTitleAtIndex:(unsigned int)arg1;
 
 @end

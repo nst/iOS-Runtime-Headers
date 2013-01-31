@@ -20,10 +20,10 @@
 }
 
 
+- (id)client;
 - (id)description;
 - (void)dealloc;
 - (void)finalize;
-- (id)client;
 - (void)forwardUsingMessageSender:(id)arg1;
 - (id)descriptionWithIndenting:(id)arg1;
 - (id)initWithClient:(id)arg1 reactorID:(id)arg2 messageSender:(id)arg3;

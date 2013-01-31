@@ -12,10 +12,10 @@
 + (id)getAnchorsResponseWithDictionary:(id)arg1 context:(id)arg2;
 + (id)getAnchorsResponse;
 
-- (id)groupIdentifier;
 - (id)anchors;
 - (void)setAnchors:(id)arg1;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

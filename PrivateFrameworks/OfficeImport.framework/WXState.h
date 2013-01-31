@@ -41,7 +41,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)document;
 - (BOOL)currentTableWraps;
 - (void)setCurrentTableWraps:(BOOL)arg1;
 - (void)setCurrentCellCNFStyle:(unsigned long)arg1;
@@ -90,5 +89,6 @@
 - (id)drawingState;
 - (void)setIsThumbnail:(BOOL)arg1;
 - (BOOL)isThumbnail;
+- (id)document;
 
 @end

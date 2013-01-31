@@ -17,8 +17,6 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)end;
-- (void)setProgress:(double)arg1;
 - (double)overallProgress;
 - (void)setProgressPercentage:(double)arg1;
 - (void)setNextSubStageParentSize:(double)arg1;
@@ -28,5 +26,7 @@
 - (double)currentPosition;
 - (void)advanceProgress:(double)arg1;
 - (id)parentStage;
+- (void)end;
+- (void)setProgress:(double)arg1;
 
 @end

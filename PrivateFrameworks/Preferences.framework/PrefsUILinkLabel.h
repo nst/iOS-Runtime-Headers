@@ -17,13 +17,13 @@
 @property SEL action;
 
 
-- (void)tappedLink:(id)arg1;
-- (id)color:(id)arg1 byMultiplyingSubComponentsBy:(float)arg2;
 - (SEL)action;
 - (void)setTarget:(id)arg1;
 - (id)target;
 - (id)URL;
 - (void)dealloc;
+- (void)tappedLink:(id)arg1;
+- (id)color:(id)arg1 byMultiplyingSubComponentsBy:(float)arg2;
 - (void)setURL:(id)arg1;
 - (void)setAction:(SEL)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

@@ -20,6 +20,7 @@
 
 - (id)description;
 - (void)dealloc;
+- (id)copyParseRules;
 - (BOOL)notificationNameMatches:(id)arg1;
 - (id)resourceChanged;
 - (id)inviteReply;
@@ -31,6 +32,5 @@
 - (BOOL)isResourceChanged;
 - (BOOL)isInviteReply;
 - (BOOL)isInviteNotification;
-- (id)copyParseRules;
 
 @end

@@ -20,19 +20,10 @@
 @property(copy) NSString * timeZoneId;
 @property(copy) NSString * type;
 
-+ (id)email;
 + (id)emailWithDictionary:(id)arg1 context:(id)arg2;
++ (id)email;
 
-- (id)groupIdentifier;
 - (id)type;
-- (id)subject;
-- (id)message;
-- (void)setSubject:(id)arg1;
-- (void)setMessage:(id)arg1;
-- (void)setType:(id)arg1;
-- (void)setOutgoing:(id)arg1;
-- (void)setDateSent:(id)arg1;
-- (id)dateSent;
 - (void)setReferenceId:(id)arg1;
 - (id)referenceId;
 - (void)setRecipientsCc:(id)arg1;
@@ -50,5 +41,14 @@
 - (id)timeZoneId;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (id)dateSent;
+- (void)setOutgoing:(id)arg1;
+- (void)setDateSent:(id)arg1;
+- (id)subject;
+- (id)message;
+- (void)setSubject:(id)arg1;
+- (void)setMessage:(id)arg1;
+- (void)setType:(id)arg1;
+- (id)groupIdentifier;
 
 @end

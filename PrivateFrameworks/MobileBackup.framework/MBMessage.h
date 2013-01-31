@@ -18,19 +18,19 @@
 
 + (id)messageWithName:(id)arg1 arguments:(id)arg2;
 
-- (void)setError:(id)arg1;
 - (id)name;
 - (id)description;
 - (void)dealloc;
-- (id)arguments;
-- (id)reply;
-- (void)setReply:(id)arg1;
+- (id)replyError;
+- (id)error;
 - (void)setReplyError:(id)arg1;
 - (void)sendReply;
 - (id)initWithName:(id)arg1 arguments:(id)arg2;
 - (id)_xpcObject;
 - (id)_initWithXPCObject:(id)arg1;
-- (id)replyError;
-- (id)error;
+- (id)reply;
+- (void)setReply:(id)arg1;
+- (id)arguments;
+- (void)setError:(id)arg1;
 
 @end

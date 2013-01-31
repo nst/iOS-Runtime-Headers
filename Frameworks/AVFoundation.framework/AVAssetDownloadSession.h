@@ -20,19 +20,19 @@
 + (id)assetDownloadSessionWithURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
 + (id)assetDownloadSessionWithDownloadToken:(unsigned long long)arg1;
 
-- (unsigned long long)downloadToken;
 - (id)URL;
 - (void)dealloc;
 - (id)init;
-- (id)destinationURL;
+- (unsigned long long)fileSize;
+- (id)error;
 - (int)status;
 - (void)pause;
 - (void)stop;
 - (int)priority;
 - (void)finalize;
 - (void)start;
-- (unsigned long long)fileSize;
-- (id)error;
+- (unsigned long long)downloadToken;
+- (id)destinationURL;
 - (void)_primeCacheOnDispatchQueue;
 - (id)_figPlaybackItemNotificationNames;
 - (id)_figAssetNotificationNames;

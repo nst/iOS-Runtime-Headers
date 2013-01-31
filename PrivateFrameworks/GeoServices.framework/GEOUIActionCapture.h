@@ -21,25 +21,25 @@
 @property int sequenceNumber;
 
 
-- (void)setSequenceNumber:(int)arg1;
-- (int)sequenceNumber;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (double)duration;
-- (void)setDuration:(double)arg1;
 - (int)actionType;
 - (void)setActionType:(int)arg1;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (void)setHasDuration:(BOOL)arg1;
+- (BOOL)hasDuration;
+- (BOOL)readFrom:(id)arg1;
 - (void)setHasActionType:(BOOL)arg1;
 - (BOOL)hasActionType;
 - (void)setHasSequenceNumber:(BOOL)arg1;
 - (BOOL)hasSequenceNumber;
-- (void)setHasDuration:(BOOL)arg1;
-- (BOOL)hasDuration;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
+- (double)duration;
+- (void)setDuration:(double)arg1;
+- (void)setSequenceNumber:(int)arg1;
+- (int)sequenceNumber;
 
 @end

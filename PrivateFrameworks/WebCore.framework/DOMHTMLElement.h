@@ -24,21 +24,6 @@
 @property(readonly) NSString * titleDisplayString;
 
 
-- (BOOL)hidden;
-- (int)structuralComplexityContribution;
-- (id)className;
-- (BOOL)isContentEditable;
-- (id)innerHTML;
-- (void)setContentEditable:(id)arg1;
-- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2 adjustForPurpleCaret:(BOOL)arg3;
-- (void)setInnerHTML:(id)arg1;
-- (id)innerText;
-- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2;
-- (int)scrollYOffset;
-- (int)scrollXOffset;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (void)setHidden:(BOOL)arg1;
 - (void)insertAdjacentText:(id)arg1 text:(id)arg2;
 - (void)insertAdjacentHTML:(id)arg1 html:(id)arg2;
 - (id)insertAdjacentElement:(id)arg1 element:(id)arg2;
@@ -72,5 +57,20 @@
 - (void)setAccessKey:(id)arg1;
 - (id)accessKey;
 - (void)absolutePosition:(int*)arg1 :(int*)arg2 :(int*)arg3 :(int*)arg4;
+- (BOOL)hidden;
+- (int)structuralComplexityContribution;
+- (id)className;
+- (BOOL)isContentEditable;
+- (id)innerHTML;
+- (void)setContentEditable:(id)arg1;
+- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2 adjustForPurpleCaret:(BOOL)arg3;
+- (void)setInnerHTML:(id)arg1;
+- (id)innerText;
+- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2;
+- (int)scrollYOffset;
+- (int)scrollXOffset;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (void)setHidden:(BOOL)arg1;
 
 @end

@@ -27,8 +27,9 @@
 - (int)type;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)image;
-- (id)text;
+- (void)copyToPasteboard;
+- (id)previewImage;
+- (id)imageData;
 - (int)outgoingBubbleColor;
 - (void)setParentMessage:(id)arg1;
 - (id)composeData;
@@ -41,9 +42,8 @@
 - (id)previewText;
 - (id)detachedCopy;
 - (void)setOutgoingBubbleColor:(int)arg1;
-- (void)copyToPasteboard;
-- (id)previewImage;
-- (id)imageData;
+- (id)image;
+- (id)text;
 - (int)rowID;
 
 @end

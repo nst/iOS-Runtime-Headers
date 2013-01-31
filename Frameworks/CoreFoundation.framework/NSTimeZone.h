@@ -5,6 +5,7 @@
 @interface NSTimeZone : NSObject <NSCopying, NSSecureCoding> {
 }
 
++ (id)timeZoneForSecondsFromGMT:(int)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)defaultTimeZone;
 + (id)localTimeZone;
@@ -19,7 +20,6 @@
 + (id)abbreviationDictionary;
 + (id)systemTimeZone;
 + (BOOL)supportsSecureCoding;
-+ (id)timeZoneForSecondsFromGMT:(int)arg1;
 + (id)ICSQuickTimeZoneNames;
 + (id)calendarTimeZone;
 + (id)gmt;

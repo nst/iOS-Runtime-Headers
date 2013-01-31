@@ -32,10 +32,13 @@
 @property double course;
 
 
-- (void)setCourse:(double)arg1;
-- (void)setUpdating:(BOOL)arg1;
+- (void)setLocation:(id)arg1;
+- (id)heading;
+- (void)setHeading:(id)arg1;
+- (double)course;
 - (double)timestamp;
 - (void)setTimestamp:(double)arg1;
+- (void)setCourse:(double)arg1;
 - (id)annotation;
 - (void)setSource:(int)arg1;
 - (int)source;
@@ -49,9 +52,6 @@
 - (id)predictedLocation;
 - (BOOL)isUpdating;
 - (void)setFixedLocation:(id)arg1;
-- (void)setLocation:(id)arg1;
-- (id)heading;
-- (void)setHeading:(id)arg1;
-- (double)course;
+- (void)setUpdating:(BOOL)arg1;
 
 @end

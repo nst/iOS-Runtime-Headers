@@ -20,6 +20,11 @@
 @property(retain) GKGame * game;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)remoteProtocol;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)setShouldDisplayChallengePlayButton:(BOOL)arg1;
 - (BOOL)shouldDisplayChallengePlayButton;
 - (void)remoteControllerDidChangeViewState:(id)arg1;
@@ -38,11 +43,6 @@
 - (int)leaderboardTimeScope;
 - (void)setLeaderboardCategory:(id)arg1;
 - (void)setViewState:(int)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
 - (void)setNilValueForKey:(id)arg1;
-- (id)remoteProtocol;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 
 @end

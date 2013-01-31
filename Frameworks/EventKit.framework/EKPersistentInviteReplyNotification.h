@@ -20,9 +20,9 @@
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 
+- (id)creationDate;
 - (int)status;
 - (id)calendar;
-- (id)creationDate;
 - (id)shareeLastName;
 - (id)shareeFirstName;
 - (id)shareeAddress;

@@ -16,11 +16,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setAnchor:(id)arg1;
-- (id)anchor;
 - (void)setUp:(id)arg1;
 - (void)setNormal:(id)arg1;
 - (id)up;
 - (id)normal;
+- (void)setAnchor:(id)arg1;
+- (id)anchor;
 
 @end

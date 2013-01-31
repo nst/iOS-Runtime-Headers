@@ -28,9 +28,6 @@
 + (unsigned short)providerID;
 
 - (void)dealloc;
-- (void)setErrorHandler:(id)arg1;
-- (BOOL)isLoading;
-- (id)errorHandler;
 - (void)providerDidCancel;
 - (void)providerReceivedResponse:(id)arg1;
 - (void)startRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
@@ -42,5 +39,8 @@
 - (void)setFinishedHandler:(id)arg1;
 - (void)setIsLoading:(BOOL)arg1;
 - (void)cancelRequest;
+- (void)setErrorHandler:(id)arg1;
+- (BOOL)isLoading;
+- (id)errorHandler;
 
 @end

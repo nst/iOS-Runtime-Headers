@@ -14,10 +14,13 @@
 @property(retain) GKGameRecord * localDetails;
 @property(retain) GKGame * game;
 
++ (float)defaultRowHeight;
 + (id)gameCellContentsWithTheme:(id)arg1;
 + (int)lineCount;
-+ (float)defaultRowHeight;
 
+- (void)dealloc;
+- (void)prepareForReuse;
+- (void)layoutSubviews;
 - (void)setLocalDetails:(id)arg1;
 - (id)textForLine:(int)arg1;
 - (id)leaderboardStringWithGameRecord:(id)arg1 localGameRecord:(id)arg2;
@@ -31,8 +34,5 @@
 - (id)initWithTheme:(id)arg1;
 - (void)setGame:(id)arg1;
 - (id)game;
-- (void)dealloc;
-- (void)prepareForReuse;
-- (void)layoutSubviews;
 
 @end

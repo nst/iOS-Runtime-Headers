@@ -23,9 +23,6 @@
 @property double yaw;
 
 
-- (int)tileSize;
-- (id)dictionaryRepresentation;
-- (void)setTileSize:(int)arg1;
 - (void)setPitch:(double)arg1;
 - (double)pitch;
 - (double)yaw;
@@ -34,6 +31,9 @@
 - (void)setZoomLevel:(float)arg1;
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1;
 - (struct { double x1; double x2; })centerCoordinate;
+- (int)tileSize;
+- (id)dictionaryRepresentation;
+- (void)setTileSize:(int)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 
 @end

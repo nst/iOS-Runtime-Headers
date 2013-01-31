@@ -34,6 +34,8 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
+- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
+- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
@@ -49,7 +51,5 @@
 - (void)fetchPlacesWithSearchString:(id)arg1;
 - (void)fetchPlaces;
 - (void)locationDidTimeout;
-- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
-- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 
 @end

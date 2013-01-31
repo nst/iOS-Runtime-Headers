@@ -9,8 +9,8 @@
 }
 
 
-- (void)dealloc;
 - (id)initWithLabelManager:(id)arg1;
 - (void)forEachDisplayedLabel:(id)arg1;
+- (void)dealloc;
 
 @end

@@ -34,21 +34,13 @@
 @property BOOL multiTileURLUsesStatusCodes;
 
 
-- (void)setBaseURL:(id)arg1;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)baseURL;
-- (id)dictionaryRepresentation;
-- (int)style;
-- (void)setStyle:(int)arg1;
-- (void)setScale:(int)arg1;
-- (void)setSize:(int)arg1;
-- (int)scale;
-- (int)size;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)supportedLanguages;
 - (id)validVersions;
 - (void)setHasMultiTileURLUsesStatusCodes:(BOOL)arg1;
@@ -72,6 +64,14 @@
 - (void)setLocalizationURL:(id)arg1;
 - (void)setValidVersions:(id)arg1;
 - (void)setMultiTileURL:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)baseURL;
+- (id)dictionaryRepresentation;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (void)setScale:(int)arg1;
+- (void)setSize:(int)arg1;
+- (int)scale;
+- (int)size;
+- (void)setBaseURL:(id)arg1;
 
 @end

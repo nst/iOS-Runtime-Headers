@@ -23,8 +23,8 @@
 @property BOOL installed;
 
 
-- (id)bundleID;
-- (void)setInstalled:(BOOL)arg1;
+- (void)dealloc;
+- (int)mediaType;
 - (void)setActiveAlert:(id)arg1;
 - (id)activeAlert;
 - (BOOL)installed;
@@ -32,7 +32,7 @@
 - (id)defaultsKey;
 - (id)supportsMediaKey;
 - (id)initWithMediaType:(int)arg1 bundleID:(id)arg2 supportsMediaKey:(id)arg3 defaultsKey:(id)arg4 alertLocalizationKey:(id)arg5;
-- (void)dealloc;
-- (int)mediaType;
+- (id)bundleID;
+- (void)setInstalled:(BOOL)arg1;
 
 @end

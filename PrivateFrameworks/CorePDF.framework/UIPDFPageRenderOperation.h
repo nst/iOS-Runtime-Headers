@@ -13,10 +13,10 @@
 @property(retain) UIPDFPageRenderJob * job;
 
 
-- (void)setJob:(id)arg1;
-- (id)job;
 - (void)main;
 - (void)dealloc;
+- (void)setJob:(id)arg1;
+- (id)job;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
 - (id)initWithJob:(id)arg1;

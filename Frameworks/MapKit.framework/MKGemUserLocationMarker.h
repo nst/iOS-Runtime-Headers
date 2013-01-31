@@ -14,7 +14,10 @@
 }
 
 
+- (void)setStale:(BOOL)arg1;
+- (void)setStyleTransitionState:(struct { int x1; int x2; float x3; })arg1;
 - (void)dealloc;
+- (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (void)setSelected:(BOOL)arg1;
 - (void)setOpacity:(float)arg1;
 - (id)_headingImageForAccuracy:(double)arg1;
@@ -27,8 +30,5 @@
 - (void)setHeadingAccuracy:(double)arg1;
 - (void)setShouldDisplayHeading:(BOOL)arg1;
 - (void)setLocationSource:(int)arg1;
-- (void)setStale:(BOOL)arg1;
-- (void)setStyleTransitionState:(struct { int x1; int x2; float x3; })arg1;
-- (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 
 @end

@@ -13,20 +13,16 @@
 @property(readonly) NSObject<OS_xpc_object> * connection;
 @property(readonly) BOOL isValid;
 
-+ (void)initialize;
 + (id)_registeredIMLocalObjectForPort:(unsigned int)arg1;
 + (void)_unregisterIMLocalObject:(id)arg1;
 + (void)_registerIMLocalObject:(id)arg1;
++ (void)initialize;
 
 - (void)invalidate;
 - (void)setTarget:(id)arg1;
 - (id)target;
 - (id)description;
 - (void)dealloc;
-- (id)connection;
-- (BOOL)isValid;
-- (id)initWithTarget:(id)arg1 connection:(id)arg2 protocol:(id)arg3;
-- (id)initWithTarget:(id)arg1 protocol:(id)arg2;
 - (void)setPortName:(id)arg1;
 - (void)_systemShutdown:(id)arg1;
 - (void)_noteNewInvocation;
@@ -43,6 +39,10 @@
 - (void)_enqueueInvocation:(id)arg1;
 - (void)_portInterrupted;
 - (void)_portDidBecomeInvalid;
+- (id)initWithTarget:(id)arg1 connection:(id)arg2 protocol:(id)arg3;
+- (id)connection;
+- (BOOL)isValid;
+- (id)initWithTarget:(id)arg1 protocol:(id)arg2;
 - (id)portName;
 
 @end

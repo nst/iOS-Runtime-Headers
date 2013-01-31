@@ -22,6 +22,8 @@
 + (void)logRequestCancelled;
 + (void)logRequestStarted;
 
+- (void)setConnectionType:(int)arg1;
+- (int)connectionType;
 - (void)setHasActiveRequest:(BOOL)arg1;
 - (BOOL)hasActiveRequest;
 - (void)speechResponseFailure;
@@ -33,7 +35,5 @@
 - (void)recordSessionRetrySuccess;
 - (void)recordSuccessForConnectionType:(int)arg1 isWarm:(BOOL)arg2 forTimeInterval:(double)arg3;
 - (void)recordFailure:(int)arg1 forConnectionType:(int)arg2;
-- (void)setConnectionType:(int)arg1;
-- (int)connectionType;
 
 @end

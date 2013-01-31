@@ -15,8 +15,8 @@
 @property(readonly) unsigned int likeStatusFlagMe;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (unsigned int)likeStatusFlagMe;
 - (unsigned int)likeStatusFlagGlobalCount;
@@ -29,7 +29,7 @@
 - (id)hasAccounts;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (void)dealloc;
 - (id)attributeKeys;
+- (void)dealloc;
 
 @end

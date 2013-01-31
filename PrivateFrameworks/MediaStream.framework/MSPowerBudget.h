@@ -28,6 +28,9 @@
 @property(retain) NSString * focusAlbumGUID;
 @property(retain) NSString * focusAssetCollectionGUID;
 @property(retain) NSString * personID;
+@property(getter=isFileTransferAllowed,readonly) BOOL fileTransferAllowed;
+@property(getter=hasForegroundFocus,readonly) BOOL foregroundFocus;
+@property(readonly) BOOL hasActiveTimers;
 @property(setter=workQueueSetFileTransferAllowed:) BOOL workQueueIsFileTransferAllowed;
 @property(setter=workQueueSetExternalPowered:) BOOL workQueueIsExternalPowered;
 @property(setter=workQueueSetForeground:) BOOL workQueueIsForeground;
@@ -41,6 +44,8 @@
 - (id)delegate;
 - (void).cxx_destruct;
 - (id)init;
+- (void)setPersonID:(id)arg1;
+- (id)personID;
 - (void)workQueueSetFileTransferAllowed:(BOOL)arg1;
 - (BOOL)workQueueIsFileTransferAllowed;
 - (void)_globalResetSyncTimerDidExpire:(id)arg1;
@@ -52,6 +57,8 @@
 - (void)didBeginForegroundFocus;
 - (void)didReceivePushNotification;
 - (void)workQueueSetIsFileTransferAllowed:(BOOL)arg1;
+- (BOOL)hasActiveTimers;
+- (BOOL)hasForegroundFocus;
 - (BOOL)isFileTransferAllowed;
 - (void)setMaxActiveTimeAfterLossOfForeground:(double)arg1;
 - (double)maxActiveTimeAfterLossOfForeground;
@@ -85,7 +92,5 @@
 - (void)setFocusAssetCollectionGUID:(id)arg1;
 - (void)setFocusAlbumGUID:(id)arg1;
 - (id)workQueue;
-- (void)setPersonID:(id)arg1;
-- (id)personID;
 
 @end

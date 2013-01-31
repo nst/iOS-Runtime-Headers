@@ -28,6 +28,13 @@
 
 + (id)codedPropertyKeys;
 
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (void)setSessionID:(id)arg1;
+- (id)sessionID;
+- (void)setStatus:(id)arg1;
+- (id)status;
 - (void)setSlot:(int)arg1;
 - (void)setMatchOutcome:(int)arg1;
 - (void)setInvitedBy:(id)arg1;
@@ -42,13 +49,6 @@
 - (id)inviteMessage;
 - (id)playerID;
 - (void)setPlayerID:(id)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 - (int)slot;
-- (void)setStatus:(id)arg1;
-- (id)status;
-- (void)setSessionID:(id)arg1;
-- (id)sessionID;
 
 @end

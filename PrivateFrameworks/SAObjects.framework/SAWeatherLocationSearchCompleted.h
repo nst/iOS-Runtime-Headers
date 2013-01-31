@@ -15,10 +15,10 @@
 + (id)locationSearchCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)locationSearchCompleted;
 
-- (id)groupIdentifier;
 - (id)weatherLocations;
 - (void)setWeatherLocations:(id)arg1;
 - (id)initWithWeatherLocations:(id)arg1;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -11,8 +11,8 @@
 
 + (id)program;
 
-- (id)init;
 - (float)ramp;
 - (void)setRamp:(float)arg1;
+- (id)init;
 
 @end

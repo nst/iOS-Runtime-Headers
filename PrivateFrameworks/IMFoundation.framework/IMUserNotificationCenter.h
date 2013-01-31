@@ -20,10 +20,7 @@
 
 + (id)sharedInstance;
 
-- (void)addUserNotification:(id)arg1 listener:(id)arg2 completionHandler:(id)arg3;
 - (void)dealloc;
-- (void)addUserNotification:(id)arg1 listener:(id)arg2;
-- (void)removeListener:(id)arg1;
 - (void)setIdentifierToCFUserNotificationMap:(id)arg1;
 - (id)identifierToCFUserNotificationMap;
 - (void)setIdentifierToRunLoopSourcesMap:(id)arg1;
@@ -48,5 +45,8 @@
 - (id)_dequeueBlockForIdentifier:(id)arg1;
 - (id)_dequeueListenerForIdentifier:(id)arg1;
 - (id)_dequeueUserNotificationForIdentifier:(id)arg1;
+- (void)addUserNotification:(id)arg1 listener:(id)arg2;
+- (void)addUserNotification:(id)arg1 listener:(id)arg2 completionHandler:(id)arg3;
+- (void)removeListener:(id)arg1;
 
 @end

@@ -33,7 +33,6 @@
 + (id)connectionWithInputPort:(id)arg1 videoPreviewLayer:(id)arg2;
 + (id)connectionWithInputPorts:(id)arg1 output:(id)arg2;
 
-- (id)session;
 - (id)output;
 - (void)invalidate;
 - (id)description;
@@ -44,6 +43,7 @@
 - (void)setActive:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;
+- (id)session;
 - (void)setVideoRetainedBufferCountHint:(int)arg1;
 - (void)setEnablesVideoStabilizationWhenAvailable:(BOOL)arg1;
 - (BOOL)isVideoStabilizationEnabled;

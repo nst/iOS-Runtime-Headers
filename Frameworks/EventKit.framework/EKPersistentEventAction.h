@@ -17,17 +17,17 @@
 + (id)relations;
 
 - (void)setOwner:(id)arg1;
-- (id)externalID;
-- (void)setExternalID:(id)arg1;
 - (id)owner;
 - (void)setExternalData:(id)arg1;
 - (id)externalData;
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
+- (int)entityType;
 - (void)setExternalModTag:(id)arg1;
 - (id)externalModTag;
 - (void)setExternalScheduleID:(id)arg1;
 - (id)externalScheduleID;
 - (void)setExternalFolderID:(id)arg1;
 - (id)externalFolderID;
-- (int)entityType;
 
 @end

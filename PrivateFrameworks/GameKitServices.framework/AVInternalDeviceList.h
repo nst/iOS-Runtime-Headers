@@ -28,9 +28,9 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)cleanup;
 - (id)changeListener;
 - (void)setChangeListener:(id)arg1;
 - (id)deviceList;
+- (void)cleanup;
 
 @end

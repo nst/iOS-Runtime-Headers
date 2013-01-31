@@ -29,18 +29,6 @@
 
 - (id)subtitleLabel;
 - (void)dealloc;
-- (void)willTransitionToState:(unsigned int)arg1;
-- (void)didTransitionToState:(unsigned int)arg1;
-- (id)editingDelegate;
-- (void)setEditingDelegate:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
-- (void)textFieldDidEndEditing:(id)arg1;
-- (void)textFieldDidBeginEditing:(id)arg1;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
-- (void)prepareForReuse;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (id)initWithReuseIdentifier:(id)arg1;
-- (void)layoutSubviews;
 - (BOOL)padForUnreadIndicator;
 - (BOOL)showsUnreadIndicator;
 - (id)subtitleText;
@@ -62,5 +50,17 @@
 - (void)_updateSelectionStyle;
 - (void)setCellEnabled:(BOOL)arg1;
 - (id)initWithReuseIdentifier:(id)arg1 style:(int)arg2;
+- (void)willTransitionToState:(unsigned int)arg1;
+- (void)didTransitionToState:(unsigned int)arg1;
+- (id)editingDelegate;
+- (void)setEditingDelegate:(id)arg1;
+- (BOOL)textFieldShouldReturn:(id)arg1;
+- (void)textFieldDidEndEditing:(id)arg1;
+- (void)textFieldDidBeginEditing:(id)arg1;
+- (BOOL)textFieldShouldBeginEditing:(id)arg1;
+- (void)prepareForReuse;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (id)initWithReuseIdentifier:(id)arg1;
+- (void)layoutSubviews;
 
 @end

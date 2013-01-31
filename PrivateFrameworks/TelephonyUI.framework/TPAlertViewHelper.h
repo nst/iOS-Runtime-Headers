@@ -22,11 +22,11 @@
 + (struct dispatch_queue_s { }*)_workQueue;
 
 - (void)dealloc;
-- (void)setCompletionHandler:(id)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)show;
 - (id)_underlyingAlertView;
 - (void)dismissWithCancelAnimated:(BOOL)arg1;
 - (id)_initWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 otherButtonTitles:(id)arg4;
+- (void)setCompletionHandler:(id)arg1;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)show;
 
 @end

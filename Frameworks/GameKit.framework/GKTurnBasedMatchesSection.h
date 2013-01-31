@@ -19,6 +19,11 @@
 @property unsigned int sectionStyle;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (float)heightForHeaderInTableView:(id)arg1;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)setDeleteConfirmTitle:(id)arg1;
 - (id)deleteConfirmTitle;
 - (void)setSectionTitle:(id)arg1;
@@ -43,10 +48,5 @@
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
 - (int)rowCountInTableView:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (float)heightForHeaderInTableView:(id)arg1;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 
 @end

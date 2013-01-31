@@ -15,9 +15,12 @@
 }
 
 
-- (void)setImageFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setButtonType:(int)arg1;
+- (void)drawInContext:(struct CGContext { }*)arg1;
+- (void)setFontColor:(struct CGColor { }*)arg1;
 - (void)dealloc;
+- (void)setTextBottomJustified:(BOOL)arg1;
+- (BOOL)push;
+- (BOOL)handleEvent:(struct __GSEvent { }*)arg1 inLayer:(id)arg2;
 - (BOOL)value;
 - (void)setValue:(BOOL)arg1;
 - (void)setFontSize:(int)arg1;
@@ -27,10 +30,7 @@
 - (void)setBackgroundColor:(struct CGColor { }*)arg1;
 - (void)setImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTextBottomJustified:(BOOL)arg1;
-- (BOOL)push;
-- (BOOL)handleEvent:(struct __GSEvent { }*)arg1 inLayer:(id)arg2;
-- (void)drawInContext:(struct CGContext { }*)arg1;
-- (void)setFontColor:(struct CGColor { }*)arg1;
+- (void)setImageFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setButtonType:(int)arg1;
 
 @end

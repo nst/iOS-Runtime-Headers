@@ -9,8 +9,6 @@
 }
 
 
-- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
-- (id)keySpace;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -25,6 +23,8 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (id)value;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
+- (id)keySpace;
 - (long)_chapterIndex;
 - (long)_chapterGroupIndex;
 - (BOOL)_valueForKeyDependsOnMetadataValue:(id)arg1;

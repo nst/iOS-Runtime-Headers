@@ -13,16 +13,11 @@
     NSMutableArray *_viewsNotInDocument;
 }
 
-+ (id)plugInViewWithArguments:(id)arg1 fromPluginPackage:(id)arg2;
 + (BOOL)isPlugInView:(id)arg1;
 + (void)addPlugInView:(id)arg1;
 + (void)pluginViewHidden:(id)arg1;
++ (id)plugInViewWithArguments:(id)arg1 fromPluginPackage:(id)arg2;
 
-- (void)dealloc;
-- (id)initWithDocumentView:(id)arg1;
-- (id)webFrame;
-- (id)webView;
-- (void)setDataSource:(id)arg1;
 - (void)_webPluginContainerPostMediaPlayerNotification:(int)arg1 forElement:(id)arg2;
 - (void)_webPluginContainerSetMediaPlayerProxy:(id)arg1 forElement:(id)arg2;
 - (id)URLPolicyCheckReferrer;
@@ -52,5 +47,10 @@
 - (void)pluginView:(id)arg1 receivedData:(id)arg2;
 - (void)pluginView:(id)arg1 receivedResponse:(id)arg2;
 - (void)pluginViewCreated:(id)arg1;
+- (void)dealloc;
+- (id)initWithDocumentView:(id)arg1;
+- (id)webFrame;
+- (id)webView;
+- (void)setDataSource:(id)arg1;
 
 @end

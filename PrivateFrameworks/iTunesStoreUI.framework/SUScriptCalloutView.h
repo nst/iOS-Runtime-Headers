@@ -14,8 +14,8 @@
 @property(copy) NSString * title;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (void)setTitle:(id)arg1 subtitle:(id)arg2;
 - (void)setTargetX:(float)arg1 y:(float)arg2 width:(float)arg3 height:(float)arg4;
@@ -25,6 +25,7 @@
 - (void)_menuDidHideNotification:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)init;
 - (void)setVisible:(BOOL)arg1 animated:(BOOL)arg2;
@@ -32,6 +33,5 @@
 - (void)setSubtitle:(id)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)attributeKeys;
 
 @end

@@ -19,14 +19,10 @@
 @property(copy) NSString * yahooWeatherURLString;
 @property(copy) NSString * twcURLString;
 
-+ (id)sharedPreferences;
 + (id)serviceDebuggingPath;
 + (void)clearSharedPreferences;
++ (id)sharedPreferences;
 
-- (id)_cacheDirectoryPath;
-- (void)dealloc;
-- (id)init;
-- (id)UUID;
 - (void)setTwcURLString:(id)arg1;
 - (void)setYahooWeatherURLString:(id)arg1;
 - (id)syncDelegate;
@@ -74,5 +70,9 @@
 - (void)setCelsius:(BOOL)arg1;
 - (BOOL)loadUnits;
 - (id)readDefaultValueForKey:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)_cacheDirectoryPath;
+- (id)UUID;
 
 @end

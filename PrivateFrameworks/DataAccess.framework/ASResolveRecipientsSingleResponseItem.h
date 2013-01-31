@@ -23,12 +23,12 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)setRecipients:(id)arg1;
 - (id)recipients;
 - (id)emailAddress;
-- (void)addRecipient:(id)arg1;
 - (void)setEASStatus:(id)arg1;
 - (id)easStatus;
 - (void)setEmailAddress:(id)arg1;
+- (void)setRecipients:(id)arg1;
+- (void)addRecipient:(id)arg1;
 
 @end

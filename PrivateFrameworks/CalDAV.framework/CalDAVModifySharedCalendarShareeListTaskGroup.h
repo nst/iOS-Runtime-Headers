@@ -20,10 +20,15 @@
 @property(retain) NSString * summary;
 
 
+- (void)setSummary:(id)arg1;
+- (id)summary;
 - (id)description;
 - (void)dealloc;
 - (void)setCalendarURL:(id)arg1;
 - (id)calendarURL;
+- (void)startTaskGroup;
+- (void)task:(id)arg1 didFinishWithError:(id)arg2;
+- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
 - (id)initWithShareesToSet:(id)arg1 shareesToRemove:(id)arg2 summary:(id)arg3 atCalendarURL:(id)arg4 accountInfoProvider:(id)arg5 taskManager:(id)arg6;
 - (id)invalidSharees;
 - (id)shareesToRemove;
@@ -32,10 +37,5 @@
 - (void)setInvalidSharees:(id)arg1;
 - (void)setShareesToSet:(id)arg1;
 - (void)setShareesToRemove:(id)arg1;
-- (void)startTaskGroup;
-- (void)task:(id)arg1 didFinishWithError:(id)arg2;
-- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
-- (void)setSummary:(id)arg1;
-- (id)summary;
 
 @end

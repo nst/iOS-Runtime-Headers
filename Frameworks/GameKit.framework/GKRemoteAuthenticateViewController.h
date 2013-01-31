@@ -6,8 +6,8 @@
 }
 
 
+- (id)remoteProtocol;
 - (BOOL)serviceNeedsLocalPlayer;
 - (void)remoteViewControllerIsCanceling;
-- (id)remoteProtocol;
 
 @end

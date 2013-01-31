@@ -16,20 +16,11 @@
 }
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)setHeight:(long)arg1;
-- (long)height;
-- (id)list;
-- (id)initWithDocument:(id)arg1;
-- (id)document;
-- (void)setWidth:(long)arg1;
-- (long)width;
-- (void)setLineSpacing:(short)arg1;
-- (short)lineSpacing;
 - (void)setWrap:(BOOL)arg1;
 - (BOOL)wrap;
 - (void)setPageBreakBefore:(BOOL)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)removeTabStopAddedWithPosition:(short)arg1;
 - (void)setList:(id)arg1;
 - (void)clearChararacterProperties;
@@ -176,5 +167,14 @@
 - (BOOL)isHorizontalAnchorOverridden;
 - (id)baseStyle;
 - (BOOL)isBaseStyleOverridden;
+- (void)setHeight:(long)arg1;
+- (long)height;
+- (id)list;
+- (id)initWithDocument:(id)arg1;
+- (id)document;
+- (void)setWidth:(long)arg1;
+- (long)width;
+- (void)setLineSpacing:(short)arg1;
+- (short)lineSpacing;
 
 @end

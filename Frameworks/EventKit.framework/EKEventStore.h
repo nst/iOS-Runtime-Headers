@@ -58,7 +58,6 @@
 + (int)authorizationStatusForEntityType:(unsigned int)arg1;
 + (BOOL)_isAuthorizationRestrictedForService:(struct __CFString { }*)arg1;
 
-- (int)sequenceNumber;
 - (void)reset;
 - (id)deletedObjects;
 - (id)updatedObjects;
@@ -66,18 +65,14 @@
 - (void)dealloc;
 - (oneway void)release;
 - (id)init;
+- (id)objectWithObjectID:(id)arg1;
+- (void)setFlags:(unsigned long)arg1;
 - (id)database;
-- (void)setUpdatedObjects:(id)arg1;
-- (void)setInsertedObjects:(id)arg1;
-- (void)setDeletedObjects:(id)arg1;
-- (void)rollback;
-- (id)registeredObjects;
 - (id)connection;
 - (id)timeZone;
 - (unsigned long)flags;
 - (void)setTimeZone:(id)arg1;
-- (id)objectWithObjectID:(id)arg1;
-- (void)setFlags:(unsigned long)arg1;
+- (int)sequenceNumber;
 - (void)set_cachedValidatedEmails:(id)arg1;
 - (id)_cachedValidatedEmails;
 - (void)setDbChangedQueue:(id)arg1;
@@ -255,9 +250,14 @@
 - (void)_accessStatusChanged;
 - (void)_requestAccessForEntityType:(unsigned int)arg1;
 - (id)initWithOptions:(unsigned long)arg1 path:(id)arg2;
+- (void)setUpdatedObjects:(id)arg1;
+- (void)setInsertedObjects:(id)arg1;
+- (void)setDeletedObjects:(id)arg1;
+- (void)rollback;
+- (id)registeredObjects;
+- (id)stringForColor:(id)arg1;
 - (id)colorForCalendar:(id)arg1;
 - (id)defaultCalendarColorsInRainbowOrder;
 - (id)defaultCalendarColors;
-- (id)stringForColor:(id)arg1;
 
 @end

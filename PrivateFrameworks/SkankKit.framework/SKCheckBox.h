@@ -10,14 +10,14 @@
 }
 
 
+- (void)toggle;
+- (void)drawInContext:(struct CGContext { }*)arg1;
+- (void)setIsChecked:(BOOL)arg1;
+- (void)adjustTitleFrame;
+- (BOOL)handleEvent:(struct __GSEvent { }*)arg1 inLayer:(id)arg2;
 - (struct CGSize { float x1; float x2; })preferredFrameSize;
 - (BOOL)isChecked;
 - (void)setTitle:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setIsChecked:(BOOL)arg1;
-- (void)adjustTitleFrame;
-- (BOOL)handleEvent:(struct __GSEvent { }*)arg1 inLayer:(id)arg2;
-- (void)drawInContext:(struct CGContext { }*)arg1;
-- (void)toggle;
 
 @end

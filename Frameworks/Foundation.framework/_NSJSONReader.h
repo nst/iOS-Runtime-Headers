@@ -12,13 +12,13 @@
 
 + (BOOL)validForJSON:(id)arg1 depth:(unsigned int)arg2 allowFragments:(BOOL)arg3;
 
-- (void)setError:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)error;
+- (void)setError:(id)arg1;
 - (id)parseStream:(id)arg1 options:(unsigned int)arg2;
 - (id)parseData:(id)arg1 options:(unsigned int)arg2;
 - (id)parseUTF8JSONData:(id)arg1 skipBytes:(unsigned int)arg2 options:(unsigned int)arg3;
 - (unsigned int)findEncodingFromData:(id)arg1 withBOMSkipLength:(unsigned int*)arg2;
-- (id)error;
 
 @end

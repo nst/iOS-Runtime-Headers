@@ -20,16 +20,16 @@
 - (void)_reloadSubviewsForConfiguration;
 - (id)configuration;
 - (void)setConfiguration:(id)arg1;
-- (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (void)layoutSubviews;
-- (void)reloadData;
 - (void)_reloadViews;
 - (void)_reloadArtworkView;
 - (void)_removeSubviewsForConfiguration:(BOOL)arg1;
 - (void)_setNeedsViewsLoaded;
 - (id)initWithConfiguration:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)layoutSubviews;
+- (void)reloadData;
+- (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;
 
 @end

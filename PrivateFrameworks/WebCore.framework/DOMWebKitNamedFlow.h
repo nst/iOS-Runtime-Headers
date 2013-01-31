@@ -11,10 +11,10 @@
 @property(readonly) DOMNodeList * contentNodes;
 
 
-- (void)dealloc;
-- (void)finalize;
 - (id)getRegionsByContentNode:(id)arg1;
 - (id)contentNodes;
 - (BOOL)overflow;
+- (void)dealloc;
+- (void)finalize;
 
 @end

@@ -47,6 +47,20 @@
 @property int index;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (int)previewMode;
+- (void)setPreviewMode:(int)arg1;
+- (void)setIndex:(int)arg1;
+- (void)didEndEditingPassword:(id)arg1 inView:(id)arg2;
+- (void)didBeginEditingPassword:(id)arg1 inView:(id)arg2;
+- (void)userDidEnterPassword:(id)arg1 forPasswordView:(id)arg2;
+- (void)_adjustContentOffsetForKeyboardIfNeeded;
+- (void)_keyboardDidShow:(id)arg1;
+- (int)index;
+- (void)willMoveToParentViewController:(id)arg1;
+- (void)viewDidLoad;
 - (void)setDisplayBundleDelegate:(id)arg1;
 - (id)displayBundleDelegate;
 - (void)didFinishSwiping;
@@ -87,19 +101,5 @@
 - (void)_showProgressUI;
 - (void)_hideProgressiveUI;
 - (void)setLoadintTextForMissingFiles:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (void)setIndex:(int)arg1;
-- (void)didEndEditingPassword:(id)arg1 inView:(id)arg2;
-- (void)didBeginEditingPassword:(id)arg1 inView:(id)arg2;
-- (void)userDidEnterPassword:(id)arg1 forPasswordView:(id)arg2;
-- (void)_adjustContentOffsetForKeyboardIfNeeded;
-- (void)_keyboardDidShow:(id)arg1;
-- (int)index;
-- (void)willMoveToParentViewController:(id)arg1;
-- (void)viewDidLoad;
-- (int)previewMode;
-- (void)setPreviewMode:(int)arg1;
 
 @end

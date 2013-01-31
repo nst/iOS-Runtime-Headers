@@ -16,7 +16,6 @@
 + (id)dataWithDataPointCount:(unsigned int)arg1 resources:(id)arg2;
 
 - (void)dealloc;
-- (bool)isEmpty;
 - (id)firstValueContentFormatWithWorkbook:(id)arg1;
 - (unsigned int)averageDataPointDecimalCount;
 - (unsigned int)dataValueIndexCount;
@@ -31,5 +30,6 @@
 - (id)dataValues;
 - (id)contentFormat;
 - (unsigned int)contentFormatId;
+- (bool)isEmpty;
 
 @end

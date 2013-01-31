@@ -50,14 +50,14 @@
 @property BOOL includeTrafficAlongRoute;
 
 
+- (int)transportType;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (int)transportType;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setHasIncludeTrafficAlongRoute:(BOOL)arg1;
 - (void)setHasTrafficType:(BOOL)arg1;
 - (void)setHasBasicPointsToBeIncluded:(BOOL)arg1;
@@ -96,6 +96,6 @@
 - (void)setHasTransportType:(BOOL)arg1;
 - (void)setTransportType:(int)arg1;
 - (BOOL)hasTransportType;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

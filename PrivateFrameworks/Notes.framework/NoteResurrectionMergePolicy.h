@@ -7,8 +7,8 @@
 
 + (id)sharedNoteResurrectionMergePolicy;
 
-- (BOOL)resolveConflicts:(id)arg1 error:(id*)arg2;
 - (id)localStoreForNote:(id)arg1;
 - (id)snapshotFromRecord:(id)arg1;
+- (BOOL)resolveConflicts:(id)arg1 error:(id*)arg2;
 
 @end

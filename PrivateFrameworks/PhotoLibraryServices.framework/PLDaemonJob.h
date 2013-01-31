@@ -18,7 +18,6 @@
 + (void)runDaemonSideWithXPCEvent:(id)arg1;
 
 - (void)dealloc;
-- (void)run;
 - (BOOL)shouldArchiveXPCToDisk;
 - (void)archiveXPCToDisk:(id)arg1;
 - (void)encodeToXPCObject:(id)arg1;
@@ -33,5 +32,6 @@
 - (void)handleReply;
 - (void)setXpcReply:(id)arg1;
 - (id)xpcReply;
+- (void)run;
 
 @end

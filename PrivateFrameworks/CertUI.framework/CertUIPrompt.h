@@ -29,7 +29,12 @@
 
 - (id)description;
 - (void)dealloc;
-- (id)host;
+- (int)showAndWaitForResponse;
+- (void)setTrust:(struct __SecTrust { }*)arg1;
+- (void)setService:(id)arg1;
+- (id)service;
+- (void)showPromptWithResponseBlock:(id)arg1;
+- (void)setConnectionDisplayName:(id)arg1;
 - (void)_informConsumerOfResponse:(int)arg1;
 - (struct __SecTrust { }*)trust;
 - (int)_sendRemoteMessage;
@@ -47,12 +52,7 @@
 - (id)_sendablePropertyFromProperty:(id)arg1;
 - (id)_sendablePropertiesFromProperties:(id)arg1;
 - (id)connectionDisplayName;
-- (id)service;
-- (int)showAndWaitForResponse;
-- (void)setTrust:(struct __SecTrust { }*)arg1;
-- (void)setService:(id)arg1;
+- (id)host;
 - (void)setHost:(id)arg1;
-- (void)showPromptWithResponseBlock:(id)arg1;
-- (void)setConnectionDisplayName:(id)arg1;
 
 @end

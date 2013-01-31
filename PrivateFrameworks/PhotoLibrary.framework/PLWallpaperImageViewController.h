@@ -22,14 +22,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)navigationItem;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (int)imageFormat;
 - (void)setWallpaperTitle:(id)arg1;
 - (void)setSaveWallpaperData:(BOOL)arg1;
@@ -54,5 +46,13 @@
 - (void)_setImageAsLockScreenClicked:(id)arg1;
 - (void)photoTileViewControllerRequestsFullScreenImage:(id)arg1;
 - (id)initWithUIImage:(id)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)navigationItem;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 
 @end

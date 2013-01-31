@@ -9,11 +9,11 @@
     ISOperation *_geniusStatisticsOperation;
     int _libraryURLType;
     NSObject<OS_dispatch_source> *_reloadFromServerTimer;
+    NSObject<OS_dispatch_source> *_startDownloadManagerTimer;
     BOOL _usingNetwork;
 }
 
 
-- (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (void)_reloadDownloadManagerFromServer;
 - (void)_setUsingNetwork:(BOOL)arg1;
 - (void)_cancelReloadFromServerTimer;
@@ -29,8 +29,9 @@
 - (id)tabBarController:(id)arg1 viewControllerForContext:(id)arg2;
 - (id)tabBarController:(id)arg1 rootViewControllerForSection:(id)arg2;
 - (id)initWithClientInterface:(id)arg1;
-- (void)becomeActive;
-- (void)resignActive;
+- (void)dealloc;
+- (id)init;
+- (void)_cancelStartDownloadManagerTimer;
 - (BOOL)_cancelDownloadingIconOnHomeScreenWithDisplayID:(id)arg1;
 - (BOOL)_cancelDownloadingIconOnHomeScreenWithDownload:(id)arg1;
 - (BOOL)_cancelDownloadingIconOnHomeScreenWithPurchase:(id)arg1;
@@ -38,7 +39,8 @@
 - (id)_startDownloadManager;
 - (void)_stopDownloadManager;
 - (void)_cancelGeniusStatisticsOperation;
-- (void)dealloc;
-- (id)init;
+- (void)becomeActive;
+- (void)resignActive;
+- (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 
 @end

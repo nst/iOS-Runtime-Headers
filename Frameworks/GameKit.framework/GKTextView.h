@@ -12,6 +12,9 @@
 @property UILabel * placeholderLabel;
 
 
+- (void)dealloc;
+- (void)setText:(id)arg1;
+- (void)layoutSubviews;
 - (id)placeholderText;
 - (id)textAttributesForPlaceholder;
 - (void)_gkTextViewDidChange;
@@ -19,8 +22,5 @@
 - (void)updatePlaceholderVisibility;
 - (id)placeholderLabel;
 - (void)setPlaceholderText:(id)arg1;
-- (void)dealloc;
-- (void)setText:(id)arg1;
-- (void)layoutSubviews;
 
 @end

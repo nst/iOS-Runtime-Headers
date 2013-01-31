@@ -2,25 +2,25 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPageControl, UIView, UIButton, UIScrollView, UIImageView;
+@class UIPageControl, UIButton, UIImageView, UIScrollView, UIView;
 
 @interface UIActivityListView : UIView <UIScrollViewDelegate> {
-    UIView *_dimmingView;
+    UIPageControl *_pageControl;
+    UIScrollView *_scrollView;
+    UIButton *_cancelButton;
+    float _blankSpace;
+    UIImageView *_backgroundView;
+    int _numberOfRows;
     struct CGSize { 
         float width; 
         float height; 
     } _containerSize;
-    UIView *_headerView;
-    float _blankSpace;
-    int _numberOfRows;
     BOOL _presentingModally;
-    int _numberOfColumns;
     int _numberOfPages;
-    UIScrollView *_scrollView;
-    UIPageControl *_pageControl;
-    UIButton *_cancelButton;
-    UIImageView *_backgroundView;
+    int _numberOfColumns;
     UIImageView *_shadowView;
+    UIView *_headerView;
+    UIView *_dimmingView;
 }
 
 @property BOOL presentingModally;
@@ -41,10 +41,10 @@
 - (void)dealloc;
 - (void)setPresentingModally:(BOOL)arg1;
 - (BOOL)presentingModally;
-- (void)setBlankSpace:(float)arg1;
-- (float)blankSpace;
 - (void)setContainerSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })containerSize;
+- (void)setBlankSpace:(float)arg1;
+- (float)blankSpace;
 - (void)dimStatusBar:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)reloadActivityButton:(id)arg1;
 - (void)addCancelButton:(id)arg1 action:(SEL)arg2;

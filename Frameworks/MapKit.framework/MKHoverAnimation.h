@@ -11,18 +11,18 @@
 @property float restAccuracy;
 @property MKUserLocationViewInternal * viewImpl;
 
++ (id)defaultValueForKey:(id)arg1;
 + (id)hoverAnimation;
 + (id)bounceAnimation;
 + (id)fallAnimation;
-+ (id)defaultValueForKey:(id)arg1;
 
 - (void)dealloc;
 - (id)init;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)runActionForKey:(id)arg1 object:(id)arg2 arguments:(id)arg3;
 - (void)setInitialAccuracy:(float)arg1 restAccuracy:(float)arg2 drawAccuracy:(float)arg3;
 - (void)drawAccuracyLayer:(float)arg1;
 - (id)viewImpl;
 - (void)setViewImpl:(id)arg1;
-- (void)runActionForKey:(id)arg1 object:(id)arg2 arguments:(id)arg3;
 
 @end

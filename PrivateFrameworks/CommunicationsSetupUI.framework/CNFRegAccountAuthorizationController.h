@@ -15,6 +15,9 @@
 @property <CNFRegAccountAuthorizationDelegate> * delegate;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (id)authID;
 - (void)setAuthID:(id)arg1;
 - (id)authTokenHeaderValue;
@@ -26,8 +29,5 @@
 - (id)initWithRegController:(id)arg1 authID:(id)arg2 token:(id)arg3;
 - (id)authToken;
 - (void)setAuthToken:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
 
 @end

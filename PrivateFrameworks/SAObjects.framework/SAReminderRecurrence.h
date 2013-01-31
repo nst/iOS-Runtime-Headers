@@ -18,12 +18,12 @@
 + (id)recurrenceWithDictionary:(id)arg1 context:(id)arg2;
 + (id)recurrence;
 
-- (id)groupIdentifier;
-- (int)interval;
-- (void)setInterval:(int)arg1;
 - (void)setFrequencyTimeUnit:(id)arg1;
 - (id)frequencyTimeUnit;
 - (id)encodedClassName;
+- (int)interval;
+- (void)setInterval:(int)arg1;
+- (id)groupIdentifier;
 - (id)weeksOfTheYear;
 - (id)daysOfTheYear;
 - (id)monthsOfTheYear;

@@ -24,18 +24,18 @@
 
 + (id)clientWithBundleID:(id)arg1;
 
-- (void)setBundleID:(id)arg1;
-- (id)bundleID;
 - (id)name;
 - (id)debugDescription;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithConnection:(struct _xpc_connection_s { }*)arg1;
-- (struct _xpc_connection_s { }*)connection;
-- (struct __CFBundle { }*)bundle;
+- (id)pid;
 - (id)localizedAppName;
 - (id)adamOrDisplayID;
 - (BOOL)hasEntitlement:(id)arg1;
-- (id)pid;
+- (id)initWithConnection:(struct _xpc_connection_s { }*)arg1;
+- (struct _xpc_connection_s { }*)connection;
+- (struct __CFBundle { }*)bundle;
+- (void)setBundleID:(id)arg1;
+- (id)bundleID;
 
 @end

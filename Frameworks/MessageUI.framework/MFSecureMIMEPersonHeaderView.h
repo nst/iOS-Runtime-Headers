@@ -22,7 +22,6 @@
 @property BOOL editing;
 
 
-- (void)setButtons:(id)arg1;
 - (void)setExplanationText:(id)arg1;
 - (id)explanationText;
 - (void)dealloc;
@@ -43,5 +42,6 @@
 - (id)_signedLabel;
 - (void)setWarningLabelText:(id)arg1;
 - (void)setSecureLabelText:(id)arg1;
+- (void)setButtons:(id)arg1;
 
 @end

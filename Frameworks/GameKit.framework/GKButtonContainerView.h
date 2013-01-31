@@ -11,9 +11,9 @@
 @property(retain) GKButton * button;
 
 
-- (void)setButton:(id)arg1;
+- (id)button;
 - (void)dealloc;
 - (void)layoutSubviews;
-- (id)button;
+- (void)setButton:(id)arg1;
 
 @end

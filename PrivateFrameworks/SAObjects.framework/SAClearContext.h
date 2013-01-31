@@ -13,7 +13,7 @@
 + (id)clearContextWithDictionary:(id)arg1 context:(id)arg2;
 + (id)clearContext;
 
-- (id)groupIdentifier;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

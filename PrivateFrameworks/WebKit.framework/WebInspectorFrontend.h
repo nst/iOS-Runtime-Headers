@@ -12,8 +12,6 @@
 }
 
 
-- (void)attach;
-- (void)detach;
 - (id)initWithFrontendClient:(struct WebInspectorFrontendClient { int (**x1)(); struct InspectorController {} *x2; struct Page {} *x3; struct ExecState {} *x4; struct RefPtr<WebCore::InspectorFrontendHost> { struct InspectorFrontendHost {} *x_5_1_1; } x5; struct OwnPtr<WebCore::InspectorFrontendClientLocal::Settings> { struct Settings {} *x_6_1_1; } x6; boolx7; struct Vector<WTF::String, 0> { unsigned int x_8_1_1; struct VectorBuffer<WTF::String, 0> { struct String {} *x_2_2_1; unsigned int x_2_2_2; } x_8_1_2; } x8; struct OwnPtr<WebCore::InspectorBackendDispatchTask> { struct InspectorBackendDispatchTask {} *x_9_1_1; } x9; id x10; struct RetainPtr<WebInspectorWindowController> { struct WebInspectorWindowController { } *x_11_1_1; } x11; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; }*)arg1;
 - (void)setTimelineProfilingEnabled:(BOOL)arg1;
 - (BOOL)isTimelineProfilingEnabled;
@@ -23,5 +21,7 @@
 - (void)setDebuggingEnabled:(BOOL)arg1;
 - (BOOL)isDebuggingEnabled;
 - (void)showConsole;
+- (void)attach;
+- (void)detach;
 
 @end

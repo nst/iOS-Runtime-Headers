@@ -19,8 +19,20 @@
 
 + (Class)contentViewClass;
 
-- (void)setMediaItem:(id)arg1;
-- (id)mediaItem;
+- (void)hideDeleteConfirmationView;
+- (SEL)moreButtonAction;
+- (id)moreButtonTarget;
+- (void)_updateContentViewDownloadProgress;
+- (void)setMoreButtonTarget:(id)arg1;
+- (void)setMoreButtonAction:(SEL)arg1;
+- (void)_moreButtonSelected:(id)arg1;
+- (void)_cancelDownloadAction:(id)arg1;
+- (void)_releaseMediaDownloadObserver;
+- (void)_releaseMediaDownloadObserverAndProgressIndicator;
+- (id)videoEpisodeContentView;
+- (BOOL)imageRequestIsValid:(id)arg1;
+- (id)videoImageRequest;
+- (void)updateContentView;
 - (void)dealloc;
 - (void)setExpanded:(BOOL)arg1;
 - (BOOL)expanded;
@@ -30,19 +42,7 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)hideDeleteConfirmationView;
-- (SEL)moreButtonAction;
-- (id)moreButtonTarget;
-- (void)_updateContentViewDownloadProgress;
-- (void)setMoreButtonTarget:(id)arg1;
-- (void)setMoreButtonAction:(SEL)arg1;
-- (void)_moreButtonSelected:(id)arg1;
-- (void)_releaseMediaDownloadObserver;
-- (void)_releaseMediaDownloadObserverAndProgressIndicator;
-- (id)videoEpisodeContentView;
-- (BOOL)imageRequestIsValid:(id)arg1;
-- (id)videoImageRequest;
-- (void)updateContentView;
-- (void)_cancelDownloadAction:(id)arg1;
+- (void)setMediaItem:(id)arg1;
+- (id)mediaItem;
 
 @end

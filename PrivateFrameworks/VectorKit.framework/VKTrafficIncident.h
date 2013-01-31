@@ -77,15 +77,6 @@
 @property(copy) NSString * subtitle;
 
 
-- (int)type;
-- (id).cxx_construct;
-- (void)dealloc;
-- (id)info;
-- (id)subtitle;
-- (void)setSubtitle:(id)arg1;
-- (id)title;
-- (BOOL)containsPoint:(struct { double x1; double x2; double x3; })arg1;
-- (void)setTitle:(id)arg1;
 - (id)lastUpdatedDate;
 - (id)crossStreet;
 - (id)initWithIncidentData:(const struct Incident { struct GeoCoordinates { struct Longitude { unsigned int x_1_2_1; } x_1_1_1; struct Latitude { unsigned int x_2_2_1; } x_1_1_2; } x1; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; int x4; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_5_1_1; } x5; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_6_1_1; } x6; long long x7; long long x8; long long x9; int x10; unsigned char x11; boolx12; }*)arg1 worldPoint:(struct { double x1; double x2; double x3; }*)arg2;
@@ -103,10 +94,19 @@
 - (id)anchorWithContext:(id)arg1;
 - (void)drawWithContext:(id)arg1;
 - (struct { double x1; double x2; double x3; })worldPoint;
+- (int)type;
+- (id).cxx_construct;
+- (void)dealloc;
 - (void)setLeftCalloutAccessoryView:(id)arg1;
 - (void)setRightCalloutAccessoryView:(id)arg1;
-- (id)street;
+- (id)info;
+- (id)subtitle;
+- (void)setSubtitle:(id)arg1;
+- (id)title;
+- (BOOL)containsPoint:(struct { double x1; double x2; double x3; })arg1;
+- (void)setTitle:(id)arg1;
 - (id)endDate;
 - (id)startDate;
+- (id)street;
 
 @end

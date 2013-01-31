@@ -31,16 +31,6 @@
 + (id)_iWorkUTIs;
 + (id)_officeUTIs;
 
-- (id)previewParts;
-- (void)_register;
-- (id)initWithURL:(id)arg1 uti:(id)arg2 options:(id)arg3;
-- (BOOL)htmlErrorDisabled;
-- (void)setHtmlErrorDisabled:(BOOL)arg1;
-- (BOOL)isComputed;
-- (BOOL)isCancelled;
-- (void)cancel;
-- (void)dealloc;
-- (void)appendData:(id)arg1;
 - (void)finishConverting;
 - (void)finishedAppendingData;
 - (void)appendDataArray:(id)arg1;
@@ -51,5 +41,15 @@
 - (id)previewRequest;
 - (id)initWithData:(id)arg1 name:(id)arg2 uti:(id)arg3 options:(id)arg4;
 - (id)previewUTI;
+- (BOOL)isCancelled;
+- (void)cancel;
+- (void)dealloc;
+- (void)appendData:(id)arg1;
+- (id)previewParts;
+- (void)_register;
+- (id)initWithURL:(id)arg1 uti:(id)arg2 options:(id)arg3;
+- (BOOL)htmlErrorDisabled;
+- (void)setHtmlErrorDisabled:(BOOL)arg1;
+- (BOOL)isComputed;
 
 @end

@@ -11,8 +11,8 @@
 
 
 - (void)dealloc;
+- (id)initWithColor:(id)arg1 position:(float)arg2;
 - (id)color;
 - (float)position;
-- (id)initWithColor:(id)arg1 position:(float)arg2;
 
 @end

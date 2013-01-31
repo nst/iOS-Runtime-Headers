@@ -53,10 +53,10 @@
 }
 
 
+- (void)dealloc;
 - (void)stopUpdatingLocationAutoPaused;
 - (int)PausesLocationUpdatesAutomatically;
 - (void)setPausesLocationUpdatesAutomatically:(int)arg1;
 - (id)initWithInfo:(id)arg1 bundleIdentifier:(id)arg2 bundle:(id)arg3;
-- (void)dealloc;
 
 @end

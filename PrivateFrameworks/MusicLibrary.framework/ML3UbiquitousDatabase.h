@@ -12,10 +12,10 @@
 @property unsigned long long ubiquitousBookmarkEntityRevisionAnchor;
 @property(copy) NSString * ubiquitousBookmarkDomainVersionAnchorToken;
 
++ (id)databasePath;
 + (BOOL)migrateFromVersion:(int)arg1 outUserVersion:(int*)arg2 usingHandle:(struct sqlite3 { }*)arg3;
 + (int)currentUserVersion;
 + (id)allSchemaSQL;
-+ (id)databasePath;
 
 - (void)dumpUbiquitousMetadata;
 - (void)removeUbiquitousBookmarkMetadataForTrack:(id)arg1;

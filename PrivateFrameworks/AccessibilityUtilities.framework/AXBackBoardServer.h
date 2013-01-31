@@ -12,7 +12,10 @@
 
 + (id)server;
 
+- (void)dealloc;
+- (id)init;
 - (id)_serviceName;
+- (void)setHearingAidControlIsVisible:(BOOL)arg1;
 - (void)removeEventListener:(struct NSString { Class x1; }*)arg1;
 - (void)setVoiceOverItemChooserVisible:(BOOL)arg1;
 - (void)wakeUpDeviceIfNecessary;
@@ -36,7 +39,5 @@
 - (id)_handleEventListener:(id)arg1;
 - (void)_connectServerIfNecessary;
 - (BOOL)_connectIfNecessary;
-- (void)dealloc;
-- (id)init;
 
 @end

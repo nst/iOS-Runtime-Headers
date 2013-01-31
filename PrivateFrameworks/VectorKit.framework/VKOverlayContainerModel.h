@@ -40,10 +40,6 @@
 @property(readonly) NSSet * persistentOverlays;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
 - (BOOL)shouldOccludeTraffic;
 - (BOOL)shouldShowTraffic;
 - (BOOL)shouldCheckForOcclusion;
@@ -63,5 +59,9 @@
 - (void)removePersistentOverlay:(id)arg1;
 - (id)persistentOverlays;
 - (unsigned int)mapLayerPosition;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
 
 @end

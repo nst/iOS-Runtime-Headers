@@ -14,8 +14,6 @@
 @property(copy) NSString * ratingSystem;
 
 
-- (void)setRatingLabel:(id)arg1;
-- (id)ratingLabel;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
@@ -30,5 +28,7 @@
 - (void)_setValueCopy:(id)arg1 forKey:(id)arg2;
 - (id)copyStringRepresentation;
 - (id)initWithStringRepresentation:(id)arg1;
+- (void)setRatingLabel:(id)arg1;
+- (id)ratingLabel;
 
 @end

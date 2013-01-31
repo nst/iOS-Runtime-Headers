@@ -21,6 +21,9 @@
 + (BOOL)_isXPathType:(id)arg1;
 + (id)printPageRendererWithBrowserView:(id)arg1 request:(id)arg2 documentType:(id)arg3;
 
+- (void)dealloc;
+- (void)prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (int)numberOfPages;
 - (void)setPrintableSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })printableSize;
 - (id)pdfDataForPageAtIndex:(int)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 printingDone:(BOOL*)arg3;
@@ -28,8 +31,5 @@
 - (id)initWithWebBrowserView:(id)arg1 request:(id)arg2 documentType:(id)arg3;
 - (void)setPreviewConverter:(id)arg1;
 - (id)previewConverter;
-- (void)dealloc;
-- (void)prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (int)numberOfPages;
 
 @end

@@ -18,12 +18,6 @@
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
-- (void)setSearchProperties:(id)arg1;
-- (id)searchProperties;
-- (id)constraints;
-- (id)searchTypes;
-- (void)setSearchTypes:(id)arg1;
 - (void)setStrict:(BOOL)arg1;
 - (BOOL)strict;
 - (void)setSearchValue:(id)arg1;
@@ -33,6 +27,12 @@
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (void)setSearchTypes:(id)arg1;
+- (void)setSearchProperties:(id)arg1;
+- (id)searchProperties;
+- (id)searchTypes;
+- (id)constraints;
+- (id)groupIdentifier;
 - (int)maxResults;
 - (void)setMaxResults:(int)arg1;
 

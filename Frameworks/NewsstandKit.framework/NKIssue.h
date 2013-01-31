@@ -24,12 +24,13 @@
 @property(copy) NSString * directory;
 
 
-- (id)contentURL;
 - (void)setName:(id)arg1;
 - (id)name;
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (void)setDirectory:(id)arg1;
+- (id)directory;
 - (int)status;
 - (void)setDate:(id)arg1;
 - (id)_commonInit;
@@ -47,7 +48,6 @@
 - (id)_initWithName:(id)arg1 date:(id)arg2 directory:(id)arg3;
 - (id)_library;
 - (id)downloadingAssets;
-- (void)setDirectory:(id)arg1;
-- (id)directory;
+- (id)contentURL;
 
 @end

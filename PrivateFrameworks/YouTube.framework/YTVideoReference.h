@@ -11,13 +11,13 @@
 }
 
 
-- (id)contentURL;
-- (id)description;
-- (void)dealloc;
-- (unsigned int)duration;
 - (id)initWithContentURL:(id)arg1 duration:(unsigned int)arg2 profile:(int)arg3;
 - (id)archiveDictionary;
 - (id)initFromArchiveDictionary:(id)arg1;
 - (int)profile;
+- (id)description;
+- (void)dealloc;
+- (unsigned int)duration;
+- (id)contentURL;
 
 @end

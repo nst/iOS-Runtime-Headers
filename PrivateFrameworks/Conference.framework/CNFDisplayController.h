@@ -103,15 +103,15 @@
 @property BOOL userWantsStatusBarShown;
 
 
-- (void)setSupportsAutoRotation:(BOOL)arg1;
-- (void)setActivityIndicator:(id)arg1;
-- (id)activityIndicator;
-- (void)_applicationSuspended:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)bottomBar;
+- (BOOL)supportsBackFacingCamera;
+- (void)stopPreview;
+- (void)startPreview;
 - (void)handleSingleTapToRevealStatusBar:(id)arg1;
 - (BOOL)_currentUIRequiresStatusBar;
 - (BOOL)_currentlyInFaceTime;
@@ -354,7 +354,8 @@
 - (void)_avRemoteVideoDidChange:(id)arg1;
 - (void)_avFirstRemoteFrameArrived:(id)arg1;
 - (void)_avFirstPreviewFrameArrived:(id)arg1;
-- (void)_applicationResumed:(id)arg1;
+- (void)setSupportsAutoRotation:(BOOL)arg1;
+- (void)setContactImage:(id)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
@@ -365,11 +366,11 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)didReceiveMemoryWarning;
+- (void)_applicationSuspended:(id)arg1;
+- (void)setActivityIndicator:(id)arg1;
+- (id)activityIndicator;
 - (void)setAlwaysVisible:(BOOL)arg1;
 - (BOOL)alwaysVisible;
-- (void)setContactImage:(id)arg1;
-- (void)stopPreview;
-- (void)startPreview;
-- (id)bottomBar;
+- (void)_applicationResumed:(id)arg1;
 
 @end

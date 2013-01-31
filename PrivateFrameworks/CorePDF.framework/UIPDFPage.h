@@ -23,6 +23,8 @@
 @property(retain) UIPDFSelection * selection;
 
 
+- (id)string;
+- (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mediaBoxAccountForRotation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mediaBox;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropBoxAccountForRotation;
@@ -35,8 +37,6 @@
 - (void)setPageImage:(id)arg1;
 - (id)initWithCGPDFPage:(struct CGPDFPage { }*)arg1;
 - (struct CGPDFPage { }*)CGPage;
-- (id)string;
-- (void)dealloc;
 - (id)findString:(id)arg1 fromSelection:(id)arg2 options:(unsigned int)arg3;
 - (unsigned int)pageIndex;
 - (unsigned int)pageNumber;

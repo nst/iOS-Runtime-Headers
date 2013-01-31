@@ -24,13 +24,12 @@
 @property(copy) NSArray * orderingProperties;
 
 
-- (void)setItemPropertiesToFetch:(id)arg1;
-- (void)setGroupingType:(int)arg1;
-- (void)setFilterPredicates:(id)arg1;
-- (int)groupingType;
-- (id)filterPredicates;
-- (void)removeFilterPredicate:(id)arg1;
-- (void)addFilterPredicate:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)setEntityOrder:(int)arg1;
 - (void)removePredicatesForProperty:(id)arg1;
 - (int)entityOrder;
@@ -45,14 +44,15 @@
 - (BOOL)excludesEntitiesWithBlankNames;
 - (void)setCollectionPropertiesToFetch:(id)arg1;
 - (id)collectionPropertiesToFetch;
+- (void)setItemPropertiesToFetch:(id)arg1;
 - (id)itemPropertiesToFetch;
+- (void)removeFilterPredicate:(id)arg1;
 - (id)queryCriteriaByApplyingStandardPredicates:(BOOL)arg1 externalClientFilteringPredicates:(BOOL)arg2;
+- (int)groupingType;
 - (BOOL)specifiesPlaylistItems;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
+- (id)filterPredicates;
+- (void)addFilterPredicate:(id)arg1;
+- (void)setGroupingType:(int)arg1;
+- (void)setFilterPredicates:(id)arg1;
 
 @end

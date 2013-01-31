@@ -7,11 +7,11 @@
 }
 
 
+- (id)description;
 - (id)initWithReason:(unsigned long)arg1;
 - (id)initWithTCPBuffer:(void*)arg1;
 - (id)contentForTCP;
-- (void)setReason:(unsigned long)arg1;
-- (id)description;
 - (unsigned long)reason;
+- (void)setReason:(unsigned long)arg1;
 
 @end

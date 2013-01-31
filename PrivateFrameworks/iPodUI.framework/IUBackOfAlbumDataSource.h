@@ -21,20 +21,6 @@
 @property(readonly) MPMediaItem * representativeItem;
 
 
-- (id)representativeItem;
-- (void)setQuery:(id)arg1;
-- (void)crossedTimeMakerWithEvent:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (unsigned int)count;
-- (void)setChapters:(id)arg1;
-- (id)chapters;
-- (unsigned int)currentIndex;
-- (float)rowHeight;
-- (int)style;
-- (void)setStyle:(int)arg1;
-- (id)query;
-- (id)entityAtIndex:(unsigned int)arg1;
 - (BOOL)indexIsActionRow:(unsigned int)arg1;
 - (BOOL)reloadFromItem:(id)arg1 query:(id)arg2;
 - (double)_durationInSecondsForIndex:(unsigned int)arg1;
@@ -45,5 +31,19 @@
 - (void)createGlobalContexts;
 - (BOOL)shouldShowGlobalSectionHeader;
 - (id)cellConfigurationForIndex:(unsigned int)arg1 shouldLoadArtwork:(BOOL)arg2 artworkLoadingCompletionHandler:(id)arg3;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)count;
+- (void)setChapters:(id)arg1;
+- (id)chapters;
+- (id)entityAtIndex:(unsigned int)arg1;
+- (unsigned int)currentIndex;
+- (float)rowHeight;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (id)query;
+- (void)setQuery:(id)arg1;
+- (id)representativeItem;
+- (void)crossedTimeMakerWithEvent:(id)arg1;
 
 @end

@@ -24,16 +24,12 @@
 
 + (id)alertSoundWithSystemSoundID:(unsigned long)arg1;
 
-- (BOOL)isPlaying;
+- (BOOL)play;
 - (id)description;
 - (void)dealloc;
-- (void)stop;
-- (int)soundType;
-- (void)setSoundType:(int)arg1;
+- (BOOL)playWithCompletionHandler:(id)arg1;
 - (id)vibrationPattern;
 - (void)setVibrationPattern:(id)arg1;
-- (BOOL)playWithCompletionHandler:(id)arg1;
-- (BOOL)play;
 - (id)audioCategory;
 - (unsigned int)soundBehavior;
 - (BOOL)isRepeating;
@@ -47,5 +43,9 @@
 - (id)initWithSystemSoundID:(unsigned long)arg1 behavior:(unsigned int)arg2 vibrationPattern:(id)arg3;
 - (unsigned long)systemSoundID;
 - (id)initWithSystemSoundID:(unsigned long)arg1 behavior:(unsigned int)arg2;
+- (void)stop;
+- (int)soundType;
+- (void)setSoundType:(int)arg1;
+- (BOOL)isPlaying;
 
 @end

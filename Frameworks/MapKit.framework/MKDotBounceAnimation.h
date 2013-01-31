@@ -16,8 +16,8 @@
 - (id)init;
 - (void)animationDidStart:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)runActionForKey:(id)arg1 object:(id)arg2 arguments:(id)arg3;
 - (id)viewImpl;
 - (void)setViewImpl:(id)arg1;
-- (void)runActionForKey:(id)arg1 object:(id)arg2 arguments:(id)arg3;
 
 @end

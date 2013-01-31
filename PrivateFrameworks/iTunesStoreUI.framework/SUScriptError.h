@@ -20,12 +20,12 @@
 - (id)initWithError:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (int)code;
 - (id)domain;
 - (id)localizedFailureReason;
 - (id)localizedRecoverySuggestion;
 - (id)localizedDescription;
-- (id)attributeKeys;
 
 @end

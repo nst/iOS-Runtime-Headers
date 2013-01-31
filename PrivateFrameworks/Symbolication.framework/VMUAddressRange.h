@@ -10,8 +10,8 @@
 }
 
 
+- (void)setAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

@@ -14,14 +14,9 @@
 @property(copy) NSString * speakableSelectionResponse;
 @property(copy) NSString * title;
 
-+ (id)listItem;
 + (id)listItemWithDictionary:(id)arg1 context:(id)arg2;
++ (id)listItem;
 
-- (id)groupIdentifier;
-- (void)setObject:(id)arg1;
-- (id)object;
-- (id)title;
-- (void)setTitle:(id)arg1;
 - (void)setSpeakableSelectionResponse:(id)arg1;
 - (id)speakableSelectionResponse;
 - (void)setSelectionText:(id)arg1;
@@ -31,5 +26,10 @@
 - (id)encodedClassName;
 - (void)setCommands:(id)arg1;
 - (id)commands;
+- (void)setObject:(id)arg1;
+- (id)object;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (id)groupIdentifier;
 
 @end

@@ -14,9 +14,9 @@
 }
 
 
-- (void)dealloc;
-- (id)init;
 - (BOOL)_triangulateIndicesInto:(id)arg1;
 - (id)triangulateIndicesForPoints:(struct { int x1; int x2; }*)arg1 pointCount:(int)arg2;
+- (void)dealloc;
+- (id)init;
 
 @end

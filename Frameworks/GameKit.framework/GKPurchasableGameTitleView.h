@@ -23,6 +23,10 @@
 @property(retain) GKRatingControl * ratingControl;
 
 
+- (void)dealloc;
+- (id)init;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
 - (BOOL)hideRating;
 - (void)setDeveloperLabel:(id)arg1;
 - (float)ratingStarValue;
@@ -30,17 +34,13 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })layoutDeveloperNameWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)developerName;
 - (id)developerLabel;
+- (void)setRatingControl:(id)arg1;
 - (void)setRatingLabel:(id)arg1;
 - (id)ratingLabel;
-- (void)setRatingControl:(id)arg1;
 - (id)ratingControl;
 - (void)setHideRating:(BOOL)arg1;
 - (void)setRatingStarValue:(float)arg1;
 - (void)setRatingCount:(int)arg1;
 - (void)setDeveloperName:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
 
 @end

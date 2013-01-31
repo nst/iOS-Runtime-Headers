@@ -23,16 +23,12 @@
 
 - (void)reset;
 - (void)dealloc;
-- (id)initWithPath:(id)arg1;
-- (void)close;
-- (void)flush;
 - (void)writeZip64EndOfCentralDirectoryLocatorWithOffset:(long long)arg1;
 - (void)writeZip64EndOfCentralDirectoryWithOffset:(long long)arg1;
 - (void)coalesceAndTruncateFreeSpace;
 - (unsigned int)crc32ForEntry:(id)arg1;
 - (unsigned long long)freeBytes;
 - (id)entriesAtPath:(id)arg1;
-- (id)entryNames;
 - (void)setEncryptedDocumentUuid:(id)arg1;
 - (void)removeEntryWithName:(id)arg1;
 - (BOOL)canRemoveEntryWithName:(id)arg1;
@@ -48,5 +44,9 @@
 - (id)initWithPath:(id)arg1 cryptoKey:(id)arg2 passphraseHint:(id)arg3;
 - (void)moveToPath:(id)arg1;
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
+- (id)initWithPath:(id)arg1;
+- (void)close;
+- (void)flush;
+- (id)entryNames;
 
 @end

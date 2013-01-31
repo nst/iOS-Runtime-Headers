@@ -11,6 +11,12 @@
 @property(retain) NSArray * componentArrays;
 
 
+- (id)_mutableArrayForIndex:(unsigned int*)arg1;
+- (id)_arrayForIndex:(unsigned int*)arg1;
+- (id)_arrayForIndex:(unsigned int*)arg1 mutable:(BOOL)arg2;
+- (void)setComponentArrays:(id)arg1;
+- (id)componentArrays;
+- (id)initWithComponentArrays:(id)arg1;
 - (void)removeLastObject;
 - (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)removeAllObjects;
@@ -21,11 +27,5 @@
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)removeObjectsAtIndexes:(id)arg1;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
-- (id)_mutableArrayForIndex:(unsigned int*)arg1;
-- (id)_arrayForIndex:(unsigned int*)arg1;
-- (id)_arrayForIndex:(unsigned int*)arg1 mutable:(BOOL)arg2;
-- (void)setComponentArrays:(id)arg1;
-- (id)componentArrays;
-- (id)initWithComponentArrays:(id)arg1;
 
 @end

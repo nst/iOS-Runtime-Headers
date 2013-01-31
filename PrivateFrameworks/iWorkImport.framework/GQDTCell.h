@@ -13,13 +13,13 @@
 }
 
 
-- (void)dealloc;
 - (void)incrementColumnSpan;
 - (int)readBaseAttributesForBaseCell:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 - (int)readAttributesForBaseTabularCell:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 - (int)readAttributesForBaseCell:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 - (unsigned short)rowIndex;
 - (unsigned short)rowSpan;
+- (void)dealloc;
 - (void)setCellStyle:(id)arg1;
 - (unsigned short)columnIndex;
 - (id)cellStyle;

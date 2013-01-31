@@ -16,7 +16,7 @@
 - (id)description;
 - (id)userInfo;
 - (void)dealloc;
-- (id)asset;
 - (id)_contentRelationshipName;
+- (id)asset;
 
 @end

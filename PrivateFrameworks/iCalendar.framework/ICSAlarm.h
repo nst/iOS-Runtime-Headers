@@ -22,23 +22,23 @@
 @property BOOL x_apple_local_default_alarm;
 @property(retain) ICSStructuredLocation * x_apple_structured_location;
 
-+ (id)name;
 + (id)createNoneAlarm;
 + (id)parseableDocumentFromICS:(id)arg1;
 + (int)actionFromICSString:(id)arg1;
 + (id)ICSStringFromAction:(int)arg1;
++ (id)name;
 
-- (int)action;
-- (void)setAction:(int)arg1;
 - (BOOL)x_apple_local_default_alarm;
 - (void)setX_apple_local_default_alarm:(BOOL)arg1;
-- (void)setRelatedTo:(id)arg1;
-- (id)relatedTo;
 - (void)fixAlarm;
+- (int)action;
+- (void)setAction:(int)arg1;
+- (id)relatedTo;
 - (BOOL)x_apple_default_alarm;
 - (id)acknowledged;
 - (id)x_apple_proximity;
 - (id)x_wr_alarmuid;
+- (void)setRelatedTo:(id)arg1;
 - (void)setAcknowledged:(id)arg1;
 - (void)setX_apple_default_alarm:(BOOL)arg1;
 - (void)setX_apple_proximity:(id)arg1;

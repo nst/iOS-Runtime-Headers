@@ -19,17 +19,17 @@
 + (id)_errorForOSStatus:(long)arg1;
 + (id)assetReaderWithAsset:(id)arg1 error:(id*)arg2;
 
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (void)addOutput:(id)arg1;
+- (id)error;
+- (BOOL)startReading;
 - (int)status;
 - (id)asset;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)finalize;
-- (void)addOutput:(id)arg1;
-- (id)error;
-- (BOOL)startReading;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
 - (struct OpaqueFigAssetReader { }*)_figAssetReader;
 - (void)_handleServerDiedNotification;
 - (BOOL)canAddOutput:(id)arg1;

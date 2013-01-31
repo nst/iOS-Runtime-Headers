@@ -9,17 +9,17 @@
     NSDictionary *_versionDict;
 }
 
++ (id)sharedInstance;
 + (id)productBuildVersion;
 + (BOOL)hasBaseband;
 + (BOOL)hasGyro;
 + (BOOL)hasCompass;
 + (BOOL)hasWiFi;
-+ (id)sharedInstance;
 
-- (id)versionDict;
-- (id)modelName;
 - (void)dealloc;
 - (id)init;
 - (id)deviceName;
+- (id)versionDict;
+- (id)modelName;
 
 @end

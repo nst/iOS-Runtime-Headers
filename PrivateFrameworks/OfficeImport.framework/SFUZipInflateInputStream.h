@@ -38,8 +38,6 @@
 
 
 - (void)dealloc;
-- (void)close;
-- (long long)offset;
 - (long long)totalCompressedBytesConsumed;
 - (void)setupInflateStream;
 - (id)initWithOffset:(long long)arg1 end:(long long)arg2 uncompressedSize:(unsigned long long)arg3 crc:(unsigned long)arg4 dataRepresentation:(id)arg5;
@@ -51,5 +49,7 @@
 - (void)seekToOffset:(long long)arg1;
 - (BOOL)canSeek;
 - (unsigned long)readToOwnBuffer:(const char **)arg1 size:(unsigned long)arg2;
+- (void)close;
+- (long long)offset;
 
 @end

@@ -14,7 +14,6 @@
 + (id)movieTheaterShowtimesWithDictionary:(id)arg1 context:(id)arg2;
 + (id)movieTheaterShowtimes;
 
-- (id)groupIdentifier;
 - (void)setTheater:(id)arg1;
 - (id)theater;
 - (void)setShowtimes:(id)arg1;
@@ -22,5 +21,6 @@
 - (void)setMovieShowtimes:(id)arg1;
 - (id)movieShowtimes;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -77,15 +77,6 @@
 @property struct { struct { float x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; float x2; float x3; float x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; } x5; } textShadow;
 
 
-- (void)setFontName:(id)arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
-- (float)fontSize;
-- (void)setFontSize:(float)arg1;
-- (id)fontName;
 - (void)setTextShadow:(struct { struct { float x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; float x2; float x3; float x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; } x5; })arg1;
 - (struct { struct { float x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; float x2; float x3; float x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; } x5; })textShadow;
 - (void)setHasTextShadow:(BOOL)arg1;
@@ -123,6 +114,15 @@
 - (unsigned int)quadIndex;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
+- (float)fontSize;
+- (void)setFontSize:(float)arg1;
+- (id)fontName;
+- (void)setFontName:(id)arg1;
 
 @end

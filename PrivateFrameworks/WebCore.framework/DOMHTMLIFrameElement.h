@@ -21,13 +21,6 @@
 @property(readonly) DOMAbstractView * contentWindow;
 
 
-- (void)setName:(id)arg1;
-- (id)name;
-- (void)setHeight:(id)arg1;
-- (id)height;
-- (int)structuralComplexityContribution;
-- (void)setWidth:(id)arg1;
-- (id)width;
 - (void)setSrcdoc:(id)arg1;
 - (id)srcdoc;
 - (void)setSandbox:(id)arg1;
@@ -48,6 +41,13 @@
 - (id)src;
 - (void)setAlign:(id)arg1;
 - (id)align;
+- (void)setName:(id)arg1;
+- (id)name;
+- (void)setHeight:(id)arg1;
+- (id)height;
+- (int)structuralComplexityContribution;
+- (void)setWidth:(id)arg1;
+- (id)width;
 - (id)contentFrame;
 
 @end

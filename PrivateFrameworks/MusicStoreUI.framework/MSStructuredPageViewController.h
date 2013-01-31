@@ -12,13 +12,6 @@
 }
 
 
-- (BOOL)_handleInlinePreviewForIndexPath:(id)arg1;
-- (BOOL)_handleMediaPreviewForIndexPath:(id)arg1;
-- (void)_playerStatusChangeNotification:(id)arg1;
-- (BOOL)_handlePreviewForIndexPath:(id)arg1;
-- (void)_setPreviewStatus:(id)arg1 forIndexPath:(id)arg2 animated:(BOOL)arg3;
-- (void)_stopPreviewPlayback;
-- (void)setLoading:(BOOL)arg1;
 - (BOOL)purchaseItemAtIndexPath:(id)arg1;
 - (BOOL)handleSelectionForIndexPath:(id)arg1 tapCount:(int)arg2;
 - (BOOL)canSelectRowAtIndexPath:(id)arg1;
@@ -28,7 +21,14 @@
 - (void)applicationDidEnterBackground;
 - (void)dealloc;
 - (id)init;
+- (BOOL)_handleInlinePreviewForIndexPath:(id)arg1;
+- (BOOL)_handleMediaPreviewForIndexPath:(id)arg1;
+- (void)_playerStatusChangeNotification:(id)arg1;
+- (BOOL)_handlePreviewForIndexPath:(id)arg1;
+- (void)_setPreviewStatus:(id)arg1 forIndexPath:(id)arg2 animated:(BOOL)arg3;
+- (void)_stopPreviewPlayback;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)setLoading:(BOOL)arg1;
 
 @end

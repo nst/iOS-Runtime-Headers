@@ -18,8 +18,6 @@
 + (id)geoFenceSetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)geoFenceSet;
 
-- (id)groupIdentifier;
-- (id)enable;
 - (void)setOneTimeOnly:(id)arg1;
 - (id)oneTimeOnly;
 - (void)setFenceType:(id)arg1;
@@ -35,5 +33,7 @@
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)enable;
+- (id)groupIdentifier;
 
 @end

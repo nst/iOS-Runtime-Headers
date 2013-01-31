@@ -13,11 +13,11 @@
 + (id)relatedNameWithDictionary:(id)arg1 context:(id)arg2;
 + (id)relatedName;
 
-- (id)groupIdentifier;
 - (void)setName:(id)arg1;
 - (id)name;
+- (id)encodedClassName;
 - (id)label;
 - (void)setLabel:(id)arg1;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

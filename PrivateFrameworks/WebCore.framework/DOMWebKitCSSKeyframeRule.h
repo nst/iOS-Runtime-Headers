@@ -11,8 +11,8 @@
 @property(readonly) DOMCSSStyleDeclaration * style;
 
 
-- (id)style;
 - (void)setKeyText:(id)arg1;
 - (id)keyText;
+- (id)style;
 
 @end

@@ -25,6 +25,7 @@
 @property BOOL inBlockHandlingPlaybackStateChangedMessageFromServer;
 
 
+- (void)dealloc;
 - (void)serverConnectionDied;
 - (void)didPrepareForRemoteSelectorInvocation;
 - (id)_bundleIdentifier;
@@ -33,6 +34,5 @@
 - (void)setInBlockHandlingPlaybackStateChangedMessageFromServer:(BOOL)arg1;
 - (void)acquireProcessAssertion;
 - (id)initWithMusicPlayerController:(id)arg1;
-- (void)dealloc;
 
 @end

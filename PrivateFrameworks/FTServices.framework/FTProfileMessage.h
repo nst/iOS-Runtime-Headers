@@ -21,6 +21,9 @@
 @property(copy) NSData * pushToken;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)setPushCertificate:(id)arg1;
 - (void)setPushPrivateKey:(struct __SecKey { }*)arg1;
 - (void)setProfileID:(id)arg1;
@@ -38,13 +41,10 @@
 - (BOOL)wantsHTTPHeaders;
 - (BOOL)wantsCompressedBody;
 - (BOOL)wantsBinaryPush;
+- (int)command;
 - (void)setPushToken:(id)arg1;
 - (id)pushToken;
 - (id)authToken;
 - (void)setAuthToken:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
-- (int)command;
 
 @end

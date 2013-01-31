@@ -11,17 +11,14 @@
 @property(readonly) IMHandle * handle;
 
 
-- (id)address;
 - (int)identifier;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)property;
-- (void*)record;
-- (id)displayString;
-- (void)setIdentifier:(int)arg1;
-- (id)label;
+- (int)recordID;
+- (id)uncommentedAddress;
+- (id)handle;
 - (void)setRecord:(void*)arg1 recordID:(int)arg2 identifier:(int)arg3;
 - (BOOL)isRemovableFromSearchResults;
 - (id)objectForDragType:(id)arg1;
@@ -31,8 +28,11 @@
 - (id)commentedAddress;
 - (id)initWithHandle:(id)arg1;
 - (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
-- (id)handle;
-- (int)recordID;
-- (id)uncommentedAddress;
+- (void*)record;
+- (id)displayString;
+- (void)setIdentifier:(int)arg1;
+- (id)label;
+- (id)address;
+- (int)property;
 
 @end

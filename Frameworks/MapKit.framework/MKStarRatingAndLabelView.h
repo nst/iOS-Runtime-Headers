@@ -19,6 +19,10 @@
 
 
 - (void)dealloc;
+- (id)sourceName;
+- (void)setSourceName:(id)arg1;
+- (void)setNumberOfReviews:(int)arg1;
+- (int)numberOfReviews;
 - (id)initWithStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
@@ -26,9 +30,5 @@
 - (id)starRatingView;
 - (void)setDisplaysSourceOfReviews:(BOOL)arg1;
 - (void)_setStarStyle:(int)arg1;
-- (id)sourceName;
-- (void)setSourceName:(id)arg1;
-- (void)setNumberOfReviews:(int)arg1;
-- (int)numberOfReviews;
 
 @end

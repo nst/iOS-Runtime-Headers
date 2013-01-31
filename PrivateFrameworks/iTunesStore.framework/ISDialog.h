@@ -57,9 +57,6 @@
 + (int)displayCountForKey:(id)arg1;
 + (id)ITunesStoreNotAvailableDialog;
 
-- (void)setKind:(int)arg1;
-- (void)setButtons:(id)arg1;
-- (id)initWithTitle:(id)arg1 message:(id)arg2;
 - (id)initWithOfferDeviceError:(id)arg1;
 - (id)textFields;
 - (void)incrementDisplayCount;
@@ -69,19 +66,6 @@
 - (id)authenticationContext;
 - (void)setTextFields:(id)arg1;
 - (id)initWithDialogDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (int)kind;
-- (int)defaultButtonIndex;
-- (id)message;
-- (void)setGroupsTextFields:(BOOL)arg1;
-- (BOOL)groupsTextFields;
-- (id)buttons;
-- (void)setDefaultButtonIndex:(int)arg1;
-- (void)setMessage:(id)arg1;
-- (id)title;
-- (void)setTitle:(id)arg1;
 - (void)setUnlockActionButtonIndex:(int)arg1;
 - (void)setShouldPendInSetupIfNotAllowed:(BOOL)arg1;
 - (void)setShouldHideButtonsInAwayView:(BOOL)arg1;
@@ -115,5 +99,21 @@
 - (id)copyUserNotification;
 - (void)setExpectsResponse:(BOOL)arg1;
 - (void)setAllowDuplicates:(BOOL)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (int)kind;
+- (int)defaultButtonIndex;
+- (id)message;
+- (void)setGroupsTextFields:(BOOL)arg1;
+- (BOOL)groupsTextFields;
+- (id)buttons;
+- (void)setDefaultButtonIndex:(int)arg1;
+- (void)setMessage:(id)arg1;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (void)setKind:(int)arg1;
+- (void)setButtons:(id)arg1;
+- (id)initWithTitle:(id)arg1 message:(id)arg2;
 
 @end

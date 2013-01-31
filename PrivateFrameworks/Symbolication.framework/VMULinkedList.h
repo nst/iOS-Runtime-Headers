@@ -11,12 +11,12 @@
 
 + (id)linkedList;
 
+- (void)remove:(id)arg1;
+- (id)head;
 - (void)removeAllObjects;
 - (id)init;
 - (id)popTail;
 - (void)pushHead:(id)arg1;
-- (void)remove:(id)arg1;
-- (id)head;
 - (id)tail;
 
 @end

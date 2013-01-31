@@ -13,10 +13,10 @@
 @property(retain) NSArray * attributions;
 
 
-- (void)dealloc;
 - (id)resourceNames;
 - (void)setAttributions:(id)arg1;
 - (void)setResourceNames:(id)arg1;
 - (id)attributions;
+- (void)dealloc;
 
 @end

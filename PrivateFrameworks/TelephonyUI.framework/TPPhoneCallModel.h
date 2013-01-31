@@ -11,7 +11,6 @@
 
 + (id)sharedInstance;
 
-- (BOOL)isAmbiguous;
 - (id)description;
 - (void)dealloc;
 - (id)init;
@@ -31,5 +30,6 @@
 - (struct __CFDictionary { }*)_callManagementDictionary;
 - (void)_invalidateCachedState;
 - (BOOL)isEndAndAnswerAllowed;
+- (BOOL)isAmbiguous;
 
 @end

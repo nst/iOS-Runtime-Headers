@@ -28,6 +28,9 @@
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } pageBounds;
 
 
+- (id)columns;
+- (void)dealloc;
+- (id)init;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pageBounds;
 - (BOOL)column:(id)arg1 isLinkedBelowTo:(id)arg2;
 - (id)chunkAbove:(id)arg1 in:(id)arg2;
@@ -49,8 +52,5 @@
 - (BOOL)paragraph:(id)arg1 isAbove:(id)arg2;
 - (void)makeColumnsFrom:(id)arg1 zone:(id)arg2;
 - (void)setPageBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dealloc;
-- (id)init;
-- (id)columns;
 
 @end

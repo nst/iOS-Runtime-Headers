@@ -60,13 +60,6 @@
 @property double tracePlaybackSpeedMultiplier;
 
 
-- (void)dealloc;
-- (id)init;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (int)tileSize;
-- (BOOL)isAnimating;
-- (BOOL)isTracking;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (BOOL)shouldLimitTrackingCameraHeight;
 - (double)tracePlaybackSpeedMultiplier;
 - (double)canonicalSkyHeight;
@@ -168,6 +161,13 @@
 - (void)setAllowDatelineWraparound:(BOOL)arg1;
 - (BOOL)allowDatelineWraparound;
 - (struct { double x1; double x2; double x3; })groundPointFromScreenPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)dealloc;
+- (id)init;
 - (void)pan:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (int)tileSize;
+- (BOOL)isAnimating;
+- (BOOL)isTracking;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 
 @end

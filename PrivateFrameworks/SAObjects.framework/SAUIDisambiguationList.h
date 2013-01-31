@@ -18,9 +18,6 @@
 + (id)disambiguationListWithDictionary:(id)arg1 context:(id)arg2;
 + (id)disambiguationList;
 
-- (id)groupIdentifier;
-- (void)setItems:(id)arg1;
-- (id)items;
 - (void)setSpeakableSuffix:(id)arg1;
 - (id)speakableSuffix;
 - (void)setSpeakableFinalDelimiter:(id)arg1;
@@ -34,5 +31,8 @@
 - (void)setSelectionResponse:(id)arg1;
 - (id)selectionResponse;
 - (id)encodedClassName;
+- (void)setItems:(id)arg1;
+- (id)items;
+- (id)groupIdentifier;
 
 @end

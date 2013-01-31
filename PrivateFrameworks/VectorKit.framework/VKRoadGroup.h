@@ -28,7 +28,6 @@
 @property(readonly) int lowestZ;
 
 
-- (void)dealloc;
 - (int)lowestZ;
 - (int)highestZ;
 - (unsigned int)triangleCount;
@@ -39,6 +38,7 @@
 - (id)lineStyle;
 - (const struct { }*)roadStyle;
 - (void)freeze;
+- (void)dealloc;
 - (id)tile;
 - (id)styleName;
 

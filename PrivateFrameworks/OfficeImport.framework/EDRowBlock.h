@@ -11,8 +11,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)setIndex:(unsigned int)arg1;
-- (unsigned int)index;
 - (void)incrementIndex;
 - (void)checkCellOffsetOrThrow:(unsigned long)arg1;
 - (unsigned int)lastRowNumber;
@@ -33,5 +31,7 @@
 - (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)cellWithColumnNumber:(unsigned int)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2;
 - (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)cellAtIndex:(unsigned int)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2;
 - (unsigned int)rowCount;
+- (void)setIndex:(unsigned int)arg1;
+- (unsigned int)index;
 
 @end

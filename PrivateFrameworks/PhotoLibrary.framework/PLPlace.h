@@ -88,15 +88,10 @@
 @property unsigned int pendingItemsType;
 
 
-- (id)localizedTitle;
 - (id)name;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (unsigned int)count;
-- (id)kind;
-- (id)annotation;
-- (id)title;
-- (BOOL)isEmpty;
 - (id)_assets;
 - (void)set_assets:(id)arg1;
 - (unsigned int)indexOfPosterImage;
@@ -167,5 +162,10 @@
 - (void)set_uuid:(id)arg1;
 - (void)setTitleIsNumberOfPhotos:(BOOL)arg1;
 - (void)setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)kind;
+- (id)annotation;
+- (id)title;
+- (BOOL)isEmpty;
+- (id)localizedTitle;
 
 @end

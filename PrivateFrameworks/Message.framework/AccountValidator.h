@@ -2,6 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSArray, Account, MFError, ActivityMonitor;
 
 @interface AccountValidator : NSObject  {
@@ -20,13 +24,18 @@
     MFError *_smtpServerValidationError;
     NSArray *_incomingServerAuthSchemes;
     NSArray *_smtpServerAuthSchemes;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _completionBlock;
+
 }
 
 
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)stop;
+- (id)error;
 - (BOOL)accountSupportsSSL;
 - (BOOL)accountIsValid;
 - (BOOL)accountValidationCanceled;
@@ -40,7 +49,9 @@
 - (void)_validateAccount:(id)arg1;
 - (void)_backgroundValidateAccountFinished:(id)arg1 authSchemes:(id)arg2;
 - (void)_validateAccountInBackground:(id)arg1 withFallbacks:(BOOL)arg2;
+- (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2 withCompletion:(id)arg3;
+- (void)validateAccountWithoutFallbacks:(id)arg1 withCompletion:(id)arg2;
 - (id)account;
-- (id)error;
+- (void)stop;
 
 @end

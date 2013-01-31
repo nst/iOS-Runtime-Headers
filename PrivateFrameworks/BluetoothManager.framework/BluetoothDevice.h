@@ -12,9 +12,6 @@
 }
 
 
-- (BOOL)connected;
-- (void)setPIN:(id)arg1;
-- (id)address;
 - (void)setDevice:(struct BTDeviceImpl { }*)arg1;
 - (int)compare:(id)arg1;
 - (id)name;
@@ -22,10 +19,8 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (struct BTDeviceImpl { }*)device;
-- (void)disconnect;
-- (void)connect;
-- (int)batteryLevel;
+- (void)setPIN:(id)arg1;
+- (BOOL)connected;
 - (unsigned int)connectedServices;
 - (void)setSyncGroup:(int)arg1 enabled:(BOOL)arg2;
 - (id)syncGroups;
@@ -49,6 +44,11 @@
 - (BOOL)isLowEnergy;
 - (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2 isLE:(BOOL)arg3;
 - (BOOL)isAccessory;
+- (struct BTDeviceImpl { }*)device;
+- (void)disconnect;
+- (void)connect;
+- (int)batteryLevel;
+- (id)address;
 - (BOOL)isServiceSupported:(unsigned int)arg1;
 
 @end

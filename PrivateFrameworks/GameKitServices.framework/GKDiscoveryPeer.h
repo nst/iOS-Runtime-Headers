@@ -49,17 +49,11 @@
 @property(copy) id resolveTimeoutHandler;
 
 
-- (id)syncQueue;
-- (void)setDeviceID:(id)arg1;
-- (id)playerID;
-- (void)setPlayerID:(id)arg1;
 - (void)invalidate;
 - (int)state;
 - (id)description;
 - (void)dealloc;
-- (id)connection;
-- (id)stringForState:(int)arg1;
-- (void)setState:(int)arg1;
+- (void)setServiceName:(id)arg1;
 - (void)setTrialConnection:(id)arg1;
 - (id)trialConnection;
 - (id)resolveTimeoutHandler;
@@ -89,10 +83,16 @@
 - (BOOL)shouldSignalDiscovery;
 - (BOOL)parseServiceNameForInit:(id)arg1;
 - (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
-- (id)serviceName;
 - (void)setConnection:(id)arg1;
 - (id)deviceID;
-- (void)setServiceName:(id)arg1;
+- (id)connection;
+- (id)stringForState:(int)arg1;
+- (void)setState:(int)arg1;
+- (id)syncQueue;
+- (void)setDeviceID:(id)arg1;
+- (id)playerID;
+- (void)setPlayerID:(id)arg1;
 - (id)initWithServiceName:(id)arg1;
+- (id)serviceName;
 
 @end

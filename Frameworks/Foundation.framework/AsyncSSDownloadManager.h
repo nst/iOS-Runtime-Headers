@@ -12,10 +12,10 @@
 }
 
 
-- (void)downloadManagerDownloadsDidChange:(id)arg1;
-- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)addOperationWithBlock:(id)arg1;
 - (void)dealloc;
+- (void)downloadManagerDownloadsDidChange:(id)arg1;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)downloadHandlerDisconnected:(BOOL)arg1;
 - (void)addDownload:(id)arg1 completionBlock:(id)arg2;
 - (void)finishDownload:(long long)arg1;

@@ -56,13 +56,6 @@
 @property(readonly) BOOL isOnewayToJunction;
 
 
-- (id)name;
-- (id)description;
-- (id).cxx_construct;
-- (void)dealloc;
-- (double)length;
-- (struct { float x1; float x2; })direction;
-- (void)setDirection:(struct { float x1; float x2; })arg1;
 - (void)setIsRoadLabelUnique:(BOOL)arg1;
 - (BOOL)isRoadLabelUnique;
 - (void)setAreLabelsDisabled:(BOOL)arg1;
@@ -87,6 +80,8 @@
 - (void)getRoadEdge:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1;
 - (BOOL)isOnewayToJunction;
 - (BOOL)suppressRoadSignIfShieldPresent;
+- (void)clearRoadSign;
+- (const char *)cstrName;
 - (id)initWithRoadEdge:(const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1 navJunctionA:(id)arg2 routeOffset:(struct { unsigned int x1; float x2; })arg3 tile:(id)arg4;
 - (id)_newLabelWithLabelContext:(struct LabelContext { id x1; id x2; id x3; id x4; struct ViewTransform {} *x5; int x6; int x7; unsigned int x8; float x9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; int x16; struct { double x_17_1_1; double x_17_1_2; double x_17_1_3; double x_17_1_4; } x17; struct { float x_18_1_1; float x_18_1_2; float x_18_1_3; float x_18_1_4; } x18; struct { float x_19_1_1; float x_19_1_2; float x_19_1_3; float x_19_1_4; } x19; struct { float x_20_1_1; float x_20_1_2; float x_20_1_3; float x_20_1_4; } x20; int x21; }*)arg1 isShieldLabel:(BOOL)arg2 worldPoint:(struct { double x1; double x2; double x3; })arg3;
 - (BOOL)_worldPointForRoadOffset:(float)arg1 worldPoint:(struct { double x1; double x2; double x3; }*)arg2;
@@ -95,6 +90,13 @@
 - (BOOL)hasShield;
 - (BOOL)isRamp;
 - (BOOL)isAwayFromRoute;
+- (id)name;
+- (id)description;
+- (id).cxx_construct;
+- (void)dealloc;
+- (double)length;
 - (id)tile;
+- (struct { float x1; float x2; })direction;
+- (void)setDirection:(struct { float x1; float x2; })arg1;
 
 @end

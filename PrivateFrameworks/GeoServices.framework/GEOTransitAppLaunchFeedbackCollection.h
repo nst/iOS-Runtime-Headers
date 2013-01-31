@@ -17,7 +17,8 @@
 @property double timestamp;
 
 
-- (void)setBundleIdentifier:(id)arg1;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)bundleIdentifier;
 - (double)timestamp;
 - (void)setTimestamp:(double)arg1;
@@ -25,13 +26,12 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
 - (void)setDestination:(id)arg1;
 - (id)destination;
 - (void)setSource:(id)arg1;
 - (id)source;
 - (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (void)setBundleIdentifier:(id)arg1;
 
 @end

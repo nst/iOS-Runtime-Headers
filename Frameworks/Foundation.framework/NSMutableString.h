@@ -18,6 +18,10 @@
 - (unsigned int)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2 options:(unsigned int)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 - (void)deleteCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (Class)classForCoder;
+- (unsigned int)_replaceOccurrencesOfRegularExpressionPattern:(id)arg1 withTemplate:(id)arg2 options:(unsigned int)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
+- (void)_trimWithCharacterSet:(id)arg1;
+- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withCString:(const char *)arg2 length:(unsigned int)arg3;
+- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withCharacters:(const unsigned short*)arg2 length:(unsigned int)arg3;
 - (void)_cfNormalize:(long)arg1;
 - (void)_cfCapitalize:(const void*)arg1;
 - (void)_cfUppercase:(const void*)arg1;
@@ -27,10 +31,6 @@
 - (void)_cfPad:(struct __CFString { }*)arg1 length:(unsigned int)arg2 padIndex:(unsigned int)arg3;
 - (void)_cfAppendCString:(const char *)arg1 length:(int)arg2;
 - (void)appendCharacters:(const unsigned short*)arg1 length:(unsigned int)arg2;
-- (unsigned int)_replaceOccurrencesOfRegularExpressionPattern:(id)arg1 withTemplate:(id)arg2 options:(unsigned int)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
-- (void)_trimWithCharacterSet:(id)arg1;
-- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withCString:(const char *)arg2 length:(unsigned int)arg3;
-- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withCharacters:(const unsigned short*)arg2 length:(unsigned int)arg3;
 - (void)replaceNewlinesWithSpaces;
 - (void)standardizeWhitespace;
 - (void)_removeOccurrencesOfCharacter:(unsigned long)arg1;

@@ -64,8 +64,6 @@
 }
 
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)groupContainingPositionA:(struct { float x1; float x2; float x3; })arg1 positionB:(struct { float x1; float x2; float x3; })arg2 groupID:(unsigned int*)arg3;
 - (void)drawInRects:(const struct { float x1; float x2; float x3; float x4; }*)arg1 rectCount:(unsigned int)arg2 context:(id)arg3;
 - (void)drawGroup:(unsigned int)arg1 context:(id)arg2;
@@ -75,5 +73,7 @@
 - (BOOL)addGroupForIndexRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 boundingBox:(struct { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 center:(struct { float x1; float x2; float x3; })arg3 groupID:(unsigned int)arg4;
 - (void)freeze;
 - (void)drawInRects:(const struct { float x1; float x2; float x3; float x4; }*)arg1 rectCount:(unsigned int)arg2 excludeGroup:(int)arg3 context:(id)arg4;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 
 @end

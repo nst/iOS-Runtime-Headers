@@ -32,11 +32,6 @@
 
 
 - (void)dealloc;
-- (id)actionKey;
-- (void)setActionKey:(id)arg1;
-- (void)send;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)setSendBlock:(id)arg1;
 - (void)setLifeAssertions:(id)arg1;
 - (id)lifeAssertions;
@@ -47,5 +42,10 @@
 - (void)setDeliverToPublisher:(BOOL)arg1;
 - (void)setBulletinID:(id)arg1;
 - (id)sendBlock;
+- (id)actionKey;
+- (void)setActionKey:(id)arg1;
+- (void)send;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

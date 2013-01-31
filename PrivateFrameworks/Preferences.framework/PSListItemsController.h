@@ -12,8 +12,7 @@
 }
 
 
-- (void)didLock;
-- (id)specifiers;
+- (void)dealloc;
 - (void)setIsRestrictionList:(BOOL)arg1;
 - (BOOL)isRestrictionList;
 - (id)itemsFromDataSource;
@@ -24,7 +23,8 @@
 - (void)setValueForSpecifier:(id)arg1 defaultValue:(id)arg2;
 - (void)scrollToSelectedCell;
 - (void)prepareSpecifiersMetadata;
-- (void)dealloc;
+- (void)didLock;
+- (id)specifiers;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)suspend;

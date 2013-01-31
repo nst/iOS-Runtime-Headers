@@ -11,8 +11,8 @@
 
 + (id)scriptPlaylistAttributesForNativePlaylistAttributes:(int)arg1;
 + (int)nativePlaylistAttributesForScriptPlaylistAttributes:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)nativePlaylist;
 - (id)_className;

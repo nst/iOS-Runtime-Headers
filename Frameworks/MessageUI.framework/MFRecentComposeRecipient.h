@@ -10,9 +10,9 @@
 
 
 - (void)dealloc;
+- (BOOL)isRemovableFromSearchResults;
 - (id)recentContact;
 - (id)initWithRecentContact:(id)arg1;
 - (id)placeholderName;
-- (BOOL)isRemovableFromSearchResults;
 
 @end

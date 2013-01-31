@@ -17,7 +17,6 @@
 
 - (id)description;
 - (void)dealloc;
-- (struct __CFHost { }*)host;
 - (void)setFetchedRecords:(id)arg1;
 - (void)setServiceString:(id)arg1;
 - (void)performCoreDAVTask;
@@ -25,6 +24,7 @@
 - (id)fetchedRecords;
 - (id)initWithServiceString:(id)arg1;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
+- (struct __CFHost { }*)host;
 - (void)setHost:(struct __CFHost { }*)arg1;
 
 @end

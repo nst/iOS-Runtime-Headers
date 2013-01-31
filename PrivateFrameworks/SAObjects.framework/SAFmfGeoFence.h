@@ -14,8 +14,6 @@
 + (id)geoFenceWithDictionary:(id)arg1 context:(id)arg2;
 + (id)geoFence;
 
-- (id)groupIdentifier;
-- (id)location;
 - (void)setLocation:(id)arg1;
 - (void)setGeoFenceTrigger:(id)arg1;
 - (id)geoFenceTrigger;
@@ -23,5 +21,7 @@
 - (id)friend;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (id)location;
+- (id)groupIdentifier;
 
 @end

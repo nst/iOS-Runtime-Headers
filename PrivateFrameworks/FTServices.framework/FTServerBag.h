@@ -29,13 +29,14 @@
 @property BOOL allowUnsignedBags;
 @property(readonly) BOOL isLoaded;
 @property(readonly) BOOL isLoading;
+@property(readonly) BOOL isInDebilitatedMode;
 @property(readonly) BOOL isServerAvailable;
 @property(retain) IMConnectionMonitor * _connectionMonitor;
 @property(setter=_setBag:,retain) NSDictionary * _bag;
 @property(setter=_setCachedBag:,retain) NSDictionary * _cachedBag;
 @property(retain) NSMutableURLRequest * _urlRequest;
 @property(setter=_setCachedURLString:,retain) NSString * _cachedURLString;
-@property(retain) NSString * _cachedHash;
+@property(setter=_setCachedHash:,retain) NSString * _cachedHash;
 @property(retain) NSDate * _loadDate;
 @property(retain) NSNumber * _cacheTime;
 @property IMRemoteURLConnection * _remoteURLConnection;
@@ -43,23 +44,26 @@
 @property(setter=_setTrustStatus:) int _trustStatus;
 @property(retain) NSData * _certData;
 
++ (id)sharedInstance;
 + (id)_sharedInstance;
 + (id)_sharedInstanceForClass:(Class)arg1;
 + (id)_bagCreationLock;
-+ (id)sharedInstance;
 + (id)sharedInstanceForBagType:(int)arg1;
 
+- (id)objectForKey:(id)arg1;
+- (void)dealloc;
+- (void)connectionMonitorDidUpdate:(id)arg1;
 - (void)forceBagLoad;
 - (id)bagURL;
 - (id)apsEnvironmentName;
-- (id)urlWithKey:(id)arg1;
+- (BOOL)isServerAvailable;
+- (void)startBagLoad;
 - (void)setAllowUnsignedBags:(BOOL)arg1;
 - (BOOL)allowUnsignedBags;
 - (void)setAllowSelfSignedCertificates:(BOOL)arg1;
 - (BOOL)allowSelfSignedCertificates;
 - (void)set_cacheTime:(id)arg1;
 - (void)set_loadDate:(id)arg1;
-- (void)set_cachedHash:(id)arg1;
 - (id)_cachedHash;
 - (void)set_certData:(id)arg1;
 - (id)_certData;
@@ -79,6 +83,7 @@
 - (void)_processBagResultData:(id)arg1 response:(id)arg2 inBackground:(BOOL)arg3;
 - (void)_cancelCurrentLoad;
 - (void)_generateURLRequest;
+- (BOOL)isInDebilitatedMode;
 - (id)_cachedURLString;
 - (BOOL)_loadFromSignedDictionary:(id)arg1 returningError:(id*)arg2;
 - (BOOL)_loadFromDictionary:(id)arg1 returningError:(id*)arg2;
@@ -86,6 +91,7 @@
 - (BOOL)_allowInvalid;
 - (void)_saveToCache;
 - (void)_loadFromCache;
+- (void)_setCachedHash:(id)arg1;
 - (void)_saveCacheToPrefs;
 - (id)_cachedBag;
 - (void)__saveCacheToPrefs;
@@ -96,15 +102,11 @@
 - (id)_bag;
 - (id)_bagDefaultsDomain;
 - (id)_cacheTime;
-- (void)_clearCache;
-- (id)objectForKey:(id)arg1;
-- (void)dealloc;
+- (id)urlWithKey:(id)arg1;
+- (id)_loadDate;
 - (void)_invalidate;
 - (BOOL)isLoaded;
 - (BOOL)isLoading;
-- (id)_loadDate;
-- (BOOL)isServerAvailable;
-- (void)startBagLoad;
-- (void)connectionMonitorDidUpdate:(id)arg1;
+- (void)_clearCache;
 
 @end

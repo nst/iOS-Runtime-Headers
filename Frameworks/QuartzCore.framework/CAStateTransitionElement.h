@@ -19,6 +19,7 @@
 @property double duration;
 
 
+- (double)beginTime;
 - (void)setTarget:(id)arg1;
 - (id)target;
 - (id)debugDescription;
@@ -36,6 +37,5 @@
 - (void)setDuration:(double)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (double)beginTime;
 
 @end

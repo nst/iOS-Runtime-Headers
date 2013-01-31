@@ -11,7 +11,8 @@
     double _interval;
     NSLock *_lock;
     BOOL _orientationEventsEnabled;
-    int _orientationEventsToken;
+    int _orientationCheckToken;
+    int _orientationNotificationsToken;
     NSThread *_orientationEventsThread;
     float _xThreshold;
     float _yThreshold;
@@ -27,18 +28,21 @@
 @property <BKSAccelerometerDelegate> * delegate;
 
 
-- (void)_orientationDidChange;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (int)currentDeviceOrientation;
+- (void)setOrientationEventsEnabled:(BOOL)arg1;
+- (id)_orientationEventsThread;
 - (BOOL)orientationEventsEnabled;
 - (void)_serverWasRestarted;
 - (float)zThreshold;
 - (float)yThreshold;
 - (float)xThreshold;
-- (id)_orientationEventsThread;
+- (void)_orientationDidChange;
 - (void)_checkOut;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
+- (void)_checkIn;
 - (void)setZThreshold:(float)arg1;
 - (void)setYThreshold:(float)arg1;
 - (void)setXThreshold:(float)arg1;
@@ -46,8 +50,5 @@
 - (double)updateInterval;
 - (BOOL)accelerometerEventsEnabled;
 - (void)setAccelerometerEventsEnabled:(BOOL)arg1;
-- (void)_checkIn;
-- (int)currentDeviceOrientation;
-- (void)setOrientationEventsEnabled:(BOOL)arg1;
 
 @end

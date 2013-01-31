@@ -11,9 +11,9 @@
     NSRecursiveLock *_registrationLock;
 }
 
++ (void)initialize;
 + (id)ubiquitousExternalReferenceLocationForUUID:(id)arg1 inStore:(id)arg2;
 + (id)sharedSwitchboard;
-+ (void)initialize;
 
 - (id)description;
 - (void)dealloc;

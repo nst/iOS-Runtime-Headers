@@ -19,18 +19,18 @@
 @property unsigned short sequenceNumber;
 
 
-- (void)setSequenceNumber:(unsigned short)arg1;
-- (unsigned short)sequenceNumber;
 - (double)timestamp;
 - (void)setTimestamp:(double)arg1;
 - (id)init;
+- (void)setTemperature:(float)arg1;
+- (float)temperature;
 - (void)setZ:(float)arg1;
 - (float)z;
 - (void)setY:(float)arg1;
 - (float)y;
 - (void)setX:(float)arg1;
 - (float)x;
-- (void)setTemperature:(float)arg1;
-- (float)temperature;
+- (void)setSequenceNumber:(unsigned short)arg1;
+- (unsigned short)sequenceNumber;
 
 @end

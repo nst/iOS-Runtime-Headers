@@ -15,7 +15,6 @@
 + (id)openingWithDictionary:(id)arg1 context:(id)arg2;
 + (id)opening;
 
-- (id)groupIdentifier;
 - (void)setTimeSlot:(id)arg1;
 - (id)timeSlot;
 - (void)setPartySize:(id)arg1;
@@ -25,5 +24,6 @@
 - (void)setBookingId:(id)arg1;
 - (id)bookingId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

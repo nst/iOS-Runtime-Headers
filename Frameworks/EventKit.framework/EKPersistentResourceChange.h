@@ -26,11 +26,11 @@
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 
-- (id)updateCount;
 - (id)timestamp;
+- (unsigned int)changeType;
 - (id)calendar;
 - (id)deleteCount;
-- (unsigned int)changeType;
+- (id)updateCount;
 - (unsigned int)changedProperties;
 - (id)changedByLastName;
 - (id)changedByFirstName;

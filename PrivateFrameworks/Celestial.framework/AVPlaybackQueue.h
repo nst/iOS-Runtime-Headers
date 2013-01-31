@@ -17,7 +17,6 @@
 }
 
 
-- (void)setRepeatMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void)removeItemsNoLongerInPlayQueue;
@@ -37,5 +36,6 @@
 - (id)initWithDelegate:(id)arg1 figPlayer:(struct OpaqueFigPlayer { }*)arg2;
 - (void)endAVQueueTransaction;
 - (void)beginAVQueueTransaction;
+- (void)setRepeatMode:(int)arg1;
 
 @end

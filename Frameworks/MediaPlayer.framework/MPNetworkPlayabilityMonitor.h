@@ -15,12 +15,12 @@
 
 + (id)sharedNetworkPlayabilityMonitor;
 
-- (int)networkType;
+- (void)dealloc;
+- (id)init;
 - (int)_onQueueEffectiveNetworkTypeForAverageBitrate:(double)arg1;
 - (int)effectiveNetworkTypeForPlayback;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
+- (int)networkType;
 - (void)adjustEffectiveNetworkTypeUsingPreviouslyPlayedItem:(id)arg1;
-- (void)dealloc;
-- (id)init;
 
 @end

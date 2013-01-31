@@ -11,9 +11,9 @@
 }
 
 
-- (float)height;
 - (id)initWithOadTable:(id)arg1 rowIndex:(unsigned int)arg2 parent:(id)arg3;
 - (unsigned int)cellCount;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (float)height;
 
 @end

@@ -14,13 +14,13 @@
 + (id)offerWithDictionary:(id)arg1 context:(id)arg2;
 + (id)offer;
 
-- (id)groupIdentifier;
 - (id)identifier;
-- (void)setIdentifier:(id)arg1;
-- (id)title;
-- (void)setTitle:(id)arg1;
 - (void)setOfferPunchOut:(id)arg1;
 - (id)offerPunchOut;
 - (id)encodedClassName;
+- (void)setIdentifier:(id)arg1;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (id)groupIdentifier;
 
 @end

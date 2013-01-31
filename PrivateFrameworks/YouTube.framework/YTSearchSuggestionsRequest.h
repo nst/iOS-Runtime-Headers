@@ -11,13 +11,13 @@
 }
 
 
-- (void)dealloc;
-- (void)clearDelegate;
-- (void)failWithError:(id)arg1;
 - (void)requestSuggestionsWithDelegate:(id)arg1 query:(id)arg2;
 - (id)_suggestionsURLForQuery:(id)arg1;
 - (void)didAuthenticate:(id)arg1;
 - (void)didParseData;
+- (void)failWithError:(id)arg1;
+- (void)dealloc;
+- (void)clearDelegate;
 - (int)parseData:(id)arg1;
 
 @end

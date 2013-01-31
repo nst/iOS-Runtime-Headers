@@ -15,14 +15,14 @@
 @property(retain) NSMutableArray * attributionURLs;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
 - (id)sourceIdentifier;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)attributionURLs;
 - (id)attributionURLsAtIndex:(unsigned int)arg1;
 - (void)clearAttributionURLs;
@@ -32,6 +32,6 @@
 - (void)setSourceIdentifier:(id)arg1;
 - (void)setSourceVersion:(unsigned int)arg1;
 - (unsigned int)sourceVersion;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

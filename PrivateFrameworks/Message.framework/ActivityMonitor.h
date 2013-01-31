@@ -36,17 +36,14 @@
 + (void)destroyMonitor;
 + (id)currentMonitor;
 
-- (void)setError:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)reset;
 - (id)description;
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
-- (void)setMaxCount:(unsigned int)arg1;
-- (id)displayName;
-- (BOOL)isActive;
-- (int)changeCount;
+- (id)error;
+- (void)setDisplayName:(id)arg1;
 - (void)relinquishExclusiveAccessKey:(int)arg1;
 - (int)acquireExclusiveAccessKey;
 - (void)setInvocationQueue:(id)arg1;
@@ -93,7 +90,10 @@
 - (BOOL)canBeCancelled;
 - (BOOL)shouldCancel;
 - (void)setMailbox:(id)arg1;
-- (id)error;
-- (void)setDisplayName:(id)arg1;
+- (id)displayName;
+- (BOOL)isActive;
+- (int)changeCount;
+- (void)setError:(id)arg1;
+- (void)setMaxCount:(unsigned int)arg1;
 
 @end

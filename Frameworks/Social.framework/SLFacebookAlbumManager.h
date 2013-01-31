@@ -7,9 +7,9 @@
 @interface SLFacebookAlbumManager : NSObject  {
     BOOL _isCanceled;
     NSOperationQueue *photoQueue;
-    SLFacebookAlbum *_selectedAlbum;
-    <SLFacebookAlbumManagerDelegate> *_delegate;
     ACAccount *_account;
+    <SLFacebookAlbumManagerDelegate> *_delegate;
+    SLFacebookAlbum *_selectedAlbum;
 }
 
 @property(retain) ACAccount * account;
@@ -20,6 +20,11 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
+- (id)selectedAlbum;
+- (void)setSelectedAlbum:(id)arg1;
+- (void)setAccount:(id)arg1;
+- (id)initWithAccount:(id)arg1;
+- (id)account;
 - (void)fetchDefaultAlbum:(id)arg1;
 - (void)handleDefaultAlbumFetchResponse:(id)arg1 handler:(id)arg2 error:(id)arg3;
 - (void)performAlbumRequestWithBatchRequests:(id)arg1 handler:(id)arg2;
@@ -29,10 +34,5 @@
 - (id)checkErrorResponse:(id)arg1;
 - (void)loadCoverImageForAlbum:(id)arg1;
 - (void)refreshAlbums;
-- (void)setAccount:(id)arg1;
-- (id)initWithAccount:(id)arg1;
-- (id)account;
-- (id)selectedAlbum;
-- (void)setSelectedAlbum:(id)arg1;
 
 @end

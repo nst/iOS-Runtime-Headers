@@ -12,8 +12,6 @@
 + (Class)cellConfigurationClassForSongs;
 + (int)mediaEntityType;
 
-- (void)dealloc;
-- (id)init;
 - (BOOL)showMoreFromiTunesActionRow;
 - (void)setShowMoreFromiTunesActionRow:(BOOL)arg1;
 - (id)copyGetMoreFromITunesStoreActionRow;
@@ -24,5 +22,7 @@
 - (BOOL)allowsDeletion;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (void)reloadActionRows;
+- (void)dealloc;
+- (id)init;
 
 @end

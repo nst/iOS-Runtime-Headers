@@ -12,18 +12,18 @@
 
 + (id)mainQueue;
 
+- (void)setAdjustsMaxConcurrentOperationCount:(BOOL)arg1;
+- (BOOL)adjustsMaxConcurrentOperationCount;
 - (void)cancelAllOperations;
 - (void)addOperation:(id)arg1;
 - (void)setMaxConcurrentOperationCount:(int)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
 - (void)setSuspended:(BOOL)arg1;
 - (int)operationCount;
 - (id)operations;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)setAdjustsMaxConcurrentOperationCount:(BOOL)arg1;
-- (BOOL)adjustsMaxConcurrentOperationCount;
 - (int)maxConcurrentOperationCount;
+- (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
 
 @end

@@ -29,11 +29,9 @@
 @property BOOL isSyncComplete;
 
 
+- (void)setLocation:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (BOOL)isVideo;
-- (id)location;
-- (void)setLocation:(id)arg1;
 - (void)setIsSyncComplete:(BOOL)arg1;
 - (void)setIsVideo:(BOOL)arg1;
 - (void)setFacesInfo:(id)arg1;
@@ -51,8 +49,10 @@
 - (void)setUuid:(id)arg1;
 - (void)setModificationDate:(id)arg1;
 - (id)uuid;
-- (id)modificationDate;
 - (void)setCreationDate:(id)arg1;
 - (id)creationDate;
+- (BOOL)isVideo;
+- (id)location;
+- (id)modificationDate;
 
 @end

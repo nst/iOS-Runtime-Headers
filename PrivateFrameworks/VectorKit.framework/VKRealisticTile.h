@@ -40,9 +40,6 @@
 @property(readonly) VGLTexture * defaultLandTexture;
 
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)dealloc;
 - (id)startDrawingAnimation;
 - (float)waterZ;
 - (float)landZ;
@@ -63,5 +60,8 @@
 - (float)roadZ;
 - (unsigned int)geometryCount;
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)dealloc;
 
 @end

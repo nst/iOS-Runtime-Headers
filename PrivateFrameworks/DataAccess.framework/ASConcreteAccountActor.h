@@ -12,7 +12,6 @@
 + (void)_runActorThreadWithStartupLock:(id)arg1;
 
 - (void)dealloc;
-- (void)disable;
 - (int)sendMessageWithRFC822Data:(id)arg1 messageID:(id)arg2 outgoingMessageType:(int)arg3 originalMessageFolderID:(id)arg4 originalMessageItemID:(id)arg5 originalMessageLongID:(id)arg6 originalAccountID:(id)arg7 useSmartTasksIfPossible:(BOOL)arg8 consumer:(id)arg9 context:(void*)arg10;
 - (int)performFetchAttachmentRequest:(id)arg1 consumer:(id)arg2;
 - (int)performFetchMessageSearchResultRequests:(id)arg1 consumer:(id)arg2;
@@ -64,5 +63,6 @@
 - (oneway void)setMailNumberOfPastDaysToSync:(int)arg1;
 - (void)_performAsynchronousSerialOnActorQueue:(id)arg1;
 - (void)_performSynchronousSerialOnActorQueue:(id)arg1;
+- (void)disable;
 
 @end

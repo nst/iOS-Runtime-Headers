@@ -38,7 +38,7 @@
 + (id)init;
 + (id)copy;
 + (id)autorelease;
-+ (BOOL)isFault;
++ (void)doesNotRecognizeSelector:(SEL)arg1;
 + (id)forwardingTargetForSelector:(SEL)arg1;
 + (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
@@ -54,9 +54,9 @@
 + (void)initialize;
 + (id)methodSignatureForSelector:(SEL)arg1;
 + (BOOL)isSubclassOfClass:(Class)arg1;
-+ (id)_copyDescription;
-+ (void)doesNotRecognizeSelector:(SEL)arg1;
 + (BOOL)isAncestorOfObject:(id)arg1;
++ (id)_copyDescription;
++ (BOOL)isFault;
 
 - (id)debugDescription;
 - (id)description;
@@ -79,7 +79,7 @@
 - (void)dealloc;
 - (oneway void)release;
 - (id)autorelease;
-- (BOOL)isFault;
+- (void)doesNotRecognizeSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;
@@ -88,8 +88,8 @@
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (id)_copyDescription;
-- (void)doesNotRecognizeSelector:(SEL)arg1;
 - (BOOL)_allowsDirectEncoding;
+- (id)_copyDescription;
+- (BOOL)isFault;
 
 @end

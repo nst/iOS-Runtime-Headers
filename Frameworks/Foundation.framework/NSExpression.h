@@ -7,14 +7,6 @@
     unsigned int _expressionType;
 }
 
-+ (id)expressionForSubquery:(id)arg1 usingIteratorVariable:(id)arg2 predicate:(id)arg3;
-+ (id)expressionForEvaluatedObject;
-+ (id)expressionForVariable:(id)arg1;
-+ (id)expressionForFunction:(id)arg1 arguments:(id)arg2;
-+ (id)expressionForFunction:(id)arg1 selectorName:(id)arg2 arguments:(id)arg3;
-+ (id)expressionForKeyPath:(id)arg1;
-+ (id)_newKeyPathExpressionForString:(id)arg1;
-+ (id)expressionForConstantValue:(id)arg1;
 + (id)expressionForBlock:(id)arg1 arguments:(id)arg2;
 + (id)expressionForMinusSet:(id)arg1 with:(id)arg2;
 + (id)expressionForIntersectSet:(id)arg1 with:(id)arg2;
@@ -23,26 +15,20 @@
 + (id)expressionForVariableNameAssignment:(id)arg1 expression:(id)arg2;
 + (id)expressionForAggregate:(id)arg1;
 + (id)expressionForSymbolicString:(id)arg1;
-+ (id)expressionWithFormat:(id)arg1;
 + (id)expressionWithFormat:(id)arg1 argumentArray:(id)arg2;
 + (id)expressionWithFormat:(id)arg1 arguments:(void*)arg2;
++ (id)expressionWithFormat:(id)arg1;
++ (id)expressionForSubquery:(id)arg1 usingIteratorVariable:(id)arg2 predicate:(id)arg3;
++ (id)expressionForEvaluatedObject;
++ (id)expressionForVariable:(id)arg1;
++ (id)expressionForFunction:(id)arg1 arguments:(id)arg2;
++ (id)expressionForFunction:(id)arg1 selectorName:(id)arg2 arguments:(id)arg3;
++ (id)expressionForKeyPath:(id)arg1;
++ (id)_newKeyPathExpressionForString:(id)arg1;
++ (id)expressionForConstantValue:(id)arg1;
 
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)falseExpression;
-- (id)trueExpression;
-- (id)function;
-- (id)_expressionWithSubstitutionVariables:(id)arg1;
-- (id)predicateFormat;
-- (id)initWithExpressionType:(unsigned int)arg1;
-- (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
-- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
-- (id)predicate;
-- (id)operand;
-- (id)constantValue;
-- (unsigned int)expressionType;
-- (id)leftExpression;
-- (id)rightExpression;
 - (id)variable;
 - (SEL)selector;
 - (id)keyPath;
@@ -52,7 +38,21 @@
 - (BOOL)_shouldUseParensWithDescription;
 - (id)expressionBlock;
 - (id)subexpression;
+- (id)falseExpression;
+- (id)trueExpression;
+- (id)function;
+- (id)_expressionWithSubstitutionVariables:(id)arg1;
+- (id)predicateFormat;
+- (id)initWithExpressionType:(unsigned int)arg1;
+- (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (id)predicate;
 - (id)collection;
+- (id)operand;
+- (id)constantValue;
+- (unsigned int)expressionType;
+- (id)leftExpression;
+- (id)rightExpression;
 - (id)minimalFormInContext:(id)arg1;
 
 @end

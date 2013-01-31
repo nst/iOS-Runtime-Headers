@@ -12,9 +12,9 @@
 + (id)teamSnippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)teamSnippet;
 
-- (id)groupIdentifier;
 - (void)setTeams:(id)arg1;
 - (id)teams;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

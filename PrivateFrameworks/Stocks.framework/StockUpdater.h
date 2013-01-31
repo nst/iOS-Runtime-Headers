@@ -20,15 +20,15 @@
 @property(retain) NSError * lastError;
 
 
+- (id)lastError;
+- (void)didParseData;
+- (void)failWithError:(id)arg1;
+- (id)aggregateDictionaryDomain;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
 - (void)cancel;
 - (id)init;
-- (void)failWithError:(id)arg1;
-- (id)aggregateDictionaryDomain;
-- (id)lastError;
-- (void)didParseData;
 - (BOOL)isComprehensive;
 - (void)_updateWithPostBody:(id)arg1;
 - (id)_symbolTagsForRequestStocks;

@@ -18,10 +18,10 @@
 - (int)type;
 - (id)description;
 - (void).cxx_destruct;
-- (void)setType:(int)arg1;
-- (void)setDeletionIndex:(int)arg1;
-- (int)deletionIndex;
 - (void)setComment:(id)arg1;
 - (id)comment;
+- (void)setDeletionIndex:(int)arg1;
+- (int)deletionIndex;
+- (void)setType:(int)arg1;
 
 @end

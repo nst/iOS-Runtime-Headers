@@ -5,8 +5,8 @@
 @interface ControlBits_Legacy_0v0 : ControlBits  {
 }
 
-+ (int)writeControlBits:(unsigned char)arg1 status:(int)arg2;
 + (int)readControlBits:(unsigned char)arg1 status:(int*)arg2 failCount:(int*)arg3 secure:(BOOL*)arg4;
++ (int)writeControlBits:(unsigned char)arg1 status:(int)arg2;
 
 
 @end

@@ -20,16 +20,16 @@
 + (void)initialize;
 
 - (id)nativeCollection;
-- (id)representativeItem;
 - (void)_beginWatchingLibraryIfNecessary;
 - (void)_libraryChangedNotification:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (int)count;
 - (id)mediaTypes;
 - (id)initWithItems:(id)arg1;
 - (id)items;
-- (id)attributeKeys;
+- (id)representativeItem;
 
 @end

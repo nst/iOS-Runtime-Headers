@@ -14,9 +14,9 @@
 + (id)callStartedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)callStarted;
 
-- (id)groupIdentifier;
 - (void)setPhoneLogId:(id)arg1;
 - (id)phoneLogId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

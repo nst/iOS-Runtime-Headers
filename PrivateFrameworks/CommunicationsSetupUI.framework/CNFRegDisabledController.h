@@ -10,6 +10,7 @@
 }
 
 
+- (void)dealloc;
 - (void)turnOnTapped:(id)arg1;
 - (void)_deactivateSpinner;
 - (void)_activateSpinner;
@@ -17,7 +18,6 @@
 - (void)_setupAccountHandlersForDisabledOperation;
 - (id)getAccountNameForSpecifier:(id)arg1;
 - (id)specifierList;
-- (void)dealloc;
 - (id)bundle;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

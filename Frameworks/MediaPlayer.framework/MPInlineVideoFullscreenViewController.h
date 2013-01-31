@@ -24,7 +24,18 @@
 @property(retain) MPAVItem * item;
 
 
-- (void)setItem:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)_windowWillRotate:(id)arg1;
+- (id)item;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)wantsFullScreenLayout;
 - (void)_setStatusBarStyle;
 - (id)masterController;
 - (void)prepareForTransitionFromFullscreen;
@@ -49,17 +60,6 @@
 - (void)swipableViewHadActivity:(id)arg1;
 - (void)showOverlayAnimated:(BOOL)arg1;
 - (void)_viewWasTapped:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)_windowWillRotate:(id)arg1;
-- (id)item;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)wantsFullScreenLayout;
+- (void)setItem:(id)arg1;
 
 @end

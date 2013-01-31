@@ -19,6 +19,7 @@
 @property(readonly) BOOL isForShortcutConversion;
 @property(readonly) BOOL isAutocorrection;
 @property(getter=isExtensionCandidate,readonly) BOOL extensionCandidate;
+@property(getter=isEmojiCandidate,readonly) BOOL emojiCandidate;
 @property(readonly) NSArray * usageTrackingTypes;
 
 
@@ -28,6 +29,7 @@
 - (id)usageTrackingTypes;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isForShortcutConversion;
+- (BOOL)isEmojiCandidate;
 - (BOOL)isExtensionCandidate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)candidate;

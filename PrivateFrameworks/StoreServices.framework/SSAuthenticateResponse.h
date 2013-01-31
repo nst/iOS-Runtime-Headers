@@ -17,16 +17,16 @@
 @property(copy) NSDictionary * responseDictionary;
 
 
-- (void)setResponseDictionary:(id)arg1;
-- (id)responseDictionary;
 - (void)dealloc;
+- (void)setResponseDictionary:(id)arg1;
 - (void)setAuthenticateResponseType:(int)arg1;
 - (int)authenticateResponseType;
 - (void)setAuthenticatedAccount:(id)arg1;
 - (id)authenticatedAccount;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)_setError:(id)arg1;
 - (id)error;
+- (id)responseDictionary;
+- (void)_setError:(id)arg1;
 
 @end

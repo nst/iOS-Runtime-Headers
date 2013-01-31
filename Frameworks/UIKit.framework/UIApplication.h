@@ -641,8 +641,6 @@
 - (void)beginPPTWithName:(id)arg1;
 - (void)_setDelaySuspend:(id)arg1;
 - (void)setDelaySuspend:(BOOL)arg1;
-- (void)setStatusBarStyle:(int)arg1 hidden:(BOOL)arg2 orientation:(int)arg3 duration:(double)arg4;
-- (id)IURootViewController;
 - (void)endUserInteractionFocusOnView:(id)arg1;
 - (void)beginUserInteractionFocusOnView:(id)arg1 focusEndedBlock:(id)arg2;
 - (BOOL)isNoAnimationResumeEventsOnly;
@@ -655,5 +653,7 @@
 - (int)IUInterfaceType;
 - (void)beginNoAnimationResumeEventsOnly;
 - (void)endNoAnimationResumeEventsOnly;
+- (void)setStatusBarStyle:(int)arg1 hidden:(BOOL)arg2 orientation:(int)arg3 duration:(double)arg4;
+- (id)IURootViewController;
 
 @end

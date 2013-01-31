@@ -14,12 +14,12 @@
 
 + (id)copyParseRules;
 
+- (void)setHref:(id)arg1;
+- (id)href;
 - (id)description;
 - (void)dealloc;
 - (id)init;
 - (void)setUnauthenticated:(id)arg1;
 - (id)unauthenticated;
-- (void)setHref:(id)arg1;
-- (id)href;
 
 @end

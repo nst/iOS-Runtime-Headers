@@ -14,6 +14,7 @@
 + (id)baseAudienceButtonImageNameForPrivacySettingType:(int)arg1;
 
 - (void).cxx_destruct;
+- (id)initWithAccount:(id)arg1;
 - (void)updatePrivacySettingsWithCompletionHandler:(id)arg1;
 - (void)setPrivacySetting:(id)arg1;
 - (id)privacySettings;
@@ -23,6 +24,5 @@
 - (id)_privacySettingsFromPrivacyOptionDictionaries:(id)arg1;
 - (id)defaultPrivacySetting;
 - (id)_userDefaultsDict;
-- (id)initWithAccount:(id)arg1;
 
 @end

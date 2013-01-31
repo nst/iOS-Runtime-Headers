@@ -13,10 +13,10 @@
 
 
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
+- (void)dealloc;
 - (id)artworkImages;
 - (id)initWithArtworkArray:(id)arg1;
 - (void)_requestMissingImages;
-- (void)dealloc;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 

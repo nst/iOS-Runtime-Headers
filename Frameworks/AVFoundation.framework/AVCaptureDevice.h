@@ -13,24 +13,25 @@
 @property(readonly) NSString * localizedName;
 @property(getter=isConnected,readonly) BOOL connected;
 
-+ (id)devices;
 + (id)defaultDeviceWithMediaType:(id)arg1;
++ (id)devices;
 + (id)_devices;
 + (id)deviceWithUniqueID:(id)arg1;
 + (id)devicesWithMediaType:(id)arg1;
 
-- (id)session;
 - (BOOL)open:(id*)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (BOOL)addInput:(id)arg1;
+- (float)contrast;
+- (void)setContrast:(float)arg1;
 - (id)localizedName;
 - (void)close;
 - (int)position;
-- (BOOL)addInput:(id)arg1;
+- (id)session;
+- (id)uniqueID;
 - (BOOL)isOpen;
-- (float)contrast;
-- (void)setContrast:(float)arg1;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (BOOL)doesHandleNotification:(id)arg1;
 - (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(BOOL)arg1;
@@ -118,6 +119,5 @@
 - (BOOL)isConnected;
 - (BOOL)hasMediaType:(id)arg1;
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
-- (id)uniqueID;
 
 @end

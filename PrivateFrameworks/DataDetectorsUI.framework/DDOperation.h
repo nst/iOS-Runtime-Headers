@@ -50,13 +50,6 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
-- (void)cleanup;
-- (int)endOffset;
-- (int)startOffset;
-- (void)setContext:(id)arg1;
-- (id)context;
-- (void)setFrame:(id)arg1;
-- (id)frame;
 - (void)setGenerationNumber:(int)arg1;
 - (int)generationNumber;
 - (void)setEndOffset:(int)arg1;
@@ -78,5 +71,12 @@
 - (void)setTryCount:(int)arg1;
 - (void)setDetectionTypes:(unsigned int)arg1;
 - (void)_createScanQueryOnWebThreadStartAfterRange:(id)arg1;
+- (void)cleanup;
+- (int)endOffset;
+- (int)startOffset;
+- (void)setContext:(id)arg1;
+- (id)context;
+- (void)setFrame:(id)arg1;
+- (id)frame;
 
 @end

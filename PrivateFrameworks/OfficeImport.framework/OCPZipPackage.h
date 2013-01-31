@@ -11,10 +11,10 @@
 
 
 - (void)dealloc;
-- (id)initWithPath:(id)arg1;
-- (id)initWithData:(id)arg1;
 - (id)initWithArchive:(id)arg1;
 - (void)resetPartForLocation:(id)arg1;
 - (id)partForLocation:(id)arg1;
+- (id)initWithPath:(id)arg1;
+- (id)initWithData:(id)arg1;
 
 @end

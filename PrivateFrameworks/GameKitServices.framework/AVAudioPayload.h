@@ -36,7 +36,6 @@
 + (BOOL)isPayloadSupported:(int)arg1;
 
 - (void)dealloc;
-- (unsigned int)flags;
 - (void)createSupportedBitratesForAACELD;
 - (unsigned long)aacBitrate;
 - (void)createSupportedBitrates;
@@ -62,5 +61,6 @@
 - (int)payload;
 - (int)encodeAudio:(void*)arg1 numInputBytes:(int)arg2 outputBytes:(void*)arg3 numOutputBytes:(int)arg4;
 - (unsigned long)samplesPerFrame;
+- (unsigned int)flags;
 
 @end

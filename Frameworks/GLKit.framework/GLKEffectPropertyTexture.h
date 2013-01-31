@@ -50,6 +50,17 @@
 + (void)clearAllTexturingMasks:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)arg1 fshMask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)arg2;
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;
 
+- (void)setTarget:(int)arg1;
+- (void)setName:(unsigned int)arg1;
+- (unsigned int)name;
+- (int)target;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (id)filePath;
+- (unsigned char)enabled;
+- (void)setEnabled:(unsigned char)arg1;
+- (void)bind;
 - (id)texGenArray;
 - (void)setUnitCubeLoc:(int)arg1;
 - (int)unitCubeLoc;
@@ -78,16 +89,5 @@
 - (unsigned char)normalizedNormalsMask;
 - (unsigned char)useTexCoordAttribMask;
 - (void)dirtyAllUniforms;
-- (void)setTarget:(int)arg1;
-- (void)setName:(unsigned int)arg1;
-- (unsigned int)name;
-- (int)target;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (id)filePath;
-- (unsigned char)enabled;
-- (void)setEnabled:(unsigned char)arg1;
-- (void)bind;
 
 @end

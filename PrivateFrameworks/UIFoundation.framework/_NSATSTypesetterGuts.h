@@ -37,8 +37,8 @@
 }
 
 
+- (id)initWithTypesetter:(id)arg1;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithTypesetter:(id)arg1;
 
 @end

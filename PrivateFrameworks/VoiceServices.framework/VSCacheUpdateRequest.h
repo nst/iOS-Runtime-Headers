@@ -10,11 +10,11 @@
 }
 
 
-- (id)description;
-- (void)dealloc;
-- (id)modelIdentifier;
 - (id)classIdentifier;
 - (id)coalescedRequest:(id)arg1;
 - (id)initWithModelIdentifier:(id)arg1 classIdentifier:(id)arg2;
+- (id)description;
+- (void)dealloc;
+- (id)modelIdentifier;
 
 @end

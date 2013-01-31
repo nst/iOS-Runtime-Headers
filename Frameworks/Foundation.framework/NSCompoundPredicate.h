@@ -19,13 +19,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)predicateFormat;
-- (id)predicateWithSubstitutionVariables:(id)arg1;
-- (unsigned int)compoundPredicateType;
-- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
-- (id)subpredicates;
-- (id)predicateOperator;
-- (id)initWithType:(unsigned int)arg1 subpredicates:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_acceptSubpredicates:(id)arg1 flags:(unsigned int)arg2;
@@ -33,6 +26,13 @@
 - (id)_predicateOperator;
 - (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
 - (id)generateMetadataDescription;
+- (id)predicateFormat;
+- (id)predicateWithSubstitutionVariables:(id)arg1;
+- (unsigned int)compoundPredicateType;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (id)subpredicates;
+- (id)predicateOperator;
+- (id)initWithType:(unsigned int)arg1 subpredicates:(id)arg2;
 - (id)minimalFormInContext:(id)arg1;
 - (void)ab_addCallbackContextToArray:(struct __CFArray { }*)arg1;
 - (id)ab_newQueryWithSortOrder:(unsigned int)arg1 addressBook:(void*)arg2 propertyIndices:(const struct __CFDictionary {}**)arg3;

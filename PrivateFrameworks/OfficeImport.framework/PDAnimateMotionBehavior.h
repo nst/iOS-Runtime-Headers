@@ -23,9 +23,6 @@
 - (id)path;
 - (id).cxx_construct;
 - (void)dealloc;
-- (void)setPath:(id)arg1;
-- (double)angle;
-- (void)setAngle:(double)arg1;
 - (void)setRotationCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })rotationCenter;
 - (BOOL)hasRotationCenter;
@@ -37,5 +34,8 @@
 - (void)setOriginType:(int)arg1;
 - (void)setPointType:(int)arg1;
 - (int)pointType;
+- (void)setPath:(id)arg1;
+- (double)angle;
+- (void)setAngle:(double)arg1;
 
 @end

@@ -20,9 +20,9 @@
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
-- (int)property;
 - (id)valueForProperty:(int)arg1;
 - (void)_setValue:(id)arg1 forProperty:(int)arg2;
+- (int)property;
 - (BOOL)showsMultipleValuePlaceholderAtRow:(unsigned int)arg1;
 - (id)keyboardSettingsForRow:(unsigned int)arg1;
 - (void)setValue:(id)arg1 atRow:(unsigned int)arg2;

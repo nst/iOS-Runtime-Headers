@@ -17,12 +17,12 @@
 
 - (void)dealloc;
 - (id)init;
+- (void*)displayedPerson;
+- (void)setDisplayedPerson:(void*)arg1;
 - (id)initWithMessageButton:(id)arg1 facetimeButton:(id)arg2 callButton:(id)arg3;
 - (void)showFMFCallButton:(BOOL)arg1 withAction:(id)arg2;
 - (void)showFMFFacetimeButton:(BOOL)arg1 withAction:(id)arg2;
 - (void)showFMFMessageButton:(BOOL)arg1 withAction:(id)arg2;
 - (BOOL)hasTelephonyCapability;
-- (void*)displayedPerson;
-- (void)setDisplayedPerson:(void*)arg1;
 
 @end

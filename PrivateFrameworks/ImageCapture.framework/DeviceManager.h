@@ -11,6 +11,9 @@
 }
 
 
+- (void)postNotification:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)postCommandCompletionNotification:(id)arg1;
 - (void)ejectImp:(id)arg1;
 - (void)downloadFileImp:(id)arg1;
@@ -32,9 +35,6 @@
 - (int)syncClock:(id)arg1 contextInfo:(void*)arg2;
 - (int)closeSession:(id)arg1 contextInfo:(void*)arg2;
 - (int)openSession:(id)arg1 contextInfo:(void*)arg2;
-- (void)postNotification:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (void)stopRunning;
 - (void)startRunning;
 

@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface SANavStatus : AceObject <SAAceSerializable> {
+@interface SANavStatus : AceObject <SABackgroundContextObject> {
 }
 
 @property(copy) NSString * statusValue;
@@ -12,9 +12,9 @@
 + (id)navStatusWithDictionary:(id)arg1 context:(id)arg2;
 + (id)navStatus;
 
-- (id)groupIdentifier;
 - (void)setStatusValue:(id)arg1;
 - (id)statusValue;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

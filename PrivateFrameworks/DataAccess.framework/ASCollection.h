@@ -27,8 +27,6 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (void)setStatus:(id)arg1;
-- (id)status;
 - (id)moreAvailable;
 - (id)collectionId;
 - (int)sniffableTypeForAccount:(id)arg1;
@@ -44,5 +42,7 @@
 - (int)dataclass;
 - (id)responseItems;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
+- (void)setStatus:(id)arg1;
+- (id)status;
 
 @end

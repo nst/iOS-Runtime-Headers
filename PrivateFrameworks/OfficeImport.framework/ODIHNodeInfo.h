@@ -19,7 +19,6 @@
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)init;
-- (int)row;
 - (struct ODIHRangeVector { struct ODIHRange {} *x1; struct ODIHRange {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)xRanges;
 - (void)addToXOffsetRelativeToParent:(float)arg1;
 - (void)setXOffsetRelativeToParent:(float)arg1;
@@ -33,5 +32,6 @@
 - (int)treeDepth;
 - (void)setXRange:(struct ODIHRange { float x1; float x2; })arg1;
 - (struct ODIHRange { float x1; float x2; })xRange;
+- (int)row;
 
 @end

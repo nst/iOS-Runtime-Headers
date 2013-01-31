@@ -5,8 +5,6 @@
 @interface SUUtility : NSObject  {
 }
 
-+ (id)serialNumber;
-+ (id)gregorianCalendar;
 + (id)prettyPrintDate:(id)arg1;
 + (id)addToDate:(id)arg1 numberOfDays:(int)arg2;
 + (id)URLIfFileExists:(id)arg1;
@@ -30,6 +28,8 @@
 + (id)currentProductVersion;
 + (id)currentProductBuild;
 + (id)currentProductType;
++ (id)serialNumber;
++ (id)gregorianCalendar;
 + (id)errorWithCode:(int)arg1;
 
 

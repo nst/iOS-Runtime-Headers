@@ -23,11 +23,11 @@
 
 - (id)description;
 - (void)dealloc;
-- (id)stores;
-- (void)setStatus:(id)arg1;
-- (id)status;
 - (void)setExpectedResultType:(int)arg1;
 - (int)expectedResultType;
 - (void)setStores:(id)arg1;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (id)stores;
 
 @end

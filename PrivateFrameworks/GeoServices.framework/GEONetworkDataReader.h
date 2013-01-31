@@ -14,15 +14,15 @@
 
 
 - (void)dealloc;
-- (id)initWithData:(id)arg1;
 - (BOOL)hasUnreadData;
 - (void)seekToMarkedOffset;
 - (void)markOffset;
 - (id)readData:(unsigned int)arg1;
 - (BOOL)readUnsignedInt:(unsigned int*)arg1;
+- (id)readString;
 - (void)appendNetworkData:(id)arg1;
 - (id)allData;
 - (BOOL)readUnsignedShort:(unsigned short*)arg1;
-- (id)readString;
+- (id)initWithData:(id)arg1;
 
 @end

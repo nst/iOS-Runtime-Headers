@@ -29,12 +29,9 @@
 @property(readonly) NSString * title;
 
 
-- (id)artistName;
 - (unsigned long long)storePreorderIdentifier;
 - (id)imageCollection;
 - (id)copyReleaseDateStringWithStyle:(long)arg1;
-- (id)releaseDate;
-- (unsigned long long)storeItemIdentifier;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -55,6 +52,9 @@
 - (id)_initWithPersistentIdentifier:(long long)arg1;
 - (void)_setTitle:(id)arg1;
 - (id)title;
+- (unsigned long long)storeItemIdentifier;
+- (id)releaseDate;
+- (id)artistName;
 - (long long)persistentIdentifier;
 
 @end

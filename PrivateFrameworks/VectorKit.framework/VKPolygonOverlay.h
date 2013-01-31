@@ -15,7 +15,7 @@
 + (id)polygonWithCoordinates:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
 + (id)polygonWithCoordinates:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2 interiorPolygons:(id)arg3;
 
-- (void)dealloc;
 - (id)interiorPolygons;
+- (void)dealloc;
 
 @end

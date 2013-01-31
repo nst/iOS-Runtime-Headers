@@ -29,10 +29,25 @@
 @property unsigned int selectablePeople;
 
 
-- (id)addButton;
 - (void)setProperties:(id)arg1;
 - (void)dealloc;
-- (void)setProperty:(int)arg1;
+- (void)showAtoms;
+- (void)addAddress:(id)arg1;
+- (void)removeAddressAtIndex:(int)arg1;
+- (void)reflow;
+- (void)setAddresses:(id)arg1;
+- (void)setSelectablePeople:(unsigned int)arg1;
+- (id)recipients;
+- (BOOL)_addable;
+- (int)atomStyleForRecipient:(id)arg1;
+- (void)setMaxRecipients:(int)arg1;
+- (void)replaceRecipient:(id)arg1 withRecipient:(id)arg2;
+- (void)addRecipient:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)_hideAddButton;
+- (void)_reallySelectComposeRecipientAtom:(id)arg1;
+- (int)maxRecipients;
+- (void)removeAddresses;
+- (void)selectComposeRecipientAtom:(id)arg1;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
@@ -63,7 +78,6 @@
 - (void)_reflowCollapsedWithoutCollapsingStyledAtoms;
 - (BOOL)onlyCollapsesUnstyledAtoms;
 - (void)_reflowExpanded;
-- (void)addRecord:(void*)arg1 identifier:(int)arg2;
 - (BOOL)textFieldShouldBecomeFirstResponder:(id)arg1;
 - (int)numberOfRowsOfTextInField;
 - (void)_deleteSelectedAtom;
@@ -82,27 +96,13 @@
 - (void)composeRecipientAtomSelectPrevious:(id)arg1;
 - (void)composeRecipientAtomShowPersonCard:(id)arg1;
 - (void)deselectComposeRecipientAtom:(id)arg1;
-- (void)removeRecipient:(id)arg1;
-- (BOOL)_addable;
-- (int)atomStyleForRecipient:(id)arg1;
-- (void)setMaxRecipients:(int)arg1;
-- (void)replaceRecipient:(id)arg1 withRecipient:(id)arg2;
-- (void)addRecipient:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)_hideAddButton;
-- (void)_reallySelectComposeRecipientAtom:(id)arg1;
-- (int)maxRecipients;
-- (void)removeAddresses;
-- (void)selectComposeRecipientAtom:(id)arg1;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
-- (id)recipients;
-- (void)addRecipient:(id)arg1;
-- (void)showAtoms;
-- (void)addAddress:(id)arg1;
-- (void)removeAddressAtIndex:(int)arg1;
-- (void)reflow;
-- (void)setAddresses:(id)arg1;
-- (void)setSelectablePeople:(unsigned int)arg1;
+- (id)addButton;
 - (id)addresses;
+- (void)addRecord:(void*)arg1 identifier:(int)arg2;
+- (void)removeRecipient:(id)arg1;
+- (void)addRecipient:(id)arg1;
+- (void)setProperty:(int)arg1;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
 - (id)addButton;
 
 @end

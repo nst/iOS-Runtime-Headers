@@ -11,12 +11,12 @@
 
 
 - (void)dealloc;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
-- (id)initWithIdentifier:(id)arg1;
 - (void)getCardItemsWithHandler:(id)arg1;
 - (void)clearAllCardItems;
 - (void)setCardItems:(id)arg1;
 - (void)removeCardItems:(id)arg1;
 - (void)addCardItems:(id)arg1;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (id)initWithIdentifier:(id)arg1;
 
 @end

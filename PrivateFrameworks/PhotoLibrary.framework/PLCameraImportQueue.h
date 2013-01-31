@@ -10,16 +10,16 @@
 }
 
 
-- (BOOL)isCompleted;
 - (id)description;
 - (void)dealloc;
+- (void)didCompleteItem:(id)arg1;
+- (id)completedItems;
+- (id)itemsNotCompleted;
 - (id)currentItem;
 - (id)initWithItems:(id)arg1;
 - (void)setItems:(id)arg1;
 - (id)items;
-- (void)didCompleteItem:(id)arg1;
-- (id)completedItems;
-- (id)itemsNotCompleted;
+- (BOOL)isCompleted;
 - (void)_removeItem:(id)arg1;
 
 @end

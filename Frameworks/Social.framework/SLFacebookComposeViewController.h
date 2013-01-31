@@ -27,12 +27,12 @@
 
 + (BOOL)canPost;
 
-- (id)remoteViewController;
 - (BOOL)addURL:(id)arg1 withPreviewImage:(id)arg2;
 - (BOOL)removeAllURLs;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
+- (id)serviceType;
 - (BOOL)addURL:(id)arg1;
 - (BOOL)addAttachment:(id)arg1;
 - (id)addDownSampledImageDataByProxyWithPreviewImage:(id)arg1;
@@ -56,7 +56,6 @@
 - (id)completionHandler;
 - (void)viewWillLayoutSubviews;
 - (void)didReceiveMemoryWarning;
-- (id)serviceType;
 - (id)_delayedActions;
 - (void)updateVignetteToOrientation:(int)arg1;
 - (void)_addDelayedAction:(id)arg1 forEvent:(id)arg2;
@@ -67,5 +66,6 @@
 - (id)addURLWithProxyPreviewImage:(id)arg1;
 - (id)addImageByProxy;
 - (void)setLongitude:(double)arg1 latitude:(double)arg2 name:(id)arg3;
+- (id)remoteViewController;
 
 @end

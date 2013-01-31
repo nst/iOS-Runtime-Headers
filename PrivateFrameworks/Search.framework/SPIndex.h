@@ -14,6 +14,13 @@
 }
 
 
+- (void)setValue:(id)arg1 forKey:(id)arg2;
+- (BOOL)save;
+- (id)managedObjectModel;
+- (id)persistentStoreCoordinator;
+- (id)managedObjectContext;
+- (id)valueForKey:(id)arg1;
+- (void)dealloc;
 - (void)deleteTopHitsWithExtIDs:(id)arg1 displayIdentifier:(id)arg2 category:(id)arg3;
 - (void)deleteRecordsWithExtIDs:(id)arg1;
 - (id)recordForExtID:(id)arg1;
@@ -30,12 +37,5 @@
 - (id)createRecord;
 - (void)deleteRecords:(id)arg1;
 - (void)erase;
-- (void)setValue:(id)arg1 forKey:(id)arg2;
-- (BOOL)save;
-- (id)managedObjectModel;
-- (id)persistentStoreCoordinator;
-- (id)managedObjectContext;
-- (id)valueForKey:(id)arg1;
-- (void)dealloc;
 
 @end

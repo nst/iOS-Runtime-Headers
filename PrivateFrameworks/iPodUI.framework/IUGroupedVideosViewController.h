@@ -10,12 +10,6 @@
 }
 
 
-- (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
-- (void)_enabledMediaTypesDidChangeNotification:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)viewDidAppear:(BOOL)arg1;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (BOOL)hideSearchRowOnAppear;
 - (BOOL)shouldShowStoreButton;
 - (void)finishPurchasedItemTransition;
@@ -23,5 +17,11 @@
 - (void)_showSharedLibrariesController;
 - (void)performActionForActionRow:(id)arg1 animated:(BOOL)arg2;
 - (void)_availableMediaLibrariesDidChangeNotification:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)viewDidAppear:(BOOL)arg1;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
+- (void)_enabledMediaTypesDidChangeNotification:(id)arg1;
 
 @end

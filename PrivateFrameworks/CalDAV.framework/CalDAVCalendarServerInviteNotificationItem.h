@@ -25,26 +25,26 @@
 @property(retain) CalDAVSupportedCalendarComponentSet * supportedCalendarComponentSet;
 
 
-- (id)inviteStatus;
-- (void)setInviteStatus:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (id)uid;
-- (id)access;
-- (id)supportedCalendarComponentSet;
-- (id)hostURL;
-- (BOOL)isComponentSupportedForString:(id)arg1;
-- (id)initForReplyWithUID:(id)arg1 href:(id)arg2 hostURL:(id)arg3 summary:(id)arg4;
-- (void)setAccess:(id)arg1;
-- (void)setHostURL:(id)arg1;
-- (void)setSupportedCalendarComponentSet:(id)arg1;
-- (id)copyParseRules;
 - (void)setSummary:(id)arg1;
 - (id)summary;
 - (void)setHref:(id)arg1;
 - (id)href;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (void)setUid:(id)arg1;
+- (id)access;
+- (id)supportedCalendarComponentSet;
+- (id)hostURL;
+- (id)inviteStatus;
+- (id)copyParseRules;
+- (BOOL)isComponentSupportedForString:(id)arg1;
+- (id)initForReplyWithUID:(id)arg1 href:(id)arg2 hostURL:(id)arg3 summary:(id)arg4;
+- (void)setAccess:(id)arg1;
+- (void)setInviteStatus:(id)arg1;
+- (void)setHostURL:(id)arg1;
+- (void)setSupportedCalendarComponentSet:(id)arg1;
+- (id)uid;
 - (void)setOrganizer:(id)arg1;
 - (id)organizer;
 

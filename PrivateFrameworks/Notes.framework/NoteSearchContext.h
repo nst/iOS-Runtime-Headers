@@ -15,8 +15,8 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (struct __CXQuery { }*)query;
 - (BOOL)nextSearchResults:(id*)arg1 includePrevious:(BOOL)arg2;
 - (id)initWithSearchTerms:(id)arg1 context:(id)arg2;
+- (struct __CXQuery { }*)query;
 
 @end

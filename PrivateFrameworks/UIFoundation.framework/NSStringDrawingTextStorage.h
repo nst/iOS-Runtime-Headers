@@ -37,28 +37,12 @@
     NSDictionary *_styledTextOptions;
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (void)initialize;
 + (id)stringDrawingTextStorage;
 + (BOOL)_fastDrawString:(id)arg1 attributes:(id)arg2 length:(long)arg3 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 graphicsContext:(struct CGContext { }*)arg5 baselineRendering:(BOOL)arg6 usesFontLeading:(BOOL)arg7 usesScreenFont:(BOOL)arg8 typesetterBehavior:(int)arg9 paragraphStyle:(id)arg10 lineBreakMode:(int)arg11 boundingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg12 padding:(float)arg13 scrollable:(bool)arg14 baselineOffset:(float*)arg15;
 + (void)_setHasCustomSettings:(BOOL)arg1;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)initialize;
 
-- (void)invalidate;
-- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)string;
-- (void)dealloc;
-- (oneway void)release;
-- (id)init;
-- (unsigned int)length;
-- (id)attributesAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
-- (id)attribute:(id)arg1 atIndex:(unsigned int)arg2 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
-- (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)layoutManager;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (void)processEditing;
 - (id)textContainerForAttributedString:(id)arg1;
 - (BOOL)_truncatesLastLine;
@@ -84,6 +68,22 @@
 - (void)_setBaselineDelta:(float)arg1;
 - (BOOL)_isStringDrawingTextStorage;
 - (int)typesetterBehavior;
+- (void)invalidate;
+- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
+- (unsigned int)retainCount;
+- (id)retain;
+- (id)string;
+- (void)dealloc;
+- (oneway void)release;
+- (id)init;
+- (unsigned int)length;
+- (id)attributesAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
+- (id)attribute:(id)arg1 atIndex:(unsigned int)arg2 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
+- (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)layoutManager;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withAttributedString:(id)arg2;
 - (id)attribute:(id)arg1 atIndex:(unsigned int)arg2 longestEffectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 

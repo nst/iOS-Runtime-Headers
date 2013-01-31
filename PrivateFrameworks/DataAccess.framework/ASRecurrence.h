@@ -38,16 +38,6 @@
 
 - (id)type;
 - (void)dealloc;
-- (id)interval;
-- (void)setInterval:(id)arg1;
-- (void)setWeekOfMonth:(id)arg1;
-- (id)weekOfMonth;
-- (void)setType:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)dayOfWeek;
-- (id)dayOfMonth;
-- (id)monthOfYear;
 - (void)setParentEvent:(id)arg1;
 - (id)initWithCalRecurrence:(void*)arg1 parentEvent:(id)arg2;
 - (void)saveToCalendarWithParentASEvent:(id)arg1 existingRecord:(void*)arg2 shouldMergeProperties:(BOOL)arg3 outMergeDidChooseLocalProperties:(BOOL*)arg4;
@@ -68,6 +58,16 @@
 - (BOOL)_loadAttributesFromCalRecurrence:(void*)arg1 parentStartDate:(id)arg2 parentItem:(id)arg3;
 - (void)appendActiveSyncDataForTask:(id)arg1 toWBXMLData:(id)arg2;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
+- (id)interval;
+- (void)setInterval:(id)arg1;
+- (void)setWeekOfMonth:(id)arg1;
+- (id)weekOfMonth;
+- (void)setType:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)dayOfWeek;
+- (id)dayOfMonth;
+- (id)monthOfYear;
 - (id)until;
 - (void)setUntil:(id)arg1;
 

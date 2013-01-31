@@ -28,10 +28,6 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)setStatus:(int)arg1;
-- (int)status;
-- (void)setContext:(id)arg1;
-- (id)context;
 - (void)setCalEventServerId:(id)arg1;
 - (id)calEventServerId;
 - (id)eventUID;
@@ -40,5 +36,9 @@
 - (id)deliveryItemServerId;
 - (id)deliveryItemFolderId;
 - (id)initWithDeliveryItemFolderId:(id)arg1 deliveryItemServerId:(id)arg2 instanceDate:(id)arg3 meetingResponse:(int)arg4 eventUID:(id)arg5;
+- (void)setStatus:(int)arg1;
+- (int)status;
+- (void)setContext:(id)arg1;
+- (id)context;
 
 @end

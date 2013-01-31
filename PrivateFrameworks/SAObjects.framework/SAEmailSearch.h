@@ -19,11 +19,6 @@
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
-- (id)subject;
-- (void)setStatus:(int)arg1;
-- (int)status;
-- (void)setSubject:(id)arg1;
 - (id)toEmail;
 - (void)setToEmail:(id)arg1;
 - (void)setFromEmail:(id)arg1;
@@ -34,6 +29,11 @@
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)subject;
+- (void)setStatus:(int)arg1;
+- (int)status;
+- (void)setSubject:(id)arg1;
+- (id)groupIdentifier;
 - (void)setEndDate:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)endDate;

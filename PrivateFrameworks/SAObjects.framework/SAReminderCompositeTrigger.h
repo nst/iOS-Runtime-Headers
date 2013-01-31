@@ -13,11 +13,11 @@
 + (id)compositeTriggerWithDictionary:(id)arg1 context:(id)arg2;
 + (id)compositeTrigger;
 
-- (id)groupIdentifier;
 - (void)setLocationTrigger:(id)arg1;
 - (void)setDateTimeTrigger:(id)arg1;
 - (id)locationTrigger;
 - (id)dateTimeTrigger;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

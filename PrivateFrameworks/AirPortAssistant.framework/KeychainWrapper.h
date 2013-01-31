@@ -18,9 +18,8 @@
 + (id)keychainPasswordForMACAddress:(id)arg1;
 + (id)keychainWrapperWithMACAddress:(id)arg1;
 
-- (void)setAccountName:(id)arg1;
-- (id)accountName;
 - (void)dealloc;
+- (void)setServiceName:(id)arg1;
 - (id)getGenericPassword;
 - (id)getPasswordFromQuery:(id)arg1;
 - (id)genericPasswordQuery;
@@ -30,7 +29,8 @@
 - (void)removeGenericPassword;
 - (long)addGenericPassword:(id)arg1 withLabel:(id)arg2 andDescription:(id)arg3;
 - (id)lock;
+- (void)setAccountName:(id)arg1;
+- (id)accountName;
 - (id)serviceName;
-- (void)setServiceName:(id)arg1;
 
 @end

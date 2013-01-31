@@ -29,6 +29,7 @@
     NSDictionary *_photos;
     NSArray *_friends;
     BOOL _allowMultiplayerInvites;
+    BOOL _allowNearbyMultiplayer;
     NSString *_twitterUserID;
     NSString *_facebookUserID;
 }
@@ -59,14 +60,22 @@
 @property(retain) NSString * twitterUserID;
 @property(retain) NSString * facebookUserID;
 @property BOOL allowMultiplayerInvites;
+@property BOOL allowNearbyMultiplayer;
 
 + (id)fullNameWithFirstName:(id)arg1 lastName:(id)arg2;
 + (id)codedPropertyKeys;
 
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (id)displayName;
 - (void)setFacebookUserID:(id)arg1;
 - (id)facebookUserID;
 - (void)setTwitterUserID:(id)arg1;
 - (id)twitterUserID;
+- (void)setAllowNearbyMultiplayer:(BOOL)arg1;
 - (void)setAllowMultiplayerInvites:(BOOL)arg1;
 - (BOOL)allowMultiplayerInvites;
 - (void)setFriends:(id)arg1;
@@ -96,6 +105,7 @@
 - (id)lastSeenDate;
 - (void)setLastPlayedDate:(id)arg1;
 - (void)setNumberOfAchievements:(int)arg1;
+- (BOOL)allowNearbyMultiplayer;
 - (int)numberOfAchievements;
 - (id)serverRepresentation;
 - (id)lastPlayedGame;
@@ -114,11 +124,5 @@
 - (BOOL)isPurpleBuddyAccount;
 - (id)playerID;
 - (void)setPlayerID:(id)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setStatus:(id)arg1;
-- (id)status;
-- (id)displayName;
 
 @end

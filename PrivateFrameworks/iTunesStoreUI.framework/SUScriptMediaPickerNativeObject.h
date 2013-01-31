@@ -6,9 +6,9 @@
 }
 
 
-- (void)mediaPickerDidCancel:(id)arg1;
-- (void)mediaPicker:(id)arg1 didPickMediaItems:(id)arg2;
 - (void)setupNativeObject;
 - (void)destroyNativeObject;
+- (void)mediaPicker:(id)arg1 didPickMediaItems:(id)arg2;
+- (void)mediaPickerDidCancel:(id)arg1;
 
 @end

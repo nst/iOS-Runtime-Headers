@@ -11,19 +11,19 @@
 @property double lng;
 
 
-- (void)setLng:(double)arg1;
-- (void)setLat:(double)arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
-- (BOOL)isValid;
 - (double)lng;
 - (double)lat;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (id)coordinateAsString;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (BOOL)readFrom:(id)arg1;
+- (void)setLng:(double)arg1;
+- (void)setLat:(double)arg1;
+- (id)coordinateAsString;
+- (id)dictionaryRepresentation;
+- (BOOL)isValid;
 
 @end

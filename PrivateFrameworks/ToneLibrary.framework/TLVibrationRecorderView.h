@@ -23,7 +23,6 @@
 @property(setter=_setReplayMode:) BOOL _replayMode;
 
 
-- (void)_updateProgress:(id)arg1;
 - (void)exitReplayModeWithAnimation:(BOOL)arg1;
 - (void)enterReplayModeWithVibrationPattern:(id)arg1 animate:(BOOL)arg2 completion:(id)arg3;
 - (void)exitRecordingModeWithAnimation:(BOOL)arg1 enablePlayButton:(BOOL)arg2;
@@ -47,5 +46,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)_updateProgress:(id)arg1;
 
 @end

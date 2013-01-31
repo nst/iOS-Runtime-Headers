@@ -11,8 +11,6 @@
 }
 
 
-- (void)dealloc;
-- (id)initWithServer:(id)arg1;
 - (void)_receivedConnectionDied:(id)arg1;
 - (void)_receivedIndicate:(id)arg1;
 - (void)_receivedGetListing:(id)arg1;
@@ -27,5 +25,7 @@
 - (void)connectionClosing:(id)arg1;
 - (void)pushListing;
 - (void)_receivedData:(id)arg1;
+- (void)dealloc;
+- (id)initWithServer:(id)arg1;
 
 @end

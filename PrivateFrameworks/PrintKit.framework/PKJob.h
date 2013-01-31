@@ -37,6 +37,8 @@
 + (id)currentJob;
 + (id)jobs;
 
+- (int)state;
+- (int)cancel;
 - (int)mediaProgress;
 - (void)setTimeAtProcessing:(id)arg1;
 - (void)setTimeAtCreation:(id)arg1;
@@ -48,8 +50,8 @@
 - (void)setMediaSheetsCompleted:(int)arg1;
 - (void)setMediaSheets:(int)arg1;
 - (void)setMediaProgress:(int)arg1;
-- (int)state;
-- (int)cancel;
+- (void)setThumbnailImage:(id)arg1;
+- (void)setNumber:(int)arg1;
 - (id)thumbnailImage;
 - (int)number;
 - (int)mediaSheetsCompleted;
@@ -63,8 +65,6 @@
 - (id)settings;
 - (int)update;
 - (void)setState:(int)arg1;
-- (void)setThumbnailImage:(id)arg1;
-- (void)setNumber:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 
 @end

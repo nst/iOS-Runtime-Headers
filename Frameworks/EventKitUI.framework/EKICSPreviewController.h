@@ -34,6 +34,8 @@
 
 
 - (void)dealloc;
+- (BOOL)isImporting;
+- (id)initWithData:(id)arg1 eventStore:(id)arg2 options:(unsigned int)arg3;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (BOOL)allowsEditing;
 - (id)viewController;
@@ -69,8 +71,6 @@
 - (BOOL)allowsSubitems;
 - (void)eventViewControllerDidRequestAddToCalendar:(id)arg1;
 - (void)setAllowsSubitems:(BOOL)arg1;
-- (id)initWithData:(id)arg1 eventStore:(id)arg2 options:(unsigned int)arg3;
-- (BOOL)isImporting;
 - (BOOL)actionsDisabled;
 
 @end

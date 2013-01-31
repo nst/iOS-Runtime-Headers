@@ -11,9 +11,9 @@
 @property(retain) VGLTexture * secondTexture;
 
 
-- (void)dealloc;
 - (id)secondTexture;
 - (void)setSecondTexture:(id)arg1;
 - (void)drawTrianglesWithContext:(id)arg1;
+- (void)dealloc;
 
 @end

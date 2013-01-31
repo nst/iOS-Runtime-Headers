@@ -11,8 +11,8 @@
 
 - (void)dealloc;
 - (id)init;
-- (unsigned int)columnCount;
 - (id)addColumn;
 - (id)columnAtIndex:(unsigned int)arg1;
+- (unsigned int)columnCount;
 
 @end

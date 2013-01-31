@@ -11,10 +11,10 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)send;
-- (id)startThreadDispatchQueue;
 - (id)mailbox;
+- (id)startThreadDispatchQueue;
 - (id)startMigrantDispatchQueue;
 - (id)deferredReply;
+- (id)send;
 
 @end

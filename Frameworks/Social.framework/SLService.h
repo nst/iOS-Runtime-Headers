@@ -8,7 +8,6 @@
 + (id)serviceForServiceType:(id)arg1;
 + (id)allServices;
 
-- (BOOL)isAvailable;
 - (BOOL)hasAccounts;
 - (id)accountType;
 - (id)serviceType;
@@ -18,5 +17,6 @@
 - (BOOL)isSheetAccessPermitted;
 - (BOOL)isFirstClassService;
 - (void)addExtraParameters:(id)arg1 forRequest:(id)arg2;
+- (BOOL)isAvailable;
 
 @end

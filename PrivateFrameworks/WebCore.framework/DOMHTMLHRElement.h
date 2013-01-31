@@ -13,13 +13,13 @@
 @property(copy) NSString * width;
 
 
-- (void)setWidth:(id)arg1;
-- (id)width;
-- (void)setSize:(id)arg1;
-- (id)size;
 - (void)setNoShade:(BOOL)arg1;
 - (BOOL)noShade;
 - (void)setAlign:(id)arg1;
 - (id)align;
+- (void)setWidth:(id)arg1;
+- (id)width;
+- (void)setSize:(id)arg1;
+- (id)size;
 
 @end

@@ -11,11 +11,11 @@
 }
 
 
+- (void)_updateProgressTimerDidFire:(id)arg1;
+- (void)_updateInProgressDidChangeNotification:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)viewDidLoad;
 - (void)viewWillLayoutSubviews;
-- (void)_updateProgressTimerDidFire:(id)arg1;
-- (void)_updateInProgressDidChangeNotification:(id)arg1;
 
 @end

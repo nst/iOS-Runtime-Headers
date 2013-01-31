@@ -13,14 +13,14 @@
 @property(retain) GKComposeHeaderField * challengeField;
 
 
-- (id)challengeField;
-- (id)challengeDescription;
-- (void)setChallengeField:(id)arg1;
-- (void)setChallengeDescription:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
+- (id)challengeField;
+- (id)challengeDescription;
+- (void)setChallengeField:(id)arg1;
+- (void)setChallengeDescription:(id)arg1;
 
 @end

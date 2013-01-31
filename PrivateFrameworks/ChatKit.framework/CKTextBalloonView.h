@@ -13,6 +13,11 @@
 
 - (id)description;
 - (void)dealloc;
+- (id)textViewForClass:(Class)arg1;
+- (void)updateTextViewToClass:(Class)arg1;
+- (void)updateTextView;
+- (void)dataDetectorActionDidFinish;
+- (void)setTapEnabled:(BOOL)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (BOOL)_gestureRecognizer:(id)arg1 canBePreventedByGestureRecognizer:(id)arg2;
 - (int)textAlignment;
@@ -21,10 +26,5 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setAttributedText:(id)arg1;
 - (void)layoutSubviews;
-- (id)textViewForClass:(Class)arg1;
-- (void)updateTextViewToClass:(Class)arg1;
-- (void)updateTextView;
-- (void)dataDetectorActionDidFinish;
-- (void)setTapEnabled:(BOOL)arg1;
 
 @end

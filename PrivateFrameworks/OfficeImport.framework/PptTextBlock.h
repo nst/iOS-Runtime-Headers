@@ -22,7 +22,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)text;
 - (id)bookmarks;
 - (unsigned long)textIndex;
 - (void)writeTextBlock:(id)arg1;
@@ -38,5 +37,6 @@
 - (struct PptTextRulerAtom { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); int x5; boolx6; struct ChVector<PptTab> {} *x7; unsigned short x8[5]; unsigned short x9[5]; unsigned short x10; }*)textRuler;
 - (void)readTextBlock:(id)arg1;
 - (id)hyperlinks;
+- (id)text;
 
 @end

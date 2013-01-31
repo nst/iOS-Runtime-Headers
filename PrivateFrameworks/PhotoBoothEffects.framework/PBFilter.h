@@ -17,7 +17,6 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)localizedName;
 - (void)handleRotateGesture:(float)arg1 stateBegan:(BOOL)arg2 mirror:(BOOL)arg3;
 - (void)handlePinchGesture:(float)arg1 stateBegan:(BOOL)arg2;
 - (void)handlePanGesture:(struct CGPoint { float x1; float x2; })arg1 viewSize:(struct CGSize { float x1; float x2; })arg2 stateBegan:(BOOL)arg3 mirror:(BOOL)arg4;
@@ -36,6 +35,7 @@
 - (void)applyParametersToCIFilter:(BOOL)arg1 extent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)needsWrapMirror;
 - (id)ciFilterName;
+- (id)localizedName;
 - (void)setDefaults;
 - (id)inputKeys;
 

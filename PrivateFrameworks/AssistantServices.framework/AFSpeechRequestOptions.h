@@ -15,6 +15,7 @@
 @property BOOL isEyesFree;
 
 
+- (void).cxx_destruct;
 - (void)setIsEyesFree:(BOOL)arg1;
 - (BOOL)isEyesFree;
 - (void)setBtDeviceAddress:(id)arg1;
@@ -23,7 +24,6 @@
 - (int)activationEvent;
 - (id)dkPlistRepresentation;
 - (id)initWithDKPlistRepresentation:(id)arg1;
-- (void).cxx_destruct;
 - (id)initWithActivationEvent:(int)arg1;
 
 @end

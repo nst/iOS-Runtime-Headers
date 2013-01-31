@@ -16,17 +16,17 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (unsigned int)clientPort;
-- (id)initWithKey:(int)arg1 payload:(id)arg2;
+- (id)initWithKey:(int)arg1;
 - (id)description;
 - (void)dealloc;
+- (id)payload;
+- (void)setPayload:(id)arg1;
+- (unsigned int)clientPort;
+- (id)initWithKey:(int)arg1 payload:(id)arg2;
 - (void)setKey:(int)arg1;
 - (int)key;
 - (void)setClientPort:(unsigned int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setPayload:(id)arg1;
-- (id)payload;
-- (id)initWithKey:(int)arg1;
 
 @end

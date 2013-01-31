@@ -57,28 +57,14 @@
 + (void)_restoreDefaultTaskTimeout;
 + (void)_setDefaultTaskTimeout:(double)arg1;
 
-- (void)finishWithError:(id)arg1;
-- (double)percentComplete;
+- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
+- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)reset;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)loadRequest:(id)arg1;
-- (void)setContext:(void*)arg1;
-- (void*)context;
-- (id)command;
-- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
-- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
-- (double)timeoutInterval;
-- (id)connection:(id)arg1 needNewBodyStream:(id)arg2;
-- (void)connection:(id)arg1 didSendBodyData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4;
-- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (id)contentType;
 - (id)timeoutEnforcer;
 - (id)lastKnownPassword;
@@ -126,6 +112,7 @@
 - (id)responseContentType;
 - (BOOL)shouldLogIncomingData;
 - (BOOL)requiresEASVersionInformaton;
+- (BOOL)shouldStallAfterCannotFindHost;
 - (BOOL)shouldHandlePasswordErrors;
 - (BOOL)_shouldRedirectToHTTPForRequest:(id)arg1;
 - (void)_addAuthToRequest:(id)arg1;
@@ -148,5 +135,19 @@
 - (void)setCurrentlyParsingItem:(id)arg1;
 - (id)currentlyParsingItem;
 - (id)taskManager;
+- (id)command;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (void)loadRequest:(id)arg1;
+- (void)setContext:(void*)arg1;
+- (void*)context;
+- (void)finishWithError:(id)arg1;
+- (double)percentComplete;
+- (double)timeoutInterval;
+- (id)connection:(id)arg1 needNewBodyStream:(id)arg2;
+- (void)connection:(id)arg1 didSendBodyData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4;
+- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 
 @end

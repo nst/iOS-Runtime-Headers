@@ -12,10 +12,10 @@
 
 + (float)columnWidth;
 
-- (id)initWithNumberOfLines:(unsigned int)arg1;
 - (void)dealloc;
 - (void)setSeparatorView:(id)arg1;
 - (id)separatorView;
 - (void)layoutSubviews;
+- (id)initWithNumberOfLines:(unsigned int)arg1;
 
 @end

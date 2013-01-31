@@ -25,11 +25,10 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
-- (void)setPassword:(id)arg1;
-- (id)username;
-- (void)setUsername:(id)arg1;
+- (id)hostname;
 - (id)description;
 - (void).cxx_destruct;
+- (id)accountDescription;
 - (id)searchSettings;
 - (void)setAccountPersistentUUID:(id)arg1;
 - (id)subtitle2Description;
@@ -38,11 +37,12 @@
 - (id)subtitle1Description;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (id)password;
-- (id)title;
-- (id)hostname;
-- (id)accountDescription;
 - (id)accountPersistentUUID;
 - (BOOL)useSSL;
+- (id)password;
+- (id)title;
+- (void)setPassword:(id)arg1;
+- (id)username;
+- (void)setUsername:(id)arg1;
 
 @end

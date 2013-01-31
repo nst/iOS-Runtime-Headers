@@ -12,8 +12,8 @@
 
 + (Class)responseClass;
 
-- (void).cxx_destruct;
 - (id)urlString;
+- (void).cxx_destruct;
 - (id)urlRequest;
 - (id)initWithAccount:(id)arg1 withSetupParameters:(id)arg2 signingSession:(id)arg3;
 

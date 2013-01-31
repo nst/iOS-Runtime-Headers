@@ -8,8 +8,8 @@
 + (id)cancelSucceededWithDictionary:(id)arg1 context:(id)arg2;
 + (id)cancelSucceeded;
 
-- (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

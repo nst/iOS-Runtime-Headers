@@ -30,16 +30,16 @@
 + (id)sharedInstance;
 
 - (void)dealloc;
-- (void)setHandler:(id)arg1;
-- (id)handler;
-- (id)popoverController;
-- (void)setPopoverController:(id)arg1;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)presenter;
 - (void)setPresenter:(id)arg1;
 - (void)showPopover:(id)arg1 withPresenter:(id)arg2 withHandler:(id)arg3;
 - (void)dismissCurrentPopover;
 - (void)didFinishRotating;
 - (void)willStartRotating;
+- (void)setHandler:(id)arg1;
+- (id)handler;
+- (id)popoverController;
+- (void)setPopoverController:(id)arg1;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
 
 @end

@@ -76,9 +76,6 @@
 @property(readonly) struct { double x1; double x2; double x3; double x4; } bounds;
 
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (struct { double x1; double x2; double x3; double x4; })bounds;
 - (void)_updateBounds:(id)arg1;
 - (void)drawDebugMarkersWithContext:(id)arg1;
 - (void)forEachSection:(id)arg1;
@@ -89,5 +86,8 @@
 - (BOOL)isTrafficUpToDate;
 - (id)overlay;
 - (void)forEachMapMatchingSection:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (struct { double x1; double x2; double x3; double x4; })bounds;
 
 @end

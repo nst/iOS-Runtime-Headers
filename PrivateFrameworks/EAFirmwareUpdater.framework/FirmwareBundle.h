@@ -26,8 +26,7 @@
 
 - (id)hash;
 - (void)dealloc;
-- (id)initWithBundle:(id)arg1;
-- (id)signature;
+- (id)certificate;
 - (unsigned int)firmwareImageSize;
 - (unsigned int)firmwareImageBaseAddress;
 - (id)firmwareImage;
@@ -35,6 +34,7 @@
 - (id)parseFirmwareImageFileIntoData:(id)arg1;
 - (unsigned int)productIDCode;
 - (id)initWithBundlePath:(id)arg1;
-- (id)certificate;
+- (id)initWithBundle:(id)arg1;
+- (id)signature;
 
 @end

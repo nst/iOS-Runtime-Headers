@@ -6,9 +6,16 @@
     unsigned long long _persistentID;
 }
 
-+ (BOOL)canFilterByProperty:(id)arg1;
 + (id)defaultPropertyValues;
++ (BOOL)canFilterByProperty:(id)arg1;
 
+- (void)setValue:(id)arg1 forKey:(id)arg2;
+- (void)dealloc;
+- (BOOL)existsInLibrary;
+- (unsigned long long)persistentID;
+- (id)valueForProperty:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isUsableAsRepresentativeItem;
 - (void)clearBookmarkTime;
 - (void)updateLastUsedDateToCurrentDate;
@@ -21,12 +28,5 @@
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
 - (id)initWithPersistentID:(unsigned long long)arg1;
 - (id)valuesForProperties:(id)arg1;
-- (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)dealloc;
-- (BOOL)existsInLibrary;
-- (unsigned long long)persistentID;
-- (id)valueForProperty:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

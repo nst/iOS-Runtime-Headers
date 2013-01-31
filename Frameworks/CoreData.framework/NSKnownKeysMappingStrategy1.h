@@ -12,8 +12,8 @@
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;
++ (BOOL)accessInstanceVariablesDirectly;
 
 - (unsigned int)retainCount;
 - (unsigned int)hash;
@@ -24,13 +24,6 @@
 - (void)dealloc;
 - (oneway void)release;
 - (unsigned int)length;
-- (id)initForKeys:(id)arg1;
-- (void)_coreDealloc:(BOOL)arg1;
-- (void)_coreCreationForKeys:(const id*)arg1 count:(unsigned long)arg2;
-- (struct __CFArray { }*)_makeBranchTableForKeys:(const char **)arg1 count:(unsigned long)arg2;
-- (unsigned int)fastIndexForKnownKey:(id)arg1;
-- (id)initForKeys:(id*)arg1 count:(unsigned int)arg2;
-- (Class)classForArchiver;
 - (id*)keys;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
@@ -39,5 +32,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)indexForKey:(id)arg1;
+- (id)initForKeys:(id)arg1;
+- (void)_coreDealloc:(BOOL)arg1;
+- (void)_coreCreationForKeys:(const id*)arg1 count:(unsigned long)arg2;
+- (struct __CFArray { }*)_makeBranchTableForKeys:(const char **)arg1 count:(unsigned long)arg2;
+- (unsigned int)fastIndexForKnownKey:(id)arg1;
+- (id)initForKeys:(id*)arg1 count:(unsigned int)arg2;
+- (Class)classForArchiver;
 
 @end

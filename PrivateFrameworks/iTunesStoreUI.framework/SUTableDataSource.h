@@ -27,7 +27,6 @@
 - (id)cellContextForConfigurationClass:(Class)arg1;
 - (id)cachedConfigurationForClass:(Class)arg1 index:(int)arg2;
 - (void)reloadCellContexts;
-- (id)imageCache;
 - (void)didEndPreferringUserInteraction;
 - (void)didBeginPreferringUserInteraction;
 - (BOOL)canSelectIndexPath:(id)arg1;
@@ -60,5 +59,6 @@
 - (int)numberOfSections;
 - (int)numberOfRowsInSection:(int)arg1;
 - (void)reloadData;
+- (id)imageCache;
 
 @end

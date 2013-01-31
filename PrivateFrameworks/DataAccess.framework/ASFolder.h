@@ -34,14 +34,11 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (int)localID;
-- (id)displayName;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (void)setDisplayName:(id)arg1;
 - (int)changeType;
 - (void)setRenameOnCollision:(BOOL)arg1;
-- (void)setDisplayName:(id)arg1;
 - (BOOL)renameOnCollision;
+- (int)localID;
 - (id)initWithFolderType:(int)arg1 serverID:(id)arg2 parentID:(id)arg3 displayName:(id)arg4 localID:(int)arg5;
 - (BOOL)mayContainDataclasses:(int)arg1;
 - (void)setFolderTypeNumber:(id)arg1;
@@ -51,6 +48,9 @@
 - (int)dataclass;
 - (void)setServerID:(id)arg1;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
+- (id)displayName;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setChangeType:(int)arg1;
 - (void)setParentID:(id)arg1;
 - (id)parentID;

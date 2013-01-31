@@ -11,11 +11,11 @@
 
 
 - (void)dealloc;
-- (void)_setImagePickerMediaTypes:(id)arg1;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)_updateAccessDeniedView;
 - (void)_cancelButtonClicked:(id)arg1;
 - (void)_showCancelButton;
+- (void)_setImagePickerMediaTypes:(id)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

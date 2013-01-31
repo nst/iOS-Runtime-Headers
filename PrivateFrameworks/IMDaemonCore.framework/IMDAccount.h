@@ -35,17 +35,9 @@
 @property(readonly) NSDictionary * registrationAlertInfo;
 
 
-- (void)setRegistrationStatus:(int)arg1 error:(int)arg2 alertInfo:(id)arg3;
-- (id)accountDefaults;
-- (id)loginID;
-- (void)writeAccountDefaults:(id)arg1;
-- (int)registrationStatus;
-- (id)session;
+- (int)registrationError;
 - (void)dealloc;
-- (id)status;
-- (BOOL)isLoading;
-- (BOOL)isActive;
-- (BOOL)isManaged;
+- (id)accountID;
 - (id)registrationAlertInfo;
 - (void)tunesController:(id)arg1 playerInfoChanged:(id)arg2;
 - (id)statusToSave;
@@ -63,12 +55,20 @@
 - (BOOL)wasDisabledAutomatically;
 - (id)statusToPost;
 - (void)postAccountCapabilitiesToListener:(id)arg1;
+- (void)setRegistrationStatus:(int)arg1 error:(int)arg2 alertInfo:(id)arg3;
+- (id)accountDefaults;
+- (id)loginID;
+- (void)writeAccountDefaults:(id)arg1;
+- (int)registrationStatus;
+- (BOOL)isManaged;
 - (void)systemDidBecomeUnidle;
 - (void)systemDidBecomeIdle;
 - (id)service;
-- (id)accountID;
 - (void)setIsLoading:(BOOL)arg1;
-- (int)registrationError;
 - (BOOL)isDisabled;
+- (id)status;
+- (BOOL)isLoading;
+- (BOOL)isActive;
+- (id)session;
 
 @end

@@ -14,6 +14,7 @@
 + (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
 
 - (void)dealloc;
+- (void)setLabelText:(id)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
@@ -33,6 +34,5 @@
 - (BOOL)swellTextViewShouldBeginEditing:(id)arg1;
 - (void)setAbCellStyle:(int)arg1;
 - (void)reloadFromModel;
-- (void)setLabelText:(id)arg1;
 
 @end

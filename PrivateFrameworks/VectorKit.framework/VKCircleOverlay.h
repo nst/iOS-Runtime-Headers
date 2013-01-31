@@ -19,10 +19,10 @@
 
 + (id)circleWithCenterCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2;
 
-- (void)dealloc;
-- (struct { double x1; double x2; })coordinate;
 - (id)boundingMapRegion;
 - (id)_initWithCenterCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2;
+- (void)dealloc;
+- (struct { double x1; double x2; })coordinate;
 - (double)radius;
 
 @end

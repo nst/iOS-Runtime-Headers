@@ -23,6 +23,9 @@
 + (void)_setupAccountMonitor;
 
 - (void)dealloc;
+- (void)smsComposeControllerSendStarted:(id)arg1;
+- (void)smsComposeControllerCancelled:(id)arg1;
+- (id)recipients;
 - (void)setBody:(id)arg1;
 - (void)setMessageComposeDelegate:(id)arg1;
 - (id)body;
@@ -32,8 +35,5 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)messageComposeDelegate;
 - (void)setRecipients:(id)arg1;
-- (id)recipients;
-- (void)smsComposeControllerSendStarted:(id)arg1;
-- (void)smsComposeControllerCancelled:(id)arg1;
 
 @end

@@ -19,16 +19,12 @@
 @property(retain) SUDescriptor * installDescriptor;
 
 
-- (void)cancelDownload:(id)arg1;
-- (void)resumeDownload:(id)arg1;
-- (void)pauseDownload:(id)arg1;
 - (void)invalidate;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (id)installDescriptor;
 - (int)clientType;
 - (void)noteServerExiting;
@@ -59,6 +55,10 @@
 - (void)connectToServerIfNecessary;
 - (void)setClientType:(int)arg1;
 - (id)initWithDelegate:(id)arg1 clientType:(int)arg2;
+- (void)cancelDownload:(id)arg1;
+- (void)pauseDownload:(id)arg1;
+- (void)resumeDownload:(id)arg1;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)downloadDidFinish:(id)arg1;
 
 @end

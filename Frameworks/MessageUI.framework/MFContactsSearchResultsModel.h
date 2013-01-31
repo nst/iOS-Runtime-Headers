@@ -28,6 +28,9 @@
 - (void)reset;
 - (void)dealloc;
 - (id)init;
+- (void)processAddedResultsOfType:(int)arg1 completion:(id)arg2;
+- (void)addResults:(id)arg1 ofType:(int)arg2;
+- (id)initWithFavorMobileNumbers:(BOOL)arg1;
 - (void)_finishSearchOfType:(int)arg1;
 - (void)_appendSortedResultsOfType:(int)arg1 excluding:(id)arg2 toResults:(id)arg3;
 - (void)_enumerateSearchResultTypesInSortOrderUsingBlock:(id)arg1;
@@ -39,8 +42,5 @@
 - (id)_bestRecipientForAddress:(id)arg1 fallback:(id)arg2;
 - (id)_dictionaryForResultType:(int)arg1;
 - (id)initWithResultTypeSortOrderComparator:(int (*)())arg1 resultTypePriorityComparator:(int (*)())arg2 favorMobileNumbers:(BOOL)arg3;
-- (void)processAddedResultsOfType:(int)arg1 completion:(id)arg2;
-- (void)addResults:(id)arg1 ofType:(int)arg2;
-- (id)initWithFavorMobileNumbers:(BOOL)arg1;
 
 @end

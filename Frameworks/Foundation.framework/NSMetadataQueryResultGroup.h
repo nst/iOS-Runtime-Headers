@@ -11,7 +11,6 @@
 
 - (id)results;
 - (void)dealloc;
-- (id)attribute;
 - (id)value;
 - (id)subgroups;
 - (void)_zapResultArray;
@@ -19,5 +18,6 @@
 - (void)_addResult:(unsigned int)arg1;
 - (id)_init:(id)arg1 attributes:(id)arg2 index:(unsigned int)arg3 value:(id)arg4;
 - (unsigned int)resultCount;
+- (id)attribute;
 
 @end

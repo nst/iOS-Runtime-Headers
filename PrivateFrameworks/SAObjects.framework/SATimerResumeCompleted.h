@@ -14,9 +14,9 @@
 + (id)resumeCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)resumeCompleted;
 
-- (id)groupIdentifier;
 - (void)setTimer:(id)arg1;
 - (id)timer;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

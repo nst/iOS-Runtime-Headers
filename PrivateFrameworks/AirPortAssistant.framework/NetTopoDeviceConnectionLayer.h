@@ -42,6 +42,7 @@
 @property(readonly) struct CGPath { }* hitTestPath;
 
 
+- (void)layoutSublayers;
 - (id)debugDescription;
 - (void)dealloc;
 - (id)init;
@@ -71,6 +72,5 @@
 - (BOOL)isSelected;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)setNeedsDisplay;
-- (void)layoutSublayers;
 
 @end

@@ -36,14 +36,13 @@
 @property float shadowOffsetY;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)strokeStyle;
 - (void)setStrokeStyle:(id)arg1;
 - (void)setShadowOffsetY:(float)arg1;
 - (void)setShadowOffsetX:(float)arg1;
-- (void)setLineCap:(id)arg1;
 - (void)setGlobalCompositeOperation:(id)arg1;
 - (void)setGlobalAlpha:(float)arg1;
 - (void)setFillStyle:(id)arg1;
@@ -75,7 +74,15 @@
 - (id)makeRadialGradientWithX0:(float)arg1 y0:(float)arg2 r0:(float)arg3 x1:(float)arg4 y1:(float)arg5 r1:(float)arg6;
 - (id)makeLinearGradientWithX0:(float)arg1 y0:(float)arg2 x1:(float)arg3 y1:(float)arg4;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
+- (id)lineJoin;
+- (void)setLineJoin:(id)arg1;
+- (void)beginPath;
+- (float)shadowOffsetY;
+- (float)shadowOffsetX;
+- (void)saveState;
+- (void)setLineCap:(id)arg1;
 - (float)height;
 - (id)shadowColor;
 - (void)setShadowBlur:(float)arg1;
@@ -90,12 +97,5 @@
 - (void)stroke;
 - (void)fill;
 - (void)closePath;
-- (id)attributeKeys;
-- (void)saveState;
-- (id)lineJoin;
-- (void)setLineJoin:(id)arg1;
-- (void)beginPath;
-- (float)shadowOffsetY;
-- (float)shadowOffsetX;
 
 @end

@@ -19,17 +19,17 @@
 @property(readonly) int lastColumn;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)fileName;
+- (int)lastColumn;
+- (int)firstColumn;
 - (id)initWithFileName:(id)arg1 position:(struct __DDExpressionPosition { int x1; int x2; int x3; int x4; })arg2;
 - (int)lastLine;
 - (int)firstLine;
 - (id)initWithFileName:(id)arg1 firstLine:(int)arg2 firstColumn:(int)arg3 lastLine:(int)arg4 lastColumn:(int)arg5;
-- (id)description;
-- (void)dealloc;
 - (struct __DDExpressionPosition { int x1; int x2; int x3; int x4; })position;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)fileName;
-- (int)lastColumn;
-- (int)firstColumn;
 
 @end

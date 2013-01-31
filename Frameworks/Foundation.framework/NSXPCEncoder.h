@@ -23,6 +23,7 @@
 - (id)debugDescription;
 - (void)dealloc;
 - (id)init;
+- (void)encodeObject:(id)arg1;
 - (void)finalize;
 - (void)encodeDouble:(double)arg1 forKey:(id)arg2;
 - (void)encodeConditionalObject:(id)arg1 forKey:(id)arg2;
@@ -33,8 +34,6 @@
 - (void)encodeInt:(int)arg1 forKey:(id)arg2;
 - (void)encodeBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;
-- (void)encodeInt32:(int)arg1 forKey:(id)arg2;
-- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
 - (id)_encodeXPCObject:(id)arg1;
 - (void)_popContainer;
 - (void)encodeInvocation:(id)arg1;
@@ -49,6 +48,7 @@
 - (void)_encodeArrayOfObjects:(id)arg1 forKey:(id)arg2;
 - (void)encodeDataObject:(id)arg1;
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;
-- (void)encodeObject:(id)arg1;
+- (void)encodeInt32:(int)arg1 forKey:(id)arg2;
+- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
 
 @end

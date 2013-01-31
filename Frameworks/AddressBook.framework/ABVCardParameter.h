@@ -13,19 +13,19 @@
 }
 
 
-- (BOOL)isPrimary;
 - (id)name;
 - (id)description;
 - (void)dealloc;
+- (void)setGrouping:(id)arg1;
+- (id)grouping;
 - (void)finalize;
 - (id)value;
 - (void)setValue:(id)arg1;
+- (BOOL)isPrimary;
 - (id)initWithName:(id)arg1;
 - (void)addType:(id)arg1;
 - (void)addTypes:(id)arg1;
 - (void)setIsPrimary:(BOOL)arg1;
 - (id)types;
-- (void)setGrouping:(id)arg1;
-- (id)grouping;
 
 @end

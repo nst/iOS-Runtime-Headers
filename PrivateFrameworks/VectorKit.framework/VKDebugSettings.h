@@ -76,7 +76,6 @@
 
 + (id)sharedSettings;
 
-- (id)init;
 - (void)setUseBuildingShadowTexture:(BOOL)arg1;
 - (BOOL)useBuildingShadowTexture;
 - (void)setEnableLoggingInLockScreen:(BOOL)arg1;
@@ -147,5 +146,6 @@
 - (BOOL)layoutContinuously;
 - (void)setDrawContinuously:(BOOL)arg1;
 - (BOOL)drawContinuously;
+- (id)init;
 
 @end

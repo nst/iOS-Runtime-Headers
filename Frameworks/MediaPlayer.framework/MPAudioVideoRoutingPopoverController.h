@@ -8,11 +8,11 @@
 }
 
 
-- (id)initWithType:(unsigned int)arg1 includeMirroring:(BOOL)arg2;
-- (id)audioDeviceController;
 - (void)dealloc;
 - (id)_tableViewController;
 - (id)initWithContentViewController:(id)arg1;
 - (id)initWithType:(unsigned int)arg1;
+- (id)initWithType:(unsigned int)arg1 includeMirroring:(BOOL)arg2;
+- (id)audioDeviceController;
 
 @end

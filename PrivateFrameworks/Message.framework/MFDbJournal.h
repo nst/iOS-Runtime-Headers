@@ -16,12 +16,12 @@
 
 
 - (void)dealloc;
-- (id)initWithPath:(id)arg1;
-- (void)clear;
-- (BOOL)flush;
 - (BOOL)_processJournalFile:(id)arg1 db:(struct sqlite3 { }*)arg2;
 - (void)_resetBuffer;
 - (BOOL)mergeWithDatabase:(struct sqlite3 { }*)arg1;
 - (BOOL)append:(const char *)arg1;
+- (id)initWithPath:(id)arg1;
+- (void)clear;
+- (BOOL)flush;
 
 @end

@@ -140,6 +140,13 @@
 + (id)sharedTheme;
 + (id)themeForGame:(id)arg1;
 
+- (void)dealloc;
+- (id)init;
+- (id)titleFont;
+- (struct CGSize { float x1; float x2; })formSheetSize;
+- (id)shadowColor;
+- (id)backgroundImage;
+- (id)imageNamed:(id)arg1;
 - (id)backgroundImageTiled;
 - (void)setSharedArtwork:(id)arg1;
 - (id)sharedArtwork;
@@ -222,7 +229,6 @@
 - (id)darkerShadowColor;
 - (id)headerEmbossColor;
 - (id)darkerEmbossColor;
-- (id)darkerInfoTextColor;
 - (id)welcomeBannerTextColor;
 - (void)applyTheme;
 - (id)photoMultiplayerSource;
@@ -257,6 +263,7 @@
 - (id)multiplayerPlaceholder;
 - (id)multiplayerAddPlayer;
 - (id)multiplayerCancelBox;
+- (id)darkerInfoTextColor;
 - (id)multiplayerTitleFontOfSize:(float)arg1;
 - (id)leaderboardCategoryIconSourceSmall;
 - (id)welcomeScreenIcon;
@@ -378,8 +385,8 @@
 - (id)headerSegmentedControlFont;
 - (id)segmentedControlHeaderBackgroundSelected;
 - (id)segmentedControlHeaderBackground;
-- (id)friendPickerSelectedCheckbox;
 - (id)friendPickerUnselectedCheckbox;
+- (id)friendPickerSelectedCheckbox;
 - (id)tableCellBorderFill;
 - (id)tableCellBorderShadowColor;
 - (id)selectedBackgroundImageForOrientation:(int)arg1;
@@ -423,12 +430,5 @@
 - (id)secondaryLabelColor;
 - (id)boldTitleFont;
 - (id)labelColor;
-- (void)dealloc;
-- (id)init;
-- (id)titleFont;
-- (struct CGSize { float x1; float x2; })formSheetSize;
-- (id)shadowColor;
-- (id)backgroundImage;
-- (id)imageNamed:(id)arg1;
 
 @end

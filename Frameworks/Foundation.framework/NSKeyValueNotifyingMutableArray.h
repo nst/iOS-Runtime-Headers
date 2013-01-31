@@ -21,9 +21,9 @@
 - (id)objectsAtIndexes:(id)arg1;
 - (void)removeObjectsAtIndexes:(id)arg1;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
-- (void)replaceObjectsAtIndexes:(id)arg1 withObjects:(id)arg2;
-- (void)insertObjects:(id)arg1 atIndexes:(id)arg2;
 - (void)_proxyNonGCFinalize;
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;
+- (void)replaceObjectsAtIndexes:(id)arg1 withObjects:(id)arg2;
+- (void)insertObjects:(id)arg1 atIndexes:(id)arg2;
 
 @end

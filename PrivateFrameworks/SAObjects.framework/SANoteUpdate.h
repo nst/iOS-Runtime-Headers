@@ -11,17 +11,17 @@
 @property(copy) NSString * contentsToAppend;
 @property(copy) NSURL * identifier;
 
-+ (id)update;
 + (id)updateWithDictionary:(id)arg1 context:(id)arg2;
++ (id)update;
 
-- (id)groupIdentifier;
 - (id)identifier;
-- (void)setIdentifier:(id)arg1;
 - (void)setContentsToAppend:(id)arg1;
 - (id)contentsToAppend;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (void)setIdentifier:(id)arg1;
+- (id)groupIdentifier;
 
 @end

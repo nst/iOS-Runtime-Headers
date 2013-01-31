@@ -20,9 +20,6 @@
 
 + (id)sharedSimpleState;
 
-- (void)reset;
-- (id)init;
-- (id)initWithContext:(id)arg1;
 - (BOOL)enableCullFace;
 - (BOOL)enableDepthTest;
 - (void)pushStateIntoContext:(id)arg1;
@@ -35,7 +32,10 @@
 - (void)setEnableDepthTest:(BOOL)arg1;
 - (void)setEnableCullFace:(BOOL)arg1;
 - (void)setStencilTest:(BOOL)arg1;
+- (void)reset;
+- (id)init;
 - (void)setBlendMode:(int)arg1;
 - (int)blendMode;
+- (id)initWithContext:(id)arg1;
 
 @end

@@ -48,10 +48,6 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfPhotoThumbnailAtIndex:(unsigned int)arg1 cellBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 cellPhotoSize:(struct CGSize { float x1; float x2; })arg3 thumbnailSize:(struct CGSize { float x1; float x2; })arg4 thumbnailOffset:(struct CGPoint { float x1; float x2; })arg5;
 
 - (void)dealloc;
-- (void)setCGImageRef:(struct CGImage { }*)arg1;
-- (void)prepareForReuse;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (struct CGPoint { float x1; float x2; })cellPhotoThumbnailOffset;
 - (struct CGSize { float x1; float x2; })cellPhotoThumbnailSize;
 - (id)badgeImageForCellPhotoAtIndex:(unsigned int)arg1;
@@ -95,5 +91,9 @@
 - (void)setUnreadStartMarkerIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (int)photoSelectionStyle;
 - (void)setPhotoSelectionStyle:(int)arg1;
+- (void)setCGImageRef:(struct CGImage { }*)arg1;
+- (void)prepareForReuse;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end

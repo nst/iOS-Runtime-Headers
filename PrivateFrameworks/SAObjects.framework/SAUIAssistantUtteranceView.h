@@ -13,12 +13,12 @@
 + (id)assistantUtteranceViewWithDictionary:(id)arg1 context:(id)arg2;
 + (id)assistantUtteranceView;
 
-- (id)groupIdentifier;
-- (id)text;
-- (void)setText:(id)arg1;
 - (void)setDialogIdentifier:(id)arg1;
 - (id)dialogIdentifier;
 - (id)deferredKeys;
 - (id)encodedClassName;
+- (id)text;
+- (void)setText:(id)arg1;
+- (id)groupIdentifier;
 
 @end

@@ -6,16 +6,16 @@
 
 @interface ALAssetRepresentation : NSObject  {
     id _internal;
+    BOOL _ignoreRead;
 }
 
 @property(retain) ALAssetRepresentationPrivate * internal;
+@property BOOL ignoreRead;
 
 
-- (void)setInternal:(id)arg1;
-- (id)internal;
 - (id)description;
 - (void)dealloc;
-- (id)metadata;
+- (int)_fileDescriptor;
 - (struct CGImage { }*)fullScreenImage;
 - (unsigned int)getBytes:(char *)arg1 fromOffset:(long long)arg2 length:(unsigned int)arg3 error:(id*)arg4;
 - (struct CGImage { }*)fullResolutionImage;
@@ -25,12 +25,16 @@
 - (float)scale;
 - (int)orientation;
 - (long long)size;
-- (int)_fileDescriptor;
+- (void)setInternal:(id)arg1;
+- (id)internal;
 - (id)filename;
-- (struct CGSize { float x1; float x2; })dimensions;
+- (id)metadata;
+- (BOOL)ignoreRead;
+- (void)setIgnoreRead:(BOOL)arg1;
 - (struct CGImage { }*)CGImageWithOptions:(id)arg1;
 - (struct CGImage { }*)CGImageWithOptions:(id)arg1 format:(int)arg2 bakeInOrientation:(int)arg3;
 - (id)_imageData;
 - (id)initWithManagedAsset:(id)arg1 sidecar:(id)arg2 extension:(id)arg3 library:(id)arg4;
+- (struct CGSize { float x1; float x2; })dimensions;
 
 @end

@@ -17,9 +17,9 @@
 @property(readonly) CoreDAVItem * accessLevel;
 
 
-- (id)accessLevel;
 - (id)summary;
 - (id)href;
 - (id)commonName;
+- (id)accessLevel;
 
 @end

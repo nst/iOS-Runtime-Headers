@@ -11,8 +11,8 @@
 @property(copy) NSArray * authorizedDSIDs;
 
 
+- (void)dealloc;
 - (void)setAuthorizedDSIDs:(id)arg1;
 - (id)authorizedDSIDs;
-- (void)dealloc;
 
 @end

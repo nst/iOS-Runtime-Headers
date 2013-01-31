@@ -37,10 +37,12 @@
 @property unsigned int sessionID;
 
 
+- (id)initWithBaseURL:(id)arg1;
+- (void)dealloc;
+- (void)setDatabaseID:(unsigned int)arg1;
 - (BOOL)isAuthenticationRequired;
 - (unsigned int)basePlaylistContainerID;
 - (void)setBasePlaylistContainerID:(unsigned int)arg1;
-- (void)setDatabaseID:(unsigned int)arg1;
 - (unsigned int)databaseRevision;
 - (void)_notifyServerOfActivity;
 - (void)_sendRequest:(id)arg1 onConnectionStream:(id)arg2 withInternalResponseHandler:(id)arg3;
@@ -51,9 +53,12 @@
 - (void)setDatabaseRevision:(unsigned int)arg1;
 - (id)initWithConfiguration:(id)arg1 connectionType:(int)arg2;
 - (id)initWithBaseURL:(id)arg1 connectionType:(int)arg2;
-- (void)setPassword:(id)arg1;
-- (id)username;
-- (void)setUsername:(id)arg1;
+- (void)setSessionID:(unsigned int)arg1;
+- (unsigned int)sessionID;
+- (int)connectionType;
+- (void)disconnect;
+- (id)password;
+- (id)baseURL;
 - (void)checkForDatabaseUpdatesWithCompletionHandler:(id)arg1;
 - (id)fairPlayInfo;
 - (void)sendRequest:(id)arg1 withResponseHandler:(id)arg2;
@@ -64,13 +69,8 @@
 - (void)setHomeSharingGroupID:(id)arg1;
 - (id)homeSharingGroupID;
 - (void)connectWithCompletionHandler:(id)arg1;
-- (void)dealloc;
-- (void)disconnect;
-- (id)password;
-- (id)baseURL;
-- (id)initWithBaseURL:(id)arg1;
-- (void)setSessionID:(unsigned int)arg1;
-- (unsigned int)sessionID;
-- (int)connectionType;
+- (void)setPassword:(id)arg1;
+- (id)username;
+- (void)setUsername:(id)arg1;
 
 @end

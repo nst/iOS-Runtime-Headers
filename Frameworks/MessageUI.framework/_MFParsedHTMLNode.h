@@ -24,6 +24,7 @@
 @property unsigned int endLocation;
 
 
+- (void)appendChild:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)parentNode;
@@ -45,6 +46,5 @@
 - (id)copyConsumableNodesAndAppendInnerTextToStringAccumulator:(id)arg1;
 - (void)collectDescendanceIntoArray:(id)arg1;
 - (id)htmlString;
-- (void)appendChild:(id)arg1;
 
 @end

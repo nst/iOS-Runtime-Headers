@@ -14,13 +14,13 @@
 + (id)socialProfileWithDictionary:(id)arg1 context:(id)arg2;
 + (id)socialProfile;
 
-- (id)groupIdentifier;
+- (id)encodedClassName;
 - (void)setUserName:(id)arg1;
-- (void)setUrl:(id)arg1;
-- (id)url;
 - (id)serviceType;
 - (void)setServiceType:(id)arg1;
 - (id)userName;
-- (id)encodedClassName;
+- (void)setUrl:(id)arg1;
+- (id)url;
+- (id)groupIdentifier;
 
 @end

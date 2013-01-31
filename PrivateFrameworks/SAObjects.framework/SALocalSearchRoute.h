@@ -12,9 +12,9 @@
 + (id)route;
 + (id)routeWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
 - (void)setRouteAsZilchBinary:(id)arg1;
 - (id)routeAsZilchBinary;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

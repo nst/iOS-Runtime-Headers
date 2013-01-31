@@ -9,7 +9,6 @@
 }
 
 
-- (bool)isHorizontal;
 - (int)overlap;
 - (int)gapWidth;
 - (int)defaultLabelPosition;
@@ -17,6 +16,7 @@
 - (void)setGapWidth:(int)arg1;
 - (void)setOverlap:(int)arg1;
 - (id)initWithChart:(id)arg1;
+- (bool)isHorizontal;
 - (bool)isColumn;
 
 @end

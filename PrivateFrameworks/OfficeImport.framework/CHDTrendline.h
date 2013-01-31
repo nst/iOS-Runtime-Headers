@@ -25,9 +25,6 @@
 - (int)type;
 - (void)dealloc;
 - (id)init;
-- (id)label;
-- (void)setLabel:(id)arg1;
-- (void)setType:(int)arg1;
 - (id)defaultNameWithSeriesName:(id)arg1;
 - (int)movingAveragePeriod;
 - (int)polynomialOrder;
@@ -45,5 +42,8 @@
 - (void)setDisplayEquation:(bool)arg1;
 - (void)setGraphicProperties:(id)arg1;
 - (id)graphicProperties;
+- (id)label;
+- (void)setLabel:(id)arg1;
+- (void)setType:(int)arg1;
 
 @end

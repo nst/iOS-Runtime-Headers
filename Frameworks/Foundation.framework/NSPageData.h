@@ -18,8 +18,7 @@
 - (void)dealloc;
 - (id)init;
 - (unsigned int)length;
-- (unsigned int)writeFile:(id)arg1;
-- (id)initWithContentsOfMappedFile:(id)arg1;
+- (id)initWithDataNoCopy:(id)arg1;
 - (id)initWithBytes:(const void*)arg1 length:(unsigned int)arg2;
 - (id)initWithData:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
@@ -30,7 +29,8 @@
 - (id)_mappedFile;
 - (id)initWithContentsOfMappedFile:(id)arg1 withFileAttributes:(id)arg2;
 - (void)_setOriginalFileInfoFromFileAttributes:(id)arg1;
-- (id)initWithDataNoCopy:(id)arg1;
+- (unsigned int)writeFile:(id)arg1;
 - (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2;
+- (id)initWithContentsOfMappedFile:(id)arg1;
 
 @end

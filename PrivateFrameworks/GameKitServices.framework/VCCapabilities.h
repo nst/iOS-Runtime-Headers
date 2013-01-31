@@ -41,8 +41,6 @@
 
 - (id)description;
 - (id)init;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)setIsRelayForced:(BOOL)arg1;
 - (void)setIsAudioPausedToStart:(BOOL)arg1;
 - (void)setPreferredVideoCodec:(unsigned int)arg1;
@@ -76,5 +74,7 @@
 - (BOOL)requiresWifi;
 - (id)initWithEncodedDictionary:(id)arg1;
 - (id)encodeToNewNSDictionary;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

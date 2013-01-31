@@ -33,6 +33,7 @@
 @property(copy) id progressBlock;
 @property void* internalSearchAddressBook;
 
++ (id)personPredicateWithValue:(id)arg1 comparison:(long)arg2 forProperty:(int)arg3 addressBook:(void*)arg4;
 + (id)personPredicateWithGroup:(void*)arg1 addressBook:(void*)arg2;
 + (id)personPredicateWithAnyValueForProperty:(int)arg1 addressBook:(void*)arg2;
 + (id)personPredicateWithNameOnly:(id)arg1 inAccount:(id)arg2 addressBook:(void*)arg3;
@@ -45,7 +46,6 @@
 + (id)personPredicateWithName:(id)arg1 addressBook:(void*)arg2;
 + (id)personPredicateWithNameLike:(id)arg1 addressBook:(void*)arg2;
 + (id)personPredicateWithPhoneLike:(id)arg1 countryHint:(id)arg2 addressBook:(void*)arg3;
-+ (id)personPredicateWithValue:(id)arg1 comparison:(long)arg2 forProperty:(int)arg3 addressBook:(void*)arg4;
 
 - (void)main;
 - (void)setDelegate:(id)arg1;
@@ -53,11 +53,13 @@
 - (void)setPredicate:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
-- (id)predicate;
+- (void*)addressBook;
 - (void)setContext:(void*)arg1;
 - (void*)context;
-- (void*)addressBook;
 - (BOOL)isConcurrent;
+- (void)setSortOrdering:(unsigned int)arg1;
+- (void)setAddressBook:(void*)arg1;
+- (id)predicate;
 - (void)setPrefetchProperties:(id)arg1;
 - (id)prefetchProperties;
 - (void)setInternalSearchAddressBook:(void*)arg1;
@@ -68,7 +70,5 @@
 - (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
 - (BOOL)predicateShouldContinue:(id)arg1;
 - (void)setProgressBlock:(id)arg1;
-- (void)setSortOrdering:(unsigned int)arg1;
-- (void)setAddressBook:(void*)arg1;
 
 @end

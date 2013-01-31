@@ -32,8 +32,6 @@
 }
 
 
-- (id).cxx_construct;
-- (void)dealloc;
 - (void)addCachedStyle:(struct __CFString { }*)arg1;
 - (struct __CFString { }*)makeInlineStyle:(struct __CFString { }*)arg1;
 - (struct __CFString { }*)writeTabsJS;
@@ -52,6 +50,8 @@
 - (BOOL)finishMainHtml;
 - (void)addedDrawableWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)drawablesNeedCssZOrdering;
+- (id).cxx_construct;
+- (void)dealloc;
 - (id)initWithState:(id)arg1;
 
 @end

@@ -39,6 +39,11 @@
 @property(retain) NSOrderedSet * visibleItems;
 
 
+- (void)setSortDescriptors:(id)arg1;
+- (id)sortDescriptors;
+- (void)dealloc;
+- (void)setItems:(id)arg1;
+- (id)items;
 - (void)setGameDetailHeaderSection:(id)arg1;
 - (id)gameDetailHeaderSection;
 - (id)scoreForLocalPlayer;
@@ -78,10 +83,5 @@
 - (int)timeScope;
 - (void)setGame:(id)arg1;
 - (id)game;
-- (void)setSortDescriptors:(id)arg1;
-- (id)sortDescriptors;
-- (void)dealloc;
-- (void)setItems:(id)arg1;
-- (id)items;
 
 @end

@@ -6,11 +6,11 @@
 }
 
 
-- (BOOL)mediaKindIsSupported:(unsigned int)arg1;
 - (int)currentTrackIsDownloading;
 - (long long)currentTrackStoreSagaID;
 - (id)currentTrackArtworkCacheID;
 - (id)currentTrackFilePath;
 - (long long)currentTrackPersistentID;
+- (BOOL)mediaKindIsSupported:(unsigned int)arg1;
 
 @end

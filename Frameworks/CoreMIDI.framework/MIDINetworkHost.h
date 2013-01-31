@@ -19,7 +19,6 @@
 + (id)hostWithName:(id)arg1 address:(id)arg2 port:(unsigned int)arg3;
 + (id)hostWithName:(id)arg1 netServiceName:(id)arg2 netServiceDomain:(id)arg3;
 
-- (id)address;
 - (void)setName:(id)arg1;
 - (id)name;
 - (id)description;
@@ -28,6 +27,7 @@
 - (unsigned int)port;
 - (id)displayName;
 - (id)host;
+- (id)address;
 - (id)addressAsText;
 - (BOOL)hasSameAddressAs:(id)arg1;
 - (id)netServiceDomain;

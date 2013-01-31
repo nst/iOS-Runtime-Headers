@@ -14,25 +14,21 @@
 @property(retain) SADistance * distance;
 @property(copy) NSNumber * distanceInMiles;
 @property(copy) NSString * label;
+@property(copy) NSNumber * localSearchProviderId;
 @property(retain) SALocation * location;
 @property(copy) NSNumber * placeId;
 
 + (id)mapItemWithDictionary:(id)arg1 context:(id)arg2;
 + (id)mapItem;
 
-- (id)groupIdentifier;
-- (id)location;
-- (id)label;
-- (void)setDetail:(id)arg1;
-- (void)setLabel:(id)arg1;
 - (id)detail;
 - (void)setLocation:(id)arg1;
 - (void)setAttributions:(id)arg1;
 - (id)attributions;
-- (id)distance;
-- (void)setDistance:(id)arg1;
 - (void)setPlaceId:(id)arg1;
 - (id)placeId;
+- (void)setLocalSearchProviderId:(id)arg1;
+- (id)localSearchProviderId;
 - (void)setDistanceInMiles:(id)arg1;
 - (id)distanceInMiles;
 - (void)setDirectionRole:(id)arg1;
@@ -41,5 +37,12 @@
 - (id)detailType;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (id)distance;
+- (void)setDistance:(id)arg1;
+- (id)location;
+- (id)label;
+- (void)setDetail:(id)arg1;
+- (void)setLabel:(id)arg1;
+- (id)groupIdentifier;
 
 @end

@@ -11,9 +11,9 @@
 }
 
 
+- (id)artworkForShieldIdentifier:(id)arg1 textLength:(unsigned int)arg2 contentScale:(float)arg3 extraScale:(float)arg4 mode:(int)arg5;
+- (id)initWithShieldPack:(id)arg1;
 - (void)dealloc;
 - (void)purge;
-- (id)artworkForShieldType:(int)arg1 textLength:(unsigned int)arg2 contentScale:(float)arg3 extraScale:(float)arg4 mode:(int)arg5;
-- (id)initWithShieldPack:(id)arg1;
 
 @end

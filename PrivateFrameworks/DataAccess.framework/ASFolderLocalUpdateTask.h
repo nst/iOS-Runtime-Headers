@@ -22,7 +22,6 @@
 
 + (id)taskWithFolder:(id)arg1 previousSyncKey:(id)arg2 completionBlock:(id)arg3;
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
 - (void)_appendRequestBodyFolderDataToWBXMLData:(id)arg1;
 - (id)initWithFolder:(id)arg1 previousSyncKey:(id)arg2 completionBlock:(id)arg3;
@@ -30,5 +29,6 @@
 - (BOOL)getTopLevelToken:(char *)arg1 outStatusCodePage:(char *)arg2 outStatusToken:(char *)arg3;
 - (id)requestBody;
 - (int)commandCode;
+- (void)finishWithError:(id)arg1;
 
 @end

@@ -29,6 +29,10 @@
 @property int calloutType;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)initWithParagraph:(id)arg1;
+- (id)paragraph;
 - (id)nextInColumn;
 - (void)setFBottom:(float)arg1;
 - (float)fBottom;
@@ -70,11 +74,7 @@
 - (int)inOrder;
 - (int)outOrder;
 - (float)area;
-- (id)description;
-- (void)dealloc;
 - (int)rightOrder;
 - (int)leftOrder;
-- (id)initWithParagraph:(id)arg1;
-- (id)paragraph;
 
 @end

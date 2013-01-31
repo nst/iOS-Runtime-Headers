@@ -27,6 +27,7 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)cancel:(id)arg1;
 - (void)done:(id)arg1;
 - (id)calendar;
 - (void)setCalendar:(id)arg1;
@@ -63,9 +64,8 @@
 - (void)setEventStore:(id)arg1;
 - (void)_deleteClicked:(id)arg1;
 - (void)_localeChanged;
+- (id)eventStore;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (void)cancel:(id)arg1;
-- (id)eventStore;
 
 @end

@@ -21,15 +21,6 @@
 + (id)athleteWithDictionary:(id)arg1 context:(id)arg2;
 + (id)athlete;
 
-- (id)groupIdentifier;
-- (void)setLastName:(id)arg1;
-- (id)lastName;
-- (void)setFirstName:(id)arg1;
-- (id)firstName;
-- (id)position;
-- (void)setPosition:(id)arg1;
-- (void)setGender:(id)arg1;
-- (id)gender;
 - (void)setStatistics:(id)arg1;
 - (id)statistics;
 - (void)setPreviousTeams:(id)arg1;
@@ -44,5 +35,14 @@
 - (id)activeTeam;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (id)position;
+- (void)setPosition:(id)arg1;
+- (void)setGender:(id)arg1;
+- (id)gender;
+- (id)groupIdentifier;
+- (void)setLastName:(id)arg1;
+- (id)lastName;
+- (void)setFirstName:(id)arg1;
+- (id)firstName;
 
 @end

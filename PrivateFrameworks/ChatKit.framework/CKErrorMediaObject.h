@@ -7,10 +7,10 @@
 
 + (BOOL)supportsMIMEType:(id)arg1;
 
-- (id)icon;
-- (id)subtitle;
-- (id)title;
 - (BOOL)shouldBeQuickLooked;
 - (BOOL)shouldShowDisclosure;
+- (id)subtitle;
+- (id)title;
+- (id)icon;
 
 @end

@@ -22,6 +22,7 @@
 @property(readonly) float speed;
 
 
+- (double)beginTime;
 - (void)invalidate;
 - (void)dealloc;
 - (id)init;
@@ -31,7 +32,6 @@
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)layer;
 - (double)duration;
-- (double)beginTime;
 - (void)removeAnimationFromLayer:(id)arg1 forKey:(id)arg2;
 
 @end

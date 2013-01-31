@@ -30,14 +30,16 @@
 + (id)rightBorderOverlayImageOfSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)leftRightBorderOverlayImageOfSize:(struct CGSize { float x1; float x2; })arg1;
 
+- (void)dealloc;
+- (id)init;
+- (void)setNeedsReload;
+- (void*)displayedPerson;
+- (void)setDisplayedPerson:(void*)arg1;
+- (void)_updateImages;
 - (id)overlayImage;
 - (id)maskImage;
 - (void)setOverlayImage:(id)arg1;
 - (void)setMaskImage:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)_updateImages;
-- (void)setNeedsReload;
 - (id)_placeholderCompanyImage;
 - (id)_placeholderPersonImage;
 - (BOOL)_cardPlaceholderImageShouldApplyMaskAndOverlay;
@@ -50,7 +52,5 @@
 - (BOOL)shouldPickBestImage;
 - (BOOL)hasImageToDisplay;
 - (id)personImageView;
-- (void*)displayedPerson;
-- (void)setDisplayedPerson:(void*)arg1;
 
 @end

@@ -12,9 +12,9 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)initWithX:(float)arg1 y:(float)arg2 z:(float)arg3;
 - (float)z;
 - (float)y;
 - (float)x;
-- (id)initWithX:(float)arg1 y:(float)arg2 z:(float)arg3;
 
 @end

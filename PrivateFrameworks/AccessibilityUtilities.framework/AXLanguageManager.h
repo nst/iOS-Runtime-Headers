@@ -19,12 +19,16 @@
 @property AXDialectMap * dialectForSystemLanguage;
 @property AXDialectMap * dialectForCurrentLocale;
 
++ (id)sharedInstance;
 + (id)stringByReplacingFatWidthCharactersWithBasicCharacters:(id)arg1;
 + (id)stringByReplacingEmojiCharactersWithEmojiDescriptions:(id)arg1;
 + (id)commonPunctuationCharacters;
 + (id)nonlocalizedNameForLanguage:(id)arg1;
-+ (id)sharedInstance;
 
+- (id)debugDescription;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (id)descriptionOfWord:(id)arg1 forLanguage:(id)arg2;
 - (BOOL)isCharacterCommon:(unsigned short)arg1;
 - (id)ambiguousDialectsFromUserKeyboardPreferences;
@@ -46,9 +50,5 @@
 - (void)setUserLocale:(id)arg1;
 - (id)userLocale;
 - (id)basicDescription;
-- (id)debugDescription;
-- (id)description;
-- (void)dealloc;
-- (id)init;
 
 @end

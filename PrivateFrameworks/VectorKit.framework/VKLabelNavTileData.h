@@ -21,9 +21,6 @@
 @property(retain) VKLabelTile * tile;
 
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)dealloc;
 - (void)appendNavJunctionsInWorldRect:(struct { double x1; double x2; double x3; double x4; })arg1 junctions:(id)arg2;
 - (id)findTileEdgeJunctionAtCoordinate:(struct { float x1; float x2; })arg1;
 - (id)junctionAtCoordinate:(struct { float x1; float x2; })arg1;
@@ -32,6 +29,9 @@
 - (void)_findTileEdgeJunctions;
 - (void)addJunction:(id)arg1;
 - (id)initWithTile:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)dealloc;
 - (void)setTile:(id)arg1;
 - (id)tile;
 

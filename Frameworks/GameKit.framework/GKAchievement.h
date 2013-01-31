@@ -23,32 +23,16 @@
 @property GKGame * game;
 @property(retain) GKAchievementInternal * internal;
 
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
 + (void)resetAchievementsWithCompletionHandler:(id)arg1;
 + (void)loadAchievementWithID:(id)arg1 forGame:(id)arg2 players:(id)arg3 complete:(id)arg4;
 + (void)loadAchievementsWithCompletionHandler:(id)arg1;
 + (void)reportAchievements:(id)arg1 withCompletionHandler:(id)arg2;
 + (id)achievementsForDescriptions:(id)arg1 achievements:(id)arg2 showHidden:(BOOL)arg3 game:(id)arg4 player:(id)arg5;
 + (void)loadAchievementsForGame:(id)arg1 player:(id)arg2 withCompletionHandler:(id)arg3;
-+ (BOOL)instancesRespondToSelector:(SEL)arg1;
 
-- (void)_gkSetSharingInfo:(id)arg1;
-- (BOOL)canBeShared;
-- (void)selectChallengeablePlayerIDs:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)issueChallengeToPlayers:(id)arg1 message:(id)arg2;
-- (void)issueChallengeForGame:(id)arg1 toPlayers:(id)arg2 message:(id)arg3;
-- (void)reportAchievementWithCompletionHandler:(id)arg1;
-- (id)initWithDescription:(id)arg1;
-- (BOOL)showsCompletionBanner;
-- (void)setShowsCompletionBanner:(BOOL)arg1;
-- (id)initWithInternalRepresentation:(id)arg1;
-- (id)_gkSharingInfo;
-- (void)setInternal:(id)arg1;
-- (BOOL)isCompleted;
-- (id)internal;
-- (void)setPlayer:(id)arg1;
-- (id)player;
-- (void)setGame:(id)arg1;
-- (id)game;
+- (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)description;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (unsigned int)hash;
@@ -67,7 +51,23 @@
 - (BOOL)isHidden;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)valueForUndefinedKey:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (void)_gkSetSharingInfo:(id)arg1;
+- (BOOL)canBeShared;
+- (void)selectChallengeablePlayerIDs:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)issueChallengeToPlayers:(id)arg1 message:(id)arg2;
+- (void)issueChallengeForGame:(id)arg1 toPlayers:(id)arg2 message:(id)arg3;
+- (void)reportAchievementWithCompletionHandler:(id)arg1;
+- (id)initWithDescription:(id)arg1;
+- (BOOL)showsCompletionBanner;
+- (void)setShowsCompletionBanner:(BOOL)arg1;
+- (id)_gkSharingInfo;
+- (id)initWithInternalRepresentation:(id)arg1;
+- (void)setInternal:(id)arg1;
+- (BOOL)isCompleted;
+- (id)internal;
+- (void)setPlayer:(id)arg1;
+- (id)player;
+- (void)setGame:(id)arg1;
+- (id)game;
 
 @end

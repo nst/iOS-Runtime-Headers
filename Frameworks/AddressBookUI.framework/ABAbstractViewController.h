@@ -13,7 +13,9 @@
 @property(retain) <ABStyleProvider> * styleProvider;
 
 
+- (int)behavior;
 - (void)dealloc;
+- (void)setModel:(id)arg1;
 - (void)updateNavigationButtons;
 - (id)model;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
@@ -25,12 +27,10 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (struct CGSize { float x1; float x2; })contentSize;
-- (void)setModel:(id)arg1;
-- (int)behavior;
+- (void)setAddressBook:(void*)arg1;
 - (id)initWithModel:(id)arg1;
 - (id)peoplePickerNavigationController;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (void)setAddressBook:(void*)arg1;
 
 @end

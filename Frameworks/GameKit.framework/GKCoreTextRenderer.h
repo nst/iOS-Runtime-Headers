@@ -55,6 +55,29 @@
 @property(retain) NSObject<GKTextLayout> * textLayout;
 
 
+- (void)drawInContext:(struct CGContext { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setNumberOfLines:(int)arg1;
+- (int)numberOfLines;
+- (float)leading;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 limitedToNumberOfLines:(int)arg2;
+- (id)shadowColor;
+- (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setShadowColor:(id)arg1;
+- (void)setTextColor:(id)arg1;
+- (id)textColor;
+- (struct CGSize { float x1; float x2; })shadowOffset;
+- (BOOL)adjustsFontSizeToFitWidth;
+- (id)attributedText;
+- (void)setBaselineAdjustment:(int)arg1;
+- (int)baselineAdjustment;
+- (void)setMinimumFontSize:(float)arg1;
+- (float)minimumFontSize;
+- (void)setAttributedText:(id)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (void)setHasCalculatedBounds:(BOOL)arg1;
 - (BOOL)hasCalculatedBounds;
 - (void)setTruncationSymbol:(id)arg1;
@@ -82,28 +105,5 @@
 - (void)setTextLayout:(id)arg1;
 - (void)setShouldDrawEmoji:(BOOL)arg1;
 - (void)setLeading:(float)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)setNumberOfLines:(int)arg1;
-- (int)numberOfLines;
-- (float)leading;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 limitedToNumberOfLines:(int)arg2;
-- (id)shadowColor;
-- (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
-- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
-- (void)setShadowColor:(id)arg1;
-- (void)setTextColor:(id)arg1;
-- (id)textColor;
-- (struct CGSize { float x1; float x2; })shadowOffset;
-- (BOOL)adjustsFontSizeToFitWidth;
-- (id)attributedText;
-- (void)setBaselineAdjustment:(int)arg1;
-- (int)baselineAdjustment;
-- (void)setMinimumFontSize:(float)arg1;
-- (float)minimumFontSize;
-- (void)setAttributedText:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (void)drawInContext:(struct CGContext { }*)arg1;
 
 @end

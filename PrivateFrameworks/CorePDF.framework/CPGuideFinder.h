@@ -24,6 +24,7 @@
 + (void)reclusterPreservingAlignment:(id)arg1;
 + (BOOL)gutterSeparates:(id)arg1 from:(id)arg2;
 
+- (void)dealloc;
 - (float)medianFontSizeOfLastCharacter;
 - (float)medianFontSizeOfFirstCharacter;
 - (void)splitTextLinesBetweenBorderWords;
@@ -48,7 +49,6 @@
 - (id)rightGuides;
 - (id)leftGuides;
 - (void)dispose;
-- (void)dealloc;
 - (void)finalize;
 
 @end

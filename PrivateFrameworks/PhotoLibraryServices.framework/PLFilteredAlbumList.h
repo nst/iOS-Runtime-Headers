@@ -29,15 +29,12 @@
 
 + (id)filteredAlbumList:(id)arg1 filter:(int)arg2;
 
+- (int)filter;
 - (id)identifier;
 - (void)setPredicate:(id)arg1;
 - (id)managedObjectContext;
 - (id)description;
 - (void)dealloc;
-- (id)predicate;
-- (id)_typeDescription;
-- (void)setFilter:(int)arg1;
-- (int)filter;
 - (void)replaceFilteredAlbumsAtIndexes:(id)arg1 withFilteredValues:(id)arg2;
 - (void)replaceObjectInFilteredAlbumsAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)removeFilteredAlbumsAtIndexes:(id)arg1;
@@ -74,5 +71,8 @@
 - (id)_prettyDescription;
 - (id)photoLibrary;
 - (id)albums;
+- (id)_typeDescription;
+- (void)setFilter:(int)arg1;
+- (id)predicate;
 
 @end

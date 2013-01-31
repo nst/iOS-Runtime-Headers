@@ -31,6 +31,7 @@
 
 + (void)initialize;
 
+- (void)setReadOnly:(BOOL)arg1;
 - (id)entity;
 - (void)setIndexed:(BOOL)arg1;
 - (void)setOptional:(BOOL)arg1;
@@ -43,6 +44,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)setUserInfo:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setStoredInTruth:(BOOL)arg1;
 - (BOOL)isStoredInTruth;
 - (void)setStoredInTruthFile:(BOOL)arg1;
@@ -93,9 +97,5 @@
 - (id)renamingIdentifier;
 - (long)_entitysReferenceID;
 - (BOOL)_isRelationship;
-- (void)setUserInfo:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setReadOnly:(BOOL)arg1;
 
 @end

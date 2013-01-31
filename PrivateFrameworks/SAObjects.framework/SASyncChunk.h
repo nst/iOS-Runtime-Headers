@@ -19,9 +19,6 @@
 + (id)chunkWithDictionary:(id)arg1 context:(id)arg2;
 + (id)chunk;
 
-- (id)groupIdentifier;
-- (void)setKey:(id)arg1;
-- (id)key;
 - (id)validity;
 - (void)setToRemove:(id)arg1;
 - (id)toRemove;
@@ -33,5 +30,8 @@
 - (id)postGen;
 - (void)setValidity:(id)arg1;
 - (id)encodedClassName;
+- (void)setKey:(id)arg1;
+- (id)key;
+- (id)groupIdentifier;
 
 @end

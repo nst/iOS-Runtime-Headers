@@ -81,6 +81,16 @@
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (void)dealloc;
+- (void*)addressBook;
+- (void*)displayedPerson;
+- (void)setAllowsAddingToAddressBook:(BOOL)arg1;
+- (void)setAllowsActions:(BOOL)arg1;
+- (void)setDisplayedPerson:(void*)arg1;
+- (void)setDisplayedProperties:(id)arg1;
+- (void)peoplePickerNavigationController:(id)arg1 insertEditorDidConfirm:(BOOL)arg2 forPerson:(void*)arg3;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldShowInsertEditorForPerson:(void*)arg2 insertProperty:(int*)arg3 copyInsertValue:(id*)arg4 copyInsertLabel:(id*)arg5;
+- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
+- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
@@ -103,11 +113,7 @@
 - (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
 - (void)reloadData;
 - (void)setDataSource:(id)arg1;
-- (void)peoplePickerNavigationController:(id)arg1 insertEditorDidConfirm:(BOOL)arg2 forPerson:(void*)arg3;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldShowInsertEditorForPerson:(void*)arg2 insertProperty:(int*)arg3 copyInsertValue:(id*)arg4 copyInsertLabel:(id*)arg5;
-- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
-- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (void*)addressBook;
+- (void)setAddressBook:(void*)arg1;
 - (void)setDisablePopoverUpdates:(BOOL)arg1;
 - (BOOL)disablePopoverUpdates;
 - (id)activeDialog;
@@ -272,11 +278,5 @@
 - (void)updateRecord;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (void*)displayedPerson;
-- (void)setAllowsAddingToAddressBook:(BOOL)arg1;
-- (void)setAllowsActions:(BOOL)arg1;
-- (void)setDisplayedPerson:(void*)arg1;
-- (void)setDisplayedProperties:(id)arg1;
-- (void)setAddressBook:(void*)arg1;
 
 @end

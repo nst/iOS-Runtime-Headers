@@ -14,24 +14,24 @@
 @property float level;
 @property(readonly) BOOL valid;
 
-+ (id)localContextWithOptions:(id)arg1;
-+ (id)remoteContextWithOptions:(id)arg1;
-+ (void)setClientPort:(unsigned int)arg1;
 + (id)currentContext;
 + (id)remoteContext;
 + (id)localContext;
 + (id)objectForSlot:(unsigned int)arg1;
++ (id)localContextWithOptions:(id)arg1;
++ (id)remoteContextWithOptions:(id)arg1;
++ (void)setClientPort:(unsigned int)arg1;
 + (id)allContexts;
 
 - (void)invalidate;
+- (void)setObject:(id)arg1 forSlot:(unsigned int)arg2;
+- (unsigned int)createSlot;
+- (void)deleteSlot:(unsigned int)arg1;
 - (unsigned int)createFencePort;
 - (void)setFence:(unsigned int)arg1 count:(unsigned int)arg2;
 - (void)setFencePort:(unsigned int)arg1;
 - (void)setFencePort:(unsigned int)arg1 commitHandler:(id)arg2;
 - (void)orderAbove:(unsigned int)arg1;
-- (void)setObject:(id)arg1 forSlot:(unsigned int)arg2;
-- (unsigned int)createSlot;
-- (void)deleteSlot:(unsigned int)arg1;
 - (void)orderBelow:(unsigned int)arg1;
 
 @end

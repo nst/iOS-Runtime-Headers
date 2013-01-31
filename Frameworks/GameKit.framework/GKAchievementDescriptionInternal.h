@@ -28,16 +28,6 @@
 
 + (id)codedPropertyKeys;
 
-- (void)setReplayable:(BOOL)arg1;
-- (BOOL)isReplayable;
-- (void)setMaximumPoints:(unsigned int)arg1;
-- (void)setUnachievedDescription:(id)arg1;
-- (void)setAchievedDescription:(id)arg1;
-- (void)setGroupIdentifier:(id)arg1;
-- (id)groupIdentifier;
-- (id)unachievedDescription;
-- (id)achievedDescription;
-- (unsigned int)maximumPoints;
 - (id)identifier;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -49,5 +39,15 @@
 - (void)setTitle:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (BOOL)isHidden;
+- (void)setReplayable:(BOOL)arg1;
+- (BOOL)isReplayable;
+- (void)setMaximumPoints:(unsigned int)arg1;
+- (void)setUnachievedDescription:(id)arg1;
+- (void)setAchievedDescription:(id)arg1;
+- (void)setGroupIdentifier:(id)arg1;
+- (id)groupIdentifier;
+- (id)unachievedDescription;
+- (id)achievedDescription;
+- (unsigned int)maximumPoints;
 
 @end

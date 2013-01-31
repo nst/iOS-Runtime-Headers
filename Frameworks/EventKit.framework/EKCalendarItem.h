@@ -28,10 +28,15 @@
 @property(copy) NSArray * recurrenceRules;
 
 
+- (void)setLocation:(id)arg1;
+- (id)lastModifiedDate;
 - (id)action;
 - (id)URL;
 - (id)description;
-- (id)UUID;
+- (void)setCreationDate:(id)arg1;
+- (id)creationDate;
+- (BOOL)isFloating;
+- (id)attachments;
 - (void)setPriority:(int)arg1;
 - (int)priority;
 - (void)setURL:(id)arg1;
@@ -44,12 +49,6 @@
 - (BOOL)isEditable;
 - (void)setTimeZone:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setLocation:(id)arg1;
-- (id)lastModifiedDate;
-- (id)attachments;
-- (void)setCreationDate:(id)arg1;
-- (id)creationDate;
-- (BOOL)isFloating;
 - (void)setSharedItemModifiedTimeZone:(id)arg1;
 - (id)sharedItemModifiedTimeZone;
 - (void)setSharedItemModifiedDate:(id)arg1;
@@ -133,5 +132,6 @@
 - (void)updatePersistentObject;
 - (BOOL)validate:(id*)arg1;
 - (BOOL)isAllDay;
+- (id)UUID;
 
 @end

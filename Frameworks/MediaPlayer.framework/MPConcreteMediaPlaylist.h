@@ -12,18 +12,6 @@
 }
 
 
-- (id)representativeItem;
-- (void)endGeneratingGeniusClusterItems;
-- (id)geniusClusterItemsWithCount:(unsigned int)arg1 error:(id*)arg2;
-- (BOOL)beginGeneratingGeniusClusterItemsWithSeedItems:(id)arg1 error:(id*)arg2;
-- (void)populateWithSeedItem:(id)arg1 completionBlock:(id)arg2;
-- (void)moveItemFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2 completionBlock:(id)arg3;
-- (void)removeItems:(id)arg1 atFilteredIndexes:(id)arg2 completionBlock:(id)arg3;
-- (void)addItems:(id)arg1 completionBlock:(id)arg2;
-- (void)addItem:(id)arg1 completionBlock:(id)arg2;
-- (void)_updateLibraryForPlaylistEdit:(id)arg1;
-- (void)populateWithSeedItem:(id)arg1 queue:(id)arg2 completionBlock:(id)arg3;
-- (id)initWithProperties:(id)arg1 itemsQuery:(id)arg2;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -35,6 +23,18 @@
 - (id)items;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)endGeneratingGeniusClusterItems;
+- (id)geniusClusterItemsWithCount:(unsigned int)arg1 error:(id*)arg2;
+- (BOOL)beginGeneratingGeniusClusterItemsWithSeedItems:(id)arg1 error:(id*)arg2;
+- (void)populateWithSeedItem:(id)arg1 completionBlock:(id)arg2;
+- (void)moveItemFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2 completionBlock:(id)arg3;
+- (void)removeItems:(id)arg1 atFilteredIndexes:(id)arg2 completionBlock:(id)arg3;
+- (void)addItems:(id)arg1 completionBlock:(id)arg2;
+- (void)addItem:(id)arg1 completionBlock:(id)arg2;
+- (void)_updateLibraryForPlaylistEdit:(id)arg1;
+- (void)populateWithSeedItem:(id)arg1 queue:(id)arg2 completionBlock:(id)arg3;
+- (id)initWithProperties:(id)arg1 itemsQuery:(id)arg2;
+- (id)representativeItem;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 - (void)removeAllItems;
 

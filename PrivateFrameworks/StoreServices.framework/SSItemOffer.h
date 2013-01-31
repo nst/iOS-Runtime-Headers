@@ -31,8 +31,6 @@
 
 + (id)_preferredOfferIdentifiers;
 
-- (void)setPriceDisplay:(id)arg1;
-- (id)priceDisplay;
 - (BOOL)isOneTapOffer;
 - (id)actionDisplayName;
 - (BOOL)shouldShowPlusIcon;
@@ -41,14 +39,12 @@
 - (id)offerIdentifier;
 - (id)playableMedia;
 - (id)allowedToneStyles;
-- (id)buyParameters;
 - (id)documentUTI;
 - (id)offerMedia;
 - (id)documentRequiredHandlers;
 - (id)documentCannotOpenDialog;
 - (void)setOneTapOffer:(BOOL)arg1;
 - (void)setActionDisplayName:(id)arg1;
-- (void)setBuyParameters:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -62,7 +58,11 @@
 - (void)_setOfferItem:(id)arg1;
 - (BOOL)isPreorder;
 - (id)networkConstraints;
-- (id)valueForProperty:(id)arg1;
 - (id)actionType;
+- (id)valueForProperty:(id)arg1;
+- (void)setBuyParameters:(id)arg1;
+- (id)buyParameters;
+- (void)setPriceDisplay:(id)arg1;
+- (id)priceDisplay;
 
 @end

@@ -17,6 +17,9 @@
 @property(copy) NSString * pendingAlias;
 
 
+- (void)dealloc;
+- (void)systemApplicationWillEnterForeground;
+- (void)systemApplicationDidEnterBackground;
 - (void)setPendingAlias:(id)arg1 forSpecifier:(id)arg2;
 - (id)pendingAliasForSpecifier:(id)arg1;
 - (void)emailFieldEmptyStateChanged:(id)arg1 forSpecifier:(id)arg2;
@@ -56,14 +59,11 @@
 - (id)logName;
 - (id)specifierList;
 - (id)selectedAliases;
-- (void)dealloc;
 - (id)bundle;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)systemApplicationWillEnterForeground;
-- (void)systemApplicationDidEnterBackground;
 
 @end

@@ -16,7 +16,6 @@
 @property(retain) SUSection * section;
 
 
-- (void)setLoading:(BOOL)arg1;
 - (id)copyScriptViewController;
 - (void)_loadingDidChangeNotification:(id)arg1;
 - (BOOL)clearsWeakScriptReferences;
@@ -31,8 +30,10 @@
 - (void)dealloc;
 - (void)setSection:(id)arg1;
 - (BOOL)isLoading;
+- (void)setToolbarHidden:(BOOL)arg1;
 - (void)setViewControllers:(id)arg1;
 - (id)initWithRootViewController:(id)arg1;
+- (void)setToolbarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)addChildViewController:(id)arg1;
 - (id)moreListSelectedImage;
 - (id)moreListImage;
@@ -43,5 +44,6 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)section;
 - (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
+- (void)setLoading:(BOOL)arg1;
 
 @end

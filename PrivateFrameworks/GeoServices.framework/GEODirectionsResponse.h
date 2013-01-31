@@ -36,15 +36,13 @@
 @property int instructionSignFillColor;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)setStatus:(int)arg1;
-- (int)status;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)placeSearchResponses;
 - (id)routes;
 - (void)setHasInstructionSignFillColor:(BOOL)arg1;
@@ -76,6 +74,8 @@
 - (void)setDirectionsResponseID:(id)arg1;
 - (void)setPlaceSearchResponses:(id)arg1;
 - (void)setRoutes:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (void)setStatus:(int)arg1;
+- (int)status;
+- (id)dictionaryRepresentation;
 
 @end

@@ -28,14 +28,15 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
-- (int)status;
-- (void)finalize;
 - (void)addInput:(id)arg1;
 - (BOOL)canAddInput:(id)arg1;
 - (BOOL)startWriting;
 - (id)error;
+- (int)status;
+- (void)finalize;
+- (id)_helper;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 - (void)_transitionToFailedStatusWithError:(id)arg1;
 - (BOOL)_setHelper:(id)arg1 ifCurrentHelper:(id)arg2;
 - (void)finishWritingWithCompletionHandler:(id)arg1;
@@ -59,6 +60,5 @@
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (id)inputs;
-- (id)_helper;
 
 @end

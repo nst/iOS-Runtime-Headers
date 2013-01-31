@@ -55,6 +55,13 @@
 @property BOOL lineBreakAfter;
 
 
+- (int)align;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setBaseline:(float)arg1;
+- (float)baseline;
+- (BOOL)isListItem;
 - (void)setLineBreakAfter:(BOOL)arg1;
 - (void)setListSpacerIndex:(unsigned int)arg1;
 - (unsigned int)listSpacerIndex;
@@ -124,17 +131,10 @@
 - (void)accept:(id)arg1;
 - (void)fitBoundsToChildren;
 - (long)zOrder;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
 - (id)attributes;
 - (struct CGPoint { float x1; float x2; })anchor;
 - (id)properties;
 - (void)finalize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (int)align;
-- (void)setBaseline:(float)arg1;
-- (float)baseline;
-- (BOOL)isListItem;
 
 @end

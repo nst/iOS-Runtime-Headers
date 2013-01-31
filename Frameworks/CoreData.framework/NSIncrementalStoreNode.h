@@ -14,6 +14,7 @@
 + (void)initialize;
 
 - (void)dealloc;
+- (unsigned long long)version;
 - (id)valueForPropertyDescription:(id)arg1;
 - (void)updateWithValues:(id)arg1 version:(unsigned long long)arg2;
 - (id)initWithObjectID:(id)arg1 withValues:(id)arg2 version:(unsigned long long)arg3;
@@ -22,6 +23,5 @@
 - (const id*)knownKeyValuesPointer;
 - (unsigned int)_versionNumber;
 - (id)objectID;
-- (unsigned long long)version;
 
 @end

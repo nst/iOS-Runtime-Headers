@@ -14,6 +14,8 @@
 - (void)reset;
 - (void)dealloc;
 - (id)init;
+- (id)initWithLocation:(BOOL)arg1;
+- (BOOL)isInline;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
@@ -24,7 +26,5 @@
 - (id)cellForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2;
 - (int)numberOfSubitemsInSubsection:(int)arg1;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
-- (id)initWithLocation:(BOOL)arg1;
-- (BOOL)isInline;
 
 @end

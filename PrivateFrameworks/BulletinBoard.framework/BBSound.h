@@ -28,10 +28,6 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)soundType;
-- (void)setSoundType:(int)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)vibrationPattern;
 - (void)setVibrationPattern:(id)arg1;
 - (id)initWithRingtone:(id)arg1 vibrationPattern:(id)arg2 repeats:(BOOL)arg3;
@@ -49,5 +45,9 @@
 - (unsigned long)systemSoundID;
 - (BOOL)_isUniquableAlertSound;
 - (id)initWithSystemSoundID:(unsigned long)arg1 behavior:(unsigned int)arg2;
+- (int)soundType;
+- (void)setSoundType:(int)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

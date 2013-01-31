@@ -15,10 +15,10 @@
 @property(readonly) NSDictionary * termsDictionary;
 
 
-- (id)responseData;
 - (void).cxx_destruct;
 - (id)agreeURL;
 - (id)termsDictionary;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
+- (id)responseData;
 
 @end

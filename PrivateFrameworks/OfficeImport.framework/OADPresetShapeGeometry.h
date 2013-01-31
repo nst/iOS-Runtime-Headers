@@ -8,9 +8,9 @@
 
 
 - (int)type;
-- (void)setType:(int)arg1;
 - (id)escherEquivalentCustomGeometry;
 - (id)oa12EquivalentCustomGeometry;
 - (id)equivalentCustomGeometry;
+- (void)setType:(int)arg1;
 
 @end

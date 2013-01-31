@@ -16,7 +16,6 @@
 }
 
 
-- (id)newResourceWithName:(id)arg1;
 - (id)name;
 - (void)dealloc;
 - (id)resourceUrlProtocol;
@@ -30,5 +29,6 @@
 - (void)pushData:(id)arg1 toPath:(id)arg2;
 - (void)pushCssToPath:(id)arg1;
 - (void)pushText:(id)arg1 toPath:(id)arg2;
+- (id)newResourceWithName:(id)arg1;
 
 @end

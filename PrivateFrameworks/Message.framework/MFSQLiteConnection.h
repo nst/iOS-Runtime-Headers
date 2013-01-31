@@ -18,18 +18,18 @@
 @property(readonly) struct sqlite3 { }* db;
 
 
+- (int)open;
 - (void)dealloc;
 - (struct sqlite3 { }*)db;
-- (int)rollbackTransaction;
-- (int)beginTransaction;
-- (void)close;
-- (int)commitTransaction;
-- (void)flush;
-- (int)open;
 - (id)initWithPath:(id)arg1 databaseName:(id)arg2;
 - (const char *)_vfsModuleName;
 - (struct sqlite3_stmt { }*)preparedStatementForPattern:(id)arg1;
 - (int)beginTransactionWithType:(int)arg1;
+- (void)close;
+- (int)commitTransaction;
+- (void)flush;
+- (int)rollbackTransaction;
+- (int)beginTransaction;
 - (BOOL)isOpen;
 
 @end

@@ -44,21 +44,10 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (void)setLastName:(id)arg1;
-- (id)lastName;
-- (void)setFirstName:(id)arg1;
-- (id)firstName;
-- (void)setAlias:(id)arg1;
-- (id)alias;
 - (id)description;
 - (void)dealloc;
-- (id)title;
-- (void)setTitle:(id)arg1;
 - (id)longID;
 - (id)emailAddress;
-- (id)company;
-- (id)homePhone;
-- (id)mobilePhone;
 - (id)convertToDAContactSearchResultElement;
 - (id)applicationData;
 - (id)photoData;
@@ -80,6 +69,17 @@
 - (void)postProcessApplicationData;
 - (void)setApplicationData:(id)arg1;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (void)setLastName:(id)arg1;
+- (id)lastName;
+- (void)setFirstName:(id)arg1;
+- (id)firstName;
+- (void)setAlias:(id)arg1;
+- (id)alias;
 - (void)setEmailAddress:(id)arg1;
+- (id)company;
+- (id)homePhone;
+- (id)mobilePhone;
 
 @end

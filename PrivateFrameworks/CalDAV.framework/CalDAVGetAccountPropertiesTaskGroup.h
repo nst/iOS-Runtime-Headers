@@ -34,6 +34,12 @@
 - (id)outboxURL;
 - (id)inboxURL;
 - (id)serverVersion;
+- (void)processPrincipalHeaders:(id)arg1;
+- (BOOL)forceOptionsRequest;
+- (void)startTaskGroup;
+- (id)homeSet;
+- (void)_setPropertiesFromParsedResponses:(id)arg1;
+- (id)_copyAccountPropertiesPropFindElements;
 - (id)updatedPrincipalURL;
 - (id)originalUserAddresses;
 - (id)userAddresses;
@@ -42,11 +48,5 @@
 - (void)setDelegatePrincipalURL:(id)arg1;
 - (id)calendarHomes;
 - (id)delegatePrincipalURL;
-- (void)processPrincipalHeaders:(id)arg1;
-- (BOOL)forceOptionsRequest;
-- (void)startTaskGroup;
-- (id)homeSet;
-- (void)_setPropertiesFromParsedResponses:(id)arg1;
-- (id)_copyAccountPropertiesPropFindElements;
 
 @end

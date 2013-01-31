@@ -70,12 +70,12 @@
 + (void)__releaseWorkoutInProgressFileLock;
 + (BOOL)__takeWorkoutInProgressFileLock;
 
-- (void)dealloc;
-- (void)_postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (void)setPreset:(id)arg1;
 - (id)preset;
 - (void)_postNotificationName:(id)arg1;
+- (void)dealloc;
 - (id)remote;
+- (void)_postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (id)dataController;
 - (BOOL)hasEverStarted;
 - (id)workoutState;

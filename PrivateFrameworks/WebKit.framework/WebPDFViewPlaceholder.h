@@ -22,27 +22,10 @@
 @property(readonly) unsigned int totalPages;
 @property(retain) NSString * title;
 
-+ (void)setAsPDFDocRepAndView;
-+ (id)supportedMIMETypes;
 + (Class)_representationClassForWebFrame:(id)arg1;
++ (id)supportedMIMETypes;
++ (void)setAsPDFDocRepAndView;
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (void)simulateClickOnLinkToURL:(id)arg1;
-- (id)pageYOrigins;
-- (void)didUnlockDocument;
-- (void)setPageRects:(id)arg1;
-- (struct CGPDFDocument { }*)document;
-- (id)pageRects;
-- (struct CGPDFDocument { }*)doc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPageNumber:(unsigned int)arg1;
-- (unsigned int)totalPages;
-- (void)layout;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (void)setDataSource:(id)arg1;
-- (void)setDocument:(struct CGPDFDocument { }*)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_getPDFPageBounds:(struct CGPDFPage { }*)arg1;
 - (void)_doPostLoadOrUnlockTasks;
 - (void)_evaluateJSForDocument:(struct CGPDFDocument { }*)arg1;
@@ -61,5 +44,22 @@
 - (void)finishedLoadingWithDataSource:(id)arg1;
 - (void)dataSourceMemoryMapFailed;
 - (void)dataSourceMemoryMapped;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)setDocument:(struct CGPDFDocument { }*)arg1;
+- (void)simulateClickOnLinkToURL:(id)arg1;
+- (id)pageYOrigins;
+- (void)didUnlockDocument;
+- (void)setPageRects:(id)arg1;
+- (struct CGPDFDocument { }*)document;
+- (id)pageRects;
+- (struct CGPDFDocument { }*)doc;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPageNumber:(unsigned int)arg1;
+- (unsigned int)totalPages;
+- (void)layout;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (void)setDataSource:(id)arg1;
 
 @end

@@ -16,7 +16,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (void)stopLoading;
 - (void)imageIsAvailable:(id)arg1 forAsset:(id)arg2 fromSource:(id)arg3 completionBlocks:(id)arg4;
 - (void)invalidateImageFromSource:(id)arg1 forAsset:(id)arg2;
 - (void)cancelLoadFromSource:(id)arg1 forAsset:(id)arg2;
@@ -28,5 +27,6 @@
 - (void)resumeLoading;
 - (void)pauseLoading;
 - (id)initWithImageCache:(id)arg1;
+- (void)stopLoading;
 
 @end

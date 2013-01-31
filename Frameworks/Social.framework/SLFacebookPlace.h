@@ -29,6 +29,10 @@
 - (id)name;
 - (id)description;
 - (void).cxx_destruct;
+- (double)longitude;
+- (double)latitude;
+- (double)distance;
+- (void)setDistance:(double)arg1;
 - (id)category;
 - (void)setCategory:(id)arg1;
 - (void)setIdentifier:(id)arg1;
@@ -37,10 +41,6 @@
 - (id)pictureURL;
 - (void)setPictureURL:(id)arg1;
 - (id)encodableProperties;
-- (double)longitude;
-- (double)latitude;
-- (double)distance;
-- (void)setDistance:(double)arg1;
 - (void)setLongitude:(double)arg1;
 - (void)setLatitude:(double)arg1;
 

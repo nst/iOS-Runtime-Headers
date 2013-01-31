@@ -15,16 +15,16 @@
 + (id)entity;
 + (id)entityWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
 - (void)setName:(id)arg1;
 - (id)name;
-- (id)image;
-- (void)setImage:(id)arg1;
 - (void)setPunchout:(id)arg1;
 - (id)punchout;
 - (void)setLeague:(id)arg1;
 - (id)league;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (id)image;
+- (void)setImage:(id)arg1;
+- (id)groupIdentifier;
 
 @end

@@ -13,11 +13,11 @@
 + (id)photoListWithDictionary:(id)arg1 context:(id)arg2;
 + (id)photoList;
 
-- (id)groupIdentifier;
-- (void)setPhotos:(id)arg1;
-- (id)photos;
 - (void)setProviderId:(id)arg1;
 - (id)providerId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
+- (void)setPhotos:(id)arg1;
+- (id)photos;
 
 @end

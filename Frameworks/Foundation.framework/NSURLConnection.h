@@ -22,17 +22,16 @@
 + (id)sendSynchronousRequest:(id)arg1 returningResponse:(id*)arg2 error:(id*)arg3;
 + (void)HS_sendAsynchronousRequest:(id)arg1 completionQueue:(id)arg2 completionHandler:(id)arg3;
 
+- (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
+- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
+- (void)cancelAuthenticationChallenge:(id)arg1;
+- (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (void)setDefersCallbacks:(BOOL)arg1;
 - (BOOL)defersCallbacks;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (void)start;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
-- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
-- (void)cancelAuthenticationChallenge:(id)arg1;
-- (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (id)_cfInternal;
 - (id)_dlInternal;
 - (id)connectionProperties;
@@ -46,6 +45,7 @@
 - (id)_initWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(BOOL)arg3 maxContentLength:(long long)arg4 startImmediately:(BOOL)arg5 connectionProperties:(id)arg6;
 - (void)_resumeLoading;
 - (void)_suspendLoading;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)newsstandAssetDownload;
 
 @end

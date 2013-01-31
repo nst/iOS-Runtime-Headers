@@ -7,9 +7,9 @@
 
 + (id)texture;
 
-- (void)dealloc;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)initWithHeight:(float)arg1 thickness:(float)arg2;
 - (id)initWithData:(const float*)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (void)dealloc;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 
 @end

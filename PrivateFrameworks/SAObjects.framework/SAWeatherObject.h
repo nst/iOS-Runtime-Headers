@@ -15,14 +15,11 @@
 @property(copy) NSString * view;
 @property(retain) SAWeatherLocation * weatherLocation;
 
-+ (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)object;
 
-- (id)groupIdentifier;
 - (void)setUnits:(id)arg1;
 - (id)units;
-- (void)setView:(id)arg1;
-- (id)view;
 - (void)setHourlyForecasts:(id)arg1;
 - (id)hourlyForecasts;
 - (void)setExtendedForecastUrl:(id)arg1;
@@ -35,5 +32,8 @@
 - (id)currentConditions;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setView:(id)arg1;
+- (id)view;
+- (id)groupIdentifier;
 
 @end

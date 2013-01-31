@@ -14,8 +14,8 @@
 @property(copy) NSString * UTI;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)_openWithFunction;
 - (void)setOpenWithFunction:(id)arg1;
@@ -29,10 +29,10 @@
 - (id)_nativeObject;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (void)setUTI:(id)arg1;
 - (void)dismissMenuAnimated:(id)arg1;
 - (id)UTI;
-- (id)attributeKeys;
 
 @end

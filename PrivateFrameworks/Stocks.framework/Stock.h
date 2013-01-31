@@ -70,24 +70,17 @@
 + (id)BlankValueString;
 + (id)formattedStringForNumber:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(BOOL)arg3 groupingSeparators:(BOOL)arg4;
 
-- (id)infoURL;
-- (void)setInfoURL:(id)arg1;
-- (id)price;
-- (id)description;
-- (unsigned int)hash;
-- (void).cxx_destruct;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)change;
-- (id)symbol;
-- (void)setSymbol:(id)arg1;
-- (id)initWithDictionary:(id)arg1;
-- (void)resetLocale;
 - (id)archiveDictionary;
 - (void)setOpen:(id)arg1;
 - (id)open;
 - (void)setVolume:(id)arg1;
 - (id)volume;
+- (void)resetLocale;
+- (id)description;
+- (unsigned int)hash;
+- (void).cxx_destruct;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)setTimeMetadataLastUpdated:(double)arg1;
 - (double)timeMetadataLastUpdated;
 - (void)setTimeQuoteLastUpdated:(double)arg1;
@@ -141,5 +134,12 @@
 - (id)dividendYield;
 - (id)companyName;
 - (void)setCompanyName:(id)arg1;
+- (id)change;
+- (void)setSymbol:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)price;
+- (void)setInfoURL:(id)arg1;
+- (id)infoURL;
+- (id)symbol;
 
 @end

@@ -15,17 +15,17 @@
 
 + (id)sharedManager;
 
-- (void)removeAccount:(id)arg1;
 - (void)addAccount:(id)arg1;
 - (void).cxx_destruct;
-- (id)accountWithPersonID:(id)arg1;
 - (void)reloadAccounts;
 - (id)primaryAccount;
 - (id)accountWithIdentifier:(id)arg1;
 - (id)accounts;
 - (void)saveAllAccounts;
+- (void)removeAccount:(id)arg1;
 - (id)accountsEnabledForDataclass:(id)arg1;
-- (void)updateAccount:(id)arg1;
 - (id)accountWithUsername:(id)arg1;
+- (void)updateAccount:(id)arg1;
+- (id)accountWithPersonID:(id)arg1;
 
 @end

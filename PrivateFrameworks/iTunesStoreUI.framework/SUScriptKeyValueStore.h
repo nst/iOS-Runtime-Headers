@@ -11,8 +11,8 @@
 
 + (void)_popStoreWithDomain:(id)arg1;
 + (id)_checkOutStoreWithDomain:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (void)setValueForKey:(id)arg1 value:(id)arg2;
 - (void)removeAllValues;

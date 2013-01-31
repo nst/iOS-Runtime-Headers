@@ -26,16 +26,10 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (id)email;
-- (void)setEmail:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)name;
 - (void)dealloc;
 - (id)init;
-- (void)setStatus:(int)arg1;
-- (int)status;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)setLocalId:(int)arg1;
 - (int)localId;
 - (id)icsUserAddress;
@@ -47,6 +41,12 @@
 - (void)setObject:(id)arg1 forDCCPT:(int)arg2;
 - (void)clearPlaceHolder;
 - (void)applyPlaceHolder;
+- (void)setStatus:(int)arg1;
+- (int)status;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)email;
+- (void)setEmail:(id)arg1;
 - (void)setRole:(int)arg1;
 - (int)role;
 

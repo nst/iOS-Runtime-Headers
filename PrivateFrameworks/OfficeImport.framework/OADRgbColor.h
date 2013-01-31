@@ -19,9 +19,6 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (float)blue;
-- (float)green;
-- (float)red;
 - (id)initWithWhiteByte:(float)arg1;
 - (id)initWithWhite:(float)arg1;
 - (id)rgbColorWithFraction:(float)arg1 ofRgbColor:(id)arg2;
@@ -30,5 +27,8 @@
 - (unsigned char)redByte;
 - (id)initWithRedByte:(float)arg1 greenByte:(float)arg2 blueByte:(float)arg3;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
+- (float)blue;
+- (float)green;
+- (float)red;
 
 @end

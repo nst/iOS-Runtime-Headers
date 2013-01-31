@@ -6,6 +6,7 @@
 
 @interface _GEOTileDownloadOp : NSObject <NSURLConnectionDelegate> {
     NSURL *_url;
+    BOOL _requireWiFi;
     NSMutableData *_data;
     NSURLConnection *_conn;
     struct _GEOTileKey { 
@@ -34,6 +35,7 @@
 }
 
 @property(retain) NSURL * url;
+@property BOOL requireWiFi;
 @property(retain) NSMutableData * data;
 @property(retain) NSURLConnection * conn;
 @property(retain) NSString * editionHeader;
@@ -48,7 +50,6 @@
 @property GEOSimpleTileRequester * delegate;
 
 
-- (id)userAgent;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)data;
@@ -56,6 +57,22 @@
 - (id)description;
 - (void)cancel;
 - (void)dealloc;
+- (BOOL)requireWiFi;
+- (BOOL)useCookies;
+- (void)setTileEdition:(unsigned int)arg1;
+- (id)conn;
+- (void)setConn:(id)arg1;
+- (void)setUseCookies:(BOOL)arg1;
+- (void)setEditionHeader:(id)arg1;
+- (id)editionHeader;
+- (void)setRequireWiFi:(BOOL)arg1;
+- (void)setBaseTile:(id)arg1;
+- (void)setLocalizationTile:(id)arg1;
+- (unsigned int)contentLength;
+- (unsigned int)tileEdition;
+- (id)localizationTile;
+- (id)baseTile;
+- (void)setUserAgent:(id)arg1;
 - (void)setKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg1;
 - (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })key;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
@@ -66,19 +83,6 @@
 - (id)url;
 - (void)start;
 - (void)setData:(id)arg1;
-- (void)setUserAgent:(id)arg1;
-- (BOOL)useCookies;
-- (void)setTileEdition:(unsigned int)arg1;
-- (id)conn;
-- (void)setConn:(id)arg1;
-- (void)setUseCookies:(BOOL)arg1;
-- (void)setEditionHeader:(id)arg1;
-- (id)editionHeader;
-- (void)setBaseTile:(id)arg1;
-- (void)setLocalizationTile:(id)arg1;
-- (unsigned int)contentLength;
-- (unsigned int)tileEdition;
-- (id)localizationTile;
-- (id)baseTile;
+- (id)userAgent;
 
 @end

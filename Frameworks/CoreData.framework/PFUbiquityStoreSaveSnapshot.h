@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSArray, NSString, NSDictionary, NSNumber, NSMutableArray;
+@class PFUbiquityKnowledgeVector, NSNumber, NSMutableArray, NSDictionary, NSString, NSMutableDictionary, NSArray;
 
 @interface PFUbiquityStoreSaveSnapshot : NSObject  {
     NSMutableArray *_entityNames;
@@ -25,6 +25,7 @@
     NSDictionary *_storeOptions;
     NSMutableArray *_filesInsertedInTransaction;
     NSArray *_filesDeletedInTransaction;
+    PFUbiquityKnowledgeVector *_storeKV;
 }
 
 @property(readonly) NSArray * entityNames;
@@ -39,6 +40,7 @@
 @property(retain) NSString * exportingPeerID;
 @property(readonly) NSDictionary * storeOptions;
 @property(retain) NSString * localPeerID;
+@property(retain) PFUbiquityKnowledgeVector * storeKV;
 @property(readonly) NSDictionary * globalObjectIDToPermanentManagedObjectID;
 @property(readonly) NSDictionary * managedObjectIDToGlobalObjectID;
 @property(readonly) NSDictionary * entityNameToIndex;
@@ -53,6 +55,8 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (void)setStoreKV:(id)arg1;
+- (id)storeKV;
 - (id)globalObjectIDToPermanentManagedObjectID;
 - (id)globalObjectIDToIndex;
 - (void)setUpdatedObjects:(id)arg1;

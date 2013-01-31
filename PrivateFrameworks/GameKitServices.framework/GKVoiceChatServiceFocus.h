@@ -19,10 +19,6 @@
 
 + (id)defaultVoiceChatService;
 
-- (void)receivedData:(id)arg1 fromParticipantID:(id)arg2;
-- (void)denyCallID:(int)arg1;
-- (BOOL)acceptCallID:(int)arg1 error:(id*)arg2;
-- (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)init;
 - (void)pauseAudio:(BOOL)arg1 toParticipantID:(id)arg2;
@@ -70,5 +66,9 @@
 - (double)localFramerate;
 - (void*)remoteVideoLayer;
 - (void)setRemoteVideoLayer:(void*)arg1;
+- (void)receivedData:(id)arg1 fromParticipantID:(id)arg2;
+- (void)denyCallID:(int)arg1;
+- (BOOL)acceptCallID:(int)arg1 error:(id*)arg2;
+- (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
 
 @end

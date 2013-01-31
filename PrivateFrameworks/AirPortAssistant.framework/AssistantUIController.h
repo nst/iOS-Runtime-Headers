@@ -78,7 +78,7 @@
 - (long)cancelCurrentAssistantState:(BOOL)arg1;
 - (long)startSetupFromAutoGuessRecommendation:(id)arg1;
 - (id)setupOptions;
-- (id)modifyTopoUIInLayer:(id)arg1 withLayout:(id)arg2 targetProductID:(id)arg3 targetName:(id)arg4 targetWiFiName:(id)arg5 sourceProductID:(id)arg6 sourceName:(id)arg7 sourceWiFiName:(id)arg8 connectionType:(id)arg9;
+- (id)modifyTopoUIInLayer:(id)arg1 withLayout:(id)arg2 targetProductID:(id)arg3 targetDeviceKind:(id)arg4 targetName:(id)arg5 targetWiFiName:(id)arg6 sourceProductID:(id)arg7 sourceDeviceKind:(id)arg8 sourceName:(id)arg9 sourceWiFiName:(id)arg10 connectionType:(id)arg11;
 - (void)presentUIForConnectionVerificationResult:(long)arg1 withOptions:(id)arg2;
 - (void)presentUIForStepByStepNextStepResult:(long)arg1 withOptions:(id)arg2;
 - (long)startStepByStepFromAutoGuessRecommendation;

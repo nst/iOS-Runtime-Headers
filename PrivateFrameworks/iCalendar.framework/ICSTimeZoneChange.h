@@ -8,11 +8,11 @@
 }
 
 
+- (id)initWithTimeInterval:(double)arg1 tzOffsetTo:(int)arg2;
+- (int)tzOffsetTo;
 - (int)compare:(id)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (double)interval;
-- (id)initWithTimeInterval:(double)arg1 tzOffsetTo:(int)arg2;
-- (int)tzOffsetTo;
 
 @end

@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKUITheme, NSString, NSNumber;
+@class GKUITheme, NSNumber, NSString;
 
 @interface GKComposeRemoteViewController : GKRemoteViewController  {
     GKUITheme *_theme;
-    NSString *_defaultMessage;
     NSNumber *_rid;
+    NSString *_defaultMessage;
 }
 
 @property(retain) GKUITheme * theme;
@@ -15,6 +15,11 @@
 @property(copy) NSString * defaultMessage;
 
 
+- (void)dealloc;
+- (void)setTheme:(id)arg1;
+- (id)theme;
+- (id)remoteProtocol;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (id)defaultMessage;
 - (id)observedKeyPaths;
 - (void)remoteViewControllerIsCanceling;
@@ -26,10 +31,5 @@
 - (void)setRid:(id)arg1;
 - (id)rid;
 - (void)setDefaultMessage:(id)arg1;
-- (void)dealloc;
-- (id)remoteProtocol;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
-- (void)setTheme:(id)arg1;
-- (id)theme;
 
 @end

@@ -28,12 +28,12 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (void)setCompletionHandler:(id)arg1;
-- (id)completionHandler;
 - (int)waiterNum;
 - (void)setDataclasses:(int)arg1;
 - (int)dataclasses;
 - (void)setWaiter:(id)arg1;
 - (id)waiter;
+- (void)setCompletionHandler:(id)arg1;
+- (id)completionHandler;
 
 @end

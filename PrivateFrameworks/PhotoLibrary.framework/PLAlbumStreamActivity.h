@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLAlbumStreamActivityDelegate>, PLModalDimmingViewController, PLCloudSharedCreateAlbumViewController, UIViewController, NSObject<PLUserEditableAssetContainer>;
+@class NSObject<PLUserEditableAssetContainer>, PLModalDimmingViewController, PLCloudSharedCreateAlbumViewController, UIViewController, <PLAlbumStreamActivityDelegate>;
 
 @interface PLAlbumStreamActivity : PLActivity <PLCloudSharedCreateAlbumViewControllerDelegate, PLAbstractAlbumPickerViewControllerDelegate> {
     PLModalDimmingViewController *_modalDimmingViewController;
     PLCloudSharedCreateAlbumViewController *_createAlbumViewController;
     UIViewController *_referenceViewController;
-    BOOL _destinationAlbumWasCreated;
-    NSObject<PLUserEditableAssetContainer> *_destinationStreamingAlbum;
     <PLAlbumStreamActivityDelegate> *_delegate;
+    NSObject<PLUserEditableAssetContainer> *_destinationStreamingAlbum;
+    BOOL _destinationAlbumWasCreated;
 }
 
 @property(retain) NSObject<PLUserEditableAssetContainer> * destinationStreamingAlbum;
@@ -22,14 +22,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
-- (BOOL)_canPerformWithSuppliedActivityItems:(id)arg1;
-- (void)prepareWithActivityItems:(id)arg1;
-- (id)activityViewController;
-- (id)_activityImage;
-- (id)activityTitle;
-- (id)activityType;
-- (id)_beforeActivity;
 - (void)albumStreamingCreateViewController:(id)arg1 didSucceed:(BOOL)arg2;
 - (void)_switchToPostCommentController;
 - (void)_publishAssets:(id)arg1 toAlbum:(id)arg2 orCreateWithName:(id)arg3 comment:(id)arg4 invitationRecipients:(id)arg5 wantsPublicWebsite:(BOOL)arg6 completion:(id)arg7;
@@ -47,5 +39,13 @@
 - (BOOL)destinationAlbumWasCreated;
 - (void)setReferenceViewController:(id)arg1;
 - (int)_preferredStatusBarStyle;
+- (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (BOOL)_canPerformWithSuppliedActivityItems:(id)arg1;
+- (void)prepareWithActivityItems:(id)arg1;
+- (id)activityViewController;
+- (id)_activityImage;
+- (id)activityTitle;
+- (id)activityType;
+- (id)_beforeActivity;
 
 @end

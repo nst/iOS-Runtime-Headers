@@ -16,14 +16,14 @@
 
 + (id)_rangeStringForInterval:(int)arg1;
 
+- (void)didParseData;
+- (void)failWithError:(id)arg1;
+- (id)aggregateDictionaryDomain;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
 - (void)cancel;
 - (id)init;
-- (void)failWithError:(id)arg1;
-- (id)aggregateDictionaryDomain;
-- (void)didParseData;
 - (BOOL)updateChartForStock:(id)arg1 interval:(int)arg2;
 - (int)parseData:(id)arg1;
 

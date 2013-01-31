@@ -13,12 +13,12 @@
 + (id)domainObjectCreateWithDictionary:(id)arg1 context:(id)arg2;
 + (id)domainObjectCreate;
 
-- (id)groupIdentifier;
-- (void)setObject:(id)arg1;
-- (id)object;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (void)setObject:(id)arg1;
+- (id)object;
+- (id)groupIdentifier;
 
 @end

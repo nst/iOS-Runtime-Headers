@@ -20,17 +20,6 @@
 
 
 - (void)dealloc;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)setParentViewController:(id)arg1;
-- (void)viewDidUnload;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)navigationItem;
-- (void)viewWillLayoutSubviews;
-- (void)willPresentActionSheet:(id)arg1;
 - (id)doneItem;
 - (void)setDoneItem:(id)arg1;
 - (unsigned int)visibleItemIndex;
@@ -54,5 +43,16 @@
 - (void)didMoveToPhotoAtIndex:(unsigned int)arg1;
 - (id)remakerContainerView;
 - (void)_updateToolbar:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)setParentViewController:(id)arg1;
+- (void)viewDidUnload;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)navigationItem;
+- (void)viewWillLayoutSubviews;
+- (void)willPresentActionSheet:(id)arg1;
 
 @end

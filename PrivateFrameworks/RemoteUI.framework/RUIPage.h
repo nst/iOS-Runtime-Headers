@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class UIToolbar, RUIWebView, RUITableView, UIView, NSDictionary, NSString, UIBarButtonItem, NSArray;
+@class NSArray, UIToolbar, RUIWebView, RUITableView, NSMutableArray, UIView, NSDictionary, NSString, UIBarButtonItem, RUIObjectModel, RUIPage;
 
 @interface RUIPage : UIViewController <UIWebViewDelegate> {
     NSString *_pageID;
@@ -23,7 +23,9 @@
     UIBarButtonItem *_rightToolbarItem;
     UIBarButtonItem *_middleFlexSpace;
     UIBarButtonItem *_leftFlexSpace;
-    id _delegate;
+    RUIObjectModel *_objectModel;
+    RUIPage *_parentPage;
+    NSMutableArray *_childPages;
 }
 
 @property(copy) NSString * pageID;
@@ -42,14 +44,16 @@
 @property(retain) UIBarButtonItem * rightToolbarItem;
 @property(retain) UIBarButtonItem * leftToolbarItem;
 @property(readonly) UIToolbar * toolbar;
+@property RUIObjectModel * objectModel;
+@property(readonly) NSArray * childPages;
+@property(readonly) RUIPage * parentPage;
 
 
-- (float)_getKeyboardIntersectionHeight;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (id)parentPage;
+- (id)childPages;
 - (id)leftToolbarButton;
 - (id)rightToolbarButton;
 - (id)leftNavigationBarButton;
@@ -60,6 +64,8 @@
 - (BOOL)hasWebView;
 - (id)webViewOM;
 - (BOOL)hasTableView;
+- (void)_updateParentPage;
+- (void)_addChildPage:(id)arg1;
 - (void)setLeftToolbarButton:(id)arg1;
 - (void)setRightToolbarButton:(id)arg1;
 - (void)setLeftNavigationBarButton:(id)arg1;
@@ -69,6 +75,10 @@
 - (void)setValidationFunction:(id)arg1;
 - (void)setPageID:(id)arg1;
 - (void)populatePostbackDictionary:(id)arg1;
+- (void)setObjectModel:(id)arg1;
+- (void)_updateWithCompletedChild:(id)arg1;
+- (id)objectModel;
+- (void)_setParentPage:(id)arg1;
 - (id)tableViewOM;
 - (void)_barButtonPressed:(id)arg1 isRight:(BOOL)arg2 isNavbar:(BOOL)arg3;
 - (void)setLeftToolbarItem:(id)arg1;
@@ -81,6 +91,9 @@
 - (id)leftToolbarItem;
 - (id)rightToolbarItem;
 - (void)_updateNavItemTitle;
+- (float)_getKeyboardIntersectionHeight;
+- (id)navTitle;
+- (void)_updateToolbar;
 - (id)containerView;
 - (id)buttons;
 - (void)_setContentInset:(float)arg1;
@@ -99,7 +112,5 @@
 - (BOOL)hidesBackButton;
 - (void)viewDidLayoutSubviews;
 - (void)setNavTitle:(id)arg1;
-- (id)navTitle;
-- (void)_updateToolbar;
 
 @end

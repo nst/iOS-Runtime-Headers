@@ -31,27 +31,27 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
+- (void)setMethod:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)name;
 - (id)description;
 - (void)dealloc;
+- (void)setDisplayName:(id)arg1;
+- (BOOL)isMostDefinitelyBase64ed;
+- (id)contentLocation;
+- (void)setHasBase64Transfer:(id)arg1;
+- (id)hasBase64Transfer;
+- (id)isInline;
+- (void)setIsInline:(id)arg1;
+- (void)setPercentEscapedName:(id)arg1;
 - (id)method;
 - (id)displayName;
 - (void)setSize:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)size;
-- (void)setMethod:(id)arg1;
 - (void)setContentLocation:(id)arg1;
 - (void)setContentId:(id)arg1;
 - (id)contentId;
-- (BOOL)isMostDefinitelyBase64ed;
-- (id)contentLocation;
-- (void)setDisplayName:(id)arg1;
-- (void)setHasBase64Transfer:(id)arg1;
-- (id)hasBase64Transfer;
-- (id)isInline;
-- (void)setIsInline:(id)arg1;
-- (void)setPercentEscapedName:(id)arg1;
 
 @end

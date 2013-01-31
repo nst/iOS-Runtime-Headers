@@ -14,14 +14,14 @@
 
 
 - (id)init;
+- (void)setDeleted:(int)arg1;
+- (int)deleted;
 - (int)updated;
+- (id)copyParseRules;
 - (void)setDeletedItem:(id)arg1;
 - (void)setUpdatedItem:(id)arg1;
 - (void)setCreatedItem:(id)arg1;
 - (void)setUpdated:(int)arg1;
-- (id)copyParseRules;
-- (void)setDeleted:(int)arg1;
-- (int)deleted;
 - (void)setCreated:(int)arg1;
 - (int)created;
 

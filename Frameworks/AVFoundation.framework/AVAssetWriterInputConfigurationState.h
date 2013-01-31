@@ -49,15 +49,15 @@
 @property(copy) NSDictionary * trackReferences;
 
 
-- (id)trackReferences;
 - (void)dealloc;
+- (void)setOutputSettings:(id)arg1;
 - (void)setMediaType:(id)arg1;
 - (id)mediaType;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (id)languageCode;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
-- (void)setOutputSettings:(id)arg1;
+- (id)trackReferences;
 - (void)setTrackReferences:(id)arg1;
 - (void)setAlternateGroupID:(short)arg1;
 - (short)alternateGroupID;

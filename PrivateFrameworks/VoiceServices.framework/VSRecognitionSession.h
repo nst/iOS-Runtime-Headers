@@ -39,15 +39,6 @@
 }
 
 
-- (BOOL)isBusy;
-- (void)setDelegate:(id)arg1;
-- (id)reset;
-- (id)cancel;
-- (void)dealloc;
-- (id)init;
-- (BOOL)isFinished;
-- (BOOL)isValid;
-- (void)_init;
 - (void)setPerformRecognitionHandlerActions:(BOOL)arg1;
 - (BOOL)setPreferredEngine:(int)arg1;
 - (BOOL)setNextRecognitionRequiresReset:(BOOL)arg1;
@@ -93,5 +84,14 @@
 - (id)initWithModelIdentifier:(id)arg1;
 - (id)_currentRecognizeAction;
 - (void)_notifyDelegateActionStarted;
+- (void)setDelegate:(id)arg1;
+- (id)reset;
+- (id)cancel;
+- (void)dealloc;
+- (id)init;
+- (BOOL)isFinished;
+- (BOOL)isValid;
+- (void)_init;
+- (BOOL)isBusy;
 
 @end

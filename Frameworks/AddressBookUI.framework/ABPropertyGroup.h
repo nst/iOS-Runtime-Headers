@@ -29,12 +29,12 @@
 }
 
 
-- (int)itemCount;
 - (id)description;
 - (void)dealloc;
-- (int)property;
-- (void*)context;
 - (id)serviceAtIndex:(int)arg1;
+- (void*)context;
+- (int)itemCount;
+- (int)property;
 - (BOOL)multiCellContentView:(id)arg1 alwaysShowsClearButtonAtIndexPath:(id)arg2;
 - (id)keyboardSettingsForKey:(id)arg1 info:(id)arg2;
 - (id)placeholderTextForKey:(id)arg1 info:(id)arg2;

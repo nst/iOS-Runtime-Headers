@@ -10,7 +10,6 @@
 + (id)tabBarItemTitleKey;
 + (id)tabBarItemIconName;
 
-- (id)init;
 - (id)createNoContentDataSource;
 - (void)createGlobalContexts;
 - (id)viewControllerContextForActionRow:(id)arg1;
@@ -26,5 +25,6 @@
 - (void)reloadActionRows;
 - (BOOL)hasActionRowsEvenWhenNoOtherRowsExist;
 - (int)filteredMediaTypes;
+- (id)init;
 
 @end

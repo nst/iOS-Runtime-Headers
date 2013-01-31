@@ -48,7 +48,6 @@
 @property(getter=isFacebook) BOOL facebook;
 @property BOOL needsReply;
 
-+ (void)clearCaches;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentStretchRectForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (float)minimumHeightForOrientation:(int)arg1;
 + (id)_cachedImageForBackgroundColor:(id)arg1 foregroundColor:(id)arg2 dimmed:(BOOL)arg3;
@@ -58,11 +57,15 @@
 + (id)occurrenceViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (void)_clearViewCache;
 + (id)_viewCache;
++ (void)clearCaches;
 
+- (void)setLocation:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (BOOL)isCancelled;
 - (void)dealloc;
+- (void)setDimmed:(BOOL)arg1;
+- (void)setBirthday:(BOOL)arg1;
 - (id)location;
 - (id)_textColor;
 - (id)color;
@@ -82,7 +85,6 @@
 - (void)layoutSubviews;
 - (void)setHidden:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setLocation:(id)arg1;
 - (BOOL)dragging;
 - (BOOL)borderless;
 - (BOOL)usesSmallText;
@@ -112,8 +114,6 @@
 - (void)setDarkensSelection:(BOOL)arg1;
 - (void)setNeedsReply:(BOOL)arg1;
 - (void)setTentative:(BOOL)arg1;
-- (void)setDimmed:(BOOL)arg1;
-- (void)setBirthday:(BOOL)arg1;
 - (id)occurrence;
 - (BOOL)isFacebook;
 - (BOOL)isTentative;

@@ -21,9 +21,6 @@
 + (id)appPunchOutWithDictionary:(id)arg1 context:(id)arg2;
 + (id)appPunchOut;
 
-- (id)groupIdentifier;
-- (BOOL)appInstalled;
-- (void)setAppInstalled:(BOOL)arg1;
 - (void)setPunchOutUri:(id)arg1;
 - (id)punchOutUri;
 - (void)setPunchOutName:(id)arg1;
@@ -44,6 +41,9 @@
 - (id)providerId;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (BOOL)appInstalled;
+- (void)setAppInstalled:(BOOL)arg1;
+- (id)groupIdentifier;
 - (void)afui_getInstallAppPunchoutWithCompletion:(id)arg1;
 - (id)afui_punchOutFailureViews;
 

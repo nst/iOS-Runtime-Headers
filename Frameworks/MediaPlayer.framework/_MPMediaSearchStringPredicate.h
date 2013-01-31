@@ -14,9 +14,6 @@
 
 + (id)predicateWithSearchString:(id)arg1 forProperties:(id)arg2;
 
-- (id)_ML3PredicateForEntityClass:(Class)arg1;
-- (id)ML3PredicateForContainer;
-- (id)ML3PredicateForTrack;
 - (void)setProperties:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
@@ -27,5 +24,8 @@
 - (id)properties;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)_ML3PredicateForEntityClass:(Class)arg1;
+- (id)ML3PredicateForContainer;
+- (id)ML3PredicateForTrack;
 
 @end

@@ -21,21 +21,21 @@
 @property int syncAttempts;
 
 
+- (BOOL)isStream;
 - (void)setName:(id)arg1;
 - (id)name;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (void)setSyncAttempts:(int)arg1;
+- (int)syncAttempts;
+- (int)ear;
+- (void)setEar:(int)arg1;
 - (void)setIsSelected:(BOOL)arg1;
 - (int)category;
 - (void)setIndex:(unsigned char)arg1;
 - (void)setCategory:(int)arg1;
 - (unsigned char)index;
 - (BOOL)isSelected;
-- (BOOL)isStream;
-- (void)setSyncAttempts:(int)arg1;
-- (int)syncAttempts;
-- (int)ear;
-- (void)setEar:(int)arg1;
 
 @end

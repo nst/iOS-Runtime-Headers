@@ -29,15 +29,10 @@
 + (long long)_existsMessage;
 + (void)loadThumbnailImageDataForDownloadID:(long long)arg1 connection:(id)arg2 completionBlock:(id)arg3;
 
-- (double)percentComplete;
 - (double)estimatedSecondsRemaining;
 - (void)setValuesWithStoreDownloadMetadata:(id)arg1;
 - (id)initWithDownloadMetadata:(id)arg1;
 - (void)setNetworkConstraints:(id)arg1;
-- (void)setDownloadPolicy:(id)arg1;
-- (void)prioritizeAboveDownload:(id)arg1 completionBlock:(id)arg2;
-- (id)downloadIdentifier;
-- (long long)downloadSizeLimit;
 - (void)resume;
 - (void)dealloc;
 - (void)_resetStatus;
@@ -61,14 +56,17 @@
 - (BOOL)isEligibleForRestore:(id*)arg1;
 - (id)_errorWithData:(id)arg1;
 - (id)_XPCConnection;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
+- (void)setAssets:(id)arg1;
+- (id)assets;
 - (void)setStatus:(id)arg1;
 - (id)status;
 - (void)pause;
 - (BOOL)isExternal;
-- (void)setAssets:(id)arg1;
-- (id)assets;
+- (void)setDownloadPolicy:(id)arg1;
+- (void)prioritizeAboveDownload:(id)arg1 completionBlock:(id)arg2;
+- (id)downloadIdentifier;
+- (long long)downloadSizeLimit;
+- (double)percentComplete;
 - (id)assetsForType:(id)arg1;
 - (id)failureError;
 - (long long)bytesTotal;
@@ -78,5 +76,7 @@
 - (id)downloadPhaseIdentifier;
 - (id)initWithPersistentIdentifier:(long long)arg1;
 - (long long)persistentIdentifier;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 
 @end

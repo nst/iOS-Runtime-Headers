@@ -110,15 +110,6 @@
 @property BOOL shouldLimitTopDownHeight;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id).cxx_construct;
-- (void)dealloc;
-- (id)init;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)setZoomScale:(double)arg1;
-- (double)zoomScale;
 - (BOOL)shouldLimitTopDownHeight;
 - (void)_applyUpdateIfNecessary:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; struct { double x_3_1_1; double x_3_1_2; } x3; id x4; int x5; int x6; BOOL x7; BOOL x8; })arg1;
 - (void)_startTapZoomAnimationFrom:(double)arg1 to:(double)arg2 completionHandler:(id)arg3;
@@ -150,5 +141,14 @@
 - (void)setTracePlaybackSpeedMultiplier:(double)arg1;
 - (id)detailedDescription;
 - (void)setGesturing:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id).cxx_construct;
+- (void)dealloc;
+- (id)init;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)setZoomScale:(double)arg1;
+- (double)zoomScale;
 
 @end

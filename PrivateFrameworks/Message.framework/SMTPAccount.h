@@ -23,7 +23,6 @@
 + (id)displayedAccountTypeString;
 
 - (void)dealloc;
-- (id)serviceName;
 - (id)customAuthenticationErrorStringForError:(id)arg1 authScheme:(id)arg2;
 - (void)setDeliveryClass:(Class)arg1;
 - (BOOL)_isAppleServiceDeliveryHostname:(id)arg1;
@@ -56,5 +55,6 @@
 - (id)passwordFromKeychain;
 - (void)setPasswordInKeychain:(id)arg1;
 - (void)releaseAllConnections;
+- (id)serviceName;
 
 @end

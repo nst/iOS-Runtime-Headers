@@ -5,7 +5,6 @@
 @interface MFMessageKeychainManager : NSObject  {
 }
 
-+ (void)initialize;
 + (int)actionForEncryptionCertificate:(struct __SecCertificate { }*)arg1 address:(id)arg2;
 + (int)actionForSigningIdentity:(struct __SecIdentity { }*)arg1 address:(id)arg2;
 + (id)saveEncryptionCertificate:(struct __SecCertificate { }*)arg1 forAddress:(id)arg2;
@@ -34,6 +33,7 @@
 + (id)passwordForHost:(id)arg1 username:(id)arg2 port:(int)arg3 keychainProtocol:(void*)arg4;
 + (void)removePasswordForHost:(id)arg1 username:(id)arg2 port:(int)arg3 keychainProtocol:(void*)arg4;
 + (void)setPassword:(id)arg1 forHost:(id)arg2 username:(id)arg3 port:(int)arg4 keychainProtocol:(void*)arg5 keychainAccessibility:(void*)arg6;
++ (void)initialize;
 
 
 @end

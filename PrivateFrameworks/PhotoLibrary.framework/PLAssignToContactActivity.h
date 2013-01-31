@@ -14,6 +14,15 @@
 
 
 - (void)dealloc;
+- (void)_clearPeoplePicker;
+- (void)_restoreOriginalStatusBar;
+- (void)setTile:(id)arg1;
+- (id)tile;
+- (void)_handleCompletionWithStatus:(int)arg1;
+- (void)editImageViewControllerDidCancel:(id)arg1;
+- (void)editImageViewController:(id)arg1 didEditImageWithOptions:(id)arg2;
+- (int)_preferredStatusBarStyle;
+- (void)_savePhotoFinished:(id)arg1;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
@@ -25,14 +34,5 @@
 - (id)activityTitle;
 - (id)activityType;
 - (id)_beforeActivity;
-- (void)_clearPeoplePicker;
-- (void)_restoreOriginalStatusBar;
-- (void)setTile:(id)arg1;
-- (id)tile;
-- (void)_handleCompletionWithStatus:(int)arg1;
-- (void)editImageViewControllerDidCancel:(id)arg1;
-- (void)editImageViewController:(id)arg1 didEditImageWithOptions:(id)arg2;
-- (int)_preferredStatusBarStyle;
-- (void)_savePhotoFinished:(id)arg1;
 
 @end

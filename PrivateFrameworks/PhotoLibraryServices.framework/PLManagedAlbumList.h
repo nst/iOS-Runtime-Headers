@@ -22,7 +22,6 @@
 @property(readonly) NSString * _prettyDescription;
 @property(readonly) NSString * _typeDescription;
 
-+ (void)initialize;
 + (id)placesAlbumListInManagedObjectContext:(id)arg1;
 + (id)facesAlbumListInManagedObjectContext:(id)arg1;
 + (void)persistAlbumListUUIDs:(id)arg1 type:(int)arg2 allowsOverwrite:(BOOL)arg3;
@@ -41,15 +40,11 @@
 + (BOOL)isValidPathForPersistence:(id)arg1;
 + (id)eventListInPhotoLibrary:(id)arg1;
 + (id)albumListInPhotoLibrary:(id)arg1;
++ (void)initialize;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 
-- (void)dealloc;
-- (void)didSave;
-- (void)awakeFromInsert;
-- (void)willTurnIntoFault;
-- (void)awakeFromFetch;
-- (id)_typeDescription;
 - (int)filter;
+- (void)dealloc;
 - (void)registerFilteredAlbumList:(id)arg1;
 - (void)setAlbumListType:(int)arg1;
 - (unsigned int)unreadAlbumsCount;
@@ -73,5 +68,10 @@
 - (void)registerForChanges;
 - (void)unregisterForChanges;
 - (id)albums;
+- (id)_typeDescription;
+- (void)didSave;
+- (void)awakeFromInsert;
+- (void)willTurnIntoFault;
+- (void)awakeFromFetch;
 
 @end

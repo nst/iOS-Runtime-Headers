@@ -24,9 +24,6 @@
 }
 
 
-- (id)perform;
-- (id)cancel;
-- (void)dealloc;
 - (void)completeWithNextAction:(id)arg1 error:(id)arg2;
 - (void)setSpokenFeedbackAttributedString:(id)arg1;
 - (void)setSpokenFeedbackString:(id)arg1;
@@ -42,5 +39,8 @@
 - (int)completionType;
 - (BOOL)_hasDeferredStartCallback;
 - (void)_continueAfterDeferredStart;
+- (id)perform;
+- (id)cancel;
+- (void)dealloc;
 
 @end

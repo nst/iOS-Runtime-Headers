@@ -59,18 +59,13 @@
 + (BOOL)defaultStateForSetting:(unsigned int)arg1 inSectionType:(unsigned int)arg2;
 + (id)defaultSectionInfoForType:(unsigned int)arg1;
 
+- (void)setIconData:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)setDisplayName:(id)arg1;
 - (id)iconData;
-- (void)setVersion:(unsigned int)arg1;
-- (unsigned int)version;
-- (BOOL)enabled;
-- (id)displayName;
-- (void)setEnabled:(BOOL)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (unsigned int)bulletinCount;
 - (BOOL)showsOnBluetoothDevices;
 - (void)setSubsectionID:(id)arg1;
@@ -122,7 +117,12 @@
 - (BOOL)showsMessagePreview;
 - (void)setSectionID:(id)arg1;
 - (id)sectionID;
-- (void)setIconData:(id)arg1;
-- (void)setDisplayName:(id)arg1;
+- (void)setVersion:(unsigned int)arg1;
+- (unsigned int)version;
+- (BOOL)enabled;
+- (id)displayName;
+- (void)setEnabled:(BOOL)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

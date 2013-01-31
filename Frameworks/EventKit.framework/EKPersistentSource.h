@@ -23,7 +23,8 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)UUID;
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
 - (id)constraints;
 - (void)setSourceType:(int)arg1;
 - (int)sourceType;
@@ -31,12 +32,11 @@
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;
 - (void)setTitle:(id)arg1;
-- (id)externalID;
-- (void)setExternalID:(id)arg1;
+- (int)entityType;
 - (void)setUUID:(id)arg1;
 - (void)setDefaultAlarmOffset:(id)arg1;
 - (id)defaultAlarmOffset;
 - (BOOL)refresh;
-- (int)entityType;
+- (id)UUID;
 
 @end

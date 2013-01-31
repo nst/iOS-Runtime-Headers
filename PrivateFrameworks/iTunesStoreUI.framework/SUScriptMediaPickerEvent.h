@@ -15,8 +15,8 @@
 
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (void)dealloc;
 - (id)attributeKeys;
+- (void)dealloc;
 - (id)initWithCollection:(id)arg1;
 - (id)collection;
 

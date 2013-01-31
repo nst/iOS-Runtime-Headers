@@ -29,8 +29,6 @@
 - (id)path;
 - (id)description;
 - (void)dealloc;
-- (void)finalize;
-- (id)view;
 - (unsigned long long)sharedCacheHeaderOffsetForPath:(id)arg1;
 - (void)buildSharedCacheMap;
 - (id)initWithPath:(id)arg1 fileRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg2 mapToAddress:(unsigned long long)arg3 architecture:(id)arg4;
@@ -42,5 +40,7 @@
 - (id)architecture;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
 - (BOOL)map;
+- (void)finalize;
+- (id)view;
 
 @end

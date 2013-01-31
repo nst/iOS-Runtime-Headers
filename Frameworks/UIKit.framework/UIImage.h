@@ -84,7 +84,7 @@
 + (id)_mapkit_imageNamed:(id)arg1;
 + (struct CGImage { }*)missingMapTileImage;
 + (void)resetMissingMapTileImage;
-+ (id)imageWithWLImage:(id)arg1;
++ (id)imageWithPKImage:(id)arg1;
 + (id)socialFrameworkImageNamed:(id)arg1 leftCapWidth:(float)arg2 topCapHeight:(float)arg3;
 + (id)socialFrameworkImageNamed:(id)arg1;
 + (id)ckImageWithData:(id)arg1;
@@ -197,12 +197,12 @@
 - (id)cacheNameKey;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bitmapRectFromImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)mpIsCoverflowPlaceholder;
+- (BOOL)isPlaceholder;
+- (void)setIsPlaceholder:(BOOL)arg1;
 - (void)setMediaImageTime:(double)arg1;
 - (double)mediaImageTime;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mediaImageSubRect;
 - (void)setMediaImageSubRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isPlaceholder;
-- (void)setIsPlaceholder:(BOOL)arg1;
 - (id)mp_stretchableImageWithLeftCapWidth:(int)arg1 rightCapWidth:(int)arg2;
 - (id)subImageInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)newImageRotatedByDegrees:(float)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUTabBarControllerDelegate>, NSMutableArray, SUClientInterface, UIImage, NSString, SUPreviewOverlayViewController, UIViewController, NSArray;
+@class SUPreviewOverlayViewController, <SUTabBarControllerDelegate>, NSMutableArray, SUClientInterface, UIImage, NSString, SUViewController, UIViewController, NSArray;
 
 @interface SUTabBarController : UITabBarController <SUOverlayBackgroundDelegate> {
     SUClientInterface *_clientInterface;
@@ -14,6 +14,9 @@
     BOOL _ignoreTabReselection;
     UIImage *_moreListSelectedImage;
     UIImage *_moreListUnselectedImage;
+    SUViewController *_preloadedViewController;
+    NSString *_preloadedViewControllerIdentifier;
+    NSString *_preloadedViewControllerKey;
     SUPreviewOverlayViewController *_previewOverlayViewController;
 }
 
@@ -46,14 +49,12 @@
 - (void)reloadSectionWithIdentifier:(id)arg1 URL:(id)arg2;
 - (void)reloadSectionVisibilityAnimated:(BOOL)arg1;
 - (void)pushTransientViewController:(id)arg1 onSectionWithIdentifier:(id)arg2;
-- (BOOL)loadFromDefaults;
+- (BOOL)loadFromDefaultsAndSetSections:(id)arg1;
 - (void)scriptOverlayBackgroundDidDismiss:(id)arg1;
 - (void)_endReloadingUnderneathTransientViewController;
 - (void)_beginReloadingUnderneathTransientViewController;
 - (id)_archivedContextsForViewController:(id)arg1;
 - (BOOL)presentOverlayBackgroundViewController:(id)arg1;
-- (id)_viewControllerForContext:(id)arg1;
-- (id)_rootViewControllerForSection:(id)arg1;
 - (id)_sectionForIdentifier:(id)arg1;
 - (id)viewControllerForSectionIdentifier:(id)arg1;
 - (void)_showPhonePreviewOverlay:(id)arg1 animated:(BOOL)arg2;
@@ -80,6 +81,9 @@
 - (void)_restoreOverlayContexts:(id)arg1;
 - (void)_restoreArchivedContexts:(id)arg1;
 - (void)setSectionOrdering:(id)arg1;
+- (BOOL)loadFromDefaults;
+- (id)_rootViewControllerForSection:(id)arg1;
+- (id)_viewControllerForContext:(id)arg1;
 - (void)_partnerChanged:(id)arg1;
 - (void)_applicationDidChangeStatusBarFrame:(id)arg1;
 - (id)initWithClientInterface:(id)arg1;

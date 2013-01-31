@@ -16,13 +16,13 @@
 - (int)type;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)key;
-- (void)setType:(int)arg1;
 - (void)setDifferentialStyleWithIndex:(unsigned int)arg1;
 - (void)setBandSize:(unsigned int)arg1;
 - (unsigned int)bandSize;
 - (id)differentialStyle;
 - (void)setDifferentialStyle:(id)arg1;
 - (id)initWithResources:(id)arg1;
+- (int)key;
+- (void)setType:(int)arg1;
 
 @end

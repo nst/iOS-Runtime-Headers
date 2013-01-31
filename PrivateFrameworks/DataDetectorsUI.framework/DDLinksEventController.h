@@ -12,6 +12,7 @@
 
 
 - (void)dealloc;
+- (id)initWithResult:(struct __DDResult { }*)arg1;
 - (void)viewDidUnload;
 - (id)nibName;
 - (id)nibBundle;
@@ -19,7 +20,6 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)didReceiveMemoryWarning;
 - (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
-- (id)initWithResult:(struct __DDResult { }*)arg1;
 - (void)buttonClicked:(id)arg1;
 
 @end

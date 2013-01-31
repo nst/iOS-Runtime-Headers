@@ -33,10 +33,6 @@
 
 - (void)reset;
 - (void)dealloc;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (id)touchUpHandler;
 - (id)touchMovedHandler;
 - (id)touchDownHandler;
@@ -45,5 +41,9 @@
 - (void)setTouchUpHandler:(id)arg1;
 - (void)setTouchMovedHandler:(id)arg1;
 - (void)setTouchDownHandler:(id)arg1;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 
 @end

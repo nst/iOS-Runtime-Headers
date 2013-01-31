@@ -85,18 +85,12 @@
 + (id)descriptionForAlbumFilter:(int)arg1 parameters:(id)arg2;
 + (struct NSObject { Class x1; }*)filteredAlbum:(struct NSObject { Class x1; }*)arg1 filter:(int)arg2 parameters:(id)arg3;
 
-- (id)localizedTitle;
+- (int)filter;
 - (void)setPredicate:(id)arg1;
 - (id)name;
 - (id)description;
 - (void)dealloc;
 - (unsigned int)count;
-- (id)predicate;
-- (id)kind;
-- (id)title;
-- (void)setFilter:(int)arg1;
-- (BOOL)isEmpty;
-- (int)filter;
 - (BOOL)isObservingContextChanges;
 - (void)replaceFilteredAssetsAtIndexes:(id)arg1 withFilteredValues:(id)arg2;
 - (void)replaceObjectInFilteredAssetsAtIndex:(unsigned int)arg1 withObject:(id)arg2;
@@ -200,5 +194,11 @@
 - (BOOL)isCloudSharedAlbum;
 - (int)kindValue;
 - (BOOL)isCameraAlbum;
+- (id)kind;
+- (id)title;
+- (void)setFilter:(int)arg1;
+- (BOOL)isEmpty;
+- (id)localizedTitle;
+- (id)predicate;
 
 @end

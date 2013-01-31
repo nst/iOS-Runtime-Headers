@@ -77,17 +77,6 @@
 
 + (BOOL)supportsMapType:(int)arg1;
 
-- (void)setStylesheet:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)stylesheet;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
-- (void)didReceiveMemoryWarning;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)didMoveToWindow;
-- (void)setHidden:(BOOL)arg1;
 - (double)pitch;
 - (double)yaw;
 - (id)defaultTrackingCamera;
@@ -237,6 +226,7 @@
 - (void)setDesiredMapMode:(int)arg1 immediate:(BOOL)arg2;
 - (double)maximumZoomLevel;
 - (double)minimumZoomLevel;
+- (BOOL)writeVisibleTrafficTilesToDirectory:(id)arg1 error:(id*)arg2;
 - (id)detailedDescription;
 - (void)debugHighlightLabelAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)clearScene;
@@ -263,7 +253,18 @@
 - (BOOL)allowDatelineWraparound;
 - (void)didDrawView;
 - (BOOL)currentSceneRequiresMSAA;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
 - (id)map;
+- (id)stylesheet;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (void)didReceiveMemoryWarning;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)didMoveToWindow;
+- (void)setHidden:(BOOL)arg1;
+- (void)setStylesheet:(id)arg1;
 
 @end

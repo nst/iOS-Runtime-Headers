@@ -22,11 +22,11 @@
 }
 
 
+- (id)initWithClient:(id)arg1;
+- (id)client;
 - (id)documentState;
 - (void)dealloc;
 - (id)init;
-- (id)initWithClient:(id)arg1;
-- (id)client;
 - (id)bulletBlipRefForURL:(id)arg1;
 - (void)setTargetBulletBlipArray:(id)arg1;
 - (void)setDocumentState:(id)arg1;

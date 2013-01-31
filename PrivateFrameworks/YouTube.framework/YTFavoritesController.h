@@ -19,7 +19,6 @@
 
 + (id)sharedFavoritesController;
 
-- (void)dealloc;
 - (void)accountFeedRequest:(id)arg1 didFailWithError:(id)arg2;
 - (void)accountFeedRequest:(id)arg1 receivedVideos:(id)arg2;
 - (id)batchURL;
@@ -42,5 +41,6 @@
 - (void)bookmarksSearchRequestInterrupted;
 - (id)bookmarkedShortIDs;
 - (BOOL)usingAccountFavorites;
+- (void)dealloc;
 
 @end

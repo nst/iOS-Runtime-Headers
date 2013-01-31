@@ -16,10 +16,10 @@
 @property(readonly) SPSearchQuery * query;
 
 
-- (unsigned int)queryID;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (unsigned int)queryID;
 - (id)initWithQuery:(id)arg1;
 - (id)query;
 - (void)handleMessage:(id)arg1;

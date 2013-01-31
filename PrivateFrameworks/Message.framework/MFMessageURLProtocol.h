@@ -17,10 +17,10 @@
 + (id)canonicalRequestForRequest:(id)arg1;
 + (BOOL)canInitWithRequest:(id)arg1;
 
-- (void)startLoading;
 - (void)dealloc;
-- (void)stopLoading;
 - (void)_downloadedData:(id)arg1 mimeType:(id)arg2;
 - (void)_downloadAttachment;
+- (void)stopLoading;
+- (void)startLoading;
 
 @end

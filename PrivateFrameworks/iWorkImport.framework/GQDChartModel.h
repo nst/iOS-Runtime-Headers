@@ -17,9 +17,6 @@
 }
 
 
-- (void)dealloc;
-- (long)direction;
-- (struct __CFString { }*)title;
 - (BOOL)isFormulaChart;
 - (struct __CFString { }*)value2Title;
 - (struct __CFString { }*)valueTitle;
@@ -35,6 +32,9 @@
 - (struct __CFArray { }*)seriesArray;
 - (void)transpose;
 - (void)setProcessorBundle:(struct __CFBundle { }*)arg1;
+- (void)dealloc;
 - (struct __CFArray { }*)chartData;
+- (long)direction;
+- (struct __CFString { }*)title;
 
 @end

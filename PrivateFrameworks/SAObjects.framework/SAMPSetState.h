@@ -13,12 +13,12 @@
 + (id)setStateWithDictionary:(id)arg1 context:(id)arg2;
 + (id)setState;
 
-- (id)groupIdentifier;
 - (int)state;
-- (void)setState:(int)arg1;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (void)setState:(int)arg1;
+- (id)groupIdentifier;
 
 @end

@@ -10,6 +10,9 @@
 
 + (id)_center;
 
+- (void)dealloc;
+- (id)init;
+- (void)forwardInvocation:(id)arg1;
 - (BOOL)prepareForRemoteSelectorInvocationWithTimeout:(double*)arg1;
 - (void)_serverConnectionDied;
 - (id)_performRemoteSelectorAndReceiveReply:(SEL)arg1 userInfo:(id)arg2 timeout:(double)arg3;
@@ -18,8 +21,5 @@
 - (void)serverConnectionDied;
 - (void)didPrepareForRemoteSelectorInvocation;
 - (BOOL)prepareForRemoteSelectorInvocation;
-- (void)dealloc;
-- (id)init;
-- (void)forwardInvocation:(id)arg1;
 
 @end

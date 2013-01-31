@@ -10,14 +10,14 @@
 }
 
 
+- (BOOL)isRamp;
+- (BOOL)isFreeway;
+- (BOOL)isTunnel;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (BOOL)isRamp;
-- (BOOL)isFreeway;
-- (BOOL)isTunnel;
 - (void)sort;
 
 @end

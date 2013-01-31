@@ -17,15 +17,16 @@
 
 + (float)defaultHeight;
 
-- (void)reloadForAdditions:(id)arg1 removals:(id)arg2 animate:(BOOL)arg3;
-- (id)newVolumeSlider;
-- (id)buttonImageForPart:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)_layoutSubviews;
 - (int)style;
 - (void)setStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
-- (void)_layoutSubviews;
+- (void)reloadForAdditions:(id)arg1 removals:(id)arg2 animate:(BOOL)arg3;
+- (id)newVolumeSlider;
+- (id)disabledButtonImageForPart:(unsigned long long)arg1;
+- (id)buttonImageForPart:(unsigned long long)arg1;
 
 @end

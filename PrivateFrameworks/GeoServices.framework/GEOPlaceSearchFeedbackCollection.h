@@ -12,10 +12,12 @@
     unsigned long long _businessID;
     long long _placeID;
     NSMutableArray *_actionCaptures;
+    int _localSearchProviderID;
     struct { 
         unsigned int sessionID : 1; 
         unsigned int businessID : 1; 
         unsigned int placeID : 1; 
+        unsigned int localSearchProviderID : 1; 
     } _has;
 }
 
@@ -26,19 +28,19 @@
 @property BOOL hasPlaceID;
 @property long long placeID;
 @property(retain) NSMutableArray * actionCaptures;
+@property BOOL hasLocalSearchProviderID;
+@property int localSearchProviderID;
 
 
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
-- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (BOOL)hasBusinessID;
 - (unsigned long long)businessID;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
 - (id)actionCaptures;
 - (void)setHasPlaceID:(BOOL)arg1;
 - (id)actionCaptureAtIndex:(unsigned int)arg1;
@@ -51,8 +53,14 @@
 - (void)setActionCaptures:(id)arg1;
 - (void)setHasBusinessID:(BOOL)arg1;
 - (void)setBusinessID:(unsigned long long)arg1;
+- (void)setHasLocalSearchProviderID:(BOOL)arg1;
+- (void)setLocalSearchProviderID:(int)arg1;
+- (int)localSearchProviderID;
+- (BOOL)hasLocalSearchProviderID;
 - (void)setHasSessionID:(BOOL)arg1;
 - (BOOL)hasSessionID;
-- (BOOL)readFrom:(id)arg1;
+- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
+- (id)dictionaryRepresentation;
 
 @end

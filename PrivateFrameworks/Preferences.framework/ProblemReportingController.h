@@ -11,14 +11,14 @@
 
 + (BOOL)isProblemReportingEnabled;
 
-- (id)specifiers;
+- (Class)tableViewClass;
+- (void)dealloc;
 - (void)setProblemReportingEnabled:(BOOL)arg1;
 - (BOOL)shouldEnableProblemReportingForCheckedSpecifier;
 - (void)diagnosticsDonePressed:(id)arg1;
 - (void)showAboutDiagnosticsSheet:(id)arg1;
-- (void)dealloc;
+- (id)specifiers;
 - (void)viewDidLoad;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (Class)tableViewClass;
 
 @end

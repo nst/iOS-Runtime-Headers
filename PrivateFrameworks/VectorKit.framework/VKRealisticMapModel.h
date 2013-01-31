@@ -20,8 +20,6 @@
 @property float sceneAlpha;
 
 
-- (void)dealloc;
-- (id)init;
 - (void)willStartDrawingTiles:(id)arg1;
 - (BOOL)wantsCategorizedSourceTiles;
 - (void)_updateZoomLevel:(id)arg1;
@@ -39,5 +37,7 @@
 - (id)routePreloadSession;
 - (void)setRoutePreloadSession:(id)arg1;
 - (unsigned int)mapLayerPosition;
+- (void)dealloc;
+- (id)init;
 
 @end

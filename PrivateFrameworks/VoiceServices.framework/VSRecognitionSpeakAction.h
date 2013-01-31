@@ -7,8 +7,8 @@
 }
 
 
-- (id)perform;
 - (id)initWithSpokenFeedbackString:(id)arg1 willTerminate:(BOOL)arg2;
 - (int)completionType;
+- (id)perform;
 
 @end

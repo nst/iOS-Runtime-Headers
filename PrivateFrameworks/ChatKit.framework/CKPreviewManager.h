@@ -19,7 +19,10 @@
 - (void)prepareForSuspend;
 - (void)dealloc;
 - (id)init;
-- (void)didReceiveMemoryWarning;
+- (void)systemApplicationDidResumeForEventsOnly;
+- (void)systemApplicationDidSuspendForEventsOnly;
+- (void)systemApplicationDidResume;
+- (void)systemApplicationDidSuspend;
 - (void)setPreviewDispatchQueue:(id)arg1;
 - (void)setPendingOperations:(id)arg1;
 - (void)setPreviewCache:(id)arg1;
@@ -33,9 +36,6 @@
 - (void)resumePreviewDispatchQueue;
 - (void)suspendPreviewDispatchQueue;
 - (void)flushCacheForMediaObject:(id)arg1;
-- (void)systemApplicationDidResumeForEventsOnly;
-- (void)systemApplicationDidSuspendForEventsOnly;
-- (void)systemApplicationDidResume;
-- (void)systemApplicationDidSuspend;
+- (void)didReceiveMemoryWarning;
 
 @end

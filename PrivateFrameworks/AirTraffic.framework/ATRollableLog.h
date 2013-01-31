@@ -24,6 +24,7 @@
 + (id)_filenameWithBase:(id)arg1 generationalFormat:(id)arg2 generation:(int)arg3;
 + (id)loggerWithFilename:(id)arg1;
 
+- (id)initWithFilename:(id)arg1;
 - (void)logData:(id)arg1;
 - (void)logString:(id)arg1;
 - (id)lastStatDate;
@@ -38,6 +39,5 @@
 - (void)setFh:(id)arg1;
 - (id)_fullFilePathWithGenerationNumber:(int)arg1;
 - (id)_filenameWithGenerationNumber:(int)arg1;
-- (id)initWithFilename:(id)arg1;
 
 @end

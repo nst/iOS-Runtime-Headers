@@ -16,7 +16,6 @@
 
 - (BOOL)isDeleted;
 - (void)dealloc;
-- (id)initWithText:(id)arg1;
 - (id)boldStyle;
 - (id)baseStyle;
 - (void)map1At:(id)arg1 withState:(id)arg2;
@@ -27,5 +26,6 @@
 - (id)copyCharacterStyle;
 - (int)defaultTabWidth;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (id)initWithText:(id)arg1;
 
 @end

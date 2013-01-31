@@ -17,6 +17,9 @@
 - (id)entity;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)key;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)_relatedNodes;
 - (id)destinationsForRelationship:(id)arg1;
 - (void)setDestinations:(id)arg1 forRelationship:(id)arg2;
@@ -28,8 +31,5 @@
 - (unsigned int)_versionNumber;
 - (id)configurationName;
 - (id)objectID;
-- (id)key;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

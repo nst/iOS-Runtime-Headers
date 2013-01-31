@@ -17,16 +17,16 @@
 @property int feederMode;
 
 
-- (double)currentTime;
-- (void)setCurrentTime:(double)arg1;
+- (id)description;
+- (void)dealloc;
 - (void)setCurrentItemIndex:(unsigned int)arg1;
 - (unsigned int)currentItemIndex;
 - (id)initWithStateOfAVController:(id)arg1;
 - (int)feederMode;
 - (void)setFeederMode:(int)arg1;
 - (void)setFeeder:(id)arg1;
+- (void)setCurrentTime:(double)arg1;
+- (double)currentTime;
 - (id)feeder;
-- (id)description;
-- (void)dealloc;
 
 @end

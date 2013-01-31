@@ -39,8 +39,6 @@
 - (id)debugDescription;
 - (id)userInfo;
 - (void)dealloc;
-- (void)_significantTimeChange;
-- (BOOL)isValid;
 - (BOOL)disableSystemWaking;
 - (double)minimumEarlyFireProportion;
 - (void)_powerChangedMessageType:(unsigned int)arg1 notificationID:(void*)arg2;
@@ -60,6 +58,8 @@
 - (void)interfaceManagerWWANInterfaceStatusChanged:(id)arg1;
 - (void)interfaceManagerWWANInterfaceChangedPowerState:(id)arg1;
 - (void)interfaceManagerInternetReachabilityChanged:(id)arg1;
+- (void)_significantTimeChange;
+- (BOOL)isValid;
 - (void)scheduleInRunLoop:(id)arg1;
 - (void)setMinimumEarlyFireProportion:(double)arg1;
 - (id)initWithFireDate:(id)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;

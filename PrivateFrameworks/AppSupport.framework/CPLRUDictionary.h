@@ -20,8 +20,6 @@
 - (id)objectForKey:(id)arg1;
 - (void)dealloc;
 - (unsigned int)count;
-- (id)initWithMaximumCapacity:(unsigned int)arg1;
-- (id)allKeys;
 - (id)objectForKeyWithoutAffectingLRU:(id)arg1;
 - (id)allValuesInLRUOrder;
 - (id)allKeysInLRUOrder;
@@ -30,5 +28,7 @@
 - (void)_removeNode:(id)arg1;
 - (void)_addNodeToFront:(id)arg1;
 - (void)_removeNodeFromLinkedList:(id)arg1;
+- (id)initWithMaximumCapacity:(unsigned int)arg1;
+- (id)allKeys;
 
 @end

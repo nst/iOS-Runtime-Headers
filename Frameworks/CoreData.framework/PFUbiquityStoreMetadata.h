@@ -37,7 +37,6 @@
 - (id)peerStoreURLForPeerIdentifier:(id)arg1;
 - (void)updatePeerStatesToMatchKnowledgeVector:(id)arg1;
 - (id)createPeerRangesForBaselineWithLocalPeerID:(id)arg1;
-- (id)createKnowledgeVectorForBaseline;
 - (void)loadFromBaselineMetadata:(id)arg1 withLocalPeerID:(id)arg2;
 - (id)peerStateForPeerID:(id)arg1;
 - (void)setStoreOptions:(id)arg1;

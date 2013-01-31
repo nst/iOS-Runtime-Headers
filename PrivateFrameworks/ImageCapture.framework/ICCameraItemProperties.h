@@ -25,11 +25,16 @@
 @property(retain) NSMutableDictionary * userData;
 
 
-- (void)setParentFolder:(id)arg1;
 - (void)setDevice:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)name;
 - (void)dealloc;
+- (void)setModificationDate:(id)arg1;
+- (id)parentFolder;
+- (BOOL)locked;
+- (void)setCreationDate:(id)arg1;
+- (id)creationDate;
+- (void)setParentFolder:(id)arg1;
 - (id)device;
 - (void)setUTI:(id)arg1;
 - (id)UTI;
@@ -37,11 +42,6 @@
 - (id)userData;
 - (void)finalize;
 - (void)setLocked:(BOOL)arg1;
-- (void)setModificationDate:(id)arg1;
-- (id)parentFolder;
 - (id)modificationDate;
-- (BOOL)locked;
-- (void)setCreationDate:(id)arg1;
-- (id)creationDate;
 
 @end

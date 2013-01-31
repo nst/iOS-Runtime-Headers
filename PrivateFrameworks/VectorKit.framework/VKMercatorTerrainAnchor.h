@@ -9,11 +9,11 @@
 }
 
 
-- (void)dealloc;
 - (id)initWithAnchorContext:(id)arg1 coordinate:(struct { double x1; double x2; })arg2;
 - (void)setMercatorPoint:(struct { double x1; double x2; double x3; })arg1;
 - (BOOL)followsTerrain;
 - (struct { double x1; double x2; double x3; })worldPoint;
+- (void)dealloc;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
 
 @end

@@ -26,6 +26,11 @@
 
 + (id)flexibleSpaceSection;
 
+- (id)init;
+- (float)heightForFooterInTableView:(id)arg1;
+- (float)heightForHeaderInTableView:(id)arg1;
+- (float)currentHeight;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (BOOL)isFlexible;
 - (float)currentHeightInTableView:(id)arg1;
 - (float)maximumHeight;
@@ -42,10 +47,5 @@
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
 - (int)rowCountInTableView:(id)arg1;
-- (id)init;
-- (float)heightForFooterInTableView:(id)arg1;
-- (float)heightForHeaderInTableView:(id)arg1;
-- (float)currentHeight;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 
 @end

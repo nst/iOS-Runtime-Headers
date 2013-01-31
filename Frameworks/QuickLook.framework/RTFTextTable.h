@@ -11,10 +11,6 @@
 }
 
 
-- (void)dealloc;
-- (id)init;
-- (void)setNumberOfColumns:(unsigned int)arg1;
-- (unsigned int)numberOfColumns;
 - (void)_setTableFlags:(unsigned int)arg1;
 - (unsigned int)_tableFlags;
 - (void)setLayoutAlgorithm:(unsigned int)arg1;
@@ -24,5 +20,9 @@
 - (BOOL)hidesEmptyCells;
 - (BOOL)collapsesBorders;
 - (void)_takeValuesFromTextBlock:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setNumberOfColumns:(unsigned int)arg1;
+- (unsigned int)numberOfColumns;
 
 @end

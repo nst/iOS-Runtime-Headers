@@ -13,7 +13,6 @@
 @property(readonly) NSData * playInfoData;
 
 
-- (id)playInfoData;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -21,5 +20,6 @@
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)error;
+- (id)playInfoData;
 
 @end

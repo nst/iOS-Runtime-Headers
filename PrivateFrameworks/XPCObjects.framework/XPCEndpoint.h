@@ -14,11 +14,11 @@
 - (id)_initWithEndpoint:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)setEndpoint:(id)arg1;
 - (id)initWithConnection:(id)arg1;
 - (id)createConnection;
 - (id)endpoint;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setEndpoint:(id)arg1;
 
 @end

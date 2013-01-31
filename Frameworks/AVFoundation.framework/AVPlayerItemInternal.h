@@ -34,12 +34,6 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } initialDuration;
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     } initialTime;
     struct { 
         long long value; 

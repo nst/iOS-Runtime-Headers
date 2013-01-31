@@ -16,11 +16,12 @@
 }
 
 
+- (void)setLocation:(id)arg1;
 - (void)dealloc;
+- (id)_statusView;
 - (BOOL)update;
 - (id)_titleView;
 - (void)setTitle:(id)arg1;
-- (void)setLocation:(id)arg1;
 - (void)setStatusString:(id)arg1;
 - (void)setRecurrenceString:(id)arg1;
 - (void)setTimeString:(id)arg1;
@@ -30,6 +31,5 @@
 - (id)_dateView;
 - (id)_locationView;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
-- (id)_statusView;
 
 @end

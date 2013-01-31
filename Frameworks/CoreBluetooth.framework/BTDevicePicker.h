@@ -24,10 +24,11 @@
 @property <BTDevicePickerDelegate> * delegate;
 
 
-- (void)alertSheetDismissed:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)powerChanged:(id)arg1;
+- (void)alertSheetDismissed:(id)arg1;
 - (void)dismissAnimated:(BOOL)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)show;
@@ -35,7 +36,6 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)powerChanged:(id)arg1;
 - (id)initWithTitle:(id)arg1 service:(unsigned int)arg2 discoveryNameFilter:(id)arg3;
 - (void)_btSSPPasskeyDisplayHandler:(id)arg1;
 - (void)_btSSPNumericComparisonHandler:(id)arg1;

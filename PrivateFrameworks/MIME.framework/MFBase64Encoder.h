@@ -18,13 +18,13 @@
 
 - (BOOL)padChar;
 - (BOOL)allowSlash;
+- (void)setPadChar:(BOOL)arg1;
+- (void)setAllowSlash:(BOOL)arg1;
+- (void)setStandardLineBreak;
 - (unsigned long)lineBreak;
 - (void)setLineBreak:(unsigned long)arg1;
 - (id)initWithConsumers:(id)arg1;
 - (int)appendData:(id)arg1;
 - (void)done;
-- (void)setPadChar:(BOOL)arg1;
-- (void)setAllowSlash:(BOOL)arg1;
-- (void)setStandardLineBreak;
 
 @end

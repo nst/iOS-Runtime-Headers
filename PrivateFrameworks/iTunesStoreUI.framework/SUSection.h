@@ -73,7 +73,6 @@
 - (int)type;
 - (id)description;
 - (void)dealloc;
-- (BOOL)isTransient;
 - (id)valueForProperty:(id)arg1;
 - (id)url;
 - (void)setSelectedImage:(id)arg1;
@@ -82,5 +81,6 @@
 - (id)image;
 - (id)title;
 - (void)setImage:(id)arg1;
+- (BOOL)isTransient;
 
 @end

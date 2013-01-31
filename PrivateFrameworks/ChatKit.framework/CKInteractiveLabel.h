@@ -23,6 +23,12 @@
 
 - (id)description;
 - (void)dealloc;
+- (void)setInteractionViewAttached:(BOOL)arg1;
+- (BOOL)isInteractionViewAttached;
+- (void)willAttachInteractionView:(id)arg1;
+- (void)willDetachInteractionView:(id)arg1;
+- (void)setContainsHyperlink:(BOOL)arg1;
+- (BOOL)containsHyperlink;
 - (id)interactionDelegate;
 - (void)setInteractionDelegate:(id)arg1;
 - (id)_synthesizedAttributedText;
@@ -35,11 +41,5 @@
 - (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setInteractionViewAttached:(BOOL)arg1;
-- (BOOL)isInteractionViewAttached;
-- (void)willAttachInteractionView:(id)arg1;
-- (void)willDetachInteractionView:(id)arg1;
-- (void)setContainsHyperlink:(BOOL)arg1;
-- (BOOL)containsHyperlink;
 
 @end

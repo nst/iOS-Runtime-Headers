@@ -25,8 +25,6 @@
 
 - (void)resume;
 - (void)dealloc;
-- (void)pause;
-- (void)stop;
 - (void)_serviceRequest:(id)arg1;
 - (void)_serviceRequestFrom:(id)arg1;
 - (void)_start;
@@ -41,5 +39,7 @@
 - (id)loadImageFromSource:(id)arg1 asset:(id)arg2 forImageLoadingQueue:(id)arg3 synchronously:(BOOL)arg4 priority:(int)arg5 completion:(id)arg6;
 - (void)cacheWasDeallocated;
 - (id)initWithImageCache:(id)arg1;
+- (void)pause;
+- (void)stop;
 
 @end

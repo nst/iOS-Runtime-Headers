@@ -12,11 +12,11 @@
 
 
 - (void)dealloc;
-- (id)text;
 - (id)initWithParagraph:(id)arg1 footnote:(BOOL)arg2;
 - (BOOL)automaticNumbering;
 - (void)setAutomaticNumbering:(BOOL)arg1;
 - (int)runType;
 - (id)reference;
+- (id)text;
 
 @end

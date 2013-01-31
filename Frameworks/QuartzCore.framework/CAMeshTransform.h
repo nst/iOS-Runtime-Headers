@@ -22,14 +22,17 @@
 
 + (id)meshTransformWithVertexCount:(unsigned long)arg1 vertices:(const struct CAMeshVertex { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CAPoint3D { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg2 faceCount:(unsigned long)arg3 faces:(const struct CAMeshFace { unsigned int x1[4]; float x2[4]; }*)arg4 depthNormalization:(id)arg5;
 
+- (unsigned long)faceCount;
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (unsigned long)vertexCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (struct CAMeshVertex { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CAPoint3D { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })vertexAtIndex:(unsigned long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)_init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned long)vertexCount;
 - (id)_subdivideToDepth:(int)arg1;
 - (int)subdivisionSteps;
 - (struct CAMeshFace { unsigned int x1[4]; float x2[4]; })faceAtIndex:(unsigned long)arg1;
@@ -42,8 +45,5 @@
 - (float)CA_distanceToValue:(id)arg1;
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
 - (id)_data;
-- (struct CAMeshVertex { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CAPoint3D { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })vertexAtIndex:(unsigned long)arg1;
-- (unsigned long)faceCount;
-- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 
 @end

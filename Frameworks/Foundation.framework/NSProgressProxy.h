@@ -19,11 +19,11 @@
 }
 
 
-- (void)setKind:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (void)pause;
 - (void)setCancellationHandler:(id)arg1;
+- (void)setKind:(id)arg1;
 - (void)_invokeUnpublishingHandler;
 - (void)_invokePublishingHandler:(id)arg1;
 - (id)_initWithForwarder:(id)arg1 values:(id)arg2 isOld:(BOOL)arg3;

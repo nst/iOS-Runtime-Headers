@@ -14,9 +14,9 @@
 + (id)getDeferredObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)getDeferredObject;
 
-- (id)groupIdentifier;
 - (id)identifier;
-- (void)setIdentifier:(id)arg1;
 - (id)encodedClassName;
+- (void)setIdentifier:(id)arg1;
+- (id)groupIdentifier;
 
 @end

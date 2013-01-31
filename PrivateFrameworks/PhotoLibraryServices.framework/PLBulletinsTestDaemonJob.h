@@ -7,8 +7,8 @@
 @interface PLBulletinsTestDaemonJob : PLDaemonJob  {
     NSString *_albumUUID;
     PLPhotoLibrary *_photoLibrary;
-    int _bulletinType;
     NSArray *_addedAssetUUIDs;
+    int _bulletinType;
 }
 
 @property int bulletinType;
@@ -20,7 +20,6 @@
 + (void)notifyInvitationWasReceivedForAlbum:(id)arg1;
 
 - (void)dealloc;
-- (void)run;
 - (void)setAddedAssetUUIDs:(id)arg1;
 - (void)setBulletinType:(int)arg1;
 - (id)addedAssetUUIDs;
@@ -33,5 +32,6 @@
 - (void)setAlbumUUID:(id)arg1;
 - (id)photoLibrary;
 - (void)setPhotoLibrary:(id)arg1;
+- (void)run;
 
 @end

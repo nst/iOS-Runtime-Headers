@@ -20,9 +20,9 @@
 
 + (id)customAttributes;
 
+- (void)setInputPoint:(id)arg1;
 - (id)inputRotation;
 - (void)setInputRotation:(id)arg1;
-- (void)setInputPoint:(id)arg1;
 - (id)inputDecay;
 - (id)inputSize;
 - (id)_colorKernel;

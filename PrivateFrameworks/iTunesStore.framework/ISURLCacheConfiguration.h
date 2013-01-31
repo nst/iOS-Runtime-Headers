@@ -15,11 +15,11 @@
 @property(copy) NSString * persistentIdentifier;
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)setPersistentIdentifier:(id)arg1;
 - (void)setMemoryCapacity:(unsigned int)arg1;
 - (unsigned int)memoryCapacity;
-- (void)setPersistentIdentifier:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)persistentIdentifier;
 - (void)setDiskCapacity:(unsigned int)arg1;
 - (unsigned int)diskCapacity;

@@ -13,11 +13,11 @@
 
 + (id)sharedStatistics;
 
-- (void)setAggregateStatisticsDomain:(id)arg1;
-- (void)incrementViewDisplayCountForKey:(id)arg1;
-- (void)incrementViewDisplayCountForViewController:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)domain;
+- (void)setAggregateStatisticsDomain:(id)arg1;
+- (void)incrementViewDisplayCountForKey:(id)arg1;
+- (void)incrementViewDisplayCountForViewController:(id)arg1;
 
 @end

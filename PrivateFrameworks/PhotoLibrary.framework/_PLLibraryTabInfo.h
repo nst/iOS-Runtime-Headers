@@ -16,11 +16,11 @@
 
 + (id)tabInfoWithLabelKey:(id)arg1 iconName:(id)arg2 contentMode:(int)arg3;
 
-- (int)contentMode;
-- (void)setContentMode:(int)arg1;
 - (id)iconName;
 - (id)labelKey;
 - (void)setIconName:(id)arg1;
 - (void)setLabelKey:(id)arg1;
+- (int)contentMode;
+- (void)setContentMode:(int)arg1;
 
 @end

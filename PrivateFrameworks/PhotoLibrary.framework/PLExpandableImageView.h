@@ -72,21 +72,9 @@
 
 + (float)imageBorderWidth;
 
-- (void)setVideoView:(id)arg1;
-- (id)videoView;
 - (void)setName:(id)arg1;
 - (id)name;
 - (void)dealloc;
-- (id)imageView;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (id)image;
-- (id)_contentView;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
-- (void)setImage:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPhoto:(id)arg1;
 - (float)imageRotationAngle;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfImage;
@@ -124,5 +112,17 @@
 - (void)beginTrackingPinch:(id)arg1;
 - (void)stateDidChangeFrom:(int)arg1;
 - (id)photo;
+- (id)imageView;
+- (struct CGSize { float x1; float x2; })imageSize;
+- (id)image;
+- (id)_contentView;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (void)setImage:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setVideoView:(id)arg1;
+- (id)videoView;
 
 @end

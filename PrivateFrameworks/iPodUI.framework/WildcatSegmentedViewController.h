@@ -11,9 +11,6 @@
 @property(retain) UIView * noContentView;
 
 
-- (void)_mediaLibraryDidChangeNotification:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (id)noContentView;
 - (id)noContentViewContextForContexts:(id)arg1;
 - (void)_goToMovieStore:(id)arg1;
@@ -22,5 +19,8 @@
 - (void)setNoContentView:(id)arg1;
 - (void)_storeRestrictionsChangedNotification:(id)arg1;
 - (void)reloadSegmentedControl;
+- (void)dealloc;
+- (id)init;
+- (void)_mediaLibraryDidChangeNotification:(id)arg1;
 
 @end

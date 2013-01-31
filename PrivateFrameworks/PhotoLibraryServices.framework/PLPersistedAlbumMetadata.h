@@ -24,13 +24,9 @@
 
 + (BOOL)isValidPath:(id)arg1;
 
-- (void)setKind:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)kind;
-- (id)title;
-- (void)setTitle:(id)arg1;
 - (BOOL)containsAsset:(id)arg1;
 - (id)initWithTitle:(id)arg1 uuid:(id)arg2 kind:(id)arg3 assetUUIDs:(id)arg4;
 - (id)managedAlbum;
@@ -50,5 +46,9 @@
 - (id)albumFromDataInManagedObjectContext:(id)arg1;
 - (id)initWithPersistedDataAtPath:(id)arg1;
 - (id)uuid;
+- (id)kind;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (void)setKind:(id)arg1;
 
 @end

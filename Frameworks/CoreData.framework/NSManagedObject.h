@@ -27,6 +27,8 @@
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)release;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (void)initialize;
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 + (BOOL)resolveClassMethod:(SEL)arg1;
 + (BOOL)_hasOverriddenAwake;
@@ -49,9 +51,9 @@
 + (id)allocWithEntity:(id)arg1;
 + (void)_release_1;
 + (id)_retain_1;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (void)initialize;
 
+- (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (void)setPrimitiveValue:(id)arg1 forKey:(id)arg2;
 - (id)committedValuesForKeys:(id)arg1;
 - (id)changedValues;
@@ -76,6 +78,15 @@
 - (void)dealloc;
 - (oneway void)release;
 - (id)init;
+- (id)observationInfo;
+- (id)dictionaryWithValuesForKeys:(id)arg1;
+- (void)finalize;
+- (void)setValuesForKeysWithDictionary:(id)arg1;
+- (int (*)())methodForSelector:(SEL)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (id)methodSignatureForSelector:(SEL)arg1;
+- (void)setObservationInfo:(id)arg1;
 - (BOOL)implementsSelector:(SEL)arg1;
 - (BOOL)_defaultValidation:(id*)arg1 error:(id*)arg2;
 - (void)_updateFromUndoSnapshot:(id)arg1;
@@ -194,16 +205,5 @@
 - (BOOL)isFault;
 - (id)_faultHandler__;
 - (id)objectID;
-- (id)observationInfo;
-- (id)dictionaryWithValuesForKeys:(id)arg1;
-- (void)finalize;
-- (void)setValuesForKeysWithDictionary:(id)arg1;
-- (int (*)())methodForSelector:(SEL)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (id)methodSignatureForSelector:(SEL)arg1;
-- (void)setObservationInfo:(id)arg1;
-- (id)valueForUndefinedKey:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 
 @end

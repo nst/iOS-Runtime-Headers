@@ -42,8 +42,6 @@
 @property BOOL trafficSpeed;
 
 
-- (id).cxx_construct;
-- (void)dealloc;
 - (double)simplifiedEpsilon;
 - (unsigned int)simplifiedIndexCount;
 - (const unsigned int*)simplifiedIndices;
@@ -74,6 +72,8 @@
 - (id)initWithTile:(id)arg1;
 - (void)setTrafficSpeed:(BOOL)arg1;
 - (BOOL)trafficSpeed;
+- (id).cxx_construct;
+- (void)dealloc;
 - (id)tile;
 - (struct { float x1; float x2; }*)points;
 - (unsigned int)pointCount;

@@ -19,8 +19,8 @@
 @property(readonly) int requestMethodPost;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (int)requestMethod;
 - (id)initWithURL:(id)arg1 requestMethod:(id)arg2;
@@ -35,9 +35,9 @@
 - (int)requestMethodGet;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (id)URL;
 - (void)dealloc;
-- (id)attributeKeys;
 - (void)setAccount:(id)arg1;
 - (id)account;
 

@@ -102,8 +102,6 @@
 }
 
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (int)roofStyle;
 - (BOOL)outlineAtZoom:(float)arg1;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })flatColorAtZoom:(float)arg1;
@@ -114,5 +112,7 @@
 - (BOOL)visibleAtZoom:(float)arg1;
 - (void)takeFromZoomInvariantProperties:(id)arg1;
 - (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 
 @end

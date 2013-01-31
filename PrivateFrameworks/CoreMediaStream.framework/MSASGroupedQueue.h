@@ -32,7 +32,6 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
-- (id)model;
 - (BOOL)isAssertingBusyAssertion;
 - (void)workQueueRestartIdleTimer;
 - (void)workQueueRestartStalenessTimer;
@@ -67,5 +66,6 @@
 - (void)setMaxGroupedCallbackEventBatchCount:(int)arg1;
 - (int)maxGroupedCallbackEventBatchCount;
 - (id)workQueue;
+- (id)model;
 
 @end

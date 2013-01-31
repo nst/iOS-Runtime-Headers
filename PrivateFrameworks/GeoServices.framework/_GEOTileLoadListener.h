@@ -47,13 +47,10 @@
 @property(getter=isPreload) BOOL preload;
 
 
-- (void)setError:(id)arg1;
-- (void)setFinished:(id)arg1;
 - (id)finished;
 - (void)dealloc;
 - (id)init;
-- (id)progress;
-- (void)setProgress:(id)arg1;
+- (id)error;
 - (void)_tryFinish;
 - (id)satisfiedList;
 - (BOOL)checkDiskAllowed;
@@ -73,6 +70,9 @@
 - (void)setCheckDiskAllowed:(BOOL)arg1;
 - (id)networkLoadList;
 - (id)originalList;
-- (id)error;
+- (id)progress;
+- (void)setProgress:(id)arg1;
+- (void)setFinished:(id)arg1;
+- (void)setError:(id)arg1;
 
 @end

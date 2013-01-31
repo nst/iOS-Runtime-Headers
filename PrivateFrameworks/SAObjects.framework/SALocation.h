@@ -23,26 +23,10 @@
 @property(copy) NSString * thoroughfare;
 @property(copy) NSString * timezoneId;
 
-+ (id)location;
 + (id)locationWithDictionary:(id)arg1 context:(id)arg2;
++ (id)location;
 
-- (id)postalCode;
-- (id)subThoroughfare;
-- (id)thoroughfare;
-- (id)groupIdentifier;
-- (id)label;
-- (void)setLabel:(id)arg1;
 - (id)accuracy;
-- (void)setCountryCode:(id)arg1;
-- (id)countryCode;
-- (void)setSubThoroughfare:(id)arg1;
-- (void)setThoroughfare:(id)arg1;
-- (id)entryPoints;
-- (void)setEntryPoints:(id)arg1;
-- (id)street;
-- (id)city;
-- (id)longitude;
-- (id)latitude;
 - (void)setStreet:(id)arg1;
 - (void)setStateCode:(id)arg1;
 - (id)stateCode;
@@ -57,8 +41,24 @@
 - (id)timezoneId;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (id)longitude;
+- (id)latitude;
+- (void)setCountryCode:(id)arg1;
+- (id)countryCode;
+- (void)setSubThoroughfare:(id)arg1;
+- (void)setThoroughfare:(id)arg1;
+- (id)entryPoints;
+- (void)setEntryPoints:(id)arg1;
+- (id)subThoroughfare;
+- (id)thoroughfare;
+- (id)label;
+- (void)setLabel:(id)arg1;
+- (id)groupIdentifier;
 - (void)setLongitude:(id)arg1;
 - (void)setLatitude:(id)arg1;
+- (id)postalCode;
+- (id)street;
+- (id)city;
 - (id)afui_mapKitAddressDictionaryRepresentation;
 - (id)afui_coreLocationRepresentation;
 

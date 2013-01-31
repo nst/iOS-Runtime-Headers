@@ -21,7 +21,6 @@
 - (void)setMaxConcurrentOperationCount:(int)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
 - (void)setSuspended:(BOOL)arg1;
 - (unsigned int)operationCount;
 - (id)operations;
@@ -31,6 +30,7 @@
 - (int)maxConcurrentOperationCount;
 - (void)__:(id)arg1;
 - (id)__;
+- (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
 - (void)executeAndWaitForBlock:(id)arg1;
 - (void)addInvocation:(id)arg1;
 

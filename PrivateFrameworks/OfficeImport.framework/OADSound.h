@@ -15,10 +15,10 @@
 - (id)name;
 - (void)dealloc;
 - (id)init;
-- (bool)isLoaded;
 - (void)setSoundData:(id)arg1;
 - (id)soundData;
 - (void)setSizeInBytes:(long)arg1;
 - (long)sizeInBytes;
+- (bool)isLoaded;
 
 @end

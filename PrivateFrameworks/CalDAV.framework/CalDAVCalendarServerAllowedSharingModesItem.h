@@ -13,12 +13,12 @@
 @property(retain) CoreDAVItemWithNoChildren * canBeShared;
 
 
-- (id)canBeShared;
 - (id)description;
 - (void)dealloc;
 - (id)init;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)canBeShared;
 - (id)canBePublished;
 - (void)setCanBePublished:(id)arg1;
 - (void)setCanBeShared:(id)arg1;

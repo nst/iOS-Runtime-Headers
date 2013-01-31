@@ -16,9 +16,9 @@
 
 
 - (void)dealloc;
-- (id)predicateFormat;
 - (id)phoneNumber;
 - (BOOL)isValid;
+- (id)predicateFormat;
 - (id)country;
 - (id)dbCountry;
 - (void)evaluateCallbackWithSqliteContext:(struct sqlite3_context { }*)arg1 predicateContext:(void*)arg2 values:(struct Mem {}**)arg3 count:(int)arg4;

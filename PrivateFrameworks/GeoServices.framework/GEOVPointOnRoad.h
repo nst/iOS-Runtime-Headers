@@ -15,19 +15,19 @@
 @property int vertexIndex;
 
 
+- (int)featureIndex;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (int)featureIndex;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setFeatureIndex:(int)arg1;
 - (void)setHasVertexIndex:(BOOL)arg1;
 - (void)setVertexIndex:(int)arg1;
 - (int)vertexIndex;
 - (BOOL)hasVertexIndex;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

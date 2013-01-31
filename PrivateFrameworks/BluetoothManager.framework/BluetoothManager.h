@@ -22,19 +22,15 @@
 + (id)sharedInstance;
 + (int)lastInitError;
 
-- (BOOL)connected;
-- (void)_powerChanged;
 - (void)postNotification:(id)arg1;
 - (void)postNotificationName:(id)arg1 object:(id)arg2;
 - (void)dealloc;
 - (id)init;
-- (BOOL)enabled;
-- (BOOL)setEnabled:(BOOL)arg1;
+- (BOOL)connected;
+- (void)_postNotification:(id)arg1;
 - (BOOL)powered;
 - (BOOL)available;
 - (BOOL)setPowered:(BOOL)arg1;
-- (void)_postNotification:(id)arg1;
-- (id)connectedDevices;
 - (void)enableTestMode;
 - (BOOL)audioConnected;
 - (id)connectedLEDevices;
@@ -77,6 +73,10 @@
 - (void)connectDevice:(id)arg1 withServices:(unsigned int)arg2;
 - (void)connectDevice:(id)arg1;
 - (struct BTAccessoryManagerImpl { }*)_accessoryManager;
+- (id)connectedDevices;
+- (void)_powerChanged;
+- (BOOL)enabled;
+- (BOOL)setEnabled:(BOOL)arg1;
 - (void)cancelPairing;
 - (void)scanForServices:(unsigned int)arg1;
 - (void)scanForConnectableDevices:(unsigned int)arg1;

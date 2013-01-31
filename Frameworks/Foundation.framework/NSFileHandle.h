@@ -5,28 +5,27 @@
 @interface NSFileHandle : NSObject <NSSecureCoding> {
 }
 
++ (id)fileHandleForWritingAtPath:(id)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)fileHandleForReadingAtPath:(id)arg1;
-+ (id)fileHandleForUpdatingAtPath:(id)arg1;
 + (id)fileHandleForReadingFromURL:(id)arg1 error:(id*)arg2;
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
-+ (id)fileHandleForWritingAtPath:(id)arg1;
 + (id)fileHandleForUpdatingURL:(id)arg1 error:(id*)arg2;
 + (id)fileHandleForWritingToURL:(id)arg1 error:(id*)arg2;
 + (id)fileHandleWithStandardError;
 + (id)fileHandleWithStandardOutput;
 + (id)fileHandleWithStandardInput;
 + (id)fileHandleWithNullDevice;
++ (BOOL)supportsSecureCoding;
++ (id)fileHandleForReadingAtPath:(id)arg1;
++ (id)fileHandleForUpdatingAtPath:(id)arg1;
 
+- (void)closeFile;
+- (void)writeData:(id)arg1;
 - (int)fileDescriptor;
-- (void)seekToFileOffset:(unsigned long long)arg1;
 - (id)readDataOfLength:(unsigned int)arg1;
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)closeFile;
-- (void)writeData:(id)arg1;
 - (void)setReadabilityHandler:(id)arg1;
 - (id)readabilityHandler;
 - (void)setWriteabilityHandler:(id)arg1;
@@ -39,5 +38,6 @@
 - (id)availableData;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
+- (void)seekToFileOffset:(unsigned long long)arg1;
 
 @end

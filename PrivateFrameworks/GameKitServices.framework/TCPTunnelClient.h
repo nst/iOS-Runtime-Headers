@@ -77,8 +77,6 @@
 
 
 - (void)dealloc;
-- (void)setTerminationHandler:(id)arg1;
-- (void)finalize;
 - (void)setParticipantID:(id)arg1;
 - (id)participantID;
 - (BOOL)isTunnelSocketClosed;
@@ -110,5 +108,7 @@
 - (void)setBindingResponseHandler:(id)arg1;
 - (void)setAllocationResponseHandler:(id)arg1;
 - (void)setReceiveHandler:(id)arg1;
+- (void)setTerminationHandler:(id)arg1;
+- (void)finalize;
 
 @end

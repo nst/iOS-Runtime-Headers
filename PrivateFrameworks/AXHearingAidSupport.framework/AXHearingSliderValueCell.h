@@ -14,8 +14,11 @@
 }
 
 
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)description;
 - (void)dealloc;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (void)sliderValueDidChange:(id)arg1;
+- (void)updateValue;
 - (void)accessibilityDecrement;
 - (void)accessibilityIncrement;
 - (BOOL)isAccessibilityElement;
@@ -26,7 +29,5 @@
 - (id)accessibilityLabel;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)layoutSubviews;
-- (void)updateValue;
-- (void)sliderValueDidChange:(id)arg1;
 
 @end

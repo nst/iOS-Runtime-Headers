@@ -24,8 +24,6 @@
 - (id)hostName;
 - (int)port;
 - (void)finalize;
-- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)TXTRecordData;
 - (BOOL)setTXTRecordData:(id)arg1;
 - (void)stopMonitoring;
@@ -43,5 +41,7 @@
 - (void)_scheduleInDefaultRunLoopForMode:(id)arg1;
 - (struct __CFNetService { }*)_internalNetService;
 - (id)addresses;
+- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 
 @end

@@ -23,6 +23,7 @@
 - (float)constant;
 - (void)setConstant:(float)arg1;
 - (id)allVariables;
+- (void)scalePrescaledVariablesBy:(double)arg1;
 - (void)_setPreScaledCoefficient:(float)arg1 forVariable:(id)arg2;
 - (float)_preScaledCoefficientForVariable:(id)arg1;
 - (id)initWithSortedVarPointers:(struct __CFArray { }*)arg1 sortedVarCoefficients:(struct __CFArray { }*)arg2 constant:(float)arg3 termScalar:(float)arg4;

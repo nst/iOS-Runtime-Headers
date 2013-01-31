@@ -32,6 +32,15 @@
 @property BOOL showSplash;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)setCustomRightButton:(id)arg1;
+- (id)customRightButton;
+- (void)setAccount:(id)arg1;
+- (id)account;
+- (void)systemApplicationWillEnterForeground;
+- (void)systemApplicationDidEnterBackground;
 - (void)_executeDismissBlock:(id)arg1;
 - (void)setCellsChecked:(BOOL)arg1;
 - (void)_startValidationModeAnimated:(BOOL)arg1;
@@ -84,19 +93,10 @@
 - (BOOL)timedOut;
 - (void)_startTimeoutWithDuration:(double)arg1;
 - (void)_stopTimeout;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)systemApplicationWillEnterForeground;
-- (void)systemApplicationDidEnterBackground;
-- (void)setAccount:(id)arg1;
-- (id)account;
-- (void)setCustomRightButton:(id)arg1;
-- (id)customRightButton;
 - (void)setSpecifier:(id)arg1;
 
 @end

@@ -42,15 +42,9 @@
 + (id)teamWithDictionary:(id)arg1 context:(id)arg2;
 + (id)team;
 
-- (id)groupIdentifier;
-- (void)setPoints:(id)arg1;
-- (id)location;
-- (void)setGroupName:(id)arg1;
-- (id)groupName;
 - (void)setLocation:(id)arg1;
 - (id)primaryColor;
 - (void)setPrimaryColor:(id)arg1;
-- (id)points;
 - (void)setWins:(id)arg1;
 - (id)wins;
 - (void)setWinPercentage:(id)arg1;
@@ -107,5 +101,11 @@
 - (id)news;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (id)points;
+- (id)location;
+- (void)setGroupName:(id)arg1;
+- (id)groupName;
+- (id)groupIdentifier;
+- (void)setPoints:(id)arg1;
 
 @end

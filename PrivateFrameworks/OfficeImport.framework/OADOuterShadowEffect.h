@@ -16,8 +16,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (int)alignment;
-- (void)setAlignment:(int)arg1;
 - (void)setXSkew:(float)arg1;
 - (void)setYScale:(float)arg1;
 - (float)ySkew;
@@ -28,5 +26,7 @@
 - (void)setRotateWithShape:(BOOL)arg1;
 - (void)setXScale:(float)arg1;
 - (void)setYSkew:(float)arg1;
+- (int)alignment;
+- (void)setAlignment:(int)arg1;
 
 @end

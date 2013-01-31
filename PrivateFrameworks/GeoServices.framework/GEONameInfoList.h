@@ -11,19 +11,19 @@
 @property(retain) NSMutableArray * nameInfos;
 
 
+- (id)nameInfos;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (id)nameInfos;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)nameInfoAtIndex:(unsigned int)arg1;
 - (void)clearNameInfos;
 - (unsigned int)nameInfosCount;
 - (void)addNameInfo:(id)arg1;
 - (void)setNameInfos:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

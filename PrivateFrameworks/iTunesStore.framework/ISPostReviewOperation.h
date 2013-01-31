@@ -17,9 +17,9 @@
 - (id)review;
 - (void)setReview:(id)arg1;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
-- (void)dealloc;
-- (void)run;
 - (void)setBackgroundReview:(BOOL)arg1;
 - (BOOL)isBackgroundReview;
+- (void)dealloc;
+- (void)run;
 
 @end

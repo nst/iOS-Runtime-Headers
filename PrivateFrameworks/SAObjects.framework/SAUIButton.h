@@ -13,11 +13,11 @@
 + (id)button;
 + (id)buttonWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
-- (id)text;
-- (void)setText:(id)arg1;
 - (id)encodedClassName;
 - (void)setCommands:(id)arg1;
 - (id)commands;
+- (id)text;
+- (void)setText:(id)arg1;
+- (id)groupIdentifier;
 
 @end

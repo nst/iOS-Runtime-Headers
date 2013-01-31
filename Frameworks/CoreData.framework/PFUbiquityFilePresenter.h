@@ -18,21 +18,21 @@
 @property(readonly) NSOperationQueue * presentedItemOperationQueue;
 @property(readonly) NSURL * primaryPresentedItemURL;
 
-+ (id)sharedPrivateOperationQueue;
 + (void)initialize;
++ (id)sharedPrivateOperationQueue;
 
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (unsigned long long)lastPresentedItemEventIdentifier;
-- (void)setLastPresentedItemEventIdentifier:(unsigned long long)arg1;
-- (id)initWithUbiquityRootLocation:(id)arg1 andLocalPeerID:(id)arg2;
-- (id)ubiquityRootLocation;
-- (id)localPeerID;
 - (id)presentedItemOperationQueue;
 - (id)presentedItemURL;
 - (void)presentedSubitemDidChangeAtURL:(id)arg1;
 - (void)relinquishPresentedItemToWriter:(id)arg1;
 - (void)relinquishPresentedItemToReader:(id)arg1;
+- (unsigned long long)lastPresentedItemEventIdentifier;
+- (void)setLastPresentedItemEventIdentifier:(unsigned long long)arg1;
+- (id)initWithUbiquityRootLocation:(id)arg1 andLocalPeerID:(id)arg2;
+- (id)ubiquityRootLocation;
+- (id)localPeerID;
 
 @end

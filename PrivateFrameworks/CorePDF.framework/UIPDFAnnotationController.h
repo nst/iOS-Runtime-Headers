@@ -40,6 +40,13 @@
 + (struct CGImage { }*)newMaskImage:(struct CGPDFPage { }*)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (BOOL)pageHasAnnotations:(id)arg1;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (void)removeAllAnnotations;
+- (void)removeAnnotation:(id)arg1;
+- (void)addAnnotation:(id)arg1;
 - (BOOL)tracking;
 - (void)setDrawingSurface:(id)arg1;
 - (id)drawingSurface;
@@ -87,18 +94,11 @@
 - (id)initWithPageView:(id)arg1;
 - (struct CGColor { }*)colorForStyle:(int)arg1;
 - (id)marginNoteImage:(int)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
 - (void)unlock;
 - (void)lock;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)setView:(id)arg1;
 - (int)currentStyle;
 - (void)setNeedsDisplay;
-- (void)removeAllAnnotations;
-- (void)removeAnnotation:(id)arg1;
-- (void)addAnnotation:(id)arg1;
 
 @end

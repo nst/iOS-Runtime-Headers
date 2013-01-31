@@ -30,14 +30,13 @@
 @property(retain) NSString * lastProductType;
 @property(retain) NSString * lastReleaseType;
 
-+ (id)currentState;
 + (id)statePath;
++ (id)currentState;
 
 - (void)save;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (void)load;
 - (void)resetAllHistory;
 - (id)lastReleaseType;
 - (id)lastProductType;
@@ -63,6 +62,7 @@
 - (void)setScheduledManualDownloadWifiPeriodEndTime:(id)arg1;
 - (void)setLastScannedDescriptorTime:(id)arg1;
 - (void)setLastScannedDescriptor:(id)arg1;
+- (void)load;
 - (Class)unarchiver:(id)arg1 cannotDecodeObjectOfClassName:(id)arg2 originalClasses:(id)arg3;
 
 @end

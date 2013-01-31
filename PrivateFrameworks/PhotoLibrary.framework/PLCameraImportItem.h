@@ -34,8 +34,6 @@
 - (id)identifier;
 - (id)description;
 - (void)dealloc;
-- (id)thumbnail;
-- (BOOL)isLocked;
 - (BOOL)isAudio;
 - (BOOL)isJPEG;
 - (void)setImportedAsset:(id)arg1;
@@ -87,5 +85,7 @@
 - (id)initWithIdentifier:(id)arg1 parentFolder:(id)arg2;
 - (unsigned long long)fileSize;
 - (id)creationDate;
+- (id)thumbnail;
+- (BOOL)isLocked;
 
 @end

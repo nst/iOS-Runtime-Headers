@@ -14,14 +14,14 @@
 @property(retain) NSString * baseURL;
 
 
+- (void)dealloc;
+- (id)baseURL;
+- (id)url;
+- (void)viewWillAppear:(BOOL)arg1;
 - (id)initWithPlayer:(id)arg1;
 - (void)setBaseURL:(id)arg1;
 - (void)processGameKitURLComponents:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (id)player;
-- (void)dealloc;
-- (id)baseURL;
-- (id)url;
-- (void)viewWillAppear:(BOOL)arg1;
 
 @end

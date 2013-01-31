@@ -10,8 +10,8 @@
 
 @property SKProductPageViewController * parentProductPageViewController;
 
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)parentProductPageViewController;
 - (void)showStoreSheetWithRequest:(id)arg1 animated:(BOOL)arg2;

@@ -39,25 +39,17 @@
 @property(readonly) unsigned int* validSubManifestVersions;
 
 
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)icons;
-- (void)setIcons:(id)arg1;
-- (void)setZ:(unsigned int)arg1;
-- (unsigned int)z;
-- (void)setY:(unsigned int)arg1;
-- (unsigned int)y;
-- (void)setX:(unsigned int)arg1;
-- (unsigned int)x;
-- (id)dictionaryRepresentation;
 - (void)setAttributions:(id)arg1;
 - (void)clearIcons;
 - (unsigned int)iconsCount;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)attributions;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
 - (void)setValidSubManifestVersions:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (unsigned int*)validSubManifestVersions;
 - (void)setTileRanges:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 count:(unsigned int)arg2;
@@ -82,6 +74,14 @@
 - (void)clearAttributions;
 - (unsigned int)attributionsCount;
 - (void)addAttribution:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)icons;
+- (void)setIcons:(id)arg1;
+- (void)setZ:(unsigned int)arg1;
+- (unsigned int)z;
+- (void)setY:(unsigned int)arg1;
+- (unsigned int)y;
+- (void)setX:(unsigned int)arg1;
+- (unsigned int)x;
+- (id)dictionaryRepresentation;
 
 @end

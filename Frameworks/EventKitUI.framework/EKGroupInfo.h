@@ -33,13 +33,13 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (void)removeCalendar:(id)arg1;
 - (void)setSource:(id)arg1;
 - (id)source;
 - (BOOL)selected;
 - (void)selectAll;
 - (void)setSelected:(BOOL)arg1;
 - (id)title;
-- (void)removeCalendar:(id)arg1;
 - (id)copyCalendars;
 - (id)calendarAtIndex:(int)arg1;
 - (id)typeTitle;

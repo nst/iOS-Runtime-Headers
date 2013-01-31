@@ -13,12 +13,12 @@
 @property SEL clearMethod;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
 - (void)setClearMethod:(SEL)arg1;
 - (void)setDelegatee:(id)arg1;
 - (SEL)clearMethod;
 - (id)delegatee;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 
 @end

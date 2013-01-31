@@ -8,18 +8,18 @@
     NSDictionary *_parameterValues;
 }
 
-+ (BOOL)supportsDetachedStorage;
 + (id)retryIntervals;
 + (id)messageNotificationFallbackTimeout;
 + (BOOL)ignoresRoamingSwitch;
 + (BOOL)supportsPasswordChanges;
 + (BOOL)supportsGreetingChanges;
 + (id)carrierServiceName;
++ (BOOL)supportsDetachedStorage;
 
+- (void)_initForBundle:(id)arg1;
+- (id)initForService:(id)arg1;
 - (id)parameterValueForKey:(id)arg1;
 - (id)initForServiceBundleId:(id)arg1;
 - (void)dealloc;
-- (void)_initForBundle:(id)arg1;
-- (id)initForService:(id)arg1;
 
 @end

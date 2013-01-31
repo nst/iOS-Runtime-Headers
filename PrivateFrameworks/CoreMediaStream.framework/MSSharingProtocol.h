@@ -61,6 +61,8 @@
 - (id)delegate;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (id)personID;
+- (void)abort;
 - (void)_didFailAuthenticationWithError:(id)arg1;
 - (void)_didFinishTransactionWithResponseObject:(id)arg1 error:(id)arg2;
 - (void)_didFindShareState:(id)arg1;
@@ -72,7 +74,5 @@
 - (void)deleteShares:(id)arg1;
 - (void)_didFindServerSideConfigurationVersion:(id)arg1;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
-- (id)personID;
-- (void)abort;
 
 @end

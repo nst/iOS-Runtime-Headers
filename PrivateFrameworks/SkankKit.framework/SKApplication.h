@@ -10,9 +10,9 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)run;
+- (void)quit;
 - (int)result;
 - (void)setResult:(int)arg1;
-- (void)quit;
+- (void)run;
 
 @end

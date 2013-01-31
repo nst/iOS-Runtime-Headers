@@ -14,9 +14,9 @@
     BOOL _loadingExistingPlayers;
     int _automatchActivity;
     AVAudioPlayer *_audioPlayer;
-    NSArray *_foundPlayerIDs;
-    GKMatch *_foundMatch;
     BOOL _hadInviteFailure;
+    GKMatch *_foundMatch;
+    NSArray *_foundPlayerIDs;
 }
 
 @property(readonly) GKMatchmakerViewController * matchmakerViewController;
@@ -34,8 +34,18 @@
 @property(retain) NSArray * foundPlayerIDs;
 
 
-- (id)foundMatch;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)cancel;
+- (void)dealloc;
+- (id)init;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)foundPlayerIDs;
+- (id)foundMatch;
 - (int)automatchActivity;
 - (void)setLoadingExistingPlayers:(BOOL)arg1;
 - (BOOL)loadingExistingPlayers;
@@ -49,6 +59,7 @@
 - (void)playersToInvite:(id)arg1;
 - (BOOL)showAlertIfPendingInvites;
 - (void)setHostedPlayer:(id)arg1 connected:(BOOL)arg2;
+- (BOOL)shouldShowNearbySwitch;
 - (BOOL)supportsNearbyPlayers;
 - (void)addPlayersToMatch:(id)arg1;
 - (id)initWithInvite:(id)arg1;
@@ -106,15 +117,5 @@
 - (void)cancelAlertWithoutDelegateCallback;
 - (void)setMatch:(id)arg1;
 - (id)match;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)cancel;
-- (void)dealloc;
-- (id)init;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 
 @end

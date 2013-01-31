@@ -41,10 +41,11 @@
 + (id)reuseIdentifierForSpecifier:(id)arg1;
 + (int)cellStyle;
 
-- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 specifier:(id)arg3;
-- (BOOL)canReload;
-- (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (SEL)action;
+- (void)setTarget:(id)arg1;
+- (id)target;
+- (int)type;
+- (void)dealloc;
 - (BOOL)reusedCell;
 - (void)_setBottomEtchHidden:(BOOL)arg1;
 - (void)_setTopEtchHidden:(BOOL)arg1;
@@ -61,12 +62,13 @@
 - (void)forceSynchronousIconLoadOnNextIconLoad;
 - (void)setReusedCell:(BOOL)arg1;
 - (void)reloadWithSpecifier:(id)arg1 animated:(BOOL)arg2;
-- (id)valueLabel;
-- (SEL)action;
-- (void)setTarget:(id)arg1;
-- (id)target;
-- (int)type;
-- (void)dealloc;
+- (BOOL)cellEnabled;
+- (void)setCellEnabled:(BOOL)arg1;
+- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 specifier:(id)arg3;
+- (BOOL)canReload;
+- (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)iconImageView;
 - (BOOL)isChecked;
 - (float)textFieldOffset;
 - (id)value;
@@ -86,9 +88,7 @@
 - (void)setChecked:(BOOL)arg1;
 - (id)titleLabel;
 - (void)layoutSubviews;
-- (id)iconImageView;
-- (BOOL)cellEnabled;
-- (void)setCellEnabled:(BOOL)arg1;
+- (id)valueLabel;
 - (void)setSpecifier:(id)arg1;
 - (id)specifier;
 

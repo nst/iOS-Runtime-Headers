@@ -53,14 +53,6 @@
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } dropShadowColor;
 
 
-- (id).cxx_construct;
-- (void)setTextColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })textColor;
-- (int)style;
-- (void)setStyle:(int)arg1;
-- (void)setBorderColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })backgroundColor;
-- (void)setBackgroundColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })borderColor;
 - (id)initWithStyleInfo:(id)arg1;
 - (void)setDropShadowSize:(float)arg1;
@@ -75,5 +67,13 @@
 - (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2;
 - (void)setDropShadowColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })dropShadowColor;
+- (id).cxx_construct;
+- (void)setTextColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })textColor;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (void)setBorderColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })backgroundColor;
+- (void)setBackgroundColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 
 @end

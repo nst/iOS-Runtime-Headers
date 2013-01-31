@@ -8,10 +8,10 @@
     UIImageView *_backgroundView;
     UILabel *_labelView;
     UIActivityIndicatorView *_indicatorView;
-    int _interfaceIdiom;
+    float _maxWidth;
     unsigned int _unreadItemsCount;
     BOOL _showsLoadingIndicator;
-    float _maxWidth;
+    int _interfaceIdiom;
 }
 
 @property(readonly) int interfaceIdiom;
@@ -20,11 +20,9 @@
 @property float maxWidth;
 
 
-- (void)dealloc;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
 - (void)setMaxWidth:(float)arg1;
 - (float)maxWidth;
+- (void)dealloc;
 - (unsigned int)unreadItemsCount;
 - (void)setShowsLoadingIndicator:(BOOL)arg1;
 - (BOOL)showsLoadingIndicator;
@@ -34,5 +32,7 @@
 - (void)setUnreadItemsCount:(unsigned int)arg1;
 - (id)initWithInterfaceIdiom:(int)arg1;
 - (int)interfaceIdiom;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
 
 @end

@@ -33,6 +33,11 @@
 @property(readonly) unsigned int backgroundGraphicCount;
 
 
+- (void)setRowSpan:(struct { int x1; int x2; })arg1;
+- (struct { int x1; int x2; })rowSpan;
+- (void)dealloc;
+- (struct { int x1; int x2; })columnSpan;
+- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setColumnSpan:(struct { int x1; int x2; })arg1;
 - (int)compareCellOrdinal:(id)arg1;
 - (id)graphicObjectOfBorder:(int)arg1 atIndex:(unsigned int)arg2;
@@ -45,12 +50,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsOfBorder:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cellBounds;
 - (void)dispose;
-- (void)dealloc;
 - (void)finalize;
 - (struct CGColor { }*)backgroundColor;
-- (void)setRowSpan:(struct { int x1; int x2; })arg1;
-- (struct { int x1; int x2; })rowSpan;
-- (struct { int x1; int x2; })columnSpan;
-- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

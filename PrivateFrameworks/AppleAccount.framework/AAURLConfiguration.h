@@ -30,7 +30,6 @@
 + (id)urlConfiguration;
 
 - (void).cxx_destruct;
-- (id)initWithDictionary:(id)arg1;
 - (id)validateURL;
 - (id)registerURL;
 - (id)updateAccountURL;
@@ -48,5 +47,6 @@
 - (id)authenticateURL;
 - (id)signingSessionURL;
 - (id)signingSessionCertURL;
+- (id)initWithDictionary:(id)arg1;
 
 @end

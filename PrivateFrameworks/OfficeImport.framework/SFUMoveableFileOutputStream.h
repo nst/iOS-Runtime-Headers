@@ -12,10 +12,6 @@
 
 - (id)path;
 - (void)dealloc;
-- (id)initWithPath:(id)arg1;
-- (void)close;
-- (long long)offset;
-- (void)flush;
 - (void)truncateToLength:(unsigned long)arg1;
 - (BOOL)moveToPath:(id)arg1;
 - (id)initWithTemporaryFile:(id)arg1;
@@ -25,5 +21,9 @@
 - (id)closeLocalStream;
 - (BOOL)canSeek;
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
+- (id)initWithPath:(id)arg1;
+- (void)close;
+- (long long)offset;
+- (void)flush;
 
 @end

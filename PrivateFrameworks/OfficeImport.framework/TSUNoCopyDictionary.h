@@ -17,12 +17,12 @@
 - (void)dealloc;
 - (id)init;
 - (unsigned int)count;
+- (id)initWithCFDictionary:(struct __CFDictionary { }*)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)keyEnumerator;
 - (id)allValues;
 - (id)objectEnumerator;
 - (id)allKeys;
 - (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
-- (id)initWithCFDictionary:(struct __CFDictionary { }*)arg1;
 
 @end

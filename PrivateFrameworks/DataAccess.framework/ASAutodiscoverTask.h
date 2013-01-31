@@ -14,12 +14,11 @@
 }
 
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
-- (double)timeoutInterval;
 - (id)contentType;
 - (BOOL)shouldLogIncomingData;
 - (BOOL)requiresEASVersionInformaton;
+- (BOOL)shouldStallAfterCannotFindHost;
 - (BOOL)shouldHandlePasswordErrors;
 - (id)localizedErrorStringForCertificateErrorCode:(int)arg1 host:(id)arg2;
 - (BOOL)_shouldRedirectToHTTPForRequest:(id)arg1;
@@ -39,5 +38,7 @@
 - (void)_handleErrorNode:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1;
 - (BOOL)processContext:(id)arg1;
 - (id)requestBody;
+- (void)finishWithError:(id)arg1;
+- (double)timeoutInterval;
 
 @end

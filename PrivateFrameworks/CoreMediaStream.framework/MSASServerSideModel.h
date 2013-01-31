@@ -26,12 +26,12 @@
 @property MSASStateMachine * MSASCounterpartInstance;
 
 
-- (void)addObserver:(id)arg1;
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)removeObserver:(id)arg1;
 - (void)dealloc;
-- (void)start;
+- (void)markCommentsForAssetCollectionWithGUID:(id)arg1 asViewedWithLastViewedDate:(id)arg2;
+- (id)albums;
 - (void)performBlockOnObservers:(id)arg1;
 - (void)removeCommandsUpToCommandIndex:(long long)arg1;
 - (id)nextCommandGroupMaxCount:(int)arg1 outCommand:(id*)arg2 outLastCommandIndex:(long long*)arg3;
@@ -252,7 +252,7 @@
 - (void)releaseBusy;
 - (void)retainBusy;
 - (void)setDaemon:(id)arg1;
-- (void)markCommentsForAssetCollectionWithGUID:(id)arg1 asViewedWithLastViewedDate:(id)arg2;
-- (id)albums;
+- (void)start;
+- (void)addObserver:(id)arg1;
 
 @end

@@ -41,13 +41,6 @@
 @property unsigned int iconRectHeight;
 
 
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
 - (void)setHasIconRectHeight:(BOOL)arg1;
 - (void)setHasIconRectWidth:(BOOL)arg1;
 - (void)setHasIconRectY:(BOOL)arg1;
@@ -78,6 +71,13 @@
 - (unsigned int)quadIndex;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (void)setName:(id)arg1;
+- (id)name;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

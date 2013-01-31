@@ -27,8 +27,8 @@
 - (id)initWithDataPromise:(id)arg1;
 - (id)data;
 - (void)dealloc;
+- (long long)expectedLength;
 - (id)initWithData:(id)arg1;
 - (BOOL)hasBytesAvailable;
-- (long long)expectedLength;
 
 @end

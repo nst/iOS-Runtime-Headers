@@ -14,18 +14,18 @@
 @property float fontSize;
 @property float pointSize;
 
-+ (id)userFixedPitchFontOfSize:(float)arg1;
++ (id)userFontOfSize:(float)arg1;
 + (id)fontWithName:(id)arg1 size:(float)arg2;
 + (id)systemFontOfSize:(float)arg1;
-+ (id)userFontOfSize:(float)arg1;
++ (id)userFixedPitchFontOfSize:(float)arg1;
 
-- (void)setPointSize:(float)arg1;
-- (unsigned int)mostCompatibleStringEncoding;
-- (void)setFontName:(id)arg1;
 - (id)initWithName:(id)arg1 size:(float)arg2;
 - (float)fontSize;
 - (void)setFontSize:(float)arg1;
 - (id)fontName;
 - (float)pointSize;
+- (void)setPointSize:(float)arg1;
+- (unsigned int)mostCompatibleStringEncoding;
+- (void)setFontName:(id)arg1;
 
 @end

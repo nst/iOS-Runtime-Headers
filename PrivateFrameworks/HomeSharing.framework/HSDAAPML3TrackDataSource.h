@@ -11,32 +11,20 @@
         unsigned int encodedLength; 
         int valueType; 
     } _parsedValues[256];
-    int _parsedValuesPropertyIndex[83];
+    int _parsedValuesPropertyIndex[105];
     NSData *_itemsResponseData;
     NSArray *_rawItems;
-    unsigned int _idx;
+    int _idx;
 }
 
 
-- (id)currentTrackComment;
-- (id)currentTrackCategory;
-- (id)currentTrackChapterData;
-- (BOOL)currentTrackIsUserDisabled;
-- (long long)currentTrackStoreKeyVersions;
-- (long long)currentTrackGeniusChecksum;
-- (void)getCurrentTrackLyrics:(struct sqlite3_context { }*)arg1;
-- (void)getCurrentTrackStoreArtworkURL:(struct sqlite3_context { }*)arg1;
-- (void)getCurrentTrackCategory:(struct sqlite3_context { }*)arg1;
-- (BOOL)mediaKindIsSupported:(unsigned int)arg1;
-- (void)_parseCurrentItem;
-- (void)postParseCurrentTrack;
-- (id)initWithItemsResponseData:(id)arg1;
 - (void)dealloc;
 - (void)seekToNextTrack;
 - (BOOL)hasNextTrack;
 - (void)seekToStart;
 - (void)getCurrentTrackChapterData:(struct sqlite3_context { }*)arg1;
 - (double)currentTrackDateLastUsed;
+- (BOOL)currentTrackIsAlarm;
 - (void)getCurrentTrackDownloadIdentifier:(struct sqlite3_context { }*)arg1;
 - (int)currentTrackIsDownloading;
 - (BOOL)currentTrackIsHidden;
@@ -49,6 +37,16 @@
 - (int)currentTrackPlayCountUser;
 - (double)currentTrackDatePlayed;
 - (BOOL)currentTrackHasBeenPlayed;
+- (long long)currentTrackPurchaseHistoryID;
+- (BOOL)currentTrackHasChapterData;
+- (int)currentTrackKeyID2;
+- (BOOL)currentTrackHasVideo;
+- (void)getCurrentTrackDataURL:(struct sqlite3_context { }*)arg1;
+- (int)currentTrackDataKind;
+- (void)getCurrentTrackFormat:(struct sqlite3_context { }*)arg1;
+- (int)currentTrackCodecSubtype;
+- (int)currentTrackCodecType;
+- (int)currentTrackJaliscoToken;
 - (long long)currentTrackPendingGeniusChecksum;
 - (int)currentTrackBitRate;
 - (void)getCurrentTrackMovieInfo:(struct sqlite3_context { }*)arg1;
@@ -61,7 +59,7 @@
 - (int)currentTrackAudioTrackID;
 - (int)currentTrackAudioTrackIndex;
 - (int)currentTrackAudioLanguage;
-- (BOOL)currentTrackIsHD;
+- (int)currentTrackVideoQuality;
 - (BOOL)currentTrackHasSubtitles;
 - (BOOL)currentTrackHasAlternateAudio;
 - (double)currentTrackRentalStartDate;
@@ -158,5 +156,20 @@
 - (unsigned long)currentTrackMediaType;
 - (id)currentTrackFilePath;
 - (long long)currentTrackPersistentID;
+- (id)currentTrackComment;
+- (id)currentTrackCategory;
+- (id)currentTrackChapterData;
+- (id)currentTrackDataURL;
+- (id)currentTrackFormat;
+- (BOOL)currentTrackIsUserDisabled;
+- (long long)currentTrackStoreKeyVersions;
+- (long long)currentTrackGeniusChecksum;
+- (void)getCurrentTrackLyrics:(struct sqlite3_context { }*)arg1;
+- (void)getCurrentTrackStoreArtworkURL:(struct sqlite3_context { }*)arg1;
+- (void)getCurrentTrackCategory:(struct sqlite3_context { }*)arg1;
+- (BOOL)mediaKindIsSupported:(unsigned int)arg1;
+- (void)_parseCurrentItem;
+- (void)postParseCurrentTrack;
+- (id)initWithItemsResponseData:(id)arg1;
 
 @end

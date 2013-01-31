@@ -7,9 +7,9 @@
 }
 
 
-- (void)dealloc;
-- (const char *)content;
 - (BOOL)isBlank;
+- (void)dealloc;
 - (id)initWithContent:(const char *)arg1;
+- (const char *)content;
 
 @end

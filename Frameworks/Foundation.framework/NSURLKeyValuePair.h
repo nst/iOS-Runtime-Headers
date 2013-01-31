@@ -8,8 +8,8 @@
     unsigned int hash;
 }
 
-+ (id)pairWithKey:(id)arg1 value:(id)arg2;
 + (id)pair;
++ (id)pairWithKey:(id)arg1 value:(id)arg2;
 
 - (id)description;
 - (unsigned int)hash;

@@ -20,7 +20,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEnabled;
 - (void)_playerChangedNotification:(id)arg1;
 - (void)_playerChanged:(id)arg1;
 - (void)_updateMessage;
@@ -28,5 +27,6 @@
 - (id)playerInfo;
 - (void)removeListener:(id)arg1;
 - (void)addListener:(id)arg1;
+- (BOOL)isEnabled;
 
 @end

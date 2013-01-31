@@ -9,19 +9,17 @@
     BOOL _anyAccountsConnected;
 }
 
-+ (id)notificationCenter;
-+ (void)initialize;
 + (void)_statusImageAppearanceChanged:(id)arg1;
 + (void)_determineStatusImageAppearance;
 + (id)sharedAgent;
 + (id)imageURLForStatus:(unsigned int)arg1;
 + (id)imageNameForStatus:(unsigned int)arg1;
 + (void)forgetStatusImageAppearance;
++ (void)initialize;
++ (id)notificationCenter;
 
-- (id)notificationCenter;
 - (void)dealloc;
 - (id)init;
-- (void)finalize;
 - (void)setMyAwayMessages:(id)arg1;
 - (void)setMyAvailableMessages:(id)arg1;
 - (id)myAwayMessages;
@@ -44,5 +42,7 @@
 - (id)serviceWithName:(id)arg1;
 - (void)setupComplete;
 - (void)vcCapabilitiesChanged:(unsigned long long)arg1;
+- (void)finalize;
+- (id)notificationCenter;
 
 @end

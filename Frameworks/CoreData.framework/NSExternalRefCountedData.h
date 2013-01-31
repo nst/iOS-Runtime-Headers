@@ -25,6 +25,9 @@
 - (id)retain;
 - (void)dealloc;
 - (void)release;
+- (unsigned int)options;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)setRelatedIDs:(id)arg1 forKey:(id)arg2 options:(unsigned int)arg3 andTimestamp:(double)arg4;
 - (double)timestampForKey:(id)arg1;
 - (id)relatedIDsForKey:(id)arg1;
@@ -37,8 +40,5 @@
 - (void)setRelationshipCaches:(id)arg1;
 - (id)initWithOptions:(unsigned int)arg1 andTimestamp:(double)arg2;
 - (id)relationshipCaches;
-- (unsigned int)options;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 
 @end

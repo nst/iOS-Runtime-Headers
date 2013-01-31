@@ -25,14 +25,14 @@
 
 - (void)dealloc;
 - (id)init;
+- (unsigned int)bytesPerPixel;
+- (const char *)rowAtIndex:(unsigned int)arg1;
 - (unsigned long)height;
 - (short)blue;
 - (short)green;
 - (short)red;
 - (unsigned long)width;
 - (short)alpha;
-- (unsigned int)bytesPerPixel;
-- (const char *)rowAtIndex:(unsigned int)arg1;
 - (void)dumpImageAsDict:(id)arg1;
 - (void)dumpImageAsDeviceRGB:(id)arg1;
 - (void)dumpImage:(id)arg1;

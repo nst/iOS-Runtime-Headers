@@ -24,11 +24,11 @@
 @property(readonly) NSObject<OS_xpc_object> * reply;
 
 
-- (unsigned long)sequence;
 - (id)initWithMessage:(id)arg1 sequence:(unsigned long)arg2 connection:(id)arg3;
 - (void).cxx_destruct;
-- (id)message;
-- (id)reply;
 - (void)sendReply;
+- (id)reply;
+- (id)message;
+- (unsigned long)sequence;
 
 @end

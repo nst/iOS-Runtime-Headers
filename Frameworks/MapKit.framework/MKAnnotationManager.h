@@ -28,6 +28,10 @@
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
+- (void)deselectAnnotation:(id)arg1 animated:(BOOL)arg2;
+- (void)removeAnnotation:(id)arg1;
+- (id)annotations;
+- (void)addAnnotation:(id)arg1;
 - (void)setContainer:(id)arg1;
 - (id)container;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -50,9 +54,5 @@
 - (void)updateVisibleAnnotations;
 - (void)selectAnnotation:(id)arg1 animated:(BOOL)arg2 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)selectAnnotation:(id)arg1 animated:(BOOL)arg2;
-- (void)deselectAnnotation:(id)arg1 animated:(BOOL)arg2;
-- (void)removeAnnotation:(id)arg1;
-- (id)annotations;
-- (void)addAnnotation:(id)arg1;
 
 @end

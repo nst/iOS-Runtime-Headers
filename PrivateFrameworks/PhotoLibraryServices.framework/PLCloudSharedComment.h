@@ -23,16 +23,14 @@
 @property(retain) NSString * commenterEmail;
 @property(retain) NSString * commentType;
 
-+ (id)entityName;
 + (id)cloudSharedCommentWithGUID:(id)arg1 inLibrary:(id)arg2;
 + (id)cloudSharedCommentWithGUIDs:(id)arg1 inLibrary:(id)arg2;
 + (id)insertNewCommentIntoAsset:(id)arg1 commentDate:(id)arg2 withText:(id)arg3 isLike:(BOOL)arg4 isMyComment:(BOOL)arg5 inLibrary:(id)arg6;
 + (id)entityInManagedObjectContext:(id)arg1;
++ (id)entityName;
 
 - (void)dealloc;
 - (id)init;
-- (void)awakeFromInsert;
-- (id)asset;
 - (void)setCommenterEmail:(id)arg1;
 - (BOOL)canBeDeletedByUser;
 - (BOOL)_isInterestingToUser;
@@ -41,5 +39,7 @@
 - (BOOL)shouldNotifyAsBulletinWithMediaStreamInfo:(id)arg1 asCaptionOnly:(BOOL*)arg2;
 - (BOOL)isInterestingForAlbumsSorting;
 - (BOOL)isLikeBoolValue;
+- (id)asset;
+- (void)awakeFromInsert;
 
 @end

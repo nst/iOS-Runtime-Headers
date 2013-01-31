@@ -29,10 +29,10 @@
 @property float alertVolume;
 
 
-- (BOOL)isPlaying;
 - (void)dealloc;
 - (void)stopRecording;
 - (void)finalize;
+- (BOOL)isPlaying;
 - (void)setStopOnEndpointEnabled:(BOOL)arg1;
 - (BOOL)isStopOnEndpointEnabled;
 - (float)playbackVolume;

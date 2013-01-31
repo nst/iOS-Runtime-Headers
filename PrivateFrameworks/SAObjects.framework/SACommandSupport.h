@@ -17,9 +17,6 @@
 + (id)commandSupportWithDictionary:(id)arg1 context:(id)arg2;
 + (id)commandSupport;
 
-- (id)groupIdentifier;
-- (int)weight;
-- (void)setWeight:(int)arg1;
 - (void)setSupportedConstraints:(id)arg1;
 - (id)supportedConstraints;
 - (void)setServerEndpoint:(id)arg1;
@@ -31,5 +28,8 @@
 - (void)setAceVersion:(id)arg1;
 - (id)aceVersion;
 - (id)encodedClassName;
+- (int)weight;
+- (void)setWeight:(int)arg1;
+- (id)groupIdentifier;
 
 @end

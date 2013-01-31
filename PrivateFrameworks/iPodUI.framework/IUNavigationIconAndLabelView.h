@@ -12,8 +12,8 @@
 }
 
 
+- (id)initWithTitle:(id)arg1 icon:(id)arg2;
 - (void)dealloc;
 - (void)layoutSubviews;
-- (id)initWithTitle:(id)arg1 icon:(id)arg2;
 
 @end

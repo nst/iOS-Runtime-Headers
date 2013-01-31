@@ -17,16 +17,16 @@
 @property(retain) NSError * error;
 
 
-- (void)setPlayerState:(int)arg1;
-- (int)playerState;
-- (void)setError:(id)arg1;
-- (double)currentTime;
-- (void)setCurrentTime:(double)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)error;
 - (double)duration;
 - (void)setDuration:(double)arg1;
-- (id)error;
+- (void)setCurrentTime:(double)arg1;
+- (double)currentTime;
+- (void)setPlayerState:(int)arg1;
+- (int)playerState;
+- (void)setError:(id)arg1;
 
 @end

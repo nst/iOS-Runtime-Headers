@@ -11,11 +11,11 @@
 @property(retain) id sourceOperationContext;
 
 
+- (id)description;
+- (void)dealloc;
 - (id)sourceOperationContext;
 - (Class)sourceOperationClass;
 - (void)setSourceOperationContext:(id)arg1;
 - (void)setSourceOperationClass:(Class)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

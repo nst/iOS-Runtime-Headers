@@ -17,13 +17,6 @@
 + (id)review;
 + (id)reviewWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
-- (void)setLastUpdated:(id)arg1;
-- (id)lastUpdated;
-- (id)author;
-- (void)setAuthor:(id)arg1;
-- (void)setComment:(id)arg1;
-- (id)comment;
 - (void)setReviewRating:(id)arg1;
 - (id)reviewRating;
 - (void)setReviewPunchOut:(id)arg1;
@@ -31,5 +24,12 @@
 - (void)setPublication:(id)arg1;
 - (id)publication;
 - (id)encodedClassName;
+- (id)author;
+- (void)setAuthor:(id)arg1;
+- (void)setComment:(id)arg1;
+- (id)comment;
+- (void)setLastUpdated:(id)arg1;
+- (id)lastUpdated;
+- (id)groupIdentifier;
 
 @end

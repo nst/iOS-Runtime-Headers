@@ -15,15 +15,15 @@
 + (id)phoneWithDictionary:(id)arg1 context:(id)arg2;
 + (id)phone;
 
-- (id)groupIdentifier;
-- (id)number;
-- (id)label;
-- (void)setLabel:(id)arg1;
-- (void)setNumber:(id)arg1;
 - (void)setFavoriteVoice:(id)arg1;
 - (id)favoriteVoice;
 - (void)setFavoriteFacetime:(id)arg1;
 - (id)favoriteFacetime;
 - (id)encodedClassName;
+- (void)setNumber:(id)arg1;
+- (id)number;
+- (id)label;
+- (void)setLabel:(id)arg1;
+- (id)groupIdentifier;
 
 @end

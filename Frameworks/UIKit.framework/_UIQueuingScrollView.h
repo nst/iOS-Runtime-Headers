@@ -52,7 +52,6 @@
 - (void)_commitGestureDrivenScrollRevealingView:(id)arg1 concealingView:(id)arg2 inDirection:(int)arg3 canComplete:(BOOL)arg4;
 - (BOOL)_isDeceleratingInOppositionToNavigationDirection:(int)arg1;
 - (int)_navigationDirectionFromCurrentOffset;
-- (int)_navigationDirectionForActiveScroll:(BOOL)arg1;
 - (void)_enqueueAnimatedScrollInDirection:(int)arg1 withView:(id)arg2 completion:(id)arg3;
 - (void)_notifyDelegateDidCommitManualScroll:(BOOL)arg1 toRevealView:(id)arg2 concealView:(id)arg3 direction:(int)arg4 animated:(BOOL)arg5 canComplete:(BOOL)arg6;
 - (void)_notifyDelegateWillManuallyScroll:(BOOL)arg1 toRevealView:(id)arg2 concealingView:(id)arg3 animated:(BOOL)arg4;
@@ -76,6 +75,8 @@
 - (void)_didEndDraggingManualScroll;
 - (void)_didEndManualScroll;
 - (void)_didScrollWithAnimation:(BOOL)arg1 force:(BOOL)arg2;
+- (int)_navigationDirectionForActiveScroll:(BOOL)arg1;
+- (BOOL)_isScrollInProgress:(BOOL)arg1;
 - (void)_boundsDidChangeToSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)isManualScrollInProgress;
 - (void)setView:(id)arg1 direction:(int)arg2 animated:(BOOL)arg3 completion:(id)arg4;

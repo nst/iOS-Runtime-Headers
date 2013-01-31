@@ -39,6 +39,7 @@
     id _loadBlock;
 
     ISURLRequestPerformance *_performanceMetrics;
+    BOOL _useWebViewFastPath;
 }
 
 @property(retain) SSAuthenticationContext * authenticationContext;
@@ -59,20 +60,17 @@
 @property(getter=_isCacheExpired,readonly) BOOL _cacheExpired;
 
 
-- (void)setLoading:(BOOL)arg1;
 - (void)setCanMoveToOverlay:(BOOL)arg1;
 - (id)sectionSegmentedControl;
 - (id)sectionGroup;
 - (id)searchFieldController;
 - (void)_setReloadsWhenCacheExpired:(BOOL)arg1;
-- (void)setLoadsWhenHidden:(BOOL)arg1;
 - (void)setExternalRequest:(BOOL)arg1;
 - (id)activeChildViewController;
 - (id)_activeChildViewController;
 - (BOOL)loadMoreWithURL:(id)arg1;
 - (void)iTunesStoreUI_searchFieldControllerDidChange:(id)arg1;
 - (void)handleStoreFailureWithError:(id)arg1;
-- (id)URLRequest;
 - (void)setURLRequest:(id)arg1;
 - (void)setUrlBagKey:(id)arg1;
 - (BOOL)decidePolicyForWebNavigationAction:(id)arg1 request:(id)arg2 decisionListener:(id)arg3;
@@ -82,7 +80,6 @@
 - (void)menuViewControllerDidCancel:(id)arg1;
 - (void)menuViewController:(id)arg1 didTapButton:(id)arg2;
 - (void)menuViewController:(id)arg1 didSelectItemAtIndex:(int)arg2;
-- (BOOL)loadsWhenHidden;
 - (id)_newBarButtonItemsWithButtonItems:(id)arg1 replacingItemWithTag:(int)arg2 withButtonItem:(id)arg3;
 - (BOOL)reloadForSectionsWithGroup:(id)arg1;
 - (void)_sectionControlAction:(id)arg1;
@@ -103,12 +100,12 @@
 - (void)_fetchPage:(BOOL)arg1;
 - (void)_moveToRootSectionForChildViewController:(id)arg1 protocol:(id)arg2;
 - (void)_finishSuccessfulLoad;
-- (void)enqueueFetchOperation;
 - (BOOL)_shouldDisplaySegmentedControlInNavigationBar:(id)arg1;
 - (BOOL)_shouldDisplayControlsInNavigationBar;
 - (void)_setHeaderView:(id)arg1;
 - (void)enqueueFetchOperationForPageSection:(id)arg1;
 - (void)_finishHandlingFailure;
+- (void)_handleViewControllerBecameReady:(id)arg1;
 - (void)_performActionForProtocolButton:(id)arg1;
 - (BOOL)_reloadWithURLRequestProperties:(id)arg1 preserveSectionControl:(BOOL)arg2;
 - (void)reloadWithStorePage:(id)arg1 ofType:(int)arg2 forURL:(id)arg3;
@@ -122,6 +119,7 @@
 - (void)_reloadNavigationBar;
 - (void)_setAllowedOrientations:(id)arg1;
 - (void)_verifyStorePageProtocol:(id)arg1;
+- (void)_applyPropertiesToViewController:(id)arg1;
 - (void)_displaySegmentedControl:(id)arg1;
 - (id)_newSegmentedControlWithItems:(id)arg1;
 - (void)setScriptUserInfo:(id)arg1;
@@ -131,6 +129,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForActiveViewController;
 - (void)resetNavigationItem:(id)arg1;
 - (void)showPlaceholderViewController;
+- (void)_setPendingChildViewController:(id)arg1;
 - (void)_setActiveChildViewController:(id)arg1 shouldTearDown:(BOOL)arg2;
 - (void)handleFailureWithError:(id)arg1;
 - (double)_expirationTime;
@@ -142,18 +141,18 @@
 - (void)_showPlaceholderViewControllerWithTearDown:(BOOL)arg1;
 - (void)_reloadSearchFieldWithSection:(id)arg1;
 - (void)_reloadSectionButtons;
-- (void)_handleViewControllerBecameReady:(id)arg1;
-- (void)_setPendingChildViewController:(id)arg1;
-- (void)_applyPropertiesToViewController:(id)arg1;
-- (void)_handleFailureWithError:(id)arg1;
-- (id)newViewControllerForPage:(id)arg1 ofType:(int)arg2 returningError:(id*)arg3;
 - (BOOL)viewIsReady;
 - (void)_sendFailureAfterDialogsFinished:(id)arg1;
 - (void)setNeedsAuthentication:(BOOL)arg1;
 - (BOOL)needsAuthentication;
 - (void)setURLRequestProperties:(id)arg1;
 - (id)URLRequestProperties;
+- (void)_renderStorePage:(id)arg1 withType:(int)arg2 viewController:(id)arg3 block:(id)arg4;
+- (void)_finishWebViewLoadWithResult:(BOOL)arg1 error:(id)arg2;
+- (id)newViewControllerForPage:(id)arg1 ofType:(int)arg2 returningError:(id*)arg3;
 - (id)newFetchOperation;
+- (void)enqueueFetchOperation;
+- (void)_handleFailureWithError:(id)arg1;
 - (BOOL)canBeResolved;
 - (void)_documentBoundsChangeNotification:(id)arg1;
 - (void)_tabConfigurationChanged:(id)arg1;
@@ -183,12 +182,13 @@
 - (id)copyArchivableContext;
 - (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
 - (BOOL)reloadWithURLRequestProperties:(id)arg1;
+- (void)setLoadsWhenHidden:(BOOL)arg1;
+- (BOOL)loadsWhenHidden;
 - (void)invalidate;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)setSection:(id)arg1;
 - (BOOL)isLoaded;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -206,5 +206,8 @@
 - (void)loadView;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)reload;
+- (id)URLRequest;
+- (void)setLoading:(BOOL)arg1;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

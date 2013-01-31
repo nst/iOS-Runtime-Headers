@@ -42,7 +42,6 @@
 
 - (id)description;
 - (void)dealloc;
-- (void*)context;
 - (id)folderURLToChildrenURLOrder;
 - (void)setPreflightCTag:(BOOL)arg1;
 - (BOOL)preflightCTag;
@@ -84,5 +83,6 @@
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)bailWithError:(id)arg1;
 - (id)_copyContainerParserMappings;
+- (void*)context;
 
 @end

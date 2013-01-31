@@ -18,12 +18,13 @@
 @property(readonly) int productPageStylePad;
 @property(readonly) int productPageStylePhone;
 
-+ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (int)productPageStylePhone;
 - (int)productPageStylePad;
@@ -36,6 +37,5 @@
 - (id)productParameters;
 - (int)productPageStyle;
 - (void)setProductPageStyle:(int)arg1;
-- (id)attributeKeys;
 
 @end

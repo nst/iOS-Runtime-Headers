@@ -22,6 +22,7 @@
 - (void)resetCaches;
 - (void)dealloc;
 - (id)init;
+- (int)unreadCount;
 - (id)_chatIdentifierForEntities:(id)arg1 createIfNecessary:(BOOL)arg2;
 - (id)pendingConversationCreatingIfNecessary;
 - (void)deleteConversationAtIndex:(int)arg1;
@@ -59,6 +60,5 @@
 - (id)conversationForRecipients:(id)arg1 create:(BOOL)arg2;
 - (void)unpendConversation;
 - (id)pendingConversation;
-- (int)unreadCount;
 
 @end

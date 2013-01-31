@@ -13,8 +13,8 @@
 
 - (void)dealloc;
 - (id)recurrences;
+- (id)copyParseRules;
 - (void)setRecurrences:(id)arg1;
 - (void)addRecurrence:(id)arg1;
-- (id)copyParseRules;
 
 @end

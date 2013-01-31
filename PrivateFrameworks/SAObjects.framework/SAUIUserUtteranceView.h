@@ -12,9 +12,9 @@
 + (id)userUtteranceViewWithDictionary:(id)arg1 context:(id)arg2;
 + (id)userUtteranceView;
 
-- (id)groupIdentifier;
+- (id)encodedClassName;
 - (id)text;
 - (void)setText:(id)arg1;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

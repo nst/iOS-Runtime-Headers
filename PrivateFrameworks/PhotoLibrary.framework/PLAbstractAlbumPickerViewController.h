@@ -9,19 +9,19 @@
 @class <PLAbstractAlbumPickerViewControllerDelegate>, PLLibraryBannerView, NSString, NSOrderedSet, UIViewController, PLAbstractLibraryViewController;
 
 @interface PLAbstractAlbumPickerViewController : UIViewController <PLAbstractLibraryViewControllerDelegate, PLAlbumListChangeObserver> {
+    NSString *_albumCreationLabel;
     <PLAbstractAlbumPickerViewControllerDelegate> *_delegate;
     NSString *_pickerTitle;
-    NSString *_albumCreationLabel;
-    PLAbstractLibraryViewController *_libraryViewController;
-    PLLibraryBannerView *_bannerView;
-    int _libraryContentMode;
-    NSOrderedSet *_assetsToAdd;
     UIViewController *_contentViewController;
+    int _libraryContentMode;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
 
+    NSOrderedSet *_assetsToAdd;
+    PLAbstractLibraryViewController *_libraryViewController;
+    PLLibraryBannerView *_bannerView;
 }
 
 @property(readonly) int libraryContentMode;
@@ -38,19 +38,12 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (void)setContentViewController:(id)arg1;
-- (void)setCompletionHandler:(id)arg1;
-- (void)viewDidUnload;
-- (void)loadView;
-- (id)contentViewController;
-- (id)completionHandler;
-- (void)didReceiveMemoryWarning;
 - (void)albumListDidChange:(id)arg1;
 - (void)setAssetsToAdd:(id)arg1;
 - (int)libraryContentMode;
+- (id)pickerTitle;
 - (void)setAlbumCreationLabel:(id)arg1;
 - (id)albumCreationLabel;
-- (id)pickerTitle;
 - (id)assetsToAdd;
 - (int)bannerViewStyle;
 - (id)libraryViewController;
@@ -65,5 +58,12 @@
 - (void)cancelPicker:(id)arg1;
 - (id)bannerView;
 - (void)setBannerView:(id)arg1;
+- (void)setContentViewController:(id)arg1;
+- (void)setCompletionHandler:(id)arg1;
+- (void)viewDidUnload;
+- (void)loadView;
+- (id)contentViewController;
+- (id)completionHandler;
+- (void)didReceiveMemoryWarning;
 
 @end

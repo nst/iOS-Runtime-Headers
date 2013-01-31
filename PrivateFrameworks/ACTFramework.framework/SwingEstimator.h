@@ -40,6 +40,8 @@
 @property(readonly) NSOperationQueue * operationQueue;
 
 
+- (id)operationQueue;
+- (void)dealloc;
 - (void)setRA:(float)arg1;
 - (float)RA;
 - (void)setLA:(float)arg1;
@@ -65,7 +67,5 @@
 - (void)stopMotionManager;
 - (void)estimateSwingMotion;
 - (void)initSensors;
-- (id)operationQueue;
-- (void)dealloc;
 
 @end

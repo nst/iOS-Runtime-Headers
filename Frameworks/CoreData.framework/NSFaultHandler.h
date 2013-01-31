@@ -5,8 +5,8 @@
 @interface NSFaultHandler : NSObject  {
 }
 
-+ (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;
++ (BOOL)accessInstanceVariablesDirectly;
 
 - (void)_fireFirstAndSecondLevelFaultsForObject:(id)arg1 withContext:(id)arg2;
 - (void)turnObject:(id)arg1 intoFaultWithContext:(id)arg2;

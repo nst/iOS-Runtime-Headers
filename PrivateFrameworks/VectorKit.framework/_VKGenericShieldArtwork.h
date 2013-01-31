@@ -19,11 +19,11 @@
 }
 
 
-- (void)dealloc;
-- (float)leftCapWidth;
 - (float)rightCapWidth;
 - (struct CGSize { float x1; float x2; })sizeWithTextWidth:(float)arg1;
 - (id)initWithImage:(id)arg1 scale:(float)arg2 horizontalPadding:(float)arg3 textColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg4 baseline:(float)arg5 leftCap:(float)arg6 rightCap:(float)arg7 shouldStroke:(BOOL)arg8 strokeWidth:(float)arg9 strokeColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg10 shouldShadow:(BOOL)arg11 shadowOffset:(struct CGSize { float x1; float x2; })arg12 shadowSize:(float)arg13 shadowColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg14 fontSize:(float)arg15;
 - (struct CGImage { }*)newImageWithShieldText:(id)arg1;
+- (void)dealloc;
+- (float)leftCapWidth;
 
 @end

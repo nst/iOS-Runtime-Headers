@@ -72,15 +72,6 @@
 @property(retain) NSMutableDictionary * pidToConnectTimeoutSource;
 
 
-- (id)networkStatistics;
-- (void)updateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
-- (void)initiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
-- (BOOL)convertParticipantID:(id)arg1 toPeerID:(id*)arg2;
-- (BOOL)convertPeerID:(id)arg1 toParticipantID:(id*)arg2;
-- (void)connectParticipantsWithConnectionData:(id)arg1 withSessionInfo:(id)arg2;
-- (id)getLocalConnectionDataForLocalGaming;
-- (void)getLocalConnectionDataWithCompletionHandler:(id)arg1;
-- (id)initWithParticipantID:(id)arg1;
 - (void)dealloc;
 - (BOOL)startListeningForLocalGamingCDX;
 - (BOOL)localGamingCheckEstablishConnection:(id)arg1 connectionData:(id)arg2;
@@ -115,5 +106,14 @@
 - (void)CDXClient:(id)arg1 preblob:(id)arg2;
 - (void)CDXClient:(id)arg1 error:(id)arg2;
 - (void)CDXClientSession:(id)arg1 receivedData:(id)arg2 from:(int)arg3;
+- (id)networkStatistics;
+- (void)updateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
+- (void)initiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
+- (BOOL)convertParticipantID:(id)arg1 toPeerID:(id*)arg2;
+- (BOOL)convertPeerID:(id)arg1 toParticipantID:(id*)arg2;
+- (void)connectParticipantsWithConnectionData:(id)arg1 withSessionInfo:(id)arg2;
+- (id)getLocalConnectionDataForLocalGaming;
+- (void)getLocalConnectionDataWithCompletionHandler:(id)arg1;
+- (id)initWithParticipantID:(id)arg1;
 
 @end

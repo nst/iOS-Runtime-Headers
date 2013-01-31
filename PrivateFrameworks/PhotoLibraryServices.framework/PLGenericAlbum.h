@@ -84,18 +84,9 @@
 + (id)eventsWithName:(id)arg1 andImportSessionIdentifier:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)cameraRollAlbumInLibrary:(id)arg1;
 
-- (void)setKind:(id)arg1;
-- (id)localizedTitle;
 - (id)name;
 - (void)dealloc;
 - (unsigned int)count;
-- (void)awakeFromInsert;
-- (void)willTurnIntoFault;
-- (void)awakeFromFetch;
-- (id)kind;
-- (id)title;
-- (BOOL)isEmpty;
-- (void)setTitle:(id)arg1;
 - (unsigned int)indexOfPosterImage;
 - (id)assetsByObjectIDAtIndexes:(id)arg1;
 - (BOOL)hasDerivedIndexMappers;
@@ -144,5 +135,14 @@
 - (BOOL)isCloudSharedAlbum;
 - (int)kindValue;
 - (BOOL)isCameraAlbum;
+- (id)kind;
+- (id)title;
+- (BOOL)isEmpty;
+- (void)setTitle:(id)arg1;
+- (void)setKind:(id)arg1;
+- (id)localizedTitle;
+- (void)awakeFromInsert;
+- (void)willTurnIntoFault;
+- (void)awakeFromFetch;
 
 @end

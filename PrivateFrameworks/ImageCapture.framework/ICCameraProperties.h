@@ -57,6 +57,13 @@
 @property BOOL accessRestrictedAppleDevice;
 
 
+- (double)timeOffset;
+- (void)dealloc;
+- (void)setBatteryLevel:(unsigned int)arg1;
+- (id)mediaFiles;
+- (unsigned int)contentCatalogPercentCompleted;
+- (unsigned int)estimatedNumberOfDownloadableItems;
+- (BOOL)locked;
 - (void)setAccessRestrictedAppleDevice:(BOOL)arg1;
 - (BOOL)accessRestrictedAppleDevice;
 - (void)setDeviceQSemaphore:(struct dispatch_semaphore_s { }*)arg1;
@@ -98,18 +105,11 @@
 - (void)setToBeNotifiedAddedItems:(id)arg1;
 - (void)setMediaFiles:(id)arg1;
 - (void)setVolumePath:(id)arg1;
-- (void)dealloc;
-- (void)setBatteryLevel:(unsigned int)arg1;
 - (unsigned int)batteryLevel;
 - (void)finalize;
 - (void)setLocked:(BOOL)arg1;
 - (void)setTimeOffset:(double)arg1;
 - (void)setContents:(id)arg1;
 - (id)contents;
-- (double)timeOffset;
-- (id)mediaFiles;
-- (unsigned int)contentCatalogPercentCompleted;
-- (unsigned int)estimatedNumberOfDownloadableItems;
-- (BOOL)locked;
 
 @end

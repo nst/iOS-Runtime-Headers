@@ -11,10 +11,10 @@
 @property(retain) NSURL * url;
 
 
-- (void)processGameKitURLComponents:(id)arg1;
 - (void)dealloc;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)processGameKitURLComponents:(id)arg1;
 
 @end

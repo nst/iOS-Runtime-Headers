@@ -46,19 +46,6 @@
 @property unsigned int hasAttachments;
 
 
-- (id)guid;
-- (unsigned long long)timestamp;
-- (void)setTimestamp:(unsigned long long)arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
-- (unsigned int)isTypingIndicator;
-- (unsigned int)isGroupMessage;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
 - (void)setHasIsFromEmail:(BOOL)arg1;
 - (void)setHasIsFromPhoneNumber:(BOOL)arg1;
 - (void)setIsFromEmail:(unsigned int)arg1;
@@ -73,8 +60,10 @@
 - (void)setHasAttachments:(unsigned int)arg1;
 - (BOOL)hasHasAttachments;
 - (void)setIsGroupMessage:(unsigned int)arg1;
+- (unsigned int)isGroupMessage;
 - (BOOL)hasIsGroupMessage;
 - (void)setIsTypingIndicator:(unsigned int)arg1;
+- (unsigned int)isTypingIndicator;
 - (BOOL)hasIsTypingIndicator;
 - (void)setHasMessageError:(BOOL)arg1;
 - (void)setHasFzError:(BOOL)arg1;
@@ -84,10 +73,21 @@
 - (void)setFzError:(int)arg1;
 - (int)fzError;
 - (BOOL)hasFzError;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (BOOL)hasTimestamp;
 - (BOOL)hasGuid;
 - (void)setGuid:(id)arg1;
+- (id)guid;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (unsigned long long)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
+- (BOOL)hasTimestamp;
+- (id)dictionaryRepresentation;
 - (unsigned int)hasAttachments;
 
 @end

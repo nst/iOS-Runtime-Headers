@@ -19,6 +19,8 @@
 
 + (id)sharedActivityMonitor;
 
+- (void)dealloc;
+- (id)init;
 - (BOOL)networkIsActive;
 - (void)setShowingNetworkActivityCount:(int)arg1;
 - (int)showingNetworkActivityCount;
@@ -29,7 +31,5 @@
 - (int)monitoringActiveCount;
 - (void)setCMObserver:(id)arg1;
 - (void)setNetworkIsActive:(BOOL)arg1;
-- (void)dealloc;
-- (id)init;
 
 @end

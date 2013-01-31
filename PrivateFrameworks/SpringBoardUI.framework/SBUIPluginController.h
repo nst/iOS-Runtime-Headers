@@ -13,13 +13,9 @@
 @property(getter=isVisible) BOOL visible;
 
 
-- (void)viewDidAppear;
-- (id)host;
-- (BOOL)isVisible;
-- (void)setVisible:(BOOL)arg1;
-- (id)view;
 - (void)noteInterruption;
 - (BOOL)handledWiredMicButtonTap;
+- (void)handleBluetoothDismissal;
 - (BOOL)handledMenuButtonTap;
 - (BOOL)handledMenuButtonDownEvent;
 - (BOOL)handledPasscodeUnlockWithCompletion:(id)arg1;
@@ -34,9 +30,14 @@
 - (void)viewWillAnimateRotationToInterfaceOrientation:(int)arg1;
 - (void)viewWillRotateToInterfaceOrientation:(int)arg1;
 - (void)_postVisibilityDidChangeNotification;
-- (void)setHost:(id)arg1;
 - (void)viewDidDisappear;
 - (void)viewWillDisappear;
 - (void)viewWillAppear;
+- (id)host;
+- (BOOL)isVisible;
+- (void)setVisible:(BOOL)arg1;
+- (id)view;
+- (void)setHost:(id)arg1;
+- (void)viewDidAppear;
 
 @end

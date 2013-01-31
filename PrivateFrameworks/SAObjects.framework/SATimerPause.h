@@ -9,13 +9,13 @@
 
 @property(copy) NSURL * targetAppId;
 
-+ (id)pause;
 + (id)pauseWithDictionary:(id)arg1 context:(id)arg2;
++ (id)pause;
 
-- (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

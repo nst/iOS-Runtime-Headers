@@ -13,14 +13,14 @@
 @property float desiredWidth;
 
 
-- (float)desiredWidth;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageFrameForImage:(id)arg1 currentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 finalSize:(struct CGSize { float x1; float x2; })arg3;
 - (struct CGSize { float x1; float x2; })finalSizeForSize:(struct CGSize { float x1; float x2; })arg1 originalSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)drawAfterImageForContext:(struct CGContext { }*)arg1 imageFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 finalSize:(struct CGSize { float x1; float x2; })arg3;
 - (void)drawBeforeImageForContext:(struct CGContext { }*)arg1 imageFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 finalSize:(struct CGSize { float x1; float x2; })arg3;
-- (void)setDesiredWidth:(float)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)setDesiredWidth:(float)arg1;
+- (float)desiredWidth;
 
 @end

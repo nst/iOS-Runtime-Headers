@@ -15,9 +15,9 @@
 
 - (int)compare:(id)arg1;
 - (void)dealloc;
-- (id)fireDate;
-- (void)setFireDate:(id)arg1;
 - (void)setObj:(id)arg1;
 - (id)obj;
+- (id)fireDate;
+- (void)setFireDate:(id)arg1;
 
 @end

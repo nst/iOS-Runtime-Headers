@@ -10,12 +10,12 @@
     BOOL _visibilityCheckScheduled;
     double _lastSlowCheck;
     BOOL _requireVisibilityPropagation;
-    ADBannerController *_controller;
     double _creationTime;
-    BOOL _waitingOnFirstLoad;
+    ADBannerController *_controller;
     BOOL _shouldAttemptControllerCreation;
-    BOOL _visible;
+    BOOL _waitingOnFirstLoad;
     int _adType;
+    BOOL _visible;
 }
 
 @property UIView<ADAdRecipient> * recipient;
@@ -30,16 +30,10 @@
 @property BOOL visible;
 
 
-- (id)recipient;
-- (void)setRecipient:(id)arg1;
+- (int)visibility;
 - (id)identifier;
 - (void)dealloc;
-- (id)controller;
-- (void)setController:(id)arg1;
-- (BOOL)visible;
-- (id)modalViewController;
-- (void)setVisible:(BOOL)arg1;
-- (int)visibility;
+- (void)setCreationTime:(double)arg1;
 - (void)presentLocalViewController:(id)arg1;
 - (void)requestStoryboardDidFailWithError:(id)arg1;
 - (void)updateVisibility;
@@ -48,15 +42,21 @@
 - (double)creationTime;
 - (void)setShouldAttemptControllerCreation:(BOOL)arg1;
 - (void)_appDidBecomeActive;
-- (id)advertisingSection;
 - (void)scheduleAttributePropagation;
 - (id)initForRecipient:(id)arg1;
 - (void)serverStoryboardDidTransitionOut:(id)arg1;
 - (void)serverInterstitialViewExpiredAndWasUnloaded:(id)arg1;
 - (void)serverBannerViewDidLoad:(id)arg1;
 - (void)serverBannerViewWillLoad:(id)arg1;
+- (id)advertisingSection;
 - (void)serverBannerViewDidFailToReceiveAd:(id)arg1 withError:(id)arg2;
 - (int)adType;
-- (void)setCreationTime:(double)arg1;
+- (id)controller;
+- (void)setController:(id)arg1;
+- (BOOL)visible;
+- (id)modalViewController;
+- (void)setVisible:(BOOL)arg1;
+- (id)recipient;
+- (void)setRecipient:(id)arg1;
 
 @end

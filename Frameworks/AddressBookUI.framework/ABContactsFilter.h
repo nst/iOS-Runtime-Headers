@@ -32,8 +32,10 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (BOOL)isEditable;
 - (void*)addressBook;
+- (BOOL)isEditable;
+- (BOOL)isDirectory;
+- (id)sources;
 - (void*)directorySource;
 - (id)_sortedRecordsForRecords:(id)arg1 byNameProperty:(int)arg2;
 - (void)_getWritableSource:(const void**)arg1 andGroup:(const void**)arg2;
@@ -48,9 +50,7 @@
 - (BOOL)shouldChangeModelSelectionWhenDisplayed;
 - (id)copyDictionaryRepresentation;
 - (BOOL)showsAllContacts;
-- (BOOL)isDirectory;
 - (id)groups;
 - (id)initWithAddressBook:(void*)arg1;
-- (id)sources;
 
 @end

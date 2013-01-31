@@ -11,10 +11,10 @@
 @property <SLFacebookLoginInfoViewControllerDelegate> * delegate;
 
 
-- (id)specifiers;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
+- (id)specifiers;
 - (void)viewDidLoad;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

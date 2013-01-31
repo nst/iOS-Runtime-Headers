@@ -10,8 +10,8 @@
 
 
 - (void)dealloc;
+- (void)updateWithTrustDescription:(id)arg1 certificateIndex:(unsigned int)arg2;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)updateWithTrustDescription:(id)arg1 certificateIndex:(unsigned int)arg2;
 
 @end

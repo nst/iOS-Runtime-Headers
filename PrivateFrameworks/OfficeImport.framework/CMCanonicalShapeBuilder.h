@@ -6,7 +6,6 @@
 }
 
 
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })affineTransform;
 - (struct CGPath { }*)copyDiagramCircularArrowWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)copyPieWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)copyPyramidLayerWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
@@ -42,5 +41,6 @@
 - (struct CGPath { }*)copyParallelogramWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)copyRectangleWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)copyShapeWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })affineTransform;
 
 @end

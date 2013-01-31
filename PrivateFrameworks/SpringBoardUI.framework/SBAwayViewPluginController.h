@@ -33,23 +33,8 @@
 + (void)enableBundleNamed:(id)arg1 activationContext:(id)arg2;
 + (id)_serializedDataForContext:(id)arg1;
 
-- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
-- (BOOL)isFullscreen;
 - (void)dealloc;
 - (id)init;
-- (void)setOrientation:(int)arg1;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)setView:(id)arg1;
-- (id)view;
-- (int)orientation;
-- (void)disable;
 - (BOOL)viewCanBeDisplayed;
 - (BOOL)showsBeneathNotifications;
 - (BOOL)showsAboveHeader;
@@ -104,6 +89,21 @@
 - (void)setFullscreen:(BOOL)arg1 duration:(double)arg2;
 - (void)_setDisableTransitionBlock:(id)arg1;
 - (void)disableWithTransitionBlock:(id)arg1;
+- (void)disable;
+- (void)setOrientation:(int)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)setView:(id)arg1;
+- (id)view;
+- (int)orientation;
+- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)isFullscreen;
 - (id)customHeaderView;
 
 @end

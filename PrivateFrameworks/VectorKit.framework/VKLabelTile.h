@@ -17,9 +17,6 @@
 @property(retain) VKResourcesTile * resourcesTile;
 
 
-- (id)description;
-- (void)dealloc;
-- (void)setKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (int)tileType;
 - (unsigned int)getFeatures:(struct LabelFeature {}**)arg1 inRect:(const struct { double x1; double x2; double x3; double x4; }*)arg2;
 - (unsigned int)featureCount;
@@ -27,5 +24,8 @@
 - (id)resourcesTile;
 - (void)setResourcesTile:(id)arg1;
 - (id)modelTile;
+- (id)description;
+- (void)dealloc;
+- (void)setKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 
 @end

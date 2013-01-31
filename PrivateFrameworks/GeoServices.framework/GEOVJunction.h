@@ -13,13 +13,13 @@
 @property(retain) NSMutableArray * laneConnections;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)connectingRoads;
 - (id)laneConnectionsAtIndex:(unsigned int)arg1;
 - (void)clearLaneConnections;
@@ -32,6 +32,6 @@
 - (void)setConnectingRoads:(id)arg1;
 - (unsigned int)laneConnectionsCount;
 - (id)laneConnections;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

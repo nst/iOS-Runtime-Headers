@@ -18,7 +18,6 @@
 + (id)getNavigationStatusCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)getNavigationStatusCompleted;
 
-- (id)groupIdentifier;
 - (id)route;
 - (void)setRoute:(id)arg1;
 - (void)setOverallEta:(id)arg1;
@@ -30,5 +29,6 @@
 - (void)setEtaInMinutes:(id)arg1;
 - (id)etaInMinutes;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

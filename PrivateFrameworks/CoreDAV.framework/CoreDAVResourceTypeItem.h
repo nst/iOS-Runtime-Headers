@@ -26,9 +26,11 @@
 
 + (id)copyParseRules;
 
+- (void)write:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (id)addressBook;
 - (void)setCollection:(id)arg1;
 - (void)setShared:(id)arg1;
 - (void)setSearchAddressBook:(id)arg1;
@@ -40,10 +42,8 @@
 - (id)principal;
 - (id)stringSet;
 - (id)unauthenticated;
-- (void)write:(id)arg1;
-- (id)addressBook;
-- (id)collection;
 - (void)setAddressBook:(id)arg1;
+- (id)collection;
 - (void)setExtraChild:(id)arg1 forNameSpace:(id)arg2 name:(id)arg3;
 - (id)extraChildWithNameSpace:(id)arg1 name:(id)arg2;
 - (void)setBookmarkMenuFolder:(id)arg1;

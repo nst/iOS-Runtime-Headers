@@ -11,11 +11,12 @@
 }
 
 
+- (void)dealloc;
+- (void)appendString:(id)arg1;
 - (void)okButtonPressed:(id)arg1;
 - (void)hidePasscodeField:(BOOL)arg1;
 - (void)showError:(id)arg1 animate:(BOOL)arg2;
-- (void)dealloc;
-- (void)appendString:(id)arg1;
+- (void)setBlocked:(BOOL)arg1;
 - (void)deleteLastCharacter;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;
@@ -29,6 +30,5 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBlocked:(BOOL)arg1;
 
 @end

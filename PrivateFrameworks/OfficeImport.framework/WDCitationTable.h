@@ -12,9 +12,9 @@
 
 - (void)dealloc;
 - (int)count;
-- (id)initWithDocument:(id)arg1;
-- (id)document;
 - (void)addCitation:(id)arg1 forID:(id)arg2;
 - (id)citationFor:(id)arg1;
+- (id)initWithDocument:(id)arg1;
+- (id)document;
 
 @end

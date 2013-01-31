@@ -10,10 +10,10 @@
 + (id)albumCollectionWithDictionary:(id)arg1 context:(id)arg2;
 + (id)albumCollection;
 
+- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
+- (id)encodedClassName;
 - (id)groupIdentifier;
 - (void)setRating:(int)arg1;
 - (int)rating;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
-- (id)encodedClassName;
 
 @end

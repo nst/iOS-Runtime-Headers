@@ -20,8 +20,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)suspend;
-- (BOOL)isSuspended;
 - (void)resume:(BOOL)arg1;
 - (id)lastErrorForMessage:(id)arg1;
 - (int)deliverSynchronously:(id)arg1;
@@ -47,6 +45,8 @@
 - (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
 - (int)append:(id)arg1;
 - (void)setPercentDone:(double)arg1;
+- (void)suspend;
+- (BOOL)isSuspended;
 - (BOOL)isReady;
 
 @end

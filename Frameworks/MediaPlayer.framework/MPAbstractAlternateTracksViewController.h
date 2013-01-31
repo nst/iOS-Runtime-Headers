@@ -8,6 +8,9 @@
 }
 
 
+- (void)dealloc;
+- (id)init;
+- (void)reloadData;
 - (void)_alternateTypesChangedNotification:(id)arg1;
 - (void)removeLoadingUI;
 - (void)addLoadingUI;
@@ -16,8 +19,5 @@
 - (id)arrayForGroup:(int)arg1;
 - (void)saveChanges;
 - (id)alternateTracks;
-- (void)dealloc;
-- (id)init;
-- (void)reloadData;
 
 @end

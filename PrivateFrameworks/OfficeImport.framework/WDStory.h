@@ -10,11 +10,11 @@
 }
 
 
-- (void)dealloc;
-- (id)text;
 - (id)head;
+- (void)dealloc;
 - (BOOL)isOle;
 - (id)initWithHead:(id)arg1;
 - (void)setOle:(BOOL)arg1;
+- (id)text;
 
 @end

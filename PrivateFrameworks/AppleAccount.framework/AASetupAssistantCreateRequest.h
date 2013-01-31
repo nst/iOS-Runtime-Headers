@@ -12,8 +12,8 @@
 
 + (Class)responseClass;
 
-- (void).cxx_destruct;
 - (id)urlString;
+- (void).cxx_destruct;
 - (id)bodyDictionary;
 - (id)urlRequest;
 - (id)initWithAccount:(id)arg1 withAppleIDParameters:(id)arg2 signingSession:(id)arg3;

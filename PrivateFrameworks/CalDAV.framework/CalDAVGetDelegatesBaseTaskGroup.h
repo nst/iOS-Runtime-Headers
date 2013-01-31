@@ -25,6 +25,9 @@
 
 - (void)dealloc;
 - (id)principalURL;
+- (void)taskGroup:(id)arg1 didFinishWithError:(id)arg2;
+- (void)setPrincipalURL:(id)arg1;
+- (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)setServerSupportsExpandPropertyReport:(BOOL)arg1;
 - (id)readWritePrincipalDetails;
 - (id)readOnlyPrincipalDetails;
@@ -42,8 +45,5 @@
 - (id)_popFromArray:(id)arg1;
 - (id)_mappingsForPrincipalDetails;
 - (id)initWithAccountInfoProvider:(id)arg1 principalURL:(id)arg2 taskManager:(id)arg3;
-- (void)taskGroup:(id)arg1 didFinishWithError:(id)arg2;
-- (void)setPrincipalURL:(id)arg1;
-- (void)task:(id)arg1 didFinishWithError:(id)arg2;
 
 @end

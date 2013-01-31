@@ -14,9 +14,9 @@
 + (void)useLocalProxy;
 + (void)useRemoteProxy;
 
-- (id)serverProxy;
 - (void)dealloc;
 - (id)init;
 - (void)loadAttributionInfoForIdentifier:(id)arg1 version:(unsigned int)arg2 completionHandler:(id)arg3 errorHandler:(id)arg4;
+- (id)serverProxy;
 
 @end

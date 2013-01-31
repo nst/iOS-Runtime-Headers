@@ -10,10 +10,10 @@
 }
 
 
-- (id)initWithGroupPersistentID:(long long)arg1;
 - (id)description;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithGroupPersistentID:(long long)arg1;
 
 @end

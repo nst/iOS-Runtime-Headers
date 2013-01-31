@@ -16,7 +16,6 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)object;
 - (id)initWithShuffledAlbum:(id)arg1 albumChangeNotification:(id)arg2;
 - (BOOL)countDidChange;
 - (id)_changedObjects;
@@ -30,5 +29,6 @@
 - (id)deletedIndexes;
 - (BOOL)shouldReload;
 - (id)album;
+- (id)object;
 
 @end

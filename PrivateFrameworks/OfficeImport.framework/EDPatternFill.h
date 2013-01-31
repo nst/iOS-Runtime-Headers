@@ -20,8 +20,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setType:(int)arg1;
-- (bool)isEmpty;
 - (id)initWithType:(int)arg1 foreColorReference:(id)arg2 backColorReference:(id)arg3 resources:(id)arg4;
 - (id)initWithType:(int)arg1 foreColor:(id)arg2 backColor:(id)arg3 resources:(id)arg4;
 - (BOOL)isEqualToPatternFill:(id)arg1;
@@ -34,5 +32,7 @@
 - (id)initWithResources:(id)arg1;
 - (id)backColor;
 - (id)foreColor;
+- (void)setType:(int)arg1;
+- (bool)isEmpty;
 
 @end

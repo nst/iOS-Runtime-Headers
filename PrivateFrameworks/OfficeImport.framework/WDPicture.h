@@ -7,7 +7,7 @@
 
 
 - (void)dealloc;
-- (BOOL)hasContent;
 - (int)runType;
+- (BOOL)hasContent;
 
 @end

@@ -5,6 +5,7 @@
 @interface QLPreviewURLProtocol : NSURLProtocol  {
 }
 
++ (void)initialize;
 + (id)mimeTypeForAttachmentURL:(id)arg1;
 + (id)errorForURL:(id)arg1;
 + (void)setError:(id)arg1 forURL:(id)arg2;
@@ -20,11 +21,10 @@
 + (void)_unregisterURL:(id)arg1;
 + (id)_errorForAbort;
 + (void)registerPreview:(id)arg1;
-+ (void)initialize;
 + (id)canonicalRequestForRequest:(id)arg1;
 + (BOOL)canInitWithRequest:(id)arg1;
 
-- (void)startLoading;
 - (void)stopLoading;
+- (void)startLoading;
 
 @end

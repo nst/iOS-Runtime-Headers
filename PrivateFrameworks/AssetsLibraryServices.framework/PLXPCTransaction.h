@@ -10,7 +10,7 @@
 
 - (id)description;
 - (void)dealloc;
-- (id)initWithIdentifier:(const char *)arg1;
 - (void)stillAlive;
+- (id)initWithIdentifier:(const char *)arg1;
 
 @end

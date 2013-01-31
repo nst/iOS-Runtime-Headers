@@ -11,9 +11,9 @@
 
 + (id)sharedManager;
 
+- (id)textureWithName:(id)arg1 forClass:(Class)arg2;
 - (void)dealloc;
 - (id)init;
 - (void)purge;
-- (id)textureWithName:(id)arg1 forClass:(Class)arg2;
 
 @end

@@ -10,12 +10,12 @@
 }
 
 
-- (id)initWithDelegate:(id)arg1;
-- (void)dealloc;
-- (void)failWithError:(id)arg1;
 - (void)requestProfileForUsername:(id)arg1;
 - (void)requestProfileForCurrentUser;
 - (void)didParseData;
+- (void)failWithError:(id)arg1;
+- (id)initWithDelegate:(id)arg1;
+- (void)dealloc;
 - (int)parseData:(id)arg1;
 
 @end

@@ -21,8 +21,8 @@
 - (id)identifier;
 - (id)data;
 - (void)dealloc;
+- (id)fileName;
 - (id)mimeType;
 - (id)initWithData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
-- (id)fileName;
 
 @end

@@ -67,7 +67,6 @@
 
 
 - (float)screenHeight;
-- (void)dealloc;
 - (float)fogOffset;
 - (float)fogSlope;
 - (float)skyOffset;
@@ -85,5 +84,6 @@
 - (void)setSkyOffset:(float)arg1;
 - (void)setHorizonDepth:(float)arg1;
 - (id)initWithVertName:(id)arg1 fragName:(id)arg2;
+- (void)dealloc;
 
 @end

@@ -19,8 +19,6 @@
 
 
 - (void)dealloc;
-- (id)initWithDocument:(id)arg1;
-- (id)document;
 - (id)defaultListStyle;
 - (void)createDefaultStyles;
 - (id)defaultParagraphProperties;
@@ -45,5 +43,7 @@
 - (void)setDefaultTableStyle:(id)arg1;
 - (id)defaultTableStyle;
 - (id)styles;
+- (id)initWithDocument:(id)arg1;
+- (id)document;
 
 @end

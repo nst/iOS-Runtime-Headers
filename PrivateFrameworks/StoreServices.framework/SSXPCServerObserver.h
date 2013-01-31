@@ -13,9 +13,9 @@
 
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (SEL)selector;
-- (void)setSelector:(SEL)arg1;
 - (void)setObserver:(id)arg1;
 - (id)observer;
+- (SEL)selector;
+- (void)setSelector:(SEL)arg1;
 
 @end

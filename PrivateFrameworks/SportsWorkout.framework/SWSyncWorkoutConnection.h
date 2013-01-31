@@ -15,10 +15,10 @@
 @property(readonly) NSInputStream * workoutXMLStream;
 
 
-- (void)handleResponse:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)handleResponse:(id)arg1;
 - (id)workoutXMLStream;
 - (id)initWithPIN:(id)arg1 workoutXMLStream:(id)arg2 host:(id)arg3 delegate:(id)arg4;
 - (id)PIN;

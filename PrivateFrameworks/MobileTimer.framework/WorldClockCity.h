@@ -34,9 +34,9 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)initWithProperties:(id)arg1;
-- (id)properties;
-- (id)timeZone;
+- (id)unlocalizedCountryName;
+- (id)unlocalizedCityName;
+- (id)alCityId;
 - (id)alCity;
 - (void)setWeatherCity:(id)arg1;
 - (id)weatherCity;
@@ -44,10 +44,10 @@
 - (id)initWithALCityIdentifier:(int)arg1;
 - (id)idUrl;
 - (id)initWithALCity:(id)arg1;
-- (id)countryName;
 - (id)countryCode;
-- (id)unlocalizedCountryName;
-- (id)unlocalizedCityName;
-- (id)alCityId;
+- (id)initWithProperties:(id)arg1;
+- (id)properties;
+- (id)timeZone;
+- (id)countryName;
 
 @end

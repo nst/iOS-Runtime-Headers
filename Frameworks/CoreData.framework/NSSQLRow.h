@@ -9,9 +9,9 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)initialize;
 + (id)allocForSQLEntity:(id)arg1;
 + (unsigned int)newBatchRowAllocation:(id*)arg1 count:(unsigned int)arg2 forSQLEntity:(id)arg3 withOwnedObjectIDs:(struct _NSScalarObjectID { Class x1; }**)arg4 andTimestamp:(double)arg5;
-+ (void)initialize;
 
 - (id)entity;
 - (id)description;
@@ -19,6 +19,7 @@
 - (id)valueForKey:(id)arg1;
 - (void)dealloc;
 - (id)copy;
+- (long long)version;
 - (struct _NSScalarObjectID { Class x1; }*)newObjectIDForToOne:(id)arg1;
 - (void)_validateToOnes;
 - (id)initWithSQLEntity:(id)arg1 objectID:(struct _NSScalarObjectID { Class x1; }*)arg2;
@@ -40,6 +41,5 @@
 - (unsigned int)entityID;
 - (long long)pk64;
 - (struct _NSScalarObjectID { Class x1; }*)objectID;
-- (long long)version;
 
 @end

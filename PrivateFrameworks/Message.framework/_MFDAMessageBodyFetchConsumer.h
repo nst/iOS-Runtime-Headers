@@ -17,16 +17,16 @@
 @property(retain) NSData * data;
 
 
-- (void)setError:(id)arg1;
 - (id)data;
 - (void)dealloc;
-- (void)setData:(id)arg1;
+- (id)error;
 - (BOOL)wantsData;
 - (id)streamingContentConsumer;
 - (id)streamConsumer;
 - (void)handleResponse:(id)arg1 error:(id)arg2;
 - (BOOL)succeeded;
 - (void)setStreamConsumer:(id)arg1;
-- (id)error;
+- (void)setData:(id)arg1;
+- (void)setError:(id)arg1;
 
 @end

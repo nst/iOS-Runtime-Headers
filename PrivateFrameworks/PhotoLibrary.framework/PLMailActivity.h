@@ -11,6 +11,9 @@
 @property(retain) NSArray * assetsToShare;
 
 
+- (BOOL)_canSendEmail;
+- (id)assetsToShare;
+- (void)setAssetsToShare:(id)arg1;
 - (id)mailComposeViewController;
 - (BOOL)_canPerformWithSuppliedActivityItems:(id)arg1;
 - (void)prepareWithActivityItems:(id)arg1;
@@ -18,8 +21,5 @@
 - (void)performActivity;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
 - (id)_beforeActivity;
-- (BOOL)_canSendEmail;
-- (id)assetsToShare;
-- (void)setAssetsToShare:(id)arg1;
 
 @end

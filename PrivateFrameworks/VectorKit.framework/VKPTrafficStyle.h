@@ -25,13 +25,6 @@
 @property float spacing;
 
 
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setFillColor:(unsigned int)arg1;
-- (unsigned int)fillColor;
-- (id)dictionaryRepresentation;
 - (void)setPattern:(int)arg1;
 - (int)pattern;
 - (void)setHasSpacing:(BOOL)arg1;
@@ -45,9 +38,16 @@
 - (BOOL)hasFillColor;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)setSpacing:(float)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (float)spacing;
 - (BOOL)hasSpacing;
+- (void)setFillColor:(unsigned int)arg1;
+- (unsigned int)fillColor;
+- (id)dictionaryRepresentation;
 
 @end

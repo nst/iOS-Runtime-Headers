@@ -19,8 +19,6 @@
 @property(retain) SLTwitterSession * session;
 
 
-- (id)session;
-- (void)setSession:(id)arg1;
 - (int)type;
 - (void).cxx_destruct;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
@@ -36,5 +34,7 @@
 - (void)updateCellSubviews;
 - (id)userRecord;
 - (void)setUserRecord:(id)arg1;
+- (id)session;
+- (void)setSession:(id)arg1;
 
 @end

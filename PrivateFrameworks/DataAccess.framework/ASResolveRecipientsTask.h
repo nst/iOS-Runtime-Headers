@@ -9,7 +9,6 @@
 }
 
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
 - (id)initWithEmailAddresses:(id)arg1;
 - (int)certStatusForExchangeStatus:(int)arg1;
@@ -19,5 +18,6 @@
 - (id)requestBody;
 - (int)commandCode;
 - (int)taskStatusForExchangeStatus:(int)arg1;
+- (void)finishWithError:(id)arg1;
 
 @end

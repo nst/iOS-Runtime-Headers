@@ -24,7 +24,6 @@
 + (id)basicAccountProperties;
 + (id)existingAccountForUniqueID:(id)arg1;
 
-- (void)setUsername:(id)arg1;
 - (id)identifier;
 - (BOOL)shouldUseSaveSentForAccount:(id)arg1;
 - (BOOL)supportsOutboxCopy;
@@ -42,5 +41,6 @@
 - (id)newDeliveryWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
 - (id)newDeliveryWithMessage:(id)arg1;
 - (BOOL)hasEnoughInformationForEasySetup;
+- (void)setUsername:(id)arg1;
 
 @end

@@ -20,6 +20,9 @@
 - (id)initWithString:(id)arg1;
 - (id)string;
 - (void)dealloc;
+- (void)setScanLocation:(unsigned int)arg1;
+- (unsigned int)scanLocation;
+- (void)setCharactersToBeSkipped:(id)arg1;
 - (BOOL)scanInt:(int*)arg1;
 - (id)locale;
 - (void)finalize;
@@ -29,8 +32,5 @@
 - (void)setCaseSensitive:(BOOL)arg1;
 - (BOOL)caseSensitive;
 - (id)charactersToBeSkipped;
-- (void)setScanLocation:(unsigned int)arg1;
-- (unsigned int)scanLocation;
-- (void)setCharactersToBeSkipped:(id)arg1;
 
 @end

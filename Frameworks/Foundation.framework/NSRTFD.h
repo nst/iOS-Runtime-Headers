@@ -10,6 +10,7 @@
 
 + (void)initialize;
 
+- (id)dataRepresentation;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)initWithCapacity:(unsigned int)arg1;
@@ -19,13 +20,13 @@
 - (id)init;
 - (id)copy;
 - (unsigned int)count;
-- (id)removeFile:(id)arg1;
+- (id)initWithDataRepresentation:(id)arg1;
+- (id)addLink:(id)arg1;
 - (id)initWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
 - (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(unsigned int)arg3;
 - (id)keyEnumerator;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
-- (id)dataRepresentation;
 - (BOOL)_isLink:(id)arg1;
 - (id)pasteboardDataRepresentation;
 - (id)initFromSerialized:(id)arg1;
@@ -64,7 +65,6 @@
 - (id)getDirInfo:(BOOL)arg1;
 - (id)_getDocInfoForKey:(id)arg1;
 - (BOOL)isPackage;
-- (id)initWithDataRepresentation:(id)arg1;
-- (id)addLink:(id)arg1;
+- (id)removeFile:(id)arg1;
 
 @end

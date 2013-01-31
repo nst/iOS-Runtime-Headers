@@ -15,10 +15,10 @@
 + (id)searchCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)searchCompleted;
 
-- (id)groupIdentifier;
 - (id)results;
 - (void)setResults:(id)arg1;
 - (id)initWithResults:(id)arg1;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

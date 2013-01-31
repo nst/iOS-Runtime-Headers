@@ -9,6 +9,7 @@
 + (id)sharedInstance;
 + (void)releaseSharedInstance;
 
+- (void)dealloc;
 - (void)setProtocolConfigurationValue:(id)arg1 forKey:(struct __CFString { }*)arg2 protocolType:(struct __CFString { }*)arg3 serviceID:(struct __CFString { }*)arg4;
 - (id)protocolConfigurationValueForKey:(struct __CFString { }*)arg1 protocolType:(struct __CFString { }*)arg2 serviceID:(struct __CFString { }*)arg3;
 - (void)setProtocolConfiguration:(id)arg1 protocolType:(struct __CFString { }*)arg2 serviceID:(struct __CFString { }*)arg3;
@@ -20,6 +21,5 @@
 - (struct __CFString { }*)dataServiceID;
 - (void)cleanupPrefs;
 - (unsigned char)synchronizeForWriting:(BOOL)arg1;
-- (void)dealloc;
 
 @end

@@ -19,12 +19,12 @@
 
 + (id)pivotField;
 
-- (void)dealloc;
-- (id)init;
 - (void)setAxis:(int)arg1;
 - (int)axis;
 - (void)setCompact:(bool)arg1;
 - (bool)compact;
+- (void)dealloc;
+- (id)init;
 - (id)pivotFieldItems;
 - (void)setNumFmtId:(unsigned int)arg1;
 - (unsigned int)numFmtId;

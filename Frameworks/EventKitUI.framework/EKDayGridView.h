@@ -59,7 +59,6 @@
 + (void)cacheBackgroundImage:(id)arg1 forKey:(id)arg2;
 + (id)cachedBackgroundImageForKey:(id)arg1;
 
-- (float)topPadding;
 - (void)dealloc;
 - (void)setOrientation:(int)arg1;
 - (void)setSelected:(BOOL)arg1;
@@ -68,6 +67,7 @@
 - (void)removeFromSuperview;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)topPadding;
 - (BOOL)drawsGrayOutsideExtents;
 - (void)setHoursToPadBottom:(int)arg1;
 - (int)hoursToPadBottom;

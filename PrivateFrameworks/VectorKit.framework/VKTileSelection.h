@@ -13,9 +13,6 @@
 @property unsigned int maxZ;
 
 
-- (id)init;
-- (int)tileSize;
-- (void)setTileSize:(int)arg1;
 - (void)setBootstrap:(BOOL)arg1;
 - (BOOL)bootstrap;
 - (float)_zoomLevelForGroundPoint:(const struct { double x1; double x2; double x3; }*)arg1 context:(id)arg2;
@@ -24,5 +21,8 @@
 - (id)keysForContext:(id)arg1;
 - (void)setMaxZ:(unsigned int)arg1;
 - (unsigned int)maxZ;
+- (id)init;
+- (int)tileSize;
+- (void)setTileSize:(int)arg1;
 
 @end

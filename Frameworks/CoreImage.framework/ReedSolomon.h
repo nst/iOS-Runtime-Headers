@@ -12,7 +12,6 @@
 
 
 - (void)dealloc;
-- (struct { int *x1; int x2; }*)divide:(struct { int *x1; int x2; }*)arg1 by:(struct { int *x1; int x2; }*)arg2;
 - (int*)coefficients:(struct { int *x1; int x2; })arg1;
 - (struct { int *x1; int x2; }*)createMonomial:(int)arg1 coefficient:(int)arg2;
 - (struct { int *x1; int x2; }*)buildGenerator:(int)arg1;
@@ -31,5 +30,6 @@
 - (BOOL)fillPoly:(struct { int *x1; int x2; }*)arg1 coefficients:(int*)arg2 length:(int)arg3;
 - (BOOL)encode:(int*)arg1 length:(int)arg2 bytes:(int)arg3;
 - (id)initReedSolomon;
+- (struct { int *x1; int x2; }*)divide:(struct { int *x1; int x2; }*)arg1 by:(struct { int *x1; int x2; }*)arg2;
 
 @end

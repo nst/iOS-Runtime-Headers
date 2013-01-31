@@ -25,7 +25,7 @@
 - (id)_className;
 - (id)scriptAttributeKeys;
 - (id)initWithRequestPerformance:(id)arg1;
-- (void)dealloc;
 - (id)attributeKeys;
+- (void)dealloc;
 
 @end

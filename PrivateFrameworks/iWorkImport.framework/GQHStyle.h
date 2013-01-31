@@ -15,8 +15,6 @@
 + (void)setSingleStyleAttribute:(struct __CFString { }*)arg1 value:(struct __CFString { }*)arg2 node:(id)arg3;
 + (void)createBaseStyleClassString:(id)arg1 classString:(struct __CFString {}**)arg2 classType:(Class)arg3 state:(id)arg4;
 
-- (void)dealloc;
-- (id)init;
 - (void)addAttribute:(struct __CFString { }*)arg1 ptValue:(int)arg2;
 - (void)setupCssClassAttribute:(id)arg1;
 - (void)setStyleOnCurrentNode:(id)arg1 mappingBaseStyleClasses:(struct __CFArray { }*)arg2 baseClassTypes:(struct __CFArray { }*)arg3;
@@ -30,6 +28,8 @@
 - (void)addAttribute:(struct __CFString { }*)arg1 intValue:(int)arg2;
 - (void)setStyleOnCurrentNode:(id)arg1;
 - (void)addAttribute:(struct __CFString { }*)arg1 value:(struct __CFString { }*)arg2;
+- (void)dealloc;
+- (id)init;
 - (void)addClass:(struct __CFString { }*)arg1;
 
 @end

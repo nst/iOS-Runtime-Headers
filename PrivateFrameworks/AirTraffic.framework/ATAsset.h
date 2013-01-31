@@ -69,21 +69,15 @@
 + (id)uploadAssetWithIdentifier:(id)arg1 dataclass:(id)arg2 sourcePath:(id)arg3 prettyName:(id)arg4;
 + (id)downloadAssetWithIdentifier:(id)arg1 dataclass:(id)arg2 prettyName:(id)arg3;
 
-- (id)icon;
-- (void)setError:(id)arg1;
 - (void)setAssetType:(id)arg1;
 - (id)path;
 - (id)identifier;
 - (id)description;
 - (void)dealloc;
-- (id)assetType;
-- (float)downloadProgress;
-- (void)setDownloadProgress:(float)arg1;
-- (void)setPath:(id)arg1;
-- (void)setPriority:(unsigned int)arg1;
-- (unsigned int)priority;
-- (void)setIdentifier:(id)arg1;
-- (void)setIcon:(id)arg1;
+- (id)error;
+- (id)infoPlist;
+- (void)setDataclass:(id)arg1;
+- (id)dataclass;
 - (void)setInfoPlist:(id)arg1;
 - (void)setStorePlist:(id)arg1;
 - (void)setStoreInfo:(id)arg1;
@@ -114,9 +108,15 @@
 - (BOOL)bypassStore;
 - (BOOL)isDownload;
 - (long long)storePID;
-- (id)infoPlist;
-- (void)setDataclass:(id)arg1;
-- (id)error;
-- (id)dataclass;
+- (id)assetType;
+- (float)downloadProgress;
+- (void)setDownloadProgress:(float)arg1;
+- (void)setPath:(id)arg1;
+- (void)setPriority:(unsigned int)arg1;
+- (unsigned int)priority;
+- (void)setIdentifier:(id)arg1;
+- (void)setIcon:(id)arg1;
+- (id)icon;
+- (void)setError:(id)arg1;
 
 @end

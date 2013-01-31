@@ -13,13 +13,13 @@
 @property(retain) CoreDAVItem * content;
 
 
+- (void)setContent:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)content;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (void)setContent:(id)arg1;
+- (id)content;
 - (void)setDtstamp:(id)arg1;
 - (id)dtstamp;
 

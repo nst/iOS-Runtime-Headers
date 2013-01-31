@@ -12,7 +12,7 @@
 
 
 - (void)dealloc;
-- (id)stylesheet;
 - (struct __CFArray { }*)attachments;
+- (id)stylesheet;
 
 @end

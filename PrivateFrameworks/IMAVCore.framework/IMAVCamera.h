@@ -21,13 +21,13 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isSuspended;
 - (id)_AVCamera;
 - (BOOL)isShutterOpen;
 - (BOOL)hasShutter;
 - (BOOL)isWideScreen;
 - (id)_initWithAVCamera:(id)arg1;
 - (int)cameraStyle;
+- (BOOL)isSuspended;
 - (id)uniqueID;
 
 @end

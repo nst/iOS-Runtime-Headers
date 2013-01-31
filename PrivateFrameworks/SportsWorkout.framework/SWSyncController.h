@@ -25,10 +25,10 @@
 + (void)releaseSyncInProgressFileLock;
 + (BOOL)takeSyncInProgressFileLock:(BOOL)arg1;
 
-- (void)dealloc;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (id)syncDelegate;
 - (void)setSyncDelegate:(id)arg1;
+- (void)dealloc;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)setUploadCount:(int)arg1;
 - (int)uploadCount;
 - (void)setShouldMoveFilesToSynchedDirectoryWhenDone:(BOOL)arg1;

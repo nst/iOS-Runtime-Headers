@@ -12,10 +12,10 @@
 + (id)setSupportedLocalesWithDictionary:(id)arg1 context:(id)arg2;
 + (id)setSupportedLocales;
 
-- (id)groupIdentifier;
 - (void)setLocales:(id)arg1;
 - (id)locales;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

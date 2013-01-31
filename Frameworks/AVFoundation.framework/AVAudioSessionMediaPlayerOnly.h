@@ -20,17 +20,17 @@
 
 + (void)initialize;
 
-- (BOOL)setMode:(id)arg1 error:(id*)arg2;
-- (BOOL)setCategory:(id)arg1 error:(id*)arg2;
-- (BOOL)isApplicationAudioSession;
-- (void)setApplicationAudioSession:(BOOL)arg1;
-- (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
 - (id)category;
 - (id)mode;
+- (BOOL)setMode:(id)arg1 error:(id*)arg2;
+- (BOOL)setCategory:(id)arg1 error:(id*)arg2;
+- (BOOL)isApplicationAudioSession;
+- (void)setApplicationAudioSession:(BOOL)arg1;
+- (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
 - (void)_setFigPlayer:(struct OpaqueFigPlayer { }*)arg1;
 - (void)_addFPListeners;
 - (void)_removeFPListeners;

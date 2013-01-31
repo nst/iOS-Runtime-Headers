@@ -12,12 +12,12 @@
 @property BOOL usePlaceholderAsFallback;
 
 
-- (id)placeholderImage;
+- (id)initWithURL:(id)arg1;
+- (void)dealloc;
 - (BOOL)usePlaceholderAsFallback;
 - (id)copyRawImageReturningError:(id*)arg1;
 - (id)uniqueKey;
 - (void)setUsePlaceholderAsFallback:(BOOL)arg1;
-- (id)initWithURL:(id)arg1;
-- (void)dealloc;
+- (id)placeholderImage;
 
 @end

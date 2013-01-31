@@ -7,8 +7,8 @@
 }
 
 
-- (BOOL)boolValue;
 - (struct __CFString { }*)createStringValue;
 - (void)setProcessorBundle:(struct __CFBundle { }*)arg1;
+- (BOOL)boolValue;
 
 @end

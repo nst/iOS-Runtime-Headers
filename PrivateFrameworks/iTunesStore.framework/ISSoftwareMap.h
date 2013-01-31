@@ -24,11 +24,11 @@
 - (id)applicationForBundleIdentifier:(id)arg1;
 - (id)applications;
 - (id)applicationForItemIdentifier:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (id)copySoftwareUpdatesPropertyList;
 - (id)_newSoftwareUpdateDictionaryForApplication:(id)arg1;
 - (id)copySoftwareUpdatesPropertyListWithUpdatesContext:(id)arg1;
 - (void)_loadFromMobileInstallation;
+- (void)dealloc;
+- (id)init;
 
 @end

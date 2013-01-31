@@ -13,9 +13,9 @@
 + (id)codedPropertyKeys;
 + (id)internalRepresentation;
 
+- (void)dealloc;
 - (id)issueRepresentationToPlayerID:(id)arg1;
 - (void)setScore:(id)arg1;
 - (id)score;
-- (void)dealloc;
 
 @end

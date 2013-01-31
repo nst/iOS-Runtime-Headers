@@ -13,6 +13,8 @@
 @property(retain) NSString * name;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)name;
 - (int)type;
@@ -20,10 +22,8 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)setType:(int)arg1;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
 
 @end

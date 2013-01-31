@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSError, NSString, NSObject<OS_dispatch_source>, NSObject<OS_dispatch_queue>, MZTaskAssertion, NSMutableArray;
+@class NSError, NSString, NSObject<OS_dispatch_source>, NSObject<OS_dispatch_queue>, NSMutableArray, MZTaskAssertion;
 
 @interface MZAsynchronousTask : NSObject  {
     NSObject<OS_dispatch_queue> *_handlerQueue;
@@ -28,8 +28,8 @@
     id _finishedHandler;
 
     NSString *_debugDescription;
-    MZTaskAssertion *_taskAssertion;
     NSMutableArray *_completions;
+    MZTaskAssertion *_taskAssertion;
 }
 
 @property(copy) id finishedHandler;
@@ -42,6 +42,10 @@
 @property(retain) NSMutableArray * completions;
 
 
+- (void)invalidate;
+- (id)debugDescription;
+- (id)description;
+- (void)dealloc;
 - (id)taskAssertion;
 - (void)endTaskOperation;
 - (id)completions;
@@ -59,16 +63,12 @@
 - (int)cancelType;
 - (id)initWithHandlerQueue:(id)arg1 timeout:(double)arg2 debugDescription:(id)arg3;
 - (void)addTaskCompletionBlock:(id)arg1;
-- (void)setError:(id)arg1;
-- (void)invalidate;
-- (id)debugDescription;
-- (id)description;
-- (void)dealloc;
-- (id)result;
-- (void)setResult:(id)arg1;
-- (void)_invalidateTimer;
+- (id)error;
 - (id)finishedHandler;
 - (void)setFinishedHandler:(id)arg1;
-- (id)error;
+- (id)result;
+- (void)setResult:(id)arg1;
+- (void)setError:(id)arg1;
+- (void)_invalidateTimer;
 
 @end

@@ -13,8 +13,6 @@
 }
 
 
-- (id)identifier;
-- (void)dealloc;
 - (void)receivedDidClose:(id)arg1;
 - (void)receivedData:(id)arg1;
 - (id)connectionIdentifier;
@@ -23,5 +21,7 @@
 - (void)sendMessageToBackend:(id)arg1;
 - (void)clearChannel;
 - (void)sendMessageToFrontend:(id)arg1;
+- (id)identifier;
+- (void)dealloc;
 
 @end

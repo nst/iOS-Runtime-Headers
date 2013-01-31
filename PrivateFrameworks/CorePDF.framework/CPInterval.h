@@ -8,11 +8,11 @@
 }
 
 
-- (id)initLeft:(float)arg1 right:(float)arg2;
-- (BOOL)intersects:(id)arg1;
 - (void)add:(id)arg1;
 - (BOOL)contains:(id)arg1;
 - (float)right;
 - (float)left;
+- (id)initLeft:(float)arg1 right:(float)arg2;
+- (BOOL)intersects:(id)arg1;
 
 @end

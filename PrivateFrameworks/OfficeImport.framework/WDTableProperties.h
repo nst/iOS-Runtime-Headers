@@ -148,18 +148,12 @@
 }
 
 
+- (void)setCellSpacing:(short)arg1;
+- (short)cellSpacing;
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithDocument:(id)arg1;
-- (id)document;
-- (void)setWidth:(long)arg1;
-- (long)width;
-- (int)alignment;
-- (void)setAlignment:(int)arg1;
-- (void)setCellSpacing:(short)arg1;
-- (short)cellSpacing;
 - (void)moveOrignalToTracked;
 - (void)setCellSpacingType:(int)arg1;
 - (void)clearInsideVerticalBorder;
@@ -264,5 +258,11 @@
 - (BOOL)isBaseStyleOverridden;
 - (int)deleted;
 - (BOOL)isDeletedOverridden;
+- (id)initWithDocument:(id)arg1;
+- (id)document;
+- (void)setWidth:(long)arg1;
+- (long)width;
+- (int)alignment;
+- (void)setAlignment:(int)arg1;
 
 @end

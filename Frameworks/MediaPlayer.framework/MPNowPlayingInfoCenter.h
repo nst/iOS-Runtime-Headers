@@ -14,10 +14,10 @@
 
 + (id)defaultCenter;
 
-- (void)setNowPlayingInfo:(id)arg1;
-- (id)nowPlayingInfo;
-- (void)_pushNowPlayingInfoAndRetry:(BOOL)arg1;
 - (id)init;
 - (id)_init;
+- (id)nowPlayingInfo;
+- (void)setNowPlayingInfo:(id)arg1;
+- (void)_pushNowPlayingInfoAndRetry:(BOOL)arg1;
 
 @end

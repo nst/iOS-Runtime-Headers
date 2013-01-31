@@ -22,15 +22,7 @@
 + (id)metadataWithValuesFromDataSourceItem:(id)arg1;
 + (id)keyValueStoreItemIdentifierForItem:(id)arg1;
 
-- (id)keyValueStorePayload;
 - (void)setItemIdentifier:(id)arg1;
-- (id)itemIdentifier;
-- (void)setHasBeenPlayed:(BOOL)arg1;
-- (BOOL)hasBeenPlayed;
-- (void)setPlayCount:(unsigned int)arg1;
-- (unsigned int)playCount;
-- (void)setBookmarkTime:(double)arg1;
-- (double)bookmarkTime;
 - (double)timestamp;
 - (void)setTimestamp:(double)arg1;
 - (id)description;
@@ -39,5 +31,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)keyValueStorePayload;
+- (id)itemIdentifier;
+- (void)setHasBeenPlayed:(BOOL)arg1;
+- (BOOL)hasBeenPlayed;
+- (void)setPlayCount:(unsigned int)arg1;
+- (unsigned int)playCount;
+- (void)setBookmarkTime:(double)arg1;
+- (double)bookmarkTime;
 
 @end

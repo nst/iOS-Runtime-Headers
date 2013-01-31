@@ -15,11 +15,11 @@
 @property(readonly) NSString * internalSubset;
 
 
-- (id)entities;
-- (id)name;
-- (id)publicId;
 - (id)internalSubset;
 - (id)systemId;
 - (id)notations;
+- (id)entities;
+- (id)name;
+- (id)publicId;
 
 @end

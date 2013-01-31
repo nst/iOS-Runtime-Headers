@@ -23,6 +23,11 @@
 @property(retain) NSIndexPath * parentIndexPath;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)setParentIndexPath:(id)arg1;
 - (id)parentIndexPath;
 - (void)setShowcaseParticipant:(id)arg1;
@@ -47,10 +52,5 @@
 - (BOOL)usesCrossfade;
 - (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
 - (void)prepareDataSource;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

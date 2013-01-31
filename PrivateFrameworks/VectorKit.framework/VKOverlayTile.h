@@ -16,7 +16,6 @@
 @property(readonly) float maximumStyleZ;
 
 
-- (void)dealloc;
 - (void)setTile:(id)arg1 forOverlay:(id)arg2;
 - (id)tileForOverlay:(id)arg1;
 - (id)roadTile;
@@ -25,5 +24,6 @@
 - (void)addOverlay:(id)arg1;
 - (id)overlays;
 - (void)updateViewDependentStateWithContext:(id)arg1;
+- (void)dealloc;
 
 @end

@@ -16,7 +16,7 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)symbols;
 - (id)sourceInfos;
+- (id)symbols;
 
 @end

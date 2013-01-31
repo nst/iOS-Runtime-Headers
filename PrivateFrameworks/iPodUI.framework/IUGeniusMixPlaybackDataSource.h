@@ -17,8 +17,6 @@
 
 + (Class)queueFeederClass;
 
-- (void)dealloc;
-- (id)query;
 - (id)requiredInitialMediaItem;
 - (id)initialMediaItem;
 - (id)_generateNewPlaylistQuery:(id*)arg1 index:(unsigned int)arg2;
@@ -30,5 +28,7 @@
 - (id)mix;
 - (unsigned int)geniusMixQueueFeederMediaItemCount:(id)arg1;
 - (id)initWithGeniusMix:(id)arg1 requiredInitialMediaItem:(id)arg2 error:(id*)arg3;
+- (void)dealloc;
+- (id)query;
 
 @end

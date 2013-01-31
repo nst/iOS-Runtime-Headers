@@ -13,7 +13,7 @@
 + (id)domainObjectCancelCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)domainObjectCancelCompleted;
 
-- (id)groupIdentifier;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -11,13 +11,13 @@
 }
 
 
-- (const char *)searchForEndOfCentralDirectory;
-- (id)rootName;
-- (void)dealloc;
-- (id)initWithData:(id)arg1;
 - (struct RTFCPZEndOfCentralDirectory { unsigned long long x1; unsigned long long x2; unsigned long long x3; })readEndOfCentralDirectory;
+- (void)dealloc;
 - (id)readFilenameFromBuffer:(const char *)arg1 size:(unsigned long)arg2;
 - (void)readEntries;
 - (id)entryWithName:(id)arg1;
+- (id)initWithData:(id)arg1;
+- (const char *)searchForEndOfCentralDirectory;
+- (id)rootName;
 
 @end

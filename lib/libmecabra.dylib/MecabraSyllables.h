@@ -10,12 +10,12 @@
 }
 
 
+- (int)syllableTypeAtIndex:(unsigned int)arg1;
+- (id)syllableAtIndex:(unsigned int)arg1;
+- (void*)baseObject;
 - (id)initWithString:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (unsigned int)count;
-- (int)syllableTypeAtIndex:(unsigned int)arg1;
-- (id)syllableAtIndex:(unsigned int)arg1;
-- (void*)baseObject;
 
 @end

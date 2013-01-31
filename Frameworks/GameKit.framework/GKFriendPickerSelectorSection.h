@@ -11,6 +11,10 @@
 @property unsigned int scope;
 
 
+- (void)setScope:(unsigned int)arg1;
+- (unsigned int)scope;
+- (float)heightForHeaderInTableView:(id)arg1;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)setShowsNearbyPlayers:(BOOL)arg1;
 - (BOOL)showsNearbyPlayers;
 - (void)tableView:(id)arg1 willDrawCell:(id)arg2 forRowAtIndexPath:(id)arg3;
@@ -20,9 +24,5 @@
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
 - (int)rowCountInTableView:(id)arg1;
-- (float)heightForHeaderInTableView:(id)arg1;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)setScope:(unsigned int)arg1;
-- (unsigned int)scope;
 
 @end

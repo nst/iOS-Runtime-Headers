@@ -17,10 +17,10 @@
 
 
 - (void)dealloc;
-- (id)dataPayload;
-- (id)initWithURL:(id)arg1 eTag:(id)arg2 dataPayload:(id)arg3 inContainerWithURL:(id)arg4 withAccountInfoProvider:(id)arg5;
 - (id)syncKey;
 - (id)serverID;
 - (void)setServerID:(id)arg1;
+- (id)dataPayload;
+- (id)initWithURL:(id)arg1 eTag:(id)arg2 dataPayload:(id)arg3 inContainerWithURL:(id)arg4 withAccountInfoProvider:(id)arg5;
 
 @end

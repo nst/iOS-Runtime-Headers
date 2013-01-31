@@ -17,6 +17,7 @@
 }
 
 
+- (void)dealloc;
 - (void)insertAttachmentNamed:(id)arg1 withData:(id)arg2;
 - (void)reader:(id)arg1 didEndTableCell:(id)arg2;
 - (void)readerDidEndTableRow:(id)arg1;
@@ -35,6 +36,5 @@
 - (void)readerDidEndParagraph:(id)arg1;
 - (void)startDocumentWithState:(id)arg1;
 - (id)_fontNameByAppendingSerif:(id)arg1;
-- (void)dealloc;
 
 @end

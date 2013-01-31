@@ -29,19 +29,6 @@
 @property(retain) NSString * name;
 
 
-- (void)setProperties:(id)arg1;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setAttributes:(id)arg1;
-- (id)attributes;
-- (id)properties;
-- (id)dictionaryRepresentation;
-- (void)setContents:(id)arg1;
-- (id)contents;
 - (id)zooms;
 - (void)setInherits:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (unsigned int*)inherits;
@@ -62,7 +49,20 @@
 - (void)setZooms:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (void)setProperties:(id)arg1;
+- (void)setName:(id)arg1;
+- (id)name;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)addAttributes:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)setAttributes:(id)arg1;
+- (id)attributes;
+- (id)properties;
+- (id)dictionaryRepresentation;
+- (void)setContents:(id)arg1;
+- (id)contents;
 
 @end

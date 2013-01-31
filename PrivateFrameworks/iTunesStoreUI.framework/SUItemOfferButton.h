@@ -23,26 +23,26 @@
 + (id)itemOfferButtonStyleForItem:(id)arg1 offer:(id)arg2;
 + (double)defaultAnimationDuration;
 
-- (void)setShowingConfirmation:(BOOL)arg1;
-- (id)itemOfferButtonStyle;
-- (void)_applyConfiguration:(struct { id x1; int x2; int x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; id x5; id x6; })arg1;
-- (id)offerTitle;
-- (id)confirmationTitle;
-- (int)animationHorizontalAlignment;
 - (struct { id x1; int x2; int x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; id x5; id x6; })_configurationForStyle:(id)arg1;
-- (void)_reloadButton;
-- (void)setShouldShowConfirmation:(BOOL)arg1;
-- (void)setOfferTitle:(id)arg1;
-- (void)setConfirmationTitle:(id)arg1;
-- (void)setItemOfferButtonStyle:(id)arg1;
-- (BOOL)shouldShowConfirmation;
-- (void)setAnimationHorizontalAlignment:(int)arg1;
 - (BOOL)configureForItem:(id)arg1 offer:(id)arg2;
-- (void)setShowingConfirmation:(BOOL)arg1 duration:(double)arg2;
-- (BOOL)isShowingConfirmation;
 - (void)dealloc;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setItemOfferButtonStyle:(id)arg1;
+- (id)itemOfferButtonStyle;
+- (BOOL)shouldShowConfirmation;
+- (void)setAnimationHorizontalAlignment:(int)arg1;
+- (void)setShowingConfirmation:(BOOL)arg1;
+- (void)_applyConfiguration:(struct { id x1; int x2; int x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; id x5; id x6; })arg1;
+- (id)confirmationTitle;
+- (id)offerTitle;
+- (int)animationHorizontalAlignment;
+- (void)setShowingConfirmation:(BOOL)arg1 duration:(double)arg2;
+- (BOOL)isShowingConfirmation;
+- (void)_reloadButton;
+- (void)setShouldShowConfirmation:(BOOL)arg1;
+- (void)setOfferTitle:(id)arg1;
+- (void)setConfirmationTitle:(id)arg1;
 
 @end

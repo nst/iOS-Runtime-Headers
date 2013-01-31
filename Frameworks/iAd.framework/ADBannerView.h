@@ -18,6 +18,7 @@
     ADTapGestureRecognizer *_gestureRecognizer;
     NSString *_authenticationUserName;
     NSString *_identifier;
+    BOOL _policyEngineManaged;
     BOOL _createdForIBInternal;
     BOOL _hasFailedHitTest;
     BOOL _dimmed;
@@ -38,35 +39,16 @@
 @property BOOL hasFailedHitTest;
 @property int internalAdType;
 @property <ADBannerViewDelegate> * _internalDelegate;
+@property BOOL policyEngineManaged;
 
 + (struct CGSize { float x1; float x2; })sizeFromBannerContentSizeIdentifier:(id)arg1;
 + (void)setServerURL:(id)arg1;
 
-- (id)gestureRecognizer;
-- (void)setGestureRecognizer:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)identifier;
 - (void)dealloc;
-- (id)remoteView;
-- (void)setRemoteView:(id)arg1;
-- (void)setIdentifier:(id)arg1;
-- (void)resizeWithOldSuperviewSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_commonInit;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)didMoveToWindow;
-- (void)setAlpha:(float)arg1;
-- (void)setHidden:(BOOL)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setAutoresizingMask:(unsigned int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initFromIBWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)dimmed;
+- (void)setDimmed:(BOOL)arg1;
 - (void)setHasFailedHitTest:(BOOL)arg1;
 - (BOOL)hasFailedHitTest;
 - (BOOL)createdForIBInternal;
@@ -84,6 +66,8 @@
 - (id)requiredContentSizeIdentifiers;
 - (void)setRequiredContentSizeIdentifiers:(id)arg1;
 - (id)initWithAdType:(int)arg1;
+- (void)setPolicyEngineManaged:(BOOL)arg1;
+- (void)storyboardViewControllerDidPresent;
 - (void)serverStoryboardDidTransitionOut;
 - (void)serverBannerViewDidFailToReceiveAdWithError:(id)arg1;
 - (void)serverBannerViewDidLoad;
@@ -92,7 +76,6 @@
 - (void)bannerControllerGranted;
 - (int)internalAdType;
 - (id)authenticationUserName;
-- (id)advertisingSection;
 - (void)_sanitizeAndForwardErrorToDelegate:(id)arg1;
 - (void)setBannerLoaded:(BOOL)arg1;
 - (void)setBannerViewActionInProgress:(BOOL)arg1;
@@ -100,7 +83,29 @@
 - (id)initFromIBWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 adType:(int)arg2;
 - (id)_initWithInternalAdType:(int)arg1;
 - (void)cancelBannerViewAction;
+- (id)advertisingSection;
+- (BOOL)policyEngineManaged;
 - (int)adType;
-- (void)setDimmed:(BOOL)arg1;
+- (id)remoteView;
+- (void)setRemoteView:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)resizeWithOldSuperviewSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_commonInit;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)didMoveToWindow;
+- (void)setAlpha:(float)arg1;
+- (void)setHidden:(BOOL)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setAutoresizingMask:(unsigned int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)gestureRecognizer;
+- (void)setGestureRecognizer:(id)arg1;
+- (id)initFromIBWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)dimmed;
 
 @end

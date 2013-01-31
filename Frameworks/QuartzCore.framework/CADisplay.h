@@ -34,13 +34,15 @@
 @property(getter=isCloned,readonly) BOOL cloned;
 @property(getter=isCloningSupported,readonly) BOOL cloningSupported;
 
-+ (id)mainDisplay;
-+ (id)TVOutDisplay;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)displays;
++ (id)mainDisplay;
++ (id)TVOutDisplay;
 
 - (id)name;
 - (id)description;
+- (id)uniqueId;
+- (id)deviceName;
 - (void)_invalidate;
 - (BOOL)isSupported;
 - (BOOL)isExternal;
@@ -57,8 +59,6 @@
 - (id)currentMode;
 - (int)tag;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (id)deviceName;
-- (id)uniqueId;
 - (BOOL)isCloned;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })safeBounds;
 - (void)setAllowsVirtualModes:(BOOL)arg1;

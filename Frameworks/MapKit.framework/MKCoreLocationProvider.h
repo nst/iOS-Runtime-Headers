@@ -25,28 +25,13 @@
 @property(readonly) BOOL usesCLMapCorrection;
 
 
-- (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
-- (BOOL)isLocationServicesPreferencesDialogEnabled;
-- (void)dismissHeadingCalibrationDisplay;
-- (int)headingOrientation;
-- (double)expectedGpsUpdateInterval;
-- (double)desiredAccuracy;
-- (double)distanceFilter;
-- (int)authorizationStatus;
 - (void)setActivityType:(int)arg1;
+- (void)startUpdatingHeading;
+- (void)stopUpdatingHeading;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
-- (int)activityType;
-- (id)effectiveBundle;
-- (BOOL)usesCLMapCorrection;
-- (id)_clLocationManager;
-- (void)_updateAuthorizationStatus;
-- (void)_createCLLocationManager;
-- (void)setEffectiveBundle:(id)arg1;
-- (void)startUpdatingHeading;
-- (void)stopUpdatingHeading;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
@@ -59,5 +44,20 @@
 - (void)startUpdatingLocation;
 - (void)setDesiredAccuracy:(double)arg1;
 - (void)setDistanceFilter:(double)arg1;
+- (int)activityType;
+- (id)effectiveBundle;
+- (BOOL)usesCLMapCorrection;
+- (id)_clLocationManager;
+- (void)_updateAuthorizationStatus;
+- (void)_createCLLocationManager;
+- (void)setEffectiveBundle:(id)arg1;
+- (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
+- (BOOL)isLocationServicesPreferencesDialogEnabled;
+- (void)dismissHeadingCalibrationDisplay;
+- (int)headingOrientation;
+- (double)expectedGpsUpdateInterval;
+- (double)desiredAccuracy;
+- (double)distanceFilter;
+- (int)authorizationStatus;
 
 @end

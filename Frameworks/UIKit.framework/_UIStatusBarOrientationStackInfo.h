@@ -3,17 +3,17 @@
  */
 
 @interface _UIStatusBarOrientationStackInfo : NSObject  {
-    int _hostPID;
     int _statusBarOrientationWithoutHost;
+    int _hostPID;
 }
 
 @property int statusBarOrientationWithoutHost;
 @property int hostPID;
 
 
-- (void)setStatusBarOrientationWithoutHost:(int)arg1;
-- (int)statusBarOrientationWithoutHost;
 - (void)setHostPID:(int)arg1;
 - (int)hostPID;
+- (void)setStatusBarOrientationWithoutHost:(int)arg1;
+- (int)statusBarOrientationWithoutHost;
 
 @end

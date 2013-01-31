@@ -44,11 +44,11 @@
 - (id)delegate;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (id)personID;
+- (void)abort;
 - (void)_didFinishWithResponse:(id)arg1 error:(id)arg2;
 - (void)queryConfiguration;
 - (void)_didFailAuthenticationWithError:(id)arg1;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
-- (id)personID;
-- (void)abort;
 
 @end

@@ -31,7 +31,6 @@
 }
 
 
-- (void)setReceiveDataHandler:(id)arg1;
 - (void)invalidate;
 - (void)dealloc;
 - (id)init;
@@ -49,5 +48,6 @@
 - (void)setSocketName:(id)arg1;
 - (void)setConnectedHandler:(id)arg1;
 - (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)setReceiveDataHandler:(id)arg1;
 
 @end

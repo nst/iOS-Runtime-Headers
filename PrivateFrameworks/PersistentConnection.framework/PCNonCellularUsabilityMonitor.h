@@ -27,6 +27,7 @@
 @property <PCInterfaceUsabilityMonitorDelegate> * delegate;
 
 
+- (int)linkQuality;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
@@ -46,6 +47,5 @@
 - (BOOL)isInternetReachable;
 - (void)setTrackUsability:(BOOL)arg1;
 - (id)initWithDelegateQueue:(struct dispatch_queue_s { }*)arg1;
-- (int)linkQuality;
 
 @end

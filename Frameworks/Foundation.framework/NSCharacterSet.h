@@ -9,6 +9,8 @@
 + (id)uppercaseLetterCharacterSet;
 + (id)lowercaseLetterCharacterSet;
 + (id)whitespaceAndNewlineCharacterSet;
++ (id)letterCharacterSet;
++ (id)characterSetWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 + (id)newlineCharacterSet;
 + (id)symbolCharacterSet;
 + (id)punctuationCharacterSet;
@@ -23,8 +25,6 @@
 + (id)decomposableCharacterSet;
 + (id)nonBaseCharacterSet;
 + (id)controlCharacterSet;
-+ (id)letterCharacterSet;
-+ (id)characterSetWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 + (id)wordBreakCharacterSet;
 + (id)whitespaceNewlineAndSpecialCharacterSet;
 
@@ -40,6 +40,8 @@
 - (BOOL)isEmpty;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)makeImmutable;
+- (BOOL)isMutable;
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (BOOL)isSupersetOfSet:(id)arg1;
 - (id)bitmapRepresentation;
@@ -47,7 +49,5 @@
 - (struct __CFCharacterSet { }*)_expandedCFCharacterSet;
 - (id)_retainedBitmapRepresentation;
 - (BOOL)hasMemberInPlane:(unsigned char)arg1;
-- (void)makeImmutable;
-- (BOOL)isMutable;
 
 @end

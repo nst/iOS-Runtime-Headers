@@ -24,7 +24,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (unsigned long)uid;
 - (id)externalID;
 - (id)copyMessageInfo;
 - (id)mailbox;
@@ -35,5 +34,6 @@
 - (double)dateSentAsTimeIntervalSince1970;
 - (double)dateReceivedAsTimeIntervalSince1970;
 - (unsigned long long)messageFlags;
+- (unsigned long)uid;
 
 @end

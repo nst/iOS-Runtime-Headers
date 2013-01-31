@@ -17,10 +17,10 @@
 
 
 - (void)dealloc;
+- (int)errorCount;
 - (unsigned int)cursor;
 - (void)finalize;
 - (id)initWithData:(id)arg1;
-- (int)errorCount;
 - (BOOL)atEOF;
 - (BOOL)advanceToToken:(int)arg1 throughTypes:(int)arg2;
 - (id)nextBase64Data;

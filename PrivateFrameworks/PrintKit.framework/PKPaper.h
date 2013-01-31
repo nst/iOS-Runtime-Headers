@@ -42,17 +42,24 @@
 + (id)generic4x6Paper;
 + (id)generic3_5x5Paper;
 
+- (void)setName:(id)arg1;
+- (id)name;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)paperWithMarginsAdjustedForDuplexMode:(id)arg1;
 - (float)imageableArea;
 - (id)initWithPWGSize:(struct _pwg_size_s { struct _pwg_map_s { char *x_1_1_1; char *x_1_1_2; } x1; int x2; int x3; int x4; int x5; int x6; int x7; }*)arg1 localizedName:(id)arg2 codeName:(id)arg3;
 - (id)localizedNameFromDimensions;
 - (id)initWithWidth:(int)arg1 Height:(int)arg2 Left:(int)arg3 Top:(int)arg4 Right:(int)arg5 Bottom:(int)arg6 localizedName:(id)arg7 codeName:(id)arg8;
 - (id)nameWithoutSuffixes:(id)arg1;
-- (void)setName:(id)arg1;
-- (id)name;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
+- (void)setBottomMargin:(int)arg1;
+- (void)setLeftMargin:(int)arg1;
+- (void)setTopMargin:(int)arg1;
+- (int)bottomMargin;
+- (int)topMargin;
+- (int)rightMargin;
+- (int)leftMargin;
 - (void)setHeight:(int)arg1;
 - (BOOL)isBorderless;
 - (id)baseName;
@@ -63,12 +70,5 @@
 - (void)setRightMargin:(int)arg1;
 - (void)setWidth:(int)arg1;
 - (int)width;
-- (void)setBottomMargin:(int)arg1;
-- (void)setLeftMargin:(int)arg1;
-- (void)setTopMargin:(int)arg1;
-- (int)bottomMargin;
-- (int)topMargin;
-- (int)rightMargin;
-- (int)leftMargin;
 
 @end

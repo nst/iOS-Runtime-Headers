@@ -8,8 +8,6 @@
 }
 
 
-- (void)dealloc;
-- (void)setAttribute:(const char *)arg1 value:(const char *)arg2;
 - (void)removeStyleSheetLinkNodeAndAddStyle:(struct __CFString { }*)arg1;
 - (struct __CFData { }*)createHtmlWithCss:(struct __CFString { }*)arg1;
 - (struct __CFData { }*)createHtml;
@@ -21,5 +19,7 @@
 - (void)endElementWithExpectedName:(const char *)arg1;
 - (void)endElement;
 - (void)startElement:(const char *)arg1;
+- (void)dealloc;
+- (void)setAttribute:(const char *)arg1 value:(const char *)arg2;
 
 @end

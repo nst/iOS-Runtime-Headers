@@ -12,19 +12,19 @@
 @property(copy) NSDate * lastModifiedDate;
 @property(copy) NSString * title;
 
-+ (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)object;
 
-- (id)groupIdentifier;
+- (id)lastModifiedDate;
+- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
+- (id)encodedClassName;
+- (void)setCreatedDate:(id)arg1;
+- (id)createdDate;
 - (id)title;
 - (void)setContents:(id)arg1;
 - (id)contents;
 - (void)setTitle:(id)arg1;
-- (id)lastModifiedDate;
-- (void)setCreatedDate:(id)arg1;
-- (id)createdDate;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 - (void)setLastModifiedDate:(id)arg1;
 
 @end

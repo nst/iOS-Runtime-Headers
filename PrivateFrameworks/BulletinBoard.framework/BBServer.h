@@ -60,7 +60,7 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void*)_addressBook;
 - (BOOL)_doesFavoritesListContainDestinationID:(id)arg1;
 - (BOOL)_doesPrivilegedAddressBookGroupContainDestinationID:(id)arg1;
 - (BOOL)_doesAddressBookContainDestinationID:(id)arg1;
@@ -231,7 +231,7 @@
 - (void)getSectionOrderRuleWithHandler:(id)arg1;
 - (void)observer:(id)arg1 setObserverFeed:(unsigned int)arg2;
 - (void)deliverResponse:(id)arg1;
-- (void*)_addressBook;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
 - (BOOL)predicateShouldContinue:(id)arg1;
 

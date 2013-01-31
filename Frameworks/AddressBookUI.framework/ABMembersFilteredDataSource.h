@@ -21,17 +21,17 @@
 - (id)delegate;
 - (void)dealloc;
 - (unsigned int)count;
+- (void*)addressBook;
+- (id)records;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void*)addressBook;
+- (void)setAddressBook:(void*)arg1;
 - (void)addRecords:(id)arg1;
 - (void)removeAllRecords;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (id)records;
-- (void)setAddressBook:(void*)arg1;
 
 @end

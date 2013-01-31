@@ -12,10 +12,10 @@
 + (id)updateViewsWithDictionary:(id)arg1 context:(id)arg2;
 + (id)updateViews;
 
-- (id)groupIdentifier;
-- (id)views;
-- (void)setViews:(id)arg1;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)views;
+- (void)setViews:(id)arg1;
+- (id)groupIdentifier;
 
 @end

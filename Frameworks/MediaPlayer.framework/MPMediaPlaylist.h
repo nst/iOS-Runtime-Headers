@@ -11,14 +11,10 @@
 @property(readonly) NSString * name;
 @property(readonly) int playlistAttributes;
 
-+ (BOOL)canFilterByProperty:(id)arg1;
 + (BOOL)_isValidPlaylistProperty:(id)arg1;
++ (BOOL)canFilterByProperty:(id)arg1;
 + (void)_createFilterableDictionary;
 
-- (id)representativeItem;
-- (int)playlistAttributes;
-- (id)loadGeniusMixArtworkWithTileLength:(float)arg1 completionBlock:(id)arg2;
-- (id)initWithPersistentID:(unsigned long long)arg1;
 - (id)name;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -30,5 +26,9 @@
 - (id)items;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)representativeItem;
+- (int)playlistAttributes;
+- (id)loadGeniusMixArtworkWithTileLength:(float)arg1 completionBlock:(id)arg2;
+- (id)initWithPersistentID:(unsigned long long)arg1;
 
 @end

@@ -17,21 +17,10 @@
 @property(copy) NSString * sortArtist;
 @property int trackNumber;
 
-+ (id)mediaItem;
 + (id)mediaItemWithDictionary:(id)arg1 context:(id)arg2;
++ (id)mediaItem;
 
-- (id)groupIdentifier;
-- (void)setRating:(int)arg1;
-- (int)rating;
-- (void)setPlayCount:(int)arg1;
-- (int)playCount;
-- (id)genre;
-- (id)composer;
-- (id)artist;
 - (void)setGenre:(id)arg1;
-- (void)setAlbum:(id)arg1;
-- (id)album;
-- (void)setArtist:(id)arg1;
 - (void)setTrackNumber:(int)arg1;
 - (int)trackNumber;
 - (void)setSortArtist:(id)arg1;
@@ -41,5 +30,16 @@
 - (void)setComposer:(id)arg1;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setAlbum:(id)arg1;
+- (id)album;
+- (void)setArtist:(id)arg1;
+- (void)setPlayCount:(int)arg1;
+- (int)playCount;
+- (id)genre;
+- (id)composer;
+- (id)artist;
+- (id)groupIdentifier;
+- (void)setRating:(int)arg1;
+- (int)rating;
 
 @end

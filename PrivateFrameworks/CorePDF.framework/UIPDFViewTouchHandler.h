@@ -26,6 +26,7 @@
 
 + (void)releaseViewManager;
 
+- (void)dealloc;
 - (void)longPressRecognized:(id)arg1;
 - (void)briefPressRecognized:(id)arg1;
 - (void)twoFingerTapRecognized:(id)arg1;
@@ -38,7 +39,6 @@
 - (void)disableRecognizers;
 - (void)setAllowMenu:(BOOL)arg1;
 - (void)enableRecognizers;
-- (void)dealloc;
 - (void)copy:(id)arg1;
 - (void)selectAll:(id)arg1;
 - (id)initWithView:(id)arg1;

@@ -46,17 +46,6 @@
 @property unsigned int sectionDeltaLengthBits;
 
 
-- (void)setLines:(id)arg1;
-- (void)setLabels:(id)arg1;
-- (id)lines;
-- (void)setPoints:(id)arg1;
-- (id)lineAtIndex:(unsigned int)arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)addPoint:(id)arg1;
-- (id)dictionaryRepresentation;
 - (id)labels;
 - (void)addLine:(id)arg1;
 - (id)vertices;
@@ -69,6 +58,12 @@
 - (int)minZ;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (id)points;
 - (id)labelLanguages;
 - (void)setHasSectionDeltaLengthBits:(BOOL)arg1;
 - (void)setHasVertexBits:(BOOL)arg1;
@@ -107,7 +102,12 @@
 - (void)setPolygons:(id)arg1;
 - (BOOL)hasVertices;
 - (void)setVertices:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (id)points;
+- (void)addPoint:(id)arg1;
+- (id)dictionaryRepresentation;
+- (void)setLines:(id)arg1;
+- (void)setLabels:(id)arg1;
+- (id)lines;
+- (void)setPoints:(id)arg1;
+- (id)lineAtIndex:(unsigned int)arg1;
 
 @end

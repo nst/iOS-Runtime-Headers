@@ -29,12 +29,14 @@
 @property(getter=_downloadID,setter=_setDownloadID:,copy) NSNumber * _downloadID;
 
 
-- (id)transaction;
-- (id)contentURL;
 - (void)dealloc;
 - (id)init;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+- (id)transaction;
+- (double)timeRemaining;
+- (id)error;
+- (long long)contentLength;
 - (float)progress;
 - (void)_setProgress:(float)arg1;
 - (void)_setDownloadID:(id)arg1;
@@ -50,9 +52,7 @@
 - (int)downloadState;
 - (void)_setContentURL:(id)arg1;
 - (void)_setContentLength:(long long)arg1;
+- (id)contentURL;
 - (void)_setError:(id)arg1;
-- (long long)contentLength;
-- (id)error;
-- (double)timeRemaining;
 
 @end

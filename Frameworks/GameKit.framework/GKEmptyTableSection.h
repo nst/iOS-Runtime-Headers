@@ -16,14 +16,14 @@
 
 + (id)emptySection;
 
+- (float)heightForFooterInTableView:(id)arg1;
+- (float)heightForHeaderInTableView:(id)arg1;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (BOOL)needsRedisplay;
 - (void)setNeedsRedisplay:(BOOL)arg1;
 - (struct { unsigned int x1; unsigned char x2; unsigned char x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; })currentMetricsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
 - (int)rowCountInTableView:(id)arg1;
-- (float)heightForFooterInTableView:(id)arg1;
-- (float)heightForHeaderInTableView:(id)arg1;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 
 @end

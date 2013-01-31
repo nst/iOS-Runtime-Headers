@@ -25,15 +25,22 @@
 @property(readonly) int maxMessageSize;
 @property unsigned int maxConcurrentMessages;
 
++ (id)alloc;
 + (Class)HTTPMessageDeliveryClass;
 + (Class)APNSMessageDeliveryClass;
 + (id)_errorForTDMessageDeliveryStatus:(int)arg1 userInfo:(id)arg2;
-+ (id)alloc;
 
+- (id)protocolVersion;
+- (void)invalidate;
+- (void)dealloc;
+- (id)init;
+- (id)_queue;
 - (void)cancelMessage:(id)arg1;
 - (id)queuedMessages;
 - (id)currentMessage;
 - (void)setRetryInAirplaneMode:(BOOL)arg1;
+- (BOOL)sendMessage:(id)arg1;
+- (void)setUserAgent:(id)arg1;
 - (BOOL)retryInAirplaneMode;
 - (void)setMaxConcurrentMessages:(unsigned int)arg1;
 - (unsigned int)maxConcurrentMessages;
@@ -50,12 +57,5 @@
 - (void)_clearRetryTimer;
 - (void)setProtocolVersion:(id)arg1;
 - (id)userAgent;
-- (id)protocolVersion;
-- (void)invalidate;
-- (void)dealloc;
-- (id)init;
-- (BOOL)sendMessage:(id)arg1;
-- (void)setUserAgent:(id)arg1;
-- (id)_queue;
 
 @end

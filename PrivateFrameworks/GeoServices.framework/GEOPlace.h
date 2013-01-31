@@ -12,6 +12,7 @@
     NSMutableArray *_business;
     GEOLatLng *_center;
     NSMutableArray *_entryPoints;
+    int _localSearchProviderID;
     GEOMapRegion *_mapRegion;
     NSString *_name;
     GEOAddress *_phoneticAddress;
@@ -23,6 +24,7 @@
         unsigned int geoId : 1; 
         unsigned int uID : 1; 
         unsigned int addressGeocodeAccuracy : 1; 
+        unsigned int localSearchProviderID : 1; 
         unsigned int type : 1; 
         unsigned int version : 1; 
         unsigned int isDisputed : 1; 
@@ -54,26 +56,12 @@
 @property(retain) NSMutableArray * entryPoints;
 @property BOOL hasIsDisputed;
 @property BOOL isDisputed;
+@property BOOL hasLocalSearchProviderID;
+@property int localSearchProviderID;
 @property BOOL hasGeoId;
 @property long long geoId;
 
 
-- (id)addressDictionary;
-- (void)setAddress:(id)arg1;
-- (id)address;
-- (void)setName:(id)arg1;
-- (id)name;
-- (int)type;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setVersion:(int)arg1;
-- (int)version;
-- (id)dictionaryRepresentation;
-- (void)setType:(int)arg1;
-- (void)setCenter:(id)arg1;
-- (id)center;
 - (BOOL)hasName;
 - (void)copyTo:(id)arg1;
 - (void)setHasVersion:(BOOL)arg1;
@@ -81,14 +69,27 @@
 - (void)writeTo:(id)arg1;
 - (void)setMapRegion:(id)arg1;
 - (id)mapRegion;
+- (void)setName:(id)arg1;
+- (id)name;
+- (int)type;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)hasType;
+- (BOOL)readFrom:(id)arg1;
 - (id)entryPoints;
 - (id)business;
 - (void)setHasGeoId:(BOOL)arg1;
+- (void)setHasLocalSearchProviderID:(BOOL)arg1;
 - (void)setHasIsDisputed:(BOOL)arg1;
 - (void)setHasAddressGeocodeAccuracy:(BOOL)arg1;
 - (void)setGeoId:(long long)arg1;
 - (long long)geoId;
 - (BOOL)hasGeoId;
+- (void)setLocalSearchProviderID:(int)arg1;
+- (int)localSearchProviderID;
+- (BOOL)hasLocalSearchProviderID;
 - (void)setIsDisputed:(BOOL)arg1;
 - (BOOL)isDisputed;
 - (BOOL)hasIsDisputed;
@@ -118,12 +119,19 @@
 - (BOOL)hasUID;
 - (void)setPhoneticName:(id)arg1;
 - (void)setHasType:(BOOL)arg1;
+- (id)addressDictionary;
 - (BOOL)hasMapRegion;
-- (BOOL)hasType;
-- (BOOL)readFrom:(id)arg1;
+- (void)setVersion:(int)arg1;
+- (int)version;
+- (id)dictionaryRepresentation;
+- (void)setType:(int)arg1;
+- (void)setCenter:(id)arg1;
+- (id)center;
+- (void)setAddress:(id)arg1;
+- (id)address;
+- (unsigned long long)businessID;
 - (id)yelpID;
 - (id)businessName;
 - (BOOL)hasSingleBusiness;
-- (unsigned long long)businessID;
 
 @end

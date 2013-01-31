@@ -12,9 +12,9 @@
 + (id)scheduleSnippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)scheduleSnippet;
 
-- (id)groupIdentifier;
 - (void)setMatchups:(id)arg1;
 - (id)matchups;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

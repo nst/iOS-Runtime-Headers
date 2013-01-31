@@ -14,9 +14,9 @@
 + (id)getAnchorsWithDictionary:(id)arg1 context:(id)arg2;
 + (id)getAnchors;
 
-- (id)groupIdentifier;
-- (void)setSources:(id)arg1;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 - (id)sources;
+- (void)setSources:(id)arg1;
 
 @end

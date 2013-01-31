@@ -16,14 +16,14 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
+- (id)tableView:(id)arg1 snippetCellForRowAtIndexPath:(id)arg2;
+- (id)snippetView;
+- (void)setHeaderImage:(id)arg1;
+- (void)setHeaderText:(id)arg1;
 - (id)tableView;
 - (void)setTableView:(id)arg1;
 - (id)view;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 snippetCellForRowAtIndexPath:(id)arg2;
-- (id)snippetView;
-- (void)setHeaderImage:(id)arg1;
-- (void)setHeaderText:(id)arg1;
 
 @end

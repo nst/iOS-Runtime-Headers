@@ -12,8 +12,6 @@
 @property(readonly) int quadCount;
 
 
-- (void)reset;
-- (void)dealloc;
 - (int)quadCount;
 - (void)drawWireframeQuadsWithContext:(id)arg1;
 - (void)drawQuadsWithContext:(id)arg1;
@@ -22,5 +20,7 @@
 - (id)initWithStride:(int)arg1 attributes:(const struct { int x1; int x2; int x3; }*)arg2 attributeCount:(unsigned char)arg3 quadCapacity:(int)arg4;
 - (void)resetVertices;
 - (void)extendIndexBuffer:(int)arg1;
+- (void)reset;
+- (void)dealloc;
 
 @end

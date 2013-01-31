@@ -12,8 +12,6 @@
 
 + (void)reset;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (void)setMessage:(id)arg1;
-+ (void)setProgress:(double)arg1;
 + (void)nextSubStageWillTakeThisManyOfMySteps:(double)arg1;
 + (void)createStageWithSteps:(double)arg1;
 + (double)overallProgress;
@@ -26,6 +24,8 @@
 + (void)advanceProgress:(double)arg1;
 + (void)endStage;
 + (void)createStageWithSteps:(double)arg1 takingSteps:(double)arg2;
++ (void)setMessage:(id)arg1;
++ (void)setProgress:(double)arg1;
 
 - (unsigned int)retainCount;
 - (id)retain;
@@ -34,8 +34,8 @@
 - (oneway void)release;
 - (id)init;
 - (id)autorelease;
-- (void)_reset;
 - (void)reportProgress:(double)arg1 overallProgress:(double)arg2;
 - (id)currentStage;
+- (void)_reset;
 
 @end

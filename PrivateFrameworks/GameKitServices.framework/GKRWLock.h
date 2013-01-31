@@ -12,9 +12,9 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)unlock;
 - (int)tryrdlock;
 - (void)rdlock;
 - (void)wrlock;
+- (void)unlock;
 
 @end

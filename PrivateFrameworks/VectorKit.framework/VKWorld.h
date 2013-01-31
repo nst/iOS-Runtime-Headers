@@ -13,16 +13,16 @@
 @property <VKWorldDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)description;
-- (void)dealloc;
-- (id)init;
 - (void)drawDebugScene:(id)arg1 withContext:(id)arg2;
 - (void)drawScene:(id)arg1 withContext:(id)arg2;
 - (void)worldDisplayDidChange;
 - (void)worldLayoutDidChange;
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (id)modelRoot;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 
 @end

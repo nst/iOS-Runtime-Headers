@@ -23,8 +23,6 @@
 
 + (id)sharedPlatform;
 
-- (void)dealloc;
-- (id)init;
 - (BOOL)canMakeSharingThumbnails;
 - (BOOL)canMakeHighResolutionSnapshots;
 - (BOOL)shouldUseTrafficAlphaHack;
@@ -35,6 +33,9 @@
 - (BOOL)roadsWithSimpleLineMeshesAvailable;
 - (BOOL)isPad;
 - (BOOL)shouldDrawWhenReady;
+- (BOOL)supportsHiResRTT;
 - (BOOL)isHiDPI;
+- (void)dealloc;
+- (id)init;
 
 @end

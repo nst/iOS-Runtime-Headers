@@ -43,10 +43,6 @@
 @property Class calloutViewClass;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
 - (void)showCalloutWithSource:(id)arg1 animated:(BOOL)arg2 accessoryTapHandler:(id)arg3 hideCallback:(id)arg4;
 - (void)replaceSourceWithSource:(id)arg1;
 - (void)_showCalloutAnimated:(BOOL)arg1 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 afterPan:(BOOL)arg3 additionalInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
@@ -66,5 +62,9 @@
 - (void)setCalloutViewClass:(Class)arg1;
 - (Class)calloutViewClass;
 - (unsigned int)mapLayerPosition;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
 
 @end

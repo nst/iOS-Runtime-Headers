@@ -53,6 +53,24 @@
 + (id)selectedCellBackgroundWithTheme:(id)arg1 tableViewStyle:(int)arg2;
 + (id)cellBackgroundWithTheme:(id)arg1 tableViewStyle:(int)arg2;
 
+- (void)dealloc;
+- (id)init;
+- (void)setTheme:(id)arg1;
+- (void)setFillImage:(id)arg1;
+- (unsigned int)cellCount;
+- (id)theme;
+- (int)backgroundStyle;
+- (void)setBackgroundStyle:(int)arg1;
+- (void)setGrouped:(BOOL)arg1;
+- (BOOL)grouped;
+- (void)setColumnCount:(unsigned int)arg1;
+- (unsigned int)columnCount;
+- (int)sectionLocation;
+- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)selectedCell;
 - (void)setCellGapWidth:(float)arg1;
 - (int)selectedColumn;
@@ -87,23 +105,5 @@
 - (void)setBorderInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderInsets;
 - (void)setIgnoreFillPhaseYOffset:(BOOL)arg1;
-- (void)dealloc;
-- (id)init;
-- (int)backgroundStyle;
-- (void)setBackgroundStyle:(int)arg1;
-- (void)setGrouped:(BOOL)arg1;
-- (BOOL)grouped;
-- (void)setColumnCount:(unsigned int)arg1;
-- (unsigned int)columnCount;
-- (int)sectionLocation;
-- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTheme:(id)arg1;
-- (void)setFillImage:(id)arg1;
-- (unsigned int)cellCount;
-- (id)theme;
 
 @end

@@ -15,11 +15,11 @@
 + (id)restartRequestWithDictionary:(id)arg1 context:(id)arg2;
 + (id)restartRequest;
 
-- (id)groupIdentifier;
 - (void)setLastResponseId:(id)arg1;
 - (id)lastResponseId;
 - (id)encodedClassName;
 - (void)setRequestId:(id)arg1;
 - (id)requestId;
+- (id)groupIdentifier;
 
 @end

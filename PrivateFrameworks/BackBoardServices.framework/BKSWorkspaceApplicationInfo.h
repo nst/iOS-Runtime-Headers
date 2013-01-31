@@ -15,13 +15,13 @@
 @property BOOL usingExternalAccessory;
 
 
-- (void)setInfo:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (BOOL)usingExternalAccessory;
 - (void)setUsingExternalAccessory:(BOOL)arg1;
 - (BOOL)recordingAudio;
 - (void)setRecordingAudio:(BOOL)arg1;
-- (id)description;
-- (void)dealloc;
 - (id)info;
+- (void)setInfo:(id)arg1;
 
 @end

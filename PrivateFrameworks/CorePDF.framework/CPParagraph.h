@@ -17,6 +17,9 @@
 @property(retain) CPListItem * listItem;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (BOOL)isPreformattedWithUnitWidth:(float*)arg1;
 - (BOOL)below;
 - (void)setBelow:(BOOL)arg1;
@@ -42,9 +45,6 @@
 - (void)setListItem:(id)arg1;
 - (id)listItem;
 - (void)accept:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
 - (unsigned int)index;
 - (unsigned int)alignment;
 - (void)setAlignment:(unsigned int)arg1;

@@ -33,14 +33,6 @@
 - (void)dealloc;
 - (id)init;
 - (unsigned int)count;
-- (id)protocol;
-- (id)options;
-- (void)forwardInvocation:(id)arg1;
-- (BOOL)isEmpty;
-- (id)methodSignatureForSelector:(SEL)arg1;
-- (id)queue;
-- (void)setProtocol:(id)arg1;
-- (id)peek;
 - (BOOL)holdQueue;
 - (id)protocolChecker;
 - (double)dequeueRate;
@@ -61,5 +53,13 @@
 - (BOOL)_invokeInvocation:(id)arg1;
 - (int)_enqueueInvocation:(id)arg1 options:(unsigned int)arg2;
 - (unsigned int)_optionsForInvocation:(id)arg1;
+- (id)queue;
+- (id)protocol;
+- (id)options;
+- (void)forwardInvocation:(id)arg1;
+- (BOOL)isEmpty;
+- (id)methodSignatureForSelector:(SEL)arg1;
+- (void)setProtocol:(id)arg1;
+- (id)peek;
 
 @end

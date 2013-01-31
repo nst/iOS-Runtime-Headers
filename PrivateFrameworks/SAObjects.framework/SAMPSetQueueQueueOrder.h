@@ -13,11 +13,11 @@
 + (id)setQueueQueueOrderWithDictionary:(id)arg1 context:(id)arg2;
 + (id)setQueueQueueOrder;
 
-- (id)groupIdentifier;
 - (void)setDescending:(BOOL)arg1;
 - (BOOL)descending;
 - (void)setMediaItemProperty:(id)arg1;
 - (id)mediaItemProperty;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

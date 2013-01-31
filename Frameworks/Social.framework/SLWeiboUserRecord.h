@@ -20,8 +20,7 @@
 
 - (id)description;
 - (void).cxx_destruct;
-- (void)setObjectID:(id)arg1;
-- (id)objectID;
+- (void)setUid:(id)arg1;
 - (id)uid;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -30,6 +29,7 @@
 - (void)setScreen_name:(id)arg1;
 - (void)_setValuesFromDictionaryRepresentation:(id)arg1;
 - (id)screen_name;
-- (void)setUid:(id)arg1;
+- (void)setObjectID:(id)arg1;
+- (id)objectID;
 
 @end

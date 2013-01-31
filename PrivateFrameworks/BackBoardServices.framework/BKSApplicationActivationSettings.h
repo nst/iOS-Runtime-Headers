@@ -47,7 +47,11 @@
 @property BOOL zoomInClassic;
 
 
-- (BOOL)statusBarHidden;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)payload;
+- (void)setPayload:(id)arg1;
 - (void)setZoomInClassic:(BOOL)arg1;
 - (void)setClassic:(BOOL)arg1;
 - (void)setFlip:(BOOL)arg1;
@@ -75,9 +79,6 @@
 - (id)initWithSettings:(id)arg1 zone:(struct _NSZone { }*)arg2;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setSuspended:(BOOL)arg1;
 - (BOOL)flip;
 - (void)setAnimated:(BOOL)arg1;
@@ -88,8 +89,7 @@
 - (BOOL)firstLaunchAfterBoot;
 - (int)statusBarStyle;
 - (int)interfaceOrientation;
-- (void)setPayload:(id)arg1;
-- (id)payload;
+- (BOOL)statusBarHidden;
 - (BOOL)suspended;
 
 @end

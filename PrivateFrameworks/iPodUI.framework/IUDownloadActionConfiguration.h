@@ -14,15 +14,15 @@
 @property(readonly) UIButton * newButton;
 
 
-- (void)dealloc;
 - (void)setConfirmationState:(int)arg1;
 - (id)downloadableMediaEntity;
 - (id)initWithMediaEntity:(id)arg1;
+- (void)configureButton:(id)arg1 animate:(BOOL)arg2;
+- (id)newButton;
 - (void)cancelPendingActionForButton:(id)arg1;
 - (void)downloadAssetForButtonPressed:(id)arg1 completionHandler:(id)arg2;
 - (int)confirmationState;
 - (void)configureButtonForButtonPressed:(id)arg1 animate:(BOOL)arg2;
-- (void)configureButton:(id)arg1 animate:(BOOL)arg2;
-- (id)newButton;
+- (void)dealloc;
 
 @end

@@ -9,11 +9,11 @@
 }
 
 
-- (id)selectedItem;
 - (void)setSelectedObject:(id)arg1;
 - (id)selectedObject;
 - (void)selectLayer:(id)arg1;
 - (void)setSelectedLayer:(id)arg1;
 - (void)refreshItems;
+- (id)selectedItem;
 
 @end

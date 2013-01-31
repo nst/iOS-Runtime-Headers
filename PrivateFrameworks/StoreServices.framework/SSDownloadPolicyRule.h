@@ -27,9 +27,6 @@
 @property int timeLimitStates;
 
 
-- (void)addNetworkType:(int)arg1;
-- (void)setDownloadSizeLimit:(long long)arg1;
-- (long long)downloadSizeLimit;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -39,11 +36,11 @@
 - (void)setRegistrationStates:(int)arg1;
 - (void)setPowerStates:(int)arg1;
 - (void)setNetworkTypes:(id)arg1;
-- (void)setCellularDataStates:(int)arg1;
+- (void)setDownloadSizeLimit:(long long)arg1;
 - (void)setBatteryLevel:(float)arg1;
-- (void)unionPolicyRule:(id)arg1;
 - (BOOL)isWiFiAllowed;
 - (BOOL)isCellularAllowed;
+- (void)addNetworkType:(int)arg1;
 - (int)timeLimitStates;
 - (int)registrationStates;
 - (int)powerStates;
@@ -57,5 +54,8 @@
 - (float)batteryLevel;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)unionPolicyRule:(id)arg1;
+- (void)setCellularDataStates:(int)arg1;
+- (long long)downloadSizeLimit;
 
 @end

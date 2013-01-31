@@ -30,19 +30,10 @@
 @property(copy) NSString * lastSendingAddress;
 
 
-- (void)setAddress:(id)arg1;
-- (id)address;
-- (void)setBundleIdentifier:(id)arg1;
 - (id)bundleIdentifier;
 - (id)description;
 - (void)dealloc;
-- (void)setProperty:(int)arg1;
-- (int)property;
-- (void*)person;
-- (id)displayName;
-- (id)initWithDictionary:(id)arg1;
-- (unsigned int)countOfRecents;
-- (int)matchedIdentifier;
+- (void)setDisplayName:(id)arg1;
 - (void)setLastSendingAddress:(id)arg1;
 - (id)lastSendingAddress;
 - (void)setRecentID:(long long)arg1;
@@ -56,7 +47,16 @@
 - (id)initWithRFC822Address:(id)arg1 forProperty:(int)arg2 withRecentDate:(id)arg3 bundleIdentifier:(id)arg4;
 - (void*)existingPerson;
 - (id)initWithRecentID:(long long)arg1;
+- (void*)person;
+- (id)displayName;
+- (id)initWithDictionary:(id)arg1;
+- (unsigned int)countOfRecents;
+- (int)matchedIdentifier;
+- (void)setAddress:(id)arg1;
+- (id)address;
+- (void)setBundleIdentifier:(id)arg1;
+- (void)setProperty:(int)arg1;
+- (int)property;
 - (id)copyDictionaryRepresentation;
-- (void)setDisplayName:(id)arg1;
 
 @end

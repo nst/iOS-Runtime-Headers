@@ -11,9 +11,9 @@
 @property(copy) NSString * rows;
 
 
-- (void)setRows:(id)arg1;
-- (id)rows;
 - (void)setCols:(id)arg1;
 - (id)cols;
+- (void)setRows:(id)arg1;
+- (id)rows;
 
 @end

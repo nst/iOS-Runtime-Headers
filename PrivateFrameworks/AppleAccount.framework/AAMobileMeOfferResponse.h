@@ -15,9 +15,9 @@
 
 
 - (id)identifier;
-- (id)message;
-- (id)title;
 - (id)classicMessage;
 - (id)classicTitle;
+- (id)message;
+- (id)title;
 
 @end

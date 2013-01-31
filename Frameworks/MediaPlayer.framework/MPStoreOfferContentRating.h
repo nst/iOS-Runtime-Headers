@@ -23,18 +23,6 @@
 
 + (unsigned int)ratingSystemFromString:(id)arg1;
 
-- (void)setRatingLabel:(id)arg1;
-- (id)ratingLabel;
-- (BOOL)_isRatingSystemForMusic:(unsigned int)arg1;
-- (BOOL)isExplicitContent;
-- (BOOL)_isRatingSystemForTV:(unsigned int)arg1;
-- (BOOL)_isRatingSystemForMovies:(unsigned int)arg1;
-- (BOOL)_isRatingSystemForApps:(unsigned int)arg1;
-- (void)setRatingLevel:(int)arg1;
-- (int)ratingLevel;
-- (id)mediaPropertyContentRatingValue;
-- (BOOL)isRestrictedContent;
-- (BOOL)isRestrictedPurchase;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)setRatingSystem:(unsigned int)arg1;
@@ -45,5 +33,17 @@
 - (id)initWithDictionary:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)setRatingLevel:(int)arg1;
+- (int)ratingLevel;
+- (BOOL)_isRatingSystemForMusic:(unsigned int)arg1;
+- (BOOL)isExplicitContent;
+- (BOOL)_isRatingSystemForTV:(unsigned int)arg1;
+- (BOOL)_isRatingSystemForMovies:(unsigned int)arg1;
+- (BOOL)_isRatingSystemForApps:(unsigned int)arg1;
+- (id)mediaPropertyContentRatingValue;
+- (BOOL)isRestrictedContent;
+- (BOOL)isRestrictedPurchase;
+- (void)setRatingLabel:(id)arg1;
+- (id)ratingLabel;
 
 @end

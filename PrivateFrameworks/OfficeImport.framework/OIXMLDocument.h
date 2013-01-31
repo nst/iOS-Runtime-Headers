@@ -14,7 +14,6 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setVersion:(id)arg1;
 - (id)contentString;
 - (id)createMutableXMLString;
 - (void)setRootElement:(id)arg1;
@@ -24,5 +23,6 @@
 - (id)XMLString;
 - (id)openingTagString;
 - (id)rootElement;
+- (void)setVersion:(id)arg1;
 
 @end

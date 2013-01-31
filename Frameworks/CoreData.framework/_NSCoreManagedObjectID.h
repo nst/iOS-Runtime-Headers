@@ -9,6 +9,9 @@
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)release;
++ (int)version;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (void)initialize;
 + (void)_storeDeallocated;
 + (id)_storeInfo1;
 + (void)_setStoreInfo1:(id)arg1;
@@ -21,9 +24,6 @@
 + (id)_retain_1;
 + (char *)generatedNameSuffix;
 + (BOOL)accessInstanceVariablesDirectly;
-+ (int)version;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (void)initialize;
 
 - (id)entity;
 - (unsigned int)retainCount;
@@ -31,12 +31,12 @@
 - (id)retain;
 - (BOOL)isEqual:(id)arg1;
 - (void)release;
+- (void)finalize;
 - (id)URIRepresentation;
 - (BOOL)_isPersistentStoreAlive;
 - (id)_storeIdentifier;
 - (id)_storeInfo1;
 - (BOOL)isTemporaryID;
 - (id)persistentStore;
-- (void)finalize;
 
 @end

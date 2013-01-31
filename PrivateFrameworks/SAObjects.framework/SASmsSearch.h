@@ -19,9 +19,12 @@
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)recipient;
-- (void)setRecipient:(id)arg1;
-- (id)groupIdentifier;
+- (void)setTimeZoneId:(id)arg1;
+- (id)timeZoneId;
+- (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 - (void)setStatus:(int)arg1;
 - (int)status;
 - (id)message;
@@ -31,12 +34,9 @@
 - (void)setMessage:(id)arg1;
 - (id)end;
 - (id)start;
+- (id)recipient;
+- (void)setRecipient:(id)arg1;
+- (id)groupIdentifier;
 - (void)setSender:(id)arg1;
-- (void)setTimeZoneId:(id)arg1;
-- (id)timeZoneId;
-- (BOOL)requiresResponse;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
-- (id)encodedClassName;
 
 @end

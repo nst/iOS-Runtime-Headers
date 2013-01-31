@@ -23,23 +23,23 @@
 @property(retain) NSMutableDictionary * userInfo;
 
 
+- (id)processor;
+- (id)URL;
+- (int)type;
+- (id)description;
+- (id)userInfo;
+- (void)dealloc;
 - (id)userInfoValueForKey:(id)arg1;
 - (void)setUserInfoValue:(id)arg1 forKey:(id)arg2;
 - (id)sinceDomainVersion;
 - (void)setProcessor:(id)arg1;
 - (void)setSinceDomainVersion:(id)arg1;
 - (id)initWithType:(int)arg1 domain:(id)arg2 URL:(id)arg3 keys:(id)arg4;
-- (id)URL;
-- (int)type;
-- (id)description;
-- (id)userInfo;
-- (void)dealloc;
+- (void)setDomain:(id)arg1;
 - (id)domain;
 - (void)setUserInfo:(id)arg1;
 - (id)keys;
 - (void)setURL:(id)arg1;
 - (void)setType:(int)arg1;
-- (id)processor;
-- (void)setDomain:(id)arg1;
 
 @end

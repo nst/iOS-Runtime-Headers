@@ -104,7 +104,6 @@
     id _extraData;
 }
 
-+ (void)initialize;
 + (BOOL)_showsControlCharacters;
 + (BOOL)_showsInvisibleCharacters;
 + (BOOL)_ignoresViewTransformations;
@@ -112,18 +111,8 @@
 + (BOOL)_inBackgroundLayout;
 + (id)_defaultLinkAttributes;
 + (BOOL)_usesScreenFonts;
++ (void)initialize;
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (unsigned int)layoutOptions;
-- (void)finalize;
-- (id)attributedString;
-- (void)_commonInit;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)_temporaryAttributesAtCharacterIndex:(unsigned int)arg1 longestEffectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (id)_temporaryAttribute:(id)arg1 atCharacterIndex:(unsigned int)arg2 longestEffectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 - (id)_temporaryAttribute:(id)arg1 atCharacterIndex:(unsigned int)arg2 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
@@ -368,5 +357,16 @@
 - (float)hyphenationFactor;
 - (void)setLineFragmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 baselineOffset:(float)arg4;
 - (int)typesetterBehavior;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)layoutOptions;
+- (void)finalize;
+- (id)attributedString;
+- (void)_commonInit;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

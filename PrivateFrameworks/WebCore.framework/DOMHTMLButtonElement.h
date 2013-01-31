@@ -17,15 +17,6 @@
 @property(copy) NSString * accessKey;
 
 
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)type;
-- (int)structuralComplexityContribution;
-- (id)form;
-- (void)setDisabled:(BOOL)arg1;
-- (BOOL)disabled;
-- (id)value;
-- (void)setValue:(id)arg1;
 - (void)click;
 - (void)setCustomValidity:(id)arg1;
 - (BOOL)checkValidity;
@@ -47,5 +38,14 @@
 - (BOOL)autofocus;
 - (void)setAccessKey:(id)arg1;
 - (id)accessKey;
+- (void)setName:(id)arg1;
+- (id)name;
+- (id)type;
+- (int)structuralComplexityContribution;
+- (id)form;
+- (void)setDisabled:(BOOL)arg1;
+- (BOOL)disabled;
+- (id)value;
+- (void)setValue:(id)arg1;
 
 @end

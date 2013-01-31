@@ -46,7 +46,6 @@
 + (BOOL)promptNeedsDisplay:(id)arg1;
 + (id)copyCachedAvailableItemKinds;
 
-- (id)userAgent;
 - (id)synchedStoreFrontIdentifier;
 - (BOOL)isStoreFrontIdentifierTransient;
 - (void)reloadStoreFrontIdentifier;
@@ -54,7 +53,6 @@
 - (unsigned long)deviceTypeIdentifier;
 - (id)automaticDownloadKinds;
 - (void)setAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id)arg2;
-- (BOOL)supportsDeviceCapability:(int)arg1;
 - (id)storeFrontIdentifier;
 - (id)productVersion;
 - (void)setSoftwareLibraryIdentifier:(id)arg1;
@@ -103,5 +101,7 @@
 - (void)setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
 - (void)_cacheKeyValueStoreValues;
 - (double)batteryLevel;
+- (BOOL)supportsDeviceCapability:(int)arg1;
+- (id)userAgent;
 
 @end

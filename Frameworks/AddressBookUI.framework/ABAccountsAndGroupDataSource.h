@@ -26,13 +26,15 @@
 
 - (void)dealloc;
 - (id)init;
+- (void)setModel:(id)arg1;
 - (id)model;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)reloadData;
-- (void)setModel:(id)arg1;
+- (id)accountStore;
+- (BOOL)isDirty;
 - (int)numberOfGroupsForAccountIdentifier:(id)arg1;
 - (id)indexPathForGroupWrapper:(id)arg1;
 - (id)defaultGroupWrapper;
@@ -40,7 +42,6 @@
 - (int)numberOfGroupsInAccountAtIndex:(int)arg1;
 - (void)reloadDataIncludingAccountsManager:(BOOL)arg1 usingArchivedState:(BOOL)arg2;
 - (id)accountsManager;
-- (id)accountStore;
 - (void)setAccountStore:(id)arg1;
 - (void)setAccountsManager:(id)arg1;
 - (id)groupWrapperForIndexPath:(id)arg1;
@@ -53,6 +54,5 @@
 - (void)setHidesGlobalGroupWrapper:(BOOL)arg1;
 - (BOOL)hidesSearchableSources;
 - (void)setHidesSearchableSources:(BOOL)arg1;
-- (BOOL)isDirty;
 
 @end

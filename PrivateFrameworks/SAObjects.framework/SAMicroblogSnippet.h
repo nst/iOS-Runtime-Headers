@@ -9,12 +9,12 @@
 
 @property(copy) NSArray * microblogs;
 
-+ (id)snippet;
 + (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
++ (id)snippet;
 
-- (id)groupIdentifier;
 - (void)setMicroblogs:(id)arg1;
 - (id)microblogs;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

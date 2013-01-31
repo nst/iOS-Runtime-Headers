@@ -6,7 +6,6 @@
 }
 
 
-- (void)finishWithError:(id)arg1;
 - (int)numDownloadedElements;
 - (id)replacementObjectForEmailItem:(id)arg1;
 - (void)_appendSearchOptions:(id)arg1;
@@ -16,5 +15,6 @@
 - (BOOL)processContext:(id)arg1;
 - (BOOL)getTopLevelToken:(char *)arg1 outStatusCodePage:(char *)arg2 outStatusToken:(char *)arg3;
 - (id)requestBody;
+- (void)finishWithError:(id)arg1;
 
 @end

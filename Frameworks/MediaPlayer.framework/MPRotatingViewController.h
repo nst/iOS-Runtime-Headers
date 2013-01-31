@@ -15,8 +15,8 @@
 }
 
 
-- (id)initWithValidInterfaceOrientationsBlock:(id)arg1;
 - (void)dealloc;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)initWithValidInterfaceOrientationsBlock:(id)arg1;
 
 @end

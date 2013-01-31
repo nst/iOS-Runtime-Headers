@@ -133,14 +133,7 @@
 }
 
 
-- (void)dealloc;
-- (struct CGSize { float x1; float x2; })paperSize;
-- (id)initWithPath:(id)arg1;
-- (void)finalize;
-- (id)attributedString;
-- (void)setBaseWritingDirection:(int)arg1;
-- (void)setRightMargin:(float)arg1;
-- (void)setBackgroundColor:(id)arg1;
+- (void)setReadOnly:(int)arg1;
 - (void)_popState;
 - (void)_pushState;
 - (void)processString:(id)arg1;
@@ -202,7 +195,7 @@
 - (id)initWithRTFDFileWrapper:(id)arg1;
 - (id)documentAttributes;
 - (void)setMutableAttributedString:(id)arg1;
-- (void)setReadOnly:(int)arg1;
+- (void)dealloc;
 - (id)defaultParagraphStyle;
 - (void)setTextFlow:(unsigned int)arg1;
 - (unsigned int)textFlow;
@@ -210,5 +203,12 @@
 - (void)setLeftMargin:(float)arg1;
 - (void)setTopMargin:(float)arg1;
 - (int)baseWritingDirection;
+- (struct CGSize { float x1; float x2; })paperSize;
+- (id)initWithPath:(id)arg1;
+- (void)finalize;
+- (id)attributedString;
+- (void)setBaseWritingDirection:(int)arg1;
+- (void)setRightMargin:(float)arg1;
+- (void)setBackgroundColor:(id)arg1;
 
 @end

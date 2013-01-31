@@ -15,17 +15,8 @@
 
 + (id)CPBitmapStoreWithPath:(id)arg1 version:(int)arg2 useDirectHashing:(BOOL)arg3;
 
-- (void)dealloc;
-- (void)removeImagesInGroups:(id)arg1;
-- (struct CGImage { }*)copyAndStoreImageForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 draw:(id)arg6;
-- (void)storeImageForKey:(id)arg1 inGroup:(id)arg2 opaque:(BOOL)arg3 image:(struct CGImage { }*)arg4;
-- (struct CGImage { }*)copyImageForKey:(id)arg1 inGroup:(id)arg2;
-- (int)setVersion:(int)arg1;
-- (void)purge;
-- (id)initWithPath:(id)arg1 version:(int)arg2;
-- (int)version;
-- (void)commitTransaction;
 - (id)allGroups;
+- (void)dealloc;
 - (int)imageCount;
 - (void)commitTxn;
 - (struct CGImage { }*)copyImageForKey:(id)arg1;
@@ -37,5 +28,14 @@
 - (BOOL)findImageWithKey:(id)arg1 inGroup:(id)arg2 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg3;
 - (id)imageNameForKey:(id)arg1 inGroup:(id)arg2;
 - (id)imagePath;
+- (void)removeImagesInGroups:(id)arg1;
+- (struct CGImage { }*)copyAndStoreImageForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 draw:(id)arg6;
+- (void)storeImageForKey:(id)arg1 inGroup:(id)arg2 opaque:(BOOL)arg3 image:(struct CGImage { }*)arg4;
+- (struct CGImage { }*)copyImageForKey:(id)arg1 inGroup:(id)arg2;
+- (int)setVersion:(int)arg1;
+- (void)purge;
+- (id)initWithPath:(id)arg1 version:(int)arg2;
+- (int)version;
+- (void)commitTransaction;
 
 @end

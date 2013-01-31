@@ -10,8 +10,8 @@
 
 
 - (void)dealloc;
+- (void)setSeparatorHighlightVisible:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)layoutSubviews;
-- (void)setSeparatorHighlightVisible:(BOOL)arg1;
 
 @end

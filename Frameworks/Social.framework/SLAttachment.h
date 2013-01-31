@@ -23,12 +23,12 @@
 
 
 - (void).cxx_destruct;
+- (id)payload;
 - (void)setPreviewType:(int)arg1;
 - (int)previewType;
 - (id)preview;
 - (void)setPreview:(id)arg1;
 - (void)setUpdateObserver:(id)arg1;
 - (id)initWithPayload:(id)arg1 preview:(id)arg2;
-- (id)payload;
 
 @end

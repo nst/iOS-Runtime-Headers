@@ -33,16 +33,6 @@
 + (int)calendarUserFromICSString:(id)arg1;
 + (id)URLForNoMail;
 
-- (id)email;
-- (void)setEmail:(id)arg1;
-- (id)initWithURL:(id)arg1;
-- (void)setURL:(id)arg1;
-- (id)displayName;
-- (void)setScheduleagent:(int)arg1;
-- (BOOL)rsvp;
-- (void)setDir:(id)arg1;
-- (id)dir;
-- (id)emailAddress;
 - (id)x_calendarserver_email;
 - (void)setX_calendarserver_email:(id)arg1;
 - (BOOL)x_apple_self_invited;
@@ -55,8 +45,19 @@
 - (BOOL)hasEmailAddress;
 - (BOOL)isHTTPSAddress;
 - (BOOL)isHTTPAddress;
+- (BOOL)isEmailAddress;
 - (void)fixAddress;
+- (void)setDir:(id)arg1;
+- (id)dir;
+- (id)initWithURL:(id)arg1;
+- (id)emailAddress;
 - (void)setRsvp:(BOOL)arg1;
+- (void)setScheduleagent:(int)arg1;
+- (BOOL)rsvp;
+- (void)setURL:(id)arg1;
+- (id)displayName;
+- (id)email;
+- (void)setEmail:(id)arg1;
 - (void)setRole:(int)arg1;
 - (void)setPartstat:(int)arg1;
 - (void)setCutype:(int)arg1;
@@ -65,7 +66,6 @@
 - (int)role;
 - (int)partstat;
 - (int)cutype;
-- (BOOL)isEmailAddress;
 - (id)cn;
 
 @end

@@ -16,14 +16,14 @@
 + (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 
-- (id)adamID;
 - (id)initWithSSDownload:(id)arg1;
 - (id)initWithISUDownload:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (float)progress;
 - (id)phase;
-- (id)attributeKeys;
+- (id)adamID;
 
 @end

@@ -11,9 +11,9 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)evaluateWithObject:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithExternalIdentifier:(id)arg1;
+- (BOOL)evaluateWithObject:(id)arg1;
 
 @end

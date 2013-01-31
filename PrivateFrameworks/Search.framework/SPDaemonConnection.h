@@ -12,6 +12,8 @@
 
 + (id)sharedConnection;
 
+- (void)dealloc;
+- (id)init;
 - (void)searchResultWasSelected:(id)arg1 inDomain:(unsigned int)arg2 queryString:(id)arg3;
 - (void)indexUpdatedContent:(id)arg1 moreComing:(BOOL)arg2;
 - (BOOL)retrieveUpdateList:(id*)arg1 forDisplayIdentifier:(id)arg2 category:(id)arg3;
@@ -19,13 +21,11 @@
 - (void)endRecordUpdatesForApplication:(id)arg1 andCategory:(id)arg2;
 - (void)requestRecordUpdatesForApplication:(id)arg1 category:(id)arg2 andIDs:(id)arg3;
 - (void)startRecordUpdatesForApplication:(id)arg1 andCategory:(id)arg2;
+- (void)cancelQuery:(id)arg1;
 - (void)preheat;
-- (void)dealloc;
-- (id)init;
-- (id)startQuery:(id)arg1;
 - (void)_sendMessage:(id)arg1 info:(id)arg2 reply:(id)arg3;
 - (void)_resetConnection;
-- (void)cancelQuery:(id)arg1;
+- (id)startQuery:(id)arg1;
 - (id)_connection;
 
 @end

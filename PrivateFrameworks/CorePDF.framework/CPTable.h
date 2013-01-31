@@ -32,6 +32,9 @@
 @property(readonly) unsigned int backgroundGraphicCount;
 
 
+- (void)dealloc;
+- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (unsigned int)rowCount;
 - (unsigned int)backgroundGraphicCount;
 - (id)backgroundGraphicAtIndex:(unsigned int)arg1;
 - (void)setBackgroundGraphics:(id)arg1;
@@ -42,12 +45,9 @@
 - (void)incrementUsedGraphicCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tableBounds;
 - (void)dispose;
-- (void)dealloc;
 - (void)setColumnCount:(unsigned int)arg1;
 - (unsigned int)columnCount;
 - (void)finalize;
 - (struct CGColor { }*)backgroundColor;
-- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (unsigned int)rowCount;
 
 @end

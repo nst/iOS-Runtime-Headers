@@ -11,9 +11,9 @@
 @property double lastResetTime;
 
 
-- (unsigned int)requestCount;
 - (void)setLastResetTime:(double)arg1;
 - (void)setRequestCount:(unsigned int)arg1;
 - (double)lastResetTime;
+- (unsigned int)requestCount;
 
 @end

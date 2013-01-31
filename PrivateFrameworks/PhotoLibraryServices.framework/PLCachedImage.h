@@ -17,11 +17,11 @@
 
 - (id)description;
 - (void)dealloc;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
-- (id)cacheKey;
 - (void)setCacheKey:(id)arg1;
 - (void)setFormat:(int)arg1;
 - (int)format;
+- (id)cacheKey;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 
 @end

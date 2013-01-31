@@ -18,15 +18,15 @@
 
 + (id)functionWithName:(id)arg1;
 
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (id)name;
 - (unsigned long)inputCount;
 - (void)dealloc;
-- (id)_initWithName:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)apply:(const double*)arg1 result:(double*)arg2;
 - (BOOL)apply:(const double*)arg1 result:(double*)arg2 parameterFunction:(int (*)())arg3 context:(void*)arg4;
 - (unsigned long)outputCount;
-- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (id)_initWithName:(int)arg1;
 
 @end

@@ -16,10 +16,10 @@
 @property unsigned int pendingItemsCount;
 @property unsigned int pendingItemsType;
 
-+ (id)entityName;
 + (id)insertInManagedObjectContext:(id)arg1;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
++ (id)entityName;
 
 - (id)objectID;
 

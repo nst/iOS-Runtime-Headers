@@ -11,12 +11,12 @@
 
 + (id)sharedTimer;
 
-- (void)addObserver:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)applicationResumed:(id)arg1;
 - (void)timerFired;
 - (id)initOnce;
-- (void)applicationResumed:(id)arg1;
+- (void)addObserver:(id)arg1;
 
 @end

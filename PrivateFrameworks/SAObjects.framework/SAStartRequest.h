@@ -19,9 +19,6 @@
 + (id)startRequestWithDictionary:(id)arg1 context:(id)arg2;
 + (id)startRequest;
 
-- (id)groupIdentifier;
-- (void)setOrigin:(id)arg1;
-- (id)origin;
 - (void)setHandsFree:(BOOL)arg1;
 - (BOOL)handsFree;
 - (void)setEyesFree:(BOOL)arg1;
@@ -33,5 +30,8 @@
 - (void)setMotionActivity:(id)arg1;
 - (id)motionActivity;
 - (id)encodedClassName;
+- (void)setOrigin:(id)arg1;
+- (id)origin;
+- (id)groupIdentifier;
 
 @end

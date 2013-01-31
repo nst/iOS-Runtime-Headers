@@ -11,6 +11,7 @@
 @property(retain) GKLeaderboardSection * dualSection;
 
 
+- (void)dealloc;
 - (id)refreshableSections;
 - (BOOL)_hasAnyScoresInTableView:(id)arg1;
 - (BOOL)showControlSection;
@@ -21,6 +22,5 @@
 - (void)setDualSection:(id)arg1;
 - (BOOL)allowDualLeaderboards;
 - (void)prepareSections;
-- (void)dealloc;
 
 @end

@@ -7,6 +7,8 @@
 }
 
 
+- (id)description;
+- (id)init;
 - (void)addColumnBreaks;
 - (void)setIsFirstLayout:(BOOL)arg1;
 - (BOOL)isFirstLayout;
@@ -20,8 +22,6 @@
 - (BOOL)isBoxRegion;
 - (float)selectionBottom;
 - (void)accept:(id)arg1;
-- (id)description;
-- (id)init;
 - (id)properties;
 
 @end

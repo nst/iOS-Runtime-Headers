@@ -16,6 +16,7 @@
 
 + (Class)layerClass;
 
+- (void)setDimmed:(BOOL)arg1;
 - (void)displayLayer:(id)arg1;
 - (BOOL)selected;
 - (void)setSelected:(BOOL)arg1;
@@ -28,7 +29,6 @@
 - (BOOL)needsReply;
 - (void)setNeedsReply:(BOOL)arg1;
 - (void)setTentative:(BOOL)arg1;
-- (void)setDimmed:(BOOL)arg1;
 - (BOOL)tentative;
 
 @end

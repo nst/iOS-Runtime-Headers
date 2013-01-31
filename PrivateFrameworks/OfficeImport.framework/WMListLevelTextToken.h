@@ -13,8 +13,8 @@
 
 - (id)string;
 - (void)dealloc;
-- (int)level;
 - (id)initWithString:(id)arg1 andLevel:(int)arg2;
 - (id)stringForIndex:(int)arg1 withFormat:(int)arg2 initialNumber:(int)arg3;
+- (int)level;
 
 @end

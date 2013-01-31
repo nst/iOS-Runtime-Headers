@@ -22,7 +22,6 @@
 
 - (id)copyNativeMediaPlayerItem;
 - (void)setPlayableDuration:(id)arg1;
-- (id)playableDuration;
 - (void)setInitialOrientation:(id)arg1;
 - (id)initialOrientation;
 - (void)setBookmarkIdentifier:(id)arg1;
@@ -32,9 +31,9 @@
 - (void)setItemType:(id)arg1;
 - (void)setItemIdentifier:(id)arg1;
 - (id)itemType;
-- (id)itemIdentifier;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (id)URL;
 - (void)dealloc;
 - (void)setURL:(id)arg1;
@@ -43,6 +42,7 @@
 - (id)initWithDictionary:(id)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)attributeKeys;
+- (id)itemIdentifier;
+- (id)playableDuration;
 
 @end

@@ -26,6 +26,8 @@
 
 
 - (void)dealloc;
+- (id)httpMethod;
+- (id)requestBody;
 - (id)bulkChangeResponses;
 - (id)hrefsToModDeleteActions;
 - (id)uuidsToAddActions;
@@ -35,7 +37,5 @@
 - (id)initWithURL:(id)arg1 checkCTag:(id)arg2 simple:(BOOL)arg3 returnChangedData:(BOOL)arg4 uuidsToAddActions:(id)arg5 hrefsToModDeleteActions:(id)arg6;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)httpMethod;
-- (id)requestBody;
 
 @end

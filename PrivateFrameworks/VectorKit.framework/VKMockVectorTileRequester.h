@@ -7,8 +7,8 @@
 
 + (unsigned char)tileProviderIdentifier;
 
-- (void)start;
 - (void)fakeLoadTile;
 - (id)getTileData:(id)arg1;
+- (void)start;
 
 @end

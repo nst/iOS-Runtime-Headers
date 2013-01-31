@@ -28,9 +28,20 @@
 @property int style;
 
 
-- (void)reloadView;
-- (id)newProgressIndicator;
+- (void)_sizeToFitAnimationDidEnd;
+- (void)_hideScrubInstructionOverlayAnimationDidEnd;
+- (void)_resetStateAfterSliderTrackingDone:(id)arg1;
+- (void)_showScrubInstructionOverlayAnimationDidEnd;
+- (float)_sizeToFitForCurrentStateAnimated:(BOOL)arg1;
+- (void)dealloc;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
+- (void)layoutSubviews;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)playbackSpeedButtonImageForPlaybackSpeed:(unsigned int)arg1;
+- (id)newProgressIndicator;
 - (id)newTrackInfoLabel;
 - (void)resetDetailSlider:(id)arg1;
 - (void)updateForEndOfDetailScrubbing;
@@ -44,17 +55,6 @@
 - (void)detailSliderTrackingDidEnd:(id)arg1;
 - (void)detailSliderTrackingDidBegin:(id)arg1;
 - (void)setVisibleParts:(unsigned long long)arg1;
-- (void)dealloc;
-- (int)style;
-- (void)setStyle:(int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
-- (void)layoutSubviews;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_sizeToFitAnimationDidEnd;
-- (void)_hideScrubInstructionOverlayAnimationDidEnd;
-- (void)_resetStateAfterSliderTrackingDone:(id)arg1;
-- (void)_showScrubInstructionOverlayAnimationDidEnd;
-- (float)_sizeToFitForCurrentStateAnimated:(BOOL)arg1;
+- (void)reloadView;
 
 @end

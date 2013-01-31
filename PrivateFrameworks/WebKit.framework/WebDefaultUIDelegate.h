@@ -7,13 +7,6 @@
 
 + (id)sharedUIDelegate;
 
-- (id)webView:(id)arg1 runJavaScriptTextInputPanelWithPrompt:(id)arg2 defaultText:(id)arg3 initiatedByFrame:(id)arg4;
-- (BOOL)webView:(id)arg1 runJavaScriptConfirmPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
-- (void)webView:(id)arg1 runJavaScriptAlertPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
-- (void)webViewClose:(id)arg1;
-- (void)webViewSupportedOrientationsUpdated:(id)arg1;
-- (void)webView:(id)arg1 printFrameView:(id)arg2;
-- (void)webView:(id)arg1 exceededApplicationCacheOriginQuotaForSecurityOrigin:(id)arg2 totalSpaceNeeded:(unsigned int)arg3;
 - (void)webView:(id)arg1 didScrollDocumentInFrameView:(id)arg2;
 - (void)webView:(id)arg1 didDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)webViewIsResizable:(id)arg1;
@@ -37,5 +30,12 @@
 - (id)webView:(id)arg1 createWebViewWithRequest:(id)arg2 windowFeatures:(id)arg3;
 - (void)webViewUnfocus:(id)arg1;
 - (void)webViewFocus:(id)arg1;
+- (id)webView:(id)arg1 runJavaScriptTextInputPanelWithPrompt:(id)arg2 defaultText:(id)arg3 initiatedByFrame:(id)arg4;
+- (BOOL)webView:(id)arg1 runJavaScriptConfirmPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
+- (void)webView:(id)arg1 runJavaScriptAlertPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
+- (void)webViewClose:(id)arg1;
+- (void)webViewSupportedOrientationsUpdated:(id)arg1;
+- (void)webView:(id)arg1 printFrameView:(id)arg2;
+- (void)webView:(id)arg1 exceededApplicationCacheOriginQuotaForSecurityOrigin:(id)arg2 totalSpaceNeeded:(unsigned int)arg3;
 
 @end

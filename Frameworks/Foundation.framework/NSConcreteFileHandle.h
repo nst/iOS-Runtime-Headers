@@ -42,6 +42,8 @@
 }
 
 
+- (void)closeFile;
+- (void)writeData:(id)arg1;
 - (int)fileDescriptor;
 - (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(BOOL)arg2;
 - (id)retain;
@@ -49,13 +51,11 @@
 - (void)dealloc;
 - (oneway void)release;
 - (id)init;
-- (void)seekToFileOffset:(unsigned long long)arg1;
+- (id)initWithFileDescriptor:(int)arg1;
 - (id)readDataOfLength:(unsigned int)arg1;
 - (id)port;
 - (void)finalize;
 - (void)encodeWithCoder:(id)arg1;
-- (void)closeFile;
-- (void)writeData:(id)arg1;
 - (void)waitForDataInBackgroundAndNotify;
 - (void)acceptConnectionInBackgroundAndNotify;
 - (void)readToEndOfFileInBackgroundAndNotify;
@@ -85,6 +85,6 @@
 - (id)availableData;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
-- (id)initWithFileDescriptor:(int)arg1;
+- (void)seekToFileOffset:(unsigned long long)arg1;
 
 @end

@@ -22,7 +22,6 @@
 - (void)setValue:(id)arg1 forNowPlayingKey:(id)arg2;
 - (void)_postStatusChangeNotification;
 - (void)_itemPlayedToEndNotification:(id)arg1;
-- (void)_itemFailedToPlayToEndNotification:(id)arg1;
 - (id)_newFadeInAudioMixForAsset:(id)arg1;
 - (void)_updateForPeriodicTickWithTime:(double)arg1;
 - (void)_failWithError:(id)arg1;
@@ -32,13 +31,14 @@
 - (void)_destroyPlayerItem;
 - (void)_destroyPlayer;
 - (id)playerStatus;
-- (void)seekToTime:(double)arg1;
+- (void)play;
 - (id)URL;
 - (id)initWithURL:(id)arg1;
 - (void)dealloc;
 - (void)pause;
 - (void)stop;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)play;
+- (void)_itemFailedToPlayToEndNotification:(id)arg1;
+- (void)seekToTime:(double)arg1;
 
 @end

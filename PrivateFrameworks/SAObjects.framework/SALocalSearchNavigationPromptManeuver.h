@@ -13,12 +13,12 @@
 + (id)navigationPromptManeuverWithDictionary:(id)arg1 context:(id)arg2;
 + (id)navigationPromptManeuver;
 
-- (id)groupIdentifier;
 - (void)setManeuverIndex:(id)arg1;
 - (id)maneuverIndex;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

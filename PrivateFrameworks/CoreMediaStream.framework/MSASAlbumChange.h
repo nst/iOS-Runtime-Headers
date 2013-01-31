@@ -31,8 +31,12 @@
 - (id)name;
 - (id)description;
 - (void).cxx_destruct;
-- (void)setURLString:(id)arg1;
-- (id)URLString;
+- (void)setGUID:(id)arg1;
+- (id)ownerFullName;
+- (id)ownerLastName;
+- (id)ownerFirstName;
+- (id)ownerEmail;
+- (id)GUID;
 - (void)setOwnerLastName:(id)arg1;
 - (void)setOwnerFirstName:(id)arg1;
 - (void)setOwnerFullName:(id)arg1;
@@ -41,11 +45,7 @@
 - (id)invitation;
 - (void)setWasDeleted:(BOOL)arg1;
 - (BOOL)wasDeleted;
-- (void)setGUID:(id)arg1;
-- (id)ownerFullName;
-- (id)ownerLastName;
-- (id)ownerFirstName;
-- (id)ownerEmail;
-- (id)GUID;
+- (void)setURLString:(id)arg1;
+- (id)URLString;
 
 @end

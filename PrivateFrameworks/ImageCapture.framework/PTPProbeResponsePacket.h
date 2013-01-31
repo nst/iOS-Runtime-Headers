@@ -6,8 +6,8 @@
 }
 
 
+- (id)description;
 - (id)initWithTCPBuffer:(void*)arg1;
 - (id)contentForTCP;
-- (id)description;
 
 @end

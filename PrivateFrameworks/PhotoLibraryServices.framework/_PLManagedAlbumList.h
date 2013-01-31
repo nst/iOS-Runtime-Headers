@@ -5,9 +5,9 @@
 @interface _PLManagedAlbumList : PLManagedObject  {
 }
 
-+ (id)entityName;
 + (id)insertInManagedObjectContext:(id)arg1;
 + (id)entityInManagedObjectContext:(id)arg1;
++ (id)entityName;
 
 - (id)objectID;
 

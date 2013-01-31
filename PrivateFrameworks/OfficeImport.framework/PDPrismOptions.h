@@ -8,9 +8,9 @@
 }
 
 
-- (BOOL)isInverted;
 - (void)setIsInverted:(BOOL)arg1;
 - (void)setIsContent:(BOOL)arg1;
 - (BOOL)isContent;
+- (BOOL)isInverted;
 
 @end

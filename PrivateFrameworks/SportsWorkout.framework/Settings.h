@@ -13,10 +13,10 @@
 @property(retain) NSString * gender;
 
 
-- (void)setLanguage:(id)arg1;
-- (id)language;
 - (void)setGender:(id)arg1;
 - (id)gender;
+- (void)setLanguage:(id)arg1;
+- (id)language;
 - (id)initWithLanguage:(id)arg1 gender:(id)arg2;
 
 @end

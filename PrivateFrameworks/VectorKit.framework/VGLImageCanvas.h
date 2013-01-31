@@ -34,10 +34,6 @@
 
 + (Class)contextClass;
 
-- (void)dealloc;
-- (float)contentScale;
-- (id)image;
-- (struct CGSize { float x1; float x2; })size;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 context:(id)arg3;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })glClearColor;
@@ -52,5 +48,9 @@
 - (void)willDrawView;
 - (void)_createFramebuffer;
 - (void)_destroyFramebuffer;
+- (void)dealloc;
+- (float)contentScale;
+- (id)image;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

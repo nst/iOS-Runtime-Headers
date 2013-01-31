@@ -29,8 +29,6 @@
 + (void)setMemoryCacheMinCapacity:(unsigned int)arg1;
 + (void)useRemoteLoader;
 
-- (void)dealloc;
-- (id)init;
 - (id)expireTilesWithType:(unsigned char)arg1 provider:(unsigned short)arg2 olderThan:(double)arg3;
 - (void)registerTileLoader:(Class)arg1;
 - (void)reportCorruptTile:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
@@ -38,6 +36,8 @@
 - (void)_activeTileGroupChanged:(id)arg1;
 - (void)closeDatabase;
 - (void)openDatabase;
+- (void)dealloc;
+- (id)init;
 - (void)shrinkDiskCacheToSize:(unsigned long long)arg1 finished:(id)arg2;
 - (int)networkHits;
 - (int)diskHits;
@@ -47,7 +47,7 @@
 - (void)tileServerProxy:(id)arg1 requestMovedToNetwork:(id)arg2;
 - (void)tileServerProxy:(id)arg1 receivedData:(id)arg2 forKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg3 forRequest:(id)arg4 fromDisk:(BOOL)arg5 userInfo:(id)arg6;
 - (void)cancelRequest:(id)arg1;
-- (void)preloadTiles:(id)arg1 progress:(id)arg2 finished:(id)arg3 error:(id)arg4;
+- (void)preloadTiles:(id)arg1 requireWiFi:(BOOL)arg2 progress:(id)arg3 finished:(id)arg4 error:(id)arg5;
 - (void)loadTiles:(id)arg1 progress:(id)arg2 finished:(id)arg3 error:(id)arg4;
 - (void)loadTilesFromCache:(id)arg1 progress:(id)arg2 finished:(id)arg3 error:(id)arg4;
 - (void)loadTilesFromCacheAndNetwork:(id)arg1 progress:(id)arg2 finished:(id)arg3 error:(id)arg4;
@@ -58,7 +58,7 @@
 - (void)endPreloadSession;
 - (void)beginPreloadSessionOfSize:(unsigned long long)arg1;
 - (void)loadTilesFromCacheAndNetwork:(id)arg1 progress:(id)arg2 finished:(id)arg3 error:(id)arg4 skipNetwork:(BOOL)arg5;
-- (void)_loadTilesFromServer:(id)arg1 checkDisk:(BOOL)arg2 allowNetworking:(BOOL)arg3;
+- (void)_loadTilesFromServer:(id)arg1 checkDisk:(BOOL)arg2 allowNetworking:(BOOL)arg3 requireWiFi:(BOOL)arg4;
 - (void)_preempt:(id)arg1;
 - (id)_pendingLoadForOriginalList:(id)arg1 acquireLock:(BOOL)arg2;
 - (void)_asyncDecodeTile:(id)arg1 forKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 completion:(id)arg3;

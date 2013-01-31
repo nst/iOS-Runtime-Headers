@@ -14,14 +14,14 @@
 + (id)getRequestOriginWithDictionary:(id)arg1 context:(id)arg2;
 + (id)getRequestOrigin;
 
-- (id)desiredAccuracy;
-- (id)groupIdentifier;
-- (id)searchTimeout;
-- (void)setDesiredAccuracy:(id)arg1;
 - (void)setSearchTimeout:(id)arg1;
 - (void)setMaxAge:(id)arg1;
 - (id)maxAge;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (void)setDesiredAccuracy:(id)arg1;
+- (id)searchTimeout;
+- (id)groupIdentifier;
+- (id)desiredAccuracy;
 
 @end

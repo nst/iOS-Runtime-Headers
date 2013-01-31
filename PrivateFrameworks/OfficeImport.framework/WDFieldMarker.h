@@ -20,8 +20,6 @@
 
 
 - (void)dealloc;
-- (id)properties;
-- (void)setLocked:(BOOL)arg1;
 - (void)setHasSeparator:(BOOL)arg1;
 - (BOOL)hasSeparator;
 - (void)setNested:(BOOL)arg1;
@@ -44,5 +42,7 @@
 - (int)runType;
 - (int)fieldMarkerType;
 - (unsigned char)fieldType;
+- (id)properties;
+- (void)setLocked:(BOOL)arg1;
 
 @end

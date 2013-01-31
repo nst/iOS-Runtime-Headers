@@ -26,11 +26,21 @@
 + (id)_pinsWithType:(int)arg1;
 + (struct CGSize { float x1; float x2; })_perceivedSize;
 
-- (id)_internal;
+- (void)_removeAllAnimations;
+- (void)setAnimatesDrop:(BOOL)arg1;
+- (unsigned int)pinColor;
+- (BOOL)animatesDrop;
+- (void)_dropAfterDraggingAndRevertPosition:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_liftForDraggingAnimated:(BOOL)arg1;
+- (id)_floatingImage;
+- (void)setPinColor:(unsigned int)arg1;
+- (void)setDragState:(unsigned int)arg1;
+- (void)setDragState:(unsigned int)arg1 animated:(BOOL)arg2;
 - (id)description;
 - (void)dealloc;
-- (void)_setDelegate:(id)arg1;
-- (id)_delegate;
+- (id)_image;
+- (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
+- (int)_state;
 - (void)setAnnotation:(id)arg1;
 - (void)_reset;
 - (BOOL)isHighlighted;
@@ -38,6 +48,7 @@
 - (void)animationDidStart:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
+- (id)_internal;
 - (id)_highlightedImage;
 - (void)_dropAfterDraggingDidEnd:(id)arg1;
 - (void)_liftBeforeDropDidEnd:(id)arg1;
@@ -56,18 +67,7 @@
 - (void)_setRotationRadians:(float)arg1 withAnimation:(id)arg2;
 - (void)_setMapType:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
-- (id)_image;
-- (void)setAnimatesDrop:(BOOL)arg1;
-- (unsigned int)pinColor;
-- (BOOL)animatesDrop;
-- (void)_dropAfterDraggingAndRevertPosition:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_liftForDraggingAnimated:(BOOL)arg1;
-- (id)_floatingImage;
-- (void)setPinColor:(unsigned int)arg1;
-- (void)setDragState:(unsigned int)arg1;
-- (void)setDragState:(unsigned int)arg1 animated:(BOOL)arg2;
-- (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
-- (void)_removeAllAnimations;
-- (int)_state;
+- (void)_setDelegate:(id)arg1;
+- (id)_delegate;
 
 @end

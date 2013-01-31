@@ -12,11 +12,11 @@
 @property BOOL enabled;
 
 
+- (void)drawScene:(id)arg1 withContext:(id)arg2;
+- (unsigned int)mapLayerPosition;
 - (void)dealloc;
 - (id)init;
 - (BOOL)enabled;
 - (void)setEnabled:(BOOL)arg1;
-- (void)drawScene:(id)arg1 withContext:(id)arg2;
-- (unsigned int)mapLayerPosition;
 
 @end

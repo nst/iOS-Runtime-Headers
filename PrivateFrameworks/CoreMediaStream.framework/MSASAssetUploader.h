@@ -24,7 +24,6 @@
 
 - (int)state;
 - (void).cxx_destruct;
-- (void)setState:(int)arg1;
 - (void)setFinishedAssetCollections:(id)arg1;
 - (id)finishedAssetCollections;
 - (void)setAssetToAssetCollectionMap:(id)arg1;
@@ -57,5 +56,6 @@
 - (void)registerAssetCollections:(id)arg1 completionBlock:(id)arg2;
 - (void)unregisterAssetCollections:(id)arg1;
 - (void)workQueueRetryOutstandingActivities;
+- (void)setState:(int)arg1;
 
 @end

@@ -25,13 +25,13 @@
 + (unsigned short)provider;
 + (id)providerName;
 
-- (void)forwardGeocode:(id)arg1 success:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
 - (void)cancel;
 - (void)dealloc;
-- (void)setErrorHandler:(id)arg1;
-- (id)errorHandler;
 - (void)setSuccessHandler:(id)arg1;
 - (id)successHandler;
 - (void)reverseGeocode:(id)arg1 success:(id)arg2 error:(id)arg3;
+- (void)forwardGeocode:(id)arg1 success:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
+- (void)setErrorHandler:(id)arg1;
+- (id)errorHandler;
 
 @end

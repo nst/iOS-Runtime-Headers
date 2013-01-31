@@ -61,6 +61,12 @@
 + (id)printerWithName:(id)arg1;
 + (BOOL)printerLookupWithName:(id)arg1 andTimeout:(double)arg2;
 
+- (id)localName;
+- (id)hostname;
+- (id)name;
+- (int)type;
+- (id)description;
+- (void)dealloc;
 - (struct _ipp_s { int x1; union _ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct _ipp_attribute_s {} *x3; struct _ipp_attribute_s {} *x4; struct _ipp_attribute_s {} *x5; int x6; struct _ipp_attribute_s {} *x7; int x8; }*)newMediaColFromPaper:(id)arg1 Source:(id)arg2 Type:(id)arg3 DoMargins:(BOOL)arg4;
 - (void)setTXTRecord:(id)arg1;
 - (id)privateObjectForKey:(id)arg1;
@@ -85,10 +91,8 @@
 - (void)setIsLocal:(BOOL)arg1;
 - (id)initWithName:(id)arg1 TXT:(id)arg2;
 - (BOOL)isLocal;
-- (id)name;
-- (int)type;
-- (id)description;
-- (void)dealloc;
+- (id)uuid;
+- (void)setHostname:(id)arg1;
 - (int)sendData:(const char *)arg1 ofLength:(int)arg2;
 - (int)printURL:(id)arg1 ofType:(id)arg2 printSettings:(id)arg3;
 - (int)abortJob;
@@ -108,10 +112,6 @@
 - (id)displayName;
 - (id)location;
 - (id)scheme;
-- (id)localName;
-- (id)hostname;
-- (id)uuid;
-- (void)setHostname:(id)arg1;
 - (void)resolve;
 - (BOOL)resolveWithTimeout:(int)arg1;
 - (void)setPort:(id)arg1;

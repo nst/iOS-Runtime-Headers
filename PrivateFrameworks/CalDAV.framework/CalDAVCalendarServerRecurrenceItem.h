@@ -16,17 +16,17 @@
 @property(readonly) BOOL isMaster;
 
 
+- (id)master;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isMaster;
+- (id)changes;
 - (id)recurrenceID;
 - (void)setRecurrenceID:(id)arg1;
-- (void)setChanges:(id)arg1;
-- (void)setMaster:(id)arg1;
-- (id)master;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (id)changes;
+- (void)setChanges:(id)arg1;
+- (void)setMaster:(id)arg1;
+- (BOOL)isMaster;
 
 @end

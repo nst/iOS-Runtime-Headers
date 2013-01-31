@@ -21,14 +21,15 @@
 @property(retain) NSString * fileName;
 @property BOOL wasDeleted;
 
-+ (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2;
++ (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
 
 - (id)description;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
+- (void)setFileName:(id)arg1;
+- (id)fileName;
 - (void)setWasDeleted:(BOOL)arg1;
 - (void)setMasterAsset:(id)arg1;
 - (void)setDerivedAssets:(id)arg1;
@@ -40,8 +41,7 @@
 - (id)masterAssetHash;
 - (void)setAssetCollectionID:(id)arg1;
 - (id)assetCollectionID;
-- (id)initWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
-- (void)setFileName:(id)arg1;
-- (id)fileName;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

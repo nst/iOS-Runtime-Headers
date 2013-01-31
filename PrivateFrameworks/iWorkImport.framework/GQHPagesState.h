@@ -59,12 +59,6 @@
 }
 
 
-- (id).cxx_construct;
-- (void)dealloc;
-- (void)setCurrentPageIndex:(int)arg1;
-- (int)currentPageIndex;
-- (int)mode;
-- (void)setMode:(int)arg1;
 - (void)openStateLayoutElementsAndStyles;
 - (BOOL)needAbsolutelyPositionedTables;
 - (void)setOutlineStyleType:(int)arg1;
@@ -125,9 +119,15 @@
 - (void)addWrapPoint:(id)arg1;
 - (const struct set<GQUtility::ObjcSharedPtr<GQDWrapPoint>, GQUtility::NSObjectComparator<GQDWrapPoint>, std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint>> > { struct _Rb_tree<GQUtility::ObjcSharedPtr<GQDWrapPoint>, GQUtility::ObjcSharedPtr<GQDWrapPoint>, std::_Identity<GQUtility::ObjcSharedPtr<GQDWrapPoint>>, GQUtility::NSObjectComparator<GQDWrapPoint>, std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint>> > { struct _Rb_tree_impl<GQUtility::NSObjectComparator<GQDWrapPoint>, false> { struct NSObjectComparator<GQDWrapPoint> { SEL x_1_3_1; } x_1_2_1; struct _Rb_tree_node_base { int x_2_3_1; struct _Rb_tree_node_base {} *x_2_3_2; struct _Rb_tree_node_base {} *x_2_3_3; struct _Rb_tree_node_base {} *x_2_3_4; } x_1_2_2; unsigned int x_1_2_3; } x_1_1_1; } x1; }*)wrapPoints;
 - (void)setHeaders:(struct __CFArray { }*)arg1;
+- (id).cxx_construct;
+- (void)dealloc;
 - (void)setOutlineLevel:(int)arg1;
 - (struct CGSize { float x1; float x2; })pageSize;
 - (id)drawableAtIndex:(int)arg1;
 - (void)inContent;
+- (void)setCurrentPageIndex:(int)arg1;
+- (int)currentPageIndex;
+- (int)mode;
+- (void)setMode:(int)arg1;
 
 @end

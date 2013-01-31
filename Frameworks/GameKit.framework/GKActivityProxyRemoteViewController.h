@@ -6,8 +6,8 @@
 }
 
 
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)performActivityType:(id)arg1 withActivityItemsAndSharingInfo:(id)arg2;
 - (id)whitelistedClassNames;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 
 @end

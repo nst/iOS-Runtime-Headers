@@ -7,7 +7,8 @@
 
 + (id)_bagCreationLock;
 
-- (id)_bagDefaultsDomain;
 - (id)init;
+- (BOOL)isInDebilitatedMode;
+- (id)_bagDefaultsDomain;
 
 @end

@@ -11,11 +11,11 @@
 + (id)localizedStringForStatusCode:(int)arg1;
 + (BOOL)isErrorStatusCode:(int)arg1;
 
-- (id)allHeaderFields;
 - (void)dealloc;
 - (int)statusCode;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)allHeaderFields;
 - (struct __SecTrust { }*)_peerTrust;
 - (void)_setPeerTrust:(struct __SecTrust { }*)arg1;
 - (id)_clientCertificateState;
@@ -24,13 +24,13 @@
 - (id)initWithURL:(id)arg1 statusCode:(int)arg2 HTTPVersion:(id)arg3 headerFields:(id)arg4;
 - (id)_peerCertificateChain;
 - (id)_initWithCFURLResponse:(struct _CFURLResponse { }*)arg1;
-- (id)expirationDate;
 - (double)expirationInterval;
 - (id)_dateFromExpires;
 - (BOOL)_getCacheControlMaxAge:(double*)arg1;
 - (BOOL)getAppleMaxAge:(double*)arg1;
 - (id)_iTunesStore_valueForHTTPHeader:(id)arg1;
 - (long long)maxExpectedContentLength;
+- (id)expirationDate;
 - (double)_maxAge;
 
 @end

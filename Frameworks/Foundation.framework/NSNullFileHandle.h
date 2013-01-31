@@ -6,11 +6,10 @@
 }
 
 
-- (int)fileDescriptor;
-- (void)seekToFileOffset:(unsigned long long)arg1;
-- (id)readDataOfLength:(unsigned int)arg1;
 - (void)closeFile;
 - (void)writeData:(id)arg1;
+- (int)fileDescriptor;
+- (id)readDataOfLength:(unsigned int)arg1;
 - (void)setReadabilityHandler:(id)arg1;
 - (id)readabilityHandler;
 - (void)setWriteabilityHandler:(id)arg1;
@@ -21,5 +20,6 @@
 - (unsigned long long)offsetInFile;
 - (id)readDataToEndOfFile;
 - (id)availableData;
+- (void)seekToFileOffset:(unsigned long long)arg1;
 
 @end

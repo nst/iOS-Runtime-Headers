@@ -32,6 +32,11 @@
 - (void)save:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void*)addressBook;
+- (void*)displayedPerson;
+- (void)setDisplayedPerson:(void*)arg1;
+- (void)cancel:(id)arg1;
+- (void)setNewPersonViewDelegate:(id)arg1;
 - (void)updateNavigationButtons;
 - (BOOL)showsCancelButton;
 - (void)setShowsCancelButton:(BOOL)arg1;
@@ -54,8 +59,7 @@
 - (void)applicationWillSuspend;
 - (void)applicationWillTerminate:(id)arg1;
 - (id)dataSource;
-- (void)setNewPersonViewDelegate:(id)arg1;
-- (void*)addressBook;
+- (void)setAddressBook:(void*)arg1;
 - (void)setParentGroup:(void*)arg1;
 - (void*)parentGroup;
 - (id)newPersonViewDelegate;
@@ -77,10 +81,6 @@
 - (int)abViewControllerType;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (void*)displayedPerson;
-- (void)setDisplayedPerson:(void*)arg1;
-- (void)cancel:(id)arg1;
-- (void)setAddressBook:(void*)arg1;
 - (BOOL)ckCanDismissWhenSuspending;
 
 @end

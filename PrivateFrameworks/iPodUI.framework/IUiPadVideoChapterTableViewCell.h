@@ -12,18 +12,18 @@
 @property(readonly) IUiPadVideoMovieChapterTableViewCellContentView * videoChapterContentView;
 @property(retain) MPMediaItem * mediaItem;
 
-+ (Class)contentViewClass;
 + (struct CGSize { float x1; float x2; })videoImageSize;
++ (Class)contentViewClass;
 
-- (void)setMediaItem:(id)arg1;
-- (id)mediaItem;
-- (void)dealloc;
-- (void)prepareForReuse;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
 - (BOOL)imageRequestIsValid:(id)arg1;
 - (id)videoImageRequest;
 - (void)setMediaItem:(id)arg1 chapterIndex:(unsigned int)arg2;
 - (void)updateContentView;
+- (void)dealloc;
+- (void)prepareForReuse;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
+- (void)setMediaItem:(id)arg1;
+- (id)mediaItem;
 
 @end

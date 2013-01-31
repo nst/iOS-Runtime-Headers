@@ -12,10 +12,10 @@
 + (id)sessionValidationFailedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)sessionValidationFailed;
 
-- (id)groupIdentifier;
-- (void)setErrorCode:(id)arg1;
-- (id)errorCode;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (void)setErrorCode:(id)arg1;
+- (id)errorCode;
+- (id)groupIdentifier;
 
 @end

@@ -15,10 +15,10 @@
 
 - (id)initWithPurchase:(id)arg1;
 - (id)purchaseManager;
-- (id)purchase;
 - (void)setPurchaseManager:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (void)start;
+- (id)purchase;
 
 @end

@@ -18,11 +18,11 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (void)addResponse:(id)arg1;
+- (id)responses;
 - (void)setOrderedResponses:(id)arg1;
 - (void)setResponseDescription:(id)arg1;
 - (id)responseDescription;
 - (id)orderedResponses;
-- (void)addResponse:(id)arg1;
-- (id)responses;
 
 @end

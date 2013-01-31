@@ -16,8 +16,6 @@
 
 
 - (void)dealloc;
-- (unsigned long)position;
-- (void)setPosition:(unsigned long)arg1;
 - (void)setDosName:(id)arg1;
 - (id)dosName;
 - (void)setMacName:(id)arg1;
@@ -32,5 +30,7 @@
 - (BOOL)linkAbsolute;
 - (id)initWithParagraph:(id)arg1;
 - (int)runType;
+- (unsigned long)position;
+- (void)setPosition:(unsigned long)arg1;
 
 @end

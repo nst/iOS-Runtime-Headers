@@ -17,13 +17,6 @@
 + (void)invalidateSharedModel;
 + (id)sharedModel;
 
-- (void).cxx_destruct;
-- (void)dealloc;
-- (id)init;
-- (unsigned int)count;
-- (void)controllerDidChangeContent:(id)arg1;
-- (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned int)arg4 newIndexPath:(id)arg5;
-- (id)_init;
 - (id)recordingsForSpotlightSearch:(id)arg1;
 - (BOOL)hasExistingRecordingForAudioFile:(id)arg1;
 - (void)deleteRecording:(id)arg1;
@@ -37,5 +30,12 @@
 - (id)_labelPresetsForQuery:(id)arg1;
 - (id)recordingWithID:(id)arg1;
 - (void)_generateAssetManifestPlist;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)count;
+- (id)_init;
+- (void)controllerDidChangeContent:(id)arg1;
+- (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned int)arg4 newIndexPath:(id)arg5;
 
 @end

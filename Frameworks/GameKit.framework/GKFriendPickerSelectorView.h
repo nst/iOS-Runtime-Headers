@@ -14,16 +14,16 @@
 @property unsigned int scope;
 
 
+- (void)setScope:(unsigned int)arg1;
+- (unsigned int)scope;
+- (void)dealloc;
+- (id)init;
+- (void)layoutSubviews;
 - (id)scopeControl;
 - (void)setupLabels;
 - (void)setScopeControl:(id)arg1;
 - (void)headerSegmentedControlChanged:(id)arg1;
 - (void)setShowsNearbyPlayers:(BOOL)arg1;
 - (BOOL)showsNearbyPlayers;
-- (void)dealloc;
-- (id)init;
-- (void)layoutSubviews;
-- (void)setScope:(unsigned int)arg1;
-- (unsigned int)scope;
 
 @end

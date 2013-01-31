@@ -24,14 +24,14 @@
 
 - (void)reset;
 - (void)dealloc;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)setDraggingSourceOperationMask:(int)arg1;
 - (int)draggingSourceOperationMask;
 - (id)draggingPasteboard;
 - (id)_touchedView;
 - (id)destinationView;
 - (void)setDestinationView:(id)arg1;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 
 @end

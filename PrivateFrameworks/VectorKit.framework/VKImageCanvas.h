@@ -17,8 +17,6 @@
 
 + (Class)contextClass;
 
-- (void)dealloc;
-- (id)camera;
 - (void)_spinScene;
 - (void)renderScene;
 - (void)cancelLoad;
@@ -27,5 +25,7 @@
 - (void)worldDisplayDidChange:(id)arg1;
 - (void)worldLayoutDidChange:(id)arg1;
 - (id)world;
+- (void)dealloc;
+- (id)camera;
 
 @end

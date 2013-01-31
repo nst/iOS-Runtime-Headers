@@ -20,9 +20,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)sourceURL;
 - (void)finalize;
 - (BOOL)isEmpty;
+- (id)sourceURL;
 - (id)initWithTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
 - (id)initWithURL:(id)arg1 trackID:(int)arg2 sourceTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3 targetTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg4;
 - (int)sourceTrackID;

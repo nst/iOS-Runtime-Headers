@@ -34,20 +34,6 @@
 
 + (Class)backstopViewClass;
 
-- (void)_backButtonAction:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)alertViewCancel:(id)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)reloadData;
-- (BOOL)hasAtLeastOneItem;
 - (void)foldingTransitionViewDidTakeSnapshot;
 - (void)foldingTransitionViewWillTakeSnapshot;
 - (BOOL)shouldShowReflection;
@@ -104,5 +90,19 @@
 - (id)copyArchivableContexts;
 - (void)_rentalInfoChangedNotification:(id)arg1;
 - (void)playMovie;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (BOOL)hasAtLeastOneItem;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)alertViewCancel:(id)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)reloadData;
+- (void)_backButtonAction:(id)arg1;
 
 @end

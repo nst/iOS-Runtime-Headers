@@ -22,7 +22,6 @@
 + (id)baseballMatchupWithDictionary:(id)arg1 context:(id)arg2;
 + (id)baseballMatchup;
 
-- (id)groupIdentifier;
 - (void)setStrikes:(id)arg1;
 - (id)strikes;
 - (void)setOuts:(id)arg1;
@@ -47,5 +46,6 @@
 - (id)awayErrors;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -10,12 +10,10 @@
 }
 
 
+- (id)toString;
 - (id)initWithString:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)connection;
-- (id)origin;
-- (id)toString;
 - (BOOL)videoDisplayAttribute:(int*)arg1 withHeight:(int*)arg2;
 - (void)fillImageArray:(id)arg1 imageArray:(struct imageTag { int x1; int x2; int x3; int x4; int x5; int x6; int x7; float x8; }*)arg2;
 - (void)createVideoImageAttr:(id)arg1 attrFormat:(id)arg2;
@@ -141,5 +139,7 @@
 - (int)audioRTCPPort;
 - (int)audioPort;
 - (const char *)ipAudio;
+- (id)connection;
+- (id)origin;
 
 @end

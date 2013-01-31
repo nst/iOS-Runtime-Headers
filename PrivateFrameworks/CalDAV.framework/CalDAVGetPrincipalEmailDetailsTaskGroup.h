@@ -17,15 +17,15 @@
 
 - (void)dealloc;
 - (id)principalURL;
-- (id)displayName;
-- (id)principalResult;
-- (void)_processPropFind:(id)arg1;
-- (void)setPrincipalResult:(id)arg1;
-- (id)initWithAccountInfoProvider:(id)arg1 principalURL:(id)arg2 taskManager:(id)arg3;
 - (void)_finishWithError:(id)arg1;
 - (void)setPrincipalURL:(id)arg1;
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
+- (id)principalResult;
+- (void)_processPropFind:(id)arg1;
+- (void)setPrincipalResult:(id)arg1;
+- (id)initWithAccountInfoProvider:(id)arg1 principalURL:(id)arg2 taskManager:(id)arg3;
+- (id)displayName;
 - (id)addresses;
 
 @end

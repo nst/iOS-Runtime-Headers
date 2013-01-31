@@ -13,6 +13,9 @@
 }
 
 
+- (int)characterSet;
+- (void)setPitch:(int)arg1;
+- (int)pitch;
 - (void)setName:(id)arg1;
 - (id)name;
 - (unsigned int)hash;
@@ -20,14 +23,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (int)fontFamily;
-- (void)setFontFamily:(int)arg1;
-- (id)initWithName:(id)arg1;
-- (int)characterSet;
-- (void)setPitch:(int)arg1;
-- (int)pitch;
 - (id)secondName;
 - (void)setCharacterSet:(int)arg1;
 - (void)setSecondName:(id)arg1;
+- (int)fontFamily;
+- (void)setFontFamily:(int)arg1;
+- (id)initWithName:(id)arg1;
 
 @end

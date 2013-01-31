@@ -14,17 +14,17 @@
 @property(retain) NSError * error;
 @property(retain) id result;
 
++ (id)response;
 + (id)unauthenticatedResponse;
 + (id)responseWithError:(id)arg1;
 + (id)codedPropertyKeys;
-+ (id)response;
 
+- (void)dealloc;
+- (id)error;
+- (id)result;
+- (void)setResult:(id)arg1;
 - (void)setTimeToLive:(double)arg1;
 - (double)timeToLive;
 - (void)setError:(id)arg1;
-- (void)dealloc;
-- (id)result;
-- (void)setResult:(id)arg1;
-- (id)error;
 
 @end

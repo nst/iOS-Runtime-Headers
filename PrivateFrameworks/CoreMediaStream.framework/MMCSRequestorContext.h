@@ -31,10 +31,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (unsigned long)count;
-- (void)setCount:(unsigned long)arg1;
-- (void)setContext:(id)arg1;
-- (void)setType:(int)arg1;
-- (id)context;
 - (void)setAuthTokens:(char **)arg1;
 - (char **)authTokens;
 - (void)setItemFlags:(unsigned int*)arg1;
@@ -46,5 +42,9 @@
 - (void)setEngine:(id)arg1;
 - (id)initWithEngine:(id)arg1 context:(id)arg2 type:(int)arg3;
 - (id)engine;
+- (void)setCount:(unsigned long)arg1;
+- (void)setContext:(id)arg1;
+- (void)setType:(int)arg1;
+- (id)context;
 
 @end

@@ -49,6 +49,19 @@
 @property float scaledLineHeight;
 
 
+- (void)setScaledLineHeight:(float)arg1;
+- (void)setScaledBaselineOffset:(float)arg1;
+- (void)setBaselineOffset:(float)arg1;
+- (void)setNumberOfLineFragments:(unsigned int)arg1;
+- (void)setTotalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })totalBounds;
+- (void)setActualScaleFactor:(float)arg1;
+- (BOOL)wantsScaledLineHeight;
+- (BOOL)wantsScaledBaselineOffset;
+- (BOOL)wantsBaselineOffset;
+- (unsigned int)maximumNumberOfLines;
+- (BOOL)wrapsForTruncationMode;
+- (BOOL)wantsNumberOfLineFragments;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setMaximumNumberOfLines:(unsigned int)arg1;
@@ -68,18 +81,5 @@
 - (void)setMinimumTrackingAdjustment:(float)arg1;
 - (float)minimumTrackingAdjustment;
 - (void)setActualTrackingAdjustment:(float)arg1;
-- (void)setScaledLineHeight:(float)arg1;
-- (void)setScaledBaselineOffset:(float)arg1;
-- (void)setBaselineOffset:(float)arg1;
-- (void)setNumberOfLineFragments:(unsigned int)arg1;
-- (void)setTotalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })totalBounds;
-- (void)setActualScaleFactor:(float)arg1;
-- (BOOL)wantsScaledLineHeight;
-- (BOOL)wantsScaledBaselineOffset;
-- (BOOL)wantsBaselineOffset;
-- (unsigned int)maximumNumberOfLines;
-- (BOOL)wrapsForTruncationMode;
-- (BOOL)wantsNumberOfLineFragments;
 
 @end

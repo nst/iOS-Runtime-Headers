@@ -19,8 +19,8 @@
 @property(retain) MPMediaQuery * itemsQuery;
 
 
-- (void)setMediaLibrary:(id)arg1;
-- (id)mediaLibrary;
+- (id)description;
+- (void)dealloc;
 - (id)lastSyncedDomainVersion;
 - (unsigned long long)transactionEntityRevision;
 - (void)setItemsQuery:(id)arg1;
@@ -29,7 +29,7 @@
 - (void)setLastSyncedEntityRevision:(unsigned long long)arg1;
 - (void)setTransactionEntityRevision:(unsigned long long)arg1;
 - (id)itemsQuery;
-- (id)description;
-- (void)dealloc;
+- (void)setMediaLibrary:(id)arg1;
+- (id)mediaLibrary;
 
 @end

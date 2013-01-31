@@ -8,33 +8,11 @@
     WebHistoryItemPrivate *_private;
 }
 
-+ (void)initialize;
 + (void)initWindowWatcherIfNecessary;
 + (id)entryWithURL:(id)arg1;
++ (void)initialize;
 
-- (void)setViewState:(id)arg1;
 - (id)alternateTitle;
-- (id)target;
-- (id)URL;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)URLString;
-- (id)dictionaryRepresentation;
-- (struct CGPoint { float x1; float x2; })_scrollPoint;
-- (void)_setViewportArguments:(id)arg1;
-- (void)_setScale:(float)arg1 isInitial:(BOOL)arg2;
-- (void)_setScrollPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)_viewportArguments;
-- (BOOL)_scaleIsInitial;
-- (void)finalize;
-- (id)title;
-- (float)_scale;
-- (void)setTitle:(id)arg1;
-- (id)children;
 - (unsigned long)_getWeeklyVisitCounts:(const int**)arg1;
 - (unsigned long)_getDailyVisitCounts:(const int**)arg1;
 - (id)_redirectURLs;
@@ -66,6 +44,28 @@
 - (struct CGPoint { float x1; float x2; })scrollPoint;
 - (id)initFromDictionaryRepresentation:(id)arg1;
 - (id)dictionaryRepresentationIncludingChildren:(BOOL)arg1;
+- (id)children;
+- (id)target;
+- (id)URL;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)URLString;
+- (id)dictionaryRepresentation;
+- (struct CGPoint { float x1; float x2; })_scrollPoint;
+- (void)_setViewportArguments:(id)arg1;
+- (void)_setScale:(float)arg1 isInitial:(BOOL)arg2;
+- (void)_setScrollPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)_viewportArguments;
+- (BOOL)_scaleIsInitial;
+- (void)finalize;
+- (id)title;
+- (float)_scale;
+- (void)setTitle:(id)arg1;
+- (void)setViewState:(id)arg1;
 - (oneway void)_webcore_releaseOnWebThread;
 - (oneway void)release;
 

@@ -14,8 +14,6 @@
 
 - (void)setProperties:(id)arg1;
 - (void)dealloc;
-- (id)properties;
-- (void)setFloating:(bool)arg1;
 - (void)propagateTextTypeToDrawables;
 - (id)imageName;
 - (id)imageData;
@@ -32,5 +30,7 @@
 - (bool)isFloating;
 - (id)drawable;
 - (BOOL)isDrawableOverridden;
+- (id)properties;
+- (void)setFloating:(bool)arg1;
 
 @end

@@ -12,10 +12,10 @@
 + (id)getDeferredObjectResponseWithDictionary:(id)arg1 context:(id)arg2;
 + (id)getDeferredObjectResponse;
 
-- (id)groupIdentifier;
-- (void)setObject:(id)arg1;
-- (id)object;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (void)setObject:(id)arg1;
+- (id)object;
+- (id)groupIdentifier;
 
 @end

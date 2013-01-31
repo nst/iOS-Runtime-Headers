@@ -15,7 +15,6 @@
 + (void)setHoldsWiFiAssertion:(BOOL)arg1;
 + (BOOL)holdsWiFiAssertion;
 
-- (void)addObserver:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)dealloc;
 - (id)init;
@@ -31,5 +30,6 @@
 - (void)_initNetworkObservation;
 - (BOOL)_isCurrentlyRoaming;
 - (BOOL)isCellularDataRoamingEnabled;
+- (void)addObserver:(id)arg1;
 
 @end

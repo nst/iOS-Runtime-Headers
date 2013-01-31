@@ -18,6 +18,9 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 
+- (id)copyCachedInstance;
+- (BOOL)_baselineMode;
+- (BOOL)_isStringDrawingTextStorage;
 - (id)initWithString:(id)arg1;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -34,9 +37,6 @@
 - (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
-- (id)copyCachedInstance;
-- (BOOL)_baselineMode;
-- (BOOL)_isStringDrawingTextStorage;
 - (id)attributesAtIndex:(unsigned int)arg1 longestEffectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 
 @end

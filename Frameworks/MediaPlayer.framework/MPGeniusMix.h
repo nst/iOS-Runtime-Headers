@@ -24,11 +24,19 @@
 + (id)artworkImageForMediaItem:(id)arg1 scaleMode:(int)arg2;
 + (id)mixQueue;
 
-- (BOOL)isDownloading;
+- (id)name;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (float)downloadProgress;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)playlist;
 - (void)preloadRepresentativeImageWithTileLength:(float)arg1 completionBlock:(id)arg2;
 - (id)representativeArtists;
-- (void)downloadMixWithCompletionHandler:(id)arg1;
+- (void)downloadMixWithPermissionHandler:(id)arg1 completionHandler:(id)arg2;
 - (BOOL)canPlayUsingNetworkType:(int)arg1;
 - (void)cancelDownload;
 - (struct CGImage { }*)_placeholderMixImageWithTileLength:(float)arg1;
@@ -45,14 +53,6 @@
 - (BOOL)isCloudMix;
 - (struct CGImage { }*)loadRepresentativeImageWithTileLength:(float)arg1 completionBlock:(id)arg2;
 - (id)initWithMPMediaPlaylist:(id)arg1;
-- (id)name;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (float)downloadProgress;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (BOOL)isDownloading;
 
 @end

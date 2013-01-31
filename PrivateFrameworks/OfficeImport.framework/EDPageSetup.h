@@ -22,11 +22,6 @@
 + (id)pageSetup;
 
 - (id)init;
-- (void)setOrientation:(int)arg1;
-- (void)setRightMargin:(float)arg1;
-- (void)setScale:(unsigned int)arg1;
-- (unsigned int)scale;
-- (int)orientation;
 - (float)footerMargin;
 - (unsigned int)fitToWidth;
 - (unsigned int)fitToHeight;
@@ -48,5 +43,10 @@
 - (float)topMargin;
 - (float)rightMargin;
 - (float)leftMargin;
+- (void)setOrientation:(int)arg1;
+- (void)setRightMargin:(float)arg1;
+- (void)setScale:(unsigned int)arg1;
+- (unsigned int)scale;
+- (int)orientation;
 
 @end

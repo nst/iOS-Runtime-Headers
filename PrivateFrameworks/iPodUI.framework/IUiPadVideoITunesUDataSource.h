@@ -8,8 +8,6 @@
 + (int)mediaEntityType;
 + (id)tabBarItemTitleKey;
 
-- (void)setQuery:(id)arg1;
-- (void)_setQuery:(id)arg1;
 - (id)detailMediaQueryForMediaItem:(id)arg1 baseQuery:(id)arg2;
 - (int)gridTitleStyle;
 - (BOOL)deleteRemovesEntireGroup;
@@ -17,5 +15,7 @@
 - (id)viewControllerContextForMediaQuery:(id)arg1;
 - (BOOL)shouldLoadLocalImagesSynchronously;
 - (int)filteredMediaTypes;
+- (void)setQuery:(id)arg1;
+- (void)_setQuery:(id)arg1;
 
 @end

@@ -16,12 +16,6 @@
 @property(retain) NSString * x_apple_ews_attachmentid;
 
 
-- (id)initWithURL:(id)arg1;
-- (void)setURL:(id)arg1;
-- (void)setSize:(int)arg1;
-- (id)initWithData:(id)arg1;
-- (void)setData:(id)arg1;
-- (int)size;
 - (void)setX_apple_ews_attachmentid:(id)arg1;
 - (id)x_apple_ews_attachmentid;
 - (void)setManaged_filename:(id)arg1;
@@ -32,10 +26,16 @@
 - (id)x_apple_filename;
 - (id)managed_filename;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
-- (id)filename;
+- (id)initWithURL:(id)arg1;
 - (BOOL)isBinary;
+- (void)setURL:(id)arg1;
+- (void)setSize:(int)arg1;
+- (id)initWithData:(id)arg1;
+- (void)setData:(id)arg1;
+- (int)size;
 - (void)setX_apple_filename:(id)arg1;
 - (void)setFmtype:(id)arg1;
 - (id)fmtype;
+- (id)filename;
 
 @end

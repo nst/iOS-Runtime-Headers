@@ -40,11 +40,12 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
-- (void)setPassword:(id)arg1;
-- (id)username;
-- (void)setUsername:(id)arg1;
+- (id)hostname;
 - (id)description;
 - (void).cxx_destruct;
+- (id)mailNumberOfPastDaysToSync;
+- (id)accountDescription;
+- (id)emailAddress;
 - (void)setSyncDefaultFoldersOnly:(BOOL)arg1;
 - (void)setEmbeddedCertificatePassword:(id)arg1;
 - (id)embeddedCertificatePassword;
@@ -61,15 +62,14 @@
 - (id)subtitle1Description;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (id)password;
-- (id)title;
-- (id)hostname;
-- (id)mailNumberOfPastDaysToSync;
-- (id)accountDescription;
-- (id)emailAddress;
 - (id)accountPersistentUUID;
 - (BOOL)syncDefaultFoldersOnly;
 - (BOOL)useSSL;
+- (id)password;
+- (id)title;
+- (void)setPassword:(id)arg1;
+- (id)username;
+- (void)setUsername:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
 
 @end

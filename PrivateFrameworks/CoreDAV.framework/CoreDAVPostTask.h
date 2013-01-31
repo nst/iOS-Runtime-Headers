@@ -10,8 +10,8 @@
 @property <CoreDAVTaskDelegate> * delegate;
 
 
+- (id)httpMethod;
 - (id)initWithDataPayload:(id)arg1 dataContentType:(id)arg2 atURL:(id)arg3 previousETag:(id)arg4;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)httpMethod;
 
 @end

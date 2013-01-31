@@ -54,21 +54,11 @@
 + (id)appProtocolStringWithProductIDCode:(unsigned int)arg1;
 + (id)bootloaderProtocolStringWithProductIDCode:(unsigned int)arg1;
 
-- (id)openSession;
-- (id)session;
-- (void)setSession:(id)arg1;
-- (id)progressHandler;
-- (void)dealloc;
-- (void)setServer:(id)arg1;
-- (void)setProgressHandler:(id)arg1;
-- (id)server;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 - (id)writeData:(id)arg1;
-- (id)accessory;
-- (id)protocolString;
-- (void)_accessoryDidDisconnect:(id)arg1;
-- (void)accessoryDidDisconnect:(id)arg1;
+- (void)dealloc;
 - (void)updateProgress:(double)arg1;
+- (void)setServer:(id)arg1;
+- (id)openSession;
 - (unsigned int)productIDCode;
 - (void)firmwareUpdateComplete:(id)arg1;
 - (id)applyFirmware:(id)arg1 progress:(id)arg2;
@@ -97,5 +87,15 @@
 - (void)setAccessory:(id)arg1;
 - (BOOL)findAccessory;
 - (void)setProductIDCode:(unsigned int)arg1;
+- (void)setProgressHandler:(id)arg1;
+- (id)server;
+- (id)progressHandler;
+- (id)session;
+- (void)setSession:(id)arg1;
+- (id)accessory;
+- (id)protocolString;
+- (void)_accessoryDidDisconnect:(id)arg1;
+- (void)accessoryDidDisconnect:(id)arg1;
+- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 
 @end

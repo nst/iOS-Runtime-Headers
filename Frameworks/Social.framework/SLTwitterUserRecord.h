@@ -24,8 +24,6 @@
 - (id)name;
 - (id)description;
 - (void).cxx_destruct;
-- (void)setObjectID:(id)arg1;
-- (id)objectID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)id_str;
@@ -35,5 +33,7 @@
 - (void)setProfile_image_url:(id)arg1;
 - (void)setScreen_name:(id)arg1;
 - (id)screen_name;
+- (void)setObjectID:(id)arg1;
+- (id)objectID;
 
 @end

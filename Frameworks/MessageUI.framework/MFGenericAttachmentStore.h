@@ -27,6 +27,9 @@
 
 - (id)description;
 - (void)dealloc;
+- (void)removeAttachmentForURL:(id)arg1;
+- (BOOL)setAttachment:(id)arg1 forURL:(id)arg2;
+- (id)attachments;
 - (BOOL)addAttachment:(id)arg1;
 - (unsigned long)sizeForScale:(unsigned int)arg1 imagesOnly:(BOOL)arg2;
 - (BOOL)scalingThrottled;
@@ -41,8 +44,5 @@
 - (void)_enqueueScaleAttachment:(id)arg1 withFlags:(unsigned int)arg2 originalSize:(unsigned int)arg3;
 - (void)setScalingThrottled:(BOOL)arg1;
 - (void)cancelImageScalingOperations;
-- (void)removeAttachmentForURL:(id)arg1;
-- (BOOL)setAttachment:(id)arg1 forURL:(id)arg2;
-- (id)attachments;
 
 @end

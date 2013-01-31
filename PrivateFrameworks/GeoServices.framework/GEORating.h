@@ -36,20 +36,16 @@
 @property int numberOfReviews;
 
 
-- (void)setScore:(double)arg1;
-- (double)score;
 - (id)provider;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setURL:(id)arg1;
-- (id)dictionaryRepresentation;
 - (void)setHasScore:(BOOL)arg1;
 - (BOOL)hasScore;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setProvider:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
 - (id)reviews;
 - (void)setHasNumberOfReviews:(BOOL)arg1;
 - (void)setHasNumberOfRatings:(BOOL)arg1;
@@ -71,7 +67,11 @@
 - (void)setReviews:(id)arg1;
 - (id)uRL;
 - (BOOL)hasURL;
-- (BOOL)readFrom:(id)arg1;
+- (void)setURL:(id)arg1;
+- (id)dictionaryRepresentation;
+- (void)setScore:(double)arg1;
+- (double)score;
+- (void)setProvider:(id)arg1;
 - (float)numberOfStars;
 
 @end

@@ -48,6 +48,9 @@
 
 - (void)dealloc;
 - (id)init;
+- (void)smsComposeControllerSendStarted:(id)arg1;
+- (void)smsComposeControllerCancelled:(id)arg1;
+- (void)smsComposeControllerDataInserted:(id)arg1;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (BOOL)canSendMail;
 - (void)shareContactFromButtonItem:(id)arg1;
@@ -84,8 +87,5 @@
 - (id)helper;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (void)smsComposeControllerSendStarted:(id)arg1;
-- (void)smsComposeControllerCancelled:(id)arg1;
-- (void)smsComposeControllerDataInserted:(id)arg1;
 
 @end

@@ -41,7 +41,14 @@
 + (double)GetTaskCompletionMustTerminateDuration:(unsigned int)arg1;
 + (BOOL)isValidProcessAssertionReason:(unsigned int)arg1;
 
-- (void)setClient:(id)arg1;
+- (id)client;
+- (void)invalidate;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)identifier;
+- (id)description;
+- (void)dealloc;
+- (void)setFlags:(unsigned int)arg1;
 - (int)ownerPID;
 - (unsigned int)assertionState;
 - (void)restoreSavedFlags;
@@ -70,17 +77,10 @@
 - (void)setAllowIdleSleepOverrideEnabled:(BOOL)arg1;
 - (void)setPreventIdleSleep:(BOOL)arg1;
 - (id)initWithClient:(id)arg1 ownerPID:(int)arg2 reason:(unsigned int)arg3 name:(id)arg4 flags:(unsigned int)arg5;
-- (void)invalidate;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)identifier;
-- (id)description;
-- (void)dealloc;
 - (void)setIdentifier:(id)arg1;
 - (unsigned int)flags;
 - (unsigned int)reason;
 - (BOOL)isValid;
-- (id)client;
-- (void)setFlags:(unsigned int)arg1;
+- (void)setClient:(id)arg1;
 
 @end

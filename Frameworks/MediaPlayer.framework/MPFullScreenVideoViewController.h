@@ -14,7 +14,11 @@
 @property int autorotationState;
 
 
-- (void)setItem:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)removeChildViewController:(id)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (id)videoOverlayViewIfLoaded;
 - (void)overlayTappedScaleModeButton:(id)arg1;
 - (void)overlayTappedBackButton:(id)arg1;
@@ -46,10 +50,6 @@
 - (void)setTVOutEnabled:(BOOL)arg1;
 - (id)videoOverlayView;
 - (BOOL)controlsOverlayVisible;
-- (void)dealloc;
-- (id)init;
-- (void)removeChildViewController:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)setItem:(id)arg1;
 
 @end

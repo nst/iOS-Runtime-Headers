@@ -24,10 +24,6 @@
 - (id)path;
 - (id)description;
 - (void)dealloc;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (void)setPath:(id)arg1;
 - (id)fileExtension;
 - (BOOL)isAudio;
 - (BOOL)isJPEG;
@@ -43,5 +39,9 @@
 - (void)setCanRequestThumbnail:(BOOL)arg1;
 - (BOOL)canRequestThumbnail;
 - (void)setCanRequestMetadata:(BOOL)arg1;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (void)setPath:(id)arg1;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 
 @end

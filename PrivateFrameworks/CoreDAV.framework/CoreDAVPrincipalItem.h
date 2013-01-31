@@ -22,11 +22,13 @@
 
 + (id)copyParseRules;
 
+- (void)write:(id)arg1;
+- (void)setHref:(id)arg1;
+- (id)href;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (void)setProperty:(id)arg1;
-- (id)property;
+- (id)authenticated;
 - (id)initTypeIsSelf;
 - (id)initTypeIsUnauthenticated;
 - (id)initTypeIsAuthenticated;
@@ -41,9 +43,7 @@
 - (void)setAll:(id)arg1;
 - (id)hashString;
 - (id)unauthenticated;
-- (void)write:(id)arg1;
-- (void)setHref:(id)arg1;
-- (id)href;
-- (id)authenticated;
+- (void)setProperty:(id)arg1;
+- (id)property;
 
 @end

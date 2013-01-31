@@ -25,9 +25,6 @@
 - (void)setString:(id)arg1;
 - (id)string;
 - (void)dealloc;
-- (void)setShowValue:(bool)arg1;
-- (int)position;
-- (void)setPosition:(int)arg1;
 - (void)setStringIndex:(unsigned int)arg1;
 - (unsigned int)stringIndex;
 - (double)rotationAngle;
@@ -52,5 +49,8 @@
 - (id)contentFormat;
 - (unsigned int)contentFormatId;
 - (id)graphicProperties;
+- (void)setShowValue:(bool)arg1;
+- (int)position;
+- (void)setPosition:(int)arg1;
 
 @end

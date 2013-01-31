@@ -36,12 +36,6 @@
 @property struct { double x1; double x2; double x3; double x4; } screenRect;
 
 
-- (void)dealloc;
-- (id)init;
-- (id)sublayers;
-- (id)superlayer;
-- (void)removeFromSuperlayer;
-- (void)addSublayer:(id)arg1;
 - (void)setHasMass:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })accumulatedCenterOffset;
 - (id)annotationMarker;
@@ -62,5 +56,11 @@
 - (void)layoutWithContext:(id)arg1;
 - (void)willLayoutWithContext:(id)arg1;
 - (void)drawWithContext:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)sublayers;
+- (id)superlayer;
+- (void)removeFromSuperlayer;
+- (void)addSublayer:(id)arg1;
 
 @end

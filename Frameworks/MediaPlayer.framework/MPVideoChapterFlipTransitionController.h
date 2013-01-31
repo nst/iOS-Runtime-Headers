@@ -17,7 +17,9 @@
 @property BOOL TVOutEnabled;
 
 
-- (BOOL)TVOutEnabled;
+- (void)dealloc;
+- (void)setNavigationBar:(id)arg1;
+- (id)navigationBar;
 - (void)setPlayAfterFlip:(BOOL)arg1;
 - (BOOL)playAfterFlip;
 - (id)_chapterGuideTitleLabel;
@@ -30,9 +32,7 @@
 - (void)_showChapterGuideNavigationViews;
 - (void)performTransition:(unsigned int)arg1;
 - (void)setTVOutEnabled:(BOOL)arg1;
+- (BOOL)TVOutEnabled;
 - (int)_interfaceOrientation;
-- (void)dealloc;
-- (void)setNavigationBar:(id)arg1;
-- (id)navigationBar;
 
 @end

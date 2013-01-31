@@ -10,8 +10,8 @@
 
 - (int)compare:(id)arg1;
 - (id)description;
-- (int)value;
 - (id)initWithRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 value:(int)arg2;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
+- (int)value;
 
 @end

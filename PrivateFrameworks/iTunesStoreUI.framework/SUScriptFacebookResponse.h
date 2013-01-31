@@ -17,13 +17,13 @@
 + (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 
-- (id)bodyData;
 - (int)HTTPStatusCode;
 - (id)initWithData:(id)arg1 response:(id)arg2 error:(id)arg3;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (void)dealloc;
 - (id)attributeKeys;
+- (void)dealloc;
 - (id)error;
+- (id)bodyData;
 
 @end

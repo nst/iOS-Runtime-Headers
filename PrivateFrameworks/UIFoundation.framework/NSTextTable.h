@@ -12,12 +12,6 @@
 
 + (void)initialize;
 
-- (void)dealloc;
-- (id)init;
-- (void)setNumberOfColumns:(unsigned int)arg1;
-- (unsigned int)numberOfColumns;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)_descriptionAtIndex:(unsigned int)arg1 text:(id)arg2;
 - (void)_setTableFlags:(unsigned int)arg1;
 - (unsigned int)_tableFlags;
@@ -34,5 +28,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsRectForBlock:(id)arg1 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 textContainer:(id)arg4 characterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForBlock:(id)arg1 layoutAtPoint:(struct CGPoint { float x1; float x2; })arg2 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 textContainer:(id)arg4 characterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5;
 - (void)_takeValuesFromTextBlock:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setNumberOfColumns:(unsigned int)arg1;
+- (unsigned int)numberOfColumns;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

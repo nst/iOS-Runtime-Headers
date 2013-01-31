@@ -9,10 +9,10 @@
 }
 
 
+- (void)layoutSublayers;
 - (void)dealloc;
 - (id)init;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)setNeedsDisplay;
-- (void)layoutSublayers;
 
 @end

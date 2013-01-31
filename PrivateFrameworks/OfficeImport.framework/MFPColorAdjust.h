@@ -22,8 +22,6 @@
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)init;
-- (void)setEnabled:(BOOL)arg1;
-- (BOOL)isEnabled;
 - (void)setRecolorMap:(id)arg1;
 - (id)recolorMap;
 - (void)setGamma:(float)arg1;
@@ -39,5 +37,7 @@
 - (struct MFPColorMatrix { float x1[5][5]; }*)colorMatrix;
 - (float)threshold;
 - (void)setThreshold:(float)arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (BOOL)isEnabled;
 
 @end

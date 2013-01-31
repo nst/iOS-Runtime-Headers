@@ -5,11 +5,11 @@
 @class <PLActivityViewControllerDelegate>, UIViewController, NSArray;
 
 @interface PLActivityViewController : UIActivityViewController  {
-    int _idiom;
-    int _mode;
     UIViewController *_referenceViewController;
     NSArray *_photosActivities;
+    int _mode;
     <PLActivityViewControllerDelegate> *_delegate;
+    int _idiom;
 }
 
 @property(retain) UIViewController * referenceViewController;
@@ -19,23 +19,24 @@
 @property int mode;
 
 + (id)applicationActivitiesForMode:(int)arg1 interfaceIdiom:(int)arg2;
++ (void)trackUserActivity:(id)arg1 forAssets:(id)arg2;
 
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (BOOL)_shouldShowSystemActivity:(id)arg1;
-- (void)_performActivity:(id)arg1;
-- (int)mode;
-- (void)setMode:(int)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)setPhotosActivities:(id)arg1;
 - (void)setIdiom:(int)arg1;
 - (int)idiom;
+- (void)setPhotosActivities:(id)arg1;
 - (id)referenceViewController;
 - (void)_cleanupWithSuccess:(BOOL)arg1;
 - (id)photosActivities;
 - (void)setPublishingActivityDelegate:(id)arg1;
 - (void)setReferenceViewController:(id)arg1;
 - (id)initWithManagedAssets:(id)arg1 forMode:(int)arg2 interfaceIdiom:(int)arg3;
+- (BOOL)_shouldShowSystemActivity:(id)arg1;
+- (void)_performActivity:(id)arg1;
+- (int)mode;
+- (void)setMode:(int)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 
 @end

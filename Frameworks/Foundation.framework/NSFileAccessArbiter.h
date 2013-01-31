@@ -17,6 +17,7 @@
 
 
 - (void)dealloc;
+- (id)rootNode;
 - (void)finalize;
 - (void)stopArbitrating;
 - (id)initWithQueue:(id)arg1 isSubarbiter:(BOOL)arg2 listener:(id)arg3;
@@ -52,6 +53,5 @@
 - (void)_revokeAccessClaim:(id)arg1;
 - (void)_handleCanceledClient:(id)arg1;
 - (void)_handleMessage:(id)arg1 fromClient:(id)arg2;
-- (id)rootNode;
 
 @end

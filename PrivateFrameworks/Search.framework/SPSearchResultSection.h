@@ -33,7 +33,15 @@
 @property(retain) NSMutableArray * results;
 
 
-- (id)icon;
+- (void)setScheme:(id)arg1;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)results;
+- (void)setResults:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)setHasDomain:(BOOL)arg1;
 - (BOOL)hasScheme;
 - (BOOL)hasCategory;
@@ -45,12 +53,11 @@
 - (BOOL)hasEquivalentResults:(id)arg1;
 - (void)setHasFlags:(BOOL)arg1;
 - (BOOL)hasFlags;
-- (id)results;
-- (void)setResults:(id)arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
+- (void)setFlags:(int)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setDomain:(unsigned int)arg1;
+- (id)resultsAtIndex:(unsigned int)arg1;
+- (unsigned int)resultsCount;
 - (id)category;
 - (unsigned int)domain;
 - (void)setCategory:(id)arg1;
@@ -60,13 +67,6 @@
 - (id)scheme;
 - (id)displayIdentifier;
 - (void)clearResults;
-- (void)setScheme:(id)arg1;
-- (id)resultsAtIndex:(unsigned int)arg1;
-- (unsigned int)resultsCount;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (void)setDomain:(unsigned int)arg1;
-- (void)setFlags:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)icon;
 
 @end

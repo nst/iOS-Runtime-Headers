@@ -12,7 +12,6 @@
 
 
 - (void)dealloc;
-- (id)initWithProperties:(id)arg1;
 - (int)performFetchAttachmentRequest:(id)arg1 consumer:(id)arg2;
 - (int)performFetchMessageSearchResultRequests:(id)arg1 consumer:(id)arg2;
 - (int)performResolveRecipientsRequest:(id)arg1 consumer:(id)arg2;
@@ -46,5 +45,6 @@
 - (int)performMailboxRequest:(id)arg1 mailbox:(id)arg2 previousTag:(id)arg3 consumer:(id)arg4;
 - (BOOL)setFolderIdsThatExternalClientsCareAboutAdded:(id)arg1 deleted:(id)arg2 foldersTag:(id)arg3;
 - (void)applyNewAccountProperties:(id)arg1 forceSave:(BOOL)arg2;
+- (id)initWithProperties:(id)arg1;
 
 @end

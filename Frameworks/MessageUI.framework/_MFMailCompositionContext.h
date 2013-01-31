@@ -45,6 +45,11 @@
 - (id)initWithURL:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)autosaveIdentifier;
+- (id)sendingAddress;
+- (void)setSendingAddress:(id)arg1;
+- (id)attachments;
+- (id)messageBody;
 - (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
 - (void)setMessageBody:(id)arg1 isHTML:(BOOL)arg2;
 - (id)subject;
@@ -81,10 +86,5 @@
 - (id)originalMessage;
 - (id)loadingContext;
 - (int)composeType;
-- (id)sendingAddress;
-- (void)setSendingAddress:(id)arg1;
-- (id)attachments;
-- (id)messageBody;
-- (id)autosaveIdentifier;
 
 @end

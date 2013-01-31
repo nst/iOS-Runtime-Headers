@@ -41,8 +41,6 @@
 
 
 - (void)dealloc;
-- (void)setRightMargin:(float)arg1;
-- (id)fill;
 - (BOOL)isTextHorizontalOverflowOverridden;
 - (void)setTextHorizontalOverflow:(int)arg1;
 - (int)textHorizontalOverflow;
@@ -91,5 +89,7 @@
 - (float)topMargin;
 - (float)rightMargin;
 - (float)leftMargin;
+- (void)setRightMargin:(float)arg1;
+- (id)fill;
 
 @end

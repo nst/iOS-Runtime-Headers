@@ -21,8 +21,8 @@
 @property(readonly) int backgroundStyleShare;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (void)_setIgnoresDismiss:(BOOL)arg1;
 - (int)backgroundStyleShare;
@@ -49,6 +49,7 @@
 - (void)tearDownUserInterface;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)init;
 - (int)backgroundStyle;
@@ -61,6 +62,5 @@
 - (id)viewController;
 - (void)setViewController:(id)arg1;
 - (id)presentingViewController;
-- (id)attributeKeys;
 
 @end

@@ -31,18 +31,11 @@
 @property(copy) NSDate * theatricalReleaseDate;
 @property(copy) NSURL * trailerUri;
 
-+ (id)movie;
 + (id)movieWithDictionary:(id)arg1 context:(id)arg2;
++ (id)movie;
 
-- (id)groupIdentifier;
-- (void)setRating:(id)arg1;
-- (id)rating;
 - (void)setName:(id)arg1;
 - (id)name;
-- (void)setDirectors:(id)arg1;
-- (id)directors;
-- (id)reviews;
-- (void)setReviews:(id)arg1;
 - (void)setTrailerUri:(id)arg1;
 - (id)trailerUri;
 - (void)setTheatricalReleaseDate:(id)arg1;
@@ -83,5 +76,12 @@
 - (id)actors;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setDirectors:(id)arg1;
+- (id)directors;
+- (id)reviews;
+- (void)setReviews:(id)arg1;
+- (id)groupIdentifier;
+- (void)setRating:(id)arg1;
+- (id)rating;
 
 @end

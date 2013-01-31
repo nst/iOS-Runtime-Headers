@@ -12,12 +12,12 @@
 @property(readonly) id target;
 
 
+- (BOOL)_respondsToProtocolSelector:(SEL)arg1;
 - (id)target;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)initWithTarget:(id)arg1 protocol:(id)arg2;
-- (BOOL)_respondsToProtocolSelector:(SEL)arg1;
 
 @end

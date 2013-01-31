@@ -33,12 +33,12 @@
 @property <CalendarEventLoaderDelegate> * delegate;
 
 
-- (void)_reload;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (void)setPadding:(unsigned int)arg1;
 - (void)timeZoneChanged;
+- (void)_reload;
+- (void)setPadding:(unsigned int)arg1;
 - (id)occurrencesForStartDate:(id)arg1 endDate:(id)arg2 preSorted:(BOOL)arg3 waitForLoad:(BOOL)arg4;
 - (BOOL)loadIsComplete;
 - (void)setPreferredReloadStartDate:(id)arg1 endDate:(id)arg2;

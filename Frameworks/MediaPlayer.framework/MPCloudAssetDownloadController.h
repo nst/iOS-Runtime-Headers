@@ -11,6 +11,8 @@
 
 + (id)sharedAssetDownloadController;
 
+- (void)dealloc;
+- (id)init;
 - (void)_downloadFileSizeAvailableNotification:(id)arg1;
 - (void)_downloadFailedNotification:(id)arg1;
 - (void)_downloadSucceededNotification:(id)arg1;
@@ -21,13 +23,14 @@
 - (id)_newAssetForExistingDownloadSession:(id)arg1;
 - (id)_newAVAssetForMediaItem:(id)arg1;
 - (BOOL)_canPlayCachedAssetAtPath:(id)arg1;
+- (void)_stopDownloadsBasedOnCurrentNetworkIfNeeded;
 - (id)_cachedAssetDestinationDirectory;
 - (void)_removeNotificationObserversForDownloadSession:(id)arg1;
 - (void)_resumedPausedDownloadSessionsForCompletedMediaItemID:(unsigned long long)arg1;
 - (void)_cancelDownloadSession:(id)arg1;
+- (void)_matchCellularDataRestrictedDidChangeNotification:(id)arg1;
+- (void)_networkTypeChangedNotification:(id)arg1;
 - (id)assetForMediaItem:(id)arg1;
 - (void)prioritizeDownloadSessionForMediaItem:(id)arg1;
-- (void)dealloc;
-- (id)init;
 
 @end

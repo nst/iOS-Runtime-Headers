@@ -37,14 +37,6 @@
 + (id)tabBarItemTitleKey;
 + (id)tabBarItemIconName;
 
-- (void)invalidate;
-- (void)dealloc;
-- (BOOL)isEditing;
-- (void)setBackButtonTitle:(id)arg1;
-- (id)backButtonTitle;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (void)reloadData;
 - (BOOL)shouldHideContainerNavigationBar;
 - (id)completionOffering;
 - (void)setIgnoresInvalidation:(BOOL)arg1;
@@ -73,5 +65,13 @@
 - (id)modalContext;
 - (void)configureMoreListTableCell:(id)arg1;
 - (int)filteredMediaTypes;
+- (void)invalidate;
+- (void)dealloc;
+- (BOOL)isEditing;
+- (void)setBackButtonTitle:(id)arg1;
+- (id)backButtonTitle;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (void)reloadData;
 
 @end

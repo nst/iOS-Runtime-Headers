@@ -19,15 +19,6 @@
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
-- (void)setEnd:(id)arg1;
-- (void)setStart:(id)arg1;
-- (id)end;
-- (id)start;
-- (id)limit;
-- (void)setLimit:(id)arg1;
-- (void)setMissed:(BOOL)arg1;
-- (BOOL)missed;
 - (void)setOutgoingPhoneNumber:(id)arg1;
 - (id)outgoingPhoneNumber;
 - (void)setIncomingPhoneNumber:(id)arg1;
@@ -38,5 +29,14 @@
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)limit;
+- (void)setLimit:(id)arg1;
+- (void)setMissed:(BOOL)arg1;
+- (BOOL)missed;
+- (void)setEnd:(id)arg1;
+- (void)setStart:(id)arg1;
+- (id)end;
+- (id)start;
+- (id)groupIdentifier;
 
 @end

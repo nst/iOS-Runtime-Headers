@@ -22,10 +22,6 @@
 + (id)appInfoWithDictionary:(id)arg1 context:(id)arg2;
 + (id)appInfo;
 
-- (id)groupIdentifier;
-- (void)setAppName:(id)arg1;
-- (id)appName;
-- (id)providerName;
 - (void)setSupportedSchemes:(id)arg1;
 - (id)supportedSchemes;
 - (void)setSupportedCommands:(id)arg1;
@@ -47,5 +43,9 @@
 - (void)setAppId:(id)arg1;
 - (id)appId;
 - (id)encodedClassName;
+- (id)providerName;
+- (void)setAppName:(id)arg1;
+- (id)appName;
+- (id)groupIdentifier;
 
 @end

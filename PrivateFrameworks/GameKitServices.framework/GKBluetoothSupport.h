@@ -5,14 +5,14 @@
 @interface GKBluetoothSupport : NSObject  {
 }
 
++ (int)_directBTStatus;
++ (Class)_bluetoothManagerClass;
++ (void)cleanup;
++ (void)initialize;
 + (void)turnBluetoothOn;
 + (void)_btPowerStateChanged:(id)arg1;
 + (int)_determineBluetoothStatus;
 + (int)bluetoothStatus;
-+ (void)cleanup;
-+ (void)initialize;
-+ (int)_directBTStatus;
-+ (Class)_bluetoothManagerClass;
 
 
 @end

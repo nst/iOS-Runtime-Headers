@@ -72,24 +72,11 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (void)setCategories:(id)arg1;
 - (id)responseType;
+- (void)setLocation:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (void)setBody:(id)arg1;
-- (id)subject;
-- (void)setSubject:(id)arg1;
-- (id)startTime;
-- (id)categories;
-- (id)location;
-- (id)timeZone;
-- (id)body;
-- (void)setTimeZone:(id)arg1;
-- (void)setStartTime:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setLocation:(id)arg1;
 - (id)endTime;
 - (id)responseRequested;
 - (id)eventByMergingInEvent:(id)arg1 account:(id)arg2;
@@ -179,6 +166,19 @@
 - (id)uidForCalFramework;
 - (id)eventUID;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
+- (void)setBody:(id)arg1;
+- (id)subject;
+- (void)setSubject:(id)arg1;
+- (id)startTime;
+- (id)categories;
+- (id)location;
+- (id)timeZone;
+- (id)body;
+- (void)setTimeZone:(id)arg1;
+- (void)setStartTime:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setCategories:(id)arg1;
 - (void)setAttendees:(id)arg1;
 - (id)attendees;
 

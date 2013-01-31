@@ -21,7 +21,9 @@
 - (void)setITunesStoreURL:(BOOL)arg1;
 - (id)initWithURLBagKey:(id)arg1;
 - (id)URLBagKey;
-- (void)setURLBagKey:(id)arg1;
+- (id)targetIdentifier;
+- (BOOL)isITunesStoreURL;
+- (void)setTargetIdentifier:(id)arg1;
 - (id)URL;
 - (id)initWithURL:(id)arg1;
 - (id)description;
@@ -29,8 +31,6 @@
 - (void)dealloc;
 - (id)init;
 - (void)setURL:(id)arg1;
-- (id)targetIdentifier;
-- (BOOL)isITunesStoreURL;
-- (void)setTargetIdentifier:(id)arg1;
+- (void)setURLBagKey:(id)arg1;
 
 @end

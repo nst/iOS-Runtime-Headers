@@ -36,8 +36,8 @@
 @property(readonly) id sourceTypeSavedPhotosAlbum;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (BOOL)_sendDidPickWithInfo:(id)arg1;
 - (BOOL)_sendCancel;
@@ -71,18 +71,18 @@
 - (void)setNativeViewController:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)valueForProperty:(id)arg1;
 - (id)mediaTypes;
 - (void)setMediaTypes:(id)arg1;
 - (id)isFlashAvailableForCameraDevice:(id)arg1;
 - (id)availableCaptureModesForCameraDevice:(id)arg1;
-- (id)isCameraDeviceAvailable:(id)arg1;
 - (id)availableMediaTypesForSourceType:(id)arg1;
 - (void)setSourceType:(id)arg1;
+- (id)isCameraDeviceAvailable:(id)arg1;
 - (id)isSourceTypeAvailable:(id)arg1;
 - (id)sourceType;
-- (id)attributeKeys;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 
 @end

@@ -5,13 +5,13 @@
 @class NSDate, NSString;
 
 @interface PLCloudSharingViewedStateChangeJob : PLCloudSharingJob  {
-    BOOL _assetCollectionHasUnreadComments;
-    NSDate *_assetCollectionLastViewedCommentDate;
-    int _albumUnviewedAssetCount;
     NSString *_albumGUID;
-    int _jobType;
-    BOOL _albumHasUnseenContent;
+    NSDate *_assetCollectionLastViewedCommentDate;
+    BOOL _assetCollectionHasUnreadComments;
     NSString *_assetCollectionGUID;
+    int _albumUnviewedAssetCount;
+    BOOL _albumHasUnseenContent;
+    int _jobType;
 }
 
 @property int jobType;
@@ -29,7 +29,6 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)run;
 - (void)_executeAssetLastViewedCommentDateChangedWithGroup;
 - (void)_executeAssetCommentsReadStateChangedWithGroup;
 - (void)_executeAlbumUnviewedAssetCountChangedWithGroup;
@@ -52,5 +51,6 @@
 - (int)daemonOperation;
 - (void)runDaemonSide;
 - (id)initFromXPCObject:(id)arg1;
+- (void)run;
 
 @end

@@ -14,14 +14,14 @@
 + (id)recipientSearchWithDictionary:(id)arg1 context:(id)arg2;
 + (id)recipientSearch;
 
-- (id)recipient;
-- (void)setRecipient:(id)arg1;
-- (id)groupIdentifier;
-- (void)setRecipients:(id)arg1;
-- (id)recipients;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)recipients;
+- (id)recipient;
+- (void)setRecipient:(id)arg1;
+- (id)groupIdentifier;
+- (void)setRecipients:(id)arg1;
 
 @end

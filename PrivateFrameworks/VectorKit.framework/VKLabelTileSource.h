@@ -15,7 +15,6 @@
 @property int labelScaleFactor;
 
 
-- (void)dealloc;
 - (id)featurePool;
 - (int)_labelTileType;
 - (int)defaultMaximumZoomLevel;
@@ -28,5 +27,6 @@
 - (int)labelScaleFactor;
 - (void)setLocalizeLabels:(BOOL)arg1;
 - (BOOL)localizeLabels;
+- (void)dealloc;
 
 @end

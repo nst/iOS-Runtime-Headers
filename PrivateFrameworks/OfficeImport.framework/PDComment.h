@@ -19,6 +19,8 @@
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)init;
+- (void)setAuthorId:(unsigned int)arg1;
+- (unsigned int)authorId;
 - (void)setIndex:(unsigned int)arg1;
 - (unsigned int)index;
 - (void)setDate:(id)arg1;
@@ -27,7 +29,5 @@
 - (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (id)date;
 - (void)setText:(id)arg1;
-- (void)setAuthorId:(unsigned int)arg1;
-- (unsigned int)authorId;
 
 @end

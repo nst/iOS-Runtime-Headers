@@ -5,6 +5,7 @@
 @interface _PFRoutines : NSObject  {
 }
 
++ (void)initialize;
 + (BOOL)isUbiquitousURLDownloaded:(id)arg1 error:(id*)arg2;
 + (BOOL)isUbiquitousURLUploaded:(id)arg1 error:(id*)arg2;
 + (id)_replaceBaseline:(id)arg1 inOrderedSet:(id)arg2 withOrderedSet:(id)arg3;
@@ -46,7 +47,6 @@
 + (id)newMutableOrderedSetFromCollection:(id)arg1;
 + (id)newOrderedSetFromCollection:(id)arg1 byRemovingItems:(id)arg2;
 + (id)_newCollectionFromCollection:(id)arg1 forParentContext:(id)arg2 andClass:(Class)arg3;
-+ (void)initialize;
 
 
 @end

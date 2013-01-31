@@ -10,10 +10,7 @@
 
 + (void)initialize;
 
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (unsigned int)count;
+- (unsigned int)capacity;
 - (void)enumerateElementsUsingBlock:(id)arg1;
 - (void)insertElement:(void*)arg1 atIndex:(unsigned int)arg2;
 - (void*)pointerToElement:(unsigned int)arg1 directlyAccessibleElements:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
@@ -25,7 +22,10 @@
 - (void)removeElementAtIndex:(unsigned int)arg1;
 - (void)insertElements:(void*)arg1 count:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (id)initWithElementSize:(unsigned int)arg1 capacity:(unsigned int)arg2;
-- (unsigned int)capacity;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)count;
 - (void*)elementAtIndex:(unsigned int)arg1;
 - (void)addElement:(void*)arg1;
 

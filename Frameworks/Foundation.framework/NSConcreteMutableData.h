@@ -13,22 +13,22 @@
 }
 
 
+- (void)setLength:(unsigned int)arg1;
 - (const void*)bytes;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (void)dealloc;
 - (id)init;
 - (unsigned int)length;
-- (void)replaceBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBytes:(const void*)arg2;
 - (void*)mutableBytes;
 - (id)initWithLength:(unsigned int)arg1;
 - (void)appendData:(id)arg1;
 - (void)finalize;
 - (void)appendBytes:(const void*)arg1 length:(unsigned int)arg2;
-- (void)increaseLengthBy:(unsigned int)arg1;
-- (void)setLength:(unsigned int)arg1;
 - (void)_freeBytes;
 - (void)resetBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)_bytesAreVM;
 - (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 freeWhenDone:(BOOL)arg4 bytesAreVM:(BOOL)arg5;
+- (void)increaseLengthBy:(unsigned int)arg1;
+- (void)replaceBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBytes:(const void*)arg2;
 
 @end

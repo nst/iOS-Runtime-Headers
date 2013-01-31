@@ -28,6 +28,13 @@
 - (int)type;
 - (void)dealloc;
 - (id)init;
+- (void)avChatStateChangedFrom:(unsigned int)arg1 to:(unsigned int)arg2 reason:(unsigned int)arg3;
+- (void)conference:(id)arg1 receivedCancelledInvitationFromIMHandle:(id)arg2;
+- (void)conference:(id)arg1 handleMissedInvitationFromIMHandle:(id)arg2;
+- (void)conference:(id)arg1 receivedInvitationFromIMHandle:(id)arg2;
+- (void)inviteFailedFromIMHandle:(id)arg1 reason:(int)arg2;
+- (void)invitedToIMAVChat:(id)arg1;
+- (id)avChat;
 - (id)currentCallConnectedDate;
 - (struct CGSize { float x1; float x2; })remoteCameraAspectRatio;
 - (void)setFaceTimePaused:(BOOL)arg1;
@@ -76,13 +83,6 @@
 - (struct CGSize { float x1; float x2; })localCameraAspectRatioForOrientation:(unsigned int)arg1;
 - (id)remoteParticipant;
 - (id)_initWithType:(int)arg1;
-- (void)avChatStateChangedFrom:(unsigned int)arg1 to:(unsigned int)arg2 reason:(unsigned int)arg3;
-- (void)conference:(id)arg1 receivedCancelledInvitationFromIMHandle:(id)arg2;
-- (void)conference:(id)arg1 handleMissedInvitationFromIMHandle:(id)arg2;
-- (void)conference:(id)arg1 receivedInvitationFromIMHandle:(id)arg2;
-- (void)inviteFailedFromIMHandle:(id)arg1 reason:(int)arg2;
-- (void)invitedToIMAVChat:(id)arg1;
-- (id)avChat;
 - (BOOL)havePreviouslyConferencedWithID:(id)arg1;
 
 @end

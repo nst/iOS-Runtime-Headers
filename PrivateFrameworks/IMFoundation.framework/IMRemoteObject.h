@@ -13,21 +13,14 @@
 @property(readonly) NSObject<OS_xpc_object> * connection;
 @property(readonly) BOOL isValid;
 
-+ (void)initialize;
 + (id)_remoteObjects;
 + (void)_unregisterIMRemoteObject:(id)arg1;
 + (void)_registerIMRemoteObject:(id)arg1;
++ (void)initialize;
 
 - (void)invalidate;
 - (id)description;
 - (void)dealloc;
-- (id)connection;
-- (void)finalize;
-- (void)forwardInvocation:(id)arg1;
-- (id)methodSignatureForSelector:(SEL)arg1;
-- (BOOL)isValid;
-- (void)setPid:(int)arg1;
-- (int)pid;
 - (id)_queue;
 - (id)initWithPortName:(id)arg1 protocol:(id)arg2;
 - (unsigned int)forwardXPCObject:(id)arg1;
@@ -38,6 +31,13 @@
 - (void)_portDidBecomeInvalid;
 - (id)initWithConnection:(id)arg1 protocol:(id)arg2 alreadyConfigured:(BOOL)arg3;
 - (id)initWithConnection:(id)arg1 protocol:(id)arg2;
+- (void)setPid:(int)arg1;
+- (int)pid;
+- (id)connection;
+- (void)finalize;
+- (void)forwardInvocation:(id)arg1;
+- (id)methodSignatureForSelector:(SEL)arg1;
+- (BOOL)isValid;
 - (id)portName;
 
 @end

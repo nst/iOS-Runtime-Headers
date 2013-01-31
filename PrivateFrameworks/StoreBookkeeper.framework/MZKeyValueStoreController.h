@@ -37,6 +37,16 @@
 @property(retain) MZTaskAssertion * backgroundTaskAssertion;
 
 
+- (void)setOperationQueue:(id)arg1;
+- (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
+- (void)operation:(id)arg1 didReceiveResponse:(id)arg2;
+- (BOOL)isIdle;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)reset;
+- (id)operationQueue;
+- (void)dealloc;
+- (void)_beginBackgroundTask;
 - (void)setNetworkTypeObserver:(id)arg1;
 - (id)networkTypeObserver;
 - (void)setPendingTransactions:(id)arg1;
@@ -98,24 +108,14 @@
 - (void)setDefaultSetURL:(id)arg1;
 - (void)setDefaultGetURL:(id)arg1;
 - (void)setDefaultDomain:(id)arg1;
-- (void)setOperationQueue:(id)arg1;
-- (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
-- (void)operation:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)_endBackgroundTask;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)reset;
-- (id)operationQueue;
-- (void)dealloc;
-- (void)_beginBackgroundTask;
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)performBlock:(id)arg1;
 - (void)performBlockAndWait:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;
+- (void)_endBackgroundTask;
 - (id)dispatchQueue;
 - (void)setDispatchQueue:(id)arg1;
-- (BOOL)isIdle;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

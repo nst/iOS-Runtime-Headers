@@ -32,11 +32,17 @@
 @property(readonly) UIImage * image;
 
 
+- (unsigned int)zoomLevel;
+- (void)setZoomLevel:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)description;
 - (void)cancel;
 - (void)dealloc;
+- (struct { double x1; double x2; })coordinate;
+- (void)setCoordinate:(struct { double x1; double x2; })arg1;
+- (void)setRequester:(id)arg1;
+- (id)requester;
 - (void)start;
 - (id)image;
 - (void)setContext:(id)arg1;
@@ -45,11 +51,5 @@
 - (struct CGSize { float x1; float x2; })size;
 - (void)setAttributionString:(id)arg1;
 - (id)attributionString;
-- (struct { double x1; double x2; })coordinate;
-- (unsigned int)zoomLevel;
-- (void)setZoomLevel:(unsigned int)arg1;
-- (void)setCoordinate:(struct { double x1; double x2; })arg1;
-- (void)setRequester:(id)arg1;
-- (id)requester;
 
 @end

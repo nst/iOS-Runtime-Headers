@@ -22,12 +22,12 @@
 + (id)wrapperWithObject:(id)arg1 size:(long long)arg2;
 
 - (void).cxx_destruct;
-- (id)object;
-- (void)setSize:(long long)arg1;
-- (long long)size;
 - (id)initWithObject:(id)arg1 size:(long long)arg2;
 - (void)setErrorCount:(int)arg1;
 - (int)errorCount;
+- (id)object;
+- (void)setSize:(long long)arg1;
+- (long long)size;
 - (void)setUniqueID:(long long)arg1;
 - (long long)uniqueID;
 

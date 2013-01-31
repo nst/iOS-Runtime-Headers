@@ -14,10 +14,6 @@
 
 + (id)predicateWithPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2 shouldContain:(BOOL)arg3;
 
-- (id)_ML3PredicateForEntityClass:(Class)arg1;
-- (id)ML3PredicateForContainer;
-- (id)ML3PredicateForTrack;
-- (const long long*)persistentIDs;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -26,5 +22,9 @@
 - (BOOL)shouldContain;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)_ML3PredicateForEntityClass:(Class)arg1;
+- (id)ML3PredicateForContainer;
+- (id)ML3PredicateForTrack;
+- (const long long*)persistentIDs;
 
 @end

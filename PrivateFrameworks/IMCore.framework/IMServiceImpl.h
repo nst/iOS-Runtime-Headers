@@ -81,15 +81,10 @@
 + (Class)serviceClass;
 + (id)operationalServicesWithCapability:(unsigned long long)arg1;
 
-- (id)internalName;
 - (id)name;
 - (id)description;
 - (void)dealloc;
-- (unsigned int)status;
-- (void)disconnect;
-- (BOOL)isPersistent;
-- (id)localizedName;
-- (BOOL)isEnabled;
+- (id)internalName;
 - (id)shortName;
 - (id)emailDomains;
 - (id)addressBookProperties;
@@ -154,9 +149,14 @@
 - (BOOL)initialSyncPerformed;
 - (id)infoForScreenName:(id)arg1;
 - (id)screenNamesForIMPerson:(id)arg1;
-- (id)initWithName:(id)arg1;
+- (Class)accountClass;
 - (int)maxChatParticipants;
 - (BOOL)supportsIDStatusLookup;
-- (Class)accountClass;
+- (unsigned int)status;
+- (void)disconnect;
+- (BOOL)isPersistent;
+- (id)localizedName;
+- (BOOL)isEnabled;
+- (id)initWithName:(id)arg1;
 
 @end

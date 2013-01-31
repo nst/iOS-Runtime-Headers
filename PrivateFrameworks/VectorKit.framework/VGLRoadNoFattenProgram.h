@@ -16,9 +16,9 @@
 
 + (id)program;
 
+- (id)initWithVertName:(id)arg1 fragName:(id)arg2;
 - (id)init;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
 - (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
-- (id)initWithVertName:(id)arg1 fragName:(id)arg2;
 
 @end

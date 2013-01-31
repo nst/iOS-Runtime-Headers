@@ -43,8 +43,8 @@
 - (id)_className;
 - (id)scriptAttributeKeys;
 - (id)firstViewController;
+- (id)attributeKeys;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)attributeKeys;
 
 @end

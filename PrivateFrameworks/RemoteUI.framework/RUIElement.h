@@ -11,7 +11,6 @@
 @property(retain) NSDictionary * attributes;
 
 
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)dealloc;
 - (int)_horizontalAlignmentForString:(id)arg1;
 - (void)imageLoaded:(id)arg1;
@@ -22,5 +21,6 @@
 - (void)setAttributes:(id)arg1;
 - (id)attributes;
 - (void)setImage:(id)arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

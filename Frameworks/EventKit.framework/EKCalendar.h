@@ -27,12 +27,14 @@
 + (id)typeDescription:(int)arg1;
 + (id)calendarForEntityType:(unsigned int)arg1 eventStore:(id)arg2;
 
-- (BOOL)canBeShared;
+- (BOOL)remove:(id*)arg1;
 - (void)reset;
 - (int)type;
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (id)colorString;
+- (id)externalID;
 - (id)calendarIdentifier;
 - (void)setSource:(id)arg1;
 - (id)source;
@@ -40,9 +42,8 @@
 - (struct CGColor { }*)CGColor;
 - (void)setTitle:(id)arg1;
 - (BOOL)isHidden;
-- (BOOL)remove:(id*)arg1;
-- (id)externalID;
-- (id)colorString;
+- (int)entityType;
+- (BOOL)canBeShared;
 - (void)setIsMainCalendarForSource:(BOOL)arg1;
 - (BOOL)isMainCalendarForSource;
 - (void)setLoadFlags:(unsigned long)arg1;
@@ -113,7 +114,6 @@
 - (unsigned int)allowedEntityTypes;
 - (BOOL)commit:(id*)arg1;
 - (BOOL)refresh;
-- (int)entityType;
 - (id)uiColor;
 
 @end

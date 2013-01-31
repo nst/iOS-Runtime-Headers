@@ -23,12 +23,12 @@
 
 - (id)dictionary;
 - (void).cxx_destruct;
-- (void)setDictionary:(id)arg1;
 - (void)setStock:(id)arg1;
 - (id)stock;
 - (void)setBufferString:(id)arg1;
 - (id)bufferString;
 - (void)setRequestStocks:(id)arg1;
 - (id)requestStocks;
+- (void)setDictionary:(id)arg1;
 
 @end

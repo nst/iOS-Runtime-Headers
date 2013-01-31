@@ -36,6 +36,7 @@
 - (id)initWithMetadataEntry:(id)arg1;
 - (id)ubiquityRootURL;
 - (id)metadataStoreFileLocation;
+- (id)createMetadataStoreKnowledgeVector:(id*)arg1;
 - (id)metadataMOC;
 - (id)localPeerID;
 

@@ -6,6 +6,9 @@
 }
 
 
+- (void)encodeObject:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })decodeRectForKey:(id)arg1;
+- (void)encodeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2;
 - (void)encodeRootObject:(id)arg1;
 - (int)versionForClassName:(id)arg1;
 - (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
@@ -37,10 +40,7 @@
 - (BOOL)containsValueForKey:(id)arg1;
 - (BOOL)decodeBoolForKey:(id)arg1;
 - (id)decodeObjectForKey:(id)arg1;
-- (void)encodeInt32:(int)arg1 forKey:(id)arg2;
-- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })decodeRectForKey:(id)arg1;
-- (void)encodeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2;
+- (id)decodeObjectOfClass:(Class)arg1 forKey:(id)arg2;
 - (struct CGPoint { float x1; float x2; })decodePointForKey:(id)arg1;
 - (void)encodePoint:(struct CGPoint { float x1; float x2; })arg1 forKey:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })decodeRect;
@@ -59,7 +59,6 @@
 - (void)_validateAllowedClass:(Class)arg1 forKey:(id)arg2 allowingInvocations:(BOOL)arg3;
 - (BOOL)requiresSecureCoding;
 - (id)decodeObjectOfClasses:(id)arg1 forKey:(id)arg2;
-- (id)decodeObjectOfClass:(Class)arg1 forKey:(id)arg2;
 - (void)encodeBycopyObject:(id)arg1;
 - (struct _NSZone { }*)objectZone;
 - (void)setObjectZone:(struct _NSZone { }*)arg1;
@@ -68,7 +67,8 @@
 - (void)encodeValuesOfObjCTypes:(const char *)arg1;
 - (void)encodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(const void*)arg3;
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;
-- (void)encodeObject:(id)arg1;
+- (void)encodeInt32:(int)arg1 forKey:(id)arg2;
+- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
 - (id)_safeDecodeContainerForKey:(id)arg1 containerClass:(Class)arg2 valueClass:(Class)arg3;
 - (id)safeDecodeNumberForKey:(id)arg1;
 - (id)safeDecodeArrayForKey:(id)arg1 valueClass:(Class)arg2;

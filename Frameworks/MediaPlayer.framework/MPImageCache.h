@@ -22,6 +22,18 @@
 @property id libraryDisplayValueChangeObserver;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (unsigned int)retainCount;
+- (id)retain;
+- (void)dealloc;
+- (oneway void)release;
+- (id)init;
+- (void)_enqueueRequest:(id)arg1;
+- (id)_cachedImageForKey:(id)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (unsigned int)cacheSize;
 - (id)imageForRequest:(id)arg1 fetchIfNecessary:(BOOL)arg2;
 - (void)_removeCachedImageForKey:(id)arg1;
 - (BOOL)imageRequestsSuspended;
@@ -37,24 +49,12 @@
 - (void)setLibraryDisplayValueChangeObserver:(id)arg1;
 - (void)_zapCachedPlaceholders;
 - (void)_didReceiveMemoryWarningNotification:(id)arg1;
+- (void)setCacheSize:(unsigned int)arg1;
 - (id)imageForRequest:(id)arg1 error:(id*)arg2;
 - (void)setImageRequestsSuspended:(BOOL)arg1;
 - (void)cancelAllImageRequests;
 - (void)loadImageForRequest:(id)arg1 asynchronously:(BOOL)arg2 completionHandler:(id)arg3;
 - (void)_didEnterBackgroundNotification:(id)arg1;
 - (void)_willEnterForegroundNotification:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (unsigned int)retainCount;
-- (id)retain;
-- (void)dealloc;
-- (oneway void)release;
-- (id)init;
-- (id)_cachedImageForKey:(id)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (void)_enqueueRequest:(id)arg1;
-- (unsigned int)cacheSize;
-- (void)setCacheSize:(unsigned int)arg1;
 
 @end

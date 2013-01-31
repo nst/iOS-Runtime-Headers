@@ -11,6 +11,11 @@
 }
 
 
+- (void)setRootController:(id)arg1;
+- (void)didWake;
+- (void)dealloc;
+- (void)popupViewDidDisappear;
+- (void)popupViewWillDisappear;
 - (void)statusBarWillAnimateByHeight:(float)arg1;
 - (void)willBecomeActive;
 - (void)willResignActive;
@@ -25,15 +30,10 @@
 - (void)formSheetViewWillDisappear;
 - (void)handleURL:(id)arg1;
 - (id)rootController;
-- (void)popupViewDidDisappear;
-- (void)popupViewWillDisappear;
-- (void)dealloc;
 - (void)setParentController:(id)arg1;
 - (id)parentController;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)suspend;
-- (void)didWake;
-- (void)setRootController:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (id)specifier;
 

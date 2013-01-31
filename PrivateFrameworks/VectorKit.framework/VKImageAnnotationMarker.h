@@ -11,10 +11,10 @@
 @property BOOL drawsOnGround;
 
 
+- (BOOL)drawsOnGround;
+- (void)setDrawsOnGround:(BOOL)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)setImage:(id)arg1;
-- (BOOL)drawsOnGround;
-- (void)setDrawsOnGround:(BOOL)arg1;
 
 @end

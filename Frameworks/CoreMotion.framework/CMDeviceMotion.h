@@ -15,15 +15,15 @@
 @property(readonly) struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; int x2; } magneticField;
 
 
+- (id)attitude;
+- (struct { double x1; double x2; double x3; })rotationRate;
+- (struct { double x1; double x2; double x3; })gravity;
+- (struct { double x1; double x2; double x3; })userAcceleration;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)attitude;
-- (struct { double x1; double x2; double x3; })rotationRate;
-- (struct { double x1; double x2; double x3; })gravity;
-- (struct { double x1; double x2; double x3; })userAcceleration;
 - (bool)doingBiasEstimation;
 - (bool)doingYawCorrection;
 - (int)magneticFieldCalibrationLevel;

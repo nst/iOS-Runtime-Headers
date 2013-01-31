@@ -22,15 +22,15 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (SEL)selector;
-- (void)setContext:(id)arg1;
-- (id)context;
-- (id)set;
-- (void)setSelector:(SEL)arg1;
 - (BOOL)empty;
 - (void)removeAnnotations:(id)arg1;
 - (void)removeAllAnnotations;
 - (void)addAnnotations:(id)arg1;
 - (void)removeAnnotation:(id)arg1;
+- (SEL)selector;
+- (void)setContext:(id)arg1;
+- (id)context;
+- (id)set;
+- (void)setSelector:(SEL)arg1;
 
 @end

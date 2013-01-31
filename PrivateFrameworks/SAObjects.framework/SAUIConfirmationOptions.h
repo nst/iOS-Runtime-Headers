@@ -16,7 +16,6 @@
 + (id)confirmationOptionsWithDictionary:(id)arg1 context:(id)arg2;
 + (id)confirmationOptions;
 
-- (id)groupIdentifier;
 - (void)setDenyText:(id)arg1;
 - (id)denyText;
 - (void)setDenyCommands:(id)arg1;
@@ -28,5 +27,6 @@
 - (void)setCancelTrigger:(id)arg1;
 - (id)cancelTrigger;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

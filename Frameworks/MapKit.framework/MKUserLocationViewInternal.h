@@ -77,9 +77,16 @@
 + (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })effectiveFrameWithFrame:(struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 + (float)accuracyDiameter:(float)arg1;
 
+- (double)headingAccuracy;
+- (BOOL)isStale;
+- (void)setStale:(BOOL)arg1;
+- (float)accuracy;
+- (void)setMapType:(unsigned int)arg1;
+- (unsigned int)mapType;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)setAccuracy:(float)arg1;
 - (void)updateDot;
 - (void)didEndZoom;
 - (id)initWithView:(id)arg1;
@@ -156,12 +163,5 @@
 - (void)setZoomDirection:(int)arg1 deltaScale:(float)arg2;
 - (void)setShouldDisplayEffects:(BOOL)arg1;
 - (void)setZoomDirection:(int)arg1;
-- (double)headingAccuracy;
-- (BOOL)isStale;
-- (void)setStale:(BOOL)arg1;
-- (float)accuracy;
-- (void)setMapType:(unsigned int)arg1;
-- (unsigned int)mapType;
-- (void)setAccuracy:(float)arg1;
 
 @end

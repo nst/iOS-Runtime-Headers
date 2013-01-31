@@ -10,10 +10,10 @@
 }
 
 
+- (id)initWithModelObject:(id)arg1 position:(unsigned int)arg2;
 - (id)description;
 - (void)dealloc;
 - (id)model;
 - (unsigned int)position;
-- (id)initWithModelObject:(id)arg1 position:(unsigned int)arg2;
 
 @end

@@ -67,30 +67,7 @@
 @property(retain) PLPhotosPickerSession * currentPickerSession;
 
 
-- (void)_fadeOut;
 - (void)dealloc;
-- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
-- (void)editVideoViewController:(id)arg1 didTrimVideoWithOptions:(id)arg2;
-- (void)editVideoViewControllerDidCancel:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)_showDeleteConfirmation:(id)arg1;
-- (id)editButtonItem;
-- (void)_toggleEditing:(id)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)paste:(id)arg1;
-- (void)copy:(id)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)viewDidLayoutSubviews;
-- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
-- (void)prepareForDefaultImageSnapshot;
-- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (void)applicationWillEnterForeground:(id)arg1;
 - (id)initWithAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)albumDidChange:(id)arg1;
 - (void)_copySelectedItems:(id)arg1;
@@ -190,5 +167,28 @@
 - (void)_publishingAgentsDidForceCancel:(id)arg1;
 - (void)_publishingAgentDidStartRemaking:(id)arg1;
 - (void)_publishingAgentDidFinishPublishing:(id)arg1;
+- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
+- (void)editVideoViewController:(id)arg1 didTrimVideoWithOptions:(id)arg2;
+- (void)editVideoViewControllerDidCancel:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)_showDeleteConfirmation:(id)arg1;
+- (id)editButtonItem;
+- (void)_toggleEditing:(id)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidLoad;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)paste:(id)arg1;
+- (void)copy:(id)arg1;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)viewDidLayoutSubviews;
+- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
+- (void)prepareForDefaultImageSnapshot;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (void)applicationWillEnterForeground:(id)arg1;
+- (void)_fadeOut;
 
 @end

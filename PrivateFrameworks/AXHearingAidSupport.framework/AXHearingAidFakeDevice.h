@@ -8,8 +8,8 @@
     NSMutableArray *_leftFakePrograms;
     NSMutableArray *_rightFakePrograms;
     int updateCount;
-    int _type;
     BOOL _connected;
+    int _type;
 }
 
 @property int type;
@@ -26,16 +26,10 @@
 @property int updateCount;
 
 
-- (void)setConnected:(BOOL)arg1;
-- (BOOL)connected;
-- (void)setUpdateCount:(int)arg1;
-- (int)updateCount;
 - (int)type;
 - (void)dealloc;
-- (void)disconnect;
-- (void)connect;
-- (void)setType:(int)arg1;
-- (void)reload;
+- (void)setConnected:(BOOL)arg1;
+- (BOOL)connected;
 - (void)sendUpdates;
 - (void)createPrograms;
 - (id)modelForType;
@@ -52,6 +46,12 @@
 - (BOOL)isPaired;
 - (BOOL)rightAvailable;
 - (BOOL)leftAvailable;
+- (void)disconnect;
+- (void)connect;
+- (void)setType:(int)arg1;
+- (void)reload;
+- (void)setUpdateCount:(int)arg1;
+- (int)updateCount;
 - (BOOL)isConnected;
 
 @end

@@ -11,17 +11,13 @@
     void *_reserved;
 }
 
-+ (void)initialize;
 + (id)sharedSystemTypesetter;
 + (BOOL)_usesATSTypesetter;
 + (int)defaultStringDrawingTypesetterBehavior;
 + (id)sharedSystemTypesetterForBehavior:(int)arg1;
 + (int)defaultTypesetterBehavior;
++ (void)initialize;
 
-- (void)dealloc;
-- (void)finalize;
-- (id)attributedString;
-- (id)layoutManager;
 - (void)setTightenThresholdForTruncation:(float)arg1;
 - (void)setBidiProcessingEnabled:(BOOL)arg1;
 - (void)_layoutGlyphsInLayoutManager:(id)arg1 startingAtGlyphIndex:(unsigned int)arg2 maxNumberOfLineFragments:(unsigned int)arg3 maxCharacterIndex:(unsigned int)arg4 nextGlyphIndex:(unsigned int*)arg5 nextCharacterIndex:(unsigned int*)arg6;
@@ -83,6 +79,10 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })paragraphCharacterRange;
 - (BOOL)bidiProcessingEnabled;
 - (struct { struct { /* ? */ } *x1; struct _NSRange { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; struct _NSRange { unsigned int x_3_1_1; unsigned int x_3_1_2; } x3; float x4; float x5; int (*x6)(); int (*x7)(); float x8; float x9; float x10; float x11; float x12; float x13; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_14_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_14_1_2; } x14; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_15_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_15_1_2; } x15; struct _NSRange { unsigned int x_16_1_1; unsigned int x_16_1_2; } x16; id x17; float x18; int x19; struct { unsigned int x_20_1_1 : 4; unsigned int x_20_1_2 : 1; unsigned int x_20_1_3 : 1; unsigned int x_20_1_4 : 1; unsigned int x_20_1_5 : 4; unsigned int x_20_1_6 : 4; unsigned int x_20_1_7 : 1; unsigned int x_20_1_8 : 1; unsigned int x_20_1_9 : 1; unsigned int x_20_1_10 : 1; unsigned int x_20_1_11 : 2; unsigned int x_20_1_12 : 11; } x20; void *x21[0]; }*)_getAuxData;
+- (void)dealloc;
+- (void)finalize;
+- (id)attributedString;
+- (id)layoutManager;
 - (void)setAttributedString:(id)arg1;
 
 @end

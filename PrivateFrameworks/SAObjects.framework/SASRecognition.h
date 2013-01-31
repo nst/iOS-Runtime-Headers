@@ -12,9 +12,9 @@
 + (id)recognitionWithDictionary:(id)arg1 context:(id)arg2;
 + (id)recognition;
 
-- (id)groupIdentifier;
 - (void)setPhrases:(id)arg1;
 - (id)phrases;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

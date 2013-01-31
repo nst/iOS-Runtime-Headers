@@ -26,7 +26,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)baseURL;
 - (id)fileWrapper;
 - (id)attachmentsInDocument;
 - (id)initWithMimePart:(id)arg1 htmlData:(id)arg2 encoding:(unsigned long)arg3;
@@ -41,5 +40,6 @@
 - (void)setPreferredEncoding:(unsigned long)arg1;
 - (unsigned long)preferredEncoding;
 - (id)mimeBody;
+- (id)baseURL;
 
 @end

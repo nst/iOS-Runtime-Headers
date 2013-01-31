@@ -6,9 +6,9 @@
 
 @interface MPStoreCollectionCompletionOffering : NSObject  {
     MPMediaQuery *_localItemsQuery;
-    MPStoreOfferMediaItemCollection *_mergedCollection;
     MPStoreOfferMediaItemCollection *_offeredCollection;
     int _preferredStoreOfferVariant;
+    MPStoreOfferMediaItemCollection *_mergedCollection;
 }
 
 @property(readonly) MPStoreOfferMediaItemCollection * itemsWithCompletionsCollection;
@@ -18,12 +18,12 @@
 @property(readonly) MPStoreOfferMediaItemCollection * mergedCollection;
 
 
+- (void)dealloc;
 - (id)offeredCollection;
 - (id)localItems;
 - (id)itemsWithCompletionsCollection;
 - (int)preferredStoreOfferVariant;
 - (id)mergedCollection;
 - (id)initWithOfferedCollection:(id)arg1 localItemsQuery:(id)arg2 preferredStoreOfferVariant:(int)arg3;
-- (void)dealloc;
 
 @end

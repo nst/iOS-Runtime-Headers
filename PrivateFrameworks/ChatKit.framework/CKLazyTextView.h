@@ -41,6 +41,22 @@
 
 - (id)description;
 - (void)dealloc;
+- (void)setWebViewNeedsUpdate:(BOOL)arg1;
+- (id)lineHeightCSS;
+- (id)textAlignmentCSS;
+- (id)textShadowCSS;
+- (id)textColorCSS;
+- (id)fontCSS;
+- (void)updateTextShadowCSS;
+- (void)setLineHeightCSS:(id)arg1;
+- (void)setTextAlignmentCSS:(id)arg1;
+- (void)setTextShadowCSS:(id)arg1;
+- (void)setTextColorCSS:(id)arg1;
+- (void)setFontCSS:(id)arg1;
+- (BOOL)webViewNeedsUpdate;
+- (void)updateWebView;
+- (void)setWebViewNeedsUpdate;
+- (void)updateWebViewIfNeeded;
 - (id)textView;
 - (id)shadowColor;
 - (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
@@ -59,21 +75,5 @@
 - (void)setAttributedText:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setWebViewNeedsUpdate:(BOOL)arg1;
-- (id)lineHeightCSS;
-- (id)textAlignmentCSS;
-- (id)textShadowCSS;
-- (id)textColorCSS;
-- (id)fontCSS;
-- (void)updateTextShadowCSS;
-- (void)setLineHeightCSS:(id)arg1;
-- (void)setTextAlignmentCSS:(id)arg1;
-- (void)setTextShadowCSS:(id)arg1;
-- (void)setTextColorCSS:(id)arg1;
-- (void)setFontCSS:(id)arg1;
-- (BOOL)webViewNeedsUpdate;
-- (void)updateWebView;
-- (void)setWebViewNeedsUpdate;
-- (void)updateWebViewIfNeeded;
 
 @end

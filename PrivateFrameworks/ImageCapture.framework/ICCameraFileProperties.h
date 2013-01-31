@@ -35,6 +35,10 @@
 @property BOOL hasOverriddenOrientation;
 
 
+- (void)dealloc;
+- (BOOL)hasThumbnail;
+- (BOOL)isRaw;
+- (long long)fileSize;
 - (void)setHasOverriddenOrientation:(BOOL)arg1;
 - (BOOL)hasOverriddenOrientation;
 - (id)metadata_hidden;
@@ -49,17 +53,13 @@
 - (void)setOriginalThumbnail:(struct CGImage { }*)arg1;
 - (void)setFetchingMetadata:(BOOL)arg1;
 - (void)setFetchingThumbnail:(BOOL)arg1;
-- (void)dealloc;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
 - (struct CGImage { }*)thumbnail;
 - (void)setThumbnail:(struct CGImage { }*)arg1;
 - (void)finalize;
 - (void)setOrientation:(unsigned int)arg1;
 - (unsigned int)orientation;
-- (BOOL)hasThumbnail;
-- (BOOL)isRaw;
-- (long long)fileSize;
 - (void)setFileSize:(long long)arg1;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 
 @end

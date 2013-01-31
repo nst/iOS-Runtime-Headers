@@ -40,10 +40,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)entityID;
+- (id)externalID;
 - (id)location;
 - (id)title;
-- (id)externalID;
 - (BOOL)tentative;
 - (id)eventDate;
 - (id)initWithTitle:(id)arg1 location:(id)arg2 date:(id)arg3 endDate:(id)arg4 timeZone:(id)arg5 allDay:(BOOL)arg6 tentative:(BOOL)arg7 entityID:(id)arg8 action:(id)arg9 proximity:(int)arg10 externalID:(id)arg11 acknowledged:(BOOL)arg12;
@@ -52,5 +51,6 @@
 - (int)proximity;
 - (id)endDate;
 - (BOOL)acknowledged;
+- (id)entityID;
 
 @end

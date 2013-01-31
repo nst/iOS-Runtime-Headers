@@ -9,10 +9,10 @@
 @property unsigned int location;
 
 
-- (void)resetBackgroundImage;
+- (void)setLocation:(unsigned int)arg1;
 - (id)init;
 - (unsigned int)location;
 - (void)layoutSubviews;
-- (void)setLocation:(unsigned int)arg1;
+- (void)resetBackgroundImage;
 
 @end

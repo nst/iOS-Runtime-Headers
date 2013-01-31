@@ -13,8 +13,8 @@
 @property(readonly) NSString * mediaType;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (void)saveToLibraryWithCompletionHandler:(id)arg1;
 - (void)loadLibraryThumbnailWithCompletionHandler:(id)arg1;
@@ -26,10 +26,10 @@
 - (void)_addScriptFunction:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)init;
 - (id)mediaType;
 - (id)valueForProperty:(id)arg1;
-- (id)attributeKeys;
 
 @end

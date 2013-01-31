@@ -27,6 +27,9 @@
 @property(copy) NSArray * interestedBundleIDs;
 
 
+- (void)invalidate;
+- (void)dealloc;
+- (id)init;
 - (id)bundleInfoValueForKey:(id)arg1 PID:(int)arg2;
 - (BOOL)isNewsstandAppWakeQuotaReached:(id)arg1;
 - (unsigned int)mostElevatedApplicationStateForPID:(int)arg1;
@@ -49,12 +52,9 @@
 - (void)setInterestedStates:(unsigned int)arg1;
 - (void)setInterestedBundleIDs:(id)arg1;
 - (void)queue_registerWithServer;
-- (id)initWithBundleIDs:(id)arg1 states:(unsigned int)arg2;
-- (void)invalidate;
-- (void)dealloc;
-- (id)init;
 - (void)setHandler:(id)arg1;
 - (id)handler;
+- (id)initWithBundleIDs:(id)arg1 states:(unsigned int)arg2;
 - (unsigned int)applicationStateForApplication:(id)arg1;
 
 @end

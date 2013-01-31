@@ -11,6 +11,8 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
 - (void)setResponderFriendlyName:(id)arg1;
 - (id)responderFriendlyName;
 - (void)setResponderGUID:(char *)arg1;
@@ -21,7 +23,5 @@
 - (id)initWithConnectionNumber:(unsigned long)arg1 responderGUID:(char *)arg2 responderFriendlyName:(id)arg3;
 - (id)initWithTCPBuffer:(void*)arg1;
 - (id)contentForTCP;
-- (id)description;
-- (void)dealloc;
 
 @end

@@ -13,12 +13,12 @@
 + (id)speechFailureWithDictionary:(id)arg1 context:(id)arg2;
 + (id)speechFailure;
 
-- (void)setReason:(int)arg1;
-- (id)groupIdentifier;
-- (int)reason;
 - (void)setReasonDescription:(id)arg1;
 - (id)reasonDescription;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (int)reason;
+- (void)setReason:(int)arg1;
+- (id)groupIdentifier;
 
 @end

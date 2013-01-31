@@ -17,6 +17,7 @@
     NSMutableArray *_persistentStores;
 }
 
++ (void)initialize;
 + (BOOL)_melissaIsDebugging;
 + (BOOL)setMetadata:(id)arg1 forPersistentStoreOfType:(id)arg2 URL:(id)arg3 error:(id*)arg4;
 + (void)registerStoreClass:(Class)arg1 forStoreType:(id)arg2;
@@ -29,7 +30,6 @@
 + (id)registeredStoreTypes;
 + (void)__Multithreading_Violation_AllThatIsLeftToUsIsHonor__;
 + (BOOL)accessInstanceVariablesDirectly;
-+ (void)initialize;
 
 - (BOOL)removePersistentStore:(id)arg1 error:(id*)arg2;
 - (id)addPersistentStoreWithType:(id)arg1 configuration:(id)arg2 URL:(id)arg3 options:(id)arg4 error:(id*)arg5;
@@ -38,6 +38,10 @@
 - (id)persistentStores;
 - (id)initWithManagedObjectModel:(id)arg1;
 - (void)dealloc;
+- (id)persistentStoreForURL:(id)arg1;
+- (void)finalize;
+- (void)unlock;
+- (void)lock;
 - (BOOL)_destroyPersistentStoreAtURL:(id)arg1 withType:(id)arg2 error:(id*)arg3;
 - (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 storeType:(id)arg5 error:(id*)arg6;
 - (BOOL)_destroyPersistentStoreAtURL:(id)arg1 withType:(id)arg2 options:(id)arg3 error:(id*)arg4;
@@ -80,9 +84,5 @@
 - (BOOL)tryLock;
 - (id)persistentStoreForIdentifier:(id)arg1;
 - (BOOL)setURL:(id)arg1 forPersistentStore:(id)arg2;
-- (id)persistentStoreForURL:(id)arg1;
-- (void)finalize;
-- (void)unlock;
-- (void)lock;
 
 @end

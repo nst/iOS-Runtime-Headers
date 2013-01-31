@@ -10,8 +10,8 @@
 @property float fade;
 
 
-- (float)fade;
 - (void)setFade:(float)arg1;
 - (id)initWithVertName:(id)arg1 fragName:(id)arg2;
+- (float)fade;
 
 @end

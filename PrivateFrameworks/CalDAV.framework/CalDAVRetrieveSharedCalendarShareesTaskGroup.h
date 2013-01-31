@@ -14,12 +14,12 @@
 
 
 - (void)dealloc;
-- (void)setUrl:(id)arg1;
-- (id)url;
-- (id)initWithCalendarURL:(id)arg1 accountInfoProvider:(id)arg2 taskManager:(id)arg3;
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
+- (id)initWithCalendarURL:(id)arg1 accountInfoProvider:(id)arg2 taskManager:(id)arg3;
+- (void)setUrl:(id)arg1;
+- (id)url;
 - (void)setSharees:(id)arg1;
 - (id)sharees;
 

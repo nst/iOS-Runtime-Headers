@@ -29,8 +29,6 @@
 - (void)setName:(id)arg1;
 - (id)name;
 - (void)dealloc;
-- (void)setHidden:(bool)arg1;
-- (bool)isHidden;
 - (id)drawableEnumerator;
 - (id)defaultGridlineColorReference;
 - (void)setEscherDrawing:(id)arg1;
@@ -66,5 +64,7 @@
 - (id)drawableAtIndex:(unsigned int)arg1;
 - (unsigned int)drawableCount;
 - (id)workbook;
+- (void)setHidden:(bool)arg1;
+- (bool)isHidden;
 
 @end

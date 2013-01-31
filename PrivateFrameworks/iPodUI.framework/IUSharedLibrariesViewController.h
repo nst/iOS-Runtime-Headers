@@ -18,16 +18,6 @@
 + (Class)tableViewCellClass;
 + (id)tableViewBackgroundColor;
 
-- (void)dealloc;
-- (id)init;
-- (id)moreListTableCell;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)setShowsSectionHeader:(BOOL)arg1;
 - (BOOL)showsSectionHeader;
 - (BOOL)hideActionRowsOnAppear;
@@ -41,5 +31,15 @@
 - (void)_mediaLibraryConnectionProgressDidChangeNotification:(id)arg1;
 - (void)_availableMediaLibrariesDidChangeNotification:(id)arg1;
 - (void)_cancelAndDismiss:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)moreListTableCell;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidLoad;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

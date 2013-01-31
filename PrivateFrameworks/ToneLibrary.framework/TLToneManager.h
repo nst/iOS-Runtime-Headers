@@ -21,6 +21,7 @@
 
 - (BOOL)ensureDirectoryExists:(id)arg1;
 - (void)removeNewMailToneForAccount:(id)arg1;
+- (unsigned long)currentPhotoStreamPostToneSoundID;
 - (unsigned long)currentFacebookPostToneSoundID;
 - (unsigned long)currentSentTweetToneSoundID;
 - (unsigned long)currentNewReminderAlertToneSoundID;
@@ -37,7 +38,9 @@
 - (id)currentNewVoicemailToneIdentifier;
 - (id)currentSentMailToneIdentifier;
 - (id)currentNewMailToneIdentifierForAccount:(id)arg1;
+- (id)currentPhotoStreamPostToneIdentifier;
 - (id)defaultIdentifierForContext:(int)arg1;
+- (id)defaultPhotoStreamPostToneIdentifier;
 - (id)defaultFacebookPostToneIdentifier;
 - (id)defaultSentTweetToneIdentifier;
 - (id)defaultReminderAlertToneIdentifier;
@@ -131,9 +134,9 @@
 - (id)init;
 - (BOOL)toneWithIdentifierIsNone:(id)arg1;
 - (id)currentTextToneIdentifier;
+- (id)rootDirectory;
 - (BOOL)hasAdditionalTextTones;
 - (id)copyNameOfRingtoneWithIdentifier:(id)arg1;
 - (BOOL)toneWithIdentifierIsValid:(id)arg1;
-- (id)rootDirectory;
 
 @end

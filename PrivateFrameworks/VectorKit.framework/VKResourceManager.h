@@ -7,9 +7,9 @@
 
 + (id)sharedManager;
 
-- (id)init;
-- (void)purge;
 - (id)pathForResourceWithName:(id)arg1;
 - (id)dataForResourceWithName:(id)arg1;
+- (id)init;
+- (void)purge;
 
 @end

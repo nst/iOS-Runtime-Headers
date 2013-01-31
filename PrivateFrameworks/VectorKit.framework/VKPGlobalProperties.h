@@ -141,11 +141,6 @@
 @property(readonly) unsigned int* layerZoomRangeVectorRoadTraffics;
 
 
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
 - (void)setLayerZoomRangeVectorRoadTraffics:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (unsigned int*)layerZoomRangeVectorRoadTraffics;
 - (void)setLayerZoomRangePOIs:(unsigned int*)arg1 count:(unsigned int)arg2;
@@ -269,6 +264,11 @@
 - (void)writeTo:(id)arg1;
 - (unsigned int)buildingChangeoverZ;
 - (BOOL)hasBuildingChangeoverZ;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

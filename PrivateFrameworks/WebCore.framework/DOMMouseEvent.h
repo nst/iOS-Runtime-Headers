@@ -25,8 +25,6 @@
 @property(readonly) DOMNode * toElement;
 
 
-- (int)y;
-- (int)x;
 - (void)initMouseEvent:(id)arg1 :(BOOL)arg2 :(BOOL)arg3 :(id)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(BOOL)arg10 :(BOOL)arg11 :(BOOL)arg12 :(BOOL)arg13 :(unsigned short)arg14 :(id)arg15;
 - (void)initMouseEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 detail:(int)arg5 screenX:(int)arg6 screenY:(int)arg7 clientX:(int)arg8 clientY:(int)arg9 ctrlKey:(BOOL)arg10 altKey:(BOOL)arg11 shiftKey:(BOOL)arg12 metaKey:(BOOL)arg13 button:(unsigned short)arg14 relatedTarget:(id)arg15;
 - (id)toElement;
@@ -43,5 +41,7 @@
 - (BOOL)altKey;
 - (BOOL)shiftKey;
 - (BOOL)ctrlKey;
+- (int)y;
+- (int)x;
 
 @end

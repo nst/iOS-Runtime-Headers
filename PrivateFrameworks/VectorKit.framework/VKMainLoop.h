@@ -22,15 +22,6 @@
 
 + (id)sharedInstance;
 
-- (int)rate;
-- (void)setRate:(int)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)performBlock:(id)arg1;
-- (void)removeAnimation:(id)arg1;
-- (void)addAnimation:(id)arg1;
-- (void)willEnterForeground;
-- (void)_receivedMemoryNotification;
 - (void)setTrueRate:(int)arg1;
 - (void)updateLinkState;
 - (int)trueRate;
@@ -43,6 +34,15 @@
 - (double)resumeAnimation:(id)arg1;
 - (double)pauseAnimation:(id)arg1;
 - (id)detailedDescription;
+- (void)dealloc;
+- (id)init;
 - (void)didEnterBackground;
+- (void)performBlock:(id)arg1;
+- (void)removeAnimation:(id)arg1;
+- (void)addAnimation:(id)arg1;
+- (void)willEnterForeground;
+- (void)_receivedMemoryNotification;
+- (void)setRate:(int)arg1;
+- (int)rate;
 
 @end

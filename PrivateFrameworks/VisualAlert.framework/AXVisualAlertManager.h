@@ -32,15 +32,9 @@
 @property(getter=_isTorchDeviceOpen,setter=_setTorchDeviceOpen:) BOOL _torchDeviceOpen;
 @property(getter=_isTorchDeviceOn,setter=_setTorchDeviceOn:) BOOL _torchDeviceOn;
 
-+ (void)initialize;
 + (id)sharedVisualAlertManager;
++ (void)initialize;
 
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (void)stop;
-- (void)_stop;
-- (void)startForAlertTypes:(unsigned int)arg1 cameraTorchManager:(id)arg2;
 - (BOOL)_isTorchDeviceOn;
 - (BOOL)_isTorchDeviceOpen;
 - (unsigned int)_typeToUseForVisualAlertAfterCaptureSessionStopsRunning;
@@ -78,5 +72,11 @@
 - (void)_handleBeginVisualAlertForAlarmWithSound:(BOOL)arg1;
 - (void)_handleVisualAlertForRegularNotification;
 - (void)_handleVisualAlertForIncomingMessage;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (void)startForAlertTypes:(unsigned int)arg1 cameraTorchManager:(id)arg2;
+- (void)_stop;
+- (void)stop;
 
 @end

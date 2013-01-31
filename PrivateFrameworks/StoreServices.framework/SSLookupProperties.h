@@ -13,9 +13,6 @@
 @property int localizationStyle;
 
 
-- (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
-- (void)setLocalizationStyle:(int)arg1;
-- (void)setKeyProfile:(id)arg1;
 - (int)localizationStyle;
 - (id)keyProfile;
 - (id)valueForRequestParameter:(id)arg1;
@@ -24,5 +21,8 @@
 - (id)copyRequestParameters;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+- (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
+- (void)setLocalizationStyle:(int)arg1;
+- (void)setKeyProfile:(id)arg1;
 
 @end

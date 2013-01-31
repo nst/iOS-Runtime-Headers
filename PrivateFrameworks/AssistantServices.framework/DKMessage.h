@@ -15,7 +15,11 @@
 @property(readonly) NSString * name;
 
 
-- (void)setInfoWithError:(id)arg1;
+- (id)name;
+- (id)description;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)sendReply;
 - (void)setReplyWithError:(id)arg1;
 - (BOOL)isErrorMessage;
 - (id)errorFromInfo;
@@ -24,12 +28,8 @@
 - (void)setInfoValue:(id)arg1 forKey:(id)arg2;
 - (id)_initWithXPCMessage:(void*)arg1;
 - (void*)_createXPCMessage;
-- (id)name;
-- (id)description;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (id)initWithName:(id)arg1;
+- (void)setInfoWithError:(id)arg1;
 - (BOOL)needsReply;
-- (void)sendReply;
+- (id)initWithName:(id)arg1;
 
 @end

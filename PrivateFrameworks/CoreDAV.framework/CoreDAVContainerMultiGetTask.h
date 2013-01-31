@@ -29,6 +29,8 @@
 
 
 - (void)dealloc;
+- (id)httpMethod;
+- (id)requestBody;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (id)initWithURLs:(id)arg1 atContainerURL:(id)arg2 appSpecificDataItemClass:(Class)arg3;
 - (void)setShouldIgnoreResponseErrors:(BOOL)arg1;
@@ -40,7 +42,5 @@
 - (id)additionalPropElements;
 - (void)setAdditionalPropElements:(id)arg1;
 - (id)copyAdditionalPropElements;
-- (id)httpMethod;
-- (id)requestBody;
 
 @end

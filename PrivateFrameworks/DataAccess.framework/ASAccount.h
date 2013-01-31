@@ -21,30 +21,19 @@
 @property(readonly) int mailNumberOfPastDaysToSyncUpperLimit;
 @property(setter=setASAccountVersion:) int asAccountVersion;
 
-+ (id)supportedDataclasses;
 + (id)defaultProperties;
++ (id)supportedDataclasses;
 + (Class)clientClass;
 + (Class)accountClass;
 + (void)cleanUpFilesForAccountWithId:(id)arg1;
++ (id)displayedShortAccountTypeString;
++ (id)displayedAccountTypeString;
 + (Class)detailControllerClass;
 + (id)allowedDataclasses;
 + (Class)syncControllerClass;
 + (void*)createSyncDataSourceForDataclass:(id)arg1 options:(id)arg2;
-+ (id)displayedShortAccountTypeString;
-+ (id)displayedAccountTypeString;
 
-- (void)setEmailAddresses:(id)arg1;
-- (id)emailAddresses;
-- (void)setProtocolVersion:(id)arg1;
-- (id)username;
-- (void)setUsername:(id)arg1;
 - (void)dealloc;
-- (id)initWithProperties:(id)arg1;
-- (id)protocol;
-- (int)port;
-- (id)displayName;
-- (id)host;
-- (void)setHost:(id)arg1;
 - (int)sendMessageWithRFC822Data:(id)arg1 messageID:(id)arg2 outgoingMessageType:(int)arg3 originalMessageFolderID:(id)arg4 originalMessageItemID:(id)arg5 originalMessageLongID:(id)arg6 originalAccountID:(id)arg7 useSmartTasksIfPossible:(BOOL)arg8 consumer:(id)arg9 context:(void*)arg10;
 - (void)setEncryptionIdentityPersistentReference:(id)arg1;
 - (id)encryptionIdentityPersistentReference;
@@ -64,7 +53,6 @@
 - (id)emailAddress;
 - (BOOL)supportsDADataclass:(int)arg1;
 - (id)supportedDataclasses;
-- (void)setPort:(int)arg1;
 - (id)localizedInvalidPasswordMessage;
 - (id)localizedIdenticalAccountFailureMessage;
 - (BOOL)isEqualToAccount:(id)arg1;
@@ -94,7 +82,6 @@
 - (id)shortTypeString;
 - (void)getOptionsTask:(id)arg1 completedWithStatus:(int)arg2 supportedCommands:(id)arg3 supportedVersions:(id)arg4 error:(id)arg5;
 - (void)checkValidityWithConsumer:(id)arg1;
-- (id)usernameWithoutDomain;
 - (id)domainOnly;
 - (void)accountDidUpdateProtocolVersion;
 - (void)setLastKnownProtocolVersion:(id)arg1;
@@ -130,6 +117,7 @@
 - (BOOL)upgradeAccount;
 - (void)resetAccountID;
 - (BOOL)_needsNewAccountIDForOldVersion:(int)arg1;
+- (id)usernameWithoutDomain;
 - (id)_oldURLsForKeychain;
 - (id)typeString;
 - (BOOL)isGoogleAccount;
@@ -164,13 +152,25 @@
 - (id)foldersTag;
 - (void)setMailNumberOfPastDaysToSync:(int)arg1;
 - (void)applyNewAccountProperties:(id)arg1 forceSave:(BOOL)arg2;
+- (id)initWithProperties:(id)arg1;
+- (id)protocol;
+- (int)port;
+- (id)displayName;
+- (id)host;
+- (void)setHost:(id)arg1;
+- (void)setEmailAddresses:(id)arg1;
+- (id)emailAddresses;
+- (void)setProtocolVersion:(id)arg1;
+- (id)username;
+- (void)setUsername:(id)arg1;
+- (void)setPort:(int)arg1;
 - (void)setEmailAddress:(id)arg1;
-- (BOOL)supportsPush;
-- (BOOL)otherAccountEnabledForDataclass:(id)arg1;
 - (id)uniqueId;
 - (id)enabledDataclasses;
-- (id)accountInfoUsername;
+- (BOOL)supportsPush;
+- (BOOL)otherAccountEnabledForDataclass:(id)arg1;
 - (BOOL)isOwnedByPayload:(id)arg1;
+- (id)accountInfoUsername;
 - (id)_sortedVisibleASMailFolders;
 - (id)_sortASFolders:(id)arg1 startingAtID:(id)arg2;
 

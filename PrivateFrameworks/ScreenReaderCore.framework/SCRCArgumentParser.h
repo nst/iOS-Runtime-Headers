@@ -14,12 +14,11 @@
     BOOL _isLaunchedAtLogin;
 }
 
-+ (id)processIdentifier;
-+ (id)commandPath;
 + (id)versionString;
++ (id)commandPath;
++ (id)processIdentifier;
 
-- (void)setAppName:(id)arg1;
-- (id)appName;
+- (void)dealloc;
 - (id)setRunningAtStartup:(id)arg1;
 - (void)addSubcommand:(id)arg1;
 - (BOOL)isLaunchedAtLogin;
@@ -28,9 +27,10 @@
 - (char **)argv;
 - (id)_displayHelp:(id)arg1;
 - (id)initWithArgc:(int)arg1 argv:(const char **)arg2;
-- (void)dealloc;
 - (void)stop;
 - (int)run;
+- (void)setAppName:(id)arg1;
+- (id)appName;
 - (BOOL)parse;
 
 @end

@@ -18,12 +18,10 @@
 + (id)sharedInstance;
 + (void)_updateCacheForMessageGUID:(id)arg1 fromMessage:(id)arg2 toMessage:(id)arg3;
 
+- (void)closeDatabase;
+- (void)openDatabase;
 - (void)dealloc;
 - (id)init;
-- (void)performBlock:(id)arg1;
-- (BOOL)isCurrentThreadDBThread;
-- (void)performBlock:(id)arg1 waitUntilDone:(BOOL)arg2;
-- (void)performBlock:(id)arg1 afterDelay:(double)arg2;
 - (void)setSuppressDatabaseUpdates:(BOOL)arg1;
 - (void)cleanseAttachments;
 - (long long)unreadMessageCountWithRoomName:(id)arg1 onService:(id)arg2;
@@ -43,7 +41,6 @@
 - (id)messagesWithHandles:(id)arg1 onServices:(id)arg2 limit:(unsigned int)arg3;
 - (void)markMessageAsDeduplicated:(id)arg1;
 - (id)existingMessageSimilarToMessage:(id)arg1 skipServices:(id)arg2 skipGUIDs:(id)arg3 withinTimeInterval:(double)arg4 participants:(id)arg5;
-- (BOOL)hasStoredMessageWithGUID:(id)arg1;
 - (BOOL)canStoreMessage:(id)arg1 onService:(id)arg2;
 - (id)storeMessage:(id)arg1 forceReplace:(BOOL)arg2 modifyError:(BOOL)arg3 modifyFlags:(BOOL)arg4 flagMask:(unsigned long long)arg5;
 - (void)_postDBUpdate;
@@ -64,15 +61,18 @@
 - (void)updateStamp;
 - (void)_storeAttachmentsForMessage:(id)arg1;
 - (id)_messagesWithGUIDs:(id)arg1;
-- (id)messageWithGUID:(id)arg1;
 - (void)_setDatabaseCloseTimer;
 - (void)_clearDatabaseCloseTimer;
 - (void)__closeDatabase;
 - (void)_performInitialHousekeeping;
 - (void)setModificationStamp:(id)arg1;
+- (BOOL)isCurrentThreadDBThread;
+- (void)performBlock:(id)arg1 waitUntilDone:(BOOL)arg2;
+- (void)performBlock:(id)arg1 afterDelay:(double)arg2;
 - (void)systemDidLeaveMemoryPressure;
 - (void)systemDidEnterMemoryPressure;
-- (void)closeDatabase;
-- (void)openDatabase;
+- (id)messageWithGUID:(id)arg1;
+- (BOOL)hasStoredMessageWithGUID:(id)arg1;
+- (void)performBlock:(id)arg1;
 
 @end

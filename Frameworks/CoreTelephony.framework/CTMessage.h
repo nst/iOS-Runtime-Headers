@@ -36,10 +36,14 @@
 @property(retain) NSUUID * uniqueIdentifier;
 
 
-- (void)setRecipient:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (id)contentType;
+- (void)setCountryCode:(id)arg1;
+- (id)recipients;
+- (id)countryCode;
+- (void)setContentType:(id)arg1;
 - (id)subject;
 - (void)setUniqueIdentifier:(id)arg1;
 - (void)setSubject:(id)arg1;
@@ -47,7 +51,8 @@
 - (id)sender;
 - (id)items;
 - (id)date;
-- (id)initWithDate:(id)arg1;
+- (void)setRecipient:(id)arg1;
+- (void)setSender:(id)arg1;
 - (unsigned int)replaceMessage;
 - (id)rawHeaders;
 - (void)setServiceCenter:(id)arg1;
@@ -66,16 +71,11 @@
 - (void)setRecipients:(id)arg1;
 - (void)removeRecipientsInArray:(id)arg1;
 - (void)removeRecipient:(id)arg1;
+- (void)addRecipient:(id)arg1;
 - (void)setReplaceMessage:(unsigned int)arg1;
 - (void)setRawHeaders:(id)arg1;
 - (void)addEmailRecipient:(id)arg1;
 - (void)addPhoneRecipient:(id)arg1;
-- (void)setCountryCode:(id)arg1;
-- (id)recipients;
-- (id)countryCode;
-- (void)setContentType:(id)arg1;
-- (void)addRecipient:(id)arg1;
-- (void)setSender:(id)arg1;
-- (id)contentType;
+- (id)initWithDate:(id)arg1;
 
 @end

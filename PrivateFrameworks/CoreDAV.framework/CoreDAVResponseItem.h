@@ -24,12 +24,10 @@
 
 + (id)copyParseRules;
 
+- (void)setLocation:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (void)setStatus:(id)arg1;
-- (id)status;
-- (id)location;
 - (BOOL)hasPropertyError;
 - (void)setHrefs:(id)arg1;
 - (void)setPropStats:(id)arg1;
@@ -45,6 +43,8 @@
 - (id)firstHref;
 - (id)hrefs;
 - (id)successfulPropertiesToValues;
-- (void)setLocation:(id)arg1;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (id)location;
 
 @end

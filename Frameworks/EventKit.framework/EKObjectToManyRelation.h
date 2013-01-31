@@ -25,7 +25,6 @@
 - (id)description;
 - (void)dealloc;
 - (int)count;
-- (void)rollback;
 - (void)addItem:(id)arg1;
 - (void)setItems:(id)arg1;
 - (id)items;
@@ -51,5 +50,6 @@
 - (BOOL)validate:(id*)arg1;
 - (void)didCommit;
 - (void)refresh;
+- (void)rollback;
 
 @end

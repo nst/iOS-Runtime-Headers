@@ -22,9 +22,9 @@
 - (void)setImagePool:(id)arg1;
 - (void)setImageCache:(id)arg1;
 - (id)imageProvider;
-- (id)placeholderImage;
-- (id)imageCache;
 - (id)imagePool;
 - (void)dealloc;
+- (id)placeholderImage;
+- (id)imageCache;
 
 @end

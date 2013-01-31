@@ -17,14 +17,14 @@
 @property(retain) AXHearingAidDevice * device;
 
 
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (void)setDevice:(id)arg1;
 - (void)dealloc;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)imageForBatteryLevel:(float)arg1;
+- (void)updateAvailability;
 - (id)device;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
 - (void)layoutSubviews;
-- (id)imageForBatteryLevel:(float)arg1;
-- (void)updateAvailability;
 
 @end

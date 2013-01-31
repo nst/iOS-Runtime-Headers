@@ -40,10 +40,6 @@
 - (id)description;
 - (void)dealloc;
 - (void)setLibrary:(id)arg1;
-- (BOOL)isReadOnly;
-- (id)status;
-- (id)displayName;
-- (void)close;
 - (void)updateMessages:(id)arg1 updateNumberOfAttachments:(BOOL)arg2;
 - (void)_setFlagsForMessages:(id)arg1 mask:(unsigned long long)arg2;
 - (void)_rebuildTableOfContentsSynchronously;
@@ -140,5 +136,9 @@
 - (void)updateUserInfoToLatestValues;
 - (void)openSynchronously;
 - (id)account;
+- (id)status;
+- (id)displayName;
+- (void)close;
+- (BOOL)isReadOnly;
 
 @end

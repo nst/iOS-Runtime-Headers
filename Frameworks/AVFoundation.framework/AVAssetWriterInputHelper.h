@@ -31,17 +31,17 @@
 @property(readonly) struct __CVPixelBufferPool { }* pixelBufferPool;
 
 
-- (int)trackID;
-- (id)trackReferences;
 - (void)dealloc;
 - (id)mediaType;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
 - (int)status;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (id)languageCode;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
+- (id)trackReferences;
+- (int)trackID;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 - (id)weakReferenceToAssetWriterInput;
 - (void)transitionAssetWriterAndAllInputsToFailedStatusWithError:(id)arg1;
 - (void)addTrackAssociationWithTrackOfInput:(id)arg1 type:(id)arg2;

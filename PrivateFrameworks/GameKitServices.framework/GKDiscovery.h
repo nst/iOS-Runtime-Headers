@@ -14,6 +14,13 @@
 @property(retain) GKDiscoveryManager * manager;
 
 
+- (void)dealloc;
+- (id)init;
+- (id)receiveDataHandler;
+- (id)playerLostHandler;
+- (id)playerFoundHandler;
+- (void)setManager:(id)arg1;
+- (id)manager;
 - (void)forgetParticipant:(id)arg1 deviceID:(id)arg2;
 - (void)stopBrowsing;
 - (void)startBrowsingLocalPlayer:(id)arg1;
@@ -23,12 +30,5 @@
 - (void)setReceiveDataHandler:(id)arg1;
 - (void)setPlayerLostHandler:(id)arg1;
 - (void)setPlayerFoundHandler:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)setManager:(id)arg1;
-- (id)receiveDataHandler;
-- (id)playerLostHandler;
-- (id)playerFoundHandler;
-- (id)manager;
 
 @end

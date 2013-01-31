@@ -20,17 +20,6 @@
 @property <VKLRUCacheDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)setObject:(id)arg1 forKey:(const struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg2;
-- (id)description;
-- (void)removeAllObjects;
-- (id)objectForKey:(const struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (void)dealloc;
-- (id)init;
-- (unsigned int)count;
-- (void)purge;
 - (unsigned int)maximumCapacity;
 - (unsigned int)reservedCapacity;
 - (void)removeObjectsMatchingPredicate:(id)arg1;
@@ -43,5 +32,16 @@
 - (void)removeNode:(id)arg1;
 - (void)setReservedCapacity:(unsigned int)arg1 maximumCapacity:(unsigned int)arg2;
 - (id)initWithReservedCapacity:(unsigned int)arg1 maximumCapacity:(unsigned int)arg2;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)setObject:(id)arg1 forKey:(const struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg2;
+- (id)description;
+- (void)removeAllObjects;
+- (id)objectForKey:(const struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)count;
+- (void)purge;
 
 @end

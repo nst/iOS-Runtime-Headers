@@ -13,11 +13,11 @@
 + (id)emailPayloadWithDictionary:(id)arg1 context:(id)arg2;
 + (id)emailPayload;
 
-- (id)groupIdentifier;
-- (id)subject;
-- (void)setSubject:(id)arg1;
 - (void)setRecipientsTo:(id)arg1;
 - (id)recipientsTo;
 - (id)encodedClassName;
+- (id)subject;
+- (void)setSubject:(id)arg1;
+- (id)groupIdentifier;
 
 @end

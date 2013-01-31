@@ -27,8 +27,6 @@
 - (void)setName:(id)arg1;
 - (id)name;
 - (void)dealloc;
-- (id)background;
-- (void)setBackground:(id)arg1;
 - (void)setSouthWestStyle:(id)arg1;
 - (void)setSouthEastStyle:(id)arg1;
 - (void)setNorthWestStyle:(id)arg1;
@@ -58,5 +56,7 @@
 - (id)wholeTableStyle;
 - (id)firstRowStyle;
 - (id)id;
+- (id)background;
+- (void)setBackground:(id)arg1;
 
 @end

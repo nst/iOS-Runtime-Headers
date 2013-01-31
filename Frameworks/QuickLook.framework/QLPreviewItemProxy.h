@@ -24,14 +24,10 @@
 
 + (id)proxyWithPreviewItem:(id)arg1;
 
-- (void)setUrlForDisplay:(id)arg1;
-- (id)urlForDisplay;
-- (id)initWithPreviewItem:(id)arg1;
-- (void)consumeFileExtension;
-- (void)issueFileExtension;
-- (void)setPassword:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (id)contentType;
+- (void)setContentType:(id)arg1;
 - (id)previewItemTitle;
 - (id)previewItemURLForDisplay;
 - (id)previewItemContentType;
@@ -43,7 +39,11 @@
 - (void)setTitle:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setContentType:(id)arg1;
-- (id)contentType;
+- (void)setUrlForDisplay:(id)arg1;
+- (id)urlForDisplay;
+- (id)initWithPreviewItem:(id)arg1;
+- (void)consumeFileExtension;
+- (void)issueFileExtension;
+- (void)setPassword:(id)arg1;
 
 @end

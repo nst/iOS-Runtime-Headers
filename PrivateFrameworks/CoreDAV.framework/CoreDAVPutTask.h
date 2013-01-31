@@ -14,9 +14,9 @@
 
 - (id)description;
 - (void)dealloc;
+- (id)httpMethod;
 - (void)setNextETag:(id)arg1;
 - (id)nextETag;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)httpMethod;
 
 @end

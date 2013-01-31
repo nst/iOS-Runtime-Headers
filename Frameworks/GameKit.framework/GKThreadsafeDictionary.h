@@ -12,13 +12,13 @@
 @property(retain) NSMutableDictionary * dictionary;
 
 
-- (void)readFromDictionary:(id)arg1;
-- (void)writeToDictionary:(id)arg1;
 - (id)dictionary;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)removeAllObjects;
 - (id)objectForKey:(id)arg1;
 - (void)dealloc;
+- (void)readFromDictionary:(id)arg1;
+- (void)writeToDictionary:(id)arg1;
 - (id)initWithName:(id)arg1;
 - (void)setDictionary:(id)arg1;
 

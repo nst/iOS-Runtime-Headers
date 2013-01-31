@@ -21,16 +21,16 @@
 + (id)imageFromRawPixelsAtURL:(id)arg1;
 + (id)drawWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 opaque:(BOOL)arg3 usingBlock:(id)arg4;
 
+- (void)dealloc;
+- (id)image;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (float)scale;
+- (struct CGSize { float x1; float x2; })size;
 - (BOOL)writeRawPixelsToURL:(id)arg1 error:(id*)arg2;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 opaque:(BOOL)arg3 data:(void*)arg4;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 grayscale:(BOOL)arg3 opaque:(BOOL)arg4 data:(void*)arg5;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 opaque:(BOOL)arg3;
 - (id)initMaskContextWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (struct CGContext { }*)CGContext;
-- (void)dealloc;
-- (id)image;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (float)scale;
-- (struct CGSize { float x1; float x2; })size;
 
 @end

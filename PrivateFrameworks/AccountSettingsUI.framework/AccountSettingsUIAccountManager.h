@@ -13,8 +13,8 @@
 
 - (void)dealloc;
 - (id)init;
+- (id)allAccounts;
 - (id)accountWithSyncStoreIdentifier:(id)arg1;
 - (id)accountsBySyncStoreIdentifier;
-- (id)allAccounts;
 
 @end

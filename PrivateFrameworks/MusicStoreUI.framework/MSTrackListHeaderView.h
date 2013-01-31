@@ -23,6 +23,12 @@
 @property(retain) SUItem * item;
 
 
+- (void)_touchCaptureAction:(id)arg1;
+- (void)_reloadArtworkView;
+- (void)setArtworkImage:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (id)_newGenericSmallFontLabel;
 - (void)_setShowingPurchaseConfirmation:(BOOL)arg1;
 - (void)_performPurchaseAnimation;
@@ -33,23 +39,17 @@
 - (void)_reloadDisclaimerLabel;
 - (void)_reloadArtistLabel;
 - (void)_reloadAlbumLabel;
-- (void)reloadView;
-- (void)_touchCaptureAction:(id)arg1;
-- (void)setItem:(id)arg1;
 - (void)_offerButtonAction:(id)arg1;
 - (void)_hidePurchaseConfirmation;
 - (void)_showPurchaseConfirmation;
 - (void)_purchasesChangedNotification:(id)arg1;
-- (id)artworkImage;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
 - (id)item;
 - (void)sizeToFit;
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_reloadArtworkView;
-- (void)setArtworkImage:(id)arg1;
+- (id)artworkImage;
+- (void)setItem:(id)arg1;
+- (void)reloadView;
 
 @end

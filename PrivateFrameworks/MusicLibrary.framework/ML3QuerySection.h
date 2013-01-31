@@ -19,8 +19,8 @@
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 sectionIndex:(unsigned int)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

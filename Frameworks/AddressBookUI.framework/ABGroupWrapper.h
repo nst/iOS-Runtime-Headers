@@ -40,7 +40,6 @@
 + (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountsManager:(id)arg3 accountStore:(id)arg4;
 + (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountsManager:(id)arg3 accountStore:(id)arg4 excludingSearchableStores:(BOOL)arg5 isSoleAccount:(BOOL)arg6;
 
-- (int)score;
 - (id)accountIdentifier;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
@@ -48,12 +47,14 @@
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (void*)addressBook;
 - (void*)source;
 - (int)sourceType;
 - (void*)group;
 - (void)setSelected:(BOOL)arg1;
 - (BOOL)isSelected;
-- (void*)addressBook;
+- (id)accountStore;
+- (int)score;
 - (id)parentGroupWrapper;
 - (BOOL)shouldBeSelectedWhenAllChildrenAreSelected;
 - (id)childGroupWrappers;
@@ -62,7 +63,6 @@
 - (BOOL)showLinkedPeople;
 - (BOOL)isGlobalWrapper;
 - (id)accountManager;
-- (id)accountStore;
 - (void)setSelected:(BOOL)arg1 propagateSelectionToChildren:(BOOL)arg2;
 - (void)childGroupWrapper:(id)arg1 didBecomeSelected:(BOOL)arg2;
 - (id)_accountDescriptionBasedOnIdentifier;

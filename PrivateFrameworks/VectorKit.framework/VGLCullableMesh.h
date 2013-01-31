@@ -39,9 +39,6 @@
 @property(readonly) BOOL isPrimaryIndexModeLinesWithTriangles;
 
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (id)init;
 - (unsigned int)tilePointSize;
 - (void)drawDebugBounds:(id)arg1;
 - (void)_createSortedLineIndicesFromSortedTriangleLinesForIndex:(unsigned int)arg1 fromIndex:(unsigned int)arg2;
@@ -52,5 +49,8 @@
 - (void)drawInPreparedCulls:(id)arg1;
 - (void)prepareCullsInRects:(const struct { float x1; float x2; float x3; float x4; }*)arg1 numRects:(unsigned int)arg2;
 - (void)freeze;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (id)init;
 
 @end

@@ -13,11 +13,11 @@
 }
 
 
+- (void)add:(id)arg1;
 - (id)codesForString:(id)arg1;
 - (BOOL)isSlavoGermanic;
 - (void)addPrimary:(id)arg1 alternate:(id)arg2;
 - (BOOL)isVowelAtIndex:(int)arg1;
 - (BOOL)isAnyString:(id)arg1 atIndex:(int)arg2;
-- (void)add:(id)arg1;
 
 @end

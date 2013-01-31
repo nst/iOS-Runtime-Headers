@@ -7,9 +7,9 @@
 @interface PLCloudSharingInvitationChangeJob : PLCloudSharingJob  {
     NSString *_albumGUID;
     NSArray *_MSASSharingRelationships;
-    NSString *_resendInvitationGUID;
     int _relationshipChangeType;
     NSDictionary *_mstreamdInfoDictionary;
+    NSString *_resendInvitationGUID;
     int _jobType;
 }
 
@@ -27,7 +27,6 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)run;
 - (void)executeSendServerPendingInvitationsForAlbumWithGUID;
 - (void)executeSaveServerStateLocallyForSharingInvitationRelationships;
 - (void)executeSaveServerStateLocallyForSharingACLRelationships;
@@ -48,5 +47,6 @@
 - (int)daemonOperation;
 - (void)runDaemonSide;
 - (id)initFromXPCObject:(id)arg1;
+- (void)run;
 
 @end

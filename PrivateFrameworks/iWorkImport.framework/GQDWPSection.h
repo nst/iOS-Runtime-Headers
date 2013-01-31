@@ -10,9 +10,9 @@
 }
 
 
-- (void)dealloc;
-- (id)style;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 - (struct __CFArray { }*)children;
+- (void)dealloc;
+- (id)style;
 
 @end

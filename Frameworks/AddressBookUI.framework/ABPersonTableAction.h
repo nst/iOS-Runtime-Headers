@@ -45,18 +45,20 @@
 @property(retain) UIView * actionContentView;
 
 
+- (id)button;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)setProperties:(struct __CFArray { }*)arg1;
 - (id)target;
 - (id)description;
 - (void)dealloc;
-- (int)property;
+- (void)setGrouping:(int)arg1;
+- (int)grouping;
 - (struct __CFArray { }*)properties;
 - (SEL)selector;
 - (int)style;
 - (id)title;
-- (id)button;
+- (int)property;
 - (void)setOrdering:(int)arg1;
 - (id)existingButton;
 - (id)detailText;
@@ -83,7 +85,5 @@
 - (id)initWithTitle:(id)arg1 style:(int)arg2 target:(id)arg3 selector:(SEL)arg4;
 - (id)actionContentView;
 - (id)styleProvider;
-- (void)setGrouping:(int)arg1;
-- (int)grouping;
 
 @end

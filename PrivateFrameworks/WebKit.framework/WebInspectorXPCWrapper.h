@@ -18,22 +18,22 @@
 @property NSObject<OS_xpc_object> * currentMessage;
 
 
-- (id)currentMessage;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)initWithConnection:(id)arg1;
-- (id)connection;
-- (void)close;
-- (id)tag;
-- (void)setTag:(id)arg1;
-- (BOOL)available;
-- (void)setConnection:(id)arg1;
-- (void)_handleEvent:(id)arg1;
 - (void)setCurrentMessage:(id)arg1;
 - (void)barrierWithCompletionHandler:(id)arg1;
 - (void)sendMessage:(id)arg1 userInfo:(id)arg2 replyHandler:(id)arg3;
 - (id)_deserializeMessage:(id)arg1;
 - (void)sendMessage:(id)arg1 userInfo:(id)arg2;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)currentMessage;
+- (void)_handleEvent:(id)arg1;
+- (BOOL)available;
+- (void)setConnection:(id)arg1;
+- (id)initWithConnection:(id)arg1;
+- (id)connection;
+- (void)close;
+- (id)tag;
+- (void)setTag:(id)arg1;
 
 @end

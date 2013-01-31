@@ -17,9 +17,6 @@
 
 
 - (void)dealloc;
-- (float)migrationProgress;
-- (void)setContext:(id)arg1;
-- (id)context;
 - (float)estimatedDuration;
 - (BOOL)performMigration;
 - (id)dataClassName;
@@ -28,5 +25,8 @@
 - (BOOL)didRestoreFromCloudBackup;
 - (BOOL)didMigrateBackupFromDifferentDevice;
 - (BOOL)didRestoreFromBackup;
+- (void)setContext:(id)arg1;
+- (id)context;
+- (float)migrationProgress;
 
 @end

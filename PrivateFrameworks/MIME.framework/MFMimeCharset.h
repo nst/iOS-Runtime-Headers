@@ -13,13 +13,14 @@
     unsigned int _canBeUsedForOutgoingMessages : 1;
 }
 
++ (id)charsetForEncoding:(unsigned long)arg1;
 + (id)allMimeCharsets;
 + (id)allMimeCharsets:(BOOL)arg1;
 + (id)preferredMimeCharset;
-+ (id)charsetForEncoding:(unsigned long)arg1;
 
 - (id)description;
 - (void)dealloc;
+- (id)charsetName;
 - (BOOL)useBase64InHeaders;
 - (BOOL)coversLargeUnicodeSubset;
 - (BOOL)canBeUsedForOutgoingMessages;
@@ -28,6 +29,5 @@
 - (unsigned long)encoding;
 - (id)primaryLanguage;
 - (id)displayName;
-- (id)charsetName;
 
 @end

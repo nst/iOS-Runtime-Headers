@@ -26,30 +26,30 @@
 @property(readonly) NSArray * areasOfInterest;
 
 
-- (id)ocean;
-- (id)inlandWater;
-- (id)fullThoroughfare;
-- (id)ISOcountryCode;
-- (id)postalCode;
-- (id)subAdministrativeArea;
-- (id)administrativeArea;
-- (id)subLocality;
-- (id)locality;
-- (id)subThoroughfare;
-- (id)thoroughfare;
-- (id)formattedAddressLines;
-- (id)initWithPlacemark:(id)arg1;
-- (id)areasOfInterest;
-- (id)initWithLocation:(id)arg1 addressDictionary:(id)arg2 region:(id)arg3 areasOfInterest:(id)arg4;
-- (id)addressDictionary;
 - (id)name;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)region;
+- (id)addressDictionary;
+- (id)inlandWater;
+- (id)ocean;
+- (id)subThoroughfare;
+- (id)thoroughfare;
+- (id)fullThoroughfare;
+- (id)subLocality;
+- (id)locality;
+- (id)subAdministrativeArea;
+- (id)administrativeArea;
+- (id)formattedAddressLines;
 - (id)location;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)region;
+- (id)ISOcountryCode;
+- (id)postalCode;
+- (id)initWithPlacemark:(id)arg1;
+- (id)areasOfInterest;
+- (id)initWithLocation:(id)arg1 addressDictionary:(id)arg2 region:(id)arg3 areasOfInterest:(id)arg4;
 - (id)country;
 
 @end

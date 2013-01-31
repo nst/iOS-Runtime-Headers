@@ -26,15 +26,6 @@
 
 + (id)sharedInstance;
 
-- (BOOL)networkEnabled;
-- (BOOL)networkActive;
-- (BOOL)networkReachable;
-- (BOOL)enableCriticalReliability;
-- (void)_setReliabilityTimeoutInterval;
-- (void)_reallySetCriticalReliability:(BOOL)arg1;
-- (void)_createAPSConnectionIfNeeded;
-- (void)_tryToEnableReliability;
-- (void)_clearReliabilityTimeoutInterval;
 - (void)setEnableCriticalReliability:(BOOL)arg1;
 - (BOOL)dataActiveAndReachable;
 - (BOOL)wiFiActiveAndReachable;
@@ -43,5 +34,14 @@
 - (BOOL)validNetworkActive;
 - (BOOL)validNetworkEnabled;
 - (BOOL)allowAnyNetwork;
+- (BOOL)enableCriticalReliability;
+- (void)_setReliabilityTimeoutInterval;
+- (void)_reallySetCriticalReliability:(BOOL)arg1;
+- (void)_createAPSConnectionIfNeeded;
+- (void)_tryToEnableReliability;
+- (void)_clearReliabilityTimeoutInterval;
+- (BOOL)networkEnabled;
+- (BOOL)networkActive;
+- (BOOL)networkReachable;
 
 @end

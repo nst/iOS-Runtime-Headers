@@ -11,17 +11,9 @@
     BOOL _cacheComplete;
 }
 
-+ (void)initialize;
 + (void)initializeLookupTable;
++ (void)initialize;
 
-- (id)objectForKey:(id)arg1;
-- (void)dealloc;
-- (unsigned int)count;
-- (id)keyEnumerator;
-- (void)finalize;
-- (id)_isSelected;
-- (id)_title;
-- (id)_image;
 - (void)_fillCache;
 - (id)_isInScrollBar;
 - (id)_isContentEditable;
@@ -38,5 +30,13 @@
 - (id)_webFrame;
 - (id)_domNode;
 - (id)initWithHitTestResult:(const struct HitTestResult { struct RefPtr<WebCore::Node> { struct Node {} *x_1_1_1; } x1; struct RefPtr<WebCore::Node> { struct Node {} *x_2_1_1; } x2; struct IntPoint { int x_3_1_1; int x_3_1_2; } x3; struct IntPoint { int x_4_1_1; int x_4_1_2; } x4; struct RefPtr<WebCore::Element> { struct Element {} *x_5_1_1; } x5; struct RefPtr<WebCore::Scrollbar> { struct Scrollbar {} *x_6_1_1; } x6; boolx7; boolx8; int x9; int x10; int x11; int x12; int x13; struct RenderRegion {} *x14; struct OwnPtr<WTF::ListHashSet<WTF::RefPtr<WebCore::Node>, 256, WTF::PtrHash<WTF::RefPtr<WebCore::Node>>> > { struct ListHashSet<WTF::RefPtr<WebCore::Node>, 256, WTF::PtrHash<WTF::RefPtr<WebCore::Node>> > {} *x_15_1_1; } x15; }*)arg1;
+- (id)objectForKey:(id)arg1;
+- (void)dealloc;
+- (unsigned int)count;
+- (id)_image;
+- (id)keyEnumerator;
+- (void)finalize;
+- (id)_isSelected;
+- (id)_title;
 
 @end

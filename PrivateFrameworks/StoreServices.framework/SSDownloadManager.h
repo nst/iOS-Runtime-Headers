@@ -25,10 +25,8 @@
 @property(readonly) NSArray * downloads;
 @property(getter=isUsingNetwork,readonly) BOOL usingNetwork;
 
-+ (id)softwareDownloadManager;
 + (id)EBookDownloadKinds;
 + (id)softwareDownloadKinds;
-+ (id)IPodDownloadKinds;
 + (void)retryAllRestoreDownloads;
 + (void)_triggerDownloads;
 + (void)reevaluateBackgroundDownloadsForBundleIdentifiers:(id)arg1;
@@ -37,9 +35,9 @@
 + (void)setDownloadHandler:(id)arg1;
 + (void)removePersistenceIdentifier:(id)arg1;
 + (void)_sendGlobalHandler:(id)arg1;
++ (id)IPodDownloadKinds;
++ (id)softwareDownloadManager;
 
-- (id)downloads;
-- (void)addObserver:(id)arg1;
 - (BOOL)canCancelDownload:(id)arg1;
 - (void)reloadFromServer;
 - (id)managerOptions;
@@ -81,6 +79,8 @@
 - (void)_handleDownloadsRemoved:(id)arg1;
 - (id)_XPCConnection;
 - (id)initWithDownloadKinds:(id)arg1;
+- (id)downloads;
+- (void)addObserver:(id)arg1;
 - (id)initWithManagerOptions:(id)arg1;
 - (void)resumeDownloads:(id)arg1 completionBlock:(id)arg2;
 - (void)addDownloads:(id)arg1 completionBlock:(id)arg2;

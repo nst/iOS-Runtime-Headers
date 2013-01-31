@@ -18,20 +18,20 @@
 @property(retain) NSURL * calendarHomeURL;
 
 
-- (BOOL)acceptInvitation;
 - (id)description;
 - (void)dealloc;
-- (void)setInvitation:(id)arg1;
-- (id)invitation;
 - (id)calendarHomeURL;
 - (void)setCalendarHomeURL:(id)arg1;
+- (void)setInvitation:(id)arg1;
+- (id)invitation;
+- (void)startTaskGroup;
+- (void)task:(id)arg1 didFinishWithError:(id)arg2;
+- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
 - (id)sharedAs;
 - (id)initWithInvitation:(id)arg1 acceptInvitation:(BOOL)arg2 atCalendarHomeURL:(id)arg3 accountInfoProvider:(id)arg4 taskManager:(id)arg5;
 - (id)generateReply;
 - (void)setSharedAs:(id)arg1;
 - (void)setAcceptInvitation:(BOOL)arg1;
-- (void)startTaskGroup;
-- (void)task:(id)arg1 didFinishWithError:(id)arg2;
-- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
+- (BOOL)acceptInvitation;
 
 @end

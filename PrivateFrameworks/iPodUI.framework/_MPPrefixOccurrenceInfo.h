@@ -15,12 +15,12 @@
 @property unsigned int occurrenceCount;
 
 
-- (void)dealloc;
-- (void)setProperty:(id)arg1;
-- (id)property;
 - (void)setPrefixString:(id)arg1;
 - (void)setOccurrenceCount:(unsigned int)arg1;
+- (void)dealloc;
 - (id)prefixString;
 - (unsigned int)occurrenceCount;
+- (void)setProperty:(id)arg1;
+- (id)property;
 
 @end

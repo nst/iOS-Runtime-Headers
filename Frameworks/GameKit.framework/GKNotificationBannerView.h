@@ -22,6 +22,11 @@
   /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
 
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _touchHandler;
+
 }
 
 @property(retain) NSString * title;
@@ -33,23 +38,14 @@
 @property(readonly) UILabel * messageLabel;
 @property double duration;
 @property(copy) id completionHandler;
+@property(copy) id touchHandler;
 
++ (id)queue;
 + (id)semaphore;
 + (void)decrementCount;
 + (id)bannerWindow;
 + (void)incrementCount;
-+ (id)queue;
 
-- (void)showWithCompletionHandler:(id)arg1;
-- (id)initWithTitle:(id)arg1 message:(id)arg2;
-- (void)_hide;
-- (void)setShowing:(BOOL)arg1;
-- (void)_show;
-- (BOOL)showing;
-- (id)initWithTitle:(id)arg1 image:(id)arg2 message:(id)arg3;
-- (void)orientationChanged:(id)arg1;
-- (void)_layoutForOrientation:(int)arg1 animated:(BOOL)arg2;
-- (id)messageLabel;
 - (void)dealloc;
 - (void)setCompletionHandler:(id)arg1;
 - (id)message;
@@ -63,5 +59,19 @@
 - (void)setTitle:(id)arg1;
 - (id)titleLabel;
 - (void)layoutSubviews;
+- (void)showWithTouchHandler:(id)arg1;
+- (void)showWithCompletionHandler:(id)arg1;
+- (id)initWithTitle:(id)arg1 message:(id)arg2;
+- (void)_hide;
+- (void)setShowing:(BOOL)arg1;
+- (id)touchHandler;
+- (void)setTouchHandler:(id)arg1;
+- (void)_show;
+- (BOOL)showing;
+- (id)initWithTitle:(id)arg1 image:(id)arg2 message:(id)arg3;
+- (void)orientationChanged:(id)arg1;
+- (void)_layoutForOrientation:(int)arg1 animated:(BOOL)arg2;
+- (void)_wasTouched:(id)arg1;
+- (id)messageLabel;
 
 @end

@@ -16,10 +16,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setSecond:(id)arg1;
-- (id)second;
 - (id)initWithFirst:(id)arg1 second:(id)arg2;
 - (void)setFirst:(id)arg1;
 - (id)first;
+- (void)setSecond:(id)arg1;
+- (id)second;
 
 @end

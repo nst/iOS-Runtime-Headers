@@ -11,7 +11,7 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (double)timeInterval;
 - (id)initWithTimeInterval:(double)arg1;
+- (double)timeInterval;
 
 @end

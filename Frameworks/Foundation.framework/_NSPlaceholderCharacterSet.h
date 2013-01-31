@@ -23,19 +23,19 @@
 - (void)dealloc;
 - (oneway void)release;
 - (id)autorelease;
-- (id)replacementObjectForCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)invertedSet;
 - (BOOL)longCharacterIsMember:(unsigned long)arg1;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
 - (BOOL)isEmpty;
+- (id)replacementObjectForKeyedArchiver:(id)arg1;
+- (void)_expandInverted;
+- (id)initWithSet:(id)arg1 options:(unsigned int)arg2;
 - (BOOL)isSupersetOfSet:(id)arg1;
 - (id)bitmapRepresentation;
 - (struct __CFCharacterSet { }*)_expandedCFCharacterSet;
 - (BOOL)hasMemberInPlane:(unsigned char)arg1;
-- (id)replacementObjectForKeyedArchiver:(id)arg1;
-- (void)_expandInverted;
-- (id)initWithSet:(id)arg1 options:(unsigned int)arg2;
+- (id)replacementObjectForCoder:(id)arg1;
 
 @end

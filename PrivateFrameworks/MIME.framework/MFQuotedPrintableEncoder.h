@@ -16,11 +16,11 @@
 
 + (unsigned long)requiredSizeToEncodeHeaderBytes:(const char *)arg1 length:(unsigned long)arg2;
 
+- (void)setForTextPart:(BOOL)arg1;
 - (BOOL)forHeader;
 - (BOOL)forTextPart;
 - (void)setForHeader:(BOOL)arg1;
 - (int)appendData:(id)arg1;
 - (void)done;
-- (void)setForTextPart:(BOOL)arg1;
 
 @end

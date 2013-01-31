@@ -32,10 +32,10 @@
 - (id)description;
 - (void)dealloc;
 - (id)parameters;
-- (id)initWithDictionary:(id)arg1;
-- (id)parameterForKey:(id)arg1;
 - (id)sig;
 - (unsigned int)sessionNumber;
 - (void)setSig:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)parameterForKey:(id)arg1;
 
 @end

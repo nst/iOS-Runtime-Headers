@@ -8,7 +8,6 @@
 }
 
 
-- (int)transport;
 - (long)identifier;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -16,5 +15,6 @@
 - (void)dealloc;
 - (unsigned int)ioObject;
 - (id)initWithIOObject:(unsigned int)arg1;
+- (int)transport;
 
 @end

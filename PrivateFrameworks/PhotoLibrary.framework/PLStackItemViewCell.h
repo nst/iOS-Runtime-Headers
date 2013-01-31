@@ -17,31 +17,31 @@
     UIImageView *_unreadBadge;
     PLUnreadMarkerView *_unreadMarkerStartView;
     UIImageView *_badgeView;
-    BOOL _showsUnreadIndicator;
-    NSString *_title;
-    BOOL _ignoreEndEditing;
+    NSString *_subtitle;
     BOOL _unreadStartMarkerShowsProgress;
-    BOOL _enabled;
-    UIView<PLStackableImage> *_sourceView;
-    BOOL _labelsShadowEnabled;
+    BOOL _labelIsEditable;
     float _stackedAngle;
-    float _labelsAlpha;
+    BOOL _labelsHidden;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _renameAction;
 
     UIImage *_badgeImage;
-    BOOL _labelsHidden;
+    float _labelsAlpha;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _closeAction;
 
+    BOOL _enabled;
+    BOOL _labelsShadowEnabled;
+    UIView<PLStackableImage> *_sourceView;
+    BOOL _ignoreEndEditing;
     BOOL _showsUnreadStartMarker;
-    BOOL _labelIsEditable;
-    NSString *_subtitle;
     unsigned int _unreadStartMarkerCount;
+    BOOL _showsUnreadIndicator;
+    NSString *_title;
 }
 
 @property(retain) UIView<PLStackableImage> * sourceView;
@@ -70,34 +70,14 @@
 
 + (void)initialize;
 
-- (id)badgeImage;
-- (void)setBadgeImage:(id)arg1;
 - (void)dealloc;
-- (BOOL)enabled;
-- (id)subtitle;
-- (void)setSubtitle:(id)arg1;
-- (id)imageView;
-- (BOOL)textFieldShouldClear:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })textField:(id)arg1 willChangeSelectionFromCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 toCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
-- (BOOL)textFieldShouldReturn:(id)arg1;
-- (void)textFieldDidEndEditing:(id)arg1;
-- (void)textFieldDidBeginEditing:(id)arg1;
-- (id)title;
-- (BOOL)canBecomeFirstResponder;
-- (void)setEnabled:(BOOL)arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)becomeFirstResponder;
-- (void)setTitle:(id)arg1;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (unsigned int)unreadStartMarkerCount;
 - (BOOL)showsUnreadStartMarker;
-- (id)closeAction;
-- (BOOL)labelsHidden;
-- (id)renameAction;
-- (float)labelsAlpha;
 - (BOOL)isLabelShadowEnabled;
+- (id)closeAction;
+- (float)labelsAlpha;
+- (id)renameAction;
+- (BOOL)labelsHidden;
 - (BOOL)unreadStartMarkerShowsProgress;
 - (void)setUnreadStartMarkerShowsProgress:(BOOL)arg1;
 - (void)setShowsUnreadStartMarker:(BOOL)arg1;
@@ -138,5 +118,25 @@
 - (BOOL)showsUnreadIndicator;
 - (void)setShowsUnreadIndicator:(BOOL)arg1;
 - (void)setShowsUnreadIndicator:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)enabled;
+- (id)subtitle;
+- (void)setSubtitle:(id)arg1;
+- (id)imageView;
+- (BOOL)textFieldShouldClear:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })textField:(id)arg1 willChangeSelectionFromCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 toCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
+- (BOOL)textFieldShouldReturn:(id)arg1;
+- (void)textFieldDidEndEditing:(id)arg1;
+- (void)textFieldDidBeginEditing:(id)arg1;
+- (id)title;
+- (BOOL)canBecomeFirstResponder;
+- (void)setEnabled:(BOOL)arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)becomeFirstResponder;
+- (void)setTitle:(id)arg1;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)badgeImage;
+- (void)setBadgeImage:(id)arg1;
 
 @end

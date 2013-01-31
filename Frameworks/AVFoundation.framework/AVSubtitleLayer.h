@@ -14,15 +14,15 @@
 
 + (id)subtitleLayerWithPlayer:(id)arg1;
 
-- (void)setPlayer:(id)arg1;
-- (id)player;
-- (void)layerDidBecomeVisible:(BOOL)arg1;
+- (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)initWithLayer:(id)arg1;
 - (void)finalize;
-- (void)drawInContext:(struct CGContext { }*)arg1;
+- (void)layerDidBecomeVisible:(BOOL)arg1;
+- (void)setPlayer:(id)arg1;
+- (id)player;
 - (void)_updateNonForcedSubtitleDisplayEnabled:(BOOL)arg1;
 - (void)_setSubtitleSample:(id)arg1;
 - (void)setOverscanSubtitleSupportEnabled:(BOOL)arg1;

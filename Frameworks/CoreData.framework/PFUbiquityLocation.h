@@ -31,6 +31,7 @@
 @property(readonly) unsigned int hash;
 @property(readonly) NSArray * otherPathComponents;
 
++ (void)initialize;
 + (void)setLocationSentinel:(id)arg1;
 + (id)createMapOfLocationsForOldManagedObjectModel:(id)arg1 andNewManagedObjectModel:(id)arg2 inUbiquityPeerStoreLocation:(id)arg3;
 + (id)createUbiquityPeerReceiptSafeSaveLocationFromReceiptFileLocation:(id)arg1;
@@ -68,7 +69,6 @@
 + (id)createVersionHashStringForModel:(id)arg1;
 + (id)createUbiquityLocationForURL:(id)arg1 withUbiquityRootLocation:(id)arg2;
 + (id)createUbiquityLocationForURL:(id)arg1 withUbiquityRootURL:(id)arg2;
-+ (void)initialize;
 
 - (id)description;
 - (unsigned int)hash;
@@ -82,7 +82,7 @@
 - (BOOL)usesTemporaryLogDirectory;
 - (BOOL)usesStagingLogDirectory;
 - (id)initWithUbiquityRootURL:(id)arg1;
-- (BOOL)fileExistsAtLocationWithLocalPeerID:(id)arg1;
+- (BOOL)fileExistsAtLocationWithLocalPeerID:(id)arg1 error:(id*)arg2;
 - (BOOL)usesBaselineStagingDirectory;
 - (BOOL)usesCurrentBaselineDirectory;
 - (void)setHash:(unsigned int)arg1;
@@ -104,7 +104,7 @@
 - (id)exportingPeerID;
 - (id)storeName;
 - (id)ubiquityRootLocation;
-- (id)createFullURL;
 - (id)filename;
+- (id)createFullURL;
 
 @end

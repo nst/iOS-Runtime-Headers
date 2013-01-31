@@ -146,19 +146,12 @@
 }
 
 
+- (void)setNoWrap:(BOOL)arg1;
+- (BOOL)noWrap;
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithDocument:(id)arg1;
-- (id)document;
-- (void)setRightMargin:(short)arg1;
-- (void)setWidth:(short)arg1;
-- (short)width;
-- (short)position;
-- (void)setPosition:(short)arg1;
-- (void)setNoWrap:(BOOL)arg1;
-- (BOOL)noWrap;
 - (BOOL)isEditDateOverridden;
 - (void)setEditDate:(id)arg1;
 - (id)editDate;
@@ -258,5 +251,12 @@
 - (short)topMargin;
 - (short)rightMargin;
 - (short)leftMargin;
+- (id)initWithDocument:(id)arg1;
+- (id)document;
+- (void)setRightMargin:(short)arg1;
+- (void)setWidth:(short)arg1;
+- (short)width;
+- (short)position;
+- (void)setPosition:(short)arg1;
 
 @end

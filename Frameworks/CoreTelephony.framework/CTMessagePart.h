@@ -20,6 +20,9 @@
 
 - (id)data;
 - (void)dealloc;
+- (id)contentType;
+- (void)setContentType:(id)arg1;
+- (id)contentLocation;
 - (void)setData:(id)arg1;
 - (void)setContentLocation:(id)arg1;
 - (void)setContentId:(id)arg1;
@@ -28,8 +31,5 @@
 - (void)addContentTypeParameterWithName:(id)arg1 value:(id)arg2;
 - (id)contentTypeParameterWithName:(id)arg1;
 - (id)initWithData:(id)arg1 contentType:(id)arg2;
-- (void)setContentType:(id)arg1;
-- (id)contentLocation;
-- (id)contentType;
 
 @end

@@ -12,9 +12,9 @@
 
 + (float)defaultHeight;
 
-- (void)dealloc;
-- (void)layoutSubviews;
 - (id)button;
+- (void)dealloc;
 - (id)initWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
+- (void)layoutSubviews;
 
 @end

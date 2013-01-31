@@ -13,10 +13,10 @@
 }
 
 
-- (void)dealloc;
-- (id)init;
 - (id)initWithClient:(Class)arg1;
 - (Class)client;
+- (void)dealloc;
+- (id)init;
 - (id)drawableForBlipId:(int)arg1;
 - (struct EshContent { }*)eshContentForId:(int)arg1;
 - (void)setDrawable:(id)arg1 forBlipId:(int)arg2;

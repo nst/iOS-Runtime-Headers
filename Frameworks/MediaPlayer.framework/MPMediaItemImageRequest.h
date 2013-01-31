@@ -28,7 +28,7 @@
 @property(readonly) UIImage * unscaledPlaceholderImage;
 
 
-- (id)placeholderImage;
+- (void)dealloc;
 - (void)setCanUseSurfaceBackedImage:(BOOL)arg1;
 - (BOOL)canUseSurfaceBackedImage;
 - (void)setPlaceHolderMediaType:(int)arg1;
@@ -52,7 +52,7 @@
 - (void)setUsePlaceholderAsFallback:(BOOL)arg1;
 - (void)setRetrievalTimeForPlaybackTime:(double)arg1;
 - (id)initWithMediaItem:(id)arg1;
+- (id)placeholderImage;
 - (id)mediaItem;
-- (void)dealloc;
 
 @end

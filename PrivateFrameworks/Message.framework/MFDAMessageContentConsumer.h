@@ -23,7 +23,6 @@
 @property(readonly) double timeOfLastActivity;
 
 
-- (id)bodyData;
 - (id)data;
 - (void)dealloc;
 - (int)requestedFormat;
@@ -40,5 +39,6 @@
 - (void)setRequestedFormat:(int)arg1;
 - (BOOL)succeeded;
 - (double)timeOfLastActivity;
+- (id)bodyData;
 
 @end

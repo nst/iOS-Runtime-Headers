@@ -26,6 +26,7 @@
 - (void)_verifyCurrentObject;
 - (void)dealloc;
 - (id)initWithEncoding:(id)arg1;
+- (id)errorDescription;
 - (int)versionForClassName:(id)arg1;
 - (id)decodeObject;
 - (int)decodeInt32ForKey:(id)arg1;
@@ -39,6 +40,5 @@
 - (BOOL)containsValueForKey:(id)arg1;
 - (BOOL)decodeBoolForKey:(id)arg1;
 - (id)decodeObjectForKey:(id)arg1;
-- (id)errorDescription;
 
 @end

@@ -17,9 +17,8 @@
 @property(readonly) struct OCCEncryptionInfoReader { int (**x1)(); }* encryptionInfoReader;
 
 
-- (void)dealloc;
-- (BOOL)start;
 - (void)closeFile;
+- (void)dealloc;
 - (void)restartReaderToUseDecryptedDocument;
 - (bool)isBinaryReader;
 - (id)allocDecryptorWithCryptoKey:(struct OCCCryptoKey { int (**x1)(); char *x2; char *x3; char *x4; unsigned int x5; unsigned int x6; unsigned int x7; }*)arg1 baseOutputFilename:(id)arg2;
@@ -32,5 +31,6 @@
 - (void)setBinaryReader:(struct OcBinaryReader { int (**x1)(); }*)arg1;
 - (id)read;
 - (id)initWithCancelDelegate:(id)arg1 tracing:(id)arg2;
+- (BOOL)start;
 
 @end

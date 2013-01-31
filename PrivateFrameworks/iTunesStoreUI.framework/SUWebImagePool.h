@@ -10,11 +10,11 @@
     int _poolIdentifier;
 }
 
-+ (id)imageForURL:(id)arg1;
 + (id)_poolImageForPoolIdentifier:(int)arg1 imageIdentifier:(int)arg2;
 + (id)_poolImageForURL:(id)arg1;
 + (void)removeWebImagePool:(id)arg1;
 + (void)addWebImagePool:(id)arg1;
++ (id)imageForURL:(id)arg1;
 
 - (int)_poolIdentifier;
 - (id)imageForImageIdentifier:(int)arg1;

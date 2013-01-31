@@ -32,6 +32,7 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)imageByApplyingOrientation:(int)arg1;
 - (id)properties;
 - (id)initWithData:(id)arg1 options:(id)arg2;
 - (id)initWithColor:(id)arg1;
@@ -43,7 +44,6 @@
 - (id)initWithContentsOfFile:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)imageByApplyingOrientation:(int)arg1;
 - (id)autoRedEyeFilterWithFeatures:(id)arg1 options:(id)arg2;
 - (id)autoRedEyeFilterWithFeatures:(id)arg1 imageProperties:(id)arg2 options:(id)arg3;
 - (id)autoAdjustmentFilters;

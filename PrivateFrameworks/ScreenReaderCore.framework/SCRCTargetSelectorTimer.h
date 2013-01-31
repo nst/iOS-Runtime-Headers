@@ -17,12 +17,6 @@
 + (void)_runThread;
 + (void)initialize;
 
-- (void)_dispatchSCRCThread;
-- (void)_dispatchMainThread;
-- (void)_dispatch;
-- (id)threadKey;
-- (void)dispatchAfterDelay:(double)arg1 withObject:(id)arg2;
-- (BOOL)_createdTimer;
 - (void)invalidate;
 - (BOOL)isCancelled;
 - (void)cancel;
@@ -30,6 +24,12 @@
 - (oneway void)release;
 - (void)dispatchAfterDelay:(double)arg1;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2 threadKey:(id)arg3;
+- (void)_dispatchSCRCThread;
+- (void)_dispatchMainThread;
+- (void)_dispatch;
+- (id)threadKey;
+- (void)dispatchAfterDelay:(double)arg1 withObject:(id)arg2;
+- (BOOL)_createdTimer;
 - (BOOL)isPending;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
 

@@ -21,8 +21,8 @@
 @property(retain) <SUScriptNavigationItem> * rightItem;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (void)setRightButton:(id)arg1;
 - (void)setLeftButton:(id)arg1;
@@ -51,6 +51,7 @@
 - (id)scriptAttributeKeys;
 - (void)setRightButton:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftButton:(id)arg1 animated:(BOOL)arg2;
+- (id)attributeKeys;
 - (id)init;
 - (void)setNavigationItems:(id)arg1;
 - (int)barStyle;
@@ -59,6 +60,5 @@
 - (id)navigationItems;
 - (void)setPrompt:(id)arg1;
 - (id)prompt;
-- (id)attributeKeys;
 
 @end

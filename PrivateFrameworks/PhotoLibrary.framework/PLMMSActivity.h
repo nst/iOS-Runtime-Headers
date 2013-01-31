@@ -11,14 +11,14 @@
 @property(retain) NSArray * assetsToShare;
 
 
+- (Class)MMSControllerClass;
+- (id)assetsToShare;
+- (void)setAssetsToShare:(id)arg1;
 - (id)messageComposeViewController;
 - (BOOL)_canPerformWithSuppliedActivityItems:(id)arg1;
 - (id)activityViewController;
 - (void)performActivity;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
 - (id)_beforeActivity;
-- (Class)MMSControllerClass;
-- (id)assetsToShare;
-- (void)setAssetsToShare:(id)arg1;
 
 @end

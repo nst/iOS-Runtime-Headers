@@ -17,6 +17,8 @@
 
 - (id)description;
 - (void)dealloc;
+- (void)setScale:(int)arg1;
+- (int)scale;
 - (id)cloneForReadOnlyFetching;
 - (void)_setSlotIfDefault:(unsigned int)arg1;
 - (void)_setFetchIndex:(unsigned int)arg1;
@@ -35,7 +37,5 @@
 - (BOOL)allowAliasing;
 - (void)setAllowAliasing:(BOOL)arg1;
 - (id)initWithColumnName:(id)arg1 sqlType:(unsigned int)arg2;
-- (void)setScale:(int)arg1;
-- (int)scale;
 
 @end

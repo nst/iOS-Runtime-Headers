@@ -10,8 +10,6 @@
     NSMutableArray *m_stackOfBranches;
 }
 
-+ (void)setMessage:(id)arg1;
-+ (void)setProgress:(double)arg1;
 + (void)popBranch;
 + (void)pushBranch:(id)arg1;
 + (void)endBranch:(id)arg1;
@@ -27,6 +25,8 @@
 + (void)createContextForCurrentThread;
 + (void)endStage;
 + (void)createStageWithSteps:(double)arg1 takingSteps:(double)arg2;
++ (void)setMessage:(id)arg1;
++ (void)setProgress:(double)arg1;
 
 - (void)dealloc;
 - (id)init;

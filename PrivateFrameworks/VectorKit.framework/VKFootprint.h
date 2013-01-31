@@ -48,7 +48,6 @@
 @property(readonly) struct { double x1; double x2; double x3; } nearestGroundPoint;
 
 
-- (struct { double x1; double x2; double x3; double x4; })boundingRect;
 - (struct { double x1; double x2; double x3; })nearestGroundPoint;
 - (struct { double x1; double x2; double x3; })furthestGroundPoint;
 - (double)centerDepth;
@@ -58,5 +57,6 @@
 - (BOOL)containsGroundPoint:(struct { double x1; double x2; double x3; }*)arg1;
 - (BOOL)rejectsRect:(const struct { double x1; double x2; double x3; double x4; }*)arg1;
 - (void)computeFromCamera:(id)arg1;
+- (struct { double x1; double x2; double x3; double x4; })boundingRect;
 
 @end

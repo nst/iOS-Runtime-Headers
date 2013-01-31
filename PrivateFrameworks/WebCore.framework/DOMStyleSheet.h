@@ -16,15 +16,15 @@
 @property(readonly) DOMMediaList * media;
 
 
+- (id)ownerNode;
+- (id)parentStyleSheet;
+- (id)media;
+- (id)href;
 - (id)type;
 - (void)dealloc;
 - (void)finalize;
 - (void)setDisabled:(BOOL)arg1;
 - (BOOL)disabled;
 - (id)title;
-- (id)ownerNode;
-- (id)parentStyleSheet;
-- (id)media;
-- (id)href;
 
 @end

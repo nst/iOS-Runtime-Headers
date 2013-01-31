@@ -35,14 +35,9 @@
 }
 
 
-- (id)processIdentifier;
 - (id)bundleIdentifier;
 - (id)description;
 - (void)dealloc;
-- (id)displayName;
-- (id)processName;
-- (id)executablePath;
-- (id)date;
 - (id)binaryImagesDescriptionForBacktraces:(id)arg1;
 - (id)binaryImageDictionaryForAddress:(unsigned long long)arg1;
 - (BOOL)isAppleApplication;
@@ -70,6 +65,11 @@
 - (unsigned int)task;
 - (int)cpuType;
 - (int)pid;
+- (id)displayName;
+- (id)processName;
+- (id)executablePath;
+- (id)date;
+- (id)processIdentifier;
 - (BOOL)isTranslated;
 
 @end

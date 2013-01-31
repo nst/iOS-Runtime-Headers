@@ -94,9 +94,9 @@
 - (id)_countForKeyPath:(id)arg1;
 - (id)_avgForKeyPath:(id)arg1;
 - (id)_sumForKeyPath:(id)arg1;
-- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4;
+- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

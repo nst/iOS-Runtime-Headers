@@ -18,11 +18,11 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)stop;
-- (void)start;
 - (union qed_queue_u { }*)queue;
 - (void)switchToState:(id)arg1;
 - (void)runThreadDispatchQueue:(id)arg1;
 - (void)_afterStartedAddRunLoopSourceTo:(id)arg1;
+- (void)stop;
+- (void)start;
 
 @end

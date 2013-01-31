@@ -19,10 +19,10 @@
 }
 
 
+- (id)children;
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)init;
-- (id)children;
 - (id)groupProperties;
 - (void)removeUnnecessaryOverrides;
 - (void)replaceChild:(id)arg1 with:(id)arg2;

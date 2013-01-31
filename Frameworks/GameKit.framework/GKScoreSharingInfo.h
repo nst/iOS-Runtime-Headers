@@ -6,10 +6,10 @@
 
 @interface GKScoreSharingInfo : NSObject  {
     UIImage *_iconImage;
-    GKGame *_game;
-    GKLeaderboardCategory *_leaderboardCategory;
     GKPlayer *_player;
+    GKGame *_game;
     UIImage *_badgeImage;
+    GKLeaderboardCategory *_leaderboardCategory;
 }
 
 @property(retain) GKLeaderboardCategory * leaderboardCategory;
@@ -19,6 +19,10 @@
 @property(retain) UIImage * iconImage;
 
 
+- (void)dealloc;
+- (id)iconImage;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)subjectForEmailActivity;
 - (id)itemsForActivityType:(id)arg1;
 - (id)thumbnailForActivityType:(id)arg1;
@@ -32,9 +36,5 @@
 - (id)player;
 - (void)setGame:(id)arg1;
 - (id)game;
-- (void)dealloc;
-- (id)iconImage;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

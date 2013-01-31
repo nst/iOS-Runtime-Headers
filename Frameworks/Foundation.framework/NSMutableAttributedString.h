@@ -17,14 +17,14 @@
 - (id)mutableString;
 - (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)deleteCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)addAttributesWeakly:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setAttributedString:(id)arg1;
 - (void)insertAttributedString:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withAttributedString:(id)arg2;
-- (void)addAttributesWeakly:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)replaceNewlinesWithSpaces;
 - (void)removeCharactersWithAttribute:(id)arg1;
 - (void)replaceAttribute:(id)arg1 value:(id)arg2 withValue:(id)arg3;
 - (void)trimWhitespace;
+- (void)replaceNewlinesWithSpaces;
 - (void)convertWritingDirectionToBidiControlCharacters;
 - (BOOL)readFromData:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3;
 - (BOOL)readFromURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3;

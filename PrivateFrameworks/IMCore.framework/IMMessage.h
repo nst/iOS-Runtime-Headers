@@ -70,14 +70,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)isFinished;
-- (id)subject;
-- (id)sender;
-- (id)time;
-- (unsigned long long)flags;
-- (BOOL)isDelayed;
-- (id)text;
-- (BOOL)isEmpty;
+- (id)error;
+- (long long)messageID;
 - (void)setIsInvitationMessage:(BOOL)arg1;
 - (void)_updateError:(id)arg1;
 - (void)_updateText:(id)arg1;
@@ -121,8 +115,14 @@
 - (BOOL)isDelivered;
 - (BOOL)isRead;
 - (BOOL)isFromMe;
-- (long long)messageID;
-- (id)error;
+- (BOOL)isFinished;
+- (id)subject;
+- (id)sender;
+- (id)time;
+- (unsigned long long)flags;
+- (BOOL)isDelayed;
+- (id)text;
+- (BOOL)isEmpty;
 - (BOOL)__ck_isEqualToMessageUsingGUID:(id)arg1;
 
 @end

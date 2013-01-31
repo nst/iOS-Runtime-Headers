@@ -38,6 +38,20 @@
 @property(retain) UIButton * addButton;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (int)kind;
+- (void)prepareForReuse;
+- (id)image;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (id)titleLabel;
+- (void)layoutSubviews;
+- (void)setImage:(id)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)addButton;
 - (void)setImageFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageFrame;
@@ -56,19 +70,5 @@
 - (id)progressIndicator;
 - (void)setStatusLabel:(id)arg1;
 - (id)statusLabel;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (void)setStatus:(id)arg1;
-- (id)status;
-- (int)kind;
-- (void)prepareForReuse;
-- (id)image;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (id)titleLabel;
-- (void)layoutSubviews;
-- (void)setImage:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

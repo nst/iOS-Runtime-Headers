@@ -18,15 +18,15 @@
 + (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 
-- (id)comparisonType;
 - (id)_playlistAttributesForScriptArray:(id)arg1;
 - (id)initWithProperty:(id)arg1 value:(id)arg2 comparisonType:(id)arg3;
 - (id)nativePredicate;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (void)dealloc;
-- (id)property;
-- (id)value;
 - (id)attributeKeys;
+- (void)dealloc;
+- (id)value;
+- (id)comparisonType;
+- (id)property;
 
 @end

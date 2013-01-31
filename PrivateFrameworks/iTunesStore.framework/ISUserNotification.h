@@ -20,16 +20,16 @@
 
 
 - (void)setAllowedRetryCount:(int)arg1;
+- (unsigned long)optionFlags;
+- (id)initWithDictionary:(id)arg1 options:(unsigned long)arg2;
+- (void)setCurrentRetryCount:(int)arg1;
+- (int)currentRetryCount;
+- (struct __CFUserNotification { }*)copyUserNotification;
 - (id)dictionary;
 - (id)userInfo;
 - (void)dealloc;
 - (id)init;
 - (int)allowedRetryCount;
 - (void)setUserInfo:(id)arg1;
-- (unsigned long)optionFlags;
-- (id)initWithDictionary:(id)arg1 options:(unsigned long)arg2;
-- (void)setCurrentRetryCount:(int)arg1;
-- (int)currentRetryCount;
-- (struct __CFUserNotification { }*)copyUserNotification;
 
 @end

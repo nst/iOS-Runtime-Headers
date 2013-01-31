@@ -19,6 +19,7 @@
 - (id)entities;
 - (id)managedObjectModel;
 - (void)dealloc;
+- (void)finalize;
 - (BOOL)_retainHashHack;
 - (unsigned long)entityIDForName:(id)arg1;
 - (id)_sqlEntityWithRenamingIdentifier:(id)arg1;
@@ -38,6 +39,5 @@
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(BOOL)arg3;
 - (id)configurationName;
 - (id)entitiesByName;
-- (void)finalize;
 
 @end

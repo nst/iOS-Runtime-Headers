@@ -13,12 +13,12 @@
 @property(readonly) DOMStyleSheet * sheet;
 
 
+- (id)sheet;
+- (void)setMedia:(id)arg1;
+- (id)media;
 - (id)type;
 - (void)setDisabled:(BOOL)arg1;
 - (BOOL)disabled;
 - (void)setType:(id)arg1;
-- (id)sheet;
-- (void)setMedia:(id)arg1;
-- (id)media;
 
 @end

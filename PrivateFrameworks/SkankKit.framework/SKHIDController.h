@@ -15,10 +15,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)setSuspended:(BOOL)arg1;
-- (float)brightness;
-- (void)setBrightness:(float)arg1;
-- (void)handleEvent:(struct __IOHIDEvent { }*)arg1;
 - (void)setThermometerEventInterval:(long)arg1;
 - (void)setALSEventInterval:(long)arg1;
 - (long)ALSEventInterval;
@@ -44,6 +40,10 @@
 - (void)handleDigitizerPathCollectionEvent:(struct __IOHIDEvent { }*)arg1;
 - (void)setRingerSwitchState:(BOOL)arg1;
 - (float)temperature;
+- (void)setSuspended:(BOOL)arg1;
+- (float)brightness;
+- (void)setBrightness:(float)arg1;
+- (void)handleEvent:(struct __IOHIDEvent { }*)arg1;
 - (struct __IOHIDServiceClient { }*)proximity;
 
 @end

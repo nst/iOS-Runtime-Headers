@@ -30,6 +30,7 @@
 @property <PCInterfaceUsabilityMonitorDelegate> * delegate;
 
 
+- (int)linkQuality;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
@@ -50,6 +51,5 @@
 - (void)setTrackUsability:(BOOL)arg1;
 - (id)initWithDelegateQueue:(struct dispatch_queue_s { }*)arg1;
 - (void)_handleTelephonyNotificationWithName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2;
-- (int)linkQuality;
 
 @end

@@ -17,12 +17,12 @@
 
 - (void)dealloc;
 - (id)init;
+- (id)hidClient;
+- (void)setBrightnessAutoAdjustment:(BOOL)arg1;
+- (void)setBrightnessFactor:(float)arg1;
 - (float)brightnessFactor;
 - (BOOL)brightnessAutoAdjustment;
 - (float)brightness;
 - (void)setBrightness:(float)arg1;
-- (id)hidClient;
-- (void)setBrightnessAutoAdjustment:(BOOL)arg1;
-- (void)setBrightnessFactor:(float)arg1;
 
 @end

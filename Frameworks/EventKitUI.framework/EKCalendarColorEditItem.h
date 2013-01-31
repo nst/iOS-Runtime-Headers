@@ -12,10 +12,10 @@
 @property(readonly) NSMutableArray * cells;
 
 
+- (id)cells;
 - (void)reset;
 - (void)dealloc;
 - (id)headerTitle;
-- (id)cells;
 - (id)_cellForColor:(id)arg1;
 - (void)calendarEditor:(id)arg1 didSelectSubitem:(int)arg2;
 - (BOOL)saveStateToCalendar:(id)arg1;

@@ -38,6 +38,6 @@
 - (void)_addCameraAssetToLibraryWithPath:(id)arg1 thumbnailImage:(id)arg2 metadata:(id)arg3 assetType:(int)arg4 kind:(int)arg5 completionHandler:(id)arg6;
 - (void)queueJobDictionary:(id)arg1 asset:(id)arg2 requestEnqueuedBlock:(id)arg3 completionBlock:(id)arg4 imageSurface:(struct __IOSurface { }*)arg5 previewImageSurface:(struct __IOSurface { }*)arg6;
 - (void)deletePhotoStreamDataForStreamID:(id)arg1;
-- (void)saveImageAtPathToCameraRoll:(id)arg1;
+- (void)copyAssetToCameraRoll:(id)arg1;
 
 @end

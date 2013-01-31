@@ -23,6 +23,8 @@
 + (void)loadBagContextFromURLBag:(id)arg1 completionBlock:(id)arg2;
 + (double)defaultPollingInterval;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setPollingInterval:(double)arg1;
 - (void)setBaseURLForPUTAll:(id)arg1;
 - (id)baseURLForPUTAll;
@@ -32,8 +34,6 @@
 - (id)bag;
 - (double)pollingInterval;
 - (BOOL)UPPDisabled;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)domain;
 
 @end

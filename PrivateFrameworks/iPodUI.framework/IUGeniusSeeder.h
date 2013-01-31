@@ -11,11 +11,11 @@
 @property BOOL shouldSwitchViewControllerContexts;
 
 
-- (id)init;
-- (BOOL)shouldContinuePlayingCurrentItem;
 - (void)setShouldContinuePlayingCurrentItem:(BOOL)arg1;
+- (BOOL)shouldContinuePlayingCurrentItem;
 - (void)seedGeniusPlaylist:(id)arg1 withItem:(id)arg2 timeout:(double)arg3 completionBlock:(id)arg4;
 - (void)setShouldSwitchViewControllerContexts:(BOOL)arg1;
 - (BOOL)shouldSwitchViewControllerContexts;
+- (id)init;
 
 @end

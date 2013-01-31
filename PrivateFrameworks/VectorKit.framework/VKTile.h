@@ -75,11 +75,6 @@
 @property(readonly) double tileWidth;
 
 
-- (id)description;
-- (void)dealloc;
-- (void)setKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
-- (struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; })key;
-- (struct { double x1; double x2; double x3; double x4; })rect;
 - (double)birthdate;
 - (void)updateViewDependentStateWithContext:(id)arg1;
 - (unsigned int)geometryCount;
@@ -90,5 +85,10 @@
 - (void)setPool:(id)arg1;
 - (union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })shaderMatrix;
 - (const struct { double x1[4][4]; }*)matrix;
+- (id)description;
+- (void)dealloc;
+- (void)setKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
+- (struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; })key;
+- (struct { double x1; double x2; double x3; double x4; })rect;
 
 @end

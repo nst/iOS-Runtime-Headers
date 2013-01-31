@@ -19,10 +19,10 @@
 + (id)contextWithConsumer:(id)arg1 text:(id)arg2 operations:(id)arg3 searchQueries:(id)arg4;
 
 - (void)dealloc;
+- (id)consumer;
 - (id)operations;
 - (BOOL)done;
 - (id)text;
 - (id)searchQueries;
-- (id)consumer;
 
 @end

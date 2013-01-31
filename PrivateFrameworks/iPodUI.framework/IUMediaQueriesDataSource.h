@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class MPStoreCompletionOffering, NSArray, MPMediaQuery, IUMediaQueriesDataSource, NSMutableArray, MPMediaLibrary;
+@class SKStoreProductViewController, MPStoreCompletionOffering, MPMediaLibrary, NSMutableArray, MPMediaQuery, IUMediaQueriesDataSource, NSArray;
 
 @interface IUMediaQueriesDataSource : IUMediaListDataSource <SKStoreProductViewControllerDelegate> {
     NSArray *_queries;
@@ -20,6 +20,7 @@
 
     IUMediaQueriesDataSource *_overlayDataSource;
     MPStoreCompletionOffering *_completionOffering;
+    SKStoreProductViewController *_productViewController;
     BOOL _hasQueriesAreEmpty;
     BOOL _queriesAreEmpty;
     unsigned long long _nowPlayingItemPersistentID;
@@ -44,7 +45,6 @@
 @property(readonly) BOOL alwaysGroupedInGridView;
 @property(readonly) BOOL shouldLoadLocalImagesSynchronously;
 
-+ (id)_imageCache;
 + (id)queryItemPropertiesToFetch;
 + (id)newDataSourceWithQuery:(id)arg1;
 + (id)newDataSourceWithSpecifier:(id)arg1;
@@ -53,25 +53,8 @@
 + (id)queryCollectionPropertiesToFetch;
 + (int)mediaEntityType;
 + (BOOL)usesNowPlayingIndicator;
++ (id)_imageCache;
 
-- (void)setMediaLibrary:(id)arg1;
-- (id)mediaLibrary;
-- (void)_mediaLibraryDidChangeNotification:(id)arg1;
-- (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
-- (void)setQuery:(id)arg1;
-- (void)_enabledMediaTypesDidChangeNotification:(id)arg1;
-- (void)_mediaLibraryDynamicPropertiesDidChangeNotification:(id)arg1;
-- (void)invalidate;
-- (void)dealloc;
-- (id)init;
-- (unsigned int)count;
-- (void)_applicationWillEnterForeground:(id)arg1;
-- (float)rowHeight;
-- (BOOL)isEmpty;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)query;
-- (void)reloadData;
-- (id)entityAtIndex:(unsigned int)arg1;
 - (unsigned long long)nowPlayingItemPersistentID;
 - (void)setInvalidationBehavior:(int)arg1;
 - (int)invalidationBehavior;
@@ -81,7 +64,6 @@
 - (unsigned int)indexOfEntityWithStoreID:(unsigned long long)arg1;
 - (unsigned int)indexOfPersistentID:(unsigned long long)arg1;
 - (unsigned int)indexOfEntity:(id)arg1;
-- (void)productViewControllerDidFinish:(id)arg1;
 - (id)queriesAppropriateForGroupingProperty:(int)arg1 mediaType:(int)arg2;
 - (id)_newContextForCopyWithIdentifier:(id)arg1;
 - (BOOL)_hasGreaterThanOrEqualEntityCount:(unsigned int)arg1 playbackQuery:(BOOL)arg2;
@@ -106,6 +88,7 @@
 - (void)_reloadOverlayQueries;
 - (void)_setQueriesEntities:(id)arg1;
 - (id)_copyReloadedQueriesEntitiesForQueries:(id)arg1 library:(id)arg2;
+- (void)productViewControllerDidFinish:(id)arg1;
 - (void)_appDefaultsDidChangeNotification:(id)arg1;
 - (BOOL)shouldDrawAsDisabledForIndex:(unsigned int)arg1;
 - (id)selectionConfirmationAlertForIndex:(unsigned int)arg1;
@@ -139,10 +122,29 @@
 - (void)invalidateDynamicTrackCaches;
 - (int)mediaDisclosureStyleForIndex:(unsigned int)arg1;
 - (id)cellConfigurationForIndex:(unsigned int)arg1 shouldLoadArtwork:(BOOL)arg2 artworkLoadingCompletionHandler:(id)arg3;
-- (void)downloadCloudAssets;
+- (void)downloadCloudAssetsWithOptions:(int)arg1;
 - (BOOL)hasPlayableItems;
 - (id)queries;
-- (void)_wifiEnabledDidChangeNotification:(id)arg1;
 - (int)filteredMediaTypes;
+- (void)invalidate;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)count;
+- (id)entityAtIndex:(unsigned int)arg1;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (float)rowHeight;
+- (BOOL)isEmpty;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (id)query;
+- (void)reloadData;
+- (void)_matchCellularRestrictedDidChangeNotification:(id)arg1;
+- (void)_mediaLibraryDidChangeNotification:(id)arg1;
+- (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
+- (void)_wifiEnabledDidChangeNotification:(id)arg1;
+- (void)setQuery:(id)arg1;
+- (void)_enabledMediaTypesDidChangeNotification:(id)arg1;
+- (void)setMediaLibrary:(id)arg1;
+- (id)mediaLibrary;
+- (void)_mediaLibraryDynamicPropertiesDidChangeNotification:(id)arg1;
 
 @end

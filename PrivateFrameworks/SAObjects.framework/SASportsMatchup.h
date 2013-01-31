@@ -34,14 +34,6 @@
 + (id)matchupWithDictionary:(id)arg1 context:(id)arg2;
 + (id)matchup;
 
-- (id)groupIdentifier;
-- (void)setStatus:(id)arg1;
-- (id)status;
-- (id)startTime;
-- (id)location;
-- (id)title;
-- (void)setStartTime:(id)arg1;
-- (void)setTitle:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setWinningEntity:(id)arg1;
 - (id)winningEntity;
@@ -83,5 +75,13 @@
 - (id)punchout;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (id)startTime;
+- (id)location;
+- (id)title;
+- (void)setStartTime:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (id)groupIdentifier;
 
 @end

@@ -19,7 +19,7 @@
 }
 
 @property struct CGSize { float x1; float x2; } layoutSize;
-@property(retain) IUMediaListDataSource * dataSource;
+@property IUMediaListDataSource * dataSource;
 @property(retain) MPMediaItem * aggregateItem;
 @property(readonly) UIImage * backgroundImage;
 @property BOOL showsShuffleButton;
@@ -42,16 +42,6 @@
 - (id)stringForLabelAtIndex:(unsigned int)arg1;
 - (unsigned int)numberOfLabels;
 - (void)setLayoutSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)itemsQuery;
-- (void)dealloc;
-- (Class)viewClass;
-- (struct CGSize { float x1; float x2; })layoutSize;
-- (unsigned int)numberOfButtons;
-- (id)backgroundImage;
-- (id)dataSource;
-- (void)reloadData;
-- (void)setDataSource:(id)arg1;
-- (id)initWithDataSource:(id)arg1;
 - (void)setShuffleButtonEnabled:(BOOL)arg1;
 - (BOOL)shuffleButtonEnabled;
 - (BOOL)showsShuffleButton;
@@ -74,5 +64,16 @@
 - (void)reloadAggregateItem;
 - (void)setAggregateItem:(id)arg1;
 - (void)initStorage;
+- (void)dealloc;
+- (id)initWithDataSource:(id)arg1;
+- (Class)viewClass;
+- (struct CGSize { float x1; float x2; })layoutSize;
+- (unsigned int)numberOfButtons;
+- (id)backgroundImage;
+- (id)dataSource;
+- (void)reloadData;
+- (void)setDataSource:(id)arg1;
+- (id)itemsQuery;
+- (void)clearWeakReferencesToObject:(id)arg1;
 
 @end

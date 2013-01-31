@@ -18,15 +18,15 @@
 + (id)threeCharCodesForEncodedISO639_2_T:(id)arg1;
 + (id)copyOffTrack;
 
-- (void)setIsSDH:(BOOL)arg1;
-- (id)option;
-- (id)_humanReadableLanguage;
-- (BOOL)isSDH;
-- (id)initWithName:(id)arg1 option:(id)arg2;
 - (int)compare:(id)arg1;
 - (id)name;
 - (id)description;
 - (void)dealloc;
 - (id)displayName;
+- (void)setIsSDH:(BOOL)arg1;
+- (id)option;
+- (id)_humanReadableLanguage;
+- (BOOL)isSDH;
+- (id)initWithName:(id)arg1 option:(id)arg2;
 
 @end

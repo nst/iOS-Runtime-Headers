@@ -10,11 +10,11 @@
 }
 
 
-- (void)dealloc;
-- (void)failWithError:(id)arg1;
 - (id)captionTrack;
 - (id)initCaptionTrackDataRequest:(id)arg1 withDelegate:(id)arg2;
 - (void)_requestCaptionTrackDataWithURL:(id)arg1;
+- (void)failWithError:(id)arg1;
+- (void)dealloc;
 - (int)parseData:(id)arg1;
 
 @end

@@ -40,7 +40,6 @@
 
 + (struct CGSize { float x1; float x2; })defaultOverlaySize;
 
-- (id)activeViewController;
 - (void)_performFlipAction:(id)arg1;
 - (BOOL)_isControllerLoaded:(id)arg1;
 - (void)_performFlipTransitionAction:(id)arg1;
@@ -97,5 +96,6 @@
 - (void)loadView;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (id)activeViewController;
 
 @end

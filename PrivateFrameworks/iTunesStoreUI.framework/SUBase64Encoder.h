@@ -18,7 +18,6 @@
 + (long long)outputLengthForInputLength:(long long)arg1;
 + (int)maxConsumeLengthForReadLength:(int)arg1;
 
-- (void)finish;
 - (BOOL)padChar;
 - (unsigned long)lineBreakLength;
 - (void)setStandardLineBreakLength;
@@ -29,5 +28,6 @@
 - (int)consumeData:(id)arg1;
 - (void)setPadChar:(BOOL)arg1;
 - (void)setAllowSlash:(BOOL)arg1;
+- (void)finish;
 
 @end

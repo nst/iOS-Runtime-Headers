@@ -32,6 +32,7 @@
 
 
 - (void)dealloc;
+- (id)error;
 - (id)initWithURLs:(id)arg1 multiGetBlock:(id)arg2 getBlock:(id)arg3 accountInfoProvider:(id)arg4 taskManager:(id)arg5;
 - (void)_switchToSingleGetMode;
 - (void)_configureAndSubmitTask:(id)arg1;
@@ -42,6 +43,5 @@
 - (id)missingURLs;
 - (void)taskGroupWillCancelWithError:(id)arg1;
 - (void)startTaskGroup;
-- (id)error;
 
 @end

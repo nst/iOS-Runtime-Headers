@@ -17,8 +17,6 @@
 @property(retain) VKMercatorTerrainHeightCache * mercatorTerrainHeightCache;
 
 
-- (void)dealloc;
-- (id)init;
 - (id)mercatorTerrainHeightCache;
 - (void)setGlobePointCache:(id)arg1;
 - (id)globePointCache;
@@ -34,5 +32,7 @@
 - (BOOL)isMercator;
 - (id)initMercator;
 - (void)setMercatorTerrainHeightCache:(id)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

@@ -26,6 +26,12 @@
 @property(retain) MPImageCache * artworkImageCache;
 
 
+- (void)dealloc;
+- (void)setIndex:(unsigned int)arg1;
+- (unsigned int)index;
+- (void)setSelected:(BOOL)arg1;
+- (BOOL)isSelected;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)artworkImageCache;
 - (id)timeMarker;
 - (float)timeColumnWidth;
@@ -39,11 +45,5 @@
 - (void)setTimeColumnWidth:(float)arg1;
 - (void)setCurrent:(BOOL)arg1;
 - (void)setTimeMarker:(id)arg1;
-- (void)dealloc;
-- (void)setIndex:(unsigned int)arg1;
-- (unsigned int)index;
-- (void)setSelected:(BOOL)arg1;
-- (BOOL)isSelected;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

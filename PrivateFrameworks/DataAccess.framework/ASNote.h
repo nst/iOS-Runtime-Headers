@@ -32,17 +32,9 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (void)setCategories:(id)arg1;
+- (id)lastModifiedDate;
 - (id)description;
 - (void)dealloc;
-- (void)setBody:(id)arg1;
-- (id)subject;
-- (void)setSubject:(id)arg1;
-- (id)categories;
-- (id)body;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)lastModifiedDate;
 - (id)localRecord;
 - (BOOL)deleteFromNoteContext;
 - (BOOL)saveServerIDToNoteDB;
@@ -67,6 +59,14 @@
 - (void)appendActiveSyncDataForTask:(id)arg1 toWBXMLData:(id)arg2;
 - (void)postProcessApplicationData;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
+- (void)setBody:(id)arg1;
+- (id)subject;
+- (void)setSubject:(id)arg1;
+- (id)categories;
+- (id)body;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setCategories:(id)arg1;
 - (void)setLastModifiedDate:(id)arg1;
 
 @end

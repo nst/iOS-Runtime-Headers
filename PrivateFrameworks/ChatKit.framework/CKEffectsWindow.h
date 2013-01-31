@@ -14,10 +14,10 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)didAddSubview:(id)arg1;
 - (BOOL)shadowHidden;
 - (id)shadowImageView;
 - (void)setShadowImageView:(id)arg1;
 - (void)setShadowHidden:(BOOL)arg1;
+- (void)didAddSubview:(id)arg1;
 
 @end

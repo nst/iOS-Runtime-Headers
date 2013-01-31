@@ -17,8 +17,8 @@
     NSString *_kind;
 }
 
-+ (BOOL)supportsSecureCoding;
 + (id)decodableClasses;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

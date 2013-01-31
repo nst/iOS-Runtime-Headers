@@ -23,12 +23,12 @@
 @property(readonly) NSURL * _mapkit_locationErrorSettingsURL;
 
 + (id)errorWithDomain:(id)arg1 code:(int)arg2 userInfo:(id)arg3;
-+ (BOOL)supportsSecureCoding;
 + (id)_web_errorWithDomain:(id)arg1 code:(int)arg2 URL:(id)arg3;
 + (id)_web_errorWithDomain:(id)arg1 code:(int)arg2 failingURL:(id)arg3;
 + (void)_web_addErrorsWithCodesAndDescriptions:(id)arg1 inDomain:(id)arg2;
 + (void)_registerBuiltInFormatters;
 + (void)_registerFormatter:(int (*)())arg1 forErrorKey:(id)arg2 parameters:(const char *)arg3;
++ (BOOL)supportsSecureCoding;
 + (id)genericErrorWithFile:(const char *)arg1 function:(const char *)arg2 lineNumber:(int)arg3;
 + (void)_webkit_addErrorsWithCodesAndDescriptions:(id)arg1 inDomain:(id)arg2;
 + (id)_webKitErrorWithCode:(int)arg1 failingURL:(id)arg2;
@@ -85,8 +85,6 @@
 - (id)initWithDomain:(id)arg1 code:(int)arg2 userInfo:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)replacementObjectForPortCoder:(id)arg1;
-- (unsigned long)_cfTypeID;
 - (id)_web_localizedDescription;
 - (BOOL)_web_errorIsInDomain:(id)arg1;
 - (id)_web_failingURL;
@@ -100,6 +98,8 @@
 - (id)_cocoaErrorStringWithKind:(id)arg1;
 - (id)_cocoaErrorStringWithKind:(id)arg1 variant:(id)arg2;
 - (id)_cocoaErrorString:(id)arg1;
+- (id)replacementObjectForPortCoder:(id)arg1;
+- (unsigned long)_cfTypeID;
 - (id)_webkit_initWithDomain:(id)arg1 code:(int)arg2 URL:(id)arg3;
 - (id)_initWithPluginErrorCode:(int)arg1 contentURL:(id)arg2 pluginPageURL:(id)arg3 pluginName:(id)arg4 MIMEType:(id)arg5;
 - (id)MCErrorType;
@@ -115,6 +115,7 @@
 - (BOOL)isEqual:(id)arg1 compareUserInfo:(BOOL)arg2;
 - (BOOL)isFatalError;
 - (id)errorBySettingFatalError:(BOOL)arg1;
+- (id)MSVerboseDescription;
 - (BOOL)MSASStateMachineIsCanceledError;
 - (id)MSMakePrimaryError;
 - (BOOL)MSContainsErrorWithDomain:(id)arg1 code:(int)arg2;
@@ -130,7 +131,6 @@
 - (BOOL)MSNeedsBackoff;
 - (BOOL)MSIsQuotaError;
 - (BOOL)MSIsTemporaryNetworkError;
-- (id)MSVerboseDescription;
 - (id)MMCSRetryAfterDate;
 - (BOOL)MMCSIsCancelError;
 - (int)MMCSErrorType;
@@ -155,15 +155,15 @@
 - (BOOL)isOutOfSpaceError;
 - (id)localizedAlertMessage;
 - (id)localizedAlertTitle;
-- (BOOL)isNewPasswordError;
-- (BOOL)shouldPresentErrorForTaskType:(int)arg1;
-- (BOOL)isInvalidSubscriberError;
-- (BOOL)isStreamDomain:(long)arg1 error:(long)arg2;
-- (BOOL)isPasswordMismatchError;
 - (BOOL)isEqualToError:(id)arg1;
 - (BOOL)isSecurityError;
 - (BOOL)isServerError;
 - (BOOL)isConnectivityError;
 - (BOOL)isExpiredPasswordError;
+- (BOOL)isNewPasswordError;
+- (BOOL)shouldPresentErrorForTaskType:(int)arg1;
+- (BOOL)isInvalidSubscriberError;
+- (BOOL)isStreamDomain:(long)arg1 error:(long)arg2;
+- (BOOL)isPasswordMismatchError;
 
 @end

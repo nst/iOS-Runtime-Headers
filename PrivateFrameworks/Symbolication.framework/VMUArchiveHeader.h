@@ -11,11 +11,11 @@
 
 + (id)archiveHeaderWithMemory:(id)arg1 path:(id)arg2 timestamp:(id)arg3;
 
+- (id)headers;
 - (id)description;
 - (void)dealloc;
 - (BOOL)isArchive;
 - (id)architecture;
 - (id)initWithMemory:(id)arg1 path:(id)arg2 timestamp:(id)arg3;
-- (id)headers;
 
 @end

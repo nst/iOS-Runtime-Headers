@@ -15,6 +15,12 @@
 
 - (void)dealloc;
 - (id)init;
+- (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3 isComplete:(BOOL*)arg4;
+- (id)attachments;
+- (id)topLevelPart;
+- (BOOL)isHTML;
+- (id)textHtmlPart;
+- (void)setTopLevelPart:(id)arg1;
 - (id)firstPartPassingTest:(id)arg1;
 - (id)partWithNumber:(id)arg1;
 - (id)mimeSubtype;
@@ -26,11 +32,5 @@
 - (unsigned int)totalTextSize;
 - (void)setPreferredAlternative:(int)arg1;
 - (int)numberOfAlternatives;
-- (void)setTopLevelPart:(id)arg1;
-- (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3 isComplete:(BOOL*)arg4;
-- (id)attachments;
-- (id)topLevelPart;
-- (BOOL)isHTML;
-- (id)textHtmlPart;
 
 @end

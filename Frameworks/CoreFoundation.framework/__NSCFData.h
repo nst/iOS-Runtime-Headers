@@ -12,6 +12,7 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (void)setLength:(unsigned int)arg1;
 - (const void*)bytes;
 - (unsigned int)retainCount;
 - (unsigned int)hash;
@@ -24,6 +25,5 @@
 - (void)finalize;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
-- (void)setLength:(unsigned int)arg1;
 
 @end

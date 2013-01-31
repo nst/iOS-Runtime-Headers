@@ -16,6 +16,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setFetchRequest:(id)arg1;
 - (id)fetchRequest;
 - (BOOL)isReadOnly;
@@ -23,7 +25,5 @@
 - (void)_createCachesAndOptimizeState;
 - (unsigned int)_propertyType;
 - (BOOL)isTransient;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

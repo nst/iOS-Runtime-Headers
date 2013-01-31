@@ -10,15 +10,15 @@
 @property(copy) NSURL * targetAppId;
 @property(retain) SAAlarmObject * alarmToCreate;
 
-+ (id)create;
 + (id)createWithDictionary:(id)arg1 context:(id)arg2;
++ (id)create;
 
-- (id)groupIdentifier;
 - (void)setAlarmToCreate:(id)arg1;
 - (id)alarmToCreate;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

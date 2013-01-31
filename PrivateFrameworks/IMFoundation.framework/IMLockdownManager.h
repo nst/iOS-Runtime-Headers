@@ -28,13 +28,9 @@
 
 + (id)sharedInstance;
 
-- (int)lockdownState;
 - (BOOL)isActivated;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isInternalInstall;
-- (BOOL)_isInternalInstall;
-- (struct __SecIdentity { }*)copyIdentity;
 - (void)set_hasShownWaitingAlertThisSession:(BOOL)arg1;
 - (BOOL)_hasShownWaitingAlertThisSession;
 - (void)set_hasShownMismatchedSIM:(BOOL)arg1;
@@ -51,5 +47,9 @@
 - (void)_resetActivationState;
 - (void)_activationFailed;
 - (void)_setupActivationState;
+- (int)lockdownState;
+- (struct __SecIdentity { }*)copyIdentity;
+- (BOOL)isInternalInstall;
+- (BOOL)_isInternalInstall;
 
 @end

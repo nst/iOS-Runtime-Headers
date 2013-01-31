@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface MBDomainInfo : NSObject <NSCopying, NSCoding> {
-    NSString *_domainName;
-    unsigned long long _localSize;
-    unsigned long long _remoteSize;
     BOOL _enabled;
-    BOOL _systemApp;
     BOOL _restricted;
+    BOOL _systemApp;
+    NSString *_domainName;
+    unsigned long long _remoteSize;
+    unsigned long long _localSize;
 }
 
 @property(getter=isAppDomain,readonly) BOOL appDomain;
@@ -27,27 +27,27 @@
 + (id)domainInfoWithName:(id)arg1 systemApp:(BOOL)arg2 remoteSize:(unsigned long long)arg3 localSize:(unsigned long long)arg4 enabled:(BOOL)arg5 restricted:(BOOL)arg6;
 + (id)domainNameForBundleID:(id)arg1;
 
-- (id)bundleID;
 - (BOOL)isRestricted;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setEnabled:(BOOL)arg1;
-- (BOOL)isEnabled;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (unsigned long long)size;
-- (void)setRestricted:(BOOL)arg1;
-- (void)setSystemApp:(BOOL)arg1;
-- (void)setRemoteSize:(unsigned long long)arg1;
-- (unsigned long long)remoteSize;
 - (void)setLocalSize:(unsigned long long)arg1;
 - (unsigned long long)localSize;
+- (void)setRemoteSize:(unsigned long long)arg1;
+- (unsigned long long)remoteSize;
+- (void)setSystemApp:(BOOL)arg1;
+- (void)setRestricted:(BOOL)arg1;
 - (BOOL)isCameraRollDomain;
 - (id)initWithDomainName:(id)arg1 systemApp:(BOOL)arg2 remoteSize:(unsigned long long)arg3 localSize:(unsigned long long)arg4 enabled:(BOOL)arg5 restricted:(BOOL)arg6;
 - (BOOL)isSystemApp;
 - (BOOL)isAppDomain;
 - (void)setDomainName:(id)arg1;
 - (id)domainName;
+- (void)setEnabled:(BOOL)arg1;
+- (BOOL)isEnabled;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (unsigned long long)size;
+- (id)bundleID;
 
 @end

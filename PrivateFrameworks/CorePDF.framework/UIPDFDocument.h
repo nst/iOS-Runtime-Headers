@@ -28,6 +28,10 @@
 
 + (id)documentNamed:(id)arg1;
 
+- (float)maxWidth;
+- (float)maxHeight;
+- (id)initWithURL:(id)arg1;
+- (void)dealloc;
 - (void)setThumbnailCache:(id)arg1;
 - (void)setPageImageCache:(id)arg1;
 - (id)pageImageCache;
@@ -41,14 +45,10 @@
 - (void)setImageCacheCount:(unsigned int)arg1 lookAhead:(unsigned int)arg2;
 - (void)setCGPDFDocument:(struct CGPDFDocument { }*)arg1;
 - (void)_clearCachedState;
-- (id)initWithURL:(id)arg1;
-- (void)dealloc;
+- (id)thumbnailCache;
 - (void)purgePagesBefore:(unsigned int)arg1;
 - (id)initWithCGPDFDocument:(struct CGPDFDocument { }*)arg1;
 - (id)pageAtIndex:(unsigned int)arg1;
 - (unsigned int)numberOfPages;
-- (float)maxWidth;
-- (float)maxHeight;
-- (id)thumbnailCache;
 
 @end

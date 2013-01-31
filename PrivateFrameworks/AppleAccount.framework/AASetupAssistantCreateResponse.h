@@ -13,9 +13,9 @@
 @property(readonly) NSString * appleID;
 
 
-- (id)appleID;
-- (id)status;
 - (id)personID;
 - (id)statusMessage;
+- (id)appleID;
+- (id)status;
 
 @end

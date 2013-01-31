@@ -26,6 +26,8 @@
 - (id)newHeaderViewForSection:(int)arg1;
 - (Class)cellConfigurationClassForItem:(id)arg1;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
+- (void)dealloc;
+- (id)init;
 - (void)configureColoringForCell:(id)arg1 indexPath:(id)arg2;
 - (id)oddRowTopBorderColor;
 - (id)oddRowBottomBorderColor;
@@ -39,8 +41,6 @@
 - (void)setEvenRowTopBorderColor:(id)arg1;
 - (void)setEvenRowBottomBorderColor:(id)arg1;
 - (void)setEvenRowBackgroundColor:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (int)tableViewStyle;
 
 @end

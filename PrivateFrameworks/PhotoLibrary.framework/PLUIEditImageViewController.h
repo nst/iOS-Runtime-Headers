@@ -15,8 +15,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (int)mode;
-- (void)setMode:(int)arg1;
 - (int)imageFormat;
 - (int)saveOptions;
 - (void)cropOverlay:(id)arg1 didFinishSaving:(id)arg2;
@@ -29,5 +27,7 @@
 - (void)setImageSavingOptions:(int)arg1;
 - (id)initWithPhoto:(id)arg1;
 - (id)photo;
+- (int)mode;
+- (void)setMode:(int)arg1;
 
 @end

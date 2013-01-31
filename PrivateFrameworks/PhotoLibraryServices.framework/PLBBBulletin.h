@@ -22,11 +22,11 @@
     NSString *_commentText;
     int _commentCount;
     BOOL _commentIsCaption;
-    unsigned int _replacedBulletinRecordID;
-    unsigned int _recordID;
-    NSDate *_date;
     NSDate *_expirationDate;
     NSString *_albumUUID;
+    NSDate *_date;
+    unsigned int _recordID;
+    unsigned int _replacedBulletinRecordID;
 }
 
 @property(readonly) int bulletinType;
@@ -49,15 +49,9 @@
 @property(readonly) double completionPercentage;
 
 
-- (id)expirationDate;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)_initWithType:(int)arg1;
-- (id)message;
-- (id)dictionaryRepresentation;
-- (id)title;
-- (id)date;
 - (unsigned int)recordID;
 - (BOOL)assetWithUUID:(id)arg1 didChangePlaceholderKindTo:(int)arg2 fromOldKind:(int)arg3;
 - (double)completionPercentage;
@@ -81,10 +75,16 @@
 - (id)initWithLikeAdded:(id)arg1;
 - (id)mainAssetUUID;
 - (id)initWithCommentAdded:(id)arg1;
-- (id)initWithAssetAdded:(id)arg1 atIndex:(unsigned int)arg2 toAlbum:(id)arg3;
+- (id)initWithAssetAdded:(id)arg1 atIndex:(unsigned int)arg2 toAlbum:(id)arg3 misc:(id)arg4;
 - (id)initWithInvitationRecordStatusChanged:(id)arg1;
 - (id)senderEmailAddress;
 - (id)initWithInvitationAlbum:(id)arg1;
 - (BOOL)hasThumbnail;
+- (id)message;
+- (id)dictionaryRepresentation;
+- (id)title;
+- (id)date;
+- (id)expirationDate;
+- (id)_initWithType:(int)arg1;
 
 @end

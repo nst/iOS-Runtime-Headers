@@ -17,6 +17,7 @@
 
 - (void)dealloc;
 - (id)init;
+- (id)accountStore;
 - (void)_resumeAllRefreshes;
 - (void)_postponeAllRefreshes;
 - (void)accountsChanged;
@@ -41,7 +42,6 @@
 - (void)_setRefreshDelay:(double)arg1;
 - (void)scheduleRefreshForAccountGroupList:(id)arg1 withObserver:(void*)arg2;
 - (id)accountsManager;
-- (id)accountStore;
 - (void)scheduleRefreshForContactsFilter:(id)arg1 withObserver:(void*)arg2;
 - (void)cancelAllScheduledRefreshesWithObserver:(void*)arg1;
 - (void)refreshEverythingNow;

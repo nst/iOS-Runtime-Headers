@@ -105,6 +105,8 @@
 - (void)leftChat:(id)arg1;
 - (void)chat:(id)arg1 propertiesUpdated:(id)arg2;
 - (void)chat:(id)arg1 updated:(id)arg2;
+- (void)setupComplete:(BOOL)arg1 info:(id)arg2;
+- (void)setupComplete;
 - (id)chatForIMHandle:(id)arg1;
 - (id)chatForIMHandles:(id)arg1;
 - (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(BOOL)arg2;
@@ -113,8 +115,6 @@
 - (id)allExistingChats;
 - (id)existingChatWithGUID:(id)arg1;
 - (id)existingChatWithChatIdentifier:(id)arg1;
-- (void)setupComplete:(BOOL)arg1 info:(id)arg2;
-- (void)setupComplete;
 - (id)_ck_chatForEntities:(id)arg1 createIfNecessary:(BOOL)arg2;
 - (id)_ck_chatForHandles:(id)arg1 createIfNecessary:(BOOL)arg2;
 

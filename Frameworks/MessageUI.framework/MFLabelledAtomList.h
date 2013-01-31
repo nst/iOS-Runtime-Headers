@@ -27,9 +27,17 @@
 @property(retain) NSDictionary * recipients;
 
 
-- (void)setPrimary:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
+- (id)labelText;
+- (id)recipients;
+- (void)_reflow;
+- (void)setAddressAtomTarget:(id)arg1 action:(SEL)arg2;
+- (void)setFirstLineWidth:(float)arg1;
+- (void)setAtomAlpha:(float)arg1;
+- (id)atomDisplayStrings;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })labelFrame;
+- (id)initWithLabel:(id)arg1 title:(id)arg2 totalWidth:(float)arg3 firstLineWidth:(float)arg4 addresses:(id)arg5 arePhoneNumbers:(id)arg6 style:(int)arg7 addressBook:(void*)arg8 completionBlock:(id)arg9;
 - (id)passthroughViews;
 - (id)title;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -51,15 +59,7 @@
 - (void)addressBookDidChange:(id)arg1;
 - (void)addressAtom:(id)arg1 displayStringDidChange:(id)arg2;
 - (BOOL)usePadDisplayStyle;
+- (void)setPrimary:(BOOL)arg1;
 - (void)setRecipients:(id)arg1;
-- (void)_reflow;
-- (void)setAddressAtomTarget:(id)arg1 action:(SEL)arg2;
-- (void)setFirstLineWidth:(float)arg1;
-- (void)setAtomAlpha:(float)arg1;
-- (id)atomDisplayStrings;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })labelFrame;
-- (id)initWithLabel:(id)arg1 title:(id)arg2 totalWidth:(float)arg3 firstLineWidth:(float)arg4 addresses:(id)arg5 arePhoneNumbers:(id)arg6 style:(int)arg7 addressBook:(void*)arg8 completionBlock:(id)arg9;
-- (id)recipients;
-- (id)labelText;
 
 @end

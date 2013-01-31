@@ -34,7 +34,20 @@
 
 + (float)coverImageSideLength;
 
-- (id)representativeArtists;
+- (BOOL)showsPlayButton;
+- (void)_removeAllAnimations;
+- (double)durationForFlip;
+- (void)_addFlipAnimationToLayer:(id)arg1 withBeginTime:(double)arg2 forwards:(BOOL)arg3;
+- (void)_setCoverImages;
+- (void)_updateArtistsLabelLayout;
+- (id)_playButtonImage;
+- (unsigned int)_gridSize;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_gridFrame;
+- (void)_statusBarHeightDidChange:(id)arg1;
+- (void)flipToOrientation:(int)arg1 animated:(BOOL)arg2;
+- (void)setRepresentativeArtists:(id)arg1;
+- (void)setShowsPlayButton:(BOOL)arg1;
+- (id)coversViewContainer;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
@@ -52,19 +65,6 @@
 - (void)layoutSubviews;
 - (void)setImage:(struct CGImage { }*)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)showsPlayButton;
-- (void)_removeAllAnimations;
-- (double)durationForFlip;
-- (void)_addFlipAnimationToLayer:(id)arg1 withBeginTime:(double)arg2 forwards:(BOOL)arg3;
-- (void)_setCoverImages;
-- (void)_updateArtistsLabelLayout;
-- (id)_playButtonImage;
-- (unsigned int)_gridSize;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_gridFrame;
-- (void)_statusBarHeightDidChange:(id)arg1;
-- (void)flipToOrientation:(int)arg1 animated:(BOOL)arg2;
-- (void)setRepresentativeArtists:(id)arg1;
-- (void)setShowsPlayButton:(BOOL)arg1;
-- (id)coversViewContainer;
+- (id)representativeArtists;
 
 @end

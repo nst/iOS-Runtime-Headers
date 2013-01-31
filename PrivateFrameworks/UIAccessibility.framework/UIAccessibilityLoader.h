@@ -5,10 +5,6 @@
 @interface UIAccessibilityLoader : NSObject  {
 }
 
-+ (void)_accessibilityStopServer;
-+ (void)_accessibilityReenabled;
-+ (void)_accessibilityStartServer;
-+ (void)initialize;
 + (id)loadAccessibilityBundle:(id)arg1 didLoad:(BOOL*)arg2;
 + (void)_accessibilityLoadSubbundles:(id)arg1;
 + (void)_accessibilityInitializeRuntimeOverrides;
@@ -18,6 +14,10 @@
 + (id)_loadAXBundleForBundle:(id)arg1 didLoad:(BOOL*)arg2 forceLoad:(BOOL)arg3 loadSubbundles:(BOOL)arg4;
 + (id)_accessibilityBundlesForBundle:(id)arg1;
 + (id)_loadAXBundleForBundle:(id)arg1 didLoad:(BOOL*)arg2;
++ (void)_accessibilityStopServer;
++ (void)_accessibilityReenabled;
++ (void)_accessibilityStartServer;
++ (void)initialize;
 
 
 @end

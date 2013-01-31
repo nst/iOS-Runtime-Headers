@@ -13,6 +13,7 @@
 
 - (void)setShouldParseResponse:(BOOL)arg1;
 - (BOOL)shouldParseResponse;
+- (void)setSongsRequestWithSessonID:(unsigned int)arg1 metadataFilter:(id)arg2 purchaseTokenListing:(id)arg3 queryFilter:(id)arg4;
 - (id)initWithDatabaseID:(unsigned int)arg1 containerID:(unsigned int)arg2;
 - (id)initWithDatabaseID:(unsigned int)arg1;
 - (id)initWithAction:(id)arg1;

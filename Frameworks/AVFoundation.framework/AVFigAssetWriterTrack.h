@@ -30,11 +30,11 @@
 
 + (id)assetWriterTrackWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1 mediaType:(id)arg2 mediaFileType:(id)arg3 formatSpecification:(id)arg4 sourcePixelBufferAttributes:(id)arg5 error:(id*)arg6;
 
-- (int)trackID;
 - (void)dealloc;
 - (id)init;
 - (id)mediaType;
 - (void)finalize;
+- (int)trackID;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })sampleBufferCoalescingInterval;
 - (void)_figAssetWriterDidDropBelowLowWaterLevelForTrackID:(int)arg1;
 - (struct OpaqueFigAssetWriter { }*)figAssetWriter;

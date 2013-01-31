@@ -17,6 +17,7 @@
 - (id)init;
 - (id)initWithProperties:(id)arg1;
 - (id)localizedName;
+- (id)uniqueID;
 - (void)audioInputDeviceLocalizedNameDidChangeHandler:(id)arg1;
 - (void)audioInputDevicesDidChangeHandler:(id)arg1;
 - (id)formats;
@@ -28,6 +29,5 @@
 - (BOOL)isConnected;
 - (BOOL)hasMediaType:(id)arg1;
 - (id)devicePropertiesDictionary;
-- (id)uniqueID;
 
 @end

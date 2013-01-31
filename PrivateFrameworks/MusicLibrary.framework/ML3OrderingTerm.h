@@ -24,10 +24,10 @@
 - (id)initWithProperty:(id)arg1 direction:(int)arg2 collation:(id)arg3;
 - (id)initWithProperty:(id)arg1 direction:(int)arg2;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
-- (id)property;
-- (id)initWithProperty:(id)arg1;
 - (int)direction;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)property;
+- (id)initWithProperty:(id)arg1;
 
 @end

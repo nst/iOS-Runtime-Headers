@@ -21,9 +21,6 @@
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
-- (void)setSection:(id)arg1;
-- (BOOL)isLoaded;
-- (id)modalViewController;
 - (void)presentFromViewController:(id)arg1;
 - (BOOL)presentInView:(id)arg1;
 - (void)cancelAction;
@@ -36,5 +33,8 @@
 - (void)interstitialViewDidUnloadAd:(id)arg1;
 - (void)setModalViewController:(id)arg1;
 - (void)setAuthenticationUserName:(id)arg1;
+- (void)setSection:(id)arg1;
+- (BOOL)isLoaded;
+- (id)modalViewController;
 
 @end

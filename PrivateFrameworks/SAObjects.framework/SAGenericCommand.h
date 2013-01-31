@@ -11,9 +11,9 @@
 @property(readonly) NSString * group;
 
 
-- (id)groupIdentifier;
+- (id)encodedClassName;
 - (id)className;
 - (id)group;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

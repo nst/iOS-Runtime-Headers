@@ -15,24 +15,24 @@
 @property(readonly) int localizationStyleServer;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
-- (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
-- (void)setLocalizationStyle:(int)arg1;
-- (void)setKeyProfile:(id)arg1;
 - (int)localizationStyleServer;
 - (int)localizationStyleDevice;
 - (void)startWithLookupFunction:(id)arg1;
-- (void)setAuthenticatesIfNeeded:(id)arg1;
 - (int)localizationStyle;
 - (id)keyProfile;
 - (id)authenticatesIfNeeded;
 - (id)valueForRequestParameter:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)init;
-- (id)attributeKeys;
+- (void)setAuthenticatesIfNeeded:(id)arg1;
+- (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
+- (void)setLocalizationStyle:(int)arg1;
+- (void)setKeyProfile:(id)arg1;
 
 @end

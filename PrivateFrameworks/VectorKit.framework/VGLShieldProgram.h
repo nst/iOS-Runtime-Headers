@@ -11,8 +11,8 @@
 
 + (id)program;
 
-- (id)init;
 - (int)textureSampler;
 - (void)setTextureSampler:(int)arg1;
+- (id)init;
 
 @end

@@ -8,6 +8,7 @@
 }
 
 
+- (id)description;
 - (void)setTotalDataSize:(unsigned long long)arg1;
 - (void)setTransactionID:(unsigned long)arg1;
 - (unsigned long long)totalDataSize;
@@ -15,6 +16,5 @@
 - (id)initWithTransactionID:(unsigned long)arg1 totalDataSize:(unsigned long long)arg2;
 - (unsigned long)transactionID;
 - (id)contentForTCP;
-- (id)description;
 
 @end

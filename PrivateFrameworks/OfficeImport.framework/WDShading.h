@@ -17,13 +17,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)background;
-- (void)setBackground:(id)arg1;
-- (int)style;
-- (void)setStyle:(int)arg1;
 - (BOOL)isEqualToShading:(id)arg1;
 - (void)setShading:(id)arg1;
 - (void)setForeground:(id)arg1;
 - (id)foreground;
+- (id)background;
+- (void)setBackground:(id)arg1;
+- (int)style;
+- (void)setStyle:(int)arg1;
 
 @end

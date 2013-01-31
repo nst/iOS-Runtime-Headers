@@ -36,10 +36,6 @@
 
 + (id)sharedInstance;
 
-- (void)dealloc;
-- (id)init;
-- (BOOL)paused;
-- (void)setPaused:(BOOL)arg1;
 - (int)maxTextureSize;
 - (id)extensionNames;
 - (int)maxSamples;
@@ -52,6 +48,10 @@
 - (int)maxStencilBufferPlanes;
 - (int)maxDepthBufferPlanes;
 - (BOOL)platformSupports:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (BOOL)paused;
+- (void)setPaused:(BOOL)arg1;
 - (id)sharegroup;
 
 @end

@@ -15,7 +15,6 @@
 
 - (void)dealloc;
 - (int)mediaType;
-- (struct CGSize { float x1; float x2; })naturalSize;
 - (id)videoImage;
 - (void)_generatePreviewOnMainThreadForVideoFile:(id)arg1;
 - (id)_newVideoPreviewImageForImage:(id)arg1 withTailStyle:(int)arg2;
@@ -34,5 +33,6 @@
 - (BOOL)savePreview:(id)arg1 toPath:(id)arg2 forOrientation:(int)arg3;
 - (id)savedPreviewFromPath:(id)arg1 forOrientation:(int)arg2;
 - (id)previewForOrientation:(int)arg1 highlight:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })naturalSize;
 
 @end

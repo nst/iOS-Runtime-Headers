@@ -31,6 +31,9 @@
 @property(copy) NSString * languageCodeOverride;
 
 
+- (void).cxx_destruct;
+- (id)fieldLabel;
+- (id)applicationName;
 - (id)applicationVersion;
 - (void)setLanguageCodeOverride:(id)arg1;
 - (id)languageCodeOverride;
@@ -39,7 +42,6 @@
 - (id)fieldIdentifier;
 - (id)dkPlistRepresentation;
 - (id)initWithDKPlistRepresentation:(id)arg1;
-- (void).cxx_destruct;
 - (id)postfixText;
 - (id)prefixText;
 - (void)setSelectedText:(id)arg1;
@@ -54,7 +56,5 @@
 - (int)keyboardType;
 - (void)setReturnKeyType:(int)arg1;
 - (void)setKeyboardType:(int)arg1;
-- (id)applicationName;
-- (id)fieldLabel;
 
 @end

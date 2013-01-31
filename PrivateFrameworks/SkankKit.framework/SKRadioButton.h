@@ -12,11 +12,11 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)setSelectedIndex:(int)arg1;
-- (int)selectedIndex;
 - (void)addOptionWithTitle:(id)arg1;
 - (void)addOption:(id)arg1;
 - (void)clearAllOptions;
 - (BOOL)handleEvent:(struct __GSEvent { }*)arg1 inLayer:(id)arg2;
+- (void)setSelectedIndex:(int)arg1;
+- (int)selectedIndex;
 
 @end

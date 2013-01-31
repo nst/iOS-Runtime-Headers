@@ -11,9 +11,9 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)init;
-- (int)level;
-- (void)setLevel:(int)arg1;
 - (int)chartSubElementType;
 - (void)setChartSubElementType:(int)arg1;
+- (int)level;
+- (void)setLevel:(int)arg1;
 
 @end

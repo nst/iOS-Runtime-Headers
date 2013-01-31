@@ -8,8 +8,8 @@
 
 + (id)gradientWithColors:(id)arg1 atLocations:(const float*)arg2;
 
+- (void)dealloc;
 - (struct CGGradient { }*)CGGradient;
 - (id)initWithColors:(id)arg1 atLocations:(const float*)arg2;
-- (void)dealloc;
 
 @end

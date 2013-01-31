@@ -48,8 +48,6 @@
 
 
 - (void)dealloc;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (void)layoutSubviews;
 - (void)setSelectionButtonAction:(id)arg1;
 - (id)labelText;
 - (int)bannerStyle;
@@ -66,5 +64,7 @@
 - (void)_selectionButtonTapped:(id)arg1;
 - (id)selectionButtonCustomTitle;
 - (void)setLabelText:(id)arg1;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)layoutSubviews;
 
 @end

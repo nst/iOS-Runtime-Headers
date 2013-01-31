@@ -10,10 +10,10 @@
 
 + (id)messageWithReply:(id)arg1;
 
+- (void)dealloc;
 - (void)sendReply:(id)arg1;
 - (long long)messageKind;
 - (id)initWithReply:(id)arg1;
-- (void)dealloc;
 - (id)message;
 
 @end

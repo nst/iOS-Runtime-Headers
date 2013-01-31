@@ -16,16 +16,12 @@
 @property(readonly) double pitchThreshold;
 
 
-- (void)dealloc;
-- (id)init;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (int)tileSize;
 - (double)pitchThreshold;
+- (id)globe;
 - (id)altMapView;
 - (struct Vector2i { int x1; int x2; })_cursorFromScreenPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)resetHeightModel;
 - (void)updateGlobeFromCamera;
-- (id)globe;
 - (void)setAltMapView:(id)arg1;
 - (void)setGlobe:(id)arg1;
 - (void)annotationTrackingCameraControllerDidChangeCameraState:(id)arg1;
@@ -59,6 +55,10 @@
 - (id)trackingAnnotation;
 - (void)setTrackingAutoSelectsZoomScale:(BOOL)arg1;
 - (void)setGesturing:(BOOL)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)pan:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (int)tileSize;
 
 @end

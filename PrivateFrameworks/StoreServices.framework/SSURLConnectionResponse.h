@@ -23,9 +23,6 @@
 @property(readonly) NSURL * URL;
 
 
-- (id)bodyData;
-- (id)textEncodingName;
-- (id)allHeaderFields;
 - (id)URL;
 - (void)dealloc;
 - (id)initWithURLResponse:(id)arg1 bodyData:(id)arg2;
@@ -33,6 +30,9 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (int)statusCode;
 - (id)MIMEType;
+- (id)bodyData;
+- (id)textEncodingName;
+- (id)allHeaderFields;
 - (id)suggestedFilename;
 - (long long)expectedContentLength;
 

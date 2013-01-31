@@ -22,7 +22,6 @@
 
 
 - (void)dealloc;
-- (BOOL)isActive;
 - (void)setConnectionBehavior:(int)arg1;
 - (void)_itemCompleted:(id)arg1;
 - (void)_getItemCompleted:(id)arg1 path:(id)arg2 error:(id)arg3;
@@ -44,6 +43,7 @@
 - (id)_registeredTransferForGUID:(id)arg1;
 - (int)connectionBehavior;
 - (void)_checkWiFiAssertion;
+- (BOOL)isActive;
 - (id)_options;
 
 @end

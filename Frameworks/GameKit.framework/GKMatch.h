@@ -26,6 +26,7 @@
     NSDictionary *_networkStatistics;
     NSMutableDictionary *_hostScores;
     BOOL _needHostScore;
+    BOOL _hostScoreForQuery;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -51,10 +52,22 @@
 @property(retain) NSDictionary * networkStatistics;
 @property(retain) NSMutableDictionary * hostScores;
 @property BOOL needHostScore;
+@property BOOL hostScoreForQuery;
 @property(copy) id chooseHostCompletion;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (void)setConnection:(id)arg1;
+- (void)disconnect;
+- (id)connection;
+- (void)setVersion:(unsigned char)arg1;
+- (unsigned char)version;
 - (id)chooseHostCompletion;
+- (BOOL)hostScoreForQuery;
 - (BOOL)needHostScore;
 - (id)hostScores;
 - (id)networkStatistics;
@@ -96,6 +109,7 @@
 - (void)setNetworkStatistics:(id)arg1;
 - (void)queueData:(id)arg1 forPlayer:(id)arg2;
 - (void)sendData:(id)arg1 fromPlayer:(id)arg2;
+- (void)receivedChooseHostData:(id)arg1 fromPlayer:(id)arg2;
 - (void)deferStateCallbackForPlayer:(id)arg1 state:(int)arg2;
 - (void)conditionallyReinvitePlayer:(id)arg1 sessionToken:(id)arg2;
 - (void)conditionallyRelaunchPlayer:(id)arg1;
@@ -103,10 +117,13 @@
 - (id)inviteDelegate;
 - (void)sendVersionData:(unsigned char)arg1 toPeer:(id)arg2;
 - (id)playerFromPeer:(id)arg1;
-- (void)selectHostIfAllScored;
-- (void)calculateAndSendHostScore;
-- (void)addHostScore:(int)arg1 forPlayer:(id)arg2;
 - (void)setNeedHostScore:(BOOL)arg1;
+- (BOOL)haveAllHostScores;
+- (void)addHostScore:(int)arg1 forPlayer:(id)arg2;
+- (void)sendHostScoreAsQuery:(BOOL)arg1;
+- (void)setHostScoreForQuery:(BOOL)arg1;
+- (BOOL)selectHostIfRequestedAndAllScored;
+- (void)calculateHostScore;
 - (void)setChooseHostCompletion:(id)arg1;
 - (void)setHostScores:(id)arg1;
 - (BOOL)sendInviteData:(id)arg1 error:(id*)arg2;
@@ -140,15 +157,5 @@
 - (void)session:(id)arg1 didFailWithError:(id)arg2;
 - (void)session:(id)arg1 connectionWithPeerFailed:(id)arg2 withError:(id)arg3;
 - (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (void)disconnect;
-- (id)connection;
-- (void)setVersion:(unsigned char)arg1;
-- (unsigned char)version;
-- (void)setConnection:(id)arg1;
 
 @end

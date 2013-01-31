@@ -33,8 +33,8 @@
 - (void)stop;
 - (void)finalize;
 - (void)suspend;
-- (id)serviceName;
 - (id)_initShared;
 - (id)initWithServiceName:(id)arg1;
+- (id)serviceName;
 
 @end

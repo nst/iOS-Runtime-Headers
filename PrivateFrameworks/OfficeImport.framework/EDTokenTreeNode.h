@@ -15,11 +15,11 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)firstChild;
 - (id)initWithIndexAndType:(unsigned int)arg1 type:(int)arg2;
 - (void)setSibling:(id)arg1;
 - (void)setFirstChild:(id)arg1;
 - (id)sibling;
 - (unsigned int)tokenIndex;
+- (id)firstChild;
 
 @end

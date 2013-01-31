@@ -15,16 +15,16 @@
 @property(retain) NSMutableSet * calendarChanges;
 
 
+- (void)setContent:(BOOL)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)content;
 - (id)calendarChanges;
-- (void)addCalendarChange:(id)arg1;
-- (void)addContentItem:(id)arg1;
-- (void)setCalendarChanges:(id)arg1;
 - (void)setProp:(id)arg1;
 - (id)prop;
 - (id)copyParseRules;
-- (void)setContent:(BOOL)arg1;
+- (void)addCalendarChange:(id)arg1;
+- (void)addContentItem:(id)arg1;
+- (void)setCalendarChanges:(id)arg1;
+- (BOOL)content;
 
 @end

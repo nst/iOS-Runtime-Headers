@@ -7,6 +7,8 @@
 
 + (id)sharedInstance;
 
+- (struct CGSize { float x1; float x2; })screenSize;
+- (BOOL)isHiDPI;
 - (unsigned int)retainCount;
 - (int)userInterfaceIdiom;
 - (oneway void)release;
@@ -22,7 +24,5 @@
 - (BOOL)isLiveScrollCapable;
 - (BOOL)supports3DMaps;
 - (BOOL)isWifiEnabled;
-- (struct CGSize { float x1; float x2; })screenSize;
-- (BOOL)isHiDPI;
 
 @end

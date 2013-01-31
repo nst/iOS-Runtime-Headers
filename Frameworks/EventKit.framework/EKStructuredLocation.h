@@ -16,10 +16,10 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (id)title;
-- (void)setTitle:(id)arg1;
 - (double)radius;
 - (void)setRadius:(double)arg1;
+- (id)title;
+- (void)setTitle:(id)arg1;
 - (void)setGeoLocation:(id)arg1;
 - (id)_persistentLocation;
 - (void)setAddressBookEntityID:(id)arg1;

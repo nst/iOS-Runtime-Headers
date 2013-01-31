@@ -45,6 +45,7 @@
 + (id)spring;
 + (id)defaultValueForKey:(id)arg1;
 
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
@@ -55,7 +56,10 @@
 - (id)valueForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)function;
+- (void)setAttachmentPointA:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setLayerA:(id)arg1;
+- (void)setAttachmentPointB:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setLayerB:(id)arg1;
 - (void)setDamping:(float)arg1;
 - (void)setStiffness:(float)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
@@ -65,10 +69,6 @@
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setAttachmentPointA:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setLayerA:(id)arg1;
-- (void)setAttachmentPointB:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setLayerB:(id)arg1;
 - (void)setRestLength:(float)arg1;
 - (float)restLength;
 - (struct CGPoint { float x1; float x2; })attachmentPointB;
@@ -78,6 +78,6 @@
 - (void)setFunction:(id)arg1;
 - (float)damping;
 - (float)stiffness;
-- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (id)function;
 
 @end

@@ -2,34 +2,47 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class ADAdRecipientRecord, _UIRemoteViewController, UIViewController;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class ADAdRecipientRecord, UIViewController, _UIRemoteViewController;
 
 @interface ADLocalViewController : UIViewController  {
     ADAdRecipientRecord *_recipient;
     BOOL _reattemptPresentStoryboard;
     int _oldOrientation;
-    int _supportedOrientations;
+    UIViewController *_modalRemoteViewController;
     _UIRemoteViewController *_remoteViewController;
-    UIViewController *_modalViewController;
+    BOOL _modalPresentationInProgress;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _storyboardDismissalHandler;
+
+    int _supportedOrientations;
+    BOOL _storyboardDismissalRequested;
 }
 
 @property int supportedOrientations;
 @property(retain) _UIRemoteViewController * remoteViewController;
-@property(retain) UIViewController * modalViewController;
+@property(retain) UIViewController * modalRemoteViewController;
+@property(copy) id storyboardDismissalHandler;
+@property BOOL modalPresentationInProgress;
+@property BOOL storyboardDismissalRequested;
 
 
-- (id)remoteViewController;
 - (void)dealloc;
-- (void)setRemoteViewController:(id)arg1;
-- (int)supportedOrientations;
-- (void)setSupportedOrientations:(int)arg1;
-- (id)modalViewController;
-- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
-- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
-- (BOOL)shouldAutomaticallyForwardRotationMethods;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)setModalViewController:(id)arg1;
+- (id)initWithRecipient:(id)arg1;
+- (void)setStoryboardDismissalRequested:(BOOL)arg1;
+- (BOOL)storyboardDismissalRequested;
+- (id)storyboardDismissalHandler;
+- (void)setModalPresentationInProgress:(BOOL)arg1;
+- (BOOL)modalPresentationInProgress;
+- (id)modalRemoteViewController;
+- (void)setModalRemoteViewController:(id)arg1;
+- (void)setStoryboardDismissalHandler:(id)arg1;
+- (void)_restoreStatusBar;
 - (void)dismissModalAnimated:(BOOL)arg1;
 - (void)requestAndPresentModalAnimated:(BOOL)arg1;
 - (void)storyboardDismissedLocalViewController;
@@ -37,6 +50,14 @@
 - (void)presentStoryboard;
 - (void)requestStoryboard;
 - (void)dismissStoryboardAnimated:(BOOL)arg1 completion:(id)arg2;
-- (id)initWithRecipient:(id)arg1;
+- (void)setRemoteViewController:(id)arg1;
+- (int)supportedOrientations;
+- (void)setSupportedOrientations:(int)arg1;
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (BOOL)shouldAutomaticallyForwardRotationMethods;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
+- (id)remoteViewController;
 
 @end

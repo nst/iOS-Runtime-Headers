@@ -38,13 +38,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)contentScrollView;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)reloadData;
 - (id)initWithAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
 - (struct NSObject { Class x1; }*)album;
@@ -85,5 +78,12 @@
 - (void)setViewDidAppearCompletion:(id)arg1;
 - (void)setShouldShowEmptyAlbumView:(BOOL)arg1;
 - (BOOL)prepareForDismissingAnimated:(BOOL)arg1;
+- (id)contentScrollView;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)reloadData;
 
 @end

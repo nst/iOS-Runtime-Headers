@@ -11,10 +11,10 @@
 @property(readonly) SUGradientButton * button;
 
 
+- (id)button;
 - (void)dealloc;
 - (id)init;
 - (id)initWithDefaultSize;
 - (void)layoutSubviews;
-- (id)button;
 
 @end

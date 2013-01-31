@@ -17,10 +17,10 @@
 - (void)dealloc;
 - (id)inboxURL;
 - (void)setInboxURL:(id)arg1;
+- (void)propPatchTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
+- (void)startTaskGroup;
 - (id)initWithAccountInfoProvider:(id)arg1 inboxURL:(id)arg2 calendarAvailability:(id)arg3 taskManager:(id)arg4;
 - (id)calendarAvailability;
 - (void)setCalendarAvailability:(id)arg1;
-- (void)propPatchTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
-- (void)startTaskGroup;
 
 @end

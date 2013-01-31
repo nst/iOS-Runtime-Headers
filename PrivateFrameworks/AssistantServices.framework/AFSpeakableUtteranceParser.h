@@ -15,6 +15,8 @@
 + (id)parseUserGeneratedMessage:(id)arg1;
 + (BOOL)_shouldAutomaticallyProvideFunctions;
 
+- (void).cxx_destruct;
+- (id)init;
 - (void)setHandleTTSCodes:(BOOL)arg1;
 - (id)_handleControlCodeAtIndex:(unsigned int)arg1 withBuffer:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; struct { int x_4_1_1; int x_4_1_2; } x4; int x5; int x6; })arg2 totalLength:(unsigned int)arg3 consumedLength:(unsigned int*)arg4 hadEmpties:(BOOL*)arg5;
 - (id)_handleProviderAtIndex:(unsigned int)arg1 withBuffer:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; struct { int x_4_1_1; int x_4_1_2; } x4; int x5; int x6; })arg2 totalLength:(unsigned int)arg3 consumedLength:(unsigned int*)arg4;
@@ -25,7 +27,5 @@
 - (BOOL)handleTTSCodes;
 - (void)registerProvider:(id)arg1 forNamespace:(id)arg2;
 - (void)setHandlesFunctions:(BOOL)arg1;
-- (void).cxx_destruct;
-- (id)init;
 
 @end

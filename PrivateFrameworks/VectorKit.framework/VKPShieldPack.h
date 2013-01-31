@@ -13,11 +13,6 @@
 @property(retain) NSMutableArray * shields;
 
 
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
 - (id)shieldsAtIndex:(unsigned int)arg1;
 - (void)clearShields;
 - (unsigned int)shieldsCount;
@@ -32,6 +27,11 @@
 - (id)shields;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

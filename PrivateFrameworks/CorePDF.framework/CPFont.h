@@ -46,6 +46,11 @@
 }
 
 
+- (float)maxWidth;
+- (float)fontStretch;
+- (float)underlineThickness;
+- (void)dealloc;
+- (id)initWith:(struct CGPDFDictionary { }*)arg1;
 - (BOOL)getGlyphs:(unsigned short*)arg1 forCodes:(const unsigned short*)arg2 count:(unsigned int)arg3;
 - (double)kernBetweenUnicode:(unsigned short)arg1 andUnicode:(unsigned short)arg2;
 - (float)underlinePosition;
@@ -67,7 +72,6 @@
 - (struct CGPDFFont { }*)cgPDFFont;
 - (void)uniCharsFor:(unsigned long)arg1 count:(unsigned int*)arg2 toArray:(unsigned short*)arg3 maxChars:(unsigned int)arg4;
 - (void)dispose;
-- (void)dealloc;
 - (BOOL)isHorizontal;
 - (void)finalize;
 - (float)xHeight;
@@ -76,9 +80,5 @@
 - (float)fontWeight;
 - (id)fontName;
 - (float)capHeight;
-- (float)underlineThickness;
-- (float)maxWidth;
-- (float)fontStretch;
-- (id)initWith:(struct CGPDFDictionary { }*)arg1;
 
 @end

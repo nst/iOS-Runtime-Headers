@@ -42,9 +42,6 @@
 
 + (id)program;
 
-- (id)init;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
-- (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (struct { float x1; float x2; })halfScreenDims;
 - (struct { float x1; float x2; float x3; })localEyeDir;
 - (struct { float x1; float x2; float x3; })localEyePos;
@@ -55,5 +52,8 @@
 - (int)textureSampler;
 - (void)setTextureSampler:(int)arg1;
 - (float)tanHalfHorizFOV;
+- (id)init;
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
+- (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 
 @end

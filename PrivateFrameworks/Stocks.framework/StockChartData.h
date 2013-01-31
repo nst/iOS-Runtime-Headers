@@ -43,11 +43,6 @@
 - (id)description;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)symbol;
-- (void)setSymbol:(id)arg1;
-- (void)setMinValue:(struct { double x1; double x2; unsigned long long x3; }*)arg1;
-- (void)setMaxValue:(struct { double x1; double x2; unsigned long long x3; }*)arg1;
-- (struct { double x1; double x2; unsigned long long x3; }*)minValue;
 - (void)setHasVolume:(BOOL)arg1;
 - (BOOL)hasVolume;
 - (void)setIsUnavailable:(BOOL)arg1;
@@ -74,5 +69,10 @@
 - (id)imageSetForStockGraphSize:(int)arg1;
 - (void)setImageSet:(id)arg1 forStockGraphSize:(int)arg2;
 - (struct { double x1; double x2; unsigned long long x3; }*)maxValue;
+- (void)setSymbol:(id)arg1;
+- (void)setMinValue:(struct { double x1; double x2; unsigned long long x3; }*)arg1;
+- (void)setMaxValue:(struct { double x1; double x2; unsigned long long x3; }*)arg1;
+- (struct { double x1; double x2; unsigned long long x3; }*)minValue;
+- (id)symbol;
 
 @end

@@ -11,17 +11,17 @@
 @property(copy) NSString * units;
 @property(retain) NSNumber * value;
 
-+ (id)distance;
 + (id)distanceWithDictionary:(id)arg1 context:(id)arg2;
++ (id)distance;
 
-- (id)groupIdentifier;
 - (void)setUnits:(id)arg1;
 - (id)units;
-- (id)value;
-- (void)setValue:(id)arg1;
+- (id)encodedClassName;
 - (void)setUnit:(id)arg1;
 - (id)unit;
-- (id)encodedClassName;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (id)groupIdentifier;
 - (int)afui_compare:(id)arg1;
 - (id)afui_abbreviatedUnit;
 - (id)afui_metersValue;

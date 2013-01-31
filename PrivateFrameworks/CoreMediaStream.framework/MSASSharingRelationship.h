@@ -27,30 +27,30 @@
 + (id)MSASPSharingRelationshipFromProtocolDictionary:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
-- (id)email;
-- (void)setEmail:(id)arg1;
-- (void)setLastName:(id)arg1;
-- (id)lastName;
-- (void)setFirstName:(id)arg1;
-- (id)firstName;
 - (int)state;
 - (id)description;
 - (unsigned int)hash;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setState:(int)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)isEqualToSharingRelationship:(id)arg1;
-- (id)_fullName;
-- (id)fullName;
-- (void)setFullName:(id)arg1;
 - (void)setAlbumGUID:(id)arg1;
+- (id)fullName;
 - (id)albumGUID;
 - (void)setGUID:(id)arg1;
 - (void)setPersonID:(id)arg1;
 - (id)personID;
 - (id)GUID;
+- (BOOL)isEqualToSharingRelationship:(id)arg1;
+- (id)_fullName;
+- (void)setFullName:(id)arg1;
+- (void)setState:(int)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)email;
+- (void)setEmail:(id)arg1;
+- (void)setLastName:(id)arg1;
+- (id)lastName;
+- (void)setFirstName:(id)arg1;
+- (id)firstName;
 
 @end

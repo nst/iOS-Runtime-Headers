@@ -10,16 +10,16 @@
 + (void)setDefaultScaleMode:(unsigned int)arg1;
 + (unsigned int)defaultScaleMode;
 
-- (id)imageCache;
+- (id)_fallbackAudioOptionFromOptions:(id)arg1 locale:(id)arg2 strict:(BOOL)arg3;
+- (id)_mediaSelectionOptionFromGroup:(id)arg1 withTrackID:(int)arg2;
+- (void)_updateRentalsPlistForFinish;
 - (void)handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(BOOL)arg2;
 - (id)initWithMediaItem:(id)arg1;
 - (void)setupPlaybackInfo;
+- (id)imageCache;
 - (BOOL)isSupportedDefaultPlaybackSpeed:(unsigned int)arg1;
 - (BOOL)hasDisplayableText;
 - (id)imageCacheRequestWithSize:(struct CGSize { float x1; float x2; })arg1 time:(double)arg2 usePlaceholderAsFallback:(BOOL)arg3;
 - (float)defaultPlaybackRate;
-- (id)_fallbackAudioOptionFromOptions:(id)arg1 locale:(id)arg2 strict:(BOOL)arg3;
-- (id)_mediaSelectionOptionFromGroup:(id)arg1 withTrackID:(int)arg2;
-- (void)_updateRentalsPlistForFinish;
 
 @end

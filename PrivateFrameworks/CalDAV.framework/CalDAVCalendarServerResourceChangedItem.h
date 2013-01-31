@@ -23,9 +23,12 @@
 
 - (void)dealloc;
 - (id)init;
+- (void)setDeleted:(id)arg1;
+- (id)deleted;
 - (id)collectionUpdates;
 - (id)collectionChanges;
 - (id)updated;
+- (id)copyParseRules;
 - (void)setDtstampItem:(id)arg1;
 - (void)addCollectionUpdates:(id)arg1;
 - (void)addCollectionChanges:(id)arg1;
@@ -35,9 +38,6 @@
 - (void)setCollectionUpdates:(id)arg1;
 - (void)setCollectionChanges:(id)arg1;
 - (void)setUpdated:(id)arg1;
-- (id)copyParseRules;
-- (void)setDeleted:(id)arg1;
-- (id)deleted;
 - (void)setCreated:(id)arg1;
 - (void)setDtstamp:(id)arg1;
 - (id)created;

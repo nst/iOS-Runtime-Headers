@@ -39,10 +39,8 @@
 @property(retain) UIView * customMessageView;
 
 
-- (void)setMinimumHeight:(float)arg1;
-- (float)minimumHeight;
-- (id)messageFont;
 - (void)dealloc;
+- (void)setPrimaryProperty:(int)arg1;
 - (id)message;
 - (void)setMessage:(id)arg1;
 - (void)copy:(id)arg1;
@@ -51,7 +49,9 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPrimaryProperty:(int)arg1;
+- (void)setMinimumHeight:(float)arg1;
+- (float)minimumHeight;
+- (id)messageFont;
 - (id)tagLine;
 - (id)headline;
 - (void)setAlignOnBottom:(BOOL)arg1;

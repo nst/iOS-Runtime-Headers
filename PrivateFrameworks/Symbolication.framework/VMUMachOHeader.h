@@ -19,8 +19,6 @@
 }
 
 
-- (id)regions;
-- (unsigned long long)address;
 - (id)timestamp;
 - (void)setTimestamp:(id)arg1;
 - (id)path;
@@ -28,11 +26,6 @@
 - (id)name;
 - (id)description;
 - (void)dealloc;
-- (unsigned int)currentVersion;
-- (void)setPath:(id)arg1;
-- (unsigned int)fileType;
-- (id)sections;
-- (unsigned int)flags;
 - (BOOL)isProtected;
 - (id)commpage;
 - (id)dySymbolTable;
@@ -51,7 +44,14 @@
 - (id)memory;
 - (BOOL)isMachO;
 - (id)architecture;
-- (id)signature;
 - (id)uuid;
+- (id)regions;
+- (void)setPath:(id)arg1;
+- (unsigned int)fileType;
+- (id)sections;
+- (unsigned int)flags;
+- (id)signature;
+- (unsigned long long)address;
+- (unsigned int)currentVersion;
 
 @end

@@ -24,13 +24,13 @@
 + (id)_currentLanguageIdentifier;
 + (id)sharedPromptController;
 
-- (void)setLanguage:(id)arg1;
-- (id)language;
-- (BOOL)isPlaying;
 - (void)dealloc;
 - (id)init;
 - (void)setGender:(id)arg1;
 - (id)gender;
+- (void)setLanguage:(id)arg1;
+- (id)language;
+- (BOOL)isPlaying;
 - (void)fireAmountPromptWithAmount:(id)arg1 units:(id)arg2 words:(id*)arg3 englishWords:(id*)arg4;
 - (void)_fireStandaloneNumberPrompt:(id)arg1;
 - (void)fireDistanceRemainingPromptWithDistanceRemaining:(id)arg1 units:(id)arg2;

@@ -12,11 +12,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)_setImagePickerMediaTypes:(id)arg1;
-- (int)_imagePickerStatusBarStyle;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)albumListDidChange:(id)arg1;
 - (BOOL)subtitleForAlbumAllowsEmail;
 - (void)_updateFilteredAlbumListWithFilter:(int)arg1;
@@ -26,5 +21,10 @@
 - (void)fixContentInsetIfNeeded;
 - (void)cancelButtonClicked:(id)arg1;
 - (void)navigateToAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)_setImagePickerMediaTypes:(id)arg1;
+- (int)_imagePickerStatusBarStyle;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

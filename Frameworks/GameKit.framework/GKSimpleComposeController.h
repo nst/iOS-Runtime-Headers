@@ -25,6 +25,9 @@
 @property(copy) id doneHandler;
 
 
+- (void)dealloc;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
 - (void)setToField:(id)arg1;
 - (id)toField;
 - (id)doneHandler;
@@ -36,8 +39,5 @@
 - (void)pushOntoNavigationController:(id)arg1 withDoneHandler:(id)arg2;
 - (void)setPlayers:(id)arg1;
 - (void)setDefaultMessage:(id)arg1;
-- (void)dealloc;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
 
 @end

@@ -19,16 +19,14 @@
 @property(retain) NSMutableArray * snippetLogoURLs;
 
 
-- (void)setLanguage:(id)arg1;
-- (id)language;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)displayName;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (void)setDisplayName:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)bestURLForLogos:(id)arg1;
 - (id)snippetLogoURLs;
 - (id)logoURLs;
@@ -44,7 +42,9 @@
 - (void)addLogoURLs:(id)arg1;
 - (void)setSnippetLogoURLs:(id)arg1;
 - (void)setLogoURLs:(id)arg1;
-- (void)setDisplayName:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)displayName;
+- (id)dictionaryRepresentation;
+- (void)setLanguage:(id)arg1;
+- (id)language;
 
 @end

@@ -10,30 +10,26 @@
     _UIAsyncInvocation *_cancellationInvocation;
     UINavigationController *_clientNavigationController;
     BOOL _safeToAdd;
-    CKSMSComposeQueuingRemoteViewControllerProxy *_remoteViewControllerProxy;
     CKSMSComposeRemoteViewController *_remoteViewController;
+    CKSMSComposeQueuingRemoteViewControllerProxy *_remoteViewControllerProxy;
 }
 
 @property id delegate;
 @property(retain) CKSMSComposeRemoteViewController * remoteViewController;
 @property(retain) CKSMSComposeQueuingRemoteViewControllerProxy * remoteViewControllerProxy;
 
-+ (BOOL)acceptsMIMEType:(id)arg1;
-+ (double)maxTrimDurationForAudio;
 + (BOOL)canSendPhotos:(int)arg1 videos:(int)arg2 audioClips:(int)arg3;
 + (double)maxTrimDurationForVideo;
++ (BOOL)acceptsMIMEType:(id)arg1;
++ (double)maxTrimDurationForAudio;
 
-- (id)remoteViewController;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
-- (void)setRemoteViewController:(id)arg1;
-- (void)viewServiceDidTerminateWithError:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
+- (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
+- (void)disableCameraAttachments;
 - (void)_addRemoteVCIfNeeded;
 - (id)remoteViewControllerProxy;
 - (void)setRemoteViewControllerProxy:(id)arg1;
@@ -50,8 +46,12 @@
 - (void)smsComposeControllerDataInserted;
 - (void)setCanEditRecipients:(BOOL)arg1;
 - (id)initWithNavigationController:(id)arg1;
-- (BOOL)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
-- (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
-- (void)disableCameraAttachments;
+- (void)setRemoteViewController:(id)arg1;
+- (void)viewServiceDidTerminateWithError:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)remoteViewController;
 
 @end

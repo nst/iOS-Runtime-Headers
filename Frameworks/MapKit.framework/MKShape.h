@@ -15,10 +15,10 @@
 
 
 - (void)dealloc;
+- (struct { double x1; double x2; })coordinate;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (struct { double x1; double x2; })coordinate;
 
 @end

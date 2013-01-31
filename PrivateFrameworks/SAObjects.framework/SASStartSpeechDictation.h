@@ -25,10 +25,22 @@
 + (id)startSpeechDictationWithDictionary:(id)arg1 context:(id)arg2;
 + (id)startSpeechDictation;
 
+- (void)setKeyboardReturnKey:(id)arg1;
+- (id)keyboardReturnKey;
+- (void)setInteractionId:(id)arg1;
+- (id)interactionId;
+- (id)fieldLabel;
+- (void)setCensorSpeech:(BOOL)arg1;
+- (BOOL)censorSpeech;
+- (void)setActivationToken:(id)arg1;
+- (id)activationToken;
+- (id)encodedClassName;
+- (id)region;
+- (void)setRegion:(id)arg1;
+- (id)applicationName;
+- (void)setFieldId:(id)arg1;
+- (id)fieldId;
 - (id)applicationVersion;
-- (id)groupIdentifier;
-- (void)setLanguage:(id)arg1;
-- (id)language;
 - (id)postfixText;
 - (id)prefixText;
 - (void)setSelectedText:(id)arg1;
@@ -40,20 +52,8 @@
 - (id)selectedText;
 - (id)keyboardType;
 - (void)setKeyboardType:(id)arg1;
-- (id)region;
-- (void)setRegion:(id)arg1;
-- (id)applicationName;
-- (void)setFieldId:(id)arg1;
-- (id)fieldId;
-- (void)setKeyboardReturnKey:(id)arg1;
-- (id)keyboardReturnKey;
-- (void)setInteractionId:(id)arg1;
-- (id)interactionId;
-- (id)fieldLabel;
-- (void)setCensorSpeech:(BOOL)arg1;
-- (BOOL)censorSpeech;
-- (void)setActivationToken:(id)arg1;
-- (id)activationToken;
-- (id)encodedClassName;
+- (void)setLanguage:(id)arg1;
+- (id)language;
+- (id)groupIdentifier;
 
 @end

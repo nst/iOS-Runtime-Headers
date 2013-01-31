@@ -12,9 +12,9 @@
 + (id)hourlyForecastWithDictionary:(id)arg1 context:(id)arg2;
 + (id)hourlyForecast;
 
-- (id)groupIdentifier;
 - (void)setTemperature:(id)arg1;
 - (id)temperature;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -14,13 +14,13 @@
 
 + (id)mimeTypesToFileExtensions;
 
-- (id)icon;
 - (void)dealloc;
 - (int)mediaType;
+- (void)setPass:(id)arg1;
+- (id)pass;
 - (id)subtitle;
 - (void)setIcon:(id)arg1;
 - (id)title;
-- (void)setPass:(id)arg1;
-- (id)pass;
+- (id)icon;
 
 @end

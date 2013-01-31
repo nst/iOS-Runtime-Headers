@@ -37,9 +37,11 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)init;
-- (unsigned int)uid;
 - (void)setFlagged:(BOOL)arg1;
 - (BOOL)flagged;
+- (BOOL)read;
+- (void)setDeleted:(BOOL)arg1;
+- (BOOL)deleted;
 - (BOOL)isKnownToHaveAttachments;
 - (unsigned int)dateSentInterval;
 - (unsigned int)dateReceivedInterval;
@@ -60,8 +62,6 @@
 - (void)setMailboxID:(unsigned int)arg1;
 - (void)setUid:(unsigned int)arg1;
 - (unsigned int)mailboxID;
-- (BOOL)read;
-- (void)setDeleted:(BOOL)arg1;
-- (BOOL)deleted;
+- (unsigned int)uid;
 
 @end

@@ -13,9 +13,9 @@
 + (id)codedPropertyKeys;
 + (id)internalRepresentation;
 
+- (void)dealloc;
 - (void)setAchievement:(id)arg1;
 - (id)achievement;
 - (id)issueRepresentationToPlayerID:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -23,8 +23,6 @@
 @property(readonly) long long handlerIdentifier;
 
 
-- (void)setSessionsShouldBlockOtherDownloads:(BOOL)arg1;
-- (void)setSessionsNeedPowerAssertion:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)description;
@@ -43,8 +41,10 @@
 - (void)_sendDisconnectMessage;
 - (void)_handleMessage:(id)arg1 fromServerConnection:(id)arg2;
 - (long long)handlerIdentifier;
-- (void)_setValue:(id)arg1 forProperty:(const char *)arg2;
 - (void)_connectToDaemon;
+- (void)_setValue:(id)arg1 forProperty:(const char *)arg2;
+- (void)setSessionsShouldBlockOtherDownloads:(BOOL)arg1;
+- (void)setSessionsNeedPowerAssertion:(BOOL)arg1;
 - (void)setDownloadPhasesToIgnore:(id)arg1;
 
 @end

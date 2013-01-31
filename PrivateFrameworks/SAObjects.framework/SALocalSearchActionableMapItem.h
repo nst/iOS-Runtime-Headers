@@ -12,10 +12,10 @@
 + (id)actionableMapItemWithDictionary:(id)arg1 context:(id)arg2;
 + (id)actionableMapItem;
 
-- (id)groupIdentifier;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
 - (void)setCommands:(id)arg1;
 - (id)commands;
+- (id)groupIdentifier;
 
 @end

@@ -74,8 +74,13 @@
 
 + (Class)layerClass;
 
+- (void)setLocation:(id)arg1;
+- (id)initWithContentView:(id)arg1;
 - (BOOL)isCancelled;
 - (void)dealloc;
+- (BOOL)isDimmed;
+- (void)setDimmed:(BOOL)arg1;
+- (void)setBirthday:(BOOL)arg1;
 - (BOOL)isBorderless;
 - (id)location;
 - (void)displayLayer:(id)arg1;
@@ -91,8 +96,6 @@
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNeedsDisplay;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithContentView:(id)arg1;
-- (void)setLocation:(id)arg1;
 - (id)_locationMetricsForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_allDayDashedOutlineWithColor:(id)arg1;
 - (id)_dashedOutline;
@@ -110,9 +113,6 @@
 - (void)setUsesSmallText:(BOOL)arg1;
 - (void)setNeedsReply:(BOOL)arg1;
 - (void)setTentative:(BOOL)arg1;
-- (BOOL)isDimmed;
-- (void)setDimmed:(BOOL)arg1;
-- (void)setBirthday:(BOOL)arg1;
 - (BOOL)isFacebook;
 - (BOOL)isTentative;
 - (void)setAllDay:(BOOL)arg1;

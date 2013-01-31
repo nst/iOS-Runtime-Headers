@@ -34,6 +34,12 @@
 - (void)dealloc;
 - (id)copy;
 - (unsigned int)length;
+- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (BOOL)isEqualToData:(id)arg1;
+- (void)finalize;
+- (Class)classForCoder;
+- (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
+- (id)filename;
 - (id)_externalReferenceLocationString;
 - (void)_setBytesForExternalReference:(const void*)arg1;
 - (id)initForUbiquityDictionary:(id)arg1 store:(id)arg2;
@@ -54,6 +60,7 @@
 - (id)initForExternalLocation:(id)arg1 safeguardLocation:(id)arg2 data:(id)arg3 protectionLevel:(int)arg4;
 - (id)initWithStoreBytes:(const void*)arg1 length:(unsigned int)arg2 externalLocation:(id)arg3 safeguardLocation:(id)arg4 protectionLevel:(int)arg5 ubiquitousLocation:(id)arg6;
 - (id)initWithStoreBytes:(const void*)arg1 length:(unsigned int)arg2 externalLocation:(id)arg3 safeguardLocation:(id)arg4 protectionLevel:(int)arg5;
+- (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)externalReferenceLocationString;
 - (id)_safeguardLocationString;
 - (void)doCleanupOnDealloc;
@@ -64,12 +71,5 @@
 - (const char *)_externalReferenceLocation;
 - (BOOL)hasExternalReferenceContent;
 - (Class)classForArchiver;
-- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (BOOL)isEqualToData:(id)arg1;
-- (void)finalize;
-- (Class)classForCoder;
-- (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
-- (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)filename;
 
 @end

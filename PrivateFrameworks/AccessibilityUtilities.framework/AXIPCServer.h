@@ -41,6 +41,11 @@
 @property(copy) id defaultHandler;
 
 
+- (id)description;
+- (void)dealloc;
+- (void)setRunning:(BOOL)arg1;
+- (void)setServiceName:(id)arg1;
+- (id)handlers;
 - (id)_handleIncomingMessage:(id)arg1 securityToken:(struct { unsigned int x1[2]; })arg2 auditToken:(struct { unsigned int x1[8]; })arg3 clientPort:(unsigned int)arg4;
 - (void)_handleClientInvalidation:(unsigned int)arg1;
 - (void)setClientInvalidationCallback:(id)arg1;
@@ -58,14 +63,9 @@
 - (BOOL)startServerWithError:(id*)arg1;
 - (void)setServiceRunLoopSource:(struct __CFRunLoopSource { }*)arg1;
 - (id)initWithPort:(unsigned int)arg1;
-- (id)description;
-- (void)dealloc;
 - (BOOL)isRunning;
-- (void)setRunning:(BOOL)arg1;
+- (id)initWithServiceName:(id)arg1;
 - (id)serviceName;
 - (unsigned int)machPort;
-- (id)handlers;
-- (void)setServiceName:(id)arg1;
-- (id)initWithServiceName:(id)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @class NSArray, RUIPage, UIAlertView, NSTimer, NSMutableArray, NSDictionary, NSString, <RUIObjectModelDelegate>, NSMutableDictionary, NSURL;
 
-@interface RUIObjectModel : NSObject  {
+@interface RUIObjectModel : NSObject <UIWebViewDelegate, RUITableViewDelegate, RUIPageDelegate> {
     NSString *_name;
     NSURL *_sourceURL;
     NSURL *_scriptURL;
@@ -50,11 +50,6 @@
 
 + (id)objectModelForXMLNamed:(id)arg1;
 
-- (void)setClientInfo:(id)arg1;
-- (id)clientInfo;
-- (id)alertView;
-- (id)alert;
-- (void)setAlert:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)name;
@@ -73,16 +68,15 @@
 - (id)inlineScript;
 - (void)setScriptURL:(id)arg1;
 - (id)scriptURL;
-- (void)tableViewOMDidChange:(id)arg1;
+- (void)remoteUIWebViewControllerDonePressed:(id)arg1;
+- (id)postbackData;
+- (void)_displaySupplementalPage:(id)arg1;
+- (id)newNavigationControllerForPresentation;
+- (void)presentInParentViewController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)tableViewOM:(id)arg1 deleteRowAtIndexPath:(id)arg2;
 - (void)tableViewOM:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3;
 - (void)tableViewOM:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;
-- (void)remoteUIWebViewControllerDonePressed:(id)arg1;
-- (id)postbackData;
-- (id)newNavigationControllerForPresentation;
-- (void)presentInParentViewController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)validateWithFunction:(id)arg1;
-- (id)visiblePage;
 - (id)_pageContainingTableView:(id)arg1;
 - (void)_handleButtonPress:(id)arg1 attributes:(id)arg2;
 - (id)relativeURLWithString:(id)arg1;
@@ -99,6 +93,7 @@
 - (id)namedPages;
 - (id)defaultPages;
 - (id)displayedPages;
+- (id)visiblePage;
 - (id)_firstPageForPresentation;
 - (void)refreshTimeout;
 - (void)_populatePageNavItem:(id)arg1 withNextButton:(BOOL)arg2;
@@ -114,16 +109,22 @@
 - (BOOL)RUIPage:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
 - (void)setValidationFunction:(id)arg1;
 - (void)populatePostbackDictionary:(id)arg1;
+- (void)tableViewOMDidChange:(id)arg1;
 - (void)RUIPage:(id)arg1 pressedNavBarButton:(id)arg2;
 - (void)RUIPage:(id)arg1 toggledEditing:(BOOL)arg2;
-- (void)setSourceURL:(id)arg1;
-- (id)sourceURL;
+- (void)setPages:(id)arg1;
+- (id)pages;
+- (id)serverInfo;
+- (void)setClientInfo:(id)arg1;
+- (void)setServerInfo:(id)arg1;
+- (id)clientInfo;
 - (BOOL)goBack;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)serverInfo;
-- (void)setServerInfo:(id)arg1;
-- (void)setPages:(id)arg1;
-- (id)pages;
+- (id)alertView;
+- (id)alert;
+- (void)setAlert:(id)arg1;
+- (void)setSourceURL:(id)arg1;
+- (id)sourceURL;
 
 @end

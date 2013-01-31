@@ -14,9 +14,9 @@
 }
 
 
-- (void)dealloc;
 - (id)initWithPackedVariant:(id)arg1 imageAtlas:(id)arg2 quadSize:(struct CGSize { float x1; float x2; })arg3 scale:(float)arg4 extraScale:(float)arg5;
 - (struct CGImage { }*)newImageWithShieldText:(id)arg1;
 - (id)imageWithShieldText:(id)arg1;
+- (void)dealloc;
 
 @end

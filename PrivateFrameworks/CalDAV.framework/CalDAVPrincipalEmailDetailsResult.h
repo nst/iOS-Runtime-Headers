@@ -18,11 +18,11 @@
 
 - (id)description;
 - (void)dealloc;
-- (id)principalURL;
-- (id)displayName;
-- (void)setPrincipalURL:(id)arg1;
 - (void)setAddresses:(id)arg1;
-- (id)addresses;
 - (void)setDisplayName:(id)arg1;
+- (id)principalURL;
+- (void)setPrincipalURL:(id)arg1;
+- (id)displayName;
+- (id)addresses;
 
 @end

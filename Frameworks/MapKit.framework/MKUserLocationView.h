@@ -24,16 +24,21 @@
 @property BOOL shouldDisplayAccuracy;
 @property BOOL shouldDisplayHeading;
 
++ (unsigned int)_selectedZIndex;
++ (unsigned int)_zIndex;
 + (Class)layerClass;
 + (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })effectiveFrameWithFrame:(struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 + (float)accuracyDiameter:(float)arg1;
-+ (unsigned int)_selectedZIndex;
-+ (unsigned int)_zIndex;
 
+- (double)headingAccuracy;
+- (BOOL)isStale;
+- (void)setStale:(BOOL)arg1;
+- (float)accuracy;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)description;
 - (void)dealloc;
+- (void)setAccuracy:(float)arg1;
 - (void)bounce;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
@@ -72,10 +77,5 @@
 - (void)setZoomDirection:(int)arg1 deltaScale:(float)arg2;
 - (void)setShouldDisplayEffects:(BOOL)arg1;
 - (void)setZoomDirection:(int)arg1;
-- (double)headingAccuracy;
-- (BOOL)isStale;
-- (void)setStale:(BOOL)arg1;
-- (float)accuracy;
-- (void)setAccuracy:(float)arg1;
 
 @end

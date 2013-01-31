@@ -25,10 +25,10 @@
 - (void)setNonSquareImage:(BOOL)arg1;
 - (BOOL)nonSquareImage;
 - (id)initWithReflectionHeight:(float)arg1 spacing:(float)arg2;
+- (id)imageBackgroundColor;
+- (void)setImageBackgroundColor:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)setImage:(id)arg1;
-- (id)imageBackgroundColor;
-- (void)setImageBackgroundColor:(id)arg1;
 
 @end

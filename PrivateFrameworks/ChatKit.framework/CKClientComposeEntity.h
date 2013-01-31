@@ -19,7 +19,6 @@
 - (id)name;
 - (id)description;
 - (void)dealloc;
-- (int)propertyType;
 - (id)_initWithAddress:(id)arg1;
 - (void)_generateCachedName;
 - (void)_generateName;
@@ -30,5 +29,6 @@
 - (struct __CFPhoneNumber { }*)phoneNumberRef;
 - (id)rawAddress;
 - (void*)abRecord;
+- (int)propertyType;
 
 @end

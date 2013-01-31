@@ -10,12 +10,12 @@
 + (id)cssStringValue:(double)arg1 unit:(int)arg2;
 
 - (int)intValue;
-- (double)value;
 - (int)compareValue:(id)arg1;
 - (id)initWithNumber:(double)arg1;
 - (id)cssString;
 - (id)cssStringForName:(id)arg1;
 - (int)unitType;
 - (id)initWithNumber:(double)arg1 unit:(int)arg2;
+- (double)value;
 
 @end

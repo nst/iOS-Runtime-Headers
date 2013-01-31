@@ -28,9 +28,19 @@
 @property(copy) id inviteeResponseHandler;
 @property(retain) GKMatchRequestInternal * internal;
 
-+ (unsigned int)maxPlayersAllowedForMatchOfType:(unsigned int)arg1;
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
++ (unsigned int)maxPlayersAllowedForMatchOfType:(unsigned int)arg1;
 
+- (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)description;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)setDefaultNumberOfPlayers:(unsigned int)arg1;
 - (unsigned int)defaultNumberOfPlayers;
 - (void)removeLocalPlayerFromPlayersToInvite;
@@ -43,15 +53,5 @@
 - (BOOL)isTurnBasedValid;
 - (void)setInternal:(id)arg1;
 - (id)internal;
-- (id)description;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (id)valueForUndefinedKey:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 
 @end

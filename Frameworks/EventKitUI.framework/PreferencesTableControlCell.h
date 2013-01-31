@@ -11,9 +11,9 @@
 @property(retain) UIControl * control;
 
 
+- (id)control;
 - (void)dealloc;
 - (void)layoutSubviews;
-- (id)control;
 - (void)setControl:(id)arg1;
 
 @end

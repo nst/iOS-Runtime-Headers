@@ -14,9 +14,9 @@
 
 - (id)delegate;
 - (void)dealloc;
+- (id)initWithAsset:(id)arg1;
 - (id)asset;
 - (void)finalize;
-- (id)initWithAsset:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (id)delegateQueue;
 - (id)stateQueue;

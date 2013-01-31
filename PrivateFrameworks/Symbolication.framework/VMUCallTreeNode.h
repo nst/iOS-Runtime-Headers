@@ -32,7 +32,6 @@
 + (void)compareChildrenOf:(id)arg1 toChildrenOf:(id)arg2 storeDiffIn:(id)arg3;
 + (id)rootForSamples:(id)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2 sampler:(id)arg3 options:(unsigned int)arg4;
 
-- (unsigned long long)address;
 - (int)compare:(id)arg1;
 - (id)name;
 - (unsigned int)retainCount;
@@ -41,7 +40,6 @@
 - (void)dealloc;
 - (void)release;
 - (unsigned int)count;
-- (id)nextNode;
 - (id)fullOutputWithThreshold:(unsigned int)arg1;
 - (id)findNodeMatching:(id)arg1 searchForward:(BOOL)arg2 ignoreCase:(BOOL)arg3 wholeWords:(BOOL)arg4;
 - (id)prevNode;
@@ -67,7 +65,9 @@
 - (void)addStackEntry:(id)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2 sampler:(id)arg3 numBytes:(unsigned int)arg4 options:(unsigned int)arg5 uniqueStrings:(id)arg6 addressToSymbolNameMap:(id)arg7 threadPortToNameMap:(id)arg8 dispatchQueueSerialNumToNameMap:(id)arg9;
 - (unsigned int)numBytes;
 - (id)findOrAddChildWithName:(id)arg1 address:(unsigned long long)arg2 compareSymbolNames:(BOOL)arg3;
-- (int)compareNames:(id)arg1;
 - (id)parent;
+- (int)compareNames:(id)arg1;
+- (id)nextNode;
+- (unsigned long long)address;
 
 @end

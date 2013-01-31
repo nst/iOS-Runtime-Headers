@@ -14,6 +14,11 @@
 
 
 - (void)dealloc;
+- (void)_updateWrapperViewToOrientation:(int)arg1;
+- (void)_updateNavigationBarToOrientation:(int)arg1;
+- (void)_updateDecorationToOrientation:(int)arg1;
+- (struct CGSize { float x1; float x2; })preferredSizeInParentViewController;
+- (struct CGPoint { float x1; float x2; })preferredOffsetInParentViewController;
 - (void)popViewControllerAnimated:(BOOL)arg1;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
@@ -21,10 +26,5 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)_updateWrapperViewToOrientation:(int)arg1;
-- (void)_updateNavigationBarToOrientation:(int)arg1;
-- (void)_updateDecorationToOrientation:(int)arg1;
-- (struct CGSize { float x1; float x2; })preferredSizeInParentViewController;
-- (struct CGPoint { float x1; float x2; })preferredOffsetInParentViewController;
 
 @end

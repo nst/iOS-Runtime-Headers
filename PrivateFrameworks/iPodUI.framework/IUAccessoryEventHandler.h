@@ -2,39 +2,26 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class IUAccessorySplashViewController, UIImage;
-
 @interface IUAccessoryEventHandler : NSObject  {
-    IUAccessorySplashViewController *_splashViewController;
-    unsigned int _wantsSplash : 1;
     double _accessoryEventButtonDownTime;
     unsigned int _accessoryEventKeyHeldHandled : 1;
     unsigned int _accessoryEventRepeatCount;
     unsigned int _accessoryKeyRepeatTimerActive : 1;
     unsigned int _accessoryKeyTimerIsForKeyHeld : 1;
+    void *_commandObserver;
     BOOL _handlingSimpleRemoteEvent;
 }
 
 @property(getter=isHandlingRemoteEvent,readonly) BOOL handlingRemoteEvent;
 @property(getter=isHandlingSimpleRemoteEvent,readonly) BOOL handlingSimpleRemoteEvent;
 @property(getter=isPlayingSingleMovie,readonly) BOOL playingSingleMovie;
-@property(retain) UIImage * splashViewImage;
-@property(readonly) BOOL wantsSplashView;
 
 + (id)sharedInstance;
 
-- (void)dealloc;
-- (id)init;
 - (BOOL)isHandlingSimpleRemoteEvent;
 - (void)_switchToPlaylistContextForSpecifier:(id)arg1;
-- (BOOL)wantsSplashView;
-- (id)splashViewImage;
-- (void)showSplashView:(BOOL)arg1;
-- (void)setSplashViewImage:(id)arg1;
-- (void)hideSplashView;
 - (void)handleSimpleRemoteAction:(int)arg1 withContext:(int)arg2 trackID:(long long)arg3;
 - (BOOL)isHandlingRemoteEvent;
-- (void)tearDownSplashView;
 - (void)handleFastForwardEventWithSeconds:(double)arg1;
 - (void)handleRewindEventWithSeconds:(double)arg1;
 - (void)handleDownArrowEvent;
@@ -60,5 +47,7 @@
 - (BOOL)isPlayingSingleMovie;
 - (BOOL)_setupMusicSoundController;
 - (BOOL)handleChangeTrackEvent:(int)arg1 deltaType:(int)arg2;
+- (void)dealloc;
+- (id)init;
 
 @end

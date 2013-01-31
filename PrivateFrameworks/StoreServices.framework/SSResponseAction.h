@@ -35,13 +35,13 @@
 
 - (id)creditsString;
 - (id)dialog;
+- (int)URLBagType;
 - (id)clientIdentifier;
 - (id)URL;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)footerSection;
-- (int)URLBagType;
 - (id)actionType;
 - (id)account;
 

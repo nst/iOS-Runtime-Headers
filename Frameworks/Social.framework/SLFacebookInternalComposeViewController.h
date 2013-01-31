@@ -72,6 +72,8 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewFrameForOrientation:(int)arg1;
+- (void)keyboardWillShow:(id)arg1;
 - (void)addAttachment:(id)arg1;
 - (void)setInitialText:(id)arg1;
 - (void)_hostApplicationWillEnterForeground;
@@ -183,7 +185,5 @@
 - (void)buildLineRulesForOrientation:(int)arg1;
 - (id)accountStore;
 - (void)setAccountStore:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewFrameForOrientation:(int)arg1;
-- (void)keyboardWillShow:(id)arg1;
 
 @end

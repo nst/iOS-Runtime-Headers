@@ -32,11 +32,6 @@
 @property(readonly) unsigned int evictionStamp;
 
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (id)init;
-- (void)_didReceiveMemoryWarning:(id)arg1;
 - (unsigned int)evictionStamp;
 - (unsigned int)workingSetSize;
 - (void)dump:(char *)arg1;
@@ -51,5 +46,10 @@
 - (struct VGLFontAtlasCell { int x1; struct { int x_2_1_1; int x_2_1_2; } x2; unsigned int x3; struct { /* ? */ } *x4; struct list_node<void *> {} *x5; struct list_node<void *> {} *x6; }*)_allocCell;
 - (void)_addImageToGlyph:(struct VGLFontGlyph_struct { unsigned short x1; BOOL x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; struct CGFont {} *x4; float x5; float x6; float x7; struct { struct { float x_1_2_1; float x_1_2_2; } x_8_1_1; void *x_8_1_2; struct VGLFontAtlasCell {} *x_8_1_3; struct { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_8_1_4; struct { float x_5_2_1; float x_5_2_2; float x_5_2_3; float x_5_2_4; } x_8_1_5; } x8; }*)arg1;
 - (BOOL)_flushCells;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)init;
+- (void)_didReceiveMemoryWarning:(id)arg1;
 
 @end

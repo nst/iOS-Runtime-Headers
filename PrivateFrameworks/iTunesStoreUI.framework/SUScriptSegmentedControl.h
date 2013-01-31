@@ -34,8 +34,8 @@
 @property(readonly) SUStorePageViewController * storePageViewController;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)rawSegments;
 - (int)tintStyleDefault;
@@ -82,6 +82,7 @@
 - (id)scriptAttributeKeys;
 - (id)moreListTitle;
 - (void)setMoreListTitle:(id)arg1;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)selectedSegmentIndex;
 - (void)setSelectedIndex:(id)arg1;
@@ -92,6 +93,5 @@
 - (void)setTintColor:(id)arg1;
 - (id)tintColor;
 - (void)setStyle:(id)arg1;
-- (id)attributeKeys;
 
 @end

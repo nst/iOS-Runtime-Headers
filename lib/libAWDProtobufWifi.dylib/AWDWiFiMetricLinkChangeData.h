@@ -40,15 +40,6 @@
 @property unsigned int channel;
 
 
-- (void)setReason:(unsigned int)arg1;
-- (unsigned long long)timestamp;
-- (void)setTimestamp:(unsigned long long)arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
-- (unsigned int)reason;
 - (void)setHasChannel:(BOOL)arg1;
 - (void)setHasSubreason:(BOOL)arg1;
 - (void)setHasIsInVol:(BOOL)arg1;
@@ -69,14 +60,23 @@
 - (int)rssiHistoryAtIndex:(unsigned int)arg1;
 - (void)clearRssiHistorys;
 - (unsigned int)rssiHistorysCount;
+- (void)setHasReason:(BOOL)arg1;
+- (BOOL)hasReason;
 - (unsigned int)channel;
 - (void)setChannel:(unsigned int)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (unsigned long long)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
-- (void)setHasReason:(BOOL)arg1;
-- (BOOL)hasReason;
+- (id)dictionaryRepresentation;
+- (unsigned int)reason;
+- (void)setReason:(unsigned int)arg1;
 
 @end

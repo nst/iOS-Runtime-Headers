@@ -16,12 +16,12 @@
 
 - (id)description;
 - (void).cxx_destruct;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)setStreamID:(id)arg1;
 - (id)initWithStreamID:(id)arg1;
 - (void)setCtag:(id)arg1;
 - (id)streamID;
 - (id)ctag;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

@@ -17,14 +17,14 @@
 
 - (id)description;
 - (void)dealloc;
+- (void)setResponses:(id)arg1;
+- (id)responses;
+- (id)copyParseRules;
+- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)failedResponseItems;
 - (id)successfulICS;
 - (void)addNewTopLevelItem:(id)arg1;
 - (void)setFailedResponseItems:(id)arg1;
 - (void)setSuccessfulICS:(id)arg1;
-- (id)copyParseRules;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (void)setResponses:(id)arg1;
-- (id)responses;
 
 @end

@@ -49,6 +49,9 @@
 @property(getter=isSecureTextEntry) BOOL secureTextEntry;
 
 
+- (void)setAutocapitalizationType:(int)arg1;
+- (int)autocapitalizationType;
+- (void)dealloc;
 - (void)clearPassword;
 - (void)activateKeypadView;
 - (void)_setKeypadState:(BOOL)arg1 animated:(BOOL)arg2;
@@ -68,9 +71,6 @@
 - (void)deactivateKeypadView;
 - (id)specifierLabel;
 - (BOOL)requiresKeyboard;
-- (void)setAutocapitalizationType:(int)arg1;
-- (int)autocapitalizationType;
-- (void)dealloc;
 - (id)password;
 - (BOOL)hasText;
 - (void)insertText:(id)arg1;

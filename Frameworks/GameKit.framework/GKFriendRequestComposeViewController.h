@@ -19,19 +19,6 @@
 
 + (unsigned int)maxNumberOfRecipients;
 
-- (void)setRecipientCount:(unsigned int)arg1;
-- (unsigned int)recipientCount;
-- (void)setComposeController:(id)arg1;
-- (void)setComposeViewDelegate:(id)arg1;
-- (BOOL)navigationBarHidden;
-- (id)composeViewDelegate;
-- (void)prepareForNewRecipients:(id)arg1;
-- (id)composeController;
-- (void)sendFinishedMessageToDelegateCancelled:(BOOL)arg1;
-- (void)addRecipientsWithEmailAddresses:(id)arg1;
-- (void)addRecipientsWithPlayerIDs:(id)arg1;
-- (void)setRid:(id)arg1;
-- (id)rid;
 - (void)dealloc;
 - (id)init;
 - (id)message;
@@ -46,5 +33,18 @@
 - (void)viewDidLoad;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
+- (void)setRecipientCount:(unsigned int)arg1;
+- (unsigned int)recipientCount;
+- (void)setComposeController:(id)arg1;
+- (void)setComposeViewDelegate:(id)arg1;
+- (BOOL)navigationBarHidden;
+- (id)composeViewDelegate;
+- (void)prepareForNewRecipients:(id)arg1;
+- (id)composeController;
+- (void)sendFinishedMessageToDelegateCancelled:(BOOL)arg1;
+- (void)addRecipientsWithEmailAddresses:(id)arg1;
+- (void)addRecipientsWithPlayerIDs:(id)arg1;
+- (void)setRid:(id)arg1;
+- (id)rid;
 
 @end

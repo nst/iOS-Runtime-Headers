@@ -10,8 +10,8 @@
 
 
 - (void).cxx_destruct;
+- (id)initWithAccount:(id)arg1;
 - (id)_tokenSecret;
 - (void)preflightRequest;
-- (id)initWithAccount:(id)arg1;
 
 @end

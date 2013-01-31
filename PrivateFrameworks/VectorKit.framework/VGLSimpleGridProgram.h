@@ -46,11 +46,11 @@
 + (id)program;
 
 - (union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })gridView;
-- (id)init;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
-- (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (struct { float x1; float x2; })invFwidth;
 - (void)setGridView:(union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })arg1;
 - (void)setInvFwidth:(struct { float x1; float x2; })arg1;
+- (id)init;
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
+- (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 
 @end

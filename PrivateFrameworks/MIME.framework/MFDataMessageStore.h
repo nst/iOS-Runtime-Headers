@@ -11,9 +11,6 @@
 
 
 - (void)dealloc;
-- (id)storePath;
-- (id)message;
-- (id)initWithData:(id)arg1;
 - (id)_cachedBodyDataForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_cachedHeadersForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_cachedBodyForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
@@ -22,6 +19,9 @@
 - (void)writeUpdatedMessageDataToDisk;
 - (id)mailboxUid;
 - (id)account;
+- (id)storePath;
 - (void)setMessageClass:(Class)arg1;
+- (id)message;
+- (id)initWithData:(id)arg1;
 
 @end

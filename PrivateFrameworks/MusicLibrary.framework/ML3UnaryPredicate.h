@@ -19,8 +19,8 @@
 - (id)initWithPredicate:(id)arg1;
 - (void)bindToStatement:(id)arg1 bindingIndex:(inout int*)arg2;
 - (id)SQLJoinClausesForClass:(Class)arg1;
-- (id)predicate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)predicate;
 
 @end

@@ -24,8 +24,8 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)predicateFormat;
 - (BOOL)isValid;
+- (id)predicateFormat;
 - (void)ab_addCallbackContextToArray:(struct __CFArray { }*)arg1;
 - (id)ab_newQueryWithSortOrder:(unsigned int)arg1 addressBook:(void*)arg2 propertyIndices:(const struct __CFDictionary {}**)arg3;
 - (BOOL)ab_hasCallback;

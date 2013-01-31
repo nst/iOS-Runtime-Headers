@@ -43,8 +43,8 @@
 + (id)currencySymbolForCurrencyCode:(id)arg1;
 + (id)currentLocaleCurrencyCode;
 
-- (void)dealloc;
 - (BOOL)findCurrencySymbolInString:(struct __CFString { }*)arg1 additionalCurrencyCode:(struct __CFString { }*)arg2 successfulString:(const struct __CFString {}**)arg3;
+- (void)dealloc;
 - (id)halfWidthCurrencySymbolForCurrencyCode:(id)arg1;
 - (BOOL)valueFromString:(struct __CFString { }*)arg1 formatters:(struct __CFArray { }*)arg2 value:(double*)arg3 formatString:(const struct __CFString {}**)arg4 currencyCode:(const struct __CFString {}**)arg5;
 - (void)numberPreferencesChanged:(id)arg1;

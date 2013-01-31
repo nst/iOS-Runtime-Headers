@@ -6,11 +6,11 @@
 }
 
 
+- (id)stringForObjectValue:(id)arg1;
+- (id)bundle;
 - (id)formatForNumberWithAbbreviation;
 - (id)abbreviationForThousands;
 - (id)abbreviationForMillions;
 - (id)abbreviationForBillions;
-- (id)stringForObjectValue:(id)arg1;
-- (id)bundle;
 
 @end

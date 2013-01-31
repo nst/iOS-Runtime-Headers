@@ -16,14 +16,14 @@
 - (void)reloadLayoutInformation;
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
-- (id)artwork;
-- (void)setArtwork:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })selectionEdgeInsets;
 - (id)init;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
 - (void)reloadData;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })selectionEdgeInsets;
+- (id)artwork;
+- (void)setArtwork:(id)arg1;
 
 @end

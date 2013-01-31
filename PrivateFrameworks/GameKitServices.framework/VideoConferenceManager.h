@@ -61,7 +61,6 @@
 + (id)defaultVideoConferenceManager;
 
 - (id)init;
-- (void)setDirection:(int)arg1;
 - (void)broadcastCellTechChange:(int)arg1 cellularMaxPktLen:(unsigned short)arg2;
 - (void)handleRouteChanged:(struct opaqueCMSession { }*)arg1;
 - (void)handleAudioInterruption:(struct opaqueCMSession { }*)arg1 interruptionInfo:(struct __CFDictionary { }*)arg2 cmd:(unsigned int)arg3;
@@ -140,5 +139,6 @@
 - (void)setMicrophoneMuted:(BOOL)arg1;
 - (void)stopAudioSession;
 - (void)startAudioSession;
+- (void)setDirection:(int)arg1;
 
 @end

@@ -14,9 +14,9 @@
 }
 
 
-- (void)dealloc;
 - (id)initWithData:(id)arg1 internalFormat:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3 pixelFormat:(unsigned int)arg4 pixelType:(unsigned int)arg5;
 - (BOOL)loadTexture;
 - (BOOL)decodeTexture;
+- (void)dealloc;
 
 @end

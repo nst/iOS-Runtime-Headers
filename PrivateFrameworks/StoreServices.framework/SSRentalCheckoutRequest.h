@@ -18,16 +18,17 @@
 
 
 - (id)accountIdentifier;
-- (long long)downloadIdentifier;
-- (id)initWithDownloadIdentifier:(long long)arg1;
-- (id)sinfs;
-- (id)initWithAccountIdentifier:(id)arg1 rentalKeyIdentifier:(id)arg2;
+- (id)initWithSinfs:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)rentalKeyIdentifier;
 - (void)startWithCompletionBlock:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)initWithSinfs:(id)arg1;
+- (long long)downloadIdentifier;
+- (id)initWithDownloadIdentifier:(long long)arg1;
+- (id)sinfs;
+- (id)initWithAccountIdentifier:(id)arg1 rentalKeyIdentifier:(id)arg2;
+- (void)startWithConnectionResponseBlock:(id)arg1;
 
 @end

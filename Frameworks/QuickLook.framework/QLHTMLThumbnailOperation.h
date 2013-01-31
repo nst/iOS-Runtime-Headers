@@ -10,8 +10,8 @@
 }
 
 
-- (id)initWithBrowserView:(id)arg1 andNode:(id)arg2;
 - (void)main;
 - (void)dealloc;
+- (id)initWithBrowserView:(id)arg1 andNode:(id)arg2;
 
 @end

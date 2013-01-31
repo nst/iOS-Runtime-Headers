@@ -10,9 +10,9 @@
 
 + (id)defaultRuntime;
 
-- (void)dealloc;
-- (id)init;
 - (id)entitlementForKey:(id)arg1;
 - (void)_initializeEntitlements;
+- (void)dealloc;
+- (id)init;
 
 @end

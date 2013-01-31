@@ -19,9 +19,6 @@
 - (id)path;
 - (id)description;
 - (void)dealloc;
-- (unsigned long)fileType;
-- (void)setFileType:(unsigned long)arg1;
-- (id)initWithPath:(id)arg1;
 - (void)deleteFileWhenDone;
 - (id)initWithCopyOfData:(id)arg1 path:(id)arg2;
 - (id)initWithPath:(id)arg1 sharedFileDescriptor:(int)arg2;
@@ -36,5 +33,8 @@
 - (BOOL)isReadable;
 - (id)inputStream;
 - (long long)dataLength;
+- (unsigned long)fileType;
+- (void)setFileType:(unsigned long)arg1;
+- (id)initWithPath:(id)arg1;
 
 @end

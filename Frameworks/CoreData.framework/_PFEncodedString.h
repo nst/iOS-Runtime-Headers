@@ -12,9 +12,9 @@
 - (void)dealloc;
 - (void)release;
 - (id)init;
-- (Class)classForArchiver;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
 - (Class)classForCoder;
+- (Class)classForArchiver;
 
 @end

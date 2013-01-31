@@ -47,11 +47,6 @@
 @property unsigned int indexBufferMode;
 
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (unsigned int)indexBufferMode;
 - (void)checkIndexList:(int)arg1 offset:(int)arg2;
 - (void)appendIndices:(const unsigned short*)arg1 count:(int)arg2 forIndexMode:(unsigned int)arg3;
@@ -82,5 +77,10 @@
 - (int)vertexCount;
 - (void)freeze;
 - (unsigned short*)indices;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

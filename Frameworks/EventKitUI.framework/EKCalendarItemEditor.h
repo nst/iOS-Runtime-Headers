@@ -44,8 +44,7 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)setStore:(id)arg1;
-- (id)store;
+- (void)cancel:(id)arg1;
 - (void)_keyboardWillChangeFrame:(id)arg1;
 - (void)done:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
@@ -70,6 +69,7 @@
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (unsigned int)entityType;
 - (void)setCanHideDoneAndCancelButtons:(BOOL)arg1;
 - (BOOL)canHideDoneAndCancelButtons;
 - (id)currentEditItem;
@@ -148,9 +148,9 @@
 - (BOOL)_performSave:(int)arg1 animated:(BOOL)arg2;
 - (void)_presentDetachSheet;
 - (void)_localeChanged;
-- (id)accessDeniedView;
-- (void)cancel:(id)arg1;
 - (id)calendarItem;
-- (unsigned int)entityType;
+- (void)setStore:(id)arg1;
+- (id)store;
+- (id)accessDeniedView;
 
 @end

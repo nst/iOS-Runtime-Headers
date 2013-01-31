@@ -20,9 +20,9 @@
 - (id)URL;
 - (void)dealloc;
 - (id)parameters;
-- (id)signedURLRequest;
-- (id)initWithURL:(id)arg1 parameters:(id)arg2 requestMethod:(int)arg3;
 - (void)setAccount:(id)arg1;
 - (id)account;
+- (id)signedURLRequest;
+- (id)initWithURL:(id)arg1 parameters:(id)arg2 requestMethod:(int)arg3;
 
 @end

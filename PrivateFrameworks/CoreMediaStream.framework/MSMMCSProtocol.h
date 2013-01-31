@@ -18,7 +18,8 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)deactivate;
+- (id)personID;
+- (void)abort;
 - (struct __MMCSEngine { }*)engine;
 - (void)_requestCompleted;
 - (void)_putItemDone:(unsigned long long)arg1 error:(id)arg2;
@@ -28,7 +29,6 @@
 - (id)initWithPersonID:(id)arg1 path:(id)arg2;
 - (void)didFinishUsingAssets:(id)arg1;
 - (void)deactivateRemoveAllFiles:(BOOL)arg1;
-- (id)personID;
-- (void)abort;
+- (void)deactivate;
 
 @end

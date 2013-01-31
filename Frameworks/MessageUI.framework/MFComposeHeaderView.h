@@ -17,9 +17,9 @@
 
 + (float)defaultHeight;
 
-- (struct CGColor { }*)labelColor;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
+- (id)navTitle;
 - (BOOL)drawsLetterpress;
 - (void)setDrawsLetterpress:(BOOL)arg1;
 - (void)setLabel:(id)arg1;
@@ -33,6 +33,6 @@
 - (void)handleTouchesEnded;
 - (BOOL)_canBecomeFirstResponder;
 - (void)setLabelHighlighted:(BOOL)arg1;
-- (id)navTitle;
+- (struct CGColor { }*)labelColor;
 
 @end

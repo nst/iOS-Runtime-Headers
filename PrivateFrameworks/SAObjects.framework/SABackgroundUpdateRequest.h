@@ -12,9 +12,9 @@
 + (id)backgroundUpdateRequestWithDictionary:(id)arg1 context:(id)arg2;
 + (id)backgroundUpdateRequest;
 
-- (id)groupIdentifier;
 - (id)attachment;
 - (void)setAttachment:(id)arg1;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

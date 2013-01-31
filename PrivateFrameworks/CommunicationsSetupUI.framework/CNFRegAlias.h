@@ -17,24 +17,24 @@
 @property(readonly) NSString * identifier;
 
 
-- (BOOL)isLocalPhoneNumberAlias;
-- (int)validationErrorReason;
-- (BOOL)isPhoneNumberAliasOnPhoneNumberAccount;
-- (int)validationStatus;
-- (id)initWithAccount:(id)arg1 alias:(id)arg2;
-- (void)setAlias:(id)arg1;
-- (id)alias;
 - (id)identifier;
 - (int)type;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)displayName;
-- (int)localizedCaseInsensitiveCompare:(id)arg1;
 - (BOOL)validate;
+- (void)setDisplayName:(id)arg1;
 - (void)setAccount:(id)arg1;
 - (id)account;
-- (void)setDisplayName:(id)arg1;
+- (int)localizedCaseInsensitiveCompare:(id)arg1;
+- (BOOL)isLocalPhoneNumberAlias;
+- (int)validationErrorReason;
+- (BOOL)isPhoneNumberAliasOnPhoneNumberAccount;
+- (int)validationStatus;
+- (id)initWithAccount:(id)arg1 alias:(id)arg2;
+- (id)displayName;
+- (void)setAlias:(id)arg1;
+- (id)alias;
 
 @end

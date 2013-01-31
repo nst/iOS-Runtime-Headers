@@ -38,10 +38,6 @@
 
 - (id).cxx_construct;
 - (void)dealloc;
-- (void)setFillColor:(struct CGColor { }*)arg1;
-- (void)setLineWidth:(float)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })transformRectToPage:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)addPath:(struct CGPath { }*)arg1;
 - (void)addDebugPath:(struct CGPath { }*)arg1;
@@ -65,5 +61,9 @@
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })currentTransform;
 - (void)restoreLastTransform;
 - (void)addTransform:(id)arg1;
+- (void)setFillColor:(struct CGColor { }*)arg1;
+- (void)setLineWidth:(float)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

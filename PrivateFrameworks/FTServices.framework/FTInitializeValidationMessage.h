@@ -17,10 +17,13 @@
 @property(copy) NSNumber * responseTTL;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)messageBody;
 - (void)setSessionInfoRequest:(id)arg1;
 - (id)responseTTL;
 - (id)responseSessionInfo;
-- (id)bagKey;
 - (void)setResponseTTL:(id)arg1;
 - (void)setResponseSessionInfo:(id)arg1;
 - (id)sessionInfoRequest;
@@ -32,12 +35,9 @@
 - (BOOL)wantsCompressedBody;
 - (id)requiredKeys;
 - (BOOL)wantsBinaryPush;
+- (int)command;
+- (id)bagKey;
 - (void)setPushToken:(id)arg1;
 - (id)pushToken;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
-- (int)command;
-- (id)messageBody;
 
 @end

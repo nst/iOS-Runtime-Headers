@@ -10,12 +10,12 @@
 
 
 - (id)description;
-- (void)setOrientation:(int)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)layoutSubviews;
 - (void)updateHighlightedImage;
 - (void)updateImage;
 - (int)outgoingColor;
 - (void)setOutgoingColor:(int)arg1;
+- (void)setOrientation:(int)arg1;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)layoutSubviews;
 
 @end

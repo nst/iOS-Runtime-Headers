@@ -12,7 +12,6 @@
 + (void)enableCloudSharing:(BOOL)arg1;
 
 - (id)description;
-- (void)run;
 - (void)setEnableSharing:(BOOL)arg1;
 - (BOOL)enableSharing;
 - (BOOL)shouldArchiveXPCToDisk;
@@ -20,5 +19,6 @@
 - (int)daemonOperation;
 - (void)runDaemonSide;
 - (id)initFromXPCObject:(id)arg1;
+- (void)run;
 
 @end

@@ -9,8 +9,8 @@
     NSMutableDictionary *_orphansDict;
 }
 
-+ (void)_setDependencyFilePath:(id)arg1;
 + (id)sharedManager;
++ (void)_setDependencyFilePath:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)init;

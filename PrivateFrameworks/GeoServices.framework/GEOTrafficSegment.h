@@ -21,25 +21,25 @@
 @property int width;
 
 
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)setSpeed:(int)arg1;
-- (void)setWidth:(int)arg1;
-- (int)width;
-- (int)speed;
 - (void)setHasWidth:(BOOL)arg1;
 - (BOOL)hasWidth;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (int)vertexCount;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)hasSpeed;
+- (BOOL)readFrom:(id)arg1;
 - (void)setVertexCount:(int)arg1;
 - (void)setVertexOffset:(int)arg1;
 - (int)vertexOffset;
 - (void)setHasSpeed:(BOOL)arg1;
-- (BOOL)hasSpeed;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
+- (void)setSpeed:(int)arg1;
+- (void)setWidth:(int)arg1;
+- (int)width;
+- (int)speed;
 
 @end

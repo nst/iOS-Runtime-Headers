@@ -9,8 +9,8 @@
 }
 
 
+- (void)layoutSubviews;
 - (void)setPicked:(BOOL)arg1;
 - (id)initWithRouteName:(id)arg1 isPicked:(BOOL)arg2;
-- (void)layoutSubviews;
 
 @end

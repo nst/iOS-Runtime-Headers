@@ -17,13 +17,13 @@
 + (id)locationAddCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)locationAddCompleted;
 
-- (id)groupIdentifier;
-- (void)setError:(id)arg1;
 - (id)initWithError:(id)arg1;
-- (id)error;
 - (id)weatherLocationId;
 - (void)setWeatherLocationId:(id)arg1;
 - (id)initWithWeatherLocationId:(id)arg1;
 - (id)encodedClassName;
+- (id)error;
+- (id)groupIdentifier;
+- (void)setError:(id)arg1;
 
 @end

@@ -46,19 +46,6 @@
 + (id)_placeholderMusicImage;
 + (id)_placeholderAudioBookImage;
 
-- (void)_mediaLibraryDidChangeNotification:(id)arg1;
-- (void)crossedTimeMakerWithEvent:(id)arg1;
-- (void)_playbackStateChanged:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)initWithDelegate:(id)arg1;
-- (int)state;
-- (void)dealloc;
-- (void)flipSelectedCover;
-- (BOOL)isTransitioning;
-- (BOOL)isEnabled;
-- (id)query;
-- (id)view;
 - (BOOL)transitionIsPending;
 - (void)prepareForPendingTransition;
 - (id)transitionDelegate;
@@ -98,7 +85,6 @@
 - (void)_stopHeartbeat;
 - (void)_cancelInitialAlbumArtRequestAndReleaseArt;
 - (void)_popVolumeHUDContext;
-- (void)_wifiEnabledDidChangeNotification:(id)arg1;
 - (void)_suspendNotification:(id)arg1;
 - (int)displayedDeviceOrientation;
 - (void)coverFlowView:(id)arg1 transitionDidEnd:(unsigned int)arg2;
@@ -119,5 +105,19 @@
 - (BOOL)transitionToCoverFlow:(BOOL)arg1 rotating:(BOOL)arg2 deviceOrientation:(int)arg3 flipView:(id)arg4;
 - (void)setTransitionDelegate:(id)arg1;
 - (void)removeMeAsTransitionDelegate:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)initWithDelegate:(id)arg1;
+- (int)state;
+- (void)dealloc;
+- (void)flipSelectedCover;
+- (BOOL)isTransitioning;
+- (BOOL)isEnabled;
+- (id)query;
+- (id)view;
+- (void)_mediaLibraryDidChangeNotification:(id)arg1;
+- (void)_wifiEnabledDidChangeNotification:(id)arg1;
+- (void)crossedTimeMakerWithEvent:(id)arg1;
+- (void)_playbackStateChanged:(id)arg1;
 
 @end

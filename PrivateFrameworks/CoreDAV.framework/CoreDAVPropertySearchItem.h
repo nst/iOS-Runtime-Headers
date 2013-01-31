@@ -15,8 +15,7 @@
 @property(retain) NSString * matchTypeAttribute;
 
 
-- (void)setMatch:(id)arg1;
-- (id)match;
+- (void)write:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)init;
@@ -25,7 +24,8 @@
 - (id)matchTypeAttribute;
 - (void)setProp:(id)arg1;
 - (id)prop;
-- (void)write:(id)arg1;
+- (void)setMatch:(id)arg1;
+- (id)match;
 - (int)wellKnownPrincipalSearchType;
 
 @end

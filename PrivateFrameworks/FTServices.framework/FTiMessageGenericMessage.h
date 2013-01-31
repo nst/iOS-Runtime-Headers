@@ -11,12 +11,12 @@
 @property(copy) NSData * data;
 
 
-- (id)requiredKeys;
 - (id)data;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setData:(id)arg1;
-- (int)command;
 - (id)messageBody;
+- (id)requiredKeys;
+- (int)command;
+- (void)setData:(id)arg1;
 
 @end

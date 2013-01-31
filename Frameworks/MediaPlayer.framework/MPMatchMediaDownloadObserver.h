@@ -9,14 +9,14 @@
 }
 
 
+- (void)dealloc;
+- (double)downloadProgress;
 - (void)purchasableMediaDownload:(id)arg1 downloadDidProgressWithPercentComplete:(double)arg2;
 - (BOOL)isCurrentlyPlayable;
 - (void)_onQueue_invalidate;
-- (id)initWithMediaItemPersistentIdentifier:(long long)arg1;
+- (id)initWithStoreID:(long long)arg1 mediaItemPersistentID:(unsigned long long)arg2;
 - (BOOL)canCancel;
 - (BOOL)isRestoreDownload;
 - (void)cancelDownload;
-- (void)dealloc;
-- (double)downloadProgress;
 
 @end

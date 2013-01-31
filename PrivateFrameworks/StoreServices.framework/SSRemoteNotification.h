@@ -30,7 +30,7 @@
 - (id)_valueForAlertKey:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)badgeValue;
 - (int)actionType;
+- (id)badgeValue;
 
 @end

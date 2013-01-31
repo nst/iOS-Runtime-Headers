@@ -19,6 +19,9 @@
 @property(retain) NSMutableSet * serviceTypes;
 
 
+- (void)dealloc;
+- (id)init;
+- (void)setDeviceName:(id)arg1;
 - (void)setServiceTypes:(id)arg1;
 - (id)serviceTypes;
 - (void)setSessions:(id)arg1;
@@ -30,9 +33,6 @@
 - (void)addServiceType:(int)arg1;
 - (void)addAlias:(id)arg1;
 - (id)aliases;
-- (void)dealloc;
-- (id)init;
 - (id)deviceName;
-- (void)setDeviceName:(id)arg1;
 
 @end

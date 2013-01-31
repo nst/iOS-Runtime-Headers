@@ -10,8 +10,8 @@
 
 @property(readonly) CIImage * outputImage;
 
-+ (id)filterWithName:(id)arg1;
 + (id)_filterArrayFromProperties:(id)arg1;
++ (id)filterWithName:(id)arg1;
 + (id)filterArrayFromSerializedXMP:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 error:(id*)arg3;
 + (id)serializedXMPFromFilters:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 + (id)customAttributes;
@@ -22,20 +22,20 @@
 + (id)filterWithName:(id)arg1 keysAndValues:(id)arg2;
 + (id)filterNamesInCategories:(id)arg1;
 
+- (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)name;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)_initFromProperties:(id)arg1;
+- (id)_outputProperties;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)attributes;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)valueForUndefinedKey:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (id)_initFromProperties:(id)arg1;
-- (id)_outputProperties;
 - (BOOL)_isIdentity;
 - (id)outputImage;
 - (id)_copyFilterWithZone:(struct _NSZone { }*)arg1;

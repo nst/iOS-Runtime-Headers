@@ -15,11 +15,8 @@
 }
 
 
-- (void)dealloc;
-- (void)setDate:(id)arg1;
-- (id)text;
-- (id)date;
 - (void)setOwner:(id)arg1;
+- (void)dealloc;
 - (void)setOtherEndOfRangedAnnotation:(id)arg1;
 - (id)otherEndOfRangedAnnotation;
 - (id)owner;
@@ -29,5 +26,8 @@
 - (BOOL)referencePropertiesFixed;
 - (int)runType;
 - (id)reference;
+- (void)setDate:(id)arg1;
+- (id)text;
+- (id)date;
 
 @end

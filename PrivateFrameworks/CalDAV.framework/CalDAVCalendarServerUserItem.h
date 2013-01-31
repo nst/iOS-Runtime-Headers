@@ -25,30 +25,30 @@
 @property(retain) NSURL * acceptedURL;
 
 
-- (id)inviteStatus;
-- (void)setInviteStatus:(id)arg1;
-- (void)setLastName:(id)arg1;
-- (id)lastName;
-- (void)setFirstName:(id)arg1;
-- (id)firstName;
+- (void)setSummary:(id)arg1;
+- (id)summary;
+- (void)setHref:(id)arg1;
+- (id)href;
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (id)commonName;
 - (id)access;
+- (id)inviteStatus;
 - (id)initWithHREF:(id)arg1 commonName:(id)arg2 inviteStatus:(int)arg3 access:(int)arg4;
 - (id)acceptedURL;
+- (id)copyParseRules;
+- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)setCommonName:(id)arg1;
 - (void)setAcceptedURLItem:(id)arg1;
 - (void)setLastNameItem:(id)arg1;
 - (void)setFirstNameItem:(id)arg1;
 - (void)setAcceptedURL:(id)arg1;
 - (void)setAccess:(id)arg1;
-- (id)copyParseRules;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (void)setSummary:(id)arg1;
-- (id)summary;
-- (void)setHref:(id)arg1;
-- (id)href;
-- (id)commonName;
+- (void)setInviteStatus:(id)arg1;
+- (void)setLastName:(id)arg1;
+- (id)lastName;
+- (void)setFirstName:(id)arg1;
+- (id)firstName;
 
 @end

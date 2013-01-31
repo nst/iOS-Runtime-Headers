@@ -15,13 +15,13 @@
 
 - (id)messageParts;
 - (void)dealloc;
-- (id)subject;
-- (void)setSubject:(id)arg1;
+- (void)setResources:(id)arg1;
+- (id)resources;
+- (id)markupString;
 - (void)_clearDerivedValues;
 - (void)setMarkupString:(id)arg1;
 - (id)textString;
-- (id)markupString;
-- (void)setResources:(id)arg1;
-- (id)resources;
+- (id)subject;
+- (void)setSubject:(id)arg1;
 
 @end

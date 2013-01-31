@@ -15,6 +15,9 @@
 @property(retain) NSMutableDictionary * players;
 
 
+- (id)description;
+- (void)dealloc;
+- (float)heightForHeaderInTableView:(id)arg1;
 - (int)matchStyle;
 - (id)lastTurnString;
 - (void)configureContents:(id)arg1 withGameIcon:(id)arg2;
@@ -29,8 +32,5 @@
 - (float)tableView:(id)arg1 heightForContentRow:(int)arg2;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
-- (id)description;
-- (void)dealloc;
-- (float)heightForHeaderInTableView:(id)arg1;
 
 @end

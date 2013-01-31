@@ -6,7 +6,7 @@
 }
 
 
-- (BOOL)scheduleNextTransactionInController:(id)arg1;
 - (id)init;
+- (BOOL)scheduleNextTransactionInController:(id)arg1;
 
 @end

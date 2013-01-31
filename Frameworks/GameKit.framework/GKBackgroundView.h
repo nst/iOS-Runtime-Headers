@@ -64,6 +64,21 @@
 
 + (float)defaultRowHeight;
 
+- (void)dealloc;
+- (void)setTheme:(id)arg1;
+- (id)theme;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setImageView:(id)arg1;
+- (id)info;
+- (id)imageView;
+- (void)prepareForReuse;
+- (id)image;
+- (void)layoutSubviews;
+- (void)setImage:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })additionalContentInsets;
 - (void)setCurrentInfoTextWidth:(float)arg1;
 - (float)currentInfoTextWidth;
@@ -107,20 +122,5 @@
 - (void)showInformationImmediately:(BOOL)arg1;
 - (void)setInfoWithError:(id)arg1;
 - (float)preferredHeightForOrientation:(int)arg1;
-- (void)dealloc;
-- (void)setStatus:(id)arg1;
-- (id)status;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setImageView:(id)arg1;
-- (id)info;
-- (id)imageView;
-- (void)prepareForReuse;
-- (id)image;
-- (void)layoutSubviews;
-- (void)setImage:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTheme:(id)arg1;
-- (id)theme;
 
 @end

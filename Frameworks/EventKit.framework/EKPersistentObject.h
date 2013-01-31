@@ -20,14 +20,13 @@
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 
-- (id)dirtyProperties;
 - (void)reset;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)rollback;
-- (id)objectID;
 - (id)initCommon;
+- (int)entityType;
+- (id)dirtyProperties;
 - (void)_setProperty:(id)arg1 forKey:(id)arg2;
 - (id)_propertyForKey:(id)arg1;
 - (id)dump;
@@ -92,7 +91,6 @@
 - (BOOL)refresh;
 - (BOOL)isNew;
 - (void)_setEventStore:(id)arg1;
-- (int)entityType;
 - (id)primitiveRelationValueForKey:(id)arg1;
 - (void)primitiveSetRelationValue:(id)arg1 forKey:(id)arg2;
 - (void)primitiveSetIntValue:(int)arg1 forKey:(id)arg2;
@@ -101,5 +99,7 @@
 - (id)primitiveURLValueForKey:(id)arg1;
 - (id)primitiveStringValueForKey:(id)arg1;
 - (void)primitiveSetStringValue:(id)arg1 forKey:(id)arg2;
+- (void)rollback;
+- (id)objectID;
 
 @end

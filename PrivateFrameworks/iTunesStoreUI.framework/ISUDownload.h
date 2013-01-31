@@ -26,11 +26,9 @@
 @property(getter=isPausable,readonly) BOOL pausable;
 
 + (id)downloadExternalProperties;
-+ (id)downloadProperties;
 + (void)initialize;
++ (id)downloadProperties;
 
-- (id)artistName;
-- (double)percentComplete;
 - (id)storePreorderIdentifier;
 - (void)setManagedDownload:(id)arg1;
 - (void)resetPreorderState;
@@ -41,11 +39,13 @@
 - (id)copyLocalizedStatusString;
 - (id)thumbnailImageURL;
 - (id)managedDownload;
-- (id)storeItemIdentifier;
 - (id)phaseIdentifier;
 - (id)initWithManagedDownload:(id)arg1;
 - (void)dealloc;
 - (id)title;
+- (id)storeItemIdentifier;
+- (id)artistName;
+- (double)percentComplete;
 - (BOOL)isPausable;
 - (long long)bytesTotal;
 - (long long)bytesDownloaded;

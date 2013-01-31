@@ -29,6 +29,7 @@
     NSDictionary *_validationPlist;
     unsigned int _referenceRestrictions;
     NSURL *_URL;
+    BOOL _shouldOptimizeAccessForLinearMoviePlayback;
 }
 
 @property(readonly) NSDictionary * validationPlist;
@@ -36,21 +37,21 @@
 + (id)_figAssetTrackPropertiesForKeys;
 + (id)_figAssetPropertiesForKeys;
 
-- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
-- (id)initWithURL:(id)arg1 options:(id)arg2;
-- (unsigned long long)downloadToken;
-- (BOOL)hasProtectedContent;
-- (BOOL)isPlayable;
-- (BOOL)_isStreaming;
-- (id)lyrics;
 - (id)URL;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (BOOL)isReadable;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (void)finalize;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
-- (BOOL)isReadable;
+- (unsigned long long)downloadToken;
+- (BOOL)hasProtectedContent;
+- (BOOL)isPlayable;
+- (BOOL)_isStreaming;
+- (id)initWithURL:(id)arg1 options:(id)arg2;
+- (id)lyrics;
+- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 - (id)validationPlist;
 - (void)setIsCompatibleWithSavedPhotosAlbum:(BOOL)arg1 result:(long)arg2;
 - (void)setIsPlayable:(BOOL)arg1 result:(long)arg2;
@@ -62,6 +63,7 @@
 - (id)_initWithDownloadToken:(unsigned long long)arg1;
 - (id)_initWithFigAsset:(struct OpaqueFigAsset { }*)arg1 options:(id)arg2;
 - (struct OpaqueFigSimpleMutex { }*)_loadingMutex;
+- (BOOL)_shouldOptimizeAccessForLinearMoviePlayback;
 - (id)downloadDestinationURL;
 - (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;
 - (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;

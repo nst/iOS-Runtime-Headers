@@ -11,14 +11,14 @@
 @property <IUSearchResultListViewControllerDelegate> * searchResultListDelegate;
 
 
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)loadView;
-- (BOOL)isViewLoaded;
 - (void)setSearchResultListDelegate:(id)arg1;
 - (id)searchResultListDelegate;
 - (BOOL)allowsDisclosureInCells;
 - (BOOL)isCurrentController;
 - (BOOL)hasSearchBar;
 - (void)performDefaultActionForRow:(int)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)isViewLoaded;
 
 @end

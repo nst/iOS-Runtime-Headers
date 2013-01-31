@@ -30,9 +30,6 @@
 }
 
 
-- (void)dealloc;
-- (void)_invalidate;
-- (void)finalize;
 - (long)_charIndexToBreakLineByWordWrappingAtIndex:(long)arg1 lineFragmentWidth:(float)arg2 hyphenate:(BOOL*)arg3;
 - (void)_flushCachedObjects;
 - (id)_copyRenderingContextWithGlyphOrigin:(float)arg1;
@@ -46,5 +43,8 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })glyphRange;
 - (void)layoutForStartingGlyphAtIndex:(unsigned int)arg1 characterIndex:(unsigned int)arg2 minPosition:(float)arg3 maxPosition:(float)arg4 lineFragmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5;
 - (id)initWithTypesetter:(id)arg1;
+- (void)dealloc;
+- (void)_invalidate;
+- (void)finalize;
 
 @end

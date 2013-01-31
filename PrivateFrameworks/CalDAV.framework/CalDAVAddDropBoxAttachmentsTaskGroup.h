@@ -32,7 +32,13 @@
 
 - (int)state;
 - (void)dealloc;
-- (void)setState:(int)arg1;
+- (id)attachments;
+- (void)setAceItems:(id)arg1;
+- (id)aceItems;
+- (void)_finishWithError:(id)arg1 state:(int)arg2;
+- (void)taskGroup:(id)arg1 didFinishWithError:(id)arg2;
+- (void)startTaskGroup;
+- (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (id)putFailureSizes;
 - (id)etags;
 - (id)initWithAccountInfoProvider:(id)arg1 dropboxURL:(id)arg2 attachments:(id)arg3 contentTypes:(id)arg4 attendeePrincipalURLs:(id)arg5 attendeesCanManageDropBox:(BOOL)arg6 taskManager:(id)arg7;
@@ -50,13 +56,7 @@
 - (void)setDropboxURL:(id)arg1;
 - (void)setSentAttachmentURLsToETags:(id)arg1;
 - (id)dropboxURL;
-- (void)setAceItems:(id)arg1;
-- (id)aceItems;
-- (void)_finishWithError:(id)arg1 state:(int)arg2;
-- (void)taskGroup:(id)arg1 didFinishWithError:(id)arg2;
-- (void)startTaskGroup;
-- (void)task:(id)arg1 didFinishWithError:(id)arg2;
-- (id)attachments;
+- (void)setState:(int)arg1;
 - (void)setAttachments:(id)arg1;
 
 @end

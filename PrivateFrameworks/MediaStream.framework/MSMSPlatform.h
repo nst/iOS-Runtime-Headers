@@ -26,6 +26,7 @@
 - (id)productionPushToken;
 - (BOOL)personIDUsesProductionPushEnvironment:(id)arg1;
 - (id)_accountForPersonID:(id)arg1;
+- (BOOL)_mayPerformFileTransfer;
 - (struct __CFString { }*)_facilityStringForFacility:(int)arg1;
 - (void)_rereadDefaults;
 - (id)pushTokenForPersonID:(id)arg1;

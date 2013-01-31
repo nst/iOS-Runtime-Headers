@@ -11,7 +11,6 @@
 @property(retain) VGLTexture * texture;
 
 
-- (void)dealloc;
 - (void)setTexture:(id)arg1;
 - (id)texture;
 - (void)drawInRects:(const struct { float x1; float x2; float x3; float x4; }*)arg1 rectCount:(unsigned int)arg2 context:(id)arg3;
@@ -19,5 +18,6 @@
 - (void)drawInPreparedCulls:(id)arg1;
 - (void)drawInPreparedCulls:(id)arg1 excludeGroup:(int)arg2;
 - (void)drawInRects:(const struct { float x1; float x2; float x3; float x4; }*)arg1 rectCount:(unsigned int)arg2 excludeGroup:(int)arg3 context:(id)arg4;
+- (void)dealloc;
 
 @end

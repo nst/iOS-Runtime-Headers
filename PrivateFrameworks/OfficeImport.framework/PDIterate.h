@@ -11,12 +11,12 @@
 
 
 - (int)type;
-- (double)value;
-- (void)setValue:(double)arg1;
-- (void)setType:(int)arg1;
 - (void)setIsValuePercentage:(BOOL)arg1;
 - (BOOL)isValuePercentage;
 - (void)setIsBackwards:(BOOL)arg1;
 - (BOOL)isBackwards;
+- (double)value;
+- (void)setValue:(double)arg1;
+- (void)setType:(int)arg1;
 
 @end

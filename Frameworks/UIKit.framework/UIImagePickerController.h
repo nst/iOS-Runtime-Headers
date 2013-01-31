@@ -44,9 +44,9 @@
 
 + (BOOL)isFlashAvailableForCameraDevice:(int)arg1;
 + (id)availableCaptureModesForCameraDevice:(int)arg1;
-+ (BOOL)isCameraDeviceAvailable:(int)arg1;
 + (id)availableMediaTypesForSourceType:(int)arg1;
 + (BOOL)_reviewCapturedItems;
++ (BOOL)isCameraDeviceAvailable:(int)arg1;
 + (BOOL)_isMediaTypeAvailable:(id)arg1 forSource:(int)arg2;
 + (BOOL)isSourceTypeAvailable:(int)arg1;
 

@@ -13,9 +13,9 @@
 
 + (void)initialize;
 
+- (id)initWithCoreResource:(struct PassRefPtr<WebCore::ArchiveResource> { struct ArchiveResource {} *x1; })arg1;
 - (void)dealloc;
 - (id)init;
 - (void)finalize;
-- (id)initWithCoreResource:(struct PassRefPtr<WebCore::ArchiveResource> { struct ArchiveResource {} *x1; })arg1;
 
 @end

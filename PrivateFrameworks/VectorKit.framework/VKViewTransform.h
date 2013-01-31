@@ -37,9 +37,6 @@
 @property const struct { double x1[4][4]; }* scaledViewProjectionMatrix;
 
 
-- (void)dealloc;
-- (id)init;
-- (float)contentScale;
 - (float)heading;
 - (void)evaluateWorldPoint:(struct { double x1; double x2; double x3; })arg1 isDistanceClipped:(BOOL*)arg2 zoom:(float*)arg3 tilt:(float*)arg4;
 - (struct { double x1; double x2; double x3; })groundPointFromPixel:(struct { float x1; float x2; })arg1;
@@ -70,5 +67,8 @@
 - (const struct { double x1[4][4]; }*)viewProjectionMatrix;
 - (struct { double x1; double x2; double x3; })rightVector;
 - (struct { double x1; double x2; double x3; })forwardVector;
+- (void)dealloc;
+- (id)init;
+- (float)contentScale;
 
 @end

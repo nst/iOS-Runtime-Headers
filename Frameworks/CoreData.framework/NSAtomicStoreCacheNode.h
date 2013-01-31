@@ -11,8 +11,8 @@
     void *_reserved1;
 }
 
-+ (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;
++ (BOOL)accessInstanceVariablesDirectly;
 
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (BOOL)isEqual:(id)arg1;

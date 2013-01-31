@@ -51,9 +51,6 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
-- (void)setPassword:(id)arg1;
-- (id)username;
-- (void)setUsername:(id)arg1;
 - (id)description;
 - (void).cxx_destruct;
 - (void)setCredentialUUID:(id)arg1;
@@ -86,5 +83,8 @@
 - (int)proxyType;
 - (id)password;
 - (BOOL)isHidden;
+- (void)setPassword:(id)arg1;
+- (id)username;
+- (void)setUsername:(id)arg1;
 
 @end

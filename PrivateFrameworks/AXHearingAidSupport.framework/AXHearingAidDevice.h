@@ -16,6 +16,7 @@
     long initialLoadToken;
     AXTimer *_leftInvalidationTimer;
     AXTimer *_rightInvalidationTimer;
+    AXTimer *_propertyWriteTimer;
     BOOL _didLoseLeftPeripheral;
     BOOL _didLoseRightPeripheral;
     NSString *leftUUID;
@@ -23,6 +24,10 @@
     NSString *name;
     NSString *manufacturer;
     NSString *model;
+    NSString *leftFirmwareVersion;
+    NSString *rightFirmwareVersion;
+    NSString *leftHardwareVersion;
+    NSString *rightHardwareVersion;
     float rightBatteryLevel;
     float leftBatteryLevel;
     NSArray *rightPrograms;
@@ -40,6 +45,8 @@
     NSMutableDictionary *rightPropertiesLoadCount;
     NSString *leftPeripheralUUID;
     NSString *rightPeripheralUUID;
+    int leftWriteRequestProperties;
+    int rightWriteRequestProperties;
     struct CGImage { } *_devicePhoto;
 }
 
@@ -50,6 +57,10 @@
 @property(retain) NSString * name;
 @property(retain) NSString * manufacturer;
 @property(retain) NSString * model;
+@property(retain) NSString * leftFirmwareVersion;
+@property(retain) NSString * rightFirmwareVersion;
+@property(retain) NSString * leftHardwareVersion;
+@property(retain) NSString * rightHardwareVersion;
 @property(retain) NSString * rightUUID;
 @property(retain) NSString * leftUUID;
 @property(retain) NSString * leftPeripheralUUID;
@@ -71,26 +82,29 @@
 @property AXHearingAidMode * currentLeftProgram;
 @property int leftLoadedProperties;
 @property int rightLoadedProperties;
+@property int leftWriteRequestProperties;
+@property int rightWriteRequestProperties;
 @property(retain) NSMutableDictionary * leftPropertiesLoadCount;
 @property(retain) NSMutableDictionary * rightPropertiesLoadCount;
 
 + (id)characteristicsUUIDs;
 
-- (void)setManufacturer:(id)arg1;
-- (id)manufacturer;
-- (BOOL)isConnecting;
 - (void)setName:(id)arg1;
 - (id)name;
 - (id)description;
 - (void)dealloc;
-- (void)disconnect;
-- (BOOL)isPersistent;
-- (void)connect;
-- (id)model;
-- (void)_init;
-- (void)reload;
+- (void)setManufacturer:(id)arg1;
+- (id)manufacturer;
 - (void)setModel:(id)arg1;
 - (struct CGImage { }*)devicePhoto;
+- (void)setRightWriteRequestProperties:(int)arg1;
+- (int)rightWriteRequestProperties;
+- (void)setLeftWriteRequestProperties:(int)arg1;
+- (int)leftWriteRequestProperties;
+- (id)rightHardwareVersion;
+- (id)leftHardwareVersion;
+- (id)rightFirmwareVersion;
+- (id)leftFirmwareVersion;
 - (BOOL)addPeripheral:(id)arg1;
 - (void)setRightStreamVolume:(float)arg1;
 - (void)setLeftStreamVolume:(float)arg1;
@@ -106,6 +120,12 @@
 - (void)connectionDidChange;
 - (id)initWithPersistentRepresentation:(id)arg1;
 - (id)initWithPeripheral:(id)arg1;
+- (void)peripheral:(id)arg1 didWriteValueForCharacteristic:(id)arg2 error:(id)arg3;
+- (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 error:(id)arg3;
+- (void)peripheral:(id)arg1 didDiscoverCharacteristicsForService:(id)arg2 error:(id)arg3;
+- (void)peripheral:(id)arg1 didDiscoverServices:(id)arg2;
+- (void)peripheralDidInvalidateServices:(id)arg1;
+- (void)peripheralDidUpdateName:(id)arg1;
 - (id)currentRightProgram;
 - (void)setRightPeripheral:(id)arg1;
 - (void)setRightBatteryLevel:(float)arg1;
@@ -116,11 +136,14 @@
 - (void)setRightSelectedProgram:(id)arg1;
 - (void)setLeftSelectedProgram:(id)arg1;
 - (id)peripheral:(id)arg1 characteristicForProperty:(int)arg2;
+- (void)delayWriteProperty:(int)arg1 forPeripheral:(id)arg2;
+- (void)_sendDelayedWrites;
 - (void)writeInt:(unsigned char)arg1 toPeripheral:(id)arg2 forProperty:(int)arg3;
+- (unsigned char)volumeValueForProperty:(int)arg1 andPeripheral:(id)arg2;
 - (void)reloadPropertiesForPeripheral:(id)arg1 withLoadCount:(id)arg2;
 - (BOOL)keepInSync;
+- (void)logCharacteristic:(id)arg1 andPeripheral:(id)arg2;
 - (void)loadProperties:(int)arg1 forPeripheral:(id)arg2 withRetryPeriod:(float)arg3;
-- (BOOL)peripheral:(id)arg1 didLoadProperty:(int)arg2;
 - (void)loadRequiredProperties;
 - (BOOL)didLoadRequiredProperties;
 - (void)loadFailedProperties;
@@ -139,6 +162,7 @@
 - (id)leftUUID;
 - (id)rightPropertiesLoadCount;
 - (id)leftPropertiesLoadCount;
+- (BOOL)peripheral:(id)arg1 didLoadProperty:(int)arg2;
 - (int)rightLoadedProperties;
 - (int)leftLoadedProperties;
 - (id)rightPeripheralUUID;
@@ -146,9 +170,14 @@
 - (void)loadBasicProperties;
 - (BOOL)didLoadBasicProperties;
 - (id)persistentRepresentation;
+- (void)setIsConnecting:(BOOL)arg1;
 - (id)rightPeripheral;
 - (id)leftPeripheral;
 - (void)setDevicePhoto:(struct CGImage { }*)arg1;
+- (void)setRightHardwareVersion:(id)arg1;
+- (void)setLeftHardwareVersion:(id)arg1;
+- (void)setRightFirmwareVersion:(id)arg1;
+- (void)setLeftFirmwareVersion:(id)arg1;
 - (void)setIsPaired:(BOOL)arg1;
 - (void)setIsPersistent:(BOOL)arg1;
 - (void)setRightPeripheralUUID:(id)arg1;
@@ -175,13 +204,13 @@
 - (BOOL)isPaired;
 - (BOOL)rightAvailable;
 - (BOOL)leftAvailable;
-- (void)peripheral:(id)arg1 didWriteValueForCharacteristic:(id)arg2 error:(id)arg3;
-- (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 error:(id)arg3;
-- (void)peripheral:(id)arg1 didDiscoverCharacteristicsForService:(id)arg2 error:(id)arg3;
-- (void)peripheral:(id)arg1 didDiscoverServices:(id)arg2;
-- (void)peripheralDidInvalidateServices:(id)arg1;
-- (void)peripheralDidUpdateName:(id)arg1;
-- (void)setIsConnecting:(BOOL)arg1;
+- (void)disconnect;
+- (BOOL)isPersistent;
+- (void)connect;
+- (id)model;
+- (void)_init;
+- (void)reload;
+- (BOOL)isConnecting;
 - (BOOL)isConnected;
 
 @end

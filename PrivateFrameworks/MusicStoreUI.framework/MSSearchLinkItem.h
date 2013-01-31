@@ -12,10 +12,10 @@
 
 + (id)URLBagKey;
 
-- (BOOL)_parseURL:(id)arg1;
-- (id)initWithURL:(id)arg1;
-- (void)dealloc;
 - (void)setQueryStringDictionary:(id)arg1;
 - (id)queryStringDictionary;
+- (id)initWithURL:(id)arg1;
+- (void)dealloc;
+- (BOOL)_parseURL:(id)arg1;
 
 @end

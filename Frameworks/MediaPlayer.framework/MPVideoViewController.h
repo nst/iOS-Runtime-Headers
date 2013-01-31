@@ -23,7 +23,6 @@
     UIColor *_backstopColor;
     UIActivityIndicatorView *_loadingIndicator;
     MPTVOutWindow *_tvOutWindow;
-    int _extendedModeNotifyToken;
     unsigned int _backgroundTaskId;
     int _artworkImageStyle;
     UIImage *_posterImage;
@@ -91,9 +90,18 @@
 + (BOOL)supportsFullscreenDisplay;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculateArtworkImageViewFrameInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
-- (void)setPlayer:(id)arg1;
-- (BOOL)TVOutEnabled;
-- (void)setItem:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)posterImage;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)removeChildViewController:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)loadView;
+- (id)backgroundView;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (int)statusBarStyle;
+- (BOOL)isStatusBarHidden;
 - (void)chapterListDidDisappear:(id)arg1;
 - (void)chapterList:(id)arg1 selectedChapter:(unsigned int)arg2;
 - (BOOL)allowsTVOutInBackground;
@@ -144,7 +152,7 @@
 - (void)_videoView_timedImageMetadataAvailableNotification:(id)arg1;
 - (void)_videoView_sizeChangedNotification:(id)arg1;
 - (void)_videoView_playbackErrorNotification:(id)arg1;
-- (void)_videoView_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
+- (void)_videoView_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
 - (void)videoView_firstVideoFrameDisplayedNotification:(id)arg1;
 - (void)_cancelArtworkImageRequest;
 - (void)_endBackgroundTask;
@@ -223,6 +231,8 @@
 - (id)backstopColor;
 - (BOOL)canShowControlsOverlay;
 - (void)setItemTypeOverride:(unsigned int)arg1;
+- (void)setItem:(id)arg1;
+- (BOOL)TVOutEnabled;
 - (BOOL)allowsWirelessPlayback;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setCanShowControlsOverlay:(BOOL)arg1;
@@ -232,17 +242,6 @@
 - (void)setFullscreen:(BOOL)arg1;
 - (BOOL)isFullscreen;
 - (id)videoView;
-- (void)dealloc;
-- (id)init;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)removeChildViewController:(id)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)loadView;
-- (id)backgroundView;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (int)statusBarStyle;
-- (BOOL)isStatusBarHidden;
-- (id)posterImage;
+- (void)setPlayer:(id)arg1;
 
 @end

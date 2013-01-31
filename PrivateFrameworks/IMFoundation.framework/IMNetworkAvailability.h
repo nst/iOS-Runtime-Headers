@@ -29,13 +29,13 @@
 
 - (void)cancel;
 - (void)dealloc;
+- (id)initWithFlags:(unsigned int)arg1 timeout:(double)arg2 wifiTimeout:(double)arg3 completionBlock:(id)arg4;
+- (void)_setTimer;
+- (void)_timerHit:(id)arg1;
+- (id)initWithFlags:(unsigned int)arg1 options:(unsigned int)arg2 timeout:(double)arg3 wifiTimeout:(double)arg4 completionBlock:(id)arg5;
 - (void)_cancel;
 - (void)start;
 - (void)setContext:(void*)arg1;
 - (void*)context;
-- (id)initWithFlags:(unsigned int)arg1 options:(unsigned int)arg2 timeout:(double)arg3 wifiTimeout:(double)arg4 completionBlock:(id)arg5;
-- (id)initWithFlags:(unsigned int)arg1 timeout:(double)arg2 wifiTimeout:(double)arg3 completionBlock:(id)arg4;
-- (void)_setTimer;
-- (void)_timerHit:(id)arg1;
 
 @end

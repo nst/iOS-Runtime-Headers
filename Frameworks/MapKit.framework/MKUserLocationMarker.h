@@ -23,6 +23,12 @@
 @property double presentationCourse;
 
 
+- (double)headingAccuracy;
+- (BOOL)isStale;
+- (void)setStale:(BOOL)arg1;
+- (void)setPresentationCourse:(double)arg1;
+- (double)presentationCourse;
+- (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (float)opacity;
 - (void)setOpacity:(float)arg1;
 - (BOOL)isEffectsEnabled;
@@ -37,11 +43,5 @@
 - (void)setShouldDisplayHeading:(BOOL)arg1;
 - (void)setLocationSource:(int)arg1;
 - (int)locationSource;
-- (double)headingAccuracy;
-- (BOOL)isStale;
-- (void)setStale:(BOOL)arg1;
-- (void)setPresentationCourse:(double)arg1;
-- (double)presentationCourse;
-- (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 
 @end

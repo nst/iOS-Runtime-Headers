@@ -18,6 +18,8 @@
 @property(retain) id byValue;
 
 
+- (id)toValue;
+- (void)CA_prepareRenderValue;
 - (id)fromValue;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
 - (float)startAngle;
@@ -25,8 +27,6 @@
 - (void)setRoundsToInteger:(BOOL)arg1;
 - (void)setToValue:(id)arg1;
 - (void)setFromValue:(id)arg1;
-- (id)toValue;
-- (void)CA_prepareRenderValue;
 - (void)setEndAngle:(float)arg1;
 - (void)setByValue:(id)arg1;
 - (double)_timeFunction:(double)arg1;

@@ -14,9 +14,9 @@
 
 
 - (void).cxx_destruct;
-- (id)asset;
-- (void)setAsset:(id)arg1;
 - (void)setAlbum:(id)arg1;
 - (id)album;
+- (id)asset;
+- (void)setAsset:(id)arg1;
 
 @end

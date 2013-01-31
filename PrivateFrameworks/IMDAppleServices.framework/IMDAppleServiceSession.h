@@ -29,6 +29,7 @@
 @property(readonly) struct __SecKey { }* callerPrivateKey;
 
 
+- (void)dealloc;
 - (BOOL)canMakeDowngradeRoutingChecks;
 - (id)pushHandler;
 - (id)callerID;
@@ -124,11 +125,10 @@
 - (void)center:(id)arg1 startedAuthenticating:(id)arg2;
 - (void)center:(id)arg1 succeededRegionValidation:(id)arg2 regionID:(id)arg3 phoneNumber:(id)arg4 extraContext:(id)arg5 verified:(BOOL)arg6;
 - (void)center:(id)arg1 failedRegionValidation:(id)arg2 error:(int)arg3 info:(id)arg4;
-- (void)dealloc;
-- (int)serviceType;
 - (void)systemDidLeaveFirstDataProtectionLock;
 - (void)systemRestoreStateDidChange;
 - (void)systemDidFinishMigration;
 - (void)systemDidStartBackup;
+- (int)serviceType;
 
 @end

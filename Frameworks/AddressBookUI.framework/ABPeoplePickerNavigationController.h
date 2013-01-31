@@ -38,9 +38,19 @@
 
 + (void)notifyPreferencesChanged;
 
-- (void)loadState;
+- (void)setBehavior:(int)arg1;
+- (int)behavior;
 - (void)dealloc;
 - (id)init;
+- (void*)addressBook;
+- (void)setAllowsSounds:(BOOL)arg1;
+- (void)setAllowsCardEditing:(BOOL)arg1;
+- (void)setDisplayedProperties:(id)arg1;
+- (void)saveState;
+- (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
+- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (void)setPrompt:(id)arg1 forViewControllerType:(int)arg2;
+- (void)setInsertionValue:(id)arg1 property:(int)arg2;
 - (void)setPeoplePickerDelegate:(id)arg1;
 - (void)setAllowsCancel:(BOOL)arg1;
 - (id)initWithStyle:(int)arg1;
@@ -65,13 +75,8 @@
 - (void)setPrompt:(id)arg1;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
-- (void)setBehavior:(int)arg1;
-- (int)behavior;
-- (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
-- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (void)setPrompt:(id)arg1 forViewControllerType:(int)arg2;
-- (void)setInsertionValue:(id)arg1 property:(int)arg2;
-- (void*)addressBook;
+- (void)loadState;
+- (void)setAddressBook:(void*)arg1;
 - (void)__loadDatabaseAtDirectory:(id)arg1;
 - (void)safePopToRootViewControllerAnimated:(BOOL)arg1;
 - (void)searchCurrentContactsGroupUsingQuery:(id)arg1 animated:(BOOL)arg2;
@@ -134,12 +139,7 @@
 - (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (void)saveState;
-- (void)setAllowsSounds:(BOOL)arg1;
-- (void)setAllowsCardEditing:(BOOL)arg1;
-- (void)setDisplayedProperties:(id)arg1;
 - (id)initWithAddressBook:(void*)arg1;
-- (void)setAddressBook:(void*)arg1;
 - (BOOL)ckCanDismissWhenSuspending;
 
 @end

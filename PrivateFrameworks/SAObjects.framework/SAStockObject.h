@@ -37,21 +37,10 @@
 @property(copy) NSNumber * volume;
 @property(copy) NSString * yearRange;
 
-+ (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)object;
 
-- (id)groupIdentifier;
-- (void)setPrice:(id)arg1;
 - (id)displayStyle;
-- (id)price;
-- (void)setName:(id)arg1;
-- (id)name;
-- (void)setChange:(id)arg1;
-- (id)change;
-- (id)symbol;
-- (void)setStatus:(id)arg1;
-- (id)status;
-- (void)setSymbol:(id)arg1;
 - (void)setOpen:(id)arg1;
 - (id)open;
 - (void)setLink:(id)arg1;
@@ -59,10 +48,8 @@
 - (id)timeStamp;
 - (void)setVolume:(id)arg1;
 - (id)volume;
-- (id)requests;
-- (void)setChartData:(id)arg1;
-- (id)chartData;
-- (void)setTimeStamp:(id)arg1;
+- (void)setName:(id)arg1;
+- (id)name;
 - (void)setYearRange:(id)arg1;
 - (id)yearRange;
 - (void)setStockNews:(id)arg1;
@@ -101,5 +88,18 @@
 - (id)averageDailyVolume;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setChartData:(id)arg1;
+- (id)chartData;
+- (void)setTimeStamp:(id)arg1;
+- (id)requests;
+- (void)setChange:(id)arg1;
+- (id)change;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (void)setSymbol:(id)arg1;
+- (void)setPrice:(id)arg1;
+- (id)price;
+- (id)groupIdentifier;
+- (id)symbol;
 
 @end

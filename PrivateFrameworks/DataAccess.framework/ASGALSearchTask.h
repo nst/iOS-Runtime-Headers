@@ -6,11 +6,11 @@
 }
 
 
-- (void)finishWithError:(id)arg1;
 - (int)numDownloadedElements;
 - (void)performTask;
 - (BOOL)processContext:(id)arg1;
 - (BOOL)getTopLevelToken:(char *)arg1 outStatusCodePage:(char *)arg2 outStatusToken:(char *)arg3;
 - (id)requestBody;
+- (void)finishWithError:(id)arg1;
 
 @end

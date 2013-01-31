@@ -49,6 +49,20 @@
 
 + (id)sectionWithButtonTitle:(id)arg1 action:(SEL)arg2;
 
+- (void)dealloc;
+- (id)init;
+- (void)setFooterHeight:(float)arg1;
+- (void)setHeaderHeight:(float)arg1;
+- (float)footerHeight;
+- (float)headerHeight;
+- (id)buttonAtIndex:(int)arg1;
+- (id)buttons;
+- (BOOL)hidden;
+- (int)buttonType;
+- (float)heightForFooterInTableView:(id)arg1;
+- (float)heightForHeaderInTableView:(id)arg1;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (void)setHidden:(BOOL)arg1;
 - (float)betweenButtonsMargin;
 - (void)setFooterText:(id)arg1;
 - (void)setMinButtonWidthThreshold:(float)arg1;
@@ -90,19 +104,5 @@
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
 - (int)rowCountInTableView:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)setFooterHeight:(float)arg1;
-- (void)setHeaderHeight:(float)arg1;
-- (float)footerHeight;
-- (float)headerHeight;
-- (id)buttonAtIndex:(int)arg1;
-- (id)buttons;
-- (BOOL)hidden;
-- (int)buttonType;
-- (float)heightForFooterInTableView:(id)arg1;
-- (float)heightForHeaderInTableView:(id)arg1;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)setHidden:(BOOL)arg1;
 
 @end

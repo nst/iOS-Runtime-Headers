@@ -10,7 +10,7 @@
 }
 
 
-- (id)imageWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)dealloc;
 - (id)_bestImageURLForSize:(struct CGSize { float x1; float x2; })arg1 container:(BOOL)arg2;
 - (id)_imageWithURL:(id)arg1;
 - (id)initWithStoreItemArtworkDictionaries:(id)arg1 containerArtworkDictionaries:(id)arg2;
@@ -20,9 +20,9 @@
 - (id)albumImageDataWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)albumImageWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)coverFlowImageWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)imageWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)hasArtworkAvailable;
 - (id)imageDataWithSize:(struct CGSize { float x1; float x2; })arg1 atPlaybackTime:(double)arg2;
 - (id)imageWithSize:(struct CGSize { float x1; float x2; })arg1 atPlaybackTime:(double)arg2;
-- (void)dealloc;
 
 @end

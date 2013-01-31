@@ -15,12 +15,12 @@
 + (id)baseClientBoundCommandWithDictionary:(id)arg1 context:(id)arg2;
 + (id)baseClientBoundCommand;
 
-- (id)groupIdentifier;
-- (id)callbacks;
 - (void)setCallbacks:(id)arg1;
 - (void)setAppId:(id)arg1;
 - (id)appId;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)callbacks;
+- (id)groupIdentifier;
 
 @end

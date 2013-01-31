@@ -31,9 +31,6 @@
 @property(readonly) float maximumStyleZ;
 
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (id)init;
 - (unsigned int)numTiles;
 - (id*)tileList;
 - (unsigned int)numRectForLayer:(unsigned int)arg1;
@@ -42,5 +39,8 @@
 - (void)consolidateList;
 - (void)addTileToList:(id)arg1;
 - (void)clearList;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (id)init;
 
 @end

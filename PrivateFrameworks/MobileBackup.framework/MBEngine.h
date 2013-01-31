@@ -38,8 +38,6 @@
 + (id)stringForEngineType:(int)arg1;
 
 - (void)dealloc;
-- (id)properties;
-- (BOOL)isMigrate;
 - (id)domainManager;
 - (id)debugContext;
 - (id)settingsContext;
@@ -62,5 +60,7 @@
 - (int)engineMode;
 - (int)engineType;
 - (id)appManager;
+- (BOOL)isMigrate;
+- (id)properties;
 
 @end

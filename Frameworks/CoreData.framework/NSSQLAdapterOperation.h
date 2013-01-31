@@ -14,6 +14,7 @@
 - (id)entity;
 - (id)description;
 - (void)dealloc;
+- (id)row;
 - (int)compareAdapterOperation:(id)arg1;
 - (id)correlation;
 - (void)setAdapterOperator:(unsigned int)arg1;
@@ -21,6 +22,5 @@
 - (id)_opString;
 - (unsigned int)adapterOperator;
 - (id)initWithAdapterOperator:(unsigned int)arg1 row:(id)arg2;
-- (id)row;
 
 @end

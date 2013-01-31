@@ -27,6 +27,8 @@
 
 + (id)sharedInstance;
 
+- (void)dealloc;
+- (id)init;
 - (void)handleIncomingSMSForPhoneNumber:(id)arg1 signature:(id)arg2;
 - (void)handleRegistrationSMSSuccessfullyDelivered:(id)arg1;
 - (void)handlePhoneNumberChangedNotification:(id)arg1;
@@ -69,14 +71,12 @@
 - (void)_registrationStateChangedNotification:(id)arg1;
 - (void)sendRegistration:(id)arg1;
 - (void)cancelActionsForRegistrationInfo:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (int)status;
 - (void)systemRestoreStateDidChange;
 - (void)systemDidFinishMigration;
 - (void)systemDidStopBackup;
 - (void)removeListener:(id)arg1;
 - (void)addListener:(id)arg1;
 - (void)heartbeat;
+- (int)status;
 
 @end

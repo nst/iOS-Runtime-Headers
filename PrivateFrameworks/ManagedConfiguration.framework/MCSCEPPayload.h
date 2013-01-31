@@ -33,7 +33,7 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
-- (unsigned int)retries;
+- (id)challenge;
 - (id)description;
 - (void).cxx_destruct;
 - (unsigned int)retryDelay;
@@ -49,8 +49,8 @@
 - (struct __SecCertificate { }*)copyCertificate;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (unsigned int)retries;
 - (id)subject;
 - (id)URLString;
-- (id)challenge;
 
 @end

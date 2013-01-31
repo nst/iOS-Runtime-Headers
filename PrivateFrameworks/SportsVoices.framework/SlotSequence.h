@@ -13,14 +13,14 @@
 + (id)emptySlotSequence;
 + (id)slotSequenceWithArray:(id)arg1;
 
+- (id)reversed;
 - (id)description;
 - (void)dealloc;
 - (unsigned int)count;
-- (id)initWithArray:(id)arg1;
-- (id)reversed;
 - (BOOL)empty;
-- (BOOL)matches:(id)arg1;
 - (id)first;
+- (id)initWithArray:(id)arg1;
+- (BOOL)matches:(id)arg1;
 - (void)setSlots:(id)arg1;
 - (id)subsequenceFromIndex:(int)arg1;
 - (id)slotSubsequenceFromIndex:(int)arg1;

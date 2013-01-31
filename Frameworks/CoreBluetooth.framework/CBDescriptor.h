@@ -15,9 +15,9 @@
 @property(retain) id value;
 
 
-- (id)UUID;
 - (id)value;
 - (void)setValue:(id)arg1;
+- (id)UUID;
 - (id)characteristic;
 - (void)setCharacteristic:(id)arg1;
 

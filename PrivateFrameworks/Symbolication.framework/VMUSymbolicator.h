@@ -25,11 +25,9 @@
 + (id)symbolicatorWithHeaders:(id)arg1 allowLazySymbolOwners:(BOOL)arg2 path:(id)arg3 machTaskContainer:(id)arg4;
 + (BOOL)isIgnoreFunctionSymbols;
 
-- (id)regions;
 - (id)path;
 - (id)description;
 - (void)dealloc;
-- (id)symbols;
 - (id)programTextForAddress:(unsigned long long)arg1;
 - (id)initWithSymbolOwners:(id)arg1 path:(id)arg2 machTaskContainer:(id)arg3;
 - (id)symbolOwnerForPath:(id)arg1;
@@ -56,8 +54,10 @@
 - (id)sourceInfosInAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)symbolsForMangledName:(id)arg1;
 - (id)architecture;
+- (int)pid;
+- (id)regions;
+- (id)symbols;
 - (BOOL)containsAddress:(unsigned long long)arg1;
 - (id)signature;
-- (int)pid;
 
 @end

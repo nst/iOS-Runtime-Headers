@@ -30,7 +30,12 @@
 @property BOOL forceSynchronousQueueFilling;
 
 
-- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
+- (void)invalidate;
+- (id)description;
+- (void)dealloc;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)currentItem;
+- (id)items;
 - (void)_fillInQueue;
 - (void)_removeInvalidItems:(id)arg1;
 - (void)_reloadQueueKeepingCurrentItem:(BOOL)arg1 allowReusingItems:(BOOL)arg2;
@@ -56,11 +61,6 @@
 - (void)setMaxQueueDepth:(unsigned int)arg1;
 - (void)setManagesSystemDownloads:(BOOL)arg1;
 - (void)setForceSynchronousQueueFilling:(BOOL)arg1;
-- (void)invalidate;
-- (id)description;
-- (void)dealloc;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (id)currentItem;
-- (id)items;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 
 @end

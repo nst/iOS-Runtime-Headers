@@ -44,11 +44,6 @@
 @property struct __CFHTTPMessage { }* currentRequest;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
-- (unsigned short)port;
 - (id)urlString;
 - (void)setPipeliningEnabled:(BOOL)arg1;
 - (BOOL)pipeliningEnabled;
@@ -78,13 +73,19 @@
 - (id)_mimeTypeForExtension:(id)arg1;
 - (void)_handleGeneralRequest:(id)arg1 fromConnection:(id)arg2;
 - (double)_currentLatency;
+- (void)_cleanupListenSocket;
 - (id)initWithPort:(unsigned short)arg1 documentRoot:(id)arg2;
 - (BOOL)_listenOnPort:(unsigned short)arg1;
 - (void)resetNetworkSetup;
-- (void)setDelegateQueue:(id)arg1;
-- (struct __CFHTTPMessage { }*)currentRequest;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
 - (void)setDocumentRoot:(id)arg1;
 - (id)documentRoot;
+- (unsigned short)port;
+- (void)setDelegateQueue:(id)arg1;
+- (struct __CFHTTPMessage { }*)currentRequest;
 - (id)delegateQueue;
 
 @end

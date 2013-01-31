@@ -26,11 +26,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)UUID;
-- (id)externalID;
 - (id)owner;
+- (id)externalID;
 - (void)setLocationRelation:(id)arg1;
 - (id)locationRelation;
+- (id)originalAlarm;
 - (void)setDefaultAlarm:(BOOL)arg1;
 - (BOOL)isDefaultAlarm;
 - (id)ownerUUID;
@@ -38,6 +38,7 @@
 - (id)acknowledgedDate;
 - (void)setProximity:(int)arg1;
 - (void)setStructuredLocation:(id)arg1;
+- (id)_originalAlarmRelation;
 - (id)_locationRelation;
 - (int)proximity;
 - (id)absoluteDate;
@@ -51,6 +52,7 @@
 - (BOOL)isAbsolute;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (BOOL)validate:(id*)arg1;
+- (id)UUID;
 - (id)localizedDescription;
 - (id)localizedDescriptionForReminder;
 - (id)localizedAllDayDescription;

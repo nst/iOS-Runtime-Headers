@@ -6,7 +6,7 @@
 
 @interface GKFriendPickerListSection : GKTableSection  {
     NSDictionary *_ranks;
-    NSMutableDictionary *_inviteStatusDict;
+    NSMutableDictionary *_cellStatusDict;
     int _maxPlayers;
     int _numSelected;
     unsigned int _scope;
@@ -20,11 +20,21 @@
 @property unsigned int scope;
 @property unsigned int headerTitle;
 @property float topMargin;
-@property(retain) NSMutableDictionary * inviteStatusDict;
+@property(retain) NSMutableDictionary * cellStatusDict;
 
 
-- (void)setInviteStatusDict:(id)arg1;
-- (id)inviteStatusDict;
+- (void)setScope:(unsigned int)arg1;
+- (unsigned int)scope;
+- (void)dealloc;
+- (id)init;
+- (void)setTopMargin:(float)arg1;
+- (float)topMargin;
+- (void)setHeaderTitle:(unsigned int)arg1;
+- (unsigned int)headerTitle;
+- (float)heightForFooterInTableView:(id)arg1;
+- (float)heightForHeaderInTableView:(id)arg1;
+- (void)setCellStatusDict:(id)arg1;
+- (id)cellStatusDict;
 - (void)setRanks:(id)arg1;
 - (id)ranks;
 - (int)tableView:(id)arg1 indexOfItemForPlayerID:(id)arg2;
@@ -41,15 +51,5 @@
 - (void)tableView:(id)arg1 didSelectIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectIndexPath:(id)arg2;
 - (id)titleForHeaderInTableView:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)setHeaderTitle:(unsigned int)arg1;
-- (unsigned int)headerTitle;
-- (float)heightForFooterInTableView:(id)arg1;
-- (float)heightForHeaderInTableView:(id)arg1;
-- (void)setScope:(unsigned int)arg1;
-- (unsigned int)scope;
-- (void)setTopMargin:(float)arg1;
-- (float)topMargin;
 
 @end

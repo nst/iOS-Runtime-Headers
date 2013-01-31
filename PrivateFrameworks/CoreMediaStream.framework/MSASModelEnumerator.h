@@ -27,11 +27,11 @@
 - (id)init;
 - (struct sqlite3_stmt { }*)stmt;
 - (struct sqlite3 { }*)db;
-- (id)nextObject;
 - (void)setDb:(struct sqlite3 { }*)arg1;
 - (void)setStepBlock:(id)arg1;
 - (void)setStmt:(struct sqlite3_stmt { }*)arg1;
 - (id)stepBlock;
 - (id)initWithDatabase:(struct sqlite3 { }*)arg1 query:(id)arg2 stepBlock:(id)arg3;
+- (id)nextObject;
 
 @end

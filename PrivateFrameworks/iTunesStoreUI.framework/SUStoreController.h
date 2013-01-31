@@ -69,7 +69,6 @@
 - (void)setupUI;
 - (void)setLaunchURL:(id)arg1;
 - (void)_cancelLoadSectionsOperation;
-- (void)tearDownUI;
 - (void)_accountControllerDisappearedNotification:(id)arg1;
 - (void)_storeFrontChangedNotification:(id)arg1;
 - (void)_selectFooterSectionNotification:(id)arg1;
@@ -109,5 +108,6 @@
 - (id)tabBarController;
 - (double)defaultImageSnapshotExpiration;
 - (BOOL)application:(id)arg1 handleOpenURL:(id)arg2;
+- (void)tearDownUI;
 
 @end

@@ -16,6 +16,7 @@
 
 + (BOOL)line:(id)arg1 alignsWith:(id)arg2;
 
+- (void)dealloc;
 - (void)addLinesTo:(id)arg1;
 - (id)newInitialParagraph;
 - (void)addCompoundedShapesOn:(id)arg1 to:(id)arg2;
@@ -34,6 +35,5 @@
 - (BOOL)line:(id)arg1 isDirectlyBelow:(id)arg2;
 - (id)paragraphs;
 - (void)makeParagraphsIn:(id)arg1;
-- (void)dealloc;
 
 @end

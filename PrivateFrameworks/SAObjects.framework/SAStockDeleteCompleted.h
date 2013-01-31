@@ -15,11 +15,11 @@
 + (id)deleteCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)deleteCompleted;
 
-- (id)groupIdentifier;
 - (id)results;
 - (void)setResults:(id)arg1;
 - (void)setStocks:(id)arg1;
 - (id)stocks;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

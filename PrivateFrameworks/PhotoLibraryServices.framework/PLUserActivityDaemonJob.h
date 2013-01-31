@@ -24,7 +24,6 @@
 + (void)userDidDeleteSharedAlbum:(id)arg1;
 
 - (void)dealloc;
-- (void)run;
 - (int)actionType;
 - (void)setActionType:(int)arg1;
 - (id)albumUUID;
@@ -35,5 +34,6 @@
 - (void)setAssetUUIDs:(id)arg1;
 - (void)setAlbumUUID:(id)arg1;
 - (id)assetUUIDs;
+- (void)run;
 
 @end

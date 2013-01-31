@@ -14,10 +14,10 @@
 
 + (id)_gkReachabilityWithHostName:(id)arg1;
 
-- (void)setError:(id)arg1;
 - (void)dealloc;
+- (id)error;
 - (void)setHostName:(id)arg1;
 - (id)hostName;
-- (id)error;
+- (void)setError:(id)arg1;
 
 @end

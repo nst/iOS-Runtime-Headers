@@ -40,8 +40,6 @@
 
 + (id)convertFigTimeDictionaryToTimeIntervalWithKey:(id)arg1 stringURLToNSURLWithKey:(id)arg2 inArrayOfDictionaries:(id)arg3;
 
-- (void)setBookmarkTime:(double)arg1;
-- (id)attributeForKey:(id)arg1;
 - (void)dealloc;
 - (void)release;
 - (void)removeFromPlayQueue:(struct OpaqueFigPlayer { }*)arg1;
@@ -83,5 +81,7 @@
 - (id)formatDetailsForTracks;
 - (void)setItemAttribute:(id)arg1 value:(id)arg2 forKey:(id)arg3 error:(id*)arg4;
 - (id)itemAttribute:(id)arg1 forKey:(id)arg2;
+- (void)setBookmarkTime:(double)arg1;
+- (id)attributeForKey:(id)arg1;
 
 @end

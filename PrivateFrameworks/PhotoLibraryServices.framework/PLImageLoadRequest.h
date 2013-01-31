@@ -23,10 +23,6 @@
 - (id)debugDescription;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)setPriority:(int)arg1;
-- (int)priority;
-- (id)key;
-- (id)source;
 - (id)completionBlocks;
 - (id)initWithAsset:(id)arg1 source:(id)arg2 priority:(int)arg3;
 - (id)assetInPhotoLibrary:(id)arg1;
@@ -36,5 +32,9 @@
 - (BOOL)someImageLoadingQueuesRegistered;
 - (void)deregisterImageLoadingQueue:(id)arg1;
 - (BOOL)isImageLoadingQueueRegistered:(id)arg1;
+- (void)setPriority:(int)arg1;
+- (int)priority;
+- (id)key;
+- (id)source;
 
 @end

@@ -38,7 +38,6 @@
 + (id)actionWithLaunchURL:(id)arg1 callblock:(id)arg2;
 + (id)actionWithCallblock:(id)arg1;
 
-- (id)bundleID;
 - (id)launchURL;
 - (void)setLaunchURL:(id)arg1;
 - (id)description;
@@ -46,9 +45,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)url;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)isAppLaunchAction;
 - (BOOL)isURLLaunchAction;
 - (BOOL)wantsTextReply;
@@ -73,5 +69,9 @@
 - (id)initWithCallblock:(id)arg1;
 - (void)deliverResponse:(id)arg1;
 - (BOOL)hasCallblock;
+- (id)url;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)bundleID;
 
 @end

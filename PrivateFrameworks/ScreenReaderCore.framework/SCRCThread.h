@@ -27,6 +27,10 @@
 + (id)activity;
 + (void)initialize;
 
+- (void)_processQueue;
+- (void)setName:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (double)performSelector:(SEL)arg1 onTarget:(id)arg2 cancelMask:(unsigned long)arg3 count:(unsigned long)arg4 objects:(id)arg5;
 - (void)_processQueueFromTimer;
 - (double)_performSelector:(SEL)arg1 onTarget:(id)arg2 cancelMask:(unsigned long)arg3 count:(unsigned long)arg4 firstObject:(id)arg5 moreObjects:(void*)arg6;
@@ -37,11 +41,7 @@
 - (double)lastStartTime;
 - (void)_enqueueTask:(id)arg1 cancelMask:(unsigned long)arg2 lastStartTime:(double*)arg3;
 - (id)_initWithKey:(id)arg1 task:(id)arg2;
-- (void)setName:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)_setName:(id)arg1;
-- (void)_processQueue;
 - (void)_setKey:(id)arg1;
+- (void)_setName:(id)arg1;
 
 @end

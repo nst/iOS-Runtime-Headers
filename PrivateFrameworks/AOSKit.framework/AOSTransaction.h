@@ -32,13 +32,13 @@
 }
 
 
-- (BOOL)isSuccessful;
 - (void)dealloc;
 - (id)init;
+- (id)error;
+- (id)result;
+- (BOOL)isSuccessful;
 - (void)finalize;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)result;
-- (id)error;
 
 @end

@@ -35,14 +35,6 @@
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)init;
-- (void)setWidth:(float)arg1;
-- (float)width;
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
-- (int)alignment;
-- (void)setAlignment:(int)arg1;
-- (void)setMiterLimit:(float)arg1;
-- (float)miterLimit;
 - (void)setCustomEndCap:(id)arg1;
 - (id)customEndCap;
 - (void)setCustomStartCap:(id)arg1;
@@ -73,5 +65,13 @@
 - (void)setEndCap:(int)arg1;
 - (void)setStartCap:(int)arg1;
 - (void)setBrush:(id)arg1;
+- (void)setWidth:(float)arg1;
+- (float)width;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
+- (int)alignment;
+- (void)setAlignment:(int)arg1;
+- (void)setMiterLimit:(float)arg1;
+- (float)miterLimit;
 
 @end

@@ -28,6 +28,14 @@
 @property(readonly) BOOL appeared;
 
 
+- (void)dealloc;
+- (void)_updateTitle;
+- (void)systemApplicationDidResume;
+- (void)systemApplicationDidSuspend;
+- (void)systemApplicationWillResignActive;
+- (void)systemApplicationDidBecomeActive;
+- (void)systemApplicationWillEnterForeground;
+- (void)systemApplicationDidEnterBackground;
 - (BOOL)appeared;
 - (void)_setupEventHandlers;
 - (void)_setLabel:(id)arg1 forSpecifier:(id)arg2 header:(BOOL)arg3;
@@ -62,7 +70,6 @@
 - (void)changePasswordControllerDidFinish:(id)arg1 withAppleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
 - (void)changePasswordControllerDidCancel:(id)arg1;
 - (id)regController;
-- (void)dealloc;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
@@ -75,13 +82,6 @@
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (void)systemApplicationDidResume;
-- (void)systemApplicationDidSuspend;
-- (void)systemApplicationWillResignActive;
-- (void)systemApplicationDidBecomeActive;
-- (void)systemApplicationWillEnterForeground;
-- (void)systemApplicationDidEnterBackground;
-- (void)_updateTitle;
 - (void)setSpecifier:(id)arg1;
 
 @end

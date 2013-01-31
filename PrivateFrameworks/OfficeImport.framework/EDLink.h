@@ -13,8 +13,8 @@
 
 - (int)type;
 - (void)dealloc;
+- (id)externalNames;
 - (id)initWithType:(int)arg1;
 - (void)setType:(int)arg1;
-- (id)externalNames;
 
 @end

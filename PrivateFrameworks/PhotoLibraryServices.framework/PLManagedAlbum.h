@@ -54,9 +54,6 @@
 + (BOOL)deviceSupportsStackedImages;
 + (void)clearAssetOrderByAbumUUIDs;
 
-- (void)didSave;
-- (void)awakeFromSnapshotEvents:(unsigned int)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setResolvingConflicts:(BOOL)arg1;
 - (BOOL)resolvingConflicts;
 - (void)sortAssetsUsingiTunesAlbumOrder;
@@ -98,5 +95,8 @@
 - (id)filteredIndexesForPredicate:(id)arg1;
 - (void)updateStackedImageShouldNotifyImmediately:(BOOL)arg1;
 - (BOOL)canPerformEditOperation:(int)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)didSave;
+- (void)awakeFromSnapshotEvents:(unsigned int)arg1;
 
 @end

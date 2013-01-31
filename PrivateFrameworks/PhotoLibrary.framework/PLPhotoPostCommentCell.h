@@ -17,12 +17,12 @@
 + (float)heightForWidth:(float)arg1 forInterfaceOrientation:(int)arg2;
 
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
 - (id)contentLabel;
 - (id)_attributedStringForPlaceholder;
 - (id)styledSeparatorView;
 - (void)setupContent;
 - (id)addCommentButton;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
 
 @end

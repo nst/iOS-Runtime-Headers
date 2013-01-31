@@ -20,7 +20,6 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
 - (id)remoteObjectProxy;
 - (BOOL)conformsToProtocol:(id)arg1;
 - (void)dealloc;
@@ -29,6 +28,7 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
 - (BOOL)_exported;
 - (id)_remoteInterface;
 - (unsigned long long)_proxyNumber;

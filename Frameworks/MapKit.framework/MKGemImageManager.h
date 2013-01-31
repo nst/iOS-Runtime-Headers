@@ -17,7 +17,6 @@
 
 + (id)sharedManager;
 
-- (id)normalImage;
 - (void)dealloc;
 - (id)init;
 - (void)didReceiveMemoryWarning:(id)arg1;
@@ -29,5 +28,6 @@
 - (id)headingAngleMediumImage;
 - (id)headingAngleSmallImage;
 - (id)headingAngleLargeImage;
+- (id)normalImage;
 
 @end

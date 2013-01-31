@@ -34,7 +34,6 @@
 
 - (int)state;
 - (void).cxx_destruct;
-- (void)setState:(int)arg1;
 - (void)setObjectGUID:(id)arg1;
 - (id)objectGUID;
 - (id)currentFocusAssetCollectionGUID;
@@ -77,5 +76,6 @@
 - (void)didEnqueueAsset:(id)arg1 forAlbumGUID:(id)arg2;
 - (void)unregisterAssets:(id)arg1;
 - (void)workQueueRetryOutstandingActivities;
+- (void)setState:(int)arg1;
 
 @end

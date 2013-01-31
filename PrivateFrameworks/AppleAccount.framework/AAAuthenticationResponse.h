@@ -14,10 +14,10 @@
 @property(readonly) NSString * personID;
 
 
-- (id)authToken;
 - (void).cxx_destruct;
+- (id)personID;
 - (id)fmipToken;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
-- (id)personID;
+- (id)authToken;
 
 @end

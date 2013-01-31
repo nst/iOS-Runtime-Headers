@@ -13,12 +13,12 @@
 }
 
 
-- (id).cxx_construct;
-- (void)dealloc;
-- (struct CGSize { float x1; float x2; })size;
 - (struct __CFURL { }*)absoluteUrlForState:(id)arg1;
 - (int)readDataAttributesFromReader:(struct _xmlTextReader { }*)arg1;
-- (int)resourceType;
 - (struct __CFString { }*)relativePath;
+- (id).cxx_construct;
+- (void)dealloc;
+- (int)resourceType;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

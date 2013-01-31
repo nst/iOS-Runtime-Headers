@@ -12,12 +12,6 @@
 @property <WebBookmarksClientDelegateProtocol> * delegate;
 
 
-- (void)invalidate;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)didFinishFetching;
 - (void)didUpdateReadingListFetchingProgress:(id)arg1;
 - (void)didStopFetchingReadingListItem:(id)arg1;
@@ -28,5 +22,11 @@
 - (void)didToggleCloudTabs:(BOOL)arg1 terminateAfterUpdating:(BOOL)arg2;
 - (void)clearTabsForCurrentDevice;
 - (void)clearAllCloudTabDevices;
+- (void)invalidate;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 
 @end

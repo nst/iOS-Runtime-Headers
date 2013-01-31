@@ -20,12 +20,12 @@
 - (id)name;
 - (id)data;
 - (void)dealloc;
+- (void)setMimeType:(id)arg1;
 - (id)mimeType;
 - (void)setData:(id)arg1;
 - (BOOL)isValid;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithAttachment:(id)arg1;
-- (void)setMimeType:(id)arg1;
 
 @end

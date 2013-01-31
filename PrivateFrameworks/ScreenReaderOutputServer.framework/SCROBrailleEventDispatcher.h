@@ -15,12 +15,12 @@
 }
 
 
-- (void)enqueueEvent:(id)arg1;
+- (void)_processQueue;
 - (void)invalidate;
 - (void)dealloc;
+- (void)enqueueEvent:(id)arg1;
 - (void)start;
 - (id)initWithTarget:(id)arg1;
 - (BOOL)isValid;
-- (void)_processQueue;
 
 @end

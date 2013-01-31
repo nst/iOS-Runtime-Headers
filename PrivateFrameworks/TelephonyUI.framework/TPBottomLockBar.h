@@ -20,32 +20,12 @@
     UIImageView *_backgroundView;
 }
 
-+ (struct CGSize { float x1; float x2; })defaultSize;
 + (float)defaultLabelFontSize;
++ (struct CGSize { float x1; float x2; })defaultSize;
 
-- (id)labelView;
-- (void)setLabels:(id)arg1;
-- (id)representedObject;
-- (void)setRepresentedObject:(id)arg1;
-- (void)_setLabel:(id)arg1;
+- (id)labels;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
-- (void)freezeKnobInUnlockedPosition;
-- (id)initForIncomingCallWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)relock;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 knobColor:(int)arg2;
-- (void)startAnimating;
-- (void)stopAnimating;
-- (BOOL)isAnimating;
-- (void)setLabel:(id)arg1;
-- (float)fontSize;
-- (void)setFontSize:(float)arg1;
-- (void)unlock;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)_canDrawContent;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)labels;
 - (void)setTextAlpha:(float)arg1;
 - (void)setKnobWellWidthToDefault;
 - (void)setKnobWellWidth:(float)arg1;
@@ -77,5 +57,25 @@
 - (void)downInKnob;
 - (void)setWellAlpha:(float)arg1;
 - (void)setSuppressDrawingBackground:(BOOL)arg1;
+- (void)freezeKnobInUnlockedPosition;
+- (id)initForIncomingCallWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)relock;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 knobColor:(int)arg2;
+- (void)_setLabel:(id)arg1;
+- (void)startAnimating;
+- (void)stopAnimating;
+- (BOOL)isAnimating;
+- (void)setLabel:(id)arg1;
+- (float)fontSize;
+- (void)setFontSize:(float)arg1;
+- (void)unlock;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)_canDrawContent;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)labelView;
+- (void)setLabels:(id)arg1;
+- (id)representedObject;
+- (void)setRepresentedObject:(id)arg1;
 
 @end

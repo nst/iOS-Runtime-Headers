@@ -21,10 +21,6 @@
 - (int)type;
 - (void)dealloc;
 - (id)init;
-- (id)options;
-- (void)setSpeed:(int)arg1;
-- (int)speed;
-- (void)setType:(int)arg1;
 - (BOOL)hasTransitionOptions;
 - (void)setAdvanceAfterTime:(int)arg1;
 - (void)setIsAdvanceOnClick:(BOOL)arg1;
@@ -34,5 +30,9 @@
 - (BOOL)hasIsAdvanceOnClick;
 - (BOOL)hasSpeed;
 - (BOOL)hasType;
+- (id)options;
+- (void)setSpeed:(int)arg1;
+- (int)speed;
+- (void)setType:(int)arg1;
 
 @end

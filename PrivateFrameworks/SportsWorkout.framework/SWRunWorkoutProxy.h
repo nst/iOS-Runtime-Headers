@@ -24,8 +24,8 @@
 + (id)newProxy;
 
 - (void)endSeeking;
-- (void)beginSeekingForward;
 - (void)beginSeekingBackward;
+- (void)beginSeekingForward;
 - (void)playMusic;
 - (void)pauseMusic;
 - (void)goToNowPlaying;

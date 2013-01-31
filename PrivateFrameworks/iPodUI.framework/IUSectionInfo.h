@@ -15,9 +15,6 @@
 @property(readonly) unsigned int numberOfSections;
 
 
-- (unsigned int)indexOfSectionForSectionIndexTitleAtIndex:(unsigned int)arg1;
-- (id)sectionIndexTitles;
-- (unsigned int)numberOfSections;
 - (void)setHideSections:(BOOL)arg1;
 - (BOOL)hideSections;
 - (id)titleOfIndexBarSectionAtIndex:(unsigned int)arg1;
@@ -28,5 +25,8 @@
 - (unsigned int)indexOfSectionAtIndex:(unsigned int)arg1;
 - (void)setShowHeadersInShortLists:(BOOL)arg1;
 - (void)setHideIndexBar:(BOOL)arg1;
+- (id)sectionIndexTitles;
+- (unsigned int)numberOfSections;
+- (unsigned int)indexOfSectionForSectionIndexTitleAtIndex:(unsigned int)arg1;
 
 @end

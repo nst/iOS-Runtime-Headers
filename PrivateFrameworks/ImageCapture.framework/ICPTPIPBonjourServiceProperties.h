@@ -34,6 +34,9 @@
 @property id delegate;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (void)setClientsSpinLock:(int)arg1;
 - (int)clientsSpinLock;
 - (id)clients;
@@ -52,13 +55,10 @@
 - (void)setTxtRecordsDict:(id)arg1;
 - (void)setHostGUID:(id)arg1;
 - (void)setClients:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
+- (id)serviceType;
+- (void)setServiceType:(id)arg1;
 - (void)setHostName:(id)arg1;
 - (id)hostName;
 - (void)finalize;
-- (id)serviceType;
-- (void)setServiceType:(id)arg1;
 
 @end

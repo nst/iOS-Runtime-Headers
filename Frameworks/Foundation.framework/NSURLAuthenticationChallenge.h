@@ -12,6 +12,7 @@
 
 - (void)dealloc;
 - (id)init;
+- (id)error;
 - (id)sender;
 - (id)protectionSpace;
 - (int)previousFailureCount;
@@ -24,6 +25,5 @@
 - (id)proposedCredential;
 - (id)initWithProtectionSpace:(id)arg1 proposedCredential:(id)arg2 previousFailureCount:(int)arg3 failureResponse:(id)arg4 error:(id)arg5 sender:(id)arg6;
 - (struct _CFURLAuthChallenge { }*)_createCFAuthChallenge;
-- (id)error;
 
 @end

@@ -26,14 +26,14 @@
 
 + (id)_whiteList;
 
-- (id)_save;
-- (void)setClient:(id)arg1;
 - (id)accountTypeWithIdentifier:(id)arg1;
+- (id)client;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
 - (id)database;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)verifyCredentialsForAccount:(id)arg1 withHandler:(id)arg2;
+- (id)_save;
 - (BOOL)notificationsEnabled;
 - (void)setNotificationsEnabled:(BOOL)arg1;
 - (id)authorizationManager;
@@ -105,7 +105,7 @@
 - (BOOL)_isClientPermittedToAccessAccount:(id)arg1;
 - (id)_accountTypeWithIdentifier:(id)arg1;
 - (id)_dataclassWithName:(id)arg1;
-- (id)client;
-- (void)verifyCredentialsForAccount:(id)arg1 withHandler:(id)arg2;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)setClient:(id)arg1;
 
 @end

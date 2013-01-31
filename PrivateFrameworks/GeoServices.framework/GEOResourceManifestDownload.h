@@ -14,18 +14,18 @@
 @property(retain) GEODownloadMetadata * metadata;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (BOOL)hasResources;
 - (BOOL)readFrom:(id)arg1;
 - (void)setResources:(id)arg1;
 - (id)resources;
+- (BOOL)hasResources;
+- (id)dictionaryRepresentation;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 
 @end

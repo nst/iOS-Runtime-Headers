@@ -13,12 +13,12 @@
 + (id)geniusSummonWithDictionary:(id)arg1 context:(id)arg2;
 + (id)geniusSummon;
 
-- (id)groupIdentifier;
-- (void)setMediaItem:(id)arg1;
-- (id)mediaItem;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (void)setMediaItem:(id)arg1;
+- (id)mediaItem;
+- (id)groupIdentifier;
 
 @end

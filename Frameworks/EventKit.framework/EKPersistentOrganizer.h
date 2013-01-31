@@ -11,13 +11,13 @@
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 
+- (void)setOwner:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setOwner:(id)arg1;
 - (id)owner;
+- (int)entityType;
 - (void)setCurrentUser:(BOOL)arg1;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3 isCurrentUser:(BOOL)arg4;
 - (BOOL)isCurrentUser;
-- (int)entityType;
 
 @end

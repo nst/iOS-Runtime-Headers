@@ -30,36 +30,12 @@
 @property BOOL attemptedValidation;
 
 
-- (id)accountSpecifiers;
-- (id)specifiers;
 - (void)dealloc;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)_accountsChanged:(id)arg1;
-- (void)didConfirmDeleteAccount:(BOOL)arg1;
-- (void)confirmDeleteAccount:(id)arg1;
-- (void)confirmationView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)finishedAccountSetup;
-- (BOOL)allowEditingForIdentityPickerController:(id)arg1;
-- (id)emailAddressesForIdentityPickerController:(id)arg1;
-- (struct __SecTrust { }*)copyTrustForIdentityPickerController:(id)arg1 identity:(struct __SecIdentity { }*)arg2;
-- (id)copyIdentitiesForIdentityPickerController:(id)arg1;
-- (id)localizedSwitchNameForIdentityPickerController:(id)arg1;
-- (void)identityPickerController:(id)arg1 setPropertyEnabled:(BOOL)arg2 withIdentity:(struct __SecIdentity { }*)arg3;
-- (struct __SecIdentity { }*)selectedIdentityForIdentityPickerController:(id)arg1;
-- (BOOL)isPropertyEnabledForIdentityPickerController:(id)arg1;
-- (BOOL)haveEnoughValues;
-- (BOOL)validateAccount;
-- (void)propertyValueChanged:(id)arg1;
-- (id)accountPropertyWithSpecifier:(id)arg1;
-- (void)setAccountProperty:(id)arg1 withSpecifier:(id)arg2;
-- (BOOL)isRunningFromMobileMailApp;
-- (id)account;
 - (void)updateDoneButton;
 - (void)doneButtonClicked:(id)arg1;
 - (void)cancelButtonClicked:(id)arg1;
+- (id)account;
+- (void)_accountsChanged:(id)arg1;
 - (void)setAttemptedValidation:(BOOL)arg1;
 - (BOOL)attemptedValidation;
 - (void)setNeedsSave:(BOOL)arg1;
@@ -121,5 +97,29 @@
 - (id)localizedAccountTitleString;
 - (void)account:(id)arg1 wasAutoDiscovered:(BOOL)arg2 error:(id)arg3;
 - (void)account:(id)arg1 isValid:(BOOL)arg2 validationError:(id)arg3;
+- (id)accountSpecifiers;
+- (id)specifiers;
+- (void)didConfirmDeleteAccount:(BOOL)arg1;
+- (void)confirmDeleteAccount:(id)arg1;
+- (void)confirmationView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)finishedAccountSetup;
+- (BOOL)allowEditingForIdentityPickerController:(id)arg1;
+- (id)emailAddressesForIdentityPickerController:(id)arg1;
+- (struct __SecTrust { }*)copyTrustForIdentityPickerController:(id)arg1 identity:(struct __SecIdentity { }*)arg2;
+- (id)copyIdentitiesForIdentityPickerController:(id)arg1;
+- (id)localizedSwitchNameForIdentityPickerController:(id)arg1;
+- (void)identityPickerController:(id)arg1 setPropertyEnabled:(BOOL)arg2 withIdentity:(struct __SecIdentity { }*)arg3;
+- (struct __SecIdentity { }*)selectedIdentityForIdentityPickerController:(id)arg1;
+- (BOOL)isPropertyEnabledForIdentityPickerController:(id)arg1;
+- (BOOL)haveEnoughValues;
+- (BOOL)validateAccount;
+- (void)propertyValueChanged:(id)arg1;
+- (id)accountPropertyWithSpecifier:(id)arg1;
+- (void)setAccountProperty:(id)arg1 withSpecifier:(id)arg2;
+- (BOOL)isRunningFromMobileMailApp;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 
 @end

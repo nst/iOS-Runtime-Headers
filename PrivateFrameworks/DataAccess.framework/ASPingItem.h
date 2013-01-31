@@ -25,13 +25,13 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)setStatus:(id)arg1;
-- (id)status;
 - (id)maxFolders;
 - (id)heartBeatInterval;
 - (void)setFolders:(id)arg1;
 - (void)setMaxFolders:(id)arg1;
 - (void)setHeartBeatInterval:(id)arg1;
 - (id)folders;
+- (void)setStatus:(id)arg1;
+- (id)status;
 
 @end

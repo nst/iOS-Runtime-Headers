@@ -11,7 +11,7 @@
 
 - (id)initWithServiceType:(id)arg1 URL:(id)arg2 parameters:(id)arg3 requestMethod:(int)arg4;
 - (void).cxx_destruct;
-- (id)preparedURLRequest;
 - (void)addRequest:(id)arg1;
+- (id)preparedURLRequest;
 
 @end

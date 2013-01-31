@@ -27,8 +27,6 @@
 - (id)delegate;
 - (id)data;
 - (void)dealloc;
-- (BOOL)start;
-- (void)setData:(id)arg1;
 - (id)startError;
 - (void)setStartError:(id)arg1;
 - (void)setTracing:(id)arg1;
@@ -44,5 +42,7 @@
 - (BOOL)isThumbnail;
 - (void)setFileName:(id)arg1;
 - (id)fileName;
+- (BOOL)start;
+- (void)setData:(id)arg1;
 
 @end

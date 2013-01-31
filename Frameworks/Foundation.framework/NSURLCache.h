@@ -13,11 +13,11 @@
 + (void)_performDiskCacheSync;
 + (void)setSharedURLCache:(id)arg1;
 
-- (void)dealloc;
-- (id)init;
 - (void)setMemoryCapacity:(unsigned int)arg1;
 - (unsigned int)currentMemoryUsage;
 - (unsigned int)memoryCapacity;
+- (void)dealloc;
+- (id)init;
 - (void)_diskCacheScheduleRemoval:(id)arg1;
 - (void)_diskCacheScheduleWrite:(id)arg1;
 - (id)_diskCacheGet:(id)arg1;

@@ -22,16 +22,8 @@
 
 - (int)state;
 - (void)dealloc;
-- (void)setState:(int)arg1;
 - (id)inboxURL;
 - (void)setInboxURL:(id)arg1;
-- (id)initWithAccountInfoProvider:(id)arg1 inboxURL:(id)arg2 urlToAdd:(id)arg3 suffixToFilterOut:(id)arg4 taskManager:(id)arg5;
-- (void)_startPropPatchWithURLs:(id)arg1;
-- (id)urlToAdd;
-- (id)suffixToFilterOut;
-- (void)_startFetchFreeBusySet;
-- (void)setSuffixToFilterOut:(id)arg1;
-- (void)setUrlToAdd:(id)arg1;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
 - (id)fetchTask;
 - (void)setFetchTask:(id)arg1;
@@ -39,5 +31,13 @@
 - (void)taskGroupWillCancelWithError:(id)arg1;
 - (void)startTaskGroup;
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
+- (id)initWithAccountInfoProvider:(id)arg1 inboxURL:(id)arg2 urlToAdd:(id)arg3 suffixToFilterOut:(id)arg4 taskManager:(id)arg5;
+- (void)_startPropPatchWithURLs:(id)arg1;
+- (id)urlToAdd;
+- (id)suffixToFilterOut;
+- (void)_startFetchFreeBusySet;
+- (void)setSuffixToFilterOut:(id)arg1;
+- (void)setUrlToAdd:(id)arg1;
+- (void)setState:(int)arg1;
 
 @end

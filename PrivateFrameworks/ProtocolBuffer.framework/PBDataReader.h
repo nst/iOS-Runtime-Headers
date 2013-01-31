@@ -16,13 +16,17 @@
 @property unsigned int position;
 
 
+- (unsigned int)readUint32;
+- (BOOL)skipValueWithTag:(unsigned short)arg1 andType:(unsigned char)arg2;
+- (float)readFloat;
+- (unsigned long long)readUint64;
+- (BOOL)hasError;
+- (void)readTag:(unsigned short*)arg1 andType:(char *)arg2;
+- (BOOL)hasMoreData;
+- (void)setLength:(unsigned int)arg1;
 - (id)data;
 - (void)dealloc;
 - (unsigned int)length;
-- (unsigned int)offset;
-- (unsigned int)position;
-- (void)setPosition:(unsigned int)arg1;
-- (id)initWithData:(id)arg1;
 - (id)readBigEndianShortThenString;
 - (void)recall:(const struct { unsigned int x1; unsigned int x2; }*)arg1;
 - (BOOL)mark:(struct { unsigned int x1; unsigned int x2; }*)arg1;
@@ -44,17 +48,13 @@
 - (void)updateData:(id)arg1;
 - (unsigned short)readBigEndianFixed16;
 - (unsigned int)readBigEndianFixed32;
-- (void)setLength:(unsigned int)arg1;
 - (BOOL)seekToOffset:(unsigned int)arg1;
 - (id)readBytes:(unsigned int)arg1;
 - (BOOL)isAtEnd;
-- (unsigned int)readUint32;
-- (BOOL)skipValueWithTag:(unsigned short)arg1 andType:(unsigned char)arg2;
-- (float)readFloat;
-- (unsigned long long)readUint64;
 - (id)readString;
-- (BOOL)hasError;
-- (void)readTag:(unsigned short*)arg1 andType:(char *)arg2;
-- (BOOL)hasMoreData;
+- (unsigned int)offset;
+- (unsigned int)position;
+- (void)setPosition:(unsigned int)arg1;
+- (id)initWithData:(id)arg1;
 
 @end

@@ -26,6 +26,7 @@
 - (void)updateSelections;
 - (id)sortedDevices;
 - (id)connectionMedium;
+- (BOOL)showMoreOptions;
 - (void)setupPickerTable;
 - (void)setConnectionMedium:(id)arg1;
 - (void)setSortedDevices:(id)arg1;

@@ -21,19 +21,19 @@
 @property BOOL userNameIsEditable;
 
 
-- (void)setPassword:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)user;
-- (id)password;
-- (id)sender;
-- (void)setUser:(id)arg1;
 - (void)setHasPassword:(BOOL)arg1;
 - (void)setFailureCount:(int)arg1;
 - (void)setUserNameIsEditable:(BOOL)arg1;
 - (BOOL)userNameIsEmail;
 - (BOOL)userNameIsEditable;
 - (int)failureCount;
+- (void)dealloc;
+- (id)init;
+- (void)setUser:(id)arg1;
+- (id)user;
+- (id)password;
+- (id)sender;
+- (void)setPassword:(id)arg1;
 - (BOOL)hasPassword;
 - (void)setSender:(id)arg1;
 

@@ -7,16 +7,16 @@
 @interface PLCloudSharedAssetSaveJob : PLCloudSharingJob  {
     BOOL _replacingOriginalWithDerivative;
     NSString *_currentFilePath;
-    BOOL _isCreatingPlaceHolder;
-    NSDictionary *_mstreamdInfoDictionary;
-    NSDictionary *_currentCloudAssetMetadata;
-    NSString *_cloudPersonID;
-    NSString *_currentCloudAssetGUID;
-    MSASAssetCollection *_currentCloudAssetCollection;
-    NSString *_cloudAlbumGUID;
-    int _jobType;
     NSArray *_cloudAssetGUIDsToDelete;
+    int _jobType;
+    NSString *_cloudPersonID;
+    NSDictionary *_mstreamdInfoDictionary;
+    NSString *_currentCloudAssetGUID;
+    BOOL _isCreatingPlaceHolder;
+    NSString *_cloudAlbumGUID;
+    NSDictionary *_currentCloudAssetMetadata;
     NSArray *_cloudAssetCollections;
+    MSASAssetCollection *_currentCloudAssetCollection;
 }
 
 @property(retain) NSString * currentFilePath;
@@ -42,7 +42,6 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)run;
 - (void)setCurrentCloudAssetGUID:(id)arg1;
 - (void)setIsCreatingPlaceHolder:(BOOL)arg1;
 - (id)assetsToRetriveForAssetMetadataForCurrentCollectionWithExistingPlaceHolderKind:(int)arg1;
@@ -78,5 +77,6 @@
 - (id)initFromXPCObject:(id)arg1;
 - (void)setCloudPersonID:(id)arg1;
 - (id)cloudPersonID;
+- (void)run;
 
 @end

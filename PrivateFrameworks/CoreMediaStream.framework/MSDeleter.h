@@ -19,6 +19,7 @@
 @property int batchSize;
 @property <MSDeleterDelegate> * delegate;
 
++ (void)forgetPersonID:(id)arg1;
 + (id)_clearInstantiatedDeletersByPersonID;
 + (id)nextActivityDateForPersonID:(id)arg1;
 + (void)_setMasterNextActivityDate:(id)arg1 forPersonID:(id)arg2;
@@ -29,14 +30,13 @@
 + (BOOL)isInRetryState;
 + (id)personIDsWithOutstandingActivities;
 + (id)nextActivityDate;
-+ (void)forgetPersonID:(id)arg1;
 
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)stop;
-- (void)deactivate;
+- (int)batchSize;
+- (void)abort;
 - (void)setBatchSize:(int)arg1;
 - (void)deleteProtocol:(id)arg1 didReceiveAuthenticationError:(id)arg2;
 - (void)deleteProtocol:(id)arg1 didFinishSuccessfulCollections:(id)arg2 failedCollections:(id)arg3 error:(id)arg4;
@@ -53,7 +53,7 @@
 - (void)deleteAssetCollections:(id)arg1;
 - (void)performOutstandingActivities;
 - (void)setDaemon:(id)arg1;
-- (int)batchSize;
-- (void)abort;
+- (void)stop;
+- (void)deactivate;
 
 @end

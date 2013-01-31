@@ -63,8 +63,6 @@
 
 + (BOOL)usesEncodedMessages;
 
-- (void)setLogResponseToFile:(id)arg1;
-- (void)setLogRequestToFile:(id)arg1;
 - (void)_failWithError:(id)arg1;
 - (id)responseForRequest:(id)arg1;
 - (void)resume;
@@ -73,16 +71,6 @@
 - (id)URL;
 - (void)cancel;
 - (void)dealloc;
-- (id)_osVersion;
-- (void)pause;
-- (id)connection;
-- (void)_cleanup;
-- (void)setURL:(id)arg1;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)start;
 - (void)setShouldHandleCookies:(BOOL)arg1;
 - (BOOL)shouldHandleCookies;
 - (void)setClientCertificates:(id)arg1;
@@ -117,8 +105,6 @@
 - (void)setNeedsCancel:(BOOL)arg1;
 - (void)setHttpResponseHeaders:(id)arg1;
 - (void)_removeTimeoutTimer;
-- (void)setConnection:(id)arg1;
-- (BOOL)isPaused;
 - (void)setIgnoresResponse:(BOOL)arg1;
 - (unsigned int)requestResponseTime;
 - (unsigned int)downloadPayloadSize;
@@ -127,12 +113,26 @@
 - (struct _CFURLRequest { }*)newCFMutableURLRequestWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
 - (void)setNeedsCancel;
+- (void)setLogResponseToFile:(id)arg1;
 - (id)logResponseToFile;
+- (void)setLogRequestToFile:(id)arg1;
 - (id)logRequestToFile;
 - (void)setTimeoutSeconds:(double)arg1;
 - (id)requests;
 - (void)addRequest:(id)arg1;
 - (void)setHttpRequestHeader:(id)arg1 forKey:(id)arg2;
+- (void)setConnection:(id)arg1;
+- (id)_osVersion;
+- (void)pause;
+- (id)connection;
+- (void)_cleanup;
+- (void)setURL:(id)arg1;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (void)start;
+- (BOOL)isPaused;
 - (void)_scheduleThrottlingError;
 
 @end

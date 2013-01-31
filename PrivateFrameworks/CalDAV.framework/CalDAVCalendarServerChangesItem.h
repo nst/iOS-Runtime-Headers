@@ -15,9 +15,9 @@
 - (void)dealloc;
 - (id)init;
 - (void)addChangedProperty:(id)arg1;
-- (void)setChangedProperties:(id)arg1;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (void)setChangedProperties:(id)arg1;
 - (id)changedProperties;
 
 @end

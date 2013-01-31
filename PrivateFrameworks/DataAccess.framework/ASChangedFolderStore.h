@@ -23,12 +23,12 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)setStatus:(id)arg1;
-- (id)status;
 - (id)updatedFolders;
 - (id)syncKey;
 - (void)setSyncKey:(id)arg1;
 - (void)setUpdatedFolders:(id)arg1;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
+- (void)setStatus:(id)arg1;
+- (id)status;
 
 @end

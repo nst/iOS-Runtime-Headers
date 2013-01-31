@@ -21,14 +21,14 @@
 - (id)cancel;
 - (void)dealloc;
 - (id)init;
-- (id)update;
 - (id)reply;
 - (id)create;
+- (id)copyParseRules;
+- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)setCancel:(id)arg1;
 - (void)setReply:(id)arg1;
 - (void)setUpdate:(id)arg1;
 - (void)setCreate:(id)arg1;
-- (id)copyParseRules;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)update;
 
 @end

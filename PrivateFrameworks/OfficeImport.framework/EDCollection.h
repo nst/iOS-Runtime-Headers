@@ -22,10 +22,10 @@
 - (id)init;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (unsigned int)count;
+- (BOOL)isEqualToCollection:(id)arg1;
+- (unsigned int)addOrEquivalentObject:(id)arg1;
 - (id)initWithObject:(id)arg1;
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
-- (BOOL)isEqualToCollection:(id)arg1;
-- (unsigned int)addOrEquivalentObject:(id)arg1;
 
 @end

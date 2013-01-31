@@ -23,11 +23,11 @@
 - (void)applicationDidEnterBackground;
 - (void)dealloc;
 - (id)init;
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)_cancel;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

@@ -31,11 +31,6 @@
 
 + (int)mediaEntityType;
 
-- (void)dealloc;
-- (id)init;
-- (id)searchString;
-- (void)setSearchString:(id)arg1;
-- (id)title;
 - (void)setSearchIdentifier:(id)arg1;
 - (id)searchIdentifier;
 - (BOOL)hasNoResultsForSearchString;
@@ -48,6 +43,7 @@
 - (BOOL)canContinueSearchInITunesStore;
 - (id)copyContinueSearchInITunesStoreActionRow;
 - (void)_updateDataInBackground;
+- (void)_restrictionsDidChangeNotification:(id)arg1;
 - (void)_playlistContentsDidChangeNotification:(id)arg1;
 - (void)_searchPerformOperation:(id)arg1 didProduceQuery:(id)arg2 forSearchIdentifier:(id)arg3;
 - (void)_postResultsDoneNotification;
@@ -62,5 +58,10 @@
 - (BOOL)shouldShowGlobalSectionHeader;
 - (void)reloadActionRows;
 - (id)cellConfigurationForIndex:(unsigned int)arg1 shouldLoadArtwork:(BOOL)arg2 artworkLoadingCompletionHandler:(id)arg3;
+- (void)dealloc;
+- (id)init;
+- (id)searchString;
+- (void)setSearchString:(id)arg1;
+- (id)title;
 
 @end

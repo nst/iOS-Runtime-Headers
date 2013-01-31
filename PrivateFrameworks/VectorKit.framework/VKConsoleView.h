@@ -9,10 +9,10 @@
 }
 
 
+- (float)getRecommendedFrameHeight;
+- (void)updateConsole:(id)arg1 map:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)getRecommendedFrameHeight;
-- (void)updateConsole:(id)arg1 map:(id)arg2;
 
 @end

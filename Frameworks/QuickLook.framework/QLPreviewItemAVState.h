@@ -14,7 +14,7 @@
 
 + (id)avStateWithPosition:(double)arg1 duration:(double)arg2 playing:(BOOL)arg3;
 
-- (BOOL)isPlaying;
+- (void)setPlaying:(BOOL)arg1;
 - (id)description;
 - (double)position;
 - (void)setPosition:(double)arg1;
@@ -22,6 +22,6 @@
 - (void)setDuration:(double)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setPlaying:(BOOL)arg1;
+- (BOOL)isPlaying;
 
 @end

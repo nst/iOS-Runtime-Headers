@@ -16,22 +16,23 @@
 @property(readonly) UILabel * commentBylineLabel;
 @property(readonly) UIView * styledSeparatorView;
 
-+ (Class)layerClass;
 + (float)heightForCommentText:(id)arg1 bylineText:(id)arg2 forWidth:(float)arg3 forInterfaceOrientation:(int)arg4;
 + (id)bylineStringForComment:(id)arg1;
 + (id)_attributedStringForBylineText:(id)arg1;
 + (id)_attributedStringForCommentText:(id)arg1;
 + (float)heightForComment:(id)arg1 forWidth:(float)arg2 forInterfaceOrientation:(int)arg3;
++ (id)_synthesizedAttributedString:(id)arg1 withWordWrapping:(BOOL)arg2;
++ (Class)layerClass;
 
 - (void)dealloc;
-- (void)delete:(id)arg1;
-- (void)prepareForReuse;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
 - (id)styledSeparatorView;
 - (id)commentBylineLabel;
 - (id)commentContentLabel;
 - (void)setComment:(id)arg1;
 - (id)comment;
+- (void)delete:(id)arg1;
+- (void)prepareForReuse;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
 
 @end

@@ -29,15 +29,10 @@
     unsigned char mIsProgressive;
 }
 
-+ (void)initialize;
 + (struct _xmlTextReader { }*)createXmlReaderWithZipArchive:(id)arg1 indexFileName:(id)arg2 cryptoKey:(id)arg3 indexEntry:(id*)arg4 zipInputStream:(id*)arg5;
 + (struct _xmlTextReader { }*)createXmlReaderWithPath:(id)arg1 indexFileName:(id)arg2 cryptoKey:(id)arg3;
++ (void)initialize;
 
-- (id)documentState;
-- (id).cxx_construct;
-- (void)dealloc;
-- (void)setBundle:(struct __CFBundle { }*)arg1;
-- (struct __CFBundle { }*)bundle;
 - (BOOL)isWrongFormat;
 - (void)setProgressiveMode:(unsigned char)arg1;
 - (id)cryptoKey;
@@ -50,7 +45,12 @@
 - (id)initWithPath:(id)arg1 indexFileName:(id)arg2 previewRequest:(struct __QLPreviewRequest { }*)arg3 cryptoKey:(id)arg4;
 - (void)setWrongFormat:(BOOL)arg1;
 - (void)setThumbnailSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)archive;
 - (struct CGSize { float x1; float x2; })thumbnailSize;
+- (id)archive;
+- (id)documentState;
+- (id).cxx_construct;
+- (void)dealloc;
+- (void)setBundle:(struct __CFBundle { }*)arg1;
+- (struct __CFBundle { }*)bundle;
 
 @end

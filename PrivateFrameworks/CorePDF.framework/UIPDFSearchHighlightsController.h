@@ -16,6 +16,7 @@
 }
 
 
+- (void)dealloc;
 - (void)makeType4Path:(struct CGPath { }*)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3 shadowPath:(struct CGPath { }*)arg4;
 - (void)makeType3Path:(struct CGPath { }*)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3 shadowPath:(struct CGPath { }*)arg4;
 - (void)makeType2Path:(struct CGPath { }*)arg1 to:(unsigned int)arg2 shadowPath:(struct CGPath { }*)arg3;
@@ -33,7 +34,6 @@
 - (void)clearSearchHighlights;
 - (void)addSearchHighlightForSelection:(id)arg1 animated:(BOOL)arg2;
 - (id)initWithPageView:(id)arg1;
-- (void)dealloc;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

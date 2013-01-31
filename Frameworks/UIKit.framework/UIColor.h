@@ -100,7 +100,7 @@
 + (id)_mapkit_userLocationAccuracyRingStrokeColor;
 + (id)tileBackgroundColor;
 + (id)tileGridBackgroundColor;
-+ (id)colorWithWLColor:(id)arg1;
++ (id)colorWithPKColor:(id)arg1;
 + (id)colorWithStyleString:(id)arg1;
 + (id)texturedTranscriptBackgroundColor;
 + (id)tangierScrollViewTexturedBackgroundColor;
@@ -140,6 +140,10 @@
 - (struct CGColor { }*)CGColor;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (float)luminance;
+- (float)blueComponent;
+- (float)greenComponent;
+- (float)redComponent;
 - (id)burnWithColor:(id)arg1;
 - (float)brightnessComponent;
 - (float)saturationComponent;
@@ -148,10 +152,6 @@
 - (id)overlayWithColor:(id)arg1;
 - (BOOL)isGreenOrYellow;
 - (id)soverWithColor:(id)arg1;
-- (float)luminance;
-- (float)blueComponent;
-- (float)greenComponent;
-- (float)redComponent;
 - (BOOL)_vk_getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (id)initWithStyleString:(id)arg1;
 

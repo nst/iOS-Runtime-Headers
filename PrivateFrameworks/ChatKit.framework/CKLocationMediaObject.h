@@ -7,9 +7,9 @@
 
 + (id)mimeTypesToFileExtensions;
 
-- (id)icon;
 - (int)mediaType;
 - (id)subtitle;
 - (id)title;
+- (id)icon;
 
 @end

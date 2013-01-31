@@ -5,11 +5,11 @@
 @interface Log : NSObject  {
 }
 
++ (void)write:(id)arg1;
 + (void)writePhoenixMessage:(id)arg1 sid:(id)arg2 msgType:(id)arg3;
 + (id)formatPhoenixMessage:(id)arg1 sid:(id)arg2 msgType:(id)arg3;
 + (void)writeDebug:(id)arg1 forTest:(id)arg2 withIndentation:(int)arg3;
 + (void)write:(id)arg1 forTest:(id)arg2 withIndentation:(int)arg3;
-+ (void)write:(id)arg1;
 
 
 @end

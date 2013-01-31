@@ -14,6 +14,12 @@
 @property(readonly) BOOL isHidden;
 
 
+- (void)dealloc;
+- (id)init;
+- (BOOL)allowsSelection;
+- (float)heightForHeaderInTableView:(id)arg1;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (BOOL)isHidden;
 - (void)setStatusText:(id)arg1;
 - (void)setContentViewClass:(Class)arg1;
 - (id)statusText;
@@ -26,11 +32,5 @@
 - (int)tableView:(id)arg1 numberOfColumnsForRow:(int)arg2;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
 - (int)rowCountInTableView:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (BOOL)allowsSelection;
-- (float)heightForHeaderInTableView:(id)arg1;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (BOOL)isHidden;
 
 @end

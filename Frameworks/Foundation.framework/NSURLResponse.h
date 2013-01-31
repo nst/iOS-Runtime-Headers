@@ -10,7 +10,8 @@
 
 + (id)_responseWithCFURLResponse:(struct _CFURLResponse { }*)arg1;
 
-- (id)textEncodingName;
+- (id)initWithURL:(id)arg1 MIMEType:(id)arg2 expectedContentLength:(int)arg3 textEncodingName:(id)arg4;
+- (struct _CFURLResponse { }*)_CFURLResponse;
 - (id)URL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -18,8 +19,7 @@
 - (id)MIMEType;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 MIMEType:(id)arg2 expectedContentLength:(int)arg3 textEncodingName:(id)arg4;
-- (struct _CFURLResponse { }*)_CFURLResponse;
+- (id)textEncodingName;
 - (id)_peerCertificateChain;
 - (double)_calculatedExpiration;
 - (double)_freshnessLifetime;
@@ -31,9 +31,9 @@
 - (id)suggestedFilename;
 - (long long)expectedContentLength;
 - (id)_initWithCFURLResponse:(struct _CFURLResponse { }*)arg1;
-- (id)allHeaderFields;
-- (int)statusCode;
 - (long long)maxExpectedContentLength;
+- (int)statusCode;
+- (id)allHeaderFields;
 - (id)_cacheTime;
 
 @end

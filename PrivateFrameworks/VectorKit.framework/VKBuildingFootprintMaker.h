@@ -93,13 +93,6 @@
 @property(retain) VKAnimation * animateBuildingMode;
 
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (void)setScale:(float)arg1;
-- (float)scale;
-- (void)setAlpha:(float)arg1;
-- (float)alpha;
 - (float)maxHeight;
 - (id)landmarkShadowsMesh;
 - (void)_makeShadowTextureWithVectorTile:(id)arg1 skipLandmarks:(BOOL)arg2 pointyFootprints:(const struct unordered_map<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, vk_allocator<std::__1::pair<const unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>>> > { struct __hash_table<std::__1::pair<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>>, std::__1::__unordered_map_hasher<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>, std::__1::hash<unsigned int>, true>, std::__1::__unordered_map_equal<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>, std::__1::equal_to<unsigned int>, true>, vk_allocator<std::__1::pair<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>>> > { struct unique_ptr<std::__1::__hash_node<std::__1::pair<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>>, void *> *[], std::__1::__bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>>, void *> *>> > { struct __compressed_pair<std::__1::__hash_node<std::__1::pair<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>>, void *> **, std::__1::__bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>>, void *> *>> > { struct __hash_node<std::__1::pair<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>>, void *> {} **x_1_3_1; struct __bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>>, void *> *> > { struct __compressed_pair<unsigned long, vk_allocator<std::__1::__hash_node<std::__1::pair<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>>, void *> *> > { unsigned long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>>, void *> *>, vk_allocator<std::__1::__hash_node<std::__1::pair<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>>, void *>> > { struct __hash_node_base<std::__1::__hash_node<std::__1::pair<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>>, void *> *> { struct __hash_node<std::__1::pair<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>>, void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>, std::__1::hash<unsigned int>, true> > { unsigned long x_3_2_1; } x_1_1_3; struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint>>, std::__1::equal_to<unsigned int>, true> > { float x_4_2_1; } x_1_1_4; } x1; }*)arg3;
@@ -121,5 +114,12 @@
 - (id)animateOut;
 - (BOOL)heightAtX:(float)arg1 Y:(float)arg2 outZ:(float*)arg3;
 - (id)initWithVectorTile:(id)arg1 stylesheet:(id)arg2 makeFacades:(BOOL)arg3;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)setScale:(float)arg1;
+- (float)scale;
+- (void)setAlpha:(float)arg1;
+- (float)alpha;
 
 @end

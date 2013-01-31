@@ -9,9 +9,9 @@
 }
 
 
+- (void)setAttachment:(id)arg1;
 - (void)dealloc;
 - (void)layoutSubviews;
-- (void)setAttachment:(id)arg1;
 - (void)showSpinner:(BOOL)arg1;
 - (id)_iconForDocumentProxy:(id)arg1;
 

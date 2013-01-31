@@ -9,8 +9,8 @@
 }
 
 
+- (id)initWithSearchDataSource:(id)arg1;
 - (void)main;
 - (void)dealloc;
-- (id)initWithSearchDataSource:(id)arg1;
 
 @end

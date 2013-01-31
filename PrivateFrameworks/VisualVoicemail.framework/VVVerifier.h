@@ -11,7 +11,6 @@
 
 + (id)sharedVerifier;
 
-- (void)dealloc;
 - (id)humanReadableConfigurationDictionary:(id*)arg1;
 - (id)readableError;
 - (void)storeValue:(BOOL)arg1 forCheckpointKey:(id)arg2;
@@ -23,5 +22,6 @@
 - (id)_checkpointDictionary;
 - (id)keyDescriptions;
 - (id)_checkpointDictionaryFilePath;
+- (void)dealloc;
 
 @end

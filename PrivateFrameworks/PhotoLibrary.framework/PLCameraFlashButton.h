@@ -32,9 +32,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (void)collapse;
-- (BOOL)isExpanded;
-- (void)layoutSubviews;
 - (void)_collapseAnimated;
 - (void)_expandAnimated:(BOOL)arg1;
 - (void)_collapseAndSetMode:(int)arg1 animated:(BOOL)arg2;
@@ -50,6 +47,9 @@
 - (void)setShowWarningIndicator:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isInButtonBar:(BOOL)arg2;
 - (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
+- (void)collapse;
+- (BOOL)isExpanded;
+- (void)layoutSubviews;
 - (void)setFlashMode:(int)arg1;
 - (int)flashMode;
 

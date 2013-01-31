@@ -22,23 +22,6 @@
 @property(readonly) MPGeniusMix * selectedMix;
 
 
-- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
-- (void)_networkTypeDidChangeNotification:(id)arg1;
-- (void)_nowPlayingItemDidChange:(id)arg1;
-- (void)unregisterForPlayerNotifications;
-- (void)registerForPlayerNotifications;
-- (void)dealloc;
-- (id)init;
-- (id)moreListTableCell;
-- (id)_moreListTitle;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
-- (void)scrollViewDidScroll:(id)arg1;
-- (void)reloadData;
 - (void)geniusGridViewWasTapped:(id)arg1;
 - (void)_zoomOutDidStop;
 - (void)_downloadMixForCurrentPage:(id)arg1;
@@ -64,5 +47,22 @@
 - (void)_pageControlValueDidChange:(id)arg1;
 - (id)_geniusMixDataSource;
 - (void)_unloadGridViews;
+- (void)dealloc;
+- (id)init;
+- (id)moreListTableCell;
+- (id)_moreListTitle;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)reloadData;
+- (void)_networkTypeDidChangeNotification:(id)arg1;
+- (void)_nowPlayingItemDidChange:(id)arg1;
+- (void)unregisterForPlayerNotifications;
+- (void)registerForPlayerNotifications;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 
 @end

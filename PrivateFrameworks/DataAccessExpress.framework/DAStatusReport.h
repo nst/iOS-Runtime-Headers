@@ -38,9 +38,8 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (void)mergeStatusReport:(id)arg1;
-- (id)displayName;
-- (id)dictionaryRepresentation;
+- (void)setDisplayName:(id)arg1;
+- (id)persistentUUID;
 - (id)falseMoreAvailableCount;
 - (id)downloadedElements;
 - (id)failedProtocolRequests;
@@ -57,15 +56,16 @@
 - (void)setAverageHBI:(id)arg1;
 - (void)setTimeInNetworking:(id)arg1;
 - (void)setTimeSpan:(id)arg1;
-- (id)persistentUUID;
-- (void)setDisplayName:(id)arg1;
 - (void)noteFailedNetworkRequest;
 - (void)noteFailedProtocolRequest;
 - (void)noteSuccessfulRequestWithNumDownloadedElements:(int)arg1;
 - (void)noteTimeSpentInNetworking:(double)arg1;
 - (void)noteNewHBIDataPoint:(int)arg1;
 - (void)noteFalseMoreAvailableResponse;
+- (void)mergeStatusReport:(id)arg1;
 - (void)setPersistentUUID:(id)arg1;
+- (id)displayName;
+- (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 
 @end

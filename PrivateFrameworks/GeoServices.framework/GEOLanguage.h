@@ -13,21 +13,21 @@
 @property(retain) NSMutableArray * languages;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (unsigned int)identifier;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)setIdentifier:(unsigned int)arg1;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)languages;
 - (id)languageAtIndex:(unsigned int)arg1;
 - (void)clearLanguages;
 - (unsigned int)languagesCount;
 - (void)addLanguage:(id)arg1;
 - (void)setLanguages:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (void)setIdentifier:(unsigned int)arg1;
+- (id)dictionaryRepresentation;
 
 @end

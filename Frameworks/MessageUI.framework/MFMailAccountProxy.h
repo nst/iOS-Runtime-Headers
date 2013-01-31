@@ -21,21 +21,21 @@
 @property(readonly) id mailAccount;
 
 
-- (id)emailAddresses;
-- (id)username;
 - (BOOL)_isRestricted;
 - (void)dealloc;
+- (BOOL)supportsSoftBankCodePoints;
+- (id)fromEmailAddresses;
+- (id)firstEmailAddress;
+- (id)fromEmailAddressesIncludingDisabled;
+- (id)fullUserName;
 - (BOOL)_isActive;
 - (id)_emailAddressesAndAliases;
 - (BOOL)isDefaultDeliveryAccount;
 - (id)_initWithProperties:(id)arg1;
 - (id)mailAccount;
 - (BOOL)restrictsRepliesAndForwards;
-- (BOOL)supportsSoftBankCodePoints;
-- (id)fromEmailAddresses;
-- (id)firstEmailAddress;
-- (id)fromEmailAddressesIncludingDisabled;
-- (id)fullUserName;
+- (id)emailAddresses;
+- (id)username;
 - (id)uniqueID;
 
 @end

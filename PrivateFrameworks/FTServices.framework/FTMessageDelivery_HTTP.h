@@ -9,7 +9,11 @@
 }
 
 
+- (void)invalidate;
+- (void)dealloc;
+- (id)init;
 - (void)cancelMessage:(id)arg1;
+- (BOOL)sendMessage:(id)arg1;
 - (void)_updateWiFiAssertions;
 - (void)_notifyDelegateAboutError:(id)arg1 forMessage:(id)arg2;
 - (id)_processResultData:(id)arg1 forMessage:(id)arg2 error:(id*)arg3;
@@ -21,9 +25,5 @@
 - (BOOL)busy;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
 - (BOOL)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
-- (void)invalidate;
-- (void)dealloc;
-- (id)init;
-- (BOOL)sendMessage:(id)arg1;
 
 @end

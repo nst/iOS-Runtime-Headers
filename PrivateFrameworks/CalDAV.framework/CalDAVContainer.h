@@ -70,15 +70,8 @@
 
 + (id)copyPropertyMappingsForParser;
 
-- (BOOL)canBeShared;
 - (id)description;
 - (void)dealloc;
-- (void)setSource:(id)arg1;
-- (id)source;
-- (id)timeZone;
-- (void)setTimeZone:(id)arg1;
-- (void)setCtag:(id)arg1;
-- (id)ctag;
 - (id)supportedCalendarComponentSet;
 - (BOOL)isNotification;
 - (BOOL)isScheduleOutbox;
@@ -92,6 +85,13 @@
 - (void)setSupportedCalendarComponentSets:(id)arg1;
 - (BOOL)supportsFreebusy;
 - (id)supportedCalendarComponentSets;
+- (void)setCtag:(id)arg1;
+- (id)ctag;
+- (void)setXmppURI:(id)arg1;
+- (void)setXmppServer:(id)arg1;
+- (id)xmppURI;
+- (id)xmppServer;
+- (void)applyParsedProperties:(id)arg1;
 - (BOOL)isPollContainer;
 - (BOOL)isJournalContainer;
 - (BOOL)_isComponentSupportedForString:(id)arg1;
@@ -122,11 +122,11 @@
 - (void)setCalendarOrder:(id)arg1;
 - (void)setCalendarColor:(id)arg1;
 - (void)setCalendarDescription:(id)arg1;
-- (void)setXmppURI:(id)arg1;
-- (void)setXmppServer:(id)arg1;
-- (id)xmppURI;
-- (id)xmppServer;
-- (void)applyParsedProperties:(id)arg1;
+- (void)setSource:(id)arg1;
+- (id)source;
+- (id)timeZone;
+- (void)setTimeZone:(id)arg1;
+- (BOOL)canBeShared;
 - (id)calendarOrder;
 - (BOOL)isShared;
 - (void)setSharees:(id)arg1;

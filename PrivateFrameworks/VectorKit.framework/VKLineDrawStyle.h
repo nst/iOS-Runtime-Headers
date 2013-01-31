@@ -101,8 +101,6 @@
 }
 
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })dropShadowColorAtZoom:(float)arg1;
 - (struct { float x1; float x2; })dropShadowOffsetAtZoom:(float)arg1;
 - (float)dropShadowWidthAtZoom:(float)arg1;
@@ -118,5 +116,7 @@
 - (BOOL)hasDashAtAnyZ;
 - (void)takeFromZoomInvariantProperties:(id)arg1;
 - (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 
 @end

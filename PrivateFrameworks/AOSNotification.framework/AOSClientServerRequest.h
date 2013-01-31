@@ -14,11 +14,11 @@
 
 
 - (void)setResponse:(id)arg1;
+- (void)setRequestType:(id)arg1;
+- (void)runDaemonRequest;
+- (id)response;
+- (id)requestData;
 - (id)responseData;
 - (id)requestType;
-- (id)response;
-- (void)runDaemonRequest;
-- (id)requestData;
-- (void)setRequestType:(id)arg1;
 
 @end

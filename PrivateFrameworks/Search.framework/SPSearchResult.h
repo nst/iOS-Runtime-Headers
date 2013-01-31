@@ -37,6 +37,15 @@
 @property int flags;
 
 
+- (void)setSummary:(id)arg1;
+- (id)summary;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (unsigned long long)identifier;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (BOOL)isEquivalentToResult:(id)arg1;
 - (void)setHasFlags:(BOOL)arg1;
 - (void)setHasIdentifier:(BOOL)arg1;
@@ -50,11 +59,10 @@
 - (BOOL)hasSubtitle;
 - (void)setAuxiliarySubtitle:(id)arg1;
 - (void)setAuxiliaryTitle:(id)arg1;
-- (unsigned long long)identifier;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
+- (void)setFlags:(int)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (BOOL)hasUrl;
+- (BOOL)hasTitle;
 - (void)setIdentifier:(unsigned long long)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
@@ -64,13 +72,5 @@
 - (int)flags;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (void)setSummary:(id)arg1;
-- (id)summary;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (BOOL)hasUrl;
-- (BOOL)hasTitle;
-- (void)setFlags:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
 
 @end

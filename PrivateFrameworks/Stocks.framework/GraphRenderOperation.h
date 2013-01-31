@@ -56,16 +56,14 @@
 
 + (struct CGGradient { }*)LineBackgroundGradient;
 
-- (void)setPoints:(struct CGPoint { float x1; float x2; }*)arg1;
-- (void)render;
+- (id)lineColor;
+- (void)setLineColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
 - (BOOL)isCancelled;
 - (void)cancel;
 - (id)init;
-- (void)setLineWidth:(float)arg1;
-- (float)lineWidth;
 - (void)setRoundLineCaps:(BOOL)arg1;
 - (BOOL)roundLineCaps;
 - (void)setShadowLineColor:(id)arg1;
@@ -100,8 +98,10 @@
 - (void)setDottedLinePositions:(id)arg1;
 - (void)setLinePointCounts:(id)arg1;
 - (void)setGraphImageSet:(id)arg1;
-- (id)lineColor;
-- (void)setLineColor:(id)arg1;
 - (struct CGPoint { float x1; float x2; }*)points;
+- (void)setLineWidth:(float)arg1;
+- (float)lineWidth;
+- (void)render;
+- (void)setPoints:(struct CGPoint { float x1; float x2; }*)arg1;
 
 @end

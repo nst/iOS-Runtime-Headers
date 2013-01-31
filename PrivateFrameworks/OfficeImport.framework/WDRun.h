@@ -11,10 +11,10 @@
 
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEmpty;
 - (void)clearProperties;
 - (id)initWithParagraph:(id)arg1;
 - (int)runType;
 - (id)paragraph;
+- (BOOL)isEmpty;
 
 @end

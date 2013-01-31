@@ -25,13 +25,10 @@
 @property(readonly) NSString * _typeDescription;
 
 
-- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
+- (int)filter;
 - (id)identifier;
 - (id)managedObjectContext;
 - (void)dealloc;
-- (id)_typeDescription;
-- (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4;
-- (int)filter;
 - (unsigned int)unreadAlbumsCount;
 - (void)updateAlbumsOrderIfNeeded;
 - (BOOL)needsReordering;
@@ -75,5 +72,8 @@
 - (id)annotationsToRemoveWhenAddAnimationEnds;
 - (id)annotationsToRemoveWhenAddAnimationStarts;
 - (void)setMapView:(id)arg1;
+- (id)_typeDescription;
+- (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4;
+- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 
 @end

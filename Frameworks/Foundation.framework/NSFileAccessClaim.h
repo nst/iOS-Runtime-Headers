@@ -38,12 +38,12 @@
 + (BOOL)canWritingItemAtLocation:(id)arg1 options:(unsigned int)arg2 safelyOverlapWritingItemAtLocation:(id)arg3 options:(unsigned int)arg4;
 + (BOOL)canReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2 safelyOverlapWritingItemAtLocation:(id)arg3 options:(unsigned int)arg4;
 
+- (id)client;
 - (id)description;
 - (void)dealloc;
+- (void)block;
 - (void)finalize;
 - (void)cancelled;
-- (id)client;
-- (void)block;
 - (id)purposeIDOfClaimOnItemAtLocation:(id)arg1 forMessagingPresenter:(id)arg2;
 - (void)ifSymbolicLinkAtURL:(id)arg1 withResolutionCount:(int*)arg2 thenReevaluateSelf:(id)arg3 elseInvokeClaimer:(id)arg4;
 - (void)devalueOldClaim:(id)arg1;

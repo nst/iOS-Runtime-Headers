@@ -10,9 +10,7 @@
 }
 
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
-- (id)command;
 - (id)contentType;
 - (id)requestBodyStreamOutKnownSize:(int*)arg1;
 - (id)initWithMessage:(id)arg1 messageID:(id)arg2;
@@ -24,5 +22,7 @@
 - (id)requestBody;
 - (int)commandCode;
 - (int)taskStatusForExchangeStatus:(int)arg1;
+- (id)command;
+- (void)finishWithError:(id)arg1;
 
 @end

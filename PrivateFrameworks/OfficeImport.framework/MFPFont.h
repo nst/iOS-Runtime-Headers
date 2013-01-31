@@ -15,12 +15,12 @@
 - (void)setName:(id)arg1;
 - (id)name;
 - (void)dealloc;
-- (unsigned long)flags;
-- (void)setSize:(float)arg1;
-- (float)size;
 - (struct __CTFont { }*)createCTFontWithGraphics:(id)arg1;
 - (void)setFlags:(unsigned long)arg1;
 - (void)setUnit:(int)arg1;
 - (int)unit;
+- (unsigned long)flags;
+- (void)setSize:(float)arg1;
+- (float)size;
 
 @end

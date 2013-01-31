@@ -15,9 +15,9 @@
 - (void)dealloc;
 - (id)init;
 - (id)accessLevel;
-- (id)initWithAccess:(int)arg1;
-- (void)setAccessLevel:(id)arg1;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)initWithAccess:(int)arg1;
+- (void)setAccessLevel:(id)arg1;
 
 @end

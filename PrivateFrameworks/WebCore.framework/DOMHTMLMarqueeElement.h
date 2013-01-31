@@ -6,15 +6,6 @@
 }
 
 
-- (void)stop;
-- (void)setHeight:(id)arg1;
-- (id)height;
-- (void)setScrollDelay:(int)arg1;
-- (void)start;
-- (id)direction;
-- (void)setDirection:(id)arg1;
-- (void)setWidth:(id)arg1;
-- (id)width;
 - (void)setTrueSpeed:(BOOL)arg1;
 - (BOOL)trueSpeed;
 - (int)scrollDelay;
@@ -30,5 +21,14 @@
 - (unsigned int)vspace;
 - (void)setHspace:(unsigned int)arg1;
 - (unsigned int)hspace;
+- (void)stop;
+- (void)setHeight:(id)arg1;
+- (id)height;
+- (void)setScrollDelay:(int)arg1;
+- (void)start;
+- (id)direction;
+- (void)setDirection:(id)arg1;
+- (void)setWidth:(id)arg1;
+- (id)width;
 
 @end

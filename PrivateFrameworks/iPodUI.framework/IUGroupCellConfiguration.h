@@ -20,8 +20,6 @@
 - (void)reloadImages;
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
-- (void)dealloc;
-- (id)init;
 - (void)setSubtitleMediaItemProperty:(id)arg1;
 - (id)subtitleMediaItemProperty;
 - (id)backgroundColorForImageAtIndex:(unsigned int)arg1;
@@ -29,5 +27,7 @@
 - (id)untruncationCalloutString;
 - (void)configureForEntity:(id)arg1 query:(id)arg2 entityIndex:(unsigned int)arg3 entityCount:(unsigned int)arg4;
 - (void)reloadStringsWithProperties:(id)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

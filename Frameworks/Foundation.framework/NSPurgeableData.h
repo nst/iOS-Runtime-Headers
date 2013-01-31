@@ -10,6 +10,7 @@
 }
 
 
+- (void)setLength:(unsigned int)arg1;
 - (const void*)bytes;
 - (id)description;
 - (id)initWithCapacity:(unsigned int)arg1;
@@ -22,7 +23,6 @@
 - (void)endContentAccess;
 - (BOOL)beginContentAccess;
 - (void)finalize;
-- (void)setLength:(unsigned int)arg1;
 - (void)_destroyMemory;
 - (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 freeWhenDone:(BOOL)arg4 bytesAreVM:(BOOL)arg5;
 

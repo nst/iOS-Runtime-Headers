@@ -39,21 +39,6 @@
 + (id)contextWithDataSource:(id)arg1;
 + (id)contextWithIdentifier:(id)arg1;
 
-- (id)aggregateStatisticsDisplayCountKey;
-- (void)setQuery:(id)arg1;
-- (id)identifier;
-- (id)description;
-- (void)dealloc;
-- (id)sourceContext;
-- (void)setIdentifier:(id)arg1;
-- (id)defaultPNGName;
-- (int)style;
-- (void)setStyle:(int)arg1;
-- (id)query;
-- (id)dataSource;
-- (void)setDataSource:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)_reloadDataSourceFromSourceContext;
 - (id)_newDataSourceFromType:(int)arg1 mediaQuery:(id)arg2;
 - (id)_newDataSourceFromType:(int)arg1 mediaSpecifier:(id)arg2;
@@ -77,7 +62,22 @@
 - (void)unloadReloadableData;
 - (void)setDataSourceFromMediaSpecifier:(id)arg1;
 - (unsigned long long)persistentPlaylistUID;
+- (id)identifier;
+- (id)description;
+- (void)dealloc;
+- (void)setIdentifier:(id)arg1;
+- (id)defaultPNGName;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (id)query;
+- (id)dataSource;
+- (void)setDataSource:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)aggregateStatisticsDisplayCountKey;
+- (void)setQuery:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (id)specifier;
+- (id)sourceContext;
 
 @end

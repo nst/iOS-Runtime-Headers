@@ -10,7 +10,6 @@
 }
 
 
-- (id)init;
 - (void)setTop:(int)arg1 right:(int)arg2 bottom:(int)arg3 left:(int)arg4;
 - (struct __CFString { }*)createStringRef;
 - (void)setTop:(int)arg1;
@@ -21,5 +20,6 @@
 - (int)left;
 - (void)setBottom:(int)arg1;
 - (int)bottom;
+- (id)init;
 
 @end

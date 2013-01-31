@@ -16,14 +16,14 @@
 - (void)reloadForChangedRowCount:(int)arg1;
 - (void)storePageCleanupBeforeTearDown;
 - (void)_tabConfigurationChanged:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)_updateAll:(id)arg1;
 - (int)_numberOfDisplayedUpdates;
 - (void)_updateNavigationButtons;
 - (void)_updateTabBarItemsAnimated:(BOOL)arg1;
 - (BOOL)_purchaseItems:(id)arg1;
 - (void)_purchasesChangedNotification:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (float)marginForTableView:(id)arg1;
 - (void)reloadData;
 

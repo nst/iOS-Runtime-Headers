@@ -17,12 +17,12 @@
 - (void)dealloc;
 - (id)init;
 - (unsigned int)count;
-- (id)allKeys;
-- (void)setDictionary:(id)arg1;
 - (id)objectsForKey:(id)arg1;
 - (void)removeObjectsForKey:(id)arg1;
 - (id)popObjectForKey:(id)arg1;
 - (id)peekObjectForKey:(id)arg1;
 - (void)pushObject:(id)arg1 forKey:(id)arg2;
+- (id)allKeys;
+- (void)setDictionary:(id)arg1;
 
 @end

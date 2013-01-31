@@ -24,11 +24,11 @@
 
 - (int)type;
 - (void)dealloc;
+- (void*)addressBook;
+- (id)owner;
+- (id)sendingAddress;
+- (id)taskID;
 - (id)properties;
 - (id)text;
-- (void*)addressBook;
-- (id)sendingAddress;
-- (id)owner;
-- (id)taskID;
 
 @end

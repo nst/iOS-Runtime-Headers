@@ -5,11 +5,11 @@
 @interface SARequestCompleted : SABaseClientBoundCommand  {
 }
 
-+ (id)requestCompleted;
 + (id)requestCompletedWithDictionary:(id)arg1 context:(id)arg2;
++ (id)requestCompleted;
 
-- (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

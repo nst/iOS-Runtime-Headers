@@ -16,12 +16,12 @@
 }
 
 
-- (void)dealloc;
-- (id)init;
 - (void)aboutToReadColumnVectors;
 - (void)aboutToReadRowVectors;
 - (void)setAlongValue:(float)arg1 forOwnedVectorUid:(char *)arg2;
 - (void)aboutToReadCells;
 - (float)alongValueForVectorUid:(const char *)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

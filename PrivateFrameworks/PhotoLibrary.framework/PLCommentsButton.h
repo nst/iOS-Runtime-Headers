@@ -24,14 +24,14 @@
 
 
 - (void)_updateButton;
-- (void)setCurrentMode:(int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)currentMode;
 - (id)_commentCountFormatter;
 - (id)_imageForMode:(int)arg1;
 - (void)setCommentCount:(int)arg1;
 - (id)initWithMode:(int)arg1 position:(int)arg2;
 - (int)commentCount;
 - (int)currentPosition;
+- (void)setCurrentMode:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)currentMode;
 
 @end

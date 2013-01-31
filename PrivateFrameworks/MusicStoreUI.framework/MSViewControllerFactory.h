@@ -6,12 +6,12 @@
 }
 
 
-- (id)newDownloadManagerOptions;
 - (id)newVolumeViewController;
 - (id)newViewControllerForTrackList:(id)arg1;
 - (id)newDownloadsViewController;
 - (id)newNetworkLockoutViewControllerWithSection:(id)arg1;
 - (id)newViewControllerForPage:(id)arg1 ofType:(int)arg2;
 - (id)newPlaceholderViewController;
+- (id)newDownloadManagerOptions;
 
 @end

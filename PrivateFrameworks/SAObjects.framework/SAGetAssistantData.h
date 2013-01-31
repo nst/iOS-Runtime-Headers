@@ -8,8 +8,8 @@
 + (id)getAssistantDataWithDictionary:(id)arg1 context:(id)arg2;
 + (id)getAssistantData;
 
-- (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

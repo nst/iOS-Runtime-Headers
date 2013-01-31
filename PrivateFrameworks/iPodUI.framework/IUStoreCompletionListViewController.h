@@ -12,11 +12,6 @@
 @property(retain) MPStoreCompletionOffering * storeCompletionOffering;
 
 
-- (void)_mediaLibraryDidChangeNotification:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
 - (void)_didLoadCompletionOffering:(id)arg1 isFromCache:(BOOL)arg2 error:(id)arg3;
 - (id)newOfferTableFooterViewWithStoreCompletionOffering:(id)arg1;
 - (BOOL)shouldLookupCompletionOffering;
@@ -28,5 +23,10 @@
 - (void)_cancelCompletionLookup;
 - (BOOL)showMoreFromiTunesActionRow;
 - (void)setShowMoreFromiTunesActionRow:(BOOL)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)_mediaLibraryDidChangeNotification:(id)arg1;
 
 @end

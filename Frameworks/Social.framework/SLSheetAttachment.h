@@ -29,6 +29,12 @@
 - (int)type;
 - (id)description;
 - (void).cxx_destruct;
+- (void)setPreviewImage:(id)arg1;
+- (id)previewImage;
+- (void)setPreviewView:(id)arg1;
+- (id)previewView;
+- (id)payload;
+- (void)setPayload:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setType:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -37,11 +43,5 @@
 - (void)setPendingPreviewProxy:(BOOL)arg1;
 - (void)setDownsampleStatus:(int)arg1;
 - (int)downsampleStatus;
-- (void)setPayload:(id)arg1;
-- (id)payload;
-- (void)setPreviewImage:(id)arg1;
-- (id)previewImage;
-- (void)setPreviewView:(id)arg1;
-- (id)previewView;
 
 @end

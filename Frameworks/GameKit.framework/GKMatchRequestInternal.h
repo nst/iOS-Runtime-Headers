@@ -32,6 +32,12 @@
 
 + (id)codedPropertyKeys;
 
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setVersion:(unsigned int)arg1;
+- (unsigned int)version;
 - (void)setSessionToken:(id)arg1;
 - (void)setMatchType:(unsigned int)arg1;
 - (void)setLocalizableInviteMessage:(id)arg1;
@@ -52,11 +58,5 @@
 - (id)inviteMessage;
 - (unsigned int)maxPlayers;
 - (void)setMaxPlayers:(unsigned int)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)setVersion:(unsigned int)arg1;
-- (unsigned int)version;
 
 @end

@@ -25,11 +25,17 @@
 
 
 - (void)dealloc;
-- (void)setSearchAccountIDs:(id)arg1;
+- (id)searchForText:(id)arg1 consumer:(id)arg2;
+- (void)setSearchTypes:(unsigned int)arg1;
+- (id)initWithAddressBook:(void*)arg1 properties:(int*)arg2 propertyCount:(unsigned int)arg3 recentsBundleIdentifier:(id)arg4;
+- (id)sendingAddress;
+- (void)setSendingAddress:(id)arg1;
+- (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;
+- (void)searchQuery:(id)arg1 returnedResults:(id)arg2;
+- (void)cancelTaskWithID:(id)arg1;
 - (void)setRecentsBundleIdentifier:(id)arg1;
 - (id)recentsBundleIdentifier;
 - (void)_handleAddressBookChangeNotification;
-- (id)initWithAddressBook:(void*)arg1 properties:(int*)arg2 propertyCount:(unsigned int)arg3;
 - (void)_handleSearchQuery:(id)arg1 finishedWithError:(id)arg2;
 - (void)_handleSearchQuery:(id)arg1 returnedResults:(id)arg2;
 - (void)_handleSearchQueryFinished:(id)arg1 context:(id)arg2;
@@ -40,13 +46,7 @@
 - (void)_handleSearchQueriesByAccountID:(id)arg1 operation:(id)arg2 taskID:(id)arg3;
 - (void)_handleLocalSearchResults:(id)arg1 type:(int)arg2 operation:(id)arg3 taskID:(id)arg4;
 - (void)_handleRecentsSearchFrequentResults:(id)arg1 infrequentResults:(id)arg2 operation:(id)arg3 taskID:(id)arg4;
-- (id)sendingAddress;
-- (void)setSendingAddress:(id)arg1;
-- (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;
-- (void)searchQuery:(id)arg1 returnedResults:(id)arg2;
-- (void)cancelTaskWithID:(id)arg1;
-- (id)searchForText:(id)arg1 consumer:(id)arg2;
-- (void)setSearchTypes:(unsigned int)arg1;
-- (id)initWithAddressBook:(void*)arg1 properties:(int*)arg2 propertyCount:(unsigned int)arg3 recentsBundleIdentifier:(id)arg4;
+- (void)setSearchAccountIDs:(id)arg1;
+- (id)initWithAddressBook:(void*)arg1 properties:(int*)arg2 propertyCount:(unsigned int)arg3;
 
 @end

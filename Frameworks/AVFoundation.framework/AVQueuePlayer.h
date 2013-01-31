@@ -13,13 +13,13 @@
 + (id)playerWithPlayerItem:(id)arg1;
 + (id)playerWithURL:(id)arg1;
 
-- (void)insertItem:(id)arg1 afterItem:(id)arg2;
-- (void)advanceToNextItem;
-- (void)setActionAtItemEnd:(int)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithItems:(id)arg1;
 - (id)items;
+- (void)insertItem:(id)arg1 afterItem:(id)arg2;
+- (void)advanceToNextItem;
+- (void)setActionAtItemEnd:(int)arg1;
 - (void)removeAllItems;
 - (void)removeItem:(id)arg1;
 - (void)commitModifications;

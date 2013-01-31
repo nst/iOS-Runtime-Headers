@@ -11,16 +11,16 @@
 @property(copy) NSString * units;
 @property(retain) NSNumber * value;
 
-+ (id)duration;
 + (id)durationWithDictionary:(id)arg1 context:(id)arg2;
++ (id)duration;
 
-- (id)groupIdentifier;
 - (void)setUnits:(id)arg1;
 - (id)units;
-- (id)value;
-- (void)setValue:(id)arg1;
+- (id)encodedClassName;
 - (void)setUnit:(id)arg1;
 - (id)unit;
-- (id)encodedClassName;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (id)groupIdentifier;
 
 @end

@@ -5,37 +5,39 @@
 @class ADXPCConnection;
 
 @interface ADAdSheetProxy : NSObject <ADXPCConnectionDelegate> {
+    unsigned int _adSheetBootstrapAttempts;
+    ADXPCConnection *_adSheetConnection;
     int _bootstrapState;
     double _lastTermination;
-    ADXPCConnection *_adSheetConnection;
+    int _classicUnavailableToken;
 }
 
 @property int bootstrapState;
 @property double lastTermination;
+@property unsigned int adSheetBootstrapAttempts;
 @property(retain) ADXPCConnection * adSheetConnection;
+@property int classicUnavailableToken;
 
 + (id)sharedInstance;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (unsigned int)retainCount;
-- (id)retain;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (oneway void)release;
+- (void)xpcConnectionFailed:(id)arg1;
+- (void)xpcConnection:(id)arg1 receivedMessage:(id)arg2 userInfo:(id)arg3;
+- (void)sendMessage:(id)arg1 userInfo:(id)arg2;
 - (id)init;
-- (id)autorelease;
-- (id)adSheetConnection;
+- (void)setClassicUnavailableToken:(int)arg1;
+- (int)classicUnavailableToken;
 - (double)lastTermination;
 - (void)setBootstrapState:(int)arg1;
 - (int)bootstrapState;
+- (id)adSheetConnection;
 - (void)setLastTermination:(double)arg1;
+- (void)setAdSheetBootstrapAttempts:(unsigned int)arg1;
+- (unsigned int)adSheetBootstrapAttempts;
 - (void)commitFence;
 - (void)_bootstrap;
 - (void)setAdSheetConnection:(id)arg1;
 - (BOOL)isBootstrapped;
 - (void)resetAdSheetThrottle;
 - (id)remoteObjectForMessageName:(id)arg1 senderId:(id)arg2;
-- (void)xpcConnectionFailed:(id)arg1;
-- (void)xpcConnection:(id)arg1 receivedMessage:(id)arg2 userInfo:(id)arg3;
-- (void)sendMessage:(id)arg1 userInfo:(id)arg2;
 
 @end

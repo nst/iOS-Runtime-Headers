@@ -9,12 +9,12 @@
 
 @property(copy) NSArray * clocks;
 
-+ (id)snippet;
 + (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
++ (id)snippet;
 
-- (id)groupIdentifier;
 - (void)setClocks:(id)arg1;
 - (id)clocks;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

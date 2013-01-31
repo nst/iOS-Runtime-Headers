@@ -54,14 +54,9 @@
 
 + (struct NSObject { Class x1; }*)inFlightAssetsAlbumWithBackingAlbum:(struct NSObject { Class x1; }*)arg1;
 
-- (id)localizedTitle;
 - (id)description;
 - (void)dealloc;
 - (unsigned int)count;
-- (id)fetchRequest;
-- (id)kind;
-- (id)title;
-- (BOOL)isEmpty;
 - (void)startNewSession;
 - (void)removeObjectFromMergedAssetsAtIndex:(unsigned int)arg1;
 - (void)insertObject:(id)arg1 inMergedAssetsAtIndex:(unsigned int)arg2;
@@ -133,5 +128,10 @@
 - (BOOL)isCameraAlbum;
 - (void)deleteInflightAssets:(id)arg1;
 - (void)addInFlightAsset:(id)arg1;
+- (id)kind;
+- (id)title;
+- (BOOL)isEmpty;
+- (id)localizedTitle;
+- (id)fetchRequest;
 
 @end

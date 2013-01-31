@@ -23,6 +23,8 @@
 - (int)state;
 - (void)dealloc;
 - (id)init;
+- (void)abort;
+- (int)quit;
 - (long)timeLastCommandWasSent;
 - (int)noop;
 - (BOOL)authenticateUsingAccount:(id)arg1 authenticator:(id)arg2;
@@ -62,7 +64,5 @@
 - (BOOL)supportsOutboxCopy;
 - (unsigned long long)maximumMessageBytes;
 - (BOOL)authenticateUsingAccount:(id)arg1;
-- (void)abort;
-- (int)quit;
 
 @end

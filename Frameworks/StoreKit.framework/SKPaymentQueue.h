@@ -11,10 +11,9 @@
 @property(readonly) NSArray * transactions;
 @property(readonly) SKPaymentQueueClient * paymentQueueClient;
 
-+ (id)defaultQueue;
 + (BOOL)canMakePayments;
++ (id)defaultQueue;
 
-- (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)_establishConnection;
@@ -54,5 +53,6 @@
 - (void)_establishConnectionIfNeeded;
 - (void)_notifyObserversAboutChanges:(id)arg1 sendUpdatedDownloads:(BOOL)arg2;
 - (id)_initSKPaymentQueue;
+- (void)_applicationWillEnterForegroundNotification:(id)arg1;
 
 @end

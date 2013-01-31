@@ -11,7 +11,7 @@
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (BOOL)getShadowColor:(id*)arg1 offset:(struct CGSize { float x1; float x2; }*)arg2 forLabelAtIndex:(unsigned int)arg3 withModifiers:(unsigned int)arg4;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
-- (id)init;
 - (void)configureForViewController:(id)arg1;
+- (id)init;
 
 @end

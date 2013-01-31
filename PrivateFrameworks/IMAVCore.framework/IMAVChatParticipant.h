@@ -135,17 +135,17 @@
 @property(readonly) BOOL isUsingICE;
 
 
-- (id)invitedBy;
 - (void)_enqueueOperation:(id)arg1;
-- (void*)videoLayer;
 - (unsigned int)state;
 - (void)setProperties:(id)arg1;
 - (id)name;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)properties;
-- (void)setState:(unsigned int)arg1;
+- (void)_setCameraOrientation:(unsigned int)arg1;
+- (unsigned int)cameraOrientation;
+- (int)error;
+- (unsigned int)cameraType;
 - (void)setVideoBackLayer:(void*)arg1;
 - (void*)videoBackLayer;
 - (void)setVideoLayer:(void*)arg1;
@@ -255,11 +255,11 @@
 - (id)_conferenceID;
 - (BOOL)isUsingICE;
 - (id)getLocalICEData;
-- (void)_setCameraOrientation:(unsigned int)arg1;
-- (unsigned int)cameraOrientation;
+- (id)properties;
+- (void)setState:(unsigned int)arg1;
+- (void*)videoLayer;
+- (id)invitedBy;
 - (void)_setError:(int)arg1;
-- (int)error;
-- (unsigned int)cameraType;
 - (BOOL)isRecording;
 
 @end

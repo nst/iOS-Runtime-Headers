@@ -13,13 +13,13 @@
 @property(copy) NSString * scheme;
 
 
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)content;
-- (id)scheme;
 - (void)setScheme:(id)arg1;
 - (void)setHttpEquiv:(id)arg1;
 - (id)httpEquiv;
 - (void)setContent:(id)arg1;
+- (void)setName:(id)arg1;
+- (id)name;
+- (id)content;
+- (id)scheme;
 
 @end

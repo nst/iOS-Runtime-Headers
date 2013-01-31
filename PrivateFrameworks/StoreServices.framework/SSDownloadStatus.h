@@ -22,9 +22,6 @@
 @property(readonly) float percentComplete;
 
 
-- (void)setPercentComplete:(float)arg1;
-- (float)percentComplete;
-- (void)setError:(id)arg1;
 - (BOOL)isContentRestricted;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -36,11 +33,14 @@
 - (void)setOperationType:(int)arg1;
 - (void)setOperationProgress:(id)arg1;
 - (void)setContentRestricted:(BOOL)arg1;
-- (void)setPaused:(BOOL)arg1;
+- (id)error;
 - (void)setFailed:(BOOL)arg1;
+- (void)setPaused:(BOOL)arg1;
+- (void)setPercentComplete:(float)arg1;
+- (float)percentComplete;
+- (void)setError:(id)arg1;
 - (BOOL)isPaused;
 - (BOOL)isPausable;
 - (void)setPausable:(BOOL)arg1;
-- (id)error;
 
 @end

@@ -44,6 +44,7 @@
 }
 
 
+- (void)compact;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -51,13 +52,12 @@
 - (void)dealloc;
 - (id)init;
 - (unsigned int)count;
+- (id)initWithOptions:(unsigned int)arg1;
 - (void)finalize;
 - (void)setCount:(unsigned int)arg1;
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)compact;
-- (id)initWithOptions:(unsigned int)arg1;
 - (void)removePointer:(void*)arg1;
 - (unsigned int)indexOfPointer:(void*)arg1;
 - (void)_markNeedsCompaction;

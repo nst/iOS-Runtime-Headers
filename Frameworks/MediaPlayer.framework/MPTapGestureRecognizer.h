@@ -17,9 +17,6 @@
 @property unsigned int tapCount;
 
 
-- (void)_setTapTimerWithDuration:(double)arg1;
-- (void)_resetTapTimer;
-- (void)_delayedHandleTaps:(id)arg1;
 - (void)reset;
 - (void)dealloc;
 - (unsigned int)tapCount;
@@ -29,5 +26,8 @@
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)setTapCount:(unsigned int)arg1;
+- (void)_setTapTimerWithDuration:(double)arg1;
+- (void)_resetTapTimer;
+- (void)_delayedHandleTaps:(id)arg1;
 
 @end

@@ -18,10 +18,6 @@
 + (id)displayStringForSubscription:(id)arg1;
 + (unsigned int)resultsPerRequest;
 
-- (void)setDelegate:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)failWithError:(id)arg1;
 - (void)subscribeToUser:(id)arg1;
 - (void)createPlaylistNamed:(id)arg1;
 - (void)requestPlaylistsFromIndex:(unsigned int)arg1 maxResults:(unsigned int)arg2 searchTerm:(id)arg3;
@@ -30,6 +26,10 @@
 - (void)_doRequestWithURL:(id)arg1;
 - (void)didAuthenticate:(id)arg1;
 - (void)didParseData;
+- (void)failWithError:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (int)parseData:(id)arg1;
 
 @end

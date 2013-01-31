@@ -33,12 +33,12 @@
 - (id)openTitle;
 - (id)closedTitle;
 - (id)navigationButtonForLocation:(id)arg1;
+- (void)setLocation:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)menuItems;
 - (int)location;
 - (id)initWithDictionary:(id)arg1;
-- (void)setLocation:(int)arg1;
 
 @end

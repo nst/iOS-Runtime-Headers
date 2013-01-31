@@ -2,16 +2,17 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class EASession, NSThread, NSMutableData, NSCondition, EAAccessory;
+@class EASession, NSThread, NSMutableData, NSRecursiveLock, NSCondition, EAAccessory;
 
 @interface EAInputStream : NSInputStream  {
     id _delegate;
     EAAccessory *_accessory;
     EASession *_session;
     int _sock;
-    char *_inputFromAccBuffer;
     NSMutableData *_inputFromAccData;
     NSCondition *_inputFromAccCondition;
+    NSRecursiveLock *_statusLock;
+    NSRecursiveLock *_runloopLock;
     NSThread *_inputFromAccThread;
     BOOL _isOpenCompletedEventSent;
     BOOL _hasNewBytesAvailable;
@@ -23,10 +24,18 @@
 
 
 - (void)_scheduleCallback;
+- (void)open;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)_streamEventTrigger;
 - (void)close;
+- (void)_readInputFromAccThread;
+- (void)endStream;
+- (id)initWithAccessory:(id)arg1 forSession:(id)arg2 socket:(int)arg3;
+- (void)_performAtEndOfStreamValidation;
+- (void)openCompleted;
+- (void)_accessoryDidDisconnect:(id)arg1;
 - (BOOL)hasBytesAvailable;
 - (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
 - (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
@@ -36,13 +45,5 @@
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;
-- (void)open;
-- (void)_readInputFromAccThread;
-- (void)endStream;
-- (id)initWithAccessory:(id)arg1 forSession:(id)arg2 socket:(int)arg3;
-- (void)_performAtEndOfStreamValidation;
-- (void)openCompleted;
-- (void)_accessoryDidDisconnect:(id)arg1;
-- (void)_streamEventTrigger;
 
 @end

@@ -16,9 +16,9 @@
 
 
 - (void)dealloc;
-- (id)list;
-- (unsigned long long)handle;
-- (struct __CFRunLoop { }*)runLoop;
 - (id)initWithList:(id)arg1 handle:(unsigned long long)arg2 runLoop:(struct __CFRunLoop { }*)arg3;
+- (unsigned long long)handle;
+- (id)list;
+- (struct __CFRunLoop { }*)runLoop;
 
 @end

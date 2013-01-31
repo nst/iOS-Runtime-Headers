@@ -21,8 +21,10 @@
 @property(copy) NSString * defaultPNG;
 
 
-- (id)statusBarHidden;
 - (id)defaultPNGExpirationTime;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setDefaultPNG:(id)arg1;
 - (void)setDefaultPNGExpirationTime:(id)arg1;
 - (void)setTaskSuspendingUnsupported:(id)arg1;
@@ -33,11 +35,9 @@
 - (id)initWithSettings:(id)arg1 zone:(struct _NSZone { }*)arg2;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setStatusBarHidden:(id)arg1;
 - (void)setStatusBarStyle:(id)arg1;
 - (id)statusBarStyle;
+- (id)statusBarHidden;
 
 @end

@@ -24,10 +24,10 @@
 - (id)copyArchivableContext;
 - (void)dealloc;
 - (id)init;
+- (id)messageBody;
+- (void)setMessageBody:(id)arg1;
 - (void)loadView;
 - (id)image;
 - (void)setImage:(id)arg1;
-- (id)messageBody;
-- (void)setMessageBody:(id)arg1;
 
 @end

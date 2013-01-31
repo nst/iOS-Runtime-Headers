@@ -20,8 +20,8 @@
 @property(retain) NSNumber * width;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)shouldFocusFunction;
 - (void)setShouldFocusFunction:(id)arg1;
@@ -41,6 +41,7 @@
 - (id)buttonItem;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)setAutocapitalizationType:(id)arg1;
 - (id)autocapitalizationType;
 - (void)dealloc;
@@ -59,6 +60,5 @@
 - (void)setWidth:(id)arg1;
 - (id)width;
 - (BOOL)canBecomeFirstResponder;
-- (id)attributeKeys;
 
 @end

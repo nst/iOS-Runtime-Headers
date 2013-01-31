@@ -6,12 +6,12 @@
 }
 
 
-- (void)returnKeyPressed:(id)arg1;
-- (void)setMinimized:(BOOL)arg1;
-- (void)setInterfaceOrientation:(int)arg1;
 - (void)_centerStatusView;
 - (void)_layoutForCurrentOrientation;
 - (void)hardwareReturnKeyPressed:(id)arg1;
 - (id)_initWithStyle:(int)arg1 interfaceOrientation:(int)arg2 showsEmergencyCall:(BOOL)arg3;
+- (void)returnKeyPressed:(id)arg1;
+- (void)setMinimized:(BOOL)arg1;
+- (void)setInterfaceOrientation:(int)arg1;
 
 @end

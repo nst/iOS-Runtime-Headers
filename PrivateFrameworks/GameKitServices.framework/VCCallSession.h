@@ -317,9 +317,6 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (void)unlock;
-- (void)lock;
-- (void)setState:(int)arg1;
 - (void)setupAudioPausedHBMessages;
 - (void)setupCellTechChangeMessages;
 - (void)setupAudioPauseMessages;
@@ -576,5 +573,8 @@
 - (BOOL)requiresWifi;
 - (double)networkQuality;
 - (BOOL)startConnectionWithParticipantID:(id)arg1 callID:(int)arg2 usingBlob:(id)arg3 isCaller:(BOOL)arg4 capabilities:(id)arg5 error:(id*)arg6;
+- (void)unlock;
+- (void)lock;
+- (void)setState:(int)arg1;
 
 @end

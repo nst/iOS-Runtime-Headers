@@ -15,9 +15,6 @@
 @property BOOL drawShapes;
 
 
-- (void)reset;
-- (void)dealloc;
-- (id)init;
 - (BOOL)drawShapes;
 - (void)drawCoastlinesWithContext:(id)arg1;
 - (void)drawPolygonsWithContext:(id)arg1;
@@ -27,5 +24,8 @@
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
 - (unsigned int)textureSize;
+- (void)reset;
+- (void)dealloc;
+- (id)init;
 
 @end

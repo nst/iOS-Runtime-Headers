@@ -43,7 +43,6 @@
 - (void)_reloadScriptExecutionContext;
 - (void)_purgeCaches;
 - (void)setViewControllerFactory:(id)arg1;
-- (void)setClientIdentifier:(id)arg1;
 - (BOOL)openInternalURL:(id)arg1;
 - (id)_newAccountViewControllerForButtonAction:(id)arg1;
 - (id)_newComposeReviewViewControllerForButtonAction:(id)arg1;
@@ -56,9 +55,8 @@
 - (BOOL)sendActionForDialog:(id)arg1 button:(id)arg2;
 - (void)setImagePool:(id)arg1;
 - (void)setImageCache:(id)arg1;
-- (id)imageCache;
 - (BOOL)enterAccountFlowWithViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
+- (void)setClientIdentifier:(id)arg1;
 - (id)imagePool;
 - (id)clientIdentifier;
 - (id)viewControllerFactory;
@@ -69,5 +67,7 @@
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
+- (id)imageCache;
 
 @end

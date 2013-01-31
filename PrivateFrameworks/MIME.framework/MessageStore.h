@@ -22,15 +22,12 @@
     } _caches;
 }
 
-+ (void)setDefaultMessageHeadersClass:(Class)arg1;
 + (Class)headersClass;
 + (Class)classForMimePart;
++ (void)setDefaultMessageHeadersClass:(Class)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)_bodyForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2 updateFlags:(BOOL)arg3;
-- (void)_flushAllCaches;
-- (id)bodyForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2 updateFlags:(BOOL)arg3;
 - (id)uniquedString:(id)arg1;
 - (id)headersForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2;
 - (id)additionalHeadersForForwardOfMessage:(id)arg1;
@@ -54,6 +51,9 @@
 - (void)_flushAllMessageData;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3 forMessage:(id)arg4;
 - (id)_cachedHeaderDataForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
+- (id)_bodyForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2 updateFlags:(BOOL)arg3;
+- (void)_flushAllCaches;
+- (id)bodyForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2 updateFlags:(BOOL)arg3;
 - (void)setMessageClass:(Class)arg1;
 
 @end

@@ -16,13 +16,13 @@
 + (id)searchCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)searchCompleted;
 
-- (id)groupIdentifier;
-- (id)searchContext;
-- (void)setSearchContext:(id)arg1;
 - (void)setFmfLocations:(id)arg1;
 - (id)fmfLocations;
 - (void)setAtRequestedLocation:(id)arg1;
 - (id)atRequestedLocation;
 - (id)encodedClassName;
+- (id)searchContext;
+- (void)setSearchContext:(id)arg1;
+- (id)groupIdentifier;
 
 @end

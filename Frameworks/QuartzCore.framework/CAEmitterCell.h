@@ -64,12 +64,25 @@
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (id)defaultValueForKey:(id)arg1;
 
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (BOOL)autoreverses;
+- (float)repeatCount;
+- (double)timeOffset;
+- (double)beginTime;
+- (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)fillMode;
+- (id)magnificationFilter;
+- (id)minificationFilter;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setName:(id)arg1;
 - (id)name;
 - (id)debugDescription;
 - (id)valueForKey:(id)arg1;
 - (void)dealloc;
+- (void)setRepeatDuration:(double)arg1;
+- (double)repeatDuration;
+- (void)CA_prepareRenderValue;
 - (void)setVelocity:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentsRect;
 - (float)velocity;
@@ -99,16 +112,6 @@
 - (void)setDuration:(double)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)autoreverses;
-- (float)repeatCount;
-- (double)timeOffset;
-- (double)beginTime;
-- (id)valueForUndefinedKey:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (id)fillMode;
-- (void)CA_prepareRenderValue;
-- (id)magnificationFilter;
-- (id)minificationFilter;
 - (void)setEmitterCells:(id)arg1;
 - (void)setMinificationFilterBias:(float)arg1;
 - (void)setAlphaSpeed:(float)arg1;
@@ -158,8 +161,5 @@
 - (float)lifetime;
 - (float)birthRate;
 - (BOOL)shouldArchiveValueForKey:(id)arg1;
-- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
-- (void)setRepeatDuration:(double)arg1;
-- (double)repeatDuration;
 
 @end

@@ -21,13 +21,14 @@
 @property(readonly) NSArray * alarms;
 @property(retain) NSDate * lastModified;
 
++ (id)sharedManager;
 + (BOOL)discardOldVersion;
 + (BOOL)upgrade;
 + (BOOL)isAlarmNotification:(id)arg1;
 + (void)writeAlarmsToPreferences:(id)arg1;
 + (id)copyReadAlarmsFromPreferences;
-+ (id)sharedManager;
 
+- (id)lastModified;
 - (void)dealloc;
 - (id)init;
 - (void)setInvalidAlarmsDetected:(BOOL)arg1;
@@ -60,7 +61,6 @@
 - (void)loadDefaultSoundAndType;
 - (void)setLastModified:(id)arg1;
 - (void)setLogMessageList:(id)arg1;
-- (id)lastModified;
 - (void)removeAlarm:(id)arg1;
 - (id)alarms;
 

@@ -23,12 +23,12 @@
 
 - (id)description;
 - (void)dealloc;
-- (id)elementName;
-- (id)initWithMinimumNumber:(int)arg1 maximumNumber:(int)arg2 nameSpace:(id)arg3 elementName:(id)arg4 objectClass:(Class)arg5 setterMethod:(SEL)arg6;
-- (id)nameSpace;
 - (int)maximumNumber;
 - (int)minimumNumber;
 - (SEL)setterMethod;
 - (Class)objectClass;
+- (id)elementName;
+- (id)initWithMinimumNumber:(int)arg1 maximumNumber:(int)arg2 nameSpace:(id)arg3 elementName:(id)arg4 objectClass:(Class)arg5 setterMethod:(SEL)arg6;
+- (id)nameSpace;
 
 @end

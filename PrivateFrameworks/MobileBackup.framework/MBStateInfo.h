@@ -19,12 +19,14 @@
 @property(readonly) NSDate * date;
 
 
-- (void)setError:(id)arg1;
 - (int)state;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)setEstimatedTimeRemaining:(unsigned int)arg1;
+- (unsigned int)estimatedTimeRemaining;
+- (id)error;
+- (id)initWithState:(int)arg1 progress:(float)arg2 estimatedTimeRemaining:(unsigned int)arg3 error:(id)arg4;
 - (float)progress;
 - (id)dictionaryRepresentation;
 - (void)setProgress:(float)arg1;
@@ -32,9 +34,7 @@
 - (void)setState:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithState:(int)arg1 progress:(float)arg2 estimatedTimeRemaining:(unsigned int)arg3 error:(id)arg4;
-- (unsigned int)estimatedTimeRemaining;
-- (id)error;
+- (void)setError:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 
 @end

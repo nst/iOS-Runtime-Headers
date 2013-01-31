@@ -24,7 +24,6 @@
 @property(retain) NSString * actionRowTitle;
 @property(retain) NSString * artist;
 
-+ (float)_widthForDurationText:(double)arg1;
 + (BOOL)drawsRowsInAlternateStyle;
 + (void)configureTableDisplaySettings:(id)arg1 dataSource:(id)arg2;
 + (Class)globalContextClass;
@@ -40,10 +39,26 @@
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
 - (void)drawWithModifiers:(unsigned int)arg1;
 - (void)drawBackgroundWithModifiers:(unsigned int)arg1;
-- (double)_durationInSeconds;
-- (id)artist;
+- (id)actionRowTitle;
+- (BOOL)drawsDurationColumn;
+- (void)_updateSubtitleText;
+- (id)subviewLayoutViewsWithModifiers:(unsigned int)arg1;
+- (void)layoutSubviewLayoutViews:(id)arg1;
+- (void)setActionRowTitle:(id)arg1;
+- (void)setPreset:(int)arg1;
+- (int)preset;
+- (id)displayProperties;
+- (struct CGPoint { float x1; float x2; })downloadButtonOrigin;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })purchaseButtonFrame;
+- (struct CGPoint { float x1; float x2; })downloadProgressIndicatorOrigin;
+- (BOOL)canShowPurchasableMediaViews;
+- (float)_indexColumnWidth;
+- (void)configureForEntity:(id)arg1 query:(id)arg2 entityIndex:(unsigned int)arg3 entityCount:(unsigned int)arg4;
+- (void)reloadStringsWithProperties:(id)arg1;
+- (id)backgroundColorWithModifiers:(unsigned int)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)setIsVideo:(BOOL)arg1;
 - (void)setIndex:(unsigned int)arg1;
 - (BOOL)isVideo;
 - (unsigned int)index;
@@ -52,22 +67,7 @@
 - (void)setDuration:(double)arg1;
 - (void)setTitle:(id)arg1;
 - (void)reloadData;
-- (void)setIsVideo:(BOOL)arg1;
-- (id)actionRowTitle;
-- (BOOL)drawsDurationColumn;
-- (void)setActionRowTitle:(id)arg1;
-- (void)setPreset:(int)arg1;
-- (int)preset;
-- (id)displayProperties;
-- (id)subviewLayoutViewsWithModifiers:(unsigned int)arg1;
-- (void)layoutSubviewLayoutViews:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })downloadProgressIndicatorFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })purchaseButtonFrame;
-- (float)_indexColumnWidth;
-- (float)_durationColumnWidth;
 - (void)setArtist:(id)arg1;
-- (void)configureForEntity:(id)arg1 query:(id)arg2 entityIndex:(unsigned int)arg3 entityCount:(unsigned int)arg4;
-- (void)reloadStringsWithProperties:(id)arg1;
-- (id)backgroundColorWithModifiers:(unsigned int)arg1;
+- (id)artist;
 
 @end

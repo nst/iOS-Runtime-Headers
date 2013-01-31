@@ -46,20 +46,10 @@
 
 + (void)brokenHash:(id)arg1 response:(char *)arg2;
 
-- (id)peerList;
-- (float)sessionVolume;
-- (void)setSessionVolume:(float)arg1;
-- (BOOL)isActiveSession;
-- (void)setActiveSession:(BOOL)arg1;
-- (void)setMute:(BOOL)arg1 forPeer:(id)arg2;
-- (void)stopSession;
-- (void)startSession;
-- (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)cleanup;
 - (int)calculateChannelQualities;
 - (void)informClientVoiceChatSilent:(id)arg1;
 - (void)informClientVoiceChatSpeaking:(id)arg1;
@@ -110,5 +100,15 @@
 - (id)participantID;
 - (id)sessionName;
 - (void)wifiStateDidChange:(BOOL)arg1;
+- (void)cleanup;
+- (id)peerList;
+- (float)sessionVolume;
+- (void)setSessionVolume:(float)arg1;
+- (BOOL)isActiveSession;
+- (void)setActiveSession:(BOOL)arg1;
+- (void)setMute:(BOOL)arg1 forPeer:(id)arg2;
+- (void)stopSession;
+- (void)startSession;
+- (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3;
 
 @end

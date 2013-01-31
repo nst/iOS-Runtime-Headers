@@ -11,10 +11,10 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)_applicationResumed:(id)arg1;
+- (void*)addressBook;
 - (void)removeClient:(id)arg1;
 - (void)addClient:(id)arg1;
 - (void)_handleAddressBookChangeNotification;
-- (void*)addressBook;
+- (void)_applicationResumed:(id)arg1;
 
 @end

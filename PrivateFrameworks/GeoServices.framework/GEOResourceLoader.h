@@ -41,7 +41,6 @@
 - (id)delegate;
 - (void)cancel;
 - (void)dealloc;
-- (void)_cleanup;
 - (unsigned int)tileGroupIdentifier;
 - (BOOL)_writeResourceToDisk:(id)arg1;
 - (void)_loadNextResource;
@@ -50,5 +49,6 @@
 - (id)loadedResources;
 - (id)initWithTileGroupIdentifier:(unsigned int)arg1 uniqueIdentifier:(id)arg2 targetDirectory:(id)arg3 baseURLString:(id)arg4 isFirstLoad:(BOOL)arg5;
 - (id)uniqueTileGroupIdentifier;
+- (void)_cleanup;
 
 @end

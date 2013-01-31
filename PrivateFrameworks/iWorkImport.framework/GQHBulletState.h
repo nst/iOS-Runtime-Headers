@@ -9,8 +9,6 @@
 
 + (struct __CFString { }*)createLabelStr:(int)arg1 number:(int)arg2;
 
-- (void)dealloc;
-- (id)init;
 - (int)currentLevel;
 - (void)setCurrentLevel:(int)arg1;
 - (struct __CFString { }*)createTieredNumberStringForLevel:(int)arg1;
@@ -29,5 +27,7 @@
 - (void)setNumber:(int)arg1 level:(int)arg2;
 - (void)setType:(int)arg1 level:(int)arg2;
 - (int)typeAtlevel:(int)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

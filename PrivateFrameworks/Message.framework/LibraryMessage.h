@@ -30,17 +30,16 @@
 
 + (id)messageWithLibraryID:(unsigned int)arg1;
 
+- (void)setSummary:(id)arg1;
 - (id)path;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
+- (void)setFlags:(unsigned long long)arg1;
 - (id)library;
 - (id)persistentID;
-- (unsigned long)uid;
-- (void)commit;
-- (void)setSummary:(id)arg1;
-- (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (id)deallocationHandler;
 - (id)_attachmentStorageLocation;
 - (id)metadataValueForKey:(id)arg1;
@@ -90,6 +89,7 @@
 - (void)setMessageFlags:(unsigned long long)arg1;
 - (BOOL)isMessageContentsLocallyAvailable;
 - (id)account;
-- (void)setFlags:(unsigned long long)arg1;
+- (unsigned long)uid;
+- (void)commit;
 
 @end

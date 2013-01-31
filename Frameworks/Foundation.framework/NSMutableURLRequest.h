@@ -11,14 +11,14 @@
 + (int)hashForPlayerID:(id)arg1;
 + (id)_gkHTTPRequestWithURL:(id)arg1 playerID:(id)arg2 authToken:(id)arg3 pushToken:(id)arg4 gameDescriptor:(id)arg5;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setURL:(id)arg1;
 - (void)setHTTPBody:(id)arg1;
 - (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
 - (void)setHTTPMethod:(id)arg1;
 - (void)setHTTPShouldHandleCookies:(BOOL)arg1;
 - (void)setHTTPShouldUsePipelining:(BOOL)arg1;
 - (void)setHTTPUserAgent:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setURL:(id)arg1;
 - (void)setContentDispositionEncodingFallbackArray:(id)arg1;
 - (unsigned int)requestPriority;
 - (void)setRequestPriority:(unsigned int)arg1;
@@ -40,6 +40,7 @@
 - (void)bindToCommand:(struct __CNPluginCommand { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFDictionary {} *x2; unsigned int x3; }*)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+- (void)setLocale:(id)arg1;
 - (void)setInternal:(BOOL)arg1;
 - (void)setPushToken:(id)arg1;
 - (void)setPlayerID:(id)arg1 authToken:(id)arg2;
@@ -51,6 +52,5 @@
 - (void)setBuildVersion:(id)arg1;
 - (void)setProtocolVersion:(id)arg1;
 - (void)setProcessName:(id)arg1;
-- (void)setLocale:(id)arg1;
 
 @end

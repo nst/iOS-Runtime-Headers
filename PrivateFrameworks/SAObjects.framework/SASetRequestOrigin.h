@@ -24,29 +24,29 @@
 + (id)setRequestOriginWithDictionary:(id)arg1 context:(id)arg2;
 + (id)setRequestOrigin;
 
-- (void)setVerticalAccuracy:(double)arg1;
-- (void)setAltitude:(double)arg1;
-- (id)desiredAccuracy;
-- (void)setHorizontalAccuracy:(double)arg1;
-- (id)groupIdentifier;
 - (id)timestamp;
 - (void)setTimestamp:(id)arg1;
-- (void)setStatus:(id)arg1;
-- (id)status;
-- (double)direction;
-- (void)setDirection:(double)arg1;
-- (void)setSpeed:(double)arg1;
-- (double)speed;
+- (void)setAge:(id)arg1;
+- (id)age;
+- (id)encodedClassName;
 - (double)altitude;
 - (double)verticalAccuracy;
 - (double)horizontalAccuracy;
 - (void)setDesiredAccuracy:(id)arg1;
 - (double)longitude;
 - (double)latitude;
-- (void)setAge:(id)arg1;
-- (id)age;
-- (id)encodedClassName;
+- (void)setVerticalAccuracy:(double)arg1;
+- (void)setHorizontalAccuracy:(double)arg1;
+- (void)setAltitude:(double)arg1;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (double)direction;
+- (void)setDirection:(double)arg1;
+- (void)setSpeed:(double)arg1;
+- (double)speed;
+- (id)groupIdentifier;
 - (void)setLongitude:(double)arg1;
 - (void)setLatitude:(double)arg1;
+- (id)desiredAccuracy;
 
 @end

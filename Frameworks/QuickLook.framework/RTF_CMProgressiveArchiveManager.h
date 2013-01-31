@@ -20,7 +20,6 @@
 }
 
 
-- (id)newResourceWithName:(id)arg1;
 - (void)dealloc;
 - (id)initWithClient:(const void*)arg1 andCallBacks:(struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); }*)arg2;
 - (BOOL)isProgressive;
@@ -32,5 +31,6 @@
 - (void)commitDataAtPath:(id)arg1;
 - (void)pushCssToPath:(id)arg1;
 - (void)pushText:(id)arg1 toPath:(id)arg2;
+- (id)newResourceWithName:(id)arg1;
 
 @end

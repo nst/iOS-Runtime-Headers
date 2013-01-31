@@ -9,8 +9,8 @@
 @property BOOL disableViewInPopoverRule;
 
 
-- (void)didMoveToWindow;
 - (void)setDisableViewInPopoverRule:(BOOL)arg1;
 - (BOOL)disableViewInPopoverRule;
+- (void)didMoveToWindow;
 
 @end

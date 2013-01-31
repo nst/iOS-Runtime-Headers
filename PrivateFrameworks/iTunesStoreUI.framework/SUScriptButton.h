@@ -26,11 +26,9 @@
 @property(retain) WebScriptObject * target;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
-- (void)setLoading:(BOOL)arg1;
-- (BOOL)loading;
 - (void)setShouldPerformDefaultAction:(BOOL)arg1;
 - (BOOL)shouldPerformDefaultAction;
 - (id)_systemItemString;
@@ -50,11 +48,13 @@
 - (id)buttonItem;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (id)action;
 - (void)setTarget:(id)arg1;
 - (id)target;
 - (void)dealloc;
 - (id)init;
+- (id)canvas;
 - (BOOL)enabled;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageEdgeInsets;
 - (id)subtitle;
@@ -70,7 +70,7 @@
 - (void)setTag:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setImage:(id)arg1;
-- (id)attributeKeys;
-- (id)canvas;
+- (void)setLoading:(BOOL)arg1;
+- (BOOL)loading;
 
 @end

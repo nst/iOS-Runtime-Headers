@@ -15,12 +15,12 @@
 @property(retain) NSDictionary * info;
 
 
-- (void)setInfo:(id)arg1;
 - (void).cxx_destruct;
-- (id)info;
 - (id)assetCollectionGUID;
 - (void)setAssetCollectionGUID:(id)arg1;
 - (void)setAlbumGUID:(id)arg1;
 - (id)albumGUID;
+- (id)info;
+- (void)setInfo:(id)arg1;
 
 @end

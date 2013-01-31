@@ -28,6 +28,7 @@
 
 - (id)data;
 - (void)dealloc;
+- (BOOL)isAtEnd;
 - (void)_setAllowedClasses:(id)arg1;
 - (int)versionForClassName:(id)arg1;
 - (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
@@ -44,6 +45,5 @@
 - (void)setObjectZone:(struct _NSZone { }*)arg1;
 - (id)classNameDecodedForArchiveClassName:(id)arg1;
 - (void)decodeClassName:(id)arg1 asClassName:(id)arg2;
-- (BOOL)isAtEnd;
 
 @end

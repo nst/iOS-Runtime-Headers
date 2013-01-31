@@ -25,10 +25,7 @@
 
 + (id)objectWithDefaultButtonForScriptButton:(id)arg1;
 
-- (void)setLoading:(BOOL)arg1;
-- (void)buttonAction:(id)arg1;
 - (id)systemItemString;
-- (BOOL)isShowingConfirmation;
 - (void)showConfirmationWithTitle:(id)arg1 animated:(BOOL)arg2;
 - (void)setStyleFromString:(id)arg1;
 - (void)connectButtonAction;
@@ -38,6 +35,7 @@
 - (void)configureFromScriptButtonNativeObject:(id)arg1;
 - (id)initWithSystemItemString:(id)arg1;
 - (void)dealloc;
+- (void)buttonAction:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
 - (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (int)buttonType;
@@ -45,5 +43,7 @@
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (id)styleString;
+- (BOOL)isShowingConfirmation;
+- (void)setLoading:(BOOL)arg1;
 
 @end

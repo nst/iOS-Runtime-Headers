@@ -13,10 +13,10 @@
 }
 
 
-- (void)main;
-- (void)dealloc;
 - (id)initWithSearchDataSource:(id)arg1 searchString:(id)arg2 searchScope:(int)arg3 searchIdentifier:(id)arg4;
 - (void)enumerateEntitiesForQuery:(id)arg1;
 - (void)_reportResultsWithQuery:(id)arg1 searchIdentifier:(id)arg2;
+- (void)main;
+- (void)dealloc;
 
 @end

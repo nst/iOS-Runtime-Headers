@@ -84,11 +84,12 @@
 + (id)removeRequiredNonZeroLengthStringInDictionary:(id)arg1 key:(id)arg2 errorDomain:(id)arg3 missingDataCode:(int)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(int)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
 + (id)profileWithData:(id)arg1 outError:(id*)arg2;
 
-- (id)productBuildVersion;
 - (id)productVersion;
 - (id)identifier;
 - (id)description;
 - (void).cxx_destruct;
+- (BOOL)isEncrypted;
+- (void)setDisplayName:(id)arg1;
 - (BOOL)containsPayloadOfClass:(Class)arg1;
 - (BOOL)writeStubToDirectory:(id)arg1;
 - (id)UUIDHashFileName;
@@ -130,12 +131,11 @@
 - (id)removalPasscode;
 - (id)removalPasscode;
 - (BOOL)isStub;
-- (id)UUID;
+- (id)productBuildVersion;
 - (int)version;
 - (id)displayName;
 - (void)setLocked:(BOOL)arg1;
 - (BOOL)isLocked;
-- (BOOL)isEncrypted;
-- (void)setDisplayName:(id)arg1;
+- (id)UUID;
 
 @end

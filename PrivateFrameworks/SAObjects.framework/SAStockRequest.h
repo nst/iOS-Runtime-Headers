@@ -11,17 +11,17 @@
 @property(copy) NSString * requestType;
 @property(copy) NSDate * startDate;
 
-+ (id)request;
 + (id)requestWithDictionary:(id)arg1 context:(id)arg2;
++ (id)request;
 
-- (id)groupIdentifier;
-- (id)requestType;
-- (void)setRequestType:(id)arg1;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setRequestType:(id)arg1;
+- (id)groupIdentifier;
 - (void)setEndDate:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)endDate;
 - (id)startDate;
+- (id)requestType;
 
 @end

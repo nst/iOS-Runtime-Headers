@@ -13,8 +13,8 @@
 @property(readonly) NSArray * plugins;
 
 
-- (void)dealloc;
 - (id)plugins;
+- (void)dealloc;
 - (void)invalidatePluginParentController;
 - (id)pluginsWithCommonsSpecifiers;
 - (id)orderedPluginsForAdd;

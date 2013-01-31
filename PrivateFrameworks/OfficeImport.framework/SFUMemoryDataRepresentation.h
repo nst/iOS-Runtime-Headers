@@ -11,7 +11,6 @@
 
 - (id)data;
 - (void)dealloc;
-- (id)initWithData:(id)arg1;
 - (id)initWithDataRepresentation:(id)arg1;
 - (id)initWithDataNoCopy:(id)arg1;
 - (unsigned long)readIntoData:(id)arg1;
@@ -21,5 +20,6 @@
 - (id)bufferedInputStream;
 - (id)inputStream;
 - (long long)dataLength;
+- (id)initWithData:(id)arg1;
 
 @end

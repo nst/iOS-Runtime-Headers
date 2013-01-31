@@ -9,13 +9,13 @@
 + (id)highlightedBackground;
 + (id)normalBackground;
 
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setChecked:(BOOL)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
 - (id)highlightedIcon;
 - (id)_shadowHighlightedColor;
 - (id)enabledIcon;
 - (id)_shadowColor;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setChecked:(BOOL)arg1;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
 
 @end

@@ -21,7 +21,6 @@
 @property(retain) UITableView * managedTableView;
 
 
-- (void)buttonAction:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
@@ -45,6 +44,7 @@
 - (void)setLabelViewValue:(id)arg1 usingItemInfo:(id)arg2;
 - (void)setImageViewValue:(id)arg1 usingItemInfo:(id)arg2;
 - (void)segmentedControlValueChanged:(id)arg1;
+- (void)buttonAction:(id)arg1;
 - (void)switchAction:(id)arg1;
 - (void)setRepresentedObject:(id)arg1 forCellAtIndexPath:(id)arg2;
 - (void)updateRowInfoValue:(id)arg1 forKey:(id)arg2 atIndexPath:(id)arg3;

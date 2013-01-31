@@ -22,14 +22,14 @@
 - (void)dealloc;
 - (id)init;
 - (unsigned long)count;
+- (void)touchObjectForKey:(unsigned int)arg1;
+- (void)touchObject:(id)arg1;
+- (void)print;
 - (id)allObjects;
 - (void)unlock;
 - (void)lock;
 - (id)initWithSize:(unsigned long)arg1;
 - (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)makeObjectsPerformSelector:(SEL)arg1;
-- (void)touchObjectForKey:(unsigned int)arg1;
-- (void)touchObject:(id)arg1;
-- (void)print;
 
 @end

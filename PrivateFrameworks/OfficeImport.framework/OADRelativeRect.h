@@ -10,10 +10,6 @@
 }
 
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)setTop:(float)arg1;
 - (float)top;
 - (void)setRight:(float)arg1;
@@ -22,6 +18,10 @@
 - (float)left;
 - (void)setBottom:(float)arg1;
 - (float)bottom;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (id)initWithLeft:(float)arg1 top:(float)arg2 right:(float)arg3 bottom:(float)arg4;
 
 @end

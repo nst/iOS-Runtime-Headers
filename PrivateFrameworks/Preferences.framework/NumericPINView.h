@@ -9,8 +9,8 @@
 }
 
 
-- (void)hidePasscodeField:(BOOL)arg1;
 - (void)appendString:(id)arg1;
+- (void)hidePasscodeField:(BOOL)arg1;
 - (void)deleteLastCharacter;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;

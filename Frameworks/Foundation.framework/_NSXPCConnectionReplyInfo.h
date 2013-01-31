@@ -31,11 +31,11 @@
 @property(retain) NSXPCInterface * interface;
 
 
-- (id)interface;
 - (void)dealloc;
+- (void)setInterface:(id)arg1;
 - (id)selector;
 - (void)setSelector:(id)arg1;
-- (void)setInterface:(id)arg1;
+- (id)interface;
 - (void)setCleanupBlock:(id)arg1;
 - (void)setErrorBlock:(id)arg1;
 - (void)setReplyBlock:(id)arg1;

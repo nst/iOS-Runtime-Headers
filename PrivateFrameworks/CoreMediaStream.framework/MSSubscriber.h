@@ -26,6 +26,7 @@
 @property int retrievalBatchSize;
 @property <MSSubscriberDelegate> * delegate;
 
++ (void)forgetPersonID:(id)arg1;
 + (id)nextActivityDateForPersonID:(id)arg1;
 + (void)_setMasterNextActivityDate:(id)arg1 forPersonID:(id)arg2;
 + (id)_clearInstantiatedSubscribersByPersonID;
@@ -35,14 +36,12 @@
 + (BOOL)isInRetryState;
 + (id)personIDsWithOutstandingActivities;
 + (id)nextActivityDate;
-+ (void)forgetPersonID:(id)arg1;
 
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)stop;
-- (void)deactivate;
+- (void)abort;
 - (void)setRetrievalBatchSize:(int)arg1;
 - (int)retrievalBatchSize;
 - (void)setTargetRetrievalByteCount:(long long)arg1;
@@ -87,6 +86,7 @@
 - (void)checkForNewAssetCollections;
 - (void)checkForOutstandingActivities;
 - (void)setDaemon:(id)arg1;
-- (void)abort;
+- (void)stop;
+- (void)deactivate;
 
 @end

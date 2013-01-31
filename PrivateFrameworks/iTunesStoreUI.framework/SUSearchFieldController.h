@@ -24,6 +24,7 @@
 
 - (int)searchFieldStyle;
 - (id)_cancelButtonView;
+- (void)searchBarWillRemoveFromSuperview:(id)arg1;
 - (void)scriptDidChangeTextForField:(id)arg1;
 - (id)_newTransientViewController;
 - (void)_dimmerViewAction:(id)arg1;
@@ -55,8 +56,6 @@
 - (void)setSearchFieldConfiguration:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)operationDidFinish:(id)arg1;
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (void)searchBarSearchButtonClicked:(id)arg1;
 - (void)searchBarTextDidEndEditing:(id)arg1;
@@ -69,5 +68,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)operationDidFinish:(id)arg1;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

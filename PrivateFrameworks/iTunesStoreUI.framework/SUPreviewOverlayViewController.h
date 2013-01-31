@@ -50,7 +50,6 @@
 - (id)_scrollViewForViewController:(id)arg1;
 - (id)_previewOverlayContainerForViewController:(id)arg1;
 - (void)offsetToShowOverScrollView:(id)arg1;
-- (void)loadWithCompletionBlock:(id)arg1;
 - (BOOL)isContentLoaded;
 - (id)_storePageViewController;
 - (void)storePage:(id)arg1 finishedWithSuccess:(BOOL)arg2;
@@ -65,5 +64,6 @@
 - (float)paddingTop;
 - (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })contentSize;
+- (void)loadWithCompletionBlock:(id)arg1;
 
 @end

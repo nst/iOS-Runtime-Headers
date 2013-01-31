@@ -5,21 +5,22 @@
 @class NSString, NSData, NSDictionary, GKPlayerInternal;
 
 @interface GKInviteInternal : GKInternalRepresentation  {
-    NSString *_bundleID;
-    NSString *_message;
-    unsigned char _version;
-    NSData *_peerBlob;
     GKPlayerInternal *_player;
-    NSString *_rid;
+    NSDictionary *_localizableMessage;
     unsigned int _playerGroup;
     unsigned int _playerAttributes;
     NSString *_inviteID;
-    NSData *_peerPushToken;
+    NSString *_participantID;
     NSString *_peerID;
-    NSDictionary *_localizableMessage;
     NSData *_peerNATIP;
-    unsigned int _matchType;
+    NSData *_peerBlob;
     NSData *_sessionToken;
+    unsigned char _version;
+    NSString *_message;
+    NSString *_rid;
+    unsigned int _matchType;
+    NSData *_peerPushToken;
+    NSString *_bundleID;
     NSString *_deviceID;
     int _peerNATType;
 }
@@ -39,21 +40,33 @@
 @property(retain) NSData * peerBlob;
 @property(retain) NSString * rid;
 @property unsigned char version;
+@property(retain) NSString * participantID;
 @property(retain) NSString * deviceID;
 @property(retain) NSString * bundleID;
 @property(readonly) BOOL isNearby;
 
-+ (id)inviteFromNearbyPlayer:(id)arg1 deviceID:(id)arg2 bundleID:(id)arg3 connectionData:(id)arg4;
++ (id)inviteFromNearbyPlayer:(id)arg1 participantID:(id)arg2 deviceID:(id)arg3 bundleID:(id)arg4 connectionData:(id)arg5;
 + (id)inviteWithDictionary:(id)arg1;
 + (id)nearbyInviteIDForPlayerID:(id)arg1 deviceID:(id)arg2 bundleID:(id)arg3;
 + (id)codedPropertyKeys;
 
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)deviceID;
+- (void)setParticipantID:(id)arg1;
+- (id)participantID;
+- (void)setVersion:(unsigned char)arg1;
+- (id)message;
+- (unsigned char)version;
+- (void)setMessage:(id)arg1;
 - (int)peerNATType;
+- (id)peerPushToken;
+- (id)peerBlob;
 - (id)peerNATIP;
 - (void)setLocalizableMessage:(id)arg1;
 - (id)localizableMessage;
-- (id)peerPushToken;
-- (id)peerBlob;
 - (BOOL)isNearby;
 - (id)inviteID;
 - (void)setDeviceID:(id)arg1;
@@ -76,16 +89,7 @@
 - (id)rid;
 - (void)setPlayer:(id)arg1;
 - (id)player;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (void)setPeerID:(id)arg1;
 - (id)peerID;
-- (void)setVersion:(unsigned char)arg1;
-- (id)message;
-- (unsigned char)version;
-- (void)setMessage:(id)arg1;
-- (id)deviceID;
 
 @end

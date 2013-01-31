@@ -30,8 +30,8 @@
 @property(readonly) NSString * modalPresentationStyleNameFullScreen;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)volumeViewController;
 - (id)_parentViewControllerForVolumeViewController;
@@ -60,6 +60,7 @@
 - (id)topBackgroundColor;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (void)setSection:(id)arg1;
 - (void)setTransientViewController:(id)arg1;
@@ -83,6 +84,5 @@
 - (id)wantsFullScreenLayout;
 - (id)presentingViewController;
 - (void)setBackgroundColor:(id)arg1;
-- (id)attributeKeys;
 
 @end

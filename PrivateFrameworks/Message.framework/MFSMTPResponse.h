@@ -18,8 +18,6 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)setStatus:(int)arg1;
-- (int)status;
 - (unsigned int)statusDetail;
 - (unsigned int)statusSubject;
 - (unsigned int)statusClass;
@@ -29,5 +27,7 @@
 - (id)initWithStatus:(int)arg1;
 - (id)errorMessageWithAddress:(id)arg1 defaultMessage:(id)arg2;
 - (id)lastResponseLine;
+- (void)setStatus:(int)arg1;
+- (int)status;
 
 @end

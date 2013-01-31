@@ -61,11 +61,20 @@
 
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
-- (id)messageFont;
-- (void)updateTitle;
-- (void)saveChanges;
+- (BOOL)allowsDeletion;
 - (void)dealloc;
 - (id)init;
+- (void*)addressBook;
+- (void*)displayedPerson;
+- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2;
+- (void)setAllowsActions:(BOOL)arg1;
+- (void)setDisplayedPerson:(void*)arg1;
+- (void)setAllowsSounds:(BOOL)arg1;
+- (void)setDisplayedProperties:(id)arg1;
+- (id)getCurrentContext;
+- (BOOL)allowContextProvider:(id)arg1;
+- (void)setShouldShowLinkedPeople:(BOOL)arg1;
+- (void)setPersonViewDelegate:(id)arg1;
 - (void)updateNavigationButtons;
 - (void)setAllowsCancel:(BOOL)arg1;
 - (id)message;
@@ -98,11 +107,10 @@
 - (id)dataSource;
 - (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
-- (id)getCurrentContext;
-- (BOOL)allowContextProvider:(id)arg1;
-- (void)setShouldShowLinkedPeople:(BOOL)arg1;
-- (void)setPersonViewDelegate:(id)arg1;
-- (void*)addressBook;
+- (void)saveChanges;
+- (id)messageFont;
+- (void)updateTitle;
+- (void)setAddressBook:(void*)arg1;
 - (void)setCustomAppearanceProvider:(id)arg1;
 - (void)addActionWithTitle:(id)arg1 content:(id)arg2 target:(id)arg3 selector:(SEL)arg4 forProperty:(int)arg5 withActionGrouping:(int)arg6 ordering:(int)arg7;
 - (id)newActionButton;
@@ -209,14 +217,6 @@
 - (BOOL)allowsVibrations;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (void*)displayedPerson;
-- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2;
-- (void)setAllowsActions:(BOOL)arg1;
-- (void)setDisplayedPerson:(void*)arg1;
-- (void)setAllowsSounds:(BOOL)arg1;
-- (void)setDisplayedProperties:(id)arg1;
 - (id)initWithAddressBook:(void*)arg1;
-- (BOOL)allowsDeletion;
-- (void)setAddressBook:(void*)arg1;
 
 @end

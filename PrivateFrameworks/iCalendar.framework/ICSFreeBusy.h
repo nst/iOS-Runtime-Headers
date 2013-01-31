@@ -21,9 +21,9 @@
 
 + (id)name;
 
-- (void)setX_calendarserver_mask_uid:(id)arg1;
 - (id)x_calendarserver_mask_uid;
 - (void)setFreebusy:(id)arg1;
 - (id)freebusy;
+- (void)setX_calendarserver_mask_uid:(id)arg1;
 
 @end

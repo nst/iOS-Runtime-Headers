@@ -13,20 +13,20 @@
 @property(copy) NSString * providerId;
 @property double value;
 
-+ (id)rating;
 + (id)ratingWithDictionary:(id)arg1 context:(id)arg2;
++ (id)rating;
 
-- (id)groupIdentifier;
 - (id)description;
 - (int)count;
+- (void)setProviderId:(id)arg1;
+- (id)providerId;
+- (id)encodedClassName;
+- (double)maxValue;
 - (void)setMaxValue:(double)arg1;
 - (double)value;
 - (void)setValue:(double)arg1;
 - (void)setCount:(int)arg1;
-- (double)maxValue;
-- (void)setProviderId:(id)arg1;
-- (id)providerId;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 - (void)setDescription:(id)arg1;
 
 @end

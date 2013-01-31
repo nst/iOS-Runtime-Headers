@@ -33,9 +33,9 @@
 @property(getter=_ignoresExpectedClientsProtocol,setter=_setIgnoresExpectedClientsProtocol:) BOOL _ignoresExpectedClientsProtocol;
 
 
-- (id)userAgent;
 - (void)setWasLaunchedFromLibrary:(BOOL)arg1;
 - (void)setAppearance:(id)arg1;
+- (void)_mediaPlayerViewControllerWillDismiss:(id)arg1 animated:(BOOL)arg2;
 - (void)_showPreviewOverlayAnimated:(BOOL)arg1;
 - (void)_setIgnoresExpectedClientsProtocol:(BOOL)arg1;
 - (BOOL)wasLaunchedFromLibrary;
@@ -47,7 +47,6 @@
 - (void)_dismissViewControllerFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)setViewControllerFactory:(id)arg1;
 - (void)setURLBagKey:(id)arg1 forIdentifier:(id)arg2;
-- (void)setClientIdentifier:(id)arg1;
 - (id)purchaseManager;
 - (id)URLBagKeyForIdentifier:(id)arg1;
 - (void)setLocalStoragePath:(id)arg1;
@@ -57,6 +56,7 @@
 - (void)setPurchaseManager:(id)arg1;
 - (id)_newScriptInterface;
 - (BOOL)_ignoresExpectedClientsProtocol;
+- (void)setClientIdentifier:(id)arg1;
 - (void)_exitStoreWithReason:(int)arg1;
 - (id)previewOverlay;
 - (id)clientIdentifier;
@@ -67,8 +67,9 @@
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
+- (void)setUserAgent:(id)arg1;
 - (id)tabBarController;
 - (id)appearance;
-- (void)setUserAgent:(id)arg1;
+- (id)userAgent;
 
 @end

@@ -11,9 +11,6 @@
 }
 
 
-- (void)setDelegate:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (void)loadRequestURL:(id)arg1 parameters:(id)arg2;
 - (void)addCityToPendingQueue:(id)arg1;
 - (void)_updateNextPendingCity;
@@ -28,5 +25,8 @@
 - (void)failWithError:(id)arg1;
 - (id)aggregateDictionaryDomain;
 - (BOOL)isUpdatingCity:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

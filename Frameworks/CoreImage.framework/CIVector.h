@@ -20,6 +20,7 @@
 + (id)vectorWithValues:(const float*)arg1 count:(unsigned long)arg2;
 + (id)vectorWithX:(float)arg1 Y:(float)arg2 Z:(float)arg3 W:(float)arg4;
 
+- (id)stringRepresentation;
 - (id)initWithString:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
@@ -28,14 +29,12 @@
 - (void)dealloc;
 - (id)init;
 - (unsigned long)count;
-- (float)valueAtIndex:(unsigned long)arg1;
 - (void)finalize;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })CGAffineTransformValue;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })CGRectValue;
 - (struct CGPoint { float x1; float x2; })CGPointValue;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)stringRepresentation;
 - (id)initWithCGAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (id)initWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -48,5 +47,6 @@
 - (float)Z;
 - (float)Y;
 - (float)X;
+- (float)valueAtIndex:(unsigned long)arg1;
 
 @end

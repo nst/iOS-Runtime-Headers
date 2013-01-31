@@ -15,8 +15,9 @@
 
 + (id)sharedManager;
 
-- (void)dealloc;
+- (id)lastModified;
 - (void)removeAllCities;
+- (void)dealloc;
 - (void)moveCityFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (void)removeCityAtIndex:(unsigned int)arg1;
 - (void)removeCity:(id)arg1;
@@ -28,6 +29,5 @@
 - (id)cities;
 - (void)saveCities;
 - (void)setLastModified:(id)arg1;
-- (id)lastModified;
 
 @end

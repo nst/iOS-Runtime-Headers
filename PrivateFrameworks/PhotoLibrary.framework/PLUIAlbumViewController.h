@@ -10,12 +10,6 @@
 
 
 - (void)dealloc;
-- (void)_setImagePickerMediaTypes:(id)arg1;
-- (int)_imagePickerStatusBarStyle;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
 - (BOOL)footerSubtitleAllowsEmail:(id)arg1;
 - (id)footerAccessoryViewForAlbumView:(id)arg1;
@@ -29,5 +23,11 @@
 - (void)_libraryDidChange:(id)arg1;
 - (void)_showCancelButton;
 - (BOOL)_dismissButtonAllowed;
+- (void)_setImagePickerMediaTypes:(id)arg1;
+- (int)_imagePickerStatusBarStyle;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
 
 @end

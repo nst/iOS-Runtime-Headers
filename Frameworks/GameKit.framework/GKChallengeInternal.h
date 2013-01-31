@@ -5,13 +5,13 @@
 @class NSDate, NSString, NSOrderedSet;
 
 @interface GKChallengeInternal : GKInternalRepresentation  {
-    NSString *_bundleID;
-    NSString *_message;
-    NSOrderedSet *_compatibleBundleIDs;
     NSString *_issuingPlayerID;
+    NSOrderedSet *_compatibleBundleIDs;
     NSString *_receivingPlayerID;
     int _state;
+    NSString *_message;
     NSDate *_issueDate;
+    NSString *_bundleID;
     NSDate *_completionDate;
     NSString *_challengeID;
 }
@@ -29,23 +29,6 @@
 + (id)codedPropertyKeys;
 + (id)internalRepresentation;
 
-- (void)setChallengeID:(id)arg1;
-- (void)setCompletionDate:(id)arg1;
-- (id)completionDate;
-- (void)setIssueDate:(id)arg1;
-- (id)issueDate;
-- (void)setReceivingPlayerID:(id)arg1;
-- (id)receivingPlayerID;
-- (void)setIssuingPlayerID:(id)arg1;
-- (id)issuingPlayerID;
-- (void)setCompatibleBundleIDs:(id)arg1;
-- (id)compatibleBundleIDs;
-- (void)setBundleID:(id)arg1;
-- (id)findLocalGameBundleID;
-- (id)issueRepresentationToPlayerID:(id)arg1;
-- (id)bundleID;
-- (id)challengeID;
-- (id)serverRepresentation;
 - (int)state;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -53,5 +36,22 @@
 - (id)message;
 - (void)setMessage:(id)arg1;
 - (void)setState:(int)arg1;
+- (void)setChallengeID:(id)arg1;
+- (void)setCompletionDate:(id)arg1;
+- (id)completionDate;
+- (void)setBundleID:(id)arg1;
+- (void)setIssueDate:(id)arg1;
+- (id)issueDate;
+- (void)setReceivingPlayerID:(id)arg1;
+- (id)receivingPlayerID;
+- (void)setCompatibleBundleIDs:(id)arg1;
+- (id)compatibleBundleIDs;
+- (void)setIssuingPlayerID:(id)arg1;
+- (id)issuingPlayerID;
+- (id)findLocalGameBundleID;
+- (id)issueRepresentationToPlayerID:(id)arg1;
+- (id)bundleID;
+- (id)challengeID;
+- (id)serverRepresentation;
 
 @end

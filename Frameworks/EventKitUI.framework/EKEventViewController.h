@@ -55,6 +55,8 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (id)getCurrentContext;
+- (BOOL)allowContextProvider:(id)arg1;
 - (id)event;
 - (void)setEvent:(id)arg1;
 - (void)setAllowsEditing:(BOOL)arg1;
@@ -145,8 +147,6 @@
 - (void)setShowsDoneButton:(BOOL)arg1;
 - (void)setAllowsSubitems:(BOOL)arg1;
 - (void)setAllowsCalendarPreview:(BOOL)arg1;
-- (id)getCurrentContext;
-- (BOOL)allowContextProvider:(id)arg1;
 - (id)accessDeniedView;
 - (id)_items;
 

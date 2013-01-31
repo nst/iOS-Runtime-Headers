@@ -33,6 +33,16 @@
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } confirmationButtonRect;
 
 
+- (void)dealloc;
+- (id)init;
+- (void)setTheme:(id)arg1;
+- (id)theme;
+- (float)fontSize;
+- (void)setFontSize:(float)arg1;
+- (void)prepareForReuse;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (void)layoutSubviews;
 - (id)alternatePrimaryText;
 - (id)primaryText;
 - (float)horizontalContentInset;
@@ -55,15 +65,5 @@
 - (void)setHorizontalContentInset:(float)arg1;
 - (void)setPrimaryText:(id)arg1;
 - (float)preferredHeightForOrientation:(int)arg1;
-- (void)dealloc;
-- (id)init;
-- (float)fontSize;
-- (void)setFontSize:(float)arg1;
-- (void)prepareForReuse;
-- (int)style;
-- (void)setStyle:(int)arg1;
-- (void)layoutSubviews;
-- (void)setTheme:(id)arg1;
-- (id)theme;
 
 @end

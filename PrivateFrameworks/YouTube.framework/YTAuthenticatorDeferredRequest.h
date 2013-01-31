@@ -10,10 +10,10 @@
 }
 
 
-- (void)setRequest:(id)arg1;
-- (void)dealloc;
-- (id)request;
 - (BOOL)accountAuthRequired;
 - (void)setAccountAuthRequired:(BOOL)arg1;
+- (void)dealloc;
+- (id)request;
+- (void)setRequest:(id)arg1;
 
 @end

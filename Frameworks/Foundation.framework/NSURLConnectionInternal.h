@@ -16,13 +16,13 @@
 }
 
 
-- (void)dealloc;
-- (void)_invalidate;
-- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)cancelAuthenticationChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
+- (void)dealloc;
+- (void)_invalidate;
+- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (void)_withErrorForConnection:(id)arg1;
 - (void)_withConnection:(id)arg1;
 - (void)_withActiveConnectionAndDelegate:(id)arg1;

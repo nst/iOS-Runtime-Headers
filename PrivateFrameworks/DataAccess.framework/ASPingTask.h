@@ -12,10 +12,7 @@
 }
 
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
-- (void)loadRequest:(id)arg1;
-- (double)timeoutInterval;
 - (BOOL)shouldReportTimeInNetwork;
 - (int)interfaceBinding;
 - (id)initWithHeartbeat:(int)arg1 folders:(id)arg2 oldHeartbeat:(int)arg3 oldFolders:(id)arg4;
@@ -28,5 +25,8 @@
 - (id)requestBody;
 - (int)commandCode;
 - (int)taskStatusForExchangeStatus:(int)arg1;
+- (void)loadRequest:(id)arg1;
+- (void)finishWithError:(id)arg1;
+- (double)timeoutInterval;
 
 @end

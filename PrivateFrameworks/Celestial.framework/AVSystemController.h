@@ -9,15 +9,9 @@
 + (id)sharedAVSystemController;
 + (void)initialize;
 
-- (BOOL)getVolume:(float*)arg1 forCategory:(id)arg2;
-- (id)volumeCategoryForAudioCategory:(id)arg1;
-- (BOOL)allowUserToExceedEUVolumeLimit;
-- (BOOL)setVolumeTo:(float)arg1 forCategory:(id)arg2;
-- (id)attributeForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (BOOL)setPickedRouteWithPassword:(id)arg1 withPassword:(id)arg2;
-- (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (void)postEffectiveVolumeNotification:(void*)arg1;
 - (void)postFullMuteDidChangeNotification:(void*)arg1;
 - (void)handleServerDied;
@@ -42,5 +36,11 @@
 - (BOOL)changeActiveCategoryVolumeBy:(float)arg1 fallbackCategory:(id)arg2 resultVolume:(float*)arg3 affectedCategory:(id*)arg4;
 - (void)makeError:(id*)arg1 withDescription:(id)arg2 code:(long)arg3;
 - (BOOL)okToNotifyFromThisThread;
+- (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (BOOL)getVolume:(float*)arg1 forCategory:(id)arg2;
+- (id)volumeCategoryForAudioCategory:(id)arg1;
+- (BOOL)allowUserToExceedEUVolumeLimit;
+- (BOOL)setVolumeTo:(float)arg1 forCategory:(id)arg2;
+- (id)attributeForKey:(id)arg1;
 
 @end

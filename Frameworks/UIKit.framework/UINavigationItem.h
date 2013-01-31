@@ -169,7 +169,10 @@
 - (void)setTitle:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)resetAllValues;
+- (void)setTitleView:(id)arg1 animated:(BOOL)arg2;
+- (void)fadeInTitleView;
+- (void)fadeOutTitleView;
 - (void)mergeValuesFromItem:(id)arg1;
+- (void)resetAllValues;
 
 @end

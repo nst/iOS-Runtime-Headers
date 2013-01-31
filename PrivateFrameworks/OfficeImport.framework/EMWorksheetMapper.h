@@ -18,10 +18,6 @@
 
 
 - (void)dealloc;
-- (int)height;
-- (int)columnCount;
-- (BOOL)isVisible;
-- (int)width;
 - (void)mapTableStyleAt:(id)arg1 withState:(id)arg2;
 - (void)mapGridAt:(id)arg1;
 - (void)mapColumnInfosAt:(id)arg1 withState:(id)arg2;
@@ -43,5 +39,9 @@
 - (int)preprocessHeightWithState:(id)arg1;
 - (int)preprocessWidthWithState:(id)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (int)height;
+- (int)columnCount;
+- (BOOL)isVisible;
+- (int)width;
 
 @end

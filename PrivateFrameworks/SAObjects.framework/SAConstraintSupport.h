@@ -13,11 +13,11 @@
 + (id)constraintSupportWithDictionary:(id)arg1 context:(id)arg2;
 + (id)constraintSupport;
 
+- (id)encodedClassName;
+- (void)setCondition:(id)arg1;
+- (id)condition;
 - (id)groupIdentifier;
 - (void)setProperty:(id)arg1;
 - (id)property;
-- (void)setCondition:(id)arg1;
-- (id)condition;
-- (id)encodedClassName;
 
 @end

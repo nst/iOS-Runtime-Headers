@@ -30,9 +30,11 @@
     IMTimer *_purgeTimer;
 }
 
-+ (BOOL)setupKeys;
 + (id)sharedInstance;
++ (BOOL)setupKeys;
 
+- (void)dealloc;
+- (id)init;
 - (struct _SecMPFullIdentity { }*)copyMessageProtectionIdentity;
 - (void)_purgeMap;
 - (void)_save;
@@ -45,7 +47,5 @@
 - (id)publicMessageProtectionData;
 - (void)_setPurgeTimer;
 - (id)keyPairSignature;
-- (void)dealloc;
-- (id)init;
 
 @end

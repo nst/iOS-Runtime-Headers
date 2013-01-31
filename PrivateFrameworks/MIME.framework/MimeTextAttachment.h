@@ -6,11 +6,11 @@
 }
 
 
-- (id)persistentUniqueIdentifier;
-- (unsigned int)approximateSize;
 - (id)_displayedMimePart;
 - (id)initWithMimePart:(id)arg1;
 - (BOOL)hasBeenDownloaded;
+- (id)persistentUniqueIdentifier;
+- (unsigned int)approximateSize;
 - (void)download;
 
 @end

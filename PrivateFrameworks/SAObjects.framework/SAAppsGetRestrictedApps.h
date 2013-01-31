@@ -12,10 +12,10 @@
 + (id)getRestrictedAppsWithDictionary:(id)arg1 context:(id)arg2;
 + (id)getRestrictedApps;
 
-- (id)groupIdentifier;
 - (void)setAppIds:(id)arg1;
 - (id)appIds;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

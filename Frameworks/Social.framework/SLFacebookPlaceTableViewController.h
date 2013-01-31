@@ -24,6 +24,9 @@
 
 
 - (void).cxx_destruct;
+- (id)places;
+- (void)setAccount:(id)arg1;
+- (id)account;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (void)searchDisplayControllerWillEndSearch:(id)arg1;
 - (void)searchDisplayControllerDidBeginSearch:(id)arg1;
@@ -53,8 +56,5 @@
 - (id)selectionDelegate;
 - (void)setPlaceManager:(id)arg1;
 - (void)cancelButtonTapped:(id)arg1;
-- (void)setAccount:(id)arg1;
-- (id)account;
-- (id)places;
 
 @end

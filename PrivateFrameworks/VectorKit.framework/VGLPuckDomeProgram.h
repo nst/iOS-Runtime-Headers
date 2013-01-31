@@ -49,7 +49,6 @@
 
 + (id)program;
 
-- (id)init;
 - (union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; } x1; float x2[9]; })secondTextureCoordinateTransform;
 - (void)setSecondTextureCoordinateTransform:(union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; } x1; float x2[9]; })arg1;
 - (union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; } x1; float x2[9]; })textureCoordinateTransform;
@@ -60,5 +59,6 @@
 - (void)setAlphaScale:(float)arg1;
 - (int)textureSampler;
 - (void)setTextureSampler:(int)arg1;
+- (id)init;
 
 @end

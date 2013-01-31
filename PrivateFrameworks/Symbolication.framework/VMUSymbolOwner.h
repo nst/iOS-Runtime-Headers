@@ -18,17 +18,12 @@
 
 + (id)symbolOwnerWithName:(id)arg1 signature:(id)arg2 textMemory:(id)arg3 regions:(id)arg4 symbols:(id)arg5 sourceInfos:(id)arg6 flags:(unsigned int)arg7 currentVersion:(unsigned int)arg8 compatibilityVersion:(unsigned int)arg9;
 
-- (id)regions;
 - (id)path;
 - (int)compare:(id)arg1;
 - (id)name;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)currentVersion;
-- (id)symbols;
-- (unsigned int)flags;
-- (unsigned long long)size;
 - (BOOL)isEqualToSymbolOwner:(id)arg1;
 - (BOOL)isDsym;
 - (BOOL)isBundle;
@@ -57,8 +52,13 @@
 - (id)symbolsForMangledName:(id)arg1;
 - (BOOL)isMachO;
 - (id)architecture;
+- (BOOL)validate;
+- (id)regions;
+- (id)symbols;
+- (unsigned int)flags;
+- (unsigned long long)size;
 - (BOOL)containsAddress:(unsigned long long)arg1;
 - (id)signature;
-- (BOOL)validate;
+- (unsigned int)currentVersion;
 
 @end

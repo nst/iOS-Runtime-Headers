@@ -19,11 +19,11 @@
 @property(retain) SWVicFileLogger * vicFileLogger;
 
 
-- (id)serialNumber;
+- (id)transportType;
 - (void)dealloc;
 - (id)init;
+- (id)serialNumber;
 - (void)deactivate;
-- (id)transportType;
 - (void)setVicFileLogger:(id)arg1;
 - (id)vicFileLogger;
 - (id)searchState;

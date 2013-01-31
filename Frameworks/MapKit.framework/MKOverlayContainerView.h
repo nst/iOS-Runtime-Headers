@@ -19,6 +19,9 @@
 @property(readonly) NSArray * overlays;
 
 
+- (void)addOverlay:(id)arg1;
+- (void)removeOverlay:(id)arg1;
+- (id)overlays;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
@@ -44,10 +47,7 @@
 - (void)removeOverlays:(id)arg1;
 - (void)addOverlays:(id)arg1;
 - (void)setMapZoomScale:(float)arg1;
-- (void)setLevelCrossFade:(BOOL)arg1;
 - (void)addAndRemoveOverlayViews;
-- (void)addOverlay:(id)arg1;
-- (void)removeOverlay:(id)arg1;
-- (id)overlays;
+- (void)setLevelCrossFade:(BOOL)arg1;
 
 @end

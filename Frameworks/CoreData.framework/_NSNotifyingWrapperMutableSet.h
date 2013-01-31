@@ -22,7 +22,6 @@
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (unsigned int)count;
-- (id)initWithContainer:(id)arg1 key:(id)arg2 mutableSet:(id)arg3;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)member:(id)arg1;
 - (BOOL)isEqualToSet:(id)arg1;
@@ -42,5 +41,6 @@
 - (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (void)getObjects:(id*)arg1;
 - (id)descriptionWithLocale:(id)arg1;
+- (id)initWithContainer:(id)arg1 key:(id)arg2 mutableSet:(id)arg3;
 
 @end

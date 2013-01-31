@@ -26,7 +26,7 @@
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
-- (double)interval;
 - (void)fireIn:(double)arg1 fromNow:(double)arg2;
+- (double)interval;
 
 @end

@@ -12,8 +12,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)properties;
-- (id)initWithStyle:(id)arg1;
 - (void)appendPropertyForName:(id)arg1 oadTextSpacing:(id)arg2 lineHeight:(float)arg3 unit:(int)arg4;
 - (void)appendPropertyForName:(id)arg1 oadTextSpacing:(id)arg2;
 - (void)appendPropertyForName:(id)arg1 oadTextSpacing:(id)arg2 unit:(int)arg3;
@@ -31,5 +29,7 @@
 - (void)appendPropertyForName:(id)arg1 stringValue:(id)arg2;
 - (void)appendPropertyForName:(id)arg1 stringWithColons:(id)arg2;
 - (void)appendPropertyForName:(id)arg1 intValue:(int)arg2;
+- (id)properties;
+- (id)initWithStyle:(id)arg1;
 
 @end

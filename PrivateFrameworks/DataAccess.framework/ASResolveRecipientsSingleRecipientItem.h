@@ -21,8 +21,8 @@
 
 - (id)description;
 - (id)emailAddress;
-- (id)certificates;
 - (void)setCertificates:(id)arg1;
+- (id)certificates;
 - (void)setEmailAddress:(id)arg1;
 
 @end

@@ -13,11 +13,8 @@
 }
 
 
-- (void)_fadeOut;
 - (void)dealloc;
 - (id)init;
-- (void)startAnimating;
-- (void)stopAnimating;
 - (void)focusDidEnd;
 - (void)_fadeOutDidFinish;
 - (double)fadeOutDuration;
@@ -27,5 +24,8 @@
 - (id)nameForDarkImage;
 - (id)nameForLightImage;
 - (void)_loadImagesWithImageSize:(struct CGSize { float x1; float x2; }*)arg1;
+- (void)startAnimating;
+- (void)stopAnimating;
+- (void)_fadeOut;
 
 @end

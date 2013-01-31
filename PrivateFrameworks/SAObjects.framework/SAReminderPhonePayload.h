@@ -12,9 +12,9 @@
 + (id)phonePayloadWithDictionary:(id)arg1 context:(id)arg2;
 + (id)phonePayload;
 
+- (id)encodedClassName;
 - (id)recipient;
 - (void)setRecipient:(id)arg1;
 - (id)groupIdentifier;
-- (id)encodedClassName;
 
 @end

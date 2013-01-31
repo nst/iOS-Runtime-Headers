@@ -16,6 +16,7 @@
 
 
 - (BOOL)isForShortcutConversion;
+- (BOOL)isEmojiCandidate;
 - (BOOL)isExtensionCandidate;
 - (id)displayReading;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

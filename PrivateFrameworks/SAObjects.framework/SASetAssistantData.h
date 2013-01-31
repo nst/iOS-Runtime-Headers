@@ -32,21 +32,6 @@
 + (id)setAssistantDataWithDictionary:(id)arg1 context:(id)arg2;
 + (id)setAssistantData;
 
-- (void)setDeviceVersion:(id)arg1;
-- (id)deviceVersion;
-- (id)groupIdentifier;
-- (void)setLastName:(id)arg1;
-- (id)lastName;
-- (void)setFirstName:(id)arg1;
-- (id)firstName;
-- (void)setAnchor:(id)arg1;
-- (id)anchor;
-- (id)osVersion;
-- (void)setOsVersion:(id)arg1;
-- (void)setCountryCode:(id)arg1;
-- (id)countryCode;
-- (id)region;
-- (void)setRegion:(id)arg1;
 - (void)setUiScale:(id)arg1;
 - (id)uiScale;
 - (void)setTwentyFourHourTimeDisplay:(id)arg1;
@@ -72,5 +57,20 @@
 - (void)setTimeZoneId:(id)arg1;
 - (id)timeZoneId;
 - (id)encodedClassName;
+- (id)region;
+- (void)setRegion:(id)arg1;
+- (void)setCountryCode:(id)arg1;
+- (id)countryCode;
+- (void)setDeviceVersion:(id)arg1;
+- (id)deviceVersion;
+- (id)osVersion;
+- (void)setOsVersion:(id)arg1;
+- (void)setAnchor:(id)arg1;
+- (id)anchor;
+- (id)groupIdentifier;
+- (void)setLastName:(id)arg1;
+- (id)lastName;
+- (void)setFirstName:(id)arg1;
+- (id)firstName;
 
 @end

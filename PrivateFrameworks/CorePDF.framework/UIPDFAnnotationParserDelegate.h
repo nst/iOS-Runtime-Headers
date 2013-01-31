@@ -14,9 +14,9 @@
 @property(readonly) BOOL parseError;
 
 
-- (BOOL)parseError;
 - (void)dealloc;
 - (id)init;
+- (BOOL)parseError;
 - (void)setAnnotation:(id)arg1;
 - (id)annotation;
 - (void)parserDidStartDocument:(id)arg1;

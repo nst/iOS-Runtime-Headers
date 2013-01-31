@@ -20,16 +20,13 @@
 @property int formattedAddressType;
 
 
-- (id)formattedAddressLines;
-- (id)structuredAddress;
-- (id)addressDictionary;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setHasFormattedAddressType:(BOOL)arg1;
 - (void)setFormattedAddressType:(int)arg1;
 - (int)formattedAddressType;
@@ -39,10 +36,13 @@
 - (unsigned int)formattedAddressLinesCount;
 - (void)addFormattedAddressLine:(id)arg1;
 - (void)setStructuredAddress:(id)arg1;
+- (id)addressDictionary;
 - (id)initWithAddressString:(id)arg1;
+- (id)structuredAddress;
 - (BOOL)hasStructuredAddress;
+- (id)formattedAddressLines;
 - (void)setFormattedAddressLines:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 - (id)singleLineAddress;
 
 @end

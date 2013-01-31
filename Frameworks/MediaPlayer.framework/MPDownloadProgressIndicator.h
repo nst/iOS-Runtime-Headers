@@ -23,12 +23,22 @@
 @property float value;
 @property BOOL canCancel;
 
++ (id)_baseImageForStyle:(int)arg1;
 + (id)_nonstopImageForStyle:(int)arg1;
 + (id)_fillImageForStyle:(int)arg1;
 + (id)_stopImageForStyle:(int)arg1;
 + (struct CGSize { float x1; float x2; })_sizeForStyle:(int)arg1;
-+ (id)_baseImageForStyle:(int)arg1;
 
+- (void)dealloc;
+- (id)initWithStyle:(int)arg1;
+- (void)setValue:(float)arg1 animated:(BOOL)arg2;
+- (float)value;
+- (void)setValue:(float)arg1;
+- (int)style;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
+- (void)setHidden:(BOOL)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)updateFromObserver:(id)arg1;
 - (void)setCanCancel:(BOOL)arg1;
 - (BOOL)canCancel;
@@ -38,14 +48,5 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_centerImageViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 forStyle:(int)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_fillFrameForSize:(struct CGSize { float x1; float x2; })arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_baseFrameForSize:(struct CGSize { float x1; float x2; })arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)dealloc;
-- (id)initWithStyle:(int)arg1;
-- (void)setValue:(float)arg1 animated:(BOOL)arg2;
-- (float)value;
-- (void)setValue:(float)arg1;
-- (int)style;
-- (void)layoutSubviews;
-- (void)setHidden:(BOOL)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

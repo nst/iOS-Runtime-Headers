@@ -13,7 +13,6 @@
 @property int keybagOptions;
 
 
-- (id)initWithAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
 - (void)dealloc;
 - (void)setKeybagOptions:(int)arg1;
@@ -22,5 +21,6 @@
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)accountID;
+- (id)initWithAccountIdentifier:(id)arg1;
 
 @end

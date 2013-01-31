@@ -17,7 +17,7 @@
 - (void)setReview:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (id)init;
 - (id)attributeKeys;
+- (id)init;
 
 @end

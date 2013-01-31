@@ -33,6 +33,7 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (void)encodeObject:(id)arg1;
 - (void)encodeRootObject:(id)arg1;
 - (int)versionForClassName:(id)arg1;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
@@ -49,9 +50,6 @@
 - (id)initForWritingWithMutableData:(id)arg1;
 - (void)encodeBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;
-- (void)encodeInt32:(int)arg1 forKey:(id)arg2;
-- (void)_encodePropertyList:(id)arg1 forKey:(id)arg2;
-- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
 - (void)setRequiresSecureCoding:(BOOL)arg1;
 - (void)setOutputFormat:(unsigned int)arg1;
 - (id)_blobForCurrentObject;
@@ -69,6 +67,8 @@
 - (void)encodeValuesOfObjCTypes:(const char *)arg1;
 - (void)encodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(const void*)arg3;
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;
-- (void)encodeObject:(id)arg1;
+- (void)encodeInt32:(int)arg1 forKey:(id)arg2;
+- (void)_encodePropertyList:(id)arg1 forKey:(id)arg2;
+- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
 
 @end

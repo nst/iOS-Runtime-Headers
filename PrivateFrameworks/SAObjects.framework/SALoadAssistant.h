@@ -19,11 +19,6 @@
 + (id)loadAssistantWithDictionary:(id)arg1 context:(id)arg2;
 + (id)loadAssistant;
 
-- (id)groupIdentifier;
-- (void)setLanguage:(id)arg1;
-- (id)language;
-- (void)setConnectionType:(id)arg1;
-- (id)connectionType;
 - (void)setSessionValidationData:(id)arg1;
 - (id)sessionValidationData;
 - (void)setSpeechId:(id)arg1;
@@ -33,5 +28,10 @@
 - (void)setActivationToken:(id)arg1;
 - (id)activationToken;
 - (id)encodedClassName;
+- (void)setConnectionType:(id)arg1;
+- (id)connectionType;
+- (void)setLanguage:(id)arg1;
+- (id)language;
+- (id)groupIdentifier;
 
 @end

@@ -16,15 +16,15 @@
 
 + (id)codedPropertyKeys;
 
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)reason;
 - (void)setEngineID:(id)arg1;
 - (id)engineID;
 - (void)setReason:(id)arg1;
 - (id)serverRepresentation;
 - (void)setGame:(id)arg1;
 - (id)game;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)reason;
 
 @end

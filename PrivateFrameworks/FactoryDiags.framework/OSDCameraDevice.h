@@ -17,15 +17,15 @@
 @property unsigned int cameraPosition;
 
 
+- (unsigned int)cameraPosition;
+- (void)setCameraPosition:(unsigned int)arg1;
 - (id)init;
+- (BOOL)stopStreaming;
 - (unsigned int)getErrorCount;
 - (BOOL)startStreaming;
 - (BOOL)off;
 - (id)initWithCameraPosition:(unsigned int)arg1;
 - (BOOL)openISPDevice;
 - (BOOL)on;
-- (unsigned int)cameraPosition;
-- (void)setCameraPosition:(unsigned int)arg1;
-- (BOOL)stopStreaming;
 
 @end

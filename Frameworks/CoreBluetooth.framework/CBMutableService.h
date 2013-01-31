@@ -16,9 +16,9 @@
 
 
 - (id)description;
+- (void)setCharacteristics:(id)arg1;
 - (void)setID:(id)arg1;
 - (id)ID;
-- (void)setCharacteristics:(id)arg1;
 - (id)initWithType:(id)arg1 primary:(BOOL)arg2;
 
 @end

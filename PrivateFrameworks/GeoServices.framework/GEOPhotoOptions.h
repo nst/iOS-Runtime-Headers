@@ -22,13 +22,13 @@
 @property(readonly) int* photoSizes;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setPhotoSizes:(int*)arg1 count:(unsigned int)arg2;
 - (int*)photoSizes;
 - (void)addPhotoSize:(int)arg1;
@@ -41,6 +41,6 @@
 - (void)setPhotoType:(int)arg1;
 - (int)photoType;
 - (BOOL)hasPhotoType;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

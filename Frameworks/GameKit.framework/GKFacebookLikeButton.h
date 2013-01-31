@@ -5,23 +5,23 @@
 @class UIActivityIndicatorView, UIImageView, UILabel, UIButton, GKUITheme, NSURL, GKOpenGraphNode;
 
 @interface GKFacebookLikeButton : UIView  {
-    UILabel *_labelView;
-    UIButton *_button;
-    int _loading;
-    GKUITheme *_theme;
-    UIImageView *_logoImageView;
-    UIActivityIndicatorView *_spinner;
-    int _numberOfLines;
     BOOL _liked;
+    BOOL _connectionError;
+    GKUITheme *_theme;
+    unsigned int _numberOfFriendLikes;
+    unsigned int _numberOfLikes;
     struct CGSize { 
         float width; 
         float height; 
     } _cachedButtonSize;
-    unsigned int _numberOfFriendLikes;
-    float _paddingBetweenButtonAndLabel;
-    unsigned int _numberOfLikes;
     GKOpenGraphNode *_openGraphNode;
-    BOOL _connectionError;
+    UIImageView *_logoImageView;
+    int _numberOfLines;
+    UIActivityIndicatorView *_spinner;
+    float _paddingBetweenButtonAndLabel;
+    UILabel *_labelView;
+    UIButton *_button;
+    int _loading;
 }
 
 @property float paddingBetweenButtonAndLabel;
@@ -41,13 +41,27 @@
 @property(retain) GKUITheme * theme;
 
 
-- (void)setConnectionError:(BOOL)arg1;
-- (BOOL)connectionError;
+- (id)button;
+- (void)dealloc;
+- (void)setTheme:(id)arg1;
+- (id)theme;
+- (id)spinner;
+- (void)buttonPressed:(id)arg1;
+- (id)titleColorForState:(unsigned int)arg1;
+- (BOOL)isLoading;
+- (void)setNumberOfLines:(int)arg1;
+- (int)numberOfLines;
+- (BOOL)isEnabled;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setSpinner:(id)arg1;
+- (void)setLogoImageView:(id)arg1;
 - (id)openGraphNode;
 - (void)setCachedButtonSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })cachedButtonSize;
-- (void)setSpinner:(id)arg1;
-- (void)setLogoImageView:(id)arg1;
+- (void)setConnectionError:(BOOL)arg1;
+- (BOOL)connectionError;
 - (id)openGraphURL;
 - (void)sendLikeRequest;
 - (void)sendDislikeRequest;
@@ -78,19 +92,5 @@
 - (id)labelView;
 - (void)setLoading:(int)arg1;
 - (int)loading;
-- (void)dealloc;
-- (id)spinner;
-- (void)buttonPressed:(id)arg1;
-- (id)titleColorForState:(unsigned int)arg1;
-- (BOOL)isLoading;
-- (void)setNumberOfLines:(int)arg1;
-- (int)numberOfLines;
-- (BOOL)isEnabled;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)button;
-- (void)setTheme:(id)arg1;
-- (id)theme;
 
 @end

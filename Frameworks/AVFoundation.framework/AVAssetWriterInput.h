@@ -35,13 +35,14 @@
 - (void)dealloc;
 - (id)init;
 - (id)mediaType;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (id)languageCode;
 - (void)finalize;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
+- (id)_helper;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 - (BOOL)_appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)_setAttachedToPixelBufferAdaptor:(BOOL)arg1;
 - (BOOL)_isAttachedToPixelBufferAdaptor;
@@ -82,6 +83,5 @@
 - (void)setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
 - (int)_status;
 - (id)extendedLanguageTag;
-- (id)_helper;
 
 @end

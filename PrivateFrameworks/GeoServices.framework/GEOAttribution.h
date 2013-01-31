@@ -21,18 +21,16 @@
 @property(retain) NSString * url;
 
 
+- (BOOL)hasName;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)name;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)setUrl:(id)arg1;
-- (id)url;
-- (id)dictionaryRepresentation;
-- (BOOL)hasName;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setLogo:(id)arg1;
 - (void)setBadge:(id)arg1;
 - (BOOL)hasUrl;
@@ -40,6 +38,8 @@
 - (BOOL)hasLogo;
 - (id)badge;
 - (BOOL)hasBadge;
-- (BOOL)readFrom:(id)arg1;
+- (void)setUrl:(id)arg1;
+- (id)url;
+- (id)dictionaryRepresentation;
 
 @end

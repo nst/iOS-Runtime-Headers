@@ -14,9 +14,9 @@
 
 
 - (void)dealloc;
-- (int)status;
-- (int)key;
 - (id)result;
 - (id)initWithKey:(int)arg1 status:(int)arg2 result:(id)arg3;
+- (int)status;
+- (int)key;
 
 @end

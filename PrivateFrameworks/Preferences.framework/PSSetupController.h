@@ -11,15 +11,15 @@
 }
 
 
-- (void)pushController:(id)arg1;
-- (void)handleURL:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)popControllerOnParent;
 - (void)pushControllerOnParentWithSpecifier:(id)arg1;
 - (void)statusBarWillChangeHeight:(id)arg1;
 - (BOOL)popupStyleIsModal;
 - (BOOL)usePopupStyle;
-- (void)dealloc;
-- (id)init;
+- (void)pushController:(id)arg1;
+- (void)handleURL:(id)arg1;
 - (void)setupController;
 - (void)setParentController:(id)arg1;
 - (id)parentController;

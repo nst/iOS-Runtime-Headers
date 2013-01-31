@@ -15,15 +15,15 @@
 }
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)table;
+- (int)rowSpan;
 - (void)_setColumnSpan:(int)arg1;
 - (void)_setRowSpan:(int)arg1;
 - (int)startingColumn;
 - (id)initWithTable:(id)arg1 startingRow:(int)arg2 rowSpan:(int)arg3 startingColumn:(int)arg4 columnSpan:(int)arg5;
 - (int)startingRow;
-- (int)rowSpan;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (int)columnSpan;
+- (id)table;
 
 @end

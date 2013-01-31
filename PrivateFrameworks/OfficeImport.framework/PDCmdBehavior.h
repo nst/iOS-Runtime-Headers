@@ -11,8 +11,8 @@
 
 
 - (int)type;
-- (void)setType:(int)arg1;
 - (id)cmd;
 - (void)setCmd:(id)arg1;
+- (void)setType:(int)arg1;
 
 @end

@@ -16,15 +16,6 @@
 
 + (void)preheatMediaPicker;
 
-- (void)setAllowsPickingMultipleItems:(BOOL)arg1;
-- (BOOL)allowsPickingMultipleItems;
-- (id)initWithMediaTypes:(int)arg1;
-- (BOOL)showsCloudItems;
-- (void)modalContextDidDismiss:(id)arg1 withSuccess:(BOOL)arg2;
-- (void)mediaPickerModalContext:(id)arg1 didPickMediaItems:(id)arg2;
-- (void)_pickerDidPickItems:(id)arg1;
-- (void)_pickerDidCancel;
-- (void)setShowsCloudItems:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
@@ -35,5 +26,14 @@
 - (void)loadView;
 - (void)setPrompt:(id)arg1;
 - (id)prompt;
+- (BOOL)showsCloudItems;
+- (BOOL)allowsPickingMultipleItems;
+- (void)modalContextDidDismiss:(id)arg1 withSuccess:(BOOL)arg2;
+- (void)mediaPickerModalContext:(id)arg1 didPickMediaItems:(id)arg2;
+- (void)_pickerDidPickItems:(id)arg1;
+- (void)_pickerDidCancel;
+- (void)setShowsCloudItems:(BOOL)arg1;
+- (void)setAllowsPickingMultipleItems:(BOOL)arg1;
+- (id)initWithMediaTypes:(int)arg1;
 
 @end

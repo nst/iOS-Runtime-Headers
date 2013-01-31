@@ -70,27 +70,18 @@
 @property(readonly) long long* geoIds;
 
 
-- (id)ocean;
-- (id)inlandWater;
-- (id)fullThoroughfare;
-- (id)subAdministrativeArea;
-- (id)administrativeArea;
-- (id)subLocality;
-- (id)locality;
-- (id)subThoroughfare;
-- (id)thoroughfare;
-- (id)areaOfInterests;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (id)countryCode;
 - (id)subPremises;
 - (id)dependentLocalitys;
+- (id)areaOfInterests;
 - (void)setGeoIds:(long long*)arg1 count:(unsigned int)arg2;
 - (long long*)geoIds;
 - (void)addGeoId:(long long)arg1;
@@ -130,25 +121,34 @@
 - (void)setLocality:(id)arg1;
 - (void)setSubAdministrativeArea:(id)arg1;
 - (void)setAdministrativeArea:(id)arg1;
+- (id)inlandWater;
 - (BOOL)hasInlandWater;
+- (id)ocean;
 - (BOOL)hasOcean;
 - (id)postCodeExtension;
 - (BOOL)hasPostCodeExtension;
 - (id)postCode;
 - (BOOL)hasPostCode;
+- (id)subThoroughfare;
 - (BOOL)hasSubThoroughfare;
+- (id)thoroughfare;
 - (BOOL)hasThoroughfare;
+- (id)fullThoroughfare;
 - (BOOL)hasFullThoroughfare;
 - (id)premises;
 - (BOOL)hasPremises;
+- (id)subLocality;
 - (BOOL)hasSubLocality;
+- (id)locality;
 - (BOOL)hasLocality;
+- (id)subAdministrativeArea;
 - (BOOL)hasSubAdministrativeArea;
+- (id)administrativeArea;
 - (BOOL)hasAdministrativeArea;
 - (BOOL)hasCountryCode;
 - (BOOL)hasCountry;
+- (id)dictionaryRepresentation;
 - (id)country;
 - (void)setCountry:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
 
 @end

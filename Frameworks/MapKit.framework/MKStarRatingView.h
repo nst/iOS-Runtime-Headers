@@ -30,8 +30,6 @@
 @property(retain) UIImage * emptyStarHighlightedImage;
 
 
-- (void)setRating:(float)arg1;
-- (float)rating;
 - (void)dealloc;
 - (void)setPadding:(float)arg1;
 - (BOOL)isHighlighted;
@@ -53,5 +51,7 @@
 - (id)fullStarImage;
 - (void)setNumberOfRatingLevels:(int)arg1;
 - (int)numberOfRatingLevels;
+- (void)setRating:(float)arg1;
+- (float)rating;
 
 @end

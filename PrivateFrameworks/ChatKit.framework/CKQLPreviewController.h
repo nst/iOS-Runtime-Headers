@@ -13,13 +13,13 @@
 
 - (void)dealloc;
 - (id)init;
+- (id)previewItems;
+- (void)setPreviewItems:(id)arg1;
+- (id)currentPreviewItem;
 - (id)previewController:(id)arg1 previewItemAtIndex:(int)arg2;
 - (int)numberOfPreviewItemsInPreviewController:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)setDataSource:(id)arg1;
-- (id)previewItems;
-- (void)setPreviewItems:(id)arg1;
-- (id)currentPreviewItem;
 
 @end

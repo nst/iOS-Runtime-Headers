@@ -19,18 +19,18 @@
 
 + (int)cellStyle;
 
-- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 specifier:(id)arg3;
-- (BOOL)canReload;
-- (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)endEditingAndSave;
 - (void)_saveForExit;
 - (void)_setValueChanged;
 - (void)cellRemovedFromView;
-- (void)setPlaceholderText:(id)arg1;
+- (void)setCellEnabled:(BOOL)arg1;
+- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 specifier:(id)arg3;
+- (BOOL)canReload;
+- (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (void)controlChanged:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)dealloc;
 - (id)textField;
 - (id)value;
 - (void)setValue:(id)arg1;
@@ -47,6 +47,6 @@
 - (BOOL)resignFirstResponder;
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
-- (void)setCellEnabled:(BOOL)arg1;
+- (void)setPlaceholderText:(id)arg1;
 
 @end

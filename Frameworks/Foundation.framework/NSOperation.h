@@ -21,7 +21,6 @@
 - (void)dealloc;
 - (oneway void)release;
 - (id)init;
-- (id)_implicitObservationInfo;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
 - (void*)observationInfo;
@@ -30,7 +29,6 @@
 - (void)start;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
-- (void)setObservationInfo:(void*)arg1;
 - (BOOL)isAsynchronous;
 - (BOOL)isConcurrent;
 - (id)__;
@@ -44,8 +42,10 @@
 - (void)setThreadPriority:(double)arg1;
 - (double)threadPriority;
 - (BOOL)isReady;
-- (void)NSOperationAdditions_dealloc;
+- (void)setObservationInfo:(void*)arg1;
+- (id)_implicitObservationInfo;
 - (unsigned int)tag;
 - (void)setTag:(unsigned int)arg1;
+- (void)NSOperationAdditions_dealloc;
 
 @end

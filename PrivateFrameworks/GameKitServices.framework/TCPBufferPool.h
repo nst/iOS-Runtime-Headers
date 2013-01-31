@@ -13,9 +13,9 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)finalize;
 - (void)returnBufferToPool:(char *)arg1;
 - (char *)getBufferFromPool:(int)arg1;
 - (void)monitorBufferPool;
+- (void)finalize;
 
 @end

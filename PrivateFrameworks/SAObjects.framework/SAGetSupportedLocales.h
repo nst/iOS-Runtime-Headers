@@ -13,7 +13,7 @@
 + (id)getSupportedLocalesWithDictionary:(id)arg1 context:(id)arg2;
 + (id)getSupportedLocales;
 
-- (id)groupIdentifier;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -16,10 +16,12 @@
 @property(readonly) NSArray * trackedRegistrations;
 @property(readonly) NSArray * authenticatedRegistrations;
 
-+ (BOOL)systemSupportsRegistrationInfo:(id)arg1;
 + (id)sharedInstance;
++ (BOOL)systemSupportsRegistrationInfo:(id)arg1;
 + (void)initialize;
 
+- (void)dealloc;
+- (id)init;
 - (id)authenticatedRegistrations;
 - (id)trackedRegistrations;
 - (void)_systemConfigurationPrefsChanged;
@@ -67,8 +69,6 @@
 - (void)center:(id)arg1 noteRegistrationRequired:(id)arg2;
 - (void)center:(id)arg1 succeededRegionValidation:(id)arg2 regionID:(id)arg3 phoneNumber:(id)arg4 extraContext:(id)arg5 verified:(BOOL)arg6;
 - (void)center:(id)arg1 succeededInitialRegionQuery:(id)arg2;
-- (void)dealloc;
-- (id)init;
 - (void)removeListener:(id)arg1;
 - (void)addListener:(id)arg1;
 

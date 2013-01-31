@@ -8,11 +8,16 @@
     int _orientation;
 }
 
-+ (Class)layerClass;
 + (id)sharedModule;
++ (Class)layerClass;
 
-- (BOOL)showing;
 - (void)dealloc;
+- (void)initLayer:(id)arg1;
+- (id)createLayer;
+- (void)orderIn;
+- (BOOL)handleEvent:(struct __GSEvent { }*)arg1 inLayer:(id)arg2;
+- (void)addContentToLayer:(id)arg1;
+- (id)addButtonWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 text:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 - (void)setOrientation:(int)arg1;
 - (void)hide;
 - (void)setContext:(id)arg1;
@@ -23,12 +28,7 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)addContentToLayer:(id)arg1;
-- (id)addButtonWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 text:(id)arg2 target:(id)arg3 action:(SEL)arg4;
-- (void)initLayer:(id)arg1;
-- (id)createLayer;
-- (void)orderIn;
-- (BOOL)handleEvent:(struct __GSEvent { }*)arg1 inLayer:(id)arg2;
 - (void)runActionForKey:(id)arg1 object:(id)arg2 arguments:(id)arg3;
+- (BOOL)showing;
 
 @end

@@ -43,12 +43,6 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)dealloc;
-- (oneway void)release;
-- (void)_invalidate;
-- (void)finalize;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (void)disposeGlyphStack;
 - (void)popGlyph:(long)arg1;
 - (void)pushGlyph:(long)arg1;
@@ -74,5 +68,11 @@
 - (struct __CTTypesetter { }*)createCTTypesetter;
 - (void)setGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 characterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithTypesetter:(id)arg1;
+- (void)dealloc;
+- (oneway void)release;
+- (void)_invalidate;
+- (void)finalize;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 
 @end

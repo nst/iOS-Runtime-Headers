@@ -13,12 +13,12 @@
 + (id)listSearchWithDictionary:(id)arg1 context:(id)arg2;
 + (id)listSearch;
 
-- (id)groupIdentifier;
 - (void)setName:(id)arg1;
 - (id)name;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

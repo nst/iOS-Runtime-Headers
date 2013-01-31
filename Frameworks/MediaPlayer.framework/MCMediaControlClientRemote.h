@@ -6,7 +6,8 @@
 }
 
 
-- (void)setPassword:(id)arg1;
+- (void)invalidate;
+- (void)dealloc;
 - (void)setRate:(float)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)setPosition:(float)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)getPlaybackInfoWithOptions:(unsigned int)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
@@ -18,8 +19,7 @@
 - (void)getVolumeWithOptions:(unsigned int)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)getPositionWithOptions:(unsigned int)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)playWithLocalFilePath:(id)arg1 startPosition:(float)arg2 playInfo:(id)arg3 completionQueue:(id)arg4 completionBlock:(id)arg5;
-- (void)invalidate;
-- (void)dealloc;
 - (void)setHost:(id)arg1;
+- (void)setPassword:(id)arg1;
 
 @end

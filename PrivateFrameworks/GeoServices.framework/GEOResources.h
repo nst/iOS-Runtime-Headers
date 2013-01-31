@@ -35,15 +35,6 @@
 @property(retain) NSString * resourcesURL;
 
 
-- (id)authToken;
-- (void)setAuthToken:(id)arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)icons;
-- (void)setIcons:(id)arg1;
-- (id)dictionaryRepresentation;
 - (id)styleSheets;
 - (void)setAttributions:(id)arg1;
 - (void)clearIcons;
@@ -51,6 +42,13 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)attributions;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)fontAtIndex:(unsigned int)arg1;
+- (id)fonts;
+- (BOOL)readFrom:(id)arg1;
 - (id)attributionBadges;
 - (id)xmls;
 - (id)regionalResources;
@@ -106,8 +104,10 @@
 - (void)clearAttributions;
 - (unsigned int)attributionsCount;
 - (void)addAttribution:(id)arg1;
-- (id)fontAtIndex:(unsigned int)arg1;
-- (id)fonts;
-- (BOOL)readFrom:(id)arg1;
+- (id)icons;
+- (void)setIcons:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)authToken;
+- (void)setAuthToken:(id)arg1;
 
 @end

@@ -84,6 +84,7 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)_handleError:(id)arg1;
 - (float)contentHeight;
 - (id)initWithStyle:(int)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
@@ -106,6 +107,5 @@
 - (void)setShowsEditButtonAtRightSideOfCurrentNavigationController:(BOOL)arg1;
 - (id)initWithVibrationType:(int)arg1 avController:(id)arg2 showsDefault:(BOOL)arg3 showsUserGenerated:(BOOL)arg4 showsNone:(BOOL)arg5;
 - (void)_handleUserGeneratedVibrationsDidChangeNotification;
-- (void)_handleError:(id)arg1;
 
 @end

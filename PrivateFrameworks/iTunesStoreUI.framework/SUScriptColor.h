@@ -15,8 +15,8 @@
 @property(readonly) float alpha;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (void)setWhite:(float)arg1 alpha:(float)arg2;
 - (void)setRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
@@ -26,13 +26,13 @@
 - (id)initWithStyleString:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)stringRepresentation;
+- (id)attributeKeys;
 - (void)dealloc;
+- (id)initWithUIColor:(id)arg1;
 - (float)blue;
 - (float)green;
 - (float)red;
 - (float)alpha;
-- (id)stringRepresentation;
-- (id)attributeKeys;
-- (id)initWithUIColor:(id)arg1;
 
 @end

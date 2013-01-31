@@ -29,6 +29,7 @@
 @property int publishBatchSize;
 @property <MSPublisherDelegate> * delegate;
 
++ (void)forgetPersonID:(id)arg1;
 + (id)nextActivityDateForPersonID:(id)arg1;
 + (void)_setMasterNextActivityDate:(id)arg1 forPersonID:(id)arg2;
 + (id)_clearInstantiatedPublishersByPersonID;
@@ -38,14 +39,12 @@
 + (BOOL)isInRetryState;
 + (id)personIDsWithOutstandingActivities;
 + (id)nextActivityDate;
-+ (void)forgetPersonID:(id)arg1;
 
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)stop;
-- (void)deactivate;
+- (void)abort;
 - (void)setPublishTargetByteCount:(long long)arg1;
 - (long long)publishTargetByteCount;
 - (id)storageProtocolURL;
@@ -85,7 +84,8 @@
 - (void)computeHashForAsset:(id)arg1;
 - (BOOL)enqueueAssetCollections:(id)arg1 outError:(id*)arg2;
 - (void)setDaemon:(id)arg1;
+- (void)stop;
+- (void)deactivate;
 - (void)publish;
-- (void)abort;
 
 @end

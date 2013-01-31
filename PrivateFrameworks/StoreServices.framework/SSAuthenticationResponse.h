@@ -26,8 +26,6 @@
 @property(readonly) NSString * userMessage;
 
 
-- (id)accountName;
-- (id)responseDictionary;
 - (id)_valueForFirstAvailableKey:(id)arg1;
 - (int)responseType;
 - (int)enabledServiceTypes;
@@ -35,6 +33,7 @@
 - (void)setURLBagType:(int)arg1;
 - (id)creditsString;
 - (id)storeFrontIdentifier;
+- (int)URLBagType;
 - (id)URLResponse;
 - (void)dealloc;
 - (id)userMessage;
@@ -45,8 +44,9 @@
 - (id)failureType;
 - (id)newAccount;
 - (id)initWithURLResponse:(id)arg1 dictionary:(id)arg2;
-- (int)URLBagType;
 - (int)availableServiceTypes;
 - (id)token;
+- (id)responseDictionary;
+- (id)accountName;
 
 @end

@@ -19,9 +19,6 @@
 @property(retain) NSNumber * proxyPort;
 
 
-- (void)setPassword:(id)arg1;
-- (id)username;
-- (void)setUsername:(id)arg1;
 - (id)description;
 - (void).cxx_destruct;
 - (id)proxyPort;
@@ -33,5 +30,8 @@
 - (void)setProxy:(id)arg1;
 - (void)setApnName:(id)arg1;
 - (id)password;
+- (void)setPassword:(id)arg1;
+- (id)username;
+- (void)setUsername:(id)arg1;
 
 @end

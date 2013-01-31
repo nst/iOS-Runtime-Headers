@@ -20,7 +20,6 @@
 }
 
 
-- (void)dealloc;
 - (id)_actionForEmptyResults;
 - (struct __VSRecognition { }*)_createRecognitionInstanceWithCallbacks:(struct { int (*x1)(); int (*x2)(); int (*x3)(); }*)arg1 info:(void*)arg2;
 - (id)_keywords;
@@ -37,6 +36,7 @@
 - (struct __VSRecognitionDisambiguationContext { }*)_disambiguationContext;
 - (BOOL)_keywordIndexChanged;
 - (int)completionType;
+- (void)dealloc;
 - (void)setKeywords:(id)arg1;
 
 @end

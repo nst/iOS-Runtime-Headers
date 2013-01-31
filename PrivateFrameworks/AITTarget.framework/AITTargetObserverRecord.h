@@ -23,8 +23,8 @@
 + (id)recordForObserver:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2 block:(id)arg3;
 
 - (void)dealloc;
-- (id)handler;
 - (struct dispatch_queue_s { }*)queue;
 - (id)observer;
+- (id)handler;
 
 @end

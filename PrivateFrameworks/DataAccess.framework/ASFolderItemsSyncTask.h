@@ -48,8 +48,6 @@
 @property(retain) NSArray * pushedActions;
 
 
-- (void)finishWithError:(id)arg1;
-- (double)percentComplete;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithFolderID:(id)arg1;
@@ -104,6 +102,8 @@
 - (id)requestBody;
 - (int)commandCode;
 - (int)taskStatusForExchangeStatus:(int)arg1;
+- (void)finishWithError:(id)arg1;
+- (double)percentComplete;
 - (void)setActions:(id)arg1;
 - (id)actions;
 

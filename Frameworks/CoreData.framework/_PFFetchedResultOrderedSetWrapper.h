@@ -26,12 +26,6 @@
 - (oneway void)release;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (unsigned int)count;
-- (id)managedObjectIDAtIndex:(unsigned int)arg1;
-- (unsigned int)indexOfManagedObjectForObjectID:(id)arg1;
-- (id)arrayFromObjectIDs;
-- (id)newArrayFromObjectIDs;
-- (Class)classForArchiver;
-- (void)willRead;
 - (BOOL)isEqualToOrderedSet:(id)arg1;
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (id)sortedArrayUsingComparator:(id)arg1;
@@ -51,5 +45,11 @@
 - (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
 - (void)getObjects:(id*)arg1;
 - (id)descriptionWithLocale:(id)arg1;
+- (id)managedObjectIDAtIndex:(unsigned int)arg1;
+- (unsigned int)indexOfManagedObjectForObjectID:(id)arg1;
+- (id)arrayFromObjectIDs;
+- (id)newArrayFromObjectIDs;
+- (Class)classForArchiver;
+- (void)willRead;
 
 @end

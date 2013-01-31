@@ -16,9 +16,7 @@
 @property int manifestFormat;
 
 
-- (id)initWithURLRequest:(id)arg1;
 - (void)setManifestFormat:(int)arg1;
-- (id)URLRequest;
 - (void)dealloc;
 - (id)init;
 - (void)startWithCompletionBlock:(id)arg1;
@@ -29,5 +27,7 @@
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)start;
+- (id)URLRequest;
+- (id)initWithURLRequest:(id)arg1;
 
 @end

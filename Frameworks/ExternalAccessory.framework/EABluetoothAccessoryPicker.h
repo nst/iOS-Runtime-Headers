@@ -13,12 +13,12 @@
 
 + (void)wakeSelectedBluetoothAccessories:(id)arg1;
 
-- (void)dismissPicker;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (id)initWithPredicate:(id)arg1;
 - (void)show;
+- (void)dismissPicker;
 - (void)devicePicker:(id)arg1 didDismissWithResult:(int)arg2 device:(id)arg3;
 
 @end

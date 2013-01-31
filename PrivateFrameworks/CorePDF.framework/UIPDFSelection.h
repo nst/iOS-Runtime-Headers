@@ -18,6 +18,11 @@
 @property struct { int x1; int x2; } stringRange;
 
 
+- (id)archive;
+- (id)description;
+- (id)string;
+- (void)dealloc;
+- (void)copyToPasteboard;
 - (void)extendToParagraph;
 - (unsigned int)extendAtEnd:(unsigned int)arg1;
 - (unsigned int)extendAtStart:(unsigned int)arg1;
@@ -33,9 +38,7 @@
 - (id)initWithPage:(id)arg1 cgSelection:(struct CGPDFSelection { }*)arg2;
 - (struct { int x1; int x2; })stringRange;
 - (struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; })rectangleAtIndex:(unsigned int)arg1 scale:(float)arg2 inset:(float)arg3;
-- (id)description;
-- (id)string;
-- (void)dealloc;
+- (id)textAtIndex:(unsigned int)arg1;
 - (id)attributedStringAtIndex:(unsigned int)arg1;
 - (BOOL)getBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2 index:(unsigned int)arg3;
 - (unsigned int)numberOfRectangles;
@@ -44,8 +47,5 @@
 - (struct { int x1; int x2; })extent;
 - (BOOL)isEmpty;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (id)archive;
-- (id)textAtIndex:(unsigned int)arg1;
-- (void)copyToPasteboard;
 
 @end

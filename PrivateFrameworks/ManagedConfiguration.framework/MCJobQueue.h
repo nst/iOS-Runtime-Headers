@@ -26,6 +26,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
+- (void)enqueueJob:(id)arg1;
 - (void)setExecutionQueue:(id)arg1;
 - (id)executionQueue;
 - (void)abortEnqueuedJobsCompletionBlock:(id)arg1;
@@ -34,6 +35,5 @@
 - (BOOL)hasJobsEnqueued;
 - (void)setObserver:(id)arg1;
 - (id)observer;
-- (void)enqueueJob:(id)arg1;
 
 @end

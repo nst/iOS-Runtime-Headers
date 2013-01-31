@@ -32,16 +32,11 @@
 @property BOOL isCaption;
 @property(retain) NSString * content;
 
++ (id)comment;
 + (id)MSASPCommentFromProtocolDictionary:(id)arg1;
 + (BOOL)supportsSecureCoding;
-+ (id)comment;
 
-- (id)email;
-- (void)setEmail:(id)arg1;
-- (void)setLastName:(id)arg1;
-- (id)lastName;
-- (void)setFirstName:(id)arg1;
-- (id)firstName;
+- (void)setContent:(id)arg1;
 - (id)timestamp;
 - (void)setTimestamp:(id)arg1;
 - (id)description;
@@ -49,15 +44,8 @@
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)init;
-- (id)content;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setID:(int)arg1;
-- (int)ID;
-- (id)fullName;
-- (void)setFullName:(id)arg1;
-- (void)setContent:(id)arg1;
 - (BOOL)isDeletable;
+- (id)fullName;
 - (BOOL)isMine;
 - (void)setIsDeletable:(BOOL)arg1;
 - (void)setIsMine:(BOOL)arg1;
@@ -67,5 +55,17 @@
 - (BOOL)isCaption;
 - (void)setGUID:(id)arg1;
 - (id)GUID;
+- (void)setID:(int)arg1;
+- (int)ID;
+- (void)setFullName:(id)arg1;
+- (id)content;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)email;
+- (void)setEmail:(id)arg1;
+- (void)setLastName:(id)arg1;
+- (id)lastName;
+- (void)setFirstName:(id)arg1;
+- (id)firstName;
 
 @end

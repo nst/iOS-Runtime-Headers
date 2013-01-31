@@ -13,11 +13,11 @@
 + (id)defaultStyle;
 
 - (void)dealloc;
-- (id)borderStyle;
-- (void)setBorderStyle:(id)arg1;
-- (id)fill;
 - (void)applyOverridesFrom:(id)arg1;
 - (id)shallowCopy;
 - (void)setFill:(id)arg1;
+- (id)borderStyle;
+- (void)setBorderStyle:(id)arg1;
+- (id)fill;
 
 @end

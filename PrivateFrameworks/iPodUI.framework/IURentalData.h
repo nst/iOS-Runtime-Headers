@@ -32,14 +32,6 @@
 
 + (BOOL)_shouldReadDemoRentalInfoForMediaItem:(id)arg1;
 
-- (id)expirationDate;
-- (id)downloadIdentifier;
-- (id)initWithMediaItem:(id)arg1;
-- (BOOL)isPlaying;
-- (void)dealloc;
-- (id)init;
-- (void)setFailed:(BOOL)arg1;
-- (id)mediaPath;
 - (void)setFileProcessorInfo:(id)arg1;
 - (void)resetForReason:(unsigned int)arg1;
 - (id)nextEventDate;
@@ -67,6 +59,14 @@
 - (void)beginDeferringRentalEvents;
 - (id)_expirationDate;
 - (int)rentalState;
+- (void)dealloc;
+- (id)init;
+- (id)mediaPath;
 - (void)setLoaded:(BOOL)arg1;
+- (void)setFailed:(BOOL)arg1;
+- (id)downloadIdentifier;
+- (id)initWithMediaItem:(id)arg1;
+- (BOOL)isPlaying;
+- (id)expirationDate;
 
 @end

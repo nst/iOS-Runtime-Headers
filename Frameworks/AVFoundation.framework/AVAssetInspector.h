@@ -10,6 +10,7 @@
 @property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
 @property(readonly) float preferredRate;
 @property(readonly) float preferredVolume;
+@property(readonly) float preferredSoundCheckVolumeNormalization;
 @property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
 @property(readonly) struct CGSize { float x1; float x2; } naturalSize;
 @property(readonly) int naturalTimeScale;
@@ -29,15 +30,15 @@
 
 
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
-- (BOOL)hasProtectedContent;
-- (id)trackReferences;
-- (id)lyrics;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (id)commonMetadata;
 - (BOOL)isReadable;
 - (id)creationDate;
+- (struct CGSize { float x1; float x2; })naturalSize;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (BOOL)hasProtectedContent;
+- (id)trackReferences;
+- (id)lyrics;
 - (long)trackCount;
 - (BOOL)isComposable;
 - (BOOL)isExportable;
@@ -48,6 +49,7 @@
 - (id)alternateTrackGroups;
 - (BOOL)providesPreciseDurationAndTiming;
 - (int)naturalTimeScale;
+- (float)preferredSoundCheckVolumeNormalization;
 - (float)preferredVolume;
 - (float)preferredRate;
 

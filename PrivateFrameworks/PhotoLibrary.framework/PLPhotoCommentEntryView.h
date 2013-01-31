@@ -18,14 +18,14 @@
 @property(readonly) UIButton * postButton;
 
 
-- (id)placeholderLabel;
-- (float)preferredHeightForOrientation:(int)arg1;
 - (void)dealloc;
-- (id)textView;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)heightForTextContentHeight:(float)arg1 orientation:(int)arg2;
 - (id)postButton;
 - (void)adjustButtonPosition;
+- (id)textView;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)placeholderLabel;
+- (float)preferredHeightForOrientation:(int)arg1;
 
 @end

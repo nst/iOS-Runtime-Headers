@@ -14,12 +14,12 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)run;
 - (void)setAlbumCloudGUIDsToDelete:(id)arg1;
 - (id)albumCloudGUIDsToDelete;
 - (void)encodeToXPCObject:(id)arg1;
 - (int)daemonOperation;
 - (void)runDaemonSide;
 - (id)initFromXPCObject:(id)arg1;
+- (void)run;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSError, NSObject<OS_dispatch_queue>, NSMutableArray, NSOperation, NSString, MPMediaItem, MPPurchasableMediaDownloadManager;
+@class NSError, NSString, NSObject<OS_dispatch_queue>, MPPurchasableMediaDownloadManager, NSMutableArray, NSOperation;
 
 @interface MPPurchasableMediaDownload : NSObject  {
     NSObject<OS_dispatch_queue> *_accessQueue;
@@ -15,55 +15,28 @@
     MPPurchasableMediaDownloadManager *_manager;
     NSMutableArray *_observers;
     NSOperation *_operation;
-    int _purchaseReason;
     long long _bytesDownloaded;
     double _downloadPercentComplete;
-    MPMediaItem *_mediaItem;
-    BOOL _purchased;
+    unsigned long long _libraryItemIdentifier;
     BOOL _restoreDownload;
+    long long _storeItemIdentifier;
 }
 
 @property(readonly) long long bytesDownloaded;
 @property(getter=isCancelled,readonly) BOOL cancelled;
+@property(readonly) long long downloadIdentifier;
 @property(readonly) double downloadPercentComplete;
 @property(readonly) NSString * downloadPhaseIdentifier;
 @property(readonly) NSError * failureError;
 @property(getter=isFinished,readonly) BOOL finished;
-@property(readonly) MPMediaItem * mediaItem;
 @property(getter=isPaused,readonly) BOOL paused;
-@property(getter=isPurchased,readonly) BOOL purchased;
+@property(readonly) unsigned long long libraryItemIdentifier;
 @property(getter=isRestoreDownload,readonly) BOOL restoreDownload;
-@property(readonly) int purchaseReason;
-@property int purchasePriority;
+@property(readonly) long long storeItemIdentifier;
 
 
-- (void)addObserver:(id)arg1;
-- (int)purchaseReason;
-- (int)purchasePriority;
-- (void)setPurchasePriority:(int)arg1;
-- (id)initWithMediaItem:(id)arg1 purchaseReason:(int)arg2 manager:(id)arg3;
-- (void)_notifyDidCancel;
-- (void)_notifyDidProgressWithPercentComplete:(double)arg1;
-- (void)setBytesDownloaded:(long long)arg1;
-- (void)setDownloadPercentComplete:(double)arg1;
-- (void)setDownloadPhaseIdentifier:(id)arg1;
-- (void)setRestoreDownload:(BOOL)arg1;
-- (BOOL)isPurchased;
-- (void)setDownloadIdentifier:(unsigned long long)arg1;
-- (void)_notifyDidPurchaseWithPurchase:(id)arg1;
-- (void)setPurchased:(BOOL)arg1;
-- (void)_notifyDidFinishWithError:(id)arg1;
-- (void)setFailureError:(id)arg1;
-- (void)setFinished:(BOOL)arg1;
-- (void)setMediaItem:(id)arg1;
-- (unsigned long long)downloadIdentifier;
-- (BOOL)isRestoreDownload;
-- (double)downloadPercentComplete;
-- (id)mediaItem;
 - (id)description;
-- (void)setOperation:(id)arg1;
 - (BOOL)isCancelled;
-- (id)operation;
 - (void)cancel;
 - (void)removeObserver:(id)arg1;
 - (void)dealloc;
@@ -72,9 +45,29 @@
 - (void)setCancelled:(BOOL)arg1;
 - (void)setManager:(id)arg1;
 - (id)manager;
+- (void)_notifyDidCancel;
+- (void)_notifyDidProgressWithPercentComplete:(double)arg1;
+- (void)setBytesDownloaded:(long long)arg1;
+- (void)setDownloadPercentComplete:(double)arg1;
+- (void)setDownloadPhaseIdentifier:(id)arg1;
+- (void)setRestoreDownload:(BOOL)arg1;
+- (void)setDownloadIdentifier:(unsigned long long)arg1;
+- (void)setStoreItemIdentifier:(long long)arg1;
+- (void)setLibraryItemIdentifier:(unsigned long long)arg1;
+- (void)_notifyDidPurchaseWithPurchase:(id)arg1;
+- (void)_notifyDidFinishWithError:(id)arg1;
+- (void)setFailureError:(id)arg1;
+- (void)setFinished:(BOOL)arg1;
+- (long long)storeItemIdentifier;
+- (unsigned long long)libraryItemIdentifier;
+- (long long)downloadIdentifier;
+- (BOOL)isRestoreDownload;
+- (double)downloadPercentComplete;
+- (void)addObserver:(id)arg1;
 - (BOOL)isPaused;
 - (id)failureError;
 - (long long)bytesDownloaded;
 - (id)downloadPhaseIdentifier;
+- (id)initWithManager:(id)arg1;
 
 @end

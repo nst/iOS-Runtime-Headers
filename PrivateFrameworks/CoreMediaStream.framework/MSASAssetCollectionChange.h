@@ -17,11 +17,11 @@
 
 - (id)description;
 - (void).cxx_destruct;
+- (void)setGUID:(id)arg1;
+- (id)GUID;
 - (void)setWasDeleted:(BOOL)arg1;
 - (void)setCtag:(id)arg1;
 - (BOOL)wasDeleted;
 - (id)ctag;
-- (void)setGUID:(id)arg1;
-- (id)GUID;
 
 @end

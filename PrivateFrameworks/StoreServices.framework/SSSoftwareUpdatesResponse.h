@@ -23,7 +23,7 @@
 - (BOOL)isFailed;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)updateItems;
 - (id)error;
+- (id)updateItems;
 
 @end

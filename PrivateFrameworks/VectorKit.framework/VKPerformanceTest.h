@@ -14,11 +14,11 @@
 
 + (void)runWithMapView:(id)arg1;
 
-- (void)dealloc;
 - (void)loop;
 - (void)printResults;
 - (void)runTest:(int)arg1 step:(int)arg2;
 - (void)tick:(int)arg1;
+- (void)dealloc;
 - (id)initWithMapView:(id)arg1;
 - (void)abort;
 

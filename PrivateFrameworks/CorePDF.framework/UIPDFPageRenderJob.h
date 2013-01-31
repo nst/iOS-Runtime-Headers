@@ -29,6 +29,10 @@
 @property BOOL releaseWhenDone;
 
 
+- (void)setOperation:(id)arg1;
+- (id)operation;
+- (void)cancel;
+- (void)dealloc;
 - (void)setReleaseWhenDone:(BOOL)arg1;
 - (BOOL)releaseWhenDone;
 - (void)sendImageTo:(id)arg1 callback:(SEL)arg2 userData:(id)arg3;
@@ -40,10 +44,6 @@
 - (void)cancelOperation;
 - (id)initWithPage:(id)arg1 maxSize:(struct CGSize { float x1; float x2; })arg2 queuePriority:(int)arg3;
 - (BOOL)hasPage;
-- (void)setOperation:(id)arg1;
-- (id)operation;
-- (void)cancel;
-- (void)dealloc;
 - (unsigned int)pageIndex;
 - (int)priority;
 - (id)image;

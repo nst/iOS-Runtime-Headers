@@ -49,10 +49,19 @@
 @property(readonly) unsigned int runCount;
 
 
+- (void)setLocation:(id)arg1;
+- (BOOL)hasFocus;
+- (float)accuracy;
+- (float)zoomLevel;
+- (void)setZoomLevel:(float)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)hasChanges;
+- (void)setAccuracy:(float)arg1;
+- (double)distance;
+- (void)setDistance:(double)arg1;
+- (unsigned int)runCount;
+- (BOOL)hasDistance;
 - (id)location;
 - (struct CADoublePoint { double x1; double x2; })position;
 - (void)setPosition:(struct CADoublePoint { double x1; double x2; })arg1;
@@ -87,15 +96,6 @@
 - (void)resetMetrics;
 - (BOOL)hasMetrics;
 - (void)setHasFocus:(BOOL)arg1;
-- (void)setLocation:(id)arg1;
-- (BOOL)hasFocus;
-- (float)accuracy;
-- (float)zoomLevel;
-- (void)setZoomLevel:(float)arg1;
-- (BOOL)hasDistance;
-- (double)distance;
-- (void)setDistance:(double)arg1;
-- (unsigned int)runCount;
-- (void)setAccuracy:(float)arg1;
+- (BOOL)hasChanges;
 
 @end

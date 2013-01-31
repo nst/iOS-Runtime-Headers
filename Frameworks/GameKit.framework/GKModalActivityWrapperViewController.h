@@ -6,7 +6,7 @@
 }
 
 
-- (void)showActivityViewController:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)didMoveToParentViewController:(id)arg1;
+- (void)showActivityViewController:(id)arg1 withCompletionHandler:(id)arg2;
 
 @end

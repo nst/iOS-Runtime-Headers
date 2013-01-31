@@ -5,7 +5,6 @@
 @interface IMService : NSObject  {
 }
 
-+ (id)notificationCenter;
 + (id)jabberService;
 + (id)subnetService;
 + (id)canonicalFormOfID:(id)arg1 withIDSensitivity:(int)arg2;
@@ -21,16 +20,14 @@
 + (id)imageURLForStatus:(unsigned int)arg1;
 + (id)imageNameForStatus:(unsigned int)arg1;
 + (void)forgetStatusImageAppearance;
-+ (id)iMessageService;
-+ (id)smsService;
 + (id)aimService;
 + (id)facetimeService;
++ (id)iMessageService;
++ (id)smsService;
++ (id)notificationCenter;
 
 - (id)name;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)status;
-- (id)localizedName;
-- (BOOL)isEnabled;
 - (id)infoForDisplayedPeople;
 - (id)infoForAllPeople;
 - (id)infoForPerson:(id)arg1;
@@ -45,6 +42,9 @@
 - (void)logout;
 - (void)login;
 - (id)infoForScreenName:(id)arg1;
+- (unsigned int)status;
+- (id)localizedName;
+- (BOOL)isEnabled;
 - (int)__ck_maxRecipientCount;
 - (id)__ck_displayName;
 - (BOOL)__ck_isiMessage;

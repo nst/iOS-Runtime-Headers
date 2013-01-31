@@ -12,14 +12,14 @@
 
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
+- (void)dealloc;
+- (id)init;
 - (id)_applicationIcon;
 - (id)_newApplicationIconOperationForItemImage:(id)arg1;
 - (id)_activeItem;
 - (id)_applicationIconURL;
 - (void)_updatePageView;
 - (id)_itemArtworkImage;
-- (void)dealloc;
-- (id)init;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 

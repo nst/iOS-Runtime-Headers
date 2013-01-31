@@ -20,17 +20,17 @@
 @property(copy) NSString * searchString;
 
 
-- (void)dealloc;
-- (id)init;
-- (id)searchString;
-- (void)setSearchString:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)searchBarIsFirstResponder;
 - (int)selectedRow;
 - (void)setSearchBarIsFirstResponder:(BOOL)arg1;
 - (void)setSelectedRow:(int)arg1;
 - (void)setScrollOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })scrollOffset;
+- (void)dealloc;
+- (id)init;
+- (id)searchString;
+- (void)setSearchString:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

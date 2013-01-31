@@ -26,14 +26,6 @@
 
 + (id)localizedStringForRecordingLabel:(unsigned int)arg1;
 
-- (void).cxx_destruct;
-- (void)willSave;
-- (void)awakeFromInsert;
-- (void)awakeFromFetch;
-- (id)label;
-- (double)duration;
-- (void)setDuration:(double)arg1;
-- (id)avItem;
 - (id)pathForRemaking;
 - (BOOL)isBeingRemade;
 - (id)detailLabel;
@@ -47,5 +39,13 @@
 - (void)setPathForRemaking:(id)arg1;
 - (void)setITunesPersistentID:(long long)arg1;
 - (long long)iTunesPersistentID;
+- (void).cxx_destruct;
+- (id)avItem;
+- (id)label;
+- (double)duration;
+- (void)setDuration:(double)arg1;
+- (void)willSave;
+- (void)awakeFromInsert;
+- (void)awakeFromFetch;
 
 @end

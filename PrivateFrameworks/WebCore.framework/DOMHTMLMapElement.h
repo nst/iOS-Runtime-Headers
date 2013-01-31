@@ -11,8 +11,8 @@
 @property(copy) NSString * name;
 
 
+- (id)areas;
 - (void)setName:(id)arg1;
 - (id)name;
-- (id)areas;
 
 @end

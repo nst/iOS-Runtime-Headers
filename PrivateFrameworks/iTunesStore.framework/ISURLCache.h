@@ -17,14 +17,14 @@
 
 + (id)cacheDirectoryPath;
 
-- (void)dealloc;
-- (id)init;
-- (unsigned int)currentMemoryUsage;
-- (unsigned int)memoryCapacity;
 - (void)saveMemoryCacheToDisk;
 - (void)purgeMemoryCache;
 - (void)reloadWithCacheConfiguration:(id)arg1;
 - (id)initWithCacheConfiguration:(id)arg1;
+- (unsigned int)currentMemoryUsage;
+- (unsigned int)memoryCapacity;
+- (void)dealloc;
+- (id)init;
 - (id)persistentIdentifier;
 - (void)removeAllCachedResponses;
 - (void)removeCachedResponseForRequest:(id)arg1;

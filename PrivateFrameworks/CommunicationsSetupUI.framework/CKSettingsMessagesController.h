@@ -8,6 +8,10 @@
 }
 
 
+- (void)dealloc;
+- (id)init;
+- (void)systemApplicationWillEnterForeground;
+- (void)systemApplicationDidEnterBackground;
 - (void)dumpLogs:(id)arg1;
 - (void)setRegistrationLoggingEnabled:(id)arg1 forSpecifier:(id)arg2;
 - (id)isRegistrationLoggingEnabledForSpecifier:(id)arg1;
@@ -65,8 +69,7 @@
 - (BOOL)wantsWiFiChooser;
 - (id)logName;
 - (id)specifiers;
-- (void)dealloc;
-- (id)init;
+- (BOOL)shouldShowCharacterCount;
 - (id)bundle;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
@@ -74,8 +77,5 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)isDeliveryReportsEnabled:(id)arg1;
-- (BOOL)shouldShowCharacterCount;
-- (void)systemApplicationWillEnterForeground;
-- (void)systemApplicationDidEnterBackground;
 
 @end

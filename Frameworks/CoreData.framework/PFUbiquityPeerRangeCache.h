@@ -21,15 +21,16 @@
 @property(readonly) NSPersistentStore * privateStore;
 @property(readonly) NSDictionary * translatedGlobalIDs;
 
++ (void)initialize;
 + (unsigned int)peerRangeStartForPrimaryKey:(unsigned int)arg1;
 + (int)integerFromPrimaryKeyString:(id)arg1;
-+ (void)initialize;
 
 - (void)dealloc;
 - (id)privateStore;
 - (id)translatedGlobalIDs;
 - (id)initWithPrivateStore:(id)arg1 storeName:(id)arg2 ubiquityRootLocation:(id)arg3 andLocalPeerID:(id)arg4;
 - (unsigned int)localPrimaryKeyForOwningPeerID:(id)arg1 andEntityName:(id)arg2 withPrimaryKey:(unsigned int)arg3;
+- (id)createMapOfManagedObjectIDsForGlobalIDs:(id)arg1 error:(id*)arg2;
 - (id)cachedRangeForLocalPrimaryKey:(unsigned int)arg1 ofEntityNamed:(id)arg2;
 - (id)cachedRangeForOwningPeerID:(id)arg1 andEntityName:(id)arg2 withPrimaryKey:(unsigned int)arg3;
 - (BOOL)cacheSQLCorePeerRange:(id)arg1 error:(id*)arg2;

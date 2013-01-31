@@ -11,7 +11,7 @@
 }
 
 
-- (id).cxx_construct;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 floatsLeft:(BOOL)arg2;
+- (id).cxx_construct;
 
 @end

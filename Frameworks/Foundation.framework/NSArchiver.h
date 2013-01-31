@@ -20,6 +20,7 @@
 
 - (id)data;
 - (void)dealloc;
+- (void)encodeObject:(id)arg1;
 - (void)encodeRootObject:(id)arg1;
 - (int)versionForClassName:(id)arg1;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
@@ -34,6 +35,5 @@
 - (void)encodeClassName:(id)arg1 intoClassName:(id)arg2;
 - (void)encodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(const void*)arg3;
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;
-- (void)encodeObject:(id)arg1;
 
 @end

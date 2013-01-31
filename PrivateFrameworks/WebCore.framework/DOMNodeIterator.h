@@ -15,10 +15,6 @@
 @property(readonly) BOOL pointerBeforeReferenceNode;
 
 
-- (void)dealloc;
-- (id)nextNode;
-- (void)finalize;
-- (void)detach;
 - (id)previousNode;
 - (BOOL)pointerBeforeReferenceNode;
 - (id)referenceNode;
@@ -26,5 +22,9 @@
 - (id)filter;
 - (unsigned int)whatToShow;
 - (id)root;
+- (void)dealloc;
+- (id)nextNode;
+- (void)finalize;
+- (void)detach;
 
 @end

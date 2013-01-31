@@ -29,25 +29,27 @@
 @property(readonly) BOOL hasProtectedContent;
 @property(getter=_isStreaming,readonly) BOOL streaming;
 @property(readonly) unsigned int referenceRestrictions;
+@property(getter=_shouldOptimizeAccessForLinearMoviePlayback,readonly) BOOL shouldOptimizeAccessForLinearMoviePlayback;
 @property(getter=_weakReference,readonly) AVWeakReference * weakReference;
 
 + (void)initialize;
 
-- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
-- (unsigned long long)downloadToken;
-- (BOOL)hasProtectedContent;
-- (BOOL)isPlayable;
-- (BOOL)_isStreaming;
-- (id)lyrics;
 - (id)URL;
 - (id)initWithURL:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (BOOL)isReadable;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
-- (BOOL)isReadable;
+- (unsigned long long)downloadToken;
+- (BOOL)hasProtectedContent;
+- (BOOL)isPlayable;
+- (BOOL)_isStreaming;
+- (id)lyrics;
+- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 - (id)_mapFigErrorCodeToNSError:(long)arg1;
+- (BOOL)_shouldOptimizeAccessForLinearMoviePlayback;
 - (id)downloadDestinationURL;
 - (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;
 - (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;

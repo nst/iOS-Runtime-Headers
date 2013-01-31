@@ -10,8 +10,11 @@
 }
 
 
-- (void)setPlayer:(id)arg1;
-- (void)setItem:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)loadView;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
 - (BOOL)canChangeScaleMode;
 - (void)unregisterForPlayerNotifications;
 - (void)_availableRoutesDidChangeNotification:(id)arg1;
@@ -38,10 +41,7 @@
 - (void)setDisabledParts:(unsigned long long)arg1;
 - (id)videoOverlayView;
 - (BOOL)controlsOverlayVisible;
-- (void)dealloc;
-- (id)init;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)loadView;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)setItem:(id)arg1;
+- (void)setPlayer:(id)arg1;
 
 @end

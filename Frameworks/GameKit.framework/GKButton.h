@@ -23,6 +23,10 @@
 
 + (float)heightForButtonKind:(int)arg1;
 
+- (void)dealloc;
+- (int)buttonType;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
 - (int)buttonKind;
 - (void)setLoadingIndicatorVisible:(BOOL)arg1;
 - (id)initWithTheme:(id)arg1 buttonKind:(int)arg2 headerBackground:(BOOL)arg3;
@@ -44,9 +48,5 @@
 - (void)setProgressIndicator:(id)arg1;
 - (id)progressIndicator;
 - (id)initWithTheme:(id)arg1;
-- (void)dealloc;
-- (int)buttonType;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
 
 @end

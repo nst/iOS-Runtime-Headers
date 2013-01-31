@@ -5,9 +5,9 @@
 @interface GKInterfacePrioritizer : NSObject  {
 }
 
-+ (void)initialize;
 + (id)bsdNameToInterfaceTypeMap;
 + (id)prioritizeLocalInterfaces:(id)arg1;
++ (void)initialize;
 
 
 @end

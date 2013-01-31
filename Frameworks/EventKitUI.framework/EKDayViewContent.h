@@ -62,6 +62,8 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (id)grid;
+- (void)setOccurrences:(id)arg1;
 - (id)calendar;
 - (void)setCalendar:(id)arg1;
 - (void)setOrientation:(int)arg1;
@@ -115,8 +117,6 @@
 - (void)dayOccurrenceViewDragExited:(id)arg1;
 - (void)setUsesSmallText:(BOOL)arg1;
 - (void)setDarkensSelection:(BOOL)arg1;
-- (id)grid;
-- (void)setOccurrences:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)endDate;
 - (id)startDate;

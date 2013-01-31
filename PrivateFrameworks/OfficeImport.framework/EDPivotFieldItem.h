@@ -17,11 +17,6 @@
 
 - (int)type;
 - (id)init;
-- (void)setExpanded:(bool)arg1;
-- (bool)expanded;
-- (bool)hidden;
-- (void)setType:(int)arg1;
-- (void)setHidden:(bool)arg1;
 - (void)setItemIndex:(unsigned int)arg1;
 - (unsigned int)itemIndex;
 - (void)setDetailsHidden:(bool)arg1;
@@ -32,5 +27,10 @@
 - (bool)calculatedMember;
 - (void)setChildItems:(bool)arg1;
 - (bool)childItems;
+- (void)setExpanded:(bool)arg1;
+- (bool)expanded;
+- (bool)hidden;
+- (void)setType:(int)arg1;
+- (void)setHidden:(bool)arg1;
 
 @end

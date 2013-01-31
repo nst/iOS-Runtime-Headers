@@ -13,9 +13,6 @@
 
 
 - (void)dealloc;
-- (id)properties;
-- (int)index;
-- (id)table;
 - (id)addCellWithIndex:(int)arg1;
 - (id)newCellIterator;
 - (id)initWithTable:(id)arg1 at:(int)arg2;
@@ -23,5 +20,8 @@
 - (id)addCell;
 - (id)cellAt:(int)arg1;
 - (int)cellCount;
+- (id)properties;
+- (int)index;
+- (id)table;
 
 @end

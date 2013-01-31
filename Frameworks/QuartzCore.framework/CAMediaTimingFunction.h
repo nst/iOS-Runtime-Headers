@@ -11,6 +11,7 @@
 + (id)uiFunctionWithControlPoints:(const struct CGPoint { float x1; float x2; }*)arg1;
 + (id)sigmoidFunction;
 
+- (float)_solveForInput:(float)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)initWithControlPoints:(float)arg1 :(float)arg2 :(float)arg3 :(float)arg4;
@@ -18,6 +19,5 @@
 - (id)initWithCoder:(id)arg1;
 - (void)getControlPointAtIndex:(unsigned long)arg1 values:(float[2])arg2;
 - (void)_getPoints:(double*)arg1;
-- (float)_solveForInput:(float)arg1;
 
 @end

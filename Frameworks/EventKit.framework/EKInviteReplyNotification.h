@@ -18,9 +18,9 @@
 @property(readonly) BOOL alerted;
 
 
+- (id)creationDate;
 - (int)status;
 - (id)calendar;
-- (id)creationDate;
 - (id)_persistentInviteReplyNotification;
 - (id)shareeLastName;
 - (id)shareeFirstName;

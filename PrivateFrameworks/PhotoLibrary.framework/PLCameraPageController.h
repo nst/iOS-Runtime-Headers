@@ -29,26 +29,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)pageControllerDidEndPaging:(id)arg1;
-- (void)pageControllerWillBeginPaging:(id)arg1;
-- (Class)_pageControllerScrollViewClass;
-- (id)pageController:(id)arg1 viewControllerAtIndex:(int)arg2;
-- (void)_applicationWillEnterForeground:(id)arg1;
-- (void)_applicationDidEnterBackground:(id)arg1;
-- (void)takePicture;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)applicationDidResume;
-- (void)didReceiveMemoryWarning;
-- (void)prepareForDefaultImageSnapshot;
-- (void)applicationWillSuspend;
-- (void)scrollViewDidScroll:(id)arg1;
-- (void)setSessionID:(id)arg1;
 - (void)cameraPreviewWellImageDidChange:(id)arg1;
 - (void)albumListDidChange:(id)arg1;
 - (void)albumDidChange:(id)arg1;
@@ -97,5 +77,25 @@
 - (void)_libraryDidChange:(id)arg1;
 - (void)photoBrowserControllerDidEndPaging:(id)arg1;
 - (void)photoBrowserControllerWillBeginPaging:(id)arg1;
+- (void)setSessionID:(id)arg1;
+- (void)pageControllerDidEndPaging:(id)arg1;
+- (void)pageControllerWillBeginPaging:(id)arg1;
+- (Class)_pageControllerScrollViewClass;
+- (id)pageController:(id)arg1 viewControllerAtIndex:(int)arg2;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)_applicationDidEnterBackground:(id)arg1;
+- (void)takePicture;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidLoad;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)applicationDidResume;
+- (void)didReceiveMemoryWarning;
+- (void)prepareForDefaultImageSnapshot;
+- (void)applicationWillSuspend;
+- (void)scrollViewDidScroll:(id)arg1;
 
 @end

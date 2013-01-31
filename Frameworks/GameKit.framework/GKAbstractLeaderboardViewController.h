@@ -37,6 +37,14 @@
 @property GKLeaderboardViewController * controllerForDelegate;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)theme;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (float)marginForTableView:(id)arg1;
 - (void)setLocalizedLeaderboardTitle:(id)arg1;
 - (id)localizedLeaderboardTitle;
 - (void)setControllerForDelegate:(id)arg1;
@@ -78,13 +86,5 @@
 - (int)timeScope;
 - (void)setGame:(id)arg1;
 - (id)game;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (float)marginForTableView:(id)arg1;
-- (id)theme;
 
 @end

@@ -19,14 +19,14 @@
 
 - (void)cancel;
 - (void)dealloc;
+- (void)locationManagerDidResumeLocationUpdates:(id)arg1;
+- (void)locationManagerDidPauseLocationUpdates:(id)arg1;
 - (void)setHandler:(id)arg1;
 - (id)handler;
 - (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
-- (void)locationManagerDidResumeLocationUpdates:(id)arg1;
-- (void)locationManagerDidPauseLocationUpdates:(id)arg1;
 - (id)initWithHandler:(id)arg1;
 
 @end

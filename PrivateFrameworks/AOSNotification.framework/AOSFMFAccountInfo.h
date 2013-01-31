@@ -25,9 +25,8 @@
 @property(retain) NSString * internalAuthToken;
 
 
-- (id)username;
-- (void)setUsername:(id)arg1;
 - (void)dealloc;
+- (id)dsid;
 - (void)setInternalAuthToken:(id)arg1;
 - (void)setAosAPSEnvironment:(id)arg1;
 - (void)setAosServerProtocolScheme:(id)arg1;
@@ -41,6 +40,7 @@
 - (id)internalAuthToken;
 - (id)appAuthToken;
 - (id)additionalInfo;
-- (id)dsid;
+- (id)username;
+- (void)setUsername:(id)arg1;
 
 @end

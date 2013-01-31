@@ -21,10 +21,10 @@
 @property BOOL ignoreResponse;
 
 
-- (void)setTransactionID:(id)arg1;
-- (id)transactionID;
 - (id)description;
 - (void)dealloc;
+- (void)setTransactionID:(id)arg1;
+- (id)transactionID;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (void)setOffset:(unsigned int)arg1;

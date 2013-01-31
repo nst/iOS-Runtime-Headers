@@ -15,8 +15,8 @@
 - (id)description;
 - (void)dealloc;
 - (id)initWithQuery:(id)arg1;
-- (id)query;
 - (int)commandCode;
 - (int)taskStatusForExchangeStatus:(int)arg1;
+- (id)query;
 
 @end

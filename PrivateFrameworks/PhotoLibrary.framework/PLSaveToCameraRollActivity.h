@@ -11,13 +11,13 @@
 @property(retain) NSArray * assetsToShare;
 
 
+- (id)assetsToShare;
+- (void)setAssetsToShare:(id)arg1;
 - (BOOL)_canPerformWithSuppliedActivityItems:(id)arg1;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)performActivity;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
 - (id)activityTitle;
 - (id)_beforeActivity;
-- (id)assetsToShare;
-- (void)setAssetsToShare:(id)arg1;
 
 @end

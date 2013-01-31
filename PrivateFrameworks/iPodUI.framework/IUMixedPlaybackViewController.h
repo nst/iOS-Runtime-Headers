@@ -18,15 +18,6 @@
 @property(readonly) BOOL isShowingCoverFlow;
 
 
-- (id)newViewControllerForItem:(id)arg1 interfaceOrientation:(int)arg2 reusingController:(id)arg3;
-- (void)setItem:(id)arg1 animated:(BOOL)arg2;
-- (void)dealloc;
-- (id)init;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (BOOL)nextPushWillZoomArtwork;
 - (id)newTransitionControllerForChangeToInterfaceOrientation:(int)arg1 fromInterfaceOrientation:(int)arg2;
 - (BOOL)_isExistingGeniusMixForDataSource:(id)arg1;
@@ -35,7 +26,6 @@
 - (void)_setFakeItemForDataSource:(id)arg1;
 - (void)_reloadTVOutForQuery:(id)arg1;
 - (void)_updateAnimateForResumeEventsOnly;
-- (void)exitPlayerForAccessorySplash;
 - (void)_exitToAlbumContext:(id)arg1 animated:(BOOL)arg2;
 - (void)_exitToPlaylistContext:(id)arg1 animated:(BOOL)arg2;
 - (id)newTransitionControllerForChangeToItem:(id)arg1 fromItem:(id)arg2;
@@ -49,5 +39,14 @@
 - (void)setNextPushWillZoomArtwork:(BOOL)arg1;
 - (unsigned int)transitionEffectForViewController:(id)arg1;
 - (void)exitPlayerAnimated:(BOOL)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
+- (id)newViewControllerForItem:(id)arg1 interfaceOrientation:(int)arg2 reusingController:(id)arg3;
+- (void)setItem:(id)arg1 animated:(BOOL)arg2;
 
 @end

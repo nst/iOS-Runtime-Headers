@@ -25,19 +25,19 @@
 
 
 - (void)dealloc;
-- (void)setIsValid:(BOOL)arg1;
-- (void)setLibrary:(id)arg1;
-- (id)library;
-- (id)valueForProperty:(id)arg1;
-- (BOOL)isValid;
+- (id)propertyValues;
+- (void)setGroupType:(unsigned int)arg1;
+- (unsigned int)groupType;
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
 - (struct NSObject { Class x1; }*)album;
 - (void)_performBlockAndWait:(id)arg1;
+- (void)setLibrary:(id)arg1;
+- (id)library;
+- (void)setIsValid:(BOOL)arg1;
+- (id)valueForProperty:(id)arg1;
+- (BOOL)isValid;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
-- (void)setGroupType:(unsigned int)arg1;
-- (unsigned int)groupType;
 - (void)setPropertyValues:(id)arg1;
-- (id)propertyValues;
 - (id)assetsFilter;
 - (void)resetAssets;
 - (void)set_photoLibrary:(id)arg1;

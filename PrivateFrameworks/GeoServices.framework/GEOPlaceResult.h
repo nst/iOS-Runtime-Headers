@@ -32,16 +32,13 @@
 @property(retain) NSMutableArray * namedFeatures;
 
 
-- (id)place;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (id)quad;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (double)confidence;
+- (BOOL)readFrom:(id)arg1;
 - (id)namedFeatures;
 - (id)unmatchedStrings;
 - (id)additionalPlaces;
@@ -62,6 +59,7 @@
 - (unsigned int)additionalPlacesCount;
 - (void)setConfidence:(double)arg1;
 - (BOOL)hasConfidence;
+- (id)place;
 - (void)addNamedFeature:(id)arg1;
 - (void)addUnmatchedString:(id)arg1;
 - (void)addAdditionalPlace:(id)arg1;
@@ -72,6 +70,8 @@
 - (void)setSuggestedQuery:(id)arg1;
 - (void)setAdditionalPlaces:(id)arg1;
 - (void)setPlace:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)quad;
+- (double)confidence;
 
 @end

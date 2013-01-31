@@ -59,8 +59,6 @@
 @property(readonly) VGLMesh * sidewalkShadows;
 
 
-- (id).cxx_construct;
-- (void)dealloc;
 - (float)casingShadowRamp;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })casingColor;
 - (float)roadShadowTaperLength;
@@ -79,5 +77,7 @@
 - (id)_meshForStyle:(id)arg1 tileKey:(struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; })arg2;
 - (id)initWithTile:(id)arg1;
 - (unsigned int)triangleCount;
+- (id).cxx_construct;
+- (void)dealloc;
 
 @end

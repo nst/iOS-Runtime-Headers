@@ -45,14 +45,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithProperties:(id)arg1;
-- (id)properties;
-- (void)setIdentifier:(int)arg1;
-- (id)timeZone;
-- (void)setTimeZone:(id)arg1;
-- (id)displayNameIncludingCountry:(BOOL)arg1;
-- (void)setCountryName:(id)arg1;
-- (id)countryName;
+- (void)setUnlocalizedCountryName:(id)arg1;
+- (id)unlocalizedCountryName;
+- (float)longitude;
+- (float)latitude;
 - (void)setUnlocalizedCountryOverride:(id)arg1;
 - (void)setYahooCode:(id)arg1;
 - (id)yahooCode;
@@ -67,11 +63,15 @@
 - (id)unlocalizedName;
 - (void)setCountryOverride:(id)arg1;
 - (id)localeCode;
-- (float)longitude;
-- (float)latitude;
-- (void)setUnlocalizedCountryName:(id)arg1;
-- (id)unlocalizedCountryName;
+- (id)initWithProperties:(id)arg1;
+- (id)properties;
+- (void)setIdentifier:(int)arg1;
+- (id)timeZone;
+- (void)setTimeZone:(id)arg1;
+- (id)displayNameIncludingCountry:(BOOL)arg1;
 - (void)setLongitude:(float)arg1;
 - (void)setLatitude:(float)arg1;
+- (void)setCountryName:(id)arg1;
+- (id)countryName;
 
 @end

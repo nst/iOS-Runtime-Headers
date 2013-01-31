@@ -14,14 +14,14 @@
 
 - (id)init;
 - (unsigned int)count;
-- (bool)selected;
-- (void)setSelected:(bool)arg1;
-- (void)setCount:(unsigned int)arg1;
 - (bool)relative;
 - (void)setByPosition:(bool)arg1;
 - (bool)byPosition;
 - (void)setFieldId:(unsigned int)arg1;
 - (unsigned int)fieldId;
 - (void)setRelative:(bool)arg1;
+- (bool)selected;
+- (void)setSelected:(bool)arg1;
+- (void)setCount:(unsigned int)arg1;
 
 @end

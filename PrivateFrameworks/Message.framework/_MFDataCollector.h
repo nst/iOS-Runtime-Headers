@@ -16,9 +16,9 @@
 
 - (id)data;
 - (void)dealloc;
-- (int)appendData:(id)arg1;
-- (void)done;
 - (id)pathForStorage;
 - (id)initWithLibrary:(id)arg1 message:(id)arg2 part:(id)arg3 partial:(BOOL)arg4 incomplete:(BOOL)arg5;
+- (int)appendData:(id)arg1;
+- (void)done;
 
 @end

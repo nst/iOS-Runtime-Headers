@@ -16,7 +16,7 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)captureSearchFeedbackCollection:(id)arg1;
+- (void)captureMapsUsageFeedbackCollection:(id)arg1;
 - (void)captureTransitAppLaunchFeedbackCollection:(id)arg1;
 - (id)_usageURL;
 - (void)_sendUsageToServer;

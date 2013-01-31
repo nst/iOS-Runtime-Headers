@@ -49,19 +49,19 @@
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 
-- (BOOL)canBeShared;
 - (id)description;
 - (id)init;
-- (id)UUID;
+- (id)colorString;
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
 - (void)setSource:(id)arg1;
 - (id)source;
 - (id)title;
 - (void)setTitle:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (BOOL)isHidden;
-- (id)externalID;
-- (void)setExternalID:(id)arg1;
-- (id)colorString;
+- (int)entityType;
+- (BOOL)canBeShared;
 - (void)setPublished:(BOOL)arg1;
 - (void)setPublishedURL:(id)arg1;
 - (void)setIsFacebookBirthdayCalendar:(BOOL)arg1;
@@ -128,6 +128,6 @@
 - (BOOL)validate:(id*)arg1;
 - (BOOL)allowsContentModifications;
 - (unsigned int)allowedEntityTypes;
-- (int)entityType;
+- (id)UUID;
 
 @end

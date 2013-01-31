@@ -16,8 +16,6 @@
 
 
 - (void).cxx_destruct;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
-- (id)_bundleIdForPID:(int)arg1;
 - (id)clientBundleId;
 - (BOOL)clientHasEntitlement:(id)arg1;
 - (id)initWithRemoteClass:(id)arg1 managedObjectContext:(id)arg2;
@@ -28,5 +26,7 @@
 - (id)clientProxy;
 - (void)setClientProxy:(id)arg1;
 - (void)setupWithService:(id)arg1 connection:(id)arg2;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (id)_bundleIdForPID:(int)arg1;
 
 @end

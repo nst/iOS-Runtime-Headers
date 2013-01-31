@@ -18,8 +18,11 @@
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
 - (id)identifier;
+- (BOOL)requiresResponse;
+- (void)setTargetAppId:(id)arg1;
+- (id)targetAppId;
+- (id)encodedClassName;
 - (void)setMinute:(id)arg1;
 - (void)setHour:(id)arg1;
 - (id)enabled;
@@ -29,10 +32,7 @@
 - (id)label;
 - (void)setLabel:(id)arg1;
 - (void)setEnabled:(id)arg1;
-- (BOOL)requiresResponse;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 - (id)frequency;
 - (void)setFrequency:(id)arg1;
 

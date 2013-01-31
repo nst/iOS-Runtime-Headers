@@ -23,15 +23,15 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (void)setRecipientCount:(id)arg1;
-- (id)recipientCount;
 - (id)description;
 - (void)dealloc;
-- (id)certificates;
 - (void)addCertificateString:(id)arg1;
 - (void)setEASStatus:(id)arg1;
 - (void)setCertCount:(id)arg1;
 - (id)certCount;
 - (id)easStatus;
+- (void)setRecipientCount:(id)arg1;
+- (id)recipientCount;
+- (id)certificates;
 
 @end

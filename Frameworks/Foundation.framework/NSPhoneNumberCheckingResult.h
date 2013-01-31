@@ -16,13 +16,13 @@
 @property(readonly) void* underlyingResult;
 
 
+- (unsigned long long)resultType;
 - (id)description;
 - (void)dealloc;
 - (id)phoneNumber;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned long long)resultType;
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 phoneNumber:(id)arg2 underlyingResult:(void*)arg3;
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 phoneNumber:(id)arg2;
 - (void*)underlyingResult;

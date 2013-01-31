@@ -50,6 +50,7 @@
 - (void)_setEstimatedProgress:(float)arg1;
 - (void)_setLoading:(BOOL)arg1 error:(id)arg2;
 - (void)queueingServiceProxy:(id)arg1 willQueueInvocation:(id)arg2;
+- (void)_webContentSizeWithReplyHandler:(id)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)configureWithSettings:(id)arg1;
 - (void)goForward;
@@ -58,6 +59,7 @@
 - (BOOL)canGoForward;
 - (BOOL)canGoBack;
 - (BOOL)isLoading;
+- (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (void)loadRequest:(id)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

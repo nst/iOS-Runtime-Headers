@@ -35,10 +35,14 @@
 
 
 - (void)_scheduleCallback;
+- (void)open;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (void)_streamEventTrigger;
+- (unsigned int)totalBytes;
+- (unsigned int)bytesRead;
 - (void)close;
 - (id)nextStream;
 - (id)initWithMultiParts:(id)arg1 multiPartBoundary:(id)arg2;
@@ -52,9 +56,5 @@
 - (unsigned int)streamStatus;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)open;
-- (void)_streamEventTrigger;
-- (unsigned int)totalBytes;
-- (unsigned int)bytesRead;
 
 @end

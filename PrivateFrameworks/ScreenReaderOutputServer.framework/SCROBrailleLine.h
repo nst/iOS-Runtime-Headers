@@ -45,8 +45,8 @@
 
 + (void)initialize;
 
-- (void)_flush;
-- (void)setStatusSize:(int)arg1;
+- (BOOL)display;
+- (void)dealloc;
 - (void)_flushRealStatus;
 - (BOOL)_blink:(BOOL)arg1;
 - (BOOL)_allowInset;
@@ -74,12 +74,12 @@
 - (int)tokenForRouterIndex:(int)arg1 location:(int*)arg2 appToken:(id*)arg3;
 - (id)newLineDescriptorscriptor;
 - (id)initWithDriver:(id)arg1 mainSize:(int)arg2 statusSize:(int)arg3;
-- (void)dealloc;
 - (int)displayMode;
 - (BOOL)showDotsSevenAndEight;
 - (void)setShowDotsSevenAndEight:(BOOL)arg1;
 - (int)masterStatusCellIndex;
 - (void)setMasterStatusCellIndex:(int)arg1;
-- (BOOL)display;
+- (void)_flush;
+- (void)setStatusSize:(int)arg1;
 
 @end

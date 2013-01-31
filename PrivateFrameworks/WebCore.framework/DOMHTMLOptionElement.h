@@ -17,6 +17,8 @@
 @property(readonly) int index;
 
 
+- (void)setDefaultSelected:(BOOL)arg1;
+- (BOOL)defaultSelected;
 - (id)form;
 - (int)index;
 - (void)setDisabled:(BOOL)arg1;
@@ -28,8 +30,6 @@
 - (void)setLabel:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (id)text;
-- (void)setDefaultSelected:(BOOL)arg1;
-- (BOOL)defaultSelected;
 - (id)itemTitle;
 - (void)populateCell:(id)arg1;
 - (id)createPickerCell;

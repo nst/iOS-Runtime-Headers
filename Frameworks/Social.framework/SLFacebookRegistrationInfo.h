@@ -23,6 +23,16 @@
 @property(retain) NSDate * birthday;
 
 
+- (id)debugDescription;
+- (void).cxx_destruct;
+- (id)birthday;
+- (void)setBirthday:(id)arg1;
+- (id)phone;
+- (void)setPhone:(id)arg1;
+- (id)password;
+- (void)setGender:(id)arg1;
+- (id)gender;
+- (BOOL)hasAllRequiredValues;
 - (id)email;
 - (void)setEmail:(id)arg1;
 - (void)setPassword:(id)arg1;
@@ -30,15 +40,5 @@
 - (id)lastName;
 - (void)setFirstName:(id)arg1;
 - (id)firstName;
-- (id)debugDescription;
-- (void).cxx_destruct;
-- (id)password;
-- (void)setGender:(id)arg1;
-- (id)gender;
-- (BOOL)hasAllRequiredValues;
-- (id)birthday;
-- (void)setBirthday:(id)arg1;
-- (id)phone;
-- (void)setPhone:(id)arg1;
 
 @end

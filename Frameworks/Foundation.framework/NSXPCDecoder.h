@@ -19,9 +19,9 @@
 @property NSXPCConnection * _connection;
 
 
-- (id)interface;
 - (id)debugDescription;
 - (void)dealloc;
+- (void)setInterface:(id)arg1;
 - (id)decodeObject;
 - (int)decodeInt32ForKey:(id)arg1;
 - (void)decodeValueOfObjCType:(const char *)arg1 at:(void*)arg2;
@@ -36,7 +36,8 @@
 - (BOOL)containsValueForKey:(id)arg1;
 - (BOOL)decodeBoolForKey:(id)arg1;
 - (id)decodeObjectForKey:(id)arg1;
-- (void)setInterface:(id)arg1;
+- (id)interface;
+- (id)decodeObjectOfClass:(Class)arg1 forKey:(id)arg2;
 - (id)replyToSelector;
 - (id)decodeInvocation;
 - (id)_decodeXPCObjectAtIndex:(id)arg1;
@@ -51,7 +52,6 @@
 - (id)decodeXPCObjectForKey:(id)arg1;
 - (id)allowedClasses;
 - (id)decodeObjectOfClasses:(id)arg1 forKey:(id)arg2;
-- (id)decodeObjectOfClass:(Class)arg1 forKey:(id)arg2;
 - (id)_decodeArrayOfObjectsForKey:(id)arg1;
 
 @end

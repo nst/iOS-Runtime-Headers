@@ -25,15 +25,15 @@
 @property(retain) VKGlobeViewWrapper * globe;
 
 
-- (id).cxx_construct;
-- (void)dealloc;
-- (id)init;
-- (id)altMapView;
 - (id)globe;
+- (id)altMapView;
 - (void)setAltMapView:(id)arg1;
 - (void)setGlobe:(id)arg1;
 - (void)_rotateToHeadingAnimated:(BOOL)arg1 duration:(double)arg2;
 - (void)_goToAnnotationAnimated:(BOOL)arg1 duration:(double)arg2 isInitial:(BOOL)arg3;
 - (void)setGesturing:(BOOL)arg1;
+- (id).cxx_construct;
+- (void)dealloc;
+- (id)init;
 
 @end

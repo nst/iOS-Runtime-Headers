@@ -25,13 +25,6 @@
 + (id)collectionWithItems:(id)arg1;
 + (id)titlePropertyForGroupingType:(int)arg1;
 
-- (id)representativeItem;
-- (BOOL)hasDownloadableItem;
-- (BOOL)hasDownloadingItem;
-- (id)itemsQuery;
-- (id)initWithItemsQuery:(id)arg1;
-- (void)set_internal:(struct MPMediaItemCollectionInternal { id x1; id x2; unsigned int x3; id x4; int x5; })arg1;
-- (struct MPMediaItemCollectionInternal { id x1; id x2; unsigned int x3; id x4; int x5; })_internal;
 - (void)dealloc;
 - (id)init;
 - (unsigned int)count;
@@ -41,6 +34,13 @@
 - (id)_init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)hasDownloadableItem;
+- (BOOL)hasDownloadingItem;
+- (id)itemsQuery;
+- (id)initWithItemsQuery:(id)arg1;
+- (id)representativeItem;
+- (void)set_internal:(struct MPMediaItemCollectionInternal { id x1; id x2; unsigned int x3; id x4; int x5; })arg1;
+- (struct MPMediaItemCollectionInternal { id x1; id x2; unsigned int x3; id x4; int x5; })_internal;
 - (unsigned int)indexOfMostLikelyItemForStartingPlayback;
 
 @end

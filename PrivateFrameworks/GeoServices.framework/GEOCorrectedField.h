@@ -8,6 +8,10 @@
     NSString *_correctedValue;
     NSString *_displayName;
     NSString *_objectName;
+    BOOL _isMarkedIncorrect;
+    struct { 
+        unsigned int isMarkedIncorrect : 1; 
+    } _has;
 }
 
 @property(retain) NSString * displayName;
@@ -15,23 +19,29 @@
 @property(retain) NSString * objectName;
 @property(readonly) BOOL hasCorrectedValue;
 @property(retain) NSString * correctedValue;
+@property BOOL hasIsMarkedIncorrect;
+@property BOOL isMarkedIncorrect;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)displayName;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (void)setDisplayName:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasIsMarkedIncorrect:(BOOL)arg1;
+- (void)setIsMarkedIncorrect:(BOOL)arg1;
+- (BOOL)isMarkedIncorrect;
+- (BOOL)hasIsMarkedIncorrect;
 - (id)correctedValue;
 - (BOOL)hasCorrectedValue;
 - (id)objectName;
 - (BOOL)hasObjectName;
 - (void)setCorrectedValue:(id)arg1;
 - (void)setObjectName:(id)arg1;
-- (void)setDisplayName:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)displayName;
+- (id)dictionaryRepresentation;
 
 @end

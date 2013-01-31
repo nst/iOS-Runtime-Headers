@@ -7,8 +7,8 @@
 
 + (id)identifier;
 
+- (void)updateFontSize;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)updateFontSize;
 
 @end

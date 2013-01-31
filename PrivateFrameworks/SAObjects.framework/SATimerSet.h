@@ -10,15 +10,15 @@
 @property(copy) NSURL * targetAppId;
 @property(retain) SATimerObject * timer;
 
-+ (id)set;
 + (id)setWithDictionary:(id)arg1 context:(id)arg2;
++ (id)set;
 
-- (id)groupIdentifier;
 - (void)setTimer:(id)arg1;
 - (id)timer;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

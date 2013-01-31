@@ -28,22 +28,22 @@
 
 - (id)description;
 - (void)dealloc;
-- (id)displayName;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setTaskId:(unsigned int)arg1;
-- (unsigned int)taskId;
+- (void)setDisplayName:(id)arg1;
 - (int)changeType;
 - (id)parentFolderId;
 - (void)setRenameOnCollision:(BOOL)arg1;
 - (id)folderId;
 - (void)setConsumer:(id)arg1;
 - (id)initFolderChangeWithChangeType:(int)arg1 folderId:(id)arg2 parentFolderId:(id)arg3 displayName:(id)arg4 dataclass:(int)arg5 consumer:(id)arg6;
-- (void)setDisplayName:(id)arg1;
+- (void)setTaskId:(unsigned int)arg1;
+- (unsigned int)taskId;
 - (BOOL)renameOnCollision;
 - (void)setFolderId:(id)arg1;
 - (int)dataclass;
 - (id)consumer;
+- (id)displayName;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)mf_deferredOperation;
 
 @end

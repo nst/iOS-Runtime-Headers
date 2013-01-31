@@ -13,12 +13,12 @@
 
 + (id)sharedManager;
 
-- (void)dealloc;
-- (id)init;
-- (void)didReceiveMemoryWarning:(id)arg1;
 - (id)warningImage;
 - (id)closedImage;
 - (id)constructionImage;
 - (id)accidentImage;
+- (void)dealloc;
+- (id)init;
+- (void)didReceiveMemoryWarning:(id)arg1;
 
 @end

@@ -41,7 +41,6 @@
 - (unsigned int)hour;
 - (id)timeZone;
 - (id)date;
-- (int)secondsFromGMT;
 - (unsigned int)dayOfYear;
 - (unsigned int)dayOfWeek;
 - (id)calendarDateForYear;
@@ -72,5 +71,6 @@
 - (double)absoluteTime;
 - (id)calendarDateByAddingGregorianUnits:(struct { int x1; int x2; int x3; int x4; int x5; double x6; })arg1;
 - (id)calendarDateForDay;
+- (int)secondsFromGMT;
 
 @end

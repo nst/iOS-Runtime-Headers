@@ -19,6 +19,10 @@
 }
 
 
+- (void)setContent:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (void)setVolumeLabel:(id)arg1;
 - (id)volumeLabel;
 - (void)setStorageDescription:(id)arg1;
@@ -35,13 +39,9 @@
 - (void)updateContent;
 - (unsigned short)accessCapability;
 - (id)initWithMutableData:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (id)content;
-- (id)initWithData:(id)arg1;
-- (void)setContent:(id)arg1;
 - (unsigned long long)maxCapacity;
 - (void)setMaxCapacity:(unsigned long long)arg1;
+- (id)content;
+- (id)initWithData:(id)arg1;
 
 @end

@@ -10,21 +10,18 @@
 
 @property(readonly) BOOL HS_isCancelled;
 
-+ (id)requestWithURL:(id)arg1;
-+ (id)requestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
 + (BOOL)allowsAnyHTTPSCertificateForHost:(id)arg1;
 + (id)allowsSpecificHTTPSCertificateForHost:(id)arg1;
++ (id)requestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
++ (id)requestWithURL:(id)arg1;
 + (void)setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
 + (void)setAllowsAnyHTTPSCertificate:(BOOL)arg1 forHost:(id)arg2;
 + (double)defaultTimeoutInterval;
 + (void)setDefaultTimeoutInterval:(double)arg1;
 + (void)checkForSharedCookieStoreNeed:(struct _CFURLRequest { }*)arg1;
 
-- (id)HTTPBody;
-- (id)allHTTPHeaderFields;
-- (id)HTTPMethod;
-- (id)valueForHTTPHeaderField:(id)arg1;
-- (BOOL)HTTPShouldUsePipelining;
+- (id)_initWithCFURLRequest:(struct _CFURLRequest { }*)arg1;
+- (struct _CFURLRequest { }*)_CFURLRequest;
 - (id)URL;
 - (id)initWithURL:(id)arg1;
 - (id)description;
@@ -36,8 +33,11 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)_initWithCFURLRequest:(struct _CFURLRequest { }*)arg1;
-- (struct _CFURLRequest { }*)_CFURLRequest;
+- (id)HTTPBody;
+- (id)allHTTPHeaderFields;
+- (id)HTTPMethod;
+- (id)valueForHTTPHeaderField:(id)arg1;
+- (BOOL)HTTPShouldUsePipelining;
 - (id)contentDispositionEncodingFallbackArray;
 - (id)HTTPUserAgent;
 - (id)HTTPReferrer;

@@ -8,8 +8,8 @@
 
 
 - (id)init;
-- (BOOL)isEmpty;
 - (void)setFormat:(int)arg1;
 - (int)format;
+- (BOOL)isEmpty;
 
 @end

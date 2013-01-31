@@ -13,11 +13,11 @@
 
 - (void)dealloc;
 - (id)init;
+- (void)setGraphicProperties:(id)arg1;
+- (id)graphicProperties;
 - (int)style;
 - (void)setStyle:(int)arg1;
 - (void)setSize:(unsigned int)arg1;
 - (unsigned int)size;
-- (void)setGraphicProperties:(id)arg1;
-- (id)graphicProperties;
 
 @end

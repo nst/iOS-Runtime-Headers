@@ -19,10 +19,10 @@
 @property(retain) NSArray * characteristics;
 
 
-- (BOOL)isPrimary;
-- (id)UUID;
 - (id)characteristics;
 - (void)setCharacteristics:(id)arg1;
+- (BOOL)isPrimary;
+- (id)UUID;
 - (id)includedServices;
 - (void)setIncludedServices:(id)arg1;
 - (id)peripheral;

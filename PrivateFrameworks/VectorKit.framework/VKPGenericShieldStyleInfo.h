@@ -48,18 +48,6 @@
 @property unsigned int textDropShadowColor;
 
 
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)setTextColor:(unsigned int)arg1;
-- (unsigned int)textColor;
-- (int)style;
-- (void)setStyle:(int)arg1;
-- (void)setBorderColor:(unsigned int)arg1;
-- (unsigned int)backgroundColor;
-- (void)setBackgroundColor:(unsigned int)arg1;
 - (unsigned int)borderColor;
 - (void)setHasTextDropShadowColor:(BOOL)arg1;
 - (void)setHasTextDropShadowSize:(BOOL)arg1;
@@ -93,6 +81,18 @@
 - (float)textStrokeSize;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
+- (void)setTextColor:(unsigned int)arg1;
+- (unsigned int)textColor;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (void)setBorderColor:(unsigned int)arg1;
+- (unsigned int)backgroundColor;
+- (void)setBackgroundColor:(unsigned int)arg1;
 
 @end

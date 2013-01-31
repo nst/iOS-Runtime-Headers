@@ -12,10 +12,10 @@
 + (id)clearScreenWithDictionary:(id)arg1 context:(id)arg2;
 + (id)clearScreen;
 
-- (id)groupIdentifier;
 - (void)setInitialView:(id)arg1;
 - (id)initialView;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

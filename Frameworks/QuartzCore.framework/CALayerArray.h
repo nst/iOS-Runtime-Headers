@@ -26,7 +26,7 @@
 - (unsigned int)count;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)getObjects:(id*)arg1;
 - (id)initWithLayers:(id*)arg1 count:(unsigned long)arg2 retain:(BOOL)arg3;
+- (void)getObjects:(id*)arg1;
 
 @end

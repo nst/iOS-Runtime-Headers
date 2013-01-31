@@ -15,7 +15,7 @@
 }
 
 
-- (void)dealloc;
 - (id)initWithRowCharRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 containerWidth:(float)arg2 rowArray:(id)arg3 collapseBorders:(BOOL)arg4;
+- (void)dealloc;
 
 @end

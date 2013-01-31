@@ -5,7 +5,6 @@
 @interface ACDKeychainManager : NSObject  {
 }
 
-+ (void)initialize;
 + (void)_removeAllItemsForUsername:(id)arg1;
 + (void)_removeAllItemsForService:(id)arg1;
 + (void)removeCredentialForAccount:(id)arg1 clientID:(id)arg2;
@@ -25,6 +24,7 @@
 + (void)_setCredentialForAccount:(id)arg1 clientID:(id)arg2 handleCredentialItemRemovals:(BOOL)arg3;
 + (void)setCredentialForAccount:(id)arg1 clientID:(id)arg2;
 + (void)removeNonPersistentCredentialItemsForAccount:(id)arg1;
++ (void)initialize;
 
 
 @end

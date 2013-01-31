@@ -18,6 +18,10 @@
 
 + (id)serverProxy;
 
+- (void)dealloc;
+- (id)init;
+- (void)setConnection:(id)arg1;
+- (id)connection;
 - (BOOL)_isAuthenticatedWithResponse:(id)arg1;
 - (void)getAchievementsLeaderboard:(id)arg1 handler:(id)arg2;
 - (void)getChallengesForGame:(id)arg1 handler:(id)arg2;
@@ -122,6 +126,7 @@
 - (void)getPlayerRatingWithHandler:(id)arg1;
 - (void)getStoreItemsForAdamIDs:(id)arg1 handler:(id)arg2;
 - (void)getMetadataForGames:(id)arg1 handler:(id)arg2;
+- (void)setNearbyMultiplayerOverride:(id)arg1;
 - (void)removeGameForBundleID:(id)arg1 handler:(id)arg2;
 - (BOOL)setAuthState:(int)arg1;
 - (BOOL)hasAuthenticatedAccount;
@@ -141,9 +146,5 @@
 - (void)linkAccounts:(BOOL)arg1 withAuthToken:(id)arg2 forService:(unsigned int)arg3 mayAskAgainLater:(BOOL)arg4 handler:(id)arg5;
 - (void)accountTypesAvailableForLinkingWithHandler:(id)arg1;
 - (void)authenticationDisabledWithHandler:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)connection;
-- (void)setConnection:(id)arg1;
 
 @end

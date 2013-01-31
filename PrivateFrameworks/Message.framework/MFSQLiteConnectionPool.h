@@ -31,17 +31,17 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (void)flush;
 - (unsigned int)readersWaiting;
 - (unsigned int)maxConcurrentWriters;
 - (unsigned int)maxConcurrentReaders;
-- (unsigned int)cacheSize;
 - (id)readerConnection;
 - (id)writerConnection;
 - (id)_connectionForWriting:(BOOL)arg1;
 - (unsigned int)writersWaiting;
-- (void)setCacheSize:(unsigned int)arg1;
 - (id)initWithDelegate:(id)arg1 maxConcurrentReaders:(unsigned int)arg2;
 - (void)checkInConnection:(id)arg1;
+- (void)flush;
+- (unsigned int)cacheSize;
+- (void)setCacheSize:(unsigned int)arg1;
 
 @end

@@ -28,6 +28,7 @@
 
 
 - (void)dealloc;
+- (void)singleTap:(id)arg1;
 - (BOOL)_scrollsToMakeFirstResponderVisible;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)willRemoveSubview:(id)arg1;
@@ -46,6 +47,5 @@
 - (void)endBlockingScroll;
 - (void)beginBlockingScroll;
 - (void)setCatchesSingleTap:(BOOL)arg1;
-- (void)singleTap:(id)arg1;
 
 @end

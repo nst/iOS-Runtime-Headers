@@ -6,13 +6,13 @@
 }
 
 
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)drawWireframeTrianglesWithContext:(id)arg1;
 - (void)drawTriangleStripWithContext:(id)arg1;
 - (void)drawLinesWithContext:(id)arg1 offset:(int)arg2 count:(int)arg3;
 - (void)drawLinesWithContext:(id)arg1;
 - (void)drawTrianglesWithContext:(id)arg1;
 - (void)drawTrianglesWithContext:(id)arg1 offset:(int)arg2 count:(int)arg3;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

@@ -27,6 +27,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)rootLocation;
 - (void)_migrateToModelVersionHash:(id)arg1;
 - (void)setPreviousKnowledgeVectorFromCurrentMetadata:(id)arg1;
@@ -42,7 +44,5 @@
 - (void)setKnowledgeVector:(id)arg1;
 - (id)knowledgeVector;
 - (id)storeName;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

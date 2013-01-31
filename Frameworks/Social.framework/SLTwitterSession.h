@@ -17,10 +17,10 @@
 @property(copy) id locationInformationChangedBlock;
 
 
-- (void)setClientInfo:(id)arg1;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
+- (void)setClientInfo:(id)arg1;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)showTwitterSettingsIfNeeded;
 - (void)fetchCurrentTCoLength:(id)arg1;

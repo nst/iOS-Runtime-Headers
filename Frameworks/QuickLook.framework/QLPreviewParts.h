@@ -69,6 +69,26 @@
 + (void)unregisterPreview:(id)arg1;
 + (void)registerPreview:(id)arg1;
 
+- (id)previewResponse;
+- (id)safeRequestForRequest:(id)arg1;
+- (id)previewRequest;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)data;
+- (BOOL)isCancelled;
+- (void)cancel;
+- (void)dealloc;
+- (void)setFileName:(id)arg1;
+- (float)pageHeight;
+- (float)pageWidth;
+- (id)fileName;
+- (void)setConnection:(id)arg1;
+- (id)connection;
+- (id)password;
+- (void)setUrl:(id)arg1;
+- (id)url;
+- (int)pageCount;
+- (void)setData:(id)arg1;
 - (void)setProgressive:(BOOL)arg1;
 - (BOOL)progressive;
 - (unsigned long)cfEncodingForAttachmentURL:(id)arg1;
@@ -93,28 +113,8 @@
 - (id)uti;
 - (BOOL)isComputed;
 - (void)setUti:(id)arg1;
+- (id)previewURL;
 - (void)setPassword:(id)arg1;
 - (void)setError:(id)arg1;
-- (id)previewURL;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)data;
-- (BOOL)isCancelled;
-- (void)cancel;
-- (void)dealloc;
-- (id)connection;
-- (id)password;
-- (void)setUrl:(id)arg1;
-- (id)url;
-- (int)pageCount;
-- (void)setData:(id)arg1;
-- (id)previewResponse;
-- (id)safeRequestForRequest:(id)arg1;
-- (id)previewRequest;
-- (void)setConnection:(id)arg1;
-- (void)setFileName:(id)arg1;
-- (float)pageHeight;
-- (float)pageWidth;
-- (id)fileName;
 
 @end

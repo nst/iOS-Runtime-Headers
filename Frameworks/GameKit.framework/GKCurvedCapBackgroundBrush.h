@@ -17,6 +17,7 @@
 + (id)curvedCapBackgroundBrushWithHeaderBackgroundForPad;
 + (id)curvedCapBackgroundBrushWithHeaderBackground;
 
+- (void)dealloc;
 - (void)setDrawBottomCurve:(BOOL)arg1;
 - (id)fillBackgroundBrush;
 - (struct CGPath { }*)newBorderPathWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 radius:(float)arg2 capOffset:(float)arg3 capExtra:(float)arg4;
@@ -26,6 +27,5 @@
 - (void)setFillBackgroundBrush:(id)arg1;
 - (void)setAdditionalOffsetToCurveJoint:(float)arg1;
 - (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withContext:(struct CGContext { }*)arg2 input:(id)arg3;
-- (void)dealloc;
 
 @end

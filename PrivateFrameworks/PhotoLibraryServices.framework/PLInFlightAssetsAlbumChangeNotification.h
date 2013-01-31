@@ -20,7 +20,6 @@
 
 - (id)description;
 - (void)dealloc;
-- (id)object;
 - (id)oldOIDs;
 - (id)backingNotification;
 - (id)initWithInFlightAssetsAlbum:(id)arg1 priorChangeState:(id)arg2 albumChangeNotification:(id)arg3;
@@ -30,5 +29,6 @@
 - (BOOL)titleDidChange;
 - (id)_diffDescription;
 - (id)album;
+- (id)object;
 
 @end

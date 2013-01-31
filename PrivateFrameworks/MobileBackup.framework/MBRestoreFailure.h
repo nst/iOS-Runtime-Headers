@@ -21,23 +21,23 @@
 @property(copy) NSError * error;
 
 
-- (id)icon;
-- (void)setError:(id)arg1;
 - (void)setAssetType:(id)arg1;
 - (id)identifier;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)error;
+- (void)setDisplayName:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 dataclass:(id)arg2 assetType:(id)arg3 displayName:(id)arg4 error:(id)arg5;
+- (void)setDataclass:(id)arg1;
+- (id)dataclass;
 - (id)assetType;
 - (id)displayName;
 - (void)setIdentifier:(id)arg1;
 - (void)setIcon:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 dataclass:(id)arg2 assetType:(id)arg3 displayName:(id)arg4 error:(id)arg5;
-- (void)setDataclass:(id)arg1;
-- (id)error;
-- (void)setDisplayName:(id)arg1;
-- (id)dataclass;
+- (id)icon;
+- (void)setError:(id)arg1;
 
 @end

@@ -39,12 +39,7 @@
 
 + (void)freeLookupList:(struct _DNSServiceRef_t {}**)arg1 andAddrList:(id*)arg2 andInterfaceList:(unsigned int*)arg3 count:(int)arg4;
 
-- (id)session;
-- (void)setSession:(id)arg1;
-- (BOOL)isBusy;
-- (void)setBusy:(BOOL)arg1;
 - (void)dealloc;
-- (id)displayName;
 - (void)setMoreResolvesComing:(BOOL)arg1;
 - (BOOL)moreResolvesComing;
 - (unsigned int)servicePort;
@@ -71,7 +66,12 @@
 - (void)clearResolving;
 - (BOOL)tryDetruncateDisplayName:(id)arg1;
 - (void)cleanupForGKTable:(id)arg1;
-- (id)serviceName;
 - (unsigned int)pid;
+- (id)displayName;
+- (id)session;
+- (void)setSession:(id)arg1;
+- (BOOL)isBusy;
+- (void)setBusy:(BOOL)arg1;
+- (id)serviceName;
 
 @end

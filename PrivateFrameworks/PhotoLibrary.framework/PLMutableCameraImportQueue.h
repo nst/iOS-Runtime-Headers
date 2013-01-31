@@ -12,8 +12,8 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)currentItem;
 - (void)dequeueImportItem;
 - (void)enqueueImportItem:(id)arg1;
+- (id)currentItem;
 
 @end

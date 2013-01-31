@@ -11,10 +11,10 @@
 @property(readonly) SlotSequence * slots;
 
 
+- (id)reversed;
 - (id)description;
 - (void)dealloc;
 - (id)initWithArray:(id)arg1;
-- (id)reversed;
 - (BOOL)matches:(id)arg1;
 - (id)slots;
 - (id)initFromPlist:(id)arg1;

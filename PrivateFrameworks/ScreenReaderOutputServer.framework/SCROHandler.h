@@ -11,12 +11,12 @@
 }
 
 
-- (id)callbackDelegate;
-- (void)setCallbackDelegate:(id)arg1;
-- (int)handleGetValue:(id*)arg1 forKey:(int)arg2 withObject:(id)arg3 trusted:(BOOL)arg4;
 - (void)invalidate;
 - (void)dealloc;
 - (id)init;
+- (id)callbackDelegate;
+- (void)setCallbackDelegate:(id)arg1;
+- (int)handleGetValue:(id*)arg1 forKey:(int)arg2 withObject:(id)arg3 trusted:(BOOL)arg4;
 - (int)handleGetValue:(id*)arg1 forKey:(int)arg2 trusted:(BOOL)arg3;
 - (int)handleSetValue:(id)arg1 forKey:(int)arg2 trusted:(BOOL)arg3;
 - (int)handleRegisterCallbackForKey:(int)arg1 trusted:(BOOL)arg2;

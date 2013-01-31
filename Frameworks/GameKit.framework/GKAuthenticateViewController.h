@@ -41,6 +41,18 @@
 @property UITextField * activeTextField;
 
 
+- (void)dealloc;
+- (id)init;
+- (void)setCompletionHandler:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (float)marginForTableView:(id)arg1;
+- (id)completionHandler;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)setBottomContentInsetBeforeKeyboard:(float)arg1;
 - (float)bottomContentInsetBeforeKeyboard;
 - (void)setActiveTextField:(id)arg1;
@@ -82,17 +94,5 @@
 - (void)prepareDataSource;
 - (void)setGame:(id)arg1;
 - (id)game;
-- (void)dealloc;
-- (id)init;
-- (void)setCompletionHandler:(id)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (float)marginForTableView:(id)arg1;
-- (id)completionHandler;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 
 @end

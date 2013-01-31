@@ -49,8 +49,6 @@
 }
 
 
-- (void)setRightMargin:(short)arg1;
-- (void)setWidth:(short)arg1;
 - (void)setNoWrap:(BOOL)arg1;
 - (BOOL)noWrap;
 - (void)setNoWrapOverridden:(BOOL)arg1;
@@ -130,5 +128,7 @@
 - (short)topMargin;
 - (short)rightMargin;
 - (short)leftMargin;
+- (void)setRightMargin:(short)arg1;
+- (void)setWidth:(short)arg1;
 
 @end

@@ -48,6 +48,18 @@
 
 + (id)codedPropertyKeys;
 
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (void)setDeletionDate:(id)arg1;
+- (id)deletionDate;
+- (void)setCreationDate:(id)arg1;
+- (id)creationDate;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (id)message;
+- (void)setMessage:(id)arg1;
+- (id)reason;
 - (void)setMatchDataVersion:(id)arg1;
 - (id)matchDataVersion;
 - (void)setTurnSequenceIndex:(int)arg1;
@@ -55,7 +67,6 @@
 - (void)setTurnSequenceData:(id)arg1;
 - (id)turnSequenceData;
 - (void)setParticipants:(id)arg1;
-- (id)participants;
 - (void)setMatchData:(id)arg1;
 - (id)matchData;
 - (void)setLastTurnPlayerID:(id)arg1;
@@ -73,21 +84,10 @@
 - (void)setCurrentPlayerID:(id)arg1;
 - (id)currentPlayerID;
 - (void)setMatchID:(id)arg1;
-- (id)matchID;
 - (void)setReason:(id)arg1;
+- (id)matchID;
+- (id)participants;
 - (int)maxPlayers;
 - (void)setMaxPlayers:(int)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setStatus:(id)arg1;
-- (id)status;
-- (id)message;
-- (void)setMessage:(id)arg1;
-- (id)reason;
-- (void)setDeletionDate:(id)arg1;
-- (id)deletionDate;
-- (void)setCreationDate:(id)arg1;
-- (id)creationDate;
 
 @end

@@ -21,10 +21,14 @@
 + (id)mf_formatUnsignedInteger:(unsigned int)arg1 withGrouping:(BOOL)arg2;
 + (id)mf_formatInteger:(int)arg1 withGrouping:(BOOL)arg2;
 
-- (void)setGroupingSize:(unsigned int)arg1;
+- (void)setUsesGroupingSeparator:(BOOL)arg1;
+- (void)setMaximumFractionDigits:(unsigned int)arg1;
+- (id)numberFromString:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)currencyCode;
+- (void)setZeroSymbol:(id)arg1;
 - (id)multiplier;
 - (void)setGeneratesDecimalNumbers:(BOOL)arg1;
 - (void)setNumberStyle:(unsigned int)arg1;
@@ -37,9 +41,7 @@
 - (void)setLocale:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setUsesGroupingSeparator:(BOOL)arg1;
-- (void)setMaximumFractionDigits:(unsigned int)arg1;
-- (id)numberFromString:(id)arg1;
+- (void)setGroupingSize:(unsigned int)arg1;
 - (void)_setUsesCharacterDirection:(BOOL)arg1;
 - (BOOL)_usesCharacterDirection;
 - (void)setPartialStringValidationEnabled:(BOOL)arg1;
@@ -149,7 +151,5 @@
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
 - (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
 - (unsigned int)roundingMode;
-- (id)currencyCode;
-- (void)setZeroSymbol:(id)arg1;
 
 @end

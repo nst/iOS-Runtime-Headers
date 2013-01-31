@@ -24,8 +24,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (BOOL)hasActiveCall;
-- (unsigned int)callState;
 - (BOOL)_hasActiveTelephonyCall;
 - (id)calls;
 - (unsigned int)_telephonyCallState;
@@ -40,5 +38,7 @@
 - (unsigned int)_callState;
 - (void)_updateOverallChatState;
 - (void)_setCallState:(unsigned int)arg1;
+- (BOOL)hasActiveCall;
+- (unsigned int)callState;
 
 @end

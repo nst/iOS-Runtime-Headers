@@ -36,11 +36,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (id)toggleButton;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setTitle:(id)arg1;
-- (void)layoutSubviews;
 - (void)_didCapture;
 - (void)_animateEditViewLeft:(BOOL)arg1;
 - (void)_animateEditViewUp:(BOOL)arg1;
@@ -74,5 +69,10 @@
 - (void)cancelButtonClicked:(id)arg1;
 - (id)shutterButton;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 buttonBarStyle:(int)arg2;
+- (id)toggleButton;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
+- (void)setEnabled:(BOOL)arg1;
+- (void)setTitle:(id)arg1;
+- (void)layoutSubviews;
 
 @end

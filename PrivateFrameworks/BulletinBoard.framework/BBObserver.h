@@ -43,7 +43,7 @@
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)sendResponse:(id)arg1;
 - (unsigned int)observerFeed;
 - (void)assertionExpired:(id)arg1 transactionID:(unsigned int)arg2;
 - (struct CGSize { float x1; float x2; })attachmentSizeForKey:(id)arg1 forBulletinID:(id)arg2;
@@ -91,7 +91,7 @@
 - (void)_preFetchAttachmentInfoIfNecessaryForBulletins:(id)arg1 withCompletion:(id)arg2;
 - (void)_noteCompletedBulletinFetch;
 - (void)_registerBulletin:(id)arg1 withTransactionID:(unsigned int)arg2;
-- (void)sendResponse:(id)arg1;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (id)initWithQueue:(id)arg1;
 
 @end

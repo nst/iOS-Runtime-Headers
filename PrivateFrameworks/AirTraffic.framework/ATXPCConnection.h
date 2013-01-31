@@ -39,18 +39,21 @@
 @property(retain) id context;
 
 
+- (void)dealloc;
+- (id)initWithXPCConnection:(struct _xpc_connection_s { }*)arg1;
+- (void)sendMessage:(id)arg1 withReply:(id)arg2;
+- (id)messageHandler;
+- (void)_handleXPCError:(void*)arg1;
+- (void)setMessageHandler:(id)arg1;
+- (void)shutdown;
+- (void)sendMessage:(id)arg1;
+- (struct dispatch_queue_s { }*)eventQueue;
 - (void)setDisconnectHandler:(id)arg1;
 - (id)disconnectHandler;
 - (id)initWithServiceName:(id)arg1 onQueue:(struct dispatch_queue_s { }*)arg2;
 - (void)_handleXPCMessage:(void*)arg1;
 - (void)_sendMessage:(id)arg1 handler:(id)arg2;
 - (void)_setEventHandlerOnConnection:(struct _xpc_connection_s { }*)arg1;
-- (void)dealloc;
-- (id)initWithXPCConnection:(struct _xpc_connection_s { }*)arg1;
-- (void)sendMessage:(id)arg1 withReply:(id)arg2;
-- (void)setContext:(id)arg1;
-- (id)context;
-- (struct dispatch_queue_s { }*)eventQueue;
 - (void)setAssertionHeld:(BOOL)arg1;
 - (BOOL)assertionHeld;
 - (void)setLockdownHandler:(id)arg1;
@@ -59,11 +62,8 @@
 - (void)_removeMessage:(id)arg1;
 - (void)_registerMessage:(id)arg1;
 - (void)_handleLockdownMessage:(void*)arg1;
+- (void)setContext:(id)arg1;
+- (id)context;
 - (id)serviceName;
-- (void)sendMessage:(id)arg1;
-- (id)messageHandler;
-- (void)_handleXPCError:(void*)arg1;
-- (void)setMessageHandler:(id)arg1;
-- (void)shutdown;
 
 @end

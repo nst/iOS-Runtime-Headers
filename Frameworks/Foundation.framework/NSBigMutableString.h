@@ -35,9 +35,6 @@
 - (unsigned int)length;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)_createSubstringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)_isCString;
-- (id)_newSubstringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 zone:(struct _NSZone { }*)arg2;
 - (BOOL)_isMarkedAsImmutable;
 - (id)_newBigSubstringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 wantsMutable:(BOOL)arg2 zone:(struct _NSZone { }*)arg3;
 - (id)_newSmallImmutableSubstringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 zone:(struct _NSZone { }*)arg2;
@@ -48,5 +45,8 @@
 - (BOOL)_setData:(id)arg1 encoding:(unsigned int)arg2;
 - (BOOL)_getData:(id*)arg1 encoding:(unsigned int*)arg2;
 - (void)_checkForInvalidMutationWithSelector:(SEL)arg1;
+- (id)_createSubstringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)_isCString;
+- (id)_newSubstringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 zone:(struct _NSZone { }*)arg2;
 
 @end

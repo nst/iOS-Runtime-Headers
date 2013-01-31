@@ -49,10 +49,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setExpression:(id)arg1;
-- (id)expression;
-- (id)dictionaryRepresentation;
-- (id)initWithDictionary:(id)arg1;
 - (id)criterionByAddingEmailCriteria;
 - (id)SQLExpressionWithTables:(unsigned int*)arg1 baseTable:(unsigned int)arg2 protectedDataAvailable:(BOOL)arg3;
 - (id)criterionForSQL;
@@ -94,7 +90,6 @@
 - (id)stringForMessageRuleQualifier:(int)arg1;
 - (id)_qualifierString;
 - (id)descriptionWithDepth:(unsigned int)arg1;
-- (id)criteria;
 - (int)qualifier;
 - (id)criterionIdentifier;
 - (int)messageRuleQualifierForString:(id)arg1;
@@ -105,8 +100,13 @@
 - (void)setCriterionIdentifier:(id)arg1;
 - (id)initWithType:(int)arg1 qualifier:(int)arg2 expression:(id)arg3;
 - (void)setAllCriteriaMustBeSatisfied:(BOOL)arg1;
-- (void)setCriteria:(id)arg1;
 - (BOOL)allCriteriaMustBeSatisfied;
 - (int)criterionType;
+- (id)dictionaryRepresentation;
+- (id)initWithDictionary:(id)arg1;
+- (void)setCriteria:(id)arg1;
+- (id)criteria;
+- (void)setExpression:(id)arg1;
+- (id)expression;
 
 @end

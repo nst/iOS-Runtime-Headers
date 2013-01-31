@@ -24,13 +24,13 @@
 
 + (id)sharedPhoneLogger;
 
+- (BOOL)shouldLogWithLevel:(int)arg1 topic:(id)arg2;
+- (BOOL)shouldLog;
+- (void)logWithLevel:(int)arg1 topic:(id)arg2 backtrace:(BOOL)arg3 text:(id)arg4;
 - (void)logWithLevel:(int)arg1 topic:(id)arg2 backtrace:(BOOL)arg3 format:(id)arg4;
 - (id)identifier;
 - (void)dealloc;
 - (id)init;
-- (BOOL)shouldLogWithLevel:(int)arg1 topic:(id)arg2;
-- (BOOL)shouldLog;
-- (void)logWithLevel:(int)arg1 topic:(id)arg2 backtrace:(BOOL)arg3 text:(id)arg4;
 - (id)signalHandler;
 - (void)_loggingChanged;
 - (void)_handleSignal:(int)arg1;

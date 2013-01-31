@@ -12,11 +12,11 @@
 
 + (id)copyParseRules;
 
+- (void)write:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)init;
 - (void)setPrincipal:(id)arg1;
 - (id)principal;
-- (void)write:(id)arg1;
 
 @end

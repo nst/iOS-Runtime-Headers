@@ -14,10 +14,10 @@
 
 + (id)keyPathsForValuesAffectingReadyForMoreMediaData;
 
-- (int)trackID;
 - (void)dealloc;
 - (int)status;
 - (void)finalize;
+- (int)trackID;
 - (id)_assetWriterTrack;
 - (void)markAsFinished;
 - (BOOL)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;

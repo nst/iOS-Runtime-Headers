@@ -12,13 +12,20 @@
     id _delegate;
 }
 
++ (BOOL)anyRequestLoading;
++ (id)serviceUnavailableError;
 + (id)safeBaseURL;
 + (id)nonSecureConnectionNotAllowedError;
 + (id)invalidResponseError;
-+ (BOOL)anyRequestLoading;
-+ (id)serviceUnavailableError;
 
 - (BOOL)loggingEnabled;
+- (void)willParseData;
+- (void)_startedLoading;
+- (void)loadStatusChanged;
+- (BOOL)receivedValidResponse:(id)arg1;
+- (void)didParseData;
+- (void)_finishedLoading;
+- (void)failWithError:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
@@ -30,13 +37,6 @@
 - (BOOL)isLoading;
 - (id)request;
 - (void)loadRequest:(id)arg1;
-- (void)failWithError:(id)arg1;
-- (void)willParseData;
-- (void)_startedLoading;
-- (void)loadStatusChanged;
-- (BOOL)receivedValidResponse:(id)arg1;
-- (void)didParseData;
 - (void)parseData:(id)arg1;
-- (void)_finishedLoading;
 
 @end

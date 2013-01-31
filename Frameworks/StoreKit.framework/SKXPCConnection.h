@@ -38,8 +38,8 @@
 - (void)setMessageBlock:(id)arg1;
 - (void)setDisconnectBlock:(id)arg1;
 - (void)sendMessage:(id)arg1 withReply:(id)arg2;
-- (id)_initSKXPCConnection;
 - (void)sendMessage:(id)arg1;
+- (id)_initSKXPCConnection;
 - (id)initWithServiceName:(id)arg1;
 
 @end

@@ -37,8 +37,6 @@
 
 + (id)newNameSearchOperationWithString:(id)arg1 contactsFilter:(id)arg2 addressBook:(void*)arg3 delegate:(id)arg4 inOutSequenceNumber:(unsigned int*)arg5;
 
-- (id)selectedCell;
-- (void)loadState;
 - (void)resume;
 - (id)operationQueue;
 - (void)dealloc;
@@ -64,6 +62,10 @@
 - (void)suspend;
 - (void)didReceiveMemoryWarning;
 - (void)reload;
+- (void)loadState;
+- (id)selectedCell;
+- (void)setAddressBook:(void*)arg1;
+- (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
 - (void)searchCurrentContactsGroupForWords:(id)arg1 animated:(BOOL)arg2;
 - (void)setSearchCompletionDelegate:(id)arg1;
 - (id)searchCompletionDelegate;
@@ -114,7 +116,5 @@
 - (void)_reloadFontSizes;
 - (void*)_selectedPerson;
 - (id)initWithAddressBook:(void*)arg1;
-- (void)setAddressBook:(void*)arg1;
-- (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
 
 @end

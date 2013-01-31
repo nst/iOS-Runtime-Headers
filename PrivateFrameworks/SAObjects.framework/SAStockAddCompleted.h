@@ -18,11 +18,9 @@
 + (id)addCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)addCompleted;
 
-- (id)groupIdentifier;
 - (id)results;
 - (void)setResults:(id)arg1;
 - (id)identifier;
-- (void)setIdentifier:(id)arg1;
 - (void)setAceStock:(id)arg1;
 - (id)aceStock;
 - (void)setStocks:(id)arg1;
@@ -30,5 +28,7 @@
 - (void)setStockReferences:(id)arg1;
 - (id)stockReferences;
 - (id)encodedClassName;
+- (void)setIdentifier:(id)arg1;
+- (id)groupIdentifier;
 
 @end

@@ -26,7 +26,6 @@
     struct __CFArray { } *mAdditionalCurrencyCodeFormatters;
 }
 
-+ (void)initialize;
 + (id)userVisibleCurrencyCodes;
 + (id)numberFormatStringSpecialSymbols;
 + (id)currentLocaleListSeparator;
@@ -47,6 +46,7 @@
 + (id)formatterForLocale:(struct __CFLocale { }*)arg1;
 + (id)currencySymbolForCurrencyCode:(id)arg1;
 + (id)currentLocaleCurrencyCode;
++ (void)initialize;
 
 - (void)dealloc;
 - (id)halfWidthCurrencySymbolForCurrencyCode:(id)arg1;

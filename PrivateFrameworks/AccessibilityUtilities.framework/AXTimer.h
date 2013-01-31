@@ -12,14 +12,14 @@
 }
 
 
-- (void)afterDelay:(double)arg1 processBlock:(id)arg2;
-- (void)afterDelay:(double)arg1 processBlock:(id)arg2 cancelBlock:(id)arg3;
-- (void)_reallyCancel;
-- (id)initWithTargetSerialQueue:(id)arg1;
 - (BOOL)isCancelled;
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isPending;
+- (void)afterDelay:(double)arg1 processBlock:(id)arg2;
+- (void)afterDelay:(double)arg1 processBlock:(id)arg2 cancelBlock:(id)arg3;
+- (void)_reallyCancel;
+- (id)initWithTargetSerialQueue:(id)arg1;
 
 @end

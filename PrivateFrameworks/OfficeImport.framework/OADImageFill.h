@@ -23,7 +23,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)color;
 - (long)dpi;
 - (BOOL)isTechniqueOverridden;
 - (BOOL)isDpiOverridden;
@@ -42,5 +41,6 @@
 - (id)blipRef;
 - (BOOL)isBlipRefOverridden;
 - (void)setParent:(id)arg1;
+- (id)color;
 
 @end

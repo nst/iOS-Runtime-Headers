@@ -11,13 +11,13 @@
 @property NSObject<MBManagerDelegate> * delegate;
 
 
+- (void)setLogLevel:(int)arg1;
 - (id)restoreState;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1;
 - (void)cancel;
 - (id)init;
-- (id)_init;
 - (void)rebootDevice;
 - (BOOL)allowiTunesBackup;
 - (void)setAllowiTunesBackup:(BOOL)arg1;
@@ -66,6 +66,6 @@
 - (BOOL)setupBackupWithPasscode:(id)arg1 error:(id*)arg2;
 - (id)restoreFilesForDomain:(id)arg1 relativePath:(id)arg2 pendingOnly:(BOOL)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 error:(id*)arg5;
 - (id)initWithDelegate:(id)arg1 eventQueue:(id)arg2;
-- (void)setLogLevel:(int)arg1;
+- (id)_init;
 
 @end

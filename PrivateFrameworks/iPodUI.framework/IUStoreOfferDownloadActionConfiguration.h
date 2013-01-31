@@ -10,11 +10,11 @@
 @property(readonly) MPStoreOffer * buyOffer;
 
 
-- (id)buyOffer;
 - (id)initWithMediaEntity:(id)arg1;
-- (void)downloadAssetForButtonPressed:(id)arg1 completionHandler:(id)arg2;
-- (void)configureButtonForButtonPressed:(id)arg1 animate:(BOOL)arg2;
 - (void)configureButton:(id)arg1 animate:(BOOL)arg2;
 - (id)newButton;
+- (void)downloadAssetForButtonPressed:(id)arg1 completionHandler:(id)arg2;
+- (void)configureButtonForButtonPressed:(id)arg1 animate:(BOOL)arg2;
+- (id)buyOffer;
 
 @end

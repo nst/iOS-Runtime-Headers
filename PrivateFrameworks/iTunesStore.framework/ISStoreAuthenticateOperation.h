@@ -15,11 +15,11 @@
 - (id)initWithAuthenticationContext:(id)arg1;
 - (id)authenticatedAccountDSID;
 - (id)authenticationContext;
-- (id)uniqueKey;
-- (void)dealloc;
-- (void)run;
 - (void)_setAuthenticatedDSID:(id)arg1;
 - (void)_handleAuthenticateResponse:(id)arg1;
 - (id)_authenticatedDSID;
+- (void)dealloc;
+- (void)run;
+- (id)uniqueKey;
 
 @end

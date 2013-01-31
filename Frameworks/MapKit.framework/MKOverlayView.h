@@ -34,6 +34,8 @@
 + (Class)layerClass;
 + (BOOL)_useMiniTiledLayer;
 
+- (id)initWithOverlay:(id)arg1;
+- (id)overlay;
 - (id).cxx_construct;
 - (void)dealloc;
 - (double)_edgePadding;
@@ -42,6 +44,8 @@
 - (BOOL)_canDrawContent;
 - (void)setContentScaleFactor:(float)arg1;
 - (void)setNeedsDisplay;
+- (BOOL)_keepAlive;
+- (BOOL)tiledLayer:(id)arg1 canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 levelOfDetail:(int)arg3;
 - (BOOL)_cachingCanDrawMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(float)arg2;
 - (id)_canDrawCache;
 - (BOOL)_levelCrossFade;
@@ -78,9 +82,5 @@
 - (struct CGPoint { float x1; float x2; })pointForMapPoint:(struct { double x1; double x2; })arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_boundingMapRect;
 - (void)setMapZoomScale:(float)arg1;
-- (BOOL)_keepAlive;
-- (id)initWithOverlay:(id)arg1;
-- (id)overlay;
-- (BOOL)tiledLayer:(id)arg1 canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 levelOfDetail:(int)arg3;
 
 @end

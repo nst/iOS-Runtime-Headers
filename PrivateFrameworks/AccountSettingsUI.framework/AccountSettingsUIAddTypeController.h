@@ -19,11 +19,11 @@
 @property(retain) NSArray * preEnabledDataclasses;
 
 
-- (void)handleURL:(id)arg1;
-- (id)specifiers;
+- (id)plugins;
 - (void)dealloc;
 - (id)init;
-- (id)plugins;
+- (void)handleURL:(id)arg1;
+- (id)specifiers;
 - (void)forceMailSetup;
 - (void)dontShowSecondLevelOtherAccountTypes;
 - (void)popOutOfAddControllers;

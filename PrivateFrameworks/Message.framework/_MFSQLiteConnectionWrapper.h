@@ -16,10 +16,10 @@
 
 
 - (void)dealloc;
-- (id)connection;
 - (unsigned int)generation;
 - (BOOL)isWriter;
 - (void)setIsWriter:(BOOL)arg1;
 - (id)initWithConnection:(id)arg1 generation:(unsigned int)arg2;
+- (id)connection;
 
 @end

@@ -19,14 +19,14 @@
 + (id)addClientGetIdentifier:(unsigned int*)arg1 getPort:(unsigned int*)arg2;
 + (void)initialize;
 
+- (void)_unlock;
+- (void)dealloc;
+- (id)init;
 - (void)_registerCallbackWithKey:(int)arg1;
 - (id)_dequeueCallbacks;
 - (void)_sendCallback:(id)arg1;
 - (BOOL)_wantsCallback:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)_invalidate;
-- (void)_unlock;
 - (void)_lock;
+- (void)_invalidate;
 
 @end

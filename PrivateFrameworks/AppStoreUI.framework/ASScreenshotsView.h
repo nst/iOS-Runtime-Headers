@@ -18,6 +18,8 @@
 
 + (struct CGSize { float x1; float x2; })imageSize;
 
+- (void)dealloc;
+- (id)init;
 - (void)pageControl:(id)arg1 wasTappedInDirection:(int)arg2;
 - (void)setCurrentIndex:(int)arg1;
 - (void)_setCurrentIndex:(int)arg1;
@@ -25,8 +27,6 @@
 - (int)numberOfScreenshots;
 - (void)setImage:(id)arg1 forIndex:(int)arg2;
 - (id)initWithScreenshotCount:(int)arg1;
-- (void)dealloc;
-- (id)init;
 - (id)imageAtIndex:(int)arg1;
 - (int)currentIndex;
 - (void)sizeToFit;

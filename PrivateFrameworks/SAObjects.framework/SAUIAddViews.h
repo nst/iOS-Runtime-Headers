@@ -15,10 +15,6 @@
 + (id)addViewsWithDictionary:(id)arg1 context:(id)arg2;
 + (id)addViews;
 
-- (id)groupIdentifier;
-- (id)views;
-- (void)setViews:(id)arg1;
-- (BOOL)scrollToTop;
 - (void)setTemporary:(BOOL)arg1;
 - (BOOL)temporary;
 - (void)setScrollToTop:(BOOL)arg1;
@@ -26,5 +22,9 @@
 - (id)dialogPhase;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (BOOL)scrollToTop;
+- (id)views;
+- (void)setViews:(id)arg1;
+- (id)groupIdentifier;
 
 @end

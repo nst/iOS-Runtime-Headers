@@ -16,9 +16,6 @@
 + (id)mainBundle;
 + (id)debugDescription;
 + (id)bundleForClass:(Class)arg1;
-+ (id)allFrameworks;
-+ (id)pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2;
-+ (id)allBundles;
 + (id)preferredLocalizationsFromArray:(id)arg1 forPreferences:(id)arg2;
 + (id)bundleWithPath:(id)arg1;
 + (id)pathForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3;
@@ -32,6 +29,9 @@
 + (id)findBundleResources:(id)arg1 callingMethod:(SEL)arg2 directory:(id)arg3 languages:(id)arg4 name:(id)arg5 types:(id)arg6 limit:(unsigned int)arg7;
 + (id)preferredLocalizationsFromArray:(id)arg1;
 + (id)loadedBundles;
++ (id)allFrameworks;
++ (id)pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2;
++ (id)allBundles;
 + (id)currentNibLoadingBundle;
 + (id)currentNibPath;
 + (void)popNibLoadingBundle;
@@ -80,8 +80,7 @@
 + (id)frameworkBundleForBinaryImagePath:(id)arg1;
 + (id)iPodUIBundle;
 
-- (id)URLForResource:(id)arg1 withExtension:(id)arg2 subdirectory:(id)arg3 localization:(id)arg4;
-- (id)localizedInfoDictionary;
+- (id)URLForResource:(id)arg1 withExtension:(id)arg2 subdirectory:(id)arg3;
 - (id)bundleIdentifier;
 - (id)URLForResource:(id)arg1 withExtension:(id)arg2;
 - (id)initWithURL:(id)arg1;
@@ -89,8 +88,6 @@
 - (id)bundlePath;
 - (void)dealloc;
 - (oneway void)release;
-- (id)URLsForResourcesWithExtension:(id)arg1 subdirectory:(id)arg2;
-- (id)pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2;
 - (id)defaultsDictionary;
 - (id)resourcePath;
 - (id)initWithPath:(id)arg1;
@@ -110,7 +107,8 @@
 - (id)bundleURL;
 - (id)preferredLocalizations;
 - (id)infoDictionary;
-- (id)URLForResource:(id)arg1 withExtension:(id)arg2 subdirectory:(id)arg3;
+- (id)URLForResource:(id)arg1 withExtension:(id)arg2 subdirectory:(id)arg3 localization:(id)arg4;
+- (id)localizedInfoDictionary;
 - (id)executableArchitectures;
 - (BOOL)preflightAndReturnError:(id*)arg1;
 - (id)localizationsToSearch;
@@ -145,6 +143,8 @@
 - (BOOL)unload;
 - (id)_computeExecutablePath;
 - (struct __CFBundle { }*)_cfBundle;
+- (id)URLsForResourcesWithExtension:(id)arg1 subdirectory:(id)arg2;
+- (id)pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2;
 - (id)_cachedMainBundleResourcePath;
 - (id)loadNibNamed:(id)arg1 owner:(id)arg2 options:(id)arg3;
 - (id)_gkLocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 language:(id)arg4;

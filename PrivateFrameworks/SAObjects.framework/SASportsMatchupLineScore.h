@@ -13,11 +13,11 @@
 + (id)matchupLineScoreWithDictionary:(id)arg1 context:(id)arg2;
 + (id)matchupLineScore;
 
-- (id)groupIdentifier;
-- (void)setScore:(id)arg1;
-- (id)score;
 - (void)setPeriod:(id)arg1;
 - (id)period;
 - (id)encodedClassName;
+- (id)groupIdentifier;
+- (void)setScore:(id)arg1;
+- (id)score;
 
 @end

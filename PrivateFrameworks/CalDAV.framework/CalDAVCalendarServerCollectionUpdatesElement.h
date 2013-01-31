@@ -10,8 +10,8 @@
 
 
 - (int)state;
+- (id)copyParseRules;
 - (void)setUnpublish:(id)arg1;
 - (void)setPublish:(id)arg1;
-- (id)copyParseRules;
 
 @end

@@ -9,16 +9,16 @@
     struct __CFString { } *_tetheringLink;
 }
 
-+ (BOOL)wifiEnabled;
 + (id)sharedInstance;
 + (void)releaseSharedInstance;
++ (BOOL)wifiEnabled;
 
+- (void)dealloc;
+- (id)init;
 - (id)_wifiTetheringWithState:(id)arg1;
 - (id)_wifiPowerWithState:(id)arg1;
 - (id)_wifiNameWithState:(id)arg1;
 - (void)findKeysAirPortState:(id*)arg1 andTetheringState:(id*)arg2;
 - (id)wifiConfig;
-- (void)dealloc;
-- (id)init;
 
 @end

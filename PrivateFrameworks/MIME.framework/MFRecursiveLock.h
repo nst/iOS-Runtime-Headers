@@ -14,11 +14,11 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (id)initWithName:(id)arg1 andDelegate:(id)arg2;
 - (BOOL)isLockedByMe;
-- (BOOL)tryLock;
 - (void)unlock;
 - (void)lock;
-- (id)initWithName:(id)arg1 andDelegate:(id)arg2;
 - (BOOL)lockBeforeDate:(id)arg1;
+- (BOOL)tryLock;
 
 @end

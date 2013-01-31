@@ -11,8 +11,8 @@
 @property(retain) UIView * cellContents;
 
 
+- (void)dealloc;
 - (void)setCellContents:(id)arg1;
 - (id)cellContents;
-- (void)dealloc;
 
 @end

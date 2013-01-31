@@ -24,10 +24,6 @@
 
 + (id)mf_listElements;
 
-- (int)height;
-- (void)clear;
-- (void)close;
-- (int)width;
 - (BOOL)hasFocus;
 - (void)releaseEvents;
 - (void)captureEvents;
@@ -57,6 +53,10 @@
 - (id)createDocumentFragmentWithText:(id)arg1;
 - (id)createDocumentFragmentWithMarkupString:(id)arg1 baseURL:(id)arg2;
 - (id)compatMode;
+- (int)height;
+- (void)clear;
+- (void)close;
+- (int)width;
 - (id)mf_createMessageQuoteElement;
 
 @end

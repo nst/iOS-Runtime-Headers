@@ -6,6 +6,9 @@
 }
 
 
+- (id)managedObjectContext;
+- (oneway void)release;
+- (id)autorelease;
 - (id)sortName;
 - (id)displayNameWithIdentifiableName:(BOOL)arg1 quoteAlias:(BOOL)arg2;
 - (void)loadProfilePieces:(unsigned int)arg1 withCompletionHandler:(id)arg2;
@@ -13,8 +16,5 @@
 - (id)attributedDisplayNameWithIdentifiableName:(BOOL)arg1 withFont:(id)arg2;
 - (id)alias;
 - (BOOL)isFriend;
-- (id)managedObjectContext;
-- (oneway void)release;
-- (id)autorelease;
 
 @end

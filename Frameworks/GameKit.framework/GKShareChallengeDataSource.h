@@ -5,14 +5,14 @@
 @class GKShareChallengeFooterTextSection, GKTableSection, GKShareChallengeButtonSection;
 
 @interface GKShareChallengeDataSource : GKSectionArrayDataSource  {
-    BOOL _shouldShowAddFriendButton;
-    BOOL _shouldShowShareButton;
+    GKTableSection *_mainSection;
     SEL _challengeButtonAction;
     SEL _shareButtonAction;
+    GKShareChallengeButtonSection *_buttonSection;
     GKShareChallengeFooterTextSection *_footerTextSection;
     SEL _addFriendButtonAction;
-    GKShareChallengeButtonSection *_buttonSection;
-    GKTableSection *_mainSection;
+    BOOL _shouldShowShareButton;
+    BOOL _shouldShowAddFriendButton;
 }
 
 @property(retain) GKTableSection * mainSection;
@@ -27,12 +27,14 @@
 
 + (float)buttonSectionTopMargin;
 
-- (id)mainSection;
+- (void)dealloc;
+- (id)initWithController:(id)arg1;
+- (void)setShouldShowAddFriendButton:(BOOL)arg1;
+- (void)setShouldShowShareButton:(BOOL)arg1;
 - (void)setAddFriendButtonAction:(SEL)arg1;
 - (void)setShareButtonAction:(SEL)arg1;
 - (void)setChallengeButtonAction:(SEL)arg1;
-- (void)setShouldShowShareButton:(BOOL)arg1;
-- (void)setShouldShowAddFriendButton:(BOOL)arg1;
+- (id)mainSection;
 - (void)setShowShareButton:(BOOL)arg1;
 - (id)footerTextSection;
 - (id)buttonSection;
@@ -52,7 +54,5 @@
 - (BOOL)shouldEnableChallengeButton;
 - (id)challengeButtonTitle;
 - (void)prepareSections;
-- (void)dealloc;
-- (id)initWithController:(id)arg1;
 
 @end

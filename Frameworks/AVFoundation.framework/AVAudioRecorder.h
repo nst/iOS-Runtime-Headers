@@ -18,9 +18,6 @@
 @property(copy) NSArray * channelAssignments;
 
 
-- (double)currentTime;
-- (void)endInterruption;
-- (void)beginInterruption;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
@@ -30,6 +27,9 @@
 - (BOOL)record;
 - (id)url;
 - (void)finalize;
+- (void)endInterruption;
+- (void)beginInterruption;
+- (double)currentTime;
 - (void)endInterruptionWithFlags;
 - (BOOL)deleteRecording;
 - (BOOL)recordAtTime:(double)arg1 forDuration:(double)arg2;

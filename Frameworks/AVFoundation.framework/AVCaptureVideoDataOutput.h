@@ -19,9 +19,9 @@
 + (void)initialize;
 + (id)supportedVideoSettingsKeys;
 
-- (void)setSession:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)setSession:(id)arg1;
 - (void)_AVCaptureVideoDataOutput_VideoDataBecameReady;
 - (void)setAlwaysDiscardsLateVideoFrames:(BOOL)arg1;
 - (void)setMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;

@@ -25,27 +25,27 @@
 @property(retain) NSURL * acceptedURL;
 
 
-- (id)inviteStatus;
-- (void)setInviteStatus:(id)arg1;
-- (void)setLastName:(id)arg1;
-- (id)lastName;
-- (void)setFirstName:(id)arg1;
-- (id)firstName;
+- (void)setSummary:(id)arg1;
+- (id)summary;
+- (void)setHref:(id)arg1;
+- (id)href;
 - (void)dealloc;
 - (id)init;
 - (id)inReplyTo;
 - (id)hostURL;
+- (id)inviteStatus;
 - (id)acceptedURL;
+- (id)copyParseRules;
 - (void)setAcceptedURLItem:(id)arg1;
 - (void)setLastNameItem:(id)arg1;
 - (void)setFirstNameItem:(id)arg1;
 - (void)setAcceptedURL:(id)arg1;
 - (void)setInReplyTo:(id)arg1;
+- (void)setInviteStatus:(id)arg1;
 - (void)setHostURL:(id)arg1;
-- (id)copyParseRules;
-- (void)setSummary:(id)arg1;
-- (id)summary;
-- (void)setHref:(id)arg1;
-- (id)href;
+- (void)setLastName:(id)arg1;
+- (id)lastName;
+- (void)setFirstName:(id)arg1;
+- (id)firstName;
 
 @end

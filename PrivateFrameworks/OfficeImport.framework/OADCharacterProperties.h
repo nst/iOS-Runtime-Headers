@@ -49,13 +49,6 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)symbolFont;
-- (double)opacity;
-- (void)setOpacity:(double)arg1;
-- (void)setSize:(double)arg1;
-- (id)stroke;
-- (id)fill;
-- (double)size;
 - (void)overrideWithProperties:(id)arg1;
 - (void)removeUnnecessaryOverrides;
 - (void)setHoverHyperlink:(id)arg1;
@@ -122,5 +115,12 @@
 - (int)caps;
 - (id)underline;
 - (id)clickHyperlink;
+- (id)symbolFont;
+- (double)opacity;
+- (void)setOpacity:(double)arg1;
+- (void)setSize:(double)arg1;
+- (id)stroke;
+- (id)fill;
+- (double)size;
 
 @end

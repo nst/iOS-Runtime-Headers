@@ -27,11 +27,11 @@
 @property(getter=_className,readonly) NSString * className;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (BOOL)isKeyExcludedFromWebScript:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)arg1;
++ (void)initialize;
 
 - (void)willPerformBatchedInvocations;
 - (void)didPerformBatchedInvocations;
@@ -67,6 +67,8 @@
 - (id)DOMElementWithElement:(id)arg1;
 - (id)viewControllerFactory;
 - (id)clientInterface;
+- (id)stringRepresentation;
+- (void)finalizeForWebScript;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isVisible;
@@ -75,7 +77,5 @@
 - (void)unlock;
 - (void)lock;
 - (id)parentViewController;
-- (id)stringRepresentation;
-- (void)finalizeForWebScript;
 
 @end

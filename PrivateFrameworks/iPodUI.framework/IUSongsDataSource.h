@@ -20,8 +20,6 @@
 + (id)tabBarItemIconName;
 
 - (Class)cellConfigurationClass;
-- (void)dealloc;
-- (id)init;
 - (void)_updateSyncProgressString;
 - (BOOL)allowsDownloadingAllEntities;
 - (int)_containingParentEntityType;
@@ -35,5 +33,7 @@
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (void)reloadActionRows;
 - (BOOL)canShowDownloadAllEntities;
+- (void)dealloc;
+- (id)init;
 
 @end

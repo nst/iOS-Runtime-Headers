@@ -24,16 +24,15 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedTarget;
 
+- (void)xpcConnectionUnhandledMessage:(void*)arg1;
+- (void)xpcConnectionFailed:(id)arg1;
+- (void)xpcConnection:(id)arg1 receivedMessage:(id)arg2 userInfo:(id)arg3;
 - (unsigned int)retainCount;
 - (id)retain;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (oneway void)release;
 - (id)init;
 - (id)autorelease;
-- (void)addObserver:(id)arg1 forMessage:(id)arg2 dispatchQueue:(struct dispatch_queue_s { }*)arg3 block:(id)arg4;
-- (void)xpcConnectionUnhandledMessage:(void*)arg1;
-- (void)xpcConnectionFailed:(id)arg1;
-- (void)xpcConnection:(id)arg1 receivedMessage:(id)arg2 userInfo:(id)arg3;
 - (struct dispatch_queue_s { }*)rpcDispatchQueue;
 - (void)setRpcDispatchQueue:(struct dispatch_queue_s { }*)arg1;
 - (id)rpcSelectorPrefix;
@@ -49,5 +48,6 @@
 - (void)_probeBarrier:(id)arg1;
 - (void)_fireProbe:(id)arg1 withArgumentDictionary:(id)arg2;
 - (BOOL)_probeIsEnabled:(id)arg1;
+- (void)addObserver:(id)arg1 forMessage:(id)arg2 dispatchQueue:(struct dispatch_queue_s { }*)arg3 block:(id)arg4;
 
 @end

@@ -21,6 +21,14 @@
 @property(retain) NSMapTable * statusViews;
 
 
+- (void)dealloc;
+- (id)init;
+- (id)error;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (BOOL)isLoading;
+- (id)info;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)setStatusViews:(id)arg1;
 - (id)statusViews;
 - (void)setStatusHeight:(float)arg1;
@@ -37,13 +45,5 @@
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
 - (int)rowCountInTableView:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)setStatus:(id)arg1;
-- (id)status;
-- (BOOL)isLoading;
-- (id)info;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (id)error;
 
 @end

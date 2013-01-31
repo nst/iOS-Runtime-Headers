@@ -27,6 +27,7 @@
 - (void)_setName:(id)arg1;
 - (void)setEntityForReadOnlyFetch:(id)arg1;
 - (BOOL)isRelationship;
+- (BOOL)isColumn;
 - (void)copyValuesForReadOnlyFetch:(id)arg1;
 - (id)propertyDescription;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
@@ -38,6 +39,5 @@
 - (BOOL)isToOne;
 - (id)columnName;
 - (BOOL)isToMany;
-- (BOOL)isColumn;
 
 @end

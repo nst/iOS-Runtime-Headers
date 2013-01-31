@@ -35,6 +35,11 @@
 }
 
 
+- (void)setDelegate:(id)arg1;
+- (unsigned short)type;
+- (void)dealloc;
+- (id)init;
+- (void)sendData:(id)arg1;
 - (void*)callbackThreadFunction;
 - (void)cleanupCallbackThread;
 - (void)endCallbackThread;
@@ -57,18 +62,13 @@
 - (int)lockCallbackThreadMutex;
 - (BOOL)startInitiator;
 - (struct __CFRunLoop { }*)callbackThreadRunLoop;
+- (BOOL)sendResponse:(id)arg1;
+- (int)connectionStatus;
 - (void)setTimedOut:(BOOL)arg1;
 - (BOOL)timedOut;
-- (int)connectionStatus;
-- (void)setDelegate:(id)arg1;
-- (unsigned short)type;
-- (void)dealloc;
-- (id)init;
 - (void)stop;
 - (id)response;
 - (BOOL)sendEvent:(id)arg1;
-- (BOOL)sendResponse:(id)arg1;
-- (void)sendData:(id)arg1;
 - (int)role;
 
 @end

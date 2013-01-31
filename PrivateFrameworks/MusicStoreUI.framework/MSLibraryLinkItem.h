@@ -15,16 +15,16 @@
 @property(retain) NSDictionary * queryStringDictionary;
 
 
+- (void)setQueryStringDictionary:(id)arg1;
+- (id)queryStringDictionary;
+- (id)initWithURL:(id)arg1;
+- (void)dealloc;
 - (BOOL)_parseKind:(id)arg1;
 - (void)setFallbackSectionType:(int)arg1;
 - (void)_parseURL:(id)arg1 withFields:(id)arg2;
 - (id)_copyFieldNamesFromURLBag;
 - (int)fallbackSectionType;
-- (id)initWithURL:(id)arg1;
-- (void)dealloc;
-- (void)setComplete:(BOOL)arg1;
-- (void)setQueryStringDictionary:(id)arg1;
-- (id)queryStringDictionary;
 - (BOOL)isComplete;
+- (void)setComplete:(BOOL)arg1;
 
 @end

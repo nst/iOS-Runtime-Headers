@@ -11,6 +11,8 @@
 
 + (BOOL)_shouldAutomaticallyProvideFunctions;
 
+- (void).cxx_destruct;
+- (id)init;
 - (id)_callFunction:(id)arg1 withArguments:(id)arg2;
 - (id)_lowercaseString:(id)arg1;
 - (id)_deviceModel;
@@ -22,7 +24,5 @@
 - (id)_dateFormattedWithFormatter:(id)arg1 arguments:(id)arg2;
 - (id)stringForExpression:(id)arg1;
 - (void)useSpeechMode:(BOOL)arg1;
-- (void).cxx_destruct;
-- (id)init;
 
 @end

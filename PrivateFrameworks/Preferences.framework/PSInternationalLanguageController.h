@@ -6,12 +6,12 @@
 }
 
 
-- (void)cancelButtonTapped;
-- (id)specifiers;
+- (id)init;
 - (void)updateNavigationItem;
 - (void)doneButtonTapped;
 - (void)_removeBlackFrame;
-- (id)init;
+- (void)cancelButtonTapped;
+- (id)specifiers;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 

@@ -9,8 +9,8 @@
 }
 
 
-- (void)dealloc;
 - (id)initWithRows:(unsigned int)arg1 columns:(unsigned int)arg2;
 - (id)initWithFootprintTile:(id)arg1 heightfieldRows:(unsigned int)arg2 heightfieldColumns:(unsigned int)arg3;
+- (void)dealloc;
 
 @end

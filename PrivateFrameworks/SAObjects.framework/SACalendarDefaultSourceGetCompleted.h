@@ -15,10 +15,10 @@
 + (id)defaultSourceGetCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)defaultSourceGetCompleted;
 
-- (id)groupIdentifier;
 - (id)aceCalendarSource;
 - (void)setAceCalendarSource:(id)arg1;
 - (id)initWithAceCalendarSource:(id)arg1;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

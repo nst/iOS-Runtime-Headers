@@ -13,12 +13,12 @@
 }
 
 
+- (void)setVolume:(long)arg1;
+- (long)volume;
 - (void)setTarget:(id)arg1;
 - (id)target;
 - (void)dealloc;
 - (id)init;
-- (void)setVolume:(long)arg1;
-- (long)volume;
 - (void)setNumberOfSlides:(long)arg1;
 - (long)numberOfSlides;
 - (BOOL)isShowWhenStopped;

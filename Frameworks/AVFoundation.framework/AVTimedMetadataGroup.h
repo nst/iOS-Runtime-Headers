@@ -12,7 +12,6 @@
 @property(readonly) NSArray * items;
 
 
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -22,6 +21,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)finalize;
 - (id)items;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
 - (id)initWithItems:(id)arg1 timeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg2;
 
 @end

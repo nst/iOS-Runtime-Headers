@@ -10,9 +10,6 @@
 @property(readonly) PLLibraryViewController * libraryViewController;
 
 
-- (void)viewDidUnload;
-- (void)viewDidLoad;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)setAlbumCreationLabel:(id)arg1;
 - (int)bannerViewStyle;
 - (id)libraryViewController;
@@ -21,5 +18,8 @@
 - (int)albumListFilter;
 - (id)preparedLibraryViewController;
 - (int)libraryViewController:(id)arg1 willSetCellAccessoryType:(int)arg2 forAlbum:(id)arg3;
+- (void)viewDidUnload;
+- (void)viewDidLoad;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

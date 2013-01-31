@@ -29,6 +29,8 @@
 @property unsigned int sequenceNumber;
 
 
+- (void)dealloc;
+- (id)init;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (unsigned int)sequenceNumber;
 - (void)setHasUpdateRelayInfo:(BOOL)arg1;
@@ -49,7 +51,5 @@
 - (BOOL)counted;
 - (void)setPlayerState:(int)arg1;
 - (int)playerState;
-- (void)dealloc;
-- (id)init;
 
 @end

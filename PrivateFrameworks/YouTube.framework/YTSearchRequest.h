@@ -9,7 +9,6 @@
 + (id)_formatFilter;
 + (unsigned int)videosPerRequest;
 
-- (void)failWithError:(id)arg1;
 - (BOOL)receivedValidResponse:(id)arg1;
 - (void)searchForVideosFromWatchLaterPlaylistStartingAtIndex:(unsigned int)arg1 maxResults:(unsigned int)arg2 withDelegate:(id)arg3;
 - (void)searchForMyVideosStartingAtIndex:(unsigned int)arg1 maxResults:(unsigned int)arg2 withDelegate:(id)arg3;
@@ -23,5 +22,6 @@
 - (void)searchForVideoWithID:(id)arg1 withDelegate:(id)arg2;
 - (void)searchForVideosWithFeedURLBase:(id)arg1 startingAtIndex:(unsigned int)arg2 maxResults:(unsigned int)arg3 withTimeQualifier:(id)arg4 withFormatFilter:(BOOL)arg5 authenticationRequired:(BOOL)arg6 withDelegate:(id)arg7;
 - (void)didParseData;
+- (void)failWithError:(id)arg1;
 
 @end

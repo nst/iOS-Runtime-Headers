@@ -13,12 +13,12 @@
 + (id)showHelpWithDictionary:(id)arg1 context:(id)arg2;
 + (id)showHelp;
 
-- (id)groupIdentifier;
-- (id)text;
-- (void)setText:(id)arg1;
 - (void)setSpeakableText:(id)arg1;
 - (id)speakableText;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)text;
+- (void)setText:(id)arg1;
+- (id)groupIdentifier;
 
 @end

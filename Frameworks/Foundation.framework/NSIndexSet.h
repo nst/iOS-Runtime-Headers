@@ -38,8 +38,7 @@
 - (void)dealloc;
 - (id)init;
 - (unsigned int)count;
-- (unsigned int)getIndexes:(unsigned int*)arg1 maxCount:(unsigned int)arg2 inIndexRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
-- (id)initWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)initWithIndexSet:(id)arg1;
 - (void)enumerateIndexesUsingBlock:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)containsIndex:(unsigned int)arg1;
@@ -49,11 +48,6 @@
 - (id)_init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)replacementObjectForPortCoder:(id)arg1;
-- (unsigned int)__getContainmentVector:(out BOOL*)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)countOfIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned int)rangeCount;
-- (unsigned int)lastIndex;
 - (void)enumerateRangesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (void)enumerateRangesUsingBlock:(id)arg1;
 - (id)indexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
@@ -80,7 +74,13 @@
 - (void)_setContentToContentFromIndexSet:(id)arg1;
 - (id)initWithIndexes:(const unsigned int*)arg1 count:(unsigned int)arg2;
 - (unsigned int)_indexAtIndex:(unsigned int)arg1;
-- (id)initWithIndexSet:(id)arg1;
+- (id)replacementObjectForPortCoder:(id)arg1;
+- (unsigned int)__getContainmentVector:(out BOOL*)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)countOfIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (unsigned int)rangeCount;
+- (unsigned int)lastIndex;
+- (unsigned int)getIndexes:(unsigned int*)arg1 maxCount:(unsigned int)arg2 inIndexRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
+- (id)initWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)initWithIndex:(unsigned int)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;

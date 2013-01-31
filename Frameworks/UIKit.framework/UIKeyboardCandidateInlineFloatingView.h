@@ -83,7 +83,6 @@
 - (void)candidateListShouldBeDismissed:(id)arg1;
 - (void)candidateListSelectionDidChange:(id)arg1;
 - (void)candidateListAcceptCandidate:(id)arg1;
-- (void)showCandidateAtIndex:(unsigned int)arg1;
 - (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
 - (void)setCandidates:(id)arg1 type:(int)arg2 inlineText:(id)arg3 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
 - (id)activeCandidateList;
@@ -92,6 +91,7 @@
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
 - (unsigned int)currentIndex;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
+- (void)showCandidateAtIndex:(unsigned int)arg1;
 - (void)setCandidates:(id)arg1;
 - (void)setInlineText:(id)arg1;
 - (id)currentCandidate;

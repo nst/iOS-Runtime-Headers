@@ -46,20 +46,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (BOOL)drawsLetterpress;
-- (void)setDrawsLetterpress:(BOOL)arg1;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidUnload;
-- (void)loadView;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)didReceiveMemoryWarning;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)recipients;
 - (unsigned int)maxExpandRows;
 - (id)recipientView;
 - (void)composeRecipientViewReturnPressed:(id)arg1;
@@ -94,5 +80,19 @@
 - (BOOL)isRecipientViewFirstResponder;
 - (void)makeRecipientViewFirstResponder;
 - (void)setMaxExpandRows:(unsigned int)arg1;
+- (id)recipients;
+- (BOOL)drawsLetterpress;
+- (void)setDrawsLetterpress:(BOOL)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidUnload;
+- (void)loadView;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)didReceiveMemoryWarning;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

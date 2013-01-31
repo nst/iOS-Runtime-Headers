@@ -18,9 +18,9 @@
 
 + (id)sharedVars;
 
-- (id)aliases;
 - (void)dealloc;
 - (id)init;
+- (id)aliases;
 - (void)setColorFailures:(BOOL)arg1;
 - (BOOL)colorFailures;
 - (void)setEngineeringMode:(BOOL)arg1;

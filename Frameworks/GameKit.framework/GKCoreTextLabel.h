@@ -38,26 +38,6 @@
 @property(retain) GKCoreTextRenderer * coreTextRenderer;
 
 
-- (float)preferredHeightForWidth:(float)arg1;
-- (void)setForceNaturalAlignment:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 calculatedFontSize:(float*)arg2;
-- (BOOL)forceNaturalAlignment;
-- (id)attributedStringForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct __CTParagraphStyle { }*)paragraphStyleWithLineHeight:(float)arg1;
-- (void)invalidateAttributedString;
-- (id)coreTextRenderer;
-- (void)setCoreTextRenderer:(id)arg1;
-- (void)setTruncationSymbol:(id)arg1;
-- (void)setShouldSizeToTextImageBounds:(BOOL)arg1;
-- (float)baselineYOffset;
-- (unsigned int)actualLineCount;
-- (void)setContentPath:(id)arg1;
-- (BOOL)shouldDrawEmoji;
-- (id)truncationSymbol;
-- (id)contentPath;
-- (BOOL)shouldSizeToTextImageBounds;
-- (void)setShouldDrawEmoji:(BOOL)arg1;
-- (void)setLeading:(float)arg1;
 - (void)dealloc;
 - (void)setNumberOfLines:(int)arg1;
 - (float)leading;
@@ -83,5 +63,25 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)preferredHeightForWidth:(float)arg1;
+- (void)setForceNaturalAlignment:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 calculatedFontSize:(float*)arg2;
+- (BOOL)forceNaturalAlignment;
+- (id)attributedStringForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct __CTParagraphStyle { }*)paragraphStyleWithLineHeight:(float)arg1;
+- (void)invalidateAttributedString;
+- (id)coreTextRenderer;
+- (void)setCoreTextRenderer:(id)arg1;
+- (void)setTruncationSymbol:(id)arg1;
+- (void)setShouldSizeToTextImageBounds:(BOOL)arg1;
+- (float)baselineYOffset;
+- (unsigned int)actualLineCount;
+- (void)setContentPath:(id)arg1;
+- (BOOL)shouldDrawEmoji;
+- (id)truncationSymbol;
+- (id)contentPath;
+- (BOOL)shouldSizeToTextImageBounds;
+- (void)setShouldDrawEmoji:(BOOL)arg1;
+- (void)setLeading:(float)arg1;
 
 @end

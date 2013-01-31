@@ -31,12 +31,6 @@
 
 - (void)setMessageTitle:(id)arg1;
 - (id)messageTitle;
-- (void)dealloc;
-- (id)init;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (id)image;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
-- (void)setImage:(id)arg1;
 - (float)modalContextTopOffset;
 - (BOOL)showStrings;
 - (id)findContentURL;
@@ -47,5 +41,11 @@
 - (id)initForVideo;
 - (void)setFindContentURL:(id)arg1;
 - (void)setMessageSubtitle:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)image;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (void)setImage:(id)arg1;
 
 @end

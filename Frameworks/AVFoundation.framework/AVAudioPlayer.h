@@ -26,16 +26,9 @@
 @property(copy) NSArray * channelAssignments;
 
 
-- (id)initWithContentsOfURL:(id)arg1 error:(id*)arg2;
-- (double)currentTime;
-- (float)rate;
-- (void)setCurrentTime:(double)arg1;
-- (void)endInterruption;
-- (void)endInterruptionWithFlags:(id)arg1;
-- (void)beginInterruption;
-- (BOOL)isPlaying;
-- (void)setRate:(float)arg1;
-- (BOOL)prepareToPlay;
+- (BOOL)play;
+- (void)setVolume:(float)arg1;
+- (float)volume;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)data;
@@ -46,9 +39,16 @@
 - (id)url;
 - (void)finalize;
 - (double)duration;
-- (BOOL)play;
-- (void)setVolume:(float)arg1;
-- (float)volume;
+- (void)endInterruption;
+- (void)endInterruptionWithFlags:(id)arg1;
+- (void)beginInterruption;
+- (BOOL)isPlaying;
+- (void)setRate:(float)arg1;
+- (BOOL)prepareToPlay;
+- (void)setCurrentTime:(double)arg1;
+- (float)rate;
+- (double)currentTime;
+- (id)initWithContentsOfURL:(id)arg1 error:(id*)arg2;
 - (void)setChannelAssignments:(id)arg1;
 - (id)channelAssignments;
 - (float)averagePowerForChannel:(unsigned int)arg1;

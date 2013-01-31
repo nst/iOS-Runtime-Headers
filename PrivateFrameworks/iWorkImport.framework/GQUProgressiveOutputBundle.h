@@ -15,7 +15,6 @@
 }
 
 
-- (void)dealloc;
 - (struct __CFURL { }*)getAttachmentURL:(struct __CFString { }*)arg1 mimeType:(struct __CFString { }*)arg2;
 - (void)closeAttachment:(struct __CFString { }*)arg1;
 - (BOOL)appendData:(struct __CFData { }*)arg1 mimeType:(struct __CFString { }*)arg2 resourceName:(struct __CFString { }*)arg3;
@@ -26,6 +25,7 @@
 - (void)startProgressiveData;
 - (void)setPageElementXPath:(struct __CFString { }*)arg1 withThumbnailsOnLeft:(BOOL)arg2;
 - (void)setDocumentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)dealloc;
 - (id)initWithHandler:(id)arg1;
 
 @end

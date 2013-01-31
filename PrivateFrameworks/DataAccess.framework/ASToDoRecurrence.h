@@ -23,10 +23,6 @@
 + (BOOL)acceptsTopLevelLeaves;
 
 - (void)dealloc;
-- (id)startTime;
-- (void)setStartTime:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)_transformedUntilDateForActiveSync:(id)arg1;
 - (id)_untilDateForCalFrameworkWithParentStartDate:(id)arg1;
 - (BOOL)_requiresParentEvent;
@@ -40,5 +36,9 @@
 - (void)setDeadOccur:(id)arg1;
 - (id)initWithCalRecurrence:(void*)arg1 parentToDo:(id)arg2;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
+- (id)startTime;
+- (void)setStartTime:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

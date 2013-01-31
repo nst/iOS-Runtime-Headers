@@ -18,7 +18,6 @@
 + (id)showtimeWithDictionary:(id)arg1 context:(id)arg2;
 + (id)showtime;
 
-- (id)groupIdentifier;
 - (void)setShowtime:(id)arg1;
 - (void)setSeniorTicketQuantity:(id)arg1;
 - (id)seniorTicketQuantity;
@@ -34,5 +33,6 @@
 - (void)setIs3d:(BOOL)arg1;
 - (BOOL)is3d;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -11,10 +11,10 @@
 }
 
 
+- (void)dealloc;
 - (id)preferenceValue;
 - (void)setPreferenceValue:(id)arg1;
 - (void)setPreferenceSpecifier:(id)arg1;
-- (void)dealloc;
 - (BOOL)becomeFirstResponder;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

@@ -21,10 +21,6 @@
 
 + (id)centerNamed:(id)arg1;
 
-- (id)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2 error:(id*)arg3;
-- (BOOL)sendNonBlockingMessageName:(id)arg1 userInfo:(id)arg2;
-- (void)registerForMessageName:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
-- (void)runServerOnCurrentThread;
 - (id)name;
 - (void)dealloc;
 - (id)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2;
@@ -32,7 +28,6 @@
 - (void)sendDelayedReply:(id)arg1 dictionary:(id)arg2;
 - (void)stopServer;
 - (BOOL)sendMessageName:(id)arg1 userInfo:(id)arg2;
-- (unsigned int)_serverPort;
 - (id)_requiredEntitlement;
 - (BOOL)_isTaskEntitled:(struct { unsigned int x1[8]; }*)arg1;
 - (void)_dispatchMessageNamed:(id)arg1 userInfo:(id)arg2 reply:(id*)arg3 auditToken:(struct { unsigned int x1[8]; }*)arg4;
@@ -50,5 +45,10 @@
 - (void)_setupInvalidationSource;
 - (void)_setSendPort:(unsigned int)arg1;
 - (id)_initWithServerName:(id)arg1;
+- (unsigned int)_serverPort;
+- (id)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2 error:(id*)arg3;
+- (BOOL)sendNonBlockingMessageName:(id)arg1 userInfo:(id)arg2;
+- (void)registerForMessageName:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
+- (void)runServerOnCurrentThread;
 
 @end

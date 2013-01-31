@@ -11,10 +11,10 @@
 
 
 - (void)dealloc;
-- (bool)load;
-- (bool)isLoaded;
 - (id)delayedContext;
 - (void)setLoaded:(bool)arg1;
 - (void)setDelayedContext:(id)arg1;
+- (bool)load;
+- (bool)isLoaded;
 
 @end

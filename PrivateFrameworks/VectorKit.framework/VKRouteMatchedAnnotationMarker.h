@@ -13,8 +13,8 @@
 @property(getter=isTracking) BOOL tracking;
 
 
-- (void)dealloc;
 - (void)setRouteMatch:(id)arg1;
 - (id)routeMatch;
+- (void)dealloc;
 
 @end

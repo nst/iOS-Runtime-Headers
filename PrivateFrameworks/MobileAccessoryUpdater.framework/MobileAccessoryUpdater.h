@@ -18,8 +18,6 @@
 
 
 - (void)dealloc;
-- (void)createConnection;
-- (void)unregister;
 - (BOOL)setLastRemoteFindDate:(id)arg1;
 - (void)performNextStepWithOptions:(id)arg1;
 - (BOOL)setActiveDeviceClass:(id)arg1;
@@ -37,5 +35,7 @@
 - (BOOL)registerForIdentifier:(id)arg1 isGroupIdentifier:(BOOL)arg2;
 - (BOOL)registerForBSDNotifications;
 - (id)initWithPluginIdentifier:(id)arg1 isGroupIdentifier:(BOOL)arg2 delegate:(id)arg3 options:(id)arg4 error:(id*)arg5;
+- (void)createConnection;
+- (void)unregister;
 
 @end

@@ -369,6 +369,7 @@
 - (void)setCommittingCandidate:(BOOL)arg1;
 - (BOOL)committingCandidate;
 - (void)handleDeleteWithZeroInputCount;
+- (BOOL)userSelectedCurrentCandidate;
 - (void)handleDeleteWithNonZeroInputCount;
 - (BOOL)callShouldDeleteWithWordCountForRapidDelete:(int)arg1 characterCountForRapidDelete:(int)arg2;
 - (BOOL)shouldEnableShiftForDeletedCharacter:(unsigned long)arg1;
@@ -446,6 +447,7 @@
 - (id)inputModeLastUsedForLanguage:(id)arg1;
 - (void)fadeAutocorrectPrompt;
 - (id)delegateAsResponder;
+- (BOOL)hasUpToDateCandidates;
 - (void)movePhraseBoundaryToDirection:(int)arg1;
 - (void)setArrowKeyHistory:(id)arg1;
 - (id)arrowKeyHistory;

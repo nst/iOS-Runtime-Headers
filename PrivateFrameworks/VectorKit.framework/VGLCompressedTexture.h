@@ -19,9 +19,9 @@
 }
 
 
-- (void)dealloc;
-- (id)initWithData:(id)arg1;
 - (BOOL)loadTexture;
 - (BOOL)decodeTexture;
+- (void)dealloc;
+- (id)initWithData:(id)arg1;
 
 @end

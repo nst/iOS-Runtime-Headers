@@ -12,6 +12,8 @@
 
 + (id)sharedInstance;
 
+- (void)dealloc;
+- (id)init;
 - (void)cancelActionsForRegistrationInfo:(id)arg1;
 - (BOOL)removeEmail:(id)arg1 forRegistration:(id)arg2;
 - (BOOL)unlinkHandle:(id)arg1 forRegistration:(id)arg2;
@@ -68,8 +70,6 @@
 - (void)_notifyAuthenticationSuccess:(id)arg1;
 - (void)_postUserNotificationWithTitle:(id)arg1 message:(id)arg2 identifier:(id)arg3 completionHandler:(id)arg4;
 - (id)_queueForKey:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (void)removeListener:(id)arg1;
 - (void)addListener:(id)arg1;
 

@@ -10,10 +10,10 @@
 
 
 - (id)init;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (long long)rowid;
 - (BOOL)hasRowid;
 - (void)setRowid:(long long)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

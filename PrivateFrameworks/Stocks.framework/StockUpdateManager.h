@@ -12,12 +12,11 @@
 + (id)sharedManager;
 + (void)clearSharedManager;
 
+- (void)failWithError:(id)arg1;
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isLoading;
-- (void)failWithError:(id)arg1;
 - (void)updateAllStocksBasic;
 - (void)updateStockComprehensive:(id)arg1;
 - (void)updateStocksComprehensive:(id)arg1;
@@ -29,5 +28,6 @@
 - (id)_comprehensiveUpdater;
 - (BOOL)hadError;
 - (void)_createUpdatersIfNeeded;
+- (BOOL)isLoading;
 
 @end

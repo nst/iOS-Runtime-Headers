@@ -10,9 +10,9 @@
 
 
 - (id)description;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)performWithAccount:(id)arg1 offlineCache:(id)arg2;
 - (id)initWithMailbox:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

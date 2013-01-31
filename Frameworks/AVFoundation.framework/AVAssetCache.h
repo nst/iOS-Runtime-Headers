@@ -18,9 +18,9 @@
 - (id)URL;
 - (id)initWithURL:(id)arg1;
 - (void)dealloc;
+- (void)removeEntryForKey:(id)arg1;
 - (void)finalize;
 - (id)allKeys;
-- (void)removeEntryForKey:(id)arg1;
 - (long long)sizeOfEntryForKey:(id)arg1;
 - (long long)currentSize;
 - (void)setMaxEntrySize:(long long)arg1;

@@ -39,8 +39,8 @@
         unsigned int delegateImplementsShouldEnableAlbum : 1; 
         unsigned int reserved : 27; 
     } _alcFlags;
-    NSString *_listHeaderLabel;
     UIImage *_listHeaderImage;
+    NSString *_listHeaderLabel;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -72,15 +72,6 @@
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidUnload;
-- (void)viewDidLoad;
-- (BOOL)hasContent;
-- (int)contentMode;
-- (void)didReceiveMemoryWarning;
-- (void)addAlbum:(id)arg1;
 - (struct NSObject { Class x1; }*)albumList;
 - (void)shouldReload:(id)arg1;
 - (void)albumListDidChange:(id)arg1;
@@ -148,5 +139,14 @@
 - (BOOL)prepareForDismissingAnimated:(BOOL)arg1;
 - (id)_suppresionContexts;
 - (BOOL)_appAllowsSupressionOfAlerts;
+- (void)addAlbum:(id)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidUnload;
+- (void)viewDidLoad;
+- (BOOL)hasContent;
+- (int)contentMode;
+- (void)didReceiveMemoryWarning;
 
 @end

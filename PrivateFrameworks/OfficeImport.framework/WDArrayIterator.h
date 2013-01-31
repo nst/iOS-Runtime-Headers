@@ -10,8 +10,8 @@
 }
 
 
-- (id)initWithArray:(id)arg1;
 - (BOOL)hasNext;
 - (id)next;
+- (id)initWithArray:(id)arg1;
 
 @end

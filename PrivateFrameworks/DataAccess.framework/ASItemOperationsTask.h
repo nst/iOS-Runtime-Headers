@@ -13,7 +13,6 @@
 }
 
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)setMIMESupport:(int)arg1;
@@ -32,5 +31,6 @@
 - (id)requestBody;
 - (int)commandCode;
 - (int)taskStatusForExchangeStatus:(int)arg1;
+- (void)finishWithError:(id)arg1;
 
 @end

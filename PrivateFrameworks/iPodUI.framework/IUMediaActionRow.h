@@ -38,16 +38,6 @@
 
 - (id)configuration;
 - (void)setConfiguration:(id)arg1;
-- (SEL)action;
-- (id)description;
-- (void)dealloc;
-- (void)setSelectable:(BOOL)arg1;
-- (void)setCell:(id)arg1;
-- (BOOL)selectable;
-- (id)cell;
-- (int)mediaTypes;
-- (id)accessoryView;
-- (int)tag;
 - (BOOL)showPlusButton;
 - (BOOL)showDisclosure;
 - (id)initWithPreset:(int)arg1 mediaTypes:(int)arg2 title:(id)arg3 action:(SEL)arg4 cellConfigurationClass:(Class)arg5;
@@ -59,5 +49,15 @@
 - (int)mediaDisclosureStyle;
 - (BOOL)showCheckmark;
 - (void)setShowCheckmark:(BOOL)arg1;
+- (SEL)action;
+- (id)description;
+- (void)dealloc;
+- (void)setSelectable:(BOOL)arg1;
+- (void)setCell:(id)arg1;
+- (BOOL)selectable;
+- (id)cell;
+- (int)mediaTypes;
+- (id)accessoryView;
+- (int)tag;
 
 @end

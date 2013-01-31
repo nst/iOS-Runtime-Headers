@@ -35,7 +35,6 @@
 
 + (id)sharedWeatherUpdateController;
 
-- (void)dealloc;
 - (id)weatherInfoCompletion;
 - (void)weatherInformationForIDs:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)weatherInformationForLocation:(id)arg1 withCompletionHandler:(id)arg2;
@@ -53,6 +52,7 @@
 - (void)setCurrentLocationCompletion:(id)arg1;
 - (void)setSearchCompletion:(id)arg1;
 - (void)didValidateLocation:(id)arg1;
+- (void)dealloc;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
 - (void)didFailWithError:(id)arg1;

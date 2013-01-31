@@ -9,12 +9,12 @@
 }
 
 
+- (void)dealloc;
 - (id)language:(id)arg1;
 - (void)setLanguage:(id)arg1 specifier:(id)arg2;
 - (void)showBlackViewWithLabel:(id)arg1;
 - (void)didFinishCommit;
 - (void)rotateView:(id)arg1 toOrientation:(int)arg2;
-- (void)dealloc;
 - (void)setupController;
 - (void)commit;
 

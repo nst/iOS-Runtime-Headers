@@ -19,6 +19,8 @@
 
 - (id)state;
 - (void)dealloc;
+- (id)next;
+- (void)addElement:(id)arg1;
 - (void)setElements:(id)arg1;
 - (id)elements;
 - (void)setState:(id)arg1;
@@ -26,7 +28,5 @@
 - (id)transitions;
 - (void)addTransition:(id)arg1;
 - (void)willAddLayer:(id)arg1;
-- (id)next;
-- (void)addElement:(id)arg1;
 
 @end

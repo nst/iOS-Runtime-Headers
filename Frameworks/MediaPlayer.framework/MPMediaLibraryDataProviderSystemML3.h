@@ -10,6 +10,7 @@
 + (id)_localizedGeniusErrorForError:(id)arg1;
 + (BOOL)_isGeniusEnabled;
 
+- (id)initWithLibrary:(id)arg1;
 - (void)_loadArtworkImageForMLArtworkFormatID:(unsigned int)arg1 artworkCacheID:(id)arg2 canUseSurfaceBackedImage:(BOOL)arg3 completionBlock:(id)arg4;
 - (id)_cacheIDForItemIdentifier:(long long)arg1 atPlaybackTime:(double)arg2;
 - (void)_loadArtworkImageDataForMLArtworkFormatID:(unsigned int)arg1 artworkCacheID:(id)arg2 completionBlock:(id)arg3;
@@ -33,6 +34,5 @@
 - (id)errorResolverForMediaItem:(id)arg1;
 - (BOOL)isGeniusEnabled;
 - (BOOL)isArtworkImageIdenticalForItemWithIdentifier:(long long)arg1 otherItemWithIdentifier:(long long)arg2 compareRepresentativeItemArtwork:(BOOL)arg3 missingAlwaysComparesEqual:(BOOL)arg4;
-- (id)initWithLibrary:(id)arg1;
 
 @end

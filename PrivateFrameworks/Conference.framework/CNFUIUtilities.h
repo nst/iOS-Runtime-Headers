@@ -5,7 +5,6 @@
 @interface CNFUIUtilities : NSObject  {
 }
 
-+ (id)networkSettingsURLAllowingCellular:(BOOL)arg1;
 + (id)faceTimeDisplayNameForDestination:(id)arg1 image:(id*)arg2;
 + (id)statusStringForState:(unsigned int)arg1;
 + (int)interfaceOrientationForDeviceOrientation:(int)arg1;
@@ -14,6 +13,7 @@
 + (int)statusForState:(unsigned int)arg1;
 + (id)statusStringForContactName:(id)arg1 status:(int)arg2 useFloatingHUD:(BOOL)arg3;
 + (id)currentCallDurationString;
++ (id)networkSettingsURLAllowingCellular:(BOOL)arg1;
 
 
 @end

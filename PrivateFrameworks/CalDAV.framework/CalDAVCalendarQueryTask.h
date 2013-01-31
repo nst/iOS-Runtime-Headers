@@ -23,6 +23,8 @@
 
 - (id)description;
 - (void)dealloc;
+- (id)httpMethod;
+- (id)requestBody;
 - (id)todoFilterEndDate;
 - (id)todoFilterStartDate;
 - (id)eventFilterEndDate;
@@ -38,7 +40,5 @@
 - (BOOL)syncTodos;
 - (void)setSyncTodos:(BOOL)arg1;
 - (void)setSyncEvents:(BOOL)arg1;
-- (id)httpMethod;
-- (id)requestBody;
 
 @end

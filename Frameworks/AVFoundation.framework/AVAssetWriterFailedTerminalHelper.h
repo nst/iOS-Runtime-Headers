@@ -10,8 +10,8 @@
 
 
 - (void)dealloc;
-- (int)status;
 - (id)error;
+- (int)status;
 - (id)initWithConfigurationState:(id)arg1 terminalError:(id)arg2;
 - (id)initWithConfigurationState:(id)arg1;
 - (void)finishWritingWithCompletionHandler:(id)arg1;

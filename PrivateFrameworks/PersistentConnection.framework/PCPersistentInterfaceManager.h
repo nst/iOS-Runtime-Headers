@@ -104,12 +104,12 @@
 - (void)_serverCallbackLocked:(id)arg1 info:(id)arg2;
 - (void)_updateWWANInterfaceUpStateLocked;
 - (void)_createCTConnection;
-- (void)handleMachMessage:(void*)arg1;
 - (void)_adjustWiFiAutoAssociationLocked;
 - (void)_adjustWiFiAutoAssociation;
 - (void)_createWiFiManager;
 - (BOOL)isWWANInterfaceUp;
 - (id)urlConnectionBoundToWWANInterface:(BOOL)arg1 withRequest:(id)arg2 delegate:(id)arg3 usesCache:(BOOL)arg4 maxContentLength:(long long)arg5 startImmediately:(BOOL)arg6 connectionProperties:(id)arg7;
 - (BOOL)isWWANBetterThanWiFi;
+- (void)handleMachMessage:(void*)arg1;
 
 @end

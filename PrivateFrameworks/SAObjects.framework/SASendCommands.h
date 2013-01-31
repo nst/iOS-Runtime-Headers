@@ -12,10 +12,10 @@
 + (id)sendCommandsWithDictionary:(id)arg1 context:(id)arg2;
 + (id)sendCommands;
 
-- (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
 - (void)setCommands:(id)arg1;
 - (id)commands;
+- (id)groupIdentifier;
 
 @end

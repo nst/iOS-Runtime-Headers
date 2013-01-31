@@ -14,16 +14,16 @@
 @property(readonly) int selectedViewIndex;
 
 
-- (void)dealloc;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (int)selectedViewIndex;
 - (void)_updateSelectedImage;
 - (void)addSelectableImageView:(id)arg1;
 - (void)clearSelectableImageViews;
 - (void)updateConnectionProgress:(float)arg1 forLibraryAtIndex:(unsigned int)arg2;
 - (id)selectableImageViews;
+- (void)dealloc;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end

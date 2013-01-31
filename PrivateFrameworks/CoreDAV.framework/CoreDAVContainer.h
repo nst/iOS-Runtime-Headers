@@ -50,10 +50,10 @@
 + (id)convertPushTransportsForNSServerNotificationCenter:(id)arg1;
 + (id)copyPropertyMappingsForParser;
 
+- (void)setOwner:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (void)setUrl:(id)arg1;
-- (id)url;
+- (id)owner;
 - (id)addMemberURL;
 - (BOOL)supportsSyncCollectionReport;
 - (BOOL)supportsPrincipalPropertySearchReport;
@@ -91,7 +91,7 @@
 - (id)resourceType;
 - (void)applyParsedProperties:(id)arg1;
 - (id)initWithURL:(id)arg1 andProperties:(id)arg2;
-- (void)setOwner:(id)arg1;
-- (id)owner;
+- (void)setUrl:(id)arg1;
+- (id)url;
 
 @end

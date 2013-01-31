@@ -15,18 +15,18 @@
 @property int state;
 
 
-- (void)finishWithError:(id)arg1;
 - (int)action;
 - (int)state;
 - (id)description;
 - (void)dealloc;
+- (void)startTaskGroup;
+- (void)task:(id)arg1 didFinishWithError:(id)arg2;
+- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
+- (id)initWithSharingAction:(int)arg1 atCalendarURL:(id)arg2 accountInfoProvider:(id)arg3 taskManager:(id)arg4;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (void)setAction:(int)arg1;
 - (void)setState:(int)arg1;
-- (id)initWithSharingAction:(int)arg1 atCalendarURL:(id)arg2 accountInfoProvider:(id)arg3 taskManager:(id)arg4;
-- (void)startTaskGroup;
-- (void)task:(id)arg1 didFinishWithError:(id)arg2;
-- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
+- (void)finishWithError:(id)arg1;
 
 @end

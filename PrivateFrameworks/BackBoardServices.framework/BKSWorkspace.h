@@ -29,10 +29,15 @@
 @property(retain) BKSMachSendRight * topEventPortOverride;
 
 
+- (void)invalidate;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (void)resume:(id)arg1;
 - (void)_reregister;
-- (BOOL)isBusy;
-- (void)_handleMessage:(id)arg1;
-- (void)_registerWithServer;
+- (void)shutdown:(BOOL)arg1;
 - (id)topEventPortOverride;
 - (void)_sendResume:(id)arg1;
 - (void)_releaseApplicationActivationAssertion:(id)arg1;
@@ -99,16 +104,11 @@
 - (id)topApplication;
 - (void)_invalidateConnection;
 - (void)_sendClientBundleIdentifier:(id)arg1;
-- (void)invalidate;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)description;
-- (void)dealloc;
-- (id)init;
+- (void)_handleMessage:(id)arg1;
+- (void)_registerWithServer;
 - (void)setLocked:(BOOL)arg1;
 - (BOOL)isLocked;
-- (void)shutdown:(BOOL)arg1;
-- (void)resume:(id)arg1;
+- (BOOL)isBusy;
 - (id)initWithQueue:(id)arg1;
 - (BOOL)suspended;
 - (unsigned int)serverPort;

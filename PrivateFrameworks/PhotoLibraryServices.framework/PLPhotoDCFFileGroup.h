@@ -29,9 +29,6 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)setDate:(id)arg1;
-- (id)date;
-- (BOOL)isValid;
 - (void)createWildcatThumbnailsFromImage:(struct CGImage { }*)arg1 orientation:(int)arg2 options:(id)arg3 delegate:(id)arg4;
 - (BOOL)isWritePending;
 - (BOOL)hasPrebakedWildcatThumbnails;
@@ -74,5 +71,8 @@
 - (id)pathForPrebakedThumbnail;
 - (id)pathForVideoFile;
 - (id)pathForVideoPreviewFile;
+- (void)setDate:(id)arg1;
+- (id)date;
+- (BOOL)isValid;
 
 @end

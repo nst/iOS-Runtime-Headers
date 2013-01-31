@@ -65,7 +65,6 @@
 - (id)addObserverForName:(id)arg1 object:(id)arg2 queue:(id)arg3 usingBlock:(id)arg4;
 - (void)dealloc;
 - (id)init;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)removeStackViewImageChangeObserver:(id)arg1;
 - (void)addStackViewImageChangeObserver:(id)arg1;
 - (void)removeCameraPreviewWellImageChangeObserver:(id)arg1;
@@ -123,5 +122,6 @@
 - (void)managedObjectContextWillBeOverloaded:(id)arg1 withNotificationData:(id)arg2 usingObjectIDs:(BOOL)arg3;
 - (void)processContextDidChangeNotification:(id)arg1;
 - (void)postShouldReloadNotification;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 
 @end

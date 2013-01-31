@@ -36,6 +36,12 @@
 
 + (id)codedPropertyKeys;
 
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (void)setRank:(unsigned int)arg1;
+- (unsigned int)rank;
+- (BOOL)isValid;
 - (void)setRating:(float)arg1;
 - (float)rating;
 - (void)setMaxFriendRank:(unsigned int)arg1;
@@ -59,11 +65,5 @@
 - (void)setCategoryID:(id)arg1;
 - (void)setGame:(id)arg1;
 - (id)game;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (BOOL)isValid;
-- (void)setRank:(unsigned int)arg1;
-- (unsigned int)rank;
 
 @end

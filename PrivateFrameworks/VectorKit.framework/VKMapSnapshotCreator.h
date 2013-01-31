@@ -26,8 +26,6 @@
 + (BOOL)supportsSharingThumbnails;
 + (BOOL)supportsHighResolutionSnapshots;
 
-- (void)cancel;
-- (void)dealloc;
 - (void)mapModel:(id)arg1 annotationMarker:(id)arg2 didChangeDragState:(int)arg3 fromOldState:(int)arg4;
 - (void)mapModel:(id)arg1 didDeselectAnnotationMarker:(id)arg2;
 - (void)mapModel:(id)arg1 didSelectAnnotationMarker:(id)arg2;
@@ -66,6 +64,8 @@
 - (void)setLocalizeLabels:(BOOL)arg1;
 - (BOOL)localizeLabels;
 - (int)mapType;
+- (void)cancel;
+- (void)dealloc;
 - (void)_mapkit_configureFromDefaults;
 
 @end

@@ -27,6 +27,11 @@
 @property unsigned int textureIndex;
 
 
+- (void)dealloc;
+- (id)init;
+- (int)mode;
+- (void)setMode:(int)arg1;
+- (void)bind;
 - (unsigned int)textureIndex;
 - (void)setEyePlaneByInvModelviewLoc:(int)arg1;
 - (int)eyePlaneByInvModelviewLoc;
@@ -48,10 +53,5 @@
 - (void)initializeMasks;
 - (void)setTextureIndex:(unsigned int)arg1;
 - (void)dirtyAllUniforms;
-- (void)dealloc;
-- (id)init;
-- (int)mode;
-- (void)setMode:(int)arg1;
-- (void)bind;
 
 @end

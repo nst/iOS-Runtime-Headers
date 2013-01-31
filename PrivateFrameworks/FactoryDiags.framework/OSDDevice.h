@@ -101,8 +101,13 @@
 + (id)sharedInstance;
 + (void)initialize;
 
+- (BOOL)_hasAudio;
 - (void)dealloc;
 - (id)init;
+- (int)_deviceType;
+- (BOOL)_hasInvertedDisplay;
+- (id)_deviceName;
+- (id)_modelName;
 - (int)getControlBitStationID:(int)arg1;
 - (void)removeNVRAMKey:(id)arg1;
 - (BOOL)hasNVRAMKey:(id)arg1;
@@ -156,11 +161,6 @@
 - (id)_pmuFaultLog;
 - (id)_productBuildVersion;
 - (id)_buildTrain;
-- (int)_deviceType;
 - (id)_properties;
-- (id)_deviceName;
-- (id)_modelName;
-- (BOOL)_hasInvertedDisplay;
-- (BOOL)_hasAudio;
 
 @end

@@ -27,8 +27,8 @@
 - (void)showWithCompletionBlock:(id)arg1;
 - (id)initWithDialog:(id)arg1;
 - (void)dealloc;
+- (BOOL)isEquivalent:(id)arg1;
 - (void)alertViewCancel:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (BOOL)isEquivalent:(id)arg1;
 
 @end

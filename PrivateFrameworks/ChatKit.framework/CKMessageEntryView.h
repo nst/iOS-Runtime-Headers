@@ -43,29 +43,20 @@
 @property int animationState;
 @property(getter=isDimmed) BOOL dimmed;
 
-+ (float)defaultHeight;
 + (float)defaultWidthInPortrait;
 + (float)defaultWidthInPortraitSupportsAttachments:(BOOL)arg1;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })entryAreaViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 supportsAttachments:(BOOL)arg2;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })photoButtonFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 supportsAttachments:(BOOL)arg2;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sendButtonFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 supportsAttachments:(BOOL)arg2;
++ (float)defaultHeight;
 
 - (void)setKeyboardVisible:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (void)setAnimationState:(int)arg1;
-- (int)animationState;
-- (struct CGSize { float x1; float x2; })desiredSize;
-- (void)handlePan:(id)arg1;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)send:(id)arg1;
+- (void)scrollToBottom:(BOOL)arg1;
+- (BOOL)isDimmed;
+- (void)setDimmed:(BOOL)arg1;
 - (BOOL)isKeyboardVisible;
 - (void)setPanGestureRecognizerBlock:(id)arg1;
 - (id)photoButton;
@@ -93,8 +84,17 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 supportsAttachments:(BOOL)arg2;
 - (void)setDefaultText:(id)arg1;
 - (void)_updateSendButtonColor;
-- (void)scrollToBottom:(BOOL)arg1;
-- (BOOL)isDimmed;
-- (void)setDimmed:(BOOL)arg1;
+- (void)setAnimationState:(int)arg1;
+- (int)animationState;
+- (struct CGSize { float x1; float x2; })desiredSize;
+- (void)handlePan:(id)arg1;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)send:(id)arg1;
 
 @end

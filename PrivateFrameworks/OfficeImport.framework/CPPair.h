@@ -20,11 +20,11 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)second;
 - (id)initWithFirstPointer:(id)arg1 andSecondPointer:(id)arg2;
 - (id)initWithFirst:(id)arg1 andSecondPointer:(id)arg2;
 - (id)initWithFirstPointer:(id)arg1 andSecond:(id)arg2;
 - (id)first;
 - (id)initWithFirst:(id)arg1 andSecond:(id)arg2;
+- (id)second;
 
 @end

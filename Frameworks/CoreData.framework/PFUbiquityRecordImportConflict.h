@@ -30,10 +30,10 @@
 @property(retain) NSDictionary * globalIDIndexToLocalIDURIMap;
 @property(retain) PFUbiquityImportContext * importContext;
 
++ (void)initialize;
 + (id)createTransactionLogForTransactionEntry:(id)arg1 withImportContext:(id)arg2 error:(id*)arg3;
 + (id)electAncestorKnowledgeVectorForKnowledgeVector:(id)arg1 withExportingPeerID:(id)arg2 fromPeerSnapshotCollection:(id)arg3;
 + (int)resolvedTypeForConflictingLogType:(int)arg1 andLatestTransactionEntry:(id)arg2 skipObject:(BOOL*)arg3;
-+ (void)initialize;
 
 - (id)description;
 - (void)dealloc;

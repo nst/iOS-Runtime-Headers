@@ -15,11 +15,11 @@
 }
 
 
-- (void)dealloc;
-- (id)init;
-- (void)purge;
 - (void)pushLabels:(const struct vector<std::__1::shared_ptr<vk::Label>, vk_allocator<std::__1::shared_ptr<vk::Label>> > { struct shared_ptr<vk::Label> {} *x1; struct shared_ptr<vk::Label> {} *x2; struct __compressed_pair<std::__1::shared_ptr<vk::Label> *, vk_allocator<std::__1::shared_ptr<vk::Label>> > { struct shared_ptr<vk::Label> {} *x_3_1_1; } x3; }*)arg1 roadSigns:(const struct vector<std::__1::shared_ptr<vk::Label>, vk_allocator<std::__1::shared_ptr<vk::Label>> > { struct shared_ptr<vk::Label> {} *x1; struct shared_ptr<vk::Label> {} *x2; struct __compressed_pair<std::__1::shared_ptr<vk::Label> *, vk_allocator<std::__1::shared_ptr<vk::Label>> > { struct shared_ptr<vk::Label> {} *x_3_1_1; } x3; }*)arg2 drawContext:(id)arg3 renderStamp:(unsigned int)arg4 snapToPixels:(BOOL)arg5 satImages:(BOOL)arg6;
 - (void)setShouldStencil:(BOOL)arg1;
 - (void)drawWithContext:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)purge;
 
 @end

@@ -15,10 +15,10 @@
 + (id)productionWithSimpleSlotSequence:(id)arg1;
 + (id)instanceFromPlist:(id)arg1;
 
-- (id)description;
-- (void)dealloc;
 - (id)overlays;
 - (id)indices;
+- (id)description;
+- (void)dealloc;
 - (void)setOverlays:(id)arg1;
 - (void)setIndices:(id)arg1;
 - (id)initWithSimpleSlotSequence:(id)arg1;

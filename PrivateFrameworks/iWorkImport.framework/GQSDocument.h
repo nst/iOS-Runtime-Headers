@@ -31,9 +31,6 @@
 }
 
 
-- (void)setStylesheet:(id)arg1;
-- (void)dealloc;
-- (id)stylesheet;
 - (void)setGeneratingThumbnail:(BOOL)arg1;
 - (id)initWithRoot:(id)arg1 processor:(id)arg2 outputBundle:(id)arg3 filename:(struct __CFString { }*)arg4;
 - (void)setShouldStreamTables:(BOOL)arg1;
@@ -74,7 +71,10 @@
 - (id)popRetainedObject;
 - (void)pushObject:(id)arg1;
 - (id)root;
+- (void)dealloc;
 - (id)peekObject;
+- (id)stylesheet;
+- (void)setStylesheet:(id)arg1;
 - (struct __CFString { }*)filename;
 
 @end

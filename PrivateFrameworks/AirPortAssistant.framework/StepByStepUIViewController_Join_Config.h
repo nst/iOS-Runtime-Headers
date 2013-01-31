@@ -9,6 +9,8 @@
     UIView *justTextContainerView;
     UILabel *justTextLabel;
     NSString *personalizedBaseName;
+    unsigned int productID;
+    int deviceKind;
 }
 
 @property(retain) UIView * tableHeaderContainerView;
@@ -17,7 +19,9 @@
 @property(retain) NSString * personalizedBaseName;
 
 
+- (BOOL)showMoreOptions;
 - (void)setupEditableBaseStationName;
+- (BOOL)isAirPlayDevice;
 - (void)selectedDeviceUpdated;
 - (void)updateNavigationButtons;
 - (void)prepareParams;

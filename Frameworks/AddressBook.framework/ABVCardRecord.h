@@ -24,10 +24,11 @@
 
 - (void)dealloc;
 - (id)init;
+- (id)imageData;
+- (id)_fullName;
 - (void*)valueForProperty:(unsigned int)arg1;
 - (void*)record;
 - (id)initWithVCardRepresentation:(id)arg1;
-- (id)_fullName;
 - (BOOL)setValue:(void*)arg1 forProperty:(unsigned int)arg2;
 - (id)vCardRepresentationForMode:(int)arg1;
 - (void)_appendPropValue:(id)arg1 forExternalPropKey:(id)arg2 toOutString:(id)arg3 usingDelimiter:(id)arg4;
@@ -62,6 +63,5 @@
 - (id)_copyVCardRepresentationAsStringIncludeExternalProperties:(BOOL)arg1 withPhoto:(id)arg2 extraPhotoParameters:(id)arg3;
 - (id)_21vCardRepresentationAsData;
 - (id)initWithRecord:(void*)arg1;
-- (id)imageData;
 
 @end

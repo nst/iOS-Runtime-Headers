@@ -7,6 +7,11 @@
 
 + (id)sharedUIKitDelegate;
 
+- (void)webViewDidLayout:(id)arg1;
+- (void)webView:(id)arg1 didReceiveMessage:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentVisibleRectForWebView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })contentsPointForWebView:(id)arg1;
+- (void)webView:(id)arg1 didFinishDocumentLoadForFrame:(id)arg2;
 - (void)webView:(id)arg1 addMessageToConsole:(id)arg2 withSource:(id)arg3;
 - (void)webView:(id)arg1 elementDidBlurNode:(id)arg2;
 - (void)webView:(id)arg1 elementDidFocusNode:(id)arg2;
@@ -51,10 +56,5 @@
 - (void)addInputString:(id)arg1 fromVariantKey:(BOOL)arg2;
 - (void)deleteFromInput;
 - (id)supportedPasteboardTypesForCurrentSelection;
-- (void)webViewDidLayout:(id)arg1;
-- (void)webView:(id)arg1 didReceiveMessage:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentVisibleRectForWebView:(id)arg1;
-- (struct CGPoint { float x1; float x2; })contentsPointForWebView:(id)arg1;
-- (void)webView:(id)arg1 didFinishDocumentLoadForFrame:(id)arg2;
 
 @end

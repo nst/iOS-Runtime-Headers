@@ -19,7 +19,7 @@
 - (void)performDefaultHandling;
 - (void)_setErrorProperties:(id)arg1;
 - (void)_setControlConnection:(id)arg1;
-- (id)valueForProperty:(id)arg1;
 - (void)_setSessionID:(long long)arg1;
+- (id)valueForProperty:(id)arg1;
 
 @end

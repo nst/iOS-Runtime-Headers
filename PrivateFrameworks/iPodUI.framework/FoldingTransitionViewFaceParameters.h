@@ -42,11 +42,6 @@
 @property(copy) NSString * timingFunction;
 
 
-- (void)dealloc;
-- (id)init;
-- (void)setDoubleSided:(BOOL)arg1;
-- (void)setTimingFunction:(id)arg1;
-- (id)timingFunction;
 - (void)setSlowDarkeningFold:(BOOL)arg1;
 - (BOOL)slowDarkeningFold;
 - (BOOL)doubleSided;
@@ -68,5 +63,10 @@
 - (int)pivotEdge;
 - (void)setSourceFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceFrame;
+- (id)timingFunction;
+- (void)dealloc;
+- (id)init;
+- (void)setDoubleSided:(BOOL)arg1;
+- (void)setTimingFunction:(id)arg1;
 
 @end

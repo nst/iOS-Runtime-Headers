@@ -14,9 +14,6 @@
 @property int precision;
 
 
-- (void)dealloc;
-- (void)setPrecision:(int)arg1;
-- (int)precision;
 - (void)setGlobePointHandle:(id)arg1;
 - (id)globePointHandle;
 - (id)initWithAnchorContext:(id)arg1 mercatorPoint:(struct { double x1; double x2; double x3; })arg2;
@@ -24,5 +21,8 @@
 - (BOOL)followsTerrain;
 - (BOOL)isGeocentric;
 - (struct { double x1; double x2; double x3; })worldPoint;
+- (void)dealloc;
+- (void)setPrecision:(int)arg1;
+- (int)precision;
 
 @end

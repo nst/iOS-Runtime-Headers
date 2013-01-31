@@ -45,13 +45,14 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (BOOL)isFloating;
 - (void)setStatus:(int)arg1;
 - (int)status;
 - (void)setURL:(id)arg1;
 - (id)initCommon;
 - (BOOL)isEditable;
 - (double)duration;
-- (BOOL)isFloating;
+- (int)entityType;
 - (void)removeAction:(id)arg1;
 - (void)addAction:(id)arg1;
 - (void)setActions:(id)arg1;
@@ -99,6 +100,5 @@
 - (unsigned int)invitationStatus;
 - (BOOL)validate:(id*)arg1;
 - (BOOL)refresh;
-- (int)entityType;
 
 @end

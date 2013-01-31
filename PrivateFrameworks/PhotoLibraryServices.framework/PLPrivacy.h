@@ -14,7 +14,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (BOOL)isPhotosAccessAllowedPromptIfNeededWithHandler:(id)arg1;
 - (BOOL)isPhotosAccessRestricted;
 - (void)photoAccessPowersActive;
 - (BOOL)isPhotosAccessNotAllowed;
@@ -22,5 +21,6 @@
 - (BOOL)_isPhotosAccessAllowedForceHandler:(BOOL)arg1 accessAllowedHandler:(id)arg2;
 - (void)isPhotoAccessAllowedHandler:(id)arg1;
 - (BOOL)isPhotosAccessAllowed;
+- (BOOL)isPhotosAccessAllowedPromptIfNeededWithHandler:(id)arg1;
 
 @end

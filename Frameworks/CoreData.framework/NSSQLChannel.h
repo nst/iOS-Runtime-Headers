@@ -13,7 +13,11 @@
 }
 
 
+- (id)currentContext;
+- (void)setCurrentContext:(id)arg1;
 - (void)dealloc;
+- (id)connection;
+- (void)finalize;
 - (void)_setCurrentEntityAndRelationshipWithFetchRequest:(id)arg1;
 - (void)_closeChannel;
 - (void)_openChannel;
@@ -28,9 +32,5 @@
 - (void)endFetch;
 - (id)initWithSQLCore:(id)arg1;
 - (id)sqlCore;
-- (id)connection;
-- (void)finalize;
-- (id)currentContext;
-- (void)setCurrentContext:(id)arg1;
 
 @end

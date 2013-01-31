@@ -54,23 +54,6 @@
 @property int pOSIXError;
 
 
-- (int)genericError;
-- (void)setSuccess:(unsigned int)arg1;
-- (id)guid;
-- (unsigned long long)timestamp;
-- (void)setTimestamp:(unsigned long long)arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (unsigned int)success;
-- (id)dictionaryRepresentation;
-- (unsigned int)isEmail;
-- (void)setConnectionType:(unsigned int)arg1;
-- (unsigned int)connectionType;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
 - (void)setHasPOSIXError:(BOOL)arg1;
 - (void)setHasURLError:(BOOL)arg1;
 - (void)setHasResultCode:(BOOL)arg1;
@@ -88,6 +71,7 @@
 - (int)resultCode;
 - (BOOL)hasResultCode;
 - (void)setIsEmail:(unsigned int)arg1;
+- (unsigned int)isEmail;
 - (BOOL)hasIsEmail;
 - (void)setIsPhoneNumber:(unsigned int)arg1;
 - (unsigned int)isPhoneNumber;
@@ -101,9 +85,25 @@
 - (BOOL)hasGenericError;
 - (void)setHasConnectionType:(BOOL)arg1;
 - (BOOL)hasConnectionType;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (BOOL)hasTimestamp;
 - (BOOL)hasGuid;
 - (void)setGuid:(id)arg1;
+- (int)genericError;
+- (void)setSuccess:(unsigned int)arg1;
+- (id)guid;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (unsigned long long)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
+- (BOOL)hasTimestamp;
+- (void)setConnectionType:(unsigned int)arg1;
+- (unsigned int)connectionType;
+- (id)dictionaryRepresentation;
+- (unsigned int)success;
 
 @end

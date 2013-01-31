@@ -32,12 +32,6 @@
 
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)subtitle;
-- (void)setSubtitle:(id)arg1;
-- (void)setContext:(id)arg1;
-- (id)title;
-- (id)context;
-- (void)setTitle:(id)arg1;
 - (struct { double x1; double x2; })coordinate;
 - (void)clearAnimationInformation;
 - (void)setAnimationDestination:(struct { double x1; double x2; })arg1;
@@ -55,5 +49,11 @@
 - (id)initAnimationOnlyAnnotationWithLongitude:(double)arg1 latitude:(double)arg2;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
 - (id)initWithLongitude:(double)arg1 latitude:(double)arg2 title:(id)arg3 subtitle:(id)arg4 photoAlbum:(struct NSObject { Class x1; }*)arg5;
+- (id)subtitle;
+- (void)setSubtitle:(id)arg1;
+- (void)setContext:(id)arg1;
+- (id)title;
+- (id)context;
+- (void)setTitle:(id)arg1;
 
 @end

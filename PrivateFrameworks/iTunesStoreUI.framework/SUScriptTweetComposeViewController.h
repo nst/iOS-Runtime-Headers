@@ -8,8 +8,8 @@
 @property(readonly) id canSendTweet;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)canSendTweet;
 - (id)addImageWithURL:(id)arg1;
@@ -18,9 +18,9 @@
 - (void)setNativeViewController:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (id)addURL:(id)arg1;
 - (void)setInitialText:(id)arg1;
 - (id)removeAllImages;
-- (id)attributeKeys;
 
 @end

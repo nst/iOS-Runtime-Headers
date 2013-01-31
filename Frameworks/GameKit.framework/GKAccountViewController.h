@@ -22,6 +22,13 @@
 @property int mode;
 
 
+- (void)dealloc;
+- (void)setUrl:(id)arg1;
+- (id)url;
+- (int)mode;
+- (void)setMode:(int)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)linkAccounts:(id)arg1 parameters:(id)arg2 complete:(id)arg3;
 - (void)availableAccountTypes:(id)arg1 parameters:(id)arg2 complete:(id)arg3;
 - (void)setLastName:(id)arg1;
@@ -34,12 +41,5 @@
 - (id)accountName;
 - (void)processGameKitURLComponents:(id)arg1;
 - (void)finish;
-- (void)dealloc;
-- (void)setUrl:(id)arg1;
-- (id)url;
-- (int)mode;
-- (void)setMode:(int)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

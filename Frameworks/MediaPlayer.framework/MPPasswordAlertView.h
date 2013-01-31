@@ -21,10 +21,10 @@
 @property(readonly) int style;
 
 
-- (id)initWithStyle:(int)arg1 routeName:(id)arg2 completionHandler:(id)arg3;
 - (void)dealloc;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (int)style;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (id)initWithStyle:(int)arg1 routeName:(id)arg2 completionHandler:(id)arg3;
 
 @end

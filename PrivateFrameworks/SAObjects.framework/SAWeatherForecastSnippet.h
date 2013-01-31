@@ -12,9 +12,9 @@
 + (id)forecastSnippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)forecastSnippet;
 
-- (id)groupIdentifier;
 - (void)setAceWeathers:(id)arg1;
 - (id)aceWeathers;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -16,10 +16,11 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)stopAdvertising;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (int)state;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
+- (void)stopAdvertising;
 - (void)setIsAdvertising:(BOOL)arg1;
 - (BOOL)isAdvertising;
 - (BOOL)updateValue:(id)arg1 forCharacteristic:(id)arg2 onSubscribedCentrals:(id)arg3;
@@ -29,6 +30,5 @@
 - (void)addService:(id)arg1;
 - (void)setDesiredConnectionLatency:(int)arg1 forCentral:(id)arg2;
 - (void)startAdvertising:(id)arg1;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 
 @end

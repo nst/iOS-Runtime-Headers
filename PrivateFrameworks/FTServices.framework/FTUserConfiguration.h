@@ -11,11 +11,11 @@
 
 + (id)sharedInstance;
 
-- (void)setCellularFaceTimeEnabled:(BOOL)arg1;
-- (BOOL)cellularFaceTimeEnabled;
+- (BOOL)allowAnyNetwork;
 - (void)setAllowAnyNetwork:(BOOL)arg1;
 - (BOOL)_adequateInternalOrCarrierInstall;
 - (BOOL)_nonWifiFaceTimeEntitled;
-- (BOOL)allowAnyNetwork;
+- (void)setCellularFaceTimeEnabled:(BOOL)arg1;
+- (BOOL)cellularFaceTimeEnabled;
 
 @end

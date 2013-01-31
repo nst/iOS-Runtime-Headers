@@ -18,12 +18,11 @@
 @property(readonly) BOOL cancelKeyChar;
 @property(readonly) BOOL emergencyKeyChar;
 
-+ (struct CGSize { float x1; float x2; })defaultSize;
 + (id)pressedImage;
 + (id)keypadImage;
++ (struct CGSize { float x1; float x2; })defaultSize;
 
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDeleteEnabled:(BOOL)arg1;
 - (BOOL)isDeleteEnabled;
 - (BOOL)emergencyKeyChar;
@@ -38,5 +37,6 @@
 - (void)hiddenFromView;
 - (id)_pressedImage;
 - (void)setPlaysKeyboardClicks:(BOOL)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

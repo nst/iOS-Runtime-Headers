@@ -11,9 +11,6 @@
 @property(readonly) MPMediaPlaylist * playlist;
 
 
-- (id)playlist;
-- (void)dealloc;
-- (float)rowHeight;
 - (void)_mutateQueriesEntitiesWithBlock:(id)arg1;
 - (BOOL)updateQueriesPredicates;
 - (BOOL)canDeleteIndex:(unsigned int)arg1;
@@ -26,5 +23,8 @@
 - (BOOL)allowsDeletion;
 - (BOOL)hideActionRowsOnAppear;
 - (BOOL)hasActionRowsEvenWhenNoOtherRowsExist;
+- (void)dealloc;
+- (float)rowHeight;
+- (id)playlist;
 
 @end

@@ -37,10 +37,12 @@
 @property BOOL appNotAvailable;
 
 
-- (void)setIconView:(id)arg1;
-- (id)iconView;
-- (void)setActivityIndicator:(id)arg1;
-- (id)activityIndicator;
+- (void)_layoutLoadingView;
+- (void)productViewControllerDidFinish:(id)arg1;
+- (void)dealloc;
+- (void)reload;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPrice:(id)arg1;
 - (void)setUserRatingView:(id)arg1;
 - (id)userRatingView;
@@ -82,12 +84,10 @@
 - (BOOL)_anyAppIsInstalled:(id)arg1;
 - (void)setStoreIDs:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 storeIDs:(id)arg2;
-- (void)_layoutLoadingView;
 - (id)price;
-- (void)dealloc;
-- (void)reload;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)productViewControllerDidFinish:(id)arg1;
+- (void)setIconView:(id)arg1;
+- (id)iconView;
+- (void)setActivityIndicator:(id)arg1;
+- (id)activityIndicator;
 
 @end

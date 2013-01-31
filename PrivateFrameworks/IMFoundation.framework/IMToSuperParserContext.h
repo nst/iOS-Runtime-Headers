@@ -35,13 +35,6 @@
 - (id)name;
 - (void)dealloc;
 - (void)appendString:(id)arg1;
-- (id)foregroundColor;
-- (id)body;
-- (void)setBaseWritingDirection:(int)arg1;
-- (id)backgroundColor;
-- (void)setBackgroundColor:(id)arg1;
-- (id)fileTransferGUIDs;
-- (void)_updateFontSize;
 - (void)setForegroundColor:(id)arg1;
 - (int)baseWritingDirection;
 - (void)appendFileTransferWithGUID:(id)arg1;
@@ -72,5 +65,12 @@
 - (void)_clearIvars;
 - (id)resultsForLogging;
 - (void)setFileTransferGUIDs:(id)arg1;
+- (id)fileTransferGUIDs;
+- (void)_updateFontSize;
+- (id)foregroundColor;
+- (id)body;
+- (void)setBaseWritingDirection:(int)arg1;
+- (id)backgroundColor;
+- (void)setBackgroundColor:(id)arg1;
 
 @end

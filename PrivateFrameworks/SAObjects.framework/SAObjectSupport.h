@@ -15,15 +15,15 @@
 + (id)objectSupportWithDictionary:(id)arg1 context:(id)arg2;
 + (id)objectSupport;
 
-- (id)groupIdentifier;
-- (id)supportedProperties;
-- (void)setGroupId:(id)arg1;
-- (id)groupId;
 - (void)setSupportedProperties:(id)arg1;
 - (void)setClassId:(id)arg1;
 - (id)classId;
 - (void)setAceVersion:(id)arg1;
 - (id)aceVersion;
 - (id)encodedClassName;
+- (void)setGroupId:(id)arg1;
+- (id)groupId;
+- (id)groupIdentifier;
+- (id)supportedProperties;
 
 @end

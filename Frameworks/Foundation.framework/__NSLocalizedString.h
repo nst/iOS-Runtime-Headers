@@ -29,10 +29,10 @@
 - (void)insertString:(id)arg1 atIndex:(unsigned int)arg2;
 - (unsigned int)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2 options:(unsigned int)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 - (void)deleteCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)baseString;
+- (id)initWithString:(id)arg1 withFormatConfiguration:(id)arg2;
 - (id)formatConfiguration;
 - (void)appendCharacters:(const unsigned short*)arg1 length:(unsigned int)arg2;
 - (const char *)_fastCStringContents:(BOOL)arg1;
-- (id)baseString;
-- (id)initWithString:(id)arg1 withFormatConfiguration:(id)arg2;
 
 @end

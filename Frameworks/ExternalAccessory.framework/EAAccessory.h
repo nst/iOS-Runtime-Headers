@@ -25,14 +25,14 @@
 @property <EAAccessoryDelegate> * delegate;
 
 
-- (id)serialNumber;
-- (id)manufacturer;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)name;
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (id)serialNumber;
+- (id)manufacturer;
 - (id)macAddress;
 - (BOOL)supportsPointOfInterest;
 - (void)updateItemProperty:(int)arg1 withValue:(id)arg2;

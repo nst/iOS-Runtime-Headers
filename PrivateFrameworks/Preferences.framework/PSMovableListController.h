@@ -12,6 +12,8 @@
 }
 
 
+- (void)dealloc;
+- (id)init;
 - (struct __CFString { }*)defaultDomain;
 - (void)_updateCell:(id)arg1 forDomain:(int)arg2;
 - (int)domainForIndexRow:(unsigned int)arg1;
@@ -28,8 +30,6 @@
 - (int)domainForKey:(id)arg1;
 - (id)allDomainKeys;
 - (struct __CFString { }*)reorderingKey;
-- (void)dealloc;
-- (id)init;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)tableView:(id)arg1 moveRowAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

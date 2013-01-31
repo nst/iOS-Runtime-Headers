@@ -15,15 +15,6 @@
 @property(retain) NSMutableArray * icons;
 
 
-- (unsigned int)identifier;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)icons;
-- (void)setIcons:(id)arg1;
-- (void)setIdentifier:(unsigned int)arg1;
-- (id)dictionaryRepresentation;
 - (id)atlas;
 - (id)iconsAtIndex:(unsigned int)arg1;
 - (void)clearIcons;
@@ -36,6 +27,15 @@
 - (id)atlasAtIndex:(unsigned int)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (unsigned int)identifier;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (BOOL)readFrom:(id)arg1;
+- (id)icons;
+- (void)setIcons:(id)arg1;
+- (void)setIdentifier:(unsigned int)arg1;
+- (id)dictionaryRepresentation;
 
 @end

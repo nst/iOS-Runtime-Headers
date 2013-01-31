@@ -2,17 +2,19 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSDictionary;
+@class AAAccount, NSDictionary;
 
 @interface AAGenericTermsUIRequest : AARequest  {
     NSDictionary *_requestDictionary;
+    AAAccount *_account;
 }
 
 + (Class)responseClass;
 
-- (void).cxx_destruct;
 - (id)urlString;
+- (void).cxx_destruct;
 - (id)initWithParameters:(id)arg1;
+- (id)initWithAccount:(id)arg1 parameters:(id)arg2;
 - (id)urlRequest;
 
 @end

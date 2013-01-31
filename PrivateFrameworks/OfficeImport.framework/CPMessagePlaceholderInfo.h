@@ -10,8 +10,8 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)key;
 - (BOOL)isInUse;
 - (void)setInUse:(BOOL)arg1;
+- (id)key;
 
 @end

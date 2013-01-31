@@ -40,6 +40,22 @@
 @property BOOL adjustsImageWhenHighlighted;
 
 
+- (void)dealloc;
+- (void)setTheme:(id)arg1;
+- (id)theme;
+- (BOOL)isAccessibilityElement;
+- (unsigned long long)accessibilityTraits;
+- (BOOL)adjustsImageWhenHighlighted;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })titleEdgeInsets;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setTitleEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setAdjustsImageWhenHighlighted:(BOOL)arg1;
+- (id)accessibilityLabel;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)titleLabel;
+- (void)layoutSubviews;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)mostlyInsideInset;
 - (id)highlightTitleShadowColor;
 - (id)highlightTitleColor;
 - (id)highlightImage;
@@ -53,30 +69,14 @@
 - (int)buttonStyle;
 - (void)setHighlightImage:(id)arg1;
 - (void)setNormalImage:(id)arg1;
+- (void)setButtonStyle:(int)arg1;
 - (void)setMostlyInsideInset:(float)arg1;
 - (void)setHighlightTitleShadowColor:(id)arg1;
 - (void)setNormalTitleShadowColor:(id)arg1;
 - (void)setHighlightTitleColor:(id)arg1;
 - (void)setNormalTitleColor:(id)arg1;
-- (void)setButtonStyle:(int)arg1;
-- (float)mostlyInsideInset;
 - (id)initWithTheme:(id)arg1;
 - (id)representedObject;
 - (void)setRepresentedObject:(id)arg1;
-- (void)dealloc;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)adjustsImageWhenHighlighted;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })titleEdgeInsets;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setTitleEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setAdjustsImageWhenHighlighted:(BOOL)arg1;
-- (id)accessibilityLabel;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (id)titleLabel;
-- (void)layoutSubviews;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTheme:(id)arg1;
-- (id)theme;
 
 @end

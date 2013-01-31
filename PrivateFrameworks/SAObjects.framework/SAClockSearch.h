@@ -17,11 +17,7 @@
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
 - (id)identifier;
-- (void)setIdentifier:(id)arg1;
-- (void)setCountryCode:(id)arg1;
-- (id)countryCode;
 - (void)setUnlocalizedCountryName:(id)arg1;
 - (id)unlocalizedCountryName;
 - (void)setUnlocalizedCityName:(id)arg1;
@@ -32,5 +28,9 @@
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (void)setCountryCode:(id)arg1;
+- (id)countryCode;
+- (void)setIdentifier:(id)arg1;
+- (id)groupIdentifier;
 
 @end

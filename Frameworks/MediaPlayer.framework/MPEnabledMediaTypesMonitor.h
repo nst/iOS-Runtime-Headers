@@ -14,10 +14,10 @@
     NSArray *_externalTypeManagers;
     int _defaultEnabledMediaTypes;
     int _disablableMediaTypes;
-    NSOperationQueue *_lookupQueue;
-    BOOL _hidesSecondPartyMediaTypes;
     int _externallyManagedMediaTypes;
+    NSOperationQueue *_lookupQueue;
     int _unavailableDisabledTypes;
+    BOOL _hidesSecondPartyMediaTypes;
 }
 
 @property int enabledMediaTypes;
@@ -30,10 +30,14 @@
 @property int externallyManagedMediaTypes;
 @property(retain) NSOperationQueue * lookupQueue;
 
++ (id)sharedInstance;
 + (void)monitorWithDefaultMediaTypes:(int)arg1;
 + (void)alertUserOneTimeForDisabledMediaTypes;
-+ (id)sharedInstance;
 
+- (void)dealloc;
+- (id)init;
+- (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)setLookupQueue:(id)arg1;
 - (id)lookupQueue;
 - (void)setDisablableMediaTypes:(int)arg1;
@@ -62,9 +66,5 @@
 - (void)setDefaultEnabledMediaTypes:(int)arg1;
 - (int)enabledMediaTypes;
 - (int)enabledIfPresentMediaTypes;
-- (void)dealloc;
-- (id)init;
-- (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 
 @end

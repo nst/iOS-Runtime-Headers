@@ -2,12 +2,30 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
+@class UITouch;
+
 @interface MKTiltGestureRecognizer : UIPanGestureRecognizer  {
+    UITouch *_touch1;
+    UITouch *_touch2;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _initialTouch1Point;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _initialTouch2Point;
+    float _initialDistance;
 }
 
 
+- (void)reset;
+- (void)dealloc;
 - (id)_activeTouchesForEvent:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (float)_distanceFromPoint:(struct CGPoint { float x1; float x2; })arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
 
 @end

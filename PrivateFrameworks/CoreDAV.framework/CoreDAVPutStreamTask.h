@@ -6,7 +6,7 @@
 }
 
 
-- (id)requestBodyStream;
 - (id)requestBody;
+- (id)requestBodyStream;
 
 @end

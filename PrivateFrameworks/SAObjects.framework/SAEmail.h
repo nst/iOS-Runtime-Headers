@@ -11,16 +11,16 @@
 @property(copy) NSNumber * favoriteFacetime;
 @property(copy) NSString * label;
 
-+ (id)email;
 + (id)emailWithDictionary:(id)arg1 context:(id)arg2;
++ (id)email;
 
-- (id)groupIdentifier;
-- (id)label;
-- (void)setLabel:(id)arg1;
-- (id)emailAddress;
 - (void)setFavoriteFacetime:(id)arg1;
 - (id)favoriteFacetime;
 - (id)encodedClassName;
+- (id)emailAddress;
+- (id)label;
+- (void)setLabel:(id)arg1;
+- (id)groupIdentifier;
 - (void)setEmailAddress:(id)arg1;
 
 @end

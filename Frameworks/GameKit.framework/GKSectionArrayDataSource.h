@@ -51,6 +51,15 @@
 + (id)sectionArrayDataSourceWithSection:(id)arg1 inParentMultiDataSource:(id)arg2;
 + (id)sectionArrayDataSourceWithSection:(id)arg1 inController:(id)arg2;
 
+- (BOOL)loaded;
+- (void)dealloc;
+- (id)init;
+- (void)setLoaded:(BOOL)arg1;
+- (id)sections;
+- (void)setSections:(id)arg1;
+- (id)initWithController:(id)arg1;
+- (void)stopLoading;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)_gkDescriptionWithChildren:(int)arg1;
 - (id)_gkDescription;
 - (void)setUpdateCount:(int)arg1;
@@ -112,14 +121,5 @@
 - (void)prepareSections;
 - (void)beginSectionUpdates;
 - (id)_controller;
-- (void)dealloc;
-- (id)init;
-- (id)sections;
-- (void)setSections:(id)arg1;
-- (id)initWithController:(id)arg1;
-- (void)stopLoading;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (BOOL)loaded;
-- (void)setLoaded:(BOOL)arg1;
 
 @end

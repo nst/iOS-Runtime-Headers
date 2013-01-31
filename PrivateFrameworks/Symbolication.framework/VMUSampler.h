@@ -43,21 +43,17 @@
     BOOL _showDispatchQueueNames;
 }
 
-+ (void)initialize;
 + (id)sampleAllThreadsOfTask:(unsigned int)arg1 withSymbolicator:(id)arg2 symbolicate:(BOOL)arg3;
 + (id)sampleAllThreadsOfTask:(unsigned int)arg1 withSymbolicator:(id)arg2;
 + (id)sampleAllThreadsOfPID:(int)arg1 withSymbolicator:(id)arg2;
 + (id)sampleAllThreadsOfTask:(unsigned int)arg1 symbolicate:(BOOL)arg2;
 + (id)sampleAllThreadsOfTask:(unsigned int)arg1;
 + (id)sampleAllThreadsOfPID:(int)arg1;
++ (void)initialize;
 
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (id)initWithTask:(unsigned int)arg1 options:(unsigned int)arg2;
-- (BOOL)stop;
-- (void)finalize;
-- (BOOL)start;
 - (void)writeOutput:(id)arg1 append:(BOOL)arg2;
 - (void)forceStop;
 - (void)sampleForDuration:(unsigned int)arg1 interval:(unsigned int)arg2;
@@ -94,8 +90,12 @@
 - (id)dispatchQueueNameForSerialNumber:(unsigned long long)arg1 returnedConcurrentFlag:(BOOL*)arg2 returnedThreadId:(unsigned long long*)arg3;
 - (id)threadNameForThread:(unsigned int)arg1 returnedThreadId:(unsigned long long*)arg2 returnedDispatchQueueSerialNum:(unsigned long long*)arg3;
 - (id)initWithTask:(unsigned int)arg1;
-- (int)pid;
 - (BOOL)waitUntilDone;
+- (int)pid;
+- (id)initWithTask:(unsigned int)arg1 options:(unsigned int)arg2;
+- (BOOL)stop;
+- (void)finalize;
+- (BOOL)start;
 - (unsigned int)mainThread;
 
 @end

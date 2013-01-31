@@ -12,6 +12,8 @@
 
 - (void)dealloc;
 - (id)init;
+- (int)cellStyle;
+- (BOOL)isInline;
 - (void)_keyboardDidShow:(id)arg1;
 - (void)textViewDidChange:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;
@@ -25,7 +27,5 @@
 - (float)defaultCellHeightForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2 forWidth:(float)arg3;
 - (id)cellForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2;
 - (BOOL)shouldPinKeyboard;
-- (int)cellStyle;
-- (BOOL)isInline;
 
 @end

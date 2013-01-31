@@ -17,10 +17,6 @@
 @property(readonly) struct { double x1; double x2; } coordinate;
 
 
-- (void)addObserver:(id)arg1;
-- (void)removeObserver:(id)arg1;
-- (void)dealloc;
-- (struct { double x1; double x2; })coordinate;
 - (id)selectedPolyline;
 - (id)polylines;
 - (void)setSelectedPolyline:(id)arg1;
@@ -28,5 +24,9 @@
 - (void)addPolyline:(id)arg1;
 - (void)_updateBoundingMapRegion;
 - (id)boundingMapRegion;
+- (void)removeObserver:(id)arg1;
+- (void)dealloc;
+- (struct { double x1; double x2; })coordinate;
+- (void)addObserver:(id)arg1;
 
 @end

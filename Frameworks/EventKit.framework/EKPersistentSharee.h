@@ -21,23 +21,22 @@
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 
-- (void)setLastName:(id)arg1;
-- (id)lastName;
-- (void)setFirstName:(id)arg1;
-- (id)firstName;
+- (void)setOwner:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (id)UUID;
-- (id)displayName;
-- (void)setOwner:(id)arg1;
+- (id)owner;
+- (void)setDisplayName:(id)arg1;
 - (id)externalID;
 - (void)setExternalID:(id)arg1;
 - (id)emailAddress;
-- (id)owner;
-- (void)setDisplayName:(id)arg1;
+- (id)displayName;
 - (int)entityType;
+- (void)setLastName:(id)arg1;
+- (id)lastName;
+- (void)setFirstName:(id)arg1;
+- (id)firstName;
 - (void)setShareeAccessLevel:(int)arg1;
 - (int)shareeAccessLevel;
 - (void)setShareeStatus:(int)arg1;
@@ -45,5 +44,6 @@
 - (void)setEmailAddress:(id)arg1;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
+- (id)UUID;
 
 @end

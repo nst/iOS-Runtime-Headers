@@ -23,11 +23,11 @@
 @property(copy) id postTestAction;
 
 
+- (void)dealloc;
 - (void)runTest:(Class)arg1;
 - (id)postTestAction;
 - (id)preTestAction;
 - (void)setPostTestAction:(id)arg1;
 - (void)setPreTestAction:(id)arg1;
-- (void)dealloc;
 
 @end

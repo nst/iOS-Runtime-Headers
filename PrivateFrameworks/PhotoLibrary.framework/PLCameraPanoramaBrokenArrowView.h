@@ -29,10 +29,10 @@
 
 
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_updateTailWithAnimationDuration:(double)arg1;
 - (struct CGPath { }*)_newTailPiecesPathOfWidth:(float*)arg1;
 - (void)animateArrowSpeedWithNormalizedSpeed:(float)arg1 duration:(double)arg2;
 - (void)resetArrow;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

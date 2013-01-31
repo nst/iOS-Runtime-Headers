@@ -20,7 +20,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (void)clear;
 - (id)remoteHost;
 - (BOOL)requiresDataConnectionActivation;
 - (BOOL)isDataConnectionActive;
@@ -30,5 +29,6 @@
 - (void)_setup;
 - (BOOL)isImmediatelyReachable;
 - (id)initWithRemoteHost:(id)arg1 delegate:(id)arg2;
+- (void)clear;
 
 @end

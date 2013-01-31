@@ -12,12 +12,12 @@
 @property BOOL needsAccountAuth;
 
 
-- (void)dealloc;
-- (void)loadRequest:(id)arg1;
 - (void)listenForAuthenticationNotifications:(BOOL)arg1;
 - (void)failedToAuthenticate:(id)arg1;
 - (void)setNeedsAccountAuth:(BOOL)arg1;
 - (void)didAuthenticate:(id)arg1;
 - (BOOL)needsAccountAuth;
+- (void)dealloc;
+- (void)loadRequest:(id)arg1;
 
 @end

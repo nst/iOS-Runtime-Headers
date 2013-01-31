@@ -12,14 +12,14 @@
 @property(getter=_playbackItem,setter=_setPlaybackItem:,retain) struct OpaqueFigPlaybackItem { }* playbackItem;
 
 
-- (id)lyrics;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)commonMetadata;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (void)finalize;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
-- (id)commonMetadata;
+- (id)lyrics;
 - (id)initWithPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackIDs:(id)arg2;
 - (void)_setPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1;
 - (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;

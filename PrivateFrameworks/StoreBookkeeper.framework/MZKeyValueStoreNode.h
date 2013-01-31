@@ -38,6 +38,12 @@
 + (BOOL)isServerRevisionNewerThanClient:(id)arg1;
 + (id)serverRevisionNewerThanClientKeys;
 
+- (id)numberValue;
+- (void)setName:(id)arg1;
+- (id)name;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (void)setWrapperRevision:(int)arg1;
 - (void)setMismatch:(BOOL)arg1;
 - (BOOL)mismatch;
@@ -53,11 +59,7 @@
 - (id)objectValueMatchingClass:(Class)arg1;
 - (id)transaction;
 - (void)setTransaction:(id)arg1;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)description;
-- (void)dealloc;
-- (id)init;
+- (id)dataValue;
 - (void)setVersion:(id)arg1;
 - (id)version;
 - (void)setKey:(id)arg1;
@@ -68,8 +70,6 @@
 - (void)setValue:(id)arg1;
 - (id)objectValue;
 - (void)setObjectValue:(id)arg1;
-- (id)numberValue;
-- (id)dataValue;
 - (id)dateValue;
 
 @end

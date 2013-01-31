@@ -20,13 +20,6 @@
 @property float hyphenationFactor;
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setBaseWritingDirection:(int)arg1;
-- (void)setLineSpacing:(float)arg1;
-- (void)setAlignment:(int)arg1;
-- (void)setLineBreakMode:(int)arg1;
-- (void)setMaximumLineHeight:(float)arg1;
-- (void)setMinimumLineHeight:(float)arg1;
 - (void)removeTabStop:(id)arg1;
 - (void)addTabStop:(id)arg1;
 - (void)setParagraphStyle:(id)arg1;
@@ -44,5 +37,12 @@
 - (void)setParagraphSpacing:(float)arg1;
 - (void)setFirstLineHeadIndent:(float)arg1;
 - (void)setHyphenationFactor:(float)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setBaseWritingDirection:(int)arg1;
+- (void)setLineSpacing:(float)arg1;
+- (void)setAlignment:(int)arg1;
+- (void)setLineBreakMode:(int)arg1;
+- (void)setMaximumLineHeight:(float)arg1;
+- (void)setMinimumLineHeight:(float)arg1;
 
 @end

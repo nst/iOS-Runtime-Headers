@@ -25,9 +25,6 @@
 @property(getter=isValid,readonly) BOOL valid;
 
 
-- (void)setRating:(float)arg1;
-- (float)rating;
-- (void)setLoading:(BOOL)arg1;
 - (id)copyReview;
 - (void)composeHeaderViewValuesDidChange:(id)arg1;
 - (void)composeHeaderViewValidityDidChange:(id)arg1;
@@ -59,5 +56,8 @@
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)reloadData;
+- (void)setRating:(float)arg1;
+- (float)rating;
+- (void)setLoading:(BOOL)arg1;
 
 @end

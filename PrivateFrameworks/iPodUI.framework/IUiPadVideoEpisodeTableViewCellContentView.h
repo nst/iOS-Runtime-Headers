@@ -42,19 +42,6 @@
 
 
 - (void)setDrawAsDisabled:(BOOL)arg1;
-- (void)dealloc;
-- (void)setExpanded:(BOOL)arg1;
-- (BOOL)expanded;
-- (void)setEditing:(BOOL)arg1;
-- (void)prepareForReuse;
-- (id)title;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setTitle:(id)arg1;
-- (void)layoutSubviews;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSummary:(id)arg1;
-- (id)summary;
 - (id)downloadAction;
 - (int)unplayedState;
 - (id)expirationText;
@@ -78,5 +65,18 @@
 - (id)downloadProgressIndicator;
 - (void)setDownloadProgressIndicator:(id)arg1;
 - (void)_purchaseButtonPressed:(id)arg1;
+- (void)setSummary:(id)arg1;
+- (id)summary;
+- (void)dealloc;
+- (void)setExpanded:(BOOL)arg1;
+- (BOOL)expanded;
+- (void)setEditing:(BOOL)arg1;
+- (void)prepareForReuse;
+- (id)title;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setTitle:(id)arg1;
+- (void)layoutSubviews;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

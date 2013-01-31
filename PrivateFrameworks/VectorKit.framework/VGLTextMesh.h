@@ -13,11 +13,11 @@
 }
 
 
+- (void)drawWithContext:(id)arg1;
+- (void)pushQuads:(const struct vector<VGLFontGlyphQuad_struct, vk_allocator<VGLFontGlyphQuad_struct> > { struct VGLFontGlyphQuad_struct {} *x1; struct VGLFontGlyphQuad_struct {} *x2; struct __compressed_pair<VGLFontGlyphQuad_struct *, vk_allocator<VGLFontGlyphQuad_struct> > { struct VGLFontGlyphQuad_struct {} *x_3_1_1; } x3; }*)arg1 offset:(const struct { float x1; float x2; }*)arg2 textColor:(const struct _VGLColor { float x1; float x2; float x3; float x4; }*)arg3 haloColor:(const struct _VGLColor { float x1; float x2; float x3; float x4; }*)arg4 alpha:(float)arg5;
 - (void)reset;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)drawWithContext:(id)arg1;
-- (void)pushQuads:(const struct vector<VGLFontGlyphQuad_struct, vk_allocator<VGLFontGlyphQuad_struct> > { struct VGLFontGlyphQuad_struct {} *x1; struct VGLFontGlyphQuad_struct {} *x2; struct __compressed_pair<VGLFontGlyphQuad_struct *, vk_allocator<VGLFontGlyphQuad_struct> > { struct VGLFontGlyphQuad_struct {} *x_3_1_1; } x3; }*)arg1 offset:(const struct { float x1; float x2; }*)arg2 textColor:(const struct _VGLColor { float x1; float x2; float x3; float x4; }*)arg3 haloColor:(const struct _VGLColor { float x1; float x2; float x3; float x4; }*)arg4 alpha:(float)arg5;
 
 @end

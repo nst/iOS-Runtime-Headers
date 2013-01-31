@@ -31,7 +31,6 @@
 
 - (id)description;
 - (void)dealloc;
-- (id)destinationURL;
 - (void)setOutstandingSourceURLsToMove:(id)arg1;
 - (id)initWithSourceURLs:(id)arg1 destinationURL:(id)arg2 overwrite:(BOOL)arg3 useFallback:(BOOL)arg4 sourceEntityDataPayloads:(id)arg5 sourceEntityDataContentTypes:(id)arg6 sourceEntityETags:(id)arg7 accountInfoProvider:(id)arg8 taskManager:(id)arg9;
 - (void)_setTagsForDestinationEntityAtURL:(id)arg1 fromTaskResponseHeaders:(id)arg2 completionBlock:(id)arg3;
@@ -51,5 +50,6 @@
 - (BOOL)useFallback;
 - (int)overwrite;
 - (void)startTaskGroup;
+- (id)destinationURL;
 
 @end

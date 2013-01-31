@@ -14,16 +14,12 @@
     int mWidth;
 }
 
-+ (id)hashKeyFor:(id)arg1;
 + (id)resourceTypeToMIME:(int)arg1;
 + (id)resourceTypeToExtension:(int)arg1;
++ (id)hashKeyFor:(id)arg1;
 
-- (id)newResourceWithType:(int)arg1;
-- (id)newResourceWithName:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setPageCount:(unsigned int)arg1;
-- (unsigned int)pageCount;
 - (BOOL)isProgressive;
 - (id)appendResourcePathToName:(id)arg1;
 - (id)resourcePathPrefix;
@@ -48,5 +44,9 @@
 - (void)pushText:(id)arg1 toPath:(id)arg2;
 - (void)setHTMLHeight:(int)arg1;
 - (void)setHTMLWidth:(int)arg1;
+- (void)setPageCount:(unsigned int)arg1;
+- (unsigned int)pageCount;
+- (id)newResourceWithType:(int)arg1;
+- (id)newResourceWithName:(id)arg1;
 
 @end

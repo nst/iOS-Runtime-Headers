@@ -28,19 +28,8 @@
 @property(readonly) BOOL displaysArtworkFromRepresentativeItem;
 
 
-- (BOOL)isSelectable;
-- (void)setProgressIndicator:(id)arg1;
-- (id)progressIndicator;
 - (struct CGSize { float x1; float x2; })artworkSize;
 - (void)reloadImages;
-- (id)artwork;
-- (void)setArtwork:(id)arg1;
-- (void)setArtworkImageRequest:(id)arg1 artworkLoadCompletionHandler:(id)arg2;
-- (id)mediaItem;
-- (id)entity;
-- (id)description;
-- (void)dealloc;
-- (void)reloadData;
 - (void)setDownloadObserver:(id)arg1;
 - (id)downloadObserver;
 - (BOOL)isGenius;
@@ -49,10 +38,21 @@
 - (BOOL)displaysArtworkFromRepresentativeItem;
 - (void)setIsGenius:(BOOL)arg1;
 - (id)displayProperties;
-- (id)downloadableAsset;
+- (BOOL)canShowPurchasableMediaViews;
 - (id)newImageRequestWithMediaEntity:(id)arg1;
 - (void)configureForEntity:(id)arg1 query:(id)arg2 entityIndex:(unsigned int)arg3 entityCount:(unsigned int)arg4;
 - (void)reloadStringsWithProperties:(id)arg1;
+- (id)entity;
+- (id)description;
+- (void)dealloc;
 - (BOOL)isDisabled;
+- (void)reloadData;
+- (id)artwork;
+- (void)setArtwork:(id)arg1;
+- (void)setArtworkImageRequest:(id)arg1 artworkLoadCompletionHandler:(id)arg2;
+- (id)mediaItem;
+- (BOOL)isSelectable;
+- (void)setProgressIndicator:(id)arg1;
+- (id)progressIndicator;
 
 @end

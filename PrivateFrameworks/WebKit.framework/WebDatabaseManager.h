@@ -13,12 +13,12 @@
 + (id)sharedWebDatabaseManager;
 + (void)removeEmptyDatabaseFiles;
 
-- (id)init;
 - (BOOL)deleteDatabase:(id)arg1 withOrigin:(id)arg2;
 - (BOOL)deleteOrigin:(id)arg1;
 - (void)deleteAllDatabases;
 - (id)detailsForDatabase:(id)arg1 withOrigin:(id)arg2;
 - (id)databasesWithOrigin:(id)arg1;
 - (id)origins;
+- (id)init;
 
 @end

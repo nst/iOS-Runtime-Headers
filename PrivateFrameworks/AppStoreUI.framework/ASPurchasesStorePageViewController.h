@@ -12,9 +12,9 @@
 }
 
 
-- (void)enqueueFetchOperation;
 - (BOOL)_shouldDisplaySegmentedControlInNavigationBar:(id)arg1;
 - (void)enqueueFetchOperationForPageSection:(id)arg1;
+- (void)enqueueFetchOperation;
 - (BOOL)canBeResolved;
 - (void)_tabConfigurationChanged:(id)arg1;
 - (void)cancelOperations;
@@ -23,6 +23,8 @@
 - (void)applicationDidEnterBackground;
 - (BOOL)shouldExcludeFromNavigationHistory;
 - (id)initWithSection:(id)arg1;
+- (void)dealloc;
+- (void)updateQueueRequest:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)_startBackgroundRequest;
 - (void)_reloadForBackgroundNotification;
 - (void)_enqueueRealFetchOperationWithRequestProperties:(id)arg1;
@@ -35,11 +37,9 @@
 - (void)_cancelBackgroundRequest;
 - (void)_tabBarControllerDidLoad:(id)arg1;
 - (void)_softwareLibraryDidChange:(id)arg1;
-- (void)dealloc;
-- (void)updateQueueRequest:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

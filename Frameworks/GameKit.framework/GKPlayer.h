@@ -29,6 +29,7 @@
 @property(readonly) NSString * cacheKey;
 @property(retain) NSArray * friends;
 
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
 + (void)declineFriendRequestsFromPlayerIDs:(id)arg1 handler:(id)arg2;
 + (void)acceptFriendRequestsFromPlayerIDs:(id)arg1 withHandles:(id)arg2 handler:(id)arg3;
 + (id)unknownPlayer;
@@ -37,8 +38,20 @@
 + (int)sizeForPhotoSize:(int)arg1;
 + (id)anonymousPlayer;
 + (void)loadPlayersForIdentifiers:(id)arg1 withPieces:(unsigned int)arg2 withCompletionHandler:(id)arg3;
-+ (BOOL)instancesRespondToSelector:(SEL)arg1;
 
+- (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)description;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (id)cacheKey;
+- (id)displayName;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)sortName;
 - (BOOL)hasPhoto;
 - (void)loadGamesPlayedDetailsWithCompletionHandler:(id)arg1;
@@ -80,18 +93,5 @@
 - (id)friends;
 - (id)internal;
 - (BOOL)isFriend;
-- (id)description;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (id)cacheKey;
-- (id)displayName;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)valueForUndefinedKey:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 
 @end

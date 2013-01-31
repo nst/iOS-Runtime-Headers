@@ -32,8 +32,8 @@
 
 + (id)scriptPlaybackStateForNativePlaybackState:(int)arg1;
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)playbackStateStopped;
 - (id)playbackStateSeekingForward;
@@ -41,39 +41,39 @@
 - (id)playbackStatePlaying;
 - (id)playbackStatePaused;
 - (id)playbackStateInterrupted;
-- (void)setShuffleMode:(id)arg1;
-- (void)setRepeatMode:(id)arg1;
 - (id)shuffleModeSongs;
 - (id)shuffleModeOff;
 - (id)shuffleModeDefault;
 - (id)shuffleModeAlbums;
-- (id)shuffleMode;
 - (id)repeatModeOne;
 - (id)repeatModeNone;
 - (id)repeatModeDefault;
 - (id)repeatModeAll;
-- (id)repeatMode;
-- (id)nowPlayingItem;
-- (double)currentPlaybackTime;
-- (void)skipToPreviousItem;
-- (void)skipToNextItem;
-- (void)skipToBeginning;
-- (void)setQueueWithQuery:(id)arg1;
-- (void)endSeeking;
-- (void)beginSeekingForward;
-- (void)beginSeekingBackward;
-- (id)playbackState;
-- (void)setQueueWithItemCollection:(id)arg1;
 - (id)initWithPlayerType:(id)arg1;
 - (id)playerType;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (void)dealloc;
-- (void)pause;
-- (void)stop;
 - (id)attributeKeys;
 - (void)play;
 - (void)setVolume:(id)arg1;
 - (id)volume;
+- (void)dealloc;
+- (void)pause;
+- (void)stop;
+- (void)setQueueWithQuery:(id)arg1;
+- (void)setShuffleMode:(id)arg1;
+- (id)shuffleMode;
+- (void)setQueueWithItemCollection:(id)arg1;
+- (id)nowPlayingItem;
+- (double)currentPlaybackTime;
+- (void)skipToPreviousItem;
+- (void)skipToBeginning;
+- (void)skipToNextItem;
+- (void)endSeeking;
+- (void)beginSeekingBackward;
+- (void)beginSeekingForward;
+- (void)setRepeatMode:(id)arg1;
+- (id)repeatMode;
+- (id)playbackState;
 
 @end

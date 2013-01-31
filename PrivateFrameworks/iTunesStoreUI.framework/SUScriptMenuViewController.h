@@ -14,14 +14,15 @@
 @property(retain) NSString * title;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)itemWithTitle:(id)arg1 userInfo:(id)arg2;
 - (id)_viewController;
 - (id)newNativeViewController;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (id)action;
 - (void)dealloc;
 - (void)setSelectedIndex:(id)arg1;
@@ -31,6 +32,5 @@
 - (id)items;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)attributeKeys;
 
 @end

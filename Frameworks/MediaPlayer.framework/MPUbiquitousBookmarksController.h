@@ -21,8 +21,9 @@
 
 + (id)sharedUbiquitousBookmarksController;
 
-- (void)_applicationWillEnterForegroundNotification:(id)arg1;
-- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (BOOL)_isEnabled;
 - (BOOL)externallyActive;
 - (void)setExternallyActive:(BOOL)arg1;
 - (void)setAutomaticallySycnhronizeAtRegularIntervals:(BOOL)arg1;
@@ -44,9 +45,8 @@
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
 - (void)setNeedsSynchronizeForBookmarkPropertyChangesToMediaItem:(id)arg1;
+- (void)_applicationWillEnterForegroundNotification:(id)arg1;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (BOOL)_isEnabled;
 
 @end

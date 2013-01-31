@@ -24,7 +24,6 @@
 
 
 - (void)dealloc;
-- (void)removeIndex:(unsigned int)arg1;
 - (void)setImportingSelection:(BOOL)arg1;
 - (BOOL)importingSelection;
 - (void)setImportStopped:(BOOL)arg1;
@@ -40,6 +39,7 @@
 - (id)errorIndexes;
 - (id)completedIndexes;
 - (id)importIndexes;
+- (void)removeIndex:(unsigned int)arg1;
 - (void)shiftIndexesStartingAtIndex:(unsigned int)arg1 by:(unsigned int)arg2;
 
 @end

@@ -25,6 +25,8 @@
 @property BOOL updatedBasicMetadata;
 
 
+- (unsigned int)type;
+- (void)dealloc;
 - (void)setBitsPerPixel:(int)arg1;
 - (int)bitsPerPixel;
 - (int)imgHeight;
@@ -54,8 +56,6 @@
 - (long)writeDataToFile:(int)arg1 fromOffset:(long long)arg2 ofLength:(long long*)arg3;
 - (id)metadataDict;
 - (id)thumbData;
-- (unsigned int)type;
-- (void)dealloc;
 - (void)finalize;
 - (void)setType:(unsigned int)arg1;
 

@@ -31,7 +31,7 @@
 + (BOOL)isOutgoingMailboxType:(int)arg1;
 + (id)specialNameForType:(int)arg1;
 
-- (BOOL)isSelectable;
+- (id)children;
 - (void)invalidate;
 - (void)setName:(id)arg1;
 - (id)name;
@@ -41,20 +41,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)extraAttributes;
-- (id)store;
-- (id)URLString;
-- (void)setAttributes:(unsigned int)arg1;
-- (unsigned int)attributes;
-- (id)displayName;
-- (void)removeChild:(id)arg1;
-- (BOOL)isVisible;
-- (void)setType:(int)arg1;
-- (BOOL)isValid;
-- (id)children;
 - (id)fullPath;
 - (void)saveUserInfo;
 - (id)userInfoObjectForKey:(id)arg1;
+- (void)setParent:(id)arg1;
+- (id)parent;
+- (id)childAtIndex:(unsigned int)arg1;
+- (id)extraAttributes;
 - (void)setPermanentTag:(id)arg1;
 - (void)setExtraAttributes:(id)arg1;
 - (void)setLastViewedMessageID:(id)arg1;
@@ -123,9 +116,16 @@
 - (unsigned int)unreadCount;
 - (id)accountRelativePath;
 - (id)account;
+- (id)URLString;
+- (void)setAttributes:(unsigned int)arg1;
+- (unsigned int)attributes;
+- (id)displayName;
+- (void)removeChild:(id)arg1;
+- (BOOL)isVisible;
+- (void)setType:(int)arg1;
+- (BOOL)isValid;
+- (BOOL)isSelectable;
 - (void)setUserInfoObject:(id)arg1 forKey:(id)arg2;
-- (void)setParent:(id)arg1;
-- (id)parent;
-- (id)childAtIndex:(unsigned int)arg1;
+- (id)store;
 
 @end

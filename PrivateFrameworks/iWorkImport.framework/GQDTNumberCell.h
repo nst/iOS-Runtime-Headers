@@ -10,10 +10,10 @@
 }
 
 
-- (void)dealloc;
-- (double)value;
 - (struct __CFString { }*)createStringValue;
 - (int)readAttributesForNCell:(struct _xmlTextReader { }*)arg1;
 - (int)readAttributesForNumberCell:(struct _xmlTextReader { }*)arg1;
+- (void)dealloc;
+- (double)value;
 
 @end

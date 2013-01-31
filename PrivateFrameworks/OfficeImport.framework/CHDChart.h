@@ -38,15 +38,11 @@
 
 + (id)binaryEffects:(BOOL)arg1;
 
+- (id)sheet;
+- (id)children;
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)init;
-- (int)direction;
-- (void)setDirection:(int)arg1;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (id)sheet;
-- (id)children;
 - (void)setDirectionChanged:(bool)arg1;
 - (bool)isDirectionChanged;
 - (bool)isMSGraph;
@@ -103,5 +99,9 @@
 - (id)styleMatrix;
 - (id)workbook;
 - (void)addChild:(id)arg1;
+- (int)direction;
+- (void)setDirection:(int)arg1;
+- (id)title;
+- (void)setTitle:(id)arg1;
 
 @end

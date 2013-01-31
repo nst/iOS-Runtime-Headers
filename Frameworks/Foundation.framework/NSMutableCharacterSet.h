@@ -9,6 +9,8 @@
 + (id)uppercaseLetterCharacterSet;
 + (id)lowercaseLetterCharacterSet;
 + (id)whitespaceAndNewlineCharacterSet;
++ (id)letterCharacterSet;
++ (id)characterSetWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 + (id)newlineCharacterSet;
 + (id)symbolCharacterSet;
 + (id)punctuationCharacterSet;
@@ -22,8 +24,6 @@
 + (id)decomposableCharacterSet;
 + (id)nonBaseCharacterSet;
 + (id)controlCharacterSet;
-+ (id)letterCharacterSet;
-+ (id)characterSetWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
@@ -33,9 +33,9 @@
 - (void)addCharactersInString:(id)arg1;
 - (void)formUnionWithCharacterSet:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isMutable;
 - (void)formIntersectionWithCharacterSet:(id)arg1;
 - (void)removeCharactersInString:(id)arg1;
 - (void)removeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)isMutable;
 
 @end

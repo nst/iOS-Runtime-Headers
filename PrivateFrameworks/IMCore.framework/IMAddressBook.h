@@ -5,13 +5,13 @@
 @interface IMAddressBook : NSObject  {
 }
 
-+ (void)performBlock:(id)arg1;
 + (id*)abAddressBook;
 + (id)_threadedABAddressBookLock;
 + (void*)_abAddressBookRef;
 + (void)_watchLocaleChanges;
 + (void*)_threadedABAddressBookRef;
 + (void*)abAddressBookRef;
++ (void)performBlock:(id)arg1;
 
 
 @end

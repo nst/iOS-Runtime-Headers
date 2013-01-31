@@ -12,12 +12,12 @@
 
 + (void)initialize;
 
-- (id)session;
-- (void)setSession:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)connections;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)session;
+- (void)setSession:(id)arg1;
+- (id)connections;
 - (void)removeConnection:(id)arg1;
 - (id)addConnection:(id)arg1 error:(id*)arg2;
 - (id)transformedMetadataObjectForMetadataObject:(id)arg1 connection:(id)arg2;

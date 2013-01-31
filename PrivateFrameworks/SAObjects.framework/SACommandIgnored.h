@@ -13,8 +13,8 @@
 + (id)commandIgnoredWithDictionary:(id)arg1 context:(id)arg2;
 + (id)commandIgnored;
 
-- (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

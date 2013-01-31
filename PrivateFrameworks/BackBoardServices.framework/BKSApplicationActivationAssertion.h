@@ -14,10 +14,10 @@
 @property(readonly) NSString * name;
 
 
-- (id)_initWithWorkspace:(id)arg1 application:(id)arg2 name:(id)arg3;
-- (void)releaseAssertion;
 - (id)name;
 - (void)dealloc;
 - (id)init;
+- (id)_initWithWorkspace:(id)arg1 application:(id)arg2 name:(id)arg3;
+- (void)releaseAssertion;
 
 @end

@@ -55,9 +55,13 @@
 @property(retain) _UIAccessDeniedView * accessDeniedView;
 
 
+- (void)setEntityType:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (BOOL)allowsRotation;
+- (void)cancel:(id)arg1;
+- (void)setFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; })arg1;
 - (void)done:(id)arg1;
 - (BOOL)showsCancelButton;
 - (void)setShowsCancelButton:(BOOL)arg1;
@@ -83,6 +87,7 @@
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (unsigned int)entityType;
 - (void)setLimitedToSource:(id)arg1;
 - (id)limitedToSource;
 - (void)setSelectedCalendarSet:(id)arg1;
@@ -140,16 +145,11 @@
 - (BOOL)showsDoneButton;
 - (void)setEventStore:(id)arg1;
 - (void)setShowsDoneButton:(BOOL)arg1;
-- (BOOL)allowsRotation;
+- (id)eventStore;
 - (id)accessDeniedView;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (void)cancel:(id)arg1;
 - (id)groups;
 - (void)setGroups:(id)arg1;
-- (void)setEntityType:(unsigned int)arg1;
-- (void)setFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; })arg1;
-- (id)eventStore;
-- (unsigned int)entityType;
 
 @end

@@ -49,6 +49,9 @@
 + (void)setSupportsAutoRotation:(BOOL)arg1;
 + (void)setGlobalAppearanceStyle:(int)arg1;
 
+- (void)dealloc;
+- (id)init;
+- (void)_applicationDidEnterBackground;
 - (id)firstRunDelegate;
 - (void)setShowSplashOnSignin:(BOOL)arg1;
 - (BOOL)showSplashOnSignin;
@@ -88,8 +91,8 @@
 - (id)initWithRegController:(id)arg1;
 - (void)setRegController:(id)arg1;
 - (id)regController;
-- (void)dealloc;
-- (id)init;
+- (id)alertHandler;
+- (void)setAlertHandler:(id)arg1;
 - (void)setupController;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
@@ -100,8 +103,5 @@
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)applicationDidResume;
 - (void)applicationWillSuspend;
-- (id)alertHandler;
-- (void)setAlertHandler:(id)arg1;
-- (void)_applicationDidEnterBackground;
 
 @end

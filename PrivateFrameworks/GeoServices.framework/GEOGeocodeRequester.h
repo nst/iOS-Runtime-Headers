@@ -13,11 +13,11 @@
 + (id)sharedGeocodeRequester;
 + (void)_countryProvidersDidChange:(id)arg1;
 
-- (void)cancelGeocode:(id)arg1;
-- (void)forwardGeocode:(id)arg1 success:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
-- (void)reverseGeocode:(id)arg1 success:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
 - (void)dealloc;
 - (id)init;
+- (void)cancelGeocode:(id)arg1;
+- (void)reverseGeocode:(id)arg1 success:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
+- (void)forwardGeocode:(id)arg1 success:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
 - (void)registerProvider:(Class)arg1;
 
 @end

@@ -33,6 +33,9 @@
 + (int)clockwiseWindingNumberOfShapeWithBorders:(id)arg1;
 + (void)outerVertices:(struct CGPoint { float x1; float x2; }*)arg1 fromBorders:(id)arg2 swollenBy:(float)arg3;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)combine:(id)arg1;
 - (BOOL)crosses:(id)arg1;
 - (BOOL)extractCycleTo:(id)arg1 goingForward:(BOOL)arg2 startingAtIndex:(unsigned int)arg3;
@@ -75,9 +78,6 @@
 - (int)compareYBounds:(id)arg1;
 - (int)compareXBounds:(id)arg1;
 - (long)zOrder;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
 - (BOOL)isHorizontal;
 - (id)page;
 - (BOOL)isVertical;

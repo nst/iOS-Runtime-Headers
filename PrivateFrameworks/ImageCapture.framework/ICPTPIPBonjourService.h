@@ -7,6 +7,9 @@
 }
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (void)disconnectClient:(id)arg1;
 - (void)unlockDeviceForClient:(id)arg1;
 - (void)handleNetServiceError:(struct { int x1; int x2; }*)arg1;
@@ -25,9 +28,6 @@
 - (void)releaseSocket;
 - (void)releaseNetService;
 - (struct __CFNetService { }*)publishedService;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
 - (void)removeClient:(id)arg1;
 - (void)addClient:(id)arg1;
 

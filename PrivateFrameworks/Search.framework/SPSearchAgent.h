@@ -28,6 +28,14 @@
 @property NSObject<SPSearchAgentDelegate> * delegate;
 
 
+- (void)invalidate;
+- (void)setOptions:(int)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (id)searchDomains;
+- (void)setSearchDomains:(id)arg1;
 - (BOOL)queryComplete;
 - (void)stuffChanged;
 - (BOOL)setQueryString:(id)arg1;
@@ -41,23 +49,15 @@
 - (BOOL)_shouldIgnoreQuery:(id)arg1;
 - (void)addSections:(id)arg1;
 - (void)handleOptionsForNewSections:(id)arg1;
-- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
-- (void)invalidate;
-- (void)setOptions:(int)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
-- (id)queryString;
-- (void)clear;
-- (int)options;
-- (id)searchDomains;
-- (void)setSearchDomains:(id)arg1;
+- (unsigned int)sectionCount;
+- (id)initWithOptions:(int)arg1;
 - (void)searchDaemonQueryCompleted:(id)arg1;
 - (void)searchDaemonQuery:(id)arg1 encounteredError:(id)arg2;
 - (void)searchDaemonQuery:(id)arg1 addedResults:(id)arg2;
-- (id)initWithOptions:(int)arg1;
+- (id)queryString;
+- (void)clear;
+- (int)options;
+- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (unsigned int)resultCount;
-- (unsigned int)sectionCount;
 
 @end

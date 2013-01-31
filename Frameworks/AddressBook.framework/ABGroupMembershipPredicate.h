@@ -19,11 +19,11 @@
 - (void)setAccountIdentifier:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (void)setStore:(void*)arg1;
-- (void*)store;
 - (void*)group;
 - (void)setGroup:(void*)arg1;
 - (BOOL)isValid;
+- (void)setStore:(void*)arg1;
+- (void*)store;
 - (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (id)queryWhereString;
 

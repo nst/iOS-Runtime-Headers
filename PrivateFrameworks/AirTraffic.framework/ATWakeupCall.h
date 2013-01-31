@@ -30,8 +30,8 @@
 + (void)sendWakeupCall:(id)arg1;
 
 - (void)dealloc;
-- (void)stop;
 - (void)wake;
+- (void)stop;
 - (void)netServiceBrowserDidStopSearch:(id)arg1;
 - (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
 - (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;

@@ -18,7 +18,6 @@
 @property BOOL shouldShowLoadingView;
 
 
-- (void)setLoading:(BOOL)arg1;
 - (BOOL)shouldShowLoadingView;
 - (void)setShouldShowLoadingView:(BOOL)arg1;
 - (void)setDefaultBackgroundGradient:(id)arg1;
@@ -35,5 +34,6 @@
 - (void)dealloc;
 - (id)init;
 - (void)loadView;
+- (void)setLoading:(BOOL)arg1;
 
 @end

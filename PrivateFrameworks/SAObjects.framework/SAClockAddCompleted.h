@@ -15,11 +15,11 @@
 + (id)addCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)addCompleted;
 
-- (id)groupIdentifier;
 - (void)setWorldClockId:(id)arg1;
 - (id)worldClockId;
 - (void)setAlreadyExists:(BOOL)arg1;
 - (BOOL)alreadyExists;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

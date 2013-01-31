@@ -16,12 +16,12 @@
 
 + (id)registeredObserverForActivityMonitor:(id)arg1;
 
+- (void)invalidate;
+- (void)dealloc;
 - (id)initForActivityMonitor:(id)arg1;
 - (void)registerObservations;
 - (void)_pollWithInterval:(double)arg1 networkActivityDidCompleteBlock:(id)arg2;
 - (id)activityMonitor;
 - (void)unregisterObservations;
-- (void)invalidate;
-- (void)dealloc;
 
 @end

@@ -20,14 +20,13 @@
 @property(retain) NSString * uid;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)uid;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setUid:(id)arg1;
 - (id)photoInfos;
 - (void)setHasPhotoType:(BOOL)arg1;
@@ -40,6 +39,7 @@
 - (void)addPhotoInfo:(id)arg1;
 - (void)setPhotoInfos:(id)arg1;
 - (BOOL)hasUid;
-- (BOOL)readFrom:(id)arg1;
+- (id)uid;
+- (id)dictionaryRepresentation;
 
 @end

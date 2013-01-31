@@ -14,9 +14,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)color;
-- (float)position;
 - (id)initWithColor:(id)arg1 position:(float)arg2;
 - (void)setStyleColor:(id)arg1;
+- (id)color;
+- (float)position;
 
 @end

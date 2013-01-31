@@ -13,9 +13,9 @@
 
 + (void)initialize;
 
-- (void)setSession:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)setSession:(id)arg1;
 - (void)_AVCaptureAudioDataOutput_AudioDataBecameReady;
 - (void)didStartForSession:(id)arg1;
 - (void)didStopForSession:(id)arg1 error:(id)arg2;

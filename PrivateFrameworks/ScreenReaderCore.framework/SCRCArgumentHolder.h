@@ -10,13 +10,6 @@
 
 
 - (BOOL)isRequired;
-- (id)option;
-- (BOOL)process;
-- (void)setIsRequired:(BOOL)arg1;
-- (void)setArgumentDescription:(id)arg1;
-- (void)setArgument:(id)arg1;
-- (void)setOption:(id)arg1;
-- (id)argumentDescription;
 - (SEL)action;
 - (void)setTarget:(id)arg1;
 - (int)compare:(id)arg1;
@@ -25,7 +18,14 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setAction:(SEL)arg1;
 - (id)argument;
+- (BOOL)process;
+- (void)setIsRequired:(BOOL)arg1;
+- (void)setArgumentDescription:(id)arg1;
+- (void)setArgument:(id)arg1;
+- (void)setOption:(id)arg1;
+- (id)argumentDescription;
+- (void)setAction:(SEL)arg1;
+- (id)option;
 
 @end

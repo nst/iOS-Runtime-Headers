@@ -17,13 +17,13 @@
 @property(getter=isHighlighted) BOOL highlighted;
 
 
+- (id)playerStatus;
+- (void)dealloc;
 - (void)setPlayerStatus:(id)arg1;
 - (id)_newBufferingImageView;
 - (void)_showBufferingImageView;
 - (void)_cancelBufferingTimer;
 - (id)_newProgressView;
-- (id)playerStatus;
-- (void)dealloc;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)layoutSubviews;

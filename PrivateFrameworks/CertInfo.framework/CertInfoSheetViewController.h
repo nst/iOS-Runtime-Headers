@@ -26,14 +26,8 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (void)_cancel;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)serviceName;
-- (void)setServiceName:(id)arg1;
 - (void)_accept;
+- (void)setServiceName:(id)arg1;
 - (void)setTrustExpiration:(id)arg1;
 - (void)setTrustPurpose:(id)arg1;
 - (void)_pushDetailsView;
@@ -47,5 +41,11 @@
 - (void)setTrustProperties:(id)arg1;
 - (void)_setupNavItem;
 - (id)trustProperties;
+- (void)_cancel;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)serviceName;
 
 @end

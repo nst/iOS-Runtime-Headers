@@ -13,9 +13,9 @@
 @property(copy) NSDictionary * requestParameters;
 
 
-- (void)setRequestParameters:(id)arg1;
 - (void)setRequestData:(id)arg1;
 - (void)setQuantity:(int)arg1;
 - (void)setProductIdentifier:(id)arg1;
+- (void)setRequestParameters:(id)arg1;
 
 @end

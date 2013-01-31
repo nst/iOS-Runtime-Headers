@@ -26,9 +26,9 @@
 + (id)sharedInstance;
 + (void)initialize;
 
-- (struct BTSessionImpl { }*)session;
-- (void)setSession:(struct BTSessionImpl { }*)arg1;
 - (id)init;
+- (id)statusMessage;
+- (void)setStatusMessage:(id)arg1;
 - (void)setDiscoveryAgent:(struct BTDiscoveryAgentImpl { }*)arg1;
 - (struct BTDiscoveryAgentImpl { }*)discoveryAgent;
 - (void)setLocalDevice:(struct BTLocalDeviceImpl { }*)arg1;
@@ -48,7 +48,7 @@
 - (void)setupBTScan;
 - (void)setBTPowerOn:(BOOL)arg1;
 - (struct BTLocalDeviceImpl { }*)localDevice;
-- (id)statusMessage;
-- (void)setStatusMessage:(id)arg1;
+- (struct BTSessionImpl { }*)session;
+- (void)setSession:(struct BTSessionImpl { }*)arg1;
 
 @end

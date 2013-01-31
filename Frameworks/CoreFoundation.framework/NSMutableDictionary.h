@@ -7,15 +7,16 @@
 
 + (id)dictionaryWithCapacity:(unsigned int)arg1;
 + (id)dictionaryWithSharedKeySet:(id)arg1;
++ (id)nonRetainingKeyAndValueDictionary;
 + (id)retainingKeyDictionary;
 + (id)nonRetainingDictionary;
-+ (id)nonRetainingKeyAndValueDictionary;
 + (id)MSASDictionaryWithCopyOfDictionary:(id)arg1;
 
 - (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)removeAllObjects;
 - (id)initWithCapacity:(unsigned int)arg1;
+- (void)removeObjectsForKeys:(id)arg1;
 - (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (void)invert;
 - (void)addEntriesFromDictionary:(id)arg1;
@@ -35,7 +36,6 @@
 - (void)__setObject:(id)arg1 forKey:(id)arg2;
 - (void)replaceObject:(id)arg1 forKey:(id)arg2;
 - (void)__addObject:(id)arg1 forKey:(id)arg2;
-- (void)removeObjectsForKeys:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (Class)classForCoder;
@@ -66,9 +66,6 @@
 - (id)MSASAddIsGlobalResetSync;
 - (id)MSASAddDictionary:(id)arg1;
 - (void)_gkAddEntriesFromFormEncodedString:(id)arg1;
-- (void)_gkSetInviteStatus:(int)arg1 forPlayer:(id)arg2;
-- (int)_gkInviteStatusForPlayer:(id)arg1;
-- (int)_gkInviteStatusForPlayerID:(id)arg1;
 - (void)mf_fixupRFC2231Values;
 - (void)mf_setInteger:(int)arg1 forKey:(id)arg2;
 - (void)mf_setBool:(BOOL)arg1 forKey:(id)arg2;

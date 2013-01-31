@@ -22,14 +22,14 @@
 + (void)resetURLConfiguration;
 + (id)urlConfiguration;
 
-- (void)setAppleID:(id)arg1;
-- (id)appleID;
-- (void)setPassword:(id)arg1;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
-- (id)password;
+- (id)initWithAccount:(id)arg1;
+- (void)setAppleID:(id)arg1;
+- (id)appleID;
 - (void)setEmailChoice:(id)arg1;
+- (void)shouldPresentUpgradeFlowWithCompletion:(id)arg1;
 - (void)upgradeiCloudTermsIfNecessaryWithHandler:(id)arg1;
 - (void)fetchDelegateTokensWithAccountParameters:(id)arg1 delegateHints:(id)arg2 handler:(id)arg3;
 - (void)setupDelegateAccountsWithParameters:(id)arg1 handler:(id)arg2;
@@ -41,6 +41,7 @@
 - (id)emailChoice;
 - (id)_signingSession;
 - (void)setCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
-- (id)initWithAccount:(id)arg1;
+- (id)password;
+- (void)setPassword:(id)arg1;
 
 @end

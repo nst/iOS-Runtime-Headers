@@ -25,6 +25,17 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (double)timeOffset;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (id)mediaFiles;
+- (void)requestDeleteFiles:(id)arg1;
+- (void)requestDownloadFile:(id)arg1 options:(id)arg2 downloadDelegate:(id)arg3 didDownloadSelector:(SEL)arg4 contextInfo:(void*)arg5;
+- (void)requestOpenSession;
+- (unsigned int)contentCatalogPercentCompleted;
+- (unsigned int)estimatedNumberOfDownloadableItems;
+- (void)requestEject;
 - (void)addToMetadataFetchQ:(id)arg1;
 - (void)addToThumbnailFetchQ:(id)arg1;
 - (void)removeFolder:(id)arg1;
@@ -59,22 +70,11 @@
 - (void)handleImageCaptureEventNotification:(id)arg1;
 - (void)handleCommandCompletionNotification:(id)arg1;
 - (void)requestCloseSession;
-- (void)cancelDownload;
-- (id)description;
-- (void)dealloc;
-- (id)init;
 - (unsigned int)batteryLevel;
 - (void)finalize;
 - (void)setLocked:(BOOL)arg1;
 - (id)contents;
 - (BOOL)isLocked;
-- (double)timeOffset;
-- (id)mediaFiles;
-- (void)requestDeleteFiles:(id)arg1;
-- (void)requestDownloadFile:(id)arg1 options:(id)arg2 downloadDelegate:(id)arg3 didDownloadSelector:(SEL)arg4 contextInfo:(void*)arg5;
-- (void)requestOpenSession;
-- (unsigned int)contentCatalogPercentCompleted;
-- (unsigned int)estimatedNumberOfDownloadableItems;
-- (void)requestEject;
+- (void)cancelDownload;
 
 @end

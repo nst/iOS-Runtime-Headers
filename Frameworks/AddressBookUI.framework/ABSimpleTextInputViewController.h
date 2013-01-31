@@ -22,6 +22,7 @@
 - (void)save:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)cancel:(id)arg1;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;
 - (BOOL)_allowsAutorotation;
@@ -42,6 +43,5 @@
 - (void)setTitleLocalizationKey:(id)arg1;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (void)cancel:(id)arg1;
 
 @end

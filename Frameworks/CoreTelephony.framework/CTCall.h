@@ -18,9 +18,9 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)setCallState:(id)arg1;
-- (id)callState;
 - (void)setCallID:(id)arg1;
 - (id)callID;
+- (void)setCallState:(id)arg1;
+- (id)callState;
 
 @end

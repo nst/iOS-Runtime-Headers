@@ -28,6 +28,14 @@
 
 + (BOOL)isVoIPAllowed;
 
+- (void)setVolume:(float)arg1;
+- (float)volume;
+- (id)name;
+- (void)dealloc;
+- (void)stop;
+- (BOOL)isActive;
+- (void)start;
+- (void)setActive:(BOOL)arg1;
 - (void)setGkVoiceChatSession:(id)arg1;
 - (id)playerStateUpdateHandler;
 - (void)setMute:(BOOL)arg1 forPlayer:(id)arg2;
@@ -38,13 +46,5 @@
 - (void)setGkSession:(id)arg1;
 - (id)initChat:(id)arg1 withSession:(id)arg2;
 - (id)playerIDs;
-- (id)name;
-- (void)dealloc;
-- (void)stop;
-- (BOOL)isActive;
-- (void)start;
-- (void)setActive:(BOOL)arg1;
-- (void)setVolume:(float)arg1;
-- (float)volume;
 
 @end

@@ -21,20 +21,20 @@
 
 
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
-- (unsigned long long)downloadToken;
-- (BOOL)hasProtectedContent;
-- (id)trackReferences;
-- (id)lyrics;
 - (id)URL;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (void)finalize;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (id)commonMetadata;
 - (BOOL)isReadable;
 - (id)creationDate;
+- (struct CGSize { float x1; float x2; })naturalSize;
+- (void)finalize;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (unsigned long long)downloadToken;
+- (BOOL)hasProtectedContent;
+- (id)trackReferences;
+- (id)lyrics;
 - (id)initWithFigAsset:(struct OpaqueFigAsset { }*)arg1;
 - (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
 - (BOOL)_hasQTSaveRestriction;
@@ -51,6 +51,7 @@
 - (id)alternateTrackGroups;
 - (BOOL)providesPreciseDurationAndTiming;
 - (int)naturalTimeScale;
+- (float)preferredSoundCheckVolumeNormalization;
 - (float)preferredVolume;
 - (float)preferredRate;
 - (struct OpaqueFigAsset { }*)_figAsset;

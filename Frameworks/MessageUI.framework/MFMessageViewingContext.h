@@ -47,9 +47,16 @@
 + (unsigned int)nextOffsetForOffset:(unsigned int)arg1 totalLength:(unsigned int)arg2 requestedAmount:(unsigned int)arg3;
 + (BOOL)isAttachmentTooLarge:(id)arg1;
 
+- (void)cancelLoad;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (id)initWithMessage:(id)arg1;
+- (void)_setSigners:(id)arg1;
+- (id)signers;
+- (BOOL)isPartial;
+- (id)attachments;
+- (id)messageBody;
 - (id)message;
 - (void)_setContentOffset:(unsigned int)arg1;
 - (void)load;
@@ -86,14 +93,7 @@
 - (void)_notifyAttachmentComplete:(id)arg1 monitor:(id)arg2;
 - (void)loadMore;
 - (BOOL)hasLoaded;
-- (void)cancelLoad;
-- (void)_setSigners:(id)arg1;
-- (id)signers;
-- (BOOL)isPartial;
-- (id)attachments;
-- (id)messageBody;
 - (void)unload;
-- (id)initWithMessage:(id)arg1;
 - (id)uniqueID;
 
 @end

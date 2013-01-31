@@ -29,16 +29,6 @@
 + (void)releaseCurrentDisplayLinkManager;
 + (id)currentDisplayLinkManager;
 
-- (void)_setHandlingDisplayRefresh:(BOOL)arg1;
-- (id)_activeTargetActions;
-- (id)_addedTargetActions;
-- (id)_removedTargetActions;
-- (BOOL)_isHandlingDisplayRefresh;
-- (void)_setShouldInvalidate:(BOOL)arg1;
-- (BOOL)_shouldInvalidate;
-- (void)_setRemovedTargetActions:(id)arg1;
-- (void)_setAddedTargetActions:(id)arg1;
-- (void)_setActiveTargetActions:(id)arg1;
 - (BOOL)shouldInvalidateAutomatically;
 - (void)setShouldInvalidateAutomatically:(BOOL)arg1;
 - (id)_displayLink;
@@ -51,6 +41,16 @@
 - (double)timestamp;
 - (void)dealloc;
 - (id)init;
+- (void)_setHandlingDisplayRefresh:(BOOL)arg1;
+- (id)_activeTargetActions;
+- (id)_addedTargetActions;
+- (id)_removedTargetActions;
+- (BOOL)_isHandlingDisplayRefresh;
+- (void)_setShouldInvalidate:(BOOL)arg1;
+- (BOOL)_shouldInvalidate;
+- (void)_setRemovedTargetActions:(id)arg1;
+- (void)_setAddedTargetActions:(id)arg1;
+- (void)_setActiveTargetActions:(id)arg1;
 - (int)frameInterval;
 - (double)duration;
 - (BOOL)isPaused;

@@ -16,9 +16,6 @@
 @property(readonly) NSArray * downloads;
 
 
-- (id)downloads;
-- (id)downloadManager;
-- (id)downloadForDownloadIdentifier:(long long)arg1;
 - (BOOL)deleteDownload:(id)arg1;
 - (void)_finishPreflightWithCompletionBlock:(id)arg1;
 - (void)_reloadDownloadManager;
@@ -27,6 +24,9 @@
 - (id)initWithDownloadManager:(id)arg1 clientInterface:(id)arg2;
 - (void)reloadDownloadManager;
 - (void)dealloc;
+- (id)downloadForDownloadIdentifier:(long long)arg1;
+- (id)downloads;
+- (id)downloadManager;
 - (id)initWithDownloadManager:(id)arg1;
 
 @end

@@ -5,7 +5,6 @@
 @interface PLMessageUIProxy : NSObject  {
 }
 
-+ (BOOL)canSendMail;
 + (id)newABUnknownPersonViewControllerWithEmailAddress:(id)arg1;
 + (Class)MFSearchShadowViewClass;
 + (Class)MFRecipientTableViewCellClass;
@@ -15,6 +14,7 @@
 + (Class)_MFComposeRecipientViewClass;
 + (id)newComposeViewController;
 + (Class)MFMailComposeViewControllerClass;
++ (BOOL)canSendMail;
 
 
 @end

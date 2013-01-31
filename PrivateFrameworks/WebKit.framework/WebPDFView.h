@@ -11,20 +11,11 @@
     struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } *_pageRects;
 }
 
++ (Class)_representationClassForWebFrame:(id)arg1;
++ (id)supportedMIMETypes;
 + (struct CGColor { }*)shadowColor;
 + (struct CGColor { }*)backgroundColor;
-+ (id)supportedMIMETypes;
-+ (Class)_representationClassForWebFrame:(id)arg1;
 
-- (void)dealloc;
-- (struct CGPDFDocument { }*)doc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPageNumber:(unsigned int)arg1;
-- (unsigned int)totalPages;
-- (void)setNeedsLayout:(BOOL)arg1;
-- (void)layout;
-- (id)title;
-- (void)setDataSource:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (unsigned int)pageNumberForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_computePageRects;
 - (void)_checkPDFTitle;
@@ -38,5 +29,14 @@
 - (void)dataSourceUpdated:(id)arg1;
 - (void)receivedData:(id)arg1 withDataSource:(id)arg2;
 - (void)finishedLoadingWithDataSource:(id)arg1;
+- (void)dealloc;
+- (struct CGPDFDocument { }*)doc;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPageNumber:(unsigned int)arg1;
+- (unsigned int)totalPages;
+- (void)setNeedsLayout:(BOOL)arg1;
+- (void)layout;
+- (id)title;
+- (void)setDataSource:(id)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

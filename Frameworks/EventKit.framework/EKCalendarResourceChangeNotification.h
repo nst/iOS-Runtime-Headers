@@ -37,14 +37,14 @@
 @property(retain) NSNumber * deleteCount;
 
 
-- (void)setUpdateCount:(id)arg1;
-- (id)updateCount;
+- (void)setLocation:(id)arg1;
 - (void)dealloc;
+- (unsigned int)changeType;
 - (id)location;
 - (id)deleteCount;
 - (id)initWithType:(int)arg1;
-- (void)setLocation:(id)arg1;
-- (unsigned int)changeType;
+- (void)setUpdateCount:(id)arg1;
+- (id)updateCount;
 - (id)eventID;
 - (BOOL)allDay;
 - (BOOL)needsAlert;

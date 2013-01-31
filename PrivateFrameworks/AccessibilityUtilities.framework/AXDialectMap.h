@@ -25,6 +25,9 @@
 @property(readonly) AXLanguageManager * langManager;
 
 
+- (id)debugDescription;
+- (id)description;
+- (void)dealloc;
 - (id)regionID;
 - (id)langMap;
 - (BOOL)canSpeakString:(id)arg1;
@@ -44,9 +47,6 @@
 - (void)setSpeakableCharacters:(id)arg1;
 - (void)setVoiceName:(id)arg1;
 - (id)basicDescription;
-- (id)debugDescription;
-- (id)description;
-- (void)dealloc;
 - (id)locale;
 - (void)setLocale:(id)arg1;
 

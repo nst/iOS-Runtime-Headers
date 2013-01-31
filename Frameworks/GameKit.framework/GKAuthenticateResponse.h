@@ -34,6 +34,8 @@
 
 + (id)codedPropertyKeys;
 
+- (id)description;
+- (void)dealloc;
 - (void)setLocalPlayer:(id)arg1;
 - (void)setShouldUsePipelining:(BOOL)arg1;
 - (BOOL)shouldUsePipelining;
@@ -58,7 +60,5 @@
 - (void)setGame:(id)arg1;
 - (id)game;
 - (void)setPlayerID:(id)arg1;
-- (id)description;
-- (void)dealloc;
 
 @end

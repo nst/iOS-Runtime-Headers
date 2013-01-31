@@ -27,6 +27,9 @@
 @property struct MPMovieAccessLogEventInternal { id x1; } _internal;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)URI;
 - (int)numberOfDroppedVideoFrames;
 - (double)indicatedBitrate;
 - (double)observedBitrate;
@@ -43,8 +46,5 @@
 - (void)set_internal:(struct MPMovieAccessLogEventInternal { id x1; })arg1;
 - (id)_initWithAVItemAccessLogEvent:(id)arg1;
 - (struct MPMovieAccessLogEventInternal { id x1; })_internal;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)URI;
 
 @end

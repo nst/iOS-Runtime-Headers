@@ -22,6 +22,11 @@
 @property(retain) UISearchDisplayController * sdc;
 
 
+- (void)setRootController:(id)arg1;
+- (void)didWake;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (id)sdc;
 - (void)_showTableViewCells;
 - (void)_hideTableViewCells;
@@ -50,9 +55,6 @@
 - (BOOL)canBeShownFromSuspendedState;
 - (void)handleURL:(id)arg1;
 - (id)rootController;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
 - (void)setParentController:(id)arg1;
 - (id)parentController;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
@@ -69,8 +71,6 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)didWake;
-- (void)setRootController:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (id)specifier;
 

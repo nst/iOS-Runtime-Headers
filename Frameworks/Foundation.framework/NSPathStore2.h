@@ -18,7 +18,6 @@
 - (id)stringByAppendingPathComponent:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)length;
-- (id)stringByExpandingTildeInPath;
 - (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)stringByDeletingLastPathComponent;
 - (id)stringByAppendingPathExtension:(id)arg1;
@@ -30,5 +29,6 @@
 - (id)stringByAbbreviatingWithTildeInPath;
 - (id)_stringByResolvingSymlinksInPathUsingCache:(BOOL)arg1;
 - (id)_stringByStandardizingPathUsingCache:(BOOL)arg1;
+- (id)stringByExpandingTildeInPath;
 
 @end

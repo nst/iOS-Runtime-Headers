@@ -117,12 +117,12 @@
 - (void)configureKeyboard:(id)arg1;
 - (id)candidateAtIndex:(unsigned int)arg1;
 - (void)showPageAtIndex:(unsigned int)arg1;
-- (void)showCandidateAtIndex:(unsigned int)arg1;
 - (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
 - (void)showCandidate:(id)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
 - (unsigned int)currentIndex;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
+- (void)showCandidateAtIndex:(unsigned int)arg1;
 - (id)currentCandidate;
 - (BOOL)handleNumberKey:(unsigned int)arg1;
 - (BOOL)supportsNumberKeySelection;

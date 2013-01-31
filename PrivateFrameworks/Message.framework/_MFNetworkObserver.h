@@ -19,7 +19,7 @@
 
 
 - (void)dealloc;
-- (void)execute;
 - (id)initWithBlock:(id)arg1 queue:(id)arg2;
+- (void)execute;
 
 @end

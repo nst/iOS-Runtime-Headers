@@ -21,11 +21,6 @@
 - (int)urlType;
 - (id)parameter;
 - (void)loadFromDictionary:(id)arg1;
-- (void)dealloc;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (int)actionType;
-- (void)setActionType:(int)arg1;
 - (void)_openURLWithRequest:(id)arg1;
 - (id)_accountURLForURL:(id)arg1 authenticationContext:(id)arg2;
 - (void)setUrlType:(int)arg1;
@@ -35,5 +30,10 @@
 - (void)setParameter:(id)arg1;
 - (void)setActionTypeWithString:(id)arg1;
 - (void)performDefaultActionForDialog:(id)arg1;
+- (void)dealloc;
+- (int)actionType;
+- (void)setActionType:(int)arg1;
+- (id)title;
+- (void)setTitle:(id)arg1;
 
 @end

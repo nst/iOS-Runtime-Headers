@@ -10,6 +10,7 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)__new:(struct _filesec { }*)arg1;
 
+- (BOOL)setOwner:(unsigned int)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -31,6 +32,5 @@
 - (BOOL)getGroup:(unsigned int*)arg1;
 - (BOOL)getOwner:(unsigned int*)arg1;
 - (struct _filesec { }*)_filesec;
-- (BOOL)setOwner:(unsigned int)arg1;
 
 @end

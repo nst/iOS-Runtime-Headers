@@ -12,7 +12,6 @@
 @property(readonly) VKPolylineOverlayPainter * selectedPolylinePainter;
 
 
-- (void)dealloc;
 - (id)selectedPolylinePainter;
 - (void)_addPainterForOverlay:(id)arg1;
 - (void)polylineGroup:(id)arg1 didSelectPolyline:(id)arg2;
@@ -23,5 +22,6 @@
 - (void)drawWithContext:(id)arg1 tiles:(id)arg2;
 - (void)layoutWithContext:(id)arg1 tiles:(id)arg2 keysInView:(id)arg3;
 - (void)setContainerModel:(id)arg1;
+- (void)dealloc;
 
 @end

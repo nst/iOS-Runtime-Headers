@@ -10,15 +10,15 @@
 @property(copy) NSDate * date;
 @property(copy) NSString * timeZoneId;
 
-+ (id)calendar;
 + (id)calendarWithDictionary:(id)arg1 context:(id)arg2;
++ (id)calendar;
 
-- (id)groupIdentifier;
-- (void)setDate:(id)arg1;
-- (id)date;
 - (void)setTimeZoneId:(id)arg1;
 - (id)timeZoneId;
 - (id)encodedClassName;
+- (void)setDate:(id)arg1;
+- (id)date;
+- (id)groupIdentifier;
 - (id)afui_timeZone;
 
 @end

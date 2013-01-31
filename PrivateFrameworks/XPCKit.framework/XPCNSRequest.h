@@ -16,9 +16,9 @@
 
 
 - (id)initWithXPCRequest:(id)arg1;
-- (void)sendReply:(id)arg1;
 - (id)data;
 - (void).cxx_destruct;
+- (void)sendReply:(id)arg1;
 - (id)message;
 - (id)request;
 

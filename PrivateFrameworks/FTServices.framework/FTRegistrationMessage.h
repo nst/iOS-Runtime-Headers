@@ -27,12 +27,23 @@
 @property(copy) NSNumber * responseNextHBI;
 
 
+- (id)protocolVersion;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)setDeviceName:(id)arg1;
+- (id)capabilities;
+- (id)messageBody;
 - (id)responseNextHBI;
 - (id)responseBindings;
 - (void)setSoftwareVersion:(id)arg1;
 - (void)setValidationData:(id)arg1;
 - (id)validationData;
-- (id)bagKey;
+- (void)setCapabilities:(id)arg1;
+- (id)hardwareVersion;
+- (id)osVersion;
+- (id)deviceName;
+- (void)setHardwareVersion:(id)arg1;
+- (void)setOsVersion:(id)arg1;
 - (void)setResponseNextHBI:(id)arg1;
 - (void)setResponseBindings:(id)arg1;
 - (id)softwareVersion;
@@ -41,18 +52,7 @@
 - (id)additionalMessageHeaders;
 - (BOOL)hasRequiredKeys:(id*)arg1;
 - (id)requiredKeys;
+- (id)bagKey;
 - (void)setProtocolVersion:(id)arg1;
-- (id)protocolVersion;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)hardwareVersion;
-- (id)osVersion;
-- (id)deviceName;
-- (void)setHardwareVersion:(id)arg1;
-- (void)setOsVersion:(id)arg1;
-- (void)setCapabilities:(id)arg1;
-- (id)capabilities;
-- (id)messageBody;
-- (void)setDeviceName:(id)arg1;
 
 @end

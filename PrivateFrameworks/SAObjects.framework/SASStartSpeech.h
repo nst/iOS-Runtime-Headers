@@ -23,9 +23,6 @@
 + (id)startSpeechWithDictionary:(id)arg1 context:(id)arg2;
 + (id)startSpeech;
 
-- (id)groupIdentifier;
-- (void)setOrigin:(id)arg1;
-- (id)origin;
 - (void)setNoiseReductionLevel:(id)arg1;
 - (id)noiseReductionLevel;
 - (void)setMotionConfidence:(id)arg1;
@@ -45,5 +42,8 @@
 - (void)setAudioSource:(id)arg1;
 - (id)audioSource;
 - (id)encodedClassName;
+- (void)setOrigin:(id)arg1;
+- (id)origin;
+- (id)groupIdentifier;
 
 @end

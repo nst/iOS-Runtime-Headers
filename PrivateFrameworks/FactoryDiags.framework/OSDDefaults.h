@@ -14,6 +14,7 @@
 - (id)initWithDomain:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)setDomain:(id)arg1;
 - (BOOL)defaultExists:(id)arg1;
 - (void)_defaultsSetter_Q:(unsigned long long)arg1;
 - (void)_defaultsSetter_S:(unsigned short)arg1;
@@ -57,6 +58,5 @@
 - (id)_methodListForPrefix:(const char *)arg1;
 - (SEL)_selForEncodeType:(const char *)arg1 andMap:(id)arg2 withOutType:(unsigned short*)arg3 andOutAttrList:(id*)arg4;
 - (id)__unitTest;
-- (void)setDomain:(id)arg1;
 
 @end

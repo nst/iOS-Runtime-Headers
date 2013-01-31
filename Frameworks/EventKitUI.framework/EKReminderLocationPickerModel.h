@@ -34,6 +34,10 @@
 - (void)addDelegate:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void*)addressBook;
+- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
+- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
+- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (BOOL)meCardIsSet;
 - (id)itemBeingGeocoded;
 - (void)setCustomLocationItem:(id)arg1;
@@ -73,10 +77,6 @@
 - (void)startUpdatingLocationItemsIfNecessary;
 - (void)selectLocation:(id)arg1;
 - (id)selectedLocationItem;
-- (void*)addressBook;
-- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
-- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
-- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (id)_stringForAuthorizationStatus:(int)arg1;
 - (void)_killTimer;
 

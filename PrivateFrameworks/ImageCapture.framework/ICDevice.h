@@ -24,6 +24,17 @@
 @property BOOL closeSessionPending;
 
 
+- (id)valueForUndefinedKey:(id)arg1;
+- (id)transportType;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)setName:(id)arg1;
+- (id)name;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (void)requestOpenSession;
+- (id)productKind;
 - (void)handleImageCaptureEventNotification:(id)arg1;
 - (void)handleCommandCompletionNotification:(id)arg1;
 - (void)requestCloseSession;
@@ -45,21 +56,10 @@
 - (id)deviceManager;
 - (void)setUUIDString:(id)arg1;
 - (void)setProductKind:(id)arg1;
-- (struct CGImage { }*)icon;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (void)finalize;
-- (id)valueForUndefinedKey:(id)arg1;
-- (id)transportType;
-- (void)requestOpenSession;
-- (id)productKind;
-- (id)UUIDString;
 - (void)setTransportType:(id)arg1;
+- (void)finalize;
+- (struct CGImage { }*)icon;
+- (id)UUIDString;
 - (BOOL)isCameraDevice;
 
 @end

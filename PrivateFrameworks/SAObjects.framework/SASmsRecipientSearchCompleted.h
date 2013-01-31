@@ -15,11 +15,11 @@
 + (id)recipientSearchCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)recipientSearchCompleted;
 
+- (id)encodedClassName;
+- (id)recipients;
 - (id)recipient;
 - (void)setRecipient:(id)arg1;
 - (id)groupIdentifier;
 - (void)setRecipients:(id)arg1;
-- (id)recipients;
-- (id)encodedClassName;
 
 @end

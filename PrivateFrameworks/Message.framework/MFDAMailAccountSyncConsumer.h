@@ -26,7 +26,6 @@
 
 - (void)reset;
 - (void)dealloc;
-- (id)tag;
 - (void)partialResultsForMailbox:(id)arg1 actions:(id)arg2 responses:(id)arg3 percentComplete:(double)arg4 moreAvailable:(BOOL)arg5;
 - (void)resultsForMailbox:(id)arg1 newTag:(id)arg2 actions:(id)arg3 responses:(id)arg4 percentComplete:(double)arg5 moreAvailable:(BOOL)arg6;
 - (void)handleSyncResponses:(id)arg1;
@@ -41,5 +40,6 @@
 - (void)taskFailed:(id)arg1 statusCode:(int)arg2 error:(id)arg3;
 - (BOOL)moreAvailable;
 - (id)initWithCurrentTag:(id)arg1 accountID:(id)arg2 requests:(id)arg3 consumers:(id)arg4;
+- (id)tag;
 
 @end

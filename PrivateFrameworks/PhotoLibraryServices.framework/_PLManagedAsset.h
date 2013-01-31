@@ -54,15 +54,11 @@
 @property(retain) NSNumber * originalWidth;
 @property short originalWidthValue;
 
-+ (id)entityName;
 + (id)insertInManagedObjectContext:(id)arg1;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
++ (id)entityName;
 
-- (void)awakeFromInsert;
-- (id)objectID;
-- (id)duration;
-- (void)setDuration:(id)arg1;
 - (id)sidecarFilesSet;
 - (void)setPrimitiveCompleteValue:(BOOL)arg1;
 - (BOOL)primitiveCompleteValue;
@@ -136,5 +132,9 @@
 - (void)setImportSessionID:(id)arg1;
 - (id)importSessionID;
 - (short)kindValue;
+- (id)duration;
+- (void)setDuration:(id)arg1;
+- (void)awakeFromInsert;
+- (id)objectID;
 
 @end

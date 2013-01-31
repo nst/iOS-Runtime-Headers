@@ -29,6 +29,8 @@
 
 + (id)sharedInstance;
 
+- (void)dealloc;
+- (id)init;
 - (void)_notifySuccess;
 - (id)selectionSummaryText;
 - (void)addSetupDictionary:(id)arg1 forService:(int)arg2;
@@ -49,8 +51,6 @@
 - (void)setSelectedAliases:(id)arg1;
 - (void)setCandidateAliases:(id)arg1;
 - (void)setSetupOperations:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (void)setHandler:(id)arg1;
 - (id)handler;
 - (void)_cleanup;

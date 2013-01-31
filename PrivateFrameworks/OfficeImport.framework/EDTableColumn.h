@@ -19,7 +19,6 @@
 - (void)setName:(id)arg1;
 - (id)name;
 - (void)dealloc;
-- (id)uniqueName;
 - (void)setTotalsRowLabel:(id)arg1;
 - (id)totalsRowLabel;
 - (void)setUniqueName:(id)arg1;
@@ -36,5 +35,6 @@
 - (void)setHeaderRowDxf:(id)arg1;
 - (id)headerRowDxf;
 - (id)initWithResources:(id)arg1;
+- (id)uniqueName;
 
 @end

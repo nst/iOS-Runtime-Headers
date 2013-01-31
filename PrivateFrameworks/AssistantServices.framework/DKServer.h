@@ -49,6 +49,10 @@
 @property(copy) id defaultMessageHandler;
 
 
+- (void)resume;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)shutdown;
 - (void)setShutdownHandler:(id)arg1;
 - (id)shutdownHandler;
 - (id)defaultMessageHandler;
@@ -67,11 +71,7 @@
 - (id)_connections;
 - (void)setDisconnectHandler:(id)arg1;
 - (id)disconnectHandler;
-- (void)resume;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (id)connections;
 - (void)setDispatchQueue:(struct dispatch_queue_s { }*)arg1;
-- (void)shutdown;
+- (id)connections;
 
 @end

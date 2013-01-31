@@ -30,10 +30,6 @@
 - (id)delegate;
 - (void)reset;
 - (void)dealloc;
-- (id)_title;
-- (id)title;
-- (void)suspend;
-- (void)setTitle:(id)arg1;
 - (id)_generateStatusTitle;
 - (float)_generateVal;
 - (void)_finishProgress;
@@ -52,6 +48,10 @@
 - (void)resetProgress;
 - (id)conversation;
 - (void)brieflyShowName;
+- (id)_title;
+- (id)title;
+- (void)suspend;
+- (void)setTitle:(id)arg1;
 - (void)refresh;
 
 @end

@@ -23,12 +23,12 @@
 @property(readonly) BOOL isNotifying;
 
 
-- (id)UUID;
+- (void)setService:(id)arg1;
+- (id)service;
 - (int)properties;
 - (id)value;
 - (void)setValue:(id)arg1;
-- (id)service;
-- (void)setService:(id)arg1;
+- (id)UUID;
 - (BOOL)isNotifying;
 - (BOOL)isBroadcasted;
 - (void)setDescriptors:(id)arg1;

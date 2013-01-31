@@ -12,6 +12,8 @@
 
 + (id)newWithCount:(long)arg1;
 
+- (id)initWithCount:(long)arg1;
+- (void)setCapacity:(long)arg1;
 - (unsigned int)retainCount;
 - (id)retain;
 - (void)dealloc;
@@ -35,7 +37,5 @@
 - (void)setAttachmentCount:(long)arg1 atIndex:(long)arg2;
 - (void)initGlyphStackWithCapacity:(long)arg1;
 - (void)setProps:(unsigned int)arg1 atIndex:(long)arg2;
-- (id)initWithCount:(long)arg1;
-- (void)setCapacity:(long)arg1;
 
 @end

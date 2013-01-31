@@ -11,10 +11,10 @@
 @property(retain) NSArray * gkActivityItems;
 
 
-- (void)setGkActivityItems:(id)arg1;
-- (id)gkActivityItems;
 - (void)dealloc;
 - (id)initWithActivityItems:(id)arg1 applicationActivities:(id)arg2;
 - (void)_performActivity:(id)arg1;
+- (void)setGkActivityItems:(id)arg1;
+- (id)gkActivityItems;
 
 @end

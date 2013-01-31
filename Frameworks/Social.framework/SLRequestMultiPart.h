@@ -27,7 +27,8 @@
 - (id)type;
 - (void).cxx_destruct;
 - (unsigned int)length;
-- (void)setFilename:(id)arg1;
+- (id)payload;
+- (void)setPayload:(id)arg1;
 - (id)uniqueIdentifier;
 - (void)setType:(id)arg1;
 - (id)multiPartHeader;
@@ -36,8 +37,7 @@
 - (id)partData;
 - (id)multiPartBoundary;
 - (void)setMultiPartBoundary:(id)arg1;
-- (void)setPayload:(id)arg1;
-- (id)payload;
+- (void)setFilename:(id)arg1;
 - (id)filename;
 
 @end

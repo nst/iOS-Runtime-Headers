@@ -52,17 +52,21 @@
 @property BOOL nearbyAdvertising;
 @property BOOL wasNearbyBrowsing;
 
-+ (id)sharedMatchmaker;
 + (id)syncQueue;
++ (id)sharedMatchmaker;
 
+- (void)cancel;
+- (void)dealloc;
+- (id)init;
+- (id)nearbyInviteFromPlayerID:(id)arg1;
 - (void)localPlayerAcceptedNearbyInvite:(id)arg1;
-- (void)removeNearbyInviteFromPlayerID:(id)arg1 deviceID:(id)arg2;
-- (void)declineNearbyInviteFromPlayer:(id)arg1 deviceID:(id)arg2 reason:(int)arg3;
-- (void)saveNearbyInvite:(id)arg1 fromPlayerID:(id)arg2 deviceID:(id)arg3;
-- (void)presentNearbyInvite:(id)arg1 fromPlayer:(id)arg2 deviceID:(id)arg3;
+- (void)removeNearbyInviteFromPlayerID:(id)arg1;
+- (void)declineNearbyInviteFromPlayer:(id)arg1 participantID:(id)arg2 deviceID:(id)arg3 reason:(int)arg4;
+- (void)saveNearbyInvite:(id)arg1 fromPlayerID:(id)arg2;
+- (void)presentNearbyInvite:(id)arg1 fromPlayer:(id)arg2 participantID:(id)arg3 deviceID:(id)arg4;
 - (void)loadPhotoDataDictionaryWithHandler:(id)arg1;
 - (void)determineIfShouldRespondToNearbyPlayer:(id)arg1 handler:(id)arg2;
-- (void)sendProfileResponseToPlayer:(id)arg1 deviceID:(id)arg2;
+- (void)sendProfileResponseToParticipant:(id)arg1 deviceID:(id)arg2;
 - (BOOL)compatibilityMatrix:(id)arg1 includesAppWithBundleID:(id)arg2 version:(id)arg3;
 - (void)setNearbyPlayerDeclined:(id)arg1 deviceID:(id)arg2 reason:(int)arg3;
 - (void)setNearbyPlayerAccepted:(id)arg1 deviceID:(id)arg2 connectionData:(id)arg3;
@@ -71,7 +75,7 @@
 - (id)nearbyDevicesForPlayer:(id)arg1 withState:(int)arg2;
 - (int)numberOfNearbyDevicesForPlayer:(id)arg1 withState:(int)arg2;
 - (id)nearbyDeviceWithDeviceID:(id)arg1;
-- (void)sendDictionary:(id)arg1 toNearbyPlayer:(id)arg2 deviceID:(id)arg3;
+- (void)sendDictionary:(id)arg1 toNearbyParticipant:(id)arg2 deviceID:(id)arg3;
 - (void)generateHashedCompatibiltySet;
 - (void)startNearbyAdvertising;
 - (id)hashForCurrentGame;
@@ -81,15 +85,15 @@
 - (void)loadCompatabilityMatrixAsDictionaryWithHandler:(id)arg1;
 - (id)hashForBundleID:(id)arg1 version:(id)arg2;
 - (BOOL)shouldRespondToNearbyQuery;
-- (void)nearbyInviteWasCancelled:(id)arg1 fromPlayer:(id)arg2 deviceID:(id)arg3;
-- (void)handleNearbyInviteResponse:(id)arg1 fromPlayer:(id)arg2 deviceID:(id)arg3;
-- (void)handleNearbyInvite:(id)arg1 fromPlayer:(id)arg2 deviceID:(id)arg3;
-- (void)handleNearbyProfileResponse:(id)arg1 fromPlayer:(id)arg2 deviceID:(id)arg3;
-- (void)handleNearbyProfileQuery:(id)arg1 fromPlayer:(id)arg2 deviceID:(id)arg3;
+- (void)nearbyInviteWasCancelled:(id)arg1 fromPlayer:(id)arg2 participantID:(id)arg3 deviceID:(id)arg4;
+- (void)handleNearbyInviteResponse:(id)arg1 fromPlayer:(id)arg2 participantID:(id)arg3 deviceID:(id)arg4;
+- (void)handleNearbyInvite:(id)arg1 fromPlayer:(id)arg2 participantID:(id)arg3 deviceID:(id)arg4;
+- (void)handleNearbyProfileResponse:(id)arg1 fromPlayer:(id)arg2 participantID:(id)arg3 deviceID:(id)arg4;
+- (void)handleNearbyProfileQuery:(id)arg1 fromPlayer:(id)arg2 participantID:(id)arg3 deviceID:(id)arg4;
 - (id)descriptionForNearbyDictionary:(id)arg1;
-- (void)receivedData:(id)arg1 fromNearbyPlayer:(id)arg2 deviceID:(id)arg3;
-- (void)lostNearbyPlayer:(id)arg1 deviceID:(id)arg2;
-- (void)foundNearbyPlayer:(id)arg1 deviceID:(id)arg2 discoveryInfo:(id)arg3;
+- (void)receivedData:(id)arg1 fromNearbyParticipant:(id)arg2 deviceID:(id)arg3;
+- (void)lostNearbyParticipant:(id)arg1 deviceID:(id)arg2;
+- (void)foundNearbyParticipant:(id)arg1 deviceID:(id)arg2 discoveryInfo:(id)arg3;
 - (void)setNearbyPlayer:(id)arg1 deviceID:(id)arg2 reachable:(BOOL)arg3;
 - (void)declineReceivedNearbyInvites;
 - (void)cancelSentNearbyInvites;
@@ -149,7 +153,6 @@
 - (void)respondToHostedInvite:(id)arg1 completionHandler:(id)arg2;
 - (void)setInvitees:(id)arg1;
 - (id)invitees;
-- (void)updateNearbyAdvertising;
 - (void)setConnectivitySettings:(id)arg1;
 - (void)applicationWillEnterForegroundNotification:(id)arg1;
 - (void)applicationWillTerminateNotification:(id)arg1;
@@ -162,10 +165,8 @@
 - (id)inviteeResponseHandler;
 - (void)findRematchForMatch:(id)arg1 completionHandler:(id)arg2;
 - (void)lookForInvite;
+- (void)updateNearbyAdvertising;
 - (void)setMatch:(id)arg1;
 - (id)match;
-- (void)cancel;
-- (void)dealloc;
-- (id)init;
 
 @end

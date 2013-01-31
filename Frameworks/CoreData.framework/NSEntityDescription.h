@@ -40,10 +40,11 @@
 }
 
 + (id)insertNewObjectForEntityForName:(id)arg1 inManagedObjectContext:(id)arg2;
++ (void)initialize;
 + (id)_MOClassName;
 + (id)entityForName:(id)arg1 inManagedObjectContext:(id)arg2;
-+ (void)initialize;
 
+- (id)attributeKeys;
 - (id)attributesByName;
 - (void)setProperties:(id)arg1;
 - (void)setManagedObjectClassName:(id)arg1;
@@ -62,6 +63,13 @@
 - (void)dealloc;
 - (oneway void)release;
 - (id)init;
+- (void)setUserInfo:(id)arg1;
+- (id)properties;
+- (void)finalize;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 uniquedMappings:(id)arg6 entities:(id)arg7;
 - (BOOL)_hasPropertiesStoredInTruthFile;
 - (BOOL)_hasPropertiesIndexedBySpotlight;
@@ -140,13 +148,5 @@
 - (id)versionHash;
 - (id)propertiesByName;
 - (id)renamingIdentifier;
-- (void)setUserInfo:(id)arg1;
-- (id)properties;
-- (void)finalize;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)attributeKeys;
 
 @end

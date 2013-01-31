@@ -21,12 +21,12 @@
 
 + (id)program;
 
+- (struct { float x1; float x2; float x3; })cameraPositionInTileSpace;
+- (void)setCameraPositionInTileSpace:(struct { float x1; float x2; float x3; })arg1;
 - (id)init;
 - (void)setScale:(float)arg1;
 - (float)scale;
 - (void)setAlpha:(float)arg1;
 - (float)alpha;
-- (struct { float x1; float x2; float x3; })cameraPositionInTileSpace;
-- (void)setCameraPositionInTileSpace:(struct { float x1; float x2; float x3; })arg1;
 
 @end

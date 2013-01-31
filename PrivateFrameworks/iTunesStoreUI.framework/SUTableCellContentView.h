@@ -25,7 +25,6 @@
 @property(getter=isHighlighted) BOOL highlighted;
 
 
-- (void)reloadView;
 - (void)_removeSubviewsForConfiguration;
 - (id)_clippedImageForImage:(id)arg1;
 - (void)_startUsingSubviewLayout;
@@ -54,5 +53,6 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)reloadView;
 
 @end

@@ -15,13 +15,6 @@
 @property(retain) VKPStyleProperties * properties;
 
 
-- (void)setProperties:(id)arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)properties;
-- (id)dictionaryRepresentation;
 - (void)applyTo:(id)arg1 zoom:(float)arg2;
 - (void)setMaxZ:(float)arg1;
 - (float)maxZ;
@@ -29,6 +22,13 @@
 - (float)minZ;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (void)setProperties:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (BOOL)readFrom:(id)arg1;
+- (id)properties;
+- (id)dictionaryRepresentation;
 
 @end

@@ -2,24 +2,24 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class WLImage;
+@class PKImage;
 
-@interface WLCardPreviewImages : WLCardImages  {
-    WLImage *_iconImage;
+@interface WLCardPreviewImages : PKPassImages  {
+    PKImage *_iconImage;
 }
 
-@property(retain) WLImage * iconImage;
+@property(retain) PKImage * iconImage;
 
 + (int)imageSet;
 + (id)archiveName;
 + (int)currentVersion;
 
-- (void)setIconImage:(id)arg1;
-- (id)initWithCardURL:(id)arg1 displayProfile:(id)arg2;
-- (void)preheatImages;
 - (void)dealloc;
 - (id)iconImage;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithCardURL:(id)arg1 displayProfile:(id)arg2;
+- (void)preheatImages;
+- (void)setIconImage:(id)arg1;
 
 @end

@@ -9,7 +9,7 @@
 }
 
 
-- (void)setImage:(id)arg1;
 - (id)initWithImageCount:(int)arg1;
+- (void)setImage:(id)arg1;
 
 @end

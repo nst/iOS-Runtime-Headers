@@ -24,15 +24,6 @@
 @property(getter=isActive) BOOL active;
 
 
-- (void)dealloc;
-- (id)init;
-- (BOOL)isActive;
-- (void)setActive:(BOOL)arg1;
-- (void)setTransform:(struct { double x1[4][4]; })arg1;
-- (struct { double x1[4][4]; })transform;
-- (void)didReceiveMemoryWarning;
-- (void)setNeedsLayout;
-- (void)setNeedsDisplay;
 - (id)submodels;
 - (id)world;
 - (void)removeFromSupermodel;
@@ -55,6 +46,15 @@
 - (void)setWorld:(id)arg1;
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (void)addSubmodel:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (BOOL)isActive;
+- (void)setActive:(BOOL)arg1;
+- (void)setTransform:(struct { double x1[4][4]; })arg1;
+- (struct { double x1[4][4]; })transform;
+- (void)didReceiveMemoryWarning;
+- (void)setNeedsLayout;
+- (void)setNeedsDisplay;
 - (id)initWithTransform:(const struct { double x1[4][4]; }*)arg1;
 
 @end

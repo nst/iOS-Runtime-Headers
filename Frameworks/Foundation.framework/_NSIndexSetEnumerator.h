@@ -11,7 +11,7 @@
 
 
 - (void)dealloc;
-- (id)nextObject;
 - (id)initWithIndexSet:(id)arg1;
+- (id)nextObject;
 
 @end

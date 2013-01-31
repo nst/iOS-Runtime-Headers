@@ -43,23 +43,30 @@
 @property(readonly) BOOL isUsableAsRepresentativeItem;
 @property(readonly) NSArray * chapters;
 
-+ (BOOL)canFilterByProperty:(id)arg1;
 + (id)dynamicProperties;
 + (id)fallbackTitlePropertyForGroupingType:(int)arg1;
 + (id)titlePropertyForGroupingType:(int)arg1;
 + (BOOL)_isValidItemProperty:(id)arg1;
 + (id)persistentIDPropertyForGroupingType:(int)arg1;
++ (BOOL)canFilterByProperty:(id)arg1;
 + (void)_createFilterableDictionary;
 
-- (void)setRating:(unsigned int)arg1;
-- (unsigned int)rating;
-- (void)setLastPlayedDate:(id)arg1;
-- (id)lastPlayedDate;
-- (BOOL)isDownloadable;
-- (id)releaseDate;
-- (id)representativeItem;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)populateLocationPropertiesWithPath:(id)arg1;
+- (id)chapters;
+- (int)mediaType;
+- (BOOL)existsInLibrary;
+- (id)valueForProperty:(id)arg1;
+- (unsigned int)year;
+- (double)startTime;
+- (id)title;
+- (void)didReceiveMemoryWarning;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isDownloadInProgress;
 - (BOOL)mediaTypeCanSeedGenius;
+- (BOOL)isDownloadable;
 - (BOOL)isUsableAsRepresentativeItem;
 - (void)gaplessHeuristicInfo:(unsigned int*)arg1 durationInSamples:(unsigned long long*)arg2 lastPacketsResync:(unsigned long long*)arg3 encodingDelay:(unsigned int*)arg4 encodingDrain:(unsigned int*)arg5;
 - (unsigned int)countOfChaptersOfType:(int)arg1;
@@ -81,6 +88,7 @@
 - (void)setPlayCount:(unsigned int)arg1;
 - (unsigned int)playCount;
 - (id)predicateForProperty:(id)arg1;
+- (id)releaseDate;
 - (id)podcastTitle;
 - (double)effectiveStopTime;
 - (BOOL)isRental;
@@ -103,6 +111,7 @@
 - (double)playbackDuration;
 - (id)_libraryLinkURL;
 - (id)_directStoreURL;
+- (id)representativeItem;
 - (id)initWithPersistentID:(unsigned long long)arg1;
 - (id)artwork;
 - (id)valuesForProperties:(id)arg1;
@@ -113,22 +122,10 @@
 - (id)genre;
 - (id)composer;
 - (id)artist;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)populateLocationPropertiesWithPath:(id)arg1;
-- (id)chapters;
-- (int)mediaType;
-- (BOOL)existsInLibrary;
-- (id)valueForProperty:(id)arg1;
-- (unsigned int)year;
-- (double)startTime;
-- (id)title;
-- (void)didReceiveMemoryWarning;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)_libraryLinkPlaylistName;
-- (id)_libraryLinkArtist;
-- (id)_libraryLinkKind;
+- (void)setRating:(unsigned int)arg1;
+- (unsigned int)rating;
+- (void)setLastPlayedDate:(id)arg1;
+- (id)lastPlayedDate;
 - (id)libraryLinkURL;
 - (id)directStoreURL;
 - (id)containerLibraryLinkURL;
@@ -138,5 +135,8 @@
 - (id)_libraryLinkURL:(BOOL)arg1;
 - (id)snapshotAtPlaybackTime:(double)arg1 startRentalClock:(BOOL)arg2 timeOut:(double)arg3;
 - (id)uncroppedAlbumImageCacheRequestWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_libraryLinkPlaylistName;
+- (id)_libraryLinkArtist;
+- (id)_libraryLinkKind;
 
 @end

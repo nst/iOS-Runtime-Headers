@@ -48,11 +48,6 @@
 @property int buildingMode;
 
 
-- (void)reset;
-- (id).cxx_construct;
-- (void)dealloc;
-- (id)init;
-- (void)setActive:(BOOL)arg1;
 - (BOOL)fadeTiles;
 - (void)setBuildingMode:(int)arg1;
 - (id)_globalBuildingDrawStyle;
@@ -67,6 +62,7 @@
 - (void)setBuildingMode:(int)arg1 animated:(BOOL)arg2;
 - (int)buildingMode;
 - (void)setVectorType:(int)arg1;
+- (void)preloadRealisticResourcesWithContext:(id)arg1;
 - (void)setFadeTiles:(BOOL)arg1;
 - (id)heightCache;
 - (void)drawDebugScene:(id)arg1 withContext:(id)arg2;
@@ -74,5 +70,10 @@
 - (double)heightAtPoint:(struct { double x1; double x2; double x3; })arg1;
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
+- (void)reset;
+- (id).cxx_construct;
+- (void)dealloc;
+- (id)init;
+- (void)setActive:(BOOL)arg1;
 
 @end

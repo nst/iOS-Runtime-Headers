@@ -11,10 +11,10 @@
 
 - (void)dealloc;
 - (id)init;
-- (BOOL)waitUntilDate:(id)arg1;
-- (void)signal;
 - (void)broadcast;
 - (void)wait;
+- (BOOL)waitUntilDate:(id)arg1;
+- (void)signal;
 - (void)_signalRunLoopWithState:(id)arg1;
 - (BOOL)_waitInMode:(id)arg1 untilDate:(id)arg2;
 - (BOOL)waitUntilDate:(id)arg1 inMode:(id)arg2;

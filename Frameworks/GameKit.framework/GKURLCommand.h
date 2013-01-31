@@ -15,13 +15,13 @@
 @property(retain) NSDictionary * options;
 
 
-- (void)setArguments:(id)arg1;
-- (id)initFromURL:(id)arg1;
+- (void)setMethod:(id)arg1;
 - (void)setOptions:(id)arg1;
 - (void)dealloc;
 - (id)method;
 - (id)options;
 - (id)arguments;
-- (void)setMethod:(id)arg1;
+- (void)setArguments:(id)arg1;
+- (id)initFromURL:(id)arg1;
 
 @end

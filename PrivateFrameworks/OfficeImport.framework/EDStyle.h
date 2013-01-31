@@ -29,11 +29,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setIndex:(unsigned int)arg1;
-- (unsigned int)index;
-- (id)font;
-- (void)setFont:(id)arg1;
-- (id)fill;
 - (void)setAlignmentInfoIndex:(unsigned int)arg1;
 - (unsigned int)alignmentInfoIndex;
 - (void)setFillIndex:(unsigned int)arg1;
@@ -73,5 +68,10 @@
 - (bool)isFillOverridden;
 - (bool)isFontOverridden;
 - (id)parent;
+- (void)setIndex:(unsigned int)arg1;
+- (unsigned int)index;
+- (id)font;
+- (void)setFont:(id)arg1;
+- (id)fill;
 
 @end

@@ -36,10 +36,6 @@
 @property(readonly) VKTileKeyMap * dynamicTiles;
 
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (id)dynamicTiles;
 - (id)incidents;
 - (void)buildTrafficMeshWithRoadData:(id)arg1;
 - (void)buildSkeletonMeshForDebug:(id)arg1;
@@ -50,5 +46,10 @@
 - (void)buildTrafficMeshWithRoadData:(id)arg1 dynamicTile:(id)arg2 ribbonMaker:(struct VKRibbonMakerData_t { id x1; id x2; BOOL x3; float x4; float x5; BOOL x6; float x7; BOOL x8; BOOL x9; BOOL x10; }*)arg3 trafficAccum:(struct TrafficAccum { int x1; struct vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint> > { struct { /* ? */ } *x_2_1_1; struct { /* ? */ } *x_2_1_2; struct __compressed_pair<GEOVectorTilePoint *, vk_allocator<GEOVectorTilePoint> > { struct { /* ? */ } *x_3_2_1; } x_2_1_3; } x2; int x3; int x4; int x5; id x6; int x7; struct { /* ? */ } *x8; int x9; float x10; }*)arg4 styleSession:(id)arg5;
 - (void)buildIncidentsForDynamic:(id)arg1;
 - (BOOL)_buildStartOffset:(float*)arg1 endOffset:(float*)arg2 forLine:(struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; id x_1_1_12; int x_1_1_13; } x1; unsigned int x2; unsigned int x3; int x4; int x5; unsigned int x6; unsigned int x7; struct { float x_8_1_1; float x_8_1_2; float x_8_1_3; float x_8_1_4; } x8; struct { /* ? */ } *x9; }*)arg3 forSkeleton:(const struct Record { unsigned int x1; unsigned int x2; float x3; float x4; long long x5; int x6; float x7; float x8; }*)arg4 forRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 forFlow:(const struct Flow { long long x1; float x2; float x3; int x4; }*)arg6 forPoints:(struct { float x1; float x2; }*)arg7;
+- (BOOL)writeDataToDirectory:(id)arg1 error:(id*)arg2;
+- (id)dynamicTiles;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)dealloc;
 
 @end

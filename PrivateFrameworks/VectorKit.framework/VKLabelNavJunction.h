@@ -54,9 +54,6 @@
 @property int preferredLabelPlacement;
 
 
-- (id)description;
-- (id).cxx_construct;
-- (void)dealloc;
 - (void)setIsOnDualCarriageway:(BOOL)arg1;
 - (BOOL)isOverpass;
 - (unsigned int)depthFromRoute;
@@ -87,6 +84,9 @@
 - (struct { unsigned int x1; float x2; })routeOffset;
 - (BOOL)isMultiRoadIntersection;
 - (BOOL)isAwayFromRoute;
+- (id)description;
+- (id).cxx_construct;
+- (void)dealloc;
 - (id)tile;
 
 @end

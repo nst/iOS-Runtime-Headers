@@ -61,12 +61,14 @@
 @property(readonly) SWRunWorkoutProxy * workoutProxy;
 
 
-- (int)interface;
+- (void)_pause;
 - (void)resume;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (void)_applicationResumed:(id)arg1;
+- (void)_start;
+- (void)setInterface:(int)arg1;
+- (void)_stop;
 - (void)_cancel;
 - (void)_applicationWillResignActive:(id)arg1;
 - (void)setOrientation:(int)arg1;
@@ -75,10 +77,8 @@
 - (void)layoutSubviews;
 - (void)didMoveToWindow;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_stop;
-- (void)_pause;
-- (void)setInterface:(int)arg1;
-- (void)_start;
+- (int)interface;
+- (void)_applicationResumed:(id)arg1;
 - (void)_applicationWillSuspend:(id)arg1;
 - (void)_nowPlayingChanged:(id)arg1;
 - (id)workoutProxy;

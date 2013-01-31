@@ -22,8 +22,8 @@
 + (void)_disconnectNavigationItem:(id)arg1 scriptObject:(id)arg2;
 + (void)disconnectNavigationItem:(id)arg1 forScriptObject:(id)arg2;
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (void)setRightItems:(id)arg1;
 - (void)setLeftMostItem:(id)arg1;
@@ -45,8 +45,10 @@
 - (id)leftItem;
 - (id)initWithNativeNavigationItem:(id)arg1;
 - (void)tearDownUserInterface;
+- (void)setTitleView:(id)arg1 animated:(BOOL)arg2;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (id)init;
 - (id)leftItemsSupplementBackButton;
 - (void)setLeftItemsSupplementBackButton:(id)arg1;
@@ -61,6 +63,5 @@
 - (id)backButtonTitle;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)attributeKeys;
 
 @end

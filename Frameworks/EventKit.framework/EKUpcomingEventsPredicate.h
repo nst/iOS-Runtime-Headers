@@ -11,10 +11,10 @@
 + (id)predicateWithLimit:(int)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)evaluateWithObject:(id)arg1;
+- (int)limit;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)limit;
 - (id)initWithLimit:(int)arg1;
+- (BOOL)evaluateWithObject:(id)arg1;
 
 @end

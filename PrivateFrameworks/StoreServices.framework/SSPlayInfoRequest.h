@@ -14,8 +14,6 @@
 @property <SSPlayInfoRequestDelegate> * delegate;
 
 
-- (id)initWithPlayInfoContext:(id)arg1;
-- (id)playInfoResponse;
 - (void)dealloc;
 - (id)init;
 - (id)playInfoContext;
@@ -24,5 +22,7 @@
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)start;
+- (id)initWithPlayInfoContext:(id)arg1;
+- (id)playInfoResponse;
 
 @end

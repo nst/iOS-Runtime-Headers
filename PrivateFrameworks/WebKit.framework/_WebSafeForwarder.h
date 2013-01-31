@@ -13,12 +13,12 @@
 }
 
 
+- (id)initWithTarget:(id)arg1 defaultTarget:(id)arg2 catchExceptions:(BOOL)arg3;
+- (void)clearTarget;
+- (id)asyncForwarder;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (id)initWithTarget:(id)arg1 defaultTarget:(id)arg2 catchExceptions:(BOOL)arg3;
-- (void)clearTarget;
-- (id)asyncForwarder;
 
 @end

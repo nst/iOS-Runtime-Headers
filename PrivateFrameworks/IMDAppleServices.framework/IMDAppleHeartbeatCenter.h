@@ -15,6 +15,8 @@
 
 + (id)sharedInstance;
 
+- (id)init;
+- (void)systemDidWake;
 - (void)removeRegistrationInfo:(id)arg1;
 - (void)addRegistrationInfo:(id)arg1;
 - (double)registrationHBI;
@@ -29,7 +31,5 @@
 - (void)_serverHeartBeat:(id)arg1;
 - (void)updateHeartbeat;
 - (id)_registrationsPendingHeartbeat;
-- (id)init;
-- (void)systemDidWake;
 
 @end

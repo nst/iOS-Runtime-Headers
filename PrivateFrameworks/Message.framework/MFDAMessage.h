@@ -14,8 +14,8 @@
 @property(readonly) DAMailMessage * DAMailMessage;
 
 
-- (void)dealloc;
 - (id)headers;
+- (void)dealloc;
 - (id)initWithDAMailMessage:(id)arg1 mailbox:(id)arg2;
 - (id)DAMailMessage;
 - (id)remoteMailboxURL;

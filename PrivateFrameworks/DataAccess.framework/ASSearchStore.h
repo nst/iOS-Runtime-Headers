@@ -22,17 +22,17 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
+- (id)total;
 - (id)results;
 - (void)setResults:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (void)setStatus:(id)arg1;
-- (id)status;
-- (id)range;
-- (id)total;
 - (void)setRange:(id)arg1;
 - (void)setTotal:(id)arg1;
 - (void)addResult:(id)arg1;
 - (id)asParseRules;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (id)range;
 
 @end

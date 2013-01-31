@@ -26,6 +26,12 @@
 @property(retain) GKAchievementSection * achievementViewSection;
 
 
+- (void)dealloc;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (float)marginForTableView:(id)arg1;
+- (id)title;
 - (void)setShowRatingControl:(BOOL)arg1;
 - (BOOL)showRatingControl;
 - (void)setDetailHeaderCell:(id)arg1;
@@ -45,11 +51,5 @@
 - (BOOL)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (void)_gkResetContents;
 - (void)playTapped;
-- (void)dealloc;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (float)marginForTableView:(id)arg1;
-- (id)title;
 
 @end

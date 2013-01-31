@@ -21,10 +21,6 @@
 + (id)_failImage;
 
 - (void)dealloc;
-- (id)_multiselectBackgroundColor;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
 - (void)setReplacementMessageBubbleData:(id)arg1;
 - (id)replacementMessageBubbleData;
 - (void)__performTargetAction:(SEL)arg1;
@@ -40,5 +36,9 @@
 - (void)balloonViewDidTapBalloon:(id)arg1;
 - (id)balloonViewSendAsSMSText:(id)arg1;
 - (void)balloonViewDidTapSendAsSMS:(id)arg1;
+- (id)_multiselectBackgroundColor;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
 
 @end

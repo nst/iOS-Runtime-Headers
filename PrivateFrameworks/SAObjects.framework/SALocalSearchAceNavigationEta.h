@@ -13,11 +13,11 @@
 + (id)aceNavigationEtaWithDictionary:(id)arg1 context:(id)arg2;
 + (id)aceNavigationEta;
 
-- (id)groupIdentifier;
 - (void)setTimeEta:(id)arg1;
 - (id)timeEta;
 - (void)setDistanceEta:(id)arg1;
 - (id)distanceEta;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

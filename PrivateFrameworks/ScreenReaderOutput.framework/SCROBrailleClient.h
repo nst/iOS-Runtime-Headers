@@ -24,6 +24,7 @@
 }
 
 
+- (void)display;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1;
@@ -85,7 +86,6 @@
 - (void)_deathTimerHandler;
 - (void)displayIfNeeded;
 - (BOOL)needsDisplay;
-- (void)display;
 - (BOOL)isConnected;
 
 @end

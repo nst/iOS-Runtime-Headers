@@ -18,7 +18,6 @@
 - (void)dealloc;
 - (id)init;
 - (void)appendString:(id)arg1;
-- (void)appendData:(id)arg1;
 - (void)appendTag:(unsigned char)arg1 withByteArrayDataContent:(id)arg2;
 - (void)appendTag:(unsigned char)arg1 withStringContentAsData:(id)arg2;
 - (void)appendEmptyTag:(unsigned char)arg1;
@@ -35,5 +34,6 @@
 - (void)appendTag:(unsigned char)arg1 withIntContent:(int)arg2;
 - (void)openTag:(unsigned char)arg1;
 - (void)switchToCodePage:(unsigned char)arg1;
+- (void)appendData:(id)arg1;
 
 @end

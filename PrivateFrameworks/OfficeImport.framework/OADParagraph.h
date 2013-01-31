@@ -14,8 +14,6 @@
 - (void)setProperties:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)properties;
-- (BOOL)isEmpty;
 - (id)addSlideNumberField;
 - (id)findFirstTextRunOfClass:(Class)arg1;
 - (void)applyProperties:(id)arg1;
@@ -34,5 +32,7 @@
 - (id)textRunAtIndex:(unsigned int)arg1;
 - (unsigned int)textRunCount;
 - (id)plainText;
+- (id)properties;
+- (BOOL)isEmpty;
 
 @end

@@ -29,7 +29,6 @@
 @property(copy) id actionHandler;
 
 
-- (id)buttonTitles;
 - (void)setActionHandler:(id)arg1;
 - (id)selectedTableItem;
 - (id)initWithType:(int)arg1 title:(id)arg2 defaultAction:(int)arg3 otherAction:(int)arg4;
@@ -51,6 +50,7 @@
 - (void)setContext:(id)arg1;
 - (id)title;
 - (id)context;
+- (id)buttonTitles;
 - (int)defaultAction;
 
 @end

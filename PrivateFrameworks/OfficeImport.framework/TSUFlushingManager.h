@@ -24,8 +24,8 @@
     unsigned int _activeBgThreadTask;
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedManager;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)_singletonAlloc;
 
 - (unsigned int)retainCount;
@@ -36,9 +36,6 @@
 - (oneway void)release;
 - (id)init;
 - (id)autorelease;
-- (void)willEnterForeground;
-- (void)didReceiveMemoryWarning;
-- (void)removeObject:(id)arg1;
 - (BOOL)controlsInactiveObject:(id)arg1;
 - (BOOL)controlsActiveObject:(id)arg1;
 - (void)memoryLevelDecreased:(int)arg1 was:(int)arg2;
@@ -63,5 +60,8 @@
 - (void)advanceClock;
 - (void)_stopFlushingObjects;
 - (void)_startFlushingObjects;
+- (void)willEnterForeground;
+- (void)didReceiveMemoryWarning;
+- (void)removeObject:(id)arg1;
 
 @end

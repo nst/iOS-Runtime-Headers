@@ -23,14 +23,14 @@
 @property(readonly) int transportType;
 
 
-- (id).cxx_construct;
-- (void)dealloc;
-- (struct { double x1; double x2; double x3; double x4; })bounds;
 - (id)initWithRoute:(id)arg1 startPoint:(unsigned int)arg2 pointCount:(unsigned int)arg3 bounds:(struct { double x1; double x2; double x3; double x4; })arg4 transportType:(int)arg5;
 - (int)transportType;
 - (unsigned int)endPointIndex;
 - (unsigned int)startPointIndex;
+- (id).cxx_construct;
+- (void)dealloc;
 - (struct { float x1; float x2; }*)points;
 - (unsigned int)pointCount;
+- (struct { double x1; double x2; double x3; double x4; })bounds;
 
 @end

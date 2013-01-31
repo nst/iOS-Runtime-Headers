@@ -12,10 +12,10 @@
 
 + (id)_center;
 
+- (id)init;
+- (int)clientPID;
 - (struct { unsigned int x1[8]; }*)clientAuditToken;
 - (id)_forwardMessage:(id)arg1 userInfo:(id)arg2 auditToken:(struct { unsigned int x1[8]; }*)arg3;
 - (void)_registerNotificationsForSelectors;
-- (id)init;
-- (int)clientPID;
 
 @end

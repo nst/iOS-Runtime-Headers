@@ -25,6 +25,9 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
+- (void)sendData:(id)arg1;
 - (void)acceptConnectionFromSocket:(int)arg1;
 - (void)cancelTransaction:(id)arg1;
 - (id)sendRequest:(id)arg1 sendData:(id)arg2 timeout:(unsigned long)arg3;
@@ -47,12 +50,9 @@
 - (BOOL)startInitiator;
 - (void)didCloseConnection:(id)arg1 withError:(struct { int x1; int x2; })arg2;
 - (void)handleData:(id)arg1 from:(id)arg2;
-- (id)description;
-- (void)dealloc;
+- (BOOL)sendResponse:(id)arg1;
 - (void)stop;
 - (BOOL)sendEvent:(id)arg1;
-- (BOOL)sendResponse:(id)arg1;
-- (void)sendData:(id)arg1;
 - (id)targetName;
 
 @end

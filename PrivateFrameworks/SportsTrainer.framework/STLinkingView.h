@@ -26,19 +26,19 @@
 @property BOOL bordered;
 
 
-- (void)setSerialNumber:(id)arg1;
-- (id)serialNumber;
+- (void)setBordered:(BOOL)arg1;
+- (BOOL)bordered;
 - (void)_startAnimation;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)setSerialNumber:(id)arg1;
+- (id)serialNumber;
 - (void)_stopAnimation;
 - (id)_newButton;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBordered:(BOOL)arg1;
-- (BOOL)bordered;
 - (int)linkingType;
 - (void)setLinkingType:(int)arg1;
 - (void)setLinkingType:(int)arg1 animated:(BOOL)arg2;

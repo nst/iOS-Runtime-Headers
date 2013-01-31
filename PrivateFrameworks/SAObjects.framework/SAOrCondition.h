@@ -12,9 +12,9 @@
 + (id)orConditionWithDictionary:(id)arg1 context:(id)arg2;
 + (id)orCondition;
 
-- (id)groupIdentifier;
 - (void)setConditions:(id)arg1;
 - (id)conditions;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

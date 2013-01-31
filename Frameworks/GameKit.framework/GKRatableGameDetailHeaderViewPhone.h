@@ -5,11 +5,11 @@
 @class UIImageView, UILabel, GKRatingControl, GKFacebookLikeButton, GKStoreItemInternal;
 
 @interface GKRatableGameDetailHeaderViewPhone : GKGameDetailHeaderViewPhone  {
-    UIImageView *_dividerView;
     GKFacebookLikeButton *_likeButton;
-    GKRatingControl *_ratingControl;
+    UIImageView *_dividerView;
     UILabel *_ratingLabel;
     GKStoreItemInternal *_storeItem;
+    GKRatingControl *_ratingControl;
 }
 
 @property(retain) GKStoreItemInternal * storeItem;
@@ -19,13 +19,15 @@
 @property(retain) UIImageView * dividerView;
 
 
+- (void)dealloc;
+- (id)init;
+- (void)setRatingControl:(id)arg1;
 - (void)setRatingLabel:(id)arg1;
 - (id)ratingLabel;
-- (void)setRatingControl:(id)arg1;
-- (void)setLikeButton:(id)arg1;
-- (id)likeButton;
 - (void)setDividerView:(id)arg1;
 - (id)dividerView;
+- (void)setLikeButton:(id)arg1;
+- (id)likeButton;
 - (void)applyRating:(id)arg1;
 - (id)ratingControl;
 - (void)readRating;
@@ -37,7 +39,5 @@
 - (void)setStoreItem:(id)arg1;
 - (id)storeItem;
 - (float)preferredHeightForOrientation:(int)arg1;
-- (void)dealloc;
-- (id)init;
 
 @end

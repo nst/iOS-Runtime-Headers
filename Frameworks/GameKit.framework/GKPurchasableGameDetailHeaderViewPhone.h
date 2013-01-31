@@ -14,6 +14,8 @@
 @property(readonly) GKPurchasableGameTitleView * purchasableTitleView;
 
 
+- (void)dealloc;
+- (id)init;
 - (void)setBuyButton:(id)arg1;
 - (void)updateFromStoreItem;
 - (void)_showStorePage;
@@ -26,7 +28,5 @@
 - (void)updateFromGameRecord;
 - (void)setStoreItem:(id)arg1;
 - (id)storeItem;
-- (void)dealloc;
-- (id)init;
 
 @end

@@ -6,8 +6,8 @@
 }
 
 
-- (int)rowCountInTableView:(id)arg1;
-- (float)heightForHeaderInTableView:(id)arg1;
 - (BOOL)loaded;
+- (float)heightForHeaderInTableView:(id)arg1;
+- (int)rowCountInTableView:(id)arg1;
 
 @end

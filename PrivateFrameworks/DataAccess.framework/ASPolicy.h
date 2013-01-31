@@ -20,11 +20,11 @@
 - (id)type;
 - (id)description;
 - (void)dealloc;
-- (int)status;
-- (id)key;
-- (void)_setKey:(id)arg1;
 - (void)_setStatus:(id)arg1;
 - (void)_setType:(id)arg1;
 - (id)perDomainDictsForPolicy;
+- (int)status;
+- (id)key;
+- (void)_setKey:(id)arg1;
 
 @end

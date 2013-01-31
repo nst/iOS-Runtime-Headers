@@ -55,9 +55,6 @@
 @property(setter=setDefaultIdentifier:,retain) id defaultIdentifier;
 
 
-- (void)mediaPickerDidCancel:(id)arg1;
-- (void)mediaPicker:(id)arg1 didPickMediaItems:(id)arg2;
-- (void)setAVController:(id)arg1;
 - (BOOL)showsNoVibrationSelected;
 - (BOOL)showsVibrations;
 - (id)defaultIdentifier;
@@ -135,6 +132,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)avController;
 - (void)setTableView:(id)arg1;
 - (void)setContext:(int)arg1;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
@@ -143,7 +141,9 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (id)avController;
+- (void)mediaPicker:(id)arg1 didPickMediaItems:(id)arg2;
+- (void)mediaPickerDidCancel:(id)arg1;
+- (void)setAVController:(id)arg1;
 - (void)setShowsNothingSelected:(BOOL)arg1;
 - (void)setSelectedVibrationIdentifier:(id)arg1;
 - (void)setSelectedRingtoneIdentifier:(id)arg1;

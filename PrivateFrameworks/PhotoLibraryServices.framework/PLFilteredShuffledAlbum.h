@@ -14,12 +14,12 @@
 
 + (struct NSObject { Class x1; }*)_shuffledAlbumWithAlbum:(struct NSObject { Class x1; }*)arg1 filter:(int)arg2 startingAsset:(id)arg3;
 
-- (id)filterPredicate;
+- (int)filter;
 - (void)dealloc;
 - (unsigned int)count;
-- (int)filter;
 - (void)createShuffledIndexesMaps;
 - (struct NSObject { Class x1; }*)unshuffledAlbum;
 - (id)initWithBackingAlbum:(struct NSObject { Class x1; }*)arg1 filter:(int)arg2 startingAsset:(id)arg3;
+- (id)filterPredicate;
 
 @end

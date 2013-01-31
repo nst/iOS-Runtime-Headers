@@ -11,7 +11,6 @@
 @property(readonly) SUDownloadManager * downloadManager;
 
 
-- (id)downloadManager;
 - (id)downloadForIndexPath:(id)arg1;
 - (BOOL)canSelectIndexPath:(id)arg1;
 - (BOOL)canDeleteIndexPath:(id)arg1;
@@ -23,6 +22,7 @@
 - (int)numberOfSections;
 - (int)numberOfRowsInSection:(int)arg1;
 - (void)reloadData;
+- (id)downloadManager;
 - (id)initWithDownloadManager:(id)arg1;
 
 @end

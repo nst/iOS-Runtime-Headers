@@ -15,18 +15,18 @@
 @property(copy) NSNumber * responseVettingStatus;
 
 
-- (id)responseVettingStatus;
-- (id)bagKey;
-- (void)setResponseVettingStatus:(id)arg1;
-- (void)handleResponseDictionary:(id)arg1;
-- (id)requiredKeys;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)deviceName;
-- (id)messageBody;
 - (void)setDeviceName:(id)arg1;
 - (void)setURI:(id)arg1;
 - (id)URI;
+- (id)messageBody;
+- (id)responseVettingStatus;
+- (id)deviceName;
+- (void)setResponseVettingStatus:(id)arg1;
+- (void)handleResponseDictionary:(id)arg1;
+- (id)requiredKeys;
+- (id)bagKey;
 
 @end

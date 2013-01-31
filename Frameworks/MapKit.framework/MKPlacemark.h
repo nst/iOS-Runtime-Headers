@@ -13,10 +13,10 @@
 @property(readonly) NSString * subtitle;
 
 
+- (struct { double x1; double x2; })coordinate;
+- (id)countryCode;
 - (id)thoroughfare;
 - (id)title;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1 addressDictionary:(id)arg2;
-- (struct { double x1; double x2; })coordinate;
-- (id)countryCode;
 
 @end

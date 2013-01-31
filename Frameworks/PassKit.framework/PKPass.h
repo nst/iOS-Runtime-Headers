@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIImage, NSData, WLCardContent, WLCardImages, NSDate, NSSet, NSArray, WLCardDisplayProfile, WLImage, WLBarcode, NSString, NSURL;
+@class UIImage, NSData, PKPassDisplayProfile, PKImage, NSDate, NSSet, NSArray, PKPassImages, PKPassContent, PKBarcode, NSString, NSURL;
 
 @interface PKPass : NSObject <NSCopying, NSSecureCoding> {
-    WLCardContent *_content;
-    WLCardImages *_images[4];
+    PKPassContent *_content;
+    PKPassImages *_images[4];
     NSString *_uniqueID;
     NSString *_passTypeIdentifier;
     NSString *_teamID;
@@ -18,13 +18,14 @@
     NSSet *_locations;
     NSURL *_webServiceURL;
     NSString *_authenticationToken;
-    WLCardDisplayProfile *_displayProfile;
+    PKPassDisplayProfile *_displayProfile;
     NSData *_manifestHash;
     int _settings;
     NSDate *_ingestedDate;
     NSDate *_modifiedDate;
+    BOOL _revoked;
     BOOL _isPreIngested;
-    WLImage *_partialFrontFaceImagePlaceholder;
+    PKImage *_partialFrontFaceImagePlaceholder;
 }
 
 @property(copy) NSString * serialNumber;
@@ -38,9 +39,7 @@
 @property(copy) NSDate * relevantDate;
 @property(readonly) NSURL * passURL;
 @property(copy) NSString * uniqueID;
-@property(copy) NSString * bundleID;
 @property(copy) NSString * teamID;
-@property(copy) NSString * identifier;
 @property(retain) NSData * manifestHash;
 @property(copy) NSString * institution;
 @property(copy) NSDate * expirationDate;
@@ -48,43 +47,52 @@
 @property(copy) NSSet * locations;
 @property(copy) NSURL * pushURL;
 @property(copy) NSString * name;
-@property(copy) WLCardDisplayProfile * displayProfile;
+@property(copy) PKPassDisplayProfile * displayProfile;
 @property(readonly) int cardTemplate;
 @property(readonly) NSString * templateDescription;
 @property(readonly) NSString * pluralTemplateDescription;
 @property(readonly) NSString * lowercaseTemplateDescription;
 @property int settings;
-@property(readonly) WLBarcode * barcode;
-@property(readonly) WLImage * footerImage;
+@property(readonly) PKBarcode * barcode;
+@property(readonly) PKImage * footerImage;
 @property(readonly) NSString * logoText;
 @property(readonly) int transitType;
 @property(readonly) NSArray * frontFieldBuckets;
 @property(readonly) NSArray * backFieldBuckets;
-@property(readonly) WLImage * iconImage;
-@property(readonly) WLImage * frontFaceImage;
-@property(readonly) WLImage * partialFrontFaceImage;
-@property(readonly) WLImage * partialFrontFaceImagePlaceholder;
-@property(readonly) WLImage * backFaceImage;
+@property(readonly) PKImage * iconImage;
+@property(readonly) PKImage * frontFaceImage;
+@property(readonly) PKImage * partialFrontFaceImage;
+@property(readonly) PKImage * partialFrontFaceImagePlaceholder;
+@property(readonly) PKImage * backFaceImage;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } logoRect;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } thumbnailRect;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } stripRect;
 @property(readonly) NSArray * storeIdentifiers;
 @property(retain) NSDate * ingestedDate;
 @property(retain) NSDate * modifiedDate;
+@property(getter=isRevoked) BOOL revoked;
 @property BOOL isPreIngested;
 
 + (BOOL)supportsSecureCoding;
 
-- (void)setAuthenticationToken:(id)arg1;
-- (id)authenticationToken;
+- (id)locations;
+- (void)setName:(id)arg1;
+- (id)name;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)setSettings:(int)arg1;
 - (void)setSerialNumber:(id)arg1;
 - (id)serialNumber;
-- (void)setSettings:(int)arg1;
-- (void)setBundleID:(id)arg1;
-- (id)bundleID;
-- (void)setExpirationDate:(id)arg1;
-- (id)expirationDate;
-- (id)icon;
+- (void)setAuthenticationToken:(id)arg1;
+- (id)authenticationToken;
+- (id)organizationName;
+- (int)settings;
+- (void)setLocations:(id)arg1;
+- (id)iconImage;
+- (id)localizedDescription;
+- (id)localizedName;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)partialFrontFaceImagePlaceholder;
 - (void)setIsPreIngested:(BOOL)arg1;
 - (BOOL)isPreIngested;
@@ -94,7 +102,6 @@
 - (id)allImageSetsLoadingIfNecessary;
 - (BOOL)imageSetIsLoaded:(int)arg1;
 - (void)flushCachedImageSets;
-- (BOOL)contentIsLoaded;
 - (id)backFaceImage;
 - (id)partialFrontFaceImage;
 - (id)frontFaceImage;
@@ -104,11 +111,11 @@
 - (id)pluralTemplateDescription;
 - (id)lowercaseTemplateDescription;
 - (id)templateDescription;
-- (id)initWithBundleArchiveData:(id)arg1;
-- (id)initWithBundleArchiveURL:(id)arg1;
 - (void)loadImageSetSync:(int)arg1 preheat:(BOOL)arg2;
 - (void)loadContentSync;
 - (void)loadImageSetAsync:(int)arg1 preheat:(BOOL)arg2 withCompletion:(id)arg3;
+- (void)flushFormattedFieldValues;
+- (BOOL)contentIsLoaded;
 - (void)fetchImageSet:(int)arg1 withCompletion:(id)arg2;
 - (void)loadContentAsyncWithCompletion:(id)arg1;
 - (void)fetchContentWithCompletion:(id)arg1;
@@ -129,6 +136,7 @@
 - (id)activationDate;
 - (id)institution;
 - (id)teamID;
+- (void)setRevoked:(BOOL)arg1;
 - (void)setModifiedDate:(id)arg1;
 - (void)setIngestedDate:(id)arg1;
 - (void)setManifestHash:(id)arg1;
@@ -137,36 +145,25 @@
 - (void)setActivationDate:(id)arg1;
 - (void)setInstitution:(id)arg1;
 - (void)setTeamID:(id)arg1;
+- (void)setPassTypeIdentifier:(id)arg1;
 - (id)backFieldBuckets;
 - (id)frontFieldBuckets;
 - (int)cardTemplate;
 - (void)setOrganizationName:(id)arg1;
 - (void)setWebServiceURL:(id)arg1;
 - (id)webServiceURL;
-- (void)setPassTypeIdentifier:(id)arg1;
-- (id)passTypeIdentifier;
 - (void)setRelevantDate:(id)arg1;
 - (id)relevantDate;
 - (id)manifestHash;
-- (id)identifier;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (int)settings;
-- (void)setLocations:(id)arg1;
-- (id)iconImage;
-- (void)setIdentifier:(id)arg1;
-- (id)localizedDescription;
-- (id)localizedName;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (id)passTypeIdentifier;
 - (id)mailAttachmentIcon;
-- (id)organizationName;
+- (void)setExpirationDate:(id)arg1;
+- (id)expirationDate;
+- (id)icon;
 - (void)setLocalizedDescription:(id)arg1;
-- (id)locations;
-- (id)initWithData:(id)arg1 error:(id*)arg2;
+- (BOOL)isRevoked;
 - (void)setUniqueID:(id)arg1;
 - (id)uniqueID;
+- (id)initWithData:(id)arg1 error:(id*)arg2;
 
 @end

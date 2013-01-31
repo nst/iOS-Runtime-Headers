@@ -15,19 +15,19 @@
 @property(retain) GEOPhoto * image;
 
 
+- (BOOL)hasName;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)name;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (BOOL)hasImage;
 - (id)dictionaryRepresentation;
 - (id)image;
 - (void)setImage:(id)arg1;
-- (BOOL)hasName;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (BOOL)hasImage;
-- (BOOL)readFrom:(id)arg1;
 
 @end

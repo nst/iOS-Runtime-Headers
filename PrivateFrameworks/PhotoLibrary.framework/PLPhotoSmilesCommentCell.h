@@ -21,14 +21,14 @@
 + (float)heightOfSmileCellWithComments:(id)arg1 forWidth:(float)arg2 forInterfaceOrientation:(int)arg3;
 
 - (void)dealloc;
-- (void)prepareForReuse;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
 - (BOOL)userSmiled;
 - (id)smileString;
 - (id)smileContentLabel;
 - (void)setSmileString:(id)arg1;
 - (void)setUserSmiled:(BOOL)arg1;
 - (id)smileImageButton;
+- (void)prepareForReuse;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
 
 @end

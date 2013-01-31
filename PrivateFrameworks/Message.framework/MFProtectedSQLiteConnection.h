@@ -15,11 +15,11 @@
 
 
 - (void)dealloc;
-- (void)close;
 - (const char *)_vfsModuleName;
 - (int)detachProtectedDatabase;
 - (id)initWithPath:(id)arg1 databaseName:(id)arg2 protectedName:(id)arg3;
 - (BOOL)isProtectedDatabaseAttached;
 - (int)attachProtectedDatabase;
+- (void)close;
 
 @end

@@ -26,7 +26,7 @@
 @property(getter=isDownloadAllowableForWiFi) BOOL downloadAllowableForWiFi;
 
 
-- (BOOL)isDownloadable;
+- (void)setDownloadable:(BOOL)arg1;
 - (Class)class;
 - (id)init;
 - (void)setDownloadAllowableForWiFi:(BOOL)arg1;
@@ -46,6 +46,6 @@
 - (BOOL)isDownloadAllowableForCellular2G;
 - (BOOL)isPowerRequired;
 - (BOOL)isDownloadFreeForCellular;
-- (void)setDownloadable:(BOOL)arg1;
+- (BOOL)isDownloadable;
 
 @end

@@ -16,7 +16,6 @@
 
 - (id)name;
 - (void)dealloc;
-- (id)initWithAttributedString:(id)arg1;
 - (void)parserDidEnd:(id)arg1;
 - (void)parser:(id)arg1 foundAttributes:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (BOOL)shouldPreprocess;
@@ -24,5 +23,6 @@
 - (id)inString;
 - (id)parser:(id)arg1 preprocessedAttributesForAttributes:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (id)resultsForLogging;
+- (id)initWithAttributedString:(id)arg1;
 
 @end

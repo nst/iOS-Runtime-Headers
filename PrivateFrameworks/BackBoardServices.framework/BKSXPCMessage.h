@@ -23,8 +23,8 @@
 + (void)sendMessage:(long long)arg1 toConnection:(id)arg2 withMessagePacker:(id)arg3 replyHandler:(id)arg4 replyQueue:(id)arg5;
 + (void)sendMessage:(long long)arg1 toConnection:(id)arg2 withMessagePacker:(id)arg3;
 
+- (void)dealloc;
 - (void)sendToConnection:(id)arg1;
 - (id)initWithMessage:(long long)arg1 packer:(id)arg2 replyHandler:(id)arg3 replyQueue:(id)arg4;
-- (void)dealloc;
 
 @end

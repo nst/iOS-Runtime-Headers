@@ -17,9 +17,9 @@
 }
 
 
-- (float)preferredHeightForWidth:(float)arg1;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
+- (float)preferredHeightForWidth:(float)arg1;
 - (id)initWithSpecifier:(id)arg1;
 
 @end

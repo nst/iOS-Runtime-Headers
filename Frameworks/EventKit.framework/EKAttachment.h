@@ -21,11 +21,11 @@
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (id)init;
-- (id)UUID;
 - (id)fileSize;
 - (BOOL)isBinary;
 - (id)fileName;
 - (int)compareFileNames:(id)arg1;
 - (id)fileFormat;
+- (id)UUID;
 
 @end

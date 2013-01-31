@@ -10,14 +10,14 @@
     NSTimer *_batchTimer;
 }
 
-+ (BOOL)_isSupported;
-+ (BOOL)_isSupportedReadingListURL:(id)arg1;
 + (id)_trimmedPreviewText:(id)arg1;
 + (id)_trimmedTitle:(id)arg1;
++ (BOOL)_isSupported;
++ (BOOL)_isSupportedReadingListURL:(id)arg1;
 
+- (void)_batchTimerDidFire:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)addReadingListItemWithURL:(id)arg1 title:(id)arg2 previewText:(id)arg3;
-- (void)_batchTimerDidFire:(id)arg1;
 
 @end

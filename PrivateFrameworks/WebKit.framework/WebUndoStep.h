@@ -13,14 +13,14 @@
     } m_step;
 }
 
-+ (void)initialize;
 + (id)stepWithUndoStep:(struct PassRefPtr<WebCore::UndoStep> { struct UndoStep {} *x1; })arg1;
++ (void)initialize;
 
+- (id)initWithUndoStep:(struct PassRefPtr<WebCore::UndoStep> { struct UndoStep {} *x1; })arg1;
+- (struct UndoStep { int (**x1)(); int x2; }*)step;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)finalize;
-- (struct UndoStep { int (**x1)(); int x2; }*)step;
-- (id)initWithUndoStep:(struct PassRefPtr<WebCore::UndoStep> { struct UndoStep {} *x1; })arg1;
 
 @end

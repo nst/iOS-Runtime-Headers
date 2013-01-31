@@ -74,20 +74,15 @@
 @property(retain) GEOPlaceSearchRequest * placeSearchRequest;
 
 
-- (void)setQuery:(id)arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (int)requestType;
-- (id)dictionaryRepresentation;
-- (id)query;
-- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
-- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setMapRegion:(id)arg1;
 - (id)mapRegion;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
 - (void)setHasClientImgMaxHeight:(BOOL)arg1;
 - (void)setHasClientImgMaxWidth:(BOOL)arg1;
@@ -141,6 +136,11 @@
 - (BOOL)hasQuery;
 - (void)setPlaceSearchRequest:(id)arg1;
 - (void)setUserLocation:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
+- (id)dictionaryRepresentation;
+- (id)query;
+- (void)setQuery:(id)arg1;
+- (int)requestType;
 
 @end

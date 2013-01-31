@@ -17,9 +17,9 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)addItem:(id)arg1;
 - (id)asParseRules;
 - (id)commonValue;
 - (id)initWithSubclassRuleSet:(id)arg1;
+- (void)addItem:(id)arg1;
 
 @end

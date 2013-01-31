@@ -20,9 +20,9 @@
 - (BOOL)open:(id*)arg1;
 - (id)initWithInputSource:(id)arg1 dataConsumer:(id)arg2;
 - (void)dealloc;
-- (void)close;
-- (BOOL)hasBytesAvailable;
 - (id)dataConsumer;
 - (long long)expectedLength;
+- (void)close;
+- (BOOL)hasBytesAvailable;
 
 @end

@@ -18,14 +18,14 @@
 + (BOOL)mpVerboseCMCLogging;
 + (BOOL)mpShowBuysWithNoCompletionOffer;
 
-- (void)setExpirationDate:(id)arg1;
-- (id)expirationDate;
-- (id)responseDictionary;
-- (id)initWithResponseDictionary:(id)arg1;
 - (void)dealloc;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)valueForProperty:(id)arg1;
+- (id)responseDictionary;
+- (id)initWithResponseDictionary:(id)arg1;
+- (void)setExpirationDate:(id)arg1;
+- (id)expirationDate;
 - (BOOL)mpIsPersonalizedOffer;
 - (void)mpSaveCompletionsResponseForDebuggingIfNecessaryWithExpectedStoreLookupID:(id)arg1;
 - (id)mpCompletionOfferResponseDictionaryWithLocalAlbumsCollection:(id)arg1;

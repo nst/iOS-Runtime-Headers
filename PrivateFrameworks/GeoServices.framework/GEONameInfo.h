@@ -32,18 +32,18 @@
 @property int signType;
 
 
+- (BOOL)hasShield;
+- (int)shieldType;
+- (BOOL)hasName;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)name;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (BOOL)hasShield;
-- (int)shieldType;
-- (BOOL)hasName;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setHasSignType:(BOOL)arg1;
 - (void)setHasPhoneticType:(BOOL)arg1;
 - (void)setHasShieldType:(BOOL)arg1;
@@ -60,6 +60,6 @@
 - (id)phoneticName;
 - (BOOL)hasPhoneticName;
 - (void)setPhoneticName:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

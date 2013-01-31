@@ -20,6 +20,7 @@
 @property(copy) NSURL * URLTarget;
 
 
+- (void)dealloc;
 - (id)URLTarget;
 - (id)URLText;
 - (id)cnfreg_tableView;
@@ -34,12 +35,11 @@
 - (BOOL)isTopmostHeader;
 - (void)setIsTopmostHeader:(BOOL)arg1;
 - (void)setCnfreg_tableView:(id)arg1;
-- (void)updateLabelText;
-- (float)preferredHeightForWidth:(float)arg1;
-- (void)dealloc;
 - (float)_bottomPadding;
 - (float)_topPadding;
 - (void)layoutSubviews;
+- (void)updateLabelText;
+- (float)preferredHeightForWidth:(float)arg1;
 - (id)initWithSpecifier:(id)arg1;
 
 @end

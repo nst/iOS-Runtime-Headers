@@ -43,6 +43,11 @@
 
 + (void)initialize;
 
+- (void)invalidate;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
 - (BOOL)lineDescriptorDisplayCallbackEnabled;
 - (void)setLineDescriptorDisplayCallbackEnabled:(BOOL)arg1;
 - (void)configureTableWithIdentifier:(id)arg1;
@@ -98,11 +103,6 @@
 - (void)brailleDisplay:(id)arg1 isSleeping:(BOOL)arg2;
 - (void)_panHandler:(id)arg1;
 - (void)brailleDisplay:(id)arg1 driverDidLoad:(BOOL)arg2;
-- (void)invalidate;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
 - (void)setPrimaryBrailleDisplay:(long)arg1;
 - (void)setPrepareToMemorizeNextKey:(BOOL)arg1 immediate:(BOOL)arg2 forDisplayWithToken:(long)arg3;
 - (void)showNextAnnouncement;

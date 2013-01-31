@@ -37,6 +37,7 @@
 @property unsigned int pageRotation;
 
 
+- (void)dealloc;
 - (void)setPageRotation:(unsigned int)arg1;
 - (unsigned int)pageRotation;
 - (struct CGPoint { float x1; float x2; })touchPoint;
@@ -44,7 +45,6 @@
 - (void)setTouchPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 loupe:(BOOL)arg2;
 - (void)createGrabbers;
-- (void)dealloc;
 - (void)setSelection:(struct CGPath { }*)arg1;
 - (struct CGImage { }*)image;
 - (void)setImage:(struct CGImage { }*)arg1;

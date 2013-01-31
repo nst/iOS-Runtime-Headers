@@ -28,20 +28,23 @@
 
 }
 
-+ (void)noteAccountChanges:(id)arg1;
++ (void)resetAllApplicationsWithCompletionHandler:(id)arg1;
 + (void)initialize;
++ (void)noteAccountChanges:(id)arg1;
 + (id)SYDRemotePreferencesSourceConfigurationDidChangeNotification;
 + (id)SYDRemotePreferencesSourceDidChangeNotification;
-+ (void)resetAllApplicationsWithCompletionHandler:(id)arg1;
 
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (void)dealloc;
+- (id)serverSideDebugDescription;
+- (struct __CFDictionary { }*)copyConfigurationDictionary;
+- (void)_storeConfiguration:(struct __CFDictionary { }*)arg1;
+- (void)_cachePlistFromDisk;
+- (long)configurationValueForKey:(struct __CFString { }*)arg1;
+- (unsigned char)isInitialSync;
 - (long)generationCount;
 - (void)finalize;
 - (unsigned char)synchronize;
-- (struct __CFDictionary { }*)copyDictionary;
-- (struct __CFArray { }*)copyKeyList;
-- (void*)getValueForKey:(struct __CFString { }*)arg1;
 - (long)maximumTotalDataLength;
 - (long)maximumDataLengthPerKey;
 - (long)maximumKeyLength;
@@ -57,11 +60,8 @@
 - (id)initWithApplicationID:(struct __CFString { }*)arg1 shared:(BOOL)arg2;
 - (id)initWithApplicationID:(struct __CFString { }*)arg1 storeID:(struct __CFString { }*)arg2 shared:(BOOL)arg3 additionalSource:(BOOL)arg4;
 - (id)initWithApplicationID:(struct __CFString { }*)arg1 storeID:(struct __CFString { }*)arg2 shared:(BOOL)arg3;
-- (id)serverSideDebugDescription;
-- (struct __CFDictionary { }*)copyConfigurationDictionary;
-- (void)_storeConfiguration:(struct __CFDictionary { }*)arg1;
-- (void)_cachePlistFromDisk;
-- (long)configurationValueForKey:(struct __CFString { }*)arg1;
-- (unsigned char)isInitialSync;
+- (struct __CFDictionary { }*)copyDictionary;
+- (struct __CFArray { }*)copyKeyList;
+- (void*)getValueForKey:(struct __CFString { }*)arg1;
 
 @end

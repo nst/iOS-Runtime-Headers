@@ -16,13 +16,13 @@
 @property(readonly) NSArray * alternativesWithNonPinyinRanges;
 
 
-- (id)initWithString:(id)arg1;
-- (void)dealloc;
 - (id)copyNonPinyinPrefixes:(BOOL)arg1;
 - (id)alternativesWithNonPinyinRanges;
 - (id)filteredAlternatives;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })checkedRangeForAlternative:(id)arg1;
 - (id)syllablesForPinyin:(id)arg1;
 - (void)loadAlternatives;
+- (id)initWithString:(id)arg1;
+- (void)dealloc;
 
 @end

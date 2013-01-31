@@ -14,8 +14,6 @@
 }
 
 
-- (void)dealloc;
-- (id)init;
 - (id)deniedAction;
 - (void)setDeniedAction:(id)arg1;
 - (id)confirmedAction;
@@ -23,5 +21,7 @@
 - (void)_setConfirmed:(BOOL)arg1;
 - (int)completionType;
 - (id)initWithModelIdentifier:(id)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

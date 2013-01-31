@@ -15,15 +15,15 @@
 @property(retain) NSURL * baseURL;
 
 
-- (void)setBaseURL:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
+- (void)setHtml:(id)arg1;
+- (id)html;
 - (id)baseURL;
 - (void)webViewDidFinishLoad:(id)arg1;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (id)webView;
-- (id)html;
-- (void)setHtml:(id)arg1;
+- (void)setBaseURL:(id)arg1;
 
 @end

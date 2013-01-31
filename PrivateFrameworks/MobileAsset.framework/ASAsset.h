@@ -33,7 +33,11 @@
 @property(retain) NSDictionary * downloadOptions;
 
 
-- (id)progressHandler;
+- (id)localURL;
+- (int)state;
+- (id)identifier;
+- (id)description;
+- (void)dealloc;
 - (BOOL)isPresentOnDisk;
 - (id)fullAttributes;
 - (void)setClientName:(id)arg1;
@@ -42,13 +46,9 @@
 - (id)downloadOptions;
 - (void)purge:(id)arg1;
 - (void)cancelDownload:(id)arg1;
-- (void)resumeDownload:(id)arg1;
 - (void)pauseDownload:(id)arg1;
-- (void)adjustDownloadOptions:(id)arg1 completion:(id)arg2;
 - (BOOL)requiredDiskSpaceIsAvailable:(long long*)arg1 error:(id*)arg2;
-- (void)setGarbageCollectionBehavior:(int)arg1;
 - (int)garbageCollectionBehavior;
-- (BOOL)purgeAndReturnError:(id*)arg1;
 - (BOOL)cancelDownloadAndReturnError:(id*)arg1;
 - (BOOL)resumeDownloadAndReturnError:(id*)arg1;
 - (BOOL)pauseDownloadAndReturnError:(id*)arg1;
@@ -56,14 +56,14 @@
 - (void)_downloadWithOptions:(id)arg1 shouldFireCallback:(BOOL)arg2;
 - (struct __MobileAsset { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; struct __CFDictionary {} *x3; struct __MobileAssetQuery {} *x4; struct __MobileAssetQuery {} *x5; unsigned char x6; unsigned char x7; struct SoftwareUpdateProperties {} *x8; unsigned int x9; }*)mobileAsset;
 - (id)_getLocalAttribute:(id)arg1;
-- (id)localURL;
-- (int)state;
-- (id)identifier;
-- (id)description;
-- (void)dealloc;
+- (void)adjustDownloadOptions:(id)arg1 completion:(id)arg2;
+- (void)resumeDownload:(id)arg1;
+- (void)setGarbageCollectionBehavior:(int)arg1;
+- (BOOL)purgeAndReturnError:(id*)arg1;
 - (id)assetType;
 - (void)beginDownloadWithOptions:(id)arg1;
 - (void)setProgressHandler:(id)arg1;
 - (id)attributes;
+- (id)progressHandler;
 
 @end

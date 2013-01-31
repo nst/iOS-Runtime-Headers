@@ -23,8 +23,8 @@
 + (void)__audioSessionInterruptionDidEnd;
 + (void)__audioSessionInterruptionDidBegin;
 
-- (BOOL)isPlaying;
 - (void)dealloc;
+- (BOOL)isPlaying;
 - (void)playSoundFilesInSequence:(id)arg1;
 - (id)initWithDirectory:(id)arg1 bundle:(id)arg2;
 - (void)_addFileToQueue:(id)arg1;

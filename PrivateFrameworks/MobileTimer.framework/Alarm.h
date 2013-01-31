@@ -60,6 +60,7 @@
 + (BOOL)isSnoozeNotification:(id)arg1;
 + (BOOL)verifySettings:(id)arg1;
 
+- (id)lastModified;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)debugDescription;
@@ -68,15 +69,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)alarmId;
 - (unsigned int)revision;
-- (id)settings;
-- (int)soundType;
-- (void)setMinute:(unsigned int)arg1;
-- (void)setHour:(unsigned int)arg1;
-- (unsigned int)minute;
-- (unsigned int)hour;
-- (BOOL)isActive;
-- (void)setTitle:(id)arg1;
 - (id)snapshotSound;
 - (int)snapshotSoundType;
 - (id)editingProxy;
@@ -115,8 +109,14 @@
 - (void)setDaySetting:(unsigned int)arg1;
 - (void)setSound:(id)arg1 ofType:(int)arg2;
 - (void)setAllowsSnooze:(BOOL)arg1;
-- (id)lastModified;
 - (id)sound;
-- (id)alarmId;
+- (id)settings;
+- (int)soundType;
+- (void)setMinute:(unsigned int)arg1;
+- (void)setHour:(unsigned int)arg1;
+- (unsigned int)minute;
+- (unsigned int)hour;
+- (BOOL)isActive;
+- (void)setTitle:(id)arg1;
 
 @end

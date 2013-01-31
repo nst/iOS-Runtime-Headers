@@ -41,6 +41,11 @@
 @property(copy) NSString * pendingAddress;
 
 
+- (void)dealloc;
+- (void)systemApplicationDidResume;
+- (void)systemApplicationDidSuspend;
+- (void)systemApplicationWillEnterForeground;
+- (void)systemApplicationDidEnterBackground;
 - (int)groupIdForSpecifierId:(id)arg1;
 - (void)setCellularData:(id)arg1 specifier:(id)arg2;
 - (id)getCellularDataForSpecifier:(id)arg1;
@@ -163,7 +168,8 @@
 - (id)logName;
 - (id)customTitle;
 - (id)specifierList;
-- (void)dealloc;
+- (id)alertHandler;
+- (void)setAlertHandler:(id)arg1;
 - (id)bundle;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
@@ -174,11 +180,5 @@
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
-- (id)alertHandler;
-- (void)setAlertHandler:(id)arg1;
-- (void)systemApplicationDidResume;
-- (void)systemApplicationDidSuspend;
-- (void)systemApplicationWillEnterForeground;
-- (void)systemApplicationDidEnterBackground;
 
 @end

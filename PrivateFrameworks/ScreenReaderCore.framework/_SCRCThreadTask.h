@@ -14,9 +14,9 @@
 }
 
 
+- (void)dealloc;
 - (void)setWaitLock:(id)arg1;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2 cancelMask:(unsigned long)arg3 count:(unsigned long)arg4 firstObject:(id)arg5 moreObjects:(void*)arg6;
-- (void)dealloc;
 - (void)fire;
 
 @end

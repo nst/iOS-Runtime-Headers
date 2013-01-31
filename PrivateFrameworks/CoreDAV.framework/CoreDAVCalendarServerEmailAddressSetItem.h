@@ -14,13 +14,13 @@
 
 + (id)copyParseRules;
 
-- (void)setEmailAddresses:(id)arg1;
-- (id)emailAddresses;
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (void)addEmailAddress:(id)arg1;
 - (void)setUnauthenticated:(id)arg1;
 - (id)unauthenticated;
-- (void)addEmailAddress:(id)arg1;
+- (void)setEmailAddresses:(id)arg1;
+- (id)emailAddresses;
 
 @end

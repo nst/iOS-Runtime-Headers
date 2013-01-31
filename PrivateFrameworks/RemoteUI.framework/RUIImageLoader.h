@@ -27,12 +27,6 @@
 
 + (id)sharedImageLoader;
 
-- (id)notificationCenter;
-- (id)init;
-- (struct CGImage { }*)imageForURL:(id)arg1 loadIfAbsent:(BOOL)arg2;
-- (void)_locked_loadImageForURL:(id)arg1;
-- (void)_loadImageURL:(id)arg1;
-- (void)_setImageData:(id)arg1 forURL:(id)arg2 cacheLocked:(BOOL)arg3;
 - (void)_locked_imageLoadStarted:(id)arg1;
 - (void)_loadingStatusChanged;
 - (void)_postImageLoadedNotification:(id)arg1;
@@ -42,5 +36,11 @@
 - (BOOL)isLoadingImages;
 - (void)_startLoader;
 - (void)_imageLoadFinished:(id)arg1;
+- (id)init;
+- (struct CGImage { }*)imageForURL:(id)arg1 loadIfAbsent:(BOOL)arg2;
+- (void)_locked_loadImageForURL:(id)arg1;
+- (void)_loadImageURL:(id)arg1;
+- (void)_setImageData:(id)arg1 forURL:(id)arg2 cacheLocked:(BOOL)arg3;
+- (id)notificationCenter;
 
 @end

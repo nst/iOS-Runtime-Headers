@@ -13,11 +13,11 @@
 + (id)movieListSnippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)movieListSnippet;
 
-- (id)groupIdentifier;
 - (void)setShouldShowRottenTomatoesRating:(BOOL)arg1;
 - (BOOL)shouldShowRottenTomatoesRating;
 - (void)setMovies:(id)arg1;
 - (id)movies;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -11,12 +11,14 @@
 @property unsigned int payloadLength;
 
 
-- (void)setTimedOut:(BOOL)arg1;
-- (void)setCritical:(BOOL)arg1;
-- (void)setPayloadFormat:(int)arg1;
 - (id)timestamp;
 - (void)setTimestamp:(id)arg1;
-- (void)setCancelled:(BOOL)arg1;
+- (unsigned int)messageID;
+- (BOOL)wasCancelled;
+- (void)setMessageID:(unsigned int)arg1;
+- (void)setCritical:(BOOL)arg1;
+- (void)setPayloadFormat:(int)arg1;
+- (void)setTimedOut:(BOOL)arg1;
 - (void)setPayloadLength:(unsigned int)arg1;
 - (unsigned int)payloadLength;
 - (int)payloadFormat;
@@ -24,10 +26,8 @@
 - (void)setSent:(BOOL)arg1;
 - (BOOL)wasSent;
 - (BOOL)isCritical;
-- (unsigned int)messageID;
+- (void)setCancelled:(BOOL)arg1;
 - (unsigned int)timeout;
 - (void)setTimeout:(unsigned int)arg1;
-- (BOOL)wasCancelled;
-- (void)setMessageID:(unsigned int)arg1;
 
 @end

@@ -21,25 +21,13 @@
 @property(copy) NSDictionary * socialProfileReferences;
 @property(copy) NSNumber * useLocation;
 
-+ (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)object;
 
-- (id)groupIdentifier;
-- (id)sender;
-- (id)location;
-- (id)content;
-- (id)serviceType;
-- (void)setServiceType:(id)arg1;
-- (id)attachment;
-- (void)setAttachment:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setContent:(id)arg1;
-- (void)setRecipients:(id)arg1;
-- (void)setOutgoing:(id)arg1;
-- (void)setDateSent:(id)arg1;
-- (id)recipients;
-- (id)dateSent;
-- (void)setSender:(id)arg1;
+- (id)attachment;
+- (void)setAttachment:(id)arg1;
 - (void)setUseLocation:(id)arg1;
 - (id)useLocation;
 - (void)setSocialProfileReferences:(id)arg1;
@@ -53,5 +41,17 @@
 - (id)outgoing;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (id)recipients;
+- (id)dateSent;
+- (id)serviceType;
+- (void)setServiceType:(id)arg1;
+- (void)setOutgoing:(id)arg1;
+- (void)setDateSent:(id)arg1;
+- (id)sender;
+- (id)location;
+- (id)content;
+- (id)groupIdentifier;
+- (void)setSender:(id)arg1;
+- (void)setRecipients:(id)arg1;
 
 @end

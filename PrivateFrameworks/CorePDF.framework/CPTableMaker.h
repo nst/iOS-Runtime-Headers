@@ -17,11 +17,11 @@
 + (void)makeTablesInZone:(id)arg1;
 + (void)makeTablesInPage:(id)arg1;
 
+- (void)dealloc;
 - (void)makeTable;
 - (id)initWithZone:(id)arg1;
 - (void)determineRowsAndColumns:(BOOL)arg1;
 - (id)newTableCellFromZone:(id)arg1;
 - (id)newBackgroundGraphicArrayFromRectangularZone:(id)arg1;
-- (void)dealloc;
 
 @end

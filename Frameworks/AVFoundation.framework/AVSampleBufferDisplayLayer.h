@@ -13,14 +13,14 @@
 @property(copy) NSString * videoGravity;
 
 
-- (id)videoGravity;
-- (void)setVideoGravity:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)finalize;
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
 - (void)flush;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)videoGravity;
+- (void)setVideoGravity:(id)arg1;
 - (void)flushAndRemoveImage;
 - (void)enqueueSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)stopRequestingMediaData;

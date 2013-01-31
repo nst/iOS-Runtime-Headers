@@ -41,11 +41,6 @@
 @property(readonly) unsigned int* trafficColorOffsets;
 
 
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
 - (id)steps;
 - (unsigned int)stepsCount;
 - (unsigned int*)trafficColorOffsets;
@@ -55,6 +50,11 @@
 - (id)stepAtIndex:(unsigned int)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
 - (id)invalidSectionZilchPoints;
 - (id)reroutedRoutes;
 - (void)setHasRouteNoLongerValid:(BOOL)arg1;
@@ -88,6 +88,6 @@
 - (void)setZilchPoints:(id)arg1;
 - (void)setRouteID:(id)arg1;
 - (void)setSteps:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

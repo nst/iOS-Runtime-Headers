@@ -43,9 +43,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)properties;
-- (void)forwardInvocation:(id)arg1;
-- (id)methodSignatureForSelector:(SEL)arg1;
 - (id)persistentProperties;
 - (BOOL)hasPostedSetupComplete;
 - (unsigned long long)vcCapabilities;
@@ -115,5 +112,8 @@
 - (void)property:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
 - (void)vcCapabilitiesChanged:(unsigned long long)arg1;
 - (void)addHandler:(id)arg1;
+- (id)properties;
+- (void)forwardInvocation:(id)arg1;
+- (id)methodSignatureForSelector:(SEL)arg1;
 
 @end

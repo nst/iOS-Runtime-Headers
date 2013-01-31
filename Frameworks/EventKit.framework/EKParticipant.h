@@ -16,18 +16,17 @@
 
 + (void*)findABPersonByURL:(id)arg1 inAddressBook:(void*)arg2;
 
+- (id)name;
+- (id)URL;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setDisplayName:(id)arg1;
+- (id)emailAddress;
 - (void)setAddress:(id)arg1;
 - (id)address;
 - (void)setLastName:(id)arg1;
 - (id)lastName;
 - (void)setFirstName:(id)arg1;
 - (id)firstName;
-- (id)name;
-- (id)URL;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)UUID;
-- (id)emailAddress;
-- (void)setDisplayName:(id)arg1;
 - (void*)ABRecordWithAddressBook:(void*)arg1;
 - (BOOL)isEqualToParticipant:(id)arg1;
 - (int)participantRole;
@@ -36,6 +35,7 @@
 - (BOOL)isCurrentUser;
 - (int)participantStatus;
 - (void)setEmailAddress:(id)arg1;
+- (id)UUID;
 - (id)displayName;
 - (id)displayNameWithDecomposedFirstName:(id*)arg1 lastName:(id*)arg2 department:(id*)arg3;
 

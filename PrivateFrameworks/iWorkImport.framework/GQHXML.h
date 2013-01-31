@@ -17,8 +17,6 @@
 @property(readonly) bool isProgressive;
 
 
-- (void)dealloc;
-- (void)setAttribute:(const char *)arg1 value:(const char *)arg2;
 - (void)addViewportMetaTagForDocumentSize:(struct CGSize { float x1; float x2; })arg1 maximumScale:(float)arg2;
 - (void)setAttribute:(const char *)arg1 floatValue:(float)arg2;
 - (void)addViewportMetaTagForDocumentSize:(struct CGSize { float x1; float x2; })arg1;
@@ -38,6 +36,8 @@
 - (void)endElement;
 - (void)setAttribute:(const char *)arg1 cfStringValue:(struct __CFString { }*)arg2;
 - (void)startElement:(const char *)arg1;
+- (void)dealloc;
 - (bool)isProgressive;
+- (void)setAttribute:(const char *)arg1 value:(const char *)arg2;
 
 @end

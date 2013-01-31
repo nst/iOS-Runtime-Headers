@@ -14,9 +14,6 @@
 @property int popOverState;
 
 
-- (void)setPopOverState:(int)arg1;
-- (id)initWithDocumentInteractionController:(id)arg1 delegate:(id)arg2;
-- (int)popOverState;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)dealloc;
 - (void)presentOpenInMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
@@ -30,5 +27,8 @@
 - (void)documentInteractionControllerDidDismissOptionsMenu:(id)arg1;
 - (void)didRotate;
 - (void)willRotate;
+- (void)setPopOverState:(int)arg1;
+- (id)initWithDocumentInteractionController:(id)arg1 delegate:(id)arg2;
+- (int)popOverState;
 
 @end

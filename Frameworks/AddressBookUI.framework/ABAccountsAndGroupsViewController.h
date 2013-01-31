@@ -20,6 +20,7 @@
 
 
 - (void)dealloc;
+- (void)setModel:(id)arg1;
 - (void)done:(id)arg1;
 - (id)tableView;
 - (id)model;
@@ -35,7 +36,6 @@
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)reloadData;
-- (void)setModel:(id)arg1;
 - (id)allGroupWrapperIndexPaths;
 - (void)_updateDisplayedContactsFilterFromSelection;
 - (void)updateRefreshButton;

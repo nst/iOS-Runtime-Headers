@@ -23,17 +23,7 @@
 @property <IUModalContextDelegate><MediaPickerModalContextDelegate> * delegate;
 
 
-- (void)setAllowsPickingMultipleItems:(BOOL)arg1;
-- (BOOL)allowsPickingMultipleItems;
-- (id)initWithMediaTypes:(int)arg1;
 - (void)_cancelAction:(id)arg1;
-- (void)_doneAction:(id)arg1;
-- (BOOL)showsCloudItems;
-- (void)setShowsCloudItems:(BOOL)arg1;
-- (void)dealloc;
-- (id)viewController;
-- (void)setPrompt:(id)arg1;
-- (id)prompt;
 - (void)orderOut;
 - (BOOL)wantsNavigationButtons;
 - (void)setWantsNavigationButtons:(BOOL)arg1;
@@ -48,5 +38,15 @@
 - (BOOL)canHandleSelectionForIndex:(unsigned int)arg1 dataSource:(id)arg2;
 - (id)copyQueryForQuery:(id)arg1;
 - (void)dismissWithSuccess:(BOOL)arg1;
+- (void)dealloc;
+- (id)viewController;
+- (void)setPrompt:(id)arg1;
+- (id)prompt;
+- (void)_doneAction:(id)arg1;
+- (BOOL)showsCloudItems;
+- (BOOL)allowsPickingMultipleItems;
+- (void)setShowsCloudItems:(BOOL)arg1;
+- (void)setAllowsPickingMultipleItems:(BOOL)arg1;
+- (id)initWithMediaTypes:(int)arg1;
 
 @end

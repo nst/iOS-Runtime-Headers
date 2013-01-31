@@ -6,10 +6,10 @@
 }
 
 
+- (int)annotationType;
 - (void)drawLayerRotated:(id)arg1 inContext:(struct CGContext { }*)arg2 selection:(id)arg3 rectangles:(unsigned int)arg4;
 - (void)drawLayerUpright:(id)arg1 inContext:(struct CGContext { }*)arg2 selection:(id)arg3 rectangles:(unsigned int)arg4;
 - (Class)viewClass;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (int)annotationType;
 
 @end

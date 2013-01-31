@@ -15,12 +15,12 @@
 + (id)recurrenceWithDictionary:(id)arg1 context:(id)arg2;
 + (id)recurrence;
 
-- (id)groupIdentifier;
-- (int)interval;
-- (void)setInterval:(int)arg1;
 - (void)setEndCount:(int)arg1;
 - (int)endCount;
 - (id)encodedClassName;
+- (int)interval;
+- (void)setInterval:(int)arg1;
+- (id)groupIdentifier;
 - (int)frequency;
 - (void)setFrequency:(int)arg1;
 - (void)setEndDate:(id)arg1;

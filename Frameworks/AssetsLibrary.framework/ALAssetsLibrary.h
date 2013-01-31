@@ -10,18 +10,18 @@
 
 @property(retain) ALAssetsLibraryPrivate * internal;
 
-+ (int)authorizationStatus;
 + (id)_library;
++ (int)authorizationStatus;
 + (void)disableSharedPhotoStreamsSupport;
 
-- (void)setInternal:(id)arg1;
-- (id)internal;
 - (void)dealloc;
 - (id)init;
+- (void)_performBlockAndWait:(id)arg1;
+- (void)writeImageDataToSavedPhotosAlbum:(id)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
 - (void)assetForURL:(id)arg1 resultBlock:(id)arg2 failureBlock:(id)arg3;
 - (BOOL)isValid;
-- (void)writeImageDataToSavedPhotosAlbum:(id)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
-- (void)_performBlockAndWait:(id)arg1;
+- (void)setInternal:(id)arg1;
+- (id)internal;
 - (void)addAssetsGroupAlbumWithName:(id)arg1 resultBlock:(id)arg2 failureBlock:(id)arg3;
 - (void)groupForURL:(id)arg1 resultBlock:(id)arg2 failureBlock:(id)arg3;
 - (BOOL)videoAtPathIsCompatibleWithSavedPhotosAlbum:(id)arg1;

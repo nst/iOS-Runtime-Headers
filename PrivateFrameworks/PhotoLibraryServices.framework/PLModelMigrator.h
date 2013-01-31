@@ -25,6 +25,7 @@
 + (void)setDidImportFileSystemAssets:(BOOL)arg1;
 + (id)assetUUIDForPathPlistURL;
 + (long long)secondsNeededToCleanupModelAfteriTunesRestore;
++ (void)repairPotentialModelCorruption;
 + (void)cleanupModelAfterRestoreFromiTunes;
 + (void)recreateThumbnailTablesIfNecessary;
 + (id)modelMigrator;
@@ -58,6 +59,7 @@
 - (id)initWithImplicitTransaction:(BOOL)arg1;
 - (long long)secondsNeededToCleanupModelAfteriTunesRestore;
 - (void)recalculateCachedCountsWithSemaphore:(id)arg1;
+- (void)repairPotentialModelCorruption;
 - (void)cleanupModelAfterRestoreFromiTunes;
 - (void)recreateThumbnailTablesIfNecessary;
 - (void)loadFileSystemDataIntoDatabase;

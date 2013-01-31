@@ -37,6 +37,13 @@
 @property BOOL closeSessionPending;
 
 
+- (id)transportType;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)setName:(id)arg1;
+- (id)name;
+- (void)dealloc;
+- (id)productKind;
 - (void)setCloseSessionPending:(BOOL)arg1;
 - (BOOL)closeSessionPending;
 - (void)setOpenSessionPending:(BOOL)arg1;
@@ -55,17 +62,10 @@
 - (id)deviceManager;
 - (void)setUUIDString:(id)arg1;
 - (void)setProductKind:(id)arg1;
-- (struct CGImage { }*)icon;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)setName:(id)arg1;
-- (id)name;
-- (void)dealloc;
+- (void)setTransportType:(id)arg1;
 - (void)finalize;
 - (void)setIcon:(struct CGImage { }*)arg1;
-- (id)transportType;
-- (id)productKind;
+- (struct CGImage { }*)icon;
 - (id)UUIDString;
-- (void)setTransportType:(id)arg1;
 
 @end

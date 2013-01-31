@@ -15,6 +15,9 @@
 @property(retain) UIImage * compositeCheckMark;
 
 
+- (void)dealloc;
+- (id)init;
+- (id)title;
 - (float)tableView:(id)arg1 heightForContentRow:(int)arg2;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forItem:(id)arg3;
 - (BOOL)tableView:(id)arg1 shouldSelectItem:(id)arg2;
@@ -31,8 +34,5 @@
 - (id)viewForSectionHeaderInTableView:(id)arg1;
 - (id)achievements;
 - (void)refreshDataWithCompletionHandlerAndError:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)title;
 
 @end

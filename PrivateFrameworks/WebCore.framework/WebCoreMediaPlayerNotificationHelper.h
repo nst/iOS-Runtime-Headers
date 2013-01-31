@@ -13,12 +13,12 @@
 }
 
 
-- (void)disconnect;
 - (void)deliverNotification:(id)arg1;
 - (void)delayNotification:(int)arg1;
 - (void)scheduleDeferredPropertiesWithOptionalDelay:(id)arg1;
 - (void)schedulePrepareToPlayWithOptionalDelay:(id)arg1;
 - (void)cancelPendingRequests;
 - (id)initWithClient:(struct MediaPlayerPrivateIOS { int (**x1)(); struct MediaPlayer {} *x2; struct RetainPtr<NSObject> { struct NSObject { Class x_1_2_1; } *x_3_1_1; } x3; struct RetainPtr<WebCoreMediaPlayerNotificationHelper> { struct WebCoreMediaPlayerNotificationHelper { Class x_1_2_1; struct MediaPlayerPrivateIOS {} *x_1_2_2; BOOL x_1_2_3; } *x_4_1_1; } x4; struct RetainPtr<NSMutableDictionary> { struct NSMutableDictionary { Class x_1_2_1; } *x_5_1_1; } x5; int x6; int x7; int x8; int x9; float x10; int x11; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; }*)arg1;
+- (void)disconnect;
 
 @end

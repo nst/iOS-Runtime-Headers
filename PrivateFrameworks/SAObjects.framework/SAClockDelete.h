@@ -10,15 +10,15 @@
 @property(copy) NSURL * targetAppId;
 @property(copy) NSArray * clockIds;
 
-+ (id)delete;
 + (id)deleteWithDictionary:(id)arg1 context:(id)arg2;
++ (id)delete;
 
-- (id)groupIdentifier;
 - (void)setClockIds:(id)arg1;
 - (id)clockIds;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

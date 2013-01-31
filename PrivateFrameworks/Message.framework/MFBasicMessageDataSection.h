@@ -19,12 +19,12 @@
 
 - (id)data;
 - (void)dealloc;
-- (void)setComplete:(BOOL)arg1;
-- (void)setData:(id)arg1;
 - (void)setPartName:(id)arg1;
 - (void)setPartial:(BOOL)arg1;
 - (BOOL)isComplete;
 - (id)partName;
 - (BOOL)isPartial;
+- (void)setComplete:(BOOL)arg1;
+- (void)setData:(id)arg1;
 
 @end

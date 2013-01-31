@@ -22,12 +22,12 @@
 - (id)init;
 - (long)comparison;
 - (void)setComparison:(long)arg1;
-- (void)setProperty:(int)arg1;
-- (id)predicateFormat;
-- (int)property;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (BOOL)isValid;
+- (void)setProperty:(int)arg1;
+- (id)predicateFormat;
+- (int)property;
 - (id)_ftsTokenizedTermStringForString:(id)arg1;
 - (id)_ftsAllQueryStrings;
 - (id)stringForComparison:(id)arg1;

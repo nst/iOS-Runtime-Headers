@@ -15,10 +15,6 @@
 @property BOOL animatesDrop;
 
 
-- (void)dealloc;
-- (void)prepareForReuse;
-- (int)_style;
-- (void)setModel:(id)arg1;
 - (void)setAnimatesDrop:(BOOL)arg1;
 - (int)pinColor;
 - (BOOL)animatesDrop;
@@ -35,6 +31,10 @@
 - (BOOL)canAnimateIn;
 - (double)animateInWithCanvasSize:(struct CGSize { float x1; float x2; })arg1 delay:(double)arg2 completionHandler:(id)arg3;
 - (void)setStyleTransitionState:(struct { int x1; int x2; float x3; })arg1;
+- (void)dealloc;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
+- (void)setModel:(id)arg1;
+- (void)prepareForReuse;
+- (int)_style;
 
 @end

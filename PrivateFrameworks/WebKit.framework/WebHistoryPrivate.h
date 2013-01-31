@@ -16,15 +16,6 @@
 
 + (void)initialize;
 
-- (BOOL)removeItems:(id)arg1;
-- (id)data;
-- (void)dealloc;
-- (id)init;
-- (void)addItems:(id)arg1;
-- (void)finalize;
-- (id)allItems;
-- (BOOL)removeAllItems;
-- (BOOL)removeItem:(id)arg1;
 - (void)addVisitedLinksToPageGroup:(struct PageGroup { struct HashMap<WTF::AtomicString, WTF::OwnPtr<WebCore::Supplement<WebCore::PageGroup>>, WTF::AtomicStringHash, WTF::HashTraits<WTF::AtomicString>, WTF::HashTraits<WTF::OwnPtr<WebCore::Supplement<WebCore::PageGroup>>> > { struct HashTable<WTF::AtomicString, std::__1::pair<WTF::AtomicString, WTF::OwnPtr<WebCore::Supplement<WebCore::PageGroup>>>, WTF::PairFirstExtractor<std::__1::pair<WTF::AtomicString, WTF::OwnPtr<WebCore::Supplement<WebCore::PageGroup>>>>, WTF::AtomicStringHash, WTF::HashMapValueTraits<WTF::HashTraits<WTF::AtomicString>, WTF::HashTraits<WTF::OwnPtr<WebCore::Supplement<WebCore::PageGroup>>>>, WTF::HashTraits<WTF::AtomicString> > { struct pair<WTF::AtomicString, WTF::OwnPtr<WebCore::Supplement<WebCore::PageGroup>> > {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_1_1_1; } x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct HashSet<WebCore::Page *, WTF::PtrHash<WebCore::Page *>, WTF::HashTraits<WebCore::Page *> > { struct HashTable<WebCore::Page *, WebCore::Page *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::Page *>, WTF::HashTraits<WebCore::Page *>, WTF::HashTraits<WebCore::Page *> > { struct Page {} **x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_3_1_1; } x3; struct HashSet<unsigned long long, WebCore::LinkHashHash, WTF::HashTraits<unsigned long long> > { struct HashTable<unsigned long long, unsigned long long, WTF::IdentityExtractor, WebCore::LinkHashHash, WTF::HashTraits<unsigned long long>, WTF::HashTraits<unsigned long long> > { unsigned long long *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_4_1_1; } x4; boolx5; unsigned int x6; struct RefPtr<WebCore::StorageNamespace> { struct StorageNamespace {} *x_7_1_1; } x7; struct OwnPtr<WTF::HashMap<WTF::RefPtr<WebCore::DOMWrapperWorld>, WTF::OwnPtr<WTF::Vector<WTF::OwnPtr<WebCore::UserScript>, 0>>, WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld>>, WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld>>, WTF::HashTraits<WTF::OwnPtr<WTF::Vector<WTF::OwnPtr<WebCore::UserScript>, 0>>>> > { struct HashMap<WTF::RefPtr<WebCore::DOMWrapperWorld>, WTF::OwnPtr<WTF::Vector<WTF::OwnPtr<WebCore::UserScript>, 0>>, WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld>>, WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld>>, WTF::HashTraits<WTF::OwnPtr<WTF::Vector<WTF::OwnPtr<WebCore::UserScript>, 0>>> > {} *x_8_1_1; } x8; struct OwnPtr<WTF::HashMap<WTF::RefPtr<WebCore::DOMWrapperWorld>, WTF::OwnPtr<WTF::Vector<WTF::OwnPtr<WebCore::UserStyleSheet>, 0>>, WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld>>, WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld>>, WTF::HashTraits<WTF::OwnPtr<WTF::Vector<WTF::OwnPtr<WebCore::UserStyleSheet>, 0>>>> > { struct HashMap<WTF::RefPtr<WebCore::DOMWrapperWorld>, WTF::OwnPtr<WTF::Vector<WTF::OwnPtr<WebCore::UserStyleSheet>, 0>>, WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld>>, WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld>>, WTF::HashTraits<WTF::OwnPtr<WTF::Vector<WTF::OwnPtr<WebCore::UserStyleSheet>, 0>>> > {} *x_9_1_1; } x9; struct OwnPtr<WebCore::GroupSettings> { struct GroupSettings {} *x_10_1_1; } x10; }*)arg1;
 - (BOOL)saveToURL:(id)arg1 error:(id*)arg2;
 - (BOOL)loadFromURL:(id)arg1 collectDiscardedItemsInto:(id)arg2 error:(id*)arg3;
@@ -47,5 +38,14 @@
 - (BOOL)removeItemFromDateCaches:(id)arg1;
 - (BOOL)findKey:(long long*)arg1 forDay:(double)arg2;
 - (id)itemForURL:(id)arg1;
+- (id)allItems;
+- (id)data;
+- (void)dealloc;
+- (id)init;
+- (void)addItems:(id)arg1;
+- (void)finalize;
+- (BOOL)removeItems:(id)arg1;
+- (BOOL)removeAllItems;
+- (BOOL)removeItem:(id)arg1;
 
 @end

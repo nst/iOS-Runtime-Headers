@@ -13,7 +13,6 @@
 }
 
 
-- (void)setCurrentPage:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })expandedSizeForTextBox:(id)arg1 withState:(id)arg2;
 - (void)mapOfficeArtTextboxAt:(id)arg1 withState:(id)arg2;
 - (void)mapTextBoxAt:(id)arg1 withState:(id)arg2;
@@ -29,5 +28,6 @@
 - (id)initWithOadDrawable:(id)arg1 asFloating:(BOOL)arg2 origin:(struct CGPoint { float x1; float x2; })arg3 parent:(id)arg4;
 - (id)blipAtIndex:(unsigned int)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (void)setCurrentPage:(unsigned int)arg1;
 
 @end

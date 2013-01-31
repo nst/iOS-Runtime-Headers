@@ -14,14 +14,14 @@
 }
 
 
-- (void)setContentHeight:(float)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)scrollOrigin;
 - (void)updateHandlePosition;
 - (void)updateHandleFrame;
 - (void)setViewableHeight:(float)arg1;
 - (void)setScrollPosition:(float)arg1;
 - (id)initForScrollLayer:(id)arg1;
 - (BOOL)handleEvent:(struct __GSEvent { }*)arg1 inLayer:(id)arg2;
-- (float)scrollOrigin;
+- (void)setContentHeight:(float)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

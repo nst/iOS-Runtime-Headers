@@ -17,21 +17,21 @@
 
 + (id)mediaPlayerDownloadManager;
 
+- (void)removeObserver:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)inProgressDownloadWithStoreItemID:(long long)arg1;
+- (void)_clearCache;
+- (id)_copyObservers;
+- (void)_applyBlockToObservers:(id)arg1;
+- (void)downloadManager:(id)arg1 downloadsDidChange:(id)arg2;
+- (void)_rebuildCacheIfNecessary;
+- (id)downloadWithIdentifier:(long long)arg1;
 - (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (id)downloads;
 - (void)addObserver:(id)arg1;
-- (void)downloadManager:(id)arg1 downloadsDidChange:(id)arg2;
-- (id)inProgressDownloadWithStoreItemID:(long long)arg1;
-- (void)_clearCache;
-- (id)_copyObservers;
-- (void)_applyBlockToObservers:(id)arg1;
-- (void)_rebuildCacheIfNecessary;
-- (id)downloadWithIdentifier:(long long)arg1;
-- (void)removeObserver:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (void)cancelDownloads:(id)arg1 completionBlock:(id)arg2;
 
 @end

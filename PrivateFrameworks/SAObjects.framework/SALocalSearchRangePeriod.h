@@ -11,11 +11,11 @@
 + (id)rangePeriodWithDictionary:(id)arg1 context:(id)arg2;
 + (id)rangePeriod;
 
-- (id)groupIdentifier;
 - (void)setStartSecondsSinceMidnight:(int)arg1;
 - (int)startSecondsSinceMidnight;
 - (void)setEndSecondsSinceMidnight:(int)arg1;
 - (int)endSecondsSinceMidnight;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

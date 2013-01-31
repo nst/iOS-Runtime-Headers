@@ -13,6 +13,11 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)passUniqueID;
 - (id)anyKey;
 - (void)addHunksFromDiff:(id)arg1;
@@ -24,10 +29,5 @@
 - (void)addHunkWithKey:(id)arg1 oldValue:(id)arg2 newValue:(id)arg3 message:(id)arg4;
 - (void)setPassUniqueID:(id)arg1;
 - (BOOL)getHunkForKey:(id)arg1 oldValue:(id*)arg2 newValue:(id*)arg3 message:(id*)arg4;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

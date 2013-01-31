@@ -36,11 +36,6 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 
-- (void)dealloc;
-- (oneway void)release;
-- (void)finalize;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageBounds;
 - (id)styledTextOptions;
 - (void)setStyledTextOptions:(id)arg1;
@@ -51,5 +46,10 @@
 - (struct CGSize { float x1; float x2; })sizeWithBehavior:(int)arg1 usesFontLeading:(BOOL)arg2 baselineDelta:(float*)arg3;
 - (void)drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 inContext:(struct CGContext { }*)arg2;
 - (id)initWithRuns:(struct __CFArray { }*)arg1 glyphOrigin:(float)arg2 lineFragmentWidth:(float)arg3 elasticWidth:(float)arg4 usesScreenFonts:(BOOL)arg5 isRTL:(BOOL)arg6;
+- (void)dealloc;
+- (oneway void)release;
+- (void)finalize;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 
 @end

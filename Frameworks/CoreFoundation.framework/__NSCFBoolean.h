@@ -18,6 +18,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (oneway void)release;
 - (unsigned int)unsignedIntegerValue;
+- (unsigned char)unsignedCharValue;
+- (unsigned long)unsignedLongValue;
 - (const char *)objCType;
 - (unsigned long long)unsignedLongLongValue;
 - (void)finalize;
@@ -40,7 +42,5 @@
 - (int)_reverseCompare:(id)arg1;
 - (unsigned char)_getValue:(void*)arg1 forType:(long)arg2;
 - (long)_cfNumberType;
-- (unsigned char)unsignedCharValue;
-- (unsigned long)unsignedLongValue;
 
 @end

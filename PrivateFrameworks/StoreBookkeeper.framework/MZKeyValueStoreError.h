@@ -32,6 +32,9 @@
 + (id)userClampErrorWithTransaction:(id)arg1 retrySeconds:(double)arg2 underlyingError:(id)arg3;
 + (id)keyValueStoreDisabledErrorWithTransaction:(id)arg1 underlyingError:(id)arg2;
 
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)currentStoreAccountKey;
 - (id)previousStoreAccountKey;
 - (BOOL)isTransactionMissingInformationError;
@@ -43,8 +46,5 @@
 - (BOOL)isTransactionCancelledError;
 - (double)retrySeconds;
 - (void)setTransaction:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

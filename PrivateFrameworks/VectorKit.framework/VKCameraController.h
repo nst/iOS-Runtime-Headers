@@ -18,10 +18,6 @@
 
 
 - (void)setCanvas:(id)arg1;
-- (void)dealloc;
-- (BOOL)isAnimating;
-- (void)setCamera:(id)arg1;
-- (id)camera;
 - (void)endAnimating;
 - (void)beginAnimating;
 - (struct CGPoint { float x1; float x2; })screenPointWithIndex:(int)arg1 fromRecognizer:(id)arg2;
@@ -29,6 +25,10 @@
 - (id)detailedDescription;
 - (void)setGesturing:(BOOL)arg1;
 - (BOOL)isGesturing;
+- (void)dealloc;
 - (id)canvas;
+- (void)setCamera:(id)arg1;
+- (id)camera;
+- (BOOL)isAnimating;
 
 @end

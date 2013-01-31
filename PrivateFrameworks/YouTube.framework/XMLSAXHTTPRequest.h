@@ -54,6 +54,13 @@
 + (id)serviceUnavailableError;
 + (unsigned int)uniqueQueryID;
 
+- (void)willParseData;
+- (void)_startedLoading;
+- (void)loadStatusChanged;
+- (BOOL)receivedValidResponse:(id)arg1;
+- (void)didParseData;
+- (void)_finishedLoading;
+- (void)failWithError:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
@@ -64,13 +71,6 @@
 - (BOOL)isLoading;
 - (id)request;
 - (void)loadRequest:(id)arg1;
-- (void)failWithError:(id)arg1;
-- (void)willParseData;
-- (void)_startedLoading;
-- (void)loadStatusChanged;
-- (BOOL)receivedValidResponse:(id)arg1;
-- (void)didParseData;
 - (int)parseData:(id)arg1;
-- (void)_finishedLoading;
 
 @end

@@ -17,8 +17,6 @@
 
 - (int)deleteObject:(int)arg1;
 - (void)dealloc;
-- (void)done;
-- (int)setMiterLimit:(double)arg1;
 - (int)frameRegionWithRects:(id)arg1 :(unsigned int)arg2 :(int)arg3 :(int)arg4;
 - (int)comment:(id)arg1;
 - (id)recolor:(unsigned char)arg1 :(unsigned char)arg2 :(unsigned char)arg3 fill:(BOOL)arg4;
@@ -115,5 +113,7 @@
 - (int)setTextCharExtra:(int)arg1;
 - (int)setTextJustification:(int)arg1 :(int)arg2;
 - (int)setTextColour:(id)arg1;
+- (void)done;
+- (int)setMiterLimit:(double)arg1;
 
 @end

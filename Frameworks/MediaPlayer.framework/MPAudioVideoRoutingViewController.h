@@ -13,11 +13,11 @@
 
 + (BOOL)hasWirelessDisplayRoutes;
 
-- (void)_doneAction:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
 - (void)loadView;
+- (void)_doneAction:(id)arg1;
 
 @end

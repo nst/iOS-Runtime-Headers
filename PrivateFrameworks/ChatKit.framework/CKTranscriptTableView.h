@@ -20,14 +20,14 @@
 
 
 - (void)dealloc;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)handlePan:(id)arg1;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)isFastAnimationAvailableForContentOffset;
 - (BOOL)ignoresContentOffsetChanges;
 - (void)setIgnoresContentOffsetChanges:(BOOL)arg1;
 - (void)cancelPanGesture;
 - (void)setPanGestureRecognizerBlock:(id)arg1;
 - (id)panGestureRecognizerBlock;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)handlePan:(id)arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

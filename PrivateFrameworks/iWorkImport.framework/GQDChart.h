@@ -19,12 +19,12 @@
 
 + (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 
+- (id)graphicStyle;
 - (long)type;
 - (void)dealloc;
-- (id)model;
-- (id)style;
-- (id)graphicStyle;
 - (void)setLegend:(id)arg1;
 - (id)legend;
+- (id)model;
+- (id)style;
 
 @end

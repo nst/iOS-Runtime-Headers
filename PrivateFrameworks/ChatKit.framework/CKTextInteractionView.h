@@ -14,9 +14,9 @@
 + (void)flushSharedInteractionView;
 
 - (void)dealloc;
-- (id)proxiedView;
 - (void)detachInteractionView;
 - (void)becomeInteractionViewForProxiedView:(id)arg1;
 - (void)setProxiedView:(id)arg1;
+- (id)proxiedView;
 
 @end

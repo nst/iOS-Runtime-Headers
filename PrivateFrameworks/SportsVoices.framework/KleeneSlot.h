@@ -8,8 +8,8 @@
 + (id)kleeneSlotWithArray:(id)arg1;
 + (id)instanceFromPlist:(id)arg1;
 
-- (id)description;
 - (id)reversed;
+- (id)description;
 - (BOOL)matches:(id)arg1;
 
 @end

@@ -12,8 +12,6 @@
 }
 
 
-- (id)stroke;
-- (id)fill;
 - (void)mapSiblingTextAt:(id)arg1 style:(id)arg2 level:(int)arg3 withState:(id)arg4;
 - (void)mapChildrenTextAt:(id)arg1 style:(id)arg2 level:(int)arg3 withState:(id)arg4;
 - (void)mapPointTextAt:(id)arg1 style:(id)arg2 level:(int)arg3 withState:(id)arg4;
@@ -35,5 +33,7 @@
 - (id)diagram;
 - (id)styleMatrix;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (id)stroke;
+- (id)fill;
 
 @end

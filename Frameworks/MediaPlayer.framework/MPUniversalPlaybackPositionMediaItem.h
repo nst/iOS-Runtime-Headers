@@ -12,8 +12,8 @@
 + (id)mediaPropertiesToMZProperties;
 + (id)mzPropertiesToMediaProperties;
 
+- (void)dealloc;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
 - (id)initWithMediaItem:(id)arg1;
-- (void)dealloc;
 
 @end

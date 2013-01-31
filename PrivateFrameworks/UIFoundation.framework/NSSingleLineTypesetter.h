@@ -17,14 +17,10 @@
     } _slFlags;
 }
 
-+ (void)initialize;
 + (bool)_validateAttributes:(id)arg1;
 + (id)singleLineTypesetter;
++ (void)initialize;
 
-- (id)init;
-- (unsigned int)layoutOptions;
-- (void)done;
-- (id)attributedString;
 - (void)deleteGlyphsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })characterRangeForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 actualGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (id)createRenderingContextForCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 typesetterBehavior:(int)arg2 usesScreenFonts:(BOOL)arg3 hasStrongRight:(BOOL)arg4 maximumWidth:(float)arg5;
@@ -44,5 +40,9 @@
 - (void)setLocation:(struct CGPoint { float x1; float x2; })arg1 withAdvancements:(const float*)arg2 forStartOfGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)setLineFragmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 baselineOffset:(float)arg4;
 - (void)getLineFragmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 usedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 remainingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 forStartingGlyphAtIndex:(unsigned int)arg4 proposedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 lineSpacing:(float)arg6 paragraphSpacingBefore:(float)arg7 paragraphSpacingAfter:(float)arg8;
+- (id)init;
+- (unsigned int)layoutOptions;
+- (void)done;
+- (id)attributedString;
 
 @end

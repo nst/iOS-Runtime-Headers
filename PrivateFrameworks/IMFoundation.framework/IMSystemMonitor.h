@@ -68,32 +68,8 @@
 
 + (id)sharedInstance;
 
-- (BOOL)isUnderFirstDataProtectionLock;
-- (BOOL)isSetup;
-- (void)_removeEarlyListener:(id)arg1;
-- (void)_addEarlyListener:(id)arg1;
-- (id)_userID;
 - (void)dealloc;
 - (id)init;
-- (void)_applicationDidBecomeActive:(id)arg1;
-- (void)_applicationWillResignActive:(id)arg1;
-- (void)_applicationWillEnterForeground:(id)arg1;
-- (void)_applicationDidEnterBackground:(id)arg1;
-- (BOOL)isActive;
-- (void)setActive:(BOOL)arg1;
-- (void)_receivedMemoryNotification;
-- (void)setReceivesMemoryWarnings:(BOOL)arg1;
-- (void)_screenLocked:(id)arg1;
-- (void)_screenUnlocked:(id)arg1;
-- (BOOL)systemIsShuttingDown;
-- (BOOL)isInBackground;
-- (void)setWatchesScreenLightState:(BOOL)arg1;
-- (void)setUsesPowerNotifications:(BOOL)arg1;
-- (void)removeListener:(id)arg1;
-- (void)addListener:(id)arg1;
-- (BOOL)isFastUserSwitched;
-- (id)dateScreenLightLastChanged;
-- (BOOL)isScreenLit;
 - (BOOL)usesSystemIdleState;
 - (void)set_earlyListeners:(id)arg1;
 - (id)_earlyListeners;
@@ -160,5 +136,29 @@
 - (void)_suspendEventsOnly:(id)arg1;
 - (void)_resume:(id)arg1;
 - (void)_suspend:(id)arg1;
+- (BOOL)isUnderFirstDataProtectionLock;
+- (BOOL)isSetup;
+- (void)_removeEarlyListener:(id)arg1;
+- (void)_addEarlyListener:(id)arg1;
+- (id)_userID;
+- (BOOL)systemIsShuttingDown;
+- (BOOL)isInBackground;
+- (void)setWatchesScreenLightState:(BOOL)arg1;
+- (void)setUsesPowerNotifications:(BOOL)arg1;
+- (void)removeListener:(id)arg1;
+- (void)addListener:(id)arg1;
+- (BOOL)isFastUserSwitched;
+- (id)dateScreenLightLastChanged;
+- (BOOL)isScreenLit;
+- (void)_screenLocked:(id)arg1;
+- (void)_screenUnlocked:(id)arg1;
+- (void)_applicationDidBecomeActive:(id)arg1;
+- (void)_applicationWillResignActive:(id)arg1;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)_applicationDidEnterBackground:(id)arg1;
+- (BOOL)isActive;
+- (void)setActive:(BOOL)arg1;
+- (void)_receivedMemoryNotification;
+- (void)setReceivesMemoryWarnings:(BOOL)arg1;
 
 @end

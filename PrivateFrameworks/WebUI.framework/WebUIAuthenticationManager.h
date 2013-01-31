@@ -13,7 +13,6 @@
 }
 
 
-- (void)cancelAuthentication;
 - (void)removeAuthenticationChallenge:(id)arg1;
 - (void)addAuthenticationChallenge:(id)arg1;
 - (void)addAuthenticationChallenge:(id)arg1 displayPanel:(BOOL)arg2;
@@ -22,6 +21,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)cancelAuthentication;
 - (id)authenticationChallenge;
 
 @end

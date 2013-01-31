@@ -29,6 +29,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)addElement:(id)arg1;
 - (void)foreachLayer:(id)arg1;
 - (void)setElements:(id)arg1;
 - (id)elements;
@@ -45,6 +46,5 @@
 - (void)setBasedOn:(id)arg1;
 - (void)removeElement:(id)arg1;
 - (id)basedOn;
-- (void)addElement:(id)arg1;
 
 @end

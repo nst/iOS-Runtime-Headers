@@ -22,6 +22,10 @@
 @property(retain) GKPlayer * player;
 
 
+- (void)dealloc;
+- (id)init;
+- (id)categories;
+- (float)heightForHeaderInTableView:(id)arg1;
 - (void)setShowDisclosureIndicator:(BOOL)arg1;
 - (BOOL)showDisclosureIndicator;
 - (id)tokenImageCategory:(id)arg1 withCompletionHandler:(id)arg2;
@@ -42,9 +46,5 @@
 - (void)refreshDataWithCompletionHandlerAndError:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (id)player;
-- (void)dealloc;
-- (id)init;
-- (id)categories;
-- (float)heightForHeaderInTableView:(id)arg1;
 
 @end

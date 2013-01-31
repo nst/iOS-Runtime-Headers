@@ -26,14 +26,14 @@
 + (id)sharedInstance;
 
 - (void)dealloc;
-- (void)stop;
-- (void)start;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 monitoringDidFailForRegion:(id)arg2 withError:(id)arg3;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didExitRegion:(id)arg2;
 - (void)locationManager:(id)arg1 didEnterRegion:(id)arg2;
 - (id)_dateFormatter;
+- (void)stop;
+- (void)start;
 - (void)_locationDaemonDidLaunch;
 - (void)_timeDidChangeSignificantly;
 - (void)_syncDidStart;

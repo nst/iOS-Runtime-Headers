@@ -14,10 +14,10 @@
 
 - (void)setReflectionHeight:(float)arg1;
 - (float)reflectionHeight;
-- (void)dealloc;
-- (id)initWithImage:(id)arg1;
 - (struct CGImage { }*)_newGradientMaskWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)addAnimationsForTransition:(id)arg1;
 - (void)_reloadGradientView;
+- (void)dealloc;
+- (id)initWithImage:(id)arg1;
 
 @end

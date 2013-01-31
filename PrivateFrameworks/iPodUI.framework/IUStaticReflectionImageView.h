@@ -42,18 +42,6 @@
 @property(getter=isEmbossedProgressIndicatorVisible) BOOL embossedProgressIndicatorVisible;
 
 
-- (BOOL)isDownloadable;
-- (void)dealloc;
-- (float)progress;
-- (BOOL)isHighlighted;
-- (void)setHighlighted:(BOOL)arg1;
-- (id)image;
-- (void)setProgress:(float)arg1;
-- (BOOL)isOpaque;
-- (void)setTitle:(id)arg1;
-- (void)layoutSubviews;
-- (void)setOpaque:(BOOL)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isEmbossedProgressIndicatorVisible;
 - (float)reflectionDistance;
 - (BOOL)reflectionHidden;
@@ -65,8 +53,20 @@
 - (void)setImage:(id)arg1 imageSubRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageSubRect;
 - (void)setTitleHidden:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setDownloadable:(BOOL)arg1;
 - (void)setTitleStyle:(int)arg1;
 - (int)titleStyle;
-- (void)setDownloadable:(BOOL)arg1;
+- (void)dealloc;
+- (float)progress;
+- (BOOL)isHighlighted;
+- (void)setHighlighted:(BOOL)arg1;
+- (id)image;
+- (void)setProgress:(float)arg1;
+- (BOOL)isOpaque;
+- (void)setTitle:(id)arg1;
+- (void)layoutSubviews;
+- (void)setOpaque:(BOOL)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isDownloadable;
 
 @end

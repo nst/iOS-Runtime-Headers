@@ -28,14 +28,8 @@
 + (id)currentConditionsWithDictionary:(id)arg1 context:(id)arg2;
 + (id)currentConditions;
 
-- (id)groupIdentifier;
-- (void)setCondition:(id)arg1;
-- (id)condition;
-- (id)timeZone;
-- (void)setTimeZone:(id)arg1;
 - (void)setVisibility:(id)arg1;
 - (id)visibility;
-- (id)dayOfWeek;
 - (void)setWindSpeed:(id)arg1;
 - (id)windSpeed;
 - (void)setWindChill:(id)arg1;
@@ -64,5 +58,11 @@
 - (id)barometricPressure;
 - (id)encodedClassName;
 - (void)setDayOfWeek:(id)arg1;
+- (void)setCondition:(id)arg1;
+- (id)condition;
+- (id)timeZone;
+- (void)setTimeZone:(id)arg1;
+- (id)groupIdentifier;
+- (id)dayOfWeek;
 
 @end

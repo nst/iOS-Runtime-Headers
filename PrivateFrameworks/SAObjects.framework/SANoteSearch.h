@@ -15,7 +15,6 @@
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
 - (void)setToDate:(id)arg1;
 - (id)toDate;
 - (void)setFromDate:(id)arg1;
@@ -26,5 +25,6 @@
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

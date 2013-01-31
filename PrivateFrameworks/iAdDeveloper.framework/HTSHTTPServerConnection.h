@@ -28,8 +28,6 @@
 @property(retain) NSTimer * idleTimer;
 
 
-- (id)identifier;
-- (void)dealloc;
 - (id)idleTimer;
 - (double)lastActivity;
 - (void)printData:(id)arg1 withMessage:(id)arg2;
@@ -43,5 +41,7 @@
 - (void)_closeInputStream;
 - (void)sendResponse:(id)arg1 withLatency:(double)arg2 closeAfterSending:(BOOL)arg3;
 - (id)initWithServer:(id)arg1 socket:(int)arg2;
+- (id)identifier;
+- (void)dealloc;
 
 @end

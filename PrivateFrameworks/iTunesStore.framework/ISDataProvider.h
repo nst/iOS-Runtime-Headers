@@ -38,8 +38,6 @@
 - (void)setOutput:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (id)authenticationContext;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setErrorHandlerResponseType:(int)arg1;
 - (void)setAuthenticatedAccountDSID:(id)arg1;
 - (void)setBagContext:(id)arg1;
@@ -54,9 +52,11 @@
 - (id)parentOperation;
 - (void)setParentOperation:(id)arg1;
 - (void)setRedirectURL:(id)arg1;
-- (void)setContentType:(id)arg1;
-- (long long)contentLength;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)contentType;
 - (void)setup;
+- (void)setContentType:(id)arg1;
+- (long long)contentLength;
 
 @end

@@ -10,8 +10,8 @@
 @property float alpha;
 
 
+- (id)initWithVertName:(id)arg1 fragName:(id)arg2;
 - (void)setAlpha:(float)arg1;
 - (float)alpha;
-- (id)initWithVertName:(id)arg1 fragName:(id)arg2;
 
 @end

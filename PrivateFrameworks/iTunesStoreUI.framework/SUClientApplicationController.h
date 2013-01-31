@@ -83,7 +83,6 @@
 - (void)_handleFinishedBackgroundLoadSectionsOperation:(id)arg1;
 - (void)setupUI;
 - (void)_cancelLoadSectionsOperation;
-- (void)tearDownUI;
 - (void)_accountControllerDisappearedNotification:(id)arg1;
 - (void)_storeFrontChangedNotification:(id)arg1;
 - (void)_selectFooterSectionNotification:(id)arg1;
@@ -102,13 +101,14 @@
 - (id)overlayBackgroundViewController;
 - (id)initWithClientInterface:(id)arg1;
 - (void)exitStoreAfterDialogsDismiss;
-- (void)becomeActive;
 - (id)copySuspendSettings;
-- (void)resignActive;
 - (BOOL)openClientURL:(id)arg1;
 - (void)cancelAllOperations;
 - (void)dealloc;
 - (id)tabBarController;
 - (double)defaultImageSnapshotExpiration;
+- (void)becomeActive;
+- (void)resignActive;
+- (void)tearDownUI;
 
 @end

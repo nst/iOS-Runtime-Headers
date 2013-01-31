@@ -18,21 +18,21 @@
 @property(readonly) NSString * username;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
-- (id)credential;
-- (id)username;
 - (id)nativeAccountStore;
 - (id)accountType;
 - (id)initWithACAccount:(id)arg1 accountStore:(id)arg2;
 - (id)nativeAccount;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (id)identifier;
 - (void)dealloc;
-- (void)reload;
-- (id)attributeKeys;
 - (id)accountDescription;
+- (void)reload;
+- (id)credential;
+- (id)username;
 
 @end

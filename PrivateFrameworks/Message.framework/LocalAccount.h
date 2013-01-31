@@ -9,9 +9,6 @@
 + (id)localAccount;
 + (id)accountTypeString;
 
-- (void)setPassword:(id)arg1;
-- (void)setUsername:(id)arg1;
-- (id)displayName;
 - (id)transientDraftsFolder;
 - (id)password:(BOOL)arg1;
 - (id)pushedMailboxUids;
@@ -33,5 +30,8 @@
 - (id)uniqueId;
 - (void)setHostname:(id)arg1;
 - (BOOL)deleteInPlaceForMailbox:(id)arg1;
+- (id)displayName;
+- (void)setPassword:(id)arg1;
+- (void)setUsername:(id)arg1;
 
 @end

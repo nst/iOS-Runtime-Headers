@@ -45,13 +45,12 @@
 + (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 + (id)numberFormatWithValueType:(int)arg1 formatString:(id)arg2 decimalPlaces:(unsigned short)arg3 currencyCode:(id)arg4 useAccountingStyle:(BOOL)arg5 negativeStyle:(int)arg6 showThousandsSeparator:(BOOL)arg7 fractionAccuracy:(int)arg8 suffixString:(struct __CFString { }*)arg9;
 
-- (void)dealloc;
-- (id)formatString;
 - (BOOL)useAccountingStyle;
 - (id)initWithValueType:(int)arg1 formatString:(id)arg2 decimalPlaces:(unsigned short)arg3 currencyCode:(id)arg4 useAccountingStyle:(BOOL)arg5 negativeStyle:(int)arg6 showThousandsSeparator:(BOOL)arg7 fractionAccuracy:(int)arg8 suffixString:(struct __CFString { }*)arg9 scaleFactor:(double)arg10 base:(unsigned short)arg11 basePlaces:(unsigned short)arg12 baseUseMinusSign:(BOOL)arg13 isCustom:(BOOL)arg14 interstitialStrings:(id)arg15 interstitialStringInsertionIndexes:(id)arg16 indexFromRightOfLastDigitPlaceholder:(unsigned short)arg17 minimumIntegerWidth:(unsigned char)arg18 decimalWidth:(unsigned char)arg19 numberOfNonSpaceIntegerPlaceholderDigits:(unsigned char)arg20 numberOfNonSpaceDecimalPlaceholderDigits:(unsigned char)arg21 isTextFormat:(BOOL)arg22 formatName:(id)arg23;
 - (struct __CFString { }*)createStringFromDouble:(double)arg1;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 - (int)valueType;
+- (void)dealloc;
 - (id)baseStringFromDouble:(double)arg1;
 - (id)fractionStringFromDouble:(double)arg1;
 - (void)setUseScientificFormattingAutomatically:(BOOL)arg1;
@@ -65,5 +64,6 @@
 - (int)fractionAccuracy;
 - (BOOL)showThousandsSeparator;
 - (id)currencyCode;
+- (id)formatString;
 
 @end

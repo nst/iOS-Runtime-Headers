@@ -112,6 +112,7 @@
 + (id)persistedRecentlyUsedGUIDS;
 + (id)recentlyUsedGUIDsPath;
 + (id)_allAssetUUIDsInManagedObjectContext:(id)arg1;
++ (id)uuidFromAssetURL:(id)arg1;
 + (id)fileURLFromAssetURL:(id)arg1 photoLibrary:(id)arg2;
 + (struct CGImage { }*)newUnrotatedImageWithSize:(struct CGSize { float x1; float x2; })arg1 originalImage:(struct CGImage { }*)arg2 imageOrientation:(int)arg3;
 + (int)landscapeScrubberThumbnailFormat;
@@ -137,6 +138,7 @@
 + (unsigned int)countAssetsWithKind:(int)arg1 inManagedObjectContext:(id)arg2;
 + (id)insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(int)arg3 replacementUUID:(id)arg4 imageMetadata:(id)arg5 imageUTI:(id)arg6;
 + (id)assetWithObjectID:(id)arg1 inLibrary:(id)arg2;
++ (id)uuidFromAssetURL:(id)arg1 fileExtension:(id*)arg2 sidecarIndex:(id*)arg3;
 + (id)photoFromAssetURL:(id)arg1 photoLibrary:(id)arg2 sidecar:(id*)arg3;
 + (id)_pathsByAssetUUIDFromFetchResults:(id)arg1 absolute:(BOOL)arg2;
 + (id)bestCreationDateForAssetAtURL:(id)arg1 modificationDate:(id*)arg2;
@@ -165,23 +167,9 @@
 + (unsigned int)countUsedAssetsWithKind:(int)arg1 inManagedObjectContext:(id)arg2;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLocation:(id)arg1;
 - (void)save;
 - (void)dealloc;
-- (void)prepareForDeletion;
-- (void)awakeFromSnapshotEvents:(unsigned int)arg1;
-- (void)awakeFromInsert;
-- (void)willTurnIntoFault;
-- (void)awakeFromFetch;
-- (BOOL)isVideo;
-- (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
-- (id)activityViewControllerPlaceholderItem:(id)arg1;
-- (id)mimeType;
-- (id)location;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (id)date;
-- (BOOL)isEditable;
-- (void)setLocation:(id)arg1;
 - (void)setUserCloudSharedLiked:(BOOL)arg1;
 - (void)userReadAllCloudSharedComments;
 - (void)userDeleteCloudSharedComment:(id)arg1;
@@ -333,6 +321,7 @@
 - (id)pathForVideoFile;
 - (void)setLocationFromImageProperties:(id)arg1;
 - (void)setThumbnailDataFromImageProperties:(id)arg1;
+- (id)pathForOriginalFile;
 - (void)registerForChanges;
 - (void)unregisterForChanges;
 - (void)setEffectiveThumbnailIndex:(unsigned int)arg1;
@@ -349,7 +338,20 @@
 - (BOOL)isPhotoStreamPhoto;
 - (void)delete;
 - (BOOL)canPerformEditOperation:(int)arg1;
-- (id)pathForOriginalFile;
 - (void)addComment:(id)arg1;
+- (BOOL)isVideo;
+- (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
+- (id)activityViewControllerPlaceholderItem:(id)arg1;
+- (id)mimeType;
+- (id)location;
+- (struct CGSize { float x1; float x2; })imageSize;
+- (id)date;
+- (BOOL)isEditable;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)prepareForDeletion;
+- (void)awakeFromSnapshotEvents:(unsigned int)arg1;
+- (void)awakeFromInsert;
+- (void)willTurnIntoFault;
+- (void)awakeFromFetch;
 
 @end

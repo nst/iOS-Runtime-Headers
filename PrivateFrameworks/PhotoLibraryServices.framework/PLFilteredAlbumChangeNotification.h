@@ -21,7 +21,6 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)object;
 - (void)setFilteredIndexes:(id)arg1;
 - (BOOL)countDidChange;
 - (id)updatedFilteredIndexes;
@@ -36,5 +35,6 @@
 - (id)indexMapper;
 - (BOOL)shouldIncludeObjectAtIndex:(unsigned int)arg1;
 - (id)filteredIndexes;
+- (id)object;
 
 @end

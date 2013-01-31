@@ -24,6 +24,14 @@
 
 + (void)initialize;
 
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })lineFragmentRectForProposedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 sweepDirection:(unsigned int)arg2 movementDirection:(unsigned int)arg3 remainingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
+- (void)replaceLayoutManager:(id)arg1;
+- (id)initWithContainerSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLineFragmentPadding:(float)arg1;
+- (unsigned int)maximumNumberOfLines;
+- (BOOL)isSimpleRectangularTextContainer;
+- (float)lineFragmentPadding;
+- (int)layoutOrientation;
 - (id)init;
 - (void)setContainerSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })containerSize;
@@ -34,13 +42,5 @@
 - (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })lineFragmentRectForProposedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 sweepDirection:(unsigned int)arg2 movementDirection:(unsigned int)arg3 remainingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
-- (void)replaceLayoutManager:(id)arg1;
-- (id)initWithContainerSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setLineFragmentPadding:(float)arg1;
-- (unsigned int)maximumNumberOfLines;
-- (BOOL)isSimpleRectangularTextContainer;
-- (float)lineFragmentPadding;
-- (int)layoutOrientation;
 
 @end

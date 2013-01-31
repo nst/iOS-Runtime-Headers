@@ -32,14 +32,9 @@
 @property(copy) NSString * importSessionIdentifier;
 
 
-- (void)removeItems:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (void)setItems:(id)arg1;
-- (id)items;
-- (void)setCamera:(id)arg1;
-- (id)camera;
 - (void)setItemsMapping:(id)arg1;
 - (void)stopImport;
 - (void)importItems:(id)arg1;
@@ -95,5 +90,10 @@
 - (id)importItemForCameraFile:(id)arg1;
 - (void)setImportSessionIdentifier:(id)arg1;
 - (void)didReceiveImportNotification:(id)arg1;
+- (void)setCamera:(id)arg1;
+- (id)camera;
+- (void)setItems:(id)arg1;
+- (id)items;
+- (void)removeItems:(id)arg1;
 
 @end

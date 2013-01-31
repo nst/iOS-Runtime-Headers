@@ -18,17 +18,6 @@
 
 + (Class)textFieldClass;
 
-- (id)_initWithStyle:(int)arg1;
-- (BOOL)showsCancelButton;
-- (void)setShowsCancelButton:(BOOL)arg1;
-- (void)setShowsOKButton:(BOOL)arg1;
-- (void)_textDidChange;
-- (void)_updateFields;
-- (void)setNumberOfEntryFields:(int)arg1 opaqueBackground:(BOOL)arg2;
-- (BOOL)textFieldShouldClear:(id)arg1;
-- (void)setClearButtonMode:(int)arg1;
-- (int)clearButtonMode;
-- (id)textInputTraits;
 - (BOOL)isAlphanumericField;
 - (void)_updateButtonFrame;
 - (void)_updateButtonTitle;
@@ -39,5 +28,16 @@
 - (void)setOkayButtonEnabled:(BOOL)arg1;
 - (BOOL)isOkayButtonEnabled;
 - (void)setIsAlphanumericField:(BOOL)arg1;
+- (BOOL)showsCancelButton;
+- (void)setShowsCancelButton:(BOOL)arg1;
+- (void)setShowsOKButton:(BOOL)arg1;
+- (void)_textDidChange;
+- (void)_updateFields;
+- (void)setNumberOfEntryFields:(int)arg1 opaqueBackground:(BOOL)arg2;
+- (BOOL)textFieldShouldClear:(id)arg1;
+- (void)setClearButtonMode:(int)arg1;
+- (int)clearButtonMode;
+- (id)textInputTraits;
+- (id)_initWithStyle:(int)arg1;
 
 @end

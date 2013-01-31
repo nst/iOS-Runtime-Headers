@@ -12,12 +12,12 @@
 
 
 - (void).cxx_destruct;
-- (BOOL)run;
 - (id)_compatibleModelForStoreAtURL:(id)arg1;
 - (id)_fetchAllAuthorizationEntitiesForModelVersion:(int)arg1;
 - (void)_migrateAccessAuthorizationsToTCCFromModelVersion:(int)arg1;
 - (int)_versionForModel:(id)arg1;
 - (id)_setUpContextForMigration;
 - (id)initForDatabase:(id)arg1;
+- (BOOL)run;
 
 @end

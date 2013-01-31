@@ -24,15 +24,10 @@
 
 + (id)conditionalFormattingRuleWithResources:(id)arg1;
 
-- (int)type;
-- (void)dealloc;
-- (void)setPriority:(int)arg1;
-- (int)priority;
-- (id)text;
-- (void)setType:(int)arg1;
-- (void)setText:(id)arg1;
 - (void)setBottom:(bool)arg1;
 - (bool)bottom;
+- (int)type;
+- (void)dealloc;
 - (void)setDifferentialStyleIndex:(unsigned int)arg1;
 - (unsigned int)differentialStyleIndex;
 - (void)setTimePeriod:(int)arg1;
@@ -58,5 +53,10 @@
 - (id)formulaAtIndex:(unsigned int)arg1;
 - (unsigned int)formulaCount;
 - (bool)percent;
+- (void)setPriority:(int)arg1;
+- (int)priority;
+- (id)text;
+- (void)setType:(int)arg1;
+- (void)setText:(id)arg1;
 
 @end

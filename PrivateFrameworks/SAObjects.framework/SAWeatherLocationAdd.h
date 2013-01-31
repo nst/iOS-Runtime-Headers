@@ -13,12 +13,12 @@
 + (id)locationAddWithDictionary:(id)arg1 context:(id)arg2;
 + (id)locationAdd;
 
-- (id)groupIdentifier;
 - (void)setWeatherLocation:(id)arg1;
 - (id)weatherLocation;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

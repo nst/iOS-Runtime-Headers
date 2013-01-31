@@ -16,7 +16,6 @@
 
 - (id)initWithFilePresenter:(id)arg1;
 - (void)dealloc;
-- (void)coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 retryOnError:(BOOL)arg3 error:(id*)arg4 byAccessor:(id)arg5;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)localPeerID;
 - (void)coordinateReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2 retryOnError:(BOOL)arg3 error:(id*)arg4 byAccessor:(id)arg5;

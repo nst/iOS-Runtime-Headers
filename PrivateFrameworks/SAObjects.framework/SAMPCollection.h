@@ -9,13 +9,13 @@
 
 @property(copy) NSArray * items;
 
-+ (id)collection;
 + (id)collectionWithDictionary:(id)arg1 context:(id)arg2;
++ (id)collection;
 
-- (id)groupIdentifier;
-- (void)setItems:(id)arg1;
-- (id)items;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setItems:(id)arg1;
+- (id)items;
+- (id)groupIdentifier;
 
 @end

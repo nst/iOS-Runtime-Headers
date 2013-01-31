@@ -6,12 +6,10 @@
 }
 
 
-- (id)subject;
-- (id)body;
-- (id)date;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)flagged;
+- (BOOL)read;
+- (id)to;
+- (id)from;
 - (id)conversationId;
 - (id)rfc822Data;
 - (id)cc;
@@ -28,9 +26,6 @@
 - (id)folderID;
 - (id)remoteID;
 - (id)attachments;
-- (BOOL)read;
-- (id)to;
-- (id)from;
 - (id)conversationIndex;
 - (id)threadTopic;
 - (id)messageClass;
@@ -38,5 +33,10 @@
 - (id)replyTo;
 - (int)bodyTruncated;
 - (int)importance;
+- (id)subject;
+- (id)body;
+- (id)date;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

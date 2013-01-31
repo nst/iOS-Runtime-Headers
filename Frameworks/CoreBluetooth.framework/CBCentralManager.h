@@ -17,12 +17,12 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (int)state;
-- (void)cancelPeripheralConnection:(id)arg1;
-- (void)connectPeripheral:(id)arg1 options:(id)arg2;
 - (void)stopScan;
-- (void)scanForPeripheralsWithServices:(id)arg1 options:(id)arg2;
+- (void)connectPeripheral:(id)arg1 options:(id)arg2;
 - (void)retrieveConnectedPeripherals;
+- (void)scanForPeripheralsWithServices:(id)arg1 options:(id)arg2;
 - (void)retrievePeripherals:(id)arg1;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
+- (void)cancelPeripheralConnection:(id)arg1;
 
 @end

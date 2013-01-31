@@ -9,11 +9,11 @@
 }
 
 
-- (id)initWithXPCShmem:(id)arg1 length:(long long)arg2;
-- (id)initWithXPCShmem:(id)arg1;
 - (const void*)bytes;
 - (id)description;
 - (void)dealloc;
 - (unsigned int)length;
+- (id)initWithXPCShmem:(id)arg1 length:(long long)arg2;
+- (id)initWithXPCShmem:(id)arg1;
 
 @end

@@ -18,6 +18,15 @@
 
 - (void)dealloc;
 - (id)init;
+- (BOOL)cameraViewShouldShowPreviewAfterSelection:(id)arg1;
+- (void)cameraView:(id)arg1 videoSavedToPath:(id)arg2 editingInfo:(id)arg3;
+- (void)cameraView:(id)arg1 photoSaved:(id)arg2;
+- (void)cameraViewCancelled:(id)arg1;
+- (void)_adjustContentSizeForOrientation:(int)arg1;
+- (void)_windowOrientationWillChange:(id)arg1;
+- (void)setWantsImageData:(BOOL)arg1;
+- (void)_editabilityChanged:(id)arg1;
+- (id)_cameraView;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (BOOL)_displaysFullScreen;
 - (void)_setImagePickerMediaTypes:(id)arg1;
@@ -43,14 +52,5 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
-- (BOOL)cameraViewShouldShowPreviewAfterSelection:(id)arg1;
-- (void)cameraView:(id)arg1 videoSavedToPath:(id)arg2 editingInfo:(id)arg3;
-- (void)cameraView:(id)arg1 photoSaved:(id)arg2;
-- (void)cameraViewCancelled:(id)arg1;
-- (void)_adjustContentSizeForOrientation:(int)arg1;
-- (void)_windowOrientationWillChange:(id)arg1;
-- (void)setWantsImageData:(BOOL)arg1;
-- (void)_editabilityChanged:(id)arg1;
-- (id)_cameraView;
 
 @end

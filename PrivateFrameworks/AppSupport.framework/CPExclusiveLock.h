@@ -14,9 +14,9 @@
 - (id)name;
 - (void)dealloc;
 - (id)init;
-- (BOOL)tryLock;
 - (void)unlock;
 - (void)lock;
 - (id)initWithName:(id)arg1;
+- (BOOL)tryLock;
 
 @end

@@ -20,13 +20,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)formatString;
-- (int)key;
 - (void)setReferenced:(bool)arg1;
 - (void)setFormatId:(unsigned int)arg1;
 - (bool)referenced;
 - (BOOL)isEqualToContentFormat:(id)arg1;
 - (bool)builtIn;
 - (unsigned int)formatId;
+- (id)formatString;
+- (int)key;
 
 @end

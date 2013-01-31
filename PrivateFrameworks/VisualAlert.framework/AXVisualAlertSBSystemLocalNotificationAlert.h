@@ -5,9 +5,9 @@
 @interface AXVisualAlertSBSystemLocalNotificationAlert : AXVisualAlertSBSystemLocalNotificationAlert_super  {
 }
 
-+ (void)_initializeSafeCategory;
 + (void)stopPlayingAlertSoundOrTone;
 + (id)presentWithLocalNotification:(id)arg1 application:(id)arg2;
++ (void)_initializeSafeCategory;
 
 
 @end

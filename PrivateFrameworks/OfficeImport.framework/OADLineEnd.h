@@ -13,19 +13,19 @@
 
 + (id)defaultProperties;
 
+- (void)setLength:(int)arg1;
 - (int)type;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)length;
-- (void)setWidth:(int)arg1;
-- (int)width;
-- (void)setType:(int)arg1;
-- (void)setLength:(int)arg1;
 - (BOOL)isLengthOverridden;
 - (BOOL)isTypeOverridden;
 - (id)initWithDefaults;
 - (id)initWithType:(int)arg1 width:(int)arg2 length:(int)arg3;
 - (BOOL)isWidthOverridden;
+- (void)setWidth:(int)arg1;
+- (int)width;
+- (void)setType:(int)arg1;
 
 @end

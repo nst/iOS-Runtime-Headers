@@ -60,18 +60,13 @@
 @property(readonly) int failedSendCount;
 
 
-- (int)sequenceNumber;
-- (void)setGroupID:(id)arg1;
-- (id)groupID;
-- (id)address;
-- (float)percentComplete;
+- (BOOL)isTypingIndicator;
 - (id)guid;
 - (void)dealloc;
-- (id)subject;
-- (id)calendarDate;
-- (id)sender;
-- (id)text;
-- (void)setRecipients:(id)arg1;
+- (BOOL)isPlaceholder;
+- (id)error;
+- (id)recipients;
+- (id)service;
 - (id)markup;
 - (id)attachmentParts;
 - (id)initWithMarkup:(id)arg1 parts:(id)arg2 attachmentParts:(id)arg3 subject:(id)arg4 guid:(id)arg5;
@@ -89,7 +84,6 @@
 - (BOOL)isFromDowngrading;
 - (BOOL)isFirstDisplayablePart:(id)arg1;
 - (unsigned int)messagePartCount;
-- (BOOL)isTypingIndicator;
 - (int)outgoingBubbleColor;
 - (id)previewText;
 - (BOOL)isOutgoing;
@@ -108,11 +102,17 @@
 - (BOOL)partiallyFailedSend;
 - (BOOL)failedSend;
 - (id)conversation;
-- (id)service;
-- (BOOL)isPlaceholder;
-- (id)recipients;
-- (id)error;
+- (id)subject;
+- (id)calendarDate;
+- (id)sender;
+- (id)text;
+- (int)sequenceNumber;
+- (void)setGroupID:(id)arg1;
+- (id)groupID;
+- (id)address;
+- (float)percentComplete;
 - (BOOL)hasAttachments;
 - (int)rowID;
+- (void)setRecipients:(id)arg1;
 
 @end

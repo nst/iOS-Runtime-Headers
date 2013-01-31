@@ -11,8 +11,8 @@
 @property(copy) NSArray * databases;
 
 
+- (void)dealloc;
 - (void)setDatabases:(id)arg1;
 - (id)databases;
-- (void)dealloc;
 
 @end

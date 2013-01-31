@@ -66,7 +66,6 @@
 + (id)realisticProgram;
 + (id)program;
 
-- (id)initWithStyle:(int)arg1;
 - (int)trafficTextureSampler;
 - (float)splitLength;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })travelledColor;
@@ -95,5 +94,6 @@
 - (void)setTextureSampler:(int)arg1;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })strokeColor;
 - (void)setStrokeColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
+- (id)initWithStyle:(int)arg1;
 
 @end

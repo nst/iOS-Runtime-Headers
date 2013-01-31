@@ -12,9 +12,9 @@
 + (id)deferredObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)deferredObject;
 
-- (id)groupIdentifier;
 - (id)identifier;
-- (void)setIdentifier:(id)arg1;
 - (id)encodedClassName;
+- (void)setIdentifier:(id)arg1;
+- (id)groupIdentifier;
 
 @end

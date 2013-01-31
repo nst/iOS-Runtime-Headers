@@ -20,8 +20,8 @@
 - (id)initWithFileURL:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (long long)expectedLength;
 - (void)close;
 - (BOOL)hasBytesAvailable;
-- (long long)expectedLength;
 
 @end

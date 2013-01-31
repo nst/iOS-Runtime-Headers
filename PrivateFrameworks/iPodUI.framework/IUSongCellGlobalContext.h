@@ -18,7 +18,6 @@
 @property(retain) id aggregateProperties;
 
 
-- (void)dealloc;
 - (void)setHasIndexBar:(BOOL)arg1;
 - (BOOL)hasIndexBar;
 - (void)setAggregateProperties:(id)arg1;
@@ -30,5 +29,6 @@
 - (BOOL)showsValueForProperty:(id)arg1;
 - (id)initWithPropertiesFromDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
 - (void)setShowsValue:(BOOL)arg1 forProperty:(id)arg2;
+- (void)dealloc;
 
 @end

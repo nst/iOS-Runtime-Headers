@@ -17,17 +17,9 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (void)initialize;
 + (id)sharedServer;
++ (void)initialize;
 
-- (BOOL)registerWithMach;
-- (BOOL)isRegisteredWithMach;
-- (int)_registerForNotificationOnDeathPort:(unsigned int)arg1;
-- (struct __CFRunLoopTimer { }*)_deathTimer;
-- (void)_setClientCount:(long)arg1;
-- (long)_incrementClientCount;
-- (long)_clientCount;
-- (void)unregisterWithMach;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (unsigned int)retainCount;
@@ -36,6 +28,14 @@
 - (oneway void)release;
 - (id)init;
 - (id)autorelease;
+- (BOOL)registerWithMach;
+- (BOOL)isRegisteredWithMach;
+- (int)_registerForNotificationOnDeathPort:(unsigned int)arg1;
+- (struct __CFRunLoopTimer { }*)_deathTimer;
+- (void)_setClientCount:(long)arg1;
+- (long)_incrementClientCount;
+- (long)_clientCount;
+- (void)unregisterWithMach;
 - (struct __CFRunLoopSource { }*)serverSource;
 
 @end

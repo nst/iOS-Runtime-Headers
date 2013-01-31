@@ -10,11 +10,11 @@
 @interface NSNumber : NSValue <ASParsingLeafNode> {
 }
 
-+ (id)numberWithUnsignedChar:(unsigned char)arg1;
 + (id)numberWithBool:(BOOL)arg1;
 + (id)numberWithInt:(int)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)numberWithChar:(BOOL)arg1;
++ (id)numberWithUnsignedShort:(unsigned short)arg1;
++ (id)numberWithShort:(short)arg1;
 + (id)numberWithUnsignedLongLong:(unsigned long long)arg1;
 + (id)numberWithUnsignedInteger:(unsigned int)arg1;
 + (id)numberWithLong:(long)arg1;
@@ -24,9 +24,9 @@
 + (id)numberWithInteger:(int)arg1;
 + (id)numberWithLongLong:(long long)arg1;
 + (id)numberWithDouble:(double)arg1;
++ (id)numberWithUnsignedChar:(unsigned char)arg1;
 + (BOOL)supportsSecureCoding;
-+ (id)numberWithShort:(short)arg1;
-+ (id)numberWithUnsignedShort:(unsigned short)arg1;
++ (id)numberWithChar:(BOOL)arg1;
 + (BOOL)parseString:(id)arg1 intoNSUInteger:(unsigned int*)arg2;
 + (BOOL)parseString:(id)arg1 intoNSInteger:(int*)arg2;
 + (BOOL)parseString:(id)arg1 intoUInt64:(unsigned long long*)arg2;
@@ -52,9 +52,11 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)unsignedIntegerValue;
-- (id)initWithUnsignedInteger:(unsigned int)arg1;
-- (id)initWithUnsignedLongLong:(unsigned long long)arg1;
-- (id)initWithLongLong:(long long)arg1;
+- (id)initWithInteger:(int)arg1;
+- (id)initWithFloat:(float)arg1;
+- (unsigned char)unsignedCharValue;
+- (id)initWithUnsignedInt:(unsigned int)arg1;
+- (unsigned long)unsignedLongValue;
 - (id)initWithInt:(int)arg1;
 - (id)initWithDouble:(double)arg1;
 - (id)initWithBool:(BOOL)arg1;
@@ -70,6 +72,12 @@
 - (double)doubleValue;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; })decimalValue;
+- (id)initWithChar:(BOOL)arg1;
+- (id)initWithUnsignedChar:(unsigned char)arg1;
+- (id)initWithShort:(short)arg1;
+- (id)initWithUnsignedShort:(unsigned short)arg1;
+- (BOOL)_allowsDirectEncoding;
 - (unsigned long)_cfTypeID;
 - (unsigned short)unsignedShortValue;
 - (short)shortValue;
@@ -81,18 +89,10 @@
 - (int)_reverseCompare:(id)arg1;
 - (unsigned char)_getValue:(void*)arg1 forType:(long)arg2;
 - (long)_cfNumberType;
-- (id)initWithInteger:(int)arg1;
-- (id)initWithFloat:(float)arg1;
-- (unsigned char)unsignedCharValue;
-- (id)initWithUnsignedInt:(unsigned int)arg1;
-- (unsigned long)unsignedLongValue;
-- (struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; })decimalValue;
-- (id)initWithChar:(BOOL)arg1;
-- (id)initWithUnsignedChar:(unsigned char)arg1;
-- (id)initWithShort:(short)arg1;
-- (id)initWithUnsignedShort:(unsigned short)arg1;
-- (BOOL)_allowsDirectEncoding;
+- (id)initWithUnsignedInteger:(unsigned int)arg1;
 - (id)initWithUnsignedLong:(unsigned long)arg1;
+- (id)initWithUnsignedLongLong:(unsigned long long)arg1;
+- (id)initWithLongLong:(long long)arg1;
 - (id)localizedString;
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (id)CA_interpolateValues:(id)arg1 :(id)arg2 :(id)arg3 interpolator:(const struct ValueInterpolator { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; boolx10; }*)arg4;

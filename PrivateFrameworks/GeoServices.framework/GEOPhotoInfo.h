@@ -18,20 +18,20 @@
 @property(retain) NSString * url;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (BOOL)hasSize;
+- (void)setHasSize:(BOOL)arg1;
+- (BOOL)hasUrl;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (id)dictionaryRepresentation;
 - (void)setSize:(int)arg1;
 - (int)size;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (void)setHasSize:(BOOL)arg1;
-- (BOOL)hasUrl;
-- (BOOL)readFrom:(id)arg1;
-- (BOOL)hasSize;
 
 @end

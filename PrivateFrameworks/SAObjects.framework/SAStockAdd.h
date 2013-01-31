@@ -13,10 +13,9 @@
 @property(copy) NSArray * stocks;
 @property(copy) NSString * tickerSymbol;
 
-+ (id)add;
 + (id)addWithDictionary:(id)arg1 context:(id)arg2;
++ (id)add;
 
-- (id)groupIdentifier;
 - (void)setTickerSymbol:(id)arg1;
 - (id)tickerSymbol;
 - (void)setStocks:(id)arg1;
@@ -29,5 +28,6 @@
 - (id)encodedClassName;
 - (id)companyName;
 - (void)setCompanyName:(id)arg1;
+- (id)groupIdentifier;
 
 @end

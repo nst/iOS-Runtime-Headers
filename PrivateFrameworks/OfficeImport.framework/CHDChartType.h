@@ -16,7 +16,6 @@
 + (id)chartTypeWithChart:(id)arg1;
 
 - (void)dealloc;
-- (bool)isHorizontal;
 - (bool)isVaryColors;
 - (void)setSeriesCollection:(id)arg1;
 - (id)axisForClass:(Class)arg1;
@@ -34,5 +33,6 @@
 - (id)seriesCollection;
 - (id)axes;
 - (id)contentFormat;
+- (bool)isHorizontal;
 
 @end

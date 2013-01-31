@@ -25,9 +25,6 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)setStatus:(id)arg1;
-- (id)status;
-- (id)collection;
 - (id)initWithDataclass:(int)arg1;
 - (void)_processMeetingRequestDatasForAccount:(id)arg1;
 - (void)setCollections:(id)arg1;
@@ -36,5 +33,8 @@
 - (void)addMeetingRequestData:(id)arg1;
 - (int)dataclass;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (id)collection;
 
 @end

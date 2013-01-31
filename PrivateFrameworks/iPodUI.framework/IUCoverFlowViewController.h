@@ -12,15 +12,15 @@
 @property(readonly) IUMusicCoverFlowController * coverFlowController;
 
 
-- (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(int)arg2;
-- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
-- (void)dealloc;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)loadView;
 - (BOOL)musicCoverFlowHandlePendingRotations:(id)arg1;
 - (void)musicCoverFlowFlipDidEnd:(id)arg1;
 - (void)willSwapCoverFlow;
 - (id)initWithCoverFlowController:(id)arg1;
 - (id)coverFlowController;
+- (void)dealloc;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(int)arg2;
+- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
 
 @end

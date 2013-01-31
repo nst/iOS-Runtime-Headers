@@ -5,9 +5,9 @@
 @interface HSGetGeniusItemsRequest : HSRequest  {
 }
 
-+ (id)requestWithDatabaseID:(unsigned int)arg1 seedID:(unsigned int)arg2 numberOfItems:(unsigned int)arg3;
++ (id)requestWithDatabaseID:(unsigned int)arg1 seedID:(unsigned long long)arg2 numberOfItems:(unsigned int)arg3;
 
-- (id)initWithDatabaseID:(unsigned int)arg1 seedID:(unsigned int)arg2 numberOfItems:(unsigned int)arg3;
+- (id)initWithDatabaseID:(unsigned int)arg1 seedID:(unsigned long long)arg2 numberOfItems:(unsigned int)arg3;
 - (id)canonicalResponseForResponse:(id)arg1;
 
 @end

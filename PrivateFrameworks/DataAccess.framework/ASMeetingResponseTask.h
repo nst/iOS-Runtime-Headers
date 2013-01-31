@@ -11,7 +11,6 @@
 @property(readonly) NSArray * responseItems;
 
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
 - (id)responseItems;
 - (BOOL)processContext:(id)arg1;
@@ -20,5 +19,6 @@
 - (int)commandCode;
 - (id)initWithResponseItems:(id)arg1;
 - (int)taskStatusForExchangeStatus:(int)arg1;
+- (void)finishWithError:(id)arg1;
 
 @end

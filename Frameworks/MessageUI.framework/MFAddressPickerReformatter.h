@@ -16,6 +16,7 @@
 
 
 - (void)dealloc;
+- (void)setAddresses:(id)arg1;
 - (void)setFontSize:(float)arg1;
 - (void)setMaximumWidth:(float)arg1;
 - (id)reformattedAddressStringAtIndex:(unsigned int)arg1;
@@ -36,6 +37,5 @@
 - (id)reformattedAddressAtIndex:(unsigned int)arg1;
 - (unsigned int)numberOfReformattedAddresses;
 - (void)setMinimumFontSize:(float)arg1 maximumFontSize:(float)arg2;
-- (void)setAddresses:(id)arg1;
 
 @end

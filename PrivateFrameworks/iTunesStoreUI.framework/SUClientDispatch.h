@@ -10,7 +10,6 @@
 + (BOOL)composeReviewWithViewController:(id)arg1 animated:(BOOL)arg2;
 + (BOOL)sendActionForDialog:(id)arg1 button:(id)arg2;
 + (id)newScriptInterface;
-+ (id)imageCache;
 + (BOOL)enterAccountFlowWithViewController:(id)arg1 animated:(BOOL)arg2;
 + (id)overlayConfigurationForStorePage:(id)arg1;
 + (BOOL)matchesClientApplication:(id)arg1;
@@ -25,6 +24,7 @@
 + (BOOL)openClientURL:(id)arg1;
 + (id)scriptExecutionContext;
 + (id)tabBarController;
++ (id)imageCache;
 
 
 @end

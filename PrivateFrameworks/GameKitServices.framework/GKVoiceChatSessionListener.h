@@ -11,12 +11,12 @@
 }
 
 
-- (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3;
 - (void)dealloc;
 - (id)currentSessions;
 - (void)removeSession:(id)arg1;
 - (void)registerNewGKVoiceChatSession:(id)arg1;
 - (void)receivedNewVoiceChatOOBMessage:(id)arg1 fromPeerID:(id)arg2;
 - (id)initWithSession:(id)arg1;
+- (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3;
 
 @end

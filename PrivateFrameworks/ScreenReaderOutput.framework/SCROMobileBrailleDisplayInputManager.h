@@ -12,9 +12,9 @@
     NSArray *_eightDotCommands;
 }
 
++ (id)sharedManager;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
-+ (id)sharedManager;
 
 - (unsigned int)retainCount;
 - (id)retain;

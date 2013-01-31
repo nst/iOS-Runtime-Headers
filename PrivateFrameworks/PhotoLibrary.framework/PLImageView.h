@@ -46,21 +46,14 @@
 @property float placeholderScale;
 @property(readonly) struct CGSize { float x1; float x2; } placeholderSize;
 
-+ (void)initialize;
 + (BOOL)shouldDrawShadows;
 + (struct CGSize { float x1; float x2; })badgeOffset;
 + (id)textBadgeForString:(id)arg1 photoSize:(struct CGSize { float x1; float x2; })arg2;
++ (void)initialize;
 
-- (void)setVideoView:(id)arg1;
-- (id)videoView;
 - (void)setName:(id)arg1;
 - (id)name;
 - (void)dealloc;
-- (void)setEdgeAntialiasingEnabled:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
-- (void)setImage:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)textBadgeString;
 - (id)leftAccessoryView;
 - (struct CGSize { float x1; float x2; })leftAccessoryViewOffset;
@@ -100,5 +93,12 @@
 - (void)setPlaceholderScale:(float)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 allowRounding:(BOOL)arg2;
 - (void)setBorderAndAccessoriesVisible:(BOOL)arg1;
+- (void)setEdgeAntialiasingEnabled:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
+- (void)setImage:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setVideoView:(id)arg1;
+- (id)videoView;
 
 @end

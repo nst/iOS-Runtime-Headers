@@ -45,6 +45,16 @@
 @property(readonly) int priority;
 
 
+- (id)timingFunction;
+- (id)initWithPriority:(int)arg1 name:(id)arg2;
+- (id)initWithDuration:(double)arg1 priority:(int)arg2 name:(id)arg3;
+- (BOOL)runsForever;
+- (void)setRunsForever:(BOOL)arg1;
+- (void)_stopAnimation:(BOOL)arg1;
+- (id)initWithDuration:(double)arg1 name:(id)arg2;
+- (void)startWithStepHandler:(id)arg1 completionHandler:(id)arg2;
+- (BOOL)running;
+- (void)onTimerFired:(double)arg1;
 - (void)resume;
 - (id)description;
 - (void)dealloc;
@@ -56,17 +66,7 @@
 - (void)setTimingFunction:(id)arg1;
 - (double)duration;
 - (void)setDuration:(double)arg1;
-- (id)initWithName:(id)arg1;
-- (id)timingFunction;
-- (id)initWithPriority:(int)arg1 name:(id)arg2;
-- (id)initWithDuration:(double)arg1 priority:(int)arg2 name:(id)arg3;
-- (BOOL)runsForever;
-- (void)setRunsForever:(BOOL)arg1;
-- (void)_stopAnimation:(BOOL)arg1;
-- (id)initWithDuration:(double)arg1 name:(id)arg2;
-- (void)startWithStepHandler:(id)arg1 completionHandler:(id)arg2;
-- (BOOL)running;
-- (void)onTimerFired:(double)arg1;
 - (id)initWithDuration:(double)arg1;
+- (id)initWithName:(id)arg1;
 
 @end

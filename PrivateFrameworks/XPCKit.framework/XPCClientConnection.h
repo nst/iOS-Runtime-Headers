@@ -21,7 +21,7 @@
 - (id)debugDescription;
 - (void).cxx_destruct;
 - (id)initWithServiceName:(id)arg1 delegate:(id)arg2;
-- (void)shutDownCompletionBlock:(id)arg1;
 - (void)_handleIncomingMessage:(id)arg1;
+- (void)shutDownCompletionBlock:(id)arg1;
 
 @end

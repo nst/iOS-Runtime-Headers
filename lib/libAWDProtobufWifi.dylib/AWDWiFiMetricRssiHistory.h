@@ -20,13 +20,6 @@
 @property(readonly) int* rssiHistorys;
 
 
-- (unsigned long long)timestamp;
-- (void)setTimestamp:(unsigned long long)arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
 - (void)setRssiHistorys:(int*)arg1 count:(unsigned int)arg2;
 - (int*)rssiHistorys;
 - (void)addRssiHistory:(int)arg1;
@@ -35,8 +28,15 @@
 - (unsigned int)rssiHistorysCount;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (unsigned long long)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
+- (id)dictionaryRepresentation;
 
 @end

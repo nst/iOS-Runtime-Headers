@@ -16,11 +16,11 @@
 - (id)userInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (id)initWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (id)object;
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;
+- (id)initWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 
 @end

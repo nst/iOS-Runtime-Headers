@@ -15,15 +15,15 @@
 @property int statusBarOrientation;
 
 
-- (id)oldDelegate;
-- (id)oldRootViewController;
-- (void)setOldDelegate:(id)arg1;
-- (void)setOldRootViewController:(id)arg1;
 - (void)dealloc;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)setStatusBarOrientation:(int)arg1;
 - (int)statusBarOrientation;
+- (id)oldDelegate;
+- (id)oldRootViewController;
+- (void)setOldDelegate:(id)arg1;
+- (void)setOldRootViewController:(id)arg1;
 
 @end

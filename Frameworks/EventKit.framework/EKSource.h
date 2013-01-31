@@ -13,15 +13,15 @@
 @property(readonly) NSSet * calendars;
 
 
+- (BOOL)remove:(id*)arg1;
 - (id)description;
 - (id)init;
+- (id)sourceIdentifier;
+- (id)externalID;
 - (id)constraints;
 - (int)sourceType;
 - (id)title;
 - (BOOL)isEnabled;
-- (BOOL)remove:(id*)arg1;
-- (id)sourceIdentifier;
-- (id)externalID;
 - (int)displayOrderForNewCalendar;
 - (void)setDefaultAlarmOffset:(id)arg1;
 - (id)defaultAlarmOffset;

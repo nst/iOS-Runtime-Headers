@@ -27,11 +27,6 @@
 @property(readonly) GEOMapRegion * boundingMapRegion;
 
 
-- (void)addObserver:(id)arg1;
-- (void)removeObserver:(id)arg1;
-- (void)dealloc;
-- (id)sections;
-- (struct { double x1; double x2; })coordinate;
 - (struct { double x1; double x2; })coordinateAtIndex:(unsigned int)arg1;
 - (BOOL)resetTrafficWithRoute:(id)arg1 WithStep:(struct RouteCalibration { unsigned int x1; float x2; }*)arg2 trafficWalking:(struct TrafficWalking { double x1; int x2; int x3; unsigned int *x4; unsigned int *x5; }*)arg3 routeIndex:(int*)arg4;
 - (void)calibrate:(struct RouteCalibration { unsigned int x1; float x2; }*)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3 forDistance:(unsigned int)arg4;
@@ -48,6 +43,11 @@
 - (id)initWithRoute:(id)arg1;
 - (id)route;
 - (id)boundingMapRegion;
+- (void)removeObserver:(id)arg1;
+- (void)dealloc;
+- (struct { double x1; double x2; })coordinate;
 - (unsigned int)pointCount;
+- (id)sections;
+- (void)addObserver:(id)arg1;
 
 @end

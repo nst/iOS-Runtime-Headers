@@ -13,12 +13,12 @@
 + (id)createSessionInfoResponseWithDictionary:(id)arg1 context:(id)arg2;
 + (id)createSessionInfoResponse;
 
-- (id)groupIdentifier;
 - (void)setValidityDuration:(id)arg1;
 - (id)validityDuration;
 - (void)setSessionInfo:(id)arg1;
 - (id)sessionInfo;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

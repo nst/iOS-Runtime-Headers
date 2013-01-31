@@ -14,12 +14,12 @@
 
 + (id)sharedMotionManager;
 
+- (void)removeObserver:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)_beginMotionUpdates;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
 - (id)addObserverWithAccelerometerHandler:(id)arg1;
-- (void)removeObserver:(id)arg1;
-- (void)dealloc;
-- (id)init;
 
 @end

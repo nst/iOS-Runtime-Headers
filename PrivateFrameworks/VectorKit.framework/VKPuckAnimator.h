@@ -22,6 +22,12 @@
 @property(retain) VKAttributedRouteMatch * lastProjectedLocation;
 
 
+- (void)setLastProjectedLocation:(id)arg1;
+- (id)lastProjectedLocation;
+- (void)updateLocation:(id)arg1 routeMatch:(id)arg2;
+- (void)_step;
+- (double)tracePlaybackSpeedMultiplier;
+- (void)setTracePlaybackSpeedMultiplier:(double)arg1;
 - (void)resume;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
@@ -32,11 +38,5 @@
 - (void)pause;
 - (void)stop;
 - (void)start;
-- (void)setLastProjectedLocation:(id)arg1;
-- (id)lastProjectedLocation;
-- (void)updateLocation:(id)arg1 routeMatch:(id)arg2;
-- (void)_step;
-- (double)tracePlaybackSpeedMultiplier;
-- (void)setTracePlaybackSpeedMultiplier:(double)arg1;
 
 @end

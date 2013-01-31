@@ -16,11 +16,11 @@
 @property(readonly) NSString * lastName;
 
 
+- (void)dealloc;
+- (id)initWithRecipient:(id)arg1;
+- (id)emailAddress;
+- (id)displayName;
 - (id)lastName;
 - (id)firstName;
-- (void)dealloc;
-- (id)displayName;
-- (id)emailAddress;
-- (id)initWithRecipient:(id)arg1;
 
 @end

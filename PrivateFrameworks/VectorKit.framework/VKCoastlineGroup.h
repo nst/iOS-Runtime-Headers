@@ -37,13 +37,6 @@
 @property float antialiasingBrushWidth;
 
 
-- (void)dealloc;
-- (BOOL)visible;
-- (id)initWithStyle:(id)arg1;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })shadowColor;
-- (void)setVisible:(BOOL)arg1;
-- (void)setShadowColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
-- (id)style;
 - (float)antialiasingBrushWidth;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })antialiasingBrushColor;
 - (float)shadowWidth;
@@ -53,5 +46,12 @@
 - (void)setAntialiasingBrushColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setShadowWidth:(float)arg1;
 - (unsigned int)triangleCount;
+- (void)dealloc;
+- (BOOL)visible;
+- (id)initWithStyle:(id)arg1;
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })shadowColor;
+- (void)setVisible:(BOOL)arg1;
+- (void)setShadowColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
+- (id)style;
 
 @end

@@ -23,6 +23,7 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (id)inputStream;
 - (id)outputStream;
 - (id)accessory;
 - (void)setOpenCompleted:(BOOL)arg1;
@@ -33,6 +34,5 @@
 - (void)_streamClosed;
 - (unsigned int)_sessionID;
 - (id)protocolString;
-- (id)inputStream;
 
 @end

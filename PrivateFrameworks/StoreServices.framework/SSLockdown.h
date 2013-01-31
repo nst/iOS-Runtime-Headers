@@ -13,7 +13,6 @@
 
 + (id)sharedInstance;
 
-- (struct __CFString { }*)copyDeviceGUID;
 - (void)dealloc;
 - (id)init;
 - (void)_setLocalValue:(void*)arg1 forKey:(struct __CFString { }*)arg2 domain:(struct __CFString { }*)arg3;
@@ -28,5 +27,6 @@
 - (id)_ntsLocalDictionary;
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2 domain:(struct __CFString { }*)arg3;
 - (void*)copyValueForKey:(struct __CFString { }*)arg1 domain:(struct __CFString { }*)arg2;
+- (struct __CFString { }*)copyDeviceGUID;
 
 @end

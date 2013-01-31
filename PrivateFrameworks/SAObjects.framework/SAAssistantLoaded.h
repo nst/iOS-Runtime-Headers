@@ -15,9 +15,6 @@
 + (id)assistantLoadedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)assistantLoaded;
 
-- (id)groupIdentifier;
-- (void)setVersion:(id)arg1;
-- (id)version;
 - (void)setSyncAnchors:(id)arg1;
 - (id)syncAnchors;
 - (void)setRequestSync:(id)arg1;
@@ -26,5 +23,8 @@
 - (id)dataAnchor;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (void)setVersion:(id)arg1;
+- (id)version;
+- (id)groupIdentifier;
 
 @end

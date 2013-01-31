@@ -11,19 +11,19 @@
 @property(retain) NSMutableArray * pointCharacteristics;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)pointCharacteristics;
 - (id)pointCharacteristicAtIndex:(unsigned int)arg1;
 - (void)clearPointCharacteristics;
 - (unsigned int)pointCharacteristicsCount;
 - (void)addPointCharacteristic:(id)arg1;
 - (void)setPointCharacteristics:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

@@ -34,7 +34,8 @@
 
 - (void)dealloc;
 - (id)init;
-- (BOOL)isValid;
+- (BOOL)isReadable;
+- (void)abort;
 - (void)setUsesOpportunisticSockets:(BOOL)arg1;
 - (BOOL)usesOpportunisticSockets;
 - (BOOL)isForcedConnection;
@@ -54,9 +55,8 @@
 - (void)setAllowsTrustPrompt:(BOOL)arg1;
 - (BOOL)allowsTrustPrompt;
 - (void)setConnectionServiceType:(struct __CFString { }*)arg1;
+- (BOOL)isValid;
 - (int)timeout;
 - (void)setTimeout:(int)arg1;
-- (BOOL)isReadable;
-- (void)abort;
 
 @end

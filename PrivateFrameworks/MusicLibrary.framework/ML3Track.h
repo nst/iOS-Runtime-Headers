@@ -14,7 +14,6 @@
 + (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2;
 + (id)orderingTermsForITTGTrackOrder:(unsigned long)arg1 descending:(BOOL)arg2;
 + (BOOL)trackValueAreInTheCloud:(id)arg1;
-+ (BOOL)trackWithPersistentID:(long long)arg1 existsInLibrary:(id)arg2;
 + (id)TVShowEpisodesDefaultOrderingProperties;
 + (id)podcastsEpisodesDefaultOrderingProperties;
 + (id)composersDefaultOrderingProperties;
@@ -49,6 +48,7 @@
 + (id)foreignDatabaseTableForProperty:(id)arg1;
 + (id)joinClausesForProperty:(id)arg1;
 + (id)unsettableProperties;
++ (BOOL)trackWithPersistentID:(long long)arg1 existsInLibrary:(id)arg2;
 + (int)revisionTrackingCode;
 + (id)persistentIDColumnForTable:(id)arg1;
 + (id)defaultOrderingProperties;

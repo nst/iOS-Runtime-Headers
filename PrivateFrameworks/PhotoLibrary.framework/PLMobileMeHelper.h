@@ -10,9 +10,9 @@
 }
 
 + (id)sharedInstance;
-+ (id)serviceName;
 + (id)userAgentString;
 + (id)preferredUsername;
++ (id)serviceName;
 
 - (void)dealloc;
 - (void)invalidateUserAccounts;

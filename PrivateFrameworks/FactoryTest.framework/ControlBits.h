@@ -5,15 +5,15 @@
 @interface ControlBits : NSObject  {
 }
 
++ (int)writeControlBits:(unsigned char)arg1 status:(int)arg2 swVersion:(id)arg3;
 + (int)readControlBit:(unsigned char)arg1 into:(out id*)arg2;
 + (bool)conformsToiPXInterface;
 + (Class)implementationClass;
 + (int)readControlBitsBytes:(char *)arg1 bufferLen:(unsigned short)arg2;
 + (bool)_headerCheck;
-+ (int)writeControlBits:(unsigned char)arg1 status:(int)arg2 swVersion:(id)arg3;
-+ (void)initialize;
-+ (int)writeControlBits:(unsigned char)arg1 status:(int)arg2;
 + (int)readControlBits:(unsigned char)arg1 status:(int*)arg2 failCount:(int*)arg3 secure:(BOOL*)arg4;
++ (int)writeControlBits:(unsigned char)arg1 status:(int)arg2;
++ (void)initialize;
 
 
 @end

@@ -14,7 +14,6 @@
 
 
 - (void)dealloc;
-- (id)command;
 - (id)contentType;
 - (id)requestBodyStreamOutKnownSize:(int*)arg1;
 - (void)handleTopLevelErrorStatus:(id)arg1;
@@ -24,5 +23,6 @@
 - (BOOL)processContext:(id)arg1;
 - (BOOL)getTopLevelToken:(char *)arg1 outStatusCodePage:(char *)arg2 outStatusToken:(char *)arg3;
 - (int)commandCode;
+- (id)command;
 
 @end

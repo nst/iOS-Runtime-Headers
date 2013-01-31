@@ -5,11 +5,11 @@
 @interface AuthScheme : NSObject  {
 }
 
-+ (void)initialize;
 + (id)authSchemesForAccount:(id)arg1 connection:(id)arg2;
 + (id)knownSchemes;
 + (void)registerSchemeClass:(Class)arg1;
 + (id)schemeWithName:(id)arg1;
++ (void)initialize;
 
 - (id)name;
 - (id)humanReadableName;

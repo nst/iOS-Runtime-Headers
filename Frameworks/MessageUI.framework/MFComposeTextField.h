@@ -9,8 +9,8 @@
 @property(readonly) BOOL isShowingDictationPlaceholder;
 
 
+- (BOOL)isShowingDictationPlaceholder;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (id)insertDictationResultPlaceholder;
-- (BOOL)isShowingDictationPlaceholder;
 
 @end

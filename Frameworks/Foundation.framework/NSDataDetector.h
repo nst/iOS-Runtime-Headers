@@ -11,7 +11,7 @@
 + (void)initialize;
 + (id)dataDetectorWithTypes:(unsigned long long)arg1 error:(id*)arg2;
 
-- (unsigned int)numberOfCaptureGroups;
+- (id)pattern;
 - (id)initWithPattern:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (id)description;
 - (unsigned int)hash;
@@ -21,7 +21,7 @@
 - (unsigned int)options;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)pattern;
+- (unsigned int)numberOfCaptureGroups;
 - (unsigned long long)checkingTypes;
 - (id)initWithTypes:(unsigned long long)arg1 error:(id*)arg2;
 - (void)enumerateMatchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 usingBlock:(id)arg4;

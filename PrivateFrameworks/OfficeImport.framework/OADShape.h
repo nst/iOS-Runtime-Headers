@@ -13,8 +13,6 @@
 - (int)type;
 - (void)dealloc;
 - (id)init;
-- (void)setGeometry:(id)arg1;
-- (id)geometry;
 - (void)createPresetGeometryWithShapeType:(int)arg1;
 - (void)flattenProperties;
 - (void)removeUnnecessaryOverrides;
@@ -22,5 +20,7 @@
 - (void)setParentTextListStyle:(id)arg1;
 - (id)textBody;
 - (id)shapeProperties;
+- (void)setGeometry:(id)arg1;
+- (id)geometry;
 
 @end

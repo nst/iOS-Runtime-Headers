@@ -23,14 +23,23 @@
 @property(readonly) NSString * fileSystemPath;
 
 
+- (id)valueForUndefinedKey:(id)arg1;
+- (id)name;
+- (id)description;
+- (void)dealloc;
+- (BOOL)hasThumbnail;
+- (void)setModificationDate:(id)arg1;
+- (void)flushThumbnailCache;
+- (void)flushMetadataCache;
+- (id)parentFolder;
+- (void)requestThumbnail;
+- (void)requestMetadata;
+- (void)setCreationDate:(id)arg1;
+- (id)creationDate;
 - (id)fileSystemPath;
 - (void)appendToPath:(id)arg1;
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
 - (BOOL)hasMetadata;
-- (id)name;
-- (id)description;
-- (void)dealloc;
-- (id)metadata;
 - (struct CGImage { }*)thumbnail;
 - (id)device;
 - (void)setUTI:(id)arg1;
@@ -39,17 +48,8 @@
 - (void)finalize;
 - (void)setLocked:(BOOL)arg1;
 - (BOOL)isLocked;
-- (id)valueForUndefinedKey:(id)arg1;
-- (BOOL)hasThumbnail;
-- (void)setModificationDate:(id)arg1;
-- (void)flushThumbnailCache;
-- (void)flushMetadataCache;
-- (id)parentFolder;
-- (void)requestThumbnail;
-- (void)requestMetadata;
 - (id)modificationDate;
-- (void)setCreationDate:(id)arg1;
-- (id)creationDate;
+- (id)metadata;
 - (BOOL)isCameraFile;
 
 @end

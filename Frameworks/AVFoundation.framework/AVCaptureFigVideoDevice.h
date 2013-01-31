@@ -71,14 +71,15 @@
 + (BOOL)_cameraAccessIsEnabled;
 + (id)_devices;
 
-- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)dealloc;
 - (id)init;
+- (float)contrast;
+- (void)setContrast:(float)arg1;
 - (id)initWithProperties:(id)arg1;
 - (id)localizedName;
 - (int)position;
-- (float)contrast;
-- (void)setContrast:(float)arg1;
+- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
+- (id)uniqueID;
 - (BOOL)_setContrast:(float)arg1;
 - (BOOL)_setSaturation:(float)arg1;
 - (void)_setTorchActive:(BOOL)arg1;
@@ -193,6 +194,5 @@
 - (BOOL)hasMediaType:(id)arg1;
 - (id)devicePropertiesDictionary;
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
-- (id)uniqueID;
 
 @end

@@ -43,6 +43,20 @@
 + (void)loadCategoriesForGame:(id)arg1 withPlayer:(id)arg2 withCompletionHandler:(id)arg3;
 + (void)loadCategoryWithID:(id)arg1 forGame:(id)arg2 withPlayer:(id)arg3 withCompletionHandler:(id)arg4;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)category;
+- (void)setCategory:(id)arg1;
+- (BOOL)isLoading;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (id)title;
+- (void)setTitle:(id)arg1;
 - (void)setLoadingCount:(int)arg1;
 - (int)loadingCount;
 - (void)setPlayerIDs:(id)arg1;
@@ -64,19 +78,5 @@
 - (id)initWithPlayerIDs:(id)arg1;
 - (unsigned int)maxRange;
 - (id)localPlayerScore;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)category;
-- (void)setCategory:(id)arg1;
-- (BOOL)isLoading;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

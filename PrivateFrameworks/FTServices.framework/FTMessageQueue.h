@@ -18,6 +18,13 @@
 @property(retain) NSMutableArray * _addDates;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (int)count;
+- (id)_queue;
+- (id)messages;
 - (void)set_addDates:(id)arg1;
 - (id)_addDates;
 - (void)set_queue:(id)arg1;
@@ -26,15 +33,8 @@
 - (void)_clearTimeout;
 - (void)_timeoutHit;
 - (id)topMessage;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
-- (int)count;
 - (void)removeAllMessages;
 - (BOOL)removeMessage:(id)arg1;
 - (BOOL)addMessage:(id)arg1;
-- (id)_queue;
-- (id)messages;
 
 @end

@@ -28,12 +28,6 @@
 
 - (void)setDelegate:(id)arg1;
 - (void).cxx_destruct;
-- (id)color;
-- (void)setColor:(id)arg1;
-- (void)layoutSubviews;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setNeedsDisplay;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)hasBeveledEdge;
 - (BOOL)usesGradient;
 - (void)setGradientEndColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
@@ -48,5 +42,11 @@
 - (void)setPaperColor:(id)arg1;
 - (void)setGradientValues:(const struct { float x1; float x2; float x3; float x4; }*)arg1;
 - (id)paperImage;
+- (id)color;
+- (void)setColor:(id)arg1;
+- (void)layoutSubviews;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setNeedsDisplay;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

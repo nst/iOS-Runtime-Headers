@@ -62,11 +62,10 @@
 @property(readonly) NSArray * URLs;
 
 
-- (id)HTTPBody;
-- (id)HTTPMethod;
-- (id)initWithURLRequest:(id)arg1;
 - (id)_initCommon;
 - (id)HTTPHeaders;
+- (id)URLBagURLBlock;
+- (int)URLBagType;
 - (id)URLBagKey;
 - (id)requestParameters;
 - (BOOL)canBeResolved;
@@ -78,13 +77,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)URLBagURLBlock;
 - (BOOL)shouldDisableCellularFallback;
 - (BOOL)shouldDecodeResponse;
 - (BOOL)requiresExtendedValidationCertificates;
 - (BOOL)shouldProcessProtocol;
 - (BOOL)isITunesStoreRequest;
-- (int)URLBagType;
 - (int)allowedRetryCount;
 - (id)userAgentComponents;
 - (id)copyURLRequest;
@@ -94,6 +91,9 @@
 - (id)URLs;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)HTTPBody;
+- (id)HTTPMethod;
+- (id)initWithURLRequest:(id)arg1;
 - (long long)expectedContentLength;
 - (id)HTTPBodyStream;
 - (unsigned int)networkServiceType;

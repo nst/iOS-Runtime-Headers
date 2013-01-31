@@ -9,15 +9,15 @@
 }
 
 
-- (id)init;
-- (id)body;
-- (id)title;
-- (id)origin;
-- (id)tag;
 - (void)dispatchErrorEvent;
 - (void)dispatchClickEvent;
 - (void)dispatchCloseEvent;
 - (void)dispatchShowEvent;
 - (unsigned long long)notificationID;
+- (id)init;
+- (id)body;
+- (id)title;
+- (id)origin;
+- (id)tag;
 
 @end

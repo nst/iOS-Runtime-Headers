@@ -24,7 +24,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (bool)isEmpty;
 - (void)setPhoneticInfo:(id)arg1;
 - (BOOL)isEqualToEDString:(id)arg1;
 - (id)initWithString:(id)arg1 runs:(id)arg2;
@@ -34,5 +33,6 @@
 - (void)setRuns:(id)arg1;
 - (bool)areThereRuns;
 - (id)runs;
+- (bool)isEmpty;
 
 @end

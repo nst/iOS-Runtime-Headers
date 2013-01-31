@@ -15,13 +15,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)function;
-- (id)_expressionWithSubstitutionVariables:(id)arg1;
-- (id)predicateFormat;
-- (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
-- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
-- (id)initWithExpressionType:(unsigned int)arg1 operand:(id)arg2 selector:(SEL)arg3 argumentArray:(id)arg4;
-- (id)operand;
 - (SEL)selector;
 - (id)arguments;
 - (void)encodeWithCoder:(id)arg1;
@@ -30,6 +23,13 @@
 - (BOOL)_shouldUseParensWithDescription;
 - (id)initWithSelector:(SEL)arg1 argumentArray:(id)arg2;
 - (id)initWithTarget:(id)arg1 selectorName:(id)arg2 arguments:(id)arg3;
+- (id)function;
+- (id)_expressionWithSubstitutionVariables:(id)arg1;
+- (id)predicateFormat;
+- (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (id)initWithExpressionType:(unsigned int)arg1 operand:(id)arg2 selector:(SEL)arg3 argumentArray:(id)arg4;
+- (id)operand;
 - (id)_mapKVCOperatorsToFunctionsInContext:(id)arg1;
 - (id)minimalFormInContext:(id)arg1;
 

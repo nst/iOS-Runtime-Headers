@@ -10,9 +10,9 @@
 
 + (Class)responseClass;
 
-- (void).cxx_destruct;
 - (id)urlString;
-- (id)urlRequest;
+- (void).cxx_destruct;
 - (id)initWithAccount:(id)arg1;
+- (id)urlRequest;
 
 @end

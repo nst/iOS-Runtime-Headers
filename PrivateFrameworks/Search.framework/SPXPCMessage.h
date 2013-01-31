@@ -20,18 +20,18 @@
 @property unsigned int sharedMemoryLength;
 
 
-- (void)setInfo:(id)arg1;
+- (id)name;
+- (void)dealloc;
 - (void)setSharedMemoryLength:(unsigned int)arg1;
 - (void)setSharedMemoryRegion:(unsigned int)arg1;
 - (unsigned int)sharedMemoryLength;
 - (unsigned int)sharedMemoryRegion;
-- (id)_createXPCMessage;
 - (void)sendReply:(id)arg1;
-- (id)name;
-- (void)dealloc;
-- (id)info;
+- (id)_createXPCMessage;
 - (id)_initWithXPCMessage:(id)arg1 onConnection:(id)arg2;
-- (id)initWithName:(id)arg1;
+- (id)info;
+- (void)setInfo:(id)arg1;
 - (BOOL)needsReply;
+- (id)initWithName:(id)arg1;
 
 @end

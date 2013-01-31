@@ -28,6 +28,7 @@
 - (void)setDefaultValue:(id)arg1;
 - (id)defaultValue;
 - (void)dealloc;
+- (void)cancelButtonClicked:(id)arg1;
 - (id)dismissDelegate;
 - (void)setDismissDelegate:(id)arg1;
 - (BOOL)_allowsAutorotation;
@@ -43,6 +44,5 @@
 - (id)cancelBarButtonItem;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (void)cancelButtonClicked:(id)arg1;
 
 @end

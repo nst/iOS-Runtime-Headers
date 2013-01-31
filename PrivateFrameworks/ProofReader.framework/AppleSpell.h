@@ -28,15 +28,6 @@
 
 
 - (id)init;
-- (id)spellServer:(id)arg1 alternativesForPinyinInputString:(id)arg2 language:(id)arg3;
-- (id)spellServer:(id)arg1 stringForInputString:(id)arg2 language:(id)arg3;
-- (id)spellServer:(id)arg1 suggestWordWithLengthInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 language:(id)arg3;
-- (id)spellServer:(id)arg1 suggestCompletionsForPartialWordRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inString:(id)arg3 language:(id)arg4;
-- (id)spellServer:(id)arg1 suggestGuessesForWordRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inString:(id)arg3 language:(id)arg4;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })spellServer:(id)arg1 findMisspelledWordInString:(id)arg2 language:(id)arg3 wordCount:(int*)arg4 countOnly:(BOOL)arg5 correction:(id*)arg6;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })spellServer:(id)arg1 checkGrammarInString:(id)arg2 language:(id)arg3 details:(id*)arg4;
-- (id)bundle;
-- (void)timeout:(id)arg1;
 - (id)spellServer:(id)arg1 _retainedAlternativesForPinyinInputString:(id)arg2 extended:(BOOL)arg3;
 - (id)_retainedAlternativesByCombiningAlternatives:(id)arg1 withAlternatives:(id)arg2;
 - (id)_recursiveRetainedAlternativesForPinyinInputString:(id)arg1 depth:(unsigned int)arg2;
@@ -92,5 +83,14 @@
 - (id)localizationForLanguage:(id)arg1;
 - (id)localizationsForLanguage:(id)arg1;
 - (void)resetTimer;
+- (void)timeout:(id)arg1;
+- (id)spellServer:(id)arg1 alternativesForPinyinInputString:(id)arg2 language:(id)arg3;
+- (id)spellServer:(id)arg1 stringForInputString:(id)arg2 language:(id)arg3;
+- (id)spellServer:(id)arg1 suggestWordWithLengthInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 language:(id)arg3;
+- (id)spellServer:(id)arg1 suggestCompletionsForPartialWordRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inString:(id)arg3 language:(id)arg4;
+- (id)spellServer:(id)arg1 suggestGuessesForWordRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inString:(id)arg3 language:(id)arg4;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })spellServer:(id)arg1 findMisspelledWordInString:(id)arg2 language:(id)arg3 wordCount:(int*)arg4 countOnly:(BOOL)arg5 correction:(id*)arg6;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })spellServer:(id)arg1 checkGrammarInString:(id)arg2 language:(id)arg3 details:(id*)arg4;
+- (id)bundle;
 
 @end

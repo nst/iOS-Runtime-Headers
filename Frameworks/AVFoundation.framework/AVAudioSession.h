@@ -18,9 +18,6 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)privateAllocInitSingleton;
 
-- (BOOL)setMode:(id)arg1 error:(id*)arg2;
-- (BOOL)setCategory:(id)arg1 error:(id*)arg2;
-- (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (unsigned int)retainCount;
@@ -29,9 +26,12 @@
 - (oneway void)release;
 - (id)init;
 - (id)autorelease;
+- (double)sampleRate;
 - (id)category;
 - (id)mode;
-- (double)sampleRate;
+- (BOOL)setMode:(id)arg1 error:(id*)arg2;
+- (BOOL)setCategory:(id)arg1 error:(id*)arg2;
+- (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
 - (void)privateHandleServerDied;
 - (void)privateHandlePromptStyleChange:(id)arg1;
 - (void)privateHandleOutputDataSourcesChange:(id)arg1;

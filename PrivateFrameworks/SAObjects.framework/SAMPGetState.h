@@ -12,10 +12,10 @@
 + (id)getStateWithDictionary:(id)arg1 context:(id)arg2;
 + (id)getState;
 
-- (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

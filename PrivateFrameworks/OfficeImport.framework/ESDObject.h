@@ -17,7 +17,6 @@
 
 
 - (void)dealloc;
-- (id)initWithType:(unsigned short)arg1;
 - (id)pbInitWithType:(unsigned short)arg1 version:(unsigned short)arg2 state:(id)arg3;
 - (void)writeToWriter:(struct OcWriter { int (**x1)(); }*)arg1;
 - (long)shapeID;
@@ -30,5 +29,6 @@
 - (void)setChart:(bool)arg1;
 - (struct EshObject { int (**x1)(); unsigned short x2; }*)eshObject;
 - (id)parent;
+- (id)initWithType:(unsigned short)arg1;
 
 @end

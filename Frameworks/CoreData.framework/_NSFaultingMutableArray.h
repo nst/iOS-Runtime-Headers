@@ -33,11 +33,6 @@
 - (oneway void)release;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (unsigned int)count;
-- (id)relationship;
-- (void)turnIntoFault;
-- (BOOL)isFault;
-- (void)willRead;
-- (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)source;
@@ -55,5 +50,10 @@
 - (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
 - (void)getObjects:(id*)arg1;
 - (id)descriptionWithLocale:(id)arg1;
+- (id)relationship;
+- (void)turnIntoFault;
+- (BOOL)isFault;
+- (void)willRead;
+- (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
 
 @end

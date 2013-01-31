@@ -12,12 +12,12 @@
 @property BOOL drawRoads;
 
 
-- (void)dealloc;
-- (id)init;
 - (BOOL)drawRoads;
 - (void)drawDebugScene:(id)arg1 WithContext:(id)arg2;
 - (void)setDrawRoads:(BOOL)arg1;
 - (void)drawScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
+- (void)dealloc;
+- (id)init;
 
 @end

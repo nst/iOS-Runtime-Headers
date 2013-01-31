@@ -5,11 +5,11 @@
 @interface FTiMessageServerBag : FTServerBag  {
 }
 
++ (id)sharedInstance;
 + (id)_sharedInstanceForClass:(Class)arg1;
 + (id)_bagCreationLock;
-+ (id)sharedInstance;
 
-- (id)_bagDefaultsDomain;
 - (id)init;
+- (id)_bagDefaultsDomain;
 
 @end

@@ -37,9 +37,9 @@
 + (void)getBuyOfferDictionary:(id*)arg1 regularPriceOfferDictionary:(id*)arg2 inOfferDictionaries:(id)arg3 variant:(int)arg4;
 + (int)bestOfferVariantInOfferDictionaries:(id)arg1 withPreferredVariant:(int)arg2;
 
-- (id)displayTitle;
-- (id)buyParameters;
+- (void)dealloc;
 - (id)entityTitle;
+- (int)entityType;
 - (unsigned long long)entityPersistentID;
 - (id)storeOfferDictionary;
 - (double)previewDuration;
@@ -47,6 +47,8 @@
 - (unsigned long long)downloadSize;
 - (id)regularPriceDisplayPrice;
 - (BOOL)requiresConfirmation;
+- (id)displayTitle;
+- (id)buyParameters;
 - (id)buyURL;
 - (id)displayPrice;
 - (id)actionDisplayTitle;
@@ -55,7 +57,5 @@
 - (float)price;
 - (id)initWithStoreOfferDictionary:(id)arg1 regularPriceOfferDictionary:(id)arg2 passType:(int)arg3 entityType:(int)arg4 persistentID:(unsigned long long)arg5 title:(id)arg6;
 - (int)buyType;
-- (void)dealloc;
-- (int)entityType;
 
 @end

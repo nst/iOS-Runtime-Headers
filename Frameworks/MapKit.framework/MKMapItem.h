@@ -6,6 +6,7 @@
 
 @interface MKMapItem : NSObject  {
     NSString *_businessID;
+    NSString *_localSearchProviderID;
     NSString *_yelpID;
     NSArray *_attributions;
     BOOL isCurrentLocation;
@@ -23,6 +24,7 @@
 
 @property(readonly) BOOL isBusiness;
 @property(retain) NSString * businessID;
+@property(retain) NSString * localSearchProviderID;
 @property(retain) NSString * yelpID;
 @property(retain) NSString * placeID;
 @property(retain) NSArray * attributions;
@@ -38,6 +40,7 @@
 @property(copy) NSString * phoneNumber;
 @property(retain) NSURL * url;
 @property(copy) NSString * businessID;
+@property(copy) NSString * localSearchProviderID;
 @property(copy) NSString * yelpID;
 @property(copy) NSString * placeID;
 @property(copy) NSNumber * numberOfReviews;
@@ -56,12 +59,25 @@
 + (id)urlForMapItems:(id)arg1 options:(id)arg2;
 + (id)urlForMapItem:(id)arg1 options:(id)arg2;
 
-- (id)initWithPlacemark:(id)arg1;
-- (void)setRating:(id)arg1;
-- (id)rating;
+- (void)setAttributions:(id)arg1;
+- (id)businessID;
+- (id)attributions;
 - (void)setName:(id)arg1;
 - (id)name;
 - (void)dealloc;
+- (void)setExtSessionGuid:(id)arg1;
+- (id)extSessionGuid;
+- (void)setPlaceID:(id)arg1;
+- (id)placeID;
+- (void)setBusinessID:(id)arg1;
+- (void)setNumberOfReviews:(id)arg1;
+- (id)numberOfReviews;
+- (void)setNumberOfRatings:(id)arg1;
+- (id)numberOfRatings;
+- (id)entryPoints;
+- (void)setLocalSearchProviderID:(id)arg1;
+- (id)localSearchProviderID;
+- (void)setEntryPoints:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (id)dictionaryRepresentation;
@@ -76,20 +92,9 @@
 - (void)setPlacemark:(id)arg1;
 - (id)yelpID;
 - (id)placemark;
-- (void)setAttributions:(id)arg1;
-- (id)businessID;
-- (id)attributions;
-- (void)setPlaceID:(id)arg1;
-- (id)placeID;
-- (void)setBusinessID:(id)arg1;
-- (void)setNumberOfReviews:(id)arg1;
-- (id)numberOfReviews;
-- (void)setNumberOfRatings:(id)arg1;
-- (id)numberOfRatings;
-- (id)entryPoints;
-- (void)setEntryPoints:(id)arg1;
+- (void)setRating:(id)arg1;
+- (id)rating;
+- (id)initWithPlacemark:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
-- (void)setExtSessionGuid:(id)arg1;
-- (id)extSessionGuid;
 
 @end

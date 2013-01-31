@@ -15,6 +15,10 @@
 @property(copy) NSNumber * version;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)messageBody;
 - (void)setDeliveryStatusContext:(id)arg1;
 - (id)deliveryStatusContext;
 - (void)setWantsDeliveryStatus:(id)arg1;
@@ -23,11 +27,7 @@
 - (BOOL)wantsUserAgentInHeaders;
 - (BOOL)wantsAPSRetries;
 - (BOOL)wantsHTTPHeaders;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
 - (void)setVersion:(id)arg1;
 - (id)version;
-- (id)messageBody;
 
 @end

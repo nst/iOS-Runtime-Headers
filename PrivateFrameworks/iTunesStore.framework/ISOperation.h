@@ -36,7 +36,6 @@
 @property(copy) NSArray * serializationLockIdentifiers;
 
 
-- (void)setError:(id)arg1;
 - (void)sendProgressToDelegate;
 - (long)runRunLoopUntilStopped;
 - (BOOL)stopRunLoop;
@@ -46,19 +45,6 @@
 - (id)authenticatedAccountDSID;
 - (id)threadSafeDelegate;
 - (void)setShouldMessageMainThread:(BOOL)arg1;
-- (void)_sendErrorToDelegate:(id)arg1;
-- (id)uniqueKey;
-- (void)main;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)cancel;
-- (void)dealloc;
-- (id)init;
-- (BOOL)success;
-- (id)progress;
-- (void)run;
-- (void)unlock;
-- (void)lock;
 - (BOOL)loadSoftwareMapReturningError:(id*)arg1;
 - (BOOL)copyAccountID:(id*)arg1 byAuthenticatingWithContext:(id)arg2 returningError:(id*)arg3;
 - (void)setShouldRunWithBackgroundPriority:(BOOL)arg1;
@@ -87,7 +73,21 @@
 - (void)_addSubOperation:(id)arg1;
 - (void)setParentOperation:(id)arg1;
 - (void)_keepAliveTimer:(id)arg1;
+- (void)main;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)cancel;
+- (void)dealloc;
+- (id)init;
 - (id)error;
+- (id)progress;
+- (void)run;
+- (void)unlock;
+- (void)lock;
+- (void)_sendErrorToDelegate:(id)arg1;
+- (id)uniqueKey;
+- (void)setError:(id)arg1;
+- (BOOL)success;
 - (void)sendCompletionCallback:(id)arg1;
 - (void)setScriptOptions:(id)arg1;
 

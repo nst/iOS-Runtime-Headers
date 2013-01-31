@@ -103,9 +103,9 @@
 - (id)_mutableOrderedSetValueForKeyPath:(id)arg1 ofObjectAtIndex:(unsigned int)arg2;
 - (id)_mutableArrayValueForKeyPath:(id)arg1 ofObjectAtIndex:(unsigned int)arg2;
 - (id)_valueForKeyPath:(id)arg1 ofObjectAtIndex:(unsigned int)arg2;
-- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4;
+- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 - (id)sortedArrayUsingDescriptors:(id)arg1;
 - (id)filteredOrderedSetUsingPredicate:(id)arg1;
 - (unsigned int)pl_indexOfObjectIdenticalTo:(id)arg1;

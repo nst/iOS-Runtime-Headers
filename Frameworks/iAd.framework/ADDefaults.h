@@ -9,19 +9,19 @@
     NSMutableDictionary *_factoryDefaults;
 }
 
-+ (void)setInteger:(int)arg1 forKey:(id)arg2;
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (int)integerForKey:(id)arg1;
-+ (BOOL)boolForKey:(id)arg1;
++ (id)stringForKey:(id)arg1;
 + (void)addFactoryDefaults:(id)arg1;
 + (void)_setDefaultValue:(id)arg1 forKey:(id)arg2;
 + (id)_defaultValueForKey:(id)arg1 valueClass:(Class)arg2;
++ (int)integerForKey:(id)arg1;
++ (BOOL)boolForKey:(id)arg1;
++ (void)setInteger:(int)arg1 forKey:(id)arg2;
 + (void)setString:(id)arg1 forKey:(id)arg2;
 + (void)setBool:(BOOL)arg1 forKey:(id)arg2;
 + (void)setDouble:(double)arg1 forKey:(id)arg2;
 + (double)doubleForKey:(id)arg1;
-+ (id)stringForKey:(id)arg1;
 
 - (unsigned int)retainCount;
 - (id)retain;

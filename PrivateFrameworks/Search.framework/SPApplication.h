@@ -16,14 +16,14 @@
 @property(readonly) SPSearchResultSection * section;
 
 
+- (id)description;
+- (void)dealloc;
 - (id)longDisplayName;
 - (void)setLongDisplayName:(id)arg1;
 - (void)setDisplayIdentifier:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (void)setDisplayName:(id)arg1;
 - (id)displayName;
 - (id)section;
 - (id)displayIdentifier;
-- (void)setDisplayName:(id)arg1;
 
 @end

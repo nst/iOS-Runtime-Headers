@@ -30,10 +30,6 @@
 
 + (id)sharedSource;
 
-- (void)dealloc;
-- (id)init;
-- (id)dataForKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
-- (int)tileSize;
 - (void)changeQueueSizeFrom:(unsigned int)arg1 to:(unsigned int)arg2;
 - (void)fetchDataForKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 callback:(id)arg2 allowNetwork:(BOOL)arg3;
 - (int)zEquivalenceClass;
@@ -42,6 +38,8 @@
 - (void)forceDownload;
 - (int)minimumDownloadZoomLevel;
 - (id)detailedDescription;
+- (void)dealloc;
+- (id)init;
 - (void)_reachabilityChanged:(id)arg1;
 - (id)failedTiles;
 - (struct { double x1; double x2; })sortPoint;
@@ -51,5 +49,7 @@
 - (void)cancelAllFetches;
 - (void)_resetFailedTileList;
 - (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })tileKeyForX:(unsigned int)arg1 y:(unsigned int)arg2 z:(unsigned int)arg3;
+- (int)tileSize;
+- (id)dataForKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 
 @end

@@ -22,10 +22,10 @@
 - (void)setTimerQueue:(id)arg1;
 - (void)timerQueuePing;
 - (void)timerQueueTimerFired;
-- (id)server;
+- (id)timerQueue;
 - (void)setGate:(id)arg1;
 - (id)gate;
-- (id)timerQueue;
+- (id)server;
 - (id)initWithServer:(id)arg1;
 
 @end

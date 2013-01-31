@@ -21,14 +21,14 @@
 @property(getter=isFinished) BOOL finished;
 
 
-- (void)runAfterDelay:(float)arg1;
-- (void)setFinished:(BOOL)arg1;
 - (BOOL)isCancelled;
 - (void)dealloc;
-- (BOOL)isFinished;
-- (void)run;
-- (void)setCancel:(BOOL)arg1;
 - (void)setBlock:(id)arg1;
 - (id)block;
+- (void)setCancel:(BOOL)arg1;
+- (void)runAfterDelay:(float)arg1;
+- (BOOL)isFinished;
+- (void)run;
+- (void)setFinished:(BOOL)arg1;
 
 @end

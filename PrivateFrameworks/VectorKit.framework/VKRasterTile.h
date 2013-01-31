@@ -17,7 +17,6 @@
 @property(readonly) int genericTileType;
 
 
-- (void)dealloc;
 - (void)setTexture:(id)arg1;
 - (void)buildTexture;
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 imageData:(id)arg2 stylesheet:(id)arg3 genericTileType:(int)arg4;
@@ -25,5 +24,6 @@
 - (int)genericTileType;
 - (BOOL)hasGenericTileType;
 - (id)texture;
+- (void)dealloc;
 
 @end

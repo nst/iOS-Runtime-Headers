@@ -12,10 +12,10 @@
 + (id)getSessionCertificateResponseWithDictionary:(id)arg1 context:(id)arg2;
 + (id)getSessionCertificateResponse;
 
-- (id)groupIdentifier;
 - (void)setCertificate:(id)arg1;
 - (id)certificate;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

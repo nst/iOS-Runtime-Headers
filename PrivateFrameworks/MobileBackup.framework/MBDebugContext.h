@@ -16,9 +16,6 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)valueForName:(id)arg1;
-- (void)setValue:(id)arg1 forName:(id)arg2;
-- (long)time;
 - (BOOL)eval:(id)arg1;
 - (id)performSelectorForName:(id)arg1 withObject:(id)arg2;
 - (id)performSelectorForName:(id)arg1;
@@ -32,5 +29,8 @@
 - (void)setSimulatedDate:(id)arg1;
 - (void)removeValueForName:(id)arg1;
 - (id)simulatedDate;
+- (id)valueForName:(id)arg1;
+- (void)setValue:(id)arg1 forName:(id)arg2;
+- (long)time;
 
 @end

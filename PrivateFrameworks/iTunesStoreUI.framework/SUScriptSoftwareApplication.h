@@ -32,12 +32,9 @@
 @property(readonly) NSString * softwareTypeNewsstand;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
-- (id)bundleID;
-- (id)bundleVersion;
-- (id)adamID;
 - (id)softwareTypeNewsstand;
 - (int)launchResultSyncing;
 - (int)launchResultSuccess;
@@ -60,9 +57,12 @@
 - (id)environmentSandbox;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)ratingRank;
 - (id)ratingSystem;
-- (id)attributeKeys;
+- (id)bundleID;
+- (id)bundleVersion;
+- (id)adamID;
 
 @end

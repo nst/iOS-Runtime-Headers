@@ -19,16 +19,13 @@
 
 + (BOOL)shouldPresentAsModalSheet;
 
+- (void)dealloc;
+- (id)init;
+- (void)doneButtonClicked:(id)arg1;
+- (void)cancelButtonClicked:(id)arg1;
 - (void)setCellsChecked:(BOOL)arg1;
 - (BOOL)shouldReloadSpecifiersOnResume;
 - (id)specifiers;
-- (void)dealloc;
-- (id)init;
-- (id)cancelButton;
-- (void)setCancelButton:(id)arg1;
-- (void)viewDidLoad;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)doneButton;
 - (id)showConfirmationAlertWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 context:(id)arg5;
 - (void)updateValidationPrompt:(id)arg1;
@@ -52,7 +49,10 @@
 - (void)dismissWithAnimation:(BOOL)arg1;
 - (void)setTaskCompletionEnabled:(BOOL)arg1;
 - (id)confirmDeleteAccountWithDataclasses:(id)arg1 context:(id)arg2;
-- (void)doneButtonClicked:(id)arg1;
-- (void)cancelButtonClicked:(id)arg1;
+- (id)cancelButton;
+- (void)setCancelButton:(id)arg1;
+- (void)viewDidLoad;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 
 @end

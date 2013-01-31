@@ -36,10 +36,10 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)resetServerState;
+- (void)abort;
 - (void)_coreProtocolDidFinishError:(id)arg1;
 - (void)_coreProtocolDidFailAuthenticationError:(id)arg1;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
-- (void)resetServerState;
-- (void)abort;
 
 @end

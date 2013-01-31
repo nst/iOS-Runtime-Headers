@@ -28,9 +28,6 @@
 @property(retain) NSMutableArray * junctions;
 
 
-- (void)reset;
-- (id).cxx_construct;
-- (void)dealloc;
 - (void)_findOffRouteJunctions;
 - (void)_updateIntersectionsForDepth:(unsigned int)arg1;
 - (void)setJunctions:(id)arg1;
@@ -47,5 +44,8 @@
 - (id)nextRoadSegmentForRoad:(id)arg1;
 - (id)junctionForRoad:(id)arg1 nearJunction:(BOOL)arg2 crossTileEdge:(BOOL)arg3;
 - (id)junctions;
+- (void)reset;
+- (id).cxx_construct;
+- (void)dealloc;
 
 @end

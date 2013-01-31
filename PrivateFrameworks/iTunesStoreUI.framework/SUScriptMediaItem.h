@@ -12,8 +12,8 @@
 + (int)nativeMediaTypesForScriptMediaTypes:(id)arg1;
 + (id)copyScriptMediaTypesForNativeMediaTypes:(int)arg1;
 + (id)scriptMediaTypeForNativeMediaType:(int)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)nativeItem;
 - (id)imageURLWithWidth:(id)arg1 height:(id)arg2;

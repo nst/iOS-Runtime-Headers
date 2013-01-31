@@ -10,6 +10,8 @@
 }
 
 
+- (void)dealloc;
+- (id)init;
 - (void)handleEventImp:(id)arg1;
 - (id)usbLocationIDsOfPTPDevices;
 - (int)handleEvent:(id)arg1 onDevice:(id)arg2 contextInfo:(void*)arg3;
@@ -23,8 +25,6 @@
 - (void)openSessionImp:(id)arg1;
 - (void)closeDeviceImp:(id)arg1;
 - (void)openDeviceImp:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (void)netService:(id)arg1 didUpdateTXTRecordData:(id)arg2;
 - (void)netServiceBrowserDidStopSearch:(id)arg1;
 - (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;

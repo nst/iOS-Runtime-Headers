@@ -17,7 +17,7 @@
 + (void)setDefaultFormatterBehavior:(unsigned int)arg1;
 + (id)mf_formatDate:(id)arg1 shortStyle:(BOOL)arg2;
 
-- (BOOL)doesRelativeDateFormatting;
+- (id)monthSymbols;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
@@ -41,26 +41,7 @@
 - (void)setTimeZone:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)shortStandaloneQuarterSymbols;
-- (id)standaloneQuarterSymbols;
-- (id)shortQuarterSymbols;
-- (id)quarterSymbols;
-- (id)veryShortStandaloneWeekdaySymbols;
-- (id)shortStandaloneWeekdaySymbols;
-- (id)standaloneWeekdaySymbols;
-- (id)veryShortWeekdaySymbols;
-- (id)veryShortStandaloneMonthSymbols;
-- (id)shortStandaloneMonthSymbols;
-- (id)standaloneMonthSymbols;
-- (id)veryShortMonthSymbols;
-- (id)longEraSymbols;
-- (id)shortWeekdaySymbols;
-- (id)weekdaySymbols;
-- (id)shortMonthSymbols;
-- (id)eraSymbols;
-- (void)setGregorianStartDate:(id)arg1;
-- (id)gregorianStartDate;
-- (id)monthSymbols;
+- (BOOL)doesRelativeDateFormatting;
 - (void)setShortStandaloneQuarterSymbols:(id)arg1;
 - (void)setStandaloneQuarterSymbols:(id)arg1;
 - (void)setShortQuarterSymbols:(id)arg1;
@@ -103,5 +84,24 @@
 - (void)_clearFormatter;
 - (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 range:(inout struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 error:(out id*)arg4;
 - (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
+- (id)shortStandaloneQuarterSymbols;
+- (id)standaloneQuarterSymbols;
+- (id)shortQuarterSymbols;
+- (id)quarterSymbols;
+- (id)veryShortStandaloneWeekdaySymbols;
+- (id)shortStandaloneWeekdaySymbols;
+- (id)standaloneWeekdaySymbols;
+- (id)veryShortWeekdaySymbols;
+- (id)veryShortStandaloneMonthSymbols;
+- (id)shortStandaloneMonthSymbols;
+- (id)standaloneMonthSymbols;
+- (id)veryShortMonthSymbols;
+- (id)longEraSymbols;
+- (id)shortWeekdaySymbols;
+- (id)weekdaySymbols;
+- (id)shortMonthSymbols;
+- (id)eraSymbols;
+- (void)setGregorianStartDate:(id)arg1;
+- (id)gregorianStartDate;
 
 @end

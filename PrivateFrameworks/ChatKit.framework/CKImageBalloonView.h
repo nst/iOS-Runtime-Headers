@@ -23,9 +23,9 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)prepareForReuse;
-- (void)setHighlighted:(BOOL)arg1;
 - (void)setHighlightedImageBlock:(id)arg1;
 - (id)highlightedImageBlock;
+- (void)prepareForReuse;
+- (void)setHighlighted:(BOOL)arg1;
 
 @end

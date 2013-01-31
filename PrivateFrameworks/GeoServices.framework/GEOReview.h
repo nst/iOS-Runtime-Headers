@@ -28,18 +28,15 @@
 @property(retain) NSString * uid;
 
 
-- (void)setScore:(double)arg1;
-- (double)score;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)uid;
-- (id)dictionaryRepresentation;
 - (void)setHasScore:(BOOL)arg1;
 - (BOOL)hasScore;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
 - (void)setUid:(id)arg1;
 - (void)setHasReviewTime:(BOOL)arg1;
 - (BOOL)hasUid;
@@ -52,6 +49,9 @@
 - (BOOL)hasSnippet;
 - (void)setReviewer:(id)arg1;
 - (void)setSnippet:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)uid;
+- (id)dictionaryRepresentation;
+- (void)setScore:(double)arg1;
+- (double)score;
 
 @end

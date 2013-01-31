@@ -27,6 +27,17 @@
 @property BOOL disablesSignIn;
 
 
+- (void)dealloc;
+- (id)init;
+- (id)error;
+- (void)setCompletionHandler:(id)arg1;
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (BOOL)shouldAutomaticallyForwardRotationMethods;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)completionHandler;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)setDisablesSignIn:(BOOL)arg1;
 - (BOOL)disablesSignIn;
 - (BOOL)shouldShowActiveViewController;
@@ -38,15 +49,5 @@
 - (id)alert;
 - (void)setAlert:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)dealloc;
-- (void)setCompletionHandler:(id)arg1;
-- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
-- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
-- (BOOL)shouldAutomaticallyForwardRotationMethods;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)completionHandler;
-- (unsigned int)supportedInterfaceOrientations;
-- (id)error;
 
 @end

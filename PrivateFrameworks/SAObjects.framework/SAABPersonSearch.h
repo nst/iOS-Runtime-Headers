@@ -22,30 +22,30 @@
 + (id)personSearchWithDictionary:(id)arg1 context:(id)arg2;
 + (id)personSearch;
 
-- (id)email;
-- (id)groupIdentifier;
-- (void)setAddress:(id)arg1;
-- (id)address;
-- (void)setEmail:(id)arg1;
 - (id)accountIdentifier;
 - (void)setAccountIdentifier:(id)arg1;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)relationship;
-- (id)me;
 - (void)setScope:(id)arg1;
 - (id)scope;
-- (id)company;
+- (void)setName:(id)arg1;
+- (id)name;
 - (void)setRelationship:(id)arg1;
 - (void)setMe:(id)arg1;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)me;
 - (id)birthday;
 - (void)setBirthday:(id)arg1;
 - (id)phone;
 - (void)setCompany:(id)arg1;
 - (void)setPhone:(id)arg1;
+- (id)email;
+- (id)groupIdentifier;
+- (void)setAddress:(id)arg1;
+- (id)address;
+- (void)setEmail:(id)arg1;
+- (id)relationship;
+- (id)company;
 
 @end

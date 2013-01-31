@@ -20,20 +20,20 @@
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
 
-- (id)serialNumber;
 - (id)copyPurchaseValidationContext;
 - (id)copyProtocolConditionalContext;
 - (BOOL)checkCapabilities:(id)arg1 withMismatches:(id*)arg2;
 - (id)guid;
-- (void)dealloc;
-- (id)init;
-- (int)_deviceClass;
-- (id)systemName;
-- (id)deviceName;
 - (id)supportedOfferDeviceForDevices:(id)arg1;
 - (void)requestFreeSpace:(unsigned long long)arg1 atPath:(id)arg2 withOptions:(id)arg3 completionBlock:(id)arg4;
 - (id)hardwareName;
 - (BOOL)takePowerAssertion:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (int)_deviceClass;
+- (id)serialNumber;
+- (id)deviceName;
 - (BOOL)releasePowerAssertion:(id)arg1;
+- (id)systemName;
 
 @end

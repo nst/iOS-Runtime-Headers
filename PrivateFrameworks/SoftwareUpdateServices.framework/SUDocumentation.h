@@ -32,10 +32,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setPrimaryLanguage:(id)arg1;
-- (id)primaryLanguage;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)baseDocumentationURL;
 - (BOOL)hasAnyDocumentation;
 - (id)licenseAgreement;
@@ -64,5 +60,9 @@
 - (void)setReleaseNotesFileName:(id)arg1;
 - (void)setReleaseNotesSummaryFileName:(id)arg1;
 - (void)setBaseDocumentationURL:(id)arg1;
+- (void)setPrimaryLanguage:(id)arg1;
+- (id)primaryLanguage;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

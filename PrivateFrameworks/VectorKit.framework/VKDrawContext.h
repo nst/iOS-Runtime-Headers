@@ -75,10 +75,6 @@
 
 
 - (void)setCanvas:(id)arg1;
-- (double)timestamp;
-- (void)setTimestamp:(double)arg1;
-- (void)dealloc;
-- (id)camera;
 - (void)debugDrawString:(id)arg1 worldPoint:(struct { double x1; double x2; double x3; })arg2 color:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg3 fontSize:(float)arg4;
 - (void)debugDrawAsteriskAtWorldPoint:(struct { double x1; double x2; double x3; })arg1 color:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg2;
 - (void)debugDrawPath:(int)arg1 pixels:(struct { float x1; float x2; }*)arg2 color:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg3;
@@ -113,6 +109,10 @@
 - (id)slowTrafficTexture;
 - (id)alphaAtlas;
 - (void)setModelMatrix:(const struct { double x1[4][4]; }*)arg1;
+- (double)timestamp;
+- (void)setTimestamp:(double)arg1;
+- (void)dealloc;
 - (id)canvas;
+- (id)camera;
 
 @end

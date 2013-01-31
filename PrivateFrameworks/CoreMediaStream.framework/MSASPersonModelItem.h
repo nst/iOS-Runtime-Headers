@@ -18,11 +18,11 @@
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setObject:(id)arg1;
-- (id)object;
-- (void)setErrorCount:(int)arg1;
-- (int)errorCount;
 - (void)setAlbum:(id)arg1;
 - (id)album;
+- (void)setErrorCount:(int)arg1;
+- (int)errorCount;
+- (void)setObject:(id)arg1;
+- (id)object;
 
 @end

@@ -13,12 +13,12 @@
 + (id)visibilityStateSetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)visibilityStateSet;
 
-- (id)groupIdentifier;
-- (BOOL)visible;
-- (void)setVisible:(BOOL)arg1;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (BOOL)visible;
+- (void)setVisible:(BOOL)arg1;
+- (id)groupIdentifier;
 
 @end

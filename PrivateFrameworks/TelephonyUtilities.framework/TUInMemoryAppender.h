@@ -18,15 +18,15 @@
 @property BOOL shouldLogSystemInfo;
 
 
+- (id)initWithMaxCapacity:(unsigned long long)arg1;
 - (void)reset;
 - (void)dealloc;
-- (void)flush;
-- (id)initWithMaxCapacity:(unsigned long long)arg1;
 - (void)setShouldLogSystemInfo:(BOOL)arg1;
 - (BOOL)shouldLogSystemInfo;
 - (void)setShouldLogDyldInfo:(BOOL)arg1;
 - (BOOL)shouldLogDyldInfo;
 - (void)dumpLogsToFilePath:(id)arg1;
 - (void)logWithIdentifier:(id)arg1 pid:(int)arg2 date:(id)arg3 level:(int)arg4 topic:(id)arg5 text:(id)arg6 backtrace:(id)arg7;
+- (void)flush;
 
 @end

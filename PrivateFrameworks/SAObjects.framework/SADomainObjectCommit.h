@@ -12,10 +12,10 @@
 + (id)domainObjectCommitWithDictionary:(id)arg1 context:(id)arg2;
 + (id)domainObjectCommit;
 
-- (id)groupIdentifier;
 - (id)identifier;
-- (void)setIdentifier:(id)arg1;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (void)setIdentifier:(id)arg1;
+- (id)groupIdentifier;
 
 @end

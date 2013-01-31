@@ -18,9 +18,6 @@
 - (void)dealloc;
 - (id)init;
 - (unsigned long)count;
-- (void)unlock;
-- (void)lock;
-- (id)initWithSize:(unsigned long)arg1;
 - (void)print;
 - (id)allMatchingObjectsFromTable:(id)arg1;
 - (void)removeAllIDs;
@@ -29,5 +26,8 @@
 - (BOOL)hasID:(unsigned int)arg1;
 - (void)copyItemsInto:(id)arg1;
 - (void)addID:(unsigned int)arg1;
+- (void)unlock;
+- (void)lock;
+- (id)initWithSize:(unsigned long)arg1;
 
 @end

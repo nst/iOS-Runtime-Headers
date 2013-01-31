@@ -17,12 +17,12 @@
 + (id)changeWithChangeType:(int)arg1 account:(id)arg2 oldAccount:(id)arg3;
 
 - (void).cxx_destruct;
-- (id)oldAccount;
-- (id)initWithChangeType:(int)arg1 account:(id)arg2 oldAccount:(id)arg3;
-- (void)setOldAccount:(id)arg1;
 - (int)changeType;
 - (void)setAccount:(id)arg1;
 - (id)account;
+- (id)oldAccount;
+- (id)initWithChangeType:(int)arg1 account:(id)arg2 oldAccount:(id)arg3;
+- (void)setOldAccount:(id)arg1;
 - (void)setChangeType:(int)arg1;
 
 @end

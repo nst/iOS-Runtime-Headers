@@ -9,9 +9,9 @@
 }
 
 
+- (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)powerChanged:(id)arg1;
-- (void)drawInContext:(struct CGContext { }*)arg1;
 
 @end

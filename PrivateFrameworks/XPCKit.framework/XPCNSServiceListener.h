@@ -18,8 +18,8 @@
 - (BOOL)XPCServiceListener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)delegate;
 - (void).cxx_destruct;
-- (void)start;
 - (void)shutDownCompletionBlock:(id)arg1;
+- (void)start;
 - (id)serviceName;
 
 @end

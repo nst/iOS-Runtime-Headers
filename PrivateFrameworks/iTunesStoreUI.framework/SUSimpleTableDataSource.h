@@ -22,8 +22,8 @@
 - (id)cellForIndexPath:(id)arg1;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)dealloc;
-- (id)objects;
 - (int)numberOfSections;
 - (int)numberOfRowsInSection:(int)arg1;
+- (id)objects;
 
 @end

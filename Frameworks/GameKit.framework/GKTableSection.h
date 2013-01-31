@@ -19,11 +19,11 @@
     BOOL _loading;
     NSError *_loadError;
     BOOL _needsRedisplay;
+    int _loadDataReentryCount;
+    NSSet *_itemsLoadingPurgeableData;
     NSString *_iconURLStringKeyValuePath;
     GKNetworkImageSource *_iconSource;
-    NSSet *_itemsLoadingPurgeableData;
     NSIndexSet *_indexesOfRowsWithLoadedData;
-    int _loadDataReentryCount;
 }
 
 @property SEL action;
@@ -52,13 +52,26 @@
 @property BOOL hasContent;
 
 
+- (BOOL)loaded;
+- (SEL)action;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (void)setLoaded:(BOOL)arg1;
+- (void)stopLoading;
+- (void)setAction:(SEL)arg1;
+- (float)heightForHeaderInTableView:(id)arg1;
+- (void)setItems:(id)arg1;
+- (id)items;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)_gkDescriptionWithChildren:(int)arg1;
 - (id)_gkDescription;
-- (void)setLoadDataReentryCount:(int)arg1;
-- (int)loadDataReentryCount;
+- (void)setIconURLStringKeyValuePath:(id)arg1;
 - (void)setItemsLoadingPurgeableData:(id)arg1;
 - (id)itemsLoadingPurgeableData;
-- (void)setIconURLStringKeyValuePath:(id)arg1;
+- (void)setLoadDataReentryCount:(int)arg1;
+- (int)loadDataReentryCount;
 - (BOOL)showMoreVisible;
 - (void)setItemsBeforeUpdate:(id)arg1;
 - (void)tableView:(id)arg1 animateTransitionFromItems:(id)arg2 toItems:(id)arg3 atSectionIndex:(int)arg4;
@@ -144,18 +157,5 @@
 - (void)setUsesTopCapTitle:(BOOL)arg1;
 - (int)rowCountInTableView:(id)arg1;
 - (void)startLoading;
-- (SEL)action;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (void)stopLoading;
-- (void)setAction:(SEL)arg1;
-- (float)heightForHeaderInTableView:(id)arg1;
-- (void)setItems:(id)arg1;
-- (id)items;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (BOOL)loaded;
-- (void)setLoaded:(BOOL)arg1;
 
 @end

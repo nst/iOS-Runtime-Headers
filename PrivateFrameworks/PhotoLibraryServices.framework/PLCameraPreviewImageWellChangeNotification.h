@@ -19,9 +19,9 @@
 - (id)userInfo;
 - (void)dealloc;
 - (id)init;
+- (id)assetID;
 - (id)image;
 - (id)object;
 - (id)_init;
-- (id)assetID;
 
 @end

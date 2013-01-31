@@ -10,15 +10,15 @@
 }
 
 
-- (void)dealloc;
-- (id)init;
-- (void)loadRequest:(id)arg1;
-- (void)clearDelegate;
-- (void)failWithError:(id)arg1;
 - (void)requestCategoriesWithDelegate:(id)arg1;
 - (id)_categoriesURL;
 - (void)didAuthenticate:(id)arg1;
 - (void)didParseData;
+- (void)failWithError:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)loadRequest:(id)arg1;
+- (void)clearDelegate;
 - (int)parseData:(id)arg1;
 
 @end

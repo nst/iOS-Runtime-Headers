@@ -17,6 +17,8 @@
 + (id)sharedInstance;
 + (void)initialize;
 
+- (void)dealloc;
+- (id)init;
 - (id)dylibHandlerMap;
 - (id)frameworkHandlerMap;
 - (id)bundleHandlerMap;
@@ -34,7 +36,5 @@
 - (void)setDylibHandlerMap:(id)arg1;
 - (void)setFrameworkHandlerMap:(id)arg1;
 - (void)setBundleHandlerMap:(id)arg1;
-- (void)dealloc;
-- (id)init;
 
 @end

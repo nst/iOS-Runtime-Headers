@@ -28,10 +28,9 @@
 @property(readonly) NSString * buildVersion;
 @property(readonly) BOOL hasCorruptSQLiteDBs;
 
-+ (id)properties;
 + (id)propertiesWithFile:(id)arg1 error:(id*)arg2;
++ (id)properties;
 
-- (id)serialNumber;
 - (id)applications;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
@@ -39,18 +38,9 @@
 - (id)objectForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setEncrypted:(BOOL)arg1;
-- (id)productType;
-- (BOOL)writeToFile:(id)arg1 error:(id*)arg2;
-- (void)setVersion:(double)arg1;
-- (double)version;
-- (id)buildVersion;
-- (void)setDate:(id)arg1;
-- (id)date;
-- (BOOL)_boolForKey:(id)arg1;
 - (BOOL)isProtected;
-- (id)deviceID;
-- (id)deviceName;
+- (id)productType;
+- (BOOL)isEncrypted;
 - (void)setProtected:(BOOL)arg1;
 - (void)addAppsFromArray:(id)arg1;
 - (id)appWithBundleID:(id)arg1;
@@ -71,10 +61,20 @@
 - (void)setSystemDomainsVersion:(double)arg1;
 - (double)systemDomainsVersion;
 - (id)initWithFile:(id)arg1 error:(id*)arg2;
-- (id)propertyList;
-- (id)_dataForKey:(id)arg1;
-- (BOOL)isEncrypted;
+- (void)setEncrypted:(BOOL)arg1;
+- (id)serialNumber;
 - (id)_dictionaryForKey:(id)arg1;
+- (id)_dataForKey:(id)arg1;
+- (id)deviceID;
+- (id)deviceName;
+- (void)setVersion:(double)arg1;
+- (double)version;
+- (id)buildVersion;
+- (void)setDate:(id)arg1;
+- (id)date;
+- (BOOL)_boolForKey:(id)arg1;
+- (id)propertyList;
+- (BOOL)writeToFile:(id)arg1 error:(id*)arg2;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
 
 @end

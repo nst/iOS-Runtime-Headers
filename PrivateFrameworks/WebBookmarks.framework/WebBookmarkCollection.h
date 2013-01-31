@@ -15,7 +15,6 @@
 
 @property(getter=isMerging) BOOL merging;
 
-+ (id)safariBookmarkCollection;
 + (unsigned long long)readingListArchivesDiskUsage;
 + (void)unlockSync;
 + (BOOL)lockSync;
@@ -24,18 +23,8 @@
 + (id)readingListArchivesDirectoryPath;
 + (id)safariDirectoryPath;
 + (id)_uniqueExternalUUID;
++ (id)safariBookmarkCollection;
 
-- (unsigned long long)purge:(unsigned long long)arg1;
-- (void)dealloc;
-- (id)initWithPath:(id)arg1;
-- (BOOL)beginSyncTransaction;
-- (id)syncStringForKey:(id)arg1;
-- (id)bookmarksDictionary;
-- (void)commitSyncTransaction;
-- (BOOL)syncSetString:(id)arg1 forKey:(id)arg2;
-- (BOOL)mergeWithBookmarksDictionary:(id)arg1 clearHidden:(BOOL)arg2 error:(id*)arg3;
-- (void)rollbackSyncTransaction;
-- (unsigned long long)purgeableSpace;
 - (void)_postBookmarksDidReloadNotificationAndStartReadingListFetcherIfChangesWereMade;
 - (BOOL)_markBookmarkID:(unsigned int)arg1 added:(BOOL)arg2;
 - (BOOL)_clearChangeList;
@@ -204,6 +193,17 @@
 - (void)_registerForSyncBookmarksFileChangedNotification;
 - (BOOL)_openDatabaseAtPath:(id)arg1 checkIntegrity:(BOOL)arg2 error:(id*)arg3;
 - (id)_bookmarksInListWhere:(id)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
+- (void)dealloc;
+- (unsigned long long)purgeableSpace;
+- (BOOL)beginSyncTransaction;
+- (id)syncStringForKey:(id)arg1;
+- (id)bookmarksDictionary;
+- (void)commitSyncTransaction;
+- (BOOL)syncSetString:(id)arg1 forKey:(id)arg2;
+- (BOOL)mergeWithBookmarksDictionary:(id)arg1 clearHidden:(BOOL)arg2 error:(id*)arg3;
+- (void)rollbackSyncTransaction;
+- (unsigned long long)purge:(unsigned long long)arg1;
 - (unsigned int)generation;
+- (id)initWithPath:(id)arg1;
 
 @end

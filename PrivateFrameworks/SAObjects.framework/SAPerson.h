@@ -25,27 +25,11 @@
 @property(copy) NSArray * socialProfiles;
 @property(copy) NSString * suffix;
 
-+ (id)person;
 + (id)personWithDictionary:(id)arg1 context:(id)arg2;
++ (id)person;
 
-- (id)emails;
-- (id)groupIdentifier;
-- (void)setLastName:(id)arg1;
-- (id)lastName;
-- (void)setFirstName:(id)arg1;
-- (id)firstName;
-- (id)fullName;
-- (void)setFullName:(id)arg1;
-- (id)me;
 - (void)setPrefix:(id)arg1;
 - (id)prefix;
-- (void)setPhones:(id)arg1;
-- (void)setEmails:(id)arg1;
-- (void)setAddresses:(id)arg1;
-- (id)addresses;
-- (id)company;
-- (id)suffix;
-- (void)setSuffix:(id)arg1;
 - (void)setSocialProfiles:(id)arg1;
 - (id)socialProfiles;
 - (void)setRelatedNames:(id)arg1;
@@ -58,6 +42,11 @@
 - (void)setMe:(id)arg1;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (id)fullName;
+- (void)setAddresses:(id)arg1;
+- (id)suffix;
+- (void)setSuffix:(id)arg1;
+- (id)me;
 - (id)nickName;
 - (id)middleName;
 - (id)birthday;
@@ -65,5 +54,16 @@
 - (void)setMiddleName:(id)arg1;
 - (void)setBirthday:(id)arg1;
 - (void)setCompany:(id)arg1;
+- (void)setFullName:(id)arg1;
+- (void)setPhones:(id)arg1;
+- (void)setEmails:(id)arg1;
+- (id)emails;
+- (id)groupIdentifier;
+- (void)setLastName:(id)arg1;
+- (id)lastName;
+- (void)setFirstName:(id)arg1;
+- (id)firstName;
+- (id)addresses;
+- (id)company;
 
 @end

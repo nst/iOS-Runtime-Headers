@@ -26,11 +26,13 @@
 @property(retain) UIWindow * window;
 
 
-- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1;
 - (void)dealloc;
+- (void)setIsSendingVideo:(BOOL)arg1;
+- (void)stopPreview;
+- (void)startPreview;
 - (void)setInitialMuteState:(BOOL)arg1;
 - (BOOL)initialMuteState;
 - (id)deviceController;
@@ -101,8 +103,6 @@
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (void)viewDidUnload;
 - (void)loadView;
-- (void)stopPreview;
-- (void)startPreview;
-- (void)setIsSendingVideo:(BOOL)arg1;
+- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 
 @end

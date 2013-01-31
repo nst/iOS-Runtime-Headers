@@ -14,13 +14,13 @@
 + (id)newsItemWithDictionary:(id)arg1 context:(id)arg2;
 + (id)newsItem;
 
-- (id)groupIdentifier;
-- (id)title;
-- (void)setTitle:(id)arg1;
 - (void)setSummary:(id)arg1;
 - (id)summary;
 - (void)setLink:(id)arg1;
 - (id)link;
 - (id)encodedClassName;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (id)groupIdentifier;
 
 @end

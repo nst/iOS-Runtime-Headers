@@ -45,6 +45,8 @@
 @property(copy) id alertHandler;
 
 
+- (void)dealloc;
+- (id)init;
 - (BOOL)uintForServerValue:(id)arg1 value:(unsigned int*)arg2 defaultValue:(unsigned int)arg3;
 - (BOOL)intForServerValue:(id)arg1 value:(int*)arg2 defaultValue:(int)arg3;
 - (void)setWantsWifi:(BOOL)arg1;
@@ -92,12 +94,8 @@
 - (void)_stopTimeout;
 - (void)setRegController:(id)arg1;
 - (id)regController;
-- (id)alert;
-- (void)setAlert:(id)arg1;
-- (void)setHeadersForRequest:(id)arg1;
-- (void)loadURL:(id)arg1;
-- (void)dealloc;
-- (id)init;
+- (id)alertHandler;
+- (void)setAlertHandler:(id)arg1;
 - (BOOL)isLoaded;
 - (void)webViewDidFinishLoad:(id)arg1;
 - (void)webViewDidStartLoad:(id)arg1;
@@ -115,7 +113,9 @@
 - (id)webView;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)applicationWillSuspend;
-- (id)alertHandler;
-- (void)setAlertHandler:(id)arg1;
+- (id)alert;
+- (void)setAlert:(id)arg1;
+- (void)setHeadersForRequest:(id)arg1;
+- (void)loadURL:(id)arg1;
 
 @end

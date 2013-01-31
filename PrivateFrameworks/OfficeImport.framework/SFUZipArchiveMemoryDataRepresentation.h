@@ -11,7 +11,6 @@
 
 - (id)data;
 - (void)dealloc;
-- (id)initWithData:(id)arg1;
 - (id)bufferedInputStreamWithOffset:(long long)arg1 length:(long long)arg2;
 - (id)inputStreamWithOffset:(long long)arg1 length:(long long)arg2;
 - (id)bufferedInputStreamWithBufferSize:(unsigned long)arg1;
@@ -20,5 +19,6 @@
 - (id)bufferedInputStream;
 - (id)inputStream;
 - (long long)dataLength;
+- (id)initWithData:(id)arg1;
 
 @end

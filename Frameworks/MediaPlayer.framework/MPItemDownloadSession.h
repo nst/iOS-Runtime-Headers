@@ -21,9 +21,8 @@
 @property int sessionState;
 
 
-- (void)setPercentComplete:(float)arg1;
-- (float)percentComplete;
-- (id)downloadProperties;
+- (id)description;
+- (void)dealloc;
 - (void)setSessionState:(int)arg1;
 - (int)sessionState;
 - (void)setSessionError:(id)arg1;
@@ -35,8 +34,9 @@
 - (void)setDownloadSession:(id)arg1;
 - (void)reloadNetworkConstraints;
 - (BOOL)isNetworkConstrainedForNetworkType:(int)arg1;
+- (id)downloadProperties;
 - (id)initWithItemDownloadProperties:(id)arg1;
-- (id)description;
-- (void)dealloc;
+- (void)setPercentComplete:(float)arg1;
+- (float)percentComplete;
 
 @end

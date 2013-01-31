@@ -17,11 +17,6 @@
 }
 
 
-- (void)dealloc;
-- (id)init;
-- (void)stop;
-- (void)start;
-- (BOOL)isEnabled;
 - (id)xpcConnection;
 - (void)xpcConnectionFailed:(id)arg1;
 - (void)xpcConnection:(id)arg1 receivedMessage:(id)arg2 userInfo:(id)arg3;
@@ -29,5 +24,10 @@
 - (void)didUnregisterClient:(struct WebInspectorClient { int (**x1)(); int (**x2)(); id x3; struct RetainPtr<WebNodeHighlighter> { struct WebNodeHighlighter { } *x_4_1_1; } x4; struct Page {} *x5; struct RetainPtr<WebInspectorWindowController> { struct WebInspectorWindowController { } *x_6_1_1; } x6; int x7; id x8; struct WebInspectorFrontendClient {} *x9; }*)arg1;
 - (void)didRegisterClient:(struct WebInspectorClient { int (**x1)(); int (**x2)(); id x3; struct RetainPtr<WebNodeHighlighter> { struct WebNodeHighlighter { } *x_4_1_1; } x4; struct Page {} *x5; struct RetainPtr<WebInspectorWindowController> { struct WebInspectorWindowController { } *x_6_1_1; } x6; int x7; id x8; struct WebInspectorFrontendClient {} *x9; }*)arg1;
 - (void)pushListing;
+- (void)dealloc;
+- (id)init;
+- (void)stop;
+- (void)start;
+- (BOOL)isEnabled;
 
 @end

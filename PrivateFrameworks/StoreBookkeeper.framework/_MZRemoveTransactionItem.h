@@ -5,8 +5,8 @@
 @class NSString;
 
 @interface _MZRemoveTransactionItem : NSObject  {
-    NSString *_version;
     NSString *_key;
+    NSString *_version;
 }
 
 @property(copy) NSString * key;

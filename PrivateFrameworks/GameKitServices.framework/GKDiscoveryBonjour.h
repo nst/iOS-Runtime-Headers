@@ -39,8 +39,6 @@
 @property(copy) id browseCallback;
 
 
-- (void)stopBrowsing;
-- (void)stopAdvertising;
 - (void)dealloc;
 - (id)init;
 - (id)browseCallback;
@@ -65,5 +63,7 @@
 - (void)setServiceNameCollisionCallback:(id)arg1;
 - (void)setConnectionCallback:(id)arg1;
 - (int)resolveName:(id)arg1 onIndex:(unsigned int)arg2 withCompletionHandler:(id)arg3;
+- (void)stopBrowsing;
+- (void)stopAdvertising;
 
 @end

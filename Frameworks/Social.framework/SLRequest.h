@@ -33,6 +33,8 @@
 - (void).cxx_destruct;
 - (id)init;
 - (id)parameters;
+- (void)setAccount:(id)arg1;
+- (id)account;
 - (void)performJSONRequestWithHandler:(id)arg1;
 - (id)dictionaryRepresentationForJSONSerialization;
 - (void)_appendCoreSig1Signature;
@@ -61,7 +63,5 @@
 - (id)_allParameters;
 - (id)multiPartBoundary;
 - (void)setMultiPartBoundary:(id)arg1;
-- (void)setAccount:(id)arg1;
-- (id)account;
 
 @end

@@ -14,10 +14,10 @@
 
 - (id)description;
 - (void)dealloc;
+- (id)httpMethod;
 - (void)_callBackToDelegateWithResponses:(id)arg1 error:(id)arg2;
 - (void)setPreviousETag:(id)arg1;
 - (id)additionalHeaderValues;
 - (id)previousETag;
-- (id)httpMethod;
 
 @end

@@ -20,8 +20,6 @@
 + (id)defaultProperties;
 
 - (void)dealloc;
-- (id)style;
-- (void)setStyle:(id)arg1;
 - (BOOL)hasVectorNormalToDir:(int)arg1 atExtremePos:(int)arg2;
 - (BOOL)hasBandsNormalToDir:(int)arg1;
 - (void)setBandColumn:(BOOL)arg1;
@@ -44,5 +42,7 @@
 - (BOOL)firstColumn;
 - (BOOL)lastRow;
 - (BOOL)firstRow;
+- (id)style;
+- (void)setStyle:(id)arg1;
 
 @end

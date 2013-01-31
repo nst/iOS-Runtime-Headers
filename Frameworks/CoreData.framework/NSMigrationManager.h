@@ -33,6 +33,7 @@
 - (void)reset;
 - (id)userInfo;
 - (void)dealloc;
+- (void)setUserInfo:(id)arg1;
 - (id)fetchRequestForSourceEntityNamed:(id)arg1 predicateString:(id)arg2;
 - (BOOL)_doThirdPassForMapping:(id)arg1 error:(id*)arg2;
 - (BOOL)_validateAllObjectsAfterMigration:(id*)arg1;
@@ -63,6 +64,5 @@
 - (id)_migrationContext;
 - (id)destinationContext;
 - (id)initWithSourceModel:(id)arg1 destinationModel:(id)arg2;
-- (void)setUserInfo:(id)arg1;
 
 @end

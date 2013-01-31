@@ -12,14 +12,14 @@
 
 + (id)defaultCenter;
 
+- (void)removeObserver:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)postNotificationName:(id)arg1;
 - (void)postNotificationName:(id)arg1 userInfo:(id)arg2 toBundleIdentifier:(id)arg3;
 - (void)postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (id)notificationCenter;
 - (void)setNotificationCenter:(id)arg1;
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3;
-- (void)removeObserver:(id)arg1;
-- (void)dealloc;
-- (id)init;
 
 @end

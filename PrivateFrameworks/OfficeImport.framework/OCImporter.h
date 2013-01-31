@@ -18,15 +18,15 @@
 
 - (id)initWithURL:(id)arg1;
 - (void)dealloc;
-- (void)setURL:(id)arg1;
-- (BOOL)start;
-- (id)initWithData:(id)arg1;
 - (BOOL)isXML;
-- (id)filename;
 - (BOOL)isDocumentEncryptedUnsupportedVersion:(BOOL*)arg1 errorMessage:(id*)arg2;
 - (BOOL)tryAlternateReader;
 - (BOOL)isDocumentEncryptedUnsupportedVersionHelper:(BOOL*)arg1 errorMessage:(id*)arg2 readError:(BOOL*)arg3;
 - (id)tracing;
 - (BOOL)setPassphrase:(id)arg1;
+- (void)setURL:(id)arg1;
+- (BOOL)start;
+- (id)initWithData:(id)arg1;
+- (id)filename;
 
 @end

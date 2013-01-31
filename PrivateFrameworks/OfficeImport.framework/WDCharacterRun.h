@@ -15,8 +15,6 @@
 - (id)string;
 - (void)dealloc;
 - (void)appendString:(id)arg1;
-- (id)properties;
-- (BOOL)isEmpty;
 - (id)initWithParagraph:(id)arg1 string:(id)arg2;
 - (void)setPropertiesForDocument;
 - (void)clearProperties;
@@ -27,5 +25,7 @@
 - (void)setBinaryWriterContentFlag:(BOOL)arg1;
 - (BOOL)binaryWriterContentFlag;
 - (int)runType;
+- (id)properties;
+- (BOOL)isEmpty;
 
 @end

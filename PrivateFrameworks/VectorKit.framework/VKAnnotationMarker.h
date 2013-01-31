@@ -83,25 +83,6 @@
 + (unsigned int)_selectedZIndex;
 + (unsigned int)_zIndex;
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
-- (struct CGPoint { float x1; float x2; })presentationPoint;
-- (void)setPresentationPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setAnnotation:(id)arg1;
-- (id)annotation;
-- (BOOL)isPersistent;
-- (id)subtitle;
-- (id)model;
-- (void)setTracking:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)prepareForReuse;
-- (BOOL)isSelected;
-- (id)reuseIdentifier;
-- (id)title;
-- (BOOL)isTracking;
-- (void)setModel:(id)arg1;
 - (void)setDraggable:(BOOL)arg1;
 - (void)setDropFraction:(float)arg1;
 - (float)dropFraction;
@@ -144,9 +125,28 @@
 - (struct { int x1; int x2; float x3; })styleTransitionState;
 - (void)setStyleTransitionState:(struct { int x1; int x2; float x3; })arg1;
 - (id)calloutPopoverController;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
 - (void)setCanShowCallout:(BOOL)arg1;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (void)setLeftCalloutAccessoryView:(id)arg1;
 - (void)setRightCalloutAccessoryView:(id)arg1;
+- (void)setModel:(id)arg1;
+- (struct CGPoint { float x1; float x2; })presentationPoint;
+- (void)setPresentationPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setAnnotation:(id)arg1;
+- (id)annotation;
+- (BOOL)isPersistent;
+- (id)subtitle;
+- (id)model;
+- (void)setTracking:(BOOL)arg1;
+- (void)setSelected:(BOOL)arg1;
+- (void)prepareForReuse;
+- (BOOL)isSelected;
+- (id)reuseIdentifier;
+- (id)title;
+- (BOOL)isTracking;
 
 @end

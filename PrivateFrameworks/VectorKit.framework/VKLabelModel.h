@@ -20,11 +20,6 @@
 @property BOOL labelMarkerSelectionEnabled;
 
 
-- (void)setStylesheet:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
 - (BOOL)drawLabels;
 - (void)labelManager:(id)arg1 setNeedsDisplay:(BOOL)arg2;
 - (void)labelManager:(id)arg1 setNeedsLayout:(BOOL)arg2;
@@ -59,5 +54,10 @@
 - (BOOL)localizeLabels;
 - (void)setLabelMarkerSelectionEnabled:(BOOL)arg1;
 - (unsigned int)mapLayerPosition;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (void)setStylesheet:(id)arg1;
 
 @end

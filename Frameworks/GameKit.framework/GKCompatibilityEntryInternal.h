@@ -14,12 +14,12 @@
 
 + (id)codedPropertyKeys;
 
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)setVersions:(id)arg1;
 - (id)versions;
 - (void)setBundleID:(id)arg1;
 - (id)bundleID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 
 @end

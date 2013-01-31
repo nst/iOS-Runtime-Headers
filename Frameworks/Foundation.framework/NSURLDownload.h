@@ -14,16 +14,14 @@
 + (id)_downloadWithLoadingConnection:(id)arg1 request:(id)arg2 response:(id)arg3 delegate:(id)arg4 proxy:(id)arg5;
 + (BOOL)canResumeDownloadDecodedWithEncodingMIMEType:(id)arg1;
 
+- (void)cancelAuthenticationChallenge:(id)arg1;
+- (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
-- (void)_setDelegate:(id)arg1;
-- (id)_delegate;
 - (id)url;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (id)request;
-- (void)cancelAuthenticationChallenge:(id)arg1;
-- (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (BOOL)sendCanAuthenticateAgainstProtectionSpace:(struct _CFURLProtectionSpace { }*)arg1;
 - (void)sendDidFail:(struct __CFError { }*)arg1;
 - (void)sendDidFinish;
@@ -57,5 +55,7 @@
 - (id)_initWithLoadingCFURLConnection:(struct _CFURLConnection { }*)arg1 request:(struct _CFURLRequest { }*)arg2 response:(struct _CFURLResponse { }*)arg3 delegate:(id)arg4 proxy:(id)arg5;
 - (void)cleanupChallenges;
 - (id)initWithRequest:(id)arg1 delegate:(id)arg2;
+- (void)_setDelegate:(id)arg1;
+- (id)_delegate;
 
 @end

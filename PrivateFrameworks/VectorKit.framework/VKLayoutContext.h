@@ -30,7 +30,6 @@
 @property int transitionMapMode;
 
 
-- (void)dealloc;
 - (id)transitionCamera;
 - (void)clearCanvas;
 - (void)setAnchorContext:(id)arg1;
@@ -44,5 +43,6 @@
 - (id)anchorContext;
 - (void)setViewTransform:(id)arg1;
 - (id)viewTransform;
+- (void)dealloc;
 
 @end

@@ -11,12 +11,12 @@
 @property(retain) NSArray * observers;
 
 
-- (void)addObserver:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)dealloc;
+- (void)_objectDidPostNotification:(id)arg1;
+- (void)informObserversOfNotification:(id)arg1;
 - (void)setObservers:(id)arg1;
 - (id)observers;
-- (void)informObserversOfNotification:(id)arg1;
-- (void)_objectDidPostNotification:(id)arg1;
+- (void)addObserver:(id)arg1;
 
 @end

@@ -14,9 +14,6 @@
 
 
 - (void)dealloc;
-- (void)finalize;
-- (void)_resetConnection;
-- (void)shutdown;
 - (void)sendMessageWithName:(id)arg1 replyHandler:(id)arg2;
 - (id)sendMessageWithName:(id)arg1 userInfo:(id)arg2;
 - (void)sendMessageWithName:(id)arg1;
@@ -27,5 +24,8 @@
 - (id)_newMessageWithName:(id)arg1 userInfo:(id)arg2;
 - (void)_createConnectionIfNecessary;
 - (id)initWithQueue:(id)arg1 bundleIdentifier:(struct __CFString { }*)arg2 storeIdentifier:(struct __CFString { }*)arg3 additionalSource:(BOOL)arg4;
+- (void)shutdown;
+- (void)_resetConnection;
+- (void)finalize;
 
 @end

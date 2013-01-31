@@ -18,7 +18,6 @@
 @property(readonly) int which;
 
 
-- (id)view;
 - (void)initUIEvent:(id)arg1 :(BOOL)arg2 :(BOOL)arg3 :(id)arg4 :(int)arg5;
 - (void)initUIEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 detail:(int)arg5;
 - (int)which;
@@ -29,5 +28,6 @@
 - (int)pageX;
 - (int)charCode;
 - (int)keyCode;
+- (id)view;
 
 @end

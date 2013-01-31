@@ -5,7 +5,6 @@
 @interface DABehaviorOptions : NSObject  {
 }
 
-+ (void)initialize;
 + (BOOL)isCustomerInstall;
 + (id)whitelistedEASProtocols;
 + (int)numForgivable401s;
@@ -32,6 +31,7 @@
 + (BOOL)_shouldForceCookies:(BOOL*)arg1;
 + (void)_startListeningForNotifications;
 + (BOOL)promptForAllCerts;
++ (void)initialize;
 
 
 @end

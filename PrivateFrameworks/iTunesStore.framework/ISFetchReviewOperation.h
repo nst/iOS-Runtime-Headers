@@ -25,16 +25,16 @@
 - (void)setReview:(id)arg1;
 - (void)setItemIdentifier:(unsigned long long)arg1;
 - (void)setAssetType:(int)arg1;
-- (unsigned long long)itemIdentifier;
-- (void)dealloc;
-- (int)assetType;
-- (void)setUrl:(id)arg1;
-- (id)url;
-- (void)run;
 - (void)setSoftwareVersionIdentifier:(unsigned int)arg1;
 - (unsigned int)softwareVersionIdentifier;
 - (void)_fetchReviewInformation;
 - (void)setBackgroundReview:(BOOL)arg1;
 - (BOOL)isBackgroundReview;
+- (void)dealloc;
+- (int)assetType;
+- (void)setUrl:(id)arg1;
+- (id)url;
+- (void)run;
+- (unsigned long long)itemIdentifier;
 
 @end

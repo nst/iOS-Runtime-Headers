@@ -5,7 +5,7 @@
 @class VKViewVolume, VKFootprint, <VKCameraDelegate>;
 
 @interface VKCamera : NSObject  {
-    <VKCameraDelegate> *delegate;
+    <VKCameraDelegate> *_delegate;
     struct { 
         double x; 
         double y; 
@@ -83,7 +83,6 @@
     double _screenHeightOfGroundAndFarClipPlaneIntersection;
     BOOL _allowDatelineWraparound;
     double _canonicalPitch;
-    <VKCameraDelegate> *_delegate;
 }
 
 @property(readonly) struct { BOOL x1; double x2; double x3; double x4; double x5; } frustum;
@@ -124,16 +123,6 @@
 @property double canonicalPitch;
 
 
-- (void)setNeedsUpdate;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (void)setOrientation:(const struct { double x1[4][4]; }*)arg1;
-- (struct { double x1; double x2; double x3; })position;
-- (void)setPosition:(struct { double x1; double x2; double x3; })arg1;
-- (const struct { double x1[4][4]; }*)orientation;
 - (void)setMinHeight:(double)arg1;
 - (double)minHeight;
 - (void)setMaxHeight:(double)arg1;
@@ -187,7 +176,17 @@
 - (double)widthOfViewAtDepth:(double)arg1;
 - (struct VKCameraState { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1[4][4]; } x2; float x3; float x4; })cameraState;
 - (void)updateIfNeeded;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (float)aspectRatio;
 - (void)setAspectRatio:(float)arg1;
+- (void)setOrientation:(const struct { double x1[4][4]; }*)arg1;
+- (struct { double x1; double x2; double x3; })position;
+- (void)setPosition:(struct { double x1; double x2; double x3; })arg1;
+- (const struct { double x1[4][4]; }*)orientation;
+- (void)setNeedsUpdate;
 
 @end

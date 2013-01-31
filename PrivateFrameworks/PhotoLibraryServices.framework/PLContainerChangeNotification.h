@@ -40,9 +40,6 @@
 - (id)name;
 - (void)dealloc;
 - (id)init;
-- (id)snapshot;
-- (id)object;
-- (id)_init;
 - (BOOL)_didCalculateDiffs;
 - (id)changedObjects;
 - (BOOL)hasMoves;
@@ -60,5 +57,8 @@
 - (id)insertedIndexes;
 - (id)deletedIndexes;
 - (BOOL)shouldReload;
+- (id)snapshot;
+- (id)object;
+- (id)_init;
 
 @end

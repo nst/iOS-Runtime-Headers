@@ -61,11 +61,6 @@
 @property(readonly) BOOL needsLayout;
 
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (id)init;
-- (BOOL)needsLayout;
 - (id)currentShieldGroup;
 - (id)currentLocationText;
 - (struct { unsigned int x1; float x2; })routeUserOffset;
@@ -99,5 +94,10 @@
 - (void)setCurrentLocationText:(id)arg1;
 - (void)setRouteUserOffset:(struct { unsigned int x1; float x2; })arg1;
 - (void)clearScene;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)init;
+- (BOOL)needsLayout;
 
 @end

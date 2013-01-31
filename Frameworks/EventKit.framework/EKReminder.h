@@ -14,15 +14,17 @@
 @property int priority;
 
 + (id)reminderWithEventStore:(id)arg1;
++ (void)_removeSnoozedAlarmsFromReminder:(id)arg1 usingDueDate:(id)arg2;
 
-- (void)setCompletionDate:(id)arg1;
-- (id)completionDate;
-- (BOOL)isCompleted;
 - (id)description;
 - (void)dealloc;
 - (void)setPriority:(int)arg1;
 - (int)priority;
 - (void)setTimeZone:(id)arg1;
+- (void)setCompletionDate:(id)arg1;
+- (id)completionDate;
+- (BOOL)isCompleted;
+- (id)bestDisplayAlarm;
 - (void)clearParentID;
 - (void)setDueDateComponents:(id)arg1;
 - (id)parentID;

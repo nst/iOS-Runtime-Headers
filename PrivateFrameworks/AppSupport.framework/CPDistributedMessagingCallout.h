@@ -16,8 +16,8 @@
 
 - (id)target;
 - (void)dealloc;
-- (SEL)selector;
 - (BOOL)returnsVoid;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
+- (SEL)selector;
 
 @end

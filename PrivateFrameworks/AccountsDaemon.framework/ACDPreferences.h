@@ -7,9 +7,9 @@
 
 + (id)sharedPreferences;
 
-- (void)_setValue:(id)arg1 forKey:(struct __CFString { }*)arg2;
-- (void)synchronize;
-- (double)serverTimeoutInterval;
 - (id)_valueForKey:(struct __CFString { }*)arg1;
+- (void)_setValue:(id)arg1 forKey:(struct __CFString { }*)arg2;
+- (double)serverTimeoutInterval;
+- (void)synchronize;
 
 @end

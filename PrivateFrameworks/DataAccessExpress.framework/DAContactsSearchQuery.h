@@ -16,15 +16,15 @@
 
 + (id)contactsSearchQueryWithSearchString:(id)arg1 searchBase:(id)arg2 searchScope:(id)arg3 consumer:(id)arg4;
 
+- (id)searchScope;
+- (void)setSearchScope:(id)arg1;
 - (void)dealloc;
-- (id)initWithDictionaryRepresentation:(id)arg1 consumer:(id)arg2;
-- (id)dictionaryRepresentation;
 - (id)searchBase;
 - (void)setSearchBase:(id)arg1;
 - (id)initWithSearchString:(id)arg1 searchBase:(id)arg2 searchScope:(id)arg3 consumer:(id)arg4;
-- (void)setIncludePhotos:(BOOL)arg1;
-- (id)searchScope;
-- (void)setSearchScope:(id)arg1;
 - (BOOL)includePhotos;
+- (id)initWithDictionaryRepresentation:(id)arg1 consumer:(id)arg2;
+- (id)dictionaryRepresentation;
+- (void)setIncludePhotos:(BOOL)arg1;
 
 @end

@@ -19,14 +19,14 @@
 + (id)commandFailedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)commandFailed;
 
-- (id)initWithReason:(id)arg1;
-- (void)setReason:(id)arg1;
-- (id)groupIdentifier;
-- (id)reason;
-- (void)setErrorCode:(int)arg1;
-- (int)errorCode;
 - (id)initWithErrorCode:(int)arg1;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)initWithReason:(id)arg1;
+- (void)setErrorCode:(int)arg1;
+- (int)errorCode;
+- (id)reason;
+- (void)setReason:(id)arg1;
+- (id)groupIdentifier;
 
 @end

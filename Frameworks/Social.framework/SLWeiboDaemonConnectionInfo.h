@@ -18,9 +18,9 @@
 - (void).cxx_destruct;
 - (id)connectionQueue;
 - (void)setConnectionQueue:(id)arg1;
+- (void)setConnection:(id)arg1;
 - (id)connection;
 - (void)setDaemonSessionProxy:(id)arg1;
 - (id)daemonSessionProxy;
-- (void)setConnection:(id)arg1;
 
 @end

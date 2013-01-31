@@ -14,11 +14,11 @@
 
 + (id)newSegmentedControlForEntity:(id)arg1;
 
+- (int)selectedStoreOfferVariant;
+- (void)setSelectedStoreOfferVariant:(int)arg1;
 - (struct CGSize { float x1; float x2; })minimumSize;
 - (void)setMinimumSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)sizeToFit;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (int)selectedStoreOfferVariant;
-- (void)setSelectedStoreOfferVariant:(int)arg1;
 
 @end

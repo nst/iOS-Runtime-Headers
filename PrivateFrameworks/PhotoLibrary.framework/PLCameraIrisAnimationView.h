@@ -21,7 +21,6 @@
 
 
 - (void)dealloc;
-- (void)didMoveToWindow;
 - (void)setShouldSetupAnimationInDidMoveToWindow:(BOOL)arg1;
 - (void)setIrisAnimationPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setIrisAnimationDuration:(double)arg1;
@@ -36,5 +35,6 @@
 - (id)irisAnimationDelegate;
 - (void)setIrisAnimationDidStopSelector:(SEL)arg1;
 - (void)setIrisAnimationDelegate:(id)arg1;
+- (void)didMoveToWindow;
 
 @end

@@ -59,17 +59,12 @@
 @property(readonly) NSAttributedString * madridAttributedBody;
 
 
-- (id)groupID;
-- (id)address;
 - (id)messageParts;
 - (id)guid;
 - (int)identifier;
 - (id)description;
 - (void)dealloc;
-- (id)subject;
-- (void)setIdentifier:(int)arg1;
-- (id)text;
-- (id)date;
+- (id)recipients;
 - (id)madridChatIdentifier;
 - (BOOL)isVisibleByDefault;
 - (id)madridChatGUID;
@@ -96,7 +91,12 @@
 - (BOOL)senderIsVoicemail;
 - (id)previewText;
 - (BOOL)isOutgoing;
-- (id)recipients;
+- (id)subject;
+- (void)setIdentifier:(int)arg1;
+- (id)text;
+- (id)date;
+- (id)groupID;
+- (id)address;
 - (BOOL)hasAttachments;
 
 @end

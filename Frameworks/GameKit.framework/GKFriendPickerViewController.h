@@ -31,6 +31,21 @@
 @property int numSelected;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)setTheme:(id)arg1;
+- (id)theme;
+- (id)searchController;
+- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
+- (void)done;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)dataSource;
+- (void)setDataSource:(id)arg1;
 - (void)setInviteMessage:(id)arg1;
 - (id)inviteMessage;
 - (void)setLoadingFriendsFailed:(BOOL)arg1;
@@ -61,20 +76,5 @@
 - (void)friendPickerSelectionDidChangeNotification:(id)arg1;
 - (BOOL)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (id)initWithGame:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)searchController;
-- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
-- (void)done;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)dataSource;
-- (void)setDataSource:(id)arg1;
-- (void)setTheme:(id)arg1;
-- (id)theme;
 
 @end

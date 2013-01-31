@@ -53,13 +53,8 @@
 + (id)_keepAliveCachePath;
 + (Class)growthAlgorithmClass;
 
-- (double)pollingInterval;
 - (void)dealloc;
-- (id)_stringForStyle:(int)arg1;
-- (void)setPollingIntervalOverride:(double)arg1;
-- (void)startManager;
-- (void)setOnlyAllowedStyle:(int)arg1;
-- (int)currentStyle;
+- (double)pollingInterval;
 - (BOOL)fallBackToAlternateInterface;
 - (double)keepAliveGracePeriod;
 - (void)logAtLevel:(int)arg1 format:(id)arg2;
@@ -93,7 +88,6 @@
 - (void)interfaceManagerWWANInterfaceStatusChanged:(id)arg1;
 - (void)interfaceManagerInHomeCountryStatusChanged:(id)arg1;
 - (void)interfaceManagerInternetReachabilityChanged:(id)arg1;
-- (void)log:(id)arg1;
 - (double)currentKeepAliveInterval;
 - (void)resumeManagerWithAction:(int)arg1;
 - (BOOL)shouldClientScheduleReconnectDueToFailure;
@@ -102,5 +96,11 @@
 - (void)setMinimumKeepAliveInterval:(double)arg1;
 - (void)setKeepAliveGracePeriod:(double)arg1;
 - (id)initWithConnectionClass:(int)arg1 delegate:(id)arg2 serviceIdentifier:(id)arg3;
+- (id)_stringForStyle:(int)arg1;
+- (void)setPollingIntervalOverride:(double)arg1;
+- (void)startManager;
+- (void)setOnlyAllowedStyle:(int)arg1;
+- (int)currentStyle;
+- (void)log:(id)arg1;
 
 @end

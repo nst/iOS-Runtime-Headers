@@ -12,12 +12,6 @@
 
 + (id)sharedInstance;
 
-- (void)_playbackStateChangedNotification:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
-- (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
-- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)endIgnoringNowPlayingChanges;
 - (void)beginIgnoringNowPlayingChanges;
 - (void)updateNowPlayingForTopViewController;
@@ -31,5 +25,11 @@
 - (void)beginIgnoringStatusBarChanges;
 - (void)tabBarController:(id)arg1 willSelectViewController:(id)arg2;
 - (BOOL)tabBarController:(id)arg1 canSelectViewController:(id)arg2;
+- (void)dealloc;
+- (id)init;
+- (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
+- (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
+- (void)_playbackStateChangedNotification:(id)arg1;
 
 @end

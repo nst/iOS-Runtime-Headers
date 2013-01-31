@@ -38,7 +38,6 @@
 + (id)applicationProxyForIdentifier:(id)arg1;
 + (id)applicationProxyForIdentifier:(id)arg1 roleIdentifier:(id)arg2;
 
-- (id)bundleVersion;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -67,6 +66,7 @@
 - (id)resourcesDirectoryURL;
 - (id)iconStyleDomain;
 - (BOOL)privateDocumentIconAllowOverride;
+- (id)bundleVersion;
 - (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
 - (struct CGSize { float x1; float x2; })_defaultStyleSize:(id)arg1;
 

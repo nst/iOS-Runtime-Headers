@@ -18,11 +18,11 @@
 
 + (id)preferenceSpecifierNamed:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(int)arg6 edit:(Class)arg7;
 
+- (void)dealloc;
 - (void)setupWithDictionary:(id)arg1;
 - (BOOL)isDestructive;
 - (id)okButton;
 - (void)setOkButton:(id)arg1;
-- (void)dealloc;
 - (id)cancelButton;
 - (void)setCancelButton:(id)arg1;
 - (void)setPrompt:(id)arg1;

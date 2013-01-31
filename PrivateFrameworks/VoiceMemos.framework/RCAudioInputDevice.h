@@ -45,14 +45,6 @@
 + (id)savedRecordingsDirectory;
 + (id)sharedInputDevice;
 
-- (void)becomeActive;
-- (void)resignActive;
-- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (id)init;
-- (id)_init;
-- (void)_applicationWillTerminate:(id)arg1;
 - (void)setRecordingStartDate:(id)arg1;
 - (id)recordingStartDate;
 - (void)_beginRecording;
@@ -80,6 +72,14 @@
 - (void)_availableModesDidChange:(id)arg1;
 - (id)recordingBeingRemade;
 - (void)remakeRecording:(id)arg1;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)init;
+- (id)_init;
+- (void)_applicationWillTerminate:(id)arg1;
+- (void)becomeActive;
+- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
+- (void)resignActive;
 - (BOOL)isPaused;
 - (void)captureOutput:(id)arg1 didResumeRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
 - (void)captureOutput:(id)arg1 didPauseRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;

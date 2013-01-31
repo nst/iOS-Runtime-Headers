@@ -79,6 +79,11 @@
 
 + (id)sharedInstance;
 
+- (int)deviceType;
+- (id)productVersion;
+- (void)dealloc;
+- (id)init;
+- (id)userAgentString;
 - (void)carrierSettingsChanged:(id)arg1;
 - (void)_lockdownStateChanged:(id)arg1;
 - (void)_commCenterAlive;
@@ -98,11 +103,15 @@
 - (id)productBuildVersion;
 - (id)productName;
 - (id)deviceIDPrefix;
-- (BOOL)accountModificationRestricted;
-- (BOOL)supportsWLAN;
-- (BOOL)supportsWiFi;
-- (BOOL)supportsCellularData;
-- (BOOL)madridAvailable;
+- (BOOL)supportsNonWiFiFaceTime;
+- (BOOL)wantsBreakBeforeMake;
+- (BOOL)supportsBackFacingCamera;
+- (BOOL)supportsFrontFacingCamera;
+- (BOOL)faceTimeAvailable;
+- (BOOL)faceTimeSupported;
+- (BOOL)nonWifiFaceTimeAvailable;
+- (id)deviceID;
+- (id)deviceName;
 - (BOOL)supportsMMS;
 - (id)CTNetworkInformation;
 - (void)_handleRegistrationStateChanged:(id)arg1;
@@ -132,26 +141,17 @@
 - (void)_updateManagedConfigurationSettings;
 - (void)_updateCapabilities;
 - (void)_watchNotifyTokens;
-- (int)deviceType;
-- (id)productVersion;
-- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
-- (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
-- (void)dealloc;
-- (id)init;
-- (id)model;
+- (BOOL)accountModificationRestricted;
+- (BOOL)supportsWLAN;
+- (BOOL)supportsWiFi;
+- (BOOL)supportsCellularData;
+- (BOOL)madridAvailable;
+- (BOOL)supportsSMS;
 - (int)performanceClass;
 - (BOOL)madridSupported;
 - (BOOL)isTelephonyDevice;
-- (id)deviceID;
-- (id)deviceName;
-- (BOOL)supportsNonWiFiFaceTime;
-- (BOOL)wantsBreakBeforeMake;
-- (BOOL)supportsBackFacingCamera;
-- (BOOL)supportsFrontFacingCamera;
-- (BOOL)faceTimeAvailable;
-- (BOOL)faceTimeSupported;
-- (BOOL)nonWifiFaceTimeAvailable;
-- (id)userAgentString;
-- (BOOL)supportsSMS;
+- (id)model;
+- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
+- (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
 
 @end

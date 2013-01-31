@@ -6,9 +6,9 @@
 }
 
 
-- (BOOL)canShowPreviewForItem:(id)arg1;
 - (Class)cellClassForItem:(id)arg1 reuseIdentifier:(id*)arg2;
 - (BOOL)canDoubleTapIndexPath:(id)arg1;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
+- (BOOL)canShowPreviewForItem:(id)arg1;
 
 @end

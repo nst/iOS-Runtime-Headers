@@ -38,14 +38,8 @@
 + (void)reboot;
 + (void)shutdown;
 
-- (BOOL)isInstalled;
 - (void)dealloc;
 - (id)init;
-- (void)sleep;
-- (float)brightness;
-- (void)setBrightness:(float)arg1;
-- (int)batteryLevel;
-- (void)setAirplaneMode:(BOOL)arg1;
 - (void)setIgnorePowerChange:(bool)arg1;
 - (int)setBatteryChargeEnabled:(BOOL)arg1;
 - (int)setACSoftConnected:(BOOL)arg1;
@@ -84,8 +78,14 @@
 - (void)watchPowerSources;
 - (void)setTouchPower:(BOOL)arg1;
 - (unsigned int)service;
-- (BOOL)airplaneMode;
 - (int)maxCapacity;
+- (float)brightness;
+- (void)setBrightness:(float)arg1;
+- (int)batteryLevel;
+- (void)setAirplaneMode:(BOOL)arg1;
+- (BOOL)airplaneMode;
+- (BOOL)isInstalled;
+- (void)sleep;
 - (BOOL)isConnected;
 
 @end

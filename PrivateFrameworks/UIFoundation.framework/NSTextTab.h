@@ -15,6 +15,11 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 
+- (id)accessibilityRulerMarkerTypeDescription;
+- (id)accessibilityRulerMarkerType;
+- (unsigned int)tabStopType;
+- (id)initWithType:(unsigned int)arg1 location:(float)arg2;
+- (id)initWithTextAlignment:(int)arg1 location:(float)arg2 options:(id)arg3;
 - (id)description;
 - (unsigned int)retainCount;
 - (id)retain;
@@ -29,10 +34,5 @@
 - (int)alignment;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)accessibilityRulerMarkerTypeDescription;
-- (id)accessibilityRulerMarkerType;
-- (unsigned int)tabStopType;
-- (id)initWithType:(unsigned int)arg1 location:(float)arg2;
-- (id)initWithTextAlignment:(int)arg1 location:(float)arg2 options:(id)arg3;
 
 @end

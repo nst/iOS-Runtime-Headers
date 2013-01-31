@@ -5,7 +5,7 @@
 @class NSError, NSMutableDictionary, <GKTurnBasedInviteViewControllerDelegate>;
 
 @interface GKTurnBasedInviteViewController : GKMultiplayerViewController <UIActionSheetDelegate, GKFriendPickerViewControllerDelegate> {
-    <GKTurnBasedInviteViewControllerDelegate> *_delegate;
+    <GKTurnBasedInviteViewControllerDelegate> *_delegateWeak;
     BOOL _showCancelButton;
     NSMutableDictionary *_inviteMessageDictionary;
     NSError *_creationError;
@@ -17,6 +17,13 @@
 @property(retain) NSError * creationError;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)cancel;
+- (void)dealloc;
+- (BOOL)showCancelButton;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)setInviteMessageDictionary:(id)arg1;
 - (id)inviteMessageDictionary;
 - (void)setShowCancelButton:(BOOL)arg1;
@@ -28,12 +35,5 @@
 - (void)setCreationError:(id)arg1;
 - (void)finishWithError:(id)arg1;
 - (void)friendPickerViewController:(id)arg1 didFinishWithPlayers:(id)arg2 inviteMessage:(id)arg3;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)cancel;
-- (void)dealloc;
-- (BOOL)showCancelButton;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 
 @end

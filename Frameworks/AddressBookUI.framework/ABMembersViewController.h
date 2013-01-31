@@ -21,9 +21,9 @@
 @property(readonly) _UIAccessDeniedView * accessDeniedView;
 
 
-- (void)updateTitle;
-- (void)loadState;
 - (void)dealloc;
+- (void)cancel:(id)arg1;
+- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
 - (id)model;
 - (BOOL)canHandleSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
 - (id)defaultPNGName;
@@ -39,7 +39,9 @@
 - (void)applicationDidResume;
 - (void)didReceiveMemoryWarning;
 - (void)applicationWillSuspend;
-- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
+- (void)loadState;
+- (void)updateTitle;
+- (void)setAddressBook:(void*)arg1;
 - (void)searchCurrentContactsGroupForWords:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)isNavigationButtonEnabled:(int)arg1;
 - (BOOL)personViewController:(id)arg1 shouldContinueAfterEditingConfirmed:(BOOL)arg2 forPerson:(void*)arg3;
@@ -91,7 +93,5 @@
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
 - (void)modelDatabaseChange:(id)arg1;
-- (void)cancel:(id)arg1;
-- (void)setAddressBook:(void*)arg1;
 
 @end

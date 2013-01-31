@@ -28,8 +28,12 @@
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
 - (void)drawWithModifiers:(unsigned int)arg1;
-- (BOOL)isPlaying;
-- (id)artist;
+- (void)setCellIndex:(unsigned int)arg1;
+- (id)untruncationCalloutString;
+- (void)setIsItemChapterData:(BOOL)arg1;
+- (BOOL)isItemChapterData;
+- (void)setPlaying:(BOOL)arg1;
+- (unsigned int)cellIndex;
 - (id)init;
 - (void)setIndex:(unsigned int)arg1;
 - (unsigned int)index;
@@ -38,12 +42,8 @@
 - (void)setDuration:(double)arg1;
 - (void)setTitle:(id)arg1;
 - (void)reloadData;
-- (unsigned int)cellIndex;
 - (void)setArtist:(id)arg1;
-- (void)setCellIndex:(unsigned int)arg1;
-- (id)untruncationCalloutString;
-- (void)setIsItemChapterData:(BOOL)arg1;
-- (BOOL)isItemChapterData;
-- (void)setPlaying:(BOOL)arg1;
+- (BOOL)isPlaying;
+- (id)artist;
 
 @end

@@ -24,9 +24,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
-- (void)setServer:(id)arg1;
-- (id)server;
-- (void)removeSession:(id)arg1;
 - (void)setServiceQueue:(id)arg1;
 - (id)serviceQueue;
 - (void)_tearDownXPC;
@@ -38,6 +35,9 @@
 - (void)_setupSessionWithConnection:(id)arg1;
 - (id)xpcServiceName;
 - (void)_configureXPC;
+- (void)setServer:(id)arg1;
+- (void)removeSession:(id)arg1;
+- (id)server;
 - (id)_managedObjectModel;
 - (id)_persistentStoreCoordinator;
 

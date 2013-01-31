@@ -14,11 +14,11 @@
 @property(readonly) DOMMessagePort * messagePort;
 
 
-- (id)data;
-- (id)source;
-- (id)origin;
 - (void)initMessageEvent:(id)arg1 canBubbleArg:(BOOL)arg2 cancelableArg:(BOOL)arg3 dataArg:(id)arg4 originArg:(id)arg5 lastEventIdArg:(id)arg6 sourceArg:(id)arg7 messagePort:(id)arg8;
 - (id)messagePort;
 - (id)lastEventId;
+- (id)data;
+- (id)source;
+- (id)origin;
 
 @end

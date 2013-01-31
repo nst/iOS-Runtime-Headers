@@ -18,8 +18,6 @@
 @property int type;
 
 
-- (id)session;
-- (void)setSession:(id)arg1;
 - (int)type;
 - (void).cxx_destruct;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
@@ -34,5 +32,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_iconViewRect;
 - (void)_updateLabelColors:(BOOL)arg1;
 - (void)_updateCellSubviews;
+- (id)session;
+- (void)setSession:(id)arg1;
 
 @end

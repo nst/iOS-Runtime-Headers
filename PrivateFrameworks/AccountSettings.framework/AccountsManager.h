@@ -14,10 +14,8 @@
     NSArray *_runtimeFixers;
 }
 
-+ (void)accountDidChange:(id)arg1 forDataclass:(id)arg2;
-+ (void)accountWillChange:(id)arg1 forDataclass:(id)arg2;
 + (void)waitForMigrationToFinish;
-+ (unsigned int)currentVersion;
++ (void)_setShouldSkipNotifications:(BOOL)arg1;
 + (BOOL)accountSettingsNeedsToBeMigrated;
 + (BOOL)_oldDAAccountsInformationFound;
 + (BOOL)_oldMailAccountsInformationFound;
@@ -30,12 +28,27 @@
 + (void)removeNewAccountSettingsToMigrateOldAccountInformation;
 + (id)createAndLockMigrationLock;
 + (void)shouldMigrateOldMailAccounts:(BOOL*)arg1 oldDAAccounts:(BOOL*)arg2 newAccountSettings:(BOOL*)arg3;
-+ (void)_setShouldSkipNotifications:(BOOL)arg1;
++ (void)accountDidChange:(id)arg1 forDataclass:(id)arg2;
++ (void)accountWillChange:(id)arg1 forDataclass:(id)arg2;
++ (unsigned int)currentVersion;
 
-- (void)deleteAccountWithIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (unsigned int)count;
+- (id)fullDeviceLocalAccount;
+- (void)_loadChildrenFromAccount:(id)arg1;
+- (void)addChild:(id)arg1 toAccount:(id)arg2;
+- (void)removeChildWithIdentifier:(id)arg1 fromAccount:(id)arg2;
+- (void)deleteAccount:(id)arg1;
+- (id)accountWithIdentifier:(id)arg1;
+- (void)saveAllAccounts;
+- (void)replaceAccountsWithTypes:(id)arg1 withAccounts:(id)arg2;
+- (id)accountsWithTypes:(id)arg1 withLoader:(id)arg2;
+- (id)accountsWithTypes:(id)arg1;
+- (id)fullAccountWithIdentifier:(id)arg1 loader:(id)arg2;
+- (id)allBasicAccounts;
+- (void)updateAccount:(id)arg1;
+- (void)deleteAccountWithIdentifier:(id)arg1;
 - (void)setDataVersion:(unsigned int)arg1;
 - (unsigned int)dataVersion;
 - (id)initWithAccounsInfoArray:(id)arg1;
@@ -52,22 +65,9 @@
 - (id)mergeInMemoryProperties:(id)arg1 originalProperties:(id)arg2 onDiskProperties:(id)arg3;
 - (void)_removeChildrenForAccountWithIdentifier:(id)arg1;
 - (id)initInsideOfMigration;
-- (void)_loadChildrenFromAccount:(id)arg1;
-- (void)addChild:(id)arg1 toAccount:(id)arg2;
-- (void)removeChildWithIdentifier:(id)arg1 fromAccount:(id)arg2;
+- (id)syncableAccountWithSyncIdentifier:(id)arg1;
 - (id)allBasicSyncableAccounts;
 - (id)displayAccountWithSyncIdentifier:(id)arg1;
-- (void)deleteAccount:(id)arg1;
-- (id)accountWithIdentifier:(id)arg1;
-- (void)saveAllAccounts;
-- (void)replaceAccountsWithTypes:(id)arg1 withAccounts:(id)arg2;
-- (id)accountsWithTypes:(id)arg1 withLoader:(id)arg2;
-- (id)accountsWithTypes:(id)arg1;
-- (id)fullDeviceLocalAccount;
-- (id)allBasicAccounts;
-- (void)updateAccount:(id)arg1;
-- (id)syncableAccountWithSyncIdentifier:(id)arg1;
-- (id)fullAccountWithIdentifier:(id)arg1 loader:(id)arg2;
 - (void)setLegacyAccounts:(id)arg1 withPasswords:(id)arg2;
 - (id)legacyAccounts;
 - (BOOL)hasActiveDAMMeAccounts;

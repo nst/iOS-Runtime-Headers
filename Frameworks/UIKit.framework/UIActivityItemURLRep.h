@@ -5,9 +5,9 @@
 @class NSURL, UIImage;
 
 @interface UIActivityItemURLRep : NSObject  {
+    int _attachmentURLType;
     NSURL *_URL;
     UIImage *_thumbnail;
-    int _attachmentURLType;
 }
 
 @property(retain) NSURL * URL;
@@ -17,9 +17,9 @@
 
 - (id)URL;
 - (void)dealloc;
+- (id)thumbnail;
 - (void)setAttachmentURLType:(int)arg1;
 - (int)attachmentURLType;
-- (id)thumbnail;
 - (void)setThumbnail:(id)arg1;
 - (void)setURL:(id)arg1;
 - (BOOL)isFileURL;

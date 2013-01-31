@@ -9,10 +9,10 @@
 }
 
 
+- (int)completionType;
 - (id)perform;
 - (id)URL;
 - (void)dealloc;
 - (void)setURL:(id)arg1;
-- (int)completionType;
 
 @end

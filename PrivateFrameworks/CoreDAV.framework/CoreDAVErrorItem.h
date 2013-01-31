@@ -39,9 +39,7 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (void)setStatus:(id)arg1;
-- (id)status;
-- (id)uid;
+- (void)setUid:(id)arg1;
 - (void)setMaxAttendees:(id)arg1;
 - (void)setImageError:(id)arg1;
 - (void)setInvalidImageType:(id)arg1;
@@ -60,6 +58,8 @@
 - (id)numberOfMatchesWithinLimits;
 - (void)setMaxResourceSize:(id)arg1;
 - (id)maxResourceSize;
-- (void)setUid:(id)arg1;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (id)uid;
 
 @end

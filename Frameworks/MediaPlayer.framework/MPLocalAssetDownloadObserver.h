@@ -10,10 +10,10 @@
 
 + (void)beginDownloadForMediaItem:(id)arg1;
 
-- (void)_updateProgress:(id)arg1;
-- (id)initWithItemPersistentID:(long long)arg1;
-- (BOOL)canCancel;
 - (void)dealloc;
 - (double)downloadProgress;
+- (id)initWithItemPersistentID:(long long)arg1;
+- (BOOL)canCancel;
+- (void)_updateProgress:(id)arg1;
 
 @end

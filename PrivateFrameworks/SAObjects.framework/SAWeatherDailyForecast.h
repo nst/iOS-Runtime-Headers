@@ -13,11 +13,11 @@
 + (id)dailyForecastWithDictionary:(id)arg1 context:(id)arg2;
 + (id)dailyForecast;
 
-- (id)groupIdentifier;
 - (void)setLowTemperature:(id)arg1;
 - (id)lowTemperature;
 - (void)setHighTemperature:(id)arg1;
 - (id)highTemperature;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

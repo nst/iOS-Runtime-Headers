@@ -17,13 +17,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)rotation;
-- (void)setRotation:(id)arg1;
-- (void)setCameraType:(int)arg1;
 - (void)setZoom:(float)arg1;
 - (void)setFieldOfView:(float)arg1;
 - (float)zoom;
 - (float)fieldOfView;
 - (int)cameraType;
+- (void)setCameraType:(int)arg1;
+- (id)rotation;
+- (void)setRotation:(id)arg1;
 
 @end

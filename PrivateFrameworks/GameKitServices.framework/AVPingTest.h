@@ -23,11 +23,10 @@
 @property(readonly) float packetLossRate;
 
 
-- (id)description;
-- (void)dealloc;
-- (int)start;
 - (float)min;
 - (float)max;
+- (id)description;
+- (void)dealloc;
 - (BOOL)parsePingLineForLatencyStats:(char *)arg1;
 - (BOOL)parsePingLineForPLR:(char *)arg1;
 - (BOOL)parsePingLineForBadCommand:(char *)arg1;
@@ -38,5 +37,6 @@
 - (id)initWithIPAsString:(id)arg1 usingWifi:(BOOL)arg2;
 - (int)parseResults:(char *)arg1 secondLastLine:(char *)arg2;
 - (float)packetLossRate;
+- (int)start;
 
 @end

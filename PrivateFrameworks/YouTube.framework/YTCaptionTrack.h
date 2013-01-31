@@ -19,17 +19,17 @@
 @property BOOL speechRecognition;
 
 
-- (void)setLanguage:(id)arg1;
-- (id)language;
-- (id)description;
-- (void)dealloc;
-- (void)setVideo:(id)arg1;
-- (id)title;
-- (void)setTitle:(id)arg1;
 - (BOOL)speechRecognition;
 - (id)captionTrackURL;
 - (void)setSpeechRecognition:(BOOL)arg1;
 - (void)setCaptionTrackURL:(id)arg1;
+- (id)description;
+- (void)dealloc;
 - (id)video;
+- (void)setVideo:(id)arg1;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (void)setLanguage:(id)arg1;
+- (id)language;
 
 @end

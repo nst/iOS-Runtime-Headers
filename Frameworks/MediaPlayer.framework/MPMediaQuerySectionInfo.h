@@ -14,8 +14,6 @@
 @property(readonly) unsigned int count;
 
 
-- (unsigned int)indexOfSectionForSectionIndexTitleAtIndex:(unsigned int)arg1;
-- (void)setSectionIndexTitles:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -25,5 +23,7 @@
 - (id)sectionIndexTitles;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (unsigned int)indexOfSectionForSectionIndexTitleAtIndex:(unsigned int)arg1;
+- (void)setSectionIndexTitles:(id)arg1;
 
 @end

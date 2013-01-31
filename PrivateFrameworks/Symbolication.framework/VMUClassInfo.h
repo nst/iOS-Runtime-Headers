@@ -47,9 +47,9 @@
 @property(readonly) BOOL isRootClass;
 @property(readonly) BOOL hasCppConstructorOrDestructor;
 
-+ (void)initialize;
 + (id)descriptionForTypeEncoding:(const char *)arg1 ivarName:(const char *)arg2;
 + (id)classInfoWithClassName:(id)arg1 binaryName:(id)arg2 type:(int)arg3;
++ (void)initialize;
 
 - (id)type;
 - (id)debugDescription;
@@ -57,9 +57,6 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)className;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)isMetaClass;
 - (id)shortIvarDescription;
 - (void)scanObject:(unsigned long long)arg1 ofSize:(unsigned int)arg2 withBlock:(id)arg3;
@@ -90,5 +87,8 @@
 - (id)initWithClassName:(id)arg1 binaryName:(id)arg2 type:(int)arg3;
 - (id)initWithClass:(unsigned long long)arg1 infoMap:(id)arg2 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg3 type:(int)arg4 memoryReader:(id)arg5;
 - (id)typeName;
+- (id)className;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

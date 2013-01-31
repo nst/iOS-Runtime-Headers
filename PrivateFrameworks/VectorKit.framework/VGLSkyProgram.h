@@ -43,13 +43,13 @@
 + (id)program;
 
 - (float)screenHeight;
-- (id)init;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
-- (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (float)skyStartOffset;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })horizon;
 - (void)setHorizon:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSkyStartOffset:(float)arg1;
 - (void)setScreenHeight:(float)arg1;
+- (id)init;
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
+- (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 
 @end

@@ -39,6 +39,7 @@
 - (id)_currentInputSource;
 - (void)_close;
 - (id)initWithInputSources:(id)arg1;
+- (void)open;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)initWithURL:(id)arg1;
@@ -59,6 +60,5 @@
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;
 - (id)initWithFileAtPath:(id)arg1;
-- (void)open;
 
 @end

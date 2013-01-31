@@ -11,7 +11,8 @@
 
 - (unsigned short)provider;
 - (id)init;
-- (void)setProvider:(unsigned short)arg1;
 - (Class)responseClass;
+- (void)setProvider:(unsigned short)arg1;
+- (id)_mapkit_initWithLocalSearchRequest:(id)arg1;
 
 @end

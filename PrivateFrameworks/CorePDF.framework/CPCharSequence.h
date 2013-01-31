@@ -19,6 +19,10 @@
 }
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (unsigned int)length;
+- (void)resize:(unsigned int)arg1;
 - (BOOL)mapToPairsWithIndex:(int (*)())arg1 passing:(void*)arg2;
 - (BOOL)mapToPairs:(int (*)())arg1 passing:(void*)arg2;
 - (BOOL)mapWithIndex:(int (*)())arg1 from:(unsigned int)arg2 length:(unsigned int)arg3 passing:(void*)arg4;
@@ -54,11 +58,7 @@
 - (struct CPPDFChar { struct CPPDFObject { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; unsigned short x2; unsigned short x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; struct CPPDFStyle {} *x6; float x7; int x8; }*)charAtIndex:(unsigned int)arg1;
 - (id)initSuper;
 - (void)dispose;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (unsigned int)length;
 - (void)finalize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (void)resize:(unsigned int)arg1;
 
 @end

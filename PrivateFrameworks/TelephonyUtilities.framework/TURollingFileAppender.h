@@ -16,10 +16,8 @@
 
 + (BOOL)sendDirectoryToCrashReporter:(id)arg1 error:(id*)arg2;
 
-- (void)_flush;
-- (void)dealloc;
-- (void)flush;
 - (id)initWithDirectory:(id)arg1 prefix:(id)arg2;
+- (void)dealloc;
 - (void)_reloadFileHandles;
 - (void)_scheduleFlush;
 - (id)_logFileHandle;
@@ -27,5 +25,7 @@
 - (id)_logFilePath;
 - (void)_rollAndZipIfNecessary;
 - (void)logWithIdentifier:(id)arg1 pid:(int)arg2 date:(id)arg3 level:(int)arg4 topic:(id)arg5 text:(id)arg6 backtrace:(id)arg7;
+- (void)_flush;
+- (void)flush;
 
 @end

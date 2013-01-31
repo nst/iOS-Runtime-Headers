@@ -18,15 +18,15 @@
 + (id)chunkDeniedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)chunkDenied;
 
-- (id)groupIdentifier;
-- (void)setCurrent:(id)arg1;
-- (id)callbacks;
-- (void)setErrorCode:(int)arg1;
-- (int)errorCode;
 - (id)current;
 - (id)initWithErrorCode:(int)arg1;
 - (void)setCallbacks:(id)arg1;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (void)setErrorCode:(int)arg1;
+- (int)errorCode;
+- (id)callbacks;
+- (void)setCurrent:(id)arg1;
+- (id)groupIdentifier;
 
 @end

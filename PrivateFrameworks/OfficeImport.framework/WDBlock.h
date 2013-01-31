@@ -10,14 +10,14 @@
 
 
 - (id)init;
-- (id)initWithText:(id)arg1;
-- (id)document;
-- (id)text;
-- (BOOL)isEmpty;
 - (void)clearProperties;
 - (id)runIterator;
 - (id)newRunIterator;
 - (int)textType;
 - (int)blockType;
+- (id)initWithText:(id)arg1;
+- (id)document;
+- (id)text;
+- (BOOL)isEmpty;
 
 @end

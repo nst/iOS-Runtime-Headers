@@ -13,7 +13,10 @@
 @property(copy) NSDictionary * responseRegionInformation;
 
 
-- (id)bagKey;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)messageBody;
 - (void)setResponseRegionInformation:(id)arg1;
 - (id)responseRegionInformation;
 - (void)handleResponseDictionary:(id)arg1;
@@ -24,12 +27,9 @@
 - (BOOL)wantsCompressedBody;
 - (id)requiredKeys;
 - (BOOL)wantsBinaryPush;
+- (int)command;
+- (id)bagKey;
 - (void)setLanguage:(id)arg1;
 - (id)language;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
-- (int)command;
-- (id)messageBody;
 
 @end

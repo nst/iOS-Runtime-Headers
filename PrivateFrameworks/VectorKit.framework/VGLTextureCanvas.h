@@ -35,10 +35,6 @@
 
 + (Class)contextClass;
 
-- (id)description;
-- (void)dealloc;
-- (float)contentScale;
-- (struct CGSize { float x1; float x2; })size;
 - (id)targetTexture;
 - (void)setRasterizedContext:(id)arg1;
 - (void)setTargetTexture:(id)arg1;
@@ -49,5 +45,9 @@
 - (struct CGSize { float x1; float x2; })sizeInPixels;
 - (void)didDrawView;
 - (void)willDrawView;
+- (id)description;
+- (void)dealloc;
+- (float)contentScale;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

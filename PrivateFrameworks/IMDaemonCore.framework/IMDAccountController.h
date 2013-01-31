@@ -19,23 +19,15 @@
 @property(readonly) NSArray * connectingAccounts;
 @property(readonly) NSArray * activeSessions;
 
-+ (id)sharedAccountController;
 + (id)sharedInstance;
++ (id)sharedAccountController;
 
-- (void)removeAccount:(id)arg1;
-- (void)deactivateAccount:(id)arg1;
 - (void)addAccount:(id)arg1;
 - (void)save;
 - (void)dealloc;
 - (id)init;
-- (void)load;
-- (BOOL)isLoading;
-- (void)activateAccount:(id)arg1;
-- (void)deactivateAccounts:(id)arg1;
-- (void)activateAccounts:(id)arg1;
-- (id)connectedAccounts;
-- (id)connectedAccountsForService:(id)arg1;
-- (id)activeAccountsForService:(id)arg1;
+- (id)activeAccounts;
+- (id)accounts;
 - (id)_superFormatFromAIML:(id)arg1;
 - (id)anySessionForServiceName:(id)arg1;
 - (id)sessionForAccount:(id)arg1;
@@ -52,8 +44,16 @@
 - (id)accountForAccountID:(id)arg1;
 - (void)_daemonWillShutdown:(id)arg1;
 - (BOOL)isAccountActive:(id)arg1;
+- (void)removeAccount:(id)arg1;
+- (void)deactivateAccount:(id)arg1;
+- (void)activateAccount:(id)arg1;
+- (void)deactivateAccounts:(id)arg1;
+- (void)activateAccounts:(id)arg1;
+- (id)connectedAccounts;
+- (id)connectedAccountsForService:(id)arg1;
+- (id)activeAccountsForService:(id)arg1;
 - (id)accountsForService:(id)arg1;
-- (id)activeAccounts;
-- (id)accounts;
+- (void)load;
+- (BOOL)isLoading;
 
 @end

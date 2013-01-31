@@ -31,23 +31,23 @@
 + (void)playToneAndVibrationForType:(int)arg1 accountIdentifier:(id)arg2;
 + (void)playToneAndVibrationForType:(int)arg1;
 
-- (BOOL)isPlaying;
 - (unsigned long)soundID;
 - (void)setSoundID:(unsigned long)arg1;
 - (id)initWithType:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
 - (int)type;
 - (void)dealloc;
+- (id)targetQueue;
+- (void)setTargetQueue:(id)arg1;
+- (id)vibrationPattern;
+- (void)setVibrationPattern:(id)arg1;
+- (unsigned long)soundBehavior;
 - (void)stop;
 - (void)setCompletionHandler:(id)arg1;
 - (id)completionHandler;
 - (id)initWithType:(int)arg1;
 - (void)setType:(int)arg1;
-- (id)vibrationPattern;
-- (void)setVibrationPattern:(id)arg1;
-- (id)targetQueue;
-- (void)setTargetQueue:(id)arg1;
 - (BOOL)playWithCompletionHandler:(id)arg1 targetQueue:(id)arg2;
 - (id)initWithType:(int)arg1 accountIdentifier:(id)arg2;
-- (unsigned long)soundBehavior;
+- (BOOL)isPlaying;
 
 @end

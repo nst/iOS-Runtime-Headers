@@ -59,14 +59,6 @@
 @property(getter=isTrackingHeading,readonly) BOOL trackingHeading;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)annotation;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (BOOL)isAnimating;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (BOOL)autoSelectsZoomScale;
 - (void)_rotateToHeadingAnimated:(BOOL)arg1 duration:(double)arg2;
 - (void)_goToAnnotationAnimated:(BOOL)arg1 duration:(double)arg2 isInitial:(BOOL)arg3;
@@ -82,5 +74,13 @@
 - (void)stopTrackingAnnotation;
 - (BOOL)isTrackingHeading;
 - (void)setGesturing:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)annotation;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (BOOL)isAnimating;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 
 @end

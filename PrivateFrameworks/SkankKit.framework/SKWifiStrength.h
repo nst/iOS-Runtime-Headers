@@ -10,10 +10,10 @@
 }
 
 
+- (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)setStrength:(int)arg1;
 - (void)updateStrength:(id)arg1;
-- (void)drawInContext:(struct CGContext { }*)arg1;
 
 @end

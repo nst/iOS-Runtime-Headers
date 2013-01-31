@@ -19,10 +19,6 @@
 + (BOOL)shouldRemoveOldDefaults;
 
 - (void)loadFromDefaults;
-- (void)dealloc;
-- (id)init;
-- (BOOL)isLoading;
-- (void)reloadData;
 - (void)removeAllVideos;
 - (void)removeVideoAtIndex:(int)arg1;
 - (unsigned int)maxVideosToSave;
@@ -38,8 +34,12 @@
 - (id)videos;
 - (void)searchRequest:(id)arg1 didFailWithError:(id)arg2;
 - (void)searchRequest:(id)arg1 receivedVideos:(id)arg2 startIndex:(unsigned int)arg3 videosRemaining:(unsigned int)arg4;
+- (void)dealloc;
+- (id)init;
+- (void)_didChange;
+- (BOOL)isLoading;
+- (void)reloadData;
 - (void)loadMore;
 - (BOOL)hasLoaded;
-- (void)_didChange;
 
 @end

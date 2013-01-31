@@ -13,12 +13,12 @@
 + (id)setActivationTokenWithDictionary:(id)arg1 context:(id)arg2;
 + (id)setActivationToken;
 
-- (id)groupIdentifier;
-- (void)setLanguage:(id)arg1;
-- (id)language;
 - (void)setActivationToken:(id)arg1;
 - (id)activationToken;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (void)setLanguage:(id)arg1;
+- (id)language;
+- (id)groupIdentifier;
 
 @end

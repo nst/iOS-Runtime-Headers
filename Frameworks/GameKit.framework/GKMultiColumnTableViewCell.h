@@ -28,6 +28,14 @@
 @property int highlightedColumn;
 
 
+- (void)dealloc;
+- (void)setColumnCount:(unsigned int)arg1;
+- (unsigned int)columnCount;
+- (void)_updateHighlightColorsForView:(id)arg1 highlighted:(BOOL)arg2;
+- (void)prepareForReuse;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)layoutSubviews;
 - (id)_gkDescriptionWithChildren:(int)arg1;
 - (BOOL)multiCellEnabled;
 - (void)setHighlightedColumn:(int)arg1;
@@ -54,13 +62,5 @@
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;
 - (int)selectedColumn;
 - (void)setSelectedColumn:(int)arg1;
-- (void)dealloc;
-- (void)setColumnCount:(unsigned int)arg1;
-- (unsigned int)columnCount;
-- (void)_updateHighlightColorsForView:(id)arg1 highlighted:(BOOL)arg2;
-- (void)prepareForReuse;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)layoutSubviews;
 
 @end

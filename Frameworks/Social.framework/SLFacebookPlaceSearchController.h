@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class SLFacebookPlaceManager, NSTimer, NSString, NSLock, UISearchDisplayController, NSArray;
+@class NSArray, NSTimer, NSString, NSLock, UISearchDisplayController, SLFacebookPlaceManager;
 
 @interface SLFacebookPlaceSearchController : NSObject <UITableViewDataSource, SLFacebookPlaceManagerDelegate> {
     NSTimer *_delayTimer;
@@ -10,9 +10,9 @@
     NSString *_searchString;
     int _retryCount;
     NSLock *_retryLock;
+    NSArray *_searchResults;
     UISearchDisplayController *_searchDisplayController;
     SLFacebookPlaceManager *_placeManager;
-    NSArray *_searchResults;
 }
 
 @property(retain) SLFacebookPlaceManager * placeManager;
@@ -25,7 +25,6 @@
 - (void)setSearchDisplayController:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)cancelSearch;
 - (void)setSearchResults:(id)arg1;
 - (void)performDelayedFetch:(id)arg1;
 - (id)placeManager;
@@ -35,5 +34,6 @@
 - (void)setPlaceManager:(id)arg1;
 - (void)placeManager:(id)arg1 updatedPlaces:(id)arg2;
 - (void)placeManager:(id)arg1 failedWithError:(id)arg2;
+- (void)cancelSearch;
 
 @end

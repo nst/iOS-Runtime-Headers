@@ -20,13 +20,6 @@
 @property(retain) VKPGlobalProperties * globalProperties;
 
 
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setVersion:(unsigned int)arg1;
-- (unsigned int)version;
-- (id)dictionaryRepresentation;
 - (void)copyTo:(id)arg1;
 - (void)setHasVersion:(BOOL)arg1;
 - (id)globalProperties;
@@ -38,8 +31,15 @@
 - (void)addStyle:(id)arg1;
 - (void)setGlobalProperties:(id)arg1;
 - (void)setStyles:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)styleAtIndex:(unsigned int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)styles;
+- (void)setVersion:(unsigned int)arg1;
+- (unsigned int)version;
+- (id)dictionaryRepresentation;
 
 @end

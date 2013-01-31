@@ -10,6 +10,9 @@
 
 + (id)sharedInstance;
 
+- (void)dealloc;
+- (id)init;
+- (id)_init;
 - (void)requestDidFinish:(id)arg1;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)addRentalWithItemID:(unsigned long long)arg1 databaseID:(id)arg2;
@@ -17,8 +20,5 @@
 - (void)_saveRentals;
 - (void)_loadRentals;
 - (void)removeAllRentalsForDatabaseID:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)_init;
 
 @end

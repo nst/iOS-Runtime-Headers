@@ -19,6 +19,13 @@
 @property(retain) IMServiceImpl * service;
 
 
+- (void)dealloc;
+- (void)setService:(id)arg1;
+- (id)activeAccounts;
+- (id)service;
+- (int)serviceType;
+- (void)setServiceType:(int)arg1;
+- (void)_startListeningForNotifications;
 - (void)_stopListeningForNotifications;
 - (BOOL)_shouldHandleAccountNofication:(id)arg1;
 - (void)_handleAccountNotification:(id)arg1;
@@ -27,12 +34,5 @@
 - (void)_updateAccountState:(BOOL)arg1;
 - (id)initWithServiceType:(int)arg1;
 - (id)logName;
-- (void)dealloc;
-- (int)serviceType;
-- (void)setServiceType:(int)arg1;
-- (id)service;
-- (void)setService:(id)arg1;
-- (id)activeAccounts;
-- (void)_startListeningForNotifications;
 
 @end

@@ -28,21 +28,21 @@
      /* Encoded args for previous method: @16@0:4^{AOSAccount=}8^{AOSTransactionC=#CC^v^{__CFError}^?@?^{dispatch_queue_s}^v@^?^?}12 */
 
 
+- (void)dealloc;
+- (id)init;
 - (struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; struct dispatch_queue_s {} *x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)transaction;
      /* Encoded args for previous method: ^{AOSTransactionC=#CC^v^{__CFError}^?@?^{dispatch_queue_s}^v@^?^?}8@0:4 */
 
 - (void)setTransaction:(struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; struct dispatch_queue_s {} *x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)arg1;
      /* Encoded args for previous method: v12@0:4^{AOSTransactionC=#CC^v^{__CFError}^?@?^{dispatch_queue_s}^v@^?^?}8 */
 
+- (void)setAccount:(struct AOSAccount { }*)arg1;
+- (struct AOSAccount { }*)account;
 - (BOOL)scheduleCallback;
 - (void)_performCallback;
 - (id)_callbackThread;
-- (void)setInfo:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (id)info;
 - (void)finalize;
-- (void)setAccount:(struct AOSAccount { }*)arg1;
-- (struct AOSAccount { }*)account;
+- (void)setInfo:(id)arg1;
 
 @end

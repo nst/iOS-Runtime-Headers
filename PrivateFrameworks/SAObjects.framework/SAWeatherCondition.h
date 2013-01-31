@@ -10,14 +10,14 @@
 @property(copy) NSString * conditionCode;
 @property int conditionCodeIndex;
 
-+ (id)condition;
 + (id)conditionWithDictionary:(id)arg1 context:(id)arg2;
++ (id)condition;
 
-- (id)groupIdentifier;
 - (void)setConditionCodeIndex:(int)arg1;
 - (int)conditionCodeIndex;
 - (void)setConditionCode:(id)arg1;
 - (id)conditionCode;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

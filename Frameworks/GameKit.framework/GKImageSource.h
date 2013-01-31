@@ -20,11 +20,15 @@
 @property BOOL shouldRenderDefaultImageWithBrush;
 @property NSCache * cache;
 
-+ (id)syncQueue;
-+ (id)cacheDirectoryForImageID:(id)arg1;
 + (void)clearCache;
 + (id)sharedCache;
++ (id)syncQueue;
++ (id)cacheDirectoryForImageID:(id)arg1;
 
+- (id)name;
+- (void)dealloc;
+- (void)setCache:(id)arg1;
+- (id)cache;
 - (void)setShouldRenderDefaultImageWithBrush:(BOOL)arg1;
 - (void)setDefaultImage:(id)arg1;
 - (id)processAndCacheImage:(id)arg1 forIdentifier:(id)arg2;
@@ -52,9 +56,5 @@
 - (id)defaultImage;
 - (id)renderedDefaultImage;
 - (id)fastCachedOrDefaultImageForIdentifier:(id)arg1;
-- (id)name;
-- (void)dealloc;
-- (void)setCache:(id)arg1;
-- (id)cache;
 
 @end

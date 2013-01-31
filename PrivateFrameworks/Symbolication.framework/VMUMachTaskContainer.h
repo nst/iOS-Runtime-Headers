@@ -14,9 +14,9 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)finalize;
 - (id)initWithPid:(int)arg1 task:(unsigned int)arg2;
 - (unsigned int)task;
 - (int)pid;
+- (void)finalize;
 
 @end

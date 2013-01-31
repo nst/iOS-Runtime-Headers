@@ -10,8 +10,8 @@
 + (id)blankBufferedSlotSequenceWithStrings:(id)arg1;
 + (id)slotSequenceWithArray:(id)arg1;
 
-- (id)initWithArray:(id)arg1;
 - (id)first;
+- (id)initWithArray:(id)arg1;
 - (id)stringArray;
 - (id)sequenceByReplacingOccurencesOfSequence:(id)arg1 withSequence:(id)arg2;
 - (id)rest;

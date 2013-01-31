@@ -37,10 +37,6 @@
 + (unsigned int)availableAttitudeReferenceFrames;
 + (void)dummySelector:(id)arg1;
 
-- (void)startAccelerometerUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
-- (BOOL)isAccelerometerAvailable;
-- (void)dealloc;
-- (id)init;
 - (id)accelerometerData;
 - (id)deviceMotion;
 - (void)startAccelerometerUpdates;
@@ -50,6 +46,10 @@
 - (BOOL)isDeviceMotionAvailable;
 - (void)stopAccelerometerUpdates;
 - (void)stopDeviceMotionUpdates;
+- (void)dealloc;
+- (id)init;
+- (void)startAccelerometerUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
+- (BOOL)isAccelerometerAvailable;
 - (id)initUsingGyroOnlySensorFusion;
 - (id)initUsing6AxisSensorFusion;
 - (void)setShowsDeviceMovementDisplay:(BOOL)arg1;
@@ -60,6 +60,8 @@
 - (double)magnetometerUpdateInterval;
 - (void)setMagnetometerUpdateInterval:(double)arg1;
 - (BOOL)isMagnetometerActive;
+- (int)gyttNumTemperatures;
+- (void)rebuildGytt;
 - (void)startDeviceMotionUpdatesUsingReferenceFrame:(int)arg1 toQueue:(id)arg2 withHandler:(id)arg3;
 - (void)startDeviceMotionUpdatesUsingReferenceFrame:(int)arg1;
 - (void)startDeviceMotionUpdatesToQueue:(id)arg1 withHandler:(id)arg2;

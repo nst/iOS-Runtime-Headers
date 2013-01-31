@@ -26,13 +26,13 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
-- (int)status;
 - (void)addInput:(id)arg1;
 - (BOOL)canAddInput:(id)arg1;
 - (void)startWriting;
 - (id)error;
+- (int)status;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 - (BOOL)_transitionToClientInitiatedTerminalStatus:(int)arg1;
 - (id)weakReferenceToAssetWriter;
 - (BOOL)_canApplyTrackReferences:(id)arg1 exceptionReason:(id*)arg2;

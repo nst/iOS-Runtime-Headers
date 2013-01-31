@@ -17,9 +17,6 @@
 
 + (Class)queueFeederClass;
 
-- (void)_mediaLibraryDidChangeNotification:(id)arg1;
-- (void)_networkTypeDidChangeNotification:(id)arg1;
-- (void)dealloc;
 - (BOOL)_canPlayFromCloudUsingNetworkType:(int)arg1;
 - (id)requiredInitialMediaItem;
 - (id)initialMediaItem;
@@ -31,5 +28,8 @@
 - (id)mix;
 - (unsigned int)geniusMixQueueFeederMediaItemCount:(id)arg1;
 - (id)initWithGeniusMix:(id)arg1 requiredInitialMediaItem:(id)arg2 error:(id*)arg3;
+- (void)dealloc;
+- (void)_mediaLibraryDidChangeNotification:(id)arg1;
+- (void)_networkTypeDidChangeNotification:(id)arg1;
 
 @end

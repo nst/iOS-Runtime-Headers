@@ -16,6 +16,7 @@
 
 @property(readonly) NSString * path;
 
++ (id)databasePath;
 + (BOOL)orderingLanguageMatchesSystemUsingHandle:(struct sqlite3 { }*)arg1;
 + (BOOL)migrateToCurrentUserVersionUsingHandle:(struct sqlite3 { }*)arg1;
 + (void)closeDatabaseHandle:(struct sqlite3 { }*)arg1;
@@ -34,7 +35,6 @@
 + (BOOL)statementDidFinishAfterStepping:(struct sqlite3_stmt { }*)arg1;
 + (id)systemCurrentLanguage;
 + (BOOL)statementHasRowAfterStepping:(struct sqlite3_stmt { }*)arg1;
-+ (id)databasePath;
 
 - (id)path;
 - (id)description;
@@ -56,9 +56,9 @@
 - (BOOL)openDatabaseHandle:(struct sqlite3 {}**)arg1;
 - (BOOL)_openDatabaseWithOpenHandler:(id)arg1;
 - (void)_debugLoggingOptionsDidChangeNotification:(id)arg1;
+- (BOOL)requiresPostProcessing;
 - (void)_accessDatabaseContextUsingBlock:(id)arg1;
 - (void)reconnectToDatabaseWithCompletionHandler:(id)arg1;
-- (BOOL)requiresPostProcessing;
 - (BOOL)coerceValidDatabase;
 - (id)initWithIdentifier:(id)arg1 path:(id)arg2 backgroundConnectionQueue:(id)arg3 enableWrites:(BOOL)arg4;
 - (BOOL)executeSQL:(id)arg1;

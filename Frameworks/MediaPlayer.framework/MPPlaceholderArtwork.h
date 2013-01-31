@@ -5,6 +5,7 @@
 @interface MPPlaceholderArtwork : NSObject  {
 }
 
++ (id)allArtworkFormatSizes;
 + (id)noArtPlaceholderImageForMediaType:(int)arg1 withFormat:(unsigned int)arg2;
 + (id)noArtMusicPlaceholderImageForMediaType:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)noArtPlaceholderImageForMediaType:(int)arg1;
@@ -29,7 +30,6 @@
 + (id)noArtPlaceholderMusicImageForSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)noArtMusicPlaceholderMusicImageForSize:(struct CGSize { float x1; float x2; })arg1;
 + (unsigned int)currentScreenFormatIDFrom1XFormatID:(unsigned int)arg1;
-+ (id)allArtworkFormatSizes;
 
 - (BOOL)isPlaceholder:(id)arg1;
 

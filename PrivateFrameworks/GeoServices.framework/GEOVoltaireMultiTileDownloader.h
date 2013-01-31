@@ -20,28 +20,22 @@
     GEOTileKeyMap *_baseTilesWaitingForLocalized;
     GEOTileKeyMap *_localizedTilesWaitingForBase;
     NSString *_postString;
+    BOOL _requireWiFi;
 }
 
 @property(retain) NSString * userAgent;
 @property(readonly) NSURL * requestURL;
 @property BOOL useStatusCodes;
+@property BOOL requireWiFi;
 @property <GEOVoltaireMultiTileDownloaderDelegate> * delegate;
 
 
-- (id)userAgent;
 - (void)_failWithError:(id)arg1;
+- (id)_urlForTileKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)cancel;
 - (void)dealloc;
-- (void)_cancelWithError:(id)arg1;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)start;
-- (void)setUserAgent:(id)arg1;
-- (id)_urlForTileKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)_tryParseTiles;
 - (void)logDownloadDetails;
 - (id)_mergeBaseTile:(id)arg1 withLocalizationTile:(id)arg2;
@@ -53,5 +47,15 @@
 - (void)setUseStatusCodes:(BOOL)arg1;
 - (id)initWithURL:(id)arg1 keyList:(id)arg2;
 - (BOOL)useStatusCodes;
+- (BOOL)requireWiFi;
+- (void)setRequireWiFi:(BOOL)arg1;
+- (void)setUserAgent:(id)arg1;
+- (void)_cancelWithError:(id)arg1;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (void)start;
+- (id)userAgent;
 
 @end

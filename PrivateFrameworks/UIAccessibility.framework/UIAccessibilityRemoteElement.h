@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
  */
 
-@class <UIAccessibilityRemoteElementChildrenDelegate>, NSString;
+@class <UIAccessibilityRemoteElementChildrenDelegate>, NSString, NSMutableSet;
 
 @interface UIAccessibilityRemoteElement : NSObject  {
     NSString *_uuid;
@@ -10,6 +10,7 @@
     unsigned int _contextId;
     BOOL _onClientSide;
     id _remoteChildrenDelegate;
+    NSMutableSet *_allChildren;
 }
 
 @property(retain) NSString * uuid;
@@ -18,18 +19,11 @@
 @property BOOL onClientSide;
 @property <UIAccessibilityRemoteElementChildrenDelegate> * remoteChildrenDelegate;
 
-+ (void)initialize;
 + (id)remoteElementForContextId:(unsigned int)arg1;
 + (BOOL)registerRemoteElement:(id)arg1;
 + (id)remoteElementForBlock:(id)arg1;
++ (void)initialize;
 
-- (id)description;
-- (void)dealloc;
-- (void)setContextId:(unsigned int)arg1;
-- (void)unregister;
-- (BOOL)accessibilityViewIsModal;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (unsigned int)contextId;
 - (void)setRemoteChildrenDelegate:(id)arg1;
 - (void)setOnClientSide:(BOOL)arg1;
 - (id)initWithUUID:(id)arg1 andRemotePid:(int)arg2 andContextId:(unsigned int)arg3;
@@ -38,7 +32,14 @@
 - (BOOL)onClientSide;
 - (id)accessibilityContainerElements;
 - (int)remotePid;
+- (id)description;
+- (void)dealloc;
 - (void)setUuid:(id)arg1;
 - (id)uuid;
+- (void)setContextId:(unsigned int)arg1;
+- (void)unregister;
+- (BOOL)accessibilityViewIsModal;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (unsigned int)contextId;
 
 @end

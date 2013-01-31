@@ -24,8 +24,16 @@
 + (id)offerDictionariesForLookupCollectionPropertyValues:(id)arg1;
 + (id)defaultPropertyValues;
 
-- (BOOL)isDownloadable;
-- (id)mediaLibrary;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (unsigned long long)persistentID;
+- (id)valueForProperty:(id)arg1;
+- (id)title;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isCollectionOfferPresentable;
 - (unsigned int)countOfNonLocalItems;
 - (BOOL)isCheaperToPurchaseIndividualItems;
@@ -40,15 +48,7 @@
 - (id)copyByOverlayingLocalItems:(id)arg1 preferredStoreOfferVariant:(int)arg2;
 - (int)preferredStoreOfferVariant;
 - (id)initWithLookupResponseCollectionDictionary:(id)arg1 preferredStoreOfferVariant:(int)arg2;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (unsigned long long)persistentID;
-- (id)valueForProperty:(id)arg1;
-- (id)title;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (BOOL)isDownloadable;
+- (id)mediaLibrary;
 
 @end

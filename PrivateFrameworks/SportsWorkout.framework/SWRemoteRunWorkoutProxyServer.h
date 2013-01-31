@@ -12,11 +12,11 @@
 }
 
 
-- (void)endSeeking;
-- (void)beginSeekingForward;
-- (void)beginSeekingBackward;
 - (void)dealloc;
 - (id)init;
+- (void)endSeeking;
+- (void)beginSeekingBackward;
+- (void)beginSeekingForward;
 - (void)_postPropertyUpdateNotification;
 - (void)_handlePropertyUpdateTimer:(id)arg1;
 - (void)_clientDidCheckin;

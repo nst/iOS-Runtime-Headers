@@ -13,9 +13,9 @@
 - (void)reloadImages;
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
-- (id)init;
 - (BOOL)showsUntruncationCallout;
 - (void)configureForEntity:(id)arg1 query:(id)arg2 entityIndex:(unsigned int)arg3 entityCount:(unsigned int)arg4;
 - (void)reloadStringsWithProperties:(id)arg1;
+- (id)init;
 
 @end

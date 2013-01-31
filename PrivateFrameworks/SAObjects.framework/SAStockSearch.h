@@ -14,7 +14,6 @@
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
 - (void)setCompanyNameList:(id)arg1;
 - (id)companyNameList;
 - (void)setStockReferences:(id)arg1;
@@ -23,5 +22,6 @@
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -15,12 +15,12 @@
 + (id)visibilitySetCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)visibilitySetCompleted;
 
-- (id)groupIdentifier;
-- (id)searchContext;
-- (void)setSearchContext:(id)arg1;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)searchContext;
+- (void)setSearchContext:(id)arg1;
+- (id)groupIdentifier;
 
 @end

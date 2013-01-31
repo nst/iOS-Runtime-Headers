@@ -7,12 +7,12 @@
 }
 
 
-- (int)value;
 - (id)cssStringForName:(id)arg1;
 - (id)initWithEnum:(int)arg1;
 - (id)mapCellTextVAlign;
 - (id)mapUnderline;
 - (id)mapVerticalAlign;
 - (id)mapJustification;
+- (int)value;
 
 @end

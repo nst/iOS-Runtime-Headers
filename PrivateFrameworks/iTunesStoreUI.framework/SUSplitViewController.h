@@ -33,7 +33,6 @@
 + (BOOL)isValidSplitTypeString:(id)arg1;
 + (BOOL)isValidSplitPositionValue:(id)arg1;
 
-- (void)setLoading:(BOOL)arg1;
 - (id)secondViewController;
 - (id)splitTypeString;
 - (id)splitPositionString;
@@ -64,7 +63,6 @@
 - (id)splitShadow;
 - (float)splitPosition;
 - (float)minimumPaneSize;
-- (id)mainTitle;
 - (int)layoutType;
 - (void)_navigationItemDidChangeNotification:(id)arg1;
 - (void)setViewIsReady:(BOOL)arg1;
@@ -89,5 +87,7 @@
 - (void)removeChildViewController:(id)arg1;
 - (void)loadView;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (id)mainTitle;
+- (void)setLoading:(BOOL)arg1;
 
 @end

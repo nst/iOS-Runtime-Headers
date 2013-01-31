@@ -14,9 +14,9 @@
 + (id)setAlertContextWithDictionary:(id)arg1 context:(id)arg2;
 + (id)setAlertContext;
 
-- (id)groupIdentifier;
+- (id)encodedClassName;
 - (void)setContext:(id)arg1;
 - (id)context;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

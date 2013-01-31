@@ -12,13 +12,13 @@
 @property(retain) id participant;
 
 
-- (void)setParticipant:(id)arg1;
-- (id)participant;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)displayString;
-- (void)setCalAttendeeName:(id)arg1;
+- (void)setParticipant:(id)arg1;
+- (id)participant;
 - (id)initWithComposeRecipient:(id)arg1;
+- (void)setCalAttendeeName:(id)arg1;
 
 @end

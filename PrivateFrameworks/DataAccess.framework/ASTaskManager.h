@@ -15,10 +15,9 @@
 
 
 - (void)dealloc;
-- (id)protocol;
-- (id)deviceID;
 - (void)shutdown;
 - (void)cancelTaskWithID:(int)arg1;
+- (id)deviceID;
 - (void)taskManagerWillRemoveTask:(id)arg1;
 - (void)taskManagerDidAddTask:(id)arg1;
 - (id)_version;
@@ -42,5 +41,6 @@
 - (id)easProtocolVersion;
 - (id)policyKey;
 - (id)policyManager;
+- (id)protocol;
 
 @end

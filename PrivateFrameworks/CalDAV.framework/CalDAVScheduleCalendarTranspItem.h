@@ -13,10 +13,10 @@
 
 
 - (void)dealloc;
+- (id)copyParseRules;
+- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)transparent;
 - (void)setTransparent:(id)arg1;
 - (BOOL)isScheduleTransparent;
-- (id)copyParseRules;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 
 @end

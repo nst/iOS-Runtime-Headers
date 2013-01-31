@@ -18,9 +18,6 @@
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
-- (id)subject;
-- (void)setSubject:(id)arg1;
 - (void)setListName:(id)arg1;
 - (id)listName;
 - (void)setCompletionStatus:(id)arg1;
@@ -31,6 +28,9 @@
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)subject;
+- (void)setSubject:(id)arg1;
+- (id)groupIdentifier;
 - (id)dueBefore;
 - (id)dueAfter;
 - (void)setDueBefore:(id)arg1;

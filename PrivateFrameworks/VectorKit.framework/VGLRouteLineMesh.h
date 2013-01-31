@@ -19,10 +19,6 @@
 @property float splitLocation;
 
 
-- (void)dealloc;
-- (id)init;
-- (void)setZ:(int)arg1;
-- (int)z;
 - (void)setSplitLocation:(float)arg1;
 - (void)setTotalArchLength:(float)arg1;
 - (id)initWithVertexCapacity:(int)arg1 indexCapacity:(int)arg2;
@@ -34,5 +30,9 @@
 - (void)drawTrianglesWithContext:(id)arg1;
 - (id)texture;
 - (void)drawTrianglesWithContext:(id)arg1 offset:(int)arg2 count:(int)arg3;
+- (void)dealloc;
+- (id)init;
+- (void)setZ:(int)arg1;
+- (int)z;
 
 @end

@@ -15,24 +15,24 @@
 @property(copy) NSString * timeZoneId;
 @property(copy) NSString * type;
 
-+ (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)object;
 
-- (id)groupIdentifier;
 - (id)type;
-- (void)setDate:(id)arg1;
-- (void)setType:(id)arg1;
-- (id)date;
-- (void)setDateIsAllDay:(id)arg1;
-- (id)dateIsAllDay;
-- (void)setRecencyDate:(id)arg1;
-- (id)recencyDate;
 - (void)setApplicationId:(id)arg1;
 - (id)applicationId;
 - (void)setTimeZoneId:(id)arg1;
 - (id)timeZoneId;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setDateIsAllDay:(id)arg1;
+- (id)dateIsAllDay;
+- (void)setRecencyDate:(id)arg1;
+- (id)recencyDate;
+- (void)setDate:(id)arg1;
+- (void)setType:(id)arg1;
+- (id)date;
+- (id)groupIdentifier;
 - (void)setEndDate:(id)arg1;
 - (id)endDate;
 

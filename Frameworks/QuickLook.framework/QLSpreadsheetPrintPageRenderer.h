@@ -16,15 +16,15 @@
 }
 
 
-- (BOOL)_loadNextURL;
-- (BOOL)_loadURLAtIndex:(unsigned int)arg1;
-- (id)_documentURLs;
-- (id)pdfDataForPageAtIndex:(int)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 printingDone:(BOOL*)arg3;
-- (id)initWithWebBrowserView:(id)arg1 request:(id)arg2 documentType:(id)arg3;
 - (void)dealloc;
 - (void)prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (int)numberOfPages;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
+- (BOOL)_loadNextURL;
+- (BOOL)_loadURLAtIndex:(unsigned int)arg1;
+- (id)_documentURLs;
+- (id)pdfDataForPageAtIndex:(int)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 printingDone:(BOOL*)arg3;
+- (id)initWithWebBrowserView:(id)arg1 request:(id)arg2 documentType:(id)arg3;
 
 @end

@@ -12,9 +12,9 @@
 + (id)reviewsSnippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)reviewsSnippet;
 
-- (id)groupIdentifier;
+- (id)encodedClassName;
 - (void)setMovie:(id)arg1;
 - (id)movie;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

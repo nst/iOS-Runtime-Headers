@@ -21,12 +21,6 @@
 + (BOOL)contextShouldIgnoreChangesForFetchedAssets;
 
 - (unsigned int)count;
-- (void)awakeFromInsert;
-- (void)setFetchRequest:(id)arg1;
-- (void)didTurnIntoFault;
-- (id)fetchRequest;
-- (void)awakeFromFetch;
-- (BOOL)isEmpty;
 - (BOOL)mayHaveAssetsInCommon:(id)arg1;
 - (id)fastPointerAccessSetForAssets:(id)arg1;
 - (BOOL)hasAssetsCache;
@@ -44,5 +38,11 @@
 - (id)assets;
 - (void)batchFetchAssets:(id)arg1;
 - (BOOL)canPerformEditOperation:(int)arg1;
+- (BOOL)isEmpty;
+- (void)awakeFromInsert;
+- (void)setFetchRequest:(id)arg1;
+- (void)didTurnIntoFault;
+- (id)fetchRequest;
+- (void)awakeFromFetch;
 
 @end

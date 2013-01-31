@@ -24,13 +24,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (void)setStartPosition:(float)arg1;
-- (float)endPosition;
-- (float)direction;
-- (float)startPosition;
-- (void)setDirection:(float)arg1;
-- (int)alignment;
-- (void)setAlignment:(int)arg1;
 - (void)setFadeDirection:(float)arg1;
 - (void)setEndPosition:(float)arg1;
 - (void)setEndOpacity:(float)arg1;
@@ -53,5 +46,12 @@
 - (void)setYSkew:(float)arg1;
 - (void)setBlurRadius:(float)arg1;
 - (void)setDistance:(float)arg1;
+- (void)setStartPosition:(float)arg1;
+- (float)endPosition;
+- (float)direction;
+- (float)startPosition;
+- (void)setDirection:(float)arg1;
+- (int)alignment;
+- (void)setAlignment:(int)arg1;
 
 @end

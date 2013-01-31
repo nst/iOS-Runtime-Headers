@@ -11,9 +11,9 @@
 @property(retain) MPAVController * player;
 
 
-- (void)setPlayer:(id)arg1;
-- (id)player;
 - (void)dealloc;
 - (id)_automationID;
+- (void)setPlayer:(id)arg1;
+- (id)player;
 
 @end

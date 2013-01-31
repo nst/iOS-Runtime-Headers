@@ -14,11 +14,11 @@
 
 + (id)capitalizeFirstPartOfCountry:(id)arg1;
 + (id)voiceControlLanguageData;
-+ (void)setLanguage:(id)arg1;
 + (void)setLocale:(id)arg1;
++ (void)setLanguage:(id)arg1;
 
-- (void)reloadSpecifiers;
-- (id)specifiers;
+- (void)dealloc;
+- (id)init;
 - (id)calendar:(id)arg1;
 - (void)setCalendar:(id)arg1 specifier:(id)arg2;
 - (id)voiceControlLanguage:(id)arg1;
@@ -41,8 +41,8 @@
 - (void)setLocale:(id)arg1 specifier:(id)arg2;
 - (id)language:(id)arg1;
 - (void)setLanguage:(id)arg1 specifier:(id)arg2;
-- (void)dealloc;
-- (id)init;
+- (void)reloadSpecifiers;
+- (id)specifiers;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 

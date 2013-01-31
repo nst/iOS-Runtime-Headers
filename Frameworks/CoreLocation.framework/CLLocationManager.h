@@ -32,6 +32,10 @@
 @property(getter=isPersistentMonitoringEnabled) BOOL persistentMonitoringEnabled;
 @property(getter=isLocationServicesPreferencesDialogEnabled) BOOL locationServicesPreferencesDialogEnabled;
 
++ (id)sharedManager;
++ (BOOL)headingAvailable;
++ (BOOL)locationServicesEnabled;
++ (int)authorizationStatusForBundleIdentifier:(id)arg1;
 + (void)setEntityAuthorized:(BOOL)arg1 forLocationDictionary:(id)arg2;
 + (BOOL)isEntityAuthorizedForLocationDictionary:(id)arg1;
 + (id)dateLocationLastUsedForLocationDictionary:(id)arg1;
@@ -58,11 +62,31 @@
 + (BOOL)locationServicesEnabled:(BOOL)arg1;
 + (int)_authorizationStatusForBundleIdentifier:(id)arg1 bundle:(id)arg2;
 + (int)_authorizationStatus;
-+ (id)sharedManager;
-+ (BOOL)headingAvailable;
-+ (BOOL)locationServicesEnabled;
-+ (int)authorizationStatusForBundleIdentifier:(id)arg1;
 
+- (void)setActivityType:(int)arg1;
+- (id)heading;
+- (void)startUpdatingHeading;
+- (BOOL)headingAvailable;
+- (void)stopUpdatingHeading;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (BOOL)locationServicesEnabled;
+- (BOOL)locationServicesApproved;
+- (void)setHeadingOrientation:(int)arg1;
+- (void)stopUpdatingLocation;
+- (void)startUpdatingLocation;
+- (void)setPurpose:(id)arg1;
+- (void)setDesiredAccuracy:(double)arg1;
+- (void)setHeadingFilter:(double)arg1;
+- (void)setDistanceFilter:(double)arg1;
+- (id)initWithEffectiveBundleIdentifier:(id)arg1;
+- (int)activityType;
+- (id)location;
+- (void)startMonitoringForRegion:(id)arg1;
+- (void)stopMonitoringForRegion:(id)arg1;
+- (id)monitoredRegions;
 - (void)registerAsLocationClient;
 - (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
 - (BOOL)isLocationServicesPreferencesDialogEnabled;
@@ -120,29 +144,5 @@
 - (void)onDidBecomeActive:(id)arg1;
 - (void)setPausesLocationUpdatesAutomatically:(BOOL)arg1;
 - (void)onClientEvent:(int)arg1 supportInfo:(id)arg2;
-- (void)setActivityType:(int)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
-- (int)activityType;
-- (id)location;
-- (id)heading;
-- (void)startUpdatingHeading;
-- (BOOL)headingAvailable;
-- (void)stopUpdatingHeading;
-- (BOOL)locationServicesEnabled;
-- (BOOL)locationServicesApproved;
-- (void)setHeadingOrientation:(int)arg1;
-- (void)stopUpdatingLocation;
-- (void)startUpdatingLocation;
-- (void)setPurpose:(id)arg1;
-- (void)setDesiredAccuracy:(double)arg1;
-- (void)setHeadingFilter:(double)arg1;
-- (void)setDistanceFilter:(double)arg1;
-- (id)initWithEffectiveBundleIdentifier:(id)arg1;
-- (void)startMonitoringForRegion:(id)arg1;
-- (void)stopMonitoringForRegion:(id)arg1;
-- (id)monitoredRegions;
 
 @end

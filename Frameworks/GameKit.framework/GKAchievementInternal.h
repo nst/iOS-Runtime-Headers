@@ -18,6 +18,11 @@
 
 + (id)codedPropertyKeys;
 
+- (id)identifier;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (void)setIdentifier:(id)arg1;
 - (id)challengeServerRepresentationForCancel:(BOOL)arg1;
 - (void)setPercentComplete:(double)arg1;
 - (void)setLastReportedDate:(id)arg1;
@@ -26,10 +31,5 @@
 - (id)groupIdentifier;
 - (id)serverRepresentation;
 - (double)percentComplete;
-- (id)identifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setIdentifier:(id)arg1;
 
 @end

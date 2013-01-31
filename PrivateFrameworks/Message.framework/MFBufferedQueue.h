@@ -20,10 +20,6 @@
 - (void)removeAllObjects;
 - (void)dealloc;
 - (id)init;
-- (BOOL)addItem:(id)arg1;
-- (BOOL)isEmpty;
-- (BOOL)flush;
-- (unsigned int)size;
 - (void)setMaximumSize:(unsigned int)arg1;
 - (void)setMaximumLatency:(double)arg1;
 - (double)maximumLatency;
@@ -31,5 +27,9 @@
 - (BOOL)handleItems:(id)arg1;
 - (unsigned int)sizeForItem:(id)arg1;
 - (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
+- (BOOL)addItem:(id)arg1;
+- (BOOL)isEmpty;
+- (BOOL)flush;
+- (unsigned int)size;
 
 @end

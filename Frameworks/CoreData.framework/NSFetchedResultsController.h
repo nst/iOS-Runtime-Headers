@@ -43,15 +43,17 @@
 @property(readonly) NSArray * sectionIndexTitles;
 @property(readonly) NSArray * sections;
 
++ (void)initialize;
 + (unsigned int)_insertIndexForObject:(id)arg1 inArray:(id)arg2 lowIdx:(unsigned int)arg3 highIdx:(unsigned int)arg4 sortDescriptors:(id)arg5;
 + (void)deleteCacheWithName:(id)arg1;
 + (id)_CoreDataSectionCachesPath;
-+ (void)initialize;
 
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)managedObjectContext;
 - (void)dealloc;
+- (id)sections;
+- (id)sectionIndexTitles;
 - (void)_dumpSectionInfo;
 - (BOOL)_didUseGroupBy;
 - (BOOL)_didFailPostprocessing;
@@ -95,7 +97,5 @@
 - (BOOL)_keyPathContainsNonPersistedProperties:(id)arg1;
 - (id)fetchedObjects;
 - (id)fetchRequest;
-- (id)sections;
-- (id)sectionIndexTitles;
 
 @end

@@ -11,10 +11,10 @@
 @property(readonly) NSArray * ports;
 
 
-- (id)session;
-- (void)setSession:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)session;
+- (void)setSession:(id)arg1;
 - (id)ports;
 - (void)willStartForSession:(id)arg1;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;

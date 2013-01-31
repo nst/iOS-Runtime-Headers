@@ -11,13 +11,13 @@
 }
 
 
-- (void)dealloc;
-- (void)failWithError:(id)arg1;
 - (id)initRequestingCaptionsForVideo:(id)arg1 withDelegate:(id)arg2;
 - (void)_requestCaptionsFromURL:(id)arg1;
 - (void)didAuthenticate:(id)arg1;
 - (void)didParseData;
-- (int)parseData:(id)arg1;
+- (void)failWithError:(id)arg1;
+- (void)dealloc;
 - (id)video;
+- (int)parseData:(id)arg1;
 
 @end

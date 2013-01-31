@@ -18,9 +18,14 @@
 + (id)sharedInstance;
 + (id)alloc;
 
+- (void)dealloc;
+- (id)init;
+- (BOOL)registered;
 - (void)setRegistered:(BOOL)arg1;
 - (void)setTopics:(id)arg1;
 - (id)initWithTopics:(id)arg1;
+- (void)removeListener:(id)arg1;
+- (void)addListener:(id)arg1;
 - (void)removeTopic:(id)arg1;
 - (void)addTopic:(id)arg1;
 - (void)requestKeepAlive;
@@ -28,10 +33,5 @@
 - (id)topics;
 - (int)connectionStatus;
 - (id)pushToken;
-- (void)dealloc;
-- (id)init;
-- (void)removeListener:(id)arg1;
-- (void)addListener:(id)arg1;
-- (BOOL)registered;
 
 @end

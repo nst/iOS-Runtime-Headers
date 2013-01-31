@@ -38,6 +38,13 @@
 @property(retain) NSIndexPath * previouslySelectedIndexPath;
 
 
+- (void)dealloc;
+- (id)init;
+- (float)heightForHeaderInTableView:(id)arg1;
+- (id)title;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (void)setTitle:(id)arg1;
 - (void)setPlayerDictionary:(id)arg1;
 - (id)playerDictionary;
 - (void)tableView:(id)arg1 showMoreInSection:(int)arg2;
@@ -124,12 +131,5 @@
 - (int)timeScope;
 - (void)setGame:(id)arg1;
 - (id)game;
-- (void)dealloc;
-- (id)init;
-- (float)heightForHeaderInTableView:(id)arg1;
-- (id)title;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)setTitle:(id)arg1;
 
 @end

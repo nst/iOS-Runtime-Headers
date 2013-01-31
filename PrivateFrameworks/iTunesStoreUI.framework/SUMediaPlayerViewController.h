@@ -36,15 +36,16 @@
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (id)copyScriptViewController;
 - (void)operationFinished:(id)arg1;
-- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)setClientInterface:(id)arg1;
 - (id)clientInterface;
 - (void)dealloc;
 - (id)init;
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)didReceiveMemoryWarning;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

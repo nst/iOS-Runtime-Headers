@@ -13,8 +13,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)setGeometry:(id)arg1;
-- (id)geometry;
 - (void)createPictureFramePresetGeometry;
 - (id)createImageFill;
 - (id)ole;
@@ -24,5 +22,7 @@
 - (void)setParentTextListStyle:(id)arg1;
 - (id)movie;
 - (id)imageProperties;
+- (void)setGeometry:(id)arg1;
+- (id)geometry;
 
 @end

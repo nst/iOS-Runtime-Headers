@@ -13,12 +13,12 @@
 
 - (id)action;
 - (void)dealloc;
-- (unsigned int)priority;
-- (void)setSource:(id)arg1;
-- (id)source;
 - (BOOL)canShowInAssistant;
 - (id)sortDate;
 - (BOOL)isSticky;
 - (id)sound;
+- (unsigned int)priority;
+- (void)setSource:(id)arg1;
+- (id)source;
 
 @end

@@ -13,8 +13,8 @@
     void *_reserved5;
 }
 
-+ (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
 + (void)initialize;
++ (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
 
 - (BOOL)save:(id*)arg1;
 - (void)dealloc;

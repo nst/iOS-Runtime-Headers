@@ -14,8 +14,6 @@
 - (void)setProperties:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)properties;
-- (BOOL)isEmpty;
 - (void)addParagraphsFromTextBody:(id)arg1;
 - (id)findFirstTextRunOfClass:(Class)arg1;
 - (void)removeTrailingNewlines;
@@ -30,5 +28,7 @@
 - (unsigned int)paragraphCount;
 - (id)plainText;
 - (id)paragraphAtIndex:(unsigned int)arg1;
+- (id)properties;
+- (BOOL)isEmpty;
 
 @end

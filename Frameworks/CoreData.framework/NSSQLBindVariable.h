@@ -18,6 +18,12 @@
 - (id)retain;
 - (void)dealloc;
 - (oneway void)release;
+- (void)setIndex:(unsigned int)arg1;
+- (unsigned int)index;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (BOOL)hasObjectValue;
 - (unsigned int)unsignedInt;
 - (long long)int64;
@@ -28,11 +34,5 @@
 - (id)initWithValue:(id)arg1 sqlType:(unsigned int)arg2 attributeDescription:(id)arg3;
 - (id)initWithInt64:(long long)arg1 sqlType:(unsigned int)arg2;
 - (unsigned int)sqlType;
-- (void)setIndex:(unsigned int)arg1;
-- (unsigned int)index;
-- (id)value;
-- (void)setValue:(id)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 
 @end

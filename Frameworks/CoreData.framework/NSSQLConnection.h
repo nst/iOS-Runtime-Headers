@@ -16,7 +16,14 @@
 
 + (void)initialize;
 
+- (void)deleteRow:(id)arg1;
+- (void)insertRow:(id)arg1;
 - (void)dealloc;
+- (void)disconnect;
+- (void)connect;
+- (void)finalize;
+- (void)commitTransaction;
+- (void)dropUbiquityTables;
 - (id)ubiquityTableValueForKey:(id)arg1;
 - (id)ubiquityTableKeysAndValues;
 - (void)setUbiquityTableValue:(id)arg1 forKey:(id)arg2;
@@ -86,13 +93,7 @@
 - (id)adapter;
 - (BOOL)isFetchInProgress;
 - (void)endFetch;
-- (id)columnsToFetch;
-- (void)disconnect;
-- (void)connect;
-- (void)finalize;
-- (void)commitTransaction;
-- (void)deleteRow:(id)arg1;
-- (void)insertRow:(id)arg1;
 - (BOOL)isOpen;
+- (id)columnsToFetch;
 
 @end

@@ -18,8 +18,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithAccountID:(id)arg1 andDataclass:(int)arg2;
 - (id)accountID;
+- (id)initWithAccountID:(id)arg1 andDataclass:(int)arg2;
 - (int)dataclass;
 
 @end

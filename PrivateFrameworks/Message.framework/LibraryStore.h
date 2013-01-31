@@ -25,7 +25,6 @@
 - (void)dealloc;
 - (void)setLibrary:(id)arg1;
 - (id)library;
-- (id)URLString;
 - (id)earliestReceivedDate;
 - (id)_cachedBodyDataForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_cachedHeadersForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
@@ -109,5 +108,6 @@
 - (void)messagesWereAdded:(id)arg1 earliestReceivedDate:(id)arg2;
 - (void)updateUserInfoToLatestValues;
 - (void)openSynchronously;
+- (id)URLString;
 
 @end

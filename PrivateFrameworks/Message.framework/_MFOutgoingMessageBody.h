@@ -16,9 +16,9 @@
 - (void)dealloc;
 - (id)init;
 - (unsigned long)count;
+- (BOOL)isLastCharacterNewLine;
 - (id)rawData;
 - (int)appendData:(id)arg1;
 - (void)done;
-- (BOOL)isLastCharacterNewLine;
 
 @end

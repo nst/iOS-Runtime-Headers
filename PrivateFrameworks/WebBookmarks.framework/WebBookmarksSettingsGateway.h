@@ -9,11 +9,11 @@
 }
 
 
+- (void)setCellularReadingListAllowed:(BOOL)arg1;
+- (void)getCellularReadingListAllowedWithCompletion:(id)arg1;
 - (void)invalidate;
 - (void)dealloc;
 - (id)init;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
-- (void)setCellularReadingListAllowed:(BOOL)arg1;
-- (void)getCellularReadingListAllowedWithCompletion:(id)arg1;
 
 @end

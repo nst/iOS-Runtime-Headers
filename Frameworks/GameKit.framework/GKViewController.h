@@ -16,6 +16,12 @@
 @property(retain) GKViewController * rootViewController;
 
 
+- (void)dealloc;
+- (void)popToRootViewControllerAnimated:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)rootViewController;
+- (void)setRootViewController:(id)arg1;
 - (void)setShouldUpdateContentOnlyWhenAuthenticated:(BOOL)arg1;
 - (void)pushFullScreenViewController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)displayUsingSplitNavigationBar;
@@ -24,11 +30,5 @@
 - (void)setStatusViewVisible:(BOOL)arg1;
 - (void)setStatusView:(id)arg1;
 - (id)statusView;
-- (void)dealloc;
-- (void)popToRootViewControllerAnimated:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)rootViewController;
-- (void)setRootViewController:(id)arg1;
 
 @end

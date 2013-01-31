@@ -13,14 +13,14 @@
 @property(copy) NSURL * requestURL;
 
 
-- (id)initWithRequest:(struct __CFHTTPMessage { }*)arg1;
 - (id)requestMethod;
 - (struct __CFHTTPMessage { }*)copyMessage;
-- (void)dealloc;
-- (id)responseWithStatus:(int)arg1;
-- (void)setRequestMethod:(id)arg1;
 - (void)setRequestURL:(id)arg1;
 - (BOOL)responseCanUseGZip;
+- (void)dealloc;
+- (id)responseWithStatus:(int)arg1;
 - (id)requestURL;
+- (void)setRequestMethod:(id)arg1;
+- (id)initWithRequest:(struct __CFHTTPMessage { }*)arg1;
 
 @end

@@ -69,15 +69,13 @@
 
 + (id)pivotTableWithResources:(id)arg1;
 
-- (void)setName:(id)arg1;
-- (id)name;
-- (void)dealloc;
-- (id)style;
-- (void)setStyle:(id)arg1;
 - (void)setCompact:(bool)arg1;
 - (bool)compact;
 - (void)setOutline:(bool)arg1;
 - (bool)outline;
+- (void)setName:(id)arg1;
+- (id)name;
+- (void)dealloc;
 - (id)pageFields;
 - (id)pivotAreas;
 - (id)conditionalFormats;
@@ -182,5 +180,7 @@
 - (void)setStyleIndex:(unsigned int)arg1;
 - (unsigned int)styleIndex;
 - (id)initWithResources:(id)arg1;
+- (id)style;
+- (void)setStyle:(id)arg1;
 
 @end

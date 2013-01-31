@@ -22,20 +22,6 @@
 @property(readonly) float _interItemPadding;
 
 
-- (void)_itemDidChangeNotification:(id)arg1;
-- (void)dealloc;
-- (void)setCell:(id)arg1;
-- (id)cell;
-- (void)refreshImages;
-- (void)setContext:(id)arg1;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)_canDrawContent;
-- (id)context;
-- (id)scriptingInfoWithChildren;
-- (void)layoutSubviews;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (unsigned int)rowIndex;
 - (id)hiddenAlbumIndexes;
 - (void)enableDeleteButtonForAlbumAtIndex:(unsigned int)arg1;
 - (void)dimAlbum:(BOOL)arg1 atIndex:(unsigned int)arg2;
@@ -57,6 +43,20 @@
 - (void)setTitlesHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)unhideAlbums;
 - (void)setAlbumHidden:(BOOL)arg1 atIndex:(unsigned int)arg2;
+- (unsigned int)rowIndex;
+- (void)dealloc;
 - (void)setRowIndex:(unsigned int)arg1;
+- (void)setCell:(id)arg1;
+- (id)cell;
+- (void)refreshImages;
+- (void)setContext:(id)arg1;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)_canDrawContent;
+- (id)context;
+- (id)scriptingInfoWithChildren;
+- (void)layoutSubviews;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_itemDidChangeNotification:(id)arg1;
 
 @end

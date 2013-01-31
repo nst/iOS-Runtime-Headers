@@ -50,20 +50,6 @@
 @property unsigned int attachmentSize;
 
 
-- (int)genericError;
-- (id)guid;
-- (unsigned long long)timestamp;
-- (void)setTimestamp:(unsigned long long)arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)setConnectionType:(unsigned int)arg1;
-- (unsigned int)connectionType;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
 - (void)setHasUploadDuration:(BOOL)arg1;
 - (void)setUploadDuration:(unsigned int)arg1;
 - (unsigned int)uploadDuration;
@@ -93,9 +79,23 @@
 - (BOOL)hasGenericError;
 - (void)setHasConnectionType:(BOOL)arg1;
 - (BOOL)hasConnectionType;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (BOOL)hasTimestamp;
 - (BOOL)hasGuid;
 - (void)setGuid:(id)arg1;
+- (int)genericError;
+- (id)guid;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (unsigned long long)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
+- (BOOL)hasTimestamp;
+- (void)setConnectionType:(unsigned int)arg1;
+- (unsigned int)connectionType;
+- (id)dictionaryRepresentation;
 
 @end

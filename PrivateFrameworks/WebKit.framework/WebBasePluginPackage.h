@@ -46,24 +46,10 @@
     int (*BP_CreatePluginMIMETypesPreferences)();
 }
 
-+ (void)initialize;
 + (id)pluginWithPath:(id)arg1;
 + (id)preferredLocalizationName;
++ (void)initialize;
 
-- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleVersion;
-- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleIdentifier;
-- (const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)path;
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (id)initWithPath:(id)arg1;
-- (BOOL)load;
-- (void)finalize;
-- (BOOL)isQuickTimePlugIn;
-- (BOOL)supportsMIMEType:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
-- (id)MIMETypeForExtension:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
-- (unsigned long)versionNumber;
-- (void)unload;
 - (void)wasRemovedFromPluginDatabase:(id)arg1;
 - (void)wasAddedToPluginDatabase:(id)arg1;
 - (BOOL)isNativeLibraryData:(id)arg1;
@@ -74,6 +60,20 @@
 - (id)pListForPath:(id)arg1 createFile:(BOOL)arg2;
 - (id)_objectForInfoDictionaryKey:(id)arg1;
 - (void)createPropertyListFile;
+- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleIdentifier;
+- (const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)path;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (BOOL)supportsMIMEType:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
+- (id)initWithPath:(id)arg1;
+- (BOOL)load;
+- (void)finalize;
+- (BOOL)isQuickTimePlugIn;
+- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleVersion;
+- (id)MIMETypeForExtension:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
+- (unsigned long)versionNumber;
+- (void)unload;
 - (oneway void)_webcore_releaseOnWebThread;
 - (oneway void)release;
 

@@ -13,6 +13,9 @@
 
 
 - (void)dealloc;
+- (void)setLockView:(id)arg1;
+- (void)beginTracking:(id)arg1;
+- (BOOL)shouldBeginTracking:(id)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)isTracking;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
@@ -20,8 +23,5 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (id)initWithImage:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)setLockView:(id)arg1;
-- (void)beginTracking:(id)arg1;
-- (BOOL)shouldBeginTracking:(id)arg1;
 
 @end

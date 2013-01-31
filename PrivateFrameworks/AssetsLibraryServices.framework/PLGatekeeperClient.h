@@ -13,28 +13,7 @@
 
 + (id)sharedInstance;
 
-- (void)clearAllBulletinsWithLastClearedRecordID:(unsigned int)arg1;
-- (id)getThumbnailImageDataForBulletinWithRecordID:(unsigned int)arg1;
-- (int)getCurrentApplicationBadgeCount;
-- (id)getCurrentBulletins;
-- (void)clearChangeStore;
-- (void)notifyAboutTerminationDueToUncaughtException:(id)arg1;
-- (void)updateRestoredAssetWithUUID:(id)arg1 paths:(id)arg2;
-- (void)cleanupAfteriTunesSync;
-- (void)finalizeOTARestoreRecreatingAlbums:(BOOL)arg1;
-- (void)addAssetWithURL:(id)arg1 toAlbumWithUUID:(id)arg2 handler:(id)arg3;
-- (void)addGroupWithName:(id)arg1 handler:(id)arg2;
-- (int)fileDescriptorForAssetURL:(id)arg1;
-- (id)sendQueue;
-- (id)replyQueue;
-- (void)getLibrarySizes:(id)arg1;
-- (void)dataMigrationWillFinish;
-- (void)cleanupModelAfteriTunesRestore;
-- (void)getPhotosAndVideosCountWithHandler:(id)arg1;
-- (id)fileURLForAssetURL:(id)arg1 withAdjustments:(BOOL)arg2;
 - (id)init;
-- (id)connection;
-- (void)setConnection:(id)arg1;
 - (void)waitUntilConnectionSendsAllMessages;
 - (int)keyForEmailAddress:(id)arg1;
 - (id)emailAddressForKey:(int)arg1;
@@ -44,6 +23,7 @@
 - (void)sendDaemonJob:(id)arg1 replyHandler:(id)arg2;
 - (void)writeDataInBackground:(id)arg1 toFileURL:(id)arg2;
 - (unsigned int)secondsNeededToCleanupModelAfteriTunesRestore;
+- (void)repairPotentialModelCorruption;
 - (void)recalculateCachedAlbumCounts;
 - (void)updateCameraPreviewWellImage:(id)arg1;
 - (void)automaticallyDeleteEmptyAlbum:(id)arg1;
@@ -64,5 +44,26 @@
 - (void)importFileSystemAssetsWaitingForReply:(BOOL)arg1;
 - (void)launchAssetsd;
 - (void)updateThumbnailsForPhoto:(id)arg1 generatePreviewImage:(BOOL)arg2 waitForReply:(BOOL)arg3;
+- (void)setConnection:(id)arg1;
+- (void)clearAllBulletinsWithLastClearedRecordID:(unsigned int)arg1;
+- (id)getThumbnailImageDataForBulletinWithRecordID:(unsigned int)arg1;
+- (int)getCurrentApplicationBadgeCount;
+- (id)getCurrentBulletins;
+- (void)clearChangeStore;
+- (void)notifyAboutTerminationDueToUncaughtException:(id)arg1;
+- (void)updateRestoredAssetWithUUID:(id)arg1 paths:(id)arg2;
+- (void)cleanupAfteriTunesSync;
+- (void)finalizeOTARestoreRecreatingAlbums:(BOOL)arg1;
+- (void)addAssetWithURL:(id)arg1 toAlbumWithUUID:(id)arg2 handler:(id)arg3;
+- (void)addGroupWithName:(id)arg1 handler:(id)arg2;
+- (int)fileDescriptorForAssetURL:(id)arg1;
+- (id)sendQueue;
+- (id)replyQueue;
+- (void)getLibrarySizes:(id)arg1;
+- (void)dataMigrationWillFinish;
+- (void)cleanupModelAfteriTunesRestore;
+- (void)getPhotosAndVideosCountWithHandler:(id)arg1;
+- (id)fileURLForAssetURL:(id)arg1 withAdjustments:(BOOL)arg2;
+- (id)connection;
 
 @end

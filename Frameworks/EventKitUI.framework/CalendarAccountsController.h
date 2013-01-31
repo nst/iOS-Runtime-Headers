@@ -16,6 +16,7 @@
 
 - (void)dealloc;
 - (id)init;
+- (id)accountStore;
 - (void)refreshListingForSource:(id)arg1 isUserRequested:(BOOL)arg2;
 - (BOOL)sourceListingNeedsRefresh:(id)arg1;
 - (int)sortOrderForStoreType:(int)arg1;
@@ -25,6 +26,5 @@
 - (int)sortOrderForSourceType:(int)arg1;
 - (id)accountTypeTitleForSourceWithExternalId:(id)arg1;
 - (id)accountManager;
-- (id)accountStore;
 
 @end

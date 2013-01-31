@@ -11,15 +11,15 @@
 @property(retain) UIControl * control;
 
 
+- (id)control;
+- (void)dealloc;
+- (id)controlValue;
+- (id)newControl;
 - (BOOL)canReload;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
-- (id)controlValue;
-- (id)newControl;
-- (id)valueLabel;
 - (void)controlChanged:(id)arg1;
-- (void)dealloc;
-- (id)control;
+- (id)valueLabel;
 - (void)setControl:(id)arg1;
 
 @end

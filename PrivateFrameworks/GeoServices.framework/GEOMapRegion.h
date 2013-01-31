@@ -33,16 +33,6 @@
 @property(retain) NSMutableArray * vertexs;
 
 
-- (BOOL)hasWestLng;
-- (BOOL)hasSouthLat;
-- (BOOL)hasNorthLat;
-- (BOOL)containsCoordinate:(struct { double x1; double x2; })arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
-- (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (BOOL)hasEastLng;
 - (double)centerLng;
 - (double)centerLat;
@@ -57,6 +47,12 @@
 - (double)southLat;
 - (double)westLng;
 - (double)northLat;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
+- (BOOL)readFrom:(id)arg1;
 - (id)vertexs;
 - (void)setHasEastLng:(BOOL)arg1;
 - (void)setHasNorthLat:(BOOL)arg1;
@@ -65,13 +61,17 @@
 - (id)vertexAtIndex:(unsigned int)arg1;
 - (void)clearVertexs;
 - (unsigned int)vertexsCount;
+- (BOOL)hasNorthLat;
+- (BOOL)hasWestLng;
+- (BOOL)hasSouthLat;
 - (void)addVertex:(id)arg1;
 - (void)setVertexs:(id)arg1;
+- (BOOL)containsCoordinate:(struct { double x1; double x2; })arg1;
 - (double)spanLng;
 - (double)spanLat;
 - (id)initWithSpannedRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; })arg1;
 - (void)setSpannedRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; })arg1;
 - (void)setMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

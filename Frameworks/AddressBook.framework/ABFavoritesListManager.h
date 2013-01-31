@@ -19,9 +19,9 @@
 + (id)sharedInstance;
 + (id)sharedInstanceWithAddressBook:(void*)arg1;
 
-- (void)_postChangeNotification;
 - (void)save;
 - (void)dealloc;
+- (void)_postChangeNotification;
 - (void)removeAllEntries;
 - (void)moveEntryAtIndex:(int)arg1 toIndex:(int)arg2;
 - (void)removeEntryAtIndex:(int)arg1;

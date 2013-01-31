@@ -11,9 +11,9 @@
 }
 
 
-- (unsigned int)transactionID;
 - (id)identifier;
 - (void)dealloc;
+- (unsigned int)transactionID;
 - (void)increaseOrIgnoreTransactionID:(unsigned int)arg1;
 - (id)initWithDelegate:(id)arg1 identifier:(id)arg2;
 

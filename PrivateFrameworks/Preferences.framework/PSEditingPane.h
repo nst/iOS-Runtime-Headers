@@ -26,6 +26,8 @@
 + (id)defaultBackgroundColor;
 + (float)preferredHeight;
 
+- (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void)doneEditing;
 - (void)addNewValue;
 - (BOOL)wantsNewButton;
@@ -39,14 +41,12 @@
 - (void)setPreferenceValue:(id)arg1;
 - (void)setPreferenceSpecifier:(id)arg1;
 - (BOOL)requiresKeyboard;
-- (void)setDelegate:(id)arg1;
-- (void)dealloc;
+- (void)editMode;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)editMode;
 - (BOOL)changed;
 
 @end

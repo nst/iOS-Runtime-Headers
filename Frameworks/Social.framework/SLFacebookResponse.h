@@ -17,6 +17,7 @@
 @property(readonly) NSHTTPURLResponse * urlResponse;
 
 
+- (BOOL)hasError;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -32,6 +33,5 @@
 - (id)responseParameters;
 - (int)httpErrorCode;
 - (BOOL)hasBadTokenError;
-- (BOOL)hasError;
 
 @end

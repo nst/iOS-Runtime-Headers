@@ -10,10 +10,10 @@
 @property(copy) NSString * aceId;
 @property(copy) NSString * refId;
 
-+ (id)cancelRequest;
 + (id)cancelRequestWithDictionary:(id)arg1 context:(id)arg2;
++ (id)cancelRequest;
 
-- (id)groupIdentifier;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

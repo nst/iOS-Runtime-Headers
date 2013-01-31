@@ -15,6 +15,13 @@
 @property(retain) GKMatchmakerViewControllerPrivate * privateViewController;
 
 
+- (void)dealloc;
+- (id)init;
+- (void)__viewControllerWillBePresented:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (id)privateViewController;
 - (void)setHostedPlayerReady:(id)arg1;
 - (void)setMatchmakerDelegate:(id)arg1;
@@ -30,12 +37,5 @@
 - (id)initWithMatchRequest:(id)arg1;
 - (BOOL)isHosted;
 - (id)matchRequest;
-- (void)dealloc;
-- (id)init;
-- (void)__viewControllerWillBePresented:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (unsigned int)supportedInterfaceOrientations;
 
 @end

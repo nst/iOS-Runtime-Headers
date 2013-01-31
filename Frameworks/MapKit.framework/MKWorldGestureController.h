@@ -20,11 +20,11 @@
 
 
 - (void)dealloc;
+- (BOOL)isRotationEnabled;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (id)tiltGestureRecognizer;
 - (id)worldDelegate;
+- (id)tiltGestureRecognizer;
 - (id)rotationGestureRecognizer;
 - (void)handleTilt:(id)arg1;
 - (void)handleRotation:(id)arg1;
@@ -34,6 +34,5 @@
 - (void)setRotationEnabled:(BOOL)arg1;
 - (void)setWorldDelegate:(id)arg1;
 - (id)initWithMapView:(id)arg1 gestureTargetView:(id)arg2 doubleTapTargetView:(id)arg3;
-- (BOOL)isRotationEnabled;
 
 @end

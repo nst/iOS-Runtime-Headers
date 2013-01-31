@@ -12,12 +12,14 @@
 + (id)colorWithString:(id)arg1;
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 
+- (id)stringRepresentation;
 - (id)initWithString:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (struct CGColorSpace { }*)colorSpace;
 - (const float*)components;
 - (float)blue;
 - (float)green;
@@ -31,8 +33,6 @@
 - (float)alpha;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)stringRepresentation;
-- (struct CGColorSpace { }*)colorSpace;
 - (id)initWithColor:(id)arg1;
 
 @end

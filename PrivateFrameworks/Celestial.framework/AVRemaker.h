@@ -11,18 +11,16 @@
 @property(readonly) long long approximateByteSize;
 @property(readonly) double progress;
 
-+ (id)settingForMode:(id)arg1;
-+ (id)figRemakerNotificationNames;
 + (long long)approximateByteSizeForMode:(id)arg1 duration:(double)arg2 options:(id)arg3;
 + (double)maximumDurationWithinLimitsForMode:(id)arg1 options:(id)arg2;
++ (id)settingForMode:(id)arg1;
++ (id)figRemakerNotificationNames;
 
 - (void)setRangeStartTime:(double)arg1 endTime:(double)arg2;
 - (double)sourceDuration;
 - (id)initWithSource:(id)arg1 dest:(id)arg2 mode:(id)arg3 options:(id)arg4;
 - (void)cancel;
 - (void)dealloc;
-- (double)progress;
-- (id)start;
 - (long long)approximateByteSize;
 - (double)maxDurationWithinLimits;
 - (void)removeListeners;
@@ -39,5 +37,7 @@
 - (id)videoPropertiesForTrackReader:(struct OpaqueFigTrackReader { }*)arg1;
 - (id)audioPropertiesForTrackReader:(struct OpaqueFigTrackReader { }*)arg1;
 - (BOOL)multipleNonEmptyEditsInTrackReader:(struct OpaqueFigTrackReader { }*)arg1;
+- (double)progress;
+- (id)start;
 
 @end

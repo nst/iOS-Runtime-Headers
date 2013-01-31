@@ -15,16 +15,9 @@
 @property(copy) NSString * unlocalizedCityName;
 @property(copy) NSString * unlocalizedCountryName;
 
-+ (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)object;
 
-- (id)groupIdentifier;
-- (void)setCityName:(id)arg1;
-- (id)cityName;
-- (void)setCountryName:(id)arg1;
-- (id)countryName;
-- (void)setCountryCode:(id)arg1;
-- (id)countryCode;
 - (void)setUnlocalizedCountryName:(id)arg1;
 - (id)unlocalizedCountryName;
 - (void)setUnlocalizedCityName:(id)arg1;
@@ -35,5 +28,12 @@
 - (id)timezoneId;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setCountryCode:(id)arg1;
+- (id)countryCode;
+- (id)groupIdentifier;
+- (void)setCityName:(id)arg1;
+- (id)cityName;
+- (void)setCountryName:(id)arg1;
+- (id)countryName;
 
 @end

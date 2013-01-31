@@ -17,6 +17,7 @@
 - (id)initWithURL:(id)arg1;
 - (id)valueForKey:(id)arg1;
 - (void)dealloc;
+- (id)attributeForName:(id)arg1;
 - (void)updateInfo:(id)arg1;
 - (void)setReplacement:(id)arg1;
 - (id)initWithURL:(id)arg1 itemUpdateInfo:(id)arg2;
@@ -25,6 +26,5 @@
 - (id)_attributes;
 - (id)attributesForNames:(id)arg1;
 - (id)attributeNames;
-- (id)attributeForName:(id)arg1;
 
 @end

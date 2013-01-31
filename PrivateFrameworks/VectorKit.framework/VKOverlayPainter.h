@@ -13,7 +13,6 @@
 @property VKOverlayContainerModel * containerModel;
 
 
-- (void)dealloc;
 - (id)containerModel;
 - (id)initWithOverlay:(id)arg1;
 - (void)drawDebug:(id)arg1 tiles:(id)arg2;
@@ -21,5 +20,6 @@
 - (void)layoutWithContext:(id)arg1 tiles:(id)arg2 keysInView:(id)arg3;
 - (id)overlay;
 - (void)setContainerModel:(id)arg1;
+- (void)dealloc;
 
 @end

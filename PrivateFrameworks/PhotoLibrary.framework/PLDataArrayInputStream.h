@@ -37,9 +37,17 @@
 
 
 - (void)_scheduleCallback;
+- (void)open;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)setProgressDelegate:(id)arg1;
+- (id)progressDelegate;
+- (void)_streamEventTrigger;
+- (id)initWithDataArray:(id)arg1;
+- (void)_scheduleProgressUpdate;
+- (unsigned int)totalBytes;
+- (unsigned int)bytesRead;
 - (void)close;
 - (void)_unscheduleFromCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
@@ -51,14 +59,6 @@
 - (unsigned int)streamStatus;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)open;
-- (void)setProgressDelegate:(id)arg1;
-- (id)progressDelegate;
-- (void)_streamEventTrigger;
-- (id)initWithDataArray:(id)arg1;
-- (void)_scheduleProgressUpdate;
-- (unsigned int)totalBytes;
-- (unsigned int)bytesRead;
 - (void)_updateProgress;
 
 @end

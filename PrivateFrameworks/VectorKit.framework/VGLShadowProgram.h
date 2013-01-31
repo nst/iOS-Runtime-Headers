@@ -24,14 +24,14 @@
 
 + (id)program;
 
-- (id)init;
-- (void)setWidth:(float)arg1;
-- (float)width;
 - (float)taper;
 - (struct { float x1; float x2; float x3; })cameraDirection;
 - (float)ramp;
 - (void)setTaper:(float)arg1;
 - (void)setCameraDirection:(struct { float x1; float x2; float x3; })arg1;
 - (void)setRamp:(float)arg1;
+- (id)init;
+- (void)setWidth:(float)arg1;
+- (float)width;
 
 @end

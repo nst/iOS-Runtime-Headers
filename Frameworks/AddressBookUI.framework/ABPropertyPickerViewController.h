@@ -19,6 +19,8 @@
 
 - (void)setProperties:(struct __CFArray { }*)arg1;
 - (void)dealloc;
+- (void*)addressBook;
+- (id)policies;
 - (void)setPerson:(void*)arg1;
 - (void*)person;
 - (struct __CFArray { }*)properties;
@@ -26,13 +28,11 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void*)addressBook;
+- (void)setAddressBook:(void*)arg1;
 - (void)setPolicies:(id)arg1;
 - (id)propertyPicker;
 - (float)ab_heightToFitForViewInPopoverView;
 - (void)propertyPicker:(id)arg1 selectedProperty:(int)arg2 withDefaultValue:(id)arg3;
 - (void)propertyPicker:(id)arg1 selectedProperty:(int)arg2;
-- (id)policies;
-- (void)setAddressBook:(void*)arg1;
 
 @end

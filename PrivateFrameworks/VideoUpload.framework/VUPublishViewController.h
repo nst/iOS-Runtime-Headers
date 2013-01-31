@@ -43,12 +43,12 @@
         int access; 
         int account; 
     } _sectionIndices;
-    int _SDSize;
     BOOL _enableHDSection;
-    int _selectedOption;
-    int _HDSize;
     <VUPublishViewControllerDelegate> *_delegate;
     BOOL _showHDSection;
+    int _selectedOption;
+    int _HDSize;
+    int _SDSize;
 }
 
 @property <VUPublishViewControllerDelegate> * delegate;
@@ -63,14 +63,15 @@
 @property(readonly) VUCategory * videoCategory;
 
 
-- (void)setShowHDSection:(BOOL)arg1;
-- (BOOL)showHDSection;
-- (void)setHDSize:(int)arg1;
-- (int)HDSize;
-- (void)setEnableHDSection:(BOOL)arg1;
-- (BOOL)enableHDSection;
+- (id)videoDescription;
 - (void)setSDSize:(int)arg1;
 - (int)SDSize;
+- (void)setHDSize:(int)arg1;
+- (int)HDSize;
+- (void)setShowHDSection:(BOOL)arg1;
+- (BOOL)showHDSection;
+- (void)setEnableHDSection:(BOOL)arg1;
+- (BOOL)enableHDSection;
 - (id)videoCategory;
 - (id)videoTags;
 - (id)videoTitle;
@@ -104,6 +105,11 @@
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
+- (void)editableTagCellEndOfTagCharacterPressed:(id)arg1;
+- (void)editableCell:(id)arg1 textChanged:(id)arg2;
+- (void)editableCellReturnPressed:(id)arg1;
+- (void)editableCellDidBeginEditing:(id)arg1;
+- (int)selectedOption;
 - (void)_cancel;
 - (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (id)categories;
@@ -124,11 +130,5 @@
 - (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
 - (int)numberOfComponentsInPickerView:(id)arg1;
-- (id)videoDescription;
-- (void)editableTagCellEndOfTagCharacterPressed:(id)arg1;
-- (void)editableCell:(id)arg1 textChanged:(id)arg2;
-- (void)editableCellReturnPressed:(id)arg1;
-- (void)editableCellDidBeginEditing:(id)arg1;
-- (int)selectedOption;
 
 @end

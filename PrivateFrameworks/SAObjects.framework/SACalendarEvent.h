@@ -22,18 +22,9 @@
 @property(copy) NSString * timeZoneId;
 @property(copy) NSString * title;
 
-+ (id)event;
 + (id)eventWithDictionary:(id)arg1 context:(id)arg2;
++ (id)event;
 
-- (void)setParticipants:(id)arg1;
-- (id)participants;
-- (id)groupIdentifier;
-- (id)readOnly;
-- (id)location;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (id)recurrences;
-- (void)setRecurrences:(id)arg1;
 - (void)setReadOnly:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setTimeZoneId:(id)arg1;
@@ -46,6 +37,15 @@
 - (id)alerts;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (id)recurrences;
+- (void)setRecurrences:(id)arg1;
+- (id)readOnly;
+- (id)location;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (void)setParticipants:(id)arg1;
+- (id)groupIdentifier;
+- (id)participants;
 - (BOOL)allDay;
 - (void)setAttendees:(id)arg1;
 - (void)setNotes:(id)arg1;

@@ -9,8 +9,8 @@
 }
 
 
+- (id)footnotes;
 - (void)dealloc;
 - (struct __CFArray { }*)body;
-- (id)footnotes;
 
 @end

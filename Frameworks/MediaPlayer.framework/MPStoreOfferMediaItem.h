@@ -11,7 +11,6 @@
     MPStoreOfferContentRating *_contentRating;
 }
 
-+ (BOOL)canFilterByProperty:(id)arg1;
 + (id)localRepresentativeItemPropertyForMediaProperty:(id)arg1;
 + (id)assetLookupKeyForItemMediaProperty:(id)arg1;
 + (id)offerDictionaryWithPreferredAssetDictionaryInItemResponseDictionary:(id)arg1;
@@ -28,14 +27,8 @@
 + (id)mediaValueForStoreLookupCollectionPropertyValues:(id)arg1 itemIndex:(unsigned int)arg2 mediaProperty:(id)arg3;
 + (BOOL)hasMediaItemValuesForStoreLookupCollectionPropertyValues:(id)arg1 itemIndex:(unsigned int)arg2;
 + (BOOL)canMergeStoreOfferMediaItemsLocalItems:(id)arg1;
++ (BOOL)canFilterByProperty:(id)arg1;
 
-- (BOOL)isDownloadable;
-- (id)mediaLibrary;
-- (id)_lookupOfferDictionaries;
-- (BOOL)_offeredItemAlreadyExists;
-- (id)buyOfferForVariant:(int)arg1;
-- (id)initWithLookupLookupCollectionPropertyValues:(id)arg1 preferredStoreOfferVariant:(int)arg2 itemID:(id)arg3 itemIndex:(unsigned int)arg4;
-- (int)preferredStoreOfferVariant;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -44,6 +37,13 @@
 - (id)valueForProperty:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)_lookupOfferDictionaries;
+- (BOOL)_offeredItemAlreadyExists;
+- (id)buyOfferForVariant:(int)arg1;
+- (id)initWithLookupLookupCollectionPropertyValues:(id)arg1 preferredStoreOfferVariant:(int)arg2 itemID:(id)arg3 itemIndex:(unsigned int)arg4;
+- (int)preferredStoreOfferVariant;
+- (BOOL)isDownloadable;
+- (id)mediaLibrary;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 
 @end

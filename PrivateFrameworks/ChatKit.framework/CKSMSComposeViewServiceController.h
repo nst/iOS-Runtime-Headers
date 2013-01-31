@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class XPCProxy<CKSMSComposeRemoteViewControllerDelegate>, CKModalTranscriptController;
+@class CKModalTranscriptController, XPCProxy<CKSMSComposeRemoteViewControllerDelegate>;
 
 @interface CKSMSComposeViewServiceController : UINavigationController <CKTranscriptComposeDelegate> {
     BOOL _canEditRecipients;
     BOOL _supportsAttachments;
     BOOL _supportsMessageInspection;
     BOOL _forceMMS;
-    XPCProxy<CKSMSComposeRemoteViewControllerDelegate> *_viewServiceXPCProxy;
     CKModalTranscriptController *_modalTranscriptController;
+    XPCProxy<CKSMSComposeRemoteViewControllerDelegate> *_viewServiceXPCProxy;
 }
 
 @property(retain) CKModalTranscriptController * modalTranscriptController;
@@ -21,9 +21,9 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)willAppearInRemoteViewController:(id)arg1;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
+- (void)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
+- (void)disableCameraAttachments;
 - (void)forceMMS;
 - (void)forceCancelComposition;
 - (void)setUICustomizationData:(id)arg1;
@@ -46,8 +46,8 @@
 - (void)showForwardedMessageParts:(id)arg1;
 - (void)didCancelComposition:(id)arg1;
 - (BOOL)canEditRecipients;
-- (void)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
-- (void)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
-- (void)disableCameraAttachments;
+- (void)willAppearInRemoteViewController:(id)arg1;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)viewDidAppear:(BOOL)arg1;
 
 @end

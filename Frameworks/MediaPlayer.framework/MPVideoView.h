@@ -30,8 +30,11 @@
 
 + (Class)layerClass;
 
-- (void)setPlayer:(id)arg1;
-- (id)player;
+- (void)play;
+- (void)dealloc;
+- (double)startTime;
+- (void)setStartTime:(double)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)scheduleThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 orientation:(int)arg2 time:(float)arg3 delegate:(id)arg4;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })movieFrame;
 - (void)playFromBeginning;
@@ -58,10 +61,7 @@
 - (unsigned int)scaleMode;
 - (id)movieSubtitle;
 - (id)movieTitle;
-- (void)dealloc;
-- (double)startTime;
-- (void)setStartTime:(double)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)play;
+- (void)setPlayer:(id)arg1;
+- (id)player;
 
 @end

@@ -29,9 +29,9 @@
 
 
 - (void)dealloc;
+- (void)setShouldShowLinkedPeople:(BOOL)arg1;
 - (id)dataSource;
 - (void)setDataSource:(id)arg1;
-- (void)setShouldShowLinkedPeople:(BOOL)arg1;
 - (BOOL)updateShouldAllowLinkingAnotherContact;
 - (id)linkedInfoAtRow:(int)arg1;
 - (id)newLinkedInfoForPerson:(void*)arg1;

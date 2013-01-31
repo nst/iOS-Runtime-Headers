@@ -14,8 +14,11 @@
     NSObject<OS_xpc_object> *_connection;
     NSObject<OS_dispatch_queue> *_connectionQueue;
     unsigned long long _daemonConfiguration;
+    NSMutableSet *_knownArtworkIDs;
+    NSObject<OS_dispatch_queue> *_knownArtworkIDsQueue;
     NSMutableSet *_pendingArtworkRequests;
     NSObject<OS_dispatch_queue> *_pendingArtworkRequestsQueue;
+    long long _preferredVideoQuality;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -26,20 +29,26 @@
 @property(copy) id updateInProgressChangedHandler;
 
 
+- (id)initWithConfiguration:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)_serverUpdateInProgressDidChange;
 - (void)_serverDidLaunch;
 - (void)uploadItemProperties;
+- (void)setPreferredVideoQuality:(long long)arg1;
 - (void)setDaemonConfiguration:(unsigned long long)arg1;
 - (void)resetConfiguration:(id)arg1;
-- (void)loadArtworkDataForSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
+- (void)loadArtworkDataForPurchaseHistoryID:(unsigned long long)arg1;
 - (void)downloadGeniusDataWithCompletionHandler:(id)arg1;
-- (void)updateSagaLibraryWithCompletionHandler:(id)arg1;
+- (void)updateJaliscoLibraryWithCompletionHandler:(id)arg1;
+- (void)loadArtworkDataForPurchaseHistoryIDs:(id)arg1 completionHandler:(id)arg2;
+- (void)loadArtworkDataForPurchaseHistoryID:(unsigned long long)arg1 completionHandler:(id)arg2;
+- (void)loadArtworkDataForSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)isAuthenticatedWithQueue:(id)arg1 completionHandler:(id)arg2;
+- (void)updateJaliscoLibraryWithReason:(long long)arg1 completionHandler:(id)arg2;
 - (void)_performBlockOnMainThread:(id)arg1;
 - (void)_sendConfigurationToDaemon;
-- (void)authenticateWithCompletionHandler:(id)arg1;
-- (void)becomeActive;
-- (void)resignActive;
+- (void)updateSagaLibraryWithCompletionHandler:(id)arg1;
 - (void)setUpdateInProgressChangedHandler:(id)arg1;
 - (void)loadIsUpdateInProgressWithCompletionHandler:(id)arg1;
 - (id)updateInProgressChangedHandler;
@@ -50,13 +59,13 @@
 - (void)isAuthenticatedWithCompletionHandler:(id)arg1;
 - (void)isExpiredWithCompletionHandler:(id)arg1;
 - (void)deauthenticateWithCompletionHandler:(id)arg1;
+- (void)becomeActive;
 - (void)addGeniusPlaylistWithName:(id)arg1 seedItemSagaIDs:(id)arg2 itemSagaIDs:(id)arg3 completionHandler:(id)arg4;
 - (void)addPlaylistWithName:(id)arg1 completionHandler:(id)arg2;
 - (void)loadArtworkDataForSagaID:(unsigned long long)arg1;
 - (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
-- (void)dealloc;
-- (id)init;
-- (id)initWithConfiguration:(id)arg1;
+- (void)resignActive;
+- (void)authenticateWithCompletionHandler:(id)arg1;
 
 @end

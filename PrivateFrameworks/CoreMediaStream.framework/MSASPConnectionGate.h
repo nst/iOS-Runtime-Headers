@@ -12,8 +12,8 @@
 
 + (id)gate;
 
-- (void)setError:(id)arg1;
 - (void).cxx_destruct;
 - (id)error;
+- (void)setError:(id)arg1;
 
 @end

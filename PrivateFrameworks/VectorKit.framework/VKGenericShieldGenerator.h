@@ -10,7 +10,7 @@
 
 + (id)sharedGenerator;
 
-- (void)dealloc;
 - (id)newArtworkWithScale:(float)arg1 style:(id)arg2 mode:(int)arg3 extraScale:(float)arg4;
+- (void)dealloc;
 
 @end

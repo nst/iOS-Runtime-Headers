@@ -15,13 +15,13 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
-- (void)accountsChanged;
-- (id)accountsManager;
 - (id)syncAccountIdForDisplayAccountId:(id)arg1;
 - (id)allDisplayAccounts;
 - (id)allSyncableAccounts;
 - (BOOL)isDeviceLocalAccount:(id)arg1;
 - (BOOL)localNotesExist;
 - (id)defaultStoreSyncIdWithDesiredSyncId:(id)arg1;
+- (void)accountsChanged;
+- (id)accountsManager;
 
 @end

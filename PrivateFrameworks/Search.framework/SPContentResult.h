@@ -17,10 +17,10 @@
 + (id)resultWithRecord:(id)arg1 domain:(unsigned int)arg2 displayIdentifier:(id)arg3 query:(id)arg4;
 + (id)resultWithRecord:(id)arg1;
 
+- (void)setContent:(id)arg1;
+- (void)dealloc;
 - (id)extid;
 - (void)setExtid:(id)arg1;
-- (void)dealloc;
 - (id)content;
-- (void)setContent:(id)arg1;
 
 @end

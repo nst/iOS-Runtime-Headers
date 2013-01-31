@@ -13,10 +13,10 @@
 - (void)dealloc;
 - (id)init;
 - (int)count;
-- (void)clear;
 - (id)fontWithName:(id)arg1;
 - (id)fontWithName:(id)arg1 create:(BOOL)arg2;
 - (id)createFontWithName:(id)arg1;
 - (id)fonts;
+- (void)clear;
 
 @end

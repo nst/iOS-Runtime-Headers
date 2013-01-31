@@ -15,11 +15,11 @@
 @property(readonly) unsigned int visibleItems;
 
 
-- (unsigned int)visibleItems;
 - (void)dealloc;
 - (BOOL)update;
 - (int)style;
 - (id)titleView;
+- (unsigned int)visibleItems;
 - (id)value2View;
 - (id)valueView;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 platformStyle:(int)arg3;

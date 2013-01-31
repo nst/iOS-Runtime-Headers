@@ -15,12 +15,6 @@
 + (double)textResizingAnimationDuration;
 
 - (void).cxx_destruct;
-- (void)setNumberOfLines:(int)arg1;
-- (id)text;
-- (id)_transitionView;
-- (void)setText:(id)arg1;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_textView;
 - (void)setTextAnimated:(id)arg1;
 - (BOOL)hasInfoButton;
@@ -30,5 +24,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_textContentFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bubbleImageFrame;
 - (float)_singleLineHeight;
+- (void)setNumberOfLines:(int)arg1;
+- (id)text;
+- (id)_transitionView;
+- (void)setText:(id)arg1;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

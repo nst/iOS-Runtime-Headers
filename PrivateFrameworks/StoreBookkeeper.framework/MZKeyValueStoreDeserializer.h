@@ -32,6 +32,10 @@
 @property(retain) NSMutableArray * pendingDeserializations;
 
 
+- (BOOL)genericError;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (void)setServerResponse:(id)arg1;
 - (void)setKeyValueStoreController:(id)arg1;
 - (id)keyValueStoreController;
@@ -51,12 +55,8 @@
 - (BOOL)versionMismatch;
 - (id)initWithTransaction:(id)arg1 response:(id)arg2;
 - (void)setTransaction:(id)arg1;
-- (BOOL)genericError;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (BOOL)success;
 - (void)setStatus:(int)arg1;
 - (int)status;
+- (BOOL)success;
 
 @end

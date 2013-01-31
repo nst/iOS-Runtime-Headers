@@ -14,9 +14,9 @@
 + (id)searchCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)searchCompleted;
 
-- (id)groupIdentifier;
 - (void)setPhoneLogIds:(id)arg1;
 - (id)phoneLogIds;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -35,7 +35,6 @@
 + (void)flushAllCaches;
 
 - (void)dealloc;
-- (id)key;
 - (BOOL)allowCaching;
 - (id)imageForAngle:(float)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)renderImageForAngle:(float)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2;
@@ -43,5 +42,6 @@
 - (unsigned int)registeredClientsCount;
 - (id)initWithBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint { float x1; float x2; })arg3 scale:(struct CGSize { float x1; float x2; })arg4 allowCaching:(BOOL)arg5;
 - (void)flushCache;
+- (id)key;
 
 @end

@@ -15,11 +15,11 @@
 + (BOOL)pidIsTranslated:(int)arg1;
 + (id)taskWithMachTaskContainer:(id)arg1;
 
+- (id)headers;
 - (void)dealloc;
 - (id)initWithMachTaskContainer:(id)arg1;
 - (unsigned int)task;
 - (id)memory;
-- (id)headers;
 - (int)pid;
 - (BOOL)isTranslated;
 

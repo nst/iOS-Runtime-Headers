@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSNumber, PFUbiquityGlobalObjectID, NSManagedObjectID, PFUbiquityLocation, NSString, PFUbiquityKnowledgeVector, NSDate;
+@class PFUbiquityGlobalObjectID, PFUbiquityKnowledgeVector, NSString, NSDate, NSNumber, PFUbiquityLocation;
 
 @interface PFUbiquityTransactionEntryLight : NSObject  {
-    NSManagedObjectID *_localID;
     PFUbiquityGlobalObjectID *_globalID;
     int _transactionType;
     NSString *_actingPeerID;
@@ -16,7 +15,6 @@
     NSDate *_transactionDate;
 }
 
-@property(retain) NSManagedObjectID * localID;
 @property(retain) PFUbiquityGlobalObjectID * globalID;
 @property int transactionType;
 @property(retain) NSString * actingPeerID;
@@ -30,16 +28,14 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)localID;
-- (id)initWithTransactionEntry:(id)arg1;
+- (id)initWithTransactionEntry:(id)arg1 andGlobalIDCache:(id)arg2;
 - (id)actingPeerID;
-- (id)globalID;
 - (int)transactionType;
 - (void)setTransactionType:(int)arg1;
 - (void)setTransactionDate:(id)arg1;
 - (id)transactionDate;
 - (void)setTransactionLogLocation:(id)arg1;
-- (void)setLocalID:(id)arg1;
+- (id)globalID;
 - (void)setGlobalID:(id)arg1;
 - (void)setActingPeerID:(id)arg1;
 - (void)setStoreName:(id)arg1;

@@ -13,20 +13,20 @@
 @property(copy) NSNumber * selected;
 @property(copy) NSString * value;
 
-+ (id)metadata;
 + (id)metadataWithDictionary:(id)arg1 context:(id)arg2;
++ (id)metadata;
 
-- (id)groupIdentifier;
 - (id)identifier;
 - (void)setName:(id)arg1;
 - (id)name;
+- (void)setAverage:(id)arg1;
+- (id)average;
+- (id)encodedClassName;
 - (void)setIdentifier:(id)arg1;
 - (id)selected;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (void)setSelected:(id)arg1;
-- (void)setAverage:(id)arg1;
-- (id)average;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

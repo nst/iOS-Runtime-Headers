@@ -25,11 +25,6 @@
 - (id)data;
 - (void)dealloc;
 - (unsigned int)count;
-- (id)MIMEType;
-- (id)image;
-- (id)initWithData:(id)arg1;
-- (void)setData:(id)arg1;
-- (int)orientation;
 - (struct CGSize { float x1; float x2; })ptSize;
 - (struct CGSize { float x1; float x2; })pxSize;
 - (id)_thumbnailFitToSize:(struct CGSize { float x1; float x2; })arg1 atIndex:(unsigned int)arg2;
@@ -37,5 +32,10 @@
 - (id)thumbnailsFitToSize:(struct CGSize { float x1; float x2; })arg1 maxCount:(unsigned int)arg2;
 - (id)thumbnailFitToSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)UTIType;
+- (id)MIMEType;
+- (id)image;
+- (id)initWithData:(id)arg1;
+- (void)setData:(id)arg1;
+- (int)orientation;
 
 @end

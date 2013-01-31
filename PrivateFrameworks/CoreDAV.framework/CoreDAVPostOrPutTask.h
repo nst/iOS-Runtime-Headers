@@ -25,6 +25,7 @@
 - (id)initWithURL:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (id)requestBody;
 - (id)priorOrderedURL;
 - (void)setRequestDataPayload:(id)arg1;
 - (void)setRequestDataContentType:(id)arg1;
@@ -39,6 +40,5 @@
 - (void)setAbsoluteOrder:(int)arg1;
 - (id)initWithDataPayload:(id)arg1 dataContentType:(id)arg2 atURL:(id)arg3 previousETag:(id)arg4;
 - (int)absoluteOrder;
-- (id)requestBody;
 
 @end

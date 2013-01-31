@@ -12,10 +12,10 @@
 + (id)assistantNotReadyWithDictionary:(id)arg1 context:(id)arg2;
 + (id)assistantNotReady;
 
-- (id)groupIdentifier;
-- (void)setLanguage:(id)arg1;
-- (id)language;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (void)setLanguage:(id)arg1;
+- (id)language;
+- (id)groupIdentifier;
 
 @end

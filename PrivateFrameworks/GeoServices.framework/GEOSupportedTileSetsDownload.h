@@ -13,17 +13,17 @@
 @property(retain) GEODownloadMetadata * metadata;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)tileSets;
 - (void)setTileSets:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 
 @end

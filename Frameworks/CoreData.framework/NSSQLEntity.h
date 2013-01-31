@@ -51,6 +51,10 @@
 - (id)name;
 - (id)description;
 - (void)dealloc;
+- (id)attributes;
+- (id)properties;
+- (void)finalize;
+- (id)model;
 - (BOOL)addPropertiesForReadOnlyFetch:(id)arg1 keys:(id)arg2 context:(id)arg3;
 - (id)deletionStatement;
 - (id)insertStatement;
@@ -116,9 +120,5 @@
 - (id)primaryKey;
 - (id)subentityKey;
 - (id)propertiesByName;
-- (id)attributes;
-- (id)properties;
-- (void)finalize;
-- (id)model;
 
 @end

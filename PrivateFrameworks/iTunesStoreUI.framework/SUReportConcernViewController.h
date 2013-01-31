@@ -23,12 +23,12 @@
 - (void)_cancel:(id)arg1;
 - (BOOL)handleSelectionForIndexPath:(id)arg1 tapCount:(int)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
-- (unsigned long long)itemIdentifier;
 - (void)keyboardWillShowWithInfo:(id)arg1;
 - (void)keyboardWillHideWithInfo:(id)arg1;
 - (id)initWithItemIdentifier:(unsigned long long)arg1;
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
+- (unsigned long long)itemIdentifier;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

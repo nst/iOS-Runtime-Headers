@@ -46,10 +46,17 @@
 @property(retain) MFComposeRecipient * placeholderRecipient;
 
 
-- (id)addButton;
 - (void)setProperties:(id)arg1;
 - (void)dealloc;
-- (void)setProperty:(int)arg1;
+- (void)showAtoms;
+- (void)addAddress:(id)arg1;
+- (void)reflow;
+- (void)setAddresses:(id)arg1;
+- (id)recipients;
+- (BOOL)_addable;
+- (void)setMaxRecipients:(int)arg1;
+- (int)maxRecipients;
+- (void)selectComposeRecipientAtom:(id)arg1;
 - (id)textField;
 - (BOOL)editable;
 - (void)setEditable:(BOOL)arg1;
@@ -128,17 +135,10 @@
 - (void)composeRecipientAtomSelectPrevious:(id)arg1;
 - (void)composeRecipientAtomShowPersonCard:(id)arg1;
 - (void)deselectComposeRecipientAtom:(id)arg1;
-- (void)removeRecipient:(id)arg1;
-- (BOOL)_addable;
-- (void)setMaxRecipients:(int)arg1;
-- (int)maxRecipients;
-- (void)selectComposeRecipientAtom:(id)arg1;
-- (id)recipients;
-- (void)addRecipient:(id)arg1;
-- (void)showAtoms;
-- (void)addAddress:(id)arg1;
-- (void)reflow;
-- (void)setAddresses:(id)arg1;
+- (id)addButton;
 - (id)addresses;
+- (void)removeRecipient:(id)arg1;
+- (void)addRecipient:(id)arg1;
+- (void)setProperty:(int)arg1;
 
 @end

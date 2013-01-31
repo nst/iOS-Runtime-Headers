@@ -26,6 +26,7 @@
 - (void)commitDelayedChanges;
 - (void)setWrappedNavigationItem:(id)arg1;
 - (void)setShouldDelayChanges:(BOOL)arg1;
+- (void)setTitleView:(id)arg1 animated:(BOOL)arg2;
 - (void)dealloc;
 - (BOOL)leftItemsSupplementBackButton;
 - (void)setLeftItemsSupplementBackButton:(BOOL)arg1;

@@ -24,19 +24,19 @@
     NSMutableDictionary *_inFlightShareRequests;
 }
 
++ (void)setShouldIgnoreAccountChanges;
++ (id)sharedConnectionIfServerIsRunning;
++ (id)sharedConnection;
 + (void)accountDidChange:(id)arg1 forDataclass:(id)arg2;
 + (void)accountWillChange:(id)arg1 forDataclass:(id)arg2;
 + (void)noteAccountChanges:(id)arg1;
-+ (id)sharedConnection;
-+ (void)setShouldIgnoreAccountChanges;
-+ (id)sharedConnectionIfServerIsRunning;
 
-- (void)handleURL:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)_createReplyToRequest:(id)arg1 withProperties:(id)arg2;
-- (void)_dispatchMessage:(id)arg1;
-- (id)_init;
+- (void)requestDaemonStartMonitoringAgents;
+- (void)requestDaemonStopMonitoringAgents;
+- (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2 requireChangedFolders:(BOOL)arg3 isUserRequested:(BOOL)arg4;
+- (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2;
 - (id)statusReports;
 - (void)respondToSharedCalendarInvite:(int)arg1 forCalendarWithID:(id)arg2 accountID:(id)arg3 queue:(id)arg4 completionBlock:(id)arg5;
 - (BOOL)updateContentsOfAllFoldersForAccountID:(id)arg1 andDataclass:(int)arg2;
@@ -63,16 +63,6 @@
 - (void)_serverDiedWithReason:(id)arg1;
 - (void)_reallyRegisterForInterrogation;
 - (void)_tearDownInFlightObjects;
-- (id)beginDownloadingAttachmentWithUUID:(id)arg1 accountID:(id)arg2 queue:(id)arg3 progressBlock:(id)arg4 completionBlock:(id)arg5;
-- (void)cancelDownloadingAttachmentWithDownloadID:(id)arg1 error:(id)arg2;
-- (void)requestDaemonStartMonitoringAgents;
-- (void)requestDaemonStopMonitoringAgents;
-- (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2 isUserRequested:(BOOL)arg3;
-- (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2 requireChangedFolders:(BOOL)arg3 isUserRequested:(BOOL)arg4;
-- (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2;
-- (id)_connection;
-- (void)cancelServerContactsSearch:(id)arg1;
-- (BOOL)performServerContactsSearch:(id)arg1 forAccountWithID:(id)arg2;
 - (BOOL)requestPolicyUpdateForAccountID:(id)arg1;
 - (void)reportFolderItemsSyncSuccess:(BOOL)arg1 forFolderWithID:(id)arg2 andAccountWithID:(id)arg3;
 - (BOOL)processFolderChange:(id)arg1 forAccountWithID:(id)arg2;
@@ -85,10 +75,20 @@
 - (BOOL)resumeWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 - (void)fillOutCurrentEASTimeZoneInfo;
 - (void)_foldersUpdated:(id)arg1;
+- (id)_createReplyToRequest:(id)arg1 withProperties:(id)arg2;
+- (void)_dispatchMessage:(id)arg1;
 - (BOOL)registerForInterrogationWithBlock:(id)arg1;
 - (void)removeStoresForAccountWithID:(id)arg1;
 - (void)requestDaemonShutdown;
+- (void)handleURL:(id)arg1;
+- (id)_init;
+- (id)_connection;
+- (id)beginDownloadingAttachmentWithUUID:(id)arg1 accountID:(id)arg2 queue:(id)arg3 progressBlock:(id)arg4 completionBlock:(id)arg5;
+- (void)cancelDownloadingAttachmentWithDownloadID:(id)arg1 error:(id)arg2;
 - (BOOL)updateContentsOfAllFoldersForAccountID:(id)arg1 andDataclass:(int)arg2 isUserRequested:(BOOL)arg3;
 - (BOOL)updateContentsOfFoldersWithKeys:(id)arg1 forAccountID:(id)arg2 andDataclass:(int)arg3 isUserRequested:(BOOL)arg4;
+- (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2 isUserRequested:(BOOL)arg3;
+- (void)cancelServerContactsSearch:(id)arg1;
+- (BOOL)performServerContactsSearch:(id)arg1 forAccountWithID:(id)arg2;
 
 @end

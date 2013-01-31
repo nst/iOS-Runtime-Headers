@@ -13,12 +13,12 @@
 @property VGLContext * context;
 
 
-- (void)dealloc;
-- (void)setContext:(id)arg1;
-- (id)context;
 - (id)initWithName:(id)arg1 shaderType:(unsigned int)arg2;
 - (BOOL)status:(unsigned int)arg1;
 - (void)printShaderInfoLog;
+- (void)dealloc;
 - (int)token;
+- (void)setContext:(id)arg1;
+- (id)context;
 
 @end

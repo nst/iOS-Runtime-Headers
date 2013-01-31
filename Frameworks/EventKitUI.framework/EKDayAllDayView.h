@@ -33,6 +33,7 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)setOccurrences:(id)arg1;
 - (void)setOrientation:(int)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
@@ -62,6 +63,5 @@
 - (id)selectedEvent;
 - (BOOL)containsEvent:(id)arg1;
 - (void)dayOccurrenceViewClicked:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (void)setOccurrences:(id)arg1;
 
 @end

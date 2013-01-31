@@ -17,8 +17,8 @@
 @property(readonly) id accelerometerHandler;
 
 
+- (void)dealloc;
 - (id)accelerometerHandler;
 - (id)initWithAccelerometerHandler:(id)arg1;
-- (void)dealloc;
 
 @end

@@ -10,7 +10,6 @@
 
 
 - (void)dealloc;
-- (void)close;
 - (struct _Stream { }*)cStream;
 - (void)writeLEwstringNoTerminator:(id)arg1;
 - (void)writeLEwstring:(id)arg1;
@@ -44,5 +43,6 @@
 - (void)setClass:(struct { unsigned int x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; })arg1;
 - (id)getInfo;
 - (id)initWithCStream:(struct _Stream { }*)arg1;
+- (void)close;
 
 @end

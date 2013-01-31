@@ -17,14 +17,10 @@
 + (Class)dataMessageStoreToUse;
 + (id)forwardedMessagePrefixWithSpacer:(BOOL)arg1;
 + (unsigned int)validatePriority:(int)arg1;
-+ (id)replyPrefixWithSpacer:(BOOL)arg1;
 
+- (void)setSummary:(id)arg1;
 - (id)URL;
 - (void)dealloc;
-- (id)subject;
-- (void)setSubject:(id)arg1;
-- (int)priority;
-- (void)setSummary:(id)arg1;
 - (BOOL)shouldSetSummary;
 - (id)loadMeetingMetadata;
 - (id)loadMeetingExternalID;
@@ -56,5 +52,8 @@
 - (void)setMessageFlags:(unsigned long long)arg1;
 - (unsigned long long)messageFlags;
 - (id)account;
+- (id)subject;
+- (void)setSubject:(id)arg1;
+- (int)priority;
 
 @end

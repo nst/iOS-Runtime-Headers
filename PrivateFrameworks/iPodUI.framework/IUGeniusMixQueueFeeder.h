@@ -14,6 +14,16 @@
 @property(retain) <IUGeniusMixQueueFeederDataSource> * dataSource;
 
 
+- (unsigned int)indexOfMediaItem:(id)arg1;
+- (BOOL)_configureWithMix:(id)arg1 dataSource:(id)arg2 startEntityIndex:(unsigned int)arg3 startPlayback:(BOOL)arg4;
+- (id)mediaItemAtIndex:(unsigned int)arg1;
+- (void)_appDefaultChangedNotification:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)pathAtIndex:(unsigned int)arg1;
+- (id)query;
+- (id)dataSource;
+- (void)setDataSource:(id)arg1;
 - (void)archiveAVControllerPlaybackQueue:(id)arg1 toArchiver:(id)arg2;
 - (unsigned int)realRepeatType;
 - (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
@@ -22,15 +32,5 @@
 - (BOOL)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
 - (id)localizedPositionInPlaylistString:(id)arg1;
 - (unsigned int)itemCount;
-- (void)dealloc;
-- (id)init;
-- (id)query;
-- (id)dataSource;
-- (void)setDataSource:(id)arg1;
-- (unsigned int)indexOfMediaItem:(id)arg1;
-- (BOOL)_configureWithMix:(id)arg1 dataSource:(id)arg2 startEntityIndex:(unsigned int)arg3 startPlayback:(BOOL)arg4;
-- (id)mediaItemAtIndex:(unsigned int)arg1;
-- (void)_appDefaultChangedNotification:(id)arg1;
-- (id)pathAtIndex:(unsigned int)arg1;
 
 @end

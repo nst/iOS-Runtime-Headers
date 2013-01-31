@@ -17,10 +17,10 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithPrincipal:(id)arg1;
-- (void)_tearDownAllTaskGroupsWithBlock:(id)arg1;
-- (id)outstandingTaskGroups;
 - (void)cancelTaskGroup;
 - (void)bailWithError:(id)arg1;
 - (id)principal;
+- (void)_tearDownAllTaskGroupsWithBlock:(id)arg1;
+- (id)outstandingTaskGroups;
 
 @end

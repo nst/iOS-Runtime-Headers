@@ -16,10 +16,6 @@
 + (id)sendToProtobufConduitWithDictionary:(id)arg1 context:(id)arg2;
 + (id)sendToProtobufConduit;
 
-- (id)groupIdentifier;
-- (id)endpoint;
-- (void)setAttributes:(id)arg1;
-- (id)attributes;
 - (void)setTimeoutInSeconds:(int)arg1;
 - (int)timeoutInSeconds;
 - (void)setRawRequest:(id)arg1;
@@ -29,5 +25,9 @@
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)endpoint;
+- (void)setAttributes:(id)arg1;
+- (id)attributes;
+- (id)groupIdentifier;
 
 @end

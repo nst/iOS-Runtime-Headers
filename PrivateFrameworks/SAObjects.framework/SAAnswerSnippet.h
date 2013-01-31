@@ -10,14 +10,14 @@
 @property(retain) SAUIAppPunchOut * answerPunchOut;
 @property(copy) NSArray * answers;
 
-+ (id)snippet;
 + (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
++ (id)snippet;
 
-- (id)groupIdentifier;
 - (void)setAnswers:(id)arg1;
 - (id)answers;
 - (void)setAnswerPunchOut:(id)arg1;
 - (id)answerPunchOut;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

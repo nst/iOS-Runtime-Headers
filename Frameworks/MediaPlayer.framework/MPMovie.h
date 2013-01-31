@@ -31,9 +31,10 @@
 
 + (id)movieWithURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 
-- (int)movieMediaTypes;
-- (void)setEndPlaybackTime:(double)arg1;
-- (double)playableDuration;
+- (void)dealloc;
+- (struct CGSize { float x1; float x2; })naturalSize;
+- (id)url;
+- (double)duration;
 - (void)_determineMediaType;
 - (void)_typeAvailableNotification:(id)arg1;
 - (void)_naturalSizeAvailableNotification:(id)arg1;
@@ -43,11 +44,10 @@
 - (double)startPlaybackTime;
 - (void)setStartPlaybackTime:(double)arg1;
 - (double)endPlaybackTime;
+- (void)setEndPlaybackTime:(double)arg1;
+- (double)playableDuration;
 - (int)movieSourceType;
 - (void)setMovieSourceType:(int)arg1;
-- (void)dealloc;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (id)url;
-- (double)duration;
+- (int)movieMediaTypes;
 
 @end

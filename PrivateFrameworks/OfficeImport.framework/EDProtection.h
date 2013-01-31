@@ -13,9 +13,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (bool)isLocked;
-- (bool)isHidden;
 - (BOOL)isEqualToProtection:(id)arg1;
 - (id)initWithHidden:(bool)arg1 locked:(bool)arg2;
+- (bool)isLocked;
+- (bool)isHidden;
 
 @end

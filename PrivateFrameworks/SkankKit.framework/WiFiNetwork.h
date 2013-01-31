@@ -10,29 +10,11 @@
 }
 
 
-- (void)setSetupDict:(id)arg1;
-- (id)setupDict;
-- (void)setAvailable:(BOOL)arg1;
-- (void)setPassword:(id)arg1;
-- (id)username;
-- (void)setUsername:(id)arg1;
 - (id)dictionary;
 - (void)setName:(id)arg1;
 - (id)name;
 - (id)description;
 - (void)dealloc;
-- (void)setProxyUsername:(id)arg1;
-- (void)setProxyPassword:(id)arg1;
-- (id)proxyPassword;
-- (id)proxyUsername;
-- (id)proxyPort;
-- (id)proxy;
-- (void)setProxyPort:(id)arg1;
-- (void)setProxy:(id)arg1;
-- (id)password;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)available;
 - (int)compareDescending:(id)arg1;
 - (id)BSSID;
 - (id)DNSServers;
@@ -61,7 +43,25 @@
 - (int)configType;
 - (int)securityType;
 - (void)resignActiveNetwork;
+- (void)setProxyUsername:(id)arg1;
+- (void)setProxyPassword:(id)arg1;
+- (id)proxyPassword;
+- (id)proxyUsername;
+- (id)proxyPort;
+- (id)proxy;
+- (void)setProxyPort:(id)arg1;
+- (void)setProxy:(id)arg1;
+- (BOOL)available;
 - (int)signalStrength;
 - (id)ip;
+- (void)setSetupDict:(id)arg1;
+- (id)setupDict;
+- (id)password;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setAvailable:(BOOL)arg1;
+- (void)setPassword:(id)arg1;
+- (id)username;
+- (void)setUsername:(id)arg1;
 
 @end

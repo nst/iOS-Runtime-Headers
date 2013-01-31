@@ -60,7 +60,7 @@
 + (id)_registrarInterface;
 + (id)currentProgress;
 
-- (void)setKind:(id)arg1;
+- (void)_pause;
 - (BOOL)isCancelled;
 - (void)cancel;
 - (id)userInfo;
@@ -71,7 +71,7 @@
 - (id)kind;
 - (id)localizedDescription;
 - (void)setCancellationHandler:(id)arg1;
-- (void)_pause;
+- (void)setKind:(id)arg1;
 - (void)acknowledge;
 - (void)handleAcknowledgementByAppWithBundleIdentifer:(id)arg1 usingBlock:(id)arg2;
 - (id)localizedItemCountDescription;

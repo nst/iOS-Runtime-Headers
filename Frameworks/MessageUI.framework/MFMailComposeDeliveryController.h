@@ -28,6 +28,11 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (id)error;
+- (id)sendingAddress;
+- (void)setSendingAddress:(id)arg1;
+- (void)notifyUserDeliverySucceeded:(id)arg1;
+- (void)setPercentDone:(double)arg1;
 - (id)draftMailbox;
 - (id)draftMessageID;
 - (BOOL)deliverMessage;
@@ -42,10 +47,5 @@
 - (id)initWithDraftMessage:(id)arg1;
 - (id)originalMessage;
 - (int)composeType;
-- (id)sendingAddress;
-- (void)setSendingAddress:(id)arg1;
-- (void)notifyUserDeliverySucceeded:(id)arg1;
-- (void)setPercentDone:(double)arg1;
-- (id)error;
 
 @end

@@ -30,6 +30,7 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (id)mapView;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)pinchGestureRecognizer;
 - (id)panGestureRecognizer;
@@ -50,6 +51,5 @@
 - (double)variableDelayTapRecognizer:(id)arg1 shouldWaitForNextTapForDuration:(double)arg2 afterTouch:(id)arg3;
 - (id)doubleTapGestureRecognizer;
 - (id)initWithMapView:(id)arg1 gestureTargetView:(id)arg2;
-- (id)mapView;
 
 @end

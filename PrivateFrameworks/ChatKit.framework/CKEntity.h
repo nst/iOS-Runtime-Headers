@@ -41,8 +41,6 @@
 - (id)name;
 - (void)dealloc;
 - (id)init;
-- (int)propertyType;
-- (void)setIdentifier:(int)arg1;
 - (BOOL)senderIsVoicemail;
 - (BOOL)foundABNameForSender;
 - (void)setPropertyType:(int)arg1;
@@ -59,5 +57,7 @@
 - (id)contactImageThumbnail;
 - (BOOL)hasContactImage;
 - (void*)abRecord;
+- (void)setIdentifier:(int)arg1;
+- (int)propertyType;
 
 @end

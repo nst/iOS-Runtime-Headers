@@ -8,7 +8,6 @@
 
 
 - (void)dealloc;
-- (void)close;
 - (void)setBlobDocumentPropertyWithName:(id)arg1 to:(id)arg2;
 - (void)setStringDocumentPropertyWithId:(int)arg1 to:(id)arg2;
 - (void)setShortDocumentPropertyWithId:(int)arg1 to:(short)arg2;
@@ -20,5 +19,6 @@
 - (void)setDocumentPropertyWithId:(int)arg1 to:(id)arg2;
 - (short)getShortDocumentPropertyWithId:(int)arg1;
 - (id)getDocumentPropertyWithId:(int)arg1 propType:(int*)arg2;
+- (void)close;
 
 @end

@@ -15,9 +15,9 @@
 @property(readonly) int maxUploadDuration;
 
 
-- (id)username;
 - (int)maxUploadDuration;
 - (id)initWithUsername:(id)arg1 age:(int)arg2 maxUploadDuration:(int)arg3;
 - (int)age;
+- (id)username;
 
 @end

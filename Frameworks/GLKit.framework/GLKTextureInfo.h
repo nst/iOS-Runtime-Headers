@@ -21,10 +21,6 @@
 @property(readonly) BOOL containsMipmaps;
 
 
-- (id)initWithTexture:(id)arg1 textureName:(unsigned int)arg2;
-- (BOOL)containsMipmaps;
-- (unsigned int)textureOrigin;
-- (unsigned int)alphaState;
 - (unsigned int)name;
 - (unsigned int)target;
 - (id)description;
@@ -32,5 +28,9 @@
 - (void)dealloc;
 - (unsigned int)height;
 - (unsigned int)width;
+- (id)initWithTexture:(id)arg1 textureName:(unsigned int)arg2;
+- (BOOL)containsMipmaps;
+- (unsigned int)textureOrigin;
+- (unsigned int)alphaState;
 
 @end

@@ -13,12 +13,12 @@
 @property(readonly) NSString * serverIdentifier;
 
 
+- (void)dealloc;
+- (id)init;
 - (id)_serviceName;
 - (id)serverIdentifier;
 - (BOOL)sendSimpleMessageWithResult:(int)arg1;
 - (void)sendSimpleMessageForKey:(int)arg1;
 - (BOOL)_connectIfNecessary;
-- (void)dealloc;
-- (id)init;
 
 @end

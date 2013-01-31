@@ -14,9 +14,9 @@
 + (id)sendToProtobufConduitCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)sendToProtobufConduitCompleted;
 
-- (id)groupIdentifier;
 - (void)setRawResponse:(id)arg1;
 - (id)rawResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

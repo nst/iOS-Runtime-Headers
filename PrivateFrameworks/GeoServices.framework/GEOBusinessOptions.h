@@ -27,14 +27,14 @@
 @property BOOL includeCenter;
 
 
+- (id)attributeKeys;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (id)attributeKeys;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)photoOptions;
 - (void)setHasIncludeCenter:(BOOL)arg1;
 - (void)setHasMaxBusinessResults:(BOOL)arg1;
@@ -58,6 +58,6 @@
 - (void)addPhotoOptions:(id)arg1;
 - (void)setAttributeKeys:(id)arg1;
 - (void)setPhotoOptions:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

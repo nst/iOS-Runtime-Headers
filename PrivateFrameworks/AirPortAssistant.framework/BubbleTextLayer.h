@@ -82,6 +82,8 @@
 
 + (BOOL)needsDisplayForKey:(id)arg1;
 
+- (void)drawInContext:(struct CGContext { }*)arg1;
+- (void)layoutSublayers;
 - (void)dealloc;
 - (id)init;
 - (float)textBaselineOffset;
@@ -96,7 +98,5 @@
 - (void*)font;
 - (void)setFont:(void*)arg1;
 - (void)setImage:(struct CGImage { }*)arg1;
-- (void)drawInContext:(struct CGContext { }*)arg1;
-- (void)layoutSublayers;
 
 @end

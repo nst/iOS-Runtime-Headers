@@ -7,11 +7,11 @@
 
 + (id)requiredWhitelistClassNames;
 
-- (void)ingestionDidFinishWithResult:(int)arg1;
 - (void)dealloc;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)ingestionDidFinishWithResult:(int)arg1;
 
 @end

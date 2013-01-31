@@ -36,12 +36,11 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)rollback;
+- (id)uniqueId;
+- (id)attachments;
 - (int)status;
 - (void)setTimeZone:(id)arg1;
 - (double)duration;
-- (id)uniqueId;
-- (id)attachments;
 - (id)_dateForNextOccurrence;
 - (void)revert;
 - (id)dirtyPropertiesToSkip;
@@ -150,6 +149,7 @@
 - (id)initWithPersistentObject:(id)arg1;
 - (BOOL)refresh;
 - (BOOL)isAllDay;
+- (void)rollback;
 - (BOOL)hasHumanInviteesToDisplay;
 - (id)sortedEKParticipantsDisplayStringsIgnoringNonHumans:(id)arg1;
 - (id)sortEKParticipantsIgnoringNonHumans:(id)arg1;

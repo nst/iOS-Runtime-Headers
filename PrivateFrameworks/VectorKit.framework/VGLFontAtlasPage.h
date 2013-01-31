@@ -14,12 +14,12 @@
 }
 
 
-- (void)dealloc;
 - (int)numCellsInUse;
 - (int)flushCells:(int)arg1;
 - (void)freeCell:(struct VGLFontAtlasCell { int x1; struct { int x_2_1_1; int x_2_1_2; } x2; unsigned int x3; struct { /* ? */ } *x4; struct list_node<void *> {} *x5; struct list_node<void *> {} *x6; }*)arg1;
 - (struct VGLFontAtlasCell { int x1; struct { int x_2_1_1; int x_2_1_2; } x2; unsigned int x3; struct { /* ? */ } *x4; struct list_node<void *> {} *x5; struct list_node<void *> {} *x6; }*)allocCell;
 - (id)initWithPageNumber:(int)arg1;
 - (void)bindWithContext:(id)arg1;
+- (void)dealloc;
 
 @end

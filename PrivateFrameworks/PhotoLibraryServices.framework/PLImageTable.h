@@ -41,8 +41,6 @@
 
 - (id)path;
 - (void)dealloc;
-- (BOOL)isReadOnly;
-- (struct CGSize { float x1; float x2; })imageSize;
 - (void)preheatImageDataAtIndexex:(id)arg1;
 - (id)imageDataAtIndex:(int)arg1 width:(int*)arg2 height:(int*)arg3 bytesPerRow:(int*)arg4 dataWidth:(int*)arg5 dataHeight:(int*)arg6 dataOffset:(int*)arg7;
 - (BOOL)thumbnailForAsset:(id)arg1 existsAtIndex:(int)arg2;
@@ -85,5 +83,7 @@
 - (id)initWithPath:(id)arg1 imageFormat:(int)arg2 readOnly:(BOOL)arg3;
 - (BOOL)entryAtIndexIsPlaceholder:(int)arg1;
 - (id)photoUUIDToIndexMap;
+- (struct CGSize { float x1; float x2; })imageSize;
+- (BOOL)isReadOnly;
 
 @end

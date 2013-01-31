@@ -27,16 +27,15 @@
 @property <MFMailMessageLibraryDelegate> * delegate;
 @property(readonly) int protectedDataAvailability;
 
-+ (id)defaultInstance;
-+ (void)initialize;
 + (void)removeLibraryAtPath:(id)arg1;
 + (void)_removeLibrary:(BOOL)arg1 atPath:(id)arg2;
 + (id)defaultPath;
++ (void)initialize;
++ (id)defaultInstance;
 
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (id)initWithPath:(id)arg1;
 - (id)allMailboxURLStrings;
 - (void)setMailboxPathProvider:(id)arg1;
 - (BOOL)migrate;
@@ -211,5 +210,6 @@
 - (BOOL)shouldCancel;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3 forMessage:(id)arg4;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
+- (id)initWithPath:(id)arg1;
 
 @end

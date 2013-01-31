@@ -20,9 +20,8 @@
 
 + (BOOL)settingEnabled;
 
-- (void)cancelButtonTapped;
-- (void)willUnlock;
-- (void)_updateUI;
+- (void)dealloc;
+- (id)init;
 - (BOOL)_success;
 - (id)pinInstructionsPromptFont;
 - (id)pinInstructionsPrompt;
@@ -63,15 +62,16 @@
 - (BOOL)useProgressiveDelays;
 - (BOOL)requiresKeyboard;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paneFrame;
-- (void)dealloc;
-- (id)init;
+- (void)setPane:(id)arg1;
+- (void)cancelButtonTapped;
+- (void)willUnlock;
+- (void)_updateUI;
 - (void)_dismiss;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)viewWillLayoutSubviews;
 - (void)suspend;
-- (void)setPane:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 
 @end

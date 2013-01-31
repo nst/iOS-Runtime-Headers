@@ -12,18 +12,18 @@
 @property(retain) SAUIAppPunchOut * photoPunchOut;
 @property(copy) NSURL * thumbnail;
 
-+ (id)photo;
 + (id)photoWithDictionary:(id)arg1 context:(id)arg2;
++ (id)photo;
 
-- (id)groupIdentifier;
 - (id)identifier;
-- (id)thumbnail;
-- (void)setThumbnail:(id)arg1;
-- (void)setIdentifier:(id)arg1;
 - (void)setPhotoPunchOut:(id)arg1;
 - (id)photoPunchOut;
 - (void)setFullsize:(id)arg1;
 - (id)fullsize;
 - (id)encodedClassName;
+- (id)thumbnail;
+- (void)setThumbnail:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (id)groupIdentifier;
 
 @end

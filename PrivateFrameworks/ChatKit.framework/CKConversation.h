@@ -95,22 +95,18 @@
 + (BOOL)_contentChangedFromOldMessage:(id)arg1 toNewMessage:(id)arg2;
 + (void)_postNotification:(id)arg1 forMessage:(id)arg2;
 
-- (unsigned int)recipientCount;
-- (id)recipient;
-- (id)groupID;
 - (void)resetCaches;
+- (BOOL)isStale;
 - (int)identifier;
 - (id)name;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (int)propertyType;
-- (id)handles;
-- (id)shortDescription;
-- (id)uniqueIdentifier;
-- (BOOL)isEmpty;
-- (id)date;
-- (void)setRecipients:(id)arg1;
+- (BOOL)isPlaceholder;
+- (int)buttonColor;
+- (id)recipients;
+- (id)messages;
+- (unsigned int)unreadCount;
 - (BOOL)_sms_willSendMMSByDefaultForAddresses:(id)arg1;
 - (id)failedMessages;
 - (id)outgoingTypingMessage;
@@ -222,10 +218,10 @@
 - (id)pendingRecipients;
 - (void)sendMessage:(id)arg1 newComposition:(BOOL)arg2;
 - (id)newMessageWithComposition:(id)arg1 addToConversation:(BOOL)arg2;
-- (id)preferredService;
 - (BOOL)canSendMessageWithParts:(id)arg1 subject:(id)arg2 error:(id*)arg3;
 - (void)setLimitToLoad:(int)arg1;
 - (BOOL)isPending;
+- (id)preferredService;
 - (void)setIgnoringTypingUpdates:(BOOL)arg1;
 - (id)incomingTypingCKMessage;
 - (BOOL)moreMessagesToLoad;
@@ -247,11 +243,15 @@
 - (void)clearTypingIndicator;
 - (void)markAllMessagesAsRead;
 - (void)setUnsentComposition:(id)arg1;
-- (BOOL)isPlaceholder;
-- (BOOL)isStale;
-- (id)recipients;
-- (id)messages;
-- (unsigned int)unreadCount;
-- (int)buttonColor;
+- (id)handles;
+- (id)shortDescription;
+- (id)uniqueIdentifier;
+- (BOOL)isEmpty;
+- (id)date;
+- (unsigned int)recipientCount;
+- (id)recipient;
+- (id)groupID;
+- (void)setRecipients:(id)arg1;
+- (int)propertyType;
 
 @end

@@ -20,14 +20,14 @@
     } _managedObjectModelFlags;
 }
 
++ (id)mergedModelFromBundles:(id)arg1;
++ (void)initialize;
 + (id)_newModelFromOptimizedEncoding:(id)arg1 error:(id*)arg2;
 + (id)mergedModelFromBundles:(id)arg1 forStoreMetadata:(id)arg2;
 + (id)modelByMergingModels:(id)arg1 forStoreMetadata:(id)arg2;
 + (void)_deepCollectEntitiesInArray:(id)arg1 entity:(id)arg2;
 + (id)modelByMergingModels:(id)arg1;
 + (id)_modelPathsFromBundles:(id)arg1;
-+ (id)mergedModelFromBundles:(id)arg1;
-+ (void)initialize;
 
 - (id)initWithContentsOfURL:(id)arg1;
 - (id)entities;
@@ -38,6 +38,10 @@
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)init;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)isEditable;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)_versionIdentifiersAsArray;
 - (id)_entitiesByVersionHash;
 - (id)_sortedEntitiesForConfiguration:(id)arg1;
@@ -84,9 +88,5 @@
 - (id)entitiesForConfiguration:(id)arg1;
 - (id)versionHash;
 - (id)entitiesByName;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)isEditable;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

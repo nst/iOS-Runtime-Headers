@@ -89,8 +89,8 @@
 @property(readonly) NSString * UTIText;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)UTIText;
 - (id)UTIMovie;
@@ -186,8 +186,8 @@
 - (id)capabilityNamePodcasts;
 - (int)activeNetworkType;
 - (id)checkCapabilitiesPropertyListString:(id)arg1 showFailureDialog:(BOOL)arg2;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)init;
-- (id)attributeKeys;
 
 @end

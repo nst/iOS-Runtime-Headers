@@ -9,13 +9,13 @@
 }
 
 
+- (id)lastOrientation;
+- (void)stopUpdating;
+- (void)startUpdating;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)init;
 - (void)setController:(struct DeviceOrientationController { }*)arg1;
 - (void)setOrientation:(id)arg1;
-- (id)lastOrientation;
-- (void)stopUpdating;
-- (void)startUpdating;
 
 @end

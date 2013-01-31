@@ -6,6 +6,10 @@
 }
 
 
+- (id)indexPathForAlbum:(struct NSObject { Class x1; }*)arg1;
+- (id)tableOffsetKey;
+- (int)_cellEditStyleForAlbum:(struct NSObject { Class x1; }*)arg1;
+- (id)subtitleForAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)loadView;
 - (BOOL)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
@@ -14,9 +18,5 @@
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (id)indexPathForAlbum:(struct NSObject { Class x1; }*)arg1;
-- (id)tableOffsetKey;
-- (int)_cellEditStyleForAlbum:(struct NSObject { Class x1; }*)arg1;
-- (id)subtitleForAlbum:(struct NSObject { Class x1; }*)arg1;
 
 @end

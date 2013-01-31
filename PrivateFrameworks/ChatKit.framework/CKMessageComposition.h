@@ -23,16 +23,16 @@
 + (id)newCompositionForText:(id)arg1;
 
 - (id)messageParts;
-- (id)subject;
-- (void)setSubject:(id)arg1;
-- (BOOL)isTextOnly;
-- (BOOL)hasContent;
+- (void)setResources:(id)arg1;
+- (id)resources;
+- (id)markupString;
 - (void)writeToFileWithPrefix:(id)arg1 path:(id)arg2;
 - (BOOL)hasNonwhiteSpaceContent;
 - (void)setMarkupString:(id)arg1;
 - (id)textString;
-- (id)markupString;
-- (void)setResources:(id)arg1;
-- (id)resources;
+- (id)subject;
+- (void)setSubject:(id)arg1;
+- (BOOL)isTextOnly;
+- (BOOL)hasContent;
 
 @end

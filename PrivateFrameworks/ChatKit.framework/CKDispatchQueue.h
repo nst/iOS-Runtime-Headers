@@ -21,14 +21,14 @@
 - (BOOL)isCancelled;
 - (void)dealloc;
 - (id)init;
-- (void)setSuspended:(BOOL)arg1;
-- (void)setCancelled:(BOOL)arg1;
-- (BOOL)isSuspended;
+- (void)addBlock:(id)arg1;
 - (void)setPriorityQueue:(id)arg1;
 - (id)priorityQueue;
 - (id)_initWithDispatchAttr:(id)arg1 dispatchPriority:(long)arg2;
 - (void)cancelOustandingBlocks;
 - (void)addBlock:(id)arg1 withQueuePriority:(int)arg2;
-- (void)addBlock:(id)arg1;
+- (void)setSuspended:(BOOL)arg1;
+- (void)setCancelled:(BOOL)arg1;
+- (BOOL)isSuspended;
 
 @end

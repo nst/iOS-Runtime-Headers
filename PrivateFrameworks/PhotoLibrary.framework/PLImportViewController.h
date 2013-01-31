@@ -29,17 +29,8 @@
 @property(retain) PLCameraImporter * importer;
 
 
-- (BOOL)isBusy;
 - (void)dealloc;
 - (id)init;
-- (id)importer;
-- (id)contentScrollView;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)didReceiveMemoryWarning;
 - (void)importAll;
 - (void)handleImportCompleteAlertResponse:(struct __CFUserNotification { }*)arg1 flags:(unsigned long)arg2;
 - (void)setImportDevice:(id)arg1;
@@ -88,5 +79,14 @@
 - (id)footerAccessoryViewForAlbumView:(id)arg1;
 - (void)albumViewSelectionDidChange:(id)arg1 added:(id)arg2 removed:(id)arg3;
 - (id)albumView:(id)arg1 badgeImageForPhotoAtIndexPath:(id)arg2;
+- (id)contentScrollView;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)didReceiveMemoryWarning;
+- (BOOL)isBusy;
+- (id)importer;
 
 @end

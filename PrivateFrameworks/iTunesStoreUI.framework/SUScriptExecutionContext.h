@@ -23,8 +23,8 @@
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (id)windowScriptObject;
 - (struct OpaqueJSContext { }*)globalExecutionContext;
+- (void)callWebScriptMethod:(id)arg1 withArguments:(id)arg2;
 - (void)dealloc;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
-- (void)callWebScriptMethod:(id)arg1 withArguments:(id)arg2;
 
 @end

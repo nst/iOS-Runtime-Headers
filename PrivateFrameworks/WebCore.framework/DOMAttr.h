@@ -14,12 +14,12 @@
 @property(readonly) DOMCSSStyleDeclaration * style;
 
 
+- (BOOL)isId;
+- (id)ownerElement;
+- (BOOL)specified;
 - (id)name;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (id)style;
-- (BOOL)isId;
-- (id)ownerElement;
-- (BOOL)specified;
 
 @end

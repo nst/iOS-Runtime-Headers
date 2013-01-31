@@ -35,11 +35,11 @@
 }
 
 
+- (struct { double x1; double x2; double x3; double x4; })getQuaternionByTimestamp:(double)arg1;
+- (void)processGyroData:(id)arg1 withError:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (void)stop;
 - (void)start;
-- (struct { double x1; double x2; double x3; double x4; })getQuaternionByTimestamp:(double)arg1;
-- (void)processGyroData:(id)arg1 withError:(id)arg2;
 
 @end

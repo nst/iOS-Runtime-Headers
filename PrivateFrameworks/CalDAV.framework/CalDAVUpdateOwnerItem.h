@@ -21,24 +21,24 @@
 @property(retain) NSString * emailAddress;
 
 
-- (void)setAddress:(id)arg1;
-- (id)address;
-- (void)setLastName:(id)arg1;
-- (id)lastName;
-- (void)setFirstName:(id)arg1;
-- (id)firstName;
 - (id)description;
 - (void)dealloc;
-- (id)displayName;
+- (void)setDisplayName:(id)arg1;
+- (id)emailAddress;
+- (id)copyParseRules;
 - (void)setDisplayNameItem:(id)arg1;
 - (void)setEmailAddressItem:(id)arg1;
 - (void)setAddressItem:(id)arg1;
 - (void)setDtstampItem:(id)arg1;
 - (void)setLastNameItem:(id)arg1;
 - (void)setFirstNameItem:(id)arg1;
-- (id)copyParseRules;
-- (id)emailAddress;
-- (void)setDisplayName:(id)arg1;
+- (id)displayName;
+- (void)setAddress:(id)arg1;
+- (id)address;
+- (void)setLastName:(id)arg1;
+- (id)lastName;
+- (void)setFirstName:(id)arg1;
+- (id)firstName;
 - (void)setDtstamp:(id)arg1;
 - (id)dtstamp;
 - (void)setEmailAddress:(id)arg1;

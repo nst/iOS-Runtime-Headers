@@ -6,21 +6,25 @@
 
 @interface GKNearbyDevice : NSObject  {
     NSString *_deviceID;
+    NSString *_participantID;
     NSString *_playerID;
     int _state;
 }
 
 @property(retain) NSString * deviceID;
+@property(retain) NSString * participantID;
 @property(retain) NSString * playerID;
 @property int state;
 
 
+- (int)state;
+- (void)dealloc;
+- (id)deviceID;
+- (void)setParticipantID:(id)arg1;
+- (id)participantID;
+- (void)setState:(int)arg1;
 - (void)setDeviceID:(id)arg1;
 - (id)playerID;
 - (void)setPlayerID:(id)arg1;
-- (int)state;
-- (void)dealloc;
-- (void)setState:(int)arg1;
-- (id)deviceID;
 
 @end

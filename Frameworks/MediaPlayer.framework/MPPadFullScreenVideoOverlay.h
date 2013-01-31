@@ -21,13 +21,25 @@
     UILabel *_loadingMovieLabel;
     UIActivityIndicatorView *_loadingMovieIndicator;
     unsigned int _layoutSubviewsActive : 1;
+    unsigned int _navigationBarHidden : 1;
 }
 
 @property(copy) NSString * title;
 
 
-- (void)setPlayer:(id)arg1;
-- (void)setItem:(id)arg1;
+- (void)dealloc;
+- (void)_applicationWillResignActive:(id)arg1;
+- (void)_initSubviews;
+- (void)setNavigationBarHidden:(BOOL)arg1;
+- (void)setInterfaceOrientation:(int)arg1;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (id)navigationBar;
+- (id)title;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)setTitle:(id)arg1;
+- (void)layoutSubviews;
+- (void)setAlpha:(float)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_scaleButton:(id)arg1;
 - (id)_navBarBackgroundImageForProgressControl:(BOOL)arg1 tallStyle:(BOOL)arg2;
 - (void)_scheduleHidePopoverTimer;
@@ -52,20 +64,11 @@
 - (unsigned long long)_convertedPartsMask:(unsigned long long)arg1;
 - (void)setDisabledParts:(unsigned long long)arg1;
 - (void)_videoViewScaleModeDidChangeNotification:(id)arg1;
+- (void)setItem:(id)arg1;
 - (BOOL)allowsWirelessPlayback;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
-- (void)_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
-- (void)dealloc;
-- (void)_applicationWillResignActive:(id)arg1;
-- (void)_initSubviews;
-- (void)setInterfaceOrientation:(int)arg1;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
-- (id)navigationBar;
-- (id)title;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setTitle:(id)arg1;
-- (void)layoutSubviews;
-- (void)setAlpha:(float)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
+- (BOOL)navigationBarHidden;
+- (void)setPlayer:(id)arg1;
 
 @end

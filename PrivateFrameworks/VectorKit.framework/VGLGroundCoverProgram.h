@@ -17,12 +17,12 @@
 
 + (id)program;
 
-- (id)init;
 - (int)vegetationSampler;
 - (int)landSampler;
 - (float)vegetationAlpha;
 - (void)setVegetationSampler:(int)arg1;
 - (void)setLandSampler:(int)arg1;
 - (void)setVegetationAlpha:(float)arg1;
+- (id)init;
 
 @end

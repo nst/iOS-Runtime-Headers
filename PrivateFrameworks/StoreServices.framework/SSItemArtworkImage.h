@@ -20,7 +20,6 @@
 @property(readonly) NSString * URLString;
 
 
-- (BOOL)isPrerendered;
 - (id)initWithArtworkDictionary:(id)arg1;
 - (id)imageKind;
 - (float)imageScale;
@@ -30,11 +29,11 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)_setValue:(id)arg1 forKey:(id)arg2;
 - (void)setImageKindWithTypeName:(id)arg1 variantName:(id)arg2;
 - (void)setImageKind:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+- (void)_setValue:(id)arg1 forKey:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 - (id)URLString;
 - (int)height;
@@ -42,6 +41,7 @@
 - (struct CGSize { float x1; float x2; })imageSize;
 - (int)width;
 - (int)imageOrientation;
+- (BOOL)isPrerendered;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 
 @end

@@ -14,10 +14,10 @@
 
 + (id)program;
 
+- (int)textureSampler;
+- (void)setTextureSampler:(int)arg1;
 - (id)init;
 - (void)setScale:(float)arg1;
 - (float)scale;
-- (int)textureSampler;
-- (void)setTextureSampler:(int)arg1;
 
 @end

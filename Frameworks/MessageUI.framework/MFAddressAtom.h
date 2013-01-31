@@ -34,10 +34,13 @@
 
 + (id)copyDisplayStringForAddress:(id)arg1 usingAddressBook:(void*)arg2;
 
-- (void)setAddress:(id)arg1;
+- (void)setMaxWidth:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (int)identifier;
 - (void)dealloc;
+- (id)emailAddress;
+- (id)unmodifiedAddressString;
+- (int)ABPropertyType;
 - (id)displayString;
 - (void)sendAction:(SEL)arg1 to:(id)arg2 forEvent:(id)arg3;
 - (void)setHighlighted:(BOOL)arg1;
@@ -61,10 +64,7 @@
 - (void)_displayStringDidChange;
 - (void)_setupForStyle;
 - (void)_updateDisplayStringIncludingABPerson:(BOOL)arg1;
-- (void)setMaxWidth:(unsigned int)arg1;
-- (id)unmodifiedAddressString;
-- (int)ABPropertyType;
-- (id)emailAddress;
+- (void)setAddress:(id)arg1;
 - (void*)ABPerson;
 
 @end

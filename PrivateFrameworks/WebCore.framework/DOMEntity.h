@@ -12,8 +12,8 @@
 @property(readonly) NSString * notationName;
 
 
-- (id)publicId;
 - (id)notationName;
 - (id)systemId;
+- (id)publicId;
 
 @end

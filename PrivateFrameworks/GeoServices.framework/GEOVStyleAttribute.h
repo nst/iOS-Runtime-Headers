@@ -15,19 +15,19 @@
 @property int intValue;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)intValue;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)setKey:(unsigned int)arg1;
-- (unsigned int)key;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setHasIntValue:(BOOL)arg1;
 - (void)setIntValue:(int)arg1;
 - (BOOL)hasIntValue;
-- (BOOL)readFrom:(id)arg1;
+- (void)setKey:(unsigned int)arg1;
+- (unsigned int)key;
+- (id)dictionaryRepresentation;
 
 @end

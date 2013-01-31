@@ -24,7 +24,6 @@
 + (void)calculateTimestampSkewFromResponse:(id)arg1;
 + (BOOL)responseIsTimestampOutOfBounds:(id)arg1 data:(id)arg2;
 
-- (id)credential;
 - (int)requestMethod;
 - (void)addMultiPartData:(id)arg1 withName:(id)arg2 type:(id)arg3;
 - (void)performRequestWithHandler:(id)arg1;
@@ -32,6 +31,9 @@
 - (id)initWithURL:(id)arg1;
 - (void).cxx_destruct;
 - (id)parameters;
+- (void)setAccount:(id)arg1;
+- (id)account;
+- (void)setCredential:(id)arg1;
 - (void)setParameter:(id)arg1 forKey:(id)arg2;
 - (void)setRequestMethod:(int)arg1;
 - (id)initWithCredential:(id)arg1 URL:(id)arg2;
@@ -50,8 +52,6 @@
 - (id)_urlEncodedString:(id)arg1;
 - (id)_parameterString;
 - (id)_allParameters;
-- (void)setAccount:(id)arg1;
-- (id)account;
-- (void)setCredential:(id)arg1;
+- (id)credential;
 
 @end

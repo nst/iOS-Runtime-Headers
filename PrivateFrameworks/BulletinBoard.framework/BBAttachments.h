@@ -17,8 +17,6 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)setClientSideComposedImageInfos:(id)arg1;
 - (id)clientSideComposedImageInfos;
 - (void)setAdditionalAttachments:(id)arg1;
@@ -29,5 +27,7 @@
 - (unsigned int)numberOfAdditionalAttachmentsOfType:(int)arg1;
 - (unsigned int)numberOfAdditionalAttachments;
 - (int)primaryType;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

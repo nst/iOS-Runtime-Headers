@@ -20,8 +20,8 @@
 @property(readonly) NSString * activityImageNameWishlistMusicStore;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (void)_performActionFunctionWithItems:(id)arg1;
 - (id)activityImageNameWishlistMusicStore;
@@ -40,9 +40,9 @@
 - (id)nativeActivity;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)activityTitle;
 - (id)activityType;
-- (id)attributeKeys;
 
 @end

@@ -29,8 +29,8 @@
 @property(readonly) int statusBarStyleBlackTranslucent;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (int)statusBarStyleBlackTranslucent;
 - (int)statusBarStyleBlackOpaque;
@@ -44,7 +44,6 @@
 - (id)exitStoreReasonFatalError;
 - (id)exitStoreReasonDownloadComplete;
 - (id)exitStoreReasonButton;
-- (id)statusBarHidden;
 - (void)setIconBadgeNumber:(id)arg1;
 - (id)screenWidth;
 - (id)screenHeight;
@@ -58,12 +57,13 @@
 - (void)beginDelayingTerminate;
 - (id)wasLaunchedFromLibrary;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)setStatusBarHidden:(id)arg1;
 - (void)setStatusBarStyle:(int)arg1;
 - (void)setStatusBarStyle:(int)arg1 animated:(BOOL)arg2;
 - (id)isRunningInStoreDemoMode;
 - (int)statusBarStyle;
 - (void)setStatusBarHidden:(BOOL)arg1 withAnimation:(int)arg2;
-- (id)attributeKeys;
+- (id)statusBarHidden;
 
 @end

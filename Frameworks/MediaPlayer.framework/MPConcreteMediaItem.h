@@ -16,7 +16,17 @@
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1;
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
 
-- (id)mediaLibrary;
+- (void)invalidate;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)delete;
+- (BOOL)existsInLibrary;
+- (unsigned long long)persistentID;
+- (id)valueForProperty:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
 - (void)reallyIncrementPlayCount;
 - (double)nominalHasBeenPlayedThreshold;
@@ -32,18 +42,8 @@
 - (BOOL)didSkipWithPlayedToTime:(double)arg1;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
 - (id)initWithPersistentID:(unsigned long long)arg1;
+- (id)mediaLibrary;
 - (id)valuesForProperties:(id)arg1;
-- (void)invalidate;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
-- (BOOL)existsInLibrary;
-- (unsigned long long)persistentID;
-- (id)valueForProperty:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)delete;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 
 @end

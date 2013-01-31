@@ -23,6 +23,7 @@
 - (id)delegate;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (void)_setupConnection;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)dropGuaraneteedRemoteCall:(id)arg1;
@@ -31,6 +32,5 @@
 - (id)initWithXPCServiceName:(id)arg1 remoteProtocol:(id)arg2 target:(id)arg3 delegate:(id)arg4;
 - (void)_xpcConnectionInterrupted;
 - (void)_closeConnection;
-- (void)_setupConnection;
 
 @end

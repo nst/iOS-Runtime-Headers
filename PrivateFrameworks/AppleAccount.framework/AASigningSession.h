@@ -16,9 +16,9 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
+- (long)error;
+- (void)establishSession;
 - (id)signatureForData:(id)arg1;
 - (id)initWithCertURL:(id)arg1 sessionURL:(id)arg2;
-- (void)establishSession;
-- (long)error;
 
 @end

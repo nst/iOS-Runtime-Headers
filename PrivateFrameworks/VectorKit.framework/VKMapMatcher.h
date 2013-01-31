@@ -13,9 +13,6 @@
 @property <VKMapMatcherDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
 - (id)matchLocation:(id)arg1;
 - (id)tilesAround:(struct { double x1; double x2; })arg1 radius:(double)arg2;
 - (void)tileSource:(id)arg1 didFailToLoadTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 error:(id)arg3;
@@ -24,5 +21,8 @@
 - (void)tileSourceWillGoToNetwork:(id)arg1;
 - (void)tileSource:(id)arg1 didFetchData:(id)arg2 forKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg3;
 - (id)initWithTileSource:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 
 @end

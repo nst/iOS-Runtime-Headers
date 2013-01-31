@@ -18,9 +18,9 @@
 
 
 - (void)dealloc;
+- (void)handleCompletion:(id)arg1;
 - (id)initWithCompletion:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
 - (id)completionHandler;
-- (void)handleCompletion:(id)arg1;
 
 @end

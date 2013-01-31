@@ -52,6 +52,8 @@
 @property BOOL instantHighlightMode;
 
 
+- (void)dealloc;
+- (id)init;
 - (BOOL)instantHighlightMode;
 - (struct CGPoint { float x1; float x2; })adjustedPoint;
 - (id)selectionWidget;
@@ -82,8 +84,6 @@
 - (void)setPageView:(id)arg1;
 - (void)layoutSelections;
 - (id)pageView;
-- (void)dealloc;
-- (id)init;
 - (void)clearSelection;
 - (BOOL)isTracking;
 

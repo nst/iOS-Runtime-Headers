@@ -5,8 +5,8 @@
 @class GKChallenge, UIImage;
 
 @interface GKChallengeCellContentView : GKPlayerCellContentView  {
-    id _challengeAuxData;
     GKChallenge *_challenge;
+    id _challengeAuxData;
     UIImage *_messageBubble;
 }
 
@@ -14,11 +14,17 @@
 @property(retain) id challengeAuxData;
 @property(retain) UIImage * messageBubble;
 
++ (float)defaultRowHeight;
 + (id)challengeContentView;
 + (void)loadPhotoForPlayer:(id)arg1 completionHandler:(id)arg2;
 + (int)lineCount;
-+ (float)defaultRowHeight;
 
+- (void)setChallenge:(id)arg1;
+- (id)challenge;
+- (void)dealloc;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)prepareForReuse;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMessageBubble:(id)arg1;
 - (id)messageBubble;
 - (id)challengeAuxData;
@@ -32,11 +38,5 @@
 - (void)updateLines;
 - (void)adjustLineRects:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 forLines:(id)arg2 inTextRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (id)initWithNumberOfLines:(unsigned int)arg1;
-- (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)prepareForReuse;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setChallenge:(id)arg1;
-- (id)challenge;
 
 @end

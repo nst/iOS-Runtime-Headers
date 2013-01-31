@@ -13,11 +13,11 @@
 + (id)dateTimeTriggerOffsetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)dateTimeTriggerOffset;
 
-- (id)groupIdentifier;
 - (void)setOffsetValue:(id)arg1;
 - (id)offsetValue;
 - (void)setOffsetTimeUnit:(id)arg1;
 - (id)offsetTimeUnit;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

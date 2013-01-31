@@ -22,10 +22,10 @@
 @property(retain) <NSObject> * context;
 
 
-- (id)initWithConnectionConfiguration:(id)arg1;
-- (id)initWithName:(id)arg1 uniqueIdentifier:(id)arg2 version:(unsigned int)arg3 baseURL:(id)arg4;
 - (id)name;
 - (void)dealloc;
+- (id)initWithConnectionConfiguration:(id)arg1;
+- (id)initWithName:(id)arg1 uniqueIdentifier:(id)arg2 version:(unsigned int)arg3 baseURL:(id)arg4;
 - (id)connection;
 - (unsigned int)version;
 - (id)uniqueIdentifier;

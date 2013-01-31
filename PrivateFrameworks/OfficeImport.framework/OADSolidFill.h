@@ -17,10 +17,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)color;
-- (void)setColor:(id)arg1;
 - (void)setStyleColor:(id)arg1;
 - (id)initWithDefaults;
 - (BOOL)isColorOverridden;
+- (id)color;
+- (void)setColor:(id)arg1;
 
 @end

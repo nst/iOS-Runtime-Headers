@@ -11,15 +11,6 @@
 }
 
 
-- (void)dealloc;
-- (id)init;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setContext:(id)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)_confirmClearPlaylist;
 - (void)_handleRename;
 - (void)_handleDelete;
@@ -36,5 +27,14 @@
 - (void)mediaActionButtonsCell:(id)arg1 clickedButtonAtIndex:(unsigned int)arg2;
 - (BOOL)hasSearchBar;
 - (void)reloadActionRows;
+- (void)dealloc;
+- (id)init;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setContext:(id)arg1;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 
 @end

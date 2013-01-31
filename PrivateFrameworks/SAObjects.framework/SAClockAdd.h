@@ -10,15 +10,15 @@
 @property(copy) NSURL * targetAppId;
 @property(retain) SAClockObject * clockToAdd;
 
-+ (id)add;
 + (id)addWithDictionary:(id)arg1 context:(id)arg2;
++ (id)add;
 
-- (id)groupIdentifier;
 - (void)setClockToAdd:(id)arg1;
 - (id)clockToAdd;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -104,11 +104,22 @@
 
 + (BOOL)needsDisplayForKey:(id)arg1;
 
-- (unsigned int)column;
-- (BOOL)isSelectable;
+- (void)drawInContext:(struct CGContext { }*)arg1;
+- (void)layoutSublayers;
+- (id)children;
 - (id)debugDescription;
 - (void)dealloc;
 - (id)init;
+- (void)setNumber:(unsigned int)arg1;
+- (void)setColumn:(unsigned int)arg1;
+- (void)insertChild:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)setParent:(id)arg1;
+- (void)setRow:(unsigned int)arg1;
+- (id)parent;
+- (id)childAtIndex:(unsigned int)arg1;
+- (void)addChild:(id)arg1;
+- (unsigned int)numberOfChildren;
+- (void)setChildren:(id)arg1;
 - (void)setLabelPinnedHeight:(float)arg1;
 - (void)setSelectable:(BOOL)arg1;
 - (void)setSelectionSize:(struct CGSize { float x1; float x2; })arg1;
@@ -162,18 +173,7 @@
 - (void)setLabel:(id)arg1;
 - (unsigned int)row;
 - (void)setShift:(float)arg1;
-- (void)drawInContext:(struct CGContext { }*)arg1;
-- (void)layoutSublayers;
-- (id)children;
-- (unsigned int)numberOfChildren;
-- (void)setChildren:(id)arg1;
-- (void)setNumber:(unsigned int)arg1;
-- (void)setColumn:(unsigned int)arg1;
-- (void)insertChild:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setParent:(id)arg1;
-- (void)setRow:(unsigned int)arg1;
-- (id)parent;
-- (id)childAtIndex:(unsigned int)arg1;
-- (void)addChild:(id)arg1;
+- (unsigned int)column;
+- (BOOL)isSelectable;
 
 @end

@@ -12,13 +12,13 @@
 
 + (id)sharedInstance;
 
+- (void)dealloc;
+- (id)init;
 - (void)_clientConnected;
 - (void)_requestCallGrantForIdentifier:(id)arg1 forService:(id)arg2 waitForResponse:(BOOL)arg3 completionBlock:(id)arg4;
 - (void)shouldAllowIncomingCallForNumber:(id)arg1 forService:(id)arg2 response:(id)arg3;
 - (void)_configureWithClient:(id)arg1;
 - (void)_cleanupClient:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (void)_cleanup;
 
 @end

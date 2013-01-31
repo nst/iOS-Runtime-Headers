@@ -19,11 +19,11 @@
 
 - (id)description;
 - (void)dealloc;
-- (int)statusCode;
+- (id)error;
 - (id)initWithStatusCode:(int)arg1 error:(id)arg2 folderID:(id)arg3 folderName:(id)arg4;
 - (BOOL)wasSuccessful;
 - (id)folderName;
 - (id)folderID;
-- (id)error;
+- (int)statusCode;
 
 @end

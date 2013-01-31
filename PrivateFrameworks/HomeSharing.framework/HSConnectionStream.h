@@ -10,8 +10,8 @@
 }
 
 
-- (void)sendCFHTTPMessage:(struct __CFHTTPMessage { }*)arg1 withResponseHandler:(id)arg2;
 - (void)dealloc;
 - (id)init;
+- (void)sendCFHTTPMessage:(struct __CFHTTPMessage { }*)arg1 withResponseHandler:(id)arg2;
 
 @end

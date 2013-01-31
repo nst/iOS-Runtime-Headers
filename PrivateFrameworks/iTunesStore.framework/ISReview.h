@@ -34,26 +34,28 @@
 @property unsigned int titleMaxLength;
 
 
-- (void)setRating:(float)arg1;
-- (float)rating;
 - (void)setNicknameIsConfirmed:(BOOL)arg1;
 - (BOOL)hasSavedDraft;
 - (unsigned int)nicknameMaxLength;
 - (unsigned int)titleMaxLength;
 - (BOOL)nicknameIsConfirmed;
 - (void)mergeWithReview:(id)arg1 preferLocalValues:(BOOL)arg2;
-- (id)infoURL;
 - (BOOL)removeDraft;
 - (BOOL)restoreFromDraft;
 - (BOOL)saveAsDraft;
 - (unsigned int)bodyMaxLength;
 - (void)setNickname:(id)arg1;
 - (id)nickname;
-- (void)setInfoURL:(id)arg1;
 - (void)setItemIdentifier:(unsigned long long)arg1;
 - (void)setAssetType:(int)arg1;
-- (unsigned long long)itemIdentifier;
 - (void)loadFromDictionary:(id)arg1;
+- (void)setTitleMaxLength:(unsigned int)arg1;
+- (void)setSubmitURL:(id)arg1;
+- (id)submitURL;
+- (void)setNicknameMaxLength:(unsigned int)arg1;
+- (void)setBodyMaxLength:(unsigned int)arg1;
+- (id)_draftFileName;
+- (id)_draftsDirectoryPath;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (int)assetType;
@@ -63,12 +65,10 @@
 - (void)setTitle:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setTitleMaxLength:(unsigned int)arg1;
-- (void)setSubmitURL:(id)arg1;
-- (id)submitURL;
-- (void)setNicknameMaxLength:(unsigned int)arg1;
-- (void)setBodyMaxLength:(unsigned int)arg1;
-- (id)_draftFileName;
-- (id)_draftsDirectoryPath;
+- (unsigned long long)itemIdentifier;
+- (void)setInfoURL:(id)arg1;
+- (id)infoURL;
+- (void)setRating:(float)arg1;
+- (float)rating;
 
 @end

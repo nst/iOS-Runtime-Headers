@@ -101,18 +101,10 @@
 @property(readonly) VGLMesh * meshForUnitSquare;
 @property unsigned int activeTexture;
 
-+ (void)popContext;
 + (id)_contextStack;
 + (void)pushContext:(id)arg1;
++ (void)popContext;
 
-- (void)reset;
-- (void)dealloc;
-- (id)init;
-- (void)present;
-- (void)endFrame;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })clearColor;
-- (void)setLineWidth:(float)arg1;
-- (float)lineWidth;
 - (id)VAO;
 - (BOOL)colorMask;
 - (unsigned int)activeTexture;
@@ -216,7 +208,15 @@
 - (void)setTargetFramebuffer:(id)arg1;
 - (void)startFrame;
 - (id)targetFramebuffer;
+- (void)reset;
+- (void)dealloc;
+- (id)init;
 - (void)setBlendMode:(int)arg1;
 - (int)blendMode;
+- (void)present;
+- (void)endFrame;
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })clearColor;
+- (void)setLineWidth:(float)arg1;
+- (float)lineWidth;
 
 @end

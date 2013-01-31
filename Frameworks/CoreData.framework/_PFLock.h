@@ -16,9 +16,9 @@
 
 - (void)dealloc;
 - (id)init;
-- (BOOL)tryLock;
 - (void)finalize;
 - (void)unlock;
 - (void)lock;
+- (BOOL)tryLock;
 
 @end

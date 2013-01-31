@@ -14,6 +14,7 @@
 }
 
 
+- (void)open;
 - (void).cxx_destruct;
 - (unsigned int)length;
 - (void)close;
@@ -24,6 +25,5 @@
 - (BOOL)hasBytesAvailable;
 - (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
 - (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
-- (void)open;
 
 @end

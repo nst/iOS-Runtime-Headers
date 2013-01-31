@@ -18,8 +18,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (int)transition;
-- (void)setTransition:(int)arg1;
 - (id)musicCollection;
 - (void)setPhotoDefaultValues;
 - (void)setMusicCollection:(id)arg1;
@@ -29,5 +27,7 @@
 - (BOOL)shouldShuffle;
 - (BOOL)shouldPlayMusic;
 - (int)secondsPerSlide;
+- (int)transition;
+- (void)setTransition:(int)arg1;
 
 @end

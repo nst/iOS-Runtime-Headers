@@ -17,9 +17,6 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)setType:(int)arg1;
-- (id)stroke;
-- (id)fill;
 - (id)initWithStroke:(id)arg1 fill:(id)arg2 type:(int)arg3;
 - (BOOL)isUsingTextStroke;
 - (BOOL)isUsingTextFill;
@@ -27,5 +24,8 @@
 - (void)setIsUsingTextFill:(BOOL)arg1;
 - (void)setStroke:(id)arg1;
 - (void)setFill:(id)arg1;
+- (void)setType:(int)arg1;
+- (id)stroke;
+- (id)fill;
 
 @end

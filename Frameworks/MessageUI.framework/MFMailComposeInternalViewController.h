@@ -33,6 +33,10 @@
 
 - (void)autosaveWithHandler:(id)arg1;
 - (void)dealloc;
+- (void)setAutosaveIdentifier:(id)arg1;
+- (void)setAutorotationDelegate:(id)arg1;
+- (void)setContentVisible:(BOOL)arg1;
+- (void)requestFramesForAttachmentsWithIdentifiers:(id)arg1 resultHandler:(id)arg2;
 - (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
 - (void)setMessageBody:(id)arg1 isHTML:(BOOL)arg2;
 - (void)setMailComposeDelegate:(id)arg1;
@@ -68,9 +72,5 @@
 - (void)setBccRecipients:(id)arg1;
 - (void)setCcRecipients:(id)arg1;
 - (void)setToRecipients:(id)arg1;
-- (void)setAutosaveIdentifier:(id)arg1;
-- (void)setAutorotationDelegate:(id)arg1;
-- (void)setContentVisible:(BOOL)arg1;
-- (void)requestFramesForAttachmentsWithIdentifiers:(id)arg1 resultHandler:(id)arg2;
 
 @end

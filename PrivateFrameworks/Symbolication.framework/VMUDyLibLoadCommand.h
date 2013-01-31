@@ -14,9 +14,9 @@
 - (id)path;
 - (id)description;
 - (void)dealloc;
-- (unsigned int)currentVersion;
 - (unsigned int)compatibilityVersion;
 - (BOOL)isLoadDyLib;
 - (id)initWithMemory:(id)arg1;
+- (unsigned int)currentVersion;
 
 @end

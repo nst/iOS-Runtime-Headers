@@ -13,12 +13,12 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (void)broadcast;
+- (void)wait;
 - (BOOL)waitUntilDate:(id)arg1;
 - (void)signal;
 - (void)finalize;
 - (void)unlock;
 - (void)lock;
-- (void)broadcast;
-- (void)wait;
 
 @end

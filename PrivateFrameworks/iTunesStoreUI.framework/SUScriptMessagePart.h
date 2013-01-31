@@ -22,7 +22,7 @@
 - (id)contentEncoding;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (id)MIMEType;
 - (id)attributeKeys;
+- (id)MIMEType;
 
 @end

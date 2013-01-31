@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptSectionsController, SSAuthenticationContext, SUScriptProtocol, SUScriptApplication, SUWebImagePool, NSString, SUScriptViewController, SUScriptMediaLibrary, SUScriptNotificationObserver, SUClientInterface, SUScriptWindowContext, <SUScriptInterfaceDelegate>, SUScriptDevice, NSNumber, NSMutableDictionary, SUScriptNavigationBar, SUScriptPurchaseManager, SUScriptAccount, SUScriptWindow, SUScriptKeyValueStore, SUScriptAccountManager, NSArray, SUScriptAppleAccountStore, SUScriptPreviewOverlay, WebFrame, SUScriptOperationDelegate;
+@class SUScriptSectionsController, SSAuthenticationContext, SUScriptProtocol, SUScriptApplication, SUWebImagePool, NSString, SUScriptViewController, SUScriptMediaLibrary, SUScriptNotificationObserver, SUClientInterface, SUScriptWindowContext, <SUScriptInterfaceDelegate>, SUScriptDevice, SUScriptFairPlayContext, NSNumber, NSMutableDictionary, SUScriptNavigationBar, SUScriptPurchaseManager, SUScriptAccount, SUScriptWindow, SUScriptKeyValueStore, SUScriptAccountManager, NSArray, SUScriptAppleAccountStore, SUScriptPreviewOverlay, WebFrame, SUScriptOperationDelegate;
 
 @interface SUScriptInterface : SUScriptObject  {
     SUScriptAccountManager *_accountManager;
@@ -37,6 +37,7 @@
 @property(readonly) NSString * actionTypeReturnToLibrary;
 @property(readonly) SUScriptPurchaseManager * purchaseManager;
 @property(readonly) SUScriptAppleAccountStore * appleAccountStore;
+@property(readonly) SUScriptFairPlayContext * accountCreationSecureContext;
 @property(copy) SSAuthenticationContext * authenticationContext;
 @property(retain) SUScriptWindowContext * scriptWindowContext;
 @property <SUScriptInterfaceDelegate> * delegate;
@@ -57,10 +58,10 @@
 
 + (id)webScriptNameForKeyName:(id)arg1;
 + (int)purchaseAnimationStyleFromString:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
-- (id)accountName;
+- (id)accountCreationSecureContext;
 - (id)appleAccountStore;
 - (id)activeAudioPlayers;
 - (id)actionTypeReturnToLibrary;
@@ -68,8 +69,6 @@
 - (id)application;
 - (void)addPurchaseWithInfo:(id)arg1;
 - (void)addExternalDownloads:(id)arg1;
-- (void)setMediaLibrary:(id)arg1;
-- (id)mediaLibrary;
 - (id)sectionsController;
 - (void)setPrimaryLockerAccount:(id)arg1;
 - (void)setPrimaryAccount:(id)arg1;
@@ -209,6 +208,7 @@
 - (void)addExternalDownloadsFromManifestURL:(id)arg1;
 - (void)addExternalDownloads:(id)arg1 options:(id)arg2;
 - (id)accountForDSID:(id)arg1;
+- (void)accessibilityPostScreenChange;
 - (void)accessibilityPostLayoutChange;
 - (id)scriptAttributeKeys;
 - (id)_copyDialogWithMessage:(id)arg1 title:(id)arg2 cancelButtonTitle:(id)arg3 okButtonTitle:(id)arg4;
@@ -227,10 +227,15 @@
 - (void)initAuthentication;
 - (void)setClientInterface:(id)arg1;
 - (id)clientInterface;
+- (id)attributeKeys;
+- (void)setCookie:(id)arg1;
+- (id)cookie;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
+- (id)primaryAccount;
+- (id)accounts;
 - (id)device;
 - (id)protocol;
 - (id)systemVersion;
@@ -249,11 +254,9 @@
 - (void)setWindow:(id)arg1;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2;
 - (id)window;
-- (id)attributeKeys;
-- (void)setCookie:(id)arg1;
-- (id)cookie;
-- (id)primaryAccount;
-- (id)accounts;
+- (void)setMediaLibrary:(id)arg1;
+- (id)mediaLibrary;
+- (id)accountName;
 - (void)log:(id)arg1;
 
 @end

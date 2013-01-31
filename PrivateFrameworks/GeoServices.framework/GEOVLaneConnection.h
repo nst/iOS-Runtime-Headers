@@ -15,13 +15,13 @@
 @property unsigned int secondLaneIndex;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setSecondLaneIndex:(unsigned int)arg1;
 - (unsigned int)secondLaneIndex;
 - (void)setSecondRoadIndex:(unsigned int)arg1;
@@ -30,6 +30,6 @@
 - (unsigned int)firstLaneIndex;
 - (void)setFirstRoadIndex:(unsigned int)arg1;
 - (unsigned int)firstRoadIndex;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

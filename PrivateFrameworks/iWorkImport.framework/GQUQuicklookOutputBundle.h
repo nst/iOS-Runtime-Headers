@@ -11,8 +11,6 @@
 }
 
 
-- (void)dealloc;
-- (id)init;
 - (struct __CFDictionary { }*)quicklookDictionary;
 - (struct __CFData { }*)mainHtmlData;
 - (id)initWithUriScheme:(struct __CFString { }*)arg1;
@@ -22,5 +20,7 @@
 - (BOOL)setData:(struct __CFData { }*)arg1 mimeType:(struct __CFString { }*)arg2 forNamedResource:(struct __CFString { }*)arg3;
 - (void)setPageElementXPath:(struct __CFString { }*)arg1 withThumbnailsOnLeft:(BOOL)arg2;
 - (void)setDocumentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

@@ -25,9 +25,10 @@
 + (BOOL)canShareItems:(id)arg1 forServiceType:(id)arg2;
 + (BOOL)configurationSupportsShareSheetOfType:(id)arg1;
 
-- (id)initWithServiceType:(id)arg1;
 - (BOOL)removeAllURLs;
 - (void).cxx_destruct;
+- (id)serviceType;
+- (id)initWithServiceType:(id)arg1;
 - (BOOL)addURL:(id)arg1;
 - (BOOL)addAttachment:(id)arg1;
 - (id)addDownSampledImageDataByProxyWithPreviewImage:(id)arg1;
@@ -38,6 +39,5 @@
 - (BOOL)removeAllImages;
 - (BOOL)addImage:(id)arg1;
 - (id)completionHandler;
-- (id)serviceType;
 
 @end

@@ -12,9 +12,6 @@
 
 + (id)predicateMatchingPredicates:(id)arg1;
 
-- (id)_ML3PredicateForEntityTypeSelector:(SEL)arg1;
-- (id)ML3PredicateForContainer;
-- (id)ML3PredicateForTrack;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -23,5 +20,8 @@
 - (id)predicates;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)_ML3PredicateForEntityTypeSelector:(SEL)arg1;
+- (id)ML3PredicateForContainer;
+- (id)ML3PredicateForTrack;
 
 @end

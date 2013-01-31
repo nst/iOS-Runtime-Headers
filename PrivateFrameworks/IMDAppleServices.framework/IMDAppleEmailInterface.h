@@ -11,6 +11,7 @@
 
 + (id)sharedInstance;
 
+- (void)dealloc;
 - (BOOL)cancelMonitoringForEmail:(id)arg1 registrationInfo:(id)arg2;
 - (id)_vettingIDForSearch:(id)arg1;
 - (void)search:(id)arg1 didFinishWithError:(id)arg2;
@@ -23,7 +24,6 @@
 - (id)_existingSearchForEmail:(id)arg1;
 - (void)_cancelAllSearches;
 - (BOOL)startMonitoringForEmail:(id)arg1 registrationInfo:(id)arg2;
-- (void)dealloc;
 - (void)removeListener:(id)arg1;
 - (void)addListener:(id)arg1;
 

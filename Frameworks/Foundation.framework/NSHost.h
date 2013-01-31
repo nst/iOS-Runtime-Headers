@@ -19,12 +19,12 @@
 + (id)hostWithName:(id)arg1;
 + (id)currentHost;
 
-- (id)address;
 - (id)name;
 - (id)description;
 - (void)dealloc;
 - (id)names;
 - (id)localizedName;
+- (id)address;
 - (BOOL)isEqualToHost:(id)arg1;
 - (void)blockingResolveUntil:(int)arg1;
 - (id)addresses;

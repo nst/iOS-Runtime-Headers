@@ -16,20 +16,20 @@
 
 + (id)defaultPropertiesToLoad;
 
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (id)owner;
+- (void)setDisplayName:(id)arg1;
+- (id)emailAddress;
+- (id)displayName;
 - (void)setAddress:(id)arg1;
 - (id)address;
 - (void)setLastName:(id)arg1;
 - (id)lastName;
 - (void)setFirstName:(id)arg1;
 - (id)firstName;
-- (unsigned int)hash;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (id)UUID;
-- (id)displayName;
-- (id)emailAddress;
-- (id)owner;
-- (void)setDisplayName:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
+- (id)UUID;
 
 @end

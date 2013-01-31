@@ -23,17 +23,6 @@
 + (id)playerNamePredicateForSearchText:(id)arg1;
 + (id)searchControllerForTableView:(id)arg1 withController:(id)arg2;
 
-- (void)setSearchBarHidden:(BOOL)arg1;
-- (BOOL)searchBarHidden;
-- (void)didTouchOverlayView;
-- (void)cancelSearchAndDismiss;
-- (void)updateStatusViewWithResults:(BOOL)arg1;
-- (id)searchTableSections;
-- (void)setTableController:(id)arg1;
-- (BOOL)isSearchActive;
-- (void)setTableView:(id)arg1 tableController:(id)arg2;
-- (id)tableController;
-- (void)setSearchTableSections:(id)arg1;
 - (void)dealloc;
 - (void)setSearchBar:(id)arg1;
 - (Class)_resultsTableViewClass;
@@ -48,5 +37,16 @@
 - (id)searchBar;
 - (id)searchDisplayController;
 - (void)setSearchDisplayController:(id)arg1;
+- (void)setSearchBarHidden:(BOOL)arg1;
+- (BOOL)searchBarHidden;
+- (void)didTouchOverlayView;
+- (void)cancelSearchAndDismiss;
+- (void)updateStatusViewWithResults:(BOOL)arg1;
+- (id)searchTableSections;
+- (void)setTableController:(id)arg1;
+- (BOOL)isSearchActive;
+- (void)setTableView:(id)arg1 tableController:(id)arg2;
+- (id)tableController;
+- (void)setSearchTableSections:(id)arg1;
 
 @end

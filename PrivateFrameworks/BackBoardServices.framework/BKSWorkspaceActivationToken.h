@@ -12,8 +12,6 @@
 
 + (id)token;
 
-- (id)initWithXPCDictionary:(id)arg1;
-- (void)encodeWithXPCDictionary:(id)arg1;
 - (id)timestamp;
 - (void)setTimestamp:(id)arg1;
 - (id)description;
@@ -21,6 +19,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)initWithXPCDictionary:(id)arg1;
+- (void)encodeWithXPCDictionary:(id)arg1;
 - (id)shortDescription;
 
 @end

@@ -10,9 +10,9 @@
 }
 
 
-- (void)dealloc;
 - (id)characterStyle;
 - (int)readStyleFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 - (struct __CFString { }*)href;
+- (void)dealloc;
 
 @end

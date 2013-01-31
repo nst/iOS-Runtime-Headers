@@ -14,7 +14,6 @@
 + (id)aceViewWithDictionary:(id)arg1 context:(id)arg2;
 + (id)aceView;
 
-- (id)groupIdentifier;
 - (void)setViewId:(id)arg1;
 - (id)viewId;
 - (void)setSpeakableText:(id)arg1;
@@ -23,5 +22,6 @@
 - (id)listenAfterSpeaking;
 - (id)deferredKeys;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

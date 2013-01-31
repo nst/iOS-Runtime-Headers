@@ -59,16 +59,8 @@
 @property BOOL dataContextActive;
 
 
-- (void)setRegistered:(BOOL)arg1;
-- (BOOL)isWiFiEnabled;
 - (void)dealloc;
 - (id)init;
-- (void)setLock:(id)arg1;
-- (id)lock;
-- (struct __SCPreferences { }*)_prefs;
-- (BOOL)isAirplaneModeEnabled;
-- (void)addFastDormancyDisableToken:(id)arg1;
-- (void)removeFastDormancyDisableToken:(id)arg1;
 - (void)setDataContextActive:(BOOL)arg1;
 - (BOOL)dataContextActive;
 - (void)setShouldBringUpDataContext:(BOOL)arg1;
@@ -136,6 +128,14 @@
 - (void)_createWiFiManager;
 - (BOOL)isDataConnectionActive;
 - (void)setDataConnectionActive:(BOOL)arg1;
+- (void)setRegistered:(BOOL)arg1;
+- (BOOL)isAirplaneModeEnabled;
+- (void)addFastDormancyDisableToken:(id)arg1;
+- (void)removeFastDormancyDisableToken:(id)arg1;
+- (void)setLock:(id)arg1;
+- (id)lock;
+- (BOOL)isWiFiEnabled;
 - (void)refresh;
+- (struct __SCPreferences { }*)_prefs;
 
 @end

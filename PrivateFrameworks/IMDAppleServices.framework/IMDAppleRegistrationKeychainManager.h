@@ -27,11 +27,13 @@
 
 @property(readonly) NSArray * registrations;
 
++ (id)sharedInstance;
 + (id)keychainAccessGroupForVersion:(unsigned int)arg1;
 + (id)keychainAccountForVersion:(unsigned int)arg1;
 + (id)keychainServiceForVersion:(unsigned int)arg1;
-+ (id)sharedInstance;
 
+- (void)dealloc;
+- (id)init;
 - (BOOL)removeAllRegistrations;
 - (id)registrations;
 - (id)registrationWithServiceType:(int)arg1 registrationType:(int)arg2 value:(id)arg3;
@@ -44,8 +46,6 @@
 - (BOOL)addRegistration:(id)arg1;
 - (BOOL)removeRegistration:(id)arg1;
 - (BOOL)saveToKeychain;
-- (void)dealloc;
-- (id)init;
 - (void)systemDidFinishMigration;
 
 @end

@@ -14,13 +14,13 @@
 @property(readonly) UIWebView * webView;
 
 
-- (void)loadURL:(id)arg1;
-- (void)donePressed:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)toolbar;
 - (void)loadView;
 - (id)webView;
 - (void)viewDidLayoutSubviews;
+- (void)loadURL:(id)arg1;
+- (void)donePressed:(id)arg1;
 
 @end

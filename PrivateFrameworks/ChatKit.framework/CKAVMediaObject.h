@@ -12,12 +12,7 @@
 + (double)maxMMSTrimDurationForMediaType:(int)arg1;
 + (id)transcodeOptionsWithMaxBytes:(int)arg1 forMediaType:(int)arg2;
 
-- (id)icon;
 - (void)dealloc;
-- (id)subtitle;
-- (id)title;
-- (double)duration;
-- (void)setDuration:(double)arg1;
 - (id)transcodePath;
 - (id)effectiveExportedFilename;
 - (id)transcodedFilename;
@@ -28,5 +23,10 @@
 - (double)transcodeEndTime;
 - (double)transcodeStartTime;
 - (void)copyToPasteboard:(id)arg1;
+- (id)subtitle;
+- (id)title;
+- (double)duration;
+- (void)setDuration:(double)arg1;
+- (id)icon;
 
 @end

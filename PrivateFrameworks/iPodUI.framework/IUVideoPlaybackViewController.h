@@ -23,27 +23,6 @@
 @property(readonly) BOOL isCurrentItemValid;
 
 
-- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
-- (void)_endPlayback;
-- (void)videoController:(id)arg1 scaleModeDidChange:(unsigned int)arg2;
-- (void)viewControllerRequestsExit:(id)arg1;
-- (id)newViewControllerForItem:(id)arg1 interfaceOrientation:(int)arg2 reusingController:(id)arg3;
-- (BOOL)videoController:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
-- (void)_serverDiedNotification:(id)arg1;
-- (void)_itemReadyToPlayNotification:(id)arg1;
-- (void)_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
-- (void)_firstVideoFrameDisplayedNotification:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
-- (void)setInterfaceOrientation:(int)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (id)title;
-- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (double)restoredTimeOnAppear;
 - (double)currentTimeOnAppear;
 - (id)fillerImage;
@@ -69,5 +48,26 @@
 - (BOOL)restoreArchivedContexts:(id)arg1;
 - (id)copyArchivableContexts;
 - (void)exitPlayerAnimated:(BOOL)arg1;
+- (void)dealloc;
+- (id)init;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (void)setInterfaceOrientation:(int)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (id)title;
+- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
+- (void)_endPlayback;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
+- (void)videoController:(id)arg1 scaleModeDidChange:(unsigned int)arg2;
+- (void)viewControllerRequestsExit:(id)arg1;
+- (id)newViewControllerForItem:(id)arg1 interfaceOrientation:(int)arg2 reusingController:(id)arg3;
+- (BOOL)videoController:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
+- (void)_serverDiedNotification:(id)arg1;
+- (void)_itemReadyToPlayNotification:(id)arg1;
+- (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
+- (void)_firstVideoFrameDisplayedNotification:(id)arg1;
 
 @end

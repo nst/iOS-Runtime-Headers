@@ -45,6 +45,7 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)abort;
 - (void)_chunkDidFindShareState:(id)arg1;
 - (void)_chunkDidFindSubscriptionTemporarilyUnavailableForPersonID:(id)arg1;
 - (void)_chunkDidFindSubscriptionGoneForPersonID:(id)arg1;
@@ -63,6 +64,5 @@
 - (void)_parseChunks;
 - (void)pollForSubscriptionUpdatesWithAccountAnchors:(id)arg1;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
-- (void)abort;
 
 @end

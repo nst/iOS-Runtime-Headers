@@ -17,7 +17,6 @@
 @property(retain) UIView<RemoteUITableFooter> * footerView;
 
 
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)init;
@@ -34,5 +33,6 @@
 - (void)setHeaderView:(id)arg1;
 - (id)rows;
 - (void)setImage:(id)arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

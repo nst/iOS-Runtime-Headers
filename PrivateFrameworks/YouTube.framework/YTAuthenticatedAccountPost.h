@@ -14,15 +14,6 @@
 }
 
 
-- (void)removePlaylist:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)dealloc;
-- (void)_cleanup;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)failWithError:(id)arg1;
 - (void)unsubscribeToSubscription:(id)arg1;
 - (void)removeVideoFromPlaylist:(id)arg1;
 - (void)removeVideoFromFavorites:(id)arg1;
@@ -37,5 +28,14 @@
 - (void)_listenForAuthenticationNotifications:(BOOL)arg1;
 - (void)_failedToAuthenticate:(id)arg1;
 - (void)_didAuthenticate:(id)arg1;
+- (void)failWithError:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (void)_cleanup;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (void)removePlaylist:(id)arg1;
 
 @end

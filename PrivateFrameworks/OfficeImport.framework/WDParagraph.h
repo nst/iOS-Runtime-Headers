@@ -11,9 +11,6 @@
 
 
 - (void)dealloc;
-- (id)initWithText:(id)arg1;
-- (id)properties;
-- (BOOL)isEmpty;
 - (float)maxReflectionDistance;
 - (id)addDateTime:(id)arg1;
 - (id)addBookmark;
@@ -41,5 +38,8 @@
 - (id)runAt:(int)arg1;
 - (int)runCount;
 - (BOOL)isTextFrame;
+- (id)initWithText:(id)arg1;
+- (id)properties;
+- (BOOL)isEmpty;
 
 @end

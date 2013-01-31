@@ -14,13 +14,13 @@
 + (Class)layerClass;
 
 - (void)dealloc;
-- (void)prepareForReuse;
-- (id)initWithReuseIdentifier:(id)arg1;
-- (void)layoutSubviews;
 - (void)setRowImage:(struct CGImage { }*)arg1;
 - (void)removeStackItemCell:(id)arg1;
 - (id)stackItemCells;
 - (void)insertStackItemCell:(id)arg1 atColumn:(unsigned int)arg2;
 - (void)clearContents;
+- (void)prepareForReuse;
+- (id)initWithReuseIdentifier:(id)arg1;
+- (void)layoutSubviews;
 
 @end

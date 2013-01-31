@@ -54,13 +54,6 @@
 @property(readonly) NSDate * timestamp;
 
 
-- (id)timestamp;
-- (id)description;
-- (unsigned int)hash;
-- (id).cxx_construct;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (float)offset;
 - (BOOL)routeMatchedToEnd;
 - (BOOL)routeMatchBehind:(id)arg1;
 - (BOOL)isEqualIgnoringScore:(id)arg1;
@@ -92,6 +85,13 @@
 - (id)lastTimeInTunnel;
 - (id)initWithRoute:(id)arg1 routeCoordinate:(struct { unsigned int x1; float x2; })arg2 coordinateOnRoute:(struct { double x1; double x2; })arg3 stepIndex:(unsigned int)arg4 matchedCourse:(double)arg5 timestamp:(id)arg6;
 - (id)route;
+- (id)timestamp;
+- (id)description;
+- (unsigned int)hash;
+- (id).cxx_construct;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (unsigned int)pointIndex;
+- (float)offset;
 
 @end

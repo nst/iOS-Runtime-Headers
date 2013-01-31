@@ -54,12 +54,11 @@
 
 + (id)sharedClient;
 
-- (void)setError:(id)arg1;
 - (void)invalidate;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (void)start;
+- (id)error;
 - (void)setPreblobCallback:(id)arg1;
 - (id)preblobCallback;
 - (id)createSessionWithTicket:(id)arg1 sessionKey:(id)arg2;
@@ -78,6 +77,7 @@
 - (BOOL)sendRaw:(id)arg1;
 - (void)invalidateSession:(id)arg1;
 - (id)queue;
-- (id)error;
+- (void)start;
+- (void)setError:(id)arg1;
 
 @end

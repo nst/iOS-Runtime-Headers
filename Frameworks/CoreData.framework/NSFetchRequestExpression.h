@@ -24,6 +24,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
 - (id)contextExpression;
 - (id)predicateFormat;
@@ -33,7 +35,5 @@
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (unsigned int)expressionType;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

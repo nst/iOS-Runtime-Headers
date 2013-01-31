@@ -21,10 +21,9 @@
 @property(readonly) int renewResultRenewed;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
-- (id)accountsWithAccountType:(id)arg1;
 - (int)renewResultRenewed;
 - (int)renewResultRejected;
 - (int)renewResultFailed;
@@ -43,7 +42,8 @@
 - (id)_accountStore;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (void)dealloc;
 - (id)attributeKeys;
+- (void)dealloc;
+- (id)accountsWithAccountType:(id)arg1;
 
 @end

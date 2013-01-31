@@ -11,17 +11,17 @@
 @property unsigned int validityMask;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)setValidityMask:(unsigned int)arg1;
+- (unsigned int)validityMask;
 - (id)dictionaryRepresentation;
 - (unsigned int)style;
 - (void)setStyle:(unsigned int)arg1;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (void)setValidityMask:(unsigned int)arg1;
-- (unsigned int)validityMask;
-- (BOOL)readFrom:(id)arg1;
 
 @end

@@ -9,6 +9,7 @@
 }
 
 
+- (id)_initWithCFURLProtectionSpace:(struct _CFURLProtectionSpace { }*)arg1;
 - (BOOL)isProxy;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -23,7 +24,6 @@
 - (id)host;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)_initWithCFURLProtectionSpace:(struct _CFURLProtectionSpace { }*)arg1;
 - (struct __SecTrust { }*)serverTrust;
 - (id)distinguishedNames;
 - (BOOL)receivesCredentialSecurely;

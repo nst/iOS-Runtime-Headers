@@ -12,8 +12,8 @@
 @property VKTileProvider * tileProvider;
 
 
-- (void)timerFired:(id)arg1;
 - (id)tileProvider;
 - (void)setTileProvider:(id)arg1;
+- (void)timerFired:(id)arg1;
 
 @end

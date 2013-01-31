@@ -13,7 +13,7 @@
 + (id)deleteCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)deleteCompleted;
 
-- (id)groupIdentifier;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -10,8 +10,8 @@
 - (unsigned int)retainCount;
 - (id)retain;
 - (oneway void)release;
-- (void)_dispose;
 - (BOOL)retainWeakReference;
 - (BOOL)allowsWeakReference;
+- (void)_dispose;
 
 @end

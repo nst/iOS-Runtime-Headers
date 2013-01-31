@@ -13,12 +13,12 @@
 + (id)assistantCreatedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)assistantCreated;
 
-- (id)groupIdentifier;
 - (void)setSpeechId:(id)arg1;
 - (id)speechId;
 - (void)setAssistantId:(id)arg1;
 - (id)assistantId;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

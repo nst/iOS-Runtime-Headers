@@ -22,7 +22,6 @@
 - (id)_chatInfo;
 - (void)addMessage:(id)arg1 toChat:(id)arg2;
 - (void)removeChat:(id)arg1;
-- (id)existingChatForIDs:(id)arg1 account:(id)arg2 style:(unsigned char)arg3;
 - (id)chatForRoom:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 guid:(id)arg4;
 - (id)chatForHandles:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 style:(unsigned char)arg4 guid:(id)arg5;
 - (id)chatForHandle:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 guid:(id)arg4;
@@ -35,7 +34,6 @@
 - (id)existingChatForRoom:(id)arg1 account:(id)arg2;
 - (id)existingChatWithIdentifier:(id)arg1 account:(id)arg2;
 - (void)addChat:(id)arg1;
-- (id)existingChatForID:(id)arg1 account:(id)arg2;
 - (void)updateStateForChat:(id)arg1;
 - (void)removeMessage:(id)arg1 fromChat:(id)arg2;
 - (id)existingChatsForIDs:(id)arg1 onService:(id)arg2 style:(unsigned char)arg3;
@@ -43,5 +41,7 @@
 - (BOOL)updateProperties:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3;
 - (id)chats;
 - (id)existingChatWithGUID:(id)arg1;
+- (id)existingChatForID:(id)arg1 account:(id)arg2;
+- (id)existingChatForIDs:(id)arg1 account:(id)arg2 style:(unsigned char)arg3;
 
 @end

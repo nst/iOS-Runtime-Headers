@@ -18,11 +18,11 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setType:(int)arg1;
 - (BOOL)isTypeOverridden;
 - (BOOL)isFillToRectOverridden;
 - (id)initWithDefaults;
 - (void)setFillToRect:(id)arg1;
 - (id)fillToRect;
+- (void)setType:(int)arg1;
 
 @end

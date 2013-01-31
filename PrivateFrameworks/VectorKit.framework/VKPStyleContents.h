@@ -14,13 +14,6 @@
 @property(retain) NSMutableArray * zooms;
 
 
-- (void)setProperties:(id)arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)properties;
-- (id)dictionaryRepresentation;
 - (id)zooms;
 - (id)zoomsAtIndex:(unsigned int)arg1;
 - (void)clearZooms;
@@ -30,6 +23,13 @@
 - (void)setZooms:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (void)setProperties:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (BOOL)readFrom:(id)arg1;
+- (id)properties;
+- (id)dictionaryRepresentation;
 
 @end

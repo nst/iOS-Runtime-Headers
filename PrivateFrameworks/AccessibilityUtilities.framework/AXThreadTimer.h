@@ -21,15 +21,15 @@
 @property(retain) AXThreadTimerTask * task;
 
 
-- (id)initWithThread:(id)arg1;
-- (void)_runAfterDelay:(id)arg1;
-- (void)setTask:(id)arg1;
-- (void)afterDelay:(double)arg1 processBlock:(id)arg2;
-- (void)afterDelay:(double)arg1 processBlock:(id)arg2 cancelBlock:(id)arg3;
 - (BOOL)isCancelled;
 - (void)cancel;
 - (void)dealloc;
 - (id)task;
 - (BOOL)isPending;
+- (id)initWithThread:(id)arg1;
+- (void)_runAfterDelay:(id)arg1;
+- (void)setTask:(id)arg1;
+- (void)afterDelay:(double)arg1 processBlock:(id)arg2;
+- (void)afterDelay:(double)arg1 processBlock:(id)arg2 cancelBlock:(id)arg3;
 
 @end

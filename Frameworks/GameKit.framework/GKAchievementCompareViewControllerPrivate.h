@@ -22,6 +22,10 @@
 @property(retain) GKAchievementCompareHeaderSection * achievementCompareFriendHeaderViewSection;
 
 
+- (void)dealloc;
+- (void)viewDidLoad;
+- (id)title;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (void)setCompositeCheckMark:(id)arg1;
 - (void)setFriendAchievements:(id)arg1;
 - (void)updateStatusWithError:(id)arg1;
@@ -41,9 +45,5 @@
 - (BOOL)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (void)_gkResetContents;
 - (void)playTapped;
-- (void)dealloc;
-- (void)viewDidLoad;
-- (id)title;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 
 @end

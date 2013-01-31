@@ -17,9 +17,9 @@
 @property(retain) NSDate * messageDate;
 
 
-- (int)compare:(id)arg1;
 - (void)setSummary:(id)arg1;
 - (id)summary;
+- (int)compare:(id)arg1;
 - (id)initWithMessage:(id)arg1 chatGUID:(id)arg2;
 - (void)setChatGUID:(id)arg1;
 - (void)setMessageGUID:(id)arg1;

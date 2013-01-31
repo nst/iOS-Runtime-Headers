@@ -18,10 +18,6 @@
 
 - (void)save;
 - (void)dealloc;
-- (void)load;
-- (void)unlock;
-- (void)lock;
-- (void)flush;
 - (unsigned char)formulaTypeForFormula:(id)arg1;
 - (Class)classForFormulaType:(unsigned char)arg1;
 - (id)fileNameForPersistingRowBlocks;
@@ -39,5 +35,9 @@
 - (unsigned int)maxPopulatedRow;
 - (unsigned int)rowBlockCount;
 - (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)cellWithRowNumber:(unsigned int)arg1 columnNumber:(int)arg2;
+- (void)load;
+- (void)unlock;
+- (void)lock;
+- (void)flush;
 
 @end

@@ -17,12 +17,12 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)removeNetworkReachableObserver:(id)arg1;
-- (void)addNetworkReachableObserver:(id)arg1 selector:(SEL)arg2;
-- (BOOL)isNetworkReachable;
 - (BOOL)isCellConnection;
 - (void)_networkObserversInitialize;
 - (void)_networkReachableCallBack:(unsigned int)arg1;
 - (void)_networkReachableFirstCallBack:(id)arg1;
+- (void)removeNetworkReachableObserver:(id)arg1;
+- (void)addNetworkReachableObserver:(id)arg1 selector:(SEL)arg2;
+- (BOOL)isNetworkReachable;
 
 @end

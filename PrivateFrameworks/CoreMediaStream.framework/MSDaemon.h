@@ -19,7 +19,6 @@
 @property(retain) NSObject<OS_dispatch_queue> * idleCountQueue;
 
 
-- (BOOL)isBusy;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
@@ -45,5 +44,6 @@
 - (void)didIdle;
 - (void)releaseBusy;
 - (void)retainBusy;
+- (BOOL)isBusy;
 
 @end

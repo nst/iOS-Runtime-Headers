@@ -6,11 +6,11 @@
 }
 
 
-- (void)returnKeyPressed:(id)arg1;
 - (void)_layoutForCurrentOrientation;
 - (void)hardwareReturnKeyPressed:(id)arg1;
 - (id)_initWithStyle:(int)arg1 interfaceOrientation:(int)arg2 showsEmergencyCall:(BOOL)arg3;
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;
 - (BOOL)showsEmergencyCallButton;
+- (void)returnKeyPressed:(id)arg1;
 
 @end

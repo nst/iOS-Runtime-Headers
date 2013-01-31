@@ -24,7 +24,6 @@
 @property <AFSpeechDelegate> * speechDelegate;
 @property(readonly) BOOL isRecording;
 
-+ (BOOL)isAvailable;
 + (void)defrost;
 + (BOOL)userDataSyncNeeded;
 + (void)stopMonitoringAvailability;
@@ -34,7 +33,16 @@
 + (void)_reachabilityDidChange:(id)arg1;
 + (BOOL)assistantIsEnabled;
 + (void)initialize;
++ (BOOL)isAvailable;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)init;
+- (void)rollbackRequest;
+- (void)clearContext;
+- (void)cancelRequest;
 - (void)_clearAssistantInfoForAccountWithIdentifier:(id)arg1;
 - (void)_asyncBarrierWithBlock:(id)arg1;
 - (void)_barrier;
@@ -104,19 +112,11 @@
 - (void)_willStartRequest;
 - (void)_clearConnection;
 - (void)_requestStateUpdate;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (id)init;
 - (void)stopSpeechWithOptions:(id)arg1;
 - (void)cancelSpeech;
 - (void)endSession;
 - (float)averagePower;
 - (id)_connection;
-- (void)cancelRequest;
-- (void)rollbackRequest;
-- (void)clearContext;
 - (BOOL)isRecording;
 
 @end

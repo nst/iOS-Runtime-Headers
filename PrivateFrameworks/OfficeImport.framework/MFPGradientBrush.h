@@ -25,8 +25,6 @@
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)init;
-- (id)color;
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (id)endColor;
 - (id)startColor;
 - (void)createShading;
@@ -40,5 +38,7 @@
 - (void)setWrapMode:(int)arg1;
 - (void)setColorBlend:(id)arg1;
 - (void)setBlend:(id)arg1;
+- (id)color;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 
 @end

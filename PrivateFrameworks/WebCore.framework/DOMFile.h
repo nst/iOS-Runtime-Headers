@@ -10,7 +10,7 @@
 @property(readonly) NSString * name;
 
 
-- (id)name;
 - (double)lastModifiedDate;
+- (id)name;
 
 @end

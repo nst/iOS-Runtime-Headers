@@ -25,7 +25,6 @@
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } trafficPrimaryColor;
 
 
-- (id)init;
 - (void)setTrafficPrimaryColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })trafficPrimaryColor;
 - (void)setTextureMappingStepQuantizationScaler:(float)arg1;
@@ -43,5 +42,6 @@
 - (void)setRoadClass:(int)arg1;
 - (id)initMeshOfType:(int)arg1;
 - (int)centerLineMeshType;
+- (id)init;
 
 @end

@@ -12,14 +12,14 @@
 @property(readonly) unsigned int count;
 
 
-- (void)dealloc;
-- (id)init;
-- (unsigned int)count;
-- (struct { float x1; float x2; float x3; float x4; })rectAtIndex:(unsigned int)arg1;
 - (BOOL)intersectsWith:(struct { float x1; float x2; float x3; float x4; })arg1;
 - (void)removeAllRects;
 - (void)removeRect:(struct { float x1; float x2; float x3; float x4; })arg1;
 - (void)addRect:(struct { float x1; float x2; float x3; float x4; })arg1;
 - (void)resizeCapacity:(unsigned int)arg1;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)count;
+- (struct { float x1; float x2; float x3; float x4; })rectAtIndex:(unsigned int)arg1;
 
 @end

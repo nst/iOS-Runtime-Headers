@@ -19,7 +19,7 @@
 - (void)startWithCompletionBlock:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)start;
 - (id)initWithAccount:(id)arg1;
+- (BOOL)start;
 
 @end

@@ -15,9 +15,9 @@
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
 - (id)stringForLabelAtIndex:(unsigned int)arg1;
-- (void)dealloc;
-- (id)init;
 - (void)reloadStringsWithProperties:(id)arg1;
 - (void)configureForMediaLibrary:(id)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

@@ -20,6 +20,7 @@
 
 
 - (void)dealloc;
+- (id)connection;
 - (BOOL)cacheMetadataForTransactionLog:(id)arg1 withImportContext:(id)arg2 error:(id*)arg3;
 - (BOOL)recoverTransactionLogMetadataWithImportContext:(id)arg1 error:(id*)arg2;
 - (BOOL)recoverMetadataWithError:(id*)arg1;
@@ -28,6 +29,5 @@
 - (id)ubiquityRootLocation;
 - (id)localPeerID;
 - (id)store;
-- (id)connection;
 
 @end

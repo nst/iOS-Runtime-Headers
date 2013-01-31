@@ -50,8 +50,6 @@
 
 + (id)contextForSignIn;
 
-- (id)accountName;
-- (id)initWithAccountIdentifier:(id)arg1;
 - (int)accountScope;
 - (id)HTTPHeaders;
 - (id)requestParameters;
@@ -79,8 +77,10 @@
 - (BOOL)isDemoAccount;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithAccount:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)initWithAccountIdentifier:(id)arg1;
+- (id)accountName;
 - (int)promptStyle;
 
 @end

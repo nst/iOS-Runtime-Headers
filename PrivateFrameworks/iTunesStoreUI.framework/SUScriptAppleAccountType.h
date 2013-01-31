@@ -22,8 +22,8 @@
 - (id)nativeAccountType;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (id)identifier;
 - (void)dealloc;
-- (id)attributeKeys;
 
 @end

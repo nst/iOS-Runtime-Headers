@@ -20,9 +20,6 @@
 + (id)tabBarItemTitleKey;
 + (id)tabBarItemIconName;
 
-- (void)dealloc;
-- (id)init;
-- (void)reloadData;
 - (struct CGImage { }*)loadRepresentativeImageAtIndex:(unsigned int)arg1 withTileLength:(float)arg2 completionBlock:(id)arg3;
 - (id)representativeArtistsAtIndex:(unsigned int)arg1;
 - (id)mixNameAtIndex:(unsigned int)arg1;
@@ -37,5 +34,8 @@
 - (void)_artworkCacheDidChangeNotification:(id)arg1;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
 - (SEL)libraryHasDisplayableEntitiesSelector;
+- (void)dealloc;
+- (id)init;
+- (void)reloadData;
 
 @end

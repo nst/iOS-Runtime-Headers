@@ -9,8 +9,8 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)noteOccurrenceOfEvent:(unsigned int)arg1;
 - (void)noteChangeOfState:(unsigned int)arg1 newValue:(BOOL)arg2;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 
 @end

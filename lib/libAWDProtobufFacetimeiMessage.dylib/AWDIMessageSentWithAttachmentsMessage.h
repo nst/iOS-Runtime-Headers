@@ -32,15 +32,6 @@
 @property float sendTime;
 
 
-- (id)guid;
-- (unsigned long long)timestamp;
-- (void)setTimestamp:(unsigned long long)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
 - (void)setHasSendTime:(BOOL)arg1;
 - (float)sendTime;
 - (BOOL)hasSendTime;
@@ -57,9 +48,18 @@
 - (void)setFzError:(unsigned int)arg1;
 - (unsigned int)fzError;
 - (BOOL)hasFzError;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (BOOL)hasTimestamp;
 - (BOOL)hasGuid;
 - (void)setGuid:(id)arg1;
+- (id)guid;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (unsigned long long)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (id)description;
+- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
+- (BOOL)hasTimestamp;
+- (id)dictionaryRepresentation;
 
 @end

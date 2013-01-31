@@ -18,13 +18,13 @@
 
 
 - (void)dealloc;
+- (id)_exclamationGlyphImage;
+- (id)_failPressedImage;
+- (id)_failImage;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)initWithStyle:(int)arg1 buttonHandler:(id)arg2 styleProvider:(id)arg3;
 - (void)setLocationPickerCellAccessoryType:(int)arg1;
 - (int)locationPickerCellAccessoryType;
-- (id)_exclamationGlyphImage;
-- (id)_failPressedImage;
-- (id)_failImage;
 
 @end

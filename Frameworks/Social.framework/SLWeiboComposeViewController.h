@@ -57,12 +57,14 @@
 }
 
 
-- (id)session;
 - (BOOL)addURL:(id)arg1 withPreviewImage:(id)arg2;
 - (BOOL)removeAllURLs;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
+- (void)keyboardWillShow:(id)arg1;
+- (void)_updateVignetteToOrientation:(int)arg1;
+- (id)serviceType;
 - (BOOL)addURL:(id)arg1;
 - (BOOL)addAttachment:(id)arg1;
 - (id)addDownSampledImageDataByProxyWithPreviewImage:(id)arg1;
@@ -101,7 +103,6 @@
 - (id)pickerView:(id)arg1 viewForRow:(int)arg2 forComponent:(int)arg3 reusingView:(id)arg4;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
 - (int)numberOfComponentsInPickerView:(id)arg1;
-- (id)serviceType;
 - (void)accountButtonTapped:(id)arg1;
 - (id)accountEntryWithIdentifier:(id)arg1;
 - (void)showIPhoneAccountsPicker;
@@ -189,7 +190,6 @@
 - (id)accountEntries;
 - (int)indexOfSelectedAccountEntry;
 - (void)setLongitude:(double)arg1 latitude:(double)arg2 name:(id)arg3;
-- (void)keyboardWillShow:(id)arg1;
-- (void)_updateVignetteToOrientation:(int)arg1;
+- (id)session;
 
 @end

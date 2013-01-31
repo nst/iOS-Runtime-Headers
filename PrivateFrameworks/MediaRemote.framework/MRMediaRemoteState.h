@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSData, NSDictionary;
+@class NSArray, NSData, NSDictionary, NSMutableDictionary;
 
 @interface MRMediaRemoteState : NSObject  {
     BOOL _canBeNowPlayingApp;
@@ -15,8 +15,11 @@
   /* Error parsing encoded ivar type info: @? */
     id _commandHandlerBlock;
 
+    NSMutableDictionary *_commandHandlerBlocks;
     BOOL _isOverrideApp;
-    int _notifyLaunchedToken;
+    BOOL _keepAlive;
+    int _notifyRestoreClientStateForLaunch;
+    int _notifyDidLaunchToken;
     NSData *_nowPlayingArtworkData;
     NSDictionary *_nowPlayingInfo;
     unsigned int _routeDiscoveryCount;
@@ -25,24 +28,31 @@
 @property(copy) id commandHandlerBlock;
 @property BOOL canBeNowPlayingApp;
 @property BOOL isOverrideApp;
+@property BOOL keepAlive;
 @property(retain) NSData * nowPlayingArtworkData;
 @property(retain) NSDictionary * nowPlayingInfo;
+@property(readonly) NSArray * commandHandlerBlocks;
 
 
-- (void)setNowPlayingInfo:(id)arg1;
-- (id)nowPlayingInfo;
 - (void)dealloc;
 - (id)init;
+- (BOOL)keepAlive;
 - (BOOL)canBeNowPlayingApp;
 - (void)_avSystemControllerServerConnectionDiedNotification:(id)arg1;
+- (id)commandHandlerBlocks;
 - (id)commandHandlerBlock;
+- (void)setKeepAlive:(BOOL)arg1;
 - (void)endRouteDiscovery;
 - (void)beginRouteDiscovery;
 - (void)setNowPlayingArtworkData:(id)arg1;
 - (id)nowPlayingArtworkData;
 - (void)setIsOverrideApp:(BOOL)arg1;
 - (BOOL)isOverrideApp;
+- (void)removeCommandHandlerBlockForKey:(id)arg1;
+- (void)addCommandHandlerBlock:(id)arg1 forKey:(id)arg2;
 - (void)setCommandHandlerBlock:(id)arg1;
 - (void)setCanBeNowPlayingApp:(BOOL)arg1;
+- (id)nowPlayingInfo;
+- (void)setNowPlayingInfo:(id)arg1;
 
 @end

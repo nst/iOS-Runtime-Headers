@@ -17,6 +17,10 @@
 @property(retain) NSOrderedSet * footerSections;
 
 
+- (id)description;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (void)dealloc;
+- (id)sections;
 - (id)_gkDescriptionWithChildren:(int)arg1;
 - (id)_gkDescription;
 - (void)setSectionDataSources:(id)arg1;
@@ -46,9 +50,5 @@
 - (void)endSectionUpdates;
 - (void)prepareSections;
 - (void)beginSectionUpdates;
-- (id)description;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (void)dealloc;
-- (id)sections;
 
 @end

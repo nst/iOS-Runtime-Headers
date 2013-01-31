@@ -9,9 +9,9 @@
 @property BOOL contentOffsetLocked;
 
 
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)contentOffsetLocked;
 - (void)setContentOffsetLocked:(BOOL)arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

@@ -18,7 +18,6 @@
 + (BOOL)isStroked:(id)arg1;
 
 - (id)init;
-- (id)styleString;
 - (void)setFromOadStroke:(id)arg1 atLocation:(int)arg2 state:(id)arg3;
 - (void)setNoneAtLocation:(int)arg1;
 - (BOOL)isNoneAtLocation:(int)arg1;
@@ -31,5 +30,6 @@
 - (void)adjustValues;
 - (id)initWithOADStroke:(id)arg1;
 - (id)cssStringForName:(id)arg1;
+- (id)styleString;
 
 @end

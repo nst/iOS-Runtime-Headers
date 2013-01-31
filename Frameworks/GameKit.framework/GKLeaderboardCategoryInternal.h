@@ -26,6 +26,11 @@
 
 + (id)codedPropertyKeys;
 
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)icons;
+- (void)setIcons:(id)arg1;
 - (void)setFriendCount:(unsigned int)arg1;
 - (void)setRankAmongFriends:(unsigned int)arg1;
 - (void)setOverallRankCount:(unsigned int)arg1;
@@ -40,10 +45,5 @@
 - (id)categoryID;
 - (void)setCategoryID:(id)arg1;
 - (unsigned int)rankAmongFriends;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)icons;
-- (void)setIcons:(id)arg1;
 
 @end

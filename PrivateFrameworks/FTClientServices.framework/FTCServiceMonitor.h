@@ -11,13 +11,13 @@
 @property(readonly) int serviceType;
 
 
-- (id)initWithServiceType:(int)arg1;
 - (void)dealloc;
+- (int)serviceType;
 - (void)handleActiveAccountsChanged:(id)arg1;
 - (void)_postAvailability:(int)arg1;
 - (void)_updateAvailability;
 - (int)serviceAvailability;
-- (int)serviceType;
+- (id)initWithServiceType:(int)arg1;
 - (void)updateAvailability;
 
 @end

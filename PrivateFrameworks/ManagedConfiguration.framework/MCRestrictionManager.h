@@ -22,6 +22,7 @@
 
 @property int senderPID;
 
++ (id)sharedManager;
 + (BOOL)_isDictionary:(id)arg1 differentFromDictionary:(id)arg2;
 + (BOOL)valueSetting:(id)arg1 valueChangedBetweenOldSettings:(id)arg2 andNewSettings:(id)arg3;
 + (BOOL)boolSetting:(id)arg1 valueChangedBetweenOldSettings:(id)arg2 andNewSettings:(id)arg3;
@@ -41,7 +42,6 @@
 + (BOOL)restrictedBool:(id)arg1 changedBetweenOldRestrictions:(id)arg2 andNewRestrictions:(id)arg3;
 + (id)valueForFeature:(id)arg1 withRestrictionsDictionary:(id)arg2;
 + (int)restrictedBoolForFeature:(id)arg1 withRestrictionsDictionary:(id)arg2;
-+ (id)sharedManager;
 
 - (id)description;
 - (void).cxx_destruct;
@@ -98,10 +98,10 @@
 - (id)currentRestrictionsDictionary;
 - (void)notifyClientsToRecomputeCompliance;
 - (BOOL)recomputeNagMetadata;
-- (id)_init;
 - (void)invalidateSettings;
 - (void)invalidateRestrictions;
 - (void)setUserInfo:(id)arg1 forClientUUID:(id)arg2;
 - (id)userInfoForClientUUID:(id)arg1;
+- (id)_init;
 
 @end

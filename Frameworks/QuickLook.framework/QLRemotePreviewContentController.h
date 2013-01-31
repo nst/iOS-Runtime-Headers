@@ -23,6 +23,25 @@
 @property int previewMode;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (int)previewMode;
+- (void)setPreviewMode:(int)arg1;
+- (int)currentPreviewItemIndex;
+- (void)refreshCurrentPreviewItem;
+- (void)setCurrentPreviewItemIndex:(int)arg1;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)viewServiceDidTerminateWithError:(id)arg1;
+- (id)printPageRenderer;
+- (void)setBlockRemoteImages:(BOOL)arg1;
+- (id)previewController;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)dataSource;
+- (void)reloadData;
+- (void)setDataSource:(id)arg1;
 - (void)setNumberOfPreviewItems:(int)arg1;
 - (void)_didExitFullScreen;
 - (void)_willEnterFullScreenWithContext:(id)arg1;
@@ -56,24 +75,5 @@
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
 - (void)enterBackground;
 - (void)setLoadintTextForMissingFiles:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
-- (void)viewServiceDidTerminateWithError:(id)arg1;
-- (id)printPageRenderer;
-- (void)setBlockRemoteImages:(BOOL)arg1;
-- (id)previewController;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)dataSource;
-- (void)reloadData;
-- (void)setDataSource:(id)arg1;
-- (int)currentPreviewItemIndex;
-- (void)refreshCurrentPreviewItem;
-- (void)setCurrentPreviewItemIndex:(int)arg1;
-- (int)previewMode;
-- (void)setPreviewMode:(int)arg1;
 
 @end

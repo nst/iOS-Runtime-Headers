@@ -33,11 +33,11 @@
 - (id)delegate;
 - (id)debugDescription;
 - (void).cxx_destruct;
-- (void)start;
+- (id)listener;
 - (void)setWorkQueue:(id)arg1;
 - (void)shutDownCompletionBlock:(id)arg1;
 - (id)workQueue;
+- (void)start;
 - (id)serviceName;
-- (id)listener;
 
 @end

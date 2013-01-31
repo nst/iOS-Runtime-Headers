@@ -7,7 +7,7 @@
 }
 
 
-- (id)initWithPixelBuffer:(struct __CVBuffer { }*)arg1;
 - (void)dealloc;
+- (id)initWithPixelBuffer:(struct __CVBuffer { }*)arg1;
 
 @end

@@ -13,12 +13,12 @@
 @property(retain) NSString * address;
 
 
-- (void)setAddress:(id)arg1;
-- (id)address;
 - (id)description;
 - (unsigned long)hash;
 - (void)dealloc;
 - (BOOL)isEqualToEmail:(id)arg1;
+- (void)setAddress:(id)arg1;
+- (id)address;
 - (id)initWithAddress:(id)arg1;
 
 @end

@@ -144,21 +144,20 @@
 @property unsigned int entryPointMask;
 
 
-- (int)type;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (float)endOffset;
-- (id)dictionaryRepresentation;
-- (float)startOffset;
-- (void)setType:(int)arg1;
 - (BOOL)hasBusinessID;
 - (unsigned long long)businessID;
 - (int)roadClass;
 - (void)setRoadClass:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (int)type;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)hasType;
+- (BOOL)readFrom:(id)arg1;
+- (int)sectionCount;
 - (id)styleAttributes;
 - (void)setHasEntryPointMask:(BOOL)arg1;
 - (void)setHasEndRoadOffset:(BOOL)arg1;
@@ -282,8 +281,9 @@
 - (long long)uID;
 - (BOOL)hasUID;
 - (void)setHasType:(BOOL)arg1;
-- (BOOL)hasType;
-- (BOOL)readFrom:(id)arg1;
-- (int)sectionCount;
+- (float)endOffset;
+- (id)dictionaryRepresentation;
+- (float)startOffset;
+- (void)setType:(int)arg1;
 
 @end

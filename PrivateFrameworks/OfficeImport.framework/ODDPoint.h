@@ -16,10 +16,10 @@
 - (int)type;
 - (void)dealloc;
 - (id)init;
+- (id)propertySet;
+- (id)shapeProperties;
 - (id)text;
 - (void)setType:(int)arg1;
 - (void)setText:(id)arg1;
-- (id)propertySet;
-- (id)shapeProperties;
 
 @end

@@ -11,11 +11,6 @@
 }
 
 
-- (void)dealloc;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setContext:(id)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)_delayedDeleteAction:(id)arg1;
 - (void)_confirmDeletePlaylist;
 - (void)_delayedEditAction:(id)arg1;
@@ -31,5 +26,10 @@
 - (void)mediaActionButtonsCell:(id)arg1 clickedButtonAtIndex:(unsigned int)arg2;
 - (BOOL)hasSearchBar;
 - (void)reloadActionRows;
+- (void)dealloc;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setContext:(id)arg1;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 
 @end

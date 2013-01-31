@@ -40,10 +40,10 @@
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })range;
 - (id)breakAtLength:(unsigned long)arg1;
 - (BOOL)isSubmap;
 - (id)descriptionWithOptions:(unsigned int)arg1 maximumLength:(unsigned int)arg2;
 - (unsigned int)protection;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })range;
 
 @end

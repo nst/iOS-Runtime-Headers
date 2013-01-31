@@ -6,10 +6,10 @@
 
 @interface PLActivity : UIActivity  {
     int _mode;
-    int _status;
-    NSArray *_assetsToShare;
-    int _interfaceIdiom;
     BOOL _needsActivityViewControllerDismissed;
+    int _interfaceIdiom;
+    NSArray *_assetsToShare;
+    int _status;
 }
 
 @property int status;
@@ -20,18 +20,18 @@
 
 
 - (void)dealloc;
+- (void)setInterfaceIdiom:(int)arg1;
+- (void)setNeedsActivityViewControllerDismissed:(BOOL)arg1;
+- (id)assetsToShare;
+- (void)setAssetsToShare:(id)arg1;
+- (BOOL)needsActivityViewControllerDismissed;
+- (id)initForMode:(int)arg1 interfaceIdiom:(int)arg2;
+- (int)interfaceIdiom;
 - (void)setStatus:(int)arg1;
 - (int)status;
 - (BOOL)_canPerformWithSuppliedActivityItems:(id)arg1;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
 - (int)mode;
 - (void)setMode:(int)arg1;
-- (void)setNeedsActivityViewControllerDismissed:(BOOL)arg1;
-- (void)setInterfaceIdiom:(int)arg1;
-- (id)assetsToShare;
-- (void)setAssetsToShare:(id)arg1;
-- (BOOL)needsActivityViewControllerDismissed;
-- (id)initForMode:(int)arg1 interfaceIdiom:(int)arg2;
-- (int)interfaceIdiom;
 
 @end

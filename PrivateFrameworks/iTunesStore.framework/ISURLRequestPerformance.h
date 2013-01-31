@@ -28,11 +28,11 @@
 - (id)URLResponse;
 - (double)renderEndInterval;
 - (void)setRenderFinishTime:(double)arg1;
-- (void)dealloc;
-- (double)startTime;
-- (void)setStartTime:(double)arg1;
-- (void)setURLResponse:(id)arg1;
 - (void)setReceivedResponseTime:(double)arg1;
 - (void)setFinishTime:(double)arg1;
+- (void)dealloc;
+- (void)setURLResponse:(id)arg1;
+- (double)startTime;
+- (void)setStartTime:(double)arg1;
 
 @end

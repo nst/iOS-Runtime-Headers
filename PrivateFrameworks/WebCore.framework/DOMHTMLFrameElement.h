@@ -22,12 +22,6 @@
 @property(readonly) int height;
 
 
-- (void)setName:(id)arg1;
-- (id)name;
-- (int)height;
-- (int)structuralComplexityContribution;
-- (id)location;
-- (int)width;
 - (void)setLocation:(id)arg1;
 - (id)contentWindow;
 - (id)contentDocument;
@@ -45,6 +39,12 @@
 - (id)frameBorder;
 - (void)setSrc:(id)arg1;
 - (id)src;
+- (void)setName:(id)arg1;
+- (id)name;
+- (int)height;
+- (int)structuralComplexityContribution;
+- (id)location;
+- (int)width;
 - (id)contentFrame;
 
 @end

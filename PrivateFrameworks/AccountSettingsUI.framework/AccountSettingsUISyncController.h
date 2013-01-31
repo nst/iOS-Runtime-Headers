@@ -46,15 +46,20 @@
 + (BOOL)_doesSyncedDataExistForDataclass:(id)arg1;
 + (BOOL)shouldPresentAsModalSheet;
 
-- (id)specifiers;
 - (id)accountIdentifier;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)newAccount;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)viewDidLoad;
+- (BOOL)isEnabledForDataclass:(id)arg1;
+- (void)doneButtonClicked:(id)arg1;
+- (void)cancelButtonClicked:(id)arg1;
+- (void)setAccount:(id)arg1;
+- (void)setEnabled:(BOOL)arg1 forDataclass:(id)arg2;
+- (id)displayedShortAccountTypeString;
+- (id)displayedAccountTypeString;
+- (id)account;
+- (id)specifiers;
 - (BOOL)didFinishFirstSetup;
 - (void)preconditionMetToDisableDataclass:(id)arg1;
 - (void)preconditionNotMetToEnableDataclass:(id)arg1;
@@ -148,7 +153,6 @@
 - (void)forceMailSetup;
 - (id)preEnabledDataclasses;
 - (void)setPreEnabledDataclasses:(id)arg1;
-- (id)_viewForSheet;
 - (void)confirmationView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)backgroundDeleteAccountData;
 - (Class)accountInfoControllerClass;
@@ -161,13 +165,9 @@
 - (void)cancelAccountsCreation;
 - (void)createAccounts;
 - (void)deleteAccount;
-- (BOOL)isEnabledForDataclass:(id)arg1;
-- (void)setAccount:(id)arg1;
-- (void)setEnabled:(BOOL)arg1 forDataclass:(id)arg2;
-- (id)displayedShortAccountTypeString;
-- (id)displayedAccountTypeString;
-- (id)account;
-- (void)doneButtonClicked:(id)arg1;
-- (void)cancelButtonClicked:(id)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)viewDidLoad;
+- (id)_viewForSheet;
 
 @end

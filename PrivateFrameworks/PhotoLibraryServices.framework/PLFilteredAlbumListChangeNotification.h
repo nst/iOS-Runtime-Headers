@@ -21,7 +21,6 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)object;
 - (id)initWithFilteredAlbumList:(id)arg1 albumListChangeNotification:(id)arg2;
 - (void)setFilteredIndexes:(id)arg1;
 - (BOOL)countDidChange;
@@ -34,5 +33,6 @@
 - (id)indexMapper;
 - (BOOL)shouldIncludeObjectAtIndex:(unsigned int)arg1;
 - (id)filteredIndexes;
+- (id)object;
 
 @end

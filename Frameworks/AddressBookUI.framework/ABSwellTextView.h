@@ -32,6 +32,8 @@
 
 + (float)lineHeightWithFont:(id)arg1;
 
+- (void)setMaxHeight:(float)arg1;
+- (float)maxHeight;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
@@ -73,8 +75,6 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setMaxHeight:(float)arg1;
-- (float)maxHeight;
 - (void)setKeyboardSettings:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSelection;
 - (float)abUITextView:(id)arg1 heightForContentSize:(struct CGSize { float x1; float x2; })arg2;

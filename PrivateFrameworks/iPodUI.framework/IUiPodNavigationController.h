@@ -15,6 +15,11 @@
 @property int style;
 
 
+- (void)_updateViewControllersModalContext;
+- (void)updateStyleAnimated:(BOOL)arg1;
+- (void)setModalContext:(id)arg1;
+- (id)rootIdentifier;
+- (id)modalContext;
 - (id)description;
 - (void)dealloc;
 - (id)popToRootViewControllerAnimated:(BOOL)arg1;
@@ -28,10 +33,5 @@
 - (BOOL)navigationBar:(id)arg1 shouldPushItem:(id)arg2;
 - (void)setStyle:(int)arg1;
 - (void)setTitle:(id)arg1;
-- (void)_updateViewControllersModalContext;
-- (void)updateStyleAnimated:(BOOL)arg1;
-- (void)setModalContext:(id)arg1;
-- (id)rootIdentifier;
-- (id)modalContext;
 
 @end

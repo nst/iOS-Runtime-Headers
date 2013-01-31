@@ -21,10 +21,10 @@
 - (id)name;
 - (id)data;
 - (void)dealloc;
+- (id)onDiskPath;
+- (void)setOnDiskPath:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (void)setData:(id)arg1;
-- (id)onDiskPath;
-- (void)setOnDiskPath:(id)arg1;
 
 @end

@@ -16,13 +16,13 @@
 + (id)speechPacketWithDictionary:(id)arg1 context:(id)arg2;
 + (id)speechPacket;
 
-- (id)groupIdentifier;
 - (id)data;
-- (void)setData:(id)arg1;
 - (void)setPackets:(id)arg1;
 - (id)packets;
 - (void)setPacketNumber:(int)arg1;
 - (int)packetNumber;
 - (id)encodedClassName;
+- (void)setData:(id)arg1;
+- (id)groupIdentifier;
 
 @end

@@ -21,6 +21,8 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (id)getCurrentContext;
+- (BOOL)allowContextProvider:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
@@ -42,11 +44,9 @@
 - (void)editor:(id)arg1 didCompleteWithAction:(int)arg2;
 - (void)editor:(id)arg1 didChangeHeightAnimated:(BOOL)arg2;
 - (void)setEventStore:(id)arg1;
-- (id)getCurrentContext;
-- (BOOL)allowContextProvider:(id)arg1;
+- (id)eventStore;
 - (id)viewForActionSheet;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (id)eventStore;
 
 @end

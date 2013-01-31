@@ -173,12 +173,6 @@
 
 - (id).cxx_construct;
 - (void)dealloc;
-- (void)setColumnCount:(unsigned short)arg1;
-- (unsigned short)columnCount;
-- (id)initWithDocument:(id)arg1;
-- (id)document;
-- (void)setRightMargin:(unsigned long)arg1;
-- (id)text;
 - (BOOL)isLastColumnWidthDefined;
 - (BOOL)isPageScaleOverridden;
 - (unsigned long)pageScale;
@@ -297,5 +291,11 @@
 - (unsigned long)topMargin;
 - (unsigned long)rightMargin;
 - (unsigned long)leftMargin;
+- (void)setColumnCount:(unsigned short)arg1;
+- (unsigned short)columnCount;
+- (id)initWithDocument:(id)arg1;
+- (id)document;
+- (void)setRightMargin:(unsigned long)arg1;
+- (id)text;
 
 @end

@@ -25,6 +25,7 @@
 + (id)forceField;
 + (id)defaultValueForKey:(id)arg1;
 
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setName:(id)arg1;
 - (id)name;
@@ -32,7 +33,6 @@
 - (id)valueForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)function;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)valueForKeyPath:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
@@ -43,6 +43,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setFunction:(id)arg1;
-- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (id)function;
 
 @end

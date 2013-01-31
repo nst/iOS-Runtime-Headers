@@ -14,6 +14,9 @@
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)release;
++ (int)version;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (void)initialize;
 + (Class)classForStore:(id)arg1;
 + (unsigned int)allocateBatch:(id*)arg1 forEntity:(id)arg2 count:(unsigned int)arg3;
 + (id)initWithEntity:(id)arg1;
@@ -23,9 +26,6 @@
 + (void)_release_1;
 + (id)_retain_1;
 + (BOOL)accessInstanceVariablesDirectly;
-+ (int)version;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (void)initialize;
 
 - (id)entity;
 - (unsigned int)retainCount;
@@ -34,6 +34,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (void)release;
+- (void)finalize;
 - (id)initWithEntity:(id)arg1;
 - (id)URIRepresentation;
 - (BOOL)_isPersistentStoreAlive;
@@ -44,6 +45,5 @@
 - (id)_retainedURIString;
 - (BOOL)isTemporaryID;
 - (id)persistentStore;
-- (void)finalize;
 
 @end

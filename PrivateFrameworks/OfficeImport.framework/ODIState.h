@@ -30,9 +30,6 @@
 
 - (id).cxx_construct;
 - (void)dealloc;
-- (id)group;
-- (void)setGroup:(id)arg1;
-- (float)scale;
 - (void)setDefaultStyleLabelName:(id)arg1 forPointType:(int)arg2;
 - (id)defaultStyleLabelNameForPointType:(int)arg1;
 - (int)pointIndex;
@@ -50,5 +47,8 @@
 - (int)pointCount;
 - (id)diagram;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })logicalBounds;
+- (id)group;
+- (void)setGroup:(id)arg1;
+- (float)scale;
 
 @end

@@ -28,19 +28,19 @@
 
 - (void)invalidate;
 - (void)dealloc;
+- (id)archiveData;
+- (void)finalize;
+- (BOOL)isValid;
+- (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (id)archiveStream;
 - (id)propertiesForEntryName:(id)arg1;
 - (BOOL)writeContentsForEntryName:(id)arg1 toFile:(id)arg2 options:(unsigned int)arg3 error:(id*)arg4;
 - (id)streamForEntryName:(id)arg1;
+- (id)entryNames;
 - (id)initWithEntryNames:(id)arg1 dataProvider:(id)arg2 options:(unsigned int)arg3;
 - (id)initWithData:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (id)initWithEntryNames:(id)arg1 contents:(id)arg2 properties:(id)arg3 options:(unsigned int)arg4;
 - (id)contentsForEntryName:(id)arg1;
 - (id)initWithPath:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (id)archiveData;
-- (void)finalize;
-- (BOOL)isValid;
-- (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (id)entryNames;
 
 @end

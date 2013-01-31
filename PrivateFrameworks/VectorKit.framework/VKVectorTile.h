@@ -36,11 +36,6 @@
 @property(readonly) VKMapTileList * fragments;
 
 
-- (void)setStylesheet:(id)arg1;
-- (void)dealloc;
-- (id)stylesheet;
-- (void)setAlpha:(float)arg1;
-- (float)alpha;
 - (double)maxHeight;
 - (void)setTextureScale:(float)arg1;
 - (float)textureScale;
@@ -50,7 +45,6 @@
 - (id)coastlineGroups;
 - (id)polygonGroups;
 - (id)roadGroups;
-- (id)trafficTile;
 - (int)vectorType;
 - (void)generateBuildingFootprintMeshWithFacades:(BOOL)arg1;
 - (void)buildPolygons;
@@ -64,7 +58,13 @@
 - (float)maximumStyleZ;
 - (id)fragments;
 - (void)setVectorType:(int)arg1;
+- (id)trafficTile;
 - (unsigned int)geometryCount;
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
+- (void)dealloc;
+- (id)stylesheet;
+- (void)setAlpha:(float)arg1;
+- (float)alpha;
+- (void)setStylesheet:(id)arg1;
 
 @end

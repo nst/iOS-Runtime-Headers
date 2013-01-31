@@ -16,12 +16,9 @@
 }
 
 
+- (void)setDraggable:(BOOL)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)addItem:(id)arg1;
-- (id)items;
-- (void)setTitle:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)clearAllItems;
 - (void)setName:(id)arg1 forItemWithObject:(id)arg2;
 - (id)addItemWithTitle:(id)arg1 withObject:(id)arg2;
@@ -31,7 +28,10 @@
 - (void)selectLayer:(id)arg1;
 - (void)refreshItems;
 - (BOOL)handleEvent:(struct __GSEvent { }*)arg1 inLayer:(id)arg2;
-- (void)setDraggable:(BOOL)arg1;
 - (void)setDrawsBorder:(BOOL)arg1;
+- (void)addItem:(id)arg1;
+- (id)items;
+- (void)setTitle:(id)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

@@ -47,9 +47,6 @@
 @property float strokeWidth;
 
 
-- (void)dealloc;
-- (void)setFillColor:(id)arg1;
-- (id)fillColor;
 - (void)setMinRadius:(float)arg1;
 - (float)minRadius;
 - (void)_createStrokeMeshWithTriangleCount:(int)arg1 context:(id)arg2;
@@ -57,11 +54,14 @@
 - (double)distanceRadius;
 - (void)layoutWithContext:(id)arg1;
 - (void)drawWithContext:(id)arg1;
+- (void)dealloc;
 - (void)setStrokeWidth:(float)arg1;
 - (float)radius;
 - (void)setRadius:(float)arg1;
 - (float)strokeWidth;
 - (id)strokeColor;
 - (void)setStrokeColor:(id)arg1;
+- (void)setFillColor:(id)arg1;
+- (id)fillColor;
 
 @end

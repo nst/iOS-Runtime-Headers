@@ -11,10 +11,10 @@
 
 + (id)sharedManager;
 
+- (void)dealloc;
+- (id)init;
 - (void)sendStateUpdate;
 - (void)getMISState:(int*)arg1 andReason:(int*)arg2;
 - (void)readMISState:(int*)arg1 andReason:(int*)arg2;
-- (void)dealloc;
-- (id)init;
 
 @end

@@ -19,16 +19,12 @@
 @property int buttonBarStyle;
 @property int buttonBarMode;
 
-+ (float)defaultHeight;
-+ (id)backgroundImage;
 + (id)backgroundImageForButtonBarStyle:(int)arg1;
 + (float)buttonBarHeightForTallScreen:(BOOL)arg1;
++ (float)defaultHeight;
++ (id)backgroundImage;
 
 - (void)dealloc;
-- (id)toggleButton;
-- (void)setToggleButton:(id)arg1;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setButtonBarMode:(int)arg1;
 - (int)buttonBarMode;
 - (void)setCameraButton:(id)arg1;
@@ -41,5 +37,9 @@
 - (int)buttonBarStyle;
 - (void)setButtonBarStyle:(int)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 buttonBarStyle:(int)arg2;
+- (id)toggleButton;
+- (void)setToggleButton:(id)arg1;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

@@ -11,8 +11,8 @@
 }
 
 
-- (void)dealloc;
 - (unsigned short)separator;
+- (void)dealloc;
 - (void)addFormat:(id)arg1 locale:(struct __CFLocale { }*)arg2;
 - (id)initWithSeparator:(unsigned short)arg1;
 - (struct __CFDate { }*)createDateFromString:(struct __CFString { }*)arg1 forceAllowAMPM:(BOOL)arg2 succesTSUlFormatString:(const struct __CFString {}**)arg3;

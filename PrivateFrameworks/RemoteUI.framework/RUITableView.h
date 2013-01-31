@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class UITableView, UIDatePicker, RUITableViewRow, NSMutableArray, UIPickerView;
+@class UITableView, UIDatePicker, RUITableViewRow, RUIObjectModel, NSMutableArray, UIPickerView;
 
 @interface RUITableView : RUIElement <UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate> {
     NSMutableArray *_sections;
@@ -13,7 +13,7 @@
     BOOL _showDatePicker;
     RUITableViewRow *_defaultFirstResponderRow;
     BOOL _viewShrunk;
-    id _delegate;
+    RUIObjectModel *_objectModel;
     BOOL _registeredForNotifications;
     float _lastLayoutWidth;
     float _fullscreenCellHeight;
@@ -23,10 +23,10 @@
 @property(getter=isShowingPicker,readonly) BOOL showingPicker;
 @property(readonly) NSMutableArray * sections;
 @property(retain) RUITableViewRow * defaultFirstResponderRow;
+@property RUIObjectModel * objectModel;
 
 
 - (void)_textChanged:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)sectionActivatedButton:(id)arg1 attributes:(id)arg2;
@@ -49,7 +49,10 @@
 - (id)objectModelRowForIndexPath:(id)arg1;
 - (void)viewDidLayout;
 - (void)populatePostbackDictionary:(id)arg1;
+- (void)setObjectModel:(id)arg1;
+- (id)objectModel;
 - (BOOL)isShowingPicker;
+- (void)automaticKeyboardDidShow:(id)arg1;
 - (id)sections;
 - (void)setAttributes:(id)arg1;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
@@ -73,6 +76,5 @@
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)automaticKeyboardDidShow:(id)arg1;
 
 @end

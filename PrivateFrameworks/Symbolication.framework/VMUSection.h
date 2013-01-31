@@ -19,11 +19,9 @@
 }
 
 
+- (unsigned int)align;
 - (id)description;
 - (void)dealloc;
-- (unsigned int)flags;
-- (unsigned int)offset;
-- (unsigned long long)size;
 - (unsigned int)reserved2;
 - (unsigned int)reserved1;
 - (unsigned int)nreloc;
@@ -33,6 +31,8 @@
 - (id)sectionName;
 - (id)segmentName;
 - (unsigned long long)addr;
-- (unsigned int)align;
+- (unsigned int)flags;
+- (unsigned int)offset;
+- (unsigned long long)size;
 
 @end

@@ -14,7 +14,6 @@
 + (id)defaultProperties;
 
 - (void)dealloc;
-- (id)fill;
 - (id)shape3D;
 - (id)scene3D;
 - (BOOL)hasShape3D;
@@ -27,5 +26,6 @@
 - (id)effects;
 - (BOOL)hasFill;
 - (void)setFill:(id)arg1;
+- (id)fill;
 
 @end

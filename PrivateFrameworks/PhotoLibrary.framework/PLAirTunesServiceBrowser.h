@@ -17,7 +17,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)_invalidate;
 - (void)_refresh;
 - (BOOL)searchForAirTunesServers;
 - (void)_didRemoveService:(id)arg1 moreComing:(BOOL)arg2;
@@ -25,5 +24,6 @@
 - (void)_netServiceResolutionDidChange:(id)arg1;
 - (id)availableAirTunesServices;
 - (void)setSearchForAirTunesServers:(BOOL)arg1;
+- (void)_invalidate;
 
 @end

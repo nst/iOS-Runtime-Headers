@@ -39,9 +39,18 @@
 
 + (id)defaultLabelsForProperty:(int)arg1 person:(void*)arg2 addressBook:(void*)arg3;
 
-- (id)messageFont;
 - (void)dealloc;
 - (id)init;
+- (void*)addressBook;
+- (void*)displayedPerson;
+- (void)setAllowsAddingToAddressBook:(BOOL)arg1;
+- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2;
+- (void)setAllowsActions:(BOOL)arg1;
+- (void)setDisplayedPerson:(void*)arg1;
+- (void)setDisplayedProperties:(id)arg1;
+- (id)initWithVCardData:(id)arg1;
+- (void)setUnknownPersonViewDelegate:(id)arg1;
+- (void)setPrimaryProperty:(int)arg1;
 - (void)updateNavigationButtons;
 - (id)message;
 - (void)dismissAnimated:(BOOL)arg1;
@@ -68,10 +77,8 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (id)initWithVCardData:(id)arg1;
-- (void)setUnknownPersonViewDelegate:(id)arg1;
-- (void)setPrimaryProperty:(int)arg1;
-- (void*)addressBook;
+- (id)messageFont;
+- (void)setAddressBook:(void*)arg1;
 - (void)setCustomAppearanceProvider:(id)arg1;
 - (BOOL)hasActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 property:(int)arg4 actionGrouping:(int)arg5 ordering:(int)arg6;
 - (void)addActionWithTitle:(id)arg1 content:(id)arg2 target:(id)arg3 selector:(SEL)arg4 forProperty:(int)arg5 withActionGrouping:(int)arg6 ordering:(int)arg7;
@@ -168,14 +175,7 @@
 - (id)displayedProperties;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (void*)displayedPerson;
-- (void)setAllowsAddingToAddressBook:(BOOL)arg1;
-- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2;
-- (void)setAllowsActions:(BOOL)arg1;
-- (void)setDisplayedPerson:(void*)arg1;
-- (void)setDisplayedProperties:(id)arg1;
 - (id)alternateName;
-- (void)setAddressBook:(void*)arg1;
 - (id)_mf_initWithEmailAddress:(id)arg1;
 
 @end

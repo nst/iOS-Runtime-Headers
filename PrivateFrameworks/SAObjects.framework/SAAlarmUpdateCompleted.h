@@ -14,9 +14,9 @@
 + (id)updateCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)updateCompleted;
 
-- (id)groupIdentifier;
 - (void)setAlarmId:(id)arg1;
 - (id)alarmId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

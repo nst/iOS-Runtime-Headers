@@ -28,13 +28,6 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)calendarIdentifier;
-- (id)calendar;
-- (void)setCalendar:(id)arg1;
-- (unsigned int)repeatInterval;
-- (void)setRepeatInterval:(unsigned int)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)nextTransitionDateAfterDate:(id)arg1;
 - (id)initWithStartComponents:(id)arg1 endComponents:(id)arg2 calendarIdentifier:(id)arg3 repeatInterval:(unsigned int)arg4;
 - (BOOL)containsDate:(id)arg1;
@@ -45,5 +38,12 @@
 - (void)setCalendarIdentifier:(id)arg1;
 - (void)setEndComponents:(id)arg1;
 - (void)setStartComponents:(id)arg1;
+- (id)calendarIdentifier;
+- (id)calendar;
+- (void)setCalendar:(id)arg1;
+- (unsigned int)repeatInterval;
+- (void)setRepeatInterval:(unsigned int)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

@@ -33,8 +33,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)isEnabledForNetworkType:(int)arg1;
 - (BOOL)matchesDownloadPolicy:(id)arg1;
 - (id)availableDownloadPolicyIfDifferentFromActive:(id)arg1;
@@ -61,5 +59,7 @@
 - (BOOL)isEnabledFor3G;
 - (BOOL)isEnabledFor2G;
 - (BOOL)isEnabledForWifi;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

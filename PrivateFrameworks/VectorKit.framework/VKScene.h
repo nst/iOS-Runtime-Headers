@@ -19,9 +19,6 @@
 @property(retain) GEOTileKeyList * debugKeyList;
 
 
-- (void)reset;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (BOOL)mapIsOpaque;
 - (BOOL)fullyLoaded;
 - (void)forEachLabelFeatureOfType:(unsigned int)arg1 visitor:(id)arg2;
@@ -33,5 +30,8 @@
 - (void)setFullyLoaded:(BOOL)arg1;
 - (void)setTilesToRender:(id)arg1;
 - (id)tilesToRender;
+- (void)reset;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

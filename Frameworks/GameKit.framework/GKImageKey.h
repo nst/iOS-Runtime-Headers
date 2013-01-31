@@ -24,14 +24,14 @@
 + (id)keyForImageIdentifier:(id)arg1 withImageSource:(id)arg2;
 + (id)fileNameWithIdentifierInImageSource:(id)arg1;
 
-- (id)imageID;
-- (id)basename;
-- (void)setImageID:(id)arg1;
-- (void)setBasename:(id)arg1;
 - (void)dealloc;
 - (id)filePath;
 - (id)cacheKey;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })size;
+- (id)imageID;
+- (id)basename;
+- (void)setImageID:(id)arg1;
+- (void)setBasename:(id)arg1;
 
 @end

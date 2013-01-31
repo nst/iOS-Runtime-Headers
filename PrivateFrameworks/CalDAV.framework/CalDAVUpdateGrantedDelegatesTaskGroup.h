@@ -23,7 +23,10 @@
 
 - (int)state;
 - (void)dealloc;
-- (void)setState:(int)arg1;
+- (void)_finishWithError:(id)arg1 state:(int)arg2;
+- (void)propPatchTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
+- (void)taskGroup:(id)arg1 didFinishWithError:(id)arg2;
+- (void)startTaskGroup;
 - (id)initWithAccountInfoProvider:(id)arg1 addWriteURLs:(id)arg2 addReadURLs:(id)arg3 removeURLs:(id)arg4 taskManager:(id)arg5;
 - (void)_updateDelegatesWithAllowWrite:(BOOL)arg1;
 - (void)_populateUpdatesFromFetched:(id)arg1 allowWrite:(BOOL)arg2;
@@ -38,9 +41,6 @@
 - (void)setRemoveURLs:(id)arg1;
 - (void)setAddReadURLs:(id)arg1;
 - (void)setAddWriteURLs:(id)arg1;
-- (void)_finishWithError:(id)arg1 state:(int)arg2;
-- (void)propPatchTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
-- (void)taskGroup:(id)arg1 didFinishWithError:(id)arg2;
-- (void)startTaskGroup;
+- (void)setState:(int)arg1;
 
 @end

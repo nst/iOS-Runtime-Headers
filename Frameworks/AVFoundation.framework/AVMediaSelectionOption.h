@@ -19,20 +19,20 @@
 
 + (id)mediaSelectionOptionForAsset:(id)arg1 group:(id)arg2 dictionary:(id)arg3 hasUnderlyingTrack:(BOOL)arg4;
 
-- (BOOL)isPlayable;
-- (id)mediaSubTypes;
-- (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
-- (BOOL)hasMediaCharacteristic:(id)arg1;
 - (id)dictionary;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)commonMetadata;
 - (id)mediaType;
 - (id)locale;
 - (id)group;
 - (id)_title;
-- (id)commonMetadata;
+- (BOOL)isPlayable;
+- (id)mediaSubTypes;
+- (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
+- (BOOL)hasMediaCharacteristic:(id)arg1;
 - (id)propertyList;
 - (BOOL)_isDesignatedDefault;
 - (id)_ancillaryDescription;

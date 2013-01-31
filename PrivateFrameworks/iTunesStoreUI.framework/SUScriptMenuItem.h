@@ -20,6 +20,7 @@
 - (void)_sendDidChange;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (id)userInfo;
 - (void)dealloc;
 - (id)init;
@@ -28,6 +29,5 @@
 - (id)title;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
-- (id)attributeKeys;
 
 @end

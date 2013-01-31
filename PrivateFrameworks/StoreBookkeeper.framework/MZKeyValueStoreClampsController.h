@@ -29,6 +29,10 @@
 
 + (id)sharedClampsController;
 
+- (void)reset;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (void)setNextUserCancelBackOffInterval:(double)arg1;
 - (double)nextUserCancelBackOffInterval;
 - (void)setNetworkingBlocked;
@@ -73,10 +77,6 @@
 - (void)setPendingUserDefaultArchivedData:(id)arg1;
 - (id)pendingUserDefaultArchivedData;
 - (void)setTransactionClamps:(id)arg1;
-- (void)reset;
-- (id)description;
-- (void)dealloc;
-- (id)init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

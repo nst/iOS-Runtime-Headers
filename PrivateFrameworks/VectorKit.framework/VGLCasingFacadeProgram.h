@@ -24,10 +24,10 @@
 
 + (id)program;
 
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })gradientColor;
+- (void)setGradientColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (id)init;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
 - (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })gradientColor;
-- (void)setGradientColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 
 @end

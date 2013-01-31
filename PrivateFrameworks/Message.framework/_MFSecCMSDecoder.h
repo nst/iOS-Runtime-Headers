@@ -20,8 +20,6 @@
 
 - (id)data;
 - (void)dealloc;
-- (int)appendData:(id)arg1;
-- (void)done;
 - (BOOL)isContentSigned;
 - (BOOL)isContentEncrypted;
 - (id)signers;
@@ -29,5 +27,7 @@
 - (long)lastSecCMSError;
 - (id)initWithPartData:(id)arg1 error:(id*)arg2;
 - (id)signedData;
+- (int)appendData:(id)arg1;
+- (void)done;
 
 @end

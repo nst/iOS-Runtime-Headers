@@ -45,11 +45,11 @@
 + (void)enumerateManagersUsingBlock:(id)arg1;
 + (id)managerForWindow:(id)arg1 createIfNeeded:(BOOL)arg2;
 
-- (id)currentView;
-- (void)presentPopover:(id)arg1 fromView:(id)arg2 animated:(BOOL)arg3;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)setActionSheet:(id)arg1;
+- (id)actionSheet;
 - (id)popoverController;
 - (void)didRotate;
 - (void)willRotate;
@@ -100,7 +100,7 @@
 - (BOOL)popoverBeingHiddenDuringRotation;
 - (id)popover;
 - (void)presentPopover:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 direction:(unsigned int)arg4 allowInteractionWithViews:(id)arg5 withDelegate:(id)arg6 animated:(BOOL)arg7;
-- (void)setActionSheet:(id)arg1;
-- (id)actionSheet;
+- (id)currentView;
+- (void)presentPopover:(id)arg1 fromView:(id)arg2 animated:(BOOL)arg3;
 
 @end

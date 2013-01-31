@@ -20,6 +20,7 @@
 @property(readonly) BOOL confirmInstallation;
 
 
+- (id)challenge;
 - (id)description;
 - (void).cxx_destruct;
 - (BOOL)confirmInstallation;
@@ -34,6 +35,5 @@
 - (id)stubDictionary;
 - (void)setURLString:(id)arg1;
 - (id)URLString;
-- (id)challenge;
 
 @end

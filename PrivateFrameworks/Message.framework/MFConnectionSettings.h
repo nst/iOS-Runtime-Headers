@@ -26,11 +26,10 @@
 @property BOOL allowsTrustPrompt;
 
 
+- (id)hostname;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)serviceName;
-- (id)hostname;
 - (void)setUsesOpportunisticSockets:(BOOL)arg1;
 - (BOOL)usesOpportunisticSockets;
 - (void)setAllowsTrustPrompt:(BOOL)arg1;
@@ -47,5 +46,6 @@
 - (void)setUsesSSL:(BOOL)arg1;
 - (unsigned int)portNumber;
 - (BOOL)usesSSL;
+- (id)serviceName;
 
 @end

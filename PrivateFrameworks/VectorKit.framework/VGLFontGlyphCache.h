@@ -31,9 +31,9 @@
 }
 
 
+- (void)getGlyphs:(struct __wrap_iter<VGLFontGlyphQuad_struct *> { struct VGLFontGlyphQuad_struct {} *x1; })arg1 count:(int)arg2 forCGGlyphs:(unsigned short*)arg3 inFont:(struct CGFont { }*)arg4 withSize:(float)arg5 withHaloSize:(float)arg6;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)getGlyphs:(struct __wrap_iter<VGLFontGlyphQuad_struct *> { struct VGLFontGlyphQuad_struct {} *x1; })arg1 count:(int)arg2 forCGGlyphs:(unsigned short*)arg3 inFont:(struct CGFont { }*)arg4 withSize:(float)arg5 withHaloSize:(float)arg6;
 
 @end

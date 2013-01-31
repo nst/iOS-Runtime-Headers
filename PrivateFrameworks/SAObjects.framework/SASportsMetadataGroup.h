@@ -14,13 +14,13 @@
 + (id)metadataGroupWithDictionary:(id)arg1 context:(id)arg2;
 + (id)metadataGroup;
 
-- (id)groupIdentifier;
 - (id)description;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
+- (id)encodedClassName;
 - (id)selected;
 - (void)setSelected:(id)arg1;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 - (void)setDescription:(id)arg1;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 
 @end

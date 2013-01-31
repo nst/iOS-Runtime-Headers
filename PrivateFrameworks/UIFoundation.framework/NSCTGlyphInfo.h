@@ -6,6 +6,11 @@
 }
 
 
+- (unsigned int)characterCollection;
+- (unsigned int)characterIdentifier;
+- (id)glyphName;
+- (id)_baseString;
+- (unsigned int)_glyphForFont:(id)arg1 baseString:(id)arg2;
 - (unsigned int)retainCount;
 - (unsigned int)hash;
 - (id)retain;
@@ -15,11 +20,6 @@
 - (BOOL)allowsWeakReference;
 - (void)finalize;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)characterCollection;
-- (unsigned int)characterIdentifier;
-- (id)glyphName;
-- (id)_baseString;
-- (unsigned int)_glyphForFont:(id)arg1 baseString:(id)arg2;
 - (unsigned long)_cfTypeID;
 
 @end

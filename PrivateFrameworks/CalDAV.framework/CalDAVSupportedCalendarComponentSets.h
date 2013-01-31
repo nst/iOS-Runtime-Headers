@@ -14,8 +14,8 @@
 - (void)dealloc;
 - (id)init;
 - (id)componentsAsString;
-- (void)addCompSet:(id)arg1;
 - (id)childrenToWrite;
 - (id)copyParseRules;
+- (void)addCompSet:(id)arg1;
 
 @end

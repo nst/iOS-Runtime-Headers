@@ -17,12 +17,12 @@
 
 + (id)program;
 
-- (id)init;
 - (float)halfAlphaSlope;
 - (void)setHalfAlphaSlope:(float)arg1;
 - (float)alphaSlope;
 - (void)setAlphaSlope:(float)arg1;
 - (float)halfWidth;
 - (void)setHalfWidth:(float)arg1;
+- (id)init;
 
 @end

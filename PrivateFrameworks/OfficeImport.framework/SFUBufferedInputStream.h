@@ -15,8 +15,6 @@
 
 
 - (void)dealloc;
-- (void)close;
-- (long long)offset;
 - (id)initWithStream:(id)arg1 dataLength:(long long)arg2;
 - (id)initWithStream:(id)arg1;
 - (id)closeLocalStream;
@@ -28,5 +26,7 @@
 - (BOOL)canSeek;
 - (id)initWithStream:(id)arg1 bufferSize:(unsigned long)arg2;
 - (unsigned long)readToOwnBuffer:(const char **)arg1 size:(unsigned long)arg2;
+- (void)close;
+- (long long)offset;
 
 @end

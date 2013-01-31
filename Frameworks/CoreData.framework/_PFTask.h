@@ -30,9 +30,9 @@
 - (id)retain;
 - (void)dealloc;
 - (void)release;
-- (id)initWithFunction:(int (*)())arg1 withArgument:(void*)arg2 andPriority:(int)arg3;
 - (void)finalize;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
+- (id)initWithFunction:(int (*)())arg1 withArgument:(void*)arg2 andPriority:(int)arg3;
 
 @end

@@ -12,16 +12,16 @@
 
 @property Protocol * protocol;
 
-+ (id)signatureForBlock:(id)arg1;
 + (id)interfaceWithProtocol:(id)arg1;
++ (id)signatureForBlock:(id)arg1;
 
-- (void)setClass:(Class)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned int)arg3 ofReply:(BOOL)arg4;
-- (void)setReplyBlockSignature:(id)arg1 forSelector:(SEL)arg2;
-- (void)setClasses:(id)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned int)arg3 ofReply:(BOOL)arg4;
 - (id)debugDescription;
 - (void)dealloc;
 - (id)init;
 - (id)protocol;
+- (void)setClass:(Class)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned int)arg3 ofReply:(BOOL)arg4;
+- (void)setReplyBlockSignature:(id)arg1 forSelector:(SEL)arg2;
+- (void)setClasses:(id)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned int)arg3 ofReply:(BOOL)arg4;
 - (id)replyBlockSignatureForSelector:(SEL)arg1;
 - (Class)classForSelector:(SEL)arg1 argumentIndex:(unsigned int)arg2 ofReply:(BOOL)arg3;
 - (id)interfaceForSelector:(SEL)arg1 argumentIndex:(unsigned int)arg2 ofReply:(BOOL)arg3;

@@ -45,6 +45,23 @@
 + (int)backgroundTypeForUTI:(id)arg1 andMode:(int)arg2;
 + (double)allowedLoadingDelay;
 
+- (BOOL)loaded;
+- (void)cancelLoad;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (int)previewMode;
+- (void)setPreviewMode:(int)arg1;
+- (void)setLoaded:(BOOL)arg1;
+- (void)setIndex:(int)arg1;
+- (id)printPageRenderer;
+- (id)password;
+- (int)index;
+- (void)viewDidAppear:(BOOL)arg1;
+- (int)modalPresentationStyle;
+- (void)didReceiveMemoryWarning;
 - (void)setClientContext:(struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })arg1;
 - (struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })clientContext;
 - (BOOL)overlayOwnedByDisplayBundle;
@@ -74,22 +91,5 @@
 - (void)setPassword:(id)arg1;
 - (void)setLoading:(BOOL)arg1;
 - (BOOL)loading;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (void)setIndex:(int)arg1;
-- (id)printPageRenderer;
-- (id)password;
-- (int)index;
-- (void)viewDidAppear:(BOOL)arg1;
-- (int)modalPresentationStyle;
-- (void)didReceiveMemoryWarning;
-- (BOOL)loaded;
-- (void)cancelLoad;
-- (int)previewMode;
-- (void)setPreviewMode:(int)arg1;
-- (void)setLoaded:(BOOL)arg1;
 
 @end

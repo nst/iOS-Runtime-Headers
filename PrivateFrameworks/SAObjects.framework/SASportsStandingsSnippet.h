@@ -15,15 +15,15 @@
 + (id)standingsSnippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)standingsSnippet;
 
-- (id)groupIdentifier;
-- (id)entities;
-- (void)setEntities:(id)arg1;
 - (id)columns;
+- (id)entities;
 - (void)setShowCardinalPositions:(BOOL)arg1;
 - (BOOL)showCardinalPositions;
 - (void)setSelectedEntities:(id)arg1;
 - (id)selectedEntities;
 - (void)setColumns:(id)arg1;
 - (id)encodedClassName;
+- (id)groupIdentifier;
+- (void)setEntities:(id)arg1;
 
 @end

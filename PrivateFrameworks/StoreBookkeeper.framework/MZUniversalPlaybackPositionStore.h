@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class MZUniversalPlaybackPositionSyncHandler, NSTimer, MZAsynchronousTask, NSObject<OS_dispatch_queue>, <MZUniversalPlaybackPositionDataSource>, NSDate;
+@class MZUniversalPlaybackPositionSyncHandler, NSTimer, MZAsynchronousTask, <MZUniversalPlaybackPositionDataSource>, NSObject<OS_dispatch_queue>, NSDate;
 
 @interface MZUniversalPlaybackPositionStore : NSObject  {
     NSObject<OS_dispatch_queue> *_queue;
@@ -14,13 +14,13 @@
     id _prefsObserver;
     double _autorefreshRate;
     double _bagSpecifiedPollingInterval;
-    MZUniversalPlaybackPositionSyncHandler *_syncHandler;
-    MZAsynchronousTask *_bagLookupTask;
-    <MZUniversalPlaybackPositionDataSource> *_dataSource;
-    NSTimer *_timer;
-    NSDate *_dateToFireNextTimer;
     BOOL _hasLocalChangesToSync;
     MZAsynchronousTask *_synchronizeTask;
+    MZAsynchronousTask *_bagLookupTask;
+    <MZUniversalPlaybackPositionDataSource> *_dataSource;
+    MZUniversalPlaybackPositionSyncHandler *_syncHandler;
+    NSDate *_dateToFireNextTimer;
+    NSTimer *_timer;
 }
 
 @property <MZUniversalPlaybackPositionDataSource> * dataSource;
@@ -34,6 +34,10 @@
 
 + (id)keyValueStoreItemIdentifierForItem:(id)arg1;
 
+- (void)setTimer:(id)arg1;
+- (id)timer;
+- (void)dealloc;
+- (id)init;
 - (id)syncHandler;
 - (void)checkForAvailabilityWithCompletionBlock:(id)arg1;
 - (void)synchronizeImmedietlyWithCompletionBlock:(id)arg1;
@@ -70,19 +74,15 @@
 - (void)_onQueueScheduleTimer;
 - (void)setDateToFireNextTimer:(id)arg1;
 - (void)_updateAutorefreshRateSettingAndRestartTimer:(BOOL)arg1;
-- (void)becomeActive;
-- (void)resignActive;
+- (id)dataSource;
+- (void)setDataSource:(id)arg1;
 - (void)setHasLocalChangesToSync:(BOOL)arg1;
 - (void)synchronizeImmediatelyWithCompletionBlock:(id)arg1;
 - (BOOL)hasLocalChangesToSync;
 - (void)setAutomaticSynchronizeOptions:(unsigned int)arg1;
 - (id)initWithInitialUpdateDelay:(double)arg1 isActive:(BOOL)arg2;
-- (void)setTimer:(id)arg1;
-- (id)timer;
-- (void)dealloc;
-- (id)init;
-- (id)dataSource;
-- (void)setDataSource:(id)arg1;
+- (void)becomeActive;
+- (void)resignActive;
 - (void)_timerFired:(id)arg1;
 
 @end

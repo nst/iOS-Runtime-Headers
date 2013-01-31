@@ -118,20 +118,10 @@
 
 + (id)defaultVoiceChatService;
 
-- (void)setRemoteParticipantVolume:(float)arg1;
-- (float)remoteParticipantVolume;
-- (void)receivedData:(id)arg1 fromParticipantID:(id)arg2;
-- (void)denyCallID:(int)arg1;
-- (BOOL)acceptCallID:(int)arg1 error:(id*)arg2;
-- (void)stopVoiceChatWithParticipantID:(id)arg1;
-- (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
-- (void)setClient:(id)arg1;
-- (void)setWrapperService:(id)arg1;
+- (id)client;
 - (int)state;
 - (void)dealloc;
 - (id)init;
-- (void)cleanup;
-- (void)setState:(int)arg1;
 - (id)wrapperService;
 - (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 hResult:(long)arg4;
 - (BOOL)inviteIsValid:(id)arg1;
@@ -150,7 +140,6 @@
 - (id)createInvite:(id*)arg1 toParticipant:(id)arg2 callID:(int*)arg3;
 - (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 reason:(id)arg4;
 - (void)setFocus:(BOOL)arg1;
-- (id)client;
 - (void*)localVideoLayer;
 - (void)setLocalVideoLayer:(void*)arg1;
 - (BOOL)isFocus;
@@ -176,5 +165,16 @@
 - (BOOL)isOutputMeteringEnabled;
 - (void)receivedRealTimeData:(id)arg1 fromParticipantID:(id)arg2;
 - (void)setRemoteVideoLayer:(void*)arg1;
+- (void)cleanup;
+- (void)setState:(int)arg1;
+- (void)setRemoteParticipantVolume:(float)arg1;
+- (float)remoteParticipantVolume;
+- (void)receivedData:(id)arg1 fromParticipantID:(id)arg2;
+- (void)denyCallID:(int)arg1;
+- (BOOL)acceptCallID:(int)arg1 error:(id*)arg2;
+- (void)stopVoiceChatWithParticipantID:(id)arg1;
+- (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
+- (void)setClient:(id)arg1;
+- (void)setWrapperService:(id)arg1;
 
 @end

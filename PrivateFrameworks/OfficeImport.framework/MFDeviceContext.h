@@ -42,9 +42,6 @@
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setPath:(id)arg1;
-- (void)setFont:(id)arg1;
-- (void)setMiterLimit:(double)arg1;
 - (id)getPath;
 - (void)setRop2:(int)arg1;
 - (int)getRop2;
@@ -88,5 +85,8 @@
 - (id)getBkColour;
 - (id)getTextColour;
 - (id)getSelectedPalette;
+- (void)setPath:(id)arg1;
+- (void)setFont:(id)arg1;
+- (void)setMiterLimit:(double)arg1;
 
 @end

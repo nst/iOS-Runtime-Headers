@@ -27,13 +27,13 @@
 @property(readonly) unsigned int publicStatus;
 
 
-- (id)updateCount;
 - (id)timestamp;
 - (id)name;
-- (id)calendar;
-- (id)deleteCount;
 - (unsigned int)changeType;
 - (id)emailAddress;
+- (id)calendar;
+- (id)deleteCount;
+- (id)updateCount;
 - (id)_calendarItemRelation;
 - (id)_persistentResourceChange;
 - (id)changedByLastName;

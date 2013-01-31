@@ -17,18 +17,18 @@
 + (void)markGameRecommendationsViewed:(id)arg1 complete:(id)arg2;
 + (void)markGameRecommendationsDisplayed:(id)arg1 complete:(id)arg2;
 
-- (id)initWithInternalRepresentation:(id)arg1;
-- (void)setInternal:(id)arg1;
-- (id)internal;
-- (void)setGame:(id)arg1;
-- (id)game;
+- (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (id)valueForUndefinedKey:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)initWithInternalRepresentation:(id)arg1;
+- (void)setInternal:(id)arg1;
+- (id)internal;
+- (void)setGame:(id)arg1;
+- (id)game;
 
 @end

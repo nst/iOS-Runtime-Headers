@@ -20,7 +20,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (unsigned int)callState;
 - (void)stopWatchingForCTRequests;
 - (void)_disconnectCSCallWithID:(id)arg1;
 - (void)_handleCTServiceRequestName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2 contextInfo:(void*)arg3;
@@ -48,5 +47,6 @@
 - (void)_handleCallEvent:(id)arg1;
 - (BOOL)_breakCSCallsIfNecessary;
 - (BOOL)_isOnCallToID:(id)arg1;
+- (unsigned int)callState;
 
 @end

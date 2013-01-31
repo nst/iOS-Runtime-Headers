@@ -35,6 +35,20 @@
 
 + (float)maxTextWidth;
 
+- (void)dealloc;
+- (id)titleFont;
+- (id)message;
+- (void)_createTitleLabelIfNeeded;
+- (id)cancelButton;
+- (void)setCancelButton:(id)arg1;
+- (void)setMessage:(id)arg1;
+- (void)layout;
+- (id)table;
+- (void)setIcon:(id)arg1;
+- (id)title;
+- (void)layoutIfNeeded;
+- (void)setTitle:(id)arg1;
+- (id)titleLabel;
 - (void)setIconView:(id)arg1;
 - (id)iconView;
 - (void)setMessageLabel:(id)arg1;
@@ -59,19 +73,5 @@
 - (void)_createOtherButtonWithTitle:(id)arg1;
 - (void)_createCancelButtonWithTitle:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
-- (void)dealloc;
-- (id)titleFont;
-- (id)message;
-- (void)_createTitleLabelIfNeeded;
-- (id)cancelButton;
-- (void)setCancelButton:(id)arg1;
-- (void)setMessage:(id)arg1;
-- (void)layout;
-- (id)table;
-- (void)setIcon:(id)arg1;
-- (id)title;
-- (void)layoutIfNeeded;
-- (void)setTitle:(id)arg1;
-- (id)titleLabel;
 
 @end

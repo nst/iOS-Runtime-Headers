@@ -32,14 +32,14 @@
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
 - (BOOL)isValid;
-- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (unsigned long)_cfTypeID;
-- (unsigned int)machPort;
 - (BOOL)sendBeforeTime:(double)arg1 streamData:(void*)arg2 components:(id)arg3 from:(id)arg4 msgid:(unsigned int)arg5;
 - (id)initWithMachPort:(unsigned int)arg1 options:(unsigned int)arg2;
 - (BOOL)sendBeforeDate:(id)arg1 msgid:(unsigned int)arg2 components:(id)arg3 from:(id)arg4 reserved:(unsigned int)arg5;
 - (BOOL)sendBeforeDate:(id)arg1 components:(id)arg2 from:(id)arg3 reserved:(unsigned int)arg4;
 - (id)initWithMachPort:(unsigned int)arg1;
+- (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
+- (unsigned long)_cfTypeID;
+- (unsigned int)machPort;
 
 @end

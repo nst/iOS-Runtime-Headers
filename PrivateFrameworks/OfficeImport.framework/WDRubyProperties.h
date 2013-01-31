@@ -16,8 +16,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (int)alignment;
-- (void)setAlignment:(int)arg1;
 - (void)clearPhoneticGuideLanguage;
 - (BOOL)isPhoneticGuideLanguageOverridden;
 - (void)setPhoneticGuideLanguage:(int)arg1;
@@ -38,5 +36,7 @@
 - (BOOL)isAnythingOverriddenIn:(struct { int x1; unsigned short x2; unsigned short x3; unsigned short x4; int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; }*)arg1;
 - (BOOL)isAnythingOverridden;
 - (BOOL)isAlignmentOverridden;
+- (int)alignment;
+- (void)setAlignment:(int)arg1;
 
 @end

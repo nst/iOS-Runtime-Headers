@@ -30,17 +30,6 @@
 @property unsigned int isCallUpgrade;
 
 
-- (id)guid;
-- (unsigned long long)timestamp;
-- (void)setTimestamp:(unsigned long long)arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
 - (void)setHasIsToEmail:(BOOL)arg1;
 - (void)setHasIsToPhoneNumber:(BOOL)arg1;
 - (void)setIsToEmail:(unsigned int)arg1;
@@ -53,9 +42,20 @@
 - (void)setIsCallUpgrade:(unsigned int)arg1;
 - (unsigned int)isCallUpgrade;
 - (BOOL)hasIsCallUpgrade;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (BOOL)hasTimestamp;
 - (BOOL)hasGuid;
 - (void)setGuid:(id)arg1;
+- (id)guid;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (unsigned long long)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
+- (BOOL)hasTimestamp;
+- (id)dictionaryRepresentation;
 
 @end

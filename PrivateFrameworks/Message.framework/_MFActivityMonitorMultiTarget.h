@@ -11,11 +11,11 @@
 
 
 - (void)dealloc;
-- (id)displayName;
-- (id)allTargets;
 - (void)setPrimaryTarget:(id)arg1;
 - (id)primaryTarget;
 - (BOOL)removeActivityTarget:(id)arg1;
 - (BOOL)addActivityTarget:(id)arg1;
+- (id)displayName;
+- (id)allTargets;
 
 @end

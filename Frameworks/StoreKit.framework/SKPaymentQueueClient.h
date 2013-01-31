@@ -19,10 +19,6 @@
 @property(copy) NSString * vendorIdentifier;
 
 
-- (id)bundleVersion;
-- (void)setBundleVersion:(id)arg1;
-- (void)setBundleIdentifier:(id)arg1;
-- (id)storeItemIdentifier;
 - (id)bundleIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -31,7 +27,11 @@
 - (id)vendorIdentifier;
 - (id)storeExternalVersion;
 - (void)setVendorIdentifier:(id)arg1;
-- (void)setStoreItemIdentifier:(id)arg1;
 - (void)setStoreExternalVersion:(id)arg1;
+- (void)setStoreItemIdentifier:(id)arg1;
+- (id)storeItemIdentifier;
+- (id)bundleVersion;
+- (void)setBundleVersion:(id)arg1;
+- (void)setBundleIdentifier:(id)arg1;
 
 @end

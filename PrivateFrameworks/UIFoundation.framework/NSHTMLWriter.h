@@ -47,11 +47,6 @@
 
 
 - (id)subresources;
-- (void)dealloc;
-- (id)webArchive;
-- (id)HTMLData;
-- (void)setDocumentAttributes:(id)arg1;
-- (id)initWithAttributedString:(id)arg1;
 - (void)_createWebArchiveData;
 - (void)_generateHTML;
 - (void)_prepareString:(id)arg1 forConversionToEncoding:(unsigned int)arg2;
@@ -79,5 +74,10 @@
 - (void)readDocumentFragment:(id)arg1;
 - (id)HTMLFileWrapper;
 - (id)webArchiveData;
+- (void)dealloc;
+- (id)webArchive;
+- (id)HTMLData;
+- (void)setDocumentAttributes:(id)arg1;
+- (id)initWithAttributedString:(id)arg1;
 
 @end

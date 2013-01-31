@@ -9,21 +9,12 @@
 }
 
 
-- (id)specifiers;
 - (void)dealloc;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)viewDidLoad;
-- (void)_accountsChanged:(id)arg1;
-- (BOOL)backgroundDeleteAccountData;
-- (Class)accountInfoControllerClass;
-- (id)otherSpecifiers;
-- (void)saveSyncSettings:(id)arg1 forAccount:(id)arg2;
 - (BOOL)isEnabledForDataclass:(id)arg1;
+- (void)cancelButtonClicked:(id)arg1;
 - (void)setAccount:(id)arg1;
 - (void)setEnabled:(BOOL)arg1 forDataclass:(id)arg2;
-- (void)cancelButtonClicked:(id)arg1;
+- (void)_accountsChanged:(id)arg1;
 - (void)_purgeDownloadedMailForAccount;
 - (id)numFoldersToPushString:(id)arg1;
 - (id)accountIntegerPropertyWithSpecifier:(id)arg1;
@@ -37,5 +28,14 @@
 - (id)_accountInSpecifier;
 - (void)reloadAccountOnSpecifier;
 - (void)_folderHierarchyChanged;
+- (id)specifiers;
+- (BOOL)backgroundDeleteAccountData;
+- (Class)accountInfoControllerClass;
+- (id)otherSpecifiers;
+- (void)saveSyncSettings:(id)arg1 forAccount:(id)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)viewDidLoad;
 
 @end

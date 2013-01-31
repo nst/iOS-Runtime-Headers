@@ -11,6 +11,10 @@
 }
 
 
+- (BOOL)loadDidSucceed;
+- (BOOL)loadDidFinish;
+- (id)initWithBaseURL:(id)arg1;
+- (void)decidePolicyForRequest:(id)arg1 decisionListener:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (void)webView:(id)arg1 resource:(id)arg2 didReceiveAuthenticationChallenge:(id)arg3 fromDataSource:(id)arg4;
@@ -26,9 +30,5 @@
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
-- (BOOL)loadDidSucceed;
-- (BOOL)loadDidFinish;
-- (id)initWithBaseURL:(id)arg1;
-- (void)decidePolicyForRequest:(id)arg1 decisionListener:(id)arg2;
 
 @end

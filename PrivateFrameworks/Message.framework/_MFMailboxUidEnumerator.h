@@ -11,7 +11,7 @@
 
 
 - (void)dealloc;
-- (id)nextObject;
 - (id)initWithMailbox:(id)arg1;
+- (id)nextObject;
 
 @end

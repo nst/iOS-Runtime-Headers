@@ -42,11 +42,9 @@
 @property unsigned long long maxDatabaseSize;
 
 
+- (void)_localeChanged:(id)arg1;
 - (id)path;
 - (void)dealloc;
-- (id)initWithPath:(id)arg1;
-- (void)_updateSize;
-- (void)_localeChanged:(id)arg1;
 - (void)setMaxDatabaseSize:(unsigned long long)arg1;
 - (unsigned long long)maxDatabaseSize;
 - (unsigned long long)databaseSize;
@@ -82,5 +80,7 @@
 - (void)_closeDB;
 - (void)endPreloadSession;
 - (void)beginPreloadSessionOfSize:(unsigned long long)arg1;
+- (id)initWithPath:(id)arg1;
+- (void)_updateSize;
 
 @end

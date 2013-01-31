@@ -13,11 +13,11 @@
 + (id)resultCallbackWithDictionary:(id)arg1 context:(id)arg2;
 + (id)resultCallback;
 
-- (id)groupIdentifier;
-- (int)code;
 - (void)setCode:(int)arg1;
 - (id)encodedClassName;
 - (void)setCommands:(id)arg1;
 - (id)commands;
+- (int)code;
+- (id)groupIdentifier;
 
 @end

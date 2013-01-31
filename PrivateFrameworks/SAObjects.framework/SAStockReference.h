@@ -10,15 +10,15 @@
 @property(copy) NSString * companyName;
 @property(copy) NSString * symbol;
 
-+ (id)reference;
 + (id)referenceWithDictionary:(id)arg1 context:(id)arg2;
++ (id)reference;
 
-- (id)groupIdentifier;
-- (id)symbol;
-- (void)setSymbol:(id)arg1;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
 - (id)companyName;
 - (void)setCompanyName:(id)arg1;
+- (void)setSymbol:(id)arg1;
+- (id)groupIdentifier;
+- (id)symbol;
 
 @end

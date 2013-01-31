@@ -23,14 +23,14 @@
 @property BOOL forceCellularIfPossible;
 
 
+- (BOOL)_disconnect;
 - (void)cancel;
 - (void)dealloc;
 - (BOOL)_connect;
-- (void)load;
-- (BOOL)_disconnect;
 - (void)setForceCellularIfPossible:(BOOL)arg1;
 - (id)initWithURLRequest:(id)arg1 completionBlock:(id)arg2;
 - (BOOL)forceCellularIfPossible;
 - (void)_disconnected;
+- (void)load;
 
 @end

@@ -12,18 +12,18 @@
 @property BOOL loading;
 
 
-- (BOOL)canReload;
-- (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (void)dealloc;
 - (id)controlValue;
 - (id)newControl;
 - (void)reloadWithSpecifier:(id)arg1 animated:(BOOL)arg2;
-- (void)setLoading:(BOOL)arg1;
-- (BOOL)loading;
-- (void)dealloc;
+- (void)setCellEnabled:(BOOL)arg1;
+- (BOOL)canReload;
+- (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (void)setValue:(id)arg1;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
-- (void)setCellEnabled:(BOOL)arg1;
+- (void)setLoading:(BOOL)arg1;
+- (BOOL)loading;
 
 @end

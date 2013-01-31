@@ -22,6 +22,10 @@
 
 - (id)description;
 - (void)dealloc;
+- (void)setResponseDescription:(id)arg1;
+- (id)responseDescription;
+- (id)copyParseRules;
+- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)topLevelErrorItem;
 - (id)recipientString;
 - (void)_setCalendarDataWithLeafItem:(id)arg1;
@@ -32,9 +36,5 @@
 - (id)calendarData;
 - (id)requestStatus;
 - (id)recipientHREF;
-- (void)setResponseDescription:(id)arg1;
-- (id)responseDescription;
-- (id)copyParseRules;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 
 @end

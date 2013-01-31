@@ -7,38 +7,38 @@
 @interface CBConcretePeripheral : CBPeripheral  {
     CBConcreteCentralManager *_centralManager;
     NSNumber *_handle;
-    BOOL _isUserVisible;
     BOOL _isUserRetained;
     BOOL _isConnecting;
     NSMutableDictionary *_attributes;
 }
 
 @property(readonly) NSNumber * handle;
-@property BOOL isUserVisible;
 @property BOOL isUserRetained;
 @property BOOL isConnecting;
 
 
-- (BOOL)isConnecting;
 - (id)description;
 - (id)retain;
 - (void)dealloc;
 - (oneway void)release;
-- (id)handle;
 - (void)pair;
+- (id)handle;
+- (void)discoverServices:(id)arg1;
+- (void)discoverCharacteristics:(id)arg1 forService:(id)arg2;
+- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 type:(int)arg3;
+- (void)readValueForCharacteristic:(id)arg1;
+- (void)setNotifyValue:(BOOL)arg1 forCharacteristic:(id)arg2;
+- (void)setIsConnecting:(BOOL)arg1;
+- (BOOL)isConnecting;
+- (void)setUUID:(struct __CFUUID { }*)arg1;
 - (void)acceptPairing:(BOOL)arg1 ofType:(id)arg2 withPasskey:(id)arg3;
 - (void)writeValue:(id)arg1 forDescriptor:(id)arg2;
 - (void)readValueForDescriptor:(id)arg1;
 - (void)discoverDescriptorsForCharacteristic:(id)arg1;
 - (void)setIndicateValue:(BOOL)arg1 forCharacteristic:(id)arg2;
-- (void)setNotifyValue:(BOOL)arg1 forCharacteristic:(id)arg2;
 - (void)setBroadcastValue:(BOOL)arg1 forCharacteristic:(id)arg2;
 - (void)reliablyWriteValues:(id)arg1 forCharacteristics:(id)arg2;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 type:(int)arg3;
-- (void)readValueForCharacteristic:(id)arg1;
-- (void)discoverCharacteristics:(id)arg1 forService:(id)arg2;
 - (void)discoverIncludedServices:(id)arg1 forService:(id)arg2;
-- (void)discoverServices:(id)arg1;
 - (void)readRSSI;
 - (void)handleDescriptorEvent:(id)arg1 descriptorSelector:(SEL)arg2 delegateSelector:(SEL)arg3;
 - (void)handleCharacteristicEvent:(id)arg1 characteristicSelector:(SEL)arg2 delegateSelector:(SEL)arg3;
@@ -64,15 +64,11 @@
 - (void)handleServicesChanged:(id)arg1;
 - (void)handleNameUpdated:(id)arg1;
 - (void)handleConnection:(BOOL)arg1;
-- (void)setIsUserVisible:(BOOL)arg1;
 - (void)handleDisconnection;
-- (void)setIsConnecting:(BOOL)arg1;
 - (id)initWithCentralManager:(id)arg1 handle:(id)arg2;
 - (void)setOrphan;
 - (void)setIsUserRetained:(BOOL)arg1;
 - (BOOL)isUserRetained;
-- (BOOL)isUserVisible;
 - (void)sendMsg:(int)arg1 args:(id)arg2;
-- (void)setUUID:(struct __CFUUID { }*)arg1;
 
 @end

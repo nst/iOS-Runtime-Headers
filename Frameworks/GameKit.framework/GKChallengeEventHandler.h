@@ -16,6 +16,9 @@
 
 + (id)challengeEventHandler;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (id)pendingCompletedChallenge;
 - (id)pendingReceivedChallenge;
 - (void)loadPhotoAndGoalTextForPlayer:(id)arg1 challenge:(id)arg2 hander:(id)arg3;
@@ -29,8 +32,5 @@
 - (void)challengeReceived:(id)arg1;
 - (void)completedChallengeSelected:(id)arg1;
 - (void)receivedChallengeSelected:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
 
 @end

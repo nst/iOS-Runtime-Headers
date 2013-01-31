@@ -21,7 +21,11 @@
 
 + (id)sharedInstance;
 
+- (void)invalidate;
+- (void)dealloc;
+- (id)init;
 - (void)cancelMessage:(id)arg1;
+- (BOOL)sendMessage:(id)arg1;
 - (id)_currentTimers;
 - (id)_currentAPSMessages;
 - (void)_noteMessageACKd:(id)arg1 ftMessage:(id)arg2;
@@ -62,9 +66,5 @@
 - (id)allMessages;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
 - (BOOL)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
-- (void)invalidate;
-- (void)dealloc;
-- (id)init;
-- (BOOL)sendMessage:(id)arg1;
 
 @end

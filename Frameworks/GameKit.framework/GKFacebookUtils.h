@@ -6,6 +6,7 @@
 }
 
 + (void)requestFacebookAccountWithCompletionHandler:(id)arg1;
++ (void)requestAccessTokenRenewIfExpired:(BOOL)arg1 completionHandler:(id)arg2;
 + (void)requestAccessTokenWithCompletionHandler:(id)arg1;
 
 

@@ -17,13 +17,13 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)displayLink;
-- (void)setDisplayLink:(id)arg1;
-- (unsigned int)frame;
 - (void)setObservers:(id)arg1;
 - (id)observers;
 - (void)animationTimerFired;
 - (void)addAnimationTimerObserver:(id)arg1;
 - (void)removeAnimationTimerObserver:(id)arg1;
+- (id)displayLink;
+- (void)setDisplayLink:(id)arg1;
+- (unsigned int)frame;
 
 @end

@@ -16,6 +16,8 @@
 
 - (id)description;
 - (void)dealloc;
+- (id)httpMethod;
+- (id)requestBody;
 - (void)setForceNoCache:(BOOL)arg1;
 - (void)setAppSpecificDataItemResult:(id)arg1;
 - (BOOL)forceNoCache;
@@ -23,7 +25,5 @@
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (unsigned int)cachePolicy;
-- (id)httpMethod;
-- (id)requestBody;
 
 @end

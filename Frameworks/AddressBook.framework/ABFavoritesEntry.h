@@ -23,11 +23,12 @@
 - (int)type;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (int)property;
 - (id)displayName;
 - (id)dictionaryRepresentation;
 - (id)label;
 - (id)value;
+- (id)initWithDictionaryRepresentation:(id)arg1;
+- (int)property;
 - (void)_postEntryChanged;
 - (void)_lookupChanged:(id)arg1;
 - (void)_lookupNotFound;
@@ -41,6 +42,5 @@
 - (void)_unqueueLookup;
 - (id)initWithDictionaryRepresentation:(id)arg1 addressBook:(void*)arg2;
 - (id)initWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3 type:(int)arg4;
-- (id)initWithDictionaryRepresentation:(id)arg1;
 
 @end

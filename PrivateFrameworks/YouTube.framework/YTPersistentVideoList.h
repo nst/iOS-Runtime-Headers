@@ -11,11 +11,11 @@
 
 + (id)persistPathWithCategoryName:(id)arg1;
 
-- (void)dealloc;
-- (void)removeFromDisk;
 - (id)initWithCategoryName:(id)arg1;
 - (void)addVideo:(id)arg1;
 - (id)videos;
+- (void)dealloc;
 - (void)persist;
+- (void)removeFromDisk;
 
 @end

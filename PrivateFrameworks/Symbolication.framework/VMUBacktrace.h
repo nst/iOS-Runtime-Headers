@@ -24,7 +24,6 @@
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setStartTime:(double)arg1;
 - (unsigned long long)dispatchQueueSerialNumber;
 - (int)threadState;
 - (void)setThreadState:(int)arg1;
@@ -42,5 +41,6 @@
 - (id)initWithTask:(unsigned int)arg1 thread:(unsigned int)arg2 is64Bit:(BOOL)arg3 taskMemoryCache:(id)arg4;
 - (unsigned int)thread;
 - (void)setEndTime:(double)arg1;
+- (void)setStartTime:(double)arg1;
 
 @end

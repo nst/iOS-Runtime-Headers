@@ -13,11 +13,11 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithFolderID:(id)arg1 newParentFolderID:(id)arg2 newDisplayName:(id)arg3;
 - (BOOL)performWithAccount:(id)arg1 offlineCache:(id)arg2;
 - (void)applyToFolderMap:(id)arg1;
 - (id)folderChangeResult;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

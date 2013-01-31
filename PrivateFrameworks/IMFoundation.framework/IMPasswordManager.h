@@ -12,15 +12,15 @@
 + (id)sharedInstance;
 + (id)_loginUserNotificationForService:(id)arg1 user:(id)arg2 isForBadPassword:(BOOL)arg3 showForgetPassword:(BOOL)arg4;
 
+- (void)dealloc;
+- (id)init;
+- (void)cancelRequestID:(id)arg1;
 - (void)fetchAuthTokenForUsername:(id)arg1 service:(id)arg2 outRequestID:(id*)arg3 completionBlock:(id)arg4;
 - (void)requestAuthTokenForUsername:(id)arg1 service:(id)arg2 badPassword:(BOOL)arg3 showForgotPassword:(BOOL)arg4 outRequestID:(id*)arg5 completionBlock:(id)arg6;
 - (void)fetchPasswordForUsername:(id)arg1 service:(id)arg2 outRequestID:(id*)arg3 completionBlock:(id)arg4;
 - (void)requestPasswordForUsername:(id)arg1 service:(id)arg2 badPassword:(BOOL)arg3 showForgotPassword:(BOOL)arg4 outRequestID:(id*)arg5 completionBlock:(id)arg6;
 - (BOOL)supportsAuthTokenRequests;
 - (void)setAuthTokenForUsername:(id)arg1 service:(id)arg2 authToken:(id)arg3 outRequestID:(id*)arg4 completionBlock:(id)arg5;
-- (void)dealloc;
-- (id)init;
 - (void)setPasswordForUsername:(id)arg1 service:(id)arg2 password:(id)arg3 outRequestID:(id*)arg4 completionBlock:(id)arg5;
-- (void)cancelRequestID:(id)arg1;
 
 @end

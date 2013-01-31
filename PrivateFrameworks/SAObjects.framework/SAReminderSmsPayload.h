@@ -13,11 +13,11 @@
 + (id)smsPayloadWithDictionary:(id)arg1 context:(id)arg2;
 + (id)smsPayload;
 
-- (id)groupIdentifier;
+- (id)encodedClassName;
+- (id)recipients;
 - (id)message;
 - (void)setMessage:(id)arg1;
+- (id)groupIdentifier;
 - (void)setRecipients:(id)arg1;
-- (id)recipients;
-- (id)encodedClassName;
 
 @end

@@ -35,6 +35,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)setUserInfo:(id)arg1;
+- (BOOL)isEditable;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)_addRelationshipMapping:(id)arg1;
 - (void)_addAttributeMapping:(id)arg1;
 - (id)_migrationPolicy;
@@ -61,9 +65,5 @@
 - (id)destinationEntityName;
 - (id)sourceEntityName;
 - (unsigned int)mappingType;
-- (void)setUserInfo:(id)arg1;
-- (BOOL)isEditable;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

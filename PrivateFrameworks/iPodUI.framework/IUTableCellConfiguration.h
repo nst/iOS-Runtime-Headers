@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class <NSObject>, IUDownloadActionConfiguration, NSString, MPMediaItem;
+@class MPMediaItem, NSString, IUDownloadActionConfiguration;
 
 @interface IUTableCellConfiguration : NSObject  {
     struct CGSize { 
@@ -18,13 +18,30 @@
     } _layoutSize;
     unsigned int _isDeleteConfirmationVisible : 1;
     unsigned int _needsDisplay : 1;
-    unsigned int _hasDownloadProgress : 1;
-    unsigned int _downloadable : 1;
     IUDownloadActionConfiguration *_purchaseActionConfiguration;
     struct CGSize { 
         float width; 
         float height; 
     } _purchaseButtonSize;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _downloadButtonSize;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _downloadProgressIndicatorSize;
+    BOOL _downloadable;
+    BOOL _downloadInProgress;
+    BOOL _canShowPurchasableMediaViews;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _downloadButtonOrigin;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _downloadProgressIndicatorOrigin;
 }
 
 @property(readonly) int preset;
@@ -41,24 +58,25 @@
 @property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } selectionEdgeInsets;
 @property(readonly) MPMediaItem * mediaItem;
 @property(getter=isDownloadable) BOOL downloadable;
-@property BOOL hasDownloadProgress;
-@property(readonly) <NSObject> * downloadableAsset;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } downloadButtonFrame;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } downloadProgressIndicatorFrame;
+@property(getter=isDownloadInProgress) BOOL downloadInProgress;
+@property(readonly) BOOL canShowPurchasableMediaViews;
+@property(readonly) struct CGPoint { float x1; float x2; } downloadButtonOrigin;
+@property(readonly) struct CGPoint { float x1; float x2; } downloadProgressIndicatorOrigin;
+@property struct CGSize { float x1; float x2; } downloadButtonSize;
+@property struct CGSize { float x1; float x2; } downloadProgressIndicatorSize;
 @property(retain) IUDownloadActionConfiguration * purchaseActionConfiguration;
 @property struct CGSize { float x1; float x2; } purchaseButtonSize;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } purchaseButtonFrame;
 @property BOOL isNowPlaying;
 
-+ (float)minimumRowHeight;
 + (BOOL)drawsRowsInAlternateStyle;
 + (void)configureTableDisplaySettings:(id)arg1 dataSource:(id)arg2;
 + (id)customActionRowConfigurationWithSimpleCellConfiguration:(id)arg1;
 + (BOOL)showsUntruncationCallout;
 + (float)rowHeightForGlobalContext:(id)arg1;
 + (id)backgroundColorWithModifiers:(unsigned int)arg1;
++ (float)minimumRowHeight;
 
-- (BOOL)isDownloadable;
 - (void)reloadLayoutInformation;
 - (void)setIsDeleteConfirmationVisible:(BOOL)arg1;
 - (BOOL)isDeleteConfirmationVisible;
@@ -76,34 +94,30 @@
 - (void)drawBackgroundWithModifiers:(unsigned int)arg1;
 - (void)setLayoutSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)globalContext;
-- (id)mediaItem;
-- (void)dealloc;
-- (struct CGSize { float x1; float x2; })backgroundSize;
-- (struct CGSize { float x1; float x2; })layoutSize;
-- (void)setNeedsDisplay:(BOOL)arg1;
-- (BOOL)needsDisplay;
-- (void)reloadData;
-- (void)setIsNowPlaying:(BOOL)arg1;
-- (void)setPurchaseActionConfiguration:(id)arg1;
-- (int)preset;
-- (void)setHasDownloadProgress:(BOOL)arg1;
-- (void)setDownloadable:(BOOL)arg1;
-- (id)untruncationCalloutStringWithLinesByStringIndexes:(id)arg1;
-- (id)subviewLayoutViewsWithModifiers:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })offsetForLabelAtIndex:(unsigned int)arg1;
-- (void)layoutSubviewLayoutViews:(id)arg1;
 - (int)lineBreakModeForLabelAtIndex:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })downloadProgressIndicatorFrame;
-- (void)setBackgroundSize:(struct CGSize { float x1; float x2; })arg1;
-- (Class)layoutManagerClass;
-- (id)purchaseActionConfiguration;
-- (id)downloadableAsset;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })downloadButtonFrame;
+- (void)setIsNowPlaying:(BOOL)arg1;
+- (void)setDownloadable:(BOOL)arg1;
+- (void)setPurchaseActionConfiguration:(id)arg1;
+- (id)subviewLayoutViewsWithModifiers:(unsigned int)arg1;
+- (void)layoutSubviewLayoutViews:(id)arg1;
+- (int)preset;
+- (void)setDownloadInProgress:(BOOL)arg1;
+- (id)untruncationCalloutStringWithLinesByStringIndexes:(id)arg1;
+- (struct CGPoint { float x1; float x2; })downloadButtonOrigin;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })purchaseButtonFrame;
-- (void)setPurchaseButtonSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })downloadProgressIndicatorOrigin;
+- (struct CGSize { float x1; float x2; })downloadProgressIndicatorSize;
 - (struct CGSize { float x1; float x2; })purchaseButtonSize;
+- (struct CGSize { float x1; float x2; })downloadButtonSize;
 - (BOOL)isNowPlaying;
-- (BOOL)hasDownloadProgress;
+- (BOOL)canShowPurchasableMediaViews;
+- (void)setBackgroundSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPurchaseButtonSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)purchaseActionConfiguration;
+- (Class)layoutManagerClass;
+- (void)setDownloadProgressIndicatorSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setDownloadButtonSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)showsUntruncationCallout;
 - (id)backgroundColorForImageAtIndex:(unsigned int)arg1;
 - (void)setGlobalContext:(id)arg1;
@@ -111,5 +125,14 @@
 - (id)untruncationCalloutString;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })selectionEdgeInsets;
 - (id)backgroundColorWithModifiers:(unsigned int)arg1;
+- (void)dealloc;
+- (struct CGSize { float x1; float x2; })backgroundSize;
+- (struct CGSize { float x1; float x2; })layoutSize;
+- (void)setNeedsDisplay:(BOOL)arg1;
+- (BOOL)needsDisplay;
+- (void)reloadData;
+- (BOOL)isDownloadInProgress;
+- (BOOL)isDownloadable;
+- (id)mediaItem;
 
 @end

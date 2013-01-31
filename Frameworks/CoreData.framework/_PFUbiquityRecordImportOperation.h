@@ -22,6 +22,7 @@
     PFUbiquityImportContext *_importContext;
     BOOL _success;
     BOOL _transactionDidRollback;
+    BOOL _wroteKV;
     int _inMemorySequenceNumber;
     NSError *_operationError;
 }
@@ -39,11 +40,12 @@
 @property NSObject<_PFUbiquityRecordImportOperationDelegate> * delegate;
 @property BOOL lockedExistingCoord;
 @property(readonly) PFUbiquityKnowledgeVector * initialStoreKnowledgeVector;
-@property(readonly) PFUbiquityKnowledgeVector * updatedStoreKnowledgeVector;
-@property(readonly) PFUbiquityImportContext * importContext;
+@property(retain) PFUbiquityKnowledgeVector * updatedStoreKnowledgeVector;
+@property(retain) PFUbiquityImportContext * importContext;
 @property(readonly) BOOL transactionDidRollBack;
 @property(readonly) BOOL success;
 @property(readonly) NSError * operationError;
+@property(readonly) BOOL wroteKV;
 
 
 - (void)main;
@@ -53,9 +55,11 @@
 - (void)dealloc;
 - (id)init;
 - (id)copy;
+- (BOOL)wroteKV;
 - (id)operationError;
 - (BOOL)success;
 - (BOOL)transactionDidRollBack;
+- (void)setUpdatedStoreKnowledgeVector:(id)arg1;
 - (void)setLockedExistingCoord:(BOOL)arg1;
 - (id)resolvedConflicts;
 - (void)coordinatorWillRemoveStore:(id)arg1;
@@ -63,6 +67,7 @@
 - (id)deletedObjectIDs;
 - (id)updatedObjectIDs;
 - (BOOL)fillManagedObject:(id)arg1 withGlobalID:(id)arg2 fromUbiquityDictionary:(id)arg3 missingObjects:(id)arg4 importContext:(id)arg5 withError:(id*)arg6;
+- (void)setImportContext:(id)arg1;
 - (BOOL)lockedExistingCoord;
 - (void)notifyDelegateOfError:(id)arg1;
 - (id)insertedObjectIDs;

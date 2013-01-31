@@ -7,7 +7,7 @@
 
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)command;
 - (id)messageBody;
+- (int)command;
 
 @end

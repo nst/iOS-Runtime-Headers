@@ -13,6 +13,13 @@
 @property(readonly) NSArray * contents;
 
 
+- (id)valueForUndefinedKey:(id)arg1;
+- (id)files;
+- (id)description;
+- (void)dealloc;
+- (BOOL)hasThumbnail;
+- (void)requestThumbnail;
+- (void)requestMetadata;
 - (void)deleteFolder:(id)arg1;
 - (void)deleteFile:(id)arg1;
 - (void)unlockFolders;
@@ -22,18 +29,11 @@
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
 - (void)addFolder:(id)arg1;
 - (void)deleteItem:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)metadata;
+- (id)folders;
 - (struct CGImage { }*)thumbnail;
 - (void)finalize;
 - (id)contents;
-- (id)valueForUndefinedKey:(id)arg1;
-- (id)files;
-- (BOOL)hasThumbnail;
-- (void)requestThumbnail;
-- (void)requestMetadata;
 - (void)addFile:(id)arg1;
-- (id)folders;
+- (id)metadata;
 
 @end

@@ -14,17 +14,22 @@
 @property BOOL suppressDrawingBackground;
 @property(readonly) UIImageView * shadowView;
 
++ (id)upsideDownShadowImage;
++ (float)defaultHeightForStyle:(int)arg1 orientation:(int)arg2;
++ (int)fullscreenStyle;
++ (int)overlayStyle;
 + (id)_backgroundImage;
 + (float)defaultHeight;
 + (float)defaultHeightForStyle:(int)arg1;
 + (float)defaultHeightForOrientation:(int)arg1;
-+ (int)fullscreenStyle;
-+ (int)overlayStyle;
-+ (id)upsideDownShadowImage;
-+ (float)defaultHeightForStyle:(int)arg1 orientation:(int)arg2;
 
 - (void)dealloc;
 - (id)init;
+- (BOOL)suppressDrawingBackground;
+- (void)setOrientation:(int)arg1 updateFrame:(BOOL)arg2;
+- (void)setWellAlpha:(float)arg1;
+- (void)setSuppressDrawingBackground:(BOOL)arg1;
+- (id)initWithDefaultSizeForOrientation:(int)arg1;
 - (id)initWithDefaultSize;
 - (void)setOrientation:(int)arg1;
 - (id)shadowView;
@@ -33,10 +38,5 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithDefaultSizeForOrientation:(int)arg1;
-- (BOOL)suppressDrawingBackground;
-- (void)setOrientation:(int)arg1 updateFrame:(BOOL)arg2;
-- (void)setWellAlpha:(float)arg1;
-- (void)setSuppressDrawingBackground:(BOOL)arg1;
 
 @end

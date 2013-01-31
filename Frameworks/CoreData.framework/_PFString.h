@@ -28,7 +28,6 @@
 - (oneway void)release;
 - (id)copy;
 - (unsigned int)length;
-- (void)getCString:(char *)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (const char *)cString;
@@ -37,5 +36,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (const char *)_fastCStringContents:(BOOL)arg1;
 - (unsigned int)cStringLength;
+- (void)getCString:(char *)arg1;
 
 @end

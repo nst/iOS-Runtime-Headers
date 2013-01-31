@@ -27,11 +27,13 @@
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (id)defaultValueForKey:(id)arg1;
 
+- (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)didChangeValueForKey:(id)arg1;
 - (void)setString:(id)arg1;
 - (id)string;
 - (void)dealloc;
 - (id)init;
+- (void)setForegroundColor:(struct CGColor { }*)arg1;
 - (void)setAlignmentMode:(id)arg1;
 - (struct CGColor { }*)foregroundColor;
 - (id)initWithLayer:(id)arg1;
@@ -40,7 +42,6 @@
 - (id)implicitAnimationForKeyPath:(id)arg1;
 - (void*)font;
 - (void)setFont:(void*)arg1;
-- (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)setAllowsFontSubpixelQuantization:(BOOL)arg1;
 - (void)setTruncationString:(id)arg1;
 - (BOOL)wrapped;
@@ -58,6 +59,5 @@
 - (BOOL)allowsFontSubpixelQuantization;
 - (struct CGSize { float x1; float x2; })_preferredSize;
 - (void)_prepareContext:(struct CGContext { }*)arg1;
-- (void)setForegroundColor:(struct CGColor { }*)arg1;
 
 @end

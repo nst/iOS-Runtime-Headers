@@ -15,10 +15,9 @@
 @property(retain) id viewControllers;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
-- (BOOL)navigationBarHidden;
 - (id)toolbarHidden;
 - (void)setTopViewController:(id)arg1;
 - (id)_copyNativeViewControllersFromScriptViewControllers:(id)arg1;
@@ -34,6 +33,7 @@
 - (id)initWithRootScriptViewController:(id)arg1 clientInterface:(id)arg2;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (void)popToRootViewControllerAnimated:(BOOL)arg1;
 - (void)setToolbarHidden:(id)arg1;
@@ -48,6 +48,6 @@
 - (id)topViewController;
 - (void)setNavigationBar:(id)arg1;
 - (id)navigationBar;
-- (id)attributeKeys;
+- (BOOL)navigationBarHidden;
 
 @end

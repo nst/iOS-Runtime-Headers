@@ -15,9 +15,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)stringValue;
-- (id)objectValue;
-- (void)setObjectValue:(id)arg1;
 - (int)attributeCount;
 - (id)contentString;
 - (void)_appendXMLStringToString:(struct __CFString { }*)arg1 level:(int)arg2;
@@ -28,5 +25,8 @@
 - (id)openingTagString;
 - (void)addAttribute:(id)arg1;
 - (void)addChild:(id)arg1;
+- (id)stringValue;
+- (id)objectValue;
+- (void)setObjectValue:(id)arg1;
 
 @end

@@ -11,9 +11,9 @@
 @property(copy) NSString * target;
 
 
-- (void)setTarget:(id)arg1;
-- (id)target;
 - (void)setHref:(id)arg1;
 - (id)href;
+- (void)setTarget:(id)arg1;
+- (id)target;
 
 @end

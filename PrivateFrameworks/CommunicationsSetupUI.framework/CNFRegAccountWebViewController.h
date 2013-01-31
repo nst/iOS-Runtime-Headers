@@ -13,6 +13,7 @@
 @property BOOL failedBagLoad;
 
 
+- (void)dealloc;
 - (id)authTokenHeaderValue;
 - (id)authIdHeaderValue;
 - (id)pushTokenHeaderValue;
@@ -50,12 +51,11 @@
 - (void)setupUrlHandlers;
 - (id)logName;
 - (id)initWithRegController:(id)arg1;
-- (void)setHeadersForRequest:(id)arg1;
-- (void)dealloc;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)viewDidLoad;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)setHeadersForRequest:(id)arg1;
 
 @end

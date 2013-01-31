@@ -19,20 +19,8 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)localCamera;
-- (void)setLocalCamera:(id)arg1;
-- (void)didReceiveCommError;
-- (void*)localVideoLayer;
-- (void)setLocalVideoLayer:(void*)arg1;
-- (void)didStopPreview;
-- (void)didStartPreview;
-- (void)didChangeLocalVideoAttributes:(id)arg1;
-- (void)didReceiveFirstPreviewFrameFromCamera:(unsigned int)arg1;
-- (void)didReceiveErrorFromCamera:(unsigned int)arg1 error:(id)arg2;
-- (void)stopPreview;
-- (void)setCameraType:(unsigned int)arg1;
-- (BOOL)isPreviewRunning;
-- (void)startPreview;
+- (unsigned int)cameraOrientation;
+- (unsigned int)cameraType;
 - (void)endAnimationToPreview;
 - (void)beginAnimationToPreview;
 - (void)endAnimationToPIP;
@@ -47,7 +35,19 @@
 - (void)systemScreenDidPowerUp;
 - (void)systemApplicationWillEnterForeground;
 - (void)systemApplicationDidEnterBackground;
-- (unsigned int)cameraOrientation;
-- (unsigned int)cameraType;
+- (id)localCamera;
+- (void)setLocalCamera:(id)arg1;
+- (void)didReceiveCommError;
+- (void*)localVideoLayer;
+- (void)setLocalVideoLayer:(void*)arg1;
+- (void)didStopPreview;
+- (void)didStartPreview;
+- (void)didChangeLocalVideoAttributes:(id)arg1;
+- (void)didReceiveFirstPreviewFrameFromCamera:(unsigned int)arg1;
+- (void)didReceiveErrorFromCamera:(unsigned int)arg1 error:(id)arg2;
+- (void)stopPreview;
+- (void)setCameraType:(unsigned int)arg1;
+- (BOOL)isPreviewRunning;
+- (void)startPreview;
 
 @end

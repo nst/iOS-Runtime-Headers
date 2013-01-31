@@ -33,8 +33,8 @@
 @property(readonly) int playerStateUnplayed;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (int)playerStateUnplayed;
 - (int)playerStatePaused;
@@ -55,10 +55,11 @@
 - (id)nowPlayingKeyAlbumTrackCount;
 - (id)nowPlayingKeyAlbumTitle;
 - (void)_audioPlayerStateChangeNotification:(id)arg1;
-- (double)currentTime;
 - (void)setValue:(id)arg1 forNowPlayingKey:(id)arg2;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
+- (void)play;
 - (int)state;
 - (id)URL;
 - (id)initWithURL:(id)arg1;
@@ -66,7 +67,6 @@
 - (void)pause;
 - (void)stop;
 - (double)duration;
-- (id)attributeKeys;
-- (void)play;
+- (double)currentTime;
 
 @end

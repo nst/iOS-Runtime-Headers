@@ -39,10 +39,10 @@
     BOOL _hasShutDown;
     NSDictionary *_metadataBackoffManagerParameters;
     NSDictionary *_MMCSBackoffManagerParameters;
-    NSObject<OS_dispatch_queue> *_memberQueue;
-    NSObject<OS_dispatch_queue> *_eventQueue;
-    NSObject<OS_dispatch_queue> *_serverSideConfigQueue;
     NSObject<OS_dispatch_queue> *_workQueue;
+    NSObject<OS_dispatch_queue> *_memberQueue;
+    NSObject<OS_dispatch_queue> *_serverSideConfigQueue;
+    NSObject<OS_dispatch_queue> *_eventQueue;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -79,10 +79,10 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
-- (id)protocol;
-- (void)start;
-- (void)setServerSideConfigQueue:(id)arg1;
+- (void)setPersonID:(id)arg1;
+- (id)personID;
 - (void)setEventQueue:(id)arg1;
+- (void)setServerSideConfigQueue:(id)arg1;
 - (void)setMemberQueue:(id)arg1;
 - (void)setThumbnailImageScalingSpecification:(id)arg1;
 - (void)setDerivativeImageScalingSpecification:(id)arg1;
@@ -223,8 +223,8 @@
 - (void)retryOutstandingActivities;
 - (void)setDaemon:(id)arg1;
 - (BOOL)isInRetryState;
-- (void)setPersonID:(id)arg1;
-- (id)personID;
+- (id)protocol;
+- (void)start;
 - (void)setProtocol:(id)arg1;
 
 @end

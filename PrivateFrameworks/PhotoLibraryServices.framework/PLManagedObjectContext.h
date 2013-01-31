@@ -59,15 +59,9 @@
 - (BOOL)save:(id*)arg1;
 - (id)executeFetchRequest:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
-- (id)existingObjectWithID:(id)arg1 error:(id*)arg2;
-- (void)_mergeChangesFromDidSaveDictionary:(id)arg1 usingObjectIDs:(BOOL)arg2;
-- (unsigned int)countForFetchRequest:(id)arg1 error:(id*)arg2;
-- (int)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
-- (BOOL)isReadOnly;
-- (BOOL)obtainPermanentIDsForObjects:(id)arg1 error:(id*)arg2;
+- (void)setIsBackingALAssetsLibrary:(BOOL)arg1;
 - (void)setRegenerateVideoThumbnails:(BOOL)arg1;
 - (BOOL)regenerateVideoThumbnails;
-- (void)setIsBackingALAssetsLibrary:(BOOL)arg1;
 - (void)setIsInitializingSingletons:(BOOL)arg1;
 - (BOOL)isInitializingSingletons;
 - (BOOL)savingDuringMerge;
@@ -98,5 +92,11 @@
 - (void)setHasMetadataChanges:(BOOL)arg1;
 - (BOOL)hasMetadataChanges;
 - (void)setPhotoLibrary:(id)arg1;
+- (id)existingObjectWithID:(id)arg1 error:(id*)arg2;
+- (void)_mergeChangesFromDidSaveDictionary:(id)arg1 usingObjectIDs:(BOOL)arg2;
+- (unsigned int)countForFetchRequest:(id)arg1 error:(id*)arg2;
+- (int)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
+- (BOOL)isReadOnly;
+- (BOOL)obtainPermanentIDsForObjects:(id)arg1 error:(id*)arg2;
 
 @end

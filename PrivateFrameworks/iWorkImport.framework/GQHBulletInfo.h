@@ -16,12 +16,6 @@
 }
 
 
-- (int)type;
-- (void)dealloc;
-- (int)number;
-- (id)style;
-- (void)setStyle:(id)arg1;
-- (void)setType:(int)arg1;
 - (struct __CFString { }*)createTierStringNumber;
 - (int)bulletIndent;
 - (struct __CFString { }*)bulletChar;
@@ -33,6 +27,12 @@
 - (int)labelType;
 - (void)setTextIndent:(int)arg1;
 - (int)textIndent;
+- (int)type;
+- (void)dealloc;
 - (void)setNumber:(int)arg1;
+- (int)number;
+- (id)style;
+- (void)setStyle:(id)arg1;
+- (void)setType:(int)arg1;
 
 @end

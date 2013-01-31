@@ -11,7 +11,6 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)value:(const void*)arg1 withObjCType:(const char *)arg2;
 + (id)valueWithPointer:(const void*)arg1;
 + (id)valueWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 + (id)valueWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -21,6 +20,7 @@
 + (void)initialize;
 + (id)valueWithBytes:(const void*)arg1 objCType:(const char *)arg2;
 + (BOOL)supportsSecureCoding;
++ (id)value:(const void*)arg1 withObjCType:(const char *)arg2;
 + (id)valueWithCAColorMatrix:(struct CAColorMatrix { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; })arg1;
 + (id)valueWithCATransform3D:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1;
 + (id)valueWithCAPoint3D:(struct CAPoint3D { float x1; float x2; float x3; })arg1;
@@ -42,6 +42,7 @@
 + (id)valueWithCGSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)valueWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeValue;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -60,7 +61,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (BOOL)isNSValue__;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeValue;
 - (id)initWithBytes:(const void*)arg1 objCType:(const char *)arg2;
 - (struct CAColorMatrix { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; })CAColorMatrixValue;
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })CATransform3DValue;

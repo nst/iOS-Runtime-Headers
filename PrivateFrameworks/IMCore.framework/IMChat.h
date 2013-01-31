@@ -76,18 +76,15 @@
 @property(readonly) int rowIDOfMostRecentFailedMessage;
 
 
-- (void)cancelMessage:(id)arg1;
-- (void)declineInvitation;
-- (void)acceptInvitation;
-- (id)recipient;
-- (void)setRecipient:(id)arg1;
-- (id)participants;
 - (id)guid;
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (id)dateCreated;
+- (void)join;
 - (id)persistentID;
-- (void)clear;
+- (id)account;
+- (void)cancelMessage:(id)arg1;
 - (void)_endLegacyHistoryLoading;
 - (void)_beginLegacyHistoryLoading;
 - (void)_insertLegacyHistory:(id)arg1;
@@ -229,6 +226,9 @@
 - (void)_accountLoggedOut:(id)arg1;
 - (void)_updateFailedCount;
 - (id)messageForGUID:(id)arg1;
+- (void)sendMessage:(id)arg1;
+- (void*)contextInfo;
+- (void)setContextInfo:(void*)arg1;
 - (BOOL)_hasCommunicatedOnService:(id)arg1;
 - (id)lastMessage;
 - (BOOL)sendDowngradeNotificationTo:(id)arg1;
@@ -250,12 +250,12 @@
 - (void)setNumberOfMessagesToKeepLoaded:(unsigned int)arg1;
 - (void)updateMessage:(id)arg1;
 - (void)markAllMessagesAsRead;
-- (void)sendMessage:(id)arg1;
-- (id)dateCreated;
-- (id)account;
-- (void)join;
-- (void*)contextInfo;
-- (void)setContextInfo:(void*)arg1;
+- (void)clear;
+- (void)declineInvitation;
+- (void)acceptInvitation;
+- (id)recipient;
+- (void)setRecipient:(id)arg1;
+- (id)participants;
 - (void)__ck_targetToService:(id)arg1;
 - (BOOL)__ck_hasDowngradeMarkers;
 - (BOOL)__ck_hasValidAccountForService:(id)arg1;

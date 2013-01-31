@@ -15,12 +15,12 @@
 @property(readonly) unsigned int transactionID;
 
 
-- (unsigned int)transactionID;
-- (int)updateType;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (int)updateType;
+- (unsigned int)transactionID;
 - (id)initWithBulletin:(id)arg1 updateType:(int)arg2 transactionID:(unsigned int)arg3;
 - (id)bulletin;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

@@ -2,7 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SSAuthenticationContext, SUObjectPool, SUDelayedNavigationItem, SUWebViewManager, SUStorePageProtocol, SUWebView, NSURL, SSMutableAuthenticationContext, ISURLRequestPerformance;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSURL, SUObjectPool, SUDelayedNavigationItem, SSAuthenticationContext, SUWebViewManager, SUStorePageProtocol, SUWebView, SSMutableAuthenticationContext, ISURLRequestPerformance, SUMescalSession;
 
 @interface SUWebViewController : SUViewController <SUWebViewManagerDelegate, SUWebViewDelegate> {
     SUWebView *_webView;
@@ -10,6 +14,12 @@
     SUDelayedNavigationItem *_delayedNavigationItem;
     BOOL _hasEverAppeared;
     int _lastKnownOrientation;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _loadBlock;
+
+    SUMescalSession *_mescalSession;
     SUObjectPool *_objectPool;
     ISURLRequestPerformance *_performanceMetrics;
     int _scheduledOrientation;
@@ -24,26 +34,35 @@
 @property(copy) SSAuthenticationContext * authenticationContext;
 @property BOOL viewIsReady;
 @property(readonly) SUWebView * webView;
+@property(getter=_mescalSession,setter=_setMescalSession:,retain) SUMescalSession * _mescalSession;
 @property(getter=_performanceMetrics,setter=_setPerformanceMetrics:,retain) ISURLRequestPerformance * _performanceMetrics;
 
 
+- (void)_setMescalSession:(id)arg1;
+- (id)_mescalSession;
 - (void)_setLastKnownOrientation:(int)arg1;
 - (void)webViewManager:(id)arg1 webDocumentViewDidSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)webViewManagerDidStartLoad:(id)arg1;
 - (void)webViewManagerDidFinishLoad:(id)arg1;
 - (void)webViewManager:(id)arg1 didFailLoadWithError:(id)arg2;
 - (void)webViewManager:(id)arg1 willInjectScriptInterface:(id)arg2;
+- (void)webViewManager:(id)arg1 didReceivePrimaryResponse:(id)arg2;
 - (void)webViewManager:(id)arg1 didRejectInvalidRequest:(id)arg2;
 - (void)webViewManager:(id)arg1 didReceiveTitle:(id)arg2;
 - (id)viewControllerForWebViewManager:(id)arg1;
 - (id)newScriptInterfaceForWebViewManager:(id)arg1;
-- (void)_applySavedScrollOffsetIfPossible;
-- (void)_sendOrientationWillChangeToInterfaceOrientation:(int)arg1;
-- (void)_reloadUI;
 - (void)_reloadObjectPool;
-- (void)_removePlaceholderBackgroundView;
-- (void)setViewIsReady:(BOOL)arg1;
 - (void)_addPlaceholderBackgroundView;
+- (id)_newURLRequestWithOperation:(id)arg1 bagContext:(id)arg2;
+- (void)_getURLRequestForOperation:(id)arg1 block:(id)arg2;
+- (void)_loadURLRequest:(id)arg1;
+- (void)_applySavedScrollOffsetIfPossible;
+- (void)_removePlaceholderBackgroundView;
+- (void)_finishLoadWithResult:(BOOL)arg1 error:(id)arg2;
+- (void)_sendOrientationWillChangeToInterfaceOrientation:(int)arg1;
+- (void)setViewIsReady:(BOOL)arg1;
+- (void)_reloadUI;
+- (void)_prepareToLoadURL:(id)arg1;
 - (void)_reloadPlaceholderBackgroundView;
 - (id)_placeholderBackgroundView;
 - (struct CGSize { float x1; float x2; })minimumViewSize;
@@ -57,6 +76,7 @@
 - (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
 - (BOOL)viewIsReady;
 - (void)_setPerformanceMetrics:(id)arg1;
+- (void)_loadWithURLOperation:(id)arg1 completionBlock:(id)arg2;
 - (id)navigationItemForScriptInterface;
 - (void)keyboardWillShowWithInfo:(id)arg1;
 - (void)keyboardDidHideWithInfo:(id)arg1;

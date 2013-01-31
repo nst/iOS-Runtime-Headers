@@ -46,13 +46,6 @@
 @property float opacity;
 
 
-- (void)dealloc;
-- (id)init;
-- (void)setScale:(float)arg1;
-- (float)opacity;
-- (void)setOpacity:(float)arg1;
-- (float)scale;
-- (void)setImage:(id)arg1;
 - (void)setRotationRadians:(double)arg1;
 - (double)rotationRadians;
 - (BOOL)shouldSnapToPixelsWithContext:(id)arg1;
@@ -60,5 +53,12 @@
 - (void)setDrawsOnGround:(BOOL)arg1;
 - (void)layoutWithContext:(id)arg1;
 - (void)drawWithContext:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setScale:(float)arg1;
+- (float)opacity;
+- (void)setOpacity:(float)arg1;
+- (float)scale;
+- (void)setImage:(id)arg1;
 
 @end

@@ -14,9 +14,9 @@
 + (id)createSessionInfoRequestWithDictionary:(id)arg1 context:(id)arg2;
 + (id)createSessionInfoRequest;
 
+- (id)encodedClassName;
 - (void)setSessionInfoRequest:(id)arg1;
 - (id)sessionInfoRequest;
 - (id)groupIdentifier;
-- (id)encodedClassName;
 
 @end

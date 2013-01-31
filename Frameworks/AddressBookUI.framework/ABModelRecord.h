@@ -14,8 +14,8 @@
 
 
 - (void)dealloc;
-- (BOOL)isGroup;
 - (int)recordID;
+- (BOOL)isGroup;
 - (struct __CFString { }*)sortKey;
 - (id)namePieces;
 - (long)highlightIndex;

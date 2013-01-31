@@ -43,11 +43,6 @@
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5 countryCode:(id)arg6 identifier:(int*)arg7;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 orEmail:(id)arg3 orNumber:(id)arg4;
 
-- (id)emails;
-- (void)setLastName:(id)arg1;
-- (id)lastName;
-- (void)setFirstName:(id)arg1;
-- (id)firstName;
 - (void)setNickname:(id)arg1;
 - (id)nickname;
 - (void)save;
@@ -58,11 +53,10 @@
 - (void)dealloc;
 - (oneway void)release;
 - (id)init;
-- (void)setImageData:(id)arg1;
-- (unsigned int)status;
-- (id)displayName;
-- (void)finalize;
+- (int)recordID;
 - (id)fullName;
+- (id)imageData;
+- (void)setImageData:(id)arg1;
 - (BOOL)_registered;
 - (int)_recordID;
 - (void)_abPersonChanged:(id)arg1;
@@ -86,13 +80,19 @@
 - (id)initWithABRecordID:(int)arg1;
 - (id)phoneNumbers;
 - (id)valuesForIMProperty:(id)arg1;
+- (id)companyName;
 - (BOOL)isEqualToIMPerson:(id)arg1;
 - (void*)_recordRef;
 - (void)setEmails:(id)arg1;
-- (int)recordID;
-- (id)groups;
-- (id)imageData;
-- (id)companyName;
+- (unsigned int)status;
+- (id)displayName;
+- (void)finalize;
+- (id)emails;
+- (void)setLastName:(id)arg1;
+- (id)lastName;
+- (void)setFirstName:(id)arg1;
+- (id)firstName;
 - (id)uniqueID;
+- (id)groups;
 
 @end

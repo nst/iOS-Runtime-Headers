@@ -12,6 +12,11 @@
 @property(retain) IMServiceImpl * service;
 
 
+- (void)dealloc;
+- (void)setService:(id)arg1;
+- (id)service;
+- (void)_startListeningForNotifications;
+- (id)accountNameForSpecifier:(id)arg1;
 - (void)_handleDaemonDisconnected:(id)arg1;
 - (void)_stopListeningForNotifications;
 - (void)_handleAccountNotification:(id)arg1;
@@ -20,12 +25,7 @@
 - (void)accountTappedWithSpecifier:(id)arg1;
 - (id)initWithServiceType:(int)arg1;
 - (id)specifiers;
-- (void)dealloc;
-- (id)accountNameForSpecifier:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
-- (id)service;
-- (void)setService:(id)arg1;
-- (void)_startListeningForNotifications;
 
 @end

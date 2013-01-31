@@ -16,10 +16,10 @@
 + (id)stringNonceToRaw:(id)arg1;
 + (id)rawNonceToString:(id)arg1;
 
+- (id)init;
+- (id)nonce;
 - (id)lastRawNonce;
 - (id)lastNonce;
 - (id)rawNonce;
-- (id)init;
-- (id)nonce;
 
 @end

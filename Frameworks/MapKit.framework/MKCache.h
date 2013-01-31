@@ -15,6 +15,7 @@
 
 + (id)impWithCapacity:(unsigned int)arg1 maxCapacity:(unsigned int)arg2 delegate:(id)arg3;
 
+- (void)compact;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)description;
 - (void)removeAllObjects;
@@ -23,14 +24,13 @@
 - (void)dealloc;
 - (id)init;
 - (unsigned int)count;
+- (unsigned int)maxCapacity;
+- (void)setMaxCapacity:(unsigned int)arg1;
+- (void)removeObjectsForKeys:(id)arg1;
 - (id)allObjects;
 - (void)setCompactionFactor:(float)arg1;
 - (float)compactionFactor;
 - (id)initWithCapacity:(unsigned int)arg1 maxCapacity:(unsigned int)arg2;
-- (void)compact;
-- (void)removeObjectsForKeys:(id)arg1;
 - (unsigned int)getKeys:(const void**)arg1 values:(const void**)arg2;
-- (unsigned int)maxCapacity;
-- (void)setMaxCapacity:(unsigned int)arg1;
 
 @end

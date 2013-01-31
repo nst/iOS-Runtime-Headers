@@ -16,20 +16,20 @@
 
 + (id)defaultStore;
 
+- (void)dealloc;
+- (id)init;
 - (void)setAppleID:(id)arg1;
 - (id)appleID;
 - (void)setGroupIDRequest:(id)arg1;
 - (id)groupIDRequest;
 - (void)clearAllCredentials;
 - (void)clearGroupID;
+- (id)password;
+- (void)determineGroupIDWithCompletionHandler:(id)arg1;
+- (BOOL)canDetermineGroupID;
 - (void)setGroupID:(id)arg1;
 - (id)groupID;
 - (void)setPassword:(id)arg1;
-- (void)determineGroupIDWithCompletionHandler:(id)arg1;
-- (BOOL)canDetermineGroupID;
-- (void)dealloc;
-- (id)init;
 - (void)clearCaches;
-- (id)password;
 
 @end

@@ -11,11 +11,11 @@
 @property NSMutableDictionary * loadingCompletionHandlers;
 
 
+- (void)dealloc;
 - (void)setLoadingCompletionHandlers:(id)arg1;
 - (BOOL)imageNeedsRefresh:(id)arg1;
 - (void)loadRawImageForImageID:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)loadingCompletionHandlers;
 - (void)loadImageForURLString:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)dealloc;
 
 @end

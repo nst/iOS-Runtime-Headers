@@ -22,20 +22,13 @@
 
 @property unsigned int maxJPEGSize;
 
-+ (struct __IOSurfaceAccelerator { }*)_createAccelerator;
 + (struct __IOSurfaceAccelerator { }*)_getPooledSurfaceAccelerator;
 + (void)_poolSurfaceAccelerator:(struct __IOSurfaceAccelerator { }*)arg1;
 + (struct { void *x1; long x2; }*)_transferSessionPool;
 + (id)_hardwareSemaphoreWaitQueue;
 + (id)_hardwareSemaphore;
++ (struct __IOSurfaceAccelerator { }*)_createAccelerator;
 
-- (struct __IOSurface { }*)_createJPEGSurface;
-- (struct __IOSurface { }*)_create420Surface;
-- (unsigned int)maxJPEGSize;
-- (void)_decodeJPEG:(id)arg1 withInputSurface:(struct __IOSurface { }*)arg2 toIOSurface:(struct __IOSurface { }*)arg3;
-- (void)_receivedMemoryWarning:(id)arg1;
-- (void)setMaxJPEGSize:(unsigned int)arg1;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 cachedCount:(int)arg2;
 - (void)dealloc;
 - (void)decodeSurfaceFromJPEGPath:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)decodeSurfaceFromJPEGData:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
@@ -47,5 +40,12 @@
 - (struct __IOSurface { }*)_getPooled420Surface;
 - (struct __IOSurface { }*)_getPooledJPEGSurfaceOfSize:(unsigned int)arg1;
 - (void)_pool420Surface:(struct __IOSurface { }*)arg1;
+- (struct __IOSurface { }*)_createJPEGSurface;
+- (struct __IOSurface { }*)_create420Surface;
+- (unsigned int)maxJPEGSize;
+- (void)_decodeJPEG:(id)arg1 withInputSurface:(struct __IOSurface { }*)arg2 toIOSurface:(struct __IOSurface { }*)arg3;
+- (void)_receivedMemoryWarning:(id)arg1;
+- (void)setMaxJPEGSize:(unsigned int)arg1;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 cachedCount:(int)arg2;
 
 @end

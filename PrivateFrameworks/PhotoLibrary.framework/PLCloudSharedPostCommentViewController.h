@@ -36,24 +36,8 @@
 @property(copy) NSString * albumName;
 
 
-- (id)placeholderText;
-- (void)setPlaceholderText:(id)arg1;
 - (void)_cancelAction:(id)arg1;
 - (void)dealloc;
-- (void)setCompletionHandler:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)addImage:(id)arg1;
-- (void)textViewDidChange:(id)arg1;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)completionHandler;
-- (id)_contentView;
-- (void)viewWillLayoutSubviews;
 - (id)commentText;
 - (void)_updateKeyboard;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewFrameForOrientation:(int)arg1;
@@ -69,5 +53,21 @@
 - (struct CGPoint { float x1; float x2; })preferredOffsetInParentViewController;
 - (id)albumName;
 - (void)setAlbumName:(id)arg1;
+- (void)setCompletionHandler:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)addImage:(id)arg1;
+- (void)textViewDidChange:(id)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)completionHandler;
+- (id)_contentView;
+- (void)viewWillLayoutSubviews;
+- (id)placeholderText;
+- (void)setPlaceholderText:(id)arg1;
 
 @end

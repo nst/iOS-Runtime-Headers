@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSString;
+@class NSString, NSDictionary;
 
 @interface GKPreferences : NSObject  {
     BOOL _HTTPShouldUsePipelining;
@@ -59,11 +59,16 @@
 @property BOOL shouldLinkPlayerToFacebook;
 @property(readonly) BOOL shouldDisallowInvitesFromStrangers;
 @property BOOL shouldAddPlayerInfoToAddressBook;
+@property(retain) NSDictionary * nearbyMultiplayerOverride;
 @property BOOL _shouldSynchronizeOnNextRead;
 
-+ (id)hostNameForEnvironment:(int)arg1;
 + (id)sharedPreferences;
++ (id)hostNameForEnvironment:(int)arg1;
 
+- (void)invalidate;
+- (id)init;
+- (int)environment;
+- (void)synchronize;
 - (void)setShouldAddPlayerInfoToAddressBook:(BOOL)arg1;
 - (BOOL)shouldAddPlayerInfoToAddressBook;
 - (BOOL)shouldDisallowInvitesFromStrangers;
@@ -145,6 +150,8 @@
 - (void)setMaxDefaultPlayersTurnBased:(unsigned int)arg1;
 - (void)setMaxDefaultPlayersHosted:(unsigned int)arg1;
 - (void)setMaxDefaultPlayersP2P:(unsigned int)arg1;
+- (void)setNearbyMultiplayerOverride:(id)arg1;
+- (id)nearbyMultiplayerOverride;
 - (BOOL)useTestProtocols;
 - (unsigned long)logFilter;
 - (double)minimumCacheTTL;
@@ -162,9 +169,5 @@
 - (BOOL)useInternalHeader;
 - (BOOL)isStoreDemoModeEnabled;
 - (BOOL)isAppInstallationRestricted;
-- (void)invalidate;
-- (id)init;
-- (int)environment;
-- (void)synchronize;
 
 @end

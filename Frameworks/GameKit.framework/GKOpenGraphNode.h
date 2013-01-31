@@ -19,6 +19,10 @@
 @property(retain) NSError * error;
 
 
+- (void)dealloc;
+- (id)error;
+- (id)cache;
+- (id)url;
 - (void)sendDislikeEventWithCompletionHandler:(id)arg1;
 - (void)sendLikeEventWithCompletionHandler:(id)arg1;
 - (void)fetchLikeStatusWithCompletionHandler:(id)arg1;
@@ -30,9 +34,5 @@
 - (void)setNumberOfFriendLikes:(unsigned int)arg1;
 - (void)setLiked:(BOOL)arg1;
 - (void)setError:(id)arg1;
-- (void)dealloc;
-- (id)cache;
-- (id)url;
-- (id)error;
 
 @end

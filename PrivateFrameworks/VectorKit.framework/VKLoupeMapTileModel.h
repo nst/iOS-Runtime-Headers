@@ -19,10 +19,6 @@
 }
 
 
-- (void)dealloc;
-- (BOOL)isActive;
-- (void)setActive:(BOOL)arg1;
-- (void)setTransform:(struct { double x1[4][4]; })arg1;
 - (void)setLoupeBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)drawDebugScene:(id)arg1 WithContext:(id)arg2;
 - (id)initWithMapTileModel:(id)arg1;
@@ -33,5 +29,9 @@
 - (void)setWorld:(id)arg1;
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
+- (void)dealloc;
+- (BOOL)isActive;
+- (void)setActive:(BOOL)arg1;
+- (void)setTransform:(struct { double x1[4][4]; })arg1;
 
 @end

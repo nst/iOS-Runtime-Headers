@@ -9,10 +9,10 @@
 @property int height;
 
 
+- (id)toDataURL:(id)arg1;
 - (void)setHeight:(int)arg1;
 - (int)height;
 - (void)setWidth:(int)arg1;
 - (int)width;
-- (id)toDataURL:(id)arg1;
 
 @end

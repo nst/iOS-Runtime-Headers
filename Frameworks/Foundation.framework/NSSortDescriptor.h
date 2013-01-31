@@ -11,26 +11,22 @@
     id _selectorOrBlock;
 }
 
-+ (id)sortDescriptorWithKey:(id)arg1 ascending:(BOOL)arg2 comparator:(id)arg3;
-+ (id)sortDescriptorWithKey:(id)arg1 ascending:(BOOL)arg2;
 + (void)initialize;
++ (id)sortDescriptorWithKey:(id)arg1 ascending:(BOOL)arg2 comparator:(id)arg3;
 + (id)_defaultSelectorName;
 + (id)sortDescriptorWithKey:(id)arg1 ascending:(BOOL)arg2 selector:(SEL)arg3;
++ (id)sortDescriptorWithKey:(id)arg1 ascending:(BOOL)arg2;
 
 - (id)initWithKey:(id)arg1 ascending:(BOOL)arg2 selector:(SEL)arg3;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)compareObject:(id)arg1 toObject:(id)arg2;
-- (id)comparator;
-- (BOOL)ascending;
 - (id)key;
 - (SEL)selector;
 - (id)initWithKey:(id)arg1 ascending:(BOOL)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)replacementObjectForPortCoder:(id)arg1;
 - (id)reversedSortDescriptor;
 - (void)_setAscending:(BOOL)arg1;
 - (void)_setKey:(id)arg1;
@@ -38,5 +34,9 @@
 - (void)_setSelectorName:(id)arg1;
 - (id)_selectorName;
 - (id)initWithKey:(id)arg1 ascending:(BOOL)arg2 comparator:(id)arg3;
+- (id)replacementObjectForPortCoder:(id)arg1;
+- (int)compareObject:(id)arg1 toObject:(id)arg2;
+- (id)comparator;
+- (BOOL)ascending;
 
 @end

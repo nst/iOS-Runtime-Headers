@@ -12,11 +12,11 @@
 
 + (id)sharedArtworkImageCache;
 
+- (void)dealloc;
+- (id)init;
 - (id)imageForURL:(id)arg1;
 - (void)_onQueueCallDidLoadBlocksWithImage:(id)arg1 forURL:(id)arg2;
 - (void)_applicationDidReceiveMemoryWarningNotification:(id)arg1;
 - (void)_dumpCache;
-- (void)dealloc;
-- (id)init;
 
 @end

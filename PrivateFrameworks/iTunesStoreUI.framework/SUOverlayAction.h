@@ -22,13 +22,13 @@
 - (void)setOtherViewController:(id)arg1;
 - (id)otherViewController;
 - (void)dealloc;
+- (int)actionType;
+- (void)setActionType:(int)arg1;
 - (id)viewController;
 - (id)transition;
 - (void)setTransition:(id)arg1;
 - (void)setViewController:(id)arg1;
 - (void)setAnimationCount:(int)arg1;
 - (int)animationCount;
-- (int)actionType;
-- (void)setActionType:(int)arg1;
 
 @end

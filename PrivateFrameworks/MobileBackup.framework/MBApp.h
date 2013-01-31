@@ -22,14 +22,12 @@
 + (id)appWithBundleID:(id)arg1;
 + (id)appWithPropertyList:(id)arg1;
 
-- (id)bundleID;
-- (id)bundleVersion;
 - (id)initWithPropertyList:(id)arg1;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)domain;
+- (BOOL)isPlaceholder;
 - (id)infoPlist;
 - (id)placeholderDomainWithCache:(id)arg1;
 - (BOOL)isSystemApp;
@@ -43,6 +41,8 @@
 - (id)datePlacedInSafeHarbor;
 - (BOOL)isSafeHarbor;
 - (id)propertyListForBackupProperties;
-- (BOOL)isPlaceholder;
+- (id)domain;
+- (id)bundleID;
+- (id)bundleVersion;
 
 @end

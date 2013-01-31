@@ -29,6 +29,7 @@
 + (struct __IOSurfaceAccelerator { }*)_createAccelerator;
 + (id)_stackQueueTransferSession;
 
+- (void)dealloc;
 - (id)newImageFrom420Data:(id)arg1;
 - (BOOL)_removeBGRASurface;
 - (struct __IOSurface { }*)_createJPEGSurface;
@@ -47,6 +48,5 @@
 - (void)setMaxJPEGSize:(unsigned int)arg1;
 - (id)newImageFromJPEGData:(id)arg1;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 cachedCount:(int)arg2;
-- (void)dealloc;
 
 @end

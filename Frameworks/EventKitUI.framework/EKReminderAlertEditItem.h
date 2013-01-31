@@ -48,6 +48,7 @@
 - (void)reset;
 - (void)dealloc;
 - (id)init;
+- (void)_setCell:(id)arg1 checked:(BOOL)arg2;
 - (id)footerView;
 - (void)setDate:(id)arg1;
 - (id)date;
@@ -125,9 +126,8 @@
 - (BOOL)configureForCalendarConstraints:(id)arg1;
 - (int)numberOfSubsections;
 - (void)_localeChanged;
-- (void)setStyleProvider:(id)arg1;
-- (void)_setCell:(id)arg1 checked:(BOOL)arg2;
 - (void)setStructuredLocation:(id)arg1;
 - (id)structuredLocation;
+- (void)setStyleProvider:(id)arg1;
 
 @end

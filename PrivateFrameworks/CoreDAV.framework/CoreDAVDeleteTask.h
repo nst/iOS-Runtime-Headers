@@ -14,11 +14,11 @@
 
 - (id)description;
 - (void)dealloc;
+- (id)httpMethod;
+- (id)requestBody;
 - (void)setPreviousETag:(id)arg1;
 - (id)additionalHeaderValues;
 - (id)previousETag;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)httpMethod;
-- (id)requestBody;
 
 @end

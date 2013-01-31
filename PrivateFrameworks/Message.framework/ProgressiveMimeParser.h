@@ -27,10 +27,7 @@
 - (void)setDelegate:(id)arg1;
 - (id)data;
 - (void)dealloc;
-- (void)_reportError:(id)arg1;
-- (void)start;
-- (void)setContext:(id)arg1;
-- (id)context;
+- (id)currentPart;
 - (void)noteDataLengthChanged:(unsigned int)arg1;
 - (id)initWithBodyData:(id)arg1 topLevelHeaders:(id)arg2 headersToPreserve:(id)arg3;
 - (void)_continueParsingBody;
@@ -40,6 +37,9 @@
 - (void)_continueParsing;
 - (void)_initializeTopLevelPartWithHeaders:(id)arg1;
 - (id)topLevelPart;
-- (id)currentPart;
+- (void)_reportError:(id)arg1;
+- (void)start;
+- (void)setContext:(id)arg1;
+- (id)context;
 
 @end

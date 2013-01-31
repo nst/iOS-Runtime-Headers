@@ -23,8 +23,8 @@
     NSMutableArray *_persistentDevices;
 }
 
-@property(retain) NSMutableArray * availablePeripherals;
 @property(retain) NSMutableArray * loadedDevices;
+@property(retain) NSMutableArray * availablePeripherals;
 @property(retain) NSMutableArray * connectedDevices;
 @property(retain) NSMutableArray * persistentDevices;
 @property(retain) NSMutableArray * updateDeviceBlocks;
@@ -32,14 +32,22 @@
 @property(retain) NSMutableArray * availableSearchBlocks;
 @property(retain) NSMutableArray * connectedSearchBlocks;
 
-+ (id)sharedController;
 + (void)searchForConnectedDevicesWithCompletion:(id)arg1;
 + (void)hearingAidDeviceUpdate:(id)arg1;
 + (void)searchForAvailableDevicesWithCompletion:(id)arg1;
++ (id)sharedController;
 
 - (void)dealloc;
 - (id)init;
 - (void)pairedHearingAidsDidChange;
+- (BOOL)isScanning;
+- (void)centralManager:(id)arg1 didDisconnectPeripheral:(id)arg2 error:(id)arg3;
+- (void)centralManager:(id)arg1 didFailToConnectPeripheral:(id)arg2 error:(id)arg3;
+- (void)centralManager:(id)arg1 didConnectPeripheral:(id)arg2;
+- (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
+- (void)centralManager:(id)arg1 didRetrieveConnectedPeripherals:(id)arg2;
+- (void)centralManager:(id)arg1 didRetrievePeripherals:(id)arg2;
+- (void)centralManagerDidUpdateState:(id)arg1;
 - (id)centralRequestBlocks;
 - (BOOL)isBluetoothAvailable;
 - (id)sortByRSSI:(id)arg1;
@@ -65,6 +73,8 @@
 - (id)connectedDevices;
 - (void)deviceDidFinishLoading:(id)arg1;
 - (id)hearingAidsForUUID:(id)arg1;
+- (id)hardwareVersionUUID;
+- (id)firmwareVersionUUID;
 - (id)modelNumberUUID;
 - (id)manufacturerUUID;
 - (id)disUUID;
@@ -73,13 +83,6 @@
 - (void)deviceDidUpdateProperty:(id)arg1;
 - (void)disconnectFromPeripheral:(id)arg1;
 - (void)connectToPeripheral:(id)arg1;
-- (void)centralManager:(id)arg1 didDisconnectPeripheral:(id)arg2 error:(id)arg3;
-- (void)centralManager:(id)arg1 didFailToConnectPeripheral:(id)arg2 error:(id)arg3;
-- (void)centralManager:(id)arg1 didConnectPeripheral:(id)arg2;
-- (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
-- (void)centralManager:(id)arg1 didRetrieveConnectedPeripherals:(id)arg2;
-- (void)centralManager:(id)arg1 didRetrievePeripherals:(id)arg2;
-- (void)centralManagerDidUpdateState:(id)arg1;
 - (void)stopSearching;
 
 @end

@@ -22,8 +22,6 @@
 
 + (id)sharedConnection;
 
-- (int)effectiveRestrictedBoolValueForSetting:(id)arg1;
-- (void)addObserver:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
@@ -171,12 +169,14 @@
 - (void)_passcodePolicyDidChange;
 - (void)_restrictionDidChange;
 - (void)checkIn;
+- (void)setUserInfo:(id)arg1 forClientUUID:(id)arg2;
+- (id)userInfoForClientUUID:(id)arg1;
+- (void)shutDown;
 - (int)effectiveBoolValueForSetting:(id)arg1;
 - (void)setInteractionDelegate:(id)arg1;
 - (id)_init;
-- (void)shutDown;
-- (void)setUserInfo:(id)arg1 forClientUUID:(id)arg2;
-- (id)userInfoForClientUUID:(id)arg1;
+- (int)effectiveRestrictedBoolValueForSetting:(id)arg1;
+- (void)addObserver:(id)arg1;
 - (BOOL)installConfigurationProfileWithData:(id)arg1;
 
 @end

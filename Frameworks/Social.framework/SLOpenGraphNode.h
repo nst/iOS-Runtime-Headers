@@ -8,8 +8,8 @@
     BOOL _likedByMe;
     unsigned int _numberOfLikes;
     unsigned int _numberOfFriendLikes;
-    NSArray *_likedByFriends;
     int _fetchState;
+    NSArray *_likedByFriends;
     NSURL *_URL;
 }
 
@@ -28,9 +28,9 @@
 - (id)initWithURL:(id)arg1;
 - (void).cxx_destruct;
 - (id)cache;
+- (id)likedByFriends;
 - (void)setFetchState:(int)arg1;
 - (int)fetchState;
-- (id)likedByFriends;
 - (void)unlikeWithCompletion:(id)arg1;
 - (void)likeWithCompletion:(id)arg1;
 - (BOOL)likedByMe;

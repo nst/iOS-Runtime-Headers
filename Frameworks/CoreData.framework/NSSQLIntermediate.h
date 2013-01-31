@@ -11,6 +11,7 @@
 + (BOOL)expressionIsBasicKeypath:(id)arg1;
 + (BOOL)isSimpleKeypath:(id)arg1;
 
+- (id)scope;
 - (id)_generateSQLForTernaryExpression:(id)arg1 allowToMany:(BOOL)arg2 inContext:(id)arg3;
 - (id)_generateSQLForFetchExpression:(id)arg1 allowToMany:(BOOL)arg2 inContext:(id)arg3;
 - (id)_generateSQLForExpressionCollection:(id)arg1 allowToMany:(BOOL)arg2 inContext:(id)arg3;
@@ -46,6 +47,5 @@
 - (id)initWithScope:(id)arg1;
 - (BOOL)isOrScoped;
 - (id)generateSQLStringInContext:(id)arg1;
-- (id)scope;
 
 @end

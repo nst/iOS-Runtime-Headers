@@ -14,8 +14,8 @@
 - (int)read:(char *)arg1 maxLength:(unsigned int)arg2 error:(id*)arg3;
 - (unsigned int)minimumReadLength;
 - (BOOL)open:(id*)arg1;
+- (long long)expectedLength;
 - (void)close;
 - (BOOL)hasBytesAvailable;
-- (long long)expectedLength;
 
 @end

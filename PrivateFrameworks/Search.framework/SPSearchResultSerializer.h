@@ -25,6 +25,8 @@
 @property(readonly) BOOL completed;
 
 
+- (void)dealloc;
+- (id)init;
 - (unsigned int)byteVector;
 - (unsigned int)byteVectorCount;
 - (void)serialize;
@@ -34,10 +36,8 @@
 - (id)_convertConformingResult:(id)arg1;
 - (id)initWithInitialCapacity:(unsigned int)arg1 inProc:(BOOL)arg2;
 - (unsigned int)_allocateSize:(unsigned int)arg1;
-- (void)dealloc;
-- (id)init;
-- (unsigned int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
 - (unsigned int)sectionCount;
 - (BOOL)completed;
+- (unsigned int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
 
 @end

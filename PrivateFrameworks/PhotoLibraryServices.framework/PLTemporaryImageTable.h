@@ -15,7 +15,6 @@
 
 - (void)reset;
 - (void)dealloc;
-- (void)_cleanup;
 - (void)removeItemAtIndex:(unsigned int)arg1;
 - (void)insertItemAtIndex:(unsigned int)arg1;
 - (id)imageForItemAtIndex:(unsigned int)arg1;
@@ -23,5 +22,6 @@
 - (void)setImage:(id)arg1 videoDuration:(id)arg2 forItemAtIndex:(unsigned int)arg3;
 - (id)initWithWithPath:(id)arg1 imageFormat:(int)arg2;
 - (unsigned int)_imageTableIndexForItemIndex:(unsigned int)arg1;
+- (void)_cleanup;
 
 @end

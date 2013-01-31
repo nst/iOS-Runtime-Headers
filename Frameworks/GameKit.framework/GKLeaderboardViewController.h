@@ -13,13 +13,13 @@
 @property <GKLeaderboardViewControllerDelegate> * leaderboardDelegate;
 
 
+- (id)init;
+- (id)category;
+- (void)setCategory:(id)arg1;
 - (void)notifyDelegateOnWillFinish;
 - (id)leaderboardDelegate;
 - (void)setLeaderboardDelegate:(id)arg1;
 - (void)setTimeScope:(int)arg1;
 - (int)timeScope;
-- (id)init;
-- (id)category;
-- (void)setCategory:(id)arg1;
 
 @end

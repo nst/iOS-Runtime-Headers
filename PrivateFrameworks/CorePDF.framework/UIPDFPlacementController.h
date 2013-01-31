@@ -16,6 +16,7 @@
 @property UIPDFPageView * pageView;
 
 
+- (void)dealloc;
 - (void)shift:(float)arg1;
 - (float)yForObjectAtIndex:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForObjectAtIndex:(unsigned int)arg1;
@@ -23,7 +24,6 @@
 - (id)initWithAnnotations:(id)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)setPageView:(id)arg1;
 - (id)pageView;
-- (void)dealloc;
 - (id)viewAtIndex:(unsigned int)arg1;
 
 @end

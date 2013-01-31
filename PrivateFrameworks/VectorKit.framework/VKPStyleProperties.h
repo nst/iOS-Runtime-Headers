@@ -146,6 +146,7 @@
     BOOL _layerShadowsVisible;
     BOOL _onlyShowIfTappable;
     BOOL _shieldVisible;
+    BOOL _showShieldTextAsLabel;
     BOOL _simpleLine;
     BOOL _strokeColorInterpolate;
     BOOL _trafficVisible;
@@ -258,6 +259,7 @@
         unsigned int layerShadowsVisible : 1; 
         unsigned int onlyShowIfTappable : 1; 
         unsigned int shieldVisible : 1; 
+        unsigned int showShieldTextAsLabel : 1; 
         unsigned int simpleLine : 1; 
         unsigned int strokeColorInterpolate : 1; 
         unsigned int trafficVisible : 1; 
@@ -476,6 +478,8 @@
 @property float genericShieldDropShadowSize;
 @property BOOL hasGenericShieldDropShadowColor;
 @property unsigned int genericShieldDropShadowColor;
+@property BOOL hasShowShieldTextAsLabel;
+@property BOOL showShieldTextAsLabel;
 @property BOOL hasLabelHeightSmall;
 @property float labelHeightSmall;
 @property BOOL hasLabelHeightSmallCurve;
@@ -520,23 +524,6 @@
 @property float arrowHeightLarge;
 
 
-- (unsigned int)labelColor;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setZIndex:(unsigned int)arg1;
-- (unsigned int)zIndex;
-- (void)setArrowVisible:(BOOL)arg1;
-- (float)arrowHeight;
-- (void)setArrowHeight:(float)arg1;
-- (void)setFillColor:(unsigned int)arg1;
-- (unsigned int)fillColor;
-- (id)dictionaryRepresentation;
-- (BOOL)visible;
-- (void)setVisible:(BOOL)arg1;
-- (void)setWidth:(float)arg1;
-- (float)width;
 - (void)setHasArrowHeightLarge:(BOOL)arg1;
 - (void)setHasArrowHeightMedium:(BOOL)arg1;
 - (void)setHasArrowHeightSmall:(BOOL)arg1;
@@ -558,6 +545,7 @@
 - (void)setHasLabelHeightSmallCurveLimit:(BOOL)arg1;
 - (void)setHasLabelHeightSmallCurve:(BOOL)arg1;
 - (void)setHasLabelHeightSmall:(BOOL)arg1;
+- (void)setHasShowShieldTextAsLabel:(BOOL)arg1;
 - (void)setHasGenericShieldDropShadowColor:(BOOL)arg1;
 - (void)setHasGenericShieldDropShadowSize:(BOOL)arg1;
 - (void)setGenericShieldDropShadowOffsets:(float*)arg1 count:(unsigned int)arg2;
@@ -721,6 +709,9 @@
 - (void)setLabelHeightSmall:(float)arg1;
 - (float)labelHeightSmall;
 - (BOOL)hasLabelHeightSmall;
+- (void)setShowShieldTextAsLabel:(BOOL)arg1;
+- (BOOL)showShieldTextAsLabel;
+- (BOOL)hasShowShieldTextAsLabel;
 - (void)setGenericShieldDropShadowColor:(unsigned int)arg1;
 - (unsigned int)genericShieldDropShadowColor;
 - (BOOL)hasGenericShieldDropShadowColor;
@@ -1027,10 +1018,27 @@
 - (void)setLabelIcon:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)setStrokeWidth:(float)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (float)strokeWidth;
 - (unsigned int)strokeColor;
 - (void)setStrokeColor:(unsigned int)arg1;
+- (void)setZIndex:(unsigned int)arg1;
+- (unsigned int)zIndex;
+- (void)setArrowVisible:(BOOL)arg1;
+- (float)arrowHeight;
+- (void)setArrowHeight:(float)arg1;
+- (void)setFillColor:(unsigned int)arg1;
+- (unsigned int)fillColor;
+- (id)dictionaryRepresentation;
+- (BOOL)visible;
+- (void)setVisible:(BOOL)arg1;
+- (void)setWidth:(float)arg1;
+- (float)width;
+- (unsigned int)labelColor;
 
 @end

@@ -15,14 +15,14 @@
 + (id)blank;
 + (id)instanceFromPlist:(id)arg1;
 
-- (id)attributeForKey:(id)arg1;
+- (id)reversed;
 - (id)description;
 - (void)dealloc;
 - (id)initWithCell:(id)arg1;
 - (void)setCell:(id)arg1;
 - (id)cell;
 - (id)content;
-- (id)reversed;
+- (id)attributeForKey:(id)arg1;
 - (BOOL)matches:(id)arg1;
 - (id)overlayedOn:(id)arg1;
 - (id)initFromPlist:(id)arg1;

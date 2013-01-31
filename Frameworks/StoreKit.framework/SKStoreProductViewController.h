@@ -35,6 +35,7 @@
 
 - (void)setClientIdentifier:(id)arg1;
 - (id)clientIdentifier;
+- (void)loadProductWithParameters:(id)arg1 completionBlock:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
@@ -60,6 +61,5 @@
 - (void)_requestRemoteViewController;
 - (void)setScriptContextDictionary:(id)arg1;
 - (void)setProductPageStyle:(int)arg1;
-- (void)loadProductWithParameters:(id)arg1 completionBlock:(id)arg2;
 
 @end

@@ -14,6 +14,12 @@
 }
 
 
+- (void)setLink:(id)arg1;
+- (id)link;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (int)order;
+- (void)setOrder:(int)arg1;
 - (void)setNextRegion:(id)arg1;
 - (id)nextRegion;
 - (BOOL)isZone;
@@ -33,12 +39,6 @@
 - (BOOL)isBoxRegion;
 - (BOOL)isIndivisible;
 - (void)accept:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (BOOL)isRotated;
-- (void)setLink:(id)arg1;
-- (id)link;
-- (int)order;
-- (void)setOrder:(int)arg1;
 
 @end

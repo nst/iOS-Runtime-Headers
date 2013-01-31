@@ -18,8 +18,6 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)stroke;
-- (id)fill;
 - (id)shape3D;
 - (id)scene3D;
 - (BOOL)hasIsBehindText;
@@ -39,5 +37,7 @@
 - (void)setParent:(id)arg1;
 - (void)setFill:(id)arg1;
 - (BOOL)isBehindText;
+- (id)stroke;
+- (id)fill;
 
 @end

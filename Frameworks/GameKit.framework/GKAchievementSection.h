@@ -29,6 +29,8 @@
 @property BOOL useLargeIcons;
 
 
+- (void)dealloc;
+- (float)heightForHeaderInTableView:(id)arg1;
 - (void)setUseLargeIcons:(BOOL)arg1;
 - (id)progressImageForAchievement:(id)arg1 isHighlighted:(BOOL)arg2 withCompletionHandler:(id)arg3;
 - (BOOL)useLargeIcons;
@@ -56,7 +58,5 @@
 - (BOOL)isInFormSheet;
 - (void)refreshDataWithCompletionHandlerAndError:(id)arg1;
 - (void)setIsInFormSheet:(BOOL)arg1;
-- (void)dealloc;
-- (float)heightForHeaderInTableView:(id)arg1;
 
 @end

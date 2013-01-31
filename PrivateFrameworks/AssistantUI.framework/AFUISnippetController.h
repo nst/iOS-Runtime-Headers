@@ -19,19 +19,12 @@
 @property(copy) NSArray * context;
 
 
-- (void)viewDidAppear;
 - (id)delegate;
 - (id)description;
 - (void).cxx_destruct;
 - (id)init;
-- (void)setContext:(id)arg1;
-- (id)title;
-- (id)context;
-- (void)setPhase:(int)arg1;
-- (int)phase;
-- (id)parentViewController;
-- (id)view;
-- (void)setTitle:(id)arg1;
+- (void)setSpeakableText:(id)arg1;
+- (id)speakableText;
 - (void)viewDidDisappear;
 - (void)viewWillDisappear;
 - (void)viewWillAppear;
@@ -61,7 +54,14 @@
 - (void)updateWithAceObject:(id)arg1;
 - (id)initWithAceObject:(id)arg1 delegate:(id)arg2;
 - (id)_speakableTextForAceObject:(id)arg1;
-- (void)setSpeakableText:(id)arg1;
-- (id)speakableText;
+- (void)setContext:(id)arg1;
+- (id)title;
+- (id)context;
+- (void)setPhase:(int)arg1;
+- (int)phase;
+- (id)parentViewController;
+- (id)view;
+- (void)setTitle:(id)arg1;
+- (void)viewDidAppear;
 
 @end

@@ -14,12 +14,12 @@
 
 - (id)userInfo;
 - (void)dealloc;
-- (id)localizedDescription;
 - (void)useGenericDescription:(id)arg1;
 - (id)mf_moreInfo;
 - (void)setMoreInfo:(id)arg1;
 - (id)mf_shortDescription;
 - (void)setShortDescription:(id)arg1;
+- (id)localizedDescription;
 - (void)setUserInfoObject:(id)arg1 forKey:(id)arg2;
 - (void)setLocalizedDescription:(id)arg1;
 

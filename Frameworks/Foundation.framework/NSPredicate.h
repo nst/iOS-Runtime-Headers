@@ -8,23 +8,23 @@
 
 + (id)predicateWithFormat:(id)arg1;
 + (id)predicateWithValue:(BOOL)arg1;
-+ (id)predicateWithFormat:(id)arg1 argumentArray:(id)arg2;
-+ (struct __CFLocale { }*)retainedLocale;
 + (id)predicateWithBlock:(id)arg1;
 + (void)initialize;
 + (id)predicateWithFormat:(id)arg1 arguments:(void*)arg2;
 + (id)newStringFrom:(id)arg1 usingUnicodeTransforms:(unsigned int)arg2;
++ (id)predicateWithFormat:(id)arg1 argumentArray:(id)arg2;
++ (struct __CFLocale { }*)retainedLocale;
 
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)predicateFormat;
-- (id)predicateWithSubstitutionVariables:(id)arg1;
-- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
-- (BOOL)evaluateWithObject:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
 - (id)generateMetadataDescription;
+- (id)predicateFormat;
+- (id)predicateWithSubstitutionVariables:(id)arg1;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (BOOL)evaluateWithObject:(id)arg1;
 - (id)minimalFormInContext:(id)arg1;
 - (void)ab_runPredicateWithSortOrder:(unsigned int)arg1 inAddressBook:(void*)arg2 withDelegate:(id)arg3;
 - (void)ab_addCallbackContextToArray:(struct __CFArray { }*)arg1;

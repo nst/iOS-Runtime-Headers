@@ -16,12 +16,11 @@
 }
 
 
+- (void)setRowSpan:(int)arg1;
+- (int)rowSpan;
 - (void)setProperties:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)properties;
-- (void)setRowSpan:(int)arg1;
-- (int)rowSpan;
 - (void)setLeftColumn:(int)arg1;
 - (int)leftColumn;
 - (void)setTopRow:(int)arg1;
@@ -36,5 +35,6 @@
 - (int)gridSpan;
 - (BOOL)vertMerge;
 - (BOOL)horzMerge;
+- (id)properties;
 
 @end

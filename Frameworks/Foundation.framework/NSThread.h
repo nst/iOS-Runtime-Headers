@@ -8,18 +8,18 @@
 }
 
 + (BOOL)isMainThread;
-+ (id)currentThread;
-+ (id)callStackSymbols;
-+ (id)callStackReturnAddresses;
++ (void)sleepForTimeInterval:(double)arg1;
 + (void)sleepUntilDate:(id)arg1;
 + (void)detachNewThreadSelector:(SEL)arg1 toTarget:(id)arg2 withObject:(id)arg3;
++ (id)currentThread;
++ (id)callStackSymbols;
 + (void)exit;
 + (BOOL)isMultiThreaded;
 + (id)mainThread;
 + (BOOL)isDying;
 + (BOOL)setThreadPriority:(double)arg1;
 + (double)threadPriority;
-+ (void)sleepForTimeInterval:(double)arg1;
++ (id)callStackReturnAddresses;
 + (void)_im_runBlock:(id)arg1;
 + (void)_mapkit_runThread:(id)arg1;
 + (id)_mapkit_networkIOThread;
@@ -45,12 +45,12 @@
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
 - (void)setThreadPriority:(double)arg1;
 - (double)threadPriority;
+- (void)__im_performBlock:(id)arg1 waitUntilDone:(BOOL)arg2 modes:(id)arg3;
+- (void)__im_performBlock:(id)arg1 modes:(id)arg2;
 - (void)__im_performBlock:(id)arg1 waitUntilDone:(BOOL)arg2;
 - (void)__im_performBlock:(id)arg1 afterDelay:(double)arg2;
 - (void)__im_performBlock:(id)arg1;
 - (void)__im_performBlock:(id)arg1 afterDelay:(double)arg2 modes:(id)arg3;
-- (void)__im_performBlock:(id)arg1 waitUntilDone:(BOOL)arg2 modes:(id)arg3;
-- (void)__im_performBlock:(id)arg1 modes:(id)arg2;
 - (BOOL)shouldStop;
 - (void)unregisterForStopNotification;
 - (void)registerForStopNotification;

@@ -16,11 +16,11 @@
 
 
 - (id)description;
-- (id)connection;
-- (void)setContext:(id)arg1;
-- (id)context;
 - (void)setPid:(int)arg1;
 - (int)pid;
 - (void)setConnection:(id)arg1;
+- (id)connection;
+- (void)setContext:(id)arg1;
+- (id)context;
 
 @end

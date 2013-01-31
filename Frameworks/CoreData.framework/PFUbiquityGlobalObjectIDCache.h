@@ -19,6 +19,9 @@
 - (void)dealloc;
 - (id)init;
 - (void)purgeCache;
+- (id)createGlobalIDForPrimarKey:(unsigned int)arg1 entityName:(id)arg2 andOwningPeerID:(id)arg3;
+- (id)createGlobalIDForPrimaryKeyString:(id)arg1 entityName:(id)arg2 andOwningPeerID:(id)arg3;
+- (id)createGlobalIDForGlobalIDString:(id)arg1;
 - (id)createGlobalIDForCompressedString:(id)arg1 withEntityNames:(id)arg2 primaryKeys:(id)arg3 peerIDs:(id)arg4;
 - (id)initWithLocalPeerID:(id)arg1 forStoreName:(id)arg2;
 - (void)setLocalPeerID:(id)arg1;

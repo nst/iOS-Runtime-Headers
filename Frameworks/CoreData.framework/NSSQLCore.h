@@ -49,6 +49,7 @@
 @property(readonly) NSOperationQueue * presentedItemOperationQueue;
 @property(readonly) NSURL * primaryPresentedItemURL;
 
++ (void)initialize;
 + (void)setSQLGenerationV1Default:(BOOL)arg1;
 + (void)setColoredLoggingDefault:(BOOL)arg1;
 + (void)setDebugDefault:(int)arg1;
@@ -62,11 +63,20 @@
 + (Class)migrationManagerClass;
 + (BOOL)setMetadata:(id)arg1 forPersistentStoreWithURL:(id)arg2 error:(id*)arg3;
 + (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
-+ (void)initialize;
 
+- (void)_disconnect;
+- (id)currentContext;
+- (void)setCurrentContext:(id)arg1;
 - (id)identifier;
 - (id)type;
 - (void)dealloc;
+- (id)connection;
+- (id)presentedItemOperationQueue;
+- (id)presentedItemURL;
+- (void)accommodatePresentedItemDeletionWithCompletionHandler:(id)arg1;
+- (void)setURL:(id)arg1;
+- (void)commitTransaction;
+- (id)model;
 - (id)_newObjectIDForEntity:(id)arg1 referenceData64:(unsigned long long)arg2;
 - (id)_newReservedKeysForEntities:(id)arg1 counts:(id)arg2;
 - (void)recomputePrimaryKeyMaxForEntities:(id)arg1;
@@ -211,15 +221,5 @@
 - (id)initWithPersistentStoreCoordinator:(id)arg1 configurationName:(id)arg2 URL:(id)arg3 options:(id)arg4;
 - (id)externalDataReferencesDirectory;
 - (id)objectIDFactoryForEntity:(id)arg1;
-- (id)connection;
-- (id)presentedItemOperationQueue;
-- (id)presentedItemURL;
-- (void)accommodatePresentedItemDeletionWithCompletionHandler:(id)arg1;
-- (void)setURL:(id)arg1;
-- (void)commitTransaction;
-- (id)model;
-- (void)_disconnect;
-- (id)currentContext;
-- (void)setCurrentContext:(id)arg1;
 
 @end

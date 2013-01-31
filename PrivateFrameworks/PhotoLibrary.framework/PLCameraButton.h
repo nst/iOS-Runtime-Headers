@@ -38,13 +38,7 @@
 + (id)backgroundPressedImageName;
 + (id)backgroundImageName;
 
-- (void)_deviceOrientationChanged:(id)arg1;
 - (void)dealloc;
-- (id)initWithDefaultSize;
-- (void)_setHighlightOnMouseDown:(BOOL)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (int)orientation;
 - (void)_startWatchingDeviceOrientationChanges;
 - (void)setLockEnabled:(BOOL)arg1;
 - (void)setButtonMode:(int)arg1;
@@ -58,5 +52,11 @@
 - (void)setIsCapturing:(BOOL)arg1;
 - (void)_stopWatchingDeviceOrientationChanges;
 - (void)_setIcon:(id)arg1;
+- (id)initWithDefaultSize;
+- (void)_setHighlightOnMouseDown:(BOOL)arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (int)orientation;
+- (void)_deviceOrientationChanged:(id)arg1;
 
 @end

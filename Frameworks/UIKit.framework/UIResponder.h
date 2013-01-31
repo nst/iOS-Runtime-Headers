@@ -189,8 +189,8 @@
 - (id)firstResponder;
 - (id)nextResponder;
 - (id)firstViewControllerInResponderChain;
-- (void)downloadAsset:(id)arg1 completionHandler:(id)arg2;
 - (void)purchaseAsset:(id)arg1 completionHandler:(id)arg2;
 - (void)toggleVisibilityOfItemsInCompletionOffering:(id)arg1;
+- (void)downloadAsset:(id)arg1 completionHandler:(id)arg2;
 
 @end

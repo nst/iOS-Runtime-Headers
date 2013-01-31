@@ -27,17 +27,17 @@
 @property(readonly) NSDictionary * assetDictionary;
 
 
-- (void)setAppleID:(id)arg1;
-- (id)appleID;
-- (void)setDSID:(id)arg1;
-- (id)DSID;
-- (void)setAdamID:(id)arg1;
-- (id)adamID;
 - (id)versionID;
 - (void)dealloc;
 - (id)init;
 - (void)setPodcastEpisodeGUID:(id)arg1;
 - (id)podcastEpisodeGUID;
+- (void)setDSID:(id)arg1;
+- (id)DSID;
+- (void)setCollectionID:(id)arg1;
+- (void)setAppleID:(id)arg1;
+- (id)appleID;
+- (id)collectionID;
 - (id)assetDictionary;
 - (id)downloadDictionary;
 - (id)drmFree;
@@ -56,8 +56,8 @@
 - (id)storefrontID;
 - (void)setStorefrontID:(id)arg1;
 - (void)setVersionID:(id)arg1;
-- (void)setCollectionID:(id)arg1;
+- (void)setAdamID:(id)arg1;
+- (id)adamID;
 - (id)dimensions;
-- (id)collectionID;
 
 @end

@@ -53,19 +53,6 @@
 - (void)setSubtitleColor:(id)arg1;
 - (void)setPlaceholderImage:(id)arg1;
 - (void)setImageCache:(id)arg1;
-- (id)placeholderImage;
-- (id)imageCache;
-- (void)setQuery:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
-- (BOOL)hasPlaceholderImage;
-- (void)setTitleColor:(id)arg1;
-- (id)titleColor;
-- (id)query;
-- (id)dataSource;
-- (void)setDataSource:(id)arg1;
 - (void)setUseUnmodifiedThumbnails:(BOOL)arg1;
 - (BOOL)useUnmodifiedThumbnails;
 - (BOOL)useTimedArtwork;
@@ -98,5 +85,18 @@
 - (struct CGSize { float x1; float x2; })_sizeForCountStringOfEntityAtIndex:(unsigned int)arg1 withFont:(id)arg2;
 - (struct CGSize { float x1; float x2; })_sizeForProperty:(int)arg1 ofEntityAtIndex:(unsigned int)arg2 withFont:(id)arg3;
 - (id)_countStringForEntityAtIndex:(unsigned int)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (BOOL)hasPlaceholderImage;
+- (void)setTitleColor:(id)arg1;
+- (id)titleColor;
+- (id)query;
+- (id)dataSource;
+- (void)setDataSource:(id)arg1;
+- (void)setQuery:(id)arg1;
+- (id)placeholderImage;
+- (id)imageCache;
 
 @end

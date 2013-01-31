@@ -22,8 +22,8 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)deactivate;
 - (unsigned int)packetCount;
+- (void)deactivate;
 - (unsigned int)_remainingBatteryLifetimeInHoursForPacket:(id)arg1 timestamp:(unsigned int)arg2;
 - (id)_serialNumberForPacket:(id)arg1 timestamp:(unsigned int)arg2 radioId:(unsigned int*)arg3;
 - (BOOL)_isValidPacketForPaceModel:(id)arg1 timestamp:(unsigned int)arg2;

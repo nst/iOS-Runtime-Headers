@@ -23,21 +23,21 @@
 @property double sendTime;
 
 
-- (void)setRequest:(id)arg1;
+- (double)sendTime;
+- (void)setSendTime:(double)arg1;
 - (id)statusDescription;
 - (struct __CFHTTPMessage { }*)copyMessage;
-- (void)setStatusDescription:(id)arg1;
-- (void)dealloc;
-- (int)statusCode;
-- (id)request;
-- (id)serializedData;
 - (void)setWritten:(unsigned long long)arg1;
 - (unsigned long long)written;
 - (void)setSerializedData:(id)arg1;
 - (void)setTrackingDescription:(id)arg1;
 - (id)trackingDescription;
 - (void)setStatusCode:(int)arg1;
-- (double)sendTime;
-- (void)setSendTime:(double)arg1;
+- (void)dealloc;
+- (id)serializedData;
+- (int)statusCode;
+- (id)request;
+- (void)setRequest:(id)arg1;
+- (void)setStatusDescription:(id)arg1;
 
 @end

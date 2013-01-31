@@ -23,7 +23,9 @@
 @property(copy) NSString * rotationMode;
 
 
+- (id)timingFunctions;
 - (struct CGPath { }*)path;
+- (void)CA_prepareRenderValue;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
 - (void)setPath:(struct CGPath { }*)arg1;
 - (void)setTimingFunctions:(id)arg1;
@@ -32,8 +34,6 @@
 - (id)values;
 - (void)setCalculationMode:(id)arg1;
 - (void)setValues:(id)arg1;
-- (id)timingFunctions;
-- (void)CA_prepareRenderValue;
 - (void)setRotationMode:(id)arg1;
 - (void)setBiasValues:(id)arg1;
 - (void)setContinuityValues:(id)arg1;

@@ -23,21 +23,6 @@
 @property <MPNowPlayingItemQueueInfoButtonDelegate> * delegate;
 
 
-- (id)infoURL;
-- (void)setInfoURL:(id)arg1;
-- (void)clearWeakReferencesToObject:(id)arg1;
-- (void)updateForItemCrossedTimeMarkerNotification:(id)arg1 currentTime:(double)arg2;
-- (void)configureForItem:(id)arg1;
-- (BOOL)_shouldDisplaysInfoCircleImage;
-- (void)_updateFeederCountInfo:(id)arg1;
-- (unsigned int)allowedDisplayTypes;
-- (int)_activeDisplayType;
-- (int)infoDisplayType;
-- (float)_minSizingTextWidth;
-- (int)_infoDisplayTypeForURL:(id)arg1 urlIsTimed:(BOOL)arg2 feederCount:(unsigned int)arg3 askDelegate:(BOOL)arg4;
-- (void)clicked:(id)arg1;
-- (BOOL)configureForItem:(id)arg1 atTime:(double)arg2;
-- (void)setAllowedDisplayTypes:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
@@ -47,5 +32,20 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
+- (void)updateForItemCrossedTimeMarkerNotification:(id)arg1 currentTime:(double)arg2;
+- (void)configureForItem:(id)arg1;
+- (BOOL)_shouldDisplaysInfoCircleImage;
+- (void)_updateFeederCountInfo:(id)arg1;
+- (void)setInfoURL:(id)arg1;
+- (unsigned int)allowedDisplayTypes;
+- (int)_activeDisplayType;
+- (int)infoDisplayType;
+- (float)_minSizingTextWidth;
+- (int)_infoDisplayTypeForURL:(id)arg1 urlIsTimed:(BOOL)arg2 feederCount:(unsigned int)arg3 askDelegate:(BOOL)arg4;
+- (id)infoURL;
+- (void)clicked:(id)arg1;
+- (BOOL)configureForItem:(id)arg1 atTime:(double)arg2;
+- (void)setAllowedDisplayTypes:(unsigned int)arg1;
+- (void)clearWeakReferencesToObject:(id)arg1;
 
 @end

@@ -72,7 +72,7 @@
 @property(readonly) NSDate * lastModifiedDate;
 @property int removalReason;
 
-+ (id)defaultMediaLibrary;
++ (void)initialize;
 + (void)uniqueIdentifierDidChangeForLibraryDataProvider:(id)arg1;
 + (void)syncGenerationDidChangeForLibraryDataProvider:(id)arg1;
 + (void)reloadDisplayValuesForLibraryDataProvider:(id)arg1;
@@ -93,12 +93,29 @@
 + (void)reloadLibraryDataProvider:(id)arg1;
 + (id)mediaLibraries;
 + (void)setRunLoopForNotifications:(id)arg1;
++ (id)defaultMediaLibrary;
 + (id)deviceMediaLibrary;
-+ (void)initialize;
 
-- (BOOL)removeItems:(id)arg1;
-- (void)endGeneratingLibraryChangeNotifications;
-- (void)beginGeneratingLibraryChangeNotifications;
+- (id)lastModifiedDate;
+- (id)name;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)ubiquitousBookmarkDomainVersionAnchorToken;
+- (void)setUbiquitousBookmarkDomainVersionAnchorToken:(id)arg1;
+- (unsigned long long)ubiquitousBookmarkEntityRevisionAnchor;
+- (void)setUbiquitousBookmarkEntityRevisionAnchor:(unsigned long long)arg1;
+- (unsigned long long)syncGenerationID;
+- (BOOL)writable;
+- (BOOL)performTransactionWithBlock:(id)arg1;
+- (int)status;
+- (void)disconnect;
+- (id)uniqueIdentifier;
+- (void)_didReceiveMemoryWarning:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)errorResolverForMediaItem:(id)arg1;
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 usingBlock:(id)arg2;
 - (id)_syncValidity;
@@ -149,6 +166,7 @@
 - (id)syncValidity;
 - (void)performReadTransactionWithBlock:(id)arg1;
 - (void)connectWithCompletionHandler:(id)arg1;
+- (BOOL)requiresAuthentication;
 - (id)preferredSubtitleLanguages;
 - (id)preferredAudioLanguages;
 - (BOOL)isGeniusEnabled;
@@ -172,6 +190,8 @@
 - (void)_displayValuesDidChangeNotification:(id)arg1;
 - (void)_reloadLibraryForContentsChangeWithNotificationInfo:(id)arg1;
 - (void)_clearPendingDisconnection;
+- (void)beginGeneratingLibraryChangeNotifications;
+- (void)endGeneratingLibraryChangeNotifications;
 - (void)populateLocationPropertiesOfItem:(id)arg1 withPath:(id)arg2;
 - (id)itemWithPersistentID:(unsigned long long)arg1 verifyExistence:(BOOL)arg2;
 - (id)itemWithPersistentID:(unsigned long long)arg1;
@@ -185,27 +205,7 @@
 - (id)_collectionsForQueryCriteria:(id)arg1;
 - (id)_itemsForQueryCriteria:(id)arg1;
 - (id)playlistWithPersistentID:(unsigned long long)arg1;
-- (id)name;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)ubiquitousBookmarkDomainVersionAnchorToken;
-- (void)setUbiquitousBookmarkDomainVersionAnchorToken:(id)arg1;
-- (unsigned long long)ubiquitousBookmarkEntityRevisionAnchor;
-- (void)setUbiquitousBookmarkEntityRevisionAnchor:(unsigned long long)arg1;
-- (unsigned long long)syncGenerationID;
-- (BOOL)writable;
-- (BOOL)performTransactionWithBlock:(id)arg1;
-- (int)status;
-- (void)disconnect;
-- (id)uniqueIdentifier;
-- (void)_didReceiveMemoryWarning:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)lastModifiedDate;
-- (BOOL)requiresAuthentication;
+- (BOOL)removeItems:(id)arg1;
 - (int)compareMediaLibrary:(id)arg1;
 
 @end

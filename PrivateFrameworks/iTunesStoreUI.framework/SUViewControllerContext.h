@@ -16,14 +16,14 @@
 
 - (id)_typeStringForType:(int)arg1;
 - (int)_typeForTypeString:(id)arg1;
-- (void)setSectionIdentifier:(id)arg1;
 - (id)valueForMetadataKey:(id)arg1;
 - (void)setValue:(id)arg1 forMetadataKey:(id)arg2;
 - (id)copyViewController;
-- (id)sectionIdentifier;
 - (int)type;
 - (id)description;
 - (void)dealloc;
+- (void)setSectionIdentifier:(id)arg1;
+- (id)sectionIdentifier;
 - (void)setType:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

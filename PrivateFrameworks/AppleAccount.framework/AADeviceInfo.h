@@ -11,31 +11,31 @@
     NSObject<OS_dispatch_semaphore> *_tokenSema;
 }
 
-+ (id)serialNumber;
-+ (id)appleIDClientIdentifier;
-+ (id)udid;
 + (id)productVersion;
-+ (id)infoDictionary;
++ (id)serialNumber;
++ (id)osVersion;
 + (id)userAgentHeader;
++ (id)appleIDClientIdentifier;
 + (id)signatureWithDictionary:(id)arg1;
 + (id)apnsToken;
 + (id)clientInfoHeader;
-+ (id)osVersion;
++ (id)infoDictionary;
++ (id)udid;
 
-- (id)serialNumber;
-- (id)appleIDClientIdentifier;
-- (id)udid;
 - (id)productVersion;
 - (void).cxx_destruct;
 - (id)init;
 - (id)productType;
-- (id)buildVersion;
+- (id)deviceClass;
+- (id)serialNumber;
+- (id)osVersion;
+- (id)appleIDClientIdentifier;
 - (id)wifiMacAddress;
 - (id)regionCode;
 - (id)osName;
 - (id)apnsToken;
 - (id)deviceInfoDictionary;
-- (id)osVersion;
-- (id)deviceClass;
+- (id)buildVersion;
+- (id)udid;
 
 @end

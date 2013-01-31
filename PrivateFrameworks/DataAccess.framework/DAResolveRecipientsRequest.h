@@ -9,11 +9,11 @@
 }
 
 
-- (id)emailAddresses;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)initWithEmailAddresses:(id)arg1;
+- (id)emailAddresses;
 
 @end

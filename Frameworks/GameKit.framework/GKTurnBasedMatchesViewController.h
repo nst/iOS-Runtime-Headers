@@ -13,8 +13,8 @@
     GKMatchRequest *_matchRequest;
     BOOL _showingExistingMatches;
     int _maxMatchesSeen;
-    BOOL _authenticateViewControllerVisible;
     BOOL _suppressUpdateContents;
+    BOOL _authenticateViewControllerVisible;
 }
 
 @property NSObject<GKTurnBasedMatchmakerViewControllerDelegate> * delegate;
@@ -29,9 +29,20 @@
 @property BOOL suppressUpdateContents;
 
 
-- (BOOL)suppressUpdateContents;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id)description;
+- (void)dealloc;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)viewDidLoad;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)title;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)setAuthenticateViewControllerVisible:(BOOL)arg1;
 - (BOOL)authenticateViewControllerVisible;
+- (BOOL)suppressUpdateContents;
 - (void)setMaxMatchesSeen:(int)arg1;
 - (int)maxMatchesSeen;
 - (void)setShowExistingMatches:(BOOL)arg1;
@@ -74,16 +85,5 @@
 - (BOOL)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (void)_gkResetContents;
 - (void)prepareDataSource;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id)description;
-- (void)dealloc;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)viewDidLoad;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)title;
-- (unsigned int)supportedInterfaceOrientations;
 
 @end

@@ -15,7 +15,6 @@
 + (id)restaurantsSnippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)restaurantsSnippet;
 
-- (id)groupIdentifier;
 - (void)setRestaurants:(id)arg1;
 - (id)restaurants;
 - (void)setProviderPunchOutMap:(id)arg1;
@@ -25,5 +24,6 @@
 - (void)setAttributionOrder:(id)arg1;
 - (id)attributionOrder;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

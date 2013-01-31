@@ -32,6 +32,7 @@
     NSString *_correctedLabelTitle;
     GEOPlace *_correctedPlace;
     GEOLatLng *_correctedPosition;
+    NSMutableArray *_directionsProblems;
     NSData *_directionsResponseID;
     GEOMapRegion *_featureRegion;
     NSString *_httpInfo;
@@ -42,16 +43,21 @@
     int _pinType;
     GEOPlaceSearchRequest *_placeSearchRequest;
     GEOPlaceSearchResponse *_placeSearchResponse;
+    NSString *_preferredSearchDisplayLocation;
+    unsigned int _preferredSearchResultIndex;
+    unsigned int _problematicSearchResultIndex;
     GEOMapRegion *_region;
     NSString *_syslog;
     NSString *_tileStateLog;
-    NSData *_viewportImage;
+    NSMutableArray *_viewportImages;
     NSData *_viewportInfo;
     NSMutableArray *_visibleTileSets;
     struct { 
         unsigned int sessionID : 1; 
         unsigned int mapZoomLevel : 1; 
         unsigned int pinType : 1; 
+        unsigned int preferredSearchResultIndex : 1; 
+        unsigned int problematicSearchResultIndex : 1; 
     } _has;
 }
 
@@ -72,8 +78,7 @@
 @property BOOL hasMapZoomLevel;
 @property float mapZoomLevel;
 @property(retain) NSMutableArray * visibleTileSets;
-@property(readonly) BOOL hasViewportImage;
-@property(retain) NSData * viewportImage;
+@property(retain) NSMutableArray * viewportImages;
 @property(readonly) BOOL hasViewportInfo;
 @property(retain) NSData * viewportInfo;
 @property(readonly) BOOL hasPinDrop;
@@ -105,24 +110,34 @@
 @property(retain) GEOMapRegion * featureRegion;
 @property(readonly) unsigned int featureHandlesCount;
 @property(readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; }* featureHandles;
+@property(retain) NSMutableArray * directionsProblems;
+@property BOOL hasProblematicSearchResultIndex;
+@property unsigned int problematicSearchResultIndex;
+@property BOOL hasPreferredSearchResultIndex;
+@property unsigned int preferredSearchResultIndex;
+@property(readonly) BOOL hasPreferredSearchDisplayLocation;
+@property(retain) NSString * preferredSearchDisplayLocation;
 
 
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)dictionaryRepresentation;
-- (BOOL)hasComments;
-- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
-- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; }*)featureHandles;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)viewportInfo;
 - (id)visibleTileSets;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)region;
 - (void)setRegion:(id)arg1;
+- (id)comments;
+- (void)setComments:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (id)directionsProblems;
 - (id)correctedFields;
+- (id)viewportImages;
+- (void)setHasPreferredSearchResultIndex:(BOOL)arg1;
+- (void)setHasProblematicSearchResultIndex:(BOOL)arg1;
 - (void)setFeatureHandles:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; }*)arg1 count:(unsigned int)arg2;
 - (void)setHasPinType:(BOOL)arg1;
 - (void)setCurlProblemTypes:(int*)arg1 count:(unsigned int)arg2;
@@ -132,6 +147,17 @@
 - (void)setHasMapZoomLevel:(BOOL)arg1;
 - (void)setProblemTypes:(int*)arg1 count:(unsigned int)arg2;
 - (int*)problemTypes;
+- (id)preferredSearchDisplayLocation;
+- (BOOL)hasPreferredSearchDisplayLocation;
+- (void)setPreferredSearchResultIndex:(unsigned int)arg1;
+- (unsigned int)preferredSearchResultIndex;
+- (BOOL)hasPreferredSearchResultIndex;
+- (void)setProblematicSearchResultIndex:(unsigned int)arg1;
+- (unsigned int)problematicSearchResultIndex;
+- (BOOL)hasProblematicSearchResultIndex;
+- (id)directionsProblemsAtIndex:(unsigned int)arg1;
+- (void)clearDirectionsProblems;
+- (unsigned int)directionsProblemsCount;
 - (void)addFeatureHandle:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; })arg1;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; })featureHandleAtIndex:(unsigned int)arg1;
 - (unsigned int)featureHandlesCount;
@@ -166,8 +192,9 @@
 - (id)pinDrop;
 - (BOOL)hasPinDrop;
 - (BOOL)hasViewportInfo;
-- (id)viewportImage;
-- (BOOL)hasViewportImage;
+- (id)viewportImagesAtIndex:(unsigned int)arg1;
+- (void)clearViewportImages;
+- (unsigned int)viewportImagesCount;
 - (id)visibleTileSetAtIndex:(unsigned int)arg1;
 - (void)clearVisibleTileSets;
 - (unsigned int)visibleTileSetsCount;
@@ -185,8 +212,12 @@
 - (unsigned int)problemTypesCount;
 - (id)originalPlace;
 - (BOOL)hasOriginalPlace;
+- (void)addDirectionsProblems:(id)arg1;
 - (void)addCorrectedField:(id)arg1;
+- (void)addViewportImages:(id)arg1;
 - (void)addVisibleTileSet:(id)arg1;
+- (void)setPreferredSearchDisplayLocation:(id)arg1;
+- (void)setDirectionsProblems:(id)arg1;
 - (void)clearFeatureHandles;
 - (void)setFeatureRegion:(id)arg1;
 - (void)setCorrectedLabelTitle:(id)arg1;
@@ -198,7 +229,7 @@
 - (void)setCorrectedFields:(id)arg1;
 - (void)setPinDrop:(id)arg1;
 - (void)setViewportInfo:(id)arg1;
-- (void)setViewportImage:(id)arg1;
+- (void)setViewportImages:(id)arg1;
 - (void)setVisibleTileSets:(id)arg1;
 - (void)setHttpInfo:(id)arg1;
 - (void)setCorrectedPlace:(id)arg1;
@@ -211,8 +242,9 @@
 - (BOOL)hasPlaceSearchRequest;
 - (BOOL)hasSessionID;
 - (void)setPlaceSearchRequest:(id)arg1;
-- (id)comments;
-- (void)setComments:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
+- (BOOL)hasComments;
+- (id)dictionaryRepresentation;
 
 @end

@@ -12,6 +12,8 @@
 
 - (id)type;
 - (void)dealloc;
+- (id)createConnection;
+- (id)url;
 - (void)unregisterConnection:(id)arg1;
 - (void)registerConnection:(id)arg1;
 - (id)newCreateIndexStatementForColumns:(id)arg1;
@@ -49,7 +51,5 @@
 - (BOOL)supportsCorrelatedSubqueries;
 - (unsigned int)sqlTypeForExpressionConstantValue:(id)arg1;
 - (id)sqlCore;
-- (id)createConnection;
-- (id)url;
 
 @end

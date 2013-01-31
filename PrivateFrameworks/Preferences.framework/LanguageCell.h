@@ -13,13 +13,13 @@
 @property(retain) NSString * languageNameText;
 
 
-- (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (void)dealloc;
 - (void)turnOffLanguageNameImage;
 - (void)setLanguageNameImage:(id)arg1;
 - (void)setLanguageNameText:(id)arg1;
 - (id)languageNameText;
 - (id)languageNameImage;
-- (void)dealloc;
+- (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (void)prepareForReuse;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;

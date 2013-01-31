@@ -56,7 +56,6 @@
 }
 
 
-- (BOOL)isDownloading;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -64,5 +63,6 @@
 - (void)purgeExpired:(double)arg1;
 - (void)cancelRequests;
 - (bool)fetchDataForJobs:(struct GeoServicesLoadJobReference { struct GeoServicesLoadJob {} *x1; }*)arg1 count:(unsigned int)arg2;
+- (BOOL)isDownloading;
 
 @end

@@ -16,14 +16,14 @@
 
 
 - (struct __CFHTTPMessage { }*)copyMessage;
+- (void)setVersionString:(id)arg1;
+- (id)valueForHeaderField:(id)arg1;
+- (void)addHeadersToMessage:(struct __CFHTTPMessage { }*)arg1;
+- (void)setHeaders:(id)arg1;
+- (id)headers;
 - (id)versionString;
 - (void)dealloc;
 - (void)setBody:(id)arg1;
 - (id)body;
-- (void)setHeaders:(id)arg1;
-- (id)headers;
-- (void)setVersionString:(id)arg1;
-- (id)valueForHeaderField:(id)arg1;
-- (void)addHeadersToMessage:(struct __CFHTTPMessage { }*)arg1;
 
 @end

@@ -13,11 +13,11 @@
 + (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 
-- (id)oauthToken;
 - (id)initWithACAccountCredential:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (void)dealloc;
 - (id)attributeKeys;
+- (void)dealloc;
+- (id)oauthToken;
 
 @end

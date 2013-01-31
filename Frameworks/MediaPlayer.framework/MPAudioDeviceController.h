@@ -24,7 +24,19 @@
 + (BOOL)routeDiscoveryEnabled;
 + (void)setRouteDiscoveryEnabled:(BOOL)arg1;
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (unsigned int)retainCount;
+- (id)retain;
+- (void)dealloc;
+- (oneway void)release;
+- (id)init;
+- (void)setCategory:(id)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)_sendFakeRouteChange;
+- (void)logCurrentRoutes;
 - (BOOL)pickRouteAtIndex:(unsigned int)arg1;
 - (BOOL)routeRequiresPasswordAtIndex:(unsigned int)arg1;
 - (id)routeDescriptionAtIndex:(unsigned int)arg1;
@@ -70,16 +82,5 @@
 - (id)nameOfPickedRoute;
 - (BOOL)volumeControlIsAvailable;
 - (BOOL)pickBestDeviceRoute;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (unsigned int)retainCount;
-- (id)retain;
-- (void)dealloc;
-- (oneway void)release;
-- (id)init;
-- (void)setCategory:(id)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 
 @end

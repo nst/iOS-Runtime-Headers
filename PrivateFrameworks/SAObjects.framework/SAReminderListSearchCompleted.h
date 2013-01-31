@@ -14,9 +14,9 @@
 + (id)listSearchCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)listSearchCompleted;
 
-- (id)groupIdentifier;
 - (id)results;
 - (void)setResults:(id)arg1;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

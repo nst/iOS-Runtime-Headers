@@ -15,6 +15,11 @@
     NSDictionary *_metadata;
     long long _photoNumber;
     BOOL _hasComments;
+    BOOL _isMine;
+    NSString *_fullName;
+    NSString *_firstName;
+    NSString *_lastName;
+    NSString *_email;
 }
 
 @property(retain) NSString * GUID;
@@ -26,6 +31,11 @@
 @property(retain) <NSCoding> * userInfo;
 @property(retain) NSDictionary * metadata;
 @property long long photoNumber;
+@property(retain) NSString * fullName;
+@property(retain) NSString * firstName;
+@property(retain) NSString * lastName;
+@property(retain) NSString * email;
+@property BOOL isMine;
 @property BOOL hasComments;
 
 + (id)MSASPAssetCollectionFromProtocolDictionary:(id)arg1;
@@ -39,22 +49,11 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)userInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
-- (void)setPath:(id)arg1;
-- (void)setUserInfo:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)MSASPProtocolDictionary;
-- (void)setHasComments:(BOOL)arg1;
-- (id)initWithFileName:(id)arg1 path:(id)arg2;
-- (void)setPhotoNumber:(long long)arg1;
-- (long long)photoNumber;
-- (BOOL)hasComments;
-- (void)setCtag:(id)arg1;
-- (id)ctag;
 - (void)setAlbumGUID:(id)arg1;
+- (id)fullName;
+- (BOOL)isMine;
 - (id)albumGUID;
+- (void)setIsMine:(BOOL)arg1;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (void)setGUID:(id)arg1;
 - (void)setAssets:(id)arg1;
@@ -62,5 +61,26 @@
 - (id)GUID;
 - (void)setFileName:(id)arg1;
 - (id)fileName;
+- (id)MSASPProtocolDictionary;
+- (void)setHasComments:(BOOL)arg1;
+- (id)initWithFileName:(id)arg1 path:(id)arg2;
+- (void)setPhotoNumber:(long long)arg1;
+- (long long)photoNumber;
+- (BOOL)hasComments;
+- (void)setFullName:(id)arg1;
+- (void)setCtag:(id)arg1;
+- (id)ctag;
+- (void)setPath:(id)arg1;
+- (void)setUserInfo:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)email;
+- (void)setEmail:(id)arg1;
+- (void)setLastName:(id)arg1;
+- (id)lastName;
+- (void)setFirstName:(id)arg1;
+- (id)firstName;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 
 @end

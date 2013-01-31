@@ -20,6 +20,9 @@
 + (unsigned int)precedenceLevel;
 
 - (void)dealloc;
+- (BOOL)shouldDownloadAttachmentOnDisplay;
+- (BOOL)hasBeenDownloaded;
+- (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2;
 - (BOOL)needsRedownload;
 - (void)setNeedsRedownload:(BOOL)arg1;
 - (void)setDisplayableInsidePlugin:(BOOL)arg1;
@@ -40,9 +43,6 @@
 - (void)setDisplayableInline:(BOOL)arg1;
 - (unsigned int)approximateSize;
 - (BOOL)isDisplayableInline;
-- (BOOL)shouldDownloadAttachmentOnDisplay;
-- (BOOL)hasBeenDownloaded;
-- (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2;
 - (void)download;
 
 @end

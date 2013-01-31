@@ -23,14 +23,14 @@
 @property(retain) BKSProcessAssertion * bkProcessAssertion;
 
 
+- (void)invalidate;
+- (unsigned int)identifier;
+- (id)description;
+- (void)dealloc;
 - (id)bkProcessAssertion;
 - (id)initWithExpirationBlock:(id)arg1 debugDescription:(id)arg2;
 - (void)_onQueueSetBkProcessAssertion:(id)arg1;
 - (void)_expireBackgroundTask;
 - (void)setBkProcessAssertion:(id)arg1;
-- (void)invalidate;
-- (unsigned int)identifier;
-- (id)description;
-- (void)dealloc;
 
 @end

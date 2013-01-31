@@ -13,11 +13,11 @@
 + (id)searchConstraintWithDictionary:(id)arg1 context:(id)arg2;
 + (id)searchConstraint;
 
-- (id)groupIdentifier;
-- (void)setQuery:(id)arg1;
+- (id)encodedClassName;
 - (void)setSearchProperties:(id)arg1;
 - (id)searchProperties;
 - (id)query;
-- (id)encodedClassName;
+- (void)setQuery:(id)arg1;
+- (id)groupIdentifier;
 
 @end

@@ -43,6 +43,7 @@
 @property(retain) NSDate * dateLastFetched;
 @property(retain) NSDictionary * nextPageURLs;
 @property(retain) NSString * localPreviewText;
+@property int databaseWriteTestValue;
 @property BOOL needsSyncUpdate;
 @property(retain) NSString * title;
 @property(retain) NSString * address;
@@ -59,23 +60,6 @@
 @property(retain) NSDictionary * localAttributes;
 
 
-- (void)setAddress:(id)arg1;
-- (id)address;
-- (id)localizedTitle;
-- (unsigned int)identifier;
-- (BOOL)isInserted;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (id)extraAttributes;
-- (id)iconData;
-- (id)UUID;
-- (id)title;
-- (BOOL)isEditable;
-- (void)setTitle:(id)arg1;
-- (BOOL)isHidden;
-- (id)previewText;
-- (BOOL)isDeletable;
 - (BOOL)shouldReattemptArchive;
 - (BOOL)writeOfflineWebView:(id)arg1 asArchive:(BOOL)arg2 inReaderForm:(BOOL)arg3;
 - (id)webarchivePathForNextPageURL:(id)arg1;
@@ -83,6 +67,8 @@
 - (void)_removeDirectoryAtPath:(id)arg1;
 - (unsigned long long)_sizeForFileOrDirectory:(id)arg1 withAttributes:(id)arg2;
 - (id)_suggestedFileNameForWebView:(id)arg1;
+- (void)setDatabaseWriteTestValue:(int)arg1;
+- (int)databaseWriteTestValue;
 - (void)setLocalPreviewText:(id)arg1;
 - (id)nextPageURLs;
 - (void)setNextPageURLs:(id)arg1;
@@ -123,10 +109,10 @@
 - (void)setArchiveStatus:(int)arg1;
 - (int)archiveStatus;
 - (unsigned int)_orderIndex;
-- (void)setNeedsSyncUpdate:(BOOL)arg1;
-- (BOOL)needsSyncUpdate;
 - (void)setLocalAttributes:(id)arg1;
 - (id)localAttributes;
+- (void)setNeedsSyncUpdate:(BOOL)arg1;
+- (BOOL)needsSyncUpdate;
 - (BOOL)isFolder;
 - (unsigned int)specialID;
 - (BOOL)isReadingListFolder;
@@ -135,12 +121,29 @@
 - (BOOL)isReadingListItem;
 - (id)shortTypeDescription;
 - (id)initWithTitle:(id)arg1 address:(id)arg2;
+- (unsigned int)identifier;
+- (BOOL)isInserted;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (BOOL)isDeletable;
+- (id)extraAttributes;
 - (void)setExtraAttributes:(id)arg1;
-- (void)_setUUID:(id)arg1;
+- (id)iconData;
 - (id)syncKey;
 - (void)setSyncKey:(id)arg1;
 - (id)serverID;
 - (void)setServerID:(id)arg1;
+- (id)previewText;
+- (id)title;
+- (BOOL)isEditable;
+- (void)setTitle:(id)arg1;
+- (BOOL)isHidden;
+- (void)setAddress:(id)arg1;
+- (id)address;
+- (id)localizedTitle;
+- (void)_setUUID:(id)arg1;
 - (unsigned int)parentID;
+- (id)UUID;
 
 @end

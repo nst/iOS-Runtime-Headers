@@ -35,10 +35,9 @@
 
 + (BOOL)copyURLStrings:(id*)arg1 forValue:(id)arg2;
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
-- (void)setSegmentedControl:(id)arg1;
 - (void)_setValue:(id)arg1 forScriptPropertyKey:(id)arg2;
 - (int)indicatorStyleWhite;
 - (int)indicatorStyleGray;
@@ -61,16 +60,14 @@
 - (id)_copyURLsFromURLStrings:(id)arg1;
 - (id)newNativeViewController;
 - (id)initWithURLStrings:(id)arg1;
+- (BOOL)shouldLoadProgressively;
 - (id)shouldShowFormAccessory;
 - (BOOL)flashesScrollIndicators;
-- (BOOL)shouldLoadProgressively;
 - (void)setShouldLoadProgressively:(BOOL)arg1;
 - (void)setShouldShowFormAccessory:(id)arg1;
 - (void)setFlashesScrollIndicators:(BOOL)arg1;
 - (BOOL)showsBackgroundShadow;
 - (void)setShowsBackgroundShadow:(BOOL)arg1;
-- (void)setLoadsWhenHidden:(id)arg1;
-- (id)loadsWhenHidden;
 - (int)loadingIndicatorStyle;
 - (void)setNativeViewController:(id)arg1;
 - (void)setLoadingTextShadowColor:(id)arg1;
@@ -80,6 +77,9 @@
 - (id)loadingTextColor;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (void)setLoadsWhenHidden:(id)arg1;
+- (id)loadsWhenHidden;
+- (id)attributeKeys;
 - (id)userInfo;
 - (void)dealloc;
 - (id)init;
@@ -98,7 +98,7 @@
 - (void)setShowsHorizontalScrollIndicator:(id)arg1;
 - (id)showsHorizontalScrollIndicator;
 - (void)setShowsVerticalScrollIndicator:(id)arg1;
-- (id)attributeKeys;
+- (void)setSegmentedControl:(id)arg1;
 - (void)setTimeoutInterval:(id)arg1;
 - (id)timeoutInterval;
 

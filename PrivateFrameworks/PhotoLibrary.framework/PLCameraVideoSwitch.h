@@ -48,20 +48,7 @@
 @property(getter=isOn) BOOL on;
 
 
-- (void)_deviceOrientationChanged:(id)arg1;
 - (void)dealloc;
-- (void)setOn:(BOOL)arg1 animated:(BOOL)arg2;
-- (BOOL)isOn;
-- (void)setOn:(BOOL)arg1;
-- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)cancelTrackingWithEvent:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (int)orientation;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_rotationAndTranslationTransformForDeviceOrientation:(int)arg1;
 - (void)_animateImageView:(id)arg1 toTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 withImage:(id)arg3 animated:(BOOL)arg4;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_rotationTransformForDeviceOrientation:(int)arg1;
@@ -80,5 +67,18 @@
 - (void)_stopWatchingDeviceOrientationChanges;
 - (void)buttonBar:(id)arg1 didChangeMode:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 buttonBarStyle:(int)arg2;
+- (void)setOn:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)isOn;
+- (void)setOn:(BOOL)arg1;
+- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)cancelTrackingWithEvent:(id)arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (int)orientation;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_deviceOrientationChanged:(id)arg1;
 
 @end

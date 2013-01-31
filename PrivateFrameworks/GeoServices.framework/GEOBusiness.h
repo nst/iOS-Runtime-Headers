@@ -25,12 +25,14 @@
     unsigned int _totalNumberOfPhotos;
     NSString *_uRL;
     int _version;
+    BOOL _canBeCorrectedByBusinessOwner;
     BOOL _isClosed;
     BOOL _isUnverified;
     struct { 
         unsigned int uID : 1; 
         unsigned int totalNumberOfPhotos : 1; 
         unsigned int version : 1; 
+        unsigned int canBeCorrectedByBusinessOwner : 1; 
         unsigned int isClosed : 1; 
         unsigned int isUnverified : 1; 
     } _has;
@@ -69,26 +71,12 @@
 @property unsigned int totalNumberOfPhotos;
 @property(retain) NSMutableArray * localizedCategories;
 @property(retain) NSMutableArray * attributions;
+@property BOOL hasCanBeCorrectedByBusinessOwner;
+@property BOOL canBeCorrectedByBusinessOwner;
 @property(retain) NSMutableArray * sources;
 @property(retain) NSMutableArray * starRatings;
 
 
-- (void)setPhotos:(id)arg1;
-- (id)photos;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setVersion:(int)arg1;
-- (int)version;
-- (void)setURL:(id)arg1;
-- (id)dictionaryRepresentation;
-- (void)setCenter:(id)arg1;
-- (id)center;
-- (void)addSource:(id)arg1;
-- (unsigned int)photosCount;
 - (void)setAttributions:(id)arg1;
 - (BOOL)hasName;
 - (void)copyTo:(id)arg1;
@@ -96,13 +84,22 @@
 - (BOOL)hasVersion;
 - (void)writeTo:(id)arg1;
 - (id)attributions;
+- (void)setName:(id)arg1;
+- (id)name;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (unsigned int)photosCount;
 - (void)addPhoto:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)starRatings;
 - (id)localizedCategories;
 - (id)openHours;
 - (id)attributeKeyValues;
 - (id)categorys;
 - (id)ratings;
+- (void)setHasCanBeCorrectedByBusinessOwner:(BOOL)arg1;
 - (void)setHasTotalNumberOfPhotos:(BOOL)arg1;
 - (void)setHasIsClosed:(BOOL)arg1;
 - (void)setHasIsUnverified:(BOOL)arg1;
@@ -113,6 +110,9 @@
 - (id)sourceAtIndex:(unsigned int)arg1;
 - (void)clearSources;
 - (unsigned int)sourcesCount;
+- (void)setCanBeCorrectedByBusinessOwner:(BOOL)arg1;
+- (BOOL)canBeCorrectedByBusinessOwner;
+- (BOOL)hasCanBeCorrectedByBusinessOwner;
 - (id)attributionAtIndex:(unsigned int)arg1;
 - (void)clearAttributions;
 - (unsigned int)attributionsCount;
@@ -176,8 +176,16 @@
 - (void)setPhoneticNotice:(id)arg1;
 - (void)setPhoneticName:(id)arg1;
 - (void)setNotice:(id)arg1;
-- (void)setSources:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (void)setVersion:(int)arg1;
+- (int)version;
+- (void)setURL:(id)arg1;
+- (id)dictionaryRepresentation;
+- (void)setCenter:(id)arg1;
+- (id)center;
+- (void)setPhotos:(id)arg1;
+- (id)photos;
 - (id)sources;
+- (void)addSource:(id)arg1;
+- (void)setSources:(id)arg1;
 
 @end

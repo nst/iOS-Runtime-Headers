@@ -9,10 +9,7 @@
 }
 
 
-- (BOOL)isBusy;
 - (void)dealloc;
-- (id)initWithPath:(id)arg1;
-- (void)commit;
 - (void)postOldFlags:(unsigned long long)arg1 newFlags:(unsigned long long)arg2 forMessage:(id)arg3;
 - (void)setFlagsForMessages:(id)arg1;
 - (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(BOOL)arg3 newMessagesByOldMessage:(id)arg4;
@@ -116,5 +113,8 @@
 - (BOOL)shouldCancel;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3 forMessage:(id)arg4;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
+- (id)initWithPath:(id)arg1;
+- (void)commit;
+- (BOOL)isBusy;
 
 @end

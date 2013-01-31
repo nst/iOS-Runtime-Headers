@@ -16,9 +16,9 @@
 - (void)dealloc;
 - (id)typeAttribute;
 - (id)nameAttribute;
-- (void)setTypeAttribute:(id)arg1;
-- (void)setNameAttribute:(id)arg1;
 - (void)parserFoundAttributes:(id)arg1;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (void)setTypeAttribute:(id)arg1;
+- (void)setNameAttribute:(id)arg1;
 
 @end

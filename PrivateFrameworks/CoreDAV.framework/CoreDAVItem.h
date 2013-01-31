@@ -20,16 +20,17 @@
 @property(retain) NSData * payload;
 @property BOOL useCDATA;
 
-+ (id)copyParseRules;
 + (id)parseRuleCache;
++ (id)copyParseRules;
 
+- (void)write:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)name;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (void)setAttributes:(id)arg1;
-- (id)attributes;
+- (BOOL)validate;
+- (id)payload;
 - (void)setUseCDATA:(BOOL)arg1;
 - (BOOL)useCDATA;
 - (void)setExtraChildItems:(id)arg1;
@@ -48,8 +49,7 @@
 - (id)nameSpace;
 - (id)extraChildItems;
 - (id)payloadAsString;
-- (void)write:(id)arg1;
-- (id)payload;
-- (BOOL)validate;
+- (void)setAttributes:(id)arg1;
+- (id)attributes;
 
 @end

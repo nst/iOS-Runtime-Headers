@@ -18,7 +18,6 @@
 }
 
 
-- (void)dealloc;
 - (void)displayGenericError:(struct __CFError { }*)arg1;
 - (float)getPreviewHeight;
 - (float)getPreviewWidth;
@@ -31,5 +30,6 @@
 - (void)setPreviewHeight:(float)arg1 andWidth:(float)arg2;
 - (void)appendDataToAttachment:(struct __CFURL { }*)arg1 chunk:(struct __CFData { }*)arg2;
 - (void)closeAttachment:(struct __CFURL { }*)arg1;
+- (void)dealloc;
 
 @end

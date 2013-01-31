@@ -18,13 +18,12 @@
 @property(readonly) int transactionState;
 
 
-- (id)downloads;
 - (void)dealloc;
 - (id)init;
 - (id)transactionIdentifier;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)transactionDate;
+- (id)error;
 - (void)_setTransactionState:(int)arg1;
 - (void)_setTransactionReceipt:(id)arg1;
 - (void)_setTransactionIdentifier:(id)arg1;
@@ -41,7 +40,8 @@
 - (int)transactionState;
 - (id)initWithPayment:(id)arg1;
 - (id)payment;
+- (id)downloads;
 - (void)_setError:(id)arg1;
-- (id)error;
+- (id)transactionDate;
 
 @end

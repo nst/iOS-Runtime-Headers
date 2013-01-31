@@ -18,15 +18,11 @@
 @property(retain) NSString * purchasedItemIdentifier;
 
 + (void)setSharedController:(id)arg1;
-+ (id)sharedController;
 + (id)continueSearchingURForMediaType:(int)arg1 searchString:(id)arg2;
 + (id)musicStoreURLWithAction:(id)arg1;
++ (id)sharedController;
 
-- (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (id)initWithClientIdentifier:(id)arg1;
-- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
-- (void)dealloc;
-- (id)init;
 - (void)setScriptInterface:(id)arg1;
 - (id)scriptInterface;
 - (void)setPurchasedItemIdentifier:(id)arg1;
@@ -35,5 +31,9 @@
 - (id)purchasedItemView;
 - (BOOL)loadHasContinueSearchCapabilityWithUpdateBlock:(id)arg1;
 - (BOOL)isStoreRestricted;
+- (void)dealloc;
+- (id)init;
+- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
+- (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 
 @end

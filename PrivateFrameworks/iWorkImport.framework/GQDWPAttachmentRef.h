@@ -10,8 +10,8 @@
 }
 
 
-- (void)dealloc;
 - (id)initWithUID:(char *)arg1 root:(id)arg2;
+- (void)dealloc;
 - (id)drawable;
 
 @end

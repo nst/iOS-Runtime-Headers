@@ -7,11 +7,11 @@
 }
 
 
-- (void)setMetadata:(id)arg1;
-- (int)status;
 - (void)addInput:(id)arg1;
 - (BOOL)canAddInput:(id)arg1;
 - (void)startWriting;
+- (int)status;
+- (void)setMetadata:(id)arg1;
 - (BOOL)_canAddInputGroup:(id)arg1 exceptionReason:(id*)arg2;
 - (BOOL)_canAddInput:(id)arg1 exceptionReason:(id*)arg2;
 - (id)initWithConfigurationState:(id)arg1;

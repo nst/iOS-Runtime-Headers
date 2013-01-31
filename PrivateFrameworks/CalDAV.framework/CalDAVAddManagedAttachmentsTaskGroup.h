@@ -36,7 +36,11 @@
 
 - (int)state;
 - (void)dealloc;
-- (void)setState:(int)arg1;
+- (id)attachments;
+- (void)_finishWithError:(id)arg1 state:(int)arg2;
+- (void)setPreviousETag:(id)arg1;
+- (id)previousETag;
+- (void)startTaskGroup;
 - (id)postFailureSizes;
 - (id)updatedResourcePayload;
 - (void)setFilenamesToServerLocation:(id)arg1;
@@ -60,11 +64,7 @@
 - (void)setContentTypes:(id)arg1;
 - (id)previousScheduleTag;
 - (void)setPreviousScheduleTag:(id)arg1;
-- (void)_finishWithError:(id)arg1 state:(int)arg2;
-- (void)setPreviousETag:(id)arg1;
-- (id)previousETag;
-- (void)startTaskGroup;
-- (id)attachments;
+- (void)setState:(int)arg1;
 - (id)resourceURL;
 - (void)setAttachments:(id)arg1;
 

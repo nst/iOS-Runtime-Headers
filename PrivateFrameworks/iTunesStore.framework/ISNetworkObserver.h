@@ -29,24 +29,16 @@
 @property(readonly) NSString * modemRegistrationStatus;
 @property(readonly) NSString * operatorName;
 
-+ (id)sharedInstance;
 + (void)setWiFiEnabled:(BOOL)arg1;
 + (void)setAirplaneModeEnabled:(BOOL)arg1;
 + (void)set3GEnabled:(BOOL)arg1;
++ (id)sharedInstance;
 
 - (void)reloadNetworkType;
 - (void)endUsingNetwork;
 - (void)beginUsingNetwork;
 - (BOOL)isUsingNetwork;
-- (int)networkType;
-- (BOOL)shouldShowCellularAutomaticDownloadsSwitch;
-- (BOOL)isWiFiEnabled;
-- (void)dealloc;
-- (id)init;
-- (void)downloadQueue:(id)arg1 changedWithRemovals:(id)arg2;
-- (void)downloadQueueNetworkUsageChanged:(id)arg1;
 - (void)_reloadCellularRestriction;
-- (void)_handleTelephonyNotificationWithName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2;
 - (void)setNetworkType:(int)arg1;
 - (id)modemRegistrationStatus;
 - (id)dataStatusIndicator;
@@ -64,5 +56,13 @@
 - (int)_currentNetworkType;
 - (id)connectionTypeHeader;
 - (double)lastNetworkTypeChangeTime;
+- (void)dealloc;
+- (id)init;
+- (void)downloadQueue:(id)arg1 changedWithRemovals:(id)arg2;
+- (void)downloadQueueNetworkUsageChanged:(id)arg1;
+- (BOOL)shouldShowCellularAutomaticDownloadsSwitch;
+- (void)_handleTelephonyNotificationWithName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2;
+- (BOOL)isWiFiEnabled;
+- (int)networkType;
 
 @end

@@ -12,10 +12,10 @@
 + (id)domainObjectRetrieveWithDictionary:(id)arg1 context:(id)arg2;
 + (id)domainObjectRetrieve;
 
-- (id)groupIdentifier;
 - (id)identifiers;
 - (void)setIdentifiers:(id)arg1;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

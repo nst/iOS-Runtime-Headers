@@ -13,6 +13,9 @@
 }
 
 
+- (void)drawInContext:(struct CGContext { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)setValueAtIndex:(int)arg1 format:(id)arg2;
 - (long)addLine:(struct __CFString { }*)arg1 withLabelColorIndex:(int)arg2 withValueColorIndex:(int)arg3;
 - (struct __CFArray { }*)getLabels;
@@ -20,9 +23,6 @@
 - (long)addLine:(struct __CFString { }*)arg1 withColorIndex:(int)arg2;
 - (void)resetLines;
 - (void)setFont:(struct __CFString { }*)arg1 withPointSize:(float)arg2;
-- (void)dealloc;
-- (id)init;
 - (void)setValue:(struct __CFString { }*)arg1 atIndex:(int)arg2;
-- (void)drawInContext:(struct CGContext { }*)arg1;
 
 @end

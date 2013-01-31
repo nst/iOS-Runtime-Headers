@@ -12,8 +12,8 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)setUUID:(struct __CFUUID { }*)arg1;
 - (struct __CFUUID { }*)UUID;
 - (id)initWithUUID:(struct __CFUUID { }*)arg1;
-- (void)setUUID:(struct __CFUUID { }*)arg1;
 
 @end

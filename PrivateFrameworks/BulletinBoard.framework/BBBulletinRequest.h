@@ -44,6 +44,8 @@
 @property BOOL tentative;
 
 
+- (BOOL)showsUnreadIndicator;
+- (void)setShowsUnreadIndicator:(BOOL)arg1;
 - (void)generateNewBulletinID;
 - (id)publisherMatchID;
 - (BOOL)hasContentModificationsRelativeTo:(id)arg1;
@@ -60,10 +62,8 @@
 - (void)addAttachmentOfType:(int)arg1;
 - (void)setExpirationEvents:(unsigned int)arg1;
 - (unsigned int)expirationEvents;
-- (void)setTentative:(BOOL)arg1;
-- (BOOL)showsUnreadIndicator;
-- (void)setShowsUnreadIndicator:(BOOL)arg1;
 - (void)publish;
+- (void)setTentative:(BOOL)arg1;
 - (BOOL)tentative;
 
 @end

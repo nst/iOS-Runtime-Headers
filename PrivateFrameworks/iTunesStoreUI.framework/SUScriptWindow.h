@@ -32,8 +32,8 @@
 
 + (void)dismissWindowsWithOptions:(id)arg1;
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)windowParentViewController;
 - (void)setMaskFunction:(id)arg1;
@@ -61,9 +61,9 @@
 - (void)setBackViewController:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)init;
-- (id)initWithContext:(id)arg1;
 - (void)setHeight:(id)arg1;
 - (id)height;
 - (void)setShadowRadius:(id)arg1;
@@ -73,6 +73,6 @@
 - (void)setWidth:(id)arg1;
 - (id)width;
 - (id)context;
-- (id)attributeKeys;
+- (id)initWithContext:(id)arg1;
 
 @end

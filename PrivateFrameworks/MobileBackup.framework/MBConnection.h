@@ -16,9 +16,6 @@
 - (void)resume;
 - (void)cancel;
 - (void)dealloc;
-- (void)suspend;
-- (id)eventQueue;
-- (void)sendMessage:(id)arg1;
 - (id)messageHandler;
 - (id)initWithXPCConnection:(id)arg1 eventQueue:(id)arg2;
 - (void)_handleXPCError:(id)arg1;
@@ -27,5 +24,8 @@
 - (id)sendMessageWithReplyAndSync:(id)arg1 error:(id*)arg2;
 - (void)setMessageHandler:(id)arg1;
 - (id)initWithServiceName:(id)arg1 eventQueue:(id)arg2;
+- (void)sendMessage:(id)arg1;
+- (id)eventQueue;
+- (void)suspend;
 
 @end

@@ -18,6 +18,12 @@
 @property BOOL showSplash;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (void)setCustomRightButton:(id)arg1;
+- (id)customRightButton;
 - (id)_shadowLabelColor;
 - (void)_getStartedPressed:(id)arg1;
 - (void)_learnMorePressed:(id)arg1;
@@ -31,14 +37,8 @@
 - (int)currentAppearanceStyle;
 - (void)setRegController:(id)arg1;
 - (id)regController;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)setCustomRightButton:(id)arg1;
-- (id)customRightButton;
 
 @end

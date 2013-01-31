@@ -38,15 +38,15 @@
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } color;
 
 
-- (void)dealloc;
-- (id)init;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
-- (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (BOOL)simpleGridEnabled;
 - (void)setSimpleGridEnabled:(BOOL)arg1;
 - (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1 animated:(BOOL)arg2;
 - (void)drawScene:(id)arg1 withContext:(id)arg2;
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
+- (void)dealloc;
+- (id)init;
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
+- (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 
 @end

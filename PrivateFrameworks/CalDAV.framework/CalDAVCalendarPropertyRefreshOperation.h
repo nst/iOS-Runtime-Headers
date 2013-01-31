@@ -18,6 +18,7 @@
 
 - (void)dealloc;
 - (void)refreshCalendarProperties;
+- (void)containerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;
 - (void)_continueHandleContainerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;
 - (id)_getDefaultMkCalendarForPrincipalTask:(id)arg1 isEventCalendar:(BOOL)arg2;
 - (void)_getDefaultCalendarsTasksIfNeededForPrincipal:(id)arg1 tasks:(id)arg2;
@@ -29,6 +30,5 @@
 - (void)_prepareCalendarsBeforeRefresh;
 - (void)_handleCalendarPublish;
 - (void)_reallyRefreshCalendarProperties;
-- (void)containerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;
 
 @end

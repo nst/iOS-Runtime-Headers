@@ -29,13 +29,6 @@
 @property(readonly) GEOTileSource * tileSource;
 
 
-- (void)setClient:(id)arg1;
-- (void)setStylesheet:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)clearCaches;
-- (id)stylesheet;
-- (int)tileSize;
 - (id)client;
 - (void)foreachTileInPool:(id)arg1;
 - (void)tileSource:(id)arg1 didFailToLoadTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 error:(id)arg3;
@@ -74,5 +67,12 @@
 - (int)maximumZoomLevel;
 - (int)minimumZoomLevel;
 - (id)detailedDescription;
+- (void)dealloc;
+- (id)init;
+- (id)stylesheet;
+- (int)tileSize;
+- (void)setStylesheet:(id)arg1;
+- (void)setClient:(id)arg1;
+- (void)clearCaches;
 
 @end

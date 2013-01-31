@@ -68,7 +68,6 @@
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isVertical;
 - (id)_familyName;
 - (float)_ascenderDeltaForBehavior:(int)arg1;
 - (BOOL)_isHiraginoFont;
@@ -102,6 +101,7 @@
 - (unsigned int)renderingMode;
 - (BOOL)_isDefaultFace;
 - (id)verticalFont;
+- (BOOL)isVertical;
 - (struct __CTFont { }*)_gkCTFont;
 
 @end

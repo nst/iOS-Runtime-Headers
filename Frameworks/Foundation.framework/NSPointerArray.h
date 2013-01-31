@@ -13,16 +13,16 @@
 + (id)pointerArrayWithPointerFunctions:(id)arg1;
 + (id)pointerArrayWithOptions:(unsigned int)arg1;
 
+- (void)compact;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (id)init;
 - (unsigned int)count;
+- (id)initWithOptions:(unsigned int)arg1;
 - (id)allObjects;
 - (void)setCount:(unsigned int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)compact;
-- (id)initWithOptions:(unsigned int)arg1;
 - (id)mutableArray;
 - (void)replacePointerAtIndex:(unsigned int)arg1 withPointer:(void*)arg2;
 - (void)insertPointer:(void*)arg1 atIndex:(unsigned int)arg2;

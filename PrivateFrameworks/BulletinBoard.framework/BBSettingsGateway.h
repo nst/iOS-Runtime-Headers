@@ -24,7 +24,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)setBehaviorOverridesEnabled:(BOOL)arg1;
 - (void)getBehaviorOverridesEnabledWithCompletion:(id)arg1;
 - (void)setPrivilegedSenderAddressBookGroupRecordID:(int)arg1 name:(id)arg2;
@@ -43,5 +42,6 @@
 - (void)getPrivilegedSenderTypesWithCompletion:(id)arg1;
 - (void)getSectionInfoWithCompletion:(id)arg1;
 - (void)getSectionOrderRuleWithCompletion:(id)arg1;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 
 @end

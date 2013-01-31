@@ -15,17 +15,17 @@
 }
 
 + (id)sharedInstance;
-+ (id)accountStore;
 + (void)vendDaemonManagers:(Class)arg1;
 + (void)reacquireClientRestrictions:(id)arg1;
 + (id)oneshotListOfAccountPersistentUUIDs;
++ (id)accountStore;
 
-- (BOOL)removeAccount:(id)arg1;
 - (BOOL)addAccount:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)reloadAccounts;
 - (id)accounts;
+- (BOOL)removeAccount:(id)arg1;
 - (BOOL)removeAccount:(id)arg1 forAccountIDReset:(BOOL)arg2;
 - (void)checkValidityForAccount:(id)arg1 consumer:(id)arg2;
 - (BOOL)hasPendingAccountSetup;

@@ -19,9 +19,12 @@
 @property BOOL hadMoreInstances;
 
 
+- (void)setSummary:(id)arg1;
+- (id)summary;
 - (void)dealloc;
 - (id)init;
-- (id)displayName;
+- (void)setDisplayName:(id)arg1;
+- (id)copyParseRules;
 - (BOOL)hadMoreInstances;
 - (id)nextInstance;
 - (id)componentType;
@@ -33,9 +36,6 @@
 - (void)setNextInstance:(id)arg1;
 - (void)setComponentType:(id)arg1;
 - (void)setDisplayNameItem:(id)arg1;
-- (id)copyParseRules;
-- (void)setSummary:(id)arg1;
-- (id)summary;
-- (void)setDisplayName:(id)arg1;
+- (id)displayName;
 
 @end

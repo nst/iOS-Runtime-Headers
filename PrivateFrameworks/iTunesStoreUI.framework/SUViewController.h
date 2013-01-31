@@ -44,7 +44,6 @@
 @property(getter=_restoredContext,readonly) SUViewControllerContext * _restoredContext;
 
 
-- (void)setLoading:(BOOL)arg1;
 - (BOOL)showsLibraryButton;
 - (void)setShouldInvalidateForMemoryPurge:(BOOL)arg1;
 - (id)_restoredContext;
@@ -95,8 +94,6 @@
 - (void)_keyboardWillHideNotification:(id)arg1;
 - (void)_keyboardDidShowNotification:(id)arg1;
 - (void)_keyboardDidHideNotification:(id)arg1;
-- (void)_applicationWillEnterForegroundNotification:(id)arg1;
-- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)reloadContentSizeForViewInPopover;
 - (id)initWithSection:(id)arg1;
 - (void)restoreArchivableContext:(id)arg1;
@@ -107,7 +104,6 @@
 - (void)invalidate;
 - (void)dealloc;
 - (id)init;
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)setSection:(id)arg1;
 - (BOOL)isLoading;
 - (BOOL)isVisible;
@@ -144,5 +140,9 @@
 - (void)applicationWillSuspend;
 - (void)reload;
 - (void)setTitle:(id)arg1;
+- (void)_applicationWillEnterForegroundNotification:(id)arg1;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
+- (void)setLoading:(BOOL)arg1;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
 
 @end

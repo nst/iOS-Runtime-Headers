@@ -50,17 +50,17 @@
 + (id)allExportPresets;
 
 - (void)setAudioMix:(id)arg1;
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
+- (id)error;
 - (int)status;
 - (id)asset;
 - (float)progress;
 - (void)finalize;
-- (id)error;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 - (void)_handleFigRemakerNotificationAsync:(id)arg1 payload:(id)arg2;
 - (id)_retrieveChannelSpecificAudioSettingForAudioTrack:(id)arg1 fromAudioSetting:(id)arg2;
 - (int)_getTrackCountOfType:(id)arg1 checkEnabled:(BOOL)arg2;

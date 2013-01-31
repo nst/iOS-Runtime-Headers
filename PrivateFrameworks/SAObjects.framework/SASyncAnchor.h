@@ -12,18 +12,18 @@
 @property(copy) NSString * validity;
 @property(copy) NSString * value;
 
-+ (id)anchor;
 + (id)anchorWithDictionary:(id)arg1 context:(id)arg2;
++ (id)anchor;
 
-- (id)groupIdentifier;
+- (id)validity;
+- (void)setValidity:(id)arg1;
+- (void)setGeneration:(id)arg1;
+- (id)encodedClassName;
+- (id)generation;
 - (void)setKey:(id)arg1;
 - (id)key;
 - (id)value;
 - (void)setValue:(id)arg1;
-- (id)validity;
-- (id)generation;
-- (void)setValidity:(id)arg1;
-- (void)setGeneration:(id)arg1;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

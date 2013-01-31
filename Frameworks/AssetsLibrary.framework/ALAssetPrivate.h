@@ -18,13 +18,13 @@
 
 
 - (void)dealloc;
-- (void)setIsValid:(BOOL)arg1;
-- (void)setLibrary:(id)arg1;
-- (id)library;
-- (BOOL)isValid;
 - (void)_performBlockAndWait:(id)arg1;
 - (void)setPhoto:(id)arg1;
 - (id)photo;
+- (void)setLibrary:(id)arg1;
+- (id)library;
+- (void)setIsValid:(BOOL)arg1;
+- (BOOL)isValid;
 - (void)set_photoLibrary:(id)arg1;
 - (void)libraryWillDisappear;
 - (id)_photoLibrary;

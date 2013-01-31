@@ -21,6 +21,8 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
+- (id)albums;
+- (void)setAlbums:(id)arg1;
 - (void)viewDidUnload;
 - (void)loadView;
 - (void)viewDidLoad;
@@ -44,7 +46,5 @@
 - (id)albumManager;
 - (void)setAlbumManager:(id)arg1;
 - (void)cancelButtonTapped:(id)arg1;
-- (id)albums;
-- (void)setAlbums:(id)arg1;
 
 @end

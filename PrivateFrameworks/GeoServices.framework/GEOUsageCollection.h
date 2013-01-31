@@ -60,17 +60,15 @@
 @property(retain) NSString * hwMachine;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (double)timestamp;
 - (void)setTimestamp:(double)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
-- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (id)countryCode;
 - (void)setTileUsages:(struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
@@ -106,11 +104,13 @@
 - (void)setGeoService:(int)arg1;
 - (void)setHwMachine:(id)arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })probeID;
+- (void)setHasTimestamp:(BOOL)arg1;
+- (BOOL)hasTimestamp;
 - (BOOL)hasCountryCode;
 - (void)setHasSessionID:(BOOL)arg1;
 - (BOOL)hasSessionID;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (BOOL)hasTimestamp;
+- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
+- (id)dictionaryRepresentation;
 
 @end

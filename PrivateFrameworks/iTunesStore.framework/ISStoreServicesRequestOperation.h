@@ -11,10 +11,10 @@
 @property(readonly) SSRequest * request;
 
 
-- (id)initWithRequest:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (id)request;
 - (void)run;
+- (id)initWithRequest:(id)arg1;
 
 @end

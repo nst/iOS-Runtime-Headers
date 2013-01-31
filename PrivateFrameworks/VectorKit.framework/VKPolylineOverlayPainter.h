@@ -34,10 +34,6 @@
 @property(readonly) VKPolylineOverlay * polyline;
 
 
-- (id).cxx_construct;
-- (void)dealloc;
-- (BOOL)selected;
-- (void)setSelected:(BOOL)arg1;
 - (id)_polylineTileForRoadData:(id)arg1;
 - (void)setNeedsLayoutForPolyline:(id)arg1;
 - (void)setupShaders:(BOOL)arg1 showTraffic:(BOOL)arg2 withContext:(id)arg3 andProgram:(id)arg4 forMesh:(id)arg5 withScaler:(float)arg6;
@@ -55,5 +51,9 @@
 - (void)layoutWithContext:(id)arg1 tiles:(id)arg2 keysInView:(id)arg3;
 - (id)route;
 - (void)setRoute:(id)arg1;
+- (id).cxx_construct;
+- (void)dealloc;
+- (BOOL)selected;
+- (void)setSelected:(BOOL)arg1;
 
 @end

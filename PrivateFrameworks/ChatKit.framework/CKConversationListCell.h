@@ -25,12 +25,6 @@
 + (float)cellHeight;
 
 - (void)dealloc;
-- (void)willTransitionToState:(unsigned int)arg1;
-- (void)didTransitionToState:(unsigned int)arg1;
-- (void)prepareForReuse;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
 - (id)searchSummaryText;
 - (id)searchMessageGUID;
 - (void)updateWithSearchResult:(id)arg1;
@@ -41,5 +35,11 @@
 - (void)setSearchMessageGUID:(id)arg1;
 - (id)searchMessageDate;
 - (void)updateFontSize;
+- (void)willTransitionToState:(unsigned int)arg1;
+- (void)didTransitionToState:(unsigned int)arg1;
+- (void)prepareForReuse;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
 
 @end

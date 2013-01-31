@@ -12,10 +12,10 @@
 + (id)numberWithUnsignedInt:(unsigned int)arg1;
 
 - (void).cxx_destruct;
+- (id)initWithUnsignedInt:(unsigned int)arg1;
 - (id)initWithInt:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)descriptionWithLocale:(id)arg1;
-- (id)initWithUnsignedInt:(unsigned int)arg1;
 
 @end

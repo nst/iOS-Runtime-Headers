@@ -11,8 +11,8 @@
 }
 
 
-- (id)initWithContent:(id)arg1 domain:(unsigned int)arg2 displayIdentifier:(id)arg3;
 - (void)dealloc;
+- (id)initWithContent:(id)arg1 domain:(unsigned int)arg2 displayIdentifier:(id)arg3;
 - (unsigned int)domain;
 - (id)content;
 - (id)displayIdentifier;

@@ -11,8 +11,8 @@
 
 
 - (void)dealloc;
-- (id)color;
 - (id)initWithPhoneImage:(id)arg1;
 - (void)fillPath:(struct CGPath { }*)arg1 evenOddRule:(BOOL)arg2;
+- (id)color;
 
 @end

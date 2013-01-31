@@ -9,6 +9,7 @@
 }
 
 
+- (BOOL)showDisclosure;
 - (unsigned int)isCancelled;
 - (void)dealloc;
 - (id)init;
@@ -20,7 +21,6 @@
 - (void)setIsEndDate:(BOOL)arg1;
 - (void)setDisplayDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
 - (void)updateWithEvent:(id)arg1 showColors:(BOOL)arg2;
-- (BOOL)showDisclosure;
 - (unsigned int)isAllDay;
 
 @end

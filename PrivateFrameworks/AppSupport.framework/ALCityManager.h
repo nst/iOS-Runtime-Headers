@@ -18,9 +18,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)localeWithCode:(id)arg1;
-- (id)defaultCityForTimeZone:(id)arg1;
-- (id)citiesMatchingName:(id)arg1;
 - (id)citySearchMatcher;
 - (id)defaultCitiesForLocaleCode:(id)arg1;
 - (id)allCities;
@@ -32,5 +29,8 @@
 - (id)citiesMatchingName:(id)arg1 localized:(BOOL)arg2;
 - (void)localizeCities:(id)arg1;
 - (id)citiesMatchingQualifier:(id)arg1;
+- (id)localeWithCode:(id)arg1;
+- (id)defaultCityForTimeZone:(id)arg1;
+- (id)citiesMatchingName:(id)arg1;
 
 @end

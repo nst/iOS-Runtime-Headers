@@ -8,6 +8,7 @@
     BOOL _isBackgroundRequest;
     NSArray *_purchases;
     BOOL _shouldValidatePurchases;
+    BOOL _createsDownloads;
     BOOL _needsAuthentication;
 }
 
@@ -15,24 +16,28 @@
 @property(getter=isBackgroundRequest) BOOL backgroundRequest;
 @property BOOL needsAuthentication;
 @property <SSPurchaseRequestDelegate> * delegate;
+@property BOOL createsDownloads;
 @property BOOL shouldValidatePurchases;
 
 
 - (void)setShouldValidatePurchases:(BOOL)arg1;
-- (id)initWithPurchases:(id)arg1;
 - (id)purchases;
 - (void)setNeedsAuthentication:(BOOL)arg1;
 - (BOOL)needsAuthentication;
-- (void)startWithPurchaseBlock:(id)arg1 completionBlock:(id)arg2;
-- (void)setBackgroundRequest:(BOOL)arg1;
 - (void)dealloc;
 - (id)init;
 - (BOOL)shouldValidatePurchases;
-- (BOOL)isBackgroundRequest;
+- (void)setCreatesDownloads:(BOOL)arg1;
+- (BOOL)createsDownloads;
 - (id)_purchaseForUniqueIdentifier:(id)arg1;
+- (void)startWithPurchaseResponseBlock:(id)arg1 completionBlock:(id)arg2;
 - (void)startWithCompletionBlock:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)start;
+- (void)startWithPurchaseBlock:(id)arg1 completionBlock:(id)arg2;
+- (void)setBackgroundRequest:(BOOL)arg1;
+- (BOOL)isBackgroundRequest;
+- (id)initWithPurchases:(id)arg1;
 
 @end

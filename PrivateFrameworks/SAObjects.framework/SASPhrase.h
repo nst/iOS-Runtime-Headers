@@ -13,11 +13,11 @@
 + (id)phraseWithDictionary:(id)arg1 context:(id)arg2;
 + (id)phrase;
 
-- (id)groupIdentifier;
-- (id)interpretations;
 - (void)setLowConfidence:(BOOL)arg1;
 - (BOOL)lowConfidence;
 - (void)setInterpretations:(id)arg1;
 - (id)encodedClassName;
+- (id)interpretations;
+- (id)groupIdentifier;
 
 @end

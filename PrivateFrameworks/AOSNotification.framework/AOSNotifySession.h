@@ -17,13 +17,13 @@
 + (id)copyStoreAccount;
 + (BOOL)lostModeIsActive;
 
-- (id)removeAccount:(id)arg1;
 - (id)addAccount:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)removeAccount:(id)arg1;
 - (void)dumpDebugInfo:(id)arg1;
 - (void)stopListeningOnTopic:(id)arg1;
 - (void)startListeningOnTopic:(id)arg1;

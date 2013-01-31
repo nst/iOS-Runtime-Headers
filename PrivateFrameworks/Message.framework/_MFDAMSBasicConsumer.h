@@ -17,11 +17,11 @@
 @property(retain) MFError * error;
 
 
-- (void)setError:(id)arg1;
 - (void)dealloc;
+- (id)error;
 - (void)setMonitor:(id)arg1;
 - (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
 - (id)monitor;
-- (id)error;
+- (void)setError:(id)arg1;
 
 @end

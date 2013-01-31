@@ -40,6 +40,7 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (BOOL)sendData:(id)arg1;
 - (void)setInboundHandler:(id)arg1;
 - (id)inboundHandler;
 - (id)participantsInFlight;
@@ -56,6 +57,5 @@
 - (BOOL)retransmitEvent;
 - (BOOL)sendRaw:(id)arg1 toParticipants:(id)arg2;
 - (void)stopRetransmitTimer;
-- (BOOL)sendData:(id)arg1;
 
 @end

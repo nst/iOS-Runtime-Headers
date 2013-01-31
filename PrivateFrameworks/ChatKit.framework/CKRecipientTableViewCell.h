@@ -8,9 +8,9 @@
 
 @property(getter=isRecipientAvailable) BOOL recipientAvailable;
 
++ (id)cellForRecipient:(id)arg1;
 + (id)highlightedAvailableImage;
 + (id)availableImage;
-+ (id)cellForRecipient:(id)arg1;
 
 - (BOOL)isRecipientAvailable;
 - (void)setRecipientAvailable:(BOOL)arg1;

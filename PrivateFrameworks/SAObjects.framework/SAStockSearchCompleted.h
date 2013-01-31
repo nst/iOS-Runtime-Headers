@@ -15,11 +15,11 @@
 + (id)searchCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)searchCompleted;
 
-- (id)groupIdentifier;
 - (void)setStockList:(id)arg1;
 - (id)stockList;
 - (void)setStockReferences:(id)arg1;
 - (id)stockReferences;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

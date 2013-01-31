@@ -7,6 +7,7 @@
 
 + (void)getStreamsToHost:(id)arg1 port:(int)arg2 inputStream:(id*)arg3 outputStream:(id*)arg4;
 
+- (void)open;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)close;
@@ -16,6 +17,5 @@
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;
-- (void)open;
 
 @end

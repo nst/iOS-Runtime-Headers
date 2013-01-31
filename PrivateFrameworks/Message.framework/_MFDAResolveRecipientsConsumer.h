@@ -15,9 +15,9 @@
 
 - (void)dealloc;
 - (id)init;
+- (id)error;
 - (void)resolvedRecipientsByEmailAddress:(id)arg1;
 - (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;
 - (id)waitForResolvedRecipients;
-- (id)error;
 
 @end

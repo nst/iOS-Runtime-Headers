@@ -5,7 +5,6 @@
 @interface GKSConnectivitySettings : NSObject  {
 }
 
-+ (void)initialize;
 + (id)getAllSettings;
 + (struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)getCachedIPPort;
 + (void)setClientOptions:(id)arg1;
@@ -16,6 +15,7 @@
 + (id)getAddressForService:(id)arg1;
 + (id)getClientOption:(id)arg1;
 + (struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)getIPPortForService:(id)arg1;
++ (void)initialize;
 
 - (void)dealloc;
 - (id)init;

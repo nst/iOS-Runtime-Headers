@@ -56,8 +56,6 @@
 - (id)delegate;
 - (void).cxx_destruct;
 - (void)cancelAllOperations;
-- (void)performBlock:(id)arg1;
-- (BOOL)isActive;
 - (void)setWorkThread:(id)arg1;
 - (id)workThread;
 - (void)setAutoGenerateItemID:(BOOL)arg1;
@@ -100,5 +98,7 @@
 - (void)unregisterAssets:(id)arg1;
 - (void)shutDownCompletionBlock:(id)arg1;
 - (BOOL)hasOutstandingActivity;
+- (void)performBlock:(id)arg1;
+- (BOOL)isActive;
 
 @end

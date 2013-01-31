@@ -17,11 +17,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setCamera:(id)arg1;
-- (id)camera;
 - (void)setBackdrop:(id)arg1;
 - (void)setLightRig:(id)arg1;
 - (id)backdrop;
 - (id)lightRig;
+- (void)setCamera:(id)arg1;
+- (id)camera;
 
 @end

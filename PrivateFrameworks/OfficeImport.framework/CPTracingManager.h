@@ -9,8 +9,8 @@
     unsigned int mCount;
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedManager;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)_singletonAlloc;
 
 - (unsigned int)retainCount;

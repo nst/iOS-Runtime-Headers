@@ -12,10 +12,10 @@
 + (id)launchAppWithDictionary:(id)arg1 context:(id)arg2;
 + (id)launchApp;
 
-- (id)groupIdentifier;
 - (void)setLaunchId:(id)arg1;
 - (id)launchId;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

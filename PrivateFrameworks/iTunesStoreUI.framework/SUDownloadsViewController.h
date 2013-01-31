@@ -14,10 +14,6 @@
 }
 
 
-- (void)downloadManagerNetworkUsageDidChange:(id)arg1;
-- (void)downloadManagerDownloadsDidChange:(id)arg1;
-- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
-- (void)downloadManager:(id)arg1 downloadsDidChange:(id)arg2;
 - (id)initWithManagerOptions:(id)arg1 preorderItemKinds:(id)arg2;
 - (void)_gotoPurchasedPlaylist:(id)arg1;
 - (void)_reloadDownloadManagerFromServer;
@@ -42,6 +38,10 @@
 - (void)loadView;
 - (void)reload;
 - (void)reloadData;
+- (void)downloadManager:(id)arg1 downloadsDidChange:(id)arg2;
+- (void)downloadManagerNetworkUsageDidChange:(id)arg1;
+- (void)downloadManagerDownloadsDidChange:(id)arg1;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (id)initWithManagerOptions:(id)arg1;
 
 @end

@@ -8,9 +8,9 @@
 
 - (id)retain;
 - (void)release;
-- (Class)classForArchiver;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
 - (Class)classForCoder;
+- (Class)classForArchiver;
 
 @end

@@ -19,8 +19,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)color;
-- (void)setColor:(id)arg1;
 - (void)applyOverridesFrom:(id)arg1;
 - (void)setFontReference:(id)arg1;
 - (id)fontReference;
@@ -29,5 +27,7 @@
 - (id)shallowCopy;
 - (int)italic;
 - (int)bold;
+- (id)color;
+- (void)setColor:(id)arg1;
 
 @end

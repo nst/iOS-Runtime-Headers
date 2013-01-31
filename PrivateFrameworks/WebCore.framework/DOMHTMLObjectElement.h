@@ -28,19 +28,6 @@
 @property(readonly) NSURL * absoluteImageURL;
 
 
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)type;
-- (id)data;
-- (id)code;
-- (void)setHeight:(id)arg1;
-- (id)height;
-- (id)absoluteImageURL;
-- (id)form;
-- (void)setWidth:(id)arg1;
-- (id)width;
-- (void)setType:(id)arg1;
-- (void)setData:(id)arg1;
 - (void)setStandby:(id)arg1;
 - (id)standby;
 - (void)setDeclare:(BOOL)arg1;
@@ -68,6 +55,19 @@
 - (id)align;
 - (void)setBorder:(id)arg1;
 - (id)border;
+- (void)setName:(id)arg1;
+- (id)name;
+- (id)type;
+- (id)data;
+- (id)code;
+- (void)setHeight:(id)arg1;
+- (id)height;
+- (id)absoluteImageURL;
+- (id)form;
+- (void)setWidth:(id)arg1;
+- (id)width;
+- (void)setType:(id)arg1;
+- (void)setData:(id)arg1;
 - (id)contentFrame;
 - (BOOL)showsTapHighlight;
 

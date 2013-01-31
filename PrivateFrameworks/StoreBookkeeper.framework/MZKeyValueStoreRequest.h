@@ -21,6 +21,9 @@
 @property(retain) MZKeyValueStoreSerializer * serializer;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (void)setSerializer:(id)arg1;
 - (id)initWithTransaction:(id)arg1;
 - (void)scheduleStoreURLOperation:(id)arg1 data:(id)arg2;
@@ -32,11 +35,8 @@
 - (void)setShouldAuthenticate:(BOOL)arg1;
 - (BOOL)shouldAuthenticate;
 - (void)setTransaction:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
+- (void)setDomain:(id)arg1;
 - (id)domain;
 - (void)start;
-- (void)setDomain:(id)arg1;
 
 @end

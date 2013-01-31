@@ -29,10 +29,6 @@
 @property BOOL useMultisampling;
 
 
-- (void)dealloc;
-- (int)height;
-- (void)finalize;
-- (int)width;
 - (BOOL)isPresentable;
 - (void)deleteFramebuffers;
 - (id)initWithContext:(id)arg1 texture:(id)arg2 depth:(BOOL)arg3 stencil:(BOOL)arg4;
@@ -51,5 +47,9 @@
 - (void)preloadMultisampleFramebuffer;
 - (void)deleteUnusedFramebuffers;
 - (void)setUseMultisampling:(BOOL)arg1;
+- (void)dealloc;
+- (int)height;
+- (void)finalize;
+- (int)width;
 
 @end

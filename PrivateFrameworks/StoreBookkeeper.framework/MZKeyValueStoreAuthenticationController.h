@@ -19,6 +19,8 @@
 @property(retain) NSString * acceptedDSIDText;
 
 
+- (void)dealloc;
+- (id)init;
 - (void)setAcceptedDSIDTextUserDefaultsKey:(id)arg1;
 - (void)setAcceptedDSIDUserDefaultsKey:(id)arg1;
 - (id)acceptedDSIDTextUserDefaultsKey;
@@ -33,7 +35,5 @@
 - (id)DSID;
 - (void)setShouldAuthenticate:(BOOL)arg1;
 - (BOOL)shouldAuthenticate;
-- (void)dealloc;
-- (id)init;
 
 @end

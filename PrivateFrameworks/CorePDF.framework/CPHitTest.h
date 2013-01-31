@@ -11,6 +11,7 @@
 }
 
 
+- (void)dealloc;
 - (id)findBestMatch:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)hitTestParagraph:(id)arg1 point:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)hitTestGraphicObject:(id)arg1 point:(struct CGPoint { float x1; float x2; })arg2;
@@ -24,7 +25,6 @@
 - (id)paragraph:(struct CGPoint { float x1; float x2; })arg1;
 - (id)objectAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)findClickableObjects:(BOOL)arg1;
-- (void)dealloc;
 - (id)initWithPage:(id)arg1;
 - (id)page;
 

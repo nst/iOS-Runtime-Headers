@@ -35,14 +35,11 @@
 + (void)removeSectionParametersFromCache:(id)arg1;
 + (void)addSectionParametersToCache:(id)arg1;
 
+- (void)setIconData:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)setDisplayName:(id)arg1;
 - (id)iconData;
-- (void)setUniqueIdentifier:(id)arg1;
-- (id)displayName;
-- (id)uniqueIdentifier;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)parametersForSubtype:(int)arg1;
 - (BOOL)showsDateInFloatingLockScreenAlert;
 - (BOOL)orderSectionUsingRecencyDate;
@@ -60,7 +57,10 @@
 - (void)setMessageNumberOfLines:(unsigned int)arg1;
 - (void)setDisplaysCriticalBulletins:(BOOL)arg1;
 - (BOOL)displaysCriticalBulletins;
-- (void)setIconData:(id)arg1;
-- (void)setDisplayName:(id)arg1;
+- (void)setUniqueIdentifier:(id)arg1;
+- (id)displayName;
+- (id)uniqueIdentifier;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

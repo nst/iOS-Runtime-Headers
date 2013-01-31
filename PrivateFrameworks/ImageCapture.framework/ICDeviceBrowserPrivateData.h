@@ -15,13 +15,13 @@
 @property(retain) NSMutableArray * internalDevices;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (id)internalDevices;
 - (void)setBrowsing:(BOOL)arg1;
 - (BOOL)isBrowsing;
 - (void)setInternalDevices:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
 - (void)finalize;
 
 @end

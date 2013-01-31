@@ -20,6 +20,9 @@
 
 + (id)codedPropertyKeys;
 
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (id)scoreType;
 - (id)initWithLeaderboardID:(id)arg1 serverRepresentation:(id)arg2;
 - (void)setScoreType:(id)arg1;
@@ -31,8 +34,5 @@
 - (id)localizedTitle;
 - (id)categoryID;
 - (void)setCategoryID:(id)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 
 @end

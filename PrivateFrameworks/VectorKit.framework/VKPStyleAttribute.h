@@ -22,15 +22,6 @@
 @property int score;
 
 
-- (void)setScore:(int)arg1;
-- (int)score;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setKey:(int)arg1;
-- (int)key;
-- (id)dictionaryRepresentation;
 - (void)setHasScore:(BOOL)arg1;
 - (void)setIntValues:(int*)arg1 count:(unsigned int)arg2;
 - (BOOL)hasScore;
@@ -41,6 +32,15 @@
 - (unsigned int)intValuesCount;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (BOOL)readFrom:(id)arg1;
+- (void)setKey:(int)arg1;
+- (int)key;
+- (id)dictionaryRepresentation;
+- (void)setScore:(int)arg1;
+- (int)score;
 
 @end

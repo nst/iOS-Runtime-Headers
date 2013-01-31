@@ -31,6 +31,15 @@
 @property(retain) id target;
 
 
+- (void)setTarget:(id)arg1;
+- (id)target;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)sendMessage:(id)arg1 withReply:(id)arg2;
+- (id)messageHandler;
+- (void)_handleXPCError:(void*)arg1;
+- (void)setMessageHandler:(id)arg1;
+- (void)sendMessage:(id)arg1;
 - (void)setDisconnectHandler:(id)arg1;
 - (id)disconnectHandler;
 - (void)remoteBarrier;
@@ -43,15 +52,6 @@
 - (BOOL)remoteBarrierWithTimeout:(double)arg1;
 - (void)_sendMessage:(id)arg1 handler:(id)arg2;
 - (void)_setEventHandlerOnConnection:(struct _xpc_connection_s { }*)arg1;
-- (void)setTarget:(id)arg1;
-- (id)target;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (void)sendMessage:(id)arg1 withReply:(id)arg2;
 - (id)serviceName;
-- (void)sendMessage:(id)arg1;
-- (id)messageHandler;
-- (void)_handleXPCError:(void*)arg1;
-- (void)setMessageHandler:(id)arg1;
 
 @end

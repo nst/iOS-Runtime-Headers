@@ -8,8 +8,8 @@
 + (id)closeAssistantWithDictionary:(id)arg1 context:(id)arg2;
 + (id)closeAssistant;
 
-- (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

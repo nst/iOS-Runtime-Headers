@@ -25,10 +25,18 @@
 @property(retain) NSString * title;
 
 
-- (id)ratingControl;
-- (void)setItem:(id)arg1;
-- (id)artworkImage;
-- (void)setQuery:(id)arg1;
+- (void)ratingControlRatingChanged:(id)arg1;
+- (void)ratingControlRatingBeganTracking:(id)arg1;
+- (id)headerControl;
+- (void)reloadViews;
+- (id)_headerView;
+- (void)_reloadCoverFlowViews;
+- (void)_reloadNormalViews;
+- (void)_reloadCommonViews;
+- (id)_bottomImageView;
+- (id)_topImageView;
+- (id)_backgroundImageView;
+- (void)setArtworkImage:(id)arg1;
 - (void)dealloc;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
@@ -42,17 +50,9 @@
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)ratingControlRatingChanged:(id)arg1;
-- (void)ratingControlRatingBeganTracking:(id)arg1;
-- (id)headerControl;
-- (void)reloadViews;
-- (id)_headerView;
-- (void)_reloadCoverFlowViews;
-- (void)_reloadNormalViews;
-- (void)_reloadCommonViews;
-- (id)_bottomImageView;
-- (id)_topImageView;
-- (id)_backgroundImageView;
-- (void)setArtworkImage:(id)arg1;
+- (id)artworkImage;
+- (void)setQuery:(id)arg1;
+- (void)setItem:(id)arg1;
+- (id)ratingControl;
 
 @end

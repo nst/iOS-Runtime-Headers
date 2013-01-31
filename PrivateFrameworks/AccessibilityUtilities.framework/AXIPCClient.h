@@ -39,6 +39,10 @@
 + (id)allClients;
 + (void)initialize;
 
+- (void)setClientIdentifier:(id)arg1;
+- (id)clientIdentifier;
+- (void)dealloc;
+- (void)setServiceName:(id)arg1;
 - (void)setConnected:(BOOL)arg1;
 - (void)setServerPort:(struct __CFMachPort { }*)arg1;
 - (BOOL)disconnectWithError:(id*)arg1;
@@ -55,16 +59,12 @@
 - (struct __CFRunLoopSource { }*)clientCallbackSource;
 - (id)initWithPort:(unsigned int)arg1;
 - (unsigned int)clientCallbackPort;
-- (void)setClientIdentifier:(id)arg1;
-- (id)clientIdentifier;
-- (void)dealloc;
-- (id)serviceName;
-- (void)setServiceName:(id)arg1;
 - (float)timeout;
 - (void)setTimeout:(float)arg1;
 - (id)initWithServiceName:(id)arg1;
+- (struct __CFMachPort { }*)serverPort;
+- (id)serviceName;
 - (BOOL)isConnected;
 - (void)_serverDied;
-- (struct __CFMachPort { }*)serverPort;
 
 @end

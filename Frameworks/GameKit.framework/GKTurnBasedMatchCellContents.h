@@ -16,15 +16,15 @@
 
 + (id)turnBasedMatchCellContentWithTheme:(id)arg1;
 
+- (void)dealloc;
+- (id)tableView;
+- (void)prepareForReuse;
+- (void)setTableView:(id)arg1;
 - (void)setSectionStyle:(unsigned int)arg1;
 - (unsigned int)sectionStyle;
 - (void)setMatch:(id)arg1;
 - (id)match;
 - (BOOL)shouldShowPhoto;
 - (void)updateLines;
-- (void)dealloc;
-- (id)tableView;
-- (void)prepareForReuse;
-- (void)setTableView:(id)arg1;
 
 @end

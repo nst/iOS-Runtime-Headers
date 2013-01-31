@@ -15,11 +15,6 @@
 }
 
 
-- (long)column;
-- (void)dealloc;
-- (id)table;
-- (long)row;
-- (BOOL)isStreaming;
 - (void)setLastCellRead:(id)arg1;
 - (BOOL)alwaysPutReadCellsInArray;
 - (id)initWithStreaming:(BOOL)arg1 table:(id)arg2;
@@ -31,5 +26,10 @@
 - (BOOL)isCounting;
 - (void)incrementCellPosition;
 - (void)skipCells:(long)arg1;
+- (void)dealloc;
+- (BOOL)isStreaming;
+- (id)table;
+- (long)row;
+- (long)column;
 
 @end

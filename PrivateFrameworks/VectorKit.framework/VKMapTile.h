@@ -25,9 +25,6 @@
 @property BOOL needsRasterization;
 
 
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (struct { float x1; float x2; float x3; float x4; })localBoundsForLayer:(unsigned int)arg1;
 - (BOOL)needsRasterization;
 - (void)setNeedsRasterization:(BOOL)arg1;
@@ -40,5 +37,8 @@
 - (id)detailedDescription;
 - (void)updateViewDependentStateWithContext:(id)arg1;
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 
 @end

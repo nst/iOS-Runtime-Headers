@@ -13,7 +13,6 @@
 + (long long)outputLengthForInputLength:(long long)arg1;
 + (int)maxConsumeLengthForReadLength:(int)arg1;
 
-- (void)finish;
 - (unsigned int)minimumConsumeLength;
 - (id)initWithDataConsumer:(id)arg1;
 - (int)consumeData:(id)arg1;
@@ -21,5 +20,6 @@
 - (id)init;
 - (id)dataConsumer;
 - (void)setDataConsumer:(id)arg1;
+- (void)finish;
 
 @end

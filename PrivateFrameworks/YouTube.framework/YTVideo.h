@@ -50,17 +50,6 @@
 + (void)disableNotifications;
 + (void)enableNotifications;
 
-- (id)editURL;
-- (id)tags;
-- (id)infoURL;
-- (BOOL)isPlayable;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)category;
-- (id)title;
-- (id)ID;
 - (BOOL)ownVideo;
 - (id)privacyString;
 - (id)captions;
@@ -96,10 +85,21 @@
 - (id)initFromArchiveDictionary:(id)arg1;
 - (id)shortID;
 - (BOOL)allowsHighQuality3GPlayback;
-- (id)thumbnailURL;
 - (id)dateAdded;
-- (BOOL)isProcessing;
-- (id)author;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (double)age;
+- (id)thumbnailURL;
+- (id)author;
+- (BOOL)isProcessing;
+- (id)ID;
+- (id)tags;
+- (id)category;
+- (id)title;
+- (id)infoURL;
+- (BOOL)isPlayable;
+- (id)editURL;
 
 @end

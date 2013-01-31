@@ -11,10 +11,10 @@
 @property(retain) NSMapTable * keysForSizes;
 
 
+- (void)dealloc;
 - (void)setKeysForSizes:(id)arg1;
 - (id)keysForSizes;
 - (id)imageForImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)keyForImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)dealloc;
 
 @end

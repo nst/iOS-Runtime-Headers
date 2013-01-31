@@ -20,6 +20,13 @@
 
 + (unsigned long)_writerCountTSDKey;
 
+- (void)_initLocks;
+- (BOOL)_forceFixAttributes;
+- (BOOL)fixesAttributesLazily;
+- (BOOL)_lockForWritingWithExceptionHandler:(BOOL)arg1;
+- (void)_setForceFixAttributes:(BOOL)arg1;
+- (void)_unlock;
+- (BOOL)_lockForReading;
 - (id)initWithString:(id)arg1;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
 - (id)string;
@@ -33,13 +40,6 @@
 - (id)initWithAttributedString:(id)arg1;
 - (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (Class)classForCoder;
-- (void)_initLocks;
-- (BOOL)_forceFixAttributes;
-- (BOOL)fixesAttributesLazily;
-- (BOOL)_lockForWritingWithExceptionHandler:(BOOL)arg1;
-- (void)_setForceFixAttributes:(BOOL)arg1;
-- (void)_unlock;
-- (BOOL)_lockForReading;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withAttributedString:(id)arg2;
 - (id)attribute:(id)arg1 atIndex:(unsigned int)arg2 longestEffectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 - (id)attributesAtIndex:(unsigned int)arg1 longestEffectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;

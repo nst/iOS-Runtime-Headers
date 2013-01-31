@@ -30,10 +30,6 @@
 }
 
 
-- (id)name;
-- (id).cxx_construct;
-- (void)dealloc;
-- (id)contents;
 - (BOOL)isDrawStyleVisibleAtLOD:(unsigned int)arg1;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })basicRoadColor;
 - (const struct { struct VKProfileSparseRamp<float> { union { struct VKProfileSparseRampValue { float x_1_3_1; unsigned char x_1_3_2; } x_1_2_1[2]; float *x_1_2_2; } x_1_1_1; unsigned char x_1_1_2; } x1; struct VKProfileSparseRamp<_VGLColor> { union { struct VKProfileSparseRampValue { struct _VGLColor { float x_1_4_1; float x_1_4_2; float x_1_4_3; float x_1_4_4; } x_1_3_1; unsigned char x_1_3_2; } x_1_2_1[2]; struct _VGLColor {} *x_1_2_2; } x_2_1_1; unsigned char x_2_1_2; } x2; int x3; }*)slowTrafficStyle;
@@ -48,5 +44,9 @@
 - (id)labelStyle;
 - (id)lineStyle;
 - (const struct { struct VKProfileSparseRamp<float> { union { struct VKProfileSparseRampValue { float x_1_3_1; unsigned char x_1_3_2; } x_1_2_1[2]; float *x_1_2_2; } x_1_1_1; unsigned char x_1_1_2; } x1; struct VKProfileSparseRamp<float> { union { struct VKProfileSparseRampValue { float x_1_3_1; unsigned char x_1_3_2; } x_1_2_1[2]; float *x_1_2_2; } x_2_1_1; unsigned char x_2_1_2; } x2; struct VKProfileSparseRamp<float> { union { struct VKProfileSparseRampValue { float x_1_3_1; unsigned char x_1_3_2; } x_1_2_1[2]; float *x_1_2_2; } x_3_1_1; unsigned char x_3_1_2; } x3; struct VKProfileSparseRamp<float> { union { struct VKProfileSparseRampValue { float x_1_3_1; unsigned char x_1_3_2; } x_1_2_1[2]; float *x_1_2_2; } x_4_1_1; unsigned char x_4_1_2; } x4; struct VKProfileSparseRamp<_VGLColor> { union { struct VKProfileSparseRampValue { struct _VGLColor { float x_1_4_1; float x_1_4_2; float x_1_4_3; float x_1_4_4; } x_1_3_1; unsigned char x_1_3_2; } x_1_2_1[2]; struct _VGLColor {} *x_1_2_2; } x_5_1_1; unsigned char x_5_1_2; } x5; struct VKProfileSparseRamp<_VGLColor> { union { struct VKProfileSparseRampValue { struct _VGLColor { float x_1_4_1; float x_1_4_2; float x_1_4_3; float x_1_4_4; } x_1_3_1; unsigned char x_1_3_2; } x_1_2_1[2]; struct _VGLColor {} *x_1_2_2; } x_6_1_1; unsigned char x_6_1_2; } x6; struct VKProfileSparseRamp<signed char> { union { struct VKProfileSparseRampValue { BOOL x_1_3_1; unsigned char x_1_3_2; } x_1_2_1[2]; char *x_1_2_2; } x_7_1_1; unsigned char x_7_1_2; } x7; struct VKProfileSparseRamp<int> { union { struct VKProfileSparseRampValue { int x_1_3_1; unsigned char x_1_3_2; } x_1_2_1[2]; int *x_1_2_2; } x_8_1_1; unsigned char x_8_1_2; } x8; struct VKProfileSparseRamp<int> { union { struct VKProfileSparseRampValue { int x_1_3_1; unsigned char x_1_3_2; } x_1_2_1[2]; int *x_1_2_2; } x_9_1_1; unsigned char x_9_1_2; } x9; struct VKProfileSparseRamp<signed char> { union { struct VKProfileSparseRampValue { BOOL x_1_3_1; unsigned char x_1_3_2; } x_1_2_1[2]; char *x_1_2_2; } x_10_1_1; unsigned char x_10_1_2; } x10; struct VKProfileSparseRamp<signed char> { union { struct VKProfileSparseRampValue { BOOL x_1_3_1; unsigned char x_1_3_2; } x_1_2_1[2]; char *x_1_2_2; } x_11_1_1; unsigned char x_11_1_2; } x11; }*)roadStyle;
+- (id)name;
+- (id).cxx_construct;
+- (void)dealloc;
+- (id)contents;
 
 @end

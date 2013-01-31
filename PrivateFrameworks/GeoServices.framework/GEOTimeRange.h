@@ -21,24 +21,24 @@
 @property BOOL allDay;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (void)setTo:(unsigned int)arg1;
+- (void)setFrom:(unsigned int)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (unsigned int)to;
+- (unsigned int)from;
 - (void)setHasAllDay:(BOOL)arg1;
 - (void)setHasTo:(BOOL)arg1;
 - (void)setHasFrom:(BOOL)arg1;
 - (BOOL)hasAllDay;
 - (BOOL)hasTo;
 - (BOOL)hasFrom;
-- (void)setTo:(unsigned int)arg1;
-- (void)setFrom:(unsigned int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (unsigned int)to;
-- (unsigned int)from;
+- (id)dictionaryRepresentation;
 - (BOOL)allDay;
 - (void)setAllDay:(BOOL)arg1;
 

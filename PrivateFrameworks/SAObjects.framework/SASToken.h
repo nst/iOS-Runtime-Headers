@@ -17,19 +17,19 @@
 + (id)tokenWithDictionary:(id)arg1 context:(id)arg2;
 + (id)token;
 
-- (id)groupIdentifier;
+- (void)setRemoveSpaceBefore:(BOOL)arg1;
+- (void)setRemoveSpaceAfter:(BOOL)arg1;
+- (void)setConfidenceScore:(id)arg1;
+- (id)confidenceScore;
+- (id)encodedClassName;
+- (id)endTime;
+- (void)setEndTime:(id)arg1;
 - (BOOL)removeSpaceAfter;
 - (BOOL)removeSpaceBefore;
 - (id)startTime;
 - (id)text;
 - (void)setStartTime:(id)arg1;
 - (void)setText:(id)arg1;
-- (id)endTime;
-- (void)setRemoveSpaceBefore:(BOOL)arg1;
-- (void)setRemoveSpaceAfter:(BOOL)arg1;
-- (void)setConfidenceScore:(id)arg1;
-- (id)confidenceScore;
-- (id)encodedClassName;
-- (void)setEndTime:(id)arg1;
+- (id)groupIdentifier;
 
 @end

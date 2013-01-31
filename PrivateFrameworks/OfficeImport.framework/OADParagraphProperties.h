@@ -45,19 +45,14 @@
 
 + (id)defaultProperties;
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)setRightMargin:(double)arg1;
-- (int)level;
-- (void)setLevel:(int)arg1;
-- (void)setLineSpacing:(id)arg1;
-- (id)lineSpacing;
 - (void)setWrap:(int)arg1;
 - (int)wrap;
 - (void)setAlign:(int)arg1;
 - (int)align;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)init;
 - (id)tabStops;
 - (void)setHasBulletCharSet:(BOOL)arg1;
 - (void)setBulletCharSet:(int)arg1;
@@ -117,5 +112,10 @@
 - (void)setLeftMargin:(double)arg1;
 - (double)rightMargin;
 - (double)leftMargin;
+- (void)setRightMargin:(double)arg1;
+- (int)level;
+- (void)setLevel:(int)arg1;
+- (void)setLineSpacing:(id)arg1;
+- (id)lineSpacing;
 
 @end

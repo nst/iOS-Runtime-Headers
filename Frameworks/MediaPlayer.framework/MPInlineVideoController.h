@@ -35,6 +35,7 @@
     UIView<MPVideoOverlay> *_videoOverlayView;
     unsigned long long _visibleParts;
     int _audioOverlayStyle;
+    BOOL _navigationBarHidden;
     NSString *_playbackErrorDescription;
     int _videoOverlayStyle;
     UIAlertView *_alertSheet;
@@ -45,7 +46,6 @@
     UINavigationController *_chaptersContainerController;
     MPVideoContainerView *_containerView;
     UITapGestureRecognizer *_doubleTapGestureRecognizer;
-    int _extendedModeNotifyToken;
     MPInlineVideoFullscreenViewController *_fullscreenViewController;
     BOOL _fullscreenViewSizeIsExternallyManaged;
     UIWindow *_fullscreenWindow;
@@ -76,6 +76,7 @@
 @property int audioOverlayStyle;
 @property(readonly) UIView * fullscreenView;
 @property(copy) NSString * playbackErrorDescription;
+@property BOOL navigationBarHidden;
 @property(readonly) BOOL savedIsStatusBarHidden;
 @property(readonly) int savedStatusBarStyle;
 @property int videoOverlayStyle;
@@ -86,12 +87,20 @@
 @property(readonly) UIView * view;
 
 
-- (void)setPlayer:(id)arg1;
-- (id)player;
-- (BOOL)TVOutEnabled;
-- (void)_setupSubviews;
-- (void)setItem:(id)arg1;
-- (void)clearWeakReferencesToObject:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (id)posterImage;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)setOrientation:(int)arg1;
+- (id)item;
+- (void)setNavigationBarHidden:(BOOL)arg1;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (id)backgroundView;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (id)view;
+- (int)orientation;
 - (int)savedStatusBarStyle;
 - (BOOL)savedIsStatusBarHidden;
 - (void)fullscreenOverlayDidShow;
@@ -142,6 +151,7 @@
 - (void)_registerForPlayerNotifications;
 - (void)_updateBackgroundViewInformation;
 - (void)_enableAirPlayVideoRoutesIfNecessary;
+- (void)_setupSubviews;
 - (void)_durationAvailable:(id)arg1;
 - (void)_destroyVideoOverlayView;
 - (void)_destroyAudioOverlayView;
@@ -188,7 +198,7 @@
 - (BOOL)ownsStatusBar;
 - (void)_firstVideoFrameDisplayed:(id)arg1;
 - (void)_sizeDidChange:(id)arg1;
-- (void)_isAirPlayVideoActiveDidChange:(id)arg1;
+- (void)_isExternalPlaybackActiveDidChange:(id)arg1;
 - (void)_applicationSuspended:(id)arg1;
 - (void)_viewWasTapped:(id)arg1;
 - (id)playbackErrorDescription;
@@ -213,6 +223,7 @@
 - (void)setClosedCaptions:(id)arg1;
 - (void)setAttemptAutoPlayWhenControlsHidden:(BOOL)arg1;
 - (void)setOwnsStatusBar:(BOOL)arg1;
+- (void)clearWeakReferencesToObject:(id)arg1;
 - (void)_playbackStateChanged:(id)arg1;
 - (void)setDisabledParts:(unsigned long long)arg1;
 - (unsigned int)hostedWindowContextID;
@@ -237,6 +248,8 @@
 - (id)backstopColor;
 - (BOOL)canShowControlsOverlay;
 - (void)setItemTypeOverride:(unsigned int)arg1;
+- (void)setItem:(id)arg1;
+- (BOOL)TVOutEnabled;
 - (BOOL)allowsWirelessPlayback;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setCanShowControlsOverlay:(BOOL)arg1;
@@ -245,18 +258,8 @@
 - (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)isFullscreen;
 - (id)videoView;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
-- (void)_applicationWillEnterForeground:(id)arg1;
-- (void)setOrientation:(int)arg1;
-- (id)item;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
-- (id)backgroundView;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (id)view;
-- (int)orientation;
-- (id)posterImage;
+- (BOOL)navigationBarHidden;
+- (void)setPlayer:(id)arg1;
+- (id)player;
 
 @end

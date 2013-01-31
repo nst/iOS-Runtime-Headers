@@ -14,11 +14,11 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (void)finalize;
 - (BOOL)_isPersistentStoreAlive;
 - (id)_storeIdentifier;
 - (void)_setPersistentStore:(id)arg1;
 - (id)_referenceData;
 - (id)persistentStore;
-- (void)finalize;
 
 @end

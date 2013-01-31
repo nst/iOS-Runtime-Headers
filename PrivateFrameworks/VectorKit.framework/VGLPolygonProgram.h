@@ -17,12 +17,12 @@
 
 + (id)program;
 
+- (int)textureSampler;
+- (void)setTextureSampler:(int)arg1;
 - (id)init;
 - (void)setScale:(float)arg1;
 - (float)scale;
 - (void)setAlpha:(float)arg1;
 - (float)alpha;
-- (int)textureSampler;
-- (void)setTextureSampler:(int)arg1;
 
 @end

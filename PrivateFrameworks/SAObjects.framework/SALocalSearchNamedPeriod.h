@@ -12,9 +12,9 @@
 + (id)namedPeriodWithDictionary:(id)arg1 context:(id)arg2;
 + (id)namedPeriod;
 
-- (id)groupIdentifier;
+- (id)encodedClassName;
 - (id)value;
 - (void)setValue:(id)arg1;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

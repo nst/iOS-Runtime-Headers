@@ -42,8 +42,12 @@
 + (void)initialize;
 + (unsigned int)sortOrdering;
 
+- (id)allGroups;
 - (void)dealloc;
 - (void*)addressBook;
+- (id)allSources;
+- (void)setSortOrdering:(unsigned int)arg1;
+- (void)setAddressBook:(void*)arg1;
 - (id)allDatabaseDirectories;
 - (id)databaseSubdirectory;
 - (id)databaseFullDirectory;
@@ -97,10 +101,6 @@
 - (void)_cacheMeID;
 - (void)resetSectionList;
 - (id)lastSelectedContactsFilter;
-- (id)allGroups;
-- (id)allSources;
 - (id)initWithAddressBook:(void*)arg1;
-- (void)setSortOrdering:(unsigned int)arg1;
-- (void)setAddressBook:(void*)arg1;
 
 @end

@@ -19,9 +19,9 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (void)setStatus:(id)arg1;
-- (id)status;
 - (id)fileReference;
 - (void)setFileReference:(id)arg1;
+- (void)setStatus:(id)arg1;
+- (id)status;
 
 @end

@@ -15,17 +15,14 @@
 
 @property(getter=isNetworkReachable) BOOL networkReachable;
 
-+ (id)sharedPreferences;
 + (void)clearSharedPreferences;
++ (id)sharedPreferences;
 
-- (id)_cacheDirectoryPath;
-- (void).cxx_destruct;
-- (id)init;
-- (id)UUID;
-- (BOOL)isNetworkReachable;
 - (BOOL)serviceDebugging;
 - (id)logoButtonImage;
 - (id)serviceDebuggingPath;
+- (void).cxx_destruct;
+- (id)init;
 - (id)logoBacksideImage;
 - (id)backsideLogoURL;
 - (id)fullQuoteURLOverrideForStock:(id)arg1;
@@ -39,5 +36,8 @@
 - (id)financeRequestAttributes;
 - (void)addStocksHeadersToPostRequest:(id)arg1;
 - (id)serviceURL;
+- (BOOL)isNetworkReachable;
+- (id)_cacheDirectoryPath;
+- (id)UUID;
 
 @end

@@ -64,7 +64,6 @@
 
 
 - (void)dealloc;
-- (id)predicate;
 - (void)updateQueryResultForURL:(id)arg1 info:(id)arg2 updateType:(int)arg3;
 - (void)sendNote;
 - (void)_didInsert:(id)arg1;
@@ -91,9 +90,9 @@
 - (void)_sendNote;
 - (void)startObserver;
 - (void)_disableUpdates;
+- (void)_stop;
 - (void)performBlock:(id)arg1;
 - (void)stop;
-- (void)_stop;
 - (void)setBatchingParameters:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
 - (id)initWithQuery:(id)arg1 values:(id)arg2 sortingAttributes:(id)arg3 items:(id)arg4;
 - (void)setCreateResultFunction:(int (*)())arg1 withContext:(void*)arg2 callbacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
@@ -110,5 +109,6 @@
 - (void)disableUpdates;
 - (void)enableUpdates;
 - (unsigned int)resultCount;
+- (id)predicate;
 
 @end

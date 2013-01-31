@@ -21,7 +21,6 @@
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)replacementObjectForPortCoder:(id)arg1;
 - (id)allLanguages;
 - (id)dominantLanguageForScript:(id)arg1;
 - (id)languagesForScript:(id)arg1;
@@ -31,5 +30,6 @@
 - (id)dominantScript;
 - (unsigned int)orthographyFlags;
 - (id)initWithDominantScript:(id)arg1 languageMap:(id)arg2;
+- (id)replacementObjectForPortCoder:(id)arg1;
 
 @end

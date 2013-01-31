@@ -20,15 +20,15 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)setID:(id)arg1;
-- (id)ID;
-- (id)initWithID:(id)arg1 unformattedID:(id)arg2 countryCode:(id)arg3;
-- (id)handleInfo;
-- (BOOL)isBetterDefinedThan:(id)arg1;
-- (int)compareIDs:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (id)countryCode;
 - (void)setUnformattedID:(id)arg1;
 - (id)unformattedID;
+- (id)initWithID:(id)arg1 unformattedID:(id)arg2 countryCode:(id)arg3;
+- (id)handleInfo;
+- (BOOL)isBetterDefinedThan:(id)arg1;
+- (void)setID:(id)arg1;
+- (id)ID;
+- (int)compareIDs:(id)arg1;
 
 @end

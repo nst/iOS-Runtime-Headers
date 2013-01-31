@@ -20,10 +20,10 @@
 
 + (id)newBackgroundTaskWithExpirationHandler:(id)arg1 debugInfo:(id)arg2;
 
-- (void)performExpirationHandler;
-- (id)initWithExpirationHandler:(id)arg1 debugInfo:(id)arg2;
 - (void)invalidate;
 - (id)description;
 - (void)dealloc;
+- (void)performExpirationHandler;
+- (id)initWithExpirationHandler:(id)arg1 debugInfo:(id)arg2;
 
 @end

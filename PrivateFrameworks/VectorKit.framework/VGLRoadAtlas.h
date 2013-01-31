@@ -29,9 +29,6 @@
 + (float)defaultInflation;
 + (unsigned int)defaultTextureSize;
 
-- (void)dealloc;
-- (unsigned int)numberOfRows;
-- (unsigned int)numberOfColumns;
 - (void)textureMatrix3AtRow:(unsigned int)arg1 column:(unsigned int)arg2 output:(float*)arg3;
 - (float)inflateHalfWidth:(float)arg1 inflation:(float)arg2;
 - (void)generateTextureAtRow:(unsigned int)arg1 column:(unsigned int)arg2 withTextureData:(char *)arg3 context:(id)arg4;
@@ -40,5 +37,8 @@
 - (void)generateTextureAtRow:(unsigned int)arg1 column:(unsigned int)arg2 inflation:(float)arg3 fade:(float)arg4 radius:(float)arg5 context:(id)arg6;
 - (id)initWithSize:(unsigned int)arg1 numberOfRows:(unsigned int)arg2 numberOfColumns:(unsigned int)arg3 quarterQuad:(BOOL)arg4 context:(id)arg5;
 - (unsigned int)textureSize;
+- (void)dealloc;
+- (unsigned int)numberOfRows;
+- (unsigned int)numberOfColumns;
 
 @end

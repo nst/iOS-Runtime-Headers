@@ -21,11 +21,11 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)startAnimating;
 - (void)finishedScalingDown;
 - (id)_createLockBoundsAnimation;
 - (void)animateScaleDown;
 - (void)animateLock;
 - (void)focusDidEnd;
+- (void)startAnimating;
 
 @end

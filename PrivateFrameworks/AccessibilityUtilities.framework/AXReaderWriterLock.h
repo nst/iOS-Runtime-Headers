@@ -13,14 +13,14 @@
 
 + (id)_copyQueueLabelWithString:(id)arg1 shouldAppendUUID:(BOOL)arg2;
 
+- (void)dealloc;
+- (id)init;
 - (void)performAsynchronousWritingBlock:(id)arg1;
 - (void)performAsynchronousReadingBlock:(id)arg1;
 - (void)performWritingBlock:(id)arg1;
 - (void)performReadingBlock:(id)arg1;
 - (void)_setLabel:(id)arg1;
 - (id)initWithLabel:(id)arg1 appendUUIDToLabel:(BOOL)arg2;
-- (void)dealloc;
-- (id)init;
 - (id)label;
 
 @end

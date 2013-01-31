@@ -48,17 +48,17 @@
     } _statusSize;
     BOOL _setupNotifications;
     UIAlertView *_alert;
+    GKButton *_inviteButton;
     NSString *_infoText;
     GKButton *_playNowButton;
-    GKButton *_inviteButton;
-    float _infoWidth;
-    UILabel *_infoLabel;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
     } _infoInsets;
+    UILabel *_infoLabel;
+    float _infoWidth;
 }
 
 @property(copy) GKMatchRequest * matchRequest;
@@ -92,10 +92,26 @@
 @property(readonly) GKMultiplayerCollectionViewLayout * gkCollectionViewLayout;
 
 
-- (void)setInfoInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })infoInsets;
+- (BOOL)setupNotifications;
+- (void)dealloc;
+- (id)init;
+- (void)setStatus:(int)arg1;
+- (int)status;
+- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
+- (int)numberOfSectionsInCollectionView:(id)arg1;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)setInfoWidth:(float)arg1;
 - (float)infoWidth;
+- (void)setInfoInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })infoInsets;
 - (id)infoText;
 - (void)setSetupNotifications:(BOOL)arg1;
 - (void)setParticipantSectionInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -108,9 +124,11 @@
 - (Class)contentsClass;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })participantsRange;
 - (void)participantAdded:(id)arg1;
+- (void)nearbyMultiplayerSwitchChanged:(id)arg1;
 - (void)configureStatusView:(id)arg1;
 - (void)updateParticipants;
 - (void)showFriendPicker;
+- (id)inviteButton;
 - (id)playNowButton;
 - (void)setPlayNowButton:(id)arg1;
 - (void)setInviteButton:(id)arg1;
@@ -123,18 +141,19 @@
 - (id)gkCollectionViewLayout;
 - (void)setContentsKeymap:(id)arg1;
 - (void)setContentsClass:(Class)arg1;
-- (BOOL)shouldShowInfoLabel;
 - (void)setStatusSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })statusSize;
-- (void)setButtonSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })buttonSize;
-- (void)setButtonGap:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })buttonGap;
 - (void)setParticipantGap:(float)arg1;
 - (float)participantGap;
+- (void)setButtonSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })buttonSize;
+- (BOOL)shouldShowInfoLabel;
+- (void)setButtonGap:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })buttonGap;
 - (void)setMatchRequest:(id)arg1;
 - (id)defaultInvitationMessage;
 - (void)setDefaultInvitationMessage:(id)arg1;
+- (BOOL)shouldShowNearbySwitch;
 - (BOOL)supportsNearbyPlayers;
 - (int)maxParticipants;
 - (void)participantCanceled:(id)arg1;
@@ -157,7 +176,6 @@
 - (id)participantWithID:(id)arg1;
 - (BOOL)isHosted;
 - (void)setParticipants:(id)arg1;
-- (id)participants;
 - (void)playNow;
 - (void)updateUI;
 - (void)setNumberInvitesRemaining:(int)arg1;
@@ -168,30 +186,14 @@
 - (id)invitedPlayers;
 - (id)gkCollectionView;
 - (id)currentPlayerIDs;
+- (id)participants;
 - (void)finishWithError:(id)arg1;
 - (id)matchRequest;
 - (id)alert;
 - (void)setAlert:(id)arg1;
 - (void)cancelAlertWithoutDelegateCallback;
 - (void)friendPickerViewController:(id)arg1 didFinishWithPlayers:(id)arg2 inviteMessage:(id)arg3;
-- (id)inviteButton;
 - (void)setInfoLabel:(id)arg1;
 - (id)infoLabel;
-- (BOOL)setupNotifications;
-- (void)dealloc;
-- (id)init;
-- (void)setStatus:(int)arg1;
-- (int)status;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
-- (int)numberOfSectionsInCollectionView:(id)arg1;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 
 @end

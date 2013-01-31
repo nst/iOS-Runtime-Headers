@@ -16,11 +16,11 @@
 - (void)dealloc;
 - (id)init;
 - (id)componentsAsString;
+- (id)childrenToWrite;
+- (id)copyParseRules;
 - (id)comps;
 - (void)setComps:(id)arg1;
 - (void)addComp:(id)arg1;
 - (id)compNames;
-- (id)childrenToWrite;
-- (id)copyParseRules;
 
 @end

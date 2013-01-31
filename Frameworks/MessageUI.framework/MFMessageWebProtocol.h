@@ -12,8 +12,8 @@
 + (id)canonicalRequestForRequest:(id)arg1;
 + (BOOL)canInitWithRequest:(id)arg1;
 
-- (void)startLoading;
 - (void)dealloc;
 - (void)stopLoading;
+- (void)startLoading;
 
 @end

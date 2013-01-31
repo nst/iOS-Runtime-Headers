@@ -21,6 +21,7 @@
 + (id)responseWithStoreBagResponse:(id)arg1;
 + (id)codedPropertyKeys;
 
+- (void)dealloc;
 - (id)passwordURL;
 - (id)editURL;
 - (id)authorizeURL;
@@ -31,6 +32,5 @@
 - (void)setAuthorizeURL:(id)arg1;
 - (void)setSetupURL:(id)arg1;
 - (id)reportURL;
-- (void)dealloc;
 
 @end

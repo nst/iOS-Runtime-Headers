@@ -23,6 +23,7 @@
 - (void)setDelegate:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (void)dealloc;
+- (BOOL)isShowingSearchResults;
 - (void)_cancel;
 - (id)searchController;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
@@ -43,6 +44,5 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (BOOL)isShowingSearchResults;
 
 @end

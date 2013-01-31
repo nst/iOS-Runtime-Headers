@@ -15,13 +15,13 @@
 
 + (unsigned int)commentsPerRequest;
 
-- (void)dealloc;
-- (void)failWithError:(id)arg1;
 - (id)initRequestingCommentsForVideo:(id)arg1 withDelegate:(id)arg2;
 - (void)requestMoreComments;
 - (void)didAuthenticate:(id)arg1;
 - (void)_requestCommentsFromURL:(id)arg1;
 - (void)didParseData;
+- (void)failWithError:(id)arg1;
+- (void)dealloc;
 - (int)parseData:(id)arg1;
 
 @end

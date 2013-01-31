@@ -14,8 +14,8 @@
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageViewEdgeInsets;
 
 
+- (void)layoutSubviewsOfCell:(id)arg1;
 - (void)setImageViewEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageViewEdgeInsets;
-- (void)layoutSubviewsOfCell:(id)arg1;
 
 @end

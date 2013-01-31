@@ -2,26 +2,20 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, SSKeyValueStore, NSObject<OS_dispatch_queue>, SSAccount, SSDistributedNotificationCenter;
+@class NSArray, SSKeyValueStore, SSAccount, NSObject<OS_dispatch_queue>;
 
-@interface SSAccountStore : NSObject <SSAccountStore> {
-    NSArray *_accounts;
-    BOOL _accountsValid;
+@interface SSAccountStore : NSObject  {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SSKeyValueStore *_keyValueStore;
-    SSDistributedNotificationCenter *_notificationCenter;
     NSObject<OS_dispatch_queue> *_notificationQueue;
-    id _observer;
 }
 
 @property(readonly) SSAccount * activeAccount;
 @property(readonly) SSAccount * activeLockerAccount;
 @property(readonly) NSArray * accounts;
 @property(getter=isExpired,readonly) BOOL expired;
-@property(retain) SSDistributedNotificationCenter * distributedNotificationCenter;
 @property(getter=isAuthenticationActive,readonly) BOOL authenticationActive;
 
-+ (id)defaultStore;
 + (id)existingDefaultStore;
 + (void)resetExpiration;
 + (BOOL)isExpired;
@@ -29,37 +23,32 @@
 + (double)tokenExpirationInterval;
 + (void)resetExpirationForTokenType:(int)arg1;
 + (BOOL)isExpiredForTokenType:(int)arg1;
++ (id)defaultStore;
 
-- (id)activeAccount;
 - (void)resetExpiration;
 - (id)setActiveLockerAccount:(id)arg1;
 - (id)setActiveAccount:(id)arg1;
-- (id)activeLockerAccount;
 - (BOOL)isExpired;
 - (id)addAccount:(id)arg1;
 - (id)accountWithUniqueIdentifier:(id)arg1;
 - (void)signOutAllAccounts;
 - (void)dealloc;
 - (id)init;
-- (void)setDistributedNotificationCenter:(id)arg1;
-- (void)setDefaultAccountName:(id)arg1 completionBlock:(id)arg2;
-- (void)getDefaultAccountNameUsingBlock:(id)arg1;
-- (id)distributedNotificationCenter;
-- (BOOL)isAuthenticationActive;
+- (void)_postAccountStoreChangeNotification;
+- (void)_dispatchSync:(id)arg1;
+- (void)_dispatchAsync:(id)arg1;
 - (void)signOutAccount:(id)arg1;
+- (void)setDefaultAccountName:(id)arg1 completionBlock:(id)arg2;
 - (void)setAccountCredits:(id)arg1 forAccountWithUniqueIdentifier:(id)arg2;
+- (BOOL)isAuthenticationActive;
+- (void)getDefaultAccountNameUsingBlock:(id)arg1;
 - (id)accountWithUniqueIdentifier:(id)arg1 reloadIfNecessary:(BOOL)arg2;
-- (void)_signOutWithAccountIDs:(id)arg1;
-- (void)_sendMessage:(id)arg1 withAccountsBlock:(id)arg2;
-- (void)_postAccountStoreChanged;
-- (void)_setAccounts:(id)arg1;
 - (void)resetExpirationForTokenType:(int)arg1;
 - (BOOL)isExpiredForTokenType:(int)arg1;
-- (id)_addAccount:(id)arg1 asActiveAccount:(BOOL)arg2 activeLockerAccount:(BOOL)arg3;
-- (void)_invalidateAccounts;
-- (id)_accountWithUniqueIdentifier:(id)arg1;
-- (BOOL)_reloadAccountsIfNeeded;
+- (id)_keyValueStore;
 - (void)reloadAccounts;
 - (id)accounts;
+- (id)activeLockerAccount;
+- (id)activeAccount;
 
 @end

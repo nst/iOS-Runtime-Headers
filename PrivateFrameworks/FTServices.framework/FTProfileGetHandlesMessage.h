@@ -11,14 +11,14 @@
 @property(copy) NSArray * responseHandles;
 
 
-- (id)responseHandles;
-- (id)bagKey;
-- (void)setResponseHandles:(id)arg1;
-- (void)handleResponseDictionary:(id)arg1;
-- (id)requiredKeys;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)messageBody;
+- (id)responseHandles;
+- (void)setResponseHandles:(id)arg1;
+- (void)handleResponseDictionary:(id)arg1;
+- (id)requiredKeys;
+- (id)bagKey;
 
 @end

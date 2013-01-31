@@ -15,11 +15,11 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
-- (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)smsComposeControllerSendStartedWithText:(id)arg1;
 - (void)smsComposeControllerCancelled;
 - (void)smsComposeControllerAppeared;
 - (void)smsComposeControllerDataInserted;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

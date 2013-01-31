@@ -21,11 +21,11 @@
 - (id)name;
 - (id)type;
 - (void).cxx_destruct;
+- (id)payload;
+- (void)setPayload:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)formPartData;
 - (id)imagePartData;
 - (id)partData;
-- (void)setPayload:(id)arg1;
-- (id)payload;
 
 @end

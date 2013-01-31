@@ -157,12 +157,6 @@
 @property(retain) NSString * name;
 
 
-- (void)setName:(id)arg1;
-- (id)name;
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (id)init;
 - (id)descriptionAtZoom:(float)arg1;
 - (BOOL)fancyCasingsVisibleAtZoom:(float)arg1;
 - (BOOL)casingsVisibleAtZoom:(float)arg1;
@@ -188,5 +182,11 @@
 - (int)polygonType;
 - (BOOL)hasFillTexture;
 - (BOOL)hasFillColor;
+- (void)setName:(id)arg1;
+- (id)name;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)init;
 
 @end

@@ -35,8 +35,10 @@
 
 + (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2 feederClass:(Class)arg3;
 
-- (id)representedObject;
-- (void)setRepresentedObject:(id)arg1;
+- (void)dealloc;
+- (BOOL)canSeek;
+- (id)pathAtIndex:(unsigned int)arg1;
+- (id)preferredLanguages;
 - (void)setFullScreenPlaybackQueue:(BOOL)arg1;
 - (BOOL)fullScreenPlaybackQueue;
 - (void)setActiveShuffleType:(unsigned int)arg1;
@@ -49,7 +51,7 @@
 - (unsigned int)realRepeatType;
 - (BOOL)trackChangesCanEndPlayback;
 - (unsigned int)itemTypeForIndex:(unsigned int)arg1;
-- (BOOL)canSkipItem:(id)arg1;
+- (BOOL)canSkipToPreviousItem;
 - (BOOL)shouldBeginPlaybackOfItem:(id)arg1 error:(id*)arg2;
 - (id)errorResolverForItem:(id)arg1;
 - (void)commitSourceChangeWithStartQueueIndex:(unsigned int)arg1;
@@ -62,17 +64,20 @@
 - (unsigned int)initialPlaybackQueueDepth;
 - (BOOL)shouldReloadForChangeFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
 - (id)itemForIndex:(unsigned int)arg1;
+- (BOOL)hasItemForIndex:(unsigned int)arg1;
 - (void)assumeOwnershipOfItems:(id)arg1;
 - (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2;
-- (Class)itemClass;
 - (BOOL)_canPurgeNextStartTimes;
+- (void)contentInvalidated;
 - (void)contentInvalidatedWithCurrentItemMovedToIndex:(unsigned int)arg1;
 - (BOOL)isSourceChangeInProgress;
 - (void)contentsDidChangeByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)_fixNextStartTimesByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)hasValidItemAtIndex:(unsigned int)arg1;
 - (void)addReferenceToItem:(id)arg1;
 - (unsigned int)shuffleType;
 - (unsigned int)repeatType;
+- (Class)itemClass;
 - (void)invalidateQueueCaches;
 - (void)setIsSourceChangeInProgress:(BOOL)arg1;
 - (BOOL)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
@@ -82,10 +87,10 @@
 - (id)copyRawItemAtIndex:(unsigned int)arg1;
 - (unsigned int)itemCount;
 - (unsigned int)activeShuffleType;
+- (BOOL)canSkipItem:(id)arg1;
 - (unsigned int)nonRepeatingItemCount;
-- (void)dealloc;
-- (id)preferredLanguages;
-- (id)pathAtIndex:(unsigned int)arg1;
+- (id)representedObject;
+- (void)setRepresentedObject:(id)arg1;
 - (void)setMix:(id)arg1;
 - (id)mix;
 

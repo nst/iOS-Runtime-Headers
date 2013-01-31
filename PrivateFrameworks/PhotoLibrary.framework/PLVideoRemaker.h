@@ -28,10 +28,6 @@
 - (id)initWithURL:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
-- (int)mode;
-- (void)setMode:(int)arg1;
-- (double)duration;
-- (void)setDuration:(double)arg1;
 - (double)trimEndTime;
 - (double)trimStartTime;
 - (void)_didEndRemakingWithTemporaryPath:(id)arg1;
@@ -43,6 +39,10 @@
 - (void)setTrimEndTime:(double)arg1;
 - (void)setTrimStartTime:(double)arg1;
 - (void)remake;
+- (int)mode;
+- (void)setMode:(int)arg1;
+- (double)duration;
+- (void)setDuration:(double)arg1;
 - (void)_updateProgress;
 
 @end

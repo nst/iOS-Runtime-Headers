@@ -48,6 +48,7 @@
 @property Class calloutViewClass;
 @property(retain) VKPolylineOverlayPainter * focusedLabelsPolylinePainter;
 @property(retain) <VKRoutePreloadSession> * routePreloadSession;
+@property BOOL rendersInBackground;
 @property(readonly) VKConsoleView * consoleView;
 @property BOOL debugPaintFrameRateGraph;
 @property BOOL debugDrawContinuously;
@@ -59,19 +60,9 @@
 
 + (id)installedStylesheetNames;
 
-- (void)setStylesheet:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)stylesheet;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setNeedsLayout;
-- (void)setNeedsDisplay;
 - (double)pitch;
 - (double)yaw;
+- (id)snapshotImage;
 - (BOOL)realisticLandDisabled;
 - (BOOL)realisticRoadsDisabled;
 - (BOOL)rastersDisabled;
@@ -234,6 +225,7 @@
 - (BOOL)canShowFlyover;
 - (BOOL)supportsMapType:(int)arg1;
 - (void)setRendersInBackground:(BOOL)arg1;
+- (BOOL)rendersInBackground;
 - (void)setCalloutViewClass:(Class)arg1;
 - (Class)calloutViewClass;
 - (void)setCanonicalSkyHeight:(double)arg1;
@@ -242,6 +234,7 @@
 - (void)setDesiredMapMode:(int)arg1 immediate:(BOOL)arg2;
 - (double)maximumZoomLevel;
 - (double)minimumZoomLevel;
+- (BOOL)writeVisibleTrafficTilesToDirectory:(id)arg1 error:(id*)arg2;
 - (id)detailedDescription;
 - (void)debugHighlightLabelAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)clearScene;
@@ -273,7 +266,18 @@
 - (BOOL)isGesturing;
 - (void)setAllowDatelineWraparound:(BOOL)arg1;
 - (BOOL)allowDatelineWraparound;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
+- (id)stylesheet;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setNeedsLayout;
+- (void)setNeedsDisplay;
+- (void)setStylesheet:(id)arg1;
 - (void)_mapkit_configureFromDefaults;
 
 @end

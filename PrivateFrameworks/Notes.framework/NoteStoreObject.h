@@ -14,14 +14,14 @@
 @property(retain) NSString * syncAnchor;
 
 
-- (id)notesForServerIntIds:(id)arg1;
-- (id)notesForServerIntIdsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned int)maximumServerIntId;
-- (id)notesForServerIds:(id)arg1;
 - (id)basicAccountIdentifier;
 - (id)notesForGUIDs:(id)arg1;
 - (id)collectionInfo;
 - (id)predicateForNotes;
+- (id)notesForServerIntIds:(id)arg1;
+- (id)notesForServerIntIdsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (unsigned int)maximumServerIntId;
 - (id)notesForIntegerIds:(id)arg1;
+- (id)notesForServerIds:(id)arg1;
 
 @end

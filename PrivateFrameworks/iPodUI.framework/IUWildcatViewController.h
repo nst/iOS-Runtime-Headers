@@ -15,12 +15,12 @@
 
 
 - (id)topNavigationController;
-- (id)init;
-- (id)topViewController;
-- (BOOL)_canReloadView;
 - (id)directChildViewController;
 - (id)browserViewController;
 - (id)browserSegmentedViewController;
 - (id)backstopView;
+- (id)init;
+- (id)topViewController;
+- (BOOL)_canReloadView;
 
 @end

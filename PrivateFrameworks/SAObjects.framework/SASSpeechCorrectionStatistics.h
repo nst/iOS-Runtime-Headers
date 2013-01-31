@@ -17,7 +17,6 @@
 + (id)speechCorrectionStatisticsWithDictionary:(id)arg1 context:(id)arg2;
 + (id)speechCorrectionStatistics;
 
-- (id)groupIdentifier;
 - (void)setCharacterChangeCount:(int)arg1;
 - (int)characterChangeCount;
 - (void)setAlternativeSelectCount:(int)arg1;
@@ -27,5 +26,6 @@
 - (void)setSessionId:(id)arg1;
 - (id)sessionId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

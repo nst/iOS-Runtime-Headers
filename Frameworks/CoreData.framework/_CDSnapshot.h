@@ -17,10 +17,10 @@
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)initialize;
 + (unsigned int)newBatchAllocation:(id*)arg1 count:(unsigned int)arg2 withOwnedObjectIDs:(id*)arg3;
 + (Class)classForEntity:(id)arg1;
 + (void)_entityDeallocated;
-+ (void)initialize;
 
 - (id)mutableCopy;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
@@ -35,12 +35,12 @@
 - (void)dealloc;
 - (oneway void)release;
 - (id)copy;
-- (id)_descriptionValues;
-- (id)initWithObjectID:(id)arg1;
-- (id)objectID;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)finalize;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
+- (id)_descriptionValues;
+- (id)initWithObjectID:(id)arg1;
+- (id)objectID;
 
 @end

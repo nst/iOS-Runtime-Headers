@@ -26,8 +26,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (unsigned int)currentPage;
-- (void)setCurrentPage:(unsigned int)arg1;
 - (BOOL)isCurrentListStateOverridden;
 - (void)clearCurrentListState;
 - (id)lastFooter;
@@ -61,5 +59,7 @@
 - (float)pageHeight;
 - (float)topMargin;
 - (float)leftMargin;
+- (unsigned int)currentPage;
+- (void)setCurrentPage:(unsigned int)arg1;
 
 @end

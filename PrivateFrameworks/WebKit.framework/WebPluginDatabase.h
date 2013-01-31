@@ -11,15 +11,11 @@
     NSMutableSet *pluginInstanceViews;
 }
 
-+ (id)sharedDatabase;
-+ (void)setAdditionalWebPlugInPaths:(id)arg1;
 + (void)closeSharedDatabase;
 + (id)_defaultPlugInPaths;
++ (id)sharedDatabase;
++ (void)setAdditionalWebPlugInPaths:(id)arg1;
 
-- (void)dealloc;
-- (id)init;
-- (void)close;
-- (id)plugins;
 - (id)_plugInPaths;
 - (void)destroyAllPluginInstanceViews;
 - (void)removePluginInstanceViewsFor:(id)arg1;
@@ -32,6 +28,10 @@
 - (void)_removePlugin:(id)arg1;
 - (id)pluginForMIMEType:(id)arg1;
 - (void)setPlugInPaths:(id)arg1;
+- (id)plugins;
+- (void)dealloc;
+- (id)init;
+- (void)close;
 - (void)refresh;
 
 @end

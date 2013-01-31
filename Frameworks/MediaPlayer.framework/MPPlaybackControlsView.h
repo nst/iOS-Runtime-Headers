@@ -35,9 +35,11 @@
     unsigned int _useMediaDetailSlider : 1;
     unsigned int _detailScrubbing : 1;
     unsigned int _needsUpdateButtonVisibility : 1;
+    unsigned long long _disabledParts;
 }
 
 @property <MPPlaybackControlsDelegate> * delegate;
+@property unsigned long long disabledParts;
 @property(retain) MPAVItem * item;
 @property(retain) MPAVController * player;
 @property unsigned long long visibleParts;
@@ -52,12 +54,15 @@
 
 + (unsigned int)defaultVisibleParts;
 
-- (void)reloadView;
-- (void)setPlayer:(id)arg1;
-- (id)player;
-- (void)setCurrentTime:(double)arg1;
-- (id)newProgressIndicator;
-- (void)setItem:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)item;
+- (void)didMoveToSuperview;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_changeGeniusImageToNormalImage:(id)arg1;
 - (void)_changeGeniusImageToPressedImage:(id)arg1;
 - (BOOL)isScrubbing;
@@ -65,6 +70,7 @@
 - (void)_updateButtonVisibility;
 - (id)playbackSpeedButtonImageForPlaybackSpeed:(unsigned int)arg1;
 - (BOOL)hideGeniusButton;
+- (id)newProgressIndicator;
 - (id)newTrackInfoLabel;
 - (void)resetDetailSlider:(id)arg1;
 - (void)handleChangeToShuffleType:(unsigned int)arg1;
@@ -104,6 +110,7 @@
 - (void)detailSliderTrackingDidBegin:(id)arg1;
 - (void)unregisterForPlayerNotifications;
 - (void)registerForPlayerNotifications;
+- (unsigned long long)disabledParts;
 - (void)stopTicking;
 - (void)startTicking;
 - (void)crossedTimeMakerWithEvent:(id)arg1;
@@ -111,16 +118,13 @@
 - (unsigned int)repeatType;
 - (void)_tickNotification:(id)arg1;
 - (void)_validityChangedNotification:(id)arg1;
+- (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setVisibleParts:(unsigned long long)arg1;
 - (unsigned long long)visibleParts;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)item;
-- (void)didMoveToSuperview;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setItem:(id)arg1;
+- (void)setCurrentTime:(double)arg1;
+- (void)reloadView;
+- (void)setPlayer:(id)arg1;
+- (id)player;
 
 @end

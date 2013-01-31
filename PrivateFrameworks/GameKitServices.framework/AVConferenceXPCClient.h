@@ -18,7 +18,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)connection;
 - (id)registeredBlocks;
 - (id)createNSDictionaryFromNSError:(id)arg1;
 - (void)registerBlockForService:(char *)arg1 block:(id)arg2 queue:(id)arg3;
@@ -35,5 +34,6 @@
 - (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 reply:(id)arg3;
 - (id)sendMessageSync:(char *)arg1 arguments:(id)arg2;
 - (void)registerBlockForService:(char *)arg1 block:(id)arg2;
+- (id)connection;
 
 @end

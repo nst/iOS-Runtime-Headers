@@ -12,7 +12,6 @@
 }
 
 
-- (unsigned long long)address;
 - (unsigned int)type;
 - (unsigned int)seqnum;
 - (id)initWithTraceRecord:(id)arg1;
@@ -21,7 +20,8 @@
 - (id)initWithTraceRecord:(id)arg1 withDepth:(unsigned int)arg2;
 - (unsigned int)threadID;
 - (unsigned long long)argument;
-- (unsigned long long*)frames;
 - (unsigned int)depth;
+- (unsigned long long*)frames;
+- (unsigned long long)address;
 
 @end

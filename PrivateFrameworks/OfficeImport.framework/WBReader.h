@@ -37,8 +37,6 @@
 
 
 - (void)dealloc;
-- (BOOL)start;
-- (void)initialize;
 - (id)targetDocument;
 - (void)cacheTextBox:(id)arg1 withChainIndex:(unsigned short)arg2;
 - (void)setReportProgress:(BOOL)arg1;
@@ -77,5 +75,7 @@
 - (id)initWithCancelDelegate:(id)arg1 tracing:(id)arg2;
 - (id)officeArtState;
 - (void)setOfficeArtState:(id)arg1;
+- (BOOL)start;
+- (void)initialize;
 
 @end

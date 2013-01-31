@@ -15,12 +15,12 @@
 
 - (void).cxx_destruct;
 - (id)init;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })labelFrame;
 - (BOOL)selected;
 - (void)setSelected:(BOOL)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })checkmarkFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })labelFrame;
 
 @end

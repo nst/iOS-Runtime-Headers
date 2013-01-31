@@ -11,7 +11,7 @@
 @property(readonly) NSString * systemId;
 
 
-- (id)publicId;
 - (id)systemId;
+- (id)publicId;
 
 @end

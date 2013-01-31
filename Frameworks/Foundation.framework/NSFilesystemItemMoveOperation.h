@@ -18,9 +18,9 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (id)error;
 - (void)initWithSourcePath:(id)arg1 destinationPath:(id)arg2;
 - (void)_setError:(id)arg1;
 - (BOOL)filesystemItemCopyOperation:(id)arg1 shouldProceedAfterError:(id)arg2 copyingItemAtPath:(id)arg3 toPath:(id)arg4;
-- (id)error;
 
 @end

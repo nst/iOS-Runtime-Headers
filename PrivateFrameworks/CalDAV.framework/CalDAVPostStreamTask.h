@@ -13,17 +13,17 @@
 @property(retain) NSString * filename;
 
 
-- (id)responseData;
 - (void)dealloc;
-- (void)setFilename:(id)arg1;
+- (id)requestBody;
+- (id)requestBodyStream;
+- (id)additionalHeaderValues;
+- (id)copyDefaultParserForContentType:(id)arg1;
 - (id)utf8PercentEscapedFilename;
 - (id)lossyAsciiFilename;
 - (id)previousScheduleTag;
 - (void)setPreviousScheduleTag:(id)arg1;
-- (id)requestBodyStream;
-- (id)additionalHeaderValues;
-- (id)copyDefaultParserForContentType:(id)arg1;
+- (id)responseData;
+- (void)setFilename:(id)arg1;
 - (id)filename;
-- (id)requestBody;
 
 @end

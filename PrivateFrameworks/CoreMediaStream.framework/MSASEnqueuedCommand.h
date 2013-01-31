@@ -19,8 +19,6 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)setInvariantParam:(id)arg1;
 - (void)setVariantParam:(id)arg1;
 - (void)setCommand:(id)arg1;
@@ -29,5 +27,7 @@
 - (id)variantParam;
 - (id)invariantParam;
 - (id)command;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

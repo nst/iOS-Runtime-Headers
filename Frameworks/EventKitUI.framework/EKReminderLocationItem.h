@@ -17,15 +17,15 @@
 @property int type;
 
 
-- (id)addressDictionary;
+- (void)setLocation:(id)arg1;
 - (void)reset;
 - (int)type;
 - (id)description;
 - (void)dealloc;
+- (id)addressDictionary;
 - (id)location;
 - (id)label;
 - (void)setType:(int)arg1;
-- (void)setLocation:(id)arg1;
 - (void)setAddressDictionary:(id)arg1;
 - (void)setIsLocationBeingDetermined:(BOOL)arg1;
 - (BOOL)isLocationBeingDetermined;

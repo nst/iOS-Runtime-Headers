@@ -21,16 +21,6 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
-- (void)endEditing;
-- (void)finalize;
-- (void)beginEditing;
-- (Class)classForCoder;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)ensureAttributesAreFixedInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)_forceFixAttributes;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeByEstimatingAttributeFixingForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -51,6 +41,16 @@
 - (void)_unlock;
 - (BOOL)_lockForReading;
 - (BOOL)_isEditing;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (void)endEditing;
+- (void)finalize;
+- (void)beginEditing;
+- (Class)classForCoder;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)edited:(unsigned int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 changeInLength:(int)arg3;
 
 @end

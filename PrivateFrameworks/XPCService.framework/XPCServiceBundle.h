@@ -29,14 +29,6 @@
 + (id)XPCServiceBundleAtPath:(id)arg1;
 + (id)XPCServiceBundleForMainExecutable;
 
-- (id)identifier;
-- (id)description;
-- (void)dealloc;
-- (id)initWithBundle:(id)arg1;
-- (id)bundle;
-- (id)executablePath;
-- (int)serviceType;
-- (id)initWithArchive:(id)arg1;
 - (id)xpcJobData;
 - (struct _launch_data { }*)launchdJobLaunchData;
 - (id)launchdJobPropertyListString;
@@ -52,5 +44,13 @@
 - (id)launchdJobDictionary;
 - (id)stringForServiceDictionaryKey:(id)arg1;
 - (id)serviceDictionary;
+- (id)identifier;
+- (id)description;
+- (void)dealloc;
+- (id)initWithArchive:(id)arg1;
+- (int)serviceType;
+- (id)initWithBundle:(id)arg1;
+- (id)bundle;
+- (id)executablePath;
 
 @end

@@ -10,15 +10,11 @@
     SEL _simpleConfirmSheetDismissedSEL;
 }
 
-+ (id)linkSpecifier;
 + (id)dumpRuntimeStateSpecifiers;
 + (BOOL)diagnosticsVisible;
++ (id)linkSpecifier;
 
-- (id)specifiers;
 - (void)dealloc;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)suspend;
 - (id)pathsOfPurgableFiles;
 - (void)handleClearAllLogsForSpecifier:(id)arg1;
 - (void)handleSaveAllLogsForSpecifier:(id)arg1;
@@ -39,5 +35,9 @@
 - (void)handleSaveAllLogsStep2;
 - (id)diagnosticSpecifiers;
 - (void)handleDumpRuntimeStateForSpecifier:(id)arg1;
+- (id)specifiers;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)suspend;
 
 @end

@@ -27,8 +27,6 @@
 - (BOOL)isCancelled;
 - (void)dealloc;
 - (id)init;
-- (void)setPageCount:(unsigned int)arg1;
-- (unsigned int)pageCount;
 - (void)setPassphrase:(id)arg1;
 - (id)passphrase;
 - (BOOL)isProgressive;
@@ -62,5 +60,7 @@
 - (void)pushText:(id)arg1 toPath:(id)arg2;
 - (void)setHTMLHeight:(int)arg1;
 - (void)setHTMLWidth:(int)arg1;
+- (void)setPageCount:(unsigned int)arg1;
+- (unsigned int)pageCount;
 
 @end

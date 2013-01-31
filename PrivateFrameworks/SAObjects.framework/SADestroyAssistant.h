@@ -15,11 +15,11 @@
 + (id)destroyAssistantWithDictionary:(id)arg1 context:(id)arg2;
 + (id)destroyAssistant;
 
-- (id)groupIdentifier;
 - (void)setSpeechId:(id)arg1;
 - (id)speechId;
 - (void)setAssistantId:(id)arg1;
 - (id)assistantId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

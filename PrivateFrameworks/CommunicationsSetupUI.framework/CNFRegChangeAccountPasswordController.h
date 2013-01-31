@@ -13,6 +13,9 @@
 @property <CNFRegChangeAccountPasswordDelegate> * delegate;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (void)setAppleID:(id)arg1;
 - (id)appleID;
 - (void)completeHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
@@ -23,8 +26,5 @@
 - (id)logName;
 - (id)initWithRegController:(id)arg1 appleID:(id)arg2;
 - (void)setHeadersForRequest:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
 
 @end

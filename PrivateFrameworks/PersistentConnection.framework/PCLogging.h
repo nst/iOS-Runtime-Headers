@@ -5,8 +5,6 @@
 @interface PCLogging : NSObject  {
 }
 
-+ (void)enableLoggingForCustomHandler:(id)arg1;
-+ (void)initialize;
 + (void)enableFileLogging:(BOOL)arg1;
 + (id)getMainBundleId;
 + (void)_appendString:(id)arg1 toFileNamed:(id)arg2;
@@ -20,6 +18,8 @@
 + (void)enableConsoleLoggingForLevel:(int)arg1;
 + (BOOL)loggingEnabledForLevel:(int)arg1;
 + (id)logFileDirectory;
++ (void)enableLoggingForCustomHandler:(id)arg1;
++ (void)initialize;
 
 
 @end

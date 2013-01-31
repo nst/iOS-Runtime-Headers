@@ -14,14 +14,14 @@
 + (id)newsWithDictionary:(id)arg1 context:(id)arg2;
 + (id)news;
 
-- (id)groupIdentifier;
+- (id)timeStamp;
+- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
+- (id)encodedClassName;
+- (void)setTimeStamp:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)timeStamp;
-- (void)setTimeStamp:(id)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

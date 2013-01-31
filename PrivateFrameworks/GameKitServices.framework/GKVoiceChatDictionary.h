@@ -25,10 +25,6 @@
 - (unsigned int)type;
 - (id)description;
 - (void)dealloc;
-- (id)version;
-- (unsigned int)response;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)setRemoteVCPartyID:(id)arg1;
 - (id)setLocalVCPartyID:(id)arg1;
 - (id)createBlob;
@@ -54,5 +50,9 @@
 - (id)participantID;
 - (void)setCallID:(int)arg1;
 - (int)callID;
+- (id)version;
+- (unsigned int)response;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

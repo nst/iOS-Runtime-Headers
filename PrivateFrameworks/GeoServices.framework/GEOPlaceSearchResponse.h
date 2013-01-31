@@ -32,19 +32,17 @@
 @property int statusCodeInfo;
 
 
-- (id)placeResults;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setStatus:(int)arg1;
-- (int)status;
-- (id)dictionaryRepresentation;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setMapRegion:(id)arg1;
 - (id)mapRegion;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
 - (id)searchs;
+- (id)placeResults;
 - (void)setHasStatusCodeInfo:(BOOL)arg1;
 - (void)setHasAbTestResponse:(BOOL)arg1;
 - (void)setStatusCodeInfo:(int)arg1;
@@ -68,6 +66,8 @@
 - (int)localSearchProviderID;
 - (BOOL)hasLocalSearchProviderID;
 - (BOOL)hasMapRegion;
-- (BOOL)readFrom:(id)arg1;
+- (void)setStatus:(int)arg1;
+- (int)status;
+- (id)dictionaryRepresentation;
 
 @end

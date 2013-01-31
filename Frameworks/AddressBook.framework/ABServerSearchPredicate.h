@@ -33,14 +33,15 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (int)error;
+- (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;
+- (void)searchQuery:(id)arg1 returnedResults:(id)arg2;
+- (void)setConnection:(id)arg1;
 - (id)searchString;
 - (void)setSearchString:(id)arg1;
 - (id)connection;
 - (void)setSource:(void*)arg1;
 - (void*)source;
-- (void)setConnection:(id)arg1;
-- (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;
-- (void)searchQuery:(id)arg1 returnedResults:(id)arg2;
 - (BOOL)includeSourceInResults;
 - (id)initWithSearchString:(id)arg1 source:(void*)arg2 account:(id)arg3;
 - (int)_errorForDAStatusCode:(int)arg1;
@@ -53,6 +54,5 @@
 - (void)setIncludeSourceInResults:(BOOL)arg1;
 - (void)ab_runPredicateWithSortOrder:(unsigned int)arg1 inAddressBook:(void*)arg2 withDelegate:(id)arg3;
 - (id)initWithSearchString:(id)arg1 source:(void*)arg2 account:(id)arg3 includeSourceInResults:(BOOL)arg4 includePhotosInResults:(BOOL)arg5;
-- (int)error;
 
 @end

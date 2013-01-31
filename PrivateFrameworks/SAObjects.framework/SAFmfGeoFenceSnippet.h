@@ -16,10 +16,6 @@
 + (id)geoFenceSnippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)geoFenceSnippet;
 
-- (id)groupIdentifier;
-- (id)enable;
-- (id)searchContext;
-- (void)setSearchContext:(id)arg1;
 - (void)setAceFmfGeoFence:(id)arg1;
 - (id)aceFmfGeoFence;
 - (void)setOneTimeOnly:(id)arg1;
@@ -28,5 +24,9 @@
 - (id)fenceType;
 - (void)setEnable:(id)arg1;
 - (id)encodedClassName;
+- (id)searchContext;
+- (void)setSearchContext:(id)arg1;
+- (id)enable;
+- (id)groupIdentifier;
 
 @end

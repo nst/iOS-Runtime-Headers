@@ -12,9 +12,9 @@
 + (id)disambiguationMapWithDictionary:(id)arg1 context:(id)arg2;
 + (id)disambiguationMap;
 
-- (id)groupIdentifier;
+- (id)encodedClassName;
 - (void)setItems:(id)arg1;
 - (id)items;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

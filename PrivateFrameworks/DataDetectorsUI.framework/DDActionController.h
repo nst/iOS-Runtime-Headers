@@ -22,15 +22,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)popoverController;
-- (void)_cleanup;
-- (void)actionDidFinish;
-- (id)interactionDelegate;
-- (void)setInteractionDelegate:(id)arg1;
-- (void)setPopoverController:(id)arg1;
-- (id)currentAction;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)performAction:(id)arg1;
 - (id)baseView;
 - (void)failedToPrepareViewControllerForAction:(id)arg1;
 - (void)action:(id)arg1 viewControllerReady:(id)arg2;
@@ -42,5 +33,14 @@
 - (void)setBaseView:(id)arg1;
 - (id)defaultActionForURL:(id)arg1 result:(struct __DDResult { }*)arg2 context:(id)arg3;
 - (id)actionsForURL:(id)arg1 result:(struct __DDResult { }*)arg2 context:(id)arg3;
+- (id)popoverController;
+- (void)_cleanup;
+- (void)actionDidFinish;
+- (id)interactionDelegate;
+- (void)setInteractionDelegate:(id)arg1;
+- (void)setPopoverController:(id)arg1;
+- (id)currentAction;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)performAction:(id)arg1;
 
 @end

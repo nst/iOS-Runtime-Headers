@@ -30,6 +30,7 @@
 + (BOOL)_isNewsstandApp;
 + (id)sharedLibraryIfExists;
 
+- (void)_load;
 - (id)description;
 - (unsigned int)retainCount;
 - (id)retain;
@@ -38,7 +39,6 @@
 - (id)init;
 - (id)autorelease;
 - (void)_applicationDidEnterBackground:(id)arg1;
-- (void)_load;
 - (void)_issueChanged:(id)arg1;
 - (BOOL)_canPerformBackgroundDownloads;
 - (id)_fileManager;

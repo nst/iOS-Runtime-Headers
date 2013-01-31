@@ -11,6 +11,7 @@
 @property SKStoreProductViewController * productViewController;
 
 
+- (void)didFinish;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
@@ -23,6 +24,5 @@
 - (void)didReceiveTitle:(id)arg1;
 - (void)didFinishWithResult:(id)arg1;
 - (void)setProductViewController:(id)arg1;
-- (void)didFinish;
 
 @end

@@ -10,6 +10,7 @@
 
 
 - (id)init;
+- (void)cancelButtonClicked:(id)arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)loadView;
@@ -17,6 +18,5 @@
 - (void)ringtoneSaveButtonClicked:(id)arg1;
 - (id)initAsRingtoneViewController:(BOOL)arg1;
 - (float)ab_heightToFitForViewInPopoverView;
-- (void)cancelButtonClicked:(id)arg1;
 
 @end

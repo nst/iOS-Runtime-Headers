@@ -17,13 +17,13 @@
 + (id)prepareViewController:(id)arg1 forAction:(id)arg2 actionController:(id)arg3;
 
 - (id)action;
+- (void)_prepareForAction:(id)arg1 inActionController:(id)arg2;
+- (void)viewControllerReadyAndIsModal:(id)arg1;
 - (void)setActionController:(id)arg1;
 - (id)actionController;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)actionDidFinish;
 - (void)setAction:(id)arg1;
-- (void)_prepareForAction:(id)arg1 inActionController:(id)arg2;
-- (void)viewControllerReadyAndIsModal:(id)arg1;
 
 @end

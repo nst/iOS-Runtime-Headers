@@ -32,9 +32,6 @@
 - (void)setName:(id)arg1;
 - (id)name;
 - (void)dealloc;
-- (id)displayName;
-- (id)style;
-- (void)setStyle:(id)arg1;
 - (void)setTableBorderDxfIndex:(unsigned int)arg1;
 - (unsigned int)tableBorderDxfIndex;
 - (void)setDataAreaBorderDxfIndex:(unsigned int)arg1;
@@ -84,5 +81,8 @@
 - (unsigned int)totalsRowCount;
 - (unsigned int)headerRowCount;
 - (id)tableRange;
+- (id)displayName;
+- (id)style;
+- (void)setStyle:(id)arg1;
 
 @end

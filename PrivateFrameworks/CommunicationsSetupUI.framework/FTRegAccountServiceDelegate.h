@@ -26,6 +26,10 @@
 @property(retain) FTRegAppleIDSetupOperation * setupOperation;
 
 
+- (void)dealloc;
+- (id)init;
+- (void)setResponseDictionary:(id)arg1;
+- (int)serviceType;
 - (void)setupOperationFailed;
 - (void)completeSetupWithResponseParameters:(id)arg1 handler:(id)arg2;
 - (id)accountSetupRequestParameters;
@@ -42,18 +46,14 @@
 - (BOOL)_account:(id)arg1 matchesSetupParameters:(id)arg2;
 - (void)_handleSuccess:(BOOL)arg1 error:(id)arg2;
 - (void)setSetupOperation:(id)arg1;
-- (void)setResponseDictionary:(id)arg1;
 - (id)initWithRegController:(id)arg1;
 - (id)_logName;
 - (void)setRegController:(id)arg1;
 - (id)regController;
-- (id)responseDictionary;
-- (void)dealloc;
-- (id)init;
 - (void)setCompletionHandler:(id)arg1;
 - (void)_cleanup;
 - (id)displayName;
 - (id)completionHandler;
-- (int)serviceType;
+- (id)responseDictionary;
 
 @end

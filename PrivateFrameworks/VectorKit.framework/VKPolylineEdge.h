@@ -48,9 +48,6 @@
 @property(readonly) int direction;
 
 
-- (id)description;
-- (void)dealloc;
-- (int)direction;
 - (float)featureOffsetB;
 - (float)featureOffsetA;
 - (struct { unsigned int x1; float x2; })routeOffsetB;
@@ -68,7 +65,10 @@
 - (BOOL)isFinalEdge;
 - (float)pathOffsetA;
 - (const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)roadEdge;
+- (id)description;
+- (void)dealloc;
 - (struct { float x1; float x2; }*)points;
 - (unsigned int)pointCount;
+- (int)direction;
 
 @end

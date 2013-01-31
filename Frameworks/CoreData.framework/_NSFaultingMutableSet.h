@@ -35,16 +35,6 @@
 - (void)dealloc;
 - (oneway void)release;
 - (unsigned int)count;
-- (Class)classForArchiver;
-- (id)replacementObjectForCoder:(id)arg1;
-- (BOOL)_isIdenticalFault:(id)arg1;
-- (BOOL)_shouldProcessKVOChange;
-- (id)initWithSource:(id)arg1 destinations:(id)arg2 forRelationship:(id)arg3 inContext:(id)arg4;
-- (id)relationship;
-- (void)turnIntoFault;
-- (BOOL)isFault;
-- (void)willRead;
-- (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)member:(id)arg1;
 - (BOOL)intersectsSet:(id)arg1;
@@ -69,5 +59,15 @@
 - (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (void)getObjects:(id*)arg1;
 - (id)descriptionWithLocale:(id)arg1;
+- (Class)classForArchiver;
+- (id)replacementObjectForCoder:(id)arg1;
+- (BOOL)_isIdenticalFault:(id)arg1;
+- (BOOL)_shouldProcessKVOChange;
+- (id)initWithSource:(id)arg1 destinations:(id)arg2 forRelationship:(id)arg3 inContext:(id)arg4;
+- (id)relationship;
+- (void)turnIntoFault;
+- (BOOL)isFault;
+- (void)willRead;
+- (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
 
 @end

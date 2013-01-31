@@ -13,6 +13,7 @@
     BOOL _remoteInstantiationFinished;
     BOOL _blockRemoteImages;
     QLRemotePrintPageHelper *_printPageHelper;
+    int _clientInterfaceOrientation;
     _UIHostedWindow *_hostedWindow;
 }
 
@@ -21,6 +22,23 @@
 @property int previewMode;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)init;
+- (int)previewMode;
+- (void)setPreviewMode:(int)arg1;
+- (int)currentPreviewItemIndex;
+- (void)refreshCurrentPreviewItem;
+- (void)setCurrentPreviewItemIndex:(int)arg1;
+- (void)willAppearInRemoteViewController:(id)arg1;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (id)printPageRenderer;
+- (void)setBlockRemoteImages:(BOOL)arg1;
+- (id)dataSource;
+- (void)reloadData;
+- (void)setDataSource:(id)arg1;
+- (void)_updateHostedWindowFrame;
 - (id)clientProcessAlertViewForPreviewContentController:(id)arg1;
 - (void)previewContentControllerDidExitFullScreen:(id)arg1;
 - (void)previewContentController:(id)arg1 willEnterFullScreenWithHostedWindow:(id)arg2;
@@ -46,11 +64,11 @@
 - (id)pdfPreviewData;
 - (void)forceResignFirstResponder;
 - (void)setContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_setHostedFullScreenFrame:(id)arg1;
 - (void)_getPDFPageAtIndex:(int)arg1 size:(id)arg2 handler:(id)arg3;
 - (void)_prepareForDrawingPages:(id)arg1;
 - (void)_getNumberOfPagesForSize:(id)arg1 withHandler:(id)arg2;
 - (void)_getPDFPreviewDataWithHandler:(id)arg1;
+- (void)_willAnimateRotationTo:(int)arg1;
 - (void)_setContentFrame:(id)arg1;
 - (void)_setPreviewItems:(id)arg1;
 - (void)_setNumberOfPreviewItems:(int)arg1;
@@ -58,21 +76,5 @@
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
 - (void)enterBackground;
 - (void)setLoadintTextForMissingFiles:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)init;
-- (void)willAppearInRemoteViewController:(id)arg1;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
-- (id)printPageRenderer;
-- (void)setBlockRemoteImages:(BOOL)arg1;
-- (id)dataSource;
-- (void)reloadData;
-- (void)setDataSource:(id)arg1;
-- (int)currentPreviewItemIndex;
-- (void)refreshCurrentPreviewItem;
-- (void)setCurrentPreviewItemIndex:(int)arg1;
-- (int)previewMode;
-- (void)setPreviewMode:(int)arg1;
 
 @end

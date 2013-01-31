@@ -14,18 +14,18 @@
 @property(readonly) SWSyncHost * host;
 
 
-- (void)handleResponse:(id)arg1;
+- (void)connection:(id)arg1 didCancelAuthenticationChallenge:(id)arg2;
+- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
+- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
+- (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)handleResponse:(id)arg1;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (id)host;
-- (void)connection:(id)arg1 didCancelAuthenticationChallenge:(id)arg2;
-- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
-- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
-- (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
 - (void)connection:(id)arg1 didSendBodyData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4;
 - (id)connection:(id)arg1 willCacheResponse:(id)arg2;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;

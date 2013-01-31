@@ -7,12 +7,6 @@
 }
 
 
-- (id)accountSpecifiers;
-- (void)finishedAccountSetup;
-- (BOOL)haveEnoughValues;
-- (BOOL)validateAccount;
-- (id)accountPropertyWithSpecifier:(id)arg1;
-- (void)setAccountProperty:(id)arg1 withSpecifier:(id)arg2;
 - (id)localizedAccountSetupTitleString;
 - (id)localizedDisablingAccountString;
 - (id)localizedEnablingAccountString;
@@ -33,5 +27,11 @@
 - (BOOL)_isHotmailAccount;
 - (void)account:(id)arg1 wasAutoDiscovered:(BOOL)arg2 error:(id)arg3;
 - (void)account:(id)arg1 isValid:(BOOL)arg2 validationError:(id)arg3;
+- (id)accountSpecifiers;
+- (void)finishedAccountSetup;
+- (BOOL)haveEnoughValues;
+- (BOOL)validateAccount;
+- (id)accountPropertyWithSpecifier:(id)arg1;
+- (void)setAccountProperty:(id)arg1 withSpecifier:(id)arg2;
 
 @end

@@ -15,9 +15,6 @@
 + (id)callWithDictionary:(id)arg1 context:(id)arg2;
 + (id)call;
 
-- (id)recipient;
-- (void)setRecipient:(id)arg1;
-- (id)groupIdentifier;
 - (void)setFaceTime:(BOOL)arg1;
 - (BOOL)faceTime;
 - (void)setCallRecipient:(id)arg1;
@@ -26,5 +23,8 @@
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)recipient;
+- (void)setRecipient:(id)arg1;
+- (id)groupIdentifier;
 
 @end

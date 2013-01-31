@@ -74,8 +74,25 @@
 @property(copy) NSString * label;
 
 
+- (unsigned int)type;
+- (void)dealloc;
+- (id)init;
+- (id)imageData;
+- (void)setFormat:(unsigned int)arg1;
+- (unsigned int)format;
 - (void)setBitsPerPixel:(unsigned int)arg1;
 - (unsigned int)bitsPerPixel;
+- (void)setIndex:(unsigned int)arg1;
+- (void)setHeight:(unsigned int)arg1;
+- (unsigned int)height;
+- (unsigned int)index;
+- (void)setOrientation:(unsigned int)arg1;
+- (id)label;
+- (void)setLabel:(id)arg1;
+- (void)setWidth:(unsigned int)arg1;
+- (unsigned int)width;
+- (void)setType:(unsigned int)arg1;
+- (unsigned int)orientation;
 - (void)setReOrient:(BOOL)arg1;
 - (BOOL)reOrient;
 - (void)setHasAlpha:(BOOL)arg1;
@@ -133,22 +150,5 @@
 - (BOOL)loadPVRTCData:(id)arg1 error:(id*)arg2;
 - (BOOL)loadWithData:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (void)updateRequestedOperationsFromOptions:(id)arg1;
-- (unsigned int)type;
-- (void)dealloc;
-- (id)init;
-- (void)setIndex:(unsigned int)arg1;
-- (void)setHeight:(unsigned int)arg1;
-- (unsigned int)height;
-- (unsigned int)index;
-- (void)setOrientation:(unsigned int)arg1;
-- (id)label;
-- (void)setLabel:(id)arg1;
-- (void)setWidth:(unsigned int)arg1;
-- (unsigned int)width;
-- (void)setType:(unsigned int)arg1;
-- (unsigned int)orientation;
-- (id)imageData;
-- (void)setFormat:(unsigned int)arg1;
-- (unsigned int)format;
 
 @end

@@ -37,7 +37,6 @@
 
 + (id)program;
 
-- (id)init;
 - (float)textureMappingGlobalScaler;
 - (float)glowScale;
 - (struct { float x1; float x2; })alphaRamp;
@@ -53,5 +52,6 @@
 - (void)setTextureMappingGlobalScaler:(float)arg1;
 - (void)setDrivingDirection:(float)arg1;
 - (float)drivingDirection;
+- (id)init;
 
 @end

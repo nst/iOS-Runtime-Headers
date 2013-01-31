@@ -15,9 +15,9 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)setMaxCount:(int)arg1;
-- (int)maxCount;
 - (id)highestMatches;
 - (void)countInstances:(id)arg1 usingPredicate:(id)arg2;
+- (void)setMaxCount:(int)arg1;
+- (int)maxCount;
 
 @end

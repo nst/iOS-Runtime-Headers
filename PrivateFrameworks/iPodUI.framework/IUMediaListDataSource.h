@@ -67,15 +67,6 @@
 - (int)initialSelectedIndex;
 - (void)setCellConfigurationClass:(Class)arg1;
 - (Class)cellConfigurationClass;
-- (id)sectionInfo;
-- (void)invalidate;
-- (void)dealloc;
-- (id)init;
-- (unsigned int)count;
-- (float)rowHeight;
-- (unsigned int)numberOfSections;
-- (BOOL)isEmpty;
-- (void)reloadData;
 - (void)setReloadActionRowsCompletion:(id)arg1;
 - (id)reloadActionRowsCompletion;
 - (void)clearCachedActionState;
@@ -146,5 +137,14 @@
 - (unsigned int)countOfActionRows;
 - (BOOL)canShowDownloadAllEntities;
 - (BOOL)hasPlayableItems;
+- (void)invalidate;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)count;
+- (float)rowHeight;
+- (unsigned int)numberOfSections;
+- (BOOL)isEmpty;
+- (void)reloadData;
+- (id)sectionInfo;
 
 @end

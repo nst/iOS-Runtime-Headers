@@ -11,9 +11,9 @@
 @property(readonly) NSArray * labels;
 
 
-- (void)addLabel:(id)arg1;
+- (id)labels;
 - (void)dealloc;
 - (void)layoutSubviews;
-- (id)labels;
+- (void)addLabel:(id)arg1;
 
 @end

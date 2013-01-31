@@ -43,15 +43,12 @@
 + (id)sharedInstance;
 + (id)alloc;
 
-- (id)_controller;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (id)controller;
-- (void*)localVideoLayer;
-- (void)setLocalVideoLayer:(void*)arg1;
-- (BOOL)stopPreview;
-- (void)setCameraType:(unsigned int)arg1;
+- (unsigned int)cameraOrientation;
+- (unsigned int)cameraType;
+- (unsigned long long)capabilities;
 - (BOOL)_previewStarted;
 - (id)_currentCamera;
 - (void)_setCurrentCamera:(id)arg1;
@@ -143,8 +140,11 @@
 - (id)avChat:(id)arg1 IPAndPortDataWithCallerIPAndPortData:(id)arg2 shouldFindExternalIP:(BOOL)arg3;
 - (id)natTypeForAVChat:(id)arg1;
 - (id)getNatIPFromICEData:(id)arg1;
-- (unsigned long long)capabilities;
-- (unsigned int)cameraOrientation;
-- (unsigned int)cameraType;
+- (void*)localVideoLayer;
+- (void)setLocalVideoLayer:(void*)arg1;
+- (BOOL)stopPreview;
+- (void)setCameraType:(unsigned int)arg1;
+- (id)controller;
+- (id)_controller;
 
 @end

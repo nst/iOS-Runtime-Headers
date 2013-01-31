@@ -12,8 +12,6 @@
 @property(readonly) NSArray * actionRows;
 
 
-- (void)dealloc;
-- (unsigned int)count;
 - (unsigned int)removeActionRowWithTag:(int)arg1;
 - (void)enumerateActionRowsUsingBlock:(id)arg1;
 - (id)actionRows;
@@ -21,5 +19,7 @@
 - (unsigned int)indexOfActionRowWithTag:(int)arg1;
 - (void)insertActionRow:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)addActionRow:(id)arg1;
+- (void)dealloc;
+- (unsigned int)count;
 
 @end

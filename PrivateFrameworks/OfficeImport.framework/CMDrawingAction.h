@@ -12,9 +12,9 @@
 - (int)type;
 - (id)description;
 - (void)dealloc;
-- (id)value;
-- (float)floatValue;
 - (id)initWithType:(int)arg1 andFloatValue:(float)arg2;
 - (id)initWithType:(int)arg1 andValue:(id)arg2;
+- (id)value;
+- (float)floatValue;
 
 @end

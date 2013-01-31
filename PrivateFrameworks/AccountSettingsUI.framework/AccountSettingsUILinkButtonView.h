@@ -22,8 +22,12 @@
 @property BOOL showArrow;
 
 
-- (float)preferredHeightForWidth:(float)arg1;
 - (void)dealloc;
+- (void)setUnderline:(BOOL)arg1;
+- (BOOL)underline;
+- (void)setShowArrow:(BOOL)arg1;
+- (BOOL)showArrow;
+- (void)_goToAccountURL;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (id)text;
@@ -31,11 +35,7 @@
 - (void)setFont:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
-- (void)setShowArrow:(BOOL)arg1;
-- (BOOL)showArrow;
-- (void)_goToAccountURL;
-- (void)setUnderline:(BOOL)arg1;
-- (BOOL)underline;
+- (float)preferredHeightForWidth:(float)arg1;
 - (id)initWithSpecifier:(id)arg1;
 
 @end

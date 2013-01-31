@@ -63,7 +63,6 @@
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
-- (BOOL)setActive:(BOOL)arg1;
 - (void)serverReconnected;
 - (void)setRemoteVideoLayerContentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 camera:(int)arg2;
 - (void)setNetworkQualityGraphLayer:(id)arg1;
@@ -164,5 +163,6 @@
 - (void)setShouldDisplayNetworkQualityGraph:(BOOL)arg1;
 - (void)updateGKSConnectivitySettings;
 - (void)handleGKSConnectivitySettingsUpdate:(id)arg1;
+- (BOOL)setActive:(BOOL)arg1;
 
 @end

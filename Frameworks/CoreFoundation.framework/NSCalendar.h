@@ -12,6 +12,8 @@
 + (id)autoupdatingCurrentCalendar;
 + (id)gregorianCalendar;
 
+- (id)monthSymbols;
+- (id)initWithCalendarIdentifier:(id)arg1;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -71,8 +73,6 @@
 - (void)setMinimumDaysInFirstWeek:(unsigned int)arg1;
 - (void)setFirstWeekday:(unsigned int)arg1;
 - (unsigned long)_cfTypeID;
-- (id)monthSymbols;
-- (id)initWithCalendarIdentifier:(id)arg1;
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

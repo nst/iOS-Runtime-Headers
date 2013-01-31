@@ -25,7 +25,6 @@
 
 - (id).cxx_construct;
 - (id)init;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)handleTwoFingerTapGesture:(id)arg1 from:(id)arg2 withRenderer:(id)arg3;
 - (void)handleDoubleTapGesture:(id)arg1 from:(id)arg2 withRenderer:(id)arg3;
 - (void)handleRotationGesture:(id)arg1 from:(id)arg2 withRenderer:(id)arg3;
@@ -33,5 +32,6 @@
 - (void)handlePinchGesture:(id)arg1 from:(id)arg2 withRenderer:(id)arg3;
 - (void)handlePanGesture:(id)arg1 from:(id)arg2 withRenderer:(id)arg3;
 - (void)handleTapGesture:(id)arg1 from:(id)arg2 withRenderer:(id)arg3;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 
 @end

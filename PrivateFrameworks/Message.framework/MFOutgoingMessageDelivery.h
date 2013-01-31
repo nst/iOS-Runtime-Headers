@@ -28,7 +28,7 @@
 
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
-- (id)message;
+- (id)initWithMessage:(id)arg1;
 - (id)_deliveryAccountForInitializers;
 - (int)_deliverSynchronouslyWithCurrentSettings:(BOOL)arg1;
 - (id)_currentDeliveryObject;
@@ -42,6 +42,6 @@
 - (int)deliverSynchronously;
 - (id)compositionSpecification;
 - (id)account;
-- (id)initWithMessage:(id)arg1;
+- (id)message;
 
 @end

@@ -12,14 +12,14 @@
 @property(copy) NSString * aceId;
 @property(copy) NSString * refId;
 
-+ (id)metrics;
 + (id)metricsWithDictionary:(id)arg1 context:(id)arg2;
++ (id)metrics;
 
-- (id)groupIdentifier;
-- (id)category;
-- (void)setCategory:(id)arg1;
 - (void)setTimings:(id)arg1;
 - (id)timings;
 - (id)encodedClassName;
+- (id)category;
+- (void)setCategory:(id)arg1;
+- (id)groupIdentifier;
 
 @end

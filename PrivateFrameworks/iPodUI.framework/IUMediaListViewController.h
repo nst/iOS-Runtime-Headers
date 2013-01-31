@@ -21,19 +21,6 @@
 
 + (Class)tableViewClass;
 
-- (void)modalContextDidDismiss:(id)arg1 withSuccess:(BOOL)arg2;
-- (void)unregisterForPlayerNotifications;
-- (void)registerForPlayerNotifications;
-- (void)dealloc;
-- (id)init;
-- (void)_applicationWillEnterForeground:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (id)query;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
-- (void)scrollViewWillBeginDragging:(id)arg1;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (BOOL)isShowingCoverFlow;
 - (void)setCoverFlowViewController:(id)arg1;
 - (void)_coverFlowTransitionInDidStop:(id)arg1 finished:(id)arg2;
@@ -52,7 +39,7 @@
 - (void)_localizedDateFormatsDidChange:(id)arg1;
 - (void)_dataSourceCountStringFormatDidChange:(id)arg1;
 - (void)_trackDynamicPropertiesChangedNotification:(id)arg1;
-- (void)_accessorySplashViewWillAppearNotification:(id)arg1;
+- (void)_mediaList_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)deviceOrientationChanged:(int)arg1;
 - (void)viewControllerDidFinishReloadForDataSourceInvalidation;
 - (void)updateFooterView;
@@ -65,5 +52,20 @@
 - (BOOL)hasSearchBar;
 - (void)performDefaultActionForRow:(int)arg1;
 - (void)performActionForActionRow:(id)arg1 animated:(BOOL)arg2;
+- (void)_purchasableMediaDidChangeNotification:(id)arg1;
+- (void)_canShowCloudDownloadButtonsDidChangeNotification:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (id)query;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (void)modalContextDidDismiss:(id)arg1 withSuccess:(BOOL)arg2;
+- (void)unregisterForPlayerNotifications;
+- (void)registerForPlayerNotifications;
 
 @end

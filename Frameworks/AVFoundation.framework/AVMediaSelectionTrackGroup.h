@@ -13,13 +13,13 @@
 }
 
 
-- (id)tracks;
 - (id)dictionary;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)asset;
 - (id)options;
+- (id)tracks;
 - (id)initWithAsset:(id)arg1 dictionary:(id)arg2;
 - (id)_defaultOption;
 - (BOOL)_isAlternateTrackGroup;

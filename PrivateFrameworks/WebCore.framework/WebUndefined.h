@@ -5,8 +5,8 @@
 @interface WebUndefined : NSObject <NSCoding, NSCopying> {
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)undefined;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (id)description;
 - (unsigned int)retainCount;

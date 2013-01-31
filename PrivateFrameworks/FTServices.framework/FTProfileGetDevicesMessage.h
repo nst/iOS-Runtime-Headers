@@ -13,16 +13,16 @@
 @property(copy) NSArray * responseDevices;
 
 
-- (id)responseDevices;
-- (id)bagKey;
-- (void)setResponseDevices:(id)arg1;
-- (void)handleResponseDictionary:(id)arg1;
-- (id)requiredKeys;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)service;
 - (void)setService:(id)arg1;
 - (id)messageBody;
+- (id)responseDevices;
+- (id)service;
+- (void)setResponseDevices:(id)arg1;
+- (void)handleResponseDictionary:(id)arg1;
+- (id)requiredKeys;
+- (id)bagKey;
 
 @end

@@ -29,6 +29,14 @@
 @property unsigned int indexInChaptersWithAnyType;
 
 
+- (id)description;
+- (void)dealloc;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (id)title;
+- (double)duration;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)valueLoader;
 - (unsigned int)indexInChaptersWithSameType;
 - (void)setValueLoader:(id)arg1;
@@ -42,13 +50,5 @@
 - (double)playbackTime;
 - (int)chapterType;
 - (double)playbackDuration;
-- (id)description;
-- (void)dealloc;
-- (id)value;
-- (void)setValue:(id)arg1;
-- (id)title;
-- (double)duration;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

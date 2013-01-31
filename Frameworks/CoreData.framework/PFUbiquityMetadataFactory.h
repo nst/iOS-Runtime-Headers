@@ -10,8 +10,8 @@
     NSManagedObjectModel *_cachedModel;
 }
 
-+ (id)sharedFactory;
 + (void)initialize;
++ (id)sharedFactory;
 
 - (id)description;
 - (void)dealloc;

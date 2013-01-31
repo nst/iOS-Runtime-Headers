@@ -18,8 +18,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (int)alignment;
-- (void)setAlignment:(int)arg1;
 - (int)hotkeyPrefix;
 - (int)digitSubstitutionMethod;
 - (unsigned short)digitSubstitutionLanguage;
@@ -37,5 +35,7 @@
 - (void)setFormatFlags:(unsigned long)arg1;
 - (const float*)tabStops;
 - (int)tabStopCount;
+- (int)alignment;
+- (void)setAlignment:(int)arg1;
 
 @end

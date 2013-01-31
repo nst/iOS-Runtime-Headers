@@ -12,9 +12,9 @@
 + (id)snippetObjectInteractionWithDictionary:(id)arg1 context:(id)arg2;
 + (id)snippetObjectInteraction;
 
-- (id)groupIdentifier;
+- (id)encodedClassName;
 - (void)setObject:(id)arg1;
 - (id)object;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

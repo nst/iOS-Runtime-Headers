@@ -216,8 +216,6 @@
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
-- (BOOL)setActive:(BOOL)arg1;
-- (void)unlock;
 - (bool)onPlayVideo:(struct __CVBuffer { }*)arg1 frameTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 cameraStatusBits:(unsigned char)arg3;
 - (void)checkVideoThrottleDuration;
 - (void)avConferencePreviewError;
@@ -399,5 +397,7 @@
 - (void)setRemoteVideoLayer:(void*)arg1;
 - (void)cleanupManager;
 - (void)stopAllCalls:(id)arg1;
+- (BOOL)setActive:(BOOL)arg1;
+- (void)unlock;
 
 @end

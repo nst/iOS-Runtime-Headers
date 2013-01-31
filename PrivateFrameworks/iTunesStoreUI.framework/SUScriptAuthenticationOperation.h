@@ -16,10 +16,10 @@
 - (id)authenticatedDSID;
 - (void)sendCompletionCallback:(id)arg1;
 - (void)setScriptOptions:(id)arg1;
-- (id)initWithAccountIdentifier:(id)arg1;
 - (id)authenticatedAccountDSID;
 - (void)dealloc;
 - (id)init;
 - (void)run;
+- (id)initWithAccountIdentifier:(id)arg1;
 
 @end

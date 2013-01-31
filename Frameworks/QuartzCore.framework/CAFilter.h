@@ -27,6 +27,7 @@
 + (id)filterWithName:(id)arg1;
 + (id)filterTypes;
 
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setName:(id)arg1;
 - (id)name;
@@ -42,9 +43,8 @@
 - (id)initWithType:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1;
 - (BOOL)cachesInputImage;
-- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (void)setDefaults;
+- (id)initWithName:(id)arg1;
 
 @end

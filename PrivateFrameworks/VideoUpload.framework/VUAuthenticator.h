@@ -15,6 +15,7 @@
 
 + (id)sharedAuthenticator;
 
+- (id)authenticationDialogWithTarget:(id)arg1 action:(SEL)arg2;
 - (int)authenticatorState;
 - (void)invalidateAuthentication;
 - (void)loadCredentials;
@@ -22,8 +23,7 @@
 - (void)_notifyFailure;
 - (void)_notifyStateChange;
 - (void)request:(id)arg1 didReceiveObject:(id)arg2;
-- (void)request:(id)arg1 didFailWithError:(id)arg2;
-- (id)authenticationDialogWithTarget:(id)arg1 action:(SEL)arg2;
 - (id)account;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
 
 @end

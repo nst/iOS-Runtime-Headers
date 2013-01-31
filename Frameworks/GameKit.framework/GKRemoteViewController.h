@@ -34,6 +34,16 @@
 
 + (BOOL)shouldPropagateAppearanceCustomizations;
 
+- (void)dealloc;
+- (id)remoteProtocol;
+- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)viewServiceDidTerminateWithError:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 - (void)setDidSetRemoteGame:(BOOL)arg1;
 - (void)readyToPresentInController:(id)arg1;
 - (BOOL)_dismissSelfAfterGettingShouldCancel;
@@ -60,15 +70,5 @@
 - (void)setIsInFormSheet:(BOOL)arg1;
 - (void)setGame:(id)arg1;
 - (id)game;
-- (void)dealloc;
-- (id)remoteProtocol;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
-- (void)viewServiceDidTerminateWithError:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 
 @end

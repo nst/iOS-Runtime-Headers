@@ -17,6 +17,8 @@
 + (BOOL)_isCmcEnabled;
 + (void)_getIsCMCDisabled:(BOOL*)arg1 disabledReason:(id*)arg2;
 
+- (void)dealloc;
+- (id)init;
 - (unsigned int)startCompletionOfferingLookupForAlbumItemsQuery:(id)arg1 responseBlock:(id)arg2;
 - (void)cancelCompletionOfferingLookup:(unsigned int)arg1;
 - (id)completionOfferingForAlbumItemsQuery:(id)arg1;
@@ -36,7 +38,5 @@
 - (void)_dumpCache;
 - (void)_storeAccountsDidChangeNotification:(id)arg1;
 - (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
-- (void)dealloc;
-- (id)init;
 
 @end

@@ -24,12 +24,12 @@
 
 
 - (void)dealloc;
-- (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
-- (int)style;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)setAccountTextFieldPlaceholder:(id)arg1;
 - (id)accountTextFieldPlaceholder;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 completionHandler:(id)arg3;
 - (id)initWithStyle:(int)arg1 title:(id)arg2 message:(id)arg3 completionHandler:(id)arg4;
+- (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
+- (int)style;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 
 @end

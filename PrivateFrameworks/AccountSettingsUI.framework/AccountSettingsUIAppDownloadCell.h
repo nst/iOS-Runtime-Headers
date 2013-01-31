@@ -15,19 +15,19 @@
 @property(readonly) UIButton * installButton;
 @property BOOL appIsInstalled;
 
-+ (id)appName;
-+ (id)iconImage;
 + (id)publisherName;
 + (float)desiredRowHeight;
++ (id)iconImage;
++ (id)appName;
 
+- (BOOL)appIsInstalled;
+- (id)installButton;
+- (void)setAppIsInstalled:(BOOL)arg1;
+- (void)updateSubviews;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
-- (BOOL)appIsInstalled;
-- (id)installButton;
-- (void)setAppIsInstalled:(BOOL)arg1;
-- (void)updateSubviews;
 
 @end

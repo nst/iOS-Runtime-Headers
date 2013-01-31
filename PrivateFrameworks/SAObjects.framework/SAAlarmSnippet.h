@@ -9,11 +9,11 @@
 
 @property(copy) NSArray * alarms;
 
-+ (id)snippet;
 + (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
++ (id)snippet;
 
-- (id)groupIdentifier;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 - (void)setAlarms:(id)arg1;
 - (id)alarms;
 

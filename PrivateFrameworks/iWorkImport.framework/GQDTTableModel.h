@@ -26,9 +26,6 @@
 
 + (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 
-- (struct __CFString { }*)name;
-- (void)dealloc;
-- (unsigned short)columnCount;
 - (void)setNumGroupLevels:(int)arg1;
 - (int)numGroupLevels;
 - (unsigned short)firstVisibleColumn;
@@ -48,8 +45,11 @@
 - (unsigned short)footerRowCount;
 - (unsigned short)headerColumnCount;
 - (struct __CFArray { }*)cells;
+- (struct __CFString { }*)name;
+- (void)dealloc;
 - (id)cellAt:(unsigned short)arg1;
 - (unsigned short)rowCount;
 - (unsigned short)headerRowCount;
+- (unsigned short)columnCount;
 
 @end

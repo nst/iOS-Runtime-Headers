@@ -21,11 +21,11 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)message;
-- (void)setContext:(id)arg1;
-- (id)context;
 - (id)initMoveRequestWithMessage:(id)arg1 fromFolder:(id)arg2 toFolder:(id)arg3;
 - (id)toFolder;
 - (id)fromFolder;
+- (id)message;
+- (void)setContext:(id)arg1;
+- (id)context;
 
 @end

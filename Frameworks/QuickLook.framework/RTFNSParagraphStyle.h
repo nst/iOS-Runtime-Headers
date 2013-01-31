@@ -14,15 +14,15 @@
 }
 
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (float)firstLineHeadIndent;
-- (unsigned int)alignment;
 - (id)_initWithParagraphStyle:(id)arg1;
 - (float)tailIndent;
 - (float)headIndent;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (int)baseWritingDirection;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (float)firstLineHeadIndent;
+- (unsigned int)alignment;
 
 @end

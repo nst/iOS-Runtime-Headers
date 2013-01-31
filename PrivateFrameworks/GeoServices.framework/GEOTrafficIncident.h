@@ -48,25 +48,18 @@
 @property int type;
 
 
-- (void)setInfo:(id)arg1;
+- (void)setLocation:(id)arg1;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (int)vertexCount;
 - (int)type;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (double)startTime;
-- (id)dictionaryRepresentation;
-- (id)location;
-- (id)info;
-- (id)title;
-- (void)setType:(int)arg1;
-- (void)setStartTime:(double)arg1;
-- (void)setTitle:(id)arg1;
-- (void)setLocation:(id)arg1;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (int)vertexCount;
 - (double)endTime;
+- (BOOL)hasType;
+- (BOOL)readFrom:(id)arg1;
 - (void)setHasLastUpdated:(BOOL)arg1;
 - (void)setHasEndTime:(BOOL)arg1;
 - (void)setHasStartTime:(BOOL)arg1;
@@ -90,8 +83,15 @@
 - (long long)uID;
 - (BOOL)hasUID;
 - (void)setHasType:(BOOL)arg1;
-- (BOOL)hasType;
-- (BOOL)readFrom:(id)arg1;
 - (void)setEndTime:(double)arg1;
+- (double)startTime;
+- (id)dictionaryRepresentation;
+- (id)location;
+- (id)info;
+- (id)title;
+- (void)setType:(int)arg1;
+- (void)setStartTime:(double)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setInfo:(id)arg1;
 
 @end

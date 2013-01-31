@@ -11,13 +11,13 @@
 }
 
 
-- (void)dealloc;
-- (id)init;
-- (void)setFontSize:(int)arg1;
-- (void)setFont:(id)arg1;
-- (void)setFontColorRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
-- (void)setUnichars:(unsigned short*)arg1 count:(unsigned long)arg2;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)setFontColor:(struct CGColor { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setFontColorRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
+- (void)setUnichars:(unsigned short*)arg1 count:(unsigned long)arg2;
+- (void)setFontSize:(int)arg1;
+- (void)setFont:(id)arg1;
 
 @end

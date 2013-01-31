@@ -18,7 +18,6 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })placeableBounds:(const char *)arg1;
 
 - (void)dealloc;
-- (void)done;
 - (int)playHeader:(unsigned int)arg1 :(const char *)arg2;
 - (int)play:(unsigned int)arg1 :(const char *)arg2;
 - (long)records;
@@ -84,5 +83,6 @@
 - (int)playSetMapMode:(unsigned int)arg1 :(const char *)arg2;
 - (int)playSetBkMode:(unsigned int)arg1 :(const char *)arg2;
 - (int)playSetBkColour:(unsigned int)arg1 :(const char *)arg2;
+- (void)done;
 
 @end

@@ -10,8 +10,8 @@
 
 + (void)buildTileStencilWithContext:(id)arg1 forTiles:(id)arg2;
 
+- (void)drawTiles:(id)arg1 context:(id)arg2 layer:(unsigned int)arg3 withModel:(id)arg4 drawingRoad:(BOOL)arg5 scene:(id)arg6;
 - (void)dealloc;
 - (id)init;
-- (void)drawTiles:(id)arg1 context:(id)arg2 layer:(unsigned int)arg3 withModel:(id)arg4 drawingRoad:(BOOL)arg5 scene:(id)arg6;
 
 @end

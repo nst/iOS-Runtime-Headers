@@ -16,10 +16,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isDynamicForEntityClass:(Class)arg1;
 - (id)SQLJoinClausesForClass:(Class)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setProperty:(id)arg1;
 - (id)property;
 - (id)initWithProperty:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

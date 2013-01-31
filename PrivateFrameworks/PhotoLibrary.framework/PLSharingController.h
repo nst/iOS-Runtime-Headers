@@ -32,8 +32,6 @@
 + (void)openEmailAccountPrefs;
 
 - (void)dealloc;
-- (id)views;
-- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (void)mailComposeController:(id)arg1 bodyFinishedLoadingWithResult:(BOOL)arg2 error:(id)arg3;
 - (void)setTrimmedPath:(id)arg1 forVideo:(id)arg2;
 - (BOOL)isComposeSheetReady;
@@ -61,5 +59,7 @@
 - (void)_performSendViaEmail;
 - (void)_composeSheetDidDisplay;
 - (void)_commonDidFinishEmailAnimation:(BOOL)arg1;
+- (id)views;
+- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 
 @end

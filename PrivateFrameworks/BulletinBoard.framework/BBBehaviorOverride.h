@@ -18,10 +18,6 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)mode;
-- (void)setMode:(unsigned int)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithEffectiveIntervals:(id)arg1 overrideType:(unsigned int)arg2;
 - (id)effectiveIntervals;
 - (void)setEffectiveIntervals:(id)arg1;
@@ -30,5 +26,9 @@
 - (BOOL)isActiveForDate:(id)arg1;
 - (unsigned int)overrideType;
 - (id)nextOverrideTransitionDateAfterDate:(id)arg1;
+- (unsigned int)mode;
+- (void)setMode:(unsigned int)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

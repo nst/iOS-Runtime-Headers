@@ -23,12 +23,12 @@
 @property BOOL hasRecurrenceRules;
 
 
+- (void)setLocation:(id)arg1;
 - (void)dealloc;
 - (void)setStatus:(int)arg1;
 - (int)status;
 - (id)location;
 - (id)initWithType:(int)arg1;
-- (void)setLocation:(id)arg1;
 - (BOOL)needsAlert;
 - (id)calendarName;
 - (void)setHasRecurrenceRules:(BOOL)arg1;

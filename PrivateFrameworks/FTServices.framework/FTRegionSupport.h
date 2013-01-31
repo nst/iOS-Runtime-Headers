@@ -17,17 +17,17 @@
 
 + (id)sharedInstance;
 
-- (id)regionForID:(id)arg1;
-- (id)regions;
+- (void)dealloc;
 - (void)set_delivery:(id)arg1;
 - (id)_delivery;
 - (void)set_regions:(id)arg1;
 - (id)_regions;
 - (void)flushRegions;
 - (void)_buildMessageDeliveryIfNeeded;
-- (void)startLoading;
-- (void)dealloc;
+- (id)regionForID:(id)arg1;
+- (id)regions;
 - (BOOL)isLoaded;
 - (BOOL)isLoading;
+- (void)startLoading;
 
 @end

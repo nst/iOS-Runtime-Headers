@@ -35,11 +35,8 @@
 @property(getter=isDownloadableOverCellular) BOOL downloadableOverCellular;
 
 
-- (id)productBuildVersion;
-- (int)updateType;
-- (BOOL)isDownloadable;
 - (id)productVersion;
-- (unsigned long long)downloadSize;
+- (void)setDownloadable:(BOOL)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -47,8 +44,6 @@
 - (void)dealloc;
 - (id)init;
 - (id)downloadPolicy;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)isValidDescriptor;
 - (unsigned long long)totalRequiredFreeSpace;
 - (id)_buildCompareKey;
@@ -72,6 +67,11 @@
 - (void)setProductSystemName:(id)arg1;
 - (void)setProductBuildVersion:(id)arg1;
 - (void)setProductVersion:(id)arg1;
-- (void)setDownloadable:(BOOL)arg1;
+- (int)updateType;
+- (id)productBuildVersion;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (unsigned long long)downloadSize;
+- (BOOL)isDownloadable;
 
 @end

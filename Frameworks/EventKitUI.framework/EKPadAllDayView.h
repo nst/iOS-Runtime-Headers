@@ -91,12 +91,12 @@
 
 + (float)occurrenceHeight;
 
-- (float)maximumHeight;
-- (void)setMinimumHeight:(float)arg1;
-- (float)minimumHeight;
+- (void)setOutlineStyle:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (float)bottomInset;
+- (void)setOccurrences:(id)arg1;
 - (id)calendar;
 - (void)setCalendar:(id)arg1;
 - (void)setOrientation:(int)arg1;
@@ -110,7 +110,9 @@
 - (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setOutlineStyle:(int)arg1;
+- (float)maximumHeight;
+- (void)setMinimumHeight:(float)arg1;
+- (float)minimumHeight;
 - (void)setCustomLeftMarginWidth:(float)arg1;
 - (float)customLeftMarginWidth;
 - (void)setMaxOccurrencesWithoutScroller:(int)arg1;
@@ -176,8 +178,6 @@
 - (void)dayOccurrenceViewStartTouch:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setUsesSmallText:(BOOL)arg1;
 - (void)_localeChanged;
-- (float)bottomInset;
-- (void)setOccurrences:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)startDate;
 

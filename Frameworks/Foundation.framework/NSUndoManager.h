@@ -20,11 +20,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)removeAllActionsWithTarget:(id)arg1;
-- (void)enableUndoRegistration;
-- (BOOL)isRedoing;
-- (BOOL)isUndoing;
-- (void)registerUndoWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
 - (int)groupingLevel;
 - (void)_processEndOfEventNotification:(id)arg1;
 - (void)endUndoGrouping;
@@ -69,5 +64,10 @@
 - (id)_undoStack;
 - (void)_forwardTargetInvocation:(id)arg1;
 - (id)_methodSignatureForTargetSelector:(SEL)arg1;
+- (void)removeAllActionsWithTarget:(id)arg1;
+- (void)enableUndoRegistration;
+- (BOOL)isRedoing;
+- (BOOL)isUndoing;
+- (void)registerUndoWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
 
 @end

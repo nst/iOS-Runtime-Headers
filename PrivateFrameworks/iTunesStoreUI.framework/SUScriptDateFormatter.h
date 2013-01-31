@@ -19,8 +19,8 @@
 @property(readonly) unsigned int dateFormatterShortStyle;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (unsigned int)dateFormatterShortStyle;
 - (unsigned int)dateFormatterNoStyle;
@@ -30,6 +30,7 @@
 - (void)setLocaleIdentifier:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)init;
 - (void)setTimeStyle:(unsigned int)arg1;
@@ -38,7 +39,6 @@
 - (double)dateFromString:(id)arg1;
 - (id)stringFromDate:(id)arg1;
 - (void)setDateFormat:(id)arg1;
-- (id)attributeKeys;
 - (unsigned int)timeStyle;
 - (unsigned int)dateStyle;
 - (id)dateFormat;

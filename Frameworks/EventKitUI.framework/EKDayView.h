@@ -66,6 +66,8 @@
 @property int outlineStyle;
 
 
+- (void)setOutlineStyle:(int)arg1;
+- (int)outlineStyle;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
@@ -83,8 +85,6 @@
 - (void)layoutSubviews;
 - (void)reloadData;
 - (void)setDataSource:(id)arg1;
-- (void)setOutlineStyle:(int)arg1;
-- (int)outlineStyle;
 - (id)displayDate;
 - (void)addViewToScroller:(id)arg1 isAllDay:(BOOL)arg2;
 - (void)highlightHour:(double)arg1;

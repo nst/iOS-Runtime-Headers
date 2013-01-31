@@ -145,28 +145,13 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (void)setCategories:(id)arg1;
-- (void)setLastName:(id)arg1;
-- (id)lastName;
-- (void)setFirstName:(id)arg1;
-- (id)firstName;
-- (void)setAccountName:(id)arg1;
-- (id)accountName;
+- (id)children;
 - (id)description;
 - (void)dealloc;
-- (void)setBody:(id)arg1;
-- (id)categories;
-- (id)body;
-- (id)title;
-- (void)setTitle:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)children;
-- (int)bodySize;
-- (void)setChildren:(id)arg1;
-- (id)pagerNumber;
 - (id)suffix;
 - (void)setSuffix:(id)arg1;
+- (int)bodySize;
+- (void)setChildren:(id)arg1;
 - (void)setBodyTruncatedNumber:(id)arg1;
 - (void)setBodySizeNumber:(id)arg1;
 - (BOOL)deleteFromAddressBook;
@@ -316,5 +301,20 @@
 - (void)appendActiveSyncDataForTask:(id)arg1 toWBXMLData:(id)arg2;
 - (void)postProcessApplicationData;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
+- (void)setBody:(id)arg1;
+- (id)categories;
+- (id)body;
+- (id)title;
+- (void)setTitle:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)setCategories:(id)arg1;
+- (void)setLastName:(id)arg1;
+- (id)lastName;
+- (void)setFirstName:(id)arg1;
+- (id)firstName;
+- (void)setAccountName:(id)arg1;
+- (id)accountName;
+- (id)pagerNumber;
 
 @end

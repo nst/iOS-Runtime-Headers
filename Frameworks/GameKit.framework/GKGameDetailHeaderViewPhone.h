@@ -18,6 +18,16 @@
 @property(retain) GKGameRecord * gameRecordLocalPlayer;
 
 
+- (void)dealloc;
+- (id)init;
+- (void)setTheme:(id)arg1;
+- (id)theme;
+- (id)segmentedControl;
+- (void)prepareForReuse;
+- (void)setTitleView:(id)arg1;
+- (id)titleView;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGameRecordLocalPlayer:(id)arg1;
 - (void)setLandscapeStyle:(BOOL)arg1;
 - (BOOL)landscapeStyle;
@@ -31,15 +41,5 @@
 - (void)setIconView:(id)arg1;
 - (id)iconView;
 - (float)preferredHeightForOrientation:(int)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)segmentedControl;
-- (void)prepareForReuse;
-- (void)setTitleView:(id)arg1;
-- (id)titleView;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTheme:(id)arg1;
-- (id)theme;
 
 @end

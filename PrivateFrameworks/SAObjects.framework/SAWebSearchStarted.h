@@ -13,7 +13,7 @@
 + (id)searchStartedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)searchStarted;
 
-- (id)groupIdentifier;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

@@ -14,7 +14,6 @@
 @property int dataclass;
 
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
 - (void)setDataclass:(int)arg1;
 - (void)addSourceID:(id)arg1 sourceFolder:(id)arg2 destinatonFolder:(id)arg3;
@@ -26,5 +25,6 @@
 - (id)requestBody;
 - (int)commandCode;
 - (int)taskStatusForExchangeStatus:(int)arg1;
+- (void)finishWithError:(id)arg1;
 
 @end

@@ -13,6 +13,8 @@
 @property BOOL allowNonSecureHTTP;
 
 
+- (void)didParseData;
+- (void)failWithError:(id)arg1;
 - (id)URL;
 - (void)cancel;
 - (void)dealloc;
@@ -27,8 +29,6 @@
 - (BOOL)allowNonSecureHTTP;
 - (void)loadRequest:(id)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)failWithError:(id)arg1;
-- (void)didParseData;
 - (void)parseData:(id)arg1;
 
 @end

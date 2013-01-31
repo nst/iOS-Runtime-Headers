@@ -6,10 +6,10 @@
 }
 
 
-- (id)description;
-- (id)dictionaryRepresentation;
 - (void)writeTo:(id)arg1;
+- (id)description;
 - (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 
 @end

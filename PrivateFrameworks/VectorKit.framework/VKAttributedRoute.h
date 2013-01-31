@@ -15,9 +15,6 @@
 
 + (id)attributedRouteWithRoute:(id)arg1;
 
-- (void)dealloc;
-- (struct { unsigned int x1; float x2; })end;
-- (struct { unsigned int x1; float x2; })start;
 - (void)setRouteLineMapMatchingDataSource:(id)arg1;
 - (id)routeLineMapMatchingDataSource;
 - (struct { double x1; double x2; })locationAtDistance:(double)arg1 from:(id)arg2;
@@ -40,5 +37,8 @@
 - (struct { unsigned int x1; float x2; })routeCoordinateAtDistanceAlongOriginalRoute:(double)arg1 from:(struct { unsigned int x1; float x2; })arg2;
 - (struct { unsigned int x1; float x2; })makeRouteCoordinateFromPointIndex:(unsigned int)arg1 offset:(float)arg2;
 - (id)initWithRoute:(id)arg1;
+- (void)dealloc;
+- (struct { unsigned int x1; float x2; })end;
+- (struct { unsigned int x1; float x2; })start;
 
 @end

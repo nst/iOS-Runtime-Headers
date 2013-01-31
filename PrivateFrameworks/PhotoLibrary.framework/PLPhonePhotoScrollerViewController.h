@@ -13,11 +13,6 @@
 
 
 - (void)dealloc;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)isModalTransitioning;
 - (id)initWithPhoto:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2;
 - (void)_emailComposeSheetIsReady;
@@ -27,5 +22,10 @@
 - (void)didMoveToPhotoAtIndex:(unsigned int)arg1;
 - (BOOL)_isAirPlayEnabled;
 - (void)_updateNavigationBar;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

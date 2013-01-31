@@ -83,14 +83,6 @@
 @property(readonly) NSString * itemTypeString;
 
 
-- (void)setArtistName:(id)arg1;
-- (BOOL)isInstalled;
-- (id)bundleVersion;
-- (void)setBundleVersion:(id)arg1;
-- (void)setBundleIdentifier:(id)arg1;
-- (id)artistName;
-- (void)setSecondaryTitle:(id)arg1;
-- (id)secondaryTitle;
 - (void)setVersionOrdering:(id)arg1;
 - (void)setVersionIdentifier:(id)arg1;
 - (void)setUnmodifiedTitle:(id)arg1;
@@ -123,7 +115,6 @@
 - (id)tellAFriendBodyMIMEType;
 - (id)tellAFriendBody;
 - (id)relatedItemsForRelationType:(id)arg1;
-- (BOOL)isDownloadable;
 - (int)integerValueForProperty:(id)arg1;
 - (id)externalArtistPageLink;
 - (id)copyReleaseDateStringWithStyle:(long)arg1;
@@ -144,7 +135,6 @@
 - (id)_valueForFirstAvailableKey:(id)arg1;
 - (void)_reloadDefaultStoreOffer;
 - (id)versionOrdering;
-- (id)releaseDate;
 - (id)unmodifiedTitle;
 - (id)containerItem;
 - (id)itemDictionary;
@@ -165,7 +155,6 @@
 - (id)itemLinks;
 - (void)setContainerItem:(id)arg1;
 - (id)itemTypeString;
-- (unsigned long long)itemIdentifier;
 - (id)defaultStoreOffer;
 - (id)itemImageCollection;
 - (id)bundleIdentifier;
@@ -178,5 +167,16 @@
 - (id)initWithDictionary:(id)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
+- (unsigned long long)itemIdentifier;
+- (BOOL)isDownloadable;
+- (id)releaseDate;
+- (void)setArtistName:(id)arg1;
+- (BOOL)isInstalled;
+- (id)bundleVersion;
+- (void)setBundleVersion:(id)arg1;
+- (void)setBundleIdentifier:(id)arg1;
+- (id)artistName;
+- (void)setSecondaryTitle:(id)arg1;
+- (id)secondaryTitle;
 
 @end

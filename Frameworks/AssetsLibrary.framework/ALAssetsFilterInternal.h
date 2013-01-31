@@ -9,7 +9,7 @@
 @property int filter;
 
 
-- (void)setFilter:(int)arg1;
 - (int)filter;
+- (void)setFilter:(int)arg1;
 
 @end

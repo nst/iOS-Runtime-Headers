@@ -16,8 +16,8 @@
 - (void)dealloc;
 - (void)setLibrary:(id)arg1;
 - (id)library;
+- (id)dataConsumerForPart:(id)arg1;
 - (id)message;
 - (void)setMessage:(id)arg1;
-- (id)dataConsumerForPart:(id)arg1;
 
 @end

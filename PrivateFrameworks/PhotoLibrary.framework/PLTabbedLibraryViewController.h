@@ -25,13 +25,6 @@
 - (id)selectedNavigationController;
 - (void)dealloc;
 - (id)init;
-- (void)_applicationWillEnterForeground:(id)arg1;
-- (void)showBarWithTransition:(int)arg1;
-- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)prepareForDefaultImageSnapshot;
 - (void)albumListDidChange:(id)arg1;
 - (void)albumDidChange:(id)arg1;
 - (int)baseAlbumListFilter;
@@ -68,5 +61,12 @@
 - (void)navigateToContentMode:(int)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)navigateToRevealAlbum:(struct NSObject { Class x1; }*)arg1 initiallyHidden:(BOOL)arg2 animated:(BOOL)arg3;
 - (BOOL)prepareForDismissingAnimated:(BOOL)arg1;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)showBarWithTransition:(int)arg1;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidLoad;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)prepareForDefaultImageSnapshot;
 
 @end

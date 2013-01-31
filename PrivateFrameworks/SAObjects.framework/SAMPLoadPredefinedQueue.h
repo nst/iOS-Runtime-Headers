@@ -13,12 +13,12 @@
 + (id)loadPredefinedQueueWithDictionary:(id)arg1 context:(id)arg2;
 + (id)loadPredefinedQueue;
 
-- (id)groupIdentifier;
 - (void)setMediaItemType:(int)arg1;
 - (int)mediaItemType;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

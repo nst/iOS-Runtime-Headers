@@ -9,6 +9,7 @@
     id _delegate;
     UITableView *_table;
     PLAirTunesService *_selectedService;
+    BOOL _showDebugOption;
 }
 
 @property <PLAirTunesServicePickerViewControllerDelegate> * delegate;
@@ -17,6 +18,9 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)_setCell:(id)arg1 checked:(BOOL)arg2;
+- (id)initWithAvailableAirTunesServices:(id)arg1 previouslySelectedService:(id)arg2 showDebugOption:(BOOL)arg3;
+- (void)setAvailableServices:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
@@ -24,8 +28,5 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)_setCell:(id)arg1 checked:(BOOL)arg2;
-- (id)initWithAvailableAirTunesServices:(id)arg1 previouslySelectedService:(id)arg2;
-- (void)setAvailableServices:(id)arg1;
 
 @end

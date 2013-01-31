@@ -45,21 +45,6 @@
 @property BOOL multiTileURLUsesStatusCodes;
 
 
-- (void)setBaseURL:(id)arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (void)setVersion:(unsigned int)arg1;
-- (unsigned int)version;
-- (id)baseURL;
-- (id)dictionaryRepresentation;
-- (int)style;
-- (void)setStyle:(int)arg1;
-- (void)setScale:(int)arg1;
-- (void)setSize:(int)arg1;
-- (int)scale;
-- (int)size;
 - (unsigned int)largestZoomLevelLEQ:(unsigned int)arg1 inRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (unsigned int)timeToLiveSeconds;
 - (unsigned int)maximumZoomLevelInRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -67,6 +52,11 @@
 - (id)dataForGenericTileType:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (BOOL)readFrom:(id)arg1;
 - (id)sentinelTileAtIndex:(unsigned int)arg1;
 - (void)clearSentinelTiles;
 - (unsigned int)sentinelTilesCount;
@@ -102,6 +92,16 @@
 - (void)setSupportedLanguages:(id)arg1;
 - (void)setLocalizationURL:(id)arg1;
 - (void)setMultiTileURL:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (void)setVersion:(unsigned int)arg1;
+- (unsigned int)version;
+- (id)baseURL;
+- (id)dictionaryRepresentation;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (void)setScale:(int)arg1;
+- (void)setSize:(int)arg1;
+- (int)scale;
+- (int)size;
+- (void)setBaseURL:(id)arg1;
 
 @end

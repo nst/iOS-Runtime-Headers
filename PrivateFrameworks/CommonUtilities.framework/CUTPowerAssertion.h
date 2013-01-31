@@ -13,7 +13,7 @@
 
 - (id)description;
 - (void)dealloc;
-- (id)initWithIdentifier:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 timeout:(double)arg2;
+- (id)initWithIdentifier:(id)arg1;
 
 @end

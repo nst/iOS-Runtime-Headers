@@ -14,9 +14,9 @@
 + (id)setApplicationContextWithDictionary:(id)arg1 context:(id)arg2;
 + (id)setApplicationContext;
 
-- (id)groupIdentifier;
 - (void)setOrderedContext:(id)arg1;
 - (id)orderedContext;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

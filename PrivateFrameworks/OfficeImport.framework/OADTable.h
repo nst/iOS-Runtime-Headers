@@ -13,7 +13,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)addRow;
 - (id)masterCellOfPos:(struct OADTMatrixPos { int x1; int x2; })arg1;
 - (struct OADTMatrixPos { int x1; int x2; })masterPosOfPos:(struct OADTMatrixPos { int x1; int x2; })arg1;
 - (id)cellAtPos:(struct OADTMatrixPos { int x1; int x2; })arg1;
@@ -22,5 +21,6 @@
 - (id)tableProperties;
 - (id)grid;
 - (unsigned int)rowCount;
+- (id)addRow;
 
 @end

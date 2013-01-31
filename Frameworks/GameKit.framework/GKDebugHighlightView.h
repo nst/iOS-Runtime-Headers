@@ -15,14 +15,14 @@
 @property BOOL isOval;
 
 
-- (void)setIsOval:(BOOL)arg1;
-- (BOOL)isOval;
+- (void)setCaption:(id)arg1;
+- (id)caption;
 - (void)dealloc;
 - (id)init;
 - (id)color;
 - (void)setColor:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setCaption:(id)arg1;
-- (id)caption;
+- (void)setIsOval:(BOOL)arg1;
+- (BOOL)isOval;
 
 @end

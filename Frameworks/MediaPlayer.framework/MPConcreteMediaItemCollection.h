@@ -12,13 +12,6 @@
 }
 
 
-- (id)representativeItem;
-- (id)mediaLibrary;
-- (id)initWithIdentifier:(long long)arg1 itemsQuery:(id)arg2 grouping:(int)arg3;
-- (id)itemsQuery;
-- (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
-- (id)initWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQuery:(id)arg3 grouping:(int)arg4 representativeItemIdentifier:(long long)arg5;
-- (id)valuesForProperties:(id)arg1;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -30,6 +23,13 @@
 - (id)items;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithIdentifier:(long long)arg1 itemsQuery:(id)arg2 grouping:(int)arg3;
+- (id)itemsQuery;
+- (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
+- (id)initWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQuery:(id)arg3 grouping:(int)arg4 representativeItemIdentifier:(long long)arg5;
+- (id)representativeItem;
+- (id)mediaLibrary;
+- (id)valuesForProperties:(id)arg1;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 
 @end

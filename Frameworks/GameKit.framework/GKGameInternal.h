@@ -8,6 +8,7 @@
     unsigned int _numberOfCategories;
     BOOL _installed;
     NSString *_defaultCategory;
+    NSNumber *_nearbyMultiplayerOverride;
     NSString *_name;
     BOOL _supportsAchievements;
     NSNumber *_adamID;
@@ -43,9 +44,21 @@
 @property(retain) NSDictionary * icons;
 @property(getter=isValid) BOOL valid;
 @property(getter=isInstalled) BOOL installed;
+@property(retain) NSNumber * nearbyMultiplayerOverride;
 
 + (id)codedPropertyKeys;
 
+- (id)bundleIdentifier;
+- (void)setName:(id)arg1;
+- (id)name;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (unsigned int)numberOfCategories;
+- (id)icons;
+- (void)setIcons:(id)arg1;
+- (BOOL)isValid;
 - (void)setMaxAchievementPoints:(unsigned int)arg1;
 - (void)setPrerendered:(BOOL)arg1;
 - (void)setNumberOfAchievements:(unsigned int)arg1;
@@ -61,6 +74,8 @@
 - (void)setNumberOfCategories:(unsigned int)arg1;
 - (BOOL)isInstalled;
 - (BOOL)isPrerendered;
+- (void)setNearbyMultiplayerOverride:(id)arg1;
+- (id)nearbyMultiplayerOverride;
 - (unsigned int)maxAchievementPoints;
 - (unsigned int)numberOfAchievements;
 - (BOOL)hasAggregateLeaderboard;
@@ -76,16 +91,5 @@
 - (BOOL)supportsLeaderboards;
 - (unsigned int)platform;
 - (id)defaultCategory;
-- (id)bundleIdentifier;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (unsigned int)numberOfCategories;
-- (id)icons;
-- (void)setIcons:(id)arg1;
-- (BOOL)isValid;
 
 @end

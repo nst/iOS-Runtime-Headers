@@ -12,7 +12,6 @@
 
 
 - (void)dealloc;
-- (BOOL)start;
 - (void)restartReaderToUseDecryptedDocument;
 - (bool)isBinaryReader;
 - (BOOL)retainDecryptorWithErrorCode:(int*)arg1;
@@ -20,5 +19,6 @@
 - (id)zipPackage;
 - (id)read;
 - (void)setZipPackage:(id)arg1;
+- (BOOL)start;
 
 @end

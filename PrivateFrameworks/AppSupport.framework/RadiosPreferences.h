@@ -28,15 +28,15 @@
 - (void)setValue:(void*)arg1 forKey:(id)arg2;
 - (void)dealloc;
 - (id)init;
-- (void)setAirplaneMode:(BOOL)arg1;
-- (void)synchronize;
-- (void*)getValueForKey:(id)arg1;
 - (void)setNotifyForExternalChangeOnly:(BOOL)arg1;
 - (BOOL)notifyForExternalChangeOnly;
 - (void)setCallback:(int (*)())arg1 withContext:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
 - (void)initializeSCPrefs:(id)arg1;
 - (void)notifyTarget:(unsigned int)arg1;
+- (void)setAirplaneMode:(BOOL)arg1;
+- (void)synchronize;
 - (BOOL)airplaneMode;
 - (void)refresh;
+- (void*)getValueForKey:(id)arg1;
 
 @end

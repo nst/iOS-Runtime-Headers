@@ -59,13 +59,6 @@
 @property(readonly) GEOTileKeyList * debugLayerKeys;
 
 
-- (void)setClient:(id)arg1;
-- (void)setStylesheet:(id)arg1;
-- (void)timerFired:(id)arg1;
-- (void)dealloc;
-- (id)stylesheet;
-- (int)mode;
-- (void)setMode:(int)arg1;
 - (id)initWithClient:(id)arg1;
 - (id)client;
 - (BOOL)isFallbackEnabled;
@@ -111,16 +104,23 @@
 - (void)quiesce;
 - (float)loadingProgress;
 - (void)foreachActiveLayer:(id)arg1;
-- (id)tilesToRender;
 - (void)requireRasterization:(id)arg1;
 - (void)setUseSmallTileCache:(BOOL)arg1;
 - (void)setFallbackEnabled:(BOOL)arg1;
 - (void)updateWithContext:(id)arg1;
+- (id)tilesToRender;
 - (void)removeTileSourceForMapLayer:(unsigned int)arg1;
 - (void)setTileSource:(id)arg1 forMapLayer:(unsigned int)arg2 optional:(BOOL)arg3;
 - (void)flushCaches;
 - (id)detailedDescription;
 - (void)clearScene;
 - (id)visibleTileSets;
+- (void)timerFired:(id)arg1;
+- (void)dealloc;
+- (id)stylesheet;
+- (int)mode;
+- (void)setMode:(int)arg1;
+- (void)setStylesheet:(id)arg1;
+- (void)setClient:(id)arg1;
 
 @end

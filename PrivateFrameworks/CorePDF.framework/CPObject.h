@@ -13,6 +13,21 @@
 }
 
 
+- (id)children;
+- (void)remove:(id)arg1;
+- (void)add:(id)arg1;
+- (void)performSelector:(SEL)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)count;
+- (void)setDocument:(id)arg1;
+- (int)depth;
+- (void)addChildren:(id)arg1;
+- (void)setParent:(id)arg1;
+- (id)parent;
+- (id)childAtIndex:(unsigned int)arg1;
 - (id)shallowDescendantsOfClass:(Class)arg1;
 - (id)descendantsOfClass:(Class)arg1;
 - (void)map:(SEL)arg1 target:(id)arg2 last:(BOOL)arg3;
@@ -51,12 +66,6 @@
 - (void)recomputeZOrder;
 - (id)copyAndSplitChildrenAtIndex:(unsigned int)arg1;
 - (long)zOrder;
-- (void)performSelector:(SEL)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
-- (unsigned int)count;
 - (void)remove;
 - (void)setPage:(id)arg1;
 - (id)page;
@@ -67,15 +76,6 @@
 - (id)nextSibling;
 - (id)firstChild;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
-- (id)children;
-- (void)remove:(id)arg1;
-- (void)add:(id)arg1;
 - (unsigned int)indexOf:(id)arg1;
-- (void)setDocument:(id)arg1;
-- (int)depth;
-- (void)addChildren:(id)arg1;
-- (void)setParent:(id)arg1;
-- (id)parent;
-- (id)childAtIndex:(unsigned int)arg1;
 
 @end

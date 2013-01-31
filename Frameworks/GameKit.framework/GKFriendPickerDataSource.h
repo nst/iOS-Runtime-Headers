@@ -16,7 +16,7 @@
     NSDictionary *_friendsDict;
     NSDictionary *_nonFriendsDict;
     NSDictionary *_ranksDict;
-    NSMutableDictionary *_inviteStatusDict;
+    NSMutableDictionary *_cellStatusDict;
     NSOrderedSet *_recentPlayerIDs;
     NSOrderedSet *_playedPlayerIDs;
     NSSet *_uninvitableFriends;
@@ -28,12 +28,12 @@
     GKAchievementDescription *_achievementDescription;
     GKReachability *_reachability;
     BOOL _reachable;
-    NSOrderedSet *_haveEarnedPlayerIDs;
-    unsigned int _context;
-    NSString *_achievementID;
-    NSString *_leaderboardID;
-    NSOrderedSet *_haveEarnedPlayers;
     GKGame *_game;
+    unsigned int _context;
+    NSOrderedSet *_haveEarnedPlayerIDs;
+    NSString *_leaderboardID;
+    NSString *_achievementID;
+    NSOrderedSet *_haveEarnedPlayers;
 }
 
 @property(retain) GKFriendPickerSelectorSection * selectorSection;
@@ -51,7 +51,7 @@
 @property(retain) NSDictionary * friendsDict;
 @property(retain) NSDictionary * nonFriendsDict;
 @property(retain) NSDictionary * ranksDict;
-@property(retain) NSMutableDictionary * inviteStatusDict;
+@property(retain) NSMutableDictionary * cellStatusDict;
 @property(retain) NSOrderedSet * recentPlayerIDs;
 @property(retain) NSOrderedSet * playedPlayerIDs;
 @property(retain) NSOrderedSet * haveEarnedPlayerIDs;
@@ -69,6 +69,12 @@
 @property BOOL reachable;
 
 
+- (void)setScope:(unsigned int)arg1;
+- (unsigned int)scope;
+- (void)dealloc;
+- (id)initWithController:(id)arg1;
+- (void)setContext:(unsigned int)arg1;
+- (unsigned int)context;
 - (id)haveEarnedPlayers;
 - (id)haveEarnedPlayerIDs;
 - (id)reachability;
@@ -109,8 +115,8 @@
 - (void)setNeverPlayedSection:(id)arg1;
 - (void)setListSection:(id)arg1;
 - (void)setSelectorSection:(id)arg1;
-- (void)setInviteStatusDict:(id)arg1;
-- (id)inviteStatusDict;
+- (void)setCellStatusDict:(id)arg1;
+- (id)cellStatusDict;
 - (void)setLoadError:(id)arg1;
 - (id)loadError;
 - (void)setReachable:(BOOL)arg1;
@@ -140,11 +146,5 @@
 - (void)prepareSections;
 - (void)setGame:(id)arg1;
 - (id)game;
-- (void)dealloc;
-- (id)initWithController:(id)arg1;
-- (void)setContext:(unsigned int)arg1;
-- (unsigned int)context;
-- (void)setScope:(unsigned int)arg1;
-- (unsigned int)scope;
 
 @end

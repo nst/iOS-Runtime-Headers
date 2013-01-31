@@ -16,9 +16,6 @@
 @property(readonly) BOOL valid;
 
 
-- (void)dealloc;
-- (BOOL)valid;
-- (void)finalize;
 - (BOOL)customError;
 - (BOOL)stepMismatch;
 - (BOOL)rangeOverflow;
@@ -27,5 +24,8 @@
 - (BOOL)patternMismatch;
 - (BOOL)typeMismatch;
 - (BOOL)valueMissing;
+- (void)dealloc;
+- (BOOL)valid;
+- (void)finalize;
 
 @end

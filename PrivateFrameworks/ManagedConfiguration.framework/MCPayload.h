@@ -36,11 +36,13 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
+- (id)profile;
 - (id)identifier;
 - (id)type;
 - (id)description;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (void)setDisplayName:(id)arg1;
 - (void)setPersistentResourceID:(id)arg1;
 - (void)setPersistentResourceID:(id)arg1;
 - (id)persistentResourceID;
@@ -55,11 +57,9 @@
 - (id)friendlyName;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (id)UUID;
 - (int)version;
 - (id)displayName;
 - (id)title;
-- (id)profile;
-- (void)setDisplayName:(id)arg1;
+- (id)UUID;
 
 @end

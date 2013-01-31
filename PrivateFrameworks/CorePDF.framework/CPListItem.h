@@ -14,16 +14,16 @@
 @property int number;
 
 
-- (void)addParagraph:(id)arg1;
-- (void)dispose;
 - (void)dealloc;
 - (id)init;
-- (int)number;
-- (id)list;
-- (void)finalize;
 - (void)setList:(id)arg1;
 - (void)setNumber:(int)arg1;
 - (unsigned int)paragraphCount;
 - (id)paragraphAtIndex:(unsigned int)arg1;
+- (void)addParagraph:(id)arg1;
+- (void)dispose;
+- (int)number;
+- (id)list;
+- (void)finalize;
 
 @end

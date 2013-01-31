@@ -17,10 +17,10 @@
 - (id)initWithFriendDictionary:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (id)identifier;
 - (id)name;
 - (void)dealloc;
 - (id)initWithName:(id)arg1;
-- (id)attributeKeys;
 
 @end

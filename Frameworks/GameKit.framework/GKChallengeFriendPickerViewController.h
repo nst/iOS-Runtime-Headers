@@ -23,6 +23,12 @@
 @property(retain) NSString * goalText;
 
 
+- (void)setChallenge:(id)arg1;
+- (id)challenge;
+- (void)dealloc;
+- (void)setHandler:(id)arg1;
+- (id)handler;
+- (void)loadView;
 - (id)goalText;
 - (void)dismissPicker;
 - (void)setGoalText:(id)arg1;
@@ -30,11 +36,5 @@
 - (void)setPlayerRangeText;
 - (void)showMessageViewController;
 - (id)initWithTheme:(id)arg1;
-- (void)dealloc;
-- (void)setHandler:(id)arg1;
-- (id)handler;
-- (void)loadView;
-- (void)setChallenge:(id)arg1;
-- (id)challenge;
 
 @end

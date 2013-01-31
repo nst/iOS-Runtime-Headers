@@ -74,11 +74,8 @@
 @property(readonly) MFComposeTextContentView * bodyTextView;
 
 
-- (id)toField;
-- (void)setComposeViewDelegate:(id)arg1;
-- (id)composeViewDelegate;
-- (void)setLoading:(BOOL)arg1;
 - (void)dealloc;
+- (BOOL)isKeyboardVisible;
 - (id)bodyTextView;
 - (void)textContentView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)textContentView:(id)arg1 shouldChangeSizeForContentSize:(struct CGSize { float x1; float x2; })arg2;
@@ -193,7 +190,10 @@
 - (void)automaticKeyboardFinishedAppearing:(id)arg1;
 - (void)_setupField:(id*)arg1 withLabel:(id)arg2 navTitle:(id)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (void)composeHeaderViewClicked:(id)arg1;
-- (BOOL)isKeyboardVisible;
+- (id)toField;
+- (void)setComposeViewDelegate:(id)arg1;
+- (id)composeViewDelegate;
+- (void)setLoading:(BOOL)arg1;
 - (BOOL)isSearching;
 
 @end

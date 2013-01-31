@@ -5,8 +5,8 @@
 @interface SUScriptPurchaseManager : SUScriptObject  {
 }
 
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)isPurchasingItemIdentifier:(id)arg1;
 - (id)isPurchasedItemIdentifier:(id)arg1;

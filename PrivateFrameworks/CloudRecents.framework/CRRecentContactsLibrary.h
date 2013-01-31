@@ -7,11 +7,11 @@
 
 + (id)defaultInstance;
 
+- (void)recordContactEventsForAddresses:(id)arg1 bundleIdentifier:(id)arg2 sendingAddress:(id)arg3 property:(int)arg4;
 - (id)_createServiceOnQueue:(id)arg1;
+- (void)recordContactEventsForAddresses:(id)arg1 bundleIdentifier:(id)arg2 sendingAddress:(id)arg3 date:(id)arg4 property:(int)arg5 userInitiated:(BOOL)arg6;
 - (void)recordContactEventsForHeaders:(id)arg1 bundleIdentifier:(id)arg2;
 - (id)copyOrderedRecentsForSearchText:(id)arg1 bundleIdentifier:(id)arg2 sendingAddress:(id)arg3 withProperties:(int*)arg4 count:(unsigned int)arg5;
 - (BOOL)removeRecentContact:(id)arg1 error:(out id*)arg2;
-- (void)recordContactEventsForAddresses:(id)arg1 bundleIdentifier:(id)arg2 sendingAddress:(id)arg3 date:(id)arg4 property:(int)arg5 userInitiated:(BOOL)arg6;
-- (void)recordContactEventsForAddresses:(id)arg1 bundleIdentifier:(id)arg2 sendingAddress:(id)arg3 property:(int)arg4;
 
 @end

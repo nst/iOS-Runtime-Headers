@@ -48,20 +48,12 @@
 + (void)endNetworkAssertion;
 + (BOOL)canDisplayMedia:(id)arg1;
 
-- (BOOL)isAvailable;
-- (void)setPassword:(id)arg1;
-- (void)setRate:(float)arg1;
 - (id)name;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)password;
-- (id)dataSource;
-- (void)setDataSource:(id)arg1;
-- (id)deviceID;
 - (void)validate;
-- (BOOL)requiresPassword;
 - (void)setFeatures:(unsigned int)arg1;
 - (unsigned int)features;
 - (BOOL)streamingLocalSlideShow;
@@ -105,6 +97,14 @@
 - (id)supportedRemoteSlideshowThemes;
 - (BOOL)supportsRemoteSlideshow;
 - (void)invalidatePhotoCache;
+- (id)deviceID;
+- (id)password;
+- (id)dataSource;
+- (void)setDataSource:(id)arg1;
+- (BOOL)requiresPassword;
+- (void)setRate:(float)arg1;
+- (BOOL)isAvailable;
+- (void)setPassword:(id)arg1;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
 - (void)netServiceDidResolveAddress:(id)arg1;
 

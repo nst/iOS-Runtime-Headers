@@ -21,6 +21,9 @@
 @property(readonly) unsigned int lookAhead;
 
 
+- (void)clearCache;
+- (void)dealloc;
+- (unsigned int)lookAhead;
 - (void)cancelPendingRenderOperationsForTarget:(id)arg1;
 - (void)cancelPendingRenderOperations;
 - (void)cacheImageOfPage:(unsigned int)arg1 maxSize:(struct CGSize { float x1; float x2; })arg2;
@@ -28,12 +31,9 @@
 - (void)deliverImageOfPage:(unsigned int)arg1 maxSize:(struct CGSize { float x1; float x2; })arg2 quality:(BOOL*)arg3 receiver:(id)arg4 selector:(SEL)arg5 info:(id)arg6;
 - (id)getImageIfAvailableForPage:(unsigned int)arg1;
 - (id)initWithDocument:(id)arg1 cacheCount:(unsigned int)arg2 lookAhead:(unsigned int)arg3;
-- (void)clearCache;
-- (void)dealloc;
 - (id)initWithDocument:(id)arg1;
 - (id)document;
 - (void)didReceiveMemoryWarning:(id)arg1;
 - (unsigned int)pageCount;
-- (unsigned int)lookAhead;
 
 @end

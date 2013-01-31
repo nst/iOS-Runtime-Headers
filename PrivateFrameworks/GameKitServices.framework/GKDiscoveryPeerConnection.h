@@ -50,8 +50,6 @@
 + (unsigned int)sendDataLimit;
 + (unsigned int)receiveDataLimit;
 
-- (void)setReceiveDataHandler:(id)arg1;
-- (id)syncQueue;
 - (void)invalidate;
 - (void)dealloc;
 - (void)syncProcessMessage:(int)arg1 data:(id)arg2 sequenceNumber:(unsigned int)arg3;
@@ -80,5 +78,7 @@
 - (void)setTargetQueue:(id)arg1;
 - (void)setConnectedHandler:(id)arg1;
 - (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)setReceiveDataHandler:(id)arg1;
+- (id)syncQueue;
 
 @end

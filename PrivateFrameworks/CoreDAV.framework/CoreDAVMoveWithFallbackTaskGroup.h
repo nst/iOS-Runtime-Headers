@@ -29,8 +29,6 @@
 
 - (id)description;
 - (void)dealloc;
-- (id)sourceURL;
-- (id)destinationURL;
 - (void)setDataContentType:(id)arg1;
 - (void)setDataPayload:(id)arg1;
 - (void)setUseFallback:(BOOL)arg1;
@@ -47,5 +45,7 @@
 - (id)dataContentType;
 - (id)dataPayload;
 - (void)startTaskGroup;
+- (id)sourceURL;
+- (id)destinationURL;
 
 @end

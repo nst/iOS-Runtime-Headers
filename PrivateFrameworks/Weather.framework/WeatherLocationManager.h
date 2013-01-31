@@ -17,10 +17,10 @@
         double latitude; 
         double longitude; 
     } _lastLocationCoord;
-    <CLLocationManagerDelegate> *_delegate;
     float _lastLocationAccuracy;
-    CLLocationManager *_locationManager;
+    <CLLocationManagerDelegate> *_delegate;
     BOOL _locationTrackingIsReady;
+    CLLocationManager *_locationManager;
 }
 
 @property(retain) CLLocationManager * locationManager;
@@ -35,11 +35,6 @@
 + (void)clearSharedLocationManager;
 + (id)sharedWeatherLocationManager;
 
-- (int)authorizationStatus;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)location;
 - (void)setLocationTrackingIsReady:(BOOL)arg1;
 - (BOOL)locationTrackingIsReady;
 - (void)setActivelyTrackingLocation:(BOOL)arg1;
@@ -69,7 +64,12 @@
 - (void)setAuthorizationStatus:(int)arg1;
 - (void)setLocationManager:(id)arg1;
 - (id)locationManager;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
+- (id)location;
+- (int)authorizationStatus;
 
 @end

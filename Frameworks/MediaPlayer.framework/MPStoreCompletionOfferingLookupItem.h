@@ -29,6 +29,7 @@
 
 + (id)storeLookupIDForAlbumItemsQuery:(id)arg1;
 
+- (void)dealloc;
 - (id)storeLookupID;
 - (BOOL)wantsArtwork;
 - (id)responseBlock;
@@ -38,6 +39,5 @@
 - (id)initWithAlbumItemsQuery:(id)arg1 tokenID:(int)arg2 wantsArtwork:(BOOL)arg3 responseBlock:(id)arg4;
 - (id)_specificationForArtworkSizesToRequest;
 - (id)storeLookupIDString;
-- (void)dealloc;
 
 @end

@@ -11,13 +11,13 @@
 + (BOOL)portRightIsUsable:(unsigned int)arg1;
 + (id)wrapSendRight:(unsigned int)arg1;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (BOOL)isUsable;
 - (void)setSendRight:(unsigned int)arg1;
 - (id)_initWithSendRight:(unsigned int)arg1 insertRight:(BOOL)arg2;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (unsigned int)sendRight;
 
 @end

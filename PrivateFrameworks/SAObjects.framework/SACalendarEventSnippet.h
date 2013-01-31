@@ -12,9 +12,9 @@
 + (id)eventSnippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)eventSnippet;
 
+- (id)encodedClassName;
 - (void)setEvents:(id)arg1;
 - (id)events;
 - (id)groupIdentifier;
-- (id)encodedClassName;
 
 @end

@@ -44,6 +44,10 @@
 @property(readonly) NSObject<OS_dispatch_queue> * loadQueue;
 
 
+- (BOOL)loaded;
+- (id)description;
+- (void)dealloc;
+- (id)error;
 - (void)setDisplayedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })totalRange;
 - (void)setPlayer:(id)arg1;
@@ -71,9 +75,5 @@
 - (id)placeholderScoresForRankRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withPlaceholderPlayerID:(id)arg2;
 - (void)setGame:(id)arg1;
 - (id)game;
-- (id)description;
-- (void)dealloc;
-- (BOOL)loaded;
-- (id)error;
 
 @end

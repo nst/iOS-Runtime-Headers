@@ -36,6 +36,9 @@
 @property BOOL showSplash;
 
 
+- (void)dealloc;
+- (void)systemApplicationWillEnterForeground;
+- (void)systemApplicationDidEnterBackground;
 - (void)_setupAppearBlockForAccountAuthorizeWithAuthID:(id)arg1 token:(id)arg2;
 - (void)_setupAppearBlockForNewPasswordWithAppleID:(id)arg1;
 - (void)cancelButtonTapped;
@@ -100,7 +103,8 @@
 - (id)logName;
 - (id)specifierList;
 - (void)_startTimeout;
-- (void)dealloc;
+- (id)alertHandler;
+- (void)setAlertHandler:(id)arg1;
 - (id)bundle;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
@@ -111,10 +115,6 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (id)alertHandler;
-- (void)setAlertHandler:(id)arg1;
-- (void)systemApplicationWillEnterForeground;
-- (void)systemApplicationDidEnterBackground;
 - (void)setSpecifier:(id)arg1;
 
 @end

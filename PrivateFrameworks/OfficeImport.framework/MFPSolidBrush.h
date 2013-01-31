@@ -10,9 +10,9 @@
 
 
 - (void)dealloc;
+- (void)fillPath:(struct CGPath { }*)arg1 evenOddRule:(BOOL)arg2;
 - (id)initWithColor:(id)arg1;
 - (id)color;
 - (void)setColor:(id)arg1;
-- (void)fillPath:(struct CGPath { }*)arg1 evenOddRule:(BOOL)arg2;
 
 @end

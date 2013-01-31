@@ -5,10 +5,10 @@
 @class UIImagePickerController, ABPeoplePickerNavigationController, UIImage;
 
 @interface UIAssignToContactActivity : UIActivity <ABPeoplePickerNavigationControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
-    ABPeoplePickerNavigationController *_peoplePicker;
     UIImage *_image;
-    void *_person;
     UIImagePickerController *_imagePickerController;
+    ABPeoplePickerNavigationController *_peoplePicker;
+    void *_person;
 }
 
 @property(retain) UIImage * image;

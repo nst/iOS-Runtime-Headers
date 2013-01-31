@@ -41,7 +41,8 @@
 - (id)delegate;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)model;
+- (void)setPersonID:(id)arg1;
+- (id)personID;
 - (double)maxMMCSTokenValidityTimeInterval;
 - (void)_rereadPerformanceLoggingSetting;
 - (id)_MMCSTokenTooOldError;
@@ -92,7 +93,6 @@
 - (id)initWithPersonID:(id)arg1;
 - (void)retryOutstandingActivities;
 - (void)setDaemon:(id)arg1;
-- (void)setPersonID:(id)arg1;
-- (id)personID;
+- (id)model;
 
 @end

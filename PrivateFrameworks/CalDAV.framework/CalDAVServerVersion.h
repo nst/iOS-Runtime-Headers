@@ -60,8 +60,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setVersion:(double)arg1;
-- (double)version;
 - (BOOL)supportsSharingNoScheduling;
 - (void)setSupportedCalendarComponentSets:(id)arg1;
 - (BOOL)supportsRequestCompression;
@@ -105,5 +103,7 @@
 - (void)setServerHeader:(id)arg1;
 - (void)setSupportsExtendedCalendarQuery:(BOOL)arg1;
 - (BOOL)supportsPrincipalPropertySearch;
+- (void)setVersion:(double)arg1;
+- (double)version;
 
 @end

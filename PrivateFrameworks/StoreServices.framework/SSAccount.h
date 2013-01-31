@@ -38,9 +38,6 @@
 @property(getter=isActiveLockerAccount) BOOL activeLockerAccount;
 
 
-- (void)setAccountName:(id)arg1;
-- (id)accountName;
-- (BOOL)isAuthenticated;
 - (void)setSocialEnabled:(BOOL)arg1;
 - (void)removeEnabledServiceTypes:(int)arg1;
 - (void)addEnabledServiceTypes:(int)arg1;
@@ -60,21 +57,24 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setDemoAccount:(BOOL)arg1;
+- (BOOL)mergeValuesFromAccount:(id)arg1;
+- (id)copyLockdownRepresentation;
 - (void)resetTransientData;
 - (void)removeAvailableServiceTypes:(int)arg1;
 - (void)addAvailableServiceTypes:(int)arg1;
-- (int)accountSource;
-- (BOOL)isSocialEnabled;
 - (void)getPurchasedItemsForItems:(id)arg1 completionBlock:(id)arg2;
 - (void)getDownloadKindsEligibleForContentRestoreWithBlock:(id)arg1;
-- (int)availableServiceTypes;
-- (void)setAccountSource:(int)arg1;
+- (id)initDemoAccount;
 - (void)setEnabledServiceTypes:(int)arg1;
 - (void)setAvailableServiceTypes:(int)arg1;
+- (void)setAccountSource:(int)arg1;
 - (void)setAccountScope:(int)arg1;
+- (int)accountSource;
+- (BOOL)isSocialEnabled;
+- (int)availableServiceTypes;
 - (void)_sendBlockingXPCMessage:(id)arg1;
 - (BOOL)isDemoAccount;
+- (void)setDemoAccount:(BOOL)arg1;
 - (void)setLockdownDictionary:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
@@ -82,5 +82,8 @@
 - (id)uniqueIdentifier;
 - (BOOL)isActive;
 - (void)setActive:(BOOL)arg1;
+- (void)setAccountName:(id)arg1;
+- (id)accountName;
+- (BOOL)isAuthenticated;
 
 @end

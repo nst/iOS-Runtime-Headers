@@ -11,9 +11,9 @@
 
 + (id)program;
 
-- (id)init;
-- (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (float)distanceMultiplier;
 - (void)setDistanceMultiplier:(float)arg1;
+- (id)init;
+- (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 
 @end

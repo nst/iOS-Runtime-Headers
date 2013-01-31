@@ -12,12 +12,12 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)_applicationDidBecomeActive:(id)arg1;
-- (void)_applicationWillResignActive:(id)arg1;
 - (void)_setupHeartBeatForConnection:(id)arg1;
 - (void)_tearDownConnection;
 - (void)_unregisterForAppActiveNotifications;
 - (void)_setupConnection;
 - (void)_registerForAppActiveNotifications;
+- (void)_applicationDidBecomeActive:(id)arg1;
+- (void)_applicationWillResignActive:(id)arg1;
 
 @end

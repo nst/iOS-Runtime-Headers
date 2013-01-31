@@ -9,6 +9,12 @@
 }
 
 
+- (void)_restrictionsChangedNotification:(id)arg1;
+- (void)_reloadHeaderView;
+- (id)newTermsAndConditionsFooter;
+- (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
+- (void)dealloc;
+- (id)init;
 - (id)_headerArtworkImage;
 - (id)_newPlaceholderImage;
 - (id)_newImageDataProvider;
@@ -17,12 +23,6 @@
 - (void)_reloadFooterView;
 - (void)_webViewsLoaded:(id)arg1;
 - (id)purchasableItemsForHeaderView:(id)arg1;
-- (void)_restrictionsChangedNotification:(id)arg1;
-- (void)_reloadHeaderView;
-- (id)newTermsAndConditionsFooter;
-- (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
-- (void)dealloc;
-- (id)init;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)loadView;
 - (void)reloadData;

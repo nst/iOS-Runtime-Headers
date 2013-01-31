@@ -16,6 +16,8 @@
 
 + (id)newWithStyle:(int)arg1 interfaceOrientation:(int)arg2;
 
+- (void)blinkSubtitle;
+- (id)_initWithStyle:(int)arg1 interfaceOrientation:(int)arg2;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
@@ -24,7 +26,5 @@
 - (id)title;
 - (int)interfaceOrientation;
 - (void)setTitle:(id)arg1;
-- (void)blinkSubtitle;
-- (id)_initWithStyle:(int)arg1 interfaceOrientation:(int)arg2;
 
 @end

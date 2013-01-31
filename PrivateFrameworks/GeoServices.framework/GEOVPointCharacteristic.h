@@ -50,15 +50,15 @@
 @property BOOL brunnelEntry;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)sectionIndex;
 - (void)setSectionIndex:(int)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setHasBrunnelEntry:(BOOL)arg1;
 - (void)setHasCastShadow:(BOOL)arg1;
 - (void)setHasShouldDrawLanes:(BOOL)arg1;
@@ -96,6 +96,6 @@
 - (void)setRoadLaneCount:(int)arg1;
 - (int)roadLaneCount;
 - (BOOL)hasRoadLaneCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

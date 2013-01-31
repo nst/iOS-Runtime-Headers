@@ -9,12 +9,12 @@
 
 @property(copy) NSArray * reminders;
 
-+ (id)snippet;
 + (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
++ (id)snippet;
 
-- (id)groupIdentifier;
 - (void)setReminders:(id)arg1;
 - (id)reminders;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

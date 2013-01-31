@@ -21,12 +21,6 @@
 - (id)name;
 - (void)dealloc;
 - (id)init;
-- (id)transition;
-- (void)setTransition:(id)arg1;
-- (id)background;
-- (void)setBackground:(id)arg1;
-- (id)animation;
-- (BOOL)isHidden;
 - (void)setDefaultTableStyle:(id)arg1;
 - (void)setPpt9AnimationDataForCacheItem:(id)arg1 order:(int)arg2;
 - (void)setInheritedTextStyle:(id)arg1 placeholderType:(int)arg2 defaultTextListStyle:(id)arg3;
@@ -53,5 +47,11 @@
 - (id)colorMap;
 - (id)styleMatrix;
 - (id)colorScheme;
+- (id)transition;
+- (void)setTransition:(id)arg1;
+- (id)background;
+- (void)setBackground:(id)arg1;
+- (id)animation;
+- (BOOL)isHidden;
 
 @end

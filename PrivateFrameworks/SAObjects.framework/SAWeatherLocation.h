@@ -9,13 +9,13 @@
 
 @property(copy) NSString * locationId;
 
-+ (id)location;
 + (id)locationWithDictionary:(id)arg1 context:(id)arg2;
++ (id)location;
 
-- (id)groupIdentifier;
 - (void)setLocationId:(id)arg1;
 - (id)locationId;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

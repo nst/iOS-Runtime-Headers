@@ -19,6 +19,7 @@
 @property(retain) MPTimeMarker * closedCaptionMarker;
 
 
+- (void)dealloc;
 - (id)AVItem;
 - (id)crossedMarkerOfType:(int)arg1;
 - (id)initWithTimeMarkerNotificationUserInfo:(id)arg1;
@@ -31,6 +32,5 @@
 - (void)setArtworkMarker:(id)arg1;
 - (void)setChapterMarker:(id)arg1;
 - (void)setAVItem:(id)arg1;
-- (void)dealloc;
 
 @end

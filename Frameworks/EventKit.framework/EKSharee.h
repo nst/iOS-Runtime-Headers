@@ -20,10 +20,6 @@
 + (id)shareeWithEmailAddress:(id)arg1 name:(id)arg2;
 + (id)shareeWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
 
-- (void)setLastName:(id)arg1;
-- (id)lastName;
-- (void)setFirstName:(id)arg1;
-- (id)firstName;
 - (void)setName:(id)arg1;
 - (id)name;
 - (id)description;
@@ -31,11 +27,14 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (id)UUID;
+- (id)owner;
 - (id)externalID;
 - (void)setExternalID:(id)arg1;
 - (id)emailAddress;
-- (id)owner;
+- (void)setLastName:(id)arg1;
+- (id)lastName;
+- (void)setFirstName:(id)arg1;
+- (id)firstName;
 - (id)_persistentSharee;
 - (void*)ABRecordWithAddressBook:(void*)arg1;
 - (id)lazyLoadRelationForKey:(id)arg1;
@@ -46,5 +45,6 @@
 - (void)setEmailAddress:(id)arg1;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
+- (id)UUID;
 
 @end

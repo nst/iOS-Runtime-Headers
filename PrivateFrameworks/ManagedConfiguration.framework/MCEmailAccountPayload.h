@@ -50,6 +50,7 @@
 
 - (id)description;
 - (void).cxx_destruct;
+- (id)emailAddress;
 - (id)outgoingMailServerUsername;
 - (BOOL)outgoingMailServerUseSSL;
 - (id)outgoingMailServerPortNumber;
@@ -74,6 +75,5 @@
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)title;
-- (id)emailAddress;
 
 @end

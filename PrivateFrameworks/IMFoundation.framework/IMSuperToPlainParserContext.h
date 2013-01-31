@@ -14,10 +14,10 @@
 
 - (id)name;
 - (void)dealloc;
-- (id)initWithAttributedString:(id)arg1;
 - (id)plainString;
 - (id)initWithAttributedString:(id)arg1 extractLinks:(BOOL)arg2;
 - (void)parser:(id)arg1 foundAttributes:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 characters:(id)arg4;
 - (id)resultsForLogging;
+- (id)initWithAttributedString:(id)arg1;
 
 @end

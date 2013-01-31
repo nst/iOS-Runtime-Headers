@@ -15,11 +15,11 @@
 @property(readonly) int changeType;
 
 
-- (id)description;
-- (void)dealloc;
 - (id)bookmark;
 - (id)changeTypeDescription;
 - (id)initWithBookmarkCollection:(id)arg1 bookmark:(id)arg2 changeType:(int)arg3;
+- (id)description;
+- (void)dealloc;
 - (int)changeType;
 - (id)collection;
 

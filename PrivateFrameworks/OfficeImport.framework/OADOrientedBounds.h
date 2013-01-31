@@ -28,10 +28,6 @@
 - (id).cxx_construct;
 - (BOOL)isEqual:(id)arg1;
 - (id)init;
-- (float)rotation;
-- (void)setRotation:(float)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (BOOL)isEqualToOrientedBounds:(id)arg1;
 - (int)yMode;
 - (int)xMode;
@@ -44,5 +40,9 @@
 - (void)setFlipX:(BOOL)arg1;
 - (void)setFlipY:(BOOL)arg1;
 - (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)rotation;
+- (void)setRotation:(float)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 
 @end

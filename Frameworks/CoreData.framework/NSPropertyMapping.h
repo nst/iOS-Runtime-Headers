@@ -27,6 +27,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)setUserInfo:(id)arg1;
+- (BOOL)isEditable;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 valueExpression:(id)arg2;
 - (id)_propertyTransforms;
 - (id)_initWithDestinationName:(id)arg1 valueExpression:(id)arg2;
@@ -36,9 +40,5 @@
 - (void)_throwIfNotEditable;
 - (void)_setPropertyTransforms:(id)arg1;
 - (void)setValueExpression:(id)arg1;
-- (void)setUserInfo:(id)arg1;
-- (BOOL)isEditable;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end

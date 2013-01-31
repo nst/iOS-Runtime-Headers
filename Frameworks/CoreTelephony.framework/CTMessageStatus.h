@@ -13,9 +13,9 @@
 @property(readonly) int result;
 
 
+- (int)result;
 - (id)initWithMessageId:(unsigned int)arg1 messageType:(int)arg2 result:(int)arg3;
 - (int)messageType;
 - (unsigned int)messageId;
-- (int)result;
 
 @end

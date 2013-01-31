@@ -9,19 +9,36 @@
     unsigned long _preferredEncoding;
 }
 
-+ (id)encodedDataForAddressList:(id)arg1 splittingAtLength:(unsigned int)arg2 firstLineBuffer:(unsigned int)arg3;
-+ (id)copyAddressListFromEncodedData:(id)arg1 encoding:(unsigned long)arg2;
-+ (BOOL)shouldDecodeHeaderForKey:(id)arg1;
 + (id)basicHeaders;
 + (BOOL)isStructuredHeaderKey:(id)arg1;
 + (id)uniqueHeaderKeyStringForString:(id)arg1;
 + (id)addressListFromEncodedString:(id)arg1;
++ (id)encodedDataForAddressList:(id)arg1 splittingAtLength:(unsigned int)arg2 firstLineBuffer:(unsigned int)arg3;
++ (id)copyAddressListFromEncodedData:(id)arg1 encoding:(unsigned long)arg2;
++ (BOOL)shouldDecodeHeaderForKey:(id)arg1;
 
 - (id)mutableCopy;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)_capitalizedKeyForKey:(id)arg1;
+- (id)headersForKey:(id)arg1;
+- (id)initWithHeaderData:(id)arg1 encoding:(unsigned long)arg2;
+- (id)copyFirstStringValueForKey:(id)arg1;
+- (id)copyAddressListForBcc;
+- (id)copyHeadersForKey:(id)arg1;
+- (id)firstSenderAddress;
+- (id)copyAddressListForCc;
+- (id)copyAddressListForTo;
+- (void)appendHeaderData:(id)arg1 andRecipients:(id)arg2;
+- (id)copyAddressListForSender;
+- (id)copyAddressListForResentFrom;
+- (id)encodedHeaders;
+- (id)firstHeaderForKey:(id)arg1;
+- (void)setPreferredEncoding:(unsigned long)arg1;
+- (unsigned long)preferredEncoding;
+- (id)headerData;
 - (BOOL)messageIsFromEntourage;
 - (BOOL)hasHeaderForKey:(id)arg1;
 - (id)_headerValueForKey:(id)arg1;
@@ -39,22 +56,5 @@
 - (id)references;
 - (id)copyAddressListForReplyTo;
 - (id)allHeaderKeys;
-- (id)headerData;
-- (id)_capitalizedKeyForKey:(id)arg1;
-- (id)headersForKey:(id)arg1;
-- (id)initWithHeaderData:(id)arg1 encoding:(unsigned long)arg2;
-- (id)copyFirstStringValueForKey:(id)arg1;
-- (id)copyAddressListForBcc;
-- (id)copyHeadersForKey:(id)arg1;
-- (id)firstSenderAddress;
-- (id)copyAddressListForCc;
-- (id)copyAddressListForTo;
-- (void)appendHeaderData:(id)arg1 andRecipients:(id)arg2;
-- (id)copyAddressListForSender;
-- (id)copyAddressListForResentFrom;
-- (id)encodedHeaders;
-- (id)firstHeaderForKey:(id)arg1;
-- (void)setPreferredEncoding:(unsigned long)arg1;
-- (unsigned long)preferredEncoding;
 
 @end

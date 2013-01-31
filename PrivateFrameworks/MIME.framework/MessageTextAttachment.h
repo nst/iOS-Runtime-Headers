@@ -15,6 +15,14 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (BOOL)isPlaceholder;
+- (BOOL)shouldDownloadAttachmentOnDisplay;
+- (id)fileWrapper;
+- (id)textEncodingNameForData:(id)arg1 mimeType:(id)arg2;
+- (BOOL)hasBeenDownloaded;
+- (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2;
+- (id)fileWrapperForcingDownload:(BOOL)arg1;
+- (id)mimePart;
 - (void)setMimePart:(id)arg1;
 - (BOOL)needsRedownload;
 - (id)textEncodingGuess;
@@ -24,15 +32,8 @@
 - (id)cachedValueForKey:(id)arg1;
 - (void)setCachedValue:(id)arg1 forKey:(id)arg2;
 - (unsigned int)approximateSize;
-- (BOOL)isPlaceholder;
-- (BOOL)shouldDownloadAttachmentOnDisplay;
-- (id)fileWrapper;
-- (id)textEncodingNameForData:(id)arg1 mimeType:(id)arg2;
-- (BOOL)hasBeenDownloaded;
-- (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2;
-- (id)fileWrapperForcingDownload:(BOOL)arg1;
-- (id)mimePart;
 - (void)download;
+- (id)contentType;
 - (id)mimeType;
 - (BOOL)isDisplayableInsidePlugin;
 - (BOOL)isContentDownloadable;
@@ -41,7 +42,6 @@
 - (BOOL)isContentOpenable;
 - (id)_contentTypeByStrippingZipIfNeeded:(BOOL)arg1;
 - (BOOL)isDisplayableInline;
-- (id)contentType;
 - (BOOL)isCalendarFile;
 - (void)scaleImageToFit:(unsigned int)arg1;
 - (unsigned int)imageScalingFlags;
@@ -49,7 +49,7 @@
 - (id)mf_markupStringForComposition:(BOOL)arg1 prependBlankLine:(BOOL)arg2 imageScale:(unsigned int)arg3;
 - (id)mf_markupURL;
 - (struct CGSize { float x1; float x2; })mf_markupSizeForImageScale:(unsigned int)arg1;
-- (BOOL)isPass;
 - (id)pass;
+- (BOOL)isPass;
 
 @end

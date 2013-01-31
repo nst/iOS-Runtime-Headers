@@ -15,8 +15,8 @@
 - (id)data;
 - (void)dealloc;
 - (id)init;
+- (unsigned int)band;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)band;
 
 @end

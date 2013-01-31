@@ -18,9 +18,9 @@
 - (void)dealloc;
 - (id)init;
 - (id)namedPort;
+- (id)addObserverForName:(id)arg1 queue:(id)arg2 usingBlock:(id)arg3;
 - (void)_sendRegistrationMessage:(long long)arg1 name:(id)arg2;
 - (void)_distributedNotificationMessage:(id)arg1 connection:(id)arg2;
 - (id)initWithNamedPort:(id)arg1;
-- (id)addObserverForName:(id)arg1 queue:(id)arg2 usingBlock:(id)arg3;
 
 @end

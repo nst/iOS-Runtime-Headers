@@ -21,10 +21,6 @@
 + (BOOL)reloadOnActiveTileGroupChange;
 + (BOOL)reloadOnStylesheetChange;
 
-- (void)reset;
-- (void)dealloc;
-- (id)init;
-- (id)stylesheet;
 - (id)tilesInScene;
 - (void)willStopDrawingTiles:(id)arg1;
 - (void)willStartDrawingTiles:(id)arg1;
@@ -41,5 +37,9 @@
 - (void)didMoveToSupermodel;
 - (void)setMapModel:(id)arg1;
 - (unsigned int)mapLayerPosition;
+- (void)reset;
+- (void)dealloc;
+- (id)init;
+- (id)stylesheet;
 
 @end

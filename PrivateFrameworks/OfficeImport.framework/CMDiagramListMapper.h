@@ -7,7 +7,6 @@
 }
 
 
-- (struct CGSize { float x1; float x2; })textSize;
 - (id)suggestedBoundsForHListItemWithIndex:(int)arg1;
 - (void)mapListItemAt:(id)arg1 index:(int)arg2 withState:(id)arg3;
 - (void)setDefaultFonSize;
@@ -15,5 +14,6 @@
 - (float)setFonSizeForChildNode:(id)arg1 atIndex:(unsigned int)arg2 level:(int)arg3;
 - (void)mapChildrenAt:(id)arg1 withState:(id)arg2;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (struct CGSize { float x1; float x2; })textSize;
 
 @end

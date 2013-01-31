@@ -77,9 +77,9 @@
 - (void)replaceObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withObjects:(const id*)arg2 count:(unsigned int)arg3;
 - (void)setObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)initWithContentsOfURL:(id)arg1;
+- (void)removeObjectsFromIndices:(unsigned int*)arg1 numIndices:(unsigned int)arg2;
 - (id)initWithContentsOfFile:(id)arg1;
 - (Class)classForCoder;
-- (void)removeObjectsFromIndices:(unsigned int*)arg1 numIndices:(unsigned int)arg2;
 - (void)sortUsingDescriptors:(id)arg1;
 - (void)filterUsingPredicate:(id)arg1;
 - (void)removeFirstObject;
@@ -93,8 +93,8 @@
 - (void)setObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)MSRemoveOneObject:(id)arg1;
 - (void)MSRemoveOneObjectByPointerComparison:(id)arg1;
-- (void)moveItemFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (void)removeItemAtIndex:(unsigned int)arg1;
+- (void)moveItemFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (id)nextDequeuedObject;
 - (id)lastEnqueuedObject;
 - (void)enqueueObject:(id)arg1;
@@ -110,11 +110,11 @@
 - (void)_mapkit_sortUsingLatitudeAscending:(BOOL)arg1;
 - (unsigned int)_mapkit_insertSortedAnnotationView:(id)arg1;
 - (unsigned int)_mapkit_insertSortedAnnotationView:(id)arg1 reverse:(BOOL)arg2;
+- (BOOL)mf_addObjectIfAbsent:(id)arg1;
 - (BOOL)mf_addObjectIfAbsentAccordingToEquals:(id)arg1;
 - (void)mf_moveObjectAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
-- (BOOL)mf_addObjectIfAbsent:(id)arg1;
-- (unsigned int)mf_removeObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
 - (unsigned int)mf_insertObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3 allowDuplicates:(BOOL)arg4;
+- (unsigned int)mf_removeObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
 - (BOOL)mf_isEmpty;
 - (id)mf_popElement;
 - (void)removeAllObjectsWithClass:(Class)arg1;

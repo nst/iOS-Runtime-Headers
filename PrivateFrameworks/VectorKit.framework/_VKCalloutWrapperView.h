@@ -13,12 +13,12 @@
 @property(retain) _VKPassthroughHitTestView * embeddingView;
 
 
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setEmbeddingView:(id)arg1;
 - (void)setLayoutConstraintsView:(id)arg1;
 - (id)layoutConstraintsView;
 - (id)embeddingView;
 - (void)snapLayoutConstraintsToContainerBounds;
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

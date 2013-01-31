@@ -13,13 +13,13 @@
 @property(copy) NSNumber * failureReason;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)failureReason;
+- (id)messageBody;
 - (void)setFailureReason:(id)arg1;
 - (void)setFailedMessageID:(id)arg1;
 - (id)failedMessageID;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (int)command;
-- (id)failureReason;
-- (id)messageBody;
 
 @end

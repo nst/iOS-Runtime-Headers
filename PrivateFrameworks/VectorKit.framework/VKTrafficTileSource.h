@@ -15,9 +15,6 @@
 @property(retain) VKTileSource * roadTileSource;
 
 
-- (void)setStylesheet:(id)arg1;
-- (void)dealloc;
-- (void)clearCaches;
 - (void)sawTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (BOOL)canFetchTrafficTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (void)_generatedTraffic:(id)arg1;
@@ -45,5 +42,8 @@
 - (id)initWithSkeletonTileSet:(id)arg1 dynamicTileSet:(id)arg2;
 - (void)setRoadTileSource:(id)arg1;
 - (int)maximumZoomLevel;
+- (void)dealloc;
+- (void)setStylesheet:(id)arg1;
+- (void)clearCaches;
 
 @end

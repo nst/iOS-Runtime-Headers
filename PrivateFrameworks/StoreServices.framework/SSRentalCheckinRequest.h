@@ -14,12 +14,13 @@
 
 
 - (id)accountIdentifier;
-- (id)initWithAccountIdentifier:(id)arg1 rentalKeyIdentifier:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)rentalKeyIdentifier;
 - (void)startWithCompletionBlock:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+- (id)initWithAccountIdentifier:(id)arg1 rentalKeyIdentifier:(id)arg2;
+- (void)startWithConnectionResponseBlock:(id)arg1;
 
 @end

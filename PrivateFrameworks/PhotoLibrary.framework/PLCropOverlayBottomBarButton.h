@@ -11,12 +11,12 @@
 @property(readonly) BOOL isDoneButton;
 
 
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
 - (BOOL)isDoneButton;
 - (id)initWithTitle:(id)arg1 buttonBarStyle:(int)arg2 buttonBarMode:(int)arg3 isDoneButton:(BOOL)arg4;
 - (void)_configureForButtonBarStyle:(int)arg1 buttonBarMode:(int)arg2;
 - (id)initWithTitle:(id)arg1 buttonBarStyle:(int)arg2 isDoneButton:(BOOL)arg3;
 - (void)buttonBar:(id)arg1 didChangeMode:(int)arg2;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
 
 @end

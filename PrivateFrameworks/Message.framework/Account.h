@@ -30,19 +30,10 @@
 + (id)displayedShortAccountTypeString;
 + (id)displayedAccountTypeString;
 
-- (void)setPassword:(id)arg1;
-- (id)username;
-- (void)setUsername:(id)arg1;
+- (id)hostname;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (id)domain;
-- (id)initWithProperties:(id)arg1;
-- (id)password;
-- (id)displayName;
-- (BOOL)isActive;
-- (void)setIsActive:(BOOL)arg1;
-- (id)serviceName;
-- (id)hostname;
+- (void)setDisplayName:(id)arg1;
 - (id)copyDiagnosticInformation;
 - (id)missingPasswordErrorWithTitle:(id)arg1;
 - (BOOL)shouldDisplayHostnameInErrorMessages;
@@ -88,7 +79,6 @@
 - (BOOL)_connectAndAuthenticate:(id)arg1;
 - (id)_newConnection;
 - (Class)connectionClass;
-- (BOOL)requiresAuthentication;
 - (BOOL)_shouldTryDirectSSLConnectionOnPort:(unsigned int)arg1;
 - (unsigned int)portNumber;
 - (unsigned int)defaultPortNumber;
@@ -106,6 +96,16 @@
 - (void)_setAccountProperties:(id)arg1;
 - (void)_resetAccountProperties:(id)arg1;
 - (void)releaseAllConnections;
-- (void)setDisplayName:(id)arg1;
+- (id)domain;
+- (id)initWithProperties:(id)arg1;
+- (id)password;
+- (id)displayName;
+- (BOOL)isActive;
+- (void)setIsActive:(BOOL)arg1;
+- (BOOL)requiresAuthentication;
+- (void)setPassword:(id)arg1;
+- (id)username;
+- (void)setUsername:(id)arg1;
+- (id)serviceName;
 
 @end

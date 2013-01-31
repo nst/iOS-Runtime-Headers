@@ -18,13 +18,13 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)presentedItemLocation;
-- (id)initWithMetadataStoreFileLocation:(id)arg1;
 - (id)presentedItemOperationQueue;
 - (id)presentedItemURL;
 - (void)accommodatePresentedItemDeletionWithCompletionHandler:(id)arg1;
 - (void)savePresentedItemChangesWithCompletionHandler:(id)arg1;
 - (void)relinquishPresentedItemToWriter:(id)arg1;
 - (void)relinquishPresentedItemToReader:(id)arg1;
+- (id)presentedItemLocation;
+- (id)initWithMetadataStoreFileLocation:(id)arg1;
 
 @end

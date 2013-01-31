@@ -28,11 +28,11 @@
 
 
 - (const struct { double x1; double x2; double x3; }*)corners;
-- (const struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; }*)faces;
 - (struct { double x1; double x2; double x3; })lerpPoint:(float*)arg1;
 - (BOOL)distanceClipsPoint:(struct { double x1; double x2; double x3; })arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })farPlane;
 - (BOOL)rejectsRect:(struct { double x1; double x2; double x3; double x4; })arg1;
 - (void)updateWithFrustum:(struct { BOOL x1; double x2; double x3; double x4; double x5; })arg1 matrix:(const struct { double x1[4][4]; }*)arg2;
+- (const struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; }*)faces;
 
 @end

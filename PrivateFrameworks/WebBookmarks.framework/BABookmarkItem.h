@@ -13,11 +13,11 @@
 @property(retain) WebBookmark * bookmark;
 
 
-- (id)description;
-- (void)dealloc;
 - (id)bookmark;
 - (void)setBookmark:(id)arg1;
 - (id)initWithBookmarkCollection:(id)arg1 bookmark:(id)arg2;
+- (id)description;
+- (void)dealloc;
 - (id)collection;
 
 @end

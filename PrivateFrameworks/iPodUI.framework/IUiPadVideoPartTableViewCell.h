@@ -18,21 +18,12 @@
 @property BOOL drawAsDisabled;
 @property(readonly) MPImageCacheRequest * videoImageRequest;
 
-+ (Class)contentViewClass;
 + (struct CGSize { float x1; float x2; })videoImageSize;
++ (Class)contentViewClass;
 
 - (void)setImageCache:(id)arg1;
 - (void)setDrawAsDisabled:(BOOL)arg1;
 - (BOOL)drawAsDisabled;
-- (id)imageCache;
-- (void)dealloc;
-- (void)prepareForReuse;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)setAlpha:(float)arg1;
-- (float)alpha;
-- (id)videoImage;
 - (void)setVideoImage:(id)arg1;
 - (id)_imageForImageRequest:(id)arg1;
 - (void)_createVideoImageView;
@@ -40,5 +31,14 @@
 - (id)videoImageRequest;
 - (id)videoChapterContentView;
 - (void)updateContentView;
+- (void)dealloc;
+- (id)videoImage;
+- (void)prepareForReuse;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)setAlpha:(float)arg1;
+- (float)alpha;
+- (id)imageCache;
 
 @end

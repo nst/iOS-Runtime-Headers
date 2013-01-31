@@ -13,9 +13,9 @@
 @property double accuracy;
 
 
-- (struct { double x1; double x2; })coordinate;
 - (double)accuracy;
-- (void)setCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setAccuracy:(double)arg1;
+- (struct { double x1; double x2; })coordinate;
+- (void)setCoordinate:(struct { double x1; double x2; })arg1;
 
 @end

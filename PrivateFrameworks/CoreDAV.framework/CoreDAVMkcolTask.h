@@ -20,6 +20,8 @@
 - (id)initWithURL:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (id)httpMethod;
+- (id)requestBody;
 - (void)setPropertiesToSet:(id)arg1;
 - (id)propertiesToSet;
 - (id)initWithPropertiesToSet:(id)arg1 atURL:(id)arg2;
@@ -30,7 +32,5 @@
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (int)absoluteOrder;
-- (id)httpMethod;
-- (id)requestBody;
 
 @end

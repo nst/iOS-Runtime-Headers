@@ -14,9 +14,6 @@
 
 
 - (id)description;
-- (long long)int64;
-- (void)setCursor:(unsigned long long)arg1;
-- (unsigned long long)cursor;
 - (id)initWithAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 data:(char *)arg2 memory:(id)arg3;
 - (BOOL)charAtOffset:(unsigned long long)arg1;
 - (id)arrayOfUInt64:(unsigned long)arg1;
@@ -49,5 +46,8 @@
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
 - (id)stringWithEncoding:(unsigned int)arg1 size:(unsigned long)arg2;
 - (id)readBytes:(unsigned long)arg1;
+- (void)setCursor:(unsigned long long)arg1;
+- (unsigned long long)cursor;
+- (long long)int64;
 
 @end

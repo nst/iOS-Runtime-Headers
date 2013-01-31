@@ -32,8 +32,6 @@
 @property double trafficTimeStamp;
 
 
-- (void)dealloc;
-- (struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; })key;
 - (id)roadData;
 - (void)drawDebug:(id)arg1 vectorTile:(id)arg2 debugFlags:(int)arg3;
 - (id)paths;
@@ -44,6 +42,8 @@
 - (double)trafficTimeStamp;
 - (void)setFrameNumber:(int)arg1;
 - (int)frameNumber;
+- (void)dealloc;
 - (struct { double x1; double x2; double x3; double x4; })tileRect;
+- (struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; })key;
 
 @end

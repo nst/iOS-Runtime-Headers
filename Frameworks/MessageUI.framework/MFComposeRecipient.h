@@ -17,25 +17,20 @@
 @property(getter=isRemovableFromSearchResults,readonly) BOOL removableFromSearchResults;
 @property(retain) NSString * countryCode;
 
-+ (id)mf_recipientWithGALResult:(id)arg1;
-+ (id)recipientWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4;
 + (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 + (id)recipientWithProperty:(int)arg1 address:(id)arg2;
++ (id)mf_recipientWithGALResult:(id)arg1;
++ (id)recipientWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4;
 
-- (id)address;
 - (int)identifier;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)property;
-- (void*)record;
-- (id)displayString;
-- (void)setIdentifier:(int)arg1;
-- (id)label;
-- (id)normalizedAddress;
-- (id)_unformattedAddress;
-- (id)placeholderName;
+- (int)recordID;
+- (id)uncommentedAddress;
+- (void)setCountryCode:(id)arg1;
+- (id)countryCode;
 - (void)setRecord:(void*)arg1 recordID:(int)arg2 identifier:(int)arg3;
 - (BOOL)isRemovableFromSearchResults;
 - (id)objectForDragType:(id)arg1;
@@ -44,12 +39,17 @@
 - (id)unlocalizedLabel;
 - (id)commentedAddress;
 - (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
-- (int)recordID;
-- (void)setCountryCode:(id)arg1;
-- (id)countryCode;
-- (id)uncommentedAddress;
-- (struct __CFPhoneNumber { }*)copyPhoneNumber;
+- (void*)record;
+- (id)displayString;
+- (void)setIdentifier:(int)arg1;
+- (id)label;
+- (id)normalizedAddress;
+- (id)_unformattedAddress;
+- (id)placeholderName;
+- (id)address;
+- (int)property;
 - (BOOL)isEmail;
+- (struct __CFPhoneNumber { }*)copyPhoneNumber;
 - (BOOL)isPhone;
 - (id)rawAddress;
 

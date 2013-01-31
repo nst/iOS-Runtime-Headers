@@ -16,10 +16,10 @@
 + (struct __CFString { }*)_CFDateFormatterPropertyForMonthLabelLength:(int)arg1;
 + (void)clearSharedManager;
 
+- (void)resetLocale;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
-- (void)resetLocale;
 - (id)monthLabelInfoArrayForLabelLength:(int)arg1;
 - (BOOL)use24hrTime;
 - (id)labelInfoWithUnsignedInteger:(unsigned int)arg1;

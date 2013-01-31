@@ -7,6 +7,7 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (id)initWithCalendarIdentifier:(id)arg1;
 - (unsigned int)retainCount;
 - (unsigned int)hash;
 - (id)retain;
@@ -36,6 +37,5 @@
 - (id)gregorianStartDate;
 - (void)setMinimumDaysInFirstWeek:(unsigned int)arg1;
 - (void)setFirstWeekday:(unsigned int)arg1;
-- (id)initWithCalendarIdentifier:(id)arg1;
 
 @end

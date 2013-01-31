@@ -15,10 +15,9 @@
 + (id)avQueue;
 
 - (id)initWithError:(id*)arg1;
-- (unsigned int)itemCount;
 - (void)dealloc;
 - (id)init;
-- (id)initWithArray:(id)arg1 error:(id*)arg2;
+- (BOOL)removeItemAtIndex:(unsigned int)arg1;
 - (BOOL)isBeingModified;
 - (void)removeItemsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)insertItem:(id)arg1 afterItem:(id)arg2 error:(id*)arg3;
@@ -31,7 +30,8 @@
 - (id)itemAtIndex:(unsigned int)arg1;
 - (BOOL)appendItemsFromArray:(id)arg1 error:(id*)arg2;
 - (int)_instantiateItem;
-- (BOOL)removeItemAtIndex:(unsigned int)arg1;
+- (id)initWithArray:(id)arg1 error:(id*)arg2;
+- (unsigned int)itemCount;
 - (void)removeAllItems;
 - (BOOL)removeItem:(id)arg1;
 

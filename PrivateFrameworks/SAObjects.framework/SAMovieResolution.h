@@ -8,14 +8,14 @@
 @property int height;
 @property int width;
 
-+ (id)resolution;
 + (id)resolutionWithDictionary:(id)arg1 context:(id)arg2;
++ (id)resolution;
 
-- (id)groupIdentifier;
+- (id)encodedClassName;
 - (void)setHeight:(int)arg1;
 - (int)height;
 - (void)setWidth:(int)arg1;
 - (int)width;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

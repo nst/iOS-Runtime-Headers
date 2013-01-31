@@ -15,23 +15,23 @@
 @property(copy) NSArray * policyRules;
 
 
-- (void)setPolicyRules:(id)arg1;
-- (id)initWithDownloadKind:(id)arg1 URLBagType:(int)arg2;
+- (int)URLBagType;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)setPolicyRules:(id)arg1;
 - (void)setPolicyRule:(id)arg1;
 - (id)_policyRuleForSizeLimit:(long long)arg1;
 - (void)unionNetworkConstraints:(id)arg1;
-- (void)unionPolicyRule:(id)arg1;
 - (id)downloadKind;
-- (int)URLBagType;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)initWithNetworkConstraints:(id)arg1;
 - (id)policyRules;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)unionPolicyRule:(id)arg1;
+- (id)initWithDownloadKind:(id)arg1 URLBagType:(int)arg2;
 
 @end

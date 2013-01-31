@@ -30,11 +30,7 @@
 }
 
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
 - (id)init;
-- (void)setOrigin:(struct CGPoint { float x1; float x2; })arg1;
-- (void)addSublayer:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)drags;
 - (void)setXOrigin:(float)arg1;
 - (void)setYOrigin:(float)arg1;
@@ -43,5 +39,9 @@
 - (void)updateContentSize;
 - (void)setEnableDrag:(BOOL)arg1;
 - (BOOL)handleEvent:(struct __GSEvent { }*)arg1 inLayer:(id)arg2;
+- (void)setOrigin:(struct CGPoint { float x1; float x2; })arg1;
+- (void)addSublayer:(id)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
 
 @end

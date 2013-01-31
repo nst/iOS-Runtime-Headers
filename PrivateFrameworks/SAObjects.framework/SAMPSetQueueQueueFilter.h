@@ -14,13 +14,13 @@
 + (id)setQueueQueueFilterWithDictionary:(id)arg1 context:(id)arg2;
 + (id)setQueueQueueFilter;
 
-- (id)groupIdentifier;
 - (void)setOperation:(id)arg1;
 - (id)operation;
-- (id)value;
-- (void)setValue:(id)arg1;
 - (void)setMediaItemProperty:(id)arg1;
 - (id)mediaItemProperty;
 - (id)encodedClassName;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (id)groupIdentifier;
 
 @end

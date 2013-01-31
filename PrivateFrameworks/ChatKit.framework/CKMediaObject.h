@@ -34,18 +34,11 @@
 + (id)supportedMIMETypes;
 + (id)mimeTypesToFileExtensions;
 
-- (id)icon;
+- (id)dataRepresentation;
 - (id)data;
 - (id)description;
 - (void)dealloc;
 - (int)mediaType;
-- (id)previewItemURL;
-- (id)mimeType;
-- (id)subtitle;
-- (id)title;
-- (double)duration;
-- (void)setDuration:(double)arg1;
-- (id)dataRepresentation;
 - (void)setExportedFilename:(id)arg1;
 - (void)setMimeType:(id)arg1;
 - (id)displayFilename;
@@ -69,6 +62,13 @@
 - (id)SMSComposePropertyList;
 - (id)exportedFilename;
 - (BOOL)shouldShowDisclosure;
+- (id)previewItemURL;
+- (id)mimeType;
+- (id)subtitle;
+- (id)title;
+- (double)duration;
+- (void)setDuration:(double)arg1;
+- (id)icon;
 - (id)filename;
 
 @end

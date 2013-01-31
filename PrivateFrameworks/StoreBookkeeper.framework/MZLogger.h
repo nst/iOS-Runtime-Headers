@@ -20,6 +20,9 @@
 
 + (id)sharedLogger;
 
+- (id)filter;
+- (void)dealloc;
+- (id)init;
 - (void)removeRuntimeOverride:(id)arg1;
 - (void)addRuntimeOverride:(id)arg1;
 - (id)auxPath;
@@ -31,10 +34,7 @@
 - (void)_updateSettingsFromPreferences:(id)arg1;
 - (void)logFunction:(const char *)arg1 format:(id)arg2;
 - (BOOL)shouldOverrideCondition:(id)arg1 file:(id)arg2;
-- (void)dealloc;
-- (id)init;
-- (void)setFilter:(id)arg1;
 - (void)logString:(id)arg1;
-- (id)filter;
+- (void)setFilter:(id)arg1;
 
 @end

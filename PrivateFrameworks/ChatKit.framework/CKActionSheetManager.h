@@ -33,11 +33,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)setHandler:(id)arg1;
-- (id)handler;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)dismissActionSheet:(id)arg1 withButtonIndex:(int)arg2;
 - (BOOL)performBeforeAnimation;
 - (id)presenter;
@@ -50,5 +45,10 @@
 - (void)didFinishRotating;
 - (void)willStartRotating;
 - (void)dismissCurrentActionSheet;
+- (void)setHandler:(id)arg1;
+- (id)handler;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 
 @end

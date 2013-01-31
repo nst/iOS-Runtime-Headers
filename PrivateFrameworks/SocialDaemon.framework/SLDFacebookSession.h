@@ -14,10 +14,13 @@
 @property(readonly) ACAccountStore * accountStore;
 
 
-- (void)unlikeURL:(id)arg1 completion:(id)arg2;
-- (void)likeURL:(id)arg1 completion:(id)arg2;
-- (void)fetchLikeStatusForURL:(id)arg1 flags:(id)arg2 completion:(id)arg3;
 - (void).cxx_destruct;
+- (id)_privilegedAccount;
+- (void)_uploadPost:(id)arg1 withSourceAppIdentifier:(id)arg2 suppressAlerts:(BOOL)arg3 trackPostStatus:(BOOL)arg4 completion:(id)arg5;
+- (id)postUploads;
+- (void)_playPostSound;
+- (void)finishedPostUpload:(id)arg1 withSuccess:(BOOL)arg2;
+- (id)whitelistedClassNamesForDecoding;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (id)_tokenSecret;
 - (void)revokeAllAccessTokensForDeviceWithCompletion:(id)arg1;
@@ -30,12 +33,9 @@
 - (void)accountForEntitledClientWithHandler:(id)arg1;
 - (void)doTestCallWithDict:(id)arg1 withHandler:(id)arg2;
 - (void)setActiveAccountIdentifier:(id)arg1;
+- (void)unlikeURL:(id)arg1 completion:(id)arg2;
+- (void)likeURL:(id)arg1 completion:(id)arg2;
+- (void)fetchLikeStatusForURL:(id)arg1 flags:(id)arg2 completion:(id)arg3;
 - (id)accountStore;
-- (id)_privilegedAccount;
-- (void)_uploadPost:(id)arg1 withSourceAppIdentifier:(id)arg2 suppressAlerts:(BOOL)arg3 trackPostStatus:(BOOL)arg4 completion:(id)arg5;
-- (id)postUploads;
-- (void)_playPostSound;
-- (void)finishedPostUpload:(id)arg1 withSuccess:(BOOL)arg2;
-- (id)whitelistedClassNamesForDecoding;
 
 @end

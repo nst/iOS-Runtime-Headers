@@ -14,13 +14,13 @@
 + (id)exceptionDateWithDate:(id)arg1;
 + (id)relations;
 
+- (void)setOwner:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)date;
-- (void)setOwner:(id)arg1;
 - (id)owner;
-- (id)initWithExceptionDate:(id)arg1;
+- (id)date;
 - (int)entityType;
+- (id)initWithExceptionDate:(id)arg1;
 
 @end

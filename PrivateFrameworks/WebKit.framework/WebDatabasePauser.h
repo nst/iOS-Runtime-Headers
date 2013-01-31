@@ -8,7 +8,7 @@
 
 - (void)applicationWillEnterForeground;
 - (void)applicationDidEnterBackground;
-- (void)dealloc;
 - (id)initWithBackgroundNotification:(id)arg1 foregroundNotification:(id)arg2;
+- (void)dealloc;
 
 @end

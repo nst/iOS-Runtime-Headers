@@ -51,13 +51,10 @@
 + (id)displayedShortAccountTypeString;
 + (id)displayedAccountTypeString;
 
-- (id)username;
+- (id)hostname;
 - (void)invalidate;
 - (id)identifier;
 - (void)dealloc;
-- (id)displayName;
-- (id)hostname;
-- (void)stopListeningForNotifications;
 - (unsigned int)daysToSync;
 - (BOOL)supportsServerSearch;
 - (void)processRequests:(id)arg1 mailbox:(id)arg2 consumers:(id)arg3;
@@ -144,5 +141,8 @@
 - (id)accountPropertyForKey:(id)arg1;
 - (BOOL)shouldRestoreMessagesAfterFailedDelete;
 - (BOOL)moveMessages:(id)arg1 fromMailbox:(id)arg2 toMailbox:(id)arg3 markAsRead:(BOOL)arg4 unsuccessfulOnes:(id)arg5;
+- (void)stopListeningForNotifications;
+- (id)displayName;
+- (id)username;
 
 @end

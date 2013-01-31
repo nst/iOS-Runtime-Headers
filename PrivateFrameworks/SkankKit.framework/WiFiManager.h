@@ -33,16 +33,10 @@
 
 + (id)sharedInstance;
 
-- (void)_save;
-- (BOOL)connected;
+- (void)_load;
 - (void)save;
 - (void)dealloc;
 - (id)init;
-- (id)macAddress;
-- (struct __SCDynamicStore { }*)store;
-- (BOOL)enabled;
-- (BOOL)setEnabled:(BOOL)arg1;
-- (void)_load;
 - (id)_interfaceName;
 - (void)setTxPower:(int)arg1;
 - (int)txPower;
@@ -94,5 +88,11 @@
 - (void)_configurationChanged:(unsigned char)arg1;
 - (void)_scanComplete:(id)arg1 error:(int)arg2;
 - (void)_dynamicStoreChanged;
+- (BOOL)connected;
+- (void)_save;
+- (id)macAddress;
+- (BOOL)enabled;
+- (BOOL)setEnabled:(BOOL)arg1;
+- (struct __SCDynamicStore { }*)store;
 
 @end

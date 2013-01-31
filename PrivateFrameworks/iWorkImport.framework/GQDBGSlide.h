@@ -10,9 +10,9 @@
 }
 
 
-- (void)dealloc;
-- (id)init;
 - (id)noteFrame;
 - (id)master;
+- (void)dealloc;
+- (id)init;
 
 @end

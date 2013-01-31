@@ -6,40 +6,26 @@
     struct AVControllerPrivate { id x1; id x2; id x3; id x4; id x5; Class x6; id x7; int x8; int x9; float x10; float x11; int x12; BOOL x13; id x14; float x15; struct __CFString {} *x16; id x17; BOOL x18; BOOL x19; BOOL x20; id x21; struct OpaqueFigVisualContext {} *x22; id x23; struct __CFRunLoop {} *x24; unsigned int x25; int x26; int x27; int x28; BOOL x29; BOOL x30; BOOL x31; BOOL x32; id x33; struct OpaqueFigPlayer {} *x34; id x35; id x36; id x37; BOOL x38; BOOL x39; id x40; id x41; BOOL x42; BOOL x43; BOOL x44; int x45; BOOL x46; } *_priv;
 }
 
-+ (BOOL)isNetworkSupportedPath:(id)arg1;
++ (BOOL)isSupportedFileExtension:(id)arg1;
 + (id)avControllerWithQueue:(id)arg1 error:(id*)arg2;
 + (id)avController;
 + (BOOL)isSupportedMimeType:(id)arg1;
 + (void)setEnableNetworkMode:(BOOL)arg1;
 + (id)convertFigTimeDictionaryToTimeIntervalWithKey:(id)arg1 stringURLToNSURLWithKey:(id)arg2 inDictionaries:(id)arg3;
 + (id)compatibleAudioRouteForRoute:(id)arg1;
-+ (BOOL)isSupportedFileExtension:(id)arg1;
++ (BOOL)isNetworkSupportedPath:(id)arg1;
 
-- (double)currentTime;
-- (float)rate;
-- (void)setCurrentTime:(double)arg1;
-- (BOOL)setRepeatMode:(int)arg1;
-- (int)repeatMode;
 - (id)initWithError:(id*)arg1;
-- (id)attributeForKey:(id)arg1;
-- (void)setEQPreset:(int)arg1;
-- (BOOL)isCurrentItemReady;
-- (BOOL)muted;
-- (void)seekToDate:(id)arg1;
-- (void)setCurrentTime:(double)arg1 options:(int)arg2;
+- (void)setVolume:(float)arg1;
+- (float)volume;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
+- (BOOL)play:(id*)arg1;
 - (BOOL)setPickedRouteWithPassword:(id)arg1 withPassword:(id)arg2;
-- (struct CGImage { }*)grabCGImageAtTime:(double)arg1 withTimeOptions:(int)arg2 withImageOptions:(id)arg3 actualTime:(double*)arg4;
-- (void)makeCurrentItemReady;
-- (id)initWithQueue:(id)arg1 error:(id*)arg2;
-- (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
-- (void)pause;
-- (id)currentItem;
-- (void)setLayer:(id)arg1;
-- (BOOL)isValid;
+- (void)setQueue:(id)arg1;
+- (id)queue;
 - (void)figPlayerNotificationHandler:(id)arg1;
 - (void)dequeueDeadItem;
 - (struct OpaqueFigPlaybackItem { }*)createItemWithURL:(id)arg1 flags:(unsigned long)arg2 error:(int*)arg3;
@@ -115,11 +101,25 @@
 - (BOOL)activate:(id*)arg1;
 - (BOOL)okToNotifyFromThisThread;
 - (int)eqPreset;
-- (void)setVolume:(float)arg1;
-- (float)volume;
-- (void)setQueue:(id)arg1;
-- (id)queue;
-- (BOOL)play:(id*)arg1;
+- (struct CGImage { }*)grabCGImageAtTime:(double)arg1 withTimeOptions:(int)arg2 withImageOptions:(id)arg3 actualTime:(double*)arg4;
+- (void)makeCurrentItemReady;
+- (id)initWithQueue:(id)arg1 error:(id*)arg2;
+- (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (void)pause;
+- (id)currentItem;
+- (void)setLayer:(id)arg1;
+- (BOOL)isValid;
+- (id)attributeForKey:(id)arg1;
+- (void)setEQPreset:(int)arg1;
+- (BOOL)isCurrentItemReady;
+- (BOOL)muted;
+- (void)seekToDate:(id)arg1;
+- (BOOL)setRepeatMode:(int)arg1;
+- (int)repeatMode;
+- (void)setCurrentTime:(double)arg1 options:(int)arg2;
+- (void)setCurrentTime:(double)arg1;
+- (float)rate;
+- (double)currentTime;
 - (void)stepByCount:(int)arg1;
 
 @end

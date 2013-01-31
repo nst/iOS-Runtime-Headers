@@ -31,10 +31,12 @@
 @property(readonly) BOOL activeTransactionHasWrites;
 @property(readonly) int activeTransactionKind;
 @property int profilingLevel;
+@property(readonly) NSString * path;
 @property(readonly) struct sqlite3 { }* db;
 @property <MLSQLiteConnectionSQLiteDelegate> * SQLiteDelegate;
 
 
+- (id)path;
 - (id)description;
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -43,7 +45,6 @@
 - (int)activeTransactionKind;
 - (BOOL)activeTransactionHasWrites;
 - (BOOL)enumerateRowsWithSQL:(id)arg1 parameters:(id)arg2 handler:(id)arg3;
-- (BOOL)enumerateRowsWithSQL:(id)arg1 valueHandler:(id)arg2;
 - (id)initForWritingWithURL:(id)arg1;
 - (id)initForReadingWithURL:(id)arg1;
 - (void)incrementWriteStatementRunCount;
@@ -68,6 +69,7 @@
 - (void)_addRegisteredModule:(id)arg1 name:(id)arg2;
 - (id)_registeredModuleNamed:(id)arg1;
 - (void)_addRegisteredFunction:(id)arg1 name:(id)arg2 argumentCount:(int)arg3;
+- (BOOL)enumerateRowsWithSQL:(id)arg1 valueHandler:(id)arg2;
 - (BOOL)enumerateRowsWithSQL:(id)arg1 handler:(id)arg2;
 - (void)registerFunctionName:(id)arg1 argumentCount:(int)arg2 block:(id)arg3;
 - (BOOL)performTransactionKind:(int)arg1 withBlock:(id)arg2;

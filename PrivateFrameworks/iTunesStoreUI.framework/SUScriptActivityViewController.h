@@ -21,8 +21,8 @@
 @property(readonly) NSString * activityTypeSaveToCameraRoll;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (id)activityTypeSaveToCameraRoll;
 - (id)activityTypePrint;
@@ -38,9 +38,9 @@
 - (id)newNativeViewController;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)excludedActivityTypes;
 - (void)setExcludedActivityTypes:(id)arg1;
-- (id)attributeKeys;
 
 @end

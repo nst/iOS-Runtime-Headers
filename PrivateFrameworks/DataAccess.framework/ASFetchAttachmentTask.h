@@ -10,11 +10,9 @@
 }
 
 
-- (void)finishWithError:(id)arg1;
 - (void)dealloc;
-- (id)command;
-- (id)messageID;
 - (id)contentType;
+- (id)messageID;
 - (id)parameterData;
 - (int)connectionActionForResponse:(id)arg1;
 - (id)initForMessageServerID:(id)arg1 andAttachmentName:(id)arg2;
@@ -24,5 +22,7 @@
 - (id)requestBody;
 - (int)commandCode;
 - (id)attachmentName;
+- (id)command;
+- (void)finishWithError:(id)arg1;
 
 @end

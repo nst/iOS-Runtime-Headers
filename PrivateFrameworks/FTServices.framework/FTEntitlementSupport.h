@@ -14,17 +14,17 @@
 
 + (id)sharedInstance;
 
-- (id)registrationState;
-- (void)_registrationStateChanged;
-- (void)_handleEntitlementNotification:(struct __CFDictionary { }*)arg1;
-- (void)_unregisterForCTEntitlementNotifications;
-- (BOOL)_registerForCTEntitlementNotifications;
 - (id)init;
+- (id)registrationState;
 - (BOOL)faceTimeNonWiFiEntitled;
 - (void)_handleCTServiceRequestName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2 contextInfo:(void*)arg3;
 - (BOOL)_reconnectCTServerConnectionIfNecessary;
 - (BOOL)_disconnectCTServerConnection;
 - (BOOL)_setupCTServerConnection;
 - (void)_cleanupMachInfo;
+- (void)_registrationStateChanged;
+- (void)_handleEntitlementNotification:(struct __CFDictionary { }*)arg1;
+- (void)_unregisterForCTEntitlementNotifications;
+- (BOOL)_registerForCTEntitlementNotifications;
 
 @end

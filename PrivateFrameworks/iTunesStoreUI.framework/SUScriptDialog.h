@@ -19,10 +19,9 @@
 @property(retain) NSString * title;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
-- (void)setButtons:(id)arg1;
 - (void)showFromDOMElement:(id)arg1;
 - (void)showSheet;
 - (void)_logSheetWarnings;
@@ -31,6 +30,7 @@
 - (id)_className;
 - (id)scriptAttributeKeys;
 - (void)setTextFields:(id)arg1;
+- (id)attributeKeys;
 - (void)dealloc;
 - (void)setBody:(id)arg1;
 - (id)buttons;
@@ -41,6 +41,6 @@
 - (void)setCancelButtonIndex:(id)arg1;
 - (id)cancelButtonIndex;
 - (void)setTitle:(id)arg1;
-- (id)attributeKeys;
+- (void)setButtons:(id)arg1;
 
 @end

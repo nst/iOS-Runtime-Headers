@@ -19,6 +19,11 @@
 @property BOOL crossfade;
 
 
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)contextInfo;
+- (void)setContextInfo:(id)arg1;
 - (void)setCrossfade:(BOOL)arg1;
 - (void)setUnderLock:(BOOL)arg1;
 - (BOOL)crossfade;
@@ -27,13 +32,8 @@
 - (id)initWithSettings:(id)arg1 zone:(struct _NSZone { }*)arg2;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (BOOL)flip;
 - (void)setAnimated:(BOOL)arg1;
 - (BOOL)animated;
-- (id)contextInfo;
-- (void)setContextInfo:(id)arg1;
 
 @end

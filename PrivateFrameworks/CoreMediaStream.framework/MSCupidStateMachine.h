@@ -20,7 +20,7 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)deactivate;
+- (id)personID;
 - (void)set_userManifest:(id)arg1;
 - (void)setHasDeactivated:(BOOL)arg1;
 - (void)_commitUserManifest;
@@ -39,6 +39,6 @@
 - (id)_latestNextActivityDate;
 - (id)initWithPersonID:(id)arg1;
 - (void)forget;
-- (id)personID;
+- (void)deactivate;
 
 @end

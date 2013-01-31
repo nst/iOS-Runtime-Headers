@@ -21,6 +21,16 @@
 
 + (float)chooseReferenceFontSizeFrom:(float)arg1 and:(float)arg2;
 
+- (void)remove:(id)arg1;
+- (void)add:(id)arg1;
+- (float)top;
+- (float)right;
+- (float)left;
+- (float)bottom;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (float)rotationAngle;
+- (void)setChildren:(id)arg1;
 - (void)setChunkPosition:(unsigned int)arg1;
 - (void)translateObjectYBy:(float)arg1;
 - (BOOL)intersectsChild:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -66,8 +76,6 @@
 - (void)resizeWith:(id)arg1;
 - (id)copyAndSplitChildrenAtIndex:(unsigned int)arg1;
 - (int)compareTopDescending:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (void)setAnchor:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })anchor;
 - (void)removeAll;
@@ -77,13 +85,5 @@
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (struct CGSize { float x1; float x2; })advance;
-- (void)remove:(id)arg1;
-- (void)add:(id)arg1;
-- (float)top;
-- (float)right;
-- (float)left;
-- (float)bottom;
-- (void)setChildren:(id)arg1;
-- (float)rotationAngle;
 
 @end

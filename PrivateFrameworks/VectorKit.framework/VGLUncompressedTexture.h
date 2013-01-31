@@ -12,11 +12,11 @@
 }
 
 
-- (void)dealloc;
-- (id)initWithCGImage:(struct CGImage { }*)arg1;
-- (id)initWithData:(id)arg1;
 - (struct { float x1; float x2; float x3; float x4; })textureCoordinateRect;
 - (BOOL)loadTexture;
 - (BOOL)decodeTexture;
+- (void)dealloc;
+- (id)initWithCGImage:(struct CGImage { }*)arg1;
+- (id)initWithData:(id)arg1;
 
 @end

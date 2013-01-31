@@ -20,6 +20,10 @@
 
 + (id)server;
 
+- (void)setVolume:(float)arg1;
+- (void)dealloc;
+- (id)init;
+- (int)pid;
 - (id)_serviceName;
 - (int)activeApplicationOrientation;
 - (BOOL)isPointInsideAccessibilityInspector:(struct { int x1; int x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; unsigned int x5; unsigned long long x6; void *x7; int x8; int x9; unsigned int x10; unsigned char x11[0]; }*)arg1;
@@ -57,9 +61,5 @@
 - (id)_handleActionResult:(id)arg1;
 - (id)_handleGestureOverrideResult:(id)arg1;
 - (id)_handleReplyResult:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)setVolume:(float)arg1;
-- (int)pid;
 
 @end

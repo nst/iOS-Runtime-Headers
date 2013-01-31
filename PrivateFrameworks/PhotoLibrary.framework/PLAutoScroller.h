@@ -20,12 +20,12 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)setTargetPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })targetPoint;
-- (void)_stopAutoscrollTimer;
 - (float)thresholdDistance;
 - (void)_updateAutoscrollTimer:(id)arg1;
 - (id)initWithTargetScrollView:(id)arg1 thresholdDistance:(float)arg2;
 - (void)stopAndInvalidate;
+- (void)setTargetPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })targetPoint;
+- (void)_stopAutoscrollTimer;
 
 @end

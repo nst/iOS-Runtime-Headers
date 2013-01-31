@@ -11,9 +11,9 @@
 @property(retain) MPMediaItem * collectionRepresentativeItem;
 
 
+- (void)dealloc;
 - (void)setCollectionRepresentativeItem:(id)arg1;
 - (id)collectionRepresentativeItem;
 - (id)initWithCollectionRepresentativeItem:(id)arg1;
-- (void)dealloc;
 
 @end

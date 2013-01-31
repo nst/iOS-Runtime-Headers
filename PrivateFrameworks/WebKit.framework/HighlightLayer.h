@@ -10,8 +10,8 @@
 }
 
 
-- (id)actionForKey:(id)arg1;
-- (void)layoutSublayers;
 - (id)initWithHighlightView:(id)arg1 webView:(id)arg2;
+- (void)layoutSublayers;
+- (id)actionForKey:(id)arg1;
 
 @end

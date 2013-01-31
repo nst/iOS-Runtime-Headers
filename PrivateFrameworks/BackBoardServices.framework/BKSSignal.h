@@ -7,9 +7,9 @@
 }
 
 
-- (BOOL)hasBeenSignalled;
 - (void)reset;
 - (id)init;
+- (BOOL)hasBeenSignalled;
 - (void)signal;
 
 @end

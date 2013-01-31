@@ -19,17 +19,16 @@
 + (void)_enableLogging;
 + (id)sharedDownloadManagerForMediaKind:(id)arg1 persistenceIdentifier:(id)arg2;
 
+- (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
+- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
+- (void)cancelAuthenticationChallenge:(id)arg1;
+- (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (id)description;
 - (void)cancel;
 - (void)dealloc;
 - (void)_invalidate;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (void)start;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
-- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
-- (void)cancelAuthenticationChallenge:(id)arg1;
-- (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (long long)_getDownloadIdent;
 - (void)_sourcePerform;
 - (void)downloadHandler:(id)arg1 handleAuthenticationSession:(id)arg2;
@@ -50,5 +49,6 @@
 - (void)setDelegateQueue:(id)arg1;
 - (void)unscheduleFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)initWithInfo:(const struct InternalInit { id x1; id x2; id x3; id x4; BOOL x5; long long x6; }*)arg1;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 
 @end

@@ -21,21 +21,21 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void)setName:(id)arg1;
+- (id)name;
+- (void)dealloc;
+- (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
+- (double)altitude;
+- (double)longitude;
+- (double)latitude;
 - (void)setAltitude:(double)arg1;
+- (BOOL)hasAltitude;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)relevantText;
 - (void)setRelevantText:(id)arg1;
 - (void)setBoxedAltitude:(id)arg1;
 - (id)boxedAltitude;
-- (void)setName:(id)arg1;
-- (id)name;
-- (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
-- (double)altitude;
-- (BOOL)hasAltitude;
-- (double)longitude;
-- (double)latitude;
 - (void)setLongitude:(double)arg1;
 - (void)setLatitude:(double)arg1;
 

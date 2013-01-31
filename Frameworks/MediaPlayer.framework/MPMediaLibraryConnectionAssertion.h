@@ -12,9 +12,9 @@
 @property(readonly) NSString * identifier;
 
 
-- (id)_initWithMediaLibrary:(id)arg1 identifier:(id)arg2;
 - (id)identifier;
 - (id)description;
 - (void)dealloc;
+- (id)_initWithMediaLibrary:(id)arg1 identifier:(id)arg2;
 
 @end

@@ -16,15 +16,12 @@
 @property(readonly) NSManagedObjectContext * managedObjectContext;
 @property int version;
 
-+ (struct __CFString { }*)_copyRootPath;
 + (id)defaultPath;
++ (struct __CFString { }*)_copyRootPath;
 
 - (id)path;
 - (id)managedObjectContext;
 - (void).cxx_destruct;
-- (void)setVersion:(int)arg1;
-- (int)version;
-- (id)initWithPath:(id)arg1;
 - (id)initWithDefaultPath;
 - (void)_removeFilesAtURL:(id)arg1 forStoreCoordinator:(id)arg2;
 - (BOOL)_databaseFileExists;
@@ -35,6 +32,9 @@
 - (unsigned int)countOfEntityNamed:(id)arg1 withPredicate:(id)arg2;
 - (id)fetchObjectsForEntityNamed:(id)arg1 withPredicate:(id)arg2;
 - (id)fetchObjectsForEntityNamed:(id)arg1;
+- (void)setVersion:(int)arg1;
+- (int)version;
+- (id)initWithPath:(id)arg1;
 - (id)_managedObjectModel;
 - (id)_persistentStoreCoordinator;
 

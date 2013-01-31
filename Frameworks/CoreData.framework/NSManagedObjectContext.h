@@ -60,11 +60,11 @@
     id _reserved2;
 }
 
++ (void)initialize;
 + (void)_mergeChangesFromRemoteContextSave:(id)arg1 intoContexts:(id)arg2;
 + (void)__Multithreading_Violation_AllThatIsLeftToUsIsHonor__;
 + (BOOL)_handleError:(id)arg1 withError:(id*)arg2;
 + (BOOL)accessInstanceVariablesDirectly;
-+ (void)initialize;
 
 - (void)setUndoManager:(id)arg1;
 - (void)setPersistentStoreCoordinator:(id)arg1;
@@ -83,6 +83,24 @@
 - (void)dealloc;
 - (oneway void)release;
 - (id)init;
+- (id)parentContext;
+- (void)performBlock:(id)arg1;
+- (void)setParentContext:(id)arg1;
+- (void)performBlockAndWait:(id)arg1;
+- (id)initWithConcurrencyType:(unsigned int)arg1;
+- (void)_processEndOfEventNotification:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)finalize;
+- (BOOL)isEditing;
+- (void)unlock;
+- (void)lock;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (void)redo;
+- (void)undo;
+- (id)undoManager;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)_parentProcessSaveRequest:(id)arg1 inContext:(id)arg2 error:(id*)arg3;
 - (id)_parentObjectsForFetchRequest:(id)arg1 inContext:(id)arg2 error:(id*)arg3;
 - (void)_copyChildObject:(id)arg1 toParentObject:(id)arg2 fromChildContext:(id)arg3;
@@ -245,24 +263,6 @@
 - (id)_mappedForParentStoreID:(id)arg1;
 - (BOOL)_hasIDMappings;
 - (id)_retainedObjectWithID:(id)arg1 optionalHandler:(id)arg2 withInlineStorage:(BOOL)arg3;
-- (id)parentContext;
-- (void)performBlock:(id)arg1;
-- (void)setParentContext:(id)arg1;
-- (void)performBlockAndWait:(id)arg1;
-- (id)initWithConcurrencyType:(unsigned int)arg1;
-- (void)_processEndOfEventNotification:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)finalize;
-- (BOOL)isEditing;
-- (void)unlock;
-- (void)lock;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (void)redo;
-- (void)undo;
-- (id)undoManager;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)pl_refresh;
 
 @end

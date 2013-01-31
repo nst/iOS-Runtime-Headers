@@ -13,6 +13,7 @@
     NSString *_containerPath;
     SSItemContentRating *_contentRating;
     NSNumber *_itemIdentifier;
+    NSString *_itemName;
     BOOL _profileValidated;
     NSString *_softwareType;
     NSNumber *_storeFrontIdentifier;
@@ -28,6 +29,7 @@
 @property(copy) NSString * containerPath;
 @property(copy) SSItemContentRating * contentRating;
 @property(retain) NSNumber * itemIdentifier;
+@property(copy) NSString * itemName;
 @property(getter=isProfileValidated) BOOL profileValidated;
 @property(copy) NSString * softwareType;
 @property(retain) NSNumber * storeFrontIdentifier;
@@ -36,9 +38,6 @@
 
 + (id)lookupAttributeKeys;
 
-- (id)bundleVersion;
-- (void)setBundleVersion:(id)arg1;
-- (void)setBundleIdentifier:(id)arg1;
 - (void)setVersionOrdering:(id)arg1;
 - (void)setVersionIdentifier:(id)arg1;
 - (void)setSoftwareType:(id)arg1;
@@ -50,23 +49,28 @@
 - (void)setItemIdentifier:(id)arg1;
 - (id)accountIdentifier;
 - (id)storeFrontIdentifier;
-- (id)itemIdentifier;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountDSID;
-- (id)bundleIdentifier;
-- (id)description;
-- (void)dealloc;
-- (void)setContentRating:(id)arg1;
-- (id)contentRating;
-- (void)setProfileValidated:(BOOL)arg1;
-- (BOOL)isProfileValidated;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
+- (id)itemName;
 - (id)containerPath;
+- (void)setItemName:(id)arg1;
 - (void)_loadMetadataFromContainer:(id)arg1;
 - (void)setContainerPath:(id)arg1;
 - (void)setAccountDSID:(id)arg1;
 - (void)setBundleShortVersionString:(id)arg1;
 - (id)bundleShortVersionString;
+- (id)bundleIdentifier;
+- (id)description;
+- (void)dealloc;
+- (void)setProfileValidated:(BOOL)arg1;
+- (BOOL)isProfileValidated;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (void)setContentRating:(id)arg1;
+- (id)contentRating;
+- (id)itemIdentifier;
+- (id)bundleVersion;
+- (void)setBundleVersion:(id)arg1;
+- (void)setBundleIdentifier:(id)arg1;
 
 @end

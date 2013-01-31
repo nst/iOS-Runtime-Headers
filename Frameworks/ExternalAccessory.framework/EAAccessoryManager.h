@@ -31,6 +31,13 @@
 
 - (void)dealloc;
 - (id)init;
+- (void)accessibilitySystemPropertyRequest:(id)arg1;
+- (void)accessibilitySystemPropertyChange:(id)arg1;
+- (void)accessibilityItemPropertyRequest:(id)arg1;
+- (void)accessibilityAction:(id)arg1;
+- (void)accessibilityContextChange:(id)arg1;
+- (void)endSession:(unsigned int)arg1 forConnectionID:(unsigned int)arg2;
+- (void)openCompleteForSession:(unsigned int)arg1 connectionID:(unsigned int)arg2;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)pointOfInterestSelection:(id)arg1;
@@ -66,12 +73,5 @@
 - (void)_externalAccessoryDisconnected:(id)arg1;
 - (void)_externalAccessoryUpdated:(id)arg1;
 - (void)_externalAccessoryConnected:(id)arg1;
-- (void)accessibilitySystemPropertyRequest:(id)arg1;
-- (void)accessibilitySystemPropertyChange:(id)arg1;
-- (void)accessibilityItemPropertyRequest:(id)arg1;
-- (void)accessibilityAction:(id)arg1;
-- (void)accessibilityContextChange:(id)arg1;
-- (void)endSession:(unsigned int)arg1 forConnectionID:(unsigned int)arg2;
-- (void)openCompleteForSession:(unsigned int)arg1 connectionID:(unsigned int)arg2;
 
 @end

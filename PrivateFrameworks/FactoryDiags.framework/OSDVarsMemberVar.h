@@ -14,7 +14,7 @@
 - (id)description;
 - (void)dealloc;
 - (id)initWithIvar:(struct objc_ivar { }*)arg1 andObj:(id)arg2;
-- (struct objc_ivar { }*)ivar;
 - (id)obj;
+- (struct objc_ivar { }*)ivar;
 
 @end

@@ -15,15 +15,15 @@
 @property(retain) NSString * logResponseToFile;
 
 
-- (void)setLogResponseToFile:(id)arg1;
-- (void)setLogRequestToFile:(id)arg1;
+- (void)dealloc;
 - (id)initForwardGeocodeWithAddressString:(id)arg1;
 - (id)initForwardGeocodeWithAddressDictionary:(id)arg1;
 - (id)initReverseGeocodeWithCoordinate:(struct { double x1; double x2; })arg1;
-- (void)dealloc;
 - (id)initReverseGeocodeWithCoordinate:(struct { double x1; double x2; })arg1 includeBusinessOptions:(BOOL)arg2;
 - (void)setGeocodeProvider:(unsigned short)arg1;
+- (void)setLogResponseToFile:(id)arg1;
 - (id)logResponseToFile;
+- (void)setLogRequestToFile:(id)arg1;
 - (id)logRequestToFile;
 - (unsigned short)geocodeProvider;
 

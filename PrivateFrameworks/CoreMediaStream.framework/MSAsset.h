@@ -48,11 +48,10 @@
 @property(retain) NSString * MMCSReceipt;
 @property unsigned long MMCSItemFlags;
 
-+ (id)asset;
 + (id)MSASPAssetFromProtocolDictionary:(id)arg1;
 + (id)assetWithAsset:(id)arg1;
++ (id)asset;
 
-- (void)setError:(id)arg1;
 - (id)path;
 - (id)type;
 - (id)description;
@@ -62,13 +61,16 @@
 - (id)userInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (id)metadata;
-- (void)setMetadata:(id)arg1;
-- (void)setPath:(id)arg1;
-- (void)setUserInfo:(id)arg1;
-- (void)setType:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (id)assetCollectionGUID;
+- (void)setAssetCollectionGUID:(id)arg1;
+- (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
+- (void)setGUID:(id)arg1;
+- (void)setFileHash:(id)arg1;
+- (void)setMasterAssetHash:(id)arg1;
+- (id)fileHash;
+- (id)error;
+- (id)GUID;
+- (id)metadataValueForKey:(id)arg1;
 - (id)MSASPProtocolDictionary;
 - (void)setProtocolFileSize:(unsigned long long)arg1;
 - (unsigned long long)protocolFileSize;
@@ -103,17 +105,15 @@
 - (id)MMCSAccessHeader;
 - (void)setMMCSAccessHeader:(id)arg1;
 - (unsigned long long)_fileSizeOnDisk;
-- (unsigned long long)_fileSize;
 - (id)masterAssetHash;
-- (id)assetCollectionGUID;
-- (void)setAssetCollectionGUID:(id)arg1;
-- (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
-- (void)setGUID:(id)arg1;
-- (void)setFileHash:(id)arg1;
-- (void)setMasterAssetHash:(id)arg1;
-- (id)fileHash;
-- (id)metadataValueForKey:(id)arg1;
-- (id)error;
-- (id)GUID;
+- (void)setPath:(id)arg1;
+- (void)setUserInfo:(id)arg1;
+- (void)setType:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (unsigned long long)_fileSize;
+- (void)setError:(id)arg1;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 
 @end

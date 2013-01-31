@@ -17,7 +17,6 @@
 + (void)readChildrenOfObject:(struct EshObject { int (**x1)(); unsigned short x2; }*)arg1 reader:(struct OcReader { }*)arg2 toArray:(id)arg3;
 
 - (void)dealloc;
-- (void)removeChild:(id)arg1;
 - (void)addCStringWithChar2String:(const unsigned short*)arg1 instance:(int)arg2;
 - (void)addCStringWithNSString:(id)arg1 instance:(int)arg2;
 - (id)addPptEshClientChildOfType:(unsigned short)arg1;
@@ -49,5 +48,6 @@
 - (id)ebInitWithType:(unsigned short)arg1 version:(unsigned short)arg2 state:(id)arg3;
 - (unsigned int)childCount;
 - (void)addChild:(id)arg1;
+- (void)removeChild:(id)arg1;
 
 @end

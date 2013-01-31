@@ -11,8 +11,8 @@
 @property(readonly) NSURL * storeLinkURL;
 
 
+- (void)dealloc;
 - (id)storeLinkURL;
 - (id)initWithStoreLinkURL:(id)arg1;
-- (void)dealloc;
 
 @end

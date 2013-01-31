@@ -23,8 +23,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)setObject:(id)arg1;
-- (id)object;
 - (id)unicodeProgID;
 - (id)unicodeClipboardFormatName;
 - (id)unicodeUserType;
@@ -45,5 +43,7 @@
 - (void)setAnsiUserType:(id)arg1;
 - (void)setCLSID:(id)arg1;
 - (id)CLSID;
+- (void)setObject:(id)arg1;
+- (id)object;
 
 @end

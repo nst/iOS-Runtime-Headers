@@ -25,6 +25,10 @@
 }
 
 
+- (void)setContent:(id)arg1;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (id)canonicalManufacturer;
 - (void)setSerialNumber:(id)arg1;
 - (id)serialNumber;
@@ -54,13 +58,9 @@
 - (id)initWithMutableData:(id)arg1;
 - (unsigned short)standardVersion;
 - (id)operationsSupported;
-- (id)description;
-- (void)dealloc;
-- (id)init;
+- (void)setModel:(id)arg1;
 - (id)content;
 - (id)model;
 - (id)initWithData:(id)arg1;
-- (void)setModel:(id)arg1;
-- (void)setContent:(id)arg1;
 
 @end

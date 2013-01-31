@@ -10,9 +10,6 @@
 
 + (id)sharedSession;
 
-- (void)unlikeURL:(id)arg1 completion:(id)arg2;
-- (void)likeURL:(id)arg1 completion:(id)arg2;
-- (void)fetchLikeStatusForURL:(id)arg1 flags:(unsigned int)arg2 completion:(id)arg3;
 - (void).cxx_destruct;
 - (id)init;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
@@ -26,5 +23,8 @@
 - (BOOL)uploadPost:(id)arg1 forPID:(int)arg2;
 - (BOOL)sessionHasAccountAccess;
 - (void)setActiveAccountIdentifier:(id)arg1;
+- (void)unlikeURL:(id)arg1 completion:(id)arg2;
+- (void)likeURL:(id)arg1 completion:(id)arg2;
+- (void)fetchLikeStatusForURL:(id)arg1 flags:(unsigned int)arg2 completion:(id)arg3;
 
 @end

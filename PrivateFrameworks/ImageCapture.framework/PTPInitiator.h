@@ -44,6 +44,11 @@
 }
 
 
+- (double)timeOffset;
+- (void)setDelegate:(id)arg1;
+- (void)cancel;
+- (void)dealloc;
+- (unsigned long)contentCatalogPercentCompleted;
 - (BOOL)requestPending;
 - (BOOL)setDeviceDateTime:(id)arg1;
 - (BOOL)initiateCapture;
@@ -112,15 +117,10 @@
 - (void)transportDeactivated;
 - (void)transportActivated;
 - (void)sentData:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)cancel;
-- (void)dealloc;
+- (id)deviceInfo;
 - (void)stop;
 - (BOOL)start;
 - (void)handleEvent:(id)arg1;
-- (double)timeOffset;
-- (unsigned long)contentCatalogPercentCompleted;
 - (id)UUIDString;
-- (id)deviceInfo;
 
 @end

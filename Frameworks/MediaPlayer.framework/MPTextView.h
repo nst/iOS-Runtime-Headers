@@ -23,24 +23,6 @@
 @property(retain) UIView * headerView;
 
 
-- (float)webViewWidth;
-- (void)webViewDidFinishLoading:(id)arg1;
-- (id)artwork;
-- (void)setText:(id)arg1 willLoad:(BOOL)arg2;
-- (void)setArtwork:(id)arg1;
-- (void)noteDidSnapshot;
-- (void)noteWillSnapshot;
-- (struct CGImage { }*)_newFaderImageBackgroundWithSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)newWebView;
-- (void)_addTextUI;
-- (void)_removeTextUI;
-- (void)_createTextUIIfNeeded;
-- (void)_updateLoadingUIForWillLoad:(BOOL)arg1;
-- (void)_removeLoadingUI;
-- (struct CGImage { }*)_newFaderImage:(BOOL)arg1;
-- (void)_updateFaderImage:(BOOL)arg1;
-- (void)setScrollIndicatorFlashDisabled:(BOOL)arg1;
-- (void)_addLoadingUI;
 - (void)dealloc;
 - (id)headerView;
 - (void)setHeaderView:(id)arg1;
@@ -49,5 +31,23 @@
 - (void)layoutSubviews;
 - (void)setNeedsLayout;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)artwork;
+- (void)webViewDidFinishLoading:(id)arg1;
+- (void)setText:(id)arg1 willLoad:(BOOL)arg2;
+- (void)setArtwork:(id)arg1;
+- (void)noteDidSnapshot;
+- (void)noteWillSnapshot;
+- (struct CGImage { }*)_newFaderImageBackgroundWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)newWebView;
+- (void)_addTextUI;
+- (void)_removeTextUI;
+- (float)webViewWidth;
+- (void)_createTextUIIfNeeded;
+- (void)_updateLoadingUIForWillLoad:(BOOL)arg1;
+- (void)_removeLoadingUI;
+- (struct CGImage { }*)_newFaderImage:(BOOL)arg1;
+- (void)_updateFaderImage:(BOOL)arg1;
+- (void)setScrollIndicatorFlashDisabled:(BOOL)arg1;
+- (void)_addLoadingUI;
 
 @end

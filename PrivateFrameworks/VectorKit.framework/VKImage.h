@@ -18,15 +18,15 @@
 }
 
 
+- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2;
+- (id)initWithData:(id)arg1 usedAsTextureAndImage:(BOOL)arg2;
+- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 usedAsTextureAndImage:(BOOL)arg3;
+- (id)texture;
 - (void)dealloc;
 - (struct CGImage { }*)image;
 - (id)initWithData:(id)arg1;
 - (float)scale;
 - (struct CGSize { float x1; float x2; })size;
 - (id)initWithName:(id)arg1;
-- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2;
-- (id)initWithData:(id)arg1 usedAsTextureAndImage:(BOOL)arg2;
-- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 usedAsTextureAndImage:(BOOL)arg3;
-- (id)texture;
 
 @end

@@ -14,8 +14,8 @@
 
 
 - (void)dealloc;
+- (id)initWithObserver:(id)arg1 queue:(id)arg2;
 - (id)queue;
 - (id)observer;
-- (id)initWithObserver:(id)arg1 queue:(id)arg2;
 
 @end

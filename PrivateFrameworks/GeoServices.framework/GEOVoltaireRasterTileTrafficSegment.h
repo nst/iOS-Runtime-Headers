@@ -19,16 +19,16 @@
 @property int width;
 
 
-- (void)setSpeed:(int)arg1;
-- (void)setWidth:(int)arg1;
-- (int)width;
-- (int)speed;
 - (struct { int x1; int x2; }*)vertices;
 - (void)setHasWidth:(BOOL)arg1;
 - (BOOL)hasWidth;
 - (int)vertexCount;
+- (BOOL)hasSpeed;
 - (void)setVertices:(struct { int x1; int x2; }*)arg1 count:(int)arg2;
 - (void)setHasSpeed:(BOOL)arg1;
-- (BOOL)hasSpeed;
+- (void)setSpeed:(int)arg1;
+- (void)setWidth:(int)arg1;
+- (int)width;
+- (int)speed;
 
 @end

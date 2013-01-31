@@ -16,9 +16,7 @@
 @property(readonly) NSURL * versionMismatchURL;
 
 
-- (id)responseDictionary;
 - (id)actionsWithActionType:(id)arg1;
-- (id)initWithResponseDictionary:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
@@ -28,6 +26,8 @@
 - (id)failureType;
 - (id)_copyAccount;
 - (id)_valueForProtocolKey:(id)arg1;
+- (id)responseDictionary;
+- (id)initWithResponseDictionary:(id)arg1;
 - (id)actions;
 
 @end

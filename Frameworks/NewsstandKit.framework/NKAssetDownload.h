@@ -23,13 +23,13 @@
 @property BOOL attemptedConnection;
 
 
-- (id)URLRequest;
 - (void)setURLRequest:(id)arg1;
 - (id)identifier;
 - (id)description;
 - (id)userInfo;
 - (void)dealloc;
 - (id)init;
+- (void)setConnection:(id)arg1;
 - (void)_cancel;
 - (id)connection;
 - (void)setUserInfo:(id)arg1;
@@ -50,7 +50,7 @@
 - (void)_issueWasRemovedFromLibrary;
 - (BOOL)_isDecodingValid;
 - (BOOL)_attemptedConnection;
-- (void)setConnection:(id)arg1;
+- (id)URLRequest;
 - (id)_connection;
 
 @end

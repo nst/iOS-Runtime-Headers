@@ -18,14 +18,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (BOOL)_canPerformWithSuppliedActivityItems:(id)arg1;
-- (void)prepareWithActivityItems:(id)arg1;
-- (id)_activityImage;
-- (id)activityTitle;
-- (id)activityType;
-- (void)editVideoViewController:(id)arg1 didTrimVideoWithOptions:(id)arg2;
-- (void)editVideoViewControllerDidCancel:(id)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)videoEditWasCancelled;
 - (void)_showTrimViewController;
 - (void)_showPublishingSheetInViewController:(id)arg1 remakeAfterPublish:(BOOL)arg2;
@@ -38,5 +30,13 @@
 - (void)publishWithVideoViewStartTime:(double)arg1 andEndTime:(double)arg2;
 - (void)_showVideoTooLongAlert;
 - (void)_publishingAgentDidStartPublishing:(id)arg1;
+- (BOOL)_canPerformWithSuppliedActivityItems:(id)arg1;
+- (void)prepareWithActivityItems:(id)arg1;
+- (id)_activityImage;
+- (id)activityTitle;
+- (id)activityType;
+- (void)editVideoViewController:(id)arg1 didTrimVideoWithOptions:(id)arg2;
+- (void)editVideoViewControllerDidCancel:(id)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 
 @end

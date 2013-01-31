@@ -48,11 +48,29 @@
 
 @property BOOL useOrientationDependentFontAntialiasing;
 
-+ (BOOL)hasLandscapeOrientation;
-+ (void)setOrientationProvider:(id)arg1;
 + (id)_wrapperForWindowRef:(struct WKWindow { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; id x2; struct WKView {} *x3; struct WKView {} *x4; struct WKView {} *x5; }*)arg1;
 + (id)currentEvent;
++ (BOOL)hasLandscapeOrientation;
++ (void)setOrientationProvider:(id)arg1;
 
+- (void)setTilePaintCountsVisible:(BOOL)arg1;
+- (void)setTileBordersVisible:(BOOL)arg1;
+- (BOOL)hasPendingDraw;
+- (float)currentTileScale;
+- (int)tilingDirection;
+- (int)tilingMode;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 display:(BOOL)arg2;
+- (BOOL)makeFirstResponder:(id)arg1;
+- (int)keyViewSelectionDirection;
+- (id)_newFirstResponderAfterResigning;
+- (BOOL)makeViewFirstResponder:(id)arg1;
+- (BOOL)useOrientationDependentFontAntialiasing;
+- (id)hostLayer;
+- (struct CGPoint { float x1; float x2; })convertScreenToBase:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })convertBaseToScreen:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })availableScreenSize;
+- (struct CGSize { float x1; float x2; })screenSize;
+- (float)zoomedOutTileScale;
 - (id)description;
 - (id).cxx_construct;
 - (void)dealloc;
@@ -100,24 +118,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (void)setNeedsDisplay;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTilePaintCountsVisible:(BOOL)arg1;
-- (void)setTileBordersVisible:(BOOL)arg1;
-- (BOOL)hasPendingDraw;
-- (float)currentTileScale;
-- (int)tilingDirection;
-- (int)tilingMode;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 display:(BOOL)arg2;
-- (BOOL)makeFirstResponder:(id)arg1;
-- (int)keyViewSelectionDirection;
-- (id)_newFirstResponderAfterResigning;
-- (BOOL)makeViewFirstResponder:(id)arg1;
-- (BOOL)useOrientationDependentFontAntialiasing;
-- (id)hostLayer;
-- (struct CGPoint { float x1; float x2; })convertScreenToBase:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })convertBaseToScreen:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })availableScreenSize;
-- (struct CGSize { float x1; float x2; })screenSize;
-- (float)zoomedOutTileScale;
 - (oneway void)_webcore_releaseOnWebThread;
 - (oneway void)release;
 

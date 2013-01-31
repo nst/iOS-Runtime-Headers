@@ -10,8 +10,8 @@
 }
 
 
-- (void)dealloc;
 - (id)headers;
+- (void)dealloc;
 - (id)headersIfAvailable;
 - (void)setMutableHeaders:(id)arg1;
 - (BOOL)messageData:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;

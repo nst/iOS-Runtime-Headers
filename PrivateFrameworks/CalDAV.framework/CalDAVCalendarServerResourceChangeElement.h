@@ -15,8 +15,8 @@
 - (void)dealloc;
 - (id)init;
 - (id)changedBy;
+- (id)copyParseRules;
 - (id)fullHrefURL;
 - (void)setChangedBy:(id)arg1;
-- (id)copyParseRules;
 
 @end

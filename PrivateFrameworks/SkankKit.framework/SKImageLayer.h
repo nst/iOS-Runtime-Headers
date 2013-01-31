@@ -6,7 +6,7 @@
 }
 
 
-- (void)setImage:(struct CGImage { }*)arg1;
 - (BOOL)setImagePath:(id)arg1;
+- (void)setImage:(struct CGImage { }*)arg1;
 
 @end

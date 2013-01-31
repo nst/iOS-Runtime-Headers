@@ -15,8 +15,6 @@
 @property(retain) NSString * logFileName;
 
 
-- (void)dealloc;
-- (id)deviceInfoDictionary;
 - (id)logData;
 - (BOOL)collectLogs;
 - (BOOL)collectAllDeviceInformation;
@@ -30,5 +28,7 @@
 - (id)collectAggdData;
 - (id)collectGasGaugeData;
 - (id)collectBasicDeviceData;
+- (void)dealloc;
+- (id)deviceInfoDictionary;
 
 @end

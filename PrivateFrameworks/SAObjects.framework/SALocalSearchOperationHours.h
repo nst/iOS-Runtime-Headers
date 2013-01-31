@@ -12,9 +12,9 @@
 + (id)operationHoursWithDictionary:(id)arg1 context:(id)arg2;
 + (id)operationHours;
 
-- (id)groupIdentifier;
 - (void)setOperationPeriods:(id)arg1;
 - (id)operationPeriods;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

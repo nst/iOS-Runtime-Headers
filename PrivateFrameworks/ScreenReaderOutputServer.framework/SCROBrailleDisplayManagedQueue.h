@@ -13,6 +13,8 @@
 }
 
 
+- (void)dealloc;
+- (id)init;
 - (id)loadingDisplays;
 - (id)sleepingDisplays;
 - (id)activePendingDisplays;
@@ -29,8 +31,6 @@
 - (id)disconnectedDisplays;
 - (void)_fillActiveBrailleDisplayQueue;
 - (id)_queueForState:(int)arg1 createQueue:(BOOL)arg2;
-- (void)dealloc;
-- (id)init;
 - (void)removeDisplay:(id)arg1;
 
 @end

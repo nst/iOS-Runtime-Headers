@@ -11,8 +11,8 @@
 @property(retain) SUScriptSection * selectedSection;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (void)setSelectedSection:(id)arg1;
 - (void)setRootViewController:(id)arg1 forSection:(id)arg2;
@@ -23,10 +23,10 @@
 - (void)_tabBarConfigurationChangedNotification:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)init;
 - (id)sections;
 - (id)selectedSection;
-- (id)attributeKeys;
 
 @end

@@ -12,9 +12,11 @@
 
 + (void)applyVolumeNormalizationWithSoundCheckEnabled:(BOOL)arg1 forQueuedItems:(id)arg2 currentQuery:(id)arg3;
 
-- (void)setRating:(float)arg1;
-- (id)mainTitle;
-- (float)userRating;
+- (unsigned int)type;
+- (id)description;
+- (void)dealloc;
+- (id)album;
+- (unsigned long long)persistentID;
 - (void)handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(BOOL)arg2;
 - (void)pushBookmarkingTimesToCloud;
 - (id)_chapterTitleForTime:(double)arg1;
@@ -24,6 +26,7 @@
 - (id)initWithMediaItem:(id)arg1;
 - (id)mediaItem;
 - (BOOL)wantsSubtitles;
+- (float)userRating;
 - (id)titlesForTime:(double)arg1;
 - (BOOL)isStreamable;
 - (BOOL)hasDataForItemArtwork;
@@ -63,10 +66,7 @@
 - (id)genre;
 - (id)composer;
 - (id)artist;
-- (unsigned int)type;
-- (id)description;
-- (void)dealloc;
-- (unsigned long long)persistentID;
-- (id)album;
+- (id)mainTitle;
+- (void)setRating:(float)arg1;
 
 @end

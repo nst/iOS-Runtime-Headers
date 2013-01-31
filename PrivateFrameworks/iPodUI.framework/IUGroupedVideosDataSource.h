@@ -18,9 +18,6 @@
 + (id)tabBarItemTitleKey;
 + (id)tabBarItemIconName;
 
-- (void)dealloc;
-- (id)init;
-- (void)reloadData;
 - (void)reloadQueriesEntities;
 - (void)reloadSectionInfo;
 - (void)reloadDataWithCompletionHandler:(id)arg1;
@@ -48,5 +45,8 @@
 - (BOOL)hideActionRowsOnAppear;
 - (void)reloadActionRows;
 - (BOOL)hasActionRowsEvenWhenNoOtherRowsExist;
+- (void)dealloc;
+- (id)init;
+- (void)reloadData;
 
 @end

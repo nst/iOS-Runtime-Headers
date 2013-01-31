@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class PLVideoView, PLManagedAsset, PLPhotoTilePlaceholderView, UIImageView, PLCommentsViewController, UIGestureRecognizer, PLImageScrollView, UIImage, PLExpandableImageView, <PLPhotoTileViewControllerDelegate>;
+@class PLVideoView, PLManagedAsset, PLPhotoTilePlaceholderView, NSObject<OS_dispatch_source>, UIImageView, PLCommentsViewController, UIGestureRecognizer, PLImageScrollView, UIImage, PLExpandableImageView, <PLPhotoTileViewControllerDelegate>;
 
 @interface PLPhotoTileViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate, PLCommentsViewControllerDelegate> {
     UIImage *_image;
@@ -91,6 +91,10 @@
   /* Error parsing encoded ivar type info: @? */
     id _didEndZoomingBlock;
 
+    NSObject<OS_dispatch_source> *_dispatchTimer;
+    double _dispatchStartTime;
+    double _dispatchTimeElapsed;
+    BOOL _hasNotedZoom;
     unsigned int _imageIsThumbnail : 1;
     unsigned int _isTVOut : 1;
     unsigned int _zooming : 1;
@@ -120,47 +124,16 @@
 @property(readonly) PLCommentsViewController * commentsViewController;
 @property(readonly) BOOL commentsTableIsVisible;
 
-+ (struct CGSize { float x1; float x2; })tileSize;
 + (BOOL)shouldShowPlaceholderForAssetKind:(int)arg1;
 + (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 modelPhoto:(id)arg2 mode:(int)arg3;
 + (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(id)arg2 allowZoomToFill:(BOOL)arg3 mode:(int)arg4;
 + (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 imageRef:(struct CGImage { }*)arg2 imageOrientation:(int)arg3 allowZoomToFill:(BOOL)arg4 mode:(int)arg5;
 + (struct CGSize { float x1; float x2; })tvOutTileSize;
++ (struct CGSize { float x1; float x2; })tileSize;
 
-- (void)setVideoView:(id)arg1;
-- (id)videoView;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)thumbnailImage;
-- (BOOL)allowsEditing;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (id)scrollView;
-- (id)imageView;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillUnload;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)image;
-- (void)setZoomScale:(float)arg1;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (struct CGSize { float x1; float x2; })scrollView:(id)arg1 contentSizeForZoomScale:(float)arg2 withProposedSize:(struct CGSize { float x1; float x2; })arg3;
-- (void)setGesturesEnabled:(BOOL)arg1;
-- (BOOL)gesturesEnabled;
-- (int)_imageOrientation;
-- (int)imageOrientation;
-- (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(float)arg3;
-- (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
-- (id)viewForZoomingInScrollView:(id)arg1;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
-- (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewDidZoom:(id)arg1;
 - (void)setUnscaledImage:(id)arg1;
 - (void)setCenterContentVertically:(BOOL)arg1;
 - (BOOL)centerContentVertically;
@@ -205,6 +178,7 @@
 - (void)_updateGradientImageForOrientation:(int)arg1;
 - (void)_centerImageInScrollView;
 - (void)_updateContentInset;
+- (void)_teardownDispatchTimer;
 - (id)initWithPhoto:(id)arg1 image:(id)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 isThumbnail:(BOOL)arg4 imageOrientation:(int)arg5 allowZoomToFill:(BOOL)arg6 mode:(int)arg7;
 - (void)_configureViews;
 - (void)_setPhoto:(id)arg1;
@@ -246,5 +220,38 @@
 - (void)setTileDelegate:(id)arg1;
 - (void)setTVOut:(BOOL)arg1;
 - (id)initWithPhoto:(id)arg1 thumbnailImage:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3;
+- (id)thumbnailImage;
+- (BOOL)allowsEditing;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)scrollView;
+- (id)imageView;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillUnload;
+- (void)loadView;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)image;
+- (void)setZoomScale:(float)arg1;
+- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (struct CGSize { float x1; float x2; })scrollView:(id)arg1 contentSizeForZoomScale:(float)arg2 withProposedSize:(struct CGSize { float x1; float x2; })arg3;
+- (void)setGesturesEnabled:(BOOL)arg1;
+- (BOOL)gesturesEnabled;
+- (int)_imageOrientation;
+- (int)imageOrientation;
+- (void)applicationWillResignActive:(id)arg1;
+- (void)applicationDidBecomeActive:(id)arg1;
+- (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(float)arg3;
+- (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
+- (id)viewForZoomingInScrollView:(id)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)scrollViewDidZoom:(id)arg1;
+- (void)setVideoView:(id)arg1;
+- (id)videoView;
 
 @end

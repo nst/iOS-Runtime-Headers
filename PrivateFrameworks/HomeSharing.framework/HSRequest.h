@@ -11,14 +11,23 @@
     NSDictionary *_arguments;
     struct __CFHTTPMessage { } *_message;
     int _method;
+    BOOL _excludeSessionIDFromURL;
 }
 
 @property(readonly) NSString * action;
 @property int method;
 @property(copy) NSData * bodyData;
+@property BOOL excludeSessionIDFromURL;
 
 + (id)request;
 
+- (void)setMethod:(int)arg1;
+- (id)action;
+- (id)description;
+- (void)dealloc;
+- (void)setBodyData:(id)arg1;
+- (void)setExcludeSessionIDFromURL:(BOOL)arg1;
+- (BOOL)excludeSessionIDFromURL;
 - (id)initWithAction:(id)arg1;
 - (BOOL)acceptsGzipEncoding;
 - (id)_methodStringForMethod:(int)arg1;
@@ -27,15 +36,10 @@
 - (id)canonicalResponseForResponse:(id)arg1;
 - (struct __CFHTTPMessage { }*)CFHTTPMessageForBaseURL:(id)arg1 sessionID:(unsigned int)arg2;
 - (id)descriptionWithoutHeaderFields;
-- (id)bodyData;
+- (int)method;
 - (id)requestURLForConnection:(id)arg1;
 - (void)setValue:(id)arg1 forArgument:(id)arg2;
 - (void)setValue:(id)arg1 forHeaderField:(id)arg2;
-- (id)action;
-- (id)description;
-- (void)dealloc;
-- (int)method;
-- (void)setMethod:(int)arg1;
-- (void)setBodyData:(id)arg1;
+- (id)bodyData;
 
 @end

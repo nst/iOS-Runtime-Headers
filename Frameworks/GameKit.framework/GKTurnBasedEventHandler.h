@@ -14,14 +14,12 @@
 
 + (id)sharedTurnBasedEventHandler;
 
-- (void)setDidBecomeActive:(BOOL)arg1;
-- (BOOL)didBecomeActive;
-- (void)callTurnEventForMatch:(id)arg1;
-- (void)applicationDidEnterBackgroundNotification:(id)arg1;
-- (void)lookForEvent;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (id)init;
+- (void)setDidBecomeActive:(BOOL)arg1;
+- (BOOL)didBecomeActive;
+- (void)callTurnEventForMatch:(id)arg1 userTapped:(BOOL)arg2;
+- (void)lookForEvent;
 
 @end

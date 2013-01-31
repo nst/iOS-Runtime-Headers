@@ -35,6 +35,12 @@
 @property(retain) GKLeaderboardCategory * aggregateCategory;
 
 
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)updateSelection;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidLoad;
 - (id)categoryDataSource;
 - (void)setIsInPopover:(BOOL)arg1;
 - (void)setPublicLeaderboard:(id)arg1;
@@ -66,11 +72,5 @@
 - (id)player;
 - (void)setGame:(id)arg1;
 - (id)game;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (void)updateSelection;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidLoad;
 
 @end

@@ -12,10 +12,10 @@
 + (id)openLinkWithDictionary:(id)arg1 context:(id)arg2;
 + (id)openLink;
 
-- (id)groupIdentifier;
-- (void)setRef:(id)arg1;
 - (id)ref;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (void)setRef:(id)arg1;
+- (id)groupIdentifier;
 
 @end

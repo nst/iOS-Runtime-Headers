@@ -18,11 +18,11 @@
 @property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } imageTime;
 
 
+- (void)dealloc;
+- (id)init;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })imageTime;
 - (id)copyRawImageReturningError:(id*)arg1;
 - (id)AVItem;
 - (id)initWithAVItem:(id)arg1 imageTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
-- (void)dealloc;
-- (id)init;
 
 @end

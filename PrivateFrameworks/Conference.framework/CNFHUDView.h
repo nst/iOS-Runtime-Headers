@@ -14,10 +14,10 @@
 @property id delegate;
 
 
-- (void)_buttonPressed:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)dim;
 - (void)setIconOrientation:(int)arg1;
 - (id)_buttonForButtonTag:(int)arg1;
 - (struct CGSize { float x1; float x2; })_defaultButtonSizeForButton:(id)arg1;
@@ -31,6 +31,6 @@
 - (int)style;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
-- (void)dim;
+- (void)_buttonPressed:(id)arg1;
 
 @end

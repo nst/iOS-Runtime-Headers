@@ -33,16 +33,12 @@
 + (id)filterFontName:(id)arg1;
 + (id)fontWithResources:(id)arg1;
 
+- (void)setOutline:(bool)arg1;
 - (void)setName:(id)arg1;
 - (id)name;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)setHeight:(double)arg1;
-- (double)height;
-- (id)color;
-- (void)setColor:(id)arg1;
-- (void)setOutline:(bool)arg1;
 - (bool)isWeightOverridden;
 - (unsigned int)weight;
 - (int)family;
@@ -75,5 +71,9 @@
 - (bool)isUnderlineOverridden;
 - (bool)isItalicOverridden;
 - (bool)isBoldOverridden;
+- (void)setHeight:(double)arg1;
+- (double)height;
+- (id)color;
+- (void)setColor:(id)arg1;
 
 @end

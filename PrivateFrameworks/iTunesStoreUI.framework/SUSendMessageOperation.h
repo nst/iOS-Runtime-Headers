@@ -21,8 +21,8 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
+- (id)initWithMessage:(id)arg1;
 - (id)message;
 - (void)run;
-- (id)initWithMessage:(id)arg1;
 
 @end

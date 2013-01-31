@@ -2,40 +2,41 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class IUMediaTableCell, IUTableCellConfiguration, NSMutableArray;
+@class IUMediaTableCell, NSMutableArray, IUTableCellConfiguration;
 
 @interface IUMediaTableCellContentView : UIView  {
+    NSMutableArray *_configurationManagedSubviews;
+    NSMutableArray *_contentViewSubviews;
+    BOOL _drawInAlternateStyle;
+    BOOL _useSubviewLayout;
+    BOOL _editing;
+    BOOL _hideArtwork;
     struct CGSize { 
         float width; 
         float height; 
     } _backgroundSize;
+    BOOL _highlighted;
     IUMediaTableCell *_cell;
     IUTableCellConfiguration *_configuration;
-    NSMutableArray *_configManagedSubviews;
-    NSMutableArray *_subviews;
-    unsigned int _drawAsDisabled : 1;
-    unsigned int _drawInAlternateStyle : 1;
-    unsigned int _editing : 1;
-    unsigned int _highlighted : 1;
-    unsigned int _selected : 1;
-    unsigned int _useSubviewLayout : 1;
-    unsigned int _hideArtwork : 1;
+    BOOL _selected;
+    BOOL _drawAsDisabled;
 }
 
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } artworkFrame;
+@property struct CGSize { float x1; float x2; } backgroundSize;
 @property IUMediaTableCell * cell;
 @property(retain) IUTableCellConfiguration * configuration;
-@property(getter=isDeleteConfirmationVisible) BOOL deleteConfirmationVisible;
 @property BOOL drawAsDisabled;
-@property(getter=isHighlighted) BOOL highlighted;
-@property(getter=isSelected) BOOL selected;
 @property BOOL drawInAlternateStyle;
-@property struct CGSize { float x1; float x2; } backgroundSize;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } artworkFrame;
+@property(getter=isEditing) BOOL editing;
 @property BOOL hideArtwork;
+@property(getter=isHighlighted) BOOL highlighted;
+@property(getter=isDeleteConfirmationVisible) BOOL deleteConfirmationVisible;
+@property(getter=isSelected) BOOL selected;
+@property(getter=isUsingSubviewLayout) BOOL useSubviewLayout;
 
 
 - (void)_removeSubviewsForConfiguration;
-- (void)_startUsingSubviewLayout;
 - (void)_stopUsingSubviewLayout;
 - (void)_updateDisabledStyleForSubviews;
 - (void)_reloadSubviewAlphasAnimated:(BOOL)arg1;
@@ -45,31 +46,34 @@
 - (BOOL)drawAsDisabled;
 - (id)configuration;
 - (void)setConfiguration:(id)arg1;
+- (void)setBackgroundSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })artworkFrame;
+- (void)_updateSubviewBackgrounds;
+- (void)setDrawInAlternateStyle:(BOOL)arg1;
+- (BOOL)drawInAlternateStyle;
+- (BOOL)isUsingSubviewLayout;
+- (void)setUseSubviewLayout:(BOOL)arg1;
+- (void)setDeleteConfirmationVisible:(BOOL)arg1;
+- (void)setConfigurationNeedsDisplay;
+- (void)drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHideArtwork:(BOOL)arg1;
+- (BOOL)hideArtwork;
 - (void)dealloc;
 - (void)setCell:(id)arg1;
 - (struct CGSize { float x1; float x2; })backgroundSize;
+- (void)drawBackgroundInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)cell;
+- (void)setEditing:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)prepareForReuse;
 - (BOOL)isSelected;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)isEditing;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)_scriptingInfo;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_drawBackgroundInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBackgroundSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })artworkFrame;
-- (void)_updateSubviewBackgrounds;
-- (void)setDrawInAlternateStyle:(BOOL)arg1;
-- (BOOL)drawInAlternateStyle;
-- (BOOL)_useSubviewLayout;
-- (void)setDeleteConfirmationVisible:(BOOL)arg1;
-- (void)setConfigurationNeedsDisplay;
-- (void)drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHideArtwork:(BOOL)arg1;
-- (BOOL)hideArtwork;
 
 @end

@@ -15,9 +15,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)document;
-- (id)text;
-- (void)setText:(id)arg1;
 - (void)setNextTextBoxId:(unsigned long)arg1;
 - (void)setDocument:(id)arg1;
 - (BOOL)isOle;
@@ -25,5 +22,8 @@
 - (void)setParent:(id)arg1;
 - (id)parent;
 - (unsigned long)nextTextBoxId;
+- (id)document;
+- (id)text;
+- (void)setText:(id)arg1;
 
 @end

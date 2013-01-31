@@ -6,8 +6,6 @@
 }
 
 
-- (void)dealloc;
-- (void)finalize;
 - (id)createHTMLDocument:(id)arg1;
 - (id)createCSSStyleSheet:(id)arg1 :(id)arg2;
 - (id)createCSSStyleSheet:(id)arg1 media:(id)arg2;
@@ -17,5 +15,7 @@
 - (id)createDocumentType:(id)arg1 publicId:(id)arg2 systemId:(id)arg3;
 - (BOOL)hasFeature:(id)arg1 :(id)arg2;
 - (BOOL)hasFeature:(id)arg1 version:(id)arg2;
+- (void)dealloc;
+- (void)finalize;
 
 @end

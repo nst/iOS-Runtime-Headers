@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MobileAsset.framework/MobileAsset
  */
 
-@class NSArray, NSString, NSPredicate;
+@class NSString, NSPredicate, NSArray;
 
 @interface ASAssetQuery : NSObject  {
-    BOOL _queriesLocalAssetInformationOnly;
-    NSString *_assetType;
     NSPredicate *_predicate;
     NSArray *_results;
+    BOOL _queriesLocalAssetInformationOnly;
+    NSString *_assetType;
 }
 
 @property(retain) NSPredicate * predicate;
@@ -19,7 +19,6 @@
 + (id)queryPredicateForProperties:(id)arg1;
 
 - (void)setAssetType:(id)arg1;
-- (BOOL)queriesLocalAssetInformationOnly;
 - (id)results;
 - (void)setResults:(id)arg1;
 - (id)runQueryAndReturnError:(id*)arg1;
@@ -27,9 +26,10 @@
 - (id)initWithAssetType:(id)arg1;
 - (void)setPredicate:(id)arg1;
 - (void)dealloc;
-- (id)predicate;
+- (BOOL)queriesLocalAssetInformationOnly;
 - (void)startQuery:(id)arg1;
 - (id)assetType;
 - (void)stopQuery;
+- (id)predicate;
 
 @end

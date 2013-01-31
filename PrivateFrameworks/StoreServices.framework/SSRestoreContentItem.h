@@ -28,10 +28,7 @@
 @property(copy) NSString * videoDimensions;
 
 
-- (void)setBundleID:(id)arg1;
-- (id)bundleID;
 - (id)storeFrontID;
-- (void)setValue:(id)arg1 forDownloadProperty:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)videoDimensions;
@@ -65,5 +62,8 @@
 - (BOOL)isEligibleForRestore:(id*)arg1;
 - (id)initWithRestoreDownload:(id)arg1;
 - (void)_setValue:(id)arg1 forProperty:(id)arg2;
+- (void)setValue:(id)arg1 forDownloadProperty:(id)arg2;
+- (void)setBundleID:(id)arg1;
+- (id)bundleID;
 
 @end

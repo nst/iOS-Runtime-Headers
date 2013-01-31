@@ -25,19 +25,15 @@
 @property unsigned long flags;
 
 
-- (id)dirtyProperties;
-- (void)setDirtyProperties:(id)arg1;
+- (id)propertyName;
 - (void)reset;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)setPropertyName:(id)arg1;
-- (void)rollback;
-- (BOOL)hasChanges;
-- (id)objectID;
-- (unsigned long)flags;
-- (id)propertyName;
 - (void)setFlags:(unsigned long)arg1;
 - (id)owner;
+- (unsigned long)flags;
+- (id)dirtyProperties;
+- (void)setDirtyProperties:(id)arg1;
 - (void)setWeakRelations:(id)arg1;
 - (id)weakRelations;
 - (void)setRelations:(id)arg1;
@@ -76,5 +72,9 @@
 - (BOOL)refresh;
 - (BOOL)isNew;
 - (id)relations;
+- (void)setPropertyName:(id)arg1;
+- (void)rollback;
+- (BOOL)hasChanges;
+- (id)objectID;
 
 @end

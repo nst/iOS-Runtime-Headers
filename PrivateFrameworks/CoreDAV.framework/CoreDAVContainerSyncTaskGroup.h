@@ -52,7 +52,6 @@
 
 - (id)description;
 - (void)dealloc;
-- (void*)context;
 - (void)setActionsOnly:(BOOL)arg1;
 - (BOOL)actionsOnly;
 - (id)bulkChangeCheckCTag;
@@ -117,5 +116,6 @@
 - (void)setBulkRequests:(id)arg1;
 - (void)setAddMemberURL:(id)arg1;
 - (id)bulkRequests;
+- (void*)context;
 
 @end

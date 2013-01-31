@@ -16,13 +16,12 @@
 @property(retain) NSObject<ATConnectionDelegate> * delegate;
 
 
-- (void)_handleMessage:(id)arg1;
-- (void)unregisterForStatus;
-- (void)registerForStatus;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
+- (void)prioritizeAsset:(id)arg1 forDataclass:(id)arg2;
+- (void)_handleMessage:(id)arg1;
 - (BOOL)isSyncing:(BOOL*)arg1 automatically:(BOOL*)arg2 wirelessly:(BOOL*)arg3;
 - (void)keepATCAlive:(BOOL)arg1;
 - (void)lowBatteryNotification;
@@ -35,7 +34,8 @@
 - (void)_sendMessage:(id)arg1 info:(id)arg2 reply:(id)arg3;
 - (void)_resetConnection;
 - (void)clearSyncData;
-- (void)prioritizeAsset:(id)arg1 forDataclass:(id)arg2;
+- (void)unregisterForStatus;
+- (void)registerForStatus;
 - (id)_connection;
 
 @end

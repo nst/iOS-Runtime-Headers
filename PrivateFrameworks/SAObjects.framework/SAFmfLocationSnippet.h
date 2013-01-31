@@ -15,14 +15,14 @@
 + (id)locationSnippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)locationSnippet;
 
-- (id)groupIdentifier;
-- (void)setLocations:(id)arg1;
-- (id)searchContext;
-- (void)setSearchContext:(id)arg1;
 - (id)locations;
 - (void)setAtRequestedLocation:(id)arg1;
 - (id)atRequestedLocation;
 - (id)encodedClassName;
+- (id)searchContext;
+- (void)setSearchContext:(id)arg1;
+- (void)setLocations:(id)arg1;
+- (id)groupIdentifier;
 - (void)setProximity:(id)arg1;
 - (id)proximity;
 

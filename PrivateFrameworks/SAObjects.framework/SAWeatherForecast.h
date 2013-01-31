@@ -15,15 +15,15 @@
 + (id)forecastWithDictionary:(id)arg1 context:(id)arg2;
 + (id)forecast;
 
-- (id)groupIdentifier;
-- (void)setCondition:(id)arg1;
-- (id)condition;
-- (id)isUserRequested;
 - (void)setTimeIndex:(id)arg1;
 - (id)timeIndex;
 - (void)setIsUserRequested:(id)arg1;
 - (void)setChanceOfPrecipitation:(id)arg1;
 - (id)chanceOfPrecipitation;
 - (id)encodedClassName;
+- (id)isUserRequested;
+- (void)setCondition:(id)arg1;
+- (id)condition;
+- (id)groupIdentifier;
 
 @end

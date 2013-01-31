@@ -24,6 +24,11 @@
 
 + (id)currentDevice;
 
+- (void)dealloc;
+- (id)init;
+- (id)osVersion;
+- (id)deviceName;
+- (id)buildVersion;
 - (BOOL)isGameCenterSupported;
 - (id)screenCapabilities;
 - (id)udid;
@@ -35,10 +40,5 @@
 - (id)userAgentWithProcessName:(id)arg1 protocolVersion:(id)arg2;
 - (void)_initPlatform;
 - (id)userAgent;
-- (void)dealloc;
-- (id)init;
-- (id)buildVersion;
-- (id)osVersion;
-- (id)deviceName;
 
 @end

@@ -9,8 +9,8 @@
 }
 
 
-- (void)dealloc;
 - (id)initWithClient:(id)arg1;
+- (void)dealloc;
 - (unsigned int)indexForChild:(id)arg1 parentContainer:(id)arg2;
 
 @end

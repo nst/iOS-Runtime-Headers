@@ -14,8 +14,8 @@
 @property float maximumLongSideLength;
 @property int assetTypeFlags;
 
-+ (id)specificationWithSharedAlbumSpecificationString:(id)arg1;
 + (id)assetsToGenerateFromImageWithInputSize:(struct CGSize { float x1; float x2; })arg1 toConformToSpecifications:(id)arg2;
++ (id)specificationWithSharedAlbumSpecificationString:(id)arg1;
 
 - (id)description;
 - (float)scaleFactorForInputSize:(struct CGSize { float x1; float x2; })arg1;

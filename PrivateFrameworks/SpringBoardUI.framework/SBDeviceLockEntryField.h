@@ -28,6 +28,12 @@
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)dealloc;
 - (void)appendString:(id)arg1;
+- (id)initWithStyle:(int)arg1 interfaceOrientation:(int)arg2;
+- (void)setOkayButtonEnabled:(BOOL)arg1;
+- (BOOL)isOkayButtonEnabled;
+- (void)_layoutForCurrentDevice;
+- (struct CGSize { float x1; float x2; })_fieldSizeForCurrentDevice;
+- (id)passcodeField;
 - (void)deleteLastCharacter;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;
@@ -46,11 +52,5 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (BOOL)resignFirstResponder;
 - (int)interfaceOrientation;
-- (id)initWithStyle:(int)arg1 interfaceOrientation:(int)arg2;
-- (void)setOkayButtonEnabled:(BOOL)arg1;
-- (BOOL)isOkayButtonEnabled;
-- (void)_layoutForCurrentDevice;
-- (struct CGSize { float x1; float x2; })_fieldSizeForCurrentDevice;
-- (id)passcodeField;
 
 @end

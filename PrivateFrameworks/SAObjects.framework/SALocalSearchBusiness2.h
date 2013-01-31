@@ -26,16 +26,9 @@
 + (id)business2;
 + (id)afui_mapsURLForLocalSearchBusiness2s:(id)arg1;
 
-- (id)groupIdentifier;
-- (void)setAddress:(id)arg1;
-- (id)address;
-- (void)setCategories:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)name;
 - (id)description;
-- (id)categories;
-- (id)phoneNumber;
-- (void)setPhoneNumber:(id)arg1;
 - (void)setReviewList:(id)arg1;
 - (void)setPhotoThumbnail:(id)arg1;
 - (id)photoThumbnail;
@@ -56,7 +49,14 @@
 - (id)businessUrl;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (id)categories;
+- (id)phoneNumber;
+- (id)groupIdentifier;
+- (void)setAddress:(id)arg1;
+- (id)address;
+- (void)setCategories:(id)arg1;
 - (void)setDescription:(id)arg1;
+- (void)setPhoneNumber:(id)arg1;
 - (id)afui_mapsURL;
 - (id)afui_mapItemRepresentation;
 

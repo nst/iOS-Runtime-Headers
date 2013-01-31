@@ -40,31 +40,11 @@
 @property(readonly) float paragraphSpacingBefore;
 @property(readonly) float hyphenationFactor;
 
-+ (void)initialize;
 + (int)_defaultWritingDirection;
 + (int)defaultWritingDirectionForLanguage:(id)arg1;
 + (id)defaultParagraphStyle;
++ (void)initialize;
 
-- (id)description;
-- (unsigned int)retainCount;
-- (unsigned int)hash;
-- (id)retain;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (oneway void)release;
-- (id)init;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (float)firstLineHeadIndent;
-- (float)maximumLineHeight;
-- (float)minimumLineHeight;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (int)alignment;
-- (int)lineBreakMode;
-- (float)lineSpacing;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)_isSuitableForFastStringDrawingWithAlignment:(int*)arg1 lineBreakMode:(int*)arg2 tighteningFactorForTruncation:(float*)arg3;
 - (void)_deallocExtraData;
 - (id)_initWithParagraphStyle:(id)arg1;
@@ -80,7 +60,27 @@
 - (float)lineHeightMultiple;
 - (float)tighteningFactorForTruncation;
 - (float)hyphenationFactor;
+- (id)description;
+- (unsigned int)retainCount;
+- (unsigned int)hash;
+- (id)retain;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (oneway void)release;
+- (id)init;
 - (id)tabStops;
 - (int)baseWritingDirection;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (float)firstLineHeadIndent;
+- (float)maximumLineHeight;
+- (float)minimumLineHeight;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (int)alignment;
+- (int)lineBreakMode;
+- (float)lineSpacing;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

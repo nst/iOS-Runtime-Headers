@@ -33,10 +33,6 @@
 
 
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
-- (long long)numberOfBytesToHash;
 - (void)setShouldResumeFromLocalBytes:(BOOL)arg1;
 - (void)setNumberOfBytesToHash:(long long)arg1;
 - (BOOL)_checkHashForByteCount:(long long)arg1;
@@ -59,6 +55,10 @@
 - (void)closeStream;
 - (long long)streamedBytes;
 - (BOOL)isStream;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (long long)numberOfBytesToHash;
 - (void)setup;
 
 @end

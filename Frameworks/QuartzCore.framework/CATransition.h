@@ -21,6 +21,7 @@
 @property(retain) id filter;
 
 
+- (id)filter;
 - (void)setOptions:(id)arg1;
 - (id)type;
 - (float)endProgress;
@@ -30,7 +31,6 @@
 - (void)setSubtype:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)subtype;
-- (id)filter;
 - (void)setEndProgress:(float)arg1;
 - (void)setStartProgress:(float)arg1;
 - (unsigned int)transitionFlags;

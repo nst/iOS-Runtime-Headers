@@ -18,10 +18,6 @@
 }
 
 
-- (id)description;
-- (id).cxx_construct;
-- (void)dealloc;
-- (unsigned int)count;
 - (BOOL)remove:(id)arg1;
 - (BOOL)contains:(id)arg1;
 - (id)itemDescriptions;
@@ -34,5 +30,9 @@
 - (id)breadthFirstDescription;
 - (id)itemsInRect:(struct { double x1; double x2; double x3; double x4; })arg1;
 - (void)clearAllItemsPerforming:(id)arg1;
+- (id)description;
+- (id).cxx_construct;
+- (void)dealloc;
+- (unsigned int)count;
 
 @end

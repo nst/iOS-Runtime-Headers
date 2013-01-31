@@ -21,9 +21,6 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithDocument:(id)arg1;
-- (id)style;
-- (void)setStyle:(id)arg1;
 - (void)setTableCellStylePropertiesOverridden:(BOOL)arg1;
 - (BOOL)isTableCellStylePropertiesOverridden;
 - (id)tableCellStyleProperties;
@@ -44,5 +41,8 @@
 - (BOOL)isCharacterPropertiesOverridden;
 - (id)characterProperties;
 - (id)paragraphProperties;
+- (id)initWithDocument:(id)arg1;
+- (id)style;
+- (void)setStyle:(id)arg1;
 
 @end

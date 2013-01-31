@@ -13,14 +13,6 @@
 
 + (id)sharedController;
 
-- (void)setRegistersForPingNotifications:(BOOL)arg1;
-- (BOOL)registersForPingNotifications;
-- (void)_handleLibraryLinkURL:(id)arg1;
-- (void)_handleStoreSearchURL:(id)arg1;
-- (void)_handleGeniusLookupURL:(id)arg1;
-- (void)_updateRemoteNotificationSettings;
-- (void)_accountStoreChangedNotification:(id)arg1;
-- (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (id)initWithClientIdentifier:(id)arg1;
 - (BOOL)displayClientURL:(id)arg1;
 - (id)purchaseManager:(id)arg1 purchaseBatchForPurchases:(id)arg2;
@@ -31,8 +23,16 @@
 - (id)tabBarController:(id)arg1 rootViewControllerForSection:(id)arg2;
 - (BOOL)tabBarController:(id)arg1 shouldShowSection:(id)arg2;
 - (id)initWithClientInterface:(id)arg1;
-- (void)becomeActive;
 - (void)dealloc;
 - (id)init;
+- (void)setRegistersForPingNotifications:(BOOL)arg1;
+- (BOOL)registersForPingNotifications;
+- (void)_handleLibraryLinkURL:(id)arg1;
+- (void)_handleStoreSearchURL:(id)arg1;
+- (void)_handleGeniusLookupURL:(id)arg1;
+- (void)_updateRemoteNotificationSettings;
+- (void)_accountStoreChangedNotification:(id)arg1;
+- (void)becomeActive;
+- (void)downloadManagerDownloadsDidChange:(id)arg1;
 
 @end

@@ -19,12 +19,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)animationStartTime;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewDidUnload;
-- (void)viewDidLoad;
-- (void)setAnimationStartTime:(id)arg1;
-- (void)didReceiveMemoryWarning;
 - (id)activationContext;
 - (void)setShouldAnimateIn:(BOOL)arg1;
 - (BOOL)shouldAnimateIn;
@@ -50,5 +44,11 @@
 - (BOOL)handleLockButtonPressed;
 - (BOOL)handleMenuButtonTap;
 - (void)setActivationContext:(id)arg1;
+- (id)animationStartTime;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidUnload;
+- (void)viewDidLoad;
+- (void)setAnimationStartTime:(id)arg1;
+- (void)didReceiveMemoryWarning;
 
 @end

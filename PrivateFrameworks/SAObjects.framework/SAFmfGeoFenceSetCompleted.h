@@ -16,14 +16,14 @@
 + (id)geoFenceSetCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)geoFenceSetCompleted;
 
-- (id)groupIdentifier;
-- (id)searchContext;
-- (void)setSearchContext:(id)arg1;
 - (void)setGeoFence:(id)arg1;
 - (id)geoFence;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)searchContext;
+- (void)setSearchContext:(id)arg1;
+- (id)groupIdentifier;
 
 @end

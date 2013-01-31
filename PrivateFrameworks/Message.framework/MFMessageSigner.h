@@ -21,7 +21,7 @@
 
 - (int)action;
 - (void)dealloc;
-- (id)sender;
+- (id)error;
 - (BOOL)hasTrustException;
 - (void)removeTrustException;
 - (void)addTrustException;
@@ -29,7 +29,7 @@
 - (id)emailAddress;
 - (id)commonName;
 - (id)initWithSender:(id)arg1 trust:(struct __SecTrust { }*)arg2 verification:(int)arg3;
+- (id)sender;
 - (id)certificates;
-- (id)error;
 
 @end

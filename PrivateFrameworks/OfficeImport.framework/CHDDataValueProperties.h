@@ -15,7 +15,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (int)key;
 - (id)dataLabel;
 - (id)shallowCopyWithIndex:(int)arg1;
 - (unsigned int)dataValueIndex;
@@ -25,5 +24,6 @@
 - (void)setGraphicProperties:(id)arg1;
 - (id)marker;
 - (id)graphicProperties;
+- (int)key;
 
 @end

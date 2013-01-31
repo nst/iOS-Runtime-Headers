@@ -21,6 +21,12 @@
 @property float progress;
 
 
+- (id)highlightedEtchColor;
+- (id)etchColor;
+- (void)setHighlightedEtchColor:(id)arg1;
+- (void)setEtchColor:(id)arg1;
+- (void)_drawInterior:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_drawOutline:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (float)progress;
 - (id)highlightedColor;
@@ -32,11 +38,5 @@
 - (void)setProgress:(float)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)highlightedEtchColor;
-- (id)etchColor;
-- (void)setHighlightedEtchColor:(id)arg1;
-- (void)setEtchColor:(id)arg1;
-- (void)_drawInterior:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_drawOutline:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

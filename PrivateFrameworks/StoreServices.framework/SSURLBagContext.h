@@ -26,10 +26,9 @@
 @property BOOL allowsExpiredBags;
 @property BOOL usesCachedBagsOnly;
 
++ (id)diskCacheDirectoryPath;
 + (id)contextWithBagType:(int)arg1;
 
-- (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
-- (id)valueForHTTPHeaderField:(id)arg1;
 - (void)setAllowedRetryCount:(int)arg1;
 - (void)setUserIdentifier:(id)arg1;
 - (void)setBagType:(int)arg1;
@@ -56,5 +55,7 @@
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)cacheKey;
+- (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
+- (id)valueForHTTPHeaderField:(id)arg1;
 
 @end

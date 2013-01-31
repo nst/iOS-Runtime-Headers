@@ -19,12 +19,12 @@
 @property BOOL geocentric;
 
 
-- (void)dealloc;
 - (BOOL)geocentric;
 - (void)_paintTile:(id)arg1 fromLayer:(unsigned int)arg2 withContext:(id)arg3;
 - (void)setGeocentric:(BOOL)arg1;
 - (void)debugHighlightLabelAtScreenPoint:(struct CGPoint { float x1; float x2; })arg1 viewTransform:(id)arg2 featurePool:(id)arg3 renderStamp:(unsigned int)arg4;
 - (void)drawDebugScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
+- (void)dealloc;
 
 @end

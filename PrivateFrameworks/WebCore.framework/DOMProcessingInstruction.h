@@ -12,9 +12,9 @@
 @property(readonly) DOMStyleSheet * sheet;
 
 
+- (id)sheet;
 - (id)target;
 - (id)data;
 - (void)setData:(id)arg1;
-- (id)sheet;
 
 @end

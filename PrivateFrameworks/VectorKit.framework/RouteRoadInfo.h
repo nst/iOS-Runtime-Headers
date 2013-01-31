@@ -18,11 +18,11 @@
 @property(readonly) struct { unsigned int x1; float x2; } routeOffset;
 
 
-- (id)name;
-- (id).cxx_construct;
-- (void)dealloc;
 - (id)initWithName:(id)arg1 shieldGroup:(id)arg2 offset:(struct { unsigned int x1; float x2; })arg3;
 - (struct { unsigned int x1; float x2; })routeOffset;
 - (id)shieldGroup;
+- (id)name;
+- (id).cxx_construct;
+- (void)dealloc;
 
 @end

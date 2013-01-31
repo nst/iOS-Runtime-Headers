@@ -6,12 +6,13 @@
    See Warning(s) below.
  */
 
-@class <SLDFacebookPostUploadDelegate><NSObject>, ACAccount, NSString, SLFacebookPost, NSMutableArray, SLDFacebookImageAssetDataProvider;
+@class SLFacebookPost, ACAccount, NSString, <SLDFacebookPostUploadDelegate><NSObject>, NSMutableArray, SLDFacebookImageAssetDataProvider;
 
 @interface SLDFacebookPostUpload : NSObject  {
     NSMutableArray *_uploadQueue;
     NSMutableArray *_failedUploads;
     SLDFacebookImageAssetDataProvider *_imageAssetDataProvider;
+    <SLDFacebookPostUploadDelegate><NSObject> *_delegate;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -19,7 +20,6 @@
 
     BOOL _suppressAlerts;
     SLFacebookPost *_post;
-    <SLDFacebookPostUploadDelegate><NSObject> *_delegate;
     ACAccount *_account;
     NSString *_sourceAppIdentifier;
 }
@@ -35,8 +35,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
-- (void)setAccount:(id)arg1;
-- (id)account;
 - (void)setSourceAppIdentifier:(id)arg1;
 - (void)setSuppressAlerts:(BOOL)arg1;
 - (void)setPostCompletion:(id)arg1;
@@ -59,5 +57,7 @@
 - (void)_requestCredentialRenewal;
 - (id)post;
 - (void)setPost:(id)arg1;
+- (void)setAccount:(id)arg1;
+- (id)account;
 
 @end

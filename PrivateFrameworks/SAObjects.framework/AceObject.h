@@ -22,7 +22,6 @@
 + (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)newAceObjectWithGenericCommand:(id)arg1 context:(id)arg2;
 
-- (id)groupIdentifier;
 - (id)dictionary;
 - (id)description;
 - (unsigned int)hash;
@@ -30,17 +29,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)properties;
-- (id)initWithDictionary:(id)arg1;
-- (id)context;
-- (void)setProperty:(id)arg1 forKey:(id)arg2;
-- (id)propertyForKey:(id)arg1;
 - (void)setTopLevelProperty:(id)arg1 forKey:(id)arg2;
 - (void)_appendDescriptionOfObject:(id)arg1 toString:(id)arg2 atDepth:(int)arg3 withPrefixes:(id)arg4;
 - (id)topLevelPropertyForKey:(id)arg1;
 - (id)_initWithMutableDictionary:(id)arg1 context:(id)arg2;
 - (id)encodedClassName;
 - (id)initWithDictionary:(id)arg1 context:(id)arg2;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)properties;
+- (id)initWithDictionary:(id)arg1;
+- (id)context;
+- (id)groupIdentifier;
+- (void)setProperty:(id)arg1 forKey:(id)arg2;
+- (id)propertyForKey:(id)arg1;
 
 @end

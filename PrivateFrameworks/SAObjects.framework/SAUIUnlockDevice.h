@@ -14,7 +14,6 @@
 + (id)unlockDeviceWithDictionary:(id)arg1 context:(id)arg2;
 + (id)unlockDevice;
 
-- (id)groupIdentifier;
 - (void)setSuccessCommands:(id)arg1;
 - (id)successCommands;
 - (void)setFailureCommands:(id)arg1;
@@ -23,5 +22,6 @@
 - (id)cancellationCommands;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

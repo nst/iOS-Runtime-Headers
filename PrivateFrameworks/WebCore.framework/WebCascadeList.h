@@ -19,10 +19,10 @@
 }
 
 
+- (id)initWithFont:(const struct Font { struct FontDescription { struct FontFamily { struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_5_1; } x_1_4_1; } x_1_3_1; } x_1_2_1; struct ListRefPtr<WebCore::SharedFontFamily> { struct SharedFontFamily {} *x_2_3_1; } x_1_2_2; } x_1_1_1; struct RefPtr<WebCore::FontFeatureSettings> { struct FontFeatureSettings {} *x_2_2_1; } x_1_1_2; float x_1_1_3; float x_1_1_4; unsigned int x_1_1_5 : 1; unsigned int x_1_1_6 : 1; unsigned int x_1_1_7 : 2; unsigned int x_1_1_8 : 1; unsigned int x_1_1_9 : 1; unsigned int x_1_1_10 : 1; unsigned int x_1_1_11 : 8; unsigned int x_1_1_12 : 3; unsigned int x_1_1_13 : 1; unsigned int x_1_1_14 : 1; unsigned int x_1_1_15 : 2; unsigned int x_1_1_16 : 2; unsigned int x_1_1_17 : 2; unsigned int x_1_1_18 : 2; unsigned int x_1_1_19 : 4; unsigned int x_1_1_20 : 2; unsigned int x_1_1_21 : 2; unsigned int x_1_1_22 : 1; int x_1_1_23; } x1; struct RefPtr<WebCore::FontFallbackList> { struct FontFallbackList {} *x_2_1_1; } x2; float x3; float x4; boolx5; boolx6; }*)arg1 character:(int)arg2;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (unsigned int)count;
-- (id)initWithFont:(const struct Font { struct FontDescription { struct FontFamily { struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_5_1; } x_1_4_1; } x_1_3_1; } x_1_2_1; struct ListRefPtr<WebCore::SharedFontFamily> { struct SharedFontFamily {} *x_2_3_1; } x_1_2_2; } x_1_1_1; struct RefPtr<WebCore::FontFeatureSettings> { struct FontFeatureSettings {} *x_2_2_1; } x_1_1_2; float x_1_1_3; float x_1_1_4; unsigned int x_1_1_5 : 1; unsigned int x_1_1_6 : 1; unsigned int x_1_1_7 : 2; unsigned int x_1_1_8 : 1; unsigned int x_1_1_9 : 1; unsigned int x_1_1_10 : 1; unsigned int x_1_1_11 : 8; unsigned int x_1_1_12 : 3; unsigned int x_1_1_13 : 1; unsigned int x_1_1_14 : 1; unsigned int x_1_1_15 : 2; unsigned int x_1_1_16 : 2; unsigned int x_1_1_17 : 2; unsigned int x_1_1_18 : 2; unsigned int x_1_1_19 : 4; unsigned int x_1_1_20 : 2; unsigned int x_1_1_21 : 2; unsigned int x_1_1_22 : 1; int x_1_1_23; } x1; struct RefPtr<WebCore::FontFallbackList> { struct FontFallbackList {} *x_2_1_1; } x2; float x3; float x4; boolx5; boolx6; }*)arg1 character:(int)arg2;
 
 @end

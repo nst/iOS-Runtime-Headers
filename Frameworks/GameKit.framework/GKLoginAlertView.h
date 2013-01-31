@@ -13,13 +13,13 @@
 @property(copy) NSString * password;
 
 
-- (void)setPassword:(id)arg1;
-- (id)initWithDelegate:(id)arg1 uneditableUsername:(id)arg2;
-- (id)username;
-- (void)setUsername:(id)arg1;
 - (void)dealloc;
 - (void)_updateFrameForDisplay;
 - (id)password;
 - (BOOL)textFieldShouldReturn:(id)arg1;
+- (void)setPassword:(id)arg1;
+- (id)initWithDelegate:(id)arg1 uneditableUsername:(id)arg2;
+- (id)username;
+- (void)setUsername:(id)arg1;
 
 @end

@@ -34,7 +34,6 @@
 + (void)setSharedController:(id)arg1;
 + (id)sharedController;
 
-- (id)userAgent;
 - (void)setImageOperationPool:(id)arg1;
 - (id)initWithClientIdentifier:(id)arg1;
 - (BOOL)storeFrontDidChangeSinceLastSuspend;
@@ -52,10 +51,10 @@
 - (BOOL)performActionForDialog:(id)arg1 button:(id)arg2;
 - (void)_reloadUserDefaultsFromURLBag;
 - (void)_reloadScriptExecutionContextFromURLBag;
-- (void)_reloadOverlayConfigurationsFromURLBag;
 - (BOOL)presentAccountViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)composeEmailWithSubject:(id)arg1 body:(id)arg2 animated:(BOOL)arg3;
 - (BOOL)presentAccountViewController:(id)arg1 showNavigationBar:(BOOL)arg2 animated:(BOOL)arg3;
+- (void)_reloadOverlayConfigurationsFromURLBag;
 - (BOOL)displayClientURL:(id)arg1;
 - (struct __CFArray { }*)offeredAssetTypes;
 - (void)_dialogNotification:(id)arg1;
@@ -84,9 +83,7 @@
 - (void)purchaseManagerWillBeginUpdates:(id)arg1;
 - (id)newScriptInterface;
 - (void)setImageCache:(id)arg1;
-- (id)imageCache;
 - (id)overlayConfigurationForStorePage:(id)arg1;
-- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)composeEmailWithSubject:(id)arg1 body:(id)arg2;
 - (id)clientIdentifier;
 - (void)_presentDialog:(id)arg1;
@@ -98,18 +95,21 @@
 - (BOOL)isStoreEnabled;
 - (void)setClientInterface:(id)arg1;
 - (id)clientInterface;
-- (void)becomeActive;
-- (void)resignActive;
 - (BOOL)openClientURL:(id)arg1;
 - (id)scriptExecutionContext;
 - (void)cancelAllOperations;
 - (void)dealloc;
 - (id)init;
+- (void)setUserAgent:(id)arg1;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (BOOL)isActive;
 - (id)rootViewController;
 - (BOOL)openURL:(id)arg1;
 - (void)setRootViewController:(id)arg1;
-- (void)setUserAgent:(id)arg1;
+- (void)becomeActive;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
+- (id)imageCache;
+- (void)resignActive;
+- (id)userAgent;
 
 @end

@@ -40,6 +40,7 @@
 }
 
 
+- (void)dealloc;
 - (void)determineValidity;
 - (void)assessQuality;
 - (void)initializeJunctions;
@@ -49,7 +50,6 @@
 - (id)initWithContentZone:(id)arg1;
 - (id)spacers;
 - (void)dispose;
-- (void)dealloc;
 - (void)finalize;
 
 @end

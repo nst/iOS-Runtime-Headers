@@ -6,6 +6,7 @@
 
 @interface GEOUsageCollectionRequest : PBRequest  {
     NSMutableArray *_directionsFeedbackCollections;
+    NSMutableArray *_mapsUsageFeedbackCollections;
     NSMutableArray *_placeSearchFeedbackCollections;
     NSMutableArray *_transitAppLaunchFeedbackCollections;
     NSMutableArray *_usageCollections;
@@ -15,19 +16,24 @@
 @property(retain) NSMutableArray * directionsFeedbackCollections;
 @property(retain) NSMutableArray * placeSearchFeedbackCollections;
 @property(retain) NSMutableArray * transitAppLaunchFeedbackCollections;
+@property(retain) NSMutableArray * mapsUsageFeedbackCollections;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (id)mapsUsageFeedbackCollections;
 - (id)transitAppLaunchFeedbackCollections;
 - (id)placeSearchFeedbackCollections;
 - (id)directionsFeedbackCollections;
 - (id)usageCollections;
+- (id)mapsUsageFeedbackCollectionAtIndex:(unsigned int)arg1;
+- (void)clearMapsUsageFeedbackCollections;
+- (unsigned int)mapsUsageFeedbackCollectionsCount;
 - (id)transitAppLaunchFeedbackCollectionAtIndex:(unsigned int)arg1;
 - (void)clearTransitAppLaunchFeedbackCollections;
 - (unsigned int)transitAppLaunchFeedbackCollectionsCount;
@@ -40,16 +46,18 @@
 - (id)usageCollectionAtIndex:(unsigned int)arg1;
 - (void)clearUsageCollections;
 - (unsigned int)usageCollectionsCount;
+- (void)addPlaceSearchFeedbackCollection:(id)arg1;
+- (void)setMapsUsageFeedbackCollections:(id)arg1;
 - (void)setTransitAppLaunchFeedbackCollections:(id)arg1;
 - (void)setPlaceSearchFeedbackCollections:(id)arg1;
 - (void)setDirectionsFeedbackCollections:(id)arg1;
 - (void)setUsageCollections:(id)arg1;
-- (void)addPlaceSearchFeedbackCollection:(id)arg1;
+- (void)addMapsUsageFeedbackCollection:(id)arg1;
 - (void)addTransitAppLaunchFeedbackCollection:(id)arg1;
 - (void)addDirectionsFeedbackCollection:(id)arg1;
 - (void)addUsageCollection:(id)arg1;
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

@@ -14,14 +14,10 @@
     BOOL _shouldReloadRentalData;
 }
 
-+ (id)sharedInstance;
 + (id)existingInstance;
++ (id)sharedInstance;
 
 - (void)_enqueueOperation:(id)arg1;
-- (void)_libraryDidChangeNotification:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)_resetLocalNotifications;
 - (void)resetRentalDataForMediaItem:(id)arg1 reason:(unsigned int)arg2;
 - (void)resetAllDataForReason:(unsigned int)arg1;
@@ -36,5 +32,9 @@
 - (id)_rentalDataForMediaItem:(id)arg1;
 - (void)_libraryDisplayValuesDidChange:(id)arg1;
 - (id)rentalDataForMediaItem:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)_libraryDidChangeNotification:(id)arg1;
 
 @end

@@ -8,6 +8,8 @@
 
 + (id)sharedPreferences;
 
+- (void)dealloc;
+- (id)init;
 - (BOOL)fileLoggingIsEnabled;
 - (void)setFileLoggingIsEnabled:(BOOL)arg1;
 - (id)languagesMissingBirthCertificates;
@@ -32,8 +34,6 @@
 - (void)_synchronizeSessionContext;
 - (id)birthCertificateDataForLanguageCode:(id)arg1;
 - (BOOL)assistantIsEnabled;
-- (void)dealloc;
-- (id)init;
 - (BOOL)dictationIsEnabled;
 - (void)synchronize;
 

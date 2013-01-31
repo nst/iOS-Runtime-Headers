@@ -29,12 +29,9 @@
 @property BOOL shouldIgnoreHomeSetOnDifferentHost;
 
 
-- (id)emailAddresses;
-- (id)collections;
 - (id)description;
 - (void)dealloc;
 - (id)principalURL;
-- (id)displayName;
 - (void)setShouldIgnoreHomeSetOnDifferentHost:(BOOL)arg1;
 - (id)principalSearchProperties;
 - (void)setFetchPrincipalSearchProperties:(BOOL)arg1;
@@ -55,5 +52,8 @@
 - (id)homeSet;
 - (void)_setPropertiesFromParsedResponses:(id)arg1;
 - (id)_copyAccountPropertiesPropFindElements;
+- (id)displayName;
+- (id)collections;
+- (id)emailAddresses;
 
 @end

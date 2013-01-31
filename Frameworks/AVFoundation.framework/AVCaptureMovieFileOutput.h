@@ -11,16 +11,16 @@
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
 @property(copy) NSArray * metadata;
 
-+ (void)initialize;
 + (BOOL)updateMovieMetadataInFile:(id)arg1 withMetadata:(id)arg2 error:(id*)arg3;
 + (BOOL)consolidateMovieFragmentsInFile:(id)arg1 error:(id*)arg2;
++ (void)initialize;
 + (id)recorderCommonMetadataForAVMetadataItemArray:(id)arg1;
 
 - (void)dealloc;
 - (id)init;
+- (void)stopRecording;
 - (id)metadata;
 - (void)setMetadata:(id)arg1;
-- (void)stopRecording;
 - (BOOL)sendsLastVideoPreviewFrame;
 - (void)setSendsLastVideoPreviewFrame:(BOOL)arg1;
 - (long)_avErrorForDidStopRecordingReason:(id)arg1;

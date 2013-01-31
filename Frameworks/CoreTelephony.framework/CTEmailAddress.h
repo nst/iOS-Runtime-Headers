@@ -12,9 +12,9 @@
 
 + (id)emailAddress:(id)arg1;
 
-- (id)address;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)address;
 - (id)canonicalFormat;
 - (id)encodedString;
 - (id)initWithAddress:(id)arg1;

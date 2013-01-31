@@ -25,7 +25,6 @@
 
 + (Class)classForNavigationButton;
 
-- (void)setLoading:(BOOL)arg1;
 - (void)_addTouchCaptureViewForNavigationButton:(id)arg1;
 - (void)_updateViewForAccessoryChange;
 - (id)_navigationButton;
@@ -36,12 +35,13 @@
 - (void)_touchCaptureAction:(id)arg1;
 - (void)showConfirmationWithTitle:(id)arg1 appearance:(id)arg2 animated:(BOOL)arg3;
 - (void)hideConfirmationWithAppearance:(id)arg1 animated:(BOOL)arg2;
-- (BOOL)isShowingConfirmation;
 - (void)configureFromScriptButton:(id)arg1;
 - (void)dealloc;
 - (id)accessoryView;
 - (void)setAccessoryView:(id)arg1;
 - (BOOL)isLoading;
 - (id)createViewForNavigationItem:(id)arg1;
+- (BOOL)isShowingConfirmation;
+- (void)setLoading:(BOOL)arg1;
 
 @end

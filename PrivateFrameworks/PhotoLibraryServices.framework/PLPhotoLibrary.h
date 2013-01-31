@@ -49,7 +49,6 @@
 @property(readonly) NSArray * photoStreamAlbums;
 @property(readonly) NSArray * photoStreamAlbumsForPreferences;
 
-+ (BOOL)isRunningInStoreDemoMode;
 + (BOOL)_assetsLibrary_isSharedPhotoStreamsSupportEnabled;
 + (void)_assetsLibrary_disableSharedPhotoStreamsSupport;
 + (BOOL)canSaveVideoToCameraRoll:(id)arg1;
@@ -104,15 +103,11 @@
 + (id)crashRecoveryIndicatorFilePaths;
 + (void)setSqliteErrorAndExitIfNecessary;
 + (id)sharedPhotoLibrary;
++ (BOOL)isRunningInStoreDemoMode;
 
 - (id)managedObjectContext;
 - (void)dealloc;
 - (id)init;
-- (id)existingObjectWithID:(id)arg1 error:(id*)arg2;
-- (unsigned int)concurrencyType;
-- (BOOL)isTransient;
-- (void)performBlock:(id)arg1;
-- (id)_init;
 - (id)librarySizes;
 - (BOOL)getPhotoCount:(unsigned int*)arg1 videoCount:(unsigned int*)arg2;
 - (id)albumsForContentMode:(int)arg1;
@@ -137,7 +132,6 @@
 - (BOOL)hasAtLeastOnePhotoWithGPS;
 - (void)resetCachedImportAlbumsIfNeededForAlbum:(id)arg1;
 - (id)lastImportedPhotosAlbum;
-- (id)allImportedPhotosAlbum;
 - (void)recreateAlbumsFromMetadata;
 - (BOOL)needsMigration;
 - (id)managedObjectWithObjectID:(id)arg1;
@@ -195,7 +189,6 @@
 - (void)photoLibraryCorruptNotification;
 - (void)_notifyPhotoLibraryIsNoLongerAvailableOnMainThread;
 - (id)_iTunesPhotos;
-- (void)copyAssetToCameraRoll:(id)arg1;
 - (void)clientApplicationWillEnterForeground;
 - (id)countOfAllPhotosAndVideos;
 - (void)flushAlbums;
@@ -214,6 +207,7 @@
 - (BOOL)isVideoFileExtension:(id)arg1;
 - (void)_loadFileExtensionInformation;
 - (int)priorityForFileExtension:(id)arg1;
+- (id)allImportedPhotosAlbum;
 - (id)newImageForDulcimerPhoto:(id)arg1 format:(int)arg2 outImageProperties:(const struct __CFDictionary {}**)arg3;
 - (id)dataForPhoto:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (id)newImageForDulcimerPhoto:(id)arg1 format:(int)arg2;
@@ -249,9 +243,15 @@
 - (id)thumbnailManager;
 - (BOOL)_hasAtLeastOneItem:(BOOL)arg1;
 - (void)_loadPhotoLibraryAfterMigration;
+- (void)copyAssetToCameraRoll:(id)arg1;
 - (void)_releaseThumbnailManager;
 - (void)setManagedObjectContext:(id)arg1;
 - (void)loadDatabase;
 - (id)initWithTransientContext:(BOOL)arg1;
+- (void)performBlock:(id)arg1;
+- (id)_init;
+- (id)existingObjectWithID:(id)arg1 error:(id*)arg2;
+- (unsigned int)concurrencyType;
+- (BOOL)isTransient;
 
 @end

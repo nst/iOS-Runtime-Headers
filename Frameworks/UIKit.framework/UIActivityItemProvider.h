@@ -7,9 +7,9 @@
 @interface UIActivityItemProvider : NSOperation <UIActivityItemSource> {
     float _progress;
     id _providedItem;
-    id _placeholderItem;
-    NSString *_status;
     NSString *_activityType;
+    NSString *_status;
+    id _placeholderItem;
 }
 
 @property(retain) id placeholderItem;

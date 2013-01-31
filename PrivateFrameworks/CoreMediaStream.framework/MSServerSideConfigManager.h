@@ -17,18 +17,21 @@
 @property(retain) NSDictionary * config;
 @property MSMediaStreamDaemon * daemon;
 
++ (void)forgetPersonID:(id)arg1;
 + (long)longValueForParameter:(id)arg1 forPersonID:(id)arg2 defaultValue:(long)arg3;
++ (double)doubleValueForParameter:(id)arg1 forPersonID:(id)arg2 defaultValue:(double)arg3;
 + (id)objectForKey:(id)arg1 forPersonID:(id)arg2 defaultValue:(id)arg3;
 + (int)intValueForParameter:(id)arg1 forPersonID:(id)arg2 defaultValue:(int)arg3;
 + (long long)longLongValueForParameter:(id)arg1 forPersonID:(id)arg2 defaultValue:(long long)arg3;
 + (void)abortAllActivities;
 + (id)existingConfigManagerForPersonID:(id)arg1;
 + (id)configManagerForPersonID:(id)arg1;
-+ (void)forgetPersonID:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)config;
 - (void)dealloc;
+- (id)personID;
+- (void)abort;
 - (void)setConfig:(id)arg1;
 - (void)serverSideConfigProtocol:(id)arg1 didReceiveAuthenticationError:(id)arg2;
 - (void)serverSideConfigProtocol:(id)arg1 didFinishWithConfiguration:(id)arg2 error:(id)arg3;
@@ -36,7 +39,5 @@
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
 - (void)refreshConfiguration;
 - (void)setDaemon:(id)arg1;
-- (id)personID;
-- (void)abort;
 
 @end

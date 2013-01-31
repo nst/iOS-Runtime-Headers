@@ -12,10 +12,10 @@
 
 + (id)copyParseRules;
 
-- (id)description;
-- (void)dealloc;
 - (void)write:(id)arg1;
 - (void)setHref:(id)arg1;
 - (id)href;
+- (id)description;
+- (void)dealloc;
 
 @end

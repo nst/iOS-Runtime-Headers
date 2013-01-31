@@ -6,27 +6,27 @@
    See Warning(s) below.
  */
 
-@class NSArray, NSString, UIActivity, NSOperationQueue, UIActivityListViewController;
+@class NSOperationQueue, NSArray, NSString, UIActivity, UIActivityListViewController;
 
 @interface UIActivityViewController : UIViewController  {
+    NSArray *_excludedActivityTypes;
+    NSOperationQueue *_activityItemProviderOperationQueue;
+    UIActivityListViewController *_activityListViewController;
+    NSArray *_activityItems;
+    Class _originalPopoverBackgroundViewClass;
+    NSArray *_applicationActivities;
+    int _originalPopoverBackgroundStyle;
+    NSString *_subject;
     unsigned int _backgroundTaskIdentifier;
-    int _completedProviderCount;
     BOOL _useBlackPopoverStyle;
     UIActivity *_activity;
-    Class _originalPopoverBackgroundViewClass;
-    int _originalPopoverBackgroundStyle;
-    NSArray *_activityItems;
+    int _completedProviderCount;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
 
-    NSArray *_applicationActivities;
-    NSString *_subject;
-    NSArray *_excludedActivityTypes;
-    UIActivityListViewController *_activityListViewController;
     int _totalProviderCount;
-    NSOperationQueue *_activityItemProviderOperationQueue;
 }
 
 @property(copy) id completionHandler;
@@ -50,16 +50,16 @@
 - (void)dealloc;
 - (void)setTotalProviderCount:(int)arg1;
 - (int)totalProviderCount;
-- (id)activityListViewController;
-- (id)applicationActivities;
-- (void)setOriginalPopoverBackgroundStyle:(int)arg1;
-- (int)originalPopoverBackgroundStyle;
-- (void)setOriginalPopoverBackgroundViewClass:(Class)arg1;
-- (Class)originalPopoverBackgroundViewClass;
-- (void)setUseBlackPopoverStyle:(BOOL)arg1;
 - (void)setCompletedProviderCount:(int)arg1;
 - (int)completedProviderCount;
+- (void)setUseBlackPopoverStyle:(BOOL)arg1;
 - (unsigned int)backgroundTaskIdentifier;
+- (void)setOriginalPopoverBackgroundStyle:(int)arg1;
+- (int)originalPopoverBackgroundStyle;
+- (id)applicationActivities;
+- (void)setOriginalPopoverBackgroundViewClass:(Class)arg1;
+- (Class)originalPopoverBackgroundViewClass;
+- (id)activityListViewController;
 - (void)_reloadImageForActivity:(id)arg1;
 - (id)activityItemProviderOperationQueue;
 - (BOOL)useBlackPopoverStyle;

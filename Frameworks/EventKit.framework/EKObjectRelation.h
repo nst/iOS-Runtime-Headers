@@ -21,7 +21,6 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)rollback;
 - (id)owner;
 - (id)relationName;
 - (void)_removeRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
@@ -36,5 +35,6 @@
 - (BOOL)validate:(id*)arg1;
 - (void)didCommit;
 - (void)refresh;
+- (void)rollback;
 
 @end

@@ -10,15 +10,15 @@
 }
 
 
-- (id)specifiers;
+- (void)dealloc;
+- (id)init;
 - (void)localeChangedAction;
 - (id)locale:(id)arg1;
 - (void)subcategorySelected:(id)arg1 specifier:(id)arg2;
 - (void)addLanguage:(id)arg1 toSupportedLanguages:(id)arg2;
 - (void)updateChecked:(id)arg1;
 - (void)setLocale:(id)arg1 specifier:(id)arg2;
-- (void)dealloc;
-- (id)init;
+- (id)specifiers;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

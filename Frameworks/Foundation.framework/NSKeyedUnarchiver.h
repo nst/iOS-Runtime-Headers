@@ -38,6 +38,7 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (id)initWithStream:(id)arg1;
 - (int)versionForClassName:(id)arg1;
 - (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
 - (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(void*)arg3;
@@ -61,6 +62,7 @@
 - (BOOL)containsValueForKey:(id)arg1;
 - (BOOL)decodeBoolForKey:(id)arg1;
 - (id)decodeObjectForKey:(id)arg1;
+- (id)decodeObjectOfClass:(Class)arg1 forKey:(id)arg2;
 - (unsigned int)_currentUniqueIdentifier;
 - (void)_replaceObject:(id)arg1 withObject:(id)arg2;
 - (id)_allowedClassNames;
@@ -75,8 +77,6 @@
 - (BOOL)requiresSecureCoding;
 - (id)decodeObjectOfClasses:(id)arg1 forKey:(id)arg2;
 - (id)_decodePropertyListForKey:(id)arg1;
-- (id)decodeObjectOfClass:(Class)arg1 forKey:(id)arg2;
 - (id)_decodeArrayOfObjectsForKey:(id)arg1;
-- (id)initWithStream:(id)arg1;
 
 @end

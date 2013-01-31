@@ -14,10 +14,13 @@
 @property(copy) NSNumber * minute;
 @property(copy) NSNumber * relativeOffsetMinutes;
 
-+ (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)object;
 
-- (id)groupIdentifier;
+- (void)setRelativeOffsetMinutes:(id)arg1;
+- (id)relativeOffsetMinutes;
+- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
+- (id)encodedClassName;
 - (void)setMinute:(id)arg1;
 - (void)setHour:(id)arg1;
 - (id)enabled;
@@ -26,10 +29,7 @@
 - (id)label;
 - (void)setLabel:(id)arg1;
 - (void)setEnabled:(id)arg1;
-- (void)setRelativeOffsetMinutes:(id)arg1;
-- (id)relativeOffsetMinutes;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 - (id)frequency;
 - (void)setFrequency:(id)arg1;
 

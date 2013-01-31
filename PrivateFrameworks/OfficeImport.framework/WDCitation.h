@@ -32,20 +32,9 @@
 @property(retain) NSString * pages;
 
 
-- (void)dealloc;
-- (void)setSection:(id)arg1;
-- (id)number;
-- (void)setYear:(id)arg1;
-- (id)year;
-- (id)initWithDocument:(id)arg1;
-- (id)document;
-- (id)titles;
-- (void)setSourceType:(id)arg1;
-- (id)sourceType;
-- (id)section;
-- (void)setTitles:(id)arg1;
 - (void)setVolume:(id)arg1;
 - (id)volume;
+- (void)dealloc;
 - (void)setPages:(id)arg1;
 - (id)pages;
 - (void)setUrls:(id)arg1;
@@ -57,5 +46,16 @@
 - (id)periodicalTitle;
 - (void)setAuthors:(id)arg1;
 - (id)authors;
+- (void)setSection:(id)arg1;
+- (id)number;
+- (void)setYear:(id)arg1;
+- (id)year;
+- (id)initWithDocument:(id)arg1;
+- (id)document;
+- (id)titles;
+- (void)setSourceType:(id)arg1;
+- (id)sourceType;
+- (id)section;
+- (void)setTitles:(id)arg1;
 
 @end

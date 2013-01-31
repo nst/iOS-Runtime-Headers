@@ -44,23 +44,10 @@
 @property int minificationFilter;
 @property int magnificationFilter;
 
-+ (void)purge;
 + (id)textureWithName:(id)arg1;
 + (id)textureWithName:(id)arg1 forScale:(float)arg2;
++ (void)purge;
 
-- (void)setTarget:(int)arg1;
-- (int)target;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (BOOL)dirty;
-- (BOOL)isLoaded;
-- (void)setMinificationFilter:(int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setMagnificationFilter:(int)arg1;
-- (id)initWithData:(id)arg1;
-- (id)initWithName:(id)arg1;
 - (int)magnificationFilter;
 - (int)minificationFilter;
 - (int)wrapBehaviorY;
@@ -77,6 +64,19 @@
 - (BOOL)loadTexture;
 - (void)setWrapBehavior:(int)arg1;
 - (BOOL)decodeTexture;
+- (void)setTarget:(int)arg1;
+- (int)target;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (unsigned int)token;
+- (BOOL)dirty;
+- (BOOL)isLoaded;
+- (void)setMinificationFilter:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setMagnificationFilter:(int)arg1;
+- (id)initWithData:(id)arg1;
+- (id)initWithName:(id)arg1;
 
 @end

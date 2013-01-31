@@ -21,10 +21,12 @@
 @property(retain) CoreDAVItemWithNoChildren * sharedOwner;
 
 
+- (void)write:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (id)calendar;
-- (void)setCalendar:(id)arg1;
+- (id)notification;
+- (id)copyParseRules;
+- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)setSharedOwner:(id)arg1;
 - (void)setNotification:(id)arg1;
 - (void)setScheduleOutbox:(id)arg1;
@@ -33,10 +35,8 @@
 - (id)subscribed;
 - (id)scheduleOutbox;
 - (id)scheduleInbox;
-- (id)copyParseRules;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (void)write:(id)arg1;
-- (id)notification;
+- (id)calendar;
+- (void)setCalendar:(id)arg1;
 - (void)setSubscribed:(id)arg1;
 
 @end

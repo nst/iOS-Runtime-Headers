@@ -20,13 +20,13 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (int)propertyType;
-- (id)defaultIMHandle;
-- (id)initWithIMHandle:(id)arg1;
 - (id)originalAddress;
 - (struct __CFPhoneNumber { }*)phoneNumberRef;
 - (id)rawAddress;
+- (id)initWithIMHandle:(id)arg1;
+- (id)defaultIMHandle;
 - (id)contactImageThumbnail;
 - (void*)abRecord;
+- (int)propertyType;
 
 @end

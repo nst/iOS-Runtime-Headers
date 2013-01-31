@@ -13,7 +13,6 @@
 }
 
 
-- (void)dealloc;
 - (struct __CFArray { }*)retainedArrayOfIdentifiedStyles;
 - (void)resolveStyleParents;
 - (void)addStyle:(id)arg1 needingParentResolution:(const char *)arg2 resolveInParent:(BOOL)arg3;
@@ -22,6 +21,7 @@
 - (id)initWithRoot:(id)arg1;
 - (id)styleWithIdentifier:(const char *)arg1;
 - (BOOL)addStyle:(id)arg1 withOwnedXmlUid:(char *)arg2;
+- (void)dealloc;
 - (id)parent;
 
 @end

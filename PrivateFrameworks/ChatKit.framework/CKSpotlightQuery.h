@@ -28,14 +28,14 @@
 
 - (void)cancel;
 - (void)dealloc;
-- (void)_cleanup;
-- (void)setCompletion:(id)arg1;
-- (id)completion;
 - (void)searchDaemonQueryCompleted:(id)arg1;
 - (void)searchDaemonQuery:(id)arg1 encounteredError:(id)arg2;
 - (void)searchDaemonQuery:(id)arg1 addedResults:(id)arg2;
 - (void)_callCompletionIfNecessary;
 - (void)_processSearchResults;
 - (id)initWithSearchText:(id)arg1 completionBlock:(id)arg2;
+- (void)_cleanup;
+- (void)setCompletion:(id)arg1;
+- (id)completion;
 
 @end

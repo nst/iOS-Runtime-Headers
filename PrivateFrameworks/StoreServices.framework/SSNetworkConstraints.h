@@ -11,10 +11,10 @@
 
 @property(getter=isAnyNetworkTypeEnabled,readonly) BOOL anyNetworkTypeEnabled;
 
-+ (id)newNetworkConstraintsByDownloadKindFromURLBag:(id)arg1;
 + (void)_addNetworkConstraintsToDictionary:(id)arg1 forNetworkType:(int)arg2 legacyDictionary:(id)arg3;
 + (id)_newLegacyNetworkConstraintsWithDictionary:(id)arg1;
 + (id)_newModernNetworkConstraintsWithArray:(id)arg1;
++ (id)newNetworkConstraintsByDownloadKindFromURLBag:(id)arg1;
 
 - (BOOL)isAnyNetworkTypeEnabled;
 - (void)setSizeLimitsWithStoreConstraintDictionary:(id)arg1;
@@ -23,7 +23,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (long long)sizeLimitForNetworkType:(int)arg1;
 - (BOOL)hasSizeLimitForNetworkType:(int)arg1;
 - (void)disableCellularNetworkTypes;
 - (void)setAllNetworkTypesDisabled;
@@ -36,5 +35,6 @@
 - (void)setSizeLimit:(long long)arg1 forNetworkType:(int)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (long long)sizeLimitForNetworkType:(int)arg1;
 
 @end

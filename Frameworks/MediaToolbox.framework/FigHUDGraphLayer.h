@@ -16,11 +16,11 @@
 }
 
 
+- (void)drawInContext:(struct CGContext { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (void)updateValue:(int)arg1 value:(float)arg2;
 - (void)setUpGraph:(int)arg1 min:(float)arg2 max:(float)arg3 numValues:(int)arg4;
 - (void)setUpGraphs:(int)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)drawInContext:(struct CGContext { }*)arg1;
 
 @end

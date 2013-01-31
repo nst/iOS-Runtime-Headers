@@ -12,10 +12,10 @@
 + (id)domainObjectDeleteWithDictionary:(id)arg1 context:(id)arg2;
 + (id)domainObjectDelete;
 
-- (id)groupIdentifier;
 - (id)identifier;
-- (void)setIdentifier:(id)arg1;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (void)setIdentifier:(id)arg1;
+- (id)groupIdentifier;
 
 @end

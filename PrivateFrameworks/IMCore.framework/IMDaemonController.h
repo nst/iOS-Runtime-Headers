@@ -48,19 +48,16 @@
 @property(readonly) NSObject<OS_dispatch_queue> * _remoteMessageQueue;
 
 + (id)sharedInstance;
-+ (id)sharedController;
 + (void)_setApplicationWillTerminate;
 + (BOOL)_applicationWillTerminate;
 + (void)_blockUntilSendQueueIsEmpty;
++ (id)sharedController;
 
-- (BOOL)isConnecting;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
-- (void)_addressBookChanged:(id)arg1;
-- (void)forwardInvocation:(id)arg1;
-- (id)methodSignatureForSelector:(SEL)arg1;
+- (unsigned int)capabilities;
 - (void)_setServicesToDeny:(id)arg1;
 - (void)_setServicesToAllow:(id)arg1;
 - (void)_setListenerID:(id)arg1;
@@ -100,7 +97,6 @@
 - (void)_setCapabilities:(unsigned int)arg1;
 - (BOOL)connectToDaemonWithLaunch:(BOOL)arg1;
 - (void)blockUntilConnected;
-- (id)listener;
 - (id)_remoteMessageQueue;
 - (void)_noteSetupComplete;
 - (BOOL)localObjectExists;
@@ -119,7 +115,11 @@
 - (void)systemApplicationWillEnterForeground;
 - (void)systemApplicationDidEnterBackground;
 - (BOOL)connectToDaemon;
-- (unsigned int)capabilities;
+- (id)listener;
+- (void)_addressBookChanged:(id)arg1;
+- (void)forwardInvocation:(id)arg1;
+- (id)methodSignatureForSelector:(SEL)arg1;
+- (BOOL)isConnecting;
 - (BOOL)isConnected;
 
 @end

@@ -22,11 +22,11 @@
 - (id)target;
 - (void)dealloc;
 - (id)init;
-- (void)setAction:(SEL)arg1;
 - (void)setMainThreadAction:(SEL)arg1;
 - (BOOL)hasParams;
 - (id)waitForCallbackParams;
 - (void)setCallbackParams:(id)arg1;
 - (SEL)mainThreadAction;
+- (void)setAction:(SEL)arg1;
 
 @end

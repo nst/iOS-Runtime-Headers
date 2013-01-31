@@ -16,7 +16,6 @@
 - (void)postNotificationName:(id)arg1 object:(id)arg2;
 - (void)dealloc;
 - (id)init;
-- (void)postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (void)addObserverForNotificationsFromPort:(int)arg1;
 - (int)openConnectionToPort:(int)arg1;
 - (void)sendNotification:(id)arg1 toPort:(int)arg2;
@@ -24,6 +23,7 @@
 - (void)acceptThread;
 - (void)startAcceptThread;
 - (void)startListeningThread;
+- (void)postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (void)setPort:(int)arg1;
 
 @end

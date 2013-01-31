@@ -21,15 +21,15 @@
 @property(retain) VKLoupeMapTileModel * mapTileModel;
 
 
+- (id)mapTileModel;
+- (void)_updateTransform;
+- (void)_updateMap;
+- (void)setMapTileModel:(id)arg1;
 - (void)dealloc;
 - (void)didMoveToSuperview;
 - (void)scale;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)mapTileModel;
-- (void)_updateTransform;
-- (void)_updateMap;
-- (void)setMapTileModel:(id)arg1;
 - (void)pan;
 
 @end

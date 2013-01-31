@@ -29,17 +29,14 @@
 
 + (float)defaultHeight;
 
+- (BOOL)isGroupMessage;
 - (void)dealloc;
-- (void)_buttonClicked:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
 - (BOOL)isCallingAvailable;
 - (BOOL)isFaceTimeAvailable;
 - (BOOL)hasContact;
 - (id)transcriptButtonDelegate;
 - (BOOL)hasMoreMessages;
 - (void)_updateCallButton;
-- (BOOL)isGroupMessage;
 - (BOOL)disableFirstButtonRow;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForButton:(short)arg1;
 - (void)setDisableFirstButtonRow:(BOOL)arg1;
@@ -50,5 +47,8 @@
 - (void)setButtonsEnabled:(BOOL)arg1;
 - (void)setHasContact:(BOOL)arg1;
 - (void)setTranscriptButtonDelegate:(id)arg1;
+- (void)_buttonClicked:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
 
 @end

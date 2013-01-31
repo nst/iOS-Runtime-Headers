@@ -19,8 +19,6 @@
 - (id)path;
 - (int)type;
 - (void)dealloc;
-- (void)setPath:(id)arg1;
-- (void)setType:(int)arg1;
 - (id)toolTip;
 - (id)textMark;
 - (id)dosPath;
@@ -31,5 +29,7 @@
 - (void)setDosPath:(id)arg1;
 - (void)setDescriptionText:(id)arg1;
 - (id)reference;
+- (void)setPath:(id)arg1;
+- (void)setType:(int)arg1;
 
 @end

@@ -13,11 +13,11 @@
 + (id)offerListWithDictionary:(id)arg1 context:(id)arg2;
 + (id)offerList;
 
-- (id)groupIdentifier;
 - (id)offers;
 - (void)setOffers:(id)arg1;
 - (void)setProviderId:(id)arg1;
 - (id)providerId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

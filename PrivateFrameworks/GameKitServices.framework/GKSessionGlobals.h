@@ -14,10 +14,10 @@
 
 
 - (id)init;
-- (void)unlock;
-- (void)lock;
 - (BOOL)hasActivePID:(unsigned int)arg1;
 - (void)registerPID:(unsigned int)arg1;
 - (void)unregisterPID:(unsigned int)arg1;
+- (void)unlock;
+- (void)lock;
 
 @end

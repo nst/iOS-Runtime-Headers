@@ -20,6 +20,7 @@
 + (void)preheat;
 + (void)initialize;
 
+- (void)dealloc;
 - (id)existingRecordsForExtIDs:(id)arg1;
 - (id)resultForIdentifier:(id)arg1;
 - (BOOL)nextSearchResults:(id*)arg1;
@@ -32,7 +33,6 @@
 - (id)_storePath;
 - (id)_legacyStorePath;
 - (id)_legacyIndexPath;
-- (void)dealloc;
 - (id)_indexPath;
 - (void)cancelSearch;
 

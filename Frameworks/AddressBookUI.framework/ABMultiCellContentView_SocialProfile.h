@@ -12,10 +12,10 @@
 @property(readonly) NSString * service;
 
 
-- (id)username;
+- (id)service;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (id)placeholder;
-- (id)service;
+- (id)username;
 - (void)reloadFromModelIncludingRows:(BOOL)arg1;
 - (void)textFieldTextDidChange:(id)arg1;
 

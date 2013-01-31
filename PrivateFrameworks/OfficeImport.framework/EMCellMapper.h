@@ -17,7 +17,6 @@
 }
 
 
-- (double)columnWidth;
 - (id)mapHyperlinkAt:(id)arg1;
 - (void)adjustColumnSpanForGrid:(double*)arg1 columnCount:(unsigned int)arg2 nextCell:(struct EDCellHeader { unsigned short x1; unsigned int x2; }*)arg3 withState:(id)arg4;
 - (BOOL)isCellMerged;
@@ -36,5 +35,6 @@
 - (int)firstColumn;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (id)initWithParent:(id)arg1;
+- (double)columnWidth;
 
 @end

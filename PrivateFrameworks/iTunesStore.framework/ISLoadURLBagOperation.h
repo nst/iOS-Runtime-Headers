@@ -2,30 +2,34 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class SSURLBagContext;
+@class ISURLBag, SSURLBagContext;
 
 @interface ISLoadURLBagOperation : ISOperation <ISStoreURLOperationDelegate> {
     SSURLBagContext *_context;
+    ISURLBag *_outputBag;
 }
 
 @property(readonly) SSURLBagContext * context;
+@property(readonly) ISURLBag * URLBag;
 
 
+- (id)initWithBagContext:(id)arg1;
 - (BOOL)operation:(id)arg1 shouldSetStoreFrontID:(id)arg2;
 - (void)operation:(id)arg1 willSendRequest:(id)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
-- (id)uniqueKey;
-- (void)dealloc;
-- (id)init;
-- (void)run;
-- (id)context;
+- (id)URLBag;
 - (void)_addHeadersToRequestProperties:(id)arg1;
 - (id)_copyProductionBootstrapURLs;
 - (id)_copySandboxBootstrapURLs;
 - (void)_writeURLBagToDiskCache:(id)arg1;
 - (void)_loadURLBagFromURL:(id)arg1;
 - (id)_copyBootstrapURLs;
+- (void)_setOutputURLBag:(id)arg1;
 - (void)_postBagDidLoadNotificationWithURLBag:(id)arg1;
-- (id)initWithBagContext:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)run;
+- (id)context;
+- (id)uniqueKey;
 
 @end

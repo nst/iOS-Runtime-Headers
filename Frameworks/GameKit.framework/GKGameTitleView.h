@@ -36,6 +36,16 @@
 @property(retain) GKCoreTextLabel * gameTitleLabel;
 
 
+- (void)dealloc;
+- (id)init;
+- (void)setTheme:(id)arg1;
+- (id)theme;
+- (id)dateLabel;
+- (void)setDate:(id)arg1;
+- (id)title;
+- (id)date;
+- (void)setTitle:(id)arg1;
+- (void)layoutSubviews;
 - (void)setGameTitleLabel:(id)arg1;
 - (id)gameTitleLabel;
 - (void)setDateLabel:(id)arg1;
@@ -54,15 +64,5 @@
 - (float)maxTitleFontSize;
 - (void)setNumberOfTitleLines:(unsigned int)arg1;
 - (unsigned int)numberOfTitleLines;
-- (void)dealloc;
-- (id)init;
-- (id)dateLabel;
-- (void)setDate:(id)arg1;
-- (id)title;
-- (id)date;
-- (void)setTitle:(id)arg1;
-- (void)layoutSubviews;
-- (void)setTheme:(id)arg1;
-- (id)theme;
 
 @end

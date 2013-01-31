@@ -115,6 +115,12 @@
 
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;
 
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (void)setShininess:(float)arg1;
+- (float)shininess;
+- (void)bind;
 - (void)set_colorMaterialEnabledMask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })_colorMaterialEnabledMask;
 - (void)set_shininessLoc:(int)arg1;
@@ -142,11 +148,5 @@
 - (bool)includeVshShaderTextForRootNode:(id)arg1;
 - (void)setEffectDirtyUniforms:(unsigned long long*)arg1;
 - (void)dirtyAllUniforms;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (void)bind;
-- (void)setShininess:(float)arg1;
-- (float)shininess;
 
 @end

@@ -24,24 +24,24 @@
 
 + (id)localizedStringForDate:(id)arg1;
 
-- (id)description;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (void)setSource:(id)arg1;
-- (id)source;
-- (void)setDate:(id)arg1;
-- (id)date;
-- (void)setID:(unsigned long long)arg1;
-- (unsigned long long)ID;
-- (void)resetLocale;
 - (id)archiveDictionary;
 - (void)setSummary:(id)arg1;
 - (id)summary;
 - (void)setLink:(id)arg1;
 - (id)link;
+- (void)resetLocale;
+- (id)description;
+- (void).cxx_destruct;
+- (void)dealloc;
 - (id)localizedDateString;
 - (int)chronologicalComparisonWithNewsItem:(id)arg1;
 - (id)initWithArchiveDictionary:(id)arg1;
+- (void)setID:(unsigned long long)arg1;
+- (unsigned long long)ID;
+- (void)setSource:(id)arg1;
+- (id)source;
+- (void)setDate:(id)arg1;
+- (id)date;
 - (id)headline;
 - (void)setHeadline:(id)arg1;
 

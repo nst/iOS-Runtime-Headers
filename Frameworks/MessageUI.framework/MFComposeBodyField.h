@@ -36,10 +36,10 @@
 
 + (void)addAdditionalItemsToCalloutBar;
 
-- (void)setLoading:(BOOL)arg1;
 - (id)webThreadWebView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
 - (void)invalidate;
 - (void)dealloc;
+- (void)setMarkupString:(id)arg1;
 - (float)contentWidth;
 - (void)webView:(id)arg1 resource:(id)arg2 didFailLoadingWithError:(id)arg3 fromDataSource:(id)arg4;
 - (void)webView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;
@@ -118,8 +118,8 @@
 - (BOOL)shouldShowStandardButtons;
 - (void)changeQuoteLevel:(int)arg1;
 - (void)setShouldShowStandardButtons:(BOOL)arg1;
-- (void)setMarkupString:(id)arg1;
-- (void)setDirty:(BOOL)arg1;
+- (void)setLoading:(BOOL)arg1;
 - (BOOL)isDirty;
+- (void)setDirty:(BOOL)arg1;
 
 @end

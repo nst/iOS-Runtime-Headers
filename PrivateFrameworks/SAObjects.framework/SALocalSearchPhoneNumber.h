@@ -10,14 +10,14 @@
 @property(copy) NSString * type;
 @property(copy) NSString * value;
 
-+ (id)phoneNumber;
 + (id)phoneNumberWithDictionary:(id)arg1 context:(id)arg2;
++ (id)phoneNumber;
 
-- (id)groupIdentifier;
 - (id)type;
+- (id)encodedClassName;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (void)setType:(id)arg1;
-- (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

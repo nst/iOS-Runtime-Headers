@@ -8,16 +8,16 @@
 
 @property(getter=isChangeColorSwapped,readonly) BOOL changeColorSwapped;
 
-+ (id)sharedPreferences;
 + (void)clearSharedPreferences;
++ (id)sharedPreferences;
 
+- (void)resetLocale;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)objectForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (BOOL)isChangeColorSwapped;
 - (void)synchronize;
 - (BOOL)boolForKey:(id)arg1;
-- (void)resetLocale;
-- (BOOL)isChangeColorSwapped;
 
 @end

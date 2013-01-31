@@ -15,11 +15,11 @@
 @property float topPadding;
 
 
-- (float)topPadding;
-- (void)setTopPadding:(float)arg1;
-- (void)pinVisibleRow:(unsigned int)arg1;
 - (id)init;
 - (id)tableView;
 - (void)layoutSubviews;
+- (float)topPadding;
+- (void)setTopPadding:(float)arg1;
+- (void)pinVisibleRow:(unsigned int)arg1;
 
 @end

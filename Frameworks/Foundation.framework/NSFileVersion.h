@@ -32,7 +32,6 @@
 @property(getter=isDiscardable) BOOL discardable;
 
 + (id)unresolvedConflictVersionsOfItemAtURL:(id)arg1;
-+ (BOOL)removeOtherVersionsOfItemAtURL:(id)arg1 error:(id*)arg2;
 + (void)_removeTemporaryDirectoryAtURL:(id)arg1;
 + (void)_removeConflictObserver:(void*)arg1;
 + (void*)_addConflictObserverForItemAtURL:(id)arg1 statusChangedHandler:(id)arg2;
@@ -55,6 +54,7 @@
 + (id)currentVersionOfItemAtURL:(id)arg1;
 + (id)_versionOfItemAtURL:(id)arg1 forPersistentIdentifier:(id)arg2 temporaryStorageIdentifier:(id)arg3;
 + (id)_versionOfItemAtURL:(id)arg1 forClientID:(id)arg2 name:(id)arg3 temporaryStorageIdentifier:(id)arg4 evenIfDeleted:(BOOL)arg5;
++ (BOOL)removeOtherVersionsOfItemAtURL:(id)arg1 error:(id*)arg2;
 
 - (void)setResolved:(BOOL)arg1;
 - (id)URL;
@@ -62,7 +62,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)removeAndReturnError:(id*)arg1;
 - (id)localizedName;
 - (id)restoreOverItemAtURL:(id)arg1 error:(id*)arg2;
 - (BOOL)_preserveConflictVersionLocally;
@@ -79,5 +78,6 @@
 - (id)persistentIdentifier;
 - (void)setDiscardable:(BOOL)arg1;
 - (BOOL)isDiscardable;
+- (BOOL)removeAndReturnError:(id*)arg1;
 
 @end

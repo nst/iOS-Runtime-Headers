@@ -5,13 +5,13 @@
 @interface NSMapTable : NSObject <NSCopying, NSCoding, NSFastEnumeration> {
 }
 
-+ (id)weakToStrongObjectsMapTable;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)weakToWeakObjectsMapTable;
 + (id)mapTableWithStrongToWeakObjects;
 + (id)mapTableWithWeakToStrongObjects;
 + (id)mapTableWithWeakToWeakObjects;
++ (id)weakToStrongObjectsMapTable;
 + (id)strongToWeakObjectsMapTable;
 + (id)strongToStrongObjectsMapTable;
 + (id)mapTableWithStrongToStrongObjects;

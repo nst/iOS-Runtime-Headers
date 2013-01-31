@@ -21,13 +21,13 @@
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (BOOL)conformsToProtocol:(id)arg1;
 - (void)dealloc;
+- (BOOL)swapCurrentTarget:(id)arg1 forNewTarget:(id)arg2;
+- (void)setPrivateMessages:(id)arg1;
 - (id)send;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (id)initWithTarget:(id)arg1 protocol:(id)arg2;
 - (id)dispatchQueue;
 - (void)setDispatchQueue:(id)arg1;
-- (id)initWithTarget:(id)arg1 protocol:(id)arg2;
-- (BOOL)swapCurrentTarget:(id)arg1 forNewTarget:(id)arg2;
-- (void)setPrivateMessages:(id)arg1;
 
 @end

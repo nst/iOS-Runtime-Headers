@@ -27,15 +27,9 @@
 @property(readonly) NSArray * allTasks;
 
 
-- (id)userAgent;
 - (id)deviceType;
 - (void)dealloc;
 - (id)init;
-- (int)port;
-- (id)user;
-- (id)password;
-- (id)scheme;
-- (id)server;
 - (void)shutdown;
 - (void)setAccount:(id)arg1;
 - (id)initWithAccount:(id)arg1;
@@ -86,5 +80,11 @@
 - (void)_makeStateTransition;
 - (void)_schedulePerformTask:(id)arg1;
 - (id)_getQueuedExclusiveTasks;
+- (int)port;
+- (id)user;
+- (id)password;
+- (id)scheme;
+- (id)server;
+- (id)userAgent;
 
 @end

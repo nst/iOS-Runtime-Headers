@@ -9,11 +9,11 @@
 @property unsigned int chapterIndex;
 
 
+- (id)initWithMediaItem:(id)arg1 chapterIndex:(unsigned int)arg2;
 - (void)composeUniqueKey;
 - (BOOL)canRequestSynchronously;
 - (id)copyRawImageReturningError:(id*)arg1;
 - (void)setChapterIndex:(unsigned int)arg1;
 - (unsigned int)chapterIndex;
-- (id)initWithMediaItem:(id)arg1 chapterIndex:(unsigned int)arg2;
 
 @end

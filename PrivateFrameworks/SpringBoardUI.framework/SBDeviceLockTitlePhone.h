@@ -11,13 +11,13 @@
 
 
 - (void)dealloc;
+- (void)blinkSubtitle;
+- (id)_initWithStyle:(int)arg1 interfaceOrientation:(int)arg2;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (void)blinkSubtitle;
-- (id)_initWithStyle:(int)arg1 interfaceOrientation:(int)arg2;
 
 @end

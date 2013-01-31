@@ -22,11 +22,6 @@
 
 
 - (void)dealloc;
-- (id)initWithDocument:(id)arg1;
-- (id)image;
-- (id)text;
-- (void)setText:(id)arg1;
-- (void)setImage:(id)arg1;
 - (BOOL)justificationOverridden;
 - (long)legacyIndent;
 - (long)legacySpace;
@@ -56,5 +51,10 @@
 - (int)justification;
 - (id)characterProperties;
 - (id)paragraphProperties;
+- (id)initWithDocument:(id)arg1;
+- (id)image;
+- (id)text;
+- (void)setText:(id)arg1;
+- (void)setImage:(id)arg1;
 
 @end

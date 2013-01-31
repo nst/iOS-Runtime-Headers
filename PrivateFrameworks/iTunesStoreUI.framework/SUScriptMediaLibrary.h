@@ -58,8 +58,8 @@
 @property(readonly) NSString * queryPresetVideoPodcasts;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
 - (void)_connectNativeObject;
 - (id)playerTypeIPod;
@@ -125,7 +125,7 @@
 - (BOOL)_isRestricted;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (void)dealloc;
 - (id)attributeKeys;
+- (void)dealloc;
 
 @end

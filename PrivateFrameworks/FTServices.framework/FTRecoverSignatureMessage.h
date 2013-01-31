@@ -13,16 +13,16 @@
 @property(copy) NSData * responseSignature;
 
 
+- (id)protocolVersion;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)responseSignature;
-- (id)bagKey;
 - (void)setResponseSignature:(id)arg1;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)additionalMessageHeaders;
 - (BOOL)hasRequiredKeys:(id*)arg1;
 - (id)requiredKeys;
+- (id)bagKey;
 - (void)setProtocolVersion:(id)arg1;
-- (id)protocolVersion;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 
 @end

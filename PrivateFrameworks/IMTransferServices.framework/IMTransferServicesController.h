@@ -10,14 +10,14 @@
 
 + (id)sharedInstance;
 
+- (BOOL)_disconnect;
 - (void)dealloc;
 - (id)init;
 - (BOOL)_connect;
-- (void)sendFilePath:(id)arg1 transferID:(id)arg2 encryptFile:(BOOL)arg3 completionBlock:(id)arg4;
-- (void)receiveFileTransfer:(id)arg1 path:(id)arg2 requestURLString:(id)arg3 ownerID:(id)arg4 signature:(id)arg5 decryptionKey:(id)arg6 completionBlock:(id)arg7;
-- (BOOL)_disconnect;
 - (void)_receiveFileTransfer:(id)arg1 path:(id)arg2 requestURLString:(id)arg3 ownerID:(id)arg4 signature:(id)arg5 decryptionKey:(id)arg6 retries:(int)arg7 completionBlock:(id)arg8;
 - (void)_sendFilePath:(id)arg1 transferID:(id)arg2 encryptFile:(BOOL)arg3 retries:(int)arg4 completionBlock:(id)arg5;
 - (void)_disconnected;
+- (void)sendFilePath:(id)arg1 transferID:(id)arg2 encryptFile:(BOOL)arg3 completionBlock:(id)arg4;
+- (void)receiveFileTransfer:(id)arg1 path:(id)arg2 requestURLString:(id)arg3 ownerID:(id)arg4 signature:(id)arg5 decryptionKey:(id)arg6 completionBlock:(id)arg7;
 
 @end

@@ -27,7 +27,6 @@
 - (id)delegate;
 - (id)description;
 - (void)dealloc;
-- (unsigned int)flags;
 - (void)setFlags:(unsigned int)arg1;
 - (void)setReachabilityRef:(void*)arg1;
 - (void*)reachabilityRef;
@@ -41,5 +40,6 @@
 - (void)_handleCallbackForSCNetworkReachability:(struct __SCNetworkReachability { }*)arg1;
 - (id)initWithLocalSocketAddress:(id)arg1 remoteSocketAddress:(id)arg2 delegate:(id)arg3;
 - (id)initWithRemoteHost:(id)arg1 delegate:(id)arg2;
+- (unsigned int)flags;
 
 @end

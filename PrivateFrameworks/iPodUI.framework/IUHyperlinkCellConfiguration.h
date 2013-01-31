@@ -27,13 +27,13 @@
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (BOOL)getShadowColor:(id*)arg1 offset:(struct CGSize { float x1; float x2; }*)arg2 forLabelAtIndex:(unsigned int)arg3 withModifiers:(unsigned int)arg4;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
+- (void)setTitleShadowColor:(id)arg1;
+- (id)titleShadowColor;
 - (void)dealloc;
 - (id)init;
 - (id)titleFont;
 - (void)setTitleColor:(id)arg1;
 - (id)titleColor;
 - (id)initWithTitle:(id)arg1;
-- (void)setTitleShadowColor:(id)arg1;
-- (id)titleShadowColor;
 
 @end

@@ -18,6 +18,7 @@
 
 + (id)codedPropertyKeys;
 
+- (void)dealloc;
 - (void)setPushToken:(id)arg1;
 - (id)pushToken;
 - (id)authToken;
@@ -26,6 +27,5 @@
 - (void)setAuthToken:(id)arg1;
 - (id)playerID;
 - (void)setPlayerID:(id)arg1;
-- (void)dealloc;
 
 @end

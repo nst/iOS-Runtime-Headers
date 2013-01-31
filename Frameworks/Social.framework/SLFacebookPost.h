@@ -25,11 +25,17 @@
 @property(retain) NSString * maskedApplicationID;
 
 
-- (id)place;
+- (void)setLink:(id)arg1;
+- (id)link;
 - (void).cxx_destruct;
 - (id)init;
 - (id)copy;
+- (void)setAlbum:(id)arg1;
+- (id)album;
+- (id)imageData;
 - (void)setImageData:(id)arg1;
+- (id)place;
+- (void)setPlace:(id)arg1;
 - (id)text;
 - (void)setText:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -43,11 +49,5 @@
 - (void)addImageData:(id)arg1;
 - (void)setPrivacySetting:(id)arg1;
 - (id)privacySetting;
-- (void)setLink:(id)arg1;
-- (id)link;
-- (void)setAlbum:(id)arg1;
-- (id)album;
-- (void)setPlace:(id)arg1;
-- (id)imageData;
 
 @end

@@ -5,7 +5,6 @@
 @interface CATransaction : NSObject  {
 }
 
-+ (void)activateBackground:(BOOL)arg1;
 + (void)setValue:(id)arg1 forKey:(id)arg2;
 + (id)valueForKey:(id)arg1;
 + (void)setAnimationTimingFunction:(id)arg1;
@@ -28,6 +27,7 @@
 + (id)animationTimingFunction;
 + (BOOL)beginWithoutBlocking;
 + (id)_implicitAnimationForLayer:(id)arg1 keyPath:(id)arg2;
++ (void)activateBackground:(BOOL)arg1;
 + (id)completionBlock;
 
 

@@ -22,15 +22,15 @@
 @property VKCacheNode * previous;
 
 
+- (void)setPrevious:(id)arg1;
+- (id)previous;
+- (void)setNext:(id)arg1;
 - (id).cxx_construct;
 - (void)dealloc;
+- (id)next;
 - (void)setKey:(struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1;
 - (struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })key;
 - (id)value;
 - (void)setValue:(id)arg1;
-- (void)setPrevious:(id)arg1;
-- (id)previous;
-- (void)setNext:(id)arg1;
-- (id)next;
 
 @end

@@ -31,25 +31,11 @@
 + (BOOL)needsSingleTapGestureRecognizer;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsetsForBalloonOrientation:(int)arg1;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)description;
 - (void)dealloc;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (void)hideCopyCallout;
-- (void)oneFingerDoubleTap:(id)arg1;
-- (void)setOrientation:(int)arg1;
-- (void)copy:(id)arg1;
-- (void)prepareForReuse;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)_becomeFirstResponderWhenPossible;
-- (void)_windowBecameKey;
-- (void)_windowResignedKey;
-- (BOOL)becomeFirstResponder;
-- (BOOL)resignFirstResponder;
-- (int)orientation;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)copyToPasteboard;
 - (void)setRestoring:(BOOL)arg1;
 - (void)setMessagePart:(id)arg1;
 - (void)setActionDelegate:(id)arg1;
@@ -72,6 +58,20 @@
 - (BOOL)isTapEnabled;
 - (id)messagePart;
 - (void)singleTap:(id)arg1;
-- (void)copyToPasteboard;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (void)hideCopyCallout;
+- (void)oneFingerDoubleTap:(id)arg1;
+- (void)setOrientation:(int)arg1;
+- (void)copy:(id)arg1;
+- (void)prepareForReuse;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)_becomeFirstResponderWhenPossible;
+- (void)_windowBecameKey;
+- (void)_windowResignedKey;
+- (BOOL)becomeFirstResponder;
+- (BOOL)resignFirstResponder;
+- (int)orientation;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
 
 @end

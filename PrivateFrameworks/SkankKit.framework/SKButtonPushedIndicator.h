@@ -7,9 +7,9 @@
 }
 
 
+- (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)buttonEvent:(id)arg1;
-- (void)drawInContext:(struct CGContext { }*)arg1;
 
 @end

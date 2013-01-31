@@ -14,8 +14,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)foregroundColor;
 - (void)setStyleColor:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
+- (id)foregroundColor;
 
 @end

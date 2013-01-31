@@ -13,18 +13,18 @@
 }
 
 
-- (BOOL)isPlayable;
-- (id)mediaSubTypes;
-- (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
-- (BOOL)hasMediaCharacteristic:(id)arg1;
 - (id)dictionary;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)commonMetadata;
 - (id)mediaType;
 - (id)locale;
 - (id)group;
-- (id)commonMetadata;
+- (BOOL)isPlayable;
+- (id)mediaSubTypes;
+- (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
+- (BOOL)hasMediaCharacteristic:(id)arg1;
 - (id)initWithAsset:(id)arg1 group:(id)arg2 dictionary:(id)arg3;
 - (id)_groupID;
 - (id)metadataForFormat:(id)arg1;

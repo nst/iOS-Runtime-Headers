@@ -33,17 +33,10 @@
 @property float coneAngle;
 @property float coneEdgeSoftness;
 
-+ (id)lightWithType:(id)arg1;
 + (id)defaultValueForKey:(id)arg1;
++ (id)lightWithType:(id)arg1;
 
-- (void)setSpecularIntensity:(float)arg1;
-- (void)setDiffuseIntensity:(float)arg1;
-- (void)setFalloffDistance:(float)arg1;
-- (void)setFalloff:(float)arg1;
-- (void)setConeEdgeSoftness:(float)arg1;
-- (void)setConeAngle:(float)arg1;
-- (void)setImageNormalAngle:(float)arg1;
-- (void)setAmbientIntensity:(float)arg1;
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setName:(id)arg1;
 - (id)name;
@@ -83,6 +76,13 @@
 - (void)setIntensity:(float)arg1;
 - (float)intensity;
 - (BOOL)shouldArchiveValueForKey:(id)arg1;
-- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (void)setSpecularIntensity:(float)arg1;
+- (void)setDiffuseIntensity:(float)arg1;
+- (void)setFalloffDistance:(float)arg1;
+- (void)setFalloff:(float)arg1;
+- (void)setConeEdgeSoftness:(float)arg1;
+- (void)setConeAngle:(float)arg1;
+- (void)setImageNormalAngle:(float)arg1;
+- (void)setAmbientIntensity:(float)arg1;
 
 @end

@@ -90,7 +90,7 @@
 - (id)dateForDayInTimeZone:(id)arg1;
 - (id)dateInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
 - (id)_gkServerTimestamp;
-- (id)mf_replyPrefixForSender:(id)arg1 withSpacer:(BOOL)arg2;
+- (id)mf_replyPrefixForSender:(id)arg1;
 - (id)mf_descriptionForMimeHeaders;
 - (BOOL)PKIsYesterday;
 - (BOOL)PKIsTomorrow;

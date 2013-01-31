@@ -19,17 +19,15 @@
 @property(retain) NSMutableArray * operands;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)type;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (id)value;
-- (void)setValue:(id)arg1;
-- (void)setType:(int)arg1;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)hasValue;
+- (BOOL)readFrom:(id)arg1;
 - (id)operands;
 - (id)operandsAtIndex:(unsigned int)arg1;
 - (void)clearOperands;
@@ -39,7 +37,9 @@
 - (void)addOperands:(id)arg1;
 - (void)setOperands:(id)arg1;
 - (void)setField:(id)arg1;
-- (BOOL)hasValue;
-- (BOOL)readFrom:(id)arg1;
+- (id)dictionaryRepresentation;
+- (id)value;
+- (void)setValue:(id)arg1;
+- (void)setType:(int)arg1;
 
 @end

@@ -9,7 +9,6 @@
 }
 
 
-- (void)setLoading:(BOOL)arg1;
 - (void)_performPurchaseAnimationForIndexPath:(id)arg1;
 - (BOOL)_addPurchaseBatch:(id)arg1 forIndexPath:(id)arg2;
 - (BOOL)purchaseItemAtIndexPath:(id)arg1;
@@ -18,5 +17,6 @@
 - (id)itemAtIndexPath:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)setLoading:(BOOL)arg1;
 
 @end

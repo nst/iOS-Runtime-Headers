@@ -93,10 +93,6 @@
 - (id)delegate;
 - (int)state;
 - (void)dealloc;
-- (void)willMoveToWindow:(id)arg1;
-- (BOOL)isTracking;
-- (void)didMoveToWindow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)canCollapse;
 - (float)expansionFraction;
 - (int)previousState;
@@ -145,5 +141,9 @@
 - (void)_notifyWillCompleteExpandingWithDuration:(double)arg1;
 - (void)_notifyWillBeginExpanding;
 - (void)_setAutorotationDisabled:(BOOL)arg1;
+- (void)willMoveToWindow:(id)arg1;
+- (BOOL)isTracking;
+- (void)didMoveToWindow;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

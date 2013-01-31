@@ -11,6 +11,8 @@
 
 
 - (void)dealloc;
+- (id)initWithPath:(id)arg1;
+- (id)bundle;
 - (id)_modelForVersionHashes:(id)arg1 inStyle:(unsigned int)arg2;
 - (id)modelVersions;
 - (id)urlForModelVersionWithName:(id)arg1;
@@ -20,7 +22,5 @@
 - (id)currentVersionURL;
 - (id)optimizedVersionURL;
 - (id)_modelForVersionHashes:(id)arg1;
-- (id)initWithPath:(id)arg1;
-- (id)bundle;
 
 @end

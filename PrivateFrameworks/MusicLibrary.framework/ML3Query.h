@@ -78,9 +78,9 @@
 - (id)library;
 - (void)enumeratePersistentIDsUsingBlock:(id)arg1;
 - (BOOL)hasEntities;
-- (id)predicate;
 - (id)sections;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)predicate;
 
 @end

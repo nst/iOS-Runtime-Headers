@@ -20,6 +20,9 @@
 
 + (id)codedPropertyKeys;
 
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
 - (void)setVerified:(BOOL)arg1;
 - (BOOL)isVerified;
 - (void)setPrimary:(BOOL)arg1;
@@ -30,8 +33,5 @@
 - (void)setAddress:(id)arg1;
 - (id)addressSHA1;
 - (id)address;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 
 @end

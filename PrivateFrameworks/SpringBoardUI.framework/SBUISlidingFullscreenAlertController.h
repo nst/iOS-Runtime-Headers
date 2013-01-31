@@ -16,12 +16,6 @@
 
 
 - (void)dealloc;
-- (id)topBar;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)_updateLayoutForStatusBarAndInterfaceOrientation;
-- (void)viewDidLoad;
-- (id)backgroundView;
 - (void)updateSpringBoardInPreparationForTransparentDismiss;
 - (float)_animationDelayForOthersActivation;
 - (void)animateDisplayIn:(float)arg1 middleDelay:(float)arg2;
@@ -43,5 +37,11 @@
 - (BOOL)displaysAboveStatusBar;
 - (BOOL)isSlidingViewController;
 - (id)bottomBar;
+- (id)topBar;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)_updateLayoutForStatusBarAndInterfaceOrientation;
+- (void)viewDidLoad;
+- (id)backgroundView;
 
 @end

@@ -25,11 +25,11 @@
 + (id)canonicalRequestForRequest:(id)arg1;
 + (BOOL)canInitWithRequest:(id)arg1;
 
-- (void)startLoading;
+- (id)client;
 - (void)dealloc;
 - (void)stopLoading;
 - (id)request;
-- (id)client;
+- (void)startLoading;
 - (void)_releaseProtocolClientReference;
 - (id)cachedResponse;
 - (void)_resumeLoading;

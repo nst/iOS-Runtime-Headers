@@ -35,24 +35,24 @@
 @property(retain) NSString * externalContentRef;
 
 
-- (id)content;
-- (unsigned long long)flags;
-- (BOOL)containsAttachments;
-- (BOOL)isMarkedForDeletion;
-- (void)setServerIntId:(long long)arg1;
-- (long long)serverIntId;
-- (BOOL)hasValidServerIntId;
 - (void)setContent:(id)arg1;
-- (void)setIsPlainText:(BOOL)arg1;
+- (BOOL)containsAttachments;
 - (void)setFlags:(unsigned long long)arg1;
 - (id)noteId;
 - (void)setExternalContentRef:(id)arg1;
 - (id)externalContentRef;
 - (id)contentAsPlainTextPreservingNewlines;
 - (void)markForDeletion;
+- (void)setIsPlainText:(BOOL)arg1;
+- (BOOL)isMarkedForDeletion;
+- (void)setServerIntId:(long long)arg1;
+- (long long)serverIntId;
+- (BOOL)hasValidServerIntId;
 - (void)setExternalRepresentation:(id)arg1;
 - (id)contentAsPlainText;
 - (BOOL)isPlainText;
 - (id)externalRepresentation;
+- (id)content;
+- (unsigned long long)flags;
 
 @end

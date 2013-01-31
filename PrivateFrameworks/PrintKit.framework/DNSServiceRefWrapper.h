@@ -7,7 +7,7 @@
 }
 
 
-- (id)initDNSServiceRefWrapperWithRef:(struct _DNSServiceRef_t { }*)arg1;
 - (void)dealloc;
+- (id)initDNSServiceRefWrapperWithRef:(struct _DNSServiceRef_t { }*)arg1;
 
 @end

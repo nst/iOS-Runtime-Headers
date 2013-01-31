@@ -16,7 +16,6 @@
 - (int)type;
 - (void)dealloc;
 - (id)init;
-- (void)setType:(int)arg1;
 - (int)buildLevel;
 - (BOOL)isReversedParagraphOrder;
 - (double)autoAdvanceTime;
@@ -27,5 +26,6 @@
 - (void)setBuildLevel:(int)arg1;
 - (void)setIsReversedParagraphOrder:(BOOL)arg1;
 - (void)setAutoAdvanceTime:(double)arg1;
+- (void)setType:(int)arg1;
 
 @end

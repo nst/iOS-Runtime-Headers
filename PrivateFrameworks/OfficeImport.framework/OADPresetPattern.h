@@ -16,8 +16,8 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setType:(int)arg1;
 - (BOOL)isTypeOverridden;
 - (id)initWithDefaults;
+- (void)setType:(int)arg1;
 
 @end

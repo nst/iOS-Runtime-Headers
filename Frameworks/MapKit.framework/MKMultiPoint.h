@@ -21,15 +21,15 @@
 @property(readonly) unsigned int pointCount;
 
 
+- (void)_setCoordinates:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
 - (void)dealloc;
+- (struct { double x1; double x2; })coordinate;
+- (struct { double x1; double x2; }*)points;
+- (unsigned int)pointCount;
 - (BOOL)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)getCoordinates:(struct { double x1; double x2; }*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)_setPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingMapRect;
 - (void)_calculateBounds;
-- (struct { double x1; double x2; })coordinate;
-- (void)_setCoordinates:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
-- (struct { double x1; double x2; }*)points;
-- (unsigned int)pointCount;
 
 @end

@@ -14,7 +14,6 @@
 @property(retain) NSDictionary * deviceInfo;
 
 
-- (void)finishWithError:(id)arg1;
 - (int)type;
 - (void)dealloc;
 - (id)deviceInfo;
@@ -30,5 +29,6 @@
 - (id)requestBody;
 - (int)commandCode;
 - (int)taskStatusForExchangeStatus:(int)arg1;
+- (void)finishWithError:(id)arg1;
 
 @end

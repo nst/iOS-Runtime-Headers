@@ -18,22 +18,22 @@
 @property(readonly) NSObject<TUAppender> * appender;
 
 
-- (void)logWithLevel:(int)arg1 topic:(id)arg2 backtrace:(BOOL)arg3 format:(id)arg4;
-- (id)identifier;
-- (void)dealloc;
-- (BOOL)enabled;
-- (void)setIdentifier:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)flush;
 - (id)initWithIdentifier:(id)arg1 minimumLogLevel:(int)arg2 appender:(id)arg3;
 - (BOOL)shouldLogWithLevel:(int)arg1 topic:(id)arg2;
 - (BOOL)shouldLog;
 - (void)logWithLevel:(int)arg1 topic:(id)arg2 backtrace:(BOOL)arg3 text:(id)arg4;
+- (void)logWithLevel:(int)arg1 topic:(id)arg2 backtrace:(BOOL)arg3 format:(id)arg4;
+- (id)identifier;
+- (void)dealloc;
 - (id)appender;
 - (void)setAppender:(id)arg1;
 - (int)minimumLogLevel;
 - (void)setMinimumLogLevel:(int)arg1;
 - (void)logWithLevel:(int)arg1 topic:(id)arg2 backtrace:(BOOL)arg3 format:(id)arg4 args:(void*)arg5;
 - (BOOL)_shouldLogWithLevel:(int)arg1 topic:(id)arg2;
+- (BOOL)enabled;
+- (void)setIdentifier:(id)arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (void)flush;
 
 @end

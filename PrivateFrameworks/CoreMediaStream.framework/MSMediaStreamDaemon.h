@@ -16,8 +16,11 @@
 - (id)delegate;
 - (void).cxx_destruct;
 - (id)init;
-- (void)stop;
-- (void)start;
+- (void)forgetPersonID:(id)arg1;
+- (id)serverSideConfigurationForPersonID:(id)arg1;
+- (void)pollForSubscriptionUpdatesForPersonID:(id)arg1;
+- (BOOL)mayDownloadPersonID:(id)arg1;
+- (void)didReceiveGlobalResetSyncForPersonID:(id)arg1;
 - (void)didExceedPublishQuotaForPersonID:(id)arg1 retryDate:(id)arg2;
 - (void)didReceiveAuthenticationSuccessForPersonID:(id)arg1;
 - (void)didReceiveAuthenticationFailureForPersonID:(id)arg1;
@@ -54,14 +57,14 @@
 - (BOOL)personIDIsAcceptingInvitations:(id)arg1;
 - (id)sharesForPersonID:(id)arg1;
 - (id)_boundSharingManagerForPersonID:(id)arg1;
+- (void)didReceivePushNotificationForPersonID:(id)arg1;
 - (void)stopAllActivities;
 - (id)_boundDeleterForPersonID:(id)arg1;
 - (id)_boundSubscriberForPersonID:(id)arg1;
 - (id)_boundPublisherForPersonID:(id)arg1;
 - (BOOL)isInRetryState;
 - (id)nextActivityDate;
-- (void)forgetPersonID:(id)arg1;
-- (id)serverSideConfigurationForPersonID:(id)arg1;
-- (void)pollForSubscriptionUpdatesForPersonID:(id)arg1;
+- (void)stop;
+- (void)start;
 
 @end

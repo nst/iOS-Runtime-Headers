@@ -8,12 +8,12 @@
     CPMessageEntry *m_entry;
 }
 
-+ (void)initialize;
 + (id)nsError:(id)arg1 domain:(id)arg2;
 + (void)raiseUntaggedMessage:(id)arg1;
 + (id)exceptionWithUntaggedMessage:(id)arg1;
 + (id)exceptionWithMessage:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
 + (void)raise:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
++ (void)initialize;
 
 - (id)description;
 - (void)dealloc;

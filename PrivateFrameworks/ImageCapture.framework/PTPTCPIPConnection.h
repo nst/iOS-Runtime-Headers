@@ -20,6 +20,9 @@
 }
 
 
+- (BOOL)writeData:(id)arg1;
+- (BOOL)open;
+- (void)dealloc;
 - (void)inactivityTimerCallBack:(id)arg1;
 - (void)handleEndEncountered;
 - (void)handleHasBytesAvailable;
@@ -27,9 +30,6 @@
 - (id)initWithNativeSocket:(int)arg1 transport:(id)arg2;
 - (void)handleErrorOccurred:(struct { int x1; int x2; })arg1;
 - (void)handleCanAcceptBytes;
-- (void)dealloc;
 - (void)close;
-- (BOOL)writeData:(id)arg1;
-- (BOOL)open;
 
 @end

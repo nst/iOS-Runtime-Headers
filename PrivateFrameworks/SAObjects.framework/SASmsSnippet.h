@@ -9,12 +9,12 @@
 
 @property(copy) NSArray * smss;
 
-+ (id)snippet;
 + (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
++ (id)snippet;
 
-- (id)groupIdentifier;
 - (void)setSmss:(id)arg1;
 - (id)smss;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

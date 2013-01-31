@@ -28,6 +28,11 @@
 @property(retain) UIViewController * toContainerViewController;
 
 
+- (void)removeObserver:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (float)duration;
+- (void)setDuration:(float)arg1;
 - (int)toInterfaceOrientation;
 - (int)fromInterfaceOrientation;
 - (void)addViewToFadeOut:(id)arg1 restoreOnPop:(BOOL)arg2;
@@ -49,10 +54,5 @@
 - (void)transition:(unsigned int)arg1;
 - (void)addObserver:(id)arg1 didEndSelector:(SEL)arg2;
 - (id)fromViewController;
-- (void)removeObserver:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (float)duration;
-- (void)setDuration:(float)arg1;
 
 @end

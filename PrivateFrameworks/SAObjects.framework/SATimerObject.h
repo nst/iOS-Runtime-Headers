@@ -10,15 +10,15 @@
 @property(copy) NSString * state;
 @property(copy) NSNumber * timerValue;
 
-+ (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)object;
 
-- (id)groupIdentifier;
 - (id)state;
-- (void)setState:(id)arg1;
 - (void)setTimerValue:(id)arg1;
 - (id)timerValue;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setState:(id)arg1;
+- (id)groupIdentifier;
 
 @end

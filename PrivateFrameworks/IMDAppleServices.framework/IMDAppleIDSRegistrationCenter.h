@@ -27,6 +27,8 @@
 
 + (id)sharedInstance;
 
+- (void)dealloc;
+- (id)init;
 - (id)activeRegistrations;
 - (BOOL)sendDeregistration:(id)arg1;
 - (BOOL)getDependentHandles:(id)arg1 completionBlock:(id)arg2;
@@ -57,8 +59,6 @@
 - (BOOL)sendRegistration:(id)arg1;
 - (void)cancelActionsForRegistrationInfo:(id)arg1;
 - (BOOL)isRegistering:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (void)removeListener:(id)arg1;
 - (void)addListener:(id)arg1;
 

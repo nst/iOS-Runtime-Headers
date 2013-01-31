@@ -19,9 +19,9 @@
 @property(retain) OADColorScheme * colorScheme;
 
 
-- (void)dealloc;
 - (id)initWithClient:(id)arg1;
 - (id)client;
+- (void)dealloc;
 - (id)drawingAtIndex:(unsigned int)arg1;
 - (unsigned long)targetShapeIdForSourceDrawable:(id)arg1;
 - (id)sourceDrawableForSourceDrawableId:(unsigned long)arg1;

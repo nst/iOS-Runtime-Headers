@@ -13,14 +13,14 @@
 @property(retain) CoreDAVLeafItem * commonName;
 
 
+- (void)setHref:(id)arg1;
+- (id)href;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (void)setCommonName:(id)arg1;
+- (id)commonName;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (void)setHref:(id)arg1;
-- (id)href;
-- (id)commonName;
+- (void)setCommonName:(id)arg1;
 
 @end

@@ -32,10 +32,7 @@
 }
 
 
-- (struct CGSize { float x1; float x2; })outputSize;
-- (void)setOutputSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)dealloc;
-- (id)initWithOptions:(id)arg1;
 - (void)setOutputPixelBuffer:(struct __CVBuffer { }*)arg1;
 - (void)_createPixelBuffer:(struct __CVBuffer {}**)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)setRenderForSave:(bool)arg1;
@@ -61,5 +58,8 @@
 - (bool)renderForSave;
 - (unsigned int)inputTexture;
 - (struct __CVBuffer { }*)inputPixelBuffer;
+- (id)initWithOptions:(id)arg1;
+- (struct CGSize { float x1; float x2; })outputSize;
+- (void)setOutputSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

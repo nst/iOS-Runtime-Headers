@@ -24,6 +24,7 @@
 @property(retain) CNFRegShadowView * shadowView;
 
 
+- (void)dealloc;
 - (void)_stopListeningForTextChanges;
 - (void)_startListeningForTextChanges;
 - (id)customCheckmarkImageSelected;
@@ -40,7 +41,6 @@
 - (void)setSkipDelegateCallback:(BOOL)arg1;
 - (void)setCustomCheckmarkImageSelected:(id)arg1;
 - (void)setCustomCheckmarkImage:(id)arg1;
-- (void)dealloc;
 - (void)setShadowView:(id)arg1;
 - (id)shadowView;
 - (void)textFieldDidEndEditing:(id)arg1;

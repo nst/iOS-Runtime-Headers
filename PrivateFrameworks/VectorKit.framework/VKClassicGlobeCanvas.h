@@ -56,8 +56,6 @@
     double _animationZoom;
     BOOL _initialized;
     VKWorld *_world;
-    BOOL _worldNeedsLayout;
-    BOOL _worldNeedsDisplay;
     BOOL _canShowFlyover;
     struct shared_ptr<bool> { 
         bool*__ptr_; 
@@ -105,26 +103,15 @@
 
 + (BOOL)supportsMapType:(int)arg1;
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)forceLayout;
-- (void)initialize;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
-- (void)didReceiveMemoryWarning;
-- (void)reload;
-- (void)setHidden:(BOOL)arg1;
 - (double)pitch;
 - (double)yaw;
-- (id)camera;
 - (unsigned int)getTotalDownloaded;
 - (BOOL)isSearchAnimationEnabled;
 - (void)setSearchAnimationEnabled:(BOOL)arg1;
 - (void)postRender;
 - (void)preRender;
+- (void)mapView:(id)arg1 willDrawInContext:(struct CGContext { }*)arg2;
+- (void)mapView:(id)arg1 didResizeToWidth:(unsigned int)arg2 height:(unsigned int)arg3;
 - (void)mapViewDidStopUserInteraction:(id)arg1;
 - (void)mapViewDidStartUserInteraction:(id)arg1;
 - (void)setBackgroundViewLoading:(BOOL)arg1;
@@ -269,6 +256,7 @@
 - (Class)calloutViewClass;
 - (double)maximumZoomLevel;
 - (double)minimumZoomLevel;
+- (BOOL)writeVisibleTrafficTilesToDirectory:(id)arg1 error:(id*)arg2;
 - (id)detailedDescription;
 - (void)debugHighlightLabelAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)isPitchable;
@@ -289,7 +277,20 @@
 - (int)mapType;
 - (void)setLabelMarkerSelectionEnabled:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(id)arg2;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)dealloc;
 - (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
 - (void)didEnterBackground;
+- (id)camera;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)forceLayout;
+- (void)initialize;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (void)didReceiveMemoryWarning;
+- (void)reload;
+- (void)setHidden:(BOOL)arg1;
 
 @end

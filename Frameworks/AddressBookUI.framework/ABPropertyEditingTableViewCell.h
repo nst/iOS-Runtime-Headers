@@ -21,8 +21,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (void)setProperty:(int)arg1;
-- (int)property;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (void)setPlaceholder:(id)arg1;
@@ -34,6 +32,8 @@
 - (BOOL)becomeFirstResponder;
 - (BOOL)resignFirstResponder;
 - (void)layoutSubviews;
+- (void)setProperty:(int)arg1;
+- (int)property;
 - (void)setUsesLargeFont:(BOOL)arg1;
 - (BOOL)usesLargeFont;
 - (void)_resizeAndCenterTextField;

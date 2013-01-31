@@ -12,8 +12,8 @@
 
 - (void)dealloc;
 - (id)_initWithBasicAccount:(id)arg1;
-- (BOOL)refreshContainerListForDataclass:(id)arg1 isUserRequested:(BOOL)arg2;
 - (BOOL)refreshContainersForDataclass:(id)arg1 isUserRequested:(BOOL)arg2;
 - (BOOL)refreshContainerWithIdentifier:(id)arg1 forDataclass:(id)arg2 isUserRequested:(BOOL)arg3;
+- (BOOL)refreshContainerListForDataclass:(id)arg1 isUserRequested:(BOOL)arg2;
 
 @end

@@ -35,7 +35,6 @@
 
 @property BOOL shouldArchive;
 
-+ (void)initialize;
 + (void)reloadAccounts;
 + (void)setDataclassesConsideredActive:(id)arg1;
 + (id)_accountWithPath:(id)arg1;
@@ -104,27 +103,15 @@
 + (id)existingAccountForUniqueID:(id)arg1;
 + (BOOL)canMoveMessagesFromAccount:(id)arg1 toAccount:(id)arg2;
 + (id)accountThatMessageIsFrom:(id)arg1;
++ (void)initialize;
 + (void)mf_emptyReceivingEmailAddressesCache;
 
-- (void)setConnectionError:(id)arg1;
-- (id)connectionError;
-- (void)setEmailAddresses:(id)arg1;
-- (id)emailAddresses;
-- (void)setUsername:(id)arg1;
 - (void)invalidate;
 - (id)path;
 - (id)description;
 - (void)dealloc;
 - (void)setLibrary:(id)arg1;
 - (id)library;
-- (void)setPath:(id)arg1;
-- (id)URLString;
-- (id)initWithProperties:(id)arg1;
-- (id)initWithPath:(id)arg1;
-- (id)displayName;
-- (BOOL)isActive;
-- (void)setIsActive:(BOOL)arg1;
-- (void)stopListeningForNotifications;
 - (void)setCustomSignature:(id)arg1;
 - (id)customSignature;
 - (BOOL)restrictedFromSyncingRecents;
@@ -321,6 +308,19 @@
 - (id)storeForMailboxUid:(id)arg1;
 - (void)setUnreadCount:(unsigned int)arg1 forMailbox:(id)arg2;
 - (void)unregisterStore:(id)arg1 forUid:(id)arg2;
+- (void)stopListeningForNotifications;
+- (void)setPath:(id)arg1;
+- (id)URLString;
+- (id)initWithProperties:(id)arg1;
+- (id)initWithPath:(id)arg1;
+- (id)displayName;
+- (BOOL)isActive;
+- (void)setIsActive:(BOOL)arg1;
+- (void)setConnectionError:(id)arg1;
+- (id)connectionError;
+- (void)setEmailAddresses:(id)arg1;
+- (id)emailAddresses;
+- (void)setUsername:(id)arg1;
 - (void)setCachePolicy:(int)arg1;
 - (int)cachePolicy;
 - (id)mf_copyReceivingEmailAddresses;

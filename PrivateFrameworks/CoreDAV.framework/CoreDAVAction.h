@@ -16,9 +16,9 @@
 - (int)action;
 - (id)description;
 - (void)dealloc;
-- (id)context;
 - (void)setChangeContext:(id)arg1;
 - (id)changeContext;
 - (id)initWithAction:(int)arg1 context:(id)arg2;
+- (id)context;
 
 @end

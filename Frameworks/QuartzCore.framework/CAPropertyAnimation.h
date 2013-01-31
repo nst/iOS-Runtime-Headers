@@ -19,13 +19,13 @@
 
 + (id)animationWithKeyPath:(id)arg1;
 
-- (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
-- (void)setKeyPath:(id)arg1;
-- (id)keyPath;
 - (id)valueFunction;
 - (void)setAdditive:(BOOL)arg1;
 - (BOOL)isAdditive;
 - (void)setValueFunction:(id)arg1;
+- (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
+- (void)setKeyPath:(id)arg1;
+- (id)keyPath;
 - (BOOL)cumulative;
 - (BOOL)additive;
 - (void)setCumulative:(BOOL)arg1;

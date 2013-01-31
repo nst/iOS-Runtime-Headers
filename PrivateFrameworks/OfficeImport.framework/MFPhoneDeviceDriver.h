@@ -53,7 +53,6 @@
 
 - (id).cxx_construct;
 - (void)dealloc;
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)updateViewBoxTransform;
 - (void)concatTransforms;
 - (void)drawBezierPath:(struct CGPath { }*)arg1 dc:(id)arg2 fill:(BOOL)arg3 stroke:(BOOL)arg4;
@@ -102,5 +101,6 @@
 - (id)createSolidBrush:(id)arg1;
 - (id)createPen:(int)arg1 :(long)arg2 :(id)arg3 :(double*)arg4;
 - (id)createFont:(int)arg1;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 
 @end

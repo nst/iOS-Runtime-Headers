@@ -27,6 +27,8 @@
 @property(readonly) NSString * defaultCategory;
 @property(retain) GKStoreItemInternal * storeItem;
 @property(readonly) struct GKGameInfo { BOOL x1; BOOL x2; BOOL x3; BOOL x4; unsigned int x5; unsigned int x6; unsigned int x7; } gameInfo;
+@property(retain) NSNumber * nearbyMultiplayerOverride;
+@property(readonly) BOOL nearbyMultiplayerEnabled;
 
 + (id)lookupMobileInstallation:(id)arg1;
 + (id)defaultGameIconWithStyle:(int)arg1;
@@ -37,11 +39,25 @@
 + (BOOL)isGameCenter;
 + (id)currentGame;
 
+- (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)description;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (id)cacheKey;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)loadTellAFriendMessageWithCompletionHandler:(id)arg1;
 - (BOOL)isDownloading;
 - (BOOL)isInstalled;
 - (BOOL)isInternal;
 - (void)setSandboxed:(BOOL)arg1;
+- (BOOL)nearbyMultiplayerEnabled;
 - (BOOL)isStoreItemUnexpired;
 - (void)getFriendPlayersForAchievement:(id)arg1 handler:(id)arg2;
 - (void)getFriendPlayersForLeaderboard:(id)arg1 handler:(id)arg2;
@@ -55,6 +71,7 @@
 - (id)_imageURLForIconStyle:(int)arg1;
 - (id)macBrushForIconStyle:(int)arg1;
 - (id)imageSourceForiOSIconStyle:(int)arg1;
+- (void)setNearbyMultiplayerOverride:(id)arg1;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (void)setInternal:(id)arg1;
 - (id)gameDescriptor;
@@ -66,18 +83,5 @@
 - (struct GKGameInfo { BOOL x1; BOOL x2; BOOL x3; BOOL x4; unsigned int x5; unsigned int x6; unsigned int x7; })gameInfo;
 - (id)initWithBundleID:(id)arg1;
 - (id)internal;
-- (id)description;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (id)cacheKey;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)valueForUndefinedKey:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 
 @end

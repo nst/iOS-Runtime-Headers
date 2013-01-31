@@ -42,8 +42,8 @@
     float _heatIndex;
     NSString *_woeid;
     BOOL _isLocalWeatherCity;
-    BOOL _isRequestedByFrameworkClient;
     int _secondsFromGMT;
+    BOOL _isRequestedByFrameworkClient;
 }
 
 @property BOOL isRequestedByFrameworkClient;
@@ -65,16 +65,10 @@
 @property float heatIndex;
 
 
-- (id)locationID;
-- (id)state;
-- (void)setName:(id)arg1;
-- (id)name;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (id)displayName;
-- (void)update;
-- (void)setState:(id)arg1;
+- (void)setLink:(id)arg1;
+- (id)link;
+- (void)setVisibility:(float)arg1;
+- (float)visibility;
 - (void)setIsRequestedByFrameworkClient:(BOOL)arg1;
 - (BOOL)isRequestedByFrameworkClient;
 - (void)setIsLocalWeatherCity:(BOOL)arg1;
@@ -123,14 +117,13 @@
 - (id)windDirectionAsString:(int)arg1;
 - (BOOL)isLocalWeatherCity;
 - (void)setWoeid:(id)arg1;
-- (int)secondsFromGMT;
-- (void)setLink:(id)arg1;
-- (id)link;
-- (void)setVisibility:(float)arg1;
-- (float)visibility;
 - (id)updateTime;
-- (float)longitude;
-- (float)latitude;
+- (id)state;
+- (void)setName:(id)arg1;
+- (id)name;
+- (id)description;
+- (void)dealloc;
+- (id)init;
 - (void)setWindDirection:(unsigned int)arg1;
 - (unsigned int)windDirection;
 - (void)setHourlyForecasts:(id)arg1;
@@ -149,7 +142,14 @@
 - (float)feelsLike;
 - (void)setDewPoint:(float)arg1;
 - (float)dewPoint;
+- (float)longitude;
+- (float)latitude;
+- (id)locationID;
+- (id)displayName;
+- (void)update;
+- (void)setState:(id)arg1;
 - (void)setLongitude:(float)arg1;
 - (void)setLatitude:(float)arg1;
+- (int)secondsFromGMT;
 
 @end

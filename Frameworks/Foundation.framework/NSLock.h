@@ -13,11 +13,11 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (BOOL)tryLock;
 - (void)finalize;
 - (void)unlock;
 - (void)lock;
 - (BOOL)lockBeforeDate:(id)arg1;
+- (BOOL)tryLock;
 - (void)mf_waitForLock;
 
 @end

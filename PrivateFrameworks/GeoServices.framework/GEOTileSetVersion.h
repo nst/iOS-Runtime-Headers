@@ -29,16 +29,15 @@
 @property unsigned int supportedLanguagesVersion;
 
 
+- (unsigned int)timeToLiveSeconds;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (unsigned int)identifier;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)setIdentifier:(unsigned int)arg1;
-- (id)dictionaryRepresentation;
-- (unsigned int)timeToLiveSeconds;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setHasSupportedLanguagesVersion:(BOOL)arg1;
 - (void)setGenericTiles:(struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
 - (struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)genericTiles;
@@ -58,6 +57,7 @@
 - (unsigned int)availableTilesCount;
 - (void)clearGenericTiles;
 - (void)clearAvailableTiles;
-- (BOOL)readFrom:(id)arg1;
+- (void)setIdentifier:(unsigned int)arg1;
+- (id)dictionaryRepresentation;
 
 @end

@@ -14,8 +14,8 @@
 
 - (void)dealloc;
 - (id)init;
+- (void)registerSessionClassWithBundle:(id)arg1;
 - (id)serviceWithName:(id)arg1;
 - (id)allServices;
-- (void)registerSessionClassWithBundle:(id)arg1;
 
 @end

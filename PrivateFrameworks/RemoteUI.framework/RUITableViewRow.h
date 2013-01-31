@@ -29,9 +29,10 @@
 @property(retain) NSDate * dateMin;
 @property(retain) NSDate * dateMax;
 
-+ (id)_monthAndDayFormatter;
 + (void)resetLocale;
++ (id)_monthAndDayFormatter;
 
+- (int)selectedRow;
 - (void)setDelegate:(id)arg1;
 - (id)data;
 - (void)dealloc;
@@ -50,6 +51,8 @@
 - (id)selectOptions;
 - (void)populatePostbackDictionary:(id)arg1;
 - (void)setRowInvalid:(BOOL)arg1;
+- (id)tableCell;
+- (id)_dateFormatter;
 - (id)deleteAction;
 - (void)setDate:(id)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
@@ -61,8 +64,5 @@
 - (int)numberOfComponentsInPickerView:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)_datePickerChanged:(id)arg1;
-- (int)selectedRow;
-- (id)tableCell;
-- (id)_dateFormatter;
 
 @end

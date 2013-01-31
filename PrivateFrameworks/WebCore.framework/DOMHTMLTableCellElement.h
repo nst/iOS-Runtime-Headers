@@ -24,10 +24,6 @@
 @property(copy) NSString * width;
 
 
-- (void)setHeight:(id)arg1;
-- (id)height;
-- (void)setWidth:(id)arg1;
-- (id)width;
 - (void)setVAlign:(id)arg1;
 - (id)vAlign;
 - (void)setScope:(id)arg1;
@@ -53,5 +49,9 @@
 - (id)bgColor;
 - (void)setAlign:(id)arg1;
 - (id)align;
+- (void)setHeight:(id)arg1;
+- (id)height;
+- (void)setWidth:(id)arg1;
+- (id)width;
 
 @end

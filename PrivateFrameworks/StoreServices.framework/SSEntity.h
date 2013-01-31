@@ -28,13 +28,11 @@
 
 - (void)resetCachedProperties:(const id*)arg1 count:(unsigned int)arg2;
 - (id)valueForExternalProperty:(id)arg1;
-- (BOOL)exists;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)getValues:(id*)arg1 forProperties:(const id*)arg2 count:(unsigned int)arg3;
 - (void)resetCachedExternalProperties:(const id*)arg1 count:(unsigned int)arg2;
 - (void)__addCachedPropertyValues:(id)arg1;
 - (void)__addCachedExternalValues:(id)arg1;
@@ -56,7 +54,9 @@
 - (BOOL)_isManaged;
 - (void)_becomeManagedOnConnection:(id)arg1;
 - (id)_initWithPersistentIdentifier:(long long)arg1;
+- (void)getValues:(id*)arg1 forProperties:(const id*)arg2 count:(unsigned int)arg3;
 - (id)valueForProperty:(id)arg1;
+- (BOOL)exists;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
 
 @end

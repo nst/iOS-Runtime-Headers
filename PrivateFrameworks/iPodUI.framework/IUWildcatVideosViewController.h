@@ -27,18 +27,6 @@
 
 
 - (void)_backgroundAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (void)_libraryDidChangeNotification:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)detailViewController;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForViewController:(id)arg1;
-- (id)topViewController;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
-- (void)loadView;
 - (void)doorSwingTransitionView:(id)arg1 didFinishTransition:(int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_albumFrameForBrowserControllerTransition:(id)arg1;
 - (void)foldingTransitionDidStop:(id)arg1 finished:(BOOL)arg2;
@@ -79,5 +67,17 @@
 - (id)copyArchivableContexts;
 - (id)playbackViewController;
 - (void)_availableMediaLibrariesDidChangeNotification:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)detailViewController;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForViewController:(id)arg1;
+- (id)topViewController;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (void)loadView;
+- (void)_libraryDidChangeNotification:(id)arg1;
 
 @end

@@ -11,6 +11,8 @@
 }
 
 
+- (void)dealloc;
+- (id)init;
 - (bool)addParametricTest:(id)arg1 result:(bool)arg2 value:(id)arg3 failureMessage:(id)arg4 subtest:(id)arg5 subsubtest:(id)arg6 upperLimit:(id)arg7 lowerLimit:(id)arg8 priority:(int)arg9 units:(id)arg10;
 - (bool)addPassFailTest:(id)arg1 result:(bool)arg2 failureMessage:(id)arg3 subtest:(id)arg4 subsubtest:(id)arg5;
 - (bool)addDeviceAttributes:(id)arg1;
@@ -21,11 +23,9 @@
 - (bool)createTest:(id)arg1 name:(id)arg2 result:(bool)arg3 failureMessage:(id)arg4 subtest:(id)arg5 subsubtest:(id)arg6;
 - (id)makeAlphanumericString:(id)arg1;
 - (bool)stringIsAlphanumericPeriod:(id)arg1;
-- (bool)setStopTime:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (id)initWithPath:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (bool)setStartTime:(id)arg1;
+- (bool)setStopTime:(id)arg1;
 
 @end

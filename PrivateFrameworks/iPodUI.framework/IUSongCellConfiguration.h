@@ -25,19 +25,21 @@
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (BOOL)getShadowColor:(id*)arg1 offset:(struct CGSize { float x1; float x2; }*)arg2 forLabelAtIndex:(unsigned int)arg3 withModifiers:(unsigned int)arg4;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
-- (id)artist;
+- (id)displayProperties;
+- (struct CGPoint { float x1; float x2; })downloadButtonOrigin;
+- (struct CGPoint { float x1; float x2; })downloadProgressIndicatorOrigin;
+- (BOOL)canShowPurchasableMediaViews;
+- (void)reloadStringsWithProperties:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (void)setAlbum:(id)arg1;
+- (id)album;
 - (void)setMediaType:(int)arg1;
 - (int)mediaType;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (void)setAlbum:(id)arg1;
-- (id)album;
-- (id)displayProperties;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })downloadProgressIndicatorFrame;
 - (void)setArtist:(id)arg1;
-- (void)reloadStringsWithProperties:(id)arg1;
+- (id)artist;
 
 @end

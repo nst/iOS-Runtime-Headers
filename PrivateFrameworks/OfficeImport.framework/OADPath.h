@@ -15,17 +15,17 @@
 }
 
 
+- (int)fillMode;
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)init;
-- (void)setFillMode:(int)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
-- (int)fillMode;
 - (void)setStroked:(BOOL)arg1;
 - (BOOL)stroked;
 - (id)elementAtIndex:(unsigned int)arg1;
 - (unsigned int)elementCount;
 - (void)addElement:(id)arg1;
+- (void)setFillMode:(int)arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

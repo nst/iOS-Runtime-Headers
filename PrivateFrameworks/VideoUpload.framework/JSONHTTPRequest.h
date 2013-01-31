@@ -32,8 +32,6 @@
 - (id)initWithURL:(id)arg1 delegate:(id)arg2;
 - (id)_multipartParamData:(id)arg1;
 - (id)_paramString:(id)arg1;
-- (void)setHTTPMethod:(int)arg1;
-- (int)HTTPMethod;
 - (void)cancel;
 - (void)dealloc;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
@@ -42,6 +40,8 @@
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (id)response;
 - (void)start;
+- (void)setHTTPMethod:(int)arg1;
+- (int)HTTPMethod;
 - (void)connection:(id)arg1 didSendBodyData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4;
 
 @end

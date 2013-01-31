@@ -15,8 +15,8 @@
 - (id)name;
 - (id)description;
 - (void)dealloc;
-- (int)number;
 - (void)setWriteIsPending:(BOOL)arg1;
 - (id)initWithName:(id)arg1 number:(int)arg2;
+- (int)number;
 
 @end

@@ -10,13 +10,13 @@
 }
 
 
-- (void)addOperation:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (BOOL)containsOperation:(id)arg1;
 - (void)setUniqueOperation:(id)arg1 forKey:(id)arg2;
 - (id)uniqueOperationForKey:(id)arg1;
 - (unsigned int)countOfOperations;
 - (void)removeOperation:(id)arg1;
+- (void)addOperation:(id)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

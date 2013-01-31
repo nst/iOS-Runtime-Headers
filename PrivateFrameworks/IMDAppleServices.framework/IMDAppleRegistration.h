@@ -84,6 +84,14 @@
 @property(copy) NSMutableArray * _candidateEmails;
 
 
+- (id)guid;
+- (id)description;
+- (BOOL)isEqual:(id)arg1;
+- (id)userInfo;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setDeviceName:(id)arg1;
 - (BOOL)_hasSentinel;
 - (id)_emailsToProvision;
 - (BOOL)_keychain_isEqual:(id)arg1;
@@ -149,30 +157,22 @@
 - (void)setProfileID:(id)arg1;
 - (id)profileID;
 - (id)authenticationToken;
-- (void)setEnvironment:(id)arg1;
-- (void)setDeviceID:(id)arg1;
-- (id)email;
-- (void)setEmail:(id)arg1;
-- (void)setPushToken:(id)arg1;
-- (id)pushToken;
-- (id)guid;
-- (id)description;
-- (BOOL)isEqual:(id)arg1;
-- (id)userInfo;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
+- (int)serviceType;
+- (void)setServiceType:(int)arg1;
+- (id)deviceID;
+- (id)deviceName;
 - (void)setApplicationVersion:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)phoneNumber;
 - (id)initWithDictionary:(id)arg1;
 - (id)environment;
-- (int)serviceType;
-- (void)setServiceType:(int)arg1;
-- (id)deviceID;
-- (id)deviceName;
-- (void)setDeviceName:(id)arg1;
+- (void)setEnvironment:(id)arg1;
+- (void)setDeviceID:(id)arg1;
+- (id)email;
+- (void)setEmail:(id)arg1;
+- (void)setPushToken:(id)arg1;
+- (id)pushToken;
 - (void)setPhoneNumber:(id)arg1;
 
 @end

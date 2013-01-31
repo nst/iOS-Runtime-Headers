@@ -2,22 +2,23 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class ADAdRecipientRecord, NSString, ADLocalViewController;
+@class ADAdRecipientRecord, ADLocalViewController, NSString;
 
 @interface ADBannerController : NSObject  {
     BOOL _closeInProgress;
-    ADAdRecipientRecord *_recipient;
+    ADLocalViewController *_localViewController;
     BOOL _isOpen;
     BOOL _bannerWillLeaveApplication;
+    int _supportedOrientations;
+    unsigned int _remoteWindowContextId;
     NSString *_identifier;
     double _createdAt;
-    id _remoteSession;
     id _remoteBannerController;
-    ADLocalViewController *_localViewController;
-    int _supportedOrientations;
     int _adType;
-    unsigned int _remoteWindowContextId;
+    NSString *_lastAdvertisingSection;
+    ADAdRecipientRecord *_recipient;
     int _adState;
+    id _remoteSession;
 }
 
 @property ADAdRecipientRecord * recipient;
@@ -28,32 +29,26 @@
 @property(readonly) int adType;
 @property(readonly) unsigned int remoteWindowContextId;
 @property(readonly) int adState;
+@property(copy) NSString * lastAdvertisingSection;
 @property(retain) id remoteSession;
 @property(retain) id remoteBannerController;
 @property(retain) ADLocalViewController * localViewController;
 @property int supportedOrientations;
 
 
-- (id)recipient;
-- (void)setRecipient:(id)arg1;
 - (void)_close;
 - (id)identifier;
 - (id)description;
 - (void)dealloc;
-- (int)supportedOrientations;
-- (void)setSupportedOrientations:(int)arg1;
-- (void)close;
-- (void)applicationWillEnterForeground:(id)arg1;
-- (void)applicationDidEnterBackground:(id)arg1;
-- (void)applicationDidBecomeActive:(id)arg1;
-- (int)adState;
-- (unsigned int)remoteWindowContextId;
-- (id)localViewController;
-- (id)remoteBannerController;
 - (id)remoteSession;
+- (int)adState;
+- (id)lastAdvertisingSection;
+- (id)remoteBannerController;
 - (void)setCreatedAt:(double)arg1;
 - (double)createdAt;
+- (unsigned int)remoteWindowContextId;
 - (BOOL)bannerWillLeaveApplication;
+- (id)localViewController;
 - (void)_remote_dismissModalViewController:(id)arg1;
 - (void)_remote_presentModalViewController:(id)arg1;
 - (void)_remote_storyboardDismissedLocalViewController:(id)arg1;
@@ -72,12 +67,14 @@
 - (void)interstitialPresentedInView:(BOOL)arg1;
 - (void)interstitialWasRemovedFromSuperview:(id)arg1;
 - (void)updateAdViewProperties:(id)arg1;
+- (void)storyboardPresentationFailed;
 - (void)cancelBannerViewAction;
 - (void)refuseBannerViewAction;
 - (void)executeBannerViewActionFrom:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withClickLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)initForAdRecipient:(id)arg1;
 - (void)applicationDidResignActive:(id)arg1;
 - (void)handleBannerVisibilityHeartbeatNotification:(id)arg1;
+- (void)setLastAdvertisingSection:(id)arg1;
 - (void)reportVisibility:(int)arg1;
 - (void)setLocalViewController:(id)arg1;
 - (void)_closeAndReportError:(id)arg1;
@@ -86,6 +83,14 @@
 - (void)setRemoteSession:(id)arg1;
 - (void)setRemoteBannerController:(id)arg1;
 - (int)adType;
+- (int)supportedOrientations;
+- (void)setSupportedOrientations:(int)arg1;
+- (void)close;
+- (void)applicationWillEnterForeground:(id)arg1;
+- (void)applicationDidEnterBackground:(id)arg1;
+- (void)applicationDidBecomeActive:(id)arg1;
+- (id)recipient;
+- (void)setRecipient:(id)arg1;
 - (BOOL)isOpen;
 
 @end

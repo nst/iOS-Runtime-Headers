@@ -20,7 +20,6 @@
 
 - (id)managedObjectContext;
 - (void)dealloc;
-- (void)run;
 - (id)_cameraRollAssetDerivedFromAsset:(id)arg1;
 - (id)coordinator;
 - (void)setAlbum:(id)arg1;
@@ -33,5 +32,6 @@
 - (id)photoLibrary;
 - (id)assets;
 - (void)setPhotoLibrary:(id)arg1;
+- (void)run;
 
 @end

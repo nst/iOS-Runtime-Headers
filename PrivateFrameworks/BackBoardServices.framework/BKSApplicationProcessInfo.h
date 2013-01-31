@@ -21,7 +21,10 @@
 @property BOOL classic;
 
 
-- (void)setBundleIdentifier:(id)arg1;
+- (id)bundleIdentifier;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setEventPort:(id)arg1;
 - (void)setBeingDebugged:(id)arg1;
 - (void)setPidNumber:(id)arg1;
@@ -33,11 +36,8 @@
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)beingDebugged;
 - (id)pidNumber;
-- (id)bundleIdentifier;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setSuspended:(BOOL)arg1;
+- (void)setBundleIdentifier:(id)arg1;
 - (BOOL)suspended;
 
 @end

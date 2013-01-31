@@ -22,16 +22,23 @@
 @property double timestamp;
 @property(readonly) NSString * shortDescription;
 
-+ (void)_setAnnotationClass:(Class)arg1;
 + (id)keyPathsForValuesAffectingSubtitle;
++ (void)_setAnnotationClass:(Class)arg1;
 
-- (void)setCourse:(double)arg1;
-- (void)setUpdating:(BOOL)arg1;
+- (void)setLocation:(id)arg1;
+- (id)heading;
+- (void)setHeading:(id)arg1;
+- (double)headingDegrees;
+- (double)accuracy;
+- (double)course;
 - (double)timestamp;
 - (void)setTimestamp:(double)arg1;
 - (void)reset;
 - (void)dealloc;
 - (id)init;
+- (struct { double x1; double x2; })coordinate;
+- (void)setCoordinate:(struct { double x1; double x2; })arg1;
+- (void)setCourse:(double)arg1;
 - (id)annotation;
 - (id)shortDescription;
 - (void)setSource:(int)arg1;
@@ -48,13 +55,6 @@
 - (id)predictedLocation;
 - (BOOL)isUpdating;
 - (void)setFixedLocation:(id)arg1;
-- (void)setLocation:(id)arg1;
-- (id)heading;
-- (struct { double x1; double x2; })coordinate;
-- (void)setHeading:(id)arg1;
-- (double)headingDegrees;
-- (double)accuracy;
-- (double)course;
-- (void)setCoordinate:(struct { double x1; double x2; })arg1;
+- (void)setUpdating:(BOOL)arg1;
 
 @end

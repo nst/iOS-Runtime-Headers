@@ -13,8 +13,6 @@
 }
 
 
-- (int)direction;
-- (void)setDirection:(int)arg1;
 - (int)colorSpace;
 - (id)by;
 - (void)setColorSpace:(int)arg1;
@@ -23,5 +21,7 @@
 - (void)setFrom:(id)arg1;
 - (id)to;
 - (id)from;
+- (int)direction;
+- (void)setDirection:(int)arg1;
 
 @end

@@ -22,10 +22,10 @@
 }
 
 
-- (void)dealloc;
-- (id)init;
 - (void)drawScene:(id)arg1 withContext:(id)arg2;
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
+- (void)dealloc;
+- (id)init;
 
 @end

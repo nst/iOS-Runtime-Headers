@@ -21,6 +21,7 @@
 
 + (void)setDefaultDatesForEvent:(id)arg1;
 
+- (void)cancelEditing;
 - (void)dealloc;
 - (id)event;
 - (void)setEvent:(id)arg1;
@@ -47,7 +48,6 @@
 - (void)setEditViewDelegate:(id)arg1;
 - (void)setEventStore:(id)arg1;
 - (void)_storeChanged:(id)arg1;
-- (void)cancelEditing;
 - (id)eventStore;
 
 @end

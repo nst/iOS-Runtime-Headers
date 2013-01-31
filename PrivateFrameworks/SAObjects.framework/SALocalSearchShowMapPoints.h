@@ -18,7 +18,6 @@
 + (id)showMapPointsWithDictionary:(id)arg1 context:(id)arg2;
 + (id)showMapPoints;
 
-- (id)groupIdentifier;
 - (void)setShowTraffic:(BOOL)arg1;
 - (BOOL)showTraffic;
 - (void)setShowDirections:(BOOL)arg1;
@@ -35,5 +34,6 @@
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

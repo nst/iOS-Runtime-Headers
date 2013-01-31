@@ -20,22 +20,11 @@
 @property(copy) NSArray * reviews;
 @property int totalNumberOfReviews;
 
-+ (id)business;
 + (id)businessWithDictionary:(id)arg1 context:(id)arg2;
++ (id)business;
 
-- (id)groupIdentifier;
-- (void)setRating:(id)arg1;
-- (id)rating;
-- (void)setCategories:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)name;
-- (id)categories;
-- (void)setPhoneNumbers:(id)arg1;
-- (id)phoneNumbers;
-- (void)setPhoto:(id)arg1;
-- (id)photo;
-- (id)reviews;
-- (void)setReviews:(id)arg1;
 - (void)setTotalNumberOfReviews:(int)arg1;
 - (int)totalNumberOfReviews;
 - (void)setOpeningHours:(id)arg1;
@@ -49,5 +38,16 @@
 - (void)setBusinessId:(id)arg1;
 - (id)businessId;
 - (id)encodedClassName;
+- (void)setPhoto:(id)arg1;
+- (id)photo;
+- (void)setPhoneNumbers:(id)arg1;
+- (id)phoneNumbers;
+- (id)reviews;
+- (void)setReviews:(id)arg1;
+- (id)categories;
+- (id)groupIdentifier;
+- (void)setRating:(id)arg1;
+- (id)rating;
+- (void)setCategories:(id)arg1;
 
 @end

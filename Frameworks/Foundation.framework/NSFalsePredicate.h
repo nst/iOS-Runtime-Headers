@@ -6,8 +6,8 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)defaultInstance;
 + (void)initialize;
++ (id)defaultInstance;
 
 - (unsigned int)retainCount;
 - (unsigned int)hash;
@@ -16,10 +16,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (oneway void)release;
 - (id)autorelease;
-- (id)predicateFormat;
-- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
+- (id)predicateFormat;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 
 @end

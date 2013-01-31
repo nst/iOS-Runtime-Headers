@@ -56,6 +56,13 @@
 @property BOOL isCancelled;
 
 
+- (void)setOwner:(id)arg1;
+- (BOOL)isCancelled;
+- (void)dealloc;
+- (id)init;
+- (id)owner;
+- (void)setDocument:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })box;
 - (void)addRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toPath:(struct CGPath { }*)arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg3 view:(id)arg4 owner:(id)arg5;
 - (void)drawSelectionLayerBlockMode:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)setIsCancelled:(BOOL)arg1;
@@ -65,9 +72,6 @@
 - (void)computeTransform;
 - (void)setPageRotation:(unsigned int)arg1;
 - (unsigned int)pageRotation;
-- (BOOL)isCancelled;
-- (void)dealloc;
-- (id)init;
 - (void)setPageIndex:(unsigned int)arg1;
 - (unsigned int)pageIndex;
 - (struct CGColor { }*)highlightColor;
@@ -77,9 +81,5 @@
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 - (void)setView:(id)arg1;
 - (id)view;
-- (void)setOwner:(id)arg1;
-- (id)owner;
-- (void)setDocument:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })box;
 
 @end

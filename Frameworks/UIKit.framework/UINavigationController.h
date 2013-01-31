@@ -294,13 +294,13 @@
 - (id)signInControllerInHierarchy;
 - (BOOL)ckCanDismissWhenSuspending;
 - (id)firstViewController;
-- (int)localizedCompare:(id)arg1;
 - (void)swapInPreviouslySkippedViewControllers;
 - (void)swapTopViewControllerWithContext:(id)arg1;
 - (id)viewControllersForTopContext:(id)arg1;
 - (void)pushControllerForContext:(id)arg1 animated:(BOOL)arg2;
 - (void)restoreArchivedContexts:(id)arg1;
 - (id)copyArchivableContexts;
+- (int)localizedCompare:(id)arg1;
 - (BOOL)isTransitionInProgress;
 - (id)_rootControllerIfRespondsToSelector:(SEL)arg1;
 - (BOOL)shouldDisableWhileDownloading;

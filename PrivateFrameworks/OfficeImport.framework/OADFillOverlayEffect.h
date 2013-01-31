@@ -14,9 +14,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)fill;
 - (void)setBlendMode:(int)arg1;
 - (int)blendMode;
 - (void)setFill:(id)arg1;
+- (id)fill;
 
 @end

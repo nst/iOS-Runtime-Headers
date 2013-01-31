@@ -21,27 +21,27 @@
 @property(retain) NSArray * services;
 
 
-- (id)services;
-- (void)setServices:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)setName:(id)arg1;
 - (id)name;
+- (id)services;
+- (void)setServices:(id)arg1;
+- (void)discoverServices:(id)arg1;
+- (void)discoverCharacteristics:(id)arg1 forService:(id)arg2;
+- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 type:(int)arg3;
+- (void)readValueForCharacteristic:(id)arg1;
+- (void)setNotifyValue:(BOOL)arg1 forCharacteristic:(id)arg2;
+- (id)RSSI;
 - (struct __CFUUID { }*)UUID;
 - (void)setIsConnected:(BOOL)arg1;
-- (id)RSSI;
 - (void)writeValue:(id)arg1 forDescriptor:(id)arg2;
 - (void)readValueForDescriptor:(id)arg1;
 - (void)discoverDescriptorsForCharacteristic:(id)arg1;
 - (void)setIndicateValue:(BOOL)arg1 forCharacteristic:(id)arg2;
-- (void)setNotifyValue:(BOOL)arg1 forCharacteristic:(id)arg2;
 - (void)setBroadcastValue:(BOOL)arg1 forCharacteristic:(id)arg2;
 - (void)reliablyWriteValues:(id)arg1 forCharacteristics:(id)arg2;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 type:(int)arg3;
-- (void)readValueForCharacteristic:(id)arg1;
-- (void)discoverCharacteristics:(id)arg1 forService:(id)arg2;
 - (void)discoverIncludedServices:(id)arg1 forService:(id)arg2;
-- (void)discoverServices:(id)arg1;
 - (void)readRSSI;
 - (void)setRSSI:(id)arg1;
 - (BOOL)isConnected;

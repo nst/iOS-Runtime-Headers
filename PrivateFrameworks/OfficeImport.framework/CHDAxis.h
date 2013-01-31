@@ -42,13 +42,6 @@
 
 - (bool)isDeleted;
 - (void)dealloc;
-- (int)key;
-- (void)setOrientation:(int)arg1;
-- (id)title;
-- (id)font;
-- (void)setFont:(id)arg1;
-- (int)orientation;
-- (void)setTitle:(id)arg1;
 - (id)tickLabelColor;
 - (int)tickLabelColorIndex;
 - (bool)isTickLabelAutoRotation;
@@ -112,5 +105,12 @@
 - (int)axisPosition;
 - (id)contentFormat;
 - (unsigned int)contentFormatId;
+- (int)key;
+- (void)setOrientation:(int)arg1;
+- (id)title;
+- (id)font;
+- (void)setFont:(id)arg1;
+- (int)orientation;
+- (void)setTitle:(id)arg1;
 
 @end

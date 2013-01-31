@@ -40,8 +40,10 @@
 @property(copy) id shutdownHandler;
 
 
+- (void)dealloc;
 - (BOOL)connectionsAreActive;
 - (id)initListenerWithServiceName:(id)arg1 onQueue:(id)arg2;
+- (void)startListening;
 - (void)setShutdownHandler:(id)arg1;
 - (id)shutdownHandler;
 - (id)defaultMessageHandler;
@@ -53,12 +55,10 @@
 - (id)_handlerForMessageName:(id)arg1;
 - (void)setDisconnectHandler:(id)arg1;
 - (id)disconnectHandler;
-- (void)dealloc;
 - (void)setIdleTimerInterval:(double)arg1;
 - (BOOL)_runShutdownHandler;
 - (void)_rescheduleIdleTimerSourceWithInterval:(double)arg1;
 - (BOOL)_doingWork;
 - (void)_resetMessageFlag;
-- (void)startListening;
 
 @end

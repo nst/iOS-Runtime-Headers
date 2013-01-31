@@ -25,7 +25,6 @@
 - (void)run;
 - (id)currentMode;
 - (void)addTimer:(id)arg1 forMode:(id)arg2;
-- (struct __CFRunLoop { }*)getCFRunLoop;
 - (void)cancelPerformSelector:(SEL)arg1 target:(id)arg2 argument:(id)arg3;
 - (void)performSelector:(SEL)arg1 target:(id)arg2 argument:(id)arg3 order:(unsigned int)arg4 modes:(id)arg5;
 - (BOOL)runBeforeDate:(id)arg1;
@@ -49,5 +48,6 @@
 - (BOOL)_containsPort:(id)arg1 forMode:(id)arg2;
 - (void)_portInvalidated:(id)arg1;
 - (void)_enumerateInfoPairsWithBlock:(id)arg1;
+- (struct __CFRunLoop { }*)getCFRunLoop;
 
 @end

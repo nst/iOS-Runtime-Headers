@@ -32,11 +32,6 @@
 @property(readonly) GEOActiveTileSet * tileSet;
 
 
-- (void)setClient:(id)arg1;
-- (void)setStylesheet:(id)arg1;
-- (void)dealloc;
-- (void)clearCaches;
-- (int)tileSize;
 - (void)_expireTiles;
 - (double)_expirationInterval;
 - (void)_scheduleTileExpirationTimer:(double)arg1 forceUpdate:(BOOL)arg2;
@@ -58,5 +53,10 @@
 - (id)initWithTileSet:(id)arg1;
 - (int)maximumZoomLevel;
 - (int)minimumZoomLevel;
+- (void)dealloc;
+- (int)tileSize;
+- (void)setStylesheet:(id)arg1;
+- (void)setClient:(id)arg1;
+- (void)clearCaches;
 
 @end

@@ -5,10 +5,10 @@
 @interface SAMPPlaylist : SAMPCollection  {
 }
 
-+ (id)playlist;
 + (id)playlistWithDictionary:(id)arg1 context:(id)arg2;
++ (id)playlist;
 
-- (id)groupIdentifier;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

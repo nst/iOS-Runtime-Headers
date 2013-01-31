@@ -14,7 +14,6 @@
 + (id)seasonWithDictionary:(id)arg1 context:(id)arg2;
 + (id)season;
 
-- (id)groupIdentifier;
 - (void)setRegularSeason:(id)arg1;
 - (id)regularSeason;
 - (void)setPreSeason:(id)arg1;
@@ -22,5 +21,6 @@
 - (void)setPostSeason:(id)arg1;
 - (id)postSeason;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

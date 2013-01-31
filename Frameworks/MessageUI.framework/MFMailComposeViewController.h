@@ -20,15 +20,20 @@
 @property <MFMailComposeViewControllerDelegate> * mailComposeDelegate;
 
 + (BOOL)hasAutosavedMessageWithIdentifier:(id)arg1;
-+ (BOOL)canSendMail;
 + (void)removeAutosavedMessageWithIdentifier:(id)arg1;
 + (unsigned int)maximumAttachmentSize;
++ (BOOL)canSendMail;
 
 - (void)recoverAutosavedMessageWithIdentifier:(id)arg1;
 - (void)setKeyboardVisible:(BOOL)arg1;
 - (void)autosaveWithHandler:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (void)dealloc;
+- (id)_addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
+- (void)addSetupAnimationBlock:(id)arg1;
+- (void)setAutorotationDelegate:(id)arg1;
+- (void)setContentVisible:(BOOL)arg1;
+- (void)requestFramesForAttachmentsWithIdentifiers:(id)arg1 resultHandler:(id)arg2;
 - (void)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
 - (void)setMessageBody:(id)arg1 isHTML:(BOOL)arg2;
 - (void)setMailComposeDelegate:(id)arg1;
@@ -45,10 +50,5 @@
 - (void)setBccRecipients:(id)arg1;
 - (void)setCcRecipients:(id)arg1;
 - (void)setToRecipients:(id)arg1;
-- (id)_addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
-- (void)addSetupAnimationBlock:(id)arg1;
-- (void)setAutorotationDelegate:(id)arg1;
-- (void)setContentVisible:(BOOL)arg1;
-- (void)requestFramesForAttachmentsWithIdentifiers:(id)arg1 resultHandler:(id)arg2;
 
 @end

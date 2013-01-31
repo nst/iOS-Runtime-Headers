@@ -11,13 +11,14 @@
 }
 
 
+- (id)initWithPurchase:(id)arg1;
+- (void)cancel;
+- (void)dealloc;
+- (void)_showPeoplePicker;
 - (void)_pickAssigneeToneStyle;
 - (id)_copyAllowedToneStyles;
 - (void)_destroyAlertView;
 - (void)_destroyActionSheet;
-- (id)initWithPurchase:(id)arg1;
-- (void)cancel;
-- (void)dealloc;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
@@ -27,6 +28,5 @@
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)actionSheetCancel:(id)arg1;
 - (void)_dismissPeoplePicker;
-- (void)_showPeoplePicker;
 
 @end

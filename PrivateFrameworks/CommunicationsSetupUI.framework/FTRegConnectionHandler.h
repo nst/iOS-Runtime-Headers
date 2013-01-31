@@ -23,6 +23,18 @@
 @property(setter=_setListenerID:,copy) NSString * _listenerID;
 
 
+- (void)setName:(id)arg1;
+- (id)name;
+- (void)dealloc;
+- (void)setCaps:(unsigned int)arg1;
+- (unsigned int)caps;
+- (void)_setListenerID:(id)arg1;
+- (id)_listenerID;
+- (void)_disconnectFromDaemon;
+- (BOOL)connectToDaemon;
+- (int)serviceType;
+- (void)setServiceType:(int)arg1;
+- (void)_startListeningForNotifications;
 - (BOOL)_isServiceSupported;
 - (void)_handleDaemonDisconnected:(id)arg1;
 - (void)set_logName:(id)arg1;
@@ -30,21 +42,9 @@
 - (void)_stopListeningForNotifications;
 - (void)_handleDaemonConnected:(id)arg1;
 - (id)_logName;
-- (void)setName:(id)arg1;
-- (id)name;
-- (void)dealloc;
-- (int)serviceType;
-- (void)setServiceType:(int)arg1;
-- (void)_setListenerID:(id)arg1;
-- (id)_listenerID;
 - (BOOL)isConnectedToDaemon;
 - (id)initWithServiceType:(int)arg1 name:(id)arg2 capabilities:(unsigned long long)arg3;
 - (id)initWithServiceType:(int)arg1 name:(id)arg2;
 - (BOOL)connectToDaemon:(BOOL)arg1;
-- (void)_disconnectFromDaemon;
-- (BOOL)connectToDaemon;
-- (void)setCaps:(unsigned int)arg1;
-- (unsigned int)caps;
-- (void)_startListeningForNotifications;
 
 @end

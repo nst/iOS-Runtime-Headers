@@ -26,6 +26,15 @@
 + (void)logSetMasksWithLabel:(id)arg1 obj:(id)arg2 typeStr:(id)arg3;
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;
 
+- (void)setLocation:(int)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)effect;
+- (void)setEffect:(id)arg1;
+- (char *)nameString;
+- (void)setNameString:(char *)arg1;
+- (int)location;
+- (void)bind;
 - (void)setFshSource:(char *)arg1;
 - (char *)fshSource;
 - (void)setVshSource:(char *)arg1;
@@ -44,14 +53,5 @@
 - (unsigned long long)dirtyUniforms;
 - (void)setDirtyUniforms:(unsigned long long)arg1;
 - (void)dirtyAllUniforms;
-- (void)dealloc;
-- (id)init;
-- (int)location;
-- (void)bind;
-- (void)setLocation:(int)arg1;
-- (id)effect;
-- (void)setEffect:(id)arg1;
-- (char *)nameString;
-- (void)setNameString:(char *)arg1;
 
 @end

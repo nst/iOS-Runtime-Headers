@@ -18,10 +18,6 @@
 + (id)restaurantWithDictionary:(id)arg1 context:(id)arg2;
 + (id)restaurant;
 
-- (id)groupIdentifier;
-- (void)setAttributeSet:(id)arg1;
-- (void)setCurrencySymbol:(id)arg1;
-- (id)currencySymbol;
 - (void)setPriceRange:(id)arg1;
 - (id)priceRange;
 - (void)setOrderDeliveryPunchOuts:(id)arg1;
@@ -35,5 +31,9 @@
 - (id)attributeSet;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setAttributeSet:(id)arg1;
+- (id)groupIdentifier;
+- (void)setCurrencySymbol:(id)arg1;
+- (id)currencySymbol;
 
 @end

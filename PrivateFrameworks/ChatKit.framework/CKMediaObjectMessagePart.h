@@ -21,10 +21,10 @@
 - (BOOL)isDisplayable;
 - (int)type;
 - (void)dealloc;
+- (void)copyToPasteboard;
 - (void)setComposeImages:(id)arg1;
 - (id)composeImages;
 - (id)detachedCopy;
-- (void)copyToPasteboard;
 - (int)_orientation;
 
 @end

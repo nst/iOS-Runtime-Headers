@@ -5,6 +5,7 @@
 @interface VGLBuildingProgram : VGLFogProgram  {
     int _uColor;
     int _uScale;
+    int _uOneMinusScale;
     int _uAlpha;
     struct _VGLColor { 
         float r; 
@@ -13,6 +14,12 @@
         float a; 
     } _color;
     float _scale;
+    struct { 
+        float x; 
+        float y; 
+        float z; 
+        float w; 
+    } _oneMinusScale;
     struct { 
         float x; 
         float y; 
@@ -28,16 +35,17 @@
 @property struct { float x1; float x2; float x3; } cameraPositionInTileSpace;
 @property int textureSampler;
 
++ (id)realisticProgram;
 + (id)program;
 
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
-- (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
-- (void)setScale:(float)arg1;
-- (float)scale;
 - (struct { float x1; float x2; float x3; })cameraPositionInTileSpace;
 - (int)textureSampler;
 - (void)setTextureSampler:(int)arg1;
 - (void)setCameraPositionInTileSpace:(struct { float x1; float x2; float x3; })arg1;
 - (id)initWithVertName:(id)arg1 fragName:(id)arg2;
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
+- (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
+- (void)setScale:(float)arg1;
+- (float)scale;
 
 @end

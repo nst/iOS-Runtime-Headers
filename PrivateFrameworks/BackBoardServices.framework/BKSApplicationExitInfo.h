@@ -13,15 +13,15 @@
 @property BOOL wasReceiver;
 
 
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setTerminationReason:(int)arg1;
 - (BOOL)wasReceiver;
 - (void)setWasReceiver:(BOOL)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setStatus:(long long)arg1;
 - (long long)status;
-- (void)setTerminationReason:(int)arg1;
 - (int)terminationReason;
 
 @end

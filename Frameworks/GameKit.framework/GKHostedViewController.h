@@ -18,8 +18,8 @@
   /* Error parsing encoded ivar type info: @? */
     id _remoteViewReadyHandler;
 
-    BOOL _gkIsDisappearing;
     BOOL _isRequestingRemoteViewController;
+    BOOL _gkIsDisappearing;
 }
 
 @property(retain) GKGame * game;
@@ -31,6 +31,21 @@
 @property BOOL gkIsDisappearing;
 
 
+- (void)dealloc;
+- (id)init;
+- (void)setRemoteViewController:(id)arg1;
+- (void)dismissModalViewControllerAnimated:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (BOOL)shouldAutomaticallyForwardRotationMethods;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
+- (void)didReceiveMemoryWarning;
 - (void)setIsRequestingRemoteViewController:(BOOL)arg1;
 - (BOOL)isRequestingRemoteViewController;
 - (void)setShouldPresentRemoteViewController:(BOOL)arg1;
@@ -52,20 +67,5 @@
 - (void)donePressed:(id)arg1;
 - (void)setGame:(id)arg1;
 - (id)game;
-- (void)dealloc;
-- (id)init;
-- (void)setRemoteViewController:(id)arg1;
-- (void)dismissModalViewControllerAnimated:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
-- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
-- (BOOL)shouldAutomaticallyForwardRotationMethods;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)didReceiveMemoryWarning;
 
 @end

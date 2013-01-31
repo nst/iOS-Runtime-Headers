@@ -17,9 +17,11 @@
 @property(copy) NSString * responseAuthorizationToken;
 
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)messageBody;
 - (id)responseAuthorizationToken;
 - (id)responseProfileID;
-- (id)bagKey;
 - (void)setResponseAuthorizationToken:(id)arg1;
 - (void)setResponseProfileID:(id)arg1;
 - (void)handleResponseDictionary:(id)arg1;
@@ -28,12 +30,10 @@
 - (BOOL)hasRequiredKeys:(id*)arg1;
 - (BOOL)payloadCanBeLogged;
 - (id)requiredKeys;
+- (id)bagKey;
+- (id)password;
 - (void)setPassword:(id)arg1;
 - (id)username;
 - (void)setUsername:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)password;
-- (id)messageBody;
 
 @end

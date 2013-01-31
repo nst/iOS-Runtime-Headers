@@ -35,17 +35,6 @@
 - (void)setAssetType:(id)arg1;
 - (id)initWithAssetType:(id)arg1;
 - (void)dealloc;
-- (id)downloadAsset:(id)arg1;
-- (id)assetType;
-- (id)asset;
-- (void)setAsset:(id)arg1;
-- (id)validateAsset;
-- (id)validateAssetAttributes:(id)arg1;
-- (id)assetWithMaxVersion:(id)arg1;
-- (id)queryPredicate;
-- (id)overrideQueryPredicateFromDict:(id)arg1;
-- (void)doneWithAsset;
-- (void)log:(int)arg1 format:(id)arg2;
 - (void)setLogger:(id)arg1;
 - (id)logger;
 - (BOOL)assetDownloaded;
@@ -62,5 +51,16 @@
 - (void)queryComplete:(id)arg1 remote:(BOOL)arg2 error:(id)arg3 completion:(id)arg4;
 - (id)overrideFile;
 - (void)setRequireAssetMetadata:(BOOL)arg1;
+- (id)validateAsset;
+- (id)validateAssetAttributes:(id)arg1;
+- (id)assetWithMaxVersion:(id)arg1;
+- (id)queryPredicate;
+- (id)overrideQueryPredicateFromDict:(id)arg1;
+- (void)doneWithAsset;
+- (void)log:(int)arg1 format:(id)arg2;
+- (id)downloadAsset:(id)arg1;
+- (id)assetType;
+- (id)asset;
+- (void)setAsset:(id)arg1;
 
 @end

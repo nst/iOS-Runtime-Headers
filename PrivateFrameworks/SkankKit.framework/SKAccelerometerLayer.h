@@ -11,11 +11,9 @@
 }
 
 
+- (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)pause;
-- (BOOL)paused;
-- (void)restart;
 - (void)setAccelerometerStyle:(int)arg1;
 - (void)setX:(float)arg1 y:(float)arg2 z:(float)arg3;
 - (void)drawXYZInContext:(struct CGContext { }*)arg1;
@@ -23,6 +21,8 @@
 - (void)drawArrowFrom:(struct CGPoint { float x1; float x2; })arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2 inContext:(struct CGContext { }*)arg3;
 - (void)setNeedsDisplayMainThread:(id)arg1;
 - (void)accelerometerEvent:(id)arg1;
-- (void)drawInContext:(struct CGContext { }*)arg1;
+- (void)restart;
+- (void)pause;
+- (BOOL)paused;
 
 @end

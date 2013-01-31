@@ -13,17 +13,17 @@
 @property(retain) NSURL * baseURL;
 
 
-- (void)setBaseURL:(id)arg1;
+- (void)write:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)baseURL;
 - (void)setWriteStyle:(int)arg1;
 - (int)writeStyle;
 - (id)payloadAsOriginalURL;
 - (void)parserSuggestsBaseURL:(id)arg1;
 - (id)payloadAsFullURL;
-- (void)write:(id)arg1;
+- (id)baseURL;
+- (void)setBaseURL:(id)arg1;
 
 @end

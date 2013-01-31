@@ -12,6 +12,13 @@
 
 
 - (void)dealloc;
+- (void)stopScan;
+- (void)cancelPeripheralConnection:(id)arg1 force:(BOOL)arg2;
+- (void)connectPeripheral:(id)arg1 options:(id)arg2;
+- (void)retrieveConnectedPeripherals;
+- (void)scanForPeripheralsWithServices:(id)arg1 options:(id)arg2;
+- (void)retrievePeripherals:(id)arg1;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)releasePeripheral:(id)arg1;
 - (void)retainPeripheral:(id)arg1;
 - (void)xpcConnection:(id)arg1 didReceiveMessage:(int)arg2 arguments:(id)arg3;
@@ -24,15 +31,8 @@
 - (void)handlePeripheralDiscovered:(id)arg1;
 - (void)handleStateUpdated:(id)arg1;
 - (id)peripheralForHandle:(id)arg1 args:(id)arg2;
-- (void)cancelPeripheralConnection:(id)arg1 force:(BOOL)arg2;
 - (void)orphanPeripherals;
 - (void)sendMsg:(int)arg1 args:(id)arg2;
 - (void)cancelPeripheralConnection:(id)arg1;
-- (void)connectPeripheral:(id)arg1 options:(id)arg2;
-- (void)stopScan;
-- (void)scanForPeripheralsWithServices:(id)arg1 options:(id)arg2;
-- (void)retrieveConnectedPeripherals;
-- (void)retrievePeripherals:(id)arg1;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 
 @end

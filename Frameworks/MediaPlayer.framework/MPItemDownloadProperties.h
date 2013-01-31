@@ -25,9 +25,12 @@
 @property(readonly) NSURL * sourceURL;
 
 
-- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setDownloadToken:(unsigned long long)arg1;
-- (unsigned long long)downloadToken;
 - (BOOL)downloadExists;
 - (id)newAVAssetOptionsWithDownloadStyle:(int)arg1;
 - (void)acquireDownloadTokenWithCompletionHandler:(id)arg1;
@@ -37,12 +40,9 @@
 - (void)_reloadNetworkConstraints;
 - (long long)downloadSizeLimit;
 - (long long)assetFileSize;
+- (unsigned long long)downloadToken;
 - (id)initWithMediaItem:(id)arg1;
-- (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (id)sourceURL;
 - (id)destinationURL;
 

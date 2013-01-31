@@ -39,6 +39,7 @@
 @property(retain) NSString * fileExtension;
 @property(readonly) NSArray * MD5HashStrings;
 @property(readonly) NSNumber * numberOfBytesToHash;
+@property(copy) NSString * pageProgressionDirection;
 @property unsigned long long preOrderIdentifier;
 @property(retain) NSURL * primaryAssetURL;
 @property(copy) NSString * preferredAssetFlavor;
@@ -55,42 +56,25 @@
 @property(retain) NSArray * sinfs;
 
 
-- (void)setKind:(id)arg1;
-- (void)setPurchaseDate:(id)arg1;
-- (id)purchaseDate;
-- (void)setArtistName:(id)arg1;
-- (void)setBundleIdentifier:(id)arg1;
-- (id)artistName;
-- (void)setSinfs:(id)arg1;
-- (id)initWithItem:(id)arg1;
 - (id)durationInMilliseconds;
 - (BOOL)isContentRestricted;
 - (id)thumbnailImageURL;
 - (void)setReleaseDate:(id)arg1;
 - (void)setCollectionName:(id)arg1;
 - (id)collectionName;
-- (id)releaseDate;
-- (BOOL)isExplicitContent;
 - (void)setThumbnailImageURL:(id)arg1;
 - (id)initWithItem:(id)arg1 offer:(id)arg2;
 - (void)setCopyright:(id)arg1;
 - (void)setDocumentTargetIdentifier:(id)arg1;
 - (void)setItemIdentifier:(unsigned long long)arg1;
 - (id)copyright;
-- (unsigned long long)itemIdentifier;
 - (id)valueForMetadataKey:(id)arg1;
 - (void)setValue:(id)arg1 forMetadataKey:(id)arg2;
-- (id)sinfs;
-- (BOOL)isRental;
-- (id)genre;
 - (id)bundleIdentifier;
 - (id)dictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setContentRating:(id)arg1;
-- (id)contentRating;
-- (id)seasonNumber;
 - (id)transitMapDataURL;
 - (BOOL)shouldDownloadAutomatically;
 - (void)setTransitMapDataURL:(id)arg1;
@@ -129,6 +113,7 @@
 - (void)setComposerIdentifier:(unsigned long long)arg1;
 - (void)setViewStoreItemURL:(id)arg1;
 - (void)setRedownloadActionParameters:(id)arg1;
+- (void)setPageProgressionDirection:(id)arg1;
 - (void)setLongSeasonDescription:(id)arg1;
 - (void)setCloudIdentifier:(id)arg1;
 - (void)setCancelDownloadURL:(id)arg1;
@@ -147,6 +132,7 @@
 - (id)transactionIdentifier;
 - (id)releaseYear;
 - (id)podcastType;
+- (id)pageProgressionDirection;
 - (id)longSeasonDescription;
 - (id)downloadKey;
 - (id)documentTargetIdentifier;
@@ -216,6 +202,12 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (void)setValuesFromDownload:(id)arg1;
 - (id)newDownloadProperties;
+- (id)fileExtension;
+- (id)initWithKind:(id)arg1;
+- (void)setContentRating:(id)arg1;
+- (id)contentRating;
+- (id)seasonNumber;
+- (void)setShortDescription:(id)arg1;
 - (id)kind;
 - (id)shortDescription;
 - (id)subtitle;
@@ -226,9 +218,20 @@
 - (void)setTitle:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)setSinfs:(id)arg1;
+- (BOOL)isExplicitContent;
+- (unsigned long long)itemIdentifier;
+- (id)sinfs;
+- (id)releaseDate;
+- (BOOL)isRental;
+- (id)initWithItem:(id)arg1;
+- (id)genre;
+- (void)setKind:(id)arg1;
+- (void)setPurchaseDate:(id)arg1;
+- (id)purchaseDate;
+- (void)setArtistName:(id)arg1;
+- (void)setBundleIdentifier:(id)arg1;
+- (id)artistName;
 - (void)setDictionary:(id)arg1;
-- (id)fileExtension;
-- (void)setShortDescription:(id)arg1;
-- (id)initWithKind:(id)arg1;
 
 @end

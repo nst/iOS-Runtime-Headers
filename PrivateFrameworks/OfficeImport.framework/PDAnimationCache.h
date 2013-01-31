@@ -56,17 +56,6 @@
 + (void)mapCommonData:(id)arg1 cacheData:(id)arg2 state:(id)arg3;
 
 - (void)dealloc;
-- (double)direction;
-- (double)value;
-- (void)setDelay:(double)arg1;
-- (double)delay;
-- (void)setValue:(double)arg1;
-- (int)nodeType;
-- (void)setDirection:(double)arg1;
-- (int)level;
-- (void)setLevel:(int)arg1;
-- (double)duration;
-- (void)setDuration:(double)arg1;
 - (void)setIsHead:(BOOL)arg1;
 - (void)setHasValue:(BOOL)arg1;
 - (void)setHasPartCount:(BOOL)arg1;
@@ -99,5 +88,16 @@
 - (void)setHasDuration:(BOOL)arg1;
 - (BOOL)hasDuration;
 - (BOOL)hasDirection;
+- (double)direction;
+- (double)value;
+- (void)setDelay:(double)arg1;
+- (double)delay;
+- (void)setValue:(double)arg1;
+- (int)nodeType;
+- (void)setDirection:(double)arg1;
+- (int)level;
+- (void)setLevel:(int)arg1;
+- (double)duration;
+- (void)setDuration:(double)arg1;
 
 @end

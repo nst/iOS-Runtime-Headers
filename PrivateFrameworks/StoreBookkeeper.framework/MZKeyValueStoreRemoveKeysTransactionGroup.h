@@ -11,6 +11,7 @@
 }
 
 
+- (void)dealloc;
 - (id)initWithKeys:(id)arg1;
 - (id)_transactionItemForKey:(id)arg1;
 - (BOOL)scheduleNextTransactionInController:(id)arg1;
@@ -19,6 +20,5 @@
 - (void)transaction:(id)arg1 didProcessResponseWithDomainVersion:(id)arg2;
 - (void)transaction:(id)arg1 mergeData:(id)arg2 forKey:(id)arg3 domainVersion:(id)arg4 version:(id)arg5 mismatch:(BOOL)arg6 finishedBlock:(id)arg7;
 - (void)transaction:(id)arg1 willProcessResponseWithDomainVersion:(id)arg2;
-- (void)dealloc;
 
 @end

@@ -11,9 +11,9 @@
 @property(retain) VKMapView * mapView;
 
 
-- (void)runServer;
 - (id)messageReceived:(id)arg1 userInfo:(id)arg2;
 - (void)setMapView:(id)arg1;
 - (id)mapView;
+- (void)runServer;
 
 @end

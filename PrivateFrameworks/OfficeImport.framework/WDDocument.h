@@ -60,13 +60,9 @@
 }
 
 
+- (id)styleSheet;
 - (void)dealloc;
 - (id)init;
-- (id)addSection;
-- (id)sections;
-- (void)setVersion:(id)arg1;
-- (id)version;
-- (id)styleSheet;
 - (BOOL)isFromBinary;
 - (id)annotationBlockIterator;
 - (id)endnoteBlockIterator;
@@ -189,5 +185,9 @@
 - (id)theme;
 - (int)sectionCount;
 - (unsigned short)defaultTabWidth;
+- (id)addSection;
+- (id)sections;
+- (void)setVersion:(id)arg1;
+- (id)version;
 
 @end

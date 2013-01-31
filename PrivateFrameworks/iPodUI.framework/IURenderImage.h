@@ -7,8 +7,8 @@
 }
 
 
-- (void)dealloc;
 - (void*)CA_copyRenderValue;
 - (id)initWithRenderImage:(struct _CARenderImage { }*)arg1;
+- (void)dealloc;
 
 @end

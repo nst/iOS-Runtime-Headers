@@ -12,6 +12,8 @@
 
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
 
+- (id)description;
+- (void)dealloc;
 - (id)titleTextForAuxData:(id)arg1;
 - (id)goalTextForAuxData:(id)arg1;
 - (void)loadAuxDataWithHandler:(id)arg1;
@@ -22,7 +24,5 @@
 - (void)setInternal:(id)arg1;
 - (id)cellGoalTextForDescription:(id)arg1;
 - (id)identifierKey;
-- (id)description;
-- (void)dealloc;
 
 @end

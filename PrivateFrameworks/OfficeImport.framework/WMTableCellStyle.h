@@ -12,9 +12,9 @@
 + (id)resolveStyleColorWithPercentage:(float)arg1 shading:(id)arg2;
 + (id)dominantColorOf:(id)arg1;
 
-- (double)rightPadding;
 - (id)initWithTableCellProperties:(id)arg1;
 - (double)leftPadding;
 - (void)addTableCellProperties:(id)arg1;
+- (double)rightPadding;
 
 @end

@@ -17,7 +17,6 @@
 @property BOOL shouldCancelAfterTaskExpiration;
 
 
-- (void)_endBackgroundTask;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)cancel;
@@ -33,5 +32,6 @@
 - (void)_shutdownRequest;
 - (void)disconnect;
 - (BOOL)start;
+- (void)_endBackgroundTask;
 
 @end

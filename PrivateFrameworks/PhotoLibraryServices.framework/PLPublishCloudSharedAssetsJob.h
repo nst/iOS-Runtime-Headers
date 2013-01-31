@@ -5,10 +5,10 @@
 @class NSString, NSArray;
 
 @interface PLPublishCloudSharedAssetsJob : PLCloudSharingJob  {
-    NSString *_publishAlbumCloudGUID;
     NSString *_batchCommentText;
-    BOOL _isNewAlbum;
     NSArray *_originalAssetUUIDs;
+    NSString *_publishAlbumCloudGUID;
+    BOOL _isNewAlbum;
 }
 
 @property(retain) NSString * publishAlbumCloudGUID;
@@ -20,7 +20,6 @@
 
 - (id)description;
 - (void)dealloc;
-- (void)run;
 - (void)executeDaemonOperation;
 - (id)batchCommentText;
 - (BOOL)isNewAlbum;
@@ -35,5 +34,6 @@
 - (int)daemonOperation;
 - (void)runDaemonSide;
 - (id)initFromXPCObject:(id)arg1;
+- (void)run;
 
 @end

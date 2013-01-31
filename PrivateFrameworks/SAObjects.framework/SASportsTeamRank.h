@@ -14,13 +14,13 @@
 + (id)teamRankWithDictionary:(id)arg1 context:(id)arg2;
 + (id)teamRank;
 
-- (id)groupIdentifier;
-- (void)setPrimary:(id)arg1;
+- (id)encodedClassName;
 - (void)setSource:(id)arg1;
 - (id)source;
 - (id)position;
 - (void)setPosition:(id)arg1;
 - (id)primary;
-- (id)encodedClassName;
+- (id)groupIdentifier;
+- (void)setPrimary:(id)arg1;
 
 @end

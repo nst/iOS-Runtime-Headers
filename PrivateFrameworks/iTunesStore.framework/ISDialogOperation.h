@@ -23,11 +23,6 @@
 + (id)operationWithDialog:(id)arg1;
 
 - (id)dialog;
-- (void)cancel;
-- (void)dealloc;
-- (id)init;
-- (void)run;
-- (void)_run;
 - (id)selectedButton;
 - (void)setPerformDefaultActions:(BOOL)arg1;
 - (id)textFieldValues;
@@ -40,5 +35,10 @@
 - (void)setSelectedButton:(id)arg1;
 - (void)handleButtonSelected:(int)arg1 withResponseDictionary:(id)arg2;
 - (void)setDialog:(id)arg1;
+- (void)cancel;
+- (void)dealloc;
+- (id)init;
+- (void)run;
+- (void)_run;
 
 @end

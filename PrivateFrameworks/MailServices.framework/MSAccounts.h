@@ -5,12 +5,12 @@
 @interface MSAccounts : MSMailDefaultService  {
 }
 
-+ (BOOL)canSendMail;
 + (void)accountValuesForKeys:(id)arg1 launchMobileMail:(BOOL)arg2 completionBlock:(id)arg3;
++ (BOOL)hasActiveAccounts;
++ (BOOL)deleteAccountsWithUniqueIdentifiers:(id)arg1 error:(id*)arg2;
++ (BOOL)canSendMail;
 + (void)accountValuesForKeys:(id)arg1 completionBlock:(id)arg2;
 + (id)customSignatureForSendingEmailAddress:(id)arg1;
-+ (BOOL)deleteAccountsWithUniqueIdentifiers:(id)arg1 error:(id*)arg2;
-+ (BOOL)hasActiveAccounts;
 
 - (void)_simulateServicesMethod:(id)arg1 arguments:(id)arg2 callback:(id)arg3;
 - (void)_listAccountKeys:(id)arg1 handler:(id)arg2;

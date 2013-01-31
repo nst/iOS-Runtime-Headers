@@ -21,7 +21,6 @@
 - (void)dealloc;
 - (id)init;
 - (id)networkName;
-- (struct __CFArray { }*)currentCalls;
 - (void)sendUSSDResponse:(id)arg1;
 - (id)readATResponse;
 - (void)closeBasebandStream;
@@ -64,7 +63,8 @@
 - (int)countCurrentCalls;
 - (void)setDataStatus:(BOOL)arg1;
 - (void)registerTelephonyNotification:(struct __CFString { }*)arg1 withCallback:(int (*)())arg2;
-- (int)signalStrength;
 - (BOOL)dataStatus;
+- (int)signalStrength;
+- (struct __CFArray { }*)currentCalls;
 
 @end

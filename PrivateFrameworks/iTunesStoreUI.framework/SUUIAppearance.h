@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUControlAppearance, NSDictionary, SUTabBarAppearance, NSMutableDictionary;
+@class SUToolbarAppearance, SUControlAppearance, NSDictionary, SUTabBarAppearance, NSMutableDictionary;
 
 @interface SUUIAppearance : NSObject <NSCopying> {
     SUControlAppearance *_backButtonAppearance;
@@ -15,6 +15,7 @@
     NSMutableDictionary *_navigationButtonAppearance;
     NSMutableDictionary *_segmentedControlAppearance;
     SUTabBarAppearance *_tabBarAppearance;
+    SUToolbarAppearance *_toolbarAppearance;
 }
 
 @property(copy) SUControlAppearance * backButtonAppearance;
@@ -23,6 +24,7 @@
 @property(copy) SUControlAppearance * forwardButtonAppearance;
 @property(copy) NSDictionary * navigationBarTitleTextAttributes;
 @property(copy) SUTabBarAppearance * tabBarAppearance;
+@property(copy) SUToolbarAppearance * toolbarAppearance;
 
 + (id)_defaultDoneButtonAppearance;
 + (id)_defaultButtonAppearance;
@@ -32,6 +34,7 @@
 + (id)_defaultTabBarAppearance;
 + (id)defaultAppearance;
 
+- (void)setToolbarAppearance:(id)arg1;
 - (void)setForwardButtonAppearance:(id)arg1;
 - (void)setExitStoreButtonAppearance:(id)arg1;
 - (void)setConfirmationButtonAppearance:(id)arg1;
@@ -40,6 +43,7 @@
 - (id)forwardButtonAppearance;
 - (id)exitStoreButtonAppearance;
 - (id)confirmationButtonAppearance;
+- (id)toolbarAppearance;
 - (id)segmentedControlAppearanceForStyle:(int)arg1 tintStyle:(int)arg2;
 - (id)navigationBarTitleTextAttributes;
 - (id)backButtonAppearance;
@@ -54,6 +58,7 @@
 - (void)styleForwardButtonItem:(id)arg1;
 - (void)styleConfirmationButtonItem:(id)arg1;
 - (void)_styleBackBarButtonItem:(id)arg1;
+- (void)styleToolbar:(id)arg1;
 - (void)styleExitStoreButtonItem:(id)arg1;
 - (void)styleBarButtonItem:(id)arg1;
 - (void)styleTabBarItem:(id)arg1;

@@ -9,14 +9,14 @@
     double _lastDownloadProgress;
 }
 
++ (void)initialize;
 + (void)connection:(id)arg1 updatedProgress:(id)arg2;
 + (void)unregisterObserver:(id)arg1 forAssetID:(id)arg2;
 + (void)registerObserver:(id)arg1 forAssetID:(id)arg2;
-+ (void)initialize;
 
-- (void)_onQueue_invalidate;
-- (id)initWithAssetIdentifier:(id)arg1;
 - (void)dealloc;
 - (double)downloadProgress;
+- (void)_onQueue_invalidate;
+- (id)initWithAssetIdentifier:(id)arg1;
 
 @end

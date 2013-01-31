@@ -12,7 +12,6 @@
 @property(copy) SKPaymentQueueClient * paymentQueueClient;
 
 
-- (void)_endBackgroundTask;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)cancel;
@@ -25,5 +24,6 @@
 - (void)_sendXPCMessage;
 - (void)_startWithMessage:(id)arg1 replyBlock:(id)arg2;
 - (id)paymentQueueClient;
+- (void)_endBackgroundTask;
 
 @end

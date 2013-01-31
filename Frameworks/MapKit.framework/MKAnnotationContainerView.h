@@ -16,9 +16,26 @@
 @property(retain) MKAnnotationView * bubbleAnnotationView;
 
 
+- (void)_calloutAccessoryControlTapped:(id)arg1;
+- (id)calloutView;
+- (void)setMapType:(unsigned int)arg1;
+- (void)setCalloutViewClass:(Class)arg1;
+- (Class)calloutViewClass;
+- (unsigned int)mapType;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
+- (id)viewForAnnotation:(id)arg1;
+- (id)dequeueReusableAnnotationViewWithIdentifier:(id)arg1;
+- (void)deselectAnnotation:(id)arg1 animated:(BOOL)arg2;
+- (id)selectedAnnotations;
+- (void)removeAnnotations:(id)arg1;
+- (void)addAnnotations:(id)arg1;
+- (void)removeAnnotation:(id)arg1;
+- (id)annotations;
+- (void)addAnnotation:(id)arg1;
+- (id)userLocation;
 - (BOOL)hasPendingAnimations;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)calloutView:(id)arg1 didMoveToAnchorPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3;
@@ -127,22 +144,5 @@
 - (id)_annotationViewForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1 avoidCurrent:(BOOL)arg2;
 - (id)annotationViewForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)_calloutAccessoryControlTapped:(id)arg1;
-- (id)calloutView;
-- (void)setMapType:(unsigned int)arg1;
-- (void)setCalloutViewClass:(Class)arg1;
-- (Class)calloutViewClass;
-- (unsigned int)mapType;
-- (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
-- (id)viewForAnnotation:(id)arg1;
-- (id)dequeueReusableAnnotationViewWithIdentifier:(id)arg1;
-- (void)deselectAnnotation:(id)arg1 animated:(BOOL)arg2;
-- (id)selectedAnnotations;
-- (void)removeAnnotations:(id)arg1;
-- (void)addAnnotations:(id)arg1;
-- (void)removeAnnotation:(id)arg1;
-- (id)annotations;
-- (id)userLocation;
-- (void)addAnnotation:(id)arg1;
 
 @end

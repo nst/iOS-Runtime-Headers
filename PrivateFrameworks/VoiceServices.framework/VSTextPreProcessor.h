@@ -11,8 +11,8 @@
 }
 
 
-- (void)dealloc;
 - (id)processedTextFromString:(id)arg1;
 - (id)initWithContentsOfPath:(id)arg1 languageIdentifier:(id)arg2;
+- (void)dealloc;
 
 @end

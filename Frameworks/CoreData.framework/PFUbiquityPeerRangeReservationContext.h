@@ -29,7 +29,7 @@
 - (unsigned int)numRangesToReserve;
 - (id)createLocalIDStringForStoreUUID:(id)arg1 entityName:(id)arg2 andPrimaryKeyString:(id)arg3;
 - (void)prepareForRangeReservationWithRangeStart:(id)arg1 andGlobalID:(id)arg2 andEntityName:(id)arg3;
-- (id)initWithPersistentStore:(id)arg1 andStoreSaveSnapshot:(id)arg2;
+- (id)initWithPersistentStore:(id)arg1 andGlobalObjectIDs:(id)arg2;
 - (id)globalObjectIDs;
 - (id)psc;
 - (id)moc;

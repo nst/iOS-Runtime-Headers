@@ -13,7 +13,6 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (BOOL)tryLock;
 - (int)condition;
 - (void)finalize;
 - (void)unlock;
@@ -24,5 +23,6 @@
 - (BOOL)lockWhenCondition:(int)arg1 beforeDate:(id)arg2;
 - (id)initWithCondition:(int)arg1;
 - (BOOL)lockBeforeDate:(id)arg1;
+- (BOOL)tryLock;
 
 @end

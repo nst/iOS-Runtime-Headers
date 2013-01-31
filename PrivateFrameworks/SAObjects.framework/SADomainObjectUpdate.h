@@ -15,9 +15,7 @@
 + (id)domainObjectUpdateWithDictionary:(id)arg1 context:(id)arg2;
 + (id)domainObjectUpdate;
 
-- (id)groupIdentifier;
 - (id)identifier;
-- (void)setIdentifier:(id)arg1;
 - (void)setSetFields:(id)arg1;
 - (id)setFields;
 - (void)setRemoveFields:(id)arg1;
@@ -26,5 +24,7 @@
 - (id)addFields;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (void)setIdentifier:(id)arg1;
+- (id)groupIdentifier;
 
 @end

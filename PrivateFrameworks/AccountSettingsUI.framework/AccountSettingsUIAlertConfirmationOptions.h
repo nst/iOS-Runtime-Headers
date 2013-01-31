@@ -20,13 +20,13 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)tag;
-- (void)setTag:(id)arg1;
+- (void)setDataclass:(id)arg1;
 - (id)userAction;
 - (BOOL)userChoiceWillDeleteData;
 - (BOOL)userCancelled;
 - (void)setupButtonIndexesForActions:(id)arg1;
 - (void)setIsEnableAction:(BOOL)arg1;
-- (void)setDataclass:(id)arg1;
+- (id)tag;
+- (void)setTag:(id)arg1;
 
 @end

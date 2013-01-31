@@ -5,10 +5,10 @@
 @class NSString, GKUITheme, GKComposeRemoteViewController, NSMutableArray, NSNumber;
 
 @interface GKComposeHostedViewController : GKHostedViewController  {
-    NSMutableArray *_emailsToAddAsRecipients;
     GKUITheme *_theme;
-    NSMutableArray *_playerIDsToAddAsRecipients;
+    NSMutableArray *_emailsToAddAsRecipients;
     NSNumber *_rid;
+    NSMutableArray *_playerIDsToAddAsRecipients;
 }
 
 @property(retain) GKUITheme * theme;
@@ -19,6 +19,9 @@
 @property(readonly) GKComposeRemoteViewController * _remote;
 
 
+- (void)dealloc;
+- (void)setTheme:(id)arg1;
+- (id)theme;
 - (id)playerIDsToAddAsRecipients;
 - (id)emailsToAddAsRecipients;
 - (id)_presentingViewController;
@@ -34,8 +37,5 @@
 - (void)setRid:(id)arg1;
 - (id)rid;
 - (void)setDefaultMessage:(id)arg1;
-- (void)dealloc;
-- (void)setTheme:(id)arg1;
-- (id)theme;
 
 @end

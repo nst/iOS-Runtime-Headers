@@ -30,6 +30,14 @@
 }
 
 
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (id)captureDate;
+- (void)setCaptureDate:(id)arg1;
+- (void)setModificationDate:(id)arg1;
+- (id)keywords;
+- (void)setKeywords:(id)arg1;
 - (void)setAssociationDesc:(unsigned long)arg1;
 - (unsigned long)associationDesc;
 - (void)setAssociationType:(unsigned short)arg1;
@@ -67,20 +75,12 @@
 - (unsigned short)protectionStatus;
 - (unsigned long)storageID;
 - (unsigned long)parentObject;
-- (void)setSequenceNumber:(unsigned long)arg1;
-- (unsigned long)sequenceNumber;
-- (id)description;
-- (void)dealloc;
-- (id)init;
-- (void)setFilename:(id)arg1;
 - (id)content;
 - (id)initWithData:(id)arg1;
-- (id)captureDate;
-- (void)setCaptureDate:(id)arg1;
-- (void)setModificationDate:(id)arg1;
+- (void)setSequenceNumber:(unsigned long)arg1;
+- (unsigned long)sequenceNumber;
 - (id)modificationDate;
+- (void)setFilename:(id)arg1;
 - (id)filename;
-- (id)keywords;
-- (void)setKeywords:(id)arg1;
 
 @end

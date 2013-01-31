@@ -17,11 +17,11 @@
 
 + (void)initialize;
 
+- (int)timeStamp;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (int)timeStamp;
 - (void)logWithCat:(id)arg1;
 - (id)getParameter:(unsigned int)arg1;
 - (int)getParameterCount;

@@ -109,14 +109,6 @@
 + (unsigned long)numberOfRoadClasses;
 + (const char *)nameForRoadClass:(int)arg1;
 
-- (void)setStylesheet:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (id)stylesheet;
-- (int)tileSize;
-- (void)didReceiveMemoryWarning;
-- (float)scale;
 - (void)setShouldSplitRouteLine:(BOOL)arg1;
 - (BOOL)shouldSplitRouteLine;
 - (BOOL)limitingNavCameraHeight;
@@ -255,6 +247,7 @@
 - (void)setDynamicMapModesEnabled:(BOOL)arg1;
 - (BOOL)dynamicMapModesEnabled;
 - (void)setDesiredMapMode:(int)arg1 immediate:(BOOL)arg2;
+- (BOOL)writeVisibleTrafficTilesToDirectory:(id)arg1 error:(id*)arg2;
 - (id)detailedDescription;
 - (void)clearScene;
 - (void)setLabelScaleFactor:(int)arg1;
@@ -267,6 +260,14 @@
 - (id)visibleTileSets;
 - (int)mapType;
 - (void)setLabelMarkerSelectionEnabled:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (id)stylesheet;
+- (int)tileSize;
+- (void)didReceiveMemoryWarning;
+- (float)scale;
+- (void)setStylesheet:(id)arg1;
 - (id)initWithTransform:(const struct { double x1[4][4]; }*)arg1;
 
 @end

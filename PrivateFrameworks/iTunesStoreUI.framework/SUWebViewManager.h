@@ -74,10 +74,10 @@
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)_delegate;
 - (id)webView:(id)arg1 runJavaScriptTextInputPanelWithPrompt:(id)arg2 defaultText:(id)arg3 initiatedByFrame:(id)arg4;
 - (BOOL)webView:(id)arg1 runJavaScriptConfirmPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
 - (void)webView:(id)arg1 runJavaScriptAlertPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
+- (void)webView:(id)arg1 didFirstLayoutInFrame:(id)arg2;
 - (void)webView:(id)arg1 didClearWindowObject:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didReceiveTitle:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;
@@ -93,5 +93,6 @@
 - (id)webView;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (id)_delegate;
 
 @end

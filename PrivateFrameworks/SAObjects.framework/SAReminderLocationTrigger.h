@@ -14,13 +14,13 @@
 + (id)locationTriggerWithDictionary:(id)arg1 context:(id)arg2;
 + (id)locationTrigger;
 
-- (id)groupIdentifier;
-- (id)location;
 - (void)setLocation:(id)arg1;
 - (void)setTiming:(id)arg1;
 - (id)timing;
 - (void)setContactIdentifier:(id)arg1;
 - (id)contactIdentifier;
 - (id)encodedClassName;
+- (id)location;
+- (id)groupIdentifier;
 
 @end

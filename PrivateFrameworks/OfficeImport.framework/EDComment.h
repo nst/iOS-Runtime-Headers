@@ -9,11 +9,11 @@
 }
 
 
-- (bool)isVisible;
-- (void)setVisible:(bool)arg1;
 - (int)rowIndex;
 - (int)columnIndex;
 - (void)setColumnIndex:(int)arg1;
 - (void)setRowIndex:(int)arg1;
+- (bool)isVisible;
+- (void)setVisible:(bool)arg1;
 
 @end

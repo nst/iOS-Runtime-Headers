@@ -11,16 +11,16 @@
 @property(setter=setURI:,copy) NSString * URI;
 
 
-- (id)bagKey;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)setURI:(id)arg1;
+- (id)URI;
+- (id)messageBody;
 - (id)additionalMessageHeaders;
 - (BOOL)wantsBodySignature;
 - (BOOL)wantsSignature;
 - (id)requiredKeys;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)messageBody;
-- (void)setURI:(id)arg1;
-- (id)URI;
+- (id)bagKey;
 
 @end

@@ -22,8 +22,9 @@
     BOOL _presentedInView;
     NSString *_authenticationUserName;
     NSString *_identifier;
-    BOOL _dimmed;
+    BOOL _policyEngineManaged;
     NSString *_section;
+    BOOL _dimmed;
 }
 
 @property ADInterstitialAd<ADInterstitialViewDelegate> * interstitialAd;
@@ -44,38 +45,13 @@
 @property BOOL interstitialWasDismissedByUser;
 @property BOOL hasLoaded;
 @property BOOL dimmed;
+@property BOOL policyEngineManaged;
 
 + (void)setSkipLoadedExceptionCheck:(BOOL)arg1;
 
-- (id)gestureRecognizer;
-- (void)setGestureRecognizer:(id)arg1;
 - (id)identifier;
 - (void)dealloc;
-- (void)setSection:(id)arg1;
-- (id)remoteView;
-- (void)setRemoteView:(id)arg1;
-- (BOOL)isLoaded;
-- (void)setIdentifier:(id)arg1;
-- (id)modalViewController;
-- (id)section;
-- (void)insertSubview:(id)arg1 above:(id)arg2;
-- (void)insertSubview:(id)arg1 below:(id)arg2;
-- (void)insertSubview:(id)arg1 aboveSubview:(id)arg2;
-- (void)insertSubview:(id)arg1 belowSubview:(id)arg2;
-- (void)exchangeSubviewAtIndex:(int)arg1 withSubviewAtIndex:(int)arg2;
-- (void)insertSubview:(id)arg1 atIndex:(int)arg2;
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)addSubview:(id)arg1;
-- (void)removeFromSuperview;
-- (void)didMoveToWindow;
-- (void)setAlpha:(float)arg1;
-- (void)setHidden:(BOOL)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)hasLoaded;
-- (BOOL)dimmed;
+- (void)setDimmed:(BOOL)arg1;
 - (void)setHasLoaded:(BOOL)arg1;
 - (void)setInterstitialWasDismissedByUser:(BOOL)arg1;
 - (BOOL)interstitialWasDismissedByUser;
@@ -106,7 +82,9 @@
 - (id)dimmerView;
 - (void)setAuthenticationUserName:(id)arg1;
 - (void)setAdvertisingSection:(id)arg1;
+- (void)setPolicyEngineManaged:(BOOL)arg1;
 - (void)serverInterstitialViewExpiredAndWasUnloaded;
+- (void)storyboardViewControllerDidPresent;
 - (void)serverStoryboardDidTransitionOut;
 - (void)serverBannerViewDidFailToReceiveAdWithError:(id)arg1;
 - (void)serverBannerViewDidLoad;
@@ -115,8 +93,35 @@
 - (void)bannerControllerGranted;
 - (int)internalAdType;
 - (id)authenticationUserName;
-- (id)advertisingSection;
 - (void)_sanitizeAndForwardErrorToDelegate:(id)arg1;
-- (void)setDimmed:(BOOL)arg1;
+- (id)advertisingSection;
+- (BOOL)policyEngineManaged;
+- (void)setSection:(id)arg1;
+- (id)remoteView;
+- (void)setRemoteView:(id)arg1;
+- (BOOL)isLoaded;
+- (void)setIdentifier:(id)arg1;
+- (id)modalViewController;
+- (id)section;
+- (void)insertSubview:(id)arg1 above:(id)arg2;
+- (void)insertSubview:(id)arg1 below:(id)arg2;
+- (void)insertSubview:(id)arg1 aboveSubview:(id)arg2;
+- (void)insertSubview:(id)arg1 belowSubview:(id)arg2;
+- (void)exchangeSubviewAtIndex:(int)arg1 withSubviewAtIndex:(int)arg2;
+- (void)insertSubview:(id)arg1 atIndex:(int)arg2;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)addSubview:(id)arg1;
+- (void)removeFromSuperview;
+- (void)didMoveToWindow;
+- (void)setAlpha:(float)arg1;
+- (void)setHidden:(BOOL)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)gestureRecognizer;
+- (void)setGestureRecognizer:(id)arg1;
+- (BOOL)hasLoaded;
+- (BOOL)dimmed;
 
 @end

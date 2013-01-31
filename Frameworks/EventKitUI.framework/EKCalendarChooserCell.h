@@ -23,13 +23,13 @@
 @property BOOL shouldAnimate;
 
 
+- (BOOL)checked;
 - (void)dealloc;
 - (void)prepareForReuse;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setChecked:(BOOL)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (BOOL)checked;
 - (BOOL)shouldAnimate;
 - (void)_layoutTextLabel:(id)arg1 usingOriginalLabel:(id)arg2;
 - (void)_copyLabelParametersFrom:(id)arg1 to:(id)arg2;

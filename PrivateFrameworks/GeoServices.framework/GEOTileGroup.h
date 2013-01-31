@@ -67,15 +67,14 @@
 @property(readonly) unsigned int* attributionIndexs;
 
 
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (unsigned int)identifier;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void)setIdentifier:(unsigned int)arg1;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAttributionIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (unsigned int*)attributionIndexs;
 - (void)setHasAttributionBadgeIndex:(BOOL)arg1;
@@ -128,6 +127,7 @@
 - (void)clearTileSets;
 - (unsigned int)tileSetsCount;
 - (void)addTileSet:(struct { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)readFrom:(id)arg1;
+- (void)setIdentifier:(unsigned int)arg1;
+- (id)dictionaryRepresentation;
 
 @end

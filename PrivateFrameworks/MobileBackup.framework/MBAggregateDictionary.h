@@ -10,10 +10,10 @@
 
 @property(readonly) NSDictionary * scalars;
 
-+ (void)setValue:(long long)arg1 forScalarKey:(id)arg2;
 + (void)pushValue:(double)arg1 forDistributionKey:(id)arg2;
 + (void)incrementScalarKey:(id)arg1;
 + (void)addValue:(long long)arg1 forScalarKey:(id)arg2;
++ (void)setValue:(long long)arg1 forScalarKey:(id)arg2;
 
 - (void)save;
 - (void)dealloc;

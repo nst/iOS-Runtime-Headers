@@ -18,6 +18,7 @@
 
 + (BOOL)makeCompoundGraphicsInZonesOf:(id)arg1;
 
+- (void)dealloc;
 - (BOOL)groupOverlappingGraphics;
 - (BOOL)findClusterLevel;
 - (BOOL)makeCompoundGraphicsFromShapeGroups;
@@ -27,7 +28,6 @@
 - (BOOL)makeCompoundGraphics;
 - (id)initWithGraphicsIn:(id)arg1 ofClass:(Class)arg2;
 - (void)dispose;
-- (void)dealloc;
 - (void)finalize;
 
 @end

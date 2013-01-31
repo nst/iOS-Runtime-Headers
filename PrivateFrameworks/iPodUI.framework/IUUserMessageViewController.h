@@ -11,6 +11,10 @@
 }
 
 
+- (void)scheduleAttemptReturnToSourceController;
+- (void)attemptReturnToSourceController;
+- (void)_contentsDidChangeNotification:(id)arg1;
+- (id)copyArchivableContexts;
 - (void)dealloc;
 - (id)init;
 - (void)viewDidDisappear:(BOOL)arg1;
@@ -18,10 +22,6 @@
 - (void)loadView;
 - (void)setContext:(id)arg1;
 - (void)reloadData;
-- (void)scheduleAttemptReturnToSourceController;
-- (void)attemptReturnToSourceController;
-- (void)_contentsDidChangeNotification:(id)arg1;
-- (id)copyArchivableContexts;
 - (void)_wifiEnabledDidChangeNotification:(id)arg1;
 
 @end

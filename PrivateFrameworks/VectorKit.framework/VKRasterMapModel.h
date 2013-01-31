@@ -16,9 +16,6 @@
 
 + (BOOL)reloadOnStylesheetChange;
 
-- (void)reset;
-- (void)dealloc;
-- (id)init;
 - (BOOL)rasterViewer;
 - (void)setRasterViewer:(BOOL)arg1;
 - (void)drawScene:(id)arg1 withContext:(id)arg2;
@@ -26,5 +23,8 @@
 - (BOOL)isShowingNoDataPlaceholders;
 - (void)setMapLayerPosition:(unsigned int)arg1;
 - (unsigned int)mapLayerPosition;
+- (void)reset;
+- (void)dealloc;
+- (id)init;
 
 @end

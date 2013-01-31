@@ -21,6 +21,7 @@
 
 - (void)setVertical:(BOOL)arg1;
 - (void)dealloc;
+- (id)defaultColor;
 - (BOOL)isVertical;
 - (id)shadowColor;
 - (void)setShadowColor:(id)arg1;
@@ -31,6 +32,5 @@
 - (void)setDisappearsOnHighlight:(BOOL)arg1;
 - (BOOL)disappearsOnHighlight;
 - (void)setDefaultColor:(id)arg1;
-- (id)defaultColor;
 
 @end

@@ -14,6 +14,7 @@
 + (void)_setManifestPath:(id)arg1;
 + (id)sharedManifest;
 
+- (id)manifest;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
@@ -23,7 +24,6 @@
 - (void)_setManifest:(id)arg1;
 - (id)identifiersOfProfilesWithFilterFlags:(int)arg1;
 - (void)invalidateCache;
-- (id)manifest;
 - (id)_manifest;
 
 @end

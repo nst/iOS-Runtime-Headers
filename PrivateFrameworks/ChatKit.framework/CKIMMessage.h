@@ -26,17 +26,16 @@
 @property(retain) IMMessage * IMMessage;
 
 
-- (int)sequenceNumber;
-- (id)address;
-- (float)percentComplete;
+- (BOOL)isTypingIndicator;
 - (id)guid;
 - (int)compare:(id)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)subject;
-- (id)calendarDate;
-- (id)sender;
+- (BOOL)isPlaceholder;
+- (id)error;
+- (id)recipients;
+- (id)service;
 - (void)updateMessageCompleteQuietly;
 - (BOOL)pending;
 - (void)markAsRead;
@@ -69,7 +68,6 @@
 - (BOOL)isFromDowngrading;
 - (BOOL)isFirstDisplayablePart:(id)arg1;
 - (unsigned int)messagePartCount;
-- (BOOL)isTypingIndicator;
 - (int)outgoingBubbleColor;
 - (id)previewText;
 - (BOOL)postMessageReceivedIfNecessary;
@@ -91,10 +89,12 @@
 - (BOOL)partiallyFailedSend;
 - (BOOL)failedSend;
 - (id)conversation;
-- (id)service;
-- (BOOL)isPlaceholder;
-- (id)recipients;
-- (id)error;
+- (id)subject;
+- (id)calendarDate;
+- (id)sender;
+- (int)sequenceNumber;
+- (id)address;
+- (float)percentComplete;
 - (BOOL)hasAttachments;
 - (int)rowID;
 

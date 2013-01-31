@@ -15,8 +15,6 @@
 
 
 - (void)dealloc;
-- (id)font;
-- (void)setFont:(id)arg1;
 - (bool)isSingleColumnLegend;
 - (unsigned int)fontIndex;
 - (id)legendEntries;
@@ -27,5 +25,7 @@
 - (void)setFontIndex:(unsigned int)arg1;
 - (int)legendPosition;
 - (id)graphicProperties;
+- (id)font;
+- (void)setFont:(id)arg1;
 
 @end

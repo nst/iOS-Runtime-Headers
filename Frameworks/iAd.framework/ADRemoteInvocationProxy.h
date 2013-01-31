@@ -20,16 +20,16 @@
 
 - (id)identifier;
 - (void)dealloc;
+- (BOOL)available;
+- (void)sendMessage:(id)arg1;
+- (void)setConnection:(id)arg1;
 - (id)connectionDelegate;
 - (void)setConnectionDelegate:(id)arg1;
+- (void)setMessageName:(id)arg1;
+- (id)messageName;
 - (id)connection;
 - (void)setIdentifier:(id)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (BOOL)available;
-- (void)sendMessage:(id)arg1;
-- (void)setConnection:(id)arg1;
-- (void)setMessageName:(id)arg1;
-- (id)messageName;
 
 @end

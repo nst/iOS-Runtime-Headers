@@ -13,14 +13,14 @@
 @property id delegate;
 
 
+- (void)didParseData;
+- (void)failWithError:(id)arg1;
+- (id)aggregateDictionaryDomain;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1;
 - (void).cxx_destruct;
 - (void)cancel;
-- (void)failWithError:(id)arg1;
-- (id)aggregateDictionaryDomain;
-- (void)didParseData;
 - (void)validateSymbol:(id)arg1 withMaxResults:(int)arg2;
 - (int)parseData:(id)arg1;
 

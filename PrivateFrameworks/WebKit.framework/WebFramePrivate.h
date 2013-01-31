@@ -21,8 +21,8 @@
 }
 
 
+- (void)setWebFrameView:(id)arg1;
 - (void)dealloc;
 - (void)finalize;
-- (void)setWebFrameView:(id)arg1;
 
 @end

@@ -19,14 +19,14 @@
 + (id)defaultCenter;
 + (void)initialize;
 
+- (int)currentLevel;
+- (void)dealloc;
+- (id)init;
 - (void)removeObserver:(id)arg1 forThermalLevel:(int)arg2;
 - (int)addObserver:(id)arg1 withSelector:(SEL)arg2 forThermalLevel:(int)arg3;
 - (void)_queryPrefsForCLTMStatus;
 - (void)_handleNotification;
-- (void)dealloc;
-- (id)init;
 - (BOOL)isSupported;
 - (BOOL)isEnabled;
-- (int)currentLevel;
 
 @end

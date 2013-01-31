@@ -10,11 +10,11 @@
 }
 
 
-- (id)_currentNodes;
-- (id)pdfDataForPageAtIndex:(int)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 printingDone:(BOOL*)arg3;
-- (id)_htmlPageXPath;
 - (void)dealloc;
 - (void)prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (int)numberOfPages;
+- (id)_currentNodes;
+- (id)pdfDataForPageAtIndex:(int)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 printingDone:(BOOL*)arg3;
+- (id)_htmlPageXPath;
 
 @end

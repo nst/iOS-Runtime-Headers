@@ -7,8 +7,8 @@
 }
 
 
-- (void)dealloc;
 - (id)initWithData:(const float*)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)loadTexture;
+- (void)dealloc;
 
 @end

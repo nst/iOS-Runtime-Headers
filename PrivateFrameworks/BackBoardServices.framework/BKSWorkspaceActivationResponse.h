@@ -17,16 +17,16 @@
 + (id)responseForWorkspaceUnsuspend:(id)arg1;
 + (id)responseForLaunchFailure:(id)arg1;
 
-- (void)setBundleIdentifier:(id)arg1;
+- (id)bundleIdentifier;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setWillResume:(BOOL)arg1;
 - (void)setLaunchFailed:(BOOL)arg1;
 - (BOOL)launchFailed;
 - (BOOL)willResume;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (id)bundleIdentifier;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (void)setBundleIdentifier:(id)arg1;
 
 @end

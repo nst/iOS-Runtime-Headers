@@ -43,7 +43,6 @@
 - (float)artworkWidth;
 - (BOOL)artworkShouldFitWidth;
 - (int)_displayStyleForString:(id)arg1;
-- (void)setItem:(id)arg1;
 - (id)_copyItemFromDictionary:(id)arg1;
 - (void)setItemList:(id)arg1;
 - (BOOL)didShowDialog;
@@ -62,6 +61,7 @@
 - (id)title;
 - (void)setType:(int)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setItem:(id)arg1;
 - (void)setProtocol:(id)arg1;
 
 @end

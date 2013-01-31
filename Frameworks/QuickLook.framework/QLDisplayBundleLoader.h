@@ -10,11 +10,11 @@
 
 + (id)sharedLoader;
 
+- (void)dealloc;
+- (id)init;
 - (id)copyDisplayBundleWithPreviewItem:(id)arg1 displayBundleIdentifier:(id)arg2;
 - (Class)loadDisplayBundle:(id)arg1;
 - (void)_lookForDisplayBundles;
 - (Class)displayBundleClassForDocumentType:(id)arg1;
-- (void)dealloc;
-- (id)init;
 
 @end

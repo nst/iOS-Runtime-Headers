@@ -19,34 +19,34 @@
 @property(retain) NSString * title;
 
 + (id)webScriptNameForKeyName:(id)arg1;
-+ (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
++ (void)initialize;
 
-- (void)setRating:(id)arg1;
-- (id)rating;
-- (id)adamID;
 - (void)setItemType:(id)arg1;
 - (void)setNicknameIsConfirmed:(id)arg1;
 - (id)hasSavedDraft;
 - (id)initWithReview:(id)arg1;
 - (id)nicknameIsConfirmed;
-- (id)infoURL;
 - (id)removeDraft;
 - (id)restoreFromDraft;
 - (id)saveAsDraft;
 - (id)copyReview;
 - (void)setNickname:(id)arg1;
 - (id)nickname;
-- (void)setInfoURL:(id)arg1;
 - (id)itemType;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)init;
 - (void)setBody:(id)arg1;
 - (id)body;
 - (id)title;
 - (void)setTitle:(id)arg1;
-- (id)attributeKeys;
+- (void)setInfoURL:(id)arg1;
+- (id)infoURL;
+- (void)setRating:(id)arg1;
+- (id)rating;
+- (id)adamID;
 
 @end

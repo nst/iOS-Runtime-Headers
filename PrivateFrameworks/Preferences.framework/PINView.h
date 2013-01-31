@@ -14,6 +14,9 @@
 }
 
 
+- (void)setDelegate:(id)arg1;
+- (void)dealloc;
+- (void)appendString:(id)arg1;
 - (void)hidePasscodeField:(BOOL)arg1;
 - (void)setTitle:(id)arg1 font:(id)arg2;
 - (void)showError:(id)arg1 animate:(BOOL)arg2;
@@ -21,13 +24,10 @@
 - (void)hideError;
 - (void)hideFailedAttempts;
 - (void)showFailedAttempts:(int)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)dealloc;
-- (void)appendString:(id)arg1;
+- (void)setBlocked:(BOOL)arg1;
 - (void)deleteLastCharacter;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;
 - (BOOL)becomeFirstResponder;
-- (void)setBlocked:(BOOL)arg1;
 
 @end

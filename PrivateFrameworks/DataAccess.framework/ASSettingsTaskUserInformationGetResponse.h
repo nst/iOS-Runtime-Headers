@@ -21,8 +21,6 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)acceptsTopLevelLeaves;
 
-- (void)setEmailAddresses:(id)arg1;
-- (id)emailAddresses;
 - (void)setAccounts:(id)arg1;
 - (id)description;
 - (void)dealloc;
@@ -30,5 +28,7 @@
 - (id)primarySMTPAddress;
 - (void)setPrimarySMTPAddress:(id)arg1;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
+- (void)setEmailAddresses:(id)arg1;
+- (id)emailAddresses;
 
 @end

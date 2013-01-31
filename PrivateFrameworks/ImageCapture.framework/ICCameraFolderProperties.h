@@ -13,11 +13,11 @@
 @property(retain) NSMutableArray * folders;
 
 
-- (void)setFiles:(id)arg1;
-- (void)dealloc;
-- (void)finalize;
 - (id)files;
+- (void)dealloc;
+- (void)setFiles:(id)arg1;
 - (void)setFolders:(id)arg1;
 - (id)folders;
+- (void)finalize;
 
 @end

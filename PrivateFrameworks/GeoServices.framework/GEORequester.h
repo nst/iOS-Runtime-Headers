@@ -19,7 +19,6 @@
 + (void)stopAllRequests;
 
 - (void)dealloc;
-- (void)start;
 - (void)setDisableReplay:(BOOL)arg1;
 - (id)debugRequestName;
 - (id)newConnectionWithCFURLRequest:(struct _CFURLRequest { }*)arg1 delegate:(id)arg2;
@@ -36,5 +35,6 @@
 - (id)initWithURL:(id)arg1 andDelegate:(id)arg2 usePersistentConnection:(BOOL)arg3 useBackgroundConnection:(BOOL)arg4;
 - (void)setDebugRequestName:(id)arg1;
 - (id)initWithURL:(id)arg1 andDelegate:(id)arg2 usePersistentConnection:(BOOL)arg3;
+- (void)start;
 
 @end

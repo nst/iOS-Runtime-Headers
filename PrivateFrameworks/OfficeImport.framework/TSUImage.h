@@ -20,14 +20,20 @@
 @property(readonly) int imageOrientation;
 @property(readonly) float scale;
 
++ (id)imageWithUIImage:(id)arg1;
 + (id)imageWithData:(id)arg1;
 + (id)imageWithContentsOfFile:(id)arg1;
 + (id)imageNamed:(id)arg1;
 + (id)imageWithCGImage:(struct CGImage { }*)arg1;
 + (id)imageWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 orientation:(int)arg3;
-+ (id)imageWithUIImage:(id)arg1;
 
 - (void)dealloc;
+- (id)UIImage;
+- (id)initWithUIImage:(id)arg1;
+- (id)JPEGRepresentationWithCompressionQuality:(float)arg1;
+- (id)PNGRepresentation;
+- (id)initWithImageSourceRef:(struct CGImageSource { }*)arg1;
+- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 isFlipped:(BOOL)arg3;
 - (id)initWithCGImage:(struct CGImage { }*)arg1;
 - (id)initWithData:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
@@ -37,11 +43,5 @@
 - (BOOL)isEmpty;
 - (float)scale;
 - (struct CGSize { float x1; float x2; })size;
-- (id)UIImage;
-- (id)initWithUIImage:(id)arg1;
-- (id)JPEGRepresentationWithCompressionQuality:(float)arg1;
-- (id)PNGRepresentation;
-- (id)initWithImageSourceRef:(struct CGImageSource { }*)arg1;
-- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 isFlipped:(BOOL)arg3;
 
 @end

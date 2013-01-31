@@ -24,11 +24,11 @@
 }
 
 
-- (void)_receivedMemoryWarning:(id)arg1;
 - (void)dealloc;
 - (id)instance;
 - (id)initWithSetupBlock:(id)arg1 cleanupBlock:(id)arg2 queue:(id)arg3;
 - (void)_setupInstance;
 - (void)_cleanupInstance;
+- (void)_receivedMemoryWarning:(id)arg1;
 
 @end

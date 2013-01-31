@@ -8,9 +8,7 @@
 
 + (id)objectWithDefaultButtonForScriptButton:(id)arg1;
 
-- (void)setLoading:(BOOL)arg1;
 - (id)systemItemString;
-- (BOOL)isShowingConfirmation;
 - (void)showConfirmationWithTitle:(id)arg1 animated:(BOOL)arg2;
 - (void)setStyleFromString:(id)arg1;
 - (void)connectButtonAction;
@@ -30,5 +28,7 @@
 - (void)setTag:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setImage:(id)arg1;
+- (BOOL)isShowingConfirmation;
+- (void)setLoading:(BOOL)arg1;
 
 @end

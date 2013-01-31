@@ -18,14 +18,9 @@
     unsigned int _gapBlockIndex;
 }
 
-+ (void)initialize;
 + (void)_setConsistencyCheckingEnabled:(BOOL)arg1 superCheckEnabled:(BOOL)arg2;
++ (void)initialize;
 
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
-- (unsigned int)count;
 - (void)_consistencyCheck:(int)arg1;
 - (void)_moveGapAndMergeWithBlockRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)_ensureCapacity:(unsigned int)arg1;
@@ -41,5 +36,10 @@
 - (void)removeElementsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 coalesceRuns:(BOOL)arg2;
 - (void)replaceElementsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withElement:(void*)arg2 coalesceRuns:(BOOL)arg3;
 - (void)insertElement:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 coalesceRuns:(BOOL)arg3;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
+- (unsigned int)count;
 
 @end

@@ -10,11 +10,11 @@
 }
 
 
-- (void)_removeBackgroundAssertion;
-- (void)_takeBackgroundAssertion;
 - (void)dealloc;
 - (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)_update;
+- (void)_takeBackgroundAssertion;
+- (void)_removeBackgroundAssertion;
 
 @end

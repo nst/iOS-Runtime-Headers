@@ -25,14 +25,32 @@
 @property unsigned int dragState;
 @property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } _mapTransform;
 
++ (unsigned int)_selectedZIndex;
++ (unsigned int)_zIndex;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)_disclosureCalloutButton;
 + (id)droppedPinTitle;
 + (id)currentLocationTitle;
-+ (unsigned int)_selectedZIndex;
-+ (unsigned int)_zIndex;
 
+- (void)setDraggable:(BOOL)arg1;
+- (struct CGPoint { float x1; float x2; })centerOffset;
+- (void)setCenterOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setCalloutOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)isDraggable;
+- (unsigned int)dragState;
+- (void)setDragState:(unsigned int)arg1;
+- (id)rightCalloutAccessoryView;
+- (id)leftCalloutAccessoryView;
+- (struct CGPoint { float x1; float x2; })calloutOffset;
+- (void)setDragState:(unsigned int)arg1 animated:(BOOL)arg2;
+- (BOOL)canShowCallout;
+- (unsigned int)_zIndex;
 - (void)dealloc;
+- (struct { double x1; double x2; })coordinate;
+- (void)setCanShowCallout:(BOOL)arg1;
+- (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
+- (void)setLeftCalloutAccessoryView:(id)arg1;
+- (void)setRightCalloutAccessoryView:(id)arg1;
 - (void)setAnnotation:(id)arg1;
 - (id)annotation;
 - (void)setSelected:(BOOL)arg1;
@@ -74,23 +92,5 @@
 - (void)_setCalloutView:(id)arg1;
 - (void)_setMapType:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
-- (void)setDraggable:(BOOL)arg1;
-- (struct { double x1; double x2; })coordinate;
-- (struct CGPoint { float x1; float x2; })centerOffset;
-- (void)setCenterOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setCalloutOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)isDraggable;
-- (unsigned int)dragState;
-- (void)setDragState:(unsigned int)arg1;
-- (id)rightCalloutAccessoryView;
-- (id)leftCalloutAccessoryView;
-- (struct CGPoint { float x1; float x2; })calloutOffset;
-- (void)setDragState:(unsigned int)arg1 animated:(BOOL)arg2;
-- (BOOL)canShowCallout;
-- (unsigned int)_zIndex;
-- (void)setCanShowCallout:(BOOL)arg1;
-- (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
-- (void)setLeftCalloutAccessoryView:(id)arg1;
-- (void)setRightCalloutAccessoryView:(id)arg1;
 
 @end

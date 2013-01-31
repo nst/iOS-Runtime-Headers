@@ -43,9 +43,9 @@
 
 + (id)name;
 
+- (void)fixComponent;
 - (void)setPercentComplete:(int)arg1;
 - (int)percentComplete;
-- (void)fixComponent;
 - (void)setX_apple_sort_order:(unsigned int)arg1;
 - (void)setDue:(id)arg1;
 - (void)setX_apple_activity:(id)arg1;

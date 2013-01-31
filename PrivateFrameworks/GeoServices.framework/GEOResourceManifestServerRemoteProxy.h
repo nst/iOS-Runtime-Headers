@@ -19,7 +19,6 @@
 @property <GEOResourceManifestServerProxyDelegate> * delegate;
 
 
-- (id)authToken;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1;
@@ -36,5 +35,6 @@
 - (void)openConnection;
 - (oneway void)startServer:(id)arg1;
 - (oneway void)forceUpdate;
+- (id)authToken;
 
 @end

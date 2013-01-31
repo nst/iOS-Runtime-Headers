@@ -49,12 +49,6 @@
 @property int labelScaleFactor;
 
 
-- (void)setStylesheet:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)dealloc;
 - (void)setTrafficIncidentsMapModel:(id)arg1;
 - (id)trafficIncidentsMapModel;
 - (BOOL)hasOcclusionAtLocalPoint:(struct { float x1; float x2; })arg1 inLabelTile:(id)arg2;
@@ -88,5 +82,11 @@
 - (void)setLocalizeLabels:(BOOL)arg1;
 - (BOOL)localizeLabels;
 - (void)setLabelMarkerSelectionEnabled:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (void)setStylesheet:(id)arg1;
 
 @end

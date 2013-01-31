@@ -22,6 +22,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)comment;
 - (id)domain;
 - (id)initWithProperties:(id)arg1;
 - (id)properties;
@@ -30,7 +31,6 @@
 - (id)value;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)replacementObjectForPortCoder:(id)arg1;
 - (BOOL)_isExpired;
 - (int)_compareForHeaderOrder:(id)arg1;
 - (id)MaxAge;
@@ -54,6 +54,6 @@
 - (BOOL)isSessionOnly;
 - (id)initWithCFHTTPCookie:(struct OpaqueCFHTTPCookie { }*)arg1;
 - (id)_key;
-- (id)comment;
+- (id)replacementObjectForPortCoder:(id)arg1;
 
 @end

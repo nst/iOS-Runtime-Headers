@@ -28,6 +28,12 @@
 }
 
 
+- (BOOL)isRectangular;
+- (BOOL)contains:(id)arg1;
+- (unsigned int)vertexCount;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)init;
 - (id)spacers;
 - (void)setSpacers:(id)arg1;
 - (id)gutters;
@@ -73,11 +79,5 @@
 - (struct CGPoint { float x1; float x2; }*)outerVertices;
 - (void)accept:(id)arg1;
 - (id)textLinesInZone;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
-- (BOOL)isRectangular;
-- (BOOL)contains:(id)arg1;
-- (unsigned int)vertexCount;
 
 @end

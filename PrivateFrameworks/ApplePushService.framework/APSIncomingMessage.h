@@ -14,9 +14,9 @@
 
 - (id)timestamp;
 - (void)setTimestamp:(id)arg1;
+- (BOOL)wasFromStorage;
 - (void)setLastMessageFromStorage:(BOOL)arg1;
 - (BOOL)wasLastMessageFromStorage;
 - (void)setFromStorage:(BOOL)arg1;
-- (BOOL)wasFromStorage;
 
 @end

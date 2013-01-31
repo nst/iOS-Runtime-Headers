@@ -14,25 +14,6 @@
 }
 
 
-- (void)dealloc;
-- (int)indexOfAccessibilityElement:(id)arg1;
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)accessibilityElementCount;
-- (void)accessibilityDecrement;
-- (void)accessibilityIncrement;
-- (void)accessibilityElementDidBecomeFocused;
-- (id)accessibilityIdentifier;
-- (id)accessibilityLanguage;
-- (id)accessibilityContainer;
-- (BOOL)isAccessibilityElement;
-- (unsigned long long)accessibilityTraits;
-- (struct CGPoint { float x1; float x2; })accessibilityActivationPoint;
-- (id)accessibilityHint;
-- (id)accessibilityValue;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (id)stringForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)detach;
-- (id)accessibilityLabel;
 - (void)accessibilityPostedNotification:(int)arg1;
 - (void)accessibilitySetPostedNotificationCallback:(int (*)())arg1 withContext:(void*)arg2;
 - (id)accessibilityInvalidStatus;
@@ -133,5 +114,24 @@
 - (BOOL)_prepareAccessibilityCall;
 - (struct AccessibilityObject { int (**x1)(); int x2; unsigned int x3; struct Vector<WTF::RefPtr<WebCore::AccessibilityObject>, 0> { unsigned int x_4_1_1; struct VectorBuffer<WTF::RefPtr<WebCore::AccessibilityObject>, 0> { struct RefPtr<WebCore::AccessibilityObject> {} *x_2_2_1; unsigned int x_2_2_2; } x_4_1_2; } x4; boolx5; int x6; struct RetainPtr<WebAccessibilityObjectWrapper> { struct WebAccessibilityObjectWrapper { Class x_1_2_1; struct AccessibilityObject {} *x_1_2_2; int x_1_2_3; unsigned long long x_1_2_4; } *x_7_1_1; } x7; }*)accessibilityObject;
 - (id)attachmentView;
+- (void)dealloc;
+- (int)indexOfAccessibilityElement:(id)arg1;
+- (id)accessibilityElementAtIndex:(int)arg1;
+- (int)accessibilityElementCount;
+- (void)accessibilityDecrement;
+- (void)accessibilityIncrement;
+- (void)accessibilityElementDidBecomeFocused;
+- (id)accessibilityIdentifier;
+- (id)accessibilityLanguage;
+- (id)accessibilityContainer;
+- (BOOL)isAccessibilityElement;
+- (unsigned long long)accessibilityTraits;
+- (struct CGPoint { float x1; float x2; })accessibilityActivationPoint;
+- (id)accessibilityHint;
+- (id)accessibilityValue;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (id)stringForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)detach;
+- (id)accessibilityLabel;
 
 @end

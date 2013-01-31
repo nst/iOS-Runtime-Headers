@@ -29,6 +29,9 @@
 @property(retain) CPListItem * parentItem;
 
 
+- (int)type;
+- (void)dealloc;
+- (id)init;
 - (void)setParentItem:(id)arg1;
 - (void)setOrdinalSuffixLength:(unsigned int)arg1;
 - (unsigned int)ordinalSuffixLength;
@@ -40,13 +43,10 @@
 - (BOOL)containsParagraph:(id)arg1;
 - (id)parentItem;
 - (void)dispose;
-- (unsigned int)itemCount;
-- (int)type;
-- (void)dealloc;
-- (id)init;
+- (id)itemAtIndex:(unsigned int)arg1;
 - (void)addItem:(id)arg1;
 - (void)finalize;
 - (void)setType:(int)arg1;
-- (id)itemAtIndex:(unsigned int)arg1;
+- (unsigned int)itemCount;
 
 @end

@@ -50,10 +50,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (double)rotation;
-- (void)setRotation:(double)arg1;
-- (void)setColumnCount:(int)arg1;
-- (int)columnCount;
 - (int)horizontalOverflowType;
 - (BOOL)isUpright;
 - (id)textWarp;
@@ -109,5 +105,9 @@
 - (BOOL)hasLeftInset;
 - (double)topInset;
 - (BOOL)hasTopInset;
+- (double)rotation;
+- (void)setRotation:(double)arg1;
+- (void)setColumnCount:(int)arg1;
+- (int)columnCount;
 
 @end

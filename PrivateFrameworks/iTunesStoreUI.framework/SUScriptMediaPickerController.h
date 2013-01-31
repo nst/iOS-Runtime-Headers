@@ -14,16 +14,16 @@
 + (id)webScriptNameForKeyName:(id)arg1;
 + (void)initialize;
 
-- (void)setAllowsPickingMultipleItems:(BOOL)arg1;
-- (BOOL)allowsPickingMultipleItems;
-- (id)initWithMediaTypes:(id)arg1;
 - (id)newNativeViewController;
 - (void)setNativeViewController:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (id)mediaTypes;
 - (void)setPrompt:(id)arg1;
 - (id)prompt;
-- (id)attributeKeys;
+- (BOOL)allowsPickingMultipleItems;
+- (void)setAllowsPickingMultipleItems:(BOOL)arg1;
+- (id)initWithMediaTypes:(id)arg1;
 
 @end

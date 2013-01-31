@@ -9,10 +9,10 @@
 @interface WebMIMETypeRegistry  {
 }
 
-+ (id)preferredExtensionForMIMEType:(id)arg1;
 + (BOOL)isSupportedMediaMIMEType:(id)arg1;
 + (BOOL)isSupportedImageMIMEType:(id)arg1;
 + (id)mimeTypeForExtension:(id)arg1;
++ (id)preferredExtensionForMIMEType:(id)arg1;
 + (/* Warning: Unrecognized filer type: '' using 'void*' */ void*)initialize;
      /* Encoded args for previous method:  */
 

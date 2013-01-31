@@ -13,14 +13,14 @@
 @property unsigned int identifier;
 
 
-- (id)initWithTopic:(id)arg1 userInfo:(id)arg2;
-- (void)setTopic:(id)arg1;
 - (unsigned int)identifier;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)objectForKey:(id)arg1;
 - (id)userInfo;
 - (void)dealloc;
 - (id)topic;
+- (id)initWithTopic:(id)arg1 userInfo:(id)arg2;
+- (void)setTopic:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)setIdentifier:(unsigned int)arg1;
 - (id)dictionaryRepresentation;

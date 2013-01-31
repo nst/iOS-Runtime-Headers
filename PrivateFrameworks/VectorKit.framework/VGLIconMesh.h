@@ -31,14 +31,14 @@
 }
 
 
+- (void)drawDebug:(id)arg1;
+- (void)addIcon:(id)arg1 corners:(const struct { float x1; float x2; }*)arg2 alpha:(float)arg3 snapToPixels:(BOOL)arg4;
+- (void)drawWithContext:(id)arg1;
+- (void)addIcon:(id)arg1 point:(struct { float x1; float x2; })arg2 alpha:(float)arg3 snapToPixels:(BOOL)arg4;
 - (void)reset;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)purge;
-- (void)drawDebug:(id)arg1;
-- (void)addIcon:(id)arg1 corners:(const struct { float x1; float x2; }*)arg2 alpha:(float)arg3 snapToPixels:(BOOL)arg4;
-- (void)drawWithContext:(id)arg1;
-- (void)addIcon:(id)arg1 point:(struct { float x1; float x2; })arg2 alpha:(float)arg3 snapToPixels:(BOOL)arg4;
 
 @end

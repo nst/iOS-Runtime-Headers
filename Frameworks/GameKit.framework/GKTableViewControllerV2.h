@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKInviteButton, NSArray, NSObject<OS_dispatch_source>, UIImageView, GKSectionArrayDataSource, NSIndexPath, UIView, GKTableView, UIPopoverController, GKMultiColumnTableViewCell, UIView<GKTableViewCellContents>;
+@class GKInviteButton, NSObject<OS_dispatch_source>, NSArray, UIImageView, GKSectionArrayDataSource, NSIndexPath, UIView, GKTableView, UIPopoverController, GKMultiColumnTableViewCell, UIView<GKTableViewCellContents>;
 
 @interface GKTableViewControllerV2 : GKViewController <UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource, GKTableViewControllerDelegate, UIPopoverControllerDelegate> {
     double _selectGestureStartTime;
@@ -39,8 +39,6 @@
     UIView *_confirmationClipView;
     int _sectionTransitionCount;
     int _lastKnownOrientation;
-    id _detailPopoverItem;
-    NSArray *_indexPathsOfCellsToRefresh;
     BOOL _didSuspendRefreshCellTimer;
     NSObject<OS_dispatch_source> *_refreshCellTimer;
     struct UIEdgeInsets { 
@@ -49,6 +47,8 @@
         float bottom; 
         float right; 
     } _tableInsets;
+    id _detailPopoverItem;
+    NSArray *_indexPathsOfCellsToRefresh;
 }
 
 @property(retain) GKTableView * tableView;
@@ -82,15 +82,52 @@
 
 + (id)_gkAllDescriptionsWithTableViewCells;
 
+- (void)dealloc;
+- (id)init;
+- (void)setClearsSelectionOnViewWillAppear:(BOOL)arg1;
+- (BOOL)clearsSelectionOnViewWillAppear;
+- (int)tableViewStyle;
+- (id)tableView;
+- (id)initWithStyle:(int)arg1;
+- (id)_descriptionWithChildren:(int)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (id)_description;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)dismissPopoverAnimated:(BOOL)arg1;
+- (void)loadView;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (void)setTableView:(id)arg1;
+- (void)viewDidLayoutSubviews;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)_gkDescriptionWithChildren:(int)arg1;
+- (void)setIndexPathsOfCellsToRefresh:(id)arg1;
+- (id)indexPathsOfCellsToRefresh;
 - (void)setTableInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tableInsets;
 - (void)setRefreshCellTimer:(id)arg1;
 - (id)refreshCellTimer;
 - (void)setDidSuspendRefreshCellTimer:(BOOL)arg1;
 - (BOOL)didSuspendRefreshCellTimer;
-- (void)setIndexPathsOfCellsToRefresh:(id)arg1;
-- (id)indexPathsOfCellsToRefresh;
 - (void)setBottomShadowView:(id)arg1;
 - (id)_indexesOfDirtySections;
 - (void)nudgeContentSizeOfParentPopover:(struct CGSize { float x1; float x2; })arg1;
@@ -196,42 +233,5 @@
 - (void)setSectionDataSource:(id)arg1;
 - (void)setIsInFormSheet:(BOOL)arg1;
 - (void)setShouldDelayTableReloadForDeselectAnimation:(BOOL)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)setClearsSelectionOnViewWillAppear:(BOOL)arg1;
-- (BOOL)clearsSelectionOnViewWillAppear;
-- (int)tableViewStyle;
-- (id)tableView;
-- (id)initWithStyle:(int)arg1;
-- (id)_descriptionWithChildren:(int)arg1;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (id)_description;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)dismissPopoverAnimated:(BOOL)arg1;
-- (void)loadView;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (void)setTableView:(id)arg1;
-- (void)viewDidLayoutSubviews;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
-- (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

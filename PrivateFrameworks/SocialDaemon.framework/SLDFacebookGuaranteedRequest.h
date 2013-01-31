@@ -11,11 +11,11 @@
 @property(retain) SLFacebookRequest * request;
 
 
-- (id)initWithRequest:(id)arg1;
-- (void)setRequest:(id)arg1;
 - (void)perform;
 - (void).cxx_destruct;
-- (id)request;
 - (void)_addBackgroundTaskAgentJob;
+- (id)request;
+- (void)setRequest:(id)arg1;
+- (id)initWithRequest:(id)arg1;
 
 @end

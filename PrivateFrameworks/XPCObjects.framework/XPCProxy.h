@@ -48,6 +48,7 @@
 - (id)target;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (Class)remoteClass;
 - (void)restrictDecodingToWhitelistedClassNames:(id)arg1;
 - (id)remoteProtocol;
 - (id)initWithConnection:(id)arg1 queue:(id)arg2 target:(id)arg3;
@@ -59,7 +60,6 @@
 - (void)setRemoteClass:(Class)arg1;
 - (void)setUseTraditionalEncoder:(BOOL)arg1;
 - (id)errorHandler;
-- (Class)remoteClass;
 - (id)_disconnectionInvocation;
 - (id)proxyWithNewTarget:(id)arg1 label:(id)arg2;
 - (id)proxyWithNewTarget:(id)arg1 queue:(id)arg2;

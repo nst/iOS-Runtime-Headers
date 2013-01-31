@@ -14,12 +14,12 @@
 @property(retain) SUPlayerStatus * previewStatus;
 
 
+- (void)dealloc;
 - (id)previewStatus;
 - (void)_flipToPreviewProgressView;
 - (void)_destroyPreviewProgressView;
 - (void)_flipFromPreviewProgressView;
 - (void)setPreviewStatus:(id)arg1 animated:(BOOL)arg2;
 - (void)setPreviewStatus:(id)arg1;
-- (void)dealloc;
 
 @end

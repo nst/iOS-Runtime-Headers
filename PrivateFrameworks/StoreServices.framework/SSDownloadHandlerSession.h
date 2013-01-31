@@ -13,12 +13,6 @@
 @property BOOL needsPowerAssertion;
 
 
-- (void)setPercentComplete:(float)arg1;
-- (void)finishSessionWithSuccess:(BOOL)arg1 error:(id)arg2;
-- (void)setStatusDescription:(id)arg1;
-- (void)setCanBePaused:(BOOL)arg1;
-- (void)releaseSessionControl;
-- (id)downloadPhase;
 - (void)setNeedsPowerAssertion:(BOOL)arg1;
 - (void)setBlocksOtherDownloads:(BOOL)arg1;
 - (BOOL)needsPowerAssertion;
@@ -27,5 +21,11 @@
 - (BOOL)blocksOtherDownloads;
 - (void)_setBool:(BOOL)arg1 forSessionProperty:(const char *)arg2;
 - (void)_finishWithType:(int)arg1 error:(id)arg2;
+- (void)finishSessionWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (void)setStatusDescription:(id)arg1;
+- (void)setCanBePaused:(BOOL)arg1;
+- (void)releaseSessionControl;
+- (id)downloadPhase;
+- (void)setPercentComplete:(float)arg1;
 
 @end

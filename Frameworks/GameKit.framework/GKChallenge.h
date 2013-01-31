@@ -20,15 +20,24 @@
 @property(readonly) NSString * challengeID;
 @property(readonly) NSString * bundleID;
 
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
++ (id)stringForState:(int)arg1;
 + (void)loadReceivedChallengesWithCompletionHandler:(id)arg1;
 + (void)loadChallengesForReceivingPlayer:(id)arg1 withCompletionHandler:(id)arg2;
 + (id)challengeForGame:(id)arg1 andPlayer:(id)arg2 withAchievement:(id)arg3;
 + (id)challengeForGame:(id)arg1 andPlayer:(id)arg2 withScore:(id)arg3;
 + (void)loadChallengesForGame:(id)arg1 receivingPlayer:(id)arg2 withCompletionHandler:(id)arg3;
 + (id)challengeForInternalRepresentation:(id)arg1;
-+ (BOOL)instancesRespondToSelector:(SEL)arg1;
-+ (id)stringForState:(int)arg1;
 
+- (id)valueForUndefinedKey:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (void)dealloc;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)titleTextForAuxData:(id)arg1;
 - (id)infoTextForIssuingPlayer:(id)arg1;
 - (id)goalTextForAuxData:(id)arg1;
@@ -42,14 +51,5 @@
 - (id)identifierKey;
 - (id)resolveBundleID;
 - (id)internal;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)valueForUndefinedKey:(id)arg1;
-- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 
 @end

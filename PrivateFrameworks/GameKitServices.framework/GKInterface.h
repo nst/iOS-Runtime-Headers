@@ -22,12 +22,12 @@
 - (id)type;
 - (id)description;
 - (void)dealloc;
+- (void)setBsdName:(id)arg1;
+- (id)bsdName;
 - (void)setIndex:(id)arg1;
 - (void)setPriority:(unsigned int)arg1;
 - (unsigned int)priority;
 - (id)index;
 - (void)setType:(id)arg1;
-- (void)setBsdName:(id)arg1;
-- (id)bsdName;
 
 @end

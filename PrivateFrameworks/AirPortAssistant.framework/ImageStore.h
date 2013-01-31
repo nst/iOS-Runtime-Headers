@@ -5,16 +5,16 @@
 @interface ImageStore : NSObject  {
 }
 
-+ (id)imageForIconKey:(id)arg1;
 + (struct CGImage { }*)cgImageFromImage:(id)arg1;
-+ (id)imageForBaseStationWithProductID:(unsigned int)arg1 small:(BOOL)arg2 cropped:(BOOL)arg3;
-+ (id)imageForInformationalDiagram:(unsigned int)arg1;
++ (id)imageForBaseStationWithProductID:(unsigned int)arg1 deviceKind:(int)arg2 small:(BOOL)arg3 cropped:(BOOL)arg4 threeDee:(BOOL)arg5;
++ (id)imageForInformationalDiagram:(unsigned int)arg1 deviceKind:(int)arg2 small:(BOOL)arg3;
 + (id)sharedImageStore;
-+ (id)kitImageOfType:(int)arg1;
 + (id)imageForDeviceByModel:(id)arg1;
-+ (id)imageNameForProductFamily:(unsigned int)arg1 small:(BOOL)arg2 cropped:(BOOL)arg3;
++ (id)kitImageOfType:(int)arg1;
++ (id)imageNameForProductID:(unsigned int)arg1 deviceKind:(int)arg2 small:(BOOL)arg3 cropped:(BOOL)arg4 threeDee:(BOOL)arg5;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2 ofType:(id)arg3;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2;
++ (id)imageNamed:(id)arg1;
 
 
 @end

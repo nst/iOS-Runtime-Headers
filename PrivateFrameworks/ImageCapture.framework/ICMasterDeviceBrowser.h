@@ -18,6 +18,8 @@
 + (id)defaultBrowser;
 + (BOOL)exists;
 
+- (void)dealloc;
+- (id)init;
 - (id)browsers;
 - (void)informBrowserDelegateUsingSelector:(SEL)arg1 withObject:(id)arg2;
 - (id)deviceWithDelegate:(id)arg1;
@@ -31,10 +33,8 @@
 - (void)handleImageCaptureEventNotification:(id)arg1;
 - (void)handleCommandCompletionNotification:(id)arg1;
 - (int)start:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)finalize;
 - (id)devices;
 - (void)stop:(id)arg1;
+- (void)finalize;
 
 @end

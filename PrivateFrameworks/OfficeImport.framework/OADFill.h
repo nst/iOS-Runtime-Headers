@@ -7,7 +7,7 @@
 
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (float)alpha;
 - (void)setStyleColor:(id)arg1;
+- (float)alpha;
 
 @end

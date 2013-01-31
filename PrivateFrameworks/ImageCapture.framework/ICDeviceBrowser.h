@@ -13,15 +13,15 @@
 @property(readonly) NSArray * devices;
 
 
-- (id)internalDevices;
-- (BOOL)isBrowsing;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
+- (id)internalDevices;
+- (BOOL)isBrowsing;
+- (id)devices;
 - (void)stop;
 - (void)finalize;
 - (int)start;
-- (id)devices;
 
 @end

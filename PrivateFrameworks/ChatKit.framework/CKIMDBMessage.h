@@ -14,12 +14,12 @@
 
 
 - (void)dealloc;
+- (void)setPersonID:(int)arg1;
+- (int)personID;
 - (id)personName;
 - (void)setPersonName:(id)arg1;
 - (void)resetIMPerson;
 - (id)initWithRecordID:(int)arg1;
 - (void)markAsRead;
-- (void)setPersonID:(int)arg1;
-- (int)personID;
 
 @end

@@ -12,7 +12,7 @@
 
 
 - (void)dealloc;
-- (id)nextObject;
 - (id)_initWithMailbox:(id)arg1 includeHiddenChildren:(BOOL)arg2;
+- (id)nextObject;
 
 @end

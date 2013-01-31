@@ -22,17 +22,17 @@
 @property(readonly) double cancellationTime;
 
 
-- (double)cancellationTime;
 - (unsigned int)hash;
 - (void)cancel;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithSearchString:(id)arg1;
-- (id)searchString;
-- (BOOL)cancelled;
 - (id)searchDomains;
+- (double)cancellationTime;
+- (id)initWithSearchString:(id)arg1;
 - (id)initWithSearchString:(id)arg1 forSearchDomains:(id)arg2;
 - (double)creationTime;
+- (id)searchString;
+- (BOOL)cancelled;
 
 @end

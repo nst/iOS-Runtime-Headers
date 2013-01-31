@@ -33,7 +33,6 @@
 @property(getter=isNighttime,readonly) BOOL nighttime;
 @property(getter=isStarted,readonly) BOOL started;
 
-+ (void)initialize;
 + (void)unregisterClock:(id)arg1;
 + (void)registerClock:(id)arg1;
 + (BOOL)isClockRegistered:(id)arg1;
@@ -45,20 +44,10 @@
 + (void)registerSweepingClock:(id)arg1;
 + (void)registerTickingClock:(id)arg1;
 + (void)updateFlutterForAllTicking;
++ (void)initialize;
 
+- (void)updateTime;
 - (void)dealloc;
-- (void)stop;
-- (int)minute;
-- (int)hour;
-- (void)start;
-- (id)timeZone;
-- (id)initWithStyle:(int)arg1;
-- (id)time;
-- (void)setTime:(id)arg1;
-- (int)style;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (void)setStyle:(int)arg1;
-- (void)setTimeZone:(id)arg1;
 - (id)faceView;
 - (void)setRunMode:(int)arg1;
 - (BOOL)isNighttime;
@@ -73,6 +62,17 @@
 - (void)updateFlutter;
 - (int)runMode;
 - (BOOL)isStarted;
-- (void)updateTime;
+- (void)stop;
+- (int)minute;
+- (int)hour;
+- (void)start;
+- (id)timeZone;
+- (id)initWithStyle:(int)arg1;
+- (id)time;
+- (void)setTime:(id)arg1;
+- (int)style;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (void)setStyle:(int)arg1;
+- (void)setTimeZone:(id)arg1;
 
 @end

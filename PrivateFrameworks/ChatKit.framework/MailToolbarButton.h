@@ -16,14 +16,14 @@
 
 
 - (void)dealloc;
+- (void)setUsesAlternateButtonWidth:(BOOL)arg1;
+- (BOOL)usesAlternateButtonWidth;
+- (id)initAsRed:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })_offsetForMiniBarState:(BOOL)arg1;
 - (void)updateForMiniBarState:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)sizeToFit;
 - (void)setTitle:(id)arg1;
 - (void)layoutSubviews;
-- (void)setUsesAlternateButtonWidth:(BOOL)arg1;
-- (BOOL)usesAlternateButtonWidth;
-- (id)initAsRed:(BOOL)arg1;
 
 @end

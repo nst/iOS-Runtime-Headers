@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSString, NSPersistentStoreCoordinator, NSDictionary, NSURL;
+@class NSString, NSPersistentStoreCoordinator, NSDictionary, NSURL;
 
 @interface NSPersistentStore : NSObject  {
     NSPersistentStoreCoordinator *_coordinator;
     NSString *_configurationName;
     NSURL *_url;
     NSDictionary *_options;
-    NSMutableDictionary *_oidFactories;
+    id *_oidFactories;
     id _defaultFaultHandler;
     struct _objectStoreFlags { 
         unsigned int isReadOnly : 1; 
@@ -22,6 +22,7 @@
     void *_reserved3;
 }
 
++ (void)initialize;
 + (id)_figureOutWhereExternalReferencesEndedUpRelativeTo:(id)arg1;
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 + (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id*)arg5;
@@ -30,8 +31,8 @@
 + (BOOL)doURLStuff:(id)arg1 createdStubFile:(BOOL*)arg2 readOnly:(BOOL*)arg3 error:(id*)arg4 options:(id)arg5;
 + (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
 + (BOOL)accessInstanceVariablesDirectly;
-+ (void)initialize;
 
+- (void)setReadOnly:(BOOL)arg1;
 - (id)identifier;
 - (void)setPersistentStoreCoordinator:(id)arg1;
 - (id)persistentStoreCoordinator;
@@ -40,6 +41,11 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)setURL:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)finalize;
+- (id)options;
+- (id)_storeInfoForEntityDescription:(id)arg1;
 - (void)_updateMetadata;
 - (id)_defaultMetadata;
 - (BOOL)_prepareForExecuteRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
@@ -72,10 +78,5 @@
 - (id)configurationName;
 - (id)initWithPersistentStoreCoordinator:(id)arg1 configurationName:(id)arg2 URL:(id)arg3 options:(id)arg4;
 - (id)objectIDFactoryForEntity:(id)arg1;
-- (void)setURL:(id)arg1;
-- (void)setIdentifier:(id)arg1;
-- (void)finalize;
-- (id)options;
-- (void)setReadOnly:(BOOL)arg1;
 
 @end

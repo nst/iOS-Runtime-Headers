@@ -6,7 +6,6 @@
 }
 
 
-- (id)autoFill;
 - (id)autoAxisStroke;
 - (void)resolveMarker:(id)arg1 withSeriesGraphicProperties:(id)arg2 forSeriesIndex:(int)arg3;
 - (void)resolveLegendGraphicProperties:(id)arg1;
@@ -28,5 +27,6 @@
 - (id)autoStroke;
 - (id)strokeWithColorIndex:(int)arg1;
 - (id)fillWithColorIndex:(unsigned int)arg1;
+- (id)autoFill;
 
 @end

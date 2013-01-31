@@ -13,14 +13,14 @@
 
 + (id)pivotConditionalFormat;
 
+- (void)setScope:(int)arg1;
+- (int)scope;
 - (int)type;
 - (void)dealloc;
 - (id)init;
+- (id)pivotAreas;
 - (void)setPriority:(unsigned int)arg1;
 - (unsigned int)priority;
 - (void)setType:(int)arg1;
-- (void)setScope:(int)arg1;
-- (int)scope;
-- (id)pivotAreas;
 
 @end

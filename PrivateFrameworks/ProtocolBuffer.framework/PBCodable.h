@@ -10,11 +10,11 @@
 @property(readonly) NSData * data;
 
 
+- (void)writeTo:(id)arg1;
 - (id)data;
 - (id)init;
+- (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)initWithData:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
 
 @end

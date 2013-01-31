@@ -22,6 +22,7 @@
 @property(retain) NSArray * regionData;
 
 
+- (void)dealloc;
 - (void)setCurrentPhoneNumber:(id)arg1 forSpecifier:(id)arg2;
 - (id)currentPhoneNumberForSpecifier:(id)arg1;
 - (id)currentCountryValueForSpecifier:(id)arg1;
@@ -66,7 +67,6 @@
 - (id)specifierList;
 - (id)initWithRegController:(id)arg1;
 - (void)_startTimeout;
-- (void)dealloc;
 - (id)bundle;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

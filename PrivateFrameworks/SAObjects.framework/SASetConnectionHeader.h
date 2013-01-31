@@ -13,12 +13,12 @@
 + (id)setConnectionHeaderWithDictionary:(id)arg1 context:(id)arg2;
 + (id)setConnectionHeader;
 
-- (id)groupIdentifier;
 - (void)setReconnectNow:(BOOL)arg1;
 - (BOOL)reconnectNow;
 - (void)setAceHostHeader:(id)arg1;
 - (id)aceHostHeader;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

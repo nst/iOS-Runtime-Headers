@@ -18,11 +18,11 @@
 + (BOOL)acceptsTopLevelLeaves;
 
 - (void)dealloc;
-- (void)setStatus:(id)arg1;
-- (id)status;
 - (void)setSrcMsgId:(id)arg1;
 - (void)setDstMsgId:(id)arg1;
 - (id)dstMsgId;
 - (id)srcMsgId;
+- (void)setStatus:(id)arg1;
+- (id)status;
 
 @end

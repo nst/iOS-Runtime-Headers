@@ -26,18 +26,18 @@
 - (void)workQueueShutDown;
 - (void)workQueueHandleIncomingMessage:(id)arg1;
 - (void)sendMessage:(id)arg1 withHandler:(id)arg2;
+- (id)client;
 - (void)resume;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)debugDescription;
 - (void).cxx_destruct;
-- (void)setContext:(id)arg1;
-- (id)context;
 - (void)setWorkQueue:(id)arg1;
 - (void)shutDownCompletionBlock:(id)arg1;
 - (id)workQueue;
-- (id)serviceName;
-- (id)client;
+- (void)setContext:(id)arg1;
+- (id)context;
 - (id)serviceListener;
+- (id)serviceName;
 
 @end

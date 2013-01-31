@@ -18,13 +18,13 @@
 
 + (id)sharedInstance;
 
-- (id)languageDialectCode;
-- (id)descriptionForWord:(id)arg1;
-- (void)setLanguageDialectCode:(id)arg1;
 - (id)managedObjectModel;
 - (id)persistentStoreCoordinator;
 - (id)managedObjectContext;
 - (void)dealloc;
+- (id)languageDialectCode;
+- (id)descriptionForWord:(id)arg1;
+- (void)setLanguageDialectCode:(id)arg1;
 - (id)languageCode;
 
 @end

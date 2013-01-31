@@ -4,7 +4,7 @@
 
 @class MPImageCacheRequest, ADBannerView, MPAVItem, MPReflectionImageView, MPSwipableView, IUPortraitInfoOverlay;
 
-@interface IUNowPlayingAlbumFrontViewController : MPViewController <IUPortraitInfoOverlayDelegate, MPSwipableViewDelegate> {
+@interface IUNowPlayingAlbumFrontViewController : MPViewController <IUPortraitInfoOverlayDelegate, MCProfileConnectionObserver, MPSwipableViewDelegate> {
     ADBannerView *_adView;
     MPReflectionImageView *_artworkView;
     MPSwipableView *_backstopView;
@@ -12,7 +12,7 @@
     float _filteredX;
     float _filteredZ;
     MPAVItem *_imageRequestPendingItem;
-    id _motionManagerObserver;
+    BOOL _isInAppPurchaseAllowed;
     IUPortraitInfoOverlay *_overlayView;
     int _style;
 }
@@ -21,7 +21,34 @@
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForArtwork;
 
-- (void)setItem:(id)arg1;
+- (void)artworkWillZoomOut;
+- (void)artworkWillZoomIn;
+- (void)artworkDidZoomOut;
+- (void)artworkDidZoomIn;
+- (BOOL)infoOverlayShouldDisplayQueuePositionUI:(id)arg1;
+- (void)infoOverlayDidFinishHiding:(id)arg1;
+- (void)_handleSingleTap;
+- (void)_updateIsInAppPurchaseAllowedForProfileConnection:(id)arg1;
+- (void)_updateOverlayVisiblePartsForStyle;
+- (void)_addOverlayView:(id)arg1;
+- (void)_updateArtworkForTime:(double)arg1;
+- (void)_removeOverlayView;
+- (void)_handleSwipeRight;
+- (void)coverFlowIsTransitioningOut:(BOOL)arg1;
+- (void)coverFlowDidTransitionOut:(BOOL)arg1;
+- (id)coverFlowControllerInitialTransitionImage:(id)arg1;
+- (void)coverFlowWillTransitionOut:(BOOL)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)_handleDoubleTap:(id)arg1;
+- (id)_overlayView;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (int)style;
+- (void)setStyle:(int)arg1;
+- (int)statusBarStyle;
+- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)_displayValuesDidChangeNotification:(id)arg1;
 - (void)endTransitionOverlayHidingWithTransferedOverlayView:(id)arg1;
 - (id)copyOverlayViewForTransitionToItem:(id)arg1;
@@ -31,30 +58,6 @@
 - (void)swipableView:(id)arg1 tappedWithCount:(unsigned int)arg2;
 - (void)swipableView:(id)arg1 swipedInDirection:(int)arg2;
 - (void)crossedTimeMakerWithEvent:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (int)style;
-- (void)setStyle:(int)arg1;
-- (int)statusBarStyle;
-- (id)_overlayView;
-- (void)_handleDoubleTap:(id)arg1;
-- (void)artworkWillZoomOut;
-- (void)artworkWillZoomIn;
-- (void)artworkDidZoomOut;
-- (void)artworkDidZoomIn;
-- (BOOL)infoOverlayShouldDisplayQueuePositionUI:(id)arg1;
-- (void)infoOverlayDidFinishHiding:(id)arg1;
-- (void)_handleSingleTap;
-- (void)_addOverlayView:(id)arg1;
-- (void)_updateArtworkForTime:(double)arg1;
-- (void)_removeOverlayView;
-- (void)_handleSwipeRight;
-- (void)coverFlowIsTransitioningOut:(BOOL)arg1;
-- (void)coverFlowDidTransitionOut:(BOOL)arg1;
-- (id)coverFlowControllerInitialTransitionImage:(id)arg1;
-- (void)coverFlowWillTransitionOut:(BOOL)arg1;
+- (void)setItem:(id)arg1;
 
 @end

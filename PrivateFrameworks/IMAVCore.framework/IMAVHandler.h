@@ -9,8 +9,8 @@
     NSMutableArray *_pendingLookups;
 }
 
-+ (void)initialize;
 + (void)ensureHandlerSetup;
++ (void)initialize;
 
 - (void)dealloc;
 - (void)account:(id)arg1 conference:(id)arg2 invitationSentSuccessfully:(BOOL)arg3;

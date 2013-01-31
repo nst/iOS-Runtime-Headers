@@ -55,10 +55,18 @@
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 
+- (void)setLocation:(id)arg1;
+- (id)lastModifiedDate;
 - (id)action;
 - (id)URL;
 - (id)init;
-- (id)UUID;
+- (void)setCreationDate:(id)arg1;
+- (id)creationDate;
+- (void)setExternalData:(id)arg1;
+- (id)externalData;
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
+- (id)attachments;
 - (void)addAttachment:(id)arg1;
 - (void)setPriority:(int)arg1;
 - (int)priority;
@@ -71,15 +79,6 @@
 - (id)title;
 - (void)setTimeZone:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setLocation:(id)arg1;
-- (id)lastModifiedDate;
-- (id)externalID;
-- (void)setExternalID:(id)arg1;
-- (id)attachments;
-- (void)setCreationDate:(id)arg1;
-- (id)creationDate;
-- (void)setExternalData:(id)arg1;
-- (id)externalData;
 - (void)setSharedItemCreatedByEmailAddress:(id)arg1;
 - (void)setAttachments:(id)arg1;
 - (BOOL)hasAttachments;
@@ -157,5 +156,6 @@
 - (id)startDate;
 - (BOOL)validate:(id*)arg1;
 - (BOOL)isAllDay;
+- (id)UUID;
 
 @end

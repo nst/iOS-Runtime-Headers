@@ -718,13 +718,13 @@
 - (id)mpPendingValueOrValueForProperty:(id)arg1;
 - (void)mpSetPendingValue:(id)arg1 forProperty:(id)arg2;
 - (id)mpPendingValues;
+- (void)setFrameSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFrameOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setFrameHeight:(float)arg1;
 - (void)setFrameWidth:(float)arg1;
 - (void)setFrameY:(float)arg1;
 - (void)setFrameEndX:(float)arg1 y:(float)arg2;
 - (void)setFrameX:(float)arg1;
-- (void)setFrameSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setFrameOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (void)sbui_drawEagerly;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_gkRectForDisclosureIndicatorInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_gkDrawDisclosureIndicator;

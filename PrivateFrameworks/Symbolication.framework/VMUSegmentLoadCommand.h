@@ -20,8 +20,6 @@
 - (id)name;
 - (id)description;
 - (void)dealloc;
-- (id)sections;
-- (unsigned int)flags;
 - (int)initprot;
 - (int)maxprot;
 - (unsigned long long)filesize;
@@ -30,5 +28,7 @@
 - (unsigned long long)vmaddr;
 - (BOOL)isSegment;
 - (id)sectionNamed:(id)arg1;
+- (id)sections;
+- (unsigned int)flags;
 
 @end

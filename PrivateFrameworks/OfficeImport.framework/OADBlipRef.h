@@ -25,8 +25,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setIndex:(long)arg1;
-- (long)index;
 - (BOOL)isNull;
 - (void)removeEffectAtIndex:(unsigned int)arg1;
 - (id)initWithIndex:(long)arg1 name:(id)arg2 blip:(id)arg3 effects:(id)arg4;
@@ -38,5 +36,7 @@
 - (void)setEffects:(id)arg1;
 - (id)effects;
 - (id)blip;
+- (void)setIndex:(long)arg1;
+- (long)index;
 
 @end

@@ -19,11 +19,6 @@
 @property(copy) NSString * videoID;
 
 
-- (void)setStopTime:(double)arg1;
-- (id)initWithMPAVItem:(id)arg1;
-- (id)videoID;
-- (double)stopTime;
-- (void)setVideoID:(id)arg1;
 - (id)path;
 - (void)dealloc;
 - (id)init;
@@ -31,5 +26,10 @@
 - (double)startTime;
 - (id)item;
 - (void)setStartTime:(double)arg1;
+- (void)setStopTime:(double)arg1;
+- (id)initWithMPAVItem:(id)arg1;
+- (id)videoID;
+- (double)stopTime;
+- (void)setVideoID:(id)arg1;
 
 @end

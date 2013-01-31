@@ -18,6 +18,16 @@
 @property(retain) UIImageView * rightCornerView;
 
 
+- (void)dealloc;
+- (id)init;
+- (id)popToRootViewControllerAnimated:(BOOL)arg1;
+- (id)initWithRootViewController:(id)arg1;
+- (void)didShowViewController:(id)arg1 animated:(BOOL)arg2;
+- (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
+- (id)popViewControllerAnimated:(BOOL)arg1;
+- (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)loadView;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)setRightCornerView:(id)arg1;
 - (id)rightCornerView;
 - (void)setLeftCornerView:(id)arg1;
@@ -30,15 +40,5 @@
 - (void)setDeferredTransitions:(id)arg1;
 - (void)setupGKNavigationController;
 - (id)topShadowView;
-- (void)dealloc;
-- (id)init;
-- (id)popToRootViewControllerAnimated:(BOOL)arg1;
-- (id)initWithRootViewController:(id)arg1;
-- (void)didShowViewController:(id)arg1 animated:(BOOL)arg2;
-- (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
-- (id)popViewControllerAnimated:(BOOL)arg1;
-- (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)loadView;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end

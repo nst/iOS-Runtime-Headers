@@ -18,12 +18,10 @@
 
 + (struct NSObject { Class x1; }*)albumListWithFilter:(int)arg1 inPhotoLibrary:(id)arg2;
 
+- (int)filter;
 - (id)identifier;
 - (id)managedObjectContext;
 - (void)dealloc;
-- (id)_typeDescription;
-- (void)setFilter:(int)arg1;
-- (int)filter;
 - (void)_invalidateAllAlbums;
 - (id)initWithFilter:(int)arg1 inPhotoLibrary:(id)arg2;
 - (void)albumListDidChange:(id)arg1;
@@ -39,5 +37,7 @@
 - (id)_prettyDescription;
 - (id)photoLibrary;
 - (id)albums;
+- (id)_typeDescription;
+- (void)setFilter:(int)arg1;
 
 @end

@@ -62,15 +62,6 @@
 @property <VKLabelMarkerDelegate> * delegate;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (struct shared_ptr<vk::Label> { struct Label {} *x1; struct __shared_weak_count {} *x2; })label;
-- (id)title;
-- (struct { double x1; double x2; double x3; double x4; })bounds;
-- (struct { double x1; double x2; })coordinate;
 - (id)featureHandles;
 - (id)manifestIdentifier;
 - (BOOL)hasBusinessID;
@@ -85,7 +76,16 @@
 - (struct CGPoint { float x1; float x2; })calloutAnchorPointWithCanvasSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setCalloutView:(id)arg1;
 - (BOOL)isPOI;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)dealloc;
+- (struct { double x1; double x2; })coordinate;
 - (void)setLeftCalloutAccessoryView:(id)arg1;
 - (void)setRightCalloutAccessoryView:(id)arg1;
+- (struct shared_ptr<vk::Label> { struct Label {} *x1; struct __shared_weak_count {} *x2; })label;
+- (id)title;
+- (struct { double x1; double x2; double x3; double x4; })bounds;
 
 @end

@@ -14,9 +14,9 @@
 + (id)rollbackRequestWithDictionary:(id)arg1 context:(id)arg2;
 + (id)rollbackRequest;
 
-- (id)groupIdentifier;
 - (id)encodedClassName;
 - (void)setRequestId:(id)arg1;
 - (id)requestId;
+- (id)groupIdentifier;
 
 @end

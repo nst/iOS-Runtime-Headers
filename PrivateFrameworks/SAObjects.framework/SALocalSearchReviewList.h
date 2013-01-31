@@ -16,9 +16,6 @@
 + (id)reviewListWithDictionary:(id)arg1 context:(id)arg2;
 + (id)reviewList;
 
-- (id)groupIdentifier;
-- (void)setRating:(id)arg1;
-- (id)rating;
 - (void)setTotalReviewCount:(id)arg1;
 - (id)totalReviewCount;
 - (void)setSelectReviews:(id)arg1;
@@ -28,5 +25,8 @@
 - (void)setProviderId:(id)arg1;
 - (id)providerId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
+- (void)setRating:(id)arg1;
+- (id)rating;
 
 @end

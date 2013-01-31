@@ -17,8 +17,8 @@
     } _flags;
 }
 
-+ (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;
++ (BOOL)accessInstanceVariablesDirectly;
 
 - (id)subarrayWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned int)retainCount;
@@ -30,15 +30,6 @@
 - (oneway void)release;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (unsigned int)count;
-- (void)_setShouldUseExtendedRelease:(BOOL)arg1;
-- (void)_setShouldRelease:(BOOL)arg1;
-- (id)managedObjectIDAtIndex:(unsigned int)arg1;
-- (unsigned int)indexOfManagedObjectForObjectID:(id)arg1;
-- (id)arrayFromObjectIDs;
-- (id*)_objectsPointer;
-- (id)newArrayFromObjectIDs;
-- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2 andFlags:(unsigned int)arg3;
-- (unsigned int)_flags;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
@@ -48,5 +39,14 @@
 - (unsigned int)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)getObjects:(id*)arg1;
+- (void)_setShouldUseExtendedRelease:(BOOL)arg1;
+- (void)_setShouldRelease:(BOOL)arg1;
+- (id)managedObjectIDAtIndex:(unsigned int)arg1;
+- (unsigned int)indexOfManagedObjectForObjectID:(id)arg1;
+- (id)arrayFromObjectIDs;
+- (id*)_objectsPointer;
+- (id)newArrayFromObjectIDs;
+- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2 andFlags:(unsigned int)arg3;
+- (unsigned int)_flags;
 
 @end

@@ -13,12 +13,12 @@
 + (id)enableShuffleWithDictionary:(id)arg1 context:(id)arg2;
 + (id)enableShuffle;
 
-- (id)groupIdentifier;
-- (BOOL)enable;
 - (void)setEnable:(BOOL)arg1;
 - (BOOL)requiresResponse;
 - (void)setTargetAppId:(id)arg1;
 - (id)targetAppId;
 - (id)encodedClassName;
+- (BOOL)enable;
+- (id)groupIdentifier;
 
 @end

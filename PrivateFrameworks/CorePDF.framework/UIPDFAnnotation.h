@@ -38,6 +38,13 @@
 
 + (id)newAnnotationWithPage:(id)arg1 fromArchive:(id)arg2;
 
+- (void)drawInContext:(struct CGContext { }*)arg1;
+- (id)archive;
+- (id)data;
+- (id)description;
+- (void)dealloc;
+- (id)init;
+- (int)annotationType;
 - (struct CGPath { }*)newPathFromQuadPoints;
 - (id)associatedAnnotationID;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })popUpAnnotationRect;
@@ -60,10 +67,6 @@
 - (void)setPageView:(id)arg1;
 - (id)pageView;
 - (int)annotationStyle;
-- (id)data;
-- (id)description;
-- (void)dealloc;
-- (id)init;
 - (void)setIndex:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })Rect;
 - (Class)viewClass;
@@ -82,8 +85,5 @@
 - (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (void)drawInContext:(struct CGContext { }*)arg1;
-- (id)archive;
-- (int)annotationType;
 
 @end

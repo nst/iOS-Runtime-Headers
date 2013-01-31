@@ -20,18 +20,21 @@
 
     UIViewController *_viewControllerForActionSheet;
     UIWindow *_windowForActionSheet;
+    BOOL _shouldPauseAfterDismissing;
     NSArray *_displayedRoutes;
 }
 
 
-- (void)showInPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 backgroundStyle:(int)arg3 animated:(BOOL)arg4 completionHandler:(id)arg5;
-- (BOOL)_isDeviceVideoRoute:(id)arg1;
-- (id)_availableRoutes;
-- (void)showWithValidInterfaceOrientationsBlock:(id)arg1 completionHandler:(id)arg2;
 - (void)dealloc;
 - (id)initWithType:(unsigned int)arg1;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)layoutSubviews;
+- (void)showInPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 backgroundStyle:(int)arg3 animated:(BOOL)arg4 completionHandler:(id)arg5;
+- (void)_debugButtonAction:(id)arg1;
+- (BOOL)_isDeviceVideoRoute:(id)arg1;
+- (id)_availableRoutes;
+- (BOOL)_shouldShowDebugButton;
+- (void)showWithValidInterfaceOrientationsBlock:(id)arg1 completionHandler:(id)arg2;
 
 @end

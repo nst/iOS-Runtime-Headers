@@ -13,10 +13,10 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)cleanUp;
-- (BOOL)initialize;
 - (void)deregisterForNetworkChanges;
 - (void)trySTUNDiscovery;
 - (void)registerForNetworkChanges;
+- (void)cleanUp;
+- (BOOL)initialize;
 
 @end

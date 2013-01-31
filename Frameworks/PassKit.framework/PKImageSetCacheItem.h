@@ -2,22 +2,22 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMutableSet, WLCardImages;
+@class PKPassImages, NSMutableSet;
 
 @interface PKImageSetCacheItem : NSObject  {
-    WLCardImages *_images;
+    PKPassImages *_images;
     NSMutableSet *_cardUniqueIDs;
 }
 
-@property(retain) WLCardImages * images;
+@property(retain) PKPassImages * images;
 @property(retain) NSMutableSet * cardUniqueIDs;
 
 
-- (void)setCardUniqueIDs:(id)arg1;
-- (id)cardUniqueIDs;
-- (id)initWithImages:(id)arg1 cardUniqueID:(id)arg2;
 - (void)dealloc;
 - (void)setImages:(id)arg1;
 - (id)images;
+- (void)setCardUniqueIDs:(id)arg1;
+- (id)cardUniqueIDs;
+- (id)initWithImages:(id)arg1 cardUniqueID:(id)arg2;
 
 @end

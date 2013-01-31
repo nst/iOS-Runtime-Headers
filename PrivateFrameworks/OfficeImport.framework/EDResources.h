@@ -22,13 +22,8 @@
 }
 
 
-- (void)dealloc;
-- (id)names;
-- (id)colors;
-- (void)setColors:(id)arg1;
-- (id)strings;
-- (id)links;
 - (id)border;
+- (void)dealloc;
 - (void)setThemes:(id)arg1;
 - (id)fills;
 - (id)alignmentInfos;
@@ -40,5 +35,10 @@
 - (id)fonts;
 - (id)styles;
 - (id)borders;
+- (id)names;
+- (id)colors;
+- (void)setColors:(id)arg1;
+- (id)strings;
+- (id)links;
 
 @end

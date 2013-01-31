@@ -15,6 +15,7 @@
 @property float verticalPadding;
 
 
+- (float)verticalPadding;
 - (void)dealloc;
 - (id)textView;
 - (void)setPlaceholder:(id)arg1;
@@ -24,6 +25,5 @@
 - (float)heightNeededForContentWidth:(float)arg1;
 - (float)_textViewWidthForContentWidth:(float)arg1;
 - (void)setVerticalPadding:(float)arg1;
-- (float)verticalPadding;
 
 @end

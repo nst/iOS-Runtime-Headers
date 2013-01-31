@@ -10,6 +10,7 @@
 }
 
 
+- (id)description;
 - (void)setResponseCode:(unsigned short)arg1;
 - (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3 parameter2:(unsigned long)arg4 parameter3:(unsigned long)arg5 parameter4:(unsigned long)arg6 parameter5:(unsigned long)arg7;
 - (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3 parameter2:(unsigned long)arg4 parameter3:(unsigned long)arg5 parameter4:(unsigned long)arg6;
@@ -39,6 +40,5 @@
 - (unsigned long)transactionID;
 - (id)contentForTCP;
 - (unsigned short)responseCode;
-- (id)description;
 
 @end

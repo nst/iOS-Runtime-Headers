@@ -21,8 +21,8 @@
 - (id)newNativeViewController;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)attributeKeys;
 - (id)style;
 - (void)setStyle:(id)arg1;
-- (id)attributeKeys;
 
 @end

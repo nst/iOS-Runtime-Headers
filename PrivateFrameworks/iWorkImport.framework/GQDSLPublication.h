@@ -23,11 +23,6 @@
 
 + (struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)appNamespace;
 
-- (void)setStylesheet:(id)arg1;
-- (id).cxx_construct;
-- (void)dealloc;
-- (id)init;
-- (id)stylesheet;
 - (struct __CFString { }*)createUpgradedPathForOldAssetPath:(struct __CFString { }*)arg1;
 - (struct __CFArray { }*)createUpgradedPathComponentsFromOldTemplatePathComponents:(struct __CFArray { }*)arg1;
 - (BOOL)hasFooters;
@@ -40,6 +35,11 @@
 - (void)initializeAppBundleResourcesUrl;
 - (struct __CFURL { }*)createUrlToAppBundleResource:(struct __CFString { }*)arg1 processorBundle:(struct __CFBundle { }*)arg2;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
+- (id).cxx_construct;
+- (void)dealloc;
+- (id)init;
 - (struct CGSize { float x1; float x2; })pageSize;
+- (id)stylesheet;
+- (void)setStylesheet:(id)arg1;
 
 @end

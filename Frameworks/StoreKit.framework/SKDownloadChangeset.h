@@ -24,23 +24,23 @@
 
 + (id)changesetWithDownloadID:(id)arg1 state:(int)arg2;
 
-- (void)setError:(id)arg1;
-- (void)setContentURL:(id)arg1;
-- (id)contentURL;
+- (void)setContentLength:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+- (void)setTimeRemaining:(id)arg1;
+- (id)timeRemaining;
+- (id)error;
+- (id)contentLength;
 - (id)progress;
 - (void)setProgress:(id)arg1;
 - (id)downloadID;
 - (void)setDownloadState:(id)arg1;
 - (void)setDownloadID:(id)arg1;
 - (id)downloadState;
-- (void)setContentLength:(id)arg1;
-- (id)contentLength;
-- (id)error;
-- (void)setTimeRemaining:(id)arg1;
-- (id)timeRemaining;
+- (id)contentURL;
+- (void)setContentURL:(id)arg1;
+- (void)setError:(id)arg1;
 
 @end

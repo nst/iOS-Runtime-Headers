@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIActivityViewController, NSArray;
+@class NSArray, UIActivityViewController;
 
 @interface UIActivityListViewController : UIViewController <UIPopoverControllerDelegate> {
-    NSArray *_activities;
     UIActivityViewController *_activityViewController;
+    NSArray *_activities;
 }
 
 @property UIActivityViewController * activityViewController;

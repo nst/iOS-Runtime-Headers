@@ -12,13 +12,15 @@
     NSSet *_guidSchemes;
     NSDictionary *_headerPatterns;
     double _invalidationTime;
+    BOOL _loadedFromDiskCache;
 }
 
 @property(readonly) NSSet * availableStorefrontItemKinds;
+@property(getter=isValid,readonly) BOOL valid;
 @property double invalidationTime;
+@property BOOL loadedFromDiskCache;
 @property(copy) SSURLBagContext * URLBagContext;
 @property(readonly) NSDictionary * URLBagDictionary;
-@property(getter=isValid,readonly) BOOL valid;
 @property(readonly) long long versionIdentifier;
 
 + (id)storeFrontURLBagKeyForItemKind:(id)arg1;
@@ -37,29 +39,20 @@
 + (id)_urlBagForContext:(id)arg1;
 + (id)URLBagForContext:(id)arg1 wasDiskCached:(BOOL*)arg2;
 + (void)_setURLBag:(id)arg1 forContext:(id)arg2;
-+ (void)_observeStoreFrontChanges;
++ (void)_observeExternalChanges;
 + (BOOL)_allowUnsignedBags;
 
-- (BOOL)_loadFromSignedDictionary:(id)arg1 returningError:(id*)arg2;
 - (id)networkConstraintsForDownloadKind:(id)arg1;
 - (id)searchQueryParametersForClientIdentifier:(id)arg1 networkType:(int)arg2;
 - (long long)versionIdentifier;
 - (id)URLForURL:(id)arg1 clientIdentifier:(id)arg2;
-- (void)invalidate;
-- (id)valueForKey:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)URLBagContext;
-- (id)initWithURLBagContext:(id)arg1;
-- (id)initWithContentsOfFile:(id)arg1;
-- (BOOL)isValid;
-- (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (id)urlForKey:(id)arg1;
+- (BOOL)loadedFromDiskCache;
 - (id)URLBagDictionary;
 - (id)sanitizedURLForURL:(id)arg1;
 - (id)availableStorefrontItemKinds;
 - (BOOL)loadFromDictionary:(id)arg1 returningError:(id*)arg2;
 - (void)setURLBagContext:(id)arg1;
+- (void)setLoadedFromDiskCache:(BOOL)arg1;
 - (BOOL)urlIsTrusted:(id)arg1;
 - (BOOL)shouldSendGUIDForURL:(id)arg1;
 - (id)copyExtraHeadersForURL:(id)arg1;
@@ -73,5 +66,16 @@
 - (id)_copyGUIDPatternsFromDictionary:(id)arg1;
 - (void)_setDictionary:(id)arg1;
 - (id)initWithRawDictionary:(id)arg1;
+- (void)invalidate;
+- (id)valueForKey:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (id)URLBagContext;
+- (id)initWithURLBagContext:(id)arg1;
+- (id)urlForKey:(id)arg1;
+- (BOOL)_loadFromSignedDictionary:(id)arg1 returningError:(id*)arg2;
+- (id)initWithContentsOfFile:(id)arg1;
+- (BOOL)isValid;
+- (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 
 @end

@@ -26,6 +26,7 @@
 
 - (id)description;
 - (void)dealloc;
+- (id)parent;
 - (id)standardizedURL;
 - (id)url;
 - (void)assertDescendantsLive;
@@ -76,6 +77,5 @@
 - (void)setSymbolicLinkDestination:(id)arg1;
 - (id)descendantForFileURL:(id)arg1;
 - (id)initWithParent:(id)arg1 name:(id)arg2 normalizedName:(id)arg3;
-- (id)parent;
 
 @end

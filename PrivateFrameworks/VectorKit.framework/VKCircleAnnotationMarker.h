@@ -12,13 +12,13 @@
 @property double distanceRadius;
 
 
-- (void)dealloc;
-- (id)init;
-- (void)prepareForReuse;
 - (void)setDistanceRadius:(double)arg1;
 - (double)distanceRadius;
 - (void)setColorRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
+- (void)dealloc;
+- (id)init;
 - (float)radius;
 - (void)setRadius:(float)arg1;
+- (void)prepareForReuse;
 
 @end

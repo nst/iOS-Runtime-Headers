@@ -30,15 +30,10 @@
 + (id)fallbackUserName;
 + (id)me;
 
-- (id)emails;
-- (id)email;
-- (id)lastName;
-- (id)firstName;
 - (id)nickname;
 - (id)guid;
 - (void)dealloc;
 - (id)init;
-- (id)person;
 - (id)fullName;
 - (id)bestIMHandle;
 - (BOOL)isIMHandleLoginIMHandle:(id)arg1;
@@ -54,5 +49,10 @@
 - (BOOL)addLoginIMHandle:(id)arg1;
 - (void)resetABPerson;
 - (BOOL)removeLoginIMHandle:(id)arg1;
+- (id)person;
+- (id)emails;
+- (id)email;
+- (id)lastName;
+- (id)firstName;
 
 @end

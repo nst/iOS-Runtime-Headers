@@ -17,9 +17,6 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)font;
-- (void)setFont:(id)arg1;
-- (id)fill;
 - (id)protection;
 - (void)setProtection:(id)arg1;
 - (void)setBorders:(id)arg1;
@@ -29,5 +26,8 @@
 - (id)contentFormat;
 - (id)alignmentInfo;
 - (void)setFill:(id)arg1;
+- (id)font;
+- (void)setFont:(id)arg1;
+- (id)fill;
 
 @end

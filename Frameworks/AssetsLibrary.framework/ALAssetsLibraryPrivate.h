@@ -18,10 +18,10 @@
 
 
 - (void)dealloc;
+- (id)photoLibrary;
 - (void)setIsValid:(BOOL)arg1;
 - (BOOL)isValid;
 - (id)assetsLibrary;
-- (id)photoLibrary;
 - (id)initWithAssetsLibrary:(id)arg1;
 - (void)photoLibraryDidChange:(id)arg1;
 - (void)setAssetsLibrary:(id)arg1;

@@ -16,9 +16,9 @@
     BOOL _scalesContentToFit;
     BOOL _needsReflow;
     BOOL _needsReload;
+    <ABPersonImageDataDelegate> *_imageDataDelegate;
     BOOL _multiplePhotoBackdropEnabled;
     BOOL _shouldPickBestImage;
-    <ABPersonImageDataDelegate> *_imageDataDelegate;
     <ABStyleProvider> *_styleProvider;
     BOOL _allowsEditing;
 }
@@ -38,9 +38,11 @@
 + (id)newImageWithName:(id)arg1;
 + (struct CGSize { float x1; float x2; })sizeForOptimalPerformance;
 
-- (id)overlayImage;
-- (id)maskImage;
 - (void)dealloc;
+- (void)setNeedsReload;
+- (void*)displayedPerson;
+- (void)setDisplayedPerson:(void*)arg1;
+- (void)reflow;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (BOOL)allowsEditing;
 - (void)paste:(id)arg1;
@@ -49,14 +51,15 @@
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)reload;
 - (void)layoutSubviews;
-- (void)setNeedsReload;
+- (id)overlayImage;
+- (id)maskImage;
 - (void)setScalesContentToFit:(BOOL)arg1;
 - (BOOL)scalesContentToFit;
-- (void)setImageDataDelegate:(id)arg1;
-- (id)imageDataDelegate;
 - (void)setShouldPickBestImage:(BOOL)arg1;
 - (BOOL)shouldPickBestImage;
 - (BOOL)multiplePhotoBackdropEnabled;
+- (void)setImageDataDelegate:(id)arg1;
+- (id)imageDataDelegate;
 - (void)abMenuControllerWillHide;
 - (void)abMenuControllerWillShow:(id)arg1;
 - (BOOL)abShouldShowMenu;
@@ -80,8 +83,5 @@
 - (void)setIsEditing:(BOOL)arg1 animate:(BOOL)arg2;
 - (id)styleProvider;
 - (void)setStyleProvider:(id)arg1;
-- (void*)displayedPerson;
-- (void)setDisplayedPerson:(void*)arg1;
-- (void)reflow;
 
 @end

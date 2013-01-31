@@ -14,10 +14,10 @@
 
 + (id)program;
 
-- (id)init;
 - (int)textureSampler;
 - (int)channel;
 - (void)setChannel:(int)arg1;
 - (void)setTextureSampler:(int)arg1;
+- (id)init;
 
 @end

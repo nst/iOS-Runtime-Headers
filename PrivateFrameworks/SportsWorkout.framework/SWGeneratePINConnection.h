@@ -11,10 +11,10 @@
 @property <SWSyncServiceConnectionDelegate><SWGeneratePINConnectionDelegate> * delegate;
 
 
-- (void)handleResponse:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)handleResponse:(id)arg1;
 - (id)initWithHost:(id)arg1 delegate:(id)arg2;
 
 @end

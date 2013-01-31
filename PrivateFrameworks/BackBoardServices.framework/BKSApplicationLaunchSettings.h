@@ -23,8 +23,9 @@
 @property BOOL checkForLeaks;
 
 
-- (void)setArguments:(id)arg1;
-- (void)setEnvironment:(id)arg1;
+- (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)setStandardOut:(id)arg1;
 - (void)setCheckForLeaks:(BOOL)arg1;
 - (void)setDisableASLR:(BOOL)arg1;
@@ -36,11 +37,10 @@
 - (BOOL)waitForDebugger;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)arguments;
 - (id)environment;
+- (void)setArguments:(id)arg1;
+- (void)setEnvironment:(id)arg1;
 - (id)standardError;
 - (void)setStandardError:(id)arg1;
 

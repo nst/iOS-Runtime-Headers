@@ -13,11 +13,11 @@
 + (id)startCorrectedSpeechRequestWithDictionary:(id)arg1 context:(id)arg2;
 + (id)startCorrectedSpeechRequest;
 
-- (id)groupIdentifier;
 - (void)setInteractionId:(id)arg1;
 - (id)interactionId;
 - (void)setSessionId:(id)arg1;
 - (id)sessionId;
 - (id)encodedClassName;
+- (id)groupIdentifier;
 
 @end

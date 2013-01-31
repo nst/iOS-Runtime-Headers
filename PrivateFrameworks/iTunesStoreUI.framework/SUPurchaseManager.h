@@ -28,9 +28,6 @@
 @property <SUPurchaseManagerDelegate> * delegate;
 
 
-- (id)userAgent;
-- (void)requestDidFinish:(id)arg1;
-- (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)purchaseScriptObject:(id)arg1;
 - (void)enqueueScriptPurchases:(id)arg1;
 - (id)copyPurchaseForScriptObject:(id)arg1;
@@ -82,8 +79,11 @@
 - (id)delegate;
 - (void)dealloc;
 - (id)init;
+- (void)setUserAgent:(id)arg1;
 - (void)endUpdates;
 - (void)beginUpdates;
-- (void)setUserAgent:(id)arg1;
+- (void)requestDidFinish:(id)arg1;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
+- (id)userAgent;
 
 @end

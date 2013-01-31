@@ -22,24 +22,24 @@
 @property unsigned int deliveryDuration;
 
 
+- (void)setHasDeliveryDuration:(BOOL)arg1;
+- (void)setDeliveryDuration:(unsigned int)arg1;
+- (unsigned int)deliveryDuration;
+- (BOOL)hasDeliveryDuration;
+- (BOOL)hasGuid;
+- (void)setGuid:(id)arg1;
 - (id)guid;
+- (void)copyTo:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (unsigned long long)timestamp;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
-- (void)copyTo:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setHasDeliveryDuration:(BOOL)arg1;
-- (void)setDeliveryDuration:(unsigned int)arg1;
-- (unsigned int)deliveryDuration;
-- (BOOL)hasDeliveryDuration;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
-- (BOOL)hasGuid;
-- (void)setGuid:(id)arg1;
+- (id)dictionaryRepresentation;
 
 @end

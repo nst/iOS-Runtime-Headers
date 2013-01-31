@@ -35,16 +35,6 @@
 @property(retain) UIColor * separatorColor;
 
 
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
-- (void)setSeparatorColor:(id)arg1;
-- (id)separatorColor;
-- (id)dataSource;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
-- (void)setDataSource:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_showCompleteSeasonButtonText;
 - (id)_newLabelWithFontSize:(float)arg1 bold:(BOOL)arg2;
 - (id)_completeMySeasonText;
@@ -55,5 +45,15 @@
 - (void)_reloadDownloadAction;
 - (BOOL)_shouldShowOfferButtonOrLabel;
 - (id)initWithStoreCompletionOffering:(id)arg1 showingMissingItems:(BOOL)arg2 offerVariant:(int)arg3;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)dealloc;
+- (void)setSeparatorColor:(id)arg1;
+- (id)separatorColor;
+- (id)dataSource;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
+- (void)setDataSource:(id)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

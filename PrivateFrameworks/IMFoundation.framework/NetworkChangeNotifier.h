@@ -31,11 +31,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)setStore:(struct __SCDynamicStore { }*)arg1;
-- (struct __SCDynamicStore { }*)store;
-- (id)myGatewayAddress;
-- (id)myIPAddress;
-- (int)linkQualityValueForInterfaceType:(unsigned int)arg1;
 - (BOOL)isNetworkUp;
 - (void)systemWillSleep;
 - (void)systemDidWake;
@@ -57,5 +52,10 @@
 - (void)_clearSharedDNSService;
 - (BOOL)_listenForChanges;
 - (void)_clearIPCache;
+- (id)myGatewayAddress;
+- (id)myIPAddress;
+- (int)linkQualityValueForInterfaceType:(unsigned int)arg1;
+- (void)setStore:(struct __SCDynamicStore { }*)arg1;
+- (struct __SCDynamicStore { }*)store;
 
 @end

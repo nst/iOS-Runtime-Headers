@@ -21,12 +21,12 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)color;
-- (void)setType:(int)arg1;
 - (id)colorReference;
 - (void)setDiagonalType:(int)arg1;
 - (int)diagonalType;
 - (BOOL)isEqualToBorder:(id)arg1;
 - (id)initWithResources:(id)arg1;
+- (id)color;
+- (void)setType:(int)arg1;
 
 @end

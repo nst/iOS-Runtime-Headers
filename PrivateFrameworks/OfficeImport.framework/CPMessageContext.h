@@ -11,7 +11,6 @@
     NSMutableDictionary *m_placeholderToObjectIdMap;
 }
 
-+ (void)initialize;
 + (void)restoreObjectStack:(unsigned int)arg1;
 + (unsigned int)saveObjectStack;
 + (void)replacePlaceholdersWithObjects;
@@ -33,6 +32,7 @@
 + (void)reportObjectOrPlaceholder:(id)arg1 withWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg2 parameters:(void*)arg3;
 + (void)reportWarningException:(id)arg1;
 + (void)reportWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
++ (void)initialize;
 
 - (void)dealloc;
 - (id)init;

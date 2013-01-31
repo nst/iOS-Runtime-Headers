@@ -29,7 +29,6 @@
 @property(readonly) NSString * titleForDerivatives;
 @property(readonly) BOOL hasAlbumSpecifier;
 
-+ (void)initialize;
 + (BOOL)isMediaEntityTypeGroupedByDefault:(int)arg1;
 + (id)mediaEntitySpecifierForMediaItem:(id)arg1;
 + (id)_mediaEntitySpecifierWithArtist:(id)arg1 albumPID:(unsigned long long)arg2 baseMediaQuery:(id)arg3;
@@ -41,13 +40,8 @@
 + (id)mediaEntitySpecifierWithPlaylistPersistentUID:(unsigned long long)arg1;
 + (id)mediaQueryWithEntitiesOfType:(int)arg1 givenSpecifier:(id)arg2;
 + (id)mediaEntitySpecifierForAudibleAudioBooks;
++ (void)initialize;
 
-- (id)description;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)hasAlbumSpecifier;
 - (id)mediaEntitySpecifierByRemovingTopLevel;
 - (id)playlistNameOfSpecifiedPlaylist;
@@ -56,5 +50,11 @@
 - (void)_lookupPlaylistNameIfNecessary;
 - (id)titleForDerivatives;
 - (unsigned long long)specifiedPlaylistPersistentUID;
+- (id)description;
+- (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

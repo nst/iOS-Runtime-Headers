@@ -31,29 +31,29 @@
 @property BOOL private;
 
 
-- (BOOL)isPurchased;
-- (void)setPurchased:(BOOL)arg1;
+- (BOOL)private;
 - (id)artworkFile;
 - (void)setRingtone:(BOOL)arg1;
 - (void)setPrivate:(BOOL)arg1;
 - (void)setArtworkFile:(id)arg1;
+- (void)setPurchased:(BOOL)arg1;
 - (void)setPlaybackProperties:(id)arg1;
 - (BOOL)loadFromPropertyList:(id)arg1;
 - (BOOL)protected;
 - (BOOL)isRingtone;
+- (BOOL)isPurchased;
 - (id)playbackProperties;
 - (id)path;
 - (id)identifier;
 - (void)setName:(id)arg1;
 - (id)name;
 - (void)dealloc;
+- (void)setProtected:(BOOL)arg1;
+- (void)setPid:(id)arg1;
+- (id)pid;
 - (void)setPath:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (unsigned int)duration;
 - (void)setDuration:(unsigned int)arg1;
-- (void)setPid:(id)arg1;
-- (id)pid;
-- (void)setProtected:(BOOL)arg1;
-- (BOOL)private;
 
 @end

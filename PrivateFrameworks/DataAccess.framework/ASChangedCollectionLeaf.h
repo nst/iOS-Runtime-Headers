@@ -29,12 +29,9 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)setStatus:(id)arg1;
-- (id)status;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (int)changeType;
 - (id)clientID;
+- (void)setClientID:(id)arg1;
+- (int)changeType;
 - (BOOL)isResponse;
 - (void)setValidateOpeningTokens:(BOOL)arg1;
 - (id)serverID;
@@ -43,9 +40,12 @@
 - (int)dataclass;
 - (void)appendActiveSyncDataForTask:(id)arg1 toWBXMLData:(id)arg2;
 - (void)setServerID:(id)arg1;
-- (void)setClientID:(id)arg1;
 - (void)setApplicationData:(id)arg1;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
+- (void)setStatus:(id)arg1;
+- (id)status;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setChangeType:(int)arg1;
 
 @end

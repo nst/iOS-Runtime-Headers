@@ -14,12 +14,12 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (float)angle;
-- (void)setAngle:(float)arg1;
 - (BOOL)isScaledOverridden;
 - (BOOL)isAngleOverridden;
 - (id)initWithDefaults;
 - (BOOL)scaled;
 - (void)setScaled:(BOOL)arg1;
+- (float)angle;
+- (void)setAngle:(float)arg1;
 
 @end

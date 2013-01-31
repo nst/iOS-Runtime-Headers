@@ -13,11 +13,11 @@
 @property(readonly) DOMCSSPrimitiveValue * left;
 
 
-- (void)dealloc;
-- (void)finalize;
 - (id)top;
 - (id)right;
 - (id)left;
 - (id)bottom;
+- (void)dealloc;
+- (void)finalize;
 
 @end

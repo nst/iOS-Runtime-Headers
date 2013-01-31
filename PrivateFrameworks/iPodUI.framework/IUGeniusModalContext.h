@@ -13,8 +13,6 @@
 
 
 - (void)_cancelAction:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (BOOL)shouldSetEditing:(BOOL)arg1;
 - (void)handleSelectionForIndex:(unsigned int)arg1 dataSource:(id)arg2;
 - (id)newTabBarController;
@@ -29,5 +27,7 @@
 - (BOOL)canHandleSelectionForIndex:(unsigned int)arg1 dataSource:(id)arg2;
 - (id)copyQueryForQuery:(id)arg1;
 - (int)allowedMediaTypesForMediaTypes:(int)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end

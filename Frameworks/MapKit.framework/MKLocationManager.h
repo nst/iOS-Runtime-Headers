@@ -109,21 +109,18 @@
 + (id)sharedLocationManager;
 + (void)setConsidersWiFiInAirplaneMode:(BOOL)arg1;
 
-- (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
-- (BOOL)isLocationServicesPreferencesDialogEnabled;
-- (void)dismissHeadingCalibrationDisplay;
-- (int)headingOrientation;
-- (double)expectedGpsUpdateInterval;
-- (double)desiredAccuracy;
-- (double)distanceFilter;
-- (id)lastLocation;
-- (void)setLastLocation:(id)arg1;
 - (void)setActivityType:(int)arg1;
-- (BOOL)isWiFiEnabled;
+- (id)heading;
+- (void)setHeading:(id)arg1;
 - (void)reset;
 - (void)dealloc;
 - (id)init;
-- (id)currentLocation;
+- (BOOL)locationManagerShouldDisplayHeadingCalibration:(id)arg1;
+- (void)setHeadingOrientation:(int)arg1;
+- (void)setDesiredAccuracy:(double)arg1;
+- (void)setDistanceFilter:(double)arg1;
+- (void)_countryProvidersDidChange:(id)arg1;
+- (BOOL)hasLocation;
 - (int)activityType;
 - (id)effectiveBundle;
 - (void)setEnabled:(BOOL)arg1;
@@ -131,6 +128,7 @@
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
 - (void)applicationDidBecomeActive:(id)arg1;
+- (BOOL)isWiFiEnabled;
 - (void)setLogStartStopLocationUpdates:(BOOL)arg1;
 - (BOOL)logStartStopLocationUpdates;
 - (BOOL)allowUpdateCoalescing;
@@ -204,6 +202,7 @@
 - (void)_syncLocationProviderWithTracking;
 - (void)setEffectiveBundle:(id)arg1;
 - (BOOL)isLocationServicesAvailable;
+- (BOOL)_canHarvestTrafficWithBundle:(id)arg1;
 - (BOOL)isLocationServicesRestricted;
 - (BOOL)isLocationServicesDenied;
 - (BOOL)isAirplaneModeBlockingLocation;
@@ -215,13 +214,15 @@
 - (void)wiFiStatusChanged:(id)arg1;
 - (void)_useCoreLocationProvider;
 - (void)setLocationProvider:(id)arg1;
-- (id)heading;
-- (BOOL)locationManagerShouldDisplayHeadingCalibration:(id)arg1;
-- (void)setHeadingOrientation:(int)arg1;
-- (void)setDesiredAccuracy:(double)arg1;
-- (void)setDistanceFilter:(double)arg1;
-- (void)setHeading:(id)arg1;
-- (void)_countryProvidersDidChange:(id)arg1;
-- (BOOL)hasLocation;
+- (id)lastLocation;
+- (void)setLastLocation:(id)arg1;
+- (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
+- (BOOL)isLocationServicesPreferencesDialogEnabled;
+- (void)dismissHeadingCalibrationDisplay;
+- (int)headingOrientation;
+- (double)expectedGpsUpdateInterval;
+- (double)desiredAccuracy;
+- (double)distanceFilter;
+- (id)currentLocation;
 
 @end

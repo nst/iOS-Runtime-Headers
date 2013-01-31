@@ -18,8 +18,26 @@
 
 + (BOOL)supportsFullscreenDisplay;
 
-- (void)setPlayer:(id)arg1;
-- (void)setItem:(id)arg1;
+- (BOOL)ownsTransportControls;
+- (id)newOverlayViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)showOverlayView;
+- (void)_layoutVideoView;
+- (void)_showOverlayView:(BOOL)arg1;
+- (id)initWithTransportControls:(BOOL)arg1;
+- (void)setTransportControlsHeight:(float)arg1;
+- (void)_removeOverlayView;
+- (void)_handleSwipeRight;
+- (void)dealloc;
+- (id)init;
+- (id)_overlayView;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)setNavigationBar:(id)arg1;
+- (id)navigationBar;
+- (int)statusBarStyle;
+- (BOOL)isStatusBarHidden;
 - (void)transportControlsDidResize:(id)arg1;
 - (void)endTransitionOverlayHidingWithTransferedOverlayView:(id)arg1;
 - (id)copyOverlayViewForTransitionToItem:(id)arg1;
@@ -43,26 +61,8 @@
 - (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2 force:(BOOL)arg3;
 - (id)videoOverlayView;
+- (void)setItem:(id)arg1;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)loadView;
-- (void)setNavigationBar:(id)arg1;
-- (id)navigationBar;
-- (int)statusBarStyle;
-- (BOOL)isStatusBarHidden;
-- (id)_overlayView;
-- (BOOL)ownsTransportControls;
-- (void)_layoutVideoView;
-- (void)_showOverlayView:(BOOL)arg1;
-- (id)initWithTransportControls:(BOOL)arg1;
-- (void)setTransportControlsHeight:(float)arg1;
-- (id)newOverlayViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)showOverlayView;
-- (void)_removeOverlayView;
-- (void)_handleSwipeRight;
+- (void)setPlayer:(id)arg1;
 
 @end

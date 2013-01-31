@@ -18,12 +18,11 @@
 @property int compressedSizeValue;
 @property(retain) PLManagedAsset * asset;
 
-+ (id)entityName;
 + (id)insertInManagedObjectContext:(id)arg1;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
++ (id)entityName;
 
-- (id)objectID;
 - (void)setPrimitiveCompressedSizeValue:(int)arg1;
 - (int)primitiveCompressedSizeValue;
 - (void)setCompressedSizeValue:(int)arg1;
@@ -32,5 +31,6 @@
 - (short)primitiveIndexValue;
 - (short)indexValue;
 - (void)setIndexValue:(short)arg1;
+- (id)objectID;
 
 @end

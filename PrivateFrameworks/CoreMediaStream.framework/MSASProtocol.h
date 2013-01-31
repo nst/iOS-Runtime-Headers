@@ -27,10 +27,9 @@
 @property BOOL isShuttingDown;
 
 
-- (void)setBaseURL:(id)arg1;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)baseURL;
+- (id)personID;
 - (void)setPendingConnectionsGroup:(id)arg1;
 - (id)pendingConnectionsGroup;
 - (void)setPendingConnectionsQueue:(id)arg1;
@@ -107,6 +106,7 @@
 - (void)shutDownCompletionBlock:(id)arg1;
 - (id)workQueue;
 - (id)initWithPersonID:(id)arg1;
-- (id)personID;
+- (id)baseURL;
+- (void)setBaseURL:(id)arg1;
 
 @end

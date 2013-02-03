@@ -30,10 +30,9 @@
 + (void)_flushCacheOnMemoryWarning:(id)arg1;
 + (void)_flushSharedImageCache;
 + (id)_highlightImage;
-+ (id)_iconForResourceProxy:(id)arg1 variant:(NSInteger)arg2 scale:(float)arg3;
-+ (id)_iconForResourceProxy:(id)arg1 variant:(NSInteger)arg2;
++ (id)_iconForResourceProxy:(id)arg1 format:(NSInteger)arg2;
++ (id)_iconForResourceProxy:(id)arg1 variant:(NSInteger)arg2 variantsScale:(float)arg3;
 + (NSInteger)_iconVariantForUIApplicationIconFormat:(NSInteger)arg1 scale:(float*)arg2;
-+ (NSInteger)_iconVariantForUIApplicationIconFormat:(NSInteger)arg1;
 + (id)_imageWithColor:(BOOL)arg1;
 + (id)_imageWithContentsOfFileIfPathExists:(id)arg1;
 + (void)_initializeSafeCategory;
@@ -78,7 +77,6 @@
 - (void*)PL_imageContents;
 - (id)_applicationIconImageForFormat:(NSInteger)arg1 precomposed:(BOOL)arg2 scale:(float)arg3;
 - (id)_applicationIconImageForFormat:(NSInteger)arg1 precomposed:(BOOL)arg2;
-- (id)_applicationIconImagePrecomposed:(BOOL)arg1;
 - (id)_automationID;
 - (id)_bezeledImageWithShadowRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4 fillRed:(float)arg5 green:(float)arg6 blue:(float)arg7 alpha:(float)arg8 drawShadow:(BOOL)arg9;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentStretch;
@@ -93,6 +91,7 @@
 - (id)_initWithIOSurface:(struct __IOSurface { }*)arg1 scale:(float)arg2 orientation:(NSInteger)arg3;
 - (BOOL)_isCached;
 - (BOOL)_isNamed;
+- (BOOL)_isStretchable;
 - (id)_mapkit_createImagesOfSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGColor { }*)_patternColor;
 - (void)_setCached:(BOOL)arg1;
@@ -146,6 +145,7 @@
 - (void)setCacheNameKey:(id)arg1;
 - (void)setCacheSizeKey:(id)arg1;
 - (struct CGSize { float x1; float x2; })size;
+- (id)stretchableImageWithLeftCapWidth:(NSInteger)arg1 rightCapWidth:(NSInteger)arg2;
 - (id)stretchableImageWithLeftCapWidth:(NSInteger)arg1 topCapHeight:(NSInteger)arg2;
 - (NSInteger)topCapHeight;
 

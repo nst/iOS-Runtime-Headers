@@ -7,7 +7,7 @@
 
 + (void)_initializeSafeCategory;
 
-- (BOOL)_accessibilityIgnoresMouseEvents;
+- (BOOL)accessibilityTreeHidden;
 - (BOOL)isAccessibilityElement;
 
 @end

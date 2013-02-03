@@ -27,6 +27,7 @@
 
 - (void)_didCompleteTransition:(BOOL)arg1;
 - (void)_didStartTransition;
+- (BOOL)_isContainedByTransitioningView;
 - (void)_startTransition:(NSInteger)arg1 withDuration:(float)arg2;
 - (void)_transitionDidStop:(id)arg1 finished:(id)arg2;
 - (void)dealloc;

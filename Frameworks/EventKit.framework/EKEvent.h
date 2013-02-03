@@ -37,6 +37,7 @@
     NSURL *_url;
 }
 
+@property(readonly) NSDate *_startDate;
 @property(copy) NSArray *alarms;
 @property(readonly) NSArray *attendees;
 @property(retain) EKCalendar *calendar;
@@ -54,7 +55,12 @@
 @property(readonly) BOOL isDetached;
 @property(readonly) NSInteger status;
 
++ (void)addEvent:(id)arg1 toStore:(id)arg2;
++ (void)daemonRestarted;
 + (id)eventWithEventStore:(id)arg1;
++ (void)removeEvent:(id)arg1 fromStore:(id)arg2;
++ (void)storeClosed:(id)arg1;
++ (void)storeOpened:(id)arg1;
 
 - (id)URL;
 - (id)_alarms;
@@ -75,6 +81,7 @@
 - (id)_recurrenceRules;
 - (void)_sendModifiedNote;
 - (void)_setStoreInternal:(id)arg1;
+- (id)_startDate;
 - (void)_storeClosed;
 - (BOOL)_validateAlarmIntervalConstrainedToRecurrenceInterval:(NSInteger)arg1;
 - (BOOL)_validateDatesAndRecurrencesGivenSpan:(NSInteger)arg1 error:(id*)arg2;

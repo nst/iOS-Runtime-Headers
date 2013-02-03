@@ -12,9 +12,11 @@
 @property(retain) NSArray *invalidDownloads;
 @property(retain) NSArray *validDownloads;
 
+- (id)copyPropertyListEncoding;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (id)invalidDownloads;
 - (void)setInvalidDownloads:(id)arg1;
 - (void)setValidDownloads:(id)arg1;

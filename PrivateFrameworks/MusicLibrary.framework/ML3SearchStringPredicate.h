@@ -19,7 +19,11 @@
 - (void)bindToSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout NSInteger*)arg2;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (NSUInteger)hash;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithConcatenatedProperties:(id)arg1 searchString:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (id)properties;
 - (id)searchString;
 - (void)setProperties:(id)arg1;

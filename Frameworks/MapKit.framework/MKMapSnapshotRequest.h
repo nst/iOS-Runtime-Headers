@@ -21,13 +21,15 @@
     struct CGPoint { 
         float x; 
         float y; 
+     /* Encoded args for previous method: v12@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@}8 */
+     /* Encoded args for previous method: v12@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@}8 */
      /* Encoded args for previous method: v16@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@}8@12 */
-     /* Encoded args for previous method: v12@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@}8 */
-     /* Encoded args for previous method: v12@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@}8 */
     id _context;
     } _coordinate;
     MKMapSnapshotCreator *_delegate;
     UIImage *_image;
+    NSUInteger _maxX;
+    NSUInteger _maxY;
     NSUInteger _minX;
     NSUInteger _minY;
     BOOL _paused;
@@ -35,6 +37,7 @@
     id _requester;
     } _size;
         } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; } *_tileRequester;
+    NSUInteger _zoomAdd;
     NSUInteger _zoomLevel;
 }
 

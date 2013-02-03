@@ -13,7 +13,6 @@
 @property(readonly) NSArray *audioTracks;
 
 + (id)assetReaderAudioMixOutputWithAudioTracks:(id)arg1 audioSettings:(id)arg2;
-+ (BOOL)canRequestCompressedSamplesForAudioTracks:(id)arg1 withAudioSettings:(id)arg2;
 
 - (id)_asset;
 - (id)_audioVolumeCurveForTrack:(id)arg1;

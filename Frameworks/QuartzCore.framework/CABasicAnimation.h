@@ -6,10 +6,8 @@
 }
 
 @property(retain) id byValue;
-@property(readonly) NSInteger direction;
 @property float endAngle;
 @property(retain) id fromValue;
-@property(readonly) BOOL isCurlAnimation;
 @property BOOL roundsToInteger;
 @property float startAngle;
 @property(retain) id toValue;
@@ -18,11 +16,8 @@
 - (void)CA_prepareRenderValue;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
 - (id)byValue;
-- (NSInteger)direction;
 - (float)endAngle;
 - (id)fromValue;
-- (BOOL)isCurlAnimation;
-- (void)reverseValues;
 - (BOOL)roundsToInteger;
 - (void)setByValue:(id)arg1;
 - (void)setEndAngle:(float)arg1;

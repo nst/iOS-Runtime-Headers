@@ -5,8 +5,11 @@
 @class MPFullScreenVideoOverlay;
 
 @interface MPFullScreenVideoViewController : MPAbstractFullScreenVideoViewController {
+    BOOL _inhibitOverlay;
     MPFullScreenVideoOverlay *_overlayView;
 }
+
+@property BOOL inhibitOverlay;
 
 + (void)_initializeSafeCategory;
 
@@ -18,6 +21,8 @@
 - (id)createChapterFlipTransition;
 - (void)dealloc;
 - (void)hideOverlayAnimated:(BOOL)arg1;
+- (BOOL)inhibitOverlay;
+- (id)init;
 - (void)itemTypeAvailableNotification:(id)arg1;
 - (void)noteIgnoredChangeTypes:(NSUInteger)arg1;
 - (void)overlayTappedBackButton:(id)arg1;
@@ -28,6 +33,7 @@
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
 - (void)setDesiredParts:(NSUInteger)arg1 animate:(BOOL)arg2;
 - (void)setDisabledParts:(NSUInteger)arg1;
+- (void)setInhibitOverlay:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)setTVOutEnabled:(BOOL)arg1;
 - (void)setVisibleParts:(NSUInteger)arg1 animate:(BOOL)arg2;

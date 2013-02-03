@@ -2,25 +2,33 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSString, CoreDAVProp;
+@class CoreDAVErrorItem, NSString, CoreDAVProp;
 
 @interface CoreDAVPropStat : CoreDAVItem {
+    CoreDAVErrorItem *_errorItem;
     CoreDAVProp *_prop;
+    NSString *_responseDescription;
     NSString *_status;
 }
 
+@property(retain) CoreDAVErrorItem *errorItem;
 @property(retain) CoreDAVProp *prop;
+@property(retain) NSString *responseDescription;
 @property(retain) NSString *status;
 
 + (BOOL)acceptsTopLevelLeaves;
-+ (BOOL)ignoresUnknownChildren;
++ (BOOL)errorOnUnknownChildren;
 + (BOOL)parsingWithSubItems;
 
 - (id)copyCoreDAVParseRules;
 - (void)dealloc;
 - (id)description;
+- (id)errorItem;
 - (id)prop;
+- (id)responseDescription;
+- (void)setErrorItem:(id)arg1;
 - (void)setProp:(id)arg1;
+- (void)setResponseDescription:(id)arg1;
 - (void)setStatus:(id)arg1;
 - (id)status;
 

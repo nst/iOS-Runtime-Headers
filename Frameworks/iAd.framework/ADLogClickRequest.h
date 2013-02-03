@@ -2,34 +2,34 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class NSString;
+@class NSString, NSData;
 
 @interface ADLogClickRequest : PBRequest {
     NSString *_clickContext;
-    NSString *_clickIdentifier;
     BOOL _hasImpressionSequence;
     BOOL _hasOverclickCount;
+    NSData *_impressionIdentifierData;
     NSInteger _impressionSequence;
     NSInteger _overclickCount;
 }
 
 @property(retain) NSString *clickContext;
-@property(retain) NSString *clickIdentifier;
+@property(retain) NSData *impressionIdentifierData;
 @property(readonly) BOOL hasClickContext;
-@property(readonly) BOOL hasClickIdentifier;
+@property(readonly) BOOL hasImpressionIdentifierData;
 @property(readonly) BOOL hasImpressionSequence;
 @property(readonly) BOOL hasOverclickCount;
 @property NSInteger impressionSequence;
 @property NSInteger overclickCount;
 
 - (id)clickContext;
-- (id)clickIdentifier;
 - (void)dealloc;
 - (id)description;
 - (BOOL)hasClickContext;
-- (BOOL)hasClickIdentifier;
+- (BOOL)hasImpressionIdentifierData;
 - (BOOL)hasImpressionSequence;
 - (BOOL)hasOverclickCount;
+- (id)impressionIdentifierData;
 - (NSInteger)impressionSequence;
 - (id)init;
 - (NSInteger)overclickCount;
@@ -37,7 +37,7 @@
 - (NSUInteger)requestTypeCode;
 - (Class)responseClass;
 - (void)setClickContext:(id)arg1;
-- (void)setClickIdentifier:(id)arg1;
+- (void)setImpressionIdentifierData:(id)arg1;
 - (void)setImpressionSequence:(NSInteger)arg1;
 - (void)setOverclickCount:(NSInteger)arg1;
 - (void)writeTo:(id)arg1;

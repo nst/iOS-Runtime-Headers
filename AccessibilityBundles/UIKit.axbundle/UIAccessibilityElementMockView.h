@@ -12,14 +12,20 @@
 @property <UIAccessibilityElementMockViewDelegateProtocol> *delegate;
 @property(retain) UIView *view;
 
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityBoundsForRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)_accessibilityLineNumberAndColumnForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })_accessibilityMaxScrubberPosition;
 - (struct CGPoint { float x1; float x2; })_accessibilityMinScrubberPosition;
+- (NSInteger)_accessibilityPageControlCount;
+- (NSInteger)_accessibilityPageControlIndex;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilityRangeForLineNumberAndColumn:(id)arg1;
 - (void)_accessibilityScrollToVisible;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
 - (void)_accessibilitySetSelectedTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (id)_accessibilityTextViewTextOperationResponder;
 - (id)_accessibilityUserTestingElementType;
+- (id)_accessibilityUserTestingParent;
 - (void)accessibilityActivate;
 - (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
 - (NSInteger)accessibilityCompareGeometry:(id)arg1;
@@ -30,6 +36,7 @@
 - (void)accessibilityElementDidLoseFocus;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (id)accessibilityHint;
+- (id)accessibilityIdentification;
 - (void)accessibilityIncrement;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;

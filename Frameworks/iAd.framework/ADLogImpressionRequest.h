@@ -2,30 +2,30 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class NSString;
+@class NSData;
 
 @interface ADLogImpressionRequest : PBRequest {
     BOOL _hasImpressionSequence;
-    NSString *_impressionIdentifier;
+    NSData *_impressionIdentifierData;
     NSInteger _impressionSequence;
 }
 
-@property(retain) NSString *impressionIdentifier;
-@property(readonly) BOOL hasImpressionIdentifier;
+@property(retain) NSData *impressionIdentifierData;
+@property(readonly) BOOL hasImpressionIdentifierData;
 @property(readonly) BOOL hasImpressionSequence;
 @property NSInteger impressionSequence;
 
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasImpressionIdentifier;
+- (BOOL)hasImpressionIdentifierData;
 - (BOOL)hasImpressionSequence;
-- (id)impressionIdentifier;
+- (id)impressionIdentifierData;
 - (NSInteger)impressionSequence;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (NSUInteger)requestTypeCode;
 - (Class)responseClass;
-- (void)setImpressionIdentifier:(id)arg1;
+- (void)setImpressionIdentifierData:(id)arg1;
 - (void)setImpressionSequence:(NSInteger)arg1;
 - (void)writeTo:(id)arg1;
 

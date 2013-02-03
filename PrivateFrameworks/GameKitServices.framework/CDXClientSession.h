@@ -14,6 +14,7 @@
     NSInteger retransmitAttempts_;
     NSTimer *retransmitTimer_;
     unsigned short seq_;
+    NSData *sessionKeyPrepped_;
     NSData *sessionKey_;
     NSData *ticket_;
 }

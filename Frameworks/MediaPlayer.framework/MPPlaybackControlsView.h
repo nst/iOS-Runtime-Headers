@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIActivityIndicatorView, MPDetailSlider, MPButton, UILabel, <MPPlaybackControlsDelegate>, UIView, MPItem, CABasicAnimation;
+@class MPTimeMarker, UIActivityIndicatorView, MPDetailSlider, MPButton, UILabel, <MPPlaybackControlsDelegate>, UIView, MPItem, CABasicAnimation;
 
 @interface MPPlaybackControlsView : UIView <MPDetailSliderDelegate> {
     unsigned int _wantsTick : 1;
@@ -19,6 +19,7 @@
     MPButton *_geniusButton;
     MPItem *_item;
     MPButton *_mailButton;
+    MPTimeMarker *_markerForProgressControlDuration;
     MPButton *_playbackSpeedButton;
     MPDetailSlider *_progressControl;
     double _progressOffset;
@@ -65,6 +66,7 @@
 - (void)_tickNotification:(id)arg1;
 - (void)_updateButtonVisibility;
 - (void)_updateForPlaybackSpeed;
+- (double)_updatedDisplayDurationForTime:(double)arg1;
 - (void)_validityChangedNotification:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)createButtonForPart:(NSUInteger)arg1;

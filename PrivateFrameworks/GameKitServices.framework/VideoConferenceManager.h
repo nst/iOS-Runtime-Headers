@@ -17,6 +17,7 @@
     BOOL enableSpeakerPhone;
     NSInteger encodeBitrate;
     struct tagHANDLE { NSInteger x1; } *hAUIO;
+    struct tagHANDLE { NSInteger x1; } *hSIP;
     NSInteger internalSampleRate;
     BOOL isForcingAudioBitrate;
     BOOL isTetheredDisplayMode;
@@ -24,7 +25,7 @@
     GKNATObserver *natObserver;
     ICEResultWaitQueue *resultQueue;
     BOOL shouldSetupAudioSession;
-    HandleWrapper *sipWrapper;
+    NSInteger sipRefCount;
     } stateLock;
     NSMutableArray *vcList;
 }
@@ -42,7 +43,7 @@
 
 + (id)defaultVideoConferenceManager;
 
-- (id)SIPHandle;
+- (struct tagHANDLE { NSInteger x1; }*)SIPHandle;
 - (id)activeConference;
 - (void)addVideoConference:(id)arg1;
 - (NSInteger)clientPID;
@@ -50,6 +51,7 @@
 - (id)conferenceForIncomingConnectionResult:(struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; NSUInteger x12; }*)arg1;
 - (id)conferenceForParticipantID:(id)arg1;
 - (id)conferenceWithMic;
+- (void)createSIP;
 - (void)enableMetering:(BOOL)arg1 isInputMeter:(BOOL)arg2;
 - (BOOL)forceBufferDuration:(float*)arg1;
 - (BOOL)forceBufferFrames:(NSInteger*)arg1;
@@ -79,7 +81,9 @@
 - (void)setupAudioSessionProperties:(NSInteger)arg1;
 - (BOOL)shouldSetupAudioSession;
 - (BOOL)startAudioIO:(struct AudioStreamBasicDescription { double x1; NSUInteger x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; NSUInteger x6; NSUInteger x7; NSUInteger x8; NSUInteger x9; })arg1 sampleRate:(NSInteger)arg2 minSamplesPerFrame:(NSInteger)arg3 audioBundle:(NSInteger)arg4 error:(id*)arg5;
+- (void)startSIP;
 - (BOOL)stopAudioIO;
+- (void)stopSIP;
 - (BOOL)tearDownAudioIO:(BOOL)arg1;
 - (id)vcList;
 

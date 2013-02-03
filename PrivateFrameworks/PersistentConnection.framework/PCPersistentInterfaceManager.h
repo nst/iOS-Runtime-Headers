@@ -15,6 +15,7 @@
     void *_ctServerConnection;
     struct __CFDictionary { } *_delegatesAndRunLoops;
     void *_interfaceAssertion;
+    BOOL _isInCall;
     BOOL _isInternetReachable;
     BOOL _isInternetReachableViaWiFi;
     BOOL _isPowerStateDetectionSupported;
@@ -38,6 +39,7 @@
 @property(readonly) NSString *WWANInterfaceName;
 @property(readonly) BOOL areAllNetworkInterfacesDisabled;
 @property(readonly) BOOL doesWWANInterfaceExist;
+@property(readonly) BOOL isInCall;
 @property(readonly) BOOL isInternetReachable;
 @property(readonly) BOOL isInternetReachableViaWiFi;
 @property(readonly) BOOL isPowerStateDetectionSupported;
@@ -51,12 +53,12 @@
 + (id)sharedInstance;
 
 - (id)WWANInterfaceName;
+- (id)WiFiInterfaceName;
 - (void)_adjustWakeOnWiFi;
 - (void)_adjustWakeOnWiFiLocked;
 - (void)_adjustWiFiAutoAssociation;
 - (void)_adjustWiFiAutoAssociationLocked;
 - (BOOL)_allowBindingToWWAN;
-- (BOOL)_bindPushToWWAN;
 - (void)_createCTConnection;
 - (void)_createReachabilityMonitor;
 - (void)_createWiFiManager;
@@ -78,15 +80,16 @@
 - (BOOL)_wwanRSSIBelowThresholdAndWoWAvailableLocked;
 - (void)addDelegate:(id)arg1 callbackRunLoop:(id)arg2;
 - (BOOL)areAllNetworkInterfacesDisabled;
-- (void)bindCFStreamToPushInterface:(struct __CFReadStream { }*)arg1;
+- (void)bindCFStream:(struct __CFReadStream { }*)arg1 toWWANInterface:(BOOL)arg2;
 - (void)bindCFStreamToWWANInterface:(struct __CFReadStream { }*)arg1;
-- (void)bindSocketToPushInterface:(NSInteger)arg1;
+- (void)bindSocket:(NSInteger)arg1 toWWANInterface:(BOOL)arg2;
 - (void)bindSocketToWWANInterface:(NSInteger)arg1;
 - (BOOL)doesWWANInterfaceExist;
 - (void)enableWakeOnWiFi:(BOOL)arg1 forDelegate:(id)arg2;
 - (void)enableWiFiAutoAssociation:(BOOL)arg1 forDelegate:(id)arg2;
 - (void)handleMachMessage:(void*)arg1;
 - (id)init;
+- (BOOL)isInCall;
 - (BOOL)isInternetReachable;
 - (BOOL)isInternetReachableViaWiFi;
 - (BOOL)isPowerStateDetectionSupported;
@@ -98,7 +101,7 @@
 - (void)keepWWANInterfaceUp:(BOOL)arg1 forDelegate:(id)arg2;
 - (BOOL)prefersWakeOnWiFiToWWANForPush;
 - (void)removeDelegate:(id)arg1;
-- (id)urlConnectionBoundToPushInterfaceWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(BOOL)arg3 maxContentLength:(long long)arg4 startImmediately:(BOOL)arg5 connectionProperties:(id)arg6;
+- (id)urlConnectionBoundToWWANInterface:(BOOL)arg1 withRequest:(id)arg2 delegate:(id)arg3 usesCache:(BOOL)arg4 maxContentLength:(long long)arg5 startImmediately:(BOOL)arg6 connectionProperties:(id)arg7;
 - (id)urlConnectionBoundToWWANInterfaceWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(BOOL)arg3 maxContentLength:(long long)arg4 startImmediately:(BOOL)arg5 connectionProperties:(id)arg6;
 
 @end

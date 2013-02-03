@@ -24,6 +24,7 @@
 - (void)deletePreviewImageIfNecessary;
 - (BOOL)hasFullSizeImage;
 - (NSInteger)imageID;
+- (id)imageWithFormat:(NSInteger)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (id)imageWithFormat:(NSInteger)arg1;
 - (BOOL)isVideo;
 - (id)pathForVideoPreviewFile;

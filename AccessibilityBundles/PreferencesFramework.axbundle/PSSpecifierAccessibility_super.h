@@ -8,5 +8,6 @@
 + (void)_initializeSafeCategory;
 
 - (id)accessibilityIdentification;
+- (void)dealloc;
 
 @end

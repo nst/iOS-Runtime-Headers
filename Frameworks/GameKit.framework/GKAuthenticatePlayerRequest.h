@@ -2,22 +2,26 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSString;
+@class NSString, NSDictionary;
 
 @interface GKAuthenticatePlayerRequest : GKDataRequest {
+    NSDictionary *_alertDictionary;
     NSString *_password;
     NSString *_username;
 }
 
+@property(retain) NSDictionary *alertDictionary;
 @property(retain) NSString *password;
 @property(retain) NSString *username;
 
+- (id)alertDictionary;
 - (BOOL)authenticationRequired;
 - (void)dealloc;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)key;
 - (id)password;
 - (id)request;
+- (void)setAlertDictionary:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;

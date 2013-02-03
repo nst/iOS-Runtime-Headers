@@ -4,7 +4,7 @@
 
 @class ABPersonViewBehaviorHandler, <ABPersonEditDelegate>, UITableView, <ABStyleProvider>, UIBarButtonItem, UIViewController, NSArray, ABPeoplePickerNavigationController, ABModel, ABDatePickerViewController, ABPersonTableViewDataSource, NSString, NSIndexPath;
 
-@interface ABPersonViewControllerHelper : NSObject <ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABPersonTableViewDataSourceDelegate, ABPickerViewControllerDismissDelegate, UIActionSheetDelegate, UIPopoverControllerDelegate, ABPopoverRepresentDelegate, ABPersonEditDelegate> {
+@interface ABPersonViewControllerHelper : NSObject <ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABPersonTableViewDataSourceDelegate, ABPickerViewControllerDismissDelegate, UIActionSheetDelegate, UIPopoverControllerDelegate, ABPopoverRepresentDelegate, ABPersonEditDelegate, ABPersonViewControllerDelegate> {
     id _actionSheetDelegate;
     NSString *_addToPersonButtonTitle;
     void *_addressBook;
@@ -21,12 +21,13 @@
     NSArray *_displayedPeople;
     void *_displayedPerson;
     <ABPersonEditDelegate> *_editDelegate;
-    BOOL _ignoresModelDatabaseChange;
+    BOOL _ignoresReloadData;
     id _imagePicker;
     BOOL _isLocation;
     BOOL _isPresentingDatePickerViewController;
     BOOL _isUnlinkingPerson;
     ABModel *_model;
+    NSUInteger _modelDatabaseChangeCancellationCount;
     ABPeoplePickerNavigationController *_peoplePickerForLinking;
     BOOL _personHeaderViewScrolls;
     ABPersonTableViewDataSource *_personTableViewDataSource;
@@ -39,8 +40,8 @@
     BOOL _shareMessageBodyIsHTML;
     NSString *_shareMessageSubject;
     BOOL _shouldShowLinkingUI;
-    BOOL _showsCancelButton;
     BOOL _showsLinkedPeople;
+    BOOL _showsPeoplePickerCancelButton;
     <ABStyleProvider> *_styleProvider;
     struct __CFDictionary { } *_valueByProperty;
     UIViewController *_viewController;
@@ -91,15 +92,16 @@
 @property(readonly) BOOL hasChanges;
 @property(readonly) BOOL hasNameChanges;
 @property(readonly) BOOL hasPopoverController;
-@property BOOL ignoresModelDatabaseChange;
+@property BOOL ignoresReloadData;
 @property BOOL isLocation;
+@property NSUInteger modelDatabaseChangeCancellationCount;
 @property BOOL personHeaderViewScrolls;
 @property(getter=isReadonly,readonly) BOOL readonly;
 @property BOOL savesNewContactOnSuspend;
 @property BOOL shareMessageBodyIsHTML;
 @property BOOL shouldShowLinkedPeople;
 @property BOOL shouldShowLinkingUI;
-@property BOOL showsCancelButton;
+@property BOOL showsPeoplePickerCancelButton;
 
 + (void*)_newFakePersonForMergedPeople:(id)arg1;
 
@@ -130,6 +132,7 @@
 - (BOOL)allowsSharing;
 - (id)alternateName;
 - (BOOL)appearsInLinkingPeoplePicker;
+- (void)applicationDidResume;
 - (void)applicationWillSuspend;
 - (id)attribution;
 - (BOOL)automaticallySetEditing;
@@ -155,7 +158,7 @@
 - (BOOL)hasChanges;
 - (BOOL)hasNameChanges;
 - (BOOL)hasPopoverController;
-- (BOOL)ignoresModelDatabaseChange;
+- (BOOL)ignoresReloadData;
 - (void)imagePicker:(id)arg1 pickedPhoto:(id)arg2;
 - (void)imagePicker:(id)arg1 presentActionSheet:(id)arg2;
 - (id)imagePickerControllerViewControllerToPresentModal:(id)arg1;
@@ -181,6 +184,7 @@
 - (id)messageDetailFont;
 - (id)messageFont;
 - (id)model;
+- (NSUInteger)modelDatabaseChangeCancellationCount;
 - (void)nameChangedForPerson:(void*)arg1;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2 informDelegate:(BOOL)arg3;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
@@ -192,6 +196,7 @@
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldShowCardForPerson:(void*)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldShowInsertEditorForPerson:(void*)arg2 insertProperty:(NSInteger*)arg3 copyInsertValue:(id*)arg4 copyInsertLabel:(id*)arg5;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
+- (void)performAction:(NSInteger)arg1 forPropertyAtIndex:(NSInteger)arg2 inPropertyGroup:(id)arg3 withContext:(void*)arg4;
 - (void)performAction:(NSInteger)arg1 forPropertyAtIndex:(NSInteger)arg2 inPropertyGroup:(id)arg3;
 - (void)performDefaultActionForPropertyAtIndex:(NSInteger)arg1 inPropertyGroup:(id)arg2;
 - (id)personHeaderView;
@@ -206,7 +211,7 @@
 - (void)personTableViewDataSource:(id)arg1 presentDatePickerViewController:(id)arg2 fromView:(id)arg3 passthroughViews:(id)arg4 forIndexPath:(id)arg5;
 - (void)personTableViewDataSource:(id)arg1 presentPickerViewController:(id)arg2 fromView:(id)arg3 forIndexPath:(id)arg4;
 - (void)personTableViewDataSource:(id)arg1 selectedAddOptionalProperties:(struct __CFArray { }*)arg2;
-- (void)personTableViewDataSource:(id)arg1 selectedAddToFavoritesActionForPropertyAtIndex:(NSInteger)arg2 inPropertyGroup:(id)arg3;
+- (void)personTableViewDataSource:(id)arg1 selectedAddToFavoritesActionForPropertyAtIndex:(NSInteger)arg2 inPropertyGroup:(id)arg3 entryType:(NSInteger)arg4;
 - (void)personTableViewDataSource:(id)arg1 selectedImageForEditing:(BOOL)arg2;
 - (BOOL)personTableViewDataSource:(id)arg1 selectedPropertyAtIndex:(NSInteger)arg2 inPropertyGroup:(id)arg3 withMemberCell:(id)arg4 forEditing:(BOOL)arg5;
 - (void)personTableViewDataSource:(id)arg1 selectedSMSActionForPropertyAtIndex:(NSInteger)arg2 inPropertyGroup:(id)arg3;
@@ -224,6 +229,7 @@
 - (BOOL)personTableViewDataSourceShouldShowContactSources:(id)arg1;
 - (BOOL)personTableViewDataSourceShouldShowLinkedPeople:(id)arg1;
 - (void)personTableViewDataSourceWillPresentDatePickerViewController:(id)arg1;
+- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
 - (id)personViewDelegate;
 - (void)personWasDeleted;
 - (id)popoverCellIndexPath;
@@ -278,13 +284,14 @@
 - (void)setEditDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlightedItemForProperty:(NSInteger)arg1 withIdentifier:(NSInteger)arg2 person:(void*)arg3 important:(BOOL)arg4;
-- (void)setIgnoresModelDatabaseChange:(BOOL)arg1;
+- (void)setIgnoresReloadData:(BOOL)arg1;
 - (void)setIsLocation:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageDetail:(id)arg1;
 - (void)setMessageDetailFont:(id)arg1;
 - (void)setMessageFont:(id)arg1;
 - (void)setModel:(id)arg1;
+- (void)setModelDatabaseChangeCancellationCount:(NSUInteger)arg1;
 - (void)setPersonHeaderView:(id)arg1;
 - (void)setPersonHeaderViewScrolls:(BOOL)arg1;
 - (void)setPopoverCellIndexPath:(id)arg1;
@@ -296,7 +303,7 @@
 - (void)setShareMessageSubject:(id)arg1;
 - (void)setShouldShowLinkedPeople:(BOOL)arg1;
 - (void)setShouldShowLinkingUI:(BOOL)arg1;
-- (void)setShowsCancelButton:(BOOL)arg1;
+- (void)setShowsPeoplePickerCancelButton:(BOOL)arg1;
 - (void)setStringValue:(id)arg1 forProperty:(NSInteger)arg2;
 - (void)setStyleProvider:(id)arg1;
 - (void)shareActionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
@@ -314,14 +321,13 @@
 - (BOOL)shouldShowLinkedPeople;
 - (BOOL)shouldShowLinkingUI;
 - (void)showImageMenu;
-- (BOOL)showsCancelButton;
+- (BOOL)showsPeoplePickerCancelButton;
 - (void)smsComposeControllerCancelled:(id)arg1;
 - (void)smsComposeControllerSendStarted:(id)arg1;
 - (id)styleProvider;
 - (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
 - (id)unknownPersonViewDelegate;
-- (void)updateAllowsConferencing;
 - (void)updateAllowsSettingAsPreferredCardForName;
 - (void)updateEditButton;
 - (void)updateLinkBarButtonItem;
@@ -330,6 +336,7 @@
 - (id)viewController;
 - (id)viewControllerToPresentModal;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidLoad;
 - (void)viewDidUnload;
 - (id)viewForActionSheet;
 - (id)viewToRepresentPopover:(id)arg1;

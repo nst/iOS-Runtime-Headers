@@ -7,7 +7,6 @@
 
 @property(readonly) MKPolygon *polygon;
 
-- (BOOL)canDrawMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(float)arg2;
 - (void)createPath;
 - (void)fillPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2;
 - (id)initWithPolygon:(id)arg1;

@@ -13,6 +13,7 @@
     NSString *_label;
     NSString *_name;
     NSInteger _property;
+    NSInteger _type;
     NSString *_value;
 }
 
@@ -32,11 +33,13 @@
 - (NSInteger)identifier;
 - (id)initWithDictionaryRepresentation:(id)arg1 addressBook:(void*)arg2;
 - (id)initWithDictionaryRepresentation:(id)arg1;
+- (id)initWithPerson:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3 type:(NSInteger)arg4;
 - (id)initWithPerson:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)label;
 - (NSInteger)property;
 - (void)recheckAddressBook;
+- (NSInteger)type;
 - (id)value;
 
 @end

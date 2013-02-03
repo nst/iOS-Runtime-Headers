@@ -62,8 +62,10 @@
 - (BOOL)terminalPointPlacedCarefully;
 - (void)updateFrame;
 - (BOOL)wasPlacedCarefullyAtTime:(double)arg1;
+- (void)windowWillRotate:(id)arg1;
 - (void)zoomDownAnimation;
 - (void)zoomDownAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)zoomUpAnimation;
+- (void)zoomUpAnimationDidStop:(id)arg1 finished:(id)arg2;
 
 @end

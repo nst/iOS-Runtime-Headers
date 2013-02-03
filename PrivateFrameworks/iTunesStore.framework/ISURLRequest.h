@@ -2,19 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSArray, NSString, NSData, NSLock, NSDictionary;
+@class NSArray, SSMutableURLRequestProperties, NSLock;
 
 @interface ISURLRequest : NSObject <NSCoding, NSCopying> {
-    NSInteger _allowedRetryCount;
     NSInteger _assetType;
-    NSData *_body;
-    NSUInteger _cachePolicy;
-    NSDictionary *_customHeaders;
     long long _expectedContentLength;
     NSLock *_lock;
-    NSString *_method;
-    NSDictionary *_queryStringDictionary;
-    double _timeoutInterval;
+    SSMutableURLRequestProperties *_properties;
     NSInteger _urlBagType;
     NSArray *_urls;
 }
@@ -22,6 +16,7 @@
 @property(retain) NSData *HTTPBody;
 @property(retain) NSString *HTTPMethod;
 @property(retain) NSArray *URLs;
+@property(retain) NSString *appleClientApplication;
 @property(retain) NSDictionary *customHeaders;
 @property(readonly) NSURL *primaryURL;
 @property(retain) NSDictionary *queryStringDictionary;
@@ -40,6 +35,7 @@
 - (id)URLs;
 - (id)_initCommon;
 - (NSInteger)allowedRetryCount;
+- (id)appleClientApplication;
 - (NSInteger)assetType;
 - (NSUInteger)cachePolicy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -49,6 +45,7 @@
 - (long long)expectedContentLength;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithRequestProperties:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURLRequest:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -56,6 +53,7 @@
 - (id)primaryURL;
 - (id)queryStringDictionary;
 - (void)setAllowedRetryCount:(NSInteger)arg1;
+- (void)setAppleClientApplication:(id)arg1;
 - (void)setAssetType:(NSInteger)arg1;
 - (void)setCachePolicy:(NSUInteger)arg1;
 - (void)setCustomHeaders:(id)arg1;

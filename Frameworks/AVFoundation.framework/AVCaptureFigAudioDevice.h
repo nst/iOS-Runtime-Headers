@@ -2,16 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSDictionary;
+@class NSString, NSDictionary;
 
 @interface AVCaptureFigAudioDevice : AVCaptureDevice {
     NSDictionary *_deviceProperties;
     BOOL _isConnected;
     BOOL _levelMeteringEnabled;
+    NSString *_localizedName;
 }
 
 + (id)_devices;
 
+- (void)audioInputDeviceLocalizedNameDidChangeHandler:(id)arg1;
 - (void)audioInputDevicesDidChangeHandler:(id)arg1;
 - (void)dealloc;
 - (id)devicePropertiesDictionary;

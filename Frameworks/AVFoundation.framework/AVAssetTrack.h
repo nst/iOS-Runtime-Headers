@@ -23,6 +23,7 @@
 - (id)commonMetadata;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (float)estimatedDataRate;
 - (id)extendedLanguageTag;
 - (void)finalize;

@@ -16,8 +16,9 @@
 - (id)_placemarkWithLocation:(id)arg1;
 - (void)cancelGeocode;
 - (void)dealloc;
+- (void)geocodeAddressDictionary:(id)arg1 completionHandler:(id)arg2;
+- (void)geocodeAddressString:(id)arg1 completionHandler:(id)arg2;
 - (void)geocodeLocation:(id)arg1 completionHandler:(id)arg2;
-- (void)geocodePlacemark:(id)arg1 completionHandler:(id)arg2;
 - (id)init;
 - (BOOL)isGeocoding;
 

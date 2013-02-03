@@ -22,11 +22,14 @@
 - (void)_resetActivationState;
 - (void)_setHasEverRegistered:(BOOL)arg1;
 - (void)_setupActivationState;
+- (id)autorelease;
 - (BOOL)brickedDevice;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isInternalInstall;
 - (NSInteger)lockdownState;
+- (oneway void)release;
+- (NSUInteger)retainCount;
 - (id)uniqueDeviceIdentifier;
 - (id)valueForDomain:(id)arg1 key:(id)arg2;
 

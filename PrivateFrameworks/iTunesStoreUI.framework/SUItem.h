@@ -64,6 +64,7 @@
 @property NSInteger itemType;
 @property NSInteger representedItemCount;
 
+- (id)_copyItemImagesFromValue:(id)arg1;
 - (id)_imagesForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (NSInteger)_linkTargetForTargetString:(id)arg1 typeString:(id)arg2;
 - (NSInteger)_linkTypeForString:(id)arg1;
@@ -77,6 +78,7 @@
 - (void)_reloadItemLinks;
 - (void)_reloadProperties;
 - (void)_reloadStoreOffers;
+- (id)_squishImageForSquishDictionary:(id)arg1;
 - (id)_valueForFirstAvailableKey:(id)arg1;
 - (id)artistName;
 - (id)bestImageForSize:(struct CGSize { float x1; float x2; })arg1;

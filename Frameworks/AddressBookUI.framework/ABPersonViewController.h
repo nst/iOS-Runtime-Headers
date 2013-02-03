@@ -63,6 +63,7 @@
 - (BOOL)allowsSettingAsPreferredCardForName;
 - (BOOL)allowsSharing;
 - (BOOL)appearsInLinkingPeoplePicker;
+- (void)applicationDidResume;
 - (void)applicationWillSuspend;
 - (void)applicationWillTerminate:(id)arg1;
 - (id)attribution;
@@ -73,12 +74,15 @@
 - (void)dismissModalViewControllerAnimated:(BOOL)arg1;
 - (void*)displayedPerson;
 - (id)displayedProperties;
+- (void)editAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)editCancel:(id)arg1;
 - (id)editDelegate;
 - (void)helper:(id)arg1 didToggleEditingWhileInViewMode:(BOOL)arg2;
 - (id)helper;
 - (id)init;
+- (id)initWithAddressBook:(void*)arg1;
 - (id)initWithModel:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2 addressBook:(void*)arg3 model:(id)arg4;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 model:(id)arg3;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isReadonly;

@@ -58,6 +58,7 @@
 
 - (void)_adjustForOrientationsWithAnimation:(BOOL)arg1;
 - (float)_angleForLocalOrientation:(NSInteger)arg1 remoteOrientation:(NSInteger)arg2;
+- (void)_animateEndCallUIForCallBars;
 - (void)_autodismissAudioMenu:(id)arg1;
 - (void)_avFirstPreviewFrameArrived:(id)arg1;
 - (void)_avFirstRemoteFrameArrived:(id)arg1;
@@ -78,7 +79,7 @@
 - (void)_deselectEndVideoButtonOnCallBar;
 - (void)_deviceOrientationDidChange:(id)arg1;
 - (NSInteger)_deviceOrientationForIMAVCameraOrientation:(NSUInteger)arg1;
-- (void)_disableBottomBarButtonAndEndDisplay;
+- (void)_disableBottomBarButtonAndAnimateOutCallBars;
 - (void)_dissociateVideoLayers;
 - (void)_endCallBarDisplayAnimation;
 - (void)_endConferenceDisplayAnimation;
@@ -118,6 +119,7 @@
 - (void)_shrinkPIPAnimationDidStop;
 - (id)_stringForIMAVChatEndedReason:(NSUInteger)arg1 error:(NSInteger)arg2;
 - (void)_syncSublayerFrameSizeToParent:(id)arg1;
+- (void)_updateStatusAndAnimateOutCallBars;
 - (id)_viewWithCenteredImage:(id)arg1 title:(id)arg2 inFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
@@ -156,10 +158,14 @@
 - (void)showCallBars;
 - (void)showCallBarsAnimated:(BOOL)arg1;
 - (void)showCallFailedWithReason:(NSUInteger)arg1 error:(NSInteger)arg2;
-- (void)showCallRemoteHangUp;
+- (void)showErrorAlertWithTitle:(id)arg1 message:(id)arg2 alternateButton:(id)arg3 alternateButtonURL:(id)arg4;
 - (void)showErrorAlertWithTitle:(id)arg1 message:(id)arg2;
+- (void)showLocalHangup;
 - (void)showLocalViewAsMuted:(BOOL)arg1;
+- (void)showLocationErrorAlertWithTitle:(id)arg1 message:(id)arg2;
+- (void)showRemoteHangUp;
 - (void)showRemoteViewAsPaused:(BOOL)arg1;
+- (void)showWifiErrorAlertWithTitle:(id)arg1 message:(id)arg2;
 - (void)stopPreview;
 - (void)toggleLocalCameraType;
 - (void)updateAudioButton;

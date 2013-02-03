@@ -26,6 +26,7 @@
 - (BOOL)calCloseDBAndSave:(BOOL)arg1;
 - (struct CalDatabase { }*)calDB;
 - (void)calOpenDB;
+- (void)calOpenDBWithChangeLogging;
 - (void)calProcessAddedRecords;
 - (BOOL)calSaveDB;
 - (BOOL)calSaveDBAndFlushCaches;

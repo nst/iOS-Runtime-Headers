@@ -72,6 +72,8 @@
 @property BOOL skipNotifications;
 @property(readonly) NSInteger transitioningState;
 
++ (void)_initializeSafeCategory;
+
 - (BOOL)animationDidStart;
 - (double)animationStartTime;
 - (id)animationStyle;

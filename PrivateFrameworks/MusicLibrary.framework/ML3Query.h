@@ -4,7 +4,7 @@
 
 @class ML3Predicate, NSMutableArray, NSLock, NSMutableIndexSet, ML3AggregateQuery, NSString, ML3MusicLibrary, NSArray;
 
-@interface ML3Query : NSObject <NSFastEnumeration> {
+@interface ML3Query : NSObject <NSFastEnumeration, NSCoding> {
     Class _entityClass;
     BOOL _hasLoadedCountOnlyCount;
     BOOL _hasLoadedEveryPersistentID;
@@ -56,8 +56,12 @@
 - (void)dealloc;
 - (id)description;
 - (BOOL)distinctPersistentIDProperty;
+- (void)encodeWithCoder:(id)arg1;
 - (id)entityAtIndex:(NSUInteger)arg1;
 - (Class)entityClass;
+- (void)enumerateLoadedPersistentIDsInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 usingBlock:(id)arg2;
+- (void)enumerateLoadedPersistentIDsUsingBlock:(id)arg1;
+- (void)enumeratePersistentIDsUsingBlock:(id)arg1;
 - (BOOL)getAggregatedCount:(NSUInteger*)arg1 atIndex:(NSUInteger)arg2;
 - (BOOL)getPersistentID:(long long*)arg1 atIndex:(NSUInteger)arg2;
 - (void)growLoadedArraysForIndex:(NSUInteger)arg1;
@@ -68,14 +72,17 @@
 - (BOOL)hasLoadedEveryPersistentID;
 - (NSUInteger)indexOfEntity:(id)arg1;
 - (NSUInteger)indexOfPersistentID:(long long)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithLibrary:(id)arg1 entityClass:(Class)arg2 predicate:(id)arg3 orderingProperties:(id)arg4 usingSections:(BOOL)arg5 nonDirectAggregateQuery:(id)arg6;
 - (void)insertLoadedAggregatedCount:(NSUInteger)arg1 atIndex:(NSUInteger)arg2;
 - (void)insertLoadedPersistentID:(long long)arg1 atIndex:(NSUInteger)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (id)library;
 - (void)loadAggregateCountForEntityAtIndex:(NSUInteger)arg1;
 - (void)loadAllEntities;
 - (id)loadCountOnlyOperation;
 - (id)loadEntitiesOperation;
+- (id)loadEntitiesOperationForRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 ordered:(BOOL)arg2 block:(id)arg3;
 - (id)loadEntitiesOperationForRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 ordered:(BOOL)arg2;
 - (id)loadEntitiesOperationForRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)loadEntityAtIndex:(NSUInteger)arg1;

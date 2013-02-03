@@ -15,7 +15,9 @@
 @property(readonly) BOOL isFilteringDisabled;
 
 - (id)MLQuery;
+- (id)_initWithMLQuery:(id)arg1 filteringDisabled:(BOOL)arg2;
 - (BOOL)_isValidPlaylist:(id)arg1;
+- (void)_logQuery:(id)arg1;
 - (void)_sanitizeQuery:(id)arg1;
 - (id)_sections;
 - (void)_setQuery:(id)arg1;

@@ -12,10 +12,10 @@
 
 + (void)_initializeSafeCategory;
 
-- (BOOL)_accessibilityIgnoresMouseEvents;
 - (void)_numberOfRowsDidChange;
 - (float)_offsetForNoResultsMessage;
 - (id)accessibilityLabel;
+- (BOOL)accessibilityTreeHidden;
 - (id)controller;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setController:(id)arg1;

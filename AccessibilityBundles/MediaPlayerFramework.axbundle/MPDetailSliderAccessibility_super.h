@@ -12,5 +12,6 @@
 - (void)accessibilityIncrement;
 - (id)accessibilityLabel;
 - (id)accessibilityValue;
+- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 
 @end

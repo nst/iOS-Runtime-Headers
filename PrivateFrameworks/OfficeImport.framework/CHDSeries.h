@@ -9,10 +9,10 @@
 @class EDKeyedCollection, CHDFormula, CHDData, CHDDataLabel, CHDErrorBar, CHDChartType, CHDDataValue, CHDChart, OADGraphicProperties, EDCollection;
 
 @interface CHDSeries : NSObject <EDKeyedObject> {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: B8@0:4 */
     CHDData *mCategoryData;
     CHDChart *mChart;

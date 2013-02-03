@@ -34,10 +34,7 @@
 + (id)assetWithURL:(id)arg1 type:(NSInteger)arg2;
 
 - (id)URLRequest;
-- (void)_encodeWithKeyedCoder:(id)arg1;
-- (void)_encodeWithNonKeyedCoder:(id)arg1;
-- (void)_initWithKeyedCoder:(id)arg1;
-- (void)_initWithNonKeyedCoder:(id)arg1;
+- (id)copyPropertyListEncoding;
 - (void)dealloc;
 - (id)downloadFileName;
 - (id)downloadInformationKey;
@@ -49,6 +46,7 @@
 - (id)hashes;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (id)initWithURLRequest:(id)arg1 type:(NSInteger)arg2;
 - (BOOL)isExternal;
 - (long long)numberOfBytesToHash;

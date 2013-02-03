@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@interface CMGyroDataInternal : NSObject {
+@interface CMGyroDataInternal : NSObject <NSCopying> {
     struct { 
         double x; 
         double y; 
@@ -10,6 +10,8 @@
     } fRotationRate;
 }
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithClientRotationRate:(struct { double x1; double x2; double x3; double x4; })arg1;
+- (void)setRotationRate:(struct { double x1; double x2; double x3; double x4; })arg1;
 
 @end

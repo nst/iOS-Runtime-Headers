@@ -10,7 +10,7 @@
 
 + (void)_initializeSafeCategory;
 
-- (BOOL)_accessibilityIgnoresMouseEvents;
+- (BOOL)accessibilityTreeHidden;
 - (id)backgroundView;
 - (void)dealloc;
 - (void)setBackgroundView:(id)arg1;

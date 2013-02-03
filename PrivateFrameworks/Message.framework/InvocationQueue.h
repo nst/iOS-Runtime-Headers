@@ -7,7 +7,6 @@
 @interface InvocationQueue : NSObject <WeaklyReferencedObject> {
     unsigned int _maxThreads : 16;
     unsigned int _numThreads : 16;
-    BOOL _isInvoking;
     NSMutableArray *_items;
     NSConditionLock *_threadRecycleLock;
     double _threadRecycleTimeout;
@@ -22,7 +21,6 @@
 - (void)didCancel:(id)arg1;
 - (id)init;
 - (NSUInteger)invocationCount;
-- (BOOL)isProcessingQueue;
 - (NSUInteger)maxThreadCount;
 - (void)removeAllItems;
 - (void)setMaxThreadCount:(NSUInteger)arg1;

@@ -45,7 +45,6 @@
 + (unsigned long)priorityKey;
 
 - (id)UIDsToDeleteInMailbox:(id)arg1;
-- (BOOL)_cleanupProtectedTablesAndCheckForInconsistencies:(struct sqlite3 { }*)arg1;
 - (struct __CFDictionary { }*)_copyReferenceHashesWithoutMessagesForMessageWithConversation:(id)arg1;
 - (id)_getReferencesForHashesWithOwners:(struct __CFDictionary { }*)arg1;
 - (struct sqlite3 { }*)_getWriterDBWithRetryCount:(NSInteger)arg1;
@@ -60,7 +59,7 @@
 - (id)accountForMessage:(id)arg1;
 - (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(BOOL)arg3 newMessagesByOldMessage:(id)arg4 remoteIDs:(id)arg5 setFlags:(unsigned long long)arg6 clearFlags:(unsigned long long)arg7 messageFlagsForMessages:(id)arg8 copyFiles:(BOOL)arg9 addPOPUIDs:(BOOL)arg10 dataSectionsByMessage:(id)arg11;
 - (id)addReferenceInformationForMessageID:(NSUInteger)arg1 encodedMessageID:(id)arg2 withSubject:(id)arg3 withReferences:(id)arg4 usingDatabase:(struct sqlite3 { }*)arg5 otherSubjectIDMappings:(id)arg6 usingMailbox:(NSInteger)arg7 notify:(BOOL)arg8;
-- (BOOL)addThreadingInfoBySubjectForMessageID:(NSUInteger)arg1 nonPrefixedSubject:(id)arg2 messageIDsBySubject:(id)arg3 usingDatabase:(struct sqlite3 { }*)arg4 toReferences:(id)arg5 withinMailbox:(NSInteger)arg6;
+- (id)addThreadingInfoBySubjectForMessageID:(NSUInteger)arg1 nonPrefixedSubject:(id)arg2 messageIDsBySubject:(id)arg3 usingDatabase:(struct sqlite3 { }*)arg4 toReferences:(id)arg5 withinMailbox:(NSInteger)arg6;
 - (id)allMailboxURLStrings;
 - (id)allUIDsInMailbox:(id)arg1;
 - (NSInteger)attachProtectedDatabase:(struct sqlite3 { }*)arg1;
@@ -70,11 +69,13 @@
 - (id)bodyDataForMessage:(id)arg1;
 - (void)checkInDB:(struct sqlite3 { }*)arg1;
 - (void)cleanOldDatabases;
+- (BOOL)cleanupProtectedTables:(struct sqlite3 { }*)arg1 checkForInconsistencies:(BOOL)arg2;
 - (void)closeDB:(struct sqlite3 { }*)arg1;
 - (void)closeDatabaseConnections;
 - (void)commit;
 - (void)compactMailbox:(id)arg1;
 - (void)compactMessages:(id)arg1 permanently:(BOOL)arg2;
+- (id)conversationIDsOfMessagesInSameThreadAsMessageID:(NSUInteger)arg1 onlyWithinMailbox:(BOOL)arg2;
 - (struct __CFSet { }*)copyLibraryIDsWithoutConversationHashesForMailbox:(id)arg1;
 - (id)copyMessageInfosForMailbox:(id)arg1;
 - (id)copyMessageInfosOfMessagesInSameThreadAsMessage:(id)arg1 onlyWithinMailbox:(BOOL)arg2;
@@ -100,8 +101,6 @@
 - (id)fullBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2;
 - (id)getDetailsForAllMessagesFromMailbox:(id)arg1;
 - (id)getDetailsForMessagesWithRemoteIDInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 fromMailbox:(id)arg2;
-- (id)getParentsAndChildrenOfMessageID:(NSUInteger)arg1 withinMailbox:(NSInteger)arg2 usingDatabase:(struct sqlite3 { }*)arg3;
-- (id)getSiblingsForReferences:(id)arg1 withinMailbox:(NSInteger)arg2 usingDatabase:(struct sqlite3 { }*)arg3;
 - (struct sqlite3 { }*)getWriterDB;
 - (void)handleKeybagLock;
 - (void)handleKeybagUnlock;
@@ -116,7 +115,6 @@
 - (BOOL)isMessageContentsLocallyAvailable:(id)arg1;
 - (void)iterateMessagesMatchingCriterion:(id)arg1 withResultHandler:(id)arg2 options:(NSUInteger)arg3 withMonitor:(id)arg4;
 - (void)iterateStatement:(struct sqlite3_stmt { }*)arg1 db:(struct sqlite3 { }*)arg2 withProgressMonitor:(id)arg3 andRowHandler:(int (*)())arg4 context:(void*)arg5;
-- (id)libraryIDsOfMessagesInSameThreadAsMessageID:(NSUInteger)arg1 onlyWithinMailbox:(BOOL)arg2;
 - (id)loadMeetingDataForMessage:(id)arg1;
 - (id)loadMeetingExternalIDForMessage:(id)arg1;
 - (NSInteger)loadMoreMessagesForThreadContainingMessage:(id)arg1 hasNoMoreMessages:(BOOL*)arg2;

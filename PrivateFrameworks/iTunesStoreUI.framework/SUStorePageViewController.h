@@ -39,9 +39,11 @@
 + (void)_initializeSafeCategory;
 
 - (id)URLRequest;
+- (id)_activePageSection;
 - (void)_applyPropertiesToViewController:(id)arg1;
 - (void)_delayedFetchPage;
 - (void)_dismissNavigationMenuViewController;
+- (double)_expirationTime;
 - (void)_fetchPage:(BOOL)arg1;
 - (void)_finishHandlingFailure;
 - (void)_finishSuccessfulLoad;

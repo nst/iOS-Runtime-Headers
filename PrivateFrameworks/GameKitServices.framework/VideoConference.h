@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSObject<VideoConferenceRealTimeChannel>, VCCallSession, GKNATObserver, NSObject<VideoConferenceSpeakingDelegate>, VideoConferenceManager, NSObject<VideoConferenceDelegate>, HandleWrapper, NSArray, NSObject<VideoConferenceNotificationObserver>, NSString, NSMutableDictionary, NSObject<VideoConferenceChannelQualityDelegate>, CALayer;
+@class NSObject<VideoConferenceRealTimeChannel>, VCCallSession, NSLock, GKNATObserver, NSObject<VideoConferenceSpeakingDelegate>, VideoConferenceManager, NSObject<VideoConferenceDelegate>, NSArray, NSObject<VideoConferenceNotificationObserver>, NSString, NSMutableDictionary, NSObject<VideoConferenceChannelQualityDelegate>, CALayer;
 
 @interface VideoConference : NSObject <VCCallSessionDelegate, GKNATObserverDelegate> {
     struct _opaque_pthread_rwlock_t { 
@@ -51,6 +51,7 @@
     VCCallSession *currentFocusSession;
     double dAudioHostTime;
     NSObject<VideoConferenceDelegate> *delegate;
+    NSLock *delegateLock;
     BOOL disableVAD;
     NSInteger downstreamBandwidth;
     NSUInteger dwAudioTS;
@@ -70,7 +71,6 @@
     BOOL isFocus;
     BOOL isGKVoiceChat;
     BOOL isRecvVideo;
-    BOOL isRunnningRTCPProc;
     BOOL isTalking;
     BOOL isUsingSuppression;
     NSUInteger lastSentAudioSampleTime;
@@ -120,14 +120,15 @@
     NSArray *sessionArray;
     NSMutableDictionary *sessionDict;
     float shortTerm;
+    BOOL shouldSendEmptyPacket;
     BOOL shouldTimeoutPackets;
-    HandleWrapper *sipWrapper;
     unsigned char speakingArray[16];
     NSObject<VideoConferenceSpeakingDelegate> *speakingDelegate;
     } stateLock;
     NSUInteger talkTime;
+    NSUInteger talkingPeersLimit;
     NSInteger upstreamBandwidth;
-    BOOL useAudioRTCP;
+    BOOL useAFRC;
     BOOL useComplexRendering;
     BOOL useCompressedConnectionData;
     BOOL useViceroyBlobFormat;
@@ -173,8 +174,8 @@
 @property BOOL requiresWifi;
 @property BOOL setupAudioSession;
 @property BOOL shouldTimeoutPackets;
+@property NSUInteger talkingPeersLimit;
 @property NSInteger upstreamBandwidth;
-@property BOOL useAudioRTCP;
 @property BOOL useComplexRendering;
 @property BOOL useCompressedConnectionData;
 @property BOOL useViceroyBlobFormat;
@@ -197,6 +198,7 @@
 - (id)connectionBlobForParticipantID:(id)arg1 callID:(NSInteger*)arg2 error:(id*)arg3;
 - (NSUInteger)connectionResultCallbackForCallID:(NSInteger)arg1 result:(struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; NSUInteger x12; }*)arg2 didReceiveICEPacket:(BOOL)arg3 didUseRelay:(BOOL)arg4;
 - (id)currentFocus;
+- (void)dealloc;
 - (void)defaultCleanupSession:(id)arg1;
 - (id)delegate;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)didDetectBandwidth:(BOOL)arg1 upstreamBandwidth:(NSInteger)arg2 downstreamBandwidth:(NSInteger)arg3;
@@ -215,7 +217,6 @@
 - (void)getVideoSettings:(NSInteger*)arg1 height:(NSInteger*)arg2 frameRate:(NSInteger*)arg3 bitRate:(NSInteger*)arg4 localIfName:(char *)arg5 useBFC:(BOOL*)arg6 enableBitstreamCapture:(BOOL*)arg7 enable2vuyCapture:(BOOL*)arg8 enableVPBLogging:(BOOL*)arg9;
 - (BOOL)hasMic;
 - (BOOL)hasSessionWaitingForSIPInvite;
-- (BOOL)hasStartedSession;
 - (id)init;
 - (float)inputMeterLevel;
 - (BOOL)isFocus;
@@ -252,6 +253,7 @@
 - (NSUInteger)preferredCodec;
 - (void)processRelayRequestResponse:(NSInteger)arg1 responseDict:(id)arg2 didOriginateRequest:(BOOL)arg3;
 - (void)processRelayUpdate:(NSInteger)arg1 updateDict:(id)arg2 didOriginateRequest:(BOOL)arg3;
+- (NSUInteger)pruneQuietestPeers:(NSUInteger)arg1 talking:(NSUInteger)arg2 mask:(NSUInteger)arg3 meters:(char *)arg4;
 - (NSInteger)pullDecodedAsFocus:(short*)arg1 timestamp:(NSUInteger)arg2 numBytes:(NSInteger)arg3 numSamples:(NSInteger)arg4;
 - (NSInteger)pullDecodedAsFocusClient:(short*)arg1 timestamp:(NSUInteger)arg2 numBytes:(NSInteger)arg3 numSamples:(NSInteger)arg4;
 - (NSInteger)pullDecodedMeshMode:(short*)arg1 timestamp:(NSUInteger)arg2 numBytes:(NSInteger)arg3 numSamples:(NSInteger)arg4;
@@ -268,7 +270,6 @@
 - (NSInteger)remoteVideoSlot:(BOOL)arg1;
 - (BOOL)requiresWifi;
 - (id)rtChannel;
-- (void)rtcpClientProc:(id)arg1;
 - (NSInteger)sendBundle:(id)arg1 samples:(char *)arg2 numEncodedBytes:(NSInteger)arg3 timeStamp:(NSUInteger)arg4 timeStampDelta:(NSInteger)arg5 hasNewSamples:(BOOL)arg6;
 - (void)session:(id)arg1 cancelRelayRequest:(id)arg2;
 - (void)session:(id)arg1 didStart:(BOOL)arg2 error:(id)arg3;
@@ -313,21 +314,22 @@
 - (void)setRemoteVideoBackLayer:(void*)arg1;
 - (void)setRemoteVideoLayer:(void*)arg1;
 - (void)setRequiresWifi:(BOOL)arg1;
+- (void)setSendAudio:(BOOL)arg1 forCallID:(NSInteger)arg2;
 - (void)setSetupAudioSession:(BOOL)arg1;
 - (void)setShouldTimeoutPackets:(BOOL)arg1;
 - (void)setSpeakingDelegate:(id)arg1;
+- (void)setTalkingPeersLimit:(NSUInteger)arg1;
 - (void)setUpstreamBandwidth:(NSInteger)arg1;
-- (void)setUseAudioRTCP:(BOOL)arg1;
 - (void)setUseComplexRendering:(BOOL)arg1;
 - (void)setUseCompressedConnectionData:(BOOL)arg1;
 - (void)setUseViceroyBlobFormat:(BOOL)arg1;
 - (BOOL)setupAudioSession;
+- (BOOL)shouldSendAudioForCallID:(NSInteger)arg1;
 - (BOOL)shouldTimeoutPackets;
 - (NSInteger)sipCallbackNotification:(NSInteger)arg1 callID:(NSInteger)arg2 msgIn:(const char *)arg3 msgOut:(char *)arg4 optional:(void*)arg5 confIndex:(NSInteger*)arg6;
 - (id)speakingDelegate;
 - (BOOL)startConnectionWithParticipantID:(id)arg1 callID:(NSInteger)arg2 usingBlob:(id)arg3 isCaller:(BOOL)arg4 capabilities:(id)arg5 error:(id*)arg6;
 - (BOOL)startPreviewWithError:(id*)arg1;
-- (void)startRTCP;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)startVideoIO:(id*)arg1 rtpVideo:(struct tagHANDLE { NSInteger x1; }*)arg2 rtpAudio:(struct tagHANDLE { NSInteger x1; }*)arg3 enableUEP:(BOOL)arg4 enableControlByte:(BOOL)arg5 featuresListString:(char *)arg6;
 - (void)startVideoProc:(id)arg1;
 - (NSInteger)stateForCallID:(NSInteger)arg1;
@@ -335,16 +337,16 @@
 - (void)stopCallID:(NSInteger)arg1;
 - (void)stopPreview;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)stopVideoIO:(BOOL)arg1 error:(id*)arg2;
+- (NSUInteger)talkingPeersLimit;
 - (void)threadSafeCleanupSession:(id)arg1;
 - (NSInteger)tryrdlock;
 - (void)unlock;
 - (void)updateMeter:(unsigned char)arg1 forParticipant:(id)arg2 atIndex:(NSUInteger)arg3;
-- (void)updateMeters:(unsigned char)arg1;
+- (void)updateMeters:(unsigned short)arg1;
 - (BOOL)updateSpeaking:(unsigned long)arg1 timeStamp:(NSUInteger)arg2;
 - (void)updatedConnectedPeers:(id)arg1;
 - (void)updatedMutedPeers:(id)arg1 forParticipantID:(id)arg2;
 - (NSInteger)upstreamBandwidth;
-- (BOOL)useAudioRTCP;
 - (BOOL)useComplexRendering;
 - (BOOL)useCompressedConnectionData;
 - (BOOL)useViceroyBlobFormat;

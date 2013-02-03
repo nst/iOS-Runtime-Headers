@@ -5,7 +5,7 @@
 @interface UISegmentedControlAccessibility_super : UIAccessibilitySafeCategory {
 }
 
-- (BOOL)_accessibilityIgnoresMouseEvents;
+- (BOOL)accessibilityTreeHidden;
 - (BOOL)isAccessibilityElement;
 
 @end

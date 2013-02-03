@@ -12,6 +12,7 @@
 - (void)addMessageEntry:(id)arg1;
 - (void)addObject:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
+- (void)addPropFindElementWithNameSpace:(const char *)arg1 elementName:(const char *)arg2 parseClass:(Class)arg3;
 - (Class)classForCoder;
 - (void)filterUsingPredicate:(id)arg1;
 - (id)initWithCapacity:(NSUInteger)arg1;

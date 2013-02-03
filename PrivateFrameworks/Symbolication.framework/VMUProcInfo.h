@@ -8,6 +8,7 @@
     struct timeval { 
         NSInteger tv_sec; 
         NSInteger tv_usec; 
+    NSArray *_arguments;
     NSInteger _cpuType;
     NSArray *_envVars;
     NSString *_firstArg;
@@ -26,7 +27,8 @@
 + (BOOL)isProcessRunning:(NSInteger)arg1;
 + (NSInteger)processParentId:(NSInteger)arg1;
 
-- (id)_nameFromCommandLine:(NSInteger)arg1;
+- (id)_infoFromCommandLine:(NSInteger)arg1;
+- (id)arguments;
 - (NSInteger)compare:(id)arg1;
 - (NSInteger)compareByName:(id)arg1;
 - (NSInteger)compareByUserAppName:(id)arg1;

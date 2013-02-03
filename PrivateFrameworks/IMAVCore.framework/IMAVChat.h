@@ -44,12 +44,10 @@
     id _delegate;
     NSError *_error;
     NSDictionary *_errorDict;
-    NSInteger _fileTransferState;
     IMHandle *_initiator;
     double _invitationTimeoutTime;
     NSTimer *_inviteTimeoutTimer;
     NSUInteger _lastPostedState;
-    id _legacyDelegate;
     IMAVChatParticipant *_localParticipant;
     NSUInteger _localState;
     NSString *_participantNames;
@@ -64,7 +62,6 @@
 
 + (BOOL)_anyOfTheseParticipants:(id)arg1 matchAnyOfTheseIMHandles:(id)arg2;
 + (id)_avChatArray;
-+ (void)_blockConnectedConferenceByFileTransfer:(BOOL)arg1;
 + (void)_doSendUpdate;
 + (void)_sendUpdate;
 + (id)activeChat;
@@ -83,8 +80,6 @@
 + (id)currentAVChatInfo;
 + (double)defaultConnectionTimeoutTime;
 + (double)defaultInvitationTimeoutTime;
-+ (void)fileTransferDidEnd;
-+ (void)fileTransferDidStart;
 + (void)getVideoStillForIMHandle:(id)arg1 data:(id*)arg2 result:(NSUInteger*)arg3;
 + (id)incomingInvitations;
 + (BOOL)isIMHandleInActiveConference:(id)arg1;
@@ -101,8 +96,8 @@
 - (void)_VCCounterProposal:(id)arg1;
 - (BOOL)_allParticipantsCanBeSecure;
 - (BOOL)_allParticipantsUsingICE;
-- (void)_blockByFileTransfer:(BOOL)arg1;
 - (void)_blockScreenSaver:(id)arg1;
+- (void)_cancelInvitationWithReason:(NSUInteger)arg1 error:(NSInteger)arg2;
 - (BOOL)_checkVCResponseDict:(id)arg1;
 - (void)_clearConnectionTimeoutTimer;
 - (void)_clearInvitationTimeoutTimer;
@@ -115,6 +110,7 @@
 - (void)_counterPropose:(id)arg1;
 - (id)_currentAVChatInfo;
 - (NSInteger)_currentSecurityLevel;
+- (void)_determineDataIn;
 - (void)_endChatWithReason:(NSUInteger)arg1 andError:(NSInteger)arg2;
 - (void)_finalizeParticipantOrder:(id)arg1 andNotify:(BOOL)arg2;
 - (void)_handleAVError:(id)arg1;
@@ -240,7 +236,6 @@
 - (id)inviteesInfoAsPlist:(BOOL)arg1 account:(id)arg2;
 - (BOOL)isAOLInterop;
 - (BOOL)isActive;
-- (BOOL)isBlockedByFileTransfer;
 - (BOOL)isCaller;
 - (BOOL)isChatMute;
 - (BOOL)isChatPaused;
@@ -257,7 +252,6 @@
 - (BOOL)isSendingVideo;
 - (BOOL)isStateFinal;
 - (BOOL)isVideo;
-- (id)legacyDelegate;
 - (id)localParticipant;
 - (void)notifySystemVC:(BOOL)arg1;
 - (NSInteger)numActiveParticipants;
@@ -284,7 +278,6 @@
 - (void)setInvitationTimeoutTime:(double)arg1;
 - (void)setIsSendingAudio:(BOOL)arg1;
 - (void)setIsSendingVideo:(BOOL)arg1;
-- (void)setLegacyDelegate:(id)arg1;
 - (void)setMute:(BOOL)arg1;
 - (void)setPaused:(BOOL)arg1;
 - (void)setRemoteMute:(BOOL)arg1;

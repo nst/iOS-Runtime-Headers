@@ -9,8 +9,8 @@
 @class EDReference, EDWorksheet, EDResources;
 
 @interface EDColumnInfo : NSObject <NSCopying, EDKeyedObject> {
-     /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
     unsigned char mOutlineLevel;
     EDReference *mRange;
     EDResources *mResources;

@@ -26,7 +26,7 @@
 + (id)softwareApplicationDownloadKinds;
 + (void)triggerDownloads;
 
-- (id)_copyPlaceholdersByRemovingIdentifier:(unsigned long long)arg1;
+- (id)_copyPlaceholdersByRemovingIdentifier:(id)arg1;
 - (void)_daemonExited:(id)arg1;
 - (void)_daemonExitedMainThread:(id)arg1;
 - (void)_downloadReplaced:(id)arg1;
@@ -35,7 +35,7 @@
 - (void)_downloadsChanged:(id)arg1;
 - (void)_downloadsRemoved:(id)arg1;
 - (void)_filterPlaceholderDownloads;
-- (NSInteger)_indexOfDownloadWithIdentifier:(unsigned long long)arg1;
+- (NSInteger)_indexOfDownloadWithIdentifier:(id)arg1;
 - (void)_messageObserversWithFunction:(int (*)())arg1 context:(void*)arg2;
 - (void)_networkUsageChanged:(id)arg1;
 - (void)_observeDaemon;

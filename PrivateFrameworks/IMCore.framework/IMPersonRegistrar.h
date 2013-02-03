@@ -11,10 +11,13 @@
 + (id)sharedInstance;
 
 - (void)_dumpAllPersons;
+- (id)autorelease;
 - (void)dealloc;
 - (id)init;
 - (id)personForUniqueID:(id)arg1;
 - (void)registerPerson:(id)arg1;
+- (oneway void)release;
+- (NSUInteger)retainCount;
 - (void)unregisterPerson:(id)arg1;
 
 @end

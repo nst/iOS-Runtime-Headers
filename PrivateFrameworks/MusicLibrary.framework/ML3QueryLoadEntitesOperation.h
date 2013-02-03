@@ -2,23 +2,31 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface ML3QueryLoadEntitesOperation : ML3QueryLoadOperation {
     struct _NSRange { 
         NSUInteger location; 
         NSUInteger length; 
+    id _block;
     } _loadRange;
     BOOL _ordered;
 }
 
+@property(copy) ? *block;
 @property _NSRange loadRange;
 @property BOOL ordered;
 
+- (id)block;
 - (void)dealloc;
-- (id)initWithQuery:(id)arg1 loadRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 ordered:(BOOL)arg3;
+- (id)initWithQuery:(id)arg1 loadRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 ordered:(BOOL)arg3 block:(id)arg4;
 - (id)initWithQuery:(id)arg1;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })loadRange;
 - (void)main;
 - (BOOL)ordered;
+- (void)setBlock:(id)arg1;
 - (void)setLoadRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)setOrdered:(BOOL)arg1;
 

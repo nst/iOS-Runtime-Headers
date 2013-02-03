@@ -11,6 +11,7 @@
 @property(readonly) NSString *capabilityNamePodcasts;
 @property(readonly) NSString *capabilityNameWiFi;
 @property(readonly) NSNumber *diskSpaceAvailable;
+@property(readonly) NSNumber *mainScreenScale;
 @property(readonly) NSString *orientationStringLandscapeLeft;
 @property(readonly) NSString *orientationStringLandscapeRight;
 @property(readonly) NSString *orientationStringPortrait;
@@ -27,6 +28,7 @@
 @property(readonly) NSInteger hardwareTypeIPodTouchN18;
 @property(readonly) NSInteger hardwareTypeIPodTouchN45;
 @property(readonly) NSInteger hardwareTypeIPodTouchN72;
+@property(readonly) NSInteger hardwareTypeIPodTouchN81;
 @property(readonly) NSInteger hardwareTypeUnknown;
 @property(readonly) NSInteger hardwareTypeWildcatK48;
 @property(readonly) NSInteger networkType2G;
@@ -57,9 +59,11 @@
 - (NSInteger)hardwareTypeIPodTouchN18;
 - (NSInteger)hardwareTypeIPodTouchN45;
 - (NSInteger)hardwareTypeIPodTouchN72;
+- (NSInteger)hardwareTypeIPodTouchN81;
 - (NSInteger)hardwareTypeUnknown;
 - (NSInteger)hardwareTypeWildcatK48;
 - (id)hasCapability:(id)arg1;
+- (id)mainScreenScale;
 - (NSInteger)networkType2G;
 - (NSInteger)networkType3G;
 - (NSInteger)networkTypeNone;

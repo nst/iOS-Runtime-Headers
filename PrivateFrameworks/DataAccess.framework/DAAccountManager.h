@@ -15,6 +15,7 @@
 }
 
 + (id)oneshotListOfAccountPersistentUUIDs;
++ (void)reacquireClientRestrictions:(id)arg1;
 + (id)sharedInstance;
 + (void)vendDaemonManagers:(Class)arg1;
 

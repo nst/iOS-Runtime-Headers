@@ -35,6 +35,7 @@
 - (void)mapTableStyleAt:(id)arg1 withState:(id)arg2;
 - (NSInteger)maxRowNumber;
 - (NSInteger)preprocessHeightWithState:(id)arg1;
+- (struct CGSize { float x1; float x2; })preprocessSizeWithState:(id)arg1;
 - (NSInteger)preprocessWidthWithState:(id)arg1;
 - (double*)rowGrid;
 - (void)setRowGrid;

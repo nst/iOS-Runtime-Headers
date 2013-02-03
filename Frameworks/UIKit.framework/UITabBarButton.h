@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITabBarButtonLabel, UIView, UITabBarButtonBadge, UITabBarSelectionIndicatorView;
+@class UITabBarButtonLabel, UIView, UIImage, UITabBarButtonBadge, UITabBarSelectionIndicatorView;
 
 @interface UITabBarButton : UIControl {
     struct CGRect { 
@@ -22,6 +22,7 @@
     UITabBarButtonBadge *_badge;
     BOOL _badgeAnimated;
     BOOL _barHeight;
+    UIImage *_customSelectedIndicatorImage;
     } _hitRect;
     UIView *_info;
     } _infoInsets;
@@ -42,6 +43,7 @@
 - (void)_setBadgeAnimated:(BOOL)arg1;
 - (void)_setBadgeValue:(id)arg1;
 - (void)_setBarHeight:(float)arg1;
+- (void)_setCustomSelectedIndicatorImage:(id)arg1;
 - (void)_setOn:(BOOL)arg1;
 - (void)_setSelected:(BOOL)arg1;
 - (void)_setTabBarHitRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -52,7 +54,7 @@
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (void)dealloc;
-- (id)initWithImage:(id)arg1 selectedImage:(id)arg2 label:(id)arg3 withInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
+- (id)initWithImage:(id)arg1 selectedImage:(id)arg2 label:(id)arg3 withInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4 tabBarAppearance:(id)arg5;
 - (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;

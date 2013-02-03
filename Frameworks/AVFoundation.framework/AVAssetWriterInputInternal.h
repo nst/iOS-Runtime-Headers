@@ -2,15 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMediaFileType, NSArray, NSString, AVFigAssetWriterTrack, AVOutputSettings;
+@class AVAssetWriterInputHelper, AVWeakReference;
 
 @interface AVAssetWriterInputInternal : NSObject {
-    AVFigAssetWriterTrack *assetWriterTrack;
-    AVMediaFileType *mediaFileType;
-    NSString *mediaType;
-    NSArray *metadata;
-    AVOutputSettings *outputSettings;
-    BOOL writing;
+    BOOL attachedToPixelBufferAdaptor;
+    AVAssetWriterInputHelper *helper;
+    struct dispatch_queue_s { } *helperQueue;
+    AVWeakReference *weakReference;
+    AVWeakReference *weakReferenceToAssetWriter;
 }
 
 @end

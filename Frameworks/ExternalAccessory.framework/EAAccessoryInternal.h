@@ -7,6 +7,7 @@
 @interface EAAccessoryInternal : NSObject {
     int (*_cfAccessoryPortPropertyCallback)();
     NSDictionary *_audioPorts;
+    NSUInteger _capabilities;
     struct __CFAccessory { } *_cfAccessory;
     void *_cfAccessoryPortPropertyContext;
     NSInteger _classType;
@@ -26,9 +27,6 @@
     NSString *_preferredApp;
     NSDictionary *_protocols;
     NSString *_serialNumber;
-    BOOL _supportsAccessibility;
-    BOOL _supportsIPodOut;
-    BOOL _supportsPublicIap;
 }
 
 @property NSDictionary *audioPorts;
@@ -46,17 +44,16 @@
 @property(copy) NSString *preferredApp;
 @property NSDictionary *protocols;
 @property(copy) NSString *serialNumber;
+@property NSUInteger capabilities;
 @property NSInteger classType;
 @property BOOL connected;
 @property NSUInteger connectionID;
 @property NSUInteger eqIndex;
 @property NSInteger iPodOutOptionsMask;
-@property BOOL supportsAccessibility;
-@property BOOL supportsIPodOut;
-@property BOOL supportsPublicIap;
 
 - (int (*)())cfAccessoryPortPropertyCallback;
 - (id)audioPorts;
+- (NSUInteger)capabilities;
 - (struct __CFAccessory { }*)cfAccessory;
 - (void*)cfAccessoryPortPropertyContext;
 - (NSInteger)classType;
@@ -78,6 +75,7 @@
 - (id)protocols;
 - (id)serialNumber;
 - (void)setAudioPorts:(id)arg1;
+- (void)setCapabilities:(NSUInteger)arg1;
 - (void)setCfAccessory:(struct __CFAccessory { }*)arg1;
 - (void)setCfAccessoryPortPropertyCallback:(int (*)())arg1;
 - (void)setCfAccessoryPortPropertyContext:(void*)arg1;
@@ -97,11 +95,5 @@
 - (void)setPreferredApp:(id)arg1;
 - (void)setProtocols:(id)arg1;
 - (void)setSerialNumber:(id)arg1;
-- (void)setSupportsAccessibility:(BOOL)arg1;
-- (void)setSupportsIPodOut:(BOOL)arg1;
-- (void)setSupportsPublicIap:(BOOL)arg1;
-- (BOOL)supportsAccessibility;
-- (BOOL)supportsIPodOut;
-- (BOOL)supportsPublicIap;
 
 @end

@@ -26,8 +26,8 @@
 - (struct CGImage { }*)_newLabelImage:(BOOL)arg1;
 - (void)_reloadLabelContents;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
 - (struct CGSize { float x1; float x2; })contentsSize;
 - (void)dealloc;
 - (id)image;

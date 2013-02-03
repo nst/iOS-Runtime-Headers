@@ -6,29 +6,34 @@
    See Warning(s) below.
  */
 
-@class GKSession;
+@class GKVoiceChatSession, GKSession;
 
 @interface GKVoiceChat : NSObject {
     GKSession *_gkSession;
-    id _gkVoiceChatSession;
+    GKVoiceChatSession *_gkVoiceChatSession;
     id _playerStateUpdateHandler;
 }
 
 @property(retain) GKSession *gkSession;
+@property(retain) GKVoiceChatSession *gkVoiceChatSession;
 @property(readonly) NSString *name;
 @property(copy) ? *playerStateUpdateHandler;
 @property(getter=isActive) BOOL active;
 @property float volume;
 
++ (BOOL)isVoIPAllowed;
+
 - (void)dealloc;
 - (id)gkSession;
 - (void)gkVoiceChatSession:(id)arg1 stateUpdate:(NSUInteger)arg2 forPeer:(id)arg3;
+- (id)gkVoiceChatSession;
 - (id)initChat:(id)arg1 withSession:(id)arg2;
 - (BOOL)isActive;
 - (id)name;
 - (id)playerStateUpdateHandler;
 - (void)setActive:(BOOL)arg1;
 - (void)setGkSession:(id)arg1;
+- (void)setGkVoiceChatSession:(id)arg1;
 - (void)setMute:(BOOL)arg1 forPlayer:(id)arg2;
 - (void)setPlayerStateUpdateHandler:(id)arg1;
 - (void)setVolume:(float)arg1;

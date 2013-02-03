@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class GKVoiceChatService, LoopbackSocketTunnel, <GKVoiceChatClient>, NSRecursiveLock, VideoConference, NSString, GKVoiceChatDictionary;
+@class GKVoiceChatService, LoopbackSocketTunnel, <GKVoiceChatClient>, NSRecursiveLock, NSLock, VideoConference, NSString, GKVoiceChatDictionary;
 
 @interface GKVoiceChatServicePrivate : NSObject <VideoConferenceDelegate, VideoConferenceRealTimeChannel> {
     struct tagCONNRESULT { 
@@ -62,6 +62,7 @@
     NSInteger chatMode;
     <GKVoiceChatClient> *client;
     BOOL clientHasRTChannel;
+    NSLock *clientLock;
     VideoConference *conf;
     NSInteger curCallID;
     } currentConnResult;
@@ -88,12 +89,12 @@
 @property NSInteger chatMode;
 @property id client;
 @property(getter=isFocus) BOOL focus;
-@property float inputMeterLevel;
+@property(readonly) float inputMeterLevel;
 @property(getter=isInputMeteringEnabled) BOOL inputMeteringEnabled;
 @property(getter=getLocalBitrate,readonly) double localBitrate;
 @property(getter=getLocalFramerate,readonly) double localFramerate;
 @property(getter=isMicrophoneMuted) BOOL microphoneMuted;
-@property float outputMeterLevel;
+@property(readonly) float outputMeterLevel;
 @property(getter=isOutputMeteringEnabled) BOOL outputMeteringEnabled;
 @property(getter=getRemoteBitrate,readonly) double remoteBitrate;
 @property(getter=getRemoteFramerate,readonly) double remoteFramerate;
@@ -104,9 +105,11 @@
 
 - (BOOL)acceptCallID:(NSInteger)arg1 error:(id*)arg2;
 - (NSInteger)chatMode;
+- (void)cleanup;
 - (id)client;
 - (id)createInvite:(id*)arg1 toParticipant:(id)arg2 callID:(NSInteger*)arg3;
 - (id)createReplyUsingDictionary:(id)arg1 replyCode:(NSUInteger)arg2 error:(id*)arg3;
+- (void)dealloc;
 - (void)denyCallID:(NSInteger)arg1;
 - (void)forceNoICE:(BOOL)arg1;
 - (double)getLocalBitrate;
@@ -140,11 +143,9 @@
 - (void)setChatMode:(NSInteger)arg1;
 - (void)setClient:(id)arg1;
 - (void)setFocus:(BOOL)arg1;
-- (void)setInputMeterLevel:(float)arg1;
 - (void)setInputMeteringEnabled:(BOOL)arg1;
 - (void)setLocalVideoLayer:(void*)arg1;
 - (void)setMicrophoneMuted:(BOOL)arg1;
-- (void)setOutputMeterLevel:(float)arg1;
 - (void)setOutputMeteringEnabled:(BOOL)arg1;
 - (void)setRemoteParticipantVolume:(float)arg1;
 - (void)setRemoteVideoLayer:(void*)arg1;
@@ -159,8 +160,6 @@
 - (void)vcArg:(id)arg1 sendRealTimeData:(id)arg2 toParticipantID:(id)arg3;
 - (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(NSInteger)arg3 error:(id)arg4;
 - (void)videoConference:(id)arg1 didStopWithCallID:(NSInteger)arg2 error:(id)arg3;
-- (void)videoConference:(id)arg1 updateInputMeterLevel:(float)arg2;
-- (void)videoConference:(id)arg1 updateOutputMeterLevel:(float)arg2;
 - (id)wrapperService;
 
 @end

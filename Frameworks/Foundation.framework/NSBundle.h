@@ -71,6 +71,8 @@
 - (id)_cachedMainBundleResourcePath;
 - (struct __CFBundle { }*)_cfBundle;
 - (id)_computeExecutablePath;
+- (BOOL)_gkGameCenterEnabled;
+- (id)_gkLocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 locale:(id)arg4;
 - (void)_initInfoDictionary;
 - (id)_pathForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3 forRegion:(id)arg4;
 - (id)_pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2 forRegion:(id)arg3;

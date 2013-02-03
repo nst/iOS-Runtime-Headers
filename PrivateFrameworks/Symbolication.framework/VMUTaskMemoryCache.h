@@ -3,22 +3,21 @@
  */
 
 @interface VMUTaskMemoryCache : NSObject {
-    struct { unsigned long x1; unsigned long x2; struct { /* ? */ } *x3; } *_memoryRegions;
+    struct mapped_memory_t { } *_memoryRegions;
+    BOOL _shouldTouchPages;
     BOOL _stopped;
     NSUInteger _task;
     BOOL _taskIs64Bit;
 }
 
 + (BOOL)taskIs64Bit:(NSUInteger)arg1;
++ (id)taskMemoryCacheForTask:(NSUInteger)arg1;
 
 - (BOOL)copyRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 to:(void*)arg2;
 - (void)dealloc;
 - (void)finalize;
 - (void)flushMemoryCache;
-- (void)freeMemoryRegions;
-- (void)initMemoryRegions;
 - (id)initWithTask:(NSUInteger)arg1;
-- (NSInteger)peekAtAddress:(NSUInteger)arg1 returnsSize:(NSUInteger*)arg2 returnsBuf:(void**)arg3;
 - (NSInteger)peekAtAddress:(NSUInteger)arg1 size:(NSUInteger)arg2 returnsBuf:(void**)arg3;
 - (NSInteger)readPointerAt:(NSUInteger)arg1 value:(NSUInteger*)arg2;
 - (NSInteger)startPeeking;

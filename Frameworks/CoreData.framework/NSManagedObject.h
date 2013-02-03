@@ -52,7 +52,6 @@
 - (NSInteger)_batch_release__;
 - (void)_chainNewError:(id)arg1 toOriginalErrorDoublePointer:(id*)arg2;
 - (id)_changedTransientProperties__;
-- (id)_changedValuesForCurrentEvent;
 - (void)_clearAllChanges__;
 - (void)_clearPendingChanges__;
 - (void)_clearRawPropertiesWithHint:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
@@ -136,6 +135,7 @@
 - (void)awakeFromInsert;
 - (void)awakeFromSnapshotEvents:(NSUInteger)arg1;
 - (id)changedValues;
+- (id)changedValuesForCurrentEvent;
 - (id)committedValuesForKeys:(id)arg1;
 - (void)dealloc;
 - (id)description;

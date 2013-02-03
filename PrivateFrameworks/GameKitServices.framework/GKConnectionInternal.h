@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, NSString, NSData, CDXWrapper, NSMutableArray;
+@class CDXClient, NSString, NSData, NSMutableArray, NSMutableDictionary;
 
-@interface GKConnectionInternal : GKConnection <CDXWrapperDelegate> {
+@interface GKConnectionInternal : GKConnection <CDXClientDelegate, CDXClientSessionDelegate> {
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
@@ -21,51 +21,76 @@
     struct _opaque_pthread_cond_t { 
         long __sig; 
         BOOL __opaque[24]; 
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    NSMutableArray *_allowRelayPIDList;
     } _cPreblobFetch;
     } _cPrepareThread;
-    NSData *_cdxTicket;
-    CDXWrapper *_cdxWrapper;
+    CDXClient *_cdxClient;
+    NSMutableDictionary *_cdxSessions;
     id _eventDelegate;
+    BOOL _fAllowMoreRelay;
+    NSInteger _fPreReleased;
     NSInteger _fPrepareThread;
     NSMutableArray *_gckEventList;
     NSUInteger _gckPID;
     struct OpaqueGCKSession { } *_gckSession;
+    NSMutableDictionary *_initRelayQueue;
     NSMutableArray *_pendingConnectionPIDList;
     NSString *_pidGUID;
     NSMutableDictionary *_pidToConnectionDataMap;
     NSMutableDictionary *_pidToPlayerIDMap;
     NSMutableDictionary *_pidToPreblobMap;
+    NSMutableDictionary *_pidToRelayConnectionDataMap;
+    NSMutableDictionary *_pidToRelayInitiateInfoMap;
+    NSMutableDictionary *_pidToRelayUpdateInfoMap;
     NSData *_preblob;
     id _preblobCallback;
     double _preblobCallbackCancelTime;
     NSMutableDictionary *_preblobToPIDMap;
     BOOL _toForwardEVents;
+    NSMutableDictionary *_updateRelayQueue;
     double _wakeTime;
     } _xPreblobFetch;
     } _xPrepareThread;
+    } _xRelay;
 }
 
-- (void)CDXWrapper:(id)arg1 error:(id)arg2;
-- (void)CDXWrapper:(id)arg1 preblob:(id)arg2;
-- (void)CDXWrapper:(id)arg1 receivedData:(id)arg2 from:(NSInteger)arg3;
+@property(retain) CDXClient *cdxClient;
+@property(retain) NSMutableDictionary *cdxSessions;
+
+- (void)CDXClient:(id)arg1 error:(id)arg2;
+- (void)CDXClient:(id)arg1 preblob:(id)arg2;
+- (void)CDXClientSession:(id)arg1 receivedData:(id)arg2 from:(NSInteger)arg3;
 - (void)addEvent:(struct { NSInteger x1; char *x2; NSInteger x3; NSUInteger x4; }*)arg1 remotePeer:(NSUInteger)arg2;
-- (void)addRemoteParticipandID:(id)arg1;
-- (void)connect;
+- (void)cancelConnectParticipant:(id)arg1;
+- (id)cdxClient;
+- (id)cdxSessions;
 - (void)connectParticipantsWithConnectionData:(id)arg1 withSessionInfo:(id)arg2;
-- (void)connectPendingConnectionsFromList:(id)arg1;
+- (void)connectPendingConnectionsFromList:(id)arg1 sessionInfo:(id)arg2;
 - (BOOL)convertParticipantID:(id)arg1 toPeerID:(id*)arg2;
 - (BOOL)convertPeerID:(id)arg1 toParticipantID:(id*)arg2;
+- (id)createInitiateRelayDictionaryForParticipant:(id)arg1 remotePeerID:(id)arg2;
+- (id)createInsecureTicketUsingSortedConnectionsFromList:(id)arg1;
+- (id)createRelayUpdateDictionaryForParticipant:(id)arg1 didInitiate:(BOOL)arg2;
 - (void)dealloc;
+- (void)doRelayCheckForRemotePeerID:(id)arg1;
 - (id)eventDelegate;
+- (id)extractBlobUsingData:(id)arg1 withSourcePID:(NSUInteger)arg2 destPID:(NSUInteger)arg3;
 - (NSUInteger)gckPID;
 - (struct OpaqueGCKSession { }*)gckSession;
-- (id)getLocalConnectionData;
 - (void)getLocalConnectionDataWithCompletionHandler:(id)arg1;
 - (id)initWithParticipantID:(id)arg1;
+- (void)initiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
+- (void)internalInitiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
+- (void)internalUpdateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
 - (void)internal_setRemoteConnectionData:(id)arg1 fromParticipantID:(id)arg2 pendingConnectionPIDList:(id)arg3;
-- (void)prepareThread;
+- (void)preRelease;
+- (void)setCdxClient:(id)arg1;
+- (void)setCdxSessions:(id)arg1;
 - (void)setEventDelegate:(id)arg1;
 - (void)setParticipantID:(id)arg1 forPeerID:(id)arg2;
-- (void)setRemoteConnectionData:(id)arg1 fromParticipantID:(id)arg2;
+- (void)updateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
 
 @end

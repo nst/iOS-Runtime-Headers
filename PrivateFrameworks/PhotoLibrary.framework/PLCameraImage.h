@@ -15,7 +15,7 @@
 - (void)dealloc;
 - (BOOL)didSetPhotoData;
 - (BOOL)hasFullSizeImageData;
-- (id)imageWithFormat:(NSInteger)arg1;
+- (id)imageWithFormat:(NSInteger)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (id)indexSheetImage;
 - (id)initWithPath:(id)arg1 thumbnailImage:(id)arg2;
 - (id)previewThumbnailImage;

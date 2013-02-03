@@ -41,8 +41,10 @@
 - (id)accountID;
 - (id)backingAccountInfoProvider;
 - (void)dealloc;
+- (id)description;
 - (id)error;
-- (void)handleTrustChallenge:(id)arg1;
+- (BOOL)handleCertificateError:(id)arg1;
+- (BOOL)handleTrustChallenge:(id)arg1;
 - (id)host;
 - (id)identityPersist;
 - (id)initWithAccountInfoProvider:(id)arg1;

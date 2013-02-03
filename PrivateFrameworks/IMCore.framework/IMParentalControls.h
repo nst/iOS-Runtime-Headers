@@ -29,6 +29,7 @@
 - (BOOL)accountIsEnabled:(id)arg1;
 - (BOOL)active;
 - (id)aimWhitelist;
+- (id)autorelease;
 - (void)dealloc;
 - (BOOL)disableAV;
 - (BOOL)disableAimService;
@@ -41,6 +42,8 @@
 - (id)init;
 - (id)jabberWhitelist;
 - (BOOL)okToConnectAccount:(id)arg1;
+- (oneway void)release;
+- (NSUInteger)retainCount;
 - (void)setShouldPostNotifications:(BOOL)arg1;
 - (id)subnetWhitelist;
 

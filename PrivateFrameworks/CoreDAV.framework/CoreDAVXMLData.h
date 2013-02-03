@@ -11,10 +11,12 @@
     NSLock *_namespaceLock;
     struct __CFDictionary { } *_seenURIsToDepth;
     struct __CFDictionary { } *_seenURIsToPrefixes;
+    BOOL _shouldAddFormattingSpaces;
     struct _xmlTextWriter { } *_writer;
 }
 
 @property(readonly) NSData *data;
+@property BOOL shouldAddFormattingSpaces;
 
 - (const char *)_prefixForNameSpace:(const char *)arg1;
 - (void)_startElement:(const char *)arg1 inNamespace:(const char *)arg2 withAttributeNamesAndValues:(const char *)arg3 attributes:(void*)arg4;
@@ -23,6 +25,8 @@
 - (void)dealloc;
 - (void)endElement:(const char *)arg1 inNamespace:(const char *)arg2;
 - (id)init;
+- (void)setShouldAddFormattingSpaces:(BOOL)arg1;
+- (BOOL)shouldAddFormattingSpaces;
 - (void)startElement:(const char *)arg1 inNamespace:(const char *)arg2 withAttributeNamesAndValues:(const char *)arg3;
 
 @end

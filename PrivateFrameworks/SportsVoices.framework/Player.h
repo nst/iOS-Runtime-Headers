@@ -13,8 +13,11 @@
 
 + (void)__audioSessionInterruptionDidBegin;
 + (void)__audioSessionInterruptionDidEnd;
++ (void)__clearSharedPlayQueue;
 + (void)__deactivateAudioSession;
++ (void)__initializeAudioSession;
 + (void)__nts_indicateEndOfQueuePlayback:(id)arg1;
++ (void)__nts_queuePlayerStatusChanged:(id)arg1;
 + (id)__sharedPlayQueue;
 + (id)__stringForAudioSessionError:(long)arg1;
 + (void)initialize;

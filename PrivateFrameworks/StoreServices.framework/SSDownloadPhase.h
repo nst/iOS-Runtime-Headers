@@ -16,13 +16,13 @@
 @property(readonly) long long progressValue;
 @property(readonly) long long totalProgressValue;
 
+- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
 - (double)estimatedSecondsRemaining;
 - (id)init;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithOperationProgress:(id)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (id)operationProgress;
 - (NSInteger)phaseType;
 - (float)progressChangeRate;

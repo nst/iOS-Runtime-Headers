@@ -2,22 +2,29 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKGame;
+@class GKStarRatingView, GKUITheme, GKGame;
 
-@interface GKPurchasableGameCellContents : GKThreeLineCellContents {
+@interface GKPurchasableGameCellContents : GKMultilineCellContentView {
     GKGame *_game;
+    GKStarRatingView *_ratingView;
+    GKUITheme *_theme;
 }
 
 @property(retain) GKGame *game;
+@property(retain) GKStarRatingView *ratingView;
+@property(retain) GKUITheme *theme;
+
++ (id)purchasableGameCellContentsWithTheme:(id)arg1;
 
 - (void)dealloc;
-- (void)drawLinesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawLineIndex:(NSUInteger)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 highlighted:(BOOL)arg3;
 - (id)game;
-- (id)image;
-- (id)init;
+- (void)layoutSubviews;
 - (void)prepareForReuse;
+- (id)ratingView;
 - (void)setGame:(id)arg1;
-- (id)starsBackgroundImage;
-- (id)starsForegroundImage;
+- (void)setRatingView:(id)arg1;
+- (void)setTheme:(id)arg1;
+- (id)theme;
 
 @end

@@ -27,6 +27,8 @@
 - (void)dealloc;
 - (id)init;
 - (BOOL)isDataConnectionActive;
+- (BOOL)isWiFiAssociated;
+- (BOOL)isWiFiEnabled;
 - (void)removeWiFiAutoAssociationClientToken:(id)arg1;
 - (void)setDataConnectionActive:(BOOL)arg1;
 - (BOOL)willTryToAutoAssociateWiFiNetwork;

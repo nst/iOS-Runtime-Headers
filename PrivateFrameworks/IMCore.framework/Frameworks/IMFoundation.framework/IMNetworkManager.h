@@ -8,4 +8,8 @@
 + (id)alloc;
 + (id)sharedInstance;
 
+- (id)autorelease;
+- (oneway void)release;
+- (NSUInteger)retainCount;
+
 @end

@@ -5,22 +5,29 @@
 @class GKMatchRequest, NSArray, NSString, NSData;
 
 @interface GKMatchPlayersDataRequest : GKDataRequest {
+    NSData *_cdxTicket;
     NSInteger _connectedPeers;
     NSData *_connectionData;
     GKMatchRequest *_matchRequest;
     NSArray *_matches;
+    NSArray *_relayPushes;
     NSString *_rid;
     BOOL _serverHosted;
+    NSData *_sessionToken;
 }
 
+@property(retain) NSData *cdxTicket;
 @property(retain) NSData *connectionData;
 @property(retain) GKMatchRequest *matchRequest;
 @property(retain) NSArray *matches;
+@property(retain) NSArray *relayPushes;
 @property(retain) NSString *rid;
+@property(retain) NSData *sessionToken;
 @property NSInteger connectedPeers;
 @property BOOL serverHosted;
 
 - (void)cancel;
+- (id)cdxTicket;
 - (NSInteger)connectedPeers;
 - (id)connectionData;
 - (void)dealloc;
@@ -29,14 +36,19 @@
 - (id)key;
 - (id)matchRequest;
 - (id)matches;
+- (id)relayPushes;
 - (id)request;
 - (id)rid;
 - (BOOL)serverHosted;
+- (id)sessionToken;
+- (void)setCdxTicket:(id)arg1;
 - (void)setConnectedPeers:(NSInteger)arg1;
 - (void)setConnectionData:(id)arg1;
 - (void)setMatchRequest:(id)arg1;
 - (void)setMatches:(id)arg1;
+- (void)setRelayPushes:(id)arg1;
 - (void)setRid:(id)arg1;
 - (void)setServerHosted:(BOOL)arg1;
+- (void)setSessionToken:(id)arg1;
 
 @end

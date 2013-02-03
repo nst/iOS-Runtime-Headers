@@ -22,6 +22,8 @@
 - (void)beginSeekingForward;
 - (id)contentURL;
 - (NSInteger)controlStyle;
+- (float)currentPlaybackRate;
+- (double)currentPlaybackTime;
 - (void)dealloc;
 - (double)duration;
 - (double)endPlaybackTime;
@@ -46,6 +48,8 @@
 - (NSInteger)scalingMode;
 - (void)setContentURL:(id)arg1;
 - (void)setControlStyle:(NSInteger)arg1;
+- (void)setCurrentPlaybackRate:(float)arg1;
+- (void)setCurrentPlaybackTime:(double)arg1;
 - (void)setEndPlaybackTime:(double)arg1;
 - (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFullscreen:(BOOL)arg1;

@@ -2,19 +2,22 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDate, NSDictionary, NSArray;
+@class NSArray, NSString, SSURLConnectionRequest, NSDate, NSDictionary, NSMutableArray;
 
 @interface SSItem : NSObject {
     NSDate *_expirationDate;
     NSArray *_offers;
     NSDictionary *_properties;
+    NSString *_tellAFriendBody;
+    NSString *_tellAFriendBodyMIMEType;
+    NSMutableArray *_tellAFriendHandlers;
+    SSURLConnectionRequest *_tellAFriendRequest;
+    NSString *_tellAFriendSubject;
 }
 
 @property(readonly) NSNumber *ITunesStoreIdentifier;
 @property(readonly) NSArray *allItemOffers;
 @property(readonly) NSString *artistName;
-@property(readonly) NSString *bundleIdentifier;
-@property(readonly) NSString *bundleVersion;
 @property(readonly) SSItemOffer *defaultItemOffer;
 @property(readonly) NSDate *expirationDate;
 @property(readonly) NSString *itemKind;
@@ -26,8 +29,10 @@
 @property(getter=isRestricted,readonly) BOOL restricted;
 
 - (id)ITunesStoreIdentifier;
+- (void)_finishTellAFriendLoadWithError:(id)arg1;
 - (id)_offers;
 - (void)_setExpirationDate:(id)arg1;
+- (id)_tellAFriendDictionary;
 - (id)allItemOffers;
 - (id)artistName;
 - (float)averageUserRating;
@@ -44,14 +49,21 @@
 - (id)itemKind;
 - (id)itemOfferForIdentifier:(id)arg1;
 - (id)itemTitle;
+- (void)loadTellAFriendMessageWithCompletionHandler:(id)arg1;
 - (id)mediaKind;
 - (NSInteger)numberOfUserRatings;
 - (id)playableMedia;
 - (id)priceDisplay;
 - (id)rawItemDictionary;
 - (id)releaseDate;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
+- (void)requestDidFinish:(id)arg1;
 - (id)sendGiftURL;
+- (id)tellAFriendBody;
+- (id)tellAFriendBodyMIMEType;
+- (id)tellAFriendSubject;
 - (id)thumbnailImages;
+- (void)urlConnectionRequest:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 - (id)viewItemURL;
 - (id)viewReviewsURL;

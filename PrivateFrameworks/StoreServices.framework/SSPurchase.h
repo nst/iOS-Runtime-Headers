@@ -24,6 +24,7 @@
 
 - (id)accountIdentifier;
 - (id)buyParameters;
+- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)downloadMetadata;
@@ -31,6 +32,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItem:(id)arg1 offer:(id)arg2;
 - (id)initWithItem:(id)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (id)item;
 - (id)itemOffer;
 - (void)setAccountIdentifier:(id)arg1;

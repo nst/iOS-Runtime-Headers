@@ -10,6 +10,7 @@
     MLTrack *_firstItem;
     MLQuery *_query;
     NSInteger _repeatMode;
+    BOOL _seeking;
     NSInteger _shuffleMode;
     BOOL _useApplicationSpecificQueue;
     BOOL _videoPlaybackEnabled;
@@ -20,6 +21,7 @@
 @property BOOL allowsRemoteUIAccess;
 @property NSInteger backgroundPlaybackAccess;
 @property NSInteger repeatMode;
+@property BOOL seeking;
 @property NSInteger shuffleMode;
 @property BOOL useApplicationSpecificQueue;
 @property BOOL videoPlaybackEnabled;
@@ -30,11 +32,13 @@
 - (id)firstItem;
 - (id)query;
 - (NSInteger)repeatMode;
+- (BOOL)seeking;
 - (void)setAllowsRemoteUIAccess:(BOOL)arg1;
 - (void)setBackgroundPlaybackAccess:(NSInteger)arg1;
 - (void)setFirstItem:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setRepeatMode:(NSInteger)arg1;
+- (void)setSeeking:(BOOL)arg1;
 - (void)setShuffleMode:(NSInteger)arg1;
 - (void)setUseApplicationSpecificQueue:(BOOL)arg1;
 - (void)setVideoPlaybackEnabled:(BOOL)arg1;

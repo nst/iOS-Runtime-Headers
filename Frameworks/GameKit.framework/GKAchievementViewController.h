@@ -5,12 +5,18 @@
 @class <GKAchievementViewControllerDelegate>;
 
 @interface GKAchievementViewController : UINavigationController {
-    <GKAchievementViewControllerDelegate> *_achievementViewControllerDelegate;
+    <GKAchievementViewControllerDelegate> *_achievementDelegate;
 }
 
-- (void)dismissPressed:(id)arg1;
-- (void)setAchievementViewControllerDelegate:(id)arg1;
+@property <GKAchievementViewControllerDelegate> *achievementDelegate;
+
+- (id)achievementDelegate;
+- (void)donePressed:(id)arg1;
+- (id)init;
+- (id)initWithRootViewController:(id)arg1;
+- (void)setAchievementDelegate:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

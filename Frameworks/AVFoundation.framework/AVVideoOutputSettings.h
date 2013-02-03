@@ -7,14 +7,16 @@
 
 @property(readonly) NSDictionary *videoSettingsDictionary;
 
++ (id)_outputSettingsWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
++ (id)_videoOutputSettingsWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (id)defaultVideoOutputSettings;
-+ (id)outputSettingsWithOutputSettingsDictionary:(id)arg1;
 + (id)registeredOutputSettingsClasses;
 + (id)videoOutputSettingsWithVideoSettingsDictionary:(id)arg1;
 
 - (id)compatibleMediaTypes;
 - (NSInteger)height;
-- (id)initWithVideoSettingsDictionary:(id)arg1;
+- (id)initWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
+- (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
 - (id)videoSettingsDictionary;
 - (NSInteger)width;
 

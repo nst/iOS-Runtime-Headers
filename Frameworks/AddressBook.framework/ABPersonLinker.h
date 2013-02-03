@@ -12,10 +12,10 @@
 }
 
 + (BOOL)isLinkDataValidForAddressBook:(void*)arg1;
++ (void)log:(id)arg1;
 + (BOOL)shouldLog;
 + (void)startAutoLinkingNewPeopleInAddressBook:(void*)arg1 inProcess:(BOOL)arg2;
 
-- (id)_stringForWhereClauseFromString:(id)arg1;
 - (void)addPerson:(void*)arg1 toDictionary:(id)arg2 withProperty:(NSInteger)arg3;
 - (id)copyArrayOfAllPeopleWithROWIDGreatThan:(NSInteger)arg1;
 - (void)dealloc;

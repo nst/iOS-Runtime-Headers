@@ -63,6 +63,7 @@
 + (BOOL)__original_resolveClassMethod:(SEL)arg1;
 + (id)_defaultContentForType:(NSInteger)arg1 andState:(NSUInteger)arg2;
 + (void)_initializeSafeCategory;
++ (id)buttonWithTitle:(id)arg1 theme:(id)arg2;
 + (id)buttonWithType:(NSInteger)arg1;
 + (BOOL)resolveClassMethod:(SEL)arg1;
 

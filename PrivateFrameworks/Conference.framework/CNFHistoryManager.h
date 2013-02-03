@@ -5,7 +5,8 @@
 @class NSMutableDictionary;
 
 @interface CNFHistoryManager : NSObject {
-    NSMutableDictionary *_history;
+    NSMutableDictionary *_emailAddressHistory;
+    NSMutableDictionary *_phoneNumberHistory;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -13,10 +14,8 @@
 
 - (id)_fullPathToConferenceHistoryPlist;
 - (id)_fullPathToConferenceSupportDirectory;
-- (id)_normalizePhoneNumber:(id)arg1;
-- (id)_readConferenceHistory;
 - (void)_reloadHistory;
-- (void)_writeConferenceHistory:(id)arg1;
+- (void)_writeConferenceHistory;
 - (id)autorelease;
 - (void)dealloc;
 - (BOOL)havePreviouslyConferencedWithID:(id)arg1;

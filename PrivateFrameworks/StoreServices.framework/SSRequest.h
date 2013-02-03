@@ -6,6 +6,7 @@
 
 @interface SSRequest : NSObject {
     NSInteger _backgroundTaskIdentifier;
+    BOOL _cancelAfterTaskExpiration;
     <SSRequestDelegate> *_delegate;
     SSRequestGroup *_group;
     NSString *_groupIdentifier;
@@ -19,6 +20,7 @@
 @property(retain) NSString *requestGroupIdentifier;
 @property(retain) NSString *requestIdentifier;
 @property(readonly) NSInteger requestState;
+@property BOOL shouldCancelAfterTaskExpiration;
 
 - (void)_beginBackgroundTask;
 - (void)_daemonExited:(id)arg1;
@@ -32,16 +34,16 @@
 - (void)_setRequestState:(NSInteger)arg1;
 - (void)awakeFromDaemonInRequestGroup:(id)arg1;
 - (void)cancel;
+- (id)copyPropertyListEncoding;
 - (void)dealloc;
 - (id)delegate;
 - (void)disconnect;
-- (void)encodeWithCoder:(id)arg1;
 - (void)handleBackgroundTaskExpiration;
 - (void)handleDaemonExit;
 - (id)handleFailureResponse:(id)arg1;
 - (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
 - (id)init;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
 - (void)registerForDaemonNotifications;
 - (id)requestGroup;
@@ -52,6 +54,8 @@
 - (void)setRequestGroup:(id)arg1;
 - (void)setRequestGroupIdentifier:(id)arg1;
 - (void)setRequestIdentifier:(id)arg1;
+- (void)setShouldCancelAfterTaskExpiration:(BOOL)arg1;
+- (BOOL)shouldCancelAfterTaskExpiration;
 - (BOOL)start;
 - (void)unregisterForDaemonNotifications;
 

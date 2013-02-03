@@ -38,6 +38,7 @@
 - (void)_finishResignFirstResponder;
 - (id)_firstResponder;
 - (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
+- (BOOL)_isContainedByTransitioningView;
 - (BOOL)_isPinningInputViews;
 - (BOOL)_isRootForKeyResponderCycle;
 - (BOOL)_isSettingFirstResponder;

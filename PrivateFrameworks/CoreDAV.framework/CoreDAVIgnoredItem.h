@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@interface CoreDAVIgnoredItem : CoreDAVItem <CoreDAVParsingIgnoreUnknownItems> {
+@interface CoreDAVIgnoredItem : CoreDAVItem {
 }
 
 + (BOOL)acceptsTopLevelLeaves;
-+ (BOOL)ignoresUnknownChildren;
++ (BOOL)errorOnUnknownChildren;
 + (BOOL)parsingWithSubItems;
 
 - (id)copyCoreDAVParseRules;

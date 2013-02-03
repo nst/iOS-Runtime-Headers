@@ -21,7 +21,6 @@
 - (void)_downloadStoryboardData;
 - (void)_failWithError:(id)arg1;
 - (id)_imageForWidth:(float)arg1;
-- (void)_notifyServerOfBadResponse:(NSInteger)arg1;
 - (void)_queueFinished;
 - (void)_stopLoadingStoryboard;
 - (NSUInteger)actualImpressionsRemaining;
@@ -48,7 +47,7 @@
 - (void)setProvisionalNumberOfImpressions:(NSUInteger)arg1;
 - (void)startLoading;
 - (void)stopLoading;
-- (void)trackClickWithOverclickCount:(NSUInteger)arg1 impressionSequence:(NSUInteger)arg2 andContext:(id)arg3;
-- (void)trackImpressionWithSequence:(NSUInteger)arg1;
+- (double)timeRemaining;
+- (BOOL)trackImpressionWithSequence:(NSUInteger)arg1;
 
 @end

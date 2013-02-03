@@ -46,6 +46,7 @@
 - (BOOL)_presentModalViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)_purgeCaches;
 - (void)_reloadScriptExecutionContext;
+- (void)_syncDidFinishNotification:(id)arg1;
 - (struct __CFArray { }*)assetTypes;
 - (id)beginDownloadQueueSessionForDownloadKind:(id)arg1;
 - (id)beginDownloadQueueSessionWithDownloadKinds:(id)arg1;

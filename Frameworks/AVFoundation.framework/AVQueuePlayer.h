@@ -8,6 +8,8 @@
     AVQueuePlayerInternal *_queuePlayer;
 }
 
++ (id)playerWithPlayerItem:(id)arg1;
++ (id)playerWithURL:(id)arg1;
 + (id)queuePlayerWithItems:(id)arg1;
 
 - (NSInteger)_defaultActionAtItemEnd;

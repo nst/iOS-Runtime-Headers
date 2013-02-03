@@ -10,6 +10,7 @@
         float y; 
     unsigned int _passedHitTest : 1;
     unsigned int _defaultPrevented : 1;
+    unsigned int _inJavaScriptGesture : 1;
     } _locationInWindow;
     float _originalGestureAngle;
     float _originalGestureDistance;
@@ -18,13 +19,16 @@
     SEL _touchAction;
     NSMutableArray *_touchIdentifiers;
     NSMutableArray *_touchLocations;
+    NSMutableArray *_touchPhases;
     id _touchTarget;
     NSInteger _type;
 }
 
 @property(retain) NSMutableArray *touchIdentifiers;
 @property(retain) NSMutableArray *touchLocations;
+@property(retain) NSMutableArray *touchPhases;
 @property(getter=isDefaultPrevented) BOOL defaultPrevented;
+@property(readonly) BOOL inJavaScriptGesture;
 @property(readonly) CGPoint locationInWindow;
 @property(readonly) float rotation;
 @property(readonly) float scale;
@@ -33,6 +37,8 @@
 - (BOOL)_hitTestTouches:(id)arg1;
 - (id)_identifiersDescription;
 - (id)_locationsDescription;
+- (id)_phaseDescription:(NSInteger)arg1;
+- (id)_phasesDescription;
 - (void)_processTouches:(id)arg1 withEvent:(id)arg2 type:(NSInteger)arg3;
 - (void)_recordTouches:(id)arg1 type:(NSInteger)arg2;
 - (void)_reset;
@@ -41,6 +47,7 @@
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (BOOL)inJavaScriptGesture;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (BOOL)isDefaultPrevented;
 - (struct CGPoint { float x1; float x2; })locationInWindow;
@@ -49,8 +56,10 @@
 - (void)setDefaultPrevented:(BOOL)arg1;
 - (void)setTouchIdentifiers:(id)arg1;
 - (void)setTouchLocations:(id)arg1;
+- (void)setTouchPhases:(id)arg1;
 - (id)touchIdentifiers;
 - (id)touchLocations;
+- (id)touchPhases;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

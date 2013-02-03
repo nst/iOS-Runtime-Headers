@@ -2,24 +2,39 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
+@class NSArray;
+
 @interface GKMatchRequest : NSObject {
+    BOOL _attributesSet;
     NSUInteger _maxPlayers;
     NSUInteger _minPlayers;
+    NSUInteger _playerAttributes;
     NSUInteger _playerGroup;
+    NSArray *_playersToInvite;
 }
 
+@property(retain) NSArray *playersToInvite;
+@property BOOL attributesSet;
 @property NSUInteger maxPlayers;
 @property NSUInteger minPlayers;
+@property NSUInteger playerAttributes;
 @property NSUInteger playerGroup;
 
+- (BOOL)attributesSet;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)init;
-- (BOOL)isValid;
+- (BOOL)isValidForHosted:(BOOL)arg1;
 - (NSUInteger)maxPlayers;
 - (NSUInteger)minPlayers;
+- (NSUInteger)playerAttributes;
 - (NSUInteger)playerGroup;
+- (id)playersToInvite;
+- (void)setAttributesSet:(BOOL)arg1;
 - (void)setMaxPlayers:(NSUInteger)arg1;
 - (void)setMinPlayers:(NSUInteger)arg1;
+- (void)setPlayerAttributes:(NSUInteger)arg1;
 - (void)setPlayerGroup:(NSUInteger)arg1;
+- (void)setPlayersToInvite:(id)arg1;
 
 @end

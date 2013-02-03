@@ -23,7 +23,7 @@
 - (id)assetsFilter;
 - (void)dealloc;
 - (NSUInteger)groupType;
-- (id)initWithAlbumID:(NSUInteger)arg1 albumName:(id)arg2 library:(id)arg3;
+- (id)initWithAlbum:(id)arg1 library:(id)arg2;
 - (BOOL)isValid;
 - (id)library;
 - (void)libraryDidChange;

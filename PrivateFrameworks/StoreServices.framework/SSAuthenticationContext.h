@@ -9,6 +9,8 @@
     BOOL _accountNameEditable;
     NSInteger _accountScope;
     BOOL _canCreateNewAccount;
+    NSString *_clientIdentifierHeader;
+    BOOL _demoAccount;
     NSString *_preferredITunesStoreClient;
     NSInteger _promptStyle;
     NSDictionary *_requestParameters;
@@ -18,6 +20,7 @@
 }
 
 @property(copy,readonly) NSString *accountName;
+@property(copy,readonly) NSString *clientIdentifierHeader;
 @property(copy,readonly) NSString *preferredITunesStoreClient;
 @property(copy,readonly) NSDictionary *requestParameters;
 @property(retain,readonly) NSNumber *requiredUniqueIdentifier;
@@ -25,6 +28,7 @@
 @property(getter=isAccountNameEditable,readonly) BOOL accountNameEditable;
 @property(readonly) NSInteger accountScope;
 @property(readonly) BOOL canCreateNewAccount;
+@property(getter=isDemoAccount,readonly) BOOL demoAccount;
 @property(readonly) NSInteger promptStyle;
 @property(readonly) BOOL shouldFollowAccountButtons;
 
@@ -34,15 +38,17 @@
 - (id)accountName;
 - (NSInteger)accountScope;
 - (BOOL)canCreateNewAccount;
+- (id)clientIdentifierHeader;
+- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithAccount:(id)arg1;
 - (id)initWithAccountIdentifier:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (BOOL)isAccountNameEditable;
+- (BOOL)isDemoAccount;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)preferredITunesStoreClient;
 - (NSInteger)promptStyle;

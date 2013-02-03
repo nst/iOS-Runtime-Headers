@@ -10,6 +10,7 @@
 
 - (BOOL)hasCameraCapability;
 - (BOOL)hasCellularDataCapability;
+- (BOOL)hasCellularTelephonyCapability;
 - (BOOL)hasSMSCapability;
 - (BOOL)hasTelephonyCapability;
 - (BOOL)isConferencingAvailable;

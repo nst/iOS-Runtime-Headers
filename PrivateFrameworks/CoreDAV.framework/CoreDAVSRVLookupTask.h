@@ -10,9 +10,15 @@
     NSInteger _srvPort;
 }
 
+@property <CoreDAVSVRLookupTaskDelegate> *delegate;
+
+- (id)_parseDNSReply:(struct { NSUInteger x1; struct sockaddr {} *x2; struct { /* ? */ } *x3; struct { /* ? */ } **x4; struct { /* ? */ } **x5; struct { /* ? */ } **x6; struct { /* ? */ } **x7; }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
+- (void)finishWithSRVLookupResults:(id)arg1;
 - (id)initWithServiceString:(id)arg1;
 - (void)performCoreDAVTask;
+- (void)srvLookupForHost:(id)arg1 forService:(id)arg2;
 
 @end

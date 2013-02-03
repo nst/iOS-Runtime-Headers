@@ -57,6 +57,7 @@
 }
 
 - (void)_accessibilityBumpValue:(BOOL)arg1;
+- (BOOL)_axInteractionEnabled;
 - (void)_controlMouseDown:(struct __GSEvent { }*)arg1;
 - (void)_controlMouseDragged:(struct __GSEvent { }*)arg1;
 - (void)_controlMouseUp:(struct __GSEvent { }*)arg1;

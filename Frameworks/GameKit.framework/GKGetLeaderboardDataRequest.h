@@ -2,56 +2,43 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray, NSString, GKGame, NSDictionary;
+@class NSArray, NSString, GKLeaderboard, GKGame, NSDictionary;
 
 @interface GKGetLeaderboardDataRequest : GKDataRequest {
-    NSInteger _count;
+    NSString *_categoryTitle;
     GKGame *_game;
-    NSArray *_leaderboard;
+    GKLeaderboard *_leaderboard;
     NSUInteger _maxRange;
-    NSInteger _playerScope;
     NSDictionary *_playerScore;
-    NSArray *_players;
     NSString *_scoreType;
-    NSInteger _startingRank;
-    NSInteger _timeScope;
+    NSArray *_scores;
 }
 
+@property(readonly) NSString *categoryTitle;
 @property(retain) GKGame *game;
-@property(readonly) NSArray *leaderboard;
+@property(retain) GKLeaderboard *leaderboard;
 @property(readonly) NSDictionary *playerScore;
-@property(retain) NSArray *players;
 @property(readonly) NSString *scoreType;
-@property NSInteger count;
+@property(readonly) NSArray *scores;
 @property(readonly) NSUInteger maxRange;
-@property NSInteger playerScope;
-@property NSInteger startingRank;
-@property NSInteger timeScope;
 
 - (id)_playerScope:(NSInteger)arg1;
 - (id)_timeScope:(NSInteger)arg1;
 - (id)cacheKey;
 - (NSInteger)cachePriority;
 - (NSInteger)cacheType;
-- (NSInteger)count;
+- (id)categoryTitle;
 - (void)dealloc;
 - (id)game;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)key;
 - (id)leaderboard;
 - (NSUInteger)maxRange;
-- (NSInteger)playerScope;
 - (id)playerScore;
-- (id)players;
 - (id)request;
 - (id)scoreType;
-- (void)setCount:(NSInteger)arg1;
+- (id)scores;
 - (void)setGame:(id)arg1;
-- (void)setPlayerScope:(NSInteger)arg1;
-- (void)setPlayers:(id)arg1;
-- (void)setStartingRank:(NSInteger)arg1;
-- (void)setTimeScope:(NSInteger)arg1;
-- (NSInteger)startingRank;
-- (NSInteger)timeScope;
+- (void)setLeaderboard:(id)arg1;
 
 @end

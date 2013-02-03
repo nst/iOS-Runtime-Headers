@@ -2,15 +2,19 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSMutableDictionary, UIPopoverController, UIKeyboard, UIAlertView, NSMutableArray, UIActionSheet, SnapshotView, NSString, PreferencesTable, NSArray;
+@class NSMutableDictionary, PSSnapshotView, UIKeyboard, UIAlertView, NSMutableArray, UIActionSheet, NSString, UIPopoverController, PreferencesTable, NSArray;
 
 @interface PSListController : PSViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, PSViewControllerOffsetProtocol> {
+    struct CGPoint { 
+        float x; 
+        float y; 
     UIActionSheet *_actionSheet;
     UIAlertView *_alertView;
     NSMutableArray *_bundleControllers;
     BOOL _bundlesLoaded;
     BOOL _cachesCells;
     NSMutableDictionary *_cells;
+    } _contentOffsetWithKeyboard;
     NSMutableArray *_groups;
     BOOL _hasAppeared;
     UIKeyboard *_keyboard;
@@ -20,7 +24,7 @@
     UIPopoverController *_popupStylePopoverController;
     BOOL _popupStylePopoverShouldRePresent;
     BOOL _showingSetupController;
-    SnapshotView *_snapshotTable;
+    PSSnapshotView *_snapshotTable;
     NSString *_specifierID;
     NSArray *_specifiers;
     NSMutableDictionary *_specifiersByID;
@@ -163,6 +167,7 @@
 - (id)tableView:(id)arg1 titleForHeaderInSection:(NSInteger)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(NSInteger)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
+- (Class)tableViewClass;
 - (float)verticalContentOffset;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;

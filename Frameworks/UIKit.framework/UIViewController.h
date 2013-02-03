@@ -60,6 +60,7 @@
 @property(retain) UIViewController *childModalViewController;
 @property(retain) NSHashTable *childViewControllers;
 @property(retain) UIDropShadowView *dropShadowView;
+@property(retain,readonly) GKImageBackgroundView *gkBackgroundView;
 @property(readonly) SUKeyboardBackstopViewController *keyboardBackstopViewController;
 @property(retain) UITransitionView *modalTransitionView;
 @property(readonly) UIViewController *modalViewController;
@@ -242,6 +243,8 @@
 - (id)existingView;
 - (void)forceUnloadView;
 - (void)getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1 forWindow:(id)arg2;
+- (void)gkAdjustBackgroundForSplitPosition;
+- (id)gkBackgroundView;
 - (BOOL)hasDisplayableContent;
 - (float)heightForViewInPopoverView;
 - (void)hidePopoverView;

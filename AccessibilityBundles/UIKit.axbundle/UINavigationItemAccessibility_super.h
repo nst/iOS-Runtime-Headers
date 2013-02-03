@@ -6,5 +6,7 @@
 }
 
 - (id)backButtonView;
+- (id)customLeftView;
+- (id)customRightView;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSIndexPath, UITableView;
+@class UIView, UITableView;
 
 @interface UIInputSwitcherView : UIView <UITableViewDataSource, UITableViewDelegate> {
     struct CGRect { 
@@ -14,7 +14,7 @@
             float width; 
             float height; 
         } size; 
-    NSIndexPath *m_currentInputModeIndexPath;
+    NSInteger m_currentInputModeIndex;
     BOOL m_inputModesDidChange;
     NSInteger m_mode;
     float m_pointerOffset;

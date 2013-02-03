@@ -5,9 +5,10 @@
 @class AVAssetWriterInternal;
 
 @interface AVAssetWriter : NSObject {
-    AVAssetWriterInternal *_priv;
+    AVAssetWriterInternal *_internal;
 }
 
+@property(getter=_helper,retain) AVAssetWriterHelper *helper; /* unknown property attribute: S_setHelper: */
 @property(readonly) NSArray *availableMediaTypes;
 @property(readonly) NSError *error;
 @property(readonly) NSArray *inputs;
@@ -19,13 +20,20 @@
 @property(readonly) NSInteger status;
 
 + (id)assetWriterWithURL:(id)arg1 fileType:(id)arg2 error:(id*)arg3;
++ (void)initialize;
++ (id)keyPathsForValuesAffectingError;
++ (id)keyPathsForValuesAffectingStatus;
 
-- (id)addPixelBufferInputWithMediaType:(id)arg1 sourcePixelBufferAttributes:(id)arg2 outputSettings:(id)arg3;
-- (id)addSampleBufferInputWithMediaType:(id)arg1 outputSettings:(id)arg2;
+- (id)_helper;
+- (void)_setHelper:(id)arg1;
+- (void)_transitionToFailedStatusWithError:(id)arg1;
+- (void)addInput:(id)arg1;
 - (id)availableMediaTypes;
+- (BOOL)canAddInput:(id)arg1;
 - (BOOL)canApplyOutputSettings:(id)arg1 forMediaType:(id)arg2;
 - (void)cancelWriting;
 - (void)dealloc;
+- (id)description;
 - (void)endSessionAtSourceTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
 - (id)error;
 - (void)finalize;
@@ -37,6 +45,8 @@
 - (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })movieFragmentInterval;
 - (id)outputFileType;
 - (id)outputURL;
+- (void)release;
+- (id)retain;
 - (void)setMetadata:(id)arg1;
 - (void)setMovieFragmentInterval:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
 - (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;

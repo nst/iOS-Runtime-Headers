@@ -13,10 +13,12 @@
 @property BOOL shouldMakeDefaultRingtone;
 
 - (id)assigneeIdentifier;
+- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (void)setAssigneeIdentifier:(id)arg1;
 - (void)setShouldMakeDefaultRingtone:(BOOL)arg1;
 - (BOOL)shouldMakeDefaultRingtone;

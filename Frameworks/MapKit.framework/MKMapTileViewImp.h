@@ -5,10 +5,9 @@
 @class <MKMapTileViewDelegate>, MKMapTileView, MKTiledLayer, NSHashTable, NSTimer, MKTilePathArray;
 
 @interface MKMapTileViewImp : NSObject {
-    struct $_1128 { 
+    struct $_1134 { 
         unsigned int canDrawOnMainThread : 1; 
         unsigned int canDisplayTraffic : 1; 
-        unsigned int displayingTraffic : 1; 
         unsigned int drawing : 1; 
         unsigned int levelCrossFade : 1; 
         unsigned int loadingEnabled : 1; 

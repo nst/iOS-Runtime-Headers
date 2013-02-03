@@ -5,9 +5,9 @@
 @interface UIControlAccessibility_super : UIAccessibilitySafeCategory {
 }
 
-- (BOOL)_accessibilityIgnoresMouseEvents;
 - (id)_accessibilityObscuredScreenAllowedViews;
 - (unsigned long long)accessibilityTraits;
+- (BOOL)accessibilityTreeHidden;
 - (BOOL)isAccessibilityElement;
 
 @end

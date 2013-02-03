@@ -20,6 +20,7 @@
 - (void)_setAssetInspectorLoader:(id)arg1;
 - (void)cancelLoading;
 - (void)dealloc;
+- (id)description;
 - (void)finalize;
 - (id)init;
 - (id)initWithURL:(id)arg1 options:(id)arg2;

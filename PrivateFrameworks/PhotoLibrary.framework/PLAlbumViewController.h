@@ -27,6 +27,7 @@
 - (id)albumView:(id)arg1 imageDataForPhotoAtIndex:(NSUInteger)arg2 imageWidth:(NSInteger*)arg3 imageHeight:(NSInteger*)arg4 bytesPerRow:(NSInteger*)arg5 dataWidth:(NSInteger*)arg6 dataHeight:(NSInteger*)arg7 imageDataOffset:(NSInteger*)arg8;
 - (id)albumView:(id)arg1 textBadgeForPhotoAtIndex:(NSUInteger)arg2;
 - (id)albumView;
+- (void)albumViewPreheatImageData:(id)arg1 forImagesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (id)contentScrollView;
 - (NSInteger)currentFilter;
 - (void)dealloc;
@@ -43,5 +44,6 @@
 - (void)setCurrentFilter:(NSInteger)arg1;
 - (void)showEmptyAlbumView:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

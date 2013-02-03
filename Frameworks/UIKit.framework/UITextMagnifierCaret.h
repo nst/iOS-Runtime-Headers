@@ -61,9 +61,11 @@
 - (struct CGPoint { float x1; float x2; })terminalPoint;
 - (BOOL)terminalPointPlacedCarefully;
 - (void)updateFrameAndOffset;
+- (void)windowWillRotate:(id)arg1;
 - (float)yOffset;
 - (void)zoomDownAnimation;
 - (void)zoomDownAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)zoomUpAnimation;
+- (void)zoomUpAnimationDidStop:(id)arg1 finished:(id)arg2;
 
 @end

@@ -22,6 +22,7 @@
 
 + (double)defaultDurationForTransition:(NSInteger)arg1;
 
+- (BOOL)_isContainedByTransitioningView;
 - (void)_navigationTransitionDidStop;
 - (void)_notifyDelegateTransitionDidStopWithContext:(id)arg1;
 - (void)dealloc;

@@ -65,6 +65,7 @@
 - (BOOL)setNMEASentencesToFilter:(id)arg1;
 - (BOOL)supportsAccessibility;
 - (BOOL)supportsIPodOut;
+- (BOOL)supportsLocation;
 - (BOOL)supportsPublicIap;
 - (id)valueForLegacyLingoProperty:(id)arg1;
 

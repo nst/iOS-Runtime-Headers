@@ -8,15 +8,22 @@
 + (void)_accountActivationChanged:(id)arg1;
 + (void)_accountLoginStateChanged:(id)arg1;
 + (void)_accountRegistrationStateChanged:(id)arg1;
++ (void)_aliasValidationStatusChanged:(id)arg1;
 + (void)_configureDaemon;
 + (void)_daemonConnectedNotification:(id)arg1;
 + (void)_daemonDisconnectedNotification:(id)arg1;
 + (void)_ensureActivationStateInSync;
++ (BOOL)conferencingAutoRegistersAccount;
++ (BOOL)conferencingHasValidatedAliasForAccount:(id)arg1;
 + (BOOL)conferencingIsAvailable;
++ (BOOL)conferencingIsRegisteredForAccount:(id)arg1;
 + (BOOL)conferencingIsRestricted;
++ (BOOL)conferencingIsSupported;
++ (BOOL)connect:(BOOL)arg1;
 + (BOOL)connect;
 + (BOOL)disconnect;
 + (BOOL)isConnected;
++ (BOOL)isConnecting;
 + (void)updateConferencingIsAvailable;
 
 - (id)_accountDomainForAccount:(id)arg1;

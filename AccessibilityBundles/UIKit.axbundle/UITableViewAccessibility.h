@@ -11,7 +11,6 @@
 - (id)_accessibilityFooterElement;
 - (id)_accessibilityHeaderElement;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)_accessibilityIgnoresMouseEvents;
 - (void)_accessibilityInitializeInternalData;
 - (id)_accessibilityInternalData;
 - (id)_accessibilityScrollStatus;
@@ -28,10 +27,13 @@
 - (void)accessibilityFindMockParentForTableViewCell:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (id)accessibilityLabel;
+- (BOOL)accessibilityScrollLeftPageSupported;
+- (BOOL)accessibilityScrollRightPageSupported;
 - (id)accessibilityTableViewCellAccessibilityElementForTableViewCell:(id)arg1;
 - (id)accessibilityTableViewCellElementAtGlobalRow:(NSInteger)arg1;
 - (id)accessibilityTableViewSectionElementAtSection:(NSInteger)arg1 isHeader:(BOOL)arg2;
 - (unsigned long long)accessibilityTraits;
+- (BOOL)accessibilityTreeHidden;
 - (void)accessibilityUpdateVisibleCellFrames;
 - (void)dealloc;
 - (void)deleteRowsAtIndexPaths:(id)arg1 withRowAnimation:(NSInteger)arg2;

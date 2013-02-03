@@ -6,6 +6,6 @@
 }
 
 - (id)_copyContainerHomeSetPropFindElements;
-- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 delegate:(id)arg3;
+- (id)initWithAccountInfoProvider:(id)arg1 containerPaths:(id)arg2 taskManager:(id)arg3;
 
 @end

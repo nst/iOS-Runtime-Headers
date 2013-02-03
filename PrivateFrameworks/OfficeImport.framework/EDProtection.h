@@ -8,9 +8,9 @@
 
 @interface EDProtection : NSObject <NSCopying> {
      /* Encoded args for previous method: @16@0:4B8B12 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: @16@0:4B8B12 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: B8@0:4 */
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mHidden;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mLocked;
 }

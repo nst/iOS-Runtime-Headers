@@ -23,7 +23,6 @@
 - (id)name;
 - (id)posterImage;
 - (void)setSlideshowSettings:(id)arg1;
-- (BOOL)shouldSortImagesByDate;
 - (id)slideshowSettings;
 
 @end

@@ -142,6 +142,7 @@
     NSInteger programmaticFocusCount;
     } resourceLoadDelegateImplementations;
     id resourceProgressDelegate;
+    id resourceProgressDelegateForwarder;
     id scriptDebugDelegate;
     } scriptDebugDelegateImplementations;
     BOOL selectTrailingWhitespaceEnabled;

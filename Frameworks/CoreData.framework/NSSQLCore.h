@@ -34,7 +34,7 @@
     NSSet *_lockedObjects;
     NSMutableSet *_missingObjectGIDs;
     NSSQLModel *_model;
-    id _reserved1;
+    id _observer;
     NSSQLRowCache *_rowCache;
     } _sqlCoreFlags;
     NSMutableDictionary *_storeMetadata;
@@ -43,6 +43,7 @@
 }
 
 + (BOOL)SQLGenerationV1Default;
++ (BOOL)_destroyPersistentStoreAtURL:(id)arg1 error:(id*)arg2;
 + (BOOL)coloredLoggingDefault;
 + (NSInteger)debugDefault;
 + (void)initialize;
@@ -69,6 +70,7 @@
 - (id)_collectSkewedComponents:(id*)arg1;
 - (void)_commitTransaction:(id)arg1;
 - (id)_databaseContextState;
+- (void)_disconnect;
 - (id)_dissectCorrelationTableCreationSQL:(id)arg1;
 - (void)_ensureDatabaseMatchesModel;
 - (void)_ensureMetadataLoaded;
@@ -188,6 +190,7 @@
 - (void)setURL:(id)arg1;
 - (id)type;
 - (void)unregisterChannel:(id)arg1;
+- (void)willRemoveFromPersistentStoreCoordinator:(id)arg1;
 - (id)writeExternalDataReferences;
 
 @end

@@ -9,7 +9,9 @@
 + (id)nonRetainingDictionary;
 
 - (void)MCDeepCopyEntriesFromDictionary:(id)arg1;
+- (void)MCDeepCopyMissingEntriesFromDictionary:(id)arg1;
 - (void)MCSetObjectIfNotNil:(id)arg1 forKey:(id)arg2;
+- (void)_adlib_setNullableObject:(id)arg1 forKey:(id)arg2;
 - (void)_web_setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)_web_setInt:(NSInteger)arg1 forKey:(id)arg2;
 - (void)_web_setObject:(id)arg1 forUncopiedKey:(id)arg2;
@@ -25,6 +27,12 @@
 - (void)addObjectsAndKeys:(id)arg1;
 - (id)addToCacheAndReturnCssString:(id)arg1;
 - (Class)classForCoder;
+- (void)encodeBool:(BOOL)arg1 forKey:(id)arg2;
+- (void)encodeDouble:(double)arg1 forKey:(id)arg2;
+- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
+- (void)encodeInteger:(NSInteger)arg1 forKey:(id)arg2;
+- (void)encodeLongLong:(long long)arg1 forKey:(id)arg2;
+- (void)encodeObject:(id)arg1 forKey:(id)arg2;
 - (id)initWithCapacity:(NSUInteger)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;

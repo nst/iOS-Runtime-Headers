@@ -58,6 +58,8 @@
     unsigned int _viewWillAppear : 1;
     unsigned int _didRequestFullSizeImage : 1;
     unsigned int _useZoomScaleForCropRect : 1;
+    unsigned int _hdrBadgeShouldBeVisible : 1;
+    unsigned int _didSetHDRForModelPhoto : 1;
     BOOL _allowZoomToFill;
     BOOL _clientIsTemporarilyWallpaper;
     } _cropOverlayRect;
@@ -68,6 +70,7 @@
     UIGestureRecognizer *_doubleTapGestureRecognizer;
     BOOL _forceNativeScreenScale;
     UIImageView *_gradientView;
+    UIImageView *_hdrBadgeImageView;
     UIImage *_image;
     NSInteger _imageOrientation;
     NSInteger _imageRotationDegrees;
@@ -80,6 +83,7 @@
     NSInteger _mode;
     MLPhoto *_modelPhoto;
     id _orientationDelegate;
+    UIImage *_pendingImage;
     PLRotationView *_rotationView;
     PLImageScrollView *_scrollView;
     UIGestureRecognizer *_singleTapGestureRecognizer;
@@ -124,17 +128,20 @@
 - (NSInteger)_imageOrientation;
 - (BOOL)_imageRotationAngleAffectsBounds;
 - (float)_minZoomScaleInView:(id)arg1;
+- (void)_repositionHDRBadge;
 - (void)_requestFullSizeImage;
 - (void)_resetRotationState;
 - (void)_setDefaultZoomScale;
 - (void)_setImage:(id)arg1 isThumbnail:(BOOL)arg2;
 - (void)_setRotationDegrees:(NSInteger)arg1;
+- (void)_setupHDRBadge;
 - (void)_updateGradientImageForOrientation:(NSInteger)arg1;
+- (void)_updateModelPhotoWithImage:(id)arg1;
 - (void)_updateZoomScalesForView:(id)arg1;
 - (float)_zoomToFillScaleInView:(id)arg1;
 - (BOOL)allowsEditing;
 - (void)contentViewFrameChanged;
-- (struct CGImage { }*)createImageWithCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 croppedImageData:(id*)arg2 fullSizeImageData:(id*)arg3 fullScreenImageData:(id*)arg4 fullScreenImage:(struct CGImage {}**)arg5 imageCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg6 padWithBlack:(BOOL)arg7;
+- (id)createImageWithCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 croppedImageData:(id*)arg2 fullScreenImageData:(id*)arg3 fullScreenImage:(struct CGImage {}**)arg4 imageCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5 padWithBlack:(BOOL)arg6;
 - (void)dealloc;
 - (float)defaultZoomScale;
 - (id)description;
@@ -165,6 +172,7 @@
 - (float)minRotatedScale;
 - (float)minZoomScale;
 - (id)photo;
+- (BOOL)photoShouldHaveHDRBadge;
 - (void)prepareForReuse;
 - (id)retainedCGImageBackedUIImage;
 - (NSInteger)rotationDegrees;
@@ -182,6 +190,7 @@
 - (void)setForceNativeScreenScale:(BOOL)arg1;
 - (void)setFullSizeImage:(id)arg1;
 - (void)setGesturesEnabled:(BOOL)arg1;
+- (void)setHDRBadgeVisible:(BOOL)arg1;
 - (void)setIsBeingDeleted:(BOOL)arg1;
 - (void)setLockedUnderCropOverlay:(BOOL)arg1;
 - (void)setOrientationDelegate:(id)arg1;

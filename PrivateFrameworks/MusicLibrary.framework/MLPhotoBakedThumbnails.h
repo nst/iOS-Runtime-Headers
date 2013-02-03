@@ -2,20 +2,21 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableDictionary, NSMutableData, NSMutableArray;
+@class NSMutableDictionary, NSData, NSMutableArray;
 
 @interface MLPhotoBakedThumbnails : NSObject {
     struct CGSize { 
         float width; 
         float height; 
     NSInteger _count;
+    BOOL _dataIsMutable;
     NSInteger _format;
     BOOL _missingHeader;
     NSMutableDictionary *_options;
     BOOL _optionsAccessed;
     NSInteger _singleThumbnailImageLength;
     } _size;
-    NSMutableData *_thumbnailData;
+    NSData *_thumbnailData;
     NSMutableArray *_thumbnailImages;
 }
 
@@ -32,6 +33,7 @@
 + (id)thumbnailsForAlbumVideo:(id)arg1 format:(NSInteger)arg2;
 + (id)thumbnailsWithContentsOfFile:(id)arg1 format:(NSInteger)arg2;
 
+- (id)_thumbnailData;
 - (NSUInteger)bitmapInfo;
 - (NSInteger)bitsPerComponent;
 - (NSInteger)bytesPerPixel;
@@ -42,7 +44,9 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRect;
 - (id)initWithAlbumVideo:(id)arg1 format:(NSInteger)arg2;
 - (id)initWithAlbumVideoImages:(id)arg1 format:(NSInteger)arg2 orientation:(NSInteger*)arg3 options:(id)arg4 delegate:(id)arg5;
+- (id)initWithContentsOfFile:(id)arg1 format:(NSInteger)arg2 readOnly:(BOOL)arg3;
 - (id)initWithContentsOfFile:(id)arg1 format:(NSInteger)arg2;
+- (id)initWithData:(id)arg1 format:(NSInteger)arg2 readOnly:(BOOL)arg3;
 - (id)initWithData:(id)arg1 format:(NSInteger)arg2;
 - (id)initWithImages:(id)arg1 format:(NSInteger)arg2 orientation:(NSInteger*)arg3 options:(id)arg4 delegate:(id)arg5;
 - (id)options;
@@ -53,6 +57,7 @@
 - (char *)thumbnailBytesAtIndex:(NSInteger)arg1;
 - (id)thumbnailDataAtIndex:(NSInteger)arg1;
 - (struct CGImage { }*)thumbnailImageAtIndex:(NSInteger)arg1;
+- (unsigned long)thumbnailLength;
 - (BOOL)writeBorderedThumbnailOfImage:(struct CGImage { }*)arg1 toBuffer:(void*)arg2 orientation:(NSInteger*)arg3 format:(NSInteger)arg4 formatInfo:(const struct BorderedFormatInfo { NSInteger x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; NSUInteger x5; NSInteger x6; NSInteger x7; float x8[4]; float x9[4]; NSUInteger x10; }*)arg5 delegate:(id)arg6;
 
 @end

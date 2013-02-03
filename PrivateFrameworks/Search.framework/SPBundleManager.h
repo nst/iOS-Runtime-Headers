@@ -7,7 +7,7 @@
 @interface SPBundleManager : NSObject {
     NSArray *_datastores;
     NSDictionary *_domainMap;
-    struct dispatch_queue_s {} **_queues;
+    struct dispatch_queue_s { } *_queue;
     NSArray *_searchBundles;
 }
 
@@ -20,8 +20,8 @@
 - (id)datastoreForDomain:(NSUInteger)arg1;
 - (id)datastores;
 - (void)dealloc;
+- (struct dispatch_queue_s { }*)dispatchQueue;
 - (id)domainMap;
-- (struct dispatch_queue_s { }*)queueForDatastore:(id)arg1;
 - (void)resetDatastores;
 - (id)searchBundles;
 

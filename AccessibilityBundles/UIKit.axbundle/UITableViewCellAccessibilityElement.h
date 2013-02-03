@@ -15,6 +15,7 @@
 @property(readonly) UITableViewCell *realTableViewCell;
 @property(retain) UITableViewCell *tableViewCell;
 
+- (float)_accessibilityAllowedGeometryOverlap;
 - (void)_accessibilityCopy;
 - (void)_accessibilityCut;
 - (BOOL)_accessibilityHasTextOperations;
@@ -25,6 +26,7 @@
 - (void)_accessibilitySelect;
 - (void)_accessibilitySelectAll;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
+- (BOOL)_accessibilityServesAsContainingParentForOrdering;
 - (void)_accessibilitySetSelectedTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (BOOL)_accessibilitySupportsActivateAction;
 - (id)_accessibilityTextOperations;

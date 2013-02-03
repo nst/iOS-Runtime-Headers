@@ -34,6 +34,7 @@
 
 - (NSUInteger)IDSensitivity;
 - (id)_IDsToMapForIMPerson:(id)arg1;
+- (id)_abPropertiesBySanitizingABProperties:(id)arg1;
 - (void)_addAddressBookCards:(id)arg1 toMap:(id)arg2;
 - (void)_blockUntilInitialSyncPerformed;
 - (void)_calculateBestAccount;
@@ -73,6 +74,7 @@
 - (id)internalName;
 - (BOOL)isEnabled;
 - (BOOL)isPersistent;
+- (BOOL)isPlugInService;
 - (id)localizedName;
 - (id)localizedShortName;
 - (id)myScreenNames;
@@ -92,6 +94,8 @@
 - (void)statusChangedForAccount:(id)arg1 from:(NSUInteger)arg2 to:(NSUInteger)arg3;
 - (id)subtypeInformationForAccount:(id)arg1;
 - (BOOL)supportsAdding;
+- (BOOL)supportsAuthorization;
+- (BOOL)supportsRegistration;
 - (void)updateIDToCardMapWithNotification:(id)arg1;
 
 @end

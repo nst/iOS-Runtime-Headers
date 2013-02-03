@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@class CNFServiceHandler, NSURL, APSConnection, NSTimer, NSMutableArray, IMAVChat;
+@class CNFServiceHandler, NSURL, NSTimer, NSMutableArray, IMAVChat;
 
 @interface CNFConferenceController : NSObject <IMAVControllerDelegate, IMAVInvitationControllerDelegate, IMAVChatDelegate> {
     IMAVChat *_activeAVChat;
-    APSConnection *_apsConnection;
     NSMutableArray *_avChatList;
     struct __CTCall { } *_call;
     NSURL *_delayedInvitationURL;
     BOOL _fullConferenceCapable;
     BOOL _isConnected;
-    BOOL _needsPushReliability;
     CNFServiceHandler *_serviceHandler;
     BOOL _waitingForFirstRemoteFrame;
     NSTimer *_waitingForFirstRemoteFrameTimer;
@@ -28,6 +26,7 @@
 + (BOOL)connect;
 + (BOOL)disconnect;
 + (BOOL)isConnected;
++ (struct __CFPhoneNumber { }*)phoneNumberRefCopyForDestinationId:(id)arg1 useNetworkCountryCode:(BOOL)arg2;
 + (void)reconcileDaemonControllerConnection;
 + (void)reconcileHarlequinAccountStatus;
 + (id)registrationStatusSettingsString;
@@ -42,8 +41,8 @@
 - (void)_cleanUpAfterAVChat;
 - (void)_createMissedCallEntryForConferenceURL:(id)arg1 isOriginator:(BOOL)arg2;
 - (void)_fakeFirstRemoteFrameNotification:(id)arg1;
-- (void)_finalizeRecentCallEntryForConference:(id)arg1;
-- (void)_handleAVChatStateChangeFromState:(NSUInteger)arg1 to:(NSUInteger)arg2;
+- (void)_finalizeRecentCallEntryForConference:(id)arg1 withReason:(NSUInteger)arg2;
+- (void)_handleAVChatStateChangeFromState:(NSUInteger)arg1 to:(NSUInteger)arg2 withReason:(NSUInteger)arg3;
 - (void)_handleAccountNotRegisteredForURL:(id)arg1 registrationInProgress:(BOOL)arg2;
 - (void)_handleChangeForRemoteIsMuted:(BOOL)arg1;
 - (void)_handleChangeForRemoteIsPaused:(BOOL)arg1;
@@ -66,15 +65,15 @@
 - (void)_updateEnabledStatusChanged;
 - (void)acceptConferenceInvitationFrom:(id)arg1 conferenceID:(id)arg2;
 - (BOOL)accountsAreLoggedIn;
-- (id)apsConnection;
 - (void)avChat:(id)arg1 didSendInvitationForParticipant:(id)arg2;
 - (void)avChat:(id)arg1 remoteOrientationChanged:(NSUInteger)arg2;
 - (void)avChat:(id)arg1 remoteParticipant:(id)arg2 muteChanged:(BOOL)arg3;
 - (void)avChat:(id)arg1 remoteParticipant:(id)arg2 pauseChanged:(BOOL)arg3;
 - (void)avChat:(id)arg1 stateChanged:(NSUInteger)arg2;
 - (id)avChat;
-- (void)avChatStateChangedFrom:(NSUInteger)arg1 to:(NSUInteger)arg2;
+- (void)avChatStateChangedFrom:(NSUInteger)arg1 to:(NSUInteger)arg2 reason:(NSUInteger)arg3;
 - (id)availableConferenceURLs;
+- (BOOL)canInitiateConferenceForDestinationID:(id)arg1;
 - (BOOL)canInitiateConferenceForPhoneNumber:(id)arg1;
 - (BOOL)canSendConferenceInvitationTo:(id)arg1;
 - (void)conference:(id)arg1 handleMissedInvitationFromIMHandle:(id)arg2;
@@ -82,7 +81,7 @@
 - (void)conference:(id)arg1 receivedInvitationFromIMHandle:(id)arg2;
 - (BOOL)conferenceMuted;
 - (BOOL)conferencePaused;
-- (id)conferenceURLForPhoneNumber:(id)arg1 countryCode:(id)arg2;
+- (id)conferenceURLForDestinationID:(id)arg1;
 - (id)conferenceURLForPhoneNumber:(id)arg1;
 - (BOOL)conferencingIsAvailable;
 - (void)connectToService;

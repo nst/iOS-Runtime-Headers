@@ -36,8 +36,10 @@
 - (BOOL)isAudioLevelMeteringSupported;
 - (BOOL)isConnected;
 - (BOOL)isExposureModeSupported:(NSInteger)arg1;
+- (BOOL)isExposurePointOfInterestSupported;
 - (BOOL)isFlashModeSupported:(NSInteger)arg1;
 - (BOOL)isFocusModeSupported:(NSInteger)arg1;
+- (BOOL)isFocusPointOfInterestSupported;
 - (BOOL)isInUseByAnotherApplication;
 - (BOOL)isLockedForConfiguration;
 - (BOOL)isOpen;

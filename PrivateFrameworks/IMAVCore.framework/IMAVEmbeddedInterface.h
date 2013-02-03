@@ -93,5 +93,6 @@
 - (BOOL)systemCanAudioChat;
 - (BOOL)systemCanHostARD;
 - (BOOL)systemCanVideoChat;
+- (void)updateCriticalState;
 
 @end

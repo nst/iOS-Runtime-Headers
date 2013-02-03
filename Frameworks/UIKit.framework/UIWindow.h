@@ -65,7 +65,7 @@
 + (id)_findWithDisplayPoint:(struct CGPoint { float x1; float x2; })arg1;
 + (id)_hitTestToPoint:(struct CGPoint { float x1; float x2; })arg1 pathIndex:(NSInteger)arg2 forEvent:(id)arg3;
 + (void)_initializeSafeCategory;
-+ (id)_ioSurfacePropertyDictionaryForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (id)_ioSurfacePropertyDictionaryForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usePurpleGfx:(BOOL)arg2;
 + (id)_keyWindowStack;
 + (NSUInteger)_keyWindowStackSize;
 + (void)_noteStatusBarHeightChanged:(float)arg1 oldHeight:(float)arg2;
@@ -78,6 +78,7 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })constrainFrameToScreen:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (void*)createIOSurfaceWithContextId:(NSUInteger)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 + (void*)createIOSurfaceWithContextIds:(const NSUInteger*)arg1 count:(NSUInteger)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 outTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg4;
++ (void*)createIOSurfaceWithContextIds:(const NSUInteger*)arg1 count:(NSUInteger)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 usePurpleGfx:(BOOL)arg4 outTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg5;
 + (void*)createIOSurfaceWithContextIds:(const NSUInteger*)arg1 count:(NSUInteger)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 + (void*)createRotatedCGImageFromIOSurface:(void*)arg1;
 + (void*)createScreenIOSurface;

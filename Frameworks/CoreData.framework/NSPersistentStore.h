@@ -22,6 +22,7 @@
     NSURL *_url;
 }
 
++ (BOOL)_destroyPersistentStoreAtURL:(id)arg1 error:(id*)arg2;
 + (BOOL)accessInstanceVariablesDirectly;
 + (BOOL)doURLStuff:(id)arg1 createdStubFile:(BOOL*)arg2 error:(id*)arg3 options:(id)arg4;
 + (void)initialize;

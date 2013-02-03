@@ -6,6 +6,7 @@
 
 @interface SSRequestGroup : NSObject {
     NSString *_identifier;
+    Class _requestClass;
     NSMutableSet *_requests;
 }
 
@@ -22,6 +23,7 @@
 - (void)dealloc;
 - (id)groupIdentifier;
 - (id)init;
+- (id)initWithGroupIdentifier:(id)arg1 requestClass:(Class)arg2;
 - (id)initWithGroupIdentifier:(id)arg1;
 - (void)removeRequest:(id)arg1;
 - (id)requests;

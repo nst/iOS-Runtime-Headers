@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSConditionLock, VMUSymbolicator, NSMutableArray;
+@class NSConditionLock, VMUProcessDescription, VMUSymbolicator, NSMutableArray;
 
 @interface VMUSampler : NSObject {
     id _delegate;
     double _interval;
     BOOL _needTaskPortDealloc;
     NSInteger _pid;
+    VMUProcessDescription *_processDescription;
     NSUInteger _sampleLimit;
     NSMutableArray *_samples;
     BOOL _sampling;

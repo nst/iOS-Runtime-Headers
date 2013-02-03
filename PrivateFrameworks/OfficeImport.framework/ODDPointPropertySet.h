@@ -5,6 +5,10 @@
 @class NSObject, NSString;
 
 @interface ODDPointPropertySet : NSObject {
+    double mCustomOffsetX;
+    double mCustomOffsetY;
+    double mCustomScaleX;
+    double mCustomScaleY;
     BOOL mCustomVerticalFlip;
     NSString *mLayoutTypeId;
     NSObject *mPresentationAssociatedId;
@@ -14,6 +18,10 @@
     NSString *mPresentationStyleLabel;
 }
 
+- (double)customOffsetX;
+- (double)customOffsetY;
+- (double)customScaleX;
+- (double)customScaleY;
 - (BOOL)customVerticalFlip;
 - (void)dealloc;
 - (id)layoutTypeId;
@@ -22,6 +30,10 @@
 - (NSInteger)presentationStyleCount;
 - (NSInteger)presentationStyleIndex;
 - (id)presentationStyleLabel;
+- (void)setCustomOffsetX:(double)arg1;
+- (void)setCustomOffsetY:(double)arg1;
+- (void)setCustomScaleX:(double)arg1;
+- (void)setCustomScaleY:(double)arg1;
 - (void)setCustomVerticalFlip:(BOOL)arg1;
 - (void)setLayoutTypeId:(id)arg1;
 - (void)setPresentationAssociatedId:(id)arg1;

@@ -8,5 +8,7 @@
 + (void)_initializeSafeCategory;
 
 - (id)backButtonView;
+- (id)customLeftView;
+- (id)customRightView;
 
 @end

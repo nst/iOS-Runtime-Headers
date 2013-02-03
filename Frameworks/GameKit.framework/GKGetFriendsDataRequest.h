@@ -4,19 +4,16 @@
 
 @class NSArray;
 
-@interface GKGetFriendsDataRequest : GKDataRequest {
-    NSArray *_players;
+@interface GKGetFriendsDataRequest : GKGetFriendListDataRequest {
+    NSArray *_rids;
 }
 
-@property(readonly) NSArray *players;
+@property(retain) NSArray *rids;
 
-- (id)cacheKey;
-- (NSInteger)cachePriority;
-- (NSInteger)cacheType;
 - (void)dealloc;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)key;
-- (id)players;
-- (id)request;
+- (id)rids;
+- (void)setRids:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSSet, UIColor;
+@class NSSet, UIColor, UINavigationBar;
 
 @interface UINavigationButton : UIButton {
     struct CGSize { 
@@ -12,6 +12,7 @@
     unsigned int _pad : 30;
     NSInteger _barStyle;
     } _boundsAdjustment;
+    UINavigationBar *_navigationBar;
     NSSet *_possibleTitles;
     NSInteger _style;
     UIColor *_tintColor;
@@ -32,6 +33,7 @@
 - (struct CGPoint { float x1; float x2; })_offsetForMiniBarState:(BOOL)arg1;
 - (id)_scriptingInfo;
 - (void)_setBoundsAdjustment:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setNavigationBar:(id)arg1;
 - (void)_updateContentInsets;
 - (void)_updateStyle;
 - (id)accessibilityLabel;
@@ -43,11 +45,13 @@
 - (void)dealloc;
 - (id)image;
 - (id)initWithImage:(id)arg1 style:(NSInteger)arg2;
+- (id)initWithImage:(id)arg1 width:(float)arg2 style:(NSInteger)arg3 applyBezel:(BOOL)arg4 forBarStyle:(NSInteger)arg5 buttonItemStyle:(NSInteger)arg6;
 - (id)initWithImage:(id)arg1 width:(float)arg2 style:(NSInteger)arg3;
 - (id)initWithImage:(id)arg1;
 - (id)initWithTitle:(id)arg1 possibleTitles:(id)arg2 style:(NSInteger)arg3;
 - (id)initWithTitle:(id)arg1 style:(NSInteger)arg2;
 - (id)initWithTitle:(id)arg1;
+- (id)initWithValue:(id)arg1 width:(float)arg2 style:(NSInteger)arg3 barStyle:(NSInteger)arg4 possibleTitles:(id)arg5 tintColor:(id)arg6 applyBezel:(BOOL)arg7 forButtonItemStyle:(NSInteger)arg8;
 - (id)initWithValue:(id)arg1 width:(float)arg2 style:(NSInteger)arg3 barStyle:(NSInteger)arg4 possibleTitles:(id)arg5 tintColor:(id)arg6;
 - (void)setBarStyle:(NSInteger)arg1;
 - (void)setControlSize:(NSInteger)arg1;

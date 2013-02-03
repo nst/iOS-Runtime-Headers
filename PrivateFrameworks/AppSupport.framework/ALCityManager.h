@@ -5,18 +5,17 @@
 @class CPSearchMatcher;
 
 @interface ALCityManager : NSObject {
-    CPSearchMatcher *__citySearchMatcher;
-    struct sqlite3 { } *db;
-    struct sqlite3 { } *localizedDb;
+    CPSearchMatcher *_citySearchMatcher;
+    struct sqlite3 { } *_db;
+    struct sqlite3 { } *_localizedDb;
 }
 
-@property(readonly) CPSearchMatcher *__citySearchMatcher;
+@property(readonly) CPSearchMatcher *citySearchMatcher;
 
 + (struct __CFArray { }*)legacyCityForCity:(id)arg1;
 + (id)newCitiesByIdentifierMap:(id)arg1;
 + (id)sharedManager;
 
-- (id)__citySearchMatcher;
 - (id)bestCityForLegacyCity:(struct __CFArray { }*)arg1;
 - (id)citiesMatchingName:(id)arg1 localized:(BOOL)arg2;
 - (id)citiesMatchingName:(id)arg1;
@@ -24,6 +23,7 @@
 - (id)citiesWithIdentifiers:(id)arg1;
 - (id)citiesWithTimeZone:(id)arg1;
 - (id)cityForClassicIdentifier:(id)arg1;
+- (id)citySearchMatcher;
 - (void)dealloc;
 - (id)defaultCitiesForLocaleCode:(id)arg1;
 - (id)defaultCityForTimeZone:(id)arg1;

@@ -28,6 +28,7 @@
     NSURLRequest *_request;
     NSHTTPURLResponse *_response;
     <CoreDAVTaskManager> *_taskManager;
+    double _timeoutInterval;
 }
 
 @property <CoreDAVAccountInfoProvider> *accountInfoProvider;
@@ -38,6 +39,7 @@
 @property <CoreDAVTaskManager> *taskManager;
 @property id delegate;
 @property NSInteger depth;
+@property double timeoutInterval;
 
 + (NSUInteger)uniqueQueryID;
 
@@ -45,7 +47,6 @@
 - (id)_createBodyData;
 - (void)_failImmediately;
 - (void)_handleBadPasswordResponse;
-- (BOOL)_handleCertificateError:(id)arg1;
 - (BOOL)_includeGeneralHeaders;
 - (id)accountInfoProvider;
 - (id)additionalHeaderValues;
@@ -82,10 +83,12 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDepth:(NSInteger)arg1;
 - (void)setTaskManager:(id)arg1;
+- (void)setTimeoutInterval:(double)arg1;
 - (void)startModal;
 - (id)taskManager;
 - (void)tearDownResources;
 - (double)timeoutInterval;
 - (id)url;
+- (BOOL)validate:(id*)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UITransitionView, PLPhotoScrubber, UINavigationController, PLPublishingAgent, MLPhoto, UIPageController, PLPhotoScrollerViewController, PLImageSource, NSString, UINavigationButton, NSNumberFormatter, PLCropOverlay, UIAlertView, UILongPressGestureRecognizer, PLVideoRemaker, UINavigationBar, PLImageCache, UIWindow, UIBarButtonItem, UIScrollView, UIView, UIPopoverController, NSArray, UIImage, PLPictureFramePlugin, MLAlbum, <PLAlbumsControllerDelegate>, PLEmptyAlbumView, UIImageView, NSMutableArray, PLProgressView, UIActionSheet, NSTimer, NSData, UIToolbar, PLPhotoTileViewController, PLImageLoadingQueue, UIProgressHUD;
+@class UITransitionView, PLPhotoScrubber, UINavigationController, PLPublishingAgent, MLPhoto, UIPageController, PLPhotoScrollerViewController, PLImageSource, NSString, UINavigationButton, NSNumberFormatter, PLCropOverlay, UIAlertView, UILongPressGestureRecognizer, PLVideoRemaker, UINavigationBar, PLImageCache, UIViewController, UIWindow, UIBarButtonItem, UIScrollView, UIView, UIPopoverController, NSArray, UIImage, PLPictureFramePlugin, MLAlbum, <PLAlbumsControllerDelegate>, PLEmptyAlbumView, UIImageView, NSMutableArray, PLProgressView, UIActionSheet, NSTimer, NSData, UIToolbar, PLPhotoTileViewController, PLImageLoadingQueue, UIProgressHUD;
 
 @interface PLAlbumsController : NSObject <UIPageControllerDelegate, PLPhotoTileViewControllerDelegate, PLVideoViewDelegate, UIScrollViewDelegate, UIToolbarDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIActionSheetDelegate, PLImageLoadingQueueDelegate, PhotoScrubberDataSource, UIPopoverControllerDelegate, PLUIEditImageViewControllerDelegate, PLCropPhotoControllerDelegate> {
     struct CGSize { 
@@ -17,11 +17,14 @@
             float width; 
             float height; 
         } size; 
+    unsigned int _mailComposeSheetDidDisplay : 1;
+    unsigned int _mailComposeSheetAnimationDidFinish : 1;
     unsigned int _overlayIsHidden : 1;
     unsigned int _videoEditingMode : 1;
     unsigned int _remaking : 1;
     unsigned int _transcoding : 1;
     unsigned int _sendingViaMMS : 1;
+    unsigned int _remakeAfterPublish : 1;
     unsigned int _isCroppingPhoto : 1;
     unsigned int _clearingFullScreenView : 1;
     unsigned int _scrolling : 1;
@@ -44,6 +47,9 @@
     unsigned int _inactiveUnderTaskSwitcher : 1;
     unsigned int _videoWasPlaying : 1;
     unsigned int _remakingWasCancelled : 1;
+    unsigned int _canUploadHDVideoOver3G : 1;
+    unsigned int _didSetHDVideoUploadCapability : 1;
+    unsigned int _shouldShowHDRPrompt : 1;
     unsigned int _didAddScrubberOnNavBar : 1;
     unsigned int _didVideoViewStateChange : 1;
     SEL _actionAfterForcedRotation;
@@ -64,6 +70,7 @@
     UITransitionView *_cameraTransitionView;
     BOOL _canPlaySlideshow;
     SEL _completionSelector;
+    UIViewController *_composeSheetViewController;
     } _contentStartSize;
     PLCropOverlay *_cropOverlay;
     NSInteger _currentButtonGroup;
@@ -208,6 +215,7 @@
 - (BOOL)_canEmailPhoto;
 - (BOOL)_canRotateCurrentItem;
 - (BOOL)_canTrimCurrentVideoInPlace;
+- (BOOL)_canUploadHDVideo;
 - (void)_cancelProgressTimer;
 - (void)_cancelRemaking;
 - (void)_cancelScrubTimer;
@@ -220,7 +228,10 @@
 - (void)_cleanseTileCachesForTVOutTileIndex:(NSInteger)arg1;
 - (void)_cleanseTileCachesForTileIndex:(NSInteger)arg1;
 - (void)_clearFullScreenView;
+- (void)_clearPublishingAgent:(id)arg1;
 - (void)_clearTileCache;
+- (void)_commonDidFinishEmailAnimation;
+- (void)_composeSheetDidDisplay;
 - (void)_configureTVOutPageController;
 - (void)_configureVideoViewInTile:(id)arg1;
 - (id)_createAlbumFromImages:(id)arg1 startingAtIndex:(NSInteger)arg2;
@@ -253,7 +264,7 @@
 - (void)_externalScreenGotDisconnected;
 - (void)_fadeIn;
 - (void)_finishCollapseAnimation:(id)arg1 finished:(id)arg2;
-- (void)_finishedSlidingDownImage:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (void)_finishedSlidingDownImage:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_flushTileCache;
 - (void)_forceDismissAlertView;
 - (void)_forceRemoveSavingPhotoHUD;
@@ -270,6 +281,7 @@
 - (void)_loadImageForTile:(id)arg1 fromImageSource:(id)arg2;
 - (void)_longPressRecognized:(id)arg1;
 - (id)_lowResolutionPreviewImageForPhoto:(id)arg1;
+- (void)_makeTilesPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (id)_modelImageForTileIndex:(NSUInteger)arg1;
 - (id)_navigationBar;
 - (id)_navigationController;
@@ -292,12 +304,13 @@
 - (void)_prepareForTVOut;
 - (void)_prepareToFade;
 - (void)_processAlbumChangedWithIndexes:(id)arg1 albumModificationMode:(NSInteger)arg2;
-- (void)_publishToMobileMe;
 - (void)_publishToMobileMeClicked;
-- (void)_publishToYouTube;
 - (void)_publishToYouTubeClicked;
+- (void)_publishingAgentDidEndRemaking:(id)arg1;
 - (void)_publishingAgentDidFinishPublishing:(id)arg1;
 - (void)_publishingAgentDidStartPublishing:(id)arg1;
+- (void)_publishingAgentDidStartRemaking:(id)arg1;
+- (void)_publishingAgentsDidForceCancel:(id)arg1;
 - (void)_reallyDismissActionMenu;
 - (void)_reallyDismissActionMenuAnimated:(BOOL)arg1;
 - (void)_reallySendViaEmail:(id)arg1;
@@ -331,14 +344,14 @@
 - (BOOL)_shouldRespondToButtonBarButtons;
 - (BOOL)_shouldShowAssignToContactOption;
 - (void)_showButtonGroup:(NSInteger)arg1 withDuration:(double)arg2;
-- (void)_showCompositionForPublishingBundleNamed:(id)arg1 transcodedVideoPath:(id)arg2;
+- (void)_showCompositionForPublishingBundleNamed:(id)arg1;
 - (void)_showConfirmationForPassthroughTrimming:(id)arg1;
 - (void)_showCropOverlayWithTitle:(id)arg1 subtitle:(id)arg2 cropButtonTitle:(id)arg3 disablingRotation:(BOOL)arg4;
 - (void)_showCropOverlayWithTitle:(id)arg1 subtitle:(id)arg2 cropButtonTitle:(id)arg3;
+- (void)_showHDRPromptIfNeeded;
 - (void)_showImageAtIndex:(NSUInteger)arg1;
 - (void)_showMMSComposeSheet;
 - (void)_showMailComposition:(id)arg1 transcodedVideoPath:(id)arg2;
-- (void)_showMobileMeComposition:(id)arg1 transcodedVideoPath:(id)arg2;
 - (void)_showNavigationBarAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_showOverlaysForResume;
 - (void)_showPeoplePicker;
@@ -347,7 +360,6 @@
 - (void)_showTileCache;
 - (void)_showVideoTooLongAlert;
 - (void)_showVideoTrimmingNavigationBarWithAnimation:(BOOL)arg1;
-- (void)_showYouTubeComposition:(id)arg1 transcodedVideoPath:(id)arg2;
 - (void)_simpleRemoteActionDidOccur:(id)arg1;
 - (void)_startSlideshow;
 - (NSInteger)_statusBarStyle;
@@ -466,14 +478,16 @@
 - (BOOL)photoTileViewControllerAllowsEditing:(id)arg1;
 - (void)photoTileViewControllerCancelImageRequests:(id)arg1;
 - (void)photoTileViewControllerDidEndGesture:(id)arg1;
+- (void)photoTileViewControllerDidSetHDRTypeForPhoto:(id)arg1;
 - (BOOL)photoTileViewControllerIsDisplayingLandscape:(id)arg1;
 - (void)photoTileViewControllerRequestsFullScreenImage:(id)arg1;
 - (void)photoTileViewControllerRequestsFullSizeImage:(id)arg1;
 - (void)photoTileViewControllerSingleTap:(id)arg1;
 - (void)photoTileViewControllerWillBeginGesture:(id)arg1;
 - (id)playPauseButton;
-- (void)playSlideshow:(BOOL)arg1;
 - (void)playSlideshowClicked:(id)arg1;
+- (void)playSlideshowFromAlbumUsingOrigami:(BOOL)arg1;
+- (void)playSlideshowFromPhotoViewer;
 - (id)playSlideshowItem;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
@@ -519,10 +533,9 @@
 - (void)smsComposeControllerCancelled:(id)arg1;
 - (void)smsComposeControllerDataInserted:(id)arg1;
 - (void)smsComposeControllerSendStarted:(id)arg1;
-- (void)startSlideShow;
 - (BOOL)statusBarIsLocked;
 - (NSInteger)statusBarMode;
-- (void)stopPlaying:(BOOL)arg1;
+- (void)stopSlideshow:(BOOL)arg1;
 - (void)storeCurrentConfiguration:(id)arg1;
 - (void)suckToTrash:(id)arg1 transitionParent:(id)arg2;
 - (void)togglePlay;

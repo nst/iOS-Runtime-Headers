@@ -85,6 +85,7 @@
 - (id)defaultNotesFolder;
 - (id)deletedItemsFolder;
 - (id)description;
+- (id)domainOnly;
 - (id)emailAddress;
 - (id)emailAddresses;
 - (NSInteger)enabledDataclassesBitmask;
@@ -92,7 +93,7 @@
 - (id)eventsFolders;
 - (struct __CFData { }*)exceptionsForDigest:(id)arg1;
 - (void)handleTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2 withCompletionBlock:(id)arg3;
-- (void)handleTrustChallenge:(id)arg1;
+- (BOOL)handleTrustChallenge:(id)arg1;
 - (BOOL)hasDirtyBits;
 - (BOOL)haveWarnedAboutCert:(id)arg1;
 - (id)host;
@@ -123,6 +124,7 @@
 - (NSInteger)port;
 - (id)principalURL;
 - (BOOL)reattemptInvitationLinkageForMetaData:(id)arg1 inFolderWithId:(id)arg2;
+- (void)removeClientCertificateData;
 - (void)removeConsumerForTask:(id)arg1;
 - (void)removePasswordFromKeychain;
 - (void)renewAccountCredentialsWithHandler:(id)arg1;

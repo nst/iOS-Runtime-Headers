@@ -6,6 +6,7 @@
 
 @interface SSDownload : NSObject {
     NSArray *_assets;
+    id _identifier;
     BOOL _loadingThumbnailData;
     SSDownloadMetadata *_metadata;
     SSDownloadStatus *_status;
@@ -15,6 +16,7 @@
 @property(retain) NSArray *assets;
 @property(copy) SSDownloadMetadata *metadata;
 @property(retain) SSDownloadStatus *status;
+@property(readonly) id downloadIdentifier;
 @property(getter=isExternal,readonly) BOOL external;
 
 - (void)_artworkFailedNotification:(id)arg1;
@@ -22,15 +24,17 @@
 - (void)_daemonExited:(id)arg1;
 - (void)_mainThreadDaemonExited:(id)arg1;
 - (BOOL)_requestThumbnailData;
+- (void)_setDownloadIdentifier:(id)arg1;
 - (BOOL)_shouldObserveArtworkNotification:(id)arg1;
 - (void)_startWatchingDaemon;
 - (void)_stopWatchingDaemon;
 - (id)assets;
+- (id)copyPropertyListEncoding;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
+- (id)downloadIdentifier;
 - (id)init;
 - (id)initWithAssets:(id)arg1 metadata:(id)arg2;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (BOOL)isExternal;
 - (BOOL)loadThumbnailImageData;
 - (id)metadata;

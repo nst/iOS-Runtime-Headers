@@ -36,6 +36,7 @@
 - (id)accessibilityHint;
 - (id)accessibilityLabel;
 - (id)accessibilityLanguage;
+- (unsigned long long)accessibilityTraits;
 - (NSInteger)clipCorners;
 - (id)configuration;
 - (void)dealloc;

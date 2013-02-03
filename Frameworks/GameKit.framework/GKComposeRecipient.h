@@ -2,26 +2,42 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKPlayer;
+@class NSString;
 
-@interface GKComposeRecipient : MFComposeRecipient {
-    GKPlayer *_player;
+@interface GKComposeRecipient : NSObject {
+    NSString *_address;
+    NSInteger _identifier;
+    NSString *_label;
+    NSInteger _property;
+    void *_record;
+    NSInteger _recordID;
 }
 
-@property(retain) GKPlayer *player;
-
-+ (NSInteger)_recipientABProperty;
-+ (id)recipientWithPlayer:(id)arg1;
++ (id)recipientWithProperty:(NSInteger)arg1 address:(id)arg2;
++ (id)recipientWithRecord:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3;
++ (id)recipientWithRecord:(void*)arg1 recordID:(NSInteger)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
 
 - (id)_unformattedAddress;
 - (id)address;
+- (id)commentedAddress;
+- (id)compositeName;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)displayString;
-- (id)initWithPlayer:(id)arg1;
+- (NSUInteger)hash;
+- (NSInteger)identifier;
+- (id)initWithRecord:(void*)arg1 recordID:(NSInteger)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4 address:(id)arg5;
+- (BOOL)isEmail;
 - (BOOL)isEqual:(id)arg1;
-- (id)player;
-- (void)setPlayer:(id)arg1;
+- (BOOL)isPhone;
+- (id)label;
+- (NSInteger)property;
+- (void*)record;
+- (NSInteger)recordID;
+- (void)setIdentifier:(NSInteger)arg1;
+- (void)setRecord:(void*)arg1 recordID:(NSInteger)arg2 identifier:(NSInteger)arg3;
 - (id)uncommentedAddress;
+- (id)unlocalizedLabel;
 
 @end

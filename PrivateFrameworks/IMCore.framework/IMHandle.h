@@ -139,6 +139,7 @@
 - (id)existingIMHandleWithoutResource;
 - (id)extraProperties;
 - (id)feedUpdatedDate;
+- (void)finalize;
 - (id)firstName;
 - (id)fullName;
 - (id)groups;

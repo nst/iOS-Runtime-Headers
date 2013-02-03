@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSArray, NSString, NSLock, NSMutableDictionary;
+@class SSAuthenticationContext, NSString, NSArray, NSLock, NSMutableDictionary;
 
 @interface ISDialog : NSObject {
     BOOL _allowDuplicates;
+    SSAuthenticationContext *_authenticationContext;
     BOOL _authorizationIsForced;
     NSArray *_buttons;
     NSInteger _defaultButtonIndex;
@@ -18,16 +19,15 @@
     NSInteger _maxDisplayCount;
     NSString *_message;
     BOOL _oneButtonPerLine;
-    NSString *_preferredITunesStoreClient;
     NSArray *_textFields;
     NSString *_title;
     NSMutableDictionary *_userInfo;
 }
 
+@property(copy) SSAuthenticationContext *authenticationContext;
 @property(retain) NSArray *buttons;
 @property(copy) NSString *displayCountKey;
 @property(retain) NSString *message;
-@property(retain) NSString *preferredITunesStoreClient;
 @property(retain) NSArray *textFields;
 @property(retain) NSString *title;
 @property BOOL allowDuplicates;
@@ -46,6 +46,7 @@
 
 - (NSInteger)_kindForString:(id)arg1;
 - (BOOL)allowDuplicates;
+- (id)authenticationContext;
 - (BOOL)authorizationIsForced;
 - (id)buttons;
 - (id)copyUserNotification;
@@ -68,8 +69,8 @@
 - (NSInteger)maximumDisplayCount;
 - (id)message;
 - (BOOL)oneButtonPerLine;
-- (id)preferredITunesStoreClient;
 - (void)setAllowDuplicates:(BOOL)arg1;
+- (void)setAuthenticationContext:(id)arg1;
 - (void)setAuthorizationIsForced:(BOOL)arg1;
 - (void)setButtons:(id)arg1;
 - (void)setDefaultButtonIndex:(NSInteger)arg1;
@@ -81,7 +82,6 @@
 - (void)setMaximumDisplayCount:(NSInteger)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setOneButtonPerLine:(BOOL)arg1;
-- (void)setPreferredITunesStoreClient:(id)arg1;
 - (void)setTextFields:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setValue:(id)arg1 forUserInfoKey:(id)arg2;

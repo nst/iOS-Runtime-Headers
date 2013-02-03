@@ -5,6 +5,7 @@
 @class NSMutableDictionary;
 
 @interface IMUserNotificationCenter : NSObject {
+    NSMutableDictionary *_identifierToBlockQueueMap;
     NSMutableDictionary *_identifierToCFUserNotificationMap;
     NSMutableDictionary *_identifierToIMUserNotificationQueueMap;
     NSMutableDictionary *_identifierToListenerQueueMap;
@@ -14,19 +15,26 @@
 + (id)sharedInstance;
 
 - (void)_cancelActiveUserNotificationForIdentifier:(id)arg1;
+- (id)_dequeueBlockForIdentifier:(id)arg1;
 - (id)_dequeueListenerForIdentifier:(id)arg1;
 - (id)_dequeueUserNotificationForIdentifier:(id)arg1;
 - (void)_displayNextUserNotificationForIdentifier:(id)arg1;
+- (void)_enqueueBlock:(id)arg1 forIdentifier:(id)arg2;
 - (void)_enqueueListener:(id)arg1 forIdentifier:(id)arg2;
 - (void)_enqueueUserNotification:(id)arg1 forIdentifier:(id)arg2;
+- (id)_frontBlockForIdentifier:(id)arg1;
 - (id)_frontListenerForIdentifier:(id)arg1;
 - (id)_frontUserNotificationForIdentifier:(id)arg1;
 - (void)_handleUserNotification:(struct __CFUserNotification { }*)arg1 responseFlags:(unsigned long)arg2;
+- (void)addUserNotification:(id)arg1 listener:(id)arg2 completionHandler:(id)arg3;
 - (void)addUserNotification:(id)arg1 listener:(id)arg2;
+- (id)autorelease;
 - (NSUInteger)countForIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (oneway void)release;
 - (void)removeAllListeners;
 - (void)removeListener:(id)arg1;
+- (NSUInteger)retainCount;
 
 @end

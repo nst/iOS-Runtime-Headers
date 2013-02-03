@@ -20,6 +20,8 @@
     NSInteger _ardRole;
     IMAVChat *_avChat;
     NSInteger _avRelayStatus;
+    NSUInteger _cameraOrientation;
+    NSUInteger _cameraType;
     NSUInteger _chatEndedReason;
     NSInteger _chatError;
     NSString *_conferenceID;
@@ -30,6 +32,7 @@
     NSData *_localICEData;
     NSOperationQueue *_messagingQueue;
     NSDictionary *_preemptiveRelayRequest;
+    NSDictionary *_preemptiveRelayUpdate;
     NSDictionary *_properties;
     NSString *_rawErrorString;
     NSData *_remoteICEData;
@@ -37,6 +40,34 @@
     NSUInteger _state;
     NSString *_vcPartyID;
 }
+
+@property BOOL isSendingAuxVideo; /* unknown property attribute: SsetSendingAuxVideo: */
+@property BOOL isAudioMuted; /* unknown property attribute: SsetAudioMuted: */
+@property BOOL isVideoPaused; /* unknown property attribute: SsetVideoPaused: */
+@property(readonly) IMAVChat *avChat;
+@property(readonly) __SecCertificate *certificate;
+@property(readonly) NSString *errorString;
+@property(readonly) IMHandle *imHandle;
+@property(readonly) IMHandle *invitedBy;
+@property(readonly) NSString *name;
+@property(readonly) NSString *rawErrorString;
+@property(readonly) IMAVChatParticipant *remoteErrorParticipant;
+@property(readonly) NSString *vcPartyID;
+@property(readonly) NSInteger avRelayStatus;
+@property(readonly) NSUInteger cameraOrientation;
+@property(readonly) NSUInteger cameraType;
+@property(readonly) NSInteger error;
+@property(readonly) BOOL isAOLInterop;
+@property(readonly) BOOL isInitiator;
+@property(readonly) BOOL isLocalParticipant;
+@property(readonly) BOOL isNetworkStalled;
+@property(readonly) BOOL isRecording;
+@property(readonly) BOOL isSendingAudio;
+@property(readonly) BOOL isSendingVideo;
+@property(readonly) BOOL isUsingICE;
+@property(readonly) NSUInteger reasonChatEnded;
+@property NSUInteger state;
+@property(readonly) BOOL vcSecurityVerified;
 
 - (void)_cancelMessagesQueue;
 - (void)_connectTimeout:(id)arg1;
@@ -48,16 +79,22 @@
 - (id)_initAs:(id)arg1 invitedBy:(id)arg2 sendingAudio:(BOOL)arg3 sendingVideo:(BOOL)arg4 usingICE:(BOOL)arg5 toChat:(id)arg6 inState:(NSUInteger)arg7 withError:(NSInteger)arg8 andReason:(NSUInteger)arg9 andVCPartyID:(id)arg10 account:(id)arg11;
 - (void)_noteInviteDelivered;
 - (id)_preemptiveRelayInitate;
+- (id)_preemptiveRelayUpdate;
 - (void)_setAudioSendingState:(BOOL)arg1;
+- (void)_setCameraOrientation:(NSUInteger)arg1;
+- (void)_setCameraType:(NSUInteger)arg1;
 - (void)_setConferenceID:(id)arg1;
 - (void)_setError:(NSInteger)arg1;
 - (void)_setPreemptiveRelayInitate:(id)arg1;
+- (void)_setPreemptiveRelayUpdate:(id)arg1;
 - (void)_setState:(NSUInteger)arg1 withReason:(NSUInteger)arg2 andError:(NSInteger)arg3;
 - (void)_setVideoSendingState:(BOOL)arg1;
 - (void)_switchToUseNewIMHandle:(id)arg1;
 - (NSInteger)ardRole;
 - (id)avChat;
 - (NSInteger)avRelayStatus;
+- (NSUInteger)cameraOrientation;
+- (NSUInteger)cameraType;
 - (void)cancelInvitation;
 - (struct __SecCertificate { }*)certificate;
 - (void)dealloc;

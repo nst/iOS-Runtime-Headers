@@ -5,8 +5,10 @@
 @interface DABehaviorOptions : NSObject {
 }
 
++ (BOOL)_shouldForceCookies:(BOOL*)arg1;
 + (BOOL)allIMAPServersSupportNotesSearch;
 + (BOOL)completelyIgnoreNotes;
++ (BOOL)cookiesEnabled;
 + (double)defaultEASTaskTimeoutOutWasFound:(BOOL*)arg1;
 + (BOOL)ignoreBadLDAPCerts;
 + (BOOL)ignoreSupportedCommands;

@@ -5,6 +5,6 @@
 @interface PLFaceDetectingImageSource : PLPhotoLibraryImageSource {
 }
 
-- (id)createImageForObject:(id)arg1 metadata:(id*)arg2;
+- (id)createImageForObject:(id)arg1 createMetadata:(id*)arg2;
 
 @end

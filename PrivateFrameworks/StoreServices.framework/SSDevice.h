@@ -10,6 +10,7 @@
     SSRequest *_loadStoreFrontRequest;
     NSString *_localStoreFrontIdentifier;
     BOOL _localStoreFrontIsTransient;
+    NSString *_synchedStoreFrontIdentifier;
 }
 
 @property(readonly) NSString *storeFrontIdentifier;
@@ -22,6 +23,7 @@
 - (void)_postStoreFrontDidChangeNotification;
 - (void)_reloadAfterStoreFrontChange;
 - (void)_reloadStoreFrontIdentifier;
+- (void)_setLocalStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
 - (BOOL)_setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
 - (id)copyStoreFrontRequestHeaders;
 - (void)dealloc;

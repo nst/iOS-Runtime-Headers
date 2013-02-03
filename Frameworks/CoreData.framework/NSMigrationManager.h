@@ -7,7 +7,8 @@
 @interface NSMigrationManager : NSObject {
     struct _migrationManagerFlags { 
         unsigned int _migrationWasCancelled : 1; 
-        unsigned int _reservedMigrationManager : 31; 
+        unsigned int _usesStoreSpecificMigrationManager : 1; 
+        unsigned int _reservedMigrationManager : 30; 
     NSDictionary *_destinationEntitiesByVersionHash;
     NSManagedObjectContext *_destinationManagedObjectContext;
     NSManagedObjectModel *_destinationModel;
@@ -55,10 +56,12 @@
 - (float)migrationProgress;
 - (void)reset;
 - (void)setUserInfo:(id)arg1;
+- (void)setUsesStoreSpecificMigrationManager:(BOOL)arg1;
 - (id)sourceContext;
 - (id)sourceEntityForEntityMapping:(id)arg1;
 - (id)sourceInstancesForEntityMappingNamed:(id)arg1 destinationInstances:(id)arg2;
 - (id)sourceModel;
 - (id)userInfo;
+- (BOOL)usesStoreSpecificMigrationManager;
 
 @end

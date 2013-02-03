@@ -15,7 +15,6 @@
 }
 
 + (Class)_classForPersistentStoreAtURL:(id)arg1;
-+ (void)_raiseIfInvalidURL:(id)arg1;
 + (void)_registerCoreDataStoreClass:(Class)arg1 forStoreType:(id)arg2;
 + (void)_registerDefaultStoreClassesAndTypes;
 + (Class)_storeClassForStoreType:(id)arg1;
@@ -36,6 +35,7 @@
 - (id)_checkRequestForStore:(id)arg1 originalRequest:(id)arg2 andOptimisticLocking:(id)arg3;
 - (id)_conflictsWithRowCacheForObject:(id)arg1 andStore:(id)arg2;
 - (void)_copyMetadataFromStore:(id)arg1 toStore:(id)arg2 migrationManager:(id)arg3;
+- (BOOL)_destroyPersistentStoreAtURL:(id)arg1 withType:(id)arg2 error:(id*)arg3;
 - (void)_doPreSaveAssignmentsForObjects:(id)arg1;
 - (id)_fetchAllInstancesFromStore:(id)arg1 intoContext:(id)arg2 underlyingException:(id*)arg3;
 - (void)_informAffectedStoresOfInterestByChildContextInObjectsWithObjectIDs:(id)arg1 withSelector:(SEL)arg2;
@@ -43,7 +43,6 @@
 - (id)_newObjectGraphStyleRecordForRow:(id)arg1 andObject:(id)arg2;
 - (id)_persistentStoreForIdentifier:(id)arg1;
 - (void)_postStoresChangedNotificationsForStores:(id)arg1 changeKey:(id)arg2 options:(id)arg3;
-- (void)_purgeCaches:(id)arg1;
 - (id)_realStoreTypeForStoreWithType:(id)arg1 URL:(id)arg2 error:(id*)arg3;
 - (BOOL)_removePersistentStore:(id)arg1;
 - (id)_retainedAllMigratedObjectsInStore:(id)arg1 toStore:(id)arg2;

@@ -2,41 +2,27 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UITouch, UIDelayedAction, WebFrame, UIFont, UIView, DOMHTMLElement, UITextSelectionView, UITextInteractionAssistant, UIWebDocumentView;
+@class UIColor, WebFrame, UIDelayedAction, UIFont, UIView, DOMHTMLElement, UITextSelectionView, UIWebDocumentView, UITextInteractionAssistant;
 
 @interface UITextView : UIScrollView <UITextInputTraits> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     BOOL m_becomesEditableWithGestures;
     DOMHTMLElement *m_body;
     BOOL m_editable;
     BOOL m_editing;
     UIFont *m_font;
     WebFrame *m_frame;
-    BOOL m_handlingMouse;
     BOOL m_hasExplicitTextAlignment;
     UIView *m_inputAccessoryView;
     UIView *m_inputView;
     UITextInteractionAssistant *m_interactionAssistant;
     UIDelayedAction *m_longPressAction;
     NSInteger m_marginTop;
-    BOOL m_passMouseDownToOther;
     BOOL m_readyForScroll;
     BOOL m_reentrancyGuard;
-    BOOL m_scrollOnMouseUp;
-    BOOL m_selecting;
     UIDelayedAction *m_selectionTimer;
     UITextSelectionView *m_selectionView;
-    BOOL m_sentMouseDown;
-    UITouch *m_syntheticTouch;
     NSInteger m_textAlignment;
     UIColor *m_textColor;
-    } m_touchOffset;
-    } m_touchPoint;
     UIWebDocumentView *m_webView;
 }
 
@@ -188,6 +174,7 @@
 - (void)setText:(id)arg1;
 - (void)setTextAlignment:(NSInteger)arg1;
 - (void)setTextColor:(id)arg1;
+- (BOOL)shouldScrollEnclosingScrollView;
 - (BOOL)shouldStartDataDetectors;
 - (BOOL)showScrollerIndicators;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

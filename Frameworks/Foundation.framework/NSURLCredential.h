@@ -14,6 +14,8 @@
 
 - (struct _CFURLCredential { }*)_cfurlcredential;
 - (id)_initWithCFURLCredential:(struct _CFURLCredential { }*)arg1;
+- (id)_userName;
+- (id)_userPassword;
 - (id)certificates;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

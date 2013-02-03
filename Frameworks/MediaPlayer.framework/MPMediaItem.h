@@ -11,12 +11,14 @@
 @property(readonly) NSArray *chapters;
 
 + (void)_createFilterableDictionary;
++ (void)_didReceiveMemoryWarning;
 + (BOOL)_isValidItemProperty:(id)arg1;
 + (BOOL)canFilterByProperty:(id)arg1;
 
 - (void)_cacheValuesForProperties:(id)arg1;
-- (void)_didReceiveMemoryWarning:(id)arg1;
+- (void)_didReceiveMemoryWarning;
 - (BOOL)_hasCachedValueForProperty:(id)arg1;
+- (void)_initInternalWithPersistentID:(unsigned long long)arg1;
 - (id)chapters;
 - (void)dealloc;
 - (id)description;

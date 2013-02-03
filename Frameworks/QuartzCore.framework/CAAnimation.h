@@ -9,7 +9,7 @@
 
 @property(copy) NSString *fillMode;
 @property(retain) CAMediaTimingFunction *timingFunction;
-@property NSInteger ID;
+@property NSInteger _mapkit_ID;
 @property(readonly) BOOL _mapkit_isHeadingRotationAnimation;
 @property(readonly) BOOL _mapkit_isScrollingAnimation;
 @property BOOL autoreverses;
@@ -35,6 +35,7 @@
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 
 - (struct Object { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (NSInteger)_mapkit_ID;
 - (BOOL)_mapkit_isHeadingRotationAnimation;
 - (BOOL)_mapkit_isScrollingAnimation;
 - (NSUInteger)_propertyFlagsForLayer:(id)arg1;
@@ -75,6 +76,7 @@
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (void)set_mapkit_ID:(NSInteger)arg1;
 - (BOOL)shouldArchiveValueForKey:(id)arg1;
 - (float)speed;
 - (double)timeOffset;

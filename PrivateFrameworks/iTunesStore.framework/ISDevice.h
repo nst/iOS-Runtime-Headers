@@ -17,6 +17,7 @@
 @property(retain,readonly) NSString *guid;
 @property(retain,readonly) NSString *hardwareModel;
 @property(retain,readonly) NSString *productVersion;
+@property(readonly) NSString *systemName;
 @property(readonly) NSInteger type;
 
 + (void)setSharedInstance:(id)arg1;
@@ -53,6 +54,7 @@
 - (id)productVersion;
 - (BOOL)releasePowerAssertion:(id)arg1;
 - (id)supportedOfferDeviceForDevices:(id)arg1;
+- (id)systemName;
 - (BOOL)takePowerAssertion:(id)arg1;
 - (NSInteger)type;
 

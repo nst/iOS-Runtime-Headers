@@ -10,14 +10,22 @@
     BOOL _isCancelling;
     NSMutableSet *_outstandingTasks;
     <CoreDAVTaskManager> *_taskManager;
+    double _timeoutInterval;
 }
+
+@property id delegate;
+@property double timeoutInterval;
 
 - (void)_tearDownAllTasks;
 - (void)bailWithError:(id)arg1;
 - (void)cancelTasks;
 - (void)dealloc;
-- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 delegate:(id)arg3;
+- (id)delegate;
+- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
+- (void)setDelegate:(id)arg1;
+- (void)setTimeoutInterval:(double)arg1;
 - (void)syncAway;
 - (void)taskGroupWillCancelWithError:(id)arg1;
+- (double)timeoutInterval;
 
 @end

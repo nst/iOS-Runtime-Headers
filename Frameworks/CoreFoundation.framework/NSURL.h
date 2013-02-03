@@ -16,11 +16,9 @@
 + (id)CDVURLWithScheme:(id)arg1 host:(id)arg2 port:(NSInteger)arg3 uri:(id)arg4;
 + (id)CDVURLWithScheme:(id)arg1 host:(id)arg2 user:(id)arg3 port:(NSInteger)arg4 uri:(id)arg5;
 + (id)URLByResolvingBookmarkData:(id)arg1 options:(NSUInteger)arg2 relativeToURL:(id)arg3 bookmarkDataIsStale:(BOOL*)arg4 error:(id*)arg5;
-+ (id)URLWithAccountID:(id)arg1 remoteID:(id)arg2;
 + (id)URLWithDirtyString:(id)arg1;
 + (id)URLWithDirtyString:(id)arg1;
 + (id)URLWithDisplayIdentifier:(id)arg1 forSearchResultDomain:(NSInteger)arg2 andIdentifier:(unsigned long long)arg3;
-+ (id)URLWithIMHandle:(id)arg1;
 + (id)URLWithPackagePart:(id)arg1;
 + (id)URLWithScheme:(id)arg1 host:(id)arg2 port:(NSInteger)arg3 uri:(id)arg4;
 + (id)URLWithScheme:(id)arg1 host:(id)arg2 port:(NSInteger)arg3 uri:(id)arg4;
@@ -30,10 +28,10 @@
 + (id)URLWithTelephoneNumber:(id)arg1 addressBookUID:(NSInteger)arg2;
 + (id)URLWithTelephoneNumber:(id)arg1 promptUser:(BOOL)arg2;
 + (id)URLWithTelephoneNumber:(id)arg1;
-+ (id)_URLWithAccountID:(id)arg1 remoteID:(id)arg2 prompt:(BOOL)arg3 acceptance:(BOOL)arg4;
 + (id)_URLWithData:(id)arg1 relativeToURL:(id)arg2;
 + (id)_URLWithDataAsString:(id)arg1 relativeToURL:(id)arg2;
 + (id)_applyConferenceScheme:(id)arg1 toConferenceURL:(id)arg2;
++ (id)_conferenceURLWithDestinationID:(id)arg1 prompt:(BOOL)arg2 accept:(BOOL)arg3;
 + (id)_web_URLWithComponents:(struct { id x1; id x2; id x3; id x4; NSInteger x5; id x6; id x7; id x8; })arg1;
 + (id)_web_URLWithData:(id)arg1 relativeToURL:(id)arg2;
 + (id)_web_URLWithData:(id)arg1;
@@ -43,15 +41,15 @@
 + (id)_web_URLWithUserTypedString:(id)arg1 relativeToURL:(id)arg2;
 + (id)_web_URLWithUserTypedString:(id)arg1;
 + (id)_web_uniqueWebDataURL;
-+ (id)acceptanceURLWithAccountID:(id)arg1 remoteID:(id)arg2;
 + (id)acceptanceURLWithURL:(id)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)bookmarkDataWithContentsOfURL:(id)arg1 error:(id*)arg2;
 + (NSInteger)classicPortForScheme:(id)arg1;
 + (NSInteger)classicPortForScheme:(id)arg1;
-+ (id)cnfURLWithURL:(id)arg1;
-+ (id)cnfpromptURLWithAccountID:(id)arg1 remoteID:(id)arg2;
++ (id)conferenceAcceptURLWithURL:(id)arg1;
++ (id)conferenceURLWithIMHandle:(id)arg1;
++ (id)conferenceURLWithURL:(id)arg1;
 + (id)copyDictionaryForQueryString:(id)arg1 unescapedValues:(BOOL)arg2;
 + (id)escapedStringForString:(id)arg1;
 + (id)fileURLWithPath:(id)arg1 isDirectory:(BOOL)arg2;
@@ -71,9 +69,11 @@
 + (BOOL)writeBookmarkData:(id)arg1 toURL:(id)arg2 options:(NSUInteger)arg3 error:(id*)arg4;
 
 - (id)CDVRawPath;
+- (id)CDVServerURL;
 - (id)URLByAppendingPathComponent:(id)arg1 isDirectory:(BOOL)arg2;
 - (id)URLByAppendingPathComponent:(id)arg1;
 - (id)URLByAppendingPathExtension:(id)arg1;
+- (id)URLByAppendingQueryDictionary:(id)arg1;
 - (id)URLByDeletingLastPathComponent;
 - (id)URLByDeletingPathExtension;
 - (id)URLByDeletingQueryParameterWithKey:(id)arg1;
@@ -141,6 +141,7 @@
 - (id)bookmarkDataWithAliasRecord:(id)arg1;
 - (id)bookmarkDataWithOptions:(NSUInteger)arg1 includingResourceValuesForKeys:(id)arg2 relativeToURL:(id)arg3 error:(id*)arg4;
 - (id)cacheKeyRepresenation;
+- (id)callBackPhoneNumber;
 - (id)callBackString;
 - (BOOL)checkResourceIsReachableAndReturnError:(id*)arg1;
 - (id)conferenceDestinationAccount;
@@ -156,9 +157,11 @@
 - (id)filePathURL;
 - (id)fileReferenceURL;
 - (void)finalize;
+- (id)formattedConferenceDestinationAccount;
 - (id)formattedPhoneNumberFromString:(id)arg1;
 - (id)fragment;
 - (id)friendFinderURL;
+- (id)gamecenterURL;
 - (void)getPhoneNumber:(id*)arg1 addressBookUID:(NSInteger*)arg2;
 - (BOOL)getResourceValue:(id*)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (BOOL)hasTelephonyScheme;
@@ -175,9 +178,10 @@
 - (id)initWithScheme:(id)arg1 host:(id)arg2 port:(NSInteger)arg3 uri:(id)arg4;
 - (id)initWithString:(id)arg1 relativeToURL:(id)arg2;
 - (id)initWithString:(id)arg1;
-- (BOOL)isAcceptanceVersionOfURL:(id)arg1;
+- (BOOL)isConferenceAcceptURL;
 - (BOOL)isConferenceAcceptance;
 - (BOOL)isConferencePromptURL;
+- (BOOL)isConferenceUpgradeURLForDestinationID:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFileReferenceURL;
 - (BOOL)isFileURL;
@@ -212,6 +216,7 @@
 - (id)port;
 - (id)previewItemURL;
 - (id)query;
+- (id)queryDictionary;
 - (id)queryParameters;
 - (id)radarWebURL;
 - (id)rawPath;

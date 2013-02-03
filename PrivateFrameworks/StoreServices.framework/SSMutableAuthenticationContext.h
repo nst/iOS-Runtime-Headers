@@ -6,6 +6,7 @@
 }
 
 @property(copy) NSString *accountName;
+@property(copy) NSString *clientIdentifierHeader;
 @property(copy) NSString *preferredITunesStoreClient;
 @property(copy) NSDictionary *requestParameters;
 @property(retain) NSNumber *requiredUniqueIdentifier;
@@ -13,6 +14,7 @@
 @property(getter=isAccountNameEditable) BOOL accountNameEditable;
 @property NSInteger accountScope;
 @property BOOL canCreateNewAccount;
+@property(getter=isDemoAccount) BOOL demoAccount;
 @property NSInteger promptStyle;
 @property BOOL shouldFollowAccountButtons;
 
@@ -22,6 +24,8 @@
 - (void)setAccountNameEditable:(BOOL)arg1;
 - (void)setAccountScope:(NSInteger)arg1;
 - (void)setCanCreateNewAccount:(BOOL)arg1;
+- (void)setClientIdentifierHeader:(id)arg1;
+- (void)setDemoAccount:(BOOL)arg1;
 - (void)setPreferredITunesStoreClient:(id)arg1;
 - (void)setPromptStyle:(NSInteger)arg1;
 - (void)setRequestParameters:(id)arg1;

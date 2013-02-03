@@ -7,7 +7,7 @@
 @interface SUStructuredPageTableDataSource : SUTableDataSource {
     SUItem *_activeLoadMoreItem;
     NSMutableArray *_cachedHeaderViews;
-    float _priceButtonWidth;
+    float _offerButtonWidth;
     SUStructuredPage *_structuredPage;
     NSInteger _style;
 }
@@ -17,12 +17,12 @@
 @property NSInteger style;
 
 - (void)_configureLoadMoreCell:(id)arg1 forItem:(id)arg2;
-- (id)_priceButtonForCell:(id)arg1 item:(id)arg2;
-- (BOOL)_shouldShowPriceButtonForItem:(id)arg1;
+- (id)_itemOfferButtonForCell:(id)arg1 item:(id)arg2;
+- (BOOL)_shouldShowItemOfferButtonForItem:(id)arg1;
 - (id)activeLoadMoreItem;
 - (BOOL)canDeleteIndexPath:(id)arg1;
 - (BOOL)canSelectIndexPath:(id)arg1;
-- (BOOL)canShowPriceButtonForItem:(id)arg1;
+- (BOOL)canShowItemOfferButtonForItem:(id)arg1;
 - (Class)cellClassForItem:(id)arg1 reuseIdentifier:(id*)arg2;
 - (Class)cellConfigurationClassForItem:(id)arg1;
 - (id)cellConfigurationForIndex:(NSInteger)arg1 item:(id)arg2;

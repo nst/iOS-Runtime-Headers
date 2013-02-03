@@ -43,8 +43,7 @@
 - (oneway void)account:(id)arg1 handleSubscriptionRequestFrom:(id)arg2 withMessage:(id)arg3;
 - (oneway void)account:(id)arg1 loginStatusChanged:(NSUInteger)arg2 message:(id)arg3 reason:(NSUInteger)arg4 properties:(id)arg5;
 - (oneway void)account:(id)arg1 postedError:(id)arg2;
-- (oneway void)account:(id)arg1 registrationStatusChanged:(NSInteger)arg2 error:(id)arg3;
-- (oneway void)account:(id)arg1 status:(id)arg2 capabilities:(unsigned long long)arg3 serviceLoginStatus:(NSUInteger)arg4 registrationStatus:(NSInteger)arg5 loginStatusMessage:(id)arg6;
+- (oneway void)account:(id)arg1 status:(id)arg2 capabilities:(unsigned long long)arg3 serviceLoginStatus:(NSUInteger)arg4 loginStatusMessage:(id)arg5;
 - (oneway void)account:(id)arg1 statusChanged:(id)arg2;
 - (oneway void)accountAdded:(id)arg1 defaults:(id)arg2 service:(id)arg3;
 - (oneway void)accountRemoved:(id)arg1;

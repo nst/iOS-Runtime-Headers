@@ -10,12 +10,14 @@
     NSString *_message;
     NSArray *_players;
     NSString *_rid;
+    NSData *_sessionToken;
 }
 
 @property(retain) NSData *connectionData;
 @property(retain) NSString *message;
 @property(retain) NSArray *players;
 @property(retain) NSString *rid;
+@property(retain) NSData *sessionToken;
 @property BOOL hosted;
 
 - (id)connectionData;
@@ -28,10 +30,12 @@
 - (id)players;
 - (id)request;
 - (id)rid;
+- (id)sessionToken;
 - (void)setConnectionData:(id)arg1;
 - (void)setHosted:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setPlayers:(id)arg1;
 - (void)setRid:(id)arg1;
+- (void)setSessionToken:(id)arg1;
 
 @end

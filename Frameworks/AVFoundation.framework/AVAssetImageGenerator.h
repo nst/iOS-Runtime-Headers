@@ -37,10 +37,14 @@
 - (id)initWithAsset:(id)arg1;
 - (struct CGSize { float x1; float x2; })maximumSize;
 - (void)release;
+- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })requestedTimeToleranceAfter;
+- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })requestedTimeToleranceBefore;
 - (id)retain;
 - (void)setApertureMode:(id)arg1;
 - (void)setAppliesPreferredTrackTransform:(BOOL)arg1;
 - (void)setMaximumSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setRequestedTimeToleranceAfter:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)setRequestedTimeToleranceBefore:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
 - (void)setVideoComposition:(id)arg1;
 - (id)videoComposition;
 

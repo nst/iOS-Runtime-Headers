@@ -9,56 +9,21 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (BOOL)downloadWebArchivesBeforeShowingBanner;
 + (id)sharedAdManager;
-+ (BOOL)shouldDisableCaching;
-+ (BOOL)shouldLogProtocolBufferRequestsAndResponses;
-+ (BOOL)shouldLogResourceRetrievalTiming;
 
-- (void)_considerCalling;
-- (void)_considerLeavingApp;
-- (void)_dismissLandingPage;
-- (void)_dismissRemoteViewController:(BOOL)arg1;
-- (void)_displayStoryboard;
-- (void)_landingPageDidAppear;
-- (void)_reachabilityChanged:(id)arg1;
-- (void)_updateNetworkDefaults;
-- (void)adSheetDidTerminate:(id)arg1;
-- (void)adSheetReadyToDisplay;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
-- (void)applicationDidBecomeActive:(id)arg1;
-- (void)applicationDidEnterBackground:(id)arg1;
-- (void)applicationDidReceiveMemoryWarning:(id)arg1;
-- (void)applicationWillResignActive:(id)arg1;
-- (void)applicationWillTerminate:(id)arg1;
 - (id)autorelease;
-- (void)closeAdSheetSession;
+- (id)cacheForBundleIdentifier:(id)arg1 specificationIdentifier:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)currentSubscriberMultiplier;
-- (id)currentTargetingDataForRequests;
-- (void)didCreateRemoteWindow:(id)arg1 userInfo:(id)arg2;
-- (void)didDismissStoryboard:(id)arg1 userInfo:(id)arg2;
 - (id)init;
-- (BOOL)isServerReachable;
-- (void)landingPageDidDismiss;
-- (void)loadDataForBanner:(id)arg1 withSpecification:(id)arg2;
-- (id)overriddenAdServer;
-- (void)prepareForAdSheetSession;
-- (void)presentLandingPageForBanner:(id)arg1;
-- (id)propertiesRequest;
+- (void)loadDataForSession:(id)arg1 withSpecification:(id)arg2;
 - (void)release;
-- (void)remoteViewControllerDidAppear:(id)arg1;
-- (void)remoteViewControllerDidDisappear:(id)arg1;
-- (id)requestHeaders;
+- (void)removeCacheForBundleIdentifier:(id)arg1 specificationIdentifier:(id)arg2;
+- (void)removeSessionFromAnyCaches:(id)arg1;
 - (id)retain;
 - (NSUInteger)retainCount;
-- (void)sendStoryboardDataToHost;
-- (id)serverURL;
-- (void)setOverriddenAdServer:(id)arg1;
-- (void)stopLoadingDataForBanner:(id)arg1 withSpecification:(id)arg2;
-- (void)storyboardMainWindowDestroyed:(id)arg1 userInfo:(id)arg2;
-- (void)videoPlayerExitedFullScreen;
-- (void)videoPlayerWentFullScreen;
-- (void)windowIsOnscreen:(id)arg1 userInfo:(id)arg2;
+- (void)setCache:(id)arg1 forBundleIdentifier:(id)arg2 specificationIdentifier:(id)arg3;
+- (void)setServerReachabilityForSession:(id)arg1 withSpecification:(id)arg2;
+- (void)setServerURLForSession:(id)arg1 withSpecification:(id)arg2;
+- (void)stopLoadingDataForSession:(id)arg1 withSpecification:(id)arg2;
 
 @end

@@ -29,6 +29,7 @@
 - (void)addJoinedLeftKey:(NSInteger)arg1 rightKey:(NSInteger)arg2 order:(NSInteger)arg3 toTable:(id)arg4;
 - (void)addJoinedLeftKey:(NSInteger)arg1 rightKeys:(id)arg2 toTable:(id)arg3;
 - (void)addPhotoKey:(NSInteger)arg1 toPhotoAlbumWithPrimaryKey:(NSInteger)arg2;
+- (BOOL)attachAux;
 - (id)auxPath;
 - (NSInteger)beginExclusiveTransaction;
 - (NSInteger)beginTransaction;
@@ -107,6 +108,7 @@
 - (struct sqlite3 { }*)sql;
 - (void)throttleWriteTransactions;
 - (NSInteger)transactionNestingLevel;
+- (NSInteger)updatePhotosWithAuxData:(struct __CFDictionary { }*)arg1;
 - (NSInteger)writeExtrasDict:(id)arg1 toTable:(id)arg2 forForeignKey:(NSInteger)arg3;
 
 @end

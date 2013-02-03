@@ -53,6 +53,7 @@
 - (void)_hideScrubInstructions;
 - (void)_initNavigationBar;
 - (id)_loadingMovieIndicatorView;
+- (void)_playbackStateDidChangeNotification:(id)arg1;
 - (void)_reloadNavigationBarWithAnimation:(BOOL)arg1;
 - (void)_reloadTransportControls:(BOOL)arg1;
 - (void)_scaleButtonAction:(id)arg1;
@@ -61,6 +62,8 @@
 - (void)_showScrubInstructions;
 - (void)_statusBarHeightChanged:(id)arg1;
 - (void)_tickNotification:(id)arg1;
+- (void)_timeDidJumpNotification:(id)arg1;
+- (BOOL)_updateScrubControlVisibility;
 - (void)_updateScrubControlWithAnimation:(BOOL)arg1;
 - (void)_updateTimeBasedValues;
 - (void)_validityChangedNotification:(id)arg1;

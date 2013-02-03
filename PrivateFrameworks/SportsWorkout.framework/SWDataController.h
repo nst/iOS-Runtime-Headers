@@ -7,9 +7,12 @@
 @interface SWDataController : NSObject {
     SWSyncServiceConnection *_currentSyncConnection;
     NSString *_currentlySyncingWorkoutFilePath;
+    struct dispatch_queue_s { } *_dispatchQueue;
     NSMutableArray *_empedDirectoriesToSync;
+    BOOL _isPerformingMigration;
     NSManagedObjectContext *_managedObjectContext;
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;
+    NSInteger _priorMigrationVersionKey;
     <SWDataControllerSyncDelegate> *_syncDelegate;
     SWSyncHost *_syncHost;
     NSString *_syncPin;
@@ -19,21 +22,28 @@
 @property(readonly) NSDictionary *achievements;
 @property <SWDataControllerSyncDelegate> *syncDelegate;
 
++ (id)sharedDataController;
+
 - (id)_achievementsForName:(id)arg1 sensorSerialNumber:(id)arg2;
 - (void)_addValue:(id)arg1 toAchievementName:(id)arg2 sensorSerialNumber:(id)arg3;
 - (id)_allWorkoutsWithSyncState:(NSInteger)arg1;
+- (id)_databasePropertiesForName:(id)arg1;
+- (void)_databaseProperty:(id)arg1 setName:(id)arg2 andIntegerValue:(NSInteger)arg3;
+- (void)_deleteXMLFileForWorkout:(id)arg1;
 - (id)_dictionaryForWorkoutRecord:(id)arg1;
 - (id)_entitiesOfTypeName:(id)arg1 forPropertyName:(id)arg2 isNull:(BOOL)arg3;
 - (id)_entitiesOfTypeName:(id)arg1 forPropertyName:(id)arg2 values:(id)arg3;
 - (void)_fixupDatabase;
 - (void)_importWorkoutFilesFromDirectory:(id)arg1;
-- (void)_managedObjectContextDidSave:(id)arg1;
 - (void)_migrateBests;
 - (void)_migrateCalibrationData;
 - (void)_migrateTotals;
 - (void)_migrateWorkoutData;
 - (void)_notifyDataStoreChanged;
+- (id)_onQueue_achievements;
+- (id)_onQueue_calibrationDataForSensorSerialNumber:(id)arg1 walkCalibrationDate:(id*)arg2 runCalibrationDate:(id*)arg3;
 - (id)_pathOfSnapshotForWorkout:(id)arg1;
+- (id)_plistForDatabaseProperty:(id)arg1;
 - (void)_registerEmpedIdWithCheckpointIfNecessary:(id)arg1;
 - (void)_removeSnapshotForWorkout:(id)arg1;
 - (void)_replaceValueIfLarger:(id)arg1 forAchievementName:(id)arg2 sensorSerialNumber:(id)arg3;
@@ -58,6 +68,7 @@
 - (void)connection:(id)arg1 didGenerateToken:(id)arg2;
 - (void)connection:(id)arg1 didReplaceOldPINWithNewPIN:(id)arg2;
 - (void)connectionDidCompleteSync:(id)arg1;
+- (void)connectionDidReturnStatusInvalid:(id)arg1;
 - (void)connectionDidReturnStatusUnconfirmed:(id)arg1;
 - (void)connectionDidSyncWorkout:(id)arg1;
 - (void)dealloc;

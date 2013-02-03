@@ -11,6 +11,7 @@
         unsigned int customized : 1; 
         unsigned int downButtonSentAction : 1; 
         unsigned int isLocked : 1; 
+    id _appearance;
     NSArray *_buttonItems;
     NSArray *_customizationItems;
     UIView *_customizeView;
@@ -33,6 +34,7 @@
 - (void)_adjustButtonSelection:(id)arg1;
 - (void)_alertDidHide;
 - (void)_alertWillShow:(BOOL)arg1 duration:(float)arg2;
+- (id)_appearance;
 - (void)_buttonCancel:(id)arg1;
 - (void)_buttonDown:(id)arg1;
 - (void)_buttonDownDelayed:(id)arg1;
@@ -47,6 +49,10 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_positionTabBarButtons:(id)arg1 ignoringItem:(id)arg2;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
+- (void)_setBackgroundImage:(id)arg1;
+- (void)_setLabelFont:(id)arg1;
+- (void)_setLabelTextColor:(id)arg1 selectedTextColor:(id)arg2;
+- (void)_setSelectionIndicatorImage:(id)arg1;
 - (void)_tabBarFinishedAnimating;
 - (unsigned long long)accessibilityTraits;
 - (void)beginCustomizingItems:(id)arg1;

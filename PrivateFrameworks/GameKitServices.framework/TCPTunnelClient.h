@@ -6,33 +6,64 @@
    See Warning(s) below.
  */
 
-@class NSMutableData, NSString;
+@class NSDictionary, NSMutableData, NSString;
 
 @interface TCPTunnelClient : NSObject <VideoConferenceRealTimeChannel> {
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    struct tagIPPORT { 
+        NSInteger iFlags; 
+        BOOL szIfName[16]; 
+        union { 
+            NSUInteger dwIPv4; 
+            unsigned char abIPv6[16]; 
+        } IP; 
+        unsigned short wPort; 
+    id _allocationResponseHandler;
+    id _bindingResponseHandler;
+    NSInteger _callID;
+    unsigned short _channelNumber;
     NSInteger _connectedFD;
     unsigned short _currentMsgType;
     NSInteger _currentPadding;
     NSInteger _currentlyReadingDataGoalLength;
     NSMutableData *_currentlyReadingMessage;
+    id _destroyHandler;
     id _handler;
     struct dispatch_queue_s { } *_inQueue;
     BOOL _isConnected;
     struct dispatch_queue_s { } *_outQueue;
     NSString *_participantID;
     struct dispatch_source_s { } *_readSource;
+    NSDictionary *_relayUpdateDict;
+    NSDictionary *_reqRespDict;
+    } _serverIPPort;
+    id _terminationHandler;
+    } mutex;
 }
 
 @property(retain) NSString *participantID;
 
+- (void)closeTunnelSocket;
 - (void)dealloc;
-- (id)initWithConnectedSocket:(NSInteger)arg1;
-- (id)initWithServerICEData:(id)arg1;
-- (id)initWithServerIPPORT:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; })arg1;
+- (id)initWithRelayRequestDictionary:(id)arg1 withCallID:(NSInteger)arg2;
+- (BOOL)isTunnelSocketClosed;
+- (void)lock;
 - (id)participantID;
 - (void)processSocketRead;
+- (void)receivedControlData:(id)arg1;
+- (BOOL)sendAllocateMsg;
+- (BOOL)sendChannelBindingMsgWithDict:(id)arg1;
+- (BOOL)sendRefreshMsg:(NSUInteger)arg1;
+- (void)setAllocationResponseHandler:(id)arg1;
+- (void)setBindingResponseHandler:(id)arg1;
+- (void)setDestroyHandler:(id)arg1;
 - (void)setParticipantID:(id)arg1;
 - (void)setReceiveHandler:(id)arg1;
-- (void)stop;
+- (void)setTerminationHandler:(id)arg1;
+- (void)unbindChannel;
+- (void)unlock;
 - (void)vcArg:(id)arg1 sendControlData:(id)arg2 toParticipantID:(id)arg3;
 - (void)vcArg:(id)arg1 sendRealTimeData:(id)arg2 toParticipantID:(id)arg3;
 

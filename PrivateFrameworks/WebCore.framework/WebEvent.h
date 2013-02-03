@@ -13,9 +13,9 @@
     NSString *_charactersIgnoringModifiers;
     float _deltaX;
     float _deltaY;
-    BOOL _gestureChanged;
     float _gestureRotation;
     float _gestureScale;
+    BOOL _isGesture;
     unsigned short _keyCode;
     BOOL _keyRepeating;
     } _locationInWindow;
@@ -26,6 +26,7 @@
     NSArray *_touchGlobalLocations;
     NSArray *_touchIdentifiers;
     NSArray *_touchLocations;
+    NSArray *_touchPhases;
     NSInteger _type;
 }
 
@@ -34,12 +35,13 @@
 @property(retain,readonly) NSArray *touchGlobalLocations;
 @property(retain,readonly) NSArray *touchIdentifiers;
 @property(retain,readonly) NSArray *touchLocations;
+@property(retain,readonly) NSArray *touchPhases;
 @property(readonly) NSInteger characterSet;
 @property(readonly) float deltaX;
 @property(readonly) float deltaY;
-@property(readonly) BOOL gestureChanged;
 @property(readonly) float gestureRotation;
 @property(readonly) float gestureScale;
+@property(readonly) BOOL isGesture;
 @property(readonly) unsigned short keyCode;
 @property(getter=isKeyRepeating,readonly) BOOL keyRepeating;
 @property(readonly) CGPoint locationInWindow;
@@ -54,6 +56,8 @@
 - (id)_modiferFlagsDescription;
 - (id)_touchIdentifiersDescription;
 - (id)_touchLocationsDescription:(id)arg1;
+- (id)_touchPhaseDescription:(NSInteger)arg1;
+- (id)_touchPhasesDescription;
 - (id)_typeDescription;
 - (NSInteger)characterSet;
 - (id)characters;
@@ -62,13 +66,13 @@
 - (float)deltaX;
 - (float)deltaY;
 - (id)description;
-- (BOOL)gestureChanged;
 - (float)gestureRotation;
 - (float)gestureScale;
 - (id)initWithKeyEventType:(NSInteger)arg1 withTimeStamp:(double)arg2 withCharacters:(id)arg3 withCharactersIgnoringModifiers:(id)arg4 withModifiers:(NSInteger)arg5 isRepeating:(BOOL)arg6 withKeyCode:(unsigned short)arg7 isTabKey:(BOOL)arg8 withCharacterSet:(NSInteger)arg9;
 - (id)initWithMouseEventType:(NSInteger)arg1 withTimeStamp:(double)arg2 withLocation:(struct CGPoint { float x1; float x2; })arg3;
 - (id)initWithScrollWheelEventWithTimeStamp:(double)arg1 withLocation:(struct CGPoint { float x1; float x2; })arg2 withDeltaX:(float)arg3 withDeltaY:(float)arg4;
-- (id)initWithTouchEventType:(NSInteger)arg1 withTimeStamp:(double)arg2 withLocation:(struct CGPoint { float x1; float x2; })arg3 withTouchCount:(NSUInteger)arg4 withTouchLocations:(id)arg5 withTouchGlobalLocations:(id)arg6 withTouchIdentifiers:(id)arg7 withGestureChanged:(BOOL)arg8 withGestureScale:(float)arg9 withGestureRotation:(float)arg10;
+- (id)initWithTouchEventType:(NSInteger)arg1 withTimeStamp:(double)arg2 withLocation:(struct CGPoint { float x1; float x2; })arg3 withTouchCount:(NSUInteger)arg4 withTouchLocations:(id)arg5 withTouchGlobalLocations:(id)arg6 withTouchIdentifiers:(id)arg7 withTouchPhases:(id)arg8 isGesture:(BOOL)arg9 withGestureScale:(float)arg10 withGestureRotation:(float)arg11;
+- (BOOL)isGesture;
 - (BOOL)isKeyRepeating;
 - (BOOL)isTabKey;
 - (unsigned short)keyCode;
@@ -79,6 +83,7 @@
 - (id)touchGlobalLocations;
 - (id)touchIdentifiers;
 - (id)touchLocations;
+- (id)touchPhases;
 - (NSInteger)type;
 
 @end

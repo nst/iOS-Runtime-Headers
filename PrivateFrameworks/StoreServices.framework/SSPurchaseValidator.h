@@ -10,7 +10,6 @@
 
 @property(readonly) SSPurchaseValidationContext *purchaseValidationContext;
 
-- (BOOL)_checkDeviceTypeForPurchase:(id)arg1 response:(id)arg2;
 - (BOOL)_checkDiskSpaceForPurchases:(id)arg1 response:(id)arg2;
 - (BOOL)_checkNetworkConstraintsForPurchases:(id)arg1 response:(id)arg2;
 - (BOOL)_checkSoftwareCapabilitiesForPurchase:(id)arg1 response:(id)arg2;

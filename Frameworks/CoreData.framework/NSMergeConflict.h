@@ -14,9 +14,9 @@
 @property(retain,readonly) NSDictionary *cachedSnapshot;
 @property(retain,readonly) NSDictionary *objectSnapshot;
 @property(retain,readonly) NSDictionary *persistedSnapshot;
+@property(retain,readonly) NSManagedObject *sourceObject;
 @property(readonly) NSUInteger newVersionNumber;
 @property(readonly) NSUInteger oldVersionNumber;
-@property(retain,readonly) id sourceObject;
 
 - (id)cachedSnapshot;
 - (void)dealloc;

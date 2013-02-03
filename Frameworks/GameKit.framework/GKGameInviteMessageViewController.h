@@ -2,28 +2,31 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class UILabel, NSString, <GKGameInviteMessageViewControllerDelegate>, UITextView;
+@class NSArray, <GKGameInviteMessageViewControllerDelegate>;
 
-@interface GKGameInviteMessageViewController : UIViewController {
+@interface GKGameInviteMessageViewController : GKAbstractComposeController {
+    BOOL _alreadySetUp;
     <GKGameInviteMessageViewControllerDelegate> *_delegate;
-    UITextView *_messageView;
-    UILabel *_toPlayersLabel;
-    NSString *_toPlayersString;
+    BOOL _lockedToPortrait;
+    NSArray *_players;
 }
 
 @property <GKGameInviteMessageViewControllerDelegate> *delegate;
-@property(retain) NSString *toPlayersString;
+@property(retain) NSArray *players;
+@property(getter=isLockedToPortrait) BOOL lockedToPortrait;
 
 - (void)dealloc;
 - (id)delegate;
 - (void)done;
+- (BOOL)isLockedToPortrait;
 - (void)loadView;
+- (id)players;
 - (void)setDelegate:(id)arg1;
+- (void)setLockedToPortrait:(BOOL)arg1;
 - (void)setPlayers:(id)arg1;
-- (void)setToPlayersString:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
-- (id)toPlayersString;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

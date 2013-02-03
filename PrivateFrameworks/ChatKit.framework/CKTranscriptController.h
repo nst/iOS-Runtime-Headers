@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSDictionary, ABPeoplePickerNavigationController, CKTranscriptStatusController, NSMutableSet, UINavigationItem, NSMutableArray, CKLinksController, CKService, CKContentOffsetAnimation, CKMessageEncodingInfo, NSOperationQueue, NSNotification, CKMessageEntryView, PLPhotoScrollerViewController, UIBarButtonItem, CKRecipientListView, CKTranscriptBubbleData, UIToolbar, CKMessageComposition, UIFrameAnimation, CKRecipientGenerator, CKBalloonView, CKRecipientSelectionView, NSArray, CKMessage, CKConversation, CKTranscriptTableView, UIView, UINavigationController;
+@class NSDictionary, ABPeoplePickerNavigationController, CKTranscriptStatusController, NSMutableSet, UINavigationItem, NSMutableArray, CKLinksController, CKService, CKContentOffsetAnimation, CKMessageEncodingInfo, NSOperationQueue, NSNotification, CKMessageEntryView, PLPhotoScrollerViewController, UIBarButtonItem, CKRecipientListView, CKTranscriptBubbleData, UIToolbar, CKMessageComposition, UIFrameAnimation, CKRecipientGenerator, CKBalloonView, CKRecipientSelectionView, NSArray, NSIndexPath, CKMessage, CKConversation, CKTranscriptTableView, UIView, UINavigationController;
 
 @interface CKTranscriptController : UIViewController <UIActionSheetDelegate, UIModalViewDelegate, UITableViewDataSource, UITableViewDelegate, ABPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABUnknownPersonViewControllerDelegate, ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate> {
     struct CGRect { 
@@ -38,13 +38,15 @@
     unsigned int _ignoresOverlayViewsForLayout : 1;
     unsigned int _didCancel : 1;
     unsigned int _entryViewWasActiveBeforeEdit : 1;
-    unsigned int _entryViewWasActiveBeforeViewingMedia : 1;
-    unsigned int _recipientSelectionViewWasActiveBeforeViewingMedia : 1;
+    unsigned int _entryViewWasActiveBeforePushingViewController : 1;
+    unsigned int _recipientSelectionViewWasActiveBeforePushingViewController : 1;
     unsigned int _isShowingSearchResults : 1;
     unsigned int _automaticKeyboardWasDisabled : 1;
     unsigned int _reloadingTableView : 1;
     unsigned int _togglingEditing : 1;
     unsigned int _suspendScrollDueToMediaViewing : 1;
+    unsigned int _triedToResetEntryViewSizeWhileNotInAWindow : 1;
+    unsigned int _triedToResetOverlayViewSizeWhileNotInAWindow : 1;
     NSDictionary *_abPropertiesCache;
     UIBarButtonItem *_actionItem;
     NSMutableArray *_actionSheets;
@@ -61,8 +63,10 @@
     NSInteger _finishedBubbs;
     NSInteger _finishedThrows;
     NSMutableSet *_hiddenIndexPaths;
-    } _keyboardFrame;
+    NSIndexPath *_indexPathOfHighlightedCell;
+    BOOL _isReplying;
     NSNotification *_keyboardNotification;
+    } _keyboardScreenFrame;
     id _lastMessage;
     CKLinksController *_linkViewController;
     NSOperationQueue *_mediaPreviewQueue;
@@ -120,6 +124,7 @@
 - (void)_calculateTopVisibleRow:(NSInteger*)arg1 andOffset:(float*)arg2 forTransitionToEditing:(BOOL)arg3;
 - (BOOL)_canReloadView;
 - (void)_cancelMessageSendAnimations;
+- (void)_changedStatusBarFrame:(id)arg1;
 - (void)_characterCountUISettingDidChangeNotification:(id)arg1;
 - (void)_clearActionSheets;
 - (void)_clearExpandRecipientListFlag;
@@ -128,6 +133,7 @@
 - (void)_decrementRotationBlockingAnimationCount;
 - (void)_deleteMessagesAtIndexPaths:(id)arg1;
 - (void)_deleteSelectedMessages:(id)arg1;
+- (void)_didEndResumeAnimation:(id)arg1;
 - (BOOL)_disclosureSupportsMediaType:(NSInteger)arg1;
 - (void)_displayABPersonViewController:(id)arg1;
 - (BOOL)_editableAtIndexPath:(id)arg1;
@@ -136,6 +142,7 @@
 - (void)_entryViewWillRotate:(id)arg1;
 - (id)_fieldForFocus;
 - (void)_finishedCreatingNewMessageForSending:(id)arg1;
+- (void)_flashHighlightedCell;
 - (void)_forwardSelectedMessages:(id)arg1;
 - (void)_generatePreviewsForMediaObject:(id)arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
@@ -143,6 +150,7 @@
 - (void)_hideRecipientListView;
 - (void)_hideTranscriptButtons;
 - (void)_incrementRotationBlockingAnimationCount;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keyboardFrame;
 - (void)_keyboardWillShowOrHide:(id)arg1;
 - (void)_loadMore;
 - (void)_localeChanged:(id)arg1;
@@ -221,7 +229,7 @@
 - (void)applicationWillSuspend;
 - (void)balloonWillResignFirstResponder:(id)arg1;
 - (struct CGPoint { float x1; float x2; })bestVisibleOffsetForBubbleAtIndex:(NSInteger)arg1;
-- (void)bubbilizationFinished:(id)arg1 forAnimation:(id)arg2;
+- (void)bubbilizationAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)bubbleData;
 - (BOOL)canBecomeFirstResponder;
 - (id)canSafelyDismissImagePicker;
@@ -332,6 +340,7 @@
 - (void)showABCardForLinkProperties:(id)arg1;
 - (void)showABCardForPerson:(void*)arg1 highlightedProperty:(NSInteger)arg2 identifier:(NSInteger)arg3;
 - (void)showAddToExistingContactViewForEntity:(id)arg1;
+- (void)showKeyboardForReply;
 - (void)showNewContactViewForEntity:(id)arg1;
 - (void)showPeoplePickerWithDelegate:(id)arg1;
 - (void)showURLsForMessage:(id)arg1;
@@ -361,6 +370,7 @@
 - (void)updateTitle;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;

@@ -5,6 +5,7 @@
 @class <IMReachabilityDelegate>, NSString;
 
 @interface IMReachability : NSObject {
+    unsigned int _gettingFlags : 1;
     <IMReachabilityDelegate> *_delegate;
     NSString *_description;
     NSUInteger _flags;

@@ -38,6 +38,7 @@
 - (void)_updateImages;
 - (void)dealloc;
 - (void*)displayedPerson;
+- (BOOL)hasImageToDisplay;
 - (NSInteger)imageType;
 - (id)init;
 - (id)initWithIconSize:(struct CGSize { float x1; float x2; })arg1 imageType:(NSInteger)arg2;

@@ -37,6 +37,7 @@
     NSMutableArray *_responses;
     double _timeoutSeconds;
     struct __CFRunLoopTimer { } *_timeoutTimer;
+    NSUInteger _uploadPayloadSize;
 }
 
 @property(retain) NSURL *URL;
@@ -54,6 +55,7 @@
 @property BOOL needsCancel;
 @property BOOL silentLoading;
 @property double timeoutSeconds;
+@property(readonly) NSUInteger uploadPayloadSize;
 
 - (id)URL;
 - (id)_applicationID;
@@ -117,6 +119,7 @@
 - (void)start;
 - (double)timeoutSeconds;
 - (id)tryReadResponseData:(id)arg1 forRequest:(id)arg2 forResponseClass:(Class)arg3;
+- (NSUInteger)uploadPayloadSize;
 - (void)writeRequest:(id)arg1 into:(id)arg2;
 
 @end

@@ -17,6 +17,7 @@
 + (id)manageLogsSpecifiers;
 
 - (void)_dismissSavingDataAlert;
+- (void)_presentNotesController;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
 - (id)booleanPropertyWithSpecifier:(id)arg1;
@@ -27,10 +28,8 @@
 - (void)handleSaveAllLogsForSpecifier:(id)arg1;
 - (void)handleSaveAllLogsStep2;
 - (BOOL)isLoggingEnabledForSpecifier:(id)arg1;
-- (void)notesCancelled;
 - (id)pathsOfAllLogFiles;
 - (id)pathsOfPurgableFiles;
-- (void)presentNotesView;
 - (void)purgeFileAtPath:(id)arg1;
 - (void)runSimpleAlertWithTitle:(id)arg1 message:(id)arg2 dismissedSelector:(SEL)arg3;
 - (void)runSimpleAlertWithTitle:(id)arg1 message:(id)arg2;

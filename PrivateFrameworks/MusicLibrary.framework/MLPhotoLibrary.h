@@ -17,6 +17,7 @@
 + (id)imageFormats;
 + (BOOL)isAlbumVideoPath:(id)arg1;
 + (BOOL)isApplicationWildcat;
++ (BOOL)needsToBeSyncedWithiTunes;
 + (void)setApplicationIsWildcat:(BOOL)arg1;
 + (id)sharedPhotoLibrary;
 + (struct CGSize { float x1; float x2; })sizeForFormat:(NSInteger)arg1;

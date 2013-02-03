@@ -2,74 +2,105 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKLeaderboard, UISegmentedControl, GKGame, UITableView, GKPlayer, UIView, GKBackgroundView, NSMutableDictionary, <GKLeaderboardViewControllerPrivateDelegate>;
+@class GKTableView, <GKLeaderboardViewControllerDelegate>, GKGame, GKUITheme, GKSparseLeaderboard, UIView, GKLeaderboardViewController, NSDictionary, <GKLeaderboardViewControllerPrivateDelegate>, NSString, NSMutableDictionary, UISegmentedControl, GKPlayer;
 
 @interface GKLeaderboardViewControllerPrivate : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     struct { 
         unsigned int allowFriendSelection : 1; 
         unsigned int playButtonVisible : 1; 
-        unsigned int usePlayerBackground : 1; 
-        unsigned int loading : 1; 
         unsigned int translucentNavBar : 1; 
         unsigned int reserved : 26; 
-    GKBackgroundView *_backgroundView;
+    NSString *_category;
+    NSDictionary *_contentsCache;
+    GKLeaderboardViewController *_controllerForDelegate;
     <GKLeaderboardViewControllerPrivateDelegate> *_delegate;
     } _flags;
+    GKSparseLeaderboard *_friendContents;
     GKGame *_game;
-    NSMutableDictionary *_icons;
+    GKSparseLeaderboard *_globalContents;
     UISegmentedControl *_landscapeTimeScopeControl;
-    GKLeaderboard *_leaderboards[3][2];
+    <GKLeaderboardViewControllerDelegate> *_leaderboardDelegate;
     GKPlayer *_player;
+    NSMutableDictionary *_players;
     UISegmentedControl *_portraitTimeScopeControl;
-    NSInteger _selectedTimeScope;
-    UITableView *_tableView;
+    GKTableView *_tableView;
+    GKUITheme *_theme;
+    NSInteger _timeScope;
     UIView *_timeScopeContainer;
 }
 
+@property(retain) NSString *category;
+@property GKLeaderboardViewController *controllerForDelegate;
 @property <GKLeaderboardViewControllerPrivateDelegate> *delegate;
+@property(retain) GKSparseLeaderboard *friendContents;
 @property(retain) GKGame *game;
+@property(retain) GKSparseLeaderboard *globalContents;
+@property <GKLeaderboardViewControllerDelegate> *leaderboardDelegate;
 @property(retain) GKPlayer *player;
+@property(retain) NSMutableDictionary *players;
+@property(retain) GKTableView *tableView;
+@property(retain) GKUITheme *theme;
 @property BOOL allowsFriendSelection;
 @property(getter=isPlayButtonVisible) BOOL playButtonVisible;
-@property BOOL usePlayerBackground;
+@property NSInteger timeScope;
 
-- (void)_loadScores;
+- (void)_loadScoresForContents:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (void)_reloadScores;
+- (void)_reloadSection:(NSUInteger)arg1 forVisibleRows:(id)arg2;
 - (void)_timeFilterChanged:(id)arg1;
 - (BOOL)allowsFriendSelection;
+- (void)authenticatedStatusChanged;
+- (id)category;
+- (id)contentsForCategory:(id)arg1 timeScope:(NSInteger)arg2 playerScope:(NSInteger)arg3;
+- (id)contentsForSection:(NSUInteger)arg1;
+- (id)controllerForDelegate;
 - (void)dealloc;
 - (id)delegate;
 - (void)didReceiveMemoryWarning;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
+- (void)donePressed:(id)arg1;
+- (id)friendContents;
 - (id)game;
-- (id)initWithGame:(id)arg1 timeScope:(NSInteger)arg2 playerScope:(NSInteger)arg3;
-- (id)initWithTimeScope:(NSInteger)arg1 playerScope:(NSInteger)arg2;
+- (id)globalContents;
+- (id)indexPathsForLeaderboardRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 inSection:(NSUInteger)arg2;
+- (id)initWithGame:(id)arg1;
 - (BOOL)isPlayButtonVisible;
 - (void)layoutSubviewsForOrientation:(NSInteger)arg1;
-- (id)leaderboardForSection:(NSUInteger)arg1;
-- (id)leaderboardForTimeScope:(NSInteger)arg1 playerScope:(NSInteger)arg2;
-- (BOOL)leaderboardHasLocalPlayer:(id)arg1;
+- (id)leaderboardDelegate;
+- (void)loadPlayersForScores:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)loadView;
+- (id)makeTableView;
 - (NSInteger)numberOfSectionsInTableView:(id)arg1;
 - (void)playTapped;
 - (id)player;
+- (id)players;
 - (void)setAllowsFriendSelection:(BOOL)arg1;
+- (void)setCategory:(id)arg1 timeScope:(NSInteger)arg2;
+- (void)setCategory:(id)arg1;
+- (void)setControllerForDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setFriendContents:(id)arg1;
 - (void)setGame:(id)arg1;
+- (void)setGlobalContents:(id)arg1;
+- (void)setLeaderboardDelegate:(id)arg1;
 - (void)setPlayButtonVisible:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setUsePlayerBackground:(BOOL)arg1;
+- (void)setPlayers:(id)arg1;
+- (void)setTableView:(id)arg1;
+- (void)setTheme:(id)arg1;
+- (void)setTimeScope:(NSInteger)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (id)title;
-- (BOOL)usePlayerBackground;
+- (id)tableView;
+- (id)theme;
+- (NSInteger)timeScope;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

@@ -6,86 +6,100 @@
    See Warning(s) below.
  */
 
-@class GKAnimatingLabelView, UIActivityIndicatorView, NSString, UIButton;
+@class GKAnimatingLabelView, UIActivityIndicatorView, NSString, GKInviteButton, GKTouchInterceptView;
 
-@interface GKFriendPickerCellContents : GKThreeLineCellContents {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+@interface GKFriendPickerCellContents : GKMultilineCellContentView <GKMultilineLayoutProtocol> {
+    struct CGSize { 
+        float width; 
+        float height; 
     UIActivityIndicatorView *_activityView;
     GKAnimatingLabelView *_animatingLabelView;
+    BOOL _enabled;
+    } _firstLineOffset;
     NSUInteger _index;
+    GKInviteButton *_inviteButton;
     id _inviteButtonHandler;
-    UIButton *_inviteOrMatchButton;
     NSInteger _inviteStatus;
-    id _matchButtonHandler;
     BOOL _padsForInvisibleSelectionIcon;
     NSString *_realName;
     BOOL _showingActivityIndicator;
+    BOOL _showingConfirmButton;
     BOOL _showingInviteButton;
     BOOL _showsInviteButton;
     BOOL _showsInviteStatus;
-    BOOL _showsMatchButton;
     BOOL _showsSelectionIcon;
-    NSString *_statusString;
-    } _threeLineRect;
+    BOOL _showsUninviteButton;
+    GKTouchInterceptView *_touchInterceptView;
+    id _uninviteButtonHandler;
 }
 
+@property(readonly) GKInviteButton *inviteButton;
 @property(copy) ? *inviteButtonHandler;
-@property(retain) UIButton *inviteOrMatchButton;
-@property(copy) ? *matchButtonHandler;
 @property(retain) NSString *realName;
+@property(retain) GKTouchInterceptView *touchInterceptView;
+@property(copy) ? *uninviteButtonHandler;
+@property BOOL enabled;
 @property NSUInteger index;
 @property NSInteger inviteStatus;
 @property BOOL padsForInvisibleSelectionIcon;
 @property(readonly) BOOL showingInviteButton;
-@property(readonly) BOOL showingMatchButton;
+@property(readonly) BOOL showingUninviteButton;
 @property BOOL showsInviteButton;
 @property BOOL showsInviteStatus;
-@property BOOL showsMatchButton;
 @property BOOL showsSelectionIcon;
+@property BOOL showsUninviteButton;
 
-- (void)createInviteOrMatchButton;
++ (void)_initializeSafeCategory;
+
+- (NSInteger)accessibilityElementCount;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
+- (void)createInviteMatchConfirmButton;
 - (void)dealloc;
-- (void)drawLinesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawLineIndex:(NSUInteger)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 highlighted:(BOOL)arg3;
+- (BOOL)enabled;
 - (BOOL)hasStatusForInviteButton;
-- (BOOL)hasStatusForMatchButton;
+- (BOOL)hasStatusForUninviteButton;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (NSUInteger)index;
+- (id)initWithNumberOfLines:(NSUInteger)arg1;
+- (id)inviteButton;
 - (id)inviteButtonHandler;
-- (id)inviteOrMatchButton;
-- (void)inviteOrMatchButtonPushed;
+- (void)inviteButtonPushed;
 - (NSInteger)inviteStatus;
+- (BOOL)isAccessibilityElement;
+- (void)layoutInviteButton;
+- (void)layoutInviteButtonAnimated:(BOOL)arg1;
 - (void)layoutSubviews;
-- (id)matchButtonHandler;
 - (BOOL)padsForInvisibleSelectionIcon;
 - (void)prepareForReuse;
 - (id)realName;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForDrawing;
+- (void)removeFromSuperview;
+- (void)setConfirmButtonHidden:(BOOL)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setIndex:(NSUInteger)arg1;
 - (void)setInviteButtonHandler:(id)arg1;
-- (void)setInviteOrMatchButton:(id)arg1;
 - (void)setInviteStatus:(NSInteger)arg1;
-- (void)setMatchButtonHandler:(id)arg1;
 - (void)setPadsForInvisibleSelectionIcon:(BOOL)arg1;
 - (void)setRealName:(id)arg1;
 - (void)setShowingActivityIndicator:(BOOL)arg1;
 - (void)setShowsInviteButton:(BOOL)arg1;
 - (void)setShowsInviteStatus:(BOOL)arg1;
-- (void)setShowsMatchButton:(BOOL)arg1;
 - (void)setShowsSelectionIcon:(BOOL)arg1;
+- (void)setShowsUninviteButton:(BOOL)arg1;
+- (void)setTheme:(id)arg1;
+- (void)setTouchInterceptView:(id)arg1;
+- (void)setTouchesIntercepted:(BOOL)arg1;
+- (void)setUninviteButtonHandler:(id)arg1;
 - (BOOL)showingInviteButton;
-- (BOOL)showingMatchButton;
+- (BOOL)showingUninviteButton;
 - (BOOL)showsInviteButton;
 - (BOOL)showsInviteStatus;
-- (BOOL)showsMatchButton;
 - (BOOL)showsSelectionIcon;
-- (void)updateInviteOrMatchButton;
+- (BOOL)showsUninviteButton;
+- (id)touchInterceptView;
+- (id)uninviteButtonHandler;
+- (void)updateInviteButton;
+- (void)updateInviteButtonAnimated:(BOOL)arg1;
 
 @end

@@ -5,11 +5,16 @@
 @interface NSMutableURLRequest : NSURLRequest {
 }
 
++ (NSInteger)hashForPlayerID:(id)arg1;
++ (void)setPlayerIDHashParametersFromBag:(id)arg1;
+
 - (void)_web_setHTTPContentType:(id)arg1;
 - (void)_web_setHTTPReferrer:(id)arg1;
 - (void)_web_setHTTPUserAgent:(id)arg1;
 - (void)addValue:(id)arg1 forHTTPHeaderField:(id)arg2;
+- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (NSUInteger)requestPriority;
 - (void)setAllHTTPHeaderFields:(id)arg1;
 - (void)setBuildVersion:(id)arg1;

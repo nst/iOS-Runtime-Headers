@@ -30,6 +30,7 @@
     MKLocationShiftFunction *_shiftFunction;
     GMMLocationShiftRequester *_shiftFunctionRequester;
     BOOL _shouldThrottleHeading;
+    CLHeading *_throttledHeading;
     BOOL _trackingHeading;
     BOOL _trackingLocation;
     NSString *_tripPath;
@@ -43,6 +44,7 @@
 @property(retain) MKRouteStep *routeStep;
 @property(retain) MKLocationShiftFunction *shiftFunction;
 @property(retain) GMMLocationShiftRequester *shiftFunctionRequester;
+@property(retain) CLHeading *throttledHeading;
 @property(retain) NSString *tripPath;
 @property(retain) NSMutableArray *tripPaths;
 @property(readonly) double accuracy;
@@ -139,6 +141,7 @@
 - (void)setShiftFunction:(id)arg1;
 - (void)setShiftFunctionRequester:(id)arg1;
 - (void)setShouldThrottleHeading:(BOOL)arg1;
+- (void)setThrottledHeading:(id)arg1;
 - (void)setTripPath:(id)arg1;
 - (void)setTripPaths:(id)arg1;
 - (void)setUserLocationCacheDuration:(double)arg1;
@@ -155,6 +158,7 @@
 - (void)stopHeadingUpdateWithObserver:(id)arg1;
 - (void)stopLocationUpdateWithObserver:(id)arg1;
 - (void)stopRecording;
+- (id)throttledHeading;
 - (id)tripPath;
 - (id)tripPaths;
 - (void)tripPlayerDidEnd:(id)arg1;

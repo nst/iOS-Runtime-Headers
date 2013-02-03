@@ -47,6 +47,9 @@
 - (id)MCHexString;
 - (id)SHA1Data;
 - (id)SHA1HexString;
+- (id)_FTCompressData;
+- (id)_FTDecompressData;
+- (id)_FTGzippedData;
 - (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
 - (id)_adlib_inflate:(NSUInteger)arg1;
 - (id)_asciiDescription;
@@ -131,7 +134,6 @@
 - (id)mf_subdataWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (struct CDXTicket { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; struct { unsigned char x_5_1_1[6]; unsigned short x_5_1_2; } x5; NSUInteger x6; unsigned char x7[0]; }*)mutableCDXTicket;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)myHashHack;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })rangeOfData:(id)arg1 options:(NSUInteger)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
 - (id)sha1Digest;
 - (id)subdataWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;

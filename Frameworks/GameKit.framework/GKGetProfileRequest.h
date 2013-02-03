@@ -2,29 +2,14 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSDictionary, GKPlayer;
-
-@interface GKGetProfileRequest : GKDataRequest {
-    BOOL _detailed;
-    GKPlayer *_player;
-    NSDictionary *_profile;
+@interface GKGetProfileRequest : GKGetProfilesRequest {
 }
 
-@property(retain) GKPlayer *player;
+@property(retain) NSString *playerID;
 @property(readonly) NSDictionary *profile;
-@property BOOL detailed;
 
-- (id)cacheKey;
-- (NSInteger)cachePriority;
-- (NSInteger)cacheType;
-- (void)dealloc;
-- (BOOL)detailed;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
-- (id)key;
-- (id)player;
+- (id)playerID;
 - (id)profile;
-- (id)request;
-- (void)setDetailed:(BOOL)arg1;
-- (void)setPlayer:(id)arg1;
+- (void)setPlayerID:(id)arg1;
 
 @end

@@ -11,6 +11,9 @@
 + (id)sharedInstance;
 
 - (void)_preprocessWithContext:(id)arg1 string:(id*)arg2;
+- (id)autorelease;
 - (void)parseContext:(id)arg1;
+- (oneway void)release;
+- (NSUInteger)retainCount;
 
 @end

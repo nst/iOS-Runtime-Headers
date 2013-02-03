@@ -10,6 +10,7 @@
 - (id)accessibilityHint;
 - (id)accessibilityLabel;
 - (id)accessibilityLanguage;
+- (unsigned long long)accessibilityTraits;
 - (id)description;
 - (BOOL)isAccessibilityElement;
 

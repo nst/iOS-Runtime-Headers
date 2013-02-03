@@ -24,6 +24,7 @@
 - (id)emailHandlesForService:(id)arg1 includeBaseEmail:(BOOL)arg2;
 - (id)emailHandlesForService:(id)arg1;
 - (id)emails;
+- (void)finalize;
 - (id)firstName;
 - (id)fullName;
 - (NSUInteger)hash;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class NSArray, LoopbackSocketTunnel, NSString, VCCapabilities, NSObject<VideoConferenceRealTimeChannel>, GKRingBuffer, VCCallInfo, NSObject<VCCallSessionDelegate>;
+@class NSArray, LoopbackSocketTunnel, NSString, NSObject<VideoConferenceChannelQualityDelegate>, VCCallLinkCongestionDetector, VCCapabilities, NSObject<VideoConferenceRealTimeChannel>, GKRingBuffer, VCCallInfo, NSObject<VCCallSessionDelegate>;
 
 @interface VCCallSession : NSObject <LoopbackSocketTunnelDelegate> {
     struct tagCONNRESULT { 
@@ -87,6 +87,7 @@
     float callerPreEmptiveTimeoutInSecs;
     BOOL canBundleAudio;
     VCCapabilities *caps;
+    VCCallLinkCongestionDetector *congestionDetector;
     } connectionResult;
     struct tagHANDLE { NSInteger x1; } *decodeHandle;
     NSObject<VCCallSessionDelegate> *delegate;
@@ -108,6 +109,7 @@
     unsigned char inputMeter;
     BOOL isAttemptingRelay;
     BOOL isAudioRunning;
+    BOOL isRemoteDevice40;
     BOOL isWaitingForICEResult;
     NSUInteger lastReceived;
     double lastReceivedAudio;
@@ -133,6 +135,7 @@
     NSString *peerCN;
     NSInteger preferredAACELDBitRate;
     NSInteger preferredAudioCodec;
+    NSObject<VideoConferenceChannelQualityDelegate> *qualityDelegate;
     BOOL receivedSIPInvite;
     NSInteger relayState;
     VCCallInfo *remoteCallInfo;
@@ -148,12 +151,15 @@
     NSInteger sampleRate;
     NSInteger samplesPerFrame;
     BOOL shouldDoEncoding;
+    BOOL shouldSendAudio;
+    BOOL shouldTimeoutPackets;
     } srtpLock;
     NSInteger state;
     double timeLastCheckedNetworkConditions;
     double timeLastKnowGoodNetworkConditions;
     double timeSinceLastReportedNoPackets;
     LoopbackSocketTunnel *tunnel;
+    BOOL useAFRC;
     BOOL useCompressedConnectionData;
     BOOL useControlByte;
     BOOL useLoopback;
@@ -170,6 +176,7 @@
 @property(retain) VCCallInfo *localCallInfo;
 @property(retain) NSArray *mutedPeers;
 @property(retain) NSString *peerCN;
+@property NSObject<VideoConferenceChannelQualityDelegate> *qualityDelegate;
 @property(retain) VCCallInfo *remoteCallInfo;
 @property(retain) GKRingBuffer *ringBuf;
 @property NSObject<VideoConferenceRealTimeChannel> *rtChannel;
@@ -206,7 +213,10 @@
 @property NSUInteger roundTripTime;
 @property NSInteger sampleRate;
 @property NSInteger samplesPerFrame;
+@property BOOL shouldSendAudio;
+@property BOOL shouldTimeoutPackets;
 @property NSInteger state;
+@property BOOL useAFRC;
 @property BOOL useCompressedConnectionData;
 @property BOOL useControlByte;
 @property BOOL useUEP;
@@ -228,13 +238,13 @@
 - (BOOL)choosePayload:(NSInteger*)arg1 count:(NSInteger)arg2;
 - (BOOL)chooseVideoPayload:(NSInteger*)arg1 count:(NSInteger)arg2;
 - (struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; NSUInteger x12; })connectionResult;
-- (NSUInteger)connectionResultCallback:(struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; NSUInteger x12; }*)arg1 didReceiveICEPacket:(BOOL)arg2 didUseRelay:(BOOL)arg3 sipWrapper:(id)arg4;
+- (NSUInteger)connectionResultCallback:(struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; NSUInteger x12; }*)arg1 didReceiveICEPacket:(BOOL)arg2 didUseRelay:(BOOL)arg3;
 - (BOOL)createConnectionDataForParticipantID:(id)arg1 pCallID:(NSInteger*)arg2 error:(id*)arg3 useRelay:(BOOL)arg4;
 - (BOOL)createConnectionDataForParticipantID:(id)arg1 pCallID:(NSInteger*)arg2 error:(id*)arg3;
 - (id)createInitiateRelayDictionary;
 - (BOOL)createMediaQueueHandle:(id*)arg1;
 - (BOOL)createRTPHandles:(id*)arg1;
-- (id)createRelayUpdateDictionary:(BOOL)arg1;
+- (id)createRelayUpdateDictionary:(id)arg1;
 - (BOOL)createSDP:(NSInteger*)arg1 audioPayloadCount:(NSInteger)arg2 videoPayloadTypes:(NSInteger*)arg3 videoPayloadCount:(NSInteger)arg4 sdp:(char *)arg5 numSDPBytes:(NSInteger*)arg6 error:(id*)arg7;
 - (void)dealloc;
 - (struct tagHANDLE { NSInteger x1; }*)decodeHandle;
@@ -252,12 +262,11 @@
 - (void)getAllPayloadsForVideo:(NSInteger**)arg1 count:(NSInteger*)arg2;
 - (NSUInteger)getAudioRTPID;
 - (BOOL)getForcedPayload:(NSInteger*)arg1;
-- (BOOL)getLossInformation:(float*)arg1;
 - (NSUInteger)getVideoRTPID;
 - (struct tagHANDLE { NSInteger x1; }*)hAFRC;
 - (struct tagHANDLE { NSInteger x1; }*)hMediaQueue;
 - (NSInteger)handleIncomingWithCallID:(NSInteger)arg1 msgIn:(const char *)arg2 msgOut:(char *)arg3 optional:(void*)arg4 confIndex:(NSInteger*)arg5 error:(id*)arg6;
-- (id)initWithSIPHandle:(struct tagHANDLE { NSInteger x1; }*)arg1;
+- (id)init;
 - (void)initiateRelayRequest;
 - (unsigned char)inputMeter;
 - (void)inviteeICEResultTimer:(float)arg1 shouldBailIfRelay:(BOOL)arg2;
@@ -288,6 +297,7 @@
 - (void)processRelayRequestResponseDict:(id)arg1 didOriginateRequest:(BOOL)arg2;
 - (void)processRelayUpdateDict:(id)arg1 didOriginateRequest:(BOOL)arg2;
 - (void)processSIPMessage:(char *)arg1 msgOut:(char *)arg2 optional:(void*)arg3 confIndex:(NSInteger*)arg4;
+- (id)qualityDelegate;
 - (void)receivedRealTimeData:(id)arg1 fromParticipantID:(id)arg2;
 - (BOOL)receivedSIPInvite;
 - (id)remoteCallInfo;
@@ -334,6 +344,7 @@
 - (void)setPayload:(NSInteger)arg1;
 - (void)setPeerCN:(id)arg1;
 - (void)setPreferredAudioCodec:(NSInteger)arg1;
+- (void)setQualityDelegate:(id)arg1;
 - (BOOL)setRTPDestinationWithError:(id*)arg1;
 - (BOOL)setRTPPayloadWithError:(id*)arg1;
 - (void)setReceivedSIPInvite:(BOOL)arg1;
@@ -345,7 +356,10 @@
 - (void)setRtpHandle:(struct tagHANDLE { NSInteger x1; }*)arg1;
 - (void)setSampleRate:(NSInteger)arg1;
 - (void)setSamplesPerFrame:(NSInteger)arg1;
+- (void)setShouldSendAudio:(BOOL)arg1;
+- (void)setShouldTimeoutPackets:(BOOL)arg1;
 - (void)setState:(NSInteger)arg1;
+- (void)setUseAFRC:(BOOL)arg1;
 - (void)setUseCompressedConnectionData:(BOOL)arg1;
 - (void)setUseControlByte:(BOOL)arg1;
 - (void)setUseUEP:(BOOL)arg1;
@@ -355,10 +369,12 @@
 - (BOOL)setupAudioEncoder;
 - (BOOL)setupCallerRTPChannelWithError:(id*)arg1;
 - (void)setupLoopback;
+- (BOOL)shouldSendAudio;
+- (BOOL)shouldTimeoutPackets;
 - (void)shutdownVoiceChatFromRemoteSIPSignal:(NSInteger)arg1;
-- (NSInteger)sipCallback:(id)arg1 notification:(NSInteger)arg2 callID:(NSInteger)arg3 msgIn:(const char *)arg4 msgOut:(char *)arg5 optional:(void*)arg6 confIndex:(NSInteger*)arg7;
-- (BOOL)sipConnect:(id)arg1 error:(id*)arg2;
+- (NSInteger)sipCallback:(NSInteger)arg1 callID:(NSInteger)arg2 msgIn:(const char *)arg3 msgOut:(char *)arg4 optional:(void*)arg5 confIndex:(NSInteger*)arg6;
 - (void)sipConnectThreadProc:(id)arg1;
+- (BOOL)sipConnectWithError:(id*)arg1;
 - (BOOL)startAFRC:(id*)arg1;
 - (BOOL)startAudio:(id*)arg1;
 - (BOOL)startConnectionWithParticipantID:(id)arg1 callID:(NSInteger)arg2 usingBlob:(id)arg3 isCaller:(BOOL)arg4 capabilities:(id)arg5 doEncoding:(BOOL)arg6 error:(id*)arg7;
@@ -368,6 +384,7 @@
 - (BOOL)startRTPWithError:(id*)arg1;
 - (BOOL)startVideo:(BOOL)arg1 error:(id*)arg2;
 - (NSInteger)state;
+- (BOOL)stillWantsToRelay;
 - (BOOL)stopAFRC:(id*)arg1;
 - (void)stopAudio;
 - (void)stopAudioIOProc:(id)arg1;
@@ -380,6 +397,7 @@
 - (void)updateLastReceivedPacket:(BOOL)arg1;
 - (void)updateLastReceivedPacketWithTimestamp:(double)arg1;
 - (BOOL)updateRTCPReport;
+- (BOOL)useAFRC;
 - (BOOL)useCompressedConnectionData;
 - (BOOL)useControlByte;
 - (BOOL)useUEP;

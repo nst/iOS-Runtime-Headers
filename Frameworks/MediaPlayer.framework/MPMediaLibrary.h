@@ -12,8 +12,11 @@
 + (Class)_implementationClass;
 + (id)defaultMediaLibrary;
 + (BOOL)isLibraryServerDisabled;
++ (id)runLoopForNotifications;
 + (void)setLibraryServerDisabled:(BOOL)arg1;
++ (void)setRunLoopForNotifications:(id)arg1;
 
+- (void)_didReceiveMemoryWarning:(id)arg1;
 - (unsigned long long)_persistentIDForAssetURL:(id)arg1;
 - (void)_postLibraryDidChangeNotificationForSync;
 - (void)_postLibraryDidChangeNotificationWithUserInfo:(id)arg1;

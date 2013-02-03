@@ -62,6 +62,7 @@
 - (id)_propertiesNeededToBecomeReady;
 - (id)_propertyStorage;
 - (void)_quietlySetForwardPlaybackEndTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)_quietlySetGaplessInfo:(id)arg1;
 - (void)_quietlySetReversePlaybackEndTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
 - (void)_removeFPListeners;
 - (void)_removeFromItems;
@@ -69,7 +70,6 @@
 - (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })_reversePlaybackEndTime;
 - (id)_seekableTimeRanges;
 - (void)_setAsset:(id)arg1;
-- (void)_setPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1;
 - (void)_setSyncLayersOnFigPlaybackItem;
 - (void)_setTimedMetadata:(id)arg1;
 - (void)_setURL:(id)arg1;
@@ -91,6 +91,7 @@
 - (id)error;
 - (void)finalize;
 - (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })forwardPlaybackEndTime;
+- (id)gaplessInfo;
 - (id)init;
 - (id)initWithAsset:(id)arg1;
 - (id)initWithURL:(id)arg1;
@@ -108,6 +109,7 @@
 - (id)seekableTimeRanges;
 - (void)setAudioMix:(id)arg1;
 - (void)setForwardPlaybackEndTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)setGaplessInfo:(id)arg1;
 - (void)setReversePlaybackEndTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
 - (void)setVideoComposition:(id)arg1;
 - (NSInteger)status;

@@ -16,7 +16,6 @@
     NSUInteger _version;
 }
 
-+ (id)indexerForDisplayIdentifier:(id)arg1 category:(id)arg2 version:(NSUInteger)arg3;
 + (id)indexerForDisplayIdentifier:(id)arg1 category:(id)arg2;
 + (void)initialize;
 + (void)preheat;

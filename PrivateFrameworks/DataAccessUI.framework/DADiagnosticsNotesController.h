@@ -2,22 +2,13 @@
    Image: /System/Library/PrivateFrameworks/DataAccessUI.framework/DataAccessUI
  */
 
-@class <DADiagnosticSaveNotesDelegate>, UITextView;
-
-@interface DADiagnosticsNotesController : UIViewController {
-    <DADiagnosticSaveNotesDelegate> *_delegate;
-    UITextView *_notesView;
+@interface DADiagnosticsNotesController : PSDetailController {
 }
-
-@property <DADiagnosticSaveNotesDelegate> *delegate;
 
 - (void)_cancelButtonPressed;
 - (void)_okButtonPressed;
-- (void)dealloc;
-- (id)delegate;
-- (void)loadView;
-- (void)setDelegate:(id)arg1;
+- (id)init;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
-- (void)viewDidUnload;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

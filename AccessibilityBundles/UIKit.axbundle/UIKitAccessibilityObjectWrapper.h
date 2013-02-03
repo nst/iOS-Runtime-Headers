@@ -25,6 +25,7 @@
 - (id)_accessibilityObjectForTextMarker:(id)arg1;
 - (id)_accessibilityPreviousElementsWithCount:(unsigned long)arg1 originalElement:(id)arg2;
 - (id)_accessibilityPreviousMarker:(id)arg1;
+- (void)_accessibilityScrollToVisible;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
 - (void)_accessibilitySetSelectedTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (BOOL)_accessibilitySiblingWithAncestor:(id)arg1 isFirst:(BOOL)arg2 isLast:(BOOL)arg3;
@@ -39,9 +40,11 @@
 - (id)accessibilityElementAtIndex:(NSInteger)arg1;
 - (void)accessibilityElementDidBecomeFocused;
 - (id)accessibilityLanguage;
+- (id)accessibilityPostProcessHitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (id)accessibilityStringForTextMarkers:(id)arg1;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityURL;
+- (id)accessibilityValue;
 - (void)accessibilityZoomInAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)accessibilityZoomOutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)description;

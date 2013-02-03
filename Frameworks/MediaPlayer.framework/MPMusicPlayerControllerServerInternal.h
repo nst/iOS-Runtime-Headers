@@ -29,7 +29,7 @@
 - (id)_clientStateForPID:(NSInteger)arg1;
 - (BOOL)_currentClientPIDHasPermissionToPlay;
 - (void)_endPlayback;
-- (void)_endPlaybackForActiveClientIfNecessary;
+- (void)_endPlaybackForClientIfNecessary:(NSInteger)arg1;
 - (void)_itemDidChangeNotification:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
 - (void)_prepareQueueIfNecessary;
@@ -82,6 +82,7 @@
 - (void)skipToPreviousChapter;
 - (void)skipToPreviousItem;
 - (void)stop;
+- (id)unshuffledIndexOfNowPlayingItem;
 - (BOOL)useApplicationSpecificQueue;
 
 @end

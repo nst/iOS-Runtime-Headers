@@ -20,6 +20,7 @@
 - (id)accessibilityLanguage;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
+- (id)attributeDelegate;
 - (void)setAttributeDelegate:(id)arg1;
 - (void)setTextDelegate:(id)arg1 selector:(SEL)arg2;
 - (void)setTextDelegate:(id)arg1;

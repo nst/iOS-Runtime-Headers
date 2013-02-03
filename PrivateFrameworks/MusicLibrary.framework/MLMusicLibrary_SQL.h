@@ -22,6 +22,7 @@
 + (id)geniusDatabasePath;
 + (BOOL)hasContent;
 + (Class)implClassForEvaluatingQuery:(id)arg1;
++ (BOOL)isDatabaseSchemaUnsupported;
 + (void)noteItemTableWasModified;
 + (void)noteSharedRecordStoreChangedToStoreRef:(struct CPRecordStore { }*)arg1;
 + (void)recursiveEvaluationLockLock;
@@ -65,16 +66,17 @@
 - (BOOL)hasArtists;
 - (BOOL)hasAudibleAudioBooks;
 - (BOOL)hasAudioBooks;
+- (BOOL)hasAudioOnlyPodcasts;
 - (BOOL)hasCompilations;
 - (BOOL)hasComposers;
 - (BOOL)hasGeniusMixes;
 - (BOOL)hasGenres;
 - (BOOL)hasITunesUContent;
+- (BOOL)hasMovieRentals;
 - (BOOL)hasMovies;
 - (BOOL)hasMusicVideos;
 - (BOOL)hasPlaylists;
 - (BOOL)hasPodcasts;
-- (BOOL)hasRentals;
 - (BOOL)hasSongs;
 - (BOOL)hasTVShows;
 - (BOOL)hasVideoPodcasts;

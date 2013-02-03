@@ -32,7 +32,6 @@
 @property NSInteger selectionStart;
 @property(readonly) BOOL willValidate;
 
-- (BOOL)_isAssistable;
 - (BOOL)_isAutofilled;
 - (BOOL)_isEdited;
 - (BOOL)_isTextField;

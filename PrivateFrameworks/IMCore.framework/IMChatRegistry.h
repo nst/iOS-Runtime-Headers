@@ -5,7 +5,6 @@
 @class NSMutableDictionary;
 
 @interface IMChatRegistry : NSObject {
-    unsigned int _automaticallyRegistersChats : 1;
     NSMutableDictionary *_chatGUIDToCurrentThreadMap;
     NSMutableDictionary *_threadNameToChatMap;
 }
@@ -27,6 +26,7 @@
 - (void)_chat_leave:(id)arg1;
 - (id)_copyThreadNameForChat:(id)arg1 style:(unsigned char)arg2 account:(id)arg3;
 - (id)_existingChatWithIdentifier:(id)arg1 style:(unsigned char)arg2 account:(id)arg3;
+- (void)_registerChat:(id)arg1 isIncoming:(BOOL)arg2;
 - (oneway void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 error:(id)arg4;
 - (oneway void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 invitationReceived:(id)arg4;
 - (oneway void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 member:(id)arg4 statusChanged:(NSInteger)arg5;
@@ -34,7 +34,6 @@
 - (oneway void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 statusChanged:(NSInteger)arg4;
 - (oneway void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 updateProperties:(id)arg4;
 - (id)allExistingChats;
-- (BOOL)automaticallyRegistersChats;
 - (id)chatForIMHandle:(id)arg1 tryDirectConnection:(BOOL)arg2;
 - (id)chatForIMHandle:(id)arg1;
 - (id)chatForIMHandles:(id)arg1 chatName:(id)arg2;
@@ -47,8 +46,6 @@
 - (id)existingChatWithGUID:(id)arg1;
 - (void)handleIMChatParticipantsDidChange:(id)arg1;
 - (id)init;
-- (void)registerChat:(id)arg1;
-- (void)setAutomaticallyRegistersChats:(BOOL)arg1;
 - (void)unregisterChatWithGUID:(id)arg1;
 
 @end

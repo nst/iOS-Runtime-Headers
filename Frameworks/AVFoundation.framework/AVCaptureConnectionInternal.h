@@ -12,6 +12,7 @@
     BOOL enabled;
     NSMutableArray *inputPorts;
     long long lastGetAudioLevelsTime;
+    float maxVideoScaleAndCropFactor;
     AVCaptureOutput *output;
     AVCaptureInputPort *videoInputPort;
     BOOL videoMirrored;
@@ -20,6 +21,7 @@
     NSInteger videoOrientation;
     BOOL videoOrientationIsSetByClient;
     BOOL videoOrientationSupported;
+    float videoScaleAndCropFactor;
 }
 
 @end

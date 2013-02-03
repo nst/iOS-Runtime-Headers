@@ -12,6 +12,7 @@
 - (id)fontForLabelAtIndex:(NSUInteger)arg1;
 - (id)init;
 - (NSInteger)mediaIconType;
+- (void)reloadImages;
 - (void)reloadLayoutInformation;
 - (void)reloadStrings;
 - (BOOL)showContentRating;

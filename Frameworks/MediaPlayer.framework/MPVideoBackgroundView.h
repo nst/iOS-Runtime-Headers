@@ -29,9 +29,9 @@
 
 + (void)_initializeSafeCategory;
 
-- (BOOL)_accessibilityIgnoresMouseEvents;
 - (void)_createInformationalTitleView:(id*)arg1 systemFont:(id)arg2 lineBreakMode:(NSInteger)arg3;
 - (id)accessibilityLabel;
+- (BOOL)accessibilityTreeHidden;
 - (id)avController;
 - (id)backgroundPlaceholderImage;
 - (id)backgroundPlaceholderView;

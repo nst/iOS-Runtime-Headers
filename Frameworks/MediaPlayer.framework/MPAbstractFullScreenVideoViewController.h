@@ -14,6 +14,7 @@
 - (void)_hideOverlayWithAnimation:(BOOL)arg1 shouldUpdateAutohideFlag:(BOOL)arg2;
 - (void)_hideOverlayWithAnimation:(BOOL)arg1;
 - (void)_setStatusBarVisible:(BOOL)arg1 duration:(float)arg2 fenceID:(NSInteger)arg3;
+- (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
 - (void)_stopWatchingAVController;
 - (NSInteger)_validInterfaceOrientation;
 - (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(NSInteger)arg2;
@@ -23,6 +24,7 @@
 - (void)dealloc;
 - (void)displayVideoViewOnScreen;
 - (void)hideOverlayAnimated:(BOOL)arg1;
+- (BOOL)inhibitOverlay;
 - (id)init;
 - (void)itemTypeAvailableNotification:(id)arg1;
 - (void)loadView;
@@ -35,6 +37,7 @@
 - (void)setDesiredParts:(NSUInteger)arg1 animate:(BOOL)arg2;
 - (void)setDisableControlsAutohide:(BOOL)arg1;
 - (void)setDisabledParts:(NSUInteger)arg1;
+- (void)setInhibitOverlay:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)setOrientation:(NSInteger)arg1 animate:(BOOL)arg2;
 - (void)setTVOutEnabled:(BOOL)arg1;

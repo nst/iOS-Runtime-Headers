@@ -2,36 +2,36 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKGame;
+@class NSDate, NSString, GKGame;
 
 @interface GKSubmitAchievementDataRequest : GKDataRequest {
-    NSInteger _achievementID;
+    NSString *_achievementID;
+    NSDate *_date;
     GKGame *_game;
-    BOOL _isAchieved;
+    BOOL _isHidden;
     NSInteger _percentComplete;
-    NSInteger _points;
 }
 
+@property NSString *achievementID;
+@property NSDate *date;
 @property(retain) GKGame *game;
-@property NSInteger achievementID;
-@property BOOL isAchieved;
+@property BOOL isHidden;
 @property NSInteger percentComplete;
-@property NSInteger points;
 
-- (NSInteger)achievementID;
+- (id)achievementID;
 - (NSInteger)cacheType;
+- (id)date;
 - (void)dealloc;
 - (id)game;
 - (id)invalidateCacheKeys;
-- (BOOL)isAchieved;
+- (BOOL)isHidden;
 - (id)key;
 - (NSInteger)percentComplete;
-- (NSInteger)points;
 - (id)request;
-- (void)setAchievementID:(NSInteger)arg1;
+- (void)setAchievementID:(id)arg1;
+- (void)setDate:(id)arg1;
 - (void)setGame:(id)arg1;
-- (void)setIsAchieved:(BOOL)arg1;
+- (void)setIsHidden:(BOOL)arg1;
 - (void)setPercentComplete:(NSInteger)arg1;
-- (void)setPoints:(NSInteger)arg1;
 
 @end

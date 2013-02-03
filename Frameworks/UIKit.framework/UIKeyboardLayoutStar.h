@@ -97,13 +97,13 @@
 
 - (id)_accessibilityCreateElementForKey:(id)arg1;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)_accessibilityIgnoresMouseEvents;
 - (id)_accessibilityInternalData;
 - (id)_accessibilityKeys;
 - (id)accessibilityElementAtIndex:(NSInteger)arg1;
 - (NSInteger)accessibilityElementCount;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
+- (BOOL)accessibilityTreeHidden;
 - (id)activationIndicatorView;
 - (id)activeKey;
 - (void)addKeyToActivatedSet:(id)arg1;

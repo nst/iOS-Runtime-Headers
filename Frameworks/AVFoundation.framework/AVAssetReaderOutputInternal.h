@@ -7,10 +7,10 @@
 @interface AVAssetReaderOutputInternal : NSObject {
     NSInteger extractionID;
     struct OpaqueFigAssetReader { } *figAssetReader;
+    NSInteger finished;
     AVRunLoopCondition *sampleBufferAvailabilityCondition;
-    NSInteger status;
-    struct dispatch_queue_s { } *statusSerializationQueue;
     AVWeakReference *weakReference;
+    AVWeakReference *weakReferenceToAssetReader;
 }
 
 @end

@@ -20,8 +20,10 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (NSUInteger)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)property;
 - (void)setComparisonType:(NSInteger)arg1;
 - (void)setProperty:(id)arg1;

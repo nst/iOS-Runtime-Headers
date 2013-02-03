@@ -2,28 +2,38 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSMutableDictionary, NSString, NSArray;
+@class NSArray, NSString, NSMutableArray, NSMutableDictionary;
 
-@interface CoreDAVContainerSyncTaskGroup : CoreDAVTaskGroup {
+@interface CoreDAVContainerSyncTaskGroup : CoreDAVTaskGroup <CoreDAVContainerMultiGetTaskDelegate, CoreDAVDeleteTaskDelegate, CoreDAVPutTaskDelegate> {
     NSArray *_actions;
     Class _appSpecificDataItemClass;
     void *_context;
     NSString *_folderID;
+    NSUInteger _maxIndependentTasks;
+    NSUInteger _multiGetBatchSize;
     NSString *_nextCTag;
     NSMutableDictionary *_pathToETag;
     NSInteger _phase;
     NSString *_previousCTag;
+    NSMutableArray *_unsubmittedTasks;
 }
 
 @property(readonly) void *context;
+@property <CoreDAVLocalDBInfoProvider> *delegate;
 @property(readonly) NSString *folderID;
 @property(readonly) NSString *previousTag;
+@property NSUInteger maxIndependentTasks;
+@property NSUInteger multiGetBatchSize;
 
 - (void)_getCTag;
 - (void)_getDataPayloads;
 - (void)_getETags;
-- (id)_initWithFolderID:(id)arg1 previousTag:(id)arg2 actions:(id)arg3 context:(void*)arg4 accountInfoProvider:(id)arg5 taskManager:(id)arg6 delegate:(id)arg7;
+- (id)_initWithFolderID:(id)arg1 previousTag:(id)arg2 actions:(id)arg3 context:(void*)arg4 accountInfoProvider:(id)arg5 taskManager:(id)arg6;
 - (void)_pushActions;
+- (NSUInteger)_submitTasks;
+- (void)_tearDownAllUnsubmittedTasks;
+- (void)bailWithError:(id)arg1;
+- (void)cancelTasks;
 - (void)containerMultiGetTask:(id)arg1 parsedContents:(id)arg2 error:(id)arg3;
 - (void*)context;
 - (id)dataContentType;
@@ -31,10 +41,14 @@
 - (void)deleteTask:(id)arg1 completedWithError:(id)arg2;
 - (id)description;
 - (id)folderID;
-- (id)initWithFolderID:(id)arg1 previousTag:(id)arg2 actions:(id)arg3 context:(void*)arg4 accountInfoProvider:(id)arg5 taskManager:(id)arg6 delegate:(id)arg7;
+- (id)initWithFolderID:(id)arg1 previousTag:(id)arg2 actions:(id)arg3 context:(void*)arg4 accountInfoProvider:(id)arg5 taskManager:(id)arg6;
+- (NSUInteger)maxIndependentTasks;
+- (NSUInteger)multiGetBatchSize;
 - (id)previousTag;
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)putTask:(id)arg1 completedWithNewETag:(id)arg2 error:(id)arg3;
+- (void)setMaxIndependentTasks:(NSUInteger)arg1;
+- (void)setMultiGetBatchSize:(NSUInteger)arg1;
 - (void)syncAway;
 - (void)taskGroupWillCancelWithError:(id)arg1;
 

@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLCore, NSSQLAdapter;
+@class NSSQLCore;
 
 @interface NSSQLRowCache : NSPersistentStoreCache {
-    NSSQLAdapter *_adapter;
     NSInteger _debug;
     NSSQLCore *_sqlCore;
 }

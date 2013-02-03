@@ -22,7 +22,7 @@
 - (BOOL)intersectsLocation:(unsigned long long)arg1;
 - (BOOL)intersectsRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })largestRange;
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })largestSubrangeNotExcludedBySelfForRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 andLargerThan:(unsigned long long)arg2;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })largestSubrangeNotExcludedBySelfForRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 andLargerThan:(unsigned long long)arg2 startIndex:(NSUInteger*)arg3;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })range;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })rangeAtIndex:(NSUInteger)arg1;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })rangeForLocation:(unsigned long long)arg1;

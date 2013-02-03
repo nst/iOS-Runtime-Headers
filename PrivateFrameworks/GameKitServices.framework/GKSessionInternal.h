@@ -160,11 +160,13 @@
 - (void)tellDelegate_didReceiveBand_RetryICE:(id)arg1;
 - (void)tellDelegate_didReceiveData:(id)arg1;
 - (void)tellDelegate_gotInvited:(id)arg1;
+- (void)tellDelegate_initiateRelay:(id)arg1;
 - (void)tellDelegate_isConnectingPeer:(id)arg1;
 - (void)tellDelegate_peerDidBecomeAvailable:(id)arg1;
 - (void)tellDelegate_peerDidBecomeBusy:(id)arg1;
 - (void)tellDelegate_peerDidBecomeUnavailable:(id)arg1;
 - (void)tellDelegate_sessionDidFailWithError:(id)arg1;
+- (void)tellDelegate_updateRelay:(id)arg1;
 - (void)timeoutConnectToPeer:(id)arg1;
 - (BOOL)tryConnectToPeer:(id)arg1;
 - (void)unlock;

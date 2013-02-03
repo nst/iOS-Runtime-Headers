@@ -2,23 +2,18 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSString, NSArray;
+@class NSArray;
 
 @interface GKRemovePlayersFromGameInviteDataRequest : GKDataRequest {
     NSArray *_players;
-    NSString *_rid;
 }
 
 @property(retain) NSArray *players;
-@property(retain) NSString *rid;
 
 - (void)dealloc;
-- (id)header;
 - (id)key;
 - (id)players;
 - (id)request;
-- (id)rid;
 - (void)setPlayers:(id)arg1;
-- (void)setRid:(id)arg1;
 
 @end

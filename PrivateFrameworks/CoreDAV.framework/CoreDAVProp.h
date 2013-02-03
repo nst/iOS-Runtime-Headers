@@ -11,7 +11,7 @@
 @property(readonly) NSDictionary *propValues;
 
 + (BOOL)acceptsTopLevelLeaves;
-+ (BOOL)ignoresUnknownChildren;
++ (BOOL)errorOnUnknownChildren;
 + (BOOL)parsingWithSubItems;
 
 - (void)addNewTopLevelItem:(id)arg1;

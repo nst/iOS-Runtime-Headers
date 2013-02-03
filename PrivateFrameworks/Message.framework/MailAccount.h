@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSString, MailboxUid, MFError, MessageLibrary, NSMutableDictionary;
+@class NSMutableDictionary, NSString, MailboxUid, MFLock, MFError, MessageLibrary;
 
 @interface MailAccount : Account {
     struct { 
@@ -12,6 +12,7 @@
         unsigned int cacheHasBeenRead : 1; 
         unsigned int disableCacheWrite : 1; 
         unsigned int _UNUSED_ : 12; 
+    MFLock *_cachedMailboxenLock;
     struct __CFDictionary { } *_cachedMessageStores;
     NSInteger _cachedMessageStoresLock;
     NSMutableDictionary *_currentChokedActions;

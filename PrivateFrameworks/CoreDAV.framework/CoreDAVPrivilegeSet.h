@@ -11,7 +11,7 @@
 @property(retain) NSMutableSet *privileges;
 
 + (BOOL)acceptsTopLevelLeaves;
-+ (BOOL)ignoresUnknownChildren;
++ (BOOL)errorOnUnknownChildren;
 + (BOOL)parsingWithSubItems;
 
 - (void)addPrivilege:(id)arg1;

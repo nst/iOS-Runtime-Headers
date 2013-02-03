@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKAnimatingLabelView, GKScore;
+@class GKAnimatingLabelView, GKPlayer, GKScore, GKUITheme;
 
 @interface GKLeaderboardCellContents : UIView <GKTableViewCellContents> {
     struct CGRect { 
@@ -17,24 +17,39 @@
     GKAnimatingLabelView *_animatingLabelView;
     } _animatingLabelViewFrame;
     BOOL _crossfadeAliasAndName;
+    GKPlayer *_player;
     GKScore *_score;
+    GKUITheme *_theme;
     NSUInteger _totalScores;
 }
 
+@property(retain) GKPlayer *player;
 @property(retain) GKScore *score;
-@property BOOL crossfadeAliasAndName;
+@property(retain) GKUITheme *theme;
+@property(readonly) float rankAvailableWidth;
+@property(readonly) float separatorOffset;
 @property NSUInteger totalScores;
 
-- (BOOL)crossfadeAliasAndName;
++ (void)_initializeSafeCategory;
+
+- (id)accessibilityLabel;
 - (void)dealloc;
+- (NSInteger)digits;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (NSInteger)fontSizeForRank;
 - (id)init;
+- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
+- (id)player;
 - (void)prepareForReuse;
+- (float)rankAvailableWidth;
 - (id)score;
-- (void)setCrossfadeAliasAndName:(BOOL)arg1;
+- (float)separatorOffset;
+- (void)setPlayer:(id)arg1;
 - (void)setScore:(id)arg1;
+- (void)setTheme:(id)arg1;
 - (void)setTotalScores:(NSUInteger)arg1;
+- (id)theme;
 - (NSUInteger)totalScores;
 
 @end

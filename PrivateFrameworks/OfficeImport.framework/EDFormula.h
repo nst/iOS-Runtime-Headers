@@ -7,19 +7,19 @@
  */
 
 @interface EDFormula : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B20@0:4I8@12I16 */
-     /* Encoded args for previous method: B12@0:4I8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B24@0:4I8I12I16I20 */
      /* Encoded args for previous method: B20@0:4i8I12I16 */
      /* Encoded args for previous method: B16@0:4I8@12 */
      /* Encoded args for previous method: B12@0:4^{XlPtg=*iiIS}8 */
+     /* Encoded args for previous method: B12@0:4I8 */
+     /* Encoded args for previous method: B20@0:4I8@12I16 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: B8@0:4 */
     struct __CFData { } *mPackedData;

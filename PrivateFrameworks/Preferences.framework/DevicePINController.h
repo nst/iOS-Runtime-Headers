@@ -49,7 +49,6 @@
 - (void)performActionAfterPINEntry;
 - (void)performActionAfterPINRemove;
 - (void)performActionAfterPINSet;
-- (void)performActionAfterPINSetOrRemove;
 - (void)pinEntered:(id)arg1;
 - (id)pinInstructionsPrompt;
 - (id)pinInstructionsPromptFont;

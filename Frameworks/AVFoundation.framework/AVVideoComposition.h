@@ -18,7 +18,7 @@
 - (id)_auxiliaryTrackLayer;
 - (BOOL)_hasLayerAsAuxiliaryTrack;
 - (BOOL)_hasPostProcessingLayers;
-- (BOOL)_isValid;
+- (BOOL)_isValidReturningExceptionReason:(id*)arg1;
 - (id)_postProcessingRootLayer;
 - (id)_postProcessingVideoLayer;
 - (id)_serializableInstructions;

@@ -6,6 +6,7 @@
 
 @interface PLProgressView : UIView {
     unsigned int _didLayout : 1;
+    unsigned int _didSetPermanantTextOnLabelView : 1;
     UIImageView *_backgroundView;
     UILabel *_labelView;
     float _percentComplete;

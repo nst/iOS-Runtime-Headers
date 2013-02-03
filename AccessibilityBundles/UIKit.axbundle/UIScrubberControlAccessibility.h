@@ -7,6 +7,8 @@
 
 + (void)_initializeSafeCategory;
 
+- (BOOL)_axInteractionEnabled;
 - (unsigned long long)accessibilityTraits;
+- (id)accessibilityValue;
 
 @end

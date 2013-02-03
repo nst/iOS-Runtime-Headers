@@ -11,11 +11,13 @@
 - (BOOL)_canReloadView;
 - (void)_playbackDidFinishNotification:(id)arg1;
 - (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
+- (BOOL)canBecomeFirstResponder;
 - (void)dealloc;
 - (id)init;
 - (id)initWithContentURL:(id)arg1;
 - (void)loadView;
 - (id)moviePlayer;
+- (void)remoteControlReceivedWithEvent:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

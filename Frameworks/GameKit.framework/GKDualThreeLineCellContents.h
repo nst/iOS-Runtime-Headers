@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKThreeLineCellContents, UIView;
+@class GKMultilineCellContentView, UIView;
 
 @interface GKDualThreeLineCellContents : UIView <GKTableViewCellContents> {
-    GKThreeLineCellContents *_bottomContents;
+    GKMultilineCellContentView *_bottomContents;
     UIView *_separatorView;
-    GKThreeLineCellContents *_topContents;
+    GKMultilineCellContentView *_topContents;
 }
 
-@property(retain) GKThreeLineCellContents *bottomContents;
-@property(retain) GKThreeLineCellContents *topContents;
+@property(retain) GKMultilineCellContentView *bottomContents;
+@property(retain) GKMultilineCellContentView *topContents;
 
 - (id)bottomContents;
 - (void)dealloc;
@@ -19,7 +19,9 @@
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)setBottomContents:(id)arg1;
+- (void)setTheme:(id)arg1;
 - (void)setTopContents:(id)arg1;
+- (id)theme;
 - (id)topContents;
 
 @end

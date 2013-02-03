@@ -12,7 +12,8 @@
         unsigned int staggerTimeIntervals : 1; 
         unsigned int loadingDateOrTime : 1; 
         unsigned int highlightsToday : 1; 
-        unsigned int reserved : 24; 
+        unsigned int hasCustomCalendar : 1; 
+        unsigned int reserved : 23; 
     NSString *_amString;
     NSCalendar *_calendar;
     double _countDownDuration;
@@ -47,6 +48,7 @@
 @property double countDownDuration;
 @property NSInteger datePickerMode;
 @property id delegateOfDatePicker;
+@property(getter=_hasCustomCalendar,readonly) BOOL hasCustomCalendar;
 @property NSInteger minuteInterval;
 
 - (id)_ampmCellFont;
@@ -61,6 +63,7 @@
 - (void)_ensureTodayIsSet;
 - (NSInteger)_eraForRow:(NSInteger)arg1;
 - (id)_fadeLabel:(id)arg1 toNewLabelWithString:(id)arg2 ifAnimated:(BOOL)arg3;
+- (BOOL)_hasCustomCalendar;
 - (NSInteger)_hourForRow:(NSInteger)arg1;
 - (id)_hoursString;
 - (id)_hrMinFont;

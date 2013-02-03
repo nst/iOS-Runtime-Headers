@@ -16,7 +16,9 @@
 + (struct __CFArray { }*)copyOptionalNameProperties;
 + (struct __CFArray { }*)copyOptionalProperties;
 + (struct __CFArray { }*)copyProperties:(struct __CFArray { }*)arg1 excludingProperties:(struct __CFArray { }*)arg2;
++ (void)initializeAddressBookProperties;
 + (BOOL)isNameProperty:(NSInteger)arg1;
++ (BOOL)peopleHaveRingtone:(id)arg1;
 + (void)person:(void*)arg1 allowsLabels:(BOOL*)arg2 customLabels:(BOOL*)arg3 forProperty:(NSInteger)arg4;
 + (BOOL)person:(void*)arg1 hasProperty:(NSInteger)arg2;
 + (BOOL)personAllowsCustomLabels:(void*)arg1 forProperty:(NSInteger)arg2;

@@ -8,12 +8,19 @@
 
 @property NSUInteger component;
 
+- (BOOL)_accessibilityIsScrollAncestor;
+- (void)_accessibilityMoveSelection:(NSInteger)arg1;
+- (id)_accessibilityScrollStatus;
 - (id)_accessibilityUserTestingChildren;
+- (void)_actuallySelectRow:(id)arg1;
+- (void)_axPostScrollChange;
 - (void)accessibilityDecrement;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (id)accessibilityHint;
 - (void)accessibilityIncrement;
 - (id)accessibilityLabel;
+- (void)accessibilityScrollDownPage;
+- (void)accessibilityScrollUpPage;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
 - (NSUInteger)component;

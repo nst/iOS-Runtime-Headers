@@ -170,6 +170,7 @@
 - (BOOL)needsDeferredTransition;
 - (id)popToRootViewControllerAnimated:(BOOL)arg1;
 - (id)popToRootViewControllerWithTransition:(NSInteger)arg1;
+- (void)popToSigninControllerAnimated:(BOOL)arg1;
 - (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)popToViewController:(id)arg1 transition:(NSInteger)arg2;
 - (id)popToViewControllerWithSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
@@ -205,6 +206,7 @@
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (void)setViewControllers:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (id)signInControllerInHierarchy;
 - (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
 - (id)tabBarItem;
 - (id)toolbar;

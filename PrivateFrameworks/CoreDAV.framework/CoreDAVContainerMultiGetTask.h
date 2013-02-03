@@ -12,6 +12,8 @@
     NSSet *_hrefs;
 }
 
+@property <CoreDAVContainerMultiGetTaskDelegate> *delegate;
+
 - (id)_initWithHREFs:(id)arg1 atRelativeURI:(id)arg2 appSpecificDataItemClass:(Class)arg3;
 - (void)dealloc;
 - (void)finishCoreDAVTaskWithError:(id)arg1;

@@ -2,29 +2,36 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class NSTimer, NSMutableArray, ADAdSpecificationRequest;
+@class NSString, ADAdSpecificationRequest, NSTimer, NSMutableArray;
 
 @interface ADCache : NSObject {
     struct { 
         unsigned int requestInProgress : 1; 
     NSUInteger _bannerDataPending;
     NSUInteger _bannersInCurrentRequest;
+    NSString *_bundleIdentifier;
     NSTimer *_dispatchResponseTimer;
     NSMutableArray *_errorQueue;
+    NSMutableArray *_loadingBannerDataObjects;
     NSMutableArray *_queue;
     NSUInteger _requestToken;
     NSUInteger _roundRobinQueuePosition;
+    BOOL _serverReachable;
+    NSString *_serverURL;
     ADAdSpecificationRequest *_specification;
     NSMutableArray *_subscribers;
     } flags;
 }
 
 @property(retain) NSMutableArray *queue;
+@property(retain) NSString *serverURL;
+@property(getter=isServerReachable) BOOL serverReachable;
 @property(readonly) NSUInteger subscriberCount;
 
 - (void)_cleanupRequester;
 - (void)_considerFetchingMore;
 - (void)_dispatchResponses;
+- (void)_eliminateStaleEntries;
 - (void)_handleLowMemory:(id)arg1;
 - (void)_notifyFailureCount:(NSUInteger)arg1 error:(id)arg2;
 - (void)_notifySuccess;
@@ -37,11 +44,14 @@
 - (void)daemonProvidedError:(id)arg1;
 - (void)daemonProvidedResponse:(id)arg1;
 - (void)dealloc;
-- (id)initWithSpecification:(id)arg1;
+- (id)initWithBundleIdentifier:(id)arg1 andSpecification:(id)arg2;
+- (BOOL)isServerReachable;
 - (id)queue;
-- (void)reachabilityChanged;
 - (void)removeSubscriber:(id)arg1;
+- (id)serverURL;
 - (void)setQueue:(id)arg1;
+- (void)setServerReachable:(BOOL)arg1;
+- (void)setServerURL:(id)arg1;
 - (NSUInteger)subscriberCount;
 - (void)writeQueueToDisk;
 

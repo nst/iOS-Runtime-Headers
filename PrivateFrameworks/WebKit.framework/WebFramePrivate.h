@@ -446,6 +446,7 @@
             void*m_focused; 
             void*m_caretVisible; 
             void*m_caretPaint; 
+            void*m_updateAppearanceEnabled; 
             void*m_caretBlinks; 
             struct Color { 
                 NSUInteger m_color; 

@@ -3,16 +3,13 @@
  */
 
 @interface SPDomainManager : NSObject {
-    struct dispatch_queue_s { } *_indexerQueue;
 }
 
 + (id)defaultManager;
 
 - (void)_removeAllDomainsForDisplayIdentifier:(id)arg1;
-- (void)applicationWasInstalledOrUpdated:(id)arg1 withCategories:(id)arg2;
 - (void)applicationWasUninstalled:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)runIndexers;
+- (void)notifyIndexer;
+- (void)registerApplication:(id)arg1 withCategories:(id)arg2;
 
 @end

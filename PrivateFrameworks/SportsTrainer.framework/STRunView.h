@@ -24,6 +24,7 @@
         unsigned int shouldControlMusic : 1; 
         unsigned int unused : 16; 
     NSTimer *_considerSeekTimer;
+    NSInteger _currentSeekDirection;
     <STRunViewDelegate> *_delegate;
     double _elapsedWorkoutTime;
     STAnimatableButton *_endWorkoutButton;
@@ -62,12 +63,14 @@
 - (void)_applicationWillResignActive:(id)arg1;
 - (void)_applicationWillSuspend:(id)arg1;
 - (void)_beginConsiderSeeking:(id)arg1;
+- (BOOL)_beginSeekInDirection:(NSInteger)arg1;
 - (void)_cancel;
 - (void)_cancelConsiderSeeking:(id)arg1;
 - (void)_changeMusic;
 - (void)_configureButtonsForWorkout;
 - (void)_considerSeekTimerFired:(id)arg1;
 - (void)_empedSearchStateChanged:(id)arg1;
+- (BOOL)_endSeekInDirection:(NSInteger)arg1;
 - (void)_endSeeking:(id)arg1;
 - (id)_endWorkoutButtonDownImage;
 - (id)_endWorkoutButtonImage;
@@ -117,6 +120,7 @@
 - (void)_subsecondTimerTick:(id)arg1;
 - (void)_unthrottlePauseResume;
 - (void)_updateProgressViewWithDictionary:(id)arg1;
+- (void)_updateSubviewsForWorkoutData:(id)arg1;
 - (void)_workoutInfoTimerTick:(id)arg1;
 - (void)_workoutStateDidChange:(id)arg1;
 - (NSInteger)_workoutTypeForGoalType:(id)arg1;
@@ -124,6 +128,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didMoveToWindow;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 workoutProxy:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (NSInteger)interface;
 - (BOOL)isLockScreen;

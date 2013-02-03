@@ -10,6 +10,7 @@
      /* Encoded args for previous method: @24@0:4@8@12@16r^{ValueInterpolator=dddddddddB}20 */
 }
 
++ (id)_arrayWithIntArg:(NSInteger)arg1 additionalArgs:(void*)arg2;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)array;
 + (id)arrayWithArray:(id)arg1 copyItems:(BOOL)arg2;
@@ -27,6 +28,7 @@
 + (id)arrayWithOrderedSet:(id)arg1;
 + (id)arrayWithSet:(id)arg1 copyItems:(BOOL)arg2;
 + (id)arrayWithSet:(id)arg1;
++ (id)cdvArrayWithIntegers:(NSInteger)arg1;
 + (id)newWithContentsOf:(id)arg1 immutable:(BOOL)arg2;
 
 - (id)CA_addValue:(id)arg1 multipliedBy:(NSInteger)arg2;
@@ -122,6 +124,8 @@
 - (BOOL)getObject:(id*)arg1 atIndex:(NSUInteger)arg2;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (void)getObjects:(id*)arg1;
+- (id)gk_commaSeparatedRecipientListWithWidth:(float)arg1 forFont:(id)arg2 usingSelector:(SEL)arg3;
+- (id)gk_commaSeparatedRecipientListWithWidth:(float)arg1 forFont:(id)arg2;
 - (NSUInteger)hash;
 - (NSInteger)indexForInsertingAttendeeDisplayString:(id)arg1;
 - (NSInteger)indexForInsertingCalendarAttendeeIntoList:(id)arg1;

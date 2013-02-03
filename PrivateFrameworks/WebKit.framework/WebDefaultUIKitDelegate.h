@@ -25,6 +25,7 @@
 - (void)webView:(id)arg1 didReceiveDocTypeForFrame:(id)arg2;
 - (void)webView:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)webView:(id)arg1 didReceiveViewportArguments:(id)arg2 forFrame:(id)arg3;
+- (void)webView:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;
 - (void)webView:(id)arg1 formStateDidBlurNode:(id)arg2;
 - (void)webView:(id)arg1 formStateDidFocusNode:(id)arg2;
 - (void)webView:(id)arg1 needsScrollNotifications:(id)arg2 forFrame:(id)arg3;

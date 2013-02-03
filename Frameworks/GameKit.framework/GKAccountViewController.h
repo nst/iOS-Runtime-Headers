@@ -2,28 +2,28 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSURL, <GKAccountViewControllerDelegate>, NSString;
+@class <GKAccountViewControllerDelegate>, NSString, NSURLRequest, NSURL;
 
-@interface GKAccountViewController : GKServerWebViewController <UIAlertViewDelegate> {
+@interface GKAccountViewController : GKServerWebViewController {
     NSString *_accountName;
     NSString *_alias;
     NSString *_authToken;
-    NSString *_cancelCallback;
     <GKAccountViewControllerDelegate> *_delegate;
+    BOOL _lockedToPortrait;
     NSInteger _mode;
-    NSString *_okCallback;
     NSString *_playerID;
+    NSURLRequest *_previousRequest;
     NSURL *_url;
 }
 
 @property(retain) NSString *accountName;
 @property(retain) NSString *alias;
 @property(retain) NSString *authToken;
-@property(retain) NSString *cancelCallback;
 @property <GKAccountViewControllerDelegate> *delegate;
-@property(retain) NSString *okCallback;
 @property(retain) NSString *playerID;
+@property(retain) NSURLRequest *previousRequest;
 @property(retain) NSURL *url;
+@property(getter=isLockedToPortrait) BOOL lockedToPortrait;
 @property NSInteger mode;
 
 - (id)accountName;
@@ -32,30 +32,27 @@
 - (id)authToken;
 - (void)authenticateAndTryURLRequestAgain:(id)arg1;
 - (void)cancel;
-- (id)cancelCallback;
 - (void)dealloc;
-- (id)decodeDashEncodedString:(id)arg1;
 - (id)delegate;
+- (BOOL)isLockedToPortrait;
 - (void)load;
 - (void)loadView;
 - (NSInteger)mode;
-- (id)okCallback;
-- (void)parseAlertURLString:(id)arg1;
 - (id)playerID;
+- (id)previousRequest;
 - (void)setAccountName:(id)arg1;
 - (void)setAlias:(id)arg1;
 - (void)setAuthToken:(id)arg1;
-- (void)setCancelCallback:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHeadersForRequest:(id)arg1;
+- (void)setLockedToPortrait:(BOOL)arg1;
 - (void)setMode:(NSInteger)arg1;
-- (void)setOkCallback:(id)arg1;
 - (void)setPlayerID:(id)arg1;
+- (void)setPreviousRequest:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)showFailureMessage;
 - (id)url;
-- (void)viewWillAppear:(BOOL)arg1;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(NSUInteger)arg3;
 - (void)webViewDidFinishLoad:(id)arg1;

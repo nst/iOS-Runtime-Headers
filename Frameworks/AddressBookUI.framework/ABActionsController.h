@@ -5,6 +5,9 @@
 @class NSString;
 
 @interface ABActionsController : NSObject {
+    struct __CFArray { } *_actionsForProperty;
+    void *_context;
+    NSInteger _lastPropertyForActions;
     NSInteger _multiValueIdentifier;
     void *_person;
     NSInteger _property;
@@ -17,10 +20,10 @@
 + (id)newActionsControllerForProperty:(NSInteger)arg1;
 
 - (NSInteger)_actionAtIndex:(NSInteger)arg1 forProperty:(NSInteger)arg2;
+- (struct __CFArray { }*)_actionsForProperty:(NSInteger)arg1;
 - (void)_performAction:(NSInteger)arg1 forProperty:(NSInteger)arg2;
-- (BOOL)_shouldShowAddToFavorites;
-- (BOOL)_shouldShowConferencing;
 - (NSInteger)actionsCountForProperty:(NSInteger)arg1;
+- (void*)context;
 - (void)dealloc;
 - (NSInteger)defaultAction;
 - (id)init;
@@ -29,6 +32,8 @@
 - (void)performActionAtIndex:(NSInteger)arg1 forProperty:(NSInteger)arg2;
 - (void)performDefaultAction;
 - (void*)person;
+- (void)resetPrimaryPropertyActions;
+- (void)setContext:(void*)arg1;
 - (void)setMultiValueIdentifier:(NSInteger)arg1;
 - (void)setPerson:(void*)arg1;
 - (void)setRecordID:(NSInteger)arg1;

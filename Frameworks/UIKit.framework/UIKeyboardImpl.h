@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimer, UITextInputTraits, NSMutableArray, UIDelayedAction, <UIKeyboardImplGeometryDelegate>, UIKeyboardLayout, UIView, UIKeyboardCandidate, NSArray, UITextInputArrowKeyHistory, UIKeyboardInputManager, <UIKeyboardCandidateList>, NSObject<UIKeyboardRecording><UIApplicationEventRecording>, NSString, NSMutableDictionary, <UIKeyInput>, UIAutocorrectInlinePrompt;
+@class NSMutableArray, NSTimer, UITextInputTraits, UIDelayedAction, <UIKeyboardImplGeometryDelegate>, UIKeyboardLayout, UIView, UIKeyboardCandidate, NSArray, UITextInputArrowKeyHistory, UIKeyboardInputManager, <UIKeyboardCandidateList>, NSObject<UIKeyboardRecording><UIApplicationEventRecording>, NSString, NSMutableDictionary, <UIKeyInput>, UIAutocorrectInlinePrompt;
 
 @interface UIKeyboardImpl : UIView {
     struct { 
@@ -41,6 +41,7 @@
     BOOL m_clientVariantSupportEnabled;
     BOOL m_clientVariantSupportEnabledEver;
     NSInteger m_currentDirection;
+    BOOL m_currentInputModeChanged;
     UITextInputTraits *m_defaultTraits;
     <UIKeyInput> *m_delegate;
     BOOL m_delegateAdoptsKeyboardInput;
@@ -75,6 +76,7 @@
     BOOL m_preRotateShiftLocked;
     BOOL m_preferencesNeedSynchronization;
     NSString *m_previousInputString;
+    NSMutableArray *m_recentUnacceptedAutocorrections;
     NSObject<UIKeyboardRecording><UIApplicationEventRecording> *m_recorder;
     BOOL m_replacingWord;
     NSInteger m_returnKeyState;
@@ -118,6 +120,7 @@
 @property(retain) <UIKeyboardRecording><UIApplicationEventRecording> *recorder;
 @property(retain) id changedDelegate;
 @property(retain) id changedDelegate;
+@property BOOL currentInputModeChanged;
 @property(getter=isInHardwareKeyboardMode) BOOL inHardwareKeyboardMode;
 @property BOOL shouldSkipCandidateSelection;
 @property BOOL showInputModeIndicator;
@@ -127,6 +130,7 @@
 + (void)_initializeSafeCategory;
 + (id)activeInstance;
 + (float)additionalInstanceHeight;
++ (void)applicationDidReceiveMemoryWarning:(id)arg1;
 + (void)applicationWillSuspend:(id)arg1;
 + (struct CGSize { float x1; float x2; })defaultSize;
 + (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(NSInteger)arg1;
@@ -139,6 +143,7 @@
 + (id)normalizedInputModesFromPreference;
 + (NSInteger)orientationForSize:(struct CGSize { float x1; float x2; })arg1;
 + (void)releaseSharedInstance;
++ (void)setCurrentInputModeChanged;
 + (void)setParentTestForProfiling:(id)arg1;
 + (id)sharedInstance;
 + (struct CGSize { float x1; float x2; })sizeForInterfaceOrientation:(NSInteger)arg1;
@@ -163,6 +168,7 @@
 - (void)acceptCurrentCandidateIfSelected;
 - (BOOL)acceptInputString:(id)arg1;
 - (void)acceptWord:(id)arg1 firstDelete:(NSUInteger)arg2 addString:(id)arg3;
+- (void)addAutocorrectionRecord:(id)arg1 forTyping:(id)arg2;
 - (void)addInputObject:(id)arg1;
 - (void)addInputString:(id)arg1 fromVariantKey:(BOOL)arg2;
 - (void)addInputString:(id)arg1;
@@ -179,6 +185,7 @@
 - (void)autocorrectionAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (BOOL)autocorrectionPreference;
 - (BOOL)autocorrectionPreferenceForTraits;
+- (id)autocorrectionRecordForWord:(id)arg1;
 - (BOOL)automaticMinimizationEnabled;
 - (void)callChanged;
 - (void)callChangedSelection;
@@ -205,6 +212,7 @@
 - (BOOL)changeNotificationDisabled;
 - (id)changedDelegate;
 - (struct __CFDictionary { }*)chargedKeyProbabilities;
+- (BOOL)checkSpellingPreference;
 - (void)clearAnimations;
 - (void)clearAutocorrectPromptTimer;
 - (void)clearChangeTimeAndCount;
@@ -222,6 +230,7 @@
 - (id)clientVariantDelegate;
 - (id)clientVariantsForKey:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectToAutocorrectRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegateView:(id)arg2 container:(id)arg3;
+- (BOOL)currentInputModeChanged;
 - (void)dealloc;
 - (void)defaultsDidChange:(id)arg1;
 - (void)defaultsDidChange;
@@ -350,6 +359,7 @@
 - (void)setChangeNotificationDisabled:(BOOL)arg1;
 - (void)setChanged;
 - (void)setChangedDelegate:(id)arg1;
+- (void)setCurrentInputModeChanged:(BOOL)arg1;
 - (void)setDefaultTextInputTraits:(id)arg1;
 - (void)setDelegate:(id)arg1 force:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
@@ -425,7 +435,6 @@
 - (void)touchLongPressTimer;
 - (void)touchLongPressTimerWithDelay:(double)arg1;
 - (void)touchSynchronizePreferencesTimer;
-- (id)typingForAutocorrection:(id)arg1;
 - (void)updateAutocorrectPrompt:(id)arg1;
 - (void)updateAutocorrectPromptAction;
 - (void)updateCandidateDisplay;

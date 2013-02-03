@@ -18,6 +18,7 @@
     id delegate;
     BOOL fullScreen;
     UIImage *iconImage;
+    BOOL iconIsScreenShotBased;
     NSURL *iconURL;
     NSString *identifier;
     NSURL *pageURL;
@@ -47,6 +48,7 @@
 @property BOOL classicMode;
 @property id delegate;
 @property BOOL fullScreen;
+@property(readonly) BOOL iconIsScreenShotBased;
 @property BOOL removalDisallowed;
 @property float scale;
 @property CGPoint scrollPoint;
@@ -83,6 +85,7 @@
 - (id)getStartupImage;
 - (id)iconImage;
 - (id)iconImagePath;
+- (BOOL)iconIsScreenShotBased;
 - (id)iconURL;
 - (id)identifier;
 - (id)pageURL;
@@ -93,11 +96,13 @@
 - (void)requestCustomStartupImageUpdateWithDelegate:(id)arg1;
 - (void)requestCustomStartupLandscapeImageUpdateWithDelegate:(id)arg1;
 - (void)requestCustomStartupPortraitImageUpdateWithDelegate:(id)arg1;
+- (void)requestIconUpdateInSpringBoard;
 - (float)scale;
 - (struct CGPoint { float x1; float x2; })scrollPoint;
 - (void)setClassicMode:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFullScreen:(BOOL)arg1;
+- (void)setIconImage:(id)arg1 isScreenShotBased:(BOOL)arg2;
 - (void)setIconImage:(id)arg1;
 - (void)setIconURL:(id)arg1;
 - (void)setIdentifier:(id)arg1;

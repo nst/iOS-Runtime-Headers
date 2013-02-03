@@ -12,6 +12,7 @@
     double _duration;
     NSString *_filename;
     BOOL _flagged;
+    NSInteger _hdrType;
     short _height;
     double _latitude;
     double _longitude;
@@ -25,6 +26,8 @@
     short _width;
 }
 
+@property NSInteger HDRType;
+
 + (id)abbreviatedMetadataDirectoryForDirectory:(id)arg1;
 + (Class)classFromStepData:(struct sqlite3_stmt { }*)arg1;
 + (NSInteger)createTablesForConnection:(id)arg1;
@@ -32,6 +35,7 @@
 + (id)photoWithDefaultValues;
 + (id)photoWithValuesFromDictionary:(id)arg1;
 
+- (NSInteger)HDRType;
 - (id)_createImageForFormat:(NSInteger)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (void)_setPrimaryKey:(NSInteger)arg1;
 - (BOOL)allowsRotation;
@@ -87,6 +91,7 @@
 - (void)setDurationInMilliseconds:(double)arg1;
 - (void)setFilename:(id)arg1;
 - (void)setFlagged:(BOOL)arg1;
+- (void)setHDRType:(NSInteger)arg1;
 - (void)setHeight:(short)arg1;
 - (void)setLatitude:(double)arg1;
 - (void)setLongitude:(double)arg1;
@@ -101,6 +106,7 @@
 - (NSInteger)thumbnailIndex;
 - (id)title;
 - (NSInteger)type;
+- (void)updateWithAuxStepData:(struct sqlite3_stmt { }*)arg1;
 - (BOOL)userRating;
 - (short)width;
 

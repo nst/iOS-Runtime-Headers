@@ -2,21 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SUTabBarController, MFMailComposeViewController, NSDictionary, ISOperation, SUClient, SULocationObserver, SUSectionsResponse, NSURL, SUPurchaseManager, NSArray;
+@class SUPurchaseManager, SUTabBarController, MFMailComposeViewController, NSDictionary, ISOperation, SUClient, SULocationObserver, NSString, SUSectionsResponse, NSURL, NSArray;
 
 @interface SUStoreController : NSObject <SUClientDelegate, SUPurchaseManagerDelegate, SUTabBarControllerDelegate, UIApplicationDelegate, MFMailComposeViewControllerDelegate> {
     SUClient *_client;
     SUSectionsResponse *_lastSectionsResponse;
     NSURL *_launchURL;
     ISOperation *_loadSectionsOperation;
+    NSString *_localStoreFrontAtLastSuspend;
     SULocationObserver *_locationObserver;
     MFMailComposeViewController *_mailComposeViewController;
     NSArray *_overlayConfigurations;
     SUPurchaseManager *_purchaseManager;
     BOOL _reloadForStorefrontChangeAfterAccountSetup;
     BOOL _reloadSectionsOnNextLaunch;
-    NSString *_storeFrontAtLastSuspend;
     NSDictionary *_storeFrontLanguages;
+    NSString *_synchedStoreFrontAtLastSuspend;
     SUTabBarController *_tabBarController;
 }
 

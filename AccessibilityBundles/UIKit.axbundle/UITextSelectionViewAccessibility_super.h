@@ -7,6 +7,6 @@
 
 + (void)_initializeSafeCategory;
 
-- (void)showCommandsWithReplacements:(id)arg1 replacementDictionary:(id)arg2;
+- (void)showCommandsWithReplacements:(id)arg1;
 
 @end

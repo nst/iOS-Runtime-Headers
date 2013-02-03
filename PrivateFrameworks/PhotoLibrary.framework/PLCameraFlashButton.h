@@ -2,14 +2,19 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLCameraFlashLabelView, UIImageView, <PLCameraFlashButtonDelegate>, PLSpacerView;
+@class PLCameraFlashLabelView, UIImage, UIImageView, <PLCameraFlashButtonDelegate>, PLSpacerView;
 
 @interface PLCameraFlashButton : PLReorientingButton <UIAlertViewDelegate> {
     PLCameraFlashLabelView *_autoLabel;
     <PLCameraFlashButtonDelegate> *_delegate;
     BOOL _enabled;
+    UIImage *_flashImage;
     NSInteger _flashMode;
+    PLSpacerView *_hdrIconStrip;
+    UIImage *_hdrImage;
+    PLCameraFlashLabelView *_hdrLabel;
     BOOL _hideAuto;
+    BOOL _hideHDR;
     UIImageView *_leftImageView;
     PLCameraFlashLabelView *_offLabel;
     PLCameraFlashLabelView *_onLabel;
@@ -19,6 +24,7 @@
     PLSpacerView *_spacer1;
     PLSpacerView *_spacer2;
     PLSpacerView *_spacer3;
+    PLSpacerView *_spacer4;
     PLCameraFlashLabelView *_warningIndicatorLabel;
 }
 
@@ -26,23 +32,26 @@
 @property BOOL enabled;
 @property NSInteger flashMode;
 @property BOOL hideAuto;
+@property BOOL hideHDR;
 @property BOOL showsWarningIndicator;
 
 + (void)_initializeSafeCategory;
 
 - (void)_cancelCollapse;
-- (void)_collapse;
-- (void)_collapseAndSetMode:(NSInteger)arg1;
+- (void)_collapseAndSetMode:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)_collapseAnimated;
 - (id)_currentLabel;
 - (float)_expandedWidth;
 - (void)_handleSingleTap:(id)arg1;
 - (void)_scheduleCollapse;
 - (void)_showAllModes;
+- (void)collapse;
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)enabled;
 - (NSInteger)flashMode;
 - (BOOL)hideAuto;
+- (BOOL)hideHDR;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAccessibilityElement;
 - (BOOL)isExpanded;
@@ -54,6 +63,7 @@
 - (void)setFlashMode:(NSInteger)arg1 notifyDelegate:(BOOL)arg2;
 - (void)setFlashMode:(NSInteger)arg1;
 - (void)setHideAuto:(BOOL)arg1;
+- (void)setHideHDR:(BOOL)arg1;
 - (void)setShowsWarningIndicator:(BOOL)arg1;
 - (BOOL)showsWarningIndicator;
 

@@ -7,10 +7,11 @@
 
 @property(readonly) NSDictionary *pixelBufferAttributes;
 
++ (id)_videoOutputSettingsWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (id)eligibleOutputSettingsDictionaryKeys;
-+ (id)videoOutputSettingsWithVideoSettingsDictionary:(id)arg1;
 
-- (id)initWithPixelBufferAttributes:(id)arg1;
+- (id)initWithPixelBufferAttributes:(id)arg1 exceptionReason:(id*)arg2;
+- (BOOL)isDictionaryFullyFormed;
 - (id)pixelBufferAttributes;
 - (BOOL)willYieldCompressedSamples;
 

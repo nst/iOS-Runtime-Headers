@@ -32,19 +32,14 @@
 @property(copy) NSString *searchAccountID;
 
 - (void)_copyRecipientsFromComposeView;
-- (void)_hideKeyboard;
-- (void)_hideKeyboardAndDeactivateContent:(BOOL)arg1;
 - (void)_hideSearchFieldAndCancelOutstandingSearches:(BOOL)arg1;
 - (float)_maxScrollerHeight;
 - (id)_modalViewPresenter;
 - (float)_properHeight;
-- (void)_refreshKeyboardAndAdjustFocus:(BOOL)arg1;
 - (id)_searchManager;
 - (id)_searchResultsView;
 - (void)_setRecipientsOnComposeView;
 - (id)_shadowView;
-- (void)_showKeyboard:(BOOL)arg1 activateContent:(BOOL)arg2;
-- (void)_showKeyboard:(BOOL)arg1;
 - (void)_showSearchField;
 - (id)addresses;
 - (void)animationDidStop:(id)arg1;
@@ -79,8 +74,6 @@
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

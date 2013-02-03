@@ -6,9 +6,6 @@
 
 @interface MFDAMessage : MailMessage {
     DAMailMessage *_DAMailMessage;
-    BOOL _haveTweakedCcIvar;
-    BOOL _haveTweakedSenderIvar;
-    BOOL _haveTweakedToIvar;
     MailboxUid *_mailbox;
     Message *_rfc822CreatedMessage;
 }

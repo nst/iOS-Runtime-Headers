@@ -2,23 +2,25 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class AVRemaker, PLProgressView, NSString, NSTimer;
+@class AVRemaker, PLProgressView, NSString, NSTimer, NSURL;
 
 @interface PLVideoRemaker : NSObject {
     id _delegate;
     double _duration;
     NSInteger _mode;
-    NSString *_path;
     float _percentComplete;
     NSTimer *_progressTimer;
     PLProgressView *_progressView;
     AVRemaker *_remaker;
+    NSURL *_sourceURL;
     double _trimEndTime;
     double _trimStartTime;
     NSString *_trimmedPath;
 }
 
 + (void)_initializeSafeCategory;
++ (long long)approximateByteSizeForMode:(NSInteger)arg1 duration:(double)arg2;
++ (NSInteger)getHDRemakerModeForMode:(NSInteger)arg1;
 + (double)maximumDurationForTrimMode:(NSInteger)arg1;
 
 - (void)_didEndRemakingWithTemporaryPath:(id)arg1;
@@ -30,7 +32,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (double)duration;
-- (id)initWithPath:(id)arg1;
+- (id)initWithURL:(id)arg1;
+- (id)messageForRemakingProgress;
 - (NSInteger)mode;
 - (id)progressView;
 - (void)remake;

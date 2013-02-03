@@ -25,5 +25,6 @@
 - (id)description;
 - (id)init;
 - (id)initWithAccessibilityContainer:(id)arg1;
+- (void)setAccessibilityContainer:(id)arg1;
 
 @end

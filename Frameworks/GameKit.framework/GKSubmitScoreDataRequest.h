@@ -2,24 +2,20 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSDate;
+@class GKScore;
 
 @interface GKSubmitScoreDataRequest : GKDataRequest {
-    NSDate *_date;
-    NSUInteger _score;
+    GKScore *_score;
 }
 
-@property(retain) NSDate *date;
-@property NSUInteger score;
+@property(retain) GKScore *score;
 
 - (NSInteger)cacheType;
-- (id)date;
 - (void)dealloc;
 - (id)invalidateCacheKeys;
 - (id)key;
 - (id)request;
-- (NSUInteger)score;
-- (void)setDate:(id)arg1;
-- (void)setScore:(NSUInteger)arg1;
+- (id)score;
+- (void)setScore:(id)arg1;
 
 @end

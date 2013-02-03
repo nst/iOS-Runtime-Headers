@@ -14,10 +14,13 @@
 @property(getter=_offerItem) SSItem *_offerItem; /* unknown property attribute: S_setOfferItem: */
 @property(readonly) NSSet *accountIdentifiers;
 @property(readonly) NSString *actionDisplayName;
+@property(readonly) NSString *actionType;
 @property(readonly) NSString *buyParameters;
+@property(readonly) SSDialog *confirmationDialog;
 @property(readonly) NSString *offerIdentifier;
 @property(readonly) SSItemMedia *offerMedia;
 @property(readonly) NSString *priceDisplay;
+@property(readonly) SSDialog *successDialog;
 @property(readonly) NSArray *supportedDevices;
 @property(readonly) long long estimatedDiskSpaceNeeded;
 @property(getter=isPreorder,readonly) BOOL preorder;
@@ -30,7 +33,9 @@
 - (void)_setOfferItem:(id)arg1;
 - (id)accountIdentifiers;
 - (id)actionDisplayName;
+- (id)actionType;
 - (id)buyParameters;
+- (id)confirmationDialog;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -44,6 +49,7 @@
 - (id)priceDisplay;
 - (id)requiredSoftwareCapabilities;
 - (BOOL)shouldShowPlusIcon;
+- (id)successDialog;
 - (id)supportedDevices;
 - (id)valueForProperty:(id)arg1;
 

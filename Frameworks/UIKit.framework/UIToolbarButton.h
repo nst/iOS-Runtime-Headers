@@ -29,6 +29,7 @@
     BOOL _barHeight;
     NSInteger _barStyle;
     BOOL _bezel;
+    id _customToolbarAppearance;
     } _glowAdjust;
     } _hitRect;
     BOOL _imageIsBackground;
@@ -58,6 +59,7 @@
 - (void)_animateImage:(float)arg1 withButtonBar:(id)arg2;
 - (void)_badgeAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_buttonBarHitRect;
+- (id)_info;
 - (BOOL)_isBordered;
 - (BOOL)_isOn;
 - (void)_positionBadge;
@@ -65,6 +67,7 @@
 - (void)_setBadgeValue:(id)arg1;
 - (void)_setBarHeight:(float)arg1;
 - (void)_setButtonBarHitRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setCustomToolbarAppearance:(id)arg1;
 - (void)_setInfoWidth:(float)arg1;
 - (void)_setOn:(BOOL)arg1;
 - (void)_setSelected:(BOOL)arg1;

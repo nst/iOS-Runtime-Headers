@@ -4,7 +4,7 @@
 
 @class PSTextView;
 
-@interface PSTextViewTableCell : PSTableCell <UITextViewLegacyDelegate> {
+@interface PSTextViewTableCell : PSTableCell <UITextViewDelegate> {
     PSTextView *_textView;
 }
 
@@ -15,6 +15,6 @@
 - (void)setTextView:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)textView;
-- (void)textViewDidResignFirstResponder:(id)arg1;
+- (void)textViewDidEndEditing:(id)arg1;
 
 @end

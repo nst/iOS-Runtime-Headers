@@ -2,62 +2,64 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSMutableArray, NSObject<ISDialogButtonHandler>, NSString, NSMutableDictionary;
+@class NSMutableDictionary, NSArray, NSString, NSLock;
 
-@interface ISDialog : NSObject <NSCoding> {
-    unsigned int _dismissOnLock : 1;
-    unsigned int _preventDuplicates : 1;
-    NSString *_body;
-    NSMutableArray *_buttons;
-    NSUInteger _defaultButtonIndex;
-    NSObject<ISDialogButtonHandler> *_handler;
-    NSMutableDictionary *_handlerInfo;
-    NSInteger _priority;
-    NSInteger _tag;
-    NSMutableArray *_textFields;
+@interface ISDialog : NSObject {
+    BOOL _allowDuplicates;
+    NSArray *_buttons;
+    BOOL _dismissOnLock;
+    BOOL _expectsResponse;
+    BOOL _groupsTextFields;
+    NSInteger _kind;
+    NSLock *_lock;
+    NSString *_message;
+    BOOL _oneButtonPerLine;
+    NSArray *_textFields;
     NSString *_title;
+    NSMutableDictionary *_userInfo;
 }
 
-@property BOOL dismissOnLock;
-@property BOOL preventDuplicates;
+@property(retain) NSString *title; /* unknown property attribute: V_title */
+@property(retain) NSArray *textFields; /* unknown property attribute: V_textFields */
+@property BOOL oneButtonPerLine; /* unknown property attribute: V_oneButtonPerLine */
+@property(retain) NSString *message; /* unknown property attribute: V_message */
+@property NSInteger kind; /* unknown property attribute: V_kind */
+@property BOOL groupsTextFields; /* unknown property attribute: V_groupsTextFields */
+@property BOOL expectsResponse; /* unknown property attribute: V_expectsResponse */
+@property BOOL dismissOnLock; /* unknown property attribute: V_dismissOnLock */
+@property(retain) NSArray *buttons; /* unknown property attribute: V_buttons */
+@property BOOL allowDuplicates; /* unknown property attribute: V_allowDuplicates */
 
-+ (id)dialogWithTitle:(id)arg1 body:(id)arg2 buttons:(id)arg3 handler:(id)arg4;
-
-- (void)addButtonWithTitle:(id)arg1 buyParameters:(id)arg2;
-- (void)addButtonWithTitle:(id)arg1 url:(id)arg2;
-- (void)addButtonWithTitle:(id)arg1;
-- (void)addTextFieldWithTitle:(id)arg1 value:(id)arg2 keyboardType:(NSInteger)arg3 isSecure:(BOOL)arg4;
-- (id)body;
-- (id)buttonAtIndex:(NSUInteger)arg1;
+- (NSInteger)_kindForString:(id)arg1;
+- (BOOL)allowDuplicates;
+- (id)buttons;
 - (id)copyUserNotification;
 - (void)dealloc;
-- (NSUInteger)defaultButtonIndex;
 - (BOOL)dismissOnLock;
-- (void)encodeWithCoder:(id)arg1;
-- (id)handler;
-- (BOOL)hasButtonWithActionType:(NSInteger)arg1;
-- (NSUInteger)indexOfButton:(id)arg1;
+- (BOOL)expectsResponse;
+- (BOOL)groupsTextFields;
 - (id)init;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithAuthenticationChallege:(id)arg1;
 - (id)initWithDialogDictionary:(id)arg1;
 - (id)initWithError:(id)arg1;
+- (id)initWithTitle:(id)arg1 message:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
-- (NSUInteger)numberOfButtons;
-- (void)performDefaultActionForButton:(id)arg1;
-- (void)postNotification;
-- (BOOL)preventDuplicates;
-- (NSInteger)priority;
-- (void)setBody:(id)arg1;
-- (void)setDefaultButtonIndex:(NSUInteger)arg1;
+- (NSInteger)kind;
+- (id)message;
+- (BOOL)oneButtonPerLine;
+- (void)setAllowDuplicates:(BOOL)arg1;
+- (void)setButtons:(id)arg1;
 - (void)setDismissOnLock:(BOOL)arg1;
-- (void)setHandler:(id)arg1;
-- (void)setPreventDuplicates:(BOOL)arg1;
-- (void)setPriority:(NSInteger)arg1;
-- (void)setTag:(NSInteger)arg1;
+- (void)setExpectsResponse:(BOOL)arg1;
+- (void)setGroupsTextFields:(BOOL)arg1;
+- (void)setKind:(NSInteger)arg1;
+- (void)setMessage:(id)arg1;
+- (void)setOneButtonPerLine:(BOOL)arg1;
+- (void)setTextFields:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setValue:(id)arg1 forHandlerInfoKey:(id)arg2;
-- (NSInteger)tag;
+- (void)setValue:(id)arg1 forUserInfoKey:(id)arg2;
+- (id)textFields;
 - (id)title;
-- (id)valueForHandlerInfoKey:(id)arg1;
+- (id)valueForUserInfoKey:(id)arg1;
 
 @end

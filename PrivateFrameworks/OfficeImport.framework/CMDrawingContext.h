@@ -48,9 +48,9 @@
 - (float)currentScaleFactor;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })currentTransform;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pdfFrame;
 - (void)restoreLastTransform;
 - (void)setFillColor:(struct CGColor { }*)arg1;
 - (void)setLineDash:(id)arg1;

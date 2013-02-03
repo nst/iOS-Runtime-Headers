@@ -14,6 +14,7 @@
 + (void)removeFromStack:(id)arg1;
 + (void)reorientAlertWindowTo:(NSInteger)arg1 animated:(BOOL)arg2;
 + (void)showTopmostMiniAlert;
++ (void)sizeAlertWindowForCurrentOrientation;
 + (BOOL)stackContainsAlert:(id)arg1;
 + (void)tellSpringboardHidingAlert:(id)arg1 animated:(BOOL)arg2;
 + (void)tellSpringboardShowingAlert:(id)arg1 animated:(BOOL)arg2;

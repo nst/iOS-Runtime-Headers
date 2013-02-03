@@ -25,7 +25,9 @@
     float mWidth;
 }
 
++ (id)blackStroke;
 + (id)defaultProperties;
++ (id)nullStroke;
 
 - (NSInteger)cap;
 - (id)color;

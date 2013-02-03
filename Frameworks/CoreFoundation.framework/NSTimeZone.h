@@ -5,6 +5,7 @@
 @interface NSTimeZone : NSObject <NSCopying, NSCoding> {
 }
 
++ (id)ICSQuickTimeZoneNames;
 + (id)abbreviationDictionary;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)defaultTimeZone;
@@ -20,6 +21,7 @@
 + (id)timeZoneWithName:(id)arg1;
 + (id)timeZoneWithWindowsName:(id)arg1;
 
+- (id)ICSComputeTimeZoneChangeListFromDate:(id)arg1 toDate:(id)arg2;
 - (id)_abbreviationForAbsoluteTime:(double)arg1;
 - (double)_daylightSavingTimeOffsetForAbsoluteTime:(double)arg1;
 - (BOOL)_isDaylightSavingTimeForAbsoluteTime:(double)arg1;

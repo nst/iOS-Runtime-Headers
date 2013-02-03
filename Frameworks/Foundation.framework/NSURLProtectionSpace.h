@@ -14,6 +14,7 @@
 - (id)authenticationMethod;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)distinguishedNames;
 - (NSUInteger)hash;
 - (id)host;
 - (id)init;
@@ -26,5 +27,6 @@
 - (id)proxyType;
 - (id)realm;
 - (BOOL)receivesCredentialSecurely;
+- (struct __SecTrust { }*)serverTrust;
 
 @end

@@ -11,6 +11,8 @@
     UILabel *_valueSuffixLabel;
 }
 
++ (id)standardTextTableCell;
+
 - (id)_disabledFontColor;
 - (void)_textFieldEndEditing:(id)arg1;
 - (void)_textFieldEndEditingOnReturn:(id)arg1;

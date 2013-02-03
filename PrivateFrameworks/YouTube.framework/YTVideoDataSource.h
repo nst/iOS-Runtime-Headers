@@ -14,16 +14,18 @@
 }
 
 + (void)saveDataSources;
++ (void)setShouldRemoveOldDefaults;
 + (id)sharedDataSource;
++ (BOOL)shouldRemoveOldDefaults;
 
 - (void)_addVideos:(id)arg1;
 - (void)_clearVideos;
+- (id)_deprecatedVideosDefaultsKey;
 - (void)_didChange;
 - (void)_saveToDefaults;
 - (void)_searchRequestLoadingStatusDidChange;
 - (void)_setLastError:(id)arg1;
 - (void)_setVideos:(id)arg1;
-- (id)_videosDefaultsKey;
 - (void)dealloc;
 - (BOOL)hasLoaded;
 - (id)init;
@@ -33,6 +35,7 @@
 - (void)loadMore;
 - (NSUInteger)maxVideosToSave;
 - (void)reloadData;
+- (void)removeVideoAtIndex:(NSInteger)arg1;
 - (void)searchRequest:(id)arg1 didFailWithError:(id)arg2;
 - (void)searchRequest:(id)arg1 receivedVideos:(id)arg2 startIndex:(NSUInteger)arg3 videosRemaining:(NSUInteger)arg4;
 - (id)videos;

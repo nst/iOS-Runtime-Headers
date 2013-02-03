@@ -7,6 +7,7 @@
 @interface GQHBulletInfo : NSObject {
     NSInteger mBulletIndent;
     struct __CFString { } *mChar;
+    BOOL mHasNumber;
     NSInteger mLabelType;
     NSInteger mNumber;
     GQDSStyle *mStyle;
@@ -18,11 +19,12 @@
 - (NSInteger)bulletIndent;
 - (struct __CFString { }*)createTierStringNumber;
 - (void)dealloc;
-- (id)init;
+- (BOOL)hasNumber;
 - (NSInteger)labelType;
 - (NSInteger)number;
 - (void)setBulletChar:(struct __CFString { }*)arg1;
 - (void)setBulletIndent:(NSInteger)arg1;
+- (void)setHasNumber:(BOOL)arg1;
 - (void)setLabelType:(NSInteger)arg1;
 - (void)setNumber:(NSInteger)arg1;
 - (void)setStyle:(id)arg1;

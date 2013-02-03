@@ -13,7 +13,6 @@
 + (id)valueWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
 + (id)valueWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)valueWithCGSize:(struct CGSize { float x1; float x2; })arg1;
-+ (id)valueWithCoordinate:(struct { double x1; double x2; })arg1;
 + (id)valueWithDDRange:(struct _DDRange { unsigned long long x1; unsigned long long x2; })arg1;
 + (id)valueWithNonretainedObject:(id)arg1;
 + (id)valueWithPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -23,9 +22,9 @@
 + (id)valueWithSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)valueWithUIEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 
+- (struct Object { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })CATransform3DValue;
 - (id)CA_addValue:(id)arg1 multipliedBy:(NSInteger)arg2;
-- (void*)CA_copyRenderValue;
 - (float)CA_distanceToValue:(id)arg1;
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })CGAffineTransformValue;
@@ -33,8 +32,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })CGRectValue;
 - (struct CGSize { float x1; float x2; })CGSizeValue;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })UIEdgeInsetsValue;
+- (id)_mapkit_initWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)_mapkit_initWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)_mapkit_initWithZoomRegion:(struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapkit_zoomRegionValue;
 - (id)classForCoder;
-- (struct { double x1; double x2; })coordinateValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct _DDRange { unsigned long long x1; unsigned long long x2; })ddrangeValue;
 - (id)description;

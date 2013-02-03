@@ -2,51 +2,65 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUTabBarController : UITabBarController <UITabBarControllerDelegate> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    unsigned int _allowCustomization : 1;
-    unsigned int _adjustedFramesForModalPresent : 1;
-    struct __CFArray { } *_observers;
-    } _selectedViewFrameBeforeAdjust;
+@class NSArray, SUSection, UIViewController;
+
+@interface SUTabBarController : UITabBarController {
+    NSArray *_cachedControllers;
+    SUSection *_cachedControllersSection;
+    UIViewController *_preTransientSelectedViewController;
+    NSInteger _reloadingUnderneathTransientControllerCount;
+    NSArray *_sections;
+    BOOL _trackingNetworkType;
 }
 
-@property(getter=isCustomizable) BOOL customizable;
+@property(retain) NSArray *sections; /* unknown property attribute: V_sections */
+@property <SUTabBarControllerDelegate> *delegate;
+@property(retain) NSString *selectedIdentifier;
 
-- (void)_adjustViewsAfterModalDismissal;
-- (void)_adjustViewsBeforeModalPresentation;
+- (void)_beginReloadingUnderneathTransientViewController;
+- (void)_clearNetworkLockoutController;
 - (void)_configureStatusBarForTransitionToViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)_fixControllersForTransitionFromMoreList;
-- (void)_fixControllersForTransitionToMoreListWithSelectedController:(id)arg1;
-- (id)_navigationControllerWithTag:(unsigned long)arg1;
-- (void)addObserver:(id)arg1;
+- (void)_destroyCachedControllers;
+- (void)_endReloadingUnderneathTransientViewController;
+- (void)_fixupTabBarSelection;
+- (void)_fixupViewControllers;
+- (BOOL)_isReloadingUnderneathTransientViewController;
+- (void)_locationChanged:(id)arg1;
+- (void)_partnerChanged:(id)arg1;
+- (void)_reloadViewControllersFromSections:(id)arg1 animated:(BOOL)arg2;
+- (void)_restoreArchivedContexts:(id)arg1;
+- (id)_rootViewControllerForSection:(id)arg1;
+- (id)_sectionForViewController:(id)arg1;
+- (void)_setSelectedViewController:(id)arg1;
+- (void)_transitionSafeHandleLocationChange:(id)arg1;
+- (void)_transitionSafeHandlePartnerChange:(id)arg1;
+- (void)_transitionSafeReloadForNetworkTypeChange;
+- (void)_updateLockoutVisibility;
+- (void)_updateLockoutVisibilityForMoreList;
+- (id)_viewControllerForContext:(id)arg1;
+- (id)_viewControllerForSectionIdentifier:(id)arg1;
 - (void)dealloc;
-- (void)didReceiveMemoryWarning;
-- (void)dismissViewControllerWithModalTransition:(NSInteger)arg1;
+- (void)dismissModalViewControllerAnimated:(BOOL)arg1;
+- (NSUInteger)indexOfViewControllerWithSectionType:(NSInteger)arg1;
 - (id)init;
-- (BOOL)isCustomizable;
-- (void)modalDismissTransitionDidComplete;
-- (id)moreListController;
-- (void)presentViewController:(id)arg1 withModalTransition:(NSInteger)arg2;
-- (void)purgeMemoryForReason:(NSInteger)arg1;
-- (void)removeObserver:(id)arg1;
-- (id)selectedViewControllerIgnoringMoreList;
-- (void)setCustomizable:(BOOL)arg1;
-- (void)setSelectedIndex:(NSUInteger)arg1;
-- (void)setViewControllers:(id)arg1;
+- (BOOL)loadFromDefaults;
+- (void)presentModalViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)reloadForNetworkTypeChange;
+- (void)rootTransientViewController:(id)arg1 inSectionWithIdentifier:(id)arg2;
+- (BOOL)saveOrderingToDefaults;
+- (BOOL)saveToDefaults;
+- (id)sections;
+- (void)selectDefaultSection;
+- (void)selectSectionOfType:(NSInteger)arg1;
+- (id)selectedIdentifier;
+- (id)selectedViewController;
+- (void)setSectionOrdering:(id)arg1;
+- (void)setSections:(id)arg1;
+- (void)setSelectedIdentifier:(id)arg1;
+- (void)setTransientViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)tabBar:(id)arg1 willEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
-- (void)tabBarController:(id)arg1 didEndCustomizingViewControllers:(id)arg2 changed:(BOOL)arg3;
-- (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
-- (void)tabBarController:(id)arg1 willEndCustomizingViewControllers:(id)arg2 changed:(BOOL)arg3;
-- (id)topNavigationController;
-- (void)updateMoreListState;
+- (id)viewControllerForSectionType:(NSInteger)arg1;
 
 @end

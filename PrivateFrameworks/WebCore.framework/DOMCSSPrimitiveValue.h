@@ -7,9 +7,6 @@
 
 @property(readonly) unsigned short primitiveType;
 
-+ (id)_wrapCSSPrimitiveValue:(struct CSSPrimitiveValue { int (**x1)(); NSInteger x2; NSInteger x3; union $_215 { NSInteger x_4_1_1; double x_4_1_2; struct StringImpl {} *x_4_1_3; struct Counter {} *x_4_1_4; struct Rect {} *x_4_1_5; NSUInteger x_4_1_6; struct Pair {} *x_4_1_7; struct DashboardRegion {} *x_4_1_8; } x4; }*)arg1;
-
-- (struct CSSPrimitiveValue { int (**x1)(); NSInteger x2; NSInteger x3; union $_215 { NSInteger x_4_1_1; double x_4_1_2; struct StringImpl {} *x_4_1_3; struct Counter {} *x_4_1_4; struct Rect {} *x_4_1_5; NSUInteger x_4_1_6; struct Pair {} *x_4_1_7; struct DashboardRegion {} *x_4_1_8; } x4; }*)_CSSPrimitiveValue;
 - (id)getCounterValue;
 - (float)getFloatValue:(unsigned short)arg1;
 - (id)getRGBColorValue;

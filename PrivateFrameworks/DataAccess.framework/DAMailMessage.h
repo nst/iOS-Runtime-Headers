@@ -14,6 +14,7 @@
 - (id)displayTo;
 - (id)from;
 - (NSInteger)importance;
+- (id)longID;
 - (id)meetingRequestMetaData;
 - (id)meetingRequestUUID;
 - (id)messageClass;

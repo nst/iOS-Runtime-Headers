@@ -16,15 +16,14 @@
 @property(retain) ABModel *model; /* unknown property attribute: V_model */
 
 - (id)accountGroupWrappers;
-- (id)createTable;
-- (id)createTableWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (id)defaultGroupWrapper;
 - (id)groupWrapperForIndexPath:(id)arg1;
+- (id)indexPathForGroupWrapper:(id)arg1;
 - (id)init;
 - (id)model;
-- (BOOL)needsStyleUpdateForTableView:(id)arg1;
 - (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (NSInteger)preferredTableViewStyle;
 - (void)reloadData;
 - (void)setModel:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

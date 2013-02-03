@@ -18,6 +18,7 @@
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapBounds;
 - (void)mapChartAt:(id)arg1 withState:(id)arg2;
+- (void)mapDiagramAt:(id)arg1 withState:(id)arg2;
 - (void)mapOfficeArtGroupAt:(id)arg1 withState:(id)arg2;
 - (void)mapOfficeArtShapeAt:(id)arg1 withState:(id)arg2;
 - (void)mapTextBoxAt:(id)arg1 withState:(id)arg2;

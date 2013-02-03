@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableArray, MessageLibrary, MessageCriterion, NSMutableSet;
+@class MessageCriterion, MessageLibrary, NSMutableSet;
 
-@interface LibraryStore : MessageStore {
-    NSMutableArray *_allMessagesDuringOpening;
+@interface LibraryStore : MailMessageStore {
     MessageCriterion *_criterion;
     double _lastUpdated;
     MessageLibrary *_library;
@@ -51,6 +50,8 @@
 - (id)bodyDataForMessage:(id)arg1 isComplete:(BOOL*)arg2 downloadIfNecessary:(BOOL)arg3;
 - (BOOL)canCompact;
 - (void)compactMessages:(id)arg1;
+- (id)copyMessagesMatchingCriterion:(id)arg1 options:(NSUInteger)arg2;
+- (id)copyMessagesMatchingText:(id)arg1 options:(NSUInteger)arg2;
 - (id)copyOfAllMessages;
 - (id)copyOfAllMessagesForBodyLoadingFromRowID:(NSUInteger)arg1 limit:(NSUInteger)arg2;
 - (id)copyOfAllMessagesWithOptions:(NSUInteger)arg1;
@@ -78,6 +79,7 @@
 - (id)initWithMailboxUid:(id)arg1 readOnly:(BOOL)arg2;
 - (id)library;
 - (void)libraryFinishedSendingMessages;
+- (NSUInteger)locationOfMessage:(id)arg1;
 - (id)mailbox;
 - (void)messageFlagsChanged:(id)arg1;
 - (id)messageForMessageID:(id)arg1;
@@ -92,6 +94,7 @@
 - (void)purgeMessages:(id)arg1;
 - (void)purgeMessagesBeyond:(NSUInteger)arg1;
 - (void)rebuildTableOfContentsAsynchronously;
+- (id)serverSearchResults;
 - (void)setData:(id)arg1 forMimePart:(id)arg2 isComplete:(BOOL)arg3;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)setLibrary:(id)arg1;
@@ -100,7 +103,6 @@
 - (BOOL)shouldCancel;
 - (NSUInteger)totalCount;
 - (NSUInteger)unreadCount;
-- (void)updateCriterionFromMailbox;
 - (void)updateMetadata;
 - (void)updateUserInfoToLatestValues;
 - (void)writeUpdatedMessageDataToDisk;

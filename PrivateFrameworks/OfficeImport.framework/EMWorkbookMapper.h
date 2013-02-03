@@ -20,16 +20,19 @@
     NSInteger mWidth;
     NSMutableArray *mWorksheetGuids;
     NSMutableArray *mWorksheetNames;
+    NSMutableArray *mWorksheetUrls;
 }
 
 + (id)baseDate;
 + (id)borderStyleCache;
 + (id)borderWidthCache;
 + (id)cssStyleCache;
++ (void)setBaseDate1904:(BOOL)arg1;
 
 - (id)archiver;
 - (id)blipAtIndex:(NSUInteger)arg1;
 - (id)createFramesetPage:(id)arg1;
+- (id)createMainDoc;
 - (id)createNavFrame;
 - (id)createSheetMapperWithEdSheet:(id)arg1;
 - (void)dealloc;
@@ -44,6 +47,7 @@
 - (struct CGSize { float x1; float x2; })pageSizeForDevice;
 - (void)setFileName:(id)arg1;
 - (void)setHtmlDocumentSizeInArchiver;
+- (id)styleMatrix;
 - (id)workbook;
 
 @end

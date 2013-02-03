@@ -8,37 +8,34 @@
 
 @class WebHTMLViewPrivate;
 
-@interface WebHTMLView : WAKView <WebDocumentView, WebDocumentSearching, WebDocumentElement, WebMultipleTextMatches, WebDocumentSelection, WebDocumentIncrementalSearching, _WebDocumentTextSizing> {
+@interface WebHTMLView : WAKView <WebDocumentView, WebDocumentElement, WebDocumentSelection> {
      /* Encoded args for previous method: c12@0:4^{KeyboardEvent=^^?i{AtomicString={String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}}BBBBBB^{EventTarget}S{RefPtr<WebCore::EventTarget>=^{EventTarget}}Q{RefPtr<WebCore::Event>=^{Event}}{RefPtr<WebCore::DOMWindow>=^{DOMWindow}}ib1b1b1b1^{PlatformKeyboardEvent}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}Ib1{Vector<WebCore::KeypressCommand,0ul>=I{VectorBuffer<WebCore::KeypressCommand,0ul>=^{KeypressCommand}I}}}8 */
-     /* Encoded args for previous method: ^{CachedImage=^^?{HashCountedSet<WebCore::CachedResourceClient*,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::HashTraits<WebCore::CachedResourceClient*> >={HashMap<WebCore::CachedResourceClient*,unsigned int,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::HashTraits<WebCore::CachedResourceClient*>,WTF::HashTraits<unsigned int> >={HashTable<int,std::pair<int, int>,WTF::PairFirstExtractor<std::pair<int, int> >,WTF::IntHash<int32_t>,WTF::PairHashTraits<WTF::HashTraits<int32_t>, WTF::HashTraits<int32_t> >,WTF::HashTraits<int32_t> >=^{pair<int,int>}iiii}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}^{Request}{ResourceResponse={KURL={DeprecatedString=^^{DeprecatedStringData}{DeprecatedStringData=II^{DeprecatedChar}*b30b1b1b31b1[20c]}}Biiiiiiiii}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}q{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}i{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{HashMap<WebCore::String,WebCore::String,WebCore::CaseFoldingHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::String> >={HashTable<WebCore::StringImpl*,std::pair<WebCore::StringImpl*, int>,WTF::PairFirstExtractor<std::pair<WebCore::StringImpl*, int> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::StringImpl*>, WTF::HashTraits<int32_t> >,WTF::HashTraits<WebCore::StringImpl*> >=^{pair<WebCore::StringImpl*,int>}iiii}}iiBB{RetainPtr<NSURLResponse>=@}}{RefPtr<WebCore::SharedBuffer>=^{SharedBuffer}}iiBIIIIdBIiBBBB^{CachedResource}^{CachedResource}^{CachedResource}^{CachedResource}B^{DocLoader}^^?^{Image}i}8@0:4 */
-     /* Encoded args for previous method: v12@0:4^{CachedImage=^^?{HashCountedSet<WebCore::CachedResourceClient*,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::HashTraits<WebCore::CachedResourceClient*> >={HashMap<WebCore::CachedResourceClient*,unsigned int,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::HashTraits<WebCore::CachedResourceClient*>,WTF::HashTraits<unsigned int> >={HashTable<int,std::pair<int, int>,WTF::PairFirstExtractor<std::pair<int, int> >,WTF::IntHash<int32_t>,WTF::PairHashTraits<WTF::HashTraits<int32_t>, WTF::HashTraits<int32_t> >,WTF::HashTraits<int32_t> >=^{pair<int,int>}iiii}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}^{Request}{ResourceResponse={KURL={DeprecatedString=^^{DeprecatedStringData}{DeprecatedStringData=II^{DeprecatedChar}*b30b1b1b31b1[20c]}}Biiiiiiiii}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}q{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}i{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{HashMap<WebCore::String,WebCore::String,WebCore::CaseFoldingHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::String> >={HashTable<WebCore::StringImpl*,std::pair<WebCore::StringImpl*, int>,WTF::PairFirstExtractor<std::pair<WebCore::StringImpl*, int> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::StringImpl*>, WTF::HashTraits<int32_t> >,WTF::HashTraits<WebCore::StringImpl*> >=^{pair<WebCore::StringImpl*,int>}iiii}}iiBB{RetainPtr<NSURLResponse>=@}}{RefPtr<WebCore::SharedBuffer>=^{SharedBuffer}}iiBIIIIdBIiBBBB^{CachedResource}^{CachedResource}^{CachedResource}^{CachedResource}B^{DocLoader}^^?^{Image}i}8 */
+     /* Encoded args for previous method: ^{CachedImage=^^?{HashCountedSet<WebCore::CachedResourceClient*,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::HashTraits<WebCore::CachedResourceClient*> >={HashMap<WebCore::CachedResourceClient*,unsigned int,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::HashTraits<WebCore::CachedResourceClient*>,WTF::HashTraits<unsigned int> >={HashTable<WebCore::CachedResourceClient*,std::pair<WebCore::CachedResourceClient*, unsigned int>,WTF::PairFirstExtractor<std::pair<WebCore::CachedResourceClient*, unsigned int> >,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::PairHashTraits<WTF::HashTraits<WebCore::CachedResourceClient*>, WTF::HashTraits<unsigned int> >,WTF::HashTraits<WebCore::CachedResourceClient*> >=^{pair<WebCore::CachedResourceClient*,unsigned int>}iiii}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}^{Request}{ResourceResponse={KURL={String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}Biiiiiiiiii}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}q{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}i{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{HTTPHeaderMap={HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> >=^{pair<WebCore::AtomicString,WebCore::String>}iiii}}iib1b1b1b1{RetainPtr<NSURLResponse>=@}B}{RefPtr<WebCore::SharedBuffer>=^{SharedBuffer}}{OwnPtr<WebCore::PurgeableBuffer>=^{PurgeableBuffer}}iiBIIIIdBIiBBBB^{CachedResource}^{CachedResource}^{CachedResource}^{CachedResource}^{DocLoader}I^{CachedResource}B{HashSet<WebCore::CachedResourceHandleBase*,WTF::PtrHash<WebCore::CachedResourceHandleBase*>,WTF::HashTraits<WebCore::CachedResourceHandleBase*> >={HashTable<WebCore::CachedResourceHandleBase*,WebCore::CachedResourceHandleBase*,WTF::IdentityExtractor<WebCore::CachedResourceHandleBase*>,WTF::PtrHash<WebCore::CachedResourceHandleBase*>,WTF::HashTraits<WebCore::CachedResourceHandleBase*>,WTF::HashTraits<WebCore::CachedResourceHandleBase*> >=^^{CachedResourceHandleBase}iiii}}i^^?{RefPtr<WebCore::Image>=^{Image}}{Timer<WebCore::CachedImage>=^^?ddiI^{CachedImage}{?=^i}}}8@0:4 */
+     /* Encoded args for previous method: v12@0:4^{CachedImage=^^?{HashCountedSet<WebCore::CachedResourceClient*,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::HashTraits<WebCore::CachedResourceClient*> >={HashMap<WebCore::CachedResourceClient*,unsigned int,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::HashTraits<WebCore::CachedResourceClient*>,WTF::HashTraits<unsigned int> >={HashTable<WebCore::CachedResourceClient*,std::pair<WebCore::CachedResourceClient*, unsigned int>,WTF::PairFirstExtractor<std::pair<WebCore::CachedResourceClient*, unsigned int> >,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::PairHashTraits<WTF::HashTraits<WebCore::CachedResourceClient*>, WTF::HashTraits<unsigned int> >,WTF::HashTraits<WebCore::CachedResourceClient*> >=^{pair<WebCore::CachedResourceClient*,unsigned int>}iiii}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}^{Request}{ResourceResponse={KURL={String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}Biiiiiiiiii}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}q{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}i{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{HTTPHeaderMap={HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> >=^{pair<WebCore::AtomicString,WebCore::String>}iiii}}iib1b1b1b1{RetainPtr<NSURLResponse>=@}B}{RefPtr<WebCore::SharedBuffer>=^{SharedBuffer}}{OwnPtr<WebCore::PurgeableBuffer>=^{PurgeableBuffer}}iiBIIIIdBIiBBBB^{CachedResource}^{CachedResource}^{CachedResource}^{CachedResource}^{DocLoader}I^{CachedResource}B{HashSet<WebCore::CachedResourceHandleBase*,WTF::PtrHash<WebCore::CachedResourceHandleBase*>,WTF::HashTraits<WebCore::CachedResourceHandleBase*> >={HashTable<WebCore::CachedResourceHandleBase*,WebCore::CachedResourceHandleBase*,WTF::IdentityExtractor<WebCore::CachedResourceHandleBase*>,WTF::PtrHash<WebCore::CachedResourceHandleBase*>,WTF::HashTraits<WebCore::CachedResourceHandleBase*>,WTF::HashTraits<WebCore::CachedResourceHandleBase*> >=^^{CachedResourceHandleBase}iiii}}i^^?{RefPtr<WebCore::Image>=^{Image}}{Timer<WebCore::CachedImage>=^^?ddiI^{CachedImage}{?=^i}}}8 */
     WebHTMLViewPrivate *_private;
 }
 
++ (void)initialize;
 + (id)supportedImageMIMETypes;
 + (id)supportedMIMETypes;
 + (id)supportedNonImageMIMETypes;
 + (id)unsupportedTextMIMETypes;
 
-- (struct CachedImage { int (**x1)(); struct HashCountedSet<WebCore::CachedResourceClient*,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::HashTraits<WebCore::CachedResourceClient*> > { struct HashMap<WebCore::CachedResourceClient*,unsigned int,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::HashTraits<WebCore::CachedResourceClient*>,WTF::HashTraits<unsigned int> > { struct HashTable<int,std::pair<int, int>,WTF::PairFirstExtractor<std::pair<int, int> >,WTF::IntHash<int32_t>,WTF::PairHashTraits<WTF::HashTraits<int32_t>, WTF::HashTraits<int32_t> >,WTF::HashTraits<int32_t> > { struct pair<int,int> {} *x_1_3_1; NSInteger x_1_3_2; NSInteger x_1_3_3; NSInteger x_1_3_4; NSInteger x_1_3_5; } x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct Request {} *x5; struct ResourceResponse { struct KURL { struct DeprecatedString { struct DeprecatedStringData {} **x_1_3_1; struct DeprecatedStringData { NSUInteger x_2_4_1; NSUInteger x_2_4_2; struct DeprecatedChar {} *x_2_4_3; char *x_2_4_4; unsigned int x_2_4_5 : 30; unsigned int x_2_4_6 : 1; unsigned int x_2_4_7 : 1; unsigned int x_2_4_8 : 31; unsigned int x_2_4_9 : 1; BOOL x_2_4_10[20]; } x_1_3_2; } x_1_2_1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_1_2_2; NSInteger x_1_2_3; NSInteger x_1_2_4; NSInteger x_1_2_5; NSInteger x_1_2_6; NSInteger x_1_2_7; NSInteger x_1_2_8; NSInteger x_1_2_9; NSInteger x_1_2_10; NSInteger x_1_2_11; } x_6_1_1; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_2_2_1; } x_6_1_2; long long x_6_1_3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_4_2_1; } x_6_1_4; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_5_2_1; } x_6_1_5; NSInteger x_6_1_6; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_7_2_1; } x_6_1_7; struct HashMap<WebCore::String,WebCore::String,WebCore::CaseFoldingHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::String> > { struct HashTable<WebCore::StringImpl*,std::pair<WebCore::StringImpl*, int>,WTF::PairFirstExtractor<std::pair<WebCore::StringImpl*, int> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::StringImpl*>, WTF::HashTraits<int32_t> >,WTF::HashTraits<WebCore::StringImpl*> > { struct pair<WebCore::StringImpl*,int> {} *x_1_3_1; NSInteger x_1_3_2; NSInteger x_1_3_3; NSInteger x_1_3_4; NSInteger x_1_3_5; } x_8_2_1; } x_6_1_8; NSInteger x_6_1_9; NSInteger x_6_1_10; void*x_6_1_11; void*x_6_1_12; struct RetainPtr<NSURLResponse> { id x_13_2_1; } x_6_1_13; } x6; struct RefPtr<WebCore::SharedBuffer> { struct SharedBuffer {} *x_7_1_1; } x7; NSInteger x8; NSInteger x9; void*x10; NSUInteger x11; NSUInteger x12; NSUInteger x13; NSUInteger x14; double x15; void*x16; NSUInteger x17; NSInteger x18; void*x19; void*x20; void*x21; void*x22; struct CachedResource {} *x23; struct CachedResource {} *x24; struct CachedResource {} *x25; struct CachedResource {} *x26; void*x27; struct DocLoader {} *x28; int (**x29)(); struct Image {} *x30; NSInteger x31; }*)promisedDragTIFFDataSource;
+- (struct CachedImage { int (**x1)(); struct HashCountedSet<WebCore::CachedResourceClient*,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::HashTraits<WebCore::CachedResourceClient*> > { struct HashMap<WebCore::CachedResourceClient*,unsigned int,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::HashTraits<WebCore::CachedResourceClient*>,WTF::HashTraits<unsigned int> > { struct HashTable<WebCore::CachedResourceClient*,std::pair<WebCore::CachedResourceClient*, unsigned int>,WTF::PairFirstExtractor<std::pair<WebCore::CachedResourceClient*, unsigned int> >,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::PairHashTraits<WTF::HashTraits<WebCore::CachedResourceClient*>, WTF::HashTraits<unsigned int> >,WTF::HashTraits<WebCore::CachedResourceClient*> > { struct pair<WebCore::CachedResourceClient*,unsigned int> {} *x_1_3_1; NSInteger x_1_3_2; NSInteger x_1_3_3; NSInteger x_1_3_4; NSInteger x_1_3_5; } x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct Request {} *x5; struct ResourceResponse { struct KURL { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_1_2_1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_1_2_2; NSInteger x_1_2_3; NSInteger x_1_2_4; NSInteger x_1_2_5; NSInteger x_1_2_6; NSInteger x_1_2_7; NSInteger x_1_2_8; NSInteger x_1_2_9; NSInteger x_1_2_10; NSInteger x_1_2_11; NSInteger x_1_2_12; } x_6_1_1; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_2_2_1; } x_6_1_2; long long x_6_1_3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_4_2_1; } x_6_1_4; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_5_2_1; } x_6_1_5; NSInteger x_6_1_6; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_7_2_1; } x_6_1_7; struct HTTPHeaderMap { struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { struct pair<WebCore::AtomicString,WebCore::String> {} *x_1_3_1; NSInteger x_1_3_2; NSInteger x_1_3_3; NSInteger x_1_3_4; NSInteger x_1_3_5; } x_8_2_1; } x_6_1_8; NSInteger x_6_1_9; NSInteger x_6_1_10; unsigned int x_6_1_11 : 1; unsigned int x_6_1_12 : 1; unsigned int x_6_1_13 : 1; unsigned int x_6_1_14 : 1; struct RetainPtr<NSURLResponse> { id x_15_2_1; } x_6_1_15; void*x_6_1_16; } x6; struct RefPtr<WebCore::SharedBuffer> { struct SharedBuffer {} *x_7_1_1; } x7; struct OwnPtr<WebCore::PurgeableBuffer> { struct PurgeableBuffer {} *x_8_1_1; } x8; NSInteger x9; NSInteger x10; void*x11; NSUInteger x12; NSUInteger x13; NSUInteger x14; NSUInteger x15; double x16; void*x17; NSUInteger x18; NSInteger x19; void*x20; void*x21; void*x22; void*x23; struct CachedResource {} *x24; struct CachedResource {} *x25; struct CachedResource {} *x26; struct CachedResource {} *x27; struct DocLoader {} *x28; NSUInteger x29; struct CachedResource {} *x30; void*x31; struct HashSet<WebCore::CachedResourceHandleBase*,WTF::PtrHash<WebCore::CachedResourceHandleBase*>,WTF::HashTraits<WebCore::CachedResourceHandleBase*> > { struct HashTable<WebCore::CachedResourceHandleBase*,WebCore::CachedResourceHandleBase*,WTF::IdentityExtractor<WebCore::CachedResourceHandleBase*>,WTF::PtrHash<WebCore::CachedResourceHandleBase*>,WTF::HashTraits<WebCore::CachedResourceHandleBase*>,WTF::HashTraits<WebCore::CachedResourceHandleBase*> > { struct CachedResourceHandleBase {} **x_1_2_1; NSInteger x_1_2_2; NSInteger x_1_2_3; NSInteger x_1_2_4; NSInteger x_1_2_5; } x_32_1_1; } x32; NSInteger x33; int (**x34)(); struct RefPtr<WebCore::Image> { struct Image {} *x_35_1_1; } x35; struct Timer<WebCore::CachedImage> { int (**x_36_1_1)(); double x_36_1_2; double x_36_1_3; NSInteger x_36_1_4; NSUInteger x_36_1_5; struct CachedImage {} *x_36_1_6; struct { NSInteger *x_7_2_1; } x_36_1_7; } x36; }*)promisedDragTIFFDataSource;
 - (void)_applyParagraphStyleToSelection:(id)arg1 withUndoAction:(NSInteger)arg2;
 - (void)_applyStyleToSelection:(id)arg1 withUndoAction:(NSInteger)arg2;
-- (SEL)_arrowKeyDownEventSelectorIfPreprocessing;
 - (void)_autoscroll;
-- (id)_bridge;
 - (BOOL)_canAlterCurrentSelection;
 - (BOOL)_canDecreaseSelectionListLevel;
 - (BOOL)_canEdit;
 - (BOOL)_canEditRichly;
 - (BOOL)_canIncreaseSelectionListLevel;
-- (BOOL)_canMakeTextLarger;
-- (BOOL)_canMakeTextSmaller;
-- (BOOL)_canMakeTextStandardSize;
 - (BOOL)_canSmartCopyOrDelete;
 - (void)_changeWordCaseWithSelector:(SEL)arg1;
 - (void)_clearLastHitViewIfSelf;
 - (id)_dataSource;
 - (void)_decreaseSelectionListLevel;
+- (void)_destroyAllWebPlugins;
 - (id)_documentRange;
 - (id)_emptyStyle;
 - (id)_frame;
@@ -60,13 +57,10 @@
 - (BOOL)_isEditable;
 - (BOOL)_isSelectionEvent:(struct __GSEvent { }*)arg1;
 - (BOOL)_isTopHTMLView;
+- (BOOL)_isUsingAcceleratedCompositing;
 - (void)_layoutIfNeeded;
 - (void)_lookUpInDictionaryFromMenu:(id)arg1;
-- (void)_makeTextLarger:(id)arg1;
-- (void)_makeTextSmaller:(id)arg1;
-- (void)_makeTextStandardSize:(id)arg1;
 - (id)_pluginController;
-- (void)_propagateDirtyRectsToOpaqueAncestors;
 - (void)_recursiveDisplayAllDirtyWithLockFocus:(BOOL)arg1 visRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_recursiveDisplayRectIfNeededIgnoringOpacity:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isVisibleRect:(BOOL)arg2 rectIsVisibleRectForView:(id)arg3 topView:(BOOL)arg4;
 - (void)_removeHighlighterOfType:(id)arg1;
@@ -85,13 +79,11 @@
 - (BOOL)_shouldReplaceSelectionWithText:(id)arg1 givenAction:(NSInteger)arg2;
 - (void)_startAutoscrollTimer:(struct __GSEvent { }*)arg1;
 - (void)_stopAutoscrollTimer;
-- (void)_textSizeMultiplierChanged;
 - (id)_topHTMLView;
-- (BOOL)_tracksCommonSizeFactor;
 - (BOOL)_transparentBackground;
 - (void)_updateFocusedAndActiveState;
 - (void)_updateSelectionForInputManager;
-- (void)_updateTextSizeMultiplier;
+- (BOOL)_wantsKeyDownForEvent:(id)arg1;
 - (id)_webView;
 - (void)_web_clearPrintingModeRecursive;
 - (void)_web_layoutIfNeededRecursive;
@@ -99,20 +91,21 @@
 - (void)_web_setPrintingModeRecursiveAndAdjustViewSize;
 - (oneway void)_webcore_releaseOnWebThread;
 - (BOOL)acceptsFirstResponder;
-- (void)addMouseMovedObserver;
+- (id)accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1;
+- (id)accessibilityRootElement;
 - (void)addSubview:(id)arg1;
-- (void)addSuperviewObservers;
-- (void)addWindowObservers;
 - (void)alignCenter:(id)arg1;
 - (void)alignJustified:(id)arg1;
 - (void)alignLeft:(id)arg1;
 - (void)alignRight:(id)arg1;
+- (void)attachRootLayer:(id)arg1;
 - (BOOL)becomeFirstResponder;
 - (BOOL)callDelegateDoCommandBySelectorIfNeeded:(SEL)arg1;
 - (void)capitalizeWord:(id)arg1;
 - (void)centerSelectionInVisibleArea:(id)arg1;
 - (NSUInteger)characterIndexForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)clearFocus;
+- (void)clearText:(id)arg1;
 - (void)close;
 - (void)closeIfNotCurrentView;
 - (NSInteger)conversationIdentifier;
@@ -134,6 +127,7 @@
 - (void)deleteWordBackward:(id)arg1;
 - (void)deleteWordForward:(id)arg1;
 - (void)deselectAll;
+- (void)detachRootLayer;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)drawSingleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)elementAtPoint:(struct CGPoint { float x1; float x2; })arg1 allowShadowContent:(BOOL)arg2;
@@ -144,6 +138,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })firstRectForCharacterRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (BOOL)hasMarkedText;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1;
+- (void)ignoreSpelling:(id)arg1;
 - (void)indent:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertBacktab:(id)arg1;
@@ -163,6 +158,9 @@
 - (void)layoutToMinimumPageWidth:(float)arg1 maximumPageWidth:(float)arg2 adjustingViewSize:(BOOL)arg3;
 - (void)lowercaseWord:(id)arg1;
 - (BOOL)maintainsInactiveSelection;
+- (void)makeTextWritingDirectionLeftToRight:(id)arg1;
+- (void)makeTextWritingDirectionNatural:(id)arg1;
+- (void)makeTextWritingDirectionRightToLeft:(id)arg1;
 - (NSUInteger)markAllMatchesForText:(id)arg1 caseSensitive:(BOOL)arg2 limit:(NSUInteger)arg3;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })markedRange;
 - (BOOL)markedTextMatchesAreHighlighted;
@@ -217,14 +215,8 @@
 - (void)pasteAsPlainText:(id)arg1;
 - (void)reapplyStyles;
 - (oneway void)release;
-- (void)removeMouseMovedObserver;
-- (void)removeMouseMovedObserverUnconditionally;
-- (void)removeSuperviewObservers;
-- (void)removeWindowObservers;
 - (BOOL)resignFirstResponder;
 - (void)scrollWheel:(struct __GSEvent { }*)arg1;
-- (BOOL)searchFor:(id)arg1 direction:(BOOL)arg2 caseSensitive:(BOOL)arg3 wrap:(BOOL)arg4 startInSelection:(BOOL)arg5;
-- (BOOL)searchFor:(id)arg1 direction:(BOOL)arg2 caseSensitive:(BOOL)arg3 wrap:(BOOL)arg4;
 - (void)selectAll:(id)arg1;
 - (void)selectAll;
 - (void)selectLine:(id)arg1;
@@ -245,7 +237,7 @@
 - (void)setNeedsDisplay:(BOOL)arg1;
 - (void)setNeedsLayout:(BOOL)arg1;
 - (void)setNeedsToApplyStyles:(BOOL)arg1;
-- (void)setPromisedDragTIFFDataSource:(struct CachedImage { int (**x1)(); struct HashCountedSet<WebCore::CachedResourceClient*,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::HashTraits<WebCore::CachedResourceClient*> > { struct HashMap<WebCore::CachedResourceClient*,unsigned int,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::HashTraits<WebCore::CachedResourceClient*>,WTF::HashTraits<unsigned int> > { struct HashTable<int,std::pair<int, int>,WTF::PairFirstExtractor<std::pair<int, int> >,WTF::IntHash<int32_t>,WTF::PairHashTraits<WTF::HashTraits<int32_t>, WTF::HashTraits<int32_t> >,WTF::HashTraits<int32_t> > { struct pair<int,int> {} *x_1_3_1; NSInteger x_1_3_2; NSInteger x_1_3_3; NSInteger x_1_3_4; NSInteger x_1_3_5; } x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct Request {} *x5; struct ResourceResponse { struct KURL { struct DeprecatedString { struct DeprecatedStringData {} **x_1_3_1; struct DeprecatedStringData { NSUInteger x_2_4_1; NSUInteger x_2_4_2; struct DeprecatedChar {} *x_2_4_3; char *x_2_4_4; unsigned int x_2_4_5 : 30; unsigned int x_2_4_6 : 1; unsigned int x_2_4_7 : 1; unsigned int x_2_4_8 : 31; unsigned int x_2_4_9 : 1; BOOL x_2_4_10[20]; } x_1_3_2; } x_1_2_1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_1_2_2; NSInteger x_1_2_3; NSInteger x_1_2_4; NSInteger x_1_2_5; NSInteger x_1_2_6; NSInteger x_1_2_7; NSInteger x_1_2_8; NSInteger x_1_2_9; NSInteger x_1_2_10; NSInteger x_1_2_11; } x_6_1_1; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_2_2_1; } x_6_1_2; long long x_6_1_3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_4_2_1; } x_6_1_4; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_5_2_1; } x_6_1_5; NSInteger x_6_1_6; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_7_2_1; } x_6_1_7; struct HashMap<WebCore::String,WebCore::String,WebCore::CaseFoldingHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::String> > { struct HashTable<WebCore::StringImpl*,std::pair<WebCore::StringImpl*, int>,WTF::PairFirstExtractor<std::pair<WebCore::StringImpl*, int> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::StringImpl*>, WTF::HashTraits<int32_t> >,WTF::HashTraits<WebCore::StringImpl*> > { struct pair<WebCore::StringImpl*,int> {} *x_1_3_1; NSInteger x_1_3_2; NSInteger x_1_3_3; NSInteger x_1_3_4; NSInteger x_1_3_5; } x_8_2_1; } x_6_1_8; NSInteger x_6_1_9; NSInteger x_6_1_10; void*x_6_1_11; void*x_6_1_12; struct RetainPtr<NSURLResponse> { id x_13_2_1; } x_6_1_13; } x6; struct RefPtr<WebCore::SharedBuffer> { struct SharedBuffer {} *x_7_1_1; } x7; NSInteger x8; NSInteger x9; void*x10; NSUInteger x11; NSUInteger x12; NSUInteger x13; NSUInteger x14; double x15; void*x16; NSUInteger x17; NSInteger x18; void*x19; void*x20; void*x21; void*x22; struct CachedResource {} *x23; struct CachedResource {} *x24; struct CachedResource {} *x25; struct CachedResource {} *x26; void*x27; struct DocLoader {} *x28; int (**x29)(); struct Image {} *x30; NSInteger x31; }*)arg1;
+- (void)setPromisedDragTIFFDataSource:(struct CachedImage { int (**x1)(); struct HashCountedSet<WebCore::CachedResourceClient*,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::HashTraits<WebCore::CachedResourceClient*> > { struct HashMap<WebCore::CachedResourceClient*,unsigned int,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::HashTraits<WebCore::CachedResourceClient*>,WTF::HashTraits<unsigned int> > { struct HashTable<WebCore::CachedResourceClient*,std::pair<WebCore::CachedResourceClient*, unsigned int>,WTF::PairFirstExtractor<std::pair<WebCore::CachedResourceClient*, unsigned int> >,WTF::PtrHash<WebCore::CachedResourceClient*>,WTF::PairHashTraits<WTF::HashTraits<WebCore::CachedResourceClient*>, WTF::HashTraits<unsigned int> >,WTF::HashTraits<WebCore::CachedResourceClient*> > { struct pair<WebCore::CachedResourceClient*,unsigned int> {} *x_1_3_1; NSInteger x_1_3_2; NSInteger x_1_3_3; NSInteger x_1_3_4; NSInteger x_1_3_5; } x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct Request {} *x5; struct ResourceResponse { struct KURL { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_1_2_1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_1_2_2; NSInteger x_1_2_3; NSInteger x_1_2_4; NSInteger x_1_2_5; NSInteger x_1_2_6; NSInteger x_1_2_7; NSInteger x_1_2_8; NSInteger x_1_2_9; NSInteger x_1_2_10; NSInteger x_1_2_11; NSInteger x_1_2_12; } x_6_1_1; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_2_2_1; } x_6_1_2; long long x_6_1_3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_4_2_1; } x_6_1_4; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_5_2_1; } x_6_1_5; NSInteger x_6_1_6; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_7_2_1; } x_6_1_7; struct HTTPHeaderMap { struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { struct pair<WebCore::AtomicString,WebCore::String> {} *x_1_3_1; NSInteger x_1_3_2; NSInteger x_1_3_3; NSInteger x_1_3_4; NSInteger x_1_3_5; } x_8_2_1; } x_6_1_8; NSInteger x_6_1_9; NSInteger x_6_1_10; unsigned int x_6_1_11 : 1; unsigned int x_6_1_12 : 1; unsigned int x_6_1_13 : 1; unsigned int x_6_1_14 : 1; struct RetainPtr<NSURLResponse> { id x_15_2_1; } x_6_1_15; void*x_6_1_16; } x6; struct RefPtr<WebCore::SharedBuffer> { struct SharedBuffer {} *x_7_1_1; } x7; struct OwnPtr<WebCore::PurgeableBuffer> { struct PurgeableBuffer {} *x_8_1_1; } x8; NSInteger x9; NSInteger x10; void*x11; NSUInteger x12; NSUInteger x13; NSUInteger x14; NSUInteger x15; double x16; void*x17; NSUInteger x18; NSInteger x19; void*x20; void*x21; void*x22; void*x23; struct CachedResource {} *x24; struct CachedResource {} *x25; struct CachedResource {} *x26; struct CachedResource {} *x27; struct DocLoader {} *x28; NSUInteger x29; struct CachedResource {} *x30; void*x31; struct HashSet<WebCore::CachedResourceHandleBase*,WTF::PtrHash<WebCore::CachedResourceHandleBase*>,WTF::HashTraits<WebCore::CachedResourceHandleBase*> > { struct HashTable<WebCore::CachedResourceHandleBase*,WebCore::CachedResourceHandleBase*,WTF::IdentityExtractor<WebCore::CachedResourceHandleBase*>,WTF::PtrHash<WebCore::CachedResourceHandleBase*>,WTF::HashTraits<WebCore::CachedResourceHandleBase*>,WTF::HashTraits<WebCore::CachedResourceHandleBase*> > { struct CachedResourceHandleBase {} **x_1_2_1; NSInteger x_1_2_2; NSInteger x_1_2_3; NSInteger x_1_2_4; NSInteger x_1_2_5; } x_32_1_1; } x32; NSInteger x33; int (**x34)(); struct RefPtr<WebCore::Image> { struct Image {} *x_35_1_1; } x35; struct Timer<WebCore::CachedImage> { int (**x_36_1_1)(); double x_36_1_2; double x_36_1_3; NSInteger x_36_1_4; NSUInteger x_36_1_5; struct CachedImage {} *x_36_1_6; struct { NSInteger *x_7_2_1; } x_36_1_7; } x36; }*)arg1;
 - (id)string;
 - (void)subscript:(id)arg1;
 - (void)superscript:(id)arg1;
@@ -260,16 +252,15 @@
 - (void)unscript:(id)arg1;
 - (void)uppercaseWord:(id)arg1;
 - (void)viewDidMoveToHostWindow;
-- (void)viewDidMoveToSuperview;
 - (void)viewDidMoveToWindow;
+- (void)viewWillDraw;
 - (void)viewWillMoveToHostWindow:(id)arg1;
-- (void)viewWillMoveToSuperview:(id)arg1;
 - (void)viewWillMoveToWindow:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 - (void)willRemoveSubview:(id)arg1;
 - (void)windowDidBecomeKey:(id)arg1;
 - (void)windowDidResignKey:(id)arg1;
 - (void)windowWillClose:(id)arg1;
+- (void)windowWillOrderOnScreen:(id)arg1;
 - (void)yank:(id)arg1;
 - (void)yankAndSelect:(id)arg1;
 

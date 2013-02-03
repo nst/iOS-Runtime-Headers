@@ -2,16 +2,22 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPQueueFeeder, VolumeController, AVController, CALayer;
+@class MPAudioDeviceController, VolumeController, NSMutableArray, MPQueueFeeder, AVController, CALayer, MPAVControllerToAggregateDCommunicator;
 
 @interface MPAVController : NSObject {
     unsigned int _valid : 1;
+    unsigned int _hasDelayedCurrentTimeToSet : 1;
+    unsigned int _forceDelayedCurrentTimeToSet : 1;
     unsigned int _autoPlayWhenLikelyToKeepUp : 1;
     unsigned int _closedCaptioningEnabled : 1;
     unsigned int _isSeeking : 1;
     unsigned int _activeRewindHoldingAtStart : 1;
     unsigned int _alwaysPlayWheneverPossible : 1;
+    unsigned int _stopAtEnd : 1;
+    unsigned int _pausedDuringInterruption : 1;
     unsigned int _subtitlesEnabled : 1;
+    MPAVControllerToAggregateDCommunicator *_aggregateDCommunicator;
+    MPAudioDeviceController *_audioDeviceController;
     AVController *_avController;
     NSUInteger _bufferingState;
     double _connectionFailTime;
@@ -20,20 +26,25 @@
     NSUInteger _displayOverridePlaybackState;
     NSInteger _eqPreset;
     MPQueueFeeder *_feeder;
+    NSInteger _feederMode;
     NSInteger _indexChangeDirection;
     NSUInteger _itemIndexAtDeath;
+    NSInteger _lastDisconnectReason;
     double _lastKnownTimeBeforeDeath;
     double _lastPlaybackIndexChangeTime;
     double _lastSetTime;
     double _lastSetTimeChangeTime;
     NSUInteger _lastSetTimeMarker;
     double _nextFadeOutDuration;
+    NSInteger _playbackMode;
+    NSMutableArray *_queueFeederStateStack;
     float _rateBeforeSeek;
     double _repeatGap;
     NSInteger _scanDirection;
     NSUInteger _scanLevel;
     NSUInteger _state;
     id _subtitlesRecipient;
+    double _tickInterval;
     struct __CFRunLoopTimer { } *_tickTimer;
     NSUInteger _tickTimerEnabled;
     CALayer *_videoLayer;
@@ -42,6 +53,7 @@
 }
 
 @property(getter=destinationIsTVOut) BOOL destinationIsTVOut; /* unknown property attribute: SsetDestinationIsTVOut: */
+@property NSInteger feederMode; /* unknown property attribute: V_feederMode */
 @property(retain,readonly) VolumeController *volumeController; /* unknown property attribute: V_volumeController */
 @property(retain,readonly) CALayer *videoLayer; /* unknown property attribute: V_videoLayer */
 @property(retain,readonly) id subtitlesRecipient; /* unknown property attribute: V_subtitlesRecipient */
@@ -51,6 +63,7 @@
 @property(retain) MPQueueFeeder *feeder; /* unknown property attribute: V_feeder */
 @property NSInteger EQPreset; /* unknown property attribute: V_eqPreset */
 @property(readonly) NSUInteger bufferingState; /* unknown property attribute: V_bufferingState */
+@property(retain,readonly) MPAudioDeviceController *audioDeviceController; /* unknown property attribute: V_audioDeviceController */
 @property(retain,readonly) AVController *avController;
 @property(retain,readonly) MPItem *currentItem;
 @property(readonly) NSUInteger activeRepeatType;
@@ -61,12 +74,14 @@
 @property double currentTime;
 @property(readonly) BOOL handlingRemoteEvent;
 @property(readonly) NSUInteger numberOfItems;
+@property NSInteger playbackMode;
 @property(getter=isPlaying,readonly) BOOL playing;
 @property float rate;
 @property NSUInteger repeatType;
 @property(getter=isRewindHoldingAtStart,readonly) BOOL rewindHoldingAtStart;
 @property NSUInteger shuffleType;
 @property(getter=isShuffled,readonly) BOOL shuffled;
+@property BOOL stopAtEnd;
 @property BOOL subtitlesEnabled;
 @property(getter=isValid,readonly) BOOL valid;
 @property float volume;
@@ -74,6 +89,7 @@
 + (void)_releaseSharedIPCInstanceIfNecessary;
 + (void)disableSharedIPCAppInstanceRelease;
 + (void)enableSharedIPCAppInstanceRelease;
++ (void)purgeSharedInstance;
 + (id)sharedIPCAppInstance;
 + (id)sharedInstance;
 
@@ -89,6 +105,7 @@
 - (void)_delayedSetCurrentTime;
 - (void)_delayedUpdateScanningRate;
 - (void)_delayedUpdateTimeMarker;
+- (void)_disconnectAVControllerWithReason:(NSInteger)arg1;
 - (NSUInteger)_displayPlaybackState;
 - (void)_endSeekAndChangeRate:(BOOL)arg1;
 - (BOOL)_isPlayingForState:(NSUInteger)arg1;
@@ -99,8 +116,7 @@
 - (void)_itemPlaybackDidEndNotification:(id)arg1;
 - (void)_itemReadyToPlayNotification:(id)arg1;
 - (void)_itemWillChangeNotification:(id)arg1;
-- (void)_lowPowerWarningNotification;
-- (NSUInteger)_playbackIndexForDelta:(NSInteger)arg1 fromIndex:(NSUInteger)arg2 currentItemIsOnDemand:(BOOL)arg3;
+- (NSUInteger)_playbackIndexForDelta:(NSInteger)arg1 fromIndex:(NSUInteger)arg2 currentItemIsOnDemand:(BOOL)arg3 ignoreElapsedTime:(BOOL)arg4;
 - (void)_playbackInterruptedNotification:(id)arg1;
 - (void)_playbackInterruptionDidEndNotification:(id)arg1;
 - (void)_prepareToPlayItem:(id)arg1;
@@ -128,7 +144,6 @@
 - (void)_timeHasJumpedNotification:(id)arg1;
 - (void)_unregisterForAVItemNotifications:(id)arg1;
 - (void)_unregisterForAVNotifications:(id)arg1;
-- (void)_updateBookkeepingNow;
 - (void)_updateProgress:(struct __CFRunLoopTimer { }*)arg1;
 - (void)_updateScanningRate;
 - (NSUInteger)activeRepeatType;
@@ -138,12 +153,15 @@
 - (void)applicationWillTerminate;
 - (void)applyRepeatSettings;
 - (void)applyShuffleSettings;
+- (id)audioDeviceController;
+- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (BOOL)autoPlayWhenLikelyToKeepUp;
 - (id)avController;
 - (void)beginSeek:(NSInteger)arg1;
-- (void)beginTickTimer;
+- (void)beginTickTimerWithInterval:(double)arg1;
 - (void)beginUsingVideoLayer;
 - (NSUInteger)bufferingState;
+- (void)changePlaybackIndexBy:(NSInteger)arg1 andIgnoreChapters:(BOOL)arg2 andIgnoreElapsedTime:(BOOL)arg3;
 - (void)changePlaybackIndexBy:(NSInteger)arg1 andIgnoreChapters:(BOOL)arg2;
 - (void)changePlaybackIndexBy:(NSInteger)arg1;
 - (id)chapterAndArtworkTimesForItem:(id)arg1;
@@ -160,9 +178,10 @@
 - (void)endTickTimer;
 - (void)endUsingVideoLayer;
 - (void)ensureHasAVController;
-- (void)fadeOutForQuit;
+- (BOOL)fadeOutForQuit;
 - (id)feeder;
 - (void)feederChangedContents:(id)arg1;
+- (NSInteger)feederMode;
 - (BOOL)forceRestartPlaybackIfNecessary;
 - (BOOL)handlingRemoteEvent;
 - (id)init;
@@ -180,10 +199,13 @@
 - (void)playChapterTimeMarkerAtIndex:(NSUInteger)arg1;
 - (void)playItemAtIndex:(NSUInteger)arg1 forceRestart:(BOOL)arg2;
 - (void)playItemAtIndex:(NSUInteger)arg1;
+- (NSInteger)playbackMode;
 - (float)rate;
 - (void)reloadFeederWithStartIndex:(NSUInteger)arg1;
 - (double)repeatGap;
 - (NSUInteger)repeatType;
+- (void)restorePreviousFeederState;
+- (void)saveCurrentFeederState;
 - (void)setAlwaysPlayWheneverPossible:(BOOL)arg1;
 - (void)setAutoPlayWhenLikelyToKeepUp:(BOOL)arg1;
 - (void)setClosedCaptioningEnabled:(BOOL)arg1;
@@ -193,22 +215,31 @@
 - (void)setDisplayOverridePlaybackState:(NSUInteger)arg1;
 - (void)setEQPreset:(NSInteger)arg1;
 - (void)setFeeder:(id)arg1;
+- (void)setFeederMode:(NSInteger)arg1;
 - (void)setNextFadeOutDuration:(double)arg1;
 - (void)setPlaybackIndex:(NSInteger)arg1;
+- (void)setPlaybackMode:(NSInteger)arg1;
 - (void)setRate:(float)arg1;
 - (void)setRepeatGap:(double)arg1;
 - (void)setRepeatType:(NSUInteger)arg1;
 - (void)setShuffleType:(NSUInteger)arg1;
+- (void)setStopAtEnd:(BOOL)arg1;
 - (void)setSubtitlesEnabled:(BOOL)arg1;
 - (void)setVolume:(float)arg1;
 - (BOOL)shouldDisplayAsPlaying;
 - (NSUInteger)shuffleType;
+- (void)skipToPlayableEnd;
+- (void)skipToPlayableStart;
 - (NSUInteger)state;
+- (BOOL)stopAtEnd;
 - (BOOL)subtitlesEnabled;
 - (id)subtitlesRecipient;
 - (void)switchToAudioPlayback:(BOOL)arg1;
 - (void)switchToVideoPlayback:(BOOL)arg1;
+- (double)timeOfPlayableEnd;
+- (double)timeOfPlayableStart;
 - (void)togglePlayback;
+- (void)updateBookkeepingNow;
 - (id)videoLayer;
 - (float)volume;
 - (id)volumeController;

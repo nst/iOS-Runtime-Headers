@@ -2,22 +2,24 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MediaVolumeSlider, UIPushButton, MPItem;
+@class UILabel, MPItem, MPButton, MediaVolumeSlider;
 
 @interface MPTransportControls : UIView {
     unsigned int _forVideo : 1;
     unsigned int _paused : 1;
-    UIPushButton *_alternatesButton;
-    UIPushButton *_bookmarkButton;
-    UIPushButton *_chaptersButton;
+    MPButton *_alternatesButton;
+    MPButton *_bookmarkButton;
+    MPButton *_chaptersButton;
     NSUInteger _desiredParts;
+    MPButton *_devicePickerButton;
     NSUInteger _disabledParts;
-    UIPushButton *_emailButton;
+    MPButton *_emailButton;
     NSUInteger _heldPart;
     MPItem *_item;
-    UIPushButton *_nextButton;
-    UIPushButton *_playButton;
-    UIPushButton *_previousButton;
+    MPButton *_nextButton;
+    MPButton *_playButton;
+    MPButton *_previousButton;
+    UILabel *_routeNameLabel;
     id _target;
     NSUInteger _visibleParts;
     MediaVolumeSlider *_volumeSlider;
@@ -33,6 +35,8 @@
 - (void)_alternateTypesChangedNotification:(id)arg1;
 - (NSUInteger)_applyDesiredPartsToParts:(NSUInteger)arg1;
 - (void)_applyDesiredPartsWithAnimation:(BOOL)arg1;
+- (void)_availableRoutesChangedNotification:(id)arg1;
+- (id)_buttonForPart:(NSUInteger)arg1;
 - (id)_buttonImageForPart:(NSUInteger)arg1;
 - (id)_createButtonForPart:(NSUInteger)arg1;
 - (void)_handleHoldForPart:(NSUInteger)arg1;
@@ -45,7 +49,10 @@
 - (void)_updateEnabledStates:(BOOL)arg1;
 - (void)_validityChangedNotification:(id)arg1;
 - (void)buttonDown:(id)arg1;
+- (void)buttonHeld:(id)arg1;
+- (void)buttonHoldReleased:(id)arg1;
 - (void)buttonUp:(id)arg1;
+- (id)createRouteNameLabel;
 - (id)createVolumeSlider;
 - (void)dealloc;
 - (NSUInteger)desiredParts;
@@ -66,8 +73,6 @@
 - (void)setVisibleParts:(NSUInteger)arg1;
 - (id)target;
 - (void)updateVolumeHUDVisibility;
-- (void)viewHandleTouchPause:(id)arg1 isDown:(BOOL)arg2;
-- (double)viewTouchPauseThreshold:(id)arg1;
 - (NSUInteger)visibleParts;
 
 @end

@@ -9,14 +9,14 @@
 + (id)tokens;
 + (id)tokensWithXlPtgs:(struct ChVector<XlPtg*> { struct XlPtg {} **x1; struct XlPtg {} **x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; }*)arg1;
 
-- (void)addXlPtg:(struct XlPtg { struct ChVector<ChBYTE*> {} *x1; struct ChVector<ChUINT4> {} *x2; NSInteger x3; NSInteger x4; }*)arg1;
+- (void)addXlPtg:(struct XlPtg { struct ChVector<ChBYTE*> {} *x1; struct ChVector<long unsigned int> {} *x2; NSInteger x3; NSInteger x4; }*)arg1;
 - (NSUInteger)count;
 - (void)dealloc;
 - (void)deleteXlPtgs;
 - (id)init;
 - (id)initWithXlPtgs:(struct ChVector<XlPtg*> { struct XlPtg {} **x1; struct XlPtg {} **x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; }*)arg1;
 - (void)setXlPtgs:(struct ChVector<XlPtg*> { struct XlPtg {} **x1; struct XlPtg {} **x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; }*)arg1;
-- (struct XlPtg { struct ChVector<ChBYTE*> {} *x1; struct ChVector<ChUINT4> {} *x2; NSInteger x3; NSInteger x4; }*)xlPtgAtIndex:(NSUInteger)arg1;
+- (struct XlPtg { struct ChVector<ChBYTE*> {} *x1; struct ChVector<long unsigned int> {} *x2; NSInteger x3; NSInteger x4; }*)xlPtgAtIndex:(NSUInteger)arg1;
 - (struct ChVector<XlPtg*> { struct XlPtg {} **x1; struct XlPtg {} **x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; }*)xlPtgs;
 
 @end

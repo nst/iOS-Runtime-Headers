@@ -68,6 +68,8 @@
     } _visibleRows;
 }
 
++ (id)standardTableWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+
 - (void)_addSubview:(id)arg1 atTop:(BOOL)arg2;
 - (void)_adjustCountLabel;
 - (void)_adjustExtraSeparators;
@@ -103,6 +105,7 @@
 - (NSInteger)_removeFromVisibleRows:(id)arg1;
 - (void)_reorderPositionChangedForCell:(id)arg1;
 - (void)_restoreTableStateAfterAnimation;
+- (id)_resuableObjectForTableCell:(id)arg1;
 - (void)_resumeReloads;
 - (NSInteger)_rowForTableCell:(id)arg1;
 - (void)_saveTableStateBeforeAnimationForRow:(NSInteger)arg1;
@@ -158,7 +161,6 @@
 - (void)drawExtraSeparator:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)enableRowDeletion:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)enableRowDeletion:(BOOL)arg1;
-- (id)existingViewAtColumn:(NSInteger)arg1 row:(NSInteger)arg2;
 - (void)floatArray:(id)arg1 getValueCount:(NSInteger*)arg2 gapIndexCount:(NSInteger*)arg3;
 - (BOOL)floatArray:(id)arg1 loadValues:(float*)arg2 count:(NSInteger)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfCellAtColumn:(NSInteger)arg1 row:(NSInteger)arg2;
@@ -168,6 +170,7 @@
 - (BOOL)highlightRow:(NSInteger)arg1;
 - (void)highlightView:(id)arg1 state:(BOOL)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertRows:(id)arg1 deleteRows:(id)arg2 reloadRows:(id)arg3;
 - (BOOL)isRowDeletionEnabled;
@@ -224,9 +227,6 @@
 - (NSInteger)swipe:(NSInteger)arg1 withEvent:(struct __GSEvent { }*)arg2;
 - (id)tableColumnWithIdentifier:(id)arg1;
 - (id)tableColumns;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)updateDisclosures;
 - (BOOL)validateDataSource;
 - (id)viewAtColumn:(NSInteger)arg1 row:(NSInteger)arg2;

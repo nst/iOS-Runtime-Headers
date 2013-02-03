@@ -12,6 +12,7 @@
 
 + (id)accountInfoValueForKey:(id)arg1 value:(id)arg2;
 + (id)accountTypeString;
++ (id)basicAccountProperties;
 + (id)configuredSyncAccountName;
 + (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (id)deliveryHostName;
@@ -50,6 +51,7 @@
 - (void)setUsername:(id)arg1;
 - (void)startListeningForNotifications;
 - (void)stopListeningForNotifications;
+- (id)syncStoreIdentifier;
 - (void)unscheduleSource:(id)arg1;
 
 @end

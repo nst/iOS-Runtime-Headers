@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSMutableArray;
 
-@interface GMMTrip : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMTrip : PBCodable {
     NSMutableArray *_routes;
 }
 
@@ -19,13 +14,14 @@
 - (void)addRoute:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)description;
 - (id)init;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)routeAtIndex:(NSUInteger)arg1;
 - (id)routes;
 - (NSInteger)routesCount;
-- (void)setRoute:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setRoute:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setRoutes:(id)arg1;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

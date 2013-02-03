@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UIView, UIColor;
+@class NSMutableArray, UIColor;
 
 @interface UISegmentedControl : UIControl <NSCoding> {
     struct { 
@@ -18,13 +18,14 @@
         unsigned int mouseInside : 1; 
         unsigned int autosizeToFitSegments : 1; 
         unsigned int isSizingToFit : 1; 
+        unsigned int autosizeText : 1; 
+        unsigned int transparentBackground : 1; 
+    NSInteger _barStyle;
     id _delegate;
-    UIView *_highlightIndicator;
     NSInteger _highlightedSegment;
     } _segmentedControlFlags;
     NSMutableArray *_segments;
     NSInteger _selectedSegment;
-    UIView *_selectionIndicator;
     UIColor *_tintColor;
 }
 
@@ -42,14 +43,15 @@
 - (void)_commonSegmentedControlInit;
 - (void)_createSegmentAtIndex:(NSInteger)arg1 position:(NSUInteger)arg2 withInfo:(id)arg3;
 - (void)_insertSegment:(NSInteger)arg1 withInfo:(id)arg2 animated:(BOOL)arg3;
-- (void)_populateArchivedSubviews:(id)arg1;
+- (struct CGPoint { float x1; float x2; })_offsetForMiniBarState:(BOOL)arg1;
 - (void)_removeSegmentAnimationFinished:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)_setAutosizeText:(BOOL)arg1;
 - (void)addSegmentWithTitle:(id)arg1;
+- (NSInteger)barStyle;
 - (struct CGSize { float x1; float x2; })contentOffsetForSegment:(NSUInteger)arg1;
 - (struct CGSize { float x1; float x2; })contentOffsetForSegmentAtIndex:(NSUInteger)arg1;
 - (NSInteger)controlSize;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)highlightSegment:(NSInteger)arg1;
 - (id)imageForSegment:(NSUInteger)arg1;
@@ -84,6 +86,7 @@
 - (NSInteger)selectedSegmentIndex;
 - (void)setAlwaysNotifiesDelegateOfSegmentClicks:(BOOL)arg1;
 - (void)setAlwaysToggleForTwoSegments:(BOOL)arg1;
+- (void)setBarStyle:(NSInteger)arg1;
 - (void)setContentOffset:(struct CGSize { float x1; float x2; })arg1 forSegment:(NSUInteger)arg2;
 - (void)setContentOffset:(struct CGSize { float x1; float x2; })arg1 forSegmentAtIndex:(NSUInteger)arg2;
 - (void)setControlSize:(NSInteger)arg1;
@@ -104,6 +107,7 @@
 - (void)setTintColor:(id)arg1;
 - (void)setTitle:(id)arg1 forSegment:(NSUInteger)arg2;
 - (void)setTitle:(id)arg1 forSegmentAtIndex:(NSUInteger)arg2;
+- (void)setTransparentBackground:(BOOL)arg1;
 - (void)setWidth:(float)arg1 forSegment:(NSUInteger)arg2;
 - (void)setWidth:(float)arg1 forSegmentAtIndex:(NSUInteger)arg2;
 - (BOOL)shouldTrack;
@@ -115,7 +119,8 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)updateHighlight;
+- (BOOL)transparentBackground;
+- (void)updateForMiniBarState:(BOOL)arg1;
 - (float)widthForSegment:(NSUInteger)arg1;
 - (float)widthForSegmentAtIndex:(NSUInteger)arg1;
 

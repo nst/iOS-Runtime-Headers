@@ -2,22 +2,12 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class DADSearchQuery;
-
-@interface ASGALSearchTask : ASTask {
-    DADSearchQuery *_query;
+@interface ASGALSearchTask : ASSearchTask {
 }
 
-@property(readonly) DADSearchQuery *query; /* unknown property attribute: V_query */
-
-- (id)command;
-- (void)dealloc;
 - (void)finishWithError:(id)arg1;
-- (id)initWithQuery:(id)arg1;
 - (void)performTask;
 - (BOOL)processContext:(id)arg1;
-- (id)query;
 - (id)requestBody;
-- (NSInteger)taskStatusForExchangeStatus:(NSInteger)arg1;
 
 @end

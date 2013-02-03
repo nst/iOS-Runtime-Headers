@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSMutableArray;
 
-@interface GMMAnnotationProperties : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMAnnotationProperties : PBCodable {
     NSInteger _annotationHeightFractionE6;
     BOOL _hasAnnotationHeightFractionE6;
     BOOL _hasHorizonHeightFractionE6;
@@ -18,15 +13,16 @@
 }
 
 @property(retain) NSMutableArray *links; /* unknown property attribute: V_links */
-@property BOOL hasAnnotationHeightFractionE6; /* unknown property attribute: V_hasAnnotationHeightFractionE6 */
+@property(readonly) BOOL hasAnnotationHeightFractionE6; /* unknown property attribute: V_hasAnnotationHeightFractionE6 */
 @property NSInteger annotationHeightFractionE6; /* unknown property attribute: V_annotationHeightFractionE6 */
-@property BOOL hasHorizonHeightFractionE6; /* unknown property attribute: V_hasHorizonHeightFractionE6 */
+@property(readonly) BOOL hasHorizonHeightFractionE6; /* unknown property attribute: V_hasHorizonHeightFractionE6 */
 @property NSInteger horizonHeightFractionE6; /* unknown property attribute: V_horizonHeightFractionE6 */
 @property(readonly) NSInteger linksCount;
 
 - (void)addLink:(id)arg1;
 - (NSInteger)annotationHeightFractionE6;
 - (void)dealloc;
+- (id)description;
 - (BOOL)hasAnnotationHeightFractionE6;
 - (BOOL)hasHorizonHeightFractionE6;
 - (NSInteger)horizonHeightFractionE6;
@@ -34,13 +30,11 @@
 - (id)linkAtIndex:(NSUInteger)arg1;
 - (id)links;
 - (NSInteger)linksCount;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAnnotationHeightFractionE6:(NSInteger)arg1;
-- (void)setHasAnnotationHeightFractionE6:(BOOL)arg1;
-- (void)setHasHorizonHeightFractionE6:(BOOL)arg1;
 - (void)setHorizonHeightFractionE6:(NSInteger)arg1;
 - (void)setLink:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setLinks:(id)arg1;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

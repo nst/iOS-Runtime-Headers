@@ -2,55 +2,44 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISItemInfoDataSource, ISRemoteObserver, NSMutableArray;
+@class NSArray, <ISUpdateQueueDelegate>, NSString;
 
 @interface ISUpdateQueue : NSObject {
-    unsigned int _fetching : 1;
-    unsigned int _haveUnreadUpdates : 1;
-    unsigned int _hasFetchedUpdates : 1;
-    unsigned int _markAsReadAfterFetch : 1;
-    id _delegate;
-    ISItemInfoDataSource *_itemInfoDataSource;
-    ISRemoteObserver *_remoteObserver;
-    NSMutableArray *_updates;
+    NSInteger _checkQueueCount;
+    <ISUpdateQueueDelegate> *_delegate;
+    NSString *_identifier;
+    NSInteger _loadingCount;
+    NSInteger _state;
+    NSArray *_updates;
 }
 
-@property(retain,readonly) NSArray *updates; /* unknown property attribute: V_updates */
-@property(retain) ISItemInfoDataSource *itemInfoDataSource; /* unknown property attribute: V_itemInfoDataSource */
-@property id delegate; /* unknown property attribute: V_delegate */
-@property(readonly) BOOL fetchedUpdates;
-@property(getter=isFetching,readonly) BOOL fetching;
-@property(readonly) BOOL haveUnreadUpdates;
+@property(retain) NSArray *updates; /* unknown property attribute: V_updates */
+@property NSInteger state; /* unknown property attribute: V_state */
+@property(copy) NSString *identifier; /* unknown property attribute: V_identifier */
+@property <ISUpdateQueueDelegate> *delegate; /* unknown property attribute: V_delegate */
 
 + (void)_externalApplicationChange:(id)arg1;
-+ (BOOL)allowQueueCheck;
-+ (id)checkTriggerApplicationName;
-+ (double)checkTriggerDelay;
-+ (BOOL)haveScheduledQueueChecks;
-+ (void)scheduleQueueCheckAfterDelay:(double)arg1;
 + (void)setWatchesForExternalChanges:(BOOL)arg1;
 
-- (id)_dateOfNewestUpdate;
-- (void)_loadFromDaemon;
-- (BOOL)_markAsRead;
-- (void)_queueChanged:(id)arg1;
-- (void)_queueError:(id)arg1;
-- (NSUInteger)_updateCountFromDaemon:(NSUInteger)arg1 forClient:(NSUInteger)arg2;
-- (id)_updateFromDaemon:(NSUInteger)arg1 atIndex:(NSUInteger)arg2 forClient:(NSUInteger)arg3;
-- (BOOL)beginWatchingDaemonForObserver:(id)arg1;
+- (void)_beginLoading;
+- (void)_daemonExited:(id)arg1;
+- (void)_endLoadingWithState:(NSInteger)arg1;
+- (void)_mainThreadDaemonExited:(id)arg1;
+- (void)_registerWithDaemon;
+- (void)_sendErrorToDelegate:(id)arg1;
+- (void)_updateCheckFailed:(id)arg1;
+- (void)_updatesChanged:(id)arg1;
 - (BOOL)checkQueue;
 - (void)dealloc;
 - (id)delegate;
-- (void)endWatchingDaemonForObserver:(id)arg1 afterDeath:(BOOL)arg2;
-- (BOOL)fetchedUpdates;
-- (BOOL)haveUnreadUpdates;
-- (id)initWithDataSource:(id)arg1;
-- (BOOL)isFetching;
-- (id)itemInfoDataSource;
-- (BOOL)markAllAsRead;
-- (BOOL)reallyCheckQueue;
+- (id)identifier;
+- (id)init;
+- (id)initWithIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setItemInfoDataSource:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setState:(NSInteger)arg1;
+- (void)setUpdates:(id)arg1;
+- (NSInteger)state;
 - (id)updates;
 
 @end

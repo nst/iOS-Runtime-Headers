@@ -4,12 +4,15 @@
 
 @class ABMembersController;
 
-@interface ABMembersViewController : ABAbstractViewController <ABNewPersonViewControllerDelegate, ABMembersControllerDelegate> {
+@interface ABMembersViewController : ABAbstractViewController <ABNewPersonViewControllerDelegate, ABMembersControllerDelegate, ABPropertyEditorViewControllerDelegate, ABViewControllerBannerViewProtocol, ABPersonNameDisplayChangeDelegate> {
     ABMembersController *_membersController;
 }
 
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; float x5; NSInteger x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; }*)arg1;
 - (void)_refreshAccount;
+- (NSInteger)abViewControllerType;
 - (void)addPerson:(id)arg1;
+- (void)applicationDidResume;
 - (BOOL)canHandleSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
 - (void)cancel:(id)arg1;
 - (void)cancelSearching:(id)arg1;
@@ -18,23 +21,32 @@
 - (BOOL)dismissPropertyEditorViewController:(id)arg1 afterEditingConfirmed:(BOOL)arg2;
 - (id)initWithModel:(id)arg1;
 - (BOOL)isNavigationButtonEnabled:(NSInteger)arg1;
+- (void)loadState;
 - (void)loadView;
 - (void)membersController:(id)arg1 needsTitleUpdate:(id)arg2;
+- (void)membersController:(id)arg1 needsTitleViewUpdate:(id)arg2;
 - (id)membersController;
 - (void)membersControllerWillEndSearching:(id)arg1;
 - (void)membersControllerWillStartSearching:(id)arg1;
 - (id)model;
 - (void)modelDatabaseChange:(id)arg1;
 - (void)modelSelectedPersonWasDeleted:(id)arg1;
+- (void)nameDisplayChanged;
 - (BOOL)newContactViewControllerCompleted:(id)arg1 withNewPerson:(void*)arg2;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
 - (void)personWasSelected:(void*)arg1;
-- (void)showCardForPerson:(void*)arg1 animate:(BOOL)arg2;
+- (void)propertyEditorViewController:(id)arg1 confirmed:(BOOL)arg2 afterEditingProperty:(NSInteger)arg3;
+- (void)propertyEditorViewController:(id)arg1 confirmedAfterEditingName:(BOOL)arg2;
+- (void)setBannerTitle:(id)arg1 value:(id)arg2;
+- (BOOL)showCardForPerson:(void*)arg1 animate:(BOOL)arg2;
+- (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3;
 - (void)showInsertEditorForPerson:(void*)arg1;
 - (void)updateNavigationButtons;
 - (void)updateNavigationButtonsInSearchMode:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

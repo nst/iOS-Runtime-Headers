@@ -14,13 +14,15 @@
 
 @property(copy) NSString *name;
 @property(readonly) NSString *type;
+@property BOOL cachesInputImage;
 @property(getter=isEnabled) BOOL enabled;
 
 + (id)filterTypes;
 + (id)filterWithName:(id)arg1;
 + (id)filterWithType:(id)arg1;
 
-- (void*)CA_copyRenderValue;
+- (struct Object { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (BOOL)cachesInputImage;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)didChangeValueForKey:(id)arg1;
@@ -30,6 +32,7 @@
 - (BOOL)isEnabled;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)name;
+- (void)setCachesInputImage:(BOOL)arg1;
 - (void)setDefaults;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setName:(id)arg1;

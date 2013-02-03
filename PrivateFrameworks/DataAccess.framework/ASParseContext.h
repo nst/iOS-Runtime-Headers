@@ -12,6 +12,7 @@
     NSInteger _dataGeneration;
     long long _expectedTotalBytesCount;
     NSUInteger _lastFoundBufferWithoutLineEnding;
+    BOOL _lastLookedAtBufferHadStringEndPrefix;
     NSFileHandle *_logFileHandle;
     NSString *_logFilePath;
     BOOL _moreDataExpected;

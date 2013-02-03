@@ -9,6 +9,8 @@
     OADTableTextStyle *mTextStyle;
 }
 
++ (id)defaultStyle;
+
 - (id)cellStyle;
 - (void)dealloc;
 - (void)setCellStyle:(id)arg1;

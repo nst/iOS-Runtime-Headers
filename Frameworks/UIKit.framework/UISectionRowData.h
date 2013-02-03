@@ -12,6 +12,8 @@
     float *_rowHeights;
     float *_rowOffsets;
     float _sectionHeight;
+    float _sectionOffset;
+    BOOL _sectionOffsetValid;
     BOOL _valid;
 }
 
@@ -24,8 +26,10 @@
 - (void)deleteRowAtIndex:(NSInteger)arg1;
 - (void)insertRowAtIndex:(NSInteger)arg1 inSection:(NSInteger)arg2 rowHeight:(float)arg3 tableViewRowData:(id)arg4;
 - (void)invalidate;
+- (void)invalidateSectionOffset;
 - (void)refreshWithSection:(NSInteger)arg1 tableView:(id)arg2 tableViewRowData:(id)arg3;
 - (NSInteger)sectionLocationForReorderedRow:(NSInteger)arg1;
 - (NSInteger)sectionLocationForRow:(NSInteger)arg1;
+- (void)setHeight:(float)arg1 forRow:(NSInteger)arg2;
 
 @end

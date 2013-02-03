@@ -10,9 +10,11 @@
 + (struct CGImage { }*)createThumbnailOfImage:(struct CGImage { }*)arg1 format:(NSInteger)arg2 atPath:(id)arg3;
 + (id)photosDirectory;
 + (id)sharedPhotoLibrary;
++ (id)sharedPhotoLibraryIfExists;
 
 - (void)_cameraAlbumContentsChanged:(id)arg1;
 - (id)albums;
+- (struct CGImage { }*)createCGImageForDulcimerImage:(id)arg1 format:(NSInteger)arg2 copyImageData:(BOOL)arg3;
 - (struct CGImage { }*)createCGImageForDulcimerImage:(id)arg1 format:(NSInteger)arg2;
 - (void)dealloc;
 - (id)imageForFormat:(NSInteger)arg1 forImage:(id)arg2;

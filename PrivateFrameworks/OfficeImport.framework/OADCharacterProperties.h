@@ -4,7 +4,7 @@
 
 @class OADHyperlink, NSArray, OADStroke, OADUnderline, NSString, OADColor, OADFill;
 
-@interface OADCharacterProperties : OADProperties {
+@interface OADCharacterProperties : OADProperties <OADEffectsParent> {
     NSInteger mBaseline;
     NSString *mBidiFont;
     NSInteger mCaps;
@@ -48,7 +48,7 @@
     OADUnderline *mUnderline;
 }
 
-- (NSInteger)baseline;
+- (NSUInteger)baseline;
 - (id)bidiFont;
 - (NSInteger)caps;
 - (id)clickHyperlink;
@@ -94,7 +94,7 @@
 - (id)latinFont;
 - (double)opacity;
 - (id)secondaryAsciiFont;
-- (void)setBaseline:(NSInteger)arg1;
+- (void)setBaseline:(NSUInteger)arg1;
 - (void)setBidiFont:(id)arg1;
 - (void)setCaps:(NSInteger)arg1;
 - (void)setClickHyperlink:(id)arg1;

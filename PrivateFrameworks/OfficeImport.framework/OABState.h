@@ -14,12 +14,12 @@
 - (Class)client;
 - (id)colorPalette;
 - (void)dealloc;
-- (id)drawableForShapeId:(NSInteger)arg1;
-- (struct EshContent { }*)eshContentForId:(NSInteger)arg1;
+- (id)drawableForShapeId:(NSUInteger)arg1;
+- (struct EshContent { }*)eshContentForId:(NSUInteger)arg1;
 - (id)init;
 - (id)initWithClient:(Class)arg1;
 - (void)setColorPalette:(id)arg1;
-- (void)setDrawable:(id)arg1 forShapeId:(NSInteger)arg2;
-- (void)setEshContent:(struct EshContent { }*)arg1 forId:(NSInteger)arg2;
+- (void)setDrawable:(id)arg1 forShapeId:(NSUInteger)arg2;
+- (void)setEshContent:(struct EshContent { }*)arg1 forId:(NSUInteger)arg2;
 
 @end

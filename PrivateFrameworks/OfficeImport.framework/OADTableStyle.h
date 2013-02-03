@@ -2,15 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray, NSString, OADTablePartStyle, OADFill;
+@class OADTablePartStyle, NSString, OADTableBackground;
 
 @interface OADTableStyle : NSObject {
+    OADTableBackground *mBackground;
     OADTablePartStyle *mBand1HorzStyle;
     OADTablePartStyle *mBand1VertStyle;
     OADTablePartStyle *mBand2HorzStyle;
     OADTablePartStyle *mBand2VertStyle;
-    NSArray *mEffects;
-    OADFill *mFill;
     OADTablePartStyle *mFirstColumnStyle;
     OADTablePartStyle *mFirstRowStyle;
     NSString *mId;
@@ -24,13 +23,12 @@
     OADTablePartStyle *mWholeTableStyle;
 }
 
+- (id)background;
 - (id)band1HorzStyle;
 - (id)band1VertStyle;
 - (id)band2HorzStyle;
 - (id)band2VertStyle;
 - (void)dealloc;
-- (id)effects;
-- (id)fill;
 - (id)firstColumnStyle;
 - (id)firstRowStyle;
 - (id)id;
@@ -40,12 +38,11 @@
 - (id)northEastStyle;
 - (id)northWestStyle;
 - (id)partStyle:(NSInteger)arg1;
+- (void)setBackground:(id)arg1;
 - (void)setBand1HorzStyle:(id)arg1;
 - (void)setBand1VertStyle:(id)arg1;
 - (void)setBand2HorzStyle:(id)arg1;
 - (void)setBand2VertStyle:(id)arg1;
-- (void)setEffects:(id)arg1;
-- (void)setFill:(id)arg1;
 - (void)setFirstColumnStyle:(id)arg1;
 - (void)setFirstRowStyle:(id)arg1;
 - (void)setId:(id)arg1;

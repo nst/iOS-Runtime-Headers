@@ -11,6 +11,5 @@
 - (BOOL)hasCustomLayout;
 - (id)initWithEditModel:(id)arg1;
 - (BOOL)setEditModel:(id)arg1;
-- (NSInteger)viewToDiscloseForModel:(id)arg1;
 
 @end

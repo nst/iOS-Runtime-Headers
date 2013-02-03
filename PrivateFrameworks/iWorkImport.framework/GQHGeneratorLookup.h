@@ -5,6 +5,6 @@
 @interface GQHGeneratorLookup : NSObject {
 }
 
-+ (Class)generatorForUti:(struct __CFString { }*)arg1;
++ (Class)generatorForApplication:(NSInteger)arg1;
 
 @end

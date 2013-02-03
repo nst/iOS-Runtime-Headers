@@ -2,78 +2,87 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSMutableArray, UIView, ABSearchHelper, ABBannerView, NSString, <ABMembersControllerDelegate>;
+@class ABBannerView, UISearchDisplayController, UIViewController, UIView, NSMutableArray, NSOperationQueue, UISearchBar, NSIndexPath, <ABMembersControllerDelegate>;
 
-@interface ABMembersController : ABContentController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, ABSearchHelperDelegate> {
-    NSMutableArray *_afterTransitionSublayers;
-    NSString *_bannerTitle;
-    NSString *_bannerValue;
+@interface ABMembersController : ABContentController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UISearchDisplayDelegate, ABLocalSearchOperationDelegate, UISearchBarDelegate> {
+    void *_backgroundAddressBook;
     ABBannerView *_bannerView;
     NSUInteger _cellsCreated;
     struct __CFDictionary { } *_displayableSectionHeaderToSectionHeader;
     struct __CFDictionary { } *_displayableSectionIndexToSectionIndex;
-    NSMutableArray *_flipTransitionSublayers;
-    NSUInteger _foldIndex;
-    BOOL _loadedFromPhoneCall;
     NSUInteger _memberCount;
     <ABMembersControllerDelegate> *_membersControllerDelegate;
-    BOOL _pendingSorting;
-    ABSearchHelper *_searchHelper;
+    NSOperationQueue *_operationQueue;
+    UIViewController *_parentViewController;
+    BOOL _resumeForPhoneApp;
+    UISearchBar *_searchBar;
+    UISearchDisplayController *_searchController;
+    struct __CFArray { } *_searchResults;
+    NSUInteger _searchSequenceNumber;
     struct __CFDictionary { } *_sectionHeaderToDisplayableSectionHeader;
     struct __CFDictionary { } *_sectionHeaderToSortingIndex;
     NSMutableArray *_sectionIndexTitles;
     struct __CFDictionary { } *_sectionIndexToDisplayableSectionIndex;
-    void *_selectedPersonFromSearch;
+    NSIndexPath *_selectedIndexPath;
+    BOOL _shouldRestoreScrollPosition;
     BOOL _showingCardFromSearch;
     UIView *_tableAccessoryView;
+    BOOL _wasKeyboardShowing;
 }
 
 - (void)_deselectAllRowsWithAnimation;
-- (void)_enableSearching;
-- (void)_setSearchingEnabled:(BOOL)arg1;
+- (void)_reselectLastSelectedCellIfNeeded;
+- (void)_searchForWords:(id)arg1;
+- (void*)_selectedPerson;
+- (void)_setSelectedIndexPath:(id)arg1;
 - (void)_updateCountString;
-- (void)_updateNoContactsView;
+- (void)_updateEmptyTableViewAnimated:(BOOL)arg1;
+- (void)_updateNoContactsViewAnimated:(BOOL)arg1;
 - (id)accessoryView;
 - (void)cancelSearching:(id)arg1;
 - (void)cancelSearchingAnimated:(BOOL)arg1;
 - (NSUInteger)cellsCreated;
 - (id)contentView;
+- (void*)copyBackgroundAddressBook;
 - (void)createAllDisplayableSectionIndexAndHeaderCaches;
+- (id)currentTableView;
 - (void)dealloc;
 - (void)deselectAllRowsWithAnimation:(BOOL)arg1;
 - (id)displayableSectionHeaderFromSectionHeader:(id)arg1;
 - (id)displayableSectionIndexFromSectionIndex:(id)arg1;
 - (void)displayedMembersListChanged;
-- (void)flipToNewSorting:(NSUInteger)arg1;
-- (void)foldNext;
+- (id)initWithContentControllerDelegate:(id)arg1 addressBook:(void*)arg2;
 - (BOOL)isSearching;
 - (void)loadState;
-- (id)navigationBarTitleWithModel:(id)arg1 searchResults:(struct __CFArray { }*)arg2;
+- (void)localSearchOperation:(id)arg1 completedWithCopyOfMatchingRecordIDs:(struct __CFArray { }*)arg2;
 - (id)navigationBarTitleWithModel:(id)arg1;
 - (NSInteger)numberOfSectionsInTableView:(id)arg1;
-- (void)playClick;
+- (id)operationQueue;
 - (void)relayoutAccessoryView;
 - (void)restoreScrollPosition;
-- (void)saveScrollPosition;
+- (void)resume;
+- (void)saveScrollPosition:(void*)arg1;
+- (void)saveState:(void*)arg1;
 - (BOOL)scrollMemberVisible:(void*)arg1;
 - (void)scrollTableViewToSearchField:(id)arg1 animated:(BOOL)arg2;
 - (void)scrollTableViewToSearchFieldIfNotAlreadyScrolled;
-- (struct CGPoint { float x1; float x2; })scroller:(id)arg1 adjustSmoothScrollEnd:(struct CGPoint { float x1; float x2; })arg2 velocity:(struct CGSize { float x1; float x2; })arg3;
-- (void)searchHelper:(id)arg1 didSelectPerson:(void*)arg2 withSearchResults:(struct __CFArray { }*)arg3;
-- (void)searchHelper:(id)arg1 didSelectSearchResults:(struct __CFArray { }*)arg2;
-- (void)searchHelperWillEndSearching:(id)arg1;
-- (void)searchHelperWillStartSearching:(id)arg1;
+- (void)searchBarSearchButtonClicked:(id)arg1;
+- (void)searchBarTextDidBeginEditing:(id)arg1;
+- (void)searchDisplayController:(id)arg1 didLoadSearchResultsTableView:(id)arg2;
+- (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
+- (void)searchDisplayControllerWillBeginSearch:(id)arg1;
+- (void)searchDisplayControllerWillEndSearch:(id)arg1;
 - (struct __CFDictionary { }*)sectionHeaderSortingIndices;
 - (id)sectionIndexFromDisplayableSectionIndex:(id)arg1;
 - (id)sectionIndexTitlesForTableView:(id)arg1;
-- (void)segmentedControl:(id)arg1 selectedSegmentChanged:(NSInteger)arg2;
 - (id)selectedCell;
-- (void)setAllowsSearching:(BOOL)arg1;
 - (void)setBannerTitle:(id)arg1 value:(id)arg2;
 - (void)setCellsCreated:(NSUInteger)arg1;
 - (void)setMembersControllerDelegate:(id)arg1;
+- (void)setParentViewController:(id)arg1;
 - (BOOL)shouldShowIndex;
-- (void)showCardForPerson:(void*)arg1 animated:(BOOL)arg2;
+- (BOOL)showCardForPerson:(void*)arg1 animate:(BOOL)arg2;
+- (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3;
 - (void)stopScrolling;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -82,8 +91,9 @@
 - (NSInteger)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(NSInteger)arg3;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(NSInteger)arg2;
 - (id)tableView;
-- (void)transitionViewDidComplete:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

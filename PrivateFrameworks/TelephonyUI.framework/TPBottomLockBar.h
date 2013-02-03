@@ -37,7 +37,7 @@
 - (void)knobDragged:(float)arg1;
 - (float)knobTrackInsetLeft;
 - (id)labels;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)relock;
 - (id)representedObject;
 - (void)setDelegate:(id)arg1;

@@ -16,10 +16,15 @@
 + (NSInteger)styleTypeForNodeName:(const char *)arg1;
 
 - (void)dealloc;
+- (BOOL)hasValueForBoolProperty:(NSInteger)arg1 value:(BOOL*)arg2 wasOverriddenWithNull:(BOOL*)arg3;
 - (BOOL)hasValueForBoolProperty:(NSInteger)arg1 value:(BOOL*)arg2;
+- (BOOL)hasValueForDoubleProperty:(NSInteger)arg1 value:(double*)arg2 wasOverriddenWithNull:(BOOL*)arg3;
 - (BOOL)hasValueForDoubleProperty:(NSInteger)arg1 value:(double*)arg2;
+- (BOOL)hasValueForFloatProperty:(NSInteger)arg1 value:(float*)arg2 wasOverriddenWithNull:(BOOL*)arg3;
 - (BOOL)hasValueForFloatProperty:(NSInteger)arg1 value:(float*)arg2;
+- (BOOL)hasValueForIntProperty:(NSInteger)arg1 value:(NSInteger*)arg2 wasOverriddenWithNull:(BOOL*)arg3;
 - (BOOL)hasValueForIntProperty:(NSInteger)arg1 value:(NSInteger*)arg2;
+- (BOOL)hasValueForObjectProperty:(NSInteger)arg1 value:(id*)arg2 wasOverriddenWithNull:(BOOL*)arg3;
 - (BOOL)hasValueForObjectProperty:(NSInteger)arg1 value:(id*)arg2;
 - (BOOL)overridesBoolProperty:(NSInteger)arg1 value:(BOOL*)arg2;
 - (BOOL)overridesDoubleProperty:(NSInteger)arg1 value:(double*)arg2;

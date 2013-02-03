@@ -2,31 +2,39 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSMutableDictionary, NSLock, NSString;
+@class NSMutableDictionary, NSString, NSOperationQueue, NSLock;
 
 @interface CPDistributedMessagingCenter : NSObject {
+    NSOperationQueue *_asyncQueue;
     NSMutableDictionary *_callouts;
-    BOOL _isServer;
+    NSString *_centerName;
+    struct __CFMachPort { } *_invalidationPort;
     NSLock *_lock;
-    NSString *_name;
     NSString *_requiredEntitlement;
     NSUInteger _sendPort;
+    struct __CFRunLoopSource { } *_serverSource;
 }
 
 + (id)centerNamed:(id)arg1;
 
-- (BOOL)_dispatchMessageNamed:(id)arg1 userInfo:(id)arg2 auditToken:(struct { NSUInteger x1[8]; }*)arg3 reply:(id*)arg4;
+- (void)_dispatchMessageNamed:(id)arg1 userInfo:(id)arg2 reply:(id*)arg3 auditToken:(struct { NSUInteger x1[8]; }*)arg4;
 - (id)_initWithServerName:(id)arg1;
-- (BOOL)_sendMessage:(id)arg1 userInfo:(id)arg2 receiveReply:(id*)arg3;
+- (BOOL)_isTaskEntitled:(struct { NSUInteger x1[8]; }*)arg1;
+- (id)_requiredEntitlement;
+- (BOOL)_sendMessage:(id)arg1 userInfo:(id)arg2 receiveReply:(id*)arg3 error:(id*)arg4 toTarget:(id)arg5 selector:(SEL)arg6 context:(void*)arg7;
+- (BOOL)_sendMessage:(id)arg1 userInfoData:(id)arg2 oolKey:(id)arg3 oolData:(id)arg4 receiveReply:(id*)arg5 error:(id*)arg6;
 - (NSUInteger)_sendPort;
+- (void)_serverPortInvalidated;
 - (void)dealloc;
-- (BOOL)isTaskEntitled:(struct { NSUInteger x1[8]; }*)arg1;
 - (id)name;
 - (void)registerForMessageName:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)runServerOnCurrentThread;
 - (void)runServerOnCurrentThreadProtectedByEntitlement:(id)arg1;
+- (id)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2 error:(id*)arg3;
+- (void)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2 toTarget:(id)arg3 selector:(SEL)arg4 context:(void*)arg5;
 - (id)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2;
 - (BOOL)sendMessageName:(id)arg1 userInfo:(id)arg2;
+- (void)stopServer;
 - (void)unregisterForMessageName:(id)arg1;
 
 @end

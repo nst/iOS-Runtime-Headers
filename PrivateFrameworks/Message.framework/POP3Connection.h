@@ -46,8 +46,8 @@
 - (NSInteger)fetchMessages:(struct __CFArray { }*)arg1;
 - (NSInteger)getMessageNumbers:(const struct __CFArray {}**)arg1 andMessageIdsByNumber:(const struct __CFDictionary {}**)arg2;
 - (NSInteger)getMessageNumbers:(const struct __CFArray {}**)arg1 messageIdsByNumber:(const struct __CFDictionary {}**)arg2 numbersByMessageId:(const struct __CFDictionary {}**)arg3;
-- (void)getTop:(NSInteger)arg1 ofMessageNumber:(unsigned long)arg2 intoMutableData:(id)arg3;
-- (void)getTopOfMessageNumber:(unsigned long)arg1 intoMutableData:(id)arg2;
+- (NSInteger)getTop:(NSInteger)arg1 ofMessageNumber:(unsigned long)arg2 intoMutableData:(id)arg3;
+- (NSInteger)getTopOfMessageNumber:(unsigned long)arg1 intoMutableData:(id)arg2;
 - (id)idForMessageNumber:(NSInteger)arg1;
 - (id)init;
 - (NSInteger)list:(NSInteger)arg1;

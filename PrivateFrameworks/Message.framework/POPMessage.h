@@ -4,7 +4,7 @@
 
 @class NSData, NSString;
 
-@interface POPMessage : Message {
+@interface POPMessage : MailMessage {
     NSString *_accountURL;
     NSData *_messageData;
     BOOL _messageDataIsComplete;
@@ -16,8 +16,8 @@
 - (id)cachedAttributes;
 - (void)dealloc;
 - (id)headers;
+- (BOOL)messageData:(id*)arg1 messageSize:(NSUInteger*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
 - (id)messageData;
-- (id)messageDataIsComplete:(BOOL*)arg1 downloadIfNecessary:(BOOL)arg2;
 - (id)messageID;
 - (NSInteger)messageNumber;
 - (NSUInteger)messageSize;

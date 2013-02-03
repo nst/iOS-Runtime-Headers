@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CALayer;
+@class NSMutableArray, CALayer;
 
 @interface UIView : UIResponder <NSCoding, UITextEffectsOrdering> {
     struct { 
@@ -27,26 +27,35 @@
         unsigned int dontAnimate : 1; 
         unsigned int superLayerIsView : 1; 
         unsigned int layerKitPatternDrawing : 1; 
-        unsigned int coreSurfaceImage : 1; 
         unsigned int multipleTouchEnabled : 1; 
         unsigned int exclusiveTouch : 1; 
         unsigned int hasViewController : 1; 
         unsigned int needsDidAppearOrDisappear : 1; 
+        unsigned int gesturesEnabled : 1; 
+        unsigned int capturesDescendantTouches : 1; 
+        unsigned int deliversTouchesForGesturesToSuperview : 1; 
+        unsigned int chargeEnabled : 1; 
+        unsigned int skipsSubviewEnumeration : 1; 
     float _charge;
     id _gestureInfo;
+    NSMutableArray *_gestureRecognizers;
     CALayer *_layer;
     NSInteger _tag;
     id _tapInfo;
-    id _touchData;
     } _viewFlags;
 }
 
 @property(retain,readonly) CALayer *layer; /* unknown property attribute: V_layer */
 @property NSInteger tag; /* unknown property attribute: V_tag */
-@property(readonly) CALayer *currentLayer;
-@property(retain) MKGraphView *graphView;
+@property(copy) NSArray *gestureRecognizers;
+@property BOOL capturesDescendantTouches;
+@property BOOL deliversTouchesForGesturesToSuperview;
+@property BOOL gesturesEnabled;
+@property BOOL skipsSubviewEnumeration;
 @property(getter=isUserInteractionEnabled) BOOL userInteractionEnabled;
 
++ (void)_beginDisablingPromoteDescendantToFirstResponder;
++ (void)_endDisablingPromoteDescendantToFirstResponder;
 + (BOOL)_invalidatesViewUponCreation;
 + (BOOL)_pendingAnimations;
 + (void)_setInvalidatesViewUponCreation:(BOOL)arg1;
@@ -88,7 +97,10 @@
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (void)_animateToScrollPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_animateZoomFailureToWindowPoint:(struct CGPoint { float x1; float x2; })arg1 scale:(float)arg2 duration:(float)arg3;
+- (void)_appendDescriptionToString:(id)arg1 atLevel:(NSInteger)arg2;
+- (id)_autoresizingDescription;
 - (struct CGColor { }*)_backgroundCGColor;
+- (id)_backgroundColor;
 - (BOOL)_becomeFirstResponderWhenPossible;
 - (BOOL)_canDrawContent;
 - (BOOL)_canHandleStatusBarMouseEvents:(struct __GSEvent { }*)arg1;
@@ -98,27 +110,39 @@
 - (void)_clearBecomeFirstResponderWhenCapable;
 - (struct CGPoint { float x1; float x2; })_constrainedScrollPoint:(struct CGPoint { float x1; float x2; })arg1 contentSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)_containedInAbsoluteResponderChain;
+- (id)_containingScrollView;
 - (void)_createLayerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (NSInteger)_depthFirstCompare:(id)arg1;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
+- (void)_didRemoveSubview:(id)arg1;
 - (void)_didScroll;
 - (BOOL)_doesViewControllerExistForAncestorOfView:(id)arg1;
 - (void)_enableLayerKitPatternDrawing:(BOOL)arg1;
+- (id)_enclosingScrollerIncludingSelf;
 - (id)_findFirstSubviewWantingToBecomeFirstResponder;
+- (id)_firstDescendantOfKind:(Class)arg1;
 - (void)_gestureChanged:(NSInteger)arg1 event:(struct __GSEvent { }*)arg2;
 - (void)_gestureEnded:(struct __GSEvent { }*)arg1;
 - (id)_gestureInfo;
+- (id)_gestureRecognizers;
+- (id)_gestureTargetHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)_interceptEvent:(id)arg1;
 - (id)_interceptMouseEvent:(struct __GSEvent { }*)arg1;
 - (float)_internalScaleForScale:(float)arg1;
 - (void)_invalidateLayerContents;
 - (void)_invalidateSubviewCache;
 - (BOOL)_isAncestorOfFirstResponder;
+- (BOOL)_isChargeEnabled;
 - (BOOL)_isInAWindow;
 - (BOOL)_isRubberBanding;
+- (BOOL)_isScrollingEnabled;
 - (id)_layer;
 - (void)_layoutSublayersOfLayer:(id)arg1;
-- (void)_makeSubtreePerformSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
+- (void)_makeSubtreePerformSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3 copySublayers:(BOOL)arg4;
 - (void)_makeSubtreePerformSelector:(SEL)arg1 withObject:(id)arg2;
+- (id)_mapKit_mapView;
+- (NSUInteger)_mapkit_countOfSet:(id)arg1 minusSubset:(id)arg2;
+- (id)_mapkit_currentLayer;
 - (void)_mouseDown:(struct __GSEvent { }*)arg1;
 - (void)_mouseDragged:(struct __GSEvent { }*)arg1;
 - (void)_mouseUp:(struct __GSEvent { }*)arg1;
@@ -126,6 +150,7 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_postMovedFromSuperview:(id)arg1;
 - (void)_promoteDescendantToFirstResponderIfNecessary;
+- (void)_removeAllAnimations:(BOOL)arg1;
 - (void)_renderSnapshotWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
 - (void)_resetZoomingWithEvent:(struct __GSEvent { }*)arg1;
 - (void)_rotateFromEvent:(struct __GSEvent { }*)arg1;
@@ -134,16 +159,21 @@
 - (void)_rubberbandZoomToEvent:(struct __GSEvent { }*)arg1 scale:(float)arg2;
 - (float)_scaleForInternalScale:(float)arg1;
 - (id)_scriptingInfo;
-- (struct CGPoint { float x1; float x2; })_scrollPointForBoundedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withBoundary:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 scale:(float)arg3;
 - (struct CGPoint { float x1; float x2; })_scrollPointForPoint:(struct CGPoint { float x1; float x2; })arg1 scale:(float)arg2 constrain:(BOOL)arg3 snapToEdge:(BOOL)arg4;
 - (id)_scroller;
 - (struct CGSize { float x1; float x2; })_scrollerContentSize;
+- (void)_setBackgroundCGColor:(struct CGColor { }*)arg1;
+- (void)_setBackgroundColor:(id)arg1;
+- (void)_setChargeEnabled:(BOOL)arg1;
 - (void)_setContentImage:(id)arg1;
 - (void)_setContentsTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)_setGestureInfoZoomScale:(float)arg1;
 - (void)_setInterceptMouseEvent:(BOOL)arg1;
 - (void)_setIsAncestorOfFirstResponder:(BOOL)arg1;
 - (void)_setRotationAnimationProgress:(id)arg1;
 - (void)_setZoomAnimationProgress:(id)arg1;
+- (void)_setZoomScale:(float)arg1 duration:(double)arg2;
+- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (BOOL)_shouldTryPromoteDescendantToFirstResponder;
 - (void)_startGesture:(NSInteger)arg1 event:(struct __GSEvent { }*)arg2;
 - (BOOL)_startRotationFromEvent:(struct __GSEvent { }*)arg1;
@@ -152,11 +182,17 @@
 - (void)_stopRotationFromEvent:(struct __GSEvent { }*)arg1;
 - (void)_stopZoomFromEvent:(struct __GSEvent { }*)arg1;
 - (BOOL)_subclassImplementsDrawRect;
+- (void)_subscribeToScrollNotificationsIfNecessary:(id)arg1;
+- (void)_subviewInteractivityChanged:(id)arg1;
 - (id)_syntheticTouch;
 - (id)_syntheticUIEventWithGSEvent:(struct __GSEvent { }*)arg1 touchPhase:(NSInteger)arg2;
-- (id)_touchData;
+- (void)_unsubscribeToScrollNotificationsIfNecessary:(id)arg1;
+- (BOOL)_usesDifferentHitTestForGestures;
+- (void)_willMoveToWindow:(id)arg1 withAncestorView:(id)arg2;
+- (void)_willMoveToWindow:(id)arg1;
 - (float)_zoomAnimationDurationForScale:(float)arg1;
 - (float)_zoomAnimationProgress;
+- (float)_zoomScale;
 - (void)_zoomToEvent:(struct __GSEvent { }*)arg1 scale:(float)arg2 animate:(BOOL)arg3 constrainScrollPoint:(BOOL)arg4;
 - (void)_zoomToScale:(float)arg1 event:(struct __GSEvent { }*)arg2;
 - (void)_zoomToScrollPoint:(struct CGPoint { float x1; float x2; })arg1 scale:(float)arg2 duration:(float)arg3 event:(struct __GSEvent { }*)arg4;
@@ -164,6 +200,7 @@
 - (void)_zoomWithEvent:(struct __GSEvent { }*)arg1;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
+- (void)addGestureRecognizer:(id)arg1;
 - (void)addSubview:(id)arg1;
 - (float)alpha;
 - (void)animator:(id)arg1 startAnimation:(id)arg2;
@@ -171,20 +208,22 @@
 - (BOOL)autoresizesSubviews;
 - (NSUInteger)autoresizingMask;
 - (id)backgroundColor;
-- (float)boundedScaleForFocusRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 deviceBoundaryRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (void)bringSubviewToFront:(id)arg1;
 - (BOOL)canHandleGestures;
 - (BOOL)canHandleSwipes;
 - (BOOL)cancelMouseTracking;
 - (BOOL)cancelTouchTracking;
+- (BOOL)capturesDescendantTouches;
 - (struct CGPoint { float x1; float x2; })center;
+- (void)centerSubviewInBounds:(id)arg1;
 - (float)charge;
 - (BOOL)clearsContextBeforeDrawing;
 - (BOOL)clipsToBounds;
 - (NSInteger)compareTextEffectsOrdering:(id)arg1;
 - (BOOL)containsView:(id)arg1;
 - (NSInteger)contentMode;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentStretch;
 - (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromView:(id)arg2;
 - (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toView:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromView:(id)arg2;
@@ -192,13 +231,13 @@
 - (struct CGSize { float x1; float x2; })convertSize:(struct CGSize { float x1; float x2; })arg1 fromView:(id)arg2;
 - (struct CGSize { float x1; float x2; })convertSize:(struct CGSize { float x1; float x2; })arg1 toView:(id)arg2;
 - (struct CGImage { }*)createSnapshotWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)currentLayer;
 - (void)dealloc;
+- (void)deferredBecomeFirstResponder;
+- (BOOL)deliversTouchesForGesturesToSuperview;
 - (id)description;
 - (void)didAddSubview:(id)arg1;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
-- (void)didRemoveSubview:(id)arg1;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (NSInteger)enabledGestures;
@@ -206,14 +245,18 @@
 - (BOOL)endEditing:(BOOL)arg1;
 - (void)exchangeSubviewAtIndex:(NSInteger)arg1 withSubviewAtIndex:(NSInteger)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })extent;
+- (void)fadeToAlpha:(float)arg1 withDuration:(float)arg2;
+- (id)firstLabelSubview;
+- (id)firstScrollViewDescendant;
 - (void)forceDisplayIfNeeded;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (struct CGPoint { float x1; float x2; })frameOrigin;
 - (void)gestureChanged:(struct __GSEvent { }*)arg1;
 - (id)gestureDelegate;
 - (void)gestureEnded:(struct __GSEvent { }*)arg1;
+- (id)gestureRecognizers;
 - (void)gestureStarted:(struct __GSEvent { }*)arg1;
-- (id)graphView;
+- (BOOL)gesturesEnabled;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
@@ -227,7 +270,9 @@
 - (void)insertSubview:(id)arg1 atIndex:(NSInteger)arg2;
 - (void)insertSubview:(id)arg1 below:(id)arg2;
 - (void)insertSubview:(id)arg1 belowSubview:(id)arg2;
+- (BOOL)isAccessibilityElementByDefault;
 - (BOOL)isDescendantOfView:(id)arg1;
+- (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isEnabled;
 - (BOOL)isExclusiveTouch;
 - (BOOL)isHidden;
@@ -236,6 +281,7 @@
 - (BOOL)isOpaque;
 - (BOOL)isUserInteractionEnabled;
 - (id)layer;
+- (void)layoutBelowIfNeeded;
 - (void)layoutIfNeeded;
 - (void)layoutSubviews;
 - (void)movedFromSuperview:(id)arg1;
@@ -250,9 +296,12 @@
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (struct CGPoint { float x1; float x2; })position;
+- (id)recursiveDescription;
 - (void)recursivelyForceDisplayIfNeeded;
 - (void)reduceWidth:(float)arg1;
+- (void)removeAllGestureRecognizers;
 - (void)removeFromSuperview;
+- (void)removeGestureRecognizer:(id)arg1;
 - (void)resizeSubviewsWithOldSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)resizeWithOldSuperviewSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)rotateToDegrees:(float)arg1;
@@ -264,6 +313,7 @@
 - (void)setAutoresizingMask:(NSUInteger)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCapturesDescendantTouches:(BOOL)arg1;
 - (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setCharge:(float)arg1;
 - (void)setClearsContext:(BOOL)arg1;
@@ -271,7 +321,9 @@
 - (void)setClipsSubviews:(BOOL)arg1;
 - (void)setClipsToBounds:(BOOL)arg1;
 - (void)setContentMode:(NSInteger)arg1;
+- (void)setContentStretch:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentsPosition:(NSInteger)arg1;
+- (void)setDeliversTouchesForGesturesToSuperview:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setEnabledGestures:(NSInteger)arg1;
 - (void)setExclusiveTouch:(BOOL)arg1;
@@ -280,7 +332,8 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrameOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setGestureDelegate:(id)arg1;
-- (void)setGraphView:(id)arg1;
+- (void)setGestureRecognizers:(id)arg1;
+- (void)setGesturesEnabled:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setMultipleTouchEnabled:(BOOL)arg1;
 - (void)setNeedsDisplay;
@@ -293,21 +346,23 @@
 - (void)setRotationBy:(float)arg1;
 - (void)setRotationDegrees:(float)arg1 duration:(double)arg2;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSkipsSubviewEnumeration:(BOOL)arg1;
 - (void)setTag:(NSInteger)arg1;
 - (void)setTapDelegate:(id)arg1;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
 - (void)setValue:(id)arg1 forGestureAttribute:(NSInteger)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)setZoomScale:(float)arg1 duration:(double)arg2;
 - (struct CGSize { float x1; float x2; })size;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)sizeToFit;
+- (BOOL)skipsSubviewEnumeration;
 - (void)startHeartbeat:(SEL)arg1 inRunLoopMode:(id)arg2;
 - (NSInteger)stateForGestureType:(NSInteger)arg1;
 - (void)stopHeartbeat:(SEL)arg1;
 - (id)subviews;
 - (id)superview;
+- (id)superviewOfClass:(Class)arg1;
 - (NSInteger)swipe:(NSInteger)arg1 withEvent:(struct __GSEvent { }*)arg2;
 - (NSInteger)tag;
 - (id)tapDelegate;
@@ -319,11 +374,9 @@
 - (id)viewWithTag:(NSInteger)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBounds;
 - (void)willMoveToSuperview:(id)arg1;
-- (void)willMoveToWindow:(id)arg1 withAncestorView:(id)arg2;
 - (void)willMoveToWindow:(id)arg1;
 - (void)willRemoveSubview:(id)arg1;
 - (id)window;
-- (float)zoomScale;
 - (void)zoomToScale:(float)arg1;
 
 @end

@@ -25,5 +25,6 @@
 - (id)initWithTask:(NSUInteger)arg1 symbolicator:(id)arg2;
 - (id)objcRuntimeMallocBlocks;
 - (id)readClassNameString:(NSUInteger)arg1;
+- (id)typeInfoForObject:(NSUInteger)arg1;
 
 @end

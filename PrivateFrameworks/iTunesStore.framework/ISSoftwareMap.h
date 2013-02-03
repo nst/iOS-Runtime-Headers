@@ -2,41 +2,27 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSMutableDictionary, NSConditionLock;
+@class NSMutableArray;
 
 @interface ISSoftwareMap : NSObject {
-    unsigned int _loadingMap : 1;
-    NSMutableDictionary *_annotations;
-    NSMutableDictionary *_bundleIDForItemID;
-    struct __CFDictionary { } *_mapping;
-    NSConditionLock *_mappingLock;
+    NSMutableArray *_applications;
 }
 
-+ (void)jetsam;
-+ (id)sharedInstance;
+@property(readonly) NSArray *applications;
 
-- (id)_accountInfoForBundleID:(id)arg1;
-- (id)_annotationValueForKey:(id)arg1 bundleID:(id)arg2;
-- (id)_dsIDForBundleID:(id)arg1;
-- (BOOL)_loadMappingIfNecessary;
-- (void)_lockAfterSynchronousLoad;
-- (void)_mainThreadFinishLoading;
-- (void)_mapLoaderThread;
-- (void)_resetMapping;
-- (void)_setFakeApplicationMapping:(struct __CFDictionary { }*)arg1;
-- (id)_valueForKey:(id)arg1 bundleID:(id)arg2;
-- (id)accountIDForBundleID:(id)arg1;
-- (id)bundleIDForItemID:(id)arg1;
-- (BOOL)bundleIDIsInstalled:(id)arg1;
-- (id)copyAllAccounts;
-- (id)copyAllApplications;
++ (void)_startWatchingInstallationNotifications;
++ (id)currentMap;
++ (BOOL)currentMapIsValid;
++ (BOOL)haveApplicationsOfType:(struct __CFString { }*)arg1;
++ (void)invalidateCurrentMap;
++ (id)loadedMap;
++ (void)setCurrentMap:(id)arg1;
+
+- (void)_loadFromMobileInstallation;
+- (id)applicationForBundleIdentifier:(id)arg1;
+- (id)applicationForItemIdentifier:(id)arg1;
+- (id)applications;
 - (void)dealloc;
-- (id)dsIDForBundleID:(id)arg1;
-- (BOOL)haveSoftwareInstalled;
 - (id)init;
-- (BOOL)isLoaded;
-- (BOOL)load:(BOOL)arg1;
-- (void)reset;
-- (id)valueForKey:(id)arg1 bundleID:(id)arg2;
 
 @end

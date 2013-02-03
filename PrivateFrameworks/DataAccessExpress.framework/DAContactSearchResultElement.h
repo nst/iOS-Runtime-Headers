@@ -16,11 +16,13 @@
     NSString *_faxPhone;
     NSString *_firstName;
     NSString *_homePhone;
+    NSString *_homePostalAddress;
     NSString *_imAddress;
     NSData *_jpegPhoto;
     NSString *_lastName;
     NSString *_mobilePhone;
     NSString *_office;
+    NSString *_pagerNumber;
     NSString *_postalAddress;
     NSString *_recordName;
     NSString *_serverSource;
@@ -32,11 +34,11 @@
     NSString *_zip;
 }
 
+@property(copy) NSString *pagerNumber; /* unknown property attribute: V_pagerNumber */
 @property(copy) NSString *buildingName; /* unknown property attribute: V_buildingName */
 @property(copy) NSString *uri; /* unknown property attribute: V_uri */
 @property(copy) NSString *imAddress; /* unknown property attribute: V_imAddress */
 @property(copy) NSData *jpegPhoto; /* unknown property attribute: V_jpegPhoto */
-@property(copy) NSString *postalAddress; /* unknown property attribute: V_postalAddress */
 @property(copy) NSString *country; /* unknown property attribute: V_country */
 @property(copy) NSString *zip; /* unknown property attribute: V_zip */
 @property(copy) NSString *state; /* unknown property attribute: V_state */
@@ -58,6 +60,9 @@
 @property(copy) NSString *firstName; /* unknown property attribute: V_firstName */
 @property(copy) NSString *displayName; /* unknown property attribute: V_displayName */
 
+- (void)_cleanUpDanglingPostalAddresses;
+- (void)_setHomePostalAddress:(id)arg1;
+- (void)_setPostalAddress:(id)arg1;
 - (id)alias;
 - (id)buildingName;
 - (id)city;
@@ -81,7 +86,7 @@
 - (id)lastName;
 - (id)mobilePhone;
 - (id)office;
-- (id)postalAddress;
+- (id)pagerNumber;
 - (id)recordName;
 - (id)serverSource;
 - (void)setAlias:(id)arg1;
@@ -100,7 +105,7 @@
 - (void)setLastName:(id)arg1;
 - (void)setMobilePhone:(id)arg1;
 - (void)setOffice:(id)arg1;
-- (void)setPostalAddress:(id)arg1;
+- (void)setPagerNumber:(id)arg1;
 - (void)setRecordName:(id)arg1;
 - (void)setServerSource:(id)arg1;
 - (void)setState:(id)arg1;

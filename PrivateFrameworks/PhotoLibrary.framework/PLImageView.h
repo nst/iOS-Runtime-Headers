@@ -4,7 +4,7 @@
 
 @class MLPhoto;
 
-@interface PLImageView : UITiledView {
+@interface PLImageView : UITiledView <PLItemView> {
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -38,6 +38,8 @@
     struct CGImage { } *_fullSizeImageRef;
     NSInteger _imageOrientation;
     } _imageTransform;
+    float _imageViewZoomScale;
+    double _lastTouchEventTimestamp;
     MLPhoto *_modelImage;
     id _orientationDelegate;
     NSInteger _orientationWhenLastDisplayed;
@@ -52,17 +54,21 @@
 
 + (Class)tileClass;
 
+- (BOOL)_alwaysHandleScrollerMouseEvent;
 - (float)_calculateZoomScale:(BOOL)arg1;
 - (BOOL)_canDrawContent;
 - (struct CGImage { }*)_createLayerContentsForTileFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contentsTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2 contentsGravity:(id*)arg3;
 - (void)_finishedLoadingImageRef:(id)arg1;
 - (void)_gestureChanged:(NSInteger)arg1 event:(struct __GSEvent { }*)arg2;
 - (BOOL)_getContentsTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg1 contentsGravity:(id*)arg2 forSize:(struct CGSize { float x1; float x2; })arg3;
-- (void)_prepareForAnimatedZoomToScale:(float)arg1 duration:(double)arg2;
+- (void)_prepareForAnimatedZoomToScale:(float)arg1 animated:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })_scrollerContentSize;
+- (void)_setImageViewZoomScale:(float)arg1;
 - (void)_setOriginForContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setZoomScale:(float)arg1 duration:(double)arg2;
 - (void)_updateLayerContents;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleRect;
+- (float)_zoomScale;
 - (void)_zoomToScrollPoint:(struct CGPoint { float x1; float x2; })arg1 scale:(float)arg2 duration:(float)arg3 event:(struct __GSEvent { }*)arg4;
 - (void)animator:(id)arg1 stopAnimation:(id)arg2;
 - (void)centerInScrollerIfNeeded;
@@ -70,7 +76,6 @@
 - (float)defaultZoomScale;
 - (NSInteger)defaultZoomStyle;
 - (id)description;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)ensureFullSizeImageLoaded;
 - (BOOL)hasFullSizeImage;
 - (NSInteger)imageOrientation;
@@ -80,6 +85,9 @@
 - (float)minRotatedScale;
 - (float)minZoomScale;
 - (id)modelImage;
+- (void)mouseDown:(struct __GSEvent { }*)arg1;
+- (void)mouseDragged:(struct __GSEvent { }*)arg1;
+- (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (void)movedFromSuperview:(id)arg1;
 - (NSInteger)orientationWhenLastDisplayed;
 - (void)setAllowsZoomToFill:(BOOL)arg1;
@@ -90,7 +98,7 @@
 - (void)setOrientationWhenLastDisplayed:(NSInteger)arg1;
 - (void)setThumbnail:(struct CGImage { }*)arg1;
 - (void)setTilingEnabled:(BOOL)arg1;
-- (void)setZoomScale:(float)arg1 duration:(double)arg2;
+- (struct CGPoint { float x1; float x2; })setZoomScaleWithoutZoomGesture:(float)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
@@ -98,5 +106,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 - (float)zoomToFillScale;
 - (void)zoomToScale:(float)arg1;
+- (void)zoomToWindowPoint:(struct CGPoint { float x1; float x2; })arg1 scale:(float)arg2 duration:(float)arg3 constrainScrollPoint:(BOOL)arg4 event:(struct __GSEvent { }*)arg5;
 
 @end

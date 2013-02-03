@@ -10,7 +10,6 @@
     NSDate *_wakeDate;
 }
 
-- (void)addToOperationQueueSerialized:(id)arg1;
 - (void)dealloc;
 - (id)initWithPowerIdentifier:(id)arg1 wakeDate:(id)arg2 setOrCancel:(BOOL)arg3;
 - (void)main;

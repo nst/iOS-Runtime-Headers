@@ -25,17 +25,28 @@
 }
 
 + (const struct StateSpec { int (**x1)(); char *x2; NSInteger x3; NSInteger x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsOfTransformedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 transform:(id)arg2;
++ (void)transformRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 transform:(id)arg2 upperLeft:(struct CGPoint { float x1; float x2; }*)arg3 lowerLeft:(struct CGPoint { float x1; float x2; }*)arg4 lowerRight:(struct CGPoint { float x1; float x2; }*)arg5 upperRight:(struct CGPoint { float x1; float x2; }*)arg6;
 
 - (float)angle;
 - (BOOL)aspectRatioLocked;
 - (BOOL)horizontalFlip;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })naturalBounds;
 - (struct CGSize { float x1; float x2; })naturalSize;
+- (struct CGPoint { float x1; float x2; })nonrotatedPosition;
 - (struct CGPoint { float x1; float x2; })position;
 - (NSInteger)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
+- (void)setAngle:(float)arg1;
+- (void)setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (float)shearXAngle;
 - (float)shearYAngle;
 - (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { float x1; float x2; })sizeOfBoundingBox;
 - (BOOL)sizesLocked;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformHasVFlip:(BOOL)arg1 vFlip:(BOOL)arg2 hasHFlip:(BOOL)arg3 hFlip:(BOOL)arg4;
 - (BOOL)verticalFlip;
 
 @end

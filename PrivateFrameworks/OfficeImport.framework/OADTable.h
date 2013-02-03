@@ -14,8 +14,8 @@
 - (void)dealloc;
 - (id)grid;
 - (id)init;
-- (id)rowAtIndex:(NSInteger)arg1;
-- (NSInteger)rowCount;
+- (id)rowAtIndex:(NSUInteger)arg1;
+- (NSUInteger)rowCount;
 - (void)setParentTextListStyle:(id)arg1;
 - (id)tableProperties;
 

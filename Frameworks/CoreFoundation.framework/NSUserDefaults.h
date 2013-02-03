@@ -7,11 +7,9 @@
     void *_reserved[4];
 }
 
-@property(readonly) NSString *_gmm_platformIdTag;
-@property(readonly) NSString *serverURL;
-@property(readonly) NSUInteger throttleFlags;
-@property(readonly) double throttleTimeInterval;
-@property double trackingAnimationDuration;
+@property(getter=_mapkit_isHeadingRotationSticky,readonly) BOOL _mapkit_headingRotationSticky;
+@property(readonly) NSUInteger _mapkit_throttleFlags;
+@property(readonly) double _mapkit_throttleTimeInterval;
 
 + (void)_ensureAndLockPreferredLanguageLock;
 + (void)_web_addDefaultsChangeObserver;
@@ -27,7 +25,11 @@
 
 - (void)_adjustTimer:(id)arg1;
 - (void)_adjustTimerForAutosync;
-- (id)_gmm_platformIdTag;
+- (BOOL)_mapkit_isHeadingRotationSticky;
+- (void)_mapkit_setTrackingAnimationDuration:(double)arg1;
+- (NSUInteger)_mapkit_throttleFlags;
+- (double)_mapkit_throttleTimeInterval;
+- (double)_mapkit_trackingAnimationDuration;
 - (void)addSuiteNamed:(id)arg1;
 - (id)arrayForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1;
@@ -54,7 +56,6 @@
 - (void)removeSuiteNamed:(id)arg1;
 - (void)removeVolatileDomainForName:(id)arg1;
 - (id)searchList;
-- (id)serverURL;
 - (void)setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)setDouble:(double)arg1 forKey:(id)arg2;
 - (void)setFloat:(float)arg1 forKey:(id)arg2;
@@ -64,15 +65,11 @@
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setPersistentDomain:(id)arg1 forName:(id)arg2;
 - (void)setSearchList:(id)arg1;
-- (void)setTrackingAnimationDuration:(double)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setVolatileDomain:(id)arg1 forName:(id)arg2;
 - (id)stringArrayForKey:(id)arg1;
 - (id)stringForKey:(id)arg1;
 - (BOOL)synchronize;
-- (NSUInteger)throttleFlags;
-- (double)throttleTimeInterval;
-- (double)trackingAnimationDuration;
 - (id)valueForKey:(id)arg1;
 - (id)volatileDomainForName:(id)arg1;
 - (id)volatileDomainNames;

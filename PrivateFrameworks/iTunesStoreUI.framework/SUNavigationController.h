@@ -2,51 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray, UIImage;
+@class SUSection;
 
 @interface SUNavigationController : UINavigationController {
-    NSUInteger _minimumNetworkType;
-    UIImage *_moreListImage;
-    UIImage *_moreListSelectedImage;
-    id _moreListTableCell;
-    NSMutableArray *_pendingInvocations;
-    unsigned long _tag;
+    SUSection *_section;
 }
 
-@property unsigned long tag; /* unknown property attribute: V_tag */
-@property(retain) id moreListTableCell; /* unknown property attribute: V_moreListTableCell */
-@property(retain) UIImage *moreListSelectedImage; /* unknown property attribute: V_moreListSelectedImage */
-@property(retain) UIImage *moreListImage; /* unknown property attribute: V_moreListImage */
-@property NSUInteger minimumNetworkType; /* unknown property attribute: V_minimumNetworkType */
+@property(retain) SUSection *section; /* unknown property attribute: V_section */
 
-+ (id)_createControllerForHistoryItem:(id)arg1;
-+ (void)_fireInvocations;
-+ (void)setIgnoresInteractionEvents:(BOOL)arg1;
-+ (void)setItemInfoDataSource:(id)arg1;
-+ (void)setStorePageViewControllerClass:(Class)arg1;
-+ (Class)storePageViewControllerClass;
-
-- (void)_invokePendingInvocation;
-- (void)_pendSelector:(SEL)arg1 arguments:(void*)arg2;
+- (id)_sectionForViewController:(id)arg1;
 - (void)dealloc;
-- (id)init;
 - (id)initWithRootViewController:(id)arg1;
-- (NSUInteger)minimumNetworkType;
 - (id)moreListImage;
 - (id)moreListSelectedImage;
-- (id)moreListTableCell;
-- (id)popViewControllerAnimated:(BOOL)arg1;
-- (void)purgeMemoryForReason:(NSInteger)arg1 isCurrent:(BOOL)arg2;
-- (void)purgeMemoryForReason:(NSInteger)arg1;
-- (void)pushControllerForPage:(id)arg1;
-- (void)pushControllerForURL:(id)arg1 animated:(BOOL)arg2;
-- (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)setMinimumNetworkType:(NSUInteger)arg1;
-- (void)setMoreListImage:(id)arg1;
-- (void)setMoreListSelectedImage:(id)arg1;
-- (void)setMoreListTableCell:(id)arg1;
-- (void)setTag:(unsigned long)arg1;
-- (void)tabBarButtonReselected;
-- (unsigned long)tag;
+- (id)section;
+- (void)setSection:(id)arg1;
+- (void)setViewControllers:(id)arg1;
 
 @end

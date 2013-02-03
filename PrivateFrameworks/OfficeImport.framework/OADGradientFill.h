@@ -44,9 +44,9 @@
 - (void)setStyleColor:(id)arg1;
 - (void)setTileRect:(id)arg1;
 - (id)shade;
-- (id)stopColorAtIndex:(NSInteger)arg1;
-- (NSInteger)stopCount;
-- (float)stopPositionAtIndex:(NSInteger)arg1;
+- (id)stopColorAtIndex:(NSUInteger)arg1;
+- (NSUInteger)stopCount;
+- (float)stopPositionAtIndex:(NSUInteger)arg1;
 - (id)stops;
 - (id)tileRect;
 

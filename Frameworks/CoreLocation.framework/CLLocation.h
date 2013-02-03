@@ -6,34 +6,36 @@
     id _internal;
 }
 
+@property(readonly) NSString *iso6709Notation;
 @property(readonly) NSDate *timestamp;
 @property(readonly) double altitude;
 @property(readonly) ? clientLocation;
 @property(readonly) ? coordinate;
 @property(readonly) double course;
-@property(readonly) double heading;
 @property(readonly) double horizontalAccuracy;
 @property(readonly) double speed;
 @property(readonly) double verticalAccuracy;
 
 - (double)altitude;
-- (struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })clientLocation;
-- (struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })clientLocation;
+- (struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; NSInteger x8; double x9; })clientLocation;
+- (struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; NSInteger x8; double x9; })clientLocation;
 - (struct { double x1; double x2; })coordinate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)course;
 - (void)dealloc;
 - (id)description;
-- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (double)getDistanceFrom:(const id)arg1;
-- (double)heading;
 - (double)horizontalAccuracy;
-- (id)initWithClientLocation:(struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })arg1;
+- (id)initWithClientLocation:(struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; NSInteger x8; double x9; })arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 timestamp:(id)arg5;
+- (id)initWithIso6709Notation:(id)arg1;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (BOOL)isEqualToLocationCoordinate:(struct { double x1; double x2; })arg1;
+- (id)iso6709Notation;
+- (id)locationDescription;
+- (id)propagateLocationToTime:(double)arg1;
 - (id)shortDescription;
 - (double)speed;
 - (id)timestamp;

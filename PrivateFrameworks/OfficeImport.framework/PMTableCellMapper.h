@@ -7,15 +7,17 @@
 @interface PMTableCellMapper : CMMapper {
     OADTableCell *mCell;
     NSInteger mColIndex;
+    NSUInteger mRowIndex;
     CMStyle *mStyle;
     float mWidth;
 }
 
 - (void)dealloc;
-- (id)initWithOadTableCell:(id)arg1 columnIndex:(NSInteger)arg2 parent:(id)arg3;
+- (id)initWithOadTableCell:(id)arg1 rowIndex:(NSUInteger)arg2 columnIndex:(NSInteger)arg3 parent:(id)arg4;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapBordersWithState:(id)arg1;
 - (void)mapCellPropertiesWithState:(id)arg1 textAnchor:(NSInteger)arg2;
-- (float)width;
+- (id)tableMapper;
+- (float)widthWithState:(id)arg1;
 
 @end

@@ -2,50 +2,36 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIView<ABPLPhotoPickerProtocol>, ABImagePickerWindow;
+@class CAKeyframeAnimation, NSDictionary, UIImagePickerController;
 
-@interface ABImagePickerController : ABContentController <UIModalViewDelegate> {
-    NSInteger _animations;
+@interface ABImagePickerController : ABContentController <UIModalViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate> {
+    NSDictionary *_animationContextDictionary;
+    CAKeyframeAnimation *_bounceAnimation;
     BOOL _confirmingDelete;
     BOOL _hasExistingPhoto;
-    ABImagePickerWindow *_imagePickerWindow;
+    UIImagePickerController *_imagePicker;
     void *_person;
-    UIView<ABPLPhotoPickerProtocol> *_photoPicker;
-    NSInteger _resultCancel;
-    NSInteger _resultChoosePhoto;
-    NSInteger _resultDeletePhoto;
-    NSInteger _resultEditPhoto;
-    NSInteger _resultTakePhoto;
 }
 
-- (void)_fillWindowWithPicker:(BOOL)arg1;
-- (void)_finshedShowImagePickerWindow;
-- (void)alertSheet:(id)arg1 buttonClicked:(NSInteger)arg2;
-- (void)animationsComplete;
+- (id)_createImagePicker:(BOOL)arg1;
+- (id)_createImagePickerForEditingImage:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)back:(BOOL)arg1 save:(BOOL)arg2;
-- (void)cancelImageMenu;
+- (void)cancelPicker;
 - (void)chooseExisting;
 - (id)contentView;
 - (void)dealloc;
-- (void)deletePhoto;
-- (void)doEditPhoto:(id)arg1;
+- (void)deletePhoto:(BOOL)arg1;
+- (void)doEditPhoto;
 - (void)editPhoto;
-- (void)finishEditPhoto:(id)arg1;
-- (void)finishedSlidingPickerDown;
+- (void)finishEditPhoto;
 - (BOOL)hasMultipleActions;
-- (id)imagePickerWindow;
+- (void)imagePickerController:(id)arg1 didFinishPickingImage:(id)arg2 editingInfo:(id)arg3;
+- (void)imagePickerControllerDidCancel:(id)arg1;
 - (void)orderOut:(id)arg1;
-- (void)photoPicker:(id)arg1 didCropPhotoToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 fullSizeImageData:(id)arg3 fullScreenImageData:(id)arg4 croppedImageData:(id)arg5;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })photoPickerCroppedPhotoDestination:(id)arg1 imageView:(id)arg2;
-- (void)photoPickerDidCancel:(id)arg1;
-- (void)photoPickerDidCancelAnimatingThrow:(id)arg1 imageView:(id)arg2;
-- (void)photoPickerDidFinishAnimatingThrow:(id)arg1 imageView:(id)arg2;
 - (void)reload;
 - (void)resume;
-- (void)showImagePickerWindow:(id)arg1 andNotifyController:(BOOL)arg2;
-- (void)showImagePickerWindow:(id)arg1;
-- (void)slideCompleteNoImage;
-- (void)slidePickerDownWindow:(SEL)arg1;
 - (void)suspend;
 - (void)takePhoto;
 

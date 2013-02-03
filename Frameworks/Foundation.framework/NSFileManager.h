@@ -6,6 +6,7 @@
 }
 
 + (BOOL)_storeMovePath:(id)arg1 toPath:(id)arg2;
++ (id)cacheDirectoryPathWithName:(id)arg1;
 + (id)defaultManager;
 + (BOOL)ensureDirectoryExists:(id)arg1;
 
@@ -29,8 +30,6 @@
 - (id)_web_visibleItemsInDirectoryAtPath:(id)arg1;
 - (id)attributesOfFileSystemForPath:(id)arg1 error:(id*)arg2;
 - (id)attributesOfItemAtPath:(id)arg1 error:(id*)arg2;
-- (BOOL)canWriteToDirectoryAtPath:(id)arg1;
-- (BOOL)canWriteToFileAtPath:(id)arg1;
 - (BOOL)changeCurrentDirectoryPath:(id)arg1;
 - (BOOL)changeFileAttributes:(id)arg1 atPath:(id)arg2;
 - (id)componentsToDisplayForPath:(id)arg1;
@@ -46,8 +45,6 @@
 - (id)currentDirectoryPath;
 - (void)dealloc;
 - (id)delegate;
-- (void)deleteFilesInArray:(id)arg1 fromDirectory:(id)arg2;
-- (void)deleteFilesInSortedArray:(id)arg1 matchingPrefix:(id)arg2 fromDirectory:(id)arg3;
 - (id)destinationOfSymbolicLinkAtPath:(id)arg1 error:(id*)arg2;
 - (BOOL)directoryCanBeCreatedAtPath:(id)arg1;
 - (id)directoryContentsAtPath:(id)arg1 matchingExtension:(id)arg2 options:(NSInteger)arg3 keepExtension:(BOOL)arg4 error:(id*)arg5;
@@ -60,8 +57,6 @@
 - (id)fileAttributesAtPath:(id)arg1 traverseLink:(BOOL)arg2;
 - (BOOL)fileExistsAtPath:(id)arg1 isDirectory:(BOOL*)arg2;
 - (BOOL)fileExistsAtPath:(id)arg1;
-- (id)fileModificationDateAtPath:(id)arg1 traverseLink:(BOOL)arg2;
-- (NSUInteger)fileSizeAtPath:(id)arg1 traverseLink:(BOOL)arg2;
 - (id)fileSystemAttributesAtPath:(id)arg1;
 - (const char *)fileSystemRepresentationWithPath:(id)arg1;
 - (BOOL)filesystemItemCopyOperation:(id)arg1 shouldCopyItemAtPath:(id)arg2 toPath:(id)arg3;
@@ -76,13 +71,16 @@
 - (BOOL)isReadableFileAtPath:(id)arg1;
 - (BOOL)isWritableFileAtPath:(id)arg1;
 - (BOOL)linkItemAtPath:(id)arg1 toPath:(id)arg2 error:(id*)arg3;
-- (BOOL)makeCompletePath:(id)arg1 mode:(NSInteger)arg2;
 - (id)makeUniqueDirectoryWithPath:(id)arg1;
 - (id)makeUniqueDirectoryWithPath:(id)arg1;
-- (id)makeUniqueFileInDirectory:(id)arg1;
+- (BOOL)mf_canWriteToDirectoryAtPath:(id)arg1;
+- (void)mf_deleteFilesInSortedArray:(id)arg1 matchingPrefix:(id)arg2 fromDirectory:(id)arg3;
+- (id)mf_fileModificationDateAtPath:(id)arg1 traverseLink:(BOOL)arg2;
+- (BOOL)mf_makeCompletePath:(id)arg1 mode:(NSInteger)arg2;
+- (id)mf_makeUniqueFileInDirectory:(id)arg1;
+- (id)mf_pathsAtDirectory:(id)arg1 beginningWithString:(id)arg2;
 - (BOOL)moveItemAtPath:(id)arg1 toPath:(id)arg2 error:(id*)arg3;
 - (id)pathContentOfSymbolicLinkAtPath:(id)arg1;
-- (id)pathsAtDirectory:(id)arg1 beginningWithString:(id)arg2;
 - (id)rawDirectoryContentsAtPath:(id)arg1;
 - (BOOL)removeExtendedAttributeForKey:(id)arg1 atPath:(id)arg2 error:(id*)arg3;
 - (BOOL)removeFileAtPath:(id)arg1 handler:(id)arg2;
@@ -93,5 +91,6 @@
 - (id)stringWithFileSystemRepresentation:(const char *)arg1 length:(NSUInteger)arg2;
 - (id)subpathsAtPath:(id)arg1;
 - (id)subpathsOfDirectoryAtPath:(id)arg1 error:(id*)arg2;
+- (id)tmpFileForVideoTranscode;
 
 @end

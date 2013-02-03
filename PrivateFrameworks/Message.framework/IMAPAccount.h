@@ -2,16 +2,21 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableArray, NSString, NSRecursiveLock, IMAPOperationCache, NSMutableSet;
+@class NSArray, NSString, IMAPOperationCache, NSMutableArray, NSRecursiveLock, NSMutableSet;
 
 @interface IMAPAccount : MailAccount <IMAPMailboxListFilter> {
     unsigned int _lastConnectionFailed : 1;
+    unsigned int _askedToListenForNotifications : 1;
+    unsigned int _pcStylePush : 1;
+    unsigned int _setDefaultStyleYet : 1;
     unsigned int _readBufferSize : 31;
+    NSString *_apsTopic;
     struct __CFArray { } *_cachedConnections;
     NSRecursiveLock *_connectionLock;
     NSRecursiveLock *_flagChangesLock;
     NSUInteger _greatestInboxUid;
     struct __CFArray { } *_lastKnownCapabilities;
+    NSArray *_lockOrderingArray;
     struct __CFArray { } *_mailboxesToSynchronize;
     NSMutableSet *_mailboxesWithChangedUidNext;
     NSInteger _nextConnectionTag;
@@ -26,9 +31,11 @@
 + (id)accountTypeString;
 + (void)initialize;
 + (id)saslProfileName;
-+ (BOOL)supportsRemoteAppend;
 
 - (id)_URLScheme;
+- (id)_apsTopic;
+- (void)_backgroundReleaseAllConnections:(id)arg1;
+- (BOOL)_canReceiveNewMailNotifications;
 - (void)_checkForNewMessagesInStore:(id)arg1 unreadCountDelta:(NSUInteger)arg2;
 - (id)_copyMailboxUidWithParent:(id)arg1 name:(id)arg2 attributes:(NSUInteger)arg3 existingMailboxUid:(id)arg4 permanentTag:(id)arg5 dictionary:(id)arg6;
 - (id)_createMailboxWithParent:(id)arg1 name:(id)arg2 attributes:(NSUInteger)arg3 dictionary:(id)arg4;
@@ -52,9 +59,10 @@
 - (id)_pathComponentForUidName:(id)arg1;
 - (void)_purgeStaleFlagChanges;
 - (void)_readCustomInfoFromMailboxCache:(id)arg1;
-- (void)_releaseAllConnectionsAndCallSuper:(BOOL)arg1 edgeForcedOnly:(BOOL)arg2 ifIdleForTimeInterval:(double)arg3;
+- (void)_releaseAllConnectionsAndCallSuper:(BOOL)arg1 edgeForcedOnly:(BOOL)arg2 ifIdleForTimeInterval:(double)arg3 saveOfflineCache:(BOOL)arg4;
 - (void)_releaseAllConnectionsAndCallSuper:(BOOL)arg1;
 - (void)_renameLocalSpecialMailboxesToName:(id)arg1;
+- (void)_setAPSTopic:(id)arg1;
 - (void)_setCapabilities:(id)arg1;
 - (BOOL)_setChildren:(id)arg1 forMailboxUid:(id)arg2;
 - (void)_setIsOffline:(BOOL)arg1;
@@ -105,6 +113,7 @@
 - (id)mailboxPathExtension;
 - (id)mailboxUidForRelativePath:(id)arg1 create:(BOOL)arg2;
 - (void)messagesAdded:(id)arg1;
+- (id)mf_lockOrdering;
 - (NSUInteger)minID;
 - (NSUInteger)minUID;
 - (NSUInteger)minimumPartialDownloadSize;
@@ -148,9 +157,12 @@
 - (void)setValueInAccountInfo:(id)arg1 forKey:(id)arg2;
 - (BOOL)shouldExpungeMessagesOnDelete;
 - (BOOL)shouldRestoreMessagesAfterFailedDelete;
+- (void)startListeningForNotifications;
+- (void)stopListeningForNotifications;
 - (Class)storeClass;
 - (BOOL)storeMailboxTypeOnServer:(NSInteger)arg1;
 - (BOOL)supportsIDLE;
+- (BOOL)supportsRemoteAppend;
 - (void)synchronizeAllMailboxes;
 - (void)synchronizeMailboxes:(id)arg1;
 - (void)unselectMailbox:(id)arg1;

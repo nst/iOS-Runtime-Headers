@@ -2,26 +2,50 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class GQDTTable;
 
 @interface GQHTableState : NSObject {
-    struct vector<int16_t,std::allocator<int16_t> > { struct _Vector_impl { 
-            short *_M_start; 
-            short *_M_finish; 
-            short *_M_end_of_storage; 
+    struct vector<short unsigned int,std::allocator<short unsigned int> > { struct _Vector_impl { 
+            unsigned short *_M_start; 
+            unsigned short *_M_finish; 
+            unsigned short *_M_end_of_storage; 
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
         } x1; } *mCellCountInColumns;
-    short mPrevColumnIndex;
-    short mPrevRowIndex;
+    double mCurrentTablePosition;
+    NSInteger mGroupLevel;
+    double mLastAttachmentPosition;
+    double mOriginalTableHeight;
+    NSInteger mPrevColumnIndex;
+    NSInteger mPrevRowIndex;
+    long mSplitTableIndex;
     GQDTTable *mTable;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mSplitTable;
 }
 
-- (struct vector<int16_t,std::allocator<int16_t> > { struct _Vector_impl { short *x_1_1_1; short *x_1_1_2; short *x_1_1_3; } x1; }*)cellCountInColumns;
+- (void)addRowHeight:(float)arg1;
+- (struct vector<short unsigned int,std::allocator<short unsigned int> > { struct _Vector_impl { unsigned short *x_1_1_1; unsigned short *x_1_1_2; unsigned short *x_1_1_3; } x1; }*)cellCountInColumns;
+- (double)currentTablePosition;
 - (void)dealloc;
+- (NSInteger)groupLevel;
 - (id)init;
-- (short)prevColumnIndex;
-- (short)prevRowIndex;
-- (void)setPrevRowIndex:(short)arg1 columnIndex:(short)arg2;
+- (double)lastAttachmentPosition;
+- (long)nextSplitTableIndex;
+- (double)originalTableHeight;
+- (NSInteger)prevColumnIndex;
+- (NSInteger)prevRowIndex;
+- (void)setGroupLevel:(NSInteger)arg1;
+- (void)setLastAttachmentPosition:(double)arg1;
+- (void)setOriginalTableHeight:(double)arg1;
+- (void)setPrevRowIndex:(NSInteger)arg1 columnIndex:(NSInteger)arg2;
+- (void)setSplitTable:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setSplitTableIndex:(long)arg1;
 - (void)setTable:(id)arg1;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)splitTable;
 - (id)table;
 
 @end

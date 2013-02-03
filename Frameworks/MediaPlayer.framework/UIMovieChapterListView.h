@@ -2,18 +2,21 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIImageView, UITable;
+@class UIImageView, UITableView;
 
 @interface UIMovieChapterListView : UIView {
     UIImageView *_backgroundImageView;
-    UITable *_table;
+    NSUInteger _pinnedRow;
+    UITableView *_table;
     float _topPadding;
 }
 
 @property float topPadding; /* unknown property attribute: V_topPadding */
+@property(readonly) UITableView *table; /* unknown property attribute: V_table */
 
 - (id)init;
 - (void)layoutSubviews;
+- (void)pinVisibleRow:(NSUInteger)arg1;
 - (void)setTopPadding:(float)arg1;
 - (id)table;
 - (float)topPadding;

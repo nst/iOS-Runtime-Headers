@@ -2,19 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@interface GMMSetHttpCookieResponse : GMMResponse <GMMReadWriteStream> {
-     /* Encoded args for previous method: c16@0:4^{InputDataStream=*IIBB}8c12 */
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMSetHttpCookieResponse : PBCodable {
 }
 
 - (void)dealloc;
+- (id)description;
 - (id)init;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1 tillEnd:(BOOL)arg2;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

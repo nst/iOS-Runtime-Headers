@@ -12,6 +12,6 @@
 - (void)finalize;
 - (void)release;
 - (id)retain;
-- (NSInteger)retainCount;
+- (NSUInteger)retainCount;
 
 @end

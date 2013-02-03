@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView, UITextLabel;
+@class UIImageView, MLPhotoAlbum, UITextLabel;
 
 @interface PLEmptyAlbumView : UIView {
+    MLPhotoAlbum *_album;
     UIImageView *_icon;
     UITextLabel *_message;
     UITextLabel *_title;
@@ -14,8 +15,10 @@
 - (id)_createTextViewWithText:(id)arg1 bottom:(float)arg2;
 - (id)_emptyRollImageForAlbum:(id)arg1;
 - (id)_messageForAlbum:(id)arg1;
+- (id)_titleForAlbum:(id)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
 - (void)setAlbum:(id)arg1;
 
 @end

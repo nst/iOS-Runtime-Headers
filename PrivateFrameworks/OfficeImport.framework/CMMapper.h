@@ -4,11 +4,13 @@
 
 @class CMMapper;
 
-@interface CMMapper : NSObject {
+@interface CMMapper : NSObject <CMMapperRootArchiver> {
     CMMapper *mParent;
 }
 
 - (void)addAttribute:(id)arg1 toNode:(id)arg2 value:(id)arg3;
+- (void)addStyle:(id)arg1 withName:(id)arg2;
+- (void)addStyleUsingGlobalCacheTo:(id)arg1 style:(id)arg2 embedStyle:(BOOL)arg3;
 - (void)addStyleUsingGlobalCacheTo:(id)arg1 style:(id)arg2;
 - (id)archiver;
 - (id)initWithParent:(id)arg1;

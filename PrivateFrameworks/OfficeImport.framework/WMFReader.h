@@ -9,7 +9,7 @@
     NSUInteger m_length;
     char *m_pBuffer;
     WMFPlayer *m_player;
-    long m_recordsRead;
+    NSInteger m_recordsRead;
 }
 
 - (NSInteger)checkBytesAvailable:(NSUInteger)arg1;

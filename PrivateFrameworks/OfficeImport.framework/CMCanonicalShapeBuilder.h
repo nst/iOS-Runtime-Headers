@@ -9,6 +9,7 @@
 - (struct CGPath { }*)_chevronWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)_circularArrowWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)_cubeWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
+- (struct CGPath { }*)_diagramCircularArrowWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)_diamondWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)_downArrowWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)_ellipseWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;

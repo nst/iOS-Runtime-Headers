@@ -6,6 +6,7 @@
 }
 
 + (NSInteger)handleBodyStorage:(id)arg1 state:(id)arg2;
++ (NSInteger)handleContainerHint:(id)arg1 state:(id)arg2;
 + (NSInteger)handleFootnotes:(id)arg1 state:(id)arg2;
 + (NSInteger)handleLayout:(id)arg1 state:(id)arg2;
 + (NSInteger)handlePageStart:(id)arg1 state:(id)arg2;

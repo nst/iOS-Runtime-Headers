@@ -16,6 +16,8 @@
 - (void)dealloc;
 - (BOOL)handleItems:(id)arg1;
 - (id)init;
+- (id)insertMessages:(id)arg1;
+- (BOOL)shouldAddUID:(NSUInteger)arg1;
 - (NSUInteger)sizeForItem:(id)arg1;
 
 @end

@@ -6,10 +6,11 @@
 
 @interface PMTableRowMapper : CMMapper {
     OADTableRow *mRow;
+    NSUInteger mRowIndex;
 }
 
 - (float)height;
-- (id)initWithOadTableRow:(id)arg1 parent:(id)arg2;
+- (id)initWithOadTableRow:(id)arg1 rowIndex:(NSUInteger)arg2 parent:(id)arg3;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 
 @end

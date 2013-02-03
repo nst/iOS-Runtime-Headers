@@ -5,8 +5,10 @@
 @interface NSStream : NSObject {
 }
 
++ (id)errorForCFStreamError:(struct { NSInteger x1; NSInteger x2; })arg1;
 + (void)getStreamsToHost:(id)arg1 port:(NSInteger)arg2 inputStream:(id*)arg3 outputStream:(id*)arg4;
 
+- (id)betterStreamError;
 - (void)close;
 - (id)delegate;
 - (void)open;

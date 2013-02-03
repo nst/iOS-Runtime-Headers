@@ -13,9 +13,7 @@
 + (id)supportedNonImageMIMETypes;
 
 - (id)DOMDocument;
-- (id)_bridge;
 - (BOOL)_isDisplayingWebArchive;
-- (void)_loadDataSourceAsWebArchive;
 - (void)_redirectDataToManualLoader:(id)arg1 forPluginView:(id)arg2;
 - (BOOL)canProvideDocumentSource;
 - (BOOL)canSaveAsWebArchive;
@@ -28,6 +26,8 @@
 - (id)elementWithName:(id)arg1 inForm:(id)arg2;
 - (void)finalize;
 - (void)finishedLoadingWithDataSource:(id)arg1;
+- (BOOL)formElementLooksLikeCreditCardNumberField:(id)arg1;
+- (BOOL)formElementLooksLikeSecurityCodeField:(id)arg1;
 - (id)formForElement:(id)arg1;
 - (id)init;
 - (id)matchLabels:(id)arg1 againstElement:(id)arg2;

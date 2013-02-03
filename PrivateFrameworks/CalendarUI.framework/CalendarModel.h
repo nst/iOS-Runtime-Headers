@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalendarUI.framework/CalendarUI
  */
 
-@class NSMutableArray, NSConditionLock, NSLock, CalendarEventEditModel;
+@class NSMutableArray, NSConditionLock, <OccurrenceCacheDataSourceProtocol>, NSLock, CalendarEventEditModel;
 
 @interface CalendarModel : NSObject {
     struct { 
@@ -33,9 +33,6 @@
         BOOL hour; 
         BOOL minute; 
         double second; 
-    struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
     struct { 
         NSInteger year; 
         BOOL month; 
@@ -58,13 +55,7 @@
     NSConditionLock *_bkgndSignal;
     } _bkgndStartGr;
     BOOL _bkgndTerminate;
-    NSInteger _cachedDayCount;
-    struct __CFArray { } *_cachedDayIndexes;
-    } _cachedDayRange;
-    struct __CFArray { } *_cachedDays;
     NSInteger _cachedFakeTodayIndex;
-    NSInteger _cachedOccurrenceCount;
-    struct __CFArray { } *_cachedOccurrences;
     struct __CFDictionary { } *_calendarColors;
     struct CalDatabase { } *_database;
     double _end;
@@ -74,6 +65,7 @@
     NSLock *_filterLock;
     NSInteger _invitationBearingStoresExist;
     BOOL _loadsBlocked;
+    <OccurrenceCacheDataSourceProtocol> *_occurrenceCacheDataSource;
     struct __CFArray { } *_occurrences;
     NSMutableArray *_orderedDefaultColors;
     BOOL _pendingSave;
@@ -99,8 +91,9 @@
 
 - (void)_backgroundLoadCompleted;
 - (void)_backgroundLoader;
-- (struct __CFArray { }*)_cachedDayIndexes;
 - (void)_calendarStoreChanged:(id)arg1;
+- (void)_cancelSelectedOccurrence:(BOOL)arg1;
+- (NSInteger)_dayIndexFromIndexPath:(id)arg1;
 - (void)_invalidateCachedOccurrences;
 - (void)_loadCachedOccurrencesForDayAtIndex:(NSInteger)arg1;
 - (void)_occurrenceCacheBeganRegenerating:(id)arg1;
@@ -108,10 +101,13 @@
 - (id)_presetColorForCalendar:(void*)arg1;
 - (void)_processReload:(id)arg1 forCacheOnly:(BOOL)arg2 postSelectionChange:(BOOL)arg3 includingCalendars:(BOOL)arg4;
 - (void)_reloadOccurrences:(struct __CFTimeZone { }*)arg1;
+- (void)_removeEventWithIdFromUnacknowledgedInvitations:(NSInteger)arg1;
+- (void)_removeSelectedOccurrence:(BOOL)arg1;
 - (void)_scheduleDelayedSave;
 - (void)_selectedOccurrenceCommitted:(id)arg1;
 - (void)_setCachedColor:(id)arg1 forCalendar:(void*)arg2;
 - (void)_setDisplayedDateRange:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 :(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 loadType:(NSInteger)arg3;
+- (BOOL)_shouldCancelSelectedOccurrence:(BOOL)arg1;
 - (void)_significantTimeChange:(id)arg1;
 - (void)_systemWake;
 - (void)_timeZoneChanged:(id)arg1;
@@ -119,19 +115,25 @@
 - (void)addEvent:(void*)arg1;
 - (void)beginBackgroundLoadForDateRange:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 :(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2;
 - (struct CalEventOccurrence { }*)cachedOccurrenceAtIndex:(NSInteger)arg1;
+- (struct CalEventOccurrence { }*)cachedOccurrenceAtIndexPath:(id)arg1;
 - (BOOL)cachedOccurrencesAreBeingGenerated;
 - (id)colorForCalendar:(void*)arg1;
 - (struct CalFilter { }*)copyFilter;
 - (void*)createReadWriteCalendarInStore:(void*)arg1;
+- (id)currentOccurrenceCacheDataSource;
 - (struct CalDatabase { }*)database;
+- (NSInteger)dayIndexForToday;
 - (NSInteger)dayOfCachedOccurrenceAtIndex:(NSInteger)arg1;
+- (NSInteger)dayOfCachedOccurrenceAtIndexPath:(id)arg1;
 - (NSInteger)dayWithCachedOccurrencesAtIndex:(NSInteger)arg1;
+- (NSInteger)dayWithCachedOccurrencesAtIndexPath:(id)arg1;
 - (void)dealloc;
 - (void)deleteSelectedOccurrence:(BOOL)arg1;
 - (void)detachSelectedOccurrence:(BOOL)arg1;
 - (struct __CFArray { }*)displayedOccurrences:(BOOL)arg1;
 - (void)getDisplayedDateRange:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; }*)arg1 :(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; }*)arg2;
 - (NSInteger)indexOfFirstCachedOccurrenceOnDayAtIndex:(NSInteger)arg1;
+- (NSInteger)indexOfFirstCachedOccurrenceOnDayAtIndexPath:(id)arg1;
 - (NSInteger)indexOfFirstDayWithCachedOccurrencesAfterDate:(NSInteger)arg1;
 - (id)init;
 - (id)initWithDatabase:(struct CalDatabase { }*)arg1;
@@ -141,25 +143,32 @@
 - (void)markSelectedInvitationRead;
 - (NSInteger)numberOfCachedOccurrences;
 - (NSInteger)numberOfDaysWithCachedOccurrences;
+- (NSInteger)occurrenceCountForDayIndex:(NSInteger)arg1;
+- (NSInteger)occurrenceIndexFromIndexPath:(id)arg1;
 - (NSInteger)readWriteCalendarCount;
 - (void)removeUnacknowledgedInvitation:(void*)arg1;
 - (void)save;
 - (void)saveIfNecessary;
 - (void)saveSelectedOccurrence;
+- (BOOL)searchingOccurrences;
 - (void*)selectedAttendee;
 - (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })selectedDate;
 - (struct __CFArray { }*)selectedDateOccurrences:(BOOL)arg1 loadIsComplete:(BOOL*)arg2;
 - (struct __CFArray { }*)selectedDateOccurrences:(BOOL)arg1;
 - (struct CalEventOccurrence { }*)selectedOccurrence;
 - (id)selectedOccurrenceEditModel;
+- (BOOL)selectedOccurrenceIsSearchMatch;
 - (void)setBlockLoads:(BOOL)arg1;
 - (void)setFilter:(struct CalFilter { }*)arg1;
 - (void)setSelectedAttendee:(void*)arg1;
 - (void)setSelectedDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 loadType:(NSInteger)arg2;
 - (void)setSelectedOccurrence:(struct CalEventOccurrence { }*)arg1;
 - (void)setSelectedOccurrenceIsDirty:(BOOL)arg1;
+- (void)setToClosestOccurrenceToEvent:(void*)arg1;
 - (void)shutdown;
+- (void)startSearching;
 - (void)terminateBackgroundLoading;
+- (double)tomorrow;
 - (NSInteger)unacknowledgedInvitationCount;
 - (struct __CFArray { }*)unacknowledgedInvitations;
 - (NSInteger)unreadInvitationCount;

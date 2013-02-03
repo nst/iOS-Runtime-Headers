@@ -2,44 +2,31 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@interface GMMSetHttpCookieRequest : GMMRequest <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMSetHttpCookieRequest : PBRequest {
     BOOL _gmmInstalled;
     BOOL _gmmInvokedViaMimeType;
     BOOL _gmmInvokedViaUrl;
     BOOL _hasGmmInstalled;
-    BOOL _hasGmmInvokedViaMimeType;
-    BOOL _hasGmmInvokedViaUrl;
 }
 
-@property BOOL hasGmmInvokedViaUrl; /* unknown property attribute: V_hasGmmInvokedViaUrl */
 @property BOOL gmmInvokedViaUrl; /* unknown property attribute: V_gmmInvokedViaUrl */
-@property BOOL hasGmmInvokedViaMimeType; /* unknown property attribute: V_hasGmmInvokedViaMimeType */
 @property BOOL gmmInvokedViaMimeType; /* unknown property attribute: V_gmmInvokedViaMimeType */
-@property BOOL hasGmmInstalled; /* unknown property attribute: V_hasGmmInstalled */
+@property(readonly) BOOL hasGmmInstalled; /* unknown property attribute: V_hasGmmInstalled */
 @property BOOL gmmInstalled; /* unknown property attribute: V_gmmInstalled */
 
-- (void)_writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (BOOL)gmmInstalled;
 - (BOOL)gmmInvokedViaMimeType;
 - (BOOL)gmmInvokedViaUrl;
 - (BOOL)hasGmmInstalled;
-- (BOOL)hasGmmInvokedViaMimeType;
-- (BOOL)hasGmmInvokedViaUrl;
 - (id)init;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (NSUInteger)requestTypeCode;
 - (Class)responseClass;
 - (void)setGmmInstalled:(BOOL)arg1;
 - (void)setGmmInvokedViaMimeType:(BOOL)arg1;
 - (void)setGmmInvokedViaUrl:(BOOL)arg1;
-- (void)setHasGmmInstalled:(BOOL)arg1;
-- (void)setHasGmmInvokedViaMimeType:(BOOL)arg1;
-- (void)setHasGmmInvokedViaUrl:(BOOL)arg1;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

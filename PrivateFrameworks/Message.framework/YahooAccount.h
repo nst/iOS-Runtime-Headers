@@ -12,6 +12,7 @@
     NSUInteger _nonce;
     unsigned short _sequenceNumber;
     BOOL _shouldListenForNotifications;
+    BOOL _shouldStartListeningForNotifications;
     NSString *_signature;
     struct __CFSocket { } *_socket;
     struct __CFRunLoopSource { } *_socketRunLoopSource;
@@ -34,6 +35,7 @@
 + (id)hostname;
 + (void)initialize;
 + (BOOL)isPredefinedAccountType;
++ (BOOL)isSSLEditable;
 + (BOOL)usernameIsEmailAddress;
 
 - (id)URLForMessage:(id)arg1;
@@ -43,7 +45,6 @@
 - (id)_deliveryAccountCreateIfNeeded:(BOOL)arg1;
 - (void)_reallyStopListeningForNotifications;
 - (void)_scheduleWakeAtDate:(id)arg1;
-- (void)_setAccountInfo:(id)arg1;
 - (id)accountNameForKeychain;
 - (BOOL)acquireCredentialsWithPassword:(id)arg1;
 - (id)apiHostname;
@@ -84,6 +85,7 @@
 - (BOOL)shouldDisplayHostnameInErrorMessages;
 - (void)shutdownListener;
 - (void)startListeningForNotifications;
+- (void)startupListener;
 - (void)stopListeningForNotifications;
 - (BOOL)storesPassword;
 - (id)temporaryPassword;

@@ -20,8 +20,8 @@
 - (void)invalidateGState;
 - (void)layout;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (void)mouseDown:(id)arg1;
-- (void)mouseUp:(id)arg1;
+- (void)mouseDown:(struct __GSEvent { }*)arg1;
+- (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (id)objectForWebScript;
 - (id)plugInView;
 - (void)reshape;

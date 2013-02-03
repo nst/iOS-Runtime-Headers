@@ -2,29 +2,19 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@interface GMMMapPoint : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
-    BOOL _hasLatitude;
-    BOOL _hasLongitude;
+@interface GMMMapPoint : PBCodable {
     NSInteger _latitude;
     NSInteger _longitude;
 }
 
-@property BOOL hasLongitude; /* unknown property attribute: V_hasLongitude */
 @property NSInteger longitude; /* unknown property attribute: V_longitude */
-@property BOOL hasLatitude; /* unknown property attribute: V_hasLatitude */
 @property NSInteger latitude; /* unknown property attribute: V_latitude */
 
 + (id)mapPointWithCoordinate:(struct { double x1; double x2; })arg1;
 
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
-- (BOOL)hasLatitude;
-- (BOOL)hasLongitude;
+- (id)description;
 - (NSUInteger)hash;
 - (id)init;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1;
@@ -32,11 +22,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (NSInteger)latitude;
 - (NSInteger)longitude;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
-- (void)setHasLatitude:(BOOL)arg1;
-- (void)setHasLongitude:(BOOL)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setLatitude:(NSInteger)arg1;
 - (void)setLongitude:(NSInteger)arg1;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

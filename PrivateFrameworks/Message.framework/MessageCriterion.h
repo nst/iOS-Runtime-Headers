@@ -78,6 +78,8 @@
 - (void)setExpression:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setQualifier:(NSInteger)arg1;
+- (id)simplifiedCriterion;
+- (id)simplifyOnce;
 - (id)stringForMessageRuleQualifier:(NSInteger)arg1;
 
 @end

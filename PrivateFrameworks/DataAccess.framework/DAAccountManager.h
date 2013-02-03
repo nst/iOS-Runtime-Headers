@@ -9,39 +9,38 @@
     NSMutableDictionary *_accounts;
     NSMutableDictionary *_accountsToAdd;
     NSMutableDictionary *_accountsToRemove;
+    NSInteger _pendingAccountSetupCount;
 }
 
 + (id)sharedInstance;
-+ (void)vendDaemonManagers;
++ (void)vendDaemonManagers:(Class)arg1;
 
-- (void)_migrateExchangeABDataToLocalWithChangeType:(NSInteger)arg1;
-- (void)_migrateExchangeCalDataToLocalWithChangeType:(NSInteger)arg1;
-- (void)_migrateLocalABDataToExchangeWithChangeType:(NSInteger)arg1;
-- (void)_migrateLocalCalDataToExchangeWithChangeType:(NSInteger)arg1;
-- (void)_performMigrationType:(NSInteger)arg1 contactsChangeType:(NSInteger)arg2 calendarChangeType:(NSInteger)arg3;
+- (id)_accountSettingsAccountTypes;
+- (BOOL)_clearOrphanedSubscribedCalendars:(void*)arg1 eventAccountIds:(id)arg2;
 - (void)_reloadAccounts;
+- (void)_removeStoresForAccountWithID:(id)arg1;
 - (void)_respondToAccountsChangedNotification;
 - (BOOL)_saveAllAccountSettings:(BOOL)arg1;
-- (void)_startAgentMonitoringWithContactsChangeType:(NSInteger)arg1 calendarChangeType:(NSInteger)arg2;
-- (void)_stopAgentMonitoringWithContactsChangeType:(NSInteger)arg1 calendarChangeType:(NSInteger)arg2;
-- (BOOL)_upgradeAccount:(id)arg1;
-- (BOOL)_upgradeAccountFromPreSugarBowl:(id)arg1;
+- (void)_startAgentMonitoring;
+- (void)_stopAgentMonitoring;
 - (id)accountWithID:(id)arg1;
+- (id)accountWithPersistentUUID:(id)arg1;
 - (id)accounts;
-- (BOOL)addAccount:(id)arg1 contactsChangeType:(NSInteger)arg2 calendarChangeType:(NSInteger)arg3;
+- (id)accountsOfClass:(Class)arg1;
 - (BOOL)addAccount:(id)arg1;
+- (void)addPendingAccountSetup;
 - (void)checkValidityForAccount:(id)arg1 consumer:(id)arg2;
 - (void)cleanupLaunchdSemaphore;
-- (id)configurations;
+- (void)clearOrphanedStores;
 - (void)dealloc;
 - (void)disableDaemon;
 - (void)enableDaemon;
+- (BOOL)hasActiveAccounts;
+- (BOOL)hasPendingAccountSetup;
 - (id)init;
-- (id)mailAccounts;
 - (id)pendingAccounts;
-- (BOOL)removeAccount:(id)arg1 contactsChangeType:(NSInteger)arg2 calendarChangeType:(NSInteger)arg3;
 - (BOOL)removeAccount:(id)arg1;
-- (void)sanitizeEventsInCalendar:(void*)arg1;
+- (void)removePendingAccountSetup;
 - (BOOL)saveAllAccountSettings;
 
 @end

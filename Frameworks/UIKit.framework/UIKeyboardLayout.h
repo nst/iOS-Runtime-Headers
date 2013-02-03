@@ -3,10 +3,27 @@
  */
 
 @interface UIKeyboardLayout : UIView <UIKeyboardLayoutProtocol> {
+    struct { 
+        unsigned char pathIndex; 
+        unsigned char pathIdentity; 
+        unsigned char pathProximity; 
+        float pathPressure; 
+        float pathMajorRadius; 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } pathLocation; 
+        void *pathWindow; 
+    } m_activePathInfo;
+    NSUInteger m_currentPathFlags;
+    NSInteger m_shiftKeyPathIndex;
+    NSInteger m_swipePathIndex;
 }
 
 - (id)activationIndicatorView;
 - (BOOL)canHandleHandEvent:(struct __GSEvent { }*)arg1;
+- (BOOL)cancelMouseTracking;
+- (BOOL)cancelTouchTracking;
 - (id)candidateList;
 - (void)deactivateActiveKeys;
 - (void)didClearInput;
@@ -16,6 +33,7 @@
 - (BOOL)isShiftKeyBeingHeld;
 - (BOOL)isShiftKeyPlaneChooser;
 - (void)longPressAction;
+- (void)phraseBoundaryDidChange;
 - (void)restoreDefaultsForAllKeys;
 - (void)restoreDefaultsForKey:(id)arg1;
 - (void)setAction:(SEL)arg1 forKey:(id)arg2;
@@ -26,6 +44,13 @@
 - (BOOL)shiftKeyRequiresImmediateUpdate;
 - (BOOL)shouldShowIndicator;
 - (void)showKeyboardType:(NSInteger)arg1 withAppearance:(NSInteger)arg2;
+- (void)touchDown:(struct __GSEvent { }*)arg1 withPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; void *x7; }*)arg2;
+- (void)touchDragged:(struct __GSEvent { }*)arg1 withPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; void *x7; }*)arg2;
+- (void)touchUp:(struct __GSEvent { }*)arg1 withPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; void *x7; }*)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)updateLocalizedKeys;
 - (void)updateReturnKey;
 - (BOOL)usesAutoShift;

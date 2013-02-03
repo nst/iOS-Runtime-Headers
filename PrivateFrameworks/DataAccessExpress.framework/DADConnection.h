@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
+@class NSMutableSet;
+
 @interface DADConnection : NSObject {
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
+    NSMutableSet *_accountIdsWithAlreadyResetCerts;
     struct __CFMachPort { } *_callbackPort;
     } _lock;
     NSUInteger _publicPort;
     NSUInteger _serverPort;
-    BOOL _shouldResetCertWarnings;
 }
 
 + (id)sharedConnection;
@@ -23,28 +25,38 @@
 - (BOOL)_requestDaemonChangeAgentMonitoringStatus:(BOOL)arg1;
 - (BOOL)_resetCertWarningsForAccountId:(id)arg1 andDataClass:(NSInteger)arg2;
 - (void)_setPublicPort:(NSUInteger)arg1;
-- (BOOL)cancelGALSearch:(id)arg1;
+- (BOOL)cancelServerContactsSearch:(id)arg1;
 - (id)currentPolicyKeyForAccountID:(id)arg1;
 - (void)dealloc;
+- (id)defaultContainerIdentifierForAccountID:(id)arg1 andDataClass:(NSInteger)arg2;
+- (id)getSubscribedCalendars;
 - (void)handleBrokenPipe;
+- (BOOL)handleURL:(id)arg1;
 - (id)init;
 - (void)invalidateServerPort;
 - (NSInteger)openDADConnectionOnRunLoop:(struct __CFRunLoop { }*)arg1;
-- (BOOL)performGALSearch:(id)arg1 forAccountWithID:(id)arg2 onRunloop:(id)arg3;
+- (BOOL)performServerContactsSearch:(id)arg1 forAccountWithID:(id)arg2 onRunloop:(id)arg3;
 - (BOOL)processMeetingRequests:(id)arg1 inFolderWithId:(id)arg2 forAccountWithId:(id)arg3;
+- (BOOL)processSubscribedCalendars:(id)arg1;
 - (NSUInteger)publicPort;
+- (BOOL)removeStoresForAccountWithID:(id)arg1;
+- (BOOL)reportFolderItemsSyncSuccess:(BOOL)arg1 forFolderWithID:(id)arg2 andAccountWithID:(id)arg3;
 - (void)requestDaemonShutdown;
 - (BOOL)requestDaemonStartMonitoringAgents;
 - (BOOL)requestDaemonStopMonitoringAgents;
 - (BOOL)requestPolicyUpdateForAccountID:(id)arg1;
 - (BOOL)resumeWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 - (NSUInteger)serverPort;
+- (NSUInteger)serverPortWithTimeout:(NSUInteger)arg1;
+- (BOOL)setFolderIdsThatExternalClientsCareAboutAdded:(id)arg1 deleted:(id)arg2 foldersTag:(id)arg3 forAccountID:(id)arg4;
 - (void)stopWatching;
 - (BOOL)stopWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 - (BOOL)suspendWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 - (BOOL)updateContentsOfAllFoldersForAccountID:(id)arg1 andDataClass:(NSInteger)arg2;
 - (BOOL)updateContentsOfFoldersWithKeys:(id)arg1 forAccountID:(id)arg2 andDataClass:(NSInteger)arg3;
+- (BOOL)updateFolderListForAccountID:(id)arg1 andDataClass:(NSInteger)arg2 ignoreThrottleTimer:(BOOL)arg3;
 - (BOOL)updateFolderListForAccountID:(id)arg1 andDataClass:(NSInteger)arg2;
+- (BOOL)upgradeAccountWithId:(id)arg1 withProtocolVersion:(id)arg2;
 - (BOOL)watchFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 
 @end

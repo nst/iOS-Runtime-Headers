@@ -2,44 +2,84 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView, UIProgressHUD, TPCameraPushButton, PLCropLCDLayer, TPPushButton, TPBottomDualButtonBar;
+@class UIProgressHUD, PLToolbar, PLCropLCDLayer, TPPushButton, PLCropOverlayCropView, UIImageView, TPBottomDualButtonBar, PLCropOverlayBottomBar, TPCameraPushButton;
 
 @interface PLCropOverlay : UIView {
-    TPBottomDualButtonBar *_bottomBar;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    unsigned int _cropRectIsVisible : 1;
+    unsigned int _offsetStatusBar : 1;
+    unsigned int _tookPhoto : 1;
+    unsigned int _showsCropRegion : 1;
+    PLCropOverlayBottomBar *_bottomBar;
     TPPushButton *_cancelButton;
+    } _cropRect;
+    PLCropOverlayCropView *_cropView;
+    PLToolbar *_customToolbar;
     id _delegate;
     UIProgressHUD *_hud;
     PLCropLCDLayer *_lcd;
     UIImageView *_lcdImage;
+    NSInteger _mode;
     TPCameraPushButton *_okButton;
+    TPBottomDualButtonBar *_oldBottomBar;
+    float _statusBarHeight;
 }
 
 - (void)_backgroundSavePhoto:(id)arg1;
+- (void)_createCropView;
 - (void)_fadeOutCompleted:(id)arg1;
+- (void)_pauseButtonPressed:(id)arg1;
+- (void)_playButtonPressed:(id)arg1;
 - (void)_savePhotoFinished:(id)arg1;
+- (void)_setMode:(NSInteger)arg1;
+- (void)_updateToolbarItems:(BOOL)arg1;
 - (void)beginBackgroundSaveWithTile:(id)arg1 progressTitle:(id)arg2 completionCallbackTarget:(id)arg3 options:(NSInteger)arg4;
+- (id)bottomBar;
 - (void)cancelButtonClicked:(id)arg1;
+- (void)cropOverlayBottomBarCancelButtonClicked:(id)arg1;
+- (void)cropOverlayBottomBarDoneButtonClicked:(id)arg1;
+- (void)cropOverlayBottomBarPauseButtonClicked:(id)arg1;
+- (void)cropOverlayBottomBarPlayButtonClicked:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
 - (void)dealloc;
 - (id)dictionaryWithCropResultsFromImageScroller:(id)arg1 withOptions:(NSInteger)arg2;
+- (void)didCapturePhoto;
+- (void)didCaptureVideo;
+- (void)didPauseVideo;
+- (void)didPlayVideo;
 - (void)dismiss;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 setCropTitle:(id)arg2 offsettingStatusBar:(BOOL)arg3;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 setCropTitle:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(NSInteger)arg2 offsettingStatusBar:(BOOL)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(NSInteger)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)insertIrisView:(id)arg1;
+- (NSInteger)mode;
+- (id)modeSwitch;
 - (void)okButtonClicked:(id)arg1;
 - (void)removeProgress;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })scrollIndicatorRect;
 - (void)setCancelButtonTitle:(id)arg1;
+- (void)setCropRectVisible:(BOOL)arg1 duration:(float)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
+- (void)setModeSwitch:(id)arg1;
 - (void)setOKButtonColor:(NSInteger)arg1;
 - (void)setOKButtonShowsCamera:(BOOL)arg1;
 - (void)setOKButtonTitle:(id)arg1;
 - (void)setProgressDone;
 - (void)setShowProgress:(BOOL)arg1 title:(id)arg2;
-- (void)setSubtitle:(id)arg1;
+- (void)setShowsCropRegion:(BOOL)arg1;
+- (void)setTitle:(id)arg1 okButtonTitle:(id)arg2;
 - (void)setTitle:(id)arg1;
+- (id)shutterButton;
 - (void)statusBarHeightDidChange:(id)arg1;
 
 @end

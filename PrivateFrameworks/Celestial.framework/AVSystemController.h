@@ -9,12 +9,12 @@
 + (void)initialize;
 + (id)sharedAVSystemController;
 
-- (BOOL)activeCategoryVolumeDidChangeTo:(float)arg1 forRoute:(id)arg2 andDeviceIdentifier:(id)arg3;
 - (id)attributeForKey:(id)arg1;
 - (BOOL)changeActiveCategoryVolumeBy:(float)arg1 fallbackCategory:(id)arg2 resultVolume:(float*)arg3 affectedCategory:(id*)arg4;
 - (BOOL)changeActiveCategoryVolumeBy:(float)arg1 forRoute:(id)arg2 andDeviceIdentifier:(id)arg3;
 - (BOOL)changeActiveCategoryVolumeBy:(float)arg1;
 - (BOOL)changeVolumeBy:(float)arg1 forCategory:(id)arg2;
+- (BOOL)currentRouteHasVolumeControl;
 - (void)dealloc;
 - (BOOL)getActiveCategoryMuted:(BOOL*)arg1 forRoute:(id)arg2 andDeviceIdentifier:(id)arg3;
 - (BOOL)getActiveCategoryMuted:(BOOL*)arg1;
@@ -26,6 +26,7 @@
 - (id)init;
 - (void)makeError:(id*)arg1 withDescription:(id)arg2 code:(long)arg3;
 - (BOOL)okToNotifyFromThisThread;
+- (id)pickableRoutesForCategory:(id)arg1;
 - (id)routeForCategory:(id)arg1;
 - (BOOL)setActiveCategoryVolumeTo:(float)arg1 fallbackCategory:(id)arg2 resultVolume:(float*)arg3 affectedCategory:(id*)arg4;
 - (BOOL)setActiveCategoryVolumeTo:(float)arg1 forRoute:(id)arg2 andDeviceIdentifier:(id)arg3;

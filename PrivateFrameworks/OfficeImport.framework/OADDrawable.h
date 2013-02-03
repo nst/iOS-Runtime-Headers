@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <OADClient>, OADGroup, OADDrawableProperties;
+@class <OADClient>, OADDrawableProperties, OADDrawable<OADDrawableContainer>;
 
 @interface OADDrawable : NSObject {
     <OADClient> *mClientData;
     OADDrawableProperties *mDrawableProperties;
     BOOL mHidden;
-    OADGroup *mParent;
+    long mId;
+    OADDrawable<OADDrawableContainer> *mParent;
 }
 
 - (id)clientData;
@@ -16,10 +17,12 @@
 - (id)drawableProperties;
 - (id)ensureClientDataOfClass:(Class)arg1;
 - (BOOL)hidden;
+- (long)id;
 - (id)initWithPropertiesClass:(Class)arg1;
 - (id)parent;
 - (void)setClientData:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
+- (void)setId:(long)arg1;
 - (void)setParent:(id)arg1;
 - (void)setParentTextListStyle:(id)arg1;
 

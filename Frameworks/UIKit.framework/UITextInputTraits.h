@@ -48,10 +48,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)enablesReturnKeyAutomatically;
 - (id)init;
 - (id)insertionPointColor;
 - (NSUInteger)insertionPointWidth;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isSecureTextEntry;
 - (NSInteger)keyboardAppearance;
 - (NSInteger)keyboardType;

@@ -2,19 +2,22 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
+@class UIView, UIResponder;
 
 @interface UITransitionView : UIView <NSCoding> {
     struct { 
         unsigned int animationInProgress : 1; 
         unsigned int ignoresInteractionEvents : 1; 
-        unsigned int reserved : 30; 
+        unsigned int shouldNotifyDidCompleteImmediately : 1; 
+        unsigned int reserved : 29; 
     id _delegate;
-    UIView *_firstResponderToRemember;
+    UIResponder *_firstResponderToRemember;
     UIView *_fromView;
     UIView *_toView;
     } _transitionViewFlags;
 }
+
+@property BOOL shouldNotifyDidCompleteImmediately;
 
 + (double)defaultDurationForTransition:(NSInteger)arg1;
 
@@ -34,6 +37,8 @@
 - (void)notifyDidCompleteTransition:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIgnoresInteractionEvents:(BOOL)arg1;
+- (void)setShouldNotifyDidCompleteImmediately:(BOOL)arg1;
+- (BOOL)shouldNotifyDidCompleteImmediately;
 - (id)toView;
 - (BOOL)transition:(NSInteger)arg1 fromView:(id)arg2 toView:(id)arg3;
 - (BOOL)transition:(NSInteger)arg1 toView:(id)arg2;

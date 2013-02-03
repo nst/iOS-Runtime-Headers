@@ -29,6 +29,7 @@
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
+- (void)dealloc;
 - (id)initWithURL:(id)arg1 postData:(id)arg2 requester:(struct Requester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; }*)arg3 timeout:(double)arg4;
 
 @end

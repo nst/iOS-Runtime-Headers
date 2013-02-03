@@ -28,9 +28,19 @@
         unsigned int shouldFlipValue : 1; 
         unsigned int needsNonOpaqueFills : 1; 
         unsigned int reserved : 24; 
+    struct CGPoint { 
+        float x; 
+        float y; 
+    struct CGPoint { 
+        float x; 
+        float y; 
     float _animationEndValue;
     float _hitOffset;
+    } _idleTrackingPoint;
+    double _idleTrackingTime;
     UIView *_knob;
+    } _lastTrackingPoint;
+    double _lastTrackingTime;
     float _maxValue;
     UIImage *_maxValueImage;
     float _minValue;

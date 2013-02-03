@@ -18,18 +18,21 @@
 @property(copy) NSString *title;
 @property(copy,readonly) NSString *titleDisplayString;
 @property(readonly) BOOL isContentEditable;
+@property NSInteger tabIndex;
 
-+ (id)_wrapHTMLElement:(struct HTMLElement { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_34_1_1; } x34; }*)arg1;
-
-- (struct HTMLElement { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_34_1_1; } x34; }*)_HTMLElement;
 - (void)absolutePosition:(NSInteger*)arg1 :(NSInteger*)arg2 :(NSInteger*)arg3 :(NSInteger*)arg4;
+- (void)blur;
 - (id)children;
 - (id)className;
 - (id)contentEditable;
 - (id)dir;
+- (void)focus;
 - (id)idName;
 - (id)innerHTML;
 - (id)innerText;
+- (id)insertAdjacentElement:(id)arg1 element:(id)arg2;
+- (void)insertAdjacentHTML:(id)arg1 html:(id)arg2;
+- (void)insertAdjacentText:(id)arg1 text:(id)arg2;
 - (BOOL)isContentEditable;
 - (id)lang;
 - (id)outerHTML;
@@ -47,7 +50,10 @@
 - (void)setOuterText:(id)arg1;
 - (void)setScrollXOffset:(NSInteger)arg1 scrollYOffset:(NSInteger)arg2 adjustForPurpleCaret:(BOOL)arg3;
 - (void)setScrollXOffset:(NSInteger)arg1 scrollYOffset:(NSInteger)arg2;
+- (void)setTabIndex:(NSInteger)arg1;
 - (void)setTitle:(id)arg1;
+- (NSInteger)structuralComplexityContribution;
+- (NSInteger)tabIndex;
 - (id)title;
 - (id)titleDisplayString;
 

@@ -16,8 +16,8 @@
 - (id)init;
 - (BOOL)isEmpty;
 - (id)overrideTextListStyle;
-- (id)paragraphAtIndex:(NSInteger)arg1;
-- (NSInteger)paragraphCount;
+- (id)paragraphAtIndex:(NSUInteger)arg1;
+- (NSUInteger)paragraphCount;
 - (id)plainText;
 - (id)properties;
 - (void)removeTrailingNewlines;

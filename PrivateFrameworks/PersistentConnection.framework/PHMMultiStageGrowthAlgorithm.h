@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class PCPersistentTimer;
+@class NSDate;
 
 @interface PHMMultiStageGrowthAlgorithm : PHMGrowthAlgorithm {
     NSInteger _currentInterval;
@@ -10,18 +10,15 @@
     NSInteger _highWatermark;
     NSInteger _initialGrowthStageHighWatermark;
     NSInteger _initialGrowthStageLastAttempt;
-    BOOL _leaveSteadyState;
-    PCPersistentTimer *_steadyStateRecalibrationTimer;
+    NSDate *_leaveSteadyStateDate;
 }
 
 - (void)_handleBackoffAction:(NSInteger)arg1;
 - (void)_handleInitialGrowthAction:(NSInteger)arg1;
 - (void)_handleRefinedGrowthAction:(NSInteger)arg1;
 - (void)_handleSteadyStateAction:(NSInteger)arg1;
-- (void)_leaveSteadyState:(id)arg1;
 - (void)_logState;
 - (void)_resetAlgorithm;
-- (void)_resetSteadyStateTimer;
 - (void)_setCurrentInterval:(NSInteger)arg1;
 - (NSInteger)_steadyStateTimeout;
 - (id)_stringForAction:(NSInteger)arg1;
@@ -31,5 +28,7 @@
 - (void)dealloc;
 - (id)initWithHBInterval:(NSInteger)arg1;
 - (BOOL)isCalibrating;
+- (void)setMaxHBInterval:(NSInteger)arg1;
+- (void)setMinHBInterval:(NSInteger)arg1;
 
 @end

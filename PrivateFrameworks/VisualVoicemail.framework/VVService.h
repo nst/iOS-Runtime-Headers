@@ -16,9 +16,11 @@
     NSError *_activationError;
     NSUInteger _capabilities;
     id _carrierParameters;
+    NSInteger _dataContextIdentifier;
     NSRecursiveLock *_lock;
     NSInteger _mailboxUsage;
     struct __CFDate { } *_nextRetryWakeDate;
+    struct __CFDate { } *_nextTrashCompactionWakeDate;
     NSTimer *_notificationFallbackTimer;
     struct __CFDate { } *_notificationFallbackWakeDate;
     Class _notificationInterpreter;
@@ -34,6 +36,7 @@
     NSTimer *_retryTimer;
     } _serviceFlags;
     double _trashCompactionAge;
+    NSTimer *_trashCompactionTimer;
     NSUInteger _trashedCount;
     NSUInteger _unreadCount;
 }
@@ -48,6 +51,8 @@
 + (BOOL)sharedServiceIsSubscribed;
 
 - (void)_attemptDelayedSynchronize;
+- (void)_attemptScheduledTrashCompaction;
+- (void)_cancelAutomatedTrashCompaction;
 - (void)_cancelIndicatorAction;
 - (void)_contextActivationFailed:(id)arg1;
 - (void)_contextActivationSucceeded:(id)arg1;
@@ -59,12 +64,13 @@
 - (void)_reactToIndicator;
 - (void)_registerForPowerEventsIfNecessary;
 - (struct __CFArray { }*)_retryIntervals;
+- (void)_scheduleAutomatedTrashCompaction;
 - (void)_scheduleFallbackTimerIfNecessary;
 - (void)_setActivationError:(id)arg1;
 - (void)_setOnline:(BOOL)arg1 fallbackMode:(BOOL)arg2;
-- (double)_trashCompactionAge;
 - (void)_updateOnlineStatusWithDataStatusDict:(struct __CFDictionary { }*)arg1;
 - (id)activationError;
+- (void)cancelAutomatedTrashCompaction;
 - (void)cancelDelayedSynchronize;
 - (void)cancelNotificationFallback;
 - (void)cancelPasswordRequest;
@@ -76,6 +82,8 @@
 - (BOOL)dataForRecordPending:(void*)arg1 progressiveLoadInProgress:(BOOL*)arg2;
 - (void)dealloc;
 - (void)displayPasswordRequestIfNecessary;
+- (BOOL)doTrashCompaction;
+- (BOOL)doesClientManageTrashCompaction;
 - (BOOL)greetingAvailable;
 - (BOOL)greetingFetchExistsProgressiveLoadInProgress:(BOOL*)arg1;
 - (void)handleDataContextDeactivated;
@@ -114,6 +122,7 @@
 - (BOOL)respectsMWINotifications;
 - (void)retrieveDataForRecord:(void*)arg1;
 - (void)retrieveGreeting;
+- (void)scheduleAutomatedTrashCompaction;
 - (void)scheduleDelayedSynchronize;
 - (void)setGreetingType:(NSInteger)arg1 withData:(id)arg2 duration:(NSUInteger)arg3;
 - (void)setMailboxRequiresSetup:(BOOL)arg1;
@@ -126,9 +135,11 @@
 - (void)setTrashedCount:(NSUInteger)arg1;
 - (void)setUnreadCount:(NSUInteger)arg1;
 - (BOOL)sharedSubscriptionRequiresSetup;
+- (BOOL)shouldScheduleAutoTrashOnMailboxUsageChange;
 - (BOOL)shouldTrashCompactRecord:(void*)arg1;
 - (void)synchronize:(BOOL)arg1;
 - (BOOL)taskOfTypeExists:(NSInteger)arg1;
+- (double)trashCompactionAge;
 - (NSUInteger)trashedCount;
 - (NSUInteger)unreadCount;
 - (void)updateCountsForChangedFlags:(NSInteger)arg1 currentRecordFlags:(NSInteger)arg2;

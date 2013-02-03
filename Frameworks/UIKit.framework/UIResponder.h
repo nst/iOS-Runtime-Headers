@@ -5,8 +5,12 @@
 @interface UIResponder : NSObject {
 }
 
+@property(readonly) NSUndoManager *undoManager;
+
 - (BOOL)_becomeFirstResponderWhenPossible;
+- (void)_clearBecomeFirstResponderWhenCapable;
 - (BOOL)_containedInAbsoluteResponderChain;
+- (BOOL)_containsResponder:(id)arg1;
 - (void)_controlMouseDown:(struct __GSEvent { }*)arg1;
 - (void)_controlMouseDragged:(struct __GSEvent { }*)arg1;
 - (void)_controlMouseUp:(struct __GSEvent { }*)arg1;
@@ -14,13 +18,13 @@
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
 - (id)_firstResponder;
-- (void)_forwardSelector:(SEL)arg1 withObject:(id)arg2;
 - (id)_responderForBecomeFirstResponder;
 - (void)_setFirstResponder:(id)arg1;
+- (id)_targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)canResignFirstResponder;
-- (void)dismissOverlayView:(id)arg1;
 - (id)firstResponder;
 - (void)gestureChanged:(struct __GSEvent { }*)arg1;
 - (void)gestureEnded:(struct __GSEvent { }*)arg1;
@@ -28,6 +32,9 @@
 - (BOOL)isFirstResponder;
 - (void)keyDown:(struct __GSEvent { }*)arg1;
 - (void)keyUp:(struct __GSEvent { }*)arg1;
+- (void)motionBegan:(NSInteger)arg1 withEvent:(id)arg2;
+- (void)motionCancelled:(NSInteger)arg1 withEvent:(id)arg2;
+- (void)motionEnded:(NSInteger)arg1 withEvent:(id)arg2;
 - (void)mouseDown:(struct __GSEvent { }*)arg1;
 - (void)mouseDragged:(struct __GSEvent { }*)arg1;
 - (void)mouseEntered:(struct __GSEvent { }*)arg1;
@@ -35,14 +42,12 @@
 - (void)mouseMoved:(struct __GSEvent { }*)arg1;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (id)nextResponder;
-- (void)pushViewType:(NSInteger)arg1;
 - (BOOL)resignFirstResponder;
 - (void)scrollWheel:(struct __GSEvent { }*)arg1;
-- (void)showOverlayView:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (NSInteger)transitionDirection;
+- (id)undoManager;
 
 @end

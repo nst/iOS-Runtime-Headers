@@ -11,6 +11,7 @@
 + (id)accountWithIdentifier:(id)arg1;
 + (id)accountWithUniqueId:(id)arg1;
 + (void)addDeliveryAccount:(id)arg1;
++ (id)basicAccountProperties;
 + (id)carrierDeliveryAccount;
 + (id)deliveryAccounts;
 + (id)existingAccountWithHostname:(id)arg1 username:(id)arg2;
@@ -18,6 +19,7 @@
 + (void)removeDeliveryAccount:(id)arg1;
 + (void)saveAccountInfoToDefaults;
 + (void)setDeliveryAccounts:(id)arg1;
++ (id)supportedDataclasses;
 
 - (BOOL)canBeFallbackAccount;
 - (Class)deliveryClass;
@@ -34,6 +36,7 @@
 - (void)setShouldUseAuthentication:(BOOL)arg1;
 - (void)setUsername:(id)arg1;
 - (BOOL)shouldUseAuthentication;
+- (BOOL)supportsOutboxCopy;
 - (BOOL)supportsSoftBankCodePoints;
 
 @end

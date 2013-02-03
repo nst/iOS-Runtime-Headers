@@ -4,7 +4,7 @@
 
 @class MessageBody, MutableMessageHeaders;
 
-@interface OutgoingMessage : Message {
+@interface OutgoingMessage : MailMessage {
     MessageBody *messageBody;
     MutableMessageHeaders *messageHeaders;
 }
@@ -13,8 +13,8 @@
 - (id)headers;
 - (id)messageBody;
 - (id)messageBodyIfAvailable;
+- (BOOL)messageData:(id*)arg1 messageSize:(NSUInteger*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
 - (id)messageData;
-- (id)messageDataIsComplete:(BOOL*)arg1 downloadIfNecessary:(BOOL)arg2;
 - (NSUInteger)messageSize;
 - (id)messageStore;
 - (id)mutableHeaders;

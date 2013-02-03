@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimer, NSArray, UILabel, NSString, NSMutableArray, UIImageView, UIView, UIAutocorrectInlinePrompt, UIKeyboardGenericKeyView, UIScroller, UIImage;
+@class NSTimer, NSArray, UILabel, NSString, NSMutableArray, UIImageView, UIView, UIKeyboardCandidateSafetyNetVie, UIAutocorrectInlinePrompt, UIKeyboardGenericKeyView, UIScroller, UIImage;
 
 @interface UIKeyboardCandidateInline : UIView <UIKeyboardCandidateList> {
     struct CGRect { 
@@ -65,6 +65,7 @@
     BOOL _alwaysShowBackground;
     BOOL _animating;
     UIImage *_backgroundImage;
+    UIImage *_backgroundTopImage;
     NSMutableArray *_candidateLines;
     NSArray *_candidates;
     BOOL _caretVisible;
@@ -93,6 +94,7 @@
     NSUInteger _numColumns;
     NSInteger _orientation;
     UIKeyboardGenericKeyView *_prevPageButton;
+    NSInteger _promptTextType;
     UIScroller *_scrollView;
     BOOL _selectedInAll;
     UIView *_shadowView;
@@ -105,6 +107,7 @@
     BOOL m_caretShowingNow;
     NSTimer *m_caretTimer;
     UIView *m_caretView;
+    UIKeyboardCandidateSafetyNetVie *m_landscapeSafetyNetView;
     BOOL m_showingCompletions;
 }
 
@@ -140,6 +143,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)inlineCandidateAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)inlineCandidateClicked:(id)arg1;
+- (void)installLandscapeSafetyNetView;
 - (void)layout;
 - (void)layoutOneCandidateAtIndex:(NSUInteger)arg1;
 - (void)mouseDown:(struct __GSEvent { }*)arg1;
@@ -149,6 +153,7 @@
 - (void)obsoleteCandidates;
 - (NSInteger)orientation;
 - (void)prevPageButtonSelected:(id)arg1;
+- (void)removeLandscapeSafetyNetView;
 - (id)rotatingContentViewForWindow:(id)arg1;
 - (struct CGPoint { float x1; float x2; })scroller:(id)arg1 adjustSmoothScrollEnd:(struct CGPoint { float x1; float x2; })arg2 velocity:(struct CGSize { float x1; float x2; })arg3;
 - (BOOL)scroller:(id)arg1 shouldAdjustSmoothScrollEndForVelocity:(struct CGSize { float x1; float x2; })arg2;
@@ -157,6 +162,7 @@
 - (void)scrollerWillStartDragging:(id)arg1;
 - (void)setAlwaysShowBackground:(BOOL)arg1;
 - (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
+- (void)setCandidates:(id)arg1 type:(NSInteger)arg2 inlineText:(id)arg3 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
 - (void)setCaretPosition:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCompletionContext:(id)arg1;
 - (void)setCurrentIndex:(NSUInteger)arg1;

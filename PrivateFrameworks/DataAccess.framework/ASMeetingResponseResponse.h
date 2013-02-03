@@ -5,18 +5,23 @@
 @class NSNumber, NSString;
 
 @interface ASMeetingResponseResponse : ASItem {
-    NSString *_calendarId;
+    NSString *_eventId;
     NSString *_requestId;
     NSNumber *_status;
 }
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
 - (void)_addResult:(id)arg1;
 - (id)asParseRules;
-- (id)calendarId;
 - (void)dealloc;
 - (id)description;
+- (id)eventId;
 - (id)requestId;
-- (void)setCalendarId:(id)arg1;
+- (void)setEventId:(id)arg1;
 - (void)setRequestId:(id)arg1;
 - (void)setStatus:(id)arg1;
 - (id)status;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-@class NSMutableDictionary, NSArray, NSString, WebPluginController, WebDataSource, WebTextCompleteController, NSTimer;
+@class NSMutableDictionary, NSArray, NSString, WAKView, WebPluginController, WebDataSource, NSTimer;
 
 @interface WebHTMLViewPrivate : NSObject {
     struct CGSize { 
@@ -15,7 +15,6 @@
     struct __GSEvent { } *autoscrollTriggerEvent;
     BOOL avoidingPrintOrphan;
     BOOL closed;
-    WebTextCompleteController *compController;
     WebDataSource *dataSource;
     BOOL handlingMouseDownEvent;
     NSMutableDictionary *highlighters;
@@ -24,15 +23,14 @@
     struct __GSEvent { } *keyDownEvent;
     } lastLayoutSize;
     } lastScrollPosition;
+    WAKView *layerHostingView;
     struct __GSEvent { } *mouseDownEvent;
     BOOL needsLayout;
     BOOL needsToApplyStyles;
-    BOOL nextResponderDisabledOnce;
     NSArray *pageRects;
     WebPluginController *pluginController;
     BOOL printing;
     BOOL receivedNOOP;
-    BOOL resigningFirstResponder;
     id savedSubviews;
     SEL selectorForDoCommandBySelector;
     BOOL subviewsSetAside;

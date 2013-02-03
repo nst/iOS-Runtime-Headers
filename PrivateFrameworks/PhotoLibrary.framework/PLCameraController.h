@@ -2,38 +2,110 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIView, CALayer;
+@class AVCapture, PLPreviewView, <PLCameraControllerDelegate>;
 
 @interface PLCameraController : NSObject {
-    struct CameraDevice { } *_camera;
-    struct CameraImageQueueHelper { } *_cameraHelper;
-    CALayer *_cameraLayer;
-    id _delegate;
+    struct { 
+        unsigned int supportsVideo : 1; 
+        unsigned int supportsAccurateStillCapture : 1; 
+        unsigned int supportsFocus : 1; 
+        unsigned int capturingVideo : 1; 
+        unsigned int deferStopPreview : 1; 
+        unsigned int deferStartVideoCapture : 1; 
+        unsigned int inCall : 1; 
+        unsigned int continuousAutofocusDuringCapture : 1; 
+        unsigned int focusDisabled : 1; 
+        unsigned int focusedAtPoint : 1; 
+        unsigned int wasInterrupted : 1; 
+        unsigned int resumePreviewing : 1; 
+        unsigned int isReady : 1; 
+        unsigned int didSetPreviewLayer : 1; 
+        unsigned int didNotifyCaptureEnded : 1; 
+        unsigned int dontShowFocus : 1; 
+        unsigned int isChangingMode : 1; 
+        unsigned int lowResolutionCapture : 1; 
+        unsigned int delegateModeDidChange : 1; 
+        unsigned int delegateTookPicture : 1; 
+        unsigned int delegateReadyStateChanged : 1; 
+        unsigned int delegateVideoCaptureDidStart : 1; 
+        unsigned int delegateVideoCaptureDidStop : 1; 
+        unsigned int delegateVideoAdded : 1; 
+        unsigned int delegateFocusFinished : 1; 
+    NSInteger _autofocusCount;
+    AVCapture *_avCapture;
+    } _cameraFlags;
+    NSInteger _cameraMode;
+    NSInteger _captureOrientation;
+    <PLCameraControllerDelegate> *_delegate;
+    NSInteger _focusCount;
     BOOL _isLocked;
     BOOL _isPreviewing;
-    UIView *_previewView;
-    BOOL _wasPreviewingBeforeDeviceLock;
+    PLPreviewView *_previewView;
+    NSUInteger _previousSimpleRemotePriority;
+    double _startTime;
 }
 
 + (id)sharedInstance;
 
 - (void)_applicationResumed;
 - (void)_applicationSuspended;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_cameraFrame;
-- (struct CameraImageQueueHelper { }*)_cameraHelper;
+- (void)_autofocusOperationFinished;
+- (void)_captureCompleted:(id)arg1;
+- (void)_captureStarted:(id)arg1;
+- (void)_commonFocusFinished;
+- (void*)_createPreviewIOSurface;
+- (id)_createPreviewImage;
+- (void)_destroyAVCapture;
+- (void)_didStopCapture;
+- (void)_focusCompleted:(id)arg1;
+- (void)_focusHasChanged:(id)arg1;
+- (void)_focusOperationFinished;
+- (void)_focusStarted:(id)arg1;
+- (void)_focusWasCancelled:(id)arg1;
+- (void)_inCallStatusChanged:(BOOL)arg1;
+- (void)_interruptionEnded:(id)arg1;
+- (void)_previewStarted:(id)arg1;
+- (void)_previewStopped:(id)arg1;
+- (void)_serverDied:(id)arg1;
+- (void)_setCameraMode:(NSInteger)arg1 force:(BOOL)arg2;
 - (void)_setIsReady;
+- (void)_setVideoPreviewLayer;
 - (BOOL)_setupCamera;
+- (void)_stopVideoCaptureAndPausePreview:(id)arg1;
 - (void)_tearDownCamera;
+- (void)_tookPhoto:(id)arg1;
 - (void)_tookPicture:(struct CGImage { }*)arg1 jpegData:(struct __CFData { }*)arg2 imageProperties:(struct __CFDictionary { }*)arg3;
-- (void)_tookPicture:(struct __CoreSurfaceBuffer { }*)arg1;
-- (void)capturePhoto;
+- (void)_wasInterrupted:(id)arg1;
+- (void)autofocus;
+- (NSInteger)cameraMode;
+- (BOOL)canCaptureVideo;
+- (BOOL)canStartVideoCapture;
+- (void)capturePhoto:(BOOL)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)focusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)inCall;
 - (id)init;
+- (void)irisWillClose;
+- (BOOL)isCapturingVideo;
+- (BOOL)isFocusing;
 - (BOOL)isReady;
+- (void)lockFocus;
 - (id)previewView;
+- (void)restartAutoFocus;
+- (void)resumePreview;
+- (void)setCameraMode:(NSInteger)arg1;
+- (void)setCaptureAtFullResolution:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDontShowFocus:(BOOL)arg1;
+- (void)setFocusDisabled:(BOOL)arg1;
 - (void)startPreview;
+- (BOOL)startVideoCaptureAtPath:(id)arg1;
 - (void)stopPreview;
+- (void)stopVideoCaptureAndPausePreview:(BOOL)arg1;
+- (BOOL)supportsAccurateStillCapture;
+- (NSInteger)videoCaptureOrientation;
+- (id)videoCapturePath;
+- (void)viewDidAppear;
 
 @end

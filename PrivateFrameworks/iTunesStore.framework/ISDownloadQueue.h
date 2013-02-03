@@ -2,58 +2,54 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSMutableArray, NSMutableDictionary, NSString, ISRemoteObserver, NSMutableSet;
+@class NSMutableArray, <ISDownloadQueueDelegate>;
 
 @interface ISDownloadQueue : NSObject {
-    unsigned int _havePurchases : 1;
-    NSMutableSet *_batchedStatusUpdates;
-    id _delegate;
+    NSInteger _assetTypes;
+    <ISDownloadQueueDelegate> *_delegate;
     NSMutableArray *_downloads;
-    NSMutableDictionary *_downloadsByUniqueID;
-    NSUInteger _localDownloadCount;
-    NSString *_pendingRemoveIdentifier;
-    NSUInteger _remoteDownloadCount;
-    ISRemoteObserver *_remoteObserver;
-    NSUInteger _types;
+    NSInteger _lastUpdatedIndex;
+    NSMutableArray *_placeholders;
+    NSMutableArray *_preorders;
+    BOOL _registeredWithDaemon;
 }
 
-+ (id)bundlesInstalledSinceLastSync;
-+ (id)copyDownloadQueuesForTypes:(NSUInteger)arg1;
+@property(retain,readonly) NSArray *preorders; /* unknown property attribute: V_preorders */
+@property(retain,readonly) NSArray *placeholderDownloads; /* unknown property attribute: V_placeholders */
+@property(retain,readonly) NSArray *downloads; /* unknown property attribute: V_downloads */
+@property <ISDownloadQueueDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property NSInteger assetTypes; /* unknown property attribute: V_assetTypes */
 
-- (void)_addPlaceholderDescriptor:(id)arg1;
-- (void)_beginBatchUpdates:(id)arg1;
-- (id)_copyMergedDownloadFromDaemon:(NSUInteger)arg1 atIndex:(NSUInteger)arg2 withIdentifier:(NSUInteger)arg3 existed:(BOOL*)arg4;
-- (id)_copyRemovedDownloadWithPurchaseIdentifier:(NSUInteger)arg1;
-- (id)_descriptorFromDaemon:(NSUInteger)arg1 atIndex:(NSUInteger)arg2 withIdentifier:(NSUInteger)arg3;
-- (void)_downloadListChanged:(id)arg1;
-- (void)_downloadQueueError:(id)arg1;
-- (NSUInteger)_downloadTypes;
++ (id)bundlesInstalledSinceLastSync;
++ (id)downloadQueueForAssetType:(NSInteger)arg1;
+
+- (void)_checkIn;
+- (void)_checkOut;
+- (id)_createRepresentativeDownloadForPreOrder:(id)arg1;
+- (void)_daemonExited:(id)arg1;
+- (void)_daemonExitedMainThread:(id)arg1;
+- (void)_downloadStatusChanged:(id)arg1;
 - (void)_downloadsAdded:(id)arg1;
+- (void)_downloadsChanged:(id)arg1;
 - (void)_downloadsRemoved:(id)arg1;
-- (void)_endBatchUpdates:(id)arg1;
-- (void)_havePurchasesChanged:(id)arg1;
-- (NSUInteger)_indexOfDownloadWithPurchaseIdentifier:(NSUInteger)arg1;
-- (void)_loadFromDaemonNotingRemovals:(id)arg1 disappearances:(id)arg2;
-- (void)_messageDelegateForStatusUpdates:(id)arg1;
-- (void)_removePlaceholderDescriptor:(id)arg1;
-- (void)_setHavePurchases:(BOOL)arg1;
-- (void)_willAddDownloads;
-- (BOOL)addExternalDownload:(id)arg1;
-- (void)addLocalPendingPurchase:(id)arg1;
-- (BOOL)beginWatchingDaemonForObserver:(id)arg1;
+- (void)_downloadsReplaced:(id)arg1;
+- (void)_filterPlaceholderDownloads;
+- (NSInteger)_indexOfDownloadWithIdentifier:(unsigned long long)arg1;
+- (void)_preOrdersChanged:(id)arg1;
+- (void)_registerWithDaemon;
+- (void)addDownload:(id)arg1;
+- (void)addPlaceholderDownloads:(id)arg1;
+- (NSInteger)assetTypes;
 - (BOOL)checkQueue;
 - (void)dealloc;
-- (NSUInteger)downloadCount;
-- (void)downloadStatusChanged:(id)arg1;
+- (id)delegate;
 - (id)downloads;
-- (void)endWatchingDaemonForObserver:(id)arg1 afterDeath:(BOOL)arg2;
-- (BOOL)havePurchases;
-- (void)iTunesSyncHasCompleted:(NSInteger)arg1;
-- (void)iTunesSyncRequestedStart;
-- (id)init;
-- (id)initWithDownloadTypes:(NSUInteger)arg1;
+- (id)initWithAssetTypes:(NSInteger)arg1;
+- (id)placeholderDownloads;
+- (id)preorders;
 - (BOOL)removeDownload:(id)arg1;
-- (BOOL)retryWithInitialDownload:(id)arg1;
+- (void)setAssetTypes:(NSInteger)arg1;
 - (void)setDelegate:(id)arg1;
+- (BOOL)startPreOrderDownload:(id)arg1;
 
 @end

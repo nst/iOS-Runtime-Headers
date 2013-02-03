@@ -13,8 +13,6 @@
     NSTimer *_timer;
 }
 
-+ (id)scheduledTimerWithTimeInterval:(double)arg1 target:(id)arg2 selector:(SEL)arg3 userInfo:(id)arg4;
-
 - (void)_timerFired:(id)arg1;
 - (void)dealloc;
 - (id)fireDate;
@@ -22,5 +20,6 @@
 - (void)invalidate;
 - (void)systemPoweredOn;
 - (void)systemSleepImminent;
+- (id)userInfo;
 
 @end

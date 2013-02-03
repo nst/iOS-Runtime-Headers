@@ -9,7 +9,9 @@
         float x; 
         float y; 
     NSMutableData *_customIconData;
+    NSMutableData *_customStartupImageData;
     NSURLConnection *_iconConnection;
+    NSURLConnection *_startupImageConnection;
     id delegate;
     BOOL fullScreen;
     UIImage *iconImage;
@@ -17,26 +19,34 @@
     NSString *identifier;
     NSURL *pageURL;
     NSURL *precomposedIconURL;
+    BOOL removalDisallowed;
     float scale;
     } scrollPoint;
+    UIImage *startupImage;
+    NSURL *startupImageURL;
     NSInteger statusBarStyle;
     NSString *title;
 }
 
 @property id delegate; /* unknown property attribute: Vdelegate */
+@property(retain) UIImage *startupImage; /* unknown property attribute: VstartupImage */
 @property(retain) UIImage *iconImage; /* unknown property attribute: ViconImage */
 @property NSInteger statusBarStyle; /* unknown property attribute: VstatusBarStyle */
+@property BOOL removalDisallowed; /* unknown property attribute: VremovalDisallowed */
 @property BOOL fullScreen; /* unknown property attribute: VfullScreen */
 @property CGPoint scrollPoint; /* unknown property attribute: VscrollPoint */
 @property float scale; /* unknown property attribute: Vscale */
 @property(copy) NSString *title; /* unknown property attribute: Vtitle */
+@property(retain) NSURL *startupImageURL; /* unknown property attribute: VstartupImageURL */
 @property(retain) NSURL *iconURL; /* unknown property attribute: ViconURL */
 @property(retain) NSURL *precomposedIconURL; /* unknown property attribute: VprecomposedIconURL */
 @property(retain) NSURL *pageURL; /* unknown property attribute: VpageURL */
 @property(copy) NSString *identifier; /* unknown property attribute: Videntifier */
+@property(readonly) NSString *iconImagePath;
 
 + (id)_contentForMetaName:(id)arg1 inWebDocumentView:(id)arg2;
 + (id)pathForWebClipWithIdentifier:(id)arg1;
++ (id)urlForWebClipWithIdentifier:(id)arg1;
 + (BOOL)webClipFullScreenValueForWebDocumentView:(id)arg1;
 + (NSInteger)webClipStatusBarStyleForWebDocumentView:(id)arg1;
 + (id)webClipWithIdentifier:(id)arg1;
@@ -44,10 +54,13 @@
 + (id)webClips;
 + (id)webClipsDirectoryPath;
 
+- (id)_bundleImageWithName:(id)arg1;
+- (id)_bundleResourceWithName:(id)arg1;
 - (id)_displayIdentifierString;
 - (id)_info;
 - (id)_initWithIdentifier:(id)arg1;
-- (void)_readPropertiesFromBundle:(id)arg1;
+- (void)_readPropertiesFromBundle:(struct __CFBundle { }*)arg1;
+- (BOOL)_writeImage:(id)arg1 toDiskWithFileName:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
@@ -57,12 +70,15 @@
 - (id)delegate;
 - (BOOL)fullScreen;
 - (id)iconImage;
+- (id)iconImagePath;
 - (id)iconURL;
 - (id)identifier;
 - (id)pageURL;
 - (id)precomposedIconURL;
+- (BOOL)removalDisallowed;
 - (BOOL)removeFromDisk;
 - (void)requestCustomIconUpdateWithDelegate:(id)arg1;
+- (void)requestCustomStartupImageUpdateWithDelegate:(id)arg1;
 - (float)scale;
 - (struct CGPoint { float x1; float x2; })scrollPoint;
 - (void)setDelegate:(id)arg1;
@@ -72,14 +88,20 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setPageURL:(id)arg1;
 - (void)setPrecomposedIconURL:(id)arg1;
+- (void)setRemovalDisallowed:(BOOL)arg1;
 - (void)setScale:(float)arg1;
 - (void)setScrollPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setStartupImage:(id)arg1;
+- (void)setStartupImageURL:(id)arg1;
 - (void)setStatusBarStyle:(NSInteger)arg1;
 - (void)setTitle:(id)arg1;
+- (id)startupImage;
+- (id)startupImageURL;
 - (NSInteger)statusBarStyle;
 - (void)stopLoadingCustomIcon;
+- (void)stopLoadingStartupImage;
 - (id)title;
-- (void)updateCustomIconLocationsFromWebDocumentView:(id)arg1;
+- (void)updateCustomMediaLocationsFromWebDocumentView:(id)arg1;
 - (BOOL)updateOnDisk;
 
 @end

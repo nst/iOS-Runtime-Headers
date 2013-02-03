@@ -2,53 +2,80 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSString;
+@class NSMutableArray, NSArray, NSString, MCPayloadHandler;
 
 @interface MCPayloadHandler : NSObject {
+    NSMutableArray *__handlingDependencies;
+    NSArray *_dependencies;
     NSString *_description;
     NSString *_displayName;
     BOOL _failedPhases[8];
     NSString *_identifier;
+    BOOL _isComplete;
     BOOL _isMalformed;
     NSString *_organization;
+    MCPayloadHandler *_parent;
     id _payload;
     NSString *_rootDisplayName;
+    NSString *_rootIdentifier;
+    NSString *_rootUUID;
     NSString *_uuid;
     NSInteger _version;
     BOOL _waitingForPreflight;
     BOOL _waitingForPrepare;
 }
 
++ (BOOL)allowRemovalFailures;
++ (id)baseClassName;
 + (id)descriptionForPayloadCount:(NSUInteger)arg1;
 + (id)expandPromptsFromPayload:(id)arg1 onlyOneDataPayloadInProfile:(BOOL)arg2;
++ (id)greyListKeys;
 + (BOOL)isContainer;
++ (BOOL)isRootHandlerType;
 + (BOOL)shouldValidateCommonAttributes;
++ (id)whiteListKeys;
 
 - (id)UUID;
+- (id)baseClassName;
+- (id)customTitleForCurrentInstallPhase;
 - (void)dealloc;
+- (id)dependencies;
 - (id)descriptionForPrompt;
 - (id)detailDescription;
 - (id)displayName;
+- (id)expirationDate;
 - (BOOL)hasFailedAnyStep;
 - (BOOL)hasFailedStep:(NSInteger)arg1;
 - (id)identifier;
 - (id)initWithPayload:(id)arg1;
+- (BOOL)isEncrypted;
+- (BOOL)isRemovalStub;
 - (id)localizedStringForKey:(id)arg1;
+- (BOOL)mayProduceProfileUpdate;
+- (id)moreInfoDictionary;
 - (BOOL)needsPreflightWithRoot:(id)arg1 truth:(id)arg2;
 - (BOOL)needsPreparationWithRoot:(id)arg1 truth:(id)arg2;
+- (void)neuteredPayloadDictionaryCopy:(id)arg1;
 - (id)organization;
 - (id)packageError:(id)arg1 forInstallStep:(NSInteger)arg2;
+- (id)parent;
 - (id)payloadDescription;
+- (id)payloads;
 - (id)performInstallStep:(NSInteger)arg1 withRoot:(id)arg2 truth:(id)arg3;
+- (BOOL)produceProfileUpdate;
 - (id)rootDisplayName;
+- (id)rootIdentifier;
+- (id)rootUUID;
 - (void)setHasFailed:(BOOL)arg1 step:(NSInteger)arg2;
 - (void)setUserPromptedValues:(id)arg1;
 - (void)setWaitingForPreflight:(BOOL)arg1;
 - (void)setWaitingForPrepare:(BOOL)arg1;
+- (id)updateURL;
 - (id)userPromptValues;
 - (NSInteger)version;
 - (BOOL)waitingForPreflight;
 - (BOOL)waitingForPrepare;
+- (BOOL)wantsReboot;
 - (void)willContinueAfterFailingStep:(NSInteger)arg1;
 - (void)willRetryStep:(NSInteger)arg1;
 

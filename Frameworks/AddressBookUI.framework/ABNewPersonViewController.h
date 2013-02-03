@@ -8,7 +8,6 @@
     id _helper;
     <ABNewPersonViewControllerDelegate> *_newPersonViewDelegate;
     id _parentGroup;
-    id _personView;
 }
 
 @property void *addressBook;
@@ -16,8 +15,11 @@
 @property <ABNewPersonViewControllerDelegate> *newPersonViewDelegate;
 @property void *parentGroup;
 
+- (BOOL)_allowsAutorotation;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; float x5; NSInteger x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; }*)arg1;
+- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
+- (NSInteger)abViewControllerType;
 - (void*)addressBook;
-- (BOOL)canHandleSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
 - (void)cancel:(id)arg1;
 - (void)dealloc;
 - (void*)displayedPerson;
@@ -27,13 +29,19 @@
 - (id)newPersonViewDelegate;
 - (void*)parentGroup;
 - (id)parentGroupWrapper;
+- (void)personViewControllerHelper:(id)arg1 editedPropertyAndConfirmed:(BOOL)arg2;
 - (void)save:(id)arg1;
+- (void)saveAndTellDelegate:(BOOL)arg1;
 - (void)setAddressBook:(void*)arg1;
 - (void)setDisplayedPerson:(void*)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setNewPersonViewDelegate:(id)arg1;
 - (void)setParentGroup:(void*)arg1;
 - (void)setParentGroupWrapper:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

@@ -9,7 +9,7 @@
 @class NSDictionary;
 
 @interface AVController : NSObject {
-    struct AVControllerPrivate { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; unsigned short x4; void*x5; const NSInteger x6; in void*x7; void*x8; id x9; void*x10; inout unsigned short x11; unsigned short x12; void*x13; const NSInteger x14; in void*x15; void*x16; id x17; void*x18; inout unsigned short x19; inout void*x20; void*x21; unsigned int x22/* : ? */; void*x23; const void*x24; id x25; Class x26; id x27; void*x28; void*x29; oneway unsigned long long x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; double x38; void*x39; const void*x40; NSInteger x41; id x42; void*x43; inout unsigned short x44; unsigned short x45; void*x46; const NSInteger x47; in void*x48; void*x49; float x50; float x51; float x52; NSInteger x53; id x54; void*x55; unsigned char x56; void*x57; unsigned long x58; void*x59; void*x60; void*x61; const void*x62; BOOL x63; BOOL x64; id x65; void*x66; inout unsigned short x67; bycopy unsigned int x68/* : ? */; void*x69; void*x70; BOOL x71; void*x72; void*x73; struct OpaqueFigVisualContext {} *x74; id x75; void*x76; inout unsigned short x77; unsigned short x78; void*x79; const NSInteger x80; in void*x81; void*x82; struct __CFRunLoop {} *x83; NSUInteger x84; NSInteger x85; NSInteger x86; NSInteger x87; BOOL x88; BOOL x89; BOOL x90; BOOL x91; BOOL x92; id x93; void*x94; inout unsigned short x95; void*x96; void*x97; void*x98; void*x99; unsigned int x100/* : ? */; long x101; void*x102; void*x103; const const void*x104; void*x105; void*x106; id x107; void*x108; inout unsigned short x109; void*x110; void*x111; void*x112; void*x113; unsigned int x114/* : ? */; long x115; void*x116; void*x117; NSInteger x118; BOOL x119; void*x120; NSInteger x121; out in void*x122; const void*x123; void*x124; struct OpaqueFigPlayer {} *x125; id x126; void*x127; void*x128; oneway unsigned long long x129; void*x130; void*x131; void*x132; void*x133; void*x134; id x135; void*x136; void*x137; oneway void*x138; long x139; void*x140; void*x141; unsigned int x142/* : ? */; void*x143; BOOL x144; void*x145; unsigned long long x146; void*x147; void*x148; void*x149; void*x150; void*x151; id x152; void*x153; void*x154; oneway void*x155; long x156; void*x157; void*x158; unsigned int x159/* : ? */; void*x160; BOOL x161; void*x162; NSUInteger x163; void*x164; void*x165; void*x166; void*x167; BOOL x168; BOOL x169; id x170; void*x171; inout unsigned short x172; void*x173; NSInteger x174; BOOL x175; void*x176; NSInteger x177; out in void*x178; const void*x179; void*x180; NSDictionary *x181; } *_priv;
+    struct AVControllerPrivate { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; unsigned short x4; void*x5; const NSInteger x6; in void*x7; void*x8; id x9; void*x10; inout unsigned short x11; unsigned short x12; void*x13; const NSInteger x14; in void*x15; void*x16; id x17; void*x18; inout unsigned short x19; inout void*x20; void*x21; unsigned int x22/* : ? */; void*x23; const void*x24; id x25; Class x26; id x27; void*x28; void*x29; oneway unsigned long long x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; double x38; void*x39; const void*x40; NSInteger x41; NSInteger x42; id x43; void*x44; inout unsigned short x45; unsigned short x46; void*x47; const NSInteger x48; in void*x49; void*x50; float x51; float x52; float x53; NSInteger x54; id x55; void*x56; unsigned char x57; void*x58; unsigned long x59; void*x60; void*x61; void*x62; const void*x63; BOOL x64; BOOL x65; BOOL x66; id x67; void*x68; inout unsigned short x69; bycopy unsigned int x70/* : ? */; void*x71; void*x72; BOOL x73; void*x74; void*x75; struct OpaqueFigVisualContext {} *x76; id x77; void*x78; inout unsigned short x79; unsigned short x80; void*x81; const NSInteger x82; in void*x83; void*x84; struct __CFRunLoop {} *x85; NSUInteger x86; NSInteger x87; NSInteger x88; NSInteger x89; BOOL x90; BOOL x91; BOOL x92; BOOL x93; BOOL x94; id x95; void*x96; inout unsigned short x97; void*x98; void*x99; void*x100; void*x101; unsigned int x102/* : ? */; long x103; void*x104; void*x105; const const void*x106; void*x107; void*x108; id x109; void*x110; inout unsigned short x111; void*x112; void*x113; void*x114; void*x115; unsigned int x116/* : ? */; long x117; void*x118; void*x119; NSInteger x120; BOOL x121; void*x122; NSInteger x123; out in void*x124; const void*x125; void*x126; struct OpaqueFigPlayer {} *x127; id x128; void*x129; void*x130; oneway unsigned long long x131; void*x132; void*x133; void*x134; void*x135; void*x136; id x137; void*x138; void*x139; oneway void*x140; long x141; void*x142; void*x143; unsigned int x144/* : ? */; void*x145; BOOL x146; void*x147; unsigned long long x148; void*x149; void*x150; void*x151; void*x152; void*x153; id x154; void*x155; void*x156; oneway void*x157; long x158; void*x159; void*x160; unsigned int x161/* : ? */; void*x162; BOOL x163; void*x164; NSUInteger x165; void*x166; void*x167; void*x168; void*x169; BOOL x170; BOOL x171; id x172; void*x173; inout unsigned short x174; void*x175; NSInteger x176; BOOL x177; void*x178; NSInteger x179; out in void*x180; const void*x181; void*x182; NSDictionary *x183; } *_priv;
 }
 
 + (id)avController;
@@ -22,15 +22,20 @@
 
 - (BOOL)activate:(id*)arg1;
 - (id)addNextFeederItemToQueue;
+- (void)applyDesiredRepeatMode;
 - (id)attributeForKey:(id)arg1;
 - (void)avPlaybackQueueCurrentItemChangedNotification:(id)arg1;
 - (BOOL)beginInterruption:(id*)arg1;
 - (BOOL)beginRepeatGap;
+- (id)bookmarkGroupIDForAVItem:(id)arg1;
+- (double)bookmarkTimeForAVItem:(id)arg1;
 - (id)buzzerPattern;
+- (BOOL)canBeginInterruption;
+- (void)cancelAllCGImageRequests;
 - (void)cancelContinueAfterRepeatGap;
 - (void)checkQueueSpace;
 - (void)continueAfterRepeatGap;
-- (long)copyImageForTime:(struct __CVBuffer {}**)arg1 time:(const struct { long long x1; NSInteger x2; long long x3; NSUInteger x4; }*)arg2;
+- (long)copyImageForTime:(struct __CVBuffer {}**)arg1 time:(const struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; }*)arg2;
 - (struct OpaqueFigPlaybackItem { }*)createItemWithURL:(id)arg1 flags:(unsigned long)arg2 error:(NSInteger*)arg3;
 - (struct OpaqueFigPlaybackItem { }*)currentFPItem;
 - (id)currentItem;
@@ -50,14 +55,16 @@
 - (void)fmpRateDidChange;
 - (void)fmpUserVolumeDidChange:(id)arg1;
 - (void)fpItemNotification:(id)arg1 sender:(id)arg2;
+- (struct CGImage { }*)grabCGImageAtTime:(double)arg1 withTimeOptions:(NSInteger)arg2 withImageOptions:(id)arg3 actualTime:(double*)arg4;
 - (BOOL)havePlayedCurrentItem;
 - (NSUInteger)indexOfCurrentQueueFeederItem;
 - (id)init;
+- (id)initForStreaming;
 - (id)initWithError:(id*)arg1;
 - (id)initWithQueue:(id)arg1 error:(id*)arg2;
 - (id)initWithQueue:(id)arg1 fmpType:(NSUInteger)arg2 error:(id*)arg3;
 - (BOOL)isCurrentItemReady;
-- (BOOL)isNewImageAvailableForTime:(const struct { long long x1; NSInteger x2; long long x3; NSUInteger x4; }*)arg1 willNeverBeAvailable:(BOOL*)arg2;
+- (BOOL)isNewImageAvailableForTime:(const struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; }*)arg1 willNeverBeAvailable:(BOOL*)arg2;
 - (BOOL)isValid;
 - (void)itemHasFinishedPlayingNotification:(id)arg1;
 - (id)lkLayer;
@@ -70,7 +77,7 @@
 - (void)pause;
 - (BOOL)play:(id*)arg1;
 - (BOOL)playNextItem:(id*)arg1;
-- (struct AVControllerPrivate { id x1; id x2; id x3; id x4; Class x5; id x6; NSInteger x7; id x8; float x9; float x10; float x11; NSInteger x12; id x13; BOOL x14; BOOL x15; id x16; struct OpaqueFigVisualContext {} *x17; id x18; struct __CFRunLoop {} *x19; NSUInteger x20; NSInteger x21; NSInteger x22; NSInteger x23; BOOL x24; BOOL x25; BOOL x26; BOOL x27; BOOL x28; id x29; id x30; struct OpaqueFigPlayer {} *x31; id x32; id x33; id x34; BOOL x35; BOOL x36; id x37; id x38; }*)privateStorage;
+- (struct AVControllerPrivate { id x1; id x2; id x3; id x4; Class x5; id x6; NSInteger x7; NSInteger x8; id x9; float x10; float x11; float x12; NSInteger x13; id x14; BOOL x15; BOOL x16; BOOL x17; id x18; struct OpaqueFigVisualContext {} *x19; id x20; struct __CFRunLoop {} *x21; NSUInteger x22; NSInteger x23; NSInteger x24; NSInteger x25; BOOL x26; BOOL x27; BOOL x28; BOOL x29; BOOL x30; id x31; id x32; struct OpaqueFigPlayer {} *x33; id x34; id x35; id x36; BOOL x37; BOOL x38; id x39; id x40; }*)privateStorage;
 - (id)queue;
 - (id)queueFeeder;
 - (float)rate;
@@ -78,12 +85,14 @@
 - (void)registerTimeMarkerObserver:(id)arg1 forItem:(id)arg2 times:(id)arg3 context:(id)arg4;
 - (void)removeObserver:(id)arg1 fromTMOArray:(id)arg2;
 - (NSInteger)repeatMode;
-- (void)repeatModeHasChanged:(NSInteger)arg1;
+- (void)requestAsyncCGImagesAtTimes:(id)arg1 requestIDs:(id)arg2 withTimeOptions:(NSInteger)arg3 withImageOptions:(id)arg4;
+- (void)requestAsyncCGImagesAtTimes:(id)arg1 withTimeOptions:(NSInteger)arg2 withImageOptions:(id)arg3;
 - (BOOL)resumePlayback:(double)arg1 error:(id*)arg2;
 - (void)safeSubtitleCommandPosted:(void*)arg1;
 - (void)scheduleQueueSpaceCheck;
 - (void)scheduleUpdateTimeMarkerObservations;
 - (void)setAVItemClass:(Class)arg1;
+- (void)setApplyVideoTrackMatrix;
 - (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (void)setBuzzerPattern:(id)arg1;
 - (void)setCurrentTime:(double)arg1 options:(NSInteger)arg2;
@@ -107,6 +116,7 @@
 - (void)setVolume:(float)arg1;
 - (BOOL)shouldBeginPlayingItem:(id)arg1 error:(id*)arg2;
 - (BOOL)shouldDisplayClosedCaptions;
+- (void)stepByCount:(NSInteger)arg1;
 - (void)unregisterTimeMarkerObserver:(id)arg1 forItem:(id)arg2;
 - (long)updateActionAtEnd;
 - (void)updateTimeMarkerObservations;

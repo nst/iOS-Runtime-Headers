@@ -4,18 +4,21 @@
 
 @class NSData, NSString;
 
-@interface MCAnchorCertificatePayloadHandler : MCPayloadHandler {
+@interface MCAnchorCertificatePayloadHandler : MCCertificatePayloadHandler {
     NSData *_certificate;
     BOOL _isSelfSigned;
+    BOOL _is_anchor;
     NSString *_password;
     struct __CFData { } *_persistentID;
     struct __SecCertificate { } *_secCertificate;
+    NSString *_target_device;
 }
 
 + (struct __SecCertificate { }*)certificateFromPossiblyPEMEncodedData:(id)arg1;
 + (id)descriptionForPayloadCount:(NSUInteger)arg1;
 
 - (id)certificateData;
+- (id)certificateMD5;
 - (id)createCouldNotDecodeAnchorCertificateError;
 - (id)createCouldNotFindAnchorCertificateToRemoveError;
 - (id)createCouldNotInstallAnchorCertificateError;
@@ -24,9 +27,10 @@
 - (id)descriptionForPrompt;
 - (id)initWithPayload:(id)arg1;
 - (id)installPayload;
+- (void)neuteredPayloadDictionaryCopy:(id)arg1;
 - (id)performInstallStep:(NSInteger)arg1 withRoot:(id)arg2 truth:(id)arg3;
 - (id)persistentID;
-- (id)removePayload;
+- (id)removePayloadWithRoot:(id)arg1;
 - (id)validatePayload;
 
 @end

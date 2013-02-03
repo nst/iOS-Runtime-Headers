@@ -2,17 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-@class WebDataSource, NSData, WebFrameBridge, WAKView, <WebPluginManualLoader>;
+@class WebDataSource, WAKView, <WebPluginManualLoader>;
 
 @interface WebHTMLRepresentationPrivate : NSObject {
-    WebFrameBridge *bridge;
     WebDataSource *dataSource;
     BOOL hasSentResponseToPlugin;
     <WebPluginManualLoader> *manualLoader;
-    NSData *parsedArchiveData;
     WAKView *pluginView;
 }
-
-- (void)dealloc;
 
 @end

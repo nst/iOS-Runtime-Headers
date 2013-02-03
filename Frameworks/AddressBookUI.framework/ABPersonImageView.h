@@ -2,42 +2,52 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIView, ABClippingImageView, ABImageWellLabelView, UIImage;
+@class ABClippingImageView, ABImageWellLabelView, UIImage;
 
 @interface ABPersonImageView : UIControl {
-    UIView *_bounceImageView;
-    float _bounceProgress;
     ABClippingImageView *_currentBorderView;
+    UIImage *_defaultOrganizationImage;
     void *_displayedPerson;
     ABClippingImageView *_editBorderView;
-    BOOL _isAnimating;
+    UIImage *_editOverlayImage;
+    UIImage *_genericPersonImage;
+    UIImage *_imageWellImage;
     BOOL _isEditing;
+    UIImage *_maskImage;
+    BOOL _needsReflow;
     ABClippingImageView *_outlineBorderView;
+    UIImage *_outlineImage;
     UIImage *_personImage;
     ABClippingImageView *_personImageView;
+    UIImage *_pressedImage;
     ABClippingImageView *_pressedView;
     BOOL _showLabel;
+    UIImage *_wellBorderImage;
     ABClippingImageView *_wellBorderView;
     ABImageWellLabelView *_wellLabel;
 }
 
-+ (id)genericEditPersonImage;
-+ (id)genericOrganizationImage;
-+ (id)genericPersonImage;
-+ (void)loadDefaultImage;
++ (id)createImageIfNeeded:(id*)arg1 withName:(id)arg2;
 
-- (void)bounceAnimationFinished;
 - (void)dealloc;
 - (void*)displayedPerson;
+- (id)editOverlayImage;
 - (void)finishedEditingAnimation;
+- (id)genericOrganizationImage;
+- (id)genericPersonImage;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (id)maskImage;
+- (id)outlineImage;
+- (id)pressedImage;
 - (void)reflow;
+- (void)reflowIfNeeded;
 - (void)reload;
-- (void)setBouncedImageView:(id)arg1;
 - (void)setDisplayedPerson:(void*)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setIsEditing:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)setPersonImage:(id)arg1;
 - (void)setShowsLabel:(BOOL)arg1 animate:(BOOL)arg2;
+- (id)wellBorderImage;
 
 @end

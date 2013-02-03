@@ -2,17 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSMutableArray;
 
-@interface GMMIncomingTile : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
-    BOOL _hasNumHorizontalTiles;
-    BOOL _hasNumVerticalTiles;
-    BOOL _hasZoom;
+@interface GMMIncomingTile : PBCodable {
     NSInteger _numHorizontalTiles;
     NSInteger _numVerticalTiles;
     NSMutableArray *_tiles;
@@ -20,35 +12,27 @@
 }
 
 @property(retain) NSMutableArray *tiles; /* unknown property attribute: V_tiles */
-@property BOOL hasNumVerticalTiles; /* unknown property attribute: V_hasNumVerticalTiles */
 @property NSInteger numVerticalTiles; /* unknown property attribute: V_numVerticalTiles */
-@property BOOL hasNumHorizontalTiles; /* unknown property attribute: V_hasNumHorizontalTiles */
 @property NSInteger numHorizontalTiles; /* unknown property attribute: V_numHorizontalTiles */
-@property BOOL hasZoom; /* unknown property attribute: V_hasZoom */
 @property NSInteger zoom; /* unknown property attribute: V_zoom */
 @property(readonly) NSInteger tilesCount;
 
 - (void)addTile:(id)arg1;
 - (void)dealloc;
-- (BOOL)hasNumHorizontalTiles;
-- (BOOL)hasNumVerticalTiles;
-- (BOOL)hasZoom;
+- (id)description;
 - (id)init;
 - (NSInteger)numHorizontalTiles;
 - (NSInteger)numVerticalTiles;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
-- (void)setHasNumHorizontalTiles:(BOOL)arg1;
-- (void)setHasNumVerticalTiles:(BOOL)arg1;
-- (void)setHasZoom:(BOOL)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setNumHorizontalTiles:(NSInteger)arg1;
 - (void)setNumVerticalTiles:(NSInteger)arg1;
-- (void)setTile:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setTile:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setTiles:(id)arg1;
 - (void)setZoom:(NSInteger)arg1;
-- (id)tileAtIndex:(NSInteger)arg1;
+- (id)tileAtIndex:(NSUInteger)arg1;
 - (id)tiles;
 - (NSInteger)tilesCount;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 - (NSInteger)zoom;
 
 @end

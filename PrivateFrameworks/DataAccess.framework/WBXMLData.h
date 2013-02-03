@@ -7,11 +7,13 @@
 @interface WBXMLData : NSObject {
     unsigned char _currentCodePage;
     NSMutableData *_data;
+    BOOL _haveAppliedCurrentCodePage;
     NSMutableData *_stateStack;
 }
 
 @property(readonly) NSMutableData *data;
 
+- (void)_applyCurrentCodePage;
 - (void)appendEmptyTag:(unsigned char)arg1;
 - (void)appendInt:(NSInteger)arg1;
 - (void)appendString:(id)arg1;
@@ -19,6 +21,7 @@
 - (void)appendTag:(unsigned char)arg1 withStringContent:(id)arg2;
 - (void)closeProspectiveTag:(unsigned char)arg1;
 - (void)closeTag:(unsigned char)arg1;
+- (unsigned char)currentCodePage;
 - (id)data;
 - (void)dealloc;
 - (id)init;

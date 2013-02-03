@@ -9,13 +9,11 @@
 @property NSUInteger levelsOfDetailBias;
 @property CGSize tileSize;
 
-+ (void)_providerThread:(struct __CFRunLoopSource { }*)arg1;
 + (id)defaultValueForKey:(id)arg1;
 + (double)fadeDuration;
 + (BOOL)shouldDrawOnMainThread;
 
-- (void)_addSource:(struct __CFRunLoopSource { }*)arg1;
-- (void)_colorspaceDidChange;
+- (BOOL)_canDisplayConcurrently;
 - (void)_display;
 - (void)dealloc;
 - (void)didChangeValueForKey:(id)arg1;

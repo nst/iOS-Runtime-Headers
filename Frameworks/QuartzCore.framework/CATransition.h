@@ -12,7 +12,8 @@
 @property float startProgress;
 @property NSUInteger transitionFlags;
 
-- (void*)CA_copyRenderValue;
+- (struct Animation { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; NSUInteger x7; NSUInteger x8; }*)_copyRenderAnimationForLayer:(id)arg1;
+- (NSUInteger)_propertyFlagsForLayer:(id)arg1;
 - (float)endProgress;
 - (id)filter;
 - (void)setEndProgress:(float)arg1;

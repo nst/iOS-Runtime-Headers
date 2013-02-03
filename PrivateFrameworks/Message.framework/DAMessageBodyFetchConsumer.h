@@ -2,30 +2,29 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class <DataConsumer>, MailMessageLibrary, LibraryMessage, NSData, MFError;
+@class MFError, <DAMFStreamingContentConsumer>, NSData;
 
-@interface DAMessageBodyFetchConsumer : NSObject <RequestQueueResponseConsumer, DAMailBodyFetchConsumer> {
-    <DataConsumer> *_consumer;
+@interface DAMessageBodyFetchConsumer : NSObject <RequestQueueResponseConsumer, DAMailAccountStreamConsumerFactory> {
     NSData *_data;
     MFError *_error;
-    MailMessageLibrary *_library;
-    LibraryMessage *_message;
+    <DAMFStreamingContentConsumer> *_streamConsumer;
     BOOL _succeeded;
 }
 
-@property(readonly) BOOL succeeded; /* unknown property attribute: V_succeeded */
-@property(readonly) MFError *error; /* unknown property attribute: V_error */
 @property(retain) NSData *data; /* unknown property attribute: V_data */
-@property(readonly) <DataConsumer> *dataConsumer; /* unknown property attribute: V_consumer */
+@property(readonly) BOOL succeeded; /* unknown property attribute: V_succeeded */
+@property(retain) MFError *error; /* unknown property attribute: V_error */
+@property(retain) <DAMFStreamingContentConsumer> *streamConsumer; /* unknown property attribute: V_streamConsumer */
 
-- (id)consumerForBodySubpart:(id)arg1;
 - (id)data;
-- (id)dataConsumer;
 - (void)dealloc;
 - (id)error;
 - (void)handleResponse:(id)arg1 error:(id)arg2;
-- (id)initForMessage:(id)arg1 inLibrary:(id)arg2 withConsumer:(id)arg3;
 - (void)setData:(id)arg1;
+- (void)setError:(id)arg1;
+- (void)setStreamConsumer:(id)arg1;
+- (id)streamConsumer;
+- (id)streamingContentConsumer;
 - (BOOL)succeeded;
 - (BOOL)wantsData;
 

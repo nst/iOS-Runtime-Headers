@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSData, NSMutableArray;
 
-@interface GMMPolygon : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMPolygon : PBCodable {
     NSInteger _fillColor;
     BOOL _hasFillColor;
     BOOL _hasLineColor;
@@ -21,18 +16,19 @@
 }
 
 @property(retain) NSMutableArray *innerBoundarys; /* unknown property attribute: V_innerBoundarys */
-@property BOOL hasFillColor; /* unknown property attribute: V_hasFillColor */
+@property(readonly) BOOL hasFillColor; /* unknown property attribute: V_hasFillColor */
 @property NSInteger fillColor; /* unknown property attribute: V_fillColor */
 @property(retain) NSData *line; /* unknown property attribute: V_line */
-@property BOOL hasLineColor; /* unknown property attribute: V_hasLineColor */
+@property(readonly) BOOL hasLineColor; /* unknown property attribute: V_hasLineColor */
 @property NSInteger lineColor; /* unknown property attribute: V_lineColor */
-@property BOOL hasLineWidth; /* unknown property attribute: V_hasLineWidth */
+@property(readonly) BOOL hasLineWidth; /* unknown property attribute: V_hasLineWidth */
 @property NSInteger lineWidth; /* unknown property attribute: V_lineWidth */
 @property(readonly) BOOL hasLine;
 @property(readonly) NSInteger innerBoundarysCount;
 
 - (void)addInnerBoundary:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (NSInteger)fillColor;
 - (BOOL)hasFillColor;
 - (BOOL)hasLine;
@@ -45,16 +41,13 @@
 - (id)line;
 - (NSInteger)lineColor;
 - (NSInteger)lineWidth;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setFillColor:(NSInteger)arg1;
-- (void)setHasFillColor:(BOOL)arg1;
-- (void)setHasLineColor:(BOOL)arg1;
-- (void)setHasLineWidth:(BOOL)arg1;
-- (void)setInnerBoundary:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setInnerBoundary:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setInnerBoundarys:(id)arg1;
 - (void)setLine:(id)arg1;
 - (void)setLineColor:(NSInteger)arg1;
 - (void)setLineWidth:(NSInteger)arg1;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

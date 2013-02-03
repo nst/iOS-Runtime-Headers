@@ -10,21 +10,21 @@
 + (id)dataWithLength:(NSUInteger)arg1;
 
 - (void)abAppendString:(id)arg1;
-- (void)appendByte:(BOOL)arg1;
 - (void)appendBytes:(const void*)arg1 length:(NSUInteger)arg2;
-- (void)appendCString:(const char *)arg1;
 - (void)appendData:(id)arg1;
 - (void)appendLELong:(long)arg1;
 - (void)appendLEShort:(short)arg1;
-- (void)appendQuotedPrintableDataForHeaderBytes:(const char *)arg1 length:(NSUInteger)arg2;
-- (void)appendRFC2231CompliantValue:(id)arg1 forKey:(id)arg2;
 - (void)appendString:(id)arg1 encoding:(NSUInteger)arg2;
 - (Class)classForCoder;
-- (void)convertNetworkLineEndingsToUnix;
-- (void)convertNetworkLineEndingsToUnixInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)increaseLengthBy:(NSUInteger)arg1;
 - (id)initWithCapacity:(NSUInteger)arg1;
 - (id)initWithLength:(NSUInteger)arg1;
+- (void)mf_appendCString:(const char *)arg1;
+- (void)mf_appendQuotedPrintableDataForHeaderBytes:(const char *)arg1 length:(NSUInteger)arg2;
+- (void)mf_appendRFC2231CompliantValue:(id)arg1 forKey:(id)arg2;
+- (void)mf_convertNetworkLineEndingsToUnix;
+- (void)mf_convertNetworkLineEndingsToUnixInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)mf_makeImmutable;
 - (void*)mutableBytes;
 - (void)replaceBytesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withBytes:(const void*)arg2 length:(NSUInteger)arg3;
 - (void)replaceBytesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withBytes:(const void*)arg2;

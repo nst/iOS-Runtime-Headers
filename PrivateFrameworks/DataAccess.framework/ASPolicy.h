@@ -10,6 +10,11 @@
     NSString *_type;
 }
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
 - (void)_setKey:(id)arg1;
 - (void)_setStatus:(id)arg1;
 - (void)_setType:(id)arg1;

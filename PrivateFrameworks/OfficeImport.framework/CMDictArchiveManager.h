@@ -6,35 +6,32 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, NSString;
+@class NSMutableDictionary, NSString, NSMutableString;
 
 @interface CMDictArchiveManager : CMArchiveManager {
-    NSMutableDictionary *mCache;
-    NSInteger mHeight;
-    NSString *mMainHtml;
+    NSMutableString *mCssString;
+    NSMutableString *mMainHtml;
     NSString *mName;
     NSString *mPrefix;
     NSString *mResourceUrlProtocol;
     NSMutableDictionary *mResources;
-    NSInteger mWidth;
+    NSMutableDictionary *mStyleCache;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsFrameset;
 }
 
-- (id)addResourceAndReturnItsPath:(id)arg1 type:(NSInteger)arg2;
-- (id)addResourceForDrawableAndReturnItsPath:(id)arg1 type:(NSInteger)arg2 drawable:(id)arg3;
-- (id)addSubFrameAndReturnItsPath:(id)arg1 name:(id)arg2;
-- (void)cacheResourceWithPath:(id)arg1 forDrawable:(id)arg2;
-- (id)cachedDataForDrawable:(id)arg1;
-- (id)cachedPathForDrawable:(id)arg1;
-- (id)createDictionary;
+- (void)addCssStyle:(id)arg1 withName:(id)arg2;
+- (id)addCssStyle:(id)arg1;
+- (id)createDictionaryWithSizeInfos:(BOOL)arg1;
+- (id)createResourceWithName:(id)arg1;
+- (id)cssStylesheetString;
 - (void)dealloc;
 - (id)initWithName:(id)arg1 resourcePathPrefix:(id)arg2;
-- (id)makePathRelative:(id)arg1;
 - (id)name;
+- (void)pushCssToPath:(id)arg1;
+- (void)pushData:(id)arg1 toPath:(id)arg2;
+- (void)pushText:(id)arg1 toPath:(id)arg2;
 - (NSInteger)resourceCount;
-- (void)setHTMLHeight:(NSInteger)arg1;
-- (void)setHTMLWidth:(NSInteger)arg1;
+- (id)resourceUrlProtocol;
 - (void)setIsFrameset;
-- (void)setMainResource:(id)arg1;
 
 @end

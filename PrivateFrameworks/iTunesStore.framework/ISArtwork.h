@@ -10,21 +10,18 @@
         float height; 
     NSUInteger _format;
     ISArtworkGroup *_group;
-    NSUInteger _operations;
     } _size;
     NSURL *_url;
 }
 
 @property(retain) NSURL *url; /* unknown property attribute: V_url */
 @property CGSize size; /* unknown property attribute: V_size */
-@property NSUInteger operations; /* unknown property attribute: V_operations */
 @property ISArtworkGroup *group; /* unknown property attribute: V_group */
 @property NSUInteger format; /* unknown property attribute: V_format */
 @property(readonly) NSInteger orientation;
 
 - (BOOL)_artworkSize:(struct CGSize { float x1; float x2; })arg1 matchesSize:(struct CGSize { float x1; float x2; })arg2 withQuality:(NSInteger*)arg3;
 - (NSUInteger)_formatForSize:(struct CGSize { float x1; float x2; })arg1;
-- (NSUInteger)_operationsForPropertyList:(id)arg1;
 - (NSInteger)compareWidth:(id)arg1;
 - (void)dealloc;
 - (id)description;
@@ -32,11 +29,9 @@
 - (id)group;
 - (id)initWithPropertyList:(id)arg1 knownFormat:(NSUInteger)arg2;
 - (id)initWithPropertyList:(id)arg1;
-- (NSUInteger)operations;
 - (NSInteger)orientation;
 - (void)setFormat:(NSUInteger)arg1;
 - (void)setGroup:(id)arg1;
-- (void)setOperations:(NSUInteger)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setUrl:(id)arg1;
 - (struct CGSize { float x1; float x2; })size;

@@ -2,65 +2,55 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISDownloadQueue, ISDownloadDescriptor, ISRemoteObserver;
+@class NSArray, ISDownloadStatus, <ISDownloadDelegate>, ISDownloadMetadata;
 
-@interface ISDownload : NSObject {
-    unsigned int _loadingArtworkImage : 1;
-    unsigned int _local : 1;
+@interface ISDownload : NSObject <NSCoding> {
+    unsigned int _artworkIsLoading : 1;
     struct CGImage { } *_artworkImage;
-    id _delegate;
-    ISDownloadDescriptor *_descriptor;
-    ISDownloadQueue *_queue;
-    ISRemoteObserver *_remoteObserver;
+    NSArray *_assets;
+    <ISDownloadDelegate> *_delegate;
+    ISDownloadMetadata *_metadata;
+    ISDownloadStatus *_status;
 }
 
-- (void)_downloadArtworkError:(id)arg1;
-- (void)_downloadArtworkLoaded:(id)arg1;
-- (void)_downloadEncounteredError:(id)arg1;
-- (void)_downloadProgressChanged:(id)arg1;
-- (void)_downloadStateChanged:(id)arg1;
-- (BOOL)_issueArtworkLoadRequest;
+@property(retain) ISDownloadStatus *status; /* unknown property attribute: V_status */
+@property(retain) ISDownloadMetadata *metadata; /* unknown property attribute: V_metadata */
+@property <ISDownloadDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property(retain) NSArray *assets; /* unknown property attribute: V_assets */
+@property(readonly) NSString *bundleID;
+@property(readonly) NSString *title;
+@property(readonly) NSString *uniqueID;
+@property(readonly) BOOL artworkURLIsPrerendered;
+@property(readonly) unsigned long long itemIdentifier;
+
+- (void)_artworkFailedNotification:(id)arg1;
+- (void)_artworkFinishedNotification:(id)arg1;
+- (void)_daemonExited:(id)arg1;
+- (void)_mainThreadDaemonExited:(id)arg1;
+- (BOOL)_requestArtwork;
+- (void)_sendArtworkErrorToDelegate:(id)arg1;
+- (void)_sendArtworkToDelegate:(struct CGImage { }*)arg1;
+- (void)_startWatchingForArtwork;
+- (void)_stopWatchingForArtwork;
 - (struct CGImage { }*)artworkImage;
-- (id)artworkURL;
 - (BOOL)artworkURLIsPrerendered;
-- (BOOL)beginWatchingDaemonForObserver:(id)arg1;
+- (id)assets;
 - (id)bundleID;
-- (double)bytesPerSecond;
-- (BOOL)canPause;
-- (BOOL)canRetry;
-- (BOOL)canStart;
-- (NSUInteger)count;
-- (long long)currentBytes;
-- (NSInteger)currentOperationType;
 - (void)dealloc;
 - (id)delegate;
-- (void)endWatchingDaemonForObserver:(id)arg1 afterDeath:(BOOL)arg2;
-- (double)estimatedTimeRemaining;
-- (NSInteger)externalDownloadType;
-- (NSUInteger)identifier;
-- (id)initWithDescriptor:(id)arg1;
-- (float)installationProgress;
-- (BOOL)isLocal;
-- (BOOL)isPaused;
-- (BOOL)isWaitingForQueue;
-- (unsigned long)itemIdentifier;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (unsigned long long)itemIdentifier;
 - (BOOL)loadArtworkImage;
-- (NSInteger)mediaType;
+- (id)metadata;
 - (BOOL)pause;
-- (NSUInteger)purchaseIdentifier;
-- (BOOL)remove;
 - (BOOL)resume;
-- (BOOL)retry;
+- (void)setAssets:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDescriptor:(id)arg1;
-- (void)setDownloadQueue:(id)arg1;
-- (void)setIsWaitingForQueue:(BOOL)arg1;
-- (void)setLocal:(BOOL)arg1;
-- (void)setPurchaseIdentifier:(NSUInteger)arg1;
-- (NSInteger)state;
-- (id)subtitle;
+- (void)setMetadata:(id)arg1;
+- (void)setStatus:(id)arg1;
+- (id)status;
 - (id)title;
-- (long long)totalBytes;
 - (id)uniqueID;
 
 @end

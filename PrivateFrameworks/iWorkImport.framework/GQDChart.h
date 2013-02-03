@@ -2,15 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDChartLegend;
+@class GQDChartModel, GQDSStyle, GQDChartLegend;
 
-@interface GQDChart : GQDMedia {
-    GQDChartLegend *mChartLegend;
+@interface GQDChart : GQDGraphic {
+    BOOL mIsLegendRetained;
+    GQDChartLegend *mLegend;
+    GQDChartModel *mModel;
+    GQDSStyle *mStyle;
+    long mType;
 }
 
 + (const struct StateSpec { int (**x1)(); char *x2; NSInteger x3; NSInteger x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 
-- (id)chartLegend;
 - (void)dealloc;
+- (id)graphicStyle;
+- (id)legend;
+- (id)model;
+- (void)setLegend:(id)arg1;
+- (id)style;
+- (long)type;
 
 @end

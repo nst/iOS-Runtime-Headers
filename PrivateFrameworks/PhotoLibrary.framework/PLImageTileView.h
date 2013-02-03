@@ -3,6 +3,7 @@
  */
 
 @interface PLImageTileView : UITiledView {
+    unsigned int _notifyTapDelegate : 1;
     id _delegate;
 }
 
@@ -11,10 +12,17 @@
 + (NSInteger)tileWidth;
 
 - (id)_createTileWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)mouseDown:(struct __GSEvent { }*)arg1;
+- (void)mouseDragged:(struct __GSEvent { }*)arg1;
+- (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (void)setDelegate:(id)arg1;
 - (BOOL)tilesNeedDisplay;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 
 @end

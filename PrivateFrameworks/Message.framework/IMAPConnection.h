@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableData, NSString, NSRecursiveLock, <IMAPMailboxListFilter>, NSMutableSet, InvocationQueue;
+@class NSArray, NSString, InvocationQueue, NSMutableData, <IMAPMailboxListFilter>, NSMutableSet, <WeaklyReferencedObject>;
 
-@interface IMAPConnection : Connection {
+@interface IMAPConnection : Connection <WeakReferenceHolder> {
     struct { 
-        id delegate; 
+        <WeaklyReferencedObject> *delegate; 
         unsigned int shouldHandleUntaggedResponse : 1; 
         unsigned int didReceiveResponse : 1; 
         unsigned int didFinishSelect : 1; 
@@ -16,18 +16,20 @@
         unsigned int didFinishBodyDataLoad : 1; 
         unsigned int bodyDataReadSize : 1; 
         unsigned int setServerMessageCount : 1; 
-    unsigned int _capabilityFlags : 11;
+    unsigned int _capabilityFlags : 12;
     unsigned int _capabilitiesAreFresh : 1;
     unsigned int _gotBadResponse : 1;
     unsigned int _connectionState : 3;
+    NSString *_apsAccountID;
+    NSString *_apsDeviceToken;
     NSMutableSet *_capabilities;
     NSUInteger _commandNumber;
     double _connectTime;
     NSMutableData *_data;
-    NSRecursiveLock *_delegateLock;
     } _delegateState;
     double _expirationTime;
-    NSUInteger _idleCommandSequenceNumber;
+    NSString *_lastRequiredHeaders;
+    NSArray *_lastRequiredHeadersArray;
     <IMAPMailboxListFilter> *_mailboxListFilter;
     NSUInteger _readBufferSize;
     NSString *_selectedMailbox;
@@ -65,6 +67,7 @@
 - (BOOL)connectUsingAccount:(id)arg1;
 - (NSInteger)connectionState;
 - (BOOL)copyUids:(id)arg1 toMailboxNamed:(id)arg2 newMessageInfo:(id*)arg3;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)createMailbox:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -79,18 +82,14 @@
 - (BOOL)expungeUids:(id)arg1;
 - (id)extendedListingForMailbox:(id)arg1 options:(NSInteger)arg2;
 - (id)fetchArgumentForMessageSkeletonsWithTo:(BOOL)arg1;
+- (void)fetchFreshCapabilitiesForAccount:(id)arg1;
 - (id)fetchHeadersForUid:(unsigned long)arg1;
 - (void)fetchQuotaRootNamesForMailboxes:(id)arg1;
 - (void)fetchStatusForMailboxes:(id)arg1 args:(id)arg2;
 - (void)fetchTotalSize:(unsigned long long*)arg1 andMessageCount:(NSUInteger*)arg2;
-- (void)finishIdle;
-- (void)getDelegateState:(struct { id x1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; }*)arg1;
 - (NSUInteger)getMailboxIDForUID:(NSUInteger)arg1;
 - (BOOL)getQuotaForRootName:(id)arg1;
-- (void)handleBytesAvailable;
-- (void)handleStreamEvent:(id)arg1;
 - (id)init;
-- (BOOL)isIdle;
 - (BOOL)isValid;
 - (id)listingForMailbox:(id)arg1 options:(NSInteger)arg2;
 - (NSUInteger)literalChunkSize;
@@ -106,14 +105,15 @@
 - (void)notifyDelegateOfBodyLoadAppendage:(id)arg1;
 - (void)notifyDelegateOfBodyLoadCompletion:(id)arg1;
 - (void)notifyDelegateOfBodyLoadStart:(id)arg1;
+- (void)objectWillBeDeallocated:(id)arg1;
 - (id)parenthesizedStringWithObjects:(id)arg1;
 - (BOOL)performCustomCommand:(id)arg1 withArguments:(id)arg2;
 - (id)quotaPercentagesForMailbox:(id)arg1;
 - (NSUInteger)readBufferSize;
+- (void)release;
 - (BOOL)renameMailbox:(id)arg1 toMailbox:(id)arg2;
-- (void)resetIdle;
-- (void)scheduleIdle;
-- (void)scheduleIdleResetAfterDelay:(id)arg1;
+- (id)retain;
+- (NSUInteger)retainCount;
 - (NSInteger)searchCount:(id)arg1;
 - (id)searchIDSet:(id)arg1 forTerms:(id)arg2 success:(BOOL*)arg3;
 - (id)searchUidSet:(id)arg1 forNewMessageIDs:(id)arg2;
@@ -124,13 +124,13 @@
 - (BOOL)sendResponsesForUIDFetchForUIDs:(id)arg1 fields:(id)arg2 toQueue:(id)arg3;
 - (BOOL)sendSkeletonResponsesForUIDs:(id)arg1 includeTo:(BOOL)arg2 toQueue:(id)arg3;
 - (BOOL)sendUidAndFlagResponsesForUIDs:(id)arg1 toQueue:(id)arg2;
+- (BOOL)sendUidResponsesForSearchArguments:(id)arg1 toQueue:(id)arg2;
 - (id)separatorChar;
 - (id)serverPathPrefix;
 - (void)setDelegate:(id)arg1;
 - (void)setMailboxListFilter:(id)arg1;
 - (void)setReadBufferSize:(NSUInteger)arg1;
 - (void)setReadBufferSizeFromElapsedTime:(double)arg1 bytesRead:(NSUInteger)arg2;
-- (void)startIdle;
 - (BOOL)startTLSForAccount:(id)arg1;
 - (id)statusForMailbox:(id)arg1 args:(id)arg2;
 - (BOOL)storeFlags:(id)arg1 state:(BOOL)arg2 forMessageSet:(id)arg3;

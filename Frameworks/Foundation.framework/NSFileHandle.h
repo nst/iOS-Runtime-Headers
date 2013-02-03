@@ -9,8 +9,6 @@
 + (id)createFileAtPath:(id)arg1 flags:(NSInteger)arg2 mode:(NSInteger)arg3;
 + (id)fileHandleForReadingAtPath:(id)arg1;
 + (id)fileHandleForTempFile:(id*)arg1 atPath:(id)arg2 mode:(NSInteger)arg3;
-+ (id)fileHandleForUniqueFile:(id*)arg1 atPath:(id)arg2 mode:(NSInteger)arg3 extension:(id)arg4;
-+ (id)fileHandleForUniqueFile:(id*)arg1 atPath:(id)arg2 mode:(NSInteger)arg3;
 + (id)fileHandleForUpdatingAtPath:(id)arg1;
 + (id)fileHandleForWritingAtPath:(id)arg1;
 + (id)fileHandleWithNullDevice;

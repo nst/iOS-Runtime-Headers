@@ -7,21 +7,28 @@
 @interface ITSyncHelper : NSObject {
     unsigned int _observersBlockingSyncsAreWaiting : 1;
     unsigned int _syncingBlockedBySB : 1;
+    unsigned int _ignoreITDBPrepEndNotifications : 1;
     ITSyncFileLocker *_flocker;
+    ITSyncFileLocker *_flockerWaitingForITDBPrep;
     ITSyncFileLocker *_flockerWaitingForSyncEnd;
+    NSInteger _handlingNotifications;
     struct __CFArray { } *_observers;
     struct __CFSet { } *_observersBlockingSyncs;
     struct __CFArray { } *_observersNeedingStartNotification;
     struct __CFRunLoopTimer { } *_observersNeedingStartNotificationTimer;
-    NSUInteger _syncProgressState;
+    NSUInteger _syncState;
 }
 
 + (id)helper;
++ (BOOL)isMaster;
 
 - (BOOL)_alreadyBlockingSyncs;
+- (void)_generateIDBPPrepEnded;
+- (void)_generateIDBPPrepEndedIfNeeded;
 - (void)_generateSyncEndedAbnormally;
 - (void)_generateSyncEndedNormally;
 - (id)_init;
+- (void)_noteITDBPrepWillBegin;
 - (void)_noteSBUnblockedSyncing;
 - (void)_noteSyncDidStart;
 - (void)_noteSyncFailed;
@@ -31,14 +38,19 @@
 - (void)_postDistNoteToObservers:(struct __CFArray { }*)arg1 notifName:(id)arg2 applierFunction:(int (*)())arg3 applierContext:(void*)arg4;
 - (void)_postDistNoteWithName:(id)arg1;
 - (void)_postNotificationForAcquiringLockfileIgnoreingObserver:(id)arg1;
+- (void)_releaseFlockerWaitingForITDBPrep;
 - (void)_releaseLockDueNotificationPostFailure:(id)arg1;
+- (void)_seedFlockerWaitingForITDBPrepIfNecessary;
 - (void)_seedObserversNeedingStartNotification;
 - (BOOL)_waitingForFilelock;
 - (void)dealloc;
 - (BOOL)iTunesIsSyncing;
+- (BOOL)isITDBPostSyncProcessRunning;
 - (BOOL)isSyncingBlockedBySB;
 - (void)postNotificationToiTunes:(struct __CFString { }*)arg1;
 - (void)registerObserver:(id)arg1;
+- (void)runITDBPostSyncProcess;
+- (void)runITDBPostSyncProcessForiTunesSyncPhaseDidEnd;
 - (void)syncFileLockerDidAcquireLock:(id)arg1;
 - (BOOL)tryToBlockSyncForRegisteredObserver:(id)arg1 threadedWaitIfNecessary:(BOOL)arg2;
 - (void)unblockSyncForRegisteredObserver:(id)arg1;

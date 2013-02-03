@@ -5,7 +5,6 @@
 @class NSMutableDictionary;
 
 @interface CMDiagramShapeHierarchyMapper : CMDiagramShapeMapper {
-    float mDefaultScale;
     BOOL mIsLayered;
     NSMutableDictionary *mNodeInfoMap;
 }

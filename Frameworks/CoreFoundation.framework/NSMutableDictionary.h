@@ -6,6 +6,10 @@
 }
 
 + (id)dictionaryWithCapacity:(NSUInteger)arg1;
++ (id)newDictionaryKeyString;
++ (id)nonRetainingDictionary;
++ (id)nonRetainingKeyAndValueDictionary;
++ (id)nonRetainingKeyDictionary;
 
 - (void)_addObject:(id)arg1 forKey:(id)arg2;
 - (void)_replaceObject:(id)arg1 forKey:(id)arg2;
@@ -18,18 +22,16 @@
 - (void)_webkit_setInt:(NSInteger)arg1 forKey:(id)arg2;
 - (void)_webkit_setObject:(id)arg1 forUncopiedKey:(id)arg2;
 - (void)_webkit_setUnsignedLongLong:(unsigned long long)arg1 forKey:(id)arg2;
-- (id)addCssStyleAndReturnClassName:(id)arg1;
 - (void)addEntriesFromDictionary:(id)arg1;
 - (void)addObject:(id)arg1 forKey:(id)arg2;
 - (id)addToCacheAndReturnCssString:(id)arg1;
 - (Class)classForCoder;
-- (id)cssStylesheetString;
-- (void)fixupRFC2231Values;
 - (id)initWithCapacity:(NSUInteger)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(NSUInteger)arg3;
 - (void)invert;
+- (void)mf_fixupRFC2231Values;
 - (void)removeAllObjects;
 - (void)removeKeysForObject:(id)arg1;
 - (void)removeObjectForKey:(id)arg1;

@@ -6,6 +6,7 @@
 
 @interface MPPortraitInfoOverlay : UIView {
     unsigned int _transitioning : 1;
+    unsigned int _allowsDetailScrubbing : 1;
     MPPortraitControlsOverlay *_controlsView;
     id _delegate;
     MPTextView *_displayableTextView;
@@ -16,6 +17,7 @@
 @property NSUInteger visibleParts; /* unknown property attribute: V_visibleParts */
 @property(retain) MPItem *item; /* unknown property attribute: V_item */
 @property id delegate; /* unknown property attribute: V_delegate */
+@property BOOL allowsDetailScrubbing;
 
 - (id)_controlsView;
 - (void)_displayableTextAvailable:(id)arg1;
@@ -28,6 +30,8 @@
 - (void)_reloadViews;
 - (void)_removeDisplayableTextWithAnimation:(BOOL)arg1;
 - (void)_updateDisplayableTextViewForItem:(id)arg1 animate:(BOOL)arg2;
+- (BOOL)allowsDetailScrubbing;
+- (BOOL)controlsOverlay:(id)arg1 shouldUseDetailScrubberForItem:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (void)didMoveToSuperview;
@@ -36,13 +40,13 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)item;
 - (void)layoutSubviews;
+- (void)setAllowsDetailScrubbing:(BOOL)arg1;
 - (void)setAlpha:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setItem:(id)arg1;
 - (void)setVisibleParts:(NSUInteger)arg1;
 - (void)startTicking;
 - (void)stopTicking;
-- (void)textView:(id)arg1 handleTapWithCount:(NSInteger)arg2 event:(struct __GSEvent { }*)arg3;
 - (NSUInteger)visibleParts;
 - (void)willTransition;
 

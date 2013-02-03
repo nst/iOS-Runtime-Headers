@@ -9,6 +9,7 @@
 @class NSURLConnectionInternal;
 
 @interface NSURLConnection : NSObject <NSURLAuthenticationChallengeSender> {
+     /* Encoded args for previous method: B12@0:4^{_CFURLProtectionSpace=}8 */
      /* Encoded args for previous method: v12@0:4B8 */
     NSURLConnectionInternal *_internal;
 }
@@ -24,7 +25,6 @@
 + (id)sendSynchronousRequest:(id)arg1 returningResponse:(id*)arg2 error:(id*)arg3;
 
 - (struct _CFURLConnection { }*)_CFURLConnection;
-- (id)_bufferedData;
 - (BOOL)_connectionActive;
 - (id)_delegate;
 - (void)_dontCountTowardsOriginLoadLimit;
@@ -49,12 +49,15 @@
 - (id)initWithRequest:(id)arg1 delegate:(id)arg2;
 - (void)releaseDelegate;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)sendCanAuthenticateAgainstProtectionSpace:(struct _CFURLProtectionSpace { }*)arg1;
+- (unsigned char)sendConnectionShouldUseCredentialStorage;
 - (void)sendDidFail:(struct __CFError { }*)arg1;
 - (void)sendDidFinishLoading;
 - (void)sendDidReceiveChallenge:(struct _CFURLAuthChallenge { }*)arg1;
 - (void)sendDidReceiveData:(struct __CFData { }*)arg1 originalLength:(long)arg2;
 - (void)sendDidReceiveResponse:(struct _CFURLResponse { }*)arg1;
-- (void)sendDidStopBuffering:(struct __CFData { }*)arg1 originalLength:(long)arg2;
+- (void)sendDidSendBodyData:(long)arg1 totalBytesWritten:(long)arg2 totalBytesExpectedToWrite:(long)arg3;
+- (struct __CFReadStream { }*)sendNeedNewBodyStream:(struct _CFURLRequest { }*)arg1;
 - (struct _CFCachedURLResponse { }*)sendWillCacheResponse:(struct _CFCachedURLResponse { }*)arg1;
 - (struct _CFURLRequest { }*)sendWillSendRequest:(struct _CFURLRequest { }*)arg1 redirectResponse:(struct _CFURLResponse { }*)arg2;
 - (void)setDefersCallbacks:(BOOL)arg1;

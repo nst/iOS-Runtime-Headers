@@ -2,26 +2,30 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPTimeMarker;
+@class MPVideoChapterCellContentView;
 
-@interface MPVideoChapterCell : MPPlayingIndicatorTableCell {
-    unsigned int _showThumbnailColumn : 1;
-    NSUInteger _index;
-    MPTimeMarker *_marker;
-    float _timeColumnWidth;
+@interface MPVideoChapterCell : UITableViewCell {
+    MPVideoChapterCellContentView *_chapterContentView;
 }
 
-- (void)_addThumbnailIfNecessary:(id)arg1;
-- (void)_removeThumbnailIfNecessary:(id)arg1;
+@property(retain) MPTimeMarker *timeMarker;
+@property(getter=isCurrent) BOOL current;
+@property NSUInteger index;
+@property BOOL showThumbnailColumn;
+@property float timeColumnWidth;
+
 - (void)dealloc;
-- (void)drawBackgroundInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFade:(float)arg2;
-- (void)drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
-- (struct CGPoint { float x1; float x2; })indicatorPoint;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
-- (void)setChapterTimeMarker:(id)arg1;
+- (NSUInteger)index;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2;
+- (BOOL)isCurrent;
+- (void)setCurrent:(BOOL)arg1;
 - (void)setIndex:(NSUInteger)arg1;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowThumbnailColumn:(BOOL)arg1;
 - (void)setTimeColumnWidth:(float)arg1;
+- (void)setTimeMarker:(id)arg1;
+- (BOOL)showThumbnailColumn;
+- (float)timeColumnWidth;
+- (id)timeMarker;
 
 @end

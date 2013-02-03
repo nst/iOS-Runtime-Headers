@@ -22,6 +22,7 @@
 @property(retain) MPItem *item; /* unknown property attribute: V_item */
 @property <MPRootControllerDelegate> *delegate; /* unknown property attribute: V_delegate */
 @property(retain,readonly) UIView *rootView;
+@property(getter=isTransitioning,readonly) BOOL transitioning;
 
 - (void)_beginIgnoringChangeTypes:(NSUInteger)arg1;
 - (void)_endIgnoringChangeTypes:(NSUInteger)arg1;
@@ -36,6 +37,7 @@
 - (id)delegate;
 - (id)init;
 - (id)initWithItem:(id)arg1 orientation:(NSInteger)arg2;
+- (BOOL)isTransitioning;
 - (id)item;
 - (NSInteger)orientation;
 - (void)reloadView;

@@ -31,6 +31,7 @@
 - (struct __CFDateFormatter { }*)_dateFormatter;
 - (struct __CFNumberFormatter { }*)_genericFormatter;
 - (struct __CFNumberFormatter { }*)_genericFormatterForDouble;
+- (struct __CFNumberFormatter { }*)_genericFormatterForPercent;
 - (struct __CFNumberFormatter { }*)_smallNumberFormatter;
 - (void)convertCurrencyFormat;
 - (void)convertDateFormat;
@@ -41,6 +42,7 @@
 - (id)formatDefault:(double)arg1;
 - (id)formatDoubleValue:(double)arg1;
 - (id)formatFraction:(double)arg1;
+- (id)formatPercent:(double)arg1;
 - (id)formatPhoneNumber:(double)arg1;
 - (NSInteger)formatType;
 - (id)icuFormatString;

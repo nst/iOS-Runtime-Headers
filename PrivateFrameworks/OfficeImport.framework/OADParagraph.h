@@ -24,7 +24,7 @@
 - (id)plainText;
 - (id)properties;
 - (void)setParentTextListStyle:(id)arg1;
-- (id)textRunAtIndex:(NSInteger)arg1;
-- (NSInteger)textRunCount;
+- (id)textRunAtIndex:(NSUInteger)arg1;
+- (NSUInteger)textRunCount;
 
 @end

@@ -28,5 +28,6 @@
 - (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 userInfo:(id)arg3;
 - (id)titleTextLabel;
 - (id)userInfo;
+- (void)willMoveToSuperview:(id)arg1;
 
 @end

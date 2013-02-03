@@ -29,6 +29,7 @@
         unsigned int showMinTableContent : 1; 
         unsigned int bodyTextTruncated : 1; 
         unsigned int orientation : 3; 
+        unsigned int groupsTextFields : 1; 
         unsigned int delegateBodyTextAlignment : 1; 
         unsigned int delegateClickedButtonAtIndex : 1; 
         unsigned int delegateCancel : 1; 
@@ -36,7 +37,8 @@
         unsigned int delegateDidPresent : 1; 
         unsigned int delegateWillDismiss : 1; 
         unsigned int delegateDidDismiss : 1; 
-        unsigned int extra : 21; 
+        unsigned int popupFromPoint : 1; 
+        unsigned int extra : 20; 
     float _bodyTextHeight;
     UILabel *_bodyTextLabel;
     NSMutableArray *_buttons;
@@ -50,6 +52,8 @@
     NSInteger _firstOtherButton;
     UIView *_keyboard;
     } _modalViewFlags;
+    UIWindow *_originalWindow;
+    float _startX;
     float _startY;
     UILabel *_subtitleLabel;
     NSInteger _suspendTag;
@@ -64,6 +68,7 @@
 @property(copy) NSString *message;
 @property(copy) NSString *title;
 @property NSInteger cancelButtonIndex;
+@property BOOL groupsTextFields;
 @property(readonly) NSInteger numberOfButtons;
 @property(getter=isVisible,readonly) BOOL visible;
 
@@ -95,6 +100,7 @@
 - (id)_dimView;
 - (BOOL)_dimsBackground;
 - (void)_growAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (id)_initWithTelephoneNumber:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(NSInteger)arg3 delegate:(id)arg4 context:(id)arg5;
 - (BOOL)_isAnimating;
 - (void)_layoutIfNeeded;
 - (void)_layoutPopupAlertWithOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
@@ -103,6 +109,8 @@
 - (void)_performPopoutAnimationAnimated:(BOOL)arg1;
 - (void)_performPopup:(BOOL)arg1;
 - (void)_popoutAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_prepareForDisplay;
+- (void)_prepareToBeReplaced;
 - (void)_presentSheetFromView:(id)arg1 above:(BOOL)arg2;
 - (void)_presentSheetStartingFromYCoordinate:(double)arg1;
 - (void)_removeAlertWindowOrShowAnOldAlert;
@@ -127,6 +135,7 @@
 - (BOOL)blocksInteraction;
 - (NSInteger)bodyMaxLineCount;
 - (id)bodyText;
+- (id)bodyTextView;
 - (NSInteger)buttonCount;
 - (id)buttonTitleAtIndex:(NSInteger)arg1;
 - (id)buttons;
@@ -137,12 +146,14 @@
 - (NSInteger)defaultButtonIndex;
 - (id)delegate;
 - (id)destructiveButton;
+- (void)dimmingViewWasTapped:(id)arg1;
 - (BOOL)dimsBackground;
 - (void)dismiss;
 - (void)dismissAnimated:(BOOL)arg1;
 - (void)dismissWithClickedButtonIndex:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (NSInteger)firstOtherButtonIndex;
+- (BOOL)groupsTextFields;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(NSInteger)arg3 delegate:(id)arg4 context:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
@@ -155,12 +166,14 @@
 - (NSInteger)numberOfButtons;
 - (NSInteger)numberOfRows;
 - (void)popupAlertAnimated:(BOOL)arg1 atOffset:(float)arg2;
+- (void)popupAlertAnimated:(BOOL)arg1 fromBarButtonItem:(id)arg2;
 - (void)popupAlertAnimated:(BOOL)arg1;
 - (void)presentSheetFromAboveView:(id)arg1;
 - (void)presentSheetFromBehindView:(id)arg1;
 - (void)presentSheetFromButtonBar:(id)arg1;
 - (void)presentSheetInView:(id)arg1;
 - (void)presentSheetToAboveView:(id)arg1;
+- (void)replaceAlert:(id)arg1;
 - (BOOL)requiresPortraitOrientation;
 - (BOOL)runsModal;
 - (void)setAlertSheetStyle:(NSInteger)arg1;
@@ -175,6 +188,7 @@
 - (void)setDestructiveButton:(id)arg1;
 - (void)setDimView:(id)arg1;
 - (void)setDimsBackground:(BOOL)arg1;
+- (void)setGroupsTextFields:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setNumberOfRows:(NSInteger)arg1;
 - (void)setRunsModal:(BOOL)arg1;
@@ -190,6 +204,7 @@
 - (NSInteger)suspendTag;
 - (id)table;
 - (BOOL)tableShouldShowMinimumContent;
+- (id)taglineTextView;
 - (id)textField;
 - (id)textFieldAtIndex:(NSInteger)arg1;
 - (NSInteger)textFieldCount;

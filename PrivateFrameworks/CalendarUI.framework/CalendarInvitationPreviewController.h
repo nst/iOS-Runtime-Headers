@@ -8,13 +8,11 @@
     CalendarModel *_model;
 }
 
-- (id)autorelease;
 - (void)dealloc;
 - (id)init;
 - (void)loadView;
-- (void)release;
-- (id)retain;
 - (void)setModel:(id)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

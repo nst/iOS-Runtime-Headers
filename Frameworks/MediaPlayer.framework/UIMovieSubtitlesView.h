@@ -16,7 +16,10 @@
     NSString *_markup;
     } _markupSize;
     } _padding;
+    BOOL _subtitlesAreForced;
 }
+
+@property(readonly) BOOL subtitlesAreForced; /* unknown property attribute: V_subtitlesAreForced */
 
 - (id)_createMarkupFromAttributedString:(struct __CFAttributedString { }*)arg1;
 - (id)_htmlColorForColor:(struct CGColor { }*)arg1;
@@ -29,5 +32,6 @@
 - (void)setPadding:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSubtitleString:(struct __CFAttributedString { }*)arg1 forced:(BOOL)arg2;
 - (void)sizeToFitWidth:(float)arg1;
+- (BOOL)subtitlesAreForced;
 
 @end

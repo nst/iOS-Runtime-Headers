@@ -15,6 +15,10 @@
     OADStroke *mVertInsideStroke;
 }
 
++ (id)defaultAxisParallelStroke;
++ (id)defaultObliqueStroke;
++ (id)defaultStyle;
+
 - (id)bottomLeftToTopRightStroke;
 - (id)bottomStroke;
 - (void)dealloc;

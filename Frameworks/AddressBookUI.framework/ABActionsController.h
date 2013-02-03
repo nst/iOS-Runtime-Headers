@@ -2,42 +2,43 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString, ABCardController;
+@class NSString;
 
 @interface ABActionsController : NSObject {
-    ABCardController *_cardController;
     BOOL _isUnknownPerson;
     NSString *_label;
     NSInteger _multiValueIdentifier;
+    void *_person;
     NSInteger _property;
     NSInteger _recordID;
     NSString *_stringValue;
     id _value;
 }
 
-+ (id)createActionsControllerForProperty:(NSInteger)arg1 withCardController:(id)arg2;
++ (id)createActionsControllerForProperty:(NSInteger)arg1;
 
 - (void)actionSelectedAtIndex:(NSInteger)arg1;
 - (id)actionTitleForIndex:(NSInteger)arg1;
+- (id)actionTitleForProperty:(NSInteger)arg1 atIndex:(NSInteger)arg2;
 - (NSInteger)actionsCount;
+- (NSInteger)actionsCountForProperty:(NSInteger)arg1;
 - (NSInteger)actionsGroupFirstIndexOfSecondGroup;
 - (NSInteger)addressActionCount;
 - (void)addressActionSelectedAtIndex:(NSInteger)arg1;
 - (id)addressActionTitleForIndex:(NSInteger)arg1;
 - (NSInteger)addressActionsGroupFirstIndexOfSecondGroup;
-- (NSInteger)cardActionCount;
-- (void)cardActionSelectedAtIndex:(NSInteger)arg1;
-- (id)cardActionTitleForIndex:(NSInteger)arg1;
-- (NSInteger)cardActionsGroupFirstIndexOfSecondGroup;
 - (void)dealloc;
 - (NSInteger)emailActionCount;
 - (void)emailActionSelectedAtIndex:(NSInteger)arg1;
 - (id)emailActionTitleForIndex:(NSInteger)arg1;
 - (NSInteger)emailActionsGroupFirstIndexOfSecondGroup;
-- (id)initWithProperty:(NSInteger)arg1 cardController:(id)arg2;
+- (id)initWithProperty:(NSInteger)arg1 person:(void*)arg2;
+- (id)initWithProperty:(NSInteger)arg1;
 - (void)openURLWithFormat:(id)arg1 value:(id)arg2;
+- (void)performActionAtIndex:(NSInteger)arg1 forProperty:(NSInteger)arg2;
 - (void)performActionAtIndex:(NSInteger)arg1;
 - (void)performDefaultAction;
+- (void*)person;
 - (NSInteger)phoneActionCount;
 - (void)phoneActionSelectedAtIndex:(NSInteger)arg1;
 - (id)phoneActionTitleForIndex:(NSInteger)arg1;

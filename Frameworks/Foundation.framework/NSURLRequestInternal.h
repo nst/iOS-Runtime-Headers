@@ -2,10 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class _NSHTTPBodyStreamWrapper;
-
 @interface NSURLRequestInternal : NSObject {
-    _NSHTTPBodyStreamWrapper *bodyStreamWrapper;
     struct _CFURLRequest { } *request;
 }
 

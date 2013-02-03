@@ -12,8 +12,9 @@
     struct __CFArray { } *mThemes;
 }
 
-+ (struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; }*)appNamespace;
++ (struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)appNamespace;
 + (void)initialize;
++ (id)parseNumberOutOfBasename:(id)arg1 returningNumber:(NSInteger*)arg2;
 
 - (void)addTheme:(id)arg1;
 - (id)colorForMissingAppBundleResource:(struct __CFString { }*)arg1 processorBundle:(struct __CFBundle { }*)arg2;

@@ -2,55 +2,48 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class GMMStreetViewMetadata, NSString, GMMIncomingTile;
 
-@interface GMMStreetViewResponse : GMMResponse <GMMReadWriteStream> {
-     /* Encoded args for previous method: c16@0:4^{InputDataStream=*IIBB}8c12 */
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMStreetViewResponse : PBCodable {
     BOOL _hasThrottled;
+    GMMIncomingTile *_incomingTile;
     GMMStreetViewMetadata *_metadata;
     NSString *_panoId;
-    GMMIncomingTile *_responseTiles;
     NSString *_signature;
     BOOL _throttled;
 }
 
-@property BOOL hasThrottled; /* unknown property attribute: V_hasThrottled */
+@property(readonly) BOOL hasThrottled; /* unknown property attribute: V_hasThrottled */
 @property BOOL throttled; /* unknown property attribute: V_throttled */
 @property(retain) NSString *signature; /* unknown property attribute: V_signature */
-@property(retain) GMMIncomingTile *responseTiles; /* unknown property attribute: V_responseTiles */
+@property(retain) GMMIncomingTile *incomingTile; /* unknown property attribute: V_incomingTile */
 @property(retain) GMMStreetViewMetadata *metadata; /* unknown property attribute: V_metadata */
 @property(retain) NSString *panoId; /* unknown property attribute: V_panoId */
+@property(readonly) BOOL hasIncomingTile;
 @property(readonly) BOOL hasMetadata;
 @property(readonly) BOOL hasPanoId;
-@property(readonly) BOOL hasResponseTiles;
 @property(readonly) BOOL hasSignature;
 
 - (void)dealloc;
 - (id)description;
+- (id)description;
+- (BOOL)hasIncomingTile;
 - (BOOL)hasMetadata;
 - (BOOL)hasPanoId;
-- (BOOL)hasResponseTiles;
 - (BOOL)hasSignature;
 - (BOOL)hasThrottled;
+- (id)incomingTile;
 - (id)init;
 - (id)metadata;
 - (id)panoId;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1 tillEnd:(BOOL)arg2;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
-- (id)responseTiles;
-- (void)setHasThrottled:(BOOL)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setIncomingTile:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setPanoId:(id)arg1;
-- (void)setResponseTiles:(id)arg1;
 - (void)setSignature:(id)arg1;
 - (void)setThrottled:(BOOL)arg1;
 - (id)signature;
 - (BOOL)throttled;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

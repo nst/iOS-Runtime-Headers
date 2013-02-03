@@ -20,6 +20,7 @@
     NSString *_pmString;
     double _previousWeek;
     struct __CFDateFormatter { } *_shortDateFormatter;
+    struct __CFDateFormatter { } *_shortTimeFormatter;
     BOOL _timeDesignatorAppearsBeforeTime;
     UIFont *_timeDesignatorFont;
     struct __CFDateFormatter { } *_timeFormatter;
@@ -29,13 +30,11 @@
     BOOL _use24HourTime;
 }
 
-- (BOOL)_isCurrentLocale24Hour;
 - (void)_languageChanged;
 - (void)_loadDesignatorStrings;
 - (void)_significantTimeChange;
 - (BOOL)_timeDesignatorAppearsBeforeTime;
 - (void)_updateTodayAndNoon;
-- (BOOL)_use24HourTime;
 - (struct CGSize { float x1; float x2; })amSize;
 - (id)amString;
 - (NSInteger)dateKeyForAbsoluteTime:(double)arg1;

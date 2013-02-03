@@ -4,7 +4,7 @@
 
 @class NSArray;
 
-@interface IMAPMessage : Message {
+@interface IMAPMessage : MailMessage {
     struct { 
         unsigned int reserved : 26; 
         unsigned int hasCustomEncoding : 1; 

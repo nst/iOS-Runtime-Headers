@@ -10,7 +10,7 @@
     id _value;
 }
 
-+ (void)_escapeCharacters:(const unsigned short*)arg1 amount:(NSUInteger)arg2 inString:(id)arg3 appendingToString:(struct __CFString { }*)arg4;
++ (void)_escapeCharacters:(const unsigned short*)arg1 amount:(NSUInteger)arg2 escapeWhiteSpaces:(BOOL)arg3 inString:(id)arg4 appendingToString:(struct __CFString { }*)arg5;
 + (void)_escapeHTMLAttributeCharacters:(id)arg1 withQuote:(unsigned short)arg2 appendingToString:(struct __CFString { }*)arg3;
 + (id)attributeWithName:(id)arg1 stringValue:(id)arg2;
 + (id)elementWithName:(id)arg1 stringValue:(id)arg2;
@@ -19,6 +19,8 @@
 
 - (id)XMLString;
 - (void)_appendXMLStringToString:(struct __CFString { }*)arg1;
+- (id)closingTagString;
+- (id)contentString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -27,6 +29,7 @@
 - (NSUInteger)kind;
 - (id)name;
 - (id)objectValue;
+- (id)openingTagString;
 - (void)setName:(id)arg1;
 - (void)setObjectValue:(id)arg1;
 - (void)setStringValue:(id)arg1;

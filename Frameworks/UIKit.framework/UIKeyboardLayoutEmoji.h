@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboardEmojiCategoryController, UIView, UIButton, UIKeyboardEmojiFactory, UIKeyboardEmojiRecentsController, UIKeyboardEmojiScrollView, UIKeyboardEmojiCategoriesControl;
+@class UIButton, UIKeyboardEmojiFactory, UIKeyboardEmojiRecentsController, UIKeyboardEmojiCategoryController, UIKeyboardEmojiScrollView, UIKeyboardEmojiCategoriesControl;
 
 @interface UIKeyboardLayoutEmoji : UIKeyboardLayout <UIKeyboardEmojiController> {
-    UIView *_adapter;
     UIKeyboardEmojiCategoriesControl *_categoriesView;
     UIKeyboardEmojiCategoryController *_categoryController;
     UIButton *_deleteButton;
@@ -15,6 +14,7 @@
     UIKeyboardEmojiRecentsController *_recentsController;
 }
 
+- (BOOL)canHandleHandEvent:(struct __GSEvent { }*)arg1;
 - (void)categoryChanged;
 - (void)categoryChangedNoSounds;
 - (void)categoryReselected;
@@ -27,6 +27,7 @@
 - (void)emojiSelected:(id)arg1;
 - (void)globeDown;
 - (void)globeSwitch;
+- (BOOL)handleHandEvent:(struct __GSEvent { }*)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)recents;
@@ -34,5 +35,6 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)shouldShowIndicator;
 - (void)showKeyboardType:(NSInteger)arg1 withAppearance:(NSInteger)arg2;
+- (void)updateCornerButtonImages;
 
 @end

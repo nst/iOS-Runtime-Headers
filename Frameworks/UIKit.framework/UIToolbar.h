@@ -8,11 +8,12 @@
     struct { 
         unsigned int barStyle : 2; 
         unsigned int mode : 2; 
-        unsigned int roundsCorners : 1; 
         unsigned int alertShown : 1; 
         unsigned int wasEnabled : 1; 
         unsigned int customized : 1; 
         unsigned int downButtonSentAction : 1; 
+        unsigned int roundedCorners : 1; 
+        unsigned int isTranslucent : 1; 
     NSArray *_buttonItems;
     NSInteger _currentButtonGroup;
     NSArray *_customizationItems;
@@ -31,6 +32,7 @@
 @property(retain) UIColor *tintColor; /* unknown property attribute: V_tintColor */
 @property(copy) NSArray *items;
 @property NSInteger barStyle;
+@property(getter=isTranslucent) BOOL translucent;
 
 + (float)_buttonGap;
 + (Class)defaultButtonClass;
@@ -57,6 +59,7 @@
 - (void)_customizeWithAvailableItems:(id)arg1;
 - (void)_customizeWithCurrentButtons:(id)arg1 availableButton:(id)arg2;
 - (id)_descriptionForTag:(NSInteger)arg1;
+- (void)_didFinishHidingRetainedOldItems:(id)arg1;
 - (void)_dismissCustomizeSheet:(BOOL)arg1;
 - (void)_finishButtonAnimation:(NSInteger)arg1 forButton:(NSInteger)arg2;
 - (void)_finishCustomizeAnimation:(id)arg1;
@@ -66,7 +69,10 @@
 - (void)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
 - (void)_showButtons:(NSInteger*)arg1 withCount:(NSInteger)arg2 group:(NSInteger)arg3 withDuration:(double)arg4 adjustPositions:(BOOL)arg5 skipTag:(NSInteger)arg6;
-- (void)_updateButtonBarForNewFrame;
+- (void)_updateItemsForNewFrame:(id)arg1;
+- (void)_updateOpacity;
+- (void)_updateScriptingInfo:(id)arg1 view:(id)arg2;
+- (void)animateToolbarItemIndex:(NSUInteger)arg1 duration:(double)arg2 target:(id)arg3 didFinishSelector:(SEL)arg4;
 - (void)animateWithDuration:(float)arg1 forButton:(NSInteger)arg2;
 - (NSInteger)barStyle;
 - (void)beginCustomizingItems:(id)arg1;
@@ -75,12 +81,14 @@
 - (NSInteger)currentButtonGroup;
 - (void)customize:(const NSInteger*)arg1 withCount:(NSInteger)arg2;
 - (void)dealloc;
+- (struct CGSize { float x1; float x2; })defaultSizeForOrientation:(NSInteger)arg1;
 - (id)delegate;
 - (void)dismissCustomizeSheet:(BOOL)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)endCustomizingAnimated:(BOOL)arg1;
 - (void)getVisibleButtonTags:(NSInteger*)arg1 count:(NSUInteger*)arg2 maxItems:(NSUInteger)arg3;
+- (BOOL)hasRoundedCorners;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initInView:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withItemList:(id)arg3;
@@ -89,7 +97,9 @@
 - (id)initInView:(id)arg1 withItems:(struct { NSInteger x1; NSInteger x2; id x3; id x4; float x5; NSInteger x6; SEL x7; id x8; }*)arg2 withCount:(NSInteger)arg3;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isCustomizing;
+- (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isMinibar;
+- (BOOL)isTranslucent;
 - (id)items;
 - (void)layoutSubviews;
 - (NSInteger)mode;
@@ -112,12 +122,14 @@
 - (void)setButtonItems:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHasRoundedCorners:(BOOL)arg1;
 - (void)setItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setItems:(id)arg1;
 - (void)setMode:(NSInteger)arg1;
 - (void)setOnStateForButton:(BOOL)arg1 forButton:(NSInteger)arg2;
 - (void)setSelectedItem:(id)arg1;
 - (void)setTintColor:(id)arg1;
+- (void)setTranslucent:(BOOL)arg1;
 - (void)showButtonGroup:(NSInteger)arg1 withDuration:(double)arg2;
 - (void)showButtons:(NSInteger*)arg1 withCount:(NSInteger)arg2 withDuration:(double)arg3;
 - (void)showSelectionForButton:(NSInteger)arg1;

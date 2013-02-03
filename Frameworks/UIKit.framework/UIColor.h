@@ -7,6 +7,9 @@
 
 @property(readonly) CGColor *CGColor;
 
++ (id)_mapkit_userLocationAccuracyRingFillColor;
++ (id)_mapkit_userLocationAccuracyRingStrokeColor;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)blackColor;
 + (id)blueColor;
 + (id)brownColor;
@@ -22,6 +25,8 @@
 + (id)grayColor;
 + (id)greenColor;
 + (id)groupTableViewBackgroundColor;
++ (id)infoTextOverPinStripeTextColor;
++ (void)initialize;
 + (id)lightGrayColor;
 + (id)lightTextColor;
 + (id)magentaColor;
@@ -33,10 +38,16 @@
 + (id)sectionHeaderBorderColor;
 + (id)sectionHeaderOpaqueBackgroundColor;
 + (id)sectionListBorderColor;
++ (id)selectionCaretColor;
++ (id)selectionHighlightColor;
++ (id)selectionTintColor;
 + (id)tableBackgroundColor;
++ (id)tableCellBlueTextColor;
++ (id)tableCellGrayTextColor;
 + (id)tableSelectionColor;
 + (id)tableSeparatorDarkColor;
 + (id)tableSeparatorLightColor;
++ (id)textCaretColor;
 + (id)textFieldAtomBlueColor;
 + (id)textFieldAtomPurpleColor;
 + (id)underPageBackgroundColor;
@@ -45,7 +56,11 @@
 + (id)yellowColor;
 
 - (struct CGColor { }*)CGColor;
+- (id)_mapkit_initWithInteger:(NSUInteger)arg1;
+- (BOOL)_mapkit_isWhite;
+- (struct { unsigned char x1[3]; unsigned char x2; })_mapkit_ubyteColorWithForcedAlpha:(unsigned char)arg1;
 - (struct CGColor { }*)cgColor;
+- (Class)classForCoder;
 - (id)colorWithAlphaComponent:(float)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (NSUInteger)hash;
@@ -53,16 +68,13 @@
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
-- (id)initWithInteger:(NSUInteger)arg1;
 - (id)initWithPatternImage:(id)arg1;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 - (id)initWithWhite:(float)arg1 alpha:(float)arg2;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isWhite;
 - (void)set;
 - (void)setFill;
 - (void)setStroke;
 - (id)styleString;
-- (struct { unsigned char x1[3]; unsigned char x2; })ubyteColorWithForcedAlpha:(unsigned char)arg1;
 
 @end

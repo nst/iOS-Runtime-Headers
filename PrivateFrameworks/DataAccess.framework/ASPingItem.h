@@ -11,6 +11,11 @@
     NSNumber *_status;
 }
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
 - (id)asParseRules;
 - (void)dealloc;
 - (id)description;

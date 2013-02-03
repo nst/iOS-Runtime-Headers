@@ -12,7 +12,12 @@
     NSTimeZone *_wrappedTimeZone;
 }
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)expectsContent;
++ (BOOL)frontingBasicTypes;
 + (id)gmt;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
 
 - (id)_bestGuessAtOlsonTimeZoneForOffsetInMinutes:(NSInteger)arg1 firstTransitionDate:(struct _SYSTEMTIME { short x1; short x2; short x3; short x4; short x5; short x6; short x7; short x8; }*)arg2 secondTransitionDate:(struct _SYSTEMTIME { short x1; short x2; short x3; short x4; short x5; short x6; short x7; short x8; }*)arg3;
 - (id)_bestGuessedNameFromPossibilities:(id)arg1 firstTransitionDate:(struct _SYSTEMTIME { short x1; short x2; short x3; short x4; short x5; short x6; short x7; short x8; }*)arg2 secondTransitionDate:(struct _SYSTEMTIME { short x1; short x2; short x3; short x4; short x5; short x6; short x7; short x8; }*)arg3;

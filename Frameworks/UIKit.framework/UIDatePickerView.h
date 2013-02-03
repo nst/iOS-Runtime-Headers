@@ -21,6 +21,7 @@
     } _datePickerFlags;
     NSInteger _datePickerMode;
     id _delegateOfDatePicker;
+    NSInteger _expectedAMPM;
     UILabel *_hourLabel;
     NSLocale *_locale;
     NSDateComponents *_maxDateComponents;
@@ -37,7 +38,7 @@
     double _todaySinceReferenceDate;
 }
 
-@property(retain) id delegateOfDatePicker; /* unknown property attribute: V_delegateOfDatePicker */
+@property id delegateOfDatePicker; /* unknown property attribute: V_delegateOfDatePicker */
 @property NSInteger minuteInterval; /* unknown property attribute: V_minuteInterval */
 @property(copy) NSDate *maximumDate; /* unknown property attribute: V_maximumDate */
 @property(copy) NSDate *minimumDate; /* unknown property attribute: V_minimumDate */
@@ -83,6 +84,7 @@
 - (BOOL)_shouldEnableWeekMonthDayForCell:(id)arg1;
 - (BOOL)_shouldEnableYearForRow:(NSInteger)arg1;
 - (BOOL)_showingDate;
+- (float)_tableRowHeight;
 - (id)_todayTextColor;
 - (void)_updateBitsForDate:(id)arg1 andReload:(BOOL)arg2 animateIfNeeded:(BOOL)arg3;
 - (BOOL)_updateDateOrTime;

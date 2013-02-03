@@ -18,6 +18,7 @@
 + (void)initialize;
 + (BOOL)isCameraAllowed;
 + (void)parentalControlsChanged;
++ (id)whiteListKeys;
 + (BOOL)writeResultingApplicationAccessInfo:(id)arg1;
 + (BOOL)writeResultingCapabilitiesInfo:(id)arg1;
 

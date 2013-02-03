@@ -11,7 +11,7 @@
     NSInteger _seconds;
 }
 
-- (id)command;
+- (NSInteger)commandCode;
 - (void)dealloc;
 - (void)finishWithError:(id)arg1;
 - (id)folders;
@@ -20,6 +20,7 @@
 - (id)initWithHeartbeat:(NSInteger)arg1 folders:(id)arg2 oldHeartbeat:(NSInteger)arg3 oldFolders:(id)arg4;
 - (BOOL)processContext:(id)arg1;
 - (id)requestBody;
+- (void)requestCancelTaskWithReason:(NSInteger)arg1;
 - (BOOL)shouldHoldPowerAssertion;
 - (NSInteger)taskStatusForExchangeStatus:(NSInteger)arg1;
 - (double)timeoutInterval;

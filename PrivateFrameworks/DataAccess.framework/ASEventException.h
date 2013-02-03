@@ -11,6 +11,11 @@
     NSMutableDictionary *_placeHolder;
 }
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
 - (id)_transformedExceptionStartDateForActiveSync:(id)arg1;
 - (id)_transformedExceptionStartDateForCalFramework:(id)arg1;
 - (void)appendActiveSyncDataForTask:(id)arg1 toWBXMLData:(id)arg2;
@@ -23,21 +28,23 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)exceptionDate;
 - (id)exceptionStartTime;
-- (id)initWithCalEvent:(void*)arg1 originalEvent:(id)arg2;
+- (BOOL)hasOccurrenceInTheFuture;
+- (id)initWithCalEvent:(void*)arg1 originalEvent:(id)arg2 account:(id)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithExceptionStartTime:(id)arg1;
 - (id)isDeleted;
 - (void)loadClientIDs;
 - (id)originalEvent;
-- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5;
+- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
 - (void)postProcessApplicationData;
-- (void)saveToCalendarWithParentASEvent:(id)arg1 existingRecord:(void*)arg2 intoCalendar:(void*)arg3 treatNullsAsDeletes:(BOOL)arg4;
+- (void)saveToCalendarWithParentASEvent:(id)arg1 existingRecord:(void*)arg2 intoCalendar:(void*)arg3 treatNullsAsDeletes:(BOOL)arg4 account:(id)arg5;
 - (id)serverIdForCalFrameworkWithParentEvent:(id)arg1;
 - (void)setExceptionDate:(id)arg1;
 - (void)setExceptionStartTime:(id)arg1;
 - (void)setIsDeleted:(id)arg1;
 - (void)setObject:(id)arg1 forCCPT:(NSInteger)arg2;
 - (void)setOriginalEvent:(id)arg1;
-- (void)takeValuesFromParent;
+- (void)takeValuesFromParentForAccount:(id)arg1;
+- (id)uidGeneratedIfNecessaryWithLocalEvent:(void*)arg1;
 
 @end

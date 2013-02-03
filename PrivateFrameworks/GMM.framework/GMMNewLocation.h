@@ -2,19 +2,18 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class GMMGeometry, NSString;
 
-@interface GMMNewLocation : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMNewLocation : PBCodable {
     GMMGeometry *_geocode;
+    BOOL _hasIsVia;
+    BOOL _isVia;
     NSString *_query;
     NSString *_queryRefinementToken;
 }
 
+@property(readonly) BOOL hasIsVia; /* unknown property attribute: V_hasIsVia */
+@property BOOL isVia; /* unknown property attribute: V_isVia */
 @property(retain) NSString *queryRefinementToken; /* unknown property attribute: V_queryRefinementToken */
 @property(retain) GMMGeometry *geocode; /* unknown property attribute: V_geocode */
 @property(retain) NSString *query; /* unknown property attribute: V_query */
@@ -26,18 +25,22 @@
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)description;
+- (id)description;
 - (id)geocode;
 - (BOOL)hasGeocode;
+- (BOOL)hasIsVia;
 - (BOOL)hasQuery;
 - (BOOL)hasQueryRefinementToken;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isVia;
 - (id)query;
 - (id)queryRefinementToken;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setGeocode:(id)arg1;
+- (void)setIsVia:(BOOL)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setQueryRefinementToken:(id)arg1;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

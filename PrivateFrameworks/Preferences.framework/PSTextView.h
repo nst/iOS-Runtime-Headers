@@ -4,12 +4,11 @@
 
 @class PSTextViewTableCell;
 
-@interface PSTextView : UITextViewLegacy {
+@interface PSTextView : UITextView {
     PSTextViewTableCell *_cell;
 }
 
 - (void)mouseDragged:(struct __GSEvent { }*)arg1;
-- (BOOL)resignFirstResponder;
 - (void)scrollToMakeCaretVisible:(BOOL)arg1;
 - (void)setCell:(id)arg1;
 

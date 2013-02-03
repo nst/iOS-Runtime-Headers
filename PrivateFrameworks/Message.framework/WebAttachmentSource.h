@@ -4,14 +4,12 @@
 
 @class NSURL;
 
-@interface WebAttachmentSource : NSObject {
+@interface WebAttachmentSource : WRObject {
     unsigned int _uniqueId : 30;
     NSURL *_baseURL;
 }
 
-+ (id)availableSources;
 + (id)invalidBaseURL;
-+ (id)sourceWithUniqueIdentifier:(NSUInteger)arg1;
 
 - (id)attachmentForURL:(id)arg1;
 - (id)baseURL;

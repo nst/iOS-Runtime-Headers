@@ -13,9 +13,8 @@
 
 - (id)_clientCertificateChain;
 - (id)_clientCertificateState;
-- (id)_dateFromAppleMaxAge;
 - (id)_dateFromExpires;
-- (id)_dateFromMaxAge;
+- (BOOL)_getCacheControlMaxAge:(double*)arg1;
 - (id)_initWithCFURLResponse:(struct _CFURLResponse { }*)arg1;
 - (id)_peerCertificateChain;
 - (struct __SecTrust { }*)_peerTrust;
@@ -25,9 +24,11 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expirationDate;
+- (double)expirationInterval;
+- (BOOL)getAppleMaxAge:(double*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithURL:(id)arg1 statusCode:(NSInteger)arg2 headerFields:(id)arg3 requestTime:(double)arg4;
-- (double)maxAge;
+- (long long)maxExpectedContentLength;
 - (NSInteger)statusCode;
 
 @end

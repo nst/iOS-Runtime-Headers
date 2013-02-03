@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSMutableDictionary, NSArray, NSString, ABPersonImageView, ABCardNameControl, NSMutableArray, UIPreferencesTableCell;
+@class NSMutableDictionary, NSArray, NSString, ABPersonImageView, ABCardNameControl, <ABFirstResponderDelegate>, NSMutableArray, UIPreferencesTableCell;
 
-@interface ABCardItemEditorLayer : UIView <UITextFieldDelegate> {
+@interface ABCardItemEditorLayer : UIView <UITextFieldDelegate, UITextViewDelegate> {
     struct { 
         unsigned int valueIsEditable : 1; 
         unsigned int useFullHeight : 1; 
@@ -12,28 +12,35 @@
         unsigned int hasTextBefore : 1; 
         unsigned int unused : 28; 
     NSMutableArray *_bubbles;
-    NSString *_countryCode;
-    UIPreferencesTableCell *_countryCodeButton;
     id _currentValue;
     id _delegate;
     NSMutableDictionary *_entryFields;
+    UIPreferencesTableCell *_extraPickerButton;
+    NSString *_extraPickerLocalizedValue;
+    NSString *_extraPickerValue;
     NSArray *_fieldEditableKeys;
+    <ABFirstResponderDelegate> *_firstResponderDelegate;
     NSInteger _groupingOutline;
+    UIPreferencesTableCell *_instantMessageServiceButton;
     } _itemEditorLayerFlags;
     NSArray *_knownLabels;
     NSString *_label;
     UIPreferencesTableCell *_labelPicker;
-    NSString *_localizedCountryName;
     void *_person;
     ABPersonImageView *_personImageView;
     ABCardNameControl *_personNameView;
     id _previousValue;
     NSInteger _property;
+    NSString *_savedLabel;
 }
 
-+ (struct CGSize { float x1; float x2; })defaultSizeForProperty:(NSInteger)arg1 displayingPerson:(BOOL)arg2;
+@property <ABFirstResponderDelegate> *firstResponderDelegate; /* unknown property attribute: V_firstResponderDelegate */
+
++ (struct CGSize { float x1; float x2; })defaultSizeForProperty:(NSInteger)arg1 displayingPerson:(BOOL)arg2 orientation:(NSInteger)arg3;
 + (id)formattedFieldEditableKeysForPropertyByLine:(NSInteger)arg1 forCountryCode:(id)arg2;
 
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })__adjustedFrameForLegacyFontMetrics:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_buttonClicked:(id)arg1;
 - (void)_textValueChanged:(id)arg1;
 - (void)_updateCountryCodeButtonText;
 - (BOOL)allFieldsHaveData;
@@ -46,25 +53,35 @@
 - (id)createBubbleWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 action:(SEL)arg2;
 - (void)datePickerChanged:(id)arg1;
 - (void)dealloc;
+- (id)defaultFirstResponder;
+- (void)deselectAllCells;
 - (NSInteger)editorInputType;
 - (BOOL)endEditing:(BOOL)arg1;
 - (id)entryFieldForKey:(id)arg1 localizedPlaceholder:(id)arg2 stringValue:(id)arg3 keyboardSettings:(id)arg4 useLargeFont:(BOOL)arg5 multiLine:(BOOL)arg6;
 - (void)fieldEndedEditing:(id)arg1;
-- (id)initWithProperty:(NSInteger)arg1 value:(id)arg2 selectedLabel:(id)arg3 labels:(id)arg4 valueEditable:(BOOL)arg5 displayedPerson:(void*)arg6 showCardHeader:(BOOL)arg7;
+- (id)firstResponderDelegate;
+- (id)initWithProperty:(NSInteger)arg1 value:(id)arg2 selectedLabel:(id)arg3 labels:(id)arg4 valueEditable:(BOOL)arg5 displayedPerson:(void*)arg6 addressBook:(void*)arg7 showCardHeader:(BOOL)arg8 interfaceOrientation:(NSInteger)arg9;
+- (void)instantMessageServiceButtonClicked:(id)arg1;
+- (id)instantMessageServiceValueButton;
 - (void)labelPickerDisclosureButtonClicked:(id)arg1;
 - (id)labelPickerWithSelectedLabel:(id)arg1;
 - (void)layoutSubviews;
 - (void)notifyDelegateEditorHasText:(id)arg1;
 - (void)refreshUI;
 - (void)refreshUIWithChangedCountryCode:(id)arg1;
+- (void)refreshUIWithChangedInstantMessageService:(id)arg1;
 - (void)refreshUIWithChangedLabel:(id)arg1;
 - (void)refreshUIWithChangedValue:(id)arg1 forProperty:(id)arg2;
+- (id)savedLabel;
 - (id)selectedLabel;
 - (void)setDelegate:(id)arg1;
+- (void)setExtraPickerLocalizedValue:(id)arg1;
+- (void)setFirstResponderDelegate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGroupingOutline:(NSInteger)arg1;
 - (void)setLocalizedCountryName:(id)arg1;
 - (void)setNeedsLayout;
+- (void)setSelectedInstantMessageService:(id)arg1;
 - (void)setSelectedLabel:(id)arg1;
 - (void)setUseFullHeight:(BOOL)arg1;
 - (void)setupAddressEntryFieldWithKey:(id)arg1 lineItemInfo:(id)arg2 value:(id)arg3 origin:(struct CGPoint { float x1; float x2; }*)arg4 itemSpace:(float)arg5 container:(id)arg6;
@@ -75,7 +92,8 @@
 - (void)setupStringPropertySublayersWithValue:(id)arg1 selectedLabel:(id)arg2 origin:(struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setupSublayersWithValue:(id)arg1 selectedLabel:(id)arg2 createUI:(BOOL)arg3;
 - (struct { id x1; NSUInteger x2; })suggestionsForString:(id)arg1 inputIndex:(NSUInteger)arg2;
-- (BOOL)textViewLegacy:(id)arg1 shouldChangeTextInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 replacementText:(id)arg3;
+- (void)textFieldDidBeginEditing:(id)arg1;
+- (void)textViewDidChange:(id)arg1;
 - (BOOL)useFullHeight;
 - (id)value;
 

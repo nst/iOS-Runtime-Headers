@@ -127,6 +127,7 @@
 - (void)replaceContiguousSpecifiers:(id)arg1 withSpecifiers:(id)arg2 animated:(BOOL)arg3;
 - (void)replaceContiguousSpecifiers:(id)arg1 withSpecifiers:(id)arg2;
 - (NSInteger)rowsForGroup:(NSInteger)arg1;
+- (void)selectRowForSpecifier:(id)arg1;
 - (void)selectRowWithoutNotification:(NSInteger)arg1;
 - (void)setCachesCells:(BOOL)arg1;
 - (void)setSpecifierID:(id)arg1;

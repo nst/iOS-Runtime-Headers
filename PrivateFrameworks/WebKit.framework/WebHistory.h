@@ -2,22 +2,27 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class WebHistoryPrivate;
 
 @interface WebHistory : NSObject {
+     /* Encoded args for previous method: v12@0:4^{PageGroup={String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{HashSet<WebCore::Page*,WTF::PtrHash<WebCore::Page*>,WTF::HashTraits<WebCore::Page*> >={HashTable<WebCore::Page*,WebCore::Page*,WTF::IdentityExtractor<WebCore::Page*>,WTF::PtrHash<WebCore::Page*>,WTF::HashTraits<WebCore::Page*>,WTF::HashTraits<WebCore::Page*> >=^^{Page}iiii}}{HashSet<long long unsigned int,WebCore::LinkHashHash,WTF::HashTraits<long long unsigned int> >={HashTable<long long unsigned int,long long unsigned int,WTF::IdentityExtractor<long long unsigned int>,WebCore::LinkHashHash,WTF::HashTraits<long long unsigned int>,WTF::HashTraits<long long unsigned int> >=^Qiiii}}BI{RefPtr<WebCore::LocalStorage>=^{LocalStorage}}}8 */
     WebHistoryPrivate *_historyPrivate;
 }
 
 + (id)optionalSharedHistory;
 + (void)setOptionalSharedHistory:(id)arg1;
 
+- (void)_addVisitedLinksToPageGroup:(struct PageGroup { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; struct HashSet<WebCore::Page*,WTF::PtrHash<WebCore::Page*>,WTF::HashTraits<WebCore::Page*> > { struct HashTable<WebCore::Page*,WebCore::Page*,WTF::IdentityExtractor<WebCore::Page*>,WTF::PtrHash<WebCore::Page*>,WTF::HashTraits<WebCore::Page*>,WTF::HashTraits<WebCore::Page*> > { struct Page {} **x_1_2_1; NSInteger x_1_2_2; NSInteger x_1_2_3; NSInteger x_1_2_4; NSInteger x_1_2_5; } x_2_1_1; } x2; struct HashSet<long long unsigned int,WebCore::LinkHashHash,WTF::HashTraits<long long unsigned int> > { struct HashTable<long long unsigned int,long long unsigned int,WTF::IdentityExtractor<long long unsigned int>,WebCore::LinkHashHash,WTF::HashTraits<long long unsigned int>,WTF::HashTraits<long long unsigned int> > { unsigned long long *x_1_2_1; NSInteger x_1_2_2; NSInteger x_1_2_3; NSInteger x_1_2_4; NSInteger x_1_2_5; } x_3_1_1; } x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; NSUInteger x5; struct RefPtr<WebCore::LocalStorage> { struct LocalStorage {} *x_6_1_1; } x6; }*)arg1;
 - (id)_itemForURLString:(id)arg1;
 - (void)_sendNotification:(id)arg1 entries:(id)arg2;
-- (void)addItem:(id)arg1;
-- (id)addItemForURL:(id)arg1;
+- (void)_visitedURL:(id)arg1 withTitle:(id)arg2 method:(id)arg3 wasFailure:(BOOL)arg4 serverRedirectURL:(id)arg5 isClientRedirect:(BOOL)arg6;
+- (void)_visitedURLForRedirectWithoutHistoryItem:(id)arg1;
 - (void)addItems:(id)arg1;
-- (id)ageLimitDate;
-- (BOOL)containsItemForURLString:(id)arg1;
+- (id)allItems;
 - (BOOL)containsURL:(id)arg1;
 - (void)dealloc;
 - (NSInteger)historyAgeInDaysLimit;
@@ -28,11 +33,9 @@
 - (id)orderedItemsLastVisitedOnDay:(id)arg1;
 - (id)orderedLastVisitedDays;
 - (void)removeAllItems;
-- (void)removeItem:(id)arg1;
 - (void)removeItems:(id)arg1;
 - (BOOL)saveToURL:(id)arg1 error:(id*)arg2;
 - (void)setHistoryAgeInDaysLimit:(NSInteger)arg1;
 - (void)setHistoryItemLimit:(NSInteger)arg1;
-- (void)setLastVisitedTimeInterval:(double)arg1 forItem:(id)arg2;
 
 @end

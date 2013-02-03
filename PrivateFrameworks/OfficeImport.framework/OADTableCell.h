@@ -16,23 +16,23 @@
 }
 
 - (void)dealloc;
-- (NSInteger)gridSpan;
+- (NSUInteger)gridSpan;
 - (BOOL)horzMerge;
 - (id)init;
-- (NSInteger)leftColumn;
+- (NSUInteger)leftColumn;
 - (id)properties;
-- (NSInteger)rowSpan;
-- (void)setGridSpan:(NSInteger)arg1;
+- (NSUInteger)rowSpan;
+- (void)setGridSpan:(NSUInteger)arg1;
 - (void)setHorzMerge:(BOOL)arg1;
-- (void)setLeftColumn:(NSInteger)arg1;
+- (void)setLeftColumn:(NSUInteger)arg1;
 - (void)setProperties:(id)arg1;
-- (void)setRowSpan:(NSInteger)arg1;
+- (void)setRowSpan:(NSUInteger)arg1;
 - (void)setTextBody:(id)arg1;
-- (void)setTopRow:(NSInteger)arg1;
+- (void)setTopRow:(NSUInteger)arg1;
 - (void)setVertMerge:(BOOL)arg1;
-- (NSInteger)spanAlongDir:(NSInteger)arg1;
+- (NSUInteger)spanAlongDir:(NSInteger)arg1;
 - (id)textBody;
-- (NSInteger)topRow;
+- (NSUInteger)topRow;
 - (BOOL)vertMerge;
 
 @end

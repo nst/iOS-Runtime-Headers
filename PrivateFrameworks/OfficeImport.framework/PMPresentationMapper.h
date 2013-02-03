@@ -16,11 +16,9 @@
 
 - (id)archiver;
 - (id)blipAtIndex:(NSUInteger)arg1;
-- (id)createFramesetDocument:(id)arg1;
 - (void)dealloc;
 - (id)documentTitle;
 - (id)initWithPDPresentation:(id)arg1 archiver:(id)arg2;
-- (void)mapContinuousWithState:(id)arg1;
 - (void)mapDefaultCssStylesAt:(id)arg1;
 - (void)mapWithState:(id)arg1;
 - (struct CGSize { float x1; float x2; })pageSizeForDevice;

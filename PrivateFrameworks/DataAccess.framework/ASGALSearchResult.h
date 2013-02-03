@@ -2,16 +2,19 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSDictionary, NSString;
+@class NSMutableArray, NSDictionary, NSString;
 
 @interface ASGALSearchResult : ASItem {
     NSString *_alias;
     NSDictionary *_applicationData;
+    NSMutableArray *_classes;
+    NSMutableArray *_collectionIDs;
     NSString *_company;
     NSString *_emailAddress;
     NSString *_firstName;
     NSString *_homePhone;
     NSString *_lastName;
+    NSString *_longID;
     NSString *_mobilePhone;
     NSString *_office;
     NSString *_phone;
@@ -28,10 +31,22 @@
 @property(copy) NSString *title; /* unknown property attribute: V_title */
 @property(copy) NSString *office; /* unknown property attribute: V_office */
 @property(copy) NSString *phone; /* unknown property attribute: V_phone */
+@property(retain) NSArray *collectionIDs; /* unknown property attribute: V_collectionIDs */
+@property(retain) NSArray *classes; /* unknown property attribute: V_classes */
+@property(retain) NSString *longID; /* unknown property attribute: V_longID */
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
+- (void)addClass:(id)arg1;
+- (void)addCollectionID:(id)arg1;
 - (id)alias;
 - (id)applicationData;
 - (id)asParseRules;
+- (id)classes;
+- (id)collectionIDs;
 - (id)company;
 - (id)convertToDAContactSearchResultElement;
 - (void)dealloc;
@@ -40,18 +55,22 @@
 - (id)firstName;
 - (id)homePhone;
 - (id)lastName;
+- (id)longID;
 - (id)mobilePhone;
 - (id)office;
-- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5;
+- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
 - (id)phone;
 - (void)postProcessApplicationData;
 - (void)setAlias:(id)arg1;
 - (void)setApplicationData:(id)arg1;
+- (void)setClasses:(id)arg1;
+- (void)setCollectionIDs:(id)arg1;
 - (void)setCompany:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setHomePhone:(id)arg1;
 - (void)setLastName:(id)arg1;
+- (void)setLongID:(id)arg1;
 - (void)setMobilePhone:(id)arg1;
 - (void)setOffice:(id)arg1;
 - (void)setPhone:(id)arg1;

@@ -30,6 +30,7 @@
 - (BOOL)processContext:(id)arg1;
 - (id)requestBody;
 - (BOOL)requiresEASVersionInformaton;
+- (BOOL)shouldLogIncomingData;
 - (double)timeoutInterval;
 
 @end

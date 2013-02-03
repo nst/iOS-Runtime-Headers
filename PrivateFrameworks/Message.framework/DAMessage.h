@@ -4,22 +4,29 @@
 
 @class Message, MailboxUid, DAMailMessage;
 
-@interface DAMessage : Message {
+@interface DAMessage : MailMessage {
     DAMailMessage *_DAMailMessage;
+    BOOL _haveTweakedCcIvar;
+    BOOL _haveTweakedSenderIvar;
+    BOOL _haveTweakedToIvar;
     MailboxUid *_mailbox;
     Message *_rfc822CreatedMessage;
 }
 
 - (id)DAMailMessage;
+- (id)cc;
 - (void)dealloc;
 - (id)headers;
 - (id)initWithDAMailMessage:(id)arg1 mailbox:(id)arg2;
 - (id)mailbox;
 - (id)messageBody;
-- (id)messageDataIsComplete:(BOOL*)arg1 downloadIfNecessary:(BOOL)arg2;
+- (BOOL)messageData:(id*)arg1 messageSize:(NSUInteger*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
 - (unsigned long)messageFlags;
 - (NSUInteger)messageSize;
 - (id)remoteID;
 - (id)remoteMailboxURL;
+- (id)sender;
+- (id)to;
+- (id)tweakedHeaderValueForSelector:(SEL)arg1 setter:(SEL)arg2 key:(id)arg3 trackingIvar:(BOOL*)arg4;
 
 @end

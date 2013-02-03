@@ -7,7 +7,7 @@
 
 + (id)_usernameWithHostname:(id)arg1;
 + (id)_usernameWithoutHostname:(id)arg1;
-+ (id)accountInfoValueForKey:(id)arg1 value:(id)arg2;
++ (id)accountPropertiesValueForKey:(id)arg1 value:(id)arg2;
 + (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (id)deliveryAccountHostname;
 + (NSUInteger)deliveryAccountPortNumber;

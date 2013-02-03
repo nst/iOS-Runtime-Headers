@@ -11,13 +11,15 @@
     UIToolbar *_buttonBar;
     NSInteger _buttonTag;
     NSInteger _currentAnimation;
+    SEL _didFinishSelector;
+    id _didFinishTarget;
     BOOL _flipped;
     BOOL _showAlternate;
     BOOL _updateImage;
     id _value;
 }
 
-- (void)animateImage:(float)arg1 withButtonBar:(id)arg2 withTag:(NSInteger)arg3;
+- (void)animateImage:(float)arg1 withButtonBar:(id)arg2 withTag:(NSInteger)arg3 target:(id)arg4 didFinishSelector:(SEL)arg5;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;
 - (id)initWithImage:(id)arg1 alternateImage:(id)arg2 barStyle:(NSInteger)arg3 tintColor:(id)arg4 bezel:(BOOL)arg5;

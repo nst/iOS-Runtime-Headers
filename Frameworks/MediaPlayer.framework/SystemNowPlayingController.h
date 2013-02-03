@@ -5,23 +5,15 @@
 @class NSDictionary;
 
 @interface SystemNowPlayingController : NSObject {
-    NSInteger _disableHUDCount;
     NSDictionary *_lastNowPlayingInfo;
     NSUInteger _lastPostedNowPlayingTrackUniqueID;
-    NSInteger _notifyDisableSystemHUDToken;
-    BOOL _notifyEnableSystemHUDLastPostedState;
 }
 
 + (id)sharedInstance;
 
 - (id)_init;
-- (void)_postNowPlayingInfo;
-- (void)_setEnableSBMediaHUD:(BOOL)arg1;
 - (void)dealloc;
-- (void)disableMediaHUD;
-- (void)enableMediaHUD;
 - (id)init;
 - (void)postNowPlayingInfoForItem:(id)arg1 isPlaying:(BOOL)arg2 additionalInfo:(id)arg3;
-- (void)unpostNowPlayingInfo;
 
 @end

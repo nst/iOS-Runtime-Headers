@@ -42,6 +42,7 @@
 - (void)_createBezierPathWithCornerRadius:(float)arg1 bottomRadius:(float)arg2 animating:(BOOL)arg3;
 - (struct CGImage { }*)_createCachedPrefImage;
 - (struct CGContext { }*)_createContextForCaching;
+- (void)_disclosureClicked:(id)arg1;
 - (id)_getTitleColor;
 - (void)_invalidatePaths;
 - (void)_layoutDisclosureIfNeeded;

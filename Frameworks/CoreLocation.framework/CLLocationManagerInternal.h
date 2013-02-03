@@ -14,19 +14,34 @@
         double horizontalAccuracy; 
         double altitude; 
         double verticalAccuracy; 
-        double heading; 
         double speed; 
         double course; 
+        NSInteger confidence; 
         double timestamp; 
     struct { 
         double bestAccuracy; 
+    struct { 
+        double magneticHeading; 
+        double trueHeading; 
+        double accuracy; 
+        NSInteger calibration; 
+        double x; 
+        double y; 
+        double z; 
+        double temperature; 
+        double magnitude; 
+        double inclination; 
+        double timestamp; 
     } fCapabilities;
     BOOL fCapabilitiesValid;
     struct __CLClient { } *fClient;
     <CLLocationManagerDelegate> *fDelegate;
     double fDesiredAccuracy;
     double fDistanceFilter;
+    } fHeading;
+    double fHeadingFilter;
     } fLocation;
+    BOOL fUpdatingHeading;
     BOOL fUpdatingLocation;
 }
 

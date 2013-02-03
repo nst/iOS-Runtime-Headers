@@ -2,26 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MailMessageLibrary, DAMessageStore, ActivityMonitor, DAMailbox, MFError;
-
-@interface DAMSUpdateConsumer : BufferedQueue <DASyncActionsConsumer> {
-    MFError *error;
-    MailMessageLibrary *library;
-    DAMailbox *mailbox;
-    ActivityMonitor *monitor;
-    NSInteger numNewMessages;
-    DAMessageStore *store;
+@interface DAMSUpdateConsumer : DAMSBasicConsumer <DASyncActionsConsumer> {
 }
 
-@property(retain) ActivityMonitor *monitor; /* unknown property attribute: Vmonitor */
-
 - (void)commitSyncActions;
-- (void)dealloc;
 - (BOOL)handleItems:(id)arg1;
 - (void)handleResponse:(id)arg1 error:(id)arg2;
-- (id)init;
-- (id)monitor;
 - (void)receiveSyncActions:(id)arg1;
-- (void)setMonitor:(id)arg1;
 
 @end

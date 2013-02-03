@@ -12,14 +12,15 @@
         double horizontalAccuracy; 
         double altitude; 
         double verticalAccuracy; 
-        double heading; 
         double speed; 
         double course; 
+        NSInteger confidence; 
         double timestamp; 
     } fLocation;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithClientLocation:(struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })arg1;
+- (id)initWithClientLocation:(struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; NSInteger x8; double x9; })arg1;
+- (id)initWithIso6709Notation:(id)arg1;
 
 @end

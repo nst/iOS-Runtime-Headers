@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSString, GMMMapInfo, NSData, GMMClientCapabilities;
 
-@interface GMMSearchRequest : GMMRequest <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMSearchRequest : PBRequest {
     GMMClientCapabilities *_capabilities;
     NSString *_gaiaSid;
     BOOL _hasIncludeAdResults;
@@ -23,7 +18,6 @@
     BOOL _hasMaxResults;
     BOOL _hasResultOffset;
     BOOL _hasSourceType;
-    BOOL _hasType;
     BOOL _hasUseSeparateRefinementString;
     BOOL _includeAdResults;
     BOOL _includeCategories;
@@ -43,48 +37,46 @@
     BOOL _useSeparateRefinementString;
 }
 
-@property BOOL hasIncludeStreetViewPanoId; /* unknown property attribute: V_hasIncludeStreetViewPanoId */
+@property(readonly) BOOL hasIncludeStreetViewPanoId; /* unknown property attribute: V_hasIncludeStreetViewPanoId */
 @property BOOL includeStreetViewPanoId; /* unknown property attribute: V_includeStreetViewPanoId */
-@property BOOL hasIncludeProximityAdResults; /* unknown property attribute: V_hasIncludeProximityAdResults */
+@property(readonly) BOOL hasIncludeProximityAdResults; /* unknown property attribute: V_hasIncludeProximityAdResults */
 @property BOOL includeProximityAdResults; /* unknown property attribute: V_includeProximityAdResults */
-@property BOOL hasIncludeRatings; /* unknown property attribute: V_hasIncludeRatings */
+@property(readonly) BOOL hasIncludeRatings; /* unknown property attribute: V_hasIncludeRatings */
 @property BOOL includeRatings; /* unknown property attribute: V_includeRatings */
-@property BOOL hasSourceType; /* unknown property attribute: V_hasSourceType */
+@property(readonly) BOOL hasSourceType; /* unknown property attribute: V_hasSourceType */
 @property NSInteger sourceType; /* unknown property attribute: V_sourceType */
-@property BOOL hasUseSeparateRefinementString; /* unknown property attribute: V_hasUseSeparateRefinementString */
+@property(readonly) BOOL hasUseSeparateRefinementString; /* unknown property attribute: V_hasUseSeparateRefinementString */
 @property BOOL useSeparateRefinementString; /* unknown property attribute: V_useSeparateRefinementString */
-@property BOOL hasIncludeMapsUrlForEachResult; /* unknown property attribute: V_hasIncludeMapsUrlForEachResult */
+@property(readonly) BOOL hasIncludeMapsUrlForEachResult; /* unknown property attribute: V_hasIncludeMapsUrlForEachResult */
 @property BOOL includeMapsUrlForEachResult; /* unknown property attribute: V_includeMapsUrlForEachResult */
-@property BOOL hasIncludeCategories; /* unknown property attribute: V_hasIncludeCategories */
+@property(readonly) BOOL hasIncludeCategories; /* unknown property attribute: V_hasIncludeCategories */
 @property BOOL includeCategories; /* unknown property attribute: V_includeCategories */
 @property(retain) GMMClientCapabilities *capabilities; /* unknown property attribute: V_capabilities */
 @property(retain) NSString *gaiaSid; /* unknown property attribute: V_gaiaSid */
 @property(retain) NSData *kmlDocument; /* unknown property attribute: V_kmlDocument */
-@property BOOL hasIncludeKmlResults; /* unknown property attribute: V_hasIncludeKmlResults */
+@property(readonly) BOOL hasIncludeKmlResults; /* unknown property attribute: V_hasIncludeKmlResults */
 @property BOOL includeKmlResults; /* unknown property attribute: V_includeKmlResults */
-@property BOOL hasIncludeAdResults; /* unknown property attribute: V_hasIncludeAdResults */
+@property(readonly) BOOL hasIncludeAdResults; /* unknown property attribute: V_hasIncludeAdResults */
 @property BOOL includeAdResults; /* unknown property attribute: V_includeAdResults */
-@property BOOL hasIncludeStructuredAddress; /* unknown property attribute: V_hasIncludeStructuredAddress */
+@property(readonly) BOOL hasIncludeStructuredAddress; /* unknown property attribute: V_hasIncludeStructuredAddress */
 @property BOOL includeStructuredAddress; /* unknown property attribute: V_includeStructuredAddress */
-@property BOOL hasMaxResults; /* unknown property attribute: V_hasMaxResults */
+@property(readonly) BOOL hasMaxResults; /* unknown property attribute: V_hasMaxResults */
 @property NSInteger maxResults; /* unknown property attribute: V_maxResults */
-@property BOOL hasResultOffset; /* unknown property attribute: V_hasResultOffset */
+@property(readonly) BOOL hasResultOffset; /* unknown property attribute: V_hasResultOffset */
 @property NSInteger resultOffset; /* unknown property attribute: V_resultOffset */
 @property(retain) GMMMapInfo *mapInfo; /* unknown property attribute: V_mapInfo */
 @property(retain) NSString *query; /* unknown property attribute: V_query */
-@property BOOL hasType; /* unknown property attribute: V_hasType */
 @property NSInteger type; /* unknown property attribute: V_type */
 @property(readonly) BOOL hasCapabilities;
 @property(readonly) BOOL hasGaiaSid;
 @property(readonly) BOOL hasKmlDocument;
 @property(readonly) BOOL hasMapInfo;
-@property(readonly) BOOL hasQuery;
 
 + (id)newSearchRequestWithQuery:(id)arg1 requestType:(NSInteger)arg2 centerPoint:(struct CGPoint { float x1; float x2; })arg3 longLatSpan:(struct CGSize { float x1; float x2; })arg4 zoomLevel:(NSInteger)arg5;
 
-- (void)_writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
 - (id)capabilities;
 - (void)dealloc;
+- (id)description;
 - (id)gaiaSid;
 - (BOOL)hasCapabilities;
 - (BOOL)hasGaiaSid;
@@ -99,10 +91,8 @@
 - (BOOL)hasKmlDocument;
 - (BOOL)hasMapInfo;
 - (BOOL)hasMaxResults;
-- (BOOL)hasQuery;
 - (BOOL)hasResultOffset;
 - (BOOL)hasSourceType;
-- (BOOL)hasType;
 - (BOOL)hasUseSeparateRefinementString;
 - (BOOL)includeAdResults;
 - (BOOL)includeCategories;
@@ -117,24 +107,12 @@
 - (id)mapInfo;
 - (NSInteger)maxResults;
 - (id)query;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (NSUInteger)requestTypeCode;
 - (Class)responseClass;
 - (NSInteger)resultOffset;
 - (void)setCapabilities:(id)arg1;
 - (void)setGaiaSid:(id)arg1;
-- (void)setHasIncludeAdResults:(BOOL)arg1;
-- (void)setHasIncludeCategories:(BOOL)arg1;
-- (void)setHasIncludeKmlResults:(BOOL)arg1;
-- (void)setHasIncludeMapsUrlForEachResult:(BOOL)arg1;
-- (void)setHasIncludeProximityAdResults:(BOOL)arg1;
-- (void)setHasIncludeRatings:(BOOL)arg1;
-- (void)setHasIncludeStreetViewPanoId:(BOOL)arg1;
-- (void)setHasIncludeStructuredAddress:(BOOL)arg1;
-- (void)setHasMaxResults:(BOOL)arg1;
-- (void)setHasResultOffset:(BOOL)arg1;
-- (void)setHasSourceType:(BOOL)arg1;
-- (void)setHasType:(BOOL)arg1;
-- (void)setHasUseSeparateRefinementString:(BOOL)arg1;
 - (void)setIncludeAdResults:(BOOL)arg1;
 - (void)setIncludeCategories:(BOOL)arg1;
 - (void)setIncludeKmlResults:(BOOL)arg1;
@@ -154,6 +132,6 @@
 - (NSInteger)sourceType;
 - (NSInteger)type;
 - (BOOL)useSeparateRefinementString;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

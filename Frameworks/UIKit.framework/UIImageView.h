@@ -7,26 +7,39 @@
 }
 
 @property(copy) NSArray *animationImages;
+@property(copy) NSArray *highlightedAnimationImages;
+@property(retain) UIImage *highlightedImage;
 @property(retain) UIImage *image;
 @property double animationDuration;
 @property NSInteger animationRepeatCount;
 @property NSInteger drawMode;
+@property(getter=isHighlighted) BOOL highlighted;
 @property(getter=isUserInteractionEnabled) BOOL userInteractionEnabled;
 
++ (id)backgroundImageViewForImage:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+
 - (BOOL)_canDrawContent;
+- (void)_updateState;
 - (double)animationDuration;
 - (id)animationImages;
 - (NSInteger)animationRepeatCount;
 - (void)dealloc;
+- (unsigned long long)defaultAccessibilityTraits;
 - (NSInteger)drawMode;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)highlightedAnimationImages;
+- (id)highlightedImage;
 - (id)image;
 - (struct CGImage { }*)imageRef;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithImage:(id)arg1 highlightedImage:(id)arg2;
 - (id)initWithImage:(id)arg1;
+- (BOOL)isAccessibilityElementByDefault;
 - (BOOL)isAnimating;
+- (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
+- (BOOL)isHighlighted;
 - (void)setAnimating:(BOOL)arg1;
 - (void)setAnimationDuration:(double)arg1;
 - (void)setAnimationImages:(id)arg1;
@@ -35,6 +48,9 @@
 - (void)setCGImageRef:(struct CGImage { }*)arg1;
 - (void)setDrawMode:(NSInteger)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlightedAnimationImages:(id)arg1;
+- (void)setHighlightedImage:(id)arg1;
 - (void)setImage:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)startAnimating;

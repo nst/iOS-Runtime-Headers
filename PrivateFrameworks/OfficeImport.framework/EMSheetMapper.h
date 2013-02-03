@@ -6,6 +6,8 @@
 }
 
 - (NSInteger)height;
+- (NSInteger)preprocessHeight;
+- (NSInteger)preprocessWidth;
 - (NSInteger)width;
 
 @end

@@ -6,11 +6,11 @@
 
 @interface UITabBar : UIView {
     struct { 
-        unsigned int roundsCorners : 1; 
         unsigned int alertShown : 1; 
         unsigned int wasEnabled : 1; 
         unsigned int customized : 1; 
         unsigned int downButtonSentAction : 1; 
+        unsigned int isLocked : 1; 
     NSArray *_buttonItems;
     NSArray *_customizationItems;
     UIView *_customizeView;
@@ -58,6 +58,8 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isCustomizing;
+- (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
+- (BOOL)isLocked;
 - (id)items;
 - (void)layoutSubviews;
 - (BOOL)onStateForButton:(NSInteger)arg1;
@@ -71,6 +73,7 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setItems:(id)arg1;
+- (void)setLocked:(BOOL)arg1;
 - (void)setOnStateForButton:(BOOL)arg1 forButton:(NSInteger)arg2;
 - (void)setSelectedItem:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

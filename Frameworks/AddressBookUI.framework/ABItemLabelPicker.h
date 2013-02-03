@@ -2,68 +2,71 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSMutableArray, NSString, UIPreferencesTable;
+@class NSMutableArray, NSString, UITableView, NSIndexPath;
 
-@interface ABItemLabelPicker : UIView {
-    unsigned int _manuallySettingRowSelection : 1;
+@interface ABItemLabelPicker : UIView <UITableViewDataSource, UITableViewDelegate, ABSimpleTextInputViewControllerDelegate> {
     NSMutableArray *_additionalLabels;
+    void *_addressBook;
     id _delegate;
     id _editedItem;
     void *_person;
     NSInteger _property;
-    NSInteger _selectedGroup;
-    NSString *_selectedItemLabel;
-    NSInteger _selectedRow;
+    NSString *_savedLabel;
+    NSString *_selectedLabel;
+    NSIndexPath *_selectedPath;
     struct __CFArray { } *_sortedCustomItemLabelInfos;
     void *_sortedCustomItemLabelInfosMemory;
     struct __CFArray { } *_sortedDefaultItemLabelInfos;
     void *_sortedDefaultItemLabelInfosMemory;
-    UIPreferencesTable *_table;
+    UITableView *_tableView;
 }
 
 + (id)builtInLabelsForProperty:(NSInteger)arg1;
 + (struct __CFDictionary { }*)copyLabelUsageForProperty:(NSInteger)arg1 person:(void*)arg2;
-+ (id)defaultLabelsForProperty:(NSInteger)arg1 person:(void*)arg2 outBestLabelIndex:(NSInteger*)arg3;
++ (id)defaultLabelsForProperty:(NSInteger)arg1 person:(void*)arg2 addressBook:(void*)arg3 outBestLabelIndex:(NSInteger*)arg4 forceIncludeLabels:(id)arg5;
 + (id)defaultLabelsForProperty:(NSInteger)arg1 policy:(void*)arg2;
 
 - (void)_didEndPickingAndConfirmed:(BOOL)arg1 animate:(BOOL)arg2;
-- (void)_setSelectedItemLabel:(id)arg1;
-- (void)_syncTableSelectionWithSelectedLabel;
+- (void)_matchSelectedPathWithSelectedLabel;
+- (void)_setSelectedLabel:(id)arg1 atPath:(id)arg2;
+- (void)_setSelectedLabel:(id)arg1;
+- (void)_setSelectedPath:(id)arg1;
 - (BOOL)allowsCustomLabels;
-- (void)back:(BOOL)arg1 save:(BOOL)arg2;
 - (void)buildUI;
 - (BOOL)canEdit;
+- (void)createNewCustomLabel;
 - (void)dealloc;
 - (void)displayScrollerIndicators;
-- (void)done;
-- (void)edit;
 - (id)editedItem;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isEditing;
-- (void)new;
-- (NSInteger)numberOfGroupsInPreferencesTable:(id)arg1;
-- (id)preferencesTable:(id)arg1 cellForRow:(NSInteger)arg2 inGroup:(NSInteger)arg3;
-- (BOOL)preferencesTable:(id)arg1 isRadioGroup:(NSInteger)arg2;
-- (NSInteger)preferencesTable:(id)arg1 numberOfRowsInGroup:(NSInteger)arg2;
-- (void)reload;
+- (NSInteger)numberOfSectionsInTableView:(id)arg1;
 - (void)reloadData;
 - (void)reloadItemLabels;
 - (void)resetLabelCaches;
-- (id)selectedItemLabel;
+- (id)savedLabel;
+- (id)selectedLabel;
 - (void)setAdditionalLabels:(id)arg1;
+- (void)setAddressBook:(void*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEditedItem:(id)arg1;
 - (void)setIsEditing:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)setPerson:(void*)arg1;
 - (void)setProperty:(NSInteger)arg1;
-- (void)setSelectedItemLabel:(id)arg1;
+- (void)setSavedLabel:(id)arg1;
+- (void)setSelectedLabel:(id)arg1;
 - (BOOL)shouldPopItem;
 - (void)simpleTextInputLayer:(id)arg1 endedWithSelectionConfirmed:(BOOL)arg2 animate:(BOOL)arg3;
-- (BOOL)table:(id)arg1 canDeleteRow:(NSInteger)arg2;
-- (BOOL)table:(id)arg1 canInsertAtRow:(NSInteger)arg2;
-- (void)table:(id)arg1 deleteRow:(NSInteger)arg2;
-- (void)table:(id)arg1 insertAtRow:(NSInteger)arg2;
-- (void)tableRowSelected:(id)arg1;
+- (void)simpleTextInputViewController:(id)arg1 didCompleteWithValue:(id)arg2;
+- (BOOL)simpleTextInputViewControllerShouldDismissKeyboard:(id)arg1;
+- (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 commitEditingStyle:(NSInteger)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (NSInteger)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)toggleEditing;
 
 @end

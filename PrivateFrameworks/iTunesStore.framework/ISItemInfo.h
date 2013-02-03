@@ -2,19 +2,27 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSMutableArray, NSArray, NSString, NSMutableDictionary, ISStorePage;
+@class NSMutableArray, NSArray, NSString, ISItem, NSMutableDictionary;
 
 @interface ISItemInfo : NSObject <NSCopying> {
     NSMutableArray *_artworkGroups;
+    ISItem *_containerItem;
+    NSInteger _displayType;
     NSString *_fallbackStoreOfferKey;
-    unsigned long _identifier;
+    unsigned long long _identifier;
     NSInteger _mediaType;
-    ISStorePage *_page;
     NSArray *_pageURLTypes;
     NSArray *_pageURLs;
+    unsigned long long _preOrderIdentifier;
     NSMutableDictionary *_storeOffers;
+    NSString *_title2;
     NSString *_uuid;
 }
+
+@property(readonly) NSString *title2; /* unknown property attribute: V_title2 */
+@property(readonly) unsigned long long preOrderIdentifier; /* unknown property attribute: V_preOrderIdentifier */
+@property(readonly) NSInteger displayType; /* unknown property attribute: V_displayType */
+@property(retain) ISItem *containerItem; /* unknown property attribute: V_containerItem */
 
 - (void)_addValues:(struct __CFDictionary { }*)arg1 toArray:(id)arg2;
 - (void)_loadArtworkFromArray:(id)arg1;
@@ -24,26 +32,30 @@
 - (id)bestGuessPageTitle;
 - (id)buyParameters;
 - (BOOL)checkPurchaseConstraints:(id*)arg1;
+- (void)configurePurchaseDescriptor:(id)arg1;
+- (id)containerItem;
+- (id)copyRepresentativeDownload;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (NSInteger)displayType;
 - (long long)downloadFileSize;
-- (NSUInteger)downloadType;
 - (long long)expandedDownloadFileSize;
-- (id)externalDownload;
-- (unsigned long)identifier;
-- (id)initWithPage:(id)arg1;
+- (unsigned long long)identifier;
 - (BOOL)isPurchaseable;
 - (BOOL)loadFromDictionary:(id)arg1 dataSource:(id)arg2;
 - (NSInteger)mediaType;
 - (id)pageURLTypes;
 - (id)pageURLs;
 - (NSUInteger)pendingPurchaseType;
+- (unsigned long long)preOrderIdentifier;
 - (id)priceDisplay;
-- (id)purchaseDescriptor;
+- (NSInteger)primaryAssetType;
 - (id)purchaseTitles;
 - (NSUInteger)representedItemCount;
+- (void)setContainerItem:(id)arg1;
 - (void)setStoreOffer:(id)arg1 forKey:(id)arg2;
 - (id)storeOfferForKey:(id)arg1;
+- (id)title2;
 - (id)uniqueIdentifier;
 
 @end

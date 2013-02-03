@@ -6,18 +6,10 @@
    See Warning(s) below.
  */
 
+@class <AVRecorderImpl>;
+
 @interface AVRecorder : NSObject {
-    struct AVRecorderPrivate { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; void*x4; void*x5; unsigned long x6; void*x7; NSUInteger x8; NSUInteger x9; id x10; void*x11; inout unsigned short x12; void*x13; void*x14; void*x15; void*x16; unsigned int x17/* : ? */; long x18; void*x19; void*x20; NSInteger x21; BOOL x22; void*x23; NSInteger x24; out in void*x25; const void*x26; void*x27; long long x28; BOOL x29; struct AudioStreamBasicDescription { 
-            double mSampleRate; 
-            NSUInteger mFormatID; 
-            NSUInteger mFormatFlags; 
-            NSUInteger mBytesPerPacket; 
-            NSUInteger mFramesPerPacket; 
-            NSUInteger mBytesPerFrame; 
-            NSUInteger mChannelsPerFrame; 
-            NSUInteger mBitsPerChannel; 
-            NSUInteger mReserved; 
-        } x30; struct OpaqueAudioFileID {} *x31; struct OpaqueAudioQueue {} *x32; NSUInteger x33; struct AudioQueueLevelMeterState {} *x34; struct AudioQueueLevelMeterState {} *x35; NSUInteger x36; NSUInteger x37; NSUInteger x38; struct AudioQueueBuffer {} *x39[3]; BOOL x40[3]; BOOL x41; BOOL x42; BOOL x43; } *_priv;
+    struct AVRecorderPrivate { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; void*x4; void*x5; void*x6; void*x7; unsigned int x8/* : ? */; long x9; void*x10; void*x11; NSInteger x12; BOOL x13; void*x14; NSInteger x15; out in void*x16; const void*x17; void*x18; <AVRecorderImpl> *x19; } *_priv;
 }
 
 - (BOOL)activate:(id*)arg1;
@@ -25,11 +17,11 @@
 - (BOOL)audioCurrentAverageDecibelLevels:(float*)arg1 andPeakDecibelLevels:(float*)arg2;
 - (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2;
 - (NSUInteger)audioNumDeviceChannels;
-- (void)copyEncoderCookieToFile;
+- (BOOL)autoFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)deactivate;
 - (void)dealloc;
 - (id)filePath;
-- (void)haveABuffer:(struct AudioQueueBuffer { NSUInteger x1; void *x2; NSUInteger x3; void *x4; NSUInteger x5; struct AudioStreamPacketDescription {} *x6; NSUInteger x7; }*)arg1 withTimeStamp:(const struct AudioTimeStamp { double x1; unsigned long long x2; double x3; unsigned long long x4; struct SMPTETime { short x_5_1_1; short x_5_1_2; NSUInteger x_5_1_3; NSUInteger x_5_1_4; NSUInteger x_5_1_5; short x_5_1_6; short x_5_1_7; short x_5_1_8; short x_5_1_9; } x5; NSUInteger x6; NSUInteger x7; }*)arg2 andNumPackets:(unsigned long)arg3 andPacketDescs:(const struct AudioStreamPacketDescription { long long x1; NSUInteger x2; NSUInteger x3; }*)arg4;
+- (void)implNotification:(id)arg1;
 - (id)init;
 - (BOOL)isActive;
 - (BOOL)isRecording;
@@ -42,5 +34,6 @@
 - (void)setMicVolume:(float)arg1;
 - (BOOL)start;
 - (void)stop;
+- (BOOL)takePhoto;
 
 @end

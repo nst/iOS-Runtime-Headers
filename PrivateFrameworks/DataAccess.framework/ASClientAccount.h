@@ -14,25 +14,33 @@
 - (id)_createPolicyManager;
 - (void)_daemonDied;
 - (void)_folderHierarchyChanged;
+- (void)_foldersThatExternalClientsCareAboutChanged;
 - (void)_foldersUpdated:(id)arg1;
-- (id)_initWithConfiguration:(id)arg1;
 - (void)_logStatus:(id)arg1;
 - (void)_removeFoldersFromDaemonMonitoring:(id)arg1;
+- (void)_reportFolderItemSyncSuccess:(BOOL)arg1 forFolderWithID:(id)arg2;
 - (void)_retryMonitoring;
 - (id)_setFlagsCommandForRequest:(id)arg1;
 - (void)_sync:(id)arg1 withConsumer:(id)arg2;
+- (void)clearFolderHierarchyCache;
 - (void)dealloc;
 - (id)inboxID;
+- (id)initWithProperties:(id)arg1;
 - (id)mailboxes;
 - (void)monitorFoldersForUpdates:(id)arg1;
 - (void)moveItemsTask:(id)arg1 completedWithStatus:(NSInteger)arg2 error:(id)arg3 movedItems:(id)arg4;
 - (NSInteger)performFetchAttachmentRequest:(id)arg1 consumer:(id)arg2;
+- (NSInteger)performFetchMessageSearchResultRequests:(id)arg1 consumer:(id)arg2;
 - (NSInteger)performMailboxRequest:(id)arg1 mailbox:(id)arg2 previousTag:(id)arg3 consumer:(id)arg4;
 - (NSInteger)performMailboxRequests:(id)arg1 mailbox:(id)arg2 previousTag:(id)arg3 consumer:(id)arg4;
 - (NSInteger)performMoveRequests:(id)arg1 consumer:(id)arg2;
+- (BOOL)reattemptInvitationLinkageForMetaData:(id)arg1 inFolderWithId:(id)arg2;
 - (void)resumeMonitoringFoldersWithIDs:(id)arg1;
 - (void)sendMailTask:(id)arg1 completedWithStatus:(NSInteger)arg2 error:(id)arg3;
+- (BOOL)setFolderIdsThatExternalClientsCareAboutAdded:(id)arg1 deleted:(id)arg2 foldersTag:(id)arg3;
 - (void)stopMonitoringAllFolders;
 - (void)stopMonitoringFoldersForUpdates:(id)arg1;
+- (void)suspendMonitoringFoldersWithIDs:(id)arg1;
+- (void)upgradeWithProtocolVersion:(id)arg1;
 
 @end

@@ -4,13 +4,15 @@
 
 @class GQDChart;
 
-@interface GQDChartLegend : GQDMedia {
+@interface GQDChartLegend : GQDGraphic {
     GQDChart *mChart;
+    BOOL mIsChartRetained;
 }
 
 + (const struct StateSpec { int (**x1)(); char *x2; NSInteger x3; NSInteger x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 
 - (id)chart;
 - (void)dealloc;
+- (id)graphicStyle;
 
 @end

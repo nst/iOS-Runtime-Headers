@@ -5,6 +5,11 @@
 @interface ASMeetingRequestRecurrence : ASRecurrence {
 }
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
 - (id)asParseRules;
 
 @end

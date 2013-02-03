@@ -9,6 +9,9 @@
     NSArray *_animationImages;
     NSInteger _animationRepeatCount;
     NSInteger _drawMode;
+    BOOL _highlighted;
+    NSArray *_highlightedAnimationImages;
+    UIImage *_highlightedImage;
     UIImage *_image;
 }
 

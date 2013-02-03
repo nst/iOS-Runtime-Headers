@@ -7,9 +7,11 @@
 
 + (NSInteger)handleAttachment:(id)arg1 state:(id)arg2;
 + (NSInteger)handleAutoNumber:(id)arg1 state:(id)arg2;
++ (NSInteger)handleContainerHint:(id)arg1 state:(id)arg2;
 + (NSInteger)handlePageStart:(id)arg1 state:(id)arg2;
-+ (NSInteger)handleSpan:(id)arg1 state:(id)arg2;
-+ (NSInteger)handleTextList:(id)arg1 state:(id)arg2;
++ (NSInteger)handleSpan:(id)arg1 checkForTrailingBlanks:(BOOL)arg2 state:(id)arg3;
++ (NSInteger)handleTextBackgroundForStyle:(id)arg1 destStyle:(id)arg2 state:(id)arg3;
++ (NSInteger)handleTextList:(id)arg1 checkForTrailingBlanks:(BOOL)arg2 state:(id)arg3;
 + (NSInteger)handleTextListChild:(id)arg1 outputBlanks:(BOOL)arg2 state:(id)arg3;
 + (NSInteger)handleTextMarker:(id)arg1 outputBlanks:(BOOL)arg2 state:(id)arg3;
 + (NSInteger)nonWhitespaceCount:(struct __CFArray { }*)arg1;

@@ -24,6 +24,7 @@
 @property MPQueueFeeder *feeder; /* unknown property attribute: V_feeder */
 @property(retain,readonly) MPAlternateTracks *alternateTracks; /* unknown property attribute: V_alternateTracks */
 @property(retain,readonly) NSString *album;
+@property(retain,readonly) NSString *albumArtist;
 @property(retain,readonly) NSString *artist;
 @property(retain,readonly) NSArray *artworkTimeMarkers;
 @property(retain,readonly) NSArray *chapterTimeMarkers;
@@ -50,7 +51,10 @@
 - (void)_commonInit;
 - (void)_delayedInvalidateCachedPlayedDuration;
 - (void)_itemAttributeAvailableNotification:(id)arg1;
+- (void)_sizeChangedNotification:(id)arg1;
+- (void)_updateForNaturalSizeChange;
 - (id)album;
+- (id)albumArtist;
 - (BOOL)allowAutoChangingScaleModeToFill;
 - (id)alternateTracks;
 - (id)artist;
@@ -88,6 +92,7 @@
 - (void)setFeeder:(id)arg1;
 - (void)setHasPlayedThisSession:(BOOL)arg1;
 - (void)setIsOnDemandItem:(BOOL)arg1;
+- (void)setOverrideDuration:(double)arg1;
 - (void)setPlaybackFinishedTime:(double)arg1;
 - (void)setPlaybackStoppedTime:(double)arg1;
 - (void)setRating:(float)arg1;

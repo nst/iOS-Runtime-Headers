@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
+@class NSMutableArray;
+
 @interface _MailboxUidEnumerator : NSEnumerator {
-    struct __CFTree { } *_lastTree;
-    struct __CFTree { } *_startTree;
+    NSUInteger _index;
+    NSMutableArray *_mailboxes;
 }
 
 - (void)dealloc;
-- (id)initWithTree:(struct __CFTree { }*)arg1;
+- (id)initWithMailbox:(id)arg1;
 - (id)nextObject;
 
 @end

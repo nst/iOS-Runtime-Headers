@@ -26,7 +26,8 @@
 - (void)_activateSounds:(BOOL)arg1;
 - (void)_appResumed;
 - (void)_appSuspended;
-- (void)_handleKey:(id)arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (id)_buttonForKeyAtIndex:(NSInteger)arg1;
+- (void)_handleKey:(id)arg1 forUIEvent:(id)arg2;
 - (void)_handleKeyPressAndHold:(id)arg1;
 - (NSInteger)_keyForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_keypadImage;
@@ -37,14 +38,14 @@
 - (void)_stopAllSoundsForcingCallbacks:(BOOL)arg1;
 - (void)_stopSoundForKey:(NSInteger)arg1;
 - (float)_yFudge;
-- (BOOL)cancelMouseTracking;
+- (BOOL)cancelTouchTracking;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)movedFromWindow:(id)arg1;
 - (void)movedToWindow:(id)arg1;
-- (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)removeFromSuperview;
 - (id)scriptingInfoWithChildren;
 - (void)setButton:(id)arg1 forKeyAtIndex:(NSInteger)arg2;

@@ -43,6 +43,7 @@
 - (void)releaseDelegate;
 - (id)request;
 - (id)resumeData;
+- (BOOL)sendCanAuthenticateAgainstProtectionSpace:(struct _CFURLProtectionSpace { }*)arg1;
 - (void)sendDecideDestinationWithSuggestedObjectName:(struct __CFString { }*)arg1;
 - (void)sendDidCreateDestination:(struct __CFURL { }*)arg1;
 - (void)sendDidFail:(struct __CFError { }*)arg1;

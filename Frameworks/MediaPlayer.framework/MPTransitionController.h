@@ -34,7 +34,7 @@
 - (NSInteger)fromOrientation;
 - (id)fromViewController;
 - (id)init;
-- (void)messageObservers;
+- (void)messageObserversWithSuccess:(BOOL)arg1;
 - (void)removeObserver:(id)arg1;
 - (id)rootView;
 - (void)setDuration:(float)arg1;

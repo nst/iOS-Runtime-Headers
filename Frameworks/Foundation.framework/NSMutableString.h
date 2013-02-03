@@ -8,6 +8,13 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)stringWithCapacity:(NSUInteger)arg1;
 
+- (void)_ICSEscapeParameterQuotedValue;
+- (void)_ICSEscapeParameterValue;
+- (void)_ICSEscapePropertyValue;
+- (void)_ICSRemoveCharactersFromSet:(id)arg1;
+- (void)_ICSStringAppendingParameterName:(id)arg1;
+- (void)_ICSStringParameterName:(id)arg1 value:(id)arg2;
+- (void)_ICSStripControlChracters;
 - (void)_cfAppendCString:(const char *)arg1 length:(NSInteger)arg2;
 - (void)_cfCapitalize:(const void*)arg1;
 - (void)_cfLowercase:(const void*)arg1;
@@ -19,11 +26,13 @@
 - (void)_trimWithCharacterSet:(id)arg1;
 - (void)appendCharacters:(const unsigned short*)arg1 length:(NSUInteger)arg2;
 - (void)appendFormat:(id)arg1;
+- (void)appendString:(id)arg1 withSeparator:(id)arg2;
 - (void)appendString:(id)arg1;
 - (Class)classForCoder;
 - (void)convertLineEndingsTo:(id)arg1;
 - (void)deleteCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (id)initWithCapacity:(NSUInteger)arg1;
+- (void)insertCharacter:(unsigned short)arg1 atIndex:(unsigned short)arg2;
 - (void)insertString:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)replaceAllSubstr:(id)arg1 with:(id)arg2 escStr:(id)arg3 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg4;
 - (void)replaceAllSubstr:(id)arg1 with:(id)arg2 escStr:(id)arg3;
@@ -33,8 +42,11 @@
 - (void)replaceCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withCharacters:(const unsigned short*)arg2 length:(NSUInteger)arg3;
 - (void)replaceCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withString:(id)arg2;
 - (NSUInteger)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2 options:(NSUInteger)arg3 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg4;
+- (void)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2;
 - (BOOL)replaceSubstr:(id)arg1 with:(id)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
 - (BOOL)replaceSubstr:(id)arg1 with:(id)arg2;
+- (void)searchAndReplaceInString:(id)arg1 withString:(id)arg2;
+- (void)searchAndReplaceSet:(id)arg1 withString:(id)arg2;
 - (void)setString:(id)arg1;
 - (void)standardizeWhitespace;
 

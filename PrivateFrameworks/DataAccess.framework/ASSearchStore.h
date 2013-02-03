@@ -16,6 +16,11 @@
 @property(copy) NSNumber *status; /* unknown property attribute: V_status */
 @property(retain) NSArray *results; /* unknown property attribute: V_results */
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
 - (void)addResult:(id)arg1;
 - (id)asParseRules;
 - (void)dealloc;

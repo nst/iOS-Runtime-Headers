@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-@class NSArray, NSString, <DASearchQueryConsumer>;
+@class <DASearchQueryConsumer>, NSString;
 
 @interface DASearchQuery : NSObject {
     struct _NSRange { 
@@ -11,7 +11,6 @@
     struct __CFMachPort { } *_callbackPort;
     BOOL _cancelled;
     <DASearchQueryConsumer> *_consumer;
-    NSArray *_queryAttributes;
     } _range;
     NSUInteger _searchID;
     NSString *_searchString;
@@ -22,7 +21,6 @@
 @property BOOL cancelled; /* unknown property attribute: V_cancelled */
 @property NSInteger timeLimit; /* unknown property attribute: V_timeLimit */
 @property _NSRange range; /* unknown property attribute: V_range */
-@property(copy) NSArray *queryAttributes; /* unknown property attribute: V_queryAttributes */
 @property(readonly) NSString *searchString; /* unknown property attribute: V_searchString */
 
 + (id)searchQueryWithSearchString:(id)arg1 consumer:(id)arg2;
@@ -32,17 +30,17 @@
 - (id)consumer;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (void)handleBrokenPipe;
 - (id)initWithSearchString:(id)arg1 consumer:(id)arg2;
-- (id)queryAttributes;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })range;
 - (NSUInteger)searchID;
 - (id)searchString;
-- (void)sendResultsToConsumer:(id)arg1 withStatus:(NSInteger)arg2;
+- (void)sendFinishedToConsumerWithError:(id)arg1;
+- (void)sendResultsToConsumer:(id)arg1;
 - (void)setCallbackPort:(struct __CFMachPort { }*)arg1;
 - (void)setCancelled:(BOOL)arg1;
 - (void)setConsumer:(id)arg1;
-- (void)setQueryAttributes:(id)arg1;
 - (void)setRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)setSearchID:(NSUInteger)arg1;
 - (void)setTimeLimit:(NSInteger)arg1;

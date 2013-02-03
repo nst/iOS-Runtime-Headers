@@ -9,11 +9,7 @@
 @property(retain,readonly) DOMCSSRule *parentRule;
 @property(readonly) NSUInteger length;
 
-+ (id)_wrapCSSStyleDeclaration:(struct CSSStyleDeclaration { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; }*)arg1;
-
-- (struct CSSStyleDeclaration { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; }*)_CSSStyleDeclaration;
 - (id)_fontSizeDelta;
-- (id)_initWithCSSStyleDeclaration:(struct CSSStyleDeclaration { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; }*)arg1;
 - (void)_setFontSizeDelta:(id)arg1;
 - (id)azimuth;
 - (id)background;

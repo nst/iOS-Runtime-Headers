@@ -8,6 +8,8 @@
 }
 
 + (id)bezierPath;
++ (id)bezierPathForBottomOfRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withCornerRadius:(float)arg2;
++ (id)bezierPathForTopOfRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withCornerRadius:(float)arg2;
 + (id)bezierPathKnockingOutBottomOfRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withCornerRadius:(float)arg2;
 + (id)bezierPathKnockingOutTopOfRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withCornerRadius:(float)arg2;
 + (id)roundedRectBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedCorners:(NSInteger)arg2 visibleEdges:(NSInteger)arg3 cornerRadius:(float)arg4;

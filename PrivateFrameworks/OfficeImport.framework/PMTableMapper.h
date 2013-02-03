@@ -11,8 +11,11 @@
     OADTable *mTable;
 }
 
-- (float)columnWidthAtIndex:(NSInteger)arg1;
+- (id)cellStyle;
+- (float)columnWidthAtIndex:(NSInteger)arg1 state:(id)arg2;
 - (void)dealloc;
+- (id)defaultCellFillForRow:(NSUInteger)arg1 withState:(id)arg2;
+- (id)defaultCellFillWithState:(id)arg1;
 - (id)grid;
 - (id)initWithOadTable:(id)arg1 bounds:(id)arg2 parent:(id)arg3;
 - (void)mapAt:(id)arg1 withState:(id)arg2;

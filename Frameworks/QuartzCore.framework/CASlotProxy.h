@@ -3,12 +3,14 @@
  */
 
 @interface CASlotProxy : NSObject {
-    struct _CARenderProxy { struct { 
-            NSInteger x; 
-        } x1; unsigned long long x2; } *_proxy;
+    struct Proxy { int (**x1)(); struct Atomic { 
+            struct { 
+                NSInteger x; 
+            } _v; 
+        } x2; unsigned long long x3; } *_proxy;
 }
 
-- (void*)CA_copyRenderValue;
+- (struct Object { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (void)dealloc;
 - (id)initWithName:(NSUInteger)arg1;
 

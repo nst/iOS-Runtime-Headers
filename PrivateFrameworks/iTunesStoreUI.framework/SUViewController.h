@@ -2,83 +2,50 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SURootViewControllerInfo, SUImageCache, SULoadingView, UIImage;
+@class SUViewControllerContext, NSMutableArray;
 
-@interface SUViewController : UIViewController {
-    unsigned int _creatingView : 1;
-    unsigned int _inMoreList : 1;
-    unsigned int _isAppearing : 1;
-    unsigned int _isLoading : 1;
-    unsigned int _pushingAsHistoryItem : 1;
-    SUImageCache *_imageCache;
-    unsigned long _lastSUNavigationControllerTag;
-    SULoadingView *_loadingView;
-    NSUInteger _moreListCount;
-    UIImage *_moreListImage;
-    UIImage *_moreListSelectedImage;
-    id _moreListTableCell;
-    SURootViewControllerInfo *_rootViewControllerInfo;
+@interface SUViewController : UIViewController <ISOperationDelegate> {
+    BOOL _beganTransitionSafety;
+    SUViewControllerContext *_jetsamContext;
+    BOOL _loading;
+    NSMutableArray *_operations;
+    NSMutableArray *_pendingDialogs;
+    SUViewControllerContext *_restoredContext;
 }
 
-@property(retain) id moreListTableCell; /* unknown property attribute: V_moreListTableCell */
-@property(retain) UIImage *moreListSelectedImage; /* unknown property attribute: V_moreListSelectedImage */
-@property(retain) UIImage *moreListImage; /* unknown property attribute: V_moreListImage */
-@property NSUInteger moreListCount; /* unknown property attribute: V_moreListCount */
-@property unsigned long lastSUNavigationControllerTag; /* unknown property attribute: V_lastSUNavigationControllerTag */
-@property(readonly) BOOL canShowNoStoreView;
-@property(readonly) BOOL fullScreenPushHidesNavigationBar;
-@property(getter=isInMoreList) BOOL inMoreList;
+@property(getter=isLoading) BOOL loading; /* unknown property attribute: V_loading */
+@property(readonly) NSString *defaultPNGName;
 @property(readonly) NSInteger statusBarStyle;
 
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessoryViewFrameForSize:(struct CGSize { float x1; float x2; })arg1 alignment:(NSInteger)arg2;
-
-- (id)accessoryView;
-- (BOOL)canShowNoStoreView;
-- (void)configureChildViewController:(id)arg1;
-- (id)customImageOperationsForItem:(id)arg1;
+- (void)_dialogFinishedNotification:(id)arg1;
+- (void)_updateTabBarItem:(id)arg1 withCount:(NSInteger)arg2 animated:(BOOL)arg3 blink:(BOOL)arg4;
+- (void)applicationDidResume;
+- (void)applicationWillSuspend;
+- (void)cancelOperations;
 - (void)dealloc;
 - (id)defaultPNGName;
-- (BOOL)fullScreenPushHidesNavigationBar;
-- (BOOL)handleDialogButtonAction:(id)arg1;
+- (void)dismissAfterDialogs;
+- (void)enqueueOperation:(id)arg1;
 - (void)handleExternalURL:(id)arg1;
-- (id)historyItem;
-- (void)imageCache:(id)arg1 loadedImage:(struct CGImage { }*)arg2 forURL:(id)arg3 fetchTag:(NSInteger)arg4;
-- (id)imageCache;
-- (id)init;
-- (BOOL)isCurrentController;
-- (BOOL)isInMoreList;
-- (unsigned long)lastSUNavigationControllerTag;
-- (BOOL)loadImageForContentClass:(Class)arg1 cell:(id)arg2 item:(id)arg3 trueRow:(NSInteger)arg4;
+- (id)initWithSection:(id)arg1;
+- (BOOL)isLoading;
 - (void)loadView;
-- (void)makeLoadingView;
-- (NSUInteger)moreListCount;
 - (id)moreListImage;
 - (id)moreListSelectedImage;
-- (id)moreListTableCell;
-- (void)presentError:(id)arg1 onlyIfCurrent:(BOOL)arg2 context:(id)arg3;
-- (void)presentError:(id)arg1 onlyIfCurrent:(BOOL)arg2;
+- (void)operation:(id)arg1 failedWithError:(id)arg2;
+- (void)operationFinished:(id)arg1;
+- (void)presentDialog:(id)arg1 pendUntilVisible:(BOOL)arg2;
+- (void)presentDialogForError:(id)arg1 pendUntilVisible:(BOOL)arg2;
 - (void)purgeMemoryForReason:(NSInteger)arg1;
-- (void)resetImageCache;
-- (void)resume:(BOOL)arg1;
-- (id)setExtensionViewVisible:(BOOL)arg1 forView:(id)arg2;
-- (void)setHistoryItem:(id)arg1;
-- (void)setInMoreList:(BOOL)arg1;
-- (void)setIsLoading:(BOOL)arg1;
-- (void)setLastSUNavigationControllerTag:(unsigned long)arg1;
-- (void)setLeftButton:(id)arg1;
-- (void)setMoreListCount:(NSUInteger)arg1;
-- (void)setMoreListImage:(id)arg1;
-- (void)setMoreListSelectedImage:(id)arg1;
-- (void)setMoreListTableCell:(id)arg1;
-- (void)setParentViewController:(id)arg1;
-- (void)setPushingAsHistoryItem:(BOOL)arg1;
-- (void)setRightButton:(id)arg1;
-- (void)setToolbarInfo:(id)arg1;
-- (NSUInteger)standardImageOperationsForItem:(id)arg1;
+- (void)resetRestoredContext;
+- (void)restoreArchivableContext:(id)arg1;
+- (void)setBadgeCount:(NSInteger)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
+- (void)setLoading:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (NSInteger)statusBarStyle;
-- (void)suspend:(BOOL)arg1;
-- (id)view;
+- (void)trackOperation:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 

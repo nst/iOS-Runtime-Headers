@@ -6,5 +6,6 @@
 }
 
 + (id)readShape:(id)arg1 state:(id)arg2;
++ (id)readShapeGraphicDefaults:(id)arg1 state:(id)arg2;
 
 @end

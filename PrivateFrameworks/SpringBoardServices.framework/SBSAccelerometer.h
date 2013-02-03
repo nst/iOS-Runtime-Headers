@@ -13,16 +13,22 @@
     BOOL _orientationEventsEnabled;
     NSThread *_orientationEventsThread;
     NSInteger _orientationEventsToken;
+    float _xThreshold;
+    float _yThreshold;
+    float _zThreshold;
 }
 
 @property <SBSAccelerometerDelegate> *delegate; /* unknown property attribute: V_delegate */
 @property BOOL accelerometerEventsEnabled;
 @property BOOL orientationEventsEnabled;
 @property double updateInterval;
+@property float xThreshold;
+@property float yThreshold;
+@property float zThreshold;
 
 - (void)_checkIn;
+- (void)_checkInInBackground;
 - (void)_checkOut;
-- (void)_deliverAccelerometerEvent:(double)arg1 x:(float)arg2 y:(float)arg3 z:(float)arg4;
 - (void)_orientationDidChange;
 - (id)_orientationEventsThread;
 - (void)_serverWasRestarted;
@@ -36,6 +42,12 @@
 - (void)setDelegate:(id)arg1;
 - (void)setOrientationEventsEnabled:(BOOL)arg1;
 - (void)setUpdateInterval:(double)arg1;
+- (void)setXThreshold:(float)arg1;
+- (void)setYThreshold:(float)arg1;
+- (void)setZThreshold:(float)arg1;
 - (double)updateInterval;
+- (float)xThreshold;
+- (float)yThreshold;
+- (float)zThreshold;
 
 @end

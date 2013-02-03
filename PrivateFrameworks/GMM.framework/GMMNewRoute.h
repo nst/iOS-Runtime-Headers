@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSMutableArray, GMMDateTime, NSString;
 
-@interface GMMNewRoute : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMNewRoute : PBCodable {
     GMMDateTime *_arrivalDateTime;
     NSString *_cost;
     GMMDateTime *_departureDateTime;
@@ -19,7 +14,9 @@
     NSInteger _durationSeconds;
     BOOL _hasDistanceMeters;
     BOOL _hasDurationSeconds;
+    BOOL _hasMode;
     BOOL _hasTrafficDelaySeconds;
+    NSInteger _mode;
     NSMutableArray *_offsetPolylines;
     NSMutableArray *_steps;
     NSInteger _trafficDelaySeconds;
@@ -27,16 +24,18 @@
 
 @property(retain) NSString *deprecatedDuration; /* unknown property attribute: V_deprecatedDuration */
 @property(retain) NSString *deprecatedDistance; /* unknown property attribute: V_deprecatedDistance */
+@property(readonly) BOOL hasMode; /* unknown property attribute: V_hasMode */
+@property NSInteger mode; /* unknown property attribute: V_mode */
 @property(retain) NSMutableArray *steps; /* unknown property attribute: V_steps */
 @property(retain) NSMutableArray *offsetPolylines; /* unknown property attribute: V_offsetPolylines */
 @property(retain) NSString *cost; /* unknown property attribute: V_cost */
 @property(retain) GMMDateTime *arrivalDateTime; /* unknown property attribute: V_arrivalDateTime */
 @property(retain) GMMDateTime *departureDateTime; /* unknown property attribute: V_departureDateTime */
-@property BOOL hasTrafficDelaySeconds; /* unknown property attribute: V_hasTrafficDelaySeconds */
+@property(readonly) BOOL hasTrafficDelaySeconds; /* unknown property attribute: V_hasTrafficDelaySeconds */
 @property NSInteger trafficDelaySeconds; /* unknown property attribute: V_trafficDelaySeconds */
-@property BOOL hasDurationSeconds; /* unknown property attribute: V_hasDurationSeconds */
+@property(readonly) BOOL hasDurationSeconds; /* unknown property attribute: V_hasDurationSeconds */
 @property NSInteger durationSeconds; /* unknown property attribute: V_durationSeconds */
-@property BOOL hasDistanceMeters; /* unknown property attribute: V_hasDistanceMeters */
+@property(readonly) BOOL hasDistanceMeters; /* unknown property attribute: V_hasDistanceMeters */
 @property NSInteger distanceMeters; /* unknown property attribute: V_distanceMeters */
 @property(readonly) BOOL hasArrivalDateTime;
 @property(readonly) BOOL hasCost;
@@ -55,6 +54,7 @@
 - (id)deprecatedDistance;
 - (id)deprecatedDuration;
 - (id)description;
+- (id)description;
 - (NSInteger)distanceMeters;
 - (NSInteger)durationSeconds;
 - (BOOL)hasArrivalDateTime;
@@ -64,12 +64,14 @@
 - (BOOL)hasDeprecatedDuration;
 - (BOOL)hasDistanceMeters;
 - (BOOL)hasDurationSeconds;
+- (BOOL)hasMode;
 - (BOOL)hasTrafficDelaySeconds;
 - (id)init;
+- (NSInteger)mode;
 - (id)offsetPolylineAtIndex:(NSUInteger)arg1;
 - (id)offsetPolylines;
 - (NSInteger)offsetPolylinesCount;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setArrivalDateTime:(id)arg1;
 - (void)setCost:(id)arg1;
 - (void)setDepartureDateTime:(id)arg1;
@@ -77,18 +79,16 @@
 - (void)setDeprecatedDuration:(id)arg1;
 - (void)setDistanceMeters:(NSInteger)arg1;
 - (void)setDurationSeconds:(NSInteger)arg1;
-- (void)setHasDistanceMeters:(BOOL)arg1;
-- (void)setHasDurationSeconds:(BOOL)arg1;
-- (void)setHasTrafficDelaySeconds:(BOOL)arg1;
-- (void)setOffsetPolyline:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setMode:(NSInteger)arg1;
+- (void)setOffsetPolyline:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setOffsetPolylines:(id)arg1;
-- (void)setStep:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setStep:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setSteps:(id)arg1;
 - (void)setTrafficDelaySeconds:(NSInteger)arg1;
 - (id)stepAtIndex:(NSUInteger)arg1;
 - (id)steps;
 - (NSInteger)stepsCount;
 - (NSInteger)trafficDelaySeconds;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

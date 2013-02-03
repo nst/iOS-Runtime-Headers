@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIActivityIndicatorView, UITextLabel;
+@class UILabel, UIActivityIndicatorView;
 
 @interface SULoadingView : UIView {
-    UITextLabel *_label;
+    UILabel *_label;
     UIActivityIndicatorView *_progressIndicator;
     NSUInteger _style;
 }

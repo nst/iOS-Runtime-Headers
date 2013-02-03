@@ -3,15 +3,8 @@
  */
 
 @interface GQHBulletState : NSObject {
-    struct { 
-        NSInteger version; 
-        int (*retain)(); 
-        int (*release)(); 
-        int (*copyDescription)(); 
-        int (*equal)(); 
     NSInteger mCurrentLevel;
     struct __CFArray { } *mLevels;
-    } mListCallBacks;
 }
 
 + (struct __CFString { }*)createLabelStr:(NSInteger)arg1 number:(NSInteger)arg2;
@@ -21,13 +14,16 @@
 - (struct __CFString { }*)createTieredNumberStringForLevel:(NSInteger)arg1;
 - (NSInteger)currentLevel;
 - (void)dealloc;
+- (BOOL)hasNumberAtLevel:(NSInteger)arg1;
 - (id)init;
 - (NSInteger)labelTypeAtLevel:(NSInteger)arg1;
+- (id)listStyleAtLevel:(NSInteger)arg1;
 - (NSInteger)numberAtLevel:(NSInteger)arg1;
 - (void)setBulletChar:(struct __CFString { }*)arg1 level:(NSInteger)arg2;
 - (void)setBulletIndent:(NSInteger)arg1 level:(NSInteger)arg2;
 - (void)setCurrentLevel:(NSInteger)arg1;
 - (void)setLabelType:(NSInteger)arg1 level:(NSInteger)arg2;
+- (void)setListStyle:(id)arg1 atLevel:(NSInteger)arg2;
 - (void)setNumber:(NSInteger)arg1 level:(NSInteger)arg2;
 - (void)setTextIndent:(NSInteger)arg1 level:(NSInteger)arg2;
 - (void)setType:(NSInteger)arg1 level:(NSInteger)arg2;

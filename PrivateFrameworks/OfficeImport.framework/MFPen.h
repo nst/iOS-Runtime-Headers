@@ -7,7 +7,7 @@
 @interface MFPen : NSObject <MFObject> {
     NSColorStub *m_colour;
     NSInteger m_penStyle;
-    long m_penWidth;
+    NSInteger m_penWidth;
     double *m_userStyleArray;
 }
 

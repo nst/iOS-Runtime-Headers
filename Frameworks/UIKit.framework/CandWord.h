@@ -16,6 +16,7 @@
 - (id)insertion;
 - (BOOL)isEqual:(id)arg1;
 - (id)word;
+- (NSUInteger)wordOriginFeedbackID;
 - (const char *)wordUTF8String;
 
 @end

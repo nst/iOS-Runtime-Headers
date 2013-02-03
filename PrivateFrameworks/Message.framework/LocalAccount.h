@@ -28,7 +28,6 @@
 - (void)setPassword:(id)arg1;
 - (void)setPath:(id)arg1;
 - (void)setUsername:(id)arg1;
-- (BOOL)shouldAutoFetch;
 - (Class)storeClass;
 - (id)uniqueId;
 

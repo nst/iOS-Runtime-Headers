@@ -2,98 +2,90 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUNoStoreView, NSTimer, SUTabBarController, SUFullScreenTransitionController, NSMutableSet, UIWindow;
+@class SUSectionController, SULocationObserver, SUTabBarController, NSDictionary, UIWindow, NSMutableArray, NSURL, MFMailComposeViewController;
 
-@interface SUApplication : UIApplication <ISNetworkMonitor, UIApplicationDelegate, UITabBarControllerDelegate> {
-    unsigned int _dontUpdateHistory : 1;
-    unsigned int _receivedURLBag : 1;
-    NSUInteger _delaySuspendCount;
-    NSUInteger _downloadTypes;
-    SUFullScreenTransitionController *_fullScreenController;
-    BOOL _hasSupportedStoreFront;
-    NSMutableSet *_longLivedViewControllers;
-    NSUInteger _networkActiveCount;
-    NSTimer *_networkStartupTimer;
-    SUNoStoreView *_noStoreView;
-    BOOL _quitOnSuspend;
+@interface SUApplication : UIApplication <SUSectionControllerDelegate, SUStorePageViewControllerDelegate, SUTabBarControllerDelegate, UIApplicationDelegate, MFMailComposeViewControllerDelegate> {
+    NSInteger _delayTerminateCount;
+    BOOL _dontSaveNavigationPath;
+    NSURL *_launchURL;
+    SULocationObserver *_locationObserver;
+    NSMutableArray *_longLivedViewControllers;
+    MFMailComposeViewController *_mailComposeViewController;
+    NSInteger _requiredAssetTypes;
+    SUSectionController *_sectionController;
+    NSDictionary *_storeFrontLanguages;
     SUTabBarController *_tabBarController;
     UIWindow *_window;
 }
 
-@property NSUInteger downloadTypes; /* unknown property attribute: V_downloadTypes */
-@property(getter=isFullscreen,readonly) BOOL fullscreen;
-@property(readonly) BOOL shouldShowNoStoreView;
+@property(readonly) SUTabBarController *tabBarController; /* unknown property attribute: V_tabBarController */
+@property NSInteger requiredAssetTypes; /* unknown property attribute: V_requiredAssetTypes */
+@property(retain) NSURL *launchURL; /* unknown property attribute: V_launchURL */
+@property(readonly) NSString *defaultPNGNameForSuspend;
+@property(readonly) SUPurchaseManager *purchaseManager;
+@property(readonly) UINavigationController *topNavigationController;
+@property(getter=isDelayingTerminate,readonly) BOOL delayingTerminate;
+@property(readonly) NSInteger statusBarStyleForSuspend;
 
-- (id)_defaultHistoryItems:(BOOL*)arg1;
-- (void)_hideNoStoreView;
-- (void)_networkWakeupTimer:(id)arg1;
-- (BOOL)_restoreNavigationPath;
-- (BOOL)_restoreNavigationPathFromButtonIndex:(NSInteger)arg1;
-- (BOOL)_restoreNavigationPathFromTag:(unsigned long)arg1;
++ (void)loadMessageUIIfNecessary;
+
+- (void)_bagDidLoadNotification:(id)arg1;
+- (void)_cancelSuspendAfterDialogsDismissed;
+- (void)_dialogDidFinishNotification:(id)arg1;
+- (void)_presentSectionFetchUI;
 - (id)_resumableViewController;
-- (void)_resumeViewControllers:(BOOL)arg1;
-- (void)_selectRootControllerWithTag:(unsigned long)arg1;
-- (void)_showNoStoreView;
-- (void)_storeFrontCapabilitiesChanged:(id)arg1;
-- (void)_suspendViewControllers:(BOOL)arg1;
-- (id)_swizzledURL:(id)arg1 forClient:(NSInteger)arg2;
-- (void)_updateNoStoreViewVisibility;
-- (BOOL)_useLegacyEventSystem;
-- (BOOL)allowTerminate;
+- (void)_saveArchivedNavigationPath;
+- (id)_sectionController;
+- (void)_setupUI;
+- (void)_showAssetTypeLockoutUI;
+- (void)_storeFrontChangedNotification:(id)arg1;
+- (void)_teardownUI;
+- (BOOL)application:(id)arg1 handleOpenURL:(id)arg2;
 - (void)applicationDidFinishLaunching:(id)arg1;
-- (void)applicationDidResumeForEventsOnly;
+- (void)applicationDidReceiveMemoryWarning:(id)arg1;
 - (void)applicationResume:(struct __GSEvent { }*)arg1 settings:(id)arg2;
 - (BOOL)applicationSuspend:(struct __GSEvent { }*)arg1 settings:(id)arg2;
-- (void)applicationWillSuspend;
-- (void)applicationWillSuspendForEventsOnly;
-- (void)applicationWillTerminate;
-- (void)bagLoadedNotification:(id)arg1;
-- (void)beginIgnoringInteractionEvents;
-- (BOOL)canResumeToMoreListController;
-- (BOOL)canSelectToolbarIndex:(NSInteger)arg1;
+- (void)beginDelayingTerminate;
+- (void)beginPPTWithName:(id)arg1;
 - (void)checkInLongLivedViewController:(id)arg1;
 - (void)checkOutLongLivedViewController:(id)arg1;
-- (id)createWindowWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)composeEmailByRestoringAutosavedMessage;
+- (void)composeEmailWithSubject:(id)arg1 body:(id)arg2;
+- (BOOL)composeReviewWithURL:(id)arg1 itemIdentifier:(unsigned long long)arg2 assetType:(NSInteger)arg3;
+- (id)createPlaceholderViewController;
+- (id)createWindow;
 - (void)dealloc;
-- (id)defaultPNGName;
-- (id)defaultPNGNameForMoreListController;
-- (unsigned long)defaultRootControllerType;
-- (void)delayedNoSupportedStoreFrontSuspend;
-- (void)delayedNoSupportedStoreFrontUpdateText;
-- (void)didReceiveMemoryWarning;
-- (NSUInteger)downloadTypes;
-- (void)endIgnoringInteractionEvents;
-- (void)fixLegacyHistoryItemTypes:(id)arg1;
-- (void)fullScreenTransitionDidFinishPop:(id)arg1;
-- (void)handleDialogButtonAction:(id)arg1;
-- (BOOL)hasSupportedStoreFront;
+- (id)defaultPNGNameForSuspend;
+- (void)endCurrentPPT;
+- (void)endDelayingTerminate;
+- (BOOL)enterAccountFlowWithURL:(id)arg1 style:(NSInteger)arg2 continuationData:(id)arg3;
+- (BOOL)gotoStoreURL:(id)arg1 withAuthentication:(BOOL)arg2;
+- (void)handleExternalURL:(id)arg1;
 - (id)init;
-- (void)initializeAlertController;
-- (void)initializeUI;
-- (BOOL)isFullscreen;
-- (id)navigationControllerForType:(unsigned long)arg1 includeMoreController:(BOOL)arg2;
-- (id)navigationControllerForType:(unsigned long)arg1;
-- (void)networkChangedNotification:(id)arg1;
-- (void)noSupportedStoreFrontAlertDidEndWithButtonTag:(NSInteger)arg1 userInfo:(id)arg2;
-- (void)openURL:(id)arg1 forClient:(NSInteger)arg2;
-- (void)popFullScreenViewControllerAnimated:(BOOL)arg1;
-- (void)pushFullScreenViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)selectRootControllerType:(unsigned long)arg1;
-- (unsigned long)selectedRootControllerType;
-- (void)setDelaySuspend:(BOOL)arg1;
-- (void)setDownloadTypes:(NSUInteger)arg1;
-- (void)setHasSupportedStoreFront:(BOOL)arg1;
-- (void)setIgnoresInteractionEvents:(BOOL)arg1;
-- (BOOL)shouldShowNoStoreView;
+- (BOOL)isComposingEmail;
+- (BOOL)isDelayingTerminate;
+- (id)launchURL;
+- (void)mailComposeController:(id)arg1 didFinishWithResult:(NSInteger)arg2 error:(id)arg3;
+- (BOOL)openURL:(id)arg1 inClientApplication:(id)arg2;
+- (id)placeholderViewControllerForStorePageController:(id)arg1;
+- (BOOL)popTopViewController;
+- (id)purchaseManager;
+- (void)reloadForNetworkTypeChange;
+- (void)reloadForStorefrontChange;
+- (NSInteger)requiredAssetTypes;
+- (BOOL)runTest:(id)arg1 options:(id)arg2;
+- (void)runTestInvocation:(id)arg1;
+- (void)sectionController:(id)arg1 failedWithError:(id)arg2;
+- (void)sectionControllerFinished:(id)arg1;
+- (BOOL)selectSectionWithIdentifier:(id)arg1;
+- (void)setLaunchURL:(id)arg1;
+- (void)setRequiredAssetTypes:(NSInteger)arg1;
+- (void)setupUI;
 - (NSInteger)statusBarStyleForSuspend;
-- (void)storeSetNetworkIsActive:(BOOL)arg1;
-- (void)suspendImmediately;
-- (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
+- (id)storeContentLanguage;
+- (void)suspendAfterDialogsDismissed;
+- (void)tabBarController:(id)arg1 didEndCustomizingViewControllers:(id)arg2 changed:(BOOL)arg3;
 - (id)tabBarController;
-- (void)tearDownUI;
-- (id)topLevelViewControllers;
 - (id)topNavigationController;
-- (id)viewControllerForDefaultPNG;
-- (id)viewControllerForType:(unsigned long)arg1;
 
 @end

@@ -7,6 +7,8 @@
 @interface WMTableCellMapper : CMMapper {
     NSUInteger mColSpan;
     double mHeight;
+    double mLeftPadding;
+    double mRightPadding;
     WDTableCell *mWdTableCell;
     double mWidth;
 }

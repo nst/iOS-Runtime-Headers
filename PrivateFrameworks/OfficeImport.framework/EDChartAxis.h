@@ -6,33 +6,56 @@
    See Warning(s) below.
  */
 
-@class NSString;
+@class OADColor, NSString;
 
 @interface EDChartAxis : NSObject {
      /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+    NSString *mFormat;
+    NSInteger mLinePattern;
     float mLogBase;
     float mMajorUnit;
     float mMaxValue;
     float mMinValue;
+    OADColor *mStrokeColor;
+    NSInteger mStrokeWidth;
     NSString *mTitle;
     NSInteger mType;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mDrawMajorGridlines;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mDrawTicks;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsLog;
 }
 
 - (void)dealloc;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)drawMajorGridlines;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)drawTicks;
+- (id)format;
+- (id)init;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isLog;
+- (NSInteger)linePattern;
 - (float)logBase;
 - (float)majorUnit;
 - (float)maxValue;
 - (float)minValue;
+- (void)setDrawMajorGridlines:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setDrawTicks:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setFormat:(id)arg1;
 - (void)setIsLog:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setLinePatterm:(NSInteger)arg1;
 - (void)setLogBase:(float)arg1;
 - (void)setMajorUnit:(float)arg1;
 - (void)setMaxValue:(float)arg1;
 - (void)setMinValue:(float)arg1;
+- (void)setStrokeColor:(id)arg1;
+- (void)setStrokeWidth:(NSInteger)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setType:(NSInteger)arg1;
+- (id)strokeColor;
+- (float)strokeWidth;
 - (id)title;
 - (NSInteger)type;
 

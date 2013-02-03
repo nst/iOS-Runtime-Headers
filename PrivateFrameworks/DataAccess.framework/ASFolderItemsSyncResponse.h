@@ -6,21 +6,29 @@
 
 @interface ASFolderItemsSyncResponse : ASItem {
     ASCollection *_collection;
+    NSInteger _collectionClassType;
     NSMutableArray *_deliveryIdsToClear;
     NSMutableArray *_deliveryIdsToSoftClear;
     NSMutableArray *_meetingRequestDatas;
     NSNumber *_status;
 }
 
-- (void)_processMeetingRequestDatas;
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
+- (void)_processMeetingRequestDatasForAccount:(id)arg1;
 - (void)addDeliveryIdToClear:(id)arg1;
 - (void)addDeliveryIdToSoftClear:(id)arg1;
 - (void)addMeetingRequestData:(id)arg1;
 - (id)asParseRules;
 - (id)collection;
+- (NSInteger)collectionClassType;
 - (void)dealloc;
 - (id)description;
-- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5;
+- (id)initWithCollectionClassType:(NSInteger)arg1;
+- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
 - (void)setCollections:(id)arg1;
 - (void)setStatus:(id)arg1;
 - (id)status;

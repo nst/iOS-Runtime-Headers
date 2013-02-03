@@ -9,11 +9,12 @@
     NSArray *_versionArray;
 }
 
-- (BOOL)_ignoreSupportedCommands;
++ (void)__setUsePort:(BOOL)arg1;
+
 - (BOOL)_shouldAuth;
 - (id)_url;
-- (id)command;
 - (id)commandArray;
+- (NSInteger)commandCode;
 - (NSInteger)connectionActionForResponse:(id)arg1;
 - (void)dealloc;
 - (BOOL)expectsWBXML;

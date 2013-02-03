@@ -2,14 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@interface DOMRange : DOMObject {
-     /* Encoded args for previous method: @12@0:4^{Range=i{RefPtr<WebCore::Document>=^{Document}}{RefPtr<WebCore::Node>=^{Node}}I{RefPtr<WebCore::Node>=^{Node}}IB}8 */
-     /* Encoded args for previous method: ^{Range=i{RefPtr<WebCore::Document>=^{Document}}{RefPtr<WebCore::Node>=^{Node}}I{RefPtr<WebCore::Node>=^{Node}}IB}8@0:4 */
-     /* Encoded args for previous method: @12@0:4^{Range=i{RefPtr<WebCore::Document>=^{Document}}{RefPtr<WebCore::Node>=^{Node}}I{RefPtr<WebCore::Node>=^{Node}}IB}8 */
+@interface DOMRange : DOMObject <UIWebSelectionBlock> {
 }
 
 @property(retain,readonly) DOMNode *commonAncestorContainer;
@@ -20,14 +13,13 @@
 @property(readonly) NSInteger endOffset;
 @property(readonly) NSInteger startOffset;
 
-+ (id)_wrapRange:(struct Range { NSInteger x1; struct RefPtr<WebCore::Document> { struct Document {} *x_2_1_1; } x2; struct RefPtr<WebCore::Node> { struct Node {} *x_3_1_1; } x3; NSUInteger x4; struct RefPtr<WebCore::Node> { struct Node {} *x_5_1_1; } x5; NSUInteger x6; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x7; }*)arg1;
-
-- (id)_bridge;
-- (id)_initWithRange:(struct Range { NSInteger x1; struct RefPtr<WebCore::Document> { struct Document {} *x_2_1_1; } x2; struct RefPtr<WebCore::Node> { struct Node {} *x_3_1_1; } x3; NSUInteger x4; struct RefPtr<WebCore::Node> { struct Node {} *x_5_1_1; } x5; NSUInteger x6; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x7; }*)arg1;
-- (struct Range { NSInteger x1; struct RefPtr<WebCore::Document> { struct Document {} *x_2_1_1; } x2; struct RefPtr<WebCore::Node> { struct Node {} *x_3_1_1; } x3; NSUInteger x4; struct RefPtr<WebCore::Node> { struct Node {} *x_5_1_1; } x5; NSUInteger x6; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x7; }*)_range;
 - (id)_text;
+- (id)asDomNode;
+- (id)asDomRange;
 - (id)attachmentURLs;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingBox;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
+- (BOOL)canShrinkDirectlyToTextOnly;
 - (id)cloneContents;
 - (id)cloneRange;
 - (void)collapse:(BOOL)arg1;
@@ -37,11 +29,14 @@
 - (short)compareBoundaryPoints:(unsigned short)arg1 sourceRange:(id)arg2;
 - (short)compareNode:(id)arg1;
 - (short)comparePoint:(id)arg1 offset:(NSInteger)arg2;
+- (BOOL)containsBlock:(id)arg1;
+- (BOOL)containsRange:(id)arg1;
 - (id)createContextualFragment:(id)arg1;
 - (void)dealloc;
 - (void)deleteContents;
 - (id)description;
 - (void)detach;
+- (id)enclosingDocument;
 - (id)endContainer;
 - (NSInteger)endOffset;
 - (id)extractContents;
@@ -50,10 +45,16 @@
 - (BOOL)intersectsNode:(id)arg1;
 - (BOOL)isEquivalentToCollapsedRange;
 - (BOOL)isPointInRange:(id)arg1 offset:(NSInteger)arg2;
+- (BOOL)isSameBlock:(id)arg1;
+- (id)largerParent;
 - (id)lineBoxRects;
 - (id)markupString;
+- (id)parentBlock;
+- (id)rangeOfContents;
+- (BOOL)rendersAsBlock;
 - (void)selectNode:(id)arg1;
 - (void)selectNodeContents:(id)arg1;
+- (BOOL)selectable;
 - (void)setEnd:(id)arg1 :(NSInteger)arg2;
 - (void)setEnd:(id)arg1 offset:(NSInteger)arg2;
 - (void)setEndAfter:(id)arg1;
@@ -64,10 +65,13 @@
 - (void)setStartBefore:(id)arg1;
 - (id)startContainer;
 - (NSInteger)startOffset;
+- (BOOL)strictlyContainsBlock:(id)arg1;
 - (id)stringValue;
 - (void)surroundContents:(id)arg1;
 - (id)text;
 - (id)toString;
+- (void)unionWithRange:(id)arg1;
 - (id)webArchive;
+- (id)webFrame;
 
 @end

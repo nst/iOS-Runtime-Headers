@@ -49,7 +49,7 @@
 
 - (id)autoFit;
 - (double)bottomInset;
-- (NSInteger)columnCount;
+- (NSUInteger)columnCount;
 - (double)columnSpacing;
 - (void)dealloc;
 - (BOOL)hasAutoFit;
@@ -83,7 +83,7 @@
 - (double)rotation;
 - (void)setAutoFit:(id)arg1;
 - (void)setBottomInset:(double)arg1;
-- (void)setColumnCount:(NSInteger)arg1;
+- (void)setColumnCount:(NSUInteger)arg1;
 - (void)setColumnSpacing:(double)arg1;
 - (void)setHorizontalOverflowType:(NSInteger)arg1;
 - (void)setIsAnchorCenter:(BOOL)arg1;
@@ -94,14 +94,14 @@
 - (void)setRightInset:(double)arg1;
 - (void)setRotation:(double)arg1;
 - (void)setTextAnchorType:(NSInteger)arg1;
-- (void)setTextBodyId:(NSInteger)arg1;
+- (void)setTextBodyId:(NSUInteger)arg1;
 - (void)setTextWarp:(id)arg1;
 - (void)setTopInset:(double)arg1;
 - (void)setVerticalOverflowType:(NSInteger)arg1;
 - (void)setVerticalType:(NSInteger)arg1;
 - (void)setWrapType:(NSInteger)arg1;
 - (NSInteger)textAnchorType;
-- (NSInteger)textBodyId;
+- (NSUInteger)textBodyId;
 - (id)textWarp;
 - (double)topInset;
 - (NSInteger)verticalOverflowType;

@@ -14,10 +14,6 @@
 @property(readonly) NSInteger screenX;
 @property(readonly) NSInteger screenY;
 
-+ (id)_wrapTouch:(struct Touch { NSInteger x1; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_2_1_1; } x2; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_3_1_1; } x3; NSUInteger x4; NSInteger x5; NSInteger x6; NSInteger x7; NSInteger x8; NSInteger x9; NSInteger x10; }*)arg1;
-
-- (id)_initWithTouch:(struct Touch { NSInteger x1; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_2_1_1; } x2; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_3_1_1; } x3; NSUInteger x4; NSInteger x5; NSInteger x6; NSInteger x7; NSInteger x8; NSInteger x9; NSInteger x10; }*)arg1;
-- (struct Touch { NSInteger x1; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_2_1_1; } x2; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_3_1_1; } x3; NSUInteger x4; NSInteger x5; NSInteger x6; NSInteger x7; NSInteger x8; NSInteger x9; NSInteger x10; }*)_touch;
 - (NSInteger)clientX;
 - (NSInteger)clientY;
 - (void)dealloc;

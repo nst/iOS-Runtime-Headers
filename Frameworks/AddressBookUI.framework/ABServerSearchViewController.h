@@ -8,14 +8,17 @@
     ABServerSearchController *_serverSearchController;
 }
 
+- (BOOL)_allowsAutorotation;
+- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
 - (void)dealloc;
-- (void)didChangeNavigationTitleView:(id)arg1;
 - (id)initWithModel:(id)arg1;
 - (void)loadView;
-- (void)showCardForPerson:(void*)arg1 animate:(BOOL)arg2;
+- (BOOL)showCardForPerson:(void*)arg1 animate:(BOOL)arg2;
+- (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

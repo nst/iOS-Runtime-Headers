@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABCardController, ABActionsController;
+@class ABActionsController;
 
 @interface ABPropertyGroup : NSObject {
     ABActionsController *_actionsController;
-    ABCardController *_cardController;
     void *_policy;
     NSInteger _property;
     void *_record;
@@ -20,7 +19,7 @@
 - (void)deleteItemAtIndex:(NSInteger)arg1;
 - (NSInteger)identifierAtIndex:(NSInteger)arg1;
 - (NSInteger)indexOfIdentifier:(NSInteger)arg1;
-- (id)initWithRecord:(void*)arg1 property:(NSInteger)arg2 policy:(void*)arg3 cardController:(id)arg4;
+- (id)initWithRecord:(void*)arg1 property:(NSInteger)arg2 policy:(void*)arg3;
 - (BOOL)isMultiValueProperty;
 - (void*)policy;
 - (void)prepareActionsController:(id)arg1 withValueAtIndex:(NSInteger)arg2;

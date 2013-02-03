@@ -4,7 +4,7 @@
 
 @class MPFullScreenVideoOverlay, InactivityMonitor;
 
-@interface MPFullScreenVideoViewController : MPVideoViewController {
+@interface MPFullScreenVideoViewController : MPVideoViewController <MPSwipableViewDelegate> {
     unsigned int _requestExitAfterHidingControls : 1;
     unsigned int _rotateAfterHidingControls : 1;
     unsigned int _showControlsAfterRotate : 1;
@@ -31,7 +31,7 @@
 - (void)_showOverlay;
 - (void)_stopWatchingAVController;
 - (void)_transformVideoForOrientation:(NSInteger)arg1 animate:(BOOL)arg2;
-- (void)backstopView:(id)arg1 tappedWithCount:(NSInteger)arg2;
+- (BOOL)allowsDetailScrubbing;
 - (BOOL)canDisplayItem:(id)arg1 withOrientation:(NSInteger)arg2;
 - (id)createAlternateTracksTransition;
 - (id)createChapterFlipTransition;
@@ -45,6 +45,7 @@
 - (void)overlayTappedBackButton:(id)arg1;
 - (void)overlayTappedScaleModeButton:(id)arg1;
 - (void)removeChildViewController:(id)arg1;
+- (void)setAllowsDetailScrubbing:(BOOL)arg1;
 - (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)setDesiredParts:(NSUInteger)arg1 animate:(BOOL)arg2;
 - (void)setDisabledParts:(NSUInteger)arg1;
@@ -55,6 +56,9 @@
 - (void)showChaptersController;
 - (void)startTicking;
 - (void)stopTicking;
+- (id)swipableView:(id)arg1 overrideHitTest:(struct CGPoint { float x1; float x2; })arg2 forEvent:(struct __GSEvent { }*)arg3;
+- (id)swipableView:(id)arg1 overrideHitTest:(struct CGPoint { float x1; float x2; })arg2 withEvent:(id)arg3;
+- (void)swipableView:(id)arg1 tappedWithCount:(NSUInteger)arg2;
 - (BOOL)transportControls:(id)arg1 heldButtonPart:(NSUInteger)arg2;
 - (BOOL)transportControls:(id)arg1 releasedHeldButtonPart:(NSUInteger)arg2;
 - (BOOL)transportControls:(id)arg1 tappedButtonPart:(NSUInteger)arg2;

@@ -14,6 +14,11 @@
     BOOL _validateOpeningTokens;
 }
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
 - (id)applicationData;
 - (id)asParseRules;
 - (NSInteger)changeType;
@@ -23,7 +28,7 @@
 - (id)init;
 - (BOOL)isResponse;
 - (void)loadClientIDs;
-- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5;
+- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
 - (id)serverID;
 - (void)setApplicationData:(id)arg1;
 - (void)setChangeType:(NSInteger)arg1;

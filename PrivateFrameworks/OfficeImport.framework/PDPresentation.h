@@ -21,6 +21,7 @@
     BOOL mIsLooping;
     NSMutableArray *mNotesMasters;
     } mNotesSize;
+    NSUInteger mRealSlideCount;
     NSMutableArray *mSlideMasters;
     } mSlideSize;
     NSMutableArray *mSlides;
@@ -44,12 +45,14 @@
 - (id)notesMasterAtIndex:(NSUInteger)arg1;
 - (NSUInteger)notesMasterCount;
 - (struct CGSize { float x1; float x2; })notesSize;
+- (NSUInteger)realSlideCount;
 - (void)setCommentAuthor:(id)arg1 forId:(NSUInteger)arg2;
 - (void)setIsAutoPlay:(BOOL)arg1;
 - (void)setIsCommentsVisible:(BOOL)arg1;
 - (void)setIsKiosk:(BOOL)arg1;
 - (void)setIsLooping:(BOOL)arg1;
 - (void)setNotesSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setRealSlideCount:(NSUInteger)arg1;
 - (void)setSlideSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)slideAtIndex:(NSUInteger)arg1;
 - (NSUInteger)slideCount;

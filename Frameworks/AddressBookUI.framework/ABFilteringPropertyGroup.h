@@ -11,7 +11,7 @@
 - (id)copyLabelAtIndex:(NSInteger)arg1;
 - (id)copyStringValueAtIndex:(NSInteger)arg1;
 - (void)dealloc;
-- (id)initWithRecord:(void*)arg1 property:(NSInteger)arg2 policy:(void*)arg3 cardController:(id)arg4 filter:(id)arg5;
+- (id)initWithRecord:(void*)arg1 property:(NSInteger)arg2 policy:(void*)arg3 filter:(id)arg4;
 - (NSUInteger)propertyCount;
 
 @end

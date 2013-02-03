@@ -27,8 +27,8 @@
 - (id)layoutTypeId;
 - (id)presentationAssociatedId;
 - (id)presentationName;
-- (NSInteger)presentationStyleCount;
-- (NSInteger)presentationStyleIndex;
+- (NSUInteger)presentationStyleCount;
+- (NSUInteger)presentationStyleIndex;
 - (id)presentationStyleLabel;
 - (void)setCustomOffsetX:(double)arg1;
 - (void)setCustomOffsetY:(double)arg1;
@@ -38,8 +38,8 @@
 - (void)setLayoutTypeId:(id)arg1;
 - (void)setPresentationAssociatedId:(id)arg1;
 - (void)setPresentationName:(id)arg1;
-- (void)setPresentationStyleCount:(NSInteger)arg1;
-- (void)setPresentationStyleIndex:(NSInteger)arg1;
+- (void)setPresentationStyleCount:(NSUInteger)arg1;
+- (void)setPresentationStyleIndex:(NSUInteger)arg1;
 - (void)setPresentationStyleLabel:(id)arg1;
 
 @end

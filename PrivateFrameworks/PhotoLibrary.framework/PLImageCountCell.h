@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLImageCountCell : UIImageAndTextTableCell {
+@class UILabel;
+
+@interface PLImageCountCell : UITableViewCell {
+    UILabel *_titleLabel;
 }
 
-+ (struct __GSFont { }*)defaultTitleFont;
-
-- (void)layoutSubviews;
+- (void)setText:(id)arg1;
+- (void)setTextAlignment:(NSInteger)arg1;
 
 @end

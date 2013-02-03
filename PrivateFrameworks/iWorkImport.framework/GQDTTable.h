@@ -4,7 +4,7 @@
 
 @class GQDTTableModel, GQDSStyle;
 
-@interface GQDTTable : GQDDrawable <GQDNameMappable> {
+@interface GQDTTable : GQDGraphic <GQDNameMappable> {
     BOOL mIsStreamed;
     GQDTTableModel *mModel;
     GQDSStyle *mStyle;

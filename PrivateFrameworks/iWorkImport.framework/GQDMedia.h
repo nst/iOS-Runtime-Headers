@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDAffineGeometry, GQDImageBinary;
+@class GQDFilteredImage, GQDAffineGeometry, GQDPath, GQDImageBinary;
 
 @interface GQDMedia : GQDGraphic <GQDNameMappable> {
     GQDAffineGeometry *mCropGeometry;
-    GQDImageBinary *mFilteredImageBinary;
+    GQDFilteredImage *mFilteredImage;
     GQDImageBinary *mOriginalImageBinary;
+    GQDPath *mPath;
 }
 
 + (const struct StateSpec { int (**x1)(); char *x2; NSInteger x3; NSInteger x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
@@ -15,5 +16,6 @@
 - (id)cropGeometry;
 - (void)dealloc;
 - (id)imageBinary;
+- (id)maskPath;
 
 @end

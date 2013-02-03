@@ -3,17 +3,7 @@
  */
 
 @interface CAWindowServerDisplay : NSObject {
-    struct CADisplayServer { int (**x1)(); struct { 
-            NSInteger x; 
-        } x2; struct CADisplay {} *x3; struct __CFString {} *x4; struct _opaque_pthread_mutex_t { 
-            long __sig; 
-            BOOL __opaque[40]; 
-        } x5; struct _opaque_pthread_cond_t { 
-            long __sig; 
-            BOOL __opaque[24]; 
-        } x6; NSUInteger x7; struct _CARenderContext {} **x8; NSUInteger x9; NSUInteger x10; struct { 
-            NSInteger x; 
-        } x11; struct PendingOperation {} *x12; struct _CARenderContext {} *x13; struct _CARenderContext {} *x14; NSUInteger x15; NSInteger *x16; NSUInteger x17; struct _CARenderOGLContext {} *x18; double x19; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; } *_impl;
+    void *_impl;
 }
 
 @property(copy) NSString *TVMode;
@@ -22,22 +12,28 @@
 @property(readonly) NSString *name;
 @property(getter=isBlanked) BOOL blanked;
 @property(readonly) CGRect bounds;
+@property BOOL invertsColors;
+@property(readonly) NSUInteger rendererFlags;
 
 - (id)TVMode;
 - (id)TVSignalType;
-- (id)_initWithCADisplayServer:(struct CADisplayServer { int (**x1)(); struct { NSInteger x_2_1_1; } x2; struct CADisplay {} *x3; struct __CFString {} *x4; struct _opaque_pthread_mutex_t { long x_5_1_1; BOOL x_5_1_2[40]; } x5; struct _opaque_pthread_cond_t { long x_6_1_1; BOOL x_6_1_2[24]; } x6; NSUInteger x7; struct _CARenderContext {} **x8; NSUInteger x9; NSUInteger x10; struct { NSInteger x_11_1_1; } x11; struct PendingOperation {} *x12; struct _CARenderContext {} *x13; struct _CARenderContext {} *x14; NSUInteger x15; NSInteger *x16; NSUInteger x17; struct _CARenderOGLContext {} *x18; double x19; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; }*)arg1;
+- (id)_initWithCADisplayServer:(struct Server { int (**x1)(); struct SpinLock { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; struct Display {} *x3; struct __CFString {} *x4; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_5_1_1; } x5; struct Condition { struct _opaque_pthread_cond_t { long x_1_2_1; BOOL x_1_2_2[24]; } x_6_1_1; } x6; NSUInteger x7; struct Context {} **x8; NSUInteger x9; NSUInteger x10; struct SpinLock { struct { NSInteger x_1_2_1; } x_11_1_1; } x11; struct PendingOperation {} *x12; struct Context {} *x13; struct Context {} *x14; NSUInteger x15; struct Shape {} *x16; NSUInteger x17; struct _CARenderOGLContext {} *x18; double x19; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (NSUInteger)clientPortAtPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (NSUInteger)contextIdAtPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (id)contextIdsWithClientPort:(NSUInteger)arg1;
+- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toContextId:(NSUInteger)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)deviceName;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfContextId:(NSUInteger)arg1;
 - (void)invalidate;
+- (BOOL)invertsColors;
 - (BOOL)isBlanked;
 - (id)name;
+- (NSUInteger)rendererFlags;
 - (void)setBlanked:(BOOL)arg1;
+- (void)setInvertsColors:(BOOL)arg1;
 - (void)setTVMode:(id)arg1;
 - (void)setTVSignalType:(id)arg1;
 

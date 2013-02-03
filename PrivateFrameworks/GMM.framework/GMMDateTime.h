@@ -2,36 +2,27 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@interface GMMDateTime : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
-    BOOL _hasSecsSinceEpoch;
+@interface GMMDateTime : PBCodable {
     BOOL _hasTimeZoneOffsetMin;
     long long _secsSinceEpoch;
     NSInteger _timeZoneOffsetMin;
 }
 
-@property BOOL hasTimeZoneOffsetMin; /* unknown property attribute: V_hasTimeZoneOffsetMin */
+@property(readonly) BOOL hasTimeZoneOffsetMin; /* unknown property attribute: V_hasTimeZoneOffsetMin */
 @property NSInteger timeZoneOffsetMin; /* unknown property attribute: V_timeZoneOffsetMin */
-@property BOOL hasSecsSinceEpoch; /* unknown property attribute: V_hasSecsSinceEpoch */
 @property long long secsSinceEpoch; /* unknown property attribute: V_secsSinceEpoch */
 
 - (id)calendarDate;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasSecsSinceEpoch;
+- (id)description;
 - (BOOL)hasTimeZoneOffsetMin;
 - (id)init;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (long long)secsSinceEpoch;
-- (void)setHasSecsSinceEpoch:(BOOL)arg1;
-- (void)setHasTimeZoneOffsetMin:(BOOL)arg1;
 - (void)setSecsSinceEpoch:(long long)arg1;
 - (void)setTimeZoneOffsetMin:(NSInteger)arg1;
 - (NSInteger)timeZoneOffsetMin;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

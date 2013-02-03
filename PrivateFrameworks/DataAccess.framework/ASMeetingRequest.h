@@ -14,10 +14,13 @@
     NSDate *_recurrenceId;
 }
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
 - (BOOL)_bailIfNotNewestData;
-- (void*)_copyFirstExchangeCalendarInFirstExchangeStore:(BOOL)arg1;
-- (id)_defaultCalendarFolder;
-- (void)_determineSelfness;
+- (void)_determineSelfnessWithLocalEvent:(void*)arg1 forAccount:(id)arg2;
 - (void)_setReminderSecsBefore:(id)arg1;
 - (BOOL)_shouldKeepLocalExceptions;
 - (void)applyPlaceHolder;
@@ -34,10 +37,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)instanceType;
 - (NSInteger)meetingClassType;
-- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5;
+- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
 - (void)postProcessApplicationData;
 - (id)recurrenceId;
-- (BOOL)saveToCalendarWithExistingRecord:(void*)arg1 intoCalendar:(void*)arg2 treatNullsAsDeletes:(BOOL)arg3;
+- (BOOL)saveToCalendarWithExistingRecord:(void*)arg1 intoCalendar:(void*)arg2 treatNullsAsDeletes:(BOOL)arg3 account:(id)arg4;
 - (void)setCachedParentFolderId:(id)arg1;
 - (void)setCachedParentServerId:(id)arg1;
 - (void)setDTStamp:(id)arg1;
@@ -47,7 +50,8 @@
 - (void)setObject:(id)arg1 forCCPT:(NSInteger)arg2;
 - (void)setOrganizer:(id)arg1;
 - (void)setRecurrenceId:(id)arg1;
-- (void)takeValuesFromParentEmail;
-- (BOOL)writeInviteToCalDBCreateAsRejected:(BOOL)arg1;
+- (BOOL)shouldUseInMemoryAttendeesForAccount:(id)arg1 numExistingAttendees:(NSInteger)arg2;
+- (void)takeValuesFromParentEmailForAccount:(id)arg1;
+- (BOOL)writeInviteToCalDBCreateAsRejected:(BOOL)arg1 defaultCalendar:(void*)arg2 account:(id)arg3;
 
 @end

@@ -7,11 +7,9 @@
 
 + (id)_sharedWebFormDelegate;
 
-- (void)addInputString:(id)arg1;
-- (void)deleteFromInput;
-- (void)formElementDidBlur:(id)arg1;
-- (void)formElementDidFocus:(id)arg1;
-- (void)formElementDidSetValue:(id)arg1;
+- (void)formElementDidBlur:(id)arg1 inFrame:(id)arg2;
+- (void)formElementDidFocus:(id)arg1 inFrame:(id)arg2;
+- (void)formElementDidSetValue:(id)arg1 inFrame:(id)arg2;
 - (void)frame:(id)arg1 sourceFrame:(id)arg2 willSubmitForm:(id)arg3 withValues:(id)arg4 submissionListener:(id)arg5;
 - (void)textDidChangeInTextArea:(id)arg1 inFrame:(id)arg2;
 - (void)textDidChangeInTextField:(id)arg1 inFrame:(id)arg2;

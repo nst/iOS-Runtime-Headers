@@ -26,6 +26,8 @@
 + (id)uppercaseLetterCharacterSet;
 + (id)whitespaceAndNewlineCharacterSet;
 + (id)whitespaceCharacterSet;
++ (id)whitespaceNewlineAndSpecialCharacterSet;
++ (id)wordBreakCharacterSet;
 
 - (unsigned long)_cfTypeID;
 - (struct __CFCharacterSet { }*)_expandedCFCharacterSet;

@@ -7,56 +7,51 @@
  */
 
 @interface WebScriptObjectPrivate : NSObject {
-    struct JSObject { int (**x1)(); struct PropertyMap { 
-            struct Rep {} *m_singleEntryKey; 
-            union $_212 { 
-                struct JSValue {} *singleEntryValue; 
-                struct PropertyMapHashTable {} *table; 
-            } m_u; 
-            short m_singleEntryAttributes; 
-            unsigned int m_getterSetterFlag : 1; 
-            unsigned int m_usingTable : 1; 
-    struct RootObject { NSInteger x1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x2; void *x3; struct ProtectedPtr<KJS::JSGlobalObject> { 
+    struct JSObject { int (**x1)(); struct Structure {} *x2; struct RefPtr<JSC::Structure> { 
+            struct Structure {} *m_ptr; 
+        } x3; struct JSValuePtr {} *x4; struct JSValuePtr { 
+            struct JSCell {} *m_ptr; 
+    struct RootObject { NSInteger x1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x2; void *x3; struct ProtectedPtr<JSC::JSGlobalObject> { 
             struct JSGlobalObject {} *m_ptr; 
-        } x4; struct HashCountedSet<KJS::JSObject*,WTF::PtrHash<KJS::JSObject*>,WTF::HashTraits<KJS::JSObject*> > { 
-            struct HashMap<KJS::JSObject*,unsigned int,WTF::PtrHash<KJS::JSObject*>,WTF::HashTraits<KJS::JSObject*>,WTF::HashTraits<unsigned int> > { 
-                struct HashTable<int,std::pair<int, int>,WTF::PairFirstExtractor<std::pair<int, int> >,WTF::IntHash<int32_t>,WTF::PairHashTraits<WTF::HashTraits<int32_t>, WTF::HashTraits<int32_t> >,WTF::HashTraits<int32_t> > { 
-                    struct pair<int,int> {} *m_table; 
+        } x4; struct HashCountedSet<JSC::JSObject*,WTF::PtrHash<JSC::JSObject*>,WTF::HashTraits<JSC::JSObject*> > { 
+            struct HashMap<JSC::JSObject*,unsigned int,WTF::PtrHash<JSC::JSObject*>,WTF::HashTraits<JSC::JSObject*>,WTF::HashTraits<unsigned int> > { 
+                struct HashTable<JSC::JSObject*,std::pair<JSC::JSObject*, unsigned int>,WTF::PairFirstExtractor<std::pair<JSC::JSObject*, unsigned int> >,WTF::PtrHash<JSC::JSObject*>,WTF::PairHashTraits<WTF::HashTraits<JSC::JSObject*>, WTF::HashTraits<unsigned int> >,WTF::HashTraits<JSC::JSObject*> > { 
+                    struct pair<JSC::JSObject*,unsigned int> {} *m_table; 
                     NSInteger m_tableSize; 
                     NSInteger m_tableSizeMask; 
                     NSInteger m_keyCount; 
                     NSInteger m_deletedCount; 
                 } m_impl; 
             } m_impl; 
-        } x5; struct HashSet<KJS::RuntimeObjectImp*,WTF::PtrHash<KJS::RuntimeObjectImp*>,WTF::HashTraits<KJS::RuntimeObjectImp*> > { 
-            struct HashTable<int,int,WTF::IdentityExtractor<int>,WTF::IntHash<int32_t>,WTF::HashTraits<int32_t>,WTF::HashTraits<int32_t> > { 
-                NSInteger *m_table; 
+        } x5; struct HashSet<JSC::RuntimeObjectImp*,WTF::PtrHash<JSC::RuntimeObjectImp*>,WTF::HashTraits<JSC::RuntimeObjectImp*> > { 
+            struct HashTable<JSC::RuntimeObjectImp*,JSC::RuntimeObjectImp*,WTF::IdentityExtractor<JSC::RuntimeObjectImp*>,WTF::PtrHash<JSC::RuntimeObjectImp*>,WTF::HashTraits<JSC::RuntimeObjectImp*>,WTF::HashTraits<JSC::RuntimeObjectImp*> > { 
+                struct RuntimeObjectImp {} **m_table; 
                 NSInteger m_tableSize; 
                 NSInteger m_tableSizeMask; 
                 NSInteger m_keyCount; 
                 NSInteger m_deletedCount; 
             } m_impl; 
-    struct RootObject { NSInteger x1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x2; void *x3; struct ProtectedPtr<KJS::JSGlobalObject> { 
+    struct RootObject { NSInteger x1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x2; void *x3; struct ProtectedPtr<JSC::JSGlobalObject> { 
             struct JSGlobalObject {} *m_ptr; 
-        } x4; struct HashCountedSet<KJS::JSObject*,WTF::PtrHash<KJS::JSObject*>,WTF::HashTraits<KJS::JSObject*> > { 
-            struct HashMap<KJS::JSObject*,unsigned int,WTF::PtrHash<KJS::JSObject*>,WTF::HashTraits<KJS::JSObject*>,WTF::HashTraits<unsigned int> > { 
-                struct HashTable<int,std::pair<int, int>,WTF::PairFirstExtractor<std::pair<int, int> >,WTF::IntHash<int32_t>,WTF::PairHashTraits<WTF::HashTraits<int32_t>, WTF::HashTraits<int32_t> >,WTF::HashTraits<int32_t> > { 
-                    struct pair<int,int> {} *m_table; 
+        } x4; struct HashCountedSet<JSC::JSObject*,WTF::PtrHash<JSC::JSObject*>,WTF::HashTraits<JSC::JSObject*> > { 
+            struct HashMap<JSC::JSObject*,unsigned int,WTF::PtrHash<JSC::JSObject*>,WTF::HashTraits<JSC::JSObject*>,WTF::HashTraits<unsigned int> > { 
+                struct HashTable<JSC::JSObject*,std::pair<JSC::JSObject*, unsigned int>,WTF::PairFirstExtractor<std::pair<JSC::JSObject*, unsigned int> >,WTF::PtrHash<JSC::JSObject*>,WTF::PairHashTraits<WTF::HashTraits<JSC::JSObject*>, WTF::HashTraits<unsigned int> >,WTF::HashTraits<JSC::JSObject*> > { 
+                    struct pair<JSC::JSObject*,unsigned int> {} *m_table; 
                     NSInteger m_tableSize; 
                     NSInteger m_tableSizeMask; 
                     NSInteger m_keyCount; 
                     NSInteger m_deletedCount; 
                 } m_impl; 
             } m_impl; 
-        } x5; struct HashSet<KJS::RuntimeObjectImp*,WTF::PtrHash<KJS::RuntimeObjectImp*>,WTF::HashTraits<KJS::RuntimeObjectImp*> > { 
-            struct HashTable<int,int,WTF::IdentityExtractor<int>,WTF::IntHash<int32_t>,WTF::HashTraits<int32_t>,WTF::HashTraits<int32_t> > { 
-                NSInteger *m_table; 
+        } x5; struct HashSet<JSC::RuntimeObjectImp*,WTF::PtrHash<JSC::RuntimeObjectImp*>,WTF::HashTraits<JSC::RuntimeObjectImp*> > { 
+            struct HashTable<JSC::RuntimeObjectImp*,JSC::RuntimeObjectImp*,WTF::IdentityExtractor<JSC::RuntimeObjectImp*>,WTF::PtrHash<JSC::RuntimeObjectImp*>,WTF::HashTraits<JSC::RuntimeObjectImp*>,WTF::HashTraits<JSC::RuntimeObjectImp*> > { 
+                struct RuntimeObjectImp {} **m_table; 
                 NSInteger m_tableSize; 
                 NSInteger m_tableSizeMask; 
                 NSInteger m_keyCount; 
                 NSInteger m_deletedCount; 
             } m_impl; 
-        } x2; struct JSValue {} *x3; } *imp;
+        } x5[2]; } *imp;
     BOOL isCreatedByDOMWrapper;
         } x6; } *originRootObject;
         } x6; } *rootObject;

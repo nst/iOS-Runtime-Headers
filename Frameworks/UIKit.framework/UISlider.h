@@ -11,6 +11,7 @@
         unsigned int showValue : 1; 
         unsigned int trackEnabled : 1; 
         unsigned int creatingSnapshot : 1; 
+        unsigned int thumbDisabled : 1; 
     struct __CFDictionary { } *_contentLookup;
     float _hitOffset;
     UIImageView *_maxTrackView;
@@ -44,6 +45,7 @@
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
 - (void)_initImages;
 - (void)_initSubviews;
+- (BOOL)_isThumbEnabled;
 - (void)_layoutSubviewsForBoundsChange:(BOOL)arg1;
 - (id)_maximumTrackImageForState:(NSUInteger)arg1;
 - (id)_minimumTrackImageForState:(NSUInteger)arg1;
@@ -53,6 +55,7 @@
 - (void)_setContent:(id)arg1 forState:(NSUInteger)arg2;
 - (void)_setMaximumTrackImage:(id)arg1 forStates:(NSUInteger)arg2;
 - (void)_setMinimumTrackImage:(id)arg1 forStates:(NSUInteger)arg2;
+- (void)_setThumbEnabled:(BOOL)arg1;
 - (void)_setThumbImage:(id)arg1 forStates:(NSUInteger)arg2;
 - (void)_setTrackEnabled:(BOOL)arg1;
 - (void)_setValue:(float)arg1 andSendAction:(BOOL)arg2;
@@ -78,8 +81,10 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElementByDefault;
 - (BOOL)isAnimatingValueChange;
 - (BOOL)isContinuous;
+- (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)layoutSubviews;
 - (id)maximumTrackImageForState:(NSUInteger)arg1;
 - (float)maximumValue;
@@ -89,6 +94,7 @@
 - (float)minimumValue;
 - (id)minimumValueImage;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })minimumValueImageRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)scriptingInfoWithChildren;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContinuous:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;

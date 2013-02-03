@@ -28,6 +28,7 @@
 @property(retain) NSArray *titles;
 
 - (id)_createTouchesWithMouseEvent:(struct __GSEvent { }*)arg1 phase:(NSInteger)arg2;
+- (id)_displayTitles;
 - (void)_selectSectionForTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
@@ -37,6 +38,7 @@
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)font;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (NSUInteger)maximumNumberOfTitlesWithoutTruncationForHeight:(float)arg1;
 - (void)mouseDown:(struct __GSEvent { }*)arg1;
 - (void)mouseDragged:(struct __GSEvent { }*)arg1;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;

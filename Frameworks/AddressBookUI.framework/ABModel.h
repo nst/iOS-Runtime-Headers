@@ -51,9 +51,11 @@
 - (NSInteger)displayedMemberSectionListsCount;
 - (id)displayedMembersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (struct __CFDictionary { }*)headerSortKeyToHeaderStringDictionary;
+- (long)indexForDisplayedMember:(void*)arg1;
 - (id)initWithUIController:(id)arg1 addressBook:(void*)arg2;
 - (void)invalidateDisplayedGroups;
 - (void)invalidateDisplayedMembers;
+- (void)invalidateLastSelectedGroupWrapper;
 - (id)lastSelectedGroupWrapper;
 - (void)modifiedDisplayedMember:(void*)arg1;
 - (NSUInteger)numberOfDisplayedMembers;

@@ -20,8 +20,12 @@
 - (float)alphaComponent;
 - (id)blendedColorWithFraction:(float)arg1 ofColor:(id)arg2;
 - (float)blueComponent;
+- (id)description;
 - (void)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (float)greenComponent;
+- (NSInteger)htmlBlue;
+- (NSInteger)htmlGreen;
+- (NSInteger)htmlRed;
 - (id)initWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 - (float)redComponent;
 

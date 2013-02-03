@@ -11,7 +11,9 @@
     BOOL mIsColorOverridden;
 }
 
++ (id)blackFill;
 + (id)defaultProperties;
++ (id)whiteFill;
 
 - (float)alpha;
 - (id)color;

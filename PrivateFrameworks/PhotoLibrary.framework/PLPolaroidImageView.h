@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UILabel, UIView;
+@class UILabel, UIImage, UIView;
 
 @interface PLPolaroidImageView : PLImageView {
     struct CGRect { 
@@ -21,7 +21,7 @@
     float _thinBorderWidth;
 }
 
-@property(retain) UIImage *posterImage;
+@property(retain) UIImage * posterImage;
 
 + (Class)layerClass;
 

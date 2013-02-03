@@ -31,21 +31,21 @@
 - (struct dyld_image_info_64 { unsigned long long x1; unsigned long long x2; unsigned long long x3; })dyldImageInfo;
 - (id)initWithAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 data:(char *)arg2 memory:(id)arg3;
 - (short)int16;
-- (NSInteger)int32;
+- (int)int32;
 - (long long)int64;
 - (BOOL)int8;
 - (BOOL)isCursorPointerAligned;
-- (struct nlist_64 { union { NSUInteger x_1_1_1; } x1; unsigned char x2; unsigned char x3; unsigned short x4; unsigned long long x5; })nlist;
-- (struct nlist_64 { union { NSUInteger x_1_1_1; } x1; unsigned char x2; unsigned char x3; unsigned short x4; unsigned long long x5; })nlist_64;
+- (struct nlist_64 { union { unsigned int x_1_1_1; } x1; unsigned char x2; unsigned char x3; unsigned short x4; unsigned long long x5; })nlist;
+- (struct nlist_64 { union { unsigned int x_1_1_1; } x1; unsigned char x2; unsigned char x3; unsigned short x4; unsigned long long x5; })nlist_64;
 - (void)pointerAlignCursor;
 - (id)readBytes:(unsigned long)arg1;
 - (void)rewindCursor:(unsigned long long)arg1;
 - (void)setCursor:(unsigned long long)arg1;
-- (id)stringWithEncoding:(NSUInteger)arg1 offset:(unsigned long long)arg2;
-- (id)stringWithEncoding:(NSUInteger)arg1 size:(unsigned long)arg2;
-- (id)stringWithEncoding:(NSUInteger)arg1;
+- (id)stringWithEncoding:(unsigned int)arg1 offset:(unsigned long long)arg2;
+- (id)stringWithEncoding:(unsigned int)arg1 size:(unsigned long)arg2;
+- (id)stringWithEncoding:(unsigned int)arg1;
 - (unsigned short)uint16;
-- (NSUInteger)uint32;
+- (unsigned int)uint32;
 - (unsigned long long)uint64;
 - (unsigned char)uint8;
 

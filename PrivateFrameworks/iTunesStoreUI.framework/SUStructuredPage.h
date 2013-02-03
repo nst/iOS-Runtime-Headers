@@ -6,39 +6,39 @@
 
 @interface SUStructuredPage : NSObject <NSCopying> {
     BOOL _didShowDialog;
-    NSInteger _displayStyle;
+    int _displayStyle;
     SUItem *_item;
     SUItemList *_itemList;
     SUStorePageProtocol *_protocol;
     SUPageSectionGroup *_sectionsGroup;
     NSString *_title;
-    NSInteger _type;
+    int _type;
     BOOL _wantsIndexBar;
 }
 
-@property(retain) SUItem *item;
-@property(retain) SUItemList *itemList;
-@property(retain) SUStorePageProtocol *protocol;
-@property(retain) SUPageSectionGroup *sectionsGroup;
-@property(retain) NSString *title;
 @property(readonly) BOOL didShowDialog;
-@property(readonly) NSInteger displayStyle;
+@property(readonly) int displayStyle;
 @property(readonly) BOOL hasDisplayableContent;
-@property NSInteger type;
+@property(retain) SUItem * item;
+@property(retain) SUItemList * itemList;
+@property(retain) SUStorePageProtocol * protocol;
+@property(retain) SUPageSectionGroup * sectionsGroup;
+@property(retain) NSString * title;
+@property int type;
 @property(readonly) BOOL wantsIndexBar;
 
-+ (NSInteger)_pageTypeForString:(id)arg1;
-+ (NSInteger)pageTypeForStorePageDictionary:(id)arg1;
++ (int)pageTypeForStorePageDictionary:(id)arg1;
++ (int)pageTypeForStorePageString:(id)arg1;
 
 - (id)_copyItemFromDictionary:(id)arg1;
-- (NSInteger)_displayStyleForString:(id)arg1;
+- (int)_displayStyleForString:(id)arg1;
 - (void)_parseItemsFromDictionary:(id)arg1;
 - (void)_parseProtocolFromDictionary:(id)arg1;
 - (void)_parseTemplateParametersFromDictionary:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (BOOL)didShowDialog;
-- (NSInteger)displayStyle;
+- (int)displayStyle;
 - (BOOL)hasDisplayableContent;
 - (id)item;
 - (id)itemList;
@@ -50,9 +50,9 @@
 - (void)setProtocol:(id)arg1;
 - (void)setSectionsGroup:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setType:(NSInteger)arg1;
+- (void)setType:(int)arg1;
 - (id)title;
-- (NSInteger)type;
+- (int)type;
 - (BOOL)wantsIndexBar;
 
 @end

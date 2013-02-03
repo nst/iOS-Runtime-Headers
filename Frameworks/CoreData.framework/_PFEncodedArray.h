@@ -5,22 +5,22 @@
 @class NSData;
 
 @interface _PFEncodedArray : NSArray {
-    NSInteger _cd_rc;
-    NSUInteger _count;
+    int _cd_rc;
+    unsigned int _count;
     NSData *_sourceData;
 }
 
-- (void)_replaceObject:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)_replaceObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (const id*)_values;
 - (id)copy;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)mutableCopy;
-- (id)objectAtIndex:(NSUInteger)arg1;
+- (id)objectAtIndex:(unsigned int)arg1;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

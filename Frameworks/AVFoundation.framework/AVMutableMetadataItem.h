@@ -2,36 +2,36 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMutableMetadataItemInternal;
+@class AVMutableMetadataItemInternal, NSString, <NSObject><NSCopying>, NSLocale, NSDictionary;
 
 @interface AVMutableMetadataItem : AVMetadataItem {
     AVMutableMetadataItemInternal *_mutablePriv;
 }
 
-@property(copy) NSDictionary *extraAttributes;
-@property(copy) <NSObject><NSCopying> *key;
-@property(copy) NSString *keySpace;
-@property(copy) NSLocale *locale;
-@property(copy) <NSObject><NSCopying> *value;
-@property ? duration;
-@property ? time;
+@property struct { long long value; int timescale; unsigned int flags; long long epoch; } duration;
+@property(copy) NSDictionary * extraAttributes;
+@property(copy) <NSObject><NSCopying> * key;
+@property(copy) NSString * keySpace;
+@property(copy) NSLocale * locale;
+@property struct { long long value; int timescale; unsigned int flags; long long epoch; } time;
+@property(copy) <NSObject><NSCopying> * value;
 
 + (id)metadataItem;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })duration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (id)extraAttributes;
 - (id)key;
 - (id)keySpace;
 - (id)locale;
-- (void)setDuration:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)setDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setExtraAttributes:(id)arg1;
 - (void)setKey:(id)arg1;
 - (void)setKeySpace:(id)arg1;
 - (void)setLocale:(id)arg1;
-- (void)setTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)setTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setValue:(id)arg1;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })time;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (id)value;
 
 @end

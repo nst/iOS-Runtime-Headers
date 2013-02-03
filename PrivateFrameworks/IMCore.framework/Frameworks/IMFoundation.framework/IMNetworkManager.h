@@ -10,6 +10,6 @@
 
 - (id)autorelease;
 - (oneway void)release;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

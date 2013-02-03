@@ -6,40 +6,40 @@
 
 @interface ML3ComparisonPredicate : ML3PropertyPredicate {
     BOOL _caseInsensitive;
-    NSInteger _comparison;
+    int _comparison;
     NSString *_transformFunction;
     BOOL _treatNullAsBlank;
     id _value;
 }
 
-@property(readonly) NSString *operator;
-@property(copy) NSString *transformFunction;
 @property BOOL caseInsensitive;
-@property NSInteger comparison;
+@property int comparison;
+@property(readonly) NSString * operator;
+@property(copy) NSString * transformFunction;
 @property BOOL treatNullAsBlank;
 @property(retain) id value;
 
-+ (id)predicateWithProperty:(id)arg1 equalToInteger:(NSInteger)arg2;
++ (id)predicateWithProperty:(id)arg1 equalToInteger:(int)arg2;
 + (id)predicateWithProperty:(id)arg1 equalToValue:(id)arg2;
-+ (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(NSInteger)arg3 caseInsensitive:(BOOL)arg4 treatNullAsBlank:(BOOL)arg5;
-+ (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(NSInteger)arg3 caseInsensitive:(BOOL)arg4;
-+ (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(NSInteger)arg3 transformFunction:(id)arg4;
-+ (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(NSInteger)arg3;
++ (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 caseInsensitive:(BOOL)arg4 treatNullAsBlank:(BOOL)arg5;
++ (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 caseInsensitive:(BOOL)arg4;
++ (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 transformFunction:(id)arg4;
++ (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3;
 
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
-- (void)bindToSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout NSInteger*)arg2;
+- (void)bindToSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
 - (BOOL)caseInsensitive;
-- (NSInteger)comparison;
+- (int)comparison;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithProperty:(id)arg1 value:(id)arg2 comparison:(NSInteger)arg3 caseInsensitive:(BOOL)arg4 transformFunction:(id)arg5 treatNullAsBlank:(BOOL)arg6;
+- (id)initWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 caseInsensitive:(BOOL)arg4 transformFunction:(id)arg5 treatNullAsBlank:(BOOL)arg6;
 - (BOOL)isEqual:(id)arg1;
 - (id)operator;
 - (void)setCaseInsensitive:(BOOL)arg1;
-- (void)setComparison:(NSInteger)arg1;
+- (void)setComparison:(int)arg1;
 - (void)setTransformFunction:(id)arg1;
 - (void)setTreatNullAsBlank:(BOOL)arg1;
 - (void)setValue:(id)arg1;

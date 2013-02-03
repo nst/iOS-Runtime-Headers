@@ -6,17 +6,17 @@
     id _data2;
     id _data3;
     id _data;
-    NSInteger _type;
+    int _type;
 }
 
-+ (id)eventWithType:(NSInteger)arg1 data:(id)arg2 data2:(id)arg3 data3:(id)arg4;
-+ (id)eventWithType:(NSInteger)arg1 data:(id)arg2;
++ (id)eventWithType:(int)arg1 data:(id)arg2 data2:(id)arg3 data3:(id)arg4;
++ (id)eventWithType:(int)arg1 data:(id)arg2;
 
 - (id)data2;
 - (id)data3;
 - (id)data;
 - (void)dealloc;
-- (id)initWithType:(NSInteger)arg1 data:(id)arg2 data2:(id)arg3 data3:(id)arg4;
-- (NSInteger)type;
+- (id)initWithType:(int)arg1 data:(id)arg2 data2:(id)arg3 data3:(id)arg4;
+- (int)type;
 
 @end

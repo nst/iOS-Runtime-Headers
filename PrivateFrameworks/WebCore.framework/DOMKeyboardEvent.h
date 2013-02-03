@@ -2,29 +2,31 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString;
+
 @interface DOMKeyboardEvent : DOMUIEvent {
 }
 
-@property(copy,readonly) NSString *keyIdentifier;
 @property(readonly) BOOL altGraphKey;
 @property(readonly) BOOL altKey;
-@property(readonly) NSInteger charCode;
+@property(readonly) int charCode;
 @property(readonly) BOOL ctrlKey;
-@property(readonly) NSInteger keyCode;
-@property(readonly) NSUInteger keyLocation;
+@property(readonly) int keyCode;
+@property(copy,readonly) NSString * keyIdentifier;
+@property(readonly) unsigned int keyLocation;
 @property(readonly) BOOL metaKey;
 @property(readonly) BOOL shiftKey;
 
 - (BOOL)altGraphKey;
 - (BOOL)altKey;
-- (NSInteger)charCode;
+- (int)charCode;
 - (BOOL)ctrlKey;
 - (BOOL)getModifierState:(id)arg1;
-- (void)initKeyboardEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 keyIdentifier:(id)arg5 keyLocation:(NSUInteger)arg6 ctrlKey:(BOOL)arg7 altKey:(BOOL)arg8 shiftKey:(BOOL)arg9 metaKey:(BOOL)arg10 altGraphKey:(BOOL)arg11;
-- (void)initKeyboardEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 keyIdentifier:(id)arg5 keyLocation:(NSUInteger)arg6 ctrlKey:(BOOL)arg7 altKey:(BOOL)arg8 shiftKey:(BOOL)arg9 metaKey:(BOOL)arg10;
-- (NSInteger)keyCode;
+- (void)initKeyboardEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 keyIdentifier:(id)arg5 keyLocation:(unsigned int)arg6 ctrlKey:(BOOL)arg7 altKey:(BOOL)arg8 shiftKey:(BOOL)arg9 metaKey:(BOOL)arg10 altGraphKey:(BOOL)arg11;
+- (void)initKeyboardEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 keyIdentifier:(id)arg5 keyLocation:(unsigned int)arg6 ctrlKey:(BOOL)arg7 altKey:(BOOL)arg8 shiftKey:(BOOL)arg9 metaKey:(BOOL)arg10;
+- (int)keyCode;
 - (id)keyIdentifier;
-- (NSUInteger)keyLocation;
+- (unsigned int)keyLocation;
 - (BOOL)metaKey;
 - (BOOL)shiftKey;
 

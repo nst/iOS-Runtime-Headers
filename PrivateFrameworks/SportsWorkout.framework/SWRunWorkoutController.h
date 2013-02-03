@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class SWUserInteractionSnapshotObserver, SWRunWorkout, CLLocation, SWRunWorkoutPreset, SWRemote, SWDataControllerSnapshotObserver, SWFastestDistanceWindowObserver, SWRunSensor, SWIntervalSnapshotObserver, SWDataController, CLLocationManager, NSString, NSMutableArray, NSTimer;
+@class SWUserInteractionSnapshotObserver, SWRunWorkout, CLLocation, SWRunWorkoutPreset, SWRemote, SWDataControllerSnapshotObserver, SWFastestDistanceWindowObserver, SWRunSensor, SWIntervalSnapshotObserver, NSDictionary, SWDataController, CLLocationManager, NSString, NSMutableArray, NSTimer;
 
 @interface SWRunWorkoutController : NSObject <CLLocationManagerDelegate> {
     SWDataController *_dataController;
@@ -18,7 +18,7 @@
     SWRunWorkoutPreset *_preset;
     float _previousObservedCalories;
     float _previousObservedDistanceInMiles;
-    NSUInteger _previousObservedElapsedTimeInSeconds;
+    unsigned int _previousObservedElapsedTimeInSeconds;
     CLLocation *_previousObservedLocation;
     float _previousObservedPaceInSecondsPerMile;
     SWRemote *_remote;
@@ -32,15 +32,9 @@
     NSString *_workoutState;
 }
 
-@property(readonly) SWDataController *dataController;
-@property(readonly) NSString *powerSongName;
-@property(retain) SWRunWorkoutPreset *preset;
-@property(readonly) SWRemote *remote;
-@property(readonly) SWRunSensor *sensor;
-@property(readonly) NSDictionary *workoutData;
-@property(readonly) NSString *workoutState;
 @property(readonly) BOOL canBeUsedForRunCalibration;
 @property(readonly) BOOL canBeUsedForWalkCalibration;
+@property(readonly) SWDataController * dataController;
 @property(readonly) BOOL hasEverStarted;
 @property(readonly) BOOL hasPowerSong;
 @property(readonly) BOOL isCalibratedForRun;
@@ -48,6 +42,12 @@
 @property BOOL isCalibration;
 @property(readonly) float maxCalibrationDistanceMiles;
 @property(readonly) float minCalibrationDistanceMiles;
+@property(readonly) NSString * powerSongName;
+@property(retain) SWRunWorkoutPreset * preset;
+@property(readonly) SWRemote * remote;
+@property(readonly) SWRunSensor * sensor;
+@property(readonly) NSDictionary * workoutData;
+@property(readonly) NSString * workoutState;
 
 + (void)__releaseWorkoutInProgressFileLock;
 + (id)__systemVersion;

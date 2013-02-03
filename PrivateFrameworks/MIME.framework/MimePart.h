@@ -6,8 +6,8 @@
 
 @interface MimePart : MFWeakObject <MFWeakReferenceHolder> {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     NSMutableDictionary *_bodyParameters;
     NSString *_contentTransferEncoding;
     MFData *_decodedData;
@@ -26,20 +26,20 @@
 + (BOOL)isRecognizedClassForContent:(id)arg1;
 + (BOOL)parseContentTypeHeader:(id)arg1 type:(id*)arg2 subtype:(id*)arg3;
 
-- (void)_contents:(id*)arg1 toOffset:(NSUInteger)arg2 resultOffset:(NSUInteger*)arg3 downloadIfNecessary:(BOOL)arg4 asHTML:(BOOL)arg5 isComplete:(BOOL*)arg6;
+- (void)_contents:(id*)arg1 toOffset:(unsigned int)arg2 resultOffset:(unsigned int*)arg3 downloadIfNecessary:(BOOL)arg4 asHTML:(BOOL)arg5 isComplete:(BOOL*)arg6;
 - (id)_fullMimeTypeEvenInsideAppleDouble;
-- (BOOL)_hasCompleteBodyDataToOffset:(NSUInteger)arg1;
+- (BOOL)_hasCompleteBodyDataToOffset:(unsigned int)arg1;
 - (id)_partThatIsAttachment;
 - (BOOL)_shouldContinueDecodingProcess;
 - (void)addSubpart:(id)arg1;
-- (id)alternativeAtIndex:(NSInteger)arg1;
-- (NSUInteger)approximateRawSize;
+- (id)alternativeAtIndex:(int)arg1;
+- (unsigned int)approximateRawSize;
 - (id)attachmentFilename;
 - (id)attachments;
 - (id)bodyData;
 - (id)bodyDataForcingDownload:(BOOL)arg1;
-- (id)bodyDataToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2 downloadIfNecessary:(BOOL)arg3;
-- (id)bodyDataToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2;
+- (id)bodyDataToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3;
+- (id)bodyDataToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2;
 - (id)bodyParameterForKey:(id)arg1;
 - (id)bodyParameterKeys;
 - (id)chosenAlternativePart;
@@ -48,19 +48,19 @@
 - (id)contentDescription;
 - (id)contentID;
 - (id)contentLocation;
-- (id)contentToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2 asHTML:(BOOL)arg3;
-- (id)contentToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2 downloadIfNecessary:(BOOL)arg3 asHTML:(BOOL)arg4 isComplete:(BOOL*)arg5;
-- (id)contentToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2 downloadIfNecessary:(BOOL)arg3 asHTML:(BOOL)arg4;
+- (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3;
+- (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3 asHTML:(BOOL)arg4 isComplete:(BOOL*)arg5;
+- (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3 asHTML:(BOOL)arg4;
 - (id)contentTransferEncoding;
 - (id)contentsForTextSystem;
 - (id)contentsForTextSystemForcingDownload:(BOOL)arg1;
-- (id)contentsForTextSystemToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2 downloadIfNecessary:(BOOL)arg3 asHTML:(BOOL)arg4 isComplete:(BOOL*)arg5;
-- (id)contentsForTextSystemToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2 downloadIfNecessary:(BOOL)arg3 asHTML:(BOOL)arg4;
-- (id)contentsForTextSystemToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2 downloadIfNecessary:(BOOL)arg3;
-- (id)contentsForTextSystemToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2;
-- (id)copyBodyDataToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2 downloadIfNecessary:(BOOL)arg3 isComplete:(BOOL*)arg4;
-- (id)copyBodyDataToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2 downloadIfNecessary:(BOOL)arg3;
-- (id)copyBodyDataToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2;
+- (id)contentsForTextSystemToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3 asHTML:(BOOL)arg4 isComplete:(BOOL*)arg5;
+- (id)contentsForTextSystemToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3 asHTML:(BOOL)arg4;
+- (id)contentsForTextSystemToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3;
+- (id)contentsForTextSystemToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2;
+- (id)copyBodyDataToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3 isComplete:(BOOL*)arg4;
+- (id)copyBodyDataToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3;
+- (id)copyBodyDataToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2;
 - (void)dealloc;
 - (id)decodeApplicationOctet_stream;
 - (id)decodeApplicationZip;
@@ -78,7 +78,7 @@
 - (id)fileWrapperForDecodedObject:(id)arg1 withFileData:(id*)arg2;
 - (id)fileWrapperForcingDownload:(BOOL)arg1;
 - (id)firstChildPart;
-- (void)getNumberOfAttachments:(NSUInteger*)arg1 isSigned:(BOOL*)arg2 isEncrypted:(BOOL*)arg3;
+- (void)getNumberOfAttachments:(unsigned int*)arg1 isSigned:(BOOL*)arg2 isEncrypted:(BOOL*)arg3;
 - (BOOL)hasContents;
 - (id)init;
 - (BOOL)isAttachment;
@@ -88,15 +88,15 @@
 - (id)languages;
 - (id)mimeBody;
 - (id)nextSiblingPart;
-- (NSInteger)numberOfAlternatives;
-- (NSUInteger)numberOfAttachments;
+- (int)numberOfAlternatives;
+- (unsigned int)numberOfAttachments;
 - (void)objectWillBeDeallocated:(id)arg1;
 - (id)parentPart;
 - (BOOL)parseIMAPPropertyList:(id)arg1;
 - (BOOL)parseMimeBody;
 - (id)partNumber;
 - (id)preservedHeaderValueForKey:(id)arg1;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })range;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (void)setBodyParameter:(id)arg1 forKey:(id)arg2;
 - (void)setContentDescription:(id)arg1;
 - (void)setContentID:(id)arg1;
@@ -106,7 +106,7 @@
 - (void)setDispositionParameter:(id)arg1 forKey:(id)arg2;
 - (void)setLanguages:(id)arg1;
 - (void)setMimeBody:(id)arg1;
-- (void)setRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setSubparts:(id)arg1;
 - (void)setSubtype:(id)arg1;
 - (void)setType:(id)arg1;
@@ -114,12 +114,12 @@
 - (id)signedData;
 - (id)startPart;
 - (void)storeData:(id)arg1 inMessage:(id)arg2 isComplete:(BOOL)arg3;
-- (id)subpartAtIndex:(NSInteger)arg1;
+- (id)subpartAtIndex:(int)arg1;
 - (id)subparts;
 - (id)subtype;
 - (unsigned long)textEncoding;
 - (id)textHtmlPart;
-- (NSUInteger)totalTextSize;
+- (unsigned int)totalTextSize;
 - (id)type;
 - (BOOL)usesKnownSignatureProtocol;
 

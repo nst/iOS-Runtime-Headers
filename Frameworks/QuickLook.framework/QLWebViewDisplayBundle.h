@@ -16,7 +16,7 @@
     unsigned int _isCSVContent : 1;
     unsigned int _loadStarted : 1;
     UICheckeredPatternView *_checkeredView;
-    NSInteger _lastOrientation;
+    int _lastOrientation;
     float _navigationBarHeight;
     } _savedOffset;
     QLDelayedScrollView *_scrollView;
@@ -34,7 +34,7 @@
 - (BOOL)canPrint;
 - (void)cancelLoad;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)loadView;
 - (void)loadWithHints:(id)arg1;
@@ -62,7 +62,7 @@
 - (void)webView:(id)arg1 resource:(id)arg2 didFailLoadingWithError:(id)arg3 fromDataSource:(id)arg4;
 - (void)webView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;
 - (id)webView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

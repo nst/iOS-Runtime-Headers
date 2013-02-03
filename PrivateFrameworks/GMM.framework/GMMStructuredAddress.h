@@ -14,13 +14,9 @@
     NSString *_thoroughfare;
 }
 
-@property(retain) NSString *countryCode;
-@property(retain) NSString *countryName;
-@property(retain) NSString *dependentLocality;
-@property(retain) NSString *locality;
-@property(retain) NSString *postalCode;
-@property(retain) NSString *region;
-@property(retain) NSString *thoroughfare;
+@property(retain) NSString * countryCode;
+@property(retain) NSString * countryName;
+@property(retain) NSString * dependentLocality;
 @property(readonly) BOOL hasCountryCode;
 @property(readonly) BOOL hasCountryName;
 @property(readonly) BOOL hasDependentLocality;
@@ -28,6 +24,10 @@
 @property(readonly) BOOL hasPostalCode;
 @property(readonly) BOOL hasRegion;
 @property(readonly) BOOL hasThoroughfare;
+@property(retain) NSString * locality;
+@property(retain) NSString * postalCode;
+@property(retain) NSString * region;
+@property(retain) NSString * thoroughfare;
 
 - (id)countryCode;
 - (id)countryName;

@@ -7,7 +7,7 @@
 
 + (id)objectWithDefaultButtonForScriptObject:(id)arg1;
 
-- (NSInteger)buttonType;
+- (int)buttonType;
 - (void)destroyNativeObject;
 - (id)image;
 - (BOOL)isLoading;

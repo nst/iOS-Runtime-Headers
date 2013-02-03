@@ -2,16 +2,18 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class UITableView;
+
 @interface UITableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     struct { 
         unsigned int clearsSelectionOnViewWillAppear : 1; 
     id _keyboardSupport;
     } _tableViewControllerFlags;
-    NSInteger _tableViewStyle;
+    int _tableViewStyle;
 }
 
-@property(retain) UITableView *tableView;
 @property BOOL clearsSelectionOnViewWillAppear;
+@property(retain) UITableView * tableView;
 
 + (void)_initializeSafeCategory;
 
@@ -24,14 +26,14 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithStyle:(NSInteger)arg1;
+- (id)initWithStyle:(int)arg1;
 - (void)loadView;
 - (void)setClearsSelectionOnViewWillAppear:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
 - (id)tableView;
 - (void)viewDidAppear:(BOOL)arg1;

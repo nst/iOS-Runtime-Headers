@@ -8,7 +8,7 @@
     struct CGContext { } *_context;
     struct CGPath { } *_contextPath;
     id _fillStyle;
-    NSInteger _fillStyleType;
+    int _fillStyleType;
     float _globalAlpha;
     NSString *_globalCompositeOperation;
     float _height;
@@ -21,24 +21,24 @@
     float _shadowOffsetX;
     float _shadowOffsetY;
     id _strokeStyle;
-    NSInteger _strokeStyleType;
+    int _strokeStyleType;
     float _width;
 }
 
-@property(getter=_height) float height; /* unknown property attribute: Sset_height: */
-@property(getter=_width) float width; /* unknown property attribute: Sset_width: */
-@property(getter=_fillStyle,retain) id fillStyle; /* unknown property attribute: Sset_fillStyle: */
-@property(getter=_strokeStyle,retain) id strokeStyle; /* unknown property attribute: Sset_strokeStyle: */
-@property(getter=_globalAlpha) float globalAlpha; /* unknown property attribute: Sset_globalAlpha: */
-@property(getter=_globalCompositeOperation,retain) NSString *globalCompositeOperation; /* unknown property attribute: Sset_globalCompositeOperation: */
-@property(getter=_lineCap,retain) id lineCap; /* unknown property attribute: Sset_lineCap: */
-@property(getter=_lineJoin,retain) id lineJoin; /* unknown property attribute: Sset_lineJoin: */
-@property(getter=_lineWidth) float lineWidth; /* unknown property attribute: Sset_lineWidth: */
-@property(getter=_miterLimit) float miterLimit; /* unknown property attribute: Sset_miterLimit: */
-@property(getter=_shadowBlur) float shadowBlur; /* unknown property attribute: Sset_shadowBlur: */
-@property(getter=_shadowColor) id shadowColor; /* unknown property attribute: Sset_shadowColor: */
-@property(getter=_shadowOffsetX) float shadowOffsetX; /* unknown property attribute: Sset_shadowOffsetX: */
-@property(getter=_shadowOffsetY) float shadowOffsetY; /* unknown property attribute: Sset_shadowOffsetY: */
+@property(getter=_fillStyle,setter=set_fillStyle:,retain) id fillStyle;
+@property(getter=_globalAlpha,setter=set_globalAlpha:) float globalAlpha;
+@property(getter=_globalCompositeOperation,setter=set_globalCompositeOperation:,retain) NSString * globalCompositeOperation;
+@property(getter=_height,setter=set_height:) float height;
+@property(getter=_lineCap,setter=set_lineCap:,retain) id lineCap;
+@property(getter=_lineJoin,setter=set_lineJoin:,retain) id lineJoin;
+@property(getter=_lineWidth,setter=set_lineWidth:) float lineWidth;
+@property(getter=_miterLimit,setter=set_miterLimit:) float miterLimit;
+@property(getter=_shadowBlur,setter=set_shadowBlur:) float shadowBlur;
+@property(getter=_shadowColor,setter=set_shadowColor:) id shadowColor;
+@property(getter=_shadowOffsetX,setter=set_shadowOffsetX:) float shadowOffsetX;
+@property(getter=_shadowOffsetY,setter=set_shadowOffsetY:) float shadowOffsetY;
+@property(getter=_strokeStyle,setter=set_strokeStyle:,retain) id strokeStyle;
+@property(getter=_width,setter=set_width:) float width;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;

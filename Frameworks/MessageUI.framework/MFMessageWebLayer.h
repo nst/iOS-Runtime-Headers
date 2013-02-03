@@ -10,7 +10,7 @@
     unsigned int _isFromEntourage : 1;
     unsigned int _isStoppedAndCleared : 1;
     NSString *_currentUUID;
-    NSInteger _messageDisplayStyle;
+    int _messageDisplayStyle;
     <MFMessageWebLayerDelegate> *_mwlDelegate;
     BOOL _prePrintDataDetectionPending;
 }
@@ -35,11 +35,11 @@
 - (void)dealloc;
 - (void)defaultMouseDragged:(struct __GSEvent { }*)arg1;
 - (BOOL)hasPluginWithUninitializedSize;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 visibleSize:(struct CGSize { float x1; float x2; })arg2 viewportWidth:(float)arg3 displayStyle:(NSInteger)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 visibleSize:(struct CGSize { float x1; float x2; })arg2 viewportWidth:(float)arg3 displayStyle:(int)arg4;
 - (BOOL)isCancelled;
 - (void)loadFragments:(id)arg1 withDDContext:(id)arg2;
 - (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
-- (NSInteger)messageDisplayStyle;
+- (int)messageDisplayStyle;
 - (id)messageWebLayerDelegate;
 - (BOOL)notifyDelegateToDisplayContextualMenu:(id)arg1;
 - (void)notifyDelegateToDisplayInSeparateView:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 sender:(id)arg3;
@@ -53,7 +53,7 @@
 - (void)setMessageWebLayerDelegate:(id)arg1;
 - (void)setPrePrintDataDetectionPending:(BOOL)arg1;
 - (BOOL)shouldChangeForBody:(id)arg1 inDocument:(id)arg2 shouldContinue:(BOOL*)arg3;
-- (BOOL)standardDeviationOfWidths:(float*)arg1 andMean:(float*)arg2 withMax:(NSInteger*)arg3 forBody:(id)arg4 inDocument:(id)arg5;
+- (BOOL)standardDeviationOfWidths:(float*)arg1 andMean:(float*)arg2 withMax:(int*)arg3 forBody:(id)arg4 inDocument:(id)arg5;
 - (void)stopLoadingAndClear;
 - (void)updateImageURL:(id)arg1 withURL:(id)arg2 width:(float)arg3;
 - (void)updateInlinePluginWithContentID:(id)arg1 htmlRepresentation:(id)arg2;

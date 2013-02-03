@@ -6,7 +6,7 @@
 
 @interface UIMultiColumnsNavigationTransitionView : UIView <NSCoding> {
     unsigned int _isTransitioning : 1;
-    NSInteger _columnCount;
+    int _columnCount;
     float _columnWidth;
     struct __CFDictionary { } *_containerViews;
     id _delegate;
@@ -17,16 +17,16 @@
     UIView *_firstResponderViewToRestore;
     NSArray *_fromViews;
     NSArray *_toViews;
-    NSInteger _transition;
+    int _transition;
     NSArray *_viewsToAdd;
     NSArray *_viewsToRemove;
 }
 
-@property NSInteger columnCount;
+@property int columnCount;
 @property float columnWidth;
 @property id delegate;
 
-+ (double)defaultDurationForTransition:(NSInteger)arg1;
++ (double)defaultDurationForTransition:(int)arg1;
 
 - (id)_containerViewForView:(id)arg1;
 - (id)_dividerViewForView:(id)arg1;
@@ -34,7 +34,7 @@
 - (void)_navigationTransitionDidStop;
 - (void)_removeContainerViewForView:(id)arg1;
 - (void)_removeDividerViewForView:(id)arg1;
-- (NSInteger)columnCount;
+- (int)columnCount;
 - (float)columnWidth;
 - (void)dealloc;
 - (id)delegate;
@@ -42,10 +42,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isTransitioning;
-- (void)setColumnCount:(NSInteger)arg1;
+- (void)setColumnCount:(int)arg1;
 - (void)setColumnWidth:(float)arg1;
 - (void)setDelegate:(id)arg1;
-- (BOOL)transition:(NSInteger)arg1 fromViews:(id)arg2 toViews:(id)arg3;
-- (BOOL)transition:(NSInteger)arg1 toViews:(id)arg2;
+- (BOOL)transition:(int)arg1 fromViews:(id)arg2 toViews:(id)arg3;
+- (BOOL)transition:(int)arg1 toViews:(id)arg2;
 
 @end

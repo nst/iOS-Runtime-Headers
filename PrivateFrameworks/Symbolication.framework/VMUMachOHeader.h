@@ -7,8 +7,8 @@
 @interface VMUMachOHeader : VMUHeader {
     unsigned long long _address;
     NSString *_dsymPath;
-    NSUInteger _fileType;
-    NSUInteger _flags;
+    unsigned int _fileType;
+    unsigned int _flags;
     unsigned long long _linkEditBase;
     NSArray *_loadCommands;
     <VMUMemory> *_memory;
@@ -21,15 +21,15 @@
 - (unsigned long long)address;
 - (id)architecture;
 - (id)commpage;
-- (NSUInteger)compatibilityVersion;
-- (NSUInteger)currentVersion;
+- (unsigned int)compatibilityVersion;
+- (unsigned int)currentVersion;
 - (void)dealloc;
 - (id)description;
 - (id)dsymPath;
 - (id)dyLinkerPath;
 - (id)dySymbolTable;
-- (NSUInteger)fileType;
-- (NSUInteger)flags;
+- (unsigned int)fileType;
+- (unsigned int)flags;
 - (BOOL)isCommpage;
 - (BOOL)isFromSharedCache;
 - (BOOL)isMachO;

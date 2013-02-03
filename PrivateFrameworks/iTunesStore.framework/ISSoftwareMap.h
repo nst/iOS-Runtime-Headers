@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSArray;
 
 @interface ISSoftwareMap : NSObject {
     NSMutableArray *_applications;
 }
 
-@property(readonly) NSArray *applications;
+@property(readonly) NSArray * applications;
 
 + (void)_startWatchingInstallationNotifications;
 + (id)applicationForBundleIdentifier:(id)arg1;
@@ -21,9 +21,12 @@
 + (void)startObservingNotifications;
 
 - (void)_loadFromMobileInstallation;
+- (id)_newSoftwareUpdateDictionaryForApplication:(id)arg1;
+- (id)_softwareUpdatesAccountsStringForApplications:(id)arg1;
 - (id)applicationForBundleIdentifier:(id)arg1;
 - (id)applicationForItemIdentifier:(id)arg1;
 - (id)applications;
+- (id)copySoftwareUpdatesPropertyList;
 - (void)dealloc;
 - (id)init;
 

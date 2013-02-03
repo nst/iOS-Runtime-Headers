@@ -13,11 +13,11 @@
     unsigned short unicodeCharacter;
 }
 
-@property(retain) NSString *codePoint;
-@property(retain) NSString *imageName;
-@property(retain) NSString *name;
-@property(retain) NSString *privateCodePoint;
-@property(retain) NSString *publicCodePoint;
+@property(retain) NSString * codePoint;
+@property(retain) NSString * imageName;
+@property(retain) NSString * name;
+@property(retain) NSString * privateCodePoint;
+@property(retain) NSString * publicCodePoint;
 @property unsigned short unicodeCharacter;
 
 + (void)_initializeSafeCategory;

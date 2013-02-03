@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSDate, NSString;
+@class NSDate, NSString, IMMessage;
 
 @interface IMChatItem : NSObject {
     NSDate *_date;
@@ -13,11 +13,11 @@
     BOOL _isFromArchive;
 }
 
-@property(readonly) NSDate *date;
-@property(readonly) NSString *guid;
-@property(readonly) IMMessage *message;
-@property(readonly) NSString *stringValue;
+@property(readonly) NSDate * date;
+@property(readonly) NSString * guid;
 @property(readonly) BOOL isFromArchive;
+@property(readonly) IMMessage * message;
+@property(readonly) NSString * stringValue;
 
 - (id)_initWithGUID:(id)arg1 date:(id)arg2 datum1:(id)arg3 datum2:(id)arg4 datum3:(id)arg5;
 - (void)_setIsFromArchive:(BOOL)arg1;

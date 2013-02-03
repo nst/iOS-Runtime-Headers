@@ -2,44 +2,48 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CLLocation, NSString, MKUserLocationSearchResult;
+@class CLLocation, CLHeading, NSString, MKUserLocationSearchResult;
 
 @interface MKUserLocationInternal : NSObject {
     CLLocation *fixedLocation;
+    CLHeading *heading;
     CLLocation *location;
     CLLocation *predictedLocation;
     MKUserLocationSearchResult *searchResult;
-    NSInteger source;
+    int source;
     NSString *subtitle;
     double timestamp;
     NSString *title;
     BOOL updating;
 }
 
-@property(retain) CLLocation *fixedLocation;
-@property(retain) CLLocation *location;
-@property(retain) CLLocation *predictedLocation;
-@property(readonly) MKUserLocationSearchResult *searchResult;
-@property(retain) NSString *subtitle;
-@property(retain) NSString *title;
-@property NSInteger source;
+@property(retain) CLLocation * fixedLocation;
+@property(retain) CLHeading * heading;
+@property(retain) CLLocation * location;
+@property(retain) CLLocation * predictedLocation;
+@property(readonly) MKUserLocationSearchResult * searchResult;
+@property int source;
+@property(retain) NSString * subtitle;
 @property double timestamp;
+@property(retain) NSString * title;
 @property(getter=isUpdating) BOOL updating;
 
 - (id)fixedLocation;
+- (id)heading;
 - (BOOL)isUpdating;
 - (id)location;
 - (id)predictedLocation;
 - (id)searchResult;
 - (void)setFixedLocation:(id)arg1;
+- (void)setHeading:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setPredictedLocation:(id)arg1;
-- (void)setSource:(NSInteger)arg1;
+- (void)setSource:(int)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUpdating:(BOOL)arg1;
-- (NSInteger)source;
+- (int)source;
 - (id)subtitle;
 - (double)timestamp;
 - (id)title;

@@ -10,8 +10,8 @@
     Class _parseClass;
 }
 
-@property(retain) NSString *name;
-@property(retain) NSString *nameSpace;
+@property(retain) NSString * name;
+@property(retain) NSString * nameSpace;
 @property Class parseClass;
 
 - (void)dealloc;

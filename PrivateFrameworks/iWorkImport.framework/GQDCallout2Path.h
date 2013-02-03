@@ -18,7 +18,7 @@
 
 - (double)cornerRadius;
 - (struct CGPath { }*)createBezierPath;
-- (NSInteger)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 - (struct CGSize { float x1; float x2; })size;
 - (BOOL)tailAtCenter;
 - (struct CGPoint { float x1; float x2; })tailCenter;

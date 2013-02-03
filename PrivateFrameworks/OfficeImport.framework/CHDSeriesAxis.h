@@ -3,11 +3,11 @@
  */
 
 @interface CHDSeriesAxis : CHDAxis {
-    NSInteger mLabelFrequency;
+    int mLabelFrequency;
 }
 
 - (id)initWithResources:(id)arg1;
-- (NSInteger)labelFrequency;
-- (void)setLabelFrequency:(NSInteger)arg1;
+- (int)labelFrequency;
+- (void)setLabelFrequency:(int)arg1;
 
 @end

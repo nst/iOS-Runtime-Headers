@@ -10,12 +10,12 @@
     id _delegate;
     BOOL _isLoading;
     NSMutableString *_moreCommentsURLString;
-    NSUInteger _startIndex;
-    NSUInteger _totalResults;
+    unsigned int _startIndex;
+    unsigned int _totalResults;
     YTVideo *_video;
 }
 
-+ (NSUInteger)commentsPerRequest;
++ (unsigned int)commentsPerRequest;
 
 - (void)_didAuthenticate:(id)arg1;
 - (void)_failedToAuthenticate:(id)arg1;
@@ -27,7 +27,7 @@
 - (id)initRequestingCommentsForVideo:(id)arg1 withDelegate:(id)arg2;
 - (BOOL)isLoading;
 - (void)loadRequest:(id)arg1;
-- (NSInteger)parseData:(id)arg1;
+- (int)parseData:(id)arg1;
 - (void)requestMoreComments;
 
 @end

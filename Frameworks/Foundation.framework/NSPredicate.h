@@ -7,7 +7,7 @@
 }
 
 + (void)initialize;
-+ (id)newStringFrom:(id)arg1 usingUnicodeTransforms:(NSUInteger)arg2;
++ (id)newStringFrom:(id)arg1 usingUnicodeTransforms:(unsigned int)arg2;
 + (id)predicateWithBlock:(id)arg1;
 + (id)predicateWithFormat:(id)arg1 argumentArray:(id)arg2;
 + (id)predicateWithFormat:(id)arg1 arguments:(void*)arg2;
@@ -16,10 +16,10 @@
 + (struct __CFLocale { }*)retainedLocale;
 
 - (void)ab_addCallbackContextToArray:(struct __CFArray { }*)arg1;
-- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(NSInteger*)arg2 predicateIdentifier:(NSInteger)arg3;
+- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (BOOL)ab_hasCallback;
-- (id)ab_newQueryWithSortOrder:(NSUInteger)arg1 addressBook:(void*)arg2 propertyIndices:(const struct __CFDictionary {}**)arg3;
-- (void)acceptVisitor:(id)arg1 flags:(NSUInteger)arg2;
+- (id)ab_newQueryWithSortOrder:(unsigned int)arg1 addressBook:(void*)arg2 propertyIndices:(const struct __CFDictionary {}**)arg3;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

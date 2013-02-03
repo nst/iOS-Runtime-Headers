@@ -9,7 +9,7 @@
 }
 
 @property BOOL animatesDrop;
-@property NSUInteger pinColor;
+@property unsigned int pinColor;
 
 + (id)_bounceAnimation;
 + (struct CGPoint { float x1; float x2; })_calloutOffset;
@@ -20,14 +20,14 @@
 + (struct CGPoint { float x1; float x2; })_perceivedAnchorPoint;
 + (struct CGSize { float x1; float x2; })_perceivedSize;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_pinFrameForPosition:(struct CGPoint { float x1; float x2; })arg1;
-+ (id)_pinsWithType:(NSInteger)arg1;
++ (id)_pinsWithType:(int)arg1;
 + (id)_reuseIdentifier;
 + (struct CGPoint { float x1; float x2; })_shadowAnchorPoint;
 + (id)_shadowDropAnimation;
 + (id)_shadowImage;
 + (Class)layerClass;
 
-- (NSInteger)_annotationViewType;
+- (int)_annotationViewType;
 - (id)_bounceAnimation:(BOOL)arg1 withBeginTime:(double)arg2 addToLayer:(BOOL)arg3;
 - (void)_cleanupAfterPinDropAnimation;
 - (id)_delegate;
@@ -43,15 +43,15 @@
 - (void)_liftForDraggingAnimated:(BOOL)arg1;
 - (id)_pinBounceImages;
 - (id)_pinJumpImages;
-- (NSInteger)_pinType;
+- (int)_pinType;
 - (id)_pins;
 - (void)_removeAllAnimations;
 - (void)_reset;
 - (void)_setDelegate:(id)arg1;
-- (void)_setMapType:(NSUInteger)arg1;
-- (void)_setPinType:(NSInteger)arg1;
+- (void)_setMapType:(unsigned int)arg1;
+- (void)_setPinType:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
-- (NSInteger)_state;
+- (int)_state;
 - (void)_stopDrop;
 - (void)_stopDropAnimationAndDropToPosition;
 - (void)_updatePinType;
@@ -64,13 +64,13 @@
 - (BOOL)isDraggable;
 - (BOOL)isHighlighted;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (NSUInteger)pinColor;
+- (unsigned int)pinColor;
 - (void)setAnimatesDrop:(BOOL)arg1;
 - (void)setAnnotation:(id)arg1;
 - (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setDragState:(NSUInteger)arg1 animated:(BOOL)arg2;
-- (void)setDragState:(NSUInteger)arg1;
+- (void)setDragState:(unsigned int)arg1 animated:(BOOL)arg2;
+- (void)setDragState:(unsigned int)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setPinColor:(NSUInteger)arg1;
+- (void)setPinColor:(unsigned int)arg1;
 
 @end

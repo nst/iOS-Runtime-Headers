@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableSet;
+@class NSSet, NSMutableSet;
 
 @interface PLAirTunesServiceBrowser : NSObject <NSNetServiceBrowserDelegate> {
     NSMutableSet *_availableAirTunesServices;
@@ -11,7 +11,7 @@
     BOOL _searchForAirTunesServers;
 }
 
-@property(readonly) NSSet *availableAirTunesServices;
+@property(readonly) NSSet * availableAirTunesServices;
 @property BOOL searchForAirTunesServers;
 
 - (void)_didFindService:(id)arg1 moreComing:(BOOL)arg2;

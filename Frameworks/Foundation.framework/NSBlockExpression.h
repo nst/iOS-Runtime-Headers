@@ -14,16 +14,16 @@
 }
 
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
-- (void)acceptVisitor:(id)arg1 flags:(NSUInteger)arg2;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (id)arguments;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expressionBlock;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(NSUInteger)arg1 block:(id)arg2 arguments:(id)arg3;
+- (id)initWithType:(unsigned int)arg1 block:(id)arg2 arguments:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)predicateFormat;
 

@@ -15,7 +15,7 @@
     NSString *mUnicodeClipboardFormatName;
     NSString *mUnicodeProgID;
     NSString *mUnicodeUserType;
-    NSUInteger mWinClipboardFormat;
+    unsigned int mWinClipboardFormat;
 }
 
 + (BOOL)isCLSIDSupported:(id)arg1;

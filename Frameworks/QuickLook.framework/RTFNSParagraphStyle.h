@@ -5,8 +5,8 @@
 @class NSArray;
 
 @interface RTFNSParagraphStyle : NSObject <NSCopying, NSMutableCopying> {
-    NSUInteger _alignment;
-    NSInteger _baseWritingDirection;
+    unsigned int _alignment;
+    int _baseWritingDirection;
     float _firstLineHeadIndent;
     float _headIndent;
     float _tailIndent;
@@ -14,8 +14,8 @@
 }
 
 - (id)_initWithParagraphStyle:(id)arg1;
-- (NSUInteger)alignment;
-- (NSInteger)baseWritingDirection;
+- (unsigned int)alignment;
+- (int)baseWritingDirection;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (float)firstLineHeadIndent;

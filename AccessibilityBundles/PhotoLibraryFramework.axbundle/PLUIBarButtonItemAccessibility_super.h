@@ -7,6 +7,6 @@
 
 + (void)_initializeSafeCategory;
 
-- (void)setTag:(NSInteger)arg1;
+- (void)setTag:(int)arg1;
 
 @end

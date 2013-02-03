@@ -7,7 +7,7 @@
 @interface WDShading : NSObject <NSCopying> {
     NSColorStub *mBackgroundColor;
     NSColorStub *mForegroundColor;
-    NSInteger mStyle;
+    int mStyle;
 }
 
 - (id)background;
@@ -20,7 +20,7 @@
 - (void)setBackground:(id)arg1;
 - (void)setForeground:(id)arg1;
 - (void)setShading:(id)arg1;
-- (void)setStyle:(NSInteger)arg1;
-- (NSInteger)style;
+- (void)setStyle:(int)arg1;
+- (int)style;
 
 @end

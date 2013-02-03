@@ -2,26 +2,28 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class SUScriptSegmentedControl, NSNumber;
+
 @interface SUScriptStorePageViewController : SUScriptViewController {
 }
 
-@property(retain) SUScriptSegmentedControl *segmentedControl;
-@property(retain) NSNumber *timeoutInterval;
 @property(retain) id URLs;
 @property BOOL doubleTapEnabled;
-@property(readonly) NSInteger indicatorStyleGray;
-@property(readonly) NSInteger indicatorStyleWhite;
+@property(readonly) int indicatorStyleGray;
+@property(readonly) int indicatorStyleWhite;
 @property id inputViewObeysDOMFocus;
-@property NSInteger loadingIndicatorStyle;
+@property int loadingIndicatorStyle;
 @property(retain) id loadingTextColor;
 @property(retain) id loadingTextShadowColor;
 @property(retain) id placeholderBackgroundStyle;
 @property(readonly) id rootObject;
 @property BOOL scrollingEnabled;
+@property(retain) SUScriptSegmentedControl * segmentedControl;
 @property BOOL shouldInvalidateForLowMemory;
 @property BOOL shouldLoadProgressively;
 @property id shouldShowFormAccessory;
 @property BOOL showsBackgroundShadow;
+@property(retain) NSNumber * timeoutInterval;
 
 + (BOOL)copyURLStrings:(id*)arg1 forValue:(id)arg2;
 + (id)webScriptNameForKey:(const char *)arg1;
@@ -62,13 +64,13 @@
 - (id)_storePageViewController;
 - (id)attributeKeys;
 - (BOOL)doubleTapEnabled;
-- (NSInteger)indicatorStyleGray;
-- (NSInteger)indicatorStyleWhite;
+- (int)indicatorStyleGray;
+- (int)indicatorStyleWhite;
 - (id)init;
 - (id)initWithURLStrings:(id)arg1;
 - (id)inputViewObeysDOMFocus;
 - (id)loadWebArchiveWithIdentifier:(id)arg1 fromDirectory:(id)arg2;
-- (NSInteger)loadingIndicatorStyle;
+- (int)loadingIndicatorStyle;
 - (id)loadingTextColor;
 - (id)loadingTextShadowColor;
 - (id)newNativeViewController;
@@ -81,7 +83,7 @@
 - (id)segmentedControl;
 - (void)setDoubleTapEnabled:(BOOL)arg1;
 - (void)setInputViewObeysDOMFocus:(id)arg1;
-- (void)setLoadingIndicatorStyle:(NSInteger)arg1;
+- (void)setLoadingIndicatorStyle:(int)arg1;
 - (void)setLoadingTextColor:(id)arg1;
 - (void)setLoadingTextShadowColor:(id)arg1;
 - (void)setNativeViewController:(id)arg1;

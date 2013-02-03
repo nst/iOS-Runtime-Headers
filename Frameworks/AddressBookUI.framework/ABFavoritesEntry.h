@@ -7,20 +7,20 @@
 @interface ABFavoritesEntry : NSObject {
     unsigned int _dirty : 1;
     NSString *_abDatabaseUUID;
-    NSInteger _abIdentifier;
-    NSInteger _abUid;
+    int _abIdentifier;
+    int _abUid;
     void *_addressBook;
     NSString *_label;
     NSString *_name;
-    NSInteger _property;
-    NSInteger _type;
+    int _property;
+    int _type;
     NSString *_value;
 }
 
 + (void)_runLookup;
 
 - (void*)ABPerson;
-- (NSInteger)_abUid;
+- (int)_abUid;
 - (void)_lookupChanged:(id)arg1;
 - (void)_lookupNotFound;
 - (void)_postEntryChanged;
@@ -30,16 +30,16 @@
 - (void)dictionaryRepresentation:(id*)arg1 isDirty:(BOOL*)arg2;
 - (id)dictionaryRepresentation;
 - (id)displayName;
-- (NSInteger)identifier;
+- (int)identifier;
 - (id)initWithDictionaryRepresentation:(id)arg1 addressBook:(void*)arg2;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithPerson:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3 type:(NSInteger)arg4;
-- (id)initWithPerson:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3;
+- (id)initWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3 type:(int)arg4;
+- (id)initWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)label;
-- (NSInteger)property;
+- (int)property;
 - (void)recheckAddressBook;
-- (NSInteger)type;
+- (int)type;
 - (id)value;
 
 @end

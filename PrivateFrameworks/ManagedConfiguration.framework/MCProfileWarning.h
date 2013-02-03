@@ -10,9 +10,9 @@
     NSString *_localizedTitle;
 }
 
-@property(retain) NSString *localizedBody;
-@property(retain) NSString *localizedTitle;
 @property BOOL isLongForm;
+@property(retain) NSString * localizedBody;
+@property(retain) NSString * localizedTitle;
 
 + (id)warningWithLocalizedTitle:(id)arg1 localizedBody:(id)arg2 isLongForm:(BOOL)arg3;
 

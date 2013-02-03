@@ -10,7 +10,7 @@
     NSData *data;
 }
 
-+ (NSInteger)_umask;
++ (int)_umask;
 + (void)initialize;
 
 - (id)_mappedFile;
@@ -20,17 +20,17 @@
 - (void)dealloc;
 - (id)deserializer;
 - (id)init;
-- (id)initFromSerializerStream:(id)arg1 length:(NSUInteger)arg2;
-- (id)initWithBytes:(const void*)arg1 length:(NSUInteger)arg2;
-- (id)initWithBytesNoCopy:(void*)arg1 length:(NSUInteger)arg2;
+- (id)initFromSerializerStream:(id)arg1 length:(unsigned int)arg2;
+- (id)initWithBytes:(const void*)arg1 length:(unsigned int)arg2;
+- (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfMappedFile:(id)arg1 withFileAttributes:(id)arg2;
 - (id)initWithContentsOfMappedFile:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (id)initWithDataNoCopy:(id)arg1;
-- (NSUInteger)length;
-- (NSUInteger)writeFd:(NSInteger)arg1;
-- (NSUInteger)writeFile:(id)arg1;
-- (NSUInteger)writePath:(id)arg1 docInfo:(id)arg2 errorHandler:(id)arg3 remapContents:(BOOL)arg4 hardLinkPath:(id)arg5;
+- (unsigned int)length;
+- (unsigned int)writeFd:(int)arg1;
+- (unsigned int)writeFile:(id)arg1;
+- (unsigned int)writePath:(id)arg1 docInfo:(id)arg2 errorHandler:(id)arg3 remapContents:(BOOL)arg4 hardLinkPath:(id)arg5;
 
 @end

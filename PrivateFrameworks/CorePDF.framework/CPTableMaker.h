@@ -5,7 +5,7 @@
 @class CPTable, CPZone;
 
 @interface CPTableMaker : NSObject {
-    NSUInteger cellIndex;
+    unsigned int cellIndex;
     struct { float x1; float x2; } *columnXIntervals;
     struct { float x1; float x2; } *rowYIntervals;
     CPTable *table;

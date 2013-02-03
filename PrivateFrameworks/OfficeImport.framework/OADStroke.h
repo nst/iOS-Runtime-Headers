@@ -25,21 +25,21 @@
     float mWidth;
 }
 
-@property(retain) OADLineEnd *head;
-@property(retain) OADLineEnd *tail;
+@property(retain) OADLineEnd * head;
+@property(retain) OADLineEnd * tail;
 
 + (id)blackStroke;
 + (id)defaultProperties;
 + (id)nullStroke;
 
-- (NSInteger)cap;
+- (int)cap;
 - (id)color;
-- (NSInteger)compoundType;
+- (int)compoundType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dash;
 - (void)dealloc;
 - (id)fill;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)head;
 - (id)init;
 - (id)initWithDefaults;
@@ -53,16 +53,16 @@
 - (BOOL)isPenAlignmentOverridden;
 - (BOOL)isWidthOverridden;
 - (id)join;
-- (NSInteger)penAlignment;
-- (void)setCap:(NSInteger)arg1;
+- (int)penAlignment;
+- (void)setCap:(int)arg1;
 - (void)setColor:(id)arg1;
-- (void)setCompoundType:(NSInteger)arg1;
+- (void)setCompoundType:(int)arg1;
 - (void)setDash:(id)arg1;
 - (void)setFill:(id)arg1;
 - (void)setHead:(id)arg1;
 - (void)setJoin:(id)arg1;
 - (void)setParent:(id)arg1;
-- (void)setPenAlignment:(NSInteger)arg1;
+- (void)setPenAlignment:(int)arg1;
 - (void)setStyleColor:(id)arg1;
 - (void)setTail:(id)arg1;
 - (void)setWidth:(float)arg1;

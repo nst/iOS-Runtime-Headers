@@ -7,8 +7,8 @@
 @interface AVVideoCompositionInternal : NSObject {
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     struct CGSize { 
         float width; 

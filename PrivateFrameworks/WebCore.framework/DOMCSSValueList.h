@@ -5,9 +5,9 @@
 @interface DOMCSSValueList : DOMCSSValue {
 }
 
-@property(readonly) NSUInteger length;
+@property(readonly) unsigned int length;
 
-- (id)item:(NSUInteger)arg1;
-- (NSUInteger)length;
+- (id)item:(unsigned int)arg1;
+- (unsigned int)length;
 
 @end

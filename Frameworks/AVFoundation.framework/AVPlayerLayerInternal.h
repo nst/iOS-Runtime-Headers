@@ -2,23 +2,29 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayer, AVWeakKeyValueObserverProxy, AVWeakReference, AVPlayerItem, NSString, CALayer, AVSubtitleLayer;
+@class AVPlayer, NSString, AVPlayerItem, CALayer, AVSubtitleLayer;
 
 @interface AVPlayerLayerInternal : NSObject {
-    AVWeakKeyValueObserverProxy *KVOProxy;
+    struct CGSize { 
+        float width; 
+        float height; 
     AVPlayer *_player;
     BOOL connectLayerWhenInForeground;
     CALayer *contentLayer;
     BOOL disableActions;
+    BOOL hasPlayerToObserve;
     BOOL inForeground;
+    BOOL isObservingPlayer;
     BOOL isPresentationLayer;
     BOOL isReadyForDisplay;
     struct OpaqueFigSimpleMutex { } *isReadyForDisplayMutex;
     AVPlayerItem *itemMarkedReadyForDisplay;
+    } presentationSize;
+    struct dispatch_queue_s { } *serialQueue;
+    BOOL shouldObservePlayer;
     NSString *subtitleGravity;
     AVSubtitleLayer *subtitleLayer;
     NSString *videoGravity;
-    AVWeakReference *weakReference;
 }
 
 @end

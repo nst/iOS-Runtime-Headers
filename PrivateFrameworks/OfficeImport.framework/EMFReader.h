@@ -10,7 +10,7 @@
 
 - (void)dealloc;
 - (id)initWithEMFPlayer:(id)arg1;
-- (NSInteger)play:(id)arg1;
+- (int)play:(id)arg1;
 - (oneway void)release;
 
 @end

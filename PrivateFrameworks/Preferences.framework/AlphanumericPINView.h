@@ -27,7 +27,7 @@
 - (void)showError:(id)arg1 animate:(BOOL)arg2;
 - (id)stringValue;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 
 @end

@@ -16,18 +16,18 @@
     NSCalendarDate *_calendarDate;
     CKConversation *_conversation;
     double _date;
-    NSInteger _failedSendCount;
-    NSUInteger _flags;
-    NSInteger _groupID;
-    NSUInteger _height;
+    int _failedSendCount;
+    unsigned int _flags;
+    int _groupID;
+    unsigned int _height;
     NSArray *_messageParts;
     NSString *_subject;
     NSString *_text;
 }
 
-@property CKConversation *conversation;
-@property(readonly) NSArray *messageParts;
-@property NSInteger groupID;
+@property CKConversation * conversation;
+@property int groupID;
+@property(readonly) NSArray * messageParts;
 
 - (double)_loadDate;
 - (void)_loadFailedSendCount;
@@ -41,7 +41,7 @@
 - (id)address;
 - (id)alertImageData;
 - (id)attachmentText:(BOOL)arg1;
-- (NSInteger)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (BOOL)completelyFailedSend;
 - (BOOL)containsDisplayableMessageParts;
 - (id)conversation;
@@ -49,10 +49,10 @@
 - (void)dealloc;
 - (void)deleteMessagePart:(id)arg1;
 - (BOOL)failedSend;
-- (NSInteger)failedSendCount;
-- (BOOL)getCharacterCountNumerator:(NSUInteger*)arg1 denominator:(NSUInteger*)arg2;
-- (void)getUIHeight:(NSUInteger*)arg1 flags:(NSUInteger*)arg2;
-- (NSInteger)groupID;
+- (int)failedSendCount;
+- (BOOL)getCharacterCountNumerator:(unsigned int*)arg1 denominator:(unsigned int*)arg2;
+- (void)getUIHeight:(unsigned int*)arg1 flags:(unsigned int*)arg2;
+- (int)groupID;
 - (BOOL)hasBeenRead;
 - (BOOL)hasBeenSent;
 - (unsigned long)height;
@@ -65,27 +65,28 @@
 - (BOOL)isPlaceholder;
 - (void)loadParts;
 - (void)markAsRead;
-- (NSInteger)messageCount;
-- (id)messagePartWithRowID:(NSInteger)arg1;
+- (int)messageCount;
+- (id)messagePartWithRowID:(int)arg1;
 - (id)messageParts;
 - (BOOL)partiallyFailedSend;
 - (BOOL)pending;
-- (NSInteger)pendingCount;
+- (int)pendingCount;
 - (float)percentComplete;
 - (void)permanentlyRemoveMessage;
 - (id)previewText;
+- (BOOL)receivedDeliveryReceipt;
 - (void)reloadFailedSendCount;
 - (void)resetHeightAndFlags;
 - (id)sender;
-- (NSInteger)sentCount;
+- (int)sentCount;
 - (void)setConversation:(id)arg1;
-- (void)setGroupID:(NSInteger)arg1;
+- (void)setGroupID:(int)arg1;
 - (void)setParts:(id)arg1;
 - (void)setUIHeight:(unsigned long)arg1 flags:(unsigned long)arg2;
 - (BOOL)smartForwardCapable;
 - (id)subject;
 - (id)text;
 - (double)timeIntervalSince1970;
-- (NSInteger)totalMessageCount;
+- (int)totalMessageCount;
 
 @end

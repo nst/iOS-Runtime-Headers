@@ -14,8 +14,8 @@
             double latitudeDelta; 
             double longitudeDelta; 
         } span; 
-    NSUInteger _activeDeletes;
-    NSUInteger _activeSplits;
+    unsigned int _activeDeletes;
+    unsigned int _activeSplits;
     NSMutableArray *_delegatePlaces;
     <PlacesMapViewDelegateDetailsDelegate> *_detailsDelegate;
     BOOL _didFirstAdjustment;

@@ -9,12 +9,12 @@
     NSString *_phoneNumber;
 }
 
-@property(copy) NSString *country;
-@property(copy) NSString *phoneNumber;
+@property(copy) NSString * country;
+@property(copy) NSString * phoneNumber;
 
-- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(NSInteger*)arg2 predicateIdentifier:(NSInteger)arg3;
+- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (id)country;
-- (void)evaluateCallbackWithSqliteContext:(struct sqlite3_context { }*)arg1 predicateContext:(void*)arg2 values:(struct Mem {}**)arg3 count:(NSInteger)arg4;
+- (void)evaluateCallbackWithSqliteContext:(struct sqlite3_context { }*)arg1 predicateContext:(void*)arg2 values:(struct Mem {}**)arg3 count:(int)arg4;
 - (BOOL)hasCallback;
 - (BOOL)isValid;
 - (id)phoneNumber;

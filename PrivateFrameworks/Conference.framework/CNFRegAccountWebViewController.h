@@ -15,6 +15,7 @@
 - (void)_bagLoadTimeout:(id)arg1;
 - (void)_handleFTServerBagFinishedLoading;
 - (BOOL)_loadURLFromBag;
+- (id)_nonModalParentController;
 - (void)_reload;
 - (void)_reloadDelayed;
 - (void)_showGenericErrorWithHandler:(id)arg1;
@@ -24,12 +25,15 @@
 - (void)_stopBagLoadTimer;
 - (void)_stopCurrentReload;
 - (void)_stopListeningForBagLoad;
+- (id)_viewPortForFormSheetPresentation;
+- (id)_viewPortForNormalPresentation;
+- (id)_viewPortStringForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)authIdHeaderValue;
 - (id)authTokenHeaderValue;
 - (id)bagKey;
 - (void)cancelTapped;
 - (void)dealloc;
-- (void)doHandoffWithStatus:(NSInteger)arg1 appleId:(id)arg2 password:(id)arg3;
+- (void)doHandoffWithStatus:(int)arg1 appleId:(id)arg2 password:(id)arg3;
 - (BOOL)failedBagLoad;
 - (void)handleLeftButtonError:(id)arg1;
 - (void)handleRightButtonError:(id)arg1;
@@ -40,9 +44,11 @@
 - (void)setFailedBagLoad:(BOOL)arg1;
 - (void)setHeadersForRequest:(id)arg1;
 - (void)setupUrlHandlers;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)shouldSetHeadersForRequest:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
+- (id)viewPortHeaderValue;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

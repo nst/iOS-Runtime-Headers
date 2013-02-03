@@ -8,7 +8,7 @@
     MKUserLocationViewInternal *viewImpl;
 }
 
-@property(retain) MKUserLocationViewInternal *viewImpl;
+@property(retain) MKUserLocationViewInternal * viewImpl;
 
 + (id)defaultValueForKey:(id)arg1;
 

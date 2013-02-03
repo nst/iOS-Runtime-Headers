@@ -5,19 +5,19 @@
 @class UIColor, UIImage;
 
 @interface UIProgressView : UIView <NSCoding> {
-    NSInteger _barStyle;
+    int _barStyle;
     UIColor *_customColor;
     UIImage *_customColorImage;
     float _progress;
-    NSInteger _progressViewStyle;
+    int _progressViewStyle;
 }
 
 @property float progress;
-@property NSInteger progressViewStyle;
+@property int progressViewStyle;
 
 + (void)_initializeSafeCategory;
-+ (void)_loadResourcesForStyle:(NSInteger)arg1 barStyle:(NSInteger)arg2;
-+ (NSInteger)_styleImageIndexForStyle:(NSInteger)arg1 barStyle:(NSInteger)arg2;
++ (void)_loadResourcesForStyle:(int)arg1 barStyle:(int)arg2;
++ (int)_styleImageIndexForStyle:(int)arg1 barStyle:(int)arg2;
 + (struct CGSize { float x1; float x2; })defaultSize;
 
 - (id)_progressColor;
@@ -26,21 +26,21 @@
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
-- (NSInteger)barStyle;
+- (int)barStyle;
 - (void)drawOverlayProgressView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)drawProgressView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithProgressViewStyle:(NSInteger)arg1;
+- (id)initWithProgressViewStyle:(int)arg1;
 - (BOOL)isAccessibilityElement;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (float)progress;
-- (NSInteger)progressViewStyle;
-- (void)setBarStyle:(NSInteger)arg1;
+- (int)progressViewStyle;
+- (void)setBarStyle:(int)arg1;
 - (void)setProgress:(float)arg1;
-- (void)setProgressViewStyle:(NSInteger)arg1;
+- (void)setProgressViewStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

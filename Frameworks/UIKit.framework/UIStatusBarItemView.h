@@ -7,7 +7,7 @@
 @interface UIStatusBarItemView : UIView {
     BOOL _allowsUpdates;
     float _currentOverlap;
-    NSInteger _foregroundStyle;
+    int _foregroundStyle;
     struct CGContext { } *_imageContext;
     float _imageContextScale;
     UIStatusBarItem *_item;
@@ -15,15 +15,15 @@
     BOOL _visible;
 }
 
-@property(readonly) UIStatusBarItem *item;
-@property UIStatusBarLayoutManager *layoutManager;
 @property BOOL allowsUpdates;
-@property(readonly) NSInteger foregroundStyle;
+@property(readonly) int foregroundStyle;
+@property(readonly) UIStatusBarItem * item;
+@property UIStatusBarLayoutManager * layoutManager;
 @property(getter=isVisible) BOOL visible;
 
 + (void)_initializeSafeCategory;
-+ (id)createViewForItem:(id)arg1 withData:(struct { BOOL x1[22]; BOOL x2[64]; NSInteger x3; NSInteger x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; NSUInteger x9; NSInteger x10; NSInteger x11; NSUInteger x12; NSInteger x13; NSUInteger x14; BOOL x15[150]; NSInteger x16; NSInteger x17; unsigned int x18 : 1; BOOL x19[256]; unsigned int x20 : 1; BOOL x21[100]; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg2 actions:(NSInteger)arg3 foregroundStyle:(NSInteger)arg4;
-+ (id)imageNamed:(id)arg1 forForegroundStyle:(NSInteger)arg2;
++ (id)createViewForItem:(id)arg1 withData:(struct { BOOL x1[22]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; BOOL x20[256]; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg2 actions:(int)arg3 foregroundStyle:(int)arg4;
++ (id)imageNamed:(id)arg1 forForegroundStyle:(int)arg2;
 
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (id)accessibilityHint;
@@ -31,20 +31,20 @@
 - (BOOL)animatesDataChange;
 - (BOOL)animatesFrameChange;
 - (void)beginImageContextWithMinimumWidth:(float)arg1;
-- (id)contentsImageForStyle:(NSInteger)arg1;
+- (id)contentsImageForStyle:(int)arg1;
 - (float)currentLeftOverlap;
 - (float)currentOverlap;
 - (float)currentRightOverlap;
 - (void)dealloc;
 - (id)description;
-- (void)drawText:(id)arg1 forStyle:(NSInteger)arg2 forWidth:(float)arg3 lineBreakMode:(NSInteger)arg4 letterSpacing:(float)arg5;
-- (void)drawText:(id)arg1 forStyle:(NSInteger)arg2;
+- (void)drawText:(id)arg1 forStyle:(int)arg2 forWidth:(float)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5;
+- (void)drawText:(id)arg1 forStyle:(int)arg2;
 - (void)endImageContext;
 - (float)extraLeftPadding;
 - (float)extraRightPadding;
-- (NSInteger)foregroundStyle;
+- (int)foregroundStyle;
 - (id)imageFromImageContextClippedToWidth:(float)arg1;
-- (id)initWithItem:(id)arg1 data:(struct { BOOL x1[22]; BOOL x2[64]; NSInteger x3; NSInteger x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; NSUInteger x9; NSInteger x10; NSInteger x11; NSUInteger x12; NSInteger x13; NSUInteger x14; BOOL x15[150]; NSInteger x16; NSInteger x17; unsigned int x18 : 1; BOOL x19[256]; unsigned int x20 : 1; BOOL x21[100]; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg2 actions:(NSInteger)arg3 style:(NSInteger)arg4;
+- (id)initWithItem:(id)arg1 data:(struct { BOOL x1[22]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; BOOL x20[256]; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg2 actions:(int)arg3 style:(int)arg4;
 - (BOOL)isVisible;
 - (id)item;
 - (id)layoutManager;
@@ -53,14 +53,14 @@
 - (void)setAllowsUpdates:(BOOL)arg1;
 - (void)setCurrentOverlap:(float)arg1;
 - (void)setLayoutManager:(id)arg1;
-- (float)setStatusBarData:(struct { BOOL x1[22]; BOOL x2[64]; NSInteger x3; NSInteger x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; NSUInteger x9; NSInteger x10; NSInteger x11; NSUInteger x12; NSInteger x13; NSUInteger x14; BOOL x15[150]; NSInteger x16; NSInteger x17; unsigned int x18 : 1; BOOL x19[256]; unsigned int x20 : 1; BOOL x21[100]; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg1 actions:(NSInteger)arg2;
+- (float)setStatusBarData:(struct { BOOL x1[22]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; BOOL x20[256]; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg1 actions:(int)arg2;
 - (void)setVisible:(BOOL)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 duration:(double)arg3;
 - (void)setVisible:(BOOL)arg1;
 - (float)standardPadding;
-- (id)textColorForStyle:(NSInteger)arg1;
+- (id)textColorForStyle:(int)arg1;
 - (id)textFont;
 - (float)updateContentsAndWidth;
-- (BOOL)updateForNewData:(struct { BOOL x1[22]; BOOL x2[64]; NSInteger x3; NSInteger x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; NSUInteger x9; NSInteger x10; NSInteger x11; NSUInteger x12; NSInteger x13; NSUInteger x14; BOOL x15[150]; NSInteger x16; NSInteger x17; unsigned int x18 : 1; BOOL x19[256]; unsigned int x20 : 1; BOOL x21[100]; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg1 actions:(NSInteger)arg2;
+- (BOOL)updateForNewData:(struct { BOOL x1[22]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; BOOL x20[256]; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg1 actions:(int)arg2;
 - (BOOL)usesSmallerTextFont;
 
 @end

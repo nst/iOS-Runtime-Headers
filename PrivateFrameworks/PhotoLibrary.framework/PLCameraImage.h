@@ -11,13 +11,13 @@
     NSDictionary *_temporaryMetadata;
 }
 
-@property(retain) UIImage *previewThumbnailImage;
-@property(retain) NSDictionary *temporaryMetadata;
+@property(retain) UIImage * previewThumbnailImage;
+@property(retain) NSDictionary * temporaryMetadata;
 
 - (void)dealloc;
 - (BOOL)didSetPhotoData;
 - (BOOL)hasFullSizeImageData;
-- (id)imageWithFormat:(NSInteger)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
+- (id)imageWithFormat:(int)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (id)indexSheetImage;
 - (id)initWithPath:(id)arg1 thumbnailImage:(id)arg2 metadata:(id)arg3;
 - (id)previewThumbnailImage;

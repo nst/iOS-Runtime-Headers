@@ -8,9 +8,9 @@
     GKPlayer *_player;
 }
 
-@property(retain) GKPlayer *player;
+@property(retain) GKPlayer * player;
 
-+ (NSInteger)_recipientABProperty;
++ (int)_recipientABProperty;
 + (id)recipientWithPlayer:(id)arg1;
 
 - (id)_unformattedAddress;

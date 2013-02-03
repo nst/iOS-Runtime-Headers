@@ -5,11 +5,11 @@
 @interface WebKitStatistics : NSObject {
 }
 
-+ (NSInteger)HTMLRepresentationCount;
-+ (NSInteger)bridgeCount;
-+ (NSInteger)dataSourceCount;
-+ (NSInteger)frameCount;
-+ (NSInteger)viewCount;
-+ (NSInteger)webViewCount;
++ (int)HTMLRepresentationCount;
++ (int)bridgeCount;
++ (int)dataSourceCount;
++ (int)frameCount;
++ (int)viewCount;
++ (int)webViewCount;
 
 @end

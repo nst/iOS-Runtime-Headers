@@ -2,31 +2,31 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableSet, NSMutableArray, PLImageSource;
+@class NSMutableSet, NSArray, NSMutableArray, PLImageSource;
 
 @interface PLImageLoadRequest : NSObject {
     NSMutableArray *_completionBlocks;
     id _object;
-    NSInteger _priority;
+    int _priority;
     NSMutableSet *_queues;
     PLImageSource *_source;
 }
 
-@property(readonly) NSArray *completionBlocks;
-@property NSInteger priority;
+@property(readonly) NSArray * completionBlocks;
+@property int priority;
 
 - (void)addCompletionBlock:(id)arg1;
 - (id)completionBlocks;
 - (void)dealloc;
 - (void)deregisterImageLoadingQueue:(id)arg1;
 - (id)description;
-- (id)initWithObject:(id)arg1 source:(id)arg2 priority:(NSInteger)arg3;
+- (id)initWithObject:(id)arg1 source:(id)arg2 priority:(int)arg3;
 - (BOOL)isImageLoadingQueueRegistered:(id)arg1;
 - (void)notifyImageLoadingQueuesOfImageAvailability:(id)arg1;
 - (id)object;
-- (NSInteger)priority;
+- (int)priority;
 - (void)registerImageLoadingQueue:(id)arg1;
-- (void)setPriority:(NSInteger)arg1;
+- (void)setPriority:(int)arg1;
 - (BOOL)someImageLoadingQueuesRegistered;
 - (id)source;
 

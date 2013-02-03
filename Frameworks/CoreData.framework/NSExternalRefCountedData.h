@@ -12,28 +12,28 @@
         unsigned int _backgroundDealloc : 1; 
         unsigned int _reservedFlags2 : 16; 
     double _birth;
-    NSInteger _cd_rc;
+    int _cd_rc;
     } _externalRefFlags;
-    NSInteger _externalReferenceCount;
+    int _externalReferenceCount;
     id _toManyMap;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (void)dealloc;
-- (NSInteger)decrementRefCount;
-- (NSInteger)externalReferenceCount;
-- (void)incrementExternalReferenceCount:(NSInteger)arg1;
+- (int)decrementRefCount;
+- (int)externalReferenceCount;
+- (void)incrementExternalReferenceCount:(int)arg1;
 - (void)incrementRefCount;
-- (id)initWithOptions:(NSUInteger)arg1 andTimestamp:(double)arg2;
-- (NSUInteger)options;
-- (NSUInteger)optionsForKey:(id)arg1;
+- (id)initWithOptions:(unsigned int)arg1 andTimestamp:(double)arg2;
+- (unsigned int)options;
+- (unsigned int)optionsForKey:(id)arg1;
 - (id)relatedIDsForKey:(id)arg1;
 - (id)relationshipCaches;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
-- (void)setRelatedIDs:(id)arg1 forKey:(id)arg2 options:(NSUInteger)arg3 andTimestamp:(double)arg4;
+- (unsigned int)retainCount;
+- (void)setRelatedIDs:(id)arg1 forKey:(id)arg2 options:(unsigned int)arg3 andTimestamp:(double)arg4;
 - (void)setRelationshipCaches:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (BOOL)shouldPersist;

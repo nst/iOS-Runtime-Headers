@@ -8,6 +8,6 @@
 + (Class)responseClass;
 
 - (id)init;
-- (id)urlRequest;
+- (id)initWithSecondaryURL;
 
 @end

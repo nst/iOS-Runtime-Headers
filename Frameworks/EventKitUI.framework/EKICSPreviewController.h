@@ -16,13 +16,13 @@
     <EKICSPreviewControllerDelegate> *_previewDelegate;
 }
 
-@property <EKICSPreviewControllerDelegate> *previewDelegate;
 @property BOOL allowsEditing;
 @property BOOL allowsImport;
 @property BOOL allowsSubitems;
 @property(readonly) BOOL isImporting;
-@property(readonly) NSInteger totalEventCount;
-@property(readonly) NSInteger unimportedEventCount;
+@property <EKICSPreviewControllerDelegate> * previewDelegate;
+@property(readonly) int totalEventCount;
+@property(readonly) int unimportedEventCount;
 
 - (void)_databaseChanged:(id)arg1;
 - (BOOL)allowsEditing;
@@ -48,8 +48,8 @@
 - (void)setAllowsImport:(BOOL)arg1;
 - (void)setAllowsSubitems:(BOOL)arg1;
 - (void)setPreviewDelegate:(id)arg1;
-- (NSInteger)totalEventCount;
-- (NSInteger)unimportedEventCount;
+- (int)totalEventCount;
+- (int)unimportedEventCount;
 - (id)viewController;
 
 @end

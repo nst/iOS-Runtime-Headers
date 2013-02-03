@@ -13,7 +13,7 @@
 }
 
 - (void)_layoutSubviews;
-- (struct CGPoint { float x1; float x2; })_originForCornerIndex:(NSInteger)arg1 withBoundsSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGPoint { float x1; float x2; })_originForCornerIndex:(int)arg1 withBoundsSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)dealloc;
 - (void)didMoveToSuperview;
 - (id)initWithCornerRadius:(float)arg1 size:(float)arg2 inset:(float)arg3;

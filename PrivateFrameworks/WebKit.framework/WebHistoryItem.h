@@ -15,8 +15,8 @@
 - (id)RSSFeedReferrer;
 - (id)URL;
 - (id)URLString;
-- (unsigned long)_getDailyVisitCounts:(const NSInteger**)arg1;
-- (unsigned long)_getWeeklyVisitCounts:(const NSInteger**)arg1;
+- (unsigned long)_getDailyVisitCounts:(const int**)arg1;
+- (unsigned long)_getWeeklyVisitCounts:(const int**)arg1;
 - (BOOL)_lastVisitWasHTTPNonGet;
 - (id)_lastVisitedDate;
 - (void)_mergeAutoCompleteHints:(id)arg1;
@@ -43,7 +43,7 @@
 - (id)dictionaryRepresentation;
 - (id)dictionaryRepresentationIncludingChildren:(BOOL)arg1;
 - (void)finalize;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initFromDictionaryRepresentation:(id)arg1;
 - (id)initWithURL:(id)arg1 target:(id)arg2 parent:(id)arg3 title:(id)arg4;
@@ -63,10 +63,10 @@
 - (void)setRSSFeedReferrer:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setViewState:(id)arg1;
-- (void)setVisitCount:(NSInteger)arg1;
+- (void)setVisitCount:(int)arg1;
 - (id)target;
 - (id)targetItem;
 - (id)title;
-- (NSInteger)visitCount;
+- (int)visitCount;
 
 @end

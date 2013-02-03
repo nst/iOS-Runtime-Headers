@@ -5,17 +5,17 @@
 @interface NSAKDeserializerStream : NSObject <NSDeserializerStream> {
     char *current;
     BOOL freeWhenDone;
-    NSUInteger left;
-    NSUInteger max;
+    unsigned int left;
+    unsigned int max;
     void *memory;
 }
 
 - (void)dealloc;
 - (void)finalize;
-- (id)initFromMemoryNoCopy:(const void*)arg1 length:(NSUInteger)arg2 freeWhenDone:(BOOL)arg3;
+- (id)initFromMemoryNoCopy:(const void*)arg1 length:(unsigned int)arg2 freeWhenDone:(BOOL)arg3;
 - (id)initFromPath:(id)arg1;
-- (NSUInteger)readAlignedDataSize;
-- (void)readData:(void*)arg1 length:(NSUInteger)arg2;
-- (NSInteger)readInt;
+- (unsigned int)readAlignedDataSize;
+- (void)readData:(void*)arg1 length:(unsigned int)arg2;
+- (int)readInt;
 
 @end

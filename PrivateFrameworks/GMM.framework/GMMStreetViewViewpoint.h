@@ -7,20 +7,20 @@
     BOOL _hasPanningCount;
     BOOL _hasScene;
     BOOL _hasZoomingCount;
-    NSInteger _navigationCount;
-    NSInteger _panningCount;
-    NSInteger _scene;
-    NSInteger _zoomingCount;
+    int _navigationCount;
+    int _panningCount;
+    int _scene;
+    int _zoomingCount;
 }
 
 @property(readonly) BOOL hasNavigationCount;
 @property(readonly) BOOL hasPanningCount;
 @property(readonly) BOOL hasScene;
 @property(readonly) BOOL hasZoomingCount;
-@property NSInteger navigationCount;
-@property NSInteger panningCount;
-@property NSInteger scene;
-@property NSInteger zoomingCount;
+@property int navigationCount;
+@property int panningCount;
+@property int scene;
+@property int zoomingCount;
 
 - (void)dealloc;
 - (id)description;
@@ -30,15 +30,15 @@
 - (BOOL)hasScene;
 - (BOOL)hasZoomingCount;
 - (id)init;
-- (NSInteger)navigationCount;
-- (NSInteger)panningCount;
+- (int)navigationCount;
+- (int)panningCount;
 - (BOOL)readFrom:(id)arg1;
-- (NSInteger)scene;
-- (void)setNavigationCount:(NSInteger)arg1;
-- (void)setPanningCount:(NSInteger)arg1;
-- (void)setScene:(NSInteger)arg1;
-- (void)setZoomingCount:(NSInteger)arg1;
+- (int)scene;
+- (void)setNavigationCount:(int)arg1;
+- (void)setPanningCount:(int)arg1;
+- (void)setScene:(int)arg1;
+- (void)setZoomingCount:(int)arg1;
 - (void)writeTo:(id)arg1;
-- (NSInteger)zoomingCount;
+- (int)zoomingCount;
 
 @end

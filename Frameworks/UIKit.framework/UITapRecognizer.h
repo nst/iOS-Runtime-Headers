@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSMutableSet;
+@class NSMutableSet, NSArray, NSMutableArray, <UITapRecognizerDelegate>;
 
 @interface UITapRecognizer : NSObject {
     struct CGPoint { 
@@ -15,25 +15,25 @@
     unsigned int _noNewTouches : 1;
     NSMutableSet *_activeTouches;
     float _allowableMovement;
-    NSInteger _currentNumberOfTaps;
-    NSInteger _currentNumberOfTouches;
+    int _currentNumberOfTaps;
+    int _currentNumberOfTouches;
     id _delegate;
     } _location;
     double _maximumIntervalBetweenSuccessiveTaps;
     double _maximumSingleTapDuration;
-    NSUInteger _numberOfTapsRequired;
-    NSUInteger _numberOfTouchesRequired;
+    unsigned int _numberOfTapsRequired;
+    unsigned int _numberOfTouchesRequired;
     } _startPoint;
     NSMutableArray *_touches;
 }
 
-@property <UITapRecognizerDelegate> *delegate;
-@property(readonly) NSArray *touches;
 @property float allowableMovement;
+@property <UITapRecognizerDelegate> * delegate;
 @property double maximumIntervalBetweenSuccessiveTaps;
 @property double maximumSingleTapDuration;
-@property NSUInteger numberOfTapsRequired;
-@property NSUInteger numberOfTouchesRequired;
+@property unsigned int numberOfTapsRequired;
+@property unsigned int numberOfTouchesRequired;
+@property(readonly) NSArray * touches;
 
 - (struct CGPoint { float x1; float x2; })_locationOnScreen;
 - (void)_reset;
@@ -45,14 +45,14 @@
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (double)maximumIntervalBetweenSuccessiveTaps;
 - (double)maximumSingleTapDuration;
-- (NSUInteger)numberOfTapsRequired;
-- (NSUInteger)numberOfTouchesRequired;
+- (unsigned int)numberOfTapsRequired;
+- (unsigned int)numberOfTouchesRequired;
 - (void)setAllowableMovement:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMaximumIntervalBetweenSuccessiveTaps:(double)arg1;
 - (void)setMaximumSingleTapDuration:(double)arg1;
-- (void)setNumberOfTapsRequired:(NSUInteger)arg1;
-- (void)setNumberOfTouchesRequired:(NSUInteger)arg1;
+- (void)setNumberOfTapsRequired:(unsigned int)arg1;
+- (void)setNumberOfTouchesRequired:(unsigned int)arg1;
 - (void)startTapTimer:(double)arg1;
 - (void)tooSlow:(id)arg1;
 - (id)touches;

@@ -2,43 +2,45 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString, DOMHTMLFormElement, DOMFileList, NSURL;
+
 @interface DOMHTMLInputElement : DOMHTMLElement {
 }
 
-@property(copy,readonly) NSURL *absoluteImageURL;
-@property(copy) NSString *accept;
-@property(copy) NSString *accessKey;
-@property(copy) NSString *align;
-@property(copy) NSString *alt;
-@property(copy,readonly) NSString *altDisplayString;
-@property(copy) NSString *defaultValue;
-@property(retain,readonly) DOMFileList *files;
-@property(retain,readonly) DOMHTMLFormElement *form;
-@property(copy) NSString *name;
-@property(copy) NSString *size;
-@property(copy) NSString *src;
-@property(copy) NSString *type;
-@property(copy) NSString *useMap;
-@property(copy) NSString *value;
+@property(copy,readonly) NSURL * absoluteImageURL;
+@property(copy) NSString * accept;
+@property(copy) NSString * accessKey;
+@property(copy) NSString * align;
+@property(copy) NSString * alt;
+@property(copy,readonly) NSString * altDisplayString;
 @property BOOL autofocus;
 @property BOOL checked;
 @property BOOL defaultChecked;
+@property(copy) NSString * defaultValue;
 @property BOOL disabled;
+@property(retain,readonly) DOMFileList * files;
+@property(retain,readonly) DOMHTMLFormElement * form;
 @property BOOL indeterminate;
-@property NSInteger maxLength;
+@property int maxLength;
 @property BOOL multiple;
+@property(copy) NSString * name;
 @property BOOL readOnly;
-@property NSInteger selectionEnd;
-@property NSInteger selectionStart;
+@property int selectionEnd;
+@property int selectionStart;
+@property(copy) NSString * size;
+@property(copy) NSString * src;
+@property(copy) NSString * type;
+@property(copy) NSString * useMap;
+@property(copy) NSString * value;
 @property(readonly) BOOL willValidate;
 
 - (BOOL)_isAutofilled;
 - (BOOL)_isEdited;
 - (BOOL)_isTextField;
-- (void)_replaceCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withString:(id)arg2 selectingFromIndex:(NSInteger)arg3;
+- (void)_replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2 selectingFromIndex:(int)arg3;
 - (BOOL)_requiresAccessoryView;
 - (BOOL)_requiresInputView;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_selectedRange;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_selectedRange;
 - (void)_setAutofilled:(BOOL)arg1;
 - (void)_startAssistingDocumentView:(id)arg1;
 - (void)_stopAssistingDocumentView:(id)arg1;
@@ -67,9 +69,9 @@
 - (BOOL)isLikelyToBeginPageLoad;
 - (BOOL)isSecure;
 - (BOOL)isTextControl;
-- (NSInteger)keyboardType;
+- (int)keyboardType;
 - (id)max;
-- (NSInteger)maxLength;
+- (int)maxLength;
 - (id)min;
 - (BOOL)multiple;
 - (id)name;
@@ -79,8 +81,8 @@
 - (BOOL)readOnly;
 - (BOOL)required;
 - (void)select;
-- (NSInteger)selectionEnd;
-- (NSInteger)selectionStart;
+- (int)selectionEnd;
+- (int)selectionStart;
 - (void)setAccept:(id)arg1;
 - (void)setAccessKey:(id)arg1;
 - (void)setAlign:(id)arg1;
@@ -96,7 +98,7 @@
 - (void)setFormNoValidate:(BOOL)arg1;
 - (void)setIndeterminate:(BOOL)arg1;
 - (void)setMax:(id)arg1;
-- (void)setMaxLength:(NSInteger)arg1;
+- (void)setMaxLength:(int)arg1;
 - (void)setMin:(id)arg1;
 - (void)setMultiple:(BOOL)arg1;
 - (void)setName:(id)arg1;
@@ -104,9 +106,9 @@
 - (void)setPlaceholder:(id)arg1;
 - (void)setReadOnly:(BOOL)arg1;
 - (void)setRequired:(BOOL)arg1;
-- (void)setSelectionEnd:(NSInteger)arg1;
-- (void)setSelectionRange:(NSInteger)arg1 end:(NSInteger)arg2;
-- (void)setSelectionStart:(NSInteger)arg1;
+- (void)setSelectionEnd:(int)arg1;
+- (void)setSelectionRange:(int)arg1 end:(int)arg2;
+- (void)setSelectionStart:(int)arg1;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setSize:(id)arg1;
 - (void)setSrc:(id)arg1;
@@ -121,9 +123,9 @@
 - (id)src;
 - (id)startPosition;
 - (id)step;
-- (void)stepDown:(NSInteger)arg1;
-- (void)stepUp:(NSInteger)arg1;
-- (NSInteger)structuralComplexityContribution;
+- (void)stepDown:(int)arg1;
+- (void)stepUp:(int)arg1;
+- (int)structuralComplexityContribution;
 - (id)text;
 - (id)textInputTraits;
 - (id)type;

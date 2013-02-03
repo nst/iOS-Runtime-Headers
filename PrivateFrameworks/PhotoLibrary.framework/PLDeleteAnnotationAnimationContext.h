@@ -9,8 +9,8 @@
     MKMapView *_mapView;
 }
 
-@property(retain) NSArray *annotations;
-@property(retain) MKMapView *mapView;
+@property(retain) NSArray * annotations;
+@property(retain) MKMapView * mapView;
 
 - (id)annotations;
 - (void)dealloc;

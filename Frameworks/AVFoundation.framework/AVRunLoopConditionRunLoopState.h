@@ -8,8 +8,8 @@
     BOOL _signaled;
 }
 
-@property(readonly) __CFRunLoop *runLoop;
-@property __CFRunLoopSource *signalSource;
+@property(readonly) struct __CFRunLoop { }* runLoop;
+@property struct __CFRunLoopSource { }* signalSource;
 @property BOOL signaled;
 
 + (id)runLoopStateWithRunLoop:(struct __CFRunLoop { }*)arg1;

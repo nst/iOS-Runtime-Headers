@@ -2,25 +2,25 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
+@class NSArray, NSString, UIImage, UIColor, NSURL;
 
 @interface UIPasteboard : NSObject {
     NSString *_name;
 }
 
-@property(copy) NSURL *URL;
-@property(copy) NSArray *URLs;
-@property(copy) UIColor *color;
-@property(copy) NSArray *colors;
-@property(copy) UIImage *image;
-@property(copy) NSArray *images;
-@property(copy) NSArray *items;
-@property(readonly) NSString *name;
-@property(copy) NSString *string;
-@property(copy) NSArray *strings;
-@property(readonly) NSInteger changeCount;
-@property(readonly) NSInteger numberOfItems;
+@property(copy) NSURL * URL;
+@property(copy) NSArray * URLs;
+@property(readonly) int changeCount;
+@property(copy) UIColor * color;
+@property(copy) NSArray * colors;
+@property(copy) UIImage * image;
+@property(copy) NSArray * images;
+@property(copy) NSArray * items;
+@property(readonly) NSString * name;
+@property(readonly) int numberOfItems;
 @property(getter=isPersistent) BOOL persistent;
+@property(copy) NSString * string;
+@property(copy) NSArray * strings;
 
 + (id)_findPasteboard;
 + (id)_printPasteboard;
@@ -34,7 +34,7 @@
 - (id)_initWithName:(id)arg1 system:(BOOL)arg2 create:(BOOL)arg3;
 - (void)_pasteboardChanged:(id)arg1;
 - (void)addItems:(id)arg1;
-- (NSInteger)changeCount;
+- (int)changeCount;
 - (id)color;
 - (id)colors;
 - (BOOL)containsPasteboardTypes:(id)arg1 inItemSet:(id)arg2;
@@ -49,7 +49,7 @@
 - (id)itemSetWithPasteboardTypes:(id)arg1;
 - (id)items;
 - (id)name;
-- (NSInteger)numberOfItems;
+- (int)numberOfItems;
 - (id)pasteboardTypes;
 - (id)pasteboardTypesForItemSet:(id)arg1;
 - (void)setColor:(id)arg1;

@@ -9,8 +9,8 @@
     PKPaper *paper;
 }
 
-@property(retain) NSMutableDictionary *dict;
-@property(retain) PKPaper *paper;
+@property(retain) NSMutableDictionary * dict;
+@property(retain) PKPaper * paper;
 
 + (id)default;
 + (id)photo;

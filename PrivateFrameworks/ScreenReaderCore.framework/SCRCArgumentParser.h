@@ -6,7 +6,7 @@
 
 @interface SCRCArgumentParser : SCRCArgumentSubcommand {
     NSString *_appName;
-    NSInteger _argc;
+    int _argc;
     NSMutableArray *_argumentArray;
     char **_argv;
     BOOL _isLaunchedAtLogin;
@@ -22,13 +22,13 @@
 - (id)_displayVersion:(id)arg1;
 - (void)addSubcommand:(id)arg1;
 - (id)appName;
-- (NSInteger)argc;
+- (int)argc;
 - (char **)argv;
 - (void)dealloc;
-- (id)initWithArgc:(NSInteger)arg1 argv:(const char **)arg2;
+- (id)initWithArgc:(int)arg1 argv:(const char **)arg2;
 - (BOOL)isLaunchedAtLogin;
 - (BOOL)parse;
-- (NSInteger)run;
+- (int)run;
 - (void)setAppName:(id)arg1;
 - (id)setRunningAtStartup:(id)arg1;
 - (void)stop;

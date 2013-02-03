@@ -9,7 +9,7 @@
     <STEmpedLinkingManagerDelegate> *_delegate;
 }
 
-@property <STEmpedLinkingManagerDelegate> *delegate;
+@property <STEmpedLinkingManagerDelegate> * delegate;
 
 + (void)_startLinking;
 + (void)_startRemoteLinking;

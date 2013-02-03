@@ -5,9 +5,9 @@
 @interface ICSScheduleForceSendParameter : ICSPredefinedValue {
 }
 
-+ (id)scheduleForceSendParameterFromCode:(NSInteger)arg1;
++ (id)scheduleForceSendParameterFromCode:(int)arg1;
 + (id)scheduleForceSendParameterFromICSString:(id)arg1;
 
-- (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 
 @end

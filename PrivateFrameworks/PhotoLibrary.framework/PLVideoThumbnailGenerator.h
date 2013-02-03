@@ -20,11 +20,11 @@
     struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; NSString *x6; } *_progressStack;
 }
 
-@property(readonly) AVController *avController;
-@property(retain) NSString *filePath;
-@property ? *progressStack;
+@property(readonly) AVController * avController;
 @property(readonly) double duration;
-@property(readonly) CGSize naturalSize;
+@property(retain) NSString * filePath;
+@property(readonly) struct CGSize { float width; float height; } naturalSize;
+@property struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; NSString *x6; }* progressStack;
 
 - (void)_mainThreadSetup;
 - (void)_mainThreadTeardown;

@@ -4,24 +4,24 @@
 
 @interface PLUIEditImageViewController : PLUIImageViewController {
     id _delegate;
-    NSInteger _saveOptions;
+    int _saveOptions;
 }
 
 @property id delegate;
 
-- (NSUInteger)_contentAutoresizingMask;
-- (NSUInteger)_tileAutoresizingMask;
+- (unsigned int)_contentAutoresizingMask;
+- (unsigned int)_tileAutoresizingMask;
 - (void)cropOverlay:(id)arg1 didFinishSaving:(id)arg2;
 - (void)cropOverlayWasCancelled:(id)arg1;
 - (void)cropOverlayWasOKed:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (NSInteger)imageFormat;
+- (int)imageFormat;
 - (id)imageTile;
 - (id)initWithPhoto:(id)arg1;
 - (id)photo;
-- (NSInteger)saveOptions;
+- (int)saveOptions;
 - (void)setDelegate:(id)arg1;
-- (void)setImageSavingOptions:(NSInteger)arg1;
+- (void)setImageSavingOptions:(int)arg1;
 
 @end

@@ -6,14 +6,17 @@
 
 @interface UIKeyboardLayout : UIView <UIKeyboardLayoutProtocol> {
     UITouch *_activeTouch;
+    int _orientation;
     UITouch *_shiftKeyTouch;
     UITouch *_swipeTouch;
     NSMutableArray *_uncommittedTouches;
+    int m_orientation;
 }
 
-@property(retain) UITouch *activeTouch;
-@property(retain) UITouch *shiftKeyTouch;
-@property(retain) UITouch *swipeTouch;
+@property(retain) UITouch * activeTouch;
+@property int orientation;
+@property(retain) UITouch * shiftKeyTouch;
+@property(retain) UITouch * swipeTouch;
 
 - (id)activationIndicatorView;
 - (id)activeTouch;
@@ -34,6 +37,7 @@
 - (BOOL)isShiftKeyPlaneChooser;
 - (id)keyplaneForKey:(id)arg1;
 - (void)longPressAction;
+- (int)orientation;
 - (BOOL)performReturnAction;
 - (void)phraseBoundaryDidChange;
 - (void)restoreDefaultsForAllKeys;
@@ -43,6 +47,7 @@
 - (void)setAutoshift:(BOOL)arg1;
 - (void)setLabel:(id)arg1 forKey:(id)arg2;
 - (void)setLongPressAction:(SEL)arg1 forKey:(id)arg2;
+- (void)setOrientation:(int)arg1;
 - (void)setShift:(BOOL)arg1;
 - (void)setShiftKeyTouch:(id)arg1;
 - (void)setSwipeTouch:(id)arg1;
@@ -50,7 +55,8 @@
 - (BOOL)shiftKeyRequiresImmediateUpdate;
 - (id)shiftKeyTouch;
 - (BOOL)shouldShowIndicator;
-- (void)showKeyboardType:(NSInteger)arg1 withAppearance:(NSInteger)arg2;
+- (void)showKeyboardType:(int)arg1 withAppearance:(int)arg2;
+- (id)simulateTouchForCharacter:(id)arg1 errorVector:(struct CGPoint { float x1; float x2; })arg2 shouldTypeVariants:(BOOL)arg3 baseKeyForVariants:(BOOL)arg4;
 - (void)swipeGestureRecognized:(id)arg1;
 - (id)swipeTouch;
 - (void)touchCancelled:(id)arg1;

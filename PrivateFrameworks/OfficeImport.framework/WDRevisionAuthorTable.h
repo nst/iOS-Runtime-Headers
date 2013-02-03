@@ -10,9 +10,9 @@
 }
 
 - (void)addAuthor:(id)arg1;
-- (NSInteger)authorAddLookup:(id)arg1;
-- (id)authorAt:(NSInteger)arg1;
-- (NSInteger)authorCount;
+- (int)authorAddLookup:(id)arg1;
+- (id)authorAt:(int)arg1;
+- (int)authorCount;
 - (id)authors;
 - (void)dealloc;
 - (id)initWithDocument:(id)arg1;

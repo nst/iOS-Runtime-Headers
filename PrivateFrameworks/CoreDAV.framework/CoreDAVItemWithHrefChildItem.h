@@ -8,13 +8,12 @@
     CoreDAVHrefItem *_href;
 }
 
-@property(retain) CoreDAVHrefItem *href;
+@property(retain) CoreDAVHrefItem * href;
 
 - (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
 - (id)href;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)setHref:(id)arg1;
 
 @end

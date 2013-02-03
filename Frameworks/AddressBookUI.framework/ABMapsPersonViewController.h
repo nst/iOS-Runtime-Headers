@@ -2,29 +2,31 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
+@class <ABMapsPersonViewControllerDelegate>;
+
 @interface ABMapsPersonViewController : ABUnknownPersonViewController {
     BOOL _showAddToBookmarks;
     BOOL _showDirections;
     BOOL _showRemovePin;
 }
 
-@property <ABMapsPersonViewControllerDelegate> *mapsPersonViewControllerDelegate;
+@property <ABMapsPersonViewControllerDelegate> * mapsPersonViewControllerDelegate;
 @property BOOL shouldShowAddToBookmarks;
 @property BOOL shouldShowDirections;
 @property BOOL shouldShowRemovePin;
 
 - (BOOL)ab_wantsToPresentModalViewControllerWithoutAnyHelp;
-- (void)addToBookmarks:(id)arg1 person:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (void)addToBookmarks:(id)arg1 person:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)allowsAddingToAddressBook;
 - (id)attribution;
 - (void)attributionSelected:(id)arg1;
-- (void)directionsFrom:(id)arg1 person:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
-- (void)directionsTo:(id)arg1 person:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (void)directionsFrom:(id)arg1 person:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (void)directionsTo:(id)arg1 person:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)dismissModalViewControllerAnimated:(BOOL)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2 style:(int)arg3;
 - (BOOL)isAttributionEnabled;
 - (id)mapsPersonViewControllerDelegate;
-- (BOOL)personViewControllerHelper:(id)arg1 shouldContinueAfterSelectingPropertyAtIndex:(NSInteger)arg2 inPropertyGroup:(id)arg3;
+- (BOOL)personViewControllerHelper:(id)arg1 shouldContinueAfterSelectingPropertyAtIndex:(int)arg2 inPropertyGroup:(id)arg3;
 - (void)presentAddToContactsSheetIfNeeded:(id)arg1;
 - (void)presentModalViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)presentNewContactViewControllerForAddToContacts;

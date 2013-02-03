@@ -8,14 +8,14 @@
     struct { 
         struct { 
             long long value; 
-            NSInteger timescale; 
-            NSUInteger flags; 
+            int timescale; 
+            unsigned int flags; 
             long long epoch; 
         } start; 
         struct { 
             long long value; 
-            NSInteger timescale; 
-            NSUInteger flags; 
+            int timescale; 
+            unsigned int flags; 
             long long epoch; 
         } duration; 
     NSArray *items;

@@ -21,7 +21,7 @@
 - (BOOL)isEmpty;
 - (id)properties;
 - (void)removeLastCharacter:(unsigned short)arg1;
-- (NSInteger)runType;
+- (int)runType;
 - (void)setBinaryWriterContentFlag:(BOOL)arg1;
 - (void)setPropertiesForDocument;
 - (void)setString:(id)arg1;

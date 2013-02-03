@@ -5,9 +5,9 @@
 @interface ICSCalendarServerAccessValue : ICSPredefinedValue {
 }
 
-+ (id)calendarServerAccessFromCode:(NSInteger)arg1;
++ (id)calendarServerAccessFromCode:(int)arg1;
 + (id)calendarServerAccessFromICSString:(id)arg1;
 
-- (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 
 @end

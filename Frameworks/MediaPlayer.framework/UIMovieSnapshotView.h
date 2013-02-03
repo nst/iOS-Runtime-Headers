@@ -9,7 +9,7 @@
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
-@property <UIMovieSnapshotViewDelegate> *delegate;
+@property <UIMovieSnapshotViewDelegate> * delegate;
 
 - (void)_viewWasTapped:(id)arg1;
 - (void)dealloc;

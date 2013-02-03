@@ -9,9 +9,9 @@
     NSData *_image;
 }
 
-@property(retain) NSData *image;
 @property(readonly) BOOL hasImage;
 @property long long iconId;
+@property(retain) NSData * image;
 
 - (void)dealloc;
 - (id)description;

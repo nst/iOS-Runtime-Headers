@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISURLCacheConfiguration, NSURLCache;
+@class ISURLCacheConfiguration, NSString, NSURLCache;
 
 @interface ISURLCache : NSObject {
     NSURLCache *_cache;
     ISURLCacheConfiguration *_configuration;
 }
 
-@property(readonly) NSString *persistentIdentifier;
-@property(readonly) NSUInteger currentDiskUsage;
-@property(readonly) NSUInteger currentMemoryUsage;
-@property(readonly) NSUInteger diskCapacity;
-@property(readonly) NSUInteger memoryCapacity;
+@property(readonly) unsigned int currentDiskUsage;
+@property(readonly) unsigned int currentMemoryUsage;
+@property(readonly) unsigned int diskCapacity;
+@property(readonly) unsigned int memoryCapacity;
+@property(readonly) NSString * persistentIdentifier;
 
 + (id)cacheDirectoryPath;
 + (id)persistentIdentifierFromPropertyList:(id)arg1;
@@ -22,14 +22,14 @@
 - (BOOL)_urlStringMatchesURLPatterns:(id)arg1;
 - (id)cachedResponseForRequest:(id)arg1;
 - (BOOL)criteriaMatchesRequest:(id)arg1;
-- (NSUInteger)currentDiskUsage;
-- (NSUInteger)currentMemoryUsage;
+- (unsigned int)currentDiskUsage;
+- (unsigned int)currentMemoryUsage;
 - (void)dealloc;
-- (NSUInteger)diskCapacity;
+- (unsigned int)diskCapacity;
 - (id)init;
 - (id)initWithCacheConfiguration:(id)arg1;
 - (BOOL)isUsableByClientWithIdentifier:(id)arg1;
-- (NSUInteger)memoryCapacity;
+- (unsigned int)memoryCapacity;
 - (id)persistentIdentifier;
 - (void)purgeMemoryCache;
 - (void)reloadWithCacheConfiguration:(id)arg1;

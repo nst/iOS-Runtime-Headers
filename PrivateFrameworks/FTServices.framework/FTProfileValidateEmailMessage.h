@@ -10,9 +10,9 @@
     NSData *_pushToken;
 }
 
-@property(copy) NSString *emailAddress;
-@property(copy) NSNumber *onlyCheck;
-@property(copy) NSData *pushToken;
+@property(copy) NSString * emailAddress;
+@property(copy) NSNumber * onlyCheck;
+@property(copy) NSData * pushToken;
 
 - (id)bagKey;
 - (void)dealloc;

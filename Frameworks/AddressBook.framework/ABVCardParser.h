@@ -2,6 +2,11 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSMutableDictionary, NSMutableString, NSMutableArray, ABVCardValueSetter, NSString, NSData, ABVCardLexer;
 
 @interface ABVCardParser : NSObject {
@@ -11,9 +16,9 @@
     BOOL _base64;
     NSData *_data;
     NSMutableArray *_dates;
-    NSUInteger _defaultEncoding;
+    unsigned int _defaultEncoding;
     NSMutableArray *_emails;
-    NSUInteger _encoding;
+    unsigned int _encoding;
     NSMutableDictionary *_extensions;
     NSString *_first;
     NSString *_formattedName;
@@ -48,9 +53,9 @@
 - (void)addAddressMultiValues;
 - (BOOL)addIMValueTo:(id)arg1;
 - (void)addInstantMessageMultiValues;
-- (void)addMultiValues:(id)arg1 toProperty:(NSUInteger)arg2;
+- (void)addMultiValues:(id)arg1 toProperty:(unsigned int)arg2 valueComparator:(int (*)())arg3;
 - (void)cleanUpCardState;
-- (void*)copyNextPersonWithLength:(NSInteger*)arg1 foundProperties:(const struct __CFArray {}**)arg2;
+- (void*)copyNextPersonWithLength:(int*)arg1 foundProperties:(const struct __CFArray {}**)arg2;
 - (id)dateFromISO8601String:(id)arg1;
 - (void)dealloc;
 - (id)defaultADRLabel;

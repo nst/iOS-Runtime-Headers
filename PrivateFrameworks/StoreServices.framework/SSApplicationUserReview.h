@@ -11,7 +11,7 @@
     NSNumber *_versionIdentifier;
 }
 
-@property(readonly) NSString *applicationPath;
+@property(readonly) NSString * applicationPath;
 @property float userRating;
 @property(getter=isValidReview,readonly) BOOL validReview;
 

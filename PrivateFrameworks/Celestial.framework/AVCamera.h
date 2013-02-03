@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSString;
+@class NSString, NSArray;
 
 @interface AVCamera : NSObject {
     NSString *_mode;
 }
 
-@property(retain,readonly) NSArray *capabilities;
-@property(retain) NSString *mode;
+@property(retain,readonly) NSArray * capabilities;
+@property(retain) NSString * mode;
 
 - (id)capabilities;
 - (void)dealloc;

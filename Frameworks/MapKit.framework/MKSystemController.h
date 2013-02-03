@@ -21,6 +21,6 @@
 - (float)screenScale;
 - (struct CGSize { float x1; float x2; })screenSize;
 - (BOOL)useLargeTiles;
-- (NSInteger)userInterfaceIdiom;
+- (int)userInterfaceIdiom;
 
 @end

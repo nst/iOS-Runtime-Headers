@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSURL, <WebFormDelegate>, WebVideoFullscreenController, <WebCaretChangeListener>, WebPreferences, WebEvent, WAKWindow, NSMutableSet, <WebGeolocationProvider>, WebNodeHighlight, WebInspector, NSString, NSTimer;
 
 @interface WebViewPrivate : NSObject {
@@ -72,10 +77,10 @@
     struct HashMap<long unsigned int,WTF::RetainPtr<objc_object*>,WTF::IntHash<long unsigned int>,WTF::HashTraits<long unsigned int>,WTF::HashTraits<WTF::RetainPtr<objc_object*> > > { 
         struct HashTable<long unsigned int,std::pair<long unsigned int, WTF::RetainPtr<objc_object*> >,WTF::PairFirstExtractor<std::pair<long unsigned int, WTF::RetainPtr<objc_object*> > >,WTF::IntHash<long unsigned int>,WTF::PairHashTraits<WTF::HashTraits<long unsigned int>, WTF::HashTraits<WTF::RetainPtr<objc_object*> > >,WTF::HashTraits<long unsigned int> > { 
             struct pair<long unsigned int,WTF::RetainPtr<objc_object*> > {} *m_table; 
-            NSInteger m_tableSize; 
-            NSInteger m_tableSizeMask; 
-            NSInteger m_keyCount; 
-            NSInteger m_deletedCount; 
+            int m_tableSize; 
+            int m_tableSizeMask; 
+            int m_keyCount; 
+            int m_deletedCount; 
         } m_impl; 
     struct CGSize { 
         float width; 
@@ -88,7 +93,7 @@
     <WebCaretChangeListener> *_caretChangeListener;
     NSMutableSet *_caretChangeListeners;
     <WebGeolocationProvider> *_geolocationProvider;
-    NSInteger _keyboardUIMode;
+    int _keyboardUIMode;
     BOOL _keyboardUIModeAccessed;
     BOOL allowsMessaging;
     BOOL allowsUndo;
@@ -103,6 +108,7 @@
     BOOL closing;
     BOOL cssAnimationsSuspended;
     WebNodeHighlight *currentNodeHighlight;
+    int didDrawTiles;
     id downloadDelegate;
     BOOL drawsBackground;
     BOOL editable;
@@ -140,7 +146,7 @@
     id policyDelegateForwarder;
     BOOL postsAcceleratedCompositingNotifications;
     WebPreferences *preferences;
-    NSInteger programmaticFocusCount;
+    int programmaticFocusCount;
     } resourceLoadDelegateImplementations;
     id resourceProgressDelegate;
     id resourceProgressDelegateForwarder;
@@ -151,7 +157,7 @@
     BOOL shouldCloseWithWindow;
     BOOL shouldUpdateWhileOffscreen;
     BOOL smartInsertDeleteEnabled;
-    NSInteger spellCheckerDocumentTag;
+    int spellCheckerDocumentTag;
     BOOL tabKeyCyclesThroughElementsChanged;
     BOOL useSiteSpecificSpoofing;
     } userAgent;

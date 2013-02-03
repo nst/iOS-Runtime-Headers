@@ -2,14 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @class NSURLResponse;
 
 @interface WebResourcePrivate : NSObject {
-    struct ArchiveResource { int (**x1)(); NSInteger x2; struct KURL { 
+    struct ArchiveResource { int (**x1)(); int x2; struct KURL { 
             struct String { 
                 struct RefPtr<WebCore::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
@@ -17,16 +18,16 @@
             } m_string; 
             unsigned int m_isValid : 1; 
             unsigned int m_protocolInHTTPFamily : 1; 
-            NSInteger m_schemeEnd; 
-            NSInteger m_userStart; 
-            NSInteger m_userEnd; 
-            NSInteger m_passwordEnd; 
-            NSInteger m_hostEnd; 
-            NSInteger m_portEnd; 
-            NSInteger m_pathAfterLastSlash; 
-            NSInteger m_pathEnd; 
-            NSInteger m_queryEnd; 
-            NSInteger m_fragmentEnd; 
+            int m_schemeEnd; 
+            int m_userStart; 
+            int m_userEnd; 
+            int m_passwordEnd; 
+            int m_hostEnd; 
+            int m_portEnd; 
+            int m_pathAfterLastSlash; 
+            int m_pathEnd; 
+            int m_queryEnd; 
+            int m_fragmentEnd; 
         } x3; struct ResourceResponse { 
             struct KURL { 
                 struct String { 
@@ -36,16 +37,16 @@
                 } m_string; 
                 unsigned int m_isValid : 1; 
                 unsigned int m_protocolInHTTPFamily : 1; 
-                NSInteger m_schemeEnd; 
-                NSInteger m_userStart; 
-                NSInteger m_userEnd; 
-                NSInteger m_passwordEnd; 
-                NSInteger m_hostEnd; 
-                NSInteger m_portEnd; 
-                NSInteger m_pathAfterLastSlash; 
-                NSInteger m_pathEnd; 
-                NSInteger m_queryEnd; 
-                NSInteger m_fragmentEnd; 
+                int m_schemeEnd; 
+                int m_userStart; 
+                int m_userEnd; 
+                int m_passwordEnd; 
+                int m_hostEnd; 
+                int m_portEnd; 
+                int m_pathAfterLastSlash; 
+                int m_pathEnd; 
+                int m_queryEnd; 
+                int m_fragmentEnd; 
             } m_url; 
             struct String { 
                 struct RefPtr<WebCore::StringImpl> { 
@@ -63,7 +64,7 @@
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_suggestedFilename; 
-            NSInteger m_httpStatusCode; 
+            int m_httpStatusCode; 
             struct String { 
                 struct RefPtr<WebCore::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
@@ -72,13 +73,13 @@
             struct HTTPHeaderMap { 
                 struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { 
                     struct pair<WebCore::AtomicString,WebCore::String> {} *m_table; 
-                    NSInteger m_tableSize; 
-                    NSInteger m_tableSizeMask; 
-                    NSInteger m_keyCount; 
-                    NSInteger m_deletedCount; 
+                    int m_tableSize; 
+                    int m_tableSizeMask; 
+                    int m_keyCount; 
+                    int m_deletedCount; 
                 } m_impl; 
             } m_httpHeaderFields; 
-            NSInteger m_lastModifiedDate; 
+            int m_lastModifiedDate; 
             unsigned int m_isNull : 1; 
             unsigned int m_haveParsedCacheControlHeader : 1; 
             unsigned int m_haveParsedAgeHeader : 1; 
@@ -96,7 +97,7 @@
             struct RetainPtr<NSURLResponse> { 
                 NSURLResponse *m_ptr; 
             } m_nsResponse; 
-            /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*m_isUpToDate; 
+            boolm_isUpToDate; 
         } x4; struct RefPtr<WebCore::SharedBuffer> { 
             struct SharedBuffer {} *m_ptr; 
         } x5; struct String { 
@@ -111,7 +112,7 @@
             struct RefPtr<WebCore::StringImpl> { 
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
-        } x8; void*x9; } *coreResource;
+        } x8; boolx9; } *coreResource;
 }
 
 + (void)initialize;

@@ -5,9 +5,9 @@
 @interface ICSClassificationValue : ICSPredefinedValue {
 }
 
-+ (id)classificationFromCode:(NSInteger)arg1;
++ (id)classificationFromCode:(int)arg1;
 + (id)classificationValueFromICSString:(id)arg1;
 
-- (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 
 @end

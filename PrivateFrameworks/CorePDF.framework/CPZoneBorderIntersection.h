@@ -21,7 +21,7 @@
 }
 
 - (BOOL)backwardVector;
-- (NSInteger)comparePositionLengthwise:(id)arg1;
+- (int)comparePositionLengthwise:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)forwardVector;
 - (id)intersectingBorder;

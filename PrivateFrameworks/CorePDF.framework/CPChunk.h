@@ -15,7 +15,7 @@
     } bounds;
     BOOL dirtyBounds;
     long insertionOrder;
-    NSUInteger position;
+    unsigned int position;
     BOOL shrinksWithChildren;
 }
 
@@ -23,7 +23,7 @@
 
 - (float)absoluteGapTo:(id)arg1;
 - (void)accept:(id)arg1;
-- (void)add:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)add:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)add:(id)arg1;
 - (void)addChildrenOf:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustToPointBoundary:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -34,27 +34,27 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (BOOL)boundsEqualsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 accuracy:(float)arg2;
 - (float)center;
-- (NSUInteger)chunkPosition;
+- (unsigned int)chunkPosition;
 - (float)clusterGapTo:(id)arg1;
-- (NSInteger)clusterLevelHint;
-- (NSInteger)compareAnchorX:(id)arg1;
-- (NSInteger)compareAnchorY:(id)arg1;
-- (NSInteger)compareAnchorYDescending:(id)arg1;
-- (NSInteger)compareChunkPosition:(id)arg1;
-- (NSInteger)compareInsertionOrder:(id)arg1;
-- (NSInteger)compareLinearBounds:(id)arg1;
-- (NSInteger)compareTopDescending:(id)arg1;
-- (NSInteger)compareX:(id)arg1;
-- (NSInteger)compareXBounds:(id)arg1;
-- (NSInteger)compareY:(id)arg1;
-- (NSInteger)compareYBounds:(id)arg1;
-- (NSInteger)compareYDescending:(id)arg1;
-- (NSInteger)compareYDescendingX:(id)arg1;
-- (NSInteger)compareZ:(id)arg1;
-- (NSInteger)compareZDescending:(id)arg1;
-- (id)copyAndSplitChildrenAtIndex:(NSUInteger)arg1;
+- (int)clusterLevelHint;
+- (int)compareAnchorX:(id)arg1;
+- (int)compareAnchorY:(id)arg1;
+- (int)compareAnchorYDescending:(id)arg1;
+- (int)compareChunkPosition:(id)arg1;
+- (int)compareInsertionOrder:(id)arg1;
+- (int)compareLinearBounds:(id)arg1;
+- (int)compareTopDescending:(id)arg1;
+- (int)compareX:(id)arg1;
+- (int)compareXBounds:(id)arg1;
+- (int)compareY:(id)arg1;
+- (int)compareYBounds:(id)arg1;
+- (int)compareYDescending:(id)arg1;
+- (int)compareYDescendingX:(id)arg1;
+- (int)compareZ:(id)arg1;
+- (int)compareZDescending:(id)arg1;
+- (id)copyAndSplitChildrenAtIndex:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSInteger)countOfClass:(Class)arg1;
+- (int)countOfClass:(Class)arg1;
 - (id)describeBounds;
 - (void)fitBoundsToChildren;
 - (float)fontSize;
@@ -77,7 +77,7 @@
 - (void)setAnchor:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setChildren:(id)arg1;
-- (void)setChunkPosition:(NSUInteger)arg1;
+- (void)setChunkPosition:(unsigned int)arg1;
 - (void)setInsertionOrder:(long)arg1;
 - (void)setShrinksWithChildren:(BOOL)arg1;
 - (BOOL)shrinksWithChildren;

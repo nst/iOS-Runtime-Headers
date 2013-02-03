@@ -5,7 +5,7 @@
 @class NSMutableArray;
 
 @interface PLCameraImportQueue : NSObject {
-    NSUInteger _index;
+    unsigned int _index;
     NSMutableArray *_items;
 }
 

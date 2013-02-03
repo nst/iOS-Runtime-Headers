@@ -2,20 +2,16 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface WebOpenPanelResultListener : NSObject <WebOpenPanelResultListener> {
-    struct FileChooser { NSInteger x1; struct FileChooserClient {} *x2; struct Vector<WebCore::String,0ul> { 
-            NSUInteger m_size; 
+    struct FileChooser { int x1; struct FileChooserClient {} *x2; struct Vector<WebCore::String,0ul> { 
+            unsigned int m_size; 
             struct VectorBuffer<WebCore::String,0ul> { 
                 struct String {} *m_buffer; 
-                NSUInteger m_capacity; 
+                unsigned int m_capacity; 
             } m_buffer; 
         } x3; struct RefPtr<WebCore::Icon> { 
             struct Icon {} *m_ptr; 
-        } x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; } *_chooser;
+        } x4; boolx5; } *_chooser;
 }
 
 - (void)cancel;

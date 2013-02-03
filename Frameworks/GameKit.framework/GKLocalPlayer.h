@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class GKAddressBook, UIAlertView, NSMutableArray, NSString, NSInvocation, GKInvite, NSArray;
+@class UIAlertView, NSArray, NSString, GKInvite, NSInvocation, GKAddressBook;
 
 @interface GKLocalPlayer : GKPlayer {
     GKInvite *_acceptedInvite;
@@ -21,9 +21,8 @@
     UIAlertView *_currentAlert;
     NSInvocation *_currentFriendRequestInvocation;
     BOOL _didAuthenticate;
-    NSMutableArray *_emails;
     BOOL _enteringForeground;
-    NSUInteger _failedLogins;
+    unsigned int _failedLogins;
     BOOL _findable;
     NSArray *_friends;
     BOOL _gameCenterAuthenticating;
@@ -34,22 +33,12 @@
     BOOL _updating;
 }
 
-@property(retain) GKInvite *acceptedInvite;
-@property(retain) GKInvite *acceptedInvite;
-@property(retain) NSString *accountName;
-@property(retain) NSString *accountName;
-@property(retain) GKAddressBook *addressBook;
-@property(retain) GKAddressBook *addressBook;
-@property(copy) ? *authenticationCompletionHandler;
-@property UIAlertView *currentAlert;
-@property(retain) NSInvocation *currentFriendRequestInvocation;
-@property(retain) NSMutableArray *emails;
-@property(retain) NSMutableArray *emails;
-@property(retain) NSArray *friends;
-@property(retain) NSString *lastUsernameAttempted;
-@property(retain) NSString *lastUsernameAttempted;
-@property(retain) UIAlertView *loginAlertView;
-@property(retain) NSString *previousPlayerID;
+@property(retain) GKInvite * acceptedInvite;
+@property(retain) GKInvite * acceptedInvite;
+@property(retain) NSString * accountName;
+@property(retain) NSString * accountName;
+@property(retain) GKAddressBook * addressBook;
+@property(retain) GKAddressBook * addressBook;
 @property BOOL authenticateWasCancelled;
 @property(getter=isAuthenticated) BOOL authenticated;
 @property(getter=isAuthenticated) BOOL authenticated;
@@ -57,12 +46,20 @@
 @property(getter=isAuthenticating) BOOL authenticating;
 @property(getter=isAuthenticating) BOOL authenticating;
 @property BOOL authenticatingCurrentAccount;
+@property(copy) id authenticationCompletionHandler;
+@property UIAlertView * currentAlert;
+@property(retain) NSInvocation * currentFriendRequestInvocation;
 @property BOOL didAuthenticate;
 @property BOOL enteringForeground;
-@property NSUInteger failedLogins;
+@property unsigned int failedLogins;
 @property(getter=isFindable) BOOL findable;
 @property(getter=isFindable) BOOL findable;
+@property(retain) NSArray * friends;
 @property BOOL gameCenterAuthenticating;
+@property(retain) NSString * lastUsernameAttempted;
+@property(retain) NSString * lastUsernameAttempted;
+@property(retain) UIAlertView * loginAlertView;
+@property(retain) NSString * previousPlayerID;
 @property(getter=isUnderage) BOOL underage;
 @property BOOL updating;
 
@@ -74,13 +71,12 @@
 - (void)abortAuthenticationWithError:(id)arg1;
 - (id)acceptedInvite;
 - (id)accountName;
-- (void)accountViewControllerDidFinish:(id)arg1 accountCreated:(BOOL)arg2;
+- (void)accountViewControllerForMode:(int)arg1 completionHandler:(id)arg2;
 - (void)accountWindowDidDismiss;
-- (void)addEmail:(id)arg1 verified:(BOOL)arg2;
 - (void)addEmail:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)addressBook;
 - (void)alertAndSendFriendRequest:(id)arg1 destination:(id)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)authenticateCurrentAccountWithCompletionHandler:(id)arg1;
 - (void)authenticateExistingAccount:(id)arg1 password:(id)arg2 completionHandler:(id)arg3;
@@ -104,13 +100,13 @@
 - (void)daemonInviteeRespondedToGameInvite:(id)arg1;
 - (void)dealloc;
 - (BOOL)didAuthenticate;
-- (void)editAccountViewControllerWithCompletionHandler:(id)arg1;
-- (id)emails;
 - (BOOL)enteringForeground;
-- (NSUInteger)failedLogins;
+- (unsigned int)failedLogins;
 - (void)finishAuthenticationWithError:(id)arg1;
 - (id)friends;
 - (BOOL)gameCenterAuthenticating;
+- (BOOL)handleUnderlyingAuthenticationError:(id)arg1;
+- (BOOL)hasEmailAddress:(id)arg1;
 - (id)iTunesAccountName;
 - (id)init;
 - (void)invalidatedCache:(id)arg1;
@@ -153,9 +149,8 @@
 - (void)setCurrentAlert:(id)arg1;
 - (void)setCurrentFriendRequestInvocation:(id)arg1;
 - (void)setDidAuthenticate:(BOOL)arg1;
-- (void)setEmails:(id)arg1;
 - (void)setEnteringForeground:(BOOL)arg1;
-- (void)setFailedLogins:(NSUInteger)arg1;
+- (void)setFailedLogins:(unsigned int)arg1;
 - (void)setFindable:(BOOL)arg1;
 - (void)setFriends:(id)arg1;
 - (void)setGameCenterAuthenticating:(BOOL)arg1;
@@ -166,8 +161,8 @@
 - (void)setStatus:(id)arg1;
 - (void)setUnderage:(BOOL)arg1;
 - (void)setUpdating:(BOOL)arg1;
-- (void)showAccountWindowForMode:(NSInteger)arg1 withEmail:(id)arg2;
-- (void)showAlertForTag:(NSUInteger)arg1;
+- (void)showAccountWindowForMode:(int)arg1 withEmail:(id)arg2;
+- (void)showAlertForTag:(unsigned int)arg1;
 - (void)showAlertWithDictionary:(id)arg1;
 - (void)signOutWithCompletionHandler:(id)arg1;
 - (BOOL)updating;

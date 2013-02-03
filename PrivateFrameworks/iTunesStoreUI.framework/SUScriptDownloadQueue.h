@@ -12,8 +12,8 @@
     NSString *_queueType;
 }
 
-@property(getter=_downloads,retain) NSArray *downloads; /* unknown property attribute: Sset_downloads: */
-@property(getter=_queueType,retain) NSString *queueType; /* unknown property attribute: Sset_queueType: */
+@property(getter=_downloads,setter=set_downloads:,retain) NSArray * downloads;
+@property(getter=_queueType,setter=set_queueType:,retain) NSString * queueType;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;

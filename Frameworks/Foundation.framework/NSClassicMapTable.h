@@ -2,6 +2,11 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface NSClassicMapTable : NSMapTable {
     struct { 
         int (*hash)(); 
@@ -22,11 +27,11 @@
 - (id)allKeys;
 - (id)allValues;
 - (id)copy;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (void*)existingItemForSetItem:(const void*)arg1 forAbsentKey:(const void*)arg2;
-- (NSUInteger)getKeys:(const void**)arg1 values:(const void**)arg2;
+- (unsigned int)getKeys:(const void**)arg1 values:(const void**)arg2;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)mapMember:(const void*)arg1 originalKey:(const void**)arg2 value:(const void**)arg3;

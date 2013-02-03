@@ -5,10 +5,10 @@
 @interface OAVColor : NSObject {
 }
 
-+ (NSInteger)readColorAdjustmentType:(id)arg1;
++ (int)readColorAdjustmentType:(id)arg1;
 + (id)readColorFromAttribute:(id)arg1 alpha:(float)arg2 manager:(id)arg3;
-+ (id)readColorProperty:(NSInteger)arg1 manager:(id)arg2;
-+ (NSInteger)readColorProperty:(id)arg1;
++ (int)readColorProperty:(id)arg1;
++ (id)readColorProperty:(int)arg1 manager:(id)arg2;
 + (id)readPropertyColorFromAttribute:(id)arg1 manager:(id)arg2;
 + (id)readRGBColorFromAttribute:(id)arg1;
 

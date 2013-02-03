@@ -11,9 +11,9 @@
     unsigned char _inviteVersion;
 }
 
-@property(retain) NSDictionary *acceptGameInviteResponse;
-@property(retain) NSData *connectionData;
-@property(retain) GKInvite *invite;
+@property(retain) NSDictionary * acceptGameInviteResponse;
+@property(retain) NSData * connectionData;
+@property(retain) GKInvite * invite;
 @property unsigned char inviteVersion;
 
 - (id)acceptGameInviteResponse;

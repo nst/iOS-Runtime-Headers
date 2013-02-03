@@ -6,7 +6,7 @@
 
 @interface SKPaymentInternal : NSObject <NSCopying> {
     NSString *_productIdentifier;
-    NSInteger _quantity;
+    int _quantity;
     NSData *_requestData;
 }
 

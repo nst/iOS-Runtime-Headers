@@ -8,21 +8,21 @@
     struct { 
         unsigned int loadRest : 1; 
         unsigned int includeAttachments : 1; 
-    NSInteger _composeType;
+    int _composeType;
     MFMessageViewingContext *_loadingContext;
     } _mailComposeFlags;
     id _originalContent;
     MailMessage *_originalMessage;
 }
 
-@property(retain) MFMessageViewingContext *loadingContext;
-@property(retain,readonly) MailMessage *originalMessage;
-@property(readonly) NSInteger composeType;
+@property(readonly) int composeType;
 @property BOOL includeAttachments;
 @property BOOL loadRest;
+@property(retain) MFMessageViewingContext * loadingContext;
 @property(retain) id originalContent;
+@property(retain,readonly) MailMessage * originalMessage;
 
-- (NSInteger)composeType;
+- (int)composeType;
 - (void)dealloc;
 - (BOOL)includeAttachments;
 - (id)initDraftRestoreOfMessage:(id)arg1;
@@ -30,8 +30,8 @@
 - (id)initOutboxRestoreOfMessage:(id)arg1;
 - (id)initReplyAllToMessage:(id)arg1;
 - (id)initReplyToMessage:(id)arg1;
-- (id)initWithComposeType:(NSInteger)arg1 originalMessage:(id)arg2;
-- (id)initWithComposeType:(NSInteger)arg1;
+- (id)initWithComposeType:(int)arg1 originalMessage:(id)arg2;
+- (id)initWithComposeType:(int)arg1;
 - (BOOL)loadRest;
 - (id)loadingContext;
 - (id)originalContent;

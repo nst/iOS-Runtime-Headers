@@ -6,17 +6,17 @@
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    NSUInteger *_activePIDList;
-    NSUInteger _activePIDListCount;
-    NSUInteger _activePIDListSize;
+    unsigned int *_activePIDList;
+    unsigned int _activePIDListCount;
+    unsigned int _activePIDListSize;
     } _lock;
 }
 
-- (BOOL)hasActivePID:(NSUInteger)arg1;
+- (BOOL)hasActivePID:(unsigned int)arg1;
 - (id)init;
 - (void)lock;
-- (void)registerPID:(NSUInteger)arg1;
+- (void)registerPID:(unsigned int)arg1;
 - (void)unlock;
-- (void)unregisterPID:(NSUInteger)arg1;
+- (void)unregisterPID:(unsigned int)arg1;
 
 @end

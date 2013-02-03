@@ -9,18 +9,18 @@
         float width; 
         float height; 
     NSMutableArray *mElements;
-    NSInteger mFillMode;
+    int mFillMode;
     } mSize;
     BOOL mStroked;
 }
 
 - (void)addElement:(id)arg1;
 - (void)dealloc;
-- (id)elementAtIndex:(NSUInteger)arg1;
-- (NSUInteger)elementCount;
-- (NSInteger)fillMode;
+- (id)elementAtIndex:(unsigned int)arg1;
+- (unsigned int)elementCount;
+- (int)fillMode;
 - (id)init;
-- (void)setFillMode:(NSInteger)arg1;
+- (void)setFillMode:(int)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setStroked:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })size;

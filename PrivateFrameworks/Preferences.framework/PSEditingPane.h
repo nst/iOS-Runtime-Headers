@@ -21,7 +21,7 @@
     PSSpecifier *_specifier;
 }
 
-@property CGRect pinstripeRect;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } pinstripeRect;
 
 + (id)defaultBackgroundColor;
 + (float)preferredHeight;
@@ -30,7 +30,7 @@
 - (BOOL)changed;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)doneEditing;
 - (void)editMode;
 - (BOOL)handlesDoneButton;
@@ -46,7 +46,7 @@
 - (id)specifierLabel;
 - (void)viewDidBecomeVisible;
 - (BOOL)wantsNewButton;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

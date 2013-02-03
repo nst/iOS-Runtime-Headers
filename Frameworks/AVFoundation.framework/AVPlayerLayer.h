@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayerLayerInternal;
+@class AVPlayer, NSString, AVPlayerLayerInternal;
 
 @interface AVPlayerLayer : CALayer {
     AVPlayerLayerInternal *_playerLayer;
 }
 
-@property(retain) AVPlayer *player;
-@property(copy) NSString *videoGravity;
+@property(retain) AVPlayer * player;
 @property(getter=isReadyForDisplay,readonly) BOOL readyForDisplay;
+@property(copy) NSString * videoGravity;
 
 + (id)playerLayerWithPlayer:(id)arg1;
 
@@ -18,12 +18,14 @@
 - (void)_didEnterBackground:(id)arg1;
 - (void)_disconnectContentLayerFromPlayer;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_minRectToFitVideoAndSubtitlesInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setHasPlayerToObserve:(int)arg1 andShouldObserveIt:(int)arg2;
 - (void)_setItem:(id)arg1 readyForDisplay:(BOOL)arg2;
 - (void)_setSubtitleDisplayEnabled:(BOOL)arg1;
 - (void)_setSubtitleGravity:(id)arg1;
 - (BOOL)_subtitleDisplayEnabled;
 - (id)_subtitleGravity;
 - (void)_updateContentLayerConnectionToPlayer;
+- (void)_updatePresentationSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_videoRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_videoRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_willEnterForeground:(id)arg1;
@@ -36,8 +38,6 @@
 - (void)layoutSublayers;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)player;
-- (void)release;
-- (id)retain;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setVideoGravity:(id)arg1;

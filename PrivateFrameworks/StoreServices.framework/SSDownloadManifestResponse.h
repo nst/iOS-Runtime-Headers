@@ -9,8 +9,8 @@
     NSArray *_validDownloads;
 }
 
-@property(retain) NSArray *invalidDownloads;
-@property(retain) NSArray *validDownloads;
+@property(retain) NSArray * invalidDownloads;
+@property(retain) NSArray * validDownloads;
 
 - (id)copyPropertyListEncoding;
 - (void)dealloc;

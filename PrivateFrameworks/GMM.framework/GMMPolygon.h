@@ -5,50 +5,50 @@
 @class NSData, NSMutableArray;
 
 @interface GMMPolygon : PBCodable {
-    NSInteger _fillColor;
+    int _fillColor;
     BOOL _hasFillColor;
     BOOL _hasLineColor;
     BOOL _hasLineWidth;
     NSMutableArray *_innerBoundarys;
     NSData *_line;
-    NSInteger _lineColor;
-    NSInteger _lineWidth;
+    int _lineColor;
+    int _lineWidth;
 }
 
-@property(retain) NSMutableArray *innerBoundarys;
-@property(retain) NSData *line;
-@property NSInteger fillColor;
+@property int fillColor;
 @property(readonly) BOOL hasFillColor;
 @property(readonly) BOOL hasLine;
 @property(readonly) BOOL hasLineColor;
 @property(readonly) BOOL hasLineWidth;
-@property(readonly) NSInteger innerBoundarysCount;
-@property NSInteger lineColor;
-@property NSInteger lineWidth;
+@property(retain) NSMutableArray * innerBoundarys;
+@property(readonly) int innerBoundarysCount;
+@property(retain) NSData * line;
+@property int lineColor;
+@property int lineWidth;
 
 - (void)addInnerBoundary:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (NSInteger)fillColor;
+- (int)fillColor;
 - (BOOL)hasFillColor;
 - (BOOL)hasLine;
 - (BOOL)hasLineColor;
 - (BOOL)hasLineWidth;
 - (id)init;
-- (id)innerBoundaryAtIndex:(NSUInteger)arg1;
+- (id)innerBoundaryAtIndex:(unsigned int)arg1;
 - (id)innerBoundarys;
-- (NSInteger)innerBoundarysCount;
+- (int)innerBoundarysCount;
 - (id)line;
-- (NSInteger)lineColor;
-- (NSInteger)lineWidth;
+- (int)lineColor;
+- (int)lineWidth;
 - (BOOL)readFrom:(id)arg1;
-- (void)setFillColor:(NSInteger)arg1;
-- (void)setInnerBoundary:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setFillColor:(int)arg1;
+- (void)setInnerBoundary:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setInnerBoundarys:(id)arg1;
 - (void)setLine:(id)arg1;
-- (void)setLineColor:(NSInteger)arg1;
-- (void)setLineWidth:(NSInteger)arg1;
+- (void)setLineColor:(int)arg1;
+- (void)setLineWidth:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

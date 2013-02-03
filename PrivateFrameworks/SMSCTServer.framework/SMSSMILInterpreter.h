@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SMSCTServer.framework/SMSCTServer
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSArray;
 
 @interface SMSSMILInterpreter : NSObject {
@@ -33,7 +38,7 @@
         int (*getParameterEntity)(); 
         int (*cdataBlock)(); 
         int (*externalSubset)(); 
-        NSUInteger initialized; 
+        unsigned int initialized; 
         void *_private; 
         int (*startElementNs)(); 
         int (*endElementNs)(); 

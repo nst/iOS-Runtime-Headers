@@ -6,15 +6,15 @@
 
 @interface DARegex : NSObject {
     struct { 
-        NSInteger re_magic; 
-        NSUInteger re_nsub; 
+        int re_magic; 
+        unsigned int re_nsub; 
         char *re_endp; 
         struct re_guts {} *re_g; 
     NSString *_pattern;
     } _regex;
 }
 
-@property(readonly) NSString *pattern;
+@property(readonly) NSString * pattern;
 
 + (BOOL)matchesString:(id)arg1 pattern:(id)arg2 ignoreCase:(BOOL)arg3;
 + (id)regexWithPattern:(id)arg1 ignoreCase:(BOOL)arg2;

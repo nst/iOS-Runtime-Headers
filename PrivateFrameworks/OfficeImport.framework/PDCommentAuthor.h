@@ -5,20 +5,20 @@
 @class NSString;
 
 @interface PDCommentAuthor : NSObject {
-    NSUInteger mColorIndex;
-    NSUInteger mId;
+    unsigned int mColorIndex;
+    unsigned int mId;
     NSString *mInitials;
     NSString *mName;
 }
 
-- (NSUInteger)colorIndex;
+- (unsigned int)colorIndex;
 - (void)dealloc;
-- (NSUInteger)id;
+- (unsigned int)id;
 - (id)init;
 - (id)initials;
 - (id)name;
-- (void)setColorIndex:(NSUInteger)arg1;
-- (void)setId:(NSUInteger)arg1;
+- (void)setColorIndex:(unsigned int)arg1;
+- (void)setId:(unsigned int)arg1;
 - (void)setInitials:(id)arg1;
 - (void)setName:(id)arg1;
 

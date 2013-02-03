@@ -8,6 +8,7 @@
 - (BOOL)canAnimate;
 - (void)postNotificationsForTransitionEnd;
 - (void)postNotificationsForTransitionStart;
+- (BOOL)shouldCompleteOnSuspend;
 - (BOOL)subsumesTransition:(id)arg1;
 
 @end

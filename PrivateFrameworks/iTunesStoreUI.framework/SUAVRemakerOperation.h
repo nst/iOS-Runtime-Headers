@@ -9,7 +9,7 @@
     SUAVRemakerOutput *_remakerOutput;
 }
 
-@property(readonly) SUAVRemakerOutput *remakerOutput;
+@property(readonly) SUAVRemakerOutput * remakerOutput;
 
 - (void)_beginObservingAVRemaker:(id)arg1;
 - (void)_endObservingAVRemaker;

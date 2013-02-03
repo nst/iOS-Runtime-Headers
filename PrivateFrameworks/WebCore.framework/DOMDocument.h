@@ -2,37 +2,39 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMHTMLElement, DOMStyleSheetList, DOMAbstractView, DOMHTMLCollection, NSString, DOMImplementation, DOMElement, DOMDocumentType;
+
 @interface DOMDocument : DOMNode {
 }
 
-@property(copy,readonly) NSString *URL;
-@property(retain,readonly) DOMHTMLCollection *anchors;
-@property(retain,readonly) DOMHTMLCollection *applets;
-@property(retain) DOMHTMLElement *body;
-@property(copy,readonly) NSString *characterSet;
-@property(copy) NSString *charset;
-@property(copy) NSString *cookie;
-@property(copy,readonly) NSString *defaultCharset;
-@property(retain,readonly) DOMAbstractView *defaultView;
-@property(retain,readonly) DOMDocumentType *doctype;
-@property(retain,readonly) DOMElement *documentElement;
-@property(copy) NSString *documentURI;
-@property(copy,readonly) NSString *domain;
-@property(retain,readonly) DOMHTMLCollection *forms;
-@property(retain,readonly) DOMHTMLCollection *images;
-@property(retain,readonly) DOMImplementation *implementation;
-@property(copy,readonly) NSString *inputEncoding;
-@property(copy,readonly) NSString *lastModified;
-@property(retain,readonly) DOMHTMLCollection *links;
-@property(copy,readonly) NSString *preferredStylesheetSet;
-@property(copy,readonly) NSString *readyState;
-@property(copy,readonly) NSString *referrer;
-@property(copy) NSString *selectedStylesheetSet;
-@property(retain,readonly) DOMStyleSheetList *styleSheets;
-@property(copy) NSString *title;
-@property(copy,readonly) NSString *xmlEncoding;
-@property(copy) NSString *xmlVersion;
+@property(copy,readonly) NSString * URL;
+@property(retain,readonly) DOMHTMLCollection * anchors;
+@property(retain,readonly) DOMHTMLCollection * applets;
+@property(retain) DOMHTMLElement * body;
+@property(copy,readonly) NSString * characterSet;
+@property(copy) NSString * charset;
+@property(copy) NSString * cookie;
+@property(copy,readonly) NSString * defaultCharset;
+@property(retain,readonly) DOMAbstractView * defaultView;
+@property(retain,readonly) DOMDocumentType * doctype;
+@property(retain,readonly) DOMElement * documentElement;
+@property(copy) NSString * documentURI;
+@property(copy,readonly) NSString * domain;
+@property(retain,readonly) DOMHTMLCollection * forms;
+@property(retain,readonly) DOMHTMLCollection * images;
+@property(retain,readonly) DOMImplementation * implementation;
+@property(copy,readonly) NSString * inputEncoding;
+@property(copy,readonly) NSString * lastModified;
+@property(retain,readonly) DOMHTMLCollection * links;
+@property(copy,readonly) NSString * preferredStylesheetSet;
+@property(copy,readonly) NSString * readyState;
+@property(copy,readonly) NSString * referrer;
+@property(copy) NSString * selectedStylesheetSet;
+@property(retain,readonly) DOMStyleSheetList * styleSheets;
+@property(copy) NSString * title;
+@property(copy,readonly) NSString * xmlEncoding;
 @property BOOL xmlStandalone;
+@property(copy) NSString * xmlVersion;
 
 - (id)URL;
 - (id)URLWithAttributeString:(id)arg1;
@@ -43,7 +45,7 @@
 - (id)anchors;
 - (id)applets;
 - (id)body;
-- (id)caretRangeFromPoint:(NSInteger)arg1 y:(NSInteger)arg2;
+- (id)caretRangeFromPoint:(int)arg1 y:(int)arg2;
 - (id)characterSet;
 - (id)charset;
 - (id)cookie;
@@ -62,16 +64,16 @@
 - (id)createExpression:(id)arg1 :(id)arg2;
 - (id)createExpression:(id)arg1 resolver:(id)arg2;
 - (id)createNSResolver:(id)arg1;
-- (id)createNodeIterator:(id)arg1 :(NSUInteger)arg2 :(id)arg3 :(BOOL)arg4;
-- (id)createNodeIterator:(id)arg1 whatToShow:(NSUInteger)arg2 filter:(id)arg3 expandEntityReferences:(BOOL)arg4;
+- (id)createNodeIterator:(id)arg1 :(unsigned int)arg2 :(id)arg3 :(BOOL)arg4;
+- (id)createNodeIterator:(id)arg1 whatToShow:(unsigned int)arg2 filter:(id)arg3 expandEntityReferences:(BOOL)arg4;
 - (id)createProcessingInstruction:(id)arg1 :(id)arg2;
 - (id)createProcessingInstruction:(id)arg1 data:(id)arg2;
 - (id)createRange;
 - (id)createTextNode:(id)arg1;
-- (id)createTouch:(id)arg1 target:(id)arg2 identifier:(NSInteger)arg3 pageX:(NSInteger)arg4 pageY:(NSInteger)arg5 screenX:(NSInteger)arg6 screenY:(NSInteger)arg7;
+- (id)createTouch:(id)arg1 target:(id)arg2 identifier:(int)arg3 pageX:(int)arg4 pageY:(int)arg5 screenX:(int)arg6 screenY:(int)arg7;
 - (id)createTouchList;
-- (id)createTreeWalker:(id)arg1 :(NSUInteger)arg2 :(id)arg3 :(BOOL)arg4;
-- (id)createTreeWalker:(id)arg1 whatToShow:(NSUInteger)arg2 filter:(id)arg3 expandEntityReferences:(BOOL)arg4;
+- (id)createTreeWalker:(id)arg1 :(unsigned int)arg2 :(id)arg3 :(BOOL)arg4;
+- (id)createTreeWalker:(id)arg1 whatToShow:(unsigned int)arg2 filter:(id)arg3 expandEntityReferences:(BOOL)arg4;
 - (struct __DDScanQuery { }*)dd_createScanQuery;
 - (void)dd_resetResults;
 - (BOOL)dd_urlifyResults:(id)arg1 operation:(id)arg2;
@@ -81,7 +83,7 @@
 - (id)documentElement;
 - (id)documentURI;
 - (id)domain;
-- (id)elementFromPoint:(NSInteger)arg1 y:(NSInteger)arg2;
+- (id)elementFromPoint:(int)arg1 y:(int)arg2;
 - (id)evaluate:(id)arg1 :(id)arg2 :(id)arg3 :(unsigned short)arg4 :(id)arg5;
 - (id)evaluate:(id)arg1 contextNode:(id)arg2 resolver:(id)arg3 type:(unsigned short)arg4 inResult:(id)arg5;
 - (BOOL)execCommand:(id)arg1 userInterface:(BOOL)arg2 value:(id)arg3;

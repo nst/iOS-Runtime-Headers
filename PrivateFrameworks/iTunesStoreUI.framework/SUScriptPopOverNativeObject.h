@@ -10,8 +10,8 @@
     SUDOMElement *_sourceDOMElement;
 }
 
-@property(retain) UIBarButtonItem *sourceButtonItem;
-@property(retain) SUDOMElement *sourceDOMElement;
+@property(retain) UIBarButtonItem * sourceButtonItem;
+@property(retain) SUDOMElement * sourceDOMElement;
 
 - (BOOL)_isAffectedByWindowNotification:(id)arg1;
 - (void)_windowDidRotateNotification:(id)arg1;

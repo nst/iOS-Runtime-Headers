@@ -2,35 +2,37 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
+@class NSURL, NSDate, NoteBodyObject, NoteStoreObject, NSString, NSData, NSNumber;
+
 @interface NoteObject : NSManagedObject {
 }
 
-@property(retain) NSString *author;
-@property(retain) NoteBodyObject *body;
-@property(retain) NSNumber *containsCJK;
-@property(retain) NSString *content;
-@property(readonly) NSString *contentAsPlainText;
-@property(retain) NSNumber *contentType;
-@property(retain) NSDate *creationDate;
-@property(retain) NSNumber *deletedFlag;
-@property(retain) NSString *externalContentRef;
-@property(retain) NSNumber *externalFlags;
-@property(retain) NSData *externalRepresentation;
-@property(retain) NSNumber *externalServerIntId;
-@property(retain) NSString *guid;
-@property(retain) NSNumber *integerId;
-@property(retain) NSNumber *isBookkeepingEntry;
-@property(retain) NSDate *modificationDate;
-@property(readonly) NSURL *noteId;
-@property(retain) NSString *serverId;
-@property(retain) NoteStoreObject *store;
-@property(retain) NSString *summary;
-@property(retain) NSString *title;
+@property(retain) NSString * author;
+@property(retain) NoteBodyObject * body;
+@property(retain) NSNumber * containsCJK;
+@property(retain) NSString * content;
+@property(readonly) NSString * contentAsPlainText;
+@property(retain) NSNumber * contentType;
+@property(retain) NSDate * creationDate;
+@property(retain) NSNumber * deletedFlag;
+@property(retain) NSString * externalContentRef;
+@property(retain) NSNumber * externalFlags;
+@property(retain) NSData * externalRepresentation;
+@property(retain) NSNumber * externalServerIntId;
 @property unsigned long long flags;
+@property(retain) NSString * guid;
 @property(readonly) BOOL hasValidServerIntId;
+@property(retain) NSNumber * integerId;
+@property(retain) NSNumber * isBookkeepingEntry;
 @property(readonly) BOOL isMarkedForDeletion;
 @property BOOL isPlainText;
+@property(retain) NSDate * modificationDate;
+@property(readonly) NSURL * noteId;
+@property(retain) NSString * serverId;
 @property long long serverIntId;
+@property(retain) NoteStoreObject * store;
+@property(retain) NSString * summary;
+@property(retain) NSString * title;
 
 - (id)content;
 - (id)contentAsPlainText;

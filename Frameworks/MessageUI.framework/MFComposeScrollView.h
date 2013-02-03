@@ -9,11 +9,11 @@
         float x; 
         float y; 
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     BOOL _catchesSingleTap;
     NSMutableSet *_disabledSubviews;
-    NSInteger _scrollBlocked;
+    int _scrollBlocked;
     } _selectedRange;
     BOOL _shouldScrollToFirstResponder;
     UIGestureRecognizer *_singleTapGestureRecognizer;
@@ -21,10 +21,10 @@
     UIView *_tappedView;
 }
 
-@property(retain) UIView *tappedView;
 @property BOOL catchesSingleTap;
 @property BOOL shouldScrollToFirstResponder;
-@property CGPoint tapLocation;
+@property struct CGPoint { float x; float y; } tapLocation;
+@property(retain) UIView * tappedView;
 
 - (BOOL)_scrollsToMakeFirstResponderVisible;
 - (void)beginBlockingScroll;

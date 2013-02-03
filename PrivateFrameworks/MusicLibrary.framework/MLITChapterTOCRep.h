@@ -4,36 +4,36 @@
 
 @interface MLITChapterTOCRep : MLChapterTOC {
     struct ChapterData { } *_chapterDataRef;
-    NSUInteger *_nameCookieIndexMap;
-    NSUInteger *_picCookieIndexMap;
-    NSUInteger _totalTimeInMS;
-    NSUInteger *_urlCookieIndexMap;
+    unsigned int *_nameCookieIndexMap;
+    unsigned int *_picCookieIndexMap;
+    unsigned int _totalTimeInMS;
+    unsigned int *_urlCookieIndexMap;
 }
 
-+ (NSUInteger**)_chapterDataCookieIndexMapForProperty:(NSInteger)arg1 ofChapterTOC:(id)arg2;
++ (unsigned int**)_chapterDataCookieIndexMapForProperty:(int)arg1 ofChapterTOC:(id)arg2;
 
-- (NSUInteger*)_cachedCookieIndexMapForProperty:(NSInteger)arg1 createIfNecessary:(BOOL)arg2;
-- (id)availableArtworkFormatIDsForArtworkGroupChapterIndex:(NSUInteger)arg1;
-- (id)availableArtworkFormatIDsForChapterIndex:(NSUInteger)arg1;
-- (id)bestImageDataForSize:(struct CGSize { float x1; float x2; })arg1 chapterIndex:(NSUInteger)arg2 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { NSUInteger x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; NSUInteger x_1_1_4; NSInteger x_1_1_5; NSInteger x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg3;
+- (unsigned int*)_cachedCookieIndexMapForProperty:(int)arg1 createIfNecessary:(BOOL)arg2;
+- (id)availableArtworkFormatIDsForArtworkGroupChapterIndex:(unsigned int)arg1;
+- (id)availableArtworkFormatIDsForChapterIndex:(unsigned int)arg1;
+- (id)bestImageDataForSize:(struct CGSize { float x1; float x2; })arg1 chapterIndex:(unsigned int)arg2 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg3;
 - (struct ChapterData { }*)chapterDataRef;
-- (NSUInteger)chapterIndexForGroupIndex:(NSUInteger)arg1 groupingProperty:(NSInteger)arg2;
-- (NSUInteger)countOfChapters;
-- (NSUInteger)countOfGroupsForProperty:(NSInteger)arg1;
+- (unsigned int)chapterIndexForGroupIndex:(unsigned int)arg1 groupingProperty:(int)arg2;
+- (unsigned int)countOfChapters;
+- (unsigned int)countOfGroupsForProperty:(int)arg1;
 - (void)dealloc;
-- (NSUInteger)durationInMSOfGroupAtIndex:(NSUInteger)arg1 groupingProperty:(NSInteger)arg2;
-- (id)getImageWithArtworkFormatID:(NSUInteger)arg1 size:(struct CGSize { float x1; float x2; })arg2 chapterIndex:(NSUInteger)arg3 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { NSUInteger x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; NSUInteger x_1_1_4; NSInteger x_1_1_5; NSInteger x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg4;
-- (NSUInteger)groupIndexAtTimeLocationInMS:(NSUInteger)arg1 groupingProperty:(NSInteger)arg2;
-- (NSUInteger)groupIndexForChapterIndex:(NSUInteger)arg1 groupingProperty:(NSInteger)arg2;
-- (id)imageDataForArtworkFormatID:(NSUInteger)arg1 chapterIndex:(NSUInteger)arg2 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { NSUInteger x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; NSUInteger x_1_1_4; NSInteger x_1_1_5; NSInteger x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg3;
-- (id)imageDataForArtworkFormatID:(NSUInteger)arg1 size:(struct CGSize { float x1; float x2; })arg2 artworkChapterIndex:(NSUInteger)arg3 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { NSUInteger x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; NSUInteger x_1_1_4; NSInteger x_1_1_5; NSInteger x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg4;
-- (id)initWithChapterDataRef:(struct ChapterData { }*)arg1 totalTimeInMS:(NSUInteger)arg2;
-- (NSUInteger)timeLocationInMSOfChapterAtIndex:(NSUInteger)arg1;
-- (NSUInteger)timeLocationInMSOfGroupAtIndex:(NSUInteger)arg1 groupingProperty:(NSInteger)arg2;
-- (id)titlePropertyOfChapterAtIndex:(NSUInteger)arg1;
-- (NSUInteger)totalTimeInMS;
-- (id)urlPropertyOfChapterAtIndex:(NSUInteger)arg1;
-- (id)urlTitlePropertyOfChapterAtIndex:(NSUInteger)arg1;
+- (unsigned int)durationInMSOfGroupAtIndex:(unsigned int)arg1 groupingProperty:(int)arg2;
+- (id)getImageWithArtworkFormatID:(unsigned int)arg1 size:(struct CGSize { float x1; float x2; })arg2 chapterIndex:(unsigned int)arg3 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg4;
+- (unsigned int)groupIndexAtTimeLocationInMS:(unsigned int)arg1 groupingProperty:(int)arg2;
+- (unsigned int)groupIndexForChapterIndex:(unsigned int)arg1 groupingProperty:(int)arg2;
+- (id)imageDataForArtworkFormatID:(unsigned int)arg1 chapterIndex:(unsigned int)arg2 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg3;
+- (id)imageDataForArtworkFormatID:(unsigned int)arg1 size:(struct CGSize { float x1; float x2; })arg2 artworkChapterIndex:(unsigned int)arg3 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg4;
+- (id)initWithChapterDataRef:(struct ChapterData { }*)arg1 totalTimeInMS:(unsigned int)arg2;
+- (unsigned int)timeLocationInMSOfChapterAtIndex:(unsigned int)arg1;
+- (unsigned int)timeLocationInMSOfGroupAtIndex:(unsigned int)arg1 groupingProperty:(int)arg2;
+- (id)titlePropertyOfChapterAtIndex:(unsigned int)arg1;
+- (unsigned int)totalTimeInMS;
+- (id)urlPropertyOfChapterAtIndex:(unsigned int)arg1;
+- (id)urlTitlePropertyOfChapterAtIndex:(unsigned int)arg1;
 - (id)urlTitleTrimmingCharacterSet;
 
 @end

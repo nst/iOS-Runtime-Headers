@@ -7,21 +7,21 @@
 @interface SULocationSectionsOperation : ISOperation {
     CLLocation *_location;
     SUSectionsResponse *_sectionsResponse;
-    NSInteger _updateDistance;
+    int _updateDistance;
 }
 
-@property(retain) CLLocation *location;
-@property(readonly) SUSectionsResponse *sectionsResponse;
-@property(readonly) NSInteger updateDistance;
+@property(retain) CLLocation * location;
+@property(readonly) SUSectionsResponse * sectionsResponse;
+@property(readonly) int updateDistance;
 
 - (id)_copyBaseOperation;
 - (void)_setSectionsResponse:(id)arg1;
-- (void)_setUpdateDistance:(NSInteger)arg1;
+- (void)_setUpdateDistance:(int)arg1;
 - (void)dealloc;
 - (id)location;
 - (void)run;
 - (id)sectionsResponse;
 - (void)setLocation:(id)arg1;
-- (NSInteger)updateDistance;
+- (int)updateDistance;
 
 @end

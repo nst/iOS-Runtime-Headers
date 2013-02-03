@@ -14,30 +14,31 @@
     GKTableView *_portraitTableView;
     BOOL _shouldDelayTableReloadForDeselectAnimation;
     GKTableView *_tableView;
-    NSInteger _tableViewStyle;
+    int _tableViewStyle;
 }
 
-@property(retain) UIImageView *bottomShadowView;
-@property(retain) GKTableView *landscapeTableView;
-@property(retain) UIView *overlayTouchView;
-@property(retain) GKTableView *portraitTableView;
-@property(retain) GKTableView *tableView;
+@property(retain) UIImageView * bottomShadowView;
 @property BOOL clearsSelectionOnViewWillAppear;
+@property(retain) GKTableView * landscapeTableView;
+@property(retain) UIView * overlayTouchView;
+@property(retain) GKTableView * portraitTableView;
 @property BOOL shouldDelayTableReloadForDeselectAnimation;
-@property(readonly) NSInteger tableViewStyle;
+@property(retain) GKTableView * tableView;
+@property(readonly) int tableViewStyle;
 
 - (id)_gkTableView:(id)arg1 buttonCellWithTitle:(id)arg2 theme:(id)arg3;
 - (id)addTouchCaptureOverlayViewWithTarget:(id)arg1 action:(SEL)arg2;
 - (id)bottomShadowView;
 - (BOOL)clearsSelectionOnViewWillAppear;
 - (void)dealloc;
-- (id)initWithStyle:(NSInteger)arg1;
+- (id)initWithStyle:(int)arg1;
 - (void)keyboardWillHideShow:(id)arg1;
 - (id)landscapeTableView;
 - (void)loadView;
 - (void)localeDidChangeNotification:(id)arg1;
 - (id)overlayTouchView;
 - (id)portraitTableView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectToKeepVisibleAboveKeyboardWithinView:(id)arg1;
 - (void)reloadAllTables;
 - (void)reloadTableData;
 - (void)removeTouchCaptureOverlayView;
@@ -49,18 +50,18 @@
 - (void)setPortraitTableView:(id)arg1;
 - (void)setShouldDelayTableReloadForDeselectAnimation:(BOOL)arg1;
 - (void)setTableView:(id)arg1;
-- (void)setupViewsWithOrientation:(NSInteger)arg1;
+- (void)setupViewsWithOrientation:(int)arg1;
 - (BOOL)shouldAdjustInsetsForKeyboard;
 - (BOOL)shouldDelayTableReloadForDeselectAnimation;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(NSInteger)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView;
-- (NSInteger)tableViewStyle;
+- (int)tableViewStyle;
 - (void)updateBottomShadowFrame;
 - (void)updateTableInsetsForKeyboardHeight:(float)arg1;
 - (void)updateTableViewFrame:(id)arg1;
@@ -69,6 +70,6 @@
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

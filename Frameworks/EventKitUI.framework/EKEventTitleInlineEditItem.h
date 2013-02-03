@@ -10,20 +10,20 @@
     UITableViewCell *_titleCell;
 }
 
-@property(retain) UIResponder *selectedResponder;
+@property(retain) UIResponder * selectedResponder;
 
-- (id)_makeCell:(NSInteger)arg1;
-- (id)cellForSubitemAtIndex:(NSInteger)arg1;
+- (id)_makeCell:(int)arg1;
+- (id)cellForSubitemAtIndex:(int)arg1;
 - (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(NSInteger)arg1 forWidth:(float)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
 - (BOOL)isInline;
-- (NSInteger)numberOfSubitems;
+- (int)numberOfSubitems;
 - (void)reset;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
 - (id)selectedResponder;
 - (id)selectedTextField;
 - (void)setSelectedResponder:(id)arg1;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 replacementString:(id)arg3;
+- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
 

@@ -7,19 +7,19 @@
 @interface EKParticipant : NSObject <NSCopying> {
     NSURL *_address;
     NSString *_commonName;
-    NSUInteger _dirtyFlags;
+    unsigned int _dirtyFlags;
     NSString *_emailAddress;
     BOOL _isSelf;
-    NSInteger _role;
-    NSInteger _status;
-    NSInteger _type;
+    int _role;
+    int _status;
+    int _type;
 }
 
-@property(readonly) NSURL *URL;
-@property(readonly) NSString *name;
-@property(readonly) NSInteger participantRole;
-@property(readonly) NSInteger participantStatus;
-@property(readonly) NSInteger participantType;
+@property(readonly) NSURL * URL;
+@property(readonly) NSString * name;
+@property(readonly) int participantRole;
+@property(readonly) int participantStatus;
+@property(readonly) int participantType;
 
 + (id)participantWithEmailAddress:(id)arg1 commonName:(id)arg2;
 
@@ -31,21 +31,21 @@
 - (id)displayName;
 - (id)emailAddress;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2 isSelf:(BOOL)arg3;
-- (id)initWithEmailAddress:(id)arg1 name:(id)arg2 role:(NSInteger)arg3 status:(NSInteger)arg4 type:(NSInteger)arg5 isSelf:(BOOL)arg6;
-- (id)initWithEmailAddress:(id)arg1 name:(id)arg2 role:(NSInteger)arg3 status:(NSInteger)arg4 type:(NSInteger)arg5;
+- (id)initWithEmailAddress:(id)arg1 name:(id)arg2 role:(int)arg3 status:(int)arg4 type:(int)arg5 isSelf:(BOOL)arg6;
+- (id)initWithEmailAddress:(id)arg1 name:(id)arg2 role:(int)arg3 status:(int)arg4 type:(int)arg5;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
-- (id)initWithURL:(id)arg1 name:(id)arg2 emailAddress:(id)arg3 role:(NSInteger)arg4 status:(NSInteger)arg5 type:(NSInteger)arg6 isSelf:(BOOL)arg7;
+- (id)initWithURL:(id)arg1 name:(id)arg2 emailAddress:(id)arg3 role:(int)arg4 status:(int)arg5 type:(int)arg6 isSelf:(BOOL)arg7;
 - (id)initWithURL:(id)arg1 name:(id)arg2 isSelf:(BOOL)arg3;
-- (id)initWithURL:(id)arg1 name:(id)arg2 role:(NSInteger)arg3 status:(NSInteger)arg4 type:(NSInteger)arg5 isSelf:(BOOL)arg6;
+- (id)initWithURL:(id)arg1 name:(id)arg2 role:(int)arg3 status:(int)arg4 type:(int)arg5 isSelf:(BOOL)arg6;
 - (BOOL)isCurrentUser;
 - (BOOL)isDirty;
 - (BOOL)isEqual:(id)arg1;
 - (id)name;
-- (NSInteger)participantRole;
-- (NSInteger)participantStatus;
-- (NSInteger)participantType;
+- (int)participantRole;
+- (int)participantStatus;
+- (int)participantType;
 
 @end

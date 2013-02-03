@@ -2,18 +2,20 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString;
+
 @interface DOMHTMLOListElement : DOMHTMLElement {
 }
 
-@property(copy) NSString *type;
 @property BOOL compact;
-@property NSInteger start;
+@property int start;
+@property(copy) NSString * type;
 
 - (BOOL)compact;
 - (void)setCompact:(BOOL)arg1;
-- (void)setStart:(NSInteger)arg1;
+- (void)setStart:(int)arg1;
 - (void)setType:(id)arg1;
-- (NSInteger)start;
+- (int)start;
 - (id)type;
 
 @end

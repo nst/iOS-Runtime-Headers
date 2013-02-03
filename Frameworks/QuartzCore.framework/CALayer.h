@@ -2,102 +2,102 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
-@class CALayer, CALayerArray;
+@class NSArray, CALayerArray, NSString, CALayer, NSDictionary;
 
 @interface CALayer : NSObject <CAPropertyInfo, NSCoding, CAMediaTiming> {
     struct _CALayerIvars { 
-        NSInteger refcount; 
-        NSUInteger flags; 
-        NSUInteger parent; 
+        int refcount; 
+        unsigned int flags; 
+        unsigned int parent; 
         CALayerArray *sublayers; 
         CALayer *mask; 
         struct _CALayerState {} *state; 
         struct _CALayerState {} *previous_state; 
         struct _CALayerAnimation {} *animations; 
-        NSUInteger slots[3]; 
-     /* Encoded args for previous method: B12@0:4I8 */
+        unsigned int slots[3]; 
     } _attr;
 }
 
-@property(readonly) CALayer *_mapKit_mapLayer;
-@property(copy) NSDictionary *actions;
-@property CGColor *backgroundColor;
-@property(copy) NSArray *backgroundFilters;
-@property(copy) NSArray *behaviors;
-@property CGColor *borderColor;
-@property(copy) NSString *contentsGravity;
-@property(readonly) CALayer *currentLayer;
-@property(copy) NSString *fillMode;
-@property(copy) NSArray *filters;
-@property(copy) NSString *magnificationFilter;
-@property(retain) CALayer *mask;
-@property(copy) NSString *minificationFilter;
-@property(copy) NSString *name;
-@property CGColor *shadowColor;
-@property CGPath *shadowPath;
-@property(copy) NSDictionary *style;
-@property(copy) NSArray *sublayers;
-@property(readonly) CALayer *superlayer;
+@property(readonly) CALayer * _mapKit_mapLayer;
+@property(copy) NSDictionary * actions;
 @property BOOL allowsDisplayCompositing;
 @property BOOL allowsHitTesting;
-@property CGPoint anchorPoint;
+@property struct CGPoint { float x; float y; } anchorPoint;
 @property float anchorPointZ;
 @property BOOL autoreverses;
+@property struct CGColor { }* backgroundColor;
+@property(copy) NSArray * backgroundFilters;
 @property double beginTime;
+@property(copy) NSArray * behaviors;
+@property struct CGColor { }* borderColor;
 @property float borderWidth;
-@property CGRect bounds;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } bounds;
 @property BOOL canDrawConcurrently;
 @property BOOL clearsContext;
 @property float coefficientOfRestitution;
 @property(retain) id compositingFilter;
 @property(retain) id contents;
-@property CGRect contentsCenter;
-@property CGRect contentsRect;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } contentsCenter;
+@property(copy) NSString * contentsGravity;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } contentsRect;
 @property float contentsScale;
-@property CGAffineTransform contentsTransform;
+@property struct CGAffineTransform { float a; float b; float c; float d; float tx; float ty; } contentsTransform;
 @property float cornerRadius;
+@property(readonly) CALayer * currentLayer;
 @property id delegate;
 @property(getter=isDoubleSided) BOOL doubleSided;
 @property double duration;
-@property NSUInteger edgeAntialiasingMask;
-@property CGRect frame;
+@property unsigned int edgeAntialiasingMask;
+@property(copy) NSString * fillMode;
+@property(copy) NSArray * filters;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } frame;
 @property(getter=isFrozen) BOOL frozen;
 @property(getter=isGeometryFlipped) BOOL geometryFlipped;
 @property(getter=isHidden) BOOL hidden;
 @property BOOL invertsShadow;
+@property(copy) NSString * magnificationFilter;
+@property(retain) CALayer * mask;
 @property BOOL masksToBounds;
 @property float mass;
+@property(copy) NSString * minificationFilter;
 @property float minificationFilterBias;
 @property float momentOfInertia;
+@property(copy) NSString * name;
 @property BOOL needsDisplayOnBoundsChange;
 @property BOOL needsLayoutOnGeometryChange;
 @property float opacity;
 @property(getter=isOpaque) BOOL opaque;
-@property CGPoint position;
+@property struct CGPoint { float x; float y; } position;
 @property BOOL preloadsCache;
 @property float rasterizationScale;
 @property float repeatCount;
 @property double repeatDuration;
-@property CGSize shadowOffset;
+@property struct CGColor { }* shadowColor;
+@property struct CGSize { float width; float height; } shadowOffset;
 @property float shadowOpacity;
+@property struct CGPath { }* shadowPath;
 @property float shadowRadius;
 @property BOOL shouldRasterize;
-@property CGSize sizeRequisition;
+@property struct CGSize { float width; float height; } sizeRequisition;
 @property BOOL sortsSublayers;
 @property float speed;
-@property CATransform3D sublayerTransform;
+@property(copy) NSDictionary * style;
+@property struct CATransform3D { float m11; float m12; float m13; float m14; float m21; float m22; float m23; float m24; float m31; float m32; float m33; float m34; float m41; float m42; float m43; float m44; } sublayerTransform;
+@property(copy) NSArray * sublayers;
+@property(readonly) CALayer * superlayer;
 @property double timeOffset;
-@property CATransform3D transform;
+@property struct CATransform3D { float m11; float m12; float m13; float m14; float m21; float m22; float m23; float m24; float m31; float m32; float m33; float m34; float m41; float m42; float m43; float m44; } transform;
 @property float velocityStretch;
-@property(readonly) CGRect visibleRect;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } visibleRect;
 @property float zPosition;
 
-+ (int (*)())CA_getterForType:(NSInteger)arg1;
-+ (int (*)())CA_setterForType:(NSInteger)arg1;
++ (int (*)())CA_getterForType:(int)arg1;
++ (int (*)())CA_setterForType:(int)arg1;
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (void)_initializeSafeCategory;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
@@ -108,12 +108,12 @@
 + (id)properties;
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 
-- (struct Layer { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; NSUInteger x3; unsigned short x4; unsigned short x5; float x6; struct LayerExt {} *x7; struct Handle {} *x8; struct Object {} *x9; struct Vec2<double> { double x_10_1_1; double x_10_1_2; } x10; struct Rect { double x_11_1_1; double x_11_1_2; double x_11_1_3; double x_11_1_4; } x11; struct TypedArray<CA::Render::Layer> {} *x12; struct TypedArray<CA::Render::Animation> {} *x13; }*)_copyRenderLayer:(struct Transaction { struct Shared {} *x1; NSInteger x2; struct HashTable<CALayer*,uintptr_t*> {} *x3; struct SpinLock {} *x4; NSUInteger x5; struct Level {} *x6; struct Command {} *x7; struct Deleted {} *x8; struct List<const void*> {} *x9; struct Context {} *x10; struct HashTable<CALayer*,CALayer*> {} *x11; struct __CFRunLoop {} *x12; struct __CFRunLoopObserver {} *x13; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; }*)arg1 layerFlags:(NSUInteger)arg2 commitFlags:(NSUInteger*)arg3;
+- (struct Layer { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; unsigned short x4; unsigned short x5; float x6; struct LayerExt {} *x7; struct Handle {} *x8; struct Object {} *x9; struct Vec2<double> { double x_10_1_1; double x_10_1_2; } x10; struct Rect { double x_11_1_1; double x_11_1_2; double x_11_1_3; double x_11_1_4; } x11; struct TypedArray<CA::Render::Layer> {} *x12; struct TypedArray<CA::Render::Animation> {} *x13; }*)_copyRenderLayer:(struct Transaction { struct Shared {} *x1; int x2; struct HashTable<CALayer*,uintptr_t*> {} *x3; struct SpinLock {} *x4; unsigned int x5; struct Level {} *x6; struct Command {} *x7; struct Deleted {} *x8; struct List<const void*> {} *x9; struct Context {} *x10; struct HashTable<CALayer*,CALayer*> {} *x11; struct __CFRunLoop {} *x12; struct __CFRunLoopObserver {} *x13; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; }*)arg1 layerFlags:(unsigned int)arg2 commitFlags:(unsigned int*)arg3;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)_canDisplayConcurrently;
 - (void)_cancelAnimationTimer;
 - (void)_dealloc;
-- (void)_didCommitLayer:(struct Transaction { struct Shared {} *x1; NSInteger x2; struct HashTable<CALayer*,uintptr_t*> {} *x3; struct SpinLock {} *x4; NSUInteger x5; struct Level {} *x6; struct Command {} *x7; struct Deleted {} *x8; struct List<const void*> {} *x9; struct Context {} *x10; struct HashTable<CALayer*,CALayer*> {} *x11; struct __CFRunLoop {} *x12; struct __CFRunLoopObserver {} *x13; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; }*)arg1;
+- (void)_didCommitLayer:(struct Transaction { struct Shared {} *x1; int x2; struct HashTable<CALayer*,uintptr_t*> {} *x3; struct SpinLock {} *x4; unsigned int x5; struct Level {} *x6; struct Command {} *x7; struct Deleted {} *x8; struct List<const void*> {} *x9; struct Context {} *x10; struct HashTable<CALayer*,CALayer*> {} *x11; struct __CFRunLoop {} *x12; struct __CFRunLoopObserver {} *x13; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; }*)arg1;
 - (void)_display;
 - (id)_implicitActionForKey:(id)arg1;
 - (id)_mapKit_mapLayer;
@@ -122,14 +122,15 @@
 - (void)_renderBackgroundInContext:(struct CGContext { }*)arg1;
 - (void)_renderBorderInContext:(struct CGContext { }*)arg1;
 - (void)_renderForegroundInContext:(struct CGContext { }*)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)_renderLayerDefinesProperty:(NSUInteger)arg1;
-- (NSUInteger)_renderLayerPropertyAnimationFlags:(NSUInteger)arg1;
+- (bool)_renderLayerDefinesProperty:(unsigned int)arg1;
+- (unsigned int)_renderLayerPropertyAnimationFlags:(unsigned int)arg1;
 - (void)_renderSublayersInContext:(struct CGContext { }*)arg1;
 - (BOOL)_scheduleAnimationTimer;
 - (void)_scrollPoint:(struct CGPoint { float x1; float x2; })arg1 fromLayer:(id)arg2;
 - (void)_scrollRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromLayer:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleRectOfLayer:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (id)accessibilityLabel;
 - (id)actionForKey:(id)arg1;
 - (id)actions;
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
@@ -154,7 +155,8 @@
 - (void)clearHasBeenCommitted;
 - (BOOL)clearsContext;
 - (float)coefficientOfRestitution;
-- (NSInteger)compareTextEffectsOrdering:(id)arg1;
+- (int)compareTextEffectsOrdering:(id)arg1;
+- (int)compareTextEffectsOrdering:(id)arg1;
 - (id)compositingFilter;
 - (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)contents;
@@ -187,7 +189,7 @@
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (BOOL)drawsMipmapLevels;
 - (double)duration;
-- (NSUInteger)edgeAntialiasingMask;
+- (unsigned int)edgeAntialiasingMask;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fillMode;
 - (id)filters;
@@ -203,7 +205,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLayer:(id)arg1;
 - (void)insertSublayer:(id)arg1 above:(id)arg2;
-- (void)insertSublayer:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)insertSublayer:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)insertSublayer:(id)arg1 below:(id)arg2;
 - (void)invalidateContents;
 - (BOOL)invertsShadow;
@@ -252,7 +254,7 @@
 - (double)repeatDuration;
 - (void)replaceSublayer:(id)arg1 with:(id)arg2;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)scrollPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)scrollRectToVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setActions:(id)arg1;
@@ -287,7 +289,7 @@
 - (void)setDoublePosition:(struct CADoublePoint { double x1; double x2; })arg1;
 - (void)setDoubleSided:(BOOL)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setEdgeAntialiasingMask:(NSUInteger)arg1;
+- (void)setEdgeAntialiasingMask:(unsigned int)arg1;
 - (void)setFillMode:(id)arg1;
 - (void)setFilters:(id)arg1;
 - (void)setFlipped:(BOOL)arg1;

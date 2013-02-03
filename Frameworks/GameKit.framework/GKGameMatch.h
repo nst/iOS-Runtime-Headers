@@ -8,13 +8,13 @@
     NSDate *_date;
     GKGame *_game;
     GKPlayer *_player;
-    NSInteger _score;
+    int _score;
 }
 
-@property(retain) NSDate *date;
-@property(retain) GKGame *game;
-@property(retain) GKPlayer *player;
-@property NSInteger score;
+@property(retain) NSDate * date;
+@property(retain) GKGame * game;
+@property(retain) GKPlayer * player;
+@property int score;
 
 + (id)gameMatchWithDictionary:(id)arg1;
 + (id)gameMatchesWithDictionaries:(id)arg1;
@@ -23,10 +23,10 @@
 - (void)dealloc;
 - (id)game;
 - (id)player;
-- (NSInteger)score;
+- (int)score;
 - (void)setDate:(id)arg1;
 - (void)setGame:(id)arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setScore:(NSInteger)arg1;
+- (void)setScore:(int)arg1;
 
 @end

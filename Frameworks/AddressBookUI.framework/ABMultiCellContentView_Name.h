@@ -5,7 +5,7 @@
 @interface ABMultiCellContentView_Name : ABMultiCellContentView_Rows {
 }
 
-+ (NSUInteger)rowsForPropertyGroup:(id)arg1 info:(id)arg2;
++ (unsigned int)rowsForPropertyGroup:(id)arg1 info:(id)arg2;
 
 - (id)displayTextColor;
 - (void)entryField:(id)arg1 valueDidChange:(id)arg2 forKey:(id)arg3;

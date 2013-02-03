@@ -5,7 +5,7 @@
 @interface ADBannerViewWebURLActionHandler : ADBannerViewURLActionHandler {
 }
 
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)handle;
 
 @end

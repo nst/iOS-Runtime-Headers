@@ -2,20 +2,20 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSTimeZone, NSMutableDictionary, NSMutableArray;
+@class NSMutableDictionary, NSArray, NSString, EKCalendar, NSMutableArray, NSTimeZone;
 
 @interface EKEventStore : NSObject {
     NSMutableDictionary *_calendars;
     id _database;
-    NSUInteger _flags;
+    unsigned int _flags;
     NSMutableArray *_observers;
     NSMutableDictionary *_sources;
     NSTimeZone *_timeZone;
 }
 
-@property(readonly) NSArray *calendars;
-@property(readonly) EKCalendar *defaultCalendarForNewEvents;
-@property(readonly) NSString *eventStoreIdentifier;
+@property(readonly) NSArray * calendars;
+@property(readonly) EKCalendar * defaultCalendarForNewEvents;
+@property(readonly) NSString * eventStoreIdentifier;
 
 + (id)storeWithOptions:(unsigned long)arg1 path:(id)arg2;
 
@@ -38,25 +38,25 @@
 - (id)eventWithIdentifier:(id)arg1;
 - (id)eventWithUniqueId:(id)arg1;
 - (id)eventsMatchingPredicate:(id)arg1;
-- (id)importICS:(id)arg1 intoCalendar:(id)arg2 options:(NSUInteger)arg3;
-- (id)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(NSUInteger)arg3;
+- (id)importICS:(id)arg1 intoCalendar:(id)arg2 options:(unsigned int)arg3;
+- (id)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(unsigned int)arg3;
 - (id)init;
 - (id)initWithOptions:(unsigned long)arg1 path:(id)arg2;
 - (BOOL)markEventRead:(id)arg1 error:(id*)arg2;
 - (id)predicateForEventsWithStartDate:(id)arg1 endDate:(id)arg2 calendars:(id)arg3;
 - (id)predicateForEventsWithStartDate:(id)arg1 endDate:(id)arg2 eventIdentifier:(id)arg3 calendars:(id)arg4;
-- (NSInteger)readWriteCalendarCount;
+- (int)readWriteCalendarCount;
 - (id)readWriteCalendars;
 - (void)refreshAccountDataIfNecessary;
 - (void)refreshAccountListIfNecessary;
 - (BOOL)removeCalendar:(id)arg1 error:(id*)arg2;
-- (BOOL)removeEvent:(id)arg1 span:(NSInteger)arg2 error:(id*)arg3;
+- (BOOL)removeEvent:(id)arg1 span:(int)arg2 error:(id*)arg3;
 - (BOOL)saveCalendar:(id)arg1 deferred:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)saveCalendar:(id)arg1 error:(id*)arg2;
-- (BOOL)saveEvent:(id)arg1 span:(NSInteger)arg2 error:(id*)arg3;
-- (NSUInteger)serverPort;
+- (BOOL)saveEvent:(id)arg1 span:(int)arg2 error:(id*)arg3;
+- (unsigned int)serverPort;
 - (void)setDefaultCalendarForNewEvents:(id)arg1;
-- (BOOL)setEventParticipationStatus:(id)arg1 status:(NSInteger)arg2 applyToAll:(BOOL)arg3 error:(id*)arg4;
+- (BOOL)setEventParticipationStatus:(id)arg1 status:(int)arg2 applyToAll:(BOOL)arg3 error:(id*)arg4;
 - (void)setTimeZone:(id)arg1;
 - (id)sourceWithID:(id)arg1;
 - (id)timeZone;

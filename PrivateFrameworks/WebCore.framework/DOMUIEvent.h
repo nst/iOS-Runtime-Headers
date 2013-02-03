@@ -2,29 +2,31 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMAbstractView;
+
 @interface DOMUIEvent : DOMEvent {
 }
 
-@property(retain,readonly) DOMAbstractView *view;
-@property(readonly) NSInteger charCode;
-@property(readonly) NSInteger detail;
-@property(readonly) NSInteger keyCode;
-@property(readonly) NSInteger layerX;
-@property(readonly) NSInteger layerY;
-@property(readonly) NSInteger pageX;
-@property(readonly) NSInteger pageY;
-@property(readonly) NSInteger which;
+@property(readonly) int charCode;
+@property(readonly) int detail;
+@property(readonly) int keyCode;
+@property(readonly) int layerX;
+@property(readonly) int layerY;
+@property(readonly) int pageX;
+@property(readonly) int pageY;
+@property(retain,readonly) DOMAbstractView * view;
+@property(readonly) int which;
 
-- (NSInteger)charCode;
-- (NSInteger)detail;
-- (void)initUIEvent:(id)arg1 :(BOOL)arg2 :(BOOL)arg3 :(id)arg4 :(NSInteger)arg5;
-- (void)initUIEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 detail:(NSInteger)arg5;
-- (NSInteger)keyCode;
-- (NSInteger)layerX;
-- (NSInteger)layerY;
-- (NSInteger)pageX;
-- (NSInteger)pageY;
+- (int)charCode;
+- (int)detail;
+- (void)initUIEvent:(id)arg1 :(BOOL)arg2 :(BOOL)arg3 :(id)arg4 :(int)arg5;
+- (void)initUIEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 detail:(int)arg5;
+- (int)keyCode;
+- (int)layerX;
+- (int)layerY;
+- (int)pageX;
+- (int)pageY;
 - (id)view;
-- (NSInteger)which;
+- (int)which;
 
 @end

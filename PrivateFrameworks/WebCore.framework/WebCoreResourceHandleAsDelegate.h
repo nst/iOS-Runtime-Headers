@@ -2,10 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSFileHandle;
 
 @interface WebCoreResourceHandleAsDelegate : NSObject <NSURLConnectionDelegate> {
-    struct ResourceHandle { int (**x1)(); NSInteger x2; struct OwnPtr<WebCore::ResourceHandleInternal> { 
+    struct ResourceHandle { int (**x1)(); int x2; struct OwnPtr<WebCore::ResourceHandleInternal> { 
             struct ResourceHandleInternal {} *m_ptr; 
     id m_converter;
     BOOL m_finishedLoadingDataIntoConverter;
@@ -19,13 +24,13 @@
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2 lengthReceived:(long long)arg3;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connection:(id)arg1 didSendBodyData:(NSInteger)arg2 totalBytesWritten:(NSInteger)arg3 totalBytesExpectedToWrite:(NSInteger)arg4;
+- (void)connection:(id)arg1 didSendBodyData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4;
 - (id)connection:(id)arg1 willCacheResponse:(id)arg2;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)connection:(id)arg1 willStopBufferingData:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
 - (void)detachHandle;
-- (id)initWithHandle:(struct ResourceHandle { int (**x1)(); NSInteger x2; struct OwnPtr<WebCore::ResourceHandleInternal> { struct ResourceHandleInternal {} *x_3_1_1; } x3; }*)arg1;
+- (id)initWithHandle:(struct ResourceHandle { int (**x1)(); int x2; struct OwnPtr<WebCore::ResourceHandleInternal> { struct ResourceHandleInternal {} *x_3_1_1; } x3; }*)arg1;
 
 @end

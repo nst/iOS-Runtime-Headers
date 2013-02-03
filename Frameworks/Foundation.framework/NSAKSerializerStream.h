@@ -3,8 +3,8 @@
  */
 
 @interface NSAKSerializerStream : NSObject <NSSerializerStream> {
-    NSUInteger current;
-    NSUInteger max;
+    unsigned int current;
+    unsigned int max;
     void *memory;
     struct __CFDictionary { } *roomForIntLocations;
 }
@@ -12,11 +12,11 @@
 - (void)copySerializationInto:(void*)arg1;
 - (void)dealloc;
 - (void)finalize;
-- (NSUInteger)writeAlignedDataSize:(NSUInteger)arg1;
-- (NSUInteger)writeData:(const void*)arg1 length:(NSUInteger)arg2;
-- (void)writeDelayedInt:(NSUInteger)arg1 for:(NSInteger)arg2;
-- (NSUInteger)writeInt:(NSUInteger)arg1;
-- (NSUInteger)writeRoomForInt:(NSInteger*)arg1;
+- (unsigned int)writeAlignedDataSize:(unsigned int)arg1;
+- (unsigned int)writeData:(const void*)arg1 length:(unsigned int)arg2;
+- (void)writeDelayedInt:(unsigned int)arg1 for:(int)arg2;
+- (unsigned int)writeInt:(unsigned int)arg1;
+- (unsigned int)writeRoomForInt:(int*)arg1;
 - (BOOL)writeToPath:(id)arg1 safely:(BOOL)arg2;
 
 @end

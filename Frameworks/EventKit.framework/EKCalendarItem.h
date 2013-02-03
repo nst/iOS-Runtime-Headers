@@ -2,14 +2,16 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
+@class NSArray, NSString, EKCalendar, NSDate;
+
 @interface EKCalendarItem : NSObject {
 }
 
-@property(copy) NSArray *alarms;
-@property(retain) EKCalendar *calendar;
-@property(copy,readonly) NSDate *lastModifiedDate;
-@property(copy) NSString *notes;
-@property(copy) NSString *title;
+@property(copy) NSArray * alarms;
+@property(retain) EKCalendar * calendar;
+@property(copy,readonly) NSDate * lastModifiedDate;
+@property(copy) NSString * notes;
+@property(copy) NSString * title;
 
 - (void)addAlarm:(id)arg1;
 - (id)alarms;

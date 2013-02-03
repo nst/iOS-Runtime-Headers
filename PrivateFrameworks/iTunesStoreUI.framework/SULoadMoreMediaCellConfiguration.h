@@ -12,8 +12,8 @@
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 
 - (id)accessibilityLabel;
-- (id)colorForLabelAtIndex:(NSUInteger)arg1 withModifiers:(NSUInteger)arg2;
-- (id)fontForLabelAtIndex:(NSUInteger)arg1;
+- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
+- (id)fontForLabelAtIndex:(unsigned int)arg1;
 - (id)init;
 - (float)previousCellHeight;
 - (void)reloadImages;

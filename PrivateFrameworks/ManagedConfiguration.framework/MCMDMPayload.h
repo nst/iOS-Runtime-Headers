@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSString, NSData;
+@class NSArray, NSString, NSData;
 
 @interface MCMDMPayload : MCPayload {
-    NSInteger _accessRights;
+    int _accessRights;
     NSString *_checkInURLString;
     NSData *_identityPersistentID;
     NSString *_identityUUID;
@@ -15,22 +15,22 @@
     BOOL _useDevelopmentAPNS;
 }
 
-@property(readonly) NSString *checkInURLString;
-@property(retain) NSData *identityPersistentID;
-@property(readonly) NSString *identityUUID;
-@property(readonly) NSArray *localizedAccessRightDescriptions;
-@property(readonly) NSString *serverURLString;
-@property(readonly) NSString *topic;
-@property(readonly) NSInteger accessRights;
+@property(readonly) int accessRights;
+@property(readonly) NSString * checkInURLString;
+@property(retain) NSData * identityPersistentID;
+@property(readonly) NSString * identityUUID;
+@property(readonly) NSArray * localizedAccessRightDescriptions;
+@property(readonly) NSString * serverURLString;
 @property(readonly) BOOL signMessage;
+@property(readonly) NSString * topic;
 @property(readonly) BOOL useDevelopmentAPNS;
 
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
 - (id)_invalidRightsError;
 - (id)_invalidTopicError;
-- (NSInteger)accessRights;
+- (int)accessRights;
 - (id)checkInURLString;
 - (void)dealloc;
 - (id)description;

@@ -5,6 +5,7 @@
 @class APSConnection;
 
 @interface FTEmbeddedPushHandler : FTPushHandler <APSConnectionDelegate> {
+    Class _APSConnectionClass;
     APSConnection *_apsConnection;
     BOOL _fastUserSwitched;
 }
@@ -20,8 +21,10 @@
 - (void)_handleRelayUpdatePush:(id)arg1;
 - (void)_handleReregisterPush:(id)arg1;
 - (void)_ignoreIncomingPushes;
+- (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;
 - (void)connection:(id)arg1 didReceiveMessageForTopic:(id)arg2 userInfo:(id)arg3;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
+- (void)connection:(id)arg1 didSendOutgoingMessage:(id)arg2;
 - (void)dealloc;
 - (id)initWithTopics:(id)arg1;
 - (id)pushToken;

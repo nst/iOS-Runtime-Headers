@@ -15,28 +15,28 @@
     struct _opaque_pthread_cond_t { 
         long __sig; 
         BOOL __opaque[24]; 
-    NSInteger __RC;
+    int __RC;
     unsigned char __cached_isReady;
     id __completion;
-    NSInteger __deps_count;
+    int __deps_count;
     void *__implicitObsInfo;
     unsigned char __isCancelled;
     NSOperation *__nextOp;
     void *__obsInfo;
     NSOperation *__outerOp;
-    NSInteger __outerRC;
+    int __outerRC;
     BOOL __prio;
     NSOperationQueue *__queue;
-    NSInteger __state;
+    int __state;
     double __thread_prio;
-    NSInteger __unfinished_deps;
+    int __unfinished_deps;
     } __wait_cond;
     } __wait_mutex;
 }
 
-@property(copy) ? *completionBlock;
+@property(copy) id completionBlock;
 
-+ (void)_observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 changeKind:(NSUInteger)arg3 oldValue:(id)arg4 newValue:(id)arg5 indexes:(id)arg6 context:(void*)arg7;
++ (void)_observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 changeKind:(unsigned int)arg3 oldValue:(id)arg4 newValue:(id)arg5 indexes:(id)arg6 context:(void*)arg7;
 
 - (void)addDependency:(id)arg1;
 - (void)cancel;
@@ -49,13 +49,13 @@
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
 - (BOOL)isReady;
-- (NSInteger)queuePriority;
+- (int)queuePriority;
 - (void)release;
 - (void)removeDependency:(id)arg1;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)setCompletionBlock:(id)arg1;
-- (void)setQueuePriority:(NSInteger)arg1;
+- (void)setQueuePriority:(int)arg1;
 - (void)setThreadPriority:(double)arg1;
 - (void)start;
 - (double)threadPriority;

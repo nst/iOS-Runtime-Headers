@@ -15,9 +15,9 @@
 - (void)dealloc;
 - (id)init;
 - (BOOL)isLoading;
-- (NSUInteger)maxVideosToSave;
+- (unsigned int)maxVideosToSave;
 - (void)reloadData;
 - (void)searchRequest:(id)arg1 foundBatchURL:(id)arg2;
-- (void)searchRequest:(id)arg1 receivedVideos:(id)arg2 startIndex:(NSUInteger)arg3 videosRemaining:(NSUInteger)arg4;
+- (void)searchRequest:(id)arg1 receivedVideos:(id)arg2 startIndex:(unsigned int)arg3 videosRemaining:(unsigned int)arg4;
 
 @end

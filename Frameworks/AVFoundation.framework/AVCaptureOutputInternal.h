@@ -5,7 +5,7 @@
 @class NSMutableArray, AVCaptureSession;
 
 @interface AVCaptureOutputInternal : NSObject {
-    NSInteger changeSeed;
+    int changeSeed;
     NSMutableArray *connections;
     AVCaptureSession *session;
 }

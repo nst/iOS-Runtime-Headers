@@ -16,7 +16,7 @@
 - (id)font;
 - (id)initWithParagraph:(id)arg1;
 - (id)properties;
-- (NSInteger)runType;
+- (int)runType;
 - (void)setCharacter:(unsigned short)arg1;
 - (void)setFont:(id)arg1;
 

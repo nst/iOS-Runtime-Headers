@@ -42,7 +42,7 @@
 - (void)_setInsertControl:(BOOL)arg1;
 - (void)_setInterceptMouseEvent:(BOOL)arg1;
 - (void)_setRemoveConfirmationShowing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_setTableViewCellEditingStyle:(NSInteger)arg1;
+- (void)_setTableViewCellEditingStyle:(int)arg1;
 - (void)_shouldRemoveTarget;
 - (void)_showDeleteConfirmation:(id)arg1;
 - (float)_verticalOffsetFromTarget;

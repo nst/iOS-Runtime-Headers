@@ -9,8 +9,8 @@
     NSDictionary *_responseRegionInformation;
 }
 
-@property(copy) NSString *language;
-@property(copy) NSDictionary *responseRegionInformation;
+@property(copy) NSString * language;
+@property(copy) NSDictionary * responseRegionInformation;
 
 - (id)bagKey;
 - (void)dealloc;

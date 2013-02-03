@@ -7,7 +7,7 @@
 @interface YTSubscriptionsRequest : XMLSAXHTTPRequest {
     NSMutableURLRequest *_deferredRequest;
     id _delegate;
-    NSInteger _mode;
+    int _mode;
     NSMutableArray *_subscriptions;
 }
 
@@ -25,7 +25,7 @@
 - (void)failWithError:(id)arg1;
 - (id)init;
 - (void)loadRequest:(id)arg1;
-- (NSInteger)parseData:(id)arg1;
+- (int)parseData:(id)arg1;
 - (void)requestPlaylists;
 - (void)requestSubscriptions;
 - (void)setDelegate:(id)arg1;

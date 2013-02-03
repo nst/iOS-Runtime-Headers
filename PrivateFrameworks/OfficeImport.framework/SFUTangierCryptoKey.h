@@ -4,12 +4,12 @@
 
 @interface SFUTangierCryptoKey : SFUCryptoKey {
     char *mKey;
-    NSUInteger mKeyLength;
+    unsigned int mKeyLength;
 }
 
 - (void)dealloc;
-- (id)initAes128KeyFromPassphrase:(const char *)arg1 length:(NSUInteger)arg2 iterationCount:(NSUInteger)arg3;
-- (id)initAes128KeyFromPassphrase:(const char *)arg1 length:(NSUInteger)arg2;
+- (id)initAes128KeyFromPassphrase:(const char *)arg1 length:(unsigned int)arg2 iterationCount:(unsigned int)arg3;
+- (id)initAes128KeyFromPassphrase:(const char *)arg1 length:(unsigned int)arg2;
 - (const char *)keyData;
 - (unsigned long)keyLength;
 

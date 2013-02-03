@@ -11,7 +11,7 @@
     UINavigationItem *_originalNavigationItem;
 }
 
-@property(retain) UINavigationBar *navigationBar;
+@property(retain) UINavigationBar * navigationBar;
 @property BOOL playAfterFlip;
 
 - (id)_chapterGuideTitleLabel;
@@ -19,15 +19,15 @@
 - (void)_done:(id)arg1;
 - (void)_hideNavigationAndStatusBars;
 - (void)_hideNavigationBarAnimationDidFinish:(id)arg1;
-- (NSInteger)_interfaceOrientation;
+- (int)_interfaceOrientation;
 - (void)_restoreOriginalNavigationViews:(BOOL)arg1;
 - (void)_showChapterGuideNavigationViews;
 - (void)dealloc;
-- (BOOL)leaveSpaceForStatusBarAndNavigationBarInOrientation:(NSInteger)arg1;
+- (BOOL)leaveSpaceForStatusBarAndNavigationBarInOrientation:(int)arg1;
 - (id)navigationBar;
 - (BOOL)playAfterFlip;
 - (void)setNavigationBar:(id)arg1;
 - (void)setPlayAfterFlip:(BOOL)arg1;
-- (void)transition:(NSUInteger)arg1;
+- (void)transition:(unsigned int)arg1;
 
 @end

@@ -14,7 +14,7 @@
 }
 
 - (void)_setConfirmed:(BOOL)arg1;
-- (NSInteger)completionType;
+- (int)completionType;
 - (id)confirmedAction;
 - (void)dealloc;
 - (id)deniedAction;

@@ -3,13 +3,13 @@
  */
 
 @interface UIStatusBarStyleAnimationParameters : UIStatusBarAnimationParameters {
-    NSInteger _styleAnimation;
+    int _styleAnimation;
 }
 
-@property NSInteger styleAnimation;
+@property int styleAnimation;
 
 - (id)initWithDefaultParameters;
-- (void)setStyleAnimation:(NSInteger)arg1;
-- (NSInteger)styleAnimation;
+- (void)setStyleAnimation:(int)arg1;
+- (int)styleAnimation;
 
 @end

@@ -7,7 +7,7 @@
 
 - (void)_presentSheetStartingFromYCoordinate:(double)arg1;
 - (void)_slideSheetOut:(BOOL)arg1;
-- (void)setCancelButtonIndex:(NSInteger)arg1;
-- (void)setIndexOfSelectedButton:(NSInteger)arg1;
+- (void)setCancelButtonIndex:(int)arg1;
+- (void)setIndexOfSelectedButton:(int)arg1;
 
 @end

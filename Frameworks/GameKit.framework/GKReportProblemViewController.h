@@ -2,37 +2,26 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class <GKReportProblemViewControllerDelegate>, NSString, GKPlayer;
+@class NSURL, NSString, GKPlayer;
 
 @interface GKReportProblemViewController : GKServerWebViewController {
-    NSString *_authToken;
     NSString *_baseURL;
-    <GKReportProblemViewControllerDelegate> *_delegate;
     GKPlayer *_player;
 }
 
-@property(retain) NSString *authToken;
-@property(retain) NSString *baseURL;
-@property <GKReportProblemViewControllerDelegate> *delegate;
-@property(retain) GKPlayer *player;
-@property(readonly) NSURL *url;
+@property(retain) NSString * baseURL;
+@property(retain) GKPlayer * player;
+@property(readonly) NSURL * url;
 
-- (id)authToken;
 - (id)baseURL;
-- (void)cancel;
 - (void)dealloc;
-- (id)delegate;
 - (id)initWithPlayer:(id)arg1;
-- (void)load;
 - (id)player;
-- (void)setAuthToken:(id)arg1;
+- (void)processGameKitURLComponents:(id)arg1;
 - (void)setBaseURL:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setHeadersForRequest:(id)arg1;
 - (void)setPlayer:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)url;
 - (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(NSUInteger)arg3;
 
 @end

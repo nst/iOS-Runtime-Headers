@@ -2,62 +2,49 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKAnimatingLabelView, GKPlayer, GKScore, GKUITheme;
+@class GKUITheme, GKScore, GKPlayer;
 
 @interface GKLeaderboardCellContents : UIView <GKTableViewCellContents> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    GKAnimatingLabelView *_animatingLabelView;
-    } _animatingLabelViewFrame;
-    BOOL _crossfadeAliasAndName;
-    NSInteger _disclosureStyle;
+    int _disclosureStyle;
     GKPlayer *_player;
     float _rankWidth;
     GKScore *_score;
     GKUITheme *_theme;
-    NSUInteger _totalScores;
+    unsigned int _totalScores;
 }
 
-@property(retain) GKPlayer *player;
-@property(retain) GKScore *score;
-@property(retain) GKUITheme *theme;
 @property(readonly) float contentsMargin;
-@property NSInteger disclosureStyle;
+@property int disclosureStyle;
+@property(retain) GKPlayer * player;
 @property(readonly) float rankAvailableWidth;
 @property float rankWidth;
-@property NSUInteger totalScores;
+@property(retain) GKScore * score;
+@property(retain) GKUITheme * theme;
+@property unsigned int totalScores;
 
 + (void)_initializeSafeCategory;
 
 - (id)accessibilityLabel;
 - (void)dealloc;
-- (NSInteger)digits;
-- (NSInteger)disclosureStyle;
+- (int)digits;
+- (int)disclosureStyle;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSInteger)fontSizeForRank;
+- (int)fontSizeForRank;
 - (id)init;
 - (BOOL)isAccessibilityElement;
-- (void)layoutSubviews;
 - (id)player;
-- (float)preferredHeightForOrientation:(NSInteger)arg1;
+- (float)preferredHeightForOrientation:(int)arg1;
 - (void)prepareForReuse;
 - (float)rankAvailableWidth;
 - (float)rankWidth;
 - (id)score;
-- (void)setDisclosureStyle:(NSInteger)arg1;
+- (void)setDisclosureStyle:(int)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setRankWidth:(float)arg1;
 - (void)setScore:(id)arg1;
 - (void)setTheme:(id)arg1;
-- (void)setTotalScores:(NSUInteger)arg1;
+- (void)setTotalScores:(unsigned int)arg1;
 - (id)theme;
-- (NSUInteger)totalScores;
+- (unsigned int)totalScores;
 
 @end

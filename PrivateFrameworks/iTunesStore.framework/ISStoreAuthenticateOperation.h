@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSNumber, SSAuthenticateRequest;
+@class NSNumber, SSAuthenticateRequest, SSAuthenticationContext;
 
 @interface ISStoreAuthenticateOperation : ISOperation {
     NSNumber *_authenticatedDSID;
     SSAuthenticateRequest *_request;
 }
 
-@property(readonly) SSAuthenticationContext *authenticationContext;
+@property(readonly) SSAuthenticationContext * authenticationContext;
 
 - (id)_authenticatedDSID;
 - (void)_setAuthenticatedDSID:(id)arg1;

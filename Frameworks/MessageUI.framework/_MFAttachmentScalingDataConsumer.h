@@ -9,10 +9,10 @@
     MFGenericAttachmentStore *_store;
 }
 
-@property NSConditionLock *lock;
-@property MFGenericAttachmentStore *store;
+@property NSConditionLock * lock;
+@property MFGenericAttachmentStore * store;
 
-- (NSInteger)appendData:(id)arg1;
+- (int)appendData:(id)arg1;
 - (id)lock;
 - (void)setLock:(id)arg1;
 - (void)setStore:(id)arg1;

@@ -10,9 +10,9 @@
     MLPhoto *_photo;
 }
 
-@property ALAssetsLibrary *library;
-@property(retain) MLPhoto *photo;
 @property BOOL isValid;
+@property ALAssetsLibrary * library;
+@property(retain) MLPhoto * photo;
 
 - (void)dealloc;
 - (id)initWithMLPhoto:(id)arg1 library:(id)arg2;

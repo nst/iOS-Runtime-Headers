@@ -6,7 +6,7 @@
 
 @interface CPZoneBorderNeighbor : NSObject <NSCopying> {
     CPShape *neighborShape;
-    NSInteger shapeSide;
+    int shapeSide;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -14,7 +14,7 @@
 - (id)init;
 - (id)neighborShape;
 - (void)setNeighborShape:(id)arg1;
-- (void)setShapeSide:(NSInteger)arg1;
-- (NSInteger)shapeSide;
+- (void)setShapeSide:(int)arg1;
+- (int)shapeSide;
 
 @end

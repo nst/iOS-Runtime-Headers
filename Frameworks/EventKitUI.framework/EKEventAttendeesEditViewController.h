@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKEventAttendeePicker;
+@class NSArray, EKEventAttendeePicker;
 
 @interface EKEventAttendeesEditViewController : EKEventEditItemViewController {
     EKEventAttendeePicker *_picker;
 }
 
-@property(copy) NSArray *attendees;
+@property(copy) NSArray * attendees;
 
 - (id)_attendeeFromRecipient:(id)arg1;
 - (id)_firstInvalidRecipientAddress;
@@ -20,6 +20,6 @@
 - (void)setSearchAccountID:(id)arg1;
 - (BOOL)validateAllowingAlert:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class CalendarModel, <EKPadAllDayViewDelegate>, <EKPadAllDayViewDataSource>, NSMutableArray, EKPadAllDayViewContents, UIScrollView, EKDayOccurrenceView;
+@class CalendarModel, <EKPadAllDayViewDelegate>, <EKPadAllDayViewDataSource>, NSArray, NSMutableArray, EKPadAllDayViewContents, UIScrollView, EKDayOccurrenceView;
 
 @interface EKPadAllDayView : UIView <EKPadAllDayViewContentsDelegate, UIScrollViewDelegate> {
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
@@ -32,7 +32,7 @@
     <EKPadAllDayViewDataSource> *_dataSource;
     NSMutableArray *_dayDates;
     NSMutableArray *_dayNames;
-    NSUInteger _daysToDisplay;
+    unsigned int _daysToDisplay;
     <EKPadAllDayViewDelegate> *_delegate;
     } _displayedDate;
     double _endDate;
@@ -40,26 +40,26 @@
     float _minimumHeight;
     CalendarModel *_model;
     float _occurrenceHRightInset;
-    NSInteger _outlineStyle;
+    int _outlineStyle;
     UIScrollView *_scroller;
-    NSUInteger _selectedEventIndex;
+    unsigned int _selectedEventIndex;
     EKDayOccurrenceView *_selectedOccurrenceView;
-    NSInteger _shouldAbbriviateDayNames;
+    int _shouldAbbriviateDayNames;
     double _startDate;
     float _verticalTopMargin;
 }
 
-@property <EKPadAllDayViewDataSource> *dataSource;
-@property <EKPadAllDayViewDelegate> *delegate;
-@property(readonly) NSArray *occurrenceViews;
+@property <EKPadAllDayViewDataSource> * dataSource;
+@property <EKPadAllDayViewDelegate> * delegate;
 @property BOOL dimsNonSelectedItems;
+@property(readonly) NSArray * occurrenceViews;
 
 + (void)_initializeSafeCategory;
 
-- (NSUInteger)_calendarOrderForCalendar:(id)arg1;
+- (unsigned int)_calendarOrderForCalendar:(id)arg1;
 - (id)_calendarOrderSortDescriptor;
-- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })_dateForPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForOccurrenceBlock:(id)arg1 index:(NSUInteger)arg2;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })_dateForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForOccurrenceBlock:(id)arg1 index:(unsigned int)arg2;
 - (void)_localeChanged;
 - (id)_numberOfDaysSortDescriptor;
 - (float)_scrollbarOffset;
@@ -75,12 +75,12 @@
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)dimsNonSelectedItems;
-- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })displayDate;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })displayDate;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)emptySpaceClickForCalendarWeekDayEventContent:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (NSUInteger)eventIndexForView:(id)arg1;
+- (unsigned int)eventIndexForView:(id)arg1;
 - (id)getSortedBlocksFromOccurrenceBlocks:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 numberOfDaysToDisplay:(NSUInteger)arg2 opaque:(BOOL)arg3 backgroundColor:(id)arg4 scrollbarShowsInside:(BOOL)arg5;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 numberOfDaysToDisplay:(unsigned int)arg2 opaque:(BOOL)arg3 backgroundColor:(id)arg4 scrollbarShowsInside:(BOOL)arg5;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)makeAllDayLabel;
@@ -88,25 +88,25 @@
 - (id)occurrenceViews;
 - (id)occurrenceVisibleRect:(id)arg1;
 - (void)reloadData;
-- (void)scrollToEventIndex:(NSUInteger)arg1 animated:(BOOL)arg2;
+- (void)scrollToEventIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)scrollToOccurrence:(id)arg1 animating:(BOOL)arg2;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)selectItemWithEventIndex:(NSUInteger)arg1;
-- (NSUInteger)selectedEventIndex;
+- (void)selectItemWithEventIndex:(unsigned int)arg1;
+- (unsigned int)selectedEventIndex;
 - (id)selectedOccurrenceView;
 - (void)setAllowsOccurrenceSelection:(BOOL)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDimsNonSelectedItems:(BOOL)arg1;
-- (void)setDisplayedDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (void)setDisplayedDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
 - (void)setDrawsLeftBorder:(BOOL)arg1;
 - (void)setMinimumHeight:(float)arg1;
 - (void)setOccurrenceHRightInset:(float)arg1;
-- (void)setOutlineStyle:(NSInteger)arg1;
-- (void)setViewsDimmed:(BOOL)arg1 forEventIndex:(NSUInteger)arg2;
+- (void)setOutlineStyle:(int)arg1;
+- (void)setViewsDimmed:(BOOL)arg1 forEventIndex:(unsigned int)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateDayLabels;
-- (id)viewForEventIndex:(NSUInteger)arg1;
+- (id)viewForEventIndex:(unsigned int)arg1;
 
 @end

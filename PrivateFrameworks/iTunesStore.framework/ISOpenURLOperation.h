@@ -8,9 +8,10 @@
     ISOpenURLRequest *_request;
 }
 
-@property(readonly) ISOpenURLRequest *openURLRequest;
+@property(readonly) ISOpenURLRequest * openURLRequest;
 
 - (id)_newSortedTargetsArray;
+- (BOOL)_openURL:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithOpenURLRequest:(id)arg1;

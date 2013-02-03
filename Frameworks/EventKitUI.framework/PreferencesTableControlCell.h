@@ -8,7 +8,7 @@
     UIControl *_control;
 }
 
-@property(retain) UIControl *control;
+@property(retain) UIControl * control;
 
 - (id)control;
 - (void)dealloc;

@@ -10,7 +10,7 @@
     NSExpression *_effectiveRightExpression;
 }
 
-- (long)_cfStringOptionsFromPredicateOptions:(NSUInteger)arg1;
+- (long)_cfStringOptionsFromPredicateOptions:(unsigned int)arg1;
 - (id)_generateSQLBeginsWithStringInContext:(id)arg1;
 - (id)_generateSQLBetweenStringInContext:(id)arg1;
 - (id)_generateSQLContainmentStringInContext:(id)arg1;
@@ -27,7 +27,7 @@
 - (id)_generateSQLType3InContext:(id)arg1;
 - (BOOL)_isNilExpression:(id)arg1;
 - (id)_lastScopedItem;
-- (id)_sqlTokenForPredicateOperator:(NSUInteger)arg1 inContext:(id)arg2;
+- (id)_sqlTokenForPredicateOperator:(unsigned int)arg1 inContext:(id)arg2;
 - (id)_upperBoundSearchStringForString:(id)arg1 context:(id)arg2;
 - (void)dealloc;
 - (id)generateSQLStringInContext:(id)arg1;

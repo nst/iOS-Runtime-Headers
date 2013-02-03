@@ -13,8 +13,8 @@
     SUNavigationItem *_wrappedNavigationItem;
 }
 
-@property(retain) SUNavigationItem *wrappedNavigationItem;
 @property BOOL shouldDelayChanges;
+@property(retain) SUNavigationItem * wrappedNavigationItem;
 
 - (void)_prepareButtonItemForDisplay:(id)arg1;
 - (void)_scheduleCommit;

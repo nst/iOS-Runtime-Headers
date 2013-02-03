@@ -8,10 +8,10 @@
     UIWebDocumentView *_documentView;
 }
 
-@property UIWebDocumentView *documentView;
+@property UIWebDocumentView * documentView;
 
 - (id)documentView;
 - (void)setDocumentView:(id)arg1;
-- (void)setState:(NSInteger)arg1;
+- (void)setState:(int)arg1;
 
 @end

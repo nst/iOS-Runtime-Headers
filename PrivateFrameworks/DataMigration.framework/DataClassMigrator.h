@@ -8,7 +8,7 @@
     NSDictionary *_context;
 }
 
-@property(retain) NSDictionary *context;
+@property(retain) NSDictionary * context;
 @property(readonly) BOOL didMigrateBackupFromDifferentDevice;
 @property(readonly) BOOL didRestoreFromBackup;
 @property(readonly) BOOL shouldPreserveSettingsAfterRestore;

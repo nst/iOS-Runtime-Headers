@@ -7,17 +7,17 @@
 @interface SCROBrailleDisplayManager : NSObject <SCROBrailleDisplayDelegate> {
     struct { 
         NSData *aggregatedData; 
-        NSInteger virtualAlignment; 
-        NSInteger masterStatusCellIndex; 
+        int virtualAlignment; 
+        int masterStatusCellIndex; 
         BOOL currentAnnouncementUnread; 
         BOOL anyUnreadAnnouncements; 
-    NSInteger _alertPriority;
+    int _alertPriority;
     double _alertTimeout;
     struct __CFRunLoopTimer { } *_alertTimer;
     NSAttributedString *_blankUIString;
     SCROBrailleDisplay *_bluetoothBrailleDisplay;
     NSLock *_contentLock;
-    NSInteger _contractionMode;
+    int _contractionMode;
     SCROBrailleFormatter *_currentBrailleFormatter;
     <SCROSBrailleDisplayManagerDelegate> *_delegate;
     NSMutableDictionary *_detectedIOElementsDict;
@@ -25,7 +25,7 @@
     NSMutableArray *_displayModeStack;
     SCROBrailleEventDispatcher *_eventDispatcher;
     SCROBrailleDisplayHistory *_history;
-    NSInteger _inputAccessMode;
+    int _inputAccessMode;
     BOOL _isValid;
     BOOL _lineDescriptorDisplayCallbackEnabled;
     NSAttributedString *_lineString;
@@ -47,7 +47,7 @@
 - (void)_alertTimeoutHandler;
 - (void)_announcementHandler:(id)arg1;
 - (void)_blankOutDisplaysInQueue:(id)arg1;
-- (id)_cachedMainStringForDisplayMode:(NSInteger)arg1;
+- (id)_cachedMainStringForDisplayMode:(int)arg1;
 - (void)_contractionModeHandler:(id)arg1;
 - (void)_deviceConnectedHandler:(id)arg1;
 - (void)_disableAutoDetect;
@@ -67,7 +67,7 @@
 - (void)_setAggregatedStatusHandler:(id)arg1;
 - (void)_setBatchUpdates:(id)arg1;
 - (void)_setDisplayInputAccessMode:(id)arg1;
-- (void)_setDisplayMode:(NSInteger)arg1;
+- (void)_setDisplayMode:(int)arg1;
 - (void)_setLineDescriptorCallbackEnabledHandler:(id)arg1;
 - (void)_setMasterStatusCellIndexHandler:(id)arg1;
 - (void)_setPrimaryDisplayKeyHandler:(id)arg1;
@@ -91,11 +91,11 @@
 - (void)brailleDriverDisconnected:(id)arg1;
 - (void)configurationChangedForBrailleDisplay:(id)arg1;
 - (void)configureTableWithIdentifier:(id)arg1;
-- (NSInteger)contractionMode;
+- (int)contractionMode;
 - (void)dealloc;
 - (id)delegate;
-- (NSInteger)displayInputAccessMode;
-- (NSInteger)displayMode;
+- (int)displayInputAccessMode;
+- (int)displayMode;
 - (id)driverConfiguration;
 - (void)endUpdates;
 - (void)exitCurrentDisplayMode;
@@ -114,9 +114,9 @@
 - (void)removeBluetoothDriverWithAddress:(id)arg1;
 - (void)setAggregatedStatus:(id)arg1;
 - (void)setAnnouncementsDisplayMode;
-- (void)setContractionMode:(NSInteger)arg1;
+- (void)setContractionMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDisplayInputAccessMode:(NSInteger)arg1;
+- (void)setDisplayInputAccessMode:(int)arg1;
 - (void)setLineDescriptorDisplayCallbackEnabled:(BOOL)arg1;
 - (void)setMainAttributedString:(id)arg1;
 - (void)setMasterStatusCellIndex:(long)arg1;
@@ -125,14 +125,14 @@
 - (void)setShowDotsSevenAndEight:(BOOL)arg1;
 - (void)setShowEightDotBraille:(BOOL)arg1;
 - (void)setUIDisplayMode;
-- (void)setVirtualStatusAlignment:(NSInteger)arg1;
+- (void)setVirtualStatusAlignment:(int)arg1;
 - (BOOL)showDotsSevenAndEight;
 - (BOOL)showEightDotBraille;
 - (void)showNextAnnouncement;
 - (void)showPreviousAnnouncement;
 - (void)simulateKeypress:(id)arg1;
 - (id)tableIdentifier;
-- (NSInteger)tokenForRouterIndex:(NSInteger)arg1 location:(NSInteger*)arg2 appToken:(id*)arg3 forDisplayWithToken:(long)arg4;
-- (NSInteger)virtualStatusAlignment;
+- (int)tokenForRouterIndex:(int)arg1 location:(int*)arg2 appToken:(id*)arg3 forDisplayWithToken:(long)arg4;
+- (int)virtualStatusAlignment;
 
 @end

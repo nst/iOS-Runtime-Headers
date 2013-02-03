@@ -6,50 +6,67 @@
    See Warning(s) below.
  */
 
-@interface GKDataRequest : NSObject {
+@class NSDictionary, NSString, NSArray;
+
+@interface GKDataRequest : NSOperation {
+    id _authObserver;
     id _completionBlock;
+    BOOL _isCancelled;
+    BOOL _isExecuting;
+    BOOL _isFinished;
     struct dispatch_source_s { } *_replySource;
-    NSInteger _sequenceNumber;
-    struct dispatch_source_s { } *_serverSource;
+    int _sequenceNumber;
 }
 
-@property(readonly) NSString *cacheKey;
-@property(copy) ? *completionBlock;
-@property(readonly) NSDictionary *header;
-@property(retain,readonly) NSArray *invalidateCacheKeys;
-@property(readonly) NSString *key;
-@property(readonly) NSDictionary *request;
 @property(readonly) BOOL authenticationRequired;
-@property(readonly) NSInteger cachePriority;
-@property(readonly) NSInteger cacheType;
-@property(readonly) NSInteger sequenceNumber;
+@property(readonly) NSString * cacheKey;
+@property(readonly) int cachePriority;
+@property(readonly) int cacheType;
+@property(copy) id completionBlock;
+@property(readonly) NSDictionary * header;
+@property(retain,readonly) NSArray * invalidateCacheKeys;
+@property(readonly) NSString * key;
+@property(readonly) NSDictionary * request;
+@property(readonly) int sequenceNumber;
+@property(readonly) BOOL shouldProcessInBackground;
 
-+ (NSUInteger)bootstrapPort;
++ (void)_cancelActiveRequestsWithError:(id)arg1 force:(BOOL)arg2;
++ (void)_resetRequestPort;
++ (unsigned int)bootstrapPort;
 + (id)protocolVersion;
-+ (NSUInteger)serverPort;
++ (unsigned int)requestPort;
++ (id)requestQueue;
 + (BOOL)useTestProtocol;
 
-- (void)_cleanupSources;
-- (void)_send;
+- (void)_cancelSources;
+- (void)addToQueue;
 - (BOOL)authenticationRequired;
 - (id)cacheKey;
-- (NSInteger)cachePriority;
-- (NSInteger)cacheType;
+- (int)cachePriority;
+- (int)cacheType;
 - (void)cancel;
+- (void)cancelWithError:(id)arg1;
 - (id)completionBlock;
 - (void)dealloc;
 - (id)demarshalResponseData:(id)arg1;
 - (id)description;
 - (id)errorForResponse:(id)arg1;
+- (void)finish;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)header;
 - (id)init;
 - (id)invalidateCacheKeys;
+- (BOOL)isCancelled;
+- (BOOL)isConcurrent;
+- (BOOL)isExecuting;
+- (BOOL)isFinished;
 - (id)key;
 - (id)request;
 - (void)send;
-- (NSInteger)sequenceNumber;
+- (int)sequenceNumber;
 - (void)setCompletionBlock:(id)arg1;
+- (BOOL)shouldProcessInBackground;
+- (void)start;
 - (void)wasCancelledByServer;
 
 @end

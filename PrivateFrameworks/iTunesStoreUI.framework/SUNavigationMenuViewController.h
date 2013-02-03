@@ -8,7 +8,7 @@
     SUNavigationMenu *_navigationMenu;
 }
 
-@property(readonly) SUNavigationMenu *navigationMenu;
+@property(readonly) SUNavigationMenu * navigationMenu;
 
 - (void)_cancelAction:(id)arg1;
 - (void)_protocolButtonAction:(id)arg1;
@@ -16,7 +16,7 @@
 - (id)init;
 - (id)initWithNavigationMenu:(id)arg1;
 - (id)navigationMenu;
-- (NSInteger)numberOfMenuItems;
-- (id)titleOfMenuItemAtIndex:(NSInteger)arg1;
+- (int)numberOfMenuItems;
+- (id)titleOfMenuItemAtIndex:(int)arg1;
 
 @end

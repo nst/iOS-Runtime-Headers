@@ -8,8 +8,8 @@
     NSString *_valueText;
 }
 
-@property(retain) NSString *valueText;
 @property(readonly) BOOL hasValueText;
+@property(retain) NSString * valueText;
 
 - (void)dealloc;
 - (id)description;

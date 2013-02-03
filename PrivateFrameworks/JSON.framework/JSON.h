@@ -5,18 +5,18 @@
 @class NSError;
 
 @interface JSON : NSObject {
-    NSUInteger depth;
+    unsigned int depth;
     NSError **error;
-    NSUInteger options;
+    unsigned int options;
 }
 
-+ (id)dataWithObject:(id)arg1 options:(NSUInteger)arg2 encoding:(NSUInteger)arg3 error:(id*)arg4;
-+ (id)dataWithObject:(id)arg1 options:(NSUInteger)arg2 error:(id*)arg3;
-+ (id)objectWithData:(id)arg1 options:(NSUInteger)arg2 error:(id*)arg3;
-+ (id)stringWithObject:(id)arg1 options:(NSUInteger)arg2 error:(id*)arg3;
++ (id)dataWithObject:(id)arg1 options:(unsigned int)arg2 encoding:(unsigned int)arg3 error:(id*)arg4;
++ (id)dataWithObject:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
++ (id)objectWithData:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
++ (id)stringWithObject:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 
-- (id)initWithOptions:(NSUInteger)arg1 error:(id*)arg2;
-- (void)setErrorWithCode:(NSUInteger)arg1 description:(id)arg2;
-- (void)setErrorWithCode:(NSUInteger)arg1 string:(id)arg2;
+- (id)initWithOptions:(unsigned int)arg1 error:(id*)arg2;
+- (void)setErrorWithCode:(unsigned int)arg1 description:(id)arg2;
+- (void)setErrorWithCode:(unsigned int)arg1 string:(id)arg2;
 
 @end

@@ -8,34 +8,34 @@
     struct { 
         unsigned int hideForSinglePage : 1; 
         unsigned int defersCurrentPageDisplay : 1; 
-    NSInteger _currentPage;
-    NSInteger _displayedPage;
+    int _currentPage;
+    int _displayedPage;
     NSMutableArray *_indicators;
     } _pageControlFlags;
 }
 
-@property NSInteger currentPage;
+@property int currentPage;
 @property BOOL defersCurrentPageDisplay;
 @property BOOL hidesForSinglePage;
-@property NSInteger numberOfPages;
+@property int numberOfPages;
 
 + (void)_initializeSafeCategory;
 
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (NSInteger)_accessibilityPageControlCount;
-- (NSInteger)_accessibilityPageControlIndex;
+- (int)_accessibilityPageControlCount;
+- (int)_accessibilityPageControlIndex;
 - (void)_commonPageControlInit;
-- (NSInteger)_displayedPage;
-- (id)_pageIndicatorCurrentImageForPage:(NSInteger)arg1;
-- (id)_pageIndicatorImageForPage:(NSInteger)arg1;
+- (int)_displayedPage;
+- (id)_pageIndicatorCurrentImageForPage:(int)arg1;
+- (id)_pageIndicatorImageForPage:(int)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
-- (void)_setCurrentPage:(NSInteger)arg1;
-- (void)_setDisplayedPage:(NSInteger)arg1;
+- (void)_setCurrentPage:(int)arg1;
+- (void)_setDisplayedPage:(int)arg1;
 - (void)_updateCurrentPageDisplay;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
-- (NSInteger)currentPage;
+- (int)currentPage;
 - (void)dealloc;
 - (BOOL)defersCurrentPageDisplay;
 - (void)encodeWithCoder:(id)arg1;
@@ -47,12 +47,12 @@
 - (BOOL)isAccessibilityElement;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)layoutSubviews;
-- (NSInteger)numberOfPages;
-- (void)setCurrentPage:(NSInteger)arg1;
+- (int)numberOfPages;
+- (void)setCurrentPage:(int)arg1;
 - (void)setDefersCurrentPageDisplay:(BOOL)arg1;
 - (void)setHidesForSinglePage:(BOOL)arg1;
-- (void)setNumberOfPages:(NSInteger)arg1;
-- (struct CGSize { float x1; float x2; })sizeForNumberOfPages:(NSInteger)arg1;
+- (void)setNumberOfPages:(int)arg1;
+- (struct CGSize { float x1; float x2; })sizeForNumberOfPages:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateCurrentPageDisplay;
 

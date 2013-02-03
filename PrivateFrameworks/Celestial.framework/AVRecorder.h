@@ -9,14 +9,14 @@
 @class <AVRecorderImpl>;
 
 @interface AVRecorder : NSObject {
-    struct AVRecorderPrivate { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; void*x4; void*x5; void*x6; void*x7; unsigned int x8/* : ? */; long x9; void*x10; void*x11; NSInteger x12; BOOL x13; void*x14; NSInteger x15; out in void*x16; const void*x17; void*x18; <AVRecorderImpl> *x19; } *_priv;
+    struct AVRecorderPrivate { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; void*x4; void*x5; void*x6; void*x7; unsigned int x8/* : ? */; long x9; void*x10; void*x11; int x12; BOOL x13; void*x14; int x15; out in void*x16; const void*x17; void*x18; <AVRecorderImpl> *x19; } *_priv;
 }
 
 - (BOOL)activate:(id*)arg1;
 - (id)attributeForKey:(id)arg1;
 - (BOOL)audioCurrentAverageDecibelLevels:(float*)arg1 andPeakDecibelLevels:(float*)arg2;
 - (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2;
-- (NSUInteger)audioNumDeviceChannels;
+- (unsigned int)audioNumDeviceChannels;
 - (BOOL)autoFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)deactivate;
 - (void)dealloc;

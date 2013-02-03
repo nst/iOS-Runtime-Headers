@@ -8,8 +8,8 @@
     double *anchorArray;
     CPCluster *anchors;
     CPZone *contentZone;
-    NSUInteger countOfWordsInZone;
-    struct { float x1; float x2; float x3; float x4; NSInteger x5; NSInteger *x6; struct CPPDFStyle {} *x7; } *crossingWordArray;
+    unsigned int countOfWordsInZone;
+    struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; } *crossingWordArray;
     NSMutableArray *gutters;
     NSMutableArray *leftGuides;
     float medianFontSizeOfFirstCharacter;
@@ -42,13 +42,13 @@
 - (float)medianFontSizeOfFirstCharacter;
 - (float)medianFontSizeOfLastCharacter;
 - (id)rightGuides;
-- (void)setAlignForWordWithExtent:(struct { float x1; float x2; float x3; float x4; NSInteger x5; NSInteger *x6; struct CPPDFStyle {} *x7; }*)arg1 stripArray:(id)arg2 stripMax:(float)arg3;
+- (void)setAlignForWordWithExtent:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg1 stripArray:(id)arg2 stripMax:(float)arg3;
 - (void)splitTextLines;
 - (void)splitTextLinesAtBorderWords;
 - (void)splitTextLinesBetweenBorderWords;
-- (void)subdivideGutterFrom:(NSUInteger)arg1 to:(NSUInteger)arg2;
-- (void)subdivideLeftGuideAt:(NSUInteger)arg1;
-- (void)subdivideRightGuideAt:(NSUInteger)arg1;
-- (void)subdivideStripInto:(id)arg1 from:(float)arg2 to:(float)arg3 borderedBy:(struct { float x1; float x2; float x3; float x4; NSInteger x5; NSInteger *x6; struct CPPDFStyle {} *x7; }*)arg4 ofCount:(NSUInteger)arg5 crossedBy:(struct { float x1; float x2; float x3; float x4; NSInteger x5; NSInteger *x6; struct CPPDFStyle {} *x7; }*)arg6 ofCount:(NSUInteger)arg7;
+- (void)subdivideGutterFrom:(unsigned int)arg1 to:(unsigned int)arg2;
+- (void)subdivideLeftGuideAt:(unsigned int)arg1;
+- (void)subdivideRightGuideAt:(unsigned int)arg1;
+- (void)subdivideStripInto:(id)arg1 from:(float)arg2 to:(float)arg3 borderedBy:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg4 ofCount:(unsigned int)arg5 crossedBy:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg6 ofCount:(unsigned int)arg7;
 
 @end

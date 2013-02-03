@@ -8,7 +8,7 @@
     GKInvite *_invite;
 }
 
-@property(readonly) GKInvite *invite;
+@property(readonly) GKInvite * invite;
 
 - (void)dealloc;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;

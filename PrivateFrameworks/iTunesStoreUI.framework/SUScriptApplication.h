@@ -17,7 +17,7 @@
 - (struct CGSize { float x1; float x2; })_applicationFrame;
 - (id)_copyIconBadgeNumber;
 - (void)_loadNativeObject;
-- (void)_setIconBadgeNumber:(NSInteger)arg1;
+- (void)_setIconBadgeNumber:(int)arg1;
 - (id)attributeKeys;
 - (void)beginDelayingTerminate;
 - (void)endDelayingTerminate;

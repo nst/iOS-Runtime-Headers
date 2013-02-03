@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSDictionary;
+@class NSString, NSDictionary;
 
 @interface AAAuthenticationResponse : AAResponse {
     NSDictionary *_tokens;
 }
 
-@property(readonly) NSString *authToken;
+@property(readonly) NSString * authToken;
 
 - (id)authToken;
 - (void)dealloc;

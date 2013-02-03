@@ -2,30 +2,30 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptFunction;
+@class SUScriptFunction, WebScriptObject, NSString;
 
 @interface SUScriptImagePickerController : SUScriptNavigationController {
     SUScriptFunction *_cancelFunction;
     SUScriptFunction *_pickedMediaFunction;
 }
 
-@property(retain) WebScriptObject *cancelFunction;
-@property(retain) WebScriptObject *pickedMediaFunction;
-@property(readonly) NSString *propertyAllowsEditing;
-@property(readonly) NSString *propertyAllowsVideoEditing;
-@property(readonly) NSString *propertyCaptureMaximumDuration;
-@property(readonly) NSString *propertyFlashMode;
-@property(readonly) NSString *propertyVideoMaximumDuration;
-@property(readonly) NSString *propertyVideoQuality;
-@property(readonly) NSString *propertyViewImageBeforeSelecting;
 @property(readonly) id cameraDeviceFront;
 @property(readonly) id cameraDeviceRear;
+@property(retain) WebScriptObject * cancelFunction;
 @property(readonly) id captureModePhoto;
 @property(readonly) id captureModeVideo;
 @property(readonly) id flashModeAuto;
 @property(readonly) id flashModeOff;
 @property(readonly) id flashModeOn;
 @property(copy) id mediaTypes;
+@property(retain) WebScriptObject * pickedMediaFunction;
+@property(readonly) NSString * propertyAllowsEditing;
+@property(readonly) NSString * propertyAllowsVideoEditing;
+@property(readonly) NSString * propertyCaptureMaximumDuration;
+@property(readonly) NSString * propertyFlashMode;
+@property(readonly) NSString * propertyVideoMaximumDuration;
+@property(readonly) NSString * propertyVideoQuality;
+@property(readonly) NSString * propertyViewImageBeforeSelecting;
 @property(readonly) id quality640x480;
 @property(readonly) id qualityHigh;
 @property(readonly) id qualityLow;

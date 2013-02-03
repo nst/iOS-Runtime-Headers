@@ -7,30 +7,30 @@
 @interface EKCalendar : NSObject {
     NSNumber *_calendarId;
     struct CGColor { } *_color;
-    NSUInteger _constraints;
-    NSUInteger _dirtyFlags;
+    unsigned int _constraints;
+    unsigned int _dirtyFlags;
     BOOL _editable;
     BOOL _isMain;
-    NSUInteger _loadFlags;
-    NSInteger _maxAlarms;
-    NSInteger _maxRecurrences;
-    NSInteger _order;
+    unsigned int _loadFlags;
+    int _maxAlarms;
+    int _maxRecurrences;
+    int _order;
     void *_record;
     id _source;
     EKEventStore *_store;
     NSString *_title;
-    NSInteger _type;
+    int _type;
 }
 
-@property(readonly) CGColor *CGColor;
-@property(readonly) NSString *title;
+@property(readonly) struct CGColor { }* CGColor;
 @property(readonly) BOOL allowsContentModifications;
-@property(readonly) NSUInteger constraints;
-@property(readonly) NSUInteger supportedEventAvailabilities;
-@property(readonly) NSInteger type;
+@property(readonly) unsigned int constraints;
+@property(readonly) unsigned int supportedEventAvailabilities;
+@property(readonly) NSString * title;
+@property(readonly) int type;
 
 + (id)calendar;
-+ (id)typeDescription:(NSInteger)arg1;
++ (id)typeDescription:(int)arg1;
 
 - (struct CGColor { }*)CGColor;
 - (id)accountName;
@@ -38,12 +38,12 @@
 - (BOOL)alarmTriggerIntervalConstrainedToRecurrenceInterval;
 - (BOOL)allowsContentModifications;
 - (BOOL)commitToStore:(id)arg1 error:(id*)arg2;
-- (NSUInteger)constraints;
+- (unsigned int)constraints;
 - (void)dealloc;
 - (BOOL)declinedStatusChangeRequiresNoPendingStatus;
 - (BOOL)deliverySourceOrExternalIDRequiredForResponse;
 - (id)description;
-- (NSInteger)displayOrder;
+- (int)displayOrder;
 - (BOOL)eventDurationConstrainedToRecurrenceInterval;
 - (BOOL)futureStartDateLimitedToOccurrenceCacheBounds;
 - (BOOL)hasEvents;
@@ -55,8 +55,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isHidden;
 - (BOOL)isSubscribed;
-- (NSInteger)maxAlarmsAllowed;
-- (NSInteger)maxRecurrencesAllowed;
+- (int)maxAlarmsAllowed;
+- (int)maxRecurrencesAllowed;
 - (BOOL)mustAcknowledgeMasterEvent;
 - (void*)object;
 - (BOOL)occurrencesMustOccurOnSeparateDays;
@@ -78,7 +78,7 @@
 - (id)source;
 - (BOOL)statusesAreAccurate;
 - (id)store;
-- (NSUInteger)supportedEventAvailabilities;
+- (unsigned int)supportedEventAvailabilities;
 - (BOOL)supportsIncomingInvitations;
 - (BOOL)supportsInvitationModifications;
 - (BOOL)supportsOutgoingInvitations;
@@ -86,7 +86,7 @@
 - (BOOL)supportsResponseComments;
 - (BOOL)supportsTriggerIntervals;
 - (id)title;
-- (NSInteger)type;
+- (int)type;
 - (id)uiColor;
 - (id)uid;
 

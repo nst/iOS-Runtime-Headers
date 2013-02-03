@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSArray;
+@class <CoreDAVACLTaskDelegate>, NSArray;
 
 @interface CoreDAVACLTask : CoreDAVTask {
     NSArray *_accessControlEntities;
 }
 
-@property(retain) NSArray *accessControlEntities;
-@property <CoreDAVACLTaskDelegate> *delegate;
+@property(retain) NSArray * accessControlEntities;
+@property <CoreDAVACLTaskDelegate> * delegate;
 
 - (id)accessControlEntities;
 - (void)dealloc;

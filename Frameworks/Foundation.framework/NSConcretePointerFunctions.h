@@ -2,8 +2,9 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @class NSWeakCallback;
@@ -32,13 +33,11 @@
         int (*readAt)(); 
         int (*clearAt)(); 
         int (*storeAt)(); 
-     /* Encoded args for previous method: B16@0:4^{NSSlice=^^vccccccccc@^?^?^?^?^?^?^?^?^?^?^?}8I12 */
-     /* Encoded args for previous method: v16@0:4^{NSSlice=^^vccccccccc@^?^?^?^?^?^?^?^?^?^?^?}8B12 */
     } slice;
 }
 
-+ (void)initializeBackingStore:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; id x11; int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); }*)arg1 sentinel:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
-+ (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)initializeSlice:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; id x11; int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); }*)arg1 withOptions:(NSUInteger)arg2;
++ (void)initializeBackingStore:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; id x11; int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); }*)arg1 sentinel:(bool)arg2;
++ (bool)initializeSlice:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; id x11; int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); }*)arg1 withOptions:(unsigned int)arg2;
 
 - (int (*)())acquireFunction;
 - (int (*)())descriptionFunction;
@@ -47,8 +46,8 @@
 - (int (*)())relinquishFunction;
 - (int (*)())sizeFunction;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)hash;
-- (id)initWithOptions:(NSUInteger)arg1;
+- (unsigned int)hash;
+- (id)initWithOptions:(unsigned int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)setAcquireFunction:(int (*)())arg1;
 - (void)setDescriptionFunction:(int (*)())arg1;

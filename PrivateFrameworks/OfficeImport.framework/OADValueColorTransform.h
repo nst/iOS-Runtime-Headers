@@ -6,7 +6,7 @@
     float mValue;
 }
 
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)setValue:(float)arg1;
 - (float)value;

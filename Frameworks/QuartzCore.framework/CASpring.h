@@ -2,6 +2,11 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class CAValueFunction, NSString, CALayer;
 
 @interface CASpring : NSObject <NSCopying, NSMutableCopying, NSCoding> {
@@ -25,22 +30,22 @@
     float _stiffness;
 }
 
-@property(retain) CAValueFunction *function;
-@property(retain) CALayer *layerA;
-@property(retain) CALayer *layerB;
-@property(copy) NSString *name;
-@property CGPoint attachmentPointA;
-@property CGPoint attachmentPointB;
+@property struct CGPoint { float x; float y; } attachmentPointA;
+@property struct CGPoint { float x; float y; } attachmentPointB;
 @property float damping;
 @property id delegate;
 @property(getter=isEnabled) BOOL enabled;
+@property(retain) CAValueFunction * function;
+@property(retain) CALayer * layerA;
+@property(retain) CALayer * layerB;
+@property(copy) NSString * name;
 @property float restLength;
 @property float stiffness;
 
 + (id)defaultValueForKey:(id)arg1;
 + (id)spring;
 
-- (struct Object { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (struct CGPoint { float x1; float x2; })attachmentPointA;
 - (struct CGPoint { float x1; float x2; })attachmentPointB;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

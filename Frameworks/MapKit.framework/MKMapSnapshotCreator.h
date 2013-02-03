@@ -5,26 +5,26 @@
 @class MKMapSnapshotRequest, NSMutableArray, UIImage;
 
 @interface MKMapSnapshotCreator : NSObject <MKMapViewDelegate> {
-    struct BillingPointTracker { NSInteger x1; NSInteger x2; struct MapPoint { 
-            NSInteger latitude_; 
-            NSInteger longitude_; 
-            NSInteger x_pixels_at_max_zoom_; 
-            NSInteger y_pixels_at_max_zoom_; 
-        } x3; NSInteger x4; NSInteger x5; unsigned char x6; } *_billingPointTracker;
+    struct BillingPointTracker { int x1; int x2; struct MapPoint { 
+            int latitude_; 
+            int longitude_; 
+            int x_pixels_at_max_zoom_; 
+            int y_pixels_at_max_zoom_; 
+        } x3; int x4; int x5; unsigned char x6; } *_billingPointTracker;
     UIImage *_lastSnapshot;
     NSMutableArray *_requests;
     MKMapSnapshotRequest *_servingRequest;
 }
 
-@property(retain) MKMapSnapshotRequest *servingRequest;
+@property(retain) MKMapSnapshotRequest * servingRequest;
 
 - (id)_composeSnapshotWithView:(id)arg1;
 - (void)_processRequest;
 - (void)_processRequestOnMainThread;
 - (void)_respondWithSnapshot;
-- (void)createSnapShotWithCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(NSUInteger)arg2 size:(struct CGSize { float x1; float x2; })arg3 requester:(id)arg4 context:(id)arg5;
+- (void)createSnapShotWithCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3 requester:(id)arg4 context:(id)arg5;
 - (void)dealloc;
-- (void)didDisplaySnapShotWithCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(NSUInteger)arg2 size:(struct CGSize { float x1; float x2; })arg3;
+- (void)didDisplaySnapShotWithCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3;
 - (void)flushRequestQueue;
 - (id)init;
 - (id)recreateCurrentSnapshotWithRequester:(id)arg1 context:(id)arg2;

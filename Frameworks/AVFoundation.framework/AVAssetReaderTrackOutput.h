@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetReaderTrackOutputInternal;
+@class NSDictionary, AVAssetReaderTrackOutputInternal, AVAssetTrack;
 
 @interface AVAssetReaderTrackOutput : AVAssetReaderOutput {
     AVAssetReaderTrackOutputInternal *_trackOutputInternal;
 }
 
-@property(readonly) NSDictionary *outputSettings;
-@property(readonly) AVAssetTrack *track;
+@property(readonly) NSDictionary * outputSettings;
+@property(readonly) AVAssetTrack * track;
 
 + (id)assetReaderTrackOutputWithTrack:(id)arg1 outputSettings:(id)arg2;
 

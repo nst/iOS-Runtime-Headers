@@ -5,7 +5,7 @@
 @interface CHDLineType : CHDChartTypeWithGrouping {
 }
 
-- (NSInteger)defaultLabelPosition;
+- (int)defaultLabelPosition;
 - (id)initWithChart:(id)arg1;
 
 @end

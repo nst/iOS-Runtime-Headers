@@ -5,22 +5,22 @@
 @class NSMutableDictionary, UIFont;
 
 @interface MKStreetViewLabelCache : NSObject {
-    NSUInteger arrowTexture;
+    unsigned int arrowTexture;
     NSMutableDictionary *current;
     UIFont *font;
-    NSUInteger labelHeight;
-    NSUInteger labelWidth;
+    unsigned int labelHeight;
+    unsigned int labelWidth;
     NSMutableDictionary *previous;
     void *scratchBytes;
     struct CGContext { } *scratchContext;
 }
 
-@property(readonly) NSUInteger arrowTexture;
+@property(readonly) unsigned int arrowTexture;
 
 - (void)ageLabels;
-- (NSUInteger)arrowTexture;
+- (unsigned int)arrowTexture;
 - (void)dealloc;
 - (id)init;
-- (NSUInteger)textureForName:(id)arg1;
+- (unsigned int)textureForName:(id)arg1;
 
 @end

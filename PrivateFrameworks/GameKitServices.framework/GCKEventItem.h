@@ -3,19 +3,19 @@
  */
 
 @interface GCKEventItem : NSObject {
-    struct { NSInteger x1; char *x2; NSInteger x3; NSUInteger x4; } *_event;
-    NSUInteger _pid;
+    struct { int x1; char *x2; int x3; unsigned int x4; } *_event;
+    unsigned int _pid;
 }
 
-@property ? *event;
-@property NSUInteger pid;
+@property struct { int x1; char *x2; int x3; unsigned int x4; }* event;
+@property unsigned int pid;
 
 - (void)dealloc;
-- (struct { NSInteger x1; char *x2; NSInteger x3; NSUInteger x4; }*)event;
+- (struct { int x1; char *x2; int x3; unsigned int x4; }*)event;
 - (id)init;
-- (id)initWithEvent:(struct { NSInteger x1; char *x2; NSInteger x3; NSUInteger x4; }*)arg1 remotePeer:(NSUInteger)arg2;
-- (NSUInteger)pid;
-- (void)setEvent:(struct { NSInteger x1; char *x2; NSInteger x3; NSUInteger x4; }*)arg1;
-- (void)setPid:(NSUInteger)arg1;
+- (id)initWithEvent:(struct { int x1; char *x2; int x3; unsigned int x4; }*)arg1 remotePeer:(unsigned int)arg2;
+- (unsigned int)pid;
+- (void)setEvent:(struct { int x1; char *x2; int x3; unsigned int x4; }*)arg1;
+- (void)setPid:(unsigned int)arg1;
 
 @end

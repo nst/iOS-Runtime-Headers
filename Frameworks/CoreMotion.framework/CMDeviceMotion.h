@@ -2,14 +2,16 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
+@class CMAttitude;
+
 @interface CMDeviceMotion : CMLogItem {
     id _internal;
 }
 
-@property(readonly) CMAttitude *attitude;
-@property(readonly) ? gravity;
-@property(readonly) ? rotationRate;
-@property(readonly) ? userAcceleration;
+@property(readonly) CMAttitude * attitude;
+@property(readonly) struct { double x; double y; double z; } gravity;
+@property(readonly) struct { double x; double y; double z; } rotationRate;
+@property(readonly) struct { double x; double y; double z; } userAcceleration;
 
 - (id)attitude;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

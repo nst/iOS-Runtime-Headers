@@ -2,9 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
+@class PLCameraView;
+
 @interface PLPreviewOverlayView : UIView {
+    PLCameraView *cameraView;
 }
 
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+@property PLCameraView * cameraView;
+
+- (id)cameraView;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)setCameraView:(id)arg1;
 
 @end

@@ -37,7 +37,7 @@
 - (id)name;
 - (id)northEastStyle;
 - (id)northWestStyle;
-- (id)partStyle:(NSInteger)arg1;
+- (id)partStyle:(int)arg1;
 - (void)setBackground:(id)arg1;
 - (void)setBand1HorzStyle:(id)arg1;
 - (void)setBand1VertStyle:(id)arg1;

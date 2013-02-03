@@ -37,6 +37,7 @@
             float width; 
             float height; 
         } size; 
+    BOOL _allowSelection;
     UIPDFPageContentLayer *_contentLayer;
     } _cropBox;
     <UIPDFPageViewDelegate> *_delegate;
@@ -50,12 +51,14 @@
     } zoomRect;
 }
 
-@property(readonly) UIPDFPageContentLayer *contentLayer;
-@property <UIPDFPageViewDelegate> *delegate;
-@property(retain) UIPDFPage *page;
-@property <UIPDFSelectionWidget> *selectionWidget;
+@property BOOL allowSelection;
+@property(readonly) UIPDFPageContentLayer * contentLayer;
+@property <UIPDFPageViewDelegate> * delegate;
 @property float margin;
+@property(retain) UIPDFPage * page;
+@property <UIPDFSelectionWidget> * selectionWidget;
 
+- (BOOL)allowSelection;
 - (id)contentLayer;
 - (struct CGPoint { float x1; float x2; })convertPointFromLayer:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertPointFromPDFPageSpace:(struct CGPoint { float x1; float x2; })arg1;
@@ -64,7 +67,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectFromPDFPageSpace:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectToLayer:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectToPDFPageSpace:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGImage { }*)createBitMapAtScale:(float)arg1;
+- (struct CGImage { }*)createBitMapAtScale:(float)arg1 flip:(BOOL)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (void)displayContent;
@@ -75,9 +78,10 @@
 - (id)initWithPage:(id)arg1;
 - (float)margin;
 - (id)page;
-- (NSInteger)pageIndex;
+- (int)pageIndex;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectangleOfInterestAt:(struct CGPoint { float x1; float x2; })arg1;
 - (id)selectionWidget;
+- (void)setAllowSelection:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMargin:(float)arg1;

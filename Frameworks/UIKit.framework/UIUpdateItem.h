@@ -5,25 +5,25 @@
 @class NSIndexPath;
 
 @interface UIUpdateItem : NSObject {
-    NSInteger _action;
-    NSInteger _animation;
+    int _action;
+    int _animation;
     NSIndexPath *_indexPath;
     float _offset;
 }
 
-@property(readonly) NSIndexPath *indexPath;
-@property(readonly) NSInteger action;
-@property(readonly) NSInteger animation;
+@property(readonly) int action;
+@property(readonly) int animation;
+@property(readonly) NSIndexPath * indexPath;
 @property float offset;
 
 - (id)_actionDescription;
-- (NSInteger)action;
-- (NSInteger)animation;
-- (NSInteger)compareIndexPaths:(id)arg1;
+- (int)action;
+- (int)animation;
+- (int)compareIndexPaths:(id)arg1;
 - (void)dealloc;
 - (id)indexPath;
-- (id)initWithAction:(NSInteger)arg1 forIndexPath:(id)arg2 animation:(NSInteger)arg3;
-- (NSInteger)inverseCompareIndexPaths:(id)arg1;
+- (id)initWithAction:(int)arg1 forIndexPath:(id)arg2 animation:(int)arg3;
+- (int)inverseCompareIndexPaths:(id)arg1;
 - (BOOL)isSectionOperation;
 - (float)offset;
 - (void)setOffset:(float)arg1;

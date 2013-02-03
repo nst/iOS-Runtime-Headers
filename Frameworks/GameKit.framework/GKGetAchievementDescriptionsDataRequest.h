@@ -9,12 +9,12 @@
     GKGame *_game;
 }
 
-@property(readonly) NSArray *descriptions;
-@property(retain) GKGame *game;
+@property(readonly) NSArray * descriptions;
+@property(retain) GKGame * game;
 
 - (id)cacheKey;
-- (NSInteger)cachePriority;
-- (NSInteger)cacheType;
+- (int)cachePriority;
+- (int)cacheType;
 - (void)dealloc;
 - (id)descriptions;
 - (id)game;

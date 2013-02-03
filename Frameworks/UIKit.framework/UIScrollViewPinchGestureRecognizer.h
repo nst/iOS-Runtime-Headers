@@ -9,7 +9,7 @@
     UIScrollView *_scrollView;
 }
 
-@property UIScrollView *scrollView;
+@property UIScrollView * scrollView;
 
 - (float)_hysteresis;
 - (id)scrollView;

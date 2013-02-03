@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKComposeRecipientAtom, NSArray, NSTimer, UITextField, NSMutableArray, NSMutableDictionary;
+@class GKComposeRecipientAtom, NSTimer, NSMutableArray, UITextField, NSObject<GKComposeRecipientViewDelegate>, NSMutableDictionary, NSArray;
 
 @interface GKComposeRecipientView : GKComposeHeaderView <UITextFieldDelegate, ABPeoplePickerNavigationControllerDelegate, GKComposeRecipientAtomDelegate> {
     struct UIEdgeInsets { 
@@ -11,12 +11,12 @@
         float bottom; 
         float right; 
     NSMutableDictionary *_atoms;
+    NSObject<GKComposeRecipientViewDelegate> *_composeDelegate;
     } _contentInsetsWhileEditing;
     NSTimer *_delayTimer;
     BOOL _editable;
     BOOL _editing;
-    double _inputDelay;
-    NSInteger _maxRecipients;
+    int _maxRecipients;
     BOOL _parentIsClosing;
     BOOL _picking;
     NSArray *_properties;
@@ -25,7 +25,8 @@
     UITextField *_textField;
 }
 
-@property UIEdgeInsets contentInsetsWhileEditing;
+@property NSObject<GKComposeRecipientViewDelegate> * composeDelegate;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } contentInsetsWhileEditing;
 @property(getter=isEditable) BOOL editable;
 @property(getter=isEditing) BOOL editing;
 
@@ -37,55 +38,52 @@
 - (void)_dismissPicker:(id)arg1;
 - (void)addAddress:(id)arg1;
 - (void)addRecipient:(id)arg1;
-- (void)addRecord:(void*)arg1 identifier:(NSInteger)arg2;
-- (void)addRecord:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3;
+- (void)addRecord:(void*)arg1 identifier:(int)arg2;
+- (void)addRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 - (id)addresses;
 - (BOOL)becomeFirstResponder;
 - (void)clearText;
+- (id)composeDelegate;
 - (void)composeRecipientAtomSelectNext:(id)arg1;
 - (void)composeRecipientAtomSelectPrevious:(id)arg1;
-- (void)composeRecipientAtomShowPersonCard:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsetsWhileEditing;
 - (void)dealloc;
-- (BOOL)hasContent;
+- (id)fadeTransition;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isEditable;
 - (BOOL)isEditing;
 - (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
 - (void)keyboardInputChangedSelection:(id)arg1;
 - (BOOL)keyboardInputShouldDelete:(id)arg1;
-- (NSInteger)maxRecipients;
-- (NSInteger)numberOfRowsOfTextInField;
-- (float)offsetForRowWithTextField;
+- (void)layoutAtomViews;
+- (int)maxRecipients;
 - (void)parentDidClose;
 - (void)parentWillClose;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)recipientWasUpdated:(id)arg1;
 - (id)recipients;
 - (void)reflow;
-- (void)removeAddressAtIndex:(NSInteger)arg1;
+- (void)removeAddressAtIndex:(int)arg1;
 - (void)removeAddresses;
 - (void)removeRecipient:(id)arg1;
 - (void)selectComposeRecipientAtom:(id)arg1;
 - (void)setAddresses:(id)arg1;
+- (void)setComposeDelegate:(id)arg1;
 - (void)setContentInsetsWhileEditing:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setEditable:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1;
-- (void)setInputDelay:(double)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setMaxRecipients:(NSInteger)arg1;
+- (void)setMaxRecipients:(int)arg1;
 - (void)setProperties:(id)arg1;
-- (void)setProperty:(NSInteger)arg1;
+- (void)setProperty:(int)arg1;
 - (BOOL)shouldShowCardForPerson:(void*)arg1;
-- (void)showAtoms;
 - (id)text;
 - (void)textChanged:(id)arg1;
 - (id)textField;
 - (void)textFieldDidBecomeFirstResponder:(id)arg1;
 - (void)textFieldDidResignFirstResponder:(id)arg1;
-- (float)textFieldOffsetForNumberOfRowsToScroll:(NSUInteger)arg1 numberOfRowsAboveField:(NSInteger)arg2;
 - (BOOL)textFieldShouldBecomeFirstResponder:(id)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)windowDidResignKey:(id)arg1;

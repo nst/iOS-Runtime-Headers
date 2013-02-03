@@ -2,19 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface EDTokenTree : NSObject {
-     /* Encoded args for previous method: B16@0:4I8@12 */
-     /* Encoded args for previous method: B12@0:4S8 */
 }
 
-+ (id)buildSubtree:(NSUInteger)arg1 formula:(id)arg2;
-+ (id)buildSubtreeAtIndex:(NSUInteger*)arg1 formula:(id)arg2;
-+ (NSUInteger)childCountForToken:(NSUInteger)arg1 formula:(id)arg2;
-+ (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isTokenAttrASum:(unsigned short)arg1;
-+ (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isTokenNoOp:(NSUInteger)arg1 formula:(id)arg2;
++ (id)buildSubtree:(unsigned int)arg1 formula:(id)arg2;
++ (id)buildSubtreeAtIndex:(unsigned int*)arg1 formula:(id)arg2;
++ (unsigned int)childCountForToken:(unsigned int)arg1 formula:(id)arg2;
++ (bool)isTokenAttrASum:(unsigned short)arg1;
++ (bool)isTokenNoOp:(unsigned int)arg1 formula:(id)arg2;
 
 @end

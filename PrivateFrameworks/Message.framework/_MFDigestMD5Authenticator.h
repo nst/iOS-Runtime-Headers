@@ -13,11 +13,11 @@
 
 - (void)dealloc;
 - (id)responseForServerData:(id)arg1;
-- (NSInteger)securityLevel;
-- (void)setAuthenticationState:(NSInteger)arg1;
+- (int)securityLevel;
+- (void)setAuthenticationState:(int)arg1;
 - (void)setCryptInfo:(void*)arg1;
 - (void)setExpectedResponse:(id)arg1;
-- (void)setMaxBuffer:(NSUInteger)arg1;
-- (void)setSecurityLevel:(NSInteger)arg1;
+- (void)setMaxBuffer:(unsigned int)arg1;
+- (void)setSecurityLevel:(int)arg1;
 
 @end

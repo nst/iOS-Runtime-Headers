@@ -2,6 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSArray, UIImageView, UIView;
 
 @interface UIDragger : NSObject {
@@ -18,7 +23,7 @@
     UIImageView *_fingerView;
     unsigned long long _lastTimestamp;
     NSArray *_modes;
-    NSUInteger _port;
+    unsigned int _port;
     BOOL _showFinger;
     } _startLocation;
     unsigned long long _startTimestamp;
@@ -30,7 +35,7 @@
 
 - (void)_continueDrag:(id)arg1;
 - (double)_delayUntilNextEvent;
-- (void)_postMouseEvent:(NSInteger)arg1 timestamp:(unsigned long long)arg2 location:(struct CGPoint { float x1; float x2; })arg3;
+- (void)_postMouseEvent:(int)arg1 timestamp:(unsigned long long)arg2 location:(struct CGPoint { float x1; float x2; })arg3;
 - (void)_smoothScrollingDidEnd:(id)arg1;
 - (void)_smoothScrollingWillStart:(id)arg1;
 - (void)_stopDrag:(id)arg1;

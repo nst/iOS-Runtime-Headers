@@ -6,12 +6,12 @@
 }
 
 @property(readonly) BOOL lengthComputable;
-@property(readonly) NSUInteger loaded;
-@property(readonly) NSUInteger total;
+@property(readonly) unsigned int loaded;
+@property(readonly) unsigned int total;
 
-- (void)initProgressEvent:(id)arg1 canBubbleArg:(BOOL)arg2 cancelableArg:(BOOL)arg3 lengthComputableArg:(BOOL)arg4 loadedArg:(NSUInteger)arg5 totalArg:(NSUInteger)arg6;
+- (void)initProgressEvent:(id)arg1 canBubbleArg:(BOOL)arg2 cancelableArg:(BOOL)arg3 lengthComputableArg:(BOOL)arg4 loadedArg:(unsigned int)arg5 totalArg:(unsigned int)arg6;
 - (BOOL)lengthComputable;
-- (NSUInteger)loaded;
-- (NSUInteger)total;
+- (unsigned int)loaded;
+- (unsigned int)total;
 
 @end

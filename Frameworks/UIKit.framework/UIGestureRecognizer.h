@@ -35,7 +35,7 @@
     NSMutableSet *_failureRequirements;
     NSMutableSet *_friends;
     } _gestureFlags;
-    NSInteger _state;
+    int _state;
     NSMutableArray *_targets;
     NSMutableSet *_unfailedGestures;
     NSMutableSet *_unfailedGesturesForReset;
@@ -43,13 +43,13 @@
     UIView *_view;
 }
 
-@property <UIGestureRecognizerDelegate> *delegate;
-@property(readonly) UIView *view;
 @property BOOL cancelsTouchesInView;
 @property BOOL delaysTouchesBegan;
 @property BOOL delaysTouchesEnded;
+@property <UIGestureRecognizerDelegate> * delegate;
 @property(getter=isEnabled) BOOL enabled;
-@property(readonly) NSInteger state;
+@property(readonly) int state;
+@property(readonly) UIView * view;
 
 + (BOOL)_touchesBeganWasDelayedForTouch:(id)arg1;
 
@@ -59,8 +59,8 @@
 - (void)_addFriendGesture:(id)arg1;
 - (void)_addUnfailedGestureForReset:(id)arg1;
 - (BOOL)_affectedByGesture:(id)arg1;
-- (void)_appendDescription:(id)arg1 forDependencies:(id)arg2 toString:(id)arg3 atLevel:(NSInteger)arg4;
-- (void)_appendDescriptionToString:(id)arg1 atLevel:(NSInteger)arg2 includingDependencies:(BOOL)arg3;
+- (void)_appendDescription:(id)arg1 forDependencies:(id)arg2 toString:(id)arg3 atLevel:(int)arg4;
+- (void)_appendDescriptionToString:(id)arg1 atLevel:(int)arg2 includingDependencies:(BOOL)arg3;
 - (void)_appendSubclassDescription:(id)arg1;
 - (id)_briefDescription;
 - (struct CGPoint { float x1; float x2; })_centroidOfTouches:(id)arg1 excludingEnded:(BOOL)arg2;
@@ -72,7 +72,7 @@
 - (void)_delayedUpdateGesture;
 - (BOOL)_delegateCanPreventGestureRecognizer:(id)arg1;
 - (BOOL)_delegateShouldReceiveTouch:(id)arg1;
-- (NSInteger)_depthFirstViewCompare:(id)arg1;
+- (int)_depthFirstViewCompare:(id)arg1;
 - (void)_detach;
 - (float)_distanceBetweenTouches:(id)arg1;
 - (void)_enqueueDelayedTouchToSend:(id)arg1;
@@ -112,8 +112,8 @@
 - (BOOL)isEnabled;
 - (BOOL)isExclusive;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
-- (struct CGPoint { float x1; float x2; })locationOfTouch:(NSUInteger)arg1 inView:(id)arg2;
-- (NSUInteger)numberOfTouches;
+- (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
+- (unsigned int)numberOfTouches;
 - (void)removeFailureRequirement:(id)arg1;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (void)requireGestureRecognizerToFail:(id)arg1;
@@ -125,9 +125,9 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setExclusive:(BOOL)arg1;
-- (void)setState:(NSInteger)arg1;
+- (void)setState:(int)arg1;
 - (void)setView:(id)arg1;
-- (NSInteger)state;
+- (int)state;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

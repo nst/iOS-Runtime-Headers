@@ -6,8 +6,15 @@
    See Warning(s) below.
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class EAGLSharegroup;
+
 @interface EAGLContext : NSObject {
-    struct _EAGLContextPrivate { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; void*x3; void*x4; void*x5; unsigned long x6; unsigned char x7; out in void*x8; void*x9; void*x10; void*x11; void*x12; id x13; void*x14; void*x15; void*x16; void*x17; unsigned long x18; unsigned short x19; void*x20; void*x21; const void*x22; void*x23; const out void*x24; void*x25; void*x26; NSUInteger x27; struct __GLIContextRec {} *x28; struct __GLIFunctionDispatchRec { 
+    struct _EAGLContextPrivate { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; void*x3; void*x4; void*x5; unsigned long x6; unsigned char x7; out in void*x8; void*x9; void*x10; void*x11; void*x12; id x13; void*x14; void*x15; void*x16; void*x17; unsigned long x18; unsigned short x19; void*x20; void*x21; const void*x22; void*x23; const out void*x24; void*x25; void*x26; unsigned int x27; struct __GLIContextRec {} *x28; struct __GLIFunctionDispatchRec { 
             int (*accum)(); 
             int (*alpha_func)(); 
             int (*are_textures_resident)(); 
@@ -781,10 +788,39 @@
             int (*gen_vertex_arrays_ARB)(); 
             int (*is_vertex_array_ARB)(); 
             int (*vertex_point_sizef_APPLE)(); 
+            int (*clear_bufferiv)(); 
+            int (*clear_bufferuiv)(); 
+            int (*clear_bufferfv)(); 
+            int (*clear_bufferfi)(); 
+            int (*get_stringi)(); 
             int (*tex_image2D_multisample)(); 
             int (*tex_image3D_multisample)(); 
             int (*get_multisamplefv)(); 
             int (*sample_maski)(); 
+            int (*tex_buffer)(); 
+            int (*copy_buffer_sub_data)(); 
+            int (*primitive_restart_index)(); 
+            int (*get_query_objecti64v)(); 
+            int (*get_query_objectui64v)(); 
+            int (*map_buffer_range)(); 
+            int (*flush_mapped_buffer_range)(); 
+            int (*query_counter)(); 
+            int (*get_integer64i_v)(); 
+            int (*get_buffer_parameteri64v)(); 
+            int (*gen_samplers)(); 
+            int (*delete_samplers)(); 
+            int (*is_sampler)(); 
+            int (*bind_sampler)(); 
+            int (*sampler_parameteri)(); 
+            int (*sampler_parameteriv)(); 
+            int (*sampler_parameterf)(); 
+            int (*sampler_parameterfv)(); 
+            int (*sampler_parameterIiv)(); 
+            int (*sampler_parameterIuiv)(); 
+            int (*get_sampler_parameteriv)(); 
+            int (*get_sampler_parameterIiv)(); 
+            int (*get_sampler_parameterfv)(); 
+            int (*get_sampler_parameterIfv)(); 
             int (*alpha_funcx)(); 
             int (*clear_colorx)(); 
             int (*clear_depthf)(); 
@@ -1623,10 +1659,39 @@
             int (*gen_vertex_arrays_ARB)(); 
             int (*is_vertex_array_ARB)(); 
             int (*vertex_point_sizef_APPLE)(); 
+            int (*clear_bufferiv)(); 
+            int (*clear_bufferuiv)(); 
+            int (*clear_bufferfv)(); 
+            int (*clear_bufferfi)(); 
+            int (*get_stringi)(); 
             int (*tex_image2D_multisample)(); 
             int (*tex_image3D_multisample)(); 
             int (*get_multisamplefv)(); 
             int (*sample_maski)(); 
+            int (*tex_buffer)(); 
+            int (*copy_buffer_sub_data)(); 
+            int (*primitive_restart_index)(); 
+            int (*get_query_objecti64v)(); 
+            int (*get_query_objectui64v)(); 
+            int (*map_buffer_range)(); 
+            int (*flush_mapped_buffer_range)(); 
+            int (*query_counter)(); 
+            int (*get_integer64i_v)(); 
+            int (*get_buffer_parameteri64v)(); 
+            int (*gen_samplers)(); 
+            int (*delete_samplers)(); 
+            int (*is_sampler)(); 
+            int (*bind_sampler)(); 
+            int (*sampler_parameteri)(); 
+            int (*sampler_parameteriv)(); 
+            int (*sampler_parameterf)(); 
+            int (*sampler_parameterfv)(); 
+            int (*sampler_parameterIiv)(); 
+            int (*sampler_parameterIuiv)(); 
+            int (*get_sampler_parameteriv)(); 
+            int (*get_sampler_parameterIiv)(); 
+            int (*get_sampler_parameterfv)(); 
+            int (*get_sampler_parameterIfv)(); 
             int (*alpha_funcx)(); 
             int (*clear_colorx)(); 
             int (*clear_depthf)(); 
@@ -1694,25 +1759,25 @@
         } x30; } *_private;
 }
 
-@property(readonly) EAGLSharegroup *sharegroup;
-@property(readonly) NSUInteger API;
+@property(readonly) unsigned int API;
+@property(readonly) EAGLSharegroup * sharegroup;
 
 + (id)currentContext;
 + (BOOL)setCurrentContext:(id)arg1;
 
-- (NSUInteger)API;
-- (BOOL)attachImage:(NSUInteger)arg1 toCoreSurface:(struct __IOSurface { }*)arg2 invertedRender:(BOOL)arg3;
+- (unsigned int)API;
+- (BOOL)attachImage:(unsigned int)arg1 toCoreSurface:(struct __IOSurface { }*)arg2 invertedRender:(BOOL)arg3;
 - (void)dealloc;
-- (NSUInteger)getParameter:(NSUInteger)arg1 to:(NSInteger*)arg2;
-- (id)initWithAPI:(NSUInteger)arg1 properties:(id)arg2;
-- (id)initWithAPI:(NSUInteger)arg1 sharegroup:(id)arg2;
-- (id)initWithAPI:(NSUInteger)arg1;
-- (BOOL)presentRenderbuffer:(NSUInteger)arg1;
-- (BOOL)renderbufferStorage:(NSUInteger)arg1 fromDrawable:(id)arg2;
-- (void)sendNotification:(NSUInteger)arg1 forTransaction:(NSUInteger)arg2 onLayer:(NSUInteger)arg3;
-- (NSUInteger)setParameter:(NSUInteger)arg1 to:(NSInteger*)arg2;
+- (unsigned int)getParameter:(unsigned int)arg1 to:(int*)arg2;
+- (id)initWithAPI:(unsigned int)arg1 properties:(id)arg2;
+- (id)initWithAPI:(unsigned int)arg1 sharegroup:(id)arg2;
+- (id)initWithAPI:(unsigned int)arg1;
+- (BOOL)presentRenderbuffer:(unsigned int)arg1;
+- (BOOL)renderbufferStorage:(unsigned int)arg1 fromDrawable:(id)arg2;
+- (void)sendNotification:(unsigned int)arg1 forTransaction:(unsigned int)arg2 onLayer:(unsigned int)arg3;
+- (unsigned int)setParameter:(unsigned int)arg1 to:(int*)arg2;
 - (id)sharegroup;
-- (void)swapNotification:(struct __IOMobileFramebuffer { }*)arg1 forTransaction:(NSUInteger)arg2 onLayer:(NSUInteger)arg3;
-- (BOOL)texImageIOSurface:(struct __IOSurface { }*)arg1 target:(NSUInteger)arg2 internalFormat:(NSUInteger)arg3 width:(NSUInteger)arg4 height:(NSUInteger)arg5 format:(NSUInteger)arg6 type:(NSUInteger)arg7 plane:(NSUInteger)arg8 invert:(BOOL)arg9;
+- (void)swapNotification:(struct __IOMobileFramebuffer { }*)arg1 forTransaction:(unsigned int)arg2 onLayer:(unsigned int)arg3;
+- (BOOL)texImageIOSurface:(struct __IOSurface { }*)arg1 target:(unsigned int)arg2 internalFormat:(unsigned int)arg3 width:(unsigned int)arg4 height:(unsigned int)arg5 format:(unsigned int)arg6 type:(unsigned int)arg7 plane:(unsigned int)arg8 invert:(BOOL)arg9;
 
 @end

@@ -17,16 +17,16 @@
     NSArray *_versionOrdering;
 }
 
-@property(retain) NSNumber *accountDSID;
-@property(retain) NSString *accountIdentifier;
-@property(retain) NSString *bundleIdentifier;
-@property(retain) NSString *bundleShortVersionString;
-@property(retain) NSString *bundleVersion;
-@property(retain) NSString *containerPath;
-@property(retain) NSNumber *itemIdentifier;
-@property(retain) NSNumber *storeFrontIdentifier;
-@property(retain) NSNumber *versionIdentifier;
-@property(retain) NSArray *versionOrdering;
+@property(retain) NSNumber * accountDSID;
+@property(retain) NSString * accountIdentifier;
+@property(retain) NSString * bundleIdentifier;
+@property(retain) NSString * bundleShortVersionString;
+@property(retain) NSString * bundleVersion;
+@property(retain) NSString * containerPath;
+@property(retain) NSNumber * itemIdentifier;
+@property(retain) NSNumber * storeFrontIdentifier;
+@property(retain) NSNumber * versionIdentifier;
+@property(retain) NSArray * versionOrdering;
 
 + (id)lookupAttributeKeys;
 

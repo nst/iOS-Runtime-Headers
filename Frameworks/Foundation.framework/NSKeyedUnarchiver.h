@@ -7,8 +7,8 @@
     id _containers;
     id _data;
     id _delegate;
-    NSUInteger _flags;
-    NSInteger _genericKey;
+    unsigned int _flags;
+    int _genericKey;
     id _helper;
     unsigned long long _len;
     id _nameClassMap;
@@ -29,7 +29,7 @@
 + (id)unarchiveObjectWithFile:(id)arg1;
 
 - (id)_blobForCurrentObject;
-- (NSUInteger)_currentUniqueIdentifier;
+- (unsigned int)_currentUniqueIdentifier;
 - (id)_decodeArrayOfObjectsForKey:(id)arg1;
 - (id)_decodePropertyListForKey:(id)arg1;
 - (id)_initWithStream:(struct __CFReadStream { }*)arg1 data:(id)arg2 topDict:(struct __CFDictionary { }*)arg3;
@@ -40,16 +40,16 @@
 - (Class)classForClassName:(id)arg1;
 - (BOOL)containsValueForKey:(id)arg1;
 - (void)dealloc;
-- (void)decodeArrayOfObjCType:(const char *)arg1 count:(NSUInteger)arg2 at:(void*)arg3;
+- (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(void*)arg3;
 - (BOOL)decodeBoolForKey:(id)arg1;
-- (const char *)decodeBytesForKey:(id)arg1 returnedLength:(NSUInteger*)arg2;
-- (void*)decodeBytesWithReturnedLength:(NSUInteger*)arg1;
+- (const char *)decodeBytesForKey:(id)arg1 returnedLength:(unsigned int*)arg2;
+- (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
 - (id)decodeDataObject;
 - (double)decodeDoubleForKey:(id)arg1;
 - (float)decodeFloatForKey:(id)arg1;
-- (NSInteger)decodeInt32ForKey:(id)arg1;
+- (int)decodeInt32ForKey:(id)arg1;
 - (long long)decodeInt64ForKey:(id)arg1;
-- (NSInteger)decodeIntForKey:(id)arg1;
+- (int)decodeIntForKey:(id)arg1;
 - (id)decodeObject;
 - (id)decodeObjectForKey:(id)arg1;
 - (void)decodeValueOfObjCType:(const char *)arg1 at:(void*)arg2;
@@ -65,7 +65,7 @@
 - (void)setAllowedClasses:(id)arg1;
 - (void)setClass:(Class)arg1 forClassName:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (NSUInteger)systemVersion;
-- (NSInteger)versionForClassName:(id)arg1;
+- (unsigned int)systemVersion;
+- (int)versionForClassName:(id)arg1;
 
 @end

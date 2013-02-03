@@ -7,15 +7,15 @@
 @interface SBAwayViewPluginController : NSObject {
     BOOL _alwaysFullscreen;
     BOOL _fullscreen;
-    NSInteger _orientation;
+    int _orientation;
     UIView *_view;
     BOOL _viewCanBeDisplayed;
 }
 
-@property(retain) UIView *view;
 @property(getter=isAlwaysFullscreen,readonly) BOOL alwaysFullscreen;
 @property(getter=isFullscreen,readonly) BOOL fullscreen;
-@property NSInteger orientation;
+@property int orientation;
+@property(retain) UIView * view;
 @property BOOL viewCanBeDisplayed;
 
 + (void)disableBundleNamed:(id)arg1;
@@ -29,7 +29,7 @@
 - (void)deviceLockViewDidHide;
 - (void)deviceLockViewWillShow;
 - (void)disable;
-- (BOOL)handleGesture:(NSInteger)arg1 fingerCount:(NSUInteger)arg2;
+- (BOOL)handleGesture:(int)arg1 fingerCount:(unsigned int)arg2;
 - (BOOL)handleMenuButtonDoubleTap;
 - (BOOL)handleMenuButtonHeld;
 - (BOOL)handleMenuButtonTap;
@@ -37,14 +37,14 @@
 - (BOOL)isAlwaysFullscreen;
 - (BOOL)isFullscreen;
 - (void)loadView;
-- (NSInteger)orientation;
-- (NSInteger)pluginPriority;
+- (int)orientation;
+- (int)pluginPriority;
 - (void)purgeView;
 - (BOOL)retainsPriorityWhileInactive;
 - (void)setAlwaysFullscreen:(BOOL)arg1;
 - (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFullscreen:(BOOL)arg1 duration:(double)arg2;
-- (void)setOrientation:(NSInteger)arg1;
+- (void)setOrientation:(int)arg1;
 - (void)setView:(id)arg1;
 - (void)setViewCanBeDisplayed:(BOOL)arg1;
 - (BOOL)shouldDisableOnRelock;

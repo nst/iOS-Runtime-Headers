@@ -3,7 +3,7 @@
  */
 
 @interface MPVideoBufferLayerContainer : CALayer {
-    NSUInteger _animationsEnablesCount;
+    unsigned int _animationsEnablesCount;
 }
 
 + (id)defaultValueForKey:(id)arg1;

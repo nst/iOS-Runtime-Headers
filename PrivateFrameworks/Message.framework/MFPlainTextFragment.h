@@ -4,9 +4,9 @@
 
 @interface MFPlainTextFragment : NSObject {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
-    NSUInteger _quoteLevel;
+        unsigned int location; 
+        unsigned int length; 
+    unsigned int _quoteLevel;
     } _range;
 }
 

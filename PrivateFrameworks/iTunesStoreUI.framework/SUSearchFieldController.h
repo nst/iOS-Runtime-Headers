@@ -15,16 +15,16 @@
     SUScriptTextFieldDelegate *_textFieldDelegate;
 }
 
-@property <SUSearchFieldControllerDelegate> *delegate;
-@property(readonly) UISearchField *searchField;
-@property(copy) SUSearchFieldConfiguration *searchFieldConfiguration;
+@property <SUSearchFieldControllerDelegate> * delegate;
+@property(readonly) UISearchField * searchField;
+@property(copy) SUSearchFieldConfiguration * searchFieldConfiguration;
 
 - (id)_cancelButtonView;
 - (id)_completionsViewController;
 - (id)_defaultSearchTerm;
 - (void)_fetchResultsForTerm:(id)arg1;
 - (void)_fetchResultsForURL:(id)arg1;
-- (void)_fetchResultsForURLRequest:(id)arg1;
+- (void)_fetchResultsForURLRequestProperties:(id)arg1;
 - (BOOL)_focusTransientViewController;
 - (void)_hideCompletionsViewController;
 - (id)_newBlankStorePageViewController;
@@ -47,7 +47,7 @@
 - (void)completionTableControllerCompletionsDidChange:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)handleSearchURL:(id)arg1;
 - (id)init;
 - (void)keyboardBackstopDidDismiss:(id)arg1;
@@ -60,6 +60,6 @@
 - (void)setSearchFieldConfiguration:(id)arg1;
 - (BOOL)textFieldShouldBeginEditing:(id)arg1;
 - (BOOL)textFieldShouldEndEditing:(id)arg1;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1;
+- (void)willRotateToInterfaceOrientation:(int)arg1;
 
 @end

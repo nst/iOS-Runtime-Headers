@@ -2,21 +2,23 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
+@class NSArray, NSString, DACalendarStore;
+
 @interface DACalendar : DACalendarObject {
 }
 
-@property(retain) NSString *color;
-@property(readonly) NSArray *events;
-@property(readonly) NSString *externalID;
-@property(readonly) DACalendarStore *store;
-@property(retain) NSString *title;
-@property(readonly) NSInteger uid;
+@property(retain) NSString * color;
+@property(readonly) NSArray * events;
+@property(readonly) NSString * externalID;
+@property(readonly) DACalendarStore * store;
+@property(retain) NSString * title;
+@property(readonly) int uid;
 
 - (void)addEvent:(id)arg1;
 - (id)color;
 - (id)events;
 - (id)externalID;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)remove;
 - (void)removeAllEvents;
@@ -24,6 +26,6 @@
 - (void)setTitle:(id)arg1;
 - (id)store;
 - (id)title;
-- (NSInteger)uid;
+- (int)uid;
 
 @end

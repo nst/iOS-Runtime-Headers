@@ -9,7 +9,7 @@
     float _reflectionHeight;
 }
 
-@property(retain) UIGradient *gradient;
+@property(retain) UIGradient * gradient;
 @property float reflectionHeight;
 
 - (void)dealloc;

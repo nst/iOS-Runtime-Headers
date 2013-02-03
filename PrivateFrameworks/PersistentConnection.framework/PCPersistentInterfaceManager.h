@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class NSMachPort, NSTimer, NSString, NSLock;
+@class PCPersistentTimer, NSTimer, NSRecursiveLock, NSMachPort, NSString;
 
 @interface PCPersistentInterfaceManager : NSObject {
-    NSInteger _WWANContextIdentifier;
+    int _WWANContextIdentifier;
     struct __CFSet { } *_WWANInterfaceAssertionDelegates;
     NSTimer *_WWANInterfaceAssertionDisableTimer;
     NSString *_WWANInterfaceName;
     struct __CFSet { } *_WiFiAutoAssociationDelegates;
-    NSTimer *_WiFiAutoAssociationDisableTimer;
+    PCPersistentTimer *_WiFiAutoAssociationDisableTimer;
     BOOL _belowRSSIThreshold;
     void *_ctServerConnection;
     struct __CFDictionary { } *_delegatesAndRunLoops;
@@ -27,16 +27,16 @@
     BOOL _isWakeOnWiFiEnabled;
     BOOL _isWakeOnWiFiSupported;
     double _lastActivationTime;
-    NSLock *_lock;
+    NSRecursiveLock *_lock;
     NSMachPort *_machPort;
     void *_reachability;
     struct __CFSet { } *_wakeOnWiFiDelegates;
-    NSTimer *_wakeOnWiFiDisableTimer;
+    PCPersistentTimer *_wakeOnWiFiDisableTimer;
     void *_wifiManager;
-    NSInteger _wwanRSSI;
+    int _wwanRSSI;
 }
 
-@property(readonly) NSString *WWANInterfaceName;
+@property(readonly) NSString * WWANInterfaceName;
 @property(readonly) BOOL areAllNetworkInterfacesDisabled;
 @property(readonly) BOOL doesWWANInterfaceExist;
 @property(readonly) BOOL isInCall;
@@ -66,8 +66,8 @@
 - (void)_performCalloutsForSelectorValue:(id)arg1;
 - (void)_populateWakeOnWiFiCapabliity;
 - (void)_populateWakeOnWiFiCapabliityLocked;
-- (void)_reachabilityCallback:(NSUInteger)arg1;
-- (void)_reachabilityCallbackLocked:(NSUInteger)arg1;
+- (void)_reachabilityCallback:(unsigned int)arg1;
+- (void)_reachabilityCallbackLocked:(unsigned int)arg1;
 - (void)_scheduleCalloutsForSelector:(SEL)arg1;
 - (void)_serverCallback:(id)arg1 info:(id)arg2;
 - (void)_serverCallbackLocked:(id)arg1 info:(id)arg2;
@@ -81,8 +81,8 @@
 - (BOOL)areAllNetworkInterfacesDisabled;
 - (void)bindCFStream:(struct __CFReadStream { }*)arg1 toWWANInterface:(BOOL)arg2;
 - (void)bindCFStreamToWWANInterface:(struct __CFReadStream { }*)arg1;
-- (void)bindSocket:(NSInteger)arg1 toWWANInterface:(BOOL)arg2;
-- (void)bindSocketToWWANInterface:(NSInteger)arg1;
+- (void)bindSocket:(int)arg1 toWWANInterface:(BOOL)arg2;
+- (void)bindSocketToWWANInterface:(int)arg1;
 - (id)dhcpLeaseExpirationDate;
 - (BOOL)doesWWANInterfaceExist;
 - (void)enableWakeOnWiFi:(BOOL)arg1 forDelegate:(id)arg2;

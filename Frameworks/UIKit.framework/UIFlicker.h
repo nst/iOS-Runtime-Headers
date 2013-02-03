@@ -13,12 +13,12 @@
         float y; 
     float _delay;
     id _delegate;
-    NSInteger _mouseDraggedCount;
-    NSInteger _mouseUpCount;
+    int _mouseDraggedCount;
+    int _mouseUpCount;
     } _offset;
     } _startLocation;
     UIView *_target;
-    NSInteger _throwIterations;
+    int _throwIterations;
 }
 
 - (void)_mouseDraggedMemberListTest;
@@ -29,7 +29,7 @@
 - (void)run;
 - (void)setDelay:(float)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIterations:(NSInteger)arg1;
+- (void)setIterations:(int)arg1;
 - (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setStartLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setTarget:(id)arg1;

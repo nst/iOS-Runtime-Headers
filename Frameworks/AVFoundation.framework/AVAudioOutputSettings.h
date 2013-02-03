@@ -2,10 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
+@class NSDictionary;
+
 @interface AVAudioOutputSettings : AVOutputSettings {
 }
 
-@property(readonly) NSDictionary *audioSettingsDictionary;
+@property(readonly) NSDictionary * audioSettingsDictionary;
 
 + (id)_audioOutputSettingsWithAudioSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (id)_outputSettingsWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;

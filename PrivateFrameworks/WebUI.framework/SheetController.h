@@ -5,7 +5,7 @@
 @class NSMutableArray, UIModalView;
 
 @interface SheetController : NSObject <BrowserPanel, UIModalViewDelegate> {
-    NSInteger _actionToPerform;
+    int _actionToPerform;
     NSMutableArray *_alertInvocationQueue;
     id _delegate;
     UIModalView *_sheet;
@@ -13,19 +13,19 @@
 }
 
 - (void)_showSheetForAlert:(id)arg1 inView:(id)arg2 withClass:(Class)arg3;
-- (void)alertSheet:(id)arg1 buttonClicked:(NSInteger)arg2;
+- (void)alertSheet:(id)arg1 buttonClicked:(int)arg2;
 - (void)dealloc;
 - (void)didDismissAlertSheet:(id)arg1;
 - (BOOL)disablesStatusBarPress;
 - (void)hideSheet;
 - (id)initWithDelegate:(id)arg1;
-- (NSInteger)numberOfRowsInTable:(id)arg1;
-- (NSInteger)panelState;
-- (NSInteger)panelType;
-- (NSInteger)pausesPages;
+- (int)numberOfRowsInTable:(id)arg1;
+- (int)panelState;
+- (int)panelType;
+- (int)pausesPages;
 - (void)setDelegate:(id)arg1;
 - (void)showSheetForAlert:(id)arg1 inView:(id)arg2;
-- (id)table:(id)arg1 cellForRow:(NSInteger)arg2 column:(id)arg3;
+- (id)table:(id)arg1 cellForRow:(int)arg2 column:(id)arg3;
 - (void)tableSelectionDidChange:(id)arg1;
 
 @end

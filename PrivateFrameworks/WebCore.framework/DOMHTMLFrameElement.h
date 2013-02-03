@@ -2,28 +2,30 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMDocument, NSString, DOMAbstractView;
+
 @interface DOMHTMLFrameElement : DOMHTMLElement {
 }
 
-@property(retain,readonly) DOMDocument *contentDocument;
-@property(retain,readonly) DOMAbstractView *contentWindow;
-@property(copy) NSString *frameBorder;
-@property(copy) NSString *location;
-@property(copy) NSString *longDesc;
-@property(copy) NSString *marginHeight;
-@property(copy) NSString *marginWidth;
-@property(copy) NSString *name;
-@property(copy) NSString *scrolling;
-@property(copy) NSString *src;
-@property(readonly) NSInteger height;
+@property(retain,readonly) DOMDocument * contentDocument;
+@property(retain,readonly) DOMAbstractView * contentWindow;
+@property(copy) NSString * frameBorder;
+@property(readonly) int height;
+@property(copy) NSString * location;
+@property(copy) NSString * longDesc;
+@property(copy) NSString * marginHeight;
+@property(copy) NSString * marginWidth;
+@property(copy) NSString * name;
 @property BOOL noResize;
-@property(readonly) NSInteger width;
+@property(copy) NSString * scrolling;
+@property(copy) NSString * src;
+@property(readonly) int width;
 
 - (id)contentDocument;
 - (id)contentFrame;
 - (id)contentWindow;
 - (id)frameBorder;
-- (NSInteger)height;
+- (int)height;
 - (id)location;
 - (id)longDesc;
 - (id)marginHeight;
@@ -41,7 +43,7 @@
 - (void)setScrolling:(id)arg1;
 - (void)setSrc:(id)arg1;
 - (id)src;
-- (NSInteger)structuralComplexityContribution;
-- (NSInteger)width;
+- (int)structuralComplexityContribution;
+- (int)width;
 
 @end

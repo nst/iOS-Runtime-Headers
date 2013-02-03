@@ -17,10 +17,10 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithResponse:(id)arg1 data:(id)arg2 userInfo:(id)arg3 storagePolicy:(NSUInteger)arg4;
+- (id)initWithResponse:(id)arg1 data:(id)arg2 userInfo:(id)arg3 storagePolicy:(unsigned int)arg4;
 - (id)initWithResponse:(id)arg1 data:(id)arg2;
 - (id)response;
-- (NSUInteger)storagePolicy;
+- (unsigned int)storagePolicy;
 - (id)userInfo;
 
 @end

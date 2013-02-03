@@ -16,7 +16,7 @@
 - (id)color;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithDefaults;
 - (BOOL)isColorOverridden;
 - (BOOL)isEqual:(id)arg1;

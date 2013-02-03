@@ -12,11 +12,11 @@
     NSString *_title;
 }
 
-@property(getter=_body,retain) NSString *body; /* unknown property attribute: Sset_body: */
-@property(getter=_buttons,retain) id buttons; /* unknown property attribute: Sset_buttons: */
-@property(getter=_cancelButtonIndex,retain) NSNumber *cancelButtonIndex; /* unknown property attribute: Sset_cancelButtonIndex: */
-@property(getter=_textFields,retain) id textFields; /* unknown property attribute: Sset_textFields: */
-@property(getter=_title,retain) NSString *title; /* unknown property attribute: Sset_title: */
+@property(getter=_body,setter=set_body:,retain) NSString * body;
+@property(getter=_buttons,setter=set_buttons:,retain) id buttons;
+@property(getter=_cancelButtonIndex,setter=set_cancelButtonIndex:,retain) NSNumber * cancelButtonIndex;
+@property(getter=_textFields,setter=set_textFields:,retain) id textFields;
+@property(getter=_title,setter=set_title:,retain) NSString * title;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;

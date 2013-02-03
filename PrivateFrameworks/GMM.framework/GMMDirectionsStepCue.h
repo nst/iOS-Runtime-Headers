@@ -9,17 +9,17 @@
     NSString *_iconText;
     NSString *_iconUrl;
     NSString *_name;
-    NSInteger _type;
+    int _type;
 }
 
-@property(retain) NSString *iconText;
-@property(retain) NSString *iconUrl;
-@property(retain) NSString *name;
 @property(readonly) BOOL hasIconText;
 @property(readonly) BOOL hasIconUrl;
 @property(readonly) BOOL hasName;
 @property(readonly) BOOL hasType;
-@property NSInteger type;
+@property(retain) NSString * iconText;
+@property(retain) NSString * iconUrl;
+@property(retain) NSString * name;
+@property int type;
 
 - (void)dealloc;
 - (id)description;
@@ -36,8 +36,8 @@
 - (void)setIconText:(id)arg1;
 - (void)setIconUrl:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setType:(NSInteger)arg1;
-- (NSInteger)type;
+- (void)setType:(int)arg1;
+- (int)type;
 - (void)writeTo:(id)arg1;
 
 @end

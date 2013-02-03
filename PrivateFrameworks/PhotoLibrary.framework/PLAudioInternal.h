@@ -10,8 +10,8 @@
     NSURL *_url;
 }
 
-- (NSInteger)imageID;
-- (id)imageWithFormat:(NSInteger)arg1;
+- (int)imageID;
+- (id)imageWithFormat:(int)arg1;
 - (BOOL)isAudio;
 - (BOOL)isVideo;
 - (id)title;

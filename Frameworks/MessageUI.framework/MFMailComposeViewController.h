@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
+@class <MFMailComposeViewControllerDelegate>;
+
 @interface MFMailComposeViewController : UINavigationController {
     id _internal;
 }
 
-@property <MFMailComposeViewControllerDelegate> *mailComposeDelegate;
+@property <MFMailComposeViewControllerDelegate> * mailComposeDelegate;
 
 + (BOOL)canSendMail;
 + (BOOL)hasAutosavedMessage;
@@ -21,14 +23,14 @@
 - (void)autosaveImmediatelyWithBundleIdentifier:(id)arg1;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForAttachmentWithIdentifier:(id)arg1;
-- (id)initWithComposition:(id)arg1 contentSize:(struct CGSize { float x1; float x2; })arg2 mailComposeControllerOptions:(NSUInteger)arg3;
+- (id)initWithComposition:(id)arg1 contentSize:(struct CGSize { float x1; float x2; })arg2 mailComposeControllerOptions:(unsigned int)arg3;
 - (id)initWithComposition:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isDirty;
 - (id)mailComposeDelegate;
 - (void)recoverAutosavedMessage;
-- (NSInteger)resolution;
+- (int)resolution;
 - (void)resume;
 - (void)scrollToTopAnimated:(BOOL)arg1;
 - (void)setAutorotationDelegate:(id)arg1;
@@ -41,7 +43,7 @@
 - (void)setMessageBody:(id)arg1 isHTML:(BOOL)arg2;
 - (void)setSubject:(id)arg1;
 - (void)setToRecipients:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)suspend;
 - (id)view;
 

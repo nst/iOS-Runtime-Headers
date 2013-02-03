@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class NSNumber;
+
 @interface SUScriptReportAProblemViewController : SUScriptViewController {
 }
 
-@property(readonly) NSNumber *adamID;
+@property(readonly) NSNumber * adamID;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 

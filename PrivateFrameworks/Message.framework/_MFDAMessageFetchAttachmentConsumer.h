@@ -2,26 +2,26 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableData, ActivityMonitor;
+@class NSData, NSMutableData, ActivityMonitor;
 
 @interface _MFDAMessageFetchAttachmentConsumer : MFDAMailAccountConsumer <DAMessageFetchAttachmentConsumer> {
     NSMutableData *_accumulatedData;
     BOOL _dataWasBase64;
-    NSUInteger _expectedLength;
+    unsigned int _expectedLength;
     ActivityMonitor *_monitor;
 }
 
-@property(readonly) NSData *accumulatedData;
+@property(readonly) NSData * accumulatedData;
 @property(readonly) BOOL dataWasBase64;
-@property NSUInteger expectedLength;
+@property unsigned int expectedLength;
 
 - (id)accumulatedData;
-- (void)attachmentFetchCompletedWithStatus:(NSInteger)arg1 forAttachmentNamed:(id)arg2 ofMessageWithServerID:(id)arg3 dataWasBase64:(BOOL)arg4;
+- (void)attachmentFetchCompletedWithStatus:(int)arg1 forAttachmentNamed:(id)arg2 ofMessageWithServerID:(id)arg3 dataWasBase64:(BOOL)arg4;
 - (void)consumeData:(id)arg1 ofContentType:(id)arg2 forAttachmentNamed:(id)arg3 ofMessageWithServerID:(id)arg4;
 - (BOOL)dataWasBase64;
 - (void)dealloc;
-- (NSUInteger)expectedLength;
+- (unsigned int)expectedLength;
 - (id)initWithActivityMonitor:(id)arg1;
-- (void)setExpectedLength:(NSUInteger)arg1;
+- (void)setExpectedLength:(unsigned int)arg1;
 
 @end

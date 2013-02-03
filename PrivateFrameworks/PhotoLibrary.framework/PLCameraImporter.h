@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLCameraImportQueue, PLMutableCameraImportQueue, PLImportFileManager, ICCameraDevice, NSMutableArray, NSMutableDictionary;
+@class <PLCameraImporterDelegate>, PLMutableCameraImportQueue, ICCameraDevice, PLImportFileManager, NSMutableArray, NSMutableDictionary, PLCameraImportQueue;
 
 @interface PLCameraImporter : NSObject <ICDeviceDelegate, ICCameraDeviceDelegate> {
     BOOL _autosplitEvents;
@@ -10,11 +10,12 @@
     id _delegate;
     PLCameraImportQueue *_deleteQueue;
     PLCameraImportQueue *_downloadQueue;
-    NSInteger _eventSplitGranularity;
+    int _eventSplitGranularity;
     PLImportFileManager *_importFileManager;
     BOOL _importInProgress;
+    BOOL _importItemInProgress;
     PLCameraImportQueue *_importQueue;
-    NSInteger _importSessionIdentifier;
+    int _importSessionIdentifier;
     NSMutableArray *_items;
     NSMutableDictionary *_itemsMapping;
     NSMutableArray *_orphanItems;
@@ -23,10 +24,10 @@
     PLMutableCameraImportQueue *_thumbnailQueue;
 }
 
-@property(retain) ICCameraDevice *camera;
-@property <PLCameraImporterDelegate> *delegate;
-@property(retain) NSMutableArray *items;
-@property(retain) NSMutableDictionary *itemsMapping;
+@property(retain) ICCameraDevice * camera;
+@property <PLCameraImporterDelegate> * delegate;
+@property(retain) NSMutableArray * items;
+@property(retain) NSMutableDictionary * itemsMapping;
 
 - (void)_addImportItemFromCameraFile:(id)arg1;
 - (void)_clearImportItemsForDownload:(id)arg1;
@@ -36,11 +37,11 @@
 - (void)_didFinishDeletingItems:(id)arg1;
 - (void)_didFinishImportingItems:(id)arg1;
 - (void)_downloadImportItems:(id)arg1;
-- (id)_newEventWithDate:(id)arg1;
-- (void)_photoLibraryFinishedImportForPhoto:(id)arg1 atPath:(id)arg2;
+- (id)_nonPersistedEventWithDate:(id)arg1;
+- (void)_photoLibraryFinishedImportForPhoto:(id)arg1 atPath:(id)arg2 error:(id)arg3;
 - (void)_removeImportItemForCameraFile:(id)arg1;
 - (void)_removeImportItemsAtPathsInBackground:(id)arg1;
-- (void)_separateItems:(id)arg1 intoEventsWithGranularity:(NSInteger)arg2;
+- (void)_separateItems:(id)arg1 intoEventsWithGranularity:(int)arg2;
 - (void)_stopImport;
 - (void)addImportItemsFromCameraFiles:(id)arg1;
 - (id)allImportItems;
@@ -54,7 +55,7 @@
 - (void)cameraDidError:(id)arg1;
 - (id)cameraKind;
 - (id)cameraName;
-- (NSUInteger)contentPercentCompleted;
+- (unsigned int)contentPercentCompleted;
 - (void)dealloc;
 - (id)delegate;
 - (void)device:(id)arg1 didCloseSessionWithError:(id)arg2;
@@ -72,8 +73,8 @@
 - (void)didReceiveThumbnail:(struct CGImage { }*)arg1 forImportItem:(id)arg2 error:(id)arg3;
 - (void)didRemoveDevice:(id)arg1;
 - (void)ejectCamera;
-- (NSUInteger)estimatedNumberOfItems;
-- (void)importImportItem:(id)arg1 inDirectoryPath:(id)arg2;
+- (unsigned int)estimatedNumberOfItems;
+- (void)importImportItem:(id)arg1;
 - (id)importItemForCameraFile:(id)arg1;
 - (void)importItems:(id)arg1;
 - (id)initWithDevice:(id)arg1 delegate:(id)arg2;

@@ -14,7 +14,7 @@
             id arg2; 
         } sel; 
     } data;
-    NSInteger type;
+    int type;
 }
 
 @end

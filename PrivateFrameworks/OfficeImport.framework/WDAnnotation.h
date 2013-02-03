@@ -11,18 +11,18 @@
     WDCharacterRun *mReference;
     BOOL mReferencePopertiesFixed;
     WDText *mText;
-    NSInteger mType;
+    int mType;
 }
 
-- (NSInteger)annotationType;
+- (int)annotationType;
 - (id)date;
 - (void)dealloc;
-- (id)initWithParagraph:(id)arg1 type:(NSInteger)arg2;
+- (id)initWithParagraph:(id)arg1 type:(int)arg2;
 - (id)otherEndOfRangedAnnotation;
 - (id)owner;
 - (id)reference;
 - (BOOL)referencePropertiesFixed;
-- (NSInteger)runType;
+- (int)runType;
 - (void)setDate:(id)arg1;
 - (void)setOtherEndOfRangedAnnotation:(id)arg1;
 - (void)setOwner:(id)arg1;

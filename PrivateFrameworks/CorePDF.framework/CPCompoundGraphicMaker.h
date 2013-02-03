@@ -5,7 +5,7 @@
 @class CPCluster, CPChunk, CPShape;
 
 @interface CPCompoundGraphicMaker : NSObject <CPDisposable> {
-    struct { NSUInteger x1; struct CGRect { 
+    struct { unsigned int x1; struct CGRect { 
             struct CGPoint { 
                 float x; 
                 float y; 
@@ -17,16 +17,16 @@
     CPCluster *cluster;
     BOOL disposed;
         } x2; } *groupInfoArray;
-    NSUInteger groupInfoCount;
+    unsigned int groupInfoCount;
     double pageSpread;
     CPChunk *parentChunk;
-    NSUInteger shapeCount;
+    unsigned int shapeCount;
     CPShape **shapes;
 }
 
 + (BOOL)makeCompoundGraphicsInZonesOf:(id)arg1;
 
-- (void)addGroupInfoWithIndex:(NSUInteger)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)addGroupInfoWithIndex:(unsigned int)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)applyPageHint;
 - (void)coalesceShapeGroups;
 - (void)dealloc;
@@ -34,7 +34,7 @@
 - (void)finalize;
 - (BOOL)groupOverlappingGraphics;
 - (id)initWithGraphicsIn:(id)arg1;
-- (void)makeCompoundGraphicFromShapesAtIndex:(NSUInteger)arg1 count:(NSUInteger)arg2;
+- (void)makeCompoundGraphicFromShapesAtIndex:(unsigned int)arg1 count:(unsigned int)arg2;
 - (BOOL)makeCompoundGraphics;
 - (BOOL)makeCompoundGraphicsFromShapeGroups;
 

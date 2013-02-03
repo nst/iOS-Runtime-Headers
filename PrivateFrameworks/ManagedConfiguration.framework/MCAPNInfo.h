@@ -12,11 +12,11 @@
     NSString *_username;
 }
 
-@property(retain) NSString *apnName;
-@property(retain) NSString *password;
-@property(retain) NSString *proxy;
-@property(retain) NSNumber *proxyPort;
-@property(retain) NSString *username;
+@property(retain) NSString * apnName;
+@property(retain) NSString * password;
+@property(retain) NSString * proxy;
+@property(retain) NSNumber * proxyPort;
+@property(retain) NSString * username;
 
 - (id)apnName;
 - (void)dealloc;

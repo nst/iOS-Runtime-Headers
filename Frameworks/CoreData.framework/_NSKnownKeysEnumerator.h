@@ -4,8 +4,8 @@
 
 @interface _NSKnownKeysEnumerator : NSEnumerator {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     unsigned long _flags;
     unsigned long _index;
     id *_list;
@@ -16,7 +16,7 @@
 
 - (void)_invalidate;
 - (void)dealloc;
-- (id)initWithArray:(const id*)arg1 forTarget:(id)arg2 withReferenceValues:(const id*)arg3 andRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg4 andCopyItems:(BOOL)arg5;
+- (id)initWithArray:(const id*)arg1 forTarget:(id)arg2 withReferenceValues:(const id*)arg3 andRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 andCopyItems:(BOOL)arg5;
 - (id)nextObject;
 
 @end

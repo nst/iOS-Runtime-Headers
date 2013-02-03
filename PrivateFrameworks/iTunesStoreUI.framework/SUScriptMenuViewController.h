@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptFunction;
+@class NSString, WebScriptObject, SUScriptFunction, NSNumber;
 
 @interface SUScriptMenuViewController : SUScriptViewController {
     SUScriptFunction *_action;
 }
 
-@property(retain) WebScriptObject *action;
-@property(retain) NSNumber *selectedIndex;
-@property(retain) NSString *title;
+@property(retain) WebScriptObject * action;
 @property(retain) id items;
+@property(retain) NSNumber * selectedIndex;
+@property(retain) NSString * title;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
@@ -20,10 +20,10 @@
 - (id)_copyAction;
 - (id)_copyItems;
 - (id)_copyTitle;
-- (NSInteger)_selectedIndex;
+- (int)_selectedIndex;
 - (void)_setAction:(id)arg1;
 - (void)_setItems:(id)arg1;
-- (void)_setSelectedIndex:(NSInteger)arg1;
+- (void)_setSelectedIndex:(int)arg1;
 - (void)_setTitle:(id)arg1;
 - (id)_viewController;
 - (id)action;

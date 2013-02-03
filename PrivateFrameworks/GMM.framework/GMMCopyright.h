@@ -5,38 +5,38 @@
 @class NSMutableArray;
 
 @interface GMMCopyright : PBCodable {
-    NSInteger _copyrightYear;
+    int _copyrightYear;
     BOOL _hasCopyrightYear;
     NSMutableArray *_imagery_copyrights;
     NSMutableArray *_map_data_copyrights;
 }
 
-@property(retain) NSMutableArray *imagery_copyrights;
-@property(retain) NSMutableArray *map_data_copyrights;
-@property NSInteger copyrightYear;
+@property int copyrightYear;
 @property(readonly) BOOL hasCopyrightYear;
-@property(readonly) NSInteger imagery_copyrightsCount;
-@property(readonly) NSInteger map_data_copyrightsCount;
+@property(retain) NSMutableArray * imagery_copyrights;
+@property(readonly) int imagery_copyrightsCount;
+@property(retain) NSMutableArray * map_data_copyrights;
+@property(readonly) int map_data_copyrightsCount;
 
 - (void)addImagery_copyright:(id)arg1;
 - (void)addMap_data_copyright:(id)arg1;
-- (NSInteger)copyrightYear;
+- (int)copyrightYear;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasCopyrightYear;
-- (id)imagery_copyrightAtIndex:(NSUInteger)arg1;
+- (id)imagery_copyrightAtIndex:(unsigned int)arg1;
 - (id)imagery_copyrights;
-- (NSInteger)imagery_copyrightsCount;
+- (int)imagery_copyrightsCount;
 - (id)init;
-- (id)map_data_copyrightAtIndex:(NSUInteger)arg1;
+- (id)map_data_copyrightAtIndex:(unsigned int)arg1;
 - (id)map_data_copyrights;
-- (NSInteger)map_data_copyrightsCount;
+- (int)map_data_copyrightsCount;
 - (BOOL)readFrom:(id)arg1;
-- (void)setCopyrightYear:(NSInteger)arg1;
-- (void)setImagery_copyright:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setCopyrightYear:(int)arg1;
+- (void)setImagery_copyright:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setImagery_copyrights:(id)arg1;
-- (void)setMap_data_copyright:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setMap_data_copyright:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setMap_data_copyrights:(id)arg1;
 - (void)writeTo:(id)arg1;
 

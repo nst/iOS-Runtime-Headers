@@ -13,7 +13,7 @@
     struct __CXIndex { } *_index;
     struct __CXQuery { } *_query;
     struct CPRecordStore { } *_store;
-    NSUInteger _version;
+    unsigned int _version;
 }
 
 + (id)indexerForDisplayIdentifier:(id)arg1 category:(id)arg2;
@@ -31,7 +31,7 @@
 - (BOOL)commitUpdates;
 - (void*)copyResultForIdentifier:(unsigned long long)arg1;
 - (void)dealloc;
-- (id)initWithDisplayIdentifier:(id)arg1 category:(id)arg2 version:(NSUInteger)arg3;
+- (id)initWithDisplayIdentifier:(id)arg1 category:(id)arg2 version:(unsigned int)arg3;
 - (BOOL)nextSearchResults:(id*)arg1;
 - (void)removeIdentifier:(id)arg1;
 - (void)setIdentifier:(id)arg1 forRecordDictionary:(id)arg2;

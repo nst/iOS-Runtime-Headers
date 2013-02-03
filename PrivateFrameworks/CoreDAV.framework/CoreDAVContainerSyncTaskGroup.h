@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSMutableDictionary, NSArray, NSString, NSMutableArray, NSURL;
+@class NSURL, <CoreDAVLocalDBInfoProvider>, NSMutableArray, NSString, NSMutableSet, NSMutableDictionary, NSArray;
 
 @interface CoreDAVContainerSyncTaskGroup : CoreDAVTaskGroup <CoreDAVContainerMultiGetTaskDelegate, CoreDAVDeleteTaskDelegate, CoreDAVPutTaskDelegate, CoreDAVGetTaskDelegate> {
     NSArray *_actions;
@@ -10,32 +10,43 @@
     Class _appSpecificDataItemClass;
     void *_context;
     NSURL *_folderURL;
-    NSUInteger _maxIndependentTasks;
-    NSUInteger _multiGetBatchSize;
+    NSMutableArray *_localItemURLOrder;
+    unsigned int _maxIndependentTasks;
+    unsigned int _multiGetBatchSize;
     NSString *_nextCTag;
-    NSInteger _phase;
+    NSString *_nextSyncToken;
+    int _phase;
     NSString *_previousCTag;
+    NSString *_previousSyncToken;
+    BOOL _syncItemOrder;
+    NSMutableSet *_syncReportDeletedURLs;
     NSMutableArray *_unsubmittedTasks;
     NSMutableDictionary *_urlToETag;
     BOOL _useMultiGet;
+    BOOL _useSyncCollection;
 }
 
-@property(retain) NSURL *addMemberURL;
-@property(readonly) void *context;
-@property <CoreDAVLocalDBInfoProvider> *delegate;
-@property(readonly) NSURL *folderURL;
-@property(readonly) NSString *previousTag;
-@property NSUInteger maxIndependentTasks;
-@property NSUInteger multiGetBatchSize;
+@property(retain) NSURL * addMemberURL;
+@property(readonly) void* context;
+@property <CoreDAVLocalDBInfoProvider> * delegate;
+@property(readonly) NSURL * folderURL;
+@property(readonly) NSArray * localItemURLOrder;
+@property unsigned int maxIndependentTasks;
+@property unsigned int multiGetBatchSize;
+@property(readonly) NSString * previousCTag;
+@property(retain) NSString * previousSyncToken;
 @property BOOL useMultiGet;
+@property BOOL useSyncCollection;
 
 - (void)_getCTag;
 - (void)_getDataPayloads;
 - (void)_getETags;
+- (void)_getOrder;
 - (void)_getTask:(id)arg1 finishedWithParsedContents:(id)arg2 error:(id)arg3;
-- (id)_initWithFolderURL:(id)arg1 previousTag:(id)arg2 actions:(id)arg3 context:(void*)arg4 accountInfoProvider:(id)arg5 taskManager:(id)arg6;
+- (void)_postTask:(id)arg1 didFinishWithError:(id)arg2;
 - (void)_pushActions;
-- (NSUInteger)_submitTasks;
+- (unsigned int)_submitTasks;
+- (void)_syncReportTask:(id)arg1 didFinishWithError:(id)arg2;
 - (void)_tearDownAllUnsubmittedTasks;
 - (id)addMemberURL;
 - (void)bailWithError:(id)arg1;
@@ -52,21 +63,27 @@
 - (id)description;
 - (id)folderURL;
 - (void)getTask:(id)arg1 data:(id)arg2 error:(id)arg3;
-- (id)initWithFolderURL:(id)arg1 previousTag:(id)arg2 actions:(id)arg3 context:(void*)arg4 accountInfoProvider:(id)arg5 taskManager:(id)arg6;
-- (NSUInteger)maxIndependentTasks;
-- (NSUInteger)multiGetBatchSize;
-- (id)previousTag;
+- (id)initWithFolderURL:(id)arg1 previousCTag:(id)arg2 previousSyncToken:(id)arg3 actions:(id)arg4 context:(void*)arg5 accountInfoProvider:(id)arg6 taskManager:(id)arg7;
+- (id)initWithFolderURL:(id)arg1 previousCTag:(id)arg2 previousSyncToken:(id)arg3 actions:(id)arg4 syncItemOrder:(BOOL)arg5 context:(void*)arg6 accountInfoProvider:(id)arg7 taskManager:(id)arg8;
+- (id)localItemURLOrder;
+- (unsigned int)maxIndependentTasks;
+- (unsigned int)multiGetBatchSize;
+- (id)previousCTag;
+- (id)previousSyncToken;
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)putTask:(id)arg1 completedWithNewETag:(id)arg2 error:(id)arg3;
 - (void)setAddMemberURL:(id)arg1;
-- (void)setMaxIndependentTasks:(NSUInteger)arg1;
-- (void)setMultiGetBatchSize:(NSUInteger)arg1;
+- (void)setMaxIndependentTasks:(unsigned int)arg1;
+- (void)setMultiGetBatchSize:(unsigned int)arg1;
+- (void)setPreviousSyncToken:(id)arg1;
 - (void)setUseMultiGet:(BOOL)arg1;
+- (void)setUseSyncCollection:(BOOL)arg1;
 - (BOOL)shouldFetchResourceWithEtag:(id)arg1 propertiesToValues:(id)arg2;
 - (void)startTaskGroup;
 - (void)syncAway;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)taskGroupWillCancelWithError:(id)arg1;
 - (BOOL)useMultiGet;
+- (BOOL)useSyncCollection;
 
 @end

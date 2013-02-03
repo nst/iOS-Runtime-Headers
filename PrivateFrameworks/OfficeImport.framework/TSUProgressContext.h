@@ -36,6 +36,6 @@
 - (void)release;
 - (void)reportProgress:(double)arg1;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

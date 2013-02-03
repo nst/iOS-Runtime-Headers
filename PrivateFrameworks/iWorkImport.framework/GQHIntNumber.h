@@ -3,13 +3,13 @@
  */
 
 @interface GQHIntNumber : NSObject {
-    NSInteger mType;
-    NSInteger mValue;
+    int mType;
+    int mValue;
 }
 
 - (struct __CFString { }*)createStringRef;
-- (void)setType:(NSInteger)arg1 value:(NSInteger)arg2;
-- (NSInteger)type;
-- (NSInteger)value;
+- (void)setType:(int)arg1 value:(int)arg2;
+- (int)type;
+- (int)value;
 
 @end

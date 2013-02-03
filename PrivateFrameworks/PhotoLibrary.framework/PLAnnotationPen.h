@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableSet;
+@class NSSet, NSMutableSet;
 
 @interface PLAnnotationPen : NSObject {
     id _context;
@@ -11,9 +11,9 @@
     id _target;
 }
 
-@property(readonly) NSSet *set;
 @property id context;
 @property SEL selector;
+@property(readonly) NSSet * set;
 @property id target;
 
 - (void)addAnnotations:(id)arg1;

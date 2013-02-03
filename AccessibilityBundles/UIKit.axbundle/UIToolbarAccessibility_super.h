@@ -9,7 +9,7 @@
 - (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 - (void)_buttonBarFinishedAnimating;
 - (void)_buttonUp:(id)arg1;
-- (void)_showButtons:(NSInteger*)arg1 withCount:(NSInteger)arg2 group:(NSInteger)arg3 withDuration:(double)arg4 adjustPositions:(BOOL)arg5 skipTag:(NSInteger)arg6;
+- (void)_showButtons:(int*)arg1 withCount:(int)arg2 group:(int)arg3 withDuration:(double)arg4 adjustPositions:(BOOL)arg5 skipTag:(int)arg6;
 - (unsigned long long)accessibilityTraits;
 
 @end

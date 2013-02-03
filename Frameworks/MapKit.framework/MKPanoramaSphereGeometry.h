@@ -2,22 +2,10 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPanoramaSphereGeometry : MKStreetViewGeometry {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _imageSize;
-    NSUInteger _latitudeSlices;
-    float _latitudeTiles;
-    NSUInteger _longitudeSlices;
-    float _longitudeTiles;
-    NSUInteger _numImageLevels;
-    NSUInteger _numLevels;
-    NSInteger *_tileNumVertices;
-    } _tileSize;
+@interface MKPanoramaSphereGeometry : MKPanoramaSkyGeometry {
+    unsigned int _latitudeSlices;
+    unsigned int _longitudeSlices;
+    int *_tileNumVertices;
 }
 
 - (void)_generateSphereVerticesForMaxTheta:(float)arg1 tileSubdivision:(float)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLSlideshowPluginDelegate>, MLAlbum, NSArray;
+@class MLPhoto, NSArray, <PLSlideshowPluginDelegate>, MLAlbum;
 
 @interface PLSlideshowPlugin : NSObject {
     MLAlbum *_album;
@@ -13,10 +13,10 @@
     BOOL _shuffleAlbum;
 }
 
-@property(retain) MLAlbum *album;
-@property(readonly) MLPhoto *currentPhoto;
-@property <PLSlideshowPluginDelegate> *delegate;
-@property(readonly) NSArray *displayedPhotos;
+@property(retain) MLAlbum * album;
+@property(readonly) MLPhoto * currentPhoto;
+@property <PLSlideshowPluginDelegate> * delegate;
+@property(readonly) NSArray * displayedPhotos;
 @property double secondsPerSlide;
 @property BOOL shouldRepeat;
 @property BOOL shuffleAlbum;

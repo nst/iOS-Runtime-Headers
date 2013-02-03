@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSURLRequest;
+@class NSURLRequest, <SSDownloadManifestRequestDelegate>;
 
 @interface SSDownloadManifestRequest : SSRequest {
-    NSInteger _manifestFormat;
+    int _manifestFormat;
     NSURLRequest *_urlRequest;
 }
 
-@property(readonly) NSURLRequest *URLRequest;
-@property <SSDownloadManifestRequestDelegate> *delegate;
-@property NSInteger manifestFormat;
+@property(readonly) NSURLRequest * URLRequest;
+@property <SSDownloadManifestRequestDelegate> * delegate;
+@property int manifestFormat;
 
 - (id)URLRequest;
 - (void)_sendResponseToDelegate:(id)arg1;
@@ -22,7 +22,7 @@
 - (id)initWithPropertyListEncoding:(id)arg1;
 - (id)initWithURLRequest:(id)arg1;
 - (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
-- (NSInteger)manifestFormat;
-- (void)setManifestFormat:(NSInteger)arg1;
+- (int)manifestFormat;
+- (void)setManifestFormat:(int)arg1;
 
 @end

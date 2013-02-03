@@ -9,7 +9,7 @@
     id _target;
 }
 
-@property SUScriptObjectInvocationBatch *invocationBatch;
+@property SUScriptObjectInvocationBatch * invocationBatch;
 @property id target;
 
 - (void)forwardInvocation:(id)arg1;

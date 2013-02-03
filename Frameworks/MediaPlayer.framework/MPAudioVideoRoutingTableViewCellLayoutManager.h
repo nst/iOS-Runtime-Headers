@@ -11,7 +11,7 @@
     } imageViewEdgeInsets;
 }
 
-@property UIEdgeInsets imageViewEdgeInsets;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } imageViewEdgeInsets;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageViewEdgeInsets;
 - (void)layoutSubviewsOfCell:(id)arg1;

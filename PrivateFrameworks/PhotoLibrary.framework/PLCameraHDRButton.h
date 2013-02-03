@@ -13,8 +13,8 @@
     UIImageView *_rightImageView;
 }
 
-@property <PLCameraHDRButtonDelegate> *delegate;
 @property BOOL HDREnabled;
+@property <PLCameraHDRButtonDelegate> * delegate;
 
 + (void)_initializeSafeCategory;
 

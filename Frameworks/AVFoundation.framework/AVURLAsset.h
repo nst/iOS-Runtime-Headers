@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVURLAssetInternal;
+@class NSString, AVURLAssetInternal, AVAssetCache, NSURL;
 
 @interface AVURLAsset : AVAsset {
     AVURLAssetInternal *_asset;
 }
 
-@property(copy,readonly) NSURL *URL;
-@property(readonly) AVAssetCache *assetCache;
-@property(readonly) NSString *cacheKey;
+@property(copy,readonly) NSURL * URL;
+@property(readonly) AVAssetCache * assetCache;
+@property(readonly) NSString * cacheKey;
 @property(readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
 @property(readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
 
@@ -18,12 +18,13 @@
 
 - (id)URL;
 - (struct __CFURL { }*)_URL;
-- (NSUInteger)_addChapterMetadataItem:(id)arg1 withDuration:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg2 timeRange:(struct { struct { long long x_1_1_1; NSInteger x_1_1_2; NSUInteger x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; NSInteger x_2_1_2; NSUInteger x_2_1_3; long long x_2_1_4; } x2; })arg3 toChapters:(id)arg4 fromIndex:(NSUInteger)arg5;
+- (unsigned int)_addChapterMetadataItem:(id)arg1 withDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 timeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3 toChapters:(id)arg4 fromIndex:(unsigned int)arg5;
 - (id)_assetInspector;
 - (id)_assetInspectorLoader;
 - (id)_chapterGroupInfo;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (void)_setAssetInspectorLoader:(id)arg1;
+- (void)_tracksDidChange;
 - (id)assetCache;
 - (id)availableChapterLocales;
 - (id)cacheKey;
@@ -34,7 +35,6 @@
 - (void)finalize;
 - (id)init;
 - (id)initWithURL:(id)arg1 options:(id)arg2;
-- (BOOL)isPlayable;
 - (id)lyrics;
 - (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;
 - (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;

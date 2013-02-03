@@ -2,22 +2,24 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMStyleSheet, NSString, NSURL;
+
 @interface DOMHTMLLinkElement : DOMHTMLElement {
 }
 
-@property(copy,readonly) NSURL *absoluteLinkURL;
-@property(copy) NSString *charset;
-@property(copy) NSString *href;
-@property(copy) NSString *hreflang;
-@property(copy) NSString *media;
-@property(copy) NSString *rel;
-@property(copy) NSString *rev;
-@property(retain,readonly) DOMStyleSheet *sheet;
-@property(copy) NSString *target;
-@property(copy) NSString *type;
+@property(copy,readonly) NSURL * absoluteLinkURL;
+@property(copy) NSString * charset;
 @property BOOL disabled;
+@property(copy) NSString * href;
+@property(copy) NSString * hreflang;
+@property(copy) NSString * media;
+@property(copy) NSString * rel;
+@property(copy) NSString * rev;
+@property(retain,readonly) DOMStyleSheet * sheet;
+@property(copy) NSString * target;
+@property(copy) NSString * type;
 
-- (BOOL)_mediaQueryMatchesForOrientation:(NSInteger)arg1;
+- (BOOL)_mediaQueryMatchesForOrientation:(int)arg1;
 - (id)absoluteLinkURL;
 - (id)charset;
 - (BOOL)disabled;

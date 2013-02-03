@@ -2,34 +2,34 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMapTable;
+@class NSMapTable, NSArray;
 
 @interface MKCache0 : NSObject {
     float _compactionFactor;
-    NSUInteger _currentHeapTime;
+    unsigned int _currentHeapTime;
     NSMapTable *_itemCache;
-    NSUInteger _maxCapacity;
+    unsigned int _maxCapacity;
 }
 
-@property(readonly) NSArray *allObjects;
+@property(readonly) NSArray * allObjects;
 @property float compactionFactor;
-@property(readonly) NSUInteger count;
-@property(readonly) NSUInteger maxCapacity;
+@property(readonly) unsigned int count;
+@property(readonly) unsigned int maxCapacity;
 
 - (id)_allObjects;
 - (id)allObjects;
 - (BOOL)canStopCompaction;
 - (void)compact;
 - (float)compactionFactor;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (void)evictObject:(id)arg1;
 - (id)init;
-- (id)initWithCapacity:(NSUInteger)arg1 maxCapacity:(NSUInteger)arg2;
-- (id)initWithCapacity:(NSUInteger)arg1;
+- (id)initWithCapacity:(unsigned int)arg1 maxCapacity:(unsigned int)arg2;
+- (id)initWithCapacity:(unsigned int)arg1;
 - (id)keyEnumerator;
-- (NSUInteger)maxCapacity;
+- (unsigned int)maxCapacity;
 - (BOOL)needsCompaction;
 - (id)objectEnumerator;
 - (id)objectForKey:(id)arg1;

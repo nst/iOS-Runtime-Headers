@@ -36,18 +36,18 @@
     MPButton *_socialPostButton;
     double _tickInterval;
     UILabel *_trackInfoLabel;
-    NSUInteger _visibleParts;
+    unsigned int _visibleParts;
 }
 
-@property <MPPlaybackControlsDelegate> *delegate;
-@property(retain) MPAVItem *item;
+@property <MPPlaybackControlsDelegate> * delegate;
 @property(readonly) BOOL hideGeniusButton;
 @property(readonly) BOOL isScrubbing;
-@property(readonly) NSUInteger repeatType;
-@property(readonly) NSUInteger shuffleType;
-@property NSUInteger visibleParts;
+@property(retain) MPAVItem * item;
+@property(readonly) unsigned int repeatType;
+@property(readonly) unsigned int shuffleType;
+@property unsigned int visibleParts;
 
-+ (NSUInteger)defaultVisibleParts;
++ (unsigned int)defaultVisibleParts;
 
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
@@ -56,7 +56,7 @@
 - (void)_contentsChangedNotification:(id)arg1;
 - (double)_currentDisplayTime;
 - (void)_geniusButton:(id)arg1;
-- (id)_geniusButtonImage:(NSUInteger)arg1;
+- (id)_geniusButtonImage:(unsigned int)arg1;
 - (void)_handleGeniusButtonClick;
 - (void)_initializeControls;
 - (void)_mailButton:(id)arg1;
@@ -78,22 +78,22 @@
 - (double)_updatedDisplayDurationForTime:(double)arg1;
 - (void)_validityChangedNotification:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (id)createButtonForPart:(NSUInteger)arg1;
+- (id)createButtonForPart:(unsigned int)arg1;
 - (id)createProgressIndicator;
 - (void)crossedArtworkTimeMarker:(id)arg1;
 - (void)crossedChapterTimeMarker:(id)arg1;
 - (void)crossedURLTimeMarker:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)detailSlider:(id)arg1 didChangeScrubSpeed:(NSInteger)arg2;
+- (void)detailSlider:(id)arg1 didChangeScrubSpeed:(int)arg2;
 - (void)detailSlider:(id)arg1 didChangeValue:(float)arg2;
 - (void)detailSliderTrackingDidBegin:(id)arg1;
 - (void)detailSliderTrackingDidCancel:(id)arg1;
 - (void)detailSliderTrackingDidEnd:(id)arg1;
 - (void)didMoveToSuperview;
-- (NSUInteger)displayablePartsInPartMask:(NSUInteger)arg1;
-- (void)handleChangeToRepeatType:(NSUInteger)arg1;
-- (void)handleChangeToShuffleType:(NSUInteger)arg1;
+- (unsigned int)displayablePartsInPartMask:(unsigned int)arg1;
+- (void)handleChangeToRepeatType:(unsigned int)arg1;
+- (void)handleChangeToShuffleType:(unsigned int)arg1;
 - (BOOL)hideGeniusButton;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isScrubbing;
@@ -103,16 +103,16 @@
 - (BOOL)progressBarClipsToChapterDuration;
 - (void)reloadButtonVisibility;
 - (void)reloadView;
-- (NSUInteger)repeatType;
+- (unsigned int)repeatType;
 - (void)resetDetailSlider:(id)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setItem:(id)arg1;
-- (void)setVisibleParts:(NSUInteger)arg1;
-- (NSUInteger)shuffleType;
+- (void)setVisibleParts:(unsigned int)arg1;
+- (unsigned int)shuffleType;
 - (void)startTicking;
 - (void)stopTicking;
 - (void)updateForEndOfDetailScrubbing;
-- (NSUInteger)visibleParts;
+- (unsigned int)visibleParts;
 
 @end

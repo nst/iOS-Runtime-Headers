@@ -8,11 +8,11 @@
     <MPAVErrorResolverDelegate> *_delegate;
 }
 
-@property <MPAVErrorResolverDelegate> *delegate;
+@property <MPAVErrorResolverDelegate> * delegate;
 
 - (id)delegate;
 - (void)resolveError:(id)arg1;
-- (void)sendDidResolveError:(id)arg1 withResolution:(NSInteger)arg2;
+- (void)sendDidResolveError:(id)arg1 withResolution:(int)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

@@ -6,12 +6,12 @@
 
 @interface PDCmdBehavior : PDCommonBehaviorData {
     NSString *mCmd;
-    NSInteger mType;
+    int mType;
 }
 
 - (id)cmd;
 - (void)setCmd:(id)arg1;
-- (void)setType:(NSInteger)arg1;
-- (NSInteger)type;
+- (void)setType:(int)arg1;
+- (int)type;
 
 @end

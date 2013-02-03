@@ -2,25 +2,27 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMHTMLCollection, NSString;
+
 @interface DOMHTMLElement : DOMElement {
 }
 
-@property(retain,readonly) DOMHTMLCollection *children;
-@property(copy) NSString *className;
-@property(copy) NSString *contentEditable;
-@property(copy) NSString *dir;
-@property(copy) NSString *idName;
-@property(copy) NSString *innerHTML;
-@property(copy) NSString *innerText;
-@property(copy) NSString *lang;
-@property(copy) NSString *outerHTML;
-@property(copy) NSString *outerText;
-@property(copy) NSString *title;
-@property(copy,readonly) NSString *titleDisplayString;
+@property(retain,readonly) DOMHTMLCollection * children;
+@property(copy) NSString * className;
+@property(copy) NSString * contentEditable;
+@property(copy) NSString * dir;
+@property(copy) NSString * idName;
+@property(copy) NSString * innerHTML;
+@property(copy) NSString * innerText;
 @property(readonly) BOOL isContentEditable;
-@property NSInteger tabIndex;
+@property(copy) NSString * lang;
+@property(copy) NSString * outerHTML;
+@property(copy) NSString * outerText;
+@property int tabIndex;
+@property(copy) NSString * title;
+@property(copy,readonly) NSString * titleDisplayString;
 
-- (void)absolutePosition:(NSInteger*)arg1 :(NSInteger*)arg2 :(NSInteger*)arg3 :(NSInteger*)arg4;
+- (void)absolutePosition:(int*)arg1 :(int*)arg2 :(int*)arg3 :(int*)arg4;
 - (id)children;
 - (id)className;
 - (id)contentEditable;
@@ -36,8 +38,8 @@
 - (id)lang;
 - (id)outerHTML;
 - (id)outerText;
-- (NSInteger)scrollXOffset;
-- (NSInteger)scrollYOffset;
+- (int)scrollXOffset;
+- (int)scrollYOffset;
 - (void)setClassName:(id)arg1;
 - (void)setContentEditable:(id)arg1;
 - (void)setDir:(id)arg1;
@@ -48,12 +50,12 @@
 - (void)setLang:(id)arg1;
 - (void)setOuterHTML:(id)arg1;
 - (void)setOuterText:(id)arg1;
-- (void)setScrollXOffset:(NSInteger)arg1 scrollYOffset:(NSInteger)arg2 adjustForPurpleCaret:(BOOL)arg3;
-- (void)setScrollXOffset:(NSInteger)arg1 scrollYOffset:(NSInteger)arg2;
-- (void)setTabIndex:(NSInteger)arg1;
+- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2 adjustForPurpleCaret:(BOOL)arg3;
+- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2;
+- (void)setTabIndex:(int)arg1;
 - (void)setTitle:(id)arg1;
-- (NSInteger)structuralComplexityContribution;
-- (NSInteger)tabIndex;
+- (int)structuralComplexityContribution;
+- (int)tabIndex;
 - (id)title;
 - (id)titleDisplayString;
 

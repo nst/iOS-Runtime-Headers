@@ -8,7 +8,7 @@
     NSString *_customGoalUnits;
 }
 
-@property NSString *customGoalUnits;
+@property NSString * customGoalUnits;
 
 + (id)newPresetGoal10K;
 + (id)newPresetGoal10Miles;

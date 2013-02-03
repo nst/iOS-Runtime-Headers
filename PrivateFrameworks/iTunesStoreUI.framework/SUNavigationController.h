@@ -9,8 +9,8 @@
     SUSection *_section;
 }
 
-@property(retain) SUSection *section;
 @property(getter=isLoading) BOOL loading;
+@property(retain) SUSection * section;
 
 - (void)_loadingDidChangeNotification:(id)arg1;
 - (id)_sectionForViewController:(id)arg1;
@@ -33,6 +33,6 @@
 - (void)setSection:(id)arg1;
 - (void)setViewControllers:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(NSInteger)arg2;
+- (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
 
 @end

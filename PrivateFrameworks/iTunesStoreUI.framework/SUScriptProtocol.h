@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class SUScriptURLRequest, NSString, NSArray;
+
 @interface SUScriptProtocol : SUScriptObject {
 }
 
-@property(retain) NSArray *allowedOrientations;
-@property(readonly) NSString *clientIdentifier;
-@property(retain) NSString *copyright;
-@property(retain) SUScriptURLRequest *overlayBackgroundURLRequest;
-@property(readonly) NSString *protocolVersion;
+@property(retain) NSArray * allowedOrientations;
+@property(readonly) NSString * clientIdentifier;
+@property(retain) NSString * copyright;
 @property BOOL excludeFromNavigationHistory;
+@property(retain) SUScriptURLRequest * overlayBackgroundURLRequest;
+@property(readonly) NSString * protocolVersion;
 @property BOOL shouldShowInOverlay;
 
 + (id)webScriptNameForKey:(const char *)arg1;

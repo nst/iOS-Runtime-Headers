@@ -2,30 +2,32 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayerItemTrackInternal;
+@class AVPlayerItemTrackInternal, AVAssetTrack;
 
 @interface AVPlayerItemTrack : NSObject {
     AVPlayerItemTrackInternal *_playerItemTrack;
 }
 
-@property(readonly) AVAssetTrack *assetTrack;
+@property(readonly) AVAssetTrack * assetTrack;
 @property(getter=isEnabled) BOOL enabled;
 
-+ (id)playerItemTrackWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(NSInteger)arg2 asset:(id)arg3 playerItem:(id)arg4;
++ (id)playerItemTrackWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(int)arg2 asset:(id)arg3 playerItem:(id)arg4;
 
 - (void)_addLayer:(id)arg1;
 - (id)_audioVolumeCurve;
-- (id)_initWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(NSInteger)arg2 asset:(id)arg3 playerItem:(id)arg4;
+- (struct OpaqueFigPlaybackItem { }*)_figPlaybackItem;
+- (id)_initWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(int)arg2 asset:(id)arg3 playerItem:(id)arg4;
 - (void)_removeLayer:(id)arg1;
 - (void)_setAudioVolumeCurve:(id)arg1;
 - (id)assetTrack;
 - (void)dealloc;
+- (id)description;
 - (id)fallbackTrack;
 - (void)finalize;
+- (unsigned int)hash;
 - (BOOL)isEnabled;
+- (BOOL)isEqual:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setVolume:(float)arg1;
-- (NSInteger)trackID;
-- (float)volume;
+- (int)trackID;
 
 @end

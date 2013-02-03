@@ -25,13 +25,13 @@
     NSURL *_contentURL;
     AVFileValidator *_fileValidator;
     double _initialPlaybackTime;
-    NSInteger _movieControlMode;
+    int _movieControlMode;
     NSError *_playbackError;
     } _playerBitfield;
     UIWindow *_previousKeyWindow;
-    NSUInteger _previousStatusBarOrientation;
-    NSInteger _previousStatusBarStyle;
-    NSInteger _scalingMode;
+    unsigned int _previousStatusBarOrientation;
+    int _previousStatusBarStyle;
+    int _scalingMode;
     MPMoviePlayerVideoViewController *_videoViewController;
     UIWindow *_window;
 }

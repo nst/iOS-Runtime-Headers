@@ -8,12 +8,12 @@
     CoreDAVPrincipalItem *_principal;
 }
 
-@property(retain) CoreDAVPrincipalItem *principal;
+@property(retain) CoreDAVPrincipalItem * principal;
 
 - (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)init;
 - (id)principal;
 - (void)setPrincipal:(id)arg1;
 - (void)write:(id)arg1;

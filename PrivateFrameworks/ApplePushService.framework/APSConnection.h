@@ -5,9 +5,9 @@
 @class <APSConnectionDelegate>, NSArray, NSString, NSLock, NSMutableDictionary;
 
 @interface APSConnection : NSObject {
-    NSUInteger _connectionPort;
+    unsigned int _connectionPort;
     NSString *_connectionPortName;
-    NSUInteger _connectionServerPort;
+    unsigned int _connectionServerPort;
     struct __CFMachPort { } *_connectionSeverCFMachPort;
     <APSConnectionDelegate> *_delegate;
     BOOL _enableCriticalReliability;
@@ -16,12 +16,12 @@
     NSArray *_ignoredTopics;
     NSLock *_lock;
     struct __CFRunLoopSource { } *_runLoopSource;
-    NSInteger _serverPID;
+    int _serverPID;
     NSMutableDictionary *_subtopics;
 }
 
-@property <APSConnectionDelegate> *delegate;
-@property(readonly) NSInteger serverPID;
+@property <APSConnectionDelegate> * delegate;
+@property(readonly) int serverPID;
 
 + (id)connectionsDebuggingState;
 + (struct __SecIdentity { }*)copyIdentity;
@@ -44,7 +44,7 @@
 - (id)publicToken;
 - (void)removeFromRunLoop;
 - (void)scheduleInRunLoop:(id)arg1;
-- (NSInteger)serverPID;
+- (int)serverPID;
 - (void)setDelegate:(id)arg1;
 - (void)setEnableCriticalReliability:(BOOL)arg1;
 - (void)setEnabledTopics:(id)arg1;

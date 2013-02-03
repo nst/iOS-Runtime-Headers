@@ -2,19 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUViewController, <SUKeyboardBackstopDelegate>, UIControl;
+@class <SUKeyboardBackstopDelegate>, SUViewController, UIControl, UIColor;
 
 @interface SUKeyboardBackstopViewController : SUViewController {
-    NSInteger _animationCount;
+    int _animationCount;
     UIControl *_backstopView;
     SUViewController *_contentViewController;
     <SUKeyboardBackstopDelegate> *_delegate;
     BOOL _displayContentAfterAnimation;
 }
 
-@property(retain) UIColor *backstopBackgroundColor;
-@property(retain) SUViewController *contentViewController;
-@property <SUKeyboardBackstopDelegate> *delegate;
+@property(retain) UIColor * backstopBackgroundColor;
+@property(retain) SUViewController * contentViewController;
+@property <SUKeyboardBackstopDelegate> * delegate;
 
 - (void)_animateWithKeyboardInfo:(id)arg1 didEndSelector:(SEL)arg2;
 - (void)_backstopAction:(id)arg1;

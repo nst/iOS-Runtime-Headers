@@ -12,11 +12,11 @@
     NSArray *_supportedProtocols;
 }
 
-@property(copy) NSDictionary *aliasInfo;
-@property(copy) NSDictionary *responseAliasInfo;
-@property(copy) NSString *responseSignature;
-@property(copy) NSString *responseUserID;
-@property(copy) NSArray *supportedProtocols;
+@property(copy) NSDictionary * aliasInfo;
+@property(copy) NSDictionary * responseAliasInfo;
+@property(copy) NSString * responseSignature;
+@property(copy) NSString * responseUserID;
+@property(copy) NSArray * supportedProtocols;
 
 - (id)additionalMessageHeaders;
 - (id)aliasInfo;

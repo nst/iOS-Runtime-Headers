@@ -5,15 +5,16 @@
 @class NSString;
 
 @interface AttributeKey : NSObject {
-    NSInteger index;
-    NSString *key;
+    int _index;
+    NSString *_key;
 }
 
 + (id)instanceFromPlist:(id)arg1;
 
-- (NSInteger)index;
+- (void)dealloc;
+- (int)index;
 - (id)initFromPlist:(id)arg1;
-- (id)initWithIndex:(NSInteger)arg1 attributeName:(id)arg2;
+- (id)initWithIndex:(int)arg1 attributeName:(id)arg2;
 - (id)key;
 
 @end

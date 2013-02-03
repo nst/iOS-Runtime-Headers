@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class QLPreviewViewReserved;
+@class QLPreviewViewReserved, <QLPreviewItem>;
 
 @interface QLPreviewView : UIView {
     QLPreviewViewReserved *_reserved;
 }
 
-@property(retain) <QLPreviewItem> *previewItem;
 @property id delegate;
+@property(retain) <QLPreviewItem> * previewItem;
 
 + (void)_initializeSafeCategory;
 + (id)_passThroughUTIs;
@@ -29,8 +29,8 @@
 - (void)cancelPreview;
 - (void)dealloc;
 - (id)delegate;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
-- (BOOL)displayBundle:(id)arg1 decidePolicyForNavigationType:(NSInteger)arg2 request:(id)arg3;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (BOOL)displayBundle:(id)arg1 decidePolicyForNavigationType:(int)arg2 request:(id)arg3;
 - (void)displayBundle:(id)arg1 didLoadItem:(id)arg2 withError:(id)arg3;
 - (id)displayBundle:(id)arg1 willSendRequest:(id)arg2;
 - (id)displayBundle;
@@ -53,7 +53,7 @@
 - (BOOL)shouldAutoHideOverlay;
 - (BOOL)shouldDisplayFullScreen;
 - (void)viewDidLoad;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

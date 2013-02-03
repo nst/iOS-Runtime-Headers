@@ -10,7 +10,7 @@
 
 - (void)addInterval:(id)arg1 to:(id)arg2;
 - (float)averageHeight:(id)arg1;
-- (NSUInteger)countOverlapsOfLineAtIndex:(NSUInteger)arg1 in:(id)arg2;
+- (unsigned int)countOverlapsOfLineAtIndex:(unsigned int)arg1 in:(id)arg2;
 - (void)detachDropCaps:(id)arg1 to:(id)arg2;
 - (void)dropCaps:(id)arg1 to:(id)arg2;
 - (void)eliminate:(id)arg1;

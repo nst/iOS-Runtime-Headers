@@ -5,17 +5,17 @@
 @class NSData;
 
 @interface GCKOOBMessage : NSObject <NSCoding> {
-    NSUInteger band;
+    unsigned int band;
     NSData *data;
-    NSUInteger type;
+    unsigned int type;
 }
 
-- (NSUInteger)band;
+- (unsigned int)band;
 - (id)data;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (NSUInteger)type;
+- (unsigned int)type;
 
 @end

@@ -9,10 +9,11 @@
 + (id)defaultTrustManager;
 
 - (void)_migrateVersionZeroFromAccessGroup:(id)arg1 toGroup:(id)arg2;
-- (NSInteger)actionForTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2 andService:(id)arg3;
+- (int)actionForTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2 andService:(id)arg3;
 - (void)allowTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2 service:(id)arg3;
 - (void)clearAllTrustSettings;
 - (void)clearSavedTrustSettingsForTrust:(struct __SecTrust { }*)arg1 host:(id)arg2 service:(id)arg3;
+- (void)migrateFromVersionOne;
 - (void)migrateFromVersionZero;
 
 @end

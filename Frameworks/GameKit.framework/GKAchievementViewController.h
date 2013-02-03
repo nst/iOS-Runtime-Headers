@@ -8,14 +8,14 @@
     <GKAchievementViewControllerDelegate> *_achievementDelegate;
 }
 
-@property <GKAchievementViewControllerDelegate> *achievementDelegate;
+@property <GKAchievementViewControllerDelegate> * achievementDelegate;
 
 - (id)achievementDelegate;
 - (void)donePressed:(id)arg1;
 - (id)init;
 - (id)initWithRootViewController:(id)arg1;
 - (void)setAchievementDelegate:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 

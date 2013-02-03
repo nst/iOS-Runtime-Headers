@@ -6,7 +6,7 @@
 
 @interface ITTaskAssertionManager : NSObject {
     struct __CFArray { } *_assertionClients;
-    NSInteger _assertionID;
+    int _assertionID;
     BOOL _assertionTaken;
     NSRecursiveLock *_recursiveLock;
 }

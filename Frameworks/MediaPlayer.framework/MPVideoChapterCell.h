@@ -2,28 +2,28 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPVideoChapterCellContentView;
+@class MPVideoChapterCellContentView, MPTimeMarker;
 
 @interface MPVideoChapterCell : UITableViewCell {
     MPVideoChapterCellContentView *_chapterContentView;
 }
 
-@property(retain) MPTimeMarker *timeMarker;
 @property(getter=isCurrent) BOOL current;
-@property NSUInteger index;
+@property unsigned int index;
 @property BOOL showThumbnailColumn;
 @property float timeColumnWidth;
+@property(retain) MPTimeMarker * timeMarker;
 
 + (void)_initializeSafeCategory;
 
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (void)dealloc;
-- (NSUInteger)index;
+- (unsigned int)index;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isCurrent;
 - (void)setCurrent:(BOOL)arg1;
-- (void)setIndex:(NSUInteger)arg1;
+- (void)setIndex:(unsigned int)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowThumbnailColumn:(BOOL)arg1;
 - (void)setTimeColumnWidth:(float)arg1;

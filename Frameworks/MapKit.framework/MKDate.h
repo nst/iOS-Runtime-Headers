@@ -9,12 +9,12 @@
     NSTimeZone *_tz;
 }
 
-@property(readonly) NSDate *nsDate;
-@property(retain) NSTimeZone *timeZone;
+@property(readonly) NSDate * nsDate;
+@property(retain) NSTimeZone * timeZone;
 
 + (id)dateWithNSDate:(id)arg1;
 
-- (NSInteger)dayOfCommonEra;
+- (int)dayOfCommonEra;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;

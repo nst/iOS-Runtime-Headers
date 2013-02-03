@@ -11,7 +11,7 @@
     SUScriptObject *_rootObject;
 }
 
-@property SUScriptObject *rootObject;
+@property SUScriptObject * rootObject;
 
 - (void)_delayedDequeueInvocations;
 - (id)batchProxyForObject:(id)arg1;

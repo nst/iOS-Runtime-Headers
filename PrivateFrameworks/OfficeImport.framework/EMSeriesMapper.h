@@ -2,23 +2,18 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface EMSeriesMapper : CMMapper {
-     /* Encoded args for previous method: B8@0:4 */
 }
 
-- (NSUInteger)chartType;
+- (unsigned int)chartType;
 - (struct CGColor { }*)fillColor;
 - (struct CGColor { }*)markerColor;
-- (NSUInteger)markerType;
+- (unsigned int)markerType;
 - (float)markerWidth;
 - (float)offset;
 - (struct CGColor { }*)strokeColor;
 - (float)strokeWidth;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)useSecondaryAxis;
+- (bool)useSecondaryAxis;
 - (id)values;
 
 @end

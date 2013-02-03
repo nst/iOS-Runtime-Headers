@@ -3,17 +3,17 @@
  */
 
 @interface CoreDAVAction : NSObject {
-    NSInteger _action;
+    int _action;
     id _context;
 }
 
-@property(readonly) NSInteger action;
+@property(readonly) int action;
 @property(readonly) id context;
 
-- (NSInteger)action;
+- (int)action;
 - (id)context;
 - (void)dealloc;
 - (id)description;
-- (id)initWithAction:(NSInteger)arg1 context:(id)arg2;
+- (id)initWithAction:(int)arg1 context:(id)arg2;
 
 @end

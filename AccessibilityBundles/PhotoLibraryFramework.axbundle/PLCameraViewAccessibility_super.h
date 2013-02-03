@@ -11,7 +11,7 @@
 - (void)_updateOverlayControls;
 - (BOOL)_zoomSliderIsAllowedVisible;
 - (void)cameraControllerVideoCaptureDidStart:(id)arg1;
-- (void)cameraControllerVideoCaptureDidStop:(id)arg1;
+- (void)cameraControllerVideoCaptureDidStop:(id)arg1 withReason:(int)arg2 userInfo:(id)arg3;
 - (void)hideStaticClosedIris;
 - (void)openIrisWithDidFinishSelector:(SEL)arg1 withDuration:(float)arg2;
 - (void)showStaticClosedIris;

@@ -54,27 +54,27 @@
     } _titleEndPoint;
     NSIndexSet *_titleMetrics;
     } _titleRect;
-    NSUInteger _touchKeptInsideOccurrence;
+    unsigned int _touchKeptInsideOccurrence;
     float _visibleHeight;
 }
 
-@property(copy) UIColor *color;
-@property(copy) NSString *location;
-@property(retain) EKEvent *occurrence;
-@property(copy) NSString *title;
 @property(getter=isCancelled) BOOL cancelled;
+@property(copy) UIColor * color;
 @property BOOL darkensSelection;
 @property id delegate;
 @property BOOL dimmed;
+@property(copy) NSString * location;
+@property(retain) EKEvent * occurrence;
 @property(getter=isSelected) BOOL selected;
 @property(getter=isTentative) BOOL tentative;
+@property(copy) NSString * title;
 
 + (id)_cachedImageForBackgroundColor:(id)arg1 foregroundColor:(id)arg2 height:(float)arg3;
 + (void)_clearViewCache;
 + (id)_imageForBackgroundColor:(id)arg1 foregroundColor:(id)arg2 height:(float)arg3;
 + (void)_initializeSafeCategory;
 + (id)_viewCache;
-+ (NSUInteger)_viewCacheSize;
++ (unsigned int)_viewCacheSize;
 + (float)bottomShadowMargin;
 + (void)clearCaches;
 + (float)minimumHeight;

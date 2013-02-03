@@ -2,15 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayer, FigCoreTextSubtitleTextRenderer;
+@class AVPlayer;
 
 @interface AVSubtitleLayerInternal : NSObject {
     id boundaryTimeObserver;
     struct __CFAttributedString { } *currentSubtitleSample;
     BOOL currentSubtitleSampleIsForced;
+    BOOL hasPlayerToObserve;
+    BOOL isObservingPlayer;
     BOOL nonForcedSubtitleDisplayEnabled;
     AVPlayer *player;
-    FigCoreTextSubtitleTextRenderer *renderer;
+    struct OpaqueFigSubtitleRenderer { } *renderer;
+    BOOL shouldObservePlayer;
 }
 
 @end

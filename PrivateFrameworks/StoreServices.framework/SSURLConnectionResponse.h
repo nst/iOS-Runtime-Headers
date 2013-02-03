@@ -4,25 +4,23 @@
 
 @class NSString, NSData, NSDictionary, NSURL;
 
-@interface SSURLConnectionResponse : NSObject <SSCoding> {
+@interface SSURLConnectionResponse : NSObject {
     NSDictionary *_allHeaderFields;
     NSData *_body;
     long long _expectedContentLength;
     NSString *_mimeType;
-    NSInteger _statusCode;
+    int _statusCode;
     NSString *_suggestedFilename;
     NSString *_textEncodingName;
     NSURL *_url;
 }
 
-@property(readonly) NSString *MIMEType;
-@property(readonly) NSURL *URL;
-@property(readonly) NSDictionary *allHeaderFields;
-@property(readonly) NSData *bodyData;
-@property(readonly) NSString *suggestedFilename;
-@property(readonly) NSString *textEncodingName;
+@property(readonly) NSString * MIMEType;
+@property(readonly) NSURL * URL;
+@property(readonly) NSData * bodyData;
 @property(readonly) long long expectedContentLength;
-@property(readonly) NSInteger statusCode;
+@property(readonly) NSString * suggestedFilename;
+@property(readonly) NSString * textEncodingName;
 
 - (id)MIMEType;
 - (id)URL;
@@ -33,7 +31,7 @@
 - (long long)expectedContentLength;
 - (id)initWithPropertyListEncoding:(id)arg1;
 - (id)initWithURLResponse:(id)arg1 bodyData:(id)arg2;
-- (NSInteger)statusCode;
+- (int)statusCode;
 - (id)suggestedFilename;
 - (id)textEncodingName;
 

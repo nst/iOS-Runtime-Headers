@@ -6,7 +6,6 @@
 
 @interface GKAtomView : UIDefaultKeyboardInput {
     unsigned int _disclosure : 1;
-    unsigned int _needsCentering : 1;
     unsigned int _invalidAddress : 1;
     unsigned int _selected : 1;
     GKAtomBackgroundView *_background;
@@ -16,17 +15,17 @@
     float _width;
 }
 
-@property(retain) GKUITheme *theme;
 @property BOOL invalidAddress;
+@property(retain) GKUITheme * theme;
 
 + (float)defaultHeight;
 + (float)horizontalPadding;
 
+- (id)backgroundImage;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 theme:(id)arg2;
 - (BOOL)invalidAddress;
 - (void)layoutSubviews;
-- (float)preferredWidth;
 - (BOOL)selected;
 - (void)setInvalidAddress:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
@@ -34,6 +33,7 @@
 - (void)setTheme:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)showBackground:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)theme;
 - (id)title;
 - (void)updateBackgroundViewImage;

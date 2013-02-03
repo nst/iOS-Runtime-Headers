@@ -5,8 +5,8 @@
 @class NSKnownKeysMappingStrategy;
 
 @interface NSKnownKeysDictionary1 : NSKnownKeysDictionary {
-    NSInteger _cd_rc;
-    NSInteger _count;
+    int _cd_rc;
+    int _count;
     NSKnownKeysMappingStrategy *_keySearch;
     id *_values;
 }
@@ -16,24 +16,24 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)init;
 + (id)initForKeys:(id)arg1;
-+ (id)initWithCapacity:(NSUInteger)arg1;
++ (id)initWithCapacity:(unsigned int)arg1;
 + (id)initWithCoder:(id)arg1;
 + (id)initWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
 + (id)initWithDictionary:(id)arg1;
-+ (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(NSUInteger)arg3;
++ (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(unsigned int)arg3;
 + (id)initWithSearchStrategy:(id)arg1;
 
-- (NSUInteger)_countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3 forKeys:(BOOL)arg4;
+- (unsigned int)_countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3 forKeys:(BOOL)arg4;
 - (void)_recount;
 - (void)_setValues:(id*)arg1 retain:(BOOL)arg2;
-- (NSUInteger)_valueCountByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
+- (unsigned int)_valueCountByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)addEntriesFromDictionary:(id)arg1;
 - (id)allKeys;
 - (id)allValues;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
-- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)getKeys:(id*)arg1;
@@ -50,11 +50,11 @@
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-- (void)setValue:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setValue:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setValues:(id*)arg1;
-- (id)valueAtIndex:(NSUInteger)arg1;
+- (id)valueAtIndex:(unsigned int)arg1;
 - (const id*)values;
 
 @end

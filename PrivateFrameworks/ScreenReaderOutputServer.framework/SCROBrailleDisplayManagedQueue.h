@@ -6,30 +6,30 @@
 
 @interface SCROBrailleDisplayManagedQueue : NSObject {
     struct __CFDictionary { } *_displayQueueDict;
-    NSUInteger _maxActiveQueueSize;
+    unsigned int _maxActiveQueueSize;
     struct __CFDictionary { } *_queueStateDict;
     SCRCIndexMap *_stateQueueMap;
     SCRCIndexMap *_tokenDisplayMap;
 }
 
 - (void)_fillActiveBrailleDisplayQueue;
-- (id)_queueForState:(NSInteger)arg1 createQueue:(BOOL)arg2;
+- (id)_queueForState:(int)arg1 createQueue:(BOOL)arg2;
 - (id)activeDisplays;
 - (id)activePendingDisplays;
-- (NSUInteger)activeQueueMaximumSize;
-- (void)addDisplay:(id)arg1 withState:(NSInteger)arg2;
+- (unsigned int)activeQueueMaximumSize;
+- (void)addDisplay:(id)arg1 withState:(int)arg2;
 - (void)dealloc;
 - (id)disconnectedDisplays;
-- (NSUInteger)displayCountIncludingDisconnectedDisplays:(BOOL)arg1;
+- (unsigned int)displayCountIncludingDisconnectedDisplays:(BOOL)arg1;
 - (id)displayForToken:(long)arg1;
 - (id)init;
 - (id)loadingDisplays;
 - (id)primaryDisplay;
 - (void)removeDisplay:(id)arg1;
-- (void)setActiveQueueMaximumSize:(NSUInteger)arg1;
+- (void)setActiveQueueMaximumSize:(unsigned int)arg1;
 - (void)setPrimaryDisplay:(id)arg1;
-- (void)setState:(NSInteger)arg1 forDisplay:(id)arg2;
+- (void)setState:(int)arg1 forDisplay:(id)arg2;
 - (id)sleepingDisplays;
-- (NSInteger)stateForDisplay:(id)arg1;
+- (int)stateForDisplay:(id)arg1;
 
 @end

@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptTextFieldDelegate;
+@class UITextField, SUScriptTextFieldDelegate;
 
 @interface SUScriptTextFieldNativeObject : SUScriptNativeObject <SUScriptTextFieldDelegate> {
     SUScriptTextFieldDelegate *_textFieldDelegate;
 }
 
-@property(readonly) UITextField *textField;
+@property(readonly) UITextField * textField;
 
 - (void)_textDidChange:(id)arg1;
 - (void)_textDidEndEditingOnExit:(id)arg1;

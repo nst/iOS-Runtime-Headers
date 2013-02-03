@@ -7,8 +7,8 @@
 @interface SFUBufferedInputStream : NSObject <SFUBufferedInputStream> {
     char *mBuffer;
     long long mBufferEnd;
-    NSUInteger mBufferOffset;
-    NSUInteger mBufferSize;
+    unsigned int mBufferOffset;
+    unsigned int mBufferSize;
     long long mBufferStart;
     <SFUInputStream> *mStream;
 }

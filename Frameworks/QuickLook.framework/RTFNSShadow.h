@@ -13,9 +13,9 @@
     } shadowOffset;
 }
 
-@property(retain) RTFNSColor *shadowColor;
 @property float shadowBlurRadius;
-@property CGSize shadowOffset;
+@property(retain) RTFNSColor * shadowColor;
+@property struct CGSize { float width; float height; } shadowOffset;
 
 - (void)setShadowBlurRadius:(float)arg1;
 - (void)setShadowColor:(id)arg1;

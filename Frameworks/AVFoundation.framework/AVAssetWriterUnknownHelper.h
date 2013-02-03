@@ -12,9 +12,10 @@
 - (id)initWithConfigurationState:(id)arg1;
 - (id)initWithURL:(id)arg1 fileType:(id)arg2;
 - (void)setMetadata:(id)arg1;
-- (void)setMovieFragmentInterval:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setMovieTimeScale:(int)arg1;
 - (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
 - (void)startWriting;
-- (NSInteger)status;
+- (int)status;
 
 @end

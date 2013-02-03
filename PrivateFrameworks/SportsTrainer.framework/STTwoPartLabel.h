@@ -9,8 +9,8 @@
     UILabel *_secondaryLabel;
 }
 
-@property(readonly) UILabel *primaryLabel;
-@property(readonly) UILabel *secondaryLabel;
+@property(readonly) UILabel * primaryLabel;
+@property(readonly) UILabel * secondaryLabel;
 
 + (id)defaultFormatForSecondaryLabel;
 + (id)defaultTextForPrimaryLabel;

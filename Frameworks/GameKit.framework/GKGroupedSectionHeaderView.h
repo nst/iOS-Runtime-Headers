@@ -16,9 +16,9 @@
     GKUITheme *_theme;
 }
 
-@property(readonly) UILabel *label;
-@property(retain) GKUITheme *theme;
-@property UIEdgeInsets contentInsets;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } contentInsets;
+@property(readonly) UILabel * label;
+@property(retain) GKUITheme * theme;
 
 + (float)defaultHeight;
 

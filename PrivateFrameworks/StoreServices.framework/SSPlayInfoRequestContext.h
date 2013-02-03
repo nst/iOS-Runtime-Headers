@@ -10,9 +10,9 @@
     NSArray *_sinfs;
 }
 
-@property(copy) NSData *SICData;
-@property(copy) NSString *playerGUID;
-@property(copy) NSArray *sinfs;
+@property(copy) NSData * SICData;
+@property(copy) NSString * playerGUID;
+@property(copy) NSArray * sinfs;
 
 - (id)SICData;
 - (id)copyPropertyListEncoding;

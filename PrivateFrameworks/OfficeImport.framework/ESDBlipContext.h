@@ -2,22 +2,21 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @interface ESDBlipContext : NSObject <OCDDelayedMediaContext> {
-     /* Encoded args for previous method: B16@0:4@8@12 */
-     /* Encoded args for previous method: B12@0:4@8 */
-    NSUInteger mByteCount;
-    NSUInteger mStartOffset;
+    unsigned int mByteCount;
+    unsigned int mStartOffset;
     struct SsrwOOStream { int (**x1)(); } *mStream;
-    NSUInteger mStreamID;
+    unsigned int mStreamID;
 }
 
 - (struct SsrwOOStream { int (**x1)(); }*)stream;
-- (id)initWithOffset:(NSUInteger)arg1 byteCount:(NSUInteger)arg2 stream:(struct SsrwOOStream { int (**x1)(); }*)arg3 streamID:(NSUInteger)arg4;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)loadDelayedNode:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)saveDelayedMedia:(id)arg1 toFile:(id)arg2;
+- (id)initWithOffset:(unsigned int)arg1 byteCount:(unsigned int)arg2 stream:(struct SsrwOOStream { int (**x1)(); }*)arg3 streamID:(unsigned int)arg4;
+- (bool)loadDelayedNode:(id)arg1;
+- (bool)saveDelayedMedia:(id)arg1 toFile:(id)arg2;
 
 @end

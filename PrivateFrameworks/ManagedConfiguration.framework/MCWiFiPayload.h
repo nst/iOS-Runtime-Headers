@@ -19,20 +19,20 @@
     BOOL _usernameRequired;
 }
 
-@property(readonly) NSString *certificateUUID;
-@property(readonly) NSDictionary *eapClientConfig;
-@property(readonly) NSString *encryptionType;
-@property(retain) NSString *password;
-@property(readonly) NSArray *payloadCertificateAnchorUUID;
-@property(readonly) NSString *ssid;
-@property(retain) NSString *username;
+@property(readonly) NSString * certificateUUID;
+@property(readonly) NSDictionary * eapClientConfig;
+@property(readonly) NSString * encryptionType;
 @property(readonly) BOOL isHidden;
 @property(readonly) BOOL isWEP;
 @property(readonly) BOOL isWPA;
+@property(retain) NSString * password;
 @property(readonly) BOOL passwordRequired;
+@property(readonly) NSArray * payloadCertificateAnchorUUID;
+@property(readonly) NSString * ssid;
+@property(retain) NSString * username;
 @property(readonly) BOOL usernameRequired;
 
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
 - (BOOL)_configIsValid:(id)arg1 error:(id*)arg2;

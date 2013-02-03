@@ -9,7 +9,7 @@
     BOOL mFrame;
     BOOL mShadow;
     unsigned char mSpace;
-    NSInteger mStyle;
+    int mStyle;
     unsigned char mWidth;
 }
 
@@ -27,11 +27,11 @@
 - (void)setShadow:(BOOL)arg1;
 - (void)setSingleBlackBorder;
 - (void)setSpace:(unsigned char)arg1;
-- (void)setStyle:(NSInteger)arg1;
+- (void)setStyle:(int)arg1;
 - (void)setWidth:(unsigned char)arg1;
 - (BOOL)shadow;
 - (unsigned char)space;
-- (NSInteger)style;
+- (int)style;
 - (unsigned char)width;
 
 @end

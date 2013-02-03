@@ -2,34 +2,31 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSNumber, NSString;
+@class NSNumber, NSString, ISSoftwareApplication;
 
 @interface SUScriptSoftwareApplication : SUScriptObject {
-    NSNumber *_adamID;
-    NSString *_bundleID;
-    NSString *_bundleVersion;
-    NSNumber *_dsID;
-    NSString *_storeFrontID;
-    NSNumber *_versionID;
+    ISSoftwareApplication *_application;
 }
 
-@property(getter=_adamID,readonly) NSNumber *adamID;
-@property(getter=_bundleID,readonly) NSString *bundleID;
-@property(getter=_bundleVersion,readonly) NSString *bundleVersion;
-@property(getter=_dsID,readonly) NSNumber *dsID;
-@property(getter=_storeFrontID,readonly) NSString *storeFrontID;
-@property(getter=_versionID,readonly) NSNumber *versionID;
+@property(readonly) NSNumber * adamID;
+@property(readonly) NSString * bundleID;
+@property(readonly) NSString * bundleVersion;
+@property(readonly) NSNumber * dsID;
+@property(readonly) NSString * storeFrontID;
+@property(readonly) NSNumber * versionID;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 
-- (id)_adamID;
-- (id)_bundleID;
-- (id)_bundleVersion;
 - (id)_className;
-- (id)_dsID;
-- (id)_storeFrontID;
-- (id)_versionID;
+- (id)adamID;
+- (id)attributeKeys;
+- (id)bundleID;
+- (id)bundleVersion;
 - (void)dealloc;
+- (id)dsID;
 - (id)initWithApplication:(id)arg1;
+- (id)scriptAttributeKeys;
+- (id)storeFrontID;
+- (id)versionID;
 
 @end

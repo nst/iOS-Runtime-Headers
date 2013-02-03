@@ -18,7 +18,7 @@
 - (BOOL)scanHexQuad:(unsigned short*)arg1;
 - (BOOL)scanIsAtEnd;
 - (BOOL)scanUnicodeChar:(unsigned short*)arg1;
-- (void)setErrorWithCode:(NSUInteger)arg1 string:(id)arg2;
-- (NSUInteger)stringEncodingForJSONData:(id)arg1;
+- (void)setErrorWithCode:(unsigned int)arg1 string:(id)arg2;
+- (unsigned int)stringEncodingForJSONData:(id)arg1;
 
 @end

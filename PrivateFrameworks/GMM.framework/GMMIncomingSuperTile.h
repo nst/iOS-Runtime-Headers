@@ -8,7 +8,7 @@
     NSData *_superTileData;
 }
 
-@property(retain) NSData *superTileData;
+@property(retain) NSData * superTileData;
 
 - (void)dealloc;
 - (id)description;

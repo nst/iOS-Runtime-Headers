@@ -6,18 +6,23 @@
     struct _lockdown_connection { } *connection;
 }
 
++ (id)clientInfoHeader;
 + (id)deviceCredential;
 + (id)infoDictionary;
 + (id)osVersion;
++ (id)productVersion;
 + (id)signatureWithDictionary:(id)arg1;
 + (id)udid;
 
+- (id)buildVersion;
 - (void)dealloc;
 - (id)deviceInfoDictionary;
 - (id)init;
 - (id)lockDownValueForKey:(struct __CFString { }*)arg1;
 - (id)mobileMeSetupToken;
+- (id)osName;
 - (id)osVersion;
+- (id)productType;
 - (id)productVersion;
 - (id)regionCode;
 - (id)serialNumber;

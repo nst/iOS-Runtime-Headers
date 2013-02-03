@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIView, <ABMultiCellContentViewUpdateDelegate>, ABAbstractPropertyGroup, ABMultiCell;
+@class UIView, UITableViewCell, ABAbstractPropertyGroup, <ABMultiCellContentViewUpdateDelegate>;
 
 @interface ABMultiCellContentView : ABPersonCellContentView <ABResponderDelegate> {
+    int _abCellStyle;
     BOOL _allowsEditing;
-    ABMultiCell *_cell;
+    UITableViewCell *_cell;
     BOOL _isEditing;
     BOOL _isEmphasized;
     BOOL _isHighlighted;
@@ -15,39 +16,44 @@
     BOOL _needsReload;
     ABAbstractPropertyGroup *_pg;
     id _pgInfo;
-    NSInteger _property;
+    int _property;
     BOOL _shouldIgnoreEndEditing;
     UIView *_touchedView;
     <ABMultiCellContentViewUpdateDelegate> *_updateDelegate;
+    BOOL _usesCustomPropertyCell;
 }
 
-@property ABMultiCell *cell;
-@property(readonly) ABAbstractPropertyGroup *propertyGroup;
-@property <ABMultiCellContentViewUpdateDelegate> *updateDelegate;
+@property int abCellStyle;
 @property BOOL allowsEditing;
+@property UITableViewCell * cell;
 @property(getter=isEditing) BOOL editing;
 @property(getter=isEmphasized) BOOL emphasized;
 @property(getter=isImportant) BOOL important;
+@property(readonly) ABAbstractPropertyGroup * propertyGroup;
 @property(retain) id propertyGroupInfo;
 @property BOOL shouldIgnoreEndEditing;
+@property <ABMultiCellContentViewUpdateDelegate> * updateDelegate;
+@property BOOL usesCustomPropertyCell;
 
-+ (Class)classForProperty:(NSInteger)arg1;
++ (Class)classForProperty:(int)arg1;
 + (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
 + (id)reuseIdentifierForPropertyGroup:(id)arg1 info:(id)arg2;
 + (void)setupTextField:(id)arg1 withStyleProvider:(id)arg2;
 + (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forPropertyGroup:(id)arg2 info:(id)arg3 styleProvider:(id)arg4 whenEditing:(BOOL)arg5;
 
 - (BOOL)ABTabToNextResponder:(BOOL)arg1 fromView:(id)arg2;
+- (int)abCellStyle;
 - (BOOL)allowsEditing;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundRectForView:(id)arg1;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canBeginEditingAnytime;
-- (BOOL)canHandleProperty:(NSInteger)arg1;
+- (BOOL)canHandleProperty:(int)arg1;
 - (BOOL)canResignFirstResponder;
 - (id)cell;
 - (void)clearTextFieldDelegates:(id)arg1;
 - (void)dealloc;
+- (id)displayHighlightedTextColor;
 - (id)displayTextColor;
 - (void)entryField:(id)arg1 valueDidChange:(id)arg2 forKey:(id)arg3;
 - (void)entryFieldBeginAttemptBecomeFirstResponder:(id)arg1;
@@ -61,8 +67,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForLabelDivider;
 - (id)hitTestForTouches:(id)arg1 withEvent:(id)arg2;
 - (id)init;
-- (id)initCommonWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 property:(NSInteger)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 property:(NSInteger)arg2;
+- (id)initCommonWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 property:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 property:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isEditing;
 - (BOOL)isEmphasized;
@@ -72,7 +78,7 @@
 - (id)labelTextColorWhenEditing:(BOOL)arg1;
 - (void)layoutLabel;
 - (void)layoutSubviews;
-- (id)newTextFieldWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 tag:(NSInteger)arg2 keyboardSettings:(id)arg3 delegate:(id)arg4 styleProvider:(id)arg5;
+- (id)newTextFieldWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 tag:(int)arg2 keyboardSettings:(id)arg3 delegate:(id)arg4;
 - (id)pickerView;
 - (id)propertyGroup;
 - (id)propertyGroupInfo;
@@ -82,6 +88,7 @@
 - (void)reloadIfNeeded:(BOOL)arg1 reloadFromModel:(BOOL)arg2;
 - (void)reloadLabelFromModel;
 - (BOOL)resignFirstResponder;
+- (void)setAbCellStyle:(int)arg1;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (void)setCell:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
@@ -95,6 +102,7 @@
 - (void)setPropertyGroupInfo:(id)arg1;
 - (void)setShouldIgnoreEndEditing:(BOOL)arg1;
 - (void)setUpdateDelegate:(id)arg1;
+- (void)setUsesCustomPropertyCell:(BOOL)arg1;
 - (BOOL)shouldIgnoreEndEditing;
 - (BOOL)shouldSendTouchesToSuperviewForHitView:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forPropertyGroup:(id)arg2 info:(id)arg3 styleProvider:(id)arg4 whenEditing:(BOOL)arg5;
@@ -105,6 +113,7 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (id)updateDelegate;
 - (void)updateSubviewsForNewStateAnimated:(BOOL)arg1;
+- (BOOL)usesCustomPropertyCell;
 - (id)viewForFirstResponder;
 - (BOOL)wantsLabelDivider;
 

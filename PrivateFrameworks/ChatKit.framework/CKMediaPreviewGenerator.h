@@ -9,16 +9,16 @@
     id _delegate;
     BOOL _generateComposePreview;
     CKMediaObject *_mediaObject;
-    NSInteger _orientation;
+    int _orientation;
     NSData *_previewResult;
 }
 
-@property(readonly) NSData *composePreviewResult;
-@property(retain) CKMediaObject *mediaObject;
-@property(readonly) NSData *previewResult;
+@property(readonly) NSData * composePreviewResult;
 @property id delegate;
 @property BOOL generateComposePreview;
-@property NSInteger orientation;
+@property(retain) CKMediaObject * mediaObject;
+@property int orientation;
+@property(readonly) NSData * previewResult;
 
 - (id)composePreviewResult;
 - (void)dealloc;
@@ -26,11 +26,11 @@
 - (BOOL)generateComposePreview;
 - (void)main;
 - (id)mediaObject;
-- (NSInteger)orientation;
+- (int)orientation;
 - (id)previewResult;
 - (void)setDelegate:(id)arg1;
 - (void)setGenerateComposePreview:(BOOL)arg1;
 - (void)setMediaObject:(id)arg1;
-- (void)setOrientation:(NSInteger)arg1;
+- (void)setOrientation:(int)arg1;
 
 @end

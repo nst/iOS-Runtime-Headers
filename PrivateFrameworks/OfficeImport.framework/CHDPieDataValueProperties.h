@@ -3,12 +3,12 @@
  */
 
 @interface CHDPieDataValueProperties : CHDDataValueProperties {
-    NSInteger mExplosion;
+    int mExplosion;
 }
 
-- (NSInteger)explosion;
+- (int)explosion;
 - (id)init;
-- (void)setExplosion:(NSInteger)arg1;
-- (id)shallowCopyWithIndex:(NSInteger)arg1;
+- (void)setExplosion:(int)arg1;
+- (id)shallowCopyWithIndex:(int)arg1;
 
 @end

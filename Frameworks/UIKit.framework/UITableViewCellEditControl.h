@@ -35,7 +35,7 @@
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
-- (id)initWithTableViewCell:(id)arg1 editingStyle:(NSInteger)arg2;
+- (id)initWithTableViewCell:(id)arg1 editingStyle:(int)arg2;
 - (BOOL)isAccessibilityElement;
 - (BOOL)isHiding;
 - (BOOL)isRotated;

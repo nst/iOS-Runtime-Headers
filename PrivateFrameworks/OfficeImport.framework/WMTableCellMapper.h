@@ -5,7 +5,7 @@
 @class WDTableCell;
 
 @interface WMTableCellMapper : CMMapper {
-    NSUInteger mColSpan;
+    unsigned int mColSpan;
     double mHeight;
     double mLeftPadding;
     double mRightPadding;
@@ -13,8 +13,8 @@
     double mWidth;
 }
 
-- (NSUInteger)colSpan;
-- (id)initWithWDTableCell:(id)arg1 atIndex:(NSUInteger)arg2 parent:(id)arg3;
+- (unsigned int)colSpan;
+- (id)initWithWDTableCell:(id)arg1 atIndex:(unsigned int)arg2 parent:(id)arg3;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapCellStyleAt:(id)arg1;
 - (id)tableMapper;

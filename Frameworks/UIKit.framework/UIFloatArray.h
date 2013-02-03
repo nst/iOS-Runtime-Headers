@@ -10,34 +10,34 @@
         unsigned int valueIsSingleton : 1; 
         unsigned int hideGaps : 1; 
         unsigned int unused : 30; 
-    NSInteger _count;
+    int _count;
     } _floatArrayFlags;
-    NSInteger _gapCount;
+    int _gapCount;
     float _gapValue;
-    NSInteger *_gaps;
+    int *_gaps;
     float _minValue;
     } _values;
 }
 
-- (struct { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; BOOL x5; BOOL x6; })_indexesViaArrayFromOffset:(float)arg1 toOffset:(float)arg2;
-- (struct { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; BOOL x5; BOOL x6; })_indexesViaSingletonFromOffset:(float)arg1 toOffset:(float)arg2;
-- (BOOL)_setupGapIndexesWithCount:(NSInteger)arg1 dataProvider:(id)arg2 isRefresh:(BOOL)arg3;
-- (BOOL)_setupValuesWithCount:(NSInteger)arg1 dataProvider:(id)arg2 isRefresh:(BOOL)arg3;
-- (BOOL)_setupValuesWithCount:(NSInteger)arg1 singleValue:(float)arg2 isRefresh:(BOOL)arg3;
+- (struct { int x1; int x2; int x3; int x4; BOOL x5; BOOL x6; })_indexesViaArrayFromOffset:(float)arg1 toOffset:(float)arg2;
+- (struct { int x1; int x2; int x3; int x4; BOOL x5; BOOL x6; })_indexesViaSingletonFromOffset:(float)arg1 toOffset:(float)arg2;
+- (BOOL)_setupGapIndexesWithCount:(int)arg1 dataProvider:(id)arg2 isRefresh:(BOOL)arg3;
+- (BOOL)_setupValuesWithCount:(int)arg1 dataProvider:(id)arg2 isRefresh:(BOOL)arg3;
+- (BOOL)_setupValuesWithCount:(int)arg1 singleValue:(float)arg2 isRefresh:(BOOL)arg3;
 - (BOOL)_setupWithDataProvider:(id)arg1 valueIsSingleton:(BOOL)arg2 singletonValue:(float)arg3 isRefresh:(BOOL)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)hideGaps:(BOOL)arg1;
-- (NSInteger)indexForGapIndex:(NSInteger)arg1;
-- (struct { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; BOOL x5; BOOL x6; })indexesFromOffset:(float)arg1 toOffset:(float)arg2;
+- (int)indexForGapIndex:(int)arg1;
+- (struct { int x1; int x2; int x3; int x4; BOOL x5; BOOL x6; })indexesFromOffset:(float)arg1 toOffset:(float)arg2;
 - (id)init;
 - (float)minValue;
-- (struct { float x1; float x2; })offsetsForGapIndex:(NSInteger)arg1;
-- (struct { float x1; float x2; })offsetsForIndex:(NSInteger)arg1;
+- (struct { float x1; float x2; })offsetsForGapIndex:(int)arg1;
+- (struct { float x1; float x2; })offsetsForIndex:(int)arg1;
 - (BOOL)refreshWithDataProvider:(id)arg1 singleValue:(float)arg2;
 - (BOOL)refreshWithDataProvider:(id)arg1;
 - (float)singleValue;
 - (float)sum;
-- (NSInteger)valueCount;
+- (int)valueCount;
 
 @end

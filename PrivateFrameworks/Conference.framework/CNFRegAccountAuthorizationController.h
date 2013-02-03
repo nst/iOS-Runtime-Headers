@@ -10,9 +10,9 @@
     <CNFRegAccountAuthorizationDelegate> *_delegate;
 }
 
-@property(copy) NSString *authID;
-@property(copy) NSString *authToken;
-@property <CNFRegAccountAuthorizationDelegate> *delegate;
+@property(copy) NSString * authID;
+@property(copy) NSString * authToken;
+@property <CNFRegAccountAuthorizationDelegate> * delegate;
 
 - (id)authID;
 - (id)authIdHeaderValue;
@@ -22,7 +22,7 @@
 - (void)cancelTapped;
 - (void)dealloc;
 - (id)delegate;
-- (void)doHandoffWithStatus:(NSInteger)arg1 appleId:(id)arg2 password:(id)arg3;
+- (void)doHandoffWithStatus:(int)arg1 appleId:(id)arg2 password:(id)arg3;
 - (id)initWithAuthID:(id)arg1 token:(id)arg2;
 - (id)logName;
 - (void)setAuthID:(id)arg1;

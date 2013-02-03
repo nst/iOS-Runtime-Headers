@@ -7,6 +7,6 @@
 
 + (void)_initializeSafeCategory;
 
-- (void)setButtonOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
 
 @end

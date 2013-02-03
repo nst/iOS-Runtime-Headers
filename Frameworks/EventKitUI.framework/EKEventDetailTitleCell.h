@@ -12,7 +12,7 @@
     UILabel *_statusView;
     UILabel *_timeView;
     UILabel *_titleView;
-    NSUInteger _visibleItems;
+    unsigned int _visibleItems;
 }
 
 + (void)_initializeSafeCategory;
@@ -26,7 +26,7 @@
 - (id)accessibilityLabel;
 - (void)dealloc;
 - (BOOL)isAccessibilityElement;
-- (void)layoutForWidth:(float)arg1 position:(NSInteger)arg2;
+- (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (void)setDateString:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setRecurrenceString:(id)arg1;

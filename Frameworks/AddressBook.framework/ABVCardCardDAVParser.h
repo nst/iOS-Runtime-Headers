@@ -5,12 +5,12 @@
 @class NSMutableDictionary;
 
 @interface ABVCardCardDAVParser : ABVCardParser {
-    NSUInteger _existingRecordType;
+    unsigned int _existingRecordType;
     NSMutableDictionary *_unknownAttributes;
 }
 
 - (BOOL)_handleUnknownTag:(id)arg1 withValue:(id)arg2;
-- (void*)createRecordInSource:(void*)arg1 outRecordType:(NSUInteger*)arg2;
+- (void*)createRecordInSource:(void*)arg1 outRecordType:(unsigned int*)arg2;
 - (void)dealloc;
 - (id)defaultADRLabel;
 - (id)defaultLabel;

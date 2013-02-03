@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+@class NSString, NSDictionary;
+
 @interface MPTimedMetadata : NSObject {
-    id _internal;
+    void *_internal;
 }
 
-@property(readonly) NSDictionary *allMetadata;
-@property(readonly) NSString *key;
-@property(readonly) NSString *keyspace;
+@property(readonly) NSDictionary * allMetadata;
+@property(readonly) NSString * key;
+@property(readonly) NSString * keyspace;
 @property(readonly) double timestamp;
 @property(readonly) id value;
 

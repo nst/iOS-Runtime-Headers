@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSString;
+@class NSURLRequest, NSString, NSURLCredential;
 
 @interface AARequest : NSObject {
     NSString *_urlString;
 }
 
-@property(readonly) NSURLCredential *urlCredential;
-@property(readonly) NSURLRequest *urlRequest;
+@property(readonly) NSURLCredential * urlCredential;
+@property(readonly) NSURLRequest * urlRequest;
 
 + (id)protocolVersion;
 + (Class)responseClass;

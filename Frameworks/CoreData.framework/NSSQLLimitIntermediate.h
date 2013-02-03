@@ -3,10 +3,10 @@
  */
 
 @interface NSSQLLimitIntermediate : NSSQLIntermediate {
-    NSUInteger _limit;
+    unsigned int _limit;
 }
 
 - (id)generateSQLStringInContext:(id)arg1;
-- (id)initWithLimit:(NSUInteger)arg1 inScope:(id)arg2;
+- (id)initWithLimit:(unsigned int)arg1 inScope:(id)arg2;
 
 @end

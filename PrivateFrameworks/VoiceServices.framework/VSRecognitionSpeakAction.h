@@ -6,7 +6,7 @@
     BOOL _shouldTerminate;
 }
 
-- (NSInteger)completionType;
+- (int)completionType;
 - (id)initWithSpokenFeedbackString:(id)arg1 willTerminate:(BOOL)arg2;
 - (id)perform;
 

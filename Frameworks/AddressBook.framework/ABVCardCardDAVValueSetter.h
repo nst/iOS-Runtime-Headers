@@ -9,14 +9,15 @@
 }
 
 + (struct __CFDictionary { }*)_personToGroupPropertyMap;
-+ (NSInteger)groupPropertyForPersonProperty:(NSInteger)arg1;
++ (int)groupPropertyForPersonProperty:(int)arg1;
 
 - (void)_drainExistingProperties;
-- (void*)copyParsedRecordWithSource:(void*)arg1 outRecordType:(NSUInteger*)arg2;
+- (void*)copyParsedRecordWithSource:(void*)arg1 outRecordType:(unsigned int*)arg2;
 - (id)initWithGroup:(void*)arg1 removeExistingProperties:(BOOL)arg2;
 - (id)initWithPerson:(void*)arg1 removeExistingProperties:(BOOL)arg2;
+- (BOOL)propertyIsValidForPerson:(unsigned int)arg1;
 - (BOOL)setImageData:(id)arg1;
 - (void)setRecordIsGroup:(BOOL)arg1;
-- (BOOL)setValue:(void*)arg1 forProperty:(NSUInteger)arg2;
+- (BOOL)setValue:(void*)arg1 forProperty:(unsigned int)arg2;
 
 @end

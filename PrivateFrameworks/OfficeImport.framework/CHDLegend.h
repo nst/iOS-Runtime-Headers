@@ -2,35 +2,29 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class EDCollection, OADGraphicProperties, EDResources;
 
 @interface CHDLegend : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-    NSUInteger mFontIndex;
+    boolmIsVertical;
+    unsigned int mFontIndex;
     OADGraphicProperties *mGraphicProperties;
     EDCollection *mLegendEntries;
-    NSInteger mLegendPosition;
+    int mLegendPosition;
     EDResources *mResources;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsVertical;
 }
 
 - (void)dealloc;
 - (id)font;
-- (NSUInteger)fontIndex;
+- (unsigned int)fontIndex;
 - (id)graphicProperties;
 - (id)initWithResources:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isSingleColumnLegend;
+- (bool)isSingleColumnLegend;
 - (id)legendEntries;
-- (NSInteger)legendPosition;
+- (int)legendPosition;
 - (void)setFont:(id)arg1;
-- (void)setFontIndex:(NSUInteger)arg1;
+- (void)setFontIndex:(unsigned int)arg1;
 - (void)setGraphicProperties:(id)arg1;
-- (void)setIsSingleColumnLegend:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setLegendPosition:(NSInteger)arg1;
+- (void)setIsSingleColumnLegend:(bool)arg1;
+- (void)setLegendPosition:(int)arg1;
 
 @end

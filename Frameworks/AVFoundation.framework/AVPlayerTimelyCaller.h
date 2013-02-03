@@ -13,7 +13,7 @@
     AVWeakReference *_weakReference;
 }
 
-@property(getter=_weakReference,readonly) AVWeakReference *weakReference;
+@property(getter=_weakReference,readonly) AVWeakReference * weakReference;
 
 - (id)_weakReference;
 - (void)dealloc;

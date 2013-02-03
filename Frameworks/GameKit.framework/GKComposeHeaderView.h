@@ -2,16 +2,15 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSString, GKHeaderLabelView;
+@class GKUITheme, NSString, GKHeaderLabelView;
 
-@interface GKComposeHeaderView : UIView {
-    id _delegate;
+@interface GKComposeHeaderView : UIScrollView {
     NSString *_label;
     GKHeaderLabelView *_labelView;
     NSString *_navTitle;
 }
 
-@property(retain) GKUITheme *theme;
+@property(retain) GKUITheme * theme;
 
 + (float)defaultHeight;
 
@@ -24,7 +23,6 @@
 - (float)maxLabelX;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (id)navTitle;
-- (void)setDelegate:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLabelHighlighted:(BOOL)arg1;
 - (void)setNavTitle:(id)arg1;

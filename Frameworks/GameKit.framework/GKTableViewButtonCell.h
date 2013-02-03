@@ -11,9 +11,9 @@
 + (float)preferredHeight;
 
 - (void)configureBackgroundView;
-- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(NSInteger)arg3 backgroundStyle:(NSInteger)arg4;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;
 - (void)layoutSubviews;
-- (void)setBackgroundStyle:(NSInteger)arg1;
+- (void)setBackgroundStyle:(int)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setTheme:(id)arg1;
 - (void)setUseHeaderViewAppearance:(BOOL)arg1;

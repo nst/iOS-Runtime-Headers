@@ -14,7 +14,7 @@
 - (void)webView:(id)arg1 exceededApplicationCacheOriginQuotaForSecurityOrigin:(id)arg2;
 - (id)webView:(id)arg1 generateReplacementFile:(id)arg2;
 - (void)webView:(id)arg1 makeFirstResponder:(id)arg2;
-- (void)webView:(id)arg1 mouseDidMoveOverElement:(id)arg2 modifierFlags:(NSUInteger)arg3;
+- (void)webView:(id)arg1 mouseDidMoveOverElement:(id)arg2 modifierFlags:(unsigned int)arg3;
 - (void)webView:(id)arg1 printFrameView:(id)arg2;
 - (void)webView:(id)arg1 runJavaScriptAlertPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
 - (BOOL)webView:(id)arg1 runJavaScriptConfirmPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;

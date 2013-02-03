@@ -8,8 +8,8 @@
     MKUserLocationViewInternal *viewImpl;
 }
 
-@property MKUserLocationViewInternal *viewImpl;
 @property float restAccuracy;
+@property MKUserLocationViewInternal * viewImpl;
 
 + (id)bounceAnimation;
 + (id)defaultValueForKey:(id)arg1;

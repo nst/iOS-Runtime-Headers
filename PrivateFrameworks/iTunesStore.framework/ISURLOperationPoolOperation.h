@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSMutableArray;
+@class ISURLOperation, NSMutableArray;
 
 @interface ISURLOperationPoolOperation : ISOperation {
-    NSInteger _cancelCount;
+    int _cancelCount;
     BOOL _forwardImmediately;
     NSMutableArray *_operations;
 }
 
-@property(readonly) ISURLOperation *mainOperation;
+@property(readonly) ISURLOperation * mainOperation;
 
 - (void)_forwardResponseFromOperation:(id)arg1 toOperation:(id)arg2;
 - (void)addOperation:(id)arg1;

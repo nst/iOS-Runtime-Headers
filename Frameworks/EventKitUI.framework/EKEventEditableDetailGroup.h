@@ -5,6 +5,6 @@
 @interface EKEventEditableDetailGroup : EKEventDetailGroup {
 }
 
-- (id)itemAtIndex:(NSInteger)arg1;
+- (id)itemAtIndex:(int)arg1;
 
 @end

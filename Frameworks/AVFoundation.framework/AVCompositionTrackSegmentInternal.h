@@ -5,7 +5,7 @@
 @class NSURL;
 
 @interface AVCompositionTrackSegmentInternal : NSObject {
-    NSInteger editAssetTrackID;
+    int editAssetTrackID;
     NSURL *editAssetURL;
 }
 

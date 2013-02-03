@@ -8,8 +8,8 @@
 + (void)_initializeSafeCategory;
 
 - (BOOL)_accessibilityIgnoresMouseEvents;
-- (void)_adjustDoubleHeightLabelAlpha;
-- (void)_finishedSettingStyleWithOldHeight:(float)arg1 newHeight:(float)arg2 animation:(NSInteger)arg3;
+- (void)_adjustDoubleHeightTextVisibility;
+- (void)_finishedSettingStyleWithOldHeight:(float)arg1 newHeight:(float)arg2 animation:(int)arg3;
 - (void)_setDoubleHeightStatusString:(id)arg1;
 
 @end

@@ -6,31 +6,31 @@
 
 @interface GMMAdEventReportRequest : PBRequest {
     GMMDateTime *_event_time;
-    NSInteger _event_type;
+    int _event_type;
     BOOL _hasEvent_type;
     NSString *_unique_id;
 }
 
-@property(retain) GMMDateTime *event_time;
-@property(retain) NSString *unique_id;
-@property NSInteger event_type;
+@property(retain) GMMDateTime * event_time;
+@property int event_type;
 @property(readonly) BOOL hasEvent_time;
 @property(readonly) BOOL hasEvent_type;
 @property(readonly) BOOL hasUnique_id;
+@property(retain) NSString * unique_id;
 
 - (void)dealloc;
 - (id)description;
 - (id)event_time;
-- (NSInteger)event_type;
+- (int)event_type;
 - (BOOL)hasEvent_time;
 - (BOOL)hasEvent_type;
 - (BOOL)hasUnique_id;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (NSUInteger)requestTypeCode;
+- (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setEvent_time:(id)arg1;
-- (void)setEvent_type:(NSInteger)arg1;
+- (void)setEvent_type:(int)arg1;
 - (void)setUnique_id:(id)arg1;
 - (id)unique_id;
 - (void)writeTo:(id)arg1;

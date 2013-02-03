@@ -2,27 +2,27 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3Container, NSLock, ML3Predicate;
+@class NSString, ML3Container, NSLock, ML3Predicate;
 
 @interface ML3ContainerQuery : ML3Query {
     ML3Container *_container;
     ML3Predicate *_containerPredicate;
-    NSUInteger _limitCount;
+    unsigned int _limitCount;
     BOOL _limitCountLoaded;
     NSLock *_limitCountLock;
 }
 
-@property(readonly) ML3Container *container;
-@property(readonly) NSString *selectLimitingSQL;
-@property(readonly) NSUInteger limitCount;
+@property(readonly) ML3Container * container;
+@property(readonly) unsigned int limitCount;
+@property(readonly) NSString * selectLimitingSQL;
 
-- (void)bindToPersistentIDsSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout NSInteger*)arg2;
+- (void)bindToPersistentIDsSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
 - (id)container;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEntityClass:(Class)arg1 container:(id)arg2 predicate:(id)arg3 orderingProperties:(id)arg4;
-- (NSUInteger)limitCount;
+- (unsigned int)limitCount;
 - (BOOL)requiresSmartLimiting;
 - (id)selectLimitingSQL;
 - (id)selectPersistentIDsSQL;

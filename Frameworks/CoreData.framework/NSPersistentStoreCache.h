@@ -3,13 +3,13 @@
  */
 
 @interface NSPersistentStoreCache : NSObject {
-    NSUInteger _capacity;
+    unsigned int _capacity;
     id _externalData;
 }
 
 + (void)initialize;
 
-- (void)_growRegistrationCollectionTo:(NSUInteger)arg1;
+- (void)_growRegistrationCollectionTo:(unsigned int)arg1;
 - (void)dealloc;
 - (void)decrementRefCountForObjectID:(id)arg1;
 - (id)externalDataForObjectID:(id)arg1 timestamp:(double)arg2;
@@ -18,10 +18,10 @@
 - (void)forgetExternalDataForObjectID:(id)arg1;
 - (void)incrementRefCountForObjectID:(id)arg1;
 - (id)init;
-- (NSUInteger)optionsForObjectID:(id)arg1;
-- (NSInteger)refCountForObjectID:(id)arg1;
-- (void)registerExternalData:(id)arg1 forObjectID:(id)arg2 options:(NSUInteger)arg3;
-- (void)registerExternalData:(id)arg1 forSourceObjectID:(id)arg2 key:(id)arg3 options:(NSUInteger)arg4 andTimestamp:(double)arg5;
+- (unsigned int)optionsForObjectID:(id)arg1;
+- (int)refCountForObjectID:(id)arg1;
+- (void)registerExternalData:(id)arg1 forObjectID:(id)arg2 options:(unsigned int)arg3;
+- (void)registerExternalData:(id)arg1 forSourceObjectID:(id)arg2 key:(id)arg3 options:(unsigned int)arg4 andTimestamp:(double)arg5;
 - (BOOL)shouldPersistObjectForObjectID:(id)arg1;
 - (BOOL)shouldRefreshObjectForObjectID:(id)arg1;
 

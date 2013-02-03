@@ -9,7 +9,7 @@
     unsigned int _useBase64InHeaders : 1;
     unsigned int _canBeUsedForOutgoingMessages : 1;
     NSString *_charsetName;
-    NSUInteger _encoding;
+    unsigned int _encoding;
     NSString *_primaryLanguage;
 }
 

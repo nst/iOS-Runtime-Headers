@@ -12,10 +12,10 @@
     double _percentComplete;
 }
 
-@property(retain) NSString *identifier;
-@property(retain) NSDate *lastReportedDate;
 @property(getter=isCompleted) BOOL completed;
 @property(getter=isHidden,readonly) BOOL hidden;
+@property(retain) NSString * identifier;
+@property(retain) NSDate * lastReportedDate;
 @property double percentComplete;
 
 + (void)loadAchievementsForGame:(id)arg1 player:(id)arg2 withCompletionHandler:(id)arg3;

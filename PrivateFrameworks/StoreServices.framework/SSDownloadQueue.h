@@ -2,13 +2,18 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableSet, NSSet, NSMutableArray, NSLock;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class NSMutableSet, NSArray, NSSet, NSMutableArray, NSLock;
 
 @interface SSDownloadQueue : NSObject {
     NSSet *_downloadKinds;
     NSMutableArray *_downloads;
     NSMutableSet *_kindsUsingNetwork;
-    NSInteger _lastUpdatedIndex;
+    int _lastUpdatedIndex;
     NSLock *_lock;
     struct __CFSet { } *_observers;
     NSMutableArray *_placeholders;
@@ -16,10 +21,10 @@
     BOOL _registeringWithDaemon;
 }
 
-@property(readonly) NSSet *downloadKinds;
-@property(readonly) NSArray *downloads;
-@property(readonly) NSArray *placeholderDownloads;
-@property(readonly) NSArray *preorders;
+@property(readonly) NSSet * downloadKinds;
+@property(readonly) NSArray * downloads;
+@property(readonly) NSArray * placeholderDownloads;
+@property(readonly) NSArray * preorders;
 @property(getter=isUsingNetwork,readonly) BOOL usingNetwork;
 
 + (id)mediaDownloadKinds;
@@ -35,7 +40,7 @@
 - (void)_downloadsChanged:(id)arg1;
 - (void)_downloadsRemoved:(id)arg1;
 - (void)_filterPlaceholderDownloads;
-- (NSInteger)_indexOfDownloadWithIdentifier:(id)arg1;
+- (int)_indexOfDownloadWithIdentifier:(id)arg1;
 - (void)_messageObserversWithFunction:(int (*)())arg1 context:(void*)arg2;
 - (void)_networkUsageChanged:(id)arg1;
 - (void)_observeDaemon;
@@ -44,7 +49,7 @@
 - (void)_registerWithDaemon;
 - (void)_removeAllPlaceholders;
 - (void)_resetKindsUsingNetwork;
-- (void)_sendDownloadStatusChangedAtIndex:(NSInteger)arg1;
+- (void)_sendDownloadStatusChangedAtIndex:(int)arg1;
 - (void)_sendQueueChangedWithRemovals:(id)arg1;
 - (void)_sendQueueNetworkUsageChanged;
 - (void)_sendQueuePreOrdersChanged;
@@ -52,6 +57,7 @@
 - (BOOL)addDownload:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)addPlaceholderDownloads:(id)arg1;
+- (BOOL)canCancelDownload:(id)arg1;
 - (BOOL)cancelDownload:(id)arg1;
 - (void)dealloc;
 - (id)downloadForItemIdentifier:(unsigned long long)arg1;

@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSMutableArray, NSString, NSArray;
+@class <CoreDAVDiscoveryTaskGroupDelegate>, NSArray, NSString, NSMutableArray, <CoreDAVAccountInfoProvider>;
 
 @interface CoreDAVDiscoveryTaskGroup : CoreDAVTaskGroup <CoreDAVOptionsTaskDelegate, CoreDAVPropFindTaskDelegate, CoreDAVSVRLookupTaskDelegate> {
     BOOL _didReceiveAuthenticationError;
+    <CoreDAVAccountInfoProvider> *_discoveredAccountInfo;
     NSMutableArray *_discoveries;
     NSArray *_httpPorts;
     NSString *_httpServiceString;
@@ -15,8 +16,9 @@
     NSArray *_wellKnownPaths;
 }
 
-@property <CoreDAVDiscoveryTaskGroupDelegate> *delegate;
+@property <CoreDAVDiscoveryTaskGroupDelegate> * delegate;
 @property BOOL didReceiveAuthenticationError;
+@property(retain) <CoreDAVAccountInfoProvider> * discoveredAccountInfo;
 
 - (void)addToDiscoveryArray:(id*)arg1 discovery:(id)arg2;
 - (id)allDiscoveryPaths:(id)arg1;
@@ -27,14 +29,16 @@
 - (void)completeDiscovery:(id)arg1 gotPrincipalURL:(id)arg2 error:(id)arg3;
 - (void)dealloc;
 - (BOOL)didReceiveAuthenticationError;
+- (id)discoveredAccountInfo;
+- (void)getDiscoveryStatus:(id)arg1 priorFailed:(id*)arg2 subsequentFailed:(id*)arg3 priorIncomplete:(id*)arg4 subsequentIncomplete:(id*)arg5 priorSuccess:(id*)arg6 subsequentSuccess:(id*)arg7;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 httpPorts:(id)arg3 httpsPorts:(id)arg4 httpServiceString:(id)arg5 httpsServiceString:(id)arg6 wellKnownPaths:(id)arg7 requiredComplianceClass:(id)arg8;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
 - (void)optionsTask:(id)arg1 error:(id)arg2;
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)setDidReceiveAuthenticationError:(BOOL)arg1;
+- (void)setDiscoveredAccountInfo:(id)arg1;
 - (id)setupDiscoveries:(id)arg1 withSchemes:(id)arg2;
-- (void)sortDiscoveries:(id)arg1 priorFailed:(id*)arg2 subsequentFailed:(id*)arg3 priorIncomplete:(id*)arg4 subsequentIncomplete:(id*)arg5 priorUnstarted:(id*)arg6 subsequentUnstarted:(id*)arg7 priorSuccess:(id*)arg8 subsequentSuccess:(id*)arg9;
-- (void)srvLookupTask:(id)arg1 host:(id)arg2 port:(NSInteger)arg3 error:(id)arg4;
+- (void)srvLookupTask:(id)arg1 host:(id)arg2 port:(int)arg3 error:(id)arg4;
 - (void)startOptionsTask:(id)arg1;
 - (void)startPropfindTask:(id)arg1;
 - (void)startSRVLookup:(id)arg1 serviceString:(id)arg2;

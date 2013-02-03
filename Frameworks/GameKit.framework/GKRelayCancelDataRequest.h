@@ -8,7 +8,7 @@
     NSDictionary *_cancelRelayRequest;
 }
 
-@property(retain) NSDictionary *cancelRelayRequest;
+@property(retain) NSDictionary * cancelRelayRequest;
 
 - (id)cancelRelayRequest;
 - (void)dealloc;

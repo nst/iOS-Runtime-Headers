@@ -3,23 +3,23 @@
  */
 
 @interface NSRLEArray : NSObject <NSCopying, NSMutableCopying> {
-    struct _NSRefCountedRunArray { void *x1; NSUInteger x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; NSUInteger x6; NSUInteger x7; struct _NSRunArrayItem { 
-            NSUInteger length; 
+    struct _NSRefCountedRunArray { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; struct _NSRunArrayItem { 
+            unsigned int length; 
             id obj; 
         } x8[0]; } *theList;
 }
 
-- (void)_makeNewListFrom:(struct _NSRefCountedRunArray { void *x1; NSUInteger x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; NSUInteger x6; NSUInteger x7; struct _NSRunArrayItem { NSUInteger x_8_1_1; id x_8_1_2; } x8[0]; }*)arg1;
+- (void)_makeNewListFrom:(struct _NSRefCountedRunArray { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; struct _NSRunArrayItem { unsigned int x_8_1_1; id x_8_1_2; } x8[0]; }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (void)finalize;
 - (id)init;
-- (id)initWithRefCountedRunArray:(struct _NSRefCountedRunArray { void *x1; NSUInteger x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; NSUInteger x6; NSUInteger x7; struct _NSRunArrayItem { NSUInteger x_8_1_1; id x_8_1_2; } x8[0]; }*)arg1;
+- (id)initWithRefCountedRunArray:(struct _NSRefCountedRunArray { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; struct _NSRunArrayItem { unsigned int x_8_1_1; id x_8_1_2; } x8[0]; }*)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)objectAtIndex:(NSUInteger)arg1 effectiveRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg2 runIndex:(NSUInteger*)arg3;
-- (id)objectAtIndex:(NSUInteger)arg1 effectiveRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg2;
-- (id)objectAtRunIndex:(NSUInteger)arg1 length:(NSUInteger*)arg2;
+- (id)objectAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 runIndex:(unsigned int*)arg3;
+- (id)objectAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
+- (id)objectAtRunIndex:(unsigned int)arg1 length:(unsigned int*)arg2;
 
 @end

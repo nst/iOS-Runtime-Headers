@@ -27,19 +27,19 @@
     NSString *_cachedMimeType;
     float _constrainedWidth;
     NSString *_encodingGuess;
-    NSUInteger _numBytes;
+    unsigned int _numBytes;
     MimeTextAttachment *_original;
     } _pluginFrame;
 }
 
-@property CGRect pluginFrame;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } pluginFrame;
 
 - (void)_generateInlineData;
 - (void)_setDataDerivedImage:(id)arg1;
 - (void)_setImageDimensions:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setImageDimensionsFromData:(id)arg1;
 - (BOOL)allowDownload;
-- (NSUInteger)approximateSize;
+- (unsigned int)approximateSize;
 - (float)constrainedWidth;
 - (void)dealloc;
 - (id)fileWrapperForcingDownload:(BOOL)arg1;

@@ -20,8 +20,8 @@
 
 - (void)addChild:(id)arg1;
 - (void)addChildren:(id)arg1;
-- (id)childAtIndex:(NSUInteger)arg1;
-- (NSUInteger)childCount;
+- (id)childAtIndex:(unsigned int)arg1;
+- (unsigned int)childCount;
 - (id)children;
 - (void)dealloc;
 - (id)groupProperties;

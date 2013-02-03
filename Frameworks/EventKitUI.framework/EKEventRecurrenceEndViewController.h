@@ -6,21 +6,21 @@
 
 @interface EKEventRecurrenceEndViewController : EKEventEditItemViewController <UITableViewDataSource, UITableViewDelegate, EKCellShortener> {
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
         BOOL minute; 
         double second; 
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
         BOOL minute; 
         double second; 
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
@@ -32,10 +32,10 @@
     } _minimumEndDate;
     } _preNeverEndDate;
     } _repeatEndGr;
-    NSInteger _shorteningStatus;
+    int _shorteningStatus;
 }
 
-@property ? repeatEndDate;
+@property struct { int year; BOOL month; BOOL day; BOOL hour; BOOL minute; double second; } repeatEndDate;
 
 - (void)_localeChanged;
 - (BOOL)_showsNeverButton;
@@ -46,19 +46,19 @@
 - (BOOL)fitsPopoverWhenKeyboardActive;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)loadView;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
-- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })repeatEndDate;
-- (void)setMinimumEndDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
-- (void)setRepeatEndDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })repeatEndDate;
+- (void)setMinimumEndDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (void)setRepeatEndDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
 - (void)shortenCell:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (BOOL)tableView:(id)arg1 wantsHeaderForSection:(NSInteger)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (BOOL)tableView:(id)arg1 wantsHeaderForSection:(int)arg2;
 - (void)updatePicker;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

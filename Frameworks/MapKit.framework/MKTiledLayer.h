@@ -3,22 +3,22 @@
  */
 
 @interface MKTiledLayer : CATiledLayer {
-    struct $_846 { 
+    struct $_837 { 
         unsigned int displayBaseTiles : 1; 
         unsigned int delegateDisplayBaseTiles : 1; 
         unsigned int delegateRenderLayer : 1; 
     } _flags;
 }
 
-@property(readonly) CADoubleRect visibleDoubleRect;
+@property(readonly) struct CADoubleRect { struct CADoublePoint { double x; double y; } origin; struct CADoubleSize { double width; double height; } size; } visibleDoubleRect;
 
 + (struct CGSize { float x1; float x2; })contentSize;
 + (id)defaultValueForKey:(id)arg1;
 + (double)fadeDuration;
-+ (NSUInteger)levelsOfDetail;
-+ (NSInteger)maxZoomLevel;
-+ (NSInteger)minZoomLevel;
-+ (NSUInteger)prefetchedTiles;
++ (unsigned int)levelsOfDetail;
++ (int)maxZoomLevel;
++ (int)minZoomLevel;
++ (unsigned int)prefetchedTiles;
 
 - (void)display;
 - (void)displayBaseTiles;

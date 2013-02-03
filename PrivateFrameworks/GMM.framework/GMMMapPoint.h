@@ -3,12 +3,12 @@
  */
 
 @interface GMMMapPoint : PBCodable {
-    NSInteger _latitude;
-    NSInteger _longitude;
+    int _latitude;
+    int _longitude;
 }
 
-@property NSInteger latitude;
-@property NSInteger longitude;
+@property int latitude;
+@property int longitude;
 
 + (id)mapPointWithCoordinate:(struct { double x1; double x2; })arg1;
 
@@ -17,16 +17,16 @@
 - (id)description;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1;
-- (id)initWithOldMapPoint:(struct MapPoint { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; }*)arg1;
+- (id)initWithOldMapPoint:(struct MapPoint { int x1; int x2; int x3; int x4; }*)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (NSInteger)latitude;
-- (NSInteger)longitude;
+- (int)latitude;
+- (int)longitude;
 - (BOOL)readFrom:(id)arg1;
-- (void)setLatitude:(NSInteger)arg1;
-- (void)setLongitude:(NSInteger)arg1;
+- (void)setLatitude:(int)arg1;
+- (void)setLongitude:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -17,7 +17,7 @@
 + (void)setDefaultTimeZone:(id)arg1;
 + (id)systemTimeZone;
 + (id)timeZoneDataVersion;
-+ (id)timeZoneForSecondsFromGMT:(NSInteger)arg1;
++ (id)timeZoneForSecondsFromGMT:(int)arg1;
 + (id)timeZoneWithAbbreviation:(id)arg1;
 + (id)timeZoneWithName:(id)arg1 data:(id)arg2;
 + (id)timeZoneWithName:(id)arg1;
@@ -34,7 +34,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 data:(id)arg2;
@@ -44,11 +44,11 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToTimeZone:(id)arg1;
 - (BOOL)isNSTimeZone__;
-- (id)localizedName:(NSInteger)arg1 locale:(id)arg2;
+- (id)localizedName:(int)arg1 locale:(id)arg2;
 - (id)name;
 - (id)nextDaylightSavingTimeTransition;
 - (id)nextDaylightSavingTimeTransitionAfterDate:(id)arg1;
-- (NSInteger)secondsFromGMT;
-- (NSInteger)secondsFromGMTForDate:(id)arg1;
+- (int)secondsFromGMT;
+- (int)secondsFromGMTForDate:(id)arg1;
 
 @end

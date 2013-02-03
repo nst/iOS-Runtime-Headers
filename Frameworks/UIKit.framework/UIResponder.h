@@ -2,20 +2,22 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class UIResponder, NSUndoManager, UIView;
+
 @interface UIResponder : NSObject {
 }
 
-@property(readonly) UIResponder *_editingDelegate;
-@property(readonly) UIResponder *_responderForEditing;
-@property(retain,readonly) UIView *inputAccessoryView;
-@property(retain,readonly) UIView *inputView;
-@property(readonly) NSUndoManager *undoManager;
+@property(readonly) UIResponder * _editingDelegate;
+@property(readonly) UIResponder * _responderForEditing;
+@property(retain,readonly) UIView * inputAccessoryView;
+@property(retain,readonly) UIView * inputView;
+@property(readonly) NSUndoManager * undoManager;
 
 - (BOOL)_accessibilityHasTextOperations;
-- (NSInteger)_accessibilityLineEndPosition;
-- (NSInteger)_accessibilityLinePosition:(BOOL)arg1;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilityLineRangeForPosition:(NSUInteger)arg1;
-- (NSInteger)_accessibilityLineStartPosition;
+- (int)_accessibilityLineEndPosition;
+- (int)_accessibilityLinePosition:(BOOL)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilityLineRangeForPosition:(unsigned int)arg1;
+- (int)_accessibilityLineStartPosition;
 - (id)_accessibilityTextOperations;
 - (id)_accessibilityTextViewTextOperationResponder;
 - (void)_becomeFirstResponder;
@@ -73,9 +75,9 @@
 - (id)inputAccessoryView;
 - (id)inputView;
 - (BOOL)isFirstResponder;
-- (void)motionBegan:(NSInteger)arg1 withEvent:(id)arg2;
-- (void)motionCancelled:(NSInteger)arg1 withEvent:(id)arg2;
-- (void)motionEnded:(NSInteger)arg1 withEvent:(id)arg2;
+- (void)motionBegan:(int)arg1 withEvent:(id)arg2;
+- (void)motionCancelled:(int)arg1 withEvent:(id)arg2;
+- (void)motionEnded:(int)arg1 withEvent:(id)arg2;
 - (void)mouseDown:(struct __GSEvent { }*)arg1;
 - (void)mouseDragged:(struct __GSEvent { }*)arg1;
 - (void)mouseEntered:(struct __GSEvent { }*)arg1;

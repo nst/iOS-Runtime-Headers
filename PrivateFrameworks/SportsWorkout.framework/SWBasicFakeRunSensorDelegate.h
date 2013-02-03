@@ -6,14 +6,14 @@
 
 @interface SWBasicFakeRunSensorDelegate : NSObject <SWFakeRunSensorDelegate> {
     struct SDARunState { 
-        NSUInteger sdaContactTime256X; 
-        NSUInteger sdaContactTimeDelta256X; 
-        NSUInteger sdaRunStepCnt; 
-        NSUInteger sdaRunStepCntDelta; 
-        NSUInteger sdaRunTstcCnt; 
-        NSUInteger sdaRunTstcCntDelta; 
-        NSUInteger sdaRunContactTimeMin256X; 
-        NSUInteger sdaRunContactTimeMax256X; 
+        unsigned int sdaContactTime256X; 
+        unsigned int sdaContactTimeDelta256X; 
+        unsigned int sdaRunStepCnt; 
+        unsigned int sdaRunStepCntDelta; 
+        unsigned int sdaRunTstcCnt; 
+        unsigned int sdaRunTstcCntDelta; 
+        unsigned int sdaRunContactTimeMin256X; 
+        unsigned int sdaRunContactTimeMax256X; 
     BOOL _firstPacketDelivered;
     NSTimer *_packetTimer;
     unsigned char _payload[28];
@@ -29,6 +29,6 @@
 - (void)cancelSearchingForFakeSensor:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (NSUInteger)remainingBatteryLifetimeInHoursForFakeSensor:(id)arg1;
+- (unsigned int)remainingBatteryLifetimeInHoursForFakeSensor:(id)arg1;
 
 @end

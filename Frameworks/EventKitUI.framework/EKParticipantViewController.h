@@ -10,8 +10,8 @@
 
 - (void)dealloc;
 - (id)initWithParticipant:(id)arg1;
-- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)setParticipant:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

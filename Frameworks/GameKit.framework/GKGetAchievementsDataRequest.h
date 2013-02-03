@@ -10,14 +10,14 @@
     GKPlayer *_player;
 }
 
-@property(readonly) NSArray *achievements;
-@property(retain) GKGame *game;
-@property(retain) GKPlayer *player;
+@property(readonly) NSArray * achievements;
+@property(retain) GKGame * game;
+@property(retain) GKPlayer * player;
 
 - (id)achievements;
 - (id)cacheKey;
-- (NSInteger)cachePriority;
-- (NSInteger)cacheType;
+- (int)cachePriority;
+- (int)cacheType;
 - (void)dealloc;
 - (id)game;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;

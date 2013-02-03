@@ -8,7 +8,7 @@
     NSArray *_passThroughViews;
 }
 
-@property(retain) NSArray *passThroughViews;
+@property(retain) NSArray * passThroughViews;
 
 + (void)_initializeSafeCategory;
 

@@ -6,14 +6,17 @@
 
 @interface UIWebSelectPicker : UIPickerView <UIWebSelectControl, UIPickerViewDataSource, UIPickerViewDelegate> {
     NSArray *_cachedItems;
+    float _fontSize;
+    float _layoutWidth;
+    float _maximumTextWidth;
     DOMHTMLSelectElement *_selectionNode;
-    NSUInteger _singleSelectionIndex;
+    unsigned int _singleSelectionIndex;
     <UIWebSelectedItemPrivate> *_singleSelectionItem;
 }
 
-@property(retain) NSArray *_cachedItems;
-@property(retain) DOMHTMLSelectElement *_selectionNode;
-@property(retain) <UIWebSelectedItemPrivate> *_singleSelectionItem;
+@property(retain) NSArray * _cachedItems;
+@property(retain) DOMHTMLSelectElement * _selectionNode;
+@property(retain) <UIWebSelectedItemPrivate> * _singleSelectionItem;
 
 + (void)_initializeSafeCategory;
 
@@ -24,11 +27,12 @@
 - (void)controlBeginEditing;
 - (id)controlView;
 - (void)dealloc;
-- (id)initWithDOMHTMLSelectElement:(id)arg1 cachedItems:(id)arg2 singleSelectionItem:(id)arg3 singleSelectionIndex:(NSUInteger)arg4 multipleSelection:(BOOL)arg5;
-- (NSInteger)numberOfComponentsInPickerView:(id)arg1;
-- (NSInteger)pickerView:(id)arg1 numberOfRowsInComponent:(NSInteger)arg2;
-- (void)pickerView:(id)arg1 row:(NSInteger)arg2 column:(NSInteger)arg3 checked:(BOOL)arg4;
-- (id)pickerView:(id)arg1 viewForRow:(NSInteger)arg2 forComponent:(NSInteger)arg3 reusingView:(id)arg4;
+- (id)initWithDOMHTMLSelectElement:(id)arg1 cachedItems:(id)arg2 singleSelectionItem:(id)arg3 singleSelectionIndex:(unsigned int)arg4 multipleSelection:(BOOL)arg5;
+- (void)layoutSubviews;
+- (int)numberOfComponentsInPickerView:(id)arg1;
+- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
+- (void)pickerView:(id)arg1 row:(int)arg2 column:(int)arg3 checked:(BOOL)arg4;
+- (id)pickerView:(id)arg1 viewForRow:(int)arg2 forComponent:(int)arg3 reusingView:(id)arg4;
 - (void)pickerViewLoaded:(id)arg1;
 - (void)set_cachedItems:(id)arg1;
 - (void)set_selectionNode:(id)arg1;

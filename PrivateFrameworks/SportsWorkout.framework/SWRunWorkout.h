@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class SWRunSensor, SWPaceModel;
+@class SWRunSensor, SWPaceModel, NSData;
 
 @interface SWRunWorkout : SWWorkout {
     BOOL _hasStarted;
@@ -12,14 +12,14 @@
     float _weightInLbs;
 }
 
-@property(copy) NSData *paceModelParameters;
-@property(readonly) SWRunSensor *sensor;
 @property(readonly) BOOL canBeUsedForRunCalibration;
 @property(readonly) BOOL canBeUsedForWalkCalibration;
 @property BOOL isCalibration;
 @property(readonly) BOOL isWalk;
 @property(readonly) float maximumCalibrationDistanceMiles;
 @property(readonly) float minimumCalibrationDistanceMiles;
+@property(copy) NSData * paceModelParameters;
+@property(readonly) SWRunSensor * sensor;
 @property float weightInLbs;
 
 + (id)workoutWithSensor:(id)arg1;

@@ -30,7 +30,7 @@
 - (void)setParagraphEndCharacterProperties:(id)arg1;
 - (void)setParentTextListStyle:(id)arg1;
 - (void)setProperties:(id)arg1;
-- (id)textRunAtIndex:(NSUInteger)arg1;
-- (NSUInteger)textRunCount;
+- (id)textRunAtIndex:(unsigned int)arg1;
+- (unsigned int)textRunCount;
 
 @end

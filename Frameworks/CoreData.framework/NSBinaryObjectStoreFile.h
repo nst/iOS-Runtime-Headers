@@ -5,7 +5,7 @@
 @class NSMutableDictionary, NSDictionary;
 
 @interface NSBinaryObjectStoreFile : NSObject {
-    NSInteger _databaseVersion;
+    int _databaseVersion;
     NSDictionary *_fullMetadata;
     NSMutableDictionary *_mapData;
     unsigned long long _primaryKeyGeneration;
@@ -13,7 +13,7 @@
 
 - (BOOL)_writeMetadataData:(id)arg1 andMapDataData:(id)arg2 toFile:(id)arg3 error:(id*)arg4;
 - (void)clearCurrentValues;
-- (NSInteger)databaseVersion;
+- (int)databaseVersion;
 - (void)dealloc;
 - (id)fullMetadata;
 - (id)mapData;
@@ -21,7 +21,7 @@
 - (BOOL)readBinaryStoreFromData:(id)arg1 originalPath:(id)arg2 error:(id*)arg3;
 - (BOOL)readFromFile:(id)arg1 error:(id*)arg2;
 - (BOOL)readMetadataFromFile:(id)arg1 error:(id*)arg2;
-- (void)setDatabaseVersion:(NSInteger)arg1;
+- (void)setDatabaseVersion:(int)arg1;
 - (void)setFullMetadata:(id)arg1;
 - (void)setMapData:(id)arg1;
 - (void)setPrimaryKeyGeneration:(unsigned long long)arg1;

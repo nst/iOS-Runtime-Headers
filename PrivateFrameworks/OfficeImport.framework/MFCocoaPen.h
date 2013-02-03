@@ -6,12 +6,12 @@
     float m_PixelSize;
 }
 
-+ (id)penWithStyle:(NSInteger)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4 LPToDPTransform:(id)arg5;
++ (id)penWithStyle:(int)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4 LPToDPTransform:(id)arg5;
 
 - (void)applyDashedLinesToPath:(id)arg1;
 - (void)applyLineCapStyleToPath:(id)arg1;
 - (void)applyLineJoinStyleToPath:(id)arg1 :(id)arg2;
-- (id)initWithStyle:(NSInteger)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4;
+- (id)initWithStyle:(int)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4;
 - (void)strokePath:(id)arg1 :(id)arg2;
 
 @end

@@ -4,16 +4,16 @@
 
 @interface SUCheckLocationsEnabledOperation : ISOperation {
     BOOL _locationsEnabled;
-    NSInteger _updateDistance;
+    int _updateDistance;
 }
 
 @property BOOL locationsEnabled;
-@property NSInteger updateDistance;
+@property int updateDistance;
 
 - (BOOL)locationsEnabled;
 - (void)run;
 - (void)setLocationsEnabled:(BOOL)arg1;
-- (void)setUpdateDistance:(NSInteger)arg1;
-- (NSInteger)updateDistance;
+- (void)setUpdateDistance:(int)arg1;
+- (int)updateDistance;
 
 @end

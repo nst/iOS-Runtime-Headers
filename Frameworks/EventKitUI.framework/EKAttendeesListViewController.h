@@ -13,7 +13,7 @@
 - (void)dealloc;
 - (id)initWithEvent:(id)arg1;
 - (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)title;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;

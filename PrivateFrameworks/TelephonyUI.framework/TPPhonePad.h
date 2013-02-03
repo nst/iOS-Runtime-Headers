@@ -7,8 +7,8 @@
     unsigned int _soundsActivated : 1;
     float _bottomHeight;
     id _delegate;
-    NSInteger _downKey;
-    NSUInteger _incompleteSounds;
+    int _downKey;
+    unsigned int _incompleteSounds;
     struct __CFSet { } *_inflightSounds;
     struct __CFDictionary { } *_keyToButtonMap;
     float _leftWidth;
@@ -16,8 +16,11 @@
     float _midWidth;
     BOOL _playsSounds;
     float _rightWidth;
+    BOOL _supportsHardPause;
     float _topHeight;
 }
+
+@property BOOL supportsHardPause;
 
 + (BOOL)__original_resolveClassMethod:(SEL)arg1;
 + (void)_delayedDeactivate;
@@ -30,18 +33,18 @@
 - (void)_activateSounds:(BOOL)arg1;
 - (void)_appResumed;
 - (void)_appSuspended;
-- (id)_buttonForKeyAtIndex:(NSInteger)arg1;
+- (id)_buttonForKeyAtIndex:(int)arg1;
 - (void)_handleKey:(id)arg1 forUIEvent:(id)arg2;
 - (void)_handleKeyPressAndHold:(id)arg1;
-- (NSInteger)_keyForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (int)_keyForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_keypadImage;
 - (struct CGPoint { float x1; float x2; })_keypadOrigin;
 - (void)_notifySoundCompletionIfNecessary:(unsigned long)arg1;
-- (void)_playSoundForKey:(NSInteger)arg1;
+- (void)_playSoundForKey:(int)arg1;
 - (id)_pressedImage;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForKey:(NSInteger)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForKey:(int)arg1;
 - (void)_stopAllSoundsForcingCallbacks:(BOOL)arg1;
-- (void)_stopSoundForKey:(NSInteger)arg1;
+- (void)_stopSoundForKey:(int)arg1;
 - (float)_yFudge;
 - (id)accessibilityContainerElements;
 - (BOOL)cancelTouchTracking;
@@ -56,10 +59,12 @@
 - (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)removeFromSuperview;
 - (id)scriptingInfoWithChildren;
-- (void)setButton:(id)arg1 forKeyAtIndex:(NSInteger)arg2;
+- (void)setButton:(id)arg1 forKeyAtIndex:(int)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setNeedsDisplayForKey:(NSInteger)arg1;
+- (void)setNeedsDisplayForKey:(int)arg1;
 - (void)setPlaysSounds:(BOOL)arg1;
+- (void)setSupportsHardPause:(BOOL)arg1;
+- (BOOL)supportsHardPause;
 
 @end

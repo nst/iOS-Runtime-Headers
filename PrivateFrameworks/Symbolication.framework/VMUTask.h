@@ -12,7 +12,7 @@
 }
 
 + (id)findDyldHeaderInMemory:(id)arg1 address:(unsigned long long)arg2;
-+ (BOOL)pidIsTranslated:(NSInteger)arg1;
++ (BOOL)pidIsTranslated:(int)arg1;
 + (id)taskWithMachTaskContainer:(id)arg1;
 
 - (void)dealloc;
@@ -20,7 +20,7 @@
 - (id)initWithMachTaskContainer:(id)arg1;
 - (BOOL)isTranslated;
 - (id)memory;
-- (NSInteger)pid;
-- (NSUInteger)task;
+- (int)pid;
+- (unsigned int)task;
 
 @end

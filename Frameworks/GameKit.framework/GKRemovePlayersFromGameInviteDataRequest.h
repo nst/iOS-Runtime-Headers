@@ -8,7 +8,7 @@
     NSArray *_players;
 }
 
-@property(retain) NSArray *players;
+@property(retain) NSArray * players;
 
 - (void)dealloc;
 - (id)key;

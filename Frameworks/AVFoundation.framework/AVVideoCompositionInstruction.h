@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVVideoCompositionInstructionInternal;
+@class NSArray, AVVideoCompositionInstructionInternal;
 
 @interface AVVideoCompositionInstruction : NSObject <NSCoding, NSCopying, NSMutableCopying> {
     AVVideoCompositionInstructionInternal *_instruction;
 }
 
-@property(retain) CGColor *backgroundColor;
-@property(copy,readonly) NSArray *layerInstructions;
+@property(retain) struct CGColor { }* backgroundColor;
 @property(readonly) BOOL enablePostProcessing;
-@property(readonly) ? timeRange;
+@property(copy,readonly) NSArray * layerInstructions;
+@property(readonly) struct { struct { long long value; int timescale; unsigned int flags; long long epoch; } start; struct { long long value; int timescale; unsigned int flags; long long epoch; } duration; } timeRange;
 
 + (void)initialize;
 
@@ -31,7 +31,7 @@
 - (void)setBackgroundColor:(struct CGColor { }*)arg1;
 - (void)setEnablePostProcessing:(BOOL)arg1;
 - (void)setLayerInstructions:(id)arg1;
-- (void)setTimeRange:(struct { struct { long long x_1_1_1; NSInteger x_1_1_2; NSUInteger x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; NSInteger x_2_1_2; NSUInteger x_2_1_3; long long x_2_1_4; } x2; })arg1;
-- (struct { struct { long long x_1_1_1; NSInteger x_1_1_2; NSUInteger x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; NSInteger x_2_1_2; NSUInteger x_2_1_3; long long x_2_1_4; } x2; })timeRange;
+- (void)setTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
 
 @end

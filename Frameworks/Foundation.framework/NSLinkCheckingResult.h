@@ -6,21 +6,21 @@
 
 @interface NSLinkCheckingResult : NSTextCheckingResult {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     } _range;
     NSURL *_url;
 }
 
 - (id)URL;
-- (BOOL)_adjustRangesWithOffset:(NSInteger)arg1;
+- (BOOL)_adjustRangesWithOffset:(int)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 URL:(id)arg2;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })range;
-- (id)resultByAdjustingRangesWithOffset:(NSInteger)arg1;
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 URL:(id)arg2;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (id)resultByAdjustingRangesWithOffset:(int)arg1;
 - (unsigned long long)resultType;
 
 @end

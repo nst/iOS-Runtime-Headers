@@ -13,16 +13,16 @@
 
 - (void)addOption:(id)arg1 argument:(id)arg2 target:(id)arg3 action:(SEL)arg4 argumentDescription:(id)arg5 required:(BOOL)arg6;
 - (void)addOptions;
-- (NSInteger)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)formattedHelpFooter;
 - (id)formattedHelpHeader;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithName:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)optionArray;
-- (NSInteger)run;
+- (int)run;
 - (void)showHelp;
 - (void)stop;
 - (id)subcommandName;

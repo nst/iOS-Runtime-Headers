@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScalingFlipView, SUTouchCaptureView, NSMutableArray, <SUOverlayBackgroundDelegate>;
+@class SUScalingFlipView, NSArray, SUTouchCaptureView, SUOverlayViewController, NSMutableArray, <SUOverlayBackgroundDelegate>;
 
 @interface SUOverlayBackgroundViewController : SUViewController <UIGestureRecognizerDelegate> {
     struct CGRect { 
@@ -21,13 +21,13 @@
     SUTouchCaptureView *_captureView;
     <SUOverlayBackgroundDelegate> *_delegate;
     } _keyboardFrame;
-    NSInteger _selectedViewControllerIndex;
+    int _selectedViewControllerIndex;
     NSMutableArray *_viewControllers;
 }
 
-@property <SUOverlayBackgroundDelegate> *delegate;
-@property(readonly) SUOverlayViewController *selectedViewController;
-@property(readonly) NSArray *viewControllers;
+@property <SUOverlayBackgroundDelegate> * delegate;
+@property(readonly) SUOverlayViewController * selectedViewController;
+@property(readonly) NSArray * viewControllers;
 
 - (void)_addViewController:(id)arg1;
 - (void)_backgroundAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
@@ -58,7 +58,7 @@
 - (float)_viewControllerKeyboardOffset;
 - (id)copyArchivableContext;
 - (id)copyArchivableJetsamContext;
-- (id)copyChildViewControllersForReason:(NSInteger)arg1;
+- (id)copyChildViewControllersForReason:(int)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)dismissAnimated:(BOOL)arg1;
@@ -81,6 +81,6 @@
 - (id)viewControllerForScriptWindowContext:(id)arg1;
 - (id)viewControllers;
 - (void)viewDidAppear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

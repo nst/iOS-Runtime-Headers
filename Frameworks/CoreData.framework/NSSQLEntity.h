@@ -6,8 +6,8 @@
 
 @interface NSSQLEntity : NSStoreMapping {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     struct __sqlentityFlags { 
         unsigned int _hasAttributesWithExternalDataReferences : 1; 
         unsigned int _reserved : 31; 
@@ -16,7 +16,7 @@
     NSSQLStatement *_deletionStatementCache;
     NSMutableArray *_ekColumns;
     NSEntityDescription *_entityDescription;
-    NSUInteger _entityID;
+    unsigned int _entityID;
     NSSQLEntityKey *_entityKey;
     NSSQLStatement *_faultingStatementCache;
     void *_fetch_entity_plan;
@@ -27,7 +27,7 @@
     NSSQLModel *_model;
     void *_odiousHashHackStorage;
     NSSQLOptLockKey *_optLockKey;
-    NSUInteger _pkCount;
+    unsigned int _pkCount;
     NSSQLPrimaryKey *_primaryKey;
     NSMutableDictionary *_properties;
     NSArray *_propertiesAllToManysCache;
@@ -37,7 +37,7 @@
     NSSQLEntity *_rootEntity;
     } _sqlentityFlags;
     NSMutableArray *_subentities;
-    NSUInteger _subentityMaxID;
+    unsigned int _subentityMaxID;
     NSSQLEntity *_superentity;
     NSString *_tableName;
     NSMutableDictionary *_toManyRelationshipStatementCache;
@@ -49,15 +49,15 @@
 - (void)_addSubentity:(id)arg1;
 - (id)_addVirtualToOneForToMany:(id)arg1 withInheritedProperty:(id)arg2;
 - (void)_doPostModelGenerationCleanup;
-- (NSUInteger)_generateIDWithSuperEntity:(id)arg1 nextID:(NSUInteger)arg2;
+- (unsigned int)_generateIDWithSuperEntity:(id)arg1 nextID:(unsigned int)arg2;
 - (void)_generateInverseRelationshipsAndMore;
 - (void)_generateProperties;
 - (void*)_odiousHashHack;
-- (NSUInteger)_pkCount;
+- (unsigned int)_pkCount;
 - (id)_propertySearchMapping;
 - (void)_resetPKCount;
 - (void)_setMaxPK:(long long)arg1;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_toOneRange;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_toOneRange;
 - (void)addInsertedObject:(id)arg1 toArray:(id)arg2;
 - (BOOL)addPropertiesForReadOnlyFetch:(id)arg1 keys:(id)arg2 context:(id)arg3;
 - (id)attributeColumns;
@@ -75,11 +75,11 @@
 - (id)deletionStatement;
 - (id)description;
 - (id)entityDescription;
-- (NSUInteger)entityID;
+- (unsigned int)entityID;
 - (id)externalName;
 - (id)faultingStatement;
 - (id)faultingStatementForRelationship:(id)arg1;
-- (NSUInteger)fetchIndexForKey:(id)arg1;
+- (unsigned int)fetchIndexForKey:(id)arg1;
 - (void)finalize;
 - (id)foreignEntityKeyColumns;
 - (id)foreignKeyColumns;
@@ -107,7 +107,7 @@
 - (void)setSuperentity:(id)arg1;
 - (id)subentities;
 - (id)subentityKey;
-- (NSUInteger)subentityMaxID;
+- (unsigned int)subentityMaxID;
 - (id)superentity;
 - (id)tableName;
 - (id)toManyRelationships;

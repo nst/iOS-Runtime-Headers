@@ -10,10 +10,10 @@
     UIImage *thumb;
 }
 
-@property(retain) UIImage *maxTrack;
-@property(retain) UIImage *minTrack;
-@property(retain) UIImage *thumb;
 @property(readonly) BOOL isEmpty;
+@property(retain) UIImage * maxTrack;
+@property(retain) UIImage * minTrack;
+@property(retain) UIImage * thumb;
 
 - (void)dealloc;
 - (BOOL)isEmpty;

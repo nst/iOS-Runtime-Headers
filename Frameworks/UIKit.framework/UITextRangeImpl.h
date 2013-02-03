@@ -8,7 +8,7 @@
     DOMRange *_domRange;
 }
 
-@property(retain) DOMRange *domRange;
+@property(retain) DOMRange * domRange;
 
 + (BOOL)__original_resolveClassMethod:(SEL)arg1;
 + (BOOL)resolveClassMethod:(SEL)arg1;

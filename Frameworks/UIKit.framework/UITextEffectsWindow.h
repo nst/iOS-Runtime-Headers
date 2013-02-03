@@ -3,7 +3,7 @@
  */
 
 @interface UITextEffectsWindow : UIAutoRotatingWindow {
-    NSUInteger _activeEffectsCount;
+    unsigned int _activeEffectsCount;
     BOOL _inDealloc;
 }
 
@@ -24,6 +24,6 @@
 - (void)orderFront:(id)arg1;
 - (void)sendSubviewToBack:(id)arg1;
 - (void)sortSubviews;
-- (void)updateForOrientation:(NSInteger)arg1;
+- (void)updateForOrientation:(int)arg1;
 
 @end

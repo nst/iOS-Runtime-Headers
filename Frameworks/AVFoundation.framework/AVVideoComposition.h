@@ -2,19 +2,19 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVVideoCompositionInternal;
+@class AVVideoCompositionCoreAnimationTool, AVVideoCompositionInternal, NSArray;
 
 @interface AVVideoComposition : NSObject <NSCopying, NSMutableCopying> {
     AVVideoCompositionInternal *_videoComposition;
 }
 
-@property(retain,readonly) AVVideoCompositionCoreAnimationTool *animationTool;
-@property(copy,readonly) NSArray *instructions;
-@property(readonly) ? frameDuration;
+@property(retain,readonly) AVVideoCompositionCoreAnimationTool * animationTool;
+@property(readonly) struct { long long value; int timescale; unsigned int flags; long long epoch; } frameDuration;
+@property(copy,readonly) NSArray * instructions;
 @property(readonly) float renderScale;
-@property(readonly) CGSize renderSize;
+@property(readonly) struct CGSize { float width; float height; } renderSize;
 
-- (NSInteger)_auxiliaryTrackID;
+- (int)_auxiliaryTrackID;
 - (id)_auxiliaryTrackLayer;
 - (BOOL)_hasLayerAsAuxiliaryTrack;
 - (BOOL)_hasPostProcessingLayers;
@@ -27,7 +27,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)finalize;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })frameDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })frameDuration;
 - (id)init;
 - (id)instructions;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
@@ -35,7 +35,7 @@
 - (struct CGSize { float x1; float x2; })renderSize;
 - (void)setAnimationTool:(id)arg1;
 - (void)setCompositor:(id)arg1;
-- (void)setFrameDuration:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)setFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setInstructions:(id)arg1;
 - (void)setRenderScale:(float)arg1;
 - (void)setRenderSize:(struct CGSize { float x1; float x2; })arg1;

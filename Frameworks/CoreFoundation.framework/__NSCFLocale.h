@@ -10,12 +10,12 @@
 - (id)_prefs;
 - (id)displayNameForKey:(id)arg1 value:(id)arg2;
 - (void)finalize;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithLocaleIdentifier:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)objectForKey:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

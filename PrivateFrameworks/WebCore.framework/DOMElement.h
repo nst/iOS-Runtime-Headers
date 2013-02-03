@@ -2,30 +2,32 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMCSSStyleDeclaration, NSString, DOMElement;
+
 @interface DOMElement : DOMNode {
 }
 
-@property(retain,readonly) DOMElement *firstElementChild;
-@property(copy,readonly) NSString *innerText;
-@property(retain,readonly) DOMElement *lastElementChild;
-@property(retain,readonly) DOMElement *nextElementSibling;
-@property(retain,readonly) DOMElement *offsetParent;
-@property(retain,readonly) DOMElement *previousElementSibling;
-@property(retain,readonly) DOMCSSStyleDeclaration *style;
-@property(copy,readonly) NSString *tagName;
-@property(readonly) NSUInteger childElementCount;
-@property(readonly) NSInteger clientHeight;
-@property(readonly) NSInteger clientLeft;
-@property(readonly) NSInteger clientTop;
-@property(readonly) NSInteger clientWidth;
-@property(readonly) NSInteger offsetHeight;
-@property(readonly) NSInteger offsetLeft;
-@property(readonly) NSInteger offsetTop;
-@property(readonly) NSInteger offsetWidth;
-@property(readonly) NSInteger scrollHeight;
-@property NSInteger scrollLeft;
-@property NSInteger scrollTop;
-@property(readonly) NSInteger scrollWidth;
+@property(readonly) unsigned int childElementCount;
+@property(readonly) int clientHeight;
+@property(readonly) int clientLeft;
+@property(readonly) int clientTop;
+@property(readonly) int clientWidth;
+@property(retain,readonly) DOMElement * firstElementChild;
+@property(copy,readonly) NSString * innerText;
+@property(retain,readonly) DOMElement * lastElementChild;
+@property(retain,readonly) DOMElement * nextElementSibling;
+@property(readonly) int offsetHeight;
+@property(readonly) int offsetLeft;
+@property(retain,readonly) DOMElement * offsetParent;
+@property(readonly) int offsetTop;
+@property(readonly) int offsetWidth;
+@property(retain,readonly) DOMElement * previousElementSibling;
+@property(readonly) int scrollHeight;
+@property int scrollLeft;
+@property int scrollTop;
+@property(readonly) int scrollWidth;
+@property(retain,readonly) DOMCSSStyleDeclaration * style;
+@property(copy,readonly) NSString * tagName;
 
 + (id)_DOMElementFromJSContext:(struct OpaqueJSContext { }*)arg1 value:(struct OpaqueJSValue { }*)arg2;
 + (BOOL)isRichTextStyle:(id)arg1;
@@ -34,13 +36,13 @@
 - (id)_getURLAttribute:(id)arg1;
 - (id)_markerTextForListItem;
 - (void)blur;
-- (NSUInteger)childElementCount;
-- (NSInteger)clientHeight;
-- (NSInteger)clientLeft;
-- (NSInteger)clientTop;
-- (NSInteger)clientWidth;
+- (unsigned int)childElementCount;
+- (int)clientHeight;
+- (int)clientLeft;
+- (int)clientTop;
+- (int)clientWidth;
 - (BOOL)contains:(id)arg1;
-- (BOOL)exceedsStructuralComplexity:(NSInteger)arg1;
+- (BOOL)exceedsStructuralComplexity:(int)arg1;
 - (id)firstElementChild;
 - (void)focus;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
@@ -66,13 +68,13 @@
 - (BOOL)isRichTextElement;
 - (BOOL)isRichTextElementType;
 - (id)lastElementChild;
-- (NSInteger)mf_quoteLevelDelta;
+- (int)mf_quoteLevelDelta;
 - (id)nextElementSibling;
-- (NSInteger)offsetHeight;
-- (NSInteger)offsetLeft;
+- (int)offsetHeight;
+- (int)offsetLeft;
 - (id)offsetParent;
-- (NSInteger)offsetTop;
-- (NSInteger)offsetWidth;
+- (int)offsetTop;
+- (int)offsetWidth;
 - (id)previousElementSibling;
 - (id)querySelector:(id)arg1;
 - (id)querySelectorAll:(id)arg1;
@@ -81,14 +83,14 @@
 - (void)removeAttributeNS:(id)arg1 :(id)arg2;
 - (void)removeAttributeNS:(id)arg1 localName:(id)arg2;
 - (id)removeAttributeNode:(id)arg1;
-- (void)scrollByLines:(NSInteger)arg1;
-- (void)scrollByPages:(NSInteger)arg1;
-- (NSInteger)scrollHeight;
+- (void)scrollByLines:(int)arg1;
+- (void)scrollByPages:(int)arg1;
+- (int)scrollHeight;
 - (void)scrollIntoView:(BOOL)arg1;
 - (void)scrollIntoViewIfNeeded:(BOOL)arg1;
-- (NSInteger)scrollLeft;
-- (NSInteger)scrollTop;
-- (NSInteger)scrollWidth;
+- (int)scrollLeft;
+- (int)scrollTop;
+- (int)scrollWidth;
 - (BOOL)selectable;
 - (void)setAttribute:(id)arg1 :(id)arg2;
 - (void)setAttribute:(id)arg1 value:(id)arg2;
@@ -96,9 +98,9 @@
 - (void)setAttributeNS:(id)arg1 qualifiedName:(id)arg2 value:(id)arg3;
 - (id)setAttributeNode:(id)arg1;
 - (id)setAttributeNodeNS:(id)arg1;
-- (void)setScrollLeft:(NSInteger)arg1;
-- (void)setScrollTop:(NSInteger)arg1;
-- (NSInteger)structuralComplexityContribution;
+- (void)setScrollLeft:(int)arg1;
+- (void)setScrollTop:(int)arg1;
+- (int)structuralComplexityContribution;
 - (id)style;
 - (id)tagName;
 - (id)tapHighlightColor;

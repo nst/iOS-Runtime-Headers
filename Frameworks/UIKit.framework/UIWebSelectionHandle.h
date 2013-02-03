@@ -13,19 +13,19 @@
         float height; 
     } _centerToSelectionPointOffset;
     UIImageView *_dragDotView;
-    NSInteger _position;
-    NSInteger _textPosition;
+    int _position;
+    int _textPosition;
     UIWebSelectionView *_tintView;
     UITouch *_touch;
     } _touchToCenterOffset;
 }
 
-@property(retain) UITouch *touch;
-@property CGSize centerToSelectionPointOffset;
+@property struct CGSize { float width; float height; } centerToSelectionPointOffset;
 @property(readonly) BOOL hasTextPosition;
-@property NSInteger position;
-@property NSInteger textPosition;
-@property(readonly) CGSize touchToCenterOffset;
+@property int position;
+@property int textPosition;
+@property(retain) UITouch * touch;
+@property(readonly) struct CGSize { float width; float height; } touchToCenterOffset;
 
 - (struct CGPoint { float x1; float x2; })applyCenterToSelectionPointOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })applyOffsetInDirectionOfHandle:(float)arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
@@ -34,17 +34,17 @@
 - (void)dealloc;
 - (void)dropActiveTouch;
 - (BOOL)hasTextPosition;
-- (id)initWithPosition:(NSInteger)arg1 tintView:(id)arg2;
+- (id)initWithPosition:(int)arg1 tintView:(id)arg2;
 - (float)offsetInDirectionOfHandleFromFirstPoint:(struct CGPoint { float x1; float x2; })arg1 toSecondPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (NSInteger)position;
+- (int)position;
 - (void)setCenterToSelectionPointOffset:(struct CGSize { float x1; float x2; })arg1;
-- (void)setPosition:(NSInteger)arg1;
-- (void)setTextPosition:(NSInteger)arg1;
+- (void)setPosition:(int)arg1;
+- (void)setTextPosition:(int)arg1;
 - (void)setTouch:(id)arg1;
 - (void)snapToCornerOfRange:(id)arg1 atStart:(BOOL)arg2;
 - (struct CGPoint { float x1; float x2; })suggestedHandlePositionOnRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSInteger)textPosition;
+- (int)textPosition;
 - (id)touch;
 - (struct CGSize { float x1; float x2; })touchToCenterOffset;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

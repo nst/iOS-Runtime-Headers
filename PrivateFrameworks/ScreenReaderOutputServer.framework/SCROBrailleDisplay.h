@@ -9,8 +9,8 @@
         NSData *realData; 
         NSData *virtualData; 
         NSData *aggregatedData; 
-        NSInteger virtualAlignment; 
-        NSInteger masterStatusCellIndex; 
+        int virtualAlignment; 
+        int masterStatusCellIndex; 
     struct { 
         double quietSince; 
         double busySince; 
@@ -24,18 +24,18 @@
         BOOL newDown; 
         struct __CFArray {} *currentChord; 
         struct __CFSet {} *downKeys; 
-        NSUInteger routerEvent; 
-        NSInteger routerIndex; 
-        NSInteger routerToken; 
+        unsigned int routerEvent; 
+        int routerIndex; 
+        int routerToken; 
         id appToken; 
-        NSInteger routerLocation; 
+        int routerLocation; 
         BOOL currentBrailleChordContainsSpacebar; 
         BOOL spacebarIsDown; 
         BOOL skipBrailleKeyboardKeyTranslation; 
         struct __CFArray {} *currentBrailleChord; 
         struct __CFSet {} *downBrailleDots; 
-        NSUInteger currentBrailleModifiers; 
-        NSUInteger downBrailleModifiers; 
+        unsigned int currentBrailleModifiers; 
+        unsigned int downBrailleModifiers; 
         NSMutableString *brailleString; 
         NSMutableArray *brailleStringModifiers; 
         double lastBrailleChordPosted; 
@@ -46,7 +46,7 @@
     <SCROBrailleDriverProtocol> *_brailleDriver;
     SCROBrailleLine *_brailleLine;
     NSLock *_contentLock;
-    NSInteger _contractionMode;
+    int _contractionMode;
     <SCROBrailleDisplayDelegate> *_delegate;
     BOOL _delegateWantsDisplayCallback;
     BOOL _delegateWantsPanningCallbacks;
@@ -58,14 +58,14 @@
     struct __CFRunLoopTimer { } *_inputEventTimer;
     <SCROIOElementProtocol> *_ioElement;
     BOOL _isValid;
-    NSInteger _mainSize;
+    int _mainSize;
     BOOL _needsUpdating;
     BOOL _postsKeyboardEvents;
     struct __CFRunLoop { } *_runLoop;
     BOOL _shouldBatchUpdates;
     BOOL _showEightDot;
     } _status;
-    NSInteger _statusSize;
+    int _statusSize;
 }
 
 @property BOOL delegateWantsDisplayCallback;
@@ -114,7 +114,7 @@
 - (id)ioElement;
 - (BOOL)isLoaded;
 - (BOOL)isValid;
-- (NSInteger)mainSize;
+- (int)mainSize;
 - (long)masterStatusCellIndex;
 - (void)panLeft;
 - (void)panRight;
@@ -125,13 +125,13 @@
 - (void)setDelegateWantsPanningCallbacks:(BOOL)arg1;
 - (void)setMasterStatusCellIndex:(long)arg1;
 - (void)setPrepareToMemorizeNextKey:(BOOL)arg1 immediate:(BOOL)arg2;
-- (void)setStatusAttributesWithMasterCellIndex:(long)arg1 virtualAlignment:(NSInteger)arg2;
-- (void)setVirtualStatusAlignment:(NSInteger)arg1;
+- (void)setStatusAttributesWithMasterCellIndex:(long)arg1 virtualAlignment:(int)arg2;
+- (void)setVirtualStatusAlignment:(int)arg1;
 - (void)simulateKeypress:(id)arg1;
-- (NSInteger)statusSize;
+- (int)statusSize;
 - (long)token;
-- (NSInteger)tokenForRouterIndex:(NSInteger)arg1 location:(NSInteger*)arg2 appToken:(id*)arg3;
+- (int)tokenForRouterIndex:(int)arg1 location:(int*)arg2 appToken:(id*)arg3;
 - (id)virtualStatus;
-- (NSInteger)virtualStatusAlignment;
+- (int)virtualStatusAlignment;
 
 @end

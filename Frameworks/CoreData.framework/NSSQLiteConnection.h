@@ -21,11 +21,11 @@
     struct sqlite3_stmt { } *_fetchPKStatement;
     NSSQLEntity *_finalEntity;
     NSSQLEntity *_lastEntity;
-    NSUInteger _lastEntityKey;
+    unsigned int _lastEntityKey;
     NSString *_pathname;
     NSMutableDictionary *_pragmaSettings;
     NSSQLiteStatement *_rollbackStatement;
-    NSInteger _rowsProcessedCount;
+    int _rowsProcessedCount;
     } _sqliteConnectionFlags;
     double _timeOutOption;
     struct sqlite3_stmt { } *_updatePKStatement;
@@ -36,9 +36,9 @@
 
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 error:(id*)arg2;
 + (BOOL)_preflightDatabaseAtURL:(id)arg1;
-+ (void)_setDebugFlags:(NSInteger)arg1;
++ (void)_setDebugFlags:(int)arg1;
 + (void)initialize;
-+ (NSInteger)readMagicWordFromFD:(NSInteger)arg1;
++ (int)readMagicWordFromFD:(int)arg1;
 
 - (id)_adapter;
 - (void)_bindVariablesWithDeletedRow:(id)arg1;
@@ -64,10 +64,10 @@
 - (void)_forceDisconnectOnError;
 - (long long)_getCurrentAutoVacuumValue;
 - (BOOL)_hasTableWithName:(id)arg1;
-- (id)_newValueForColumn:(id)arg1 atIndex:(NSUInteger)arg2 inStatement:(struct sqlite3_stmt { }*)arg3;
+- (id)_newValueForColumn:(id)arg1 atIndex:(unsigned int)arg2 inStatement:(struct sqlite3_stmt { }*)arg3;
 - (void)_performPostSaveTasks;
 - (void)_registerExtraFunctions;
-- (NSInteger)_rowsChangedByLastExecute;
+- (int)_rowsChangedByLastExecute;
 - (void)_setupVacuumIfNecessary;
 - (struct sqlite3_stmt { }*)_vmstatement;
 - (void)beginTransaction;
@@ -87,11 +87,11 @@
 - (void)endPrimaryKeyGeneration;
 - (void)execute;
 - (long long)fetchMaxPrimaryKeyForEntity:(id)arg1;
-- (NSInteger)fetchResultSet:(void*)arg1 usingFetchPlan:(void*)arg2;
+- (int)fetchResultSet:(void*)arg1 usingFetchPlan:(void*)arg2;
 - (id)fetchTableCreationSQL;
 - (id)fetchTableNames;
 - (void)finalize;
-- (long long)generatePrimaryKeysForEntity:(id)arg1 batch:(NSUInteger)arg2;
+- (long long)generatePrimaryKeysForEntity:(id)arg1 batch:(unsigned int)arg2;
 - (void)handleCorruptedDB:(id)arg1;
 - (BOOL)hasMetadataTable;
 - (BOOL)hasPrimaryKeyTable;

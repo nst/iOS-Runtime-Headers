@@ -8,33 +8,33 @@
     struct { 
         unsigned char c[3]; 
         unsigned char a; 
-    NSInteger _arrowNumIndices;
-    NSInteger _arrowSize;
-    NSInteger _colorSize;
+    int _arrowNumIndices;
+    int _arrowSize;
+    int _colorSize;
     } _intersectionColor;
-    NSUInteger _intersectionNumSides;
-    NSInteger _labelSize;
+    unsigned int _intersectionNumSides;
+    int _labelSize;
     NSArray *_labels;
-    NSInteger _lineNumIndices;
-    NSInteger _lineSize;
+    int _lineNumIndices;
+    int _lineSize;
     struct { unsigned char x1[3]; unsigned char x2; } *_linkColors;
     BOOL _linkPressed;
     float _opacity;
-    NSUInteger _pressedLinkIndex;
+    unsigned int _pressedLinkIndex;
 }
 
 @property BOOL linkPressed;
 @property float opacity;
-@property NSUInteger pressedLinkIndex;
+@property unsigned int pressedLinkIndex;
 
 - (void)dealloc;
 - (void)drawWithLabelCache:(id)arg1;
 - (id)initWithAnnotations:(id)arg1;
 - (BOOL)linkPressed;
 - (float)opacity;
-- (NSUInteger)pressedLinkIndex;
+- (unsigned int)pressedLinkIndex;
 - (void)setLinkPressed:(BOOL)arg1;
 - (void)setOpacity:(float)arg1;
-- (void)setPressedLinkIndex:(NSUInteger)arg1;
+- (void)setPressedLinkIndex:(unsigned int)arg1;
 
 @end

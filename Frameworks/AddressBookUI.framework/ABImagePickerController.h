@@ -21,23 +21,23 @@
     NSArray *_writablePeople;
 }
 
-@property <ABPersonImageDataDelegate> *imageDataDelegate;
+@property <ABPersonImageDataDelegate> * imageDataDelegate;
 
 + (void)_initializeSafeCategory;
 
 - (id)_createImagePicker;
 - (id)_createImagePickerForEditingImageData:(id)arg1 shouldSaveFullSize:(BOOL)arg2 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (id)_formatStringForSourceType:(NSInteger)arg1 withSuffix:(BOOL)arg2 useAbbreviatedStrings:(BOOL)arg3;
+- (id)_formatStringForSourceType:(int)arg1 withSuffix:(BOOL)arg2 useAbbreviatedStrings:(BOOL)arg3;
 - (BOOL)_hasMultipleWritablePeople;
 - (id)_removePreviousSheet;
 - (void)_showActionSheet:(id)arg1 previousOwner:(id)arg2;
 - (void)_showImagePickerWithPriorConfirmation:(BOOL)arg1;
 - (void)_tearDownImagePickerController;
 - (id)ab_windowContentViewForView:(id)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
-- (void)addButtonForSource:(BOOL)arg1 suffix:(NSInteger)arg2 name:(id)arg3 indexInAllPeople:(NSInteger)arg4 toArray:(id)arg5;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)addButtonForSource:(BOOL)arg1 suffix:(int)arg2 name:(id)arg3 indexInAllPeople:(int)arg4 toArray:(id)arg5;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)animationDidStopAfterDelay:(id)arg1;
 - (void)back:(BOOL)arg1 save:(BOOL)arg2;

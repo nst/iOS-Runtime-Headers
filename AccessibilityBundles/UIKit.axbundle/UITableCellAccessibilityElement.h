@@ -5,38 +5,38 @@
 @class UITableCell, NSMutableArray;
 
 @interface UITableCellAccessibilityElement : UIAccessibilityElement {
-    NSUInteger _column;
+    unsigned int _column;
     NSMutableArray *_mockChildren;
-    NSUInteger _row;
+    unsigned int _row;
     UITableCell *_tableCell;
     BOOL _usingRealTableCell;
 }
 
-@property(retain) UITableCell *tableCell;
-@property(readonly) UITableCell *tableViewCell;
-@property NSUInteger column;
-@property NSUInteger row;
+@property unsigned int column;
+@property unsigned int row;
+@property(retain) UITableCell * tableCell;
+@property(readonly) UITableCell * tableViewCell;
 
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
-- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
-- (id)accessibilityElementAtIndex:(NSInteger)arg1;
-- (NSInteger)accessibilityElementCount;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
+- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)accessibilityElementAtIndex:(int)arg1;
+- (int)accessibilityElementCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (id)accessibilityLabel;
 - (void)accessibilityScrollToVisible;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
-- (NSUInteger)column;
+- (unsigned int)column;
 - (void)dealloc;
 - (id)description;
-- (NSInteger)indexOfAccessibilityElement:(id)arg1;
+- (int)indexOfAccessibilityElement:(id)arg1;
 - (BOOL)isAccessibilityElement;
 - (id)realTableCell;
 - (void)registerMockChild:(id)arg1;
-- (NSUInteger)row;
-- (void)setColumn:(NSUInteger)arg1;
-- (void)setRow:(NSUInteger)arg1;
+- (unsigned int)row;
+- (void)setColumn:(unsigned int)arg1;
+- (void)setRow:(unsigned int)arg1;
 - (void)setTableCell:(id)arg1;
 - (id)tableCell;
 - (id)tableViewCell;

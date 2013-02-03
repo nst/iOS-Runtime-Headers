@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSSet, UIColor, UINavigationBar;
+@class UINavigationBar, UIImage, UIColor, NSString, NSSet;
 
 @interface UINavigationButton : UIButton {
     struct CGSize { 
@@ -10,20 +10,20 @@
         float height; 
     unsigned int _size : 2;
     unsigned int _pad : 30;
-    NSInteger _barStyle;
+    int _barStyle;
     } _boundsAdjustment;
     UINavigationBar *_navigationBar;
     NSSet *_possibleTitles;
-    NSInteger _style;
+    int _style;
     UIColor *_tintColor;
 }
 
-@property(retain) UIImage *image;
-@property(retain) UIColor *tintColor;
-@property(retain) NSString *title;
-@property NSInteger barStyle;
-@property NSInteger controlSize;
-@property NSInteger style;
+@property int barStyle;
+@property int controlSize;
+@property(retain) UIImage * image;
+@property int style;
+@property(retain) UIColor * tintColor;
+@property(retain) NSString * title;
 
 + (void)_initializeSafeCategory;
 + (id)defaultFont;
@@ -39,29 +39,29 @@
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
-- (NSInteger)barStyle;
-- (BOOL)contentsEqualTo:(id)arg1 withStyle:(NSInteger)arg2;
-- (NSInteger)controlSize;
+- (int)barStyle;
+- (BOOL)contentsEqualTo:(id)arg1 withStyle:(int)arg2;
+- (int)controlSize;
 - (void)dealloc;
 - (id)image;
-- (id)initWithImage:(id)arg1 style:(NSInteger)arg2;
-- (id)initWithImage:(id)arg1 width:(float)arg2 style:(NSInteger)arg3 applyBezel:(BOOL)arg4 forBarStyle:(NSInteger)arg5 buttonItemStyle:(NSInteger)arg6;
-- (id)initWithImage:(id)arg1 width:(float)arg2 style:(NSInteger)arg3;
+- (id)initWithImage:(id)arg1 style:(int)arg2;
+- (id)initWithImage:(id)arg1 width:(float)arg2 style:(int)arg3 applyBezel:(BOOL)arg4 forBarStyle:(int)arg5 buttonItemStyle:(int)arg6;
+- (id)initWithImage:(id)arg1 width:(float)arg2 style:(int)arg3;
 - (id)initWithImage:(id)arg1;
-- (id)initWithTitle:(id)arg1 possibleTitles:(id)arg2 style:(NSInteger)arg3;
-- (id)initWithTitle:(id)arg1 style:(NSInteger)arg2;
+- (id)initWithTitle:(id)arg1 possibleTitles:(id)arg2 style:(int)arg3;
+- (id)initWithTitle:(id)arg1 style:(int)arg2;
 - (id)initWithTitle:(id)arg1;
-- (id)initWithValue:(id)arg1 width:(float)arg2 style:(NSInteger)arg3 barStyle:(NSInteger)arg4 possibleTitles:(id)arg5 tintColor:(id)arg6 applyBezel:(BOOL)arg7 forButtonItemStyle:(NSInteger)arg8;
-- (id)initWithValue:(id)arg1 width:(float)arg2 style:(NSInteger)arg3 barStyle:(NSInteger)arg4 possibleTitles:(id)arg5 tintColor:(id)arg6;
-- (void)setBarStyle:(NSInteger)arg1;
-- (void)setControlSize:(NSInteger)arg1;
+- (id)initWithValue:(id)arg1 width:(float)arg2 style:(int)arg3 barStyle:(int)arg4 possibleTitles:(id)arg5 tintColor:(id)arg6 applyBezel:(BOOL)arg7 forButtonItemStyle:(int)arg8;
+- (id)initWithValue:(id)arg1 width:(float)arg2 style:(int)arg3 barStyle:(int)arg4 possibleTitles:(id)arg5 tintColor:(id)arg6;
+- (void)setBarStyle:(int)arg1;
+- (void)setControlSize:(int)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setImage:(id)arg1;
-- (void)setStyle:(NSInteger)arg1;
+- (void)setStyle:(int)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (NSInteger)style;
+- (int)style;
 - (id)tintColor;
 - (id)title;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SURotationController, SUViewControllerContext, UIViewController, SUViewControllerScriptProperties, NSMutableArray;
+@class SURotationController, SUViewControllerFactory, SUViewControllerScriptProperties, NSMutableArray, SUNavigationItem, SUViewControllerContext, NSString, UIViewController;
 
 @interface SUViewController : UIViewController <ISOperationDelegate> {
     SUViewControllerScriptProperties *_cachedScriptProperties;
@@ -17,21 +17,21 @@
     NSMutableArray *_pendingDialogs;
     SUViewControllerContext *_restoredContext;
     SURotationController *_rotationController;
-    NSInteger _rotationState;
+    int _rotationState;
     BOOL _shouldInvalidateForMemoryPurge;
-    NSInteger _transitionSafetyCount;
+    int _transitionSafetyCount;
 }
 
-@property(readonly) NSString *defaultPNGName;
-@property(readonly) UIViewController *footerViewController;
-@property(retain) UIViewController *inputAccessoryViewController;
-@property(retain,readonly) SUNavigationItem *navigationItem;
-@property(readonly) SUViewControllerFactory *viewControllerFactory;
 @property(readonly) double defaultPNGExpirationTime;
+@property(readonly) NSString * defaultPNGName;
+@property(readonly) UIViewController * footerViewController;
+@property(retain) UIViewController * inputAccessoryViewController;
 @property(getter=isLoading) BOOL loading;
+@property(retain,readonly) SUNavigationItem * navigationItem;
 @property BOOL shouldExcludeFromNavigationHistory;
 @property BOOL shouldInvalidateForMemoryPurge;
-@property(readonly) NSInteger statusBarStyle;
+@property(readonly) int statusBarStyle;
+@property(readonly) SUViewControllerFactory * viewControllerFactory;
 @property(getter=isVisible,readonly) BOOL visible;
 @property(getter=isVisibleAndFrontmost,readonly) BOOL visibleAndFrontmost;
 
@@ -41,13 +41,13 @@
 - (void)_dialogFinishedNotification:(id)arg1;
 - (void)_dismissFooterAnimationDidStop:(id)arg1;
 - (id)_existingNavigationItem;
-- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_keyboardDidHideNotification:(id)arg1;
 - (void)_keyboardDidShowNotification:(id)arg1;
 - (void)_keyboardWillHideNotification:(id)arg1;
 - (void)_keyboardWillShowNotification:(id)arg1;
 - (void)_performScheduledRotation:(id)arg1;
-- (NSInteger)_preferredInterfaceOrientationGivenCurrentOrientation:(NSInteger)arg1;
+- (int)_preferredInterfaceOrientationGivenCurrentOrientation:(int)arg1;
 - (void)_presentFooterAnimationDidStop;
 - (id)_rotationController;
 - (void)_setExistingNavigationItem:(id)arg1;
@@ -60,14 +60,14 @@
 - (BOOL)canBecomeFirstResponder;
 - (void)cancelOperations;
 - (id)copyArchivableContext;
-- (id)copyChildViewControllersForReason:(NSInteger)arg1;
+- (id)copyChildViewControllersForReason:(int)arg1;
 - (id)copyDefaultScriptProperties;
 - (id)copyScriptProperties;
 - (void)dealloc;
 - (id)defaultFirstResponder;
 - (double)defaultPNGExpirationTime;
 - (id)defaultPNGName;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)dismissAfterDialogs;
 - (void)dismissFooterViewControllerAnimated:(BOOL)arg1;
 - (void)enqueueOperation:(id)arg1 cancelOnDealloc:(BOOL)arg2;
@@ -77,7 +77,7 @@
 - (id)initWithSection:(id)arg1;
 - (id)inputAccessoryView;
 - (id)inputAccessoryViewController;
-- (NSInteger)interfaceOrientation;
+- (int)interfaceOrientation;
 - (void)invalidate;
 - (void)invalidateForMemoryPurge;
 - (BOOL)isLoading;
@@ -93,7 +93,7 @@
 - (BOOL)presentDialog:(id)arg1 pendUntilVisible:(BOOL)arg2;
 - (BOOL)presentDialogForError:(id)arg1 pendUntilVisible:(BOOL)arg2;
 - (void)presentFooterViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)purgeMemoryForReason:(NSInteger)arg1;
+- (void)purgeMemoryForReason:(int)arg1;
 - (void)reload;
 - (void)reloadContentSizeForViewInPopover;
 - (void)resetRestoredContext;
@@ -105,10 +105,11 @@
 - (void)setSection:(id)arg1;
 - (void)setShouldExcludeFromNavigationHistory:(BOOL)arg1;
 - (void)setShouldInvalidateForMemoryPurge:(BOOL)arg1;
+- (void)setTitle:(id)arg1 changeTabBarItem:(BOOL)arg2;
 - (void)setTitle:(id)arg1;
 - (BOOL)shouldExcludeFromNavigationHistory;
 - (BOOL)shouldInvalidateForMemoryPurge;
-- (NSInteger)statusBarStyle;
+- (int)statusBarStyle;
 - (void)storePageProtocolDidChange;
 - (void)trackOperation:(id)arg1 cancelOnDealloc:(BOOL)arg2;
 - (id)viewControllerFactory;
@@ -116,8 +117,8 @@
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(NSInteger)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
 
 @end

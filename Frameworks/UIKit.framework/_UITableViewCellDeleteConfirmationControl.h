@@ -8,8 +8,8 @@
     NSString *_title;
 }
 
-@property(readonly) NSString *title;
-@property(readonly) CGSize size;
+@property(readonly) struct CGSize { float width; float height; } size;
+@property(readonly) NSString * title;
 
 + (id)_backgroundImage;
 + (id)_highlightedBackgroundImage;

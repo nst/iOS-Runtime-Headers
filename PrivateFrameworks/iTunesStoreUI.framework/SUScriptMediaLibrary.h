@@ -2,26 +2,121 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSString;
 
 @interface SUScriptMediaLibrary : SUScriptObject {
-    struct sqlite3_stmt { } *_containsAdamIdStatement;
-    struct sqlite3 { } *_database;
     NSMutableArray *_musicPlayers;
 }
 
+@property(readonly) NSString * itemPropertyAlbumArtist;
+@property(readonly) NSString * itemPropertyAlbumTitle;
+@property(readonly) NSString * itemPropertyArtist;
+@property(readonly) NSString * itemPropertyComposer;
+@property(readonly) NSString * itemPropertyDiscCount;
+@property(readonly) NSString * itemPropertyDiscNumber;
+@property(readonly) NSString * itemPropertyGenre;
+@property(readonly) NSString * itemPropertyIsCompilation;
+@property(readonly) NSString * itemPropertyLastPlayedDate;
+@property(readonly) NSString * itemPropertyLyrics;
+@property(readonly) NSString * itemPropertyMediaType;
+@property(readonly) NSString * itemPropertyPersistentID;
+@property(readonly) NSString * itemPropertyPlayCount;
+@property(readonly) NSString * itemPropertyPlaybackDuration;
+@property(readonly) NSString * itemPropertyPodcastTitle;
+@property(readonly) NSString * itemPropertyRating;
+@property(readonly) NSString * itemPropertySkipCount;
+@property(readonly) NSString * itemPropertyStoreID;
+@property(readonly) NSString * itemPropertyTitle;
+@property(readonly) NSString * itemPropertyTrackCount;
+@property(readonly) NSString * itemPropertyTrackNumber;
+@property(readonly) NSString * mediaTypeAny;
+@property(readonly) NSString * mediaTypeAnyAudio;
+@property(readonly) NSString * mediaTypeAnyVideo;
+@property(readonly) NSString * mediaTypeAudiobook;
+@property(readonly) NSString * mediaTypeMovie;
+@property(readonly) NSString * mediaTypeMusic;
+@property(readonly) NSString * mediaTypeMusicVideo;
+@property(readonly) NSString * mediaTypePodcast;
+@property(readonly) NSString * mediaTypeTVShow;
+@property(readonly) NSString * mediaTypeVideoPodcast;
+@property(readonly) NSString * playerTypeApplication;
+@property(readonly) NSString * playerTypeIPod;
+@property(readonly) NSString * queryPresetAlbums;
+@property(readonly) NSString * queryPresetArtists;
+@property(readonly) NSString * queryPresetAudiobooks;
+@property(readonly) NSString * queryPresetCompilations;
+@property(readonly) NSString * queryPresetComposers;
+@property(readonly) NSString * queryPresetGenres;
+@property(readonly) NSString * queryPresetMovies;
+@property(readonly) NSString * queryPresetMusicVideos;
+@property(readonly) NSString * queryPresetPlaylists;
+@property(readonly) NSString * queryPresetPodcasts;
+@property(readonly) NSString * queryPresetSongs;
+@property(readonly) NSString * queryPresetTVShows;
+@property(readonly) NSString * queryPresetVideoPodcasts;
+
++ (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
 - (id)_copyQueryWithPreset:(id)arg1;
 - (BOOL)_isRestricted;
 - (void)_loadNativeObject;
+- (id)attributeKeys;
 - (id)containsAdamID:(id)arg1;
+- (id)containsAdamIDs:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)itemPropertyAlbumArtist;
+- (id)itemPropertyAlbumTitle;
+- (id)itemPropertyArtist;
+- (id)itemPropertyComposer;
+- (id)itemPropertyDiscCount;
+- (id)itemPropertyDiscNumber;
+- (id)itemPropertyGenre;
+- (id)itemPropertyIsCompilation;
+- (id)itemPropertyLastPlayedDate;
+- (id)itemPropertyLyrics;
+- (id)itemPropertyMediaType;
+- (id)itemPropertyPersistentID;
+- (id)itemPropertyPlayCount;
+- (id)itemPropertyPlaybackDuration;
+- (id)itemPropertyPodcastTitle;
+- (id)itemPropertyRating;
+- (id)itemPropertySkipCount;
+- (id)itemPropertyStoreID;
+- (id)itemPropertyTitle;
+- (id)itemPropertyTrackCount;
+- (id)itemPropertyTrackNumber;
 - (id)makeCollectionWithItems:(id)arg1;
 - (id)makePickerWithMediaTypes:(id)arg1;
 - (id)makeQueryWithPreset:(id)arg1;
+- (id)mediaTypeAny;
+- (id)mediaTypeAnyAudio;
+- (id)mediaTypeAnyVideo;
+- (id)mediaTypeAudiobook;
+- (id)mediaTypeMovie;
+- (id)mediaTypeMusic;
+- (id)mediaTypeMusicVideo;
+- (id)mediaTypePodcast;
+- (id)mediaTypeTVShow;
+- (id)mediaTypeVideoPodcast;
 - (id)musicPlayerForType:(id)arg1;
+- (id)playerTypeApplication;
+- (id)playerTypeIPod;
+- (id)queryPresetAlbums;
+- (id)queryPresetArtists;
+- (id)queryPresetAudiobooks;
+- (id)queryPresetCompilations;
+- (id)queryPresetComposers;
+- (id)queryPresetGenres;
+- (id)queryPresetMovies;
+- (id)queryPresetMusicVideos;
+- (id)queryPresetPlaylists;
+- (id)queryPresetPodcasts;
+- (id)queryPresetSongs;
+- (id)queryPresetTVShows;
+- (id)queryPresetVideoPodcasts;
+- (id)scriptAttributeKeys;
 
 @end

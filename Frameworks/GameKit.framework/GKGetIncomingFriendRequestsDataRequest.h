@@ -8,11 +8,11 @@
     NSArray *_friendRequests;
 }
 
-@property(readonly) NSArray *friendRequests;
+@property(readonly) NSArray * friendRequests;
 
 - (id)cacheKey;
-- (NSInteger)cachePriority;
-- (NSInteger)cacheType;
+- (int)cachePriority;
+- (int)cacheType;
 - (void)dealloc;
 - (id)friendRequests;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;

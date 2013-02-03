@@ -3,12 +3,12 @@
  */
 
 @interface MKAdRequester : GMMRequester {
-    NSInteger _action;
+    int _action;
 }
 
-@property NSInteger action;
+@property int action;
 
-- (NSInteger)action;
-- (void)setAction:(NSInteger)arg1;
+- (int)action;
+- (void)setAction:(int)arg1;
 
 @end

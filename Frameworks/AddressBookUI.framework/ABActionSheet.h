@@ -9,19 +9,19 @@
     struct __CFArray { } *_tags;
 }
 
-@property void *ab_context;
+@property void* ab_context;
 
-- (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(NSInteger)arg3 tag2:(NSInteger)arg4 tag3:(const void*)arg5;
-- (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(NSInteger)arg3 tag2:(NSInteger)arg4;
-- (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(NSInteger)arg3;
-- (NSInteger)ab_addButtonWithTitle:(id)arg1 tag:(NSInteger)arg2 tag2:(NSInteger)arg3;
-- (NSInteger)ab_addButtonWithTitle:(id)arg1 tag:(NSInteger)arg2;
+- (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(int)arg3 tag2:(int)arg4 tag3:(const void*)arg5;
+- (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(int)arg3 tag2:(int)arg4;
+- (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(int)arg3;
+- (int)ab_addButtonWithTitle:(id)arg1 tag:(int)arg2 tag2:(int)arg3;
+- (int)ab_addButtonWithTitle:(id)arg1 tag:(int)arg2;
 - (void*)ab_context;
-- (NSInteger)ab_tag2AtIndex:(NSInteger)arg1;
-- (const void*)ab_tag3AtIndex:(NSInteger)arg1;
-- (NSInteger)ab_tagAtIndex:(NSInteger)arg1;
+- (int)ab_tag2AtIndex:(int)arg1;
+- (const void*)ab_tag3AtIndex:(int)arg1;
+- (int)ab_tagAtIndex:(int)arg1;
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
-- (NSInteger)addButtonWithTitle:(id)arg1;
+- (int)addButtonWithTitle:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithTitle:(id)arg1 delegate:(id)arg2 cancelButtonTitle:(id)arg3 destructiveButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;

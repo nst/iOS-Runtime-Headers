@@ -2,21 +2,23 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
+@class NSString, NSDictionary;
+
 @interface SWRunWorkoutProxy : NSObject {
 }
 
-@property(readonly) NSString *currentSongName;
-@property(readonly) NSString *goalType;
-@property(readonly) NSString *powerSongName;
-@property(readonly) NSString *presetGoal;
-@property(readonly) NSString *sensorSearchState;
-@property(readonly) NSDictionary *workoutData;
-@property(readonly) NSString *workoutState;
+@property(readonly) NSString * currentSongName;
 @property(readonly) float goal;
+@property(readonly) NSString * goalType;
 @property(readonly) BOOL hasEverStarted;
 @property(readonly) BOOL hasPowerSong;
-@property(readonly) NSInteger musicSelection;
+@property(readonly) int musicSelection;
+@property(readonly) NSString * powerSongName;
+@property(readonly) NSString * presetGoal;
+@property(readonly) NSString * sensorSearchState;
 @property(readonly) BOOL shouldControlMusic;
+@property(readonly) NSDictionary * workoutData;
+@property(readonly) NSString * workoutState;
 
 + (void)initialize;
 + (id)newProxy;

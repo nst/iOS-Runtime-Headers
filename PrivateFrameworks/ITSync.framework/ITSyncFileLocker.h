@@ -9,16 +9,16 @@
     unsigned int _needsDidAcquireCallback : 1;
     id _delegate;
     NSConditionLock *_hasLockLock;
-    NSUInteger _uid;
+    unsigned int _uid;
 }
 
-+ (BOOL)_acquireLock:(BOOL)arg1 sharedLock:(BOOL)arg2 instanceUID:(NSUInteger)arg3 threadArgs:(struct __CFDictionary { }*)arg4 notifyMainThreadIfAcquired:(BOOL)arg5;
++ (BOOL)_acquireLock:(BOOL)arg1 sharedLock:(BOOL)arg2 instanceUID:(unsigned int)arg3 threadArgs:(struct __CFDictionary { }*)arg4 notifyMainThreadIfAcquired:(BOOL)arg5;
 + (void)_blockingLockWasAcquired:(struct __CFDictionary { }*)arg1;
-+ (void)_ensureLockFileParentDirectoryExists:(NSUInteger)arg1;
++ (void)_ensureLockFileParentDirectoryExists:(unsigned int)arg1;
 + (id)iTunesSyncingLockfilePath;
 
 - (void)_blockingLockWasAcquired;
-- (NSInteger)_heldLockfd;
+- (int)_heldLockfd;
 - (id)_lockfilePath;
 - (void)_releaseLockNoSpinLock;
 - (id)_taskAssertion;

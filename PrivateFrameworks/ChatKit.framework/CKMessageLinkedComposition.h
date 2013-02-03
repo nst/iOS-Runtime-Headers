@@ -8,7 +8,7 @@
     CKMessage *_message;
 }
 
-@property(retain) CKMessage *message;
+@property(retain) CKMessage * message;
 
 - (void)dealloc;
 - (BOOL)isTextOnly;

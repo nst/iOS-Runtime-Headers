@@ -2,21 +2,23 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSString;
+@class NSString, NSData;
 
 @interface GKAccountURLRequest : GKGetStoreBagValuesRequest {
     NSString *_authorizeURL;
     NSString *_editURL;
     NSString *_passwordURL;
+    NSData *_pushToken;
     NSString *_reportURL;
     NSString *_setupURL;
 }
 
-@property(retain) NSString *authorizeURL;
-@property(retain) NSString *editURL;
-@property(retain) NSString *passwordURL;
-@property(retain) NSString *reportURL;
-@property(retain) NSString *setupURL;
+@property(retain) NSString * authorizeURL;
+@property(retain) NSString * editURL;
+@property(retain) NSString * passwordURL;
+@property(retain) NSData * pushToken;
+@property(retain) NSString * reportURL;
+@property(retain) NSString * setupURL;
 
 - (id)authorizeURL;
 - (void)dealloc;
@@ -24,10 +26,12 @@
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)init;
 - (id)passwordURL;
+- (id)pushToken;
 - (id)reportURL;
 - (void)setAuthorizeURL:(id)arg1;
 - (void)setEditURL:(id)arg1;
 - (void)setPasswordURL:(id)arg1;
+- (void)setPushToken:(id)arg1;
 - (void)setReportURL:(id)arg1;
 - (void)setSetupURL:(id)arg1;
 - (id)setupURL;

@@ -10,7 +10,7 @@
     BOOL _opaque;
 }
 
-@property(retain) UIColor *backgroundColor;
+@property(retain) UIColor * backgroundColor;
 @property BOOL highlighted;
 @property BOOL opaque;
 

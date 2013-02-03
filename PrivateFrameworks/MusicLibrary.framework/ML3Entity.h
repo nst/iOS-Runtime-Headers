@@ -9,8 +9,8 @@
     long long _persistentID;
 }
 
-@property ML3MusicLibrary *library;
 @property(readonly) BOOL existsInLibrary;
+@property ML3MusicLibrary * library;
 @property(readonly) long long persistentID;
 
 + (id)aggregateQueryWithUnitQuery:(id)arg1 foreignPersistentIDProperty:(id)arg2;
@@ -46,14 +46,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)deleteFromLibrary;
 - (BOOL)existsInLibrary;
-- (void)getValues:(id*)arg1 forProperties:(id*)arg2 count:(NSUInteger)arg3;
-- (NSUInteger)hash;
+- (void)getValues:(id*)arg1 forProperties:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)hash;
 - (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2;
 - (id)initWithPersistentID:(long long)arg1 inLibrary:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)library;
 - (BOOL)matchesPredicate:(id)arg1;
-- (id)newSelectSQLForProperties:(id*)arg1 count:(NSUInteger)arg2 predicate:(id)arg3;
+- (id)newSelectSQLForProperties:(id*)arg1 count:(unsigned int)arg2 predicate:(id)arg3;
 - (long long)persistentID;
 - (void)setLibrary:(id)arg1;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;

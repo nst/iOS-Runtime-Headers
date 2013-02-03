@@ -7,22 +7,22 @@
 @interface EKDayViewContentItem : NSObject {
     double _duration;
     NSDate *_endDate;
-    NSUInteger _eventIndex;
+    unsigned int _eventIndex;
     NSDate *_startDate;
     EKDayOccurrenceView *_view;
 }
 
-@property(copy) NSDate *endDate;
-@property(copy) NSDate *startDate;
-@property(retain) EKDayOccurrenceView *view;
 @property double duration;
-@property(readonly) NSUInteger eventIndex;
+@property(copy) NSDate * endDate;
+@property(readonly) unsigned int eventIndex;
+@property(copy) NSDate * startDate;
+@property(retain) EKDayOccurrenceView * view;
 
 - (void)dealloc;
 - (double)duration;
 - (id)endDate;
-- (NSUInteger)eventIndex;
-- (id)initWithEventIndex:(NSUInteger)arg1;
+- (unsigned int)eventIndex;
+- (id)initWithEventIndex:(unsigned int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setEndDate:(id)arg1;

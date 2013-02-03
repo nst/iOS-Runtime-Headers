@@ -6,16 +6,16 @@
 
 @interface MPMediaQuerySection : NSObject <NSCoding, NSCopying> {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     } _range;
-    NSUInteger _sectionIndexTitleIndex;
+    unsigned int _sectionIndexTitleIndex;
     NSString *_title;
 }
 
-@property(copy) NSString *title;
-@property _NSRange range;
-@property NSUInteger sectionIndexTitleIndex;
+@property struct _NSRange { unsigned int location; unsigned int length; } range;
+@property unsigned int sectionIndexTitleIndex;
+@property(copy) NSString * title;
 
 - (id)_init;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -24,10 +24,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })range;
-- (NSUInteger)sectionIndexTitleIndex;
-- (void)setRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
-- (void)setSectionIndexTitleIndex:(NSUInteger)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (unsigned int)sectionIndexTitleIndex;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSectionIndexTitleIndex:(unsigned int)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

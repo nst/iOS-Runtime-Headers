@@ -14,19 +14,19 @@
     UIWebDocumentView *_webDocumentView;
 }
 
-@property(retain) UIWebDocumentView *webDocumentView;
 @property(readonly) float lastPageHeight;
-@property(readonly) NSUInteger pageCount;
+@property(readonly) unsigned int pageCount;
+@property(retain) UIWebDocumentView * webDocumentView;
 
 - (void)dealloc;
 - (id)initWithScaleFactor:(float)arg1 layoutSize:(struct CGSize { float x1; float x2; })arg2 pageRects:(id)arg3;
 - (float)lastPageHeight;
 - (struct CGSize { float x1; float x2; })layoutSize;
-- (NSUInteger)pageCount;
+- (unsigned int)pageCount;
 - (id)pageRects;
 - (float)scaleFactor;
 - (void)setWebDocumentView:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeForPageAtIndex:(NSInteger)arg1;
+- (struct CGSize { float x1; float x2; })sizeForPageAtIndex:(int)arg1;
 - (id)webDocumentView;
 
 @end

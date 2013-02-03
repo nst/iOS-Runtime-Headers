@@ -5,29 +5,29 @@
 @class NSString;
 
 @interface SUItemOfferButton : UIButton {
-    NSInteger _animationHorizontalAlignment;
+    int _animationHorizontalAlignment;
     NSString *_buttonStyle;
     NSString *_confirmationTitle;
     BOOL _isShowingConfirmation;
     NSString *_offerTitle;
 }
 
-@property(copy) NSString *confirmationTitle;
-@property(copy) NSString *itemOfferButtonStyle;
-@property(copy) NSString *offerTitle;
-@property NSInteger animationHorizontalAlignment;
+@property int animationHorizontalAlignment;
+@property(copy) NSString * confirmationTitle;
+@property(copy) NSString * itemOfferButtonStyle;
+@property(copy) NSString * offerTitle;
 @property(getter=isShowingConfirmation) BOOL showingConfirmation;
 
 + (void)_initializeSafeCategory;
 + (double)defaultAnimationDuration;
 + (id)itemOfferButtonStyleForItem:(id)arg1 offer:(id)arg2;
 
-- (void)_applyConfiguration:(struct { id x1; NSInteger x2; NSInteger x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; id x5; id x6; })arg1;
-- (struct { id x1; NSInteger x2; NSInteger x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; id x5; id x6; })_configurationForStyle:(id)arg1;
+- (void)_applyConfiguration:(struct { id x1; int x2; int x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; id x5; id x6; })arg1;
+- (struct { id x1; int x2; int x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; id x5; id x6; })_configurationForStyle:(id)arg1;
 - (void)_reloadButton;
 - (id)accessibilityHint;
 - (id)accessibilityLabel;
-- (NSInteger)animationHorizontalAlignment;
+- (int)animationHorizontalAlignment;
 - (BOOL)configureForItem:(id)arg1 offer:(id)arg2;
 - (id)confirmationTitle;
 - (void)dealloc;
@@ -36,7 +36,7 @@
 - (id)itemOfferButtonStyle;
 - (void)layoutSubviews;
 - (id)offerTitle;
-- (void)setAnimationHorizontalAlignment:(NSInteger)arg1;
+- (void)setAnimationHorizontalAlignment:(int)arg1;
 - (void)setConfirmationTitle:(id)arg1;
 - (void)setItemOfferButtonStyle:(id)arg1;
 - (void)setOfferTitle:(id)arg1;

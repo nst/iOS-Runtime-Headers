@@ -8,5 +8,6 @@
 - (BOOL)authenticationRequired;
 - (id)key;
 - (void)send;
+- (BOOL)shouldProcessInBackground;
 
 @end

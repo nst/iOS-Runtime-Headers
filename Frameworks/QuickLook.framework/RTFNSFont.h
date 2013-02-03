@@ -10,7 +10,7 @@
     float _pointSize;
 }
 
-@property(retain) NSString *fontName;
+@property(retain) NSString * fontName;
 @property float fontSize;
 @property float pointSize;
 
@@ -22,7 +22,7 @@
 - (id)fontName;
 - (float)fontSize;
 - (id)initWithName:(id)arg1 size:(float)arg2;
-- (NSUInteger)mostCompatibleStringEncoding;
+- (unsigned int)mostCompatibleStringEncoding;
 - (float)pointSize;
 - (void)setFontName:(id)arg1;
 - (void)setFontSize:(float)arg1;

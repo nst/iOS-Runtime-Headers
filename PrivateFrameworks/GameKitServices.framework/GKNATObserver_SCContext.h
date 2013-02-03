@@ -8,7 +8,7 @@
     GKNATObserverInternal *observer_;
 }
 
-@property GKNATObserverInternal *observer;
+@property GKNATObserverInternal * observer;
 
 - (id)observer;
 - (void)setObserver:(id)arg1;

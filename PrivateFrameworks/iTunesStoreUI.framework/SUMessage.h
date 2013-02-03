@@ -11,8 +11,8 @@
     NSMutableDictionary *_uploadURLs;
 }
 
-@property(copy) NSArray *messageParts;
-@property(copy) NSURL *postURL;
+@property(copy) NSArray * messageParts;
+@property(copy) NSURL * postURL;
 
 - (id)_initSUMessage;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

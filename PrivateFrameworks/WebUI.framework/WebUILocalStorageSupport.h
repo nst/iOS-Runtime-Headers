@@ -8,6 +8,6 @@
 + (id)sharedWebUILocalStorageSupport;
 
 - (id)localStoragePath;
-- (NSUInteger)localStorageQuotaSize;
+- (unsigned int)localStorageQuotaSize;
 
 @end

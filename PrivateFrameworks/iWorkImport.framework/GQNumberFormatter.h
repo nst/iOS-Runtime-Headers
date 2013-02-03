@@ -30,17 +30,17 @@
 + (id)currencySymbolForCurrencyCode:(id)arg1;
 + (id)currentLocaleCurrencyCode;
 + (unsigned short)defaultDecimalPlacesForCurrencyCode:(id)arg1;
-+ (id)defaultFormatStringForValueType:(NSInteger)arg1 negativeStyle:(NSInteger)arg2;
-+ (id)defaultFormatStringForValueType:(NSInteger)arg1;
++ (id)defaultFormatStringForValueType:(int)arg1 negativeStyle:(int)arg2;
++ (id)defaultFormatStringForValueType:(int)arg1;
 + (id)displayNameForCurrencyCode:(id)arg1;
 + (void)formatString:(id)arg1 replaceOccurencesOfUnescapedString:(id)arg2 withString:(id)arg3;
-+ (id)formatString:(id)arg1 transformedForNegativeStyle:(NSInteger)arg2;
++ (id)formatString:(id)arg1 transformedForNegativeStyle:(int)arg2;
 + (id)formatterForLocale:(struct __CFLocale { }*)arg1;
 + (id)localizedPercentSymbol;
 + (id)numberFormatStringSpecialSymbols;
-+ (NSInteger)positionOfCurrencySymbolInNumberFormatSubpattern:(id)arg1;
-+ (NSInteger)positionOfMinusSignInNumberFormatSubpattern:(id)arg1;
-+ (NSInteger)positionOfSymbol:(id)arg1 inNumberFormatSubpattern:(id)arg2;
++ (int)positionOfCurrencySymbolInNumberFormatSubpattern:(id)arg1;
++ (int)positionOfMinusSignInNumberFormatSubpattern:(id)arg1;
++ (int)positionOfSymbol:(id)arg1 inNumberFormatSubpattern:(id)arg2;
 + (id)userVisibleCurrencyCodes;
 
 - (BOOL)currencyFromString:(struct __CFString { }*)arg1 additionalCurrencyCode:(struct __CFString { }*)arg2 value:(double*)arg3 formatString:(const struct __CFString {}**)arg4 currencyCode:(const struct __CFString {}**)arg5;
@@ -48,8 +48,8 @@
 - (id)currentLocaleCurrencyCode;
 - (void)dealloc;
 - (BOOL)decimalFromString:(struct __CFString { }*)arg1 value:(double*)arg2 formatString:(const struct __CFString {}**)arg3;
-- (id)defaultFormatStringForValueType:(NSInteger)arg1 negativeStyle:(NSInteger)arg2;
-- (id)defaultFormatStringForValueType:(NSInteger)arg1;
+- (id)defaultFormatStringForValueType:(int)arg1 negativeStyle:(int)arg2;
+- (id)defaultFormatStringForValueType:(int)arg1;
 - (id)displayNameForCurrencyCode:(id)arg1;
 - (BOOL)findCurrencySymbolInString:(struct __CFString { }*)arg1 additionalCurrencyCode:(struct __CFString { }*)arg2 successfulString:(const struct __CFString {}**)arg3;
 - (BOOL)fractionFromString:(struct __CFString { }*)arg1 value:(double*)arg2;

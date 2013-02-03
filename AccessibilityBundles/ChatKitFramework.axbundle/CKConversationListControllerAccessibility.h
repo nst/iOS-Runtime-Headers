@@ -8,6 +8,6 @@
 + (void)_initializeSafeCategory;
 
 - (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

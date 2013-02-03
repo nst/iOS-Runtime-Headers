@@ -6,21 +6,21 @@
 
 @interface MFBase64Decoder : MFBaseFilterDataConsumer {
     BOOL _bound;
-    NSUInteger _decodedBits;
-    NSUInteger _equalCount;
+    unsigned int _decodedBits;
+    unsigned int _equalCount;
     NSMutableData *_leftovers;
     char *_table;
-    NSUInteger _validBytes;
+    unsigned int _validBytes;
 }
 
 @property BOOL convertCommas;
 @property BOOL isBound;
-@property(readonly) NSUInteger unconverted;
+@property(readonly) unsigned int unconverted;
 
 + (BOOL)isValidBase64:(id)arg1;
 
-- (unsigned long)_decodeBytes:(const char *)arg1 end:(const char *)arg2 into:(char *)arg3 length:(unsigned long)arg4 startingAt:(unsigned long)arg5 outEncodedOffset:(NSUInteger*)arg6;
-- (NSInteger)appendData:(id)arg1;
+- (unsigned long)_decodeBytes:(const char *)arg1 end:(const char *)arg2 into:(char *)arg3 length:(unsigned long)arg4 startingAt:(unsigned long)arg5 outEncodedOffset:(unsigned int*)arg6;
+- (int)appendData:(id)arg1;
 - (BOOL)convertCommas;
 - (void)dealloc;
 - (void)done;

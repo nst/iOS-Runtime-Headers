@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMHTMLFormElement, NSString;
+
 @interface DOMHTMLIsIndexElement : DOMHTMLInputElement {
 }
 
-@property(retain,readonly) DOMHTMLFormElement *form;
-@property(copy) NSString *prompt;
+@property(retain,readonly) DOMHTMLFormElement * form;
+@property(copy) NSString * prompt;
 
 - (id)form;
 - (id)prompt;

@@ -8,7 +8,7 @@
     NSURL *mUrl;
 }
 
-@property(retain) NSURL *url;
+@property(retain) NSURL * url;
 
 - (void)dealloc;
 - (void)setUrl:(id)arg1;

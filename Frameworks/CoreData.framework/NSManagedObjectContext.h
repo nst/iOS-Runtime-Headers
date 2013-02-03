@@ -26,7 +26,7 @@
         unsigned int _preflightSaveInProgress : 1; 
         unsigned int _reservedFlags : 14; 
     id *_cachedObsInfoByEntity;
-    NSInteger _cd_rc;
+    int _cd_rc;
     NSMutableSet *_changedObjects;
     id _childObjectStores;
     id *_debuggingRecords;
@@ -36,7 +36,7 @@
     id _editors;
     double _fetchTimestamp;
     } _flags;
-    NSInteger _ignoreChangeNotification;
+    int _ignoreChangeNotification;
     id _infoByGID;
     NSMutableSet *_insertedObjects;
     id _lock;
@@ -48,7 +48,7 @@
     id _referenceQueue;
     NSMutableSet *_refreshedObjects;
     void *_reserved2;
-    NSInteger _spinLock;
+    int _spinLock;
     NSUndoManager *_undoManager;
     short _undoTransactionID;
     NSMutableSet *_unprocessedChanges;
@@ -62,7 +62,7 @@
 + (void)initialize;
 
 - (BOOL)_attemptCoalesceChangesForFetch;
-- (NSUInteger)_batchRetainedObjects:(id*)arg1 forCount:(NSUInteger)arg2 withIDs:(id*)arg3 optionalHandler:(id)arg4 withInlineStorage:(BOOL)arg5;
+- (unsigned int)_batchRetainedObjects:(id*)arg1 forCount:(unsigned int)arg2 withIDs:(id*)arg3 optionalHandler:(id)arg4 withInlineStorage:(BOOL)arg5;
 - (void)_changeIDsForManagedObjects:(id)arg1 toIDs:(id)arg2;
 - (void)_changeIDsForManagedObjects:(id)arg1;
 - (void)_clearChangedThisTransaction:(id)arg1;
@@ -78,8 +78,8 @@
 - (void)_clearUpdates;
 - (id)_committedSnapshotForObject:(id)arg1;
 - (void)_copyChildObject:(id)arg1 toParentObject:(id)arg2 fromChildContext:(id)arg3;
-- (NSUInteger)_countWithMergedChangesForRequest:(id)arg1 possibleChanges:(id)arg2 possibleDeletes:(id)arg3 error:(id*)arg4;
-- (NSUInteger)_countWithNoChangesForRequest:(id)arg1 error:(id*)arg2;
+- (unsigned int)_countWithMergedChangesForRequest:(id)arg1 possibleChanges:(id)arg2 possibleDeletes:(id)arg3 error:(id*)arg4;
+- (unsigned int)_countWithNoChangesForRequest:(id)arg1 error:(id*)arg2;
 - (void)_createAndPostChangeNotification:(id)arg1 withDeletions:(id)arg2 withUpdates:(id)arg3 withRefreshes:(id)arg4;
 - (id)_createStoreFetchRequestForFetchRequest:(id)arg1;
 - (id)_currentEventSnapshotForObject:(id)arg1;
@@ -96,7 +96,7 @@
 - (void)_forgetObject:(id)arg1 propagateToObjectStore:(BOOL)arg2;
 - (id)_globalIDForObject:(id)arg1;
 - (id)_globalIDsForObjects:(id)arg1;
-- (void)_growRegistrationCollectionForEntitySlot:(NSUInteger)arg1 toSize:(NSUInteger)arg2;
+- (void)_growRegistrationCollectionForEntitySlot:(unsigned int)arg1 toSize:(unsigned int)arg2;
 - (BOOL)_handleError:(id)arg1 withError:(id*)arg2;
 - (BOOL)_handleOptimisticLockingError:(id)arg1 withError:(id*)arg2;
 - (BOOL)_ignoringChangeNotifications;
@@ -165,11 +165,11 @@
 - (void)_updateUnprocessedOwnDestinations:(id)arg1;
 - (BOOL)_validateChangesForSave:(id*)arg1;
 - (BOOL)_validateDeletesUsingTable:(id)arg1 withError:(id*)arg2;
-- (BOOL)_validateObjects:(id)arg1 forOperation:(NSUInteger)arg2 error:(id*)arg3 exhaustive:(BOOL)arg4 forSave:(BOOL)arg5;
+- (BOOL)_validateObjects:(id)arg1 forOperation:(unsigned int)arg2 error:(id*)arg3 exhaustive:(BOOL)arg4 forSave:(BOOL)arg5;
 - (void)assignObject:(id)arg1 toPersistentStore:(id)arg2;
 - (BOOL)commitEditing;
 - (void)commitEditingWithDelegate:(id)arg1 didCommitSelector:(SEL)arg2 contextInfo:(void*)arg3;
-- (NSUInteger)countForFetchRequest:(id)arg1 error:(id*)arg2;
+- (unsigned int)countForFetchRequest:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (void)deleteObject:(id)arg1;
 - (id)deletedObjects;
@@ -183,7 +183,7 @@
 - (BOOL)hasChanges;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(NSUInteger)arg1;
+- (id)initWithType:(unsigned int)arg1;
 - (void)insertObject:(id)arg1;
 - (id)insertedObjects;
 - (BOOL)isEditing;
@@ -213,7 +213,7 @@
 - (void)release;
 - (void)reset;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (BOOL)retainsRegisteredObjects;
 - (void)rollback;
 - (BOOL)save:(id*)arg1;

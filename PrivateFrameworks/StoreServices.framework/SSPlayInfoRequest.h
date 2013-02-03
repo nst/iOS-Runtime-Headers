@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSPlayInfoResponse, SSPlayInfoRequestContext;
+@class SSPlayInfoResponse, <SSPlayInfoRequestDelegate>, SSPlayInfoRequestContext;
 
 @interface SSPlayInfoRequest : SSRequest {
     SSPlayInfoRequestContext *_context;
     SSPlayInfoResponse *_response;
 }
 
-@property <SSPlayInfoRequestDelegate> *delegate;
-@property(readonly) SSPlayInfoRequestContext *playInfoContext;
-@property(readonly) SSPlayInfoResponse *playInfoResponse;
+@property <SSPlayInfoRequestDelegate> * delegate;
+@property(readonly) SSPlayInfoRequestContext * playInfoContext;
+@property(readonly) SSPlayInfoResponse * playInfoResponse;
 
 - (void)_sendResponseToDelegate:(id)arg1;
 - (id)copyPropertyListEncoding;

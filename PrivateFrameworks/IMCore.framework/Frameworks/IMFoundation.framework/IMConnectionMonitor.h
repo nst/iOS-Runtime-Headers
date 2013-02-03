@@ -9,11 +9,11 @@
     NSString *_remoteHost;
 }
 
-@property BOOL isDataConnectionActive; /* unknown property attribute: SsetDataConnectionActive: */
-@property <IMConnectionMonitorDelegate> *delegate;
-@property(readonly) NSString *remoteHost;
+@property <IMConnectionMonitorDelegate> * delegate;
+@property(setter=setDataConnectionActive:) BOOL isDataConnectionActive;
 @property(readonly) BOOL isImmediatelyReachable;
 @property(readonly) BOOL isReachableAfterModemDial;
+@property(readonly) NSString * remoteHost;
 @property(readonly) BOOL requiresDataConnectionActivation;
 
 + (id)alloc;

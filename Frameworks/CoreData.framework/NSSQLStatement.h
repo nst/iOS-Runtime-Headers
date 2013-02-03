@@ -12,7 +12,7 @@
     NSString *_sqlString;
 }
 
-- (NSUInteger)addBindVariable:(id)arg1;
+- (unsigned int)addBindVariable:(id)arg1;
 - (id)bindVariables;
 - (void)cacheFakeEntityForFetch:(id)arg1;
 - (void)clearCaches;

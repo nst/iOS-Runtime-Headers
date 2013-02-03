@@ -5,29 +5,29 @@
 @class NSString, <CalendarEventAlarmTableDelegate>;
 
 @interface CalendarEventAlarmTable : UITableView <UITableViewDelegate, UITableViewDataSource> {
-    NSInteger _alarmIdentifier;
+    int _alarmIdentifier;
     <CalendarEventAlarmTableDelegate> *_alarmTableDelegate;
     BOOL _customSelected;
     NSString *_customString;
-    NSInteger _selectedItem;
+    int _selectedItem;
 }
 
-@property <CalendarEventAlarmTableDelegate> *alarmTableDelegate;
+@property <CalendarEventAlarmTableDelegate> * alarmTableDelegate;
 
-- (NSInteger)_presetIdentifierForRow:(NSInteger)arg1;
-- (NSInteger)_rowForPresetIdentifier:(NSInteger)arg1;
-- (void)_selectRow:(NSInteger)arg1;
+- (int)_presetIdentifierForRow:(int)arg1;
+- (int)_rowForPresetIdentifier:(int)arg1;
+- (void)_selectRow:(int)arg1;
 - (id)alarmTableDelegate;
 - (BOOL)customSelected;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSInteger)presetIdentifier;
+- (int)presetIdentifier;
 - (void)setAlarmTableDelegate:(id)arg1;
 - (void)setCustomSelected:(BOOL)arg1;
 - (void)setCustomString:(id)arg1;
-- (void)setPresetIdentifier:(NSInteger)arg1;
+- (void)setPresetIdentifier:(int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 
 @end

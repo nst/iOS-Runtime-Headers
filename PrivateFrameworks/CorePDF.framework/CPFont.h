@@ -8,7 +8,7 @@
     struct { 
         float fontStretch; 
         float fontWeight; 
-        NSUInteger flags; 
+        unsigned int flags; 
         struct CGRect { 
             struct CGPoint { 
                 float x; 
@@ -52,13 +52,13 @@
 - (float)descent;
 - (void)dispose;
 - (void)finalize;
-- (NSUInteger)flags;
+- (unsigned int)flags;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fontBBox;
 - (id)fontName;
 - (float)fontStretch;
 - (float)fontWeight;
 - (void)getFontName;
-- (BOOL)getGlyphs:(unsigned short*)arg1 forCodes:(const unsigned short*)arg2 count:(NSUInteger)arg3;
+- (BOOL)getGlyphs:(unsigned short*)arg1 forCodes:(const unsigned short*)arg2 count:(unsigned int)arg3;
 - (id)initWith:(struct CGPDFDictionary { }*)arg1;
 - (BOOL)isSameFontAs:(id)arg1;
 - (float)italicAngle;
@@ -74,7 +74,7 @@
 - (float)stemV;
 - (float)underlinePosition;
 - (float)underlineThickness;
-- (void)uniCharsFor:(unsigned long)arg1 count:(NSUInteger*)arg2 toArray:(unsigned short*)arg3 maxChars:(NSUInteger)arg4;
+- (void)uniCharsFor:(unsigned long)arg1 count:(unsigned int*)arg2 toArray:(unsigned short*)arg3 maxChars:(unsigned int)arg4;
 - (float)xHeight;
 
 @end

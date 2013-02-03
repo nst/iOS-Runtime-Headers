@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSArray;
 
 @interface PLImageRowCell : UITableViewCell {
     struct CGImage { } *_rowImage;
     NSMutableArray *_stackItemViews;
 }
 
-@property(readonly) NSArray *stackItemViews;
+@property(readonly) NSArray * stackItemViews;
 
 + (void)_initializeSafeCategory;
 + (Class)layerClass;

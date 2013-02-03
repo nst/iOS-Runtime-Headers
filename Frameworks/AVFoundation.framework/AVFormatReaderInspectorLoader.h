@@ -7,12 +7,16 @@
     BOOL _prefersAccurateTiming;
 }
 
++ (id)_avfValidationPlist;
 + (id)formatReaderInspectorLoaderWithURL:(id)arg1 options:(id)arg2;
++ (void)initialize;
 
-- (struct OpaqueFigFormatReader { }*)_copyFormatReaderFromFigObjectWithFigErrorCode:(NSInteger*)arg1;
+- (void)_addFormatReaderLoaderNotifications;
+- (struct OpaqueFigFormatReader { }*)_copyFormatReaderFromFigObjectWithFigErrorCode:(int*)arg1;
 - (id)_dictionaryOfSpecialGettersForKeyValueStatus;
 - (struct OpaqueFigFormatReaderLoader { }*)_formatReaderLoader;
 - (id)_formatReaderLoaderProductsForKeys:(id)arg1;
+- (BOOL)_inspectionRequiresAFormatReader;
 - (void)_loadDurationSynchronously;
 - (id)_loadValuesUsingDefaultLoadingMethodWhileMutexLockedForKeys:(id)arg1;
 - (BOOL)_providesAccurateTiming;
@@ -21,7 +25,7 @@
 - (void)cancelLoading;
 - (void)dealloc;
 - (void)finalize;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithURL:(id)arg1 options:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 

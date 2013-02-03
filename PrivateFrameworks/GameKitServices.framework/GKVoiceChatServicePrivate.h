@@ -6,76 +6,76 @@
 
 @interface GKVoiceChatServicePrivate : NSObject <VideoConferenceDelegate, VideoConferenceRealTimeChannel> {
     struct tagCONNRESULT { 
-        NSInteger iCallID; 
-        NSInteger iRemoteCallID; 
-        NSInteger proto; 
-        NSInteger bIfRelay; 
+        int iCallID; 
+        int iRemoteCallID; 
+        int proto; 
+        int bIfRelay; 
         unsigned short wRelayServType; 
         unsigned short wChannelNumber; 
         struct tagIPPORT { 
-            NSInteger iFlags; 
+            int iFlags; 
             BOOL szIfName[16]; 
             union { 
-                NSUInteger dwIPv4; 
+                unsigned int dwIPv4; 
                 unsigned char abIPv6[16]; 
             } IP; 
             unsigned short wPort; 
         } mbLocal; 
         struct tagIPPORT { 
-            NSInteger iFlags; 
+            int iFlags; 
             BOOL szIfName[16]; 
             union { 
-                NSUInteger dwIPv4; 
+                unsigned int dwIPv4; 
                 unsigned char abIPv6[16]; 
             } IP; 
             unsigned short wPort; 
         } mbRemote; 
         struct tagIPPORT { 
-            NSInteger iFlags; 
+            int iFlags; 
             BOOL szIfName[16]; 
             union { 
-                NSUInteger dwIPv4; 
+                unsigned int dwIPv4; 
                 unsigned char abIPv6[16]; 
             } IP; 
             unsigned short wPort; 
         } mbSrc; 
         struct tagIPPORT { 
-            NSInteger iFlags; 
+            int iFlags; 
             BOOL szIfName[16]; 
             union { 
-                NSUInteger dwIPv4; 
+                unsigned int dwIPv4; 
                 unsigned char abIPv6[16]; 
             } IP; 
             unsigned short wPort; 
         } mbDst; 
         struct tagIPPORT { 
-            NSInteger iFlags; 
+            int iFlags; 
             BOOL szIfName[16]; 
             union { 
-                NSUInteger dwIPv4; 
+                unsigned int dwIPv4; 
                 unsigned char abIPv6[16]; 
             } IP; 
             unsigned short wPort; 
         } mbRemoteSrc; 
         struct tagIPPORT { 
-            NSInteger iFlags; 
+            int iFlags; 
             BOOL szIfName[16]; 
             union { 
-                NSUInteger dwIPv4; 
+                unsigned int dwIPv4; 
                 unsigned char abIPv6[16]; 
             } IP; 
             unsigned short wPort; 
         } mbRelayExt; 
-        NSUInteger dwRTT; 
-    NSInteger bundle;
-    NSInteger chatMode;
+        unsigned int dwRTT; 
+    int bundle;
+    int chatMode;
     <GKVoiceChatClient> *client;
     BOOL clientHasRTChannel;
     NSLock *clientLock;
     VideoConference *conf;
-    NSInteger curCallID;
+    int curCallID;
     } currentConnResult;
-    NSInteger didUseICE;
+    int didUseICE;
     BOOL focus;
     BOOL forceNoICE;
     GKVoiceChatDictionary *incomingCallDict;
@@ -86,45 +86,45 @@
     float outputMeterLevel;
     BOOL outputMeteringEnabled;
     NSString *sdp;
-    NSInteger state;
+    int state;
     NSRecursiveLock *stateLock;
     LoopbackSocketTunnel *tunnel;
     GKVoiceChatService *wrapperService;
 }
 
-@property void *localVideoLayer;
-@property void *remoteVideoLayer;
-@property GKVoiceChatService *wrapperService;
-@property NSInteger chatMode;
+@property int chatMode;
 @property id client;
 @property(getter=isFocus) BOOL focus;
 @property(readonly) float inputMeterLevel;
 @property(getter=isInputMeteringEnabled) BOOL inputMeteringEnabled;
 @property(getter=getLocalBitrate,readonly) double localBitrate;
 @property(getter=getLocalFramerate,readonly) double localFramerate;
+@property void* localVideoLayer;
 @property(getter=isMicrophoneMuted) BOOL microphoneMuted;
 @property(readonly) float outputMeterLevel;
 @property(getter=isOutputMeteringEnabled) BOOL outputMeteringEnabled;
 @property(getter=getRemoteBitrate,readonly) double remoteBitrate;
 @property(getter=getRemoteFramerate,readonly) double remoteFramerate;
 @property float remoteParticipantVolume;
-@property NSInteger state;
+@property void* remoteVideoLayer;
+@property int state;
+@property GKVoiceChatService * wrapperService;
 
 + (id)defaultVoiceChatService;
 
-- (BOOL)acceptCallID:(NSInteger)arg1 error:(id*)arg2;
-- (NSInteger)chatMode;
+- (BOOL)acceptCallID:(int)arg1 error:(id*)arg2;
+- (int)chatMode;
 - (void)cleanup;
 - (id)client;
-- (id)createInvite:(id*)arg1 toParticipant:(id)arg2 callID:(NSInteger*)arg3;
-- (id)createReplyUsingDictionary:(id)arg1 replyCode:(NSUInteger)arg2 error:(id*)arg3;
+- (id)createInvite:(id*)arg1 toParticipant:(id)arg2 callID:(int*)arg3;
+- (id)createReplyUsingDictionary:(id)arg1 replyCode:(unsigned int)arg2 error:(id*)arg3;
 - (void)dealloc;
-- (void)denyCallID:(NSInteger)arg1;
+- (void)denyCallID:(int)arg1;
 - (void)forceNoICE:(BOOL)arg1;
 - (double)getLocalBitrate;
 - (double)getLocalFramerate;
-- (void)getNSError:(id*)arg1 code:(NSInteger)arg2 description:(id)arg3 hResult:(NSInteger)arg4;
-- (void)getNSError:(id*)arg1 code:(NSInteger)arg2 description:(id)arg3 reason:(id)arg4;
+- (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 hResult:(int)arg4;
+- (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 reason:(id)arg4;
 - (double)getRemoteBitrate;
 - (double)getRemoteFramerate;
 - (void)informClientOfInviteFromParticipant:(id)arg1;
@@ -140,16 +140,16 @@
 - (BOOL)isInputMeteringEnabled;
 - (BOOL)isMicrophoneMuted;
 - (BOOL)isOutputMeteringEnabled;
-- (id)localDisplayNameForCallID:(NSInteger)arg1;
+- (id)localDisplayNameForCallID:(int)arg1;
 - (void*)localVideoLayer;
 - (float)outputMeterLevel;
 - (void)receivedData:(id)arg1 fromParticipantID:(id)arg2;
 - (void)receivedRealTimeData:(id)arg1 fromParticipantID:(id)arg2;
-- (id)remoteDisplayNameForCallID:(NSInteger)arg1;
+- (id)remoteDisplayNameForCallID:(int)arg1;
 - (float)remoteParticipantVolume;
 - (void*)remoteVideoLayer;
 - (void)resetState;
-- (void)setChatMode:(NSInteger)arg1;
+- (void)setChatMode:(int)arg1;
 - (void)setClient:(id)arg1;
 - (void)setFocus:(BOOL)arg1;
 - (void)setInputMeteringEnabled:(BOOL)arg1;
@@ -158,17 +158,17 @@
 - (void)setOutputMeteringEnabled:(BOOL)arg1;
 - (void)setRemoteParticipantVolume:(float)arg1;
 - (void)setRemoteVideoLayer:(void*)arg1;
-- (void)setState:(NSInteger)arg1;
+- (void)setState:(int)arg1;
 - (void)setWrapperService:(id)arg1;
-- (NSInteger)startICEConnectionCheck:(id)arg1 isCaller:(BOOL)arg2 withCallID:(NSInteger)arg3;
-- (NSInteger)startICEConnectionCheck:(id)arg1 isCaller:(BOOL)arg2;
+- (int)startICEConnectionCheck:(id)arg1 isCaller:(BOOL)arg2 withCallID:(int)arg3;
+- (int)startICEConnectionCheck:(id)arg1 isCaller:(BOOL)arg2;
 - (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
-- (NSInteger)state;
+- (int)state;
 - (void)stopVoiceChatProc:(id)arg1;
 - (void)stopVoiceChatWithParticipantID:(id)arg1;
 - (void)vcArg:(id)arg1 sendRealTimeData:(id)arg2 toParticipantID:(id)arg3;
-- (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(NSInteger)arg3 error:(id)arg4;
-- (void)videoConference:(id)arg1 didStopWithCallID:(NSInteger)arg2 error:(id)arg3;
+- (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(int)arg3 error:(id)arg4;
+- (void)videoConference:(id)arg1 didStopWithCallID:(int)arg2 error:(id)arg3;
 - (id)wrapperService;
 
 @end

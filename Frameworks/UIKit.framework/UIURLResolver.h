@@ -13,6 +13,7 @@
 - (id)_copyRegularExpressionsFromArray:(id)arg1;
 - (BOOL)_string:(id)arg1 matchesPatterns:(id)arg2;
 - (BOOL)_url:(id)arg1 matchesHostPatterns:(id)arg2 pathPatterns:(id)arg3;
+- (BOOL)_url:(id)arg1 matchesHostWhitelist:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

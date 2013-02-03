@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABSwellTextViewDelegate>, UITextView;
+@class <ABSwellTextViewDelegate>, UIColor, NSString, UITextView, UIFont;
 
 @interface ABSwellTextView : UIView <UITextViewDelegate> {
     struct { 
@@ -18,15 +18,17 @@
     UITextView *_textView;
 }
 
-@property <ABSwellTextViewDelegate> *delegate;
-@property UIFont *font;
-@property UIColor *highlightedTextColor;
-@property NSString *text;
-@property UIColor *textColor;
 @property BOOL allowsEditing;
+@property <ABSwellTextViewDelegate> * delegate;
+@property UIFont * font;
 @property(getter=isHighlighted) BOOL highlighted;
+@property UIColor * highlightedTextColor;
 @property float maxHeight;
 @property(getter=isScrollEnabled) BOOL scrollEnabled;
+@property(retain) UIColor * shadowColor;
+@property struct CGSize { float width; float height; } shadowOffset;
+@property NSString * text;
+@property UIColor * textColor;
 
 + (void)_initializeSafeCategory;
 + (float)lineHeightWithFont:(id)arg1;
@@ -62,9 +64,13 @@
 - (void)setKeyboardSettings:(id)arg1;
 - (void)setMaxHeight:(float)arg1;
 - (void)setScrollEnabled:(BOOL)arg1;
+- (void)setShadowColor:(id)arg1;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
+- (id)shadowColor;
+- (struct CGSize { float x1; float x2; })shadowOffset;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)text;
 - (id)textColor;

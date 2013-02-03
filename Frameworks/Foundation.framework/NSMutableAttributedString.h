@@ -7,24 +7,24 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
-- (void)addAttributes:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
-- (void)addAttributesWeakly:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (void)addAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)addAttributesWeakly:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)appendAttributedString:(id)arg1;
 - (void)appendString:(id)arg1 withAttributes:(id)arg2;
 - (void)beginEditing;
-- (void)deleteCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)deleteCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)endEditing;
-- (void)insertAttributedString:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)insertAttributedString:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)mutableString;
-- (void)removeAttribute:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (void)removeAttribute:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)removeCharactersWithAttribute:(id)arg1;
 - (void)replaceAttribute:(id)arg1 value:(id)arg2 withValue:(id)arg3;
-- (void)replaceCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withAttributedString:(id)arg2;
-- (void)replaceCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withString:(id)arg2;
+- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withAttributedString:(id)arg2;
+- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
 - (void)replaceNewlinesWithSpaces;
 - (void)setAttributedString:(id)arg1;
-- (void)setAttributes:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)trimWhitespace;
 
 @end

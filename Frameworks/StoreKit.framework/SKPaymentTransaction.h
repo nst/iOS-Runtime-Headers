@@ -2,17 +2,19 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
+@class NSError, SKPayment, NSString, NSDate, NSData, SKPaymentTransaction;
+
 @interface SKPaymentTransaction : NSObject {
     id _internal;
 }
 
-@property(readonly) NSError *error;
-@property(readonly) SKPaymentTransaction *originalTransaction;
-@property(readonly) SKPayment *payment;
-@property(readonly) NSDate *transactionDate;
-@property(readonly) NSString *transactionIdentifier;
-@property(readonly) NSData *transactionReceipt;
-@property(readonly) NSInteger transactionState;
+@property(readonly) NSError * error;
+@property(readonly) SKPaymentTransaction * originalTransaction;
+@property(readonly) SKPayment * payment;
+@property(readonly) NSDate * transactionDate;
+@property(readonly) NSString * transactionIdentifier;
+@property(readonly) NSData * transactionReceipt;
+@property(readonly) int transactionState;
 
 - (id)_transactionIdentifier;
 - (BOOL)canMergeWithTransaction:(id)arg1;
@@ -28,6 +30,6 @@
 - (id)transactionDate;
 - (id)transactionIdentifier;
 - (id)transactionReceipt;
-- (NSInteger)transactionState;
+- (int)transactionState;
 
 @end

@@ -2,33 +2,36 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
+@class CLLocation, <CLLocationManagerDelegate>, NSString, CLHeading, NSSet;
+
 @interface CLLocationManager : NSObject {
     id _internal;
 }
 
-@property <CLLocationManagerDelegate> *delegate;
-@property(readonly) CLHeading *heading;
-@property(readonly) __CLClient *internalClient;
-@property(readonly) CLLocation *location;
-@property(readonly) NSSet *monitoredRegions;
-@property(copy) NSString *purpose;
 @property(readonly) double bestAccuracy;
+@property <CLLocationManagerDelegate> * delegate;
 @property double desiredAccuracy;
 @property double distanceFilter;
 @property(readonly) double expectedGpsUpdateInterval;
+@property(readonly) CLHeading * heading;
 @property(readonly) BOOL headingAvailable;
 @property double headingFilter;
-@property NSInteger headingOrientation;
+@property int headingOrientation;
+@property(readonly) struct __CLClient { }* internalClient;
+@property(readonly) CLLocation * location;
 @property(readonly) BOOL locationServicesApproved;
 @property(readonly) BOOL locationServicesAvailable;
 @property(readonly) BOOL locationServicesEnabled;
 @property(readonly) double maximumRegionMonitoringDistance;
+@property(readonly) NSSet * monitoredRegions;
 @property BOOL privateMode;
+@property(copy) NSString * purpose;
 @property BOOL supportInfo;
 
-+ (NSInteger)_authorizationStatus;
-+ (NSInteger)authorizationStatus;
++ (int)_authorizationStatus;
++ (int)authorizationStatus;
 + (BOOL)headingAvailable;
++ (BOOL)locationServicesEnabled:(BOOL)arg1;
 + (BOOL)locationServicesEnabled;
 + (BOOL)regionMonitoringAvailable;
 + (BOOL)regionMonitoringEnabled;
@@ -50,7 +53,7 @@
 - (id)heading;
 - (BOOL)headingAvailable;
 - (double)headingFilter;
-- (NSInteger)headingOrientation;
+- (int)headingOrientation;
 - (void)historicLocationsFromDate:(id)arg1 forInterval:(double)arg2;
 - (id)init;
 - (struct __CLClient { }*)internalClient;
@@ -60,7 +63,7 @@
 - (BOOL)locationServicesEnabled;
 - (double)maximumRegionMonitoringDistance;
 - (id)monitoredRegions;
-- (void)onClientEvent:(NSInteger)arg1 supportInfo:(id)arg2;
+- (void)onClientEvent:(int)arg1 supportInfo:(id)arg2;
 - (void)onClientEventAuthStatus:(id)arg1;
 - (void)onClientEventError:(id)arg1;
 - (void)onClientEventHeading:(id)arg1;
@@ -78,7 +81,7 @@
 - (void)setDesiredAccuracy:(double)arg1;
 - (void)setDistanceFilter:(double)arg1;
 - (void)setHeadingFilter:(double)arg1;
-- (void)setHeadingOrientation:(NSInteger)arg1;
+- (void)setHeadingOrientation:(int)arg1;
 - (void)setPrivateMode:(BOOL)arg1;
 - (void)setPurpose:(id)arg1;
 - (void)setSupportInfo:(BOOL)arg1;

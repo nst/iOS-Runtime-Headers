@@ -10,9 +10,9 @@
     NSString *_replacementText;
 }
 
-@property(readonly) NSString *originalText;
-@property(readonly) UITextRange *range;
-@property(readonly) NSString *replacementText;
+@property(readonly) NSString * originalText;
+@property(readonly) UITextRange * range;
+@property(readonly) NSString * replacementText;
 
 + (id)replacementWithRange:(id)arg1 original:(id)arg2 replacement:(id)arg3;
 

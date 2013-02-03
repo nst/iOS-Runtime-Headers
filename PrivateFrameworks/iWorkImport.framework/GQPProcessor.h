@@ -2,13 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class GQSDocument, GQZArchive;
 
 @interface GQPProcessor : NSObject {
     struct stack<std::tr1::shared_ptr<StateSpec>,std::deque<std::tr1::shared_ptr<StateSpec>, std::allocator<std::tr1::shared_ptr<StateSpec> > > > { struct deque<std::tr1::shared_ptr<StateSpec>,std::allocator<std::tr1::shared_ptr<StateSpec> > > { 
             struct _Deque_impl { 
                 struct shared_ptr<StateSpec> {} **_M_map; 
-                NSUInteger _M_map_size; 
+                unsigned int _M_map_size; 
                 struct _Deque_iterator<std::tr1::shared_ptr<StateSpec>,std::tr1::shared_ptr<StateSpec>&,std::tr1::shared_ptr<StateSpec>*> { 
                     struct shared_ptr<StateSpec> {} *_M_cur; 
                     struct shared_ptr<StateSpec> {} *_M_first; 
@@ -25,7 +30,7 @@
     struct stack<std::pair<const Action*, int>,std::deque<std::pair<const Action*, int>, std::allocator<std::pair<const Action*, int> > > > { struct deque<std::pair<const Action*, int>,std::allocator<std::pair<const Action*, int> > > { 
             struct _Deque_impl { 
                 struct pair<const Action*,int> {} **_M_map; 
-                NSUInteger _M_map_size; 
+                unsigned int _M_map_size; 
                 struct _Deque_iterator<std::pair<const Action*, int>,std::pair<const Action*, int>&,std::pair<const Action*, int>*> { 
                     struct pair<const Action*,int> {} *_M_cur; 
                     struct pair<const Action*,int> {} *_M_first; 
@@ -47,7 +52,7 @@
     struct __CFBundle { } *mBundle;
     GQSDocument *mDocumentState;
     struct __QLPreviewRequest { } *mOutputPreviewRequest;
-    struct _xmlParserInputBuffer { void *x1; int (*x2)(); int (*x3)(); struct _xmlCharEncodingHandler {} *x4; struct _xmlBuffer {} *x5; struct _xmlBuffer {} *x6; NSInteger x7; NSInteger x8; unsigned long x9; } *mParserInputBuffer;
+    struct _xmlParserInputBuffer { void *x1; int (*x2)(); int (*x3)(); struct _xmlCharEncodingHandler {} *x4; struct _xmlBuffer {} *x5; struct _xmlBuffer {} *x6; int x7; int x8; unsigned long x9; } *mParserInputBuffer;
     struct _xmlTextReader { } *mReader;
         } x1; } *mStateStack;
     } mThumbnailSize;
@@ -56,7 +61,7 @@
 
 + (void)initialize;
 
-- (struct stack<std::pair<const Action*, int>,std::deque<std::pair<const Action*, int>, std::allocator<std::pair<const Action*, int> > > > { struct deque<std::pair<const Action*, int>,std::allocator<std::pair<const Action*, int> > > { struct _Deque_impl { struct pair<const Action*,int> {} **x_1_2_1; NSUInteger x_1_2_2; struct _Deque_iterator<std::pair<const Action*, int>,std::pair<const Action*, int>&,std::pair<const Action*, int>*> { struct pair<const Action*,int> {} *x_3_3_1; struct pair<const Action*,int> {} *x_3_3_2; struct pair<const Action*,int> {} *x_3_3_3; struct pair<const Action*,int> {} **x_3_3_4; } x_1_2_3; struct _Deque_iterator<std::pair<const Action*, int>,std::pair<const Action*, int>&,std::pair<const Action*, int>*> { struct pair<const Action*,int> {} *x_4_3_1; struct pair<const Action*,int> {} *x_4_3_2; struct pair<const Action*,int> {} *x_4_3_3; struct pair<const Action*,int> {} **x_4_3_4; } x_1_2_4; } x_1_1_1; } x1; }*)actionStack;
+- (struct stack<std::pair<const Action*, int>,std::deque<std::pair<const Action*, int>, std::allocator<std::pair<const Action*, int> > > > { struct deque<std::pair<const Action*, int>,std::allocator<std::pair<const Action*, int> > > { struct _Deque_impl { struct pair<const Action*,int> {} **x_1_2_1; unsigned int x_1_2_2; struct _Deque_iterator<std::pair<const Action*, int>,std::pair<const Action*, int>&,std::pair<const Action*, int>*> { struct pair<const Action*,int> {} *x_3_3_1; struct pair<const Action*,int> {} *x_3_3_2; struct pair<const Action*,int> {} *x_3_3_3; struct pair<const Action*,int> {} **x_3_3_4; } x_1_2_3; struct _Deque_iterator<std::pair<const Action*, int>,std::pair<const Action*, int>&,std::pair<const Action*, int>*> { struct pair<const Action*,int> {} *x_4_3_1; struct pair<const Action*,int> {} *x_4_3_2; struct pair<const Action*,int> {} *x_4_3_3; struct pair<const Action*,int> {} **x_4_3_4; } x_1_2_4; } x_1_1_1; } x1; }*)actionStack;
 - (id)archive;
 - (struct __CFBundle { }*)bundle;
 - (void)dealloc;
@@ -69,7 +74,7 @@
 - (void)setBundle:(struct __CFBundle { }*)arg1;
 - (void)setThumbnailSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setWrongFormat:(BOOL)arg1;
-- (struct stack<std::tr1::shared_ptr<StateSpec>,std::deque<std::tr1::shared_ptr<StateSpec>, std::allocator<std::tr1::shared_ptr<StateSpec> > > > { struct deque<std::tr1::shared_ptr<StateSpec>,std::allocator<std::tr1::shared_ptr<StateSpec> > > { struct _Deque_impl { struct shared_ptr<StateSpec> {} **x_1_2_1; NSUInteger x_1_2_2; struct _Deque_iterator<std::tr1::shared_ptr<StateSpec>,std::tr1::shared_ptr<StateSpec>&,std::tr1::shared_ptr<StateSpec>*> { struct shared_ptr<StateSpec> {} *x_3_3_1; struct shared_ptr<StateSpec> {} *x_3_3_2; struct shared_ptr<StateSpec> {} *x_3_3_3; struct shared_ptr<StateSpec> {} **x_3_3_4; } x_1_2_3; struct _Deque_iterator<std::tr1::shared_ptr<StateSpec>,std::tr1::shared_ptr<StateSpec>&,std::tr1::shared_ptr<StateSpec>*> { struct shared_ptr<StateSpec> {} *x_4_3_1; struct shared_ptr<StateSpec> {} *x_4_3_2; struct shared_ptr<StateSpec> {} *x_4_3_3; struct shared_ptr<StateSpec> {} **x_4_3_4; } x_1_2_4; } x_1_1_1; } x1; }*)stateStack;
+- (struct stack<std::tr1::shared_ptr<StateSpec>,std::deque<std::tr1::shared_ptr<StateSpec>, std::allocator<std::tr1::shared_ptr<StateSpec> > > > { struct deque<std::tr1::shared_ptr<StateSpec>,std::allocator<std::tr1::shared_ptr<StateSpec> > > { struct _Deque_impl { struct shared_ptr<StateSpec> {} **x_1_2_1; unsigned int x_1_2_2; struct _Deque_iterator<std::tr1::shared_ptr<StateSpec>,std::tr1::shared_ptr<StateSpec>&,std::tr1::shared_ptr<StateSpec>*> { struct shared_ptr<StateSpec> {} *x_3_3_1; struct shared_ptr<StateSpec> {} *x_3_3_2; struct shared_ptr<StateSpec> {} *x_3_3_3; struct shared_ptr<StateSpec> {} **x_3_3_4; } x_1_2_3; struct _Deque_iterator<std::tr1::shared_ptr<StateSpec>,std::tr1::shared_ptr<StateSpec>&,std::tr1::shared_ptr<StateSpec>*> { struct shared_ptr<StateSpec> {} *x_4_3_1; struct shared_ptr<StateSpec> {} *x_4_3_2; struct shared_ptr<StateSpec> {} *x_4_3_3; struct shared_ptr<StateSpec> {} **x_4_3_4; } x_1_2_4; } x_1_1_1; } x1; }*)stateStack;
 - (struct CGSize { float x1; float x2; })thumbnailSize;
 
 @end

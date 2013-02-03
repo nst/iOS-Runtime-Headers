@@ -20,8 +20,8 @@
 
 - (id)initWithChartSheet:(id)arg1 parent:(id)arg2;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
-- (NSInteger)preprocessHeightWithState:(id)arg1;
-- (NSInteger)preprocessWidthWithState:(id)arg1;
-- (NSInteger)width;
+- (int)preprocessHeightWithState:(id)arg1;
+- (int)preprocessWidthWithState:(id)arg1;
+- (int)width;
 
 @end

@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
+@class NSArray;
+
 @interface CAWindowServer : NSObject {
-    struct CAWindowServerImpl { struct __CFArray {} *x1; NSUInteger x2; } *_impl;
+    struct CAWindowServerImpl { struct __CFArray {} *x1; unsigned int x2; } *_impl;
 }
 
-@property(readonly) NSArray *displays;
+@property(readonly) NSArray * displays;
 @property(getter=isMirroringEnabled) BOOL mirroringEnabled;
-@property NSUInteger rendererFlags;
+@property unsigned int rendererFlags;
 
 + (id)context;
 + (id)contextWithOptions:(id)arg1;
@@ -26,8 +28,8 @@
 - (BOOL)isMirroringEnabled;
 - (void)removeAllDisplays;
 - (void)removeDisplay:(id)arg1;
-- (NSUInteger)rendererFlags;
+- (unsigned int)rendererFlags;
 - (void)setMirroringEnabled:(BOOL)arg1;
-- (void)setRendererFlags:(NSUInteger)arg1;
+- (void)setRendererFlags:(unsigned int)arg1;
 
 @end

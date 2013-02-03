@@ -11,8 +11,8 @@
     BOOL _weak;
 }
 
-@property SUScriptObject *scriptObject;
 @property id object;
+@property SUScriptObject * scriptObject;
 
 + (void)clearWeakReferencesToObject:(id)arg1;
 + (id)objectWithNativeObject:(id)arg1;

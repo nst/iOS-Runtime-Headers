@@ -12,11 +12,11 @@
     NSURLRequest *_previewRequest;
 }
 
-@property QLPreviewConverter *previewConverter;
-@property(retain) <QLPreviewItem> *previewItem;
-@property(retain) NSURLRequest *previewRequest;
 @property id delegate;
 @property BOOL loading;
+@property QLPreviewConverter * previewConverter;
+@property(retain) <QLPreviewItem> * previewItem;
+@property(retain) NSURLRequest * previewRequest;
 
 - (void)_notifyDidFailLoadingWithError:(id)arg1;
 - (void)_notifyDidLoad;

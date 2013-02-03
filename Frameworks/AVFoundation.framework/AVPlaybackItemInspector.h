@@ -6,7 +6,7 @@
     struct OpaqueFigPlaybackItem { } *_playbackItem;
 }
 
-@property(getter=_playbackItem,retain) OpaqueFigPlaybackItem *playbackItem; /* unknown property attribute: S_setPlaybackItem: */
+@property(getter=_playbackItem,setter=_setPlaybackItem:,retain) struct OpaqueFigPlaybackItem { }* playbackItem;
 
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (void*)_propertyAccessor:(struct __CFString { }*)arg1;
@@ -15,9 +15,9 @@
 - (id)commonMetadata;
 - (id)compatibleTrackForCompositionTrack:(id)arg1;
 - (void)dealloc;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })duration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (void)finalize;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)lyrics;

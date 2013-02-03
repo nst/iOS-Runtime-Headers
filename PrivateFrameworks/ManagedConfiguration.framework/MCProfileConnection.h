@@ -16,7 +16,7 @@
     struct __CFBag { } *_observers;
     NSData *_originalProfileData;
     NSDictionary *_preflightResponse;
-    NSInteger _userInputTimeoutType;
+    int _userInputTimeoutType;
     NSTimer *_userInputTimer;
 }
 
@@ -44,22 +44,22 @@
 - (BOOL)_openSensitiveURLString:(id)arg1 unlock:(BOOL)arg2;
 - (void)_passcodeDidChange;
 - (void)_passcodePolicyDidChange;
-- (id)_pathsToInstalledProfilesWithFlags:(NSInteger)arg1;
+- (id)_pathsToInstalledProfilesWithFlags:(int)arg1;
 - (void)_profileListDidChange;
 - (id)_queueDataForAcceptance:(id)arg1 originalFileName:(id)arg2 transitionToUI:(BOOL)arg3 outError:(id*)arg4;
 - (void)_registerSelectorsForInteractionServer:(id)arg1;
 - (void)_restrictionDidChange;
-- (void)_setTimeoutWaitingForUserInputType:(NSInteger)arg1;
+- (void)_setTimeoutWaitingForUserInputType:(int)arg1;
 - (void)_tearDownInteractionServer;
 - (void)_userInputTimerFired;
 - (id)acceptedFileExtensions;
 - (id)acceptedMIMETypes;
 - (void)addObserver:(id)arg1;
 - (id)allClientUUIDsForClientType:(id)arg1;
-- (NSInteger)applyRestrictionDictionary:(id)arg1 clientType:(id)arg2 clientUUID:(id)arg3 localizedClientDescription:(id)arg4 localizedWarningMessage:(id)arg5 complianceBlocking:(NSInteger)arg6 displayImmediateAlert:(BOOL)arg7 outRestrictionChanged:(BOOL*)arg8 outEffectiveSettingsChanged:(BOOL*)arg9 outError:(id*)arg10;
+- (int)applyRestrictionDictionary:(id)arg1 clientType:(id)arg2 clientUUID:(id)arg3 localizedClientDescription:(id)arg4 localizedWarningMessage:(id)arg5 complianceBlocking:(int)arg6 displayImmediateAlert:(BOOL)arg7 outRestrictionChanged:(BOOL*)arg8 outEffectiveSettingsChanged:(BOOL*)arg9 outError:(id*)arg10;
 - (BOOL)applyRestrictionDictionary:(id)arg1 clientType:(id)arg2 clientUUID:(id)arg3 localizedClientDescription:(id)arg4 localizedWarningMessage:(id)arg5 outRestrictionChanged:(BOOL*)arg6 outEffectiveSettingsChanged:(BOOL*)arg7 outError:(id*)arg8;
 - (BOOL)applyRestrictionDictionary:(id)arg1 clientType:(id)arg2 clientUUID:(id)arg3 outRestrictionChanged:(BOOL*)arg4 outEffectiveSettingsChanged:(BOOL*)arg5 outError:(id*)arg6;
-- (NSInteger)boolRestrictionForFeature:(id)arg1;
+- (int)boolRestrictionForFeature:(id)arg1;
 - (void)cancelUserInputResponses;
 - (BOOL)changePasscodeFrom:(id)arg1 to:(id)arg2 outError:(id*)arg3;
 - (void)checkIn;
@@ -68,18 +68,18 @@
 - (BOOL)currentPasscodeIsCompliantWithGlobalRestrictionsOutError:(id*)arg1;
 - (BOOL)currentPasscodeIsCompliantWithProfileRestrictionsOutError:(id*)arg1;
 - (void)dealloc;
-- (NSInteger)defaultBoolValueForSetting:(id)arg1;
+- (int)defaultBoolValueForSetting:(id)arg1;
 - (id)defaultParametersForBoolSetting:(id)arg1;
 - (id)defaultParametersForValueSetting:(id)arg1;
 - (id)defaultValueForSetting:(id)arg1;
-- (NSInteger)effectiveBoolValueForSetting:(id)arg1;
+- (int)effectiveBoolValueForSetting:(id)arg1;
 - (id)effectiveParametersForBoolSetting:(id)arg1;
 - (id)effectiveParametersForValueSetting:(id)arg1;
-- (NSInteger)effectiveRestrictedBoolValueForSetting:(id)arg1;
+- (int)effectiveRestrictedBoolValueForSetting:(id)arg1;
 - (id)effectiveRestrictions;
 - (id)effectiveUserSettings;
 - (id)effectiveValueForSetting:(id)arg1;
-- (NSInteger)getPasscodeComplianceWarningLastLockDate:(id)arg1 outLocalizedTitle:(id*)arg2 outLocalizedMessage:(id*)arg3;
+- (int)getPasscodeComplianceWarningLastLockDate:(id)arg1 outLocalizedTitle:(id*)arg2 outLocalizedMessage:(id*)arg3;
 - (id)installCarrierProfileData:(id)arg1 outError:(id*)arg2;
 - (BOOL)installConfigurationProfileWithData:(id)arg1;
 - (void)installProfile:(id)arg1 interactionDelegate:(id)arg2;
@@ -89,7 +89,7 @@
 - (id)installProfileData:(id)arg1 outError:(id*)arg2;
 - (BOOL)installProvisioningProfileData:(id)arg1 managingProfileIdentifier:(id)arg2 outError:(id*)arg3;
 - (id)installedProfileWithIdentifier:(id)arg1;
-- (id)installedProfilesWithFilterFlags:(NSInteger)arg1;
+- (id)installedProfilesWithFilterFlags:(int)arg1;
 - (BOOL)isBoolSettingLockedDownByRestrictions:(id)arg1;
 - (BOOL)isContentProtectionInEffect;
 - (BOOL)isPasscodeRequired;
@@ -102,7 +102,7 @@
 - (id)managedSystemConfigurationServiceIDs;
 - (id)managedWiFiNetworkNames;
 - (void)migratePostDataMigrator;
-- (NSInteger)newPasscodeEntryScreenType;
+- (int)newPasscodeEntryScreenType;
 - (void)notifyClientsToRecomputeCompliance;
 - (void)notifyUserHasSeenComplianceMessageWithLastLockDate:(id)arg1;
 - (id)objectForFeature:(id)arg1;
@@ -114,7 +114,7 @@
 - (id)passcodeExpiryDateOutError:(id*)arg1;
 - (id)popProfileFromHeadOfInstallationQueue;
 - (id)popProvisioningProfileDataFromHeadOfInstallationQueue;
-- (void)preflightUserInputResponses:(id)arg1 forPayloadIndex:(NSUInteger)arg2;
+- (void)preflightUserInputResponses:(id)arg1 forPayloadIndex:(unsigned int)arg2;
 - (void)processProfilesPostMigrate;
 - (void)processProfilesPostRestore;
 - (id)profileFromProfileData:(id)arg1 outError:(id*)arg2;
@@ -137,7 +137,7 @@
 - (void)resetAllSettingsToDefaults;
 - (void)respondToCurrentPasscodeRequestContinue:(BOOL)arg1 passcode:(id)arg2;
 - (void)respondToWarningsContinueInstallation:(BOOL)arg1;
-- (NSInteger)restrictedBoolValueForFeature:(id)arg1;
+- (int)restrictedBoolValueForFeature:(id)arg1;
 - (void)setBoolValue:(BOOL)arg1 forSetting:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setInteractionDelegate:(id)arg1;
@@ -155,7 +155,7 @@
 - (BOOL)transitionToProfileAcceptanceUIAndReturnToBundleID:(id)arg1;
 - (BOOL)transitionToProfileOverviewUI;
 - (BOOL)unlockDeviceWithPasscode:(id)arg1 outError:(id*)arg2;
-- (NSInteger)unlockScreenType;
+- (int)unlockScreenType;
 - (void)updateProfileWithIdentifier:(id)arg1 interactionDelegate:(id)arg2;
 - (id)updateProfileWithIdentifier:(id)arg1 outError:(id*)arg2;
 - (id)userInfoForClientUUID:(id)arg1;

@@ -5,17 +5,17 @@
 @class NSArray;
 
 @interface GKInvalidateCacheRequest : GKDataRequest {
-    NSInteger _cacheType;
+    int _cacheType;
     NSArray *_invalidateCacheKeys;
 }
 
-@property(retain) NSArray *invalidateCacheKeys;
-@property NSInteger cacheType;
+@property int cacheType;
+@property(retain) NSArray * invalidateCacheKeys;
 
-- (NSInteger)cacheType;
+- (int)cacheType;
 - (void)dealloc;
 - (id)invalidateCacheKeys;
-- (void)setCacheType:(NSInteger)arg1;
+- (void)setCacheType:(int)arg1;
 - (void)setInvalidateCacheKeys:(id)arg1;
 
 @end

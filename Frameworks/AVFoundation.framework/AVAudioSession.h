@@ -2,15 +2,17 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
+@class <AVAudioSessionDelegate>, NSString;
+
 @interface AVAudioSession : NSObject {
     void *_impl;
 }
 
-@property(readonly) NSString *category;
-@property <AVAudioSessionDelegate> *delegate;
-@property(readonly) NSInteger currentHardwareInputNumberOfChannels;
-@property(readonly) NSInteger currentHardwareOutputNumberOfChannels;
+@property(readonly) NSString * category;
+@property(readonly) int currentHardwareInputNumberOfChannels;
+@property(readonly) int currentHardwareOutputNumberOfChannels;
 @property(readonly) double currentHardwareSampleRate;
+@property <AVAudioSessionDelegate> * delegate;
 @property(readonly) BOOL inputIsAvailable;
 @property(readonly) double preferredHardwareSampleRate;
 @property(readonly) double preferredIOBufferDuration;
@@ -18,8 +20,8 @@
 + (id)sharedInstance;
 
 - (id)category;
-- (NSInteger)currentHardwareInputNumberOfChannels;
-- (NSInteger)currentHardwareOutputNumberOfChannels;
+- (int)currentHardwareInputNumberOfChannels;
+- (int)currentHardwareOutputNumberOfChannels;
 - (double)currentHardwareSampleRate;
 - (id)delegate;
 - (BOOL)inputIsAvailable;
@@ -30,7 +32,7 @@
 - (void)privateEndInterruptionWithFlags:(id)arg1;
 - (void)privateInputIsAvailableChanged:(id)arg1;
 - (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
-- (BOOL)setActive:(BOOL)arg1 withFlags:(NSInteger)arg2 error:(id*)arg3;
+- (BOOL)setActive:(BOOL)arg1 withFlags:(int)arg2 error:(id*)arg3;
 - (BOOL)setCategory:(id)arg1 error:(id*)arg2;
 - (void)setDelegate:(id)arg1;
 - (BOOL)setPreferredHardwareSampleRate:(double)arg1 error:(id*)arg2;

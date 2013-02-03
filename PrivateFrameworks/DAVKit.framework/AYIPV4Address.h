@@ -8,21 +8,21 @@
         unsigned char sin_family; 
         unsigned short sin_port; 
         struct in_addr { 
-            NSUInteger s_addr; 
+            unsigned int s_addr; 
         } sin_addr; 
         BOOL sin_zero[8]; 
     } _saddr;
 }
 
-- (id)URLToAddressWithScheme:(id)arg1 andPort:(NSInteger)arg2 URI:(id)arg3;
-- (NSUInteger)_s_addr;
+- (id)URLToAddressWithScheme:(id)arg1 andPort:(int)arg2 URI:(id)arg3;
+- (unsigned int)_s_addr;
 - (id)addressAsData;
 - (id)addressAsString;
 - (void)dumpInternal;
-- (void)getAddressAsSockAddr:(struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1 length:(NSInteger*)arg2;
+- (void)getAddressAsSockAddr:(struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1 length:(int*)arg2;
 - (id)initWithSockaddrBuffer:(struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1;
 - (BOOL)isLocalAddressConnectingTo:(id)arg1;
-- (NSInteger)port;
+- (int)port;
 - (id)type;
 
 @end

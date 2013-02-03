@@ -11,10 +11,10 @@
     NSString *_summary;
 }
 
-@property(retain) NSArray *attach;
-@property(retain) NSArray *attendee;
-@property(retain) NSString *description;
-@property(retain) NSString *summary;
+@property(retain) NSArray * attach;
+@property(retain) NSArray * attendee;
+@property(retain) NSString * description;
+@property(retain) NSString * summary;
 
 + (id)metadataWithData:(id)arg1;
 

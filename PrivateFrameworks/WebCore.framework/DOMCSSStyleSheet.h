@@ -2,20 +2,22 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMCSSRule, DOMCSSRuleList;
+
 @interface DOMCSSStyleSheet : DOMStyleSheet {
 }
 
-@property(retain,readonly) DOMCSSRuleList *cssRules;
-@property(retain,readonly) DOMCSSRule *ownerRule;
-@property(retain,readonly) DOMCSSRuleList *rules;
+@property(retain,readonly) DOMCSSRuleList * cssRules;
+@property(retain,readonly) DOMCSSRule * ownerRule;
+@property(retain,readonly) DOMCSSRuleList * rules;
 
-- (NSInteger)addRule:(id)arg1 style:(id)arg2 index:(NSUInteger)arg3;
+- (int)addRule:(id)arg1 style:(id)arg2 index:(unsigned int)arg3;
 - (id)cssRules;
-- (void)deleteRule:(NSUInteger)arg1;
-- (NSUInteger)insertRule:(id)arg1 :(NSUInteger)arg2;
-- (NSUInteger)insertRule:(id)arg1 index:(NSUInteger)arg2;
+- (void)deleteRule:(unsigned int)arg1;
+- (unsigned int)insertRule:(id)arg1 :(unsigned int)arg2;
+- (unsigned int)insertRule:(id)arg1 index:(unsigned int)arg2;
 - (id)ownerRule;
-- (void)removeRule:(NSUInteger)arg1;
+- (void)removeRule:(unsigned int)arg1;
 - (id)rules;
 
 @end

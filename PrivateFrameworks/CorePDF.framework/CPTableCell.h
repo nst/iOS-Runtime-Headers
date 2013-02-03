@@ -15,11 +15,11 @@
             float height; 
         } size; 
     struct { 
-        NSInteger location; 
-        NSInteger length; 
+        int location; 
+        int length; 
     struct { 
-        NSInteger location; 
-        NSInteger length; 
+        int location; 
+        int length; 
     struct { struct CGRect { 
             struct CGPoint { 
                 float x; 
@@ -30,37 +30,37 @@
                 float height; 
             } size; 
     struct CGColor { } *backgroundColor;
-    NSUInteger backgroundGraphicCount;
+    unsigned int backgroundGraphicCount;
     CPGraphicObject **backgroundGraphics;
-        } x1; struct CGColor {} *x2; NSUInteger x3; CPGraphicObject **x4; } *borders;
+        } x1; struct CGColor {} *x2; unsigned int x3; CPGraphicObject **x4; } *borders;
     } cellBounds;
     } columnSpan;
     } rowSpan;
 }
 
-@property(readonly) NSUInteger backgroundGraphicCount;
-@property(readonly) CGRect cellBounds;
-@property ? columnSpan;
-@property ? rowSpan;
+@property(readonly) unsigned int backgroundGraphicCount;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } cellBounds;
+@property struct { int location; int length; } columnSpan;
+@property struct { int location; int length; } rowSpan;
 
 - (struct CGColor { }*)backgroundColor;
-- (id)backgroundGraphicAtIndex:(NSUInteger)arg1;
-- (NSUInteger)backgroundGraphicCount;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsOfBorder:(NSInteger)arg1;
+- (id)backgroundGraphicAtIndex:(unsigned int)arg1;
+- (unsigned int)backgroundGraphicCount;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsOfBorder:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cellBounds;
-- (struct CGColor { }*)colorOfBorder:(NSInteger)arg1;
-- (struct { NSInteger x1; NSInteger x2; })columnSpan;
-- (NSInteger)compareCellOrdinal:(id)arg1;
+- (struct CGColor { }*)colorOfBorder:(int)arg1;
+- (struct { int x1; int x2; })columnSpan;
+- (int)compareCellOrdinal:(id)arg1;
 - (void)dealloc;
 - (void)dispose;
 - (void)finalize;
-- (NSUInteger)graphicCountOfBorder:(NSInteger)arg1;
-- (id)graphicObjectOfBorder:(NSInteger)arg1 atIndex:(NSUInteger)arg2;
+- (unsigned int)graphicCountOfBorder:(int)arg1;
+- (id)graphicObjectOfBorder:(int)arg1 atIndex:(unsigned int)arg2;
 - (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct { NSInteger x1; NSInteger x2; })rowSpan;
+- (struct { int x1; int x2; })rowSpan;
 - (void)setBackgroundGraphics:(id)arg1;
-- (void)setBorder:(NSInteger)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 graphics:(id)arg3;
-- (void)setColumnSpan:(struct { NSInteger x1; NSInteger x2; })arg1;
-- (void)setRowSpan:(struct { NSInteger x1; NSInteger x2; })arg1;
+- (void)setBorder:(int)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 graphics:(id)arg3;
+- (void)setColumnSpan:(struct { int x1; int x2; })arg1;
+- (void)setRowSpan:(struct { int x1; int x2; })arg1;
 
 @end

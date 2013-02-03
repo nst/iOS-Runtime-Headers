@@ -12,11 +12,11 @@
     NSMutableArray *_orderedIdentifiers;
 }
 
-@property(retain) NSBundle *bundle;
-@property(retain) NSMutableDictionary *commandDictionary;
-@property(retain) NSString *driverIdentifier;
-@property(retain) NSString *modelIdentifier;
-@property(retain) NSMutableArray *orderedIdentifiers;
+@property(retain) NSBundle * bundle;
+@property(retain) NSMutableDictionary * commandDictionary;
+@property(retain) NSString * driverIdentifier;
+@property(retain) NSString * modelIdentifier;
+@property(retain) NSMutableArray * orderedIdentifiers;
 
 - (id)bundle;
 - (id)commandDictionary;

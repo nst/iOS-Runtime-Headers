@@ -8,7 +8,7 @@
     NSString *_audioCategory;
 }
 
-- (void)audioRoutingPicker:(id)arg1 didSelectRouteAtIndex:(NSInteger)arg2;
+- (void)audioRoutingPicker:(id)arg1 didSelectRouteAtIndex:(int)arg2;
 - (id)createBackAlert;
 - (id)createFrontAlert;
 - (void)dealloc;

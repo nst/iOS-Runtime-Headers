@@ -12,9 +12,9 @@
     unsigned int _writeSizeDispositionParameter : 1;
     unsigned int _allowsQuotedPrintable : 1;
     id _delegate;
-    NSUInteger _encodingHint;
+    unsigned int _encodingHint;
     Class _messageClassToInstantiate;
-    NSUInteger _preferredEncoding;
+    unsigned int _preferredEncoding;
 }
 
 - (BOOL)allows8BitMimeParts;

@@ -14,9 +14,9 @@
     MPAVItem *_item;
     double _lastKnownDuration;
     } _lastKnownNaturalSize;
-    NSUInteger _lastKnownType;
+    unsigned int _lastKnownType;
     BOOL _movieIsUnplayable;
-    NSInteger _movieSourceType;
+    int _movieSourceType;
     double _startPlaybackTime;
     NSURL *_url;
 }

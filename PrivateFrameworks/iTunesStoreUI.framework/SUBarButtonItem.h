@@ -15,8 +15,8 @@
     UINavigationItem *_lastNavigationItem;
 }
 
-@property(retain) UIView *accessoryView;
-@property UIEdgeInsets accessoryViewInsets;
+@property(retain) UIView * accessoryView;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } accessoryViewInsets;
 @property(getter=isLoading) BOOL loading;
 
 + (Class)classForNavigationButton;

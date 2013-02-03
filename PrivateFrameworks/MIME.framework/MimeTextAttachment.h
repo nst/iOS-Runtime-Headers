@@ -8,7 +8,7 @@
     MimePart *_mimePart;
 }
 
-- (NSUInteger)approximateSize;
+- (unsigned int)approximateSize;
 - (void)dealloc;
 - (id)description;
 - (id)displayedMimePart;

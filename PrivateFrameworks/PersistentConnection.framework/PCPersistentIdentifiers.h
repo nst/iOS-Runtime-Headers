@@ -7,7 +7,7 @@
 
 + (id)_processNamePrefix;
 + (unsigned long long)hostUniqueIdentifier;
-+ (NSInteger)pidFromMatchingIdentifer:(id)arg1;
++ (int)pidFromMatchingIdentifer:(id)arg1;
 + (id)processNameAndPidIdentifier;
 + (id)processNamePidAndStringIdentifier:(id)arg1;
 

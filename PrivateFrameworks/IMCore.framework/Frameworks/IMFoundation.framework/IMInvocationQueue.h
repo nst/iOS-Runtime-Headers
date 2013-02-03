@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSProtocolChecker, NSMutableArray;
+@class NSProtocolChecker, NSMutableArray, Protocol;
 
 @interface IMInvocationQueue : NSObject {
     id _delegate;
@@ -14,28 +14,28 @@
     id _target;
 }
 
-@property(retain) Protocol *protocol;
-@property(readonly) NSUInteger count;
+@property(readonly) unsigned int count;
 @property id delegate;
 @property double dequeueRate;
 @property(readonly) BOOL isEmpty;
+@property(retain) Protocol * protocol;
 @property id target;
 
-- (BOOL)_acceptsOptions:(NSUInteger)arg1;
+- (BOOL)_acceptsOptions:(unsigned int)arg1;
 - (void)_checkQueue;
 - (id)_dequeueInvocation;
-- (NSInteger)_enqueueInvocation:(id)arg1 options:(NSUInteger)arg2;
+- (int)_enqueueInvocation:(id)arg1 options:(unsigned int)arg2;
 - (void)_holdQueueNotification:(id)arg1;
-- (BOOL)_insertInvocation:(id)arg1 options:(NSUInteger)arg2;
+- (BOOL)_insertInvocation:(id)arg1 options:(unsigned int)arg2;
 - (BOOL)_invokeInvocation:(id)arg1;
-- (NSInteger)_maxQueueLimitSize;
-- (NSInteger)_numberOfLimitedMessagesInQueue;
-- (NSUInteger)_optionsForInvocation:(id)arg1;
+- (int)_maxQueueLimitSize;
+- (int)_numberOfLimitedMessagesInQueue;
+- (unsigned int)_optionsForInvocation:(id)arg1;
 - (void)_releaseQueueNotification:(id)arg1;
 - (BOOL)_replaceSimilarInvocation:(id)arg1;
 - (void)_setQueueTimer;
 - (void)_stepQueueNotification:(id)arg1;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)delegate;
 - (double)dequeueRate;

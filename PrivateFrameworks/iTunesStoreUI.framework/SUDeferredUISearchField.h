@@ -14,7 +14,7 @@
             float width; 
             float height; 
         } size; 
-    NSInteger _deferredClearButtonMode;
+    int _deferredClearButtonMode;
     UIFont *_deferredFont;
     } _deferredFrame;
     float _deferredPaddingLeft;
@@ -28,7 +28,7 @@
 
 - (void)_commitDeferredInterfaceUpdates;
 - (void)_saveCurrentStateAsDeferred;
-- (NSInteger)clearButtonMode;
+- (int)clearButtonMode;
 - (void)dealloc;
 - (id)font;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
@@ -36,7 +36,7 @@
 - (float)paddingLeft;
 - (float)paddingTop;
 - (id)placeholder;
-- (void)setClearButtonMode:(NSInteger)arg1;
+- (void)setClearButtonMode:(int)arg1;
 - (void)setDeferringInterfaceUpdates:(BOOL)arg1;
 - (void)setFont:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

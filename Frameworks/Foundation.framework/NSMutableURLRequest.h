@@ -5,7 +5,7 @@
 @interface NSMutableURLRequest : NSURLRequest {
 }
 
-+ (NSInteger)hashForPlayerID:(id)arg1;
++ (int)hashForPlayerID:(id)arg1;
 + (void)setPlayerIDHashParametersFromBag:(id)arg1;
 
 - (void)_web_setHTTPContentType:(id)arg1;
@@ -15,10 +15,10 @@
 - (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (NSUInteger)requestPriority;
+- (unsigned int)requestPriority;
 - (void)setAllHTTPHeaderFields:(id)arg1;
 - (void)setBuildVersion:(id)arg1;
-- (void)setCachePolicy:(NSUInteger)arg1;
+- (void)setCachePolicy:(unsigned int)arg1;
 - (void)setContentDispositionEncodingFallbackArray:(id)arg1;
 - (void)setDeviceScreenCapabilities:(id)arg1;
 - (void)setDeviceUniqueID:(id)arg1;
@@ -32,12 +32,15 @@
 - (void)setHTTPShouldHandleCookies:(BOOL)arg1;
 - (void)setHTTPShouldUsePipelining:(BOOL)arg1;
 - (void)setHTTPUserAgent:(id)arg1;
+- (void)setInternal:(BOOL)arg1;
 - (void)setMainDocumentURL:(id)arg1;
-- (void)setNetworkServiceType:(NSUInteger)arg1;
+- (void)setNetworkServiceType:(unsigned int)arg1;
 - (void)setPlayerID:(id)arg1 authToken:(id)arg2;
 - (void)setProcessName:(id)arg1;
 - (void)setProtocolVersion:(id)arg1;
-- (void)setRequestPriority:(NSUInteger)arg1;
+- (void)setPushToken:(id)arg1;
+- (void)setRequestPriority:(unsigned int)arg1;
+- (void)setRestrictions:(id)arg1;
 - (void)setTimeoutInterval:(double)arg1;
 - (void)setURL:(id)arg1;
 - (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;

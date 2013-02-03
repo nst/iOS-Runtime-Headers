@@ -22,13 +22,13 @@
     } _tabBarFlags;
 }
 
-@property <UITabBarDelegate> *delegate;
-@property(copy) NSArray *items;
-@property UITabBarItem *selectedItem;
+@property <UITabBarDelegate> * delegate;
+@property(copy) NSArray * items;
+@property UITabBarItem * selectedItem;
 
 + (float)_buttonGap;
 + (void)_initializeSafeCategory;
-+ (float)defaultHeightForBarSize:(NSInteger)arg1;
++ (float)defaultHeightForBarSize:(int)arg1;
 
 - (id)_accessibilityFuzzyHitTestElements;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
@@ -76,11 +76,11 @@
 - (BOOL)isLocked;
 - (id)items;
 - (void)layoutSubviews;
-- (BOOL)onStateForButton:(NSInteger)arg1;
+- (BOOL)onStateForButton:(int)arg1;
 - (id)selectedItem;
-- (void)setBadgeAnimated:(BOOL)arg1 forButton:(NSInteger)arg2;
-- (void)setBadgeGlyph:(id)arg1 forButton:(NSInteger)arg2;
-- (void)setBadgeValue:(id)arg1 forButton:(NSInteger)arg2;
+- (void)setBadgeAnimated:(BOOL)arg1 forButton:(int)arg2;
+- (void)setBadgeGlyph:(id)arg1 forButton:(int)arg2;
+- (void)setBadgeValue:(id)arg1 forButton:(int)arg2;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setButtonItems:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -88,7 +88,7 @@
 - (void)setItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setItems:(id)arg1;
 - (void)setLocked:(BOOL)arg1;
-- (void)setOnStateForButton:(BOOL)arg1 forButton:(NSInteger)arg2;
+- (void)setOnStateForButton:(BOOL)arg1 forButton:(int)arg2;
 - (void)setSelectedItem:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

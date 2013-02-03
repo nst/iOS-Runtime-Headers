@@ -2,11 +2,14 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSNetService, NSString, MPAVItem, NSData, MediaControlClient;
+@class MCMediaControlClientRemote, NSString, NSNetService, MPAVItem, NSData, NSDictionary;
 
 @interface MPAirPlayVideoService : NSObject <NSNetServiceDelegate> {
+    unsigned int _bufferingState;
     double _cachedCurrentPlaybackTime;
+    NSDictionary *_cachedPlaybackInfo;
     float _cachedVolume;
+    unsigned int _capabilities;
     void *_context;
     BOOL _didResolveOrFailToResolve;
     struct _DNSServiceRef_t { } *_dnsService;
@@ -14,41 +17,59 @@
     NSString *_ipAddress;
     BOOL _isPlaying;
     MPAVItem *_item;
-    MediaControlClient *_mediaControlClient;
+    double _lastFetchedPlaybackInfoTimeInterval;
+    MCMediaControlClientRemote *_mediaControlClient;
     NSNetService *_netService;
-    unsigned char _oldCellFlags;
-    BOOL _oldUsesBackgroundNetwork;
-    unsigned char _oldWiFiFlags;
     NSData *_playInfoData;
-    NSUInteger _playbackState;
+    unsigned int _playbackState;
     BOOL _playbackTimeIsValid;
+    BOOL _preparingToPlay;
+    int _resolutionState;
+    BOOL _waitingForPasswordEntry;
+    BOOL _waitingForPlaybackToBegin;
 }
 
-@property void *context;
-@property(readonly) NSNetService *netService;
 @property(readonly) BOOL _didResolveOrFailToResolve;
+@property void* context;
 @property(readonly) BOOL isAvailable;
+@property(readonly) NSNetService * netService;
+
++ (void)_beginBackgroundNetworkAssertion;
++ (void)_endBackgroundNetworkAssertion;
 
 - (void)_cancelResolve;
+- (id)_currentPlaybackInfo;
 - (BOOL)_didResolveOrFailToResolve;
 - (id)_initWithNSNetService:(id)arg1;
+- (void)_playRemoteWithParams:(id)arg1 password:(id)arg2 completionHandler:(id)arg3;
+- (void)_playWithLocalFilePath:(id)arg1 password:(id)arg2 startPosition:(float)arg3 playInfo:(id)arg4 completionHandler:(id)arg5;
 - (void)_resolveWithTimeout:(double)arg1;
+- (void)_sendPICRequestData:(id)arg1 password:(id)arg2 responseHandler:(id)arg3;
+- (void)_setPlaybackState:(unsigned int)arg1;
 - (void)_updateForPlaybackEnding;
+- (void)_updateForPlaybackStarting;
+- (unsigned int)bufferingState;
 - (BOOL)canDisplayItem:(id)arg1;
+- (unsigned int)capabilities;
 - (void*)context;
+- (id)currentEstimatedPlaybackDate;
+- (id)currentPlaybackDate;
 - (double)currentPlaybackTime;
 - (void)dealloc;
+- (double)durationIfAvailable;
 - (BOOL)hasVolumeControl;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)ipAddress;
 - (BOOL)isAvailable;
 - (BOOL)isEqual:(id)arg1;
 - (id)item;
 - (id)name;
 - (id)netService;
-- (BOOL)playReturningError:(id*)arg1;
-- (NSUInteger)playbackState;
+- (BOOL)playWithCompletionHandler:(id)arg1;
+- (double)playableDuration;
+- (unsigned int)playbackState;
 - (BOOL)prepareToDisplayItem:(id)arg1 completionHandler:(id)arg2;
+- (int)resolutionState;
 - (void)sendPICRequestData:(id)arg1 responseHandler:(id)arg2;
 - (void)sendPlayInfoData:(id)arg1;
 - (void)setContext:(void*)arg1;
@@ -57,6 +78,10 @@
 - (BOOL)setRate:(float)arg1;
 - (void)setVolume:(float)arg1;
 - (void)stop;
+- (double)timeOfPlayableEnd;
+- (double)timeOfPlayableStart;
+- (double)timeOfSeekableEnd;
+- (double)timeOfSeekableStart;
 - (float)volume;
 
 @end

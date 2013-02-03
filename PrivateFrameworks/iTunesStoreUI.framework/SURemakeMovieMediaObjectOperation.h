@@ -8,7 +8,7 @@
     SUMovieMediaObject *_movie;
 }
 
-@property(readonly) SUMovieMediaObject *movieMediaObject;
+@property(readonly) SUMovieMediaObject * movieMediaObject;
 
 - (BOOL)_movieNeedsRemakeForMode:(id)arg1;
 - (void)dealloc;

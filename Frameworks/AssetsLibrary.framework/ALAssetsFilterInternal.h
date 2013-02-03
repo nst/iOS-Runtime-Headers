@@ -3,12 +3,12 @@
  */
 
 @interface ALAssetsFilterInternal : NSObject {
-    NSInteger _filter;
+    int _filter;
 }
 
-@property NSInteger filter;
+@property int filter;
 
-- (NSInteger)filter;
-- (void)setFilter:(NSInteger)arg1;
+- (int)filter;
+- (void)setFilter:(int)arg1;
 
 @end

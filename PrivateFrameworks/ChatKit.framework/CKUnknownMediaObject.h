@@ -12,8 +12,8 @@
 - (float)balloonHeightWithPreviewData:(id)arg1;
 - (Class)balloonPreviewClassWithPreviewData:(id)arg1;
 - (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
-- (id)newPreview:(NSInteger)arg1 highlight:(BOOL)arg2;
-- (id)newTranscodingForMMSWithMaxByteLength:(NSInteger)arg1;
+- (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
+- (id)newTranscodingForMMSWithMaxByteLength:(int)arg1;
 - (BOOL)shouldTranscodeForMMS;
 
 @end

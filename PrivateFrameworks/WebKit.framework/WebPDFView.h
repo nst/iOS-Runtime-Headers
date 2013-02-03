@@ -24,8 +24,8 @@
 - (void)_computePageRects;
 - (id)_pagesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)accessibilityContainer;
-- (id)accessibilityElementAtIndex:(NSInteger)arg1;
-- (NSInteger)accessibilityElementCount;
+- (id)accessibilityElementAtIndex:(int)arg1;
+- (int)accessibilityElementCount;
 - (id)accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (id)accessibilityRootElement;
 - (BOOL)canProvideDocumentSource;
@@ -37,16 +37,16 @@
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)finishedLoadingWithDataSource:(id)arg1;
 - (BOOL)hasSpaces:(struct CGPDFTextString { }*)arg1;
-- (NSInteger)indexOfAccessibilityElement:(id)arg1;
+- (int)indexOfAccessibilityElement:(id)arg1;
 - (void)layout;
-- (NSUInteger)pageNumberForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (unsigned int)pageNumberForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)receivedData:(id)arg1 withDataSource:(id)arg2;
 - (void)receivedError:(id)arg1 withDataSource:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPageNumber:(NSUInteger)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPageNumber:(unsigned int)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setNeedsLayout:(BOOL)arg1;
 - (id)title;
-- (NSUInteger)totalPages;
+- (unsigned int)totalPages;
 - (void)viewDidMoveToHostWindow;
 - (void)viewWillMoveToHostWindow:(id)arg1;
 

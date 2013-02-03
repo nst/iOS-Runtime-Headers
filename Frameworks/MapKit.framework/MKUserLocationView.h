@@ -9,20 +9,20 @@
 }
 
 + (void)_initializeSafeCategory;
-+ (NSUInteger)_selectedZIndex;
-+ (NSUInteger)_zIndex;
-+ (float)accuracyDiameter:(float)arg1 level:(NSUInteger)arg2;
++ (unsigned int)_selectedZIndex;
++ (unsigned int)_zIndex;
++ (float)accuracyDiameter:(float)arg1 level:(unsigned int)arg2;
 + (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })effectiveFrameWithFrame:(struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 + (void)initialize;
 + (Class)layerClass;
 
 - (id)_searchResult;
 - (void)_setCalloutView:(id)arg1;
-- (void)_setMapType:(NSUInteger)arg1;
+- (void)_setMapType:(unsigned int)arg1;
 - (id)accessibilityLabel;
 - (float)accuracy;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accuracyBounds;
-- (NSUInteger)accuracyIntersectionPoints:(struct CGPoint { float x1; float x2; }*)arg1 layer:(id)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (unsigned int)accuracyIntersectionPoints:(struct CGPoint { float x1; float x2; }*)arg1 layer:(id)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)bounce;
 - (void)dealloc;
@@ -55,8 +55,8 @@
 - (void)setShouldDisplayHeading:(BOOL)arg1;
 - (void)setStale:(BOOL)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2 actionContext:(id)arg3;
-- (void)setZoomDirection:(NSInteger)arg1 deltaScale:(float)arg2;
-- (void)setZoomDirection:(NSInteger)arg1;
+- (void)setZoomDirection:(int)arg1 deltaScale:(float)arg2;
+- (void)setZoomDirection:(int)arg1;
 - (BOOL)shouldDisplayAccuracy:(double*)arg1 diameter:(id*)arg2;
 - (BOOL)shouldDisplayAccuracy;
 - (BOOL)shouldDisplayEffects;
@@ -66,6 +66,6 @@
 - (void)updateHalo;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 - (void)willMoveToWindow:(id)arg1;
-- (NSInteger)zoomDirection;
+- (int)zoomDirection;
 
 @end

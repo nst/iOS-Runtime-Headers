@@ -10,7 +10,7 @@
 
 - (void)dealloc;
 - (id)initWithFileHandle:(id)arg1;
-- (BOOL)request:(id)arg1 acceptResponseWithHTTPStatusCode:(NSInteger)arg2;
+- (BOOL)request:(id)arg1 acceptResponseWithHTTPStatusCode:(int)arg2;
 - (void)request:(id)arg1 readResponseBody:(id)arg2;
 
 @end

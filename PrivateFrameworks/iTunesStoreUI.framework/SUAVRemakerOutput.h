@@ -11,9 +11,9 @@
     NSDictionary *_remakerOptions;
 }
 
-@property(copy) NSURL *mediaFileURL;
-@property(copy) NSString *remakerMode;
-@property(copy) NSDictionary *remakerOptions;
+@property(copy) NSURL * mediaFileURL;
+@property(copy) NSString * remakerMode;
+@property(copy) NSDictionary * remakerOptions;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

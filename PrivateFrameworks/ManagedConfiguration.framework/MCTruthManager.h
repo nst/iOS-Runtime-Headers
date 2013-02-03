@@ -14,19 +14,19 @@
     NSDictionary *_effectiveUserSettings;
     struct dispatch_queue_s { } *_nagMetaQueue;
     NSMutableDictionary *_profileTruth;
-    NSInteger _senderPID;
+    int _senderPID;
     struct dispatch_queue_s { } *_syncQueue;
     NSMutableDictionary *_truth;
     NSDictionary *_userSettings;
 }
 
-@property NSInteger senderPID;
+@property int senderPID;
 
 + (BOOL)_isDictionary:(id)arg1 differentFromDictionary:(id)arg2;
 + (void)_setPathsTruthFilePath:(id)arg1 defaultTruthFilePath:(id)arg2 clientTypeLoadersFilePath:(id)arg3 profileTruthFilePath:(id)arg4 clientTruthFilePath:(id)arg5 userSettingsFilePath:(id)arg6 effectiveUserSettingsFilePath:(id)arg7;
 + (BOOL)boolSetting:(id)arg1 valueChangedBetweenOldSettings:(id)arg2 andNewSettings:(id)arg3;
-+ (NSInteger)boolSettingForFeature:(id)arg1 withUserSettingDictionary:(id)arg2;
-+ (NSInteger)defaultBoolValueForSetting:(id)arg1;
++ (int)boolSettingForFeature:(id)arg1 withUserSettingDictionary:(id)arg2;
++ (int)defaultBoolValueForSetting:(id)arg1;
 + (id)defaultParametersForBoolSetting:(id)arg1;
 + (id)defaultParametersForValueSetting:(id)arg1;
 + (id)defaultSettingsDict;
@@ -34,7 +34,7 @@
 + (id)filterRestrictionDictionaryForPublicUse:(id)arg1;
 + (id)objectForFeature:(id)arg1 withTruthDictionary:(id)arg2;
 + (BOOL)restrictedBool:(id)arg1 changedBetweenOldRestrictions:(id)arg2 andNewRestrictions:(id)arg3;
-+ (NSInteger)restrictedBoolForFeature:(id)arg1 withTruthDictionary:(id)arg2;
++ (int)restrictedBoolForFeature:(id)arg1 withTruthDictionary:(id)arg2;
 + (BOOL)restrictedValue:(id)arg1 changedBetweenOldRestrictions:(id)arg2 andNewRestrictions:(id)arg3;
 + (id)sharedManager;
 + (id)truthAfterApplyingTruthDictionary:(id)arg1 toTruthDictionary:(id)arg2 outChangeDetected:(BOOL*)arg3 outError:(id*)arg4;
@@ -72,7 +72,7 @@
 - (id)description;
 - (id)effectiveParametersForBoolSetting:(id)arg1;
 - (id)effectiveParametersForValueSetting:(id)arg1;
-- (NSInteger)effectiveRestrictedBoolForSetting:(id)arg1;
+- (int)effectiveRestrictedBoolForSetting:(id)arg1;
 - (id)effectiveUserSettings;
 - (id)effectiveValueForSetting:(id)arg1;
 - (void)invalidateSettings;
@@ -89,13 +89,13 @@
 - (BOOL)removeOrphanedClientTruths;
 - (void)removeValueSetting:(id)arg1;
 - (void)resetAllSettingsToDefaults;
-- (NSInteger)restrictedBoolForFeature:(id)arg1;
-- (NSInteger)senderPID;
+- (int)restrictedBoolForFeature:(id)arg1;
+- (int)senderPID;
 - (BOOL)setAllClientTruths:(id)arg1 outTruthChanged:(BOOL*)arg2 outEffectiveSettingsChanged:(BOOL*)arg3 outRecomputedNag:(BOOL*)arg4 outError:(id*)arg5;
 - (BOOL)setClientTruth:(id)arg1 clientType:(id)arg2 clientUUID:(id)arg3 localizedClientDescription:(id)arg4 localizedWarning:(id)arg5 outTruthChanged:(BOOL*)arg6 outEffectiveSettingsChanged:(BOOL*)arg7 outRecomputedNag:(BOOL*)arg8 outError:(id*)arg9;
 - (BOOL)setParametersForSettingsByType:(id)arg1;
 - (BOOL)setProfileTruth:(id)arg1 outTruthChanged:(BOOL*)arg2 outEffectiveSettingsChanged:(BOOL*)arg3 outRecomputedNag:(BOOL*)arg4 outError:(id*)arg5;
-- (void)setSenderPID:(NSInteger)arg1;
+- (void)setSenderPID:(int)arg1;
 - (void)setShowNagMessage;
 - (void)setUserInfo:(id)arg1 forClientUUID:(id)arg2;
 - (id)userInfoForClientUUID:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface PTPTransport : NSObject {
-    NSInteger _connectionStatus;
+    int _connectionStatus;
     id _delegate;
     BOOL _responseReceived;
-    NSInteger _role;
+    int _role;
     BOOL _timedOut;
     unsigned short _transportType;
 }
@@ -14,11 +14,11 @@
 - (void)abortPendingIO;
 - (void)cancelTransaction:(id)arg1;
 - (BOOL)connected;
-- (NSInteger)connectionStatus;
+- (int)connectionStatus;
 - (void)deviceReset;
 - (unsigned short)deviceStatus;
 - (id)init;
-- (NSInteger)role;
+- (int)role;
 - (BOOL)sendData:(id)arg1;
 - (BOOL)sendEvent:(id)arg1;
 - (BOOL)sendRequest:(id)arg1 needsData:(BOOL)arg2;

@@ -6,6 +6,7 @@
 }
 
 + (void)_initializeSafeCategory;
++ (id)buttonWithImage:(id)arg1 action:(SEL)arg2 type:(int)arg3 inView:(id)arg4;
 
 - (BOOL)_accessibilityEscape;
 - (unsigned long long)accessibilityTraits;

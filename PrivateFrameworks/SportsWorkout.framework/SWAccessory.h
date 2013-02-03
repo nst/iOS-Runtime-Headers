@@ -13,12 +13,12 @@
     SWVicFileLogger *_vicFileLogger;
 }
 
-@property(readonly) NSNumber *checkpointRegistrationValue;
-@property(readonly) NSString *linkState;
-@property(readonly) NSString *searchState;
-@property(readonly) NSString *serialNumber;
-@property(readonly) NSString *transportType;
-@property(retain) SWVicFileLogger *vicFileLogger;
+@property(readonly) NSNumber * checkpointRegistrationValue;
+@property(readonly) NSString * linkState;
+@property(readonly) NSString * searchState;
+@property(readonly) NSString * serialNumber;
+@property(readonly) NSString * transportType;
+@property(retain) SWVicFileLogger * vicFileLogger;
 
 - (void)beginLinking;
 - (void)beginSearching;

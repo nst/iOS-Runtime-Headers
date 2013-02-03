@@ -12,10 +12,10 @@
     UITableView *_table;
 }
 
-@property(retain) NSArray *moreViewControllers;
 @property BOOL allowsCustomizing;
+@property(retain) NSArray * moreViewControllers;
 
-- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_layoutCells;
 - (void)_updateEditButton;
 - (BOOL)allowsCustomizing;
@@ -23,14 +23,14 @@
 - (id)init;
 - (void)loadView;
 - (id)moreViewControllers;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)setAllowsCustomizing:(BOOL)arg1;
 - (void)setMoreViewControllers:(id)arg1;
 - (id)tabBarItem;
 - (id)table;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

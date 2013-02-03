@@ -18,12 +18,13 @@
 - (void)_reloadBabysitterProperties;
 - (void)_removeRestrictedWaitersFromAllQueues;
 - (void)_sendAllClearNotifications;
-- (void)claimedOwnershipOfDataclasses:(NSInteger)arg1;
+- (void)claimedOwnershipOfDataclasses:(int)arg1;
 - (void)dealloc;
 - (void)giveAccountWithIDAnotherChance:(id)arg1;
 - (id)init;
-- (void)registerWaiter:(id)arg1 forDataclassLocks:(NSInteger)arg2 context:(void*)arg3;
-- (void)relinquishLocksForWaiter:(id)arg1 dataclasses:(NSInteger)arg2 moreComing:(BOOL)arg3;
+- (void)registerWaiter:(id)arg1 forDataclassLocks:(int)arg2 completionHandler:(id)arg3;
+- (void)relinquishLocksForWaiter:(id)arg1 dataclasses:(int)arg2 moreComing:(BOOL)arg3;
+- (void)setBookmarksLockHolder:(id)arg1;
 - (void)setContactsLockHolder:(id)arg1;
 - (void)setEventsLockHolder:(id)arg1;
 - (void)setNotesLockHolder:(id)arg1;

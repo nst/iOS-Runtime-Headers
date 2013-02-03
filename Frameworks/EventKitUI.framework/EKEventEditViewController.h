@@ -12,29 +12,29 @@
     EKEventStore *_store;
 }
 
-@property <EKEventEditViewDelegate> *editViewDelegate;
-@property(retain) EKEvent *event;
-@property(retain) EKEventStore *eventStore;
+@property <EKEventEditViewDelegate> * editViewDelegate;
+@property(retain) EKEvent * event;
+@property(retain) EKEventStore * eventStore;
 
 + (void)setDefaultDatesForEvent:(id)arg1;
 
 - (void)_storeChanged:(id)arg1;
-- (void)completeWithAction:(NSInteger)arg1;
+- (void)completeWithAction:(int)arg1;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
 - (void)dealloc;
 - (id)editViewDelegate;
 - (id)event;
-- (void)eventEditor:(id)arg1 didCompleteWithAction:(NSInteger)arg2;
+- (void)eventEditor:(id)arg1 didCompleteWithAction:(int)arg2;
 - (void)eventEditor:(id)arg1 prepareEventForEdit:(id)arg2;
 - (id)eventStore;
 - (id)initWithEvent:(id)arg1 store:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)saveWithSpan:(NSInteger)arg1 animated:(BOOL)arg2;
+- (BOOL)saveWithSpan:(int)arg1 animated:(BOOL)arg2;
 - (BOOL)scrollToNotes;
 - (void)setEditViewDelegate:(id)arg1;
 - (void)setEvent:(id)arg1;
 - (void)setEventStore:(id)arg1;
 - (void)setScrollToNotes:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

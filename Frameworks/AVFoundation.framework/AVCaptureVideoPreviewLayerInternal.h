@@ -15,7 +15,7 @@
     BOOL isPaused;
     BOOL isPresentationLayer;
     BOOL mirrored;
-    NSInteger orientation;
+    int orientation;
     } previewSize;
     AVCaptureSession *session;
     CALayer *sublayer;

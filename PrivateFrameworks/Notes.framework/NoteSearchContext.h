@@ -10,7 +10,7 @@
     struct __CXQuery { } *query;
 }
 
-@property(readonly) __CXQuery *query;
+@property(readonly) struct __CXQuery { }* query;
 
 - (void)dealloc;
 - (id)initWithSearchTerms:(id)arg1 context:(id)arg2;

@@ -7,7 +7,7 @@
 @interface YTDeviceAuthenticator : NSObject {
     NSURLConnection *_connection;
     NSData *_hmac;
-    NSInteger _phase;
+    int _phase;
     NSData *_r1;
     NSData *_r1Hash;
     NSData *_r2;
@@ -23,7 +23,7 @@
 - (void)_clearNonces;
 - (void)_connectionDidEnd;
 - (void)_copyCertificateData:(id*)arg1 privateKey:(struct __SecKey {}**)arg2;
-- (void)_failWithErrorCode:(NSInteger)arg1;
+- (void)_failWithErrorCode:(int)arg1;
 - (void)_loadStatusChanged;
 - (void)_succeeded;
 - (void)authenticate;

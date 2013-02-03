@@ -2,30 +2,27 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
+@class NSData, NSDictionary, <AVAudioPlayerDelegate>, NSURL;
 
 @interface AVAudioPlayer : NSObject {
-     /* Encoded args for previous method: ^{AudioPlayerImpl=@@@@@{AudioStreamBasicDescription=dIIIIIIII}{AudioStreamBasicDescription=dIIIIIIII}I*I^{AudioFormatListItem}I^{OpaqueAudioFileID}^{OpaqueAudioQueue}qqqffdi{AudioFilePacketTableInfo=qii}iiBBBBBBBBBddddB^{AudioQueueLevelMeterState}[3^{AudioQueueBuffer}]^{AudioQueueBuffer}iBBBBB^{AudioQueueBuffer}BIBBBBqiII{_opaque_pthread_mutex_t=l[40c]}}8@0:4 */
     void *_impl;
 }
 
-@property(readonly) NSData *data;
-@property <AVAudioPlayerDelegate> *delegate;
-@property(readonly) NSDictionary *settings;
-@property(readonly) NSURL *url;
 @property double currentTime;
+@property(readonly) NSData * data;
+@property <AVAudioPlayerDelegate> * delegate;
 @property(readonly) double deviceCurrentTime;
 @property(readonly) double duration;
 @property(getter=isMeteringEnabled) BOOL meteringEnabled;
-@property(readonly) NSUInteger numberOfChannels;
-@property NSInteger numberOfLoops;
+@property(readonly) unsigned int numberOfChannels;
+@property int numberOfLoops;
 @property float pan;
 @property(getter=isPlaying,readonly) BOOL playing;
+@property(readonly) NSDictionary * settings;
+@property(readonly) NSURL * url;
 @property float volume;
 
-- (float)averagePowerForChannel:(NSUInteger)arg1;
+- (float)averagePowerForChannel:(unsigned int)arg1;
 - (id)baseInit;
 - (void)beginInterruption;
 - (double)currentTime;
@@ -39,16 +36,16 @@
 - (void)endInterruptionWithFlags;
 - (void)finalize;
 - (void)finishedPlaying;
-- (struct AudioPlayerImpl { id x1; id x2; id x3; id x4; id x5; struct AudioStreamBasicDescription { double x_6_1_1; NSUInteger x_6_1_2; NSUInteger x_6_1_3; NSUInteger x_6_1_4; NSUInteger x_6_1_5; NSUInteger x_6_1_6; NSUInteger x_6_1_7; NSUInteger x_6_1_8; NSUInteger x_6_1_9; } x6; struct AudioStreamBasicDescription { double x_7_1_1; NSUInteger x_7_1_2; NSUInteger x_7_1_3; NSUInteger x_7_1_4; NSUInteger x_7_1_5; NSUInteger x_7_1_6; NSUInteger x_7_1_7; NSUInteger x_7_1_8; NSUInteger x_7_1_9; } x7; NSUInteger x8; char *x9; NSUInteger x10; struct AudioFormatListItem {} *x11; NSUInteger x12; struct OpaqueAudioFileID {} *x13; struct OpaqueAudioQueue {} *x14; long long x15; long long x16; long long x17; float x18; float x19; double x20; NSInteger x21; struct AudioFilePacketTableInfo { long long x_22_1_1; NSInteger x_22_1_2; NSInteger x_22_1_3; } x22; NSInteger x23; NSInteger x24; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; double x34; double x35; double x36; double x37; void*x38; struct AudioQueueLevelMeterState {} *x39; struct AudioQueueBuffer {} *x40[3]; struct AudioQueueBuffer {} *x41; NSInteger x42; void*x43; void*x44; void*x45; void*x46; void*x47; struct AudioQueueBuffer {} *x48; void*x49; NSUInteger x50; void*x51; void*x52; void*x53; void*x54; long long x55; NSInteger x56; NSUInteger x57; NSUInteger x58; struct _opaque_pthread_mutex_t { long x_59_1_1; BOOL x_59_1_2[40]; } x59; }*)impl;
+- (struct AudioPlayerImpl { id x1; id x2; id x3; id x4; id x5; struct AudioStreamBasicDescription { double x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; unsigned int x_6_1_4; unsigned int x_6_1_5; unsigned int x_6_1_6; unsigned int x_6_1_7; unsigned int x_6_1_8; unsigned int x_6_1_9; } x6; struct AudioStreamBasicDescription { double x_7_1_1; unsigned int x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; unsigned int x_7_1_6; unsigned int x_7_1_7; unsigned int x_7_1_8; unsigned int x_7_1_9; } x7; unsigned int x8; char *x9; unsigned int x10; struct AudioFormatListItem {} *x11; unsigned int x12; struct OpaqueAudioFileID {} *x13; struct OpaqueAudioQueue {} *x14; long long x15; long long x16; long long x17; float x18; float x19; double x20; int x21; struct AudioFilePacketTableInfo { long long x_22_1_1; int x_22_1_2; int x_22_1_3; } x22; int x23; int x24; boolx25; boolx26; boolx27; boolx28; boolx29; boolx30; boolx31; boolx32; boolx33; double x34; double x35; double x36; double x37; boolx38; struct AudioQueueLevelMeterState {} *x39; struct AudioQueueBuffer {} *x40[3]; struct AudioQueueBuffer {} *x41; int x42; boolx43; boolx44; boolx45; boolx46; boolx47; struct AudioQueueBuffer {} *x48; boolx49; unsigned int x50; boolx51; boolx52; boolx53; boolx54; long long x55; int x56; unsigned int x57; unsigned int x58; struct _opaque_pthread_mutex_t { long x_59_1_1; BOOL x_59_1_2[40]; } x59; }*)impl;
 - (id)initWithContentsOfURL:(id)arg1 error:(id*)arg2;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
 - (BOOL)isMeteringEnabled;
 - (BOOL)isPlaying;
-- (NSUInteger)numberOfChannels;
-- (NSInteger)numberOfLoops;
+- (unsigned int)numberOfChannels;
+- (int)numberOfLoops;
 - (float)pan;
 - (void)pause;
-- (float)peakPowerForChannel:(NSUInteger)arg1;
+- (float)peakPowerForChannel:(unsigned int)arg1;
 - (BOOL)play;
 - (BOOL)playAtTime:(double)arg1;
 - (BOOL)prepareToPlay;
@@ -56,7 +53,7 @@
 - (void)setCurrentTime:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMeteringEnabled:(BOOL)arg1;
-- (void)setNumberOfLoops:(NSInteger)arg1;
+- (void)setNumberOfLoops:(int)arg1;
 - (void)setPan:(float)arg1;
 - (void)setVolume:(float)arg1;
 - (id)settings;

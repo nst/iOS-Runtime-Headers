@@ -5,6 +5,6 @@
 @interface MFBrush : NSObject <MFObject> {
 }
 
-- (NSInteger)selectInto:(id)arg1;
+- (int)selectInto:(id)arg1;
 
 @end

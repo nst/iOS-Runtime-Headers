@@ -7,7 +7,7 @@
 @interface _DAVNaiveAuthStore : NSObject <DAVAuthStore> {
     DAVChallenge *authChallenge;
     NSString *baseHost;
-    NSInteger basePort;
+    int basePort;
     NSString *baseScheme;
 }
 

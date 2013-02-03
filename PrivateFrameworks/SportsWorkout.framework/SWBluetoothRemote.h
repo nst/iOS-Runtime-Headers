@@ -51,7 +51,7 @@
 - (void)_receivedDiscoveryNotification:(id)arg1;
 - (void)_receivedInputReadNotification:(id)arg1;
 - (void)_registerToReadInput;
-- (id)_serialNumberForPacket:(id)arg1 timestamp:(NSUInteger)arg2 radioId:(NSUInteger*)arg3;
+- (id)_serialNumberForPacket:(id)arg1 timestamp:(unsigned int)arg2 radioId:(unsigned int*)arg3;
 - (void)beginLinking;
 - (void)beginSearching;
 - (void)cancelLinking;

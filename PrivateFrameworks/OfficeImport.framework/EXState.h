@@ -2,86 +2,78 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class EXOfficeArtState, CPImportTracing, <OCCancelDelegate>, ECColumnWidthConvertor, EDWorkbook, EDSheet, EXOAVState, EDResources, EDReference, OCPPackagePart, NSMutableDictionary, NSMutableArray;
 
 @interface EXState : OAVState {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
+    boolmIsPredefinedDxfsBeingRead;
+    boolmIsPredefinedTableStylesRead;
+    boolmMaxColumnsWarned;
+    boolmMaxRowsWarned;
     NSMutableArray *mArrayedFormulas;
     <OCCancelDelegate> *mCancelDelegate;
-    NSUInteger mCellStyleXfsOffset;
+    unsigned int mCellStyleXfsOffset;
     ECColumnWidthConvertor *mColumnWidthConvertor;
     OCPPackagePart *mCurrentPart;
     EDSheet *mCurrentSheet;
-    NSUInteger mCurrentSheetIndex;
+    unsigned int mCurrentSheetIndex;
     double mDefaultColumnWidth;
     double mDefaultRowHeight;
     NSMutableArray *mLegacyDrawables;
     EXOAVState *mOAVState;
     EXOfficeArtState *mOfficeArtState;
     NSMutableDictionary *mReferenceForCommentTextBox;
-    struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; } *mRelationshipNS;
+    struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; } *mRelationshipNS;
     EDResources *mResources;
     struct __CFDictionary { } *mSharedFormulasMap;
     EDReference *mSheetDimension;
-    NSUInteger mTotalCellsWithContentCount;
+    unsigned int mTotalCellsWithContentCount;
     CPImportTracing *mTracing;
     EDWorkbook *mWorkbook;
     OCPPackagePart *mWorkbookPart;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsPredefinedDxfsBeingRead;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsPredefinedTableStylesRead;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mMaxColumnsWarned;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mMaxRowsWarned;
 }
 
-@property(readonly) <OCCancelDelegate> *cancelDelegate;
+@property(readonly) <OCCancelDelegate> * cancelDelegate;
 
-- (void)addSharedBaseFormulaIndex:(NSUInteger)arg1 withIndex:(long)arg2;
+- (void)addSharedBaseFormulaIndex:(unsigned int)arg1 withIndex:(long)arg2;
 - (id)arrayedFormulas;
 - (id)cancelDelegate;
-- (NSUInteger)cellStyleXfsOffset;
-- (NSUInteger)cellsWithContentCount;
+- (unsigned int)cellStyleXfsOffset;
+- (unsigned int)cellsWithContentCount;
 - (id)columnWidthConvertor;
 - (id)currentPart;
 - (id)currentSheet;
-- (NSUInteger)currentSheetIndex;
+- (unsigned int)currentSheetIndex;
 - (void)dealloc;
 - (double)defaultColumnWidth;
 - (double)defaultRowHeight;
 - (void)incrementCellsWithContentCount;
 - (id)initWithWorkbookPart:(id)arg1 cancelDelegate:(id)arg2 tracing:(id)arg3;
 - (BOOL)isCancelled;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isPredefinedDxfsBeingRead;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isPredefinedTableStylesRead;
+- (bool)isPredefinedDxfsBeingRead;
+- (bool)isPredefinedTableStylesRead;
 - (id)legacyDrawables;
 - (id)oavState;
 - (id)officeArtState;
-- (void)relationshipNameSpaceForWorkbook:(struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)arg1;
-- (struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)relationshipNameSpaceForWorkbook;
-- (void)reportWarning:(struct CPTaggedMessageStructure { NSInteger x1; id x2; }*)arg1;
-- (void)reportWorksheetWarning:(struct CPTaggedMessageStructure { NSInteger x1; id x2; }*)arg1;
+- (void)relationshipNameSpaceForWorkbook:(struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)arg1;
+- (struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)relationshipNameSpaceForWorkbook;
+- (void)reportWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
+- (void)reportWorksheetWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
 - (void)resetForNewSheet;
 - (id)resources;
-- (void)setCellStyleXfsOffset:(NSUInteger)arg1;
+- (void)setCellStyleXfsOffset:(unsigned int)arg1;
 - (void)setCurrentPart:(id)arg1;
 - (void)setCurrentSheet:(id)arg1;
-- (void)setCurrentSheetIndex:(NSUInteger)arg1;
+- (void)setCurrentSheetIndex:(unsigned int)arg1;
 - (void)setDefaultColumnWidth:(double)arg1;
 - (void)setDefaultRowHeight:(double)arg1;
 - (void)setOfficeArtState:(id)arg1;
-- (void)setPredefinedDxfsBeingRead:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setPredefinedTableStylesRead:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setPredefinedDxfsBeingRead:(bool)arg1;
+- (void)setPredefinedTableStylesRead:(bool)arg1;
 - (void)setResources:(id)arg1;
 - (void)setSheetDimension:(id)arg1;
 - (void)setTextBox:(id)arg1 forReference:(id)arg2;
 - (void)setWorkbook:(id)arg1;
-- (NSUInteger)sharedBaseFormulaIndexWithIndex:(long)arg1;
+- (unsigned int)sharedBaseFormulaIndexWithIndex:(long)arg1;
 - (id)sheetDimension;
 - (id)textBoxForReference:(id)arg1;
 - (id)workbook;

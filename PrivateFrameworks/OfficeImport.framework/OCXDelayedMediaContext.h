@@ -2,22 +2,16 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSURL, OCPPackage;
 
 @interface OCXDelayedMediaContext : NSObject <OCDDelayedMediaContext> {
-     /* Encoded args for previous method: B16@0:4@8@12 */
-     /* Encoded args for previous method: B12@0:4@8 */
     OCPPackage *mPackage;
     NSURL *mTargetLocation;
 }
 
 - (void)dealloc;
 - (id)initWithTargetLocation:(id)arg1 package:(id)arg2;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)loadDelayedNode:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)saveDelayedMedia:(id)arg1 toFile:(id)arg2;
+- (bool)loadDelayedNode:(id)arg1;
+- (bool)saveDelayedMedia:(id)arg1 toFile:(id)arg2;
 
 @end

@@ -7,6 +7,6 @@
 }
 
 - (long)index;
-- (NSInteger)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 
 @end

@@ -2,17 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class <SUScriptNavigationItem>, UINavigationItem, NSString;
+
 @interface SUScriptNavigationItem : SUScriptObject {
     id _scriptLeftItem;
     id _scriptRightItem;
 }
 
-@property(retain) <SUScriptNavigationItem> *leftItem;
-@property(readonly) UINavigationItem *nativeNavigationItem;
-@property(retain) NSString *prompt;
-@property(retain) <SUScriptNavigationItem> *rightItem;
-@property(retain) NSString *title;
 @property id hidesBackButton;
+@property(retain) <SUScriptNavigationItem> * leftItem;
+@property(readonly) UINavigationItem * nativeNavigationItem;
+@property(retain) NSString * prompt;
+@property(retain) <SUScriptNavigationItem> * rightItem;
+@property(retain) NSString * title;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;

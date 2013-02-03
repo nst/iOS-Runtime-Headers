@@ -6,14 +6,14 @@
 
 @interface CPMessageEntry : NSObject {
     NSMutableArray *m_affectedObjects;
-    NSInteger m_count;
+    int m_count;
     NSArray *m_parameters;
-    NSInteger m_tag;
+    int m_tag;
     NSString *m_text;
-    NSInteger m_timeStamp;
+    int m_timeStamp;
 }
 
-@property NSInteger timeStamp;
+@property int timeStamp;
 
 + (void)initialize;
 
@@ -21,18 +21,18 @@
 - (id)affectedObjects;
 - (void)dealloc;
 - (id)description;
-- (NSInteger)getCount;
-- (NSInteger)getMessageTag;
+- (int)getCount;
+- (int)getMessageTag;
 - (id)getMessageText;
-- (id)getParameter:(NSUInteger)arg1;
-- (NSInteger)getParameterCount;
-- (NSUInteger)hash;
-- (id)initWithTag:(NSInteger)arg1 affectedObject:(id)arg2 text:(id)arg3 parameters:(void*)arg4;
+- (id)getParameter:(unsigned int)arg1;
+- (int)getParameterCount;
+- (unsigned int)hash;
+- (id)initWithTag:(int)arg1 affectedObject:(id)arg2 text:(id)arg3 parameters:(void*)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (void)logWithCat:(id)arg1;
 - (void)mergeEntries:(id)arg1;
-- (void)setTimeStamp:(NSInteger)arg1;
-- (NSInteger)timeStamp;
-- (NSInteger)timeStampCompare:(id)arg1;
+- (void)setTimeStamp:(int)arg1;
+- (int)timeStamp;
+- (int)timeStampCompare:(id)arg1;
 
 @end

@@ -7,7 +7,7 @@
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)hashTableWithOptions:(NSUInteger)arg1;
++ (id)hashTableWithOptions:(unsigned int)arg1;
 + (id)hashTableWithWeakObjects;
 
 - (void)_mapkit_removeObjects:(id)arg1;
@@ -17,16 +17,16 @@
 - (BOOL)containsObject:(id)arg1;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
-- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void*)getItem:(const void*)arg1;
-- (void)getKeys:(void**)arg1 count:(NSUInteger*)arg2;
+- (void)getKeys:(void**)arg1 count:(unsigned int*)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOptions:(NSUInteger)arg1 capacity:(NSUInteger)arg2;
-- (id)initWithPointerFunctions:(id)arg1 capacity:(NSUInteger)arg2;
+- (id)initWithOptions:(unsigned int)arg1 capacity:(unsigned int)arg2;
+- (id)initWithPointerFunctions:(id)arg1 capacity:(unsigned int)arg2;
 - (void)insertKnownAbsentItem:(const void*)arg1;
 - (void)intersectHashTable:(id)arg1;
 - (BOOL)intersectsHashTable:(id)arg1;
@@ -44,6 +44,6 @@
 - (void)removeObject:(id)arg1;
 - (id)setRepresentation;
 - (void)unionHashTable:(id)arg1;
-- (NSUInteger)weakCount;
+- (unsigned int)weakCount;
 
 @end

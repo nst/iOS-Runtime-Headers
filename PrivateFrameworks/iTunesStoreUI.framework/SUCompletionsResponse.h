@@ -9,8 +9,8 @@
     NSString *_title;
 }
 
-@property(readonly) NSArray *completionItems;
-@property(readonly) NSString *title;
+@property(readonly) NSArray * completionItems;
+@property(readonly) NSString * title;
 
 - (id)completionItems;
 - (void)dealloc;

@@ -6,25 +6,25 @@
 
 @interface UITableViewScrollTestParameters : NSObject {
     NSString *_currentTest;
-    NSInteger _iterations;
-    NSInteger _scrollLength;
-    NSInteger _yDelta;
+    int _iterations;
+    int _scrollLength;
+    int _yDelta;
 }
 
-@property(retain) NSString *currentTest;
-@property NSInteger iterations;
-@property NSInteger scrollLength;
-@property NSInteger yDelta;
+@property(retain) NSString * currentTest;
+@property int iterations;
+@property int scrollLength;
+@property int yDelta;
 
 - (id)currentTest;
 - (void)dealloc;
-- (id)initWithName:(id)arg1 iterations:(NSInteger)arg2 delta:(NSInteger)arg3 length:(NSInteger)arg4;
-- (NSInteger)iterations;
-- (NSInteger)scrollLength;
+- (id)initWithName:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4;
+- (int)iterations;
+- (int)scrollLength;
 - (void)setCurrentTest:(id)arg1;
-- (void)setIterations:(NSInteger)arg1;
-- (void)setScrollLength:(NSInteger)arg1;
-- (void)setYDelta:(NSInteger)arg1;
-- (NSInteger)yDelta;
+- (void)setIterations:(int)arg1;
+- (void)setScrollLength:(int)arg1;
+- (void)setYDelta:(int)arg1;
+- (int)yDelta;
 
 @end

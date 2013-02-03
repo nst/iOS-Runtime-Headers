@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UITableView, NSIndexPath, EKEventStore, <EKCalendarChooserDelegate>, NSMutableSet, NSMutableDictionary, NSArray;
+@class NSSet, UITableView, NSIndexPath, EKEventStore, <EKCalendarChooserDelegate>, NSMutableSet, NSMutableDictionary, NSArray;
 
 @interface EKCalendarChooser : UIViewController {
     unsigned int _listIsFlat : 1;
@@ -18,22 +18,22 @@
     NSMutableSet *_selectedCalendars;
     EKEventStore *_store;
     NSMutableDictionary *_storeGroupMap;
-    NSInteger _style;
+    int _style;
     UITableView *_tableView;
 }
 
-@property <EKCalendarChooserDelegate> *delegate;
-@property(retain) EKEventStore *eventStore;
-@property(copy) NSSet *selectedCalendars;
+@property <EKCalendarChooserDelegate> * delegate;
+@property(retain) EKEventStore * eventStore;
+@property(copy) NSSet * selectedCalendars;
 @property BOOL showsCancelButton;
 @property BOOL showsDoneButton;
-@property(readonly) NSInteger style;
+@property(readonly) int style;
 
 - (void)_applySelection;
 - (id)_groupForSource:(id)arg1;
 - (id)_indexPathForCalendar:(id)arg1 source:(id)arg2;
 - (id)_loadCalendars;
-- (NSInteger)_numSelectedGroups;
+- (int)_numSelectedGroups;
 - (void)_restoreSelection:(id)arg1 newCalendars:(id)arg2;
 - (id)_saveSelection;
 - (void)_selectAllCalendarsAndStores:(BOOL)arg1;
@@ -48,9 +48,9 @@
 - (id)delegate;
 - (void)done:(id)arg1;
 - (id)eventStore;
-- (id)initWithChooserStyle:(NSInteger)arg1;
+- (id)initWithChooserStyle:(int)arg1;
 - (void)loadView;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)selectedCalendar;
 - (id)selectedCalendars;
 - (void)setAllowsRotation:(BOOL)arg1;
@@ -61,15 +61,15 @@
 - (void)setSelectedCalendars:(id)arg1;
 - (void)setShowsCancelButton:(BOOL)arg1;
 - (void)setShowsDoneButton:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)showsCancelButton;
 - (BOOL)showsDoneButton;
-- (NSInteger)style;
+- (int)style;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
 

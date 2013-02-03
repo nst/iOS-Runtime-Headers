@@ -12,10 +12,10 @@
     NSString *_title;
 }
 
-@property(retain) NSURL *fontURL;
-@property(retain) UIImage *outlineImage;
-@property(retain) GKUITheme *theme;
-@property(retain) NSString *title;
+@property(retain) NSURL * fontURL;
+@property(retain) UIImage * outlineImage;
+@property(retain) GKUITheme * theme;
+@property(retain) NSString * title;
 
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -29,5 +29,6 @@
 - (void)setTitle:(id)arg1;
 - (id)theme;
 - (id)title;
+- (void)updateTitle;
 
 @end

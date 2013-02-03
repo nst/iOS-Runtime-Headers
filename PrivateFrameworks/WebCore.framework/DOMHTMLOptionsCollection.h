@@ -5,18 +5,18 @@
 @interface DOMHTMLOptionsCollection : DOMObject {
 }
 
-@property NSUInteger length;
-@property NSInteger selectedIndex;
+@property unsigned int length;
+@property int selectedIndex;
 
-- (void)add:(id)arg1 index:(NSUInteger)arg2;
+- (void)add:(id)arg1 index:(unsigned int)arg2;
 - (void)dealloc;
 - (void)finalize;
-- (id)item:(NSUInteger)arg1;
-- (NSUInteger)length;
+- (id)item:(unsigned int)arg1;
+- (unsigned int)length;
 - (id)namedItem:(id)arg1;
-- (void)remove:(NSUInteger)arg1;
-- (NSInteger)selectedIndex;
-- (void)setLength:(NSUInteger)arg1;
-- (void)setSelectedIndex:(NSInteger)arg1;
+- (void)remove:(unsigned int)arg1;
+- (int)selectedIndex;
+- (void)setLength:(unsigned int)arg1;
+- (void)setSelectedIndex:(int)arg1;
 
 @end

@@ -6,18 +6,18 @@
 
 @interface ODDFillColorList : NSObject {
     NSArray *mColors;
-    NSInteger mHueDirection;
-    NSInteger mMethod;
+    int mHueDirection;
+    int mMethod;
 }
 
-- (id)colorAtIndex:(NSUInteger)arg1 count:(NSUInteger)arg2 state:(id)arg3;
-- (id)cycleColorAtIndex:(NSUInteger)arg1;
+- (id)colorAtIndex:(unsigned int)arg1 count:(unsigned int)arg2 state:(id)arg3;
+- (id)cycleColorAtIndex:(unsigned int)arg1;
 - (void)dealloc;
-- (void)getComponentsForIndex:(NSUInteger)arg1 hue:(float*)arg2 saturation:(float*)arg3 brightness:(float*)arg4 state:(id)arg5;
-- (id)repeatColorAtIndex:(NSUInteger)arg1;
+- (void)getComponentsForIndex:(unsigned int)arg1 hue:(float*)arg2 saturation:(float*)arg3 brightness:(float*)arg4 state:(id)arg5;
+- (id)repeatColorAtIndex:(unsigned int)arg1;
 - (void)setColors:(id)arg1;
-- (void)setHueDirection:(NSInteger)arg1;
-- (void)setMethod:(NSInteger)arg1;
-- (id)spanColorAtIndex:(NSUInteger)arg1 count:(NSUInteger)arg2 state:(id)arg3;
+- (void)setHueDirection:(int)arg1;
+- (void)setMethod:(int)arg1;
+- (id)spanColorAtIndex:(unsigned int)arg1 count:(unsigned int)arg2 state:(id)arg3;
 
 @end

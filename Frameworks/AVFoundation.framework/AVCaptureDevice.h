@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureDeviceInternal;
+@class AVCaptureDeviceInternal, NSString;
 
 @interface AVCaptureDevice : NSObject {
     AVCaptureDeviceInternal *_internal;
 }
 
-@property(readonly) NSString *localizedName;
-@property(readonly) NSString *modelID;
-@property(readonly) NSString *uniqueID;
 @property(getter=isConnected,readonly) BOOL connected;
+@property(readonly) NSString * localizedName;
+@property(readonly) NSString * modelID;
+@property(readonly) NSString * uniqueID;
 
 + (id)_devices;
 + (id)defaultDeviceWithMediaType:(id)arg1;
@@ -23,39 +23,67 @@
 - (void)_sessionDidStart;
 - (BOOL)_startUsingDevice:(id*)arg1;
 - (void)_stopUsingDevice;
+- (BOOL)automaticallyAdjustsImageControlMode;
 - (void)close;
 - (void)dealloc;
 - (id)description;
 - (void)deviceConnectionDidChange;
 - (void)deviceConnectionWillChange;
+- (BOOL)doesHandleNotification:(id)arg1;
+- (int)exposureMode;
+- (struct CGPoint { float x1; float x2; })exposurePointOfInterest;
+- (int)flashMode;
+- (int)focusMode;
+- (struct CGPoint { float x1; float x2; })focusPointOfInterest;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (BOOL)hasFlash;
 - (BOOL)hasMediaType:(id)arg1;
 - (BOOL)hasTorch;
+- (int)imageControlMode;
 - (id)init;
+- (BOOL)isAdjustingExposure;
+- (BOOL)isAdjustingWhiteBalance;
 - (BOOL)isAudioLevelMeteringSupported;
 - (BOOL)isConnected;
-- (BOOL)isExposureModeSupported:(NSInteger)arg1;
+- (BOOL)isExposureModeSupported:(int)arg1;
 - (BOOL)isExposurePointOfInterestSupported;
-- (BOOL)isFlashModeSupported:(NSInteger)arg1;
-- (BOOL)isFocusModeSupported:(NSInteger)arg1;
+- (BOOL)isFlashActive;
+- (BOOL)isFlashAvailable;
+- (BOOL)isFlashModeSupported:(int)arg1;
+- (BOOL)isFocusModeSupported:(int)arg1;
 - (BOOL)isFocusPointOfInterestSupported;
+- (BOOL)isImageControlModeSupported:(int)arg1;
 - (BOOL)isInUseByAnotherApplication;
 - (BOOL)isLockedForConfiguration;
 - (BOOL)isOpen;
-- (BOOL)isTorchModeSupported:(NSInteger)arg1;
-- (BOOL)isWhiteBalanceModeSupported:(NSInteger)arg1;
+- (BOOL)isSubjectAreaChangeMonitoringEnabled;
+- (BOOL)isTorchAvailable;
+- (BOOL)isTorchModeSupported:(int)arg1;
+- (BOOL)isWhiteBalanceModeSupported:(int)arg1;
 - (id)localizedName;
 - (BOOL)lockForConfiguration:(id*)arg1;
 - (id)modelID;
 - (BOOL)open:(id*)arg1;
-- (NSInteger)position;
+- (int)position;
 - (id)session;
+- (void)setAutomaticallyAdjustsImageControlMode:(BOOL)arg1;
+- (void)setExposureMode:(int)arg1;
+- (void)setExposurePointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setFlashMode:(int)arg1;
+- (void)setFocusMode:(int)arg1;
+- (void)setFocusPointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setImageControlMode:(int)arg1;
 - (void)setSession:(id)arg1;
+- (void)setSubjectAreaChangeMonitoringEnabled:(BOOL)arg1;
+- (void)setTorchMode:(int)arg1;
+- (void)setWhiteBalanceMode:(int)arg1;
 - (BOOL)startUsingDevice:(id*)arg1;
 - (void)stopUsingDevice;
 - (BOOL)supportsAVCaptureSessionPreset:(id)arg1;
+- (float)torchLevel;
+- (int)torchMode;
 - (id)uniqueID;
 - (void)unlockForConfiguration;
+- (int)whiteBalanceMode;
 
 @end

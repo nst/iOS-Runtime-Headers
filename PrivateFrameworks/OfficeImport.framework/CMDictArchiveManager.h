@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSString, NSMutableDictionary, NSMutableString;
 
 @interface CMDictArchiveManager : CMArchiveManager {
+    boolmIsFrameset;
     NSMutableString *mCssString;
     NSMutableString *mMainHtml;
     NSString *mName;
@@ -16,7 +13,6 @@
     NSString *mResourceUrlProtocol;
     NSMutableDictionary *mResources;
     NSMutableDictionary *mStyleCache;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsFrameset;
 }
 
 - (void)addCssStyle:(id)arg1 withName:(id)arg2;
@@ -30,7 +26,7 @@
 - (void)pushCssToPath:(id)arg1;
 - (void)pushData:(id)arg1 toPath:(id)arg2;
 - (void)pushText:(id)arg1 toPath:(id)arg2;
-- (NSInteger)resourceCount;
+- (int)resourceCount;
 - (id)resourceUrlProtocol;
 - (void)setIsFrameset;
 

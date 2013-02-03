@@ -10,9 +10,9 @@
     UIColor *_subtitleShadowColor;
 }
 
-@property(retain) NSString *subtitle;
-@property(retain) UIColor *subtitleColor;
-@property(retain) UIColor *subtitleShadowColor;
+@property(retain) NSString * subtitle;
+@property(retain) UIColor * subtitleColor;
+@property(retain) UIColor * subtitleShadowColor;
 
 - (void)dealloc;
 - (void)setSubtitle:(id)arg1;

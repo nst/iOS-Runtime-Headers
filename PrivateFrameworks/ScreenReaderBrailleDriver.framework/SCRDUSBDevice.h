@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderBrailleDriver.framework/ScreenReaderBrailleDriver
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSString;
 
 @interface SCRDUSBDevice : NSObject {
@@ -9,7 +14,7 @@
     struct IOUSBInterfaceStruct220 {} **_interface;
     BOOL _isConfigured;
     BOOL _isOpen;
-    NSUInteger _notification;
+    unsigned int _notification;
     struct IONotificationPort { } *_notificationPort;
     NSString *_privateRunLoopMode;
 }
@@ -20,19 +25,19 @@
 - (BOOL)close;
 - (void)dealloc;
 - (BOOL)getInformationForPipe:(unsigned char)arg1 direction:(char *)arg2 number:(char *)arg3 transferType:(char *)arg4 maxPacketSize:(unsigned short*)arg5 interval:(char *)arg6;
-- (id)initWithIOObject:(NSUInteger)arg1;
+- (id)initWithIOObject:(unsigned int)arg1;
 - (BOOL)isConfigured;
 - (BOOL)isOpen;
 - (unsigned char)numberOfConfigurations;
 - (BOOL)open;
 - (BOOL)openWithSeize:(BOOL)arg1;
 - (long)product;
-- (BOOL)readData:(void*)arg1 withSize:(NSUInteger*)arg2 fromPipe:(unsigned char)arg3;
+- (BOOL)readData:(void*)arg1 withSize:(unsigned int*)arg2 fromPipe:(unsigned char)arg3;
 - (unsigned long)readData:(void*)arg1 withSize:(unsigned long)arg2 fromBulkPipe:(unsigned char)arg3 withNoDataTimeout:(unsigned long)arg4 andCompletionTimeOut:(unsigned long)arg5;
 - (unsigned long)readData:(void*)arg1 withSize:(unsigned long)arg2 fromPipe:(unsigned char)arg3 withTimeout:(double)arg4;
 - (void)registerForDisconnectNotifications:(BOOL)arg1;
 - (BOOL)reset;
-- (BOOL)sendControlRequest:(unsigned char)arg1 type:(unsigned char)arg2 value:(unsigned short)arg3 index:(unsigned short)arg4 data:(void*)arg5 size:(unsigned short)arg6 sizeTransferred:(NSUInteger*)arg7 pipe:(unsigned char)arg8 timeout:(double)arg9;
+- (BOOL)sendControlRequest:(unsigned char)arg1 type:(unsigned char)arg2 value:(unsigned short)arg3 index:(unsigned short)arg4 data:(void*)arg5 size:(unsigned short)arg6 sizeTransferred:(unsigned int*)arg7 pipe:(unsigned char)arg8 timeout:(double)arg9;
 - (BOOL)setAlternateInterface:(unsigned char)arg1;
 - (BOOL)setConfiguration:(unsigned char)arg1;
 - (BOOL)setInterface:(unsigned char)arg1;

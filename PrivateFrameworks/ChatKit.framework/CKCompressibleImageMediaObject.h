@@ -12,17 +12,19 @@
 + (id)previewDataMIMEType;
 + (struct CGSize { float x1; float x2; })transcodeMaxSize;
 
-- (id)_newTranscodedMediaObjectWithMaxByteLength:(NSInteger)arg1 forceJPEG:(BOOL)arg2;
-- (id)_newTranscodedMediaObjectWithMaxByteLength:(NSInteger)arg1;
+- (id)_newTranscodedMediaObjectWithMaxByteLength:(int)arg1 forceJPEG:(BOOL)arg2;
+- (id)_newTranscodedMediaObjectWithMaxByteLength:(int)arg1;
+- (id)_orientationStringForImageOrientation:(int)arg1;
 - (float)balloonHeightWithPreviewData:(id)arg1;
 - (Class)balloonPreviewClassWithPreviewData:(id)arg1;
 - (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
 - (void)copyToPasteboard:(id)arg1;
 - (void)dealloc;
 - (id)imageData;
-- (NSInteger)mediaType;
-- (id)newPreview:(NSInteger)arg1 highlight:(BOOL)arg2;
-- (id)newTranscodingForMMSWithMaxByteLength:(NSInteger)arg1;
+- (void)logMediaDiagnotics;
+- (int)mediaType;
+- (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
+- (id)newTranscodingForMMSWithMaxByteLength:(int)arg1;
 - (BOOL)shouldGeneratePreviewInBackground;
 - (BOOL)shouldTranscodeForMMS;
 

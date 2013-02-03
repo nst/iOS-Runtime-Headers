@@ -3,12 +3,14 @@
  */
 
 @interface IMMobileConnectionMonitor : IMConnectionMonitor {
+    Class _CPNetworkObserverClass;
     BOOL _isHostReachable;
 }
 
 - (void)_handleNetworkObserverDidChange:(id)arg1;
 - (void)_setup;
 - (void)dealloc;
+- (id)init;
 - (BOOL)isImmediatelyReachable;
 
 @end

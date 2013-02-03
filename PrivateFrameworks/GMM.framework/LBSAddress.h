@@ -14,25 +14,25 @@
     NSString *_raw_text;
 }
 
-@property(retain) NSMutableArray *components;
-@property(retain) NSMutableArray *cross_streets;
-@property(retain) NSString *raw_text;
-@property(readonly) NSInteger componentsCount;
-@property(readonly) NSInteger cross_streetsCount;
+@property(retain) NSMutableArray * components;
+@property(readonly) int componentsCount;
+@property(retain) NSMutableArray * cross_streets;
+@property(readonly) int cross_streetsCount;
 @property(readonly) BOOL hasIs_mailing;
 @property(readonly) BOOL hasIs_physical;
 @property(readonly) BOOL hasRaw_text;
 @property BOOL is_mailing;
 @property BOOL is_physical;
+@property(retain) NSString * raw_text;
 
 - (void)addComponent:(id)arg1;
 - (void)addCross_street:(id)arg1;
-- (id)componentAtIndex:(NSUInteger)arg1;
+- (id)componentAtIndex:(unsigned int)arg1;
 - (id)components;
-- (NSInteger)componentsCount;
-- (id)cross_streetAtIndex:(NSUInteger)arg1;
+- (int)componentsCount;
+- (id)cross_streetAtIndex:(unsigned int)arg1;
 - (id)cross_streets;
-- (NSInteger)cross_streetsCount;
+- (int)cross_streetsCount;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -44,9 +44,9 @@
 - (BOOL)is_physical;
 - (id)raw_text;
 - (BOOL)readFrom:(id)arg1;
-- (void)setComponent:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setComponent:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setComponents:(id)arg1;
-- (void)setCross_street:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setCross_street:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setCross_streets:(id)arg1;
 - (void)setIs_mailing:(BOOL)arg1;
 - (void)setIs_physical:(BOOL)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptWindowContext, SUScriptCanvasFunction, SUScriptFunction;
+@class SUScriptWindowContext, WebScriptObject, SUScriptFunction, NSString, SUScriptViewController, SUScriptCanvasFunction, NSNumber;
 
 @interface SUScriptWindow : SUScriptObject {
     id _backViewController;
@@ -18,17 +18,17 @@
     id _windowParentViewController;
 }
 
-@property(getter=_backViewController,retain) SUScriptViewController *backViewController; /* unknown property attribute: Sset_backViewController: */
-@property(getter=_frontViewController,retain) SUScriptViewController *frontViewController; /* unknown property attribute: Sset_frontViewController: */
-@property(getter=_maskFunction,retain) WebScriptObject *maskFunction; /* unknown property attribute: Sset_maskFunction: */
-@property(getter=_shadowOpacity,retain) NSNumber *shadowOpacity; /* unknown property attribute: Sset_shadowOpacity: */
-@property(getter=_shadowRadius,retain) NSNumber *shadowRadius; /* unknown property attribute: Sset_shadowRadius: */
-@property(getter=_shouldDismissFunction,retain) WebScriptObject *shouldDismissFunction; /* unknown property attribute: Sset_shouldDismissFunction: */
-@property(getter=_style,retain) NSString *style; /* unknown property attribute: Sset_style: */
-@property(readonly) SUScriptWindowContext *context;
-@property(getter=_height,readonly) NSNumber *height;
-@property(getter=_width,readonly) NSNumber *width;
-@property(getter=_windowParentViewController,readonly) SUScriptViewController *windowParentViewController;
+@property(getter=_backViewController,setter=set_backViewController:,retain) SUScriptViewController * backViewController;
+@property(readonly) SUScriptWindowContext * context;
+@property(getter=_frontViewController,setter=set_frontViewController:,retain) SUScriptViewController * frontViewController;
+@property(getter=_height,readonly) NSNumber * height;
+@property(getter=_maskFunction,setter=set_maskFunction:,retain) WebScriptObject * maskFunction;
+@property(getter=_shadowOpacity,setter=set_shadowOpacity:,retain) NSNumber * shadowOpacity;
+@property(getter=_shadowRadius,setter=set_shadowRadius:,retain) NSNumber * shadowRadius;
+@property(getter=_shouldDismissFunction,setter=set_shouldDismissFunction:,retain) WebScriptObject * shouldDismissFunction;
+@property(getter=_style,setter=set_style:,retain) NSString * style;
+@property(getter=_width,readonly) NSNumber * width;
+@property(getter=_windowParentViewController,readonly) SUScriptViewController * windowParentViewController;
 
 + (void)_dismissWindowsAnimated:(BOOL)arg1;
 + (void)dismissWindowsWithOptions:(id)arg1;

@@ -2,18 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
+@class ICSDate, NSArray, NSString, ICSDuration;
+
 @interface ICSAvailable : ICSComponent {
 }
 
-@property(retain) NSArray *attach;
-@property(retain) NSArray *attendee;
-@property(retain) ICSDate *created;
-@property(retain) ICSDate *dtend;
-@property(retain) ICSDate *dtstamp;
-@property(retain) ICSDate *dtstart;
-@property(retain) ICSDuration *duration;
-@property(retain) NSArray *rrule;
-@property(retain) NSString *uid;
+@property(retain) NSArray * attach;
+@property(retain) NSArray * attendee;
+@property(retain) ICSDate * created;
+@property(retain) ICSDate * dtend;
+@property(retain) ICSDate * dtstamp;
+@property(retain) ICSDate * dtstart;
+@property(retain) ICSDuration * duration;
+@property(retain) NSArray * rrule;
+@property(retain) NSString * uid;
 
 + (id)name;
 

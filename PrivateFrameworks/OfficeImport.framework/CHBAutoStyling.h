@@ -2,35 +2,30 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CHBAutoStyling : CHAutoStyling <CHAutoStyling> {
-     /* Encoded args for previous method: v20@0:4@8i12B16 */
 }
 
 - (id)autoAxisStroke;
 - (id)autoFill;
 - (id)autoSeriesBorderStroke;
-- (id)autoSeriesFill:(NSInteger)arg1;
+- (id)autoSeriesFill:(int)arg1;
 - (id)autoStroke;
-- (id)autoStrokeForSeriesIndex:(NSInteger)arg1;
-- (id)fillWithColorIndex:(NSInteger)arg1;
+- (id)autoStrokeForSeriesIndex:(int)arg1;
+- (id)fillWithColorIndex:(int)arg1;
 - (void)resolveAxisGraphicProperties:(id)arg1;
 - (void)resolveChartAreaGraphicProperties:(id)arg1;
 - (void)resolveFloorGraphicProperties:(id)arg1;
-- (void)resolveGraphicPropertiesOfErrorBar:(id)arg1 forSeriesIndex:(NSInteger)arg2;
-- (void)resolveGraphicPropertiesOfSeries:(id)arg1 forSeriesIndex:(NSInteger)arg2 isLine:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3;
-- (void)resolveGraphicPropertiesOfSeries:(id)arg1 forSeriesIndex:(NSInteger)arg2;
-- (void)resolveGraphicPropertiesOfTrendline:(id)arg1 forSeriesIndex:(NSInteger)arg2;
+- (void)resolveGraphicPropertiesOfErrorBar:(id)arg1 forSeriesIndex:(int)arg2;
+- (void)resolveGraphicPropertiesOfSeries:(id)arg1 forSeriesIndex:(int)arg2 isLine:(bool)arg3;
+- (void)resolveGraphicPropertiesOfSeries:(id)arg1 forSeriesIndex:(int)arg2;
+- (void)resolveGraphicPropertiesOfTrendline:(id)arg1 forSeriesIndex:(int)arg2;
 - (void)resolveLegendGraphicProperties:(id)arg1;
 - (void)resolveMajorGridLinesGraphicProperties:(id)arg1;
-- (void)resolveMarker:(id)arg1 withSeriesGraphicProperties:(id)arg2 forSeriesIndex:(NSInteger)arg3;
+- (void)resolveMarker:(id)arg1 withSeriesGraphicProperties:(id)arg2 forSeriesIndex:(int)arg3;
 - (void)resolveMinorGridLinesGraphicProperties:(id)arg1;
 - (void)resolvePlotAreaGraphicProperties:(id)arg1;
 - (void)resolveWallGraphicProperties:(id)arg1;
 - (void)resolvedGraphicProperties:(id)arg1 autoFill:(id)arg2 autoStroke:(id)arg3 autoShadow:(BOOL)arg4 nullFill:(id)arg5 nullStroke:(id)arg6 nullShadow:(BOOL)arg7;
-- (id)strokeWithColorIndex:(NSInteger)arg1;
+- (id)strokeWithColorIndex:(int)arg1;
 
 @end

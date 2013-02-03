@@ -8,14 +8,14 @@
     GMMMapPoint *_originalPoint;
 }
 
-@property(retain) GMMMapPoint *originalPoint;
+@property(retain) GMMMapPoint * originalPoint;
 
 - (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)originalPoint;
 - (BOOL)readFrom:(id)arg1;
-- (NSUInteger)requestTypeCode;
+- (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setOriginalPoint:(id)arg1;
 - (void)writeTo:(id)arg1;

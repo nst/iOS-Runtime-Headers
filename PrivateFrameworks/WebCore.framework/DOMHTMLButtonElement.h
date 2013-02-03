@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMHTMLFormElement, NSString;
+
 @interface DOMHTMLButtonElement : DOMHTMLElement {
 }
 
-@property(copy) NSString *accessKey;
-@property(retain,readonly) DOMHTMLFormElement *form;
-@property(copy) NSString *name;
-@property(copy,readonly) NSString *type;
-@property(copy) NSString *value;
+@property(copy) NSString * accessKey;
 @property BOOL autofocus;
 @property BOOL disabled;
+@property(retain,readonly) DOMHTMLFormElement * form;
+@property(copy) NSString * name;
+@property(copy,readonly) NSString * type;
+@property(copy) NSString * value;
 @property(readonly) BOOL willValidate;
 
 - (id)accessKey;
@@ -29,7 +31,7 @@
 - (void)setFormNoValidate:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setValue:(id)arg1;
-- (NSInteger)structuralComplexityContribution;
+- (int)structuralComplexityContribution;
 - (id)type;
 - (id)validationMessage;
 - (id)validity;

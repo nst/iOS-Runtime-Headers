@@ -5,20 +5,21 @@
 @class NSString, NSLock;
 
 @interface ISDevice : NSObject <ISSingleton> {
-    NSUInteger _daemonLaunchCount;
+    unsigned int _daemonLaunchCount;
     NSString *_guid;
     NSString *_hardwareModel;
     NSLock *_lock;
     NSString *_productVersion;
-    NSInteger _type;
+    int _type;
 }
 
-@property(readonly) NSString *deviceName;
-@property(retain,readonly) NSString *guid;
-@property(retain,readonly) NSString *hardwareModel;
-@property(retain,readonly) NSString *productVersion;
-@property(readonly) NSString *systemName;
-@property(readonly) NSInteger type;
+@property(readonly) NSString * deviceName;
+@property(retain,readonly) NSString * guid;
+@property(retain,readonly) NSString * hardwareModel;
+@property(retain,readonly) NSString * productVersion;
+@property(readonly) NSString * serialNumber;
+@property(readonly) NSString * systemName;
+@property(readonly) int type;
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
@@ -27,7 +28,7 @@
 - (id)_copyCapabilityValueForKey:(struct __CFString { }*)arg1;
 - (void*)_copyDeviceTreeProperty:(id)arg1;
 - (id)_copyStringForDeviceTreeProperty:(id)arg1;
-- (NSInteger)_deviceTypeForModelString:(id)arg1;
+- (int)_deviceTypeForModelString:(id)arg1;
 - (void)_initDeviceType;
 - (void)_initProductVersion;
 - (BOOL)_isHDVideoCapable;
@@ -38,22 +39,23 @@
 - (id)copyProtocolConditionalContext;
 - (id)copyPurchaseValidationContext;
 - (void)daemonDidLaunch;
-- (NSUInteger)daemonLaunchCount;
+- (unsigned int)daemonLaunchCount;
 - (void)daemonWillExitCleanly;
 - (void)dealloc;
 - (id)deviceName;
 - (id)guid;
 - (id)hardwareModel;
-- (BOOL)hasCapability:(NSInteger)arg1;
+- (BOOL)hasCapability:(int)arg1;
 - (id)init;
 - (BOOL)isAnyIPhone;
 - (BOOL)isAnyIPod;
 - (BOOL)isAnyWildcat;
 - (id)productVersion;
 - (BOOL)releasePowerAssertion:(id)arg1;
+- (id)serialNumber;
 - (id)supportedOfferDeviceForDevices:(id)arg1;
 - (id)systemName;
 - (BOOL)takePowerAssertion:(id)arg1;
-- (NSInteger)type;
+- (int)type;
 
 @end

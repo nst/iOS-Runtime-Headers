@@ -8,15 +8,15 @@
     GQDWPLayoutStorage *mStorage;
     GQDSStyle *mStyle;
     char *mStyleRef;
-    NSUInteger mTextScale;
+    unsigned int mTextScale;
 }
 
 - (void)dealloc;
 - (BOOL)isBlank;
 - (id)layoutStyle;
-- (NSInteger)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 - (void)resolveStyleRef;
 - (id)storage;
-- (NSUInteger)textScale;
+- (unsigned int)textScale;
 
 @end

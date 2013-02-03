@@ -2,24 +2,26 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
+@class NSString, NSArray;
+
 @interface ICCameraDevice : ICDevice {
     void *_cameraProperties;
 }
 
-@property(readonly) NSArray *contents;
-@property(readonly) NSArray *mediaFiles;
-@property(copy) NSString *volumePath;
 @property(getter=isAccessRestrictedAppleDevice) BOOL accessRestrictedAppleDevice;
 @property BOOL allowsSyncingClock;
-@property(readonly) NSUInteger batteryLevel;
+@property(readonly) unsigned int batteryLevel;
 @property(readonly) BOOL batteryLevelAvailable;
 @property BOOL beingEjected;
-@property NSUInteger contentCatalogPercentCompleted;
+@property unsigned int contentCatalogPercentCompleted;
+@property(readonly) NSArray * contents;
 @property(getter=isEjectable) BOOL ejectable;
-@property NSUInteger estimatedNumberOfDownloadableItems;
+@property unsigned int estimatedNumberOfDownloadableItems;
 @property(getter=isLocked) BOOL locked;
-@property NSUInteger numberOfDownloadableItems;
+@property(readonly) NSArray * mediaFiles;
+@property unsigned int numberOfDownloadableItems;
 @property(readonly) double timeOffset;
+@property(copy) NSString * volumePath;
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
@@ -27,11 +29,11 @@
 - (void)addToMetadataFetchQ:(id)arg1;
 - (void)addToThumbnailFetchQ:(id)arg1;
 - (BOOL)allowsSyncingClock;
-- (NSUInteger)batteryLevel;
+- (unsigned int)batteryLevel;
 - (BOOL)batteryLevelAvailable;
 - (BOOL)beingEjected;
 - (void)cancelDownload;
-- (NSUInteger)contentCatalogPercentCompleted;
+- (unsigned int)contentCatalogPercentCompleted;
 - (id)contents;
 - (void)dealloc;
 - (void)decrementEstimatedNumberOfDownloadableItems;
@@ -39,7 +41,7 @@
 - (id)description;
 - (struct dispatch_semaphore_s { }*)deviceQSemaphore;
 - (double)downloadCancelTimestamp;
-- (NSUInteger)estimatedNumberOfDownloadableItems;
+- (unsigned int)estimatedNumberOfDownloadableItems;
 - (id)filesOfType:(id)arg1;
 - (void)finalize;
 - (struct dispatch_queue_s { }*)generalQ;
@@ -53,7 +55,7 @@
 - (BOOL)isLocked;
 - (id)mediaFiles;
 - (void)notifyDelegateOfAddedItem:(id)arg1;
-- (NSUInteger)numberOfDownloadableItems;
+- (unsigned int)numberOfDownloadableItems;
 - (void)pendNotifyingDelegateOfAddedItem:(id)arg1;
 - (void)receivedDeviceCommandCompletion;
 - (void)removeFolder:(id)arg1;
@@ -66,11 +68,11 @@
 - (void)setAccessRestrictedAppleDevice:(BOOL)arg1;
 - (void)setAllowsSyncingClock:(BOOL)arg1;
 - (void)setBeingEjected:(BOOL)arg1;
-- (void)setContentCatalogPercentCompleted:(NSUInteger)arg1;
+- (void)setContentCatalogPercentCompleted:(unsigned int)arg1;
 - (void)setEjectable:(BOOL)arg1;
-- (void)setEstimatedNumberOfDownloadableItems:(NSUInteger)arg1;
+- (void)setEstimatedNumberOfDownloadableItems:(unsigned int)arg1;
 - (void)setLocked:(BOOL)arg1;
-- (void)setNumberOfDownloadableItems:(NSUInteger)arg1;
+- (void)setNumberOfDownloadableItems:(unsigned int)arg1;
 - (void)setVolumePath:(id)arg1;
 - (double)timeOffset;
 - (id)volumePath;

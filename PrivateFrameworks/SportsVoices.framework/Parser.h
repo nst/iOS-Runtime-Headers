@@ -2,30 +2,27 @@
    Image: /System/Library/PrivateFrameworks/SportsVoices.framework/SportsVoices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GrammarPart, NSMutableArray;
+@class GrammarPart, NSMutableArray, NSMutableDictionary;
 
 @interface Parser : NSObject {
-    id grammarsPlist;
-    NSMutableArray *productionRules;
-    GrammarPart *theGrammar;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*debugging;
+    NSMutableDictionary *_grammarsPlist;
+    NSMutableArray *_productionRules;
+    GrammarPart *_theGrammar;
+    bool_debugging;
 }
 
-@property(readonly) NSMutableArray *productionRules;
+@property(readonly) NSMutableArray * productionRules;
+
++ (BOOL)insertStatementsFromOriginal:(id)arg1 intoBranch:(id)arg2;
++ (id)loadGrammarsFromPlistAtPath:(id)arg1;
++ (id)retrievePlistForPathArray:(id)arg1 from:(id)arg2;
++ (id)retrievePlistForStringInDotNotation:(id)arg1 from:(id)arg2;
 
 - (void)dealloc;
 - (id)initWithPlistAtPath:(id)arg1 grammar:(id)arg2;
-- (BOOL)insertStatements:(id)arg1;
-- (void)loadGrammarsFromPlistAtPath:(id)arg1;
 - (id)productionRules;
 - (id)resultOfRulesAppliedTo:(id)arg1;
 - (id)resultOfRulesAppliedToStrings:(id)arg1;
-- (id)retrievePlistForPathArray:(id)arg1 from:(id)arg2;
-- (id)retrievePlistForStringInDotNotation:(id)arg1;
 - (void)setGrammar:(id)arg1;
 
 @end

@@ -8,24 +8,24 @@
     NSArray *_labels;
 }
 
-@property(readonly) NSArray *labels;
+@property(readonly) NSArray * labels;
 
 + (BOOL)AnimationIsRunning;
 + (void)ResetAndStartAnimation;
-+ (void)SetLabelCount:(NSUInteger)arg1;
++ (void)SetLabelCount:(unsigned int)arg1;
 + (void)SetPauseDuration:(double)arg1;
 + (void)SetShouldAnimate:(BOOL)arg1;
 + (void)SetTransitionDuration:(double)arg1;
 + (void)animateToNextLabel;
 + (void)animationDidStop;
 
-- (void)cleanUpLabelIndex:(NSUInteger)arg1;
+- (void)cleanUpLabelIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)labels;
-- (void)layoutLabelIndex:(NSUInteger)arg1;
+- (void)layoutLabelIndex:(unsigned int)arg1;
 - (void)layoutSubviews;
 - (void)recreateLabels;
-- (void)transitionFromLabelIndex:(NSUInteger)arg1 toLabelIndex:(NSUInteger)arg2;
+- (void)transitionFromLabelIndex:(unsigned int)arg1 toLabelIndex:(unsigned int)arg2;
 
 @end

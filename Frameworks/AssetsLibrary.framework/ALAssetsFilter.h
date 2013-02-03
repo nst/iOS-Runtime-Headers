@@ -2,18 +2,20 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
+@class ALAssetsFilterInternal;
+
 @interface ALAssetsFilter : NSObject {
     id _internal;
 }
 
-@property(retain) ALAssetsFilterInternal *internal;
+@property(retain) ALAssetsFilterInternal * internal;
 
 + (id)allAssets;
 + (id)allPhotos;
 + (id)allVideos;
 
-- (NSInteger)_filter;
-- (void)_setFilter:(NSInteger)arg1;
+- (int)_filter;
+- (void)_setFilter:(int)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)internal;

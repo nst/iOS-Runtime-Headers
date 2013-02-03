@@ -6,16 +6,16 @@
 
 @interface AVTimeMarkerObservation : NSObject {
     id _context;
-    NSInteger _currentIndex;
+    int _currentIndex;
     id _observer;
     NSArray *_times;
 }
 
 - (id)context;
-- (NSInteger)currentIndex;
+- (int)currentIndex;
 - (void)dealloc;
 - (BOOL)gotoTime:(double)arg1;
-- (id)initWithObserver:(id)arg1 times:(id)arg2 context:(id)arg3 currentIndex:(NSInteger)arg4;
+- (id)initWithObserver:(id)arg1 times:(id)arg2 context:(id)arg3 currentIndex:(int)arg4;
 - (double)nextInterestingTime;
 - (id)observer;
 - (double)prevInterestingTime;

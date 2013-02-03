@@ -6,13 +6,13 @@
 
 @interface MFCocoaHatchBrush : MFCocoaBrush {
     NSColorStub *m_colour;
-    NSInteger m_style;
+    int m_style;
 }
 
-+ (id)hatchBrushWithColour:(id)arg1 :(NSInteger)arg2;
++ (id)hatchBrushWithColour:(id)arg1 :(int)arg2;
 
 - (void)dealloc;
 - (void)fillPath:(id)arg1 :(id)arg2;
-- (id)initWithColour:(id)arg1 :(NSInteger)arg2;
+- (id)initWithColour:(id)arg1 :(int)arg2;
 
 @end

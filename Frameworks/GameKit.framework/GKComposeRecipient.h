@@ -6,16 +6,16 @@
 
 @interface GKComposeRecipient : NSObject {
     NSString *_address;
-    NSInteger _identifier;
+    int _identifier;
     NSString *_label;
-    NSInteger _property;
+    int _property;
     void *_record;
-    NSInteger _recordID;
+    int _recordID;
 }
 
-+ (id)recipientWithProperty:(NSInteger)arg1 address:(id)arg2;
-+ (id)recipientWithRecord:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3;
-+ (id)recipientWithRecord:(void*)arg1 recordID:(NSInteger)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
++ (id)recipientWithProperty:(int)arg1 address:(id)arg2;
++ (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
++ (id)recipientWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4;
 
 - (id)_unformattedAddress;
 - (id)address;
@@ -25,18 +25,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)displayString;
-- (NSUInteger)hash;
-- (NSInteger)identifier;
-- (id)initWithRecord:(void*)arg1 recordID:(NSInteger)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4 address:(id)arg5;
+- (unsigned int)hash;
+- (int)identifier;
+- (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
 - (BOOL)isEmail;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPhone;
 - (id)label;
-- (NSInteger)property;
+- (int)property;
 - (void*)record;
-- (NSInteger)recordID;
-- (void)setIdentifier:(NSInteger)arg1;
-- (void)setRecord:(void*)arg1 recordID:(NSInteger)arg2 identifier:(NSInteger)arg3;
+- (int)recordID;
+- (void)setIdentifier:(int)arg1;
+- (void)setRecord:(void*)arg1 recordID:(int)arg2 identifier:(int)arg3;
 - (id)uncommentedAddress;
 - (id)unlocalizedLabel;
 

@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSLock;
+@class NSArray, NSLock;
 
 @interface SUPreOrderQueue : NSObject {
     NSLock *_lock;
     struct __CFSet { } *_observers;
 }
 
-@property(readonly) NSArray *items;
+@property(readonly) NSArray * items;
 
 - (void)addObserver:(id)arg1;
-- (BOOL)cancelItemAtIndex:(NSInteger)arg1;
+- (BOOL)cancelItemAtIndex:(int)arg1;
 - (BOOL)checkQueue;
 - (void)dealloc;
 - (id)items;

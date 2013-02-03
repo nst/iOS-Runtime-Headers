@@ -48,7 +48,7 @@
 - (void)_removeEntity:(id)arg1;
 - (void)_removeEntityNamed:(id)arg1;
 - (void)_restoreValidation;
-- (void)_setIsEditable:(BOOL)arg1 optimizationStyle:(NSUInteger)arg2;
+- (void)_setIsEditable:(BOOL)arg1 optimizationStyle:(unsigned int)arg2;
 - (void)_setIsEditable:(BOOL)arg1;
 - (void)_setLocalizationPolicy:(id)arg1;
 - (id)_sortedEntitiesForConfiguration:(id)arg1;
@@ -57,7 +57,7 @@
 - (id)_versionIdentifiersAsArray;
 - (id)configurations;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -68,7 +68,7 @@
 - (id)fetchRequestFromTemplateWithName:(id)arg1 substitutionVariables:(id)arg2;
 - (id)fetchRequestTemplateForName:(id)arg1;
 - (id)fetchRequestTemplatesByName;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContentsOfOptimizedURL:(id)arg1;

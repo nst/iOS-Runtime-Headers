@@ -10,19 +10,19 @@
     NSString *_linkStreetRange;
     NSString *_linkText;
     NSString *_panoId;
-    NSInteger _roadArgb;
-    NSInteger _yawDegreeE6;
+    int _roadArgb;
+    int _yawDegreeE6;
 }
 
-@property(retain) NSString *linkStreetRange;
-@property(retain) NSString *linkText;
-@property(retain) NSString *panoId;
 @property(readonly) BOOL hasLinkStreetRange;
 @property(readonly) BOOL hasLinkText;
 @property(readonly) BOOL hasRoadArgb;
 @property(readonly) BOOL hasYawDegreeE6;
-@property NSInteger roadArgb;
-@property NSInteger yawDegreeE6;
+@property(retain) NSString * linkStreetRange;
+@property(retain) NSString * linkText;
+@property(retain) NSString * panoId;
+@property int roadArgb;
+@property int yawDegreeE6;
 
 - (void)dealloc;
 - (id)description;
@@ -36,13 +36,13 @@
 - (id)linkText;
 - (id)panoId;
 - (BOOL)readFrom:(id)arg1;
-- (NSInteger)roadArgb;
+- (int)roadArgb;
 - (void)setLinkStreetRange:(id)arg1;
 - (void)setLinkText:(id)arg1;
 - (void)setPanoId:(id)arg1;
-- (void)setRoadArgb:(NSInteger)arg1;
-- (void)setYawDegreeE6:(NSInteger)arg1;
+- (void)setRoadArgb:(int)arg1;
+- (void)setYawDegreeE6:(int)arg1;
 - (void)writeTo:(id)arg1;
-- (NSInteger)yawDegreeE6;
+- (int)yawDegreeE6;
 
 @end

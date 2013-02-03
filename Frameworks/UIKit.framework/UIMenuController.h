@@ -2,6 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSArray;
+
 @interface UIMenuController : NSObject {
     struct CGRect { 
         struct CGPoint { 
@@ -12,20 +14,20 @@
             float width; 
             float height; 
         } size; 
-    NSInteger _arrowDirection;
+    int _arrowDirection;
     } _targetRect;
 }
 
-@property(copy) NSArray *menuItems;
-@property NSInteger arrowDirection;
-@property(readonly) CGRect menuFrame;
+@property int arrowDirection;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } menuFrame;
+@property(copy) NSArray * menuItems;
 @property(getter=isMenuVisible) BOOL menuVisible;
 
 + (id)sharedMenuController;
 
 - (BOOL)_update:(BOOL)arg1;
 - (void)_windowWillRotate:(id)arg1;
-- (NSInteger)arrowDirection;
+- (int)arrowDirection;
 - (void)calloutBarDidFinishAnimation:(id)arg1;
 - (void)calloutBarWillStartAnimation:(id)arg1;
 - (void)dealloc;
@@ -33,7 +35,7 @@
 - (BOOL)isMenuVisible;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })menuFrame;
 - (id)menuItems;
-- (void)setArrowDirection:(NSInteger)arg1;
+- (void)setArrowDirection:(int)arg1;
 - (void)setMenuItems:(id)arg1;
 - (void)setMenuVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setMenuVisible:(BOOL)arg1;

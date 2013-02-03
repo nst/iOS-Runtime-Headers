@@ -14,18 +14,18 @@
     struct dispatch_queue_s { } *_logRequestQueue;
 }
 
-@property(retain) NSFileHandle *fh;
-@property(retain) NSDate *lastStatDate;
+@property(retain) NSFileHandle * fh;
+@property(retain) NSDate * lastStatDate;
 
-+ (id)_filenameWithBase:(id)arg1 generationalFormat:(id)arg2 generation:(NSInteger)arg3;
++ (id)_filenameWithBase:(id)arg1 generationalFormat:(id)arg2 generation:(int)arg3;
 + (id)_generationalFormatFromBase:(id)arg1;
 + (id)allLogFilesForFilename:(id)arg1;
 + (void)enableLogRolling;
 + (id)loggerWithFilename:(id)arg1;
 
-- (id)_filenameWithGenerationNumber:(NSInteger)arg1;
-- (id)_fullCompressedFilePathWithGenerationNumber:(NSInteger)arg1;
-- (id)_fullFilePathWithGenerationNumber:(NSInteger)arg1;
+- (id)_filenameWithGenerationNumber:(int)arg1;
+- (id)_fullCompressedFilePathWithGenerationNumber:(int)arg1;
+- (id)_fullFilePathWithGenerationNumber:(int)arg1;
 - (void)_loadUpHandle;
 - (void)_rollLogs;
 - (void)_statFileIfNecessaryForRollingCheck;

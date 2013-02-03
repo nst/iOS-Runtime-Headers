@@ -2,11 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSError, NSArray;
 
 @interface SUInputSourceInputStream : NSInputStream {
     struct { 
-        NSInteger version; 
+        int version; 
         void *info; 
         int (*retain)(); 
         int (*release)(); 
@@ -14,30 +19,30 @@
     int (*_clientCallback)();
     } _clientContext;
     id _delegate;
-    NSInteger _inputSourceIndex;
+    int _inputSourceIndex;
     NSArray *_inputSources;
     struct __CFRunLoop { } *_runLoop;
     struct __CFRunLoopSource { } *_runLoopSource;
     BOOL _sentAtEndEvent;
     BOOL _sentOpenEvent;
     NSError *_streamError;
-    NSUInteger _streamStatus;
+    unsigned int _streamStatus;
 }
 
-@property(readonly) NSArray *inputSources;
+@property(readonly) NSArray * inputSources;
 
 - (void)_close;
 - (id)_currentInputSource;
 - (void)_scheduleCallback;
 - (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
-- (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)())arg2 context:(struct { NSInteger x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
+- (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)())arg2 context:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
 - (void)_setStreamError:(id)arg1;
 - (void)_streamEventCallback;
 - (void)_unscheduleFromCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (void)close;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)getBuffer:(char **)arg1 length:(NSUInteger*)arg2;
+- (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
 - (BOOL)hasBytesAvailable;
 - (id)init;
 - (id)initWithData:(id)arg1;
@@ -47,12 +52,12 @@
 - (id)inputSources;
 - (void)open;
 - (id)propertyForKey:(id)arg1;
-- (NSInteger)read:(char *)arg1 maxLength:(NSUInteger)arg2;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)streamError;
-- (NSUInteger)streamStatus;
+- (unsigned int)streamStatus;
 
 @end

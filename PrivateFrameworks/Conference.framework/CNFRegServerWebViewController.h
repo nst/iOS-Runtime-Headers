@@ -17,7 +17,7 @@
         unsigned int automaticKeyboardWasDisabled : 1; 
         unsigned int checkedLogState : 1; 
         unsigned int shouldLog : 1; 
-        NSUInteger timedOut; 
+        unsigned int timedOut; 
     id _alertHandler;
     NSString *_leftButtonAction;
     CNFRegLoadingView *_loadingView;
@@ -28,13 +28,13 @@
     UIWebView *_webView;
 }
 
-@property(copy) ? *alertHandler;
-@property(copy) NSString *leftButtonAction;
-@property(copy) NSString *rightButtonAction;
-@property(retain) UIWebView *webView;
+@property(copy) id alertHandler;
 @property(readonly) BOOL isLoaded;
 @property(readonly) BOOL isLoading;
+@property(copy) NSString * leftButtonAction;
+@property(copy) NSString * rightButtonAction;
 @property(readonly) BOOL timedOut;
+@property(retain) UIWebView * webView;
 
 - (void)_clearLeftButtonTarget;
 - (void)_clearRightButtonTarget;
@@ -45,7 +45,7 @@
 - (void)_timeoutFired:(id)arg1;
 - (void)addSelector:(SEL)arg1 forScheme:(id)arg2;
 - (id)alertHandler;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)applicationWillSuspend;
 - (BOOL)boolForServerValue:(id)arg1 value:(BOOL*)arg2 defaultValue:(BOOL)arg3;
 - (void)clearUrlHandlers;
@@ -57,7 +57,7 @@
 - (void)handleLeftButtonError:(id)arg1;
 - (void)handleRightButtonError:(id)arg1;
 - (void)hideSpinner;
-- (BOOL)intForServerValue:(id)arg1 value:(NSInteger*)arg2 defaultValue:(NSInteger)arg3;
+- (BOOL)intForServerValue:(id)arg1 value:(int*)arg2 defaultValue:(int)arg3;
 - (BOOL)isLoaded;
 - (BOOL)isLoading;
 - (struct OpaqueJSContext { }*)javaScriptExecutionContext;
@@ -89,7 +89,7 @@
 - (void)startRequiringWifi;
 - (void)stopRequiringWifi;
 - (BOOL)timedOut;
-- (BOOL)uintForServerValue:(id)arg1 value:(NSUInteger*)arg2 defaultValue:(NSUInteger)arg3;
+- (BOOL)uintForServerValue:(id)arg1 value:(unsigned int*)arg2 defaultValue:(unsigned int)arg3;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
@@ -97,7 +97,7 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(NSUInteger)arg3;
+- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(unsigned int)arg3;
 - (id)webView;
 - (void)webViewDidFinishLoad:(id)arg1;
 - (void)webViewDidStartLoad:(id)arg1;

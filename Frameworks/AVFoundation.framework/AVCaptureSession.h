@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureSessionInternal;
+@class NSArray, AVCaptureSessionInternal, NSString;
 
 @interface AVCaptureSession : NSObject {
     AVCaptureSessionInternal *_internal;
 }
 
-@property(readonly) NSArray *inputs;
-@property(readonly) NSArray *outputs;
-@property(copy) NSString *sessionPreset;
+@property(readonly) NSArray * inputs;
 @property(getter=isInterrupted,readonly) BOOL interrupted;
+@property(readonly) NSArray * outputs;
 @property(getter=isRunning,readonly) BOOL running;
+@property(copy) NSString * sessionPreset;
 
 + (id)avCaptureSessionPlist;
 + (void)initialize;
@@ -23,18 +23,21 @@
 - (void)_addOutputWithNoConnections:(id)arg1;
 - (id)_applyOutputOverridesToCaptureOptions:(id)arg1;
 - (void)_beginSessionUpdates;
-- (void)_buildAndRunGraph;
+- (BOOL)_buildAndRunGraph;
 - (BOOL)_canAddConnection:(id)arg1 failureReason:(id*)arg2;
 - (BOOL)_canAddInput:(id)arg1 failureReason:(id*)arg2;
 - (BOOL)_canAddOutput:(id)arg1 failureReason:(id*)arg2;
 - (BOOL)_connectionIsActive:(id)arg1;
 - (id)_connectionsForNewInputPort:(id)arg1;
 - (id)_connectionsForNewOutput:(id)arg1;
-- (id)_createCaptureOptionsForPreset:(id)arg1 audioDevice:(id)arg2 videoDevice:(id)arg3 errorStatus:(NSInteger*)arg4;
+- (id)_createCaptureOptionsForPreset:(id)arg1 audioDevice:(id)arg2 videoDevice:(id)arg3 errorStatus:(int*)arg4;
 - (long)_createRecorderIfNeeded;
+- (id)_currentVideoDevice;
 - (void)_doDidStart;
+- (void)_doDidStartSources;
 - (void)_doDidStop:(id)arg1;
 - (void)_endSessionUpdates;
+- (id)_errorForFigRecorderNotification:(id)arg1;
 - (void)_excludeOutputsForCaptureOptions:(id)arg1;
 - (BOOL)_figRecorderOldOptionsAreEqual:(id)arg1 toNewOptions:(id)arg2 livesourceOptionsAreEqual:(BOOL*)arg3;
 - (id)_figRecorderOptionsForPreset:(id)arg1 audioDevice:(id)arg2 videoDevice:(id)arg3;
@@ -83,6 +86,7 @@
 - (void)removeConnection:(id)arg1;
 - (void)removeInput:(id)arg1;
 - (void)removeOutput:(id)arg1;
+- (void)removeVideoPreviewLayer;
 - (id)retain;
 - (id)sessionPreset;
 - (void)setSessionPreset:(id)arg1;

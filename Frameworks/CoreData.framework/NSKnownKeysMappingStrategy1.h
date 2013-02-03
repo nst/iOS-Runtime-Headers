@@ -3,9 +3,9 @@
  */
 
 @interface NSKnownKeysMappingStrategy1 : NSKnownKeysMappingStrategy {
-    NSInteger _cd_rc;
+    int _cd_rc;
     id *_keys;
-    NSUInteger _length;
+    unsigned int _length;
     id _reserved1;
     void *_table;
 }
@@ -21,20 +21,20 @@
 - (id)allKeys;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)fastIndexForKnownKey:(id)arg1;
-- (NSUInteger)hash;
-- (NSUInteger)indexForKey:(id)arg1;
-- (id)initForKeys:(const id*)arg1 count:(NSUInteger)arg2;
+- (unsigned int)fastIndexForKnownKey:(id)arg1;
+- (unsigned int)hash;
+- (unsigned int)indexForKey:(id)arg1;
+- (id)initForKeys:(const id*)arg1 count:(unsigned int)arg2;
 - (id)initForKeys:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (const id*)keys;
-- (NSUInteger)length;
+- (unsigned int)length;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

@@ -2,18 +2,20 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
+@class PTPInitiator;
+
 @interface PTPCameraDevice : ICCameraDevice {
     void *_ptpCameraProperties;
 }
 
-@property(readonly) PTPInitiator *initiator;
+@property(readonly) PTPInitiator * initiator;
 
 - (void)addToEventHandlerQ:(id)arg1;
 - (void)dealloc;
 - (BOOL)eject;
 - (void)enumerateContent;
 - (void)finalize;
-- (id)initWithUSBLocationID:(NSUInteger)arg1;
+- (id)initWithUSBLocationID:(unsigned int)arg1;
 - (id)initiator;
 
 @end

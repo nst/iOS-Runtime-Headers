@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWebSelectionNode, UIWebSelectionHandle, UIWebSelectionOutline, UIWebTextRangeView, UIWebSelectionGraph, NSTimer, UIView, UIWebDocumentView;
+@class UIWebSelectionNode, UIWebSelectionHandle, UIWebSelectionOutline, UIWebTextRangeView, UIWebSelectionGraph, NSTimer, UIView, UIWebDocumentView, UIWebSelection;
 
 @interface UIWebSelectionView : UIView {
     struct CGRect { 
@@ -17,7 +17,7 @@
     struct { 
         UIWebSelectionHandle *scrollingHandle; 
         double startTime; 
-        NSInteger direction; 
+        int direction; 
         NSTimer *timer; 
     struct { 
         UIWebSelectionHandle *activeHandle; 
@@ -51,15 +51,17 @@
     } _autoscrollData;
     } _blockSelectionData;
     UIWebSelectionHandle *_bottom;
+    BOOL _calloutBarIsHideBeforeRotation;
     UIView *_center;
     BOOL _creatingSelection;
     UIWebDocumentView *_documentView;
     float _growThreshold;
     UIWebSelectionHandle *_left;
-    NSInteger _nestedLayoutCalls;
+    int _nestedLayoutCalls;
     UIWebSelectionOutline *_outline;
     } _rangedSelectionData;
     UIWebSelectionHandle *_right;
+    BOOL _rotating;
     } _selectionFrame;
     UIWebSelectionGraph *_selectionGraph;
     UIWebSelectionNode *_selectionNode;
@@ -68,9 +70,9 @@
     UIWebSelectionHandle *_top;
 }
 
-@property(readonly) UIWebSelection *selection;
-@property(retain) UIWebSelectionNode *selectionNode;
-@property CGRect selectionFrame;
+@property(readonly) UIWebSelection * selection;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } selectionFrame;
+@property(retain) UIWebSelectionNode * selectionNode;
 
 - (void)_didScroll;
 - (void)_subscribeToScrollNotificationsIfNecessary:(id)arg1;
@@ -78,7 +80,7 @@
 - (BOOL)activelyManipulatingBlockSelectionHandle;
 - (BOOL)activelyManipulatingTextSelectionHandle;
 - (void)animateSloppyReleaseOfHandleInText:(id)arg1 withMagnifier:(id)arg2;
-- (NSInteger)autoscrollDirectionsForHandle:(id)arg1;
+- (int)autoscrollDirectionsForHandle:(id)arg1;
 - (void)autoscrollTimerFired:(id)arg1;
 - (void)calloutBar:(id)arg1 selectedCommand:(id)arg2;
 - (BOOL)canFlip;
@@ -90,9 +92,10 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })desiredBox;
 - (void)endSelectionCreationWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)expandForActiveHandle;
-- (id)handleWithPosition:(NSInteger)arg1;
+- (id)handleWithPosition:(int)arg1;
 - (id)handles;
 - (void)hideControls;
+- (void)hideControlsBeforeRotation;
 - (void)hideCopyCallout;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithWebDocumentView:(id)arg1;
@@ -114,6 +117,7 @@
 - (BOOL)shouldExpandForActiveHandle;
 - (BOOL)shouldSwitchToBlockModeForHandle:(id)arg1;
 - (void)showControls;
+- (void)showControlsAfterRotation;
 - (void)showCopyCallout;
 - (void)startSelectionCreationWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)stopAnyAutoscrolling;

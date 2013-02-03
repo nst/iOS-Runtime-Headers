@@ -10,11 +10,11 @@
     void *_store;
 }
 
-@property(copy) NSString *accountIdentifier;
-@property void *group;
-@property void *store;
+@property(copy) NSString * accountIdentifier;
+@property void* group;
+@property void* store;
 
-- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(NSInteger*)arg2 predicateIdentifier:(NSInteger)arg3;
+- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (id)accountIdentifier;
 - (void)dealloc;
 - (id)description;

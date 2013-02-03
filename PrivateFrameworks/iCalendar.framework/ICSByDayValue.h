@@ -6,23 +6,23 @@
 
 @interface ICSByDayValue : NSObject <NSCoding> {
     NSNumber *_number;
-    NSInteger _weekday;
+    int _weekday;
 }
 
-@property(retain) NSNumber *number;
-@property NSInteger weekday;
+@property(retain) NSNumber * number;
+@property int weekday;
 
 + (id)byDayValueFromICSString:(id)arg1;
-+ (NSInteger)weekdayFromICSString:(id)arg1;
++ (int)weekdayFromICSString:(id)arg1;
 
-- (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithWeekday:(NSInteger)arg1 number:(id)arg2;
-- (id)initWithWeekday:(NSInteger)arg1;
+- (id)initWithWeekday:(int)arg1 number:(id)arg2;
+- (id)initWithWeekday:(int)arg1;
 - (id)number;
 - (void)setNumber:(id)arg1;
-- (void)setWeekday:(NSInteger)arg1;
-- (NSInteger)weekday;
+- (void)setWeekday:(int)arg1;
+- (int)weekday;
 
 @end

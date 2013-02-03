@@ -10,9 +10,9 @@
     NSInputStream *_workoutXMLStream;
 }
 
-@property(readonly) NSString *PIN;
-@property <SWSyncServiceConnectionDelegate><SWSyncWorkoutConnectionDelegate> *delegate;
-@property(readonly) NSInputStream *workoutXMLStream;
+@property(readonly) NSString * PIN;
+@property <SWSyncServiceConnectionDelegate><SWSyncWorkoutConnectionDelegate> * delegate;
+@property(readonly) NSInputStream * workoutXMLStream;
 
 - (id)PIN;
 - (void)dealloc;

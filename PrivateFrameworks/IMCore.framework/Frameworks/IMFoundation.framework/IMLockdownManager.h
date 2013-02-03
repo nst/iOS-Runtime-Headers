@@ -12,22 +12,21 @@
     BOOL _isCarrierInstall;
     BOOL _isInternalInstall;
     BOOL _settingUpActivationState;
-    NSInteger _state;
+    int _state;
     NSString *_unqiueDeviceIdentifier;
 }
 
-@property(readonly) NSString *inverseDeviceIdentifier;
-@property(readonly) NSString *uniqueDeviceIdentifier;
 @property(readonly) BOOL brickedDevice;
+@property(readonly) NSString * inverseDeviceIdentifier;
 @property(readonly) BOOL isCarrierInstall;
 @property(readonly) BOOL isInternalInstall;
-@property(readonly) NSInteger lockdownState;
+@property(readonly) int lockdownState;
+@property(readonly) NSString * uniqueDeviceIdentifier;
 
 + (id)sharedInstance;
 
 - (void)_activationFailed;
 - (BOOL)_hasEverRegistered;
-- (BOOL)_isRegisteredToNetwork;
 - (void)_resetActivationState;
 - (void)_setHasEverRegistered:(BOOL)arg1;
 - (void)_setupActivationState;
@@ -38,9 +37,9 @@
 - (id)inverseDeviceIdentifier;
 - (BOOL)isCarrierInstall;
 - (BOOL)isInternalInstall;
-- (NSInteger)lockdownState;
+- (int)lockdownState;
 - (oneway void)release;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (id)uniqueDeviceIdentifier;
 - (id)valueForDomain:(id)arg1 key:(id)arg2;
 

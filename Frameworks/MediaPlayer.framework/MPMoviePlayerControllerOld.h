@@ -23,7 +23,7 @@
 - (void)_delayedHideOverlay;
 - (void)_expireImplicitAudioRouteChangePlaybackRestart;
 - (void)_itemFailedToPlay:(id)arg1;
-- (id)_localizedDescriptionForErrorCode:(NSInteger)arg1;
+- (id)_localizedDescriptionForErrorCode:(int)arg1;
 - (void)_mediaServerDied:(id)arg1;
 - (void)_movieDidDecode:(id)arg1;
 - (void)_pausePlaybackForNotification:(id)arg1;
@@ -42,7 +42,7 @@
 - (void)_updateForCurrentMovieControlMode;
 - (void)_validationDidFinish:(id)arg1;
 - (void)_videoViewScaleModeDidChange:(id)arg1;
-- (NSUInteger)_visiblePartsForMovieControlMode;
+- (unsigned int)_visiblePartsForMovieControlMode;
 - (id)_volumeAudioCategory;
 - (void)_willBeginSuspendAnimationNotification:(id)arg1;
 - (void)_willResignNotification:(id)arg1;
@@ -53,13 +53,13 @@
 - (void)dealloc;
 - (id)initWithContentURL:(id)arg1;
 - (double)initialPlaybackTime;
-- (NSInteger)movieControlMode;
+- (int)movieControlMode;
 - (void)play;
-- (NSInteger)scalingMode;
+- (int)scalingMode;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setInitialPlaybackTime:(double)arg1;
-- (void)setMovieControlMode:(NSInteger)arg1;
-- (void)setScalingMode:(NSInteger)arg1;
+- (void)setMovieControlMode:(int)arg1;
+- (void)setScalingMode:(int)arg1;
 - (void)stop;
 - (void)viewControllerRequestsExit:(id)arg1;
 

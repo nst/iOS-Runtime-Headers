@@ -8,14 +8,14 @@
     UICompletionTablePrivate *_private;
 }
 
-@property UIEdgeInsets contentInset;
-@property UIEdgeInsets scrollIndicatorInsets;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } contentInset;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } scrollIndicatorInsets;
 
 + (id)_cellFont;
 + (void)_initializeSafeCategory;
 + (id)_shadowImage;
 
-- (id)_completionForRow:(NSInteger)arg1;
+- (id)_completionForRow:(int)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
 - (void)dealloc;
 - (id)dequeueReusableCellWithIdentifier:(id)arg1;
@@ -27,9 +27,9 @@
 - (void)setDelegate:(id)arg1;
 - (void)setScrollIndicatorInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setTopStrokeColor:(id)arg1;
-- (id)table:(id)arg1 cellForRow:(NSInteger)arg2 column:(id)arg3;
+- (id)table:(id)arg1 cellForRow:(int)arg2 column:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 
 @end

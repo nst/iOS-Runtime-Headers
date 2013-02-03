@@ -30,11 +30,11 @@
 - (void)_removeTouch:(id)arg1;
 - (void)_removeTouchesForKey:(id)arg1;
 - (void)_setAccessibilityHitTestsAnyElement:(BOOL)arg1;
-- (void)_touchesForGesture:(id)arg1 withPhase:(NSInteger)arg2 intoSet:(id)arg3;
-- (id)_touchesForGesture:(id)arg1 withPhase:(NSInteger)arg2;
+- (void)_touchesForGesture:(id)arg1 withPhase:(int)arg2 intoSet:(id)arg3;
+- (id)_touchesForGesture:(id)arg1 withPhase:(int)arg2;
 - (id)_touchesForGestureRecognizer:(id)arg1;
 - (id)_touchesForKey:(id)arg1;
-- (id)_touchesForView:(id)arg1 withPhase:(NSInteger)arg2;
+- (id)_touchesForView:(id)arg1 withPhase:(int)arg2;
 - (id)_viewsForWindow:(id)arg1;
 - (id)_windows;
 - (id)allTouches;
@@ -43,6 +43,6 @@
 - (id)touchesForGestureRecognizer:(id)arg1;
 - (id)touchesForView:(id)arg1;
 - (id)touchesForWindow:(id)arg1;
-- (NSInteger)type;
+- (int)type;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface PDAnimationDiagramTarget : PDAnimationShapeTarget {
-    NSInteger mDiagramBuildStepBg;
-    NSInteger mDiagramBuildStepSp;
-    NSInteger mDiagramId;
+    int mDiagramBuildStepBg;
+    int mDiagramBuildStepSp;
+    int mDiagramId;
 }
 
 - (id)init;

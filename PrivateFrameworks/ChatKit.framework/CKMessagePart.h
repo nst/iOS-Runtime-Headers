@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKMessage;
+@class NSData, CKMessage;
 
 @interface CKMessagePart : NSObject {
-    NSUInteger _flags;
-    NSUInteger _height;
+    unsigned int _flags;
+    unsigned int _height;
     CKMessage *_parentMessage;
-    NSUInteger _rowID;
+    unsigned int _rowID;
 }
 
-@property(readonly) NSData *highlightData;
-@property CKMessage *parentMessage;
-@property(readonly) NSUInteger rowID;
+@property(readonly) NSData * highlightData;
+@property CKMessage * parentMessage;
+@property(readonly) unsigned int rowID;
 
 + (id)_assembleTextPartFromRange:(id)arg1;
 + (id)_newPartForPartRepresentation:(id)arg1 previewPartRepresentation:(id)arg2;
@@ -29,7 +29,7 @@
 - (void)copyToPasteboard;
 - (void)dealloc;
 - (id)detachedCopy;
-- (void)getUIHeight:(NSUInteger*)arg1 flags:(NSUInteger*)arg2;
+- (void)getUIHeight:(unsigned int*)arg1 flags:(unsigned int*)arg2;
 - (id)highlightData;
 - (id)image;
 - (id)imageData;
@@ -46,6 +46,6 @@
 - (void)setRowID:(unsigned long)arg1;
 - (void)setUIHeight:(unsigned long)arg1 flags:(unsigned long)arg2 store:(BOOL)arg3;
 - (id)text;
-- (NSInteger)type;
+- (int)type;
 
 @end

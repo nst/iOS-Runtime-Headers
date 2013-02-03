@@ -5,7 +5,7 @@
 @interface ICSFreeBusyTypeParameter : ICSPredefinedValue {
 }
 
-+ (id)freeBusyTypeParameterFromCode:(NSInteger)arg1;
++ (id)freeBusyTypeParameterFromCode:(int)arg1;
 + (id)freeBusyTypeParameterFromICSString:(id)arg1;
 
 @end

@@ -29,10 +29,10 @@
     BOOL _showingSearchField;
 }
 
-@property(readonly) NSArray *addresses;
-@property(copy) NSArray *recipients;
-@property(readonly) NSString *remainingText;
-@property(copy) NSString *searchAccountID;
+@property(readonly) NSArray * addresses;
+@property(copy) NSArray * recipients;
+@property(readonly) NSString * remainingText;
+@property(copy) NSString * searchAccountID;
 
 - (void)_copyRecipientsFromComposeView;
 - (void)_hideSearchFieldAndCancelOutstandingSearches:(BOOL)arg1;
@@ -48,25 +48,25 @@
 - (void)beganNetworkActivity;
 - (void)commitRemainingText;
 - (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
-- (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(NSInteger)arg3;
+- (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(int)arg3;
 - (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)composeRecipientView:(id)arg1 requestDeleteRecipientAtIndex:(NSInteger)arg2;
+- (void)composeRecipientView:(id)arg1 requestDeleteRecipientAtIndex:(int)arg2;
 - (void)composeRecipientView:(id)arg1 showPersonCardForAtom:(id)arg2;
 - (void)composeRecipientView:(id)arg1 textDidChange:(id)arg2;
 - (void)composeRecipientViewDidFinishEnteringRecipient:(id)arg1;
 - (void)composeRecipientViewDidFinishPickingRecipient:(id)arg1;
 - (void)composeRecipientViewRequestAddRecipient:(id)arg1;
-- (void)consumeSearchResults:(id)arg1 type:(NSInteger)arg2 taskID:(id)arg3;
+- (void)consumeSearchResults:(id)arg1 type:(int)arg2 taskID:(id)arg3;
 - (void)dealloc;
 - (void)endedNetworkActivity;
-- (void)finishedSearchingForType:(NSInteger)arg1;
+- (void)finishedSearchingForType:(int)arg1;
 - (void)finishedTaskWithID:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)loadView;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (id)recipients;
 - (id)remainingText;
 - (id)searchAccountID;
@@ -76,11 +76,11 @@
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
-- (BOOL)unknownPersonViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (BOOL)unknownPersonViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

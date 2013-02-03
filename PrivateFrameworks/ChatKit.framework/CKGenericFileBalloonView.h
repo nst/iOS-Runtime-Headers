@@ -11,9 +11,9 @@
     NSString *_text;
 }
 
-@property(retain) UIImage *icon;
-@property(copy) NSString *subtext;
-@property(copy) NSString *text;
+@property(retain) UIImage * icon;
+@property(copy) NSString * subtext;
+@property(copy) NSString * text;
 
 + (void)_initializeSafeCategory;
 + (float)additionalHeightForBubbleWhenInsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;

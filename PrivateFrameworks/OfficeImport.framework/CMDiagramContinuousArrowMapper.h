@@ -5,7 +5,7 @@
 @interface CMDiagramContinuousArrowMapper : CMDiagramShapeMapper {
 }
 
-- (id)_suggestedBoundsForNodeAtIndex:(NSInteger)arg1;
+- (id)_suggestedBoundsForNodeAtIndex:(int)arg1;
 - (id)fill;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapChildrenAt:(id)arg1 withState:(id)arg2;

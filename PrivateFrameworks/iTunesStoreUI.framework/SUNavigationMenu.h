@@ -7,23 +7,23 @@
 @interface SUNavigationMenu : NSObject <NSCopying> {
     NSString *_cancelTitle;
     NSString *_closedTitle;
-    NSInteger _initialSelectedIndex;
-    NSInteger _location;
+    int _initialSelectedIndex;
+    int _location;
     NSArray *_menuItems;
     NSArray *_navigationButtons;
     NSString *_openTitle;
 }
 
-@property(readonly) NSString *cancelTitle;
-@property(readonly) NSString *closedTitle;
-@property(readonly) NSArray *menuItems;
-@property(readonly) NSArray *navigationButtons;
-@property(readonly) NSString *openTitle;
-@property(readonly) NSInteger initialSelectedIndex;
-@property NSInteger location;
+@property(readonly) NSString * cancelTitle;
+@property(readonly) NSString * closedTitle;
+@property(readonly) int initialSelectedIndex;
+@property int location;
+@property(readonly) NSArray * menuItems;
+@property(readonly) NSArray * navigationButtons;
+@property(readonly) NSString * openTitle;
 
 - (void)_loadFromDictionary:(id)arg1;
-- (NSInteger)_locationForString:(id)arg1;
+- (int)_locationForString:(id)arg1;
 - (id)_newMenuItemsFromArray:(id)arg1;
 - (id)_newNavigationButtonsFromArray:(id)arg1;
 - (id)cancelTitle;
@@ -32,12 +32,12 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (NSInteger)initialSelectedIndex;
-- (NSInteger)location;
+- (int)initialSelectedIndex;
+- (int)location;
 - (id)menuItems;
 - (id)navigationButtonForLocation:(id)arg1;
 - (id)navigationButtons;
 - (id)openTitle;
-- (void)setLocation:(NSInteger)arg1;
+- (void)setLocation:(int)arg1;
 
 @end

@@ -11,7 +11,7 @@
     MLPhotoLibrary *_photoLibrary;
 }
 
-- (void)_addBakedThumbnailsForVideo:(id)arg1 toCollection:(id)arg2 sourceFormat:(NSInteger)arg3 bakedFormats:(id)arg4;
+- (void)_addBakedThumbnailsForVideo:(id)arg1 toCollection:(id)arg2 sourceFormat:(int)arg3 bakedFormats:(id)arg4;
 - (void)_createNewVideoCachedFiles;
 - (void)_garbageCollectCachedFiles;
 - (id)_pathToVideosMetadataFile;

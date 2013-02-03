@@ -7,7 +7,7 @@
 @interface CKSMSComposeController : CKTranscriptController {
     BOOL _alreadySetUp;
     id _delegate;
-    NSInteger _entryViewInvisible;
+    int _entryViewInvisible;
     BOOL _mimeType;
     NSMutableArray *_partsToInsert;
     NSMutableArray *_typesToInsert;
@@ -18,7 +18,7 @@
 
 + (id)_newMediaObjectForFilename:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
 + (BOOL)acceptsMIMEType:(id)arg1;
-+ (BOOL)canSendPhotos:(NSInteger)arg1 videos:(NSInteger)arg2 audioClips:(NSInteger)arg3;
++ (BOOL)canSendPhotos:(int)arg1 videos:(int)arg2 audioClips:(int)arg3;
 + (double)maxTrimDurationForAudio;
 + (double)maxTrimDurationForVideo;
 

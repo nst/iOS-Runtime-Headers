@@ -4,14 +4,14 @@
 
 @class FTMessageDelivery, NSArray;
 
-@interface FTRegionSupport : NSObject <FTMessageDeliveryDelegate> {
+@interface FTRegionSupport : NSObject {
     FTMessageDelivery *_delivery;
     NSArray *_regions;
 }
 
-@property(readonly) NSArray *regions;
 @property(readonly) BOOL isLoaded;
 @property(readonly) BOOL isLoading;
+@property(readonly) NSArray * regions;
 
 + (id)sharedInstance;
 
@@ -21,11 +21,11 @@
 - (void)flushRegions;
 - (BOOL)isLoaded;
 - (BOOL)isLoading;
-- (void)message:(id)arg1 deliveredWithError:(id)arg2 resultCode:(NSInteger)arg3 resultDictionary:(id)arg4;
+- (void)message:(id)arg1 deliveredWithError:(id)arg2 resultCode:(int)arg3 resultDictionary:(id)arg4;
 - (id)regionForID:(id)arg1;
 - (id)regions;
 - (oneway void)release;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)startLoading;
 
 @end

@@ -14,9 +14,9 @@
     NSArray *_times;
 }
 
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })_nextFiringTimeAfterTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })_previousFiringTimeBeforeTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
-- (void)_resetTimerForPlayerNewRate:(float)arg1 time:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg2;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_nextFiringTimeAfterTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_previousFiringTimeBeforeTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)_resetTimerForPlayerNewRate:(float)arg1 time:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)_startObservingPlaybackItemNotificationsForCurrentItem;
 - (void)_stopObservingPlaybackItemNotifications;
 - (void)_stopRespondingToPlayerStateChanges;

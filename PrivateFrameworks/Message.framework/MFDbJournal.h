@@ -9,7 +9,7 @@
         long __sig; 
         BOOL __opaque[40]; 
     NSMutableData *_buffer;
-    NSInteger _fd;
+    int _fd;
     } _lock;
     NSString *_path;
 }

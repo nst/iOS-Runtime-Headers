@@ -3,12 +3,12 @@
  */
 
 @interface OADPointBulletSize : OADBulletSize {
-    NSInteger mPoints;
+    int mPoints;
 }
 
-- (NSUInteger)hash;
-- (id)initWithPoints:(NSInteger)arg1;
+- (unsigned int)hash;
+- (id)initWithPoints:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (NSInteger)points;
+- (int)points;
 
 @end

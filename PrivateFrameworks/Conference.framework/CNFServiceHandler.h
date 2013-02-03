@@ -12,7 +12,9 @@
 + (void)_configureDaemon;
 + (void)_daemonConnectedNotification:(id)arg1;
 + (void)_daemonDisconnectedNotification:(id)arg1;
++ (void)_deviceCapabilityChanged:(id)arg1;
 + (void)activateFaceTime;
++ (int)activationState;
 + (unsigned long long)capabilities;
 + (BOOL)conferencingHasValidatedAliasForAccount:(id)arg1;
 + (BOOL)conferencingIsAvailable;

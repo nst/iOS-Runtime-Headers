@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class UIImageView, UILabel;
+@class NSString, UIImageView, UILabel;
 
 @interface GKRatingControl : UIControl {
     struct CGSize { 
@@ -24,7 +24,7 @@
     float _value;
 }
 
-@property(retain) NSString *explanationText;
+@property(retain) NSString * explanationText;
 @property float starWidth;
 @property float value;
 

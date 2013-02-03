@@ -8,7 +8,7 @@
     ODDPointPropertySet *mPropertySet;
     OADShapeProperties *mShapeProperties;
     OADTextBody *mText;
-    NSInteger mType;
+    int mType;
 }
 
 + (void)addConnectionToPoint:(id)arg1 order:(unsigned long)arg2 array:(id*)arg3;
@@ -17,9 +17,9 @@
 - (id)init;
 - (id)propertySet;
 - (void)setText:(id)arg1;
-- (void)setType:(NSInteger)arg1;
+- (void)setType:(int)arg1;
 - (id)shapeProperties;
 - (id)text;
-- (NSInteger)type;
+- (int)type;
 
 @end

@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
+@class ALAssetPrivate;
+
 @interface ALAsset : NSObject {
     id _internal;
 }
 
-@property(retain) ALAssetPrivate *internal;
+@property(retain) ALAssetPrivate * internal;
 
 - (id)_typeAsString;
 - (void)dealloc;

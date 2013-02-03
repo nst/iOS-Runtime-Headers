@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface CPExclusiveLock : NSObject <NSLocking> {
-    NSInteger _fd;
+    int _fd;
     NSString *_name;
 }
 

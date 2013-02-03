@@ -7,12 +7,12 @@
     double _maximumWaitForMovement;
     double _maximumWaitForMultitouch;
     BOOL _waiting;
-    NSInteger _zoomType;
+    int _zoomType;
 }
 
 @property double maximumWaitForMovement;
 @property double maximumWaitForMultitouch;
-@property NSInteger zoomType;
+@property int zoomType;
 
 - (void)_resetGestureRecognizer;
 - (float)averageDistanceForTouches:(id)arg1;
@@ -24,12 +24,12 @@
 - (double)maximumWaitForMultitouch;
 - (void)setMaximumWaitForMovement:(double)arg1;
 - (void)setMaximumWaitForMultitouch:(double)arg1;
-- (void)setZoomType:(NSInteger)arg1;
+- (void)setZoomType:(int)arg1;
 - (void)tooSlow:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (NSInteger)zoomType;
+- (int)zoomType;
 
 @end

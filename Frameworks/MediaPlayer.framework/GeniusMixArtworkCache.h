@@ -9,16 +9,16 @@
     NSData *_data;
 }
 
-@property(readonly) CGImage *artworkImage;
-@property(readonly) NSUInteger coverCount;
-@property(readonly) CGSize coverSize;
+@property(readonly) struct CGImage { }* artworkImage;
+@property(readonly) unsigned int coverCount;
+@property(readonly) struct CGSize { float width; float height; } coverSize;
 
 + (id)artworkCacheWithContentsOfFile:(id)arg1;
-+ (id)artworkCacheWithCoverCount:(NSUInteger)arg1 coverSize:(struct CGSize { float x1; float x2; })arg2 artworkData:(void*)arg3 length:(NSUInteger)arg4;
++ (id)artworkCacheWithCoverCount:(unsigned int)arg1 coverSize:(struct CGSize { float x1; float x2; })arg2 artworkData:(void*)arg3 length:(unsigned int)arg4;
 
 - (void)_cleanUpCachesInBackground;
 - (struct CGImage { }*)artworkImage;
-- (NSUInteger)coverCount;
+- (unsigned int)coverCount;
 - (struct CGSize { float x1; float x2; })coverSize;
 - (void)dealloc;
 - (id)init;

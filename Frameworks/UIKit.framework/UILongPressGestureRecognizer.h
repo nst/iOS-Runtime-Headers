@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableSet, NSArray;
+@class NSMutableSet, <UILongPressGestureRecognizerDelegate>, NSArray;
 
 @interface UILongPressGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
@@ -17,24 +17,24 @@
     double _delay;
     id _enoughTimeElapsed;
     id _imp;
-    NSInteger _numberOfTouchesRequired;
+    int _numberOfTouchesRequired;
     } _startPointScreen;
     id _tooMuchTimeElapsed;
     NSArray *_touches;
 }
 
-@property <UILongPressGestureRecognizerDelegate> *delegate;
-@property(retain,readonly) NSArray *touches;
 @property float allowableMovement;
 @property BOOL cancelPastAllowableMovement;
-@property(readonly) CGPoint centroid;
+@property(readonly) struct CGPoint { float x; float y; } centroid;
 @property double delay;
+@property <UILongPressGestureRecognizerDelegate> * delegate;
 @property double minimumPressDuration;
-@property NSInteger numberOfTapsRequired;
-@property NSInteger numberOfTouchesRequired;
-@property(readonly) CGPoint startPoint;
+@property int numberOfTapsRequired;
+@property int numberOfTouchesRequired;
+@property(readonly) struct CGPoint { float x; float y; } startPoint;
+@property(retain,readonly) NSArray * touches;
 
-+ (void)addLongPressGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 minimumPressDuration:(double)arg4;
++ (void)addLongPressGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 minimumPressDuration:(double)arg4 touchCount:(int)arg5;
 
 - (void)_resetGestureRecognizer;
 - (void)_startTapFinishedTimer;
@@ -51,18 +51,18 @@
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)invalidate;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
-- (struct CGPoint { float x1; float x2; })locationOfTouch:(NSUInteger)arg1 inView:(id)arg2;
+- (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
 - (double)minimumPressDuration;
-- (NSInteger)numberOfTapsRequired;
-- (NSUInteger)numberOfTouches;
-- (NSInteger)numberOfTouchesRequired;
+- (int)numberOfTapsRequired;
+- (unsigned int)numberOfTouches;
+- (int)numberOfTouchesRequired;
 - (void)setAllowableMovement:(float)arg1;
 - (void)setCancelPastAllowableMovement:(BOOL)arg1;
 - (void)setDelay:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMinimumPressDuration:(double)arg1;
-- (void)setNumberOfTapsRequired:(NSInteger)arg1;
-- (void)setNumberOfTouchesRequired:(NSInteger)arg1;
+- (void)setNumberOfTapsRequired:(int)arg1;
+- (void)setNumberOfTouchesRequired:(int)arg1;
 - (void)setTouches:(id)arg1;
 - (void)setView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })startPoint;

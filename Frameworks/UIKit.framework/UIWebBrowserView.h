@@ -31,6 +31,7 @@
     unsigned int _formIsAutoFilling : 1;
     unsigned int _inputViewObeysDOMFocus : 1;
     unsigned int _hasEditedTextField : 1;
+    unsigned int _requiresInputView : 1;
     UIWebFormAccessory *_accessory;
     DOMNode *_currentAssistedNode;
     UIResponder *_editingDelegateForEverythingExceptForms;
@@ -43,14 +44,14 @@
     UIWebTouchEventsGestureRecognizer *_webTouchEventsGestureRecognizer;
 }
 
-@property(retain) UIWebFormAccessory *_accessory;
-@property(retain) DOMNode *_currentAssistedNode;
-@property UIResponder *_editingDelegateForEverythingExceptForms;
-@property(retain) NSObject<UIFormPeripheral> *_input;
+@property(retain) UIWebFormAccessory * _accessory;
+@property(retain) DOMNode * _currentAssistedNode;
+@property UIResponder * _editingDelegateForEverythingExceptForms;
+@property(retain) NSObject<UIFormPeripheral> * _input;
 @property(getter=isAccessoryEnabled) BOOL accessoryEnabled;
 @property BOOL allowsInlineMediaPlayback;
 @property(readonly) BOOL hasEditedTextField;
-@property CGRect inputViewBounds;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } inputViewBounds;
 @property BOOL inputViewObeysDOMFocus;
 @property BOOL mediaPlaybackRequiresUserAction;
 
@@ -62,7 +63,7 @@
 - (id)_accessory;
 - (void)_autoFillFrame:(id)arg1;
 - (id)_buildVersion;
-- (void)_centerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSizeChange:(BOOL)arg2 withVisibleHeight:(float)arg3 pinningEdge:(NSInteger)arg4;
+- (void)_centerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSizeChange:(BOOL)arg2 withVisibleHeight:(float)arg3 pinningEdge:(int)arg4;
 - (void)_cleanUpPDF;
 - (void)_clearAllConsoleMessages;
 - (void)_clearSelectionAndUI;
@@ -113,7 +114,7 @@
 - (void)autoFillWithElementValue;
 - (BOOL)canAutoFill;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (void)clearMessagesMatchingMask:(NSInteger)arg1;
+- (void)clearMessagesMatchingMask:(int)arg1;
 - (void)dealloc;
 - (void)formDelegateHandleTextChangeWithAutoFillSuggestions:(BOOL)arg1;
 - (id)formElement;
@@ -129,7 +130,7 @@
 - (BOOL)isAutoFillMode;
 - (BOOL)isAutoFilling;
 - (BOOL)mediaPlaybackRequiresUserAction;
-- (id)messagesMatchingMask:(NSInteger)arg1;
+- (id)messagesMatchingMask:(int)arg1;
 - (BOOL)playsNicelyWithGestures;
 - (void)promptForReplace:(id)arg1;
 - (BOOL)resignFirstResponder;

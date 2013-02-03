@@ -2,6 +2,11 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSSQLModel, NSSQLRow, NSMutableDictionary, NSSQLAdapter, NSSQLConnection, NSManagedObjectContext, NSSet, NSMutableSet, NSSQLRowCache, NSString, NSSQLEntity, NSMutableArray, NSSaveChangesRequest;
 
 @interface NSSQLCore : NSPersistentStore {
@@ -19,18 +24,18 @@
     NSMutableArray *_channels;
     NSSQLConnection *_connection;
     NSManagedObjectContext *_currentContext;
-    NSInteger _currentGeneration;
+    int _currentGeneration;
     struct _NSScalarObjectID { Class x1; } *_currentGlobalID;
     NSSQLRow *_currentRow;
     NSSaveChangesRequest *_currentSaveRequest;
     struct __CFDictionary { } *_dbOperationsByGlobalID;
-    NSInteger _debug;
+    int _debug;
     struct __CFSet { } *_deleteTable;
     NSString *_externalDataReferencesDirectory;
     NSMutableArray *_externalDataReferencesToDelete;
     NSMutableArray *_externalDataReferencesToSave;
     NSSQLEntity *_lastEntity;
-    NSInteger _lazyFaultDebugLevel;
+    int _lazyFaultDebugLevel;
     NSSet *_lockedObjects;
     NSMutableSet *_missingObjectGIDs;
     NSSQLModel *_model;
@@ -45,13 +50,13 @@
 + (BOOL)SQLGenerationV1Default;
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 error:(id*)arg2;
 + (BOOL)coloredLoggingDefault;
-+ (NSInteger)debugDefault;
++ (int)debugDefault;
 + (void)initialize;
 + (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
 + (Class)migrationManagerClass;
 + (BOOL)sanityCheckFileAtURL:(id)arg1 error:(id*)arg2;
 + (void)setColoredLoggingDefault:(BOOL)arg1;
-+ (void)setDebugDefault:(NSInteger)arg1;
++ (void)setDebugDefault:(int)arg1;
 + (BOOL)setMetadata:(id)arg1 forPersistentStoreWithURL:(id)arg2 error:(id*)arg3;
 + (void)setSQLGenerationV1Default:(BOOL)arg1;
 
@@ -75,15 +80,15 @@
 - (void)_ensureDatabaseMatchesModel;
 - (void)_ensureMetadataLoaded;
 - (id)_entityForObject:(id)arg1;
-- (NSUInteger)_knownEntityKeyForObject:(id)arg1;
-- (NSUInteger)_knownEntityKeyForObjectID:(id)arg1;
+- (unsigned int)_knownEntityKeyForObject:(id)arg1;
+- (unsigned int)_knownEntityKeyForObjectID:(id)arg1;
 - (long long)_knownPrimaryKeyForObject:(id)arg1;
 - (long long)_knownPrimaryKeyForObjectID:(id)arg1;
 - (void)_loadOrSetMetadata;
 - (id)_newAdapterForModel:(id)arg1;
 - (id)_newConflictRecordForObject:(id)arg1 originalRow:(id)arg2 newRow:(id)arg3;
 - (id)_newObjectGraphStyleForSQLRow:(id)arg1 withObject:(id)arg2;
-- (id)_newRowsForFetchPlan:(struct { void *x1; void *x2; NSUInteger x3; void *x4; void *x5; void *x6; void *x7; void *x8; int (*x9)(); struct { unsigned int x_10_1_1 : 1; unsigned int x_10_1_2 : 1; unsigned int x_10_1_3 : 3; unsigned int x_10_1_4 : 27; } x10; }*)arg1 selectedBy:(SEL)arg2 withArgument:(id)arg3;
+- (id)_newRowsForFetchPlan:(struct { void *x1; void *x2; unsigned int x3; void *x4; void *x5; void *x6; void *x7; void *x8; int (*x9)(); struct { unsigned int x_10_1_1 : 1; unsigned int x_10_1_2 : 1; unsigned int x_10_1_3 : 3; unsigned int x_10_1_4 : 27; } x10; }*)arg1 selectedBy:(SEL)arg2 withArgument:(id)arg3;
 - (Class)_objectIDClass;
 - (id)_obtainOpenChannel;
 - (void)_performChangesWithAdapterOps:(id)arg1;
@@ -94,8 +99,8 @@
 - (id)_predicateForSelectingObjectForOperation:(id)arg1;
 - (void)_prefetchRelationshipKey:(id)arg1 sourceEntityDescription:(id)arg2 sourceObjectIDs:(id)arg3 prefetchRelationshipKeys:(id)arg4 inContext:(id)arg5;
 - (void)_prefetchWithFetchRequest:(id)arg1 withObjectIDs:(id)arg2 inContext:(id)arg3;
-- (id)_prepareDictionaryResultsFromResultSet:(struct { NSInteger x1; NSInteger x2; double x3; NSInteger x4; NSUInteger x5; void **x6; void *x7; void *x8; struct FetchResultsRow_st {} *x9; struct FetchResultsRow_st {} *x10; struct FetchResultsRowListHeader_st {} **x11; struct { unsigned int x_12_1_1 : 1; unsigned int x_12_1_2 : 31; } x12; }*)arg1 usingFetchPlan:(struct { void *x1; void *x2; NSUInteger x3; void *x4; void *x5; void *x6; void *x7; void *x8; int (*x9)(); struct { unsigned int x_10_1_1 : 1; unsigned int x_10_1_2 : 1; unsigned int x_10_1_3 : 3; unsigned int x_10_1_4 : 27; } x10; }*)arg2;
-- (id)_prepareResultsFromResultSet:(struct { NSInteger x1; NSInteger x2; double x3; NSInteger x4; NSUInteger x5; void **x6; void *x7; void *x8; struct FetchResultsRow_st {} *x9; struct FetchResultsRow_st {} *x10; struct FetchResultsRowListHeader_st {} **x11; struct { unsigned int x_12_1_1 : 1; unsigned int x_12_1_2 : 31; } x12; }*)arg1 usingFetchPlan:(struct { void *x1; void *x2; NSUInteger x3; void *x4; void *x5; void *x6; void *x7; void *x8; int (*x9)(); struct { unsigned int x_10_1_1 : 1; unsigned int x_10_1_2 : 1; unsigned int x_10_1_3 : 3; unsigned int x_10_1_4 : 27; } x10; }*)arg2 withMatchingRows:(id*)arg3;
+- (id)_prepareDictionaryResultsFromResultSet:(struct { int x1; int x2; double x3; int x4; unsigned int x5; void **x6; void *x7; void *x8; struct FetchResultsRow_st {} *x9; struct FetchResultsRow_st {} *x10; struct FetchResultsRowListHeader_st {} **x11; struct { unsigned int x_12_1_1 : 1; unsigned int x_12_1_2 : 31; } x12; }*)arg1 usingFetchPlan:(struct { void *x1; void *x2; unsigned int x3; void *x4; void *x5; void *x6; void *x7; void *x8; int (*x9)(); struct { unsigned int x_10_1_1 : 1; unsigned int x_10_1_2 : 1; unsigned int x_10_1_3 : 3; unsigned int x_10_1_4 : 27; } x10; }*)arg2;
+- (id)_prepareResultsFromResultSet:(struct { int x1; int x2; double x3; int x4; unsigned int x5; void **x6; void *x7; void *x8; struct FetchResultsRow_st {} *x9; struct FetchResultsRow_st {} *x10; struct FetchResultsRowListHeader_st {} **x11; struct { unsigned int x_12_1_1 : 1; unsigned int x_12_1_2 : 31; } x12; }*)arg1 usingFetchPlan:(struct { void *x1; void *x2; unsigned int x3; void *x4; void *x5; void *x6; void *x7; void *x8; int (*x9)(); struct { unsigned int x_10_1_1 : 1; unsigned int x_10_1_2 : 1; unsigned int x_10_1_3 : 3; unsigned int x_10_1_4 : 27; } x10; }*)arg2 withMatchingRows:(id*)arg3;
 - (void)_purgeRowCache;
 - (void)_registerForAdapterContextNotifications:(id)arg1;
 - (void)_repairDatabaseCorrelationTables:(id)arg1 brokenHashModel:(id)arg2 storeVersionNumber:(id)arg3 recurse:(BOOL)arg4;

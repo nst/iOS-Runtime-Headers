@@ -8,11 +8,11 @@
 + (void)_initializeSafeCategory;
 
 - (id)accessibilityContainer;
-- (id)accessibilityElementAtIndex:(NSInteger)arg1;
-- (NSInteger)accessibilityElementCount;
+- (id)accessibilityElementAtIndex:(int)arg1;
+- (int)accessibilityElementCount;
 - (id)accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (id)accessibilityRootElement;
 - (void)dealloc;
-- (NSInteger)indexOfAccessibilityElement:(id)arg1;
+- (int)indexOfAccessibilityElement:(id)arg1;
 
 @end

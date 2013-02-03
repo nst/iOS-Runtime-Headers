@@ -2,57 +2,59 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetInspector, NSMutableArray, AVWeakReference, NSDictionary, AVValidator, NSURL, AVAssetCache;
+@class AVAssetInspector, NSMutableArray, AVWeakReference, NSDictionary, NSString, NSURL, AVAssetCache, NSArray;
 
 @interface AVAssetInspectorLoader : NSObject <NSCopying, AVAsynchronousKeyValueLoading> {
     NSURL *_URL;
+    BOOL _URLIsStreamingURL;
     AVAssetCache *_assetCache;
     AVAssetInspector *_assetInspector;
-    NSInteger _basicInspectionFailureCode;
-    NSInteger _chapterGroupInfoLoadingStatus;
-    NSInteger _durationLoadingStatus;
+    int _basicInspectionFailureCode;
+    int _chapterGroupInfoLoadingStatus;
+    int _durationLoadingStatus;
     struct OpaqueFigFormatReader { } *_formatReader;
     NSMutableArray *_keysAwaitingCompletion;
     struct OpaqueFigSimpleMutex { } *_loadingMutex;
-    NSInteger _lyricsLoadingStatus;
-    BOOL _playable;
-    NSInteger _playableLoadingStatus;
+    int _lyricsLoadingStatus;
     BOOL _shouldMatchDataInCacheByURLPathComponentOnly;
     BOOL _shouldMatchDataInCacheByURLWithoutQueryComponent;
-    NSInteger _status;
-    NSInteger _tracksLoadingStatus;
+    int _status;
+    int _tracksLoadingStatus;
     NSDictionary *_validationPlist;
-    AVValidator *_validator;
     AVWeakReference *_weakReference;
 }
 
-@property(readonly) NSURL *URL;
-@property(readonly) AVAssetCache *assetCache;
-@property(readonly) NSArray *chapterGroupInfo;
-@property(getter=_formatReader,readonly) OpaqueFigFormatReader *formatReader;
-@property(getter=_formatReaderLoader,readonly) OpaqueFigFormatReaderLoader *formatReaderLoader;
-@property(readonly) NSString *lyrics;
-@property(getter=_playbackItem,readonly) OpaqueFigPlaybackItem *playbackItem;
-@property(readonly) ? duration;
+@property(readonly) NSURL * URL;
+@property(readonly) AVAssetCache * assetCache;
+@property(readonly) NSArray * chapterGroupInfo;
+@property(getter=isComposable,readonly) BOOL composable;
+@property(readonly) struct { long long value; int timescale; unsigned int flags; long long epoch; } duration;
+@property(getter=isExportable,readonly) BOOL exportable;
+@property(getter=_formatReader,readonly) struct OpaqueFigFormatReader { }* formatReader;
+@property(getter=_formatReaderLoader,readonly) struct OpaqueFigFormatReaderLoader { }* formatReaderLoader;
 @property(readonly) BOOL hasProtectedContent;
+@property(readonly) NSString * lyrics;
 @property(getter=isPlayable,readonly) BOOL playable;
+@property(getter=_playbackItem,readonly) struct OpaqueFigPlaybackItem { }* playbackItem;
+@property(getter=isReadable,readonly) BOOL readable;
 @property(readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
 @property(readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
+@property(getter=_isStreaming,readonly) BOOL streaming;
+@property(getter=_weakReference,readonly) AVWeakReference * weakReference;
 
 - (id)URL;
 - (id)_chapterGroupInfo;
-- (struct OpaqueFigFormatReader { }*)_copyFormatReaderFromFigObjectWithFigErrorCode:(NSInteger*)arg1;
+- (struct OpaqueFigFormatReader { }*)_copyFormatReaderFromFigObjectWithFigErrorCode:(int*)arg1;
 - (id)_dictionaryOfSpecialGettersForKeyValueStatus;
 - (id)_dictionaryOfSpecialLoadingMethodsForKeys;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (struct OpaqueFigFormatReaderLoader { }*)_formatReaderLoader;
 - (id)_getAndPruneCompletionsWhileMutexLocked;
 - (BOOL)_inspectionRequiresAFormatReader;
+- (BOOL)_isStreaming;
 - (void)_loadChapterGroupInfoSynchronously;
 - (void)_loadDurationSynchronously;
 - (void)_loadLyricsSynchronously;
-- (void)_loadPlayabilitySynchronously;
-- (id)_loadPlayabilityWhileMutexLockedAsynchronously;
 - (void)_loadTracksSynchronously;
 - (id)_loadValuesUsingDefaultLoadingMethodWhileMutexLockedForKeys:(id)arg1;
 - (id)_loadValuesWhileMutexLockedForKeys:(id)arg1;
@@ -62,22 +64,20 @@
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (BOOL)_providesAccurateTiming;
 - (void)_serverHasDied;
-- (void)_setStatus:(NSInteger)arg1 figErrorCode:(long)arg2;
-- (NSInteger)_status;
+- (void)_setStatus:(int)arg1 figErrorCode:(long)arg2;
+- (int)_status;
 - (id)_statusOfValueForKeyThatIsAlwaysLoaded;
 - (id)_statusOfValueOfChapterGroupInfoWhileMutexLocked;
 - (id)_statusOfValueOfDurationWhileMutexLocked;
 - (id)_statusOfValueOfLyricsWhileMutexLocked;
-- (id)_statusOfValueOfPlayableWhileMutexLocked;
 - (id)_statusOfValueOfTracksWhileMutexLocked;
-- (NSInteger)_statusOfValueWhileMutexLockedForKey:(id)arg1 returningFigErrorCode:(NSInteger*)arg2;
+- (int)_statusOfValueWhileMutexLockedForKey:(id)arg1 error:(id*)arg2;
 - (BOOL)_statusOfValuesIsTerminalWhileMutexLockedForKeys:(id)arg1;
-- (void)_updateChapterGroupInfoStatusWhileMutexLocked:(NSInteger)arg1;
-- (void)_updateDurationStatusWhileMutexLocked:(NSInteger)arg1;
-- (void)_updateLyricsStatusWhileMutexLocked:(NSInteger)arg1;
-- (void)_updatePlayableStatusWhileMutexLocked:(NSInteger)arg1;
-- (BOOL)_updateStatusWhileMutexLocked:(NSInteger)arg1 figErrorCode:(long)arg2;
-- (void)_updateTracksStatusWhileMutexLocked:(NSInteger)arg1;
+- (void)_updateChapterGroupInfoStatusWhileMutexLocked:(int)arg1;
+- (void)_updateDurationStatusWhileMutexLocked:(int)arg1;
+- (void)_updateLyricsStatusWhileMutexLocked:(int)arg1;
+- (BOOL)_updateStatusWhileMutexLocked:(int)arg1 figErrorCode:(long)arg2;
+- (void)_updateTracksStatusWhileMutexLocked:(int)arg1;
 - (id)_weakReference;
 - (id)assetCache;
 - (id)assetInspector;
@@ -85,18 +85,21 @@
 - (id)chapterGroupInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })duration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (void)finalize;
 - (BOOL)hasProtectedContent;
 - (id)init;
 - (id)initWithURL:(id)arg1;
+- (BOOL)isComposable;
+- (BOOL)isExportable;
 - (BOOL)isPlayable;
+- (BOOL)isReadable;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (id)lyrics;
 - (void)release;
 - (id)retain;
 - (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;
 - (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;
-- (NSInteger)statusOfValueForKey:(id)arg1 error:(id*)arg2;
+- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 
 @end

@@ -5,8 +5,8 @@
 @interface EBPageProperties : NSObject {
 }
 
-+ (NSInteger)convertEDPageOrientationEnumToXl:(NSInteger)arg1;
-+ (NSInteger)convertXlPageOrientationEnumToED:(NSInteger)arg1;
++ (int)convertEDPageOrientationEnumToXl:(int)arg1;
++ (int)convertXlPageOrientationEnumToED:(int)arg1;
 + (void)readWithState:(id)arg1;
 
 @end

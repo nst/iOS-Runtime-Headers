@@ -8,7 +8,7 @@
     NSOutputStream *_stream;
 }
 
-@property(retain) NSOutputStream *stream;
+@property(retain) NSOutputStream * stream;
 
 + (id)writeProtoBuffers:(id)arg1 toFile:(id)arg2;
 
@@ -16,6 +16,6 @@
 - (id)initWithOutputStream:(id)arg1;
 - (void)setStream:(id)arg1;
 - (id)stream;
-- (NSInteger)write:(char *)arg1 maxLength:(NSUInteger)arg2;
+- (int)write:(char *)arg1 maxLength:(unsigned int)arg2;
 
 @end

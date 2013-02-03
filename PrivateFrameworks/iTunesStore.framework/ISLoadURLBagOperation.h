@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISURLBagContext;
+@class SSURLBagContext;
 
 @interface ISLoadURLBagOperation : ISOperation <ISStoreURLOperationDelegate> {
-    ISURLBagContext *_context;
+    SSURLBagContext *_context;
 }
 
-@property(readonly) ISURLBagContext *context;
+@property(readonly) SSURLBagContext * context;
 
-- (void)_addStoreFrontHeadersToRequest:(id)arg1;
+- (void)_addStoreFrontHeadersToRequestProperties:(id)arg1;
 - (id)_copyBootstrapURLs;
 - (id)_copyProductionBootstrapURLs;
 - (id)_copySandboxBootstrapURLs;

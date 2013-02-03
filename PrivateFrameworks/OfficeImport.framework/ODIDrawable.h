@@ -23,9 +23,9 @@
 + (id)shapeGeometryForRectangle;
 + (id)shapeGeometryForRightArrowWithControlPoint:(struct CGPoint { float x1; float x2; })arg1;
 + (id)shapeGeometryForRoundedRectangleWithRadius:(float)arg1;
-+ (id)shapeGeometryWithShapeType:(NSInteger)arg1 adjustValues:(const NSInteger*)arg2;
++ (id)shapeGeometryWithShapeType:(int)arg1 adjustValues:(const int*)arg2;
 + (struct CGSize { float x1; float x2; })sizeOfDiagram:(id)arg1;
-+ (id)styleForLabelName:(id)arg1 styleCount:(NSInteger)arg2 styleIndex:(NSInteger)arg3 state:(id)arg4;
++ (id)styleForLabelName:(id)arg1 styleCount:(int)arg2 styleIndex:(int)arg3 state:(id)arg4;
 + (id)styleForPresentation:(id)arg1 point:(id)arg2 state:(id)arg3;
 
 @end

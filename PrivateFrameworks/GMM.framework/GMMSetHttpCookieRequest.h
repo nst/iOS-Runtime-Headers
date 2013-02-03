@@ -22,7 +22,7 @@
 - (BOOL)hasGmmInstalled;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (NSUInteger)requestTypeCode;
+- (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setGmmInstalled:(BOOL)arg1;
 - (void)setGmmInvokedViaMimeType:(BOOL)arg1;

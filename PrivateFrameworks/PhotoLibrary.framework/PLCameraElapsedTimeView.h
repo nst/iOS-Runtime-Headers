@@ -8,7 +8,7 @@
     BOOL _autorotationEnabled;
     UILabel *_hours;
     UILabel *_minutes;
-    NSInteger _orientation;
+    int _orientation;
     UILabel *_seconds;
     NSDate *_startTime;
     NSTimer *_timer;
@@ -20,7 +20,7 @@
 + (void)_initializeSafeCategory;
 
 - (void)_deviceOrientationChanged:(id)arg1;
-- (void)_setDeviceOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)_setDeviceOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)_startWatchingDeviceOrientationChanges;
 - (void)_stopWatchingDeviceOrientationChanges;
 - (void)_update:(id)arg1;
@@ -30,9 +30,8 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAccessibilityElement;
 - (void)setAutorotationEnabled:(BOOL)arg1;
-- (void)setOrientation:(NSInteger)arg1;
+- (void)setOrientation:(int)arg1;
 - (void)startTimer;
 - (void)stopTimer;
-- (void)willMoveToSuperview:(id)arg1;
 
 @end

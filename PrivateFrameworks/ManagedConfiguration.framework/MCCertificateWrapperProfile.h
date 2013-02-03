@@ -18,6 +18,6 @@
 - (id)initWithDictionary:(id)arg1 originalData:(id)arg2 allowEmptyPayload:(BOOL)arg3 outError:(id*)arg4;
 - (BOOL)isSigned;
 - (id)stubDictionary;
-- (NSInteger)trustLevel;
+- (int)trustLevel;
 
 @end

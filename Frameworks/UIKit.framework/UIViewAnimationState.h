@@ -16,13 +16,13 @@
     unsigned int _layoutSubviews : 1;
     NSString *_animationID;
     void *_context;
-    NSInteger _curve;
+    int _curve;
     double _delay;
     id _delegate;
-    NSInteger _didEndCount;
+    int _didEndCount;
     SEL _didEndSelector;
     double _duration;
-    NSInteger _filter;
+    int _filter;
     float _filterValue;
     UIView *_filterView;
     double _frameInterval;
@@ -30,7 +30,7 @@
     } _position;
     float _repeatCount;
     double _start;
-    NSInteger _transition;
+    int _transition;
     UIView *_transitionView;
     SEL _willStartSelector;
 }

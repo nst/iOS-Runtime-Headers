@@ -10,27 +10,27 @@
     NSString *_CAInstanceName;
     NSString *_URLString;
     NSString *_challenge;
-    NSUInteger _keySize;
-    NSUInteger _retries;
-    NSUInteger _retryDelay;
+    unsigned int _keySize;
+    unsigned int _retries;
+    unsigned int _retryDelay;
     NSArray *_subject;
     NSDictionary *_subjectAltName;
-    NSInteger _usageFlags;
+    int _usageFlags;
 }
 
-@property(readonly) NSArray *CACaps;
-@property(readonly) NSData *CAFingerprint;
-@property(readonly) NSString *CAInstanceName;
-@property(readonly) NSString *URLString;
-@property(readonly) NSString *challenge;
-@property(readonly) NSArray *subject;
-@property(readonly) NSDictionary *subjectAltName;
-@property(readonly) NSUInteger keySize;
-@property(readonly) NSUInteger retries;
-@property(readonly) NSUInteger retryDelay;
-@property(readonly) NSInteger usageFlags;
+@property(readonly) NSArray * CACaps;
+@property(readonly) NSData * CAFingerprint;
+@property(readonly) NSString * CAInstanceName;
+@property(readonly) NSString * URLString;
+@property(readonly) NSString * challenge;
+@property(readonly) unsigned int keySize;
+@property(readonly) unsigned int retries;
+@property(readonly) unsigned int retryDelay;
+@property(readonly) NSArray * subject;
+@property(readonly) NSDictionary * subjectAltName;
+@property(readonly) int usageFlags;
 
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
 - (id)CACaps;
@@ -45,12 +45,12 @@
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (BOOL)isIdentity;
 - (BOOL)isRoot;
-- (NSUInteger)keySize;
-- (NSUInteger)retries;
-- (NSUInteger)retryDelay;
+- (unsigned int)keySize;
+- (unsigned int)retries;
+- (unsigned int)retryDelay;
 - (id)stubDictionary;
 - (id)subject;
 - (id)subjectAltName;
-- (NSInteger)usageFlags;
+- (int)usageFlags;
 
 @end

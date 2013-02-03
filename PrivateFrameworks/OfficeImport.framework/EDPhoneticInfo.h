@@ -2,41 +2,36 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class EDCollection, NSString, EDResources;
 
 @interface EDPhoneticInfo : NSObject <EDImmutableObject> {
-     /* Encoded args for previous method: v12@0:4B8 */
-    NSInteger mAlign;
-    NSUInteger mFontIndex;
+    boolmDoNotModify;
+    int mAlign;
+    unsigned int mFontIndex;
     EDResources *mResources;
     EDCollection *mRuns;
     NSString *mString;
-    NSInteger mType;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mDoNotModify;
+    int mType;
 }
 
 + (id)phoneticInfoWithResources:(id)arg1;
 
-- (NSInteger)align;
+- (int)align;
 - (void)dealloc;
 - (id)font;
-- (NSUInteger)fontIndex;
-- (NSUInteger)hash;
+- (unsigned int)fontIndex;
+- (unsigned int)hash;
 - (id)initWithResources:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToEDPhoneticInfo:(id)arg1;
 - (id)runs;
-- (void)setAlign:(NSInteger)arg1;
-- (void)setDoNotModify:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setAlign:(int)arg1;
+- (void)setDoNotModify:(bool)arg1;
 - (void)setFont:(id)arg1;
-- (void)setFontIndex:(NSUInteger)arg1;
+- (void)setFontIndex:(unsigned int)arg1;
 - (void)setString:(id)arg1;
-- (void)setType:(NSInteger)arg1;
+- (void)setType:(int)arg1;
 - (id)string;
-- (NSInteger)type;
+- (int)type;
 
 @end

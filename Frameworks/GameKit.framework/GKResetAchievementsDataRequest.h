@@ -8,9 +8,9 @@
     GKGame *_game;
 }
 
-@property(retain) GKGame *game;
+@property(retain) GKGame * game;
 
-- (NSInteger)cacheType;
+- (int)cacheType;
 - (void)dealloc;
 - (id)game;
 - (id)invalidateCacheKeys;

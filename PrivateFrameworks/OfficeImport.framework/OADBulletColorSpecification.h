@@ -10,7 +10,7 @@
 
 - (id)color;
 - (void)dealloc;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithBulletColor:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 

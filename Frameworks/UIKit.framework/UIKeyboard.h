@@ -7,6 +7,7 @@
 @interface UIKeyboard : UIView <UIKeyboardImplGeometryDelegate> {
     UITextInputTraits *m_defaultTraits;
     BOOL m_minimized;
+    int m_orientation;
     BOOL m_respondingToImplGeometryChange;
     UIImage *m_snapshot;
     BOOL m_typingDisabled;
@@ -18,23 +19,35 @@
 + (void)_clearActiveKeyboard;
 + (void)_initializeSafeCategory;
 + (id)activeKeyboard;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrameForInterfaceOrientation:(NSInteger)arg1;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrameForInterfaceOrientation:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSize;
-+ (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(NSInteger)arg1;
-+ (struct CGSize { float x1; float x2; })defaultSizeForOrientation:(NSInteger)arg1;
++ (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(int)arg1;
++ (struct CGSize { float x1; float x2; })defaultSizeForOrientation:(int)arg1;
 + (void)initImplementationNow;
++ (struct CGSize { float x1; float x2; })keyboardSizeForInterfaceOrientation:(int)arg1;
 + (void)removeAllDynamicDictionaries;
-+ (struct CGSize { float x1; float x2; })sizeForInterfaceOrientation:(NSInteger)arg1;
++ (struct CGSize { float x1; float x2; })sizeForInterfaceOrientation:(int)arg1;
 
+- (void)_acceptCurrentCandidate;
 - (id)_baseKeyForRepresentedString:(id)arg1;
 - (void)_changeToKeyplane:(id)arg1;
+- (void)_clearCurrentInputManager;
+- (void)_disableDynamicDictionary:(BOOL)arg1;
+- (id)_getAutocorrection;
 - (id)_getCurrentKeyboardName;
 - (id)_getCurrentKeyplaneName;
 - (id)_getLocalizedInputMode;
+- (BOOL)_hasCandidates;
 - (BOOL)_isAutomaticKeyboard;
 - (id)_keyplaneForKey:(id)arg1;
+- (int)_positionInCandidateList:(id)arg1;
+- (void)_setAutocorrects:(BOOL)arg1;
+- (void)_setInputMode:(id)arg1;
+- (id)_typeCharacter:(id)arg1 withError:(struct CGPoint { float x1; float x2; })arg2 shouldTypeVariants:(BOOL)arg3 baseKeyForVariants:(BOOL)arg4;
 - (void)acceptAutocorrection;
 - (void)activate;
+- (void)autoAdjustOrientation;
+- (void)autoAdjustOrientationForSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)canDismiss;
 - (void)clearSnapshot;
 - (void)deactivate;
@@ -49,6 +62,7 @@
 - (void)implBoundsHeightChangeDone:(float)arg1 suppressNotification:(BOOL)arg2;
 - (id)initWithDefaultSize;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)interfaceOrientation;
 - (BOOL)isActive;
 - (BOOL)isMinimized;
 - (void)keyboardMinMaximized:(id)arg1 finished:(id)arg2 context:(id)arg3;
@@ -59,7 +73,7 @@
 - (void)maximize;
 - (void)minimize;
 - (void)movedFromSuperview:(id)arg1;
-- (NSInteger)orientation;
+- (int)orientation;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)prepareForGeometryChange;
@@ -77,7 +91,7 @@
 - (void)setTypingEnabled:(BOOL)arg1;
 - (void)syncMinimizedStateToHardwareKeyboardAttachedState;
 - (void)takeSnapshot;
-- (NSInteger)textEffectsVisibilityLevel;
+- (int)textEffectsVisibilityLevel;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

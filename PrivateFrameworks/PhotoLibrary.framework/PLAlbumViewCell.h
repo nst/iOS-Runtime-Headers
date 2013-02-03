@@ -10,48 +10,48 @@
         float height; 
     NSMutableIndexSet *_activityIndexes;
     NSMutableIndexSet *_badgedIndexes;
-    NSUInteger _cellPhotoCount;
+    unsigned int _cellPhotoCount;
     } _cellPhotoSize;
     NSMutableArray *_highlightViews;
     NSMutableIndexSet *_selectionIndexes;
-    NSInteger _selectionStyle;
+    int _selectionStyle;
     NSMutableArray *_textBadgeViews;
 }
 
-@property NSUInteger cellPhotoCount;
-@property CGSize cellPhotoSize;
-@property NSInteger photoSelectionStyle;
+@property unsigned int cellPhotoCount;
+@property struct CGSize { float width; float height; } cellPhotoSize;
+@property int photoSelectionStyle;
 
 + (void)_initializeSafeCategory;
-+ (NSUInteger)cellPhotoIndexAtPoint:(struct CGPoint { float x1; float x2; })arg1 cellBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 cellPhotoSize:(struct CGSize { float x1; float x2; })arg3;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfCellPhotoAtIndex:(NSUInteger)arg1 cellBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 cellPhotoSize:(struct CGSize { float x1; float x2; })arg3;
++ (unsigned int)cellPhotoIndexAtPoint:(struct CGPoint { float x1; float x2; })arg1 cellBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 cellPhotoSize:(struct CGSize { float x1; float x2; })arg3;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfCellPhotoAtIndex:(unsigned int)arg1 cellBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 cellPhotoSize:(struct CGSize { float x1; float x2; })arg3;
 
 - (id)_accessibilityChildren;
-- (void)_setCellPhotoAtIndex:(NSUInteger)arg1 highlighted:(BOOL)arg2 badgedWithImage:(id)arg3 showActivityIndicator:(BOOL)arg4;
-- (void)_updateHighlightAndBadgeForCellPhotoAtIndex:(NSUInteger)arg1;
-- (void)badgeCellPhotoAtIndex:(NSUInteger)arg1;
-- (NSUInteger)cellPhotoCount;
-- (NSUInteger)cellPhotoIndexAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_setCellPhotoAtIndex:(unsigned int)arg1 highlighted:(BOOL)arg2 badgedWithImage:(id)arg3 showActivityIndicator:(BOOL)arg4;
+- (void)_updateHighlightAndBadgeForCellPhotoAtIndex:(unsigned int)arg1;
+- (void)badgeCellPhotoAtIndex:(unsigned int)arg1;
+- (unsigned int)cellPhotoCount;
+- (unsigned int)cellPhotoIndexAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })cellPhotoSize;
 - (struct CGImage { }*)cgImageRef;
 - (void)dealloc;
-- (void)debadgeCellPhotoAtIndex:(NSUInteger)arg1;
-- (void)deselectCellPhotoAtIndex:(NSUInteger)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfCellPhotoAtIndex:(NSUInteger)arg1;
-- (void)hideActivityOnCellPhotoAtIndex:(NSUInteger)arg1;
-- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2;
+- (void)debadgeCellPhotoAtIndex:(unsigned int)arg1;
+- (void)deselectCellPhotoAtIndex:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfCellPhotoAtIndex:(unsigned int)arg1;
+- (void)hideActivityOnCellPhotoAtIndex:(unsigned int)arg1;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isAccessibilityElement;
-- (NSInteger)photoSelectionStyle;
+- (int)photoSelectionStyle;
 - (void)prepareForReuse;
 - (void)removeAllHighlights;
 - (void)removeAllTextBadges;
-- (void)selectCellPhotoAtIndex:(NSUInteger)arg1;
+- (void)selectCellPhotoAtIndex:(unsigned int)arg1;
 - (void)setCGImageRef:(struct CGImage { }*)arg1;
-- (void)setCellPhotoCount:(NSUInteger)arg1;
+- (void)setCellPhotoCount:(unsigned int)arg1;
 - (void)setCellPhotoSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setPhotoSelectionStyle:(NSInteger)arg1;
+- (void)setPhotoSelectionStyle:(int)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setTextBadgeString:(id)arg1 onCellPhotoAtIndex:(NSUInteger)arg2;
-- (void)showActivityOnCellPhotoAtIndex:(NSUInteger)arg1;
+- (void)setTextBadgeString:(id)arg1 onCellPhotoAtIndex:(unsigned int)arg2;
+- (void)showActivityOnCellPhotoAtIndex:(unsigned int)arg1;
 
 @end

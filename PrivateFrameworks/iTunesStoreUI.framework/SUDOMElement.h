@@ -10,10 +10,10 @@
     SUWebView *_webView;
 }
 
-@property(readonly) DOMElement *element;
-@property(readonly) UIImage *imageRepresentation;
-@property(retain) SUWebView *webView;
-@property(readonly) CGRect frame;
+@property(readonly) DOMElement * element;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } frame;
+@property(readonly) UIImage * imageRepresentation;
+@property(retain) SUWebView * webView;
 
 - (void)dealloc;
 - (id)element;

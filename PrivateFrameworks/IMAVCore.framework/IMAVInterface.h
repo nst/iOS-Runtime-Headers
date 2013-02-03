@@ -2,26 +2,31 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
+@class NSNumber, NSString;
+
 @interface IMAVInterface : NSObject {
     id _delegate;
+    BOOL _keepCameraRunning;
 }
 
-@property(readonly) NSString *externalIPAddress;
-@property void *localVideoBackLayer;
-@property void *localVideoLayer;
-@property(readonly) NSNumber *natType;
-@property void *remoteVideoBackLayer;
-@property void *remoteVideoLayer;
-@property NSUInteger cameraOrientation;
-@property NSUInteger cameraType;
+@property unsigned int cameraOrientation;
+@property unsigned int cameraType;
 @property(readonly) unsigned long long capabilities;
 @property(readonly) unsigned long long capabilitiesOfCPU;
 @property(readonly) unsigned long long capabilitiesOfNetwork;
 @property(readonly) id controller;
 @property id delegate;
-@property(readonly) NSUInteger externalSIPPort;
+@property(readonly) NSString * externalIPAddress;
+@property(readonly) unsigned int externalSIPPort;
 @property(readonly) BOOL isAVInterfaceReady;
-@property(readonly) NSUInteger overallChatState;
+@property void* localVideoBackLayer;
+@property void* localVideoLayer;
+@property unsigned int maxBitrate;
+@property(readonly) NSNumber * natType;
+@property(readonly) unsigned int overallChatState;
+@property void* remoteVideoBackLayer;
+@property void* remoteVideoLayer;
+@property BOOL shouldKeepCameraRunning;
 @property(readonly) BOOL supportsLayers;
 @property(readonly) BOOL supportsRelay;
 @property(readonly) BOOL systemCanARD;
@@ -33,26 +38,27 @@
 @property(readonly) BOOL systemCanReceiveWidescreen;
 @property(readonly) BOOL systemCanRecordAudio;
 @property(readonly) BOOL systemCanRecordVideo;
+@property(readonly) BOOL systemCanSendFullHD;
 @property(readonly) BOOL systemCanSendHighRes;
 @property(readonly) BOOL systemCanSendWidescreen;
 @property(readonly) BOOL systemCanVideoChat;
-@property(readonly) BOOL systemIsFullHDSendCapable;
 
 + (id)alloc;
 + (id)sharedInstance;
 
+- (int)_checkNetwork;
 - (void)_conferenceEnded:(id)arg1;
 - (void)_conferenceWillStart:(id)arg1;
 - (void)_notifyAboutPotentialCall;
 - (BOOL)allowsVideoForAVChat:(id)arg1;
 - (float)audioVolumeForAVChat:(id)arg1;
 - (id)autorelease;
-- (id)avChat:(id)arg1 IPAndPortDataWithCallerIP:(id)arg2 callerSIPPort:(NSUInteger)arg3 shouldFindExternalIP:(BOOL)arg4;
+- (id)avChat:(id)arg1 IPAndPortDataWithCallerIP:(id)arg2 callerSIPPort:(unsigned int)arg3 shouldFindExternalIP:(BOOL)arg4;
 - (id)avChat:(id)arg1 IPAndPortDataWithCallerIPAndPortData:(id)arg2 shouldFindExternalIP:(BOOL)arg3;
-- (NSUInteger)avChat:(id)arg1 enableAudioReflector:(BOOL)arg2;
+- (unsigned int)avChat:(id)arg1 enableAudioReflector:(BOOL)arg2;
 - (void)avChat:(id)arg1 enableSoftwareCamera:(BOOL)arg2;
 - (void)avChat:(id)arg1 enableSoftwareMicrophone:(BOOL)arg2;
-- (NSInteger)avChat:(id)arg1 endConferenceForUserID:(id)arg2;
+- (int)avChat:(id)arg1 endConferenceForUserID:(id)arg2;
 - (id)avChat:(id)arg1 localICEDataForHandle:(id)arg2 usingRelay:(BOOL)arg3;
 - (void)avChat:(id)arg1 prepareConnectionWithRemoteConnectionData:(id)arg2 localConnectionData:(id)arg3;
 - (struct __SecCertificate { }*)avChat:(id)arg1 remoteCertificateForUser:(id)arg2;
@@ -68,8 +74,8 @@
 - (void)avChat:(id)arg1 setUserName:(id)arg2;
 - (void)avChat:(id)arg1 setValidatedIdentity:(struct __SecIdentity { }*)arg2;
 - (BOOL)avChat:(id)arg1 startConferenceWithUserID:(id)arg2;
-- (NSUInteger)cameraOrientation;
-- (NSUInteger)cameraType;
+- (unsigned int)cameraOrientation;
+- (unsigned int)cameraType;
 - (unsigned long long)capabilities;
 - (unsigned long long)capabilitiesOfCPU;
 - (unsigned long long)capabilitiesOfNetwork;
@@ -79,14 +85,13 @@
 - (id)controller;
 - (void)dealloc;
 - (id)delegate;
-- (NSInteger)endConferenceForAVChat:(id)arg1;
+- (int)endConferenceForAVChat:(id)arg1;
 - (id)externalIPAddress;
-- (NSUInteger)externalSIPPort;
+- (unsigned int)externalSIPPort;
 - (id)getNatIPFromICEData:(id)arg1;
 - (void)handleRelayCancel:(id)arg1 fromParticipant:(id)arg2;
 - (void)handleRelayInitate:(id)arg1 fromParticipant:(id)arg2;
 - (void)handleRelayUpdate:(id)arg1 fromParticipant:(id)arg2;
-- (id)init;
 - (void)initAVInterface;
 - (void)invalidateAVInterface;
 - (BOOL)isAVInterfaceReady;
@@ -101,21 +106,25 @@
 - (void*)localVideoBackLayer;
 - (void*)localVideoLayer;
 - (BOOL)lockCameraForAVChat:(id)arg1;
+- (unsigned int)maxBitrate;
 - (id)natType;
 - (BOOL)openCamera;
-- (NSUInteger)overallChatState;
+- (unsigned int)overallChatState;
 - (void)persistentProperty:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
 - (oneway void)release;
 - (void*)remoteVideoBackLayer;
 - (void*)remoteVideoLayer;
-- (NSUInteger)retainCount;
-- (void)setCameraOrientation:(NSUInteger)arg1;
-- (void)setCameraType:(NSUInteger)arg1;
+- (unsigned int)retainCount;
+- (void)setCameraOrientation:(unsigned int)arg1;
+- (void)setCameraType:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLocalVideoBackLayer:(void*)arg1;
 - (void)setLocalVideoLayer:(void*)arg1;
+- (void)setMaxBitrate:(unsigned int)arg1;
 - (void)setRemoteVideoBackLayer:(void*)arg1;
 - (void)setRemoteVideoLayer:(void*)arg1;
+- (void)setShouldKeepCameraRunning:(BOOL)arg1;
+- (BOOL)shouldKeepCameraRunning;
 - (BOOL)startPreviewWithError:(id*)arg1;
 - (BOOL)stopPreview;
 - (BOOL)supportsLayers;
@@ -129,10 +138,10 @@
 - (BOOL)systemCanReceiveWidescreen;
 - (BOOL)systemCanRecordAudio;
 - (BOOL)systemCanRecordVideo;
+- (BOOL)systemCanSendFullHD;
 - (BOOL)systemCanSendHighRes;
 - (BOOL)systemCanSendWidescreen;
 - (BOOL)systemCanVideoChat;
-- (BOOL)systemIsFullHDSendCapable;
 - (void)unsetDelegate:(id)arg1;
 
 @end

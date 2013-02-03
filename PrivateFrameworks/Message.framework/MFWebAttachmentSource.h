@@ -6,10 +6,10 @@
 
 @interface MFWebAttachmentSource : MFWeakObject {
     NSURL *_baseURL;
-    NSUInteger _uniqueId;
+    unsigned int _uniqueId;
 }
 
-@property(readonly) NSURL *baseURL;
+@property(readonly) NSURL * baseURL;
 
 + (id)allSources;
 + (id)contentIDFileURLWithMessageFileWrapper:(id)arg1;
@@ -21,6 +21,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (NSInteger)priority;
+- (int)priority;
 
 @end

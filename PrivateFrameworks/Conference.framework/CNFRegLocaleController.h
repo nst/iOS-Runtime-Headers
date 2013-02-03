@@ -17,9 +17,9 @@
     id _regionListChangeObserver;
 }
 
-@property(copy) NSString *currentPhoneValue;
-@property(copy) NSString *currentRegionID;
-@property(retain) NSArray *regionData;
+@property(copy) NSString * currentPhoneValue;
+@property(copy) NSString * currentRegionID;
+@property(retain) NSArray * regionData;
 
 - (void)_buildCountryFieldSpecifierCache:(id)arg1;
 - (void)_buildPhoneNumberSpecifierCache:(id)arg1;

@@ -10,18 +10,18 @@
         float y; 
     NSMutableSet *_activeTouches;
     float _allowableMovement;
-    NSInteger _currentNumberOfTaps;
+    int _currentNumberOfTaps;
     double _minimumFinalPressDuration;
-    NSInteger _numberOfFullTaps;
+    int _numberOfFullTaps;
     } _startPoint;
     UIDelayedAction *_tapTimer;
     UITouch *_touch;
 }
 
-@property(retain) UITouch *touch;
 @property float allowableMovement;
 @property double minimumFinalPressDuration;
-@property NSInteger numberOfFullTaps;
+@property int numberOfFullTaps;
+@property(retain) UITouch * touch;
 
 - (void)_resetGestureRecognizer;
 - (void)_verifyMovementInAllowableRange;
@@ -30,11 +30,11 @@
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (double)minimumFinalPressDuration;
-- (NSInteger)numberOfFullTaps;
+- (int)numberOfFullTaps;
 - (void)recognized:(id)arg1;
 - (void)setAllowableMovement:(float)arg1;
 - (void)setMinimumFinalPressDuration:(double)arg1;
-- (void)setNumberOfFullTaps:(NSInteger)arg1;
+- (void)setNumberOfFullTaps:(int)arg1;
 - (void)setTouch:(id)arg1;
 - (void)startRecognitionTimer:(double)arg1;
 - (void)startTapTimer:(double)arg1;

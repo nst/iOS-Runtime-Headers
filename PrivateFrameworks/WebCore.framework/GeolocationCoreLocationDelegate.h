@@ -2,10 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class GeolocationCoreLocationDelegate, CLLocationManager;
 
 @interface GeolocationCoreLocationDelegate : NSObject <CLLocationManagerDelegate> {
@@ -14,16 +10,15 @@
         } x1; struct HashSet<WebCore::GeolocationLink*,WTF::PtrHash<WebCore::GeolocationLink*>,WTF::HashTraits<WebCore::GeolocationLink*> > { 
             struct HashTable<WebCore::GeolocationLink*,WebCore::GeolocationLink*,WTF::IdentityExtractor<WebCore::GeolocationLink*>,WTF::PtrHash<WebCore::GeolocationLink*>,WTF::HashTraits<WebCore::GeolocationLink*>,WTF::HashTraits<WebCore::GeolocationLink*> > { 
                 struct GeolocationLink {} **m_table; 
-                NSInteger m_tableSize; 
-                NSInteger m_tableSizeMask; 
-                NSInteger m_keyCount; 
-                NSInteger m_deletedCount; 
+                int m_tableSize; 
+                int m_tableSizeMask; 
+                int m_keyCount; 
+                int m_deletedCount; 
             } m_impl; 
-        } x2; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x3; struct RefPtr<WebCore::Geoposition> { 
+        } x2; boolx3; struct RefPtr<WebCore::Geoposition> { 
             struct Geoposition {} *m_ptr; 
         } x4; struct RefPtr<WebCore::PositionError> { 
             struct PositionError {} *m_ptr; 
-     /* Encoded args for previous method: @12@0:4^{GeolocationManager={RetainPtr<GeolocationCoreLocationDelegate>=@}{HashSet<WebCore::GeolocationLink*,WTF::PtrHash<WebCore::GeolocationLink*>,WTF::HashTraits<WebCore::GeolocationLink*> >={HashTable<WebCore::GeolocationLink*,WebCore::GeolocationLink*,WTF::IdentityExtractor<WebCore::GeolocationLink*>,WTF::PtrHash<WebCore::GeolocationLink*>,WTF::HashTraits<WebCore::GeolocationLink*>,WTF::HashTraits<WebCore::GeolocationLink*> >=^^{GeolocationLink}iiii}}B{RefPtr<WebCore::Geoposition>=^{Geoposition}}{RefPtr<WebCore::PositionError>=^{PositionError}}}8 */
     double m_accuracy;
         } x5; } *m_callback;
     BOOL m_locationDenied;
@@ -34,7 +29,7 @@
 
 - (void)createLocationManager;
 - (void)dealloc;
-- (id)initWithCallback:(struct GeolocationManager { struct RetainPtr<GeolocationCoreLocationDelegate> { id x_1_1_1; } x1; struct HashSet<WebCore::GeolocationLink*,WTF::PtrHash<WebCore::GeolocationLink*>,WTF::HashTraits<WebCore::GeolocationLink*> > { struct HashTable<WebCore::GeolocationLink*,WebCore::GeolocationLink*,WTF::IdentityExtractor<WebCore::GeolocationLink*>,WTF::PtrHash<WebCore::GeolocationLink*>,WTF::HashTraits<WebCore::GeolocationLink*>,WTF::HashTraits<WebCore::GeolocationLink*> > { struct GeolocationLink {} **x_1_2_1; NSInteger x_1_2_2; NSInteger x_1_2_3; NSInteger x_1_2_4; NSInteger x_1_2_5; } x_2_1_1; } x2; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x3; struct RefPtr<WebCore::Geoposition> { struct Geoposition {} *x_4_1_1; } x4; struct RefPtr<WebCore::PositionError> { struct PositionError {} *x_5_1_1; } x5; }*)arg1;
+- (id)initWithCallback:(struct GeolocationManager { struct RetainPtr<GeolocationCoreLocationDelegate> { id x_1_1_1; } x1; struct HashSet<WebCore::GeolocationLink*,WTF::PtrHash<WebCore::GeolocationLink*>,WTF::HashTraits<WebCore::GeolocationLink*> > { struct HashTable<WebCore::GeolocationLink*,WebCore::GeolocationLink*,WTF::IdentityExtractor<WebCore::GeolocationLink*>,WTF::PtrHash<WebCore::GeolocationLink*>,WTF::HashTraits<WebCore::GeolocationLink*>,WTF::HashTraits<WebCore::GeolocationLink*> > { struct GeolocationLink {} **x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_2_1_1; } x2; boolx3; struct RefPtr<WebCore::Geoposition> { struct Geoposition {} *x_4_1_1; } x4; struct RefPtr<WebCore::PositionError> { struct PositionError {} *x_5_1_1; } x5; }*)arg1;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
 - (void)sendError:(id)arg1 withString:(id)arg2;

@@ -20,7 +20,7 @@
     NSString *_serialNumber;
     unsigned short _standardVersion;
     NSString *_vendorExtensionDescription;
-    NSUInteger _vendorExtensionID;
+    unsigned int _vendorExtensionID;
     unsigned short _vendorExtensionVersion;
 }
 

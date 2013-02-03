@@ -13,6 +13,6 @@
 - (struct __CFDate { }*)date;
 - (void)dealloc;
 - (struct __CFString { }*)getDateFormat;
-- (NSInteger)readAttributesForDateCell:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (int)readAttributesForDateCell:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 
 @end

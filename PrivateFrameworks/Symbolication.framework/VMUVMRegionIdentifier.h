@@ -10,12 +10,12 @@
 }
 
 - (void)dealloc;
-- (id)descriptionForMallocZoneTotalsWithOptions:(NSUInteger)arg1;
-- (id)descriptionForRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 options:(NSUInteger)arg2;
+- (id)descriptionForMallocZoneTotalsWithOptions:(unsigned int)arg1;
+- (id)descriptionForRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 options:(unsigned int)arg2;
 - (id)descriptionForRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
-- (id)descriptionForRegionTotalsWithOptions:(NSUInteger)arg1;
-- (id)initWithTask:(NSUInteger)arg1 options:(NSUInteger)arg2;
-- (id)initWithTask:(NSUInteger)arg1;
+- (id)descriptionForRegionTotalsWithOptions:(unsigned int)arg1;
+- (id)initWithTask:(unsigned int)arg1 options:(unsigned int)arg2;
+- (id)initWithTask:(unsigned int)arg1;
 - (id)regions;
 
 @end

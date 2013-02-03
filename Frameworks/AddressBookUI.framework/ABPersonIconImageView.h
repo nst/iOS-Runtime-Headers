@@ -9,24 +9,24 @@
         float width; 
         float height; 
     } _iconSize;
-    NSInteger _imageType;
+    int _imageType;
     UIView *_imageView;
     UIImage *_maskImage;
     UIImage *_overlayImage;
     id _styleHelper;
 }
 
-@property(retain) UIImage *maskImage;
-@property(retain) UIImage *overlayImage;
-@property(readonly) NSInteger imageType;
+@property(readonly) int imageType;
+@property(retain) UIImage * maskImage;
+@property(retain) UIImage * overlayImage;
 @property BOOL shouldPickBestImage;
 
-+ (BOOL)_cardPlaceholderImageShouldApplyMaskAndOverlayForType:(NSInteger)arg1;
-+ (id)_placeholderCompanyImageForType:(NSInteger)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-+ (id)_placeholderPersonImageForType:(NSInteger)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (BOOL)_cardPlaceholderImageShouldApplyMaskAndOverlayForType:(int)arg1;
++ (id)_placeholderCompanyImageForType:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)_placeholderPersonImageForType:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)genericBlankPlaceholderImageOfSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)leftRightBorderOverlayImageOfSize:(struct CGSize { float x1; float x2; })arg1;
-+ (id)newImageViewWithIconSize:(struct CGSize { float x1; float x2; })arg1 imageType:(NSInteger)arg2;
++ (id)newImageViewWithIconSize:(struct CGSize { float x1; float x2; })arg1 imageType:(int)arg2;
 + (struct CGSize { float x1; float x2; })optimalIconSize;
 + (id)rightBorderOverlayImageOfSize:(struct CGSize { float x1; float x2; })arg1;
 
@@ -39,9 +39,9 @@
 - (void)dealloc;
 - (void*)displayedPerson;
 - (BOOL)hasImageToDisplay;
-- (NSInteger)imageType;
+- (int)imageType;
 - (id)init;
-- (id)initWithIconSize:(struct CGSize { float x1; float x2; })arg1 imageType:(NSInteger)arg2;
+- (id)initWithIconSize:(struct CGSize { float x1; float x2; })arg1 imageType:(int)arg2;
 - (id)maskImage;
 - (id)overlayImage;
 - (id)personImageView;

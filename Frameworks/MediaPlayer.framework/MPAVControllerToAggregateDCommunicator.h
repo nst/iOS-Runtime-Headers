@@ -3,7 +3,7 @@
  */
 
 @interface MPAVControllerToAggregateDCommunicator : NSObject {
-    NSUInteger _lastMediaType;
+    unsigned int _lastMediaType;
     double _playbackStartTime;
     BOOL _playbackStartTimeIsValid;
 }

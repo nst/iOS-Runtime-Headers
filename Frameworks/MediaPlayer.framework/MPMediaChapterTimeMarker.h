@@ -5,18 +5,18 @@
 @class NSArray;
 
 @interface MPMediaChapterTimeMarker : MPTimeMarker {
-    NSUInteger _chapterIndex;
+    unsigned int _chapterIndex;
     NSArray *_chapters;
     BOOL _triedToLoadThumbnail;
 }
 
-@property(retain) NSArray *chapters;
-@property NSUInteger chapterIndex;
+@property unsigned int chapterIndex;
+@property(retain) NSArray * chapters;
 
-- (NSUInteger)chapterIndex;
+- (unsigned int)chapterIndex;
 - (id)chapters;
 - (void)dealloc;
-- (void)setChapterIndex:(NSUInteger)arg1;
+- (void)setChapterIndex:(unsigned int)arg1;
 - (void)setChapters:(id)arg1;
 - (id)thumbnail;
 

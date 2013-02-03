@@ -10,10 +10,10 @@
     unsigned int _isReachable : 1;
     unsigned int _deviceUnlockedAfterBoot : 1;
     NSMutableDictionary *_lastErrorForMessage;
-    NSUInteger _messagesFromActiveAccounts;
-    NSUInteger _messagesTotal;
+    unsigned int _messagesFromActiveAccounts;
+    unsigned int _messagesTotal;
     MailMessageStore *_outboxStore;
-    NSInteger _state;
+    int _state;
 }
 
 + (id)sharedDeliveryQueue;
@@ -25,18 +25,18 @@
 - (id)_outboxStore;
 - (void)_processQueue;
 - (void)_reachabilityChanged:(id)arg1;
-- (void)_sendProcessingFinishedNotification:(NSInteger)arg1 failed:(NSInteger)arg2;
+- (void)_sendProcessingFinishedNotification:(int)arg1 failed:(int)arg2;
 - (void)_sendProcessingStartedNotification;
-- (void)_sendUnsentCountChangedNotification:(NSInteger)arg1 activeAccountsOnly:(NSInteger)arg2;
+- (void)_sendUnsentCountChangedNotification:(int)arg1 activeAccountsOnly:(int)arg2;
 - (void)_setDeliveryFlag:(id)arg1 state:(BOOL)arg2;
 - (void)_setErrorForMessage:(id)arg1 error:(id)arg2;
 - (void)_setErrorForMessageLibraryID:(id)arg1 error:(id)arg2;
 - (void)_updateCounts;
 - (void)_updateStateFile:(BOOL)arg1;
-- (NSInteger)append:(id)arg1 newMessageIDs:(id)arg2;
-- (NSInteger)append:(id)arg1;
+- (int)append:(id)arg1 newMessageIDs:(id)arg2;
+- (int)append:(id)arg1;
 - (void)dealloc;
-- (NSInteger)deliverSynchronously:(id)arg1;
+- (int)deliverSynchronously:(id)arg1;
 - (id)init;
 - (BOOL)isProcessing;
 - (BOOL)isReady;

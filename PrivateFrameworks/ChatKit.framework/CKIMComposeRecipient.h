@@ -5,7 +5,7 @@
 @interface CKIMComposeRecipient : MFComposeRecipient {
 }
 
-+ (NSInteger)_recipientABProperty;
++ (int)_recipientABProperty;
 
 - (id)_unformattedAddress;
 - (id)address;

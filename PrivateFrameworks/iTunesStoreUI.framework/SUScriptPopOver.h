@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class UIPopoverController, SUScriptViewController;
+
 @interface SUScriptPopOver : SUScriptObject {
     BOOL _ignoreDismiss;
 }
 
-@property(retain) UIPopoverController *nativePopoverController;
-@property(retain) SUScriptViewController *viewController;
 @property float contentHeight;
 @property float contentWidth;
+@property(retain) UIPopoverController * nativePopoverController;
+@property(retain) SUScriptViewController * viewController;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;

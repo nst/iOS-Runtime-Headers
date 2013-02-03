@@ -6,17 +6,17 @@
 
 @interface EDColorLocator : NSObject {
     NSColorStub *mColor;
-    NSInteger mColorIndex;
-    NSUInteger mColorOffset;
+    int mColorIndex;
+    unsigned int mColorOffset;
 }
 
 - (id)color;
-- (NSInteger)colorIndex;
+- (int)colorIndex;
 - (void)dealloc;
-- (id)initWith:(id)arg1 index:(NSInteger)arg2 offset:(NSUInteger)arg3;
-- (NSUInteger)offset;
+- (id)initWith:(id)arg1 index:(int)arg2 offset:(unsigned int)arg3;
+- (unsigned int)offset;
 - (void)setColor:(id)arg1;
-- (void)setColorIndex:(NSInteger)arg1;
-- (void)setOffset:(NSUInteger)arg1;
+- (void)setColorIndex:(int)arg1;
+- (void)setOffset:(unsigned int)arg1;
 
 @end

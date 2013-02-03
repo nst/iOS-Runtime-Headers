@@ -11,7 +11,7 @@
     NSDictionary *_preservedLayerValues;
 }
 
-@property UIView *contentView;
+@property UIView * contentView;
 @property float cornerRadius;
 
 - (id)contentView;

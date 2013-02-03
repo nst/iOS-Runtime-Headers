@@ -10,7 +10,7 @@
     SUWebView *_webView;
 }
 
-@property(readonly) OpaqueJSContext *globalExecutionContext;
+@property(readonly) struct OpaqueJSContext { }* globalExecutionContext;
 @property BOOL sourceIsTrusted;
 @property(readonly) id windowScriptObject;
 

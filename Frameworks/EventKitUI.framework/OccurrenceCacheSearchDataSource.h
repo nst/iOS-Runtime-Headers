@@ -11,47 +11,45 @@
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
     CalSearch *_calSearch;
-    } _dataSourceDeallocLock;
     } _dataSourceLock;
     BOOL _resetting;
     NSMutableArray *_results;
     } _resultsLock;
+    struct dispatch_queue_s { } *_searchQueue;
+    struct dispatch_group_s { } *_searchQueueGroup;
     BOOL _searching;
 }
 
 - (void)_addResult:(id)arg1;
 - (struct __CFArray { }*)_cachedDayIndexes;
 - (void)_clearResults;
-- (NSInteger)_lockedTotalOccurrencesCount;
+- (int)_lockedTotalOccurrencesCount;
 - (void)_notifyThatTheDateToShowResultsWasFound:(id)arg1;
 - (void)_processResults;
 - (void)_tellMobileCalToUpdateItsUI;
-- (NSInteger)cachedDayCount;
-- (NSInteger)cachedOccurrenceCount;
-- (NSInteger)cachedOccurrenceCountOnOrAfterDate:(double)arg1;
+- (int)cachedDayCount;
+- (int)cachedOccurrenceCount;
+- (int)cachedOccurrenceCountOnOrAfterDate:(double)arg1;
 - (void)calSearch:(id)arg1 foundOccurrences:(struct __CFArray { }*)arg2 cachedDays:(struct __CFArray { }*)arg3 cachedDaysIndexes:(struct __CFArray { }*)arg4;
 - (void)calSearch:(id)arg1 showResultsStartingOnDate:(double)arg2;
 - (void)calSearchComplete:(id)arg1;
-- (NSInteger)countOfOccurrencesOnDay:(double)arg1;
-- (NSInteger)dayCountBeforeDay:(double)arg1;
+- (int)countOfOccurrencesOnDay:(double)arg1;
+- (int)dayCountBeforeDay:(double)arg1;
 - (void)dealloc;
 - (void)dumpInfo;
 - (id)initWithDatabase:(struct CalDatabase { }*)arg1 filter:(struct CalFilter { }*)arg2;
 - (void)invalidateCachedDayIndexes;
 - (void)invalidateCachedDays;
 - (void)invalidateCachedOccurrences;
-- (void)loadOccurrencesForRange:(struct { NSInteger x1; NSInteger x2; })arg1;
+- (void)loadOccurrencesForRange:(struct { int x1; int x2; })arg1;
 - (void)releaseResources;
 - (void)restartSearchWithTerm:(id)arg1;
-- (void)setCachedDayRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)setCachedDayRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)startSearching;
 - (void)stopSearching;
 - (BOOL)supportsFakeTodaySection;
 - (BOOL)supportsInvitations;
-- (NSInteger)totalOccurrencesCount;
+- (int)totalOccurrencesCount;
 
 @end

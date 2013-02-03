@@ -2,20 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class MPMediaItem;
+
 @interface SUScriptMediaItem : SUScriptObject {
 }
 
-@property(readonly) MPMediaItem *nativeItem;
+@property(readonly) MPMediaItem * nativeItem;
 
-+ (id)copyScriptMediaTypesForNativeMediaTypes:(NSInteger)arg1;
-+ (NSInteger)nativeMediaTypesForScriptMediaTypes:(id)arg1;
++ (id)copyScriptMediaTypesForNativeMediaTypes:(int)arg1;
++ (int)nativeMediaTypesForScriptMediaTypes:(id)arg1;
 + (id)nativePropertyForScriptProperty:(id)arg1;
-+ (id)scriptMediaTypeForNativeMediaType:(NSInteger)arg1;
++ (id)scriptMediaTypeForNativeMediaType:(int)arg1;
 + (id)scriptPropertyForNativeProperty:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
-- (id)_copyImageURLWithWidth:(NSInteger)arg1 height:(NSInteger)arg2;
+- (id)_copyImageURLWithWidth:(int)arg1 height:(int)arg2;
 - (id)_valueForProperty:(id)arg1;
 - (id)imageURLWithWidth:(id)arg1 height:(id)arg2;
 - (id)nativeItem;

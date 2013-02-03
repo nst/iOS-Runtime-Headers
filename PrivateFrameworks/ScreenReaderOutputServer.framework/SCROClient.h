@@ -6,23 +6,23 @@
 
 @interface SCROClient : NSObject {
     struct __CFSet { } *_callbackSet;
-    NSUInteger _identifier;
+    unsigned int _identifier;
     NSLock *_lock;
-    NSUInteger _port;
+    unsigned int _port;
     struct __CFArray { } *_queue;
 }
 
-+ (id)addClientGetIdentifier:(NSUInteger*)arg1 getPort:(NSUInteger*)arg2;
-+ (id)callbacksForClientIdentifier:(NSUInteger)arg1;
++ (id)addClientGetIdentifier:(unsigned int*)arg1 getPort:(unsigned int*)arg2;
++ (id)callbacksForClientIdentifier:(unsigned int)arg1;
 + (void)initialize;
-+ (void)registerCallbackWithKey:(NSInteger)arg1 forClientIdentifier:(NSUInteger)arg2;
-+ (long)removeClientWithPort:(NSUInteger)arg1;
++ (void)registerCallbackWithKey:(int)arg1 forClientIdentifier:(unsigned int)arg2;
++ (long)removeClientWithPort:(unsigned int)arg1;
 + (void)sendCallback:(id)arg1;
 
 - (id)_dequeueCallbacks;
 - (void)_invalidate;
 - (void)_lock;
-- (void)_registerCallbackWithKey:(NSInteger)arg1;
+- (void)_registerCallbackWithKey:(int)arg1;
 - (void)_sendCallback:(id)arg1;
 - (void)_unlock;
 - (BOOL)_wantsCallback:(id)arg1;

@@ -2,19 +2,24 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSString;
 
 @interface SFUFileOutputStream : NSObject <SFUOutputStream> {
-    struct __sFILE { char *x1; NSInteger x2; NSInteger x3; short x4; short x5; struct __sbuf { 
+    struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { 
             char *_base; 
-            NSInteger _size; 
-        } x6; NSInteger x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { 
+            int _size; 
+        } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { 
             char *_base; 
-            NSInteger _size; 
-        } x13; struct __sFILEX {} *x14; NSInteger x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { 
+            int _size; 
+        } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { 
             char *_base; 
-            NSInteger _size; 
-        } x18; NSInteger x19; long long x20; } *mFile;
+            int _size; 
+        } x18; int x19; long long x20; } *mFile;
     NSString *mPath;
 }
 
@@ -27,7 +32,7 @@
 - (id)inputStream;
 - (long long)offset;
 - (id)path;
-- (void)seekToOffset:(long long)arg1 whence:(NSInteger)arg2;
+- (void)seekToOffset:(long long)arg1 whence:(int)arg2;
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
 
 @end

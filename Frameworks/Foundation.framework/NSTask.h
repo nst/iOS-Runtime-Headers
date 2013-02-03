@@ -18,7 +18,7 @@
 - (BOOL)isRunning;
 - (void)launch;
 - (id)launchPath;
-- (NSInteger)processIdentifier;
+- (int)processIdentifier;
 - (BOOL)resume;
 - (void)setArguments:(id)arg1;
 - (void)setCurrentDirectoryPath:(id)arg1;
@@ -31,9 +31,9 @@
 - (id)standardInput;
 - (id)standardOutput;
 - (BOOL)suspend;
-- (NSInteger)suspendCount;
+- (int)suspendCount;
 - (void)terminate;
-- (NSInteger)terminationReason;
-- (NSInteger)terminationStatus;
+- (int)terminationReason;
+- (int)terminationStatus;
 
 @end

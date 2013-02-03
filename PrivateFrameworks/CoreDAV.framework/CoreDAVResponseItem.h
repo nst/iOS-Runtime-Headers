@@ -13,12 +13,12 @@
     CoreDAVLeafItem *_status;
 }
 
-@property(retain) CoreDAVErrorItem *errorItem;
-@property(retain) NSMutableArray *hrefs;
-@property(retain) CoreDAVItemWithHrefChildItem *location;
-@property(retain) NSMutableSet *propStats;
-@property(retain) CoreDAVLeafItem *responseDescription;
-@property(retain) CoreDAVLeafItem *status;
+@property(retain) CoreDAVErrorItem * errorItem;
+@property(retain) NSMutableArray * hrefs;
+@property(retain) CoreDAVItemWithHrefChildItem * location;
+@property(retain) NSMutableSet * propStats;
+@property(retain) CoreDAVLeafItem * responseDescription;
+@property(retain) CoreDAVLeafItem * status;
 
 - (void)addHref:(id)arg1;
 - (void)addPropStat:(id)arg1;
@@ -27,9 +27,10 @@
 - (id)description;
 - (id)errorItem;
 - (id)firstHref;
-- (void)generateItemTreeString:(id)arg1 withDepth:(NSUInteger)arg2;
+- (void)generateItemTreeString:(id)arg1 withDepth:(unsigned int)arg2;
 - (BOOL)hasPropertyError;
 - (id)hrefs;
+- (id)init;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)location;
 - (id)propStats;

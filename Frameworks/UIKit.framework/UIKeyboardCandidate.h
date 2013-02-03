@@ -7,11 +7,11 @@
 
 - (id)candidate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)deleteCount;
-- (NSUInteger)hash;
+- (unsigned int)deleteCount;
+- (unsigned int)hash;
 - (id)input;
 - (id)insertion;
 - (BOOL)isEqual:(id)arg1;
-- (NSUInteger)wordOriginFeedbackID;
+- (unsigned int)wordOriginFeedbackID;
 
 @end

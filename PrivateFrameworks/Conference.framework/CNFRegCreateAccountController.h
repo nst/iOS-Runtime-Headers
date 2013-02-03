@@ -8,12 +8,12 @@
     <CNFRegCreateAccountControllerDelegate> *_delegate;
 }
 
-@property <CNFRegCreateAccountControllerDelegate> *delegate;
+@property <CNFRegCreateAccountControllerDelegate> * delegate;
 
 - (id)bagKey;
 - (void)cancelTapped;
 - (id)delegate;
-- (void)doHandoffWithStatus:(NSInteger)arg1 appleId:(id)arg2 password:(id)arg3;
+- (void)doHandoffWithStatus:(int)arg1 appleId:(id)arg2 password:(id)arg3;
 - (id)logName;
 - (void)setDelegate:(id)arg1;
 

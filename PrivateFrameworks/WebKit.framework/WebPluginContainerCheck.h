@@ -19,7 +19,7 @@
 
 - (id)_actionInformationWithURL:(id)arg1;
 - (void)_askPolicyDelegate;
-- (void)_continueWithPolicy:(NSInteger)arg1;
+- (void)_continueWithPolicy:(int)arg1;
 - (BOOL)_isForbiddenFileLoad;
 - (void)cancel;
 - (id)contextInfo;

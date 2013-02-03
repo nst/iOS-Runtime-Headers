@@ -6,7 +6,7 @@
 
 @interface AVAudioMixInputParametersInternal : NSObject {
     NSMutableArray *ramps;
-    NSInteger trackID;
+    int trackID;
 }
 
 @end

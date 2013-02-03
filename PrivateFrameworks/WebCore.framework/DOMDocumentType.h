@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMNamedNodeMap, NSString;
+
 @interface DOMDocumentType : DOMNode {
 }
 
-@property(retain,readonly) DOMNamedNodeMap *entities;
-@property(copy,readonly) NSString *internalSubset;
-@property(copy,readonly) NSString *name;
-@property(retain,readonly) DOMNamedNodeMap *notations;
-@property(copy,readonly) NSString *publicId;
-@property(copy,readonly) NSString *systemId;
+@property(retain,readonly) DOMNamedNodeMap * entities;
+@property(copy,readonly) NSString * internalSubset;
+@property(copy,readonly) NSString * name;
+@property(retain,readonly) DOMNamedNodeMap * notations;
+@property(copy,readonly) NSString * publicId;
+@property(copy,readonly) NSString * systemId;
 
 - (id)entities;
 - (id)internalSubset;

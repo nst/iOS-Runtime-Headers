@@ -38,9 +38,9 @@
     NSDictionary *_screenGeometry;
 }
 
-@property(retain) NSDictionary *screenGeometry;
-@property UIPeripheralAnimationGeometry geometry;
+@property struct UIPeripheralAnimationGeometry { struct CGPoint { float x; float y; } outPosition; struct CGPoint { float x; float y; } inPosition; struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } bounds; struct CGAffineTransform { float a; float b; float c; float d; float tx; float ty; } transform; float targetFrameHeightDelta; } geometry;
 @property BOOL inPositionIsDestination;
+@property(retain) NSDictionary * screenGeometry;
 
 + (id)stateWithGeometry:(struct UIPeripheralAnimationGeometry { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; })arg1 inPositionIsDestination:(BOOL)arg2;
 

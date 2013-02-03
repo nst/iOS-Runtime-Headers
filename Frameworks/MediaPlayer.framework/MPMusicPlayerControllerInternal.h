@@ -10,14 +10,15 @@
     unsigned int _useCachedPlaybackState : 1;
     unsigned int _cachedPlaybackStateIsValid : 1;
     unsigned int _allowsRemoteUIAccess : 1;
-    NSUInteger _clientPort;
-    NSInteger _inBlockHandlingPlaybackStateChangedMessageFromServer;
+    unsigned int _clientPort;
+    int _inBlockHandlingPlaybackStateChangedMessageFromServer;
     MPMediaItemCollection *_itemCollection;
     MPMusicPlayerController *_musicPlayerController;
-    NSInteger _playbackNotificationObservers;
-    NSInteger _playbackState;
+    int _playbackNotificationObservers;
+    int _playbackState;
     MPMediaQuery *_query;
     struct __CFRunLoopSource { } *_runLoopSource;
+    struct dispatch_queue_s { } *_springboardNowPlayingInfoQueue;
 }
 
 @property BOOL inBlockHandlingPlaybackStateChangedMessageFromServer;

@@ -8,7 +8,7 @@
     NSSQLForeignEntityKey *_foreignEntityKey;
     NSSQLForeignKey *_foreignKey;
     BOOL _isVirtual;
-    NSUInteger _slot;
+    unsigned int _slot;
 }
 
 - (id)columnName;
@@ -23,6 +23,6 @@
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (BOOL)isOptional;
 - (BOOL)isVirtual;
-- (NSUInteger)slot;
+- (unsigned int)slot;
 
 @end

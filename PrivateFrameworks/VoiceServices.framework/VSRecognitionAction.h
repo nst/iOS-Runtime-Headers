@@ -26,7 +26,7 @@
 - (void)_setSession:(id)arg1;
 - (id)cancel;
 - (void)completeWithNextAction:(id)arg1 error:(id)arg2;
-- (NSInteger)completionType;
+- (int)completionType;
 - (void)dealloc;
 - (id)perform;
 - (id)resultDisplayString;

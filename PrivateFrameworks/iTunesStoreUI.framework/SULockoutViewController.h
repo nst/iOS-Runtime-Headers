@@ -10,9 +10,9 @@
     NSString *_messageTitle;
 }
 
-@property(retain) UIImage *image;
-@property(retain) NSString *messageBody;
-@property(retain) NSString *messageTitle;
+@property(retain) UIImage * image;
+@property(retain) NSString * messageBody;
+@property(retain) NSString * messageTitle;
 
 - (id)copyArchivableContext;
 - (void)dealloc;

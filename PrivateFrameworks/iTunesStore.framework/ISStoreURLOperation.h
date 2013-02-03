@@ -2,22 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSNumber, NSString;
+@class NSNumber, <ISStoreURLOperationDelegate>;
 
 @interface ISStoreURLOperation : ISURLOperation {
     NSNumber *_authenticatedDSID;
     BOOL _needsAuthentication;
     BOOL _needsURLBag;
-    NSString *_urlBagKey;
     BOOL _urlKnownToBeTrusted;
+    BOOL _useUserSpecificURLBag;
 }
 
-@property(retain) NSNumber *authenticatedDSID;
-@property <ISStoreURLOperationDelegate> *delegate;
-@property(retain) NSString *urlBagKey;
+@property(retain) NSNumber * authenticatedDSID;
+@property <ISStoreURLOperationDelegate> * delegate;
 @property BOOL needsAuthentication;
 @property BOOL needsURLBag;
 @property BOOL urlKnownToBeTrusted;
+@property BOOL useUserSpecificURLBag;
 
 + (void)_addITunesStoreHeadersToRequest:(id)arg1 withBagContext:(id)arg2;
 + (id)_restrictionsHeaderValue;
@@ -33,6 +33,7 @@
 - (BOOL)_canSendTokenToURL:(id)arg1;
 - (id)_copyURLBagContext;
 - (void)_runURLOperation;
+- (id)_urlFromURLBagForRequestProperties:(id)arg1 inBagContext:(id)arg2;
 - (id)authenticatedAccountDSID;
 - (id)authenticatedDSID;
 - (void)dealloc;
@@ -46,10 +47,10 @@
 - (void)setAuthenticatedDSID:(id)arg1;
 - (void)setNeedsAuthentication:(BOOL)arg1;
 - (void)setNeedsURLBag:(BOOL)arg1;
-- (void)setUrlBagKey:(id)arg1;
 - (void)setUrlKnownToBeTrusted:(BOOL)arg1;
+- (void)setUseUserSpecificURLBag:(BOOL)arg1;
 - (BOOL)shouldFollowRedirectWithRequest:(id)arg1 returningError:(id*)arg2;
-- (id)urlBagKey;
 - (BOOL)urlKnownToBeTrusted;
+- (BOOL)useUserSpecificURLBag;
 
 @end

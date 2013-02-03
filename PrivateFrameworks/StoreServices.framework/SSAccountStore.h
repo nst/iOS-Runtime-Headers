@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSLock, NSArray;
+@class NSLock, SSAccount, NSArray;
 
 @interface SSAccountStore : NSObject {
     NSArray *_accounts;
@@ -10,14 +10,16 @@
     NSLock *_lock;
 }
 
-@property(readonly) NSArray *accounts;
-@property(readonly) SSAccount *activeAccount;
+@property(readonly) NSArray * accounts;
+@property(readonly) SSAccount * activeAccount;
 @property(getter=isExpired,readonly) BOOL expired;
 
 + (id)defaultStore;
 + (id)existingDefaultStore;
 + (BOOL)isExpired;
++ (BOOL)isExpiredForTokenType:(int)arg1;
 + (void)resetExpiration;
++ (void)resetExpirationForTokenType:(int)arg1;
 + (void)setDefaultStore:(id)arg1;
 
 - (id)_accountWithUniqueIdentifier:(id)arg1;
@@ -33,8 +35,10 @@
 - (void)dealloc;
 - (id)init;
 - (BOOL)isExpired;
+- (BOOL)isExpiredForTokenType:(int)arg1;
 - (void)reloadAccounts;
 - (void)resetExpiration;
+- (void)resetExpirationForTokenType:(int)arg1;
 - (void)setAccountCreditsWithDictionary:(id)arg1;
 - (void)signOutAllAccounts;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLImageView, UIActivityIndicatorView, UIView;
+@class UIImageView, UIActivityIndicatorView, UIView, UIImage, PLImageView;
 
 @interface PLCameraImportItemView : UIImageView <PLStackableImage> {
     PLImageView *_imageView;
@@ -11,8 +11,8 @@
     UIActivityIndicatorView *_spinner;
 }
 
-@property(retain) UIImage *image;
-@property(readonly) UIImageView *imageView;
+@property(retain) UIImage * image;
+@property(readonly) UIImageView * imageView;
 @property(readonly) BOOL isBeingManipulated;
 @property(getter=isShadowEnabled) BOOL shadowEnabled;
 @property BOOL showProgressSpinner;

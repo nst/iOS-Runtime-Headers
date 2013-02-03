@@ -15,14 +15,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)distinguishedNames;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)host;
 - (id)init;
-- (id)initWithHost:(id)arg1 port:(NSInteger)arg2 protocol:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
-- (id)initWithProxyHost:(id)arg1 port:(NSInteger)arg2 type:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
+- (id)initWithHost:(id)arg1 port:(int)arg2 protocol:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
+- (id)initWithProxyHost:(id)arg1 port:(int)arg2 type:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isProxy;
-- (NSInteger)port;
+- (int)port;
 - (id)protocol;
 - (id)proxyType;
 - (id)realm;

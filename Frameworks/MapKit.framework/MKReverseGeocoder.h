@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKReverseGeocoderInternal;
+@class MKPlacemark, MKReverseGeocoderInternal, <MKReverseGeocoderDelegate>;
 
 @interface MKReverseGeocoder : NSObject {
     MKReverseGeocoderInternal *_internal;
 }
 
-@property <MKReverseGeocoderDelegate> *delegate;
-@property(readonly) MKPlacemark *placemark;
-@property(readonly) ? coordinate;
+@property(readonly) struct { double latitude; double longitude; } coordinate;
+@property <MKReverseGeocoderDelegate> * delegate;
+@property(readonly) MKPlacemark * placemark;
 @property(getter=isQuerying,readonly) BOOL querying;
 
 - (id)_bestAddressInResponse:(id)arg1;

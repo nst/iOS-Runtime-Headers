@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
+@class <SKProductsRequestDelegate>;
+
 @interface SKProductsRequest : SKRequest {
     id _productsRequestInternal;
 }
 
-@property <SKProductsRequestDelegate> *delegate;
+@property <SKProductsRequestDelegate> * delegate;
 
 - (id)_newResponseFromDictionary:(id)arg1;
 - (void)dealloc;

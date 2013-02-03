@@ -5,18 +5,18 @@
 @class ISPropertyListProvider;
 
 @interface SUStorePageDataProvider : ISDataProvider {
-    NSInteger _outputType;
+    int _outputType;
     ISPropertyListProvider *_propertyListDataProvider;
 }
 
-@property(copy) ISPropertyListProvider *propertyListDataProvider;
-@property NSInteger outputType;
+@property int outputType;
+@property(copy) ISPropertyListProvider * propertyListDataProvider;
 
 - (void)dealloc;
-- (NSInteger)outputType;
+- (int)outputType;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
 - (id)propertyListDataProvider;
-- (void)setOutputType:(NSInteger)arg1;
+- (void)setOutputType:(int)arg1;
 - (void)setPropertyListDataProvider:(id)arg1;
 
 @end

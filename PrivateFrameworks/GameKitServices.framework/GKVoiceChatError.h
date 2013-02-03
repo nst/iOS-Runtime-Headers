@@ -5,7 +5,7 @@
 @interface GKVoiceChatError : NSObject {
 }
 
-+ (void)getNSError:(id*)arg1 code:(NSInteger)arg2 description:(id)arg3 hResult:(NSInteger)arg4;
-+ (void)getNSError:(id*)arg1 code:(NSInteger)arg2 description:(id)arg3 reason:(id)arg4;
++ (void)getNSError:(id*)arg1 code:(int)arg2 detailedCode:(int)arg3 filePath:(id)arg4 description:(id)arg5 hResult:(int)arg6;
++ (void)getNSError:(id*)arg1 code:(int)arg2 detailedCode:(int)arg3 filePath:(id)arg4 description:(id)arg5 reason:(id)arg6;
 
 @end

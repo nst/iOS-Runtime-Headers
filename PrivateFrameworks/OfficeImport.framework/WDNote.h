@@ -14,7 +14,7 @@
 - (void)dealloc;
 - (id)initWithParagraph:(id)arg1 footnote:(BOOL)arg2;
 - (id)reference;
-- (NSInteger)runType;
+- (int)runType;
 - (void)setAutomaticNumbering:(BOOL)arg1;
 - (id)text;
 

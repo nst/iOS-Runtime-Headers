@@ -9,13 +9,13 @@
 - (id)allKeys;
 - (id)allValues;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
-- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
 - (id)init;
 - (id)initWithCFDictionary:(struct __CFDictionary { }*)arg1;
-- (id)initWithCapacity:(NSUInteger)arg1;
+- (id)initWithCapacity:(unsigned int)arg1;
 - (id)keyEnumerator;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;

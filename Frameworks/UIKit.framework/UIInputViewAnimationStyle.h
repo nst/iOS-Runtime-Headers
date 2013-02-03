@@ -6,15 +6,15 @@
     BOOL animated;
     double duration;
     BOOL force;
-    NSInteger outDirection;
+    int outDirection;
 }
 
 @property BOOL animated;
 @property double duration;
 @property BOOL force;
-@property NSInteger outDirection;
+@property int outDirection;
 
-+ (id)animationStyleAnimated:(BOOL)arg1 duration:(double)arg2 outDirection:(NSInteger)arg3;
++ (id)animationStyleAnimated:(BOOL)arg1 duration:(double)arg2 outDirection:(int)arg3;
 + (id)animationStyleDefault;
 + (id)animationStyleImmediate;
 
@@ -23,10 +23,10 @@
 - (double)duration;
 - (BOOL)force;
 - (BOOL)isEqual:(id)arg1;
-- (NSInteger)outDirection;
+- (int)outDirection;
 - (void)setAnimated:(BOOL)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setForce:(BOOL)arg1;
-- (void)setOutDirection:(NSInteger)arg1;
+- (void)setOutDirection:(int)arg1;
 
 @end

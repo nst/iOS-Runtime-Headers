@@ -18,6 +18,6 @@
 - (void)setPreferenceSpecifier:(id)arg1;
 - (void)setPreferenceValue:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 
 @end

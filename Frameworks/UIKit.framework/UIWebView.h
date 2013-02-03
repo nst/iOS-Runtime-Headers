@@ -2,25 +2,27 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWebViewInternal;
+@class NSURLRequest, UIWebViewInternal, <UIWebViewDelegate>;
 
 @interface UIWebView : UIView <NSCoding, UIScrollViewDelegate> {
     UIWebViewInternal *_internal;
 }
 
-@property <UIWebViewDelegate> *delegate;
-@property(retain,readonly) NSURLRequest *request;
 @property BOOL allowsInlineMediaPlayback;
 @property(getter=canGoBack,readonly) BOOL canGoBack;
 @property(getter=canGoForward,readonly) BOOL canGoForward;
-@property NSUInteger dataDetectorTypes;
+@property unsigned int dataDetectorTypes;
+@property <UIWebViewDelegate> * delegate;
 @property BOOL detectsPhoneNumbers;
 @property(getter=isLoading,readonly) BOOL loading;
 @property BOOL mediaPlaybackRequiresUserAction;
+@property(retain,readonly) NSURLRequest * request;
 @property BOOL scalesPageToFit;
 
 + (void)_initializeSafeCategory;
 
+- (void)_adlib_loadBannerContentURL:(id)arg1;
+- (void)_adlib_loadWebArchiveData:(id)arg1;
 - (id)_browserView;
 - (id)_documentView;
 - (void)_frameOrBoundsChanged;
@@ -45,7 +47,7 @@
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)copy:(id)arg1;
 - (struct CGImage { }*)createSnapshotWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSUInteger)dataDetectorTypes;
+- (unsigned int)dataDetectorTypes;
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)detectsPhoneNumbers;
@@ -60,7 +62,7 @@
 - (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (void)loadRequest:(id)arg1;
 - (BOOL)mediaPlaybackRequiresUserAction;
-- (void)modalView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
+- (void)modalView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (struct CGImage { }*)newSnapshotWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)reload;
 - (id)request;
@@ -78,7 +80,7 @@
 - (void)setAllowsInlineMediaPlayback:(BOOL)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDataDetectorTypes:(NSUInteger)arg1;
+- (void)setDataDetectorTypes:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDetectsPhoneNumbers:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

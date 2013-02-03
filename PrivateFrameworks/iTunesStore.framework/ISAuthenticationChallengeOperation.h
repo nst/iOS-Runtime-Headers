@@ -8,14 +8,14 @@
     ISAuthenticationChallenge *_challenge;
 }
 
-@property(retain) ISAuthenticationChallenge *challenge;
+@property(retain) ISAuthenticationChallenge * challenge;
 
 + (id)operationWithChallenge:(id)arg1;
 
 - (id)_copyCredentialForSignInResponseDictionary:(id)arg1;
 - (id)challenge;
 - (void)dealloc;
-- (void)handleButtonSelected:(NSInteger)arg1 withResponseDictionary:(id)arg2;
+- (void)handleButtonSelected:(int)arg1 withResponseDictionary:(id)arg2;
 - (void)run;
 - (void)setChallenge:(id)arg1;
 

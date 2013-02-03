@@ -2,75 +2,61 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSString, NSMutableArray, EDResources;
 
 @interface EDConditionalFormattingRule : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-    NSUInteger mDifferentialStyleIndex;
+    boolmAboveAverage;
+    boolmBottom;
+    boolmEqualAverage;
+    boolmPercent;
+    boolmStopIfTrue;
+    unsigned int mDifferentialStyleIndex;
     NSMutableArray *mFormulas;
-    NSInteger mOperator;
-    NSInteger mPriority;
-    NSUInteger mRank;
+    int mOperator;
+    int mPriority;
+    unsigned int mRank;
     EDResources *mResources;
-    NSInteger mStdDev;
+    int mStdDev;
     NSString *mText;
-    NSInteger mTimePeriod;
-    NSInteger mType;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mAboveAverage;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mBottom;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mEqualAverage;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mPercent;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mStopIfTrue;
+    int mTimePeriod;
+    int mType;
 }
 
 + (id)conditionalFormattingRuleWithResources:(id)arg1;
 
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)aboveAverage;
+- (bool)aboveAverage;
 - (void)addFormula:(id)arg1 worksheet:(id)arg2;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)bottom;
-- (NSInteger)compareToOtherRuleUsingPriority:(id)arg1;
+- (bool)bottom;
+- (int)compareToOtherRuleUsingPriority:(id)arg1;
 - (void)dealloc;
 - (id)differentialStyle;
-- (NSUInteger)differentialStyleIndex;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)equalAverage;
-- (id)formulaAtIndex:(NSUInteger)arg1;
-- (NSUInteger)formulaCount;
+- (unsigned int)differentialStyleIndex;
+- (bool)equalAverage;
+- (id)formulaAtIndex:(unsigned int)arg1;
+- (unsigned int)formulaCount;
 - (id)initWithResources:(id)arg1;
-- (NSInteger)operatorEnum;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)percent;
-- (NSInteger)priority;
-- (NSUInteger)rank;
-- (void)setAboveAverage:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setBottom:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (int)operatorEnum;
+- (bool)percent;
+- (int)priority;
+- (unsigned int)rank;
+- (void)setAboveAverage:(bool)arg1;
+- (void)setBottom:(bool)arg1;
 - (void)setDifferentialStyle:(id)arg1;
-- (void)setDifferentialStyleIndex:(NSUInteger)arg1;
-- (void)setEqualAverage:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setOperatorEnum:(NSInteger)arg1;
-- (void)setPercent:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setPriority:(NSInteger)arg1;
-- (void)setRank:(NSUInteger)arg1;
-- (void)setStdDev:(NSInteger)arg1;
-- (void)setStopIfTrue:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setDifferentialStyleIndex:(unsigned int)arg1;
+- (void)setEqualAverage:(bool)arg1;
+- (void)setOperatorEnum:(int)arg1;
+- (void)setPercent:(bool)arg1;
+- (void)setPriority:(int)arg1;
+- (void)setRank:(unsigned int)arg1;
+- (void)setStdDev:(int)arg1;
+- (void)setStopIfTrue:(bool)arg1;
 - (void)setText:(id)arg1;
-- (void)setTimePeriod:(NSInteger)arg1;
-- (void)setType:(NSInteger)arg1;
-- (NSInteger)stdDev;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)stopIfTrue;
+- (void)setTimePeriod:(int)arg1;
+- (void)setType:(int)arg1;
+- (int)stdDev;
+- (bool)stopIfTrue;
 - (id)text;
-- (NSInteger)timePeriod;
-- (NSInteger)type;
+- (int)timePeriod;
+- (int)type;
 
 @end

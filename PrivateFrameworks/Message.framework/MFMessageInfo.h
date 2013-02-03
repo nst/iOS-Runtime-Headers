@@ -3,51 +3,51 @@
  */
 
 @interface MFMessageInfo : NSObject {
-    NSUInteger _conversationHash;
-    NSUInteger _dateReceivedInterval;
+    unsigned int _conversationHash;
+    unsigned int _dateReceivedInterval;
     BOOL _deleted;
     long long _generationNumber;
     BOOL _hasAttachments;
-    NSUInteger _mailboxID;
+    unsigned int _mailboxID;
     BOOL _read;
-    NSUInteger _retainCount;
-    NSUInteger _uid;
+    unsigned int _retainCount;
+    unsigned int _uid;
     BOOL _uidIsLibraryID;
 }
 
-@property NSUInteger conversationHash;
-@property NSUInteger dateReceivedInterval;
+@property unsigned int conversationHash;
+@property unsigned int dateReceivedInterval;
 @property BOOL deleted;
 @property(readonly) long long generationNumber;
 @property(getter=isKnownToHaveAttachments) BOOL knownToHaveAttachments;
-@property NSUInteger mailboxID;
+@property unsigned int mailboxID;
 @property BOOL read;
-@property NSUInteger uid;
+@property unsigned int uid;
 @property BOOL uidIsLibraryID;
 
 + (long long)newGenerationNumber;
 
-- (NSUInteger)conversationHash;
-- (NSUInteger)dateReceivedInterval;
+- (unsigned int)conversationHash;
+- (unsigned int)dateReceivedInterval;
 - (BOOL)deleted;
 - (id)description;
-- (NSInteger)generationCompare:(id)arg1;
+- (int)generationCompare:(id)arg1;
 - (long long)generationNumber;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isKnownToHaveAttachments;
-- (NSUInteger)mailboxID;
+- (unsigned int)mailboxID;
 - (BOOL)read;
-- (void)setConversationHash:(NSUInteger)arg1;
-- (void)setDateReceivedInterval:(NSUInteger)arg1;
+- (void)setConversationHash:(unsigned int)arg1;
+- (void)setDateReceivedInterval:(unsigned int)arg1;
 - (void)setDeleted:(BOOL)arg1;
 - (void)setKnownToHaveAttachments:(BOOL)arg1;
-- (void)setMailboxID:(NSUInteger)arg1;
+- (void)setMailboxID:(unsigned int)arg1;
 - (void)setRead:(BOOL)arg1;
-- (void)setUid:(NSUInteger)arg1;
+- (void)setUid:(unsigned int)arg1;
 - (void)setUidIsLibraryID:(BOOL)arg1;
-- (NSUInteger)uid;
+- (unsigned int)uid;
 - (BOOL)uidIsLibraryID;
 
 @end

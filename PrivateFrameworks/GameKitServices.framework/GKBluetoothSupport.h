@@ -7,9 +7,9 @@
 
 + (Class)_bluetoothManagerClass;
 + (void)_btPowerStateChanged:(id)arg1;
-+ (NSInteger)_determineBluetoothStatus;
-+ (NSInteger)_directBTStatus;
-+ (NSInteger)bluetoothStatus;
++ (int)_determineBluetoothStatus;
++ (int)_directBTStatus;
++ (int)bluetoothStatus;
 + (void)cleanup;
 + (void)initialize;
 + (void)turnBluetoothOn;

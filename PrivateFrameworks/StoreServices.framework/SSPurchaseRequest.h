@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableIndexSet, NSArray;
+@class NSMutableIndexSet, <SSPurchaseRequestDelegate>, NSArray;
 
 @interface SSPurchaseRequest : SSRequest {
     NSMutableIndexSet *_acknowledgedPurchases;
@@ -10,8 +10,8 @@
     BOOL _shouldValidatePurchases;
 }
 
-@property <SSPurchaseRequestDelegate> *delegate;
-@property(readonly) NSArray *purchases;
+@property <SSPurchaseRequestDelegate> * delegate;
+@property(readonly) NSArray * purchases;
 @property BOOL shouldValidatePurchases;
 
 - (void)_purchaseFailedNotification:(id)arg1;

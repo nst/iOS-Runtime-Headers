@@ -8,17 +8,17 @@
     NSMutableDictionary *_tagMap;
 }
 
-@property NSInteger selectedTag;
+@property int selectedTag;
 
-- (void)_incrementIndexesForTagsStartingAtIndex:(NSUInteger)arg1;
+- (void)_incrementIndexesForTagsStartingAtIndex:(unsigned int)arg1;
 - (void)dealloc;
-- (void)insertSegmentWithImage:(id)arg1 atIndex:(NSUInteger)arg2 animated:(BOOL)arg3;
-- (void)insertSegmentWithTitle:(id)arg1 atIndex:(NSUInteger)arg2 animated:(BOOL)arg3;
+- (void)insertSegmentWithImage:(id)arg1 atIndex:(unsigned int)arg2 animated:(BOOL)arg3;
+- (void)insertSegmentWithTitle:(id)arg1 atIndex:(unsigned int)arg2 animated:(BOOL)arg3;
 - (void)removeAllSegments;
-- (void)removeSegmentAtIndex:(NSUInteger)arg1 animated:(BOOL)arg2;
-- (NSInteger)selectedTag;
-- (void)setSelectedTag:(NSInteger)arg1;
-- (void)setTag:(NSInteger)arg1 forSegmentAtIndex:(NSUInteger)arg2;
-- (NSInteger)tagForSegmentAtIndex:(NSUInteger)arg1;
+- (void)removeSegmentAtIndex:(unsigned int)arg1 animated:(BOOL)arg2;
+- (int)selectedTag;
+- (void)setSelectedTag:(int)arg1;
+- (void)setTag:(int)arg1 forSegmentAtIndex:(unsigned int)arg2;
+- (int)tagForSegmentAtIndex:(unsigned int)arg1;
 
 @end

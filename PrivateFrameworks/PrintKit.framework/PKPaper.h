@@ -5,27 +5,27 @@
 @class NSString;
 
 @interface PKPaper : NSObject {
-    NSInteger bottomMargin;
-    NSInteger height;
-    NSInteger leftMargin;
+    int bottomMargin;
+    int height;
+    int leftMargin;
     NSString *name;
-    NSInteger rightMargin;
-    NSInteger topMargin;
-    NSInteger width;
+    int rightMargin;
+    int topMargin;
+    int width;
 }
 
-@property(retain,readonly) NSString *localizedName;
-@property(retain) NSString *name;
-@property NSInteger bottomMargin;
-@property NSInteger height;
+@property int bottomMargin;
+@property int height;
 @property(readonly) float imageableArea;
-@property(readonly) CGRect imageableAreaRect;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } imageableAreaRect;
 @property(readonly) BOOL isBorderless;
-@property NSInteger leftMargin;
-@property(readonly) CGSize paperSize;
-@property NSInteger rightMargin;
-@property NSInteger topMargin;
-@property NSInteger width;
+@property int leftMargin;
+@property(retain,readonly) NSString * localizedName;
+@property(retain) NSString * name;
+@property(readonly) struct CGSize { float width; float height; } paperSize;
+@property int rightMargin;
+@property int topMargin;
+@property int width;
 
 + (id)generic3_5x5Paper;
 + (id)generic4x6Paper;
@@ -36,28 +36,28 @@
 + (id)genericPRC32KPaper;
 + (BOOL)willAdjustMarginsForDuplexMode:(id)arg1;
 
-- (NSInteger)bottomMargin;
+- (int)bottomMargin;
 - (void)dealloc;
-- (NSInteger)height;
+- (int)height;
 - (float)imageableArea;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageableAreaRect;
-- (id)initWithPWGSize:(struct _pwg_size_s { struct _pwg_map_s { char *x_1_1_1; char *x_1_1_2; } x1; NSInteger x2; NSInteger x3; NSInteger x4; NSInteger x5; NSInteger x6; NSInteger x7; }*)arg1 localizedName:(id)arg2 codeName:(id)arg3;
-- (id)initWithWidth:(NSInteger)arg1 Height:(NSInteger)arg2 Left:(NSInteger)arg3 Top:(NSInteger)arg4 Right:(NSInteger)arg5 Bottom:(NSInteger)arg6 localizedName:(id)arg7 codeName:(id)arg8;
+- (id)initWithPWGSize:(struct _pwg_size_s { struct _pwg_map_s { char *x_1_1_1; char *x_1_1_2; } x1; int x2; int x3; int x4; int x5; int x6; int x7; }*)arg1 localizedName:(id)arg2 codeName:(id)arg3;
+- (id)initWithWidth:(int)arg1 Height:(int)arg2 Left:(int)arg3 Top:(int)arg4 Right:(int)arg5 Bottom:(int)arg6 localizedName:(id)arg7 codeName:(id)arg8;
 - (BOOL)isBorderless;
-- (NSInteger)leftMargin;
+- (int)leftMargin;
 - (id)localizedName;
 - (id)name;
 - (struct CGSize { float x1; float x2; })paperSize;
 - (id)paperWithMarginsAdjustedForDuplexMode:(id)arg1;
-- (NSInteger)rightMargin;
-- (void)setBottomMargin:(NSInteger)arg1;
-- (void)setHeight:(NSInteger)arg1;
-- (void)setLeftMargin:(NSInteger)arg1;
+- (int)rightMargin;
+- (void)setBottomMargin:(int)arg1;
+- (void)setHeight:(int)arg1;
+- (void)setLeftMargin:(int)arg1;
 - (void)setName:(id)arg1;
-- (void)setRightMargin:(NSInteger)arg1;
-- (void)setTopMargin:(NSInteger)arg1;
-- (void)setWidth:(NSInteger)arg1;
-- (NSInteger)topMargin;
-- (NSInteger)width;
+- (void)setRightMargin:(int)arg1;
+- (void)setTopMargin:(int)arg1;
+- (void)setWidth:(int)arg1;
+- (int)topMargin;
+- (int)width;
 
 @end

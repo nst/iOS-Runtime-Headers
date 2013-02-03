@@ -9,8 +9,8 @@
     NSArray *_players;
 }
 
-@property(retain) NSString *bundleIdentifier;
-@property(retain) NSArray *players;
+@property(retain) NSString * bundleIdentifier;
+@property(retain) NSArray * players;
 
 - (id)bundleIdentifier;
 - (void)dealloc;

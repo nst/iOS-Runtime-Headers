@@ -9,7 +9,7 @@
 }
 
 - (id)URL;
-- (NSInteger)completionType;
+- (int)completionType;
 - (void)dealloc;
 - (id)perform;
 - (void)setURL:(id)arg1;

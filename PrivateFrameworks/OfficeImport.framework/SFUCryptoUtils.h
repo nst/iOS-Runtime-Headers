@@ -11,8 +11,8 @@
 + (id)generatePassphraseVerifierForKey:(id)arg1;
 + (BOOL)generateRandomDataInBuffer:(char *)arg1 length:(unsigned long)arg2;
 + (BOOL)isEncryptionVersionAndFormatSupportedInPassphraseVerifier:(id)arg1;
-+ (NSUInteger)iterationCountFromPassphraseVerifier:(id)arg1;
-+ (NSUInteger)ivLengthForKey:(id)arg1;
++ (unsigned int)iterationCountFromPassphraseVerifier:(id)arg1;
++ (unsigned int)ivLengthForKey:(id)arg1;
 + (id)retainedBufferedInputStreamForDecryptingFile:(id)arg1 key:(id)arg2 isDeflated:(BOOL)arg3;
 + (id)sha256HashFromData:(id)arg1;
 + (id)sha256HashFromStorage:(id)arg1;

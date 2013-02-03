@@ -5,10 +5,12 @@
 @class MPFullScreenVideoOverlay;
 
 @interface MPFullScreenVideoViewController : MPAbstractFullScreenVideoViewController {
+    int _autorotationState;
     BOOL _inhibitOverlay;
     MPFullScreenVideoOverlay *_overlayView;
 }
 
+@property int autorotationState;
 @property BOOL inhibitOverlay;
 
 + (void)_initializeSafeCategory;
@@ -17,33 +19,36 @@
 - (void)_reallyRemoveOverlay;
 - (void)_rotationAnimationFinished:(id)arg1;
 - (BOOL)allowsDetailScrubbing;
+- (int)autorotationState;
 - (BOOL)controlsOverlayVisible;
 - (id)createChapterFlipTransition;
 - (void)dealloc;
 - (void)hideOverlayAnimated:(BOOL)arg1;
 - (BOOL)inhibitOverlay;
 - (id)init;
-- (void)itemTypeAvailableNotification:(id)arg1;
-- (void)noteIgnoredChangeTypes:(NSUInteger)arg1;
+- (void)noteIgnoredChangeTypes:(unsigned int)arg1;
 - (void)overlayTappedBackButton:(id)arg1;
 - (void)overlayTappedScaleModeButton:(id)arg1;
 - (id)overlayView;
 - (void)playbackStateDidChangeNotification:(id)arg1;
 - (void)removeChildViewController:(id)arg1;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
-- (void)setDesiredParts:(NSUInteger)arg1 animate:(BOOL)arg2;
-- (void)setDisabledParts:(NSUInteger)arg1;
+- (void)setAutorotationState:(int)arg1;
+- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setDisabledParts:(unsigned int)arg1;
 - (void)setInhibitOverlay:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)setTVOutEnabled:(BOOL)arg1;
-- (void)setVisibleParts:(NSUInteger)arg1 animate:(BOOL)arg2;
+- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
 - (void)showChaptersController;
 - (void)showOverlayAnimated:(BOOL)arg1;
 - (void)startTicking;
 - (void)stopTicking;
 - (id)swipableView:(id)arg1 overrideHitTest:(struct CGPoint { float x1; float x2; })arg2 withEvent:(id)arg3;
-- (void)transformVideoForInterfaceOrientation:(NSInteger)arg1 animate:(BOOL)arg2;
-- (BOOL)transportControls:(id)arg1 tappedButtonPart:(NSUInteger)arg2;
+- (void)transformVideoForInterfaceOrientation:(int)arg1 animate:(BOOL)arg2;
+- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned int)arg2;
+- (void)videoView_itemTypeAvailableNotification:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 
 @end

@@ -6,13 +6,13 @@
 
 @interface GKSendFriendRequestDataRequest : GKDataRequest {
     NSString *_message;
-    NSInteger _recipientType;
+    int _recipientType;
     id _recipients;
     id _results;
 }
 
-@property(copy) NSString *message;
-@property NSInteger recipientType;
+@property(copy) NSString * message;
+@property int recipientType;
 @property(retain) id recipients;
 @property(retain) id results;
 
@@ -22,12 +22,12 @@
 - (id)key;
 - (id)message;
 - (void)processResults:(id)arg1 errorDict:(id)arg2 forKey:(id)arg3 recipients:(id)arg4;
-- (NSInteger)recipientType;
+- (int)recipientType;
 - (id)recipients;
 - (id)request;
 - (id)results;
 - (void)setMessage:(id)arg1;
-- (void)setRecipientType:(NSInteger)arg1;
+- (void)setRecipientType:(int)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setResults:(id)arg1;
 

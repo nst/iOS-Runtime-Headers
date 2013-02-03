@@ -2,49 +2,44 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
-@class MKMapTileViewImp;
+@class MKMapTileViewImp, <MKMapTileViewDelegate>;
 
 @interface MKMapTileView : UIView {
-     /* Encoded args for previous method: v12@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@B}8 */
-     /* Encoded args for previous method: v12@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@B}8 */
-     /* Encoded args for previous method: v16@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@B}8@12 */
-     /* Encoded args for previous method: c12@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@B}8 */
-     /* Encoded args for previous method: c12@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@B}8 */
-     /* Encoded args for previous method: v12@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@B}8 */
     MKMapTileViewImp *_imp;
 }
 
-@property <MKMapTileViewDelegate> *delegate;
 @property BOOL canDisplayTraffic;
 @property BOOL canDrawOnMainThread;
-@property(readonly) NSInteger displayZoomLevel;
+@property <MKMapTileViewDelegate> * delegate;
+@property(readonly) int displayZoomLevel;
 @property(getter=isDrawing,readonly) BOOL drawing;
 @property(getter=isDrawingEnabled) BOOL drawingEnabled;
 @property BOOL levelCrossFade;
 @property(getter=isLoading,readonly) BOOL loading;
 @property(getter=isLoadingEnabled) BOOL loadingEnabled;
-@property NSUInteger mapType;
+@property unsigned int mapType;
 @property(getter=isRendering,readonly) BOOL rendering;
-@property(readonly) NSInteger roundedZoomLevel;
+@property(readonly) int roundedZoomLevel;
 @property BOOL shouldDisplayBaseTiles;
 @property BOOL shouldDisplayEffects;
 @property BOOL shouldDisplayTraffic;
-@property(readonly) ? visibleMapRect;
+@property(readonly) struct { struct { double x; double y; } origin; struct { double width; double height; } size; } visibleMapRect;
 @property(readonly) float zoomLevel;
 @property(readonly) float zoomScale;
 
 + (void)initialize;
 + (Class)layerClass;
-+ (NSInteger)maxZoomLevel;
-+ (NSInteger)minZoomLevel;
++ (int)maxZoomLevel;
++ (int)minZoomLevel;
 + (struct CGSize { float x1; float x2; })tileSize;
 
 - (void)_addTilePathRequest:(struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; }*)arg1;
-- (BOOL)_addTileRequester:(struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; void*x15; }*)arg1;
+- (BOOL)_addTileRequester:(struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; }*)arg1;
 - (BOOL)_canDrawContent;
 - (void)_commonInit;
 - (void)_didFailLoadingWithError:(id)arg1;
@@ -57,9 +52,9 @@
 - (BOOL)_isLoadingInVisibleRect;
 - (void)_loadBaseTiles;
 - (id)_nextRequestTilesRemaining:(BOOL*)arg1;
-- (void)_processTileRequester:(struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; void*x15; }*)arg1;
+- (void)_processTileRequester:(struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; }*)arg1;
 - (void)_pruneRequestTiles;
-- (BOOL)_removeTileRequester:(struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; void*x15; }*)arg1;
+- (BOOL)_removeTileRequester:(struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; }*)arg1;
 - (void)_requestTiles:(id)arg1;
 - (BOOL)_requestTiles;
 - (void)_scheduleDrawExpirationTimer:(double)arg1;
@@ -88,7 +83,7 @@
 - (void)display;
 - (void)displayBaseTilesOfLayer:(id)arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })displayRect;
-- (NSInteger)displayZoomLevel;
+- (int)displayZoomLevel;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (BOOL)drawing;
 - (id)drawingExpirationTimer;
@@ -103,10 +98,10 @@
 - (BOOL)isLoadingEnabled;
 - (BOOL)isRendering;
 - (BOOL)levelCrossFade;
-- (NSUInteger)mapType;
+- (unsigned int)mapType;
 - (void)reloadTilesAfterResume;
 - (void)renderLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (NSInteger)roundedZoomLevel;
+- (int)roundedZoomLevel;
 - (void)setCanDisplayTraffic:(BOOL)arg1;
 - (void)setCanDrawOnMainThread:(BOOL)arg1;
 - (void)setContentScaleFactor:(float)arg1;
@@ -116,7 +111,7 @@
 - (void)setDrawingExpirationTimer:(id)arg1;
 - (void)setLevelCrossFade:(BOOL)arg1;
 - (void)setLoadingEnabled:(BOOL)arg1;
-- (void)setMapType:(NSUInteger)arg1;
+- (void)setMapType:(unsigned int)arg1;
 - (void)setShouldDisplayBaseTiles:(BOOL)arg1;
 - (void)setShouldDisplayEffects:(BOOL)arg1;
 - (void)setShouldDisplayTraffic:(BOOL)arg1;
@@ -129,11 +124,11 @@
 - (void)stopTileLoading;
 - (id)tileExpirationTimer;
 - (id)tileRequestTimer;
-- (void)tileRequester:(struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; void*x15; }*)arg1 failedWithError:(id)arg2;
-- (void)tileRequesterCompleted:(struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; void*x15; }*)arg1;
-- (void)tileRequesterProgress:(struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; void*x15; }*)arg1;
-- (BOOL)tiledLayer:(id)arg1 canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 levelOfDetail:(NSInteger)arg3;
-- (id)tilesSurroundingCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(NSInteger)arg2 forVisibleSize:(struct CGSize { float x1; float x2; })arg3;
+- (void)tileRequester:(struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; }*)arg1 failedWithError:(id)arg2;
+- (void)tileRequesterCompleted:(struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; }*)arg1;
+- (void)tileRequesterProgress:(struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; }*)arg1;
+- (BOOL)tiledLayer:(id)arg1 canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 levelOfDetail:(int)arg3;
+- (id)tilesSurroundingCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(int)arg2 forVisibleSize:(struct CGSize { float x1; float x2; })arg3;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })visibleMapRect;
 - (float)zoomLevel;
 - (float)zoomScale;

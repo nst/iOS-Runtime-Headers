@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SSAccount;
+@class NSNumber, SSAccount, NSString;
 
 @interface SUScriptAccount : SUScriptObject {
     SSAccount *_account;
 }
 
-@property(retain) SSAccount *account;
-@property(copy) NSString *credits;
-@property(retain) NSNumber *dsID;
-@property(copy) NSString *identifier;
-@property(copy) NSString *kind;
+@property(retain) SSAccount * account;
+@property(copy) NSString * credits;
+@property(retain) NSNumber * dsID;
+@property(copy) NSString * identifier;
+@property(copy) NSString * kind;
 @property(retain) id socialEnabled;
 
 + (id)webScriptNameForKey:(const char *)arg1;

@@ -11,24 +11,24 @@
     EKEventEditItemViewController *_viewController;
 }
 
-@property <EKEventEditItemDelegate> *delegate;
+@property <EKEventEditItemDelegate> * delegate;
 
-- (id)cellForSubitemAtIndex:(NSInteger)arg1;
+- (id)cellForSubitemAtIndex:(int)arg1;
 - (BOOL)configureForCalendarConstraints:(id)arg1;
 - (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(NSInteger)arg1 forWidth:(float)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
 - (id)delegate;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(NSInteger)arg2;
-- (void)editItemViewController:(id)arg1 didCompleteWithAction:(NSInteger)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2;
+- (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (BOOL)eventEditItemViewControllerCommit:(id)arg1;
 - (void)eventEditItemViewControllerWantsKeyboardPinned:(BOOL)arg1;
-- (void)eventEditor:(id)arg1 didSelectSubitem:(NSInteger)arg2;
+- (void)eventEditor:(id)arg1 didSelectSubitem:(int)arg2;
 - (BOOL)isInline;
 - (void)notifyDidEndEditing;
 - (void)notifyDidStartEditing;
-- (void)notifySubitemDidCommit:(NSInteger)arg1;
+- (void)notifySubitemDidCommit:(int)arg1;
 - (void)notifyTextChanged;
-- (NSInteger)numberOfSubitems;
+- (int)numberOfSubitems;
 - (void)reset;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
 - (id)selectedTextField;

@@ -10,10 +10,10 @@
 + (id)inputStreamWithFileAtPath:(id)arg1;
 + (id)inputStreamWithURL:(id)arg1;
 
-- (struct { NSInteger x1; NSInteger x2; })_cfStreamError;
+- (struct { int x1; int x2; })_cfStreamError;
 - (unsigned long)_cfTypeID;
-- (BOOL)getBuffer:(char **)arg1 length:(NSUInteger*)arg2;
+- (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
 - (BOOL)hasBytesAvailable;
-- (NSInteger)read:(char *)arg1 maxLength:(NSUInteger)arg2;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 
 @end

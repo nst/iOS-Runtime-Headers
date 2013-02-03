@@ -7,18 +7,17 @@
 @interface YTNetworkController : NSObject {
     BOOL _isCellular;
     BOOL _isReachable;
-    NSInteger _networkType;
+    int _networkType;
     NSTimer *_notificationTimer;
     BOOL _registered;
 }
 
 + (id)sharedNetworkController;
 
-- (void)_checkForNetwork;
-- (void)_checkForNetworkAndNotify;
+- (void)_checkForNetworkWithDataStatus:(id)arg1;
 - (void)_reachabilityChanged:(id)arg1;
-- (void)_scheduleCheckForNetwork;
-- (NSInteger)networkType;
+- (int)networkType;
+- (void)recheckNetwork;
 - (BOOL)serviceIsReachable;
 - (void)start;
 

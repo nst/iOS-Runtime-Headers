@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSString;
+@class NSSet, NSString;
 
 @interface AVMediaFileType : NSObject <NSCopying> {
     NSString *_uti;
 }
 
-@property(readonly) NSString *UTI;
-@property(readonly) NSString *defaultFileExtension;
-@property(readonly) NSString *figFormatReaderFileFormat;
-@property(readonly) NSSet *supportedMediaTypes;
-@property(readonly) NSUInteger audioFileTypeID;
+@property(readonly) NSString * UTI;
+@property(readonly) unsigned int audioFileTypeID;
+@property(readonly) NSString * defaultFileExtension;
+@property(readonly) NSString * figFormatReaderFileFormat;
+@property(readonly) NSSet * supportedMediaTypes;
 
 + (id)_mediaFileTypeWithFileTypeIdentifier:(id)arg1 exceptionReason:(id*)arg2;
 + (id)allFileTypeIdentifiers;

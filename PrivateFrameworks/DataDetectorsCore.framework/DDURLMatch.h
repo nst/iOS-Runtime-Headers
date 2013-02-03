@@ -6,17 +6,17 @@
 
 @interface DDURLMatch : NSObject {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     } _range;
     NSString *_url;
 }
 
-- (NSInteger)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)initWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 url:(id)arg2;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })range;
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 url:(id)arg2;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)url;
 
 @end

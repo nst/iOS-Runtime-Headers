@@ -11,14 +11,14 @@
     UIViewController *_secondViewController;
 }
 
-- (void)_addSnapshotViewBeforeRotationToInterfaceOrientation:(NSInteger)arg1;
+- (void)_addSnapshotViewBeforeRotationToInterfaceOrientation:(int)arg1;
 - (id)_firstRotationController;
 - (id)_secondRotationController;
-- (void)animateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)animateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)dealloc;
-- (void)finishRotationFromInterfaceOrientation:(NSInteger)arg1;
-- (void)prepareForDeferredRotateToInterfaceOrientation:(NSInteger)arg1;
-- (void)prepareToRotateToInterfaceOrientation:(NSInteger)arg1;
-- (BOOL)shouldDeferRotationToInterfaceOrientation:(NSInteger)arg1;
+- (void)finishRotationFromInterfaceOrientation:(int)arg1;
+- (void)prepareForDeferredRotateToInterfaceOrientation:(int)arg1;
+- (void)prepareToRotateToInterfaceOrientation:(int)arg1;
+- (BOOL)shouldDeferRotationToInterfaceOrientation:(int)arg1;
 
 @end

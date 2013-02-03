@@ -4,11 +4,11 @@
 
 @interface DAPlistBytesDeserialization : NSObject {
     char *_buffer;
-    NSUInteger _length;
+    unsigned int _length;
 }
 
 - (void)dealloc;
-- (id)initWithBytes:(char *)arg1 length:(NSUInteger)arg2;
+- (id)initWithBytes:(char *)arg1 length:(unsigned int)arg2;
 - (id)propertyListWithError:(id*)arg1;
 
 @end

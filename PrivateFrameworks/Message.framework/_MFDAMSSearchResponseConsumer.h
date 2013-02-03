@@ -8,10 +8,10 @@
     MFConditionLock *doneCondition;
     NSDate *latestDateToAdd;
     double timeReceivedLastResponse;
-    NSUInteger totalCount;
+    unsigned int totalCount;
 }
 
-@property(retain) NSDate *latestDateToAdd;
+@property(retain) NSDate * latestDateToAdd;
 
 - (void)dealloc;
 - (BOOL)handleItems:(id)arg1;

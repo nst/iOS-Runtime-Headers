@@ -7,8 +7,8 @@
 @interface PLImageTableSegment : NSObject {
     BOOL _dying;
     PLImageTable *_imageTable;
-    NSUInteger _index;
-    NSUInteger _length;
+    unsigned int _index;
+    unsigned int _length;
     void *_ptr;
 }
 

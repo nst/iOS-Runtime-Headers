@@ -14,14 +14,14 @@
 - (void)_handleServerDiedNotification;
 - (void)cancelWriting;
 - (void)dealloc;
-- (void)endSessionAtSourceTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)endSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)finalize;
 - (void)finishWriting;
 - (id)initWithConfigurationState:(id)arg1 error:(id*)arg2;
 - (id)initWithConfigurationState:(id)arg1;
 - (void)release;
 - (id)retain;
-- (void)startSessionAtSourceTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
-- (NSInteger)status;
+- (void)startSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (int)status;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, NSMutableDictionary;
+@class NSArray, NSString, NSDictionary, NSMutableDictionary;
 
 @interface UIKBAttributeList : NSObject <NSCoding, NSCopying> {
     NSMutableDictionary *m_dict;
@@ -10,16 +10,16 @@
     NSString *m_name;
 }
 
-@property(readonly) NSDictionary *dict;
-@property(copy) NSString *name;
-@property(readonly) NSArray *names;
-@property(readonly) NSUInteger count;
+@property(readonly) unsigned int count;
+@property(readonly) NSDictionary * dict;
 @property BOOL explicit;
+@property(copy) NSString * name;
+@property(readonly) NSArray * names;
 
 - (id)arrayValueForName:(id)arg1;
 - (BOOL)boolValueForName:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (id)dict;
@@ -28,13 +28,13 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (NSInteger)intValueForName:(id)arg1;
+- (int)intValueForName:(id)arg1;
 - (void)mergeAttributes:(id)arg1;
 - (id)name;
 - (id)names;
 - (void)setBoolValueForName:(BOOL)arg1 forName:(id)arg2;
 - (void)setExplicit:(BOOL)arg1;
-- (void)setIntValueForName:(NSInteger)arg1 forName:(id)arg2;
+- (void)setIntValueForName:(int)arg1 forName:(id)arg2;
 - (void)setName:(id)arg1;
 - (void)setValue:(id)arg1 forName:(id)arg2;
 - (id)stringValueForName:(id)arg1;

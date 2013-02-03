@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIKeyboardEmojiController>, NSMutableDictionary;
+@class NSDictionary, <UIKeyboardEmojiController>, NSMutableDictionary;
 
 @interface UIKeyboardEmojiCategoryController : NSObject {
     NSMutableDictionary *_defaultsData;
@@ -10,7 +10,7 @@
     <UIKeyboardEmojiController> *emojiController;
 }
 
-@property(retain) NSDictionary *defaultsData;
+@property(retain) NSDictionary * defaultsData;
 
 - (id)categoryForKey:(id)arg1;
 - (void)dealloc;

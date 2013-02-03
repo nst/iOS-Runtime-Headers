@@ -8,7 +8,7 @@
     CoreDAVAction *_action;
 }
 
-@property(readonly) CoreDAVAction *action;
+@property(readonly) CoreDAVAction * action;
 
 - (id)action;
 - (void)setAction:(id)arg1;

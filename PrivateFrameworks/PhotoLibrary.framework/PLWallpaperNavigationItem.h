@@ -5,6 +5,6 @@
 @interface PLWallpaperNavigationItem : UINavigationItem {
 }
 
-- (NSInteger)barStyle;
+- (int)barStyle;
 
 @end

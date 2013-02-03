@@ -8,12 +8,13 @@
     ABPersonViewControllerHelper *_helper;
 }
 
-@property ABPersonViewControllerHelper *helper;
+@property ABPersonViewControllerHelper * helper;
 
 + (void)_initializeSafeCategory;
 
 - (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 - (id)helper;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setHelper:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (BOOL)touchesShouldCancelInContentView:(id)arg1;

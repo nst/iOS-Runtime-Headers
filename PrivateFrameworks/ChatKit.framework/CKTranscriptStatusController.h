@@ -19,16 +19,16 @@
     BOOL _viewTitle;
 }
 
-@property(retain) CKConversation *conversation;
-@property(copy) NSString *title;
+@property(retain) CKConversation * conversation;
 @property id delegate;
+@property(copy) NSString * title;
 
 - (BOOL)_calcVals:(BOOL*)arg1;
 - (void)_finishProgress;
 - (id)_generateStatusTitle;
 - (float)_generateVal;
 - (void)_hideName;
-- (id)_localizedTitleForSendingPart:(NSInteger)arg1 ofPart:(NSInteger)arg2;
+- (id)_localizedTitleForSendingPart:(int)arg1 ofPart:(int)arg2;
 - (void)_refreshNavigationItemView;
 - (void)_refreshNavigationItemViewAnimate:(BOOL)arg1;
 - (void)_startUpdatingProgress;

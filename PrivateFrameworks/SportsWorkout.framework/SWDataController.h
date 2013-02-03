@@ -2,25 +2,25 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class NSPersistentStoreCoordinator, NSManagedObjectContext;
+@class NSPersistentStoreCoordinator, NSDictionary, NSManagedObjectContext;
 
 @interface SWDataController : NSObject {
     struct dispatch_queue_s { } *_dispatchQueue;
     BOOL _isPerformingMigration;
     NSManagedObjectContext *_managedObjectContext;
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;
-    NSInteger _priorMigrationVersionKey;
+    int _priorMigrationVersionKey;
 }
 
-@property(readonly) NSDictionary *achievements;
+@property(readonly) NSDictionary * achievements;
 
 + (id)sharedDataController;
 
 - (id)_achievementsForName:(id)arg1 sensorSerialNumber:(id)arg2;
 - (void)_addValue:(id)arg1 toAchievementName:(id)arg2 sensorSerialNumber:(id)arg3;
-- (id)_allWorkoutsWithSyncState:(NSInteger)arg1;
+- (id)_allWorkoutsWithSyncState:(int)arg1;
 - (id)_databasePropertiesForName:(id)arg1;
-- (void)_databaseProperty:(id)arg1 setName:(id)arg2 andIntegerValue:(NSInteger)arg3;
+- (void)_databaseProperty:(id)arg1 setName:(id)arg2 andIntegerValue:(int)arg3;
 - (void)_deleteXMLFileForWorkout:(id)arg1;
 - (id)_dictionaryForWorkoutRecord:(id)arg1;
 - (id)_entitiesOfTypeName:(id)arg1 forPropertyName:(id)arg2 isNull:(BOOL)arg3;
@@ -41,8 +41,9 @@
 - (void)_replaceValueIfLarger:(id)arg1 forAchievementName:(id)arg2 sensorSerialNumber:(id)arg3;
 - (void)_replaceValueIfSmaller:(id)arg1 forAchievementName:(id)arg2 sensorSerialNumber:(id)arg3;
 - (id)_runWorkoutFileName;
-- (void)_saveRunAchievements:(id)arg1 forPreset:(id)arg2 sensorSerialNumber:(id)arg3;
-- (void)_saveRunWorkout:(id)arg1 xmlFileName:(id)arg2;
+- (void)_saveRunAchievementsToDatabase:(id)arg1 forPreset:(id)arg2 sensorSerialNumber:(id)arg3;
+- (void)_saveRunWorkout:(id)arg1 preset:(id)arg2;
+- (void)_saveRunWorkoutToDatabase:(id)arg1 xmlFileName:(id)arg2;
 - (void)_setCalibrationData:(id)arg1 forSensorSerialNumber:(id)arg2 walkCalibrationDate:(id)arg3 runCalibrationDate:(id)arg4;
 - (id)_snapshotForDictionary:(id)arg1;
 - (BOOL)_workoutIsSynced:(id)arg1;
@@ -54,11 +55,11 @@
 - (void)dealloc;
 - (void)deleteAllWorkouts;
 - (void)deleteWorkoutForGUID:(id)arg1;
-- (void)importExistingWorkoutSnapshots;
+- (void)importExistingWorkoutSnapshotsWithCompletionBlock:(id)arg1;
 - (id)init;
 - (id)latestWorkout;
 - (void)performMigrationIfNecessary;
-- (void)saveRunWorkout:(id)arg1 preset:(id)arg2;
+- (void)saveRunWorkout:(id)arg1 preset:(id)arg2 completionBlock:(id)arg3;
 - (void)saveWorkoutSnapshot:(id)arg1 preset:(id)arg2;
 - (void)setCalibrationData:(id)arg1 forSensorSerialNumber:(id)arg2 date:(id)arg3 isWalk:(BOOL)arg4;
 - (id)syncedWorkouts;

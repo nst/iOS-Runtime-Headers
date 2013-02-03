@@ -2,30 +2,32 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
+@class NSManagedObject, NSDictionary;
+
 @interface NSMergeConflict : NSObject {
-    NSUInteger _newVersion;
-    NSUInteger _oldVersion;
+    unsigned int _newVersion;
+    unsigned int _oldVersion;
     id _snapshot1;
     id _snapshot2;
     id _snapshot3;
     id _source;
 }
 
-@property(retain,readonly) NSDictionary *cachedSnapshot;
-@property(retain,readonly) NSDictionary *objectSnapshot;
-@property(retain,readonly) NSDictionary *persistedSnapshot;
-@property(retain,readonly) NSManagedObject *sourceObject;
-@property(readonly) NSUInteger newVersionNumber;
-@property(readonly) NSUInteger oldVersionNumber;
+@property(retain,readonly) NSDictionary * cachedSnapshot;
+@property(readonly) unsigned int newVersionNumber;
+@property(retain,readonly) NSDictionary * objectSnapshot;
+@property(readonly) unsigned int oldVersionNumber;
+@property(retain,readonly) NSDictionary * persistedSnapshot;
+@property(retain,readonly) NSManagedObject * sourceObject;
 
 - (id)cachedSnapshot;
 - (void)dealloc;
 - (id)description;
-- (id)initWithSource:(id)arg1 newVersion:(NSUInteger)arg2 oldVersion:(NSUInteger)arg3 cachedSnapshot:(id)arg4 persistedSnapshot:(id)arg5;
-- (NSUInteger)newVersionNumber;
+- (id)initWithSource:(id)arg1 newVersion:(unsigned int)arg2 oldVersion:(unsigned int)arg3 cachedSnapshot:(id)arg4 persistedSnapshot:(id)arg5;
+- (unsigned int)newVersionNumber;
 - (id)objectForKey:(id)arg1;
 - (id)objectSnapshot;
-- (NSUInteger)oldVersionNumber;
+- (unsigned int)oldVersionNumber;
 - (id)persistedSnapshot;
 - (id)sourceObject;
 - (id)valueForKey:(id)arg1;

@@ -2,30 +2,22 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CHDCategoryAxis : CHDAxis {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-    NSInteger mLabelAlignment;
-    NSInteger mLabelFrequency;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mAutomatic;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mNoMultipleLevelLabel;
+    boolmAutomatic;
+    boolmNoMultipleLevelLabel;
+    int mLabelAlignment;
+    int mLabelFrequency;
 }
 
 - (void)adjustAxisPositionForHorizontalChart;
 - (id)initWithResources:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isAutomatic;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isNoMultipleLabellevel;
-- (NSInteger)labelAlignment;
-- (NSInteger)labelFrequency;
-- (void)setAutomatic:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setLabelAlignment:(NSInteger)arg1;
-- (void)setLabelFrequency:(NSInteger)arg1;
-- (void)setNoMultipleLevelLabel:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (bool)isAutomatic;
+- (bool)isNoMultipleLabellevel;
+- (int)labelAlignment;
+- (int)labelFrequency;
+- (void)setAutomatic:(bool)arg1;
+- (void)setLabelAlignment:(int)arg1;
+- (void)setLabelFrequency:(int)arg1;
+- (void)setNoMultipleLevelLabel:(bool)arg1;
 
 @end

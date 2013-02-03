@@ -26,7 +26,7 @@
 + (oneway void)release;
 + (BOOL)respondsToSelector:(SEL)arg1;
 + (id)retain;
-+ (NSUInteger)retainCount;
++ (unsigned int)retainCount;
 + (id)self;
 + (Class)superclass;
 
@@ -42,7 +42,7 @@
 - (long long)forward:(SEL)arg1 :(void*)arg2;
 - (void)forwardInvocation:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFault;
 - (BOOL)isKindOfClass:(Class)arg1;
@@ -55,7 +55,7 @@
 - (oneway void)release;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (id)self;
 - (Class)superclass;
 - (struct _NSZone { }*)zone;

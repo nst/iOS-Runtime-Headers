@@ -8,7 +8,7 @@
     struct _CFCachedURLResponse { } *_cachedURLResponse;
     NSData *data;
     NSURLResponse *response;
-    NSUInteger storagePolicy;
+    unsigned int storagePolicy;
     NSDictionary *userInfo;
 }
 

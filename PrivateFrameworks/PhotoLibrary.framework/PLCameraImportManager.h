@@ -13,7 +13,7 @@
     BOOL _wantsToStopListening;
 }
 
-@property(retain) NSMutableArray *importers;
+@property(retain) NSMutableArray * importers;
 
 + (id)sharedCameraImportManager;
 
@@ -30,7 +30,7 @@
 - (id)init;
 - (void)removeImporter:(id)arg1;
 - (void)setImporters:(id)arg1;
-- (NSUInteger)startListening;
+- (unsigned int)startListening;
 - (void)stopListening;
 - (void)stopListeningWithCallbackTarget:(id)arg1 selector:(SEL)arg2;
 

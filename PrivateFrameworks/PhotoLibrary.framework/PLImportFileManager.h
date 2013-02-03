@@ -8,10 +8,10 @@
 + (BOOL)isCameraDirectoryFolderName:(id)arg1;
 + (BOOL)isImportDirectoryFolderName:(id)arg1;
 
-- (id)_DCIMFolderNameWithNumber:(NSInteger)arg1;
+- (id)_DCIMFolderNameWithNumber:(int)arg1;
 - (id)_dcimDirectory;
-- (id)newDCIMFolderWithFolderNumber:(NSInteger*)arg1;
 - (id)nextAvailableFilePathInDirectory:(id)arg1 withExtension:(id)arg2;
 - (BOOL)removeUnusedDCIMDirectoryAtPath:(id)arg1;
+- (id)urlForNewDCIMFolderWithFolderNumber:(int*)arg1;
 
 @end

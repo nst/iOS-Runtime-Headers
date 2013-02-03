@@ -3,7 +3,7 @@
  */
 
 @interface OADColorTransform : NSObject <NSCopying> {
-    NSInteger mType;
+    int mType;
 }
 
 + (float)applyAlphaTransform:(id)arg1 toAlpha:(float)arg2;
@@ -13,9 +13,9 @@
 + (id)applyTransforms:(id)arg1 toColor:(id)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)hash;
-- (id)initWithType:(NSInteger)arg1;
+- (unsigned int)hash;
+- (id)initWithType:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (NSInteger)type;
+- (int)type;
 
 @end

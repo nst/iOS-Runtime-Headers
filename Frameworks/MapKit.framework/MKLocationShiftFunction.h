@@ -4,10 +4,10 @@
 
 @interface MKLocationShiftFunction : NSObject {
     long long _c[6];
-    NSInteger _cacheSqHalfLength;
-    NSInteger _modelSqHalfLength;
-    NSInteger _originalLatitude;
-    NSInteger _originalLongitude;
+    int _cacheSqHalfLength;
+    int _modelSqHalfLength;
+    int _originalLatitude;
+    int _originalLongitude;
 }
 
 - (struct { double x1; double x2; })eval:(struct { double x1; double x2; })arg1;

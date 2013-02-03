@@ -10,7 +10,7 @@
     float mContourWidth;
     OADColor *mExtrusionColor;
     float mExtrusionHeight;
-    NSInteger mMaterial;
+    int mMaterial;
     float mShapeDepth;
     OADBevel *mTopBevel;
 }
@@ -24,16 +24,16 @@
 - (void)dealloc;
 - (id)extrusionColor;
 - (float)extrusionHeight;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
-- (NSInteger)material;
+- (int)material;
 - (void)setBottomBevel:(id)arg1;
 - (void)setContourColor:(id)arg1;
 - (void)setContourWidth:(float)arg1;
 - (void)setExtrusionColor:(id)arg1;
 - (void)setExtrusionHeight:(float)arg1;
-- (void)setMaterial:(NSInteger)arg1;
+- (void)setMaterial:(int)arg1;
 - (void)setShapeDepth:(float)arg1;
 - (void)setTopBevel:(id)arg1;
 - (float)shapeDepth;

@@ -8,7 +8,7 @@
     <SUContinuationDelegate> *_delegate;
 }
 
-@property <SUContinuationDelegate> *delegate;
+@property <SUContinuationDelegate> * delegate;
 
 - (void)cancel;
 - (id)delegate;

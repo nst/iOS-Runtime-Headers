@@ -12,7 +12,7 @@
 
 - (struct __CFString { }*)createStringValue;
 - (void)dealloc;
-- (NSInteger)readAttributesForDurationCell:(struct _xmlTextReader { }*)arg1;
+- (int)readAttributesForDurationCell:(struct _xmlTextReader { }*)arg1;
 - (void)setProcessorBundle:(struct __CFBundle { }*)arg1;
 
 @end

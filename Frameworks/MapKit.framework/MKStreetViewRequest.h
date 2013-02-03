@@ -2,19 +2,26 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSArray;
 
 @interface MKStreetViewRequest : GMMStreetViewRequest {
+    struct { 
+        double latitude; 
+        double longitude; 
     NSMutableArray *_panoramaLoaderRequests;
+    } _requestCoordinate;
 }
 
-@property(retain) NSArray *panoramaLoaderRequests;
+@property(retain) NSArray * panoramaLoaderRequests;
+@property struct { double latitude; double longitude; } requestCoordinate;
 
 - (void)dealloc;
 - (id)description;
 - (id)panoramaLoaderRequests;
 - (void)removePanoramaRequests:(id)arg1;
 - (void)removeRequest:(id)arg1;
+- (struct { double x1; double x2; })requestCoordinate;
 - (void)setPanoramaLoaderRequests:(id)arg1;
+- (void)setRequestCoordinate:(struct { double x1; double x2; })arg1;
 
 @end

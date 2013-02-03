@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILongPressGestureRecognizer, NSMutableSet, UITapGestureRecognizer, UIView<UITextSelectingContainer>, NSMutableArray, UITextChecker;
+@class UITextChecker, UIView<UITextSelectingContainer>, UILongPressGestureRecognizer, NSMutableArray, UIFieldEditor, UIView, NSMutableSet, UITapGestureRecognizer;
 
 @interface UITextInteractionAssistant : NSObject {
     struct CGPoint { 
@@ -16,7 +16,7 @@
         float y; 
     } _autoscrollBasePoint;
     float _autoscrollFactor;
-    NSInteger _autoscrollRamp;
+    int _autoscrollRamp;
     } _autoscrollUntransformedExtentPoint;
     BOOL _autoscrolled;
     BOOL _inGesture;
@@ -30,14 +30,14 @@
     UIView<UITextSelectingContainer> *_view;
 }
 
-@property(readonly) UIFieldEditor *fieldEditor;
-@property(retain) UILongPressGestureRecognizer *loupeGesture;
-@property(readonly) UIView *scrollView;
-@property(retain) UITapGestureRecognizer *singleTapGesture;
-@property(readonly) UIView<UITextSelectingContainer> *view;
-@property CGPoint autoscrollUntransformedExtentPoint;
+@property struct CGPoint { float x; float y; } autoscrollUntransformedExtentPoint;
 @property BOOL autoscrolled;
+@property(readonly) UIFieldEditor * fieldEditor;
 @property BOOL inGesture;
+@property(retain) UILongPressGestureRecognizer * loupeGesture;
+@property(readonly) UIView * scrollView;
+@property(retain) UITapGestureRecognizer * singleTapGesture;
+@property(readonly) UIView<UITextSelectingContainer> * view;
 
 - (id)addHighlightLinkRecognizer;
 - (id)addLoupeGestureRecognizer:(BOOL)arg1;
@@ -96,8 +96,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectFromContainerToContent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectFromContentToContainer:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)resignedFirstResponder;
-- (void)scheduleReplacementsForRange:(id)arg1 withOptions:(NSUInteger)arg2;
-- (void)scheduleReplacementsWithOptions:(NSUInteger)arg1;
+- (void)scheduleReplacementsForRange:(id)arg1 withOptions:(unsigned int)arg2;
+- (void)scheduleReplacementsWithOptions:(unsigned int)arg1;
 - (id)scrollView;
 - (void)selectAll;
 - (void)selectWord;

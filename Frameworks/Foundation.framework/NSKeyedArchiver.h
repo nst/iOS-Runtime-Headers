@@ -4,15 +4,15 @@
 
 @interface NSKeyedArchiver : NSCoder {
     void *_cache;
-    NSUInteger _cacheSize;
+    unsigned int _cacheSize;
     id _classNameMap;
     id _classes;
     id _conditionals;
     id _containers;
     id _delegate;
-    NSUInteger _estimatedCount;
-    NSUInteger _flags;
-    NSUInteger _genericKey;
+    unsigned int _estimatedCount;
+    unsigned int _flags;
+    unsigned int _genericKey;
     id _objRefMap;
     id _objects;
     id _replacementMap;
@@ -38,20 +38,20 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (void)encodeArrayOfObjCType:(const char *)arg1 count:(NSUInteger)arg2 at:(const void*)arg3;
+- (void)encodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(const void*)arg3;
 - (void)encodeBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)encodeBycopyObject:(id)arg1;
 - (void)encodeByrefObject:(id)arg1;
-- (void)encodeBytes:(const char *)arg1 length:(NSUInteger)arg2 forKey:(id)arg3;
-- (void)encodeBytes:(const void*)arg1 length:(NSUInteger)arg2;
+- (void)encodeBytes:(const char *)arg1 length:(unsigned int)arg2 forKey:(id)arg3;
+- (void)encodeBytes:(const void*)arg1 length:(unsigned int)arg2;
 - (void)encodeConditionalObject:(id)arg1 forKey:(id)arg2;
 - (void)encodeConditionalObject:(id)arg1;
 - (void)encodeDataObject:(id)arg1;
 - (void)encodeDouble:(double)arg1 forKey:(id)arg2;
 - (void)encodeFloat:(float)arg1 forKey:(id)arg2;
-- (void)encodeInt32:(NSInteger)arg1 forKey:(id)arg2;
+- (void)encodeInt32:(int)arg1 forKey:(id)arg2;
 - (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
-- (void)encodeInt:(NSInteger)arg1 forKey:(id)arg2;
+- (void)encodeInt:(int)arg1 forKey:(id)arg2;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;
 - (void)encodeObject:(id)arg1;
 - (void)encodeRootObject:(id)arg1;
@@ -61,12 +61,12 @@
 - (void)finishEncoding;
 - (id)init;
 - (id)initForWritingWithMutableData:(id)arg1;
-- (NSUInteger)outputFormat;
+- (unsigned int)outputFormat;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
 - (void)setClassName:(id)arg1 forClass:(Class)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setOutputFormat:(NSUInteger)arg1;
-- (NSUInteger)systemVersion;
-- (NSInteger)versionForClassName:(id)arg1;
+- (void)setOutputFormat:(unsigned int)arg1;
+- (unsigned int)systemVersion;
+- (int)versionForClassName:(id)arg1;
 
 @end

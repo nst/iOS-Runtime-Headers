@@ -5,20 +5,20 @@
 @class NSSubstringPredicateOperator;
 
 @interface NSInPredicateOperator : NSPredicateOperator {
-    NSUInteger _flags;
+    unsigned int _flags;
     NSSubstringPredicateOperator *_stringVersion;
 }
 
-- (void)_setOptions:(NSUInteger)arg1;
+- (void)_setOptions:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)flags;
+- (unsigned int)flags;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOperatorType:(NSUInteger)arg1 modifier:(NSUInteger)arg2 options:(NSUInteger)arg3;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 options:(unsigned int)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)minimalFormInContext:(id)arg1 ofPredicate:(id)arg2;
-- (NSUInteger)options;
+- (unsigned int)options;
 - (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
 - (id)stringVersion;
 - (id)symbol;

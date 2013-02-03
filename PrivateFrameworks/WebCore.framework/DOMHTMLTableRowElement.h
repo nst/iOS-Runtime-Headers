@@ -2,27 +2,29 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMHTMLCollection, NSString;
+
 @interface DOMHTMLTableRowElement : DOMHTMLElement {
 }
 
-@property(copy) NSString *align;
-@property(copy) NSString *bgColor;
-@property(retain,readonly) DOMHTMLCollection *cells;
-@property(copy) NSString *ch;
-@property(copy) NSString *chOff;
-@property(copy) NSString *vAlign;
-@property(readonly) NSInteger rowIndex;
-@property(readonly) NSInteger sectionRowIndex;
+@property(copy) NSString * align;
+@property(copy) NSString * bgColor;
+@property(retain,readonly) DOMHTMLCollection * cells;
+@property(copy) NSString * ch;
+@property(copy) NSString * chOff;
+@property(readonly) int rowIndex;
+@property(readonly) int sectionRowIndex;
+@property(copy) NSString * vAlign;
 
 - (id)align;
 - (id)bgColor;
 - (id)cells;
 - (id)ch;
 - (id)chOff;
-- (void)deleteCell:(NSInteger)arg1;
-- (id)insertCell:(NSInteger)arg1;
-- (NSInteger)rowIndex;
-- (NSInteger)sectionRowIndex;
+- (void)deleteCell:(int)arg1;
+- (id)insertCell:(int)arg1;
+- (int)rowIndex;
+- (int)sectionRowIndex;
 - (void)setAlign:(id)arg1;
 - (void)setBgColor:(id)arg1;
 - (void)setCh:(id)arg1;

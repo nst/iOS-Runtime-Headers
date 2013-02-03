@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonViewControllerDelegate>;
+@class ABModel, UIFont, <ABPersonViewControllerDelegate>, UIView, <ABPersonEditDelegate>, NSString, <ABStyleProvider>, NSArray;
 
 @interface ABPersonViewController : UIViewController {
     struct __CFArray { } *_displayedProperties;
@@ -10,23 +10,7 @@
     <ABPersonViewControllerDelegate> *_personViewDelegate;
 }
 
-@property void *addressBook;
-@property(copy) NSString *attribution;
-@property(retain) UIView *customHeaderView;
-@property(retain) UIView *customMessageView;
-@property void *displayedPerson;
-@property(copy) NSArray *displayedProperties;
-@property <ABPersonEditDelegate> *editDelegate;
-@property(copy) NSString *message;
-@property(copy) NSString *messageDetail;
-@property(retain) UIFont *messageDetailFont;
-@property(retain) UIFont *messageFont;
-@property(retain) ABModel *model;
-@property(retain) UIView *personHeaderView;
-@property <ABPersonViewControllerDelegate> *personViewDelegate;
-@property(copy) NSString *shareMessageBody;
-@property(copy) NSString *shareMessageSubject;
-@property(retain) <ABStyleProvider> *styleProvider;
+@property void* addressBook;
 @property BOOL allowsActions;
 @property BOOL allowsAddToFavorites;
 @property BOOL allowsCancel;
@@ -37,21 +21,38 @@
 @property BOOL allowsSharing;
 @property BOOL allowsSounds;
 @property BOOL appearsInLinkingPeoplePicker;
+@property(copy) NSString * attribution;
+@property(retain) UIView * customFooterView;
+@property(retain) UIView * customHeaderView;
+@property(retain) UIView * customMessageView;
+@property void* displayedPerson;
+@property(copy) NSArray * displayedProperties;
+@property <ABPersonEditDelegate> * editDelegate;
+@property(copy) NSString * message;
+@property(copy) NSString * messageDetail;
+@property(retain) UIFont * messageDetailFont;
+@property(retain) UIFont * messageFont;
+@property(retain) ABModel * model;
+@property(retain) UIView * personHeaderView;
 @property BOOL personHeaderViewScrolls;
+@property <ABPersonViewControllerDelegate> * personViewDelegate;
+@property(copy) NSString * shareMessageBody;
 @property BOOL shareMessageBodyIsHTML;
+@property(copy) NSString * shareMessageSubject;
 @property BOOL shouldShowLinkedPeople;
 @property BOOL shouldShowLinkingUI;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 + (id)arrayByWrappingIntegersInCFArray:(struct __CFArray { }*)arg1;
 + (struct __CFArray { }*)newCFArrayByUnwrappingIntegersInArray:(id)arg1;
 
 - (BOOL)_allowsAutorotation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
-- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
-- (NSInteger)abViewControllerType;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (int)abViewControllerType;
 - (float)ab_heightToFitForViewInPopoverView;
-- (void)addActionWithTitle:(id)arg1 shortTitle:(id)arg2 target:(id)arg3 selector:(SEL)arg4 forProperty:(NSInteger)arg5 withActionGrouping:(NSInteger)arg6 ordering:(NSInteger)arg7;
-- (void)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 forProperty:(NSInteger)arg4 withActionGrouping:(NSInteger)arg5 ordering:(NSInteger)arg6;
+- (void)addActionWithTitle:(id)arg1 shortTitle:(id)arg2 target:(id)arg3 selector:(SEL)arg4 forProperty:(int)arg5 withActionGrouping:(int)arg6 ordering:(int)arg7;
+- (void)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 forProperty:(int)arg4 withActionGrouping:(int)arg5 ordering:(int)arg6;
 - (void*)addressBook;
 - (BOOL)allowsActions;
 - (BOOL)allowsAddToFavorites;
@@ -67,7 +68,9 @@
 - (void)applicationWillSuspend;
 - (void)applicationWillTerminate:(id)arg1;
 - (id)attribution;
+- (BOOL)canHandleSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
 - (void)cancelEditing:(BOOL)arg1;
+- (id)customFooterView;
 - (id)customHeaderView;
 - (id)customMessageView;
 - (void)dealloc;
@@ -82,10 +85,13 @@
 - (void)ignoreNextLocalChange;
 - (id)init;
 - (id)initWithAddressBook:(void*)arg1;
+- (id)initWithModel:(id)arg1 style:(int)arg2;
 - (id)initWithModel:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2 addressBook:(void*)arg3 model:(id)arg4 style:(int)arg5;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 addressBook:(void*)arg3 model:(id)arg4;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 model:(id)arg3;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithStyle:(int)arg1;
 - (BOOL)isReadonly;
 - (void)loadView;
 - (BOOL)makeFirstFieldBecomeFirstResponder;
@@ -103,7 +109,7 @@
 - (BOOL)personHeaderViewScrolls;
 - (id)personViewDelegate;
 - (void)pickerCancel:(id)arg1;
-- (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 forProperty:(NSInteger)arg3 withActionGrouping:(NSInteger)arg4 ordering:(NSInteger)arg5;
+- (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 forProperty:(int)arg3 withActionGrouping:(int)arg4 ordering:(int)arg5;
 - (void)saveChanges;
 - (void)setActionShouldPickHighlightedItem:(BOOL)arg1;
 - (void)setAddressBook:(void*)arg1;
@@ -119,6 +125,8 @@
 - (void)setAppearsInLinkingPeoplePicker:(BOOL)arg1;
 - (void)setAttribution:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)setAttribution:(id)arg1;
+- (void)setCustomAppearanceProvider:(id)arg1;
+- (void)setCustomFooterView:(id)arg1;
 - (void)setCustomHeaderView:(id)arg1;
 - (void)setCustomMessageView:(id)arg1;
 - (void)setDisplayedPerson:(void*)arg1;
@@ -127,10 +135,10 @@
 - (void)setEditDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEditing:(BOOL)arg1 saveChanges:(BOOL)arg2 animated:(BOOL)arg3;
-- (void)setHighlightedItemForProperty:(NSInteger)arg1 withIdentifier:(NSInteger)arg2 important:(BOOL)arg3;
-- (void)setHighlightedItemForProperty:(NSInteger)arg1 withIdentifier:(NSInteger)arg2 person:(void*)arg3 important:(BOOL)arg4;
-- (void)setHighlightedItemForProperty:(NSInteger)arg1 withIdentifier:(NSInteger)arg2 person:(void*)arg3;
-- (void)setHighlightedItemForProperty:(NSInteger)arg1 withIdentifier:(NSInteger)arg2;
+- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 important:(BOOL)arg3;
+- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3 important:(BOOL)arg4;
+- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3;
+- (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2;
 - (void)setMessage:(id)arg1;
 - (void)setMessageDetail:(id)arg1;
 - (void)setMessageDetailFont:(id)arg1;
@@ -164,6 +172,6 @@
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

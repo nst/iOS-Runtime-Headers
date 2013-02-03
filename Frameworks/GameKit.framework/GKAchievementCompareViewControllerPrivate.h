@@ -9,16 +9,16 @@
     GKPlayer *_friend;
     NSMutableDictionary *_friendAchievementDictionary;
     NSArray *_friendAchievements;
-    NSUInteger _friendNumberOfAchievementsAchieved;
-    NSUInteger _friendPointsTally;
+    unsigned int _friendNumberOfAchievementsAchieved;
+    unsigned int _friendPointsTally;
 }
 
-@property(retain) UIImage *compositeCheckMark;
-@property(retain) GKPlayer *friend;
-@property(retain) NSMutableDictionary *friendAchievementDictionary;
-@property(retain) NSArray *friendAchievements;
-@property NSUInteger friendNumberOfAchievementsAchieved;
-@property NSUInteger friendPointsTally;
+@property(retain) UIImage * compositeCheckMark;
+@property(retain) GKPlayer * friend;
+@property(retain) NSMutableDictionary * friendAchievementDictionary;
+@property(retain) NSArray * friendAchievements;
+@property unsigned int friendNumberOfAchievementsAchieved;
+@property unsigned int friendPointsTally;
 
 - (void)_gkRefreshContents;
 - (id)achievementCompareCellAtIndexPath:(id)arg1;
@@ -28,23 +28,23 @@
 - (id)friend;
 - (id)friendAchievementDictionary;
 - (id)friendAchievements;
-- (NSUInteger)friendNumberOfAchievementsAchieved;
-- (NSUInteger)friendPointsTally;
+- (unsigned int)friendNumberOfAchievementsAchieved;
+- (unsigned int)friendPointsTally;
 - (id)headerCellAtIndexPath:(id)arg1;
 - (id)initWithGame:(id)arg1 withFriend:(id)arg2;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)playTapped;
 - (void)setCompositeCheckMark:(id)arg1;
 - (void)setFriend:(id)arg1;
 - (void)setFriendAchievementDictionary:(id)arg1;
 - (void)setFriendAchievements:(id)arg1;
-- (void)setFriendNumberOfAchievementsAchieved:(NSUInteger)arg1;
-- (void)setFriendPointsTally:(NSUInteger)arg1;
+- (void)setFriendNumberOfAchievementsAchieved:(unsigned int)arg1;
+- (void)setFriendPointsTally:(unsigned int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)title;
 - (void)updateFriendGameAchievements:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class UIButton, UIImageView, UILabel, UITableView, NSArray, UIActivityIndicatorView;
+@class UIActivityIndicatorView, UIImageView, UILabel, UIButton, UITableView, UIFont, UIImage, NSString, NSArray;
 
 @interface GKContentView : UIView {
     UIActivityIndicatorView *_activityIndicator;
@@ -17,27 +17,27 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) UIActivityIndicatorView *activityIndicator;
-@property(retain) UIButton *cancelButton;
-@property(retain,readonly) NSArray *connectionButtons;
-@property UIImage *icon;
-@property(retain) UIImageView *iconView;
-@property NSString *message;
-@property(readonly) UIFont *messageFont;
-@property(retain) UILabel *messageLabel;
-@property(retain) UIButton *otherButton;
-@property(retain,readonly) UITableView *table;
-@property NSString *title;
-@property(readonly) UIFont *titleFont;
-@property(retain) UILabel *titleLabel;
-@property NSInteger numberOfMessageLines;
-@property NSInteger numberOfTitleLines;
+@property(retain) UIActivityIndicatorView * activityIndicator;
+@property(retain) UIButton * cancelButton;
+@property(retain,readonly) NSArray * connectionButtons;
+@property UIImage * icon;
+@property(retain) UIImageView * iconView;
+@property NSString * message;
+@property(readonly) UIFont * messageFont;
+@property(retain) UILabel * messageLabel;
+@property int numberOfMessageLines;
+@property int numberOfTitleLines;
+@property(retain) UIButton * otherButton;
+@property(retain,readonly) UITableView * table;
+@property NSString * title;
+@property(readonly) UIFont * titleFont;
+@property(retain) UILabel * titleLabel;
 
 + (float)maxTextWidth;
 
 - (id)_createButton:(BOOL)arg1;
 - (void)_createCancelButtonWithTitle:(id)arg1;
-- (id)_createConnectionButtonWithType:(NSUInteger)arg1;
+- (id)_createConnectionButtonWithType:(unsigned int)arg1;
 - (void)_createMessageLabelIfNeeded;
 - (void)_createOtherButtonWithTitle:(id)arg1;
 - (void)_createTitleLabelIfNeeded;
@@ -53,18 +53,18 @@
 - (id)message;
 - (id)messageFont;
 - (id)messageLabel;
-- (NSInteger)numberOfMessageLines;
-- (NSInteger)numberOfTitleLines;
+- (int)numberOfMessageLines;
+- (int)numberOfTitleLines;
 - (id)otherButton;
 - (void)setActivityIndicator:(id)arg1;
 - (void)setCancelButton:(id)arg1;
-- (void)setConnectionButtons:(NSUInteger)arg1;
+- (void)setConnectionButtons:(unsigned int)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setIconView:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageLabel:(id)arg1;
-- (void)setNumberOfMessageLines:(NSInteger)arg1;
-- (void)setNumberOfTitleLines:(NSInteger)arg1;
+- (void)setNumberOfMessageLines:(int)arg1;
+- (void)setNumberOfTitleLines:(int)arg1;
 - (void)setOtherButton:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleLabel:(id)arg1;

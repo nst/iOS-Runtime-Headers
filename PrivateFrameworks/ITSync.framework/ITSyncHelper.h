@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ITSync.framework/ITSync
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class ITSyncFileLocker;
 
 @interface ITSyncHelper : NSObject {
@@ -11,13 +16,13 @@
     ITSyncFileLocker *_flocker;
     ITSyncFileLocker *_flockerWaitingForITDBPrep;
     ITSyncFileLocker *_flockerWaitingForSyncEnd;
-    NSInteger _handlingNotifications;
+    int _handlingNotifications;
     struct __CFArray { } *_observers;
     struct __CFSet { } *_observersBlockingSyncs;
     struct __CFArray { } *_observersNeedingStartNotification;
     struct __CFRunLoopTimer { } *_seedInternalStateAndObserversTimer;
-    NSInteger _syncGenerationCount;
-    NSUInteger _syncState;
+    int _syncGenerationCount;
+    unsigned int _syncState;
 }
 
 + (id)helper;
@@ -54,15 +59,15 @@
 - (BOOL)isITDBPostSyncProcessRunning;
 - (BOOL)isSyncingBlockedBySB;
 - (BOOL)notifyGetSBBlockingSyncState;
-- (NSInteger)notifyGetSyncGenerationCount;
-- (NSInteger)notifyGetSyncState;
+- (int)notifyGetSyncGenerationCount;
+- (int)notifyGetSyncState;
 - (void)notifySyncStateChangeIfNecessary;
 - (void)notifyUpdateAllSyncStateAndPost;
 - (void)postNotificationToiTunes:(struct __CFString { }*)arg1;
 - (void)registerObserver:(id)arg1;
 - (void)runITDBPostSyncProcess;
 - (void)runITDBPostSyncProcessForiTunesSyncPhaseDidEnd;
-- (void)setSyncState:(NSInteger)arg1 notifyRemoteDependents:(BOOL)arg2;
+- (void)setSyncState:(int)arg1 notifyRemoteDependents:(BOOL)arg2;
 - (void)setSyncingBlockedBySB:(BOOL)arg1 notifyRemoteDependents:(BOOL)arg2;
 - (void)syncFileLockerDidAcquireLock:(id)arg1;
 - (BOOL)tryToBlockSyncForRegisteredObserver:(id)arg1 threadedWaitIfNecessary:(BOOL)arg2;

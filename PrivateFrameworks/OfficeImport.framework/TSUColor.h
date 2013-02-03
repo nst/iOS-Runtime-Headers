@@ -6,7 +6,7 @@
     struct CGColor { } *mCGColor;
 }
 
-@property(readonly) CGColor *CGColor;
+@property(readonly) struct CGColor { }* CGColor;
 
 + (id)blackColor;
 + (id)blueColor;
@@ -39,7 +39,7 @@
 - (void)dealloc;
 - (id)grayscaleColor;
 - (float)greenComponent;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 - (id)initWithWhite:(float)arg1 alpha:(float)arg2;

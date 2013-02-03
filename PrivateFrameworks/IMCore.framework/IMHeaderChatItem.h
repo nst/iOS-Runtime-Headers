@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
+@class NSString;
+
 @interface IMHeaderChatItem : IMChatItem {
 }
 
-@property(readonly) NSString *stringValue;
+@property(readonly) NSString * stringValue;
 
 - (id)description;
 - (id)initWithString:(id)arg1 date:(id)arg2;

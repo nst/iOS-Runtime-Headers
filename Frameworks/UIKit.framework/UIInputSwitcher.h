@@ -6,12 +6,12 @@
 
 @interface UIInputSwitcher : NSObject {
     NSString *_newMode;
-    NSInteger m_state;
+    int m_state;
     UIDelayedAction *m_switcherDelay;
     UIInputSwitcherView *m_switcherView;
 }
 
-@property(copy) NSString *newMode;
+@property(copy) NSString * newMode;
 
 + (id)activeInstance;
 + (id)sharedInstance;

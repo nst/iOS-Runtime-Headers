@@ -8,7 +8,7 @@
     GMMCopyright *_copyright;
 }
 
-@property(retain) GMMCopyright *copyright;
+@property(retain) GMMCopyright * copyright;
 @property(readonly) BOOL hasCopyright;
 
 - (id)copyright;

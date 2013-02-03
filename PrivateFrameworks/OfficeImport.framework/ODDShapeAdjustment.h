@@ -3,12 +3,12 @@
  */
 
 @interface ODDShapeAdjustment : NSObject {
-    NSUInteger mIndex;
+    unsigned int mIndex;
     double mValue;
 }
 
-- (NSUInteger)index;
-- (void)setIndex:(NSUInteger)arg1;
+- (unsigned int)index;
+- (void)setIndex:(unsigned int)arg1;
 - (void)setValue:(double)arg1;
 - (double)value;
 

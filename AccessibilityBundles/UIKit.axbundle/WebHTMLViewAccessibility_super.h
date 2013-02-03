@@ -5,8 +5,8 @@
 @interface WebHTMLViewAccessibility_super : UIAccessibilitySafeCategory {
 }
 
-- (id)accessibilityElementAtIndex:(NSInteger)arg1;
-- (NSInteger)accessibilityElementCount;
-- (NSInteger)indexOfAccessibilityElement:(id)arg1;
+- (id)accessibilityElementAtIndex:(int)arg1;
+- (int)accessibilityElementCount;
+- (int)indexOfAccessibilityElement:(id)arg1;
 
 @end

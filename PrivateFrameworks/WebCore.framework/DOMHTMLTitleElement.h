@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString;
+
 @interface DOMHTMLTitleElement : DOMHTMLElement {
 }
 
-@property(copy) NSString *text;
+@property(copy) NSString * text;
 
 - (void)setText:(id)arg1;
 - (id)text;

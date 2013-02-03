@@ -8,14 +8,14 @@
     NSHashTable *_delegates;
 }
 
-@property(readonly) NSInteger numberOfTextFieldDelegates;
+@property(readonly) int numberOfTextFieldDelegates;
 
 - (void)addTextFieldDelegate:(id)arg1;
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (NSInteger)numberOfTextFieldDelegates;
+- (int)numberOfTextFieldDelegates;
 - (void)removeTextFieldDelegate:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 

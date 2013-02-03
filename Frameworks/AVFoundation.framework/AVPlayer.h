@@ -2,23 +2,23 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayerInternal;
+@class NSArray, AVPlayerItem, NSError, AVPlayerInternal;
 
 @interface AVPlayer : NSObject {
     AVPlayerInternal *_player;
 }
 
-@property(copy) NSArray *_displaysUsedForPlayback; /* unknown property attribute: S_setDisplaysUsedForPlayback: */
-@property(readonly) AVPlayerItem *currentItem;
-@property(readonly) NSError *error;
-@property(readonly) NSInteger _externalProtectionStatus;
-@property NSInteger actionAtItemEnd;
+@property(setter=_setDisplaysUsedForPlayback:,copy) NSArray * _displaysUsedForPlayback;
+@property(readonly) int _externalProtectionStatus;
+@property int actionAtItemEnd;
 @property(getter=isAudioPlaybackEnabledAtAllRates,readonly) BOOL audioPlaybackEnabledAtAllRates;
 @property(getter=isClosedCaptionDisplayEnabled) BOOL closedCaptionDisplayEnabled;
+@property(readonly) AVPlayerItem * currentItem;
+@property(readonly) NSError * error;
 @property float maxRateForAudioPlayback;
 @property float minRateForAudioPlayback;
 @property float rate;
-@property(readonly) NSInteger status;
+@property(readonly) int status;
 
 + (BOOL)automaticallyNotifiesObserversOfActionAtItemEnd;
 + (BOOL)automaticallyNotifiesObserversOfClosedCaptionDisplayEnabled;
@@ -33,20 +33,22 @@
 + (id)playerWithPlayerItem:(id)arg1;
 + (id)playerWithURL:(id)arg1;
 
-- (NSInteger)_actionAtItemEnd;
+- (int)_actionAtItemEnd;
 - (void)_addFPListeners;
 - (void)_addLayer:(id)arg1;
 - (void)_advanceCurrentItemToItemContainingFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1;
-- (BOOL)_attachItem:(id)arg1 andPerformOperation:(NSInteger)arg2 withObject:(id)arg3;
+- (BOOL)_attachItem:(id)arg1 andPerformOperation:(int)arg2 withObject:(id)arg3;
 - (void)_attachLayerToFigPlayer;
 - (void)_beginInterruption;
+- (id)_cachedValueForKey:(id)arg1;
 - (void)_changeStatusToFailedWithError:(id)arg1;
 - (void)_checkDefaultsWriteForPerformanceLogging;
 - (id)_currentItem;
-- (NSInteger)_defaultActionAtItemEnd;
+- (int)_defaultActionAtItemEnd;
+- (void)_didAccessKVOForKey:(id)arg1;
 - (id)_displaysUsedForPlayback;
 - (void)_enumerateItemsUsingBlock:(id)arg1;
-- (NSInteger)_externalProtectionStatus;
+- (int)_externalProtectionStatus;
 - (struct OpaqueFigPlayer { }*)_figPlayer;
 - (id)_fpNotificationNames;
 - (BOOL)_insertItem:(id)arg1 afterItem:(id)arg2;
@@ -58,7 +60,7 @@
 - (void)_logPerformanceDataForPreviousItem;
 - (id)_playbackDisplaysForFigPlayer;
 - (id)_playerLayers;
-- (NSInteger)_playerType;
+- (int)_playerType;
 - (void)_preparePlaybackItemOfItemForEnqueueing:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)_propertyStorage;
 - (float)_rate;
@@ -67,26 +69,28 @@
 - (void)_removeFPListeners;
 - (BOOL)_removeItem:(id)arg1;
 - (void)_removeLayer:(id)arg1;
-- (void)_setActionAtItemEnd:(NSInteger)arg1 allowingAdvance:(BOOL)arg2;
+- (void)_setActionAtItemEnd:(int)arg1 allowingAdvance:(BOOL)arg2;
+- (void)_setCachedValue:(id)arg1 forKey:(id)arg2;
 - (void)_setCurrentItem:(id)arg1;
 - (void)_setDisplaysUsedForPlayback:(id)arg1;
 - (void)_setLayer:(id)arg1;
-- (void)_setVideoCompositor:(id)arg1;
-- (void)_setVideoCompositorToMatchItem:(id)arg1;
 - (BOOL)_shouldLogPerformanceData;
 - (struct dispatch_queue_s { }*)_stateDispatchQueue;
-- (id)_videoCompositor;
 - (id)_weakReference;
-- (NSInteger)actionAtItemEnd;
+- (void)_willAccessKVOForKey:(id)arg1;
+- (int)actionAtItemEnd;
 - (id)addBoundaryTimeObserverForTimes:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2 usingBlock:(id)arg3;
-- (id)addPeriodicTimeObserverForInterval:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1 queue:(struct dispatch_queue_s { }*)arg2 usingBlock:(id)arg3;
+- (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4;
+- (id)addPeriodicTimeObserverForInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 queue:(struct dispatch_queue_s { }*)arg2 usingBlock:(id)arg3;
 - (id)currentItem;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })currentTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
 - (void)dealloc;
 - (void)didChangeValueForKey:(id)arg1;
+- (struct dispatch_queue_s { }*)dispatchQueue;
 - (id)error;
 - (void)finalize;
 - (id)init;
+- (id)initWithDispatchQueue:(struct dispatch_queue_s { }*)arg1;
 - (id)initWithPlayerItem:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isAudioPlaybackEnabledAtAllRates;
@@ -103,16 +107,16 @@
 - (void)removeTimeObserver:(id)arg1;
 - (void)replaceCurrentItemWithPlayerItem:(id)arg1;
 - (id)retain;
-- (void)seekToTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg3;
-- (void)seekToTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
-- (void)setActionAtItemEnd:(NSInteger)arg1;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setActionAtItemEnd:(int)arg1;
 - (void)setClosedCaptionDisplayEnabled:(BOOL)arg1;
 - (void)setMaxRateForAudioPlayback:(float)arg1;
 - (void)setMinRateForAudioPlayback:(float)arg1;
 - (void)setRate:(float)arg1;
 - (void)setSubtitleDisplayEnabled:(BOOL)arg1;
 - (void)setWaitsUntilItemsAreReadyForInspectionBeforeMakingEligibleForPlayback:(BOOL)arg1;
-- (NSInteger)status;
+- (int)status;
 - (BOOL)waitsUntilItemsAreReadyForInspectionBeforeMakingEligibleForPlayback;
 - (void)willChangeValueForKey:(id)arg1;
 

@@ -5,23 +5,23 @@
 @class NSString;
 
 @interface EKDaemonConnection : NSObject {
-    NSUInteger _connectionPort;
+    unsigned int _connectionPort;
     NSString *_dbPath;
     id _delegate;
-    NSUInteger _machPort;
-    NSUInteger _options;
-    NSUInteger _serverPort;
+    unsigned int _machPort;
+    unsigned int _options;
+    unsigned int _serverPort;
 }
 
 @property id delegate;
-@property(readonly) NSUInteger port;
+@property(readonly) unsigned int port;
 
 - (BOOL)_connectToServer;
 - (void)_daemonRestarted;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithOptions:(unsigned long)arg1 path:(id)arg2;
-- (NSUInteger)port;
+- (unsigned int)port;
 - (void)setDelegate:(id)arg1;
 
 @end

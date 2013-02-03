@@ -10,12 +10,12 @@
     NSString *_url;
 }
 
-@property(retain) NSString *headline;
-@property(retain) NSString *text;
-@property(retain) NSString *url;
 @property(readonly) BOOL hasHeadline;
 @property(readonly) BOOL hasText;
 @property(readonly) BOOL hasUrl;
+@property(retain) NSString * headline;
+@property(retain) NSString * text;
+@property(retain) NSString * url;
 
 - (void)dealloc;
 - (id)description;

@@ -7,38 +7,38 @@
         struct { 
             double t_begin; 
             double t_end; 
-            NSInteger pid; 
-            NSUInteger thread; 
-            NSInteger run_state; 
+            int pid; 
+            unsigned int thread; 
+            int run_state; 
             unsigned long long dispatch_queue_serial_num; 
         } context; 
-        NSUInteger *frames; 
+        unsigned int *frames; 
         char *frame_types; 
-        NSUInteger length; 
+        unsigned int length; 
     } _callstack;
-    NSInteger _flavor;
+    int _flavor;
 }
 
-- (struct _CSTypeRef { NSUInteger x1; NSUInteger x2; })_symbolicator;
-- (NSUInteger*)backtrace;
-- (NSUInteger)backtraceLength;
+- (struct _CSTypeRef { unsigned int x1; unsigned int x2; })_symbolicator;
+- (unsigned int*)backtrace;
+- (unsigned int)backtraceLength;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (unsigned long long)dispatchQueueSerialNumber;
-- (void)fixupStackWithSamplingContext:(struct sampling_context_t { }*)arg1 symbolicator:(struct _CSTypeRef { NSUInteger x1; NSUInteger x2; })arg2;
-- (void)fixupStackWithTask:(NSUInteger)arg1 symbolicator:(struct _CSTypeRef { NSUInteger x1; NSUInteger x2; })arg2 taskMemoryCache:(id)arg3;
+- (void)fixupStackWithSamplingContext:(struct sampling_context_t { }*)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
+- (void)fixupStackWithTask:(unsigned int)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2 taskMemoryCache:(id)arg3;
 - (BOOL)hasSameCallstack:(id)arg1;
-- (id)initWithSamplingContext:(struct sampling_context_t { }*)arg1 thread:(NSUInteger)arg2;
-- (id)initWithTask:(NSUInteger)arg1 thread:(NSUInteger)arg2 is64Bit:(BOOL)arg3 taskMemoryCache:(id)arg4;
-- (id)initWithTask:(NSUInteger)arg1 thread:(NSUInteger)arg2 is64Bit:(BOOL)arg3;
+- (id)initWithSamplingContext:(struct sampling_context_t { }*)arg1 thread:(unsigned int)arg2;
+- (id)initWithTask:(unsigned int)arg1 thread:(unsigned int)arg2 is64Bit:(BOOL)arg3 taskMemoryCache:(id)arg4;
+- (id)initWithTask:(unsigned int)arg1 thread:(unsigned int)arg2 is64Bit:(BOOL)arg3;
 - (void)removeTopmostFrame;
 - (void)setEndTime:(double)arg1;
 - (void)setLengthTime:(double)arg1;
 - (void)setStartTime:(double)arg1;
-- (void)setThreadState:(NSInteger)arg1;
-- (NSUInteger)thread;
-- (NSInteger)threadState;
-- (NSUInteger)topmostFrame;
+- (void)setThreadState:(int)arg1;
+- (unsigned int)thread;
+- (int)threadState;
+- (unsigned int)topmostFrame;
 
 @end

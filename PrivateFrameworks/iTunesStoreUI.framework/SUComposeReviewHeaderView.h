@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SURatingControl, UIImageView, <SUComposeReviewHeaderDelegate>, UILabel, ISReview, SUComposeTextFieldListView;
+@class SUComposeTextFieldListView, SURatingControl, UIImageView, UILabel, UIResponder, <SUComposeReviewHeaderDelegate>, NSString, ISReview;
 
 @interface SUComposeReviewHeaderView : UIView {
     unsigned int _showNicknameField : 1;
@@ -11,38 +11,38 @@
     SURatingControl *_ratingControl;
     UILabel *_ratingLabel;
     ISReview *_review;
-    NSInteger _style;
+    int _style;
     SUComposeTextFieldListView *_textFieldListView;
 }
 
-@property <SUComposeReviewHeaderDelegate> *delegate;
-@property(readonly) UIResponder *initialFirstResponder;
-@property(readonly) NSString *nickname;
-@property(retain) ISReview *review;
-@property(readonly) NSString *title;
-@property(readonly) NSInteger composeReviewStyle;
+@property(readonly) int composeReviewStyle;
+@property <SUComposeReviewHeaderDelegate> * delegate;
+@property(readonly) UIResponder * initialFirstResponder;
+@property(readonly) NSString * nickname;
 @property float rating;
+@property(retain) ISReview * review;
+@property(readonly) NSString * title;
 
 - (void)_layoutSubviewsForPadStyle;
 - (void)_layoutSubviewsForPhoneStyle;
 - (void)_setupViewsForPadStyle;
 - (void)_setupViewsForPhoneStyle;
-- (NSInteger)composeReviewStyle;
+- (int)composeReviewStyle;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(NSInteger)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)initialFirstResponder;
 - (void)layoutSubviews;
 - (id)nickname;
-- (NSInteger)numberOfColumnsInTextFieldList:(id)arg1;
-- (NSInteger)numberOfFieldsInTextFieldList:(id)arg1;
+- (int)numberOfColumnsInTextFieldList:(id)arg1;
+- (int)numberOfFieldsInTextFieldList:(id)arg1;
 - (float)rating;
 - (id)review;
 - (void)setDelegate:(id)arg1;
 - (void)setRating:(float)arg1;
 - (void)setReview:(id)arg1;
 - (void)sizeToFit;
-- (id)textFieldList:(id)arg1 configurationForFieldAtIndex:(NSUInteger)arg2;
+- (id)textFieldList:(id)arg1 configurationForFieldAtIndex:(unsigned int)arg2;
 - (void)textFieldListValidityDidChange:(id)arg1;
 - (void)textFieldListValuesDidChange:(id)arg1;
 - (id)title;

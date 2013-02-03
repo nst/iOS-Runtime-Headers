@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SportsVoices.framework/SportsVoices
  */
 
-@class NSMutableDictionary, Token;
+@class NSMutableDictionary, NSString;
 
 @interface Cell : NSObject <InitFromPlistProtocol> {
-    NSMutableDictionary *attributes;
-    Token *content;
-    Token *post;
-    Token *pre;
-    NSInteger type;
+    NSMutableDictionary *_attributes;
+    int _type;
 }
 
-@property(retain) NSMutableDictionary *attributes;
-@property(retain) NSString *content;
-@property(retain) NSString *post;
-@property(retain) NSString *pre;
-@property(readonly) NSInteger type;
+@property(retain) NSMutableDictionary * attributes;
+@property(retain) NSString * content;
+@property(retain) NSString * post;
+@property(retain) NSString * pre;
+@property(readonly) int type;
 
 + (id)blank;
 + (id)cell;
@@ -51,6 +48,6 @@
 - (void)setContent:(id)arg1;
 - (void)setPost:(id)arg1;
 - (void)setPre:(id)arg1;
-- (NSInteger)type;
+- (int)type;
 
 @end

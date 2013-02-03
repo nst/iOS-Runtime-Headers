@@ -41,7 +41,7 @@
 - (BOOL)_isRelationship;
 - (BOOL)_isToManyRelationship;
 - (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
-- (NSUInteger)_propertyType;
+- (unsigned int)_propertyType;
 - (id)_rawValidationPredicates;
 - (id)_rawValidationWarnings;
 - (void)_replaceValidationPredicates:(id)arg1 andWarnings:(id)arg2;
@@ -59,7 +59,7 @@
 - (id)elementID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entity;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

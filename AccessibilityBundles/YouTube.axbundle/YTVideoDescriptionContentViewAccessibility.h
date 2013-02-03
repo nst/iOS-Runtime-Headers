@@ -7,11 +7,8 @@
 
 + (void)_initializeSafeCategory;
 
-- (id)_accessibilityChildren;
-- (id)accessibilityElementAtIndex:(NSInteger)arg1;
-- (NSInteger)accessibilityElementCount;
+- (id)accessibilityContainerElements;
 - (void)dealloc;
-- (NSInteger)indexOfAccessibilityElement:(id)arg1;
 - (BOOL)isAccessibilityElement;
 
 @end

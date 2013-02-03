@@ -6,20 +6,34 @@
    See Warning(s) below.
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSOperationQueue;
 
 @interface CMMotionManagerInternal : NSObject {
-    struct CLAccelerometer { int (**x1)(); char *x2; struct NotificationInfo {} *x3; NSInteger x4; NSInteger x5; struct CLSensorInterface {} *x6; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x7; } *fAccelerometer;
+    int (*fPrivateAccelerometerDataCallback)();
+    int (*fPrivateDeviceMotionCallback)();
+    int (*fPrivateGyroDataCallback)();
+    boolfInactive;
+    boolfShowsDeviceMovementDisplay;
+    boolfStartAccelerometerOnResume;
+    boolfStartDeviceMotionOnResume;
+    boolfStartGyroOnResume;
+    boolfStartMagnetometerOnResume;
+    struct CLAccelerometer { int (**x1)(); char *x2; struct NotificationInfo {} *x3; int x4; boolx5; unsigned int x6; unsigned int x7; struct __CFRunLoopSource {} *x8; int x9; struct CLSensorInterface {} *x10; boolx11; } *fAccelerometer;
     struct Dispatcher { int (**x1)(); } *fAccelerometerDispatcher;
     id fAccelerometerHandler;
     NSOperationQueue *fAccelerometerQueue;
     double fAccelerometerUpdateInterval;
-    struct CLDeviceMotion { int (**x1)(); char *x2; struct NotificationInfo {} *x3; NSInteger x4; NSInteger x5; struct Dispatcher {} *x6; struct Dispatcher {} *x7; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x8; void*x9; double x10; double x11; float x12; double x13; struct CLSensorFusion {} *x14; struct CLGyroMotionCalc {} *x15; NSInteger x16; NSInteger x17; } *fDeviceMotion;
+    struct CLDeviceMotion { int (**x1)(); char *x2; struct NotificationInfo {} *x3; int x4; boolx5; unsigned int x6; unsigned int x7; struct __CFRunLoopSource {} *x8; int x9; struct Dispatcher {} *x10; struct Dispatcher {} *x11; boolx12; boolx13; double x14; double x15; double x16; float x17; double x18; struct CLSensorFusion {} *x19; struct CLGyroMotionCalc {} *x20; int x21; int x22; } *fDeviceMotion;
     struct Dispatcher { int (**x1)(); } *fDeviceMotionDispatcher;
     id fDeviceMotionHandler;
     NSOperationQueue *fDeviceMotionQueue;
     double fDeviceMotionUpdateInterval;
-    struct CLGyro { int (**x1)(); char *x2; struct NotificationInfo {} *x3; NSInteger x4; NSInteger x5; struct CLSensorInterface {} *x6; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x7; } *fGyro;
+    struct CLGyro { int (**x1)(); char *x2; struct NotificationInfo {} *x3; int x4; boolx5; unsigned int x6; unsigned int x7; struct __CFRunLoopSource {} *x8; int x9; struct CLSensorInterface {} *x10; boolx11; } *fGyro;
     struct Dispatcher { int (**x1)(); } *fGyroDispatcher;
     id fGyroHandler;
     NSOperationQueue *fGyroQueue;
@@ -28,16 +42,17 @@
     double fLastDeviceMotionNotificationTimestamp;
     double fLastGyroNotificationTimestamp;
     double fLastMagnetometerNotificationTimestamp;
-    struct CLMagnetometer { int (**x1)(); char *x2; struct NotificationInfo {} *x3; NSInteger x4; NSInteger x5; struct CLSensorInterface {} *x6; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x7; } *fMagnetometer;
+    struct CLMagnetometer { int (**x1)(); char *x2; struct NotificationInfo {} *x3; int x4; boolx5; unsigned int x6; unsigned int x7; struct __CFRunLoopSource {} *x8; int x9; struct CLSensorInterface {} *x10; boolx11; } *fMagnetometer;
     struct Dispatcher { int (**x1)(); } *fMagnetometerDispatcher;
     id fMagnetometerHandler;
     NSOperationQueue *fMagnetometerQueue;
     double fMagnetometerUpdateInterval;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fInactive;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fStartAccelerometerOnResume;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fStartDeviceMotionOnResume;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fStartGyroOnResume;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fStartMagnetometerOnResume;
+    void *fPrivateAccelerometerDataCallbackInfo;
+    struct Dispatcher { int (**x1)(); } *fPrivateAccelerometerDataDispatcher;
+    void *fPrivateDeviceMotionCallbackInfo;
+    struct Dispatcher { int (**x1)(); } *fPrivateDeviceMotionDispatcher;
+    void *fPrivateGyroDataCallbackInfo;
+    struct Dispatcher { int (**x1)(); } *fPrivateGyroDataDispatcher;
 }
 
 - (void)dealloc;

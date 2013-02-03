@@ -13,12 +13,12 @@
     UIWindow *_window;
 }
 
-@property(retain) UIImageView *backgroundView;
-@property(retain) UIImageView *imageView;
-@property(retain) UILabel *label;
-@property(retain) UIWindow *window;
+@property(retain) UIImageView * backgroundView;
 @property double duration;
+@property(retain) UIImageView * imageView;
+@property(retain) UILabel * label;
 @property BOOL showing;
+@property(retain) UIWindow * window;
 
 - (id)backgroundView;
 - (void)dealloc;
@@ -27,7 +27,7 @@
 - (id)imageView;
 - (id)init;
 - (id)label;
-- (void)layoutForOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)layoutForOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)layoutSubviews;
 - (void)orientationChanged:(id)arg1;
 - (void)setBackgroundView:(id)arg1;

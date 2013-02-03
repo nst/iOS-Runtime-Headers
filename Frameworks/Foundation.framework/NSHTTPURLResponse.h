@@ -8,8 +8,8 @@
     NSHTTPURLResponseInternal *_httpInternal;
 }
 
-+ (BOOL)isErrorStatusCode:(NSInteger)arg1;
-+ (id)localizedStringForStatusCode:(NSInteger)arg1;
++ (BOOL)isErrorStatusCode:(int)arg1;
++ (id)localizedStringForStatusCode:(int)arg1;
 
 - (id)_clientCertificateChain;
 - (id)_clientCertificateState;
@@ -26,8 +26,8 @@
 - (double)expirationInterval;
 - (BOOL)getAppleMaxAge:(double*)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 statusCode:(NSInteger)arg2 headerFields:(id)arg3 requestTime:(double)arg4;
+- (id)initWithURL:(id)arg1 statusCode:(int)arg2 headerFields:(id)arg3 requestTime:(double)arg4;
 - (long long)maxExpectedContentLength;
-- (NSInteger)statusCode;
+- (int)statusCode;
 
 @end

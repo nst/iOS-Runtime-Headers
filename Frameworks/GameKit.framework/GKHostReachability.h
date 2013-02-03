@@ -9,8 +9,8 @@
     NSString *_hostName;
 }
 
-@property(retain) NSError *error;
-@property(retain) NSString *hostName;
+@property(retain) NSError * error;
+@property(retain) NSString * hostName;
 
 + (id)reachabilityWithHostName:(id)arg1;
 

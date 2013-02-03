@@ -2,6 +2,11 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface NSDictionary : NSObject <NSCopying, NSMutableCopying, NSCoding, NSFastEnumeration> {
 }
 
@@ -19,28 +24,28 @@
 + (id)dictionaryWithDictionary:(id)arg1;
 + (id)dictionaryWithObject:(id)arg1 forKey:(id)arg2;
 + (id)dictionaryWithObjects:(id)arg1 forKeys:(id)arg2;
-+ (id)dictionaryWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(NSUInteger)arg3;
++ (id)dictionaryWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(unsigned int)arg3;
 + (id)dictionaryWithObjectsAndKeys:(id)arg1;
 + (id)dictionaryWithPlistData:(id)arg1;
 + (id)newWithContentsOf:(id)arg1 immutable:(BOOL)arg2;
 
-- (struct KeyValueArray { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; NSUInteger x3; struct Object {} *x4[1]; }*)CA_copyRenderKeyValueArray;
+- (struct KeyValueArray { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; struct Object {} *x4[1]; }*)CA_copyRenderKeyValueArray;
+- (id)CDVObjectForKeyCaseInsensitive:(id)arg1;
+- (id)CDVObjectForKeyWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)DAObjectForKeyCaseInsensitive:(id)arg1;
 - (id)MCDeepCopy;
 - (id)MCDeepCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)MCMutableDeepCopy;
 - (id)MCMutableDeepCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)MCRetainOptionalNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 invalidDataCode:(NSInteger)arg3 invalidDataErrorString:(id)arg4 outError:(id*)arg5;
-- (id)MCRetainOptionalObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 invalidDataCode:(NSInteger)arg4 invalidDataErrorString:(id)arg5 outError:(id*)arg6;
-- (id)MCRetainRequiredNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 missingDataCode:(NSInteger)arg3 missingDataErrorString:(id)arg4 invalidDataCode:(NSInteger)arg5 invalidDataErrorString:(id)arg6 outError:(id*)arg7;
-- (id)MCRetainRequiredObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 missingDataCode:(NSInteger)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(NSInteger)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
-- (id)ML3NumberForKey:(id)arg1 fallbackKey:(id)arg2;
-- (id)ML3NumberForKey:(id)arg1;
+- (id)MCRetainOptionalNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 invalidDataCode:(int)arg3 invalidDataErrorString:(id)arg4 outError:(id*)arg5;
+- (id)MCRetainOptionalObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 invalidDataCode:(int)arg4 invalidDataErrorString:(id)arg5 outError:(id*)arg6;
+- (id)MCRetainRequiredNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 missingDataCode:(int)arg3 missingDataErrorString:(id)arg4 invalidDataCode:(int)arg5 invalidDataErrorString:(id)arg6 outError:(id*)arg7;
+- (id)MCRetainRequiredObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 missingDataCode:(int)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(int)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
 - (id)ML3StringForKey:(id)arg1;
 - (void)_apply:(int (*)())arg1 context:(void*)arg2;
 - (BOOL)_boolForKey:(id)arg1;
 - (unsigned long)_cfTypeID;
-- (NSUInteger)_fullCount;
+- (unsigned int)_fullCount;
 - (BOOL)_getValue:(id*)arg1 forKey:(id)arg2;
 - (BOOL)_mapkit_writeBinaryPlist:(id)arg1 atomically:(BOOL)arg2;
 - (void)_safari_setObject:(id)arg1 forUncopiedKey:(id)arg2;
@@ -51,17 +56,17 @@
 - (BOOL)_sync_isFolder;
 - (BOOL)_sync_shouldSkip;
 - (id)_sync_title;
-- (NSInteger)_web_intForKey:(id)arg1;
+- (int)_web_intForKey:(id)arg1;
 - (id)_web_numberForKey:(id)arg1;
 - (id)_web_objectForMIMEType:(id)arg1;
 - (id)_web_stringForKey:(id)arg1;
 - (id)_webkit_arrayForKey:(id)arg1;
 - (BOOL)_webkit_boolForKey:(id)arg1;
-- (NSInteger)_webkit_intForKey:(id)arg1;
+- (int)_webkit_intForKey:(id)arg1;
 - (id)_webkit_numberForKey:(id)arg1;
 - (id)_webkit_objectForMIMEType:(id)arg1;
 - (id)_webkit_stringForKey:(id)arg1;
-- (NSInteger)abCompare:(id)arg1;
+- (int)abCompare:(id)arg1;
 - (id)allKeys;
 - (id)allKeysForObject:(id)arg1;
 - (id)allObjects;
@@ -72,19 +77,21 @@
 - (BOOL)containsKey:(id)arg1;
 - (BOOL)containsObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
-- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
-- (NSUInteger)countForKey:(id)arg1;
-- (NSUInteger)countForObject:(id)arg1;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countForKey:(id)arg1;
+- (unsigned int)countForObject:(id)arg1;
 - (BOOL)decodeBoolForKey:(id)arg1;
 - (double)decodeDoubleForKey:(id)arg1;
 - (long long)decodeInt64ForKey:(id)arg1;
-- (NSInteger)decodeIntegerForKey:(id)arg1;
+- (int)decodeIntegerForKey:(id)arg1;
 - (long long)decodeLongLongForKey:(id)arg1;
 - (id)decodeObjectForKey:(id)arg1;
+- (unsigned long long)decodeUInt64ForKey:(id)arg1;
+- (unsigned int)decodeUnsignedIntegerForKey:(id)arg1;
 - (id)description;
 - (id)descriptionInStringsFileFormat;
-- (id)descriptionWithLocale:(id)arg1 indent:(NSUInteger)arg2;
+- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
 - (id)descriptionWithLocale:(id)arg1;
 - (id)dictionaryByAddingObject:(id)arg1 forKey:(id)arg2;
 - (id)dictionaryByAddingObjectsFromArray:(id)arg1 forKeys:(id)arg2;
@@ -92,12 +99,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateKeysAndObjectsUsingBlock:(id)arg1;
-- (void)enumerateKeysAndObjectsWithOptions:(NSUInteger)arg1 usingBlock:(id)arg2;
+- (void)enumerateKeysAndObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
 - (id)fileCreationDate;
 - (BOOL)fileExtensionHidden;
 - (id)fileGroupOwnerAccountID;
 - (id)fileGroupOwnerAccountName;
-- (NSUInteger)fileGroupOwnerAccountNumber;
+- (unsigned int)fileGroupOwnerAccountNumber;
 - (unsigned long)fileHFSCreatorCode;
 - (unsigned short)fileHFSFlags;
 - (unsigned long long)fileHFSResourceForkSize;
@@ -107,18 +114,18 @@
 - (id)fileModificationDate;
 - (id)fileOwnerAccountID;
 - (id)fileOwnerAccountName;
-- (NSUInteger)fileOwnerAccountNumber;
-- (NSUInteger)filePosixPermissions;
+- (unsigned int)fileOwnerAccountNumber;
+- (unsigned int)filePosixPermissions;
 - (unsigned long long)fileSize;
-- (NSUInteger)fileSystemFileNumber;
-- (NSInteger)fileSystemNumber;
+- (unsigned int)fileSystemFileNumber;
+- (int)fileSystemNumber;
 - (id)fileType;
 - (void)getKeys:(id*)arg1;
-- (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(NSUInteger)arg3;
+- (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(unsigned int)arg3;
 - (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
 - (void)getObjects:(id*)arg1;
 - (BOOL)hasKey:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
@@ -126,29 +133,29 @@
 - (id)initWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithObjects:(id)arg1 forKeys:(id)arg2;
-- (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(NSUInteger)arg3;
+- (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(unsigned int)arg3;
 - (id)initWithObjectsAndKeys:(id)arg1;
 - (id)invertedDictionary;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToDictionary:(id)arg1;
 - (BOOL)isNSDictionary__;
-- (NSInteger)iterations;
+- (int)iterations;
 - (id)keyEnumerator;
 - (id)keysOfChangedEntriesComparedTo:(id)arg1;
 - (id)keysOfEntriesPassingTest:(id)arg1;
-- (id)keysOfEntriesWithOptions:(NSUInteger)arg1 passingTest:(id)arg2;
+- (id)keysOfEntriesWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (id)keysSortedByValueUsingComparator:(id)arg1;
 - (id)keysSortedByValueUsingSelector:(SEL)arg1;
-- (id)keysSortedByValueWithOptions:(NSUInteger)arg1 usingComparator:(id)arg2;
-- (NSInteger)lineNumber;
+- (id)keysSortedByValueWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
+- (int)lineNumber;
 - (BOOL)matchesUID:(id)arg1;
 - (BOOL)mf_boolForKey:(id)arg1;
-- (NSInteger)mf_integerForKey:(id)arg1;
+- (int)mf_integerForKey:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)mutableDeepAutoreleasedCopy;
 - (id)objectEnumerator;
-- (id)objectForIntegerKey:(NSInteger)arg1;
-- (id)objectForIntegerKey:(NSInteger)arg1;
+- (id)objectForIntegerKey:(int)arg1;
+- (id)objectForIntegerKey:(int)arg1;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKeyCaseInsensitive:(id)arg1;
 - (id)objectForKeyWithNameSpace:(id)arg1 andName:(id)arg2;
@@ -165,7 +172,7 @@
 - (id)sourceURL;
 - (SEL)testSelector;
 - (id)text;
-- (NSInteger)type;
+- (int)type;
 - (id)valueForKey:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;
 - (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;

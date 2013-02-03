@@ -5,20 +5,20 @@
 @class NSString;
 
 @interface PLKeyword : NSObject <PLConnectionObjectInteraction> {
-    NSUInteger _changeFlags;
-    NSInteger _primaryKey;
+    unsigned int _changeFlags;
+    int _primaryKey;
     NSString *_title;
 }
 
 + (Class)classFromStepData:(struct sqlite3_stmt { }*)arg1;
-+ (NSInteger)createTablesForConnection:(id)arg1;
++ (int)createTablesForConnection:(id)arg1;
 + (id)keywordWithDefaultValues;
 
 - (void)dealloc;
 - (id)description;
 - (id)initWithStepData:(struct sqlite3_stmt { }*)arg1;
-- (NSInteger)primaryKey;
-- (NSInteger)saveToConnection:(id)arg1;
+- (int)primaryKey;
+- (int)saveToConnection:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

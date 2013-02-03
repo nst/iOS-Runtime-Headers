@@ -3,12 +3,12 @@
  */
 
 @interface HandleWrapper : NSObject {
-    struct tagHANDLE { NSInteger x1; } *handle;
+    struct tagHANDLE { int x1; } *handle;
 }
 
-@property tagHANDLE *handle;
+@property struct tagHANDLE { int x1; }* handle;
 
-- (struct tagHANDLE { NSInteger x1; }*)handle;
-- (void)setHandle:(struct tagHANDLE { NSInteger x1; }*)arg1;
+- (struct tagHANDLE { int x1; }*)handle;
+- (void)setHandle:(struct tagHANDLE { int x1; }*)arg1;
 
 @end

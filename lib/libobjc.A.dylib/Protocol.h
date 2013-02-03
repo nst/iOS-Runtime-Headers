@@ -13,7 +13,7 @@
 + (Class)class;
 + (BOOL)conformsToProtocol:(id)arg1;
 + (id)description;
-+ (NSUInteger)hash;
++ (unsigned int)hash;
 + (void)initialize;
 + (BOOL)isEqual:(id)arg1;
 + (BOOL)isKindOfClass:(Class)arg1;
@@ -26,7 +26,7 @@
 + (oneway void)release;
 + (BOOL)respondsToSelector:(SEL)arg1;
 + (id)retain;
-+ (NSUInteger)retainCount;
++ (unsigned int)retainCount;
 + (id)self;
 + (Class)superclass;
 + (struct _NSZone { }*)zone;
@@ -38,7 +38,7 @@
 - (id)description;
 - (struct objc_method_description { SEL x1; char *x2; }*)descriptionForClassMethod:(SEL)arg1;
 - (struct objc_method_description { SEL x1; char *x2; }*)descriptionForInstanceMethod:(SEL)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isKindOfClass:(Class)arg1;
 - (BOOL)isMemberOfClass:(Class)arg1;
@@ -50,7 +50,7 @@
 - (oneway void)release;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (id)self;
 - (Class)superclass;
 - (struct _NSZone { }*)zone;

@@ -7,9 +7,9 @@
 }
 
 @property(readonly) double pitch;
-@property(readonly) ? quaternion;
+@property(readonly) struct { double x; double y; double z; double w; } quaternion;
 @property(readonly) double roll;
-@property(readonly) ? rotationMatrix;
+@property(readonly) struct { double m11; double m12; double m13; double m21; double m22; double m23; double m31; double m32; double m33; } rotationMatrix;
 @property(readonly) double yaw;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

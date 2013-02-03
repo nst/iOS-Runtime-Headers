@@ -2,54 +2,68 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, AVPropertyStorage, NSError, AVPlayerItem, AVAsset, AVVideoComposition, NSArray, NSDictionary, AVPlayerConnection, AVAudioMix, NSMutableArray, NSURL;
+@class AVWeakReference, AVPropertyStorage, NSError, AVPlayerItem, AVAsset, NSDate, AVVideoComposition, NSArray, NSDictionary, AVPlayerConnection, AVAudioMix, NSMutableArray, NSURL;
 
 @interface AVPlayerItemInternal : NSObject {
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     NSURL *URL;
     AVAsset *asset;
+    AVAsset *assetWithFigPlaybackItem;
     AVAudioMix *audioMix;
     NSArray *chapterImageTimes;
+    BOOL didFireKVOForAssetForNonStreamingItem;
     BOOL didInformObserversAboutAvailabilityOfTracks;
+    BOOL didSetAssetToAssetWithFigPlaybackItem;
     NSError *error;
     BOOL externalProtectionRequested;
     struct OpaqueFigCPEProtector { } *figCPEProtector;
     struct OpaqueFigPlaybackItem { } *figPlaybackItem;
     NSDictionary *gaplessInfo;
     NSMutableArray *handlersToCallWhenReadyForEnqueueing;
+    BOOL haveCPEProtector;
+    BOOL haveInitialSamples;
     BOOL initialAlwaysMonitorsPlayability;
     BOOL initialContinuesPlayingDuringPrerollForRateChange;
     BOOL initialContinuesPlayingDuringPrerollForSeek;
+    NSDate *initialDate;
+    } initialDuration;
+    NSDate *initialEstimatedDate;
     } initialForwardPlaybackEndTime;
     BOOL initialLimitReadAhead;
     } initialReversePlaybackEndTime;
     } initialTime;
     } initialToleranceAfter;
     } initialToleranceBefore;
+    BOOL isCurrentPlayerItem;
     BOOL needTimedMetadataNotification;
     AVPlayerItem *nextItem;
     BOOL nonForcedSubtitleDisplayEnabled;
@@ -62,11 +76,12 @@
     NSDictionary *protectedContentProtectionInfo;
     float soundCheckVolumeNormalization;
     struct dispatch_queue_s { } *stateDispatchQueue;
-    NSInteger status;
+    int status;
     NSMutableArray *syncLayers;
     NSArray *timedMetadata;
     AVVideoComposition *videoComposition;
     float volumeAdjustment;
+    BOOL wasInitializedWithURL;
     AVWeakReference *weakReference;
 }
 

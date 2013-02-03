@@ -9,6 +9,6 @@
 - (void)dealloc;
 - (oneway void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

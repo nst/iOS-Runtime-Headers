@@ -15,7 +15,7 @@
     BOOL _hasViewAppeared;
     BOOL _isSuspended;
     MFMailComposeController *_mailComposeController;
-    NSUInteger _mailComposeControllerOptions;
+    unsigned int _mailComposeControllerOptions;
     BOOL _rotationSnapshotTaken;
 }
 
@@ -26,7 +26,7 @@
 - (id)_compositionContext;
 - (void)_dismissPeoplePicker:(id)arg1;
 - (void)_dismissPersonCard:(id)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
 - (id)_mailComposeController;
 - (id)_mailComposeView;
 - (void)_presentPeoplePicker:(id)arg1 fromView:(id)arg2;
@@ -39,8 +39,8 @@
 - (id)autorotationDelegate;
 - (void)dealloc;
 - (id)delegate;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
-- (id)initWithCompositionContext:(id)arg1 contentSize:(struct CGSize { float x1; float x2; })arg2 mailComposeControllerOptions:(NSUInteger)arg3;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (id)initWithCompositionContext:(id)arg1 contentSize:(struct CGSize { float x1; float x2; })arg2 mailComposeControllerOptions:(unsigned int)arg3;
 - (id)initWithCompositionContext:(id)arg1;
 - (void)loadView;
 - (void)mailComposeControllerComposeBodyFieldDidFinishLoad;
@@ -50,13 +50,13 @@
 - (id)rotatingHeaderView;
 - (void)setAutorotationDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)tearDownUI;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

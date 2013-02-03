@@ -2,33 +2,23 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CHDPie2DType : CHDChartType {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-    NSInteger mFirstSliceAngle;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mBarOfPieType;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mDoughnutType;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mPieOfPieType;
+    boolmBarOfPieType;
+    boolmDoughnutType;
+    boolmPieOfPieType;
+    int mFirstSliceAngle;
 }
 
 - (id)contentFormat;
-- (NSInteger)defaultLabelPosition;
-- (NSInteger)firstSliceAngle;
+- (int)defaultLabelPosition;
+- (int)firstSliceAngle;
 - (id)initWithChart:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isBarOfPieType;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isDoughnutType;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isPieOfPieType;
-- (void)setBarOfPieType:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setDoughnutType:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setFirstSliceAngle:(NSInteger)arg1;
-- (void)setPieOfPieType:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (bool)isBarOfPieType;
+- (bool)isDoughnutType;
+- (bool)isPieOfPieType;
+- (void)setBarOfPieType:(bool)arg1;
+- (void)setDoughnutType:(bool)arg1;
+- (void)setFirstSliceAngle:(int)arg1;
+- (void)setPieOfPieType:(bool)arg1;
 
 @end

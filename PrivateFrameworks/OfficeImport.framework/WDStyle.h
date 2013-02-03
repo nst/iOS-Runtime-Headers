@@ -13,7 +13,7 @@
     WDStyle *mNextStyle;
     WDParagraphProperties *mParagraphProperties;
     WDStyleSheet *mStyleSheet;
-    NSInteger mStyleType;
+    int mStyleType;
     WDTableCellProperties *mTableCellProperties;
     WDTableRowProperties *mTableRowProperties;
     WDTableStyleOverride *mTableStyleOverrides[12];
@@ -27,7 +27,7 @@
 - (void)dealloc;
 - (BOOL)hidden;
 - (id)id;
-- (id)initWithStyleSheet:(id)arg1 id:(id)arg2 type:(NSInteger)arg3;
+- (id)initWithStyleSheet:(id)arg1 id:(id)arg2 type:(int)arg3;
 - (BOOL)isAnythingOverridden;
 - (id)name;
 - (id)nextStyle;
@@ -40,7 +40,7 @@
 - (id)tableCellProperties;
 - (id)tableProperties;
 - (id)tableRowProperties;
-- (id)tableStyleOverrideForPart:(NSInteger)arg1;
-- (NSInteger)type;
+- (id)tableStyleOverrideForPart:(int)arg1;
+- (int)type;
 
 @end

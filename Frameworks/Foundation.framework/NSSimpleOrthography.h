@@ -3,11 +3,11 @@
  */
 
 @interface NSSimpleOrthography : NSOrthography {
-    NSUInteger _orthographyFlags;
+    unsigned int _orthographyFlags;
 }
 
 + (void)initialize;
-+ (id)orthographyWithFlags:(NSUInteger)arg1;
++ (id)orthographyWithFlags:(unsigned int)arg1;
 
 - (id)allLanguages;
 - (id)allScripts;
@@ -18,9 +18,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDominantScript:(id)arg1 languageMap:(id)arg2;
-- (id)initWithFlags:(NSUInteger)arg1;
+- (id)initWithFlags:(unsigned int)arg1;
 - (id)languageMap;
 - (id)languagesForScript:(id)arg1;
-- (NSUInteger)orthographyFlags;
+- (unsigned int)orthographyFlags;
 
 @end

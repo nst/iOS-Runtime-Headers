@@ -11,13 +11,13 @@
 + (id)_getUUID;
 + (id)_groupObjectsByRootEntity:(id)arg1;
 + (id)_newObjectIDsArrayWithMapping:(id)arg1 andEntries:(id)arg2 andCoordinator:(id)arg3;
-+ (BOOL)convertCString:(const char *)arg1 toUnsignedInt64:(unsigned long long*)arg2 withBase:(NSInteger)arg3;
++ (BOOL)convertCString:(const char *)arg1 toUnsignedInt64:(unsigned long long*)arg2 withBase:(int)arg3;
 + (void)deleteFileForPFExternalReferenceData:(id)arg1;
 + (void)initialize;
 + (long long)lengthOfFileAtExternalReferenceLocation:(const char *)arg1;
 + (BOOL)moveInterimFileToPermanentLocation:(id)arg1;
 + (id)newMappedDataForExternalReference:(id)arg1;
-+ (void)readBytesForExternalReferenceData:(id)arg1 intoBuffer:(void*)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
++ (void)readBytesForExternalReferenceData:(id)arg1 intoBuffer:(void*)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 + (void*)readExternalReferenceDataFromFile:(id)arg1;
 + (id)writePFExternalReferenceDataToInterimFile:(id)arg1;
 

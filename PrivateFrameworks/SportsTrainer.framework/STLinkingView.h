@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SportsTrainer.framework/SportsTrainer
  */
 
-@class UIButton, UIView, <STLinkingViewDelegate>, UILabel;
+@class UIButton, UIView, <STLinkingViewDelegate>, UILabel, NSString;
 
 @interface STLinkingView : UIView {
     BOOL _animateLayout;
@@ -14,16 +14,16 @@
     UILabel *_fgsnLabel;
     UILabel *_instructionLabel;
     UIButton *_linkNewButton;
-    NSInteger _linkingType;
+    int _linkingType;
     UIView *_pulseView;
     UIButton *_rescanButton;
     UIButton *_unlinkButton;
 }
 
-@property <STLinkingViewDelegate> *delegate;
-@property(copy) NSString *serialNumber;
 @property BOOL bordered;
-@property NSInteger linkingType;
+@property <STLinkingViewDelegate> * delegate;
+@property int linkingType;
+@property(copy) NSString * serialNumber;
 
 + (void)_initializeSafeCategory;
 
@@ -43,12 +43,12 @@
 - (id)delegate;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (NSInteger)linkingType;
+- (int)linkingType;
 - (id)serialNumber;
 - (void)setBordered:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLinkingType:(NSInteger)arg1 animated:(BOOL)arg2;
-- (void)setLinkingType:(NSInteger)arg1;
+- (void)setLinkingType:(int)arg1 animated:(BOOL)arg2;
+- (void)setLinkingType:(int)arg1;
 - (void)setSerialNumber:(id)arg1;
 - (void)willMoveToSuperview:(id)arg1;
 

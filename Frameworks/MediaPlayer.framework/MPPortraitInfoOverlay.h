@@ -2,23 +2,25 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVItem, MPTextView, MPNowPlayingItemQueueInfoButton, MPPortraitControlsOverlay;
+@class UIImage, MPAVItem, MPTextView, MPNowPlayingItemQueueInfoButton, MPPortraitControlsOverlay;
 
 @interface MPPortraitInfoOverlay : UIView <MPPlaybackControlsDelegate> {
     unsigned int _transitioning : 1;
     unsigned int _allowsDetailScrubbing : 1;
+    UIImage *_artworkImage;
     MPPortraitControlsOverlay *_controlsView;
     id _delegate;
     MPTextView *_displayableTextView;
     MPAVItem *_item;
     MPNowPlayingItemQueueInfoButton *_itemQueueInfoButton;
-    NSUInteger _visibleParts;
+    unsigned int _visibleParts;
 }
 
-@property(retain) MPAVItem *item;
 @property BOOL allowsDetailScrubbing;
+@property(retain) UIImage * artworkImage;
 @property id delegate;
-@property NSUInteger visibleParts;
+@property(retain) MPAVItem * item;
+@property unsigned int visibleParts;
 
 - (BOOL)_configureNowPlayingQueueInfoButton:(id)arg1 item:(id)arg2 time:(double)arg3;
 - (id)_controlsView;
@@ -31,13 +33,14 @@
 - (id)_itemQueueInfoButton:(BOOL)arg1;
 - (void)_playbackStateChanged:(id)arg1;
 - (void)_reloadDisplayableTextViewForItem:(id)arg1 animate:(BOOL)arg2;
+- (void)_reloadTextViewArtwork;
 - (void)_reloadViews;
 - (void)_removeDisplayableTextWithAnimation:(BOOL)arg1;
 - (void)_updateAllItemDependenciesForItem:(id)arg1 animate:(BOOL)arg2;
-- (void)_updateDisplayableTextViewArtworkForItem:(id)arg1 time:(double)arg2;
 - (void)_updateDisplayableTextViewForItem:(id)arg1 animate:(BOOL)arg2;
 - (void)_updateItemQueueInfoButtonForItem:(id)arg1 atTime:(double)arg2 animate:(BOOL)arg3;
 - (BOOL)allowsDetailScrubbing;
+- (id)artworkImage;
 - (BOOL)controlsOverlay:(id)arg1 shouldUseDetailScrubberForItem:(id)arg2;
 - (void)controlsOverlayDetailSliderInstructionOverlayWillHide:(id)arg1;
 - (void)controlsOverlayDetailSliderInstructionOverlayWillShow:(id)arg1;
@@ -53,13 +56,13 @@
 - (void)layoutSubviews;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
 - (void)setAlpha:(float)arg1;
+- (void)setArtworkImage:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setItem:(id)arg1;
-- (void)setVisibleParts:(NSUInteger)arg1;
+- (void)setVisibleParts:(unsigned int)arg1;
 - (void)startTicking;
 - (void)stopTicking;
-- (void)updateArtworkToTime:(double)arg1;
-- (NSUInteger)visibleParts;
+- (unsigned int)visibleParts;
 - (void)willTransition;
 
 @end

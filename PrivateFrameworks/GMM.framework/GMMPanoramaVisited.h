@@ -9,8 +9,8 @@
     NSString *_panoId;
 }
 
-@property(retain) GMMMapPoint *latLon;
-@property(retain) NSString *panoId;
+@property(retain) GMMMapPoint * latLon;
+@property(retain) NSString * panoId;
 
 - (void)dealloc;
 - (id)description;

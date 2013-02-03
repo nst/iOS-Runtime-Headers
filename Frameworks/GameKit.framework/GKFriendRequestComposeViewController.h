@@ -8,15 +8,15 @@
     GKComposeController *_composeController;
     <GKFriendRequestComposeViewControllerDelegate> *_composeViewDelegate;
     NSString *_message;
-    NSUInteger _recipientCount;
+    unsigned int _recipientCount;
 }
 
-@property(retain) GKComposeController *composeController;
-@property <GKFriendRequestComposeViewControllerDelegate> *composeViewDelegate;
-@property(retain) NSString *message;
-@property NSUInteger recipientCount;
+@property(retain) GKComposeController * composeController;
+@property <GKFriendRequestComposeViewControllerDelegate> * composeViewDelegate;
+@property(retain) NSString * message;
+@property unsigned int recipientCount;
 
-+ (NSUInteger)maxNumberOfRecipients;
++ (unsigned int)maxNumberOfRecipients;
 
 - (void)addRecipientsNonPlayerIDCommon:(id)arg1;
 - (void)addRecipientsWithAliases:(id)arg1;
@@ -32,13 +32,13 @@
 - (id)init;
 - (id)message;
 - (void)prepareForNewRecipients:(id)arg1;
-- (NSUInteger)recipientCount;
+- (unsigned int)recipientCount;
 - (void)sendFinishedMessageToDelegate;
 - (void)setComposeController:(id)arg1;
 - (void)setComposeViewDelegate:(id)arg1;
 - (void)setMessage:(id)arg1;
-- (void)setRecipientCount:(NSUInteger)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (void)setRecipientCount:(unsigned int)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

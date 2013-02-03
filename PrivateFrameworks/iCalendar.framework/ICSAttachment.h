@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
+@class NSString;
+
 @interface ICSAttachment : ICSProperty {
 }
 
-@property(retain) NSString *fmtype;
-@property(retain) NSString *x_apple_ews_attachmentid;
-@property(retain) NSString *x_apple_filename;
+@property(retain) NSString * fmtype;
 @property BOOL x_apple_autoarchived;
+@property(retain) NSString * x_apple_ews_attachmentid;
+@property(retain) NSString * x_apple_filename;
 
-- (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (id)filename;
 - (id)fmtype;
 - (id)initWithData:(id)arg1;

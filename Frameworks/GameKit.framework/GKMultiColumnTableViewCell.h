@@ -2,44 +2,44 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray;
+@class GKCellBackgroundView, NSArray;
 
 @interface GKMultiColumnTableViewCell : GKTableViewCell {
-    NSUInteger _columnCount;
+    unsigned int _columnCount;
     SEL _columnCountSetter;
     float _columnSeparatorWidth;
     NSArray *_contentsArray;
     BOOL _multiCellEnabled;
-    NSInteger _selectedColumn;
+    int _selectedColumn;
     SEL _selectedColumnSetter;
 }
 
-@property(readonly) GKCellBackgroundView *cellBackgroundView;
-@property(copy) NSArray *contentsArray;
-@property(readonly) GKCellBackgroundView *selectedCellBackgroundView;
-@property NSUInteger columnCount;
+@property(readonly) GKCellBackgroundView * cellBackgroundView;
+@property unsigned int columnCount;
 @property SEL columnCountSetter;
 @property float columnSeparatorWidth;
+@property(copy) NSArray * contentsArray;
 @property BOOL multiCellEnabled;
-@property NSInteger selectedColumn;
+@property(readonly) GKCellBackgroundView * selectedCellBackgroundView;
+@property int selectedColumn;
 @property SEL selectedColumnSetter;
 
 - (void)_updateHighlightColorsForView:(id)arg1 highlighted:(BOOL)arg2;
 - (id)cellBackgroundView;
-- (NSUInteger)columnCount;
+- (unsigned int)columnCount;
 - (SEL)columnCountSetter;
 - (float)columnSeparatorWidth;
 - (void)configureBackgroundView;
 - (id)contentsArray;
 - (void)dealloc;
-- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(NSInteger)arg3 backgroundStyle:(NSInteger)arg4;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;
 - (void)layoutSubviews;
 - (BOOL)multiCellEnabled;
 - (void)prepareForReuse;
 - (id)selectedCellBackgroundView;
-- (NSInteger)selectedColumn;
+- (int)selectedColumn;
 - (SEL)selectedColumnSetter;
-- (void)setColumnCount:(NSUInteger)arg1;
+- (void)setColumnCount:(unsigned int)arg1;
 - (void)setColumnCountSetter:(SEL)arg1;
 - (void)setColumnSeparatorWidth:(float)arg1;
 - (void)setContentsArray:(id)arg1;
@@ -47,8 +47,8 @@
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setMultiCellEnabled:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setSelectedColumn:(NSInteger)arg1 animated:(BOOL)arg2;
-- (void)setSelectedColumn:(NSInteger)arg1;
+- (void)setSelectedColumn:(int)arg1 animated:(BOOL)arg2;
+- (void)setSelectedColumn:(int)arg1;
 - (void)setSelectedColumnSetter:(SEL)arg1;
 - (void)updateBackgroundViews;
 

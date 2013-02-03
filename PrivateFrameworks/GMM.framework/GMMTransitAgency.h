@@ -10,11 +10,11 @@
     NSString *_phone;
 }
 
-@property(retain) NSString *mainUrl;
-@property(retain) NSString *name;
-@property(retain) NSString *phone;
 @property(readonly) BOOL hasMainUrl;
 @property(readonly) BOOL hasPhone;
+@property(retain) NSString * mainUrl;
+@property(retain) NSString * name;
+@property(retain) NSString * phone;
 
 - (void)dealloc;
 - (id)description;

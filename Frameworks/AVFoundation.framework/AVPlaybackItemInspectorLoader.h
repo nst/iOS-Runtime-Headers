@@ -7,9 +7,10 @@
     struct OpaqueFigPlaybackItem { } *_playbackItem;
 }
 
-@property(getter=_playbackItem,readonly) OpaqueFigPlaybackItem *playbackItem;
+@property(getter=_playbackItem,readonly) struct OpaqueFigPlaybackItem { }* playbackItem;
 
-- (struct OpaqueFigFormatReader { }*)_copyFormatReaderFromFigObjectWithFigErrorCode:(NSInteger*)arg1;
+- (void)_addFigObjectNotifications;
+- (struct OpaqueFigFormatReader { }*)_copyFormatReaderFromFigObjectWithFigErrorCode:(int*)arg1;
 - (id)_dictionaryOfSpecialGettersForKeyValueStatus;
 - (struct OpaqueFigFormatReaderLoader { }*)_formatReaderLoader;
 - (BOOL)_inspectionRequiresAFormatReader;
@@ -21,7 +22,7 @@
 - (void)cancelLoading;
 - (void)dealloc;
 - (void)finalize;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithURL:(id)arg1 playbackItem:(struct OpaqueFigPlaybackItem { }*)arg2;
 - (BOOL)isEqual:(id)arg1;
 

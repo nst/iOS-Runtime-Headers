@@ -12,8 +12,8 @@
     UITextInputTraits *_traits;
 }
 
-@property(retain) NSTimer *holdTimer;
-@property(readonly) MFComposeRecipient *recipient;
+@property(retain) NSTimer * holdTimer;
+@property(readonly) MFComposeRecipient * recipient;
 
 + (void)_initializeSafeCategory;
 

@@ -10,7 +10,7 @@
         unsigned char sin_family; 
         unsigned short sin_port; 
         struct in_addr { 
-            NSUInteger s_addr; 
+            unsigned int s_addr; 
         } sin_addr; 
         BOOL sin_zero[8]; 
     struct sockaddr_in { 
@@ -18,7 +18,7 @@
         unsigned char sin_family; 
         unsigned short sin_port; 
         struct in_addr { 
-            NSUInteger s_addr; 
+            unsigned int s_addr; 
         } sin_addr; 
         BOOL sin_zero[8]; 
     NSObject<LoopbackSocketTunnelDelegate> *delegate;
@@ -26,20 +26,20 @@
     NSObject *optionalArg;
     unsigned short port;
     } sa;
-    NSInteger sockFD;
+    int sockFD;
     } vtpSA;
 }
 
-@property NSObject *optionalArg;
+@property NSObject * optionalArg;
 
-- (void)getIPPort:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
-- (void)getVTPIPPort:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
+- (void)getIPPort:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
+- (void)getVTPIPPort:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
 - (id)initWithPort:(unsigned short)arg1 delegate:(id)arg2;
 - (id)optionalArg;
-- (NSInteger)sendPacketToVTP:(id)arg1;
-- (NSInteger)serverLoopProc:(id)arg1;
+- (int)sendPacketToVTP:(id)arg1;
+- (int)serverLoopProc:(id)arg1;
 - (void)setOptionalArg:(id)arg1;
-- (void)setVTPIP:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
+- (void)setVTPIP:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
 - (void)shutdownSocket;
 
 @end

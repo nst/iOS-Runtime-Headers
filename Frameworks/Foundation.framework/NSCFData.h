@@ -10,13 +10,13 @@
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)finalize;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (NSUInteger)length;
+- (unsigned int)length;
 - (void*)mutableBytes;
 - (oneway void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
-- (void)setLength:(NSUInteger)arg1;
+- (unsigned int)retainCount;
+- (void)setLength:(unsigned int)arg1;
 
 @end

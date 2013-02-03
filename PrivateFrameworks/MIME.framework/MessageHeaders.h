@@ -6,12 +6,12 @@
 
 @interface MessageHeaders : NSObject <NSCopying> {
     NSData *_data;
-    NSUInteger _preferredEncoding;
+    unsigned int _preferredEncoding;
 }
 
 + (id)addressListFromEncodedString:(id)arg1;
 + (id)basicHeaders;
-+ (id)encodedDataForAddressList:(id)arg1 splittingAtLength:(NSUInteger)arg2 firstLineBuffer:(NSUInteger)arg3;
++ (id)encodedDataForAddressList:(id)arg1 splittingAtLength:(unsigned int)arg2 firstLineBuffer:(unsigned int)arg3;
 + (BOOL)isStructuredHeaderKey:(id)arg1;
 + (BOOL)shouldDecodeHeaderForKey:(id)arg1;
 + (id)uniqueHeaderKeyStringForString:(id)arg1;
@@ -19,10 +19,10 @@
 - (id)_capitalizedKeyForKey:(id)arg1;
 - (id)_copyAddressListForKey:(id)arg1;
 - (id)_copyEncodedHeaderStringForKey:(id)arg1;
-- (id)_copyHeaderValueForKey:(id)arg1 offset:(NSUInteger*)arg2 decoded:(BOOL)arg3;
+- (id)_copyHeaderValueForKey:(id)arg1 offset:(unsigned int*)arg2 decoded:(BOOL)arg3;
 - (id)_copyHeaderValueForKey:(id)arg1;
 - (id)_decodeHeaderKeysFromData:(id)arg1;
-- (id)_headerValueForKey:(id)arg1 offset:(NSUInteger*)arg2;
+- (id)_headerValueForKey:(id)arg1 offset:(unsigned int*)arg2;
 - (id)_headerValueForKey:(id)arg1;
 - (BOOL)_isStructuredHeaderKey:(id)arg1;
 - (void)_setCapitalizedKey:(id)arg1 forKey:(id)arg2;
@@ -34,7 +34,7 @@
 - (id)copyAddressListForResentFrom;
 - (id)copyAddressListForSender;
 - (id)copyAddressListForTo;
-- (id)copyDecodedStringFromHeaderData:(id)arg1 withRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (id)copyDecodedStringFromHeaderData:(id)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)copyEncodedStringForBcc;
 - (id)copyEncodedStringForCc;
 - (id)copyEncodedStringForResentFrom;

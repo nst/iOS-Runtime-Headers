@@ -11,10 +11,10 @@
     NSURL *_redirectURL;
 }
 
-@property(retain) NSNumber *authenticatedAccountDSID;
-@property(retain) SSAuthenticationContext *authenticationContext;
-@property(retain) ISDialog *dialog;
-@property(retain) NSURL *redirectURL;
+@property(retain) NSNumber * authenticatedAccountDSID;
+@property(retain) SSAuthenticationContext * authenticationContext;
+@property(retain) ISDialog * dialog;
+@property(retain) NSURL * redirectURL;
 
 - (BOOL)_copyAccountIdentifier:(id*)arg1 returningError:(id*)arg2;
 - (id)_copyAuthenticationContext;

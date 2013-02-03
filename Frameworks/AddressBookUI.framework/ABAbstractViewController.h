@@ -9,16 +9,16 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property(retain) ABModel *model;
-@property(retain) <ABStyleProvider> *styleProvider;
+@property(retain) ABModel * model;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 - (BOOL)_allowsAutorotation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
-- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
-- (NSInteger)behavior;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (int)behavior;
 - (struct CGSize { float x1; float x2; })contentSize;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)initWithModel:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)model;
@@ -28,6 +28,6 @@
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
 - (void)updateNavigationButtons;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

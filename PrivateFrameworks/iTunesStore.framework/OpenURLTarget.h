@@ -9,12 +9,12 @@
         NSString *clientIdentifier; 
         NSString *normalScheme; 
         NSString *secureScheme; 
-    NSUInteger _applicationState;
+    unsigned int _applicationState;
     } _targetData;
-    NSInteger _targetIndex;
+    int _targetIndex;
 }
 
-- (NSInteger)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (id)copyURLForURL:(id)arg1;
 - (id)description;
 - (id)init;

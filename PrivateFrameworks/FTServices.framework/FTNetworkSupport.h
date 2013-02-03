@@ -5,6 +5,7 @@
 @class APSConnection, NSTimer;
 
 @interface FTNetworkSupport : NSObject {
+    Class _APSConnectionClass;
     APSConnection *_apsConnection;
     BOOL _criticalReliabilityEnabledState;
     BOOL _enableCriticalReliability;
@@ -29,7 +30,7 @@
 - (id)autorelease;
 - (BOOL)enableCriticalReliability;
 - (oneway void)release;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)setEnableCriticalReliability:(BOOL)arg1;
 - (BOOL)validNetworkActive;
 - (BOOL)validNetworkEnabled;

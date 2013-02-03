@@ -5,8 +5,8 @@
 @interface EBFontTable : NSObject {
 }
 
-+ (NSUInteger)edFontIndexFromXlFontIndex:(NSUInteger)arg1;
++ (unsigned int)edFontIndexFromXlFontIndex:(unsigned int)arg1;
 + (void)readWithState:(id)arg1;
-+ (NSUInteger)xlFontIndexFromEDFontIndex:(NSUInteger)arg1;
++ (unsigned int)xlFontIndexFromEDFontIndex:(unsigned int)arg1;
 
 @end

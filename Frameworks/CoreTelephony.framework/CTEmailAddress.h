@@ -8,7 +8,7 @@
     NSString *_address;
 }
 
-@property(readonly) NSString *address;
+@property(readonly) NSString * address;
 
 + (id)emailAddress:(id)arg1;
 

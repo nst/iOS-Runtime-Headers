@@ -7,13 +7,13 @@
 @interface MFSASLAuthenticator : NSObject {
     Account *_account;
     AuthScheme *_authScheme;
-    NSInteger _authenticationState;
+    int _authenticationState;
     void *_context;
 }
 
 - (id)account;
 - (id)authScheme;
-- (NSInteger)authenticationState;
+- (int)authenticationState;
 - (BOOL)base64EncodeResponseData;
 - (BOOL)couldRetry;
 - (void)dealloc;
@@ -23,7 +23,7 @@
 - (id)responseForServerData:(id)arg1;
 - (id)saslName;
 - (id)securityLayer;
-- (void)setAuthenticationState:(NSInteger)arg1;
+- (void)setAuthenticationState:(int)arg1;
 - (void)setMissingPasswordError;
 
 @end

@@ -7,8 +7,10 @@
 
 + (void)_initializeSafeCategory;
 
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
-- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (BOOL)_accessibilityAlwaysReturnsChild;
+- (id)_accessibilityChildren;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
+- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)_accessibilityTextViewTextOperationResponder;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;

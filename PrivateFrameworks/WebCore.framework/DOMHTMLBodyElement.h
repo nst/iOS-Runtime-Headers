@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString;
+
 @interface DOMHTMLBodyElement : DOMHTMLElement {
 }
 
-@property(copy) NSString *aLink;
-@property(copy) NSString *background;
-@property(copy) NSString *bgColor;
-@property(copy) NSString *link;
-@property(copy) NSString *text;
-@property(copy) NSString *vLink;
+@property(copy) NSString * aLink;
+@property(copy) NSString * background;
+@property(copy) NSString * bgColor;
+@property(copy) NSString * link;
+@property(copy) NSString * text;
+@property(copy) NSString * vLink;
 
 - (id)aLink;
 - (id)background;
@@ -22,7 +24,7 @@
 - (void)setLink:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setVLink:(id)arg1;
-- (NSInteger)structuralComplexityContribution;
+- (int)structuralComplexityContribution;
 - (id)text;
 - (id)vLink;
 

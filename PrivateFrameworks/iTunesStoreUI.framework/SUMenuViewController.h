@@ -6,31 +6,31 @@
 
 @interface SUMenuViewController : SUViewController <UITableViewDataSource, UITableViewDelegate> {
     <SUMenuViewControllerDelegate> *_delegate;
-    NSInteger _selectedIndex;
+    int _selectedIndex;
     UITableView *_tableView;
 }
 
-@property <SUMenuViewControllerDelegate> *delegate;
-@property NSInteger selectedIndex;
+@property <SUMenuViewControllerDelegate> * delegate;
+@property int selectedIndex;
 
 - (BOOL)_sendDidCancel;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (BOOL)isMenuItemEnabledAtIndex:(NSInteger)arg1;
+- (BOOL)isMenuItemEnabledAtIndex:(int)arg1;
 - (void)loadView;
 - (struct CGSize { float x1; float x2; })maximumViewSize;
 - (struct CGSize { float x1; float x2; })minimumViewSize;
-- (NSInteger)numberOfMenuItems;
-- (void)performActionForMenuItemAtIndex:(NSInteger)arg1;
+- (int)numberOfMenuItems;
+- (void)performActionForMenuItemAtIndex:(int)arg1;
 - (void)reload;
-- (NSInteger)selectedIndex;
+- (int)selectedIndex;
 - (void)setDelegate:(id)arg1;
-- (void)setSelectedIndex:(NSInteger)arg1;
+- (void)setSelectedIndex:(int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (id)titleOfMenuItemAtIndex:(NSInteger)arg1;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)titleOfMenuItemAtIndex:(int)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 
 @end

@@ -8,7 +8,7 @@
     CALayer *_mask;
 }
 
-@property(retain) CALayer *mask;
+@property(retain) CALayer * mask;
 
 + (id)classFallbacksForKeyedArchiver;
 

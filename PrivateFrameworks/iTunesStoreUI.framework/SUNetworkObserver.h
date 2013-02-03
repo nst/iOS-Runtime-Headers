@@ -11,7 +11,7 @@
     NSTimer *_startupTimer;
 }
 
-@property(retain) NSString *partnerIdentifier;
+@property(retain) NSString * partnerIdentifier;
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;

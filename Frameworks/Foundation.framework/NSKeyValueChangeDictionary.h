@@ -6,7 +6,7 @@
 
 @interface NSKeyValueChangeDictionary : NSDictionary {
     struct { 
-        NSUInteger kind; 
+        unsigned int kind; 
         NSObject *oldValue; 
         NSObject *newValue; 
         NSIndexSet *indexes; 
@@ -14,19 +14,19 @@
     BOOL _isPriorNotification;
     BOOL _isRetainingObjects;
     NSObject *_originalObservable;
-    NSInteger _retainCountMinusOne;
+    int _retainCountMinusOne;
 }
 
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
-- (id)initWithDetailsNoCopy:(struct { NSUInteger x1; id x2; id x3; id x4; })arg1 originalObservable:(id)arg2 isPriorNotification:(BOOL)arg3;
+- (id)initWithDetailsNoCopy:(struct { unsigned int x1; id x2; id x3; id x4; })arg1 originalObservable:(id)arg2 isPriorNotification:(BOOL)arg3;
 - (id)keyEnumerator;
 - (id)objectForKey:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)retainObjects;
-- (void)setDetailsNoCopy:(struct { NSUInteger x1; id x2; id x3; id x4; })arg1 originalObservable:(id)arg2;
+- (void)setDetailsNoCopy:(struct { unsigned int x1; id x2; id x3; id x4; })arg1 originalObservable:(id)arg2;
 - (void)setOriginalObservable:(id)arg1;
 
 @end

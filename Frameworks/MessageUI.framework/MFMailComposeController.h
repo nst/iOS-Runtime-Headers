@@ -9,8 +9,8 @@
         float width; 
         float height; 
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     unsigned int _isDirty : 1;
     unsigned int _shouldAutosaveWithSuspendInfo : 1;
     unsigned int _suspendedPickingTo : 1;
@@ -40,21 +40,21 @@
     OutgoingMessageDelivery *_delivery;
     MFError *_error;
     MFComposeImageSizeView *_imageSizeField;
-    NSUInteger _initialAttachmentCount;
+    unsigned int _initialAttachmentCount;
     NSString *_initialTitle;
     MailboxUid *_lastDraftMailboxUid;
     NSString *_lastDraftMessageID;
     OutgoingMessage *_message;
     UINavigationItem *_navigationItem;
-    NSUInteger _options;
+    unsigned int _options;
     NSArray *_originalBccAddresses;
     NSString *_originalSendingEmailAddress;
-    NSUInteger _pendingImageScalingOperations;
-    NSInteger _resolution;
+    unsigned int _pendingImageScalingOperations;
+    int _resolution;
     MutableMessageHeaders *_savedHeaders;
     } _selectedRange;
     NSString *_sendingEmailAddress;
-    NSInteger _sendingEmailAddressIndex;
+    int _sendingEmailAddressIndex;
     } _size;
     NSString *_subject;
     MFComposeSubjectView *_subjectField;
@@ -63,8 +63,8 @@
     MFMailComposeView *_view;
 }
 
-@property(retain) UIActionSheet *activeSheet;
-@property(retain) MFGenericAttachmentStore *attachmentStore;
+@property(retain) UIActionSheet * activeSheet;
+@property(retain) MFGenericAttachmentStore * attachmentStore;
 
 + (id)_autosavePath;
 + (id)_defaultAccount;
@@ -95,7 +95,7 @@
 - (void)_loadAttachments:(id)arg1;
 - (void)_loadingContextDidLoad:(id)arg1;
 - (id)_markupForInlineAttachment:(id)arg1 willBeIncluded:(BOOL)arg2 prependBlankLine:(BOOL)arg3;
-- (void)_physicallyScaleImagesToScale:(NSInteger)arg1;
+- (void)_physicallyScaleImagesToScale:(int)arg1;
 - (void)_pickInitialFirstResponder;
 - (void)_prepareImagesForSend;
 - (void)_quoteForwardedMessage:(id)arg1 content:(id)arg2;
@@ -108,7 +108,7 @@
 - (void)_searchEnded:(id)arg1;
 - (void)_setCodePointTranslationEnabled:(BOOL)arg1;
 - (void)_setComposeBodyFieldSelectedRangeDeferred:(id)arg1;
-- (void)_setRecipients:(id)arg1 forField:(NSInteger)arg2;
+- (void)_setRecipients:(id)arg1 forField:(int)arg2;
 - (void)_setUpDeliveryObject;
 - (void)_setupForAutosavedMessage:(id)arg1;
 - (void)_setupForDraft:(id)arg1;
@@ -129,9 +129,9 @@
 - (void)_updateOriginalBccStatusForRestoreAddingAddress:(BOOL)arg1;
 - (void)_updateTableCell:(id)arg1 isChecked:(BOOL)arg2;
 - (void)accountsChanged:(id)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)activeSheet;
-- (void)addAddress:(id)arg1 field:(NSInteger)arg2;
+- (void)addAddress:(id)arg1 field:(int)arg2;
 - (void)addInlineAttachment:(id)arg1;
 - (void)addInlineAttachmentAtPath:(id)arg1 includeDirectoryContents:(BOOL)arg2;
 - (void)addInlineAttachmentAtPath:(id)arg1;
@@ -139,8 +139,8 @@
 - (void)addInlineAttachmentWithData:(id)arg1 preferredFilename:(id)arg2 mimeType:(id)arg3;
 - (void)addSignature:(BOOL)arg1;
 - (void)addSignature;
-- (id)addressesForField:(NSInteger)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (id)addressesForField:(int)arg1;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)attachmentCachedSizesWillChange:(id)arg1;
 - (void)attachmentFinishedCachingScaledSizes:(id)arg1;
 - (void)attachmentFinishedLoading:(id)arg1;
@@ -161,12 +161,12 @@
 - (void)composeHeaderViewDidChangeValue:(id)arg1;
 - (void)composeHeaderViewDidConfirmValue:(id)arg1;
 - (void)composeSubjectViewTextFieldDidResignFirstResponder:(id)arg1;
-- (NSInteger)composeType;
+- (int)composeType;
 - (id)currentScaleImageSize;
 - (void)dealloc;
 - (BOOL)deliverMessage;
 - (BOOL)deliverMessageRemotely;
-- (void)didSelectCellAtRow:(NSUInteger)arg1;
+- (void)didSelectCellAtRow:(unsigned int)arg1;
 - (void)dismissSheet;
 - (id)draftMessage;
 - (id)error;
@@ -176,10 +176,10 @@
 - (BOOL)hasAttachments;
 - (id)headersUseSuspendInfo:(BOOL)arg1;
 - (BOOL)hosted;
-- (NSInteger)imageScaleFromUserDefaults;
-- (void)imageSizeView:(id)arg1 changedSelectedScaleTo:(NSInteger)arg2;
+- (int)imageScaleFromUserDefaults;
+- (void)imageSizeView:(id)arg1 changedSelectedScaleTo:(int)arg2;
 - (id)init;
-- (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1 navigationItem:(id)arg2 options:(NSUInteger)arg3;
+- (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1 navigationItem:(id)arg2 options:(unsigned int)arg3;
 - (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1 navigationItem:(id)arg2;
 - (void)initializeUI;
 - (BOOL)isDirty;
@@ -192,14 +192,14 @@
 - (id)messageUseSuspendInfo:(BOOL)arg1;
 - (id)navigationBarTitle;
 - (BOOL)needsDelivery;
-- (NSInteger)numberOfComponentsInPickerView:(id)arg1;
-- (NSUInteger)pickerView:(id)arg1 numberOfRowsInComponent:(NSUInteger)arg2;
-- (id)pickerView:(id)arg1 viewForRow:(NSInteger)arg2 forComponent:(NSInteger)arg3 reusingView:(id)arg4;
+- (int)numberOfComponentsInPickerView:(id)arg1;
+- (unsigned int)pickerView:(id)arg1 numberOfRowsInComponent:(unsigned int)arg2;
+- (id)pickerView:(id)arg1 viewForRow:(int)arg2 forComponent:(int)arg3 reusingView:(id)arg4;
 - (void)prependPreamble:(id)arg1;
 - (void)prependQuotedMarkup:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectOfAttachment:(id)arg1;
-- (void)removeAddressAtIndex:(NSInteger)arg1 field:(NSInteger)arg2;
-- (NSInteger)resolution;
+- (void)removeAddressAtIndex:(int)arg1 field:(int)arg2;
+- (int)resolution;
 - (void)resume;
 - (void)resumeWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)saveAsDraft;
@@ -212,7 +212,7 @@
 - (id)sendingEmailAddressIfExists;
 - (BOOL)sendingEmailDirtied;
 - (void)setActiveSheet:(id)arg1;
-- (void)setAddresses:(id)arg1 field:(NSInteger)arg2;
+- (void)setAddresses:(id)arg1 field:(int)arg2;
 - (void)setAttachmentStore:(id)arg1;
 - (void)setBccRecipients:(id)arg1;
 - (void)setCcRecipients:(id)arg1;
@@ -225,7 +225,7 @@
 - (void)setInitialTitle:(id)arg1;
 - (void)setPercentDone:(double)arg1;
 - (void)setQuotedContent:(id)arg1 includeAttachments:(BOOL)arg2;
-- (void)setRecipientsKeyboardType:(NSInteger)arg1;
+- (void)setRecipientsKeyboardType:(int)arg1;
 - (void)setSendingEmailAddress:(id)arg1 addIfNotPresent:(BOOL)arg2;
 - (void)setSendingEmailAddress:(id)arg1;
 - (void)setSheet:(id)arg1;
@@ -234,7 +234,7 @@
 - (void)suspend;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tearDownUI;
 - (id)topView;
 - (id)view;

@@ -5,7 +5,7 @@
 @class NSMutableDictionary, NSString, NSKnownKeysDictionary, NSMutableArray, NSManagedObjectModel;
 
 @interface NSSQLModel : NSStoreMapping {
-    NSUInteger _brokenHashVersion;
+    unsigned int _brokenHashVersion;
     NSMutableDictionary *_cachedFabricatedEntities;
     NSString *_configuration;
     NSMutableArray *_entities;
@@ -30,8 +30,8 @@
 - (id)entityForID:(unsigned long)arg1;
 - (unsigned long)entityIDForName:(id)arg1;
 - (id)entityNamed:(id)arg1;
-- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 brokenHashVersion:(NSUInteger)arg3;
-- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(BOOL)arg3 brokenHashVersion:(NSUInteger)arg4;
+- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 brokenHashVersion:(unsigned int)arg3;
+- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(BOOL)arg3 brokenHashVersion:(unsigned int)arg4;
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(BOOL)arg3;
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2;
 - (id)managedObjectModel;

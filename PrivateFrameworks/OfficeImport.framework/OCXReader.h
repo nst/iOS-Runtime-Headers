@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class OCPZipPackage;
 
 @interface OCXReader : NSObject <OCDReader> {
-     /* Encoded args for previous method: B8@0:4 */
     OCPZipPackage *mZipPackage;
 }
 
@@ -19,7 +14,7 @@
 
 - (void)dealloc;
 - (id)initWithZipPackage:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isBinaryReader;
+- (bool)isBinaryReader;
 - (id)zipPackage;
 
 @end

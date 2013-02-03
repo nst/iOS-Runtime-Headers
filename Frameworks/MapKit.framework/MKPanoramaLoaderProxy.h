@@ -9,12 +9,12 @@
     MKPanorama *_target;
 }
 
-@property MKPanoramaLoader *loader;
+@property MKPanoramaLoader * loader;
 
 + (id)selectorMap;
 
 - (void)forwardInvocation:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithTarget:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isKindOfClass:(Class)arg1;

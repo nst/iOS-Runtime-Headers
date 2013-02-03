@@ -7,7 +7,7 @@
     char *_bytes;
     unsigned long long _capacity;
     unsigned long long _excessDataLength;
-    NSInteger _fd;
+    int _fd;
     unsigned long long _offset;
     BOOL _useByteBuffer;
 }
@@ -25,7 +25,7 @@
 - (id)init;
 - (id)initWithBytes:(void*)arg1 capacity64:(unsigned long long)arg2;
 - (id)initWithCapacity64:(unsigned long long)arg1;
-- (id)initWithFileDescriptor:(NSInteger)arg1 capacity64:(unsigned long long)arg2;
+- (id)initWithFileDescriptor:(int)arg1 capacity64:(unsigned long long)arg2;
 - (unsigned long long)length64;
 - (void*)mutableBytes;
 - (double)percentFull;

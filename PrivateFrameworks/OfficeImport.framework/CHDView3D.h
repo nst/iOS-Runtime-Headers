@@ -2,38 +2,30 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CHDView3D : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
-    NSInteger mDepthPercent;
-    NSInteger mHeightPercent;
-    NSInteger mPerspective;
-    NSInteger mRotationX;
-    NSInteger mRotationY;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mCluster;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mRightAngleAxes;
+    boolmCluster;
+    boolmRightAngleAxes;
+    int mDepthPercent;
+    int mHeightPercent;
+    int mPerspective;
+    int mRotationX;
+    int mRotationY;
 }
 
-- (NSInteger)depthPercent;
-- (NSInteger)heightPercent;
+- (int)depthPercent;
+- (int)heightPercent;
 - (id)init;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isCluster;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isRightAngleAxes;
-- (NSInteger)perspective;
-- (NSInteger)rotationX;
-- (NSInteger)rotationY;
-- (void)setCluster:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setDepthPercent:(NSInteger)arg1;
-- (void)setHeightPercent:(NSInteger)arg1;
-- (void)setPerspective:(NSInteger)arg1;
-- (void)setRightAngleAxes:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setRotationX:(NSInteger)arg1;
-- (void)setRotationY:(NSInteger)arg1;
+- (bool)isCluster;
+- (bool)isRightAngleAxes;
+- (int)perspective;
+- (int)rotationX;
+- (int)rotationY;
+- (void)setCluster:(bool)arg1;
+- (void)setDepthPercent:(int)arg1;
+- (void)setHeightPercent:(int)arg1;
+- (void)setPerspective:(int)arg1;
+- (void)setRightAngleAxes:(bool)arg1;
+- (void)setRotationX:(int)arg1;
+- (void)setRotationY:(int)arg1;
 
 @end

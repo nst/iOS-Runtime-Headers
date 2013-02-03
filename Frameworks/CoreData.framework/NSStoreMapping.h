@@ -11,7 +11,7 @@
 - (void)copyValuesForReadOnlyFetch:(id)arg1;
 - (void)dealloc;
 - (id)externalName;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithExternalName:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)setExternalName:(id)arg1;

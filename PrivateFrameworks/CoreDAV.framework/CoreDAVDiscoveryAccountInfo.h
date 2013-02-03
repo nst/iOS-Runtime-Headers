@@ -11,7 +11,7 @@
     NSString *_host;
     NSData *_identityPersist;
     NSString *_password;
-    NSInteger _port;
+    int _port;
     NSURL *_principalURL;
     NSString *_scheme;
     NSSet *_serverComplianceClasses;
@@ -22,21 +22,21 @@
     NSString *_userAgentHeader;
 }
 
-@property(retain) NSString *accountID;
-@property(retain) <CoreDAVAccountInfoProvider> *backingAccountInfoProvider;
-@property(retain) NSError *error;
-@property(retain) NSString *host;
-@property(retain) NSData *identityPersist;
-@property(retain) NSString *password;
-@property(retain) NSURL *principalURL;
-@property(retain) NSString *scheme;
-@property(retain) NSSet *serverComplianceClasses;
-@property(retain) NSString *serverRoot;
-@property(retain) NSString *user;
-@property(retain) NSString *userAgentHeader;
-@property NSInteger port;
+@property(retain) NSString * accountID;
+@property(retain) <CoreDAVAccountInfoProvider> * backingAccountInfoProvider;
+@property(retain) NSError * error;
+@property(retain) NSString * host;
+@property(retain) NSData * identityPersist;
+@property(retain) NSString * password;
+@property int port;
+@property(retain) NSURL * principalURL;
+@property(retain) NSString * scheme;
+@property(retain) NSSet * serverComplianceClasses;
+@property(retain) NSString * serverRoot;
 @property BOOL shouldFailAllTasks;
 @property BOOL started;
+@property(retain) NSString * user;
+@property(retain) NSString * userAgentHeader;
 
 - (id)accountID;
 - (id)backingAccountInfoProvider;
@@ -52,8 +52,9 @@
 - (id)host;
 - (id)identityPersist;
 - (id)initWithAccountInfoProvider:(id)arg1;
+- (id)mmeToken;
 - (id)password;
-- (NSInteger)port;
+- (int)port;
 - (id)principalURL;
 - (void)promptUserForNewCoreDAVPasswordWithCompletionBlock:(id)arg1;
 - (id)scheme;
@@ -65,7 +66,7 @@
 - (void)setHost:(id)arg1;
 - (void)setIdentityPersist:(id)arg1;
 - (void)setPassword:(id)arg1;
-- (void)setPort:(NSInteger)arg1;
+- (void)setPort:(int)arg1;
 - (void)setPrincipalURL:(id)arg1;
 - (void)setScheme:(id)arg1;
 - (void)setServerComplianceClasses:(id)arg1;

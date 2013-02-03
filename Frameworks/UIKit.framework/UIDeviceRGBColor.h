@@ -17,7 +17,7 @@
 - (id)colorWithAlphaComponent:(float)arg1;
 - (void)dealloc;
 - (id)description;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (id)initWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;

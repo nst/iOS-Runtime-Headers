@@ -8,22 +8,22 @@
     AVChapterMetadataItemInternal *_privChapter;
 }
 
+- (void)_addFormatReaderLoaderNotifications;
 - (long)_chapterGroupIndex;
 - (long)_chapterIndex;
 - (void)_ensureValueLoadedSync;
-- (id)_initWithFormatReaderLoader:(struct OpaqueFigFormatReaderLoader { }*)arg1 chapterGroupIndex:(long)arg2 chapterIndex:(long)arg3 chapterType:(id)arg4 locale:(id)arg5 time:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg6 duration:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg7;
+- (id)_initWithFormatReaderLoader:(struct OpaqueFigFormatReaderLoader { }*)arg1 chapterGroupIndex:(long)arg2 chapterIndex:(long)arg3 chapterType:(id)arg4 locale:(id)arg5 time:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg6 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg7;
 - (void)_removeFormatReaderLoaderNotifications;
-- (void)_setValueStatus:(NSInteger)arg1 figErrorCode:(long)arg2;
+- (void)_setValueStatus:(int)arg1 figErrorCode:(long)arg2;
 - (void)_takeValueFrom:(id)arg1;
 - (BOOL)_valueForKeyDependsOnMetadataValue:(id)arg1;
-- (NSInteger)_valueStatus;
-- (id)_weakReference;
+- (int)_valueStatus;
 - (void)cancelLoading;
 - (id)commonKey;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })duration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (id)extraAttributes;
 - (void)finalize;
 - (id)init;
@@ -34,8 +34,8 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)release;
 - (id)retain;
-- (NSInteger)statusOfValueForKey:(id)arg1 error:(id*)arg2;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })time;
+- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (id)value;
 
 @end

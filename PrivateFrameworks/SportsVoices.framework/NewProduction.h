@@ -5,16 +5,17 @@
 @class SimpleSlotSequence, NSArray;
 
 @interface NewProduction : GenericProduction {
-    NSArray *indices;
-    SimpleSlotSequence *overlays;
+    NSArray *_indices;
+    SimpleSlotSequence *_overlays;
 }
 
-@property(retain) NSArray *indices;
-@property(retain) SimpleSlotSequence *overlays;
+@property(retain) NSArray * indices;
+@property(retain) SimpleSlotSequence * overlays;
 
 + (id)instanceFromPlist:(id)arg1;
 + (id)productionWithSimpleSlotSequence:(id)arg1;
 
+- (void)dealloc;
 - (id)description;
 - (id)indices;
 - (id)initFromPlist:(id)arg1;

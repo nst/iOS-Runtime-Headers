@@ -10,21 +10,21 @@
         struct __CFString {} *theString; 
         unsigned short *directBuffer; 
         struct { 
-            NSInteger location; 
-            NSInteger length; 
+            int location; 
+            int length; 
         } rangeToBuffer; 
-        NSInteger bufferedRangeStart; 
-        NSInteger bufferedRangeEnd; 
+        int bufferedRangeStart; 
+        int bufferedRangeEnd; 
     unsigned int _eatOneNewline : 1;
     unsigned int _insideComment : 1;
     unsigned int _wantsPlainText : 1;
     unsigned int _noFillLevel : 30;
     struct __CFArray { } *_commandStack;
-    NSInteger _currentIndex;
+    int _currentIndex;
     float _indentWidth;
     } _inputBuffer;
-    NSInteger _inputLength;
-    NSInteger _lastQuoteLevel;
+    int _inputLength;
+    int _lastQuoteLevel;
     NSMutableString *_outputBuffer;
     id _outputString;
     struct __CFString { } *_postpendHTML;
@@ -48,7 +48,7 @@
 - (void)mismatchError:(id)arg1;
 - (void)nowWouldBeAGoodTimeToAppendToTheAttributedString;
 - (void)parseParameterString:(id)arg1;
-- (NSInteger)readTokenInto:(id*)arg1;
+- (int)readTokenInto:(id*)arg1;
 - (void)resetStateWithString:(id)arg1 outputString:(id)arg2;
 - (void)setWantsHTML:(BOOL)arg1;
 - (void)setupFontStackEntry:(struct _CommandStackEntry { struct { /* ? */ } *x1; id x2; }*)arg1;

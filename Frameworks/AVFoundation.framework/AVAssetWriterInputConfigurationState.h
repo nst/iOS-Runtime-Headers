@@ -14,6 +14,7 @@
         float ty; 
     BOOL _attachedToPixelBufferAdaptor;
     BOOL _expectsMediaDataInRealTime;
+    int _mediaTimeScale;
     NSString *_mediaType;
     NSArray *_metadataItems;
     AVOutputSettings *_outputSettings;
@@ -21,22 +22,25 @@
     } _transform;
 }
 
-@property(copy) NSString *mediaType;
-@property(copy) NSArray *metadataItems;
-@property(copy) AVOutputSettings *outputSettings;
-@property(copy) NSDictionary *sourcePixelBufferAttributes;
 @property BOOL attachedToPixelBufferAdaptor;
 @property BOOL expectsMediaDataInRealTime;
-@property CGAffineTransform transform;
+@property int mediaTimeScale;
+@property(copy) NSString * mediaType;
+@property(copy) NSArray * metadataItems;
+@property(copy) AVOutputSettings * outputSettings;
+@property(copy) NSDictionary * sourcePixelBufferAttributes;
+@property struct CGAffineTransform { float a; float b; float c; float d; float tx; float ty; } transform;
 
 - (BOOL)attachedToPixelBufferAdaptor;
 - (void)dealloc;
 - (BOOL)expectsMediaDataInRealTime;
+- (int)mediaTimeScale;
 - (id)mediaType;
 - (id)metadataItems;
 - (id)outputSettings;
 - (void)setAttachedToPixelBufferAdaptor:(BOOL)arg1;
 - (void)setExpectsMediaDataInRealTime:(BOOL)arg1;
+- (void)setMediaTimeScale:(int)arg1;
 - (void)setMediaType:(id)arg1;
 - (void)setMetadataItems:(id)arg1;
 - (void)setOutputSettings:(id)arg1;

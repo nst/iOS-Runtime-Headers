@@ -12,11 +12,11 @@
     NSString *_mimeType;
 }
 
-@property(readonly) NSData *data;
-@property(readonly) NSString *exportedFilename;
-@property(readonly) NSString *filename;
-@property(readonly) NSString *mimeType;
+@property(readonly) NSData * data;
 @property double duration;
+@property(readonly) NSString * exportedFilename;
+@property(readonly) NSString * filename;
+@property(readonly) NSString * mimeType;
 
 + (id)fileExtensionForMIMEType:(id)arg1;
 + (id)mimeTypesToFileExtensions;
@@ -41,10 +41,11 @@
 - (id)filenameForMedia;
 - (id)initWithData:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3;
 - (id)initWithFilename:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3;
-- (NSInteger)mediaType;
+- (void)logMediaDiagnotics;
+- (int)mediaType;
 - (id)mimeType;
-- (id)newPreview:(NSInteger)arg1 highlight:(BOOL)arg2;
-- (id)newTranscodingForMMSWithMaxByteLength:(NSInteger)arg1;
+- (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
+- (id)newTranscodingForMMSWithMaxByteLength:(int)arg1;
 - (id)optionsForMedia;
 - (id)previewTitle;
 - (void)setDuration:(double)arg1;

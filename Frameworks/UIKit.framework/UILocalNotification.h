@@ -2,34 +2,36 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSString, NSCalendar, NSDictionary, NSDate, NSTimeZone;
+
 @interface UILocalNotification : NSObject <NSCopying, NSCoding> {
 }
 
-@property(copy) NSString *alertAction;
-@property(copy) NSString *alertBody;
-@property(copy) NSString *alertLaunchImage;
-@property(copy) NSString *customLockSliderLabel;
-@property(copy) NSDate *fireDate;
-@property(copy) NSCalendar *repeatCalendar;
-@property(copy) NSString *soundName;
-@property(copy) NSTimeZone *timeZone;
-@property(copy) NSDictionary *userInfo;
+@property(copy) NSString * alertAction;
+@property(copy) NSString * alertBody;
+@property(copy) NSString * alertLaunchImage;
 @property BOOL allowSnooze;
-@property NSInteger applicationIconBadgeNumber;
+@property int applicationIconBadgeNumber;
+@property(copy) NSString * customLockSliderLabel;
+@property(copy) NSDate * fireDate;
 @property BOOL fireNotificationsWhenAppRunning;
 @property BOOL hasAction;
 @property BOOL hideAlertTitle;
 @property BOOL interruptAudioAndLockDevice;
-@property NSUInteger repeatInterval;
+@property(copy) NSCalendar * repeatCalendar;
+@property unsigned int repeatInterval;
 @property BOOL resumeApplicationInBackground;
 @property BOOL showAlarmStatusBarItem;
+@property(copy) NSString * soundName;
 @property BOOL soundNameIsARingtone;
+@property(copy) NSTimeZone * timeZone;
+@property(copy) NSDictionary * userInfo;
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (void)clearNonSystemProperties;
-- (NSInteger)compareFireDates:(id)arg1;
+- (int)compareFireDates:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

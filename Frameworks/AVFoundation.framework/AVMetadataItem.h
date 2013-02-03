@@ -2,24 +2,24 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMetadataItemInternal;
+@class <NSObject><NSCopying>, NSNumber, NSLocale, AVMetadataItemInternal, NSDictionary, NSString, NSData, NSDate;
 
 @interface AVMetadataItem : NSObject <AVAsynchronousKeyValueLoading, NSCopying, NSMutableCopying> {
     AVMetadataItemInternal *_priv;
 }
 
-@property(copy,readonly) NSString *commonKey;
-@property(readonly) NSData *dataValue;
-@property(readonly) NSDate *dateValue;
-@property(copy,readonly) NSDictionary *extraAttributes;
-@property(copy,readonly) <NSObject><NSCopying> *key;
-@property(copy,readonly) NSString *keySpace;
-@property(copy,readonly) NSLocale *locale;
-@property(readonly) NSNumber *numberValue;
-@property(readonly) NSString *stringValue;
-@property(copy,readonly) <NSObject><NSCopying> *value;
-@property(readonly) ? duration;
-@property(readonly) ? time;
+@property(copy,readonly) NSString * commonKey;
+@property(readonly) NSData * dataValue;
+@property(readonly) NSDate * dateValue;
+@property(readonly) struct { long long value; int timescale; unsigned int flags; long long epoch; } duration;
+@property(copy,readonly) NSDictionary * extraAttributes;
+@property(copy,readonly) <NSObject><NSCopying> * key;
+@property(copy,readonly) NSString * keySpace;
+@property(copy,readonly) NSLocale * locale;
+@property(readonly) NSNumber * numberValue;
+@property(readonly) NSString * stringValue;
+@property(readonly) struct { long long value; int timescale; unsigned int flags; long long epoch; } time;
+@property(copy,readonly) <NSObject><NSCopying> * value;
 
 + (id)_figMetadataPropertyFromMetadataItems:(id)arg1;
 + (id)metadataItemsFromArray:(id)arg1 withKey:(id)arg2 keySpace:(id)arg3;
@@ -41,10 +41,10 @@
 - (id)dateValue;
 - (void)dealloc;
 - (id)description;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })duration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (id)extraAttributes;
 - (void)finalize;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (struct CGImage { }*)imageValue;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
@@ -54,9 +54,9 @@
 - (id)locale;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)numberValue;
-- (NSInteger)statusOfValueForKey:(id)arg1 error:(id*)arg2;
+- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 - (id)stringValue;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })time;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (id)value;
 
 @end

@@ -2,21 +2,21 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class QLPreviewControllerReserved;
+@class <QLPreviewControllerDataSource>, <QLPreviewItem>, QLPreviewControllerReserved;
 
 @interface QLPreviewController : UIViewController {
     QLPreviewControllerReserved *_reserved;
 }
 
-@property(readonly) <QLPreviewItem> *currentPreviewItem;
-@property <QLPreviewControllerDataSource> *dataSource;
-@property NSInteger currentPreviewItemIndex;
+@property(readonly) <QLPreviewItem> * currentPreviewItem;
+@property int currentPreviewItemIndex;
+@property <QLPreviewControllerDataSource> * dataSource;
 @property id delegate;
 
 + (BOOL)canPreviewItem:(id)arg1;
 + (BOOL)canPreviewMIMEType:(id)arg1;
 
-- (void)_addFadeAnimationToView:(id)arg1 fromAlpha:(float)arg2 toAlpha:(float)arg3 duration:(double)arg4 withCurve:(NSInteger)arg5;
+- (void)_addFadeAnimationToView:(id)arg1 fromAlpha:(float)arg2 toAlpha:(float)arg3 duration:(double)arg4 withCurve:(int)arg5;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_commonInit;
@@ -51,19 +51,20 @@
 - (BOOL)blockRemoteImages;
 - (BOOL)canPrint;
 - (id)currentPreviewItem;
-- (NSInteger)currentPreviewItemIndex;
+- (int)currentPreviewItemIndex;
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
 - (void)didReceiveMemoryWarning;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)doneButtonTapped:(id)arg1;
 - (BOOL)hidesBottomBarWhenPushed;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)interactionController;
 - (void)leftArrowAction:(id)arg1;
 - (void)loadView;
-- (NSInteger)modalTransitionStyle;
+- (int)modalPresentationStyle;
+- (int)modalTransitionStyle;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)openButtonTapped:(id)arg1;
 - (void)popOverStateDidDismissMenu:(id)arg1;
@@ -72,7 +73,7 @@
 - (void)popOverStateWillPresentPrintMenu:(id)arg1;
 - (void)prepareForPrinting;
 - (id)previewItem;
-- (BOOL)previewView:(id)arg1 decidePolicyForNavigationType:(NSInteger)arg2 request:(id)arg3;
+- (BOOL)previewView:(id)arg1 decidePolicyForNavigationType:(int)arg2 request:(id)arg3;
 - (void)previewView:(id)arg1 didLoadItem:(id)arg2 withError:(id)arg3;
 - (void)previewView:(id)arg1 willAddDisplayBundle:(id)arg2;
 - (void)previewView:(id)arg1 willRemoveDisplayBundle:(id)arg2;
@@ -84,16 +85,16 @@
 - (void)rightArrowAction:(id)arg1;
 - (void)setActionMenuEnabled:(BOOL)arg1;
 - (void)setBlockRemoteImages:(BOOL)arg1;
-- (void)setCurrentPreviewItemIndex:(NSInteger)arg1;
+- (void)setCurrentPreviewItemIndex:(int)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPreviewItem:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

@@ -2,20 +2,20 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetWriterInputPixelBufferAdaptorInternal;
+@class AVAssetWriterInputPixelBufferAdaptorInternal, AVAssetWriterInput, NSDictionary;
 
 @interface AVAssetWriterInputPixelBufferAdaptor : NSObject {
     AVAssetWriterInputPixelBufferAdaptorInternal *_internal;
 }
 
-@property(readonly) AVAssetWriterInput *assetWriterInput;
-@property(readonly) __CVPixelBufferPool *pixelBufferPool;
-@property(readonly) NSDictionary *sourcePixelBufferAttributes;
+@property(readonly) AVAssetWriterInput * assetWriterInput;
+@property(readonly) struct __CVPixelBufferPool { }* pixelBufferPool;
+@property(readonly) NSDictionary * sourcePixelBufferAttributes;
 
 + (id)assetWriterInputPixelBufferAdaptorWithAssetWriterInput:(id)arg1 sourcePixelBufferAttributes:(id)arg2;
 + (id)keyPathsForValuesAffectingPixelBufferPool;
 
-- (BOOL)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg2;
+- (BOOL)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (id)assetWriterInput;
 - (void)dealloc;
 - (id)description;

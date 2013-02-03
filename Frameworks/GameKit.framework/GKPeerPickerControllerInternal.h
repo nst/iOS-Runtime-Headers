@@ -5,7 +5,7 @@
 @class GKPeerPickerViewController;
 
 @interface GKPeerPickerControllerInternal : NSObject {
-    NSUInteger _connectionTypesMask;
+    unsigned int _connectionTypesMask;
     id _delegate;
     GKPeerPickerViewController *_pickerViewController;
 }

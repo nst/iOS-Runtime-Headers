@@ -5,39 +5,39 @@
 @class NSURL, NSString;
 
 @interface ISReview : NSObject <NSCoding, NSCopying> {
-    NSInteger _assetType;
+    int _assetType;
     NSString *_body;
-    NSUInteger _bodyMaxLength;
+    unsigned int _bodyMaxLength;
     NSURL *_infoURL;
     unsigned long long _itemIdentifier;
     NSString *_nickname;
     BOOL _nicknameIsConfirmed;
-    NSUInteger _nicknameMaxLength;
+    unsigned int _nicknameMaxLength;
     float _rating;
     NSURL *_submitURL;
     NSString *_title;
-    NSUInteger _titleMaxLength;
+    unsigned int _titleMaxLength;
 }
 
-@property(retain) NSString *body;
-@property(retain) NSURL *infoURL;
-@property(retain) NSString *nickname;
-@property(retain) NSURL *submitURL;
-@property(retain) NSString *title;
-@property NSInteger assetType;
-@property NSUInteger bodyMaxLength;
+@property int assetType;
+@property(retain) NSString * body;
+@property unsigned int bodyMaxLength;
 @property(readonly) BOOL hasSavedDraft;
+@property(retain) NSURL * infoURL;
 @property unsigned long long itemIdentifier;
+@property(retain) NSString * nickname;
 @property BOOL nicknameIsConfirmed;
-@property NSUInteger nicknameMaxLength;
+@property unsigned int nicknameMaxLength;
 @property float rating;
-@property NSUInteger titleMaxLength;
+@property(retain) NSURL * submitURL;
+@property(retain) NSString * title;
+@property unsigned int titleMaxLength;
 
 - (id)_draftFileName;
 - (id)_draftsDirectoryPath;
-- (NSInteger)assetType;
+- (int)assetType;
 - (id)body;
-- (NSUInteger)bodyMaxLength;
+- (unsigned int)bodyMaxLength;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
@@ -49,25 +49,25 @@
 - (void)mergeWithReview:(id)arg1 preferLocalValues:(BOOL)arg2;
 - (id)nickname;
 - (BOOL)nicknameIsConfirmed;
-- (NSUInteger)nicknameMaxLength;
+- (unsigned int)nicknameMaxLength;
 - (float)rating;
 - (BOOL)removeDraft;
 - (BOOL)restoreFromDraft;
 - (BOOL)saveAsDraft;
-- (void)setAssetType:(NSInteger)arg1;
+- (void)setAssetType:(int)arg1;
 - (void)setBody:(id)arg1;
-- (void)setBodyMaxLength:(NSUInteger)arg1;
+- (void)setBodyMaxLength:(unsigned int)arg1;
 - (void)setInfoURL:(id)arg1;
 - (void)setItemIdentifier:(unsigned long long)arg1;
 - (void)setNickname:(id)arg1;
 - (void)setNicknameIsConfirmed:(BOOL)arg1;
-- (void)setNicknameMaxLength:(NSUInteger)arg1;
+- (void)setNicknameMaxLength:(unsigned int)arg1;
 - (void)setRating:(float)arg1;
 - (void)setSubmitURL:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTitleMaxLength:(NSUInteger)arg1;
+- (void)setTitleMaxLength:(unsigned int)arg1;
 - (id)submitURL;
 - (id)title;
-- (NSUInteger)titleMaxLength;
+- (unsigned int)titleMaxLength;
 
 @end

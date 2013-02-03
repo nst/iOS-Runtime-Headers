@@ -7,13 +7,13 @@
 @interface LBSWrapperRequest : PBRequest {
     BOOL _hasRequestType;
     LBSGLocRequest *_request;
-    NSInteger _requestType;
+    int _requestType;
 }
 
-@property(retain) LBSGLocRequest *request;
 @property(readonly) BOOL hasRequest;
 @property(readonly) BOOL hasRequestType;
-@property NSInteger requestType;
+@property(retain) LBSGLocRequest * request;
+@property int requestType;
 
 - (void)dealloc;
 - (id)description;
@@ -22,11 +22,11 @@
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (id)request;
-- (NSInteger)requestType;
-- (NSUInteger)requestTypeCode;
+- (int)requestType;
+- (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setRequest:(id)arg1;
-- (void)setRequestType:(NSInteger)arg1;
+- (void)setRequestType:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

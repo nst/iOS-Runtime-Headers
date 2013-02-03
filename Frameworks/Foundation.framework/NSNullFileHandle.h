@@ -7,9 +7,9 @@
 
 - (id)availableData;
 - (void)closeFile;
-- (NSInteger)fileDescriptor;
+- (int)fileDescriptor;
 - (unsigned long long)offsetInFile;
-- (id)readDataOfLength:(NSUInteger)arg1;
+- (id)readDataOfLength:(unsigned int)arg1;
 - (id)readDataToEndOfFile;
 - (unsigned long long)seekToEndOfFile;
 - (void)seekToFileOffset:(unsigned long long)arg1;

@@ -7,7 +7,7 @@
 @interface IMRemoteObject : NSObject {
     NSDate *_firstDateClientWasInformedOfDisconnected;
     NSRecursiveLock *_lock;
-    NSUInteger _port;
+    unsigned int _port;
     NSString *_portName;
     NSProtocolChecker *_protocolChecker;
     struct dispatch_queue_s { } *_queue;
@@ -16,10 +16,9 @@
     BOOL _willBeTerminated;
 }
 
-@property(readonly) NSString *portName;
 @property(readonly) BOOL isValid;
 @property double messageSendTimeout;
-@property(readonly) NSInteger pid;
+@property(readonly) NSString * portName;
 
 + (void)initialize;
 
@@ -30,14 +29,13 @@
 - (void)_systemShutdown:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (NSUInteger)forwardComponentArray:(id)arg1;
+- (unsigned int)forwardComponentArray:(id)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithPortName:(id)arg1 protocol:(id)arg2;
 - (void)invalidate;
 - (BOOL)isValid;
 - (double)messageSendTimeout;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (NSInteger)pid;
 - (id)portName;
 - (void)setMessageSendTimeout:(double)arg1;
 

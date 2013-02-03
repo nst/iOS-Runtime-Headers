@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
+@class ALAssetsLibraryPrivate;
+
 @interface ALAssetsLibrary : NSObject {
     id _internal;
 }
 
-@property(retain) ALAssetsLibraryPrivate *internal;
+@property(retain) ALAssetsLibraryPrivate * internal;
 
 - (void)_attachAux;
 - (void)_detachAux;
@@ -15,18 +17,18 @@
 - (void)addAsset:(id)arg1;
 - (void)assetForURL:(id)arg1 resultBlock:(id)arg2 failureBlock:(id)arg3;
 - (void)dealloc;
-- (void)enumerateGroupsWithTypes:(NSUInteger)arg1 usingBlock:(id)arg2 failureBlock:(id)arg3;
+- (void)enumerateGroupsWithTypes:(unsigned int)arg1 usingBlock:(id)arg2 failureBlock:(id)arg3;
 - (id)init;
 - (id)internal;
 - (BOOL)isValid;
 - (void)photoLibraryDidChange:(id)arg1;
-- (id)publicErrorForPrivateDomain:(id)arg1 withPrivateCode:(NSInteger)arg2;
+- (id)publicErrorForPrivateDomain:(id)arg1 withPrivateCode:(int)arg2;
 - (id)publicErrorFromPrivateError:(id)arg1;
 - (void)setInternal:(id)arg1;
 - (BOOL)videoAtPathIsCompatibleWithSavedPhotosAlbum:(id)arg1;
 - (void)writeImageDataToSavedPhotosAlbum:(id)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
 - (void)writeImageToSavedPhotosAlbum:(struct CGImage { }*)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
-- (void)writeImageToSavedPhotosAlbum:(struct CGImage { }*)arg1 orientation:(NSInteger)arg2 completionBlock:(id)arg3;
+- (void)writeImageToSavedPhotosAlbum:(struct CGImage { }*)arg1 orientation:(int)arg2 completionBlock:(id)arg3;
 - (void)writeVideoAtPathToSavedPhotosAlbum:(id)arg1 completionBlock:(id)arg2;
 
 @end

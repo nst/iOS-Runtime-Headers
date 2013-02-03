@@ -7,7 +7,7 @@
 @interface IMMessage : NSObject {
     NSError *_error;
     NSArray *_fileTransferGUIDs;
-    NSUInteger _flags;
+    unsigned int _flags;
     NSString *_guid;
     BOOL _isInvitationMessage;
     NSString *_plainBody;
@@ -17,21 +17,14 @@
     NSDate *_time;
 }
 
-@property(retain) NSError *error;
-@property(retain) NSArray *fileTransferGUIDs;
-@property(readonly) NSString *guid;
-@property(readonly) NSArray *inlineAttachmentAttributesArray;
-@property(readonly) NSString *plainBody;
-@property(readonly) IMHandle *sender;
-@property(readonly) NSString *senderName;
-@property(readonly) IMHandle *subject;
-@property(readonly) NSString *summaryString;
-@property(retain) NSAttributedString *text;
-@property(readonly) NSDate *time;
+@property(retain) NSError * error;
+@property(retain) NSArray * fileTransferGUIDs;
 @property(readonly) BOOL finished;
-@property NSUInteger flags;
+@property unsigned int flags;
 @property(readonly) BOOL fromMe;
+@property(readonly) NSString * guid;
 @property(readonly) BOOL hasInlineAttachments;
+@property(readonly) NSArray * inlineAttachmentAttributesArray;
 @property BOOL isAddressedToMe;
 @property(readonly) BOOL isAlert;
 @property(readonly) BOOL isAutoReply;
@@ -39,22 +32,29 @@
 @property(readonly) BOOL isEmote;
 @property(readonly) BOOL isEmpty;
 @property BOOL isInvitationMessage;
-@property NSInteger securityLevel;
+@property(readonly) NSString * plainBody;
+@property int securityLevel;
+@property(readonly) IMHandle * sender;
+@property(readonly) NSString * senderName;
+@property(readonly) IMHandle * subject;
+@property(readonly) NSString * summaryString;
+@property(retain) NSAttributedString * text;
+@property(readonly) NSDate * time;
 
-+ (id)fromMeIMHandle:(id)arg1 withText:(id)arg2 fileTransferGUIDs:(id)arg3 flags:(NSUInteger)arg4;
-+ (id)instantMessageWithText:(id)arg1 flags:(NSUInteger)arg2;
++ (id)fromMeIMHandle:(id)arg1 withText:(id)arg2 fileTransferGUIDs:(id)arg3 flags:(unsigned int)arg4;
++ (id)instantMessageWithText:(id)arg1 flags:(unsigned int)arg2;
 
 - (void)dealloc;
 - (id)description;
 - (id)error;
 - (id)fileTransferGUIDs;
 - (BOOL)finished;
-- (NSUInteger)flags;
+- (unsigned int)flags;
 - (BOOL)fromMe;
 - (id)guid;
 - (BOOL)hasInlineAttachments;
 - (id)initWithSender:(id)arg1 fileTransfer:(id)arg2;
-- (id)initWithSender:(id)arg1 time:(id)arg2 text:(id)arg3 fileTransferGUIDs:(id)arg4 flags:(NSUInteger)arg5 error:(id)arg6 guid:(id)arg7 subject:(id)arg8;
+- (id)initWithSender:(id)arg1 time:(id)arg2 text:(id)arg3 fileTransferGUIDs:(id)arg4 flags:(unsigned int)arg5 error:(id)arg6 guid:(id)arg7 subject:(id)arg8;
 - (id)inlineAttachmentAttributesArray;
 - (BOOL)isAddressedToMe;
 - (BOOL)isAlert;
@@ -64,15 +64,15 @@
 - (BOOL)isEmpty;
 - (BOOL)isInvitationMessage;
 - (id)plainBody;
-- (NSInteger)securityLevel;
+- (int)securityLevel;
 - (id)sender;
 - (id)senderName;
 - (void)setError:(id)arg1;
 - (void)setFileTransferGUIDs:(id)arg1;
-- (void)setFlags:(NSUInteger)arg1;
+- (void)setFlags:(unsigned int)arg1;
 - (void)setIsAddressedToMe:(BOOL)arg1;
 - (void)setIsInvitationMessage:(BOOL)arg1;
-- (void)setSecurityLevel:(NSInteger)arg1;
+- (void)setSecurityLevel:(int)arg1;
 - (void)setText:(id)arg1;
 - (id)subject;
 - (id)summaryString;

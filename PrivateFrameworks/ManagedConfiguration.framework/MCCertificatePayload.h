@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSData, NSString;
+@class NSDate, NSData, NSString;
 
 @interface MCCertificatePayload : MCPayload {
     NSData *_certificatePersistentID;
     NSString *_installedOnDeviceID;
 }
 
-@property(retain) NSData *certificatePersistentID;
-@property(readonly) NSDate *expiry;
-@property(copy) NSString *installedOnDeviceID;
+@property(retain) NSData * certificatePersistentID;
+@property(readonly) NSDate * expiry;
+@property(copy) NSString * installedOnDeviceID;
 @property(readonly) BOOL isIdentity;
 @property(readonly) BOOL isRoot;
 @property(readonly) BOOL isSigned;

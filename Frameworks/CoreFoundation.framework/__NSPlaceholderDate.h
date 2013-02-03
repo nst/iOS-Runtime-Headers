@@ -13,7 +13,7 @@
 - (id)initWithTimeIntervalSinceReferenceDate:(double)arg1;
 - (oneway void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (double)timeIntervalSinceReferenceDate;
 
 @end

@@ -5,7 +5,7 @@
 @interface SCROIOUSBHIDElement : SCROIOHIDElement {
 }
 
-- (id)initWithIOObject:(NSUInteger)arg1;
-- (NSInteger)transport;
+- (id)initWithIOObject:(unsigned int)arg1;
+- (int)transport;
 
 @end

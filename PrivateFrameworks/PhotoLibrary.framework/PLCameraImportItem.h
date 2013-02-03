@@ -16,17 +16,17 @@
     UIImage *_thumbnail;
     NSData *_thumbnailData;
     BOOL _thumbnailRequested;
-    NSInteger _thumbnailState;
+    int _thumbnailState;
 }
 
-@property(retain) NSString *basePath;
-@property(retain) PLPhotoAlbum *event;
-@property(readonly) NSString *identifier;
-@property(retain) NSError *importError;
-@property(readonly) NSString *parentFolder;
-@property(readonly) UIImage *thumbnail;
-@property(retain) NSData *thumbnailData;
+@property(retain) NSString * basePath;
+@property(retain) PLPhotoAlbum * event;
+@property(readonly) NSString * identifier;
+@property(retain) NSError * importError;
+@property(readonly) NSString * parentFolder;
 @property BOOL shouldImport;
+@property(readonly) UIImage * thumbnail;
+@property(retain) NSData * thumbnailData;
 
 - (void)_addRepresentation:(id)arg1;
 - (id)_fileExtensionForTypeWithSelector:(SEL)arg1;
@@ -76,11 +76,11 @@
 - (void)setImportError:(id)arg1;
 - (void)setShouldImport:(BOOL)arg1;
 - (void)setThumbnailData:(id)arg1;
-- (void)setThumbnailState:(NSInteger)arg1;
+- (void)setThumbnailState:(int)arg1;
 - (void)setThumbnailWithImageRef:(struct CGImage { }*)arg1;
 - (BOOL)shouldImport;
 - (id)thumbnail;
 - (id)thumbnailData;
-- (NSInteger)thumbnailState;
+- (int)thumbnailState;
 
 @end

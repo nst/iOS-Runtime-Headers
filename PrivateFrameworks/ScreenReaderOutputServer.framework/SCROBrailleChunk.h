@@ -6,34 +6,34 @@
 
 @interface SCROBrailleChunk : NSObject <NSCopying> {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     } _brailleSelection;
     NSMutableAttributedString *_brailleString;
-    NSInteger _contractionMode;
+    int _contractionMode;
     BOOL _hasTextSelection;
     BOOL _isFocused;
     BOOL _showDotsSevenAndEight;
     BOOL _showEightDot;
     NSString *_text;
     } _textSelection;
-    NSInteger _token;
+    int _token;
 }
 
 + (void)initialize;
 
-- (id)brailleWithIBeamLocation:(NSInteger*)arg1 selection:(struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg2;
+- (id)brailleWithIBeamLocation:(int*)arg1 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (BOOL)focused;
 - (BOOL)hasSelection;
-- (id)initWithText:(id)arg1 selection:(struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg2 token:(NSInteger)arg3 focused:(BOOL)arg4 contractionMode:(NSInteger)arg5 showEightDot:(BOOL)arg6 showDotsSevenAndEight:(BOOL)arg7;
+- (id)initWithText:(id)arg1 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 token:(int)arg3 focused:(BOOL)arg4 contractionMode:(int)arg5 showEightDot:(BOOL)arg6 showDotsSevenAndEight:(BOOL)arg7;
 - (BOOL)isFocusedOrSelected;
-- (NSInteger)locationForIndex:(NSInteger)arg1;
-- (NSInteger)token;
+- (int)locationForIndex:(int)arg1;
+- (int)token;
 - (void)translate;
 
 @end

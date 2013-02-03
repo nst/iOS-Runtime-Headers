@@ -9,21 +9,29 @@
     unsigned int _checkedNetwork : 1;
     unsigned int _isNetworkUp : 1;
     unsigned int _isFatPipe : 1;
+    unsigned int _isOnWWAN : 1;
     NSTimer *_notificationTimer;
     struct __SCDynamicStore { } *_store;
 }
 
+@property(readonly) BOOL isOnWWAN;
+
 + (id)sharedInstance;
 
+- (void)_networkReachabilityDidChange:(id)arg1;
 - (void)_postNetworkChangeNotification:(id)arg1;
 - (void)_postNotification:(id)arg1;
 - (void)_registerForNotificationKeys:(id)arg1 patterns:(id)arg2;
+- (void)_startObservingReachabilityChanges;
+- (void)_stopObservingReachabilityChanges;
 - (void)_triggerDialForHostname:(id)arg1;
 - (void*)createPacketContextAssertionWithIdentifier:(id)arg1;
 - (void)dealloc;
 - (BOOL)inAirplaneMode;
+- (BOOL)inCallWithNoData;
 - (id)init;
 - (BOOL)isFatPipe;
 - (BOOL)isNetworkUp;
+- (BOOL)isOnWWAN;
 
 @end

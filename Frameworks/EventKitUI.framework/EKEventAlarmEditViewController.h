@@ -6,27 +6,27 @@
 
 @interface EKEventAlarmEditViewController : EKEventEditItemViewController <CalendarEventAlarmTableDelegate> {
     EKAlarm *_alarm;
-    NSInteger _alarmIndex;
+    int _alarmIndex;
     CalendarEventAlarmTable *_table;
 }
 
-@property(retain) EKAlarm *alarm;
-@property NSInteger alarmIndex;
-@property NSInteger presetIdentifier;
+@property(retain) EKAlarm * alarm;
+@property int alarmIndex;
+@property int presetIdentifier;
 
 - (id)_table;
 - (id)alarm;
-- (NSInteger)alarmIndex;
+- (int)alarmIndex;
 - (void)alarmTableDidChangeAlarm:(id)arg1;
 - (BOOL)customSelected;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)loadView;
-- (NSInteger)presetIdentifier;
+- (int)presetIdentifier;
 - (void)setAlarm:(id)arg1;
-- (void)setAlarmIndex:(NSInteger)arg1;
+- (void)setAlarmIndex:(int)arg1;
 - (void)setCustomString:(id)arg1;
-- (void)setPresetIdentifier:(NSInteger)arg1;
+- (void)setPresetIdentifier:(int)arg1;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
 

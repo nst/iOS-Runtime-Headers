@@ -9,14 +9,14 @@
     NSString *m_name;
 }
 
-@property(retain) NSMutableArray *keys;
-@property(retain) NSString *name;
-@property(readonly) NSUInteger count;
+@property(readonly) unsigned int count;
+@property(retain) NSMutableArray * keys;
+@property(retain) NSString * name;
 
 + (id)keylist;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -25,6 +25,7 @@
 - (id)initWithName:(id)arg1 keys:(id)arg2;
 - (id)keyWithName:(id)arg1;
 - (id)keys;
+- (id)keysWithInteractionType:(id)arg1;
 - (id)name;
 - (void)setKeys:(id)arg1;
 - (void)setName:(id)arg1;

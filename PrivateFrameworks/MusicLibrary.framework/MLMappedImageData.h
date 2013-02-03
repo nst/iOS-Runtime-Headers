@@ -6,7 +6,7 @@
 
 @interface MLMappedImageData : NSData {
     void *_bytes;
-    NSUInteger _length;
+    unsigned int _length;
     MLMappedFileSegment *_mappedFileSegment;
 }
 
@@ -15,6 +15,6 @@
 - (const void*)bytes;
 - (void)dealloc;
 - (id)initWithMappedFileSegment:(id)arg1 bytes:(void*)arg2 length:(unsigned long)arg3;
-- (NSUInteger)length;
+- (unsigned int)length;
 
 @end

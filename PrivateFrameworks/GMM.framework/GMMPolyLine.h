@@ -8,16 +8,16 @@
     BOOL _hasLineColor;
     BOOL _hasLineWidth;
     NSData *_line;
-    NSInteger _lineColor;
-    NSInteger _lineWidth;
+    int _lineColor;
+    int _lineWidth;
 }
 
-@property(retain) NSData *line;
 @property(readonly) BOOL hasLine;
 @property(readonly) BOOL hasLineColor;
 @property(readonly) BOOL hasLineWidth;
-@property NSInteger lineColor;
-@property NSInteger lineWidth;
+@property(retain) NSData * line;
+@property int lineColor;
+@property int lineWidth;
 
 - (void)dealloc;
 - (id)description;
@@ -27,12 +27,12 @@
 - (BOOL)hasLineWidth;
 - (id)init;
 - (id)line;
-- (NSInteger)lineColor;
-- (NSInteger)lineWidth;
+- (int)lineColor;
+- (int)lineWidth;
 - (BOOL)readFrom:(id)arg1;
 - (void)setLine:(id)arg1;
-- (void)setLineColor:(NSInteger)arg1;
-- (void)setLineWidth:(NSInteger)arg1;
+- (void)setLineColor:(int)arg1;
+- (void)setLineWidth:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

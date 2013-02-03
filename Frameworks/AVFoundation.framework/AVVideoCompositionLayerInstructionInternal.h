@@ -6,7 +6,7 @@
 
 @interface AVVideoCompositionLayerInstructionInternal : NSObject {
     NSMutableArray *opacityRamps;
-    NSInteger trackID;
+    int trackID;
     NSMutableArray *transformRamps;
 }
 

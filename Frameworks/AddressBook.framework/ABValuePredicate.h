@@ -2,31 +2,31 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class <NSObject>;
+@class <NSObject>, NSObject;
 
 @interface ABValuePredicate : ABPredicate {
-    NSInteger _comparison;
+    int _comparison;
     BOOL _dictionaryValue;
-    NSInteger _property;
+    int _property;
     <NSObject> *_value;
 }
 
-@property(copy) NSObject *value;
-@property NSInteger comparison;
-@property NSInteger property;
+@property int comparison;
+@property int property;
+@property(copy) NSObject * value;
 
-- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(NSInteger*)arg2 predicateIdentifier:(NSInteger)arg3;
+- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (long)comparison;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isValid;
 - (id)predicateFormat;
-- (NSInteger)property;
+- (int)property;
 - (id)queryJoinsInCompound:(BOOL)arg1;
 - (id)querySelectProperties;
 - (id)queryWhereString;
 - (void)setComparison:(long)arg1;
-- (void)setProperty:(NSInteger)arg1;
+- (void)setProperty:(int)arg1;
 - (void)setValue:(id)arg1;
 - (id)stringForComparison:(id)arg1;
 - (id)value;

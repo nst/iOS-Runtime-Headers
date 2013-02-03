@@ -9,10 +9,10 @@
     NSData *_panoMap;
 }
 
-@property(retain) NSData *depthMap;
-@property(retain) NSData *panoMap;
+@property(retain) NSData * depthMap;
 @property(readonly) BOOL hasDepthMap;
 @property(readonly) BOOL hasPanoMap;
+@property(retain) NSData * panoMap;
 
 - (void)dealloc;
 - (id)depthMap;

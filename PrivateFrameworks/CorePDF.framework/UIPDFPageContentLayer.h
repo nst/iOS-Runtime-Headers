@@ -23,13 +23,20 @@
             float width; 
             float height; 
         } size; 
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     struct CGColor { } *_highLightColor;
     UIPDFPage *_page;
     UIPDFPageView *_view;
     } cropBox;
     } mediaBox;
-    float scale;
     CALayer *selectionLayer;
+    } transformToFit;
 }
 
 - (void)dealloc;

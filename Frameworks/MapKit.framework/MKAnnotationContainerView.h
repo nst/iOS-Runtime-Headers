@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKAnnotationContainerViewInternal;
+@class MKAnnotationContainerViewInternal, NSArray;
 
 @interface MKAnnotationContainerView : UIView {
     MKAnnotationContainerViewInternal *_internal;
 }
 
-@property(readonly) NSArray *annotations;
-@property(copy) NSArray *selectedAnnotations;
+@property(readonly) NSArray * annotations;
 @property Class calloutViewClass;
+@property(copy) NSArray * selectedAnnotations;
 
 + (void)_initializeSafeCategory;
 
@@ -33,7 +33,7 @@
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_displayRect;
 - (void)_dropDraggingAnnotationViewAnimated:(BOOL)arg1;
 - (void)_dropPinsIfNeeded:(id)arg1 animated:(BOOL)arg2;
-- (void)_findNextView:(id*)arg1 orientation:(NSInteger*)arg2 context:(id)arg3;
+- (void)_findNextView:(id*)arg1 orientation:(int*)arg2 context:(id)arg3;
 - (void)_liftForDragging:(id)arg1 mouseDownPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)_loadMetaDataForAnnotationView:(id)arg1 throttled:(BOOL)arg2;
 - (void)_loadMetaDataForSearchResult:(id)arg1;
@@ -92,7 +92,7 @@
 - (void)addSearchResults:(id)arg1 selectSearchResult:(id)arg2;
 - (void)addSearchResults:(id)arg1;
 - (void)addSubview:(id)arg1;
-- (id)addViewForManagedAnnotation:(id)arg1;
+- (id)addViewForManagedAnnotation:(id)arg1 notifyDelegate:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })annotationAndCalloutRectForSelectedSearchResult;
 - (void)annotationViewDidChangeZIndex:(id)arg1;
 - (id)annotationViewForPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -112,7 +112,7 @@
 - (void)clearSearchResultPinsExcluding:(id)arg1;
 - (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
 - (struct { double x1; double x2; })coordinateForAnnotationView:(id)arg1;
-- (struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; id x5; BOOL x6; })currentComparisonContext;
+- (struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; id x5; BOOL x6; })currentComparisonContext;
 - (void)dealloc;
 - (id)delegate;
 - (id)dequeueReusableAnnotationViewWithIdentifier:(id)arg1;
@@ -122,12 +122,12 @@
 - (BOOL)freezeUserLocationView;
 - (BOOL)hasDroppingPins;
 - (BOOL)hasPendingAnimations;
-- (NSUInteger)indexForAnnotationView:(id)arg1;
+- (unsigned int)indexForAnnotationView:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAccessibilityElement;
 - (BOOL)isAnimationsEnabled;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })mapTransform;
-- (NSUInteger)mapType;
+- (unsigned int)mapType;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)panoramaInfoReturnedForObject:(id)arg1;
 - (void)panoramaInfoReturnedForObjects:(id)arg1;
@@ -154,7 +154,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDidAddUserLocationView:(BOOL)arg1;
 - (void)setMapTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)setMapType:(NSUInteger)arg1;
+- (void)setMapType:(unsigned int)arg1;
 - (void)setSearchResultToSelect:(id)arg1;
 - (void)setSelectedAnnotations:(id)arg1;
 - (void)setSelectedSearchResult:(id)arg1 animate:(BOOL)arg2 userInitiated:(BOOL)arg3 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 scrollToFit:(BOOL)arg5;
@@ -164,7 +164,7 @@
 - (void)setSelectedSearchResult:(id)arg1;
 - (void)setUseCLReverseGeocoder:(BOOL)arg1;
 - (void)setUserLocationView:(id)arg1;
-- (void)setUserLocationViewUpdateMode:(NSInteger)arg1;
+- (void)setUserLocationViewUpdateMode:(int)arg1;
 - (void)setVisibleRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)set_mapTileView:(id)arg1;
 - (BOOL)showAddedAnnotationsAnimated:(BOOL)arg1;
@@ -180,7 +180,7 @@
 - (BOOL)userLocationAnnotationDidHide;
 - (BOOL)userLocationAnnotationWillShow;
 - (id)userLocationView;
-- (NSInteger)userLocationViewUpdateMode;
+- (int)userLocationViewUpdateMode;
 - (id)viewForAnnotation:(id)arg1;
 
 @end

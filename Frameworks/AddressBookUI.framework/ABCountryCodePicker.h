@@ -13,7 +13,7 @@
     UITableView *_tableView;
 }
 
-@property(readonly) UITableView *tableView;
+@property(readonly) UITableView * tableView;
 
 - (void)_didEndPickingAndConfirmed:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)_setSelectedCountryCode:(id)arg1 atPath:(id)arg2;
@@ -21,7 +21,7 @@
 - (void)dealloc;
 - (id)editedItem;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)reloadCountryCodes;
 - (id)selectedCountryCode;
 - (void)setDelegate:(id)arg1;
@@ -30,8 +30,8 @@
 - (id)styleProvider;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (id)tableView;

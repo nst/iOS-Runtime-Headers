@@ -2,18 +2,18 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSDictionary, QLPreviewParts;
+@class NSURLResponse, NSString, NSURLRequest, NSDictionary, QLPreviewParts;
 
 @interface QLPreviewConverter : NSObject {
     NSDictionary *_options;
     QLPreviewParts *_previewParts;
 }
 
-@property(readonly) NSString *previewFileName;
-@property(readonly) QLPreviewParts *previewParts;
-@property(readonly) NSURLRequest *previewRequest;
-@property(readonly) NSURLResponse *previewResponse;
-@property(readonly) NSString *previewUTI;
+@property(readonly) NSString * previewFileName;
+@property(readonly) QLPreviewParts * previewParts;
+@property(readonly) NSURLRequest * previewRequest;
+@property(readonly) NSURLResponse * previewResponse;
+@property(readonly) NSString * previewUTI;
 
 + (BOOL)canConvertDocumentType:(id)arg1;
 + (BOOL)isSafeRequest:(id)arg1;

@@ -10,9 +10,9 @@
     NSArray *_updateItems;
 }
 
-@property(readonly) NSError *error;
-@property(readonly) NSArray *updateItems;
+@property(readonly) NSError * error;
 @property(getter=isFailed,readonly) BOOL failed;
+@property(readonly) NSArray * updateItems;
 
 - (id)copyUpdateItemDictionaries;
 - (void)dealloc;

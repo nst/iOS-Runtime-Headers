@@ -10,24 +10,24 @@
     BOOL _hasRequestType;
     BOOL _hasSearchType;
     BOOL _hasZoomLevel;
-    NSInteger _requestType;
+    int _requestType;
     NSString *_searchTerm;
-    NSInteger _searchType;
-    NSInteger _zoomLevel;
+    int _searchType;
+    int _zoomLevel;
 }
 
-@property(retain) NSString *appKey;
-@property(retain) NSString *appName;
-@property(retain) NSString *searchTerm;
+@property(retain) NSString * appKey;
+@property(retain) NSString * appName;
 @property(readonly) BOOL hasAppKey;
 @property(readonly) BOOL hasAppName;
 @property(readonly) BOOL hasRequestType;
 @property(readonly) BOOL hasSearchTerm;
 @property(readonly) BOOL hasSearchType;
 @property(readonly) BOOL hasZoomLevel;
-@property NSInteger requestType;
-@property NSInteger searchType;
-@property NSInteger zoomLevel;
+@property int requestType;
+@property(retain) NSString * searchTerm;
+@property int searchType;
+@property int zoomLevel;
 
 - (id)appKey;
 - (id)appName;
@@ -42,16 +42,16 @@
 - (BOOL)hasZoomLevel;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (NSInteger)requestType;
+- (int)requestType;
 - (id)searchTerm;
-- (NSInteger)searchType;
+- (int)searchType;
 - (void)setAppKey:(id)arg1;
 - (void)setAppName:(id)arg1;
-- (void)setRequestType:(NSInteger)arg1;
+- (void)setRequestType:(int)arg1;
 - (void)setSearchTerm:(id)arg1;
-- (void)setSearchType:(NSInteger)arg1;
-- (void)setZoomLevel:(NSInteger)arg1;
+- (void)setSearchType:(int)arg1;
+- (void)setZoomLevel:(int)arg1;
 - (void)writeTo:(id)arg1;
-- (NSInteger)zoomLevel;
+- (int)zoomLevel;
 
 @end

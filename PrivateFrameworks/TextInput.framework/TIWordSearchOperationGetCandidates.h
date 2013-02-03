@@ -12,9 +12,9 @@
     BOOL _withPrediction;
 }
 
-@property(readonly) NSString *inputString;
-@property(retain) NSArray *results;
 @property(readonly) SEL action;
+@property(readonly) NSString * inputString;
+@property(retain) NSArray * results;
 @property(retain,readonly) id target;
 @property(readonly) BOOL withPrediction;
 

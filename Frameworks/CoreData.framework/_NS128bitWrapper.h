@@ -11,7 +11,7 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithBytes:(char *)arg1;
 - (BOOL)isEqual:(id)arg1;
 

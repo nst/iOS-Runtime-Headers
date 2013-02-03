@@ -13,7 +13,7 @@
     NSData *_destinationEntityVersionHash;
     } _entityMappingFlags;
     NSString *_entityMigrationPolicyClassName;
-    NSUInteger _mappingType;
+    unsigned int _mappingType;
     NSString *_name;
     NSMutableArray *_relationshipMappings;
     void *_reserved1;
@@ -46,14 +46,14 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEditable;
 - (BOOL)isEqual:(id)arg1;
-- (NSUInteger)mappingType;
+- (unsigned int)mappingType;
 - (id)name;
 - (id)relationshipMappings;
 - (void)setAttributeMappings:(id)arg1;
 - (void)setDestinationEntityName:(id)arg1;
 - (void)setDestinationEntityVersionHash:(id)arg1;
 - (void)setEntityMigrationPolicyClassName:(id)arg1;
-- (void)setMappingType:(NSUInteger)arg1;
+- (void)setMappingType:(unsigned int)arg1;
 - (void)setName:(id)arg1;
 - (void)setRelationshipMappings:(id)arg1;
 - (void)setSourceEntityName:(id)arg1;

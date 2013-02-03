@@ -2,21 +2,23 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMDocument, NSString, DOMAbstractView;
+
 @interface DOMHTMLIFrameElement : DOMHTMLElement {
 }
 
-@property(copy) NSString *align;
-@property(retain,readonly) DOMDocument *contentDocument;
-@property(retain,readonly) DOMAbstractView *contentWindow;
-@property(copy) NSString *frameBorder;
-@property(copy) NSString *height;
-@property(copy) NSString *longDesc;
-@property(copy) NSString *marginHeight;
-@property(copy) NSString *marginWidth;
-@property(copy) NSString *name;
-@property(copy) NSString *scrolling;
-@property(copy) NSString *src;
-@property(copy) NSString *width;
+@property(copy) NSString * align;
+@property(retain,readonly) DOMDocument * contentDocument;
+@property(retain,readonly) DOMAbstractView * contentWindow;
+@property(copy) NSString * frameBorder;
+@property(copy) NSString * height;
+@property(copy) NSString * longDesc;
+@property(copy) NSString * marginHeight;
+@property(copy) NSString * marginWidth;
+@property(copy) NSString * name;
+@property(copy) NSString * scrolling;
+@property(copy) NSString * src;
+@property(copy) NSString * width;
 
 - (id)align;
 - (id)contentDocument;
@@ -42,7 +44,7 @@
 - (void)setSrc:(id)arg1;
 - (void)setWidth:(id)arg1;
 - (id)src;
-- (NSInteger)structuralComplexityContribution;
+- (int)structuralComplexityContribution;
 - (id)width;
 
 @end

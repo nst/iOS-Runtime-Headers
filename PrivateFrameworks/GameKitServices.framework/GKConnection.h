@@ -18,7 +18,7 @@
 - (BOOL)convertParticipantID:(id)arg1 toPeerID:(id*)arg2;
 - (BOOL)convertPeerID:(id)arg1 toParticipantID:(id*)arg2;
 - (id)eventDelegate;
-- (NSUInteger)gckPID;
+- (unsigned int)gckPID;
 - (struct OpaqueGCKSession { }*)gckSession;
 - (void)getLocalConnectionDataWithCompletionHandler:(id)arg1;
 - (id)initWithParticipantID:(id)arg1;

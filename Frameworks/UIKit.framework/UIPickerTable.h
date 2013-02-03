@@ -21,11 +21,11 @@
     unsigned int _allowsMultipleSelection : 1;
     unsigned int _lastShouldStick : 1;
     unsigned int _disableDidSelect : 1;
-    NSInteger _lastClickRow;
+    int _lastClickRow;
     } _lastOffset;
     UIPickerScrollAnimation *_scrollAnimation;
     } _selectionBarRect;
-    NSInteger _selectionBarRow;
+    int _selectionBarRow;
 }
 
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
@@ -39,20 +39,20 @@
 - (BOOL)didSelectDisabled:(BOOL)arg1;
 - (BOOL)fixupCenterCellToSelectionBar:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSInteger)lastClickRow;
+- (int)lastClickRow;
 - (void)mouseDown:(struct __GSEvent { }*)arg1;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (struct CGPoint { float x1; float x2; })newOffsetWithCenteredRectFromOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)removeFromSuperview;
 - (BOOL)scrollCenterCellToSelectionBar;
-- (void)selectCell:(id)arg1 inRow:(NSInteger)arg2 column:(NSInteger)arg3 withFade:(BOOL)arg4;
-- (void)selectRow:(NSInteger)arg1 animated:(BOOL)arg2 notify:(BOOL)arg3;
+- (void)selectCell:(id)arg1 inRow:(int)arg2 column:(int)arg3 withFade:(BOOL)arg4;
+- (void)selectRow:(int)arg1 animated:(BOOL)arg2 notify:(BOOL)arg3;
 - (id)selectedTableCell;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionBarRect;
-- (NSInteger)selectionBarRow;
+- (int)selectionBarRow;
 - (void)setAllowsMultipleSelection:(BOOL)arg1;
 - (void)setAllowsSelectingRows:(BOOL)arg1;
-- (void)setLastClickRow:(NSInteger)arg1;
+- (void)setLastClickRow:(int)arg1;
 - (void)setRowHeight:(float)arg1;
 - (void)setSelectionBarRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)updateSelectionBarRow;

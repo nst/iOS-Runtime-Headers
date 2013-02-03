@@ -8,11 +8,11 @@
     SSOperationProgress *_operationProgress;
 }
 
-@property(readonly) SSOperationProgress *operationProgress;
 @property(readonly) double estimatedSecondsRemaining;
-@property(readonly) NSInteger phaseType;
+@property(readonly) SSOperationProgress * operationProgress;
+@property(readonly) int phaseType;
 @property(readonly) float progressChangeRate;
-@property(readonly) NSInteger progressUnits;
+@property(readonly) int progressUnits;
 @property(readonly) long long progressValue;
 @property(readonly) long long totalProgressValue;
 
@@ -24,9 +24,9 @@
 - (id)initWithOperationProgress:(id)arg1;
 - (id)initWithPropertyListEncoding:(id)arg1;
 - (id)operationProgress;
-- (NSInteger)phaseType;
+- (int)phaseType;
 - (float)progressChangeRate;
-- (NSInteger)progressUnits;
+- (int)progressUnits;
 - (long long)progressValue;
 - (long long)totalProgressValue;
 

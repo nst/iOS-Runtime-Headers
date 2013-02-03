@@ -21,13 +21,13 @@
     unsigned char status;
 }
 
-@property(retain) NSError *error;
-@property(retain) NSString *message;
-@property(retain) NSArray *results;
-@property(retain) NSString *spellingSuggestion;
-@property CGPoint centerLongLat;
+@property struct CGPoint { float x; float y; } centerLongLat;
+@property(retain) NSError * error;
 @property unsigned char flags;
-@property CGSize longLatSpan;
+@property struct CGSize { float width; float height; } longLatSpan;
+@property(retain) NSString * message;
+@property(retain) NSArray * results;
+@property(retain) NSString * spellingSuggestion;
 @property unsigned char status;
 
 - (struct CGPoint { float x1; float x2; })centerLongLat;

@@ -16,7 +16,7 @@
 + (id)requestHeaderFieldsWithCookies:(id)arg1;
 
 - (struct OpaqueCFHTTPCookie { }*)_GetInternalCFHTTPCookie;
-- (NSInteger)_compareForHeaderOrder:(id)arg1;
+- (int)_compareForHeaderOrder:(id)arg1;
 - (BOOL)_isExpired;
 - (id)_key;
 - (id)comment;
@@ -26,7 +26,7 @@
 - (id)domain;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expiresDate;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithCFHTTPCookie:(struct OpaqueCFHTTPCookie { }*)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -40,6 +40,6 @@
 - (id)portList;
 - (id)properties;
 - (id)value;
-- (NSUInteger)version;
+- (unsigned int)version;
 
 @end

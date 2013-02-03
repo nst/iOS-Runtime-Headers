@@ -8,12 +8,13 @@
     NSMutableSet *_principalSearchProperties;
 }
 
-@property(retain) NSMutableSet *principalSearchProperties;
+@property(retain) NSMutableSet * principalSearchProperties;
 
 - (void)addPrincipalSearchProperty:(id)arg1;
 - (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
+- (id)init;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)principalSearchProperties;
 - (void)setPrincipalSearchProperties:(id)arg1;

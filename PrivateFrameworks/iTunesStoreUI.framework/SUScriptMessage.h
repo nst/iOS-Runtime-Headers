@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableSet;
+@class NSArray, NSMutableSet, NSString, SUMessage;
 
 @interface SUScriptMessage : SUScriptObject {
     NSMutableSet *_callbacks;
 }
 
-@property(copy) NSArray *messageParts;
-@property(retain) SUMessage *nativeMessage;
-@property(copy) NSString *postURL;
+@property(copy) NSArray * messageParts;
+@property(retain) SUMessage * nativeMessage;
+@property(copy) NSString * postURL;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;

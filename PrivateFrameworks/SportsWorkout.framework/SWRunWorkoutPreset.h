@@ -13,20 +13,20 @@
     NSString *_presetGoal;
     SWVoicePromptController *_promptController;
     NSMutableArray *_stateObservationTargets;
-    NSUInteger _templateId;
+    unsigned int _templateId;
     NSString *_templateName;
     NSMutableArray *_timeObservationTargets;
     NSMutableArray *_userEventObservationTargets;
     NSString *_workoutName;
 }
 
-@property(readonly) NSString *distanceDisplayUnits;
-@property(readonly) NSString *goalType;
-@property(readonly) NSString *presetGoal;
-@property(readonly) NSString *templateName;
-@property(readonly) NSString *workoutName;
+@property(readonly) NSString * distanceDisplayUnits;
 @property(readonly) float goal;
-@property(readonly) NSUInteger templateId;
+@property(readonly) NSString * goalType;
+@property(readonly) NSString * presetGoal;
+@property(readonly) unsigned int templateId;
+@property(readonly) NSString * templateName;
+@property(readonly) NSString * workoutName;
 
 + (id)presetForCustomGoalWithAmount:(id)arg1 units:(id)arg2;
 + (id)presetForGoal:(id)arg1;
@@ -57,12 +57,12 @@
 - (id)distanceDisplayUnits;
 - (float)goal;
 - (id)goalType;
-- (id)initWithPresetGoal:(id)arg1 goal:(float)arg2 goalType:(id)arg3 goalInDisplayUnits:(id)arg4 templateId:(NSUInteger)arg5 templateName:(id)arg6 workoutName:(id)arg7;
-- (void)observeRunWorkoutControllerDataChange:(id)arg1 elapsedTime:(NSUInteger)arg2 pace:(float)arg3 distance:(float)arg4 calories:(float)arg5 location:(id)arg6;
+- (id)initWithPresetGoal:(id)arg1 goal:(float)arg2 goalType:(id)arg3 goalInDisplayUnits:(id)arg4 templateId:(unsigned int)arg5 templateName:(id)arg6 workoutName:(id)arg7;
+- (void)observeRunWorkoutControllerDataChange:(id)arg1 elapsedTime:(unsigned int)arg2 pace:(float)arg3 distance:(float)arg4 calories:(float)arg5 location:(id)arg6;
 - (void)observeRunWorkoutStateChange:(id)arg1 oldState:(id)arg2 newState:(id)arg3;
 - (void)observeRunWorkoutUserEvent:(id)arg1 userEvent:(id)arg2;
 - (id)presetGoal;
-- (NSUInteger)templateId;
+- (unsigned int)templateId;
 - (id)templateName;
 - (id)workoutName;
 

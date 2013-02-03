@@ -3,27 +3,27 @@
  */
 
 @interface SUBase64Encoder : SUFilteringDataConsumer {
-    NSUInteger _left;
+    unsigned int _left;
     unsigned char _leftovers[3];
-    NSUInteger _line;
-    NSUInteger _lineBreakLength;
+    unsigned int _line;
+    unsigned int _lineBreakLength;
     BOOL _padChar;
     char *_table;
 }
 
 @property BOOL allowSlash;
-@property NSUInteger lineBreakLength;
+@property unsigned int lineBreakLength;
 @property BOOL padChar;
 
-+ (NSInteger)maxConsumeLengthForReadLength:(NSInteger)arg1;
++ (int)maxConsumeLengthForReadLength:(int)arg1;
 + (long long)outputLengthForInputLength:(long long)arg1;
 
 - (BOOL)allowSlash;
-- (NSInteger)consumeData:(id)arg1;
+- (int)consumeData:(id)arg1;
 - (void)finish;
 - (id)initWithDataConsumer:(id)arg1;
 - (unsigned long)lineBreakLength;
-- (NSUInteger)minimumConsumeLength;
+- (unsigned int)minimumConsumeLength;
 - (BOOL)padChar;
 - (void)setAllowSlash:(BOOL)arg1;
 - (void)setLineBreakLength:(unsigned long)arg1;

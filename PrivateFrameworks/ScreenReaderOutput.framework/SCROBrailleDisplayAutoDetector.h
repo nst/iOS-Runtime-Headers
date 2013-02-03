@@ -21,7 +21,7 @@
 - (BOOL)isAutoDetectEnabled;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)stopDetectingDisplays;
 
 @end

@@ -9,8 +9,8 @@
     SUScriptSection *_selectedSection;
 }
 
-@property(getter=_sections,retain) id sections; /* unknown property attribute: Sset_sections: */
-@property(getter=_selectedSection,retain) SUScriptSection *selectedSection; /* unknown property attribute: Sset_selectedSection: */
+@property(getter=_sections,setter=set_sections:,retain) id sections;
+@property(getter=_selectedSection,setter=set_selectedSection:,retain) SUScriptSection * selectedSection;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;

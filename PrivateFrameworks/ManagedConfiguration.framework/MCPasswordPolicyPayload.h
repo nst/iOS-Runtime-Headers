@@ -18,19 +18,19 @@
     NSNumber *_passcodeHistoryCount;
 }
 
-@property(readonly) NSNumber *isAlphanumericPasscodeRequired;
-@property(readonly) NSNumber *isManualFetchingWhenRoaming;
-@property(readonly) NSNumber *isPasscodeRequired;
-@property(readonly) NSNumber *isSimplePasscodeAllowed;
-@property(readonly) NSNumber *maxFailedAttempts;
-@property(readonly) NSNumber *maxGracePeriodMinutes;
-@property(readonly) NSNumber *maxInactivityMinutes;
-@property(readonly) NSNumber *maxPasscodeAgeDays;
-@property(readonly) NSNumber *minComplexCharacters;
-@property(readonly) NSNumber *minLength;
-@property(readonly) NSNumber *passcodeHistoryCount;
+@property(readonly) NSNumber * isAlphanumericPasscodeRequired;
+@property(readonly) NSNumber * isManualFetchingWhenRoaming;
+@property(readonly) NSNumber * isPasscodeRequired;
+@property(readonly) NSNumber * isSimplePasscodeAllowed;
+@property(readonly) NSNumber * maxFailedAttempts;
+@property(readonly) NSNumber * maxGracePeriodMinutes;
+@property(readonly) NSNumber * maxInactivityMinutes;
+@property(readonly) NSNumber * maxPasscodeAgeDays;
+@property(readonly) NSNumber * minComplexCharacters;
+@property(readonly) NSNumber * minLength;
+@property(readonly) NSNumber * passcodeHistoryCount;
 
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
 - (void)dealloc;

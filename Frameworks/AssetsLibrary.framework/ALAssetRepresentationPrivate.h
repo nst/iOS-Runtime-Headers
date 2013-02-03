@@ -11,14 +11,14 @@
     MLPhoto *_photo;
 }
 
-@property(copy) NSString *extension;
-@property ALAssetsLibrary *library;
-@property(retain) MLPhoto *photo;
+@property(copy) NSString * extension;
 @property BOOL isValid;
+@property ALAssetsLibrary * library;
+@property(retain) MLPhoto * photo;
 
 + (void)_clearFileDescriptorQueue;
-+ (NSInteger)_fileDescriptorForPersistentURL:(id)arg1;
-+ (void)_setFileDescriptor:(NSInteger)arg1 forPersistentURL:(id)arg2;
++ (int)_fileDescriptorForPersistentURL:(id)arg1;
++ (void)_setFileDescriptor:(int)arg1 forPersistentURL:(id)arg2;
 + (void)_setupFileDescriptorQueue;
 
 - (BOOL)_isImage;

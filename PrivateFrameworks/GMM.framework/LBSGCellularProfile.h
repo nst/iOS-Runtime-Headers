@@ -8,18 +8,18 @@
     BOOL _hasPrefetchMode;
     NSMutableArray *_historicalCellss;
     NSMutableArray *_neighborss;
-    NSInteger _prefetchMode;
+    int _prefetchMode;
     LBSGCell *_primaryCell;
     long long _timestamp;
 }
 
-@property(retain) NSMutableArray *historicalCellss;
-@property(retain) NSMutableArray *neighborss;
-@property(retain) LBSGCell *primaryCell;
 @property(readonly) BOOL hasPrefetchMode;
-@property(readonly) NSInteger historicalCellssCount;
-@property(readonly) NSInteger neighborssCount;
-@property NSInteger prefetchMode;
+@property(retain) NSMutableArray * historicalCellss;
+@property(readonly) int historicalCellssCount;
+@property(retain) NSMutableArray * neighborss;
+@property(readonly) int neighborssCount;
+@property int prefetchMode;
+@property(retain) LBSGCell * primaryCell;
 @property long long timestamp;
 
 - (void)addHistoricalCells:(id)arg1;
@@ -28,21 +28,21 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasPrefetchMode;
-- (id)historicalCellsAtIndex:(NSUInteger)arg1;
+- (id)historicalCellsAtIndex:(unsigned int)arg1;
 - (id)historicalCellss;
-- (NSInteger)historicalCellssCount;
+- (int)historicalCellssCount;
 - (id)init;
-- (id)neighborsAtIndex:(NSUInteger)arg1;
+- (id)neighborsAtIndex:(unsigned int)arg1;
 - (id)neighborss;
-- (NSInteger)neighborssCount;
-- (NSInteger)prefetchMode;
+- (int)neighborssCount;
+- (int)prefetchMode;
 - (id)primaryCell;
 - (BOOL)readFrom:(id)arg1;
-- (void)setHistoricalCells:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setHistoricalCells:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setHistoricalCellss:(id)arg1;
-- (void)setNeighbors:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setNeighbors:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setNeighborss:(id)arg1;
-- (void)setPrefetchMode:(NSInteger)arg1;
+- (void)setPrefetchMode:(int)arg1;
 - (void)setPrimaryCell:(id)arg1;
 - (void)setTimestamp:(long long)arg1;
 - (long long)timestamp;

@@ -6,17 +6,17 @@
 
 @interface AVTrackReaderInspector : AVAssetTrackInspector {
     AVAsset *_asset;
-    NSUInteger _mediaType;
-    NSInteger _trackID;
+    unsigned int _mediaType;
+    int _trackID;
     struct OpaqueFigTrackReader { } *_trackReader;
 }
 
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })_CMTimeForProperty:(struct __CFString { }*)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_CMTimeForProperty:(struct __CFString { }*)arg1;
 - (long)_SInt32ForProperty:(struct __CFString { }*)arg1;
 - (unsigned char)_booleanForProperty:(struct __CFString { }*)arg1;
 - (float)_floatForProperty:(struct __CFString { }*)arg1;
-- (id)_initWithAsset:(id)arg1 trackID:(NSInteger)arg2 trackIndex:(long)arg3;
-- (id)_initWithAsset:(id)arg1 trackID:(NSInteger)arg2;
+- (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
+- (id)_initWithAsset:(id)arg1 trackID:(int)arg2;
 - (id)_initWithAsset:(id)arg1 trackIndex:(long)arg2;
 - (long long)_longLongForProperty:(struct __CFString { }*)arg1;
 - (id)_stringForProperty:(struct __CFString { }*)arg1;
@@ -30,7 +30,7 @@
 - (id)extendedLanguageTag;
 - (void)finalize;
 - (id)formatDescriptions;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (BOOL)isEnabled;
 - (BOOL)isEqual:(id)arg1;
@@ -40,15 +40,15 @@
 - (id)mediaType;
 - (id)metadataForFormat:(id)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;
-- (NSInteger)naturalTimeScale;
+- (int)naturalTimeScale;
 - (float)nominalFrameRate;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
 - (float)preferredVolume;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })samplePresentationTimeForTrackTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
-- (id)segmentForTrackTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })samplePresentationTimeForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (id)segmentForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)segments;
-- (struct { struct { long long x_1_1_1; NSInteger x_1_1_2; NSUInteger x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; NSInteger x_2_1_2; NSUInteger x_2_1_3; long long x_2_1_4; } x2; })timeRange;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
 - (long long)totalSampleDataLength;
-- (NSInteger)trackID;
+- (int)trackID;
 
 @end

@@ -8,12 +8,12 @@
     SSAuthenticationContext *_authenticationContext;
     SUDelayedNavigationItem *_delayedNavigationItem;
     BOOL _hasEverAppeared;
-    NSInteger _lastKnownOrientation;
+    int _lastKnownOrientation;
     SUObjectPool *_objectPool;
     SUItem *_rootItem;
-    NSInteger _scheduledOrientation;
+    int _scheduledOrientation;
     SUStorePageProtocol *_storePageProtocol;
-    NSInteger _style;
+    int _style;
     SUStructuredPage *_trackList;
     SUTableViewController *_trackListController;
     NSURL *_url;
@@ -21,10 +21,10 @@
     SUWebView *_webView;
 }
 
-@property(copy) SSAuthenticationContext *authenticationContext;
-@property(retain,readonly) SUWebView *webView;
-@property NSInteger style;
+@property(copy) SSAuthenticationContext * authenticationContext;
+@property int style;
 @property BOOL viewIsReady;
+@property(retain,readonly) SUWebView * webView;
 
 + (void)_initializeSafeCategory;
 
@@ -40,9 +40,9 @@
 - (void)_reloadUI;
 - (void)_removePlaceholderBackgroundView;
 - (void)_selectTrackListItemWithIdentifier:(id)arg1;
-- (void)_sendOrientationWillChangeToInterfaceOrientation:(NSInteger)arg1;
+- (void)_sendOrientationWillChangeToInterfaceOrientation:(int)arg1;
 - (void)_setExistingNavigationItem:(id)arg1;
-- (void)_setLastKnownOrientation:(NSInteger)arg1;
+- (void)_setLastKnownOrientation:(int)arg1;
 - (void)_setTrackListController:(id)arg1;
 - (void)_updateTrackListRootItem;
 - (unsigned long long)accessibilityTraits;
@@ -71,11 +71,11 @@
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setScriptProperties:(id)arg1;
 - (void)setStorePageProtocol:(id)arg1;
-- (void)setStyle:(NSInteger)arg1;
+- (void)setStyle:(int)arg1;
 - (void)setViewIsReady:(BOOL)arg1;
 - (id)storePageProtocol;
 - (void)storePageProtocolDidChange;
-- (NSInteger)style;
+- (int)style;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (BOOL)viewIsReady;
@@ -85,9 +85,9 @@
 - (BOOL)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (void)webView:(id)arg1 documentViewDidSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)webView:(id)arg1 foundPropertyList:(id)arg2 ofType:(NSInteger)arg3;
+- (void)webView:(id)arg1 foundPropertyList:(id)arg2 ofType:(int)arg3;
 - (void)webView:(id)arg1 performPurchaseAnimationWithView:(id)arg2;
-- (void)webView:(id)arg1 receivedEventOfType:(NSInteger)arg2 userInfo:(id)arg3;
+- (void)webView:(id)arg1 receivedEventOfType:(int)arg2 userInfo:(id)arg3;
 - (void)webView:(id)arg1 willInjectScriptObject:(id)arg2;
 - (id)webView;
 - (void)webViewDidFinishLoad:(id)arg1;

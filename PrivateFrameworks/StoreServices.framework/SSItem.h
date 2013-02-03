@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSString, SSURLConnectionRequest, NSDate, NSDictionary, NSMutableArray;
+@class NSNumber, SSItemOffer, NSURL, SSItemImageCollection, NSMutableArray, NSDictionary, NSString, SSURLConnectionRequest, NSDate, NSArray;
 
 @interface SSItem : NSObject {
     NSDate *_expirationDate;
@@ -15,20 +15,20 @@
     NSString *_tellAFriendSubject;
 }
 
-@property(readonly) NSNumber *ITunesStoreIdentifier;
-@property(readonly) NSArray *allItemOffers;
-@property(readonly) NSString *artistName;
-@property(readonly) SSItemOffer *defaultItemOffer;
-@property(readonly) NSDate *expirationDate;
-@property(readonly) SSItemImageCollection *imageCollection;
-@property(readonly) NSString *itemKind;
-@property(readonly) NSString *itemTitle;
-@property(readonly) NSArray *thumbnailImages;
-@property(readonly) NSURL *viewItemURL;
+@property(readonly) NSNumber * ITunesStoreIdentifier;
+@property(readonly) NSArray * allItemOffers;
+@property(readonly) NSString * artistName;
 @property(readonly) float averageUserRating;
+@property(readonly) SSItemOffer * defaultItemOffer;
+@property(readonly) NSDate * expirationDate;
 @property(getter=isGameCenterEnabled,readonly) BOOL gameCenterEnabled;
-@property(readonly) NSInteger numberOfUserRatings;
+@property(readonly) SSItemImageCollection * imageCollection;
+@property(readonly) NSString * itemKind;
+@property(readonly) NSString * itemTitle;
+@property(readonly) int numberOfUserRatings;
 @property(getter=isRestricted,readonly) BOOL restricted;
+@property(readonly) NSArray * thumbnailImages;
+@property(readonly) NSURL * viewItemURL;
 
 - (id)ITunesStoreIdentifier;
 - (void)_finishTellAFriendLoadWithError:(id)arg1;
@@ -55,7 +55,7 @@
 - (id)itemTitle;
 - (void)loadTellAFriendMessageWithCompletionHandler:(id)arg1;
 - (id)mediaKind;
-- (NSInteger)numberOfUserRatings;
+- (int)numberOfUserRatings;
 - (id)playableMedia;
 - (id)priceDisplay;
 - (id)rawItemDictionary;

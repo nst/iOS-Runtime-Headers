@@ -17,9 +17,9 @@
 - (unsigned short)columnSpan;
 - (void)dealloc;
 - (void)incrementColumnSpan;
-- (NSInteger)readAttributesForBaseCell:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
-- (NSInteger)readAttributesForBaseTabularCell:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
-- (NSInteger)readBaseAttributesForBaseCell:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (int)readAttributesForBaseCell:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (int)readAttributesForBaseTabularCell:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (int)readBaseAttributesForBaseCell:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 - (unsigned short)rowIndex;
 - (unsigned short)rowSpan;
 - (void)setCellStyle:(id)arg1;

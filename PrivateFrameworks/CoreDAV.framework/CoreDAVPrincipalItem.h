@@ -13,12 +13,12 @@
     CoreDAVItemWithNoChildren *_unauthenticated;
 }
 
-@property(retain) CoreDAVItemWithNoChildren *all;
-@property(retain) CoreDAVItemWithNoChildren *authenticated;
-@property(retain) CoreDAVHrefItem *href;
-@property(retain) CoreDAVItem *property;
-@property(retain) CoreDAVItemWithNoChildren *selfItem;
-@property(retain) CoreDAVItemWithNoChildren *unauthenticated;
+@property(retain) CoreDAVItemWithNoChildren * all;
+@property(retain) CoreDAVItemWithNoChildren * authenticated;
+@property(retain) CoreDAVHrefItem * href;
+@property(retain) CoreDAVItem * property;
+@property(retain) CoreDAVItemWithNoChildren * selfItem;
+@property(retain) CoreDAVItemWithNoChildren * unauthenticated;
 
 - (id)all;
 - (id)authenticated;
@@ -34,7 +34,6 @@
 - (id)initTypeIsProperty:(id)arg1;
 - (id)initTypeIsSelf;
 - (id)initTypeIsUnauthenticated;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)property;
 - (id)selfItem;
 - (void)setAll:(id)arg1;

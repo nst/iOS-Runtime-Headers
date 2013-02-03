@@ -2,19 +2,19 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSArray;
 
 @interface IMPeople : NSObject {
-    NSInteger _coalesceCount;
+    int _coalesceCount;
     BOOL _hidePeople;
     NSMutableArray *_people;
 }
 
-@property BOOL hidePeople; /* unknown property attribute: SsetShouldHidePeople: */
-@property(readonly) NSArray *groups;
-@property(readonly) NSArray *people;
 @property(readonly) BOOL coalescingChanges;
-@property(readonly) NSUInteger count;
+@property(readonly) unsigned int count;
+@property(readonly) NSArray * groups;
+@property(setter=setShouldHidePeople:) BOOL hidePeople;
+@property(readonly) NSArray * people;
 
 - (void)_addedPeople:(id)arg1;
 - (BOOL)addIMHandle:(id)arg1;
@@ -25,7 +25,7 @@
 - (void)beginCoalescedChanges;
 - (BOOL)coalescingChanges;
 - (BOOL)containsIMHandle:(id)arg1;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (void)endCoalescedChanges;
 - (id)groups;

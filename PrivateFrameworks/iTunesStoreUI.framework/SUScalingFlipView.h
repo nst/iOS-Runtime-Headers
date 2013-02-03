@@ -25,15 +25,15 @@
         } size; 
     UIView *_backView;
     <SUScalingFlipViewDelegate> *_delegate;
-    NSInteger _direction;
+    int _direction;
     double _duration;
     } _fromFrame;
     UIView *_frontView;
     } _toFrame;
 }
 
-@property <SUScalingFlipViewDelegate> *delegate;
-@property NSInteger direction;
+@property <SUScalingFlipViewDelegate> * delegate;
+@property int direction;
 @property double duration;
 
 - (id)_backLayerAnimation;
@@ -45,12 +45,12 @@
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (NSInteger)direction;
+- (int)direction;
 - (double)duration;
 - (id)initWithFrontView:(id)arg1 backView:(id)arg2;
 - (void)performFlip;
 - (void)setDelegate:(id)arg1;
-- (void)setDirection:(NSInteger)arg1;
+- (void)setDirection:(int)arg1;
 - (void)setDuration:(double)arg1;
 
 @end

@@ -5,21 +5,21 @@
 @class NSTimer, NSString, MPMediaQuery, NSMutableArray, MPMediaItem;
 
 @interface SWMusicRemoteController : NSObject {
-    NSInteger _currentVolumeDirection;
+    int _currentVolumeDirection;
     MPMediaItem *_interruptedItem;
     double _interruptedPlaybackTime;
     MPMediaQuery *_interruptedQueueAsQuery;
-    NSInteger _interruptedRepeatMode;
+    int _interruptedRepeatMode;
     NSString *_latestSelectedPlaylistName;
-    NSInteger _musicSelection;
+    int _musicSelection;
     NSMutableArray *_playlists;
     MPMediaItem *_powersongItem;
     NSTimer *_volumeAdjustTimer;
     NSMutableArray *_workoutMixes;
 }
 
-@property(copy) NSString *latestSelectedPlaylistName;
-@property NSInteger musicSelection;
+@property(copy) NSString * latestSelectedPlaylistName;
+@property int musicSelection;
 @property(readonly) BOOL powersongIsNowPlayingItem;
 @property(readonly) BOOL shouldControlMusic;
 
@@ -33,39 +33,39 @@
 - (id)_init;
 - (void)_mediaLibraryChanged:(id)arg1;
 - (void)_nowPlayingItemChanged:(id)arg1;
-- (unsigned long long)_persistentUIDForPlaylistIndex:(NSUInteger)arg1 isWorkoutMix:(BOOL)arg2;
+- (unsigned long long)_persistentUIDForPlaylistIndex:(unsigned int)arg1 isWorkoutMix:(BOOL)arg2;
 - (void)_releaseRemoteCachedData;
 - (void)_resumeInterruptedQueue;
-- (void)_startPlaylistAtIndex:(NSUInteger)arg1 isWorkoutMix:(BOOL)arg2;
+- (void)_startPlaylistAtIndex:(unsigned int)arg1 isWorkoutMix:(BOOL)arg2;
 - (void)_startPlaylistWithPersistentUID:(unsigned long long)arg1;
-- (void)beginAdjustingVolume:(NSInteger)arg1;
+- (void)beginAdjustingVolume:(int)arg1;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
 - (id)currentSongName;
 - (void)dealloc;
-- (void)endAdjustingVolume:(NSInteger)arg1;
+- (void)endAdjustingVolume:(int)arg1;
 - (void)endSeeking;
 - (void)goToNowPlaying;
 - (id)init;
 - (void)interruptPlaybackForTrackUID:(id)arg1;
 - (BOOL)isNowPlaying;
 - (id)latestSelectedPlaylistName;
-- (NSInteger)musicSelection;
+- (int)musicSelection;
 - (void)pause;
-- (unsigned long long)persistentUIDForPlaylistIndex:(NSUInteger)arg1;
-- (unsigned long long)persistentUIDForWorkoutMixIndex:(NSUInteger)arg1;
+- (unsigned long long)persistentUIDForPlaylistIndex:(unsigned int)arg1;
+- (unsigned long long)persistentUIDForWorkoutMixIndex:(unsigned int)arg1;
 - (void)play;
 - (id)playlists;
 - (BOOL)powersongIsNowPlayingItem;
 - (void)selectNextSong;
 - (void)selectPreviousSong;
 - (void)setLatestSelectedPlaylistName:(id)arg1;
-- (void)setMusicSelection:(NSInteger)arg1;
+- (void)setMusicSelection:(int)arg1;
 - (BOOL)shouldControlMusic;
-- (void)startPlaylistAtIndex:(NSUInteger)arg1;
+- (void)startPlaylistAtIndex:(unsigned int)arg1;
 - (void)startPlaylistWithPersistentUID:(unsigned long long)arg1;
 - (void)startShuffleSongs;
-- (void)startWorkoutMixAtIndex:(NSUInteger)arg1;
+- (void)startWorkoutMixAtIndex:(unsigned int)arg1;
 - (void)startWorkoutMixWithPersistentUID:(unsigned long long)arg1;
 - (id)workoutMixes;
 

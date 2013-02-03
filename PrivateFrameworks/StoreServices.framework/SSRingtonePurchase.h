@@ -9,7 +9,7 @@
     BOOL _shouldMakeDefaultRingtone;
 }
 
-@property(retain) NSNumber *assigneeIdentifier;
+@property(retain) NSNumber * assigneeIdentifier;
 @property BOOL shouldMakeDefaultRingtone;
 
 - (id)assigneeIdentifier;

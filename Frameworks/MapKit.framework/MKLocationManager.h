@@ -31,6 +31,7 @@
     MKLocationShiftFunction *_shiftFunction;
     GMMLocationShiftRequester *_shiftFunctionRequester;
     BOOL _shouldThrottleHeading;
+    struct __CTServerConnection { } *_telephonyServerConnection;
     CLHeading *_throttledHeading;
     BOOL _trackingHeading;
     BOOL _trackingLocation;
@@ -40,21 +41,14 @@
     BOOL _usesRouteCorrection;
 }
 
-@property(readonly) CLHeading *heading;
-@property(readonly) CLLocation *lastLocation;
-@property(retain) MKRouteStep *routeStep;
-@property(retain) MKLocationShiftFunction *shiftFunction;
-@property(retain) GMMLocationShiftRequester *shiftFunctionRequester;
-@property(retain) CLHeading *throttledHeading;
-@property(retain) NSString *tripPath;
-@property(retain) NSMutableArray *tripPaths;
 @property(readonly) double accuracy;
 @property BOOL chinaShiftEnabled;
 @property double expectedTimeTillNextUpdate;
 @property(readonly) BOOL hasHiFiCapability;
 @property(readonly) BOOL hasLocation;
+@property(readonly) CLHeading * heading;
 @property id headingObserver;
-@property NSInteger headingOrientation;
+@property int headingOrientation;
 @property(readonly) double headingUpdateTimeInterval;
 @property(readonly) BOOL isAirplaneModeBlockingLocation;
 @property(readonly) BOOL isHeadingServicesAvailable;
@@ -66,9 +60,16 @@
 @property(readonly) BOOL isLocationServicesEnabled;
 @property(readonly) BOOL isLocationServicesPossiblyAvailable;
 @property(readonly) BOOL isLocationServicesRestricted;
-@property(readonly) NSInteger lastLocationSource;
-@property(readonly) CGPoint longLat;
+@property(readonly) CLLocation * lastLocation;
+@property(readonly) int lastLocationSource;
+@property(readonly) struct CGPoint { float x; float y; } longLat;
+@property(retain) MKRouteStep * routeStep;
+@property(retain) MKLocationShiftFunction * shiftFunction;
+@property(retain) GMMLocationShiftRequester * shiftFunctionRequester;
 @property BOOL shouldThrottleHeading;
+@property(retain) CLHeading * throttledHeading;
+@property(retain) NSString * tripPath;
+@property(retain) NSMutableArray * tripPaths;
 @property double userLocationCacheDuration;
 @property BOOL usesRouteCorrection;
 
@@ -76,6 +77,7 @@
 
 - (id)_applyChinaLocationShift:(id)arg1;
 - (BOOL)_isTimeToResetOnResume;
+- (BOOL)_radioBoundToNonChinaMCC;
 - (id)_radiosPreferences;
 - (void)_reportHeadingFailureWithError:(id)arg1;
 - (void)_reportHeadingSuccess;
@@ -87,7 +89,7 @@
 - (void)_setDelayedDeliveryTimer:(id)arg1;
 - (void)_setTrackingHeading:(BOOL)arg1;
 - (void)_setTrackingLocation:(BOOL)arg1;
-- (void)_startCoalescingUpdates:(NSInteger)arg1;
+- (void)_startCoalescingUpdates:(int)arg1;
 - (void)_stopCoalescingUpdates;
 - (double)accuracy;
 - (void)airplaneModeChanged;
@@ -95,7 +97,7 @@
 - (void)applicationSuspended:(id)arg1;
 - (BOOL)chinaShiftEnabled;
 - (id)clLocationManager;
-- (void)dampenGPSLocationAccuracy:(id*)arg1 oldLocationSource:(NSInteger)arg2;
+- (void)dampenGPSLocationAccuracy:(id*)arg1 oldLocationSource:(int)arg2;
 - (void)dismissHeadingCalibrationDisplay;
 - (BOOL)displayCoreLocationStats;
 - (double)expectedTimeTillNextUpdate;
@@ -103,7 +105,7 @@
 - (BOOL)hasLocation;
 - (id)heading;
 - (id)headingObserver;
-- (NSInteger)headingOrientation;
+- (int)headingOrientation;
 - (double)headingUpdateTimeInterval;
 - (id)init;
 - (BOOL)isAirplaneModeBlockingLocation;
@@ -118,10 +120,10 @@
 - (BOOL)isLocationServicesPossiblyAvailable;
 - (BOOL)isLocationServicesRestricted;
 - (id)lastLocation;
-- (NSInteger)lastLocationSource;
+- (int)lastLocationSource;
 - (void)loadRecording:(id)arg1;
 - (void)loadRecordings:(id)arg1;
-- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(NSInteger)arg2;
+- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateHeading:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
@@ -142,7 +144,7 @@
 - (void)setExpectedTimeTillNextUpdate:(double)arg1;
 - (void)setHeading:(id)arg1;
 - (void)setHeadingObserver:(id)arg1;
-- (void)setHeadingOrientation:(NSInteger)arg1;
+- (void)setHeadingOrientation:(int)arg1;
 - (void)setLastLocation:(id)arg1;
 - (void)setRouteStep:(id)arg1;
 - (void)setShiftFunction:(id)arg1;

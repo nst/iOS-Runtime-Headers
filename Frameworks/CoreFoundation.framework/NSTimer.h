@@ -2,6 +2,11 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface NSTimer : NSObject {
 }
 
@@ -12,7 +17,7 @@
 + (id)timerWithTimeInterval:(double)arg1 invocation:(id)arg2 repeats:(BOOL)arg3;
 + (id)timerWithTimeInterval:(double)arg1 target:(id)arg2 selector:(SEL)arg3 userInfo:(id)arg4 repeats:(BOOL)arg5;
 
-- (struct { NSInteger x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); })context;
+- (struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); })context;
 - (double)_cffireTime;
 - (struct __CFString { }*)copyDebugDescription;
 - (void)fire;

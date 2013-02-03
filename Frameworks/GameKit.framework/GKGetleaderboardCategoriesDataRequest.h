@@ -11,14 +11,14 @@
     GKPlayer *_player;
 }
 
-@property(retain) GKLeaderboardCategory *aggregateCategory;
-@property(retain) NSArray *categories;
-@property(retain) GKGame *game;
-@property(retain) GKPlayer *player;
+@property(retain) GKLeaderboardCategory * aggregateCategory;
+@property(retain) NSArray * categories;
+@property(retain) GKGame * game;
+@property(retain) GKPlayer * player;
 
 - (id)aggregateCategory;
 - (id)cacheKey;
-- (NSInteger)cacheType;
+- (int)cacheType;
 - (id)categories;
 - (void)dealloc;
 - (id)game;

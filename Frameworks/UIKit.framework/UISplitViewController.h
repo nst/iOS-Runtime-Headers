@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSString, UIBarButtonItem, UIPopoverController, NSArray;
+@class UIView, NSString, UIBarButtonItem, UIPopoverController, NSArray, <UISplitViewControllerDelegate>;
 
 @interface UISplitViewController : UIViewController {
     struct CGRect { 
@@ -33,21 +33,21 @@
     UIPopoverController *_hiddenPopoverController;
     float _masterColumnWidth;
     } _rotatingFromMasterViewFrame;
-    NSInteger _rotatingFromOrientation;
+    int _rotatingFromOrientation;
     } _rotatingToMasterViewFrame;
     UIView *_rotationSnapshotView;
     NSArray *_viewControllers;
 }
 
-@property <UISplitViewControllerDelegate> *delegate;
-@property(copy) NSArray *viewControllers;
+@property <UISplitViewControllerDelegate> * delegate;
+@property(copy) NSArray * viewControllers;
 
 + (void)_initializeSafeCategory;
 
 - (void)_commonInit;
 - (struct CGContext { }*)_createContextForCachingWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isOpaque:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrame;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
 - (void)_gkRefreshContents;
 - (BOOL)_isLandscape;
 - (void)_loadNewSubviews:(id)arg1;
@@ -60,9 +60,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)detailViewController;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (float)gutterWidth;
-- (BOOL)hidesMasterViewDuringRotationFromInterfaceOrientation:(NSInteger)arg1 toInterfaceOrientation:(NSInteger)arg2;
+- (BOOL)hidesMasterViewDuringRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
 - (BOOL)hidesMasterViewInPortrait;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -72,17 +72,17 @@
 - (void)loadView;
 - (float)masterColumnWidth;
 - (id)masterViewController;
-- (void)purgeMemoryForReason:(NSInteger)arg1;
-- (BOOL)revealsMasterViewDuringRotationFromInterfaceOrientation:(NSInteger)arg1 toInterfaceOrientation:(NSInteger)arg2;
+- (void)purgeMemoryForReason:(int)arg1;
+- (BOOL)revealsMasterViewDuringRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setGutterWidth:(float)arg1;
 - (void)setHidesMasterViewInPortrait:(BOOL)arg1;
 - (void)setLeftColumnWidth:(float)arg1;
 - (void)setMasterColumnWidth:(float)arg1;
 - (void)setViewControllers:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)snapshotAllViews;
-- (void)snapshotForRotationFromInterfaceOrientation:(NSInteger)arg1 toInterfaceOrientation:(NSInteger)arg2;
+- (void)snapshotForRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
 - (void)snapshotMasterView;
 - (void)toggleMasterInPopover:(id)arg1;
 - (void)unloadViewForced:(BOOL)arg1;
@@ -92,7 +92,7 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

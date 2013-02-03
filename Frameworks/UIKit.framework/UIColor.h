@@ -5,8 +5,9 @@
 @interface UIColor : NSObject <NSCoding> {
 }
 
-@property(readonly) CGColor *CGColor;
+@property(readonly) struct CGColor { }* CGColor;
 
++ (id)_adlib_colorWithRGBA:(unsigned int)arg1;
 + (id)_gkColorFromRGBAHexString:(id)arg1;
 + (id)_mapkit_userLocationAccuracyRingFillColor;
 + (id)_mapkit_userLocationAccuracyRingStrokeColor;
@@ -37,6 +38,24 @@
 + (id)noContentDarkGradientBackgroundColor;
 + (id)noContentLightGradientBackgroundColor;
 + (id)orangeColor;
++ (id)padFaceTimeBabyBlueColor;
++ (id)padFaceTimeBabyBlueColor;
++ (id)padFaceTimeBabyBlueColor;
++ (id)padFaceTimeDarkSeparatorColor;
++ (id)padFaceTimeDarkSeparatorColor;
++ (id)padFaceTimeDarkSeparatorColor;
++ (id)padFaceTimeLightBabyBlueColor;
++ (id)padFaceTimeLightBabyBlueColor;
++ (id)padFaceTimeLightBabyBlueColor;
++ (id)padFaceTimeLightSeparatorColor;
++ (id)padFaceTimeLightSeparatorColor;
++ (id)padFaceTimeLightSeparatorColor;
++ (id)padFaceTimeSectionOutlineColor;
++ (id)padFaceTimeSectionOutlineColor;
++ (id)padFaceTimeSectionOutlineColor;
++ (id)padFaceTimeShadowedGroupBackgroundColor;
++ (id)padFaceTimeShadowedGroupBackgroundColor;
++ (id)padFaceTimeShadowedGroupBackgroundColor;
 + (id)pinStripeColor;
 + (id)purpleColor;
 + (id)redColor;
@@ -74,7 +93,7 @@
 + (id)yellowColor;
 
 - (struct CGColor { }*)CGColor;
-- (id)_mapkit_initWithInteger:(NSUInteger)arg1;
+- (id)_mapkit_initWithInteger:(unsigned int)arg1;
 - (BOOL)_mapkit_isWhite;
 - (struct { unsigned char x1[3]; unsigned char x2; })_mapkit_ubyteColorWithForcedAlpha:(unsigned char)arg1;
 - (float)alphaComponent;
@@ -88,7 +107,7 @@
 - (float)differenceFromColor:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (float)greenComponent;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (float)hueComponent;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (id)initWithCoder:(id)arg1;

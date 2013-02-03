@@ -8,14 +8,14 @@
     NSNumber *_number;
 }
 
-+ (id)numberWithInt:(NSInteger)arg1;
-+ (id)numberWithUnsignedInt:(NSUInteger)arg1;
++ (id)numberWithInt:(int)arg1;
++ (id)numberWithUnsignedInt:(unsigned int)arg1;
 
 - (void)dealloc;
 - (id)descriptionWithLocale:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInt:(NSInteger)arg1;
-- (id)initWithUnsignedInt:(NSUInteger)arg1;
+- (id)initWithInt:(int)arg1;
+- (id)initWithUnsignedInt:(unsigned int)arg1;
 
 @end

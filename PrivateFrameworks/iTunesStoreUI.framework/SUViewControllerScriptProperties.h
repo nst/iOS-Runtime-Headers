@@ -9,7 +9,7 @@
     BOOL _doubleTapEnabled;
     BOOL _embedded;
     BOOL _inputViewObeysDOMFocus;
-    NSInteger _loadingIndicatorStyle;
+    int _loadingIndicatorStyle;
     UIColor *_loadingTextColor;
     UIColor *_loadingTextShadowColor;
     SUGradient *_placeholderBackgroundGradient;
@@ -20,19 +20,19 @@
     UIColor *_topExtensionColor;
 }
 
-@property(retain) UIColor *backgroundColor;
-@property(retain) UIColor *loadingTextColor;
-@property(retain) UIColor *loadingTextShadowColor;
-@property(retain) SUGradient *placeholderBackgroundGradient;
-@property(retain) UIColor *topExtensionColor;
+@property(retain) UIColor * backgroundColor;
 @property(getter=isDoubleTapEnabled) BOOL doubleTapEnabled;
 @property(getter=isEmbedded) BOOL embedded;
 @property BOOL inputViewObeysDOMFocus;
-@property NSInteger loadingIndicatorStyle;
+@property int loadingIndicatorStyle;
+@property(retain) UIColor * loadingTextColor;
+@property(retain) UIColor * loadingTextShadowColor;
+@property(retain) SUGradient * placeholderBackgroundGradient;
 @property(getter=isScrollingDisabled) BOOL scrollingDisabled;
 @property BOOL shouldLoadProgressively;
 @property BOOL shouldShowFormAccessory;
 @property BOOL showsBackgroundShadow;
+@property(retain) UIColor * topExtensionColor;
 
 - (id)backgroundColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -43,7 +43,7 @@
 - (BOOL)isDoubleTapEnabled;
 - (BOOL)isEmbedded;
 - (BOOL)isScrollingDisabled;
-- (NSInteger)loadingIndicatorStyle;
+- (int)loadingIndicatorStyle;
 - (id)loadingTextColor;
 - (id)loadingTextShadowColor;
 - (id)placeholderBackgroundGradient;
@@ -51,7 +51,7 @@
 - (void)setDoubleTapEnabled:(BOOL)arg1;
 - (void)setEmbedded:(BOOL)arg1;
 - (void)setInputViewObeysDOMFocus:(BOOL)arg1;
-- (void)setLoadingIndicatorStyle:(NSInteger)arg1;
+- (void)setLoadingIndicatorStyle:(int)arg1;
 - (void)setLoadingTextColor:(id)arg1;
 - (void)setLoadingTextShadowColor:(id)arg1;
 - (void)setPlaceholderBackgroundGradient:(id)arg1;

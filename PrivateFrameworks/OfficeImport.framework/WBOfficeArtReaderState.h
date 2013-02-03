@@ -5,17 +5,17 @@
 @class WBReader;
 
 @interface WBOfficeArtReaderState : OABReaderState {
-    NSInteger mCurrentTextType;
+    int mCurrentTextType;
     WBReader *mReader;
 }
 
-@property WBReader *reader;
-@property NSInteger currentTextType;
+@property int currentTextType;
+@property WBReader * reader;
 
-- (NSInteger)currentTextType;
+- (int)currentTextType;
 - (id)initWithClient:(Class)arg1;
 - (id)reader;
-- (void)setCurrentTextType:(NSInteger)arg1;
+- (void)setCurrentTextType:(int)arg1;
 - (void)setReader:(id)arg1;
 
 @end

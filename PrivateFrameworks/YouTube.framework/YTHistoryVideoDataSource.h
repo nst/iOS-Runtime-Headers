@@ -13,7 +13,7 @@
 - (void)addVideo:(id)arg1;
 - (void)clearHistory;
 - (void)loadFromDefaults;
-- (NSUInteger)maxVideosToSave;
+- (unsigned int)maxVideosToSave;
 - (void)reloadData;
 
 @end

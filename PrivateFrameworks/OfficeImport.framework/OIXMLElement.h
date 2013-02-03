@@ -12,18 +12,18 @@
 + (void)_initEmptyHTMLNames;
 + (BOOL)isEmptyHTMLElement:(id)arg1;
 
-- (void)_appendXMLStringToString:(struct __CFString { }*)arg1 level:(NSInteger)arg2;
+- (void)_appendXMLStringToString:(struct __CFString { }*)arg1 level:(int)arg2;
 - (void)addAttribute:(id)arg1;
 - (void)addChild:(id)arg1;
-- (NSInteger)attributeCount;
-- (NSInteger)childrenCount;
+- (int)attributeCount;
+- (int)childrenCount;
 - (id)closingTagString;
 - (id)contentString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithName:(id)arg1 stringValue:(id)arg2;
-- (void)insertChild:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)insertChild:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)objectValue;
 - (id)openingTagString;
 - (void)setObjectValue:(id)arg1;

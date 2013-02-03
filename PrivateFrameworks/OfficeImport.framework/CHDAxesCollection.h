@@ -6,6 +6,6 @@
 }
 
 - (void)adjustAxesPositionForHorizontalChart;
-- (id)axesAtPosition:(NSInteger)arg1;
+- (id)axesAtPosition:(int)arg1;
 
 @end

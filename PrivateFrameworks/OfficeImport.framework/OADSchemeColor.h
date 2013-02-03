@@ -3,15 +3,15 @@
  */
 
 @interface OADSchemeColor : OADColor {
-    NSInteger mIndex;
+    int mIndex;
 }
 
-+ (id)schemeColorWithIndex:(NSInteger)arg1;
++ (id)schemeColorWithIndex:(int)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)hash;
-- (id)initWithSchemeColorIndex:(NSInteger)arg1;
+- (unsigned int)hash;
+- (id)initWithSchemeColorIndex:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (NSInteger)schemeColorIndex;
+- (int)schemeColorIndex;
 
 @end

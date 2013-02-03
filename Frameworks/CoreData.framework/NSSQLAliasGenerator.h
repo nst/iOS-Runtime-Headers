@@ -5,8 +5,8 @@
 @class NSString;
 
 @interface NSSQLAliasGenerator : NSObject {
-    NSUInteger _nextTableAlias;
-    NSUInteger _nextVariableAlias;
+    unsigned int _nextTableAlias;
+    unsigned int _nextVariableAlias;
     NSString *_tableBase;
     NSString *_variableBase;
 }
@@ -15,6 +15,6 @@
 - (id)generateSubqueryVariableAlias;
 - (id)generateTableAlias;
 - (id)init;
-- (id)initWithNestingLevel:(NSUInteger)arg1;
+- (id)initWithNestingLevel:(unsigned int)arg1;
 
 @end

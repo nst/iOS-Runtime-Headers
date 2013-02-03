@@ -8,10 +8,10 @@
     NSDictionary *_gameDescriptor;
 }
 
-@property(retain) NSDictionary *gameDescriptor;
+@property(retain) NSDictionary * gameDescriptor;
 
 - (BOOL)authenticationRequired;
-- (NSInteger)cacheType;
+- (int)cacheType;
 - (void)dealloc;
 - (id)gameDescriptor;
 - (id)invalidateCacheKeys;

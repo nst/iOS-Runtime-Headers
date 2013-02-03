@@ -27,7 +27,7 @@
 }
 
 @property(retain) id context;
-@property ? coordinate;
+@property struct { double latitude; double longitude; } coordinate;
 
 - (struct { double x1; double x2; })animationDestination;
 - (struct { double x1; double x2; })animationOrigin;

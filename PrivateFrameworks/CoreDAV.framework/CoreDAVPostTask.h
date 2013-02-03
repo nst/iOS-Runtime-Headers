@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
+@class <CoreDAVTaskDelegate>, NSData;
+
 @interface CoreDAVPostTask : CoreDAVPostOrPutTask {
 }
 
-@property <CoreDAVTaskDelegate> *delegate;
-@property(retain,readonly) NSData *responseBodyPayload;
+@property <CoreDAVTaskDelegate> * delegate;
+@property(retain,readonly) NSData * responseBodyPayload;
 
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;

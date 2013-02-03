@@ -6,15 +6,15 @@
 
 @interface UISnapshotModalViewController : UIViewController {
     UIViewController *_disappearingViewController;
-    NSInteger _interfaceOrientation;
+    int _interfaceOrientation;
 }
 
-@property(retain) UIViewController *disappearingViewController;
+@property(retain) UIViewController * disappearingViewController;
 
-- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)dealloc;
 - (id)disappearingViewController;
-- (id)initWithInterfaceOrientation:(NSInteger)arg1;
+- (id)initWithInterfaceOrientation:(int)arg1;
 - (void)setDisappearingViewController:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

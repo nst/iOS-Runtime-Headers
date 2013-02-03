@@ -13,12 +13,12 @@
     NSString *_uniqueIdentifier;
 }
 
-@property(retain) NSNumber *accountIdentifier;
-@property(copy) NSString *buyParameters;
-@property(copy) SSDownloadMetadata *downloadMetadata;
-@property(readonly) SSItem *item;
-@property(readonly) SSItemOffer *itemOffer;
-@property(readonly) NSString *uniqueIdentifier;
+@property(retain) NSNumber * accountIdentifier;
+@property(copy) NSString * buyParameters;
+@property(copy) SSDownloadMetadata * downloadMetadata;
+@property(readonly) SSItem * item;
+@property(readonly) SSItemOffer * itemOffer;
+@property(readonly) NSString * uniqueIdentifier;
 
 + (id)purchaseWithBuyParameters:(id)arg1;
 

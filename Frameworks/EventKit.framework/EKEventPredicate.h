@@ -12,11 +12,11 @@
     NSString *_uid;
 }
 
-@property(readonly) NSArray *calendars;
-@property(readonly) NSDate *endDate;
-@property(readonly) NSString *eventIdentifier;
-@property(readonly) NSDate *startDate;
-@property(readonly) NSTimeZone *timeZone;
+@property(readonly) NSArray * calendars;
+@property(readonly) NSDate * endDate;
+@property(readonly) NSString * eventIdentifier;
+@property(readonly) NSDate * startDate;
+@property(readonly) NSTimeZone * timeZone;
 
 + (id)predicateWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 calendars:(id)arg4;
 + (id)predicateWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 eventIdentifier:(id)arg4 calendars:(id)arg5;

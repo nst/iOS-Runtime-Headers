@@ -2,16 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface EDSortedCollection : EDKeyedCollection {
-     /* Encoded args for previous method: I16@0:4@8B12 */
 }
 
-- (NSUInteger)addObject:(id)arg1 overrideDuplicate:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
-- (NSUInteger)addObject:(id)arg1;
-- (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
+- (unsigned int)addObject:(id)arg1 overrideDuplicate:(bool)arg2;
+- (unsigned int)addObject:(id)arg1;
+- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 
 @end

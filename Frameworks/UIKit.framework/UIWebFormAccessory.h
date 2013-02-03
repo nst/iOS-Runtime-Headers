@@ -10,10 +10,10 @@
     <UIWebFormAccessoryDelegate> *delegate;
 }
 
-@property(retain) UIBarButtonItem *_autofill;
-@property(retain) UISegmentedControl *_tab;
-@property <UIWebFormAccessoryDelegate> *delegate;
+@property(retain) UIBarButtonItem * _autofill;
+@property(retain) UISegmentedControl * _tab;
 @property(getter=isAutoFillEnabled) BOOL autoFillEnabled;
+@property <UIWebFormAccessoryDelegate> * delegate;
 @property(getter=isNextEnabled) BOOL nextEnabled;
 @property(getter=isPreviousEnabled) BOOL previousEnabled;
 

@@ -12,11 +12,11 @@
     NSString *_text;
 }
 
-@property(readonly) void *addressBook;
-@property(readonly) MFContactsSearchManager *owner;
-@property(readonly) NSSet *properties;
-@property(readonly) NSNumber *taskID;
-@property(retain,readonly) NSString *text;
+@property(readonly) void* addressBook;
+@property(readonly) MFContactsSearchManager * owner;
+@property(readonly) NSSet * properties;
+@property(readonly) NSNumber * taskID;
+@property(retain,readonly) NSString * text;
 
 + (id)operationWithAddressBook:(void*)arg1 owner:(id)arg2 text:(id)arg3 taskID:(id)arg4 properties:(id)arg5;
 
@@ -26,6 +26,6 @@
 - (id)properties;
 - (id)taskID;
 - (id)text;
-- (NSInteger)type;
+- (int)type;
 
 @end

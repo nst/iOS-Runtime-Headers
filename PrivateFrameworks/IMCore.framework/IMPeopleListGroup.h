@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSString, NSRecursiveLock, NSDictionary, NSMutableArray, IMPeopleListItem;
+@class NSArray, NSString, NSRecursiveLock, NSDictionary, NSMutableArray, IMPeopleListItem;
 
 @interface IMPeopleListGroup : NSObject {
     BOOL _expanded;
     IMPeopleListItem *_item;
     NSString *_localizableName;
     NSRecursiveLock *_lock;
-    NSInteger _maxMembers;
+    int _maxMembers;
     NSMutableArray *_members;
     NSString *_name;
     NSDictionary *_properties;
@@ -21,26 +21,26 @@
     BOOL _supportsReordering;
 }
 
-@property BOOL isExpanded; /* unknown property attribute: SsetExpanded: */
-@property(retain,readonly) NSString *displayName;
-@property(retain) NSString *localizableName;
-@property(retain) NSArray *members;
-@property(retain) NSString *name;
-@property(retain) IMPeopleListItem *peopleListItem;
-@property(retain) NSDictionary *properties;
-@property(retain,readonly) NSArray *visibleMembers;
-@property(readonly) NSInteger actualNumberOfOnlineItems;
-@property NSInteger maxMembers;
-@property(readonly) NSInteger numberOfItems;
-@property(readonly) NSInteger numberOfOnlineItems;
+@property(readonly) int actualNumberOfOnlineItems;
+@property(retain,readonly) NSString * displayName;
+@property(setter=setExpanded:) BOOL isExpanded;
+@property(retain) NSString * localizableName;
+@property int maxMembers;
+@property(retain) NSArray * members;
+@property(retain) NSString * name;
+@property(readonly) int numberOfItems;
+@property(readonly) int numberOfOnlineItems;
+@property(retain) IMPeopleListItem * peopleListItem;
+@property(retain) NSDictionary * properties;
 @property BOOL supportsAdding;
 @property BOOL supportsMemberReordering;
 @property BOOL supportsOfflineMembers;
 @property BOOL supportsRemoving;
 @property BOOL supportsRename;
 @property BOOL supportsReordering;
+@property(retain,readonly) NSArray * visibleMembers;
 
-- (NSInteger)actualNumberOfOnlineItems;
+- (int)actualNumberOfOnlineItems;
 - (void)addPeopleListItem:(id)arg1;
 - (void)dealloc;
 - (id)description;
@@ -49,18 +49,18 @@
 - (id)init;
 - (BOOL)isExpanded;
 - (id)localizableName;
-- (NSInteger)maxMembers;
+- (int)maxMembers;
 - (id)members;
 - (id)name;
-- (NSInteger)numberOfItems;
-- (NSInteger)numberOfOnlineItems;
+- (int)numberOfItems;
+- (int)numberOfOnlineItems;
 - (id)peopleListItem;
 - (id)properties;
 - (void)removeAllItems;
 - (void)removePeopleListItem:(id)arg1;
 - (void)setExpanded:(BOOL)arg1;
 - (void)setLocalizableName:(id)arg1;
-- (void)setMaxMembers:(NSInteger)arg1;
+- (void)setMaxMembers:(int)arg1;
 - (void)setMembers:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPeopleListItem:(id)arg1;

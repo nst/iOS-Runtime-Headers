@@ -6,7 +6,7 @@
 
 @interface IMXMLReparser : NSObject <NSXMLParserDelegate> {
     IMXMLReparserContext *_context;
-    NSUInteger _depth;
+    unsigned int _depth;
     NSError *_error;
     NSMutableString *_output;
     NSXMLParser *_parser;

@@ -7,8 +7,8 @@
 @interface AVFigAssetWriterTrack : NSObject {
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     BOOL _aboveHighWaterLevel;
     struct dispatch_queue_s { } *_aboveHighWaterLevelQueue;
@@ -16,24 +16,24 @@
     AVMediaFileType *_mediaFileType;
     NSString *_mediaType;
     } _sampleBufferCoalescingInterval;
-    NSInteger _trackID;
+    int _trackID;
     AVWeakReference *_weakReference;
 }
 
-@property(readonly) OpaqueFigAssetWriter *figAssetWriter;
-@property(readonly) AVMediaFileType *mediaFileType;
-@property(readonly) NSString *mediaType;
-@property(readonly) __CVPixelBufferPool *pixelBufferPool;
 @property(getter=isAboveHighWaterLevel,readonly) BOOL aboveHighWaterLevel;
-@property ? sampleBufferCoalescingInterval;
-@property(readonly) NSInteger trackID;
+@property(readonly) struct OpaqueFigAssetWriter { }* figAssetWriter;
+@property(readonly) AVMediaFileType * mediaFileType;
+@property(readonly) NSString * mediaType;
+@property(readonly) struct __CVPixelBufferPool { }* pixelBufferPool;
+@property struct { long long value; int timescale; unsigned int flags; long long epoch; } sampleBufferCoalescingInterval;
+@property(readonly) int trackID;
 
 + (id)assetWriterTrackWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1 mediaType:(id)arg2 mediaFileType:(id)arg3 outputSettings:(id)arg4 sourcePixelBufferAttributes:(id)arg5 error:(id*)arg6;
 
-- (NSInteger)_attachToFigAssetWriterUsingOutputSettings:(id)arg1 sourcePixelBufferAttributes:(id)arg2 error:(id*)arg3;
-- (void)_figAssetWriterDidDropBelowLowWaterLevelForTrackID:(NSInteger)arg1;
+- (int)_attachToFigAssetWriterUsingOutputSettings:(id)arg1 sourcePixelBufferAttributes:(id)arg2 error:(id*)arg3;
+- (void)_figAssetWriterDidDropBelowLowWaterLevelForTrackID:(int)arg1;
 - (void)_refreshAboveHighWaterLevel;
-- (BOOL)addPixelBuffer:(struct __CVBuffer { }*)arg1 atPresentationTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg2 error:(id*)arg3;
+- (BOOL)addPixelBuffer:(struct __CVBuffer { }*)arg1 atPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 error:(id*)arg3;
 - (BOOL)addSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (struct OpaqueFigAssetWriter { }*)figAssetWriter;
@@ -47,10 +47,11 @@
 - (struct __CVPixelBufferPool { }*)pixelBufferPool;
 - (void)release;
 - (id)retain;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })sampleBufferCoalescingInterval;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })sampleBufferCoalescingInterval;
 - (void)setFigMetadata:(id)arg1;
 - (void)setFigTrackMatrix:(id)arg1;
-- (void)setSampleBufferCoalescingInterval:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
-- (NSInteger)trackID;
+- (void)setMediaTimeScale:(int)arg1;
+- (void)setSampleBufferCoalescingInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (int)trackID;
 
 @end

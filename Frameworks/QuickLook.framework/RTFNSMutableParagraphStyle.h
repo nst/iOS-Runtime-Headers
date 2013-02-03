@@ -5,8 +5,8 @@
 @interface RTFNSMutableParagraphStyle : RTFNSParagraphStyle {
 }
 
-- (void)setAlignment:(NSUInteger)arg1;
-- (void)setBaseWritingDirection:(NSInteger)arg1;
+- (void)setAlignment:(unsigned int)arg1;
+- (void)setBaseWritingDirection:(int)arg1;
 - (void)setFirstLineHeadIndent:(float)arg1;
 - (void)setHeadIndent:(float)arg1;
 - (void)setParagraphStyle:(id)arg1;

@@ -8,9 +8,9 @@
     <SWRunSensorPacketObserver> *_packetObserver;
 }
 
-@property(readonly) NSUInteger remainingBatteryLifetimeInHours;
+@property(readonly) unsigned int remainingBatteryLifetimeInHours;
 
-+ (NSUInteger)remainingHoursConsideredToBeLowBattery;
++ (unsigned int)remainingHoursConsideredToBeLowBattery;
 
 - (void)setPacketObserver:(id)arg1;
 

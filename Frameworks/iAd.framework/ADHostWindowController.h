@@ -2,36 +2,64 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class ADBannerView, UIView, UIWindow, ADRemoteView;
+@class UIWindow, UIViewController, UIView;
 
 @interface ADHostWindowController : NSObject {
-    ADBannerView *_bannerView;
-    UIView *_blankingView;
-    ADRemoteView *_hostView;
-    UIWindow *_window;
+    UIView *_bannerView;
+    UIViewController *_bannerViewController;
+    BOOL _bannerViewControllerIsStandAlone;
+    UIWindow *_bannerWindow;
+    BOOL _presented;
+    float _savedWindowLevel;
+    BOOL _supportsLandscapeLeft;
+    BOOL _supportsLandscapeRight;
+    BOOL _supportsPortrait;
+    BOOL _supportsPortraitUpsideDown;
 }
 
-@property(retain) ADBannerView *bannerView;
-@property(retain) UIView *blankingView;
-@property(retain) ADRemoteView *hostView;
-@property(retain) UIWindow *window;
-@property(readonly) NSInteger bannerViewOrientation;
+@property UIView * bannerView;
+@property(retain) UIViewController * bannerViewController;
+@property BOOL bannerViewControllerIsStandAlone;
+@property(retain) UIWindow * bannerWindow;
+@property BOOL presented;
+@property float savedWindowLevel;
+@property(getter=isStatusBarHidden) BOOL statusBarHidden;
+@property BOOL supportsLandscapeLeft;
+@property BOOL supportsLandscapeRight;
+@property BOOL supportsPortrait;
+@property BOOL supportsPortraitUpsideDown;
 
+- (void)_hideHostUI;
+- (void)_preventInterstitialExceptionOnInsert;
+- (void)_showHostUI;
 - (id)bannerView;
-- (NSInteger)bannerViewOrientation;
+- (id)bannerViewController;
+- (BOOL)bannerViewControllerIsStandAlone;
+- (id)bannerWindow;
 - (void)beginTransitionIn;
 - (void)beginTransitionOut;
-- (id)blankingView;
+- (void)clearBannerView;
 - (void)dealloc;
 - (void)endTransitionIn;
 - (void)endTransitionOut;
-- (id)hostView;
 - (id)init;
+- (BOOL)isStatusBarHidden;
+- (BOOL)presented;
+- (float)savedWindowLevel;
 - (void)setBannerView:(id)arg1;
-- (void)setBlankingView:(id)arg1;
-- (void)setHostView:(id)arg1;
-- (void)setRemoteWindowContextId:(NSUInteger)arg1;
-- (void)setWindow:(id)arg1;
-- (id)window;
+- (void)setBannerViewController:(id)arg1;
+- (void)setBannerViewControllerIsStandAlone:(BOOL)arg1;
+- (void)setBannerWindow:(id)arg1;
+- (void)setPresented:(BOOL)arg1;
+- (void)setSavedWindowLevel:(float)arg1;
+- (void)setStatusBarHidden:(BOOL)arg1;
+- (void)setSupportsLandscapeLeft:(BOOL)arg1;
+- (void)setSupportsLandscapeRight:(BOOL)arg1;
+- (void)setSupportsPortrait:(BOOL)arg1;
+- (void)setSupportsPortraitUpsideDown:(BOOL)arg1;
+- (BOOL)supportsLandscapeLeft;
+- (BOOL)supportsLandscapeRight;
+- (BOOL)supportsPortrait;
+- (BOOL)supportsPortraitUpsideDown;
 
 @end

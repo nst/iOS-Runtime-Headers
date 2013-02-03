@@ -9,7 +9,7 @@
     NSString *_text;
 }
 
-@property(copy) NSString *contentLocation;
+@property(copy) NSString * contentLocation;
 
 - (id)contentLocation;
 - (void)copyToPasteboard;
@@ -19,6 +19,6 @@
 - (BOOL)isDisplayable;
 - (void)setContentLocation:(id)arg1;
 - (id)text;
-- (NSInteger)type;
+- (int)type;
 
 @end

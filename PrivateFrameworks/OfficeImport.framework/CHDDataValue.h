@@ -2,51 +2,41 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class EDString;
 
 @interface CHDDataValue : NSObject {
     struct CHDDataPoint { 
-        NSUInteger index; 
+        unsigned int index; 
         struct EDValue { 
-            NSInteger type; 
-            union $_611 { 
-                /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*boolean; 
+            int type; 
+            union $_604 { 
+                boolboolean; 
                 double number; 
                 EDString *string; 
-                NSUInteger stringIndex; 
-                NSInteger error; 
+                unsigned int stringIndex; 
+                int error; 
             } ; 
         } value; 
-        NSUInteger contentFormatId; 
-     /* Encoded args for previous method: @16@0:4i8^{EDValue=i($_611=Bd@Ii)}12 */
-     /* Encoded args for previous method: @16@0:4i8^{EDValue=i($_611=Bd@Ii)}12 */
-     /* Encoded args for previous method: ^{CHDDataPoint=I{EDValue=i($_611=Bd@Ii)}I}8@0:4 */
-     /* Encoded args for previous method: v12@0:4^{CHDDataPoint=I{EDValue=i($_611=Bd@Ii)}I}8 */
-     /* Encoded args for previous method: ^{EDValue=i($_611=Bd@Ii)}8@0:4 */
-     /* Encoded args for previous method: v12@0:4^{EDValue=i($_611=Bd@Ii)}8 */
+        unsigned int contentFormatId; 
     } mDataPoint;
 }
 
 + (id)dataValue;
-+ (id)dataValueWithIndex:(NSInteger)arg1 value:(struct EDValue { NSInteger x1; union $_611 { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_2_1_1; double x_2_1_2; id x_2_1_3; NSUInteger x_2_1_4; NSInteger x_2_1_5; } x2; }*)arg2;
++ (id)dataValueWithIndex:(int)arg1 value:(struct EDValue { int x1; union $_604 { boolx_2_1_1; double x_2_1_2; id x_2_1_3; unsigned int x_2_1_4; int x_2_1_5; } x2; }*)arg2;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (NSUInteger)contentFormatId;
+- (unsigned int)contentFormatId;
 - (id)contentFormatWithResources:(id)arg1;
-- (struct CHDDataPoint { NSUInteger x1; struct EDValue { NSInteger x_2_1_1; union $_611 { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_2_2_1; double x_2_2_2; id x_2_2_3; NSUInteger x_2_2_4; NSInteger x_2_2_5; } x_2_1_2; } x2; NSUInteger x3; }*)dataPoint;
-- (NSInteger)index;
+- (struct CHDDataPoint { unsigned int x1; struct EDValue { int x_2_1_1; union $_604 { boolx_2_2_1; double x_2_2_2; id x_2_2_3; unsigned int x_2_2_4; int x_2_2_5; } x_2_1_2; } x2; unsigned int x3; }*)dataPoint;
+- (int)index;
 - (id)init;
-- (id)initWithIndex:(NSInteger)arg1 value:(struct EDValue { NSInteger x1; union $_611 { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_2_1_1; double x_2_1_2; id x_2_1_3; NSUInteger x_2_1_4; NSInteger x_2_1_5; } x2; }*)arg2;
-- (void)setContentFormatId:(NSUInteger)arg1;
+- (id)initWithIndex:(int)arg1 value:(struct EDValue { int x1; union $_604 { boolx_2_1_1; double x_2_1_2; id x_2_1_3; unsigned int x_2_1_4; int x_2_1_5; } x2; }*)arg2;
+- (void)setContentFormatId:(unsigned int)arg1;
 - (void)setContentFormatWithResources:(id)arg1 resources:(id)arg2;
-- (void)setDataPoint:(struct CHDDataPoint { NSUInteger x1; struct EDValue { NSInteger x_2_1_1; union $_611 { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_2_2_1; double x_2_2_2; id x_2_2_3; NSUInteger x_2_2_4; NSInteger x_2_2_5; } x_2_1_2; } x2; NSUInteger x3; }*)arg1;
-- (void)setIndex:(NSInteger)arg1;
-- (void)setValue:(struct EDValue { NSInteger x1; union $_611 { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_2_1_1; double x_2_1_2; id x_2_1_3; NSUInteger x_2_1_4; NSInteger x_2_1_5; } x2; }*)arg1;
-- (struct EDValue { NSInteger x1; union $_611 { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_2_1_1; double x_2_1_2; id x_2_1_3; NSUInteger x_2_1_4; NSInteger x_2_1_5; } x2; }*)value;
+- (void)setDataPoint:(struct CHDDataPoint { unsigned int x1; struct EDValue { int x_2_1_1; union $_604 { boolx_2_2_1; double x_2_2_2; id x_2_2_3; unsigned int x_2_2_4; int x_2_2_5; } x_2_1_2; } x2; unsigned int x3; }*)arg1;
+- (void)setIndex:(int)arg1;
+- (void)setValue:(struct EDValue { int x1; union $_604 { boolx_2_1_1; double x_2_1_2; id x_2_1_3; unsigned int x_2_1_4; int x_2_1_5; } x2; }*)arg1;
+- (struct EDValue { int x1; union $_604 { boolx_2_1_1; double x_2_1_2; id x_2_1_3; unsigned int x_2_1_4; int x_2_1_5; } x2; }*)value;
 
 @end

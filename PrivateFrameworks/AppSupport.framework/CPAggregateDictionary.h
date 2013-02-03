@@ -12,7 +12,7 @@
 - (void)addValue:(long long)arg1 forKey:(id)arg2;
 - (void)clearDistributionKey:(id)arg1;
 - (void)clearScalarKey:(id)arg1;
-- (NSInteger)commit;
+- (int)commit;
 - (void)decrementKey:(id)arg1;
 - (void)incrementKey:(id)arg1;
 - (BOOL)isEnabled;

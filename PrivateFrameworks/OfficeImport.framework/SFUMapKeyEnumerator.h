@@ -4,8 +4,8 @@
 
 @interface SFUMapKeyEnumerator : NSEnumerator {
     struct { 
-        NSUInteger _pi; 
-        NSUInteger _si; 
+        unsigned int _pi; 
+        unsigned int _si; 
         void *_bs; 
     } m_enumerator;
 }

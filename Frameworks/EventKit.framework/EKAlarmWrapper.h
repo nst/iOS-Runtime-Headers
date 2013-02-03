@@ -11,7 +11,7 @@
 - (void)dealloc;
 - (id)description;
 - (double)fireDate;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithAlarmOccurrence:(struct CalAlarmOccurrence { }*)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)occurrence;

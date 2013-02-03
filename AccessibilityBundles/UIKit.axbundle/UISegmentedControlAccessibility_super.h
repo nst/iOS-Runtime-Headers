@@ -7,5 +7,6 @@
 
 - (BOOL)accessibilityTreeHidden;
 - (BOOL)isAccessibilityElement;
+- (void)sendActionsForControlEvents:(unsigned int)arg1;
 
 @end

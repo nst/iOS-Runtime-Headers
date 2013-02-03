@@ -9,8 +9,8 @@
     ISReview *_review;
 }
 
-@property(retain) ISReview *review;
 @property(getter=isBackgroundReview) BOOL backgroundReview;
+@property(retain) ISReview * review;
 
 - (id)_httpBody;
 - (void)dealloc;

@@ -5,15 +5,15 @@
 @class MPAVDestinationBrowser, NSMutableArray, MPAudioDeviceController;
 
 @interface MPAudioVideoRoutingTableViewController : UITableViewController {
-    NSInteger _airPlayPasswordAlertDidAppearToken;
+    int _airPlayPasswordAlertDidAppearToken;
     BOOL _airPlayPasswordAlertDidAppearTokenIsValid;
     MPAudioDeviceController *_audioDeviceController;
     NSMutableArray *_routes;
     MPAVDestinationBrowser *_videoDestinationBrowser;
 }
 
-@property(readonly) MPAudioDeviceController *audioDeviceController;
-@property(readonly) MPAVDestinationBrowser *videoDestinationBrowser;
+@property(readonly) MPAudioDeviceController * audioDeviceController;
+@property(readonly) MPAVDestinationBrowser * videoDestinationBrowser;
 
 - (void)_availableRoutesDidChangeNotification:(id)arg1;
 - (BOOL)_isDeviceVideoRoute:(id)arg1;
@@ -24,7 +24,7 @@
 - (id)initWithAudioDeviceController:(id)arg1 videoDestinationBrowser:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)videoDestinationBrowser;
 - (void)viewDidAppear:(BOOL)arg1;
 

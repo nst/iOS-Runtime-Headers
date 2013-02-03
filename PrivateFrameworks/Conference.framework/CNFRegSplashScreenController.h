@@ -2,22 +2,22 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@class CNFLearnMoreButton, <CNFRegFirstRunDelegate>;
+@class <CNFRegFirstRunDelegate>, CNFRegLearnMoreButton;
 
 @interface CNFRegSplashScreenController : PSViewController <CNFRegFirstRunExperience> {
     <CNFRegFirstRunDelegate> *_delegate;
-    CNFLearnMoreButton *_learnMoreButton;
+    CNFRegLearnMoreButton *_learnMoreButton;
     BOOL _requiresAlias;
 }
 
-@property <CNFRegFirstRunDelegate> *delegate;
-@property(readonly) NSInteger currentAppearanceStyle;
+@property(readonly) int currentAppearanceStyle;
+@property <CNFRegFirstRunDelegate> * delegate;
 @property BOOL requiresAlias;
 
 - (void)_getStartedPressed:(id)arg1;
 - (void)_learnMorePressed:(id)arg1;
 - (id)_shadowedLabelWithFont:(id)arg1 text:(id)arg2 y:(float)arg3;
-- (NSInteger)currentAppearanceStyle;
+- (int)currentAppearanceStyle;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;

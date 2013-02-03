@@ -23,6 +23,6 @@
 - (void)mapFieldMarkerAt:(id)arg1 marker:(id)arg2 withState:(id)arg3;
 - (void)mapParagraphBodyWithState:(id)arg1;
 - (void)mapRunAt:(id)arg1 run:(id)arg2 withState:(id)arg3;
-- (id)runAtIndex:(NSInteger)arg1;
+- (id)runAtIndex:(int)arg1;
 
 @end

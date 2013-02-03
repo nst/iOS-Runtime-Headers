@@ -5,16 +5,16 @@
 @interface PLFixedSizeLRUCache : NSObject {
     struct __CFDictionary { } *_keyToObjectMapping;
     struct __CFArray { } *_lruQueue;
-    NSUInteger _size;
-    NSUInteger _usedSlots;
+    unsigned int _size;
+    unsigned int _usedSlots;
 }
 
 - (void)_freeMemory:(id)arg1;
-- (void)addObject:(id)arg1 withKey:(NSUInteger)arg2;
+- (void)addObject:(id)arg1 withKey:(unsigned int)arg2;
 - (void)dealloc;
-- (id)initForCacheSize:(NSUInteger)arg1;
+- (id)initForCacheSize:(unsigned int)arg1;
 - (void)invalidate;
-- (id)objectWithKey:(NSUInteger)arg1;
-- (void)removeObjectWithKey:(NSUInteger)arg1;
+- (id)objectWithKey:(unsigned int)arg1;
+- (void)removeObjectWithKey:(unsigned int)arg1;
 
 @end

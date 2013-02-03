@@ -3,7 +3,7 @@
  */
 
 @interface NSConcreteValue : NSValue {
-    NSUInteger _specialFlags;
+    unsigned int _specialFlags;
     void *typeInfo;
 }
 
@@ -14,7 +14,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)getValue:(void*)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqualToValue:(id)arg1;
 - (const char *)objCType;
 

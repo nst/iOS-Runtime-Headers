@@ -9,12 +9,12 @@
     NSMutableDictionary *_attachmentsByURL;
     NSMutableArray *_attachmentsOrder;
     BOOL _didCancelImageScalingOperations;
-    NSUInteger _imagesSize;
+    unsigned int _imagesSize;
     BOOL _outgoing;
-    NSInteger _priority;
+    int _priority;
     struct dispatch_queue_s { } *_scalingQueue;
     NSConditionLock *_scalingThrottle;
-    NSUInteger _size;
+    unsigned int _size;
 }
 
 + (void)beginPreventingInlinePDFs;
@@ -22,7 +22,7 @@
 + (BOOL)isPreventingInlinePDFs;
 
 - (void)_delayedSetScalingEnabled;
-- (void)_enqueueScaleAttachment:(id)arg1 withFlags:(NSUInteger)arg2 originalSize:(NSUInteger)arg3;
+- (void)_enqueueScaleAttachment:(id)arg1 withFlags:(unsigned int)arg2 originalSize:(unsigned int)arg3;
 - (BOOL)addAttachment:(id)arg1 renamingContentID:(BOOL)arg2;
 - (id)attachmentForURL:(id)arg1;
 - (id)attachments;
@@ -31,10 +31,10 @@
 - (id)description;
 - (BOOL)didCancelImageScalingOperations;
 - (id)initOutgoing;
-- (NSInteger)priority;
+- (int)priority;
 - (void)removeAttachmentsForURLs:(id)arg1;
-- (void)setPriority:(NSInteger)arg1;
+- (void)setPriority:(int)arg1;
 - (void)setScalingThrottled:(BOOL)arg1;
-- (unsigned long)sizeForScale:(NSInteger)arg1 imagesOnly:(BOOL)arg2;
+- (unsigned long)sizeForScale:(int)arg1 imagesOnly:(BOOL)arg2;
 
 @end

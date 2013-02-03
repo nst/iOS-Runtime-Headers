@@ -19,8 +19,8 @@
 - (id)init;
 - (BOOL)isEmpty;
 - (id)overrideTextListStyle;
-- (id)paragraphAtIndex:(NSUInteger)arg1;
-- (NSUInteger)paragraphCount;
+- (id)paragraphAtIndex:(unsigned int)arg1;
+- (unsigned int)paragraphCount;
 - (id)plainText;
 - (id)properties;
 - (void)removeAllParagraphs;

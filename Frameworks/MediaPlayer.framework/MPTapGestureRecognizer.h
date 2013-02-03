@@ -8,13 +8,13 @@
     struct CGPoint { 
         float x; 
         float y; 
-    NSUInteger _lastTapCount;
+    unsigned int _lastTapCount;
     NSTimer *_tapHandleTimer;
     } _tapLocation;
     UITouch *_trackingTouch;
 }
 
-@property NSUInteger tapCount;
+@property unsigned int tapCount;
 
 - (void)_delayedHandleTaps:(id)arg1;
 - (void)_resetTapTimer;
@@ -23,8 +23,8 @@
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (void)reset;
-- (void)setTapCount:(NSUInteger)arg1;
-- (NSUInteger)tapCount;
+- (void)setTapCount:(unsigned int)arg1;
+- (unsigned int)tapCount;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

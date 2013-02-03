@@ -9,26 +9,26 @@
     NSMutableArray *mRuns;
 }
 
-- (id)addAnnotation:(NSInteger)arg1;
-- (id)addBookmark:(id)arg1 type:(NSInteger)arg2;
+- (id)addAnnotation:(int)arg1;
+- (id)addBookmark:(id)arg1 type:(int)arg2;
 - (id)addBookmark;
 - (id)addCharacterRun;
 - (id)addDateTime:(id)arg1;
 - (id)addEndnote;
-- (id)addFieldMarker:(NSInteger)arg1;
+- (id)addFieldMarker:(int)arg1;
 - (id)addFieldMarker;
 - (id)addFootnote;
 - (void)addRun:(id)arg1;
 - (id)addSpecialCharacter;
 - (id)addSymbol;
-- (NSInteger)blockType;
-- (NSInteger)characterCount;
+- (int)blockType;
+- (int)characterCount;
 - (void)clearProperties;
 - (void)clearRuns;
 - (void)dealloc;
 - (id)initWithText:(id)arg1 string:(id)arg2;
 - (id)initWithText:(id)arg1;
-- (void)insertRun:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)insertRun:(id)arg1 atIndex:(unsigned int)arg2;
 - (BOOL)isContinuationOf:(id)arg1;
 - (BOOL)isEmpty;
 - (BOOL)isTextFrame;
@@ -36,8 +36,8 @@
 - (id)properties;
 - (void)removeLastCharacter:(unsigned short)arg1;
 - (void)removeRun:(id)arg1;
-- (id)runAt:(NSInteger)arg1;
-- (NSInteger)runCount;
+- (id)runAt:(int)arg1;
+- (int)runCount;
 - (id)runIterator;
 - (id)runs;
 

@@ -2,21 +2,30 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+@class MPMediaItem, NSArray;
+
 @interface MPMediaItemCollection : MPMediaEntity {
-    void *_internal;
+    struct MPMediaItemCollectionInternal { 
+        NSArray *_items; 
+        unsigned int _itemsCount; 
+        MPMediaItem *_representativeItem; 
+        int _containedMediaTypes; 
+    } _internal;
 }
 
-@property(readonly) NSArray *items;
-@property(readonly) MPMediaItem *representativeItem;
-@property(readonly) NSUInteger count;
-@property(readonly) NSInteger mediaTypes;
+@property struct MPMediaItemCollectionInternal { NSArray *_items; unsigned int _itemsCount; MPMediaItem *_representativeItem; int _containedMediaTypes; } _internal;
+@property(readonly) unsigned int count;
+@property(readonly) NSArray * items;
+@property(readonly) int mediaTypes;
+@property(readonly) MPMediaItem * representativeItem;
 
 + (id)collectionWithItems:(id)arg1;
-+ (id)representativePersistentIDPropertyForGroupingType:(NSInteger)arg1;
-+ (id)titlePropertyForGroupingType:(NSInteger)arg1;
++ (id)representativePersistentIDPropertyForGroupingType:(int)arg1;
++ (id)titlePropertyForGroupingType:(int)arg1;
 
 - (id)_init;
-- (NSUInteger)count;
+- (struct MPMediaItemCollectionInternal { id x1; unsigned int x2; id x3; int x4; })_internal;
+- (unsigned int)count;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
@@ -24,7 +33,8 @@
 - (id)initWithItems:(id)arg1;
 - (id)items;
 - (id)itemsQuery;
-- (NSInteger)mediaTypes;
+- (int)mediaTypes;
 - (id)representativeItem;
+- (void)set_internal:(struct MPMediaItemCollectionInternal { id x1; unsigned int x2; id x3; int x4; })arg1;
 
 @end

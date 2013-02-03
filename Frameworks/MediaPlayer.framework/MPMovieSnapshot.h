@@ -9,14 +9,14 @@
         float width; 
         float height; 
     id _delegate;
-    NSInteger _interfaceOrientation;
+    int _interfaceOrientation;
     float _originalTime;
     } _size;
     UIView *_snapshot;
     float _time;
 }
 
-+ (id)infoWithSize:(struct CGSize { float x1; float x2; })arg1 orientation:(NSInteger)arg2 time:(float)arg3 delegate:(id)arg4;
++ (id)infoWithSize:(struct CGSize { float x1; float x2; })arg1 orientation:(int)arg2 time:(float)arg3 delegate:(id)arg4;
 
 - (void)dealloc;
 - (id)delegate;

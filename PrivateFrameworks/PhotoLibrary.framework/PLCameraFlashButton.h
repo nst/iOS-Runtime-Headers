@@ -9,7 +9,7 @@
     <PLCameraFlashButtonDelegate> *_delegate;
     BOOL _enabled;
     UIImage *_flashImage;
-    NSInteger _flashMode;
+    int _flashMode;
     PLSpacerView *_hdrIconStrip;
     UIImage *_hdrImage;
     PLCameraFlashLabelView *_hdrLabel;
@@ -28,9 +28,9 @@
     PLCameraFlashLabelView *_warningIndicatorLabel;
 }
 
-@property <PLCameraFlashButtonDelegate> *delegate;
+@property <PLCameraFlashButtonDelegate> * delegate;
 @property BOOL enabled;
-@property NSInteger flashMode;
+@property int flashMode;
 @property BOOL hideAuto;
 @property BOOL hideHDR;
 @property BOOL showsWarningIndicator;
@@ -39,7 +39,7 @@
 
 - (void)_accessibilityUpdateCurrentLabel;
 - (void)_cancelCollapse;
-- (void)_collapseAndSetMode:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)_collapseAndSetMode:(int)arg1 animated:(BOOL)arg2;
 - (void)_collapseAnimated;
 - (id)_currentLabel;
 - (float)_expandedWidth;
@@ -50,7 +50,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)enabled;
-- (NSInteger)flashMode;
+- (int)flashMode;
 - (BOOL)hideAuto;
 - (BOOL)hideHDR;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -58,11 +58,11 @@
 - (BOOL)isExpanded;
 - (void)layoutSubviews;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setButtonOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setFlashMode:(NSInteger)arg1 notifyDelegate:(BOOL)arg2;
-- (void)setFlashMode:(NSInteger)arg1;
+- (void)setFlashMode:(int)arg1 notifyDelegate:(BOOL)arg2;
+- (void)setFlashMode:(int)arg1;
 - (void)setHideAuto:(BOOL)arg1;
 - (void)setHideHDR:(BOOL)arg1;
 - (void)setShowsWarningIndicator:(BOOL)arg1;

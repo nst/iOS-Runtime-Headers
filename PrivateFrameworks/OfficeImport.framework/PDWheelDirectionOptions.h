@@ -3,10 +3,10 @@
  */
 
 @interface PDWheelDirectionOptions : PDTransitionOptions {
-    NSInteger mSpokes;
+    int mSpokes;
 }
 
-- (void)setSpokes:(NSInteger)arg1;
-- (NSInteger)spokes;
+- (void)setSpokes:(int)arg1;
+- (int)spokes;
 
 @end

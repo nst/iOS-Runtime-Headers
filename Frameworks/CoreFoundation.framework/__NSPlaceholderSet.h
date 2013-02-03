@@ -10,16 +10,16 @@
 + (id)mutablePlaceholder;
 
 - (void)addObject:(id)arg1;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)init;
-- (id)initWithCapacity:(NSUInteger)arg1;
-- (id)initWithObjects:(id*)arg1 count:(NSUInteger)arg2;
+- (id)initWithCapacity:(unsigned int)arg1;
+- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2;
 - (id)member:(id)arg1;
 - (id)objectEnumerator;
 - (oneway void)release;
 - (void)removeObject:(id)arg1;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

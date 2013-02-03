@@ -2,30 +2,32 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
+@class NSArray, DACalendarEvent, ICSCalendar, NSTimeZone, NSString, DACalendar, NSDate;
+
 @interface DACalendarEvent : DACalendarObject {
 }
 
-@property(readonly) DACalendar *calendar;
-@property(retain) NSString *description;
-@property(retain) NSDate *endDate;
-@property(retain) NSString *externalModificationTag;
-@property(readonly) ICSCalendar *icsCalendar;
-@property(retain) NSString *location;
-@property(readonly) DACalendarEvent *originalEvent;
-@property(readonly) NSArray *recurrences;
-@property(readonly) NSDate *startDate;
-@property(readonly) NSTimeZone *startTimeZone;
-@property(retain) NSString *summary;
-@property(retain) NSString *uniqueIdentifier;
+@property(readonly) DACalendar * calendar;
+@property(retain) NSString * description;
+@property(retain) NSDate * endDate;
+@property(retain) NSString * externalModificationTag;
+@property(readonly) ICSCalendar * icsCalendar;
 @property BOOL isAllDay;
-@property(readonly) NSInteger uid;
+@property(retain) NSString * location;
+@property(readonly) DACalendarEvent * originalEvent;
+@property(readonly) NSArray * recurrences;
+@property(readonly) NSDate * startDate;
+@property(readonly) NSTimeZone * startTimeZone;
+@property(retain) NSString * summary;
+@property(readonly) int uid;
+@property(retain) NSString * uniqueIdentifier;
 
 - (void)addRecurrence:(id)arg1;
 - (id)calendar;
 - (id)description;
 - (id)endDate;
 - (id)externalModificationTag;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)icsCalendar;
 - (BOOL)isAllDay;
 - (BOOL)isEqual:(id)arg1;
@@ -45,7 +47,7 @@
 - (id)startDate;
 - (id)startTimeZone;
 - (id)summary;
-- (NSInteger)uid;
+- (int)uid;
 - (id)uniqueIdentifier;
 
 @end

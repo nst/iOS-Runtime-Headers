@@ -8,7 +8,7 @@
     AAAccount *_account;
 }
 
-@property(retain) AAAccount *account;
+@property(retain) AAAccount * account;
 
 - (id)account;
 - (void)dealloc;

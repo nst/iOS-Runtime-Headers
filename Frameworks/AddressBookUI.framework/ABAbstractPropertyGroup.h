@@ -10,16 +10,16 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property(retain) NSArray *people;
-@property(retain) <ABStyleProvider> *styleProvider;
 @property BOOL hasChanges;
+@property(retain) NSArray * people;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 - (BOOL)canSave;
 - (void)dealloc;
 - (BOOL)hasChanges;
 - (id)init;
 - (id)people;
-- (NSInteger)property;
+- (int)property;
 - (void)reloadFromModel;
 - (void)setHasChanges:(BOOL)arg1;
 - (void)setPeople:(id)arg1;

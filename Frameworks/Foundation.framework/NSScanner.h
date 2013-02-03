@@ -11,7 +11,7 @@
 
 - (id)_invertedSkipSet;
 - (id)_remainingString;
-- (BOOL)_scanDecimal:(NSUInteger)arg1 into:(NSInteger*)arg2;
+- (BOOL)_scanDecimal:(unsigned int)arg1 into:(int*)arg2;
 - (BOOL)caseSensitive;
 - (id)charactersToBeSkipped;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -26,11 +26,11 @@
 - (BOOL)scanFloat:(float*)arg1;
 - (BOOL)scanHexDouble:(double*)arg1;
 - (BOOL)scanHexFloat:(float*)arg1;
-- (BOOL)scanHexInt:(NSUInteger*)arg1;
+- (BOOL)scanHexInt:(unsigned int*)arg1;
 - (BOOL)scanHexLongLong:(unsigned long long*)arg1;
-- (BOOL)scanInt:(NSInteger*)arg1;
-- (BOOL)scanInteger:(NSInteger*)arg1;
-- (NSUInteger)scanLocation;
+- (BOOL)scanInt:(int*)arg1;
+- (BOOL)scanInteger:(int*)arg1;
+- (unsigned int)scanLocation;
 - (BOOL)scanLongLong:(long long*)arg1;
 - (BOOL)scanString:(id)arg1 intoString:(id*)arg2;
 - (BOOL)scanUpToCharactersFromSet:(id)arg1 intoString:(id*)arg2;
@@ -38,7 +38,7 @@
 - (void)setCaseSensitive:(BOOL)arg1;
 - (void)setCharactersToBeSkipped:(id)arg1;
 - (void)setLocale:(id)arg1;
-- (void)setScanLocation:(NSUInteger)arg1;
+- (void)setScanLocation:(unsigned int)arg1;
 - (id)string;
 
 @end

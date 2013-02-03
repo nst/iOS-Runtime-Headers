@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @interface GQDTTableModel : NSObject <GQDNameMappable> {
-     /* Encoded args for previous method: B12@0:4S8 */
-     /* Encoded args for previous method: B12@0:4S8 */
     struct __CFArray { } *mCells;
     unsigned short mColumnCount;
     struct __CFArray { } *mColumnGroupDisplayTypes;
@@ -19,38 +18,38 @@
     unsigned short mHeaderRowCount;
     struct __CFString { } *mName;
     BOOL mNameVisible;
-    NSInteger mNumGroupLevels;
+    int mNumGroupLevels;
     unsigned short mRowCount;
     struct __CFArray { } *mRowHeights;
     struct __CFArray { } *mRowVisibilities;
 }
 
-+ (const struct StateSpec { int (**x1)(); char *x2; NSInteger x3; NSInteger x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
++ (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 
-- (NSInteger)addColumnWidthFrom:(struct _xmlTextReader { }*)arg1;
-- (NSInteger)addGroupLevelsFrom:(struct _xmlTextReader { }*)arg1;
-- (NSInteger)addRowHeightFrom:(struct _xmlTextReader { }*)arg1;
+- (int)addColumnWidthFrom:(struct _xmlTextReader { }*)arg1;
+- (int)addGroupLevelsFrom:(struct _xmlTextReader { }*)arg1;
+- (int)addRowHeightFrom:(struct _xmlTextReader { }*)arg1;
 - (id)cellAt:(unsigned short)arg1;
 - (struct __CFArray { }*)cells;
 - (unsigned short)columnCount;
 - (void)dealloc;
 - (unsigned short)firstVisibleColumn;
 - (unsigned short)footerRowCount;
-- (BOOL)hasGroupDisplayType:(unsigned short)arg1 level:(NSInteger)arg2 displayType:(NSInteger*)arg3 isTypeVisible:(BOOL*)arg4;
+- (BOOL)hasGroupDisplayType:(unsigned short)arg1 level:(int)arg2 displayType:(int*)arg3 isTypeVisible:(BOOL*)arg4;
 - (unsigned short)headerColumnCount;
 - (unsigned short)headerRowCount;
 - (float)heightForRow:(unsigned short)arg1;
 - (BOOL)isNameVisible;
 - (struct __CFString { }*)name;
-- (NSInteger)numGroupLevels;
-- (NSInteger)readAttributesForGrid:(struct _xmlTextReader { }*)arg1;
-- (NSInteger)readAttributesForModel:(struct _xmlTextReader { }*)arg1;
+- (int)numGroupLevels;
+- (int)readAttributesForGrid:(struct _xmlTextReader { }*)arg1;
+- (int)readAttributesForModel:(struct _xmlTextReader { }*)arg1;
 - (unsigned short)rowCount;
 - (void)setCells:(struct __CFArray { }*)arg1;
-- (void)setNumGroupLevels:(NSInteger)arg1;
-- (NSInteger)typeOfVectorAlongGridline:(unsigned short)arg1 offset:(unsigned short)arg2 length:(unsigned short)arg3 vertical:(BOOL)arg4;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)visibilityForColumn:(unsigned short)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)visibilityForRow:(unsigned short)arg1;
+- (void)setNumGroupLevels:(int)arg1;
+- (int)typeOfVectorAlongGridline:(unsigned short)arg1 offset:(unsigned short)arg2 length:(unsigned short)arg3 vertical:(BOOL)arg4;
+- (bool)visibilityForColumn:(unsigned short)arg1;
+- (bool)visibilityForRow:(unsigned short)arg1;
 - (float)widthForColumn:(unsigned short)arg1;
 
 @end

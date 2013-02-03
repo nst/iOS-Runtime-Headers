@@ -5,6 +5,6 @@
 @interface PLBlueNavigationButton : UINavigationButton {
 }
 
-- (void)setBackgroundImage:(id)arg1 forStates:(NSUInteger)arg2;
+- (void)setBackgroundImage:(id)arg1 forStates:(unsigned int)arg2;
 
 @end

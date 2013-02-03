@@ -3,7 +3,7 @@
  */
 
 @interface NSExpression : NSObject <NSCoding, NSCopying> {
-    NSUInteger _expressionType;
+    unsigned int _expressionType;
     void *_reserved;
 }
 
@@ -30,7 +30,7 @@
 
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
 - (BOOL)_shouldUseParensWithDescription;
-- (void)acceptVisitor:(id)arg1 flags:(NSUInteger)arg2;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (id)arguments;
 - (id)collection;
 - (id)constantValue;
@@ -38,12 +38,12 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expressionBlock;
-- (NSUInteger)expressionType;
+- (unsigned int)expressionType;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
 - (id)falseExpression;
 - (id)function;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithExpressionType:(NSUInteger)arg1;
+- (id)initWithExpressionType:(unsigned int)arg1;
 - (id)keyPath;
 - (id)leftExpression;
 - (id)minimalFormInContext:(id)arg1;

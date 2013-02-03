@@ -2,26 +2,31 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSDictionary;
+@class NSString, NSDictionary;
 
 @interface AAURLConfigurationResponse : AAResponse {
     NSDictionary *_urls;
 }
 
-@property(readonly) NSString *authenticateURL;
-@property(readonly) NSString *newAccountURL;
-@property(readonly) NSString *registerURL;
-@property(readonly) NSString *updateAccountURL;
-@property(readonly) NSString *validateEmailURL;
-@property(readonly) NSString *validateURL;
+@property(readonly) NSString * accountCreationURL;
+@property(readonly) NSString * authenticateURL;
+@property(readonly) NSString * completeValidateEmailURL;
+@property(readonly) NSString * initiateValidateEmailURL;
+@property(readonly) NSString * mobileMeOfferAlertURL;
+@property(readonly) NSString * registerURL;
+@property(readonly) NSString * updateAccountURL;
+@property(readonly) NSString * validateURL;
 
+- (id)accountCreationURL;
 - (id)authenticateURL;
+- (id)completeValidateEmailURL;
 - (void)dealloc;
+- (id)initWithDictionary:(id)arg1;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
-- (id)newAccountURL;
+- (id)initiateValidateEmailURL;
+- (id)mobileMeOfferAlertURL;
 - (id)registerURL;
 - (id)updateAccountURL;
-- (id)validateEmailURL;
 - (id)validateURL;
 
 @end

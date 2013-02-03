@@ -3,18 +3,18 @@
  */
 
 @interface UIAccessibilityPDFElement : UIAccessibilityElement {
-    NSInteger _page;
-    NSInteger _pageCount;
+    int _page;
+    int _pageCount;
 }
 
-@property NSInteger page;
-@property NSInteger pageCount;
+@property int page;
+@property int pageCount;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (NSInteger)page;
-- (NSInteger)pageCount;
-- (void)setPage:(NSInteger)arg1;
-- (void)setPageCount:(NSInteger)arg1;
+- (int)page;
+- (int)pageCount;
+- (void)setPage:(int)arg1;
+- (void)setPageCount:(int)arg1;
 
 @end

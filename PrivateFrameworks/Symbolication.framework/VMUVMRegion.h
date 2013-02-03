@@ -10,35 +10,35 @@
         unsigned long long length; 
     unsigned char external_pager;
     BOOL is_submap;
-    NSUInteger mallocBlockCount;
-    NSUInteger mallocTypeFlag;
-    NSUInteger maxProt;
-    NSUInteger nesting_depth;
-    NSUInteger object_id;
-    NSUInteger pages_dirtied;
-    NSUInteger pages_resident;
-    NSUInteger pages_shared_now_private;
-    NSUInteger pages_swapped_out;
+    unsigned int mallocBlockCount;
+    unsigned int mallocTypeFlag;
+    unsigned int maxProt;
+    unsigned int nesting_depth;
+    unsigned int object_id;
+    unsigned int pages_dirtied;
+    unsigned int pages_resident;
+    unsigned int pages_shared_now_private;
+    unsigned int pages_swapped_out;
     NSString *path;
-    NSUInteger prot;
-    NSInteger purgeable;
+    unsigned int prot;
+    int purgeable;
     } range;
     BOOL recalculate_pages_resident;
-    NSUInteger ref_count;
+    unsigned int ref_count;
     unsigned char share_mode;
     BOOL summarized;
     NSString *type;
-    NSUInteger user_tag;
-    NSUInteger virtual_pages;
+    unsigned int user_tag;
+    unsigned int virtual_pages;
 }
 
 - (id)breakAtLength:(unsigned long)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)descriptionWithOptions:(NSUInteger)arg1 maximumLength:(NSUInteger)arg2;
+- (id)descriptionWithOptions:(unsigned int)arg1 maximumLength:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isSubmap;
-- (NSUInteger)protection;
+- (unsigned int)protection;
 - (id)type;
 
 @end

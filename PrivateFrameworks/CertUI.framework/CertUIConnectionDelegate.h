@@ -14,10 +14,10 @@
     CertUITrustManager *_trustManager;
 }
 
-@property(copy) NSString *connectionDisplayName;
+@property(copy) NSString * connectionDisplayName;
 @property id forwardingDelegate;
 
-- (void)_continueConnectionWithResponse:(NSInteger)arg1 challenge:(id)arg2 service:(id)arg3;
+- (void)_continueConnectionWithResponse:(int)arg1 challenge:(id)arg2 service:(id)arg3;
 - (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
 - (id)connectionDisplayName;

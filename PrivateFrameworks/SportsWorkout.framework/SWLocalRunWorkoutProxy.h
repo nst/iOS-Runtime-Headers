@@ -21,7 +21,7 @@
 - (BOOL)hasEverStarted;
 - (BOOL)hasPowerSong;
 - (id)init;
-- (NSInteger)musicSelection;
+- (int)musicSelection;
 - (void)pauseMusic;
 - (void)pauseWorkout;
 - (void)playMusic;

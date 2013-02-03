@@ -9,8 +9,8 @@
     EDWorkbook *_workbook;
 }
 
-@property EDSheet *currentSheet;
-@property(retain) EDWorkbook *workbook;
+@property EDSheet * currentSheet;
+@property(retain) EDWorkbook * workbook;
 
 - (id)currentSheet;
 - (void)dealloc;

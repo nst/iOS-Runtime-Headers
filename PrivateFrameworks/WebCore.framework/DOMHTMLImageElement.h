@@ -2,29 +2,31 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSURL, NSString;
+
 @interface DOMHTMLImageElement : DOMHTMLElement {
 }
 
-@property(copy,readonly) NSURL *absoluteImageURL;
-@property(copy) NSString *align;
-@property(copy) NSString *alt;
-@property(copy,readonly) NSString *altDisplayString;
-@property(copy) NSString *border;
-@property(copy) NSString *longDesc;
-@property(copy) NSString *lowsrc;
-@property(copy) NSString *name;
-@property(copy) NSString *src;
-@property(copy) NSString *useMap;
+@property(copy,readonly) NSURL * absoluteImageURL;
+@property(copy) NSString * align;
+@property(copy) NSString * alt;
+@property(copy,readonly) NSString * altDisplayString;
+@property(copy) NSString * border;
 @property(readonly) BOOL complete;
-@property NSInteger height;
-@property NSInteger hspace;
+@property int height;
+@property int hspace;
 @property BOOL isMap;
-@property(readonly) NSInteger naturalHeight;
-@property(readonly) NSInteger naturalWidth;
-@property NSInteger vspace;
-@property NSInteger width;
-@property(readonly) NSInteger x;
-@property(readonly) NSInteger y;
+@property(copy) NSString * longDesc;
+@property(copy) NSString * lowsrc;
+@property(copy) NSString * name;
+@property(readonly) int naturalHeight;
+@property(readonly) int naturalWidth;
+@property(copy) NSString * src;
+@property(copy) NSString * useMap;
+@property int vspace;
+@property int width;
+@property(readonly) int x;
+@property(readonly) int y;
 
 - (id)absoluteImageURL;
 - (id)align;
@@ -33,8 +35,8 @@
 - (id)border;
 - (BOOL)complete;
 - (id)dataRepresentation:(BOOL)arg1;
-- (NSInteger)height;
-- (NSInteger)hspace;
+- (int)height;
+- (int)hspace;
 - (BOOL)isMap;
 - (id)longDesc;
 - (id)lowsrc;
@@ -42,27 +44,27 @@
 - (void)mf_unconstrainImageSize;
 - (id)mimeType;
 - (id)name;
-- (NSInteger)naturalHeight;
-- (NSInteger)naturalWidth;
+- (int)naturalHeight;
+- (int)naturalWidth;
 - (void)setAlign:(id)arg1;
 - (void)setAlt:(id)arg1;
 - (void)setBorder:(id)arg1;
-- (void)setHeight:(NSInteger)arg1;
-- (void)setHspace:(NSInteger)arg1;
+- (void)setHeight:(int)arg1;
+- (void)setHspace:(int)arg1;
 - (void)setIsMap:(BOOL)arg1;
 - (void)setLongDesc:(id)arg1;
 - (void)setLowsrc:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setSrc:(id)arg1;
 - (void)setUseMap:(id)arg1;
-- (void)setVspace:(NSInteger)arg1;
-- (void)setWidth:(NSInteger)arg1;
+- (void)setVspace:(int)arg1;
+- (void)setWidth:(int)arg1;
 - (BOOL)showsTapHighlight;
 - (id)src;
 - (id)useMap;
-- (NSInteger)vspace;
-- (NSInteger)width;
-- (NSInteger)x;
-- (NSInteger)y;
+- (int)vspace;
+- (int)width;
+- (int)x;
+- (int)y;
 
 @end

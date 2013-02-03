@@ -2,28 +2,28 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSArray;
 
 @interface IMAccountController : NSObject {
     NSMutableArray *_accounts;
     BOOL _isReadOnly;
 }
 
-@property(readonly) NSArray *accounts;
-@property(readonly) NSArray *activeAccounts;
-@property(readonly) NSArray *connectedAccounts;
+@property(readonly) NSArray * accounts;
+@property(readonly) NSArray * activeAccounts;
 @property(readonly) id aimAccount;
 @property(readonly) id bestAccountForStatus;
+@property(readonly) NSArray * connectedAccounts;
 @property(readonly) id jabberAccount;
 @property(readonly) id mostLoggedInAccount;
-@property(readonly) NSInteger numberOfAccounts;
+@property(readonly) int numberOfAccounts;
 
 + (id)bestAccountFromAccounts:(id)arg1;
 + (id)sharedInstance;
 
 - (void)_activeAccountChanged:(id)arg1;
 - (BOOL)accountActive:(id)arg1;
-- (id)accountAtIndex:(NSInteger)arg1;
+- (id)accountAtIndex:(int)arg1;
 - (BOOL)accountConnected:(id)arg1;
 - (BOOL)accountConnecting:(id)arg1;
 - (id)accountForUniqueID:(id)arg1;
@@ -37,8 +37,8 @@
 - (BOOL)activateAndHandleReconnectAccount:(id)arg1;
 - (id)activeAccounts;
 - (id)activeAccountsForService:(id)arg1;
-- (BOOL)addAccount:(id)arg1 atIndex:(NSInteger)arg2 locally:(BOOL)arg3;
-- (BOOL)addAccount:(id)arg1 atIndex:(NSInteger)arg2;
+- (BOOL)addAccount:(id)arg1 atIndex:(int)arg2 locally:(BOOL)arg3;
+- (BOOL)addAccount:(id)arg1 atIndex:(int)arg2;
 - (BOOL)addAccount:(id)arg1 locally:(BOOL)arg2;
 - (BOOL)addAccount:(id)arg1;
 - (id)aimAccount;
@@ -64,10 +64,10 @@
 - (id)init;
 - (id)jabberAccount;
 - (id)mostLoggedInAccount;
-- (NSInteger)numberOfAccounts;
+- (int)numberOfAccounts;
 - (BOOL)readOnly;
 - (oneway void)release;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)setReadOnly:(BOOL)arg1;
 
 @end

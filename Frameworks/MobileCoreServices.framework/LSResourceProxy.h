@@ -15,19 +15,19 @@
     LSApplicationProxy *_typeOwner;
 }
 
-@property(readonly) NSString *localizedName;
+@property(readonly) NSString * localizedName;
 
 + (struct CGSize { float x1; float x2; })_applicationIconCanvasSize;
-+ (NSInteger)_compareApplicationIconCanvasSize:(struct CGSize { float x1; float x2; })arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
++ (int)_compareApplicationIconCanvasSize:(struct CGSize { float x1; float x2; })arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
 
-- (struct { NSInteger x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconDefinitionForSize:(struct CGSize { float x1; float x2; })arg1 style:(NSInteger)arg2;
-- (id)_iconForStyle:(NSInteger)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-- (id)_iconForStyle:(NSInteger)arg1;
-- (struct { NSInteger x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(NSInteger)arg1;
-- (id)_imageSizesForStyle:(NSInteger)arg1;
+- (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconDefinitionForSize:(struct CGSize { float x1; float x2; })arg1 style:(int)arg2;
+- (id)_iconForStyle:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)_iconForStyle:(int)arg1;
+- (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(int)arg1;
+- (id)_imageSizesForStyle:(int)arg1;
 - (id)_initWithLocalizedName:(id)arg1 boundApplicationIdentifier:(id)arg2 boundRoleIdentifier:(id)arg3 boundResourcesDirectoryURL:(id)arg4 boundIconFileNames:(id)arg5 typeOwner:(id)arg6 boundIconIsPrerendered:(BOOL)arg7 boundIconIsBadge:(BOOL)arg8;
 - (id)_initWithLocalizedName:(id)arg1;
-- (struct CGSize { float x1; float x2; })_largestImageSize:(NSInteger)arg1;
+- (struct CGSize { float x1; float x2; })_largestImageSize:(int)arg1;
 - (id)boundApplicationIdentifier;
 - (id)boundIconFileNames;
 - (BOOL)boundIconIsBadge;
@@ -35,7 +35,7 @@
 - (id)boundResourcesDirectoryURL;
 - (id)boundRoleIdentifier;
 - (void)dealloc;
-- (id)iconDataForVariant:(NSInteger)arg1;
+- (id)iconDataForVariant:(int)arg1;
 - (id)localizedName;
 - (void)setBoundApplicationIdentifier:(id)arg1;
 - (void)setBoundIconFileNames:(id)arg1;

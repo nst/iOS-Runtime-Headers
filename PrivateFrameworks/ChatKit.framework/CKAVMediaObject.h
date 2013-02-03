@@ -16,8 +16,8 @@
 
 + (void)_dequeueNextTranscodeOnMainThread;
 + (void)initialize;
-+ (double)maxMMSTrimDurationForMediaType:(NSInteger)arg1;
-+ (id)transcodeOptionsWithMaxBytes:(NSInteger)arg1 forMediaType:(NSInteger)arg2;
++ (double)maxMMSTrimDurationForMediaType:(int)arg1;
++ (id)transcodeOptionsWithMaxBytes:(int)arg1 forMediaType:(int)arg2;
 
 - (void)_beginRemakingOnMainThreadWithOptions:(id)arg1;
 - (void)_determineDurationOnMainThreadWithFile:(id)arg1;
@@ -30,7 +30,7 @@
 - (void)dealloc;
 - (id)effectiveExportedFilename;
 - (id)fileForDataWithExtension:(id)arg1;
-- (id)newTranscodingForMMSWithMaxByteLength:(NSInteger)arg1;
+- (id)newTranscodingForMMSWithMaxByteLength:(int)arg1;
 - (void)prepareForTranscode;
 - (id)previewTitle;
 - (BOOL)remakeDidEnd;

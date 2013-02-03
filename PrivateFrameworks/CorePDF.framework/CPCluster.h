@@ -3,63 +3,63 @@
  */
 
 @interface CPCluster : NSObject <CPDisposable> {
-    NSUInteger clusterCount;
+    unsigned int clusterCount;
     double *ddx;
-    NSUInteger *ddxOrderIndex;
+    unsigned int *ddxOrderIndex;
     double *dx;
-    NSUInteger *dxOrderIndex;
-    struct { NSUInteger x1; double x2; double x3; double x4; } *dxStats;
-    NSUInteger interClusterMinIndex;
-    NSUInteger interLevelMinIndex;
-    NSUInteger levels;
+    unsigned int *dxOrderIndex;
+    struct { unsigned int x1; double x2; double x3; double x4; } *dxStats;
+    unsigned int interClusterMinIndex;
+    unsigned int interLevelMinIndex;
+    unsigned int levels;
     double maxClusterSpread;
-    NSUInteger minClusterSize;
+    unsigned int minClusterSize;
     double minInterClusterDiff;
     double minInterLevel2ndDiff;
     BOOL ownData;
     BOOL ownDifferences;
-    struct { double x1; NSUInteger x2; double x3; double x4; NSUInteger x5; double x6; double x7; BOOL x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; double x17; double x18; double x19; BOOL x20; } *profile;
+    struct { double x1; unsigned int x2; double x3; double x4; unsigned int x5; double x6; double x7; BOOL x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; double x17; double x18; double x19; BOOL x20; } *profile;
     double *x;
-    NSUInteger xCount;
-    struct { NSUInteger x1; double x2; double x3; double x4; } *xStats;
+    unsigned int xCount;
+    struct { unsigned int x1; double x2; double x3; double x4; } *xStats;
 }
 
 + (void)clusterTextLine:(id)arg1;
-+ (NSUInteger*)createOrderIndexFor:(double*)arg1 ofSize:(NSUInteger)arg2;
-+ (void)reclusterTextLine:(id)arg1 fromWordIndex:(NSUInteger)arg2 count:(NSUInteger*)arg3;
++ (unsigned int*)createOrderIndexFor:(double*)arg1 ofSize:(unsigned int)arg2;
++ (void)reclusterTextLine:(id)arg1 fromWordIndex:(unsigned int)arg2 count:(unsigned int*)arg3;
 
 - (void)analyzeDensities;
 - (void)analyzeDifferences;
-- (BOOL)applyDifferenceHints:(struct { NSUInteger x1; double x2; double x3; double x4; }*)arg1 count:(NSUInteger)arg2;
+- (BOOL)applyDifferenceHints:(struct { unsigned int x1; double x2; double x3; double x4; }*)arg1 count:(unsigned int)arg2;
 - (void)assembleDataStats;
 - (void)assembleDensityDifferenceStats;
 - (void)assembleDifferenceStats;
-- (NSUInteger)clusterCount;
-- (struct { NSUInteger x1; double x2; double x3; double x4; })clusterStatisticsAtIndex:(NSUInteger)arg1;
-- (BOOL)coalesceFrom:(NSUInteger)arg1 to:(NSUInteger)arg2;
+- (unsigned int)clusterCount;
+- (struct { unsigned int x1; double x2; double x3; double x4; })clusterStatisticsAtIndex:(unsigned int)arg1;
+- (BOOL)coalesceFrom:(unsigned int)arg1 to:(unsigned int)arg2;
 - (void)computeDataFromDifferences;
 - (void)computeDifferencesFromData;
 - (void)dealloc;
-- (struct { NSUInteger x1; double x2; double x3; double x4; })differenceClusterStatisticsAtIndex:(NSUInteger)arg1;
+- (struct { unsigned int x1; double x2; double x3; double x4; })differenceClusterStatisticsAtIndex:(unsigned int)arg1;
 - (void)dispose;
 - (void)finalize;
-- (void)findClusters:(double*)arg1 count:(NSUInteger)arg2;
+- (void)findClusters:(double*)arg1 count:(unsigned int)arg2;
 - (void)findClustersFromCharacterSequence:(id)arg1 withSpaceHint:(BOOL)arg2;
-- (void)findClustersFromDifferences:(double*)arg1 count:(NSUInteger)arg2;
-- (void)findDensityClusters:(double*)arg1 count:(NSUInteger)arg2;
+- (void)findClustersFromDifferences:(double*)arg1 count:(unsigned int)arg2;
+- (void)findDensityClusters:(double*)arg1 count:(unsigned int)arg2;
 - (id)init;
-- (id)initWithProfile:(const struct { double x1; NSUInteger x2; double x3; double x4; NSUInteger x5; double x6; double x7; BOOL x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; double x17; double x18; double x19; BOOL x20; }*)arg1;
-- (BOOL)joinClosestLevelPairFrom:(NSUInteger)arg1 to:(NSUInteger)arg2;
-- (BOOL)joinLevelsFrom:(NSUInteger)arg1 to:(NSUInteger)arg2;
-- (struct { NSUInteger x1; double x2; double x3; double x4; })largestClusterStatistics;
-- (NSUInteger)levels;
-- (void)makeWords:(struct { NSUInteger x1; NSUInteger x2; NSInteger x3; NSInteger x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)arg1 count:(NSUInteger)arg2 fromCharacterSequence:(id)arg3 charOffset:(NSUInteger)arg4;
+- (id)initWithProfile:(const struct { double x1; unsigned int x2; double x3; double x4; unsigned int x5; double x6; double x7; BOOL x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; double x17; double x18; double x19; BOOL x20; }*)arg1;
+- (BOOL)joinClosestLevelPairFrom:(unsigned int)arg1 to:(unsigned int)arg2;
+- (BOOL)joinLevelsFrom:(unsigned int)arg1 to:(unsigned int)arg2;
+- (struct { unsigned int x1; double x2; double x3; double x4; })largestClusterStatistics;
+- (unsigned int)levels;
+- (void)makeWords:(struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)arg1 count:(unsigned int)arg2 fromCharacterSequence:(id)arg3 charOffset:(unsigned int)arg4;
 - (void)setMaximumClusterSpread:(double)arg1;
-- (void)setMinimumClusterSize:(NSUInteger)arg1;
+- (void)setMinimumClusterSize:(unsigned int)arg1;
 - (void)setMinimumRecognizedInterClusterDifference:(double)arg1;
 - (void)setMinimumRecognizedInterLevel2ndDifference:(double)arg1;
-- (BOOL)splitLevelAtIndex:(NSUInteger)arg1 betweenValue:(double)arg2 andValue:(double)arg3;
+- (BOOL)splitLevelAtIndex:(unsigned int)arg1 betweenValue:(double)arg2 andValue:(double)arg3;
 - (void)splitSecondDifferences;
-- (void)tryLevel0SplitBetween:(double)arg1 and:(double)arg2 usingHints:(struct { NSUInteger x1; double x2; double x3; double x4; }*)arg3;
+- (void)tryLevel0SplitBetween:(double)arg1 and:(double)arg2 usingHints:(struct { unsigned int x1; double x2; double x3; double x4; }*)arg3;
 
 @end

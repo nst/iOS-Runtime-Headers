@@ -13,18 +13,18 @@
     void *_source;
 }
 
-@property(readonly) NSString *_accountDescriptionBasedOnIdentifier;
-@property(readonly) NSString *accountIdentifier;
-@property(retain) AccountsManager *accountsManager;
-@property(readonly) void *addressBook;
-@property(readonly) void *group;
-@property(readonly) NSString *name;
-@property(readonly) void *source;
-@property(readonly) void *sourceForNewRecords;
+@property(readonly) NSString * _accountDescriptionBasedOnIdentifier;
+@property(readonly) NSString * accountIdentifier;
+@property(retain) AccountsManager * accountsManager;
+@property(readonly) void* addressBook;
+@property(readonly) void* group;
 @property(readonly) BOOL isEditable;
-@property(readonly) NSUInteger numberOfContacts;
+@property(readonly) NSString * name;
+@property(readonly) unsigned int numberOfContacts;
 @property(readonly) BOOL showLinkedPeople;
-@property(readonly) NSInteger sourceType;
+@property(readonly) void* source;
+@property(readonly) void* sourceForNewRecords;
+@property(readonly) int sourceType;
 
 + (id)newGroupWrapperFromDictionaryRepresentation:(id)arg1 withAddressBook:(void*)arg2;
 + (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountsManager:(id)arg3 excludingSearchableStores:(BOOL)arg4 isSoleAccount:(BOOL)arg5;
@@ -37,7 +37,7 @@
 - (id)accountManager;
 - (id)accountsManager;
 - (void*)addressBook;
-- (NSInteger)compareToGroupWrapper:(id)arg1;
+- (int)compareToGroupWrapper:(id)arg1;
 - (id)copyDictionaryRepresentation;
 - (void)dealloc;
 - (id)description;
@@ -49,12 +49,12 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isGlobalWrapper;
 - (id)name;
-- (NSUInteger)numberOfContacts;
-- (NSInteger)score;
+- (unsigned int)numberOfContacts;
+- (int)score;
 - (void)setAccountsManager:(id)arg1;
 - (BOOL)showLinkedPeople;
 - (void*)source;
 - (void*)sourceForNewRecords;
-- (NSInteger)sourceType;
+- (int)sourceType;
 
 @end

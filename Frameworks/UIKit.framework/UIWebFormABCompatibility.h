@@ -5,6 +5,6 @@
 @interface UIWebFormABCompatibility : NSObject {
 }
 
-+ (NSInteger)convertID:(id)arg1;
++ (int)convertID:(id)arg1;
 
 @end

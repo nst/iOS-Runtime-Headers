@@ -15,18 +15,16 @@
     NSNumber *_distance;
     } _flags;
     CLLocation *_location;
-    NSInteger _locationSource;
+    int _locationSource;
     NSValue *_position;
-    NSUInteger _runCount;
+    unsigned int _runCount;
     NSNumber *_shouldHalo;
     NSNumber *_shouldHover;
     NSNumber *_zoomLevel;
 }
 
-@property(readonly) NSNumber *accuracyObject;
-@property(retain) CLLocation *location;
-@property(readonly) NSValue *positionObject;
 @property float accuracy;
+@property(readonly) NSNumber * accuracyObject;
 @property double distance;
 @property(readonly) BOOL hasAccuracy;
 @property(readonly) BOOL hasChanges;
@@ -40,9 +38,11 @@
 @property(readonly) BOOL hasZoomLevel;
 @property BOOL isEndVisible;
 @property BOOL isStartVisible;
-@property NSInteger locationSource;
-@property CADoublePoint position;
-@property(readonly) NSUInteger runCount;
+@property(retain) CLLocation * location;
+@property int locationSource;
+@property struct CADoublePoint { double x; double y; } position;
+@property(readonly) NSValue * positionObject;
+@property(readonly) unsigned int runCount;
 @property BOOL shouldHalo;
 @property BOOL shouldHover;
 @property BOOL shouldScrollToLocation;
@@ -76,11 +76,11 @@
 - (BOOL)isEndVisible;
 - (BOOL)isStartVisible;
 - (id)location;
-- (NSInteger)locationSource;
+- (int)locationSource;
 - (struct CADoublePoint { double x1; double x2; })position;
 - (id)positionObject;
 - (void)resetMetrics;
-- (NSUInteger)runCount;
+- (unsigned int)runCount;
 - (void)setAccuracy:(float)arg1;
 - (void)setDistance:(double)arg1;
 - (void)setHasComputedMetrics:(BOOL)arg1;
@@ -88,7 +88,7 @@
 - (void)setIsEndVisible:(BOOL)arg1;
 - (void)setIsStartVisible:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
-- (void)setLocationSource:(NSInteger)arg1;
+- (void)setLocationSource:(int)arg1;
 - (void)setPosition:(struct CADoublePoint { double x1; double x2; })arg1;
 - (void)setShouldHalo:(BOOL)arg1;
 - (void)setShouldHover:(BOOL)arg1;

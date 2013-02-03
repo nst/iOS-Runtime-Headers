@@ -8,7 +8,7 @@
     void *_reserved;
 }
 
-- (NSUInteger)countLimit;
+- (unsigned int)countLimit;
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)evictsObjectsWithDiscardedContent;
@@ -18,13 +18,13 @@
 - (id)objectForKey:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
-- (void)setCountLimit:(NSUInteger)arg1;
+- (void)setCountLimit:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEvictsObjectsWithDiscardedContent:(BOOL)arg1;
 - (void)setName:(id)arg1;
-- (void)setObject:(id)arg1 forKey:(id)arg2 cost:(NSUInteger)arg3;
+- (void)setObject:(id)arg1 forKey:(id)arg2 cost:(unsigned int)arg3;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-- (void)setTotalCostLimit:(NSUInteger)arg1;
-- (NSUInteger)totalCostLimit;
+- (void)setTotalCostLimit:(unsigned int)arg1;
+- (unsigned int)totalCostLimit;
 
 @end

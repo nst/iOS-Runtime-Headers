@@ -15,41 +15,41 @@
             float height; 
         } size; 
     struct CGColor { } *backgroundColor;
-    NSUInteger backgroundGraphicCount;
+    unsigned int backgroundGraphicCount;
     CPGraphicObject **backgroundGraphics;
-    NSUInteger columnCount;
+    unsigned int columnCount;
     float *columnX;
     BOOL disposed;
-    NSUInteger rowCount;
+    unsigned int rowCount;
     float *rowY;
     } tableBounds;
-    NSUInteger usedGraphicCount;
+    unsigned int usedGraphicCount;
 }
 
-@property(readonly) float *columnX;
-@property(readonly) float *rowY;
-@property(readonly) NSUInteger backgroundGraphicCount;
-@property NSUInteger columnCount;
-@property NSUInteger rowCount;
-@property(readonly) CGRect tableBounds;
-@property(readonly) NSUInteger usedGraphicCount;
+@property(readonly) unsigned int backgroundGraphicCount;
+@property unsigned int columnCount;
+@property(readonly) float* columnX;
+@property unsigned int rowCount;
+@property(readonly) float* rowY;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } tableBounds;
+@property(readonly) unsigned int usedGraphicCount;
 
 - (struct CGColor { }*)backgroundColor;
-- (id)backgroundGraphicAtIndex:(NSUInteger)arg1;
-- (NSUInteger)backgroundGraphicCount;
-- (NSUInteger)columnCount;
+- (id)backgroundGraphicAtIndex:(unsigned int)arg1;
+- (unsigned int)backgroundGraphicCount;
+- (unsigned int)columnCount;
 - (float*)columnX;
 - (void)dealloc;
 - (void)dispose;
 - (void)finalize;
 - (void)incrementUsedGraphicCount;
 - (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSUInteger)rowCount;
+- (unsigned int)rowCount;
 - (float*)rowY;
 - (void)setBackgroundGraphics:(id)arg1;
-- (void)setColumnCount:(NSUInteger)arg1;
-- (void)setRowCount:(NSUInteger)arg1;
+- (void)setColumnCount:(unsigned int)arg1;
+- (void)setRowCount:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tableBounds;
-- (NSUInteger)usedGraphicCount;
+- (unsigned int)usedGraphicCount;
 
 @end

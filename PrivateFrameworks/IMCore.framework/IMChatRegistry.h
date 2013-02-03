@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSArray;
 
 @interface IMChatRegistry : NSObject {
     NSMutableDictionary *_chatGUIDToCurrentThreadMap;
     NSMutableDictionary *_threadNameToChatMap;
 }
 
-@property(readonly) NSArray *allExistingChats;
+@property(readonly) NSArray * allExistingChats;
 
 + (Class)chatClass;
 + (Class)chatRegistryClass;
@@ -31,9 +31,9 @@
 - (void)_registerChat:(id)arg1 isIncoming:(BOOL)arg2;
 - (oneway void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 error:(id)arg4;
 - (oneway void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 invitationReceived:(id)arg4;
-- (oneway void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 member:(id)arg4 statusChanged:(NSInteger)arg5;
+- (oneway void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 member:(id)arg4 statusChanged:(int)arg5;
 - (oneway void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 messageReceived:(id)arg4;
-- (oneway void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 statusChanged:(NSInteger)arg4;
+- (oneway void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 statusChanged:(int)arg4;
 - (oneway void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 updateProperties:(id)arg4;
 - (id)allExistingChats;
 - (id)chatForIMHandle:(id)arg1 tryDirectConnection:(BOOL)arg2;

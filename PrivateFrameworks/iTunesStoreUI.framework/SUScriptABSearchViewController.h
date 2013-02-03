@@ -6,10 +6,10 @@
 
 @interface SUScriptABSearchViewController : SUScriptViewController {
     NSArray *_properties;
-    NSInteger _scope;
+    int _scope;
 }
 
-@property(readonly) NSInteger numberOfResults;
+@property(readonly) int numberOfResults;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
@@ -17,7 +17,7 @@
 - (void)_cancelSearchWithTag:(id)arg1;
 - (id)_className;
 - (id)_contactsSearchViewController;
-- (NSInteger)_numberOfResults;
+- (int)_numberOfResults;
 - (void)_resetResults;
 - (id)_searchForText:(id)arg1;
 - (id)attributeKeys;
@@ -26,7 +26,7 @@
 - (id)init;
 - (id)initWithOptions:(id)arg1;
 - (id)newNativeViewController;
-- (NSInteger)numberOfResults;
+- (int)numberOfResults;
 - (void)resetResults;
 - (id)scriptAttributeKeys;
 - (id)searchForText:(id)arg1;

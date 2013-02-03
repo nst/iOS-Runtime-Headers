@@ -8,24 +8,24 @@
     NSMutableArray *mBlocks;
     WDDocument *mDocument;
     WDTableCell *mTableCell;
-    NSInteger mTextType;
+    int mTextType;
 }
 
 - (void)addBlock:(id)arg1;
 - (id)addParagraph;
-- (id)addParagraphAtIndex:(NSInteger)arg1;
+- (id)addParagraphAtIndex:(int)arg1;
 - (id)addTable;
-- (id)addTableAtIndex:(NSInteger)arg1;
-- (id)blockAt:(NSInteger)arg1;
-- (NSInteger)blockCount;
+- (id)addTableAtIndex:(int)arg1;
+- (id)blockAt:(int)arg1;
+- (int)blockCount;
 - (id)blockIterator;
 - (id)blocks;
 - (id)content;
 - (void)dealloc;
 - (id)document;
-- (NSInteger)indexOfBlock:(id)arg1;
-- (id)initWithDocument:(id)arg1 textType:(NSInteger)arg2 tableCell:(id)arg3;
-- (id)initWithDocument:(id)arg1 textType:(NSInteger)arg2;
+- (int)indexOfBlock:(id)arg1;
+- (id)initWithDocument:(id)arg1 textType:(int)arg2 tableCell:(id)arg3;
+- (id)initWithDocument:(id)arg1 textType:(int)arg2;
 - (BOOL)isEmpty;
 - (id)lastBlock;
 - (id)newBlockIterator;
@@ -34,7 +34,7 @@
 - (void)removeLastCharacter:(unsigned short)arg1;
 - (id)runIterator;
 - (id)tableCell;
-- (NSInteger)tableNestingLevel;
-- (NSInteger)textType;
+- (int)tableNestingLevel;
+- (int)textType;
 
 @end

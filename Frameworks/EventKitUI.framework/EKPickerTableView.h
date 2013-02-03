@@ -9,8 +9,8 @@
     UITableView *_tableView;
 }
 
-@property(readonly) UIDatePicker *datePicker;
-@property(readonly) UITableView *tableView;
+@property(readonly) UIDatePicker * datePicker;
+@property(readonly) UITableView * tableView;
 
 - (id)datePicker;
 - (void)dealloc;

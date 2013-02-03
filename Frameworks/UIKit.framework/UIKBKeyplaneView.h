@@ -13,11 +13,11 @@
     NSString *_visualStyle;
 }
 
-@property UIKBCandidateView *candidateView;
-@property UIKBHandwritingView *handwritingView;
-@property(retain) UIKBKeyplane *keyplane;
-@property(readonly) NSString *visualStyle;
 @property BOOL backgroundNeedsRedraw;
+@property UIKBCandidateView * candidateView;
+@property UIKBHandwritingView * handwritingView;
+@property(retain) UIKBKeyplane * keyplane;
+@property(readonly) NSString * visualStyle;
 
 - (BOOL)backgroundNeedsRedraw;
 - (id)cacheKey;

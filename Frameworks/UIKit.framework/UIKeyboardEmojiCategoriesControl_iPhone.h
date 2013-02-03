@@ -13,7 +13,7 @@
 - (void)layoutSubviews;
 - (void)releaseImagesAndViews;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)updateSegmentAndDividers:(NSInteger)arg1;
+- (void)updateSegmentAndDividers:(int)arg1;
 - (void)updateSegmentImages;
 
 @end

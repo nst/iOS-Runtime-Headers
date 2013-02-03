@@ -23,6 +23,6 @@
 - (void)preloadController;
 - (void)reload;
 - (void)setContentControllerDelegate:(id)arg1;
-- (BOOL)table:(id)arg1 showDisclosureForRow:(NSInteger)arg2;
+- (BOOL)table:(id)arg1 showDisclosureForRow:(int)arg2;
 
 @end

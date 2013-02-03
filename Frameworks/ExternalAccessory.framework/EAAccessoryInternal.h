@@ -2,24 +2,29 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class <EAAccessoryDelegate>, NSArray, NSString, NSDictionary;
 
 @interface EAAccessoryInternal : NSObject {
     int (*_cfAccessoryPortPropertyCallback)();
     NSDictionary *_audioPorts;
-    NSUInteger _capabilities;
+    unsigned int _capabilities;
     struct __CFAccessory { } *_cfAccessory;
     void *_cfAccessoryPortPropertyContext;
-    NSInteger _classType;
+    int _classType;
     BOOL _connected;
-    NSUInteger _connectionID;
+    unsigned int _connectionID;
     <EAAccessoryDelegate> *_delegate;
-    NSUInteger _eqIndex;
-    NSUInteger _eqItems;
+    unsigned int _eqIndex;
+    unsigned int _eqItems;
     NSArray *_eqNames;
     NSString *_firmwareRevision;
     NSString *_hardwareRevision;
-    NSInteger _iPodOutOptionsMask;
+    int _iPodOutOptionsMask;
     NSDictionary *_legacyLingoProperties;
     NSString *_manufacturer;
     NSString *_modelNumber;
@@ -29,43 +34,43 @@
     NSString *_serialNumber;
 }
 
-@property NSDictionary *audioPorts;
-@property __CFAccessory *cfAccessory;
-@property unknown type *cfAccessoryPortPropertyCallback;
-@property void *cfAccessoryPortPropertyContext;
-@property <EAAccessoryDelegate> *delegate;
-@property(retain) NSArray *eqNames;
-@property(copy) NSString *firmwareRevision;
-@property(copy) NSString *hardwareRevision;
-@property NSDictionary *legacyLingoProperties;
-@property(copy) NSString *manufacturer;
-@property(copy) NSString *modelNumber;
-@property(copy) NSString *name;
-@property(copy) NSString *preferredApp;
-@property NSDictionary *protocols;
-@property(copy) NSString *serialNumber;
-@property NSUInteger capabilities;
-@property NSInteger classType;
+@property NSDictionary * audioPorts;
+@property unsigned int capabilities;
+@property struct __CFAccessory { }* cfAccessory;
+@property int (* cfAccessoryPortPropertyCallback;
+@property void* cfAccessoryPortPropertyContext;
+@property int classType;
 @property BOOL connected;
-@property NSUInteger connectionID;
-@property NSUInteger eqIndex;
-@property NSInteger iPodOutOptionsMask;
+@property unsigned int connectionID;
+@property <EAAccessoryDelegate> * delegate;
+@property unsigned int eqIndex;
+@property(retain) NSArray * eqNames;
+@property(copy) NSString * firmwareRevision;
+@property(copy) NSString * hardwareRevision;
+@property int iPodOutOptionsMask;
+@property NSDictionary * legacyLingoProperties;
+@property(copy) NSString * manufacturer;
+@property(copy) NSString * modelNumber;
+@property(copy) NSString * name;
+@property(copy) NSString * preferredApp;
+@property NSDictionary * protocols;
+@property(copy) NSString * serialNumber;
 
 - (int (*)())cfAccessoryPortPropertyCallback;
 - (id)audioPorts;
-- (NSUInteger)capabilities;
+- (unsigned int)capabilities;
 - (struct __CFAccessory { }*)cfAccessory;
 - (void*)cfAccessoryPortPropertyContext;
-- (NSInteger)classType;
+- (int)classType;
 - (BOOL)connected;
-- (NSUInteger)connectionID;
+- (unsigned int)connectionID;
 - (void)dealloc;
 - (id)delegate;
-- (NSUInteger)eqIndex;
+- (unsigned int)eqIndex;
 - (id)eqNames;
 - (id)firmwareRevision;
 - (id)hardwareRevision;
-- (NSInteger)iPodOutOptionsMask;
+- (int)iPodOutOptionsMask;
 - (id)init;
 - (id)legacyLingoProperties;
 - (id)manufacturer;
@@ -75,19 +80,19 @@
 - (id)protocols;
 - (id)serialNumber;
 - (void)setAudioPorts:(id)arg1;
-- (void)setCapabilities:(NSUInteger)arg1;
+- (void)setCapabilities:(unsigned int)arg1;
 - (void)setCfAccessory:(struct __CFAccessory { }*)arg1;
 - (void)setCfAccessoryPortPropertyCallback:(int (*)())arg1;
 - (void)setCfAccessoryPortPropertyContext:(void*)arg1;
-- (void)setClassType:(NSInteger)arg1;
+- (void)setClassType:(int)arg1;
 - (void)setConnected:(BOOL)arg1;
-- (void)setConnectionID:(NSUInteger)arg1;
+- (void)setConnectionID:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEqIndex:(NSUInteger)arg1;
+- (void)setEqIndex:(unsigned int)arg1;
 - (void)setEqNames:(id)arg1;
 - (void)setFirmwareRevision:(id)arg1;
 - (void)setHardwareRevision:(id)arg1;
-- (void)setIPodOutOptionsMask:(NSInteger)arg1;
+- (void)setIPodOutOptionsMask:(int)arg1;
 - (void)setLegacyLingoProperties:(id)arg1;
 - (void)setManufacturer:(id)arg1;
 - (void)setModelNumber:(id)arg1;

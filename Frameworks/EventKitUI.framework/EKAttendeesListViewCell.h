@@ -14,12 +14,12 @@
 }
 
 - (id)_attendingImage;
-- (id)_imageForStatus:(NSInteger)arg1;
+- (id)_imageForStatus:(int)arg1;
 - (id)_maybeImage;
 - (id)_notAttendingImage;
 - (id)_pendingImage;
 - (void)dealloc;
-- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2 attendee:(id)arg3 showStatusImage:(BOOL)arg4;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 attendee:(id)arg3 showStatusImage:(BOOL)arg4;
 - (void)setAttendee:(id)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 

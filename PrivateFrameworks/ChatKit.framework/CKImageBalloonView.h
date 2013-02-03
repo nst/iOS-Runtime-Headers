@@ -14,6 +14,7 @@
 + (struct CGPoint { float x1; float x2; })offsetForBubbleInsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 
 - (BOOL)_accessibilitySupportsActivateAction;
+- (float)_receiptSpace;
 - (void)accessibilityActivate;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;

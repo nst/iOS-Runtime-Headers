@@ -15,6 +15,7 @@
 
 - (id)_slotForUnitString:(id)arg1 number:(id)arg2;
 - (id)allWordsForPromptCalled:(id)arg1 withNumber:(id)arg2 units:(id)arg3;
+- (void)dealloc;
 - (id)init;
 - (void)setUpWithLanguage:(id)arg1;
 - (id)stringArrayForDecimalNumber:(id)arg1;

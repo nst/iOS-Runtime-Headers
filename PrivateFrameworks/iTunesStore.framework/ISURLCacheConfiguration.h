@@ -6,19 +6,19 @@
 
 @interface ISURLCacheConfiguration : NSObject <NSCopying> {
     NSArray *_clientIdentifiers;
-    NSUInteger _diskCapacity;
+    unsigned int _diskCapacity;
     NSSet *_fileExtensions;
-    NSUInteger _memoryCapacity;
+    unsigned int _memoryCapacity;
     NSString *_persistentIdentifier;
     NSArray *_urlPatterns;
 }
 
-@property(copy) NSArray *URLPatterns;
-@property(copy) NSArray *clientIdentifiers;
-@property(copy) NSSet *fileExtensions;
-@property(copy) NSString *persistentIdentifier;
-@property NSUInteger diskCapacity;
-@property NSUInteger memoryCapacity;
+@property(copy) NSArray * URLPatterns;
+@property(copy) NSArray * clientIdentifiers;
+@property unsigned int diskCapacity;
+@property(copy) NSSet * fileExtensions;
+@property unsigned int memoryCapacity;
+@property(copy) NSString * persistentIdentifier;
 
 - (id)URLPatterns;
 - (void)_setClientIdentifiersFromPropertyList:(id)arg1;
@@ -27,15 +27,15 @@
 - (id)clientIdentifiers;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (NSUInteger)diskCapacity;
+- (unsigned int)diskCapacity;
 - (id)fileExtensions;
 - (id)initWithPropertyList:(id)arg1;
-- (NSUInteger)memoryCapacity;
+- (unsigned int)memoryCapacity;
 - (id)persistentIdentifier;
 - (void)setClientIdentifiers:(id)arg1;
-- (void)setDiskCapacity:(NSUInteger)arg1;
+- (void)setDiskCapacity:(unsigned int)arg1;
 - (void)setFileExtensions:(id)arg1;
-- (void)setMemoryCapacity:(NSUInteger)arg1;
+- (void)setMemoryCapacity:(unsigned int)arg1;
 - (void)setPersistentIdentifier:(id)arg1;
 - (void)setURLPatterns:(id)arg1;
 

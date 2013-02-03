@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class NSString, NSMutableDictionary;
+@class NSDictionary, NSString, NSMutableDictionary;
 
 @interface SWWorkout : NSObject {
     double _elapsedTimePreviousToLastActivation;
@@ -11,8 +11,8 @@
     NSString *_workoutState;
 }
 
-@property(readonly) NSDictionary *workoutData;
-@property(readonly) NSString *workoutState;
+@property(readonly) NSDictionary * workoutData;
+@property(readonly) NSString * workoutState;
 
 - (void)activateWorkout;
 - (void)dealloc;

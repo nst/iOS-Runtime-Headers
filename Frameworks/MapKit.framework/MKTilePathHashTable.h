@@ -8,11 +8,11 @@
 
 - (void)addValue:(struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; })arg1;
 - (BOOL)containsValue:(struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; })arg1;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (id)initWithCapacity:(NSUInteger)arg1;
+- (id)initWithCapacity:(unsigned int)arg1;
 - (struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; })member:(struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; })arg1;
 - (void)removeAllValues;
 - (void)removeValue:(struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; })arg1;

@@ -5,21 +5,21 @@
 @class NSSQLCorrelation, NSSQLRow;
 
 @interface NSSQLAdapterOperation : NSObject {
-    NSUInteger _adapterOperator;
+    unsigned int _adapterOperator;
     NSSQLCorrelation *_correlation;
     NSSQLRow *_row;
 }
 
 - (id)_opString;
-- (NSUInteger)adapterOperator;
-- (NSInteger)compareAdapterOperation:(id)arg1;
+- (unsigned int)adapterOperator;
+- (int)compareAdapterOperation:(id)arg1;
 - (id)correlation;
 - (void)dealloc;
 - (id)description;
 - (id)entity;
-- (id)initWithAdapterOperator:(NSUInteger)arg1 correlation:(id)arg2;
-- (id)initWithAdapterOperator:(NSUInteger)arg1 row:(id)arg2;
+- (id)initWithAdapterOperator:(unsigned int)arg1 correlation:(id)arg2;
+- (id)initWithAdapterOperator:(unsigned int)arg1 row:(id)arg2;
 - (id)row;
-- (void)setAdapterOperator:(NSUInteger)arg1;
+- (void)setAdapterOperator:(unsigned int)arg1;
 
 @end

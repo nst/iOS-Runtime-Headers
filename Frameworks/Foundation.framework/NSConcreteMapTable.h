@@ -2,8 +2,9 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @class NSWeakCallback;
@@ -55,41 +56,41 @@
         int (*readAt)(); 
         int (*clearAt)(); 
         int (*storeAt)(); 
-    NSUInteger capacity;
-    NSUInteger count;
-    NSInteger growLock;
-    NSUInteger keyOptions;
+    boolshouldRehash;
+    unsigned int capacity;
+    unsigned int count;
+    int growLock;
+    unsigned int keyOptions;
     } keys;
-    NSUInteger mutations;
-    NSUInteger valueOptions;
+    unsigned int mutations;
+    unsigned int valueOptions;
     } values;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*shouldRehash;
 }
 
 - (void)_initBlock;
 - (void)_setBackingStore;
 - (id)allKeys;
 - (id)allValues;
-- (void)assign:(NSUInteger)arg1 key:(const void*)arg2 value:(const void*)arg3 isNew:(BOOL)arg4;
+- (void)assign:(unsigned int)arg1 key:(const void*)arg2 value:(const void*)arg3 isNew:(BOOL)arg4;
 - (void)checkCount:(const char *)arg1;
 - (Class)classForCoder;
-- (BOOL)containsKeys:(const void**)arg1 values:(const void**)arg2 count:(NSUInteger)arg3;
+- (BOOL)containsKeys:(const void**)arg1 values:(const void**)arg2 count:(unsigned int)arg3;
 - (id)copy;
-- (NSUInteger)count;
-- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)dump;
 - (void)encodeWithCoder:(id)arg1;
 - (void*)existingItemForSetItem:(const void*)arg1 forAbsentKey:(const void*)arg2;
 - (void)finalize;
-- (NSUInteger)getKeys:(const void**)arg1 values:(const void**)arg2;
+- (unsigned int)getKeys:(const void**)arg1 values:(const void**)arg2;
 - (void)grow;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithKeyOptions:(NSUInteger)arg1 valueOptions:(NSUInteger)arg2 capacity:(NSUInteger)arg3;
-- (id)initWithKeyPointerFunctions:(id)arg1 valuePointerFunctions:(id)arg2 capacity:(NSUInteger)arg3;
+- (id)initWithKeyOptions:(unsigned int)arg1 valueOptions:(unsigned int)arg2 capacity:(unsigned int)arg3;
+- (id)initWithKeyPointerFunctions:(id)arg1 valuePointerFunctions:(id)arg2 capacity:(unsigned int)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)keyEnumerator;
 - (id)keyPointerFunctions;
@@ -97,9 +98,9 @@
 - (id)objectEnumerator;
 - (id)objectForKey:(id)arg1;
 - (void)raiseCountUnderflowException;
-- (NSUInteger)realCount;
+- (unsigned int)realCount;
 - (void)rehash;
-- (NSUInteger)rehashAround:(NSUInteger)arg1;
+- (unsigned int)rehashAround:(unsigned int)arg1;
 - (void)removeAllItems;
 - (void)removeObjectForKey:(id)arg1;
 - (void)replaceItem:(const void*)arg1 forExistingKey:(const void*)arg2;

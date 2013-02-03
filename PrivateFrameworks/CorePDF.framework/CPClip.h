@@ -4,14 +4,14 @@
 
 @interface CPClip : NSObject <CPDisposable> {
     struct CGPath { } *path;
-    NSInteger windingRule;
+    int windingRule;
 }
 
 - (void)dealloc;
 - (void)dispose;
 - (void)finalize;
-- (id)initWithPath:(struct CGPath { }*)arg1 windingRule:(NSInteger)arg2;
+- (id)initWithPath:(struct CGPath { }*)arg1 windingRule:(int)arg2;
 - (struct CGPath { }*)path;
-- (NSInteger)windingRule;
+- (int)windingRule;
 
 @end

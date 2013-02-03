@@ -6,14 +6,14 @@
 }
 
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)accessibilityElementAtIndex:(NSInteger)arg1;
-- (NSInteger)accessibilityElementCount;
+- (id)accessibilityElementAtIndex:(int)arg1;
+- (int)accessibilityElementCount;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (BOOL)accessibilityTreeHidden;
 - (BOOL)canProduceString:(id)arg1;
 - (void)dealloc;
-- (NSInteger)indexOfAccessibilityElement:(id)arg1;
+- (int)indexOfAccessibilityElement:(id)arg1;
 - (BOOL)isAccessibilityElement;
 - (void)setKeyplaneName:(id)arg1;
 - (void)touchDragged:(id)arg1;

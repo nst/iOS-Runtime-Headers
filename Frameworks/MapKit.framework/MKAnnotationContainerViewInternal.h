@@ -53,11 +53,11 @@
     NSMutableArray *managedAnnotations;
     MKMapTileView *mapTileView;
     } mapTransform;
-    NSUInteger mapType;
+    unsigned int mapType;
     } mouseDownPoint;
     NSMutableSet *pendingAnnotations;
     BOOL registeredForAddressBookChanges;
-    NSInteger restoreUserLocationViewUpdateMode;
+    int restoreUserLocationViewUpdateMode;
     NSMapTable *reusableAnnotationViews;
     NSMutableArray *searchResultPins;
     MKSearchResult *searchResultToSelect;
@@ -65,7 +65,7 @@
     NSMutableDictionary *transitCallouts;
     MKUserLocation *userLocation;
     MKUserLocationView *userLocationView;
-    NSInteger userLocationViewUpdateMode;
+    int userLocationViewUpdateMode;
     } visibleMapRect;
 }
 

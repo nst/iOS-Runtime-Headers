@@ -14,7 +14,7 @@
 - (id)blipRef;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithDefaults;
 - (BOOL)isBlipRefOverridden;
 - (BOOL)isEqual:(id)arg1;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class GKVoiceChatSession, GKSession;
+@class GKVoiceChatSession, GKSession, NSString;
 
 @interface GKVoiceChat : NSObject {
     GKSession *_gkSession;
@@ -14,18 +14,18 @@
     id _playerStateUpdateHandler;
 }
 
-@property(retain) GKSession *gkSession;
-@property(retain) GKVoiceChatSession *gkVoiceChatSession;
-@property(readonly) NSString *name;
-@property(copy) ? *playerStateUpdateHandler;
 @property(getter=isActive) BOOL active;
+@property(retain) GKSession * gkSession;
+@property(retain) GKVoiceChatSession * gkVoiceChatSession;
+@property(readonly) NSString * name;
+@property(copy) id playerStateUpdateHandler;
 @property float volume;
 
 + (BOOL)isVoIPAllowed;
 
 - (void)dealloc;
 - (id)gkSession;
-- (void)gkVoiceChatSession:(id)arg1 stateUpdate:(NSUInteger)arg2 forPeer:(id)arg3;
+- (void)gkVoiceChatSession:(id)arg1 stateUpdate:(unsigned int)arg2 forPeer:(id)arg3;
 - (id)gkVoiceChatSession;
 - (id)initChat:(id)arg1 withSession:(id)arg2;
 - (BOOL)isActive;

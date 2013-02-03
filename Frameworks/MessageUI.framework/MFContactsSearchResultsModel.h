@@ -18,9 +18,9 @@
 
 - (void)_addBestRecipientsForRecipients:(id)arg1 excluding:(id)arg2 toArray:(id)arg3;
 - (id)_bestRecipientForAddress:(id)arg1 fallback:(id)arg2;
-- (void)addResults:(id)arg1 ofType:(NSInteger)arg2;
+- (void)addResults:(id)arg1 ofType:(int)arg2;
 - (void)dealloc;
-- (void)finishedAddingResultsOfType:(NSInteger)arg1;
+- (void)finishedAddingResultsOfType:(int)arg1;
 - (id)init;
 - (id)initWithFavorMobileNumbers:(BOOL)arg1;
 - (void)resetIncludingResults:(BOOL)arg1;

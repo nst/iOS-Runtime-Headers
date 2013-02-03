@@ -7,8 +7,8 @@
 @interface AVPlaybackItem : NSObject {
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     struct CGSize { 
         float width; 
@@ -28,12 +28,12 @@
     NSDictionary *_streamStateNotificationInfo;
 }
 
-@property(retain) NSDictionary *inspectionNotificationInfo;
-@property(retain) NSDictionary *lyricsNotificationInfo;
-@property(retain) NSDictionary *playToEndNotificationInfo;
-@property(retain) NSDictionary *streamStateNotificationInfo;
+@property(retain) NSDictionary * inspectionNotificationInfo;
 @property BOOL isInPlayQueue;
 @property BOOL isPreparingForInspection;
+@property(retain) NSDictionary * lyricsNotificationInfo;
+@property(retain) NSDictionary * playToEndNotificationInfo;
+@property(retain) NSDictionary * streamStateNotificationInfo;
 
 + (id)convertFigTimeDictionaryToTimeIntervalWithKey:(id)arg1 stringURLToNSURLWithKey:(id)arg2 inArrayOfDictionaries:(id)arg3;
 
@@ -45,10 +45,10 @@
 - (id)avItem;
 - (void)cacheCurrentDuration;
 - (void)cacheCurrentSize;
-- (id)chapterImageForImageID:(NSInteger)arg1;
+- (id)chapterImageForImageID:(int)arg1;
 - (void)dealloc;
 - (void)ensureFPItem;
-- (id)evenlySpacedThumbnailTimesFromStartTime:(double)arg1 toEndTime:(double)arg2 maxCount:(NSInteger)arg3;
+- (id)evenlySpacedThumbnailTimesFromStartTime:(double)arg1 toEndTime:(double)arg2 maxCount:(int)arg3;
 - (id)formatDetailsForTracks;
 - (struct OpaqueFigPlaybackItem { }*)fpItem;
 - (void)fpItemNotificationInfo:(id)arg1;
@@ -61,7 +61,7 @@
 - (id)itemAttribute:(id)arg1 forKey:(id)arg2;
 - (id)lyricsNotificationInfo;
 - (void)makeReadyForInspection;
-- (id)nextThumbnailTimesStartingAt:(double)arg1 minimumInterval:(double)arg2 forwards:(BOOL)arg3 maxCount:(NSInteger)arg4;
+- (id)nextThumbnailTimesStartingAt:(double)arg1 minimumInterval:(double)arg2 forwards:(BOOL)arg3 maxCount:(int)arg4;
 - (id)playToEndNotificationInfo;
 - (id)propertiesNeededForInspection;
 - (void)release;

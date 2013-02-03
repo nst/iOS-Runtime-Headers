@@ -14,8 +14,8 @@
     NSString *_uuid;
 }
 
-@property <CPPowerAssertionManagerDelegate> *delegate;
-@property(readonly) NSString *uuid;
+@property <CPPowerAssertionManagerDelegate> * delegate;
+@property(readonly) NSString * uuid;
 
 + (id)sharedInstance;
 
@@ -27,7 +27,7 @@
 - (id)init;
 - (void)releasePowerAssertionWithContext:(id)arg1;
 - (void)reretainPowerAssertionsForGroupIdentifier:(id)arg1;
-- (NSUInteger)retainCountForContext:(id)arg1;
+- (unsigned int)retainCountForContext:(id)arg1;
 - (void)retainPowerAssertionWithContext:(id)arg1 withGroupIdentifier:(id)arg2;
 - (void)retainPowerAssertionWithContext:(id)arg1;
 - (void)setDelegate:(id)arg1;

@@ -7,13 +7,13 @@
 @interface LBSWrapperResponse : PBCodable {
     BOOL _hasStatus;
     LBSGLocResponse *_reply;
-    NSInteger _status;
+    int _status;
 }
 
-@property(retain) LBSGLocResponse *reply;
 @property(readonly) BOOL hasReply;
 @property(readonly) BOOL hasStatus;
-@property NSInteger status;
+@property(retain) LBSGLocResponse * reply;
+@property int status;
 
 - (void)dealloc;
 - (id)description;
@@ -23,8 +23,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)reply;
 - (void)setReply:(id)arg1;
-- (void)setStatus:(NSInteger)arg1;
-- (NSInteger)status;
+- (void)setStatus:(int)arg1;
+- (int)status;
 - (void)writeTo:(id)arg1;
 
 @end

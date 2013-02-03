@@ -7,14 +7,14 @@
 @interface LBSGLocResponse : PBCodable {
     NSString *_platformKey;
     NSMutableArray *_replyElementss;
-    NSInteger _status;
+    int _status;
 }
 
-@property(retain) NSString *platformKey;
-@property(retain) NSMutableArray *replyElementss;
 @property(readonly) BOOL hasPlatformKey;
-@property(readonly) NSInteger replyElementssCount;
-@property NSInteger status;
+@property(retain) NSString * platformKey;
+@property(retain) NSMutableArray * replyElementss;
+@property(readonly) int replyElementssCount;
+@property int status;
 
 - (void)addReplyElements:(id)arg1;
 - (void)dealloc;
@@ -23,14 +23,14 @@
 - (id)init;
 - (id)platformKey;
 - (BOOL)readFrom:(id)arg1;
-- (id)replyElementsAtIndex:(NSUInteger)arg1;
+- (id)replyElementsAtIndex:(unsigned int)arg1;
 - (id)replyElementss;
-- (NSInteger)replyElementssCount;
+- (int)replyElementssCount;
 - (void)setPlatformKey:(id)arg1;
-- (void)setReplyElements:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setReplyElements:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setReplyElementss:(id)arg1;
-- (void)setStatus:(NSInteger)arg1;
-- (NSInteger)status;
+- (void)setStatus:(int)arg1;
+- (int)status;
 - (void)writeTo:(id)arg1;
 
 @end

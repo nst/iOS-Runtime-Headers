@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKUITheme, NSMutableArray, UIImage;
+@class UIImage, NSArray, GKUITheme, NSMutableArray;
 
 @interface GKCellBackgroundView : UIView {
     struct { 
@@ -17,96 +17,94 @@
         float bottom; 
         float right; 
     NSMutableArray *_backgroundDrawDescriptors;
-    NSInteger _backgroundStyle;
+    int _backgroundStyle;
     } _borderInsets;
-    NSUInteger _cellCount;
+    unsigned int _cellCount;
     float _cellGapWidth;
-    NSUInteger _columnCount;
+    unsigned int _columnCount;
     UIImage *_fillImage;
     } _fillImagePhase;
-    BOOL _gapAbove;
-    BOOL _gapBelow;
     } _gkViewFlags;
     BOOL _ignoreFillPhaseYOffset;
-    NSInteger _selectedCell;
-    NSInteger _selectedColumn;
-    UIImage *_separatorImage;
+    int _selectedCell;
+    int _selectedColumn;
     GKUITheme *_theme;
 }
 
-@property(retain) NSArray *backgroundDrawDescriptors;
-@property(retain) UIImage *fillImage;
-@property(retain) UIImage *separatorImage;
-@property(retain) GKUITheme *theme;
-@property NSInteger backgroundStyle;
-@property UIEdgeInsets borderInsets;
-@property NSUInteger cellCount;
+@property(retain) NSArray * backgroundDrawDescriptors;
+@property int backgroundStyle;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } borderInsets;
+@property unsigned int cellCount;
 @property float cellGapWidth;
-@property NSUInteger columnCount;
+@property unsigned int columnCount;
 @property BOOL drawSelected;
-@property CGSize fillImagePhase;
-@property BOOL gapAbove;
-@property BOOL gapBelow;
+@property(retain) UIImage * fillImage;
+@property struct CGSize { float width; float height; } fillImagePhase;
 @property BOOL grouped;
 @property BOOL ignoreFillPhaseYOffset;
-@property NSInteger selectedCell;
-@property NSInteger selectedColumn;
+@property int selectedCell;
+@property int selectedColumn;
+@property(retain) GKUITheme * theme;
 
 + (id)buttonCellBackgroundWithTheme:(id)arg1;
-+ (id)cellBackgroundWithTheme:(id)arg1 tableViewStyle:(NSInteger)arg2;
++ (id)cellBackgroundWithTheme:(id)arg1 tableViewStyle:(int)arg2;
 + (id)cellBackgroundWithTheme:(id)arg1;
 + (id)selectedButtonCellBackgroundWithTheme:(id)arg1;
-+ (id)selectedCellBackgroundWithTheme:(id)arg1 tableViewStyle:(NSInteger)arg2;
++ (id)selectedCellBackgroundWithTheme:(id)arg1 tableViewStyle:(int)arg2;
 + (id)selectedCellBackgroundWithTheme:(id)arg1;
 
+- (void)_drawBorderOutlineInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cellIndex:(int)arg2;
+- (void)_drawFourPartBorderImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)backgroundDrawDescriptors;
-- (NSInteger)backgroundStyle;
+- (int)backgroundStyle;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderInsets;
-- (NSUInteger)cellCount;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })borderRectForCell:(unsigned int)arg1;
+- (unsigned int)cellCount;
 - (float)cellGapWidth;
-- (NSUInteger)columnCount;
+- (unsigned int)columnCount;
 - (void)configureBorderImages;
 - (void)dealloc;
-- (void)drawBorderInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cellIndex:(NSInteger)arg2;
-- (id)drawDescriptorForCellIndex:(NSInteger)arg1;
+- (void)drawBorderInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cellIndex:(int)arg2;
+- (id)drawDescriptorForCellIndex:(int)arg1;
 - (void)drawFillInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)drawSelected;
 - (id)fillImage;
 - (struct CGSize { float x1; float x2; })fillImagePhase;
-- (BOOL)gapAbove;
-- (BOOL)gapBelow;
+- (struct CGPath { }*)fillPathForCell:(unsigned int)arg1;
+- (struct CGPath { }*)fillPathForColumn:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fillRectForCell:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fillRectForColumn:(unsigned int)arg1;
 - (BOOL)grouped;
 - (BOOL)hasKnownLocations;
 - (BOOL)ignoreFillPhaseYOffset;
 - (id)init;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSInteger)sectionLocation;
-- (NSInteger)selectedCell;
-- (NSInteger)selectedColumn;
-- (id)separatorImage;
+- (struct CGPath { }*)pathForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedCorners:(int)arg2 cornerRadius:(float)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForCell:(unsigned int)arg1 withBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (int)sectionLocation;
+- (int)selectedCell;
+- (int)selectedColumn;
 - (void)setBackgroundDrawDescriptors:(id)arg1;
-- (void)setBackgroundStyle:(NSInteger)arg1;
+- (void)setBackgroundStyle:(int)arg1;
 - (void)setBorderInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setCellCount:(NSUInteger)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCellCount:(unsigned int)arg1;
 - (void)setCellGapWidth:(float)arg1;
-- (void)setColumnCount:(NSUInteger)arg1;
+- (void)setColumnCount:(unsigned int)arg1;
 - (void)setDrawSelected:(BOOL)arg1;
 - (void)setFillImage:(id)arg1;
 - (void)setFillImagePhase:(struct CGSize { float x1; float x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setGapAbove:(BOOL)arg1;
-- (void)setGapBelow:(BOOL)arg1;
 - (void)setGrouped:(BOOL)arg1;
 - (void)setIgnoreFillPhaseYOffset:(BOOL)arg1;
-- (void)setSectionLocation:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
 - (void)setSectionLocations:(id)arg1;
-- (void)setSelectedCell:(NSInteger)arg1;
-- (void)setSelectedColumn:(NSInteger)arg1;
-- (void)setSeparatorImage:(id)arg1;
+- (void)setSelectedCell:(int)arg1;
+- (void)setSelectedColumn:(int)arg1;
 - (void)setTheme:(id)arg1;
-- (BOOL)shouldDrawBorderAtIndex:(NSInteger)arg1;
+- (BOOL)shouldDrawBorderAtIndex:(int)arg1;
 - (id)theme;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })totalBorderInsetsForCellIndex:(NSInteger)arg1;
+- (void)updateContentStretchForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

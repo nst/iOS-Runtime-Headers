@@ -41,7 +41,7 @@
 - (struct __CFRunLoop { }*)getCFRunLoop;
 - (id)init;
 - (id)limitDateForMode:(id)arg1;
-- (void)performSelector:(SEL)arg1 target:(id)arg2 argument:(id)arg3 order:(NSUInteger)arg4 modes:(id)arg5;
+- (void)performSelector:(SEL)arg1 target:(id)arg2 argument:(id)arg3 order:(unsigned int)arg4 modes:(id)arg5;
 - (id)portsForMode:(id)arg1;
 - (void)removePort:(id)arg1 forMode:(id)arg2;
 - (void)removeTimer:(id)arg1 forMode:(id)arg2;

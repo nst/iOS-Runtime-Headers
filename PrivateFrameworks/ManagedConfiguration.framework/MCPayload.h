@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class MCProfile, NSString;
+@class NSArray, MCProfile, NSString;
 
 @interface MCPayload : NSObject {
     NSString *_UUID;
@@ -13,23 +13,23 @@
     NSString *_persistentResourceID;
     MCProfile *_profile;
     NSString *_type;
-    NSInteger _version;
+    int _version;
 }
 
-@property(readonly) NSString *UUID;
-@property(retain) NSString *displayName;
-@property(readonly) NSString *friendlyName;
-@property(readonly) NSString *identifier;
-@property(readonly) NSArray *installationWarnings;
-@property(readonly) NSString *organization;
-@property(readonly) NSString *payloadDescription;
-@property(retain) NSString *persistentResourceID;
-@property(readonly) MCProfile *profile;
-@property(readonly) NSString *type;
-@property(readonly) NSInteger version;
+@property(readonly) NSString * UUID;
+@property(retain) NSString * displayName;
+@property(readonly) NSString * friendlyName;
+@property(readonly) NSString * identifier;
+@property(readonly) NSArray * installationWarnings;
+@property(readonly) NSString * organization;
+@property(readonly) NSString * payloadDescription;
+@property(retain) NSString * persistentResourceID;
+@property(readonly) MCProfile * profile;
+@property(readonly) NSString * type;
+@property(readonly) int version;
 
 + (id)badFieldTypeErrorWithField:(id)arg1;
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)payloadFromDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 + (id)payloadsFromArray:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 + (id)typeStrings;
@@ -58,6 +58,6 @@
 - (id)subtitle2Label;
 - (id)title;
 - (id)type;
-- (NSInteger)version;
+- (int)version;
 
 @end

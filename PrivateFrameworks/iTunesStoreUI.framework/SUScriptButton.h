@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class WebScriptObject, SUScriptCanvasContext;
+@class UIImage, NSString, WebScriptObject, SUScriptCanvasContext;
 
 @interface SUScriptButton : SUScriptObject <SUScriptNavigationItem> {
     id _action;
@@ -11,16 +11,16 @@
     WebScriptObject *_target;
 }
 
-@property(retain) SUScriptCanvasContext *canvas;
-@property(retain) UIImage *image;
-@property(retain) NSString *style;
-@property(retain) NSString *subtitle;
-@property(retain) WebScriptObject *target;
-@property(retain) NSString *title;
 @property(retain) id action;
+@property(retain) SUScriptCanvasContext * canvas;
 @property BOOL enabled;
+@property(retain) UIImage * image;
 @property BOOL loading;
 @property BOOL shouldPerformDefaultAction;
+@property(retain) NSString * style;
+@property(retain) NSString * subtitle;
+@property(retain) WebScriptObject * target;
+@property(retain) NSString * title;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 
@@ -46,7 +46,7 @@
 - (id)image;
 - (id)init;
 - (BOOL)loading;
-- (id)nativeButtonOfType:(NSInteger)arg1;
+- (id)nativeButtonOfType:(int)arg1;
 - (void)performActionWithArguments:(id)arg1;
 - (id)scriptAttributeKeys;
 - (void)setAction:(id)arg1;

@@ -15,7 +15,7 @@
     BOOL _haveRegisteredForAccountsChanged;
     BOOL _needsSave;
     NSString *_placeHolder;
-    NSInteger _purposeInLife;
+    int _purposeInLife;
     BOOL _setupComplete;
     UIAlertView *_sslFailureView;
     BOOL _validatedSuccessfully;
@@ -40,13 +40,13 @@
 - (id)accountFromSpecifier;
 - (id)accountPropertyWithSpecifier:(id)arg1;
 - (id)accountSpecifiers;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)attemptedValidation;
 - (BOOL)autodiscoverAccount;
 - (id)autodiscoverySpecifiers;
 - (void)cancelButtonClicked:(id)arg1;
 - (void)confirmDeleteAccount:(id)arg1;
-- (void)confirmationView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)confirmationView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)currentlyEditingCell;
 - (void)dealloc;
 - (void)didConfirmDeleteAccount:(BOOL)arg1;
@@ -57,7 +57,7 @@
 - (void)finishedAccountSetup;
 - (BOOL)haveEnoughValues;
 - (void)hideProgressWithPrompt:(id)arg1 showButtons:(BOOL)arg2;
-- (NSInteger)indexOfCurrentlyEditingCell;
+- (int)indexOfCurrentlyEditingCell;
 - (BOOL)isRunningFromMobileMailApp;
 - (id)lastGroupSpecifierInSpecifiers:(id)arg1;
 - (id)localizedAccountSetupTitleString;

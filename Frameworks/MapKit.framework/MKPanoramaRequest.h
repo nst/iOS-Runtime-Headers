@@ -6,30 +6,30 @@
 
 @interface MKPanoramaRequest : NSObject {
     NSString *panoramaID;
-    NSInteger status;
-    NSInteger tilePath;
+    int status;
+    int tilePath;
 }
 
-@property(copy) NSString *panoramaID;
-@property NSInteger status;
-@property NSInteger tilePath;
-@property(readonly) NSInteger x;
-@property(readonly) NSInteger y;
-@property(readonly) NSInteger zoomLevel;
+@property(copy) NSString * panoramaID;
+@property int status;
+@property int tilePath;
+@property(readonly) int x;
+@property(readonly) int y;
+@property(readonly) int zoomLevel;
 
-+ (id)stringWithStatus:(NSInteger)arg1;
-+ (id)stringWithType:(NSInteger)arg1;
++ (id)stringWithStatus:(int)arg1;
++ (id)stringWithType:(int)arg1;
 
 - (void)cancel;
 - (void)dealloc;
 - (id)panoramaID;
 - (void)setPanoramaID:(id)arg1;
-- (void)setStatus:(NSInteger)arg1;
-- (void)setTilePath:(NSInteger)arg1;
-- (NSInteger)status;
-- (NSInteger)tilePath;
-- (NSInteger)x;
-- (NSInteger)y;
-- (NSInteger)zoomLevel;
+- (void)setStatus:(int)arg1;
+- (void)setTilePath:(int)arg1;
+- (int)status;
+- (int)tilePath;
+- (int)x;
+- (int)y;
+- (int)zoomLevel;
 
 @end

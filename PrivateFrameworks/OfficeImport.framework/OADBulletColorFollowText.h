@@ -5,7 +5,7 @@
 @interface OADBulletColorFollowText : OADBulletColor {
 }
 
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 
 @end

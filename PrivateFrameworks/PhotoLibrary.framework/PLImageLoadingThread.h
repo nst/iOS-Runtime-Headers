@@ -9,16 +9,16 @@
     NSConditionLock *_lock;
     BOOL _paused;
     NSMutableSet *_queues;
-    NSInteger _requestInsertionPositionHigh;
-    NSInteger _requestInsertionPositionNormal;
+    int _requestInsertionPositionHigh;
+    int _requestInsertionPositionNormal;
     NSMutableArray *_requests;
     NSMutableDictionary *_requestsByKey;
     BOOL _running;
 }
 
 - (id)_dequeueRequest:(id)arg1;
-- (id)_dequeueRequestAtIndex:(NSInteger)arg1;
-- (void)_enqueueRequest:(id)arg1 withPriority:(NSInteger)arg2;
+- (id)_dequeueRequestAtIndex:(int)arg1;
+- (void)_enqueueRequest:(id)arg1 withPriority:(int)arg2;
 - (void)_run;
 - (void)_start;
 - (void)addImageLoadingQueue:(id)arg1;
@@ -26,7 +26,7 @@
 - (void)cancelLoadFromSource:(id)arg1 forObject:(id)arg2 forImageLoadingQueue:(id)arg3;
 - (void)dealloc;
 - (id)initWithImageCache:(id)arg1;
-- (id)loadImageFromSource:(id)arg1 forObject:(id)arg2 forImageLoadingQueue:(id)arg3 synchronously:(BOOL)arg4 priority:(NSInteger)arg5 completion:(id)arg6;
+- (id)loadImageFromSource:(id)arg1 forObject:(id)arg2 forImageLoadingQueue:(id)arg3 synchronously:(BOOL)arg4 priority:(int)arg5 completion:(id)arg6;
 - (void)pause;
 - (void)removeImageLoadingQueue:(id)arg1;
 - (void)resume;

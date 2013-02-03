@@ -14,18 +14,18 @@
 + (id)defaultProperties;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithDefaults;
-- (id)initWithType:(NSInteger)arg1 width:(NSInteger)arg2 length:(NSInteger)arg3;
+- (id)initWithType:(int)arg1 width:(int)arg2 length:(int)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isLengthOverridden;
 - (BOOL)isTypeOverridden;
 - (BOOL)isWidthOverridden;
-- (NSInteger)length;
-- (void)setLength:(NSInteger)arg1;
-- (void)setType:(NSInteger)arg1;
-- (void)setWidth:(NSInteger)arg1;
-- (NSInteger)type;
-- (NSInteger)width;
+- (int)length;
+- (void)setLength:(int)arg1;
+- (void)setType:(int)arg1;
+- (void)setWidth:(int)arg1;
+- (int)type;
+- (int)width;
 
 @end

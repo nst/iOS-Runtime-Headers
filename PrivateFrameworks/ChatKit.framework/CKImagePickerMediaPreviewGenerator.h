@@ -12,10 +12,10 @@
     UIImage *_videoPreviewImage;
 }
 
-@property(retain) NSDictionary *editingInfo;
-@property(retain) UIImage *image;
-@property(retain) NSData *imageData;
-@property(retain) UIImagePickerController *imagePickerController;
+@property(retain) NSDictionary * editingInfo;
+@property(retain) UIImage * image;
+@property(retain) NSData * imageData;
+@property(retain) UIImagePickerController * imagePickerController;
 
 - (void)_generatePreviewOnMainThreadForVideoFile:(id)arg1;
 - (void)dealloc;

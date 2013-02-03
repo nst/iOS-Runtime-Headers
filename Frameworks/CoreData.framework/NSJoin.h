@@ -15,7 +15,7 @@
 - (void)dealloc;
 - (id)destinationAttributeName;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSourceAttributeName:(id)arg1 destinationAttributeName:(id)arg2;
 - (BOOL)isEqual:(id)arg1;

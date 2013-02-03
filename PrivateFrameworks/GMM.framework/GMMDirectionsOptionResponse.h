@@ -8,18 +8,18 @@
     NSMutableArray *_options;
 }
 
-@property(retain) NSMutableArray *options;
-@property(readonly) NSInteger optionsCount;
+@property(retain) NSMutableArray * options;
+@property(readonly) int optionsCount;
 
 - (void)addOption:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (id)optionAtIndex:(NSUInteger)arg1;
+- (id)optionAtIndex:(unsigned int)arg1;
 - (id)options;
-- (NSInteger)optionsCount;
+- (int)optionsCount;
 - (BOOL)readFrom:(id)arg1;
-- (void)setOption:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setOption:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setOptions:(id)arg1;
 - (void)writeTo:(id)arg1;
 

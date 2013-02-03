@@ -2,59 +2,71 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MPMediaItemCollection, <PLSlideshowSettingsViewControllerDelegate>, UITableView, NSMutableArray, MPMediaPickerController, UIView, MLAlbum, NSMutableDictionary, UITableViewCell;
+@class MPMediaItemCollection, PLSlideshowAirPlayRoutesViewController, <PLSlideshowSettingsViewControllerDelegate>, MPMediaPickerController, UITableView, UIView, NSString, PLSlideshowTransitionsViewController, UITableViewCell, NSArray;
 
 @interface PLSlideshowSettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, MPMediaPickerControllerDelegate> {
-    MLAlbum *_album;
+    PLSlideshowAirPlayRoutesViewController *_airPlayRoutesController;
+    NSArray *_airPlayServices;
+    NSArray *_alternateTransitionLocalizations;
     UIView *_containerView;
     <PLSlideshowSettingsViewControllerDelegate> *_delegate;
     MPMediaPickerController *_mediaPicker;
-    NSInteger _mode;
     UITableViewCell *_playMusicSwitchCell;
     UITableViewCell *_playSlideshowCell;
+    unsigned int _selectedAirPlayServiceIndex;
     UITableViewCell *_selectedMusicCell;
     MPMediaItemCollection *_selectedMusicCollection;
-    NSMutableDictionary *_settings;
+    NSString *_selectedTransition;
+    BOOL _shouldPlayMusic;
     UITableView *_table;
-    NSMutableArray *_transitionCells;
-    NSMutableArray *_transitionTitles;
-    NSMutableArray *_transitionValues;
+    UITableViewCell *_transitionCell;
+    NSArray *_transitionKeys;
+    PLSlideshowTransitionsViewController *_transitionsController;
 }
 
-@property <PLSlideshowSettingsViewControllerDelegate> *delegate;
-@property(readonly) MPMediaItemCollection *slideshowMusicCollection;
-@property NSInteger mode;
-@property(readonly) BOOL slideshowShouldPlayMusic;
-@property(readonly) NSInteger slideshowTransition;
+@property <PLSlideshowSettingsViewControllerDelegate> * delegate;
+@property(retain) NSString * selectedTransition;
+@property MPMediaItemCollection * slideshowMusicCollection;
+@property BOOL slideshowShouldPlayMusic;
 
-- (void)_addTransition:(id)arg1;
++ (id)AppleTVPushTransitions;
++ (id)TVOutTransitions;
++ (id)_transitionKeyForUITransition:(int)arg1;
++ (int)_uiTransitionForTransitionKey:(id)arg1;
++ (id)iPadTransitions;
++ (id)iPhoneTransitions;
+
+- (unsigned int)_airPlaySection;
+- (BOOL)_includeAirPlaySection;
+- (unsigned int)_mainSection;
 - (void)_playButtonWasPressed:(id)arg1;
 - (void)_playMusicSwitchValueDidChange:(id)arg1;
 - (void)_preheatMediaPicker;
-- (void)_saveSettings;
+- (id)_selectedAirPlayService;
 - (id)_selectedMusic;
-- (id)_selectedTransition;
-- (void)_setShouldPlayMusic:(BOOL)arg1;
-- (void)_setSlideshowMusicCollection:(id)arg1;
-- (BOOL)_shouldPlayMusic;
+- (unsigned int)_startSection;
+- (void)_updateSettingsInfo;
+- (void)applySlideshowSettings:(id)arg1;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithAlbum:(id)arg1;
+- (id)initWithAirPlayServices:(id)arg1 selectedServiceIndex:(unsigned int)arg2;
 - (void)loadView;
 - (void)mediaPicker:(id)arg1 didPickMediaItems:(id)arg2;
 - (void)mediaPickerDidCancel:(id)arg1;
-- (NSInteger)mode;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)selectedTransition;
 - (void)setDelegate:(id)arg1;
-- (void)setMode:(NSInteger)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (void)setSelectedTransition:(id)arg1;
+- (void)setSlideshowMusicCollection:(id)arg1;
+- (void)setSlideshowShouldPlayMusic:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)slideshowMusicCollection;
+- (id)slideshowSettings;
 - (BOOL)slideshowShouldPlayMusic;
-- (NSInteger)slideshowTransition;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

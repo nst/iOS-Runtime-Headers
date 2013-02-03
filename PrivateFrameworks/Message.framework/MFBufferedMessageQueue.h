@@ -5,6 +5,6 @@
 @interface MFBufferedMessageQueue : MFBufferedQueue {
 }
 
-- (NSUInteger)sizeForItem:(id)arg1;
+- (unsigned int)sizeForItem:(id)arg1;
 
 @end

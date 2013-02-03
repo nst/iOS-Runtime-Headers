@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableIndexSet;
+@class NSMutableIndexSet, NSIndexSet;
 
 @interface PLImportSessionInfo : NSObject {
     BOOL _importComplete;
@@ -10,31 +10,35 @@
     NSMutableIndexSet *_importErrorIndexes;
     NSMutableIndexSet *_importInProgressIndexes;
     NSMutableIndexSet *_importIndexes;
+    BOOL _importStopped;
     BOOL _importingSelection;
 }
 
-@property(readonly) NSIndexSet *completedIndexes;
-@property(readonly) NSIndexSet *errorIndexes;
-@property(readonly) NSIndexSet *importIndexes;
-@property(readonly) NSIndexSet *inProgressIndexes;
+@property(readonly) NSIndexSet * completedIndexes;
+@property(readonly) NSIndexSet * errorIndexes;
 @property BOOL importComplete;
+@property(readonly) NSIndexSet * importIndexes;
+@property BOOL importStopped;
 @property BOOL importingSelection;
+@property(readonly) NSIndexSet * inProgressIndexes;
 
-- (BOOL)_isImportCompleteForIndex:(NSUInteger)arg1;
-- (void)addIndexToImport:(NSUInteger)arg1;
-- (void)beginImportForIndex:(NSUInteger)arg1;
-- (void)completeImportForIndex:(NSUInteger)arg1 error:(BOOL)arg2;
+- (BOOL)_isImportCompleteForIndex:(unsigned int)arg1;
+- (void)addIndexToImport:(unsigned int)arg1;
+- (void)beginImportForIndex:(unsigned int)arg1;
+- (void)completeImportForIndex:(unsigned int)arg1 error:(BOOL)arg2;
 - (id)completedIndexes;
 - (void)dealloc;
 - (id)errorIndexes;
 - (BOOL)importComplete;
 - (id)importIndexes;
+- (BOOL)importStopped;
 - (BOOL)importingSelection;
 - (id)inProgressIndexes;
 - (id)initWithImportIndexes:(id)arg1;
-- (void)removeIndex:(NSUInteger)arg1;
+- (void)removeIndex:(unsigned int)arg1;
 - (void)setImportComplete:(BOOL)arg1;
+- (void)setImportStopped:(BOOL)arg1;
 - (void)setImportingSelection:(BOOL)arg1;
-- (void)shiftIndexesStartingAtIndex:(NSUInteger)arg1 by:(NSUInteger)arg2;
+- (void)shiftIndexesStartingAtIndex:(unsigned int)arg1 by:(unsigned int)arg2;
 
 @end

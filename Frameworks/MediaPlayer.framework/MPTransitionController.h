@@ -6,24 +6,24 @@
 
 @interface MPTransitionController : NSObject {
     float _duration;
-    NSInteger _fromInterfaceOrientation;
+    int _fromInterfaceOrientation;
     MPViewController *_fromViewController;
     struct __CFDictionary { } *_observers;
     NSMutableSet *_persistentViewsToFadeIn;
     NSMutableSet *_persistentViewsToFadeOut;
     UIView *_rootView;
-    NSInteger _toInterfaceOrientation;
+    int _toInterfaceOrientation;
     MPViewController *_toViewController;
     NSMutableSet *_viewsToFadeIn;
     NSMutableSet *_viewsToFadeOut;
 }
 
-@property(retain) MPViewController *fromViewController;
-@property(retain) UIView *rootView;
-@property(retain) MPViewController *toViewController;
 @property float duration;
-@property NSInteger fromInterfaceOrientation;
-@property NSInteger toInterfaceOrientation;
+@property int fromInterfaceOrientation;
+@property(retain) MPViewController * fromViewController;
+@property(retain) UIView * rootView;
+@property int toInterfaceOrientation;
+@property(retain) MPViewController * toViewController;
 
 - (void)addObserver:(id)arg1 didEndSelector:(SEL)arg2;
 - (void)addViewToFadeIn:(id)arg1 restoreOnPop:(BOOL)arg2;
@@ -31,20 +31,20 @@
 - (void)dealloc;
 - (float)duration;
 - (void)fadeViewsForRestore:(BOOL)arg1;
-- (NSInteger)fromInterfaceOrientation;
+- (int)fromInterfaceOrientation;
 - (id)fromViewController;
 - (id)init;
 - (void)messageObserversWithSuccess:(BOOL)arg1;
 - (void)removeObserver:(id)arg1;
 - (id)rootView;
 - (void)setDuration:(float)arg1;
-- (void)setFromInterfaceOrientation:(NSInteger)arg1;
+- (void)setFromInterfaceOrientation:(int)arg1;
 - (void)setFromViewController:(id)arg1;
 - (void)setRootView:(id)arg1;
-- (void)setToInterfaceOrientation:(NSInteger)arg1;
+- (void)setToInterfaceOrientation:(int)arg1;
 - (void)setToViewController:(id)arg1;
-- (NSInteger)toInterfaceOrientation;
+- (int)toInterfaceOrientation;
 - (id)toViewController;
-- (void)transition:(NSUInteger)arg1;
+- (void)transition:(unsigned int)arg1;
 
 @end

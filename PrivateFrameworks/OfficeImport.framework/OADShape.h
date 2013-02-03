@@ -9,7 +9,7 @@
     OADTextBody *mTextBody;
 }
 
-- (void)createPresetGeometryWithShapeType:(NSInteger)arg1;
+- (void)createPresetGeometryWithShapeType:(int)arg1;
 - (void)dealloc;
 - (void)flattenProperties;
 - (id)geometry;
@@ -20,6 +20,6 @@
 - (void)setTextBody:(id)arg1;
 - (id)shapeProperties;
 - (id)textBody;
-- (NSInteger)type;
+- (int)type;
 
 @end

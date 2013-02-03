@@ -12,11 +12,11 @@
     NSObject *object;
 }
 
-@property(retain) NSString *accessibilityConfigurationHint;
-@property(retain) NSString *accessibilityConfigurationLabel;
-@property(retain) NSNumber *accessibilityConfigurationTraits;
-@property(retain) NSNumber *isAccessibilityConfigurationElement;
-@property(retain) NSObject *object;
+@property(retain) NSString * accessibilityConfigurationHint;
+@property(retain) NSString * accessibilityConfigurationLabel;
+@property(retain) NSNumber * accessibilityConfigurationTraits;
+@property(retain) NSNumber * isAccessibilityConfigurationElement;
+@property(retain) NSObject * object;
 
 - (id)accessibilityConfigurationHint;
 - (id)accessibilityConfigurationLabel;

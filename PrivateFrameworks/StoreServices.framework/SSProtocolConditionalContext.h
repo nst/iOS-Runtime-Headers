@@ -14,9 +14,9 @@
     NSString *_systemVersion;
 }
 
-@property(copy) ? *itemLookupBlock;
-@property(copy) NSString *platformName;
-@property(copy) NSString *systemVersion;
+@property(copy) id itemLookupBlock;
+@property(copy) NSString * platformName;
+@property(copy) NSString * systemVersion;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

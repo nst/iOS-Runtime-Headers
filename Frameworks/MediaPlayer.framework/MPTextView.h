@@ -19,7 +19,8 @@
     UIWebDocumentView *_webView;
 }
 
-@property(retain) UIView *headerView;
+@property(retain) UIImage * artwork;
+@property(retain) UIView * headerView;
 
 - (void)_addLoadingUI;
 - (void)_addTextUI;
@@ -30,6 +31,7 @@
 - (void)_removeTextUI;
 - (void)_updateFaderImage:(BOOL)arg1;
 - (void)_updateLoadingUIForWillLoad:(BOOL)arg1;
+- (id)artwork;
 - (void)dealloc;
 - (BOOL)hasText;
 - (id)headerView;

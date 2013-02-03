@@ -3,12 +3,12 @@
  */
 
 @interface MFCountingDataConsumer : MFNullDataConsumer {
-    NSUInteger _count;
+    unsigned int _count;
 }
 
-@property(readonly) NSUInteger count;
+@property(readonly) unsigned int count;
 
-- (NSInteger)appendData:(id)arg1;
-- (NSUInteger)count;
+- (int)appendData:(id)arg1;
+- (unsigned int)count;
 
 @end

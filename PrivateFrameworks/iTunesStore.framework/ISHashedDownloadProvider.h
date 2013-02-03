@@ -6,15 +6,15 @@
 
 @interface ISHashedDownloadProvider : ISDataProvider <NSCopying> {
     struct CC_MD5state_st { 
-        NSUInteger A; 
-        NSUInteger B; 
-        NSUInteger C; 
-        NSUInteger D; 
-        NSUInteger Nl; 
-        NSUInteger Nh; 
-        NSUInteger data[16]; 
-        NSInteger num; 
-    NSInteger _fileDescriptor;
+        unsigned int A; 
+        unsigned int B; 
+        unsigned int C; 
+        unsigned int D; 
+        unsigned int Nl; 
+        unsigned int Nh; 
+        unsigned int data[16]; 
+        int num; 
+    int _fileDescriptor;
     NSArray *_hashes;
     NSString *_localFilePath;
     } _md5Context;
@@ -23,8 +23,8 @@
     long long _validatedBytes;
 }
 
-@property(retain) NSArray *hashes;
-@property(retain) NSString *localFilePath;
+@property(retain) NSArray * hashes;
+@property(retain) NSString * localFilePath;
 @property long long numberOfBytesToHash;
 @property long long streamedBytes;
 @property long long validatedBytes;

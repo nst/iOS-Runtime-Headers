@@ -5,16 +5,16 @@
 @class NSArray;
 
 @interface UIViewAnimationContext : NSObject {
-    NSInteger _animationCount;
+    int _animationCount;
     NSArray *_viewAnimations;
 }
 
-@property(retain) NSArray *viewAnimations;
-@property NSInteger animationCount;
+@property int animationCount;
+@property(retain) NSArray * viewAnimations;
 
-- (NSInteger)animationCount;
+- (int)animationCount;
 - (void)dealloc;
-- (void)setAnimationCount:(NSInteger)arg1;
+- (void)setAnimationCount:(int)arg1;
 - (void)setViewAnimations:(id)arg1;
 - (id)viewAnimations;
 

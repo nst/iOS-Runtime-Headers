@@ -8,12 +8,12 @@
     NSMutableArray *_allIMHandles;
     NSMutableDictionary *_candidateNamesMap;
     NSMutableSet *_knownConflictingNames;
-    NSInteger _nameStyle;
+    int _nameStyle;
     NSMutableDictionary *_siblingsMap;
     NSMutableDictionary *_usedUniqueNames;
 }
 
-@property NSInteger nameStyle;
+@property int nameStyle;
 
 + (id)sharedInstance;
 
@@ -32,14 +32,14 @@
 - (void)dealloc;
 - (void)imHandleInfoChanged:(id)arg1;
 - (id)init;
-- (NSInteger)nameStyle;
+- (int)nameStyle;
 - (void)reassessIMHandleForUniqueName:(id)arg1 rebuild:(BOOL)arg2;
 - (void)reassessIMHandleForUniqueName:(id)arg1;
 - (void)rebuildUniqueNameMap;
 - (void)registerIMHandle:(id)arg1;
 - (oneway void)release;
-- (NSUInteger)retainCount;
-- (void)setNameStyle:(NSInteger)arg1;
+- (unsigned int)retainCount;
+- (void)setNameStyle:(int)arg1;
 - (id)siblingsForIMHandle:(id)arg1;
 - (void)unregisterIMHandle:(id)arg1;
 

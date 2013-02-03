@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@class UIActivityIndicatorView, NSTimer, UIBarButtonItem, <CNFRegFirstRunDelegate>;
+@class UIBarButtonItem, <CNFRegFirstRunDelegate>, NSTimer;
 
 @interface CNFRegFirstRunController : CNFRegListController <CNFRegFirstRunExperience> {
-    UIActivityIndicatorView *_activityIndicator;
     BOOL _cancelled;
     Class _completionControllerClass;
     UIBarButtonItem *_customLeftButton;
@@ -20,14 +19,14 @@
     NSTimer *_timeoutTimer;
 }
 
-@property(retain) UIBarButtonItem *customLeftButton;
-@property(retain) UIBarButtonItem *customRightButton;
-@property <CNFRegFirstRunDelegate> *delegate;
-@property(retain) UIBarButtonItem *previousLeftButton;
-@property(retain) UIBarButtonItem *previousRightButton;
 @property Class completionControllerClass;
-@property(readonly) NSInteger currentAppearanceStyle;
+@property(readonly) int currentAppearanceStyle;
+@property(retain) UIBarButtonItem * customLeftButton;
+@property(retain) UIBarButtonItem * customRightButton;
+@property <CNFRegFirstRunDelegate> * delegate;
 @property BOOL previousHidesBackButton;
+@property(retain) UIBarButtonItem * previousLeftButton;
+@property(retain) UIBarButtonItem * previousRightButton;
 @property BOOL requiresAlias;
 @property BOOL timedOut;
 
@@ -35,7 +34,6 @@
 - (void)_handleTimeout;
 - (void)_handleValidationModeCancelled;
 - (BOOL)_hidesBackButton;
-- (void)_layoutActivityIndicator;
 - (id)_leftButtonItem;
 - (void)_leftButtonTapped;
 - (void)_refreshCurrentState;
@@ -58,12 +56,12 @@
 - (id)_validationModeCancelButton;
 - (BOOL)canBeShownFromSuspendedState;
 - (Class)completionControllerClass;
-- (NSInteger)currentAppearanceStyle;
+- (int)currentAppearanceStyle;
 - (id)customLeftButton;
 - (id)customRightButton;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)dismissWithState:(NSUInteger)arg1;
+- (BOOL)dismissWithState:(unsigned int)arg1;
 - (id)init;
 - (BOOL)previousHidesBackButton;
 - (id)previousLeftButton;

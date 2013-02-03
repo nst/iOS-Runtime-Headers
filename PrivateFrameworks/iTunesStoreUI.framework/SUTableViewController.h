@@ -2,70 +2,70 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUTableView, SUTableDataSource, NSIndexPath;
+@class SUTableView, SUTableDataSource, NSIndexPath, UITableView;
 
 @interface SUTableViewController : SUViewController <UITableViewDataSource, UITableViewDelegate> {
     SUTableDataSource *_dataSource;
-    NSInteger _disappearOrientation;
+    int _disappearOrientation;
     NSIndexPath *_firstTapIndexPath;
-    NSInteger _placeholderRowCount;
+    int _placeholderRowCount;
     BOOL _preferUserInteractionWhileScrolling;
     SUTableView *_tableView;
-    NSInteger _tableViewStyle;
+    int _tableViewStyle;
 }
 
-@property(retain) SUTableDataSource *dataSource;
-@property(readonly) UITableView *tableView;
-@property(readonly) NSUInteger numberOfRows;
-@property NSInteger tableViewStyle;
+@property(retain) SUTableDataSource * dataSource;
+@property(readonly) unsigned int numberOfRows;
+@property(readonly) UITableView * tableView;
+@property int tableViewStyle;
 
-- (void)_deliverTapCount:(NSInteger)arg1 forIndexPath:(id)arg2;
+- (void)_deliverTapCount:(int)arg1 forIndexPath:(id)arg2;
 - (void)_doubleTapTimeout;
 - (void)_reloadPlaceholderCells;
 - (void)_resetTableView;
 - (BOOL)canSelectRowAtIndexPath:(id)arg1;
-- (NSInteger)clippedCornersForIndexPath:(id)arg1;
+- (int)clippedCornersForIndexPath:(id)arg1;
 - (id)copyArchivableContext;
 - (id)copyDefaultScriptProperties;
 - (id)copyScriptProperties;
 - (id)dataSource;
 - (void)dealloc;
 - (BOOL)deleteRowAtIndexPath:(id)arg1;
-- (BOOL)handleSelectionForIndexPath:(id)arg1 tapCount:(NSInteger)arg2;
+- (BOOL)handleSelectionForIndexPath:(id)arg1 tapCount:(int)arg2;
 - (BOOL)indexPathIsPlaceholder:(id)arg1;
 - (id)init;
 - (void)loadView;
-- (NSUInteger)numberOfRows;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
-- (void)purgeMemoryForReason:(NSInteger)arg1;
+- (unsigned int)numberOfRows;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (void)purgeMemoryForReason:(int)arg1;
 - (void)reloadData;
-- (void)reloadForChangedRowCount:(NSInteger)arg1;
-- (void)scrollToRowAtIndexPath:(id)arg1 atScrollPosition:(NSInteger)arg2 animated:(BOOL)arg3;
+- (void)reloadForChangedRowCount:(int)arg1;
+- (void)scrollToRowAtIndexPath:(id)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (id)sectionIndexTitlesForTableView:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setScriptProperties:(id)arg1;
-- (void)setTableViewStyle:(NSInteger)arg1;
+- (void)setTableViewStyle:(int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 commitEditingStyle:(NSInteger)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (NSInteger)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(NSInteger)arg3;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (int)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(int)arg3;
 - (id)tableView:(id)arg1 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(NSInteger)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (id)tableView;
-- (NSInteger)tableViewStyle;
+- (int)tableViewStyle;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

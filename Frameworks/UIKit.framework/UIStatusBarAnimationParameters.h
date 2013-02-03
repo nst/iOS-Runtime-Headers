@@ -3,20 +3,20 @@
  */
 
 @interface UIStatusBarAnimationParameters : NSObject {
-    NSInteger _curve;
+    int _curve;
     double _duration;
     double _startTime;
 }
 
-@property NSInteger curve;
+@property int curve;
 @property double duration;
 @property double startTime;
 
-- (NSInteger)curve;
+- (int)curve;
 - (double)duration;
 - (id)init;
 - (id)initWithDefaultParameters;
-- (void)setCurve:(NSInteger)arg1;
+- (void)setCurve:(int)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setStartTime:(double)arg1;
 - (double)startTime;

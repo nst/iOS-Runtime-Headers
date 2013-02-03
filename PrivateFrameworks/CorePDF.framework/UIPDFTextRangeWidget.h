@@ -18,7 +18,7 @@
     CAShapeLayer *_textHighlighter;
 }
 
-@property UIPDFPageView *pageView;
+@property UIPDFPageView * pageView;
 
 - (void)addToLayer:(id)arg1;
 - (void)dealloc;
@@ -30,6 +30,7 @@
 - (id)pageView;
 - (void)remove;
 - (struct CGPoint { float x1; float x2; })selectedPointFor:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setNeedsDisplay;
 - (void)setPageView:(id)arg1;
 - (void)setSelection:(id)arg1;
 

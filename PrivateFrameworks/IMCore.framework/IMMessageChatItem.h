@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
+@class IMMessage;
+
 @interface IMMessageChatItem : IMChatItem {
 }
 
-@property(readonly) IMMessage *message;
+@property(readonly) IMMessage * message;
 
 - (id)description;
 - (id)initWithMessage:(id)arg1;

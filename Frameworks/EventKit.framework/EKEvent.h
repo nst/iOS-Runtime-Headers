@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKCalendar, EKParticipant, NSTimeZone, NSArray, NSMutableArray, EKEventStore, NSString, NSURL, NSDate, NSNumber;
+@class EKCalendar, EKParticipant, NSTimeZone, NSArray, EKRecurrenceRule, NSMutableArray, EKEventStore, NSString, NSURL, NSDate, NSNumber;
 
 @interface EKEvent : NSObject {
     NSMutableArray *_alarms;
     BOOL _allDay;
     NSMutableArray *_attendees;
-    NSInteger _availability;
-    NSInteger _birthdayId;
+    int _availability;
+    int _birthdayId;
     EKCalendar *_calendar;
     NSNumber *_calendarId;
     NSDate *_dateStamp;
@@ -26,11 +26,11 @@
     NSDate *_occurrenceDate;
     EKParticipant *_organizer;
     NSDate *_originalStartDate;
-    NSInteger _partStatus;
+    int _partStatus;
     NSArray *_recurrenceRules;
     NSString *_responseComment;
     NSDate *_startDate;
-    NSInteger _status;
+    int _status;
     EKEventStore *_store;
     NSTimeZone *_timeZone;
     NSString *_title;
@@ -38,23 +38,23 @@
     NSURL *_url;
 }
 
-@property(readonly) NSDate *_startDate;
-@property(copy) NSArray *alarms;
-@property(readonly) NSArray *attendees;
-@property(retain) EKCalendar *calendar;
-@property(copy) NSDate *endDate;
-@property(readonly) NSString *eventIdentifier;
-@property(readonly) NSDate *lastModifiedDate;
-@property(copy) NSString *location;
-@property(copy) NSString *notes;
-@property(readonly) EKParticipant *organizer;
-@property(retain) EKRecurrenceRule *recurrenceRule;
-@property(copy) NSDate *startDate;
-@property(copy) NSString *title;
+@property(readonly) NSDate * _startDate;
+@property(copy) NSArray * alarms;
 @property(getter=isAllDay) BOOL allDay;
-@property NSInteger availability;
+@property(readonly) NSArray * attendees;
+@property int availability;
+@property(retain) EKCalendar * calendar;
+@property(copy) NSDate * endDate;
+@property(readonly) NSString * eventIdentifier;
 @property(readonly) BOOL isDetached;
-@property(readonly) NSInteger status;
+@property(readonly) NSDate * lastModifiedDate;
+@property(copy) NSString * location;
+@property(copy) NSString * notes;
+@property(readonly) EKParticipant * organizer;
+@property(retain) EKRecurrenceRule * recurrenceRule;
+@property(copy) NSDate * startDate;
+@property(readonly) int status;
+@property(copy) NSString * title;
 
 + (void)addEvent:(id)arg1 toStore:(id)arg2;
 + (void)daemonRestarted;
@@ -69,13 +69,13 @@
 - (BOOL)_areRecurrenceRulesDirty;
 - (id)_attendees;
 - (id)_canMoveToCalendar:(id)arg1;
-- (BOOL)_checkStartDateConstraintAgainstDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 error:(id*)arg2;
+- (BOOL)_checkStartDateConstraintAgainstDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 error:(id*)arg2;
 - (void)_clearCachedData;
 - (BOOL)_commitAlarms:(id*)arg1;
 - (BOOL)_commitAttendees:(id*)arg1;
 - (BOOL)_commitRecurrenceRule:(id*)arg1;
 - (void)_disassociate;
-- (void)_loadPropertyIfNeeded:(NSInteger)arg1 loader:(id)arg2;
+- (void)_loadPropertyIfNeeded:(int)arg1 loader:(id)arg2;
 - (BOOL)_occurrenceExistsOnDate:(double)arg1;
 - (void)_reconnectCalendar;
 - (void)_reconnectEvent;
@@ -85,17 +85,17 @@
 - (void)_setStoreInternal:(id)arg1;
 - (id)_startDate;
 - (void)_storeClosed;
-- (BOOL)_validateAlarmIntervalConstrainedToRecurrenceInterval:(NSInteger)arg1;
-- (BOOL)_validateDatesAndRecurrencesGivenSpan:(NSInteger)arg1 error:(id*)arg2;
+- (BOOL)_validateAlarmIntervalConstrainedToRecurrenceInterval:(int)arg1;
+- (BOOL)_validateDatesAndRecurrencesGivenSpan:(int)arg1 error:(id*)arg2;
 - (BOOL)_validateDurationConstrainedToRecurrenceInterval;
 - (void)addAlarm:(id)arg1;
-- (NSInteger)alarmCount;
+- (int)alarmCount;
 - (id)alarms;
 - (id)allRecurrenceRules;
-- (NSInteger)attendeeCount;
+- (int)attendeeCount;
 - (id)attendees;
-- (NSInteger)availability;
-- (NSInteger)birthdayId;
+- (int)availability;
+- (int)birthdayId;
 - (id)birthdayTitleWithAddressBook:(void*)arg1;
 - (id)calendar;
 - (BOOL)canAddAttendees;
@@ -105,8 +105,8 @@
 - (BOOL)canSetAlarms;
 - (BOOL)canSetAvailability;
 - (void)clearUnreadState;
-- (BOOL)commit:(NSInteger)arg1 error:(id*)arg2;
-- (NSInteger)compareStartDateWithEvent:(id)arg1;
+- (BOOL)commit:(int)arg1 error:(id*)arg2;
+- (int)compareStartDateWithEvent:(id)arg1;
 - (id)copyState;
 - (void)dealloc;
 - (id)description;
@@ -114,9 +114,9 @@
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
-- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDateGr;
-- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDatePinnedForAllDay;
-- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDatePinnedForAllDay;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDateGr;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDatePinnedForAllDay;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDatePinnedForAllDay;
 - (id)eventIdentifier;
 - (id)exceptionDates;
 - (id)exportToICS;
@@ -152,13 +152,13 @@
 - (id)occurrenceDate;
 - (id)organizer;
 - (id)originalEvent;
-- (NSInteger)participationStatus;
-- (NSInteger)pendingParticipationStatus;
+- (int)participationStatus;
+- (int)pendingParticipationStatus;
 - (id)recurrenceRule;
-- (NSInteger)recurrenceRuleCount;
-- (NSInteger)recurrenceRuleCountInDB;
+- (int)recurrenceRuleCount;
+- (int)recurrenceRuleCountInDB;
 - (BOOL)refresh;
-- (BOOL)remove:(NSInteger)arg1 error:(id*)arg2;
+- (BOOL)remove:(int)arg1 error:(id*)arg2;
 - (void)removeAlarm:(id)arg1;
 - (BOOL)requiresDetach;
 - (id)responseComment;
@@ -169,12 +169,12 @@
 - (void)setAlarms:(id)arg1;
 - (void)setAllDay:(BOOL)arg1;
 - (void)setAttendees:(id)arg1;
-- (void)setAvailability:(NSInteger)arg1;
+- (void)setAvailability:(int)arg1;
 - (void)setCalendar:(id)arg1;
 - (void)setEndDate:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setNotes:(id)arg1;
-- (void)setParticipationStatus:(NSInteger)arg1;
+- (void)setParticipationStatus:(int)arg1;
 - (void)setRecurrenceRule:(id)arg1;
 - (void)setResponseComment:(id)arg1;
 - (void)setStartDate:(id)arg1;
@@ -186,10 +186,10 @@
 - (id)sortEKParticipantsIgnoringNonHumans:(id)arg1;
 - (id)sortedEKParticipantsDisplayStringsIgnoringNonHumans:(id)arg1;
 - (id)startDate;
-- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDateGr;
-- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDatePinnedForAllDay;
-- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDatePinnedForAllDay;
-- (NSInteger)status;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDateGr;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDatePinnedForAllDay;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDatePinnedForAllDay;
+- (int)status;
 - (id)store;
 - (id)timeZone;
 - (id)title;

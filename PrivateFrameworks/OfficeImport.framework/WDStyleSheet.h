@@ -19,8 +19,8 @@
 
 - (void)addStyle:(id)arg1 name:(id)arg2;
 - (void)createDefaultStyles;
-- (id)createStyleWithId:(id)arg1 type:(NSInteger)arg2;
-- (id)createStyleWithName:(id)arg1 type:(NSInteger)arg2;
+- (id)createStyleWithId:(id)arg1 type:(int)arg2;
+- (id)createStyleWithName:(id)arg1 type:(int)arg2;
 - (void)dealloc;
 - (id)defaultCharacterProperties;
 - (id)defaultCharacterStyle;
@@ -38,7 +38,7 @@
 - (void)setDefaultParagraphStyle:(id)arg1;
 - (void)setDefaultTableStyle:(id)arg1;
 - (void)setName:(id)arg1 forId:(id)arg2;
-- (NSInteger)styleCount;
+- (int)styleCount;
 - (id)styleIdForName:(id)arg1;
 - (id)styleIdFromStyleName:(id)arg1;
 - (id)styleNameToId:(id)arg1;

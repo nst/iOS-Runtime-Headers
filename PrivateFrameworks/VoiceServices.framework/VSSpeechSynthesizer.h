@@ -29,7 +29,7 @@
 + (BOOL)isSystemSpeaking;
 
 - (void)_handleSpeech:(struct __VSSpeech { }*)arg1 completed:(BOOL)arg2 withError:(id)arg3;
-- (void)_handleSpeech:(struct __VSSpeech { }*)arg1 willSpeakMarkType:(NSInteger)arg2 inRange:(struct { NSInteger x1; NSInteger x2; })arg3;
+- (void)_handleSpeech:(struct __VSSpeech { }*)arg1 willSpeakMarkType:(int)arg2 inRange:(struct { int x1; int x2; })arg3;
 - (void)_handleSpeechContinued:(struct __VSSpeech { }*)arg1;
 - (void)_handleSpeechPaused:(struct __VSSpeech { }*)arg1;
 - (void)_handleSpeechStarted:(struct __VSSpeech { }*)arg1;
@@ -40,8 +40,8 @@
 - (BOOL)isSpeaking;
 - (float)maximumRate;
 - (float)minimumRate;
-- (id)pauseSpeakingAtNextBoundary:(NSInteger)arg1 synchronously:(BOOL)arg2;
-- (id)pauseSpeakingAtNextBoundary:(NSInteger)arg1;
+- (id)pauseSpeakingAtNextBoundary:(int)arg1 synchronously:(BOOL)arg2;
+- (id)pauseSpeakingAtNextBoundary:(int)arg1;
 - (float)pitch;
 - (float)rate;
 - (void)setDelegate:(id)arg1;
@@ -58,8 +58,8 @@
 - (id)startSpeakingString:(id)arg1 toURL:(id)arg2 withLanguageCode:(id)arg3;
 - (id)startSpeakingString:(id)arg1 toURL:(id)arg2;
 - (id)startSpeakingString:(id)arg1;
-- (id)stopSpeakingAtNextBoundary:(NSInteger)arg1 synchronously:(BOOL)arg2;
-- (id)stopSpeakingAtNextBoundary:(NSInteger)arg1;
+- (id)stopSpeakingAtNextBoundary:(int)arg1 synchronously:(BOOL)arg2;
+- (id)stopSpeakingAtNextBoundary:(int)arg1;
 - (id)voice;
 - (float)volume;
 

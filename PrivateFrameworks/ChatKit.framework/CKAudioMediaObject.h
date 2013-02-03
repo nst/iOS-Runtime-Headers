@@ -14,7 +14,7 @@
 - (void)dealloc;
 - (id)effectiveExportedFilename;
 - (id)filenameForMedia;
-- (NSInteger)mediaType;
+- (int)mediaType;
 - (id)optionsForMedia;
 - (void)prepareForTranscode;
 - (id)previewTitle;

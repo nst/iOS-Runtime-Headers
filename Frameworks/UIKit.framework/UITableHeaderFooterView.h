@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITableView, UITableHeaderFooterViewLabel, UIImage;
+@class UITableView, UIImage, UITableHeaderFooterViewLabel, NSString;
 
 @interface UITableHeaderFooterView : UIView {
     struct CGRect { 
@@ -21,18 +21,19 @@
     float _maxTitleWidth;
     BOOL _sectionHeader;
     UITableView *_tableView;
-    NSInteger _tableViewStyle;
-    NSInteger _textAlignment;
+    int _tableViewStyle;
+    int _textAlignment;
 }
 
-@property UITableView *tableView;
-@property(retain) NSString *text;
 @property float maxTitleWidth;
 @property BOOL sectionHeader;
-@property NSInteger tableViewStyle;
-@property NSInteger textAlignment;
+@property UITableView * tableView;
+@property int tableViewStyle;
+@property(retain) NSString * text;
+@property int textAlignment;
 
-+ (id)_defaultFontForTableViewStyle:(NSInteger)arg1 isSectionHeader:(BOOL)arg2;
++ (id)_defaultFontForTableViewStyle:(int)arg1 isSectionHeader:(BOOL)arg2;
++ (void)_initializeSafeCategory;
 
 - (void)_invalidateLabelBackgroundColor;
 - (id)_label:(BOOL)arg1;
@@ -43,9 +44,11 @@
 - (void)_updateLabelBackgroundColor;
 - (void)_updateLabelBackgroundColorIfNeeeded;
 - (void)_updateLayerContents;
+- (id)accessibilityLabel;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (float)maxTitleWidth;
 - (BOOL)sectionHeader;
@@ -55,12 +58,12 @@
 - (void)setOpaque:(BOOL)arg1;
 - (void)setSectionHeader:(BOOL)arg1;
 - (void)setTableView:(id)arg1;
-- (void)setTableViewStyle:(NSInteger)arg1;
+- (void)setTableViewStyle:(int)arg1;
 - (void)setText:(id)arg1;
-- (void)setTextAlignment:(NSInteger)arg1;
+- (void)setTextAlignment:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)tableView;
 - (id)text;
-- (NSInteger)textAlignment;
+- (int)textAlignment;
 
 @end

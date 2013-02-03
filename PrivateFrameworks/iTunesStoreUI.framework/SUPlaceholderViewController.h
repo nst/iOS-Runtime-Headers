@@ -12,9 +12,9 @@
     BOOL _shouldShowLoadingView;
 }
 
-@property(copy) SUGradient *backgroundGradient;
-@property(copy) SUGradient *defaultBackgroundGradient;
-@property(readonly) SULoadingView *loadingView;
+@property(copy) SUGradient * backgroundGradient;
+@property(copy) SUGradient * defaultBackgroundGradient;
+@property(readonly) SULoadingView * loadingView;
 @property BOOL shouldShowLoadingView;
 
 - (void)_bagDidLoadNotification:(id)arg1;

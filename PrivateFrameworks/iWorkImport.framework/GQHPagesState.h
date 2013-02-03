@@ -2,10 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class GQDWPContainerHint, GQDSStyle, GQWrapPointSet, GQHStyle;
 
 @interface GQHPagesState : GQHState <GQWrapPointGenerator> {
@@ -21,7 +17,6 @@
     struct CGSize { 
         float width; 
         float height; 
-     /* Encoded args for previous method: B8@0:4 */
     long mAttachmentIdCounter;
     struct __CFArray { } *mAttachmentPositions;
     GQDSStyle *mCurrentBaseParagraphStyle;
@@ -29,10 +24,10 @@
     struct __CFString { } *mCurrentCachedParagraphClass;
     struct __CFString { } *mCurrentCachedSpanClass;
     BOOL mCurrentFrameHasSandbagFloats;
-    NSInteger mCurrentHintColumnIndex;
-    NSInteger mCurrentHintPageIndex;
+    int mCurrentHintColumnIndex;
+    int mCurrentHintPageIndex;
     GQHStyle *mCurrentLayoutStyle;
-    NSInteger mCurrentPageIndex;
+    int mCurrentPageIndex;
     GQHStyle *mCurrentParagraphStyle;
     GQDSStyle *mCurrentSectionStyle;
     GQHStyle *mCurrentSpanStyle;
@@ -44,19 +39,19 @@
     struct __CFDictionary { } *mFloatingDrawables;
     struct __CFDictionary { } *mFooters;
     BOOL mHasLayoutDrawables;
-    NSInteger mHeaderFooterPageNumber;
+    int mHeaderFooterPageNumber;
     struct __CFDictionary { } *mHeaders;
     BOOL mIsMappingHeadersFooters;
     } mLastFrame;
     GQDWPContainerHint *mLastInsertedContainerHint;
     BOOL mMappingFloatingDrawables;
-    NSInteger mMode;
+    int mMode;
     } mPageSize;
     struct __CFDictionary { } *mPageWrapPointsMap;
     struct __CFArray { } *mSectionStyles;
     BOOL mSplitNextAttachment;
-    NSInteger mStartPageAt;
-    NSInteger mStartPageAtValueChangedAtPageIndex;
+    int mStartPageAt;
+    int mStartPageAtValueChangedAtPageIndex;
     BOOL mStartedPage;
     BOOL mStartedSection;
     struct __CFArray { } *mTocHrefStack;
@@ -64,7 +59,7 @@
 
 - (void)addAttachmentPosition:(double)arg1;
 - (void)addFloatingDrawable:(id)arg1;
-- (void)addSectionStyle:(id)arg1 pageIndex:(NSInteger)arg2 numPages:(NSInteger)arg3;
+- (void)addSectionStyle:(id)arg1 pageIndex:(int)arg2 numPages:(int)arg3;
 - (void)addStyle:(struct __CFString { }*)arg1 className:(struct __CFString { }*)arg2 srcStyle:(id)arg3;
 - (void)addWrapPoint:(id)arg1;
 - (BOOL)allowInlineWrap;
@@ -72,19 +67,19 @@
 - (void)clearFloatingDrawables;
 - (void)clearWrapPoints;
 - (void)closeStateLayoutElementsAndStyles;
-- (struct vector<GQUtility::ObjcSharedPtr<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct _Vector_impl { struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_1; struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_2; struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_3; } x1; }*)createListOfWrapPointsAlongY:(float)arg1 minX:(float)arg2 maxX:(float)arg3 zIndex:(NSInteger)arg4;
+- (struct vector<GQUtility::ObjcSharedPtr<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct _Vector_impl { struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_1; struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_2; struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_3; } x1; }*)createListOfWrapPointsAlongY:(float)arg1 minX:(float)arg2 maxX:(float)arg3 zIndex:(int)arg4;
 - (struct __CFString { }*)cssZOrderClassForDrawable:(id)arg1;
-- (struct __CFString { }*)cssZOrderClassForDrawablePagesOrder:(NSInteger)arg1;
+- (struct __CFString { }*)cssZOrderClassForDrawablePagesOrder:(int)arg1;
 - (long)currentAttachmentId;
 - (double)currentAttachmentPosition;
-- (NSInteger)currentPageIndex;
+- (int)currentPageIndex;
 - (void)dealloc;
-- (id)drawableAtIndex:(NSInteger)arg1;
+- (id)drawableAtIndex:(int)arg1;
 - (void)endSection;
 - (void)endWrapPointSet;
 - (void)finishedWithSplitAttachment;
 - (long)firstAttachmentId;
-- (NSInteger)floatingDrawablesCount;
+- (int)floatingDrawablesCount;
 - (id)footerForName:(struct __CFString { }*)arg1;
 - (void)handleContainerHint:(id)arg1;
 - (BOOL)hasLayoutDrawables;
@@ -93,25 +88,25 @@
 - (id)initWithState:(id)arg1 documentSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)insertAttachmentPlaceholder;
 - (BOOL)isMappingHeadersFooters;
-- (void)mapFloatingDrawablesForPageAtIndex:(NSUInteger)arg1;
-- (NSInteger)mode;
+- (void)mapFloatingDrawablesForPageAtIndex:(unsigned int)arg1;
+- (int)mode;
 - (double)moveToNextAttachmentPosition;
 - (BOOL)needAbsolutelyPositionedTables;
 - (long)nextAttachmentId;
 - (void)openStateLayoutElementsAndStyles;
 - (void)overrideSectionStyle:(id)arg1;
-- (struct __CFArray { }*)pageDrawables:(NSInteger)arg1;
-- (NSInteger)pageNumberForHeaderOrFooter;
+- (struct __CFArray { }*)pageDrawables:(int)arg1;
+- (int)pageNumberForHeaderOrFooter;
 - (struct CGSize { float x1; float x2; })pageSize;
 - (struct __CFDictionary { }*)pagesOrderToCssZOrderClassMapDictionary;
 - (void)popTocHref;
 - (void)pushTocHref:(struct __CFString { }*)arg1;
-- (struct { NSInteger x1; NSInteger x2; })rangeForSectionStyleAtPageIndex:(NSInteger)arg1;
+- (struct { int x1; int x2; })rangeForSectionStyleAtPageIndex:(int)arg1;
 - (void)resolveHeaderName:(const struct __CFString {}**)arg1 footerName:(const struct __CFString {}**)arg2;
-- (id)sectionStyleForPageIndex:(NSInteger)arg1;
-- (id)sectionStyleRunForRunBeforePageIndex:(NSInteger)arg1;
+- (id)sectionStyleForPageIndex:(int)arg1;
+- (id)sectionStyleRunForRunBeforePageIndex:(int)arg1;
 - (void)setCurrentLayoutStyle:(id)arg1;
-- (void)setCurrentPageIndex:(NSInteger)arg1;
+- (void)setCurrentPageIndex:(int)arg1;
 - (void)setCurrentParagraphStyle:(id)arg1 baseStyle:(id)arg2 cachedClass:(struct __CFString { }*)arg3;
 - (void)setCurrentSpanStyle:(id)arg1 baseStyle:(id)arg2 cachedClass:(struct __CFString { }*)arg3;
 - (void)setDidFindContainerHint:(BOOL)arg1;
@@ -120,16 +115,16 @@
 - (void)setHasLayoutDrawables:(BOOL)arg1;
 - (void)setHeaders:(struct __CFArray { }*)arg1;
 - (void)setIsMappingHeadersFooters:(BOOL)arg1;
-- (void)setMode:(NSInteger)arg1;
-- (void)setOutlineLevel:(NSInteger)arg1;
-- (void)setOutlineStyleType:(NSInteger)arg1;
+- (void)setMode:(int)arg1;
+- (void)setOutlineLevel:(int)arg1;
+- (void)setOutlineStyleType:(int)arg1;
 - (void)setPageSize:(struct CGSize { float x1; float x2; })arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)splitNextAttachment;
+- (bool)splitNextAttachment;
 - (void)startLayout;
 - (void)startSection;
-- (NSUInteger)tocDepth;
+- (unsigned int)tocDepth;
 - (BOOL)useOutline;
-- (id)wrapPointSetForPage:(NSInteger)arg1;
-- (const struct set<GQUtility::ObjcSharedPtr<GQDWrapPoint>,GQUtility::NSObjectComparator<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct _Rb_tree<GQUtility::ObjcSharedPtr<GQDWrapPoint>,GQUtility::ObjcSharedPtr<GQDWrapPoint>,std::_Identity<GQUtility::ObjcSharedPtr<GQDWrapPoint> >,GQUtility::NSObjectComparator<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct _Rb_tree_impl<GQUtility::NSObjectComparator<GQDWrapPoint>,false> { struct NSObjectComparator<GQDWrapPoint> { SEL x_1_3_1; } x_1_2_1; struct _Rb_tree_node_base { NSInteger x_2_3_1; struct _Rb_tree_node_base {} *x_2_3_2; struct _Rb_tree_node_base {} *x_2_3_3; struct _Rb_tree_node_base {} *x_2_3_4; } x_1_2_2; NSUInteger x_1_2_3; } x_1_1_1; } x1; }*)wrapPoints;
+- (id)wrapPointSetForPage:(int)arg1;
+- (const struct set<GQUtility::ObjcSharedPtr<GQDWrapPoint>,GQUtility::NSObjectComparator<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct _Rb_tree<GQUtility::ObjcSharedPtr<GQDWrapPoint>,GQUtility::ObjcSharedPtr<GQDWrapPoint>,std::_Identity<GQUtility::ObjcSharedPtr<GQDWrapPoint> >,GQUtility::NSObjectComparator<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct _Rb_tree_impl<GQUtility::NSObjectComparator<GQDWrapPoint>,false> { struct NSObjectComparator<GQDWrapPoint> { SEL x_1_3_1; } x_1_2_1; struct _Rb_tree_node_base { int x_2_3_1; struct _Rb_tree_node_base {} *x_2_3_2; struct _Rb_tree_node_base {} *x_2_3_3; struct _Rb_tree_node_base {} *x_2_3_4; } x_1_2_2; unsigned int x_1_2_3; } x_1_1_1; } x1; }*)wrapPoints;
 
 @end

@@ -14,6 +14,6 @@
 - (id)autorelease;
 - (void)parseContext:(id)arg1;
 - (oneway void)release;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

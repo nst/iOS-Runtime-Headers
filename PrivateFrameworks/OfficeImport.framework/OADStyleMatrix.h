@@ -15,18 +15,18 @@
 - (void)addEffects:(id)arg1;
 - (void)addFill:(id)arg1;
 - (void)addStroke:(id)arg1;
-- (id)bgFillAtIndex:(NSUInteger)arg1;
-- (NSUInteger)bgFillCount;
+- (id)bgFillAtIndex:(unsigned int)arg1;
+- (unsigned int)bgFillCount;
 - (void)dealloc;
-- (id)effectsAtIndex:(NSUInteger)arg1 color:(id)arg2;
-- (id)effectsAtIndex:(NSUInteger)arg1;
-- (NSUInteger)effectsCount;
-- (id)fillAtIndex:(NSUInteger)arg1 color:(id)arg2;
-- (id)fillAtIndex:(NSUInteger)arg1;
-- (NSUInteger)fillCount;
+- (id)effectsAtIndex:(unsigned int)arg1 color:(id)arg2;
+- (id)effectsAtIndex:(unsigned int)arg1;
+- (unsigned int)effectsCount;
+- (id)fillAtIndex:(unsigned int)arg1 color:(id)arg2;
+- (id)fillAtIndex:(unsigned int)arg1;
+- (unsigned int)fillCount;
 - (id)init;
-- (id)strokeAtIndex:(NSUInteger)arg1 color:(id)arg2;
-- (id)strokeAtIndex:(NSUInteger)arg1;
-- (NSUInteger)strokeCount;
+- (id)strokeAtIndex:(unsigned int)arg1 color:(id)arg2;
+- (id)strokeAtIndex:(unsigned int)arg1;
+- (unsigned int)strokeCount;
 
 @end

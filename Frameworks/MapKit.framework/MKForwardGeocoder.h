@@ -12,9 +12,9 @@
     id requester;
 }
 
-@property(readonly) NSString *addressQuery;
-@property <MKForwardGeocoderDelegate> *delegate;
-@property(readonly) MKPlacemark *placemark;
+@property(readonly) NSString * addressQuery;
+@property <MKForwardGeocoderDelegate> * delegate;
+@property(readonly) MKPlacemark * placemark;
 @property(getter=isQuerying,readonly) BOOL querying;
 
 - (void)_notifyError:(id)arg1;

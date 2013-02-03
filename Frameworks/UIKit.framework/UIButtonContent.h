@@ -12,12 +12,12 @@
     UIColor *titleColor;
 }
 
-@property(retain) UIImage *background;
-@property(retain) UIImage *image;
-@property(retain) UIColor *shadowColor;
-@property(retain) NSString *title;
-@property(retain) UIColor *titleColor;
+@property(retain) UIImage * background;
+@property(retain) UIImage * image;
 @property(readonly) BOOL isEmpty;
+@property(retain) UIColor * shadowColor;
+@property(retain) NSString * title;
+@property(retain) UIColor * titleColor;
 
 - (id)background;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface MKStreetViewMinimapGeometry : MKStreetViewGeometry {
-    NSUInteger _circlePolygonNumSides;
+    unsigned int _circlePolygonNumSides;
 }
 
 - (id)initWithImageSize:(float)arg1 radius:(float)arg2 tolerance:(float)arg3;

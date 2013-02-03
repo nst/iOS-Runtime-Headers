@@ -3,7 +3,7 @@
  */
 
 @interface CAMediaTimingFunctionBuiltin : CAMediaTimingFunction {
-    NSUInteger _index;
+    unsigned int _index;
 }
 
 - (void)_getPoints:(double*)arg1;

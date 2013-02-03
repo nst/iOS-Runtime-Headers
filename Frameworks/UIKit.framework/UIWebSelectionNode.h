@@ -18,14 +18,14 @@
     UIWebSelectionGraph *_sharedGraph;
 }
 
-@property(retain) UIWebSelection *selection;
+@property(retain) UIWebSelection * selection;
 
 - (void)dealloc;
 - (id)initWithSelection:(id)arg1 inGraph:(id)arg2;
 - (void)invalidate;
-- (id)nodeByMovingEdge:(NSInteger)arg1 outwards:(BOOL)arg2;
-- (id*)nodeByReferenceFromEdge:(NSInteger)arg1 outwards:(BOOL)arg2;
-- (NSInteger)oppositeEdge:(NSInteger)arg1;
+- (id)nodeByMovingEdge:(int)arg1 outwards:(BOOL)arg2;
+- (id*)nodeByReferenceFromEdge:(int)arg1 outwards:(BOOL)arg2;
+- (int)oppositeEdge:(int)arg1;
 - (id)selection;
 - (void)setSelection:(id)arg1;
 

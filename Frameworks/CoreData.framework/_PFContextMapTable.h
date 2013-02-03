@@ -7,21 +7,21 @@
         unsigned int _usesWeakReferences : 1; 
         unsigned int _garbageCollectionEnabled : 1; 
         unsigned int _reservedFlags : 30; 
-    NSUInteger *_capacitiesFor64bitPKMappings;
+    unsigned int *_capacitiesFor64bitPKMappings;
     } _flags;
     struct __CFDictionary {} **_objectsBy64bitPKID;
     struct __CFDictionary {} **_objectsByPermanentObjectID;
     struct __CFDictionary { } *_objectsByTemporaryID;
-    NSUInteger _slotLimit;
+    unsigned int _slotLimit;
 }
 
 - (void)_dispose;
 - (void)clearTemporaryIDs;
 - (void)dealloc;
 - (void)finalize;
-- (NSUInteger)getAllObjects:(id*)arg1;
+- (unsigned int)getAllObjects:(id*)arg1;
 - (id)initWithWeaksReferences:(BOOL)arg1;
-- (void)setCapacityHint:(NSUInteger)arg1 forSlot:(NSUInteger)arg2;
+- (void)setCapacityHint:(unsigned int)arg1 forSlot:(unsigned int)arg2;
 - (void)setForUseWithModel:(id)arg1;
 
 @end

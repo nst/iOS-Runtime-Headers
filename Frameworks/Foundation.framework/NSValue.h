@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @interface NSValue : NSObject <NSCopying, NSCoding> {
-     /* Encoded args for previous method: @24@0:4@8@12@16r^{ValueInterpolator=dddddddddB}20 */
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -24,35 +24,35 @@
 + (id)valueWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)valueWithCGSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)valueWithCGSize:(struct CGSize { float x1; float x2; })arg1;
-+ (id)valueWithCMTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
-+ (id)valueWithCMTimeMapping:(struct { struct { struct { long long x_1_2_1; NSInteger x_1_2_2; NSUInteger x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; NSInteger x_2_2_2; NSUInteger x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; NSInteger x_1_2_2; NSUInteger x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; NSInteger x_2_2_2; NSUInteger x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })arg1;
-+ (id)valueWithCMTimeRange:(struct { struct { long long x_1_1_1; NSInteger x_1_1_2; NSUInteger x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; NSInteger x_2_1_2; NSUInteger x_2_1_3; long long x_2_1_4; } x2; })arg1;
++ (id)valueWithCMTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
++ (id)valueWithCMTimeMapping:(struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })arg1;
++ (id)valueWithCMTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
 + (id)valueWithDDRange:(struct _DDRange { unsigned long long x1; unsigned long long x2; })arg1;
 + (id)valueWithNonretainedObject:(id)arg1;
 + (id)valueWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 + (id)valueWithPointer:(const void*)arg1;
-+ (id)valueWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
++ (id)valueWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 + (id)valueWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)valueWithSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)valueWithUIEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 
-- (struct Object { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (struct CADoublePoint { double x1; double x2; })CADoublePointValue;
 - (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })CADoubleRectValue;
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })CATransform3DValue;
-- (id)CA_addValue:(id)arg1 multipliedBy:(NSInteger)arg2;
+- (id)CA_addValue:(id)arg1 multipliedBy:(int)arg2;
 - (float)CA_distanceToValue:(id)arg1;
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
-- (id)CA_interpolateValues:(id)arg1 :(id)arg2 :(id)arg3 interpolator:(const struct ValueInterpolator { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x10; }*)arg4;
+- (id)CA_interpolateValues:(id)arg1 :(id)arg2 :(id)arg3 interpolator:(const struct ValueInterpolator { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; boolx10; }*)arg4;
 - (struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; unsigned char x7; unsigned char x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; unsigned char x13; unsigned char x14; unsigned char x15; unsigned char x16; })CFUUIDBytesValue;
 - (struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; unsigned char x7; unsigned char x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; unsigned char x13; unsigned char x14; unsigned char x15; unsigned char x16; })CFUUIDBytesValue;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })CGAffineTransformValue;
 - (struct CGPoint { float x1; float x2; })CGPointValue;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })CGRectValue;
 - (struct CGSize { float x1; float x2; })CGSizeValue;
-- (struct { struct { struct { long long x_1_2_1; NSInteger x_1_2_2; NSUInteger x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; NSInteger x_2_2_2; NSUInteger x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; NSInteger x_1_2_2; NSUInteger x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; NSInteger x_2_2_2; NSUInteger x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })CMTimeMappingValue;
-- (struct { struct { long long x_1_1_1; NSInteger x_1_1_2; NSUInteger x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; NSInteger x_2_1_2; NSUInteger x_2_1_3; long long x_2_1_4; } x2; })CMTimeRangeValue;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })CMTimeValue;
+- (struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })CMTimeMappingValue;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })CMTimeRangeValue;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })CMTimeValue;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })MKMapRectValue;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })UIEdgeInsetsValue;
 - (id)_mapkit_initWithCADoublePoint:(struct CADoublePoint { double x1; double x2; })arg1;
@@ -60,8 +60,8 @@
 - (id)_mapkit_initWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_mapkit_initWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_mapkit_initWithMKMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)_mapkit_initWithZoomRegion:(struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapkit_zoomRegionValue;
+- (id)_mapkit_initWithZoomRegion:(struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapkit_zoomRegionValue;
 - (struct CGPoint { float x1; float x2; })cgPointValue;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cgRectValue;
 - (struct CGSize { float x1; float x2; })cgSizeValue;
@@ -71,7 +71,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)getValue:(void*)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithBytes:(const void*)arg1 objCType:(const char *)arg2;
 - (id)initWithCoder:(id)arg1;
@@ -82,7 +82,7 @@
 - (const char *)objCType;
 - (struct CGPoint { float x1; float x2; })pointValue;
 - (void*)pointerValue;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })rangeValue;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeValue;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectValue;
 - (struct CGSize { float x1; float x2; })sizeValue;
 

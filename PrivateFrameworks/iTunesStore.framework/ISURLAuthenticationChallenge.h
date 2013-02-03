@@ -10,7 +10,7 @@
 
 - (void)cancelAuthentication;
 - (void)dealloc;
-- (NSInteger)failureCount;
+- (int)failureCount;
 - (BOOL)hasPassword;
 - (id)initWithAuthenticationChallenge:(id)arg1;
 - (id)password;

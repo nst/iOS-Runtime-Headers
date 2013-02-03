@@ -12,10 +12,10 @@
     BOOL _valid;
 }
 
-@property(readonly) SSItemOfferDeviceError *deviceError;
-@property(readonly) SSPurchase *failedPurchase;
-@property(readonly) NSError *genericError;
-@property(readonly) NSDictionary *mismatchedSoftwareCapabilities;
+@property(readonly) SSItemOfferDeviceError * deviceError;
+@property(readonly) SSPurchase * failedPurchase;
+@property(readonly) NSError * genericError;
+@property(readonly) NSDictionary * mismatchedSoftwareCapabilities;
 @property(getter=isValid,readonly) BOOL valid;
 
 - (void)_setDeviceError:(id)arg1;

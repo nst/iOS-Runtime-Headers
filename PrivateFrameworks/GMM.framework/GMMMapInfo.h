@@ -7,16 +7,16 @@
 @interface GMMMapInfo : PBCodable {
     GMMMapPoint *_center;
     BOOL _hasZoomLevel;
-    NSInteger _latitudeSpan;
-    NSInteger _longitudeSpan;
-    NSInteger _zoomLevel;
+    int _latitudeSpan;
+    int _longitudeSpan;
+    int _zoomLevel;
 }
 
-@property(retain) GMMMapPoint *center;
+@property(retain) GMMMapPoint * center;
 @property(readonly) BOOL hasZoomLevel;
-@property NSInteger latitudeSpan;
-@property NSInteger longitudeSpan;
-@property NSInteger zoomLevel;
+@property int latitudeSpan;
+@property int longitudeSpan;
+@property int zoomLevel;
 
 - (id)center;
 - (void)dealloc;
@@ -24,16 +24,16 @@
 - (id)dictionaryRepresentation;
 - (BOOL)hasZoomLevel;
 - (id)init;
-- (id)initWithRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomLevel:(NSInteger)arg2;
+- (id)initWithRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomLevel:(int)arg2;
 - (BOOL)isEqual:(id)arg1;
-- (NSInteger)latitudeSpan;
-- (NSInteger)longitudeSpan;
+- (int)latitudeSpan;
+- (int)longitudeSpan;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCenter:(id)arg1;
-- (void)setLatitudeSpan:(NSInteger)arg1;
-- (void)setLongitudeSpan:(NSInteger)arg1;
-- (void)setZoomLevel:(NSInteger)arg1;
+- (void)setLatitudeSpan:(int)arg1;
+- (void)setLongitudeSpan:(int)arg1;
+- (void)setZoomLevel:(int)arg1;
 - (void)writeTo:(id)arg1;
-- (NSInteger)zoomLevel;
+- (int)zoomLevel;
 
 @end

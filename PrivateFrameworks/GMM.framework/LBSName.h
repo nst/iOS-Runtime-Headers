@@ -9,30 +9,30 @@
     BOOL _hasRoute_direction;
     NSString *_language;
     NSString *_raw_text;
-    NSInteger _route_direction;
+    int _route_direction;
     NSString *_short_text;
     NSString *_text;
 }
 
-@property(retain) NSMutableArray *flags;
-@property(retain) NSString *language;
-@property(retain) NSString *raw_text;
-@property(retain) NSString *short_text;
-@property(retain) NSString *text;
-@property(readonly) NSInteger flagsCount;
+@property(retain) NSMutableArray * flags;
+@property(readonly) int flagsCount;
 @property(readonly) BOOL hasLanguage;
 @property(readonly) BOOL hasRaw_text;
 @property(readonly) BOOL hasRoute_direction;
 @property(readonly) BOOL hasShort_text;
-@property NSInteger route_direction;
+@property(retain) NSString * language;
+@property(retain) NSString * raw_text;
+@property int route_direction;
+@property(retain) NSString * short_text;
+@property(retain) NSString * text;
 
-- (void)addFlag:(NSInteger)arg1;
+- (void)addFlag:(int)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (NSInteger)flagAtIndex:(NSUInteger)arg1;
+- (int)flagAtIndex:(unsigned int)arg1;
 - (id)flags;
-- (NSInteger)flagsCount;
+- (int)flagsCount;
 - (BOOL)hasLanguage;
 - (BOOL)hasRaw_text;
 - (BOOL)hasRoute_direction;
@@ -41,12 +41,12 @@
 - (id)language;
 - (id)raw_text;
 - (BOOL)readFrom:(id)arg1;
-- (NSInteger)route_direction;
-- (void)setFlag:(NSInteger)arg1 atIndex:(NSUInteger)arg2;
+- (int)route_direction;
+- (void)setFlag:(int)arg1 atIndex:(unsigned int)arg2;
 - (void)setFlags:(id)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)setRaw_text:(id)arg1;
-- (void)setRoute_direction:(NSInteger)arg1;
+- (void)setRoute_direction:(int)arg1;
 - (void)setShort_text:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)short_text;

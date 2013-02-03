@@ -12,7 +12,7 @@
     NSString *_proxyHost;
     NSString *_proxyPassword;
     unsigned short _proxyPort;
-    NSInteger _proxyProtocol;
+    int _proxyProtocol;
 }
 
 @property id delegate;
@@ -24,7 +24,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithHost:(id)arg1 port:(unsigned short)arg2 delegate:(id)arg3;
-- (id)initWithProxyProtocol:(NSInteger)arg1 proxyHost:(id)arg2 proxyPort:(unsigned short)arg3 delegate:(id)arg4;
+- (id)initWithProxyProtocol:(int)arg1 proxyHost:(id)arg2 proxyPort:(unsigned short)arg3 delegate:(id)arg4;
 - (void)retrieveProxyAccountSettings;
 - (void)retrieveProxySettings;
 - (void)setDelegate:(id)arg1;

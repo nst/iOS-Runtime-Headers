@@ -2,21 +2,21 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetImageGeneratorInternal;
+@class AVAssetImageGeneratorInternal, NSString, AVVideoComposition;
 
 @interface AVAssetImageGenerator : NSObject {
     AVAssetImageGeneratorInternal *_priv;
 }
 
-@property(copy) NSString *apertureMode;
-@property(copy) AVVideoComposition *videoComposition;
+@property(copy) NSString * apertureMode;
 @property BOOL appliesPreferredTrackTransform;
-@property CGSize maximumSize;
+@property struct CGSize { float width; float height; } maximumSize;
+@property(copy) AVVideoComposition * videoComposition;
 
 + (id)assetImageGeneratorWithAsset:(id)arg1;
 
 - (id)_NSErrorForError:(long)arg1;
-- (struct CGImage { }*)_copyCGImageAtTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1 usingAssetReader:(id)arg2 error:(id*)arg3;
+- (struct CGImage { }*)_copyCGImageAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 usingAssetReader:(id)arg2 error:(id*)arg3;
 - (struct __CFDictionary { }*)_createPixelBufferAttributesWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_didGenerateCGImage:(id)arg1;
 - (void)_ensureFigAssetImageGenerator;
@@ -29,7 +29,7 @@
 - (id)apertureMode;
 - (BOOL)appliesPreferredTrackTransform;
 - (void)cancelAllCGImageGeneration;
-- (struct CGImage { }*)copyCGImageAtTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1 actualTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; }*)arg2 error:(id*)arg3;
+- (struct CGImage { }*)copyCGImageAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 actualTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 error:(id*)arg3;
 - (void)dealloc;
 - (void)finalize;
 - (void)generateCGImagesAsynchronouslyForTimes:(id)arg1 completionHandler:(id)arg2;
@@ -37,14 +37,14 @@
 - (id)initWithAsset:(id)arg1;
 - (struct CGSize { float x1; float x2; })maximumSize;
 - (void)release;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })requestedTimeToleranceAfter;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })requestedTimeToleranceBefore;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })requestedTimeToleranceAfter;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })requestedTimeToleranceBefore;
 - (id)retain;
 - (void)setApertureMode:(id)arg1;
 - (void)setAppliesPreferredTrackTransform:(BOOL)arg1;
 - (void)setMaximumSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setRequestedTimeToleranceAfter:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
-- (void)setRequestedTimeToleranceBefore:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)setRequestedTimeToleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setRequestedTimeToleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setVideoComposition:(id)arg1;
 - (id)videoComposition;
 

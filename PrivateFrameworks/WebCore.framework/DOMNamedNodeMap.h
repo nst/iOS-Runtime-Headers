@@ -5,15 +5,15 @@
 @interface DOMNamedNodeMap : DOMObject {
 }
 
-@property(readonly) NSUInteger length;
+@property(readonly) unsigned int length;
 
 - (void)dealloc;
 - (void)finalize;
 - (id)getNamedItem:(id)arg1;
 - (id)getNamedItemNS:(id)arg1 :(id)arg2;
 - (id)getNamedItemNS:(id)arg1 localName:(id)arg2;
-- (id)item:(NSUInteger)arg1;
-- (NSUInteger)length;
+- (id)item:(unsigned int)arg1;
+- (unsigned int)length;
 - (id)removeNamedItem:(id)arg1;
 - (id)removeNamedItemNS:(id)arg1 :(id)arg2;
 - (id)removeNamedItemNS:(id)arg1 localName:(id)arg2;

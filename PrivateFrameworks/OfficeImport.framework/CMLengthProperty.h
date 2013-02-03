@@ -3,19 +3,19 @@
  */
 
 @interface CMLengthProperty : CMProperty {
-    NSInteger unitType;
+    int unitType;
     double value;
 }
 
-+ (id)cssStringValue:(double)arg1 unit:(NSInteger)arg2;
++ (id)cssStringValue:(double)arg1 unit:(int)arg2;
 
-- (NSInteger)compareValue:(id)arg1;
+- (int)compareValue:(id)arg1;
 - (id)cssString;
 - (id)cssStringForName:(id)arg1;
-- (id)initWithNumber:(double)arg1 unit:(NSInteger)arg2;
+- (id)initWithNumber:(double)arg1 unit:(int)arg2;
 - (id)initWithNumber:(double)arg1;
-- (NSInteger)intValue;
-- (NSInteger)unitType;
+- (int)intValue;
+- (int)unitType;
 - (double)value;
 
 @end

@@ -6,21 +6,21 @@
 
 @interface AccountSettingsUIPluginBundle : NSObject {
     NSSet *_accountTypes;
-    NSInteger _commonSpecifierMode;
+    int _commonSpecifierMode;
     PSViewController *_parentController;
     NSString *_path;
     <AccountSettingsUIPlugin> *_plugin;
 }
 
-@property(readonly) NSSet *accountTypes;
-@property(readonly) NSString *path;
-@property(readonly) <AccountSettingsUIPlugin> *plugin;
-@property(readonly) NSInteger commonSpecifierMode;
+@property(readonly) NSSet * accountTypes;
+@property(readonly) int commonSpecifierMode;
+@property(readonly) NSString * path;
+@property(readonly) <AccountSettingsUIPlugin> * plugin;
 
 - (id)accountTypes;
-- (NSInteger)commonSpecifierMode;
+- (int)commonSpecifierMode;
 - (void)dealloc;
-- (id)initWithPath:(id)arg1 parentController:(id)arg2 commonSpecifierMode:(NSInteger)arg3 accountTypes:(id)arg4;
+- (id)initWithPath:(id)arg1 parentController:(id)arg2 commonSpecifierMode:(int)arg3 accountTypes:(id)arg4;
 - (id)path;
 - (id)plugin;
 

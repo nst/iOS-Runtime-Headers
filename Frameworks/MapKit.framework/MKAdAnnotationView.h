@@ -7,15 +7,15 @@
 @interface MKAdAnnotationView : MKPinAnnotationView <MKOrientable> {
     UIImageView *_adImageView;
     BOOL _isShort;
-    NSInteger _orientation;
+    int _orientation;
 }
 
-@property NSInteger _orientation;
+@property int _orientation;
 @property BOOL isShort;
 
 + (id)_bounceAnimation;
 + (struct CGPoint { float x1; float x2; })_calloutOffset;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentBoundsForOrientation:(NSInteger)arg1;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentBoundsForOrientation:(int)arg1;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_desiredAdBounds;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_desiredBounds;
 + (struct CGPoint { float x1; float x2; })_perceivedAnchorPoint;
@@ -30,8 +30,8 @@
 - (id)_floatingImage;
 - (id)_highlightedImage;
 - (id)_image;
-- (NSInteger)_orientation;
-- (NSUInteger)_orientationCount;
+- (int)_orientation;
+- (unsigned int)_orientationCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
 - (void)_updateAdImage;
 - (void)_updateImage;
@@ -43,6 +43,6 @@
 - (void)prepareForReuse;
 - (void)setAnnotation:(id)arg1;
 - (void)setIsShort:(BOOL)arg1;
-- (void)set_orientation:(NSInteger)arg1;
+- (void)set_orientation:(int)arg1;
 
 @end

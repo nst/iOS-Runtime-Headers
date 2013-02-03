@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class NSString, SUMessagePart;
+
 @interface SUScriptMessagePart : SUScriptObject {
 }
 
-@property(readonly) NSString *MIMEType;
-@property(copy) NSString *contentEncoding;
-@property(readonly) NSString *encodingBase64;
-@property(retain) SUMessagePart *nativeMessagePart;
+@property(readonly) NSString * MIMEType;
+@property(copy) NSString * contentEncoding;
+@property(readonly) NSString * encodingBase64;
+@property(retain) SUMessagePart * nativeMessagePart;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 

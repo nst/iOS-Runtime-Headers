@@ -16,7 +16,7 @@
 
 - (BOOL)allowsJoins;
 - (void)dealloc;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithJoinedTable:(id)arg1 asID:(id)arg2 on:(id)arg3;
 - (id)initWithJoinedTable:(id)arg1 on:(id)arg2;
 - (BOOL)isEqual:(id)arg1;

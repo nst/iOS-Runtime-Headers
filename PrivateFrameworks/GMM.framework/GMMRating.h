@@ -9,20 +9,20 @@
     BOOL _hasTotalReviews;
     NSMutableArray *_numReviewsStarRating1To5s;
     NSString *_snippet;
-    NSInteger _starRatingAverage_E3;
-    NSInteger _totalReviews;
+    int _starRatingAverage_E3;
+    int _totalReviews;
 }
 
-@property(retain) NSMutableArray *numReviewsStarRating1To5s;
-@property(retain) NSString *snippet;
 @property(readonly) BOOL hasSnippet;
 @property(readonly) BOOL hasStarRatingAverage_E3;
 @property(readonly) BOOL hasTotalReviews;
-@property(readonly) NSInteger numReviewsStarRating1To5sCount;
-@property NSInteger starRatingAverage_E3;
-@property NSInteger totalReviews;
+@property(retain) NSMutableArray * numReviewsStarRating1To5s;
+@property(readonly) int numReviewsStarRating1To5sCount;
+@property(retain) NSString * snippet;
+@property int starRatingAverage_E3;
+@property int totalReviews;
 
-- (void)addNumReviewsStarRating1To5:(NSInteger)arg1;
+- (void)addNumReviewsStarRating1To5:(int)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -30,18 +30,18 @@
 - (BOOL)hasStarRatingAverage_E3;
 - (BOOL)hasTotalReviews;
 - (id)init;
-- (NSInteger)numReviewsStarRating1To5AtIndex:(NSUInteger)arg1;
+- (int)numReviewsStarRating1To5AtIndex:(unsigned int)arg1;
 - (id)numReviewsStarRating1To5s;
-- (NSInteger)numReviewsStarRating1To5sCount;
+- (int)numReviewsStarRating1To5sCount;
 - (BOOL)readFrom:(id)arg1;
-- (void)setNumReviewsStarRating1To5:(NSInteger)arg1 atIndex:(NSUInteger)arg2;
+- (void)setNumReviewsStarRating1To5:(int)arg1 atIndex:(unsigned int)arg2;
 - (void)setNumReviewsStarRating1To5s:(id)arg1;
 - (void)setSnippet:(id)arg1;
-- (void)setStarRatingAverage_E3:(NSInteger)arg1;
-- (void)setTotalReviews:(NSInteger)arg1;
+- (void)setStarRatingAverage_E3:(int)arg1;
+- (void)setTotalReviews:(int)arg1;
 - (id)snippet;
-- (NSInteger)starRatingAverage_E3;
-- (NSInteger)totalReviews;
+- (int)starRatingAverage_E3;
+- (int)totalReviews;
 - (void)writeTo:(id)arg1;
 
 @end

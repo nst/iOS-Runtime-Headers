@@ -11,7 +11,7 @@
     struct __CKSMSAddress { } *_smsAddress;
 }
 
-@property __CKSMSAddress *smsAddress;
+@property struct __CKSMSAddress { }* smsAddress;
 
 + (id)copyAllSMSEntities;
 
@@ -23,14 +23,14 @@
 - (void)_removeFromSharedSet;
 - (struct __CKSMSAddress { }*)_smsAddress;
 - (void*)abRecord;
-- (NSInteger)addressBookUID;
+- (int)addressBookUID;
 - (void)dealloc;
-- (NSUInteger)hash;
-- (NSInteger)identifier;
+- (unsigned int)hash;
+- (int)identifier;
 - (BOOL)isEqual:(id)arg1;
-- (void)manuallyGenerateWithABRecord:(void*)arg1 identifier:(NSInteger)arg2;
+- (void)manuallyGenerateWithABRecord:(void*)arg1 identifier:(int)arg2;
 - (id)name;
-- (NSInteger)propertyType;
+- (int)propertyType;
 - (id)rawAddress;
 - (void)resetCaches;
 - (void)setSmsAddress:(struct __CKSMSAddress { }*)arg1;

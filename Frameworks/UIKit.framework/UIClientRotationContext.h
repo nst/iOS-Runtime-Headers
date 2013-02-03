@@ -10,7 +10,7 @@
         BOOL preserveHeight; 
         BOOL avoidFadingBottomOfContent; 
         float contentStretchRightEdgeInset; 
-        NSInteger edgeClip; 
+        int edgeClip; 
         float contentBottomInset; 
     UISnapshotView *_contentSnapshotViewStart;
     float _contentTopAdjustmentStart;
@@ -22,7 +22,7 @@
     UIView *_footerStartSnapshotView;
     UIView *_footerView;
     BOOL _footerWasHidden;
-    NSInteger _fromOrientation;
+    int _fromOrientation;
     UISnapshotView *_headerSnapshotViewStart;
     UIView *_headerView;
     BOOL _headerWasHidden;
@@ -32,32 +32,32 @@
     } _rotationSettings;
     BOOL _skipFooterRotation;
     BOOL _skipHeaderRotation;
-    NSInteger _toOrientation;
+    int _toOrientation;
     UIWindow *_window;
 }
 
-@property(readonly) UIView *contentView;
+@property(readonly) UIView * contentView;
 @property(readonly) float duration;
-@property(readonly) NSInteger fromOrientation;
+@property(readonly) int fromOrientation;
 @property(readonly) id rotatingClient;
-@property(readonly) NSInteger toOrientation;
+@property(readonly) int toOrientation;
 
 - (BOOL)_isFooterTranslucent;
 - (BOOL)_isHeaderTranslucent;
-- (void)_positionHeaderView:(id)arg1 andFooterView:(id)arg2 outsideContentViewForInterfaceOrientation:(NSInteger)arg3;
+- (void)_positionHeaderView:(id)arg1 andFooterView:(id)arg2 outsideContentViewForInterfaceOrientation:(int)arg3;
 - (void)_slideFooterWithStartSnapshot:(id)arg1 endSnapshot:(id)arg2 duration:(double)arg3;
-- (void)_slideHeaderView:(id)arg1 andFooterView:(id)arg2 offScreen:(BOOL)arg3 forInterfaceOrientation:(NSInteger)arg4;
+- (void)_slideHeaderView:(id)arg1 andFooterView:(id)arg2 offScreen:(BOOL)arg3 forInterfaceOrientation:(int)arg4;
 - (id)contentView;
 - (void)dealloc;
 - (float)duration;
 - (void)finishFirstHalfRotation;
 - (void)finishFullRotateUsingOnePartAnimation:(BOOL)arg1;
-- (NSInteger)fromOrientation;
-- (id)initWithClient:(id)arg1 toOrientation:(NSInteger)arg2 duration:(float)arg3 andWindow:(id)arg4;
+- (int)fromOrientation;
+- (id)initWithClient:(id)arg1 toOrientation:(int)arg2 duration:(float)arg3 andWindow:(id)arg4;
 - (void)rotateSnapshots;
 - (id)rotatingClient;
 - (void)setupRotationOrderingKeyboardInAfterRotation:(BOOL)arg1;
-- (void)slideHeaderViewAndFooterViewOffScreen:(BOOL)arg1 forInterfaceOrientation:(NSInteger)arg2;
-- (NSInteger)toOrientation;
+- (void)slideHeaderViewAndFooterViewOffScreen:(BOOL)arg1 forInterfaceOrientation:(int)arg2;
+- (int)toOrientation;
 
 @end

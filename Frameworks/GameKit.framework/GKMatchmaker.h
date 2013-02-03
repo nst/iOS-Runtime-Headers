@@ -13,15 +13,14 @@
     GKMatchPlayersDataRequest *_matchPlayersDataRequest;
 }
 
-@property(copy) ? *inviteHandler;
-@property(retain) GKMatchPlayersDataRequest *matchPlayersDataRequest;
+@property(copy) id inviteHandler;
+@property(retain) GKMatchPlayersDataRequest * matchPlayersDataRequest;
 
 + (id)sharedMatchmaker;
 
 - (void)addPlayersForHostedMatchRequest:(id)arg1 existingPlayerIDs:(id)arg2 completionHandler:(id)arg3;
 - (void)addPlayersToInviteWithMatch:(id)arg1 matchRequest:(id)arg2 completionHandler:(id)arg3;
 - (void)addPlayersToMatch:(id)arg1 matchRequest:(id)arg2 completionHandler:(id)arg3;
-- (void)applicationWillEnterForeground:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (void)findMatchForRequest:(id)arg1 withCompletionHandler:(id)arg2;
@@ -35,7 +34,7 @@
 - (id)matchPlayersDataRequest;
 - (void)matchWithRequest:(id)arg1 currentMatch:(id)arg2 currentPlayerIDs:(id)arg3 combo:(BOOL)arg4 serverHosted:(BOOL)arg5 completionHandler:(id)arg6;
 - (void)queryActivityWithCompletionHandler:(id)arg1;
-- (void)queryPlayerGroupActivity:(NSUInteger)arg1 withCompletionHandler:(id)arg2;
+- (void)queryPlayerGroupActivity:(unsigned int)arg1 withCompletionHandler:(id)arg2;
 - (void)setConnectivitySettings:(id)arg1;
 - (void)setInviteHandler:(id)arg1;
 - (void)setMatchPlayersDataRequest:(id)arg1;

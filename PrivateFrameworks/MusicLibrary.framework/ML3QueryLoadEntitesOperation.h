@@ -10,29 +10,29 @@
 
 @interface ML3QueryLoadEntitesOperation : ML3QueryLoadOperation {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     id _block;
     } _loadRange;
     BOOL _ordered;
     NSArray *_properties;
 }
 
-@property(copy) ? *block;
-@property(copy) NSArray *properties;
-@property _NSRange loadRange;
+@property(copy) id block;
+@property struct _NSRange { unsigned int location; unsigned int length; } loadRange;
 @property BOOL ordered;
+@property(copy) NSArray * properties;
 
 - (id)block;
 - (void)dealloc;
-- (id)initWithQuery:(id)arg1 loadRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 ordered:(BOOL)arg3 properties:(id)arg4 block:(id)arg5;
+- (id)initWithQuery:(id)arg1 loadRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 ordered:(BOOL)arg3 properties:(id)arg4 block:(id)arg5;
 - (id)initWithQuery:(id)arg1;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })loadRange;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })loadRange;
 - (void)main;
 - (BOOL)ordered;
 - (id)properties;
 - (void)setBlock:(id)arg1;
-- (void)setLoadRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)setLoadRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setOrdered:(BOOL)arg1;
 - (void)setProperties:(id)arg1;
 

@@ -4,17 +4,17 @@
 
 @interface NSSpellCheckingResult : NSTextCheckingResult {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     } _range;
 }
 
-- (BOOL)_adjustRangesWithOffset:(NSInteger)arg1;
+- (BOOL)_adjustRangesWithOffset:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })range;
-- (id)resultByAdjustingRangesWithOffset:(NSInteger)arg1;
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (id)resultByAdjustingRangesWithOffset:(int)arg1;
 - (unsigned long long)resultType;
 
 @end

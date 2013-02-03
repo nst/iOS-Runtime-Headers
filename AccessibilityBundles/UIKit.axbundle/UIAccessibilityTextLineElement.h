@@ -4,8 +4,8 @@
 
 @interface UIAccessibilityTextLineElement : UIAccessibilityElement {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -19,17 +19,17 @@
     } _range;
 }
 
-@property CGRect textBounds;
-@property _NSRange textRange;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } textBounds;
+@property struct _NSRange { unsigned int location; unsigned int length; } textRange;
 
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
-- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
+- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)accessibilityHint;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
 - (void)setTextBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)setTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textBounds;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })textRange;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })textRange;
 
 @end

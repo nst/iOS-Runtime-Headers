@@ -2,28 +2,33 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSString;
 
 @interface NSGZipDecoder : NSObject <NSURLDownloadDecoder, NSURLDataDecoder> {
     struct z_stream_s { 
         char *next_in; 
-        NSUInteger avail_in; 
-        NSUInteger total_in; 
+        unsigned int avail_in; 
+        unsigned int total_in; 
         char *next_out; 
-        NSUInteger avail_out; 
-        NSUInteger total_out; 
+        unsigned int avail_out; 
+        unsigned int total_out; 
         char *msg; 
         struct internal_state {} *state; 
         int (*zalloc)(); 
         int (*zfree)(); 
         void *opaque; 
-        NSInteger data_type; 
-        NSUInteger adler; 
-        NSUInteger reserved; 
+        int data_type; 
+        unsigned int adler; 
+        unsigned int reserved; 
     BOOL _decodedHeader;
     NSString *_filename;
     BOOL _finishedInflating;
-    NSUInteger _modificationTime;
+    unsigned int _modificationTime;
     BOOL _pad;
     } _stream;
     BOOL _streamInitialized;
@@ -31,7 +36,7 @@
 
 + (id)MIMEType;
 + (BOOL)canDecodeDownloadHeaderData:(id)arg1;
-+ (BOOL)decodeDownloadHeader:(id)arg1 headerLength:(NSInteger*)arg2 modificationTime:(NSUInteger*)arg3 filename:(id*)arg4;
++ (BOOL)decodeDownloadHeader:(id)arg1 headerLength:(int*)arg2 modificationTime:(unsigned int*)arg3 filename:(id*)arg4;
 
 - (void)dealloc;
 - (id)decodeData:(id)arg1;

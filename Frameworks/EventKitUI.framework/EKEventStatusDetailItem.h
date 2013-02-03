@@ -9,7 +9,7 @@
     BOOL _indent;
 }
 
-- (id)cellForSubitemAtIndex:(NSInteger)arg1;
+- (id)cellForSubitemAtIndex:(int)arg1;
 - (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
 - (void)reset;
 

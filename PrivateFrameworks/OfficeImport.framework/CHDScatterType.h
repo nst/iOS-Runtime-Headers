@@ -5,6 +5,6 @@
 @interface CHDScatterType : CHDChartType {
 }
 
-- (NSInteger)defaultLabelPosition;
+- (int)defaultLabelPosition;
 
 @end

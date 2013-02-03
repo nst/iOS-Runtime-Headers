@@ -8,24 +8,24 @@
     UIKeyboardEmojiCategory *_category;
     UILabel *_categoryLabel;
     <UIKeyboardEmojiController> *_controller;
-    NSInteger _currentPage;
+    int _currentPage;
     UIPageControl *_pageControl;
     NSMutableArray *_pages;
     UIScrollView *_scrollView;
 }
 
-@property <UIKeyboardEmojiController> *controller;
+@property <UIKeyboardEmojiController> * controller;
 
 + (void)_initializeSafeCategory;
 
 - (void)_accessibilityDelayedPost;
 - (void)clearPages;
 - (id)controller;
-- (NSInteger)currentPage;
+- (int)currentPage;
 - (void)dealloc;
 - (void)delayedLayout:(id)arg1;
 - (void)doLayout;
-- (void)ensureSurrounded:(NSInteger)arg1;
+- (void)ensureSurrounded:(int)arg1;
 - (void)forceLayout;
 - (void)goToFirstPage;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

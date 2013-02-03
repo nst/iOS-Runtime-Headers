@@ -7,9 +7,9 @@
 @interface UISimpleTableCell : UITableCell {
     UIFont *_font;
     UIImageView *_iconImageView;
-    NSUInteger _indentationLevel;
+    unsigned int _indentationLevel;
     NSString *_title;
-    NSInteger _titleColor;
+    int _titleColor;
 }
 
 + (void)_initializeSafeCategory;
@@ -24,15 +24,15 @@
 - (id)font;
 - (id)icon;
 - (id)iconImageView;
-- (NSUInteger)indentationLevel;
+- (unsigned int)indentationLevel;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (NSInteger)lineBreakMode;
+- (int)lineBreakMode;
 - (void)setFont:(id)arg1;
 - (void)setIcon:(id)arg1;
-- (void)setIndentationLevel:(NSUInteger)arg1;
+- (void)setIndentationLevel:(unsigned int)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTitleColor:(NSInteger)arg1;
+- (void)setTitleColor:(int)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
 - (id)title;
 

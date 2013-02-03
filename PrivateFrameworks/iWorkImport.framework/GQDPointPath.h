@@ -11,14 +11,14 @@
         float height; 
     } mPoint;
     } mSize;
-    NSInteger mType;
+    int mType;
 }
 
 - (struct CGPath { }*)createBezierPath;
-- (NSInteger)mapStrType:(struct __CFString { }*)arg1;
+- (int)mapStrType:(struct __CFString { }*)arg1;
 - (struct CGPoint { float x1; float x2; })point;
-- (NSInteger)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 - (struct CGSize { float x1; float x2; })size;
-- (NSInteger)type;
+- (int)type;
 
 @end

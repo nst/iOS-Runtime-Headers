@@ -13,7 +13,7 @@
     BOOL _partial;
 }
 
-- (NSInteger)appendData:(id)arg1;
+- (int)appendData:(id)arg1;
 - (id)data;
 - (void)dealloc;
 - (void)done;

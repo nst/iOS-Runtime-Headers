@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaPickerControllerInternal;
+@class <MPMediaPickerControllerDelegate>, NSString, MPMediaPickerControllerInternal;
 
 @interface MPMediaPickerController : UIViewController {
     MPMediaPickerControllerInternal *_internal;
 }
 
-@property <MPMediaPickerControllerDelegate> *delegate;
-@property(copy) NSString *prompt;
 @property BOOL allowsPickingMultipleItems;
-@property(readonly) NSInteger mediaTypes;
+@property <MPMediaPickerControllerDelegate> * delegate;
+@property(readonly) int mediaTypes;
+@property(copy) NSString * prompt;
 
 + (void)preheatMediaPicker;
 
@@ -32,9 +32,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (id)initWithMediaTypes:(NSInteger)arg1;
+- (id)initWithMediaTypes:(int)arg1;
 - (void)loadView;
-- (NSInteger)mediaTypes;
+- (int)mediaTypes;
 - (id)prompt;
 - (BOOL)scrollViewShouldScrollToTop:(id)arg1;
 - (void)setAllowsPickingMultipleItems:(BOOL)arg1;

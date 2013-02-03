@@ -2,23 +2,25 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMHTMLTableSectionElement, DOMHTMLCollection, DOMHTMLTableCaptionElement, NSString;
+
 @interface DOMHTMLTableElement : DOMHTMLElement {
 }
 
-@property(copy) NSString *align;
-@property(copy) NSString *bgColor;
-@property(copy) NSString *border;
-@property(retain) DOMHTMLTableCaptionElement *caption;
-@property(copy) NSString *cellPadding;
-@property(copy) NSString *cellSpacing;
-@property(copy) NSString *frameBorders;
-@property(retain,readonly) DOMHTMLCollection *rows;
-@property(copy) NSString *rules;
-@property(copy) NSString *summary;
-@property(retain,readonly) DOMHTMLCollection *tBodies;
-@property(retain) DOMHTMLTableSectionElement *tFoot;
-@property(retain) DOMHTMLTableSectionElement *tHead;
-@property(copy) NSString *width;
+@property(copy) NSString * align;
+@property(copy) NSString * bgColor;
+@property(copy) NSString * border;
+@property(retain) DOMHTMLTableCaptionElement * caption;
+@property(copy) NSString * cellPadding;
+@property(copy) NSString * cellSpacing;
+@property(copy) NSString * frameBorders;
+@property(retain,readonly) DOMHTMLCollection * rows;
+@property(copy) NSString * rules;
+@property(copy) NSString * summary;
+@property(retain,readonly) DOMHTMLCollection * tBodies;
+@property(retain) DOMHTMLTableSectionElement * tFoot;
+@property(retain) DOMHTMLTableSectionElement * tHead;
+@property(copy) NSString * width;
 
 - (id)align;
 - (id)bgColor;
@@ -30,11 +32,11 @@
 - (id)createTFoot;
 - (id)createTHead;
 - (void)deleteCaption;
-- (void)deleteRow:(NSInteger)arg1;
+- (void)deleteRow:(int)arg1;
 - (void)deleteTFoot;
 - (void)deleteTHead;
 - (id)frameBorders;
-- (id)insertRow:(NSInteger)arg1;
+- (id)insertRow:(int)arg1;
 - (id)rows;
 - (id)rules;
 - (void)setAlign:(id)arg1;
@@ -49,7 +51,7 @@
 - (void)setTFoot:(id)arg1;
 - (void)setTHead:(id)arg1;
 - (void)setWidth:(id)arg1;
-- (NSInteger)structuralComplexityContribution;
+- (int)structuralComplexityContribution;
 - (id)summary;
 - (id)tBodies;
 - (id)tFoot;

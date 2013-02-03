@@ -2,24 +2,26 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMHTMLFormElement, NSString;
+
 @interface DOMHTMLOptionElement : DOMHTMLElement {
 }
 
-@property(retain,readonly) DOMHTMLFormElement *form;
-@property(copy) NSString *label;
-@property(copy,readonly) NSString *text;
-@property(copy) NSString *value;
 @property BOOL defaultSelected;
 @property BOOL disabled;
-@property(readonly) NSInteger index;
+@property(retain,readonly) DOMHTMLFormElement * form;
+@property(readonly) int index;
+@property(copy) NSString * label;
 @property BOOL selected;
+@property(copy,readonly) NSString * text;
+@property(copy) NSString * value;
 
 - (id)createPickerCell;
 - (id)createSelectedItem;
 - (BOOL)defaultSelected;
 - (BOOL)disabled;
 - (id)form;
-- (NSInteger)index;
+- (int)index;
 - (id)itemTitle;
 - (id)label;
 - (void)populateCell:(id)arg1;

@@ -9,19 +9,19 @@
         float width; 
         float height; 
     CPRegularExpression *_bagKeyPattern;
-    NSInteger _cornerRadius;
+    int _cornerRadius;
     BOOL _shouldShowNavigationBar;
     } _size;
     NSString *_transitionName;
     CPRegularExpression *_urlPattern;
 }
 
-@property(readonly) NSString *transitionName;
-@property(readonly) NSInteger cornerRadius;
+@property(readonly) int cornerRadius;
 @property(readonly) BOOL shouldShowNavigationBar;
-@property(readonly) CGSize size;
+@property(readonly) struct CGSize { float width; float height; } size;
+@property(readonly) NSString * transitionName;
 
-- (NSInteger)cornerRadius;
+- (int)cornerRadius;
 - (void)dealloc;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

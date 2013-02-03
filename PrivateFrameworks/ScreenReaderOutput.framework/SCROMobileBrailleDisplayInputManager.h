@@ -14,20 +14,20 @@
 + (id)sharedManager;
 
 - (id)autorelease;
-- (id)buttonNamesAtIndex:(NSUInteger)arg1 forDisplayWithToken:(long)arg2;
+- (id)buttonNamesAtIndex:(unsigned int)arg1 forDisplayWithToken:(long)arg2;
 - (id)buttonNamesForInputIdentifier:(id)arg1 forDisplayWithToken:(long)arg2;
-- (id)commandAtIndex:(NSUInteger)arg1 forDisplayWithToken:(long)arg2;
+- (id)commandAtIndex:(unsigned int)arg1 forDisplayWithToken:(long)arg2;
 - (id)commandForBrailleKey:(id)arg1;
 - (void)configureWithDriverConfiguration:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)countForDisplayWithToken:(long)arg1;
+- (unsigned int)countForDisplayWithToken:(long)arg1;
 - (void)dealloc;
 - (id)driverIdentifierForDisplayWithToken:(long)arg1;
 - (id)init;
-- (id)inputIdentifierAtIndex:(NSUInteger)arg1 forDisplayWithToken:(long)arg2;
+- (id)inputIdentifierAtIndex:(unsigned int)arg1 forDisplayWithToken:(long)arg2;
 - (id)modelIdentifierForDisplayWithToken:(long)arg1;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

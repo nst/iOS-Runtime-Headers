@@ -6,8 +6,8 @@
 
 @interface ABMembersController : ABContentController <ABMembersDataSourceDelegate, UITextFieldDelegate, UISearchDisplayDelegate, ABSearchOperationDelegate, UISearchBarDelegate> {
     ABBannerView *_bannerView;
-    NSUInteger _cellsCreated;
-    NSUInteger _memberCount;
+    unsigned int _cellsCreated;
+    unsigned int _memberCount;
     <ABMembersControllerDelegate> *_membersControllerDelegate;
     ABMembersDataSource *_membersDataSource;
     BOOL _needToClearOldResults;
@@ -18,7 +18,7 @@
     UISearchDisplayController *_searchController;
     ABMembersFilteredDataSource *_searchDataSource;
     BOOL _searchEnabled;
-    NSUInteger _searchSequenceNumber;
+    unsigned int _searchSequenceNumber;
     NSIndexPath *_selectedIndexPath;
     BOOL _shouldRestoreScrollPosition;
     BOOL _showingCardFromSearch;
@@ -27,13 +27,14 @@
     BOOL _wasKeyboardShowing;
 }
 
-@property <ABMembersControllerDelegate> *membersControllerDelegate;
-@property(retain) <ABStyleProvider> *styleProvider;
+@property <ABMembersControllerDelegate> * membersControllerDelegate;
 @property(getter=isSearchEnabled) BOOL searchEnabled;
 @property(readonly) BOOL shouldShowImages;
+@property(retain) <ABStyleProvider> * styleProvider;
 
-+ (id)newNameSearchOperationWithString:(id)arg1 groupWrapper:(id)arg2 addressBook:(void*)arg3 delegate:(id)arg4 inOutSequenceNumber:(NSUInteger*)arg5;
++ (id)newNameSearchOperationWithString:(id)arg1 groupWrapper:(id)arg2 addressBook:(void*)arg3 delegate:(id)arg4 inOutSequenceNumber:(unsigned int*)arg5;
 
+- (void)_applyStylesToTableView:(id)arg1;
 - (void)_deselectAllRowsWithAnimation;
 - (void)_reloadFontSizes;
 - (void)_reselectLastSelectedCellIfNeeded;
@@ -49,7 +50,7 @@
 - (id)accessoryView;
 - (void)cancelSearching:(id)arg1;
 - (void)cancelSearchingAnimated:(BOOL)arg1;
-- (NSUInteger)cellsCreated;
+- (unsigned int)cellsCreated;
 - (id)contentView;
 - (id)currentSearchText;
 - (id)currentTableView;
@@ -57,11 +58,12 @@
 - (void)deselectAllRowsWithAnimation:(BOOL)arg1;
 - (void)didReceiveMemoryWarning;
 - (void)displayedMembersListChanged;
-- (NSInteger)globalIndexOfMember:(void*)arg1;
+- (int)globalIndexOfMember:(void*)arg1;
 - (id)initWithAddressBook:(void*)arg1;
 - (BOOL)isSearchEnabled;
 - (BOOL)isSearching;
 - (void)loadState;
+- (void)makeMainTableViewVisible;
 - (id)membersControllerDelegate;
 - (id)membersDataSource;
 - (id)operationQueue;
@@ -81,14 +83,16 @@
 - (id)searchDataSource;
 - (void)searchDisplayController:(id)arg1 didLoadSearchResultsTableView:(id)arg2;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willHideSearchResultsTableView:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willShowSearchResultsTableView:(id)arg2;
 - (void)searchDisplayControllerWillBeginSearch:(id)arg1;
 - (void)searchDisplayControllerWillEndSearch:(id)arg1;
 - (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
 - (void)selectMember:(void*)arg1 animated:(BOOL)arg2;
-- (void)selectMemberOnlyInTable:(void*)arg1 scrollPosition:(NSInteger)arg2;
+- (void)selectMemberOnlyInTable:(void*)arg1 scrollPosition:(int)arg2;
 - (id)selectedCell;
 - (void)setBannerTitle:(id)arg1 value:(id)arg2;
-- (void)setCellsCreated:(NSUInteger)arg1;
+- (void)setCellsCreated:(unsigned int)arg1;
 - (void)setMembersControllerDelegate:(id)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setSearchEnabled:(BOOL)arg1;
@@ -100,12 +104,12 @@
 - (void)stopScrolling;
 - (id)styleProvider;
 - (void)suspend;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (id)tableView;
 - (id)tableViewPathToMember:(void*)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

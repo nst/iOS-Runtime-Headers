@@ -2,11 +2,16 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSURL, NSError, NSThread, NSURLConnection, NSMutableSet, NSString, NSMutableDictionary, NSData;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class NSURL, NSError, NSURLResponse, NSThread, NSURLRequest, NSSet, NSURLConnection, NSMutableSet, NSString, NSMutableDictionary, NSData;
 
 @interface QLPreviewParts : NSObject {
     struct { 
-        NSInteger version; 
+        int version; 
         int (*retain)(); 
         int (*release)(); 
         int (*copyDescription)(); 
@@ -29,22 +34,22 @@
     NSMutableSet *registeredURLs;
     void *representedObject;
     } representedObjectCallbacks;
-    NSInteger representedObjectProtection;
+    int representedObjectProtection;
 }
 
-@property(readonly) NSSet *attachmentURLs;
-@property(retain) NSURLConnection *connection;
-@property(retain) NSData *data;
-@property(retain) NSString *fileName;
-@property(readonly) NSURLRequest *previewRequest;
-@property(readonly) NSURLResponse *previewResponse;
-@property(readonly) NSURL *previewURL;
-@property(retain) NSURL *url;
-@property(retain) NSString *uti;
+@property(readonly) NSSet * attachmentURLs;
 @property(getter=isCancelled,readonly) BOOL cancelled;
 @property(getter=isComputed,readonly) BOOL computed;
+@property(retain) NSURLConnection * connection;
+@property(retain) NSData * data;
 @property(retain) id delegate;
+@property(retain) NSString * fileName;
+@property(readonly) NSURLRequest * previewRequest;
+@property(readonly) NSURLResponse * previewResponse;
+@property(readonly) NSURL * previewURL;
 @property BOOL progressive;
+@property(retain) NSURL * url;
+@property(retain) NSString * uti;
 
 + (BOOL)isSafeRequest:(id)arg1;
 + (BOOL)isSafeURL:(id)arg1;
@@ -82,7 +87,7 @@
 - (void)setConnection:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDocumentObject:(const void*)arg1 callbacks:(const struct { NSInteger x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
+- (void)setDocumentObject:(const void*)arg1 callbacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
 - (void)setError:(id)arg1;
 - (void)setFileName:(id)arg1;
 - (void)setProgressive:(BOOL)arg1;

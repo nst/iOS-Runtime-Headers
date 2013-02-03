@@ -3,10 +3,10 @@
  */
 
 @interface PDSideDirectionOptions : PDTransitionOptions {
-    NSInteger mDirection;
+    int mDirection;
 }
 
-- (NSInteger)direction;
-- (void)setDirection:(NSInteger)arg1;
+- (int)direction;
+- (void)setDirection:(int)arg1;
 
 @end

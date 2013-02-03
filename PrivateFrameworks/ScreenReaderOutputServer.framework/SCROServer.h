@@ -5,13 +5,13 @@
 @class <SCROServerDelegate>;
 
 @interface SCROServer : NSObject {
-    NSInteger _clientCount;
-    NSUInteger _deathPort;
+    int _clientCount;
+    unsigned int _deathPort;
     struct __CFRunLoopSource { } *_deathSource;
     struct __CFRunLoopTimer { } *_deathTimer;
     <SCROServerDelegate> *_delegate;
     BOOL _isRegisteredWithMach;
-    NSUInteger _serverPort;
+    unsigned int _serverPort;
     struct __CFRunLoopSource { } *_serverSource;
 }
 
@@ -20,7 +20,7 @@
 + (id)sharedServer;
 
 - (long)_clientCount;
-- (NSUInteger)_deathPort;
+- (unsigned int)_deathPort;
 - (struct __CFRunLoopTimer { }*)_deathTimer;
 - (void)_setClientCount:(long)arg1;
 - (id)autorelease;
@@ -31,7 +31,7 @@
 - (BOOL)registerWithMach;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (struct __CFRunLoopSource { }*)serverSource;
 - (void)setDelegate:(id)arg1;
 - (void)unregisterWithMach;

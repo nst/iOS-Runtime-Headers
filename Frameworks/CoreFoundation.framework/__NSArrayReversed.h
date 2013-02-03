@@ -4,12 +4,12 @@
 
 @interface __NSArrayReversed : NSArray {
     id _array;
-    NSUInteger _cnt;
+    unsigned int _cnt;
 }
 
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)initWithArray:(id)arg1;
-- (id)objectAtIndex:(NSUInteger)arg1;
+- (id)objectAtIndex:(unsigned int)arg1;
 
 @end

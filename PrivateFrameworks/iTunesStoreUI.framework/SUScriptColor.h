@@ -10,10 +10,10 @@
     float _red;
 }
 
-@property(getter=_red) float red; /* unknown property attribute: Sset_red: */
-@property(getter=_green) float green; /* unknown property attribute: Sset_green: */
-@property(getter=_blue) float blue; /* unknown property attribute: Sset_blue: */
-@property(getter=_alpha) float alpha; /* unknown property attribute: Sset_alpha: */
+@property(getter=_alpha,setter=set_alpha:) float alpha;
+@property(getter=_blue,setter=set_blue:) float blue;
+@property(getter=_green,setter=set_green:) float green;
+@property(getter=_red,setter=set_red:) float red;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;

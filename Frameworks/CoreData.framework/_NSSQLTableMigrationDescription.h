@@ -10,7 +10,7 @@
     NSMutableArray *_copiedEntityMigrations;
     NSNumber *_hasTransformedTableSchema;
     NSMutableDictionary *_migrationByEntity;
-    NSInteger _migrationType;
+    int _migrationType;
     NSMutableArray *_removedEntityMigrations;
     NSMutableArray *_removedManyToManys;
     NSSQLEntity *_rootEntity;
@@ -20,8 +20,8 @@
     NSMutableArray *_transformedManyToManys;
 }
 
-@property(readonly) NSSQLEntity *rootEntity;
-@property(readonly) NSInteger migrationType;
+@property(readonly) int migrationType;
+@property(readonly) NSSQLEntity * rootEntity;
 
 - (id)_addedManyToManys;
 - (BOOL)_hasTransformedTableSchema;
@@ -38,8 +38,8 @@
 - (id)createInsertStatementForEntityMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
 - (id)createUpdateStatementForEntityMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
 - (void)dealloc;
-- (id)initWithRootEntity:(id)arg1 migrationType:(NSInteger)arg2;
-- (NSInteger)migrationType;
+- (id)initWithRootEntity:(id)arg1 migrationType:(int)arg2;
+- (int)migrationType;
 - (id)newCopyAndInsertStatementForToOne:(id)arg1 toManyToMany:(id)arg2 fromTableName:(id)arg3 invertColumns:(BOOL)arg4 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg5;
 - (id)rootEntity;
 

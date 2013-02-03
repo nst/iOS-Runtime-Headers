@@ -10,22 +10,22 @@
         float height; 
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     NSString *apertureMode;
     BOOL appliesPreferredTrackTransform;
     AVAsset *asset;
-    NSInteger cancelledRequestIDThreshold;
+    int cancelledRequestIDThreshold;
     struct OpaqueFigAssetImageGenerator { } *generator;
     struct dispatch_queue_s { } *imageRequestQueue;
     } maximumSize;
-    NSInteger nextRequestID;
+    int nextRequestID;
     } requestedTimeToleranceAfter;
     } requestedTimeToleranceBefore;
     NSMutableArray *requests;

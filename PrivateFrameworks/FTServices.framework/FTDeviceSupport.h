@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSString;
+@class NSString, NSDictionary;
 
 @interface FTDeviceSupport : NSObject {
-    NSInteger _carrierBundleSupported;
+    int _carrierBundleSupported;
     BOOL _commCenterDead;
     BOOL _duringRestore;
     NSString *_lastDeviceID;
@@ -15,10 +15,7 @@
     BOOL _supportsSMS;
 }
 
-@property(readonly) NSDictionary *CTNetworkInformation;
-@property(readonly) NSString *deviceID;
-@property(readonly) NSString *model;
-@property(readonly) NSString *userAgentString;
+@property(readonly) NSDictionary * CTNetworkInformation;
 @property(readonly) BOOL canReceiveCalls;
 @property(readonly) BOOL canRegister;
 @property(readonly) BOOL canSendCalls;
@@ -26,9 +23,13 @@
 @property(readonly) BOOL conferencingAllowed;
 @property(readonly) BOOL conferencingBlocked;
 @property(readonly) BOOL conferencingEnabled;
+@property(readonly) NSString * deviceID;
+@property(readonly) NSString * deviceIDPrefix;
+@property(readonly) NSString * model;
 @property(readonly) BOOL registrationSupported;
 @property(readonly) BOOL supportsAppleIDIdentification;
 @property(readonly) BOOL supportsSMSIdentification;
+@property(readonly) NSString * userAgentString;
 
 + (id)sharedInstance;
 
@@ -57,11 +58,12 @@
 - (BOOL)conferencingEnabled;
 - (void)dealloc;
 - (id)deviceID;
+- (id)deviceIDPrefix;
 - (id)init;
 - (id)model;
 - (BOOL)registrationSupported;
 - (oneway void)release;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (BOOL)supportsAppleIDIdentification;
 - (BOOL)supportsSMSIdentification;
 - (id)userAgentString;

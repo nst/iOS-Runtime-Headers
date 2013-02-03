@@ -2,6 +2,11 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface __NSCFInputStream : NSInputStream {
 }
 
@@ -9,29 +14,29 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
-- (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)())arg2 context:(struct { NSInteger x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
+- (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)())arg2 context:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
 - (void)_unscheduleFromCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (void)close;
 - (id)delegate;
 - (void)finalize;
-- (BOOL)getBuffer:(char **)arg1 length:(NSUInteger*)arg2;
+- (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
 - (BOOL)hasBytesAvailable;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithData:(id)arg1;
 - (id)initWithFileAtPath:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)open;
 - (id)propertyForKey:(id)arg1;
-- (NSInteger)read:(char *)arg1 maxLength:(NSUInteger)arg2;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 - (oneway void)release;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)streamError;
-- (NSUInteger)streamStatus;
+- (unsigned int)streamStatus;
 
 @end

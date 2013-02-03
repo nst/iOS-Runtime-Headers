@@ -7,28 +7,28 @@
         struct { 
             struct { 
                 long long value; 
-                NSInteger timescale; 
-                NSUInteger flags; 
+                int timescale; 
+                unsigned int flags; 
                 long long epoch; 
             } start; 
             struct { 
                 long long value; 
-                NSInteger timescale; 
-                NSUInteger flags; 
+                int timescale; 
+                unsigned int flags; 
                 long long epoch; 
             } duration; 
         } source; 
         struct { 
             struct { 
                 long long value; 
-                NSInteger timescale; 
-                NSUInteger flags; 
+                int timescale; 
+                unsigned int flags; 
                 long long epoch; 
             } start; 
             struct { 
                 long long value; 
-                NSInteger timescale; 
-                NSUInteger flags; 
+                int timescale; 
+                unsigned int flags; 
                 long long epoch; 
             } duration; 
         } target; 
@@ -36,10 +36,10 @@
 }
 
 @property(getter=isEmpty,readonly) BOOL empty;
-@property(readonly) ? timeMapping;
+@property(readonly) struct { struct { struct { long long value; int timescale; unsigned int flags; long long epoch; } start; struct { long long value; int timescale; unsigned int flags; long long epoch; } duration; } source; struct { struct { long long value; int timescale; unsigned int flags; long long epoch; } start; struct { long long value; int timescale; unsigned int flags; long long epoch; } duration; } target; } timeMapping;
 
-- (id)_initWithTimeMapping:(struct { struct { struct { long long x_1_2_1; NSInteger x_1_2_2; NSUInteger x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; NSInteger x_2_2_2; NSUInteger x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; NSInteger x_1_2_2; NSUInteger x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; NSInteger x_2_2_2; NSUInteger x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })arg1;
+- (id)_initWithTimeMapping:(struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })arg1;
 - (BOOL)isEmpty;
-- (struct { struct { struct { long long x_1_2_1; NSInteger x_1_2_2; NSUInteger x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; NSInteger x_2_2_2; NSUInteger x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; NSInteger x_1_2_2; NSUInteger x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; NSInteger x_2_2_2; NSUInteger x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })timeMapping;
+- (struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })timeMapping;
 
 @end

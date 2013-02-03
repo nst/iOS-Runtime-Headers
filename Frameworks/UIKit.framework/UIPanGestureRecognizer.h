@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
+@class NSMutableArray, UIPanGestureVelocitySample;
 
 @interface UIPanGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
@@ -15,26 +15,26 @@
     } _firstScreenLocation;
     float _hysteresis;
     } _lastScreenLocation;
-    NSUInteger _lastTouchCount;
+    unsigned int _lastTouchCount;
     double _lastTouchTime;
-    NSUInteger _maxTouchCount;
-    NSUInteger _minTouchCount;
+    unsigned int _maxTouchCount;
+    unsigned int _minTouchCount;
     id _previousVelocitySample;
     NSMutableArray *_touches;
     id _velocitySample;
 }
 
-@property(getter=_previousVelocitySample,readonly) UIPanGestureVelocitySample *_previousVelocitySample;
-@property(getter=_velocitySample,readonly) UIPanGestureVelocitySample *_velocitySample;
-@property NSUInteger maximumNumberOfTouches;
-@property NSUInteger minimumNumberOfTouches;
+@property(getter=_previousVelocitySample,readonly) UIPanGestureVelocitySample * _previousVelocitySample;
+@property(getter=_velocitySample,readonly) UIPanGestureVelocitySample * _velocitySample;
+@property unsigned int maximumNumberOfTouches;
+@property unsigned int minimumNumberOfTouches;
 
 - (void)_centroidMovedTo:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
 - (struct CADoublePoint { double x1; double x2; })_convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromScreenCoordinatesToView:(id)arg2;
 - (struct CADoublePoint { double x1; double x2; })_convertPoint:(struct CGPoint { float x1; float x2; })arg1 toScreenCoordinatesFromView:(id)arg2;
 - (struct CADoublePoint { double x1; double x2; })_convertVelocitySample:(id)arg1 fromScreenCoordinatesToView:(id)arg2;
 - (float)_hysteresis;
-- (NSInteger)_lastTouchCount;
+- (int)_lastTouchCount;
 - (id)_previousVelocitySample;
 - (void)_resetGestureRecognizer;
 - (void)_resetVelocitySamples;
@@ -48,13 +48,13 @@
 - (BOOL)failsPastMaxTouches;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
-- (struct CGPoint { float x1; float x2; })locationOfTouch:(NSUInteger)arg1 inView:(id)arg2;
-- (NSUInteger)maximumNumberOfTouches;
-- (NSUInteger)minimumNumberOfTouches;
-- (NSUInteger)numberOfTouches;
+- (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
+- (unsigned int)maximumNumberOfTouches;
+- (unsigned int)minimumNumberOfTouches;
+- (unsigned int)numberOfTouches;
 - (void)setFailsPastMaxTouches:(BOOL)arg1;
-- (void)setMaximumNumberOfTouches:(NSUInteger)arg1;
-- (void)setMinimumNumberOfTouches:(NSUInteger)arg1;
+- (void)setMaximumNumberOfTouches:(unsigned int)arg1;
+- (void)setMinimumNumberOfTouches:(unsigned int)arg1;
 - (void)setTranslation:(struct CGPoint { float x1; float x2; })arg1 inView:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

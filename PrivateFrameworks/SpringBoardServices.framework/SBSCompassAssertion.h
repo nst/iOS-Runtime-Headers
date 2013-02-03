@@ -3,11 +3,11 @@
  */
 
 @interface SBSCompassAssertion : NSObject {
-    NSUInteger _port;
+    unsigned int _port;
 }
 
 - (void)dealloc;
 - (id)init;
-- (NSUInteger)port;
+- (unsigned int)port;
 
 @end

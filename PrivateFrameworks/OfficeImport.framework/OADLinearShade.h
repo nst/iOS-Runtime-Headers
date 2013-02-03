@@ -13,7 +13,7 @@
 
 - (float)angle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithDefaults;
 - (BOOL)isAngleOverridden;
 - (BOOL)isEqual:(id)arg1;

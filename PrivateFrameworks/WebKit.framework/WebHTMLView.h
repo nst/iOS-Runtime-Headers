@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @class WebHTMLViewPrivate;
 
 @interface WebHTMLView : WAKView <WebDocumentSelection, WebDocumentIncrementalSearching, WebDocumentElement, WebMultipleTextMatches, WebDocumentView, WebDocumentSearching> {
-     /* Encoded args for previous method: c12@0:4^{KeyboardEvent=^^?i{AtomicString={String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}}BBBBBBBS^{EventTarget}{RefPtr<WebCore::EventTarget>=^{EventTarget}}Q{RefPtr<WebCore::Event>=^{Event}}{RefPtr<WebCore::DOMWindow>=^{DOMWindow}}ib1b1b1b1{OwnPtr<WebCore::PlatformKeyboardEvent>=^{PlatformKeyboardEvent}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}Ib1{Vector<WebCore::KeypressCommand,0ul>=I{VectorBuffer<WebCore::KeypressCommand,0ul>=^{KeypressCommand}I}}}8 */
     WebHTMLViewPrivate *_private;
 }
 
@@ -22,8 +22,8 @@
 
 - (id)_accessibilityParentForSubview:(id)arg1;
 - (float)_adjustedBottomOfPageWithTop:(float)arg1 bottom:(float)arg2 limit:(float)arg3;
-- (void)_applyParagraphStyleToSelection:(id)arg1 withUndoAction:(NSInteger)arg2;
-- (void)_applyStyleToSelection:(id)arg1 withUndoAction:(NSInteger)arg2;
+- (void)_applyParagraphStyleToSelection:(id)arg1 withUndoAction:(int)arg2;
+- (void)_applyStyleToSelection:(id)arg1 withUndoAction:(int)arg2;
 - (void)_autoscroll;
 - (BOOL)_beginPrintModeWithMinimumPageWidth:(float)arg1 height:(float)arg2 maximumPageWidth:(float)arg3;
 - (BOOL)_beginPrintModeWithPageWidth:(float)arg1 height:(float)arg2 shrinkToFit:(BOOL)arg3;
@@ -45,7 +45,7 @@
 - (id)_frame;
 - (void)_frameOrBoundsChanged;
 - (id)_frameView;
-- (BOOL)_handleEditingKeyEvent:(struct KeyboardEvent { int (**x1)(); NSInteger x2; struct AtomicString { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; unsigned short x11; struct EventTarget {} *x12; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_13_1_1; } x13; unsigned long long x14; struct RefPtr<WebCore::Event> { struct Event {} *x_15_1_1; } x15; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_16_1_1; } x16; NSInteger x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; struct OwnPtr<WebCore::PlatformKeyboardEvent> { struct PlatformKeyboardEvent {} *x_22_1_1; } x22; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_23_1_1; } x23; NSUInteger x24; unsigned int x25 : 1; struct Vector<WebCore::KeypressCommand,0ul> { NSUInteger x_26_1_1; struct VectorBuffer<WebCore::KeypressCommand,0ul> { struct KeypressCommand {} *x_2_2_1; NSUInteger x_2_2_2; } x_26_1_2; } x26; }*)arg1;
+- (BOOL)_handleEditingKeyEvent:(struct KeyboardEvent { int (**x1)(); int x2; struct AtomicString { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; boolx4; boolx5; boolx6; boolx7; boolx8; boolx9; boolx10; unsigned short x11; struct EventTarget {} *x12; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_13_1_1; } x13; unsigned long long x14; struct RefPtr<WebCore::Event> { struct Event {} *x_15_1_1; } x15; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_16_1_1; } x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; struct OwnPtr<WebCore::PlatformKeyboardEvent> { struct PlatformKeyboardEvent {} *x_22_1_1; } x22; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_23_1_1; } x23; unsigned int x24; unsigned int x25 : 1; struct Vector<WebCore::KeypressCommand,0ul> { unsigned int x_26_1_1; struct VectorBuffer<WebCore::KeypressCommand,0ul> { struct KeypressCommand {} *x_2_2_1; unsigned int x_2_2_2; } x_26_1_2; } x26; }*)arg1;
 - (BOOL)_hasHTMLDocument;
 - (BOOL)_hasInsertionPoint;
 - (BOOL)_hasSelection;
@@ -77,9 +77,9 @@
 - (void)_setToolTip:(id)arg1;
 - (void)_setTransparentBackground:(BOOL)arg1;
 - (BOOL)_shouldDeleteRange:(id)arg1;
-- (BOOL)_shouldInsertFragment:(id)arg1 replacingDOMRange:(id)arg2 givenAction:(NSInteger)arg3;
-- (BOOL)_shouldInsertText:(id)arg1 replacingDOMRange:(id)arg2 givenAction:(NSInteger)arg3;
-- (BOOL)_shouldReplaceSelectionWithText:(id)arg1 givenAction:(NSInteger)arg2;
+- (BOOL)_shouldInsertFragment:(id)arg1 replacingDOMRange:(id)arg2 givenAction:(int)arg3;
+- (BOOL)_shouldInsertText:(id)arg1 replacingDOMRange:(id)arg2 givenAction:(int)arg3;
+- (BOOL)_shouldReplaceSelectionWithText:(id)arg1 givenAction:(int)arg2;
 - (void)_startAutoscrollTimer:(id)arg1;
 - (void)_stopAutoscrollTimer;
 - (id)_topHTMLView;
@@ -90,8 +90,8 @@
 - (void)_web_layoutIfNeededRecursive;
 - (oneway void)_webcore_releaseOnWebThread;
 - (BOOL)acceptsFirstResponder;
-- (id)accessibilityElementAtIndex:(NSInteger)arg1;
-- (NSInteger)accessibilityElementCount;
+- (id)accessibilityElementAtIndex:(int)arg1;
+- (int)accessibilityElementCount;
 - (id)accessibilityFocusedUIElement;
 - (id)accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (id)accessibilityRootElement;
@@ -105,16 +105,16 @@
 - (BOOL)callDelegateDoCommandBySelectorIfNeeded:(SEL)arg1;
 - (void)capitalizeWord:(id)arg1;
 - (void)centerSelectionInVisibleArea:(id)arg1;
-- (NSUInteger)characterIndexForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (unsigned int)characterIndexForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)clearFocus;
 - (void)clearText:(id)arg1;
 - (void)close;
 - (void)closeIfNotCurrentView;
-- (NSInteger)conversationIdentifier;
+- (int)conversationIdentifier;
 - (void)copy:(id)arg1;
-- (struct Command { struct RefPtr<WebCore::Frame> { struct Frame {} *x_1_1_1; } x1; struct EditorInternalCommand {} *x2; NSInteger x3; })coreCommandByName:(const char *)arg1;
-- (struct Command { struct RefPtr<WebCore::Frame> { struct Frame {} *x_1_1_1; } x1; struct EditorInternalCommand {} *x2; NSInteger x3; })coreCommandBySelector:(SEL)arg1;
-- (NSUInteger)countMatchesForText:(id)arg1 caseSensitive:(BOOL)arg2 limit:(NSUInteger)arg3 markMatches:(BOOL)arg4;
+- (struct Command { struct RefPtr<WebCore::Frame> { struct Frame {} *x_1_1_1; } x1; struct EditorInternalCommand {} *x2; int x3; })coreCommandByName:(const char *)arg1;
+- (struct Command { struct RefPtr<WebCore::Frame> { struct Frame {} *x_1_1_1; } x1; struct EditorInternalCommand {} *x2; int x3; })coreCommandBySelector:(SEL)arg1;
+- (unsigned int)countMatchesForText:(id)arg1 caseSensitive:(BOOL)arg2 limit:(unsigned int)arg3 markMatches:(BOOL)arg4;
 - (void)cut:(id)arg1;
 - (void)dataSourceUpdated:(id)arg1;
 - (void)dealloc;
@@ -138,12 +138,12 @@
 - (void)executeCoreCommandByName:(const char *)arg1;
 - (void)executeCoreCommandBySelector:(SEL)arg1;
 - (void)finalize;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })firstRectForCharacterRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })firstRectForCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)hasMarkedText;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (void)ignoreSpelling:(id)arg1;
 - (void)indent:(id)arg1;
-- (NSInteger)indexOfAccessibilityElement:(id)arg1;
+- (int)indexOfAccessibilityElement:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertBacktab:(id)arg1;
 - (void)insertLineBreak:(id)arg1;
@@ -166,8 +166,8 @@
 - (void)makeTextWritingDirectionLeftToRight:(id)arg1;
 - (void)makeTextWritingDirectionNatural:(id)arg1;
 - (void)makeTextWritingDirectionRightToLeft:(id)arg1;
-- (NSUInteger)markAllMatchesForText:(id)arg1 caseSensitive:(BOOL)arg2 limit:(NSUInteger)arg3;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })markedRange;
+- (unsigned int)markAllMatchesForText:(id)arg1 caseSensitive:(BOOL)arg2 limit:(unsigned int)arg3;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })markedRange;
 - (BOOL)markedTextMatchesAreHighlighted;
 - (void)markedTextUpdate:(id)arg1;
 - (void)mouseDown:(id)arg1;
@@ -235,7 +235,7 @@
 - (void)selectSentence:(id)arg1;
 - (void)selectToMark:(id)arg1;
 - (void)selectWord:(id)arg1;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })selectedRange;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })selectedRange;
 - (id)selectedString;
 - (struct CGImage { }*)selectionImageForcingBlackText:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionImageRect;
@@ -244,7 +244,7 @@
 - (id)selectionView;
 - (void)setDataSource:(id)arg1;
 - (void)setMark:(id)arg1;
-- (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setMarkedTextMatchesAreHighlighted:(BOOL)arg1;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNeedsLayout:(BOOL)arg1;

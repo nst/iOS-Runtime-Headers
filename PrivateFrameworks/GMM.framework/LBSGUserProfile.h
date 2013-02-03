@@ -9,10 +9,10 @@
     NSString *_userName;
 }
 
-@property(retain) NSString *authToken;
-@property(retain) NSString *userName;
+@property(retain) NSString * authToken;
 @property(readonly) BOOL hasAuthToken;
 @property(readonly) BOOL hasUserName;
+@property(retain) NSString * userName;
 
 - (id)authToken;
 - (void)dealloc;

@@ -11,9 +11,9 @@
     BOOL _partial;
 }
 
-@property(retain) NSData *data;
-@property(retain) NSString *partName;
 @property(getter=isComplete) BOOL complete;
+@property(retain) NSData * data;
+@property(retain) NSString * partName;
 @property(getter=isPartial) BOOL partial;
 
 - (id)data;

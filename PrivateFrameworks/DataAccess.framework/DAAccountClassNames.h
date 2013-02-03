@@ -11,10 +11,10 @@
     NSString *_daemonAccountClassName;
 }
 
-@property(retain) NSString *accountClassName;
-@property(retain) NSString *agentClassName;
-@property(retain) NSString *clientAccountClassName;
-@property(retain) NSString *daemonAccountClassName;
+@property(retain) NSString * accountClassName;
+@property(retain) NSString * agentClassName;
+@property(retain) NSString * clientAccountClassName;
+@property(retain) NSString * daemonAccountClassName;
 
 - (id)accountClassName;
 - (id)agentClassName;

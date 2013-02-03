@@ -21,7 +21,7 @@
 - (BOOL)hasHoverHyperlink;
 - (BOOL)hasOrientedBounds;
 - (BOOL)hasWrdInline;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)hoverHyperlink;
 - (id)initWithDefaults;
 - (BOOL)isAspectRatioLocked;

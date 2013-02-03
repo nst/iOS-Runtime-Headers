@@ -14,12 +14,12 @@
 - (void)dealloc;
 - (id)initWithJob:(id)arg1;
 - (void)loadView;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)popToJobsView;
 - (void)setupCancelButton;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)updateCancelButton;
 - (void)updateJobInfo;
 - (void)viewWillAppear:(BOOL)arg1;

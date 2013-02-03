@@ -12,6 +12,6 @@
 
 - (void)dealloc;
 - (id)initWithValidInterfaceOrientationsBlock:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

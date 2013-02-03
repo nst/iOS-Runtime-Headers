@@ -7,15 +7,15 @@
         unsigned long long st_ino; 
         long long st_size; 
         struct timespec { 
-            NSInteger tv_sec; 
+            int tv_sec; 
             long tv_nsec; 
         } st_mtimex; 
     BOOL _checkedOnce;
     struct __CFArray { } *_dirtyKeys;
-    NSInteger _formatToWrite;
-    NSUInteger _group;
+    int _formatToWrite;
+    unsigned int _group;
     unsigned short _mode;
-    NSUInteger _owner;
+    unsigned int _owner;
     } _statInfo;
     struct __CFURL { } *_url;
 }

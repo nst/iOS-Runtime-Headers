@@ -2,26 +2,27 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaQuery;
+@class MPMediaQueryCriteria;
 
 @interface MPMediaLibraryEntityWriteStream : NSObject {
     BOOL _cancelled;
-    NSUInteger _count;
+    unsigned int _count;
     id _entityArray;
-    NSUInteger _index;
-    MPMediaQuery *_query;
+    unsigned int _index;
+    MPMediaQueryCriteria *_queryCriteria;
 }
 
 @property(getter=isCancelled,readonly) BOOL cancelled;
-@property(readonly) NSUInteger count;
-@property(readonly) NSUInteger index;
+@property(readonly) unsigned int count;
+@property(readonly) unsigned int index;
 
-- (void)_writeCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQuery:(id)arg3;
+- (void)_writeCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQueryCriteria:(id)arg3;
 - (void)cancel;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
-- (NSUInteger)index;
-- (id)initWithEntityStreamArray:(id)arg1 query:(id)arg2 count:(NSUInteger)arg3;
+- (id)description;
+- (unsigned int)index;
+- (id)initWithEntityStreamArray:(id)arg1 queryCriteria:(id)arg2 count:(unsigned int)arg3;
 - (BOOL)isCancelled;
 - (void)writeCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2;
 - (void)writeItemWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2;

@@ -2,30 +2,32 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSString, NSMutableSet;
+@class <CoreDAVContainerInfoTaskGroupDelegate>, NSMutableSet, NSString, NSSet;
 
 @interface CoreDAVContainerInfoTaskGroup : CoreDAVTaskGroup <CoreDAVPropFindTaskDelegate> {
     NSString *_appSpecificHomeSetPropName;
     NSString *_appSpecificHomeSetPropNameSpace;
-    NSInteger _containerInfoDepth;
+    int _containerInfoDepth;
     NSMutableSet *_containerURLs;
     NSMutableSet *_containers;
-    NSInteger _phase;
+    int _phase;
 }
 
-@property <CoreDAVContainerInfoTaskGroupDelegate> *delegate;
-@property NSInteger containerInfoDepth;
+@property int containerInfoDepth;
+@property(readonly) NSSet * containerURLs;
+@property <CoreDAVContainerInfoTaskGroupDelegate> * delegate;
 
 - (id)_copyContainerParserMappings;
 - (id)_copyContainerWithURL:(id)arg1 andProperties:(id)arg2;
 - (void)_getContainerHomeSet;
 - (void)_getContainerTopLevelInfo;
-- (NSInteger)containerInfoDepth;
+- (int)containerInfoDepth;
+- (id)containerURLs;
 - (void)dealloc;
 - (id)description;
 - (id)initWithAccountInfoProvider:(id)arg1 containerURLs:(id)arg2 taskManager:(id)arg3;
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
-- (void)setContainerInfoDepth:(NSInteger)arg1;
+- (void)setContainerInfoDepth:(int)arg1;
 - (void)startTaskGroup;
 - (void)taskGroupWillCancelWithError:(id)arg1;
 

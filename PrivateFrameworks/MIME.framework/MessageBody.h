@@ -9,15 +9,15 @@
 }
 
 - (id)attachments;
-- (id)contentToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2 asHTML:(BOOL)arg3 isComplete:(BOOL*)arg4;
-- (id)contentToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2 asHTML:(BOOL)arg3;
+- (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3 isComplete:(BOOL*)arg4;
+- (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3;
 - (void)dealloc;
 - (id)htmlContent;
-- (id)htmlContentToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2;
+- (id)htmlContentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2;
 - (BOOL)isHTML;
 - (BOOL)isRich;
 - (id)message;
-- (NSUInteger)numberOfAttachmentsSigned:(BOOL*)arg1 encrypted:(BOOL*)arg2;
+- (unsigned int)numberOfAttachmentsSigned:(BOOL*)arg1 encrypted:(BOOL*)arg2;
 - (id)rawData;
 - (void)setMessage:(id)arg1;
 - (id)textHtmlPart;

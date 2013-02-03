@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class NSMutableDictionary, <ADMessageProxyDelegate>;
+@class NSArray, NSMutableDictionary, <ADMessageProxyDelegate>;
 
 @interface ADMessageProxy : NSObject {
     <ADMessageProxyDelegate> *_delegate;
@@ -10,10 +10,11 @@
     NSMutableDictionary *_proxyItems;
 }
 
-@property <ADMessageProxyDelegate> *delegate;
-@property(readonly) NSArray *itemArrayCopy;
-@property(retain) NSMutableDictionary *proxyItems;
+@property <ADMessageProxyDelegate> * delegate;
+@property(readonly) NSArray * itemArrayCopy;
 @property Class itemClass;
+@property(readonly) int itemCount;
+@property(retain) NSMutableDictionary * proxyItems;
 
 - (void)addItem:(id)arg1;
 - (void)dealloc;
@@ -23,6 +24,7 @@
 - (id)init;
 - (id)itemArrayCopy;
 - (Class)itemClass;
+- (int)itemCount;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)proxyItems;
 - (void)removeItem:(id)arg1;

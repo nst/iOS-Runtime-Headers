@@ -3,29 +3,29 @@
  */
 
 @interface VoiceChatSessionBeaconState : NSObject {
-    struct tagVoiceChatBeacon { NSUInteger x1; NSUInteger x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; } *lastReceivedBeacon;
+    struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; } *lastReceivedBeacon;
     BOOL needsSend;
-    NSUInteger receivedState;
-    NSUInteger sentState;
-    NSUInteger typeToSend;
+    unsigned int receivedState;
+    unsigned int sentState;
+    unsigned int typeToSend;
 }
 
 @property BOOL needsSend;
-@property NSUInteger receivedState;
-@property NSUInteger sentState;
-@property NSUInteger typeToSend;
+@property unsigned int receivedState;
+@property unsigned int sentState;
+@property unsigned int typeToSend;
 
 - (void)dealloc;
 - (id)init;
-- (struct tagVoiceChatBeacon { NSUInteger x1; NSUInteger x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; }*)lastReceivedBeacon;
+- (struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)lastReceivedBeacon;
 - (BOOL)needsSend;
-- (NSUInteger)receivedState;
-- (NSUInteger)sentState;
-- (void)setLastReceivedBeacon:(struct tagVoiceChatBeacon { NSUInteger x1; NSUInteger x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; }*)arg1;
+- (unsigned int)receivedState;
+- (unsigned int)sentState;
+- (void)setLastReceivedBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1;
 - (void)setNeedsSend:(BOOL)arg1;
-- (void)setReceivedState:(NSUInteger)arg1;
-- (void)setSentState:(NSUInteger)arg1;
-- (void)setTypeToSend:(NSUInteger)arg1;
-- (NSUInteger)typeToSend;
+- (void)setReceivedState:(unsigned int)arg1;
+- (void)setSentState:(unsigned int)arg1;
+- (void)setTypeToSend:(unsigned int)arg1;
+- (unsigned int)typeToSend;
 
 @end

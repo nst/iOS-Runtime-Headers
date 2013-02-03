@@ -2,89 +2,57 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class EDFormula, EDName, EDRowBlocks, EDSheet;
 
 @interface EPFormulaCleaner : EDProcessor {
-     /* Encoded args for previous method: B16@0:4I8^I12 */
-     /* Encoded args for previous method: v24@0:4^i8B12^i16B20 */
-     /* Encoded args for previous method: B24@0:4i8B12i16B20 */
-     /* Encoded args for previous method: B44@0:4@8i12B16i20B24i28B32i36B40 */
-     /* Encoded args for previous method: v28@0:4@8i12B16i20B24 */
-     /* Encoded args for previous method: v44@0:4@8i12B16i20B24i28B32i36B40 */
-     /* Encoded args for previous method: B12@0:4I8 */
-     /* Encoded args for previous method: B12@0:4I8 */
-     /* Encoded args for previous method: B12@0:4I8 */
-     /* Encoded args for previous method: B12@0:4I8 */
-     /* Encoded args for previous method: B12@0:4I8 */
-     /* Encoded args for previous method: B12@0:4I8 */
-     /* Encoded args for previous method: B12@0:4I8 */
-     /* Encoded args for previous method: B12@0:4I8 */
-     /* Encoded args for previous method: B12@0:4I8 */
-     /* Encoded args for previous method: B12@0:4I8 */
-     /* Encoded args for previous method: B16@0:4I8^I12 */
-     /* Encoded args for previous method: B16@0:4I8^I12 */
-     /* Encoded args for previous method: B20@0:4I8B12^I16 */
-     /* Encoded args for previous method: B16@0:4I8B12 */
-     /* Encoded args for previous method: @16@0:4I8B12 */
-     /* Encoded args for previous method: B20@0:4I8I12I16 */
-     /* Encoded args for previous method: B16@0:4i8I12 */
-     /* Encoded args for previous method: B16@0:4@8B12 */
-     /* Encoded args for previous method: B12@0:4I8 */
-     /* Encoded args for previous method: B20@0:4i8@12I16 */
-     /* Encoded args for previous method: @24@0:4I8I12B16^B20 */
-     /* Encoded args for previous method: B12@0:4@8 */
     EDRowBlocks *mBaseFormulaRowBlocks;
-    NSInteger mColumnOffset;
+    int mColumnOffset;
     EDSheet *mCurrentSheet;
     EDFormula *mFormula;
     EDName *mParentName;
-    NSInteger mRowOffset;
+    int mRowOffset;
 }
 
-- (void)addOffsetsToRow:(NSInteger*)arg1 rowRelative:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2 column:(NSInteger*)arg3 columnRelative:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg4;
+- (void)addOffsetsToRow:(int*)arg1 rowRelative:(bool)arg2 column:(int*)arg3 columnRelative:(bool)arg4;
 - (void)applyMaxCellsInName:(id)arg1;
 - (void)applyProcessorToObject:(id)arg1 sheet:(id)arg2;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)checkCustomFunction:(NSUInteger)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)checkFunctionId:(NSInteger)arg1 tokenIndex:(NSUInteger)arg2;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)checkSupportedAddInName:(id)arg1 externalLink:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)cleanArea3D:(NSUInteger)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)cleanArea:(NSUInteger)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)cleanArray:(NSUInteger)arg1;
+- (bool)checkCustomFunction:(unsigned int)arg1;
+- (bool)checkFunctionId:(int)arg1 tokenIndex:(unsigned int)arg2;
+- (bool)checkSupportedAddInName:(id)arg1 externalLink:(bool)arg2;
+- (bool)cleanArea3D:(unsigned int)arg1;
+- (bool)cleanArea:(unsigned int)arg1;
+- (bool)cleanArray:(unsigned int)arg1;
 - (void)cleanFormula:(id)arg1 name:(id)arg2;
 - (void)cleanFormula:(id)arg1 sheet:(id)arg2 name:(id)arg3;
 - (void)cleanFormula:(id)arg1 sheet:(id)arg2;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)cleanFunc:(NSUInteger)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)cleanFuncVar:(NSUInteger)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)cleanIsect:(NSUInteger)arg1 removedTokenCount:(NSUInteger*)arg2;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)cleanName:(NSUInteger)arg1 nameIndex:(NSUInteger)arg2 sheetIndex:(NSUInteger)arg3;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)cleanName:(NSUInteger)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)cleanNameX:(NSUInteger)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)cleanRange:(NSUInteger)arg1 removedTokenCount:(NSUInteger*)arg2;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)cleanRef3D:(NSUInteger)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)cleanRef:(NSUInteger)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)cleanTokenAtIndex:(NSUInteger)arg1 removedTokenCount:(NSUInteger*)arg2;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)cleanUnion:(NSUInteger)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)combineCellReferences:(NSUInteger)arg1 intersection:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2 removedTokenCount:(NSUInteger*)arg3;
+- (bool)cleanFunc:(unsigned int)arg1;
+- (bool)cleanFuncVar:(unsigned int)arg1;
+- (bool)cleanIsect:(unsigned int)arg1 removedTokenCount:(unsigned int*)arg2;
+- (bool)cleanName:(unsigned int)arg1 nameIndex:(unsigned int)arg2 sheetIndex:(unsigned int)arg3;
+- (bool)cleanName:(unsigned int)arg1;
+- (bool)cleanNameX:(unsigned int)arg1;
+- (bool)cleanRange:(unsigned int)arg1 removedTokenCount:(unsigned int*)arg2;
+- (bool)cleanRef3D:(unsigned int)arg1;
+- (bool)cleanRef:(unsigned int)arg1;
+- (bool)cleanTokenAtIndex:(unsigned int)arg1 removedTokenCount:(unsigned int*)arg2;
+- (bool)cleanUnion:(unsigned int)arg1;
+- (bool)combineCellReferences:(unsigned int)arg1 intersection:(bool)arg2 removedTokenCount:(unsigned int*)arg3;
 - (void)dealloc;
 - (id)extractFormulaToCleanFromSharedFormula:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isLinkReferenceIndexSupported:(NSUInteger)arg1 allowExternal:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isObjectSupported:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isReferenceValidInLassoForRow:(NSInteger)arg1 rowRelative:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2 column:(NSInteger)arg3 columnRelative:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg4;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isReferenceValidInLassoForSheet:(id)arg1 rowMin:(NSInteger)arg2 rowMinRelative:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3 rowMax:(NSInteger)arg4 rowMaxRelative:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg5 columnMin:(NSInteger)arg6 columnMinRelative:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg7 columnMax:(NSInteger)arg8 columnMaxRelative:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg9;
+- (bool)isLinkReferenceIndexSupported:(unsigned int)arg1 allowExternal:(bool)arg2;
+- (bool)isObjectSupported:(id)arg1;
+- (bool)isReferenceValidInLassoForRow:(int)arg1 rowRelative:(bool)arg2 column:(int)arg3 columnRelative:(bool)arg4;
+- (bool)isReferenceValidInLassoForSheet:(id)arg1 rowMin:(int)arg2 rowMinRelative:(bool)arg3 rowMax:(int)arg4 rowMaxRelative:(bool)arg5 columnMin:(int)arg6 columnMinRelative:(bool)arg7 columnMax:(int)arg8 columnMaxRelative:(bool)arg9;
 - (void)prepareToProcessFormula:(id)arg1 sheet:(id)arg2 name:(id)arg3;
-- (void)reportWarning:(NSInteger)arg1 parameter:(id)arg2;
-- (void)reportWarning:(NSInteger)arg1;
+- (void)reportWarning:(int)arg1 parameter:(id)arg2;
+- (void)reportWarning:(int)arg1;
 - (void)reset;
-- (void)updateSheet:(id)arg1 row:(NSInteger)arg2 rowRelative:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3 column:(NSInteger)arg4 columnRelative:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg5;
-- (void)updateSheet:(id)arg1 rowMin:(NSInteger)arg2 rowMinRelative:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3 rowMax:(NSInteger)arg4 rowMaxRelative:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg5 columnMin:(NSInteger)arg6 columnMinRelative:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg7 columnMax:(NSInteger)arg8 columnMaxRelative:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg9;
-- (void)updateWorksheet:(id)arg1 row:(NSInteger)arg2 column:(NSInteger)arg3 inDictionary:(id)arg4;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)useEvaluationStackToCheckFunctionId:(NSInteger)arg1 functionName:(id)arg2 tokenIndex:(NSUInteger)arg3;
-- (id)useEvaluationStackToGetParameter:(NSUInteger)arg1 tokenIndex:(NSUInteger)arg2 allReferencesAllowed:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3 success:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void**)arg4;
-- (NSUInteger)useEvaluationStackToGetParameter:(NSUInteger)arg1 tokenIndex:(NSUInteger)arg2;
-- (id)worksheetFromLinkReferenceIndex:(NSUInteger)arg1 loadIfNeeded:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
+- (void)updateSheet:(id)arg1 row:(int)arg2 rowRelative:(bool)arg3 column:(int)arg4 columnRelative:(bool)arg5;
+- (void)updateSheet:(id)arg1 rowMin:(int)arg2 rowMinRelative:(bool)arg3 rowMax:(int)arg4 rowMaxRelative:(bool)arg5 columnMin:(int)arg6 columnMinRelative:(bool)arg7 columnMax:(int)arg8 columnMaxRelative:(bool)arg9;
+- (void)updateWorksheet:(id)arg1 row:(int)arg2 column:(int)arg3 inDictionary:(id)arg4;
+- (bool)useEvaluationStackToCheckFunctionId:(int)arg1 functionName:(id)arg2 tokenIndex:(unsigned int)arg3;
+- (id)useEvaluationStackToGetParameter:(unsigned int)arg1 tokenIndex:(unsigned int)arg2 allReferencesAllowed:(bool)arg3 success:(bool*)arg4;
+- (unsigned int)useEvaluationStackToGetParameter:(unsigned int)arg1 tokenIndex:(unsigned int)arg2;
+- (id)worksheetFromLinkReferenceIndex:(unsigned int)arg1 loadIfNeeded:(bool)arg2;
 
 @end

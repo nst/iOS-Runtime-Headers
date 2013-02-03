@@ -15,8 +15,8 @@
 
 + (id)memoryWithMachTaskContainer:(id)arg1 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg2 architecture:(id)arg3;
 + (id)memoryWithMachTaskContainer:(id)arg1;
-+ (id)memoryWithPid:(NSInteger)arg1 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg2 architecture:(id)arg3;
-+ (id)memoryWithPid:(NSInteger)arg1;
++ (id)memoryWithPid:(int)arg1 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg2 architecture:(id)arg3;
++ (id)memoryWithPid:(int)arg1;
 
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
 - (id)architecture;
@@ -27,7 +27,7 @@
 - (id)machTaskContainer;
 - (id)memoryAtAddress:(unsigned long long)arg1 maxSize:(unsigned long long)arg2;
 - (id)memoryFromSubRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 mapToAddress:(unsigned long long)arg2 architecture:(id)arg3;
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })regionAtAddress:(unsigned long long)arg1 minProtection:(NSInteger)arg2;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })regionAtAddress:(unsigned long long)arg1 minProtection:(int)arg2;
 - (id)swappedView;
 - (id)view;
 

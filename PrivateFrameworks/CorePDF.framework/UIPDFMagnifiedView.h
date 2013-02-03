@@ -2,6 +2,8 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
+@class UIPDFSelection, CAShapeLayer, CALayer;
+
 @interface UIPDFMagnifiedView : UIView {
     struct CGSize { 
         float width; 
@@ -11,19 +13,35 @@
         float y; 
     struct CGImage { } *_bitmap;
     } _bitmapSize;
+    CAShapeLayer *_glassLayer;
+    struct CGColor { } *_highLightColor;
+    BOOL _isLoupe;
+    CALayer *_leftBar;
+    CALayer *_leftGrabber;
+    float _magnification;
+    CALayer *_magnifiedPageLayer;
     struct CGImage { } *_mask;
     } _offset;
+    CALayer *_rightBar;
+    CALayer *_rightGrabber;
+    UIPDFSelection *_selection;
+    CAShapeLayer *_selectionLayer;
 }
 
-@property CGImage *bitmap;
-@property CGPoint offset;
+@property struct CGImage { }* bitmap;
+@property float magnification;
+@property struct CGPoint { float x; float y; } offset;
+@property UIPDFSelection * selection;
 
 - (struct CGImage { }*)bitmap;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 loupe:(BOOL)arg2;
+- (float)magnification;
 - (struct CGPoint { float x1; float x2; })offset;
+- (id)selection;
 - (void)setBitmap:(struct CGImage { }*)arg1;
+- (void)setMagnification:(float)arg1;
 - (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setSelection:(id)arg1;
 
 @end

@@ -23,7 +23,7 @@
 - (BOOL)argumentsRetained;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)getArgument:(void*)arg1 atIndex:(NSInteger)arg2;
+- (void)getArgument:(void*)arg1 atIndex:(int)arg2;
 - (void)getReturnValue:(void*)arg1;
 - (id)init;
 - (void)invoke;
@@ -34,7 +34,7 @@
 - (BOOL)mf_shouldLogInvocation;
 - (void)retainArguments;
 - (SEL)selector;
-- (void)setArgument:(void*)arg1 atIndex:(NSInteger)arg2;
+- (void)setArgument:(void*)arg1 atIndex:(int)arg2;
 - (void)setReturnValue:(void*)arg1;
 - (void)setSelector:(SEL)arg1;
 - (void)setTarget:(id)arg1;

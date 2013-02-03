@@ -2,28 +2,30 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
+@class NSDictionary;
+
 @interface AVAVVideoSettingsVideoOutputSettings : AVVideoOutputSettings <AVReencodedVideoSettingsForFig> {
     BOOL _dictionaryWasFullyFormed;
 }
 
-@property(readonly) NSDictionary *videoCompressionProperties;
-@property(readonly) void *videoEncoderSpecification;
-@property(readonly) NSDictionary *videoScalingProperties;
-@property(readonly) NSInteger height;
-@property(readonly) NSUInteger videoCodecType;
-@property(readonly) NSInteger width;
+@property(readonly) int height;
+@property(readonly) unsigned int videoCodecType;
+@property(readonly) NSDictionary * videoCompressionProperties;
+@property(readonly) NSDictionary * videoEncoderSpecification;
+@property(readonly) NSDictionary * videoScalingProperties;
+@property(readonly) int width;
 
 + (id)_videoOutputSettingsWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (id)eligibleOutputSettingsDictionaryKeys;
 
-- (NSInteger)height;
+- (int)height;
 - (id)initWithAVVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 - (BOOL)isDictionaryFullyFormed;
 - (unsigned long)videoCodecType;
 - (id)videoCompressionProperties;
-- (void*)videoEncoderSpecification;
+- (id)videoEncoderSpecification;
 - (id)videoScalingProperties;
-- (NSInteger)width;
+- (int)width;
 - (BOOL)willYieldCompressedSamples;
 
 @end

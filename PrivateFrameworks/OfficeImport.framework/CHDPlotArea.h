@@ -2,37 +2,28 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class CHDAxesCollection, OADGraphicProperties, CHDChartTypesCollection;
 
 @interface CHDPlotArea : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
+    boolmCategoryAxesReversed;
+    boolmCategoryAxesReversedOverridden;
+    boolmContainsVolumeStockType;
     CHDAxesCollection *mAxes;
     CHDChartTypesCollection *mChartTypes;
     OADGraphicProperties *mGraphicProperties;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mCategoryAxesReversed;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mCategoryAxesReversedOverridden;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mContainsVolumeStockType;
 }
 
 - (id)axes;
 - (id)chartTypes;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)containsVolumeStockType;
+- (bool)containsVolumeStockType;
 - (void)dealloc;
 - (id)graphicProperties;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)hasSecondaryAxis;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)hasSecondaryYAxisDeleted;
+- (bool)hasSecondaryAxis;
+- (bool)hasSecondaryYAxisDeleted;
 - (id)initWithChart:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isCategoryAxesReversed;
+- (bool)isCategoryAxesReversed;
 - (void)markSecondaryAxes;
-- (void)setContainsVolumeStockType:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setContainsVolumeStockType:(bool)arg1;
 - (void)setGraphicProperties:(id)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface SSProtocolCondition : NSObject {
-    NSInteger _operator;
+    int _operator;
     id _value;
 }
 

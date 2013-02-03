@@ -2,24 +2,24 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSDictionary;
+@class NSSet, NSDictionary;
 
 @interface AVOutputSettings : NSObject <NSCopying> {
     NSDictionary *_outputSettingsDictionary;
 }
 
-@property(readonly) NSSet *compatibleMediaTypes;
-@property(readonly) NSDictionary *outputSettingsDictionary;
+@property(readonly) NSSet * compatibleMediaTypes;
 @property(getter=isDictionaryFullyFormed,readonly) BOOL dictionaryFullyFormed;
+@property(readonly) NSDictionary * outputSettingsDictionary;
 @property(readonly) BOOL willYieldCompressedSamples;
 
 + (id)_outputSettingsWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
-+ (NSUInteger)_validateOutputSettingsDictionary:(id)arg1 compatibilityDescription:(id*)arg2;
++ (unsigned int)_validateOutputSettingsDictionary:(id)arg1 compatibilityDescription:(id*)arg2;
 + (id)defaultOutputSettingsForMediaType:(id)arg1;
 + (id)eligibleOutputSettingsDictionaryKeys;
 + (id)outputSettingsWithOutputSettingsDictionary:(id)arg1;
 + (id)registeredOutputSettingsClasses;
-+ (NSUInteger)validateOutputSettingsDictionary:(id)arg1;
++ (unsigned int)validateOutputSettingsDictionary:(id)arg1;
 
 - (id)compatibleMediaTypes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
+@class DACalendar, NSArray;
+
 @interface DACalendarDatabase : DACalendarObject {
     BOOL _isChangeLoggingEnabled;
 }
 
-@property(readonly) DACalendar *defaultCalendarForNewEvents;
-@property(readonly) DACalendar *defaultLocalCalendar;
-@property(readonly) NSArray *stores;
+@property(readonly) DACalendar * defaultCalendarForNewEvents;
+@property(readonly) DACalendar * defaultLocalCalendar;
 @property BOOL isChangeLoggingEnabled;
+@property(readonly) NSArray * stores;
 
 - (id)calendar;
 - (id)defaultCalendarForNewEvents;

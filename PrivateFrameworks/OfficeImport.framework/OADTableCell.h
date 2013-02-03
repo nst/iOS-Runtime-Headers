@@ -5,35 +5,35 @@
 @class OADTextBody, OADTableCellProperties;
 
 @interface OADTableCell : NSObject {
-    NSInteger mGridSpan;
+    int mGridSpan;
     BOOL mHorzMerge;
-    NSInteger mLeftColumn;
+    int mLeftColumn;
     OADTableCellProperties *mProperties;
-    NSInteger mRowSpan;
+    int mRowSpan;
     OADTextBody *mTextBody;
-    NSInteger mTopRow;
+    int mTopRow;
     BOOL mVertMerge;
 }
 
 - (void)dealloc;
-- (NSInteger)gridSpan;
+- (int)gridSpan;
 - (BOOL)horzMerge;
 - (id)init;
-- (NSInteger)leftColumn;
-- (BOOL)merge:(NSInteger)arg1;
+- (int)leftColumn;
+- (BOOL)merge:(int)arg1;
 - (id)properties;
-- (NSInteger)rowSpan;
-- (void)setGridSpan:(NSInteger)arg1;
+- (int)rowSpan;
+- (void)setGridSpan:(int)arg1;
 - (void)setHorzMerge:(BOOL)arg1;
-- (void)setLeftColumn:(NSInteger)arg1;
+- (void)setLeftColumn:(int)arg1;
 - (void)setProperties:(id)arg1;
-- (void)setRowSpan:(NSInteger)arg1;
+- (void)setRowSpan:(int)arg1;
 - (void)setTextBody:(id)arg1;
-- (void)setTopRow:(NSInteger)arg1;
+- (void)setTopRow:(int)arg1;
 - (void)setVertMerge:(BOOL)arg1;
-- (NSInteger)spanAlongDir:(NSInteger)arg1;
+- (int)spanAlongDir:(int)arg1;
 - (id)textBody;
-- (NSInteger)topRow;
+- (int)topRow;
 - (BOOL)vertMerge;
 
 @end

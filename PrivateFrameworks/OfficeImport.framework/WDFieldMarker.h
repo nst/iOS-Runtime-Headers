@@ -12,15 +12,15 @@
     unsigned int mPrivateResult : 1;
     unsigned int mNested : 1;
     unsigned int mHasSeparator : 1;
-    NSInteger mFieldPosition;
+    int mFieldPosition;
     unsigned char mFieldType;
-    NSInteger mMarkerType;
+    int mMarkerType;
     WDCharacterProperties *mProperties;
 }
 
 - (void)clearProperties;
 - (void)dealloc;
-- (NSInteger)fieldMarkerType;
+- (int)fieldMarkerType;
 - (long)fieldPosition;
 - (unsigned char)fieldType;
 - (BOOL)hasSeparator;
@@ -31,8 +31,8 @@
 - (id)properties;
 - (BOOL)resultDirty;
 - (BOOL)resultEdited;
-- (NSInteger)runType;
-- (void)setFieldMarkerType:(NSInteger)arg1;
+- (int)runType;
+- (void)setFieldMarkerType:(int)arg1;
 - (void)setFieldPosition:(long)arg1;
 - (void)setFieldType:(unsigned char)arg1;
 - (void)setHasSeparator:(BOOL)arg1;

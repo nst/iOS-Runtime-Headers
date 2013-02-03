@@ -5,19 +5,27 @@
 @class NSData;
 
 @interface MKPanoramaDecoderRequest : MKPanoramaRequest {
+    int extendDown;
+    int extendRight;
     NSData *imageData;
-    NSUInteger texture;
+    unsigned int texture;
 }
 
-@property(retain) NSData *imageData;
-@property NSUInteger texture;
+@property int extendDown;
+@property int extendRight;
+@property(retain) NSData * imageData;
+@property unsigned int texture;
 
 - (void)dealloc;
 - (id)description;
+- (int)extendDown;
+- (int)extendRight;
 - (id)imageData;
-- (id)initWithPanoramaID:(id)arg1 tilePath:(NSInteger)arg2 imageData:(id)arg3;
+- (id)initWithPanoramaID:(id)arg1 tilePath:(int)arg2 imageData:(id)arg3;
+- (void)setExtendDown:(int)arg1;
+- (void)setExtendRight:(int)arg1;
 - (void)setImageData:(id)arg1;
-- (void)setTexture:(NSUInteger)arg1;
-- (NSUInteger)texture;
+- (void)setTexture:(unsigned int)arg1;
+- (unsigned int)texture;
 
 @end

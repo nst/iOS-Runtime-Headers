@@ -5,21 +5,21 @@
 @class SSRequestGroup, <SSRequestDelegate>, NSString, NSLock;
 
 @interface SSRequest : NSObject {
-    NSInteger _backgroundTaskIdentifier;
+    int _backgroundTaskIdentifier;
     BOOL _cancelAfterTaskExpiration;
     <SSRequestDelegate> *_delegate;
     SSRequestGroup *_group;
     NSString *_groupIdentifier;
     NSString *_identifier;
     NSLock *_lock;
-    NSInteger _state;
+    int _state;
 }
 
-@property <SSRequestDelegate> *delegate;
-@property SSRequestGroup *requestGroup;
-@property(retain) NSString *requestGroupIdentifier;
-@property(retain) NSString *requestIdentifier;
-@property(readonly) NSInteger requestState;
+@property <SSRequestDelegate> * delegate;
+@property SSRequestGroup * requestGroup;
+@property(retain) NSString * requestGroupIdentifier;
+@property(retain) NSString * requestIdentifier;
+@property(readonly) int requestState;
 @property BOOL shouldCancelAfterTaskExpiration;
 
 - (void)_beginBackgroundTask;
@@ -32,7 +32,7 @@
 - (id)_newIdentifier;
 - (void)_requestFailedNotification:(id)arg1;
 - (void)_requestFinishedNotification:(id)arg1;
-- (void)_setRequestState:(NSInteger)arg1;
+- (void)_setRequestState:(int)arg1;
 - (void)awakeFromDaemonInRequestGroup:(id)arg1;
 - (void)cancel;
 - (id)copyPropertyListEncoding;
@@ -50,7 +50,9 @@
 - (id)requestGroup;
 - (id)requestGroupIdentifier;
 - (id)requestIdentifier;
-- (NSInteger)requestState;
+- (int)requestState;
+- (void)sendDidFailWithError:(id)arg1;
+- (void)sendDidFinish;
 - (void)setDelegate:(id)arg1;
 - (void)setRequestGroup:(id)arg1;
 - (void)setRequestGroupIdentifier:(id)arg1;

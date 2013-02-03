@@ -19,7 +19,7 @@
 
 - (void)dealloc;
 - (id)initWithMachOHeader:(id)arg1;
-- (id)parseAbbrevDictionaryAtOffset:(NSUInteger)arg1;
+- (id)parseAbbrevDictionaryAtOffset:(unsigned int)arg1;
 - (void)parseCompilationUnitWithMemoryView:(id)arg1 withHeader:(id)arg2;
 - (void)parseLineNumberMatrixAtOffset:(unsigned long long)arg1 withBaseDirectory:(id)arg2 withWordSize:(unsigned char)arg3;
 

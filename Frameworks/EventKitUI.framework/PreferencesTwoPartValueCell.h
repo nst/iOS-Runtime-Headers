@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKCellShortener>, TwoPartTextLabel;
+@class <EKCellShortener>, UIColor, TwoPartTextLabel;
 
 @interface PreferencesTwoPartValueCell : UITableViewCell {
-    NSUInteger _notifiedShort;
+    unsigned int _notifiedShort;
     <EKCellShortener> *_shortener;
     TwoPartTextLabel *_twoPartLabel;
 }
 
-@property <EKCellShortener> *shortener;
-@property(retain,readonly) TwoPartTextLabel *twoPartTextLabel;
-@property(retain,readonly) UIColor *valueColor;
+@property <EKCellShortener> * shortener;
+@property(retain,readonly) TwoPartTextLabel * twoPartTextLabel;
+@property(retain,readonly) UIColor * valueColor;
 
 - (void)_layoutSubviewsCore;
 - (void)checkValueWidths;

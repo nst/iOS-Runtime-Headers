@@ -11,8 +11,8 @@
     SUScriptObject *_thisObject;
 }
 
-@property(retain) WebScriptObject *scriptObject;
-@property SUScriptObject *thisObject;
+@property(retain) WebScriptObject * scriptObject;
+@property SUScriptObject * thisObject;
 
 - (void)_callFunction:(id)arg1 withArguments:(id)arg2 delegate:(id)arg3;
 - (id)_copyAdjustedArgumentsForArguments:(id)arg1;

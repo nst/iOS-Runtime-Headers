@@ -11,7 +11,7 @@
     UIImageView *_iconView;
     BOOL _isLandscape;
     BOOL _lockEnabled;
-    NSInteger _orientation;
+    int _orientation;
     UIView *_rotationHolder;
     BOOL _videoIsRecording;
     BOOL _videoMode;
@@ -30,14 +30,13 @@
 - (unsigned long long)accessibilityTraits;
 - (void)dealloc;
 - (id)initWithDefaultSize;
-- (NSInteger)orientation;
+- (int)orientation;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setButtonOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setDontShowDisabledState:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setLockEnabled:(BOOL)arg1;
 - (void)setVideoIsRecording:(BOOL)arg1;
 - (void)setVideoMode:(BOOL)arg1;
-- (void)willMoveToSuperview:(id)arg1;
 
 @end

@@ -6,25 +6,25 @@
 
 @interface NSExpressionDescription : NSPropertyDescription {
     NSExpression *_expression;
-    NSUInteger _expressionResultType;
+    unsigned int _expressionResultType;
     id _reservedtype1_1;
     id _reservedtype1_2;
-    NSUInteger _reservedtype1_3;
+    unsigned int _reservedtype1_3;
     id _reservedtype1_4;
-    NSUInteger _reservedtype1_5;
+    unsigned int _reservedtype1_5;
     id _reservedtype1_6;
     void *_reservedtype2_1;
     void *_reservedtype2_2;
     void *_reservedtype2_3;
 }
 
-- (NSUInteger)_propertyType;
+- (unsigned int)_propertyType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)expression;
-- (NSUInteger)expressionResultType;
+- (unsigned int)expressionResultType;
 - (id)init;
 - (void)setExpression:(id)arg1;
-- (void)setExpressionResultType:(NSUInteger)arg1;
+- (void)setExpressionResultType:(unsigned int)arg1;
 
 @end

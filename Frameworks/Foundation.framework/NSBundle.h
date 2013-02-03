@@ -4,9 +4,9 @@
 
 @interface NSBundle : NSObject {
     id _cfBundle;
-    NSUInteger _flags;
+    unsigned int _flags;
     Class _principalClass;
-    NSUInteger _refCount;
+    unsigned int _refCount;
     void *_reserved0;
     void *_reserved1;
     id _tmp1;
@@ -22,6 +22,7 @@
 + (id)_brailleTableDictionaryForBrailleTableIdentifier:(id)arg1;
 + (void)_initializeSafeCategory;
 + (id)_rivenBundle;
++ (id)_rivenFactory;
 + (id)_textInputBundle;
 + (id)_textInputFactory;
 + (id)allBundles;
@@ -42,14 +43,13 @@
 + (id)bundleWithIdentifier:(id)arg1;
 + (id)bundleWithPath:(id)arg1;
 + (id)bundleWithURL:(id)arg1;
-+ (id)centerViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)debugDescription;
 + (BOOL)doesBrailleTableSupportContractions:(id)arg1;
 + (BOOL)doesBrailleTableSupportContractions:(id)arg1;
 + (BOOL)doesBrailleTableSupportEightDot:(id)arg1;
 + (BOOL)doesBrailleTableSupportEightDot:(id)arg1;
-+ (id)findBundleResourceURLs:(id)arg1 callingMethod:(SEL)arg2 bundleURL:(id)arg3 languages:(id)arg4 name:(id)arg5 types:(id)arg6 limit:(NSUInteger)arg7;
-+ (id)findBundleResources:(id)arg1 callingMethod:(SEL)arg2 directory:(id)arg3 languages:(id)arg4 name:(id)arg5 types:(id)arg6 limit:(NSUInteger)arg7;
++ (id)findBundleResourceURLs:(id)arg1 callingMethod:(SEL)arg2 bundleURL:(id)arg3 languages:(id)arg4 name:(id)arg5 types:(id)arg6 limit:(unsigned int)arg7;
++ (id)findBundleResources:(id)arg1 callingMethod:(SEL)arg2 directory:(id)arg3 languages:(id)arg4 name:(id)arg5 types:(id)arg6 limit:(unsigned int)arg7;
 + (id)languageIdentifiersForBrailleTableIdentifier:(id)arg1;
 + (id)languageIdentifiersForBrailleTableIdentifier:(id)arg1;
 + (id)loadedBundles;
@@ -63,10 +63,8 @@
 + (id)preferredLocalizationsFromArray:(id)arg1 forPreferences:(id)arg2;
 + (id)preferredLocalizationsFromArray:(id)arg1;
 + (void)setSystemLanguages:(id)arg1;
-+ (id)splitGestureRecognizerWithTarget:(id)arg1 action:(SEL)arg2;
 + (id)tableIdentifiersForLanguageIdentifier:(id)arg1;
 + (id)tableIdentifiersForLanguageIdentifier:(id)arg1;
-+ (id)transitionView;
 
 - (id)URLForAuxiliaryExecutable:(id)arg1;
 - (id)URLForResource:(id)arg1 withExtension:(id)arg2 subdirectory:(id)arg3 localization:(id)arg4;
@@ -132,7 +130,7 @@
 - (id)resourcePath;
 - (id)resourceURL;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (id)sharedFrameworksPath;
 - (id)sharedFrameworksURL;
 - (id)sharedSupportPath;
@@ -140,6 +138,6 @@
 - (id)tableIdentifierForBundleSpecificTableIdentifier:(id)arg1;
 - (id)tableIdentifierForBundleSpecificTableIdentifier:(id)arg1;
 - (BOOL)unload;
-- (NSUInteger)versionNumber;
+- (unsigned int)versionNumber;
 
 @end

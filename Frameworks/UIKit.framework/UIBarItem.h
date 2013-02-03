@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSString, UIImage;
+
 @interface UIBarItem : NSObject {
 }
 
-@property(retain) UIImage *image;
-@property(copy) NSString *title;
 @property(getter=isEnabled) BOOL enabled;
-@property UIEdgeInsets imageInsets;
-@property NSInteger tag;
+@property(retain) UIImage * image;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } imageInsets;
+@property int tag;
+@property(copy) NSString * title;
 
 @end

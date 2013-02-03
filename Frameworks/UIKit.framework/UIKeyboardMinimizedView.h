@@ -9,7 +9,7 @@
     UIButton *_tabButton;
 }
 
-@property <UIKeyboardMinimizedViewDelegate> *delegate;
+@property <UIKeyboardMinimizedViewDelegate> * delegate;
 
 - (void)dealloc;
 - (id)delegate;

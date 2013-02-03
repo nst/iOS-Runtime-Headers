@@ -13,12 +13,12 @@
     NSSet *_sizes;
 }
 
-@property(retain,readonly) NSDictionary *creatives;
-@property(retain) NSString *name;
-@property(retain) NSString *path;
-@property(retain) NSDictionary *properties;
-@property(copy) NSString *selectedCreativeName;
-@property(copy,readonly) NSSet *sizes;
+@property(retain,readonly) NSDictionary * creatives;
+@property(retain) NSString * name;
+@property(retain) NSString * path;
+@property(retain) NSDictionary * properties;
+@property(copy) NSString * selectedCreativeName;
+@property(copy,readonly) NSSet * sizes;
 
 + (id)localAdWithURL:(id)arg1;
 

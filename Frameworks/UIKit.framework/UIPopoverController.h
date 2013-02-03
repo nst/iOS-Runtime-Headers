@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIView, UIBarButtonItem, UIViewController;
+@class UIDimmingView, NSArray, UIView, UIBarButtonItem, UIViewController, <UIPopoverControllerDelegate>;
 
 @interface UIPopoverController : NSObject {
     struct CGSize { 
@@ -18,13 +18,13 @@
     UIViewController *_contentViewController;
     id _delegate;
     SEL _didEndSelector;
-    NSInteger _existingNavBarStyle;
-    NSInteger _existingToolBarStyle;
+    int _existingNavBarStyle;
+    int _existingToolBarStyle;
     UIViewController *_modalPresentationFromViewController;
     UIViewController *_modalPresentationToViewController;
     NSArray *_passthroughViews;
-    NSUInteger _popoverArrowDirection;
-    NSUInteger _popoverBackgroundStyle;
+    unsigned int _popoverArrowDirection;
+    unsigned int _popoverBackgroundStyle;
     } _popoverContentSize;
     } _popoverControllerFlags;
     UIView *_popoverView;
@@ -32,17 +32,17 @@
     UIViewController *_slidingViewController;
     id _target;
     UIBarButtonItem *_targetBarButtonItem;
-    NSUInteger _toViewAutoResizingMask;
+    unsigned int _toViewAutoResizingMask;
 }
 
-@property(retain) UIViewController *contentViewController;
-@property <UIPopoverControllerDelegate> *delegate;
-@property(retain) UIDimmingView *dimmingView;
-@property(copy) NSArray *passthroughViews;
 @property BOOL allowResizePastTargetRect;
-@property NSUInteger popoverArrowDirection;
-@property CGSize popoverContentSize;
-@property CGRect popoverFrame;
+@property(retain) UIViewController * contentViewController;
+@property <UIPopoverControllerDelegate> * delegate;
+@property(retain) UIDimmingView * dimmingView;
+@property(copy) NSArray * passthroughViews;
+@property unsigned int popoverArrowDirection;
+@property struct CGSize { float width; float height; } popoverContentSize;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } popoverFrame;
 @property(getter=isPopoverVisible,readonly) BOOL popoverVisible;
 
 - (void)_adjustPopoverForNewContentSize:(id)arg1;
@@ -55,8 +55,8 @@
 - (void)_hostingWindowDidRotate:(id)arg1;
 - (void)_hostingWindowWillRotate:(id)arg1;
 - (void)_modalAnimation:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (void)_modalTransition:(NSInteger)arg1 fromViewController:(id)arg2 toViewController:(id)arg3 target:(id)arg4 didEndSelector:(SEL)arg5;
-- (NSInteger)_popoverBackgroundStyle;
+- (void)_modalTransition:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3 target:(id)arg4 didEndSelector:(SEL)arg5;
+- (int)_popoverBackgroundStyle;
 - (void)_popoverDidDismiss:(id)arg1;
 - (void)_popoverDismissAnimationCompleted;
 - (void)_popoverIncomingAnimationCompleted;
@@ -64,9 +64,9 @@
 - (BOOL)_popoverRasterizesLayer;
 - (BOOL)_popoverShouldBeDismissed:(id)arg1;
 - (BOOL)_preventFastMode;
-- (void)_setContentViewController:(id)arg1 backgroundStyle:(NSInteger)arg2 animated:(BOOL)arg3;
+- (void)_setContentViewController:(id)arg1 backgroundStyle:(int)arg2 animated:(BOOL)arg3;
 - (void)_setDimmingViewDimsWhenModal:(BOOL)arg1;
-- (void)_setPopoverBackgroundStyle:(NSInteger)arg1;
+- (void)_setPopoverBackgroundStyle:(int)arg1;
 - (void)_setPopoverRasterizesLayer:(BOOL)arg1;
 - (void)_setPreventFastMode:(BOOL)arg1;
 - (void)_setupIncomingViewController:(id)arg1 presenting:(BOOL)arg2 animated:(BOOL)arg3;
@@ -86,19 +86,19 @@
 - (BOOL)isPopoverVisible;
 - (BOOL)isPresentingOrDismissing;
 - (id)passthroughViews;
-- (NSUInteger)popoverArrowDirection;
+- (unsigned int)popoverArrowDirection;
 - (struct CGSize { float x1; float x2; })popoverContentSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })popoverFrame;
 - (id)popoverView;
-- (void)presentPopoverFromBarButtonItem:(id)arg1 permittedArrowDirections:(NSUInteger)arg2 animated:(BOOL)arg3;
-- (void)presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 permittedArrowDirections:(NSUInteger)arg3 animated:(BOOL)arg4;
+- (void)presentPopoverFromBarButtonItem:(id)arg1 permittedArrowDirections:(unsigned int)arg2 animated:(BOOL)arg3;
+- (void)presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 permittedArrowDirections:(unsigned int)arg3 animated:(BOOL)arg4;
 - (void)setAllowResizePastTargetRect:(BOOL)arg1;
 - (void)setContentViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setContentViewController:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDimmingView:(id)arg1;
 - (void)setPassthroughViews:(id)arg1;
-- (void)setPopoverArrowDirection:(NSUInteger)arg1;
+- (void)setPopoverArrowDirection:(unsigned int)arg1;
 - (void)setPopoverContentSize:(struct CGSize { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)setPopoverContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPopoverFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;

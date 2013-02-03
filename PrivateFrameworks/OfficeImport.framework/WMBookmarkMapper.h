@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface WMBookmarkMapper : CMMapper {
-    NSInteger mBookmarkType;
+    int mBookmarkType;
     NSString *mName;
 }
 

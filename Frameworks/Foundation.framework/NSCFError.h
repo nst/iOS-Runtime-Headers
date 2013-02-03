@@ -8,14 +8,14 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (Class)classForCoder;
-- (NSInteger)code;
+- (int)code;
 - (id)domain;
 - (void)finalize;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (id)userInfo;
 
 @end

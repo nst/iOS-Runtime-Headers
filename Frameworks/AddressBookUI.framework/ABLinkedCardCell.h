@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABLinkedCardCell : UITableViewCell {
+@interface ABLinkedCardCell : ABChameleonCell {
 }
 
 - (void)layoutSubviews;

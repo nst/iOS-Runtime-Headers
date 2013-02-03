@@ -8,9 +8,9 @@
     NSMutableDictionary *mMappings;
 }
 
-- (void)addMapping:(NSInteger)arg1 index:(NSInteger)arg2;
+- (void)addMapping:(int)arg1 index:(int)arg2;
 - (void)dealloc;
 - (id)init;
-- (NSInteger)mappingForIndex:(NSInteger)arg1;
+- (int)mappingForIndex:(int)arg1;
 
 @end

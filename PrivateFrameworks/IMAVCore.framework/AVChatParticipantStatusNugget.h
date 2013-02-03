@@ -2,55 +2,55 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class NSString;
+@class NSString, NSDictionary;
 
 @interface AVChatParticipantStatusNugget : NSObject <NSCoding> {
-    NSUInteger _ardRole;
-    NSInteger _error;
+    unsigned int _ardRole;
+    int _error;
     NSString *_imHandleID;
     NSString *_imHandleName;
     NSString *_invitedBy;
-    NSUInteger _reason;
+    unsigned int _reason;
     BOOL _sendingAudio;
     BOOL _sendingVideo;
-    NSUInteger _state;
+    unsigned int _state;
     BOOL _usingICE;
     NSString *_vcPartyID;
 }
 
-@property(readonly) NSString *ID;
-@property(readonly) NSDictionary *dictionaryDescription;
-@property(readonly) NSString *invitedBy;
-@property(readonly) NSString *name;
-@property(readonly) NSString *vcPartyID;
-@property(readonly) NSUInteger ardRole;
-@property(readonly) NSInteger error;
+@property(readonly) NSString * ID;
+@property(readonly) unsigned int ardRole;
+@property(readonly) NSDictionary * dictionaryDescription;
+@property(readonly) int error;
+@property(readonly) NSString * invitedBy;
 @property(readonly) BOOL isUsingICE;
-@property(readonly) NSUInteger reason;
+@property(readonly) NSString * name;
+@property(readonly) unsigned int reason;
 @property(readonly) BOOL sendingAudio;
 @property(readonly) BOOL sendingVideo;
-@property(readonly) NSUInteger state;
+@property(readonly) unsigned int state;
+@property(readonly) NSString * vcPartyID;
 
 + (id)filterNuggets:(id)arg1 filterEndedState:(BOOL)arg2 convertFromDict:(BOOL)arg3;
 + (id)nuggetWithDictionaryDescription:(id)arg1;
 
 - (id)ID;
 - (void)_configureWithDictionaryDescription:(id)arg1;
-- (NSUInteger)ardRole;
+- (unsigned int)ardRole;
 - (void)dealloc;
 - (id)dictionaryDescription;
 - (void)encodeWithCoder:(id)arg1;
-- (NSInteger)error;
+- (int)error;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithParticipant:(id)arg1;
 - (id)invitedBy;
 - (BOOL)isUsingICE;
 - (id)name;
-- (NSUInteger)reason;
+- (unsigned int)reason;
 - (BOOL)sendingAudio;
 - (BOOL)sendingVideo;
 - (void)setVCPartyID:(id)arg1;
-- (NSUInteger)state;
+- (unsigned int)state;
 - (id)vcPartyID;
 
 @end

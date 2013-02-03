@@ -2,31 +2,35 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSNumber, SUScriptMediaItem, NSString;
+@class NSNumber, NSString, SUScriptMediaItem;
 
 @interface SUScriptMusicPlayerController : SUScriptObject {
-    double _currentPlaybackTime;
-    SUScriptMediaItem *_nowPlayingItem;
-    NSString *_playbackState;
     NSString *_playerType;
-    NSString *_repeatMode;
-    NSString *_shuffleMode;
-    NSNumber *_volume;
 }
 
-@property(getter=_repeatMode,retain) NSString *repeatMode; /* unknown property attribute: Sset_repeatMode: */
-@property(getter=_shuffleMode,retain) NSString *shuffleMode; /* unknown property attribute: Sset_shuffleMode: */
-@property(getter=_volume,retain) NSNumber *volume; /* unknown property attribute: Sset_volume: */
-@property(getter=_nowPlayingItem,retain,readonly) SUScriptMediaItem *nowPlayingItem;
-@property(getter=_playbackState,retain,readonly) NSString *playbackState;
-@property(getter=_playerType,retain,readonly) NSString *playerType;
-@property(getter=_currentPlaybackTime,readonly) double currentPlaybackTime;
+@property(readonly) double currentPlaybackTime;
+@property(readonly) SUScriptMediaItem * nowPlayingItem;
+@property(readonly) NSString * playbackState;
+@property(readonly) NSString * playbackStateInterrupted;
+@property(readonly) NSString * playbackStatePaused;
+@property(readonly) NSString * playbackStatePlaying;
+@property(readonly) NSString * playbackStateSeekingBackward;
+@property(readonly) NSString * playbackStateSeekingForward;
+@property(readonly) NSString * playbackStateStopped;
+@property(readonly) NSString * playerType;
+@property(copy) NSString * repeatMode;
+@property(readonly) NSString * repeatModeAll;
+@property(readonly) NSString * repeatModeDefault;
+@property(readonly) NSString * repeatModeNone;
+@property(readonly) NSString * repeatModeOne;
+@property(copy) NSString * shuffleMode;
+@property(readonly) NSString * shuffleModeAlbums;
+@property(readonly) NSString * shuffleModeDefault;
+@property(readonly) NSString * shuffleModeOff;
+@property(readonly) NSString * shuffleModeSongs;
+@property(retain) NSNumber * volume;
 
-+ (NSInteger)nativeRepeatModeForScriptRepeatMode:(id)arg1;
-+ (NSInteger)nativeShuffleModeForScriptShuffleMode:(id)arg1;
-+ (id)scriptPlaybackStateForNativePlaybackState:(NSInteger)arg1;
-+ (id)scriptRepeatModeForNativeRepeatMode:(NSInteger)arg1;
-+ (id)scriptShuffleModeForNativeShuffleMode:(NSInteger)arg1;
++ (id)scriptPlaybackStateForNativePlaybackState:(int)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
@@ -37,46 +41,58 @@
 - (id)_copyPlaybackState;
 - (id)_copyRepeatMode;
 - (id)_copyShuffleMode;
-- (double)_currentPlaybackTime;
 - (void)_endSeeking;
 - (double)_mainThreadCurrentPlaybackTime;
-- (id)_nowPlayingItem;
 - (void)_pause;
 - (void)_play;
-- (id)_playbackState;
-- (id)_playerType;
-- (id)_repeatMode;
 - (void)_setPlayerType:(id)arg1;
 - (void)_setQueueWithItemCollection:(id)arg1;
 - (void)_setQueueWithQuery:(id)arg1;
-- (void)_setRepeatMode:(NSInteger)arg1;
-- (void)_setShuffleMode:(NSInteger)arg1;
+- (void)_setRepeatMode:(int)arg1;
+- (void)_setShuffleMode:(int)arg1;
 - (void)_setVolume:(float)arg1;
-- (id)_shuffleMode;
 - (void)_skipToBeginning;
 - (void)_skipToNextItem;
 - (void)_skipToPreviousItem;
 - (void)_stop;
-- (id)_volume;
+- (id)attributeKeys;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
+- (double)currentPlaybackTime;
 - (void)dealloc;
 - (void)endSeeking;
 - (id)initWithPlayerType:(id)arg1;
+- (id)nowPlayingItem;
 - (void)pause;
 - (void)play;
+- (id)playbackState;
+- (id)playbackStateInterrupted;
+- (id)playbackStatePaused;
+- (id)playbackStatePlaying;
+- (id)playbackStateSeekingBackward;
+- (id)playbackStateSeekingForward;
+- (id)playbackStateStopped;
+- (id)playerType;
+- (id)repeatMode;
+- (id)repeatModeAll;
+- (id)repeatModeDefault;
+- (id)repeatModeNone;
+- (id)repeatModeOne;
+- (id)scriptAttributeKeys;
 - (void)setQueueWithItemCollection:(id)arg1;
 - (void)setQueueWithQuery:(id)arg1;
-- (void)set_currentPlaybackTime:(double)arg1;
-- (void)set_nowPlayingItem:(id)arg1;
-- (void)set_playbackState:(id)arg1;
-- (void)set_playerType:(id)arg1;
-- (void)set_repeatMode:(id)arg1;
-- (void)set_shuffleMode:(id)arg1;
-- (void)set_volume:(id)arg1;
+- (void)setRepeatMode:(id)arg1;
+- (void)setShuffleMode:(id)arg1;
+- (void)setVolume:(id)arg1;
+- (id)shuffleMode;
+- (id)shuffleModeAlbums;
+- (id)shuffleModeDefault;
+- (id)shuffleModeOff;
+- (id)shuffleModeSongs;
 - (void)skipToBeginning;
 - (void)skipToNextItem;
 - (void)skipToPreviousItem;
 - (void)stop;
+- (id)volume;
 
 @end

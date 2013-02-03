@@ -8,7 +8,7 @@
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    struct $_718 { 
+    struct $_711 { 
         unsigned int levelCrossFade : 1; 
         unsigned int drawingDisabled : 1; 
     } _flags;
@@ -35,7 +35,7 @@
 - (void)setDrawingEnabled:(BOOL)arg1;
 - (void)setLevelCrossFade:(BOOL)arg1;
 - (id)splitAboutView:(id)arg1;
-- (BOOL)tiledLayer:(id)arg1 canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 levelOfDetail:(NSInteger)arg3;
+- (BOOL)tiledLayer:(id)arg1 canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 levelOfDetail:(int)arg3;
 - (void)willRemoveSubview:(id)arg1;
 
 @end

@@ -11,10 +11,10 @@
     NSData *_selfPushToken;
 }
 
-@property(copy) NSString *peerID;
-@property(copy) NSData *peerPushToken;
-@property(copy) NSNumber *reason;
-@property(copy) NSData *selfPushToken;
+@property(copy) NSString * peerID;
+@property(copy) NSData * peerPushToken;
+@property(copy) NSNumber * reason;
+@property(copy) NSData * selfPushToken;
 
 - (id)bagKey;
 - (void)dealloc;

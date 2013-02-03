@@ -5,7 +5,7 @@
 @class <MKSearchRequesterDelegate>, GMMRequester;
 
 @interface MKSearchRequester : NSObject <PBRequesterDelegate> {
-    NSInteger _defaultSearchResultType;
+    int _defaultSearchResultType;
     <MKSearchRequesterDelegate> *_delegate;
     GMMRequester *_requester;
 }
@@ -20,7 +20,7 @@
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)startWithRequest:(id)arg1 defaultSearchResultType:(NSInteger)arg2;
+- (void)startWithRequest:(id)arg1 defaultSearchResultType:(int)arg2;
 - (void)startWithRequest:(id)arg1;
 
 @end

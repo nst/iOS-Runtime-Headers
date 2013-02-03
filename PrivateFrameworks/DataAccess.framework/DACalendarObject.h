@@ -9,8 +9,8 @@
     void *_ref;
 }
 
-@property(readonly) DACalendarDatabase *database;
-@property(readonly) void *ref;
+@property(readonly) DACalendarDatabase * database;
+@property(readonly) void* ref;
 
 + (id)NSArrayFromCFArray:(struct __CFArray { }*)arg1 objectClass:(Class)arg2 database:(id)arg3;
 

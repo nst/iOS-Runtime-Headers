@@ -8,6 +8,6 @@
 + (id)mimeTypesToFileExtensions;
 
 - (id)imageData;
-- (NSInteger)mediaType;
+- (int)mediaType;
 
 @end

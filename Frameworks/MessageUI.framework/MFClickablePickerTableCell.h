@@ -4,10 +4,10 @@
 
 @interface MFClickablePickerTableCell : UIPickerTableCell {
     id _delegate;
-    NSUInteger _row;
+    unsigned int _row;
 }
 
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 andRow:(NSUInteger)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 andRow:(unsigned int)arg2;
 - (void)setChecked:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 

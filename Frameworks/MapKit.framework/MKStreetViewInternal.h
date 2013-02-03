@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSString, MKPanoramaPlaceholderGeometry, MKStreetViewMinimapGeometry, NSTimer, MKStreetView, MKPanoramaAnnotationGeometry, MKPanorama, NSMutableDictionary, MKSearchResult, MKPanoramaSphereGeometry, MKStreetViewTileDecoder, EAGLContext, CADisplayLink, MKStreetViewTexture, MKStreetViewLabelCache, MKPanoramaTextures, MKStreetViewGeometry, GMMStreetViewReportRequest, UIImageView, MKPanoramaLoader;
+@class NSString, MKPanoramaPlaceholderGeometry, MKPanoramaSkyGeometry, NSTimer, MKStreetViewMinimapGeometry, MKStreetView, MKPanoramaAnnotationGeometry, MKPanorama, NSMutableDictionary, MKSearchResult, MKStreetViewTileDecoder, EAGLContext, CADisplayLink, MKStreetViewTexture, MKStreetViewLabelCache, MKPanoramaTextures, MKStreetViewGeometry, GMMStreetViewReportRequest, UIImageView, MKPanoramaLoader;
 
 @interface MKStreetViewInternal : NSObject {
     struct CGPoint { 
@@ -14,7 +14,7 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct $_905 { 
+    struct $_896 { 
         unsigned int panoramaWillChange : 1; 
         unsigned int panoramaDidChange : 1; 
         unsigned int streetViewWillClose : 1; 
@@ -36,20 +36,21 @@
     float bounceInitialOffset;
     float bounceInitialVelocity;
     double bounceStartTime;
-    NSInteger bufferHeight;
-    NSInteger bufferWidth;
+    int bufferHeight;
+    int bufferWidth;
     BOOL canTap;
     EAGLContext *context;
     NSString *copyright;
     id delegate;
     } delegateImplements;
+    unsigned int depthBuffer;
     CADisplayLink *displayLink;
     BOOL dragging;
     BOOL enablePrefetching;
     BOOL enableUserImmersiveInteraction;
     float far;
     float fov;
-    NSUInteger framebuffer;
+    unsigned int framebuffer;
     GMMStreetViewReportRequest *gmmReport;
     MKStreetViewGeometry *googleQuad;
     MKStreetViewTexture *googleTexture;
@@ -58,14 +59,14 @@
     void *introSurfaceBufferRef;
     BOOL introSurfaceForce2D;
     MKStreetViewGeometry *introSurfaceQuad;
-    NSUInteger introSurfaceTarget;
-    NSUInteger introSurfaceTexture;
+    unsigned int introSurfaceTarget;
+    unsigned int introSurfaceTexture;
     } introZoomPoint;
     MKStreetViewLabelCache *labelCache;
     double lastScrollTime;
     double lastTouchTime;
-    NSInteger mapOrientation;
-    NSUInteger maxZoomLevel;
+    int mapOrientation;
+    unsigned int maxZoomLevel;
     float maxZoomScaleFactor;
     MKStreetViewMinimapGeometry *minimap;
     } minimapPinLocation;
@@ -76,7 +77,7 @@
     float near;
     float nearH;
     float nearV;
-    NSUInteger nextValidTapCount;
+    unsigned int nextValidTapCount;
     float panoRotationEndAngle;
     float panoRotationEndPipX;
     float panoRotationEndPipY;
@@ -95,11 +96,13 @@
     MKPanoramaAnnotationGeometry *previousAnnotationGeometry;
     MKPanorama *previousPanorama;
     float previousPitchVelocity;
-    MKPanoramaSphereGeometry *previousSphere;
+    MKPanoramaSkyGeometry *previousSky;
     MKPanoramaTextures *previousTextures;
     float previousYawVelocity;
-    NSInteger renderOrientation;
-    NSUInteger renderbuffer;
+    id projDebug;
+    id projDebugView;
+    int renderOrientation;
+    unsigned int renderbuffer;
     BOOL reverseMapTransition;
     BOOL rotating;
     double rotationDuration;
@@ -113,9 +116,9 @@
     BOOL showsPegman;
     float sizeH;
     float sizeV;
+    MKPanoramaSkyGeometry *sky;
     BOOL smoothScrolling;
-    MKPanoramaSphereGeometry *sphere;
-    NSInteger streetViewOrientation;
+    int streetViewOrientation;
     } tapPoint;
     NSTimer *tapTimer;
     MKPanoramaTextures *textures;
@@ -125,7 +128,7 @@
     float transitionDirectionZ;
     double transitionDuration;
     double transitionStartTime;
-    NSInteger transitionType;
+    int transitionType;
     float transitionYawAdjust;
     float vfov;
     MKStreetView *view;
@@ -137,19 +140,19 @@
     BOOL zooming;
 }
 
-@property(retain) MKPanoramaAnnotationGeometry *annotationGeometry;
-@property(retain) NSString *copyright;
-@property(retain) GMMStreetViewReportRequest *gmmReport;
-@property(retain) MKStreetViewLabelCache *labelCache;
-@property(retain) MKPanorama *panorama;
-@property(retain) MKPanoramaAnnotationGeometry *previousAnnotationGeometry;
-@property(retain) MKPanorama *previousPanorama;
-@property(retain) MKPanoramaSphereGeometry *previousSphere;
-@property(retain) MKPanoramaTextures *previousTextures;
-@property(retain) MKSearchResult *searchResult;
-@property(retain) MKPanoramaSphereGeometry *sphere;
-@property(retain) MKPanoramaTextures *textures;
-@property(retain) MKStreetViewTileDecoder *tileDecoder;
+@property(retain) MKPanoramaAnnotationGeometry * annotationGeometry;
+@property(retain) NSString * copyright;
+@property(retain) GMMStreetViewReportRequest * gmmReport;
+@property(retain) MKStreetViewLabelCache * labelCache;
+@property(retain) MKPanorama * panorama;
+@property(retain) MKPanoramaAnnotationGeometry * previousAnnotationGeometry;
+@property(retain) MKPanorama * previousPanorama;
+@property(retain) MKPanoramaSkyGeometry * previousSky;
+@property(retain) MKPanoramaTextures * previousTextures;
+@property(retain) MKSearchResult * searchResult;
+@property(retain) MKPanoramaSkyGeometry * sky;
+@property(retain) MKPanoramaTextures * textures;
+@property(retain) MKStreetViewTileDecoder * tileDecoder;
 
 - (id)annotationGeometry;
 - (id)copyright;
@@ -158,7 +161,7 @@
 - (id)panorama;
 - (id)previousAnnotationGeometry;
 - (id)previousPanorama;
-- (id)previousSphere;
+- (id)previousSky;
 - (id)previousTextures;
 - (void)runAnimations;
 - (id)searchResult;
@@ -169,13 +172,13 @@
 - (void)setPanorama:(id)arg1;
 - (void)setPreviousAnnotationGeometry:(id)arg1;
 - (void)setPreviousPanorama:(id)arg1;
-- (void)setPreviousSphere:(id)arg1;
+- (void)setPreviousSky:(id)arg1;
 - (void)setPreviousTextures:(id)arg1;
 - (void)setSearchResult:(id)arg1;
-- (void)setSphere:(id)arg1;
+- (void)setSky:(id)arg1;
 - (void)setTextures:(id)arg1;
 - (void)setTileDecoder:(id)arg1;
-- (id)sphere;
+- (id)sky;
 - (id)textures;
 - (id)tileDecoder;
 

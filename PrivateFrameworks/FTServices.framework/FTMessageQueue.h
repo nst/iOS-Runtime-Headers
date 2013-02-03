@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSMutableArray, <FTMessageQueueDelegate>;
+@class <FTMessageQueueDelegate>, FTMessage, NSArray, NSMutableArray;
 
 @interface FTMessageQueue : NSObject {
     NSMutableArray *_addDates;
@@ -11,17 +11,17 @@
     double _timeoutTime;
 }
 
-@property <FTMessageQueueDelegate> *delegate;
-@property(readonly) NSArray *messages;
-@property(readonly) FTMessage *topMessage;
-@property(readonly) NSInteger count;
+@property(readonly) int count;
+@property <FTMessageQueueDelegate> * delegate;
 @property double messageTimeoutTime;
+@property(readonly) NSArray * messages;
+@property(readonly) FTMessage * topMessage;
 
 - (void)_clearTimeout;
 - (void)_setTimeout;
 - (void)_timeoutHit;
 - (BOOL)addMessage:(id)arg1;
-- (NSInteger)count;
+- (int)count;
 - (void)dealloc;
 - (id)delegate;
 - (id)dequeueTopMessage;

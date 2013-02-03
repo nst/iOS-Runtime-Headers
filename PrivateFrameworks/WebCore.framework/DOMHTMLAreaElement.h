@@ -2,24 +2,26 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSURL, NSString;
+
 @interface DOMHTMLAreaElement : DOMHTMLElement {
 }
 
-@property(copy,readonly) NSURL *absoluteLinkURL;
-@property(copy) NSString *accessKey;
-@property(copy) NSString *alt;
-@property(copy) NSString *coords;
-@property(copy,readonly) NSString *hashName;
-@property(copy,readonly) NSString *host;
-@property(copy,readonly) NSString *hostname;
-@property(copy) NSString *href;
-@property(copy,readonly) NSString *pathname;
-@property(copy,readonly) NSString *port;
-@property(copy,readonly) NSString *protocol;
-@property(copy,readonly) NSString *search;
-@property(copy) NSString *shape;
-@property(copy) NSString *target;
+@property(copy,readonly) NSURL * absoluteLinkURL;
+@property(copy) NSString * accessKey;
+@property(copy) NSString * alt;
+@property(copy) NSString * coords;
+@property(copy,readonly) NSString * hashName;
+@property(copy,readonly) NSString * host;
+@property(copy,readonly) NSString * hostname;
+@property(copy) NSString * href;
 @property BOOL noHref;
+@property(copy,readonly) NSString * pathname;
+@property(copy,readonly) NSString * port;
+@property(copy,readonly) NSString * protocol;
+@property(copy,readonly) NSString * search;
+@property(copy) NSString * shape;
+@property(copy) NSString * target;
 
 - (id)absoluteLinkURL;
 - (struct _WKQuad { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; })absoluteQuadWithOwner:(id)arg1;

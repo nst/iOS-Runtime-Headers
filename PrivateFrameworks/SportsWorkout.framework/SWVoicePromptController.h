@@ -14,9 +14,9 @@
     WordsSpeaker *_speaker;
 }
 
-@property(retain) NSString *gender;
-@property(retain) NSString *language;
+@property(retain) NSString * gender;
 @property(readonly) BOOL isPlaying;
+@property(retain) NSString * language;
 
 + (id)__sharedFemalePromptController;
 + (id)__sharedMalePromptController;

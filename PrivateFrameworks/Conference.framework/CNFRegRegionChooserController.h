@@ -15,11 +15,11 @@
     PSSpecifier *_specifier;
 }
 
-@property <CNFRegRegionChooserDelegate> *delegate;
-@property(retain) NSArray *filteredRegionList;
-@property(retain) NSArray *regionList;
-@property(retain) UISearchDisplayController *sdc;
-@property(retain) NSString *selectedRegionID;
+@property <CNFRegRegionChooserDelegate> * delegate;
+@property(retain) NSArray * filteredRegionList;
+@property(retain) NSArray * regionList;
+@property(retain) UISearchDisplayController * sdc;
+@property(retain) NSString * selectedRegionID;
 
 - (void)_drillDownControllersWithArray:(id)arg1;
 - (void)_selectRegionID:(id)arg1;
@@ -34,8 +34,8 @@
 - (id)filteredRegionList;
 - (void)handleURL:(id)arg1;
 - (id)initWithRegionList:(id)arg1 selectedRegionID:(id)arg2;
-- (id)initWithStyle:(NSInteger)arg1;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (id)initWithStyle:(int)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)parentController;
 - (void)pushController:(id)arg1;
 - (id)readPreferenceValue:(id)arg1;
@@ -54,12 +54,13 @@
 - (void)setSdc:(id)arg1;
 - (void)setSelectedRegionID:(id)arg1;
 - (void)setSpecifier:(id)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)specifier;
 - (void)statusBarWillAnimateByHeight:(float)arg1;
 - (void)suspend;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
 - (void)willBecomeActive;

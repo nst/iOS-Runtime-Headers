@@ -21,7 +21,7 @@
 - (void)_timeDidJump:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
-- (void)scheduleSnapshotWithSize:(struct CGSize { float x1; float x2; })arg1 orientation:(NSInteger)arg2 time:(float)arg3 delegate:(id)arg4;
+- (void)scheduleSnapshotWithSize:(struct CGSize { float x1; float x2; })arg1 orientation:(int)arg2 time:(float)arg3 delegate:(id)arg4;
 - (void)setLayer:(id)arg1;
 - (void)setVideoView:(id)arg1;
 

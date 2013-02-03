@@ -10,7 +10,7 @@
     NSMutableDictionary *_accounts;
     NSMutableDictionary *_accountsToAdd;
     NSMutableDictionary *_accountsToRemove;
-    NSInteger _pendingAccountSetupCount;
+    int _pendingAccountSetupCount;
     NSMutableSet *_setAsideAccounts;
 }
 
@@ -24,8 +24,8 @@
 - (void)_removeStoresForAccountWithID:(id)arg1;
 - (void)_respondToAccountsChangedNotification;
 - (BOOL)_saveAllAccountSettings:(BOOL)arg1;
-- (void)_setAccountName:(id)arg1 forDataTypes:(NSInteger)arg2;
-- (void)_setExternalSource:(id)arg1 statusForDataTypes:(NSInteger)arg2;
+- (void)_setAccountName:(id)arg1 forDataTypes:(int)arg2;
+- (void)_setExternalSource:(id)arg1 statusForDataTypes:(int)arg2;
 - (void)_startAgentMonitoring;
 - (void)_stopAgentMonitoring;
 - (void)_updateExternalSourcesAndAccountNamesForAccounts:(id)arg1;

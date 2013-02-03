@@ -2,15 +2,16 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @class GMMLocation;
 
 @interface MKLocationResult : NSObject {
     GMMLocation *_location;
-    struct MKLocationRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; struct LocationRequest {} *x7; struct LocationResponse {} *x8; id x9; } *_requester;
+    struct MKLocationRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; struct LocationRequest {} *x7; struct LocationResponse {} *x8; id x9; } *_requester;
 }
 
 - (void)dealloc;

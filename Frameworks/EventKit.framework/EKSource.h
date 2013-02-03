@@ -6,18 +6,18 @@
 
 @interface EKSource : NSObject {
     NSString *_externalId;
-    NSUInteger _loadFlags;
+    unsigned int _loadFlags;
     void *_object;
     NSString *_sourceId;
     EKEventStore *_store;
     NSString *_title;
-    NSInteger _type;
+    int _type;
 }
 
-@property(copy,readonly) NSString *externalId;
-@property(copy,readonly) NSString *sourceIdentifier;
-@property(copy,readonly) NSString *title;
-@property(readonly) NSInteger type;
+@property(copy,readonly) NSString * externalId;
+@property(copy,readonly) NSString * sourceIdentifier;
+@property(copy,readonly) NSString * title;
+@property(readonly) int type;
 
 - (void)_setStoreInternal:(id)arg1;
 - (void)_storeClosed;
@@ -30,6 +30,6 @@
 - (void)refresh;
 - (id)sourceIdentifier;
 - (id)title;
-- (NSInteger)type;
+- (int)type;
 
 @end

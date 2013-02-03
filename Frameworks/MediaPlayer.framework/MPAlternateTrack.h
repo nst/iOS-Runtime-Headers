@@ -7,13 +7,13 @@
 @interface MPAlternateTrack : NSObject {
     NSString *_languageCode;
     NSString *_name;
-    NSInteger _trackID;
+    int _trackID;
 }
 
 + (id)copyOffTrack;
 + (id)threeCharCodesForEncodedISO639_2_T:(id)arg1;
 
-- (NSInteger)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)humanReadableLanguage;
@@ -21,6 +21,6 @@
 - (id)languageCode;
 - (id)name;
 - (void)setName:(id)arg1;
-- (NSInteger)trackID;
+- (int)trackID;
 
 @end

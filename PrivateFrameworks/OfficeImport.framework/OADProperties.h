@@ -14,7 +14,7 @@
 
 - (void)dealloc;
 - (void)flatten;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithDefaults;
 - (BOOL)isEqual:(id)arg1;

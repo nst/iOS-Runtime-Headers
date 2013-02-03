@@ -12,7 +12,7 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)logRequest:(id)arg1 count:(NSUInteger)arg2;
+- (void)logRequest:(id)arg1 count:(unsigned int)arg2;
 - (void)submitUsageNow;
 
 @end

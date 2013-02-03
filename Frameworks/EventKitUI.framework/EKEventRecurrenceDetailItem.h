@@ -6,7 +6,7 @@
 
 @interface EKEventRecurrenceDetailItem : EKEventDetailItem {
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
@@ -15,15 +15,15 @@
     EKEventDetailRecurrenceCell *_cell;
     NSString *_customRepeatDescription;
     BOOL _indent;
-    NSInteger _originalRepeatType;
+    int _originalRepeatType;
     } _repeatEndGr;
-    NSInteger _repeatType;
+    int _repeatType;
 }
 
-- (id)cellForSubitemAtIndex:(NSInteger)arg1;
+- (id)cellForSubitemAtIndex:(int)arg1;
 - (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
 - (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(NSInteger)arg1 forWidth:(float)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
 - (void)reset;
 - (void)setEvent:(id)arg1 store:(id)arg2;
 

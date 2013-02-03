@@ -2,21 +2,31 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class <CoreDAVTaskManager>, NSMutableSet, <CoreDAVTaskGroupDelegate>, <CoreDAVAccountInfoProvider>;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class <CoreDAVTaskManager>, NSMutableSet, NSError, <CoreDAVTaskGroupDelegate>, <CoreDAVAccountInfoProvider>;
 
 @interface CoreDAVTaskGroup : NSObject {
     <CoreDAVAccountInfoProvider> *_accountInfoProvider;
+    id _completionBlock;
     <CoreDAVTaskGroupDelegate> *_delegate;
+    NSError *_error;
     BOOL _isCancelling;
     NSMutableSet *_outstandingTasks;
+    id _progressBlock;
     <CoreDAVTaskManager> *_taskManager;
     double _timeoutInterval;
 }
 
-@property(readonly) <CoreDAVAccountInfoProvider> *accountInfoProvider;
-@property <CoreDAVTaskGroupDelegate> *delegate;
-@property(readonly) NSMutableSet *outstandingTasks;
-@property(readonly) <CoreDAVTaskManager> *taskManager;
+@property(readonly) <CoreDAVAccountInfoProvider> * accountInfoProvider;
+@property(copy) id completionBlock;
+@property <CoreDAVTaskGroupDelegate> * delegate;
+@property(retain) NSError * error;
+@property(readonly) NSMutableSet * outstandingTasks;
+@property(copy) id progressBlock;
+@property(readonly) <CoreDAVTaskManager> * taskManager;
 @property double timeoutInterval;
 
 - (void)_tearDownAllTasks;
@@ -24,11 +34,18 @@
 - (void)bailWithError:(id)arg1;
 - (void)cancelTaskGroup;
 - (void)cancelTasks;
+- (id)completionBlock;
 - (void)dealloc;
 - (id)delegate;
+- (id)error;
+- (void)finishCoreDAVTaskGroupWithError:(id)arg1;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
 - (id)outstandingTasks;
+- (id)progressBlock;
+- (void)setCompletionBlock:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setError:(id)arg1;
+- (void)setProgressBlock:(id)arg1;
 - (void)setTimeoutInterval:(double)arg1;
 - (void)startTaskGroup;
 - (void)syncAway;

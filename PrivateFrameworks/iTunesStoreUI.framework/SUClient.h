@@ -20,15 +20,15 @@
     SUViewControllerFactory *_viewControllerFactory;
 }
 
-@property(retain) NSString *clientIdentifier;
-@property <SUClientDelegate> *delegate;
-@property(retain) SUImageCache *imageCache;
-@property(retain) ISURLOperationPool *imagePool;
-@property(readonly) SUScriptExecutionContext *scriptExecutionContext;
-@property(retain) NSString *searchHintsURLBagKey;
-@property(retain) NSString *searchURLBagKey;
-@property(retain) SUViewControllerFactory *viewControllerFactory;
+@property(retain) NSString * clientIdentifier;
+@property <SUClientDelegate> * delegate;
 @property BOOL dontSaveNavigationPath;
+@property(retain) SUImageCache * imageCache;
+@property(retain) ISURLOperationPool * imagePool;
+@property(readonly) SUScriptExecutionContext * scriptExecutionContext;
+@property(retain) NSString * searchHintsURLBagKey;
+@property(retain) NSString * searchURLBagKey;
+@property(retain) SUViewControllerFactory * viewControllerFactory;
 
 + (id)imagePool;
 + (void)setSharedClient:(id)arg1;

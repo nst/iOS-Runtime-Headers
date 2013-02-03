@@ -12,7 +12,7 @@
     id _delegate;
     double _duration;
     double _startTime;
-    NSInteger _state;
+    int _state;
     id _target;
 }
 
@@ -25,11 +25,11 @@
 - (void)markStop;
 - (float)progressForFraction:(float)arg1;
 - (void)setAction:(SEL)arg1;
-- (void)setAnimationCurve:(NSInteger)arg1;
+- (void)setAnimationCurve:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setProgress:(float)arg1;
-- (NSInteger)state;
+- (int)state;
 - (void)stopAnimation;
 - (id)target;
 - (BOOL)tvOutput;

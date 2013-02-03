@@ -12,11 +12,11 @@
     NSString *_systemVersion;
 }
 
-@property(copy) NSIndexSet *allowedDeviceIdentifiers;
-@property(retain) SSNetworkConstraints *networkConstraints;
-@property(copy) NSString *systemName;
-@property(copy) NSString *systemVersion;
+@property(copy) NSIndexSet * allowedDeviceIdentifiers;
 @property long long diskSpaceAvailable;
+@property(retain) SSNetworkConstraints * networkConstraints;
+@property(copy) NSString * systemName;
+@property(copy) NSString * systemVersion;
 
 - (BOOL)_isAnyIPad;
 - (BOOL)_isAnyIPod;

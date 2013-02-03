@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/MediaToolbox.framework/MediaToolbox
  */
 
-@class FigCaptionRenderer, NSMutableArray;
+@class NSMutableArray;
 
 @interface FigCaptionLayerPrivate : NSObject {
-    FigCaptionRenderer *renderer;
+    struct OpaqueFigCFCaptionRenderer { } *renderer;
     NSMutableArray *rowLayers;
 }
 

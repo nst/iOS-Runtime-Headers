@@ -5,10 +5,10 @@
 @class NSMutableDictionary, NSString, NSMutableArray;
 
 @interface MLPhotoDCIMDirectory : NSObject {
-    struct flock { long long x1; long long x2; NSInteger x3; short x4; short x5; } *_dcimDirectoryLock;
-    NSInteger _dcimDirectoryLockDescriptor;
+    struct flock { long long x1; long long x2; int x3; short x4; short x5; } *_dcimDirectoryLock;
+    int _dcimDirectoryLockDescriptor;
     NSString *_dcimPath;
-    NSInteger _lastUsedDirectoryNumber;
+    int _lastUsedDirectoryNumber;
     NSString *_miscPath;
     NSString *_posterImagePath;
     NSMutableArray *_topLevelDirectories;
@@ -20,7 +20,7 @@
 
 - (id)_userInfoPath;
 - (void)clearDCFDirectories;
-- (void)countOfAllPhotos:(NSInteger*)arg1 andVideos:(NSInteger*)arg2 stopAfterFirst:(BOOL)arg3;
+- (void)countOfAllPhotos:(int*)arg1 andVideos:(int*)arg2 stopAfterFirst:(BOOL)arg3;
 - (id)countOfAllPhotosAndVideos;
 - (id)dcfDirectories;
 - (id)dcimPath;

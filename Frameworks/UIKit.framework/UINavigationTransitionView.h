@@ -14,16 +14,16 @@
     float _fromViewAlpha;
     UIWindow *_originalWindow;
     UIView *_toView;
-    NSInteger _transition;
+    int _transition;
 }
 
-@property(readonly) UIView *fromView;
 @property id delegate;
+@property(readonly) UIView * fromView;
 @property(readonly) BOOL isTransitioning;
 @property BOOL popoverWillCleanUpNavigationTransition;
 @property BOOL usesRoundedCorners;
 
-+ (double)defaultDurationForTransition:(NSInteger)arg1;
++ (double)defaultDurationForTransition:(int)arg1;
 
 - (void)_cleanupTransition;
 - (void)_cleanupTransitionFromPopover;
@@ -41,8 +41,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setPopoverWillCleanUpNavigationTransition:(BOOL)arg1;
 - (void)setUsesRoundedCorners:(BOOL)arg1;
-- (BOOL)transition:(NSInteger)arg1 fromView:(id)arg2 toView:(id)arg3;
-- (BOOL)transition:(NSInteger)arg1 toView:(id)arg2;
+- (BOOL)transition:(int)arg1 fromView:(id)arg2 toView:(id)arg3;
+- (BOOL)transition:(int)arg1 toView:(id)arg2;
 - (BOOL)usesRoundedCorners;
 
 @end

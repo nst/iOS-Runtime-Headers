@@ -13,7 +13,7 @@
     NSMutableArray *_comparisonPredicateScopedItem;
     NSMutableString *_joinClause;
     NSMutableString *_orderByClause;
-    NSUInteger _scopedByORPredicate;
+    unsigned int _scopedByORPredicate;
     NSMutableString *_selectList;
     NSMutableString *_sqlString;
     NSSQLStatement *_statement;
@@ -32,14 +32,14 @@
 - (BOOL)_isNullExpression:(id)arg1;
 - (id)_newPredicateWithInheritanceForFetchRequest:(id)arg1;
 - (id)_newWildSubStringForGlob:(id)arg1 wildStart:(BOOL)arg2 wildEnd:(BOOL)arg3;
-- (void)_prepareConst:(id)arg1 inAttribute:(id)arg2 sensitiveOptions:(NSUInteger)arg3;
+- (void)_prepareConst:(id)arg1 inAttribute:(id)arg2 sensitiveOptions:(unsigned int)arg3;
 - (void)_prepareConst:(id)arg1 inManyToMany:(id)arg2;
 - (void)_prepareConst:(id)arg1 inToMany:(id)arg2;
 - (BOOL)_prepareFunctionExpression:(id)arg1;
 - (void)_preparePredicate:(id)arg1;
 - (void)_preparePredicateExpression:(id)arg1;
 - (void)_preparePredicateOperator:(id)arg1;
-- (void)_prepareString:(id)arg1 expressionPath:(id)arg2 sensitiveOptions:(NSUInteger)arg3 wildStart:(BOOL)arg4 wildEnd:(BOOL)arg5 allowToMany:(BOOL)arg6;
+- (void)_prepareString:(id)arg1 expressionPath:(id)arg2 sensitiveOptions:(unsigned int)arg3 wildStart:(BOOL)arg4 wildEnd:(BOOL)arg5 allowToMany:(BOOL)arg6;
 - (void)_prepareSubstringWith:(id)arg1 wildStart:(BOOL)arg2 wildEnd:(BOOL)arg3;
 - (id)_reducedSubpredicates:(id)arg1;
 - (id)_retainedPrimaryKeyNumberForObject:(id)arg1;
@@ -54,7 +54,7 @@
 - (void)appendClause:(id)arg1 forProperty:(id)arg2 keypath:(id)arg3;
 - (void)appendCountClause:(id)arg1 forToManyKeyPath:(id)arg2;
 - (void)appendJoinClauseToSQL;
-- (void)appendLimitClauseToSQL:(NSUInteger)arg1;
+- (void)appendLimitClauseToSQL:(unsigned int)arg1;
 - (void)appendOrderByClauseToSQL;
 - (void)appendSQL:(id)arg1;
 - (void)appendSelectListToSQLForRequest:(id)arg1;
@@ -85,8 +85,8 @@
 - (void)prepareUpdateStatementWithRow:(id)arg1 originalRow:(id)arg2;
 - (void)setAutoDistinct:(BOOL)arg1;
 - (id)sqlString;
-- (NSUInteger)sqlTypeForExpressionConstantValue:(id)arg1;
-- (NSUInteger)sqlTypeForPropertyAtEndOfKeyPath:(id)arg1;
+- (unsigned int)sqlTypeForExpressionConstantValue:(id)arg1;
+- (unsigned int)sqlTypeForPropertyAtEndOfKeyPath:(id)arg1;
 - (id)whereClause;
 
 @end

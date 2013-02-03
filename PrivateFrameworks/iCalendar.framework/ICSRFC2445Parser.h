@@ -5,6 +5,6 @@
 @interface ICSRFC2445Parser : NSObject {
 }
 
-+ (id)entitiesFromNSData:(id)arg1 options:(NSUInteger)arg2;
++ (id)entitiesFromNSData:(id)arg1 options:(unsigned int)arg2;
 
 @end

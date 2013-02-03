@@ -5,7 +5,7 @@
 @interface UIControlTargetAction : NSObject {
     SEL _action;
     BOOL _cancelled;
-    NSInteger _eventMask;
+    int _eventMask;
     id _target;
 }
 

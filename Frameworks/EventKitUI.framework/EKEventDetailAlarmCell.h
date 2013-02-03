@@ -8,17 +8,17 @@
     UILabel *_alert2View;
     UILabel *_alertTitleView;
     UILabel *_alertView;
-    NSInteger _style;
-    NSUInteger _visibleItems;
+    int _style;
+    unsigned int _visibleItems;
 }
 
 - (id)_alert2View;
 - (id)_alertTitleView;
 - (id)_alertView;
 - (void)dealloc;
-- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 platformStyle:(NSInteger)arg3;
+- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 platformStyle:(int)arg3;
 - (BOOL)isEditable;
-- (void)layoutForWidth:(float)arg1 position:(NSInteger)arg2;
+- (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (void)setAlarms:(id)arg1;
 - (BOOL)update;
 

@@ -7,12 +7,12 @@
 @interface PBDataReader : NSObject {
     NSData *_data;
     BOOL _error;
-    NSUInteger _length;
-    NSUInteger _pos;
+    unsigned int _length;
+    unsigned int _pos;
 }
 
-@property NSUInteger length;
-@property NSUInteger position;
+@property unsigned int length;
+@property unsigned int position;
 
 - (id)data;
 - (void)dealloc;
@@ -20,36 +20,36 @@
 - (BOOL)hasMoreData;
 - (id)initWithData:(id)arg1;
 - (BOOL)isAtEnd;
-- (NSUInteger)length;
-- (NSUInteger)offset;
-- (NSUInteger)position;
-- (NSInteger)read:(const char *)arg1 maxLength:(NSUInteger)arg2;
+- (unsigned int)length;
+- (unsigned int)offset;
+- (unsigned int)position;
+- (int)read:(const char *)arg1 maxLength:(unsigned int)arg2;
 - (BOOL)readBOOL;
 - (unsigned short)readBigEndianFixed16;
-- (NSUInteger)readBigEndianFixed32;
+- (unsigned int)readBigEndianFixed32;
 - (unsigned long long)readBigEndianFixed64;
-- (id)readBytes:(NSUInteger)arg1;
+- (id)readBytes:(unsigned int)arg1;
 - (id)readData;
 - (double)readDouble;
-- (NSUInteger)readFixed32;
+- (unsigned int)readFixed32;
 - (unsigned long long)readFixed64;
 - (float)readFloat;
-- (NSInteger)readInt32;
+- (int)readInt32;
 - (long long)readInt64;
 - (BOOL)readInt8;
 - (id)readProtoBuffer;
-- (NSInteger)readSfixed32;
+- (int)readSfixed32;
 - (long long)readSfixed64;
-- (NSInteger)readSint32;
+- (int)readSint32;
 - (long long)readSint64;
 - (id)readString;
 - (void)readTag:(unsigned short*)arg1 andType:(char *)arg2;
-- (NSUInteger)readUint32;
+- (unsigned int)readUint32;
 - (unsigned long long)readUint64;
 - (long long)readVarInt;
-- (BOOL)seekToOffset:(NSUInteger)arg1;
-- (void)setLength:(NSUInteger)arg1;
-- (void)setPosition:(NSUInteger)arg1;
+- (BOOL)seekToOffset:(unsigned int)arg1;
+- (void)setLength:(unsigned int)arg1;
+- (void)setPosition:(unsigned int)arg1;
 - (BOOL)skipValueWithTag:(unsigned short)arg1 andType:(unsigned char)arg2;
 
 @end

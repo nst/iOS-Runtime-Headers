@@ -6,25 +6,25 @@
 
 @interface MFCocoaPath : MFPath {
     NSBezierPathStub *m_path;
-    NSInteger m_state;
+    int m_state;
 }
 
-- (NSInteger)abort;
+- (int)abort;
 - (void)appendBezierPath:(id)arg1 dc:(id)arg2;
-- (NSInteger)begin;
-- (NSInteger)closeFigure;
+- (int)begin;
+- (int)closeFigure;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct CGPoint { float x1; float x2; })currentPoint;
 - (void)dealloc;
-- (NSInteger)end;
-- (NSInteger)fill:(id)arg1;
-- (NSInteger)flatten;
+- (int)end;
+- (int)fill:(id)arg1;
+- (int)flatten;
 - (id)getBezierPath;
 - (id)init;
-- (id)initWithPath:(id)arg1 state:(NSInteger)arg2;
+- (id)initWithPath:(id)arg1 state:(int)arg2;
 - (BOOL)isOpen;
-- (NSInteger)state;
-- (NSInteger)stroke:(id)arg1;
-- (NSInteger)widen:(id)arg1;
+- (int)state;
+- (int)stroke:(id)arg1;
+- (int)widen:(id)arg1;
 
 @end

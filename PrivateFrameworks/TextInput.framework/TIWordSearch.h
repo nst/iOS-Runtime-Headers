@@ -16,7 +16,7 @@
 - (void)clearLearningDictionary;
 - (void)completeOperationsInQueue;
 - (void)dealloc;
-- (NSUInteger)getCandidateReadingLength:(id)arg1;
+- (unsigned int)getCandidateReadingLength:(id)arg1;
 - (id)getCandidates:(id)arg1;
 - (id)initTIWordSearch;
 - (BOOL)isCancelled;

@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKDayViewItemPath, CalendarModel, EKDayTimeView, UIScrollView, <EKDayViewDelegate>, EKDayAllDayView, NSDate, UIView, EKDayViewContent, UIScrollAnimation, <EKDayViewDataSource>, UIImageView;
+@class EKDayViewItemPath, CalendarModel, EKDayTimeView, UIScrollView, <EKDayViewDelegate>, EKDayAllDayView, NSDate, UIView, EKDayViewContent, NSArray, UIScrollAnimation, <EKDayViewDataSource>, UIImageView;
 
 @interface EKDayView : UIView <UIScrollViewDelegate, EKDayAllDayViewDelegate, EKDayAllDayViewDataSource, EKDayViewContentDelegate, EKDayViewContentDataSource, EKDayViewProtocol> {
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
@@ -38,11 +38,11 @@
     double _dayStart;
     double _dayStartGMTOffset;
     <EKDayViewDelegate> *_delegate;
-    NSInteger _firstEventSecond;
-    NSUInteger _firstVisibleSecond;
+    int _firstEventSecond;
+    unsigned int _firstVisibleSecond;
     } _lastInspectedOccurrenceOnDate;
     CalendarModel *_model;
-    NSInteger _outlineStyle;
+    int _outlineStyle;
     UIImageView *_overlayTimeFade;
     UIScrollAnimation *_scrollAnimation;
     } _scrolledToFirstVisibleSecondForSize;
@@ -54,19 +54,19 @@
     UIImageView *_topVerticalGridExtension;
 }
 
-@property <EKDayViewDataSource> *dataSource;
-@property <EKDayViewDelegate> *delegate;
-@property(readonly) NSArray *occurrenceViews;
-@property(copy) NSDate *selectedDate;
 @property BOOL alignsMidnightToTop;
 @property BOOL allowsOccurrenceSelection;
 @property(readonly) float contentInset;
 @property BOOL darkensSelection;
+@property <EKDayViewDataSource> * dataSource;
+@property <EKDayViewDelegate> * delegate;
 @property BOOL dimsNonSelectedItems;
 @property BOOL eventsFillGrid;
-@property NSUInteger firstVisibleSecond;
-@property NSInteger outlineStyle;
+@property unsigned int firstVisibleSecond;
+@property(readonly) NSArray * occurrenceViews;
+@property int outlineStyle;
 @property(readonly) float scrollBarOffset;
+@property(copy) NSDate * selectedDate;
 @property BOOL shouldShowTimeMarkerOnToday;
 @property BOOL showsGrid;
 @property BOOL showsLeftBorder;
@@ -81,15 +81,15 @@
 - (id)_generateVerticalGridExtensionImage;
 - (void)_localeChanged;
 - (double)_offsetTimeForDST:(double)arg1 timeZone:(struct __CFTimeZone { }*)arg2;
-- (float)_positionOfSecond:(NSInteger)arg1;
+- (float)_positionOfSecond:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_scrollerRect;
 - (float)_secondAtPosition:(float)arg1;
-- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })_selectedDate;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })_selectedDate;
 - (void)_stopScrolling;
 - (float)_verticalOffset;
 - (BOOL)alignsMidnightToTop;
-- (void)allDayView:(id)arg1 didSelectItemWithEventIndex:(NSUInteger)arg2;
-- (id)allDayView:(id)arg1 occurrenceViewForEventAtIndex:(NSUInteger)arg2;
+- (void)allDayView:(id)arg1 didSelectItemWithEventIndex:(unsigned int)arg2;
+- (id)allDayView:(id)arg1 occurrenceViewForEventAtIndex:(unsigned int)arg2;
 - (BOOL)allowsOccurrenceSelection;
 - (void)bringEventToFront:(id)arg1;
 - (float)contentInset;
@@ -99,29 +99,29 @@
 - (void)dayContentView:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)dayOccurrenceViewClicked:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)dayViewContent:(id)arg1 didCreateOccurrenceViews:(id)arg2;
-- (void)dayViewContent:(id)arg1 didSelectItemWithEventIndex:(NSUInteger)arg2;
-- (double)dayViewContent:(id)arg1 durationForEventAtIndex:(NSUInteger)arg2;
-- (id)dayViewContent:(id)arg1 endDateForEventAtIndex:(NSUInteger)arg2;
-- (id)dayViewContent:(id)arg1 occurrenceViewForEventAtIndex:(NSUInteger)arg2;
-- (id)dayViewContent:(id)arg1 startDateForEventAtIndex:(NSUInteger)arg2;
+- (void)dayViewContent:(id)arg1 didSelectItemWithEventIndex:(unsigned int)arg2;
+- (double)dayViewContent:(id)arg1 durationForEventAtIndex:(unsigned int)arg2;
+- (id)dayViewContent:(id)arg1 endDateForEventAtIndex:(unsigned int)arg2;
+- (id)dayViewContent:(id)arg1 occurrenceViewForEventAtIndex:(unsigned int)arg2;
+- (id)dayViewContent:(id)arg1 startDateForEventAtIndex:(unsigned int)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)dimsNonSelectedItems;
 - (BOOL)eventsFillGrid;
-- (NSUInteger)firstVisibleSecond;
+- (unsigned int)firstVisibleSecond;
 - (void)firstVisibleSecondChanged;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundColor:(id)arg2 opaque:(BOOL)arg3 scrollbarShowsInside:(BOOL)arg4;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 opaque:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (NSUInteger)numberOfEventsInAllDayView:(id)arg1;
-- (NSUInteger)numberOfEventsInDayViewContent:(id)arg1;
+- (unsigned int)numberOfEventsInAllDayView:(id)arg1;
+- (unsigned int)numberOfEventsInDayViewContent:(id)arg1;
 - (void)occurrenceDragExited:(id)arg1;
-- (void)occurrencePressed:(id)arg1 onDay:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2;
+- (void)occurrencePressed:(id)arg1 onDay:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2;
 - (id)occurrenceViewForOccurrence:(id)arg1;
 - (id)occurrenceViews;
 - (id)occurrenceVisibleRect:(id)arg1;
-- (NSInteger)outlineStyle;
+- (int)outlineStyle;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForItemAtPath:(id)arg1;
 - (void)reloadData;
 - (void)resetLastSelectedOccurrencePoint;
@@ -130,7 +130,7 @@
 - (void)scrollToDate:(id)arg1 animated:(BOOL)arg2;
 - (void)scrollToItemAtPath:(id)arg1 animated:(BOOL)arg2;
 - (void)scrollToOccurrence:(id)arg1 animated:(BOOL)arg2;
-- (void)scrollToSecond:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)scrollToSecond:(int)arg1 animated:(BOOL)arg2;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
@@ -145,8 +145,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDimsNonSelectedItems:(BOOL)arg1;
 - (void)setEventsFillGrid:(BOOL)arg1;
-- (void)setFirstVisibleSecond:(NSUInteger)arg1;
-- (void)setOutlineStyle:(NSInteger)arg1;
+- (void)setFirstVisibleSecond:(unsigned int)arg1;
+- (void)setOutlineStyle:(int)arg1;
 - (void)setSelectedDate:(id)arg1;
 - (void)setShouldShowTimeMarkerOnToday:(BOOL)arg1;
 - (void)setShowsGrid:(BOOL)arg1;

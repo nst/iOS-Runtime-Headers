@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSArray, CPZoneProfile, NSMutableArray, CPCharSequence;
 
 @interface CPZone : CPRegion {
@@ -28,7 +33,7 @@
 - (long)borderZOrder;
 - (BOOL)canContain:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)charactersInZone;
-- (NSInteger)compareArea:(id)arg1;
+- (int)compareArea:(id)arg1;
 - (BOOL)contains:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -62,8 +67,8 @@
 - (struct CGPoint { float x1; float x2; }*)swollenOuterVertices;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })swollenZoneBounds;
 - (id)textLinesInZone;
-- (NSUInteger)vertexCount;
-- (NSUInteger)wordCount;
+- (unsigned int)vertexCount;
+- (unsigned int)wordCount;
 - (id)zoneBorders;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })zoneBounds;
 - (id)zoneProfile;

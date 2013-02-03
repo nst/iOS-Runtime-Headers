@@ -13,7 +13,7 @@
 
 - (void)_mainThreadPopulateDictForMimeType:(id)arg1;
 - (void)dealloc;
-- (NSInteger)dictValueForMimeType:(id)arg1;
+- (int)dictValueForMimeType:(id)arg1;
 - (id)init;
 
 @end

@@ -11,7 +11,7 @@
     struct CGPoint { 
         float x; 
         float y; 
-    NSInteger _directionalFailureCount;
+    int _directionalFailureCount;
     } _lastLocation;
     double _lastTime;
     } _startLocation;

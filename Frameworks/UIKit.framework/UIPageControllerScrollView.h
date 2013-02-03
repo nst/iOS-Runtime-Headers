@@ -8,7 +8,7 @@
     UIPageController *_pageController;
 }
 
-@property UIPageController *pageController;
+@property UIPageController * pageController;
 
 + (void)_initializeSafeCategory;
 

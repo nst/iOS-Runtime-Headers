@@ -3,12 +3,12 @@
  */
 
 @interface ABTextToneInfo : NSObject {
-    NSUInteger _actualSound;
-    NSUInteger _previewSound;
+    unsigned int _actualSound;
+    unsigned int _previewSound;
 }
 
-@property(readonly) NSUInteger actualSound;
-@property(readonly) NSUInteger previewSound;
+@property(readonly) unsigned int actualSound;
+@property(readonly) unsigned int previewSound;
 
 - (unsigned long)actualSound;
 - (id)initWithPreviewSound:(unsigned long)arg1 actualSound:(unsigned long)arg2;

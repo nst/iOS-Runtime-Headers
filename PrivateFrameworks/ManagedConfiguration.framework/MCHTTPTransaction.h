@@ -18,22 +18,22 @@
     BOOL _rememberData;
     NSURL *_requestURL;
     NSMutableData *_responseData;
-    NSInteger _statusCode;
+    int _statusCode;
     double _timeout;
     NSString *_userAgent;
 }
 
-@property(retain) NSString *CMSSignatureHeaderName;
-@property(retain) NSString *contentType;
-@property(retain) NSData *data;
-@property(readonly) NSError *error;
-@property(retain) NSString *method;
-@property(readonly) NSURL *permanentlyRedirectedURL;
-@property(readonly) NSData *responseData;
-@property(retain) NSURL *url;
-@property(retain) NSString *userAgent;
-@property(readonly) NSInteger statusCode;
+@property(retain) NSString * CMSSignatureHeaderName;
+@property(retain) NSString * contentType;
+@property(retain) NSData * data;
+@property(readonly) NSError * error;
+@property(retain) NSString * method;
+@property(readonly) NSURL * permanentlyRedirectedURL;
+@property(readonly) NSData * responseData;
+@property(readonly) int statusCode;
 @property double timeout;
+@property(retain) NSURL * url;
+@property(retain) NSString * userAgent;
 
 + (id)performRequestURL:(id)arg1 method:(id)arg2 timeout:(double)arg3 userAgent:(id)arg4 contentType:(id)arg5 data:(id)arg6 identity:(struct __SecIdentity { }*)arg7 outPermanentlyRedirectedURL:(id*)arg8 outError:(id*)arg9;
 + (id)transactionWithURL:(id)arg1 method:(id)arg2;
@@ -67,7 +67,7 @@
 - (void)setTimeout:(double)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setUserAgent:(id)arg1;
-- (NSInteger)statusCode;
+- (int)statusCode;
 - (double)timeout;
 - (id)url;
 - (id)userAgent;

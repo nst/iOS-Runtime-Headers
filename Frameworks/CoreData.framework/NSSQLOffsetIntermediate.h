@@ -3,10 +3,10 @@
  */
 
 @interface NSSQLOffsetIntermediate : NSSQLIntermediate {
-    NSUInteger _offset;
+    unsigned int _offset;
 }
 
 - (id)generateSQLStringInContext:(id)arg1;
-- (id)initWithOffset:(NSUInteger)arg1 inScope:(id)arg2;
+- (id)initWithOffset:(unsigned int)arg1 inScope:(id)arg2;
 
 @end

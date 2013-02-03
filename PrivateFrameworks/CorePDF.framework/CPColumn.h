@@ -22,7 +22,7 @@
 - (void)dealloc;
 - (id)description;
 - (BOOL)hasCentredParagraph;
-- (NSInteger)inOrder;
+- (int)inOrder;
 - (id)init;
 - (BOOL)isBoxRegion;
 - (BOOL)isGraphicalRegion;
@@ -32,7 +32,7 @@
 - (float)leftPad;
 - (float)maxLeftPad;
 - (float)maxRightPad;
-- (NSInteger)outOrder;
+- (int)outOrder;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paddedBounds;
 - (float)rightPad;
 - (float)selectionBottom;

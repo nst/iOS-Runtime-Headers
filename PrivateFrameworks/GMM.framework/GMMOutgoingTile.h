@@ -7,36 +7,35 @@
 @interface GMMOutgoingTile : PBCodable {
     GMMClientCapabilities *_clientCapabilities;
     NSMutableArray *_indexs;
-    NSInteger _tileSize;
-    NSInteger _zoom;
+    int _tileSize;
+    int _zoom;
 }
 
-@property(retain) GMMClientCapabilities *clientCapabilities;
-@property(retain) NSMutableArray *indexs;
-@property(readonly) NSInteger indexsCount;
-@property NSInteger tileSize;
-@property NSInteger zoom;
+@property(retain) GMMClientCapabilities * clientCapabilities;
+@property(retain) NSMutableArray * indexs;
+@property(readonly) int indexsCount;
+@property int tileSize;
+@property int zoom;
 
-+ (id)outgoingTileForTilePaths:(id)arg1;
-+ (id)outgoingTileForZoomLevel:(NSUInteger)arg1;
++ (id)outgoingTileForTilePaths:(id)arg1 needSupertile:(BOOL*)arg2;
 
 - (void)addIndex:(id)arg1;
 - (id)clientCapabilities;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)indexAtIndex:(NSUInteger)arg1;
+- (id)indexAtIndex:(unsigned int)arg1;
 - (id)indexs;
-- (NSInteger)indexsCount;
+- (int)indexsCount;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (void)setClientCapabilities:(id)arg1;
-- (void)setIndex:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setIndex:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setIndexs:(id)arg1;
-- (void)setTileSize:(NSInteger)arg1;
-- (void)setZoom:(NSInteger)arg1;
-- (NSInteger)tileSize;
+- (void)setTileSize:(int)arg1;
+- (void)setZoom:(int)arg1;
+- (int)tileSize;
 - (void)writeTo:(id)arg1;
-- (NSInteger)zoom;
+- (int)zoom;
 
 @end

@@ -11,11 +11,11 @@
     GMMProjectionProperties *_projectionProperties;
 }
 
-@property(retain) GMMAnnotationProperties *annotationProperties;
-@property(retain) GMMDataProperties *dataProperties;
-@property(retain) GMMModel *model;
-@property(retain) GMMProjectionProperties *projectionProperties;
+@property(retain) GMMAnnotationProperties * annotationProperties;
+@property(retain) GMMDataProperties * dataProperties;
 @property(readonly) BOOL hasModel;
+@property(retain) GMMModel * model;
+@property(retain) GMMProjectionProperties * projectionProperties;
 
 - (id)annotationProperties;
 - (id)dataProperties;

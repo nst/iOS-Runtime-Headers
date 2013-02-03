@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIButton, <ABDateFieldDelegate>, UIDatePicker, <ABDatePickerPresentationDelegate>, NSDate;
+@class UIButton, <ABDateFieldDelegate>, UIDatePicker, <ABDatePickerPresentationDelegate>, NSDate, NSString;
 
 @interface ABDateField : ABUILabelWithPlaceholder {
     struct CGSize { 
@@ -21,12 +21,12 @@
     BOOL _usesDatePickerAsInputView;
 }
 
-@property(retain) NSDate *date;
-@property <ABDateFieldDelegate> *delegate;
-@property <ABDatePickerPresentationDelegate> *presentationDelegate;
-@property(copy) NSString *text;
-@property CGSize datePickerSize;
+@property(retain) NSDate * date;
+@property struct CGSize { float width; float height; } datePickerSize;
+@property <ABDateFieldDelegate> * delegate;
 @property(getter=isEditable) BOOL editable;
+@property <ABDatePickerPresentationDelegate> * presentationDelegate;
+@property(copy) NSString * text;
 
 - (void)_attachToDatePicker:(id)arg1;
 - (id)_clearButton;

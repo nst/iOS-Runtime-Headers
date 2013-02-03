@@ -14,14 +14,14 @@
         unsigned char sin_family; 
         unsigned short sin_port; 
         struct in_addr { 
-            NSUInteger s_addr; 
+            unsigned int s_addr; 
         } sin_addr; 
         BOOL sin_zero[8]; 
     } cdxaddr_ipv4;
     <CDXClientDelegate> *delegate_;
     NSError *error_;
-    NSInteger fd_;
-    NSInteger holePunchAttemptCount_;
+    int fd_;
+    int holePunchAttemptCount_;
     double holePunchInterval_;
     unsigned long long holePunchSID_;
     struct dispatch_source_s { } *holePunchTimer_;
@@ -40,11 +40,11 @@
     BOOL willReconfigureShortly_;
 }
 
-@property <CDXClientDelegate> *delegate;
-@property(readonly) NSError *error;
-@property(readonly) NSData *preblob;
-@property(copy) ? *preblobCallback;
-@property(readonly) dispatch_queue_s *queue;
+@property <CDXClientDelegate> * delegate;
+@property(readonly) NSError * error;
+@property(readonly) NSData * preblob;
+@property(copy) id preblobCallback;
+@property(readonly) struct dispatch_queue_s { }* queue;
 
 - (id)createSessionWithTicket:(id)arg1 sessionKey:(id)arg2;
 - (void)dealloc;

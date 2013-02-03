@@ -2,23 +2,25 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMHTMLCollection, NSString, DOMElement;
+
 @interface DOMHTMLDocument : DOMDocument {
 }
 
-@property(retain,readonly) DOMElement *activeElement;
-@property(copy) NSString *alinkColor;
-@property(copy) NSString *bgColor;
-@property(copy,readonly) NSString *compatMode;
-@property(copy) NSString *designMode;
-@property(copy) NSString *dir;
-@property(retain,readonly) DOMHTMLCollection *embeds;
-@property(copy) NSString *fgColor;
-@property(copy) NSString *linkColor;
-@property(retain,readonly) DOMHTMLCollection *plugins;
-@property(retain,readonly) DOMHTMLCollection *scripts;
-@property(copy) NSString *vlinkColor;
-@property(readonly) NSInteger height;
-@property(readonly) NSInteger width;
+@property(retain,readonly) DOMElement * activeElement;
+@property(copy) NSString * alinkColor;
+@property(copy) NSString * bgColor;
+@property(copy,readonly) NSString * compatMode;
+@property(copy) NSString * designMode;
+@property(copy) NSString * dir;
+@property(retain,readonly) DOMHTMLCollection * embeds;
+@property(copy) NSString * fgColor;
+@property(readonly) int height;
+@property(copy) NSString * linkColor;
+@property(retain,readonly) DOMHTMLCollection * plugins;
+@property(retain,readonly) DOMHTMLCollection * scripts;
+@property(copy) NSString * vlinkColor;
+@property(readonly) int width;
 
 - (id)_createDocumentFragmentWithMarkupString:(id)arg1 baseURLString:(id)arg2;
 - (id)_createDocumentFragmentWithText:(id)arg1;
@@ -36,7 +38,7 @@
 - (id)embeds;
 - (id)fgColor;
 - (BOOL)hasFocus;
-- (NSInteger)height;
+- (int)height;
 - (id)linkColor;
 - (void)open;
 - (id)plugins;
@@ -50,7 +52,7 @@
 - (void)setLinkColor:(id)arg1;
 - (void)setVlinkColor:(id)arg1;
 - (id)vlinkColor;
-- (NSInteger)width;
+- (int)width;
 - (void)write:(id)arg1;
 - (void)writeln:(id)arg1;
 

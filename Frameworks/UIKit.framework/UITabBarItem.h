@@ -26,21 +26,21 @@
     NSSet *_possibleTitles;
     UIImage *_selectedImage;
     } _tabBarItemFlags;
-    NSInteger _tag;
+    int _tag;
     id _target;
     NSString *_title;
     UIImage *_unselectedImage;
     UIView *_view;
 }
 
-@property(copy) NSString *badgeValue;
-@property(retain) UIImage *selectedImage;
-@property(retain) UIImage *unselectedImage;
-@property(retain) UIView *view;
 @property SEL action;
 @property BOOL animatedBadge;
-@property NSInteger tag;
+@property(copy) NSString * badgeValue;
+@property(retain) UIImage * selectedImage;
+@property int tag;
 @property id target;
+@property(retain) UIImage * unselectedImage;
+@property(retain) UIView * view;
 @property BOOL viewIsCustom;
 
 + (void)_initializeSafeCategory;
@@ -60,8 +60,8 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTabBarSystemItem:(NSInteger)arg1 tag:(NSInteger)arg2;
-- (id)initWithTitle:(id)arg1 image:(id)arg2 tag:(NSInteger)arg3;
+- (id)initWithTabBarSystemItem:(int)arg1 tag:(int)arg2;
+- (id)initWithTitle:(id)arg1 image:(id)arg2 tag:(int)arg3;
 - (BOOL)isEnabled;
 - (BOOL)isSystemItem;
 - (id)nextResponder;
@@ -74,14 +74,14 @@
 - (void)setImage:(id)arg1;
 - (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSelectedImage:(id)arg1;
-- (void)setTag:(NSInteger)arg1;
+- (void)setTag:(int)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUnselectedImage:(id)arg1;
 - (void)setView:(id)arg1;
 - (void)setViewIsCustom:(BOOL)arg1;
-- (NSInteger)systemItem;
-- (NSInteger)tag;
+- (int)systemItem;
+- (int)tag;
 - (id)target;
 - (id)title;
 - (id)unselectedImage;

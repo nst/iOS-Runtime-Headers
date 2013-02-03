@@ -5,6 +5,6 @@
 @interface GQUOutputBundleFactory : NSObject {
 }
 
-+ (id)createOutputBundleForType:(NSInteger)arg1 outputPath:(struct __CFString { }*)arg2;
++ (id)createOutputBundleForType:(int)arg1 outputPath:(struct __CFString { }*)arg2;
 
 @end

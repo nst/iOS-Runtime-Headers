@@ -16,9 +16,9 @@
     BOOL _strokeCurrentPath;
 }
 
-@property(retain) UIColor *strokeColor;
-@property UIEdgeInsets edgeInsets;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } edgeInsets;
 @property BOOL fitToImage;
+@property(retain) UIColor * strokeColor;
 @property BOOL strokeCurrentPath;
 
 - (void)dealloc;

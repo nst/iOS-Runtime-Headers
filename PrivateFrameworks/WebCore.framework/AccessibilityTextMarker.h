@@ -4,19 +4,19 @@
 
 @interface AccessibilityTextMarker : NSObject {
     struct TextMarkerData { 
-        NSUInteger axID; 
+        unsigned int axID; 
         struct Node {} *node; 
-        NSInteger offset; 
-        NSInteger affinity; 
+        int offset; 
+        int affinity; 
     } _textMarkerData;
 }
 
-+ (id)textMarkerWithVisiblePosition:(struct VisiblePosition { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_1_1_1; NSInteger x_1_1_2; unsigned int x_1_1_3 : 2; unsigned int x_1_1_4 : 1; } x1; NSInteger x2; }*)arg1;
++ (id)textMarkerWithVisiblePosition:(struct VisiblePosition { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_1_1_1; int x_1_1_2; unsigned int x_1_1_3 : 2; unsigned int x_1_1_4 : 1; } x1; int x2; }*)arg1;
 
 - (id)dataRepresentation;
 - (id)description;
 - (id)initWithData:(id)arg1;
-- (id)initWithTextMarker:(struct TextMarkerData { NSUInteger x1; struct Node {} *x2; NSInteger x3; NSInteger x4; }*)arg1;
-- (struct VisiblePosition { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_1_1_1; NSInteger x_1_1_2; unsigned int x_1_1_3 : 2; unsigned int x_1_1_4 : 1; } x1; NSInteger x2; })visiblePosition;
+- (id)initWithTextMarker:(struct TextMarkerData { unsigned int x1; struct Node {} *x2; int x3; int x4; }*)arg1;
+- (struct VisiblePosition { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_1_1_1; int x_1_1_2; unsigned int x_1_1_3 : 2; unsigned int x_1_1_4 : 1; } x1; int x2; })visiblePosition;
 
 @end

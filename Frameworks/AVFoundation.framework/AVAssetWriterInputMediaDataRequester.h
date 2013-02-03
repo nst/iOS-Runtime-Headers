@@ -14,9 +14,10 @@
     AVAssetWriterInputWritingHelper *_writingHelper;
 }
 
-@property(readonly) ? *requestBlock;
-@property(readonly) dispatch_queue_s *requestQueue;
+@property(readonly) id requestBlock;
+@property(readonly) struct dispatch_queue_s { }* requestQueue;
 
+- (void)_requestMediaDataIfReady;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;
@@ -25,5 +26,6 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)requestBlock;
 - (struct dispatch_queue_s { }*)requestQueue;
+- (void)startRequestingMediaData;
 
 @end

@@ -17,7 +17,7 @@
 - (id)_storeIdentifier;
 - (void)dealloc;
 - (void)finalize;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)persistentStore;
 

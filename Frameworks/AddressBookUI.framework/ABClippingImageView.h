@@ -11,8 +11,8 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property(retain) UIImage *image;
-@property(retain) <ABStyleProvider> *styleProvider;
+@property(retain) UIImage * image;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 - (BOOL)_canDrawContent;
 - (void)dealloc;

@@ -9,11 +9,11 @@
             float y; 
         } point; 
         double time; 
-    NSInteger m_index;
+    int m_index;
     } m_points[16];
 }
 
-@property(readonly) CGPoint weightedPoint;
+@property(readonly) struct CGPoint { float x; float y; } weightedPoint;
 
 - (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)clearHistory;

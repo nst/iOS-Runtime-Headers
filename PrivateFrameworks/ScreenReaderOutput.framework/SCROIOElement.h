@@ -3,17 +3,17 @@
  */
 
 @interface SCROIOElement : NSObject <SCROIOElementProtocol, NSCopying> {
-    NSInteger _identifier;
-    NSUInteger _ioObject;
+    int _identifier;
+    unsigned int _ioObject;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (long)identifier;
-- (id)initWithIOObject:(NSUInteger)arg1;
-- (NSUInteger)ioObject;
+- (id)initWithIOObject:(unsigned int)arg1;
+- (unsigned int)ioObject;
 - (BOOL)isEqual:(id)arg1;
-- (NSInteger)transport;
+- (int)transport;
 
 @end

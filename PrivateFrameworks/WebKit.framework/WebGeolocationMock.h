@@ -5,7 +5,7 @@
 @interface WebGeolocationMock : NSObject {
 }
 
-+ (void)setError:(NSInteger)arg1 :(id)arg2;
++ (void)setError:(int)arg1 :(id)arg2;
 + (void)setPosition:(double)arg1 :(double)arg2 :(double)arg3;
 
 @end

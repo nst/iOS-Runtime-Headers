@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABMembersDataSourceDelegate>, NSMutableArray, <ABStyleProvider>;
+@class NSArray, <ABMembersDataSourceDelegate>, <ABStyleProvider>, NSMutableArray;
 
 @interface ABMembersFilteredDataSource : NSObject <UITableViewDelegate, UITableViewDataSource> {
     void *_addressBook;
@@ -11,10 +11,10 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property void *addressBook;
-@property <ABMembersDataSourceDelegate> *delegate;
-@property(readonly) NSArray *records;
-@property(retain) <ABStyleProvider> *styleProvider;
+@property void* addressBook;
+@property <ABMembersDataSourceDelegate> * delegate;
+@property(readonly) NSArray * records;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 - (void)addRecords:(id)arg1;
 - (void*)addressBook;
@@ -29,6 +29,7 @@
 - (id)styleProvider;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

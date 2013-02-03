@@ -5,15 +5,15 @@
 @interface AYLogger : NSObject {
 }
 
-+ (void)_recalculateCacheWithMask:(NSInteger)arg1;
-+ (void)addLogger:(id)arg1 forType:(id)arg2 mask:(NSInteger)arg3;
++ (void)_recalculateCacheWithMask:(int)arg1;
++ (void)addLogger:(id)arg1 forType:(id)arg2 mask:(int)arg3;
 + (id)fileStreamLogger;
 + (void)initialize;
-+ (void)logInFile:(char *)arg1 function:(const char *)arg2 line:(NSUInteger)arg3 withType:(id)arg4 level:(NSInteger)arg5 format:(id)arg6;
-+ (void)removeLogger:(id)arg1 forType:(id)arg2 mask:(NSInteger)arg3;
++ (void)logInFile:(char *)arg1 function:(const char *)arg2 line:(unsigned int)arg3 withType:(id)arg4 level:(int)arg5 format:(id)arg6;
++ (void)removeLogger:(id)arg1 forType:(id)arg2 mask:(int)arg3;
 + (id)stderrStreamLogger;
 + (id)urlToFileStreamLogger;
 
-- (void)dumpLogInFile:(char *)arg1 function:(const char *)arg2 line:(NSUInteger)arg3 withType:(id)arg4 level:(NSInteger)arg5 message:(id)arg6;
+- (void)dumpLogInFile:(char *)arg1 function:(const char *)arg2 line:(unsigned int)arg3 withType:(id)arg4 level:(int)arg5 message:(id)arg6;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSHashTable, NSMutableSet, NSTimer, GMMRequester, NSMutableArray;
+@class NSSet, NSArray, NSHashTable, NSTimer, NSMutableArray, NSMutableSet, GMMRequester;
 
 @interface MKPanoramaLoader : NSObject <PBRequesterDelegate, MKMapSnapshotCreatorRequester> {
     id _delegate;
@@ -15,19 +15,19 @@
     BOOL _requestsNeedSort;
 }
 
-@property(readonly) NSSet *processingSet;
-@property(readonly) NSHashTable *requestHashTable;
-@property(readonly) NSArray *requestQueue;
-@property(retain) NSTimer *requestQueueTimer;
-@property(retain) GMMRequester *requester;
 @property id delegate;
 @property(getter=isIdle,readonly) BOOL idle;
 @property BOOL needsCancel;
+@property(readonly) NSSet * processingSet;
+@property(readonly) NSHashTable * requestHashTable;
+@property(readonly) NSArray * requestQueue;
+@property(retain) NSTimer * requestQueueTimer;
+@property(retain) GMMRequester * requester;
 @property BOOL requestsNeedSort;
 
 + (id)createRequestWithCoordinate:(struct { double x1; double x2; })arg1;
-+ (id)createRequestWithId:(id)arg1 metadata:(BOOL)arg2 zoomLevel:(NSInteger)arg3 tilePaths:(id)arg4;
-+ (id)createRequestWithId:(id)arg1;
++ (id)createRequestWithId:(id)arg1 metadata:(BOOL)arg2 tilePaths:(id)arg3 thumbnailCoordinate:(struct { double x1; double x2; })arg4;
++ (id)createRequestWithId:(id)arg1 thumbnailCoordinate:(struct { double x1; double x2; })arg2;
 + (void)handleRequester:(id)arg1 request:(id)arg2 response:(id)arg3 loader:(id)arg4 delegate:(id)arg5;
 + (void)handleRequester:(id)arg1 request:(id)arg2 response:(id)arg3;
 + (id)mapSnapshotCreator;

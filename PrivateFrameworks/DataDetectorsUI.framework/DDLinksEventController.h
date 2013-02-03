@@ -13,11 +13,11 @@
 - (void)buttonClicked:(id)arg1;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
-- (void)eventEditViewController:(id)arg1 didCompleteWithAction:(NSInteger)arg2;
+- (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (id)initWithResult:(struct __DDResult { }*)arg1;
 - (id)nibBundle;
 - (id)nibName;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
 

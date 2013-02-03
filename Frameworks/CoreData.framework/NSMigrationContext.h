@@ -11,7 +11,7 @@
     NSMutableDictionary *_bySourceAssociationTable;
     NSEntityMapping *_currentMapping;
     NSPropertyMapping *_currentPropertyMapping;
-    NSUInteger _currentStep;
+    unsigned int _currentStep;
     NSMigrationManager *_migrationManager;
 }
 
@@ -20,13 +20,13 @@
 - (void)associateSourceInstance:(id)arg1 withDestinationInstance:(id)arg2 forEntityMapping:(id)arg3;
 - (void)clearAssociationTables;
 - (id)currentEntityMapping;
-- (NSUInteger)currentMigrationStep;
+- (unsigned int)currentMigrationStep;
 - (id)currentPropertyMapping;
 - (void)dealloc;
 - (id)destinationInstancesForEntityMapping:(id)arg1 sourceInstance:(id)arg2;
 - (id)initWithMigrationManager:(id)arg1;
 - (void)setCurrentEntityMapping:(id)arg1;
-- (void)setCurrentMigrationStep:(NSUInteger)arg1;
+- (void)setCurrentMigrationStep:(unsigned int)arg1;
 - (void)setCurrentPropertyMapping:(id)arg1;
 - (id)sourceInstancesForEntityMapping:(id)arg1 destinationInstance:(id)arg2;
 

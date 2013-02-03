@@ -2,24 +2,26 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class SUScriptNavigationItem, SUScriptPopOver, SUScriptSection, SUScriptNavigationController, NSString, SUScriptViewController, UIViewController, SUScriptSplitViewController;
+
 @interface SUScriptViewController : SUScriptObject {
 }
 
-@property(retain) SUScriptViewController *inputAccessoryViewController;
-@property(retain) NSString *modalPresentationStyle;
-@property(readonly) NSString *modalPresentationStyleNameFormSheet;
-@property(readonly) NSString *modalPresentationStyleNameFullScreen;
-@property(readonly) SUScriptViewController *modalViewController;
-@property(retain) UIViewController *nativeViewController;
-@property(readonly) SUScriptNavigationController *navigationController;
-@property(readonly) SUScriptNavigationItem *navigationItem;
-@property(readonly) SUScriptPopOver *popOver;
-@property(retain) SUScriptSection *section;
-@property(readonly) SUScriptSplitViewController *splitViewController;
-@property(retain) SUScriptViewController *transientViewController;
-@property(readonly) SUScriptViewController *volumeViewController;
 @property(retain) id backgroundColor;
+@property(retain) SUScriptViewController * inputAccessoryViewController;
+@property(retain) NSString * modalPresentationStyle;
+@property(readonly) NSString * modalPresentationStyleNameFormSheet;
+@property(readonly) NSString * modalPresentationStyleNameFullScreen;
+@property(readonly) SUScriptViewController * modalViewController;
+@property(retain) UIViewController * nativeViewController;
+@property(readonly) SUScriptNavigationController * navigationController;
+@property(readonly) SUScriptNavigationItem * navigationItem;
+@property(readonly) SUScriptPopOver * popOver;
+@property(retain) SUScriptSection * section;
+@property(readonly) SUScriptSplitViewController * splitViewController;
 @property(retain) id topBackgroundColor;
+@property(retain) SUScriptViewController * transientViewController;
+@property(readonly) SUScriptViewController * volumeViewController;
 @property id wantsFullScreenLayout;
 
 + (id)webScriptNameForKey:(const char *)arg1;
@@ -40,19 +42,19 @@
 - (void)_dismissModalViewControllerWithTransition:(id)arg1;
 - (void)_dismissVolumeViewControllerAnimated:(BOOL)arg1;
 - (BOOL)_mainThreadEquals:(id)arg1;
-- (NSInteger)_modalPresentationStyle;
+- (int)_modalPresentationStyle;
 - (void)_moveToSectionWithIdentifier:(id)arg1;
 - (id)_nativeSection;
 - (id)_parentViewControllerForVolumeViewController;
 - (void)_presentModalViewController:(id)arg1 withTransition:(id)arg2;
 - (void)_presentVolumeViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)_runScrollTest:(id)arg1 withDelta:(float)arg2 forIterations:(NSInteger)arg3;
+- (void)_runScrollTest:(id)arg1 withDelta:(float)arg2 forIterations:(int)arg3;
 - (id)_sectionIdentifier;
 - (void)_setBackgroundColor:(struct CGColor { }*)arg1;
-- (void)_setModalPresentationStyle:(NSInteger)arg1;
+- (void)_setModalPresentationStyle:(int)arg1;
 - (void)_setTopBackgroundColor:(struct CGColor { }*)arg1;
 - (void)_setTransientViewController:(id)arg1;
-- (NSInteger)_transitionForString:(id)arg1;
+- (int)_transitionForString:(id)arg1;
 - (id)attributeKeys;
 - (id)backgroundColor;
 - (void)dismissModalViewControllerAnimated:(BOOL)arg1;
@@ -72,7 +74,7 @@
 - (id)popOver;
 - (void)presentModalViewController:(id)arg1 withTransition:(id)arg2;
 - (void)presentVolumeViewController:(id)arg1 animated:(id)arg2;
-- (void)runScrollTest:(id)arg1 withDelta:(float)arg2 forIterations:(NSInteger)arg3;
+- (void)runScrollTest:(id)arg1 withDelta:(float)arg2 forIterations:(int)arg3;
 - (id)scriptAttributeKeys;
 - (id)section;
 - (void)setBackgroundColor:(id)arg1;

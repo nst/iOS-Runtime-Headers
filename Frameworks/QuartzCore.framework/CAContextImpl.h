@@ -6,37 +6,41 @@
    See Warning(s) below.
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface CAContextImpl : CAContext {
-    struct Context { NSUInteger x1; struct Context {} *x2; struct Mutex { 
+    struct Context { unsigned int x1; struct Context {} *x2; struct Mutex { 
             struct _opaque_pthread_mutex_t { 
                 long __sig; 
                 BOOL __opaque[40]; 
             } _m; 
-        } x3; id x4; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x5; unsigned char x6; void*x7; unsigned char x8; out in void*x9; void*x10; void*x11; void*x12; void*x13; NSUInteger x14; NSUInteger x15; id x16; void*x17; unsigned char x18; void*x19; unsigned long x20; void*x21; void*x22; void*x23; const void*x24; struct Context {} *x25; struct CGColorSpace {} *x26; struct __CFDictionary {} *x27; NSUInteger x28; NSUInteger x29; struct __CFMachPort {} *x30; struct __CFRunLoopSource {} *x31; struct Shmem {} *x32; struct Shmem {} *x33; float x34; struct Commit {} *x35; struct Generic { 
+        } x3; id x4; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x5; unsigned char x6; void*x7; unsigned char x8; out in void*x9; void*x10; void*x11; void*x12; void*x13; unsigned int x14; unsigned int x15; id x16; void*x17; unsigned char x18; void*x19; unsigned long x20; void*x21; void*x22; void*x23; const void*x24; struct Context {} *x25; struct CGColorSpace {} *x26; struct __CFDictionary {} *x27; unsigned int x28; unsigned int x29; struct __CFMachPort {} *x30; struct __CFRunLoopSource {} *x31; struct Shmem {} *x32; struct Shmem {} *x33; float x34; struct Commit {} *x35; struct Generic { 
             int (**_vptr$GenericContext)(); 
             struct Context {} *_c; 
-     /* Encoded args for previous method: @16@0:4@8B12 */
         } x36; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; } *_impl;
 }
 
 - (struct CGColorSpace { }*)colorSpace;
-- (NSUInteger)contextId;
-- (NSUInteger)createSlot;
+- (unsigned int)contextId;
+- (unsigned int)createSlot;
 - (void)dealloc;
-- (void)deleteSlot:(NSUInteger)arg1;
+- (void)deleteSlot:(unsigned int)arg1;
 - (id)initRemoteWithOptions:(id)arg1;
-- (id)initWithOptions:(id)arg1 localContext:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
+- (id)initWithOptions:(id)arg1 localContext:(bool)arg2;
 - (void)invalidate;
 - (id)layer;
 - (float)level;
-- (void)orderAbove:(NSUInteger)arg1;
-- (void)orderBelow:(NSUInteger)arg1;
+- (void)orderAbove:(unsigned int)arg1;
+- (void)orderBelow:(unsigned int)arg1;
 - (struct Context { }*)renderContext;
 - (void)setColorSpace:(struct CGColorSpace { }*)arg1;
-- (void)setFence:(NSUInteger)arg1 count:(NSUInteger)arg2;
+- (void)setFence:(unsigned int)arg1 count:(unsigned int)arg2;
 - (void)setLayer:(id)arg1;
 - (void)setLevel:(float)arg1;
-- (void)setObject:(id)arg1 forSlot:(NSUInteger)arg2;
+- (void)setObject:(id)arg1 forSlot:(unsigned int)arg2;
 - (BOOL)valid;
 
 @end

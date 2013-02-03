@@ -7,15 +7,15 @@
  */
 
 @interface UINibStringIDTable : NSObject {
-    struct UIStringIDTableBucket { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; unsigned short x4; void*x5; const NSInteger x6; in void*x7; void*x8; NSUInteger x9; struct UIStringIDTableBucket {} *x10; } *buckets;
-    NSUInteger count;
-    NSUInteger hashMask;
+    struct UIStringIDTableBucket { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; unsigned short x4; void*x5; const int x6; in void*x7; void*x8; unsigned int x9; struct UIStringIDTableBucket {} *x10; } *buckets;
+    unsigned int count;
+    unsigned int hashMask;
     struct UIStringIDTableBucket {} **table;
 }
 
-- (NSInteger)count;
+- (int)count;
 - (void)dealloc;
-- (id)initWithKeysTransferingOwnership:(id*)arg1 count:(NSUInteger)arg2;
-- (BOOL)lookupKey:(id)arg1 identifier:(NSInteger*)arg2;
+- (id)initWithKeysTransferingOwnership:(id*)arg1 count:(unsigned int)arg2;
+- (BOOL)lookupKey:(id)arg1 identifier:(int*)arg2;
 
 @end

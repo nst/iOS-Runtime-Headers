@@ -2,18 +2,20 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSArray, UIImage;
+
 @interface UIImageView : UIView {
     id _storage;
 }
 
-@property(copy) NSArray *animationImages;
-@property(copy) NSArray *highlightedAnimationImages;
-@property(retain) UIImage *highlightedImage;
-@property(retain) UIImage *image;
 @property double animationDuration;
-@property NSInteger animationRepeatCount;
-@property NSInteger drawMode;
+@property(copy) NSArray * animationImages;
+@property int animationRepeatCount;
+@property int drawMode;
 @property(getter=isHighlighted) BOOL highlighted;
+@property(copy) NSArray * highlightedAnimationImages;
+@property(retain) UIImage * highlightedImage;
+@property(retain) UIImage * image;
 @property(getter=isUserInteractionEnabled) BOOL userInteractionEnabled;
 
 + (void)_initializeSafeCategory;
@@ -21,17 +23,18 @@
 
 - (BOOL)_accessibilityIgnoresMouseEvents;
 - (BOOL)_canDrawContent;
+- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (BOOL)_shouldDrawImage:(id)arg1;
 - (void)_updateState;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (double)animationDuration;
 - (id)animationImages;
-- (NSInteger)animationRepeatCount;
+- (int)animationRepeatCount;
 - (void)dealloc;
 - (unsigned long long)defaultAccessibilityTraits;
 - (id)description;
-- (NSInteger)drawMode;
+- (int)drawMode;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)highlightedAnimationImages;
@@ -50,11 +53,11 @@
 - (void)setAnimating:(BOOL)arg1;
 - (void)setAnimationDuration:(double)arg1;
 - (void)setAnimationImages:(id)arg1;
-- (void)setAnimationRepeatCount:(NSInteger)arg1;
+- (void)setAnimationRepeatCount:(int)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCGImageRef:(struct CGImage { }*)arg1;
-- (void)setDrawMode:(NSInteger)arg1;
+- (void)setDrawMode:(int)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setHighlightedAnimationImages:(id)arg1;

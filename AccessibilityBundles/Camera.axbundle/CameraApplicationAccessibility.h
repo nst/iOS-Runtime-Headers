@@ -8,6 +8,6 @@
 + (void)_initializeSafeCategory;
 
 - (id)accessibilityLabel;
-- (void)accessibilityStartStopToggle;
+- (BOOL)accessibilityStartStopToggle;
 
 @end

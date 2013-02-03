@@ -8,7 +8,7 @@
     UITableCell *_tableCell;
 }
 
-@property(retain) UITableCell *tableCell;
+@property(retain) UITableCell * tableCell;
 
 + (void)_initializeSafeCategory;
 

@@ -5,24 +5,24 @@
 @class RTFTextTable;
 
 @interface RTFTextTableBlock : RTFTextBlock {
-    NSInteger _colNum;
-    NSInteger _colSpan;
-    NSInteger _rowNum;
-    NSInteger _rowSpan;
+    int _colNum;
+    int _colSpan;
+    int _rowNum;
+    int _rowSpan;
     RTFTextTable *_table;
     void *_tableBlockPrimary;
     void *_tableBlockSecondary;
 }
 
-- (void)_setColumnSpan:(NSInteger)arg1;
-- (void)_setRowSpan:(NSInteger)arg1;
-- (NSInteger)columnSpan;
+- (void)_setColumnSpan:(int)arg1;
+- (void)_setRowSpan:(int)arg1;
+- (int)columnSpan;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithTable:(id)arg1 startingRow:(NSInteger)arg2 rowSpan:(NSInteger)arg3 startingColumn:(NSInteger)arg4 columnSpan:(NSInteger)arg5;
-- (NSInteger)rowSpan;
-- (NSInteger)startingColumn;
-- (NSInteger)startingRow;
+- (id)initWithTable:(id)arg1 startingRow:(int)arg2 rowSpan:(int)arg3 startingColumn:(int)arg4 columnSpan:(int)arg5;
+- (int)rowSpan;
+- (int)startingColumn;
+- (int)startingRow;
 - (id)table;
 
 @end

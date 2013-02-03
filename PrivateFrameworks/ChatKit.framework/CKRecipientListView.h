@@ -15,7 +15,7 @@
     CKAtomListView *_toField;
 }
 
-@property(readonly) CGSize contentSize;
+@property(readonly) struct CGSize { float width; float height; } contentSize;
 @property id delegate;
 
 - (void)_adjustContentSize;

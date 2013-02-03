@@ -3,13 +3,13 @@
  */
 
 @interface SUCellConfigurationContext : NSObject {
-    NSInteger _tableViewStyle;
+    int _tableViewStyle;
 }
 
-@property NSInteger tableViewStyle;
+@property int tableViewStyle;
 
 - (void)resetLayoutCaches;
-- (void)setTableViewStyle:(NSInteger)arg1;
-- (NSInteger)tableViewStyle;
+- (void)setTableViewStyle:(int)arg1;
+- (int)tableViewStyle;
 
 @end

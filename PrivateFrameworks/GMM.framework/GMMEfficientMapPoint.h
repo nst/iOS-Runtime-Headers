@@ -3,28 +3,28 @@
  */
 
 @interface GMMEfficientMapPoint : PBCodable {
-    NSInteger _latitude;
-    NSInteger _longitude;
+    int _latitude;
+    int _longitude;
 }
 
-@property(readonly) ? coordinate;
-@property NSInteger latitude;
-@property(readonly) NSInteger latitudeE6;
-@property NSInteger longitude;
-@property(readonly) NSInteger longitudeE6;
+@property(readonly) struct { double latitude; double longitude; } coordinate;
+@property int latitude;
+@property(readonly) int latitudeE6;
+@property int longitude;
+@property(readonly) int longitudeE6;
 
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)init;
-- (NSInteger)latitude;
-- (NSInteger)latitudeE6;
-- (NSInteger)longitude;
-- (NSInteger)longitudeE6;
+- (int)latitude;
+- (int)latitudeE6;
+- (int)longitude;
+- (int)longitudeE6;
 - (BOOL)readFrom:(id)arg1;
-- (void)setLatitude:(NSInteger)arg1;
-- (void)setLongitude:(NSInteger)arg1;
+- (void)setLatitude:(int)arg1;
+- (void)setLongitude:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

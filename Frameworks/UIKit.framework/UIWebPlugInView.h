@@ -19,6 +19,8 @@
 @property BOOL isQuickTimePlugIn;
 @property(getter=isParentedInLayer) BOOL parentedInLayer;
 
++ (void)_initializeSafeCategory;
+
 - (void)_attachPluginLayerOnMainThread;
 - (void)_reshapeOnMainThread;
 - (void)_viewDidMoveToWindowOnMainThread;

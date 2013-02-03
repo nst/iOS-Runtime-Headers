@@ -6,17 +6,17 @@
 
 @interface CHDMarker : NSObject {
     OADGraphicProperties *mGraphicProperties;
-    NSUInteger mSize;
-    NSInteger mStyle;
+    unsigned int mSize;
+    int mStyle;
 }
 
 - (void)dealloc;
 - (id)graphicProperties;
 - (id)init;
 - (void)setGraphicProperties:(id)arg1;
-- (void)setSize:(NSUInteger)arg1;
-- (void)setStyle:(NSInteger)arg1;
-- (NSUInteger)size;
-- (NSInteger)style;
+- (void)setSize:(unsigned int)arg1;
+- (void)setStyle:(int)arg1;
+- (unsigned int)size;
+- (int)style;
 
 @end

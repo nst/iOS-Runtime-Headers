@@ -9,7 +9,7 @@
     NSString *_mimeType;
 }
 
-@property(readonly) NSData *data;
+@property(readonly) NSData * data;
 
 - (id)MIMEType;
 - (id)data;

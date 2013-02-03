@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, ISURLRequest;
+@class SSURLRequestProperties, NSString;
 
 @interface SUNavigationHistoryItem : NSObject <NSCopying> {
     NSString *_title;
-    ISURLRequest *_urlRequest;
+    SSURLRequestProperties *_urlRequestProperties;
 }
 
-@property(readonly) ISURLRequest *URLRequest;
-@property(readonly) NSString *title;
+@property(readonly) SSURLRequestProperties * URLRequestProperties;
+@property(readonly) NSString * title;
 
-- (id)URLRequest;
+- (id)URLRequestProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;

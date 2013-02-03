@@ -32,23 +32,23 @@
     } _keyActivationRect;
     } _margin;
     BOOL _needsLayout;
-    NSInteger _numCols;
-    NSInteger _numPages;
-    NSInteger _numRows;
+    int _numCols;
+    int _numPages;
+    int _numRows;
     UIKeyboardEmojiView *_onDisplay;
     NSString *_optionalText;
     UIKeyboardEmojiView *_pendingDisplay;
     UIKeyboardEmojiView *_touched;
 }
 
-@property(retain) UITouch *activeTouch;
-@property <UIKeyboardEmojiController> *controller;
-@property(retain) NSArray *emoji;
-@property(retain) UIKeyboardEmojiView *onDisplay;
-@property(retain) NSString *optionalText;
-@property(retain) UIKeyboardEmojiView *pendingDisplay;
-@property(retain) UIKeyboardEmojiView *touched;
-@property CGRect keyActivationRect;
+@property(retain) UITouch * activeTouch;
+@property <UIKeyboardEmojiController> * controller;
+@property(retain) NSArray * emoji;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } keyActivationRect;
+@property(retain) UIKeyboardEmojiView * onDisplay;
+@property(retain) NSString * optionalText;
+@property(retain) UIKeyboardEmojiView * pendingDisplay;
+@property(retain) UIKeyboardEmojiView * touched;
 
 + (struct CGSize { float x1; float x2; })emojiSize:(BOOL)arg1;
 
@@ -70,7 +70,7 @@
 - (id)optionalText;
 - (struct CGPoint { float x1; float x2; })padding:(BOOL)arg1;
 - (id)pendingDisplay;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForRow:(NSInteger)arg1 Col:(NSInteger)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForRow:(int)arg1 Col:(int)arg2;
 - (void)removeDisplayedPopup:(id)arg1;
 - (unsigned char)rowCount:(BOOL)arg1;
 - (void)setActiveTouch:(id)arg1;
@@ -83,7 +83,7 @@
 - (void)setPendingDisplay:(id)arg1;
 - (void)setTouched:(id)arg1;
 - (void)showPendingPopup:(id)arg1;
-- (NSInteger)takeEmoji:(id)arg1 fromIndex:(NSInteger)arg2;
+- (int)takeEmoji:(id)arg1 fromIndex:(int)arg2;
 - (void)touchBegan:(id)arg1;
 - (void)touchCancelled:(id)arg1;
 - (void)touchEnded:(id)arg1;

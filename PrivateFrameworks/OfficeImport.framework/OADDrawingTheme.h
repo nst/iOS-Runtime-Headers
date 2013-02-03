@@ -15,14 +15,14 @@
     OADDefaultProperties *mTextDefaults;
 }
 
-@property(readonly) OADColorMap *colorMap;
-@property(retain) <OADColorPalette> *colorPalette;
-@property(readonly) OADColorScheme *colorScheme;
-@property(readonly) OADFontScheme *fontScheme;
-@property(readonly) OADDefaultProperties *lineDefaults;
-@property(readonly) OADDefaultProperties *shapeDefaults;
-@property(readonly) OADStyleMatrix *styleMatrix;
-@property(readonly) OADDefaultProperties *textDefaults;
+@property(readonly) OADColorMap * colorMap;
+@property(retain) <OADColorPalette> * colorPalette;
+@property(readonly) OADColorScheme * colorScheme;
+@property(readonly) OADFontScheme * fontScheme;
+@property(readonly) OADDefaultProperties * lineDefaults;
+@property(readonly) OADDefaultProperties * shapeDefaults;
+@property(readonly) OADStyleMatrix * styleMatrix;
+@property(readonly) OADDefaultProperties * textDefaults;
 
 - (void)applyThemeOverrides:(id)arg1 colorMapOverride:(id)arg2;
 - (id)colorMap;

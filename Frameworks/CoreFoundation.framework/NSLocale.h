@@ -14,17 +14,17 @@
 + (id)availableLocaleIdentifiers;
 + (id)canonicalLanguageIdentifierFromString:(id)arg1;
 + (id)canonicalLocaleIdentifierFromString:(id)arg1;
-+ (NSUInteger)characterDirectionForLanguage:(id)arg1;
++ (unsigned int)characterDirectionForLanguage:(id)arg1;
 + (id)commonISOCurrencyCodes;
 + (id)componentsFromLocaleIdentifier:(id)arg1;
 + (id)currentLocale;
-+ (NSUInteger)lineDirectionForLanguage:(id)arg1;
++ (unsigned int)lineDirectionForLanguage:(id)arg1;
 + (id)localeIdentifierFromComponents:(id)arg1;
-+ (id)localeIdentifierFromWindowsLocaleCode:(NSUInteger)arg1;
++ (id)localeIdentifierFromWindowsLocaleCode:(unsigned int)arg1;
 + (id)localeWithLocaleIdentifier:(id)arg1;
 + (id)preferredLanguages;
 + (id)systemLocale;
-+ (NSUInteger)windowsLocaleCodeFromLocaleIdentifier:(id)arg1;
++ (unsigned int)windowsLocaleCodeFromLocaleIdentifier:(id)arg1;
 
 - (unsigned long)_cfTypeID;
 - (id)_copyDisplayNameForKey:(id)arg1 value:(id)arg2;
@@ -34,7 +34,7 @@
 - (id)displayNameForKey:(id)arg1 value:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

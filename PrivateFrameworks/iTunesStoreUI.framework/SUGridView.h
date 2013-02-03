@@ -15,7 +15,7 @@
         unsigned int titleForHeader : 1; 
         unsigned int viewForHeader : 1; 
         unsigned int willDisplayCell : 1; 
-    NSInteger _animationCount;
+    int _animationCount;
     struct __CFArray { } *_columnCountBySection;
     <SUGridViewDataSource> *_dataSource;
     <SUGridViewDelegate> *_delegate;
@@ -26,9 +26,9 @@
     UIControl *_touchCaptureView;
 }
 
-@property <SUGridViewDataSource> *dataSource;
-@property <SUGridViewDelegate> *delegate;
-@property(readonly) UITableView *tableView;
+@property <SUGridViewDataSource> * dataSource;
+@property <SUGridViewDelegate> * delegate;
+@property(readonly) UITableView * tableView;
 
 - (void)_animateDeletionOfCell:(id)arg1;
 - (void)_animateDeletionOfCellsAtIndexPaths:(id)arg1;
@@ -37,7 +37,7 @@
 - (void)_deleteAnimationStopped;
 - (void)_endSwipeToDelete;
 - (void)_gridSwipeGesture:(id)arg1;
-- (NSInteger)_minimumColumnCount;
+- (int)_minimumColumnCount;
 - (void)_reloadColumnCounts;
 - (void)_reuseColumnCellsForCell:(id)arg1;
 - (void)_touchCaptureAction:(id)arg1;
@@ -46,25 +46,25 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)deleteCellsAtIndexPaths:(id)arg1 animated:(BOOL)arg2;
-- (void)deleteSections:(id)arg1 withRowAnimation:(NSInteger)arg2;
+- (void)deleteSections:(id)arg1 withRowAnimation:(int)arg2;
 - (id)dequeueReusableCellWithIdentifier:(id)arg1;
-- (NSInteger)globalIndexForCellAtIndexPath:(id)arg1;
-- (NSInteger)globalRowForRowAtIndexPath:(id)arg1;
+- (int)globalIndexForCellAtIndexPath:(id)arg1;
+- (int)globalRowForRowAtIndexPath:(id)arg1;
 - (id)indexPathForCell:(id)arg1;
 - (id)indexPathForCellAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 tableViewStyle:(NSInteger)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 tableViewStyle:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)marginForTableView:(id)arg1;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)reloadData;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(NSInteger)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView;
 

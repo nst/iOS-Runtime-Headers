@@ -9,15 +9,15 @@
     NSPersistentStoreMap *_map;
     NSManagedObjectID *_objectID;
     NSMutableDictionary *_relatedNodes;
-    NSUInteger _version;
+    unsigned int _version;
 }
 
 + (void)initialize;
 
 - (id)_relatedNodes;
 - (void)_setMap:(id)arg1;
-- (void)_setVersionNumber:(NSUInteger)arg1;
-- (NSUInteger)_versionNumber;
+- (void)_setVersionNumber:(unsigned int)arg1;
+- (unsigned int)_versionNumber;
 - (id)configurationName;
 - (void)dealloc;
 - (id)destinationsForRelationship:(id)arg1;

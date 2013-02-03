@@ -2,38 +2,38 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUTableDataSource;
+@class SUTableDataSource, SUGridView;
 
 @interface SUGridViewController : SUViewController <SUGridViewDataSource, SUGridViewDelegate> {
     SUTableDataSource *_dataSource;
-    NSInteger _disappearOrientation;
+    int _disappearOrientation;
     float _tableMargin;
-    NSInteger _tableViewStyle;
+    int _tableViewStyle;
 }
 
-@property(retain) SUTableDataSource *dataSource;
-@property(readonly) SUGridView *gridView;
+@property(retain) SUTableDataSource * dataSource;
+@property(readonly) SUGridView * gridView;
 @property float tableMargin;
 
 - (id)_existingGridView;
 - (id)dataSource;
 - (void)dealloc;
 - (BOOL)deleteCellAtIndexPath:(id)arg1;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
-- (void)gridView:(id)arg1 commitEditingStyle:(NSInteger)arg2 forCellAtIndexPath:(id)arg3;
-- (NSInteger)gridView:(id)arg1 editingStyleForCellAtIndexPath:(id)arg2;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)gridView:(id)arg1 commitEditingStyle:(int)arg2 forCellAtIndexPath:(id)arg3;
+- (int)gridView:(id)arg1 editingStyleForCellAtIndexPath:(id)arg2;
 - (id)gridView:(id)arg1 gridCellForRowAtIndexPath:(id)arg2;
-- (float)gridView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
-- (NSInteger)gridView:(id)arg1 numberOfColumnsInSection:(NSInteger)arg2;
-- (NSInteger)gridView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (id)gridView:(id)arg1 titleForHeaderInSection:(NSInteger)arg2;
-- (id)gridView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
+- (float)gridView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (int)gridView:(id)arg1 numberOfColumnsInSection:(int)arg2;
+- (int)gridView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)gridView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (id)gridView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)gridView:(id)arg1 willDisplayCell:(id)arg2 forIndexPath:(id)arg3;
 - (id)gridView;
-- (id)initWithTableViewStyle:(NSInteger)arg1;
+- (id)initWithTableViewStyle:(int)arg1;
 - (void)loadView;
 - (float)marginForGridView:(id)arg1;
-- (NSInteger)numberOfSectionsInGridView:(id)arg1;
+- (int)numberOfSectionsInGridView:(id)arg1;
 - (void)reloadData;
 - (void)setDataSource:(id)arg1;
 - (void)setTableMargin:(float)arg1;
@@ -41,6 +41,6 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

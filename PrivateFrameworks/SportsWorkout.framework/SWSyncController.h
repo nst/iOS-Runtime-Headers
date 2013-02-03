@@ -13,13 +13,13 @@
     <SWSyncControllerDelegate> *_syncDelegate;
     SWSyncHost *_syncHost;
     NSString *_syncPin;
-    NSInteger _uploadCount;
+    int _uploadCount;
     NSMutableArray *_workoutFilesToSync;
 }
 
-@property <SWSyncControllerDelegate> *syncDelegate;
 @property BOOL shouldMoveFilesToSynchedDirectoryWhenDone;
-@property NSInteger uploadCount;
+@property <SWSyncControllerDelegate> * syncDelegate;
+@property int uploadCount;
 
 - (id)_syncHost;
 - (void)_syncNextWorkout;
@@ -37,11 +37,11 @@
 - (id)initWithBaseDirectoryPath:(id)arg1;
 - (void)setShouldMoveFilesToSynchedDirectoryWhenDone:(BOOL)arg1;
 - (void)setSyncDelegate:(id)arg1;
-- (void)setUploadCount:(NSInteger)arg1;
+- (void)setUploadCount:(int)arg1;
 - (BOOL)shouldMoveFilesToSynchedDirectoryWhenDone;
 - (void)syncAllWorkouts;
 - (id)syncDelegate;
-- (NSInteger)uploadCount;
+- (int)uploadCount;
 - (void)visitNikeWebSite;
 
 @end

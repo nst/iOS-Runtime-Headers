@@ -28,9 +28,9 @@
 - (id)_accessibilityPreviousElementsWithCount:(unsigned long)arg1 originalElement:(id)arg2;
 - (id)_accessibilityPreviousMarker:(id)arg1;
 - (void)_accessibilityScrollToVisible;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedNSRangeForObject;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
-- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedNSRangeForObject;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
+- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)_accessibilitySiblingWithAncestor:(id)arg1 isFirst:(BOOL)arg2 isLast:(BOOL)arg3 sawAXElement:(BOOL*)arg4;
 - (BOOL)_accessibilitySiblingWithAncestor:(id)arg1 isFirst:(BOOL)arg2 isLast:(BOOL)arg3;
 - (BOOL)_accessibilitySupportsActivateAction;
@@ -39,12 +39,13 @@
 - (id)_accessibilityTextViewTextOperationResponder;
 - (id)_accessibilityWebDocumentView;
 - (BOOL)_isCheckBox;
+- (void)_repostWebSelectionChange;
 - (void)accessibilityActivate;
 - (id)accessibilityArrayOfTextForTextMarkers:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityBoundsForTextMarkers:(id)arg1;
 - (BOOL)accessibilityCanFuzzyHitTest;
 - (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
-- (id)accessibilityElementAtIndex:(NSInteger)arg1;
+- (id)accessibilityElementAtIndex:(int)arg1;
 - (void)accessibilityElementDidBecomeFocused;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (id)accessibilityLanguage;
@@ -57,7 +58,7 @@
 - (void)accessibilityZoomInAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)accessibilityZoomOutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)description;
-- (NSInteger)indexOfAccessibilityElement:(id)arg1;
+- (int)indexOfAccessibilityElement:(id)arg1;
 - (BOOL)isScreenReaderRunning;
 - (void)postFocusChangeNotification;
 - (void)postLayoutChangeNotification;

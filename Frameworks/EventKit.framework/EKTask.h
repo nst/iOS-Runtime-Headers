@@ -7,23 +7,23 @@
 @interface EKTask : EKCalendarItem {
     NSDate *_completedDate;
     NSDate *_dueDate;
-    NSUInteger _priority;
+    unsigned int _priority;
 }
 
-@property(copy) NSDate *completedDate;
-@property(copy) NSDate *dueDate;
 @property(getter=isCompleted) BOOL completed;
-@property NSUInteger priority;
+@property(copy) NSDate * completedDate;
+@property(copy) NSDate * dueDate;
+@property unsigned int priority;
 
 + (id)task;
 
 - (id)completedDate;
 - (id)dueDate;
 - (BOOL)isCompleted;
-- (NSUInteger)priority;
+- (unsigned int)priority;
 - (void)setCompleted:(BOOL)arg1;
 - (void)setCompletedDate:(id)arg1;
 - (void)setDueDate:(id)arg1;
-- (void)setPriority:(NSUInteger)arg1;
+- (void)setPriority:(unsigned int)arg1;
 
 @end

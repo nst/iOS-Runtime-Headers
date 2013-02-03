@@ -9,15 +9,15 @@
     NSInputStream *_inputStream;
     NSOutputStream *_outputStream;
     NSString *_protocolString;
-    NSUInteger _sessionID;
+    unsigned int _sessionID;
 }
 
-@property(readonly) EAAccessory *accessory;
-@property(readonly) NSInputStream *inputStream;
-@property(readonly) NSOutputStream *outputStream;
-@property(readonly) NSString *protocolString;
+@property(readonly) EAAccessory * accessory;
+@property(readonly) NSInputStream * inputStream;
+@property(readonly) NSOutputStream * outputStream;
+@property(readonly) NSString * protocolString;
 
-- (NSUInteger)_sessionID;
+- (unsigned int)_sessionID;
 - (id)_shortDescription;
 - (id)accessory;
 - (void)dealloc;

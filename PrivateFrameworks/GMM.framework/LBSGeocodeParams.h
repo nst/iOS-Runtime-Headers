@@ -5,28 +5,28 @@
 @class LBSGRectangle, NSString, LBSUserLocation;
 
 @interface LBSGeocodeParams : PBCodable {
-    NSInteger _addressLinesLimit;
+    int _addressLinesLimit;
     LBSGRectangle *_boundingBox;
     BOOL _hasAddressLinesLimit;
     BOOL _hasIncludeBoundingBoxes;
     BOOL _includeBoundingBoxes;
     LBSUserLocation *_location;
-    NSInteger _numFeatureLimit;
+    int _numFeatureLimit;
     NSString *_resultLanguage;
 }
 
-@property(retain) LBSGRectangle *boundingBox;
-@property(retain) LBSUserLocation *location;
-@property(retain) NSString *resultLanguage;
-@property NSInteger addressLinesLimit;
+@property int addressLinesLimit;
+@property(retain) LBSGRectangle * boundingBox;
 @property(readonly) BOOL hasAddressLinesLimit;
 @property(readonly) BOOL hasBoundingBox;
 @property(readonly) BOOL hasIncludeBoundingBoxes;
 @property(readonly) BOOL hasLocation;
 @property BOOL includeBoundingBoxes;
-@property NSInteger numFeatureLimit;
+@property(retain) LBSUserLocation * location;
+@property int numFeatureLimit;
+@property(retain) NSString * resultLanguage;
 
-- (NSInteger)addressLinesLimit;
+- (int)addressLinesLimit;
 - (id)boundingBox;
 - (void)dealloc;
 - (id)description;
@@ -38,14 +38,14 @@
 - (BOOL)includeBoundingBoxes;
 - (id)init;
 - (id)location;
-- (NSInteger)numFeatureLimit;
+- (int)numFeatureLimit;
 - (BOOL)readFrom:(id)arg1;
 - (id)resultLanguage;
-- (void)setAddressLinesLimit:(NSInteger)arg1;
+- (void)setAddressLinesLimit:(int)arg1;
 - (void)setBoundingBox:(id)arg1;
 - (void)setIncludeBoundingBoxes:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
-- (void)setNumFeatureLimit:(NSInteger)arg1;
+- (void)setNumFeatureLimit:(int)arg1;
 - (void)setResultLanguage:(id)arg1;
 - (void)writeTo:(id)arg1;
 

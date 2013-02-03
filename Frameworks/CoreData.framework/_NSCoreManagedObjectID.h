@@ -13,7 +13,7 @@
 + (BOOL)accessInstanceVariablesDirectly;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (NSUInteger)allocateBatch:(id*)arg1 count:(NSUInteger)arg2;
++ (unsigned int)allocateBatch:(id*)arg1 count:(unsigned int)arg2;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (Class)classWithStore:(id)arg1 andEntity:(id)arg2;
 + (char *)generatedNameSuffix;
@@ -22,7 +22,7 @@
 + (void)release;
 + (id)retain;
 + (void)setObjectStoreIdentifier:(id)arg1;
-+ (NSInteger)version;
++ (int)version;
 
 - (id)URIRepresentation;
 - (BOOL)_isPersistentStoreAlive;
@@ -30,12 +30,12 @@
 - (id)_storeInfo1;
 - (id)entity;
 - (void)finalize;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isTemporaryID;
 - (id)persistentStore;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSMutableDictionary, NSString;
+@class NSDictionary, NSMutableDictionary, NSString;
 
 @interface MCVPNPayload : MCPayload {
     NSMutableDictionary *_atom;
@@ -27,28 +27,28 @@
     unsigned char _userNameRequired;
 }
 
-@property(readonly) NSDictionary *atom;
-@property(readonly) NSString *certificateUUID;
-@property(copy) NSString *password;
-@property(readonly) NSString *passwordKey;
-@property(copy) NSString *pin;
-@property(readonly) NSString *pinKey;
-@property(copy) NSString *proxyPassword;
-@property(readonly) NSString *proxyPasswordKey;
-@property(copy) NSString *proxyUserName;
-@property(readonly) NSString *proxyUserNameKey;
-@property(copy) NSString *sharedSecret;
-@property(readonly) NSString *sharedSecretKey;
-@property(copy) NSString *userName;
-@property(readonly) NSString *userNameKey;
+@property(readonly) NSDictionary * atom;
+@property(readonly) NSString * certificateUUID;
+@property(copy) NSString * password;
+@property(readonly) NSString * passwordKey;
 @property(readonly) unsigned char passwordRequired;
+@property(copy) NSString * pin;
+@property(readonly) NSString * pinKey;
 @property(readonly) unsigned char pinRequired;
+@property(copy) NSString * proxyPassword;
+@property(readonly) NSString * proxyPasswordKey;
 @property(readonly) unsigned char proxyPasswordRequired;
+@property(copy) NSString * proxyUserName;
+@property(readonly) NSString * proxyUserNameKey;
 @property(readonly) unsigned char proxyUserNameRequired;
+@property(copy) NSString * sharedSecret;
+@property(readonly) NSString * sharedSecretKey;
 @property(readonly) unsigned char sharedSecretRequired;
+@property(copy) NSString * userName;
+@property(readonly) NSString * userNameKey;
 @property(readonly) unsigned char userNameRequired;
 
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
 - (void)_validateVPNPayload:(id)arg1;

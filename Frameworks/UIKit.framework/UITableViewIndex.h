@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIFont, NSArray;
+@class NSArray, UIColor, NSString, UIFont;
 
 @interface UITableViewIndex : UIControl {
     struct CGSize { 
@@ -14,23 +14,28 @@
     } _cachedSize;
     } _cachedSizeToFit;
     UIFont *_font;
+    UIColor *_indexBackgroundColor;
+    UIColor *_indexColor;
     BOOL _pastBottom;
     BOOL _pastTop;
-    NSInteger _selectedSection;
+    int _selectedSection;
     NSArray *_titles;
 }
 
-@property(retain) UIFont *font;
-@property(readonly) NSString *selectedSectionTitle;
-@property(retain) NSArray *titles;
+@property(retain) UIFont * font;
+@property(retain) UIColor * indexBackgroundColor;
+@property(retain) UIColor * indexColor;
 @property(readonly) BOOL pastBottom;
 @property(readonly) BOOL pastTop;
-@property(readonly) NSInteger selectedSection;
+@property(readonly) int selectedSection;
+@property(readonly) NSString * selectedSectionTitle;
+@property(retain) NSArray * titles;
 
 + (void)_initializeSafeCategory;
 
 - (void)_accessibilityBumpValue:(BOOL)arg1;
-- (id)_createTouchesWithMouseEvent:(struct __GSEvent { }*)arg1 phase:(NSInteger)arg2;
+- (id)_accessibilityIndexData;
+- (id)_createTouchesWithMouseEvent:(struct __GSEvent { }*)arg1 phase:(int)arg2;
 - (id)_displayTitles;
 - (void)_selectSectionForTouch:(id)arg1 withEvent:(id)arg2;
 - (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
@@ -45,17 +50,21 @@
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)font;
+- (id)indexBackgroundColor;
+- (id)indexColor;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAccessibilityElement;
-- (NSUInteger)maximumNumberOfTitlesWithoutTruncationForHeight:(float)arg1;
+- (unsigned int)maximumNumberOfTitlesWithoutTruncationForHeight:(float)arg1;
 - (void)mouseDown:(struct __GSEvent { }*)arg1;
 - (void)mouseDragged:(struct __GSEvent { }*)arg1;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (BOOL)pastBottom;
 - (BOOL)pastTop;
-- (NSInteger)selectedSection;
+- (int)selectedSection;
 - (id)selectedSectionTitle;
 - (void)setFont:(id)arg1;
+- (void)setIndexBackgroundColor:(id)arg1;
+- (void)setIndexColor:(id)arg1;
 - (void)setTitles:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)titles;

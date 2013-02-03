@@ -22,17 +22,17 @@
     float margin;
     } renderedBounds;
     CPChunk *user;
-    NSInteger wrapType;
-    NSInteger zoneGraphicType;
+    int wrapType;
+    int zoneGraphicType;
 }
 
-- (void)addClipPath:(struct CGPath { }*)arg1 winding:(NSInteger)arg2;
+- (void)addClipPath:(struct CGPath { }*)arg1 winding:(int)arg2;
 - (id)anchoringTextLine;
 - (float)baselineOffset;
 - (BOOL)canBeContainer;
 - (BOOL)canContainText;
-- (struct CGPath { }*)clipPathAtIndex:(NSUInteger)arg1 winding:(NSInteger*)arg2;
-- (NSUInteger)clipPathCount;
+- (struct CGPath { }*)clipPathAtIndex:(unsigned int)arg1 winding:(int*)arg2;
+- (unsigned int)clipPathCount;
 - (BOOL)clipped;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -49,11 +49,11 @@
 - (void)setIsInZoneBorder:(BOOL)arg1;
 - (void)setMargin:(float)arg1;
 - (void)setUser:(id)arg1;
-- (void)setWrapType:(NSInteger)arg1;
-- (void)setZoneGraphicType:(NSInteger)arg1;
+- (void)setWrapType:(int)arg1;
+- (void)setZoneGraphicType:(int)arg1;
 - (unsigned short)unicode;
 - (id)user;
-- (NSInteger)wrapType;
-- (NSInteger)zoneGraphicType;
+- (int)wrapType;
+- (int)zoneGraphicType;
 
 @end

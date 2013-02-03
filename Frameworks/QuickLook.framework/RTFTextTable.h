@@ -4,24 +4,24 @@
 
 @interface RTFTextTable : RTFTextBlock {
     id _lcache;
-    NSUInteger _numCols;
-    NSUInteger _tableFlags;
+    unsigned int _numCols;
+    unsigned int _tableFlags;
     void *_tablePrimary;
     void *_tableSecondary;
 }
 
-- (void)_setTableFlags:(NSUInteger)arg1;
-- (NSUInteger)_tableFlags;
+- (void)_setTableFlags:(unsigned int)arg1;
+- (unsigned int)_tableFlags;
 - (void)_takeValuesFromTextBlock:(id)arg1;
 - (BOOL)collapsesBorders;
 - (void)dealloc;
 - (BOOL)hidesEmptyCells;
 - (id)init;
-- (NSUInteger)layoutAlgorithm;
-- (NSUInteger)numberOfColumns;
+- (unsigned int)layoutAlgorithm;
+- (unsigned int)numberOfColumns;
 - (void)setCollapsesBorders:(BOOL)arg1;
 - (void)setHidesEmptyCells:(BOOL)arg1;
-- (void)setLayoutAlgorithm:(NSUInteger)arg1;
-- (void)setNumberOfColumns:(NSUInteger)arg1;
+- (void)setLayoutAlgorithm:(unsigned int)arg1;
+- (void)setNumberOfColumns:(unsigned int)arg1;
 
 @end

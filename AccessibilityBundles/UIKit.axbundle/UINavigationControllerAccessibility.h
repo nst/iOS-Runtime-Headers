@@ -8,9 +8,9 @@
 + (void)_initializeSafeCategory;
 
 - (void)_axPostMoveTo:(id)arg1;
-- (id)_popViewControllerWithTransition:(NSInteger)arg1 allowPoppingLast:(BOOL)arg2;
-- (void)navigationBar:(id)arg1 buttonClicked:(NSInteger)arg2;
-- (void)pushViewController:(id)arg1 transition:(NSInteger)arg2 forceImmediate:(BOOL)arg3;
+- (id)_popViewControllerWithTransition:(int)arg1 allowPoppingLast:(BOOL)arg2;
+- (void)navigationBar:(id)arg1 buttonClicked:(int)arg2;
+- (void)pushViewController:(id)arg1 transition:(int)arg2 forceImmediate:(BOOL)arg3;
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

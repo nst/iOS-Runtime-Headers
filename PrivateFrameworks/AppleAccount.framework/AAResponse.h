@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSHTTPURLResponse, NSError, NSDictionary;
+@class NSError, NSString, NSDictionary, NSHTTPURLResponse;
 
 @interface AAResponse : NSObject {
     NSError *_error;
@@ -10,9 +10,9 @@
     NSDictionary *_responseDictionary;
 }
 
-@property(retain) NSError *error;
-@property(readonly) NSString *protocolVersion;
-@property(readonly) NSDictionary *responseDictionary;
+@property(retain) NSError * error;
+@property(readonly) NSString * protocolVersion;
+@property(readonly) NSDictionary * responseDictionary;
 
 - (void)_parseResponse:(id)arg1;
 - (void)dealloc;

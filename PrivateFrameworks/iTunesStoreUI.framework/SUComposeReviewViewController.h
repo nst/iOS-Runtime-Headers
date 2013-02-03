@@ -8,14 +8,14 @@
     SUComposeReviewView *_composeView;
     SURatingAlertView *_ratingAlert;
     ISReview *_review;
-    NSInteger _state;
+    int _state;
 }
 
 - (void)_cancel;
 - (void)_fetchReviewInfo;
 - (void)_setReviewByMergingWithReview:(id)arg1;
 - (void)_submit;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)applicationDidEnterBackground;
 - (void)composeReviewViewValidityChanged:(id)arg1;
 - (id)copyReview;

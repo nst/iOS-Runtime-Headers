@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIMoreListController, UINavigationController, UIViewController;
+@class NSArray, UIViewController, UIMoreListController, UINavigationController;
 
 @interface UIMoreNavigationController : UINavigationController {
     UIMoreListController *_moreListController;
@@ -10,9 +10,9 @@
     UIViewController *_originalRootViewController;
 }
 
-@property UIViewController *displayedViewController;
-@property(retain) NSArray *moreViewControllers;
 @property BOOL allowsCustomizing;
+@property UIViewController * displayedViewController;
+@property(retain) NSArray * moreViewControllers;
 
 - (id)_preparedViewController:(id)arg1;
 - (void)_restoreOriginalNavigationController;

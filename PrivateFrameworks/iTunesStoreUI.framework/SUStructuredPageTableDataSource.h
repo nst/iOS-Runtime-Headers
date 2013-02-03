@@ -9,12 +9,12 @@
     NSMutableArray *_cachedHeaderViews;
     float _offerButtonWidth;
     SUStructuredPage *_structuredPage;
-    NSInteger _style;
+    int _style;
 }
 
-@property(retain) SUItem *activeLoadMoreItem;
-@property(retain) SUStructuredPage *structuredPage;
-@property NSInteger style;
+@property(retain) SUItem * activeLoadMoreItem;
+@property(retain) SUStructuredPage * structuredPage;
+@property int style;
 
 - (void)_configureLoadMoreCell:(id)arg1 forItem:(id)arg2;
 - (id)_itemOfferButtonForCell:(id)arg1 item:(id)arg2;
@@ -25,27 +25,27 @@
 - (BOOL)canShowItemOfferButtonForItem:(id)arg1;
 - (Class)cellClassForItem:(id)arg1 reuseIdentifier:(id*)arg2;
 - (Class)cellConfigurationClassForItem:(id)arg1;
-- (id)cellConfigurationForIndex:(NSInteger)arg1 item:(id)arg2;
+- (id)cellConfigurationForIndex:(int)arg1 item:(id)arg2;
 - (id)cellForIndexPath:(id)arg1;
 - (float)cellHeightForIndexPath:(id)arg1;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)dealloc;
 - (BOOL)deleteIndexPath:(id)arg1;
-- (id)headerViewForSection:(NSInteger)arg1;
-- (id)newHeaderViewForSection:(NSInteger)arg1;
-- (NSInteger)numberOfRowsInSection:(NSInteger)arg1;
-- (NSInteger)numberOfSections;
+- (id)headerViewForSection:(int)arg1;
+- (id)newHeaderViewForSection:(int)arg1;
+- (int)numberOfRowsInSection:(int)arg1;
+- (int)numberOfSections;
 - (void)reloadCellContexts;
 - (void)reloadData;
-- (NSInteger)sectionIndexForIndexTitle:(id)arg1 atIndex:(NSInteger)arg2;
+- (int)sectionIndexForIndexTitle:(id)arg1 atIndex:(int)arg2;
 - (id)sectionIndexTitles;
 - (void)setActiveLoadMoreItem:(id)arg1;
 - (void)setStructuredPage:(id)arg1;
-- (void)setStyle:(NSInteger)arg1;
+- (void)setStyle:(int)arg1;
 - (id)structuredPage;
-- (NSInteger)style;
-- (NSInteger)tableViewStyle;
+- (int)style;
+- (int)tableViewStyle;
 - (id)titleForDeleteConfirmationForIndexPath:(id)arg1;
-- (id)titleForHeaderInSection:(NSInteger)arg1;
+- (id)titleForHeaderInSection:(int)arg1;
 
 @end

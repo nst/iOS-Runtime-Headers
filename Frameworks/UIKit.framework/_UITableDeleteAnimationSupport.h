@@ -8,7 +8,7 @@
     unsigned int _enabledStateBeforeDeleteAnimation : 1;
     unsigned int _reserved : 30;
     NSMutableArray *_cellsToDeleteAfterAnimation;
-    NSInteger _deleteCount;
+    int _deleteCount;
 }
 
 @end

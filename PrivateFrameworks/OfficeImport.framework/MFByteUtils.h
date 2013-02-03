@@ -5,6 +5,6 @@
 @interface MFByteUtils : NSObject {
 }
 
-+ (float)readFloatFromByteArray:(const char *)arg1 :(NSInteger)arg2;
++ (float)readFloatFromByteArray:(const char *)arg1 :(int)arg2;
 
 @end

@@ -2,32 +2,27 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSMutableArray;
 
 @interface EDLinksCollection : NSObject {
-     /* Encoded args for previous method: B20@0:4I8^I12^I16 */
     NSMutableArray *mLinks;
     NSMutableArray *mReferences;
 }
 
-- (NSUInteger)addLink:(id)arg1;
-- (void)addOrEquivalentExternalAddInName:(id)arg1 linkReferenceIndex:(NSUInteger*)arg2 nameIndex:(NSUInteger*)arg3;
-- (NSUInteger)addOrEquivalentInternalLinkReferenceWithFirstSheetIndex:(NSUInteger)arg1 lastSheetIndex:(NSUInteger)arg2;
-- (NSUInteger)addOrEquivalentLinkReferenceOfType:(NSInteger)arg1 firstSheetIndex:(NSUInteger)arg2 lastSheetIndex:(NSUInteger)arg3;
-- (NSUInteger)addReference:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)convertLinkReferenceIndex:(NSUInteger)arg1 firstSheetIndex:(NSUInteger*)arg2 lastSheetIndex:(NSUInteger*)arg3;
+- (unsigned int)addLink:(id)arg1;
+- (void)addOrEquivalentExternalAddInName:(id)arg1 linkReferenceIndex:(unsigned int*)arg2 nameIndex:(unsigned int*)arg3;
+- (unsigned int)addOrEquivalentInternalLinkReferenceWithFirstSheetIndex:(unsigned int)arg1 lastSheetIndex:(unsigned int)arg2;
+- (unsigned int)addOrEquivalentLinkReferenceOfType:(int)arg1 firstSheetIndex:(unsigned int)arg2 lastSheetIndex:(unsigned int)arg3;
+- (unsigned int)addReference:(id)arg1;
+- (bool)convertLinkReferenceIndex:(unsigned int)arg1 firstSheetIndex:(unsigned int*)arg2 lastSheetIndex:(unsigned int*)arg3;
 - (void)dealloc;
-- (NSUInteger)indexOfFirstLinkWithType:(NSInteger)arg1;
-- (NSUInteger)indexOfReference:(id)arg1;
+- (unsigned int)indexOfFirstLinkWithType:(int)arg1;
+- (unsigned int)indexOfReference:(id)arg1;
 - (id)init;
-- (id)linkAtIndex:(NSUInteger)arg1;
-- (NSUInteger)linkIndexCreateIfNeededWithType:(NSInteger)arg1;
-- (NSUInteger)linksCount;
-- (id)referenceAtIndex:(NSUInteger)arg1;
-- (NSUInteger)referencesCount;
+- (id)linkAtIndex:(unsigned int)arg1;
+- (unsigned int)linkIndexCreateIfNeededWithType:(int)arg1;
+- (unsigned int)linksCount;
+- (id)referenceAtIndex:(unsigned int)arg1;
+- (unsigned int)referencesCount;
 
 @end

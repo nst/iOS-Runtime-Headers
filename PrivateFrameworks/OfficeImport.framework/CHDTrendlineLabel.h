@@ -2,45 +2,37 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class CHDFormula, OADGraphicProperties, EDResources;
 
 @interface CHDTrendlineLabel : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
-    NSUInteger mContentFormatId;
+    boolmAutomaticLabelDeleted;
+    boolmGeneratedText;
+    unsigned int mContentFormatId;
     OADGraphicProperties *mGraphicProperties;
-    NSUInteger mLastCachedNameStringIndex;
+    unsigned int mLastCachedNameStringIndex;
     CHDFormula *mName;
     EDResources *mResources;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mAutomaticLabelDeleted;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mGeneratedText;
 }
 
 + (id)trendlineLabelWithResources:(id)arg1;
 
 - (id)contentFormat;
-- (NSUInteger)contentFormatId;
+- (unsigned int)contentFormatId;
 - (void)dealloc;
 - (id)graphicProperties;
 - (id)initWithResources:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isAutomaticLabelDeleted;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isGeneratedText;
+- (bool)isAutomaticLabelDeleted;
+- (bool)isGeneratedText;
 - (id)lastCachedName;
 - (id)name;
-- (void)setAutomaticLabelDeleted:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setAutomaticLabelDeleted:(bool)arg1;
 - (void)setContentFormat:(id)arg1;
-- (void)setContentFormatId:(NSUInteger)arg1;
-- (void)setGeneratedText:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setContentFormatId:(unsigned int)arg1;
+- (void)setGeneratedText:(bool)arg1;
 - (void)setGraphicProperties:(id)arg1;
 - (void)setLastCachedName:(id)arg1;
 - (void)setName:(id)arg1 chart:(id)arg2;
-- (void)setStringIndex:(NSUInteger)arg1;
-- (NSUInteger)stringIndex;
+- (void)setStringIndex:(unsigned int)arg1;
+- (unsigned int)stringIndex;
 
 @end

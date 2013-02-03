@@ -13,7 +13,7 @@
     id _resultsBlock;
 }
 
-- (void)_informDelegateOfThatAccessIsAllowed:(NSInteger)arg1;
+- (void)_informDelegateOfThatAccessIsAllowed:(int)arg1;
 - (id)assetLibraryFrameworkBundle;
 - (void)checkDataAccess:(id)arg1;
 - (void)dealloc;

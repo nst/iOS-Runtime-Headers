@@ -7,9 +7,9 @@
 @interface MLMappedFile : NSObject {
     BOOL _assumeFileIsFixedSize;
     BOOL _dying;
-    NSInteger _file;
-    NSUInteger _granularity;
-    NSUInteger _numberOfSegments;
+    int _file;
+    unsigned int _granularity;
+    unsigned int _numberOfSegments;
     NSString *_path;
     MLMappedFileSegment **_segments;
     long long _size;
@@ -20,7 +20,7 @@
 - (void)_refreshFileInfo;
 - (id)_segmentAtIndex:(unsigned long)arg1;
 - (void)dealloc;
-- (NSInteger)fileDescriptor;
+- (int)fileDescriptor;
 - (unsigned long)granularity;
 - (id)initWithPath:(id)arg1 fileIsFixedSize:(BOOL)arg2;
 - (id)mappedImageDataAtOffset:(long long)arg1 length:(unsigned long)arg2;

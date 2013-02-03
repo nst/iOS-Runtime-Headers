@@ -2,33 +2,36 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+@class NSURL, UIView;
+
 @interface MPMoviePlayerController : NSObject <MPMediaPlayback> {
-    id _internal;
+    void *_internal;
 }
 
-@property(readonly) UIView *backgroundView;
-@property(readonly) UIView *view;
-@property NSInteger controlStyle;
+@property(readonly) UIView * backgroundView;
+@property(copy) NSURL * contentURL;
+@property int controlStyle;
 @property float currentPlaybackRate;
 @property double currentPlaybackTime;
 @property(getter=isFullscreen) BOOL fullscreen;
 @property(readonly) BOOL isPreparedToPlay;
-@property(readonly) NSInteger loadState;
-@property(readonly) NSInteger playbackState;
-@property NSInteger repeatMode;
-@property NSInteger scalingMode;
+@property(readonly) int loadState;
+@property(readonly) int playbackState;
+@property int repeatMode;
+@property int scalingMode;
 @property BOOL shouldAutoplay;
 @property BOOL useApplicationAudioSession;
+@property(readonly) UIView * view;
 
 + (void)allInstancesResignActive;
 
 - (void)_resignActive;
-- (BOOL)allowsWirelessPlayback;
+- (BOOL)allowsAirPlay;
 - (id)backgroundView;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
 - (id)contentURL;
-- (NSInteger)controlStyle;
+- (int)controlStyle;
 - (float)currentPlaybackRate;
 - (double)currentPlaybackTime;
 - (void)dealloc;
@@ -41,30 +44,30 @@
 - (double)initialPlaybackTime;
 - (BOOL)isFullscreen;
 - (BOOL)isPreparedToPlay;
-- (NSInteger)loadState;
+- (int)loadState;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (NSInteger)movieMediaTypes;
-- (NSInteger)movieSourceType;
+- (int)movieMediaTypes;
+- (int)movieSourceType;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (void)pause;
 - (void)play;
 - (double)playableDuration;
-- (NSInteger)playbackState;
+- (int)playbackState;
 - (void)prepareToPlay;
-- (NSInteger)repeatMode;
-- (NSInteger)scalingMode;
-- (void)setAllowsWirelessPlayback:(BOOL)arg1;
+- (int)repeatMode;
+- (int)scalingMode;
+- (void)setAllowsAirPlay:(BOOL)arg1;
 - (void)setContentURL:(id)arg1;
-- (void)setControlStyle:(NSInteger)arg1;
+- (void)setControlStyle:(int)arg1;
 - (void)setCurrentPlaybackRate:(float)arg1;
 - (void)setCurrentPlaybackTime:(double)arg1;
 - (void)setEndPlaybackTime:(double)arg1;
 - (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFullscreen:(BOOL)arg1;
 - (void)setInitialPlaybackTime:(double)arg1;
-- (void)setMovieSourceType:(NSInteger)arg1;
-- (void)setRepeatMode:(NSInteger)arg1;
-- (void)setScalingMode:(NSInteger)arg1;
+- (void)setMovieSourceType:(int)arg1;
+- (void)setRepeatMode:(int)arg1;
+- (void)setScalingMode:(int)arg1;
 - (void)setShouldAutoplay:(BOOL)arg1;
 - (void)setUseApplicationAudioSession:(BOOL)arg1;
 - (BOOL)shouldAutoplay;

@@ -16,17 +16,17 @@
     UIColor *textColor;
 }
 
-@property(retain) NSArray *acceptedNames;
-@property(retain) NSArray *declinedNames;
-@property(retain) UIColor *highlightedTextColor;
-@property(retain) NSArray *maybeNames;
-@property(retain) NSArray *noReplyNames;
-@property(retain) UIColor *textColor;
-@property(retain) NSArray *ungroupedNames;
+@property(retain) NSArray * acceptedNames;
+@property(retain) NSArray * declinedNames;
 @property BOOL groupsNames;
 @property BOOL highlighted;
+@property(retain) UIColor * highlightedTextColor;
+@property(retain) NSArray * maybeNames;
+@property(retain) NSArray * noReplyNames;
+@property(retain) UIColor * textColor;
+@property(retain) NSArray * ungroupedNames;
 
-- (void)_drawColumnOfStrings:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 startingAtPoint:(struct CGPoint { float x1; float x2; })arg3 givenWidth:(float)arg4;
+- (void)_drawColumnOfStrings:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 startingAtPoint:(struct CGPoint { float x1; float x2; })arg3 givenWidth:(float)arg4;
 - (float)_heightForGroupOfAttendeeNames:(id)arg1;
 - (id)acceptedNames;
 - (void)dealloc;

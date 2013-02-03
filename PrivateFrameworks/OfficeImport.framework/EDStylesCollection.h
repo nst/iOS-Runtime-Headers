@@ -3,15 +3,15 @@
  */
 
 @interface EDStylesCollection : EDCollection {
-    NSUInteger mDefaultWorkbookStyleIndex;
+    unsigned int mDefaultWorkbookStyleIndex;
 }
 
-- (NSUInteger)addObject:(id)arg1;
+- (unsigned int)addObject:(id)arg1;
 - (id)defaultWorkbookStyle;
-- (NSUInteger)defaultWorkbookStyleIndex;
+- (unsigned int)defaultWorkbookStyleIndex;
 - (id)init;
 - (void)removeAllObjects;
-- (void)removeObjectAtIndex:(NSUInteger)arg1;
-- (void)setDefaultWorkbookStyleIndex:(NSUInteger)arg1;
+- (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)setDefaultWorkbookStyleIndex:(unsigned int)arg1;
 
 @end

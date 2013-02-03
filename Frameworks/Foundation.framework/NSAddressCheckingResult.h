@@ -6,24 +6,24 @@
 
 @interface NSAddressCheckingResult : NSTextCheckingResult {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     NSDictionary *_components;
     } _range;
     id _underlyingResult;
 }
 
-@property(readonly) void *underlyingResult;
+@property(readonly) void* underlyingResult;
 
-- (BOOL)_adjustRangesWithOffset:(NSInteger)arg1;
+- (BOOL)_adjustRangesWithOffset:(int)arg1;
 - (id)components;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 components:(id)arg2 underlyingResult:(void*)arg3;
-- (id)initWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 components:(id)arg2;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })range;
-- (id)resultByAdjustingRangesWithOffset:(NSInteger)arg1;
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 components:(id)arg2 underlyingResult:(void*)arg3;
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 components:(id)arg2;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (id)resultByAdjustingRangesWithOffset:(int)arg1;
 - (unsigned long long)resultType;
 - (void*)underlyingResult;
 

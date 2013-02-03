@@ -11,19 +11,19 @@
     id _value;
 }
 
-@property <ABSimpleTextInputViewControllerDelegate> *delegate;
-@property(copy) NSString *placeholder;
-@property(copy) NSString *stringValue;
-@property(retain) <ABStyleProvider> *styleProvider;
+@property <ABSimpleTextInputViewControllerDelegate> * delegate;
+@property(copy) NSString * placeholder;
+@property(copy) NSString * stringValue;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 - (BOOL)_allowsAutorotation;
-- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (float)ab_heightToFitForViewInPopoverView;
 - (void)cancel:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)placeholder;
 - (void)propertyEditingTableViewCell:(id)arg1 valueDidChange:(id)arg2;
 - (void)save:(id)arg1;
@@ -36,7 +36,7 @@
 - (id)styleProvider;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)updateSaveButton;
 - (void)viewDidLoad;

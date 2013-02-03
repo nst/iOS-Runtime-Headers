@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString, DOMNode;
+
 @interface DOMXPathResult : DOMObject {
 }
 
-@property(retain,readonly) DOMNode *singleNodeValue;
-@property(copy,readonly) NSString *stringValue;
 @property(readonly) BOOL booleanValue;
 @property(readonly) BOOL invalidIteratorState;
 @property(readonly) double numberValue;
 @property(readonly) unsigned short resultType;
-@property(readonly) NSUInteger snapshotLength;
+@property(retain,readonly) DOMNode * singleNodeValue;
+@property(readonly) unsigned int snapshotLength;
+@property(copy,readonly) NSString * stringValue;
 
 - (BOOL)booleanValue;
 - (void)dealloc;
@@ -21,8 +23,8 @@
 - (double)numberValue;
 - (unsigned short)resultType;
 - (id)singleNodeValue;
-- (id)snapshotItem:(NSUInteger)arg1;
-- (NSUInteger)snapshotLength;
+- (id)snapshotItem:(unsigned int)arg1;
+- (unsigned int)snapshotLength;
 - (id)stringValue;
 
 @end

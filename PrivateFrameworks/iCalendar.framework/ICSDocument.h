@@ -8,15 +8,15 @@
     ICSCalendar *_calendar;
 }
 
-- (id)ICSDataWithOptions:(NSUInteger)arg1;
-- (id)ICSStringWithOptions:(NSUInteger)arg1;
+- (id)ICSDataWithOptions:(unsigned int)arg1;
+- (id)ICSStringWithOptions:(unsigned int)arg1;
 - (id)calendar;
 - (void)dealloc;
 - (id)initWithCalendar:(id)arg1;
-- (id)initWithContentsOfURL:(id)arg1 options:(NSUInteger)arg2 error:(id*)arg3;
-- (id)initWithData:(id)arg1 encoding:(NSUInteger)arg2 options:(NSUInteger)arg3 error:(id*)arg4;
-- (id)initWithData:(id)arg1 options:(NSUInteger)arg2 error:(id*)arg3;
-- (id)initWithICSString:(id)arg1 options:(NSUInteger)arg2 error:(id*)arg3;
+- (id)initWithContentsOfURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (id)initWithData:(id)arg1 encoding:(unsigned int)arg2 options:(unsigned int)arg3 error:(id*)arg4;
+- (id)initWithData:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (id)initWithICSString:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)validate:(id*)arg1;
 
 @end

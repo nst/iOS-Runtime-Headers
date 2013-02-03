@@ -6,7 +6,7 @@
 
 @interface EDPivotPageField : NSObject {
     NSString *mCap;
-    NSUInteger mFieldId;
+    unsigned int mFieldId;
     NSString *mName;
 }
 
@@ -14,11 +14,11 @@
 
 - (id)cap;
 - (void)dealloc;
-- (NSUInteger)fieldId;
+- (unsigned int)fieldId;
 - (id)init;
 - (id)name;
 - (void)setCap:(id)arg1;
-- (void)setFieldId:(NSUInteger)arg1;
+- (void)setFieldId:(unsigned int)arg1;
 - (void)setName:(id)arg1;
 
 @end

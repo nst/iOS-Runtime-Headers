@@ -15,7 +15,7 @@
 - (void)dealloc;
 - (void)purgeCaches;
 - (id)rawData;
-- (NSUInteger)rawDataLength;
+- (unsigned int)rawDataLength;
 - (void)setRawData:(id)arg1;
 
 @end

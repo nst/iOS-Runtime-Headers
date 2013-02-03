@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString;
+
 @interface DOMHTMLOptGroupElement : DOMHTMLElement {
 }
 
-@property(copy) NSString *label;
 @property BOOL disabled;
+@property(copy) NSString * label;
 
 - (id)createPickerCell;
 - (id)createSelectedItem;

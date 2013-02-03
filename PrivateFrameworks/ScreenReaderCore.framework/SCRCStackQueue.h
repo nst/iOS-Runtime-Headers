@@ -3,12 +3,12 @@
  */
 
 @interface SCRCStackQueue : NSObject {
-    NSUInteger _count;
+    unsigned int _count;
     struct _SCRCStackNode { id x1; void *x2; void *x3; } *_firstNode;
     struct _SCRCStackNode { id x1; void *x2; void *x3; } *_lastNode;
 }
 
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)dequeueObject;
 - (id)dequeueObjectRetained;

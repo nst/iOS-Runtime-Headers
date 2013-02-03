@@ -9,22 +9,22 @@
     struct CGImageSource { } *_imageSource;
 }
 
-@property(readonly) NSData *data;
+@property(readonly) NSData * data;
 
 - (struct CGImageSource { }*)_imageSource;
-- (struct CGImage { }*)_newCGImageWithMaxLength:(NSInteger)arg1 transformOrientation:(BOOL)arg2;
-- (id)_newImageWithMaxLength:(NSInteger)arg1 transformOrientation:(BOOL)arg2;
+- (struct CGImage { }*)_newCGImageWithMaxLength:(int)arg1 transformOrientation:(BOOL)arg2;
+- (id)_newImageWithMaxLength:(int)arg1 transformOrientation:(BOOL)arg2;
 - (id)data;
 - (void)dealloc;
 - (id)image;
-- (NSInteger)imageCount;
-- (NSInteger)imageOrientation;
+- (int)imageCount;
+- (int)imageOrientation;
 - (id)imageType;
-- (id)imageWithMaxLength:(NSInteger)arg1;
+- (id)imageWithMaxLength:(int)arg1;
 - (id)initWithData:(id)arg1;
-- (id)jpegDataWithMaxLength:(NSInteger)arg1 compression:(float)arg2;
+- (id)jpegDataWithMaxLength:(int)arg1 compression:(float)arg2;
 - (id)mimeType;
-- (id)pngDataWithMaxLength:(NSInteger)arg1;
+- (id)pngDataWithMaxLength:(int)arg1;
 - (struct CGSize { float x1; float x2; })size;
 
 @end

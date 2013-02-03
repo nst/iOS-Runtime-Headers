@@ -6,20 +6,20 @@
 
 @interface GKAvatar : NSObject {
     UIImage *_image;
-    NSInteger _size;
+    int _size;
 }
 
-@property(retain) UIImage *image;
-@property NSInteger size;
+@property(retain) UIImage * image;
+@property int size;
 
 + (id)scaledImageFromImage:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-+ (struct CGSize { float x1; float x2; })sizeForAvatarSize:(NSInteger)arg1;
++ (struct CGSize { float x1; float x2; })sizeForAvatarSize:(int)arg1;
 
 - (void)dealloc;
 - (id)image;
-- (id)initWithImage:(id)arg1 size:(NSInteger)arg2;
+- (id)initWithImage:(id)arg1 size:(int)arg2;
 - (void)setImage:(id)arg1;
-- (void)setSize:(NSInteger)arg1;
-- (NSInteger)size;
+- (void)setSize:(int)arg1;
+- (int)size;
 
 @end

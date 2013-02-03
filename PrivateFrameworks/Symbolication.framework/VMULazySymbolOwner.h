@@ -5,21 +5,21 @@
 @class NSArray, NSString, NSDictionary;
 
 @interface VMULazySymbolOwner : NSObject {
-    NSUInteger _flags;
+    unsigned int _flags;
     NSString *_name;
     NSArray *_regions;
     NSDictionary *_signature;
 }
 
-+ (id)lazySymbolOwnerWithName:(id)arg1 signature:(id)arg2 regions:(id)arg3 flags:(NSUInteger)arg4;
++ (id)lazySymbolOwnerWithName:(id)arg1 signature:(id)arg2 regions:(id)arg3 flags:(unsigned int)arg4;
 
 - (id)architecture;
 - (BOOL)containsAddress:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)description;
-- (NSUInteger)flags;
+- (unsigned int)flags;
 - (BOOL)hasRegionsForName:(id)arg1;
-- (id)initWithName:(id)arg1 signature:(id)arg2 regions:(id)arg3 flags:(NSUInteger)arg4;
+- (id)initWithName:(id)arg1 signature:(id)arg2 regions:(id)arg3 flags:(unsigned int)arg4;
 - (BOOL)isLazy;
 - (BOOL)isProtected;
 - (id)name;

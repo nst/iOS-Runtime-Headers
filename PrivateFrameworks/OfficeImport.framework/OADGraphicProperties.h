@@ -23,7 +23,7 @@
 - (BOOL)hasScene3D;
 - (BOOL)hasShape3D;
 - (BOOL)hasStroke;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithDefaults;
 - (BOOL)isBehindText;
 - (BOOL)isEqual:(id)arg1;

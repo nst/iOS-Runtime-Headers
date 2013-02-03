@@ -19,7 +19,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (float)green;
 - (unsigned char)greenByte;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 - (id)initWithRedByte:(float)arg1 greenByte:(float)arg2 blueByte:(float)arg3;
 - (BOOL)isEqual:(id)arg1;

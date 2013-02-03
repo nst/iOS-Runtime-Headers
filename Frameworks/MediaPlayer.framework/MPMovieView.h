@@ -8,7 +8,7 @@
     <MPMovieViewDelegate> *_delegate;
 }
 
-@property <MPMovieViewDelegate> *delegate;
+@property <MPMovieViewDelegate> * delegate;
 
 - (id)delegate;
 - (void)didMoveToWindow;

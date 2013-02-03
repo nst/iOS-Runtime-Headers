@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSMutableArray, NSData, EKEventStore;
+@class NSArray, NSData, NSMutableArray, EKEventStore;
 
 @interface EKICSPreviewModel : NSObject {
     NSData *_data;
@@ -12,24 +12,24 @@
     NSMutableArray *_unimportedEvents;
 }
 
-@property(readonly) NSArray *allEvents;
-@property(readonly) EKEventStore *eventStore;
-@property(readonly) NSArray *importedEvents;
-@property(readonly) NSArray *unimportedEvents;
-@property(readonly) NSInteger importedEventCount;
-@property(readonly) NSInteger totalEventCount;
-@property(readonly) NSInteger unimportedEventCount;
+@property(readonly) NSArray * allEvents;
+@property(readonly) EKEventStore * eventStore;
+@property(readonly) int importedEventCount;
+@property(readonly) NSArray * importedEvents;
+@property(readonly) int totalEventCount;
+@property(readonly) int unimportedEventCount;
+@property(readonly) NSArray * unimportedEvents;
 
 - (id)allEvents;
 - (void)dealloc;
 - (id)eventStore;
 - (id)importAllIntoCalendar:(id)arg1;
 - (id)importEvent:(id)arg1 intoCalendar:(id)arg2;
-- (NSInteger)importedEventCount;
+- (int)importedEventCount;
 - (id)importedEvents;
 - (id)initWithICSData:(id)arg1 eventStore:(id)arg2;
-- (NSInteger)totalEventCount;
-- (NSInteger)unimportedEventCount;
+- (int)totalEventCount;
+- (int)unimportedEventCount;
 - (id)unimportedEvents;
 
 @end

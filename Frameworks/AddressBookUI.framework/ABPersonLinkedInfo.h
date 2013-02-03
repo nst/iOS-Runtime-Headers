@@ -11,9 +11,9 @@
     BOOL _unified;
 }
 
-@property(retain) NSString *name;
-@property void *person;
-@property(retain) NSString *type;
+@property(retain) NSString * name;
+@property void* person;
+@property(retain) NSString * type;
 @property(getter=isUnified) BOOL unified;
 
 + (id)linkedInfoForPeople:(id)arg1 peopleForUnifiedCard:(id)arg2 accountsManager:(id)arg3;

@@ -2,23 +2,17 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSURLConnectionInternal;
 
 @interface NSURLConnection : NSObject <NSURLAuthenticationChallengeSender> {
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B12@0:4^{_CFURLProtectionSpace=}8 */
     NSURLConnectionInternal *_internal;
 }
 
 + (void)_resourceLoadLoop:(id)arg1;
-+ (void)_setLoaderThreadPriority:(NSInteger)arg1;
++ (void)_setLoaderThreadPriority:(int)arg1;
 + (void)_setMIMETypesWithNoSizeLimit:(id)arg1;
-+ (void)_setSweeperInterval:(NSUInteger)arg1;
-+ (NSUInteger)_sweeperInterval;
++ (void)_setSweeperInterval:(unsigned int)arg1;
++ (unsigned int)_sweeperInterval;
 + (BOOL)canHandleRequest:(id)arg1;
 + (id)connectionWithRequest:(id)arg1 delegate:(id)arg2;
 + (struct __CFRunLoop { }*)resourceLoaderRunLoop;
@@ -34,7 +28,7 @@
 - (id)_initWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(BOOL)arg3 maxContentLength:(long long)arg4;
 - (id)_initWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(BOOL)arg3;
 - (void)_resumeLoading;
-- (void)_setShouldSkipCancelOnRelease:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)_setShouldSkipCancelOnRelease:(bool)arg1;
 - (void)_suspendLoading;
 - (void)cancel;
 - (void)cancelAuthenticationChallenge:(id)arg1;
@@ -48,7 +42,7 @@
 - (id)initWithRequest:(id)arg1 delegate:(id)arg2;
 - (void)releaseDelegate;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)sendCanAuthenticateAgainstProtectionSpace:(struct _CFURLProtectionSpace { }*)arg1;
+- (bool)sendCanAuthenticateAgainstProtectionSpace:(struct _CFURLProtectionSpace { }*)arg1;
 - (unsigned char)sendConnectionShouldUseCredentialStorage;
 - (void)sendDidFail:(struct __CFError { }*)arg1;
 - (void)sendDidFinishLoading;

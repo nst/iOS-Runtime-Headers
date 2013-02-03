@@ -6,7 +6,7 @@
 
 @interface OADGradientFill : OADFill {
     BOOL mAreStopsOverridden;
-    NSInteger mFlipMode;
+    int mFlipMode;
     BOOL mIsFlipModeOverridden;
     BOOL mIsRotateWithShapeOverridden;
     BOOL mIsShadeOverridden;
@@ -24,8 +24,8 @@
 - (void)clearStops;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (NSInteger)flipMode;
-- (NSUInteger)hash;
+- (int)flipMode;
+- (unsigned int)hash;
 - (id)initWithDefaults;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFlipModeOverridden;
@@ -33,7 +33,7 @@
 - (BOOL)isShadeOverridden;
 - (BOOL)isTileRectOverridden;
 - (BOOL)rotateWithShape;
-- (void)setFlipMode:(NSInteger)arg1;
+- (void)setFlipMode:(int)arg1;
 - (void)setParent:(id)arg1;
 - (void)setRotateWithShape:(BOOL)arg1;
 - (void)setShade:(id)arg1;
@@ -41,9 +41,9 @@
 - (void)setStyleColor:(id)arg1;
 - (void)setTileRect:(id)arg1;
 - (id)shade;
-- (id)stopColorAtIndex:(NSUInteger)arg1;
-- (NSUInteger)stopCount;
-- (float)stopPositionAtIndex:(NSUInteger)arg1;
+- (id)stopColorAtIndex:(unsigned int)arg1;
+- (unsigned int)stopCount;
+- (float)stopPositionAtIndex:(unsigned int)arg1;
 - (id)stops;
 - (id)tileRect;
 

@@ -9,17 +9,17 @@
     NSCache *_cache;
     struct sqlite3_stmt { } *_commitStmt;
     struct sqlite3 { } *_db;
-    struct __CFBoolean { } *_dbIsMissing;
-    struct __CFBoolean { } *_dbIsReadOnly;
+    BOOL _dbIsMissing;
+    BOOL _dbIsReadOnly;
     struct sqlite3_stmt { } *_findStmt;
     NSString *_imagePath;
     NSString *_path;
     struct sqlite3_stmt { } *_saveStmt;
     struct __CFRunLoopObserver { } *_txnObserver;
-    NSInteger _version;
+    int _version;
 }
 
-@property(readonly) NSInteger version;
+@property(readonly) int version;
 
 - (id)allGroups;
 - (void)beginAutoTxn;
@@ -29,21 +29,19 @@
 - (void)createDbAt:(const char *)arg1;
 - (struct CGImage { }*)createImageForKey:(id)arg1;
 - (struct sqlite3 { }*)db;
-- (BOOL)dbIsMissing;
-- (BOOL)dbIsReadOnly;
 - (id)dbPath;
 - (void)dealloc;
-- (BOOL)findImageWithKey:(id)arg1 andInfo:(struct _img { id x1; NSUInteger x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; unsigned char x6; }*)arg2;
+- (BOOL)findImageWithKey:(id)arg1 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg2;
 - (struct sqlite3_stmt { }*)findStmt;
-- (NSInteger)imageCount;
+- (int)imageCount;
 - (id)imagePath;
-- (id)initWithPath:(id)arg1 version:(NSInteger)arg2;
+- (id)initWithPath:(id)arg1 version:(int)arg2;
 - (void)purge;
 - (void)removeImagesInGroups:(id)arg1;
-- (BOOL)saveImageWithKey:(id)arg1 inGroup:(id)arg2 andInfo:(struct _img { id x1; NSUInteger x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; unsigned char x6; }*)arg3;
+- (BOOL)saveImageWithKey:(id)arg1 inGroup:(id)arg2 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg3;
 - (struct sqlite3_stmt { }*)saveStmt;
-- (NSInteger)setVersion:(NSInteger)arg1;
+- (int)setVersion:(int)arg1;
 - (struct CGImage { }*)storeImageForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 draw:(id)arg6;
-- (NSInteger)version;
+- (int)version;
 
 @end

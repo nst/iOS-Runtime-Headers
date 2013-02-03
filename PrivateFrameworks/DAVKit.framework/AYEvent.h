@@ -5,18 +5,18 @@
 @class NSString;
 
 @interface AYEvent : NSObject {
-    NSInteger _code;
+    int _code;
     NSString *_domain;
     id _info;
 }
 
-+ (id)eventWithDomain:(id)arg1 eventCode:(NSInteger)arg2 userInfo:(id)arg3;
++ (id)eventWithDomain:(id)arg1 eventCode:(int)arg2 userInfo:(id)arg3;
 
-- (NSInteger)code;
+- (int)code;
 - (void)dealloc;
 - (id)description;
 - (id)domain;
-- (id)initWithDomain:(id)arg1 eventCode:(NSInteger)arg2 userInfo:(id)arg3;
+- (id)initWithDomain:(id)arg1 eventCode:(int)arg2 userInfo:(id)arg3;
 - (id)userInfo;
 
 @end

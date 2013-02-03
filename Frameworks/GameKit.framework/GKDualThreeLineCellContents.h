@@ -10,14 +10,14 @@
     GKMultilineCellContentView *_topContents;
 }
 
-@property(retain) GKMultilineCellContentView *bottomContents;
-@property(retain) GKMultilineCellContentView *topContents;
+@property(retain) GKMultilineCellContentView * bottomContents;
+@property(retain) GKMultilineCellContentView * topContents;
 
 - (id)bottomContents;
 - (void)dealloc;
 - (id)init;
 - (void)layoutSubviews;
-- (float)preferredHeightForOrientation:(NSInteger)arg1;
+- (float)preferredHeightForOrientation:(int)arg1;
 - (void)prepareForReuse;
 - (void)setBottomContents:(id)arg1;
 - (void)setTheme:(id)arg1;

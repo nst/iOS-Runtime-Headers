@@ -7,13 +7,13 @@
 @interface SPTopHitsCompoundResult : NSObject {
     void *_content;
     NSString *_displayIdentifier;
-    NSUInteger _domain;
+    unsigned int _domain;
 }
 
 - (void*)content;
 - (void)dealloc;
 - (id)displayIdentifier;
-- (NSUInteger)domain;
-- (id)initWithContent:(void*)arg1 domain:(NSUInteger)arg2 displayIdentifier:(id)arg3;
+- (unsigned int)domain;
+- (id)initWithContent:(void*)arg1 domain:(unsigned int)arg2 displayIdentifier:(id)arg3;
 
 @end

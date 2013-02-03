@@ -5,23 +5,23 @@
 @class NSArray, GKPlayer, NSDate, GKGame;
 
 @interface GKGetRecentMatchesDataRequest : GKDataRequest {
-    NSUInteger _count;
+    unsigned int _count;
     GKGame *_game;
     NSArray *_matches;
     GKPlayer *_otherPlayer;
     NSDate *_sinceDate;
 }
 
-@property(retain) GKGame *game;
-@property(readonly) NSArray *matches;
-@property(retain) GKPlayer *otherPlayer;
-@property(retain) NSDate *sinceDate;
-@property NSUInteger count;
+@property unsigned int count;
+@property(retain) GKGame * game;
+@property(readonly) NSArray * matches;
+@property(retain) GKPlayer * otherPlayer;
+@property(retain) NSDate * sinceDate;
 
 - (id)cacheKey;
-- (NSInteger)cachePriority;
-- (NSInteger)cacheType;
-- (NSUInteger)count;
+- (int)cachePriority;
+- (int)cacheType;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)game;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
@@ -30,7 +30,7 @@
 - (id)matches;
 - (id)otherPlayer;
 - (id)request;
-- (void)setCount:(NSUInteger)arg1;
+- (void)setCount:(unsigned int)arg1;
 - (void)setGame:(id)arg1;
 - (void)setOtherPlayer:(id)arg1;
 - (void)setSinceDate:(id)arg1;

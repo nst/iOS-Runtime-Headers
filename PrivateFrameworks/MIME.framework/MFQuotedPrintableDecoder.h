@@ -5,12 +5,12 @@
 @interface MFQuotedPrintableDecoder : MFBaseFilterDataConsumer {
     BOOL _forTextPart;
     unsigned char _lastEncoded;
-    NSUInteger _required;
+    unsigned int _required;
 }
 
 @property BOOL forTextPart;
 
-- (NSInteger)appendData:(id)arg1;
+- (int)appendData:(id)arg1;
 - (void)done;
 - (BOOL)forTextPart;
 - (void)setForTextPart:(BOOL)arg1;

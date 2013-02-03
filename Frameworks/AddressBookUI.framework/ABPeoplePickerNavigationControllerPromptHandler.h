@@ -10,9 +10,9 @@
 }
 
 - (void)dealloc;
-- (NSUInteger)indexForViewControllerType:(NSInteger)arg1;
+- (unsigned int)indexForViewControllerType:(int)arg1;
 - (id)initWithNavigationController:(id)arg1;
-- (id)promptForViewControllerType:(NSInteger)arg1;
-- (void)setPrompt:(id)arg1 forViewControllerType:(NSInteger)arg2;
+- (id)promptForViewControllerType:(int)arg1;
+- (void)setPrompt:(id)arg1 forViewControllerType:(int)arg2;
 
 @end

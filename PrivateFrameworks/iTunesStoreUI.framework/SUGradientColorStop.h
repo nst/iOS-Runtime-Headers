@@ -13,7 +13,7 @@
 
 @property(readonly) float offset;
 
-- (NSInteger)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (struct CGColor { }*)copyCGColor;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

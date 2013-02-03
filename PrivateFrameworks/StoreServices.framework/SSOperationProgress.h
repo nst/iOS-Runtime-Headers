@@ -12,10 +12,10 @@
     long long _maxValue;
     long long _normalizedCurrentValue;
     long long _normalizedMaxValue;
-    NSInteger _operationType;
+    int _operationType;
     NSMutableArray *_snapshotTimes;
     NSMutableArray *_snapshotValues;
-    NSInteger _units;
+    int _units;
 }
 
 @property BOOL canPause;
@@ -25,8 +25,8 @@
 @property long long maxValue;
 @property long long normalizedCurrentValue;
 @property long long normalizedMaxValue;
-@property NSInteger operationType;
-@property NSInteger units;
+@property int operationType;
+@property int units;
 
 - (void)_updateStatisticsFromSnapshots;
 - (BOOL)canPause;
@@ -42,7 +42,7 @@
 - (long long)maxValue;
 - (long long)normalizedCurrentValue;
 - (long long)normalizedMaxValue;
-- (NSInteger)operationType;
+- (int)operationType;
 - (void)resetSnapshots;
 - (void)setCanPause:(BOOL)arg1;
 - (void)setChangeRate:(double)arg1;
@@ -51,9 +51,9 @@
 - (void)setMaxValue:(long long)arg1;
 - (void)setNormalizedCurrentValue:(long long)arg1;
 - (void)setNormalizedMaxValue:(long long)arg1;
-- (void)setOperationType:(NSInteger)arg1;
-- (void)setUnits:(NSInteger)arg1;
+- (void)setOperationType:(int)arg1;
+- (void)setUnits:(int)arg1;
 - (void)snapshot;
-- (NSInteger)units;
+- (int)units;
 
 @end

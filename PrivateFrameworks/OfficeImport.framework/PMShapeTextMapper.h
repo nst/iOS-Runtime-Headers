@@ -16,6 +16,6 @@
 - (BOOL)isTableCellContent;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (BOOL)setRectangular:(BOOL)arg1;
-- (NSInteger)textAnchor;
+- (int)textAnchor;
 
 @end

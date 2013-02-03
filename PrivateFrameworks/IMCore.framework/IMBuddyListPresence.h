@@ -12,11 +12,11 @@
     NSString *_filterSingleGroup;
 }
 
-@property(readonly) NSString *group;
-@property(readonly) NSSet *groups;
-@property(readonly) IMPerson *person;
-@property(readonly) IMServiceImpl *service;
-@property(readonly) NSUInteger sortOrder;
+@property(readonly) NSString * group;
+@property(readonly) NSSet * groups;
+@property(readonly) IMPerson * person;
+@property(readonly) IMServiceImpl * service;
+@property(readonly) unsigned int sortOrder;
 
 - (id)_filterSingleGroup;
 - (BOOL)canAddIMHandle:(id)arg1;
@@ -31,6 +31,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)person;
 - (id)service;
-- (NSUInteger)sortOrder;
+- (unsigned int)sortOrder;
 
 @end

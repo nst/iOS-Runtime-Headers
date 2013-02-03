@@ -6,23 +6,23 @@
 
 @interface GMMDirectionsIconRequest : PBRequest {
     NSMutableArray *_cachedIconIDs;
-    NSInteger _cachedIconVersion;
+    int _cachedIconVersion;
     GMMClientCapabilities *_capabilities;
     BOOL _hasCachedIconVersion;
 }
 
-@property(retain) NSMutableArray *cachedIconIDs;
-@property(retain) GMMClientCapabilities *capabilities;
-@property(readonly) NSInteger cachedIconIDsCount;
-@property NSInteger cachedIconVersion;
+@property(retain) NSMutableArray * cachedIconIDs;
+@property(readonly) int cachedIconIDsCount;
+@property int cachedIconVersion;
+@property(retain) GMMClientCapabilities * capabilities;
 @property(readonly) BOOL hasCachedIconVersion;
 @property(readonly) BOOL hasCapabilities;
 
 - (void)addCachedIconID:(long long)arg1;
-- (long long)cachedIconIDAtIndex:(NSUInteger)arg1;
+- (long long)cachedIconIDAtIndex:(unsigned int)arg1;
 - (id)cachedIconIDs;
-- (NSInteger)cachedIconIDsCount;
-- (NSInteger)cachedIconVersion;
+- (int)cachedIconIDsCount;
+- (int)cachedIconVersion;
 - (id)capabilities;
 - (void)dealloc;
 - (id)description;
@@ -30,11 +30,11 @@
 - (BOOL)hasCapabilities;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (NSUInteger)requestTypeCode;
+- (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (void)setCachedIconID:(long long)arg1 atIndex:(NSUInteger)arg2;
+- (void)setCachedIconID:(long long)arg1 atIndex:(unsigned int)arg2;
 - (void)setCachedIconIDs:(id)arg1;
-- (void)setCachedIconVersion:(NSInteger)arg1;
+- (void)setCachedIconVersion:(int)arg1;
 - (void)setCapabilities:(id)arg1;
 - (void)writeTo:(id)arg1;
 

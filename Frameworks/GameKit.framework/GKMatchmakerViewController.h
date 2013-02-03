@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKMatchmakerViewControllerPrivate;
+@class GKMatchmakerViewControllerPrivate, GKMatchRequest, <GKMatchmakerViewControllerDelegate>;
 
 @interface GKMatchmakerViewController : UINavigationController {
     GKMatchmakerViewControllerPrivate *_privateViewController;
 }
 
-@property(retain,readonly) GKMatchRequest *matchRequest;
-@property <GKMatchmakerViewControllerDelegate> *matchmakerDelegate;
-@property(retain) GKMatchmakerViewControllerPrivate *privateViewController;
 @property(getter=isHosted) BOOL hosted;
+@property(retain,readonly) GKMatchRequest * matchRequest;
+@property <GKMatchmakerViewControllerDelegate> * matchmakerDelegate;
+@property(retain) GKMatchmakerViewControllerPrivate * privateViewController;
 
 - (void)dealloc;
 - (id)initWithInvite:(id)arg1;

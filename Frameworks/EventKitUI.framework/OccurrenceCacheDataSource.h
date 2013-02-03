@@ -6,51 +6,51 @@
 
 @interface OccurrenceCacheDataSource : NSObject <OccurrenceCacheDataSourceProtocol> {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
-    NSInteger _cachedDayCount;
+        unsigned int location; 
+        unsigned int length; 
+    int _cachedDayCount;
     struct __CFArray { } *_cachedDayIndexes;
     } _cachedDayRange;
     struct __CFArray { } *_cachedDays;
-    NSInteger _cachedOccurrenceCount;
+    int _cachedOccurrenceCount;
     struct __CFArray { } *_cachedOccurrences;
     struct CalDatabase { } *_database;
     struct CalFilter { } *_filter;
     CalendarModel *_model;
-    NSInteger _totalOccurrencesCount;
+    int _totalOccurrencesCount;
 }
 
 - (struct __CFArray { }*)_cachedDayIndexes;
-- (NSInteger)cachedDayCount;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })cachedDayRange;
-- (struct CalEventOccurrence { }*)cachedOccurrenceAtIndex:(NSInteger)arg1;
-- (NSInteger)cachedOccurrenceCount;
-- (NSInteger)cachedOccurrenceCountOnOrAfterDate:(double)arg1;
+- (int)cachedDayCount;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })cachedDayRange;
+- (struct CalEventOccurrence { }*)cachedOccurrenceAtIndex:(int)arg1;
+- (int)cachedOccurrenceCount;
+- (int)cachedOccurrenceCountOnOrAfterDate:(double)arg1;
 - (BOOL)cachedOccurrencesAreBeingGenerated;
-- (NSInteger)countOfOccurrencesOnDay:(double)arg1;
-- (double)dateForDayIndex:(NSInteger)arg1;
-- (NSInteger)dayCountBeforeDay:(double)arg1;
-- (BOOL)dayIndexAlreadyCached:(NSInteger)arg1;
-- (NSInteger)dayIndexForDay:(double)arg1;
-- (NSInteger)dayIndexOfCachedOccurrenceAtIndex:(NSInteger)arg1;
-- (NSInteger)dayIndexOfCachedOccurrenceIndex:(NSInteger)arg1;
+- (int)countOfOccurrencesOnDay:(double)arg1;
+- (double)dateForDayIndex:(int)arg1;
+- (int)dayCountBeforeDay:(double)arg1;
+- (BOOL)dayIndexAlreadyCached:(int)arg1;
+- (int)dayIndexForDay:(double)arg1;
+- (int)dayIndexOfCachedOccurrenceAtIndex:(int)arg1;
+- (int)dayIndexOfCachedOccurrenceIndex:(int)arg1;
 - (void)dealloc;
-- (NSInteger)fixDayIndexToFitInCachedDays:(NSInteger)arg1;
-- (NSInteger)indexOfFirstCachedOccurrence;
-- (NSInteger)indexOfFirstOccurrenceForDayIndex:(NSInteger)arg1;
-- (NSInteger)indexOfLastOccurrenceForDayIndex:(NSInteger)arg1;
+- (int)fixDayIndexToFitInCachedDays:(int)arg1;
+- (int)indexOfFirstCachedOccurrence;
+- (int)indexOfFirstOccurrenceForDayIndex:(int)arg1;
+- (int)indexOfLastOccurrenceForDayIndex:(int)arg1;
 - (id)initWithDatabase:(struct CalDatabase { }*)arg1 filter:(struct CalFilter { }*)arg2;
 - (void)invalidate;
 - (void)invalidateCachedDayIndexes;
 - (void)invalidateCachedDays;
 - (void)invalidateCachedOccurrences;
-- (void)loadOccurrencesForRange:(struct { NSInteger x1; NSInteger x2; })arg1;
+- (void)loadOccurrencesForRange:(struct { int x1; int x2; })arg1;
 - (void)restartSearchWithTerm:(id)arg1;
-- (void)setCachedDayRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)setCachedDayRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)startSearching;
 - (void)stopSearching;
 - (BOOL)supportsFakeTodaySection;
 - (BOOL)supportsInvitations;
-- (NSInteger)totalOccurrencesCount;
+- (int)totalOccurrencesCount;
 
 @end

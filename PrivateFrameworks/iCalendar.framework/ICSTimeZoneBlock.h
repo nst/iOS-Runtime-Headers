@@ -2,18 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
+@class ICSDate, NSArray;
+
 @interface ICSTimeZoneBlock : ICSComponent {
 }
 
-@property(retain) ICSDate *dtstart;
-@property(retain) NSArray *rdate;
-@property(retain) NSArray *rrule;
-@property NSArray *tzname;
-@property NSInteger tzoffsetfrom;
-@property NSInteger tzoffsetto;
+@property(retain) ICSDate * dtstart;
+@property(retain) NSArray * rdate;
+@property(retain) NSArray * rrule;
+@property NSArray * tzname;
+@property int tzoffsetfrom;
+@property int tzoffsetto;
 
 - (void)addRecurrenceDate:(id)arg1;
-- (NSInteger)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (id)computeTimeZoneChangeListFromDate:(id)arg1 toDate:(id)arg2;
 - (id)dtstart;
 - (id)rdate;
@@ -22,11 +24,11 @@
 - (void)setRdate:(id)arg1;
 - (void)setRrule:(id)arg1;
 - (void)setTzname:(id)arg1;
-- (void)setTzoffsetfrom:(NSInteger)arg1;
-- (void)setTzoffsetto:(NSInteger)arg1;
+- (void)setTzoffsetfrom:(int)arg1;
+- (void)setTzoffsetto:(int)arg1;
 - (id)tzname;
-- (NSInteger)tzoffsetfrom;
-- (NSInteger)tzoffsetto;
+- (int)tzoffsetfrom;
+- (int)tzoffsetto;
 - (BOOL)validate:(id*)arg1;
 
 @end

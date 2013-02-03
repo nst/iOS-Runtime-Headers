@@ -14,7 +14,7 @@
 - (void)dealloc;
 - (id)initWithParagraph:(id)arg1 date:(id)arg2;
 - (id)properties;
-- (NSInteger)runType;
+- (int)runType;
 - (void)setProperties:(id)arg1;
 
 @end

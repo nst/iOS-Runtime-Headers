@@ -7,7 +7,7 @@
 @interface MimeBody : MessageBody {
     unsigned int _preferredAlternative : 16;
     unsigned int _numAlternatives : 16;
-    NSUInteger _preferredTextEncoding;
+    unsigned int _preferredTextEncoding;
     MimePart *_topLevelPart;
 }
 
@@ -16,7 +16,7 @@
 + (id)versionString;
 
 - (id)attachments;
-- (id)contentToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2 asHTML:(BOOL)arg3 isComplete:(BOOL*)arg4;
+- (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3 isComplete:(BOOL*)arg4;
 - (void)dealloc;
 - (void)decodeIfNecessary;
 - (id)init;
@@ -24,17 +24,17 @@
 - (BOOL)isRich;
 - (id)mimeSubtype;
 - (id)mimeType;
-- (NSInteger)numberOfAlternatives;
-- (NSUInteger)numberOfAttachmentsSigned:(BOOL*)arg1 encrypted:(BOOL*)arg2;
+- (int)numberOfAlternatives;
+- (unsigned int)numberOfAttachmentsSigned:(BOOL*)arg1 encrypted:(BOOL*)arg2;
 - (id)partWithNumber:(id)arg1;
-- (NSInteger)preferredAlternative;
+- (int)preferredAlternative;
 - (id)preferredBodyPart;
 - (unsigned long)preferredTextEncoding;
-- (void)setPreferredAlternative:(NSInteger)arg1;
+- (void)setPreferredAlternative:(int)arg1;
 - (void)setPreferredTextEncoding:(unsigned long)arg1;
 - (void)setTopLevelPart:(id)arg1;
 - (id)textHtmlPart;
 - (id)topLevelPart;
-- (NSUInteger)totalTextSize;
+- (unsigned int)totalTextSize;
 
 @end

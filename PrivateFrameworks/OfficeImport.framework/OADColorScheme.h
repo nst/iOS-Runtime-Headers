@@ -8,9 +8,9 @@
     NSMutableDictionary *mColors;
 }
 
-- (void)addColor:(id)arg1 index:(NSInteger)arg2;
-- (NSUInteger)colorCount;
-- (id)colorForIndex:(NSInteger)arg1;
+- (void)addColor:(id)arg1 index:(int)arg2;
+- (unsigned int)colorCount;
+- (id)colorForIndex:(int)arg1;
 - (void)dealloc;
 - (id)init;
 

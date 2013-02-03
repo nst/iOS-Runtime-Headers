@@ -11,12 +11,12 @@
 }
 
 - (id)_predicateBlock;
-- (void)acceptVisitor:(id)arg1 flags:(NSUInteger)arg2;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithBlock:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

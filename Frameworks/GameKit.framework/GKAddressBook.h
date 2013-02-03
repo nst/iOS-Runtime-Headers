@@ -2,30 +2,21 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
+@class NSOperationQueue;
+
 @interface GKAddressBook : NSObject {
-    void *_addressBook;
-    void *_source;
+    NSOperationQueue *_searchQueue;
 }
 
-@property(readonly) void *addressBook;
-@property(readonly) void *source;
+@property(retain) NSOperationQueue * searchQueue;
 
-+ (void*)copySourceForPlayerID:(id)arg1 withAddressBook:(void*)arg2;
++ (id)fullNameWithFirstName:(id)arg1 lastName:(id)arg2;
++ (id)sharedAddressBook;
 
-- (id)activeAccount;
-- (void*)addressBook;
-- (void*)contactForEmail:(id)arg1;
-- (void*)contactForPlayer:(id)arg1;
+- (id)_emailSearchPredicateForEmailDictionaries:(id)arg1;
+- (void)acquireNamesForEmailAddresses:(id)arg1 completionHandler:(id)arg2;
 - (void)dealloc;
-- (id)initWithPlayerID:(id)arg1;
-- (void)playerID:(id*)arg1 requestID:(id*)arg2 forThunderdomeContact:(void*)arg3;
-- (void*)rootContactForContact:(void*)arg1;
-- (void)setAlias:(id)arg1 playerID:(id)arg2 requestID:(id)arg3 forThunderdomeContact:(void*)arg4;
-- (void)setExternalIdentifier:(id)arg1;
-- (void*)setOrCreateTDContact:(void*)arg1 withContact:(void*)arg2 forPlayer:(id)arg3;
-- (void*)setPlayer:(id)arg1 forContact:(void*)arg2;
-- (void)showContacts;
-- (void*)source;
-- (id)stringWithContact:(void*)arg1;
+- (id)searchQueue;
+- (void)setSearchQueue:(id)arg1;
 
 @end

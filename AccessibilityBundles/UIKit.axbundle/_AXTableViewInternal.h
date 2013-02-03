@@ -5,7 +5,7 @@
 @class NSMutableDictionary;
 
 @interface _AXTableViewInternal : NSObject {
-    NSInteger _accessibleElementCount;
+    int _accessibleElementCount;
     NSMutableDictionary *_children;
     NSMutableDictionary *_indexMap;
     BOOL _reusableCellsEnabled;
@@ -15,16 +15,16 @@
     NSMutableDictionary *_sectionHeaders;
 }
 
-@property(readonly) NSMutableDictionary *children;
-@property(readonly) NSMutableDictionary *indexMap;
-@property(readonly) NSMutableDictionary *sectionFooters;
-@property(readonly) NSMutableDictionary *sectionHeaders;
-@property NSInteger accessibleElementCount;
+@property int accessibleElementCount;
+@property(readonly) NSMutableDictionary * children;
+@property(readonly) NSMutableDictionary * indexMap;
 @property BOOL reusableCellsEnabled;
 @property BOOL searchControllerDimmingViewVisible;
 @property BOOL searchTableViewVisible;
+@property(readonly) NSMutableDictionary * sectionFooters;
+@property(readonly) NSMutableDictionary * sectionHeaders;
 
-- (NSInteger)accessibleElementCount;
+- (int)accessibleElementCount;
 - (id)children;
 - (void)dealloc;
 - (id)indexMap;
@@ -34,7 +34,7 @@
 - (BOOL)searchTableViewVisible;
 - (id)sectionFooters;
 - (id)sectionHeaders;
-- (void)setAccessibleElementCount:(NSInteger)arg1;
+- (void)setAccessibleElementCount:(int)arg1;
 - (void)setReusableCellsEnabled:(BOOL)arg1;
 - (void)setSearchControllerDimmingViewVisible:(BOOL)arg1;
 - (void)setSearchTableViewVisible:(BOOL)arg1;

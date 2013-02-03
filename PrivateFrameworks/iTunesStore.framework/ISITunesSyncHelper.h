@@ -6,7 +6,7 @@
 
 @interface ISITunesSyncHelper : NSObject <ISSingleton> {
     unsigned int _syncRequested : 1;
-    NSInteger _blockSyncCount;
+    int _blockSyncCount;
     BOOL _checkedForPurchases;
     NSLock *_lock;
     NSDate *_preSyncCheckForPurchasesDate;
@@ -27,7 +27,7 @@
 - (void)endBlockingSync;
 - (BOOL)iTunesCheckedForPurchasesDuringSync;
 - (BOOL)iTunesIsSynching;
-- (void)iTunesSyncHasCompleted:(NSInteger)arg1;
+- (void)iTunesSyncHasCompleted:(int)arg1;
 - (void)iTunesSyncRequestedStart;
 - (id)init;
 - (BOOL)isBlockingSync;

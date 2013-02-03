@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSDictionary, NSString, NSData;
+@class NSString, NSData, NSDictionary, GKPlayer;
 
 @interface GKInvite : NSObject {
     BOOL _cancelled;
@@ -10,17 +10,19 @@
     NSDictionary *_inviteDictionary;
     NSString *_inviteID;
     NSString *_inviter;
+    GKPlayer *_invitingPlayer;
     NSString *_message;
     NSData *_sessionToken;
 }
 
-@property(retain) NSDictionary *inviteDictionary;
-@property(retain) NSString *inviteID;
-@property(retain) NSString *inviter;
-@property(retain) NSString *message;
-@property(retain) NSData *sessionToken;
 @property(getter=isCancelled) BOOL cancelled;
 @property(getter=isHosted) BOOL hosted;
+@property(retain) NSDictionary * inviteDictionary;
+@property(retain) NSString * inviteID;
+@property(retain) NSString * inviter;
+@property(retain) GKPlayer * invitingPlayer;
+@property(retain) NSString * message;
+@property(retain) NSData * sessionToken;
 
 + (id)inviteWithDictionary:(id)arg1;
 
@@ -29,6 +31,7 @@
 - (id)inviteDictionary;
 - (id)inviteID;
 - (id)inviter;
+- (id)invitingPlayer;
 - (BOOL)isCancelled;
 - (BOOL)isHosted;
 - (id)message;
@@ -38,6 +41,7 @@
 - (void)setInviteDictionary:(id)arg1;
 - (void)setInviteID:(id)arg1;
 - (void)setInviter:(id)arg1;
+- (void)setInvitingPlayer:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setSessionToken:(id)arg1;
 

@@ -14,15 +14,15 @@
     MessageBody *_body;
     id _content;
     NSLock *_contentLock;
-    NSUInteger _contentOffset;
+    unsigned int _contentOffset;
     NSObject<MFMessageViewingContextDelegate> *_delegate;
-    NSUInteger _loadIncrement;
+    unsigned int _loadIncrement;
     ActivityMonitor *_loadTask;
     MimePart *_loadedPart;
     MailMessage *_message;
 }
 
-+ (NSUInteger)nextOffsetForOffset:(NSUInteger)arg1 totalLength:(NSUInteger)arg2 requestedAmount:(NSUInteger)arg3;
++ (unsigned int)nextOffsetForOffset:(unsigned int)arg1 totalLength:(unsigned int)arg2 requestedAmount:(unsigned int)arg3;
 
 - (void)_loadAttachments:(id)arg1;
 - (void)_notifyAttachmentComplete:(id)arg1;
@@ -33,7 +33,7 @@
 - (id)attachments;
 - (void)cancelLoad;
 - (id)content;
-- (NSUInteger)contentOffset;
+- (unsigned int)contentOffset;
 - (void)dealloc;
 - (BOOL)failedToLoad;
 - (id)fileWrappersForImageAttachments;
@@ -50,13 +50,13 @@
 - (void)loadFull;
 - (void)loadMore;
 - (id)loadTask;
-- (void)loadWithPriority:(NSInteger)arg1;
+- (void)loadWithPriority:(int)arg1;
 - (id)loadedPart;
 - (id)message;
 - (id)messageBody;
-- (NSUInteger)numberOfImageAttachments;
+- (unsigned int)numberOfImageAttachments;
 - (void)setContent:(id)arg1;
-- (void)setContentOffset:(NSUInteger)arg1;
+- (void)setContentOffset:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIsDraftMessage:(BOOL)arg1;
 - (void)setLoadTask:(id)arg1;

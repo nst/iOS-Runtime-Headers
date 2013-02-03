@@ -14,9 +14,9 @@
 - (id)_initWithSet:(const char *)arg1;
 - (BOOL)byteIsMember:(BOOL)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithBytes:(const void*)arg1 length:(NSUInteger)arg2;
+- (id)initWithBytes:(const void*)arg1 length:(unsigned int)arg2;
 - (id)initWithCString:(const char *)arg1;
-- (id)initWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)invertedSet;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 

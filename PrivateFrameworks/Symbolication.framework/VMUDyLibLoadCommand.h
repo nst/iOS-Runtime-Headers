@@ -5,13 +5,13 @@
 @class NSString;
 
 @interface VMUDyLibLoadCommand : VMULoadCommand {
-    NSUInteger _compatibilityVersion;
-    NSUInteger _currentVersion;
+    unsigned int _compatibilityVersion;
+    unsigned int _currentVersion;
     NSString *_path;
 }
 
-- (NSUInteger)compatibilityVersion;
-- (NSUInteger)currentVersion;
+- (unsigned int)compatibilityVersion;
+- (unsigned int)currentVersion;
 - (void)dealloc;
 - (id)description;
 - (id)initWithMemory:(id)arg1;

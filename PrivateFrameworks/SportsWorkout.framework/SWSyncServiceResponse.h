@@ -18,14 +18,14 @@
     NSError *_validationError;
 }
 
-@property(readonly) NSString *email;
-@property(readonly) NSString *errorCode;
-@property(readonly) NSString *pin;
-@property(readonly) NSString *pinStatus;
-@property(readonly) NSString *screenName;
-@property(readonly) NSString *serviceException;
-@property(readonly) NSString *status;
-@property(readonly) NSString *token;
+@property(readonly) NSString * email;
+@property(readonly) NSString * errorCode;
+@property(readonly) NSString * pin;
+@property(readonly) NSString * pinStatus;
+@property(readonly) NSString * screenName;
+@property(readonly) NSString * serviceException;
+@property(readonly) NSString * status;
+@property(readonly) NSString * token;
 
 - (void)dealloc;
 - (id)email;

@@ -13,11 +13,11 @@
     id _userInfo;
 }
 
-@property(retain) SUScriptCanvasContext *canvas;
-@property(retain) NSString *identifier;
-@property(readonly) UIImage *image;
-@property(retain) NSString *imageURL;
-@property(retain) NSString *title;
+@property(retain) SUScriptCanvasContext * canvas;
+@property(retain) NSString * identifier;
+@property(readonly) UIImage * image;
+@property(retain) NSString * imageURL;
+@property(retain) NSString * title;
 @property(retain) id userInfo;
 
 + (id)webScriptNameForKey:(const char *)arg1;

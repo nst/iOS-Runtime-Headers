@@ -6,37 +6,37 @@
 
 @interface MKAddressBookAddress : NSObject <HistoryItem> {
     void *_addressBook;
-    NSInteger _addressID;
+    int _addressID;
     NSMutableDictionary *_info;
     NSString *_lastValidatedAddress;
     void *_record;
-    NSInteger _recordID;
+    int _recordID;
 }
 
-@property(copy) NSString *lastValidatedAddress;
-@property(readonly) void *record;
-@property(readonly) NSString *singleLineAddress;
-@property(readonly) NSString *singleLineAddressWithHomeCountry;
-@property(readonly) NSInteger addressID;
+@property(readonly) int addressID;
 @property(readonly) BOOL isValid;
-@property(readonly) NSInteger recordID;
+@property(copy) NSString * lastValidatedAddress;
+@property(readonly) void* record;
+@property(readonly) int recordID;
+@property(readonly) NSString * singleLineAddress;
+@property(readonly) NSString * singleLineAddressWithHomeCountry;
 
 - (void)_checkValid;
-- (NSInteger)addressID;
+- (int)addressID;
 - (void)dealloc;
 - (id)dictionaryRepresentation;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithRecord:(void*)arg1 addressID:(NSInteger)arg2 addressBook:(void*)arg3;
-- (id)initWithRecord:(void*)arg1 addressID:(NSInteger)arg2;
+- (id)initWithRecord:(void*)arg1 addressID:(int)arg2 addressBook:(void*)arg3;
+- (id)initWithRecord:(void*)arg1 addressID:(int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isValid;
 - (id)lastValidatedAddress;
 - (void*)record;
-- (NSInteger)recordID;
+- (int)recordID;
 - (void)setLastValidatedAddress:(id)arg1;
 - (id)singleLineAddress;
 - (id)singleLineAddressWithHomeCountry;
-- (NSInteger)type;
+- (int)type;
 
 @end

@@ -7,16 +7,16 @@
 @interface AVChapterMetadataItemInternal : NSObject {
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
-    NSInteger chapterGroupIndex;
-    NSInteger chapterIndex;
+    int chapterGroupIndex;
+    int chapterIndex;
     NSString *chapterType;
     NSMutableArray *completions;
     } duration;
@@ -25,8 +25,8 @@
     struct dispatch_queue_s { } *readWriteQueue;
     } time;
     id value;
-    NSInteger valueErrorCode;
-    NSInteger valueStatus;
+    int valueErrorCode;
+    int valueStatus;
     AVWeakReference *weakReference;
 }
 

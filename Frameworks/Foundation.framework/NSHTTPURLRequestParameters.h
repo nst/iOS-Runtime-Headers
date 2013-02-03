@@ -12,7 +12,7 @@
     NSArray *extraCookies;
     NSMutableDictionary *fields;
     NSString *method;
-    NSUInteger pageNotFoundCacheLifetime;
+    unsigned int pageNotFoundCacheLifetime;
     BOOL shouldHandleCookies;
 }
 

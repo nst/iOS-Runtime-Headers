@@ -9,8 +9,8 @@
     NSDictionary *_initRelayResponse;
 }
 
-@property(retain) NSDictionary *initRelayRequest;
-@property(retain) NSDictionary *initRelayResponse;
+@property(retain) NSDictionary * initRelayRequest;
+@property(retain) NSDictionary * initRelayResponse;
 
 - (void)dealloc;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;

@@ -6,7 +6,7 @@
 
 @interface _NSPropertyDescriptionProxy : NSObject {
     NSEntityDescription *_entityDescription;
-    NSUInteger _entitysReferenceIDForProperty;
+    unsigned int _entitysReferenceIDForProperty;
     id _sourceBuffer;
     NSPropertyDescription *_underlyingProperty;
 }
@@ -14,9 +14,9 @@
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 
 - (void)_createCachesAndOptimizeState;
-- (NSUInteger)_entitysReferenceID;
+- (unsigned int)_entitysReferenceID;
 - (void)_setEntity:(id)arg1;
-- (void)_setEntitysReferenceID:(NSUInteger)arg1;
+- (void)_setEntitysReferenceID:(unsigned int)arg1;
 - (id)_underlyingProperty;
 - (Class)class;
 - (id)description;

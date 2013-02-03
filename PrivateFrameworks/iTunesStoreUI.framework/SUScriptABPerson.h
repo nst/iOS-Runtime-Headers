@@ -2,17 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class NSString;
+
 @interface SUScriptABPerson : SUScriptObject {
     void *_record;
 }
 
-@property(readonly) NSString *compositeName;
+@property(readonly) NSString * compositeName;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
-- (id)_copyArrayFromMultiValue:(void*)arg1 ofType:(NSUInteger)arg2;
+- (id)_copyArrayFromMultiValue:(void*)arg1 ofType:(unsigned int)arg2;
 - (id)_newSingleValueWithLabel:(id)arg1 value:(id)arg2;
 - (id)attributeKeys;
 - (id)compositeName;
@@ -20,6 +22,6 @@
 - (id)init;
 - (id)initWithRecord:(void*)arg1;
 - (id)scriptAttributeKeys;
-- (id)valueForProperty:(NSInteger)arg1;
+- (id)valueForProperty:(int)arg1;
 
 @end

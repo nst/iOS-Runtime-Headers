@@ -6,7 +6,7 @@
 
 @interface EKEventRecurrenceEditItem : EKEventEditItem <EKCellShortener> {
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
@@ -14,18 +14,18 @@
         double second; 
     NSString *_customRepeatDescription;
     PreferencesValueCell *_dateCell;
-    NSInteger _originalRepeatType;
+    int _originalRepeatType;
     } _repeatEndGr;
-    NSInteger _repeatType;
-    NSInteger _shorteningStatus;
+    int _repeatType;
+    int _shorteningStatus;
 }
 
-- (id)cellForSubitemAtIndex:(NSInteger)arg1;
+- (id)cellForSubitemAtIndex:(int)arg1;
 - (BOOL)configureForCalendarConstraints:(id)arg1;
 - (void)dealloc;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(NSInteger)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2;
 - (BOOL)eventEditItemViewControllerCommit:(id)arg1;
-- (NSInteger)numberOfSubitems;
+- (int)numberOfSubitems;
 - (void)reset;
 - (void)setEvent:(id)arg1 store:(id)arg2;
 - (void)shortenCell:(id)arg1;

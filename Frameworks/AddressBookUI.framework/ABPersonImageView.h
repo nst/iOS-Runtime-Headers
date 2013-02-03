@@ -41,23 +41,24 @@
     ABImageWellLabelView *_wellLabel;
 }
 
-@property(retain) NSOperation *asyncImageLoadingOperation;
-@property(retain) NSOperationQueue *asyncImageLoadingQueue;
-@property void *backgroundLoadingAddressBook;
-@property void *backgroundLoadingPerson;
-@property <ABPersonImageDataDelegate> *imageDataDelegate;
-@property(retain) NSMutableDictionary *imageLoadingCache;
-@property(retain,readonly) UIImage *maskImage;
-@property(retain,readonly) UIImage *outlineImage;
-@property(retain) <ABStyleProvider> *styleProvider;
 @property BOOL allowsEditing;
+@property(retain) NSOperation * asyncImageLoadingOperation;
+@property(retain) NSOperationQueue * asyncImageLoadingQueue;
+@property void* backgroundLoadingAddressBook;
+@property void* backgroundLoadingPerson;
+@property <ABPersonImageDataDelegate> * imageDataDelegate;
+@property(retain) NSMutableDictionary * imageLoadingCache;
+@property(retain,readonly) UIImage * maskImage;
+@property(retain,readonly) UIImage * outlineImage;
 @property BOOL scalesContentToFit;
 @property BOOL shouldPickBestImage;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 + (void)_initializeSafeCategory;
 + (id)newImageWithName:(id)arg1;
 + (struct CGSize { float x1; float x2; })sizeForOptimalPerformance;
 
+- (float)_borderViewAlpha;
 - (id)_newDictionaryWithImageData;
 - (id)_supportedPasteboardImageTypesIncludingCustomTypes:(BOOL)arg1;
 - (void)abMenuControllerWillHide;

@@ -5,9 +5,12 @@
 @class ABSwellTextView, UIColor;
 
 @interface ABUITextView : UITextView {
+    struct CGSize { 
+        float width; 
+        float height; 
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     BOOL _disallowsSetContentOffset;
     UIColor *_highlightedTextColor;
     BOOL _informParentOfContentSizeChange;
@@ -16,18 +19,23 @@
     ABSwellTextView *_parent;
     } _pinnedCursorPosition;
     UIColor *_savedTextColor;
+    UIColor *_shadowColor;
+    } _shadowOffset;
 }
 
-@property(retain) UIColor *highlightedTextColor;
-@property ABSwellTextView *parent;
 @property BOOL disallowsSetContentOffset;
 @property(getter=isHighlighted) BOOL highlighted;
+@property(retain) UIColor * highlightedTextColor;
+@property ABSwellTextView * parent;
+@property(retain) UIColor * shadowColor;
+@property struct CGSize { float width; float height; } shadowOffset;
 
 + (void)_initializeSafeCategory;
 
 - (void)_beginPinningInputViews;
 - (void)_endPinningInputViews;
 - (void)_secretSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_updateStylesheet;
 - (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (BOOL)becomeFirstResponder;
@@ -44,6 +52,10 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setHighlightedTextColor:(id)arg1;
 - (void)setParent:(id)arg1;
+- (void)setShadowColor:(id)arg1;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTextColor:(id)arg1;
+- (id)shadowColor;
+- (struct CGSize { float x1; float x2; })shadowOffset;
 
 @end

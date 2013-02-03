@@ -6,7 +6,7 @@
 
 @interface _MFFormatFlowedWriter : NSObject {
     unsigned int _addedTrailingSpaces : 1;
-    NSUInteger _encoding;
+    unsigned int _encoding;
     PlainTextDocument *_inputDocument;
     NSMutableString *_lineString;
     NSMutableString *_outputString;
@@ -15,8 +15,8 @@
 
 + (id)newWithPlainTextDocument:(id)arg1 encoding:(unsigned long)arg2;
 
-- (NSUInteger)_findLineBreakInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 maxCharWidthCount:(NSUInteger)arg2 endIsURL:(BOOL)arg3;
-- (void)_outputQuotedParagraph:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 withQuoteLevel:(NSUInteger)arg3;
+- (unsigned int)_findLineBreakInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 maxCharWidthCount:(unsigned int)arg2 endIsURL:(BOOL)arg3;
+- (void)_outputQuotedParagraph:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 withQuoteLevel:(unsigned int)arg3;
 - (BOOL)addedTrailingSpaces;
 - (void)dealloc;
 - (id)outputString;

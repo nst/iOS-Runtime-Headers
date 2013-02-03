@@ -10,16 +10,16 @@
     id _identifier;
     BOOL _inProgress;
     NSURL *_inputURL;
-    NSUInteger _operation;
+    unsigned int _operation;
     NSURL *_outputURL;
     BOOL _shouldCancel;
 }
 
-@property <IMFileCopierDelegate> *delegate;
-@property(readonly) NSURL *inputURL;
-@property(readonly) NSURL *outputURL;
+@property <IMFileCopierDelegate> * delegate;
 @property(readonly) BOOL didErrorOccur;
 @property(readonly) id identifier;
+@property(readonly) NSURL * inputURL;
+@property(readonly) NSURL * outputURL;
 @property(readonly) BOOL wasCancelled;
 
 - (void)_fillOutputURLFromInputURL;
@@ -32,7 +32,7 @@
 - (id)delegate;
 - (BOOL)didErrorOccur;
 - (id)identifier;
-- (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(NSUInteger)arg4 delegate:(id)arg5;
+- (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(unsigned int)arg4 delegate:(id)arg5;
 - (id)inputURL;
 - (id)outputURL;
 - (void)setDelegate:(id)arg1;

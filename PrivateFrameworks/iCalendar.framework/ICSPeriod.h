@@ -10,7 +10,7 @@
     ICSDateValue *_start;
 }
 
-- (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (void)dealloc;
 - (id)duration;
 - (void)encodeWithCoder:(id)arg1;

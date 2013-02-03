@@ -5,14 +5,14 @@
 @class EDResources;
 
 @interface EDBorders : NSObject <NSCopying> {
-    NSUInteger mBottomBorderIndex;
-    NSUInteger mDiagonalBorderIndex;
-    NSUInteger mHorizontalBorderIndex;
-    NSUInteger mLeftBorderIndex;
+    unsigned int mBottomBorderIndex;
+    unsigned int mDiagonalBorderIndex;
+    unsigned int mHorizontalBorderIndex;
+    unsigned int mLeftBorderIndex;
     EDResources *mResources;
-    NSUInteger mRightBorderIndex;
-    NSUInteger mTopBorderIndex;
-    NSUInteger mVerticalBorderIndex;
+    unsigned int mRightBorderIndex;
+    unsigned int mTopBorderIndex;
+    unsigned int mVerticalBorderIndex;
 }
 
 + (id)bordersWithLeft:(id)arg1 right:(id)arg2 top:(id)arg3 bottom:(id)arg4 diagonal:(id)arg5 resources:(id)arg6;
@@ -22,7 +22,7 @@
 - (id)bottomBorder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)diagonalBorder;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)horizontalBorder;
 - (id)initWithResources:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

@@ -8,7 +8,7 @@
     NSString *_email;
 }
 
-@property(retain) NSString *email;
+@property(retain) NSString * email;
 
 - (void)dealloc;
 - (id)email;

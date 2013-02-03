@@ -8,7 +8,7 @@
     NSArray *_rids;
 }
 
-@property(retain) NSArray *rids;
+@property(retain) NSArray * rids;
 
 - (void)dealloc;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;

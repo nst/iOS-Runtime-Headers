@@ -19,7 +19,7 @@
 
 + (id)sharedFavoritesController;
 
-- (void)YTAuthenticatedAccountPost:(id)arg1 didFinishWithType:(NSInteger)arg2 error:(id)arg3;
+- (void)YTAuthenticatedAccountPost:(id)arg1 didFinishWithType:(int)arg2 error:(id)arg3;
 - (void)_bookmarksDidChangeNotifyObservers:(BOOL)arg1;
 - (void)_loadBookmarks;
 - (void)_processNextPendingFavoritesBatch;

@@ -20,32 +20,32 @@
     OADDrawingTheme *mDrawingTheme;
     OADGroup *mGroup;
     } mLogicalBounds;
-    NSInteger mPointCount;
-    NSInteger mPointIndex;
+    int mPointCount;
+    int mPointIndex;
     NSMutableArray *mPresentationNames;
     float mScale;
     OADShapeStyle *mTextStyle;
 }
 
 - (void)dealloc;
-- (id)defaultStyleLabelNameForPointType:(NSInteger)arg1;
+- (id)defaultStyleLabelNameForPointType:(int)arg1;
 - (id)diagram;
 - (id)diagramOrientedBounds;
 - (id)drawingTheme;
 - (id)group;
 - (id)initWithDiagram:(id)arg1 group:(id)arg2 drawingTheme:(id)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })logicalBounds;
-- (NSInteger)pointCount;
-- (NSInteger)pointIndex;
-- (id)presentationNameForPointType:(NSInteger)arg1;
+- (int)pointCount;
+- (int)pointIndex;
+- (id)presentationNameForPointType:(int)arg1;
 - (float)scale;
-- (void)setDefaultStyleLabelName:(id)arg1 forPointType:(NSInteger)arg2;
+- (void)setDefaultStyleLabelName:(id)arg1 forPointType:(int)arg2;
 - (void)setGroup:(id)arg1;
 - (void)setLogicalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 maintainAspectRatio:(BOOL)arg2;
 - (void)setLogicalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPointCount:(NSInteger)arg1;
-- (void)setPointIndex:(NSInteger)arg1;
-- (void)setPresentationName:(id)arg1 forPointType:(NSInteger)arg2;
+- (void)setPointCount:(int)arg1;
+- (void)setPointIndex:(int)arg1;
+- (void)setPresentationName:(id)arg1 forPointType:(int)arg2;
 - (void)setTextStyle:(id)arg1;
 - (id)textStyle;
 

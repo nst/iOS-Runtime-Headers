@@ -8,6 +8,9 @@
     struct CGPoint { 
         float x; 
         float y; 
+    struct CGPoint { 
+        float x; 
+        float y; 
     unsigned int _directionalLockEnabled : 1;
     unsigned int _lockVertical : 1;
     unsigned int _lockHorizontal : 1;
@@ -16,11 +19,12 @@
     unsigned int _hasChildScrollView : 1;
     unsigned int _hasParentScrollView : 1;
     } _lastTrueScreenLocation;
+    } _reconsideredLockingLocation;
     UIScrollView *_scrollView;
 }
 
-@property UIScrollView *scrollView;
 @property(getter=isDirectionalLockEnabled) BOOL directionalLockEnabled;
+@property UIScrollView * scrollView;
 
 - (void)_centroidMovedTo:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
 - (float)_hysteresis;

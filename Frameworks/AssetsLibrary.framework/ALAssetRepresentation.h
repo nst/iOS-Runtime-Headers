@@ -2,26 +2,28 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
+@class ALAssetRepresentationPrivate;
+
 @interface ALAssetRepresentation : NSObject {
     id _internal;
 }
 
-@property(retain) ALAssetRepresentationPrivate *internal;
+@property(retain) ALAssetRepresentationPrivate * internal;
 
 - (struct CGImage { }*)CGImageWithOptions:(id)arg1;
 - (id)UTI;
 - (id)_dataFromFileDescriptor;
-- (NSInteger)_fileDescriptor;
+- (int)_fileDescriptor;
 - (void)dealloc;
 - (id)description;
 - (struct CGImage { }*)fullResolutionImage;
 - (struct CGImage { }*)fullScreenImage;
-- (NSUInteger)getBytes:(char *)arg1 fromOffset:(long long)arg2 length:(NSUInteger)arg3 error:(id*)arg4;
+- (unsigned int)getBytes:(char *)arg1 fromOffset:(long long)arg2 length:(unsigned int)arg3 error:(id*)arg4;
 - (id)initWithMLPhoto:(id)arg1 extension:(id)arg2 library:(id)arg3;
 - (id)internal;
 - (BOOL)isValid;
 - (id)metadata;
-- (NSInteger)orientation;
+- (int)orientation;
 - (float)scale;
 - (void)setInternal:(id)arg1;
 - (long long)size;

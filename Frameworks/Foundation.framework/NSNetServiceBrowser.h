@@ -8,7 +8,7 @@
     void *_reserved;
 }
 
-- (void)_dispatchCallBack:(void*)arg1 flags:(unsigned long)arg2 error:(struct { NSInteger x1; NSInteger x2; })arg3;
+- (void)_dispatchCallBack:(void*)arg1 flags:(unsigned long)arg2 error:(struct { int x1; int x2; })arg3;
 - (struct __CFNetServiceBrowser { }*)_internalNetServiceBrowser;
 - (void)dealloc;
 - (id)delegate;

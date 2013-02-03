@@ -3,20 +3,20 @@
  */
 
 @interface NSComparisonPredicateOperator : NSPredicateOperator {
-    NSUInteger _options;
-    NSUInteger _variant;
+    unsigned int _options;
+    unsigned int _variant;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOperatorType:(NSUInteger)arg1 modifier:(NSUInteger)arg2 variant:(NSUInteger)arg3 options:(NSUInteger)arg4;
-- (id)initWithOperatorType:(NSUInteger)arg1 modifier:(NSUInteger)arg2 variant:(NSUInteger)arg3;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3 options:(unsigned int)arg4;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)minimalFormInContext:(id)arg1 ofPredicate:(id)arg2;
-- (NSUInteger)options;
+- (unsigned int)options;
 - (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
 - (id)predicateFormat;
-- (NSUInteger)variant;
+- (unsigned int)variant;
 
 @end

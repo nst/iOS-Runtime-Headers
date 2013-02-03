@@ -2,18 +2,19 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVSubtitleLayerInternal;
+@class AVSubtitleLayerInternal, AVPlayer;
 
 @interface AVSubtitleLayer : CALayer {
     AVSubtitleLayerInternal *_subtitleLayer;
 }
 
-@property(retain) AVPlayer *player;
 @property(getter=isNonForcedSubtitleDisplayEnabled) BOOL nonForcedSubtitleDisplayEnabled;
+@property(retain) AVPlayer * player;
 
 + (id)subtitleLayerWithPlayer:(id)arg1;
 
 - (void)_invalidateBoundaryTimeObserver;
+- (void)_setHasPlayerToObserve:(int)arg1 andShouldObserveIt:(int)arg2;
 - (void)dealloc;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)finalize;

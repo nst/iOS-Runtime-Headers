@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureDeviceInputInternal;
+@class AVCaptureDevice, AVCaptureDeviceInputInternal;
 
 @interface AVCaptureDeviceInput : AVCaptureInput {
     AVCaptureDeviceInputInternal *_internal;
 }
 
-@property(readonly) AVCaptureDevice *device;
+@property(readonly) AVCaptureDevice * device;
 
 + (id)deviceInputWithDevice:(id)arg1 error:(id*)arg2;
 

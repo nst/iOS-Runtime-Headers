@@ -22,7 +22,7 @@
 - (void)dealloc;
 - (void)dropPowerAssertionsForGroupIdentifier:(id)arg1;
 - (id)init;
-- (NSUInteger)powerAssertionRetainCount:(id)arg1;
+- (unsigned int)powerAssertionRetainCount:(id)arg1;
 - (void)reattainPowerAssertionsForGroupIdentifier:(id)arg1;
 - (void)releasePowerAssertion:(id)arg1;
 - (void)retainPowerAssertion:(id)arg1 withGroupIdentifier:(id)arg2;

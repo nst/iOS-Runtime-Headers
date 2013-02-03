@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableDictionary, NSArray, NSString, CKService, CKMessage, NSMutableArray;
+@class CKMessageComposition, CKService, CKMessage, NSMutableArray, NSString, NSMutableDictionary, NSArray;
 
 @interface CKConversation : NSObject {
     NSMutableArray *_failedMessages;
-    NSInteger _groupAddStack;
-    NSInteger _groupID;
+    int _groupAddStack;
+    int _groupID;
     NSMutableDictionary *_groupMessages;
     BOOL _hasPlaceholder;
     CKMessage *_latestIncomingMessage;
-    NSInteger _limitToLoad;
+    int _limitToLoad;
     NSMutableArray *_messages;
     BOOL _moreMessagesToLoad;
     NSString *_name;
@@ -21,37 +21,37 @@
     NSMutableArray *_queuedGroupMessages;
     NSArray *_recipients;
     CKService *_service;
-    NSInteger _unreadCount;
+    int _unreadCount;
     BOOL _updatesDisabled;
 }
 
-@property(readonly) NSMutableArray *failedMessages;
-@property(readonly) CKService *service;
-@property(retain) CKMessageComposition *unsentComposition;
+@property(readonly) NSMutableArray * failedMessages;
+@property(readonly) CKService * service;
+@property(retain) CKMessageComposition * unsentComposition;
 @property BOOL updatesDisabled;
 
 - (void)_addGroupMessage:(id)arg1;
 - (void)_beginGroupAdd;
 - (void)_deleteAllMessagesAndRemoveGroup:(BOOL)arg1;
-- (NSInteger)_endGroupAdd:(BOOL)arg1;
+- (int)_endGroupAdd:(BOOL)arg1;
 - (void)_postUpdate;
 - (void)_recalculateUnreadCounts;
 - (void)_reloadMessagesToLimit;
 - (void)_setPlaceholderMessage:(id)arg1;
 - (id)_trulyLatestMessage;
 - (void*)abRecord;
-- (NSInteger)addMessage:(id)arg1 incrementUnreadCount:(BOOL)arg2;
-- (NSInteger)compareByDateDescending:(id)arg1;
+- (int)addMessage:(id)arg1 incrementUnreadCount:(BOOL)arg2;
+- (int)compareByDateDescending:(id)arg1;
 - (id)date;
 - (void)dealloc;
 - (void)deleteAllMessages;
 - (void)deleteAllMessagesAndRemoveGroup;
 - (id)failedMessages;
-- (NSInteger)groupID;
-- (id)groupMessageWithAssociationID:(NSInteger)arg1;
+- (int)groupID;
+- (id)groupMessageWithAssociationID:(int)arg1;
 - (BOOL)hasUnreadMessages;
-- (NSInteger)identifier;
-- (id)initWithGroupID:(NSInteger)arg1 service:(id)arg2;
+- (int)identifier;
+- (id)initWithGroupID:(int)arg1 service:(id)arg2;
 - (BOOL)isEmpty;
 - (BOOL)isPlaceholder;
 - (id)latestIncomingMessage;
@@ -64,9 +64,9 @@
 - (BOOL)moreMessagesToLoad;
 - (id)name;
 - (id)pendingMessages;
-- (void)pendingMessagesTotalMessages:(NSInteger*)arg1 percentComplete:(float*)arg2;
+- (void)pendingMessagesTotalMessages:(int*)arg1 percentComplete:(float*)arg2;
 - (id)placeholderMessage;
-- (NSInteger)propertyType;
+- (int)propertyType;
 - (id)recipient;
 - (id)recipients;
 - (void)removeAllMessages;
@@ -76,10 +76,10 @@
 - (id)service;
 - (void)setName:(id)arg1;
 - (void)setRecipients:(id)arg1;
-- (void)setUnreadCount:(NSInteger)arg1;
+- (void)setUnreadCount:(int)arg1;
 - (void)setUnsentComposition:(id)arg1;
 - (void)setUpdatesDisabled:(BOOL)arg1;
-- (NSInteger)unreadCount;
+- (int)unreadCount;
 - (id)unsentComposition;
 - (void)updateMessage:(id)arg1;
 - (BOOL)updatesDisabled;

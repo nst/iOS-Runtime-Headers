@@ -5,12 +5,12 @@
 @interface DOMHTMLCollection : DOMObject {
 }
 
-@property(readonly) NSUInteger length;
+@property(readonly) unsigned int length;
 
 - (void)dealloc;
 - (void)finalize;
-- (id)item:(NSUInteger)arg1;
-- (NSUInteger)length;
+- (id)item:(unsigned int)arg1;
+- (unsigned int)length;
 - (id)namedItem:(id)arg1;
 - (id)tags:(id)arg1;
 

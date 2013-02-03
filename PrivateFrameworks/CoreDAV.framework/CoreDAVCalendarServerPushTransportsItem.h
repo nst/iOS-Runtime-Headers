@@ -8,12 +8,13 @@
     NSMutableSet *_transports;
 }
 
-@property(retain) NSMutableSet *transports;
+@property(retain) NSMutableSet * transports;
 
 - (void)addTransport:(id)arg1;
 - (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
+- (id)init;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)setTransports:(id)arg1;
 - (id)transports;

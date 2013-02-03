@@ -5,21 +5,21 @@
 @class NSSet;
 
 @interface SUClientQueueSession : NSObject {
-    NSInteger _count;
+    int _count;
     NSSet *_downloadKinds;
     id _queue;
 }
 
-@property(retain) NSSet *downloadKinds;
-@property NSInteger count;
+@property int count;
+@property(retain) NSSet * downloadKinds;
 @property(retain) id queue;
 
-- (NSInteger)count;
+- (int)count;
 - (void)dealloc;
 - (id)downloadKinds;
 - (id)initWithQueue:(id)arg1;
 - (id)queue;
-- (void)setCount:(NSInteger)arg1;
+- (void)setCount:(int)arg1;
 - (void)setDownloadKinds:(id)arg1;
 - (void)setQueue:(id)arg1;
 

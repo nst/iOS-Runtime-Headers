@@ -3,7 +3,7 @@
  */
 
 @interface OADReflectionEffect : OADEffect {
-    NSInteger mAlignment;
+    int mAlignment;
     float mBlurRadius;
     float mDirection;
     float mDistance;
@@ -19,7 +19,7 @@
     float mYSkew;
 }
 
-- (NSInteger)alignment;
+- (int)alignment;
 - (float)blurRadius;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (float)direction;
@@ -27,11 +27,11 @@
 - (float)endOpacity;
 - (float)endPosition;
 - (float)fadeDirection;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)rotateWithShape;
-- (void)setAlignment:(NSInteger)arg1;
+- (void)setAlignment:(int)arg1;
 - (void)setBlurRadius:(float)arg1;
 - (void)setDirection:(float)arg1;
 - (void)setDistance:(float)arg1;

@@ -5,11 +5,11 @@
 @interface SUScriptDialogNativeObject : SUScriptNativeObject <UIActionSheetDelegate, UIAlertViewDelegate> {
 }
 
-- (void)_addScriptButton:(id)arg1 toAlert:(id)arg2 atIndex:(NSInteger)arg3;
+- (void)_addScriptButton:(id)arg1 toAlert:(id)arg2 atIndex:(int)arg3;
 - (id)_newActionSheetForDialog:(id)arg1;
-- (void)_tearDownForDismissWithButtonIndex:(NSInteger)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
+- (void)_tearDownForDismissWithButtonIndex:(int)arg1;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)destroyNativeObject;
 - (void)dismiss;
 - (void)show;

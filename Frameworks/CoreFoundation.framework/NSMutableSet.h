@@ -6,8 +6,9 @@
 }
 
 + (id)nonRetainingSet;
-+ (id)setWithCapacity:(NSUInteger)arg1;
++ (id)setWithCapacity:(unsigned int)arg1;
 
+- (void)CDVAddItemParserMappingWithNameSpace:(id)arg1 name:(id)arg2 parseClass:(Class)arg3;
 - (void)_setObject:(id)arg1;
 - (void)addItemParserMappingWithNameSpace:(id)arg1 name:(id)arg2 parseClass:(Class)arg3;
 - (void)addMessageEntry:(id)arg1;
@@ -15,8 +16,8 @@
 - (void)addObjectsFromArray:(id)arg1;
 - (Class)classForCoder;
 - (void)filterUsingPredicate:(id)arg1;
-- (id)initWithCapacity:(NSUInteger)arg1;
-- (id)initWithObjects:(id*)arg1 count:(NSUInteger)arg2;
+- (id)initWithCapacity:(unsigned int)arg1;
+- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2;
 - (void)intersectSet:(id)arg1;
 - (id)mf_uniquedObject:(id)arg1;
 - (void)minusSet:(id)arg1;

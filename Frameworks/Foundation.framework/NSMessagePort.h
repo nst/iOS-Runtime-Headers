@@ -8,7 +8,7 @@
 }
 
 + (void)_fixNSMessagePortLeak;
-+ (BOOL)sendBeforeTime:(double)arg1 streamData:(id)arg2 components:(id)arg3 to:(id)arg4 from:(id)arg5 msgid:(NSUInteger)arg6 reserved:(NSUInteger)arg7;
++ (BOOL)sendBeforeTime:(double)arg1 streamData:(id)arg2 components:(id)arg3 to:(id)arg4 from:(id)arg5 msgid:(unsigned int)arg6 reserved:(unsigned int)arg7;
 
 - (void)dealloc;
 - (id)delegate;
@@ -22,11 +22,11 @@
 - (oneway void)release;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (BOOL)sendBeforeDate:(id)arg1 components:(id)arg2 from:(id)arg3 reserved:(NSUInteger)arg4;
-- (BOOL)sendBeforeDate:(id)arg1 msgid:(NSUInteger)arg2 components:(id)arg3 from:(id)arg4 reserved:(NSUInteger)arg5;
-- (BOOL)sendBeforeTime:(double)arg1 streamData:(void*)arg2 components:(id)arg3 from:(id)arg4 msgid:(NSUInteger)arg5;
+- (BOOL)sendBeforeDate:(id)arg1 components:(id)arg2 from:(id)arg3 reserved:(unsigned int)arg4;
+- (BOOL)sendBeforeDate:(id)arg1 msgid:(unsigned int)arg2 components:(id)arg3 from:(id)arg4 reserved:(unsigned int)arg5;
+- (BOOL)sendBeforeTime:(double)arg1 streamData:(void*)arg2 components:(id)arg3 from:(id)arg4 msgid:(unsigned int)arg5;
 - (void)setDelegate:(id)arg1;
 - (BOOL)setName:(id)arg1;
 

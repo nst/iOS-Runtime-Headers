@@ -11,19 +11,19 @@
 @interface UIPrintInfoRequest : NSObject {
     id _completionHandler;
     PKPrinter *_printer;
-    NSInteger _requestState;
+    int _requestState;
 }
 
-@property(copy) ? *completionHandler;
-@property NSInteger requestState;
+@property(copy) id completionHandler;
+@property int requestState;
 
 + (id)requestInfoForPrinter:(id)arg1;
 
 - (id)completionHandler;
 - (void)dealloc;
 - (void)requestPrintInfo;
-- (NSInteger)requestState;
+- (int)requestState;
 - (void)setCompletionHandler:(id)arg1;
-- (void)setRequestState:(NSInteger)arg1;
+- (void)setRequestState:(int)arg1;
 
 @end

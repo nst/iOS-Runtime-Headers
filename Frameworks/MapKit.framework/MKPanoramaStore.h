@@ -8,28 +8,28 @@
     <MKPanoramaStoreDelegate> *_delegate;
     MKPanoramaCache *_idPanoramaCache;
     NSMutableDictionary *_mapPointIdDictionary;
-    NSUInteger _maxByteCapacity;
+    unsigned int _maxByteCapacity;
 }
 
-@property <MKPanoramaStoreDelegate> *delegate;
-@property(readonly) NSUInteger count;
-@property NSUInteger maxByteCapacity;
+@property(readonly) unsigned int count;
+@property <MKPanoramaStoreDelegate> * delegate;
+@property unsigned int maxByteCapacity;
 
 + (id)sharedStore;
 
 - (void)addPanorama:(id)arg1 forMapPoint:(id)arg2;
 - (id)allPanoramas;
 - (void)compact;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (NSUInteger)maxByteCapacity;
+- (unsigned int)maxByteCapacity;
 - (id)panoramaWithCoordinate:(struct { double x1; double x2; })arg1;
 - (id)panoramaWithId:(id)arg1 shouldCreate:(BOOL)arg2;
 - (id)panoramaWithId:(id)arg1;
 - (void)removeAllPanoramas;
 - (void)setDelegate:(id)arg1;
-- (void)setMaxByteCapacity:(NSUInteger)arg1;
+- (void)setMaxByteCapacity:(unsigned int)arg1;
 
 @end

@@ -5,7 +5,7 @@
 @class NSMutableArray;
 
 @interface IMOfflinePeopleListGroup : IMPeopleListGroup {
-    NSInteger _changes;
+    int _changes;
     NSMutableArray *_dontShowMembers;
     BOOL _pendingClear;
     NSMutableArray *_visibleMembers;
@@ -22,7 +22,7 @@
 - (void)forgetIgnoredPresences;
 - (id)init;
 - (BOOL)isChanging;
-- (NSInteger)numberOfItems;
+- (int)numberOfItems;
 - (void)removeAllItems;
 - (void)removePeopleListItem:(id)arg1;
 - (id)visibleMembers;

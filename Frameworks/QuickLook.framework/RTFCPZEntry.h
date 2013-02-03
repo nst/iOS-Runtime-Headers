@@ -6,8 +6,8 @@
 
 @interface RTFCPZEntry : NSObject {
     unsigned long long mCompressedSize;
-    NSInteger mCompressionMethod;
-    NSUInteger mCrc;
+    int mCompressionMethod;
+    unsigned int mCrc;
     <RTFCPZArchiveInputStream> *mInput;
     unsigned long long mOffset;
     unsigned long long mUncompressedSize;

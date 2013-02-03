@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
+@class <UIScrollViewDelegate>;
+
 @interface PLImageScrollView : UIScrollView {
     BOOL _adjustZoomScaleAfterRotation;
 }
 
-@property <UIScrollViewDelegate> *delegate;
 @property BOOL adjustZoomScaleAfterRotation;
+@property <UIScrollViewDelegate> * delegate;
 
 + (void)_initializeSafeCategory;
 

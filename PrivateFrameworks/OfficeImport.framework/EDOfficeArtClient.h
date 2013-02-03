@@ -2,10 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class EDComment, NSMutableDictionary, EDAnchor, EDSheet, EDTextBox;
 
 @interface EDOfficeArtClient : NSObject <OADClient, OADTextClient> {
@@ -18,7 +14,7 @@
             float width; 
             float height; 
         } size; 
-     /* Encoded args for previous method: B8@0:4 */
+    boolmIsBoundsSet;
     EDAnchor *mAnchor;
     } mBounds;
     id mClientState;
@@ -26,11 +22,10 @@
     EDSheet *mSheet;
     NSMutableDictionary *mTableModels;
     EDTextBox *mTextBox;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsBoundsSet;
 }
 
 - (id)anchor;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)areBoundsSet;
+- (bool)areBoundsSet;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (id)clientState;
 - (id)comment;

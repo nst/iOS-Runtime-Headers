@@ -6,14 +6,14 @@
 
 @interface UIPrintInteractionControllerInternals : NSObject {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     UIPrintInfo *_activePrintInfo;
-    NSInteger _currentPage;
+    int _currentPage;
     UIPrintPageRenderer *_formatterRenderer;
-    NSInteger _pageCount;
+    int _pageCount;
     } _pageRange;
-    NSInteger _printInfoState;
+    int _printInfoState;
     UIPrintPanelViewController *_printPanelViewController;
     PKPrintSettings *_printSettings;
     PKPrinter *_printer;

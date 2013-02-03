@@ -3,15 +3,15 @@
  */
 
 @interface UIFingerInfo : NSObject {
-    NSInteger _activeFinger;
+    int _activeFinger;
     BOOL _activeFingerLocked;
     struct __CFDictionary { } *_fingers;
 }
 
-- (BOOL)chordChanged:(struct { NSInteger x1; unsigned short x2; unsigned short x3; float x4; float x5; float x6; float x7; float x8; float x9; unsigned char x10; unsigned char x11; struct { unsigned char x_12_1_1; unsigned char x_12_1_2; unsigned char x_12_1_3; float x_12_1_4; float x_12_1_5; struct CGPoint { float x_6_2_1; float x_6_2_2; } x_12_1_6; void *x_12_1_7; } x12[0]; })arg1 withEvent:(struct __GSEvent { }*)arg2 adjustLocation:(BOOL)arg3;
+- (BOOL)chordChanged:(struct { int x1; unsigned short x2; unsigned short x3; float x4; float x5; float x6; float x7; float x8; float x9; unsigned char x10; unsigned char x11; struct { unsigned char x_12_1_1; unsigned char x_12_1_2; unsigned char x_12_1_3; float x_12_1_4; float x_12_1_5; struct CGPoint { float x_6_2_1; float x_6_2_2; } x_12_1_6; void *x_12_1_7; } x12[0]; })arg1 withEvent:(struct __GSEvent { }*)arg2 adjustLocation:(BOOL)arg3;
 - (void)dealloc;
-- (BOOL)fingersMoved:(struct { NSInteger x1; unsigned short x2; unsigned short x3; float x4; float x5; float x6; float x7; float x8; float x9; unsigned char x10; unsigned char x11; struct { unsigned char x_12_1_1; unsigned char x_12_1_2; unsigned char x_12_1_3; float x_12_1_4; float x_12_1_5; struct CGPoint { float x_6_2_1; float x_6_2_2; } x_12_1_6; void *x_12_1_7; } x12[0]; })arg1 withEvent:(struct __GSEvent { }*)arg2 adjustLocation:(BOOL)arg3;
+- (BOOL)fingersMoved:(struct { int x1; unsigned short x2; unsigned short x3; float x4; float x5; float x6; float x7; float x8; float x9; unsigned char x10; unsigned char x11; struct { unsigned char x_12_1_1; unsigned char x_12_1_2; unsigned char x_12_1_3; float x_12_1_4; float x_12_1_5; struct CGPoint { float x_6_2_1; float x_6_2_2; } x_12_1_6; void *x_12_1_7; } x12[0]; })arg1 withEvent:(struct __GSEvent { }*)arg2 adjustLocation:(BOOL)arg3;
 - (BOOL)hasActiveFinger;
-- (void)startTouch:(struct { NSInteger x1; unsigned short x2; unsigned short x3; float x4; float x5; float x6; float x7; float x8; float x9; unsigned char x10; unsigned char x11; struct { unsigned char x_12_1_1; unsigned char x_12_1_2; unsigned char x_12_1_3; float x_12_1_4; float x_12_1_5; struct CGPoint { float x_6_2_1; float x_6_2_2; } x_12_1_6; void *x_12_1_7; } x12[0]; })arg1 withEvent:(struct __GSEvent { }*)arg2 adjustLocation:(BOOL)arg3;
+- (void)startTouch:(struct { int x1; unsigned short x2; unsigned short x3; float x4; float x5; float x6; float x7; float x8; float x9; unsigned char x10; unsigned char x11; struct { unsigned char x_12_1_1; unsigned char x_12_1_2; unsigned char x_12_1_3; float x_12_1_4; float x_12_1_5; struct CGPoint { float x_6_2_1; float x_6_2_2; } x_12_1_6; void *x_12_1_7; } x12[0]; })arg1 withEvent:(struct __GSEvent { }*)arg2 adjustLocation:(BOOL)arg3;
 
 @end

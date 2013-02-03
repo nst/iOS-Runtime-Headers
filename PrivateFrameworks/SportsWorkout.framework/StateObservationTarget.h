@@ -9,8 +9,8 @@
     NSString *_oldState;
 }
 
-@property(retain) NSString *newState;
-@property(retain) NSString *oldState;
+@property(retain) NSString * newState;
+@property(retain) NSString * oldState;
 
 + (id)targetWithOldState:(id)arg1 newState:(id)arg2 selector:(SEL)arg3;
 

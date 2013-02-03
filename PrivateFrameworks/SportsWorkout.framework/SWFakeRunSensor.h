@@ -22,6 +22,6 @@
 - (void)deactivate;
 - (void)dealloc;
 - (id)init;
-- (NSUInteger)remainingBatteryLifetimeInHours;
+- (unsigned int)remainingBatteryLifetimeInHours;
 
 @end

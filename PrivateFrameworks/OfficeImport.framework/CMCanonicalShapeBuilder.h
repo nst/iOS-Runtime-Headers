@@ -31,7 +31,7 @@
 - (struct CGPath { }*)_rightDiagramArrowWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)_rightTriangleWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)_roundedRectWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
-- (struct CGPath { }*)_starWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 aspectRatio:(float)arg2 andBranchNumber:(NSInteger)arg3;
+- (struct CGPath { }*)_starWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 aspectRatio:(float)arg2 andBranchNumber:(int)arg3;
 - (struct CGPath { }*)_straightConnector1tWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)_trapezoidWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;
 - (struct CGPath { }*)_triangleWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;

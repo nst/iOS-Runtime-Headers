@@ -10,20 +10,20 @@
 - (void)addObject:(id)arg1;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
-- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)finalize;
-- (void)getObjects:(id*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
-- (NSUInteger)hash;
-- (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)hash;
+- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)objectAtIndex:(NSUInteger)arg1;
+- (id)objectAtIndex:(unsigned int)arg1;
 - (oneway void)release;
 - (void)removeLastObject;
-- (void)removeObjectAtIndex:(NSUInteger)arg1;
-- (void)replaceObjectAtIndex:(NSUInteger)arg1 withObject:(id)arg2;
+- (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

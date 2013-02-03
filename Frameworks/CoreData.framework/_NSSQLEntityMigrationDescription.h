@@ -9,7 +9,7 @@
     NSSQLEntity *_dstEntity;
     NSEntityMapping *_entityMapping;
     NSMutableDictionary *_mappingsByName;
-    NSInteger _migrationType;
+    int _migrationType;
     NSMutableArray *_pendingTransforms;
     NSMutableArray *_processedTransforms;
     NSMutableArray *_removedManyToManys;
@@ -19,10 +19,10 @@
     NSMutableArray *_transformedManyToManys;
 }
 
-@property(readonly) NSSQLEntity *destinationEntity;
-@property(readonly) NSEntityMapping *entityMapping;
-@property(readonly) NSSQLEntity *sourceEntity;
-@property(readonly) NSInteger migrationType;
+@property(readonly) NSSQLEntity * destinationEntity;
+@property(readonly) NSEntityMapping * entityMapping;
+@property(readonly) int migrationType;
+@property(readonly) NSSQLEntity * sourceEntity;
 
 - (void)_generateSQLValueMappingsWithMigrationContext:(struct _NSSQLMigrationContext { id x1; })arg1;
 - (void)_populateSQLValuesByPropertyFromTransforms:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
@@ -35,7 +35,7 @@
 - (id)entityMapping;
 - (id)initWithEntityMapping:(id)arg1 sourceEntity:(id)arg2 destinationEntity:(id)arg3;
 - (id)mappingsByName;
-- (NSInteger)migrationType;
+- (int)migrationType;
 - (id)nextPropertyTransform;
 - (id)removedManyToManys;
 - (id)sourceEntitiesByToOneWithNewEntityKey;

@@ -6,7 +6,7 @@
 
 @interface NoteContext : NSObject {
     struct __CXIndex { } *__SharedNoteStoreSearchIndex;
-    NSInteger __SharedNoteStoreSearchIndexCount;
+    int __SharedNoteStoreSearchIndexCount;
     CPExclusiveLock *__SharedNoteStoreSearchIndexLock;
     BOOL _hasPriorityInSaveConflicts;
     BOOL _inMigrator;
@@ -21,7 +21,7 @@
     NSManagedObjectContext *_nextIdContext;
     CPExclusiveLock *_nextIdLock;
     NSMutableDictionary *_notePropertyObjectsRealized;
-    NSUInteger _notificationCount;
+    unsigned int _notificationCount;
     CPExclusiveLock *_objectCreationLock;
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;
     NSPredicate *_searchPredicate;
@@ -29,11 +29,12 @@
     NSString *_testingFilePrefix;
 }
 
-@property(retain,readonly) NSManagedObjectContext *managedObjectContext;
 @property(readonly) BOOL isIndexing;
+@property(retain,readonly) NSManagedObjectContext * managedObjectContext;
 
 + (BOOL)shouldLogIndexing;
 
+- (void)_createLocalAccount:(id*)arg1 andStore:(id*)arg2;
 - (id)_notePropertyObjectForKey:(id)arg1;
 - (id)accountForAccountId:(id)arg1;
 - (id)allAccounts;
@@ -51,13 +52,13 @@
 - (id)collectionForObjectID:(id)arg1;
 - (id)copyNotesForSearch:(void*)arg1 complete:(char *)arg2;
 - (id)copyNotesForSearch:(void*)arg1 predicate:(id)arg2 complete:(char *)arg3;
-- (NSUInteger)countOfNotes;
-- (NSUInteger)countOfNotesInCollection:(id)arg1;
-- (NSUInteger)countOfNotesMatchingPredicate:(id)arg1;
-- (NSUInteger)countOfStores;
-- (NSUInteger)countOfVisibleNotes;
-- (NSUInteger)countOfVisibleNotesInCollection:(id)arg1;
-- (NSUInteger)countOfVisibleNotesMatchingPredicate:(id)arg1;
+- (unsigned int)countOfNotes;
+- (unsigned int)countOfNotesInCollection:(id)arg1;
+- (unsigned int)countOfNotesMatchingPredicate:(id)arg1;
+- (unsigned int)countOfStores;
+- (unsigned int)countOfVisibleNotes;
+- (unsigned int)countOfVisibleNotesInCollection:(id)arg1;
+- (unsigned int)countOfVisibleNotesMatchingPredicate:(id)arg1;
 - (void)dealloc;
 - (id)defaultStoreForNewNote;
 - (BOOL)deleteAccount:(id)arg1;
@@ -68,6 +69,7 @@
 - (BOOL)deleteStore:(id)arg1;
 - (void)destroySearchIndex;
 - (void)enableChangeLogging:(BOOL)arg1;
+- (BOOL)forceDeleteAccount:(id)arg1;
 - (void)forceSetUpUniqueObjects;
 - (id)getNextIdObject;
 - (void)handleMigration;
@@ -94,7 +96,7 @@
 - (id)newlyAddedNote;
 - (id)newlyAddedStore;
 - (id)nextIndex;
-- (id)noteChangeWithType:(NSInteger)arg1 store:(id)arg2;
+- (id)noteChangeWithType:(int)arg1 store:(id)arg2;
 - (id)noteForObjectID:(id)arg1;
 - (BOOL)noteIsSafeToAccess:(id)arg1;
 - (id)notesForIntegerIds:(id)arg1;

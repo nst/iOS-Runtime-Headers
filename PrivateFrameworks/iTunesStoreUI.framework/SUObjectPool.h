@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableDictionary, NSMutableArray;
+@class NSArray, NSMutableDictionary, NSMutableArray;
 
 @interface SUObjectPool : NSObject {
     NSMutableDictionary *_poolObjects;
     NSMutableArray *_vendedObjects;
 }
 
-@property(readonly) NSArray *vendedObjects;
+@property(readonly) NSArray * vendedObjects;
 
 - (void)addObjects:(id)arg1 forClass:(Class)arg2;
-- (id)addObjectsOfClass:(Class)arg1 count:(NSInteger)arg2 forClass:(Class)arg3;
+- (id)addObjectsOfClass:(Class)arg1 count:(int)arg2 forClass:(Class)arg3;
 - (id)copyPoppedObjectForClass:(Class)arg1;
 - (void)dealloc;
 - (id)vendedObjects;

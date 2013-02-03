@@ -9,11 +9,11 @@
 + (void)acceptInvitationRequestFromBuddy:(id)arg1 forConference:(id)arg2;
 + (id)curentAVChatConnectedDate;
 + (id)curentAVChatRemoteUserID;
-+ (NSUInteger)currentAVChatEndedReason;
-+ (NSUInteger)currentAVChatState;
++ (unsigned int)currentAVChatEndedReason;
++ (unsigned int)currentAVChatState;
 + (void)declineInvitationRequestFromBuddy:(id)arg1 forConference:(id)arg2;
 + (id)delegate;
-+ (void)sendResponse:(NSUInteger)arg1 toInvitationRequestFromBuddy:(id)arg2 forConference:(id)arg3;
++ (void)sendResponse:(unsigned int)arg1 toInvitationRequestFromBuddy:(id)arg2 forConference:(id)arg3;
 + (void)setDelegate:(id)arg1;
 + (void)setupIMAVInvitationController;
 

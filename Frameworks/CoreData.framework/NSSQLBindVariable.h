@@ -6,26 +6,26 @@
 
 @interface NSSQLBindVariable : NSObject {
     NSAttributeDescription *_attributeDescription;
-    NSUInteger _index;
+    unsigned int _index;
     long long _int64;
-    NSUInteger _sqlType;
+    unsigned int _sqlType;
     id _value;
 }
 
 - (id)attributeDescription;
 - (void)dealloc;
 - (BOOL)hasObjectValue;
-- (NSUInteger)index;
-- (id)initWithInt64:(long long)arg1 sqlType:(NSUInteger)arg2;
-- (id)initWithUnsignedInt:(NSUInteger)arg1 sqlType:(NSUInteger)arg2;
-- (id)initWithValue:(id)arg1 sqlType:(NSUInteger)arg2 attributeDescription:(id)arg3;
+- (unsigned int)index;
+- (id)initWithInt64:(long long)arg1 sqlType:(unsigned int)arg2;
+- (id)initWithUnsignedInt:(unsigned int)arg1 sqlType:(unsigned int)arg2;
+- (id)initWithValue:(id)arg1 sqlType:(unsigned int)arg2 attributeDescription:(id)arg3;
 - (long long)int64;
-- (void)setIndex:(NSUInteger)arg1;
+- (void)setIndex:(unsigned int)arg1;
 - (void)setInt64:(long long)arg1;
-- (void)setUnsignedInt:(NSUInteger)arg1;
+- (void)setUnsignedInt:(unsigned int)arg1;
 - (void)setValue:(id)arg1;
-- (NSUInteger)sqlType;
-- (NSUInteger)unsignedInt;
+- (unsigned int)sqlType;
+- (unsigned int)unsignedInt;
 - (id)value;
 
 @end

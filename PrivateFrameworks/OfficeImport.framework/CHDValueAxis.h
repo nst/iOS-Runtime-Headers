@@ -2,34 +2,26 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CHDValueAxis : CHDAxis {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
+    boolmAutoMajorUnitValue;
+    boolmAutoMinorUnitValue;
+    boolmPercentageFormattingFlag;
     double mMajorUnitValue;
     double mMinorUnitValue;
     double mScalingLogBase;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mAutoMajorUnitValue;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mAutoMinorUnitValue;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mPercentageFormattingFlag;
 }
 
 - (void)adjustAxisPositionForHorizontalChart;
 - (id)initWithResources:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isAutoMajorUnitValue;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isAutoMinorUnitValue;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isPercentageFormattingFlag;
+- (bool)isAutoMajorUnitValue;
+- (bool)isAutoMinorUnitValue;
+- (bool)isPercentageFormattingFlag;
 - (double)majorUnitValue;
 - (double)minorUnitValue;
 - (double)scalingLogBase;
 - (void)setMajorUnitValue:(double)arg1;
 - (void)setMinorUnitValue:(double)arg1;
-- (void)setPercentageFormattingFlag:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setPercentageFormattingFlag:(bool)arg1;
 - (void)setScalingLogBase:(double)arg1;
 
 @end

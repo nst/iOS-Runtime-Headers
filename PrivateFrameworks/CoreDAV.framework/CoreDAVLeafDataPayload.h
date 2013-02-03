@@ -10,9 +10,9 @@
     NSString *_syncKey;
 }
 
-@property(readonly) NSData *dataPayload;
-@property(retain) NSURL *serverID;
-@property(readonly) NSString *syncKey;
+@property(readonly) NSData * dataPayload;
+@property(retain) NSURL * serverID;
+@property(readonly) NSString * syncKey;
 
 - (id)dataPayload;
 - (void)dealloc;

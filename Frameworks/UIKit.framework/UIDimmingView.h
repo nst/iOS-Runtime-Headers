@@ -16,12 +16,12 @@
     NSArray *_passthroughViews;
 }
 
-@property(retain) UIColor *dimmingColor;
-@property(retain) UIBarButtonItem *highlightedBarButtonItem;
-@property(retain) NSArray *passthroughViews;
 @property id delegate;
+@property(retain) UIColor * dimmingColor;
 @property BOOL displayed;
+@property(retain) UIBarButtonItem * highlightedBarButtonItem;
 @property BOOL ignoresTouches;
+@property(retain) NSArray * passthroughViews;
 
 + (void)_initializeSafeCategory;
 + (id)defaultDimmingColor;

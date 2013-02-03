@@ -8,10 +8,11 @@
     UILabel *_recurrenceLabel;
 }
 
+- (id)_myTableView;
 - (id)_recurrenceLabel;
 - (void)dealloc;
 - (float)height;
-- (void)layoutForWidth:(float)arg1 position:(NSInteger)arg2;
+- (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (void)setRecurrenceString:(id)arg1;
 
 @end

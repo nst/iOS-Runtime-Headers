@@ -13,16 +13,17 @@
     struct dispatch_source_s { } *_source;
 }
 
-@property(readonly) NSUInteger receivePort;
+@property(readonly) unsigned int receivePort;
 
 - (void)_sendReplyWithDictionary:(id)arg1;
-- (void)_sendReplyWithErrorCode:(NSUInteger)arg1 picData:(id)arg2 playerGUID:(id)arg3;
-- (void)_sendReplyWithErrorCode:(NSUInteger)arg1 position:(float)arg2 duration:(float)arg3;
-- (void)_sendReplyWithErrorCode:(NSUInteger)arg1 volume:(float)arg2;
-- (void)_sendReplyWithErrorCode:(NSUInteger)arg1;
+- (void)_sendReplyWithErrorCode:(unsigned int)arg1 picData:(id)arg2 playerGUID:(id)arg3;
+- (void)_sendReplyWithErrorCode:(unsigned int)arg1 playbackInfo:(id)arg2;
+- (void)_sendReplyWithErrorCode:(unsigned int)arg1 position:(float)arg2 duration:(float)arg3;
+- (void)_sendReplyWithErrorCode:(unsigned int)arg1 volume:(float)arg2;
+- (void)_sendReplyWithErrorCode:(unsigned int)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithClient:(id)arg1 completionQueue:(struct dispatch_queue_s { }*)arg2 completionBlock:(id)arg3;
-- (NSUInteger)receivePort;
+- (unsigned int)receivePort;
 
 @end

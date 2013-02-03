@@ -6,8 +6,10 @@
    See Warning(s) below.
  */
 
+@class CALayer, CAContext;
+
 @interface CARenderer : NSObject {
-    struct CARendererPriv { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; unsigned char x3; void*x4; unsigned char x5; out in void*x6; void*x7; void*x8; void*x9; void*x10; id x11; void*x12; unsigned char x13; void*x14; void*x15; short x16; short x17; NSInteger x18; void*x19; in void*x20; double x21; void*x22; out NSInteger x23; in void*x24; void*x25; const void*x26; id x27; void*x28; void*x29; void*x30; void*x31; unsigned long x32; unsigned char x33; out in void*x34; void*x35; void*x36; void*x37; void*x38; NSInteger x39; struct Context {} *x40; struct CGRect { 
+    struct CARendererPriv { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; unsigned char x3; void*x4; unsigned char x5; out in void*x6; void*x7; void*x8; void*x9; void*x10; id x11; void*x12; unsigned char x13; void*x14; void*x15; short x16; short x17; int x18; void*x19; in void*x20; double x21; void*x22; out int x23; in void*x24; void*x25; const void*x26; id x27; void*x28; void*x29; void*x30; void*x31; unsigned long x32; unsigned char x33; out in void*x34; void*x35; void*x36; void*x37; void*x38; int x39; struct Context {} *x40; struct CGRect { 
             struct CGPoint { 
                 float x; 
                 float y; 
@@ -16,20 +18,20 @@
                 float width; 
                 float height; 
             } size; 
-        } x41; struct Update {} *x42; NSUInteger x43; NSUInteger x44[2]; NSUInteger x45[2]; NSUInteger x46; unsigned int x47 : 8; NSUInteger x48; BOOL x49[0]; } *_priv;
+        } x41; struct Update {} *x42; unsigned int x43; unsigned int x44[2]; unsigned int x45[2]; unsigned int x46; unsigned int x47 : 8; unsigned int x48; BOOL x49[0]; } *_priv;
 }
 
-@property(retain) CAContext *context;
-@property(retain) CALayer *layer;
-@property CGRect bounds;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } bounds;
+@property(retain) CAContext * context;
 @property id delegate;
+@property(retain) CALayer * layer;
 
 + (id)rendererWithEAGLContext:(id)arg1 options:(id)arg2;
 
 - (id)_initWithEAGLContext:(id)arg1 options:(id)arg2;
 - (id)_initWithOptions:(id)arg1;
 - (void)addUpdateRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)beginFrameAtTime:(double)arg1 timeStamp:(struct { NSUInteger x1; NSInteger x2; long long x3; unsigned long long x4; double x5; long long x6; struct CVSMPTETime { short x_7_1_1; short x_7_1_2; NSUInteger x_7_1_3; NSUInteger x_7_1_4; NSUInteger x_7_1_5; short x_7_1_6; short x_7_1_7; short x_7_1_8; short x_7_1_9; } x7; unsigned long long x8; unsigned long long x9; }*)arg2;
+- (void)beginFrameAtTime:(double)arg1 timeStamp:(struct { unsigned int x1; int x2; long long x3; unsigned long long x4; double x5; long long x6; struct CVSMPTETime { short x_7_1_1; short x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; short x_7_1_6; short x_7_1_7; short x_7_1_8; short x_7_1_9; } x7; unsigned long long x8; unsigned long long x9; }*)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (id)context;
 - (void)dealloc;

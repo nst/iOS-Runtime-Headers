@@ -5,19 +5,19 @@
 @class NSMutableData;
 
 @interface GKVoiceChatSessionMessage : GKOOBMessage {
-    NSUInteger _conferenceID;
+    unsigned int _conferenceID;
     NSMutableData *_data;
-    NSUInteger _subtype;
+    unsigned int _subtype;
 }
 
 - (BOOL)_checkSize:(unsigned long)arg1;
 - (BOOL)_checkType:(unsigned short)arg1;
-- (NSUInteger)conferenceID;
+- (unsigned int)conferenceID;
 - (id)data;
 - (id)init;
 - (id)initWithBytes:(void*)arg1 length:(unsigned long)arg2;
-- (id)initWithPayload:(id)arg1 conferenceID:(NSUInteger)arg2 subtype:(NSUInteger)arg3;
+- (id)initWithPayload:(id)arg1 conferenceID:(unsigned int)arg2 subtype:(unsigned int)arg3;
 - (id)payload;
-- (NSUInteger)subtype;
+- (unsigned int)subtype;
 
 @end

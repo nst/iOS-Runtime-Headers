@@ -13,7 +13,7 @@
 
 - (void)dealloc;
 - (id)displayString;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithComposeRecipient:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)participant;

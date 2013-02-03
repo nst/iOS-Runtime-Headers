@@ -12,11 +12,11 @@
     NSString *_responseRegionID;
 }
 
-@property(copy) NSString *basePhoneNumber;
-@property(copy) NSString *regionID;
-@property(copy) NSString *responseBasePhoneNumber;
-@property(copy) NSDictionary *responseExtraInfo;
-@property(copy) NSString *responseRegionID;
+@property(copy) NSString * basePhoneNumber;
+@property(copy) NSString * regionID;
+@property(copy) NSString * responseBasePhoneNumber;
+@property(copy) NSDictionary * responseExtraInfo;
+@property(copy) NSString * responseRegionID;
 
 - (id)bagKey;
 - (id)basePhoneNumber;

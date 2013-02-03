@@ -7,6 +7,6 @@
 
 + (void)_initializeSafeCategory;
 
-- (void)_setState:(NSInteger)arg1 withDuration:(double)arg2;
+- (void)_setState:(int)arg1 withDuration:(double)arg2;
 
 @end

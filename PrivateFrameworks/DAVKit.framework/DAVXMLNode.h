@@ -19,11 +19,11 @@
 - (id)attributes;
 - (id)childNamed:(id)arg1;
 - (id)children;
-- (NSUInteger)childrenCount;
+- (unsigned int)childrenCount;
 - (id)childrenEnumerator;
 - (id)childrenNamed:(id)arg1;
 - (id)content;
-- (id)dataUsingEncoding:(NSUInteger)arg1;
+- (id)dataUsingEncoding:(unsigned int)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)hrefChildren;
@@ -34,7 +34,7 @@
 - (void)removeChild:(id)arg1;
 - (void)setContent:(id)arg1;
 - (id)simpleTraverseWithPath:(id)arg1;
-- (id)simpleTraverseWithPathArray:(id)arg1 pos:(NSUInteger)arg2;
+- (id)simpleTraverseWithPathArray:(id)arg1 pos:(unsigned int)arg2;
 - (id)textContent;
 - (id)xmlStringWithBag:(id)arg1;
 

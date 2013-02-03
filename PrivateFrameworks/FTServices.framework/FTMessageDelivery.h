@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSNumber, NSMutableData, PCPersistentTimer, NSDate, FTMessageQueue, NSURLConnection, NSString, NSData, NSArray;
+@class PCPersistentTimer, NSNumber, NSDate, <FTMessageDeliveryDelegate>, FTMessageQueue, FTMessage, NSString, NSData, NSArray;
 
 @interface FTMessageDelivery : NSObject <FTMessageQueueDelegate> {
     NSArray *_clientCertificates;
     struct __SecIdentity { } *_clientIdentity;
-    NSMutableData *_currentResponseData;
-    NSURLConnection *_currentURLConnection;
     id _delegate;
     NSString *_deviceID;
     NSString *_deviceIDPrefix;
@@ -16,7 +14,7 @@
     NSNumber *_protocolVersion;
     NSData *_pushToken;
     FTMessageQueue *_queue;
-    NSUInteger _retries;
+    unsigned int _retries;
     NSDate *_retryDate;
     PCPersistentTimer *_retryTimer;
     BOOL _shouldQueue;
@@ -25,49 +23,35 @@
     NSString *_userID;
 }
 
-@property(copy) NSArray *clientCertificates;
-@property __SecIdentity *clientIdentity;
-@property(readonly) FTMessage *currentMessage;
-@property <FTMessageDeliveryDelegate> *delegate;
-@property(copy) NSString *deviceID;
-@property(copy) NSString *deviceIDPrefix;
-@property(copy) NSNumber *protocolVersion;
-@property(copy) NSData *pushToken;
-@property(readonly) NSArray *queuedMessages;
-@property(copy) NSData *signature;
-@property(copy) NSString *userAgent;
-@property(copy) NSString *userID;
 @property(readonly) BOOL busy;
+@property(copy) NSArray * clientCertificates;
+@property struct __SecIdentity { }* clientIdentity;
+@property(readonly) FTMessage * currentMessage;
+@property <FTMessageDeliveryDelegate> * delegate;
+@property(copy) NSString * deviceID;
+@property(copy) NSString * deviceIDPrefix;
 @property(readonly) BOOL hasQueuedItems;
 @property double messageTimeoutTime;
+@property(copy) NSNumber * protocolVersion;
+@property(copy) NSData * pushToken;
+@property(readonly) NSArray * queuedMessages;
 @property BOOL shouldQueueItems;
+@property(copy) NSData * signature;
+@property(copy) NSString * userAgent;
+@property(copy) NSString * userID;
 
-+ (id)_errorForTDMessageDeliveryStatus:(NSInteger)arg1 userInfo:(id)arg2;
++ (id)_errorForTDMessageDeliveryStatus:(int)arg1 userInfo:(id)arg2;
++ (id)alloc;
 
-- (void)_cleanupURLConnection;
 - (void)_clearRetryTimer;
-- (void)_dequeueIfNeeded;
 - (void)_informDelegateAboutMessage:(id)arg1 error:(id)arg2 result:(id)arg3;
-- (void)_notifyDelegateAboutError:(id)arg1 forMessage:(id)arg2;
-- (id)_processResultData:(id)arg1 forMessage:(id)arg2 error:(id*)arg3;
 - (void)_retryTimerHit:(id)arg1;
 - (BOOL)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
-- (id)_sendMessageSynchonously:(id)arg1 error:(id*)arg2;
-- (void)_serverBagLoaded:(id)arg1;
 - (void)_setRetryTimer:(double)arg1;
-- (void)_updateWiFiAssertions;
-- (id)_urlRequestWithURL:(id)arg1 andData:(id)arg2 message:(id)arg3;
 - (BOOL)busy;
 - (void)cancelMessage:(id)arg1;
 - (id)clientCertificates;
 - (struct __SecIdentity { }*)clientIdentity;
-- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
 - (id)currentMessage;
 - (void)dealloc;
 - (id)delegate;
@@ -81,7 +65,7 @@
 - (id)pushToken;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
 - (id)queuedMessages;
-- (NSInteger)sendMessage:(id)arg1 error:(id*)arg2;
+- (int)sendMessage:(id)arg1 error:(id*)arg2;
 - (void)setClientCertificates:(id)arg1;
 - (void)setClientIdentity:(struct __SecIdentity { }*)arg1;
 - (void)setDelegate:(id)arg1;

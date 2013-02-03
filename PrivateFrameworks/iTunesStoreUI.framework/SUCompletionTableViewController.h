@@ -10,10 +10,10 @@
     NSString *_stringToComplete;
 }
 
-@property <SUCompletionTableDelegate> *delegate;
-@property(retain) SUSearchFieldConfiguration *searchFieldConfiguration;
-@property(retain) NSString *stringToComplete;
-@property(readonly) NSInteger numberOfCompletions;
+@property <SUCompletionTableDelegate> * delegate;
+@property(readonly) int numberOfCompletions;
+@property(retain) SUSearchFieldConfiguration * searchFieldConfiguration;
+@property(retain) NSString * stringToComplete;
 
 - (void)_dismissWithPickedItem:(id)arg1;
 - (void)_fetchCompletions;
@@ -21,12 +21,12 @@
 - (void)cancelOperations;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)handleSelectionForIndexPath:(id)arg1 tapCount:(NSInteger)arg2;
+- (BOOL)handleSelectionForIndexPath:(id)arg1 tapCount:(int)arg2;
 - (id)init;
 - (void)loadView;
 - (struct CGSize { float x1; float x2; })maximumViewSize;
 - (struct CGSize { float x1; float x2; })minimumViewSize;
-- (NSInteger)numberOfCompletions;
+- (int)numberOfCompletions;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (void)reloadData;
 - (id)searchFieldConfiguration;

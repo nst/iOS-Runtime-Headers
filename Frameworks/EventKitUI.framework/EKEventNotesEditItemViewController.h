@@ -10,7 +10,7 @@
     NSString *_text;
 }
 
-@property(copy) NSString *noteText;
+@property(copy) NSString * noteText;
 
 - (BOOL)becomeFirstResponder;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
@@ -22,7 +22,7 @@
 - (void)setNoteText:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (BOOL)validateAllowingAlert:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;

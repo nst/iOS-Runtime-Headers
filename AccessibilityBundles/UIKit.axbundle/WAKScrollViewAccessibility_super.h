@@ -6,10 +6,10 @@
 }
 
 - (id)accessibilityContainer;
-- (id)accessibilityElementAtIndex:(NSInteger)arg1;
-- (NSInteger)accessibilityElementCount;
+- (id)accessibilityElementAtIndex:(int)arg1;
+- (int)accessibilityElementCount;
 - (BOOL)accessibilityIsIgnored;
-- (NSInteger)indexOfAccessibilityElement:(id)arg1;
+- (int)indexOfAccessibilityElement:(id)arg1;
 - (BOOL)isAccessibilityElement;
 
 @end

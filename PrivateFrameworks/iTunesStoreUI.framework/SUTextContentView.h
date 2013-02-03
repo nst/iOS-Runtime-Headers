@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UILabel;
+@class NSString, UILabel;
 
 @interface SUTextContentView : UITextContentView {
     UILabel *_placeholderLabel;
 }
 
-@property(retain) NSString *placeholder;
+@property(retain) NSString * placeholder;
 
 + (void)_initializeSafeCategory;
 

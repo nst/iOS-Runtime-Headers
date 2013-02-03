@@ -17,7 +17,7 @@
 - (id)defaultMailDirectory;
 - (id)dictionaryForKey:(id)arg1;
 - (id)draftsMailbox;
-- (NSInteger)integerForKey:(id)arg1;
+- (int)integerForKey:(id)arg1;
 - (id)mailAccountDirectory;
 - (id)objectForKey:(id)arg1;
 - (id)primaryEmailAddress;

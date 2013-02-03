@@ -9,7 +9,7 @@
 
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
-- (id)contentsImageForStyle:(NSInteger)arg1;
+- (id)contentsImageForStyle:(int)arg1;
 - (BOOL)isAccessibilityElement;
 
 @end

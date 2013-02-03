@@ -12,7 +12,7 @@
     NSDictionary *_pickedRoute;
 }
 
-@property(retain) NSString *currentAudioRoute;
+@property(retain) NSString * currentAudioRoute;
 
 - (void)_mediaServerDied;
 - (BOOL)_pickRoute:(id)arg1;
@@ -29,14 +29,14 @@
 - (id)currentAudioRoute;
 - (void)dealloc;
 - (void)invalidateAVController;
-- (NSInteger)numberOfAudioRoutes;
+- (int)numberOfAudioRoutes;
 - (BOOL)pickHandsetRoute;
-- (void)pickRouteAtIndex:(NSUInteger)arg1;
+- (void)pickRouteAtIndex:(unsigned int)arg1;
 - (BOOL)pickRouteWithUID:(id)arg1;
 - (BOOL)pickSpeakerRoute;
 - (BOOL)receiverRouteIsPicked;
 - (void)restorePickedRoute;
-- (id)routeNameAtIndex:(NSUInteger)arg1 isPicked:(BOOL*)arg2;
+- (id)routeNameAtIndex:(unsigned int)arg1 isPicked:(BOOL*)arg2;
 - (BOOL)routeOtherThanHandsetAndSpeakerIsAvailable;
 - (BOOL)routeOtherThanHandsetIsAvailable;
 - (void)setAVController:(id)arg1;

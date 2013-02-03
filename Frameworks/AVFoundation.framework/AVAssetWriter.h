@@ -2,22 +2,21 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetWriterInternal;
+@class AVAssetWriterHelper, NSArray, NSString, NSError, AVAssetWriterInternal, NSURL;
 
 @interface AVAssetWriter : NSObject {
     AVAssetWriterInternal *_internal;
 }
 
-@property(getter=_helper,retain) AVAssetWriterHelper *helper; /* unknown property attribute: S_setHelper: */
-@property(readonly) NSArray *availableMediaTypes;
-@property(readonly) NSError *error;
-@property(readonly) NSArray *inputs;
-@property(copy) NSArray *metadata;
-@property(copy,readonly) NSString *outputFileType;
-@property(copy,readonly) NSURL *outputURL;
-@property ? movieFragmentInterval;
+@property(readonly) NSArray * availableMediaTypes;
+@property(readonly) NSError * error;
+@property(getter=_helper,setter=_setHelper:,retain) AVAssetWriterHelper * helper;
+@property(readonly) NSArray * inputs;
+@property(copy) NSArray * metadata;
+@property(copy,readonly) NSString * outputFileType;
+@property(copy,readonly) NSURL * outputURL;
 @property BOOL shouldOptimizeForNetworkUse;
-@property(readonly) NSInteger status;
+@property(readonly) int status;
 
 + (id)assetWriterWithURL:(id)arg1 fileType:(id)arg2 error:(id*)arg3;
 + (void)initialize;
@@ -34,7 +33,7 @@
 - (void)cancelWriting;
 - (void)dealloc;
 - (id)description;
-- (void)endSessionAtSourceTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)endSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)error;
 - (void)finalize;
 - (BOOL)finishWriting;
@@ -42,17 +41,19 @@
 - (id)initWithURL:(id)arg1 fileType:(id)arg2 error:(id*)arg3;
 - (id)inputs;
 - (id)metadata;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })movieFragmentInterval;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
+- (int)movieTimeScale;
 - (id)outputFileType;
 - (id)outputURL;
 - (void)release;
 - (id)retain;
 - (void)setMetadata:(id)arg1;
-- (void)setMovieFragmentInterval:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setMovieTimeScale:(int)arg1;
 - (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
 - (BOOL)shouldOptimizeForNetworkUse;
-- (void)startSessionAtSourceTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)startSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (BOOL)startWriting;
-- (NSInteger)status;
+- (int)status;
 
 @end

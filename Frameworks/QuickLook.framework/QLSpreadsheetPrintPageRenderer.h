@@ -5,24 +5,24 @@
 @class NSMutableArray, UIWebPaginationInfo, UIWebBrowserView;
 
 @interface QLSpreadsheetPrintPageRenderer : QLPrintPageRenderer {
-    NSUInteger _currentPageIndex;
-    NSUInteger _currentURLIndex;
+    unsigned int _currentPageIndex;
+    unsigned int _currentURLIndex;
     BOOL _frameLoaded;
     UIWebPaginationInfo *_paginationInfo;
     UIWebBrowserView *_printView;
     BOOL _printingDone;
-    NSInteger _totalPagesPrinted;
+    int _totalPagesPrinted;
     NSMutableArray *_urls;
 }
 
 - (id)_documentURLs;
 - (BOOL)_loadNextURL;
-- (BOOL)_loadURLAtIndex:(NSUInteger)arg1;
+- (BOOL)_loadURLAtIndex:(unsigned int)arg1;
 - (void)dealloc;
-- (void)drawContentForPageAtIndex:(NSInteger)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)drawContentForPageAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)initWithWebBrowserView:(id)arg1 request:(id)arg2 documentType:(id)arg3;
-- (NSInteger)numberOfPages;
-- (void)prepareForDrawingPages:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (int)numberOfPages;
+- (void)prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
 

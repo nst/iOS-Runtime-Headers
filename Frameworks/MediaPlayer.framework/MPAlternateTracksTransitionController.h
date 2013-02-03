@@ -9,11 +9,11 @@
     MPVideoViewController *_videoController;
 }
 
-@property MPVideoViewController *videoController;
+@property MPVideoViewController * videoController;
 
 - (void)_animationDidStop;
 - (void)setVideoController:(id)arg1;
-- (void)transition:(NSUInteger)arg1;
+- (void)transition:(unsigned int)arg1;
 - (id)videoController;
 
 @end

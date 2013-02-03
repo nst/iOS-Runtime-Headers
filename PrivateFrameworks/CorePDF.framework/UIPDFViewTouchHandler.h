@@ -2,21 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UIPDFPageView, UILongPressGestureRecognizer, UIPDFSelectionController, UIPDFSelectionLayer, UIMenuController, UIPDFMagnifier, UITapGestureRecognizer;
+@class UILongPressGestureRecognizer, UITapGestureRecognizer, UIPDFSelectionController, UIPDFPageView, UIPDFViewMagnifyController, UIMenuController;
 
 @interface UIPDFViewTouchHandler : UIResponder <UIGestureRecognizerDelegate> {
     UILongPressGestureRecognizer *_briefPressRecognizer;
     UITapGestureRecognizer *_doubleTapRecognizer;
     UILongPressGestureRecognizer *_longPressRecognizer;
-    UIPDFMagnifier *_magnifier;
+    UIPDFViewMagnifyController *_magnifyController;
+    UIMenuController *_menuController;
     UIPDFPageView *_pdfPageView;
     UIPDFSelectionController *_selectionController;
+    BOOL _showLoupe;
+    BOOL _showMagnifier;
     UITapGestureRecognizer *_singleTapRecognizer;
-    UIMenuController *menuController;
-    UIPDFSelectionLayer *selectionLayer;
 }
-
-@property(retain) UIPDFSelectionLayer *selectionLayer;
 
 - (void)addHTML:(id)arg1;
 - (void)addPlainText:(id)arg1;
@@ -26,7 +25,9 @@
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)copy:(id)arg1;
 - (void)dealloc;
+- (void)disableRecognizers;
 - (void)doubleTapRecognized:(id)arg1;
+- (void)enableRecognizers;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
@@ -35,8 +36,6 @@
 - (void)longPressRecognized:(id)arg1;
 - (id)nextResponder;
 - (void)selectAll:(id)arg1;
-- (id)selectionLayer;
-- (void)setSelectionLayer:(id)arg1;
 - (void)showMenu;
 - (void)singleTapRecognized:(id)arg1;
 

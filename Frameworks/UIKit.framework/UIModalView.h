@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIToolbar, UILabel, UIView, <UIModalViewDelegate>, UIWindow, NSMutableArray;
+@class UIToolbar, UIWindow, UILabel, NSMutableArray, UIView, NSString, <UIModalViewDelegate>;
 
 @interface UIModalView : UIView <UITextFieldDelegate> {
     struct { 
@@ -46,14 +46,14 @@
     float _bodyTextHeight;
     UILabel *_bodyTextLabel;
     NSMutableArray *_buttons;
-    NSInteger _cancelButton;
+    int _cancelButton;
     id _context;
-    NSInteger _defaultButton;
+    int _defaultButton;
     <UIModalViewDelegate> *_delegate;
     UIView *_dimView;
     UIWindow *_dimWindow;
-    NSInteger _dismissButtonIndex;
-    NSInteger _firstOtherButton;
+    int _dismissButtonIndex;
+    int _firstOtherButton;
     UIView *_keyboard;
     } _modalViewFlags;
     UIWindow *_originalWindow;
@@ -61,7 +61,7 @@
     float _startX;
     float _startY;
     UILabel *_subtitleLabel;
-    NSInteger _suspendTag;
+    int _suspendTag;
     UIView *_table;
     UILabel *_taglineTextLabel;
     NSMutableArray *_textFields;
@@ -69,19 +69,19 @@
     UIToolbar *_toolbar;
 }
 
-@property <UIModalViewDelegate> *delegate;
-@property(copy) NSString *message;
-@property(copy) NSString *title;
-@property NSInteger cancelButtonIndex;
+@property int cancelButtonIndex;
+@property <UIModalViewDelegate> * delegate;
 @property BOOL groupsTextFields;
-@property(readonly) NSInteger numberOfButtons;
+@property(copy) NSString * message;
+@property(readonly) int numberOfButtons;
+@property(copy) NSString * title;
 @property(getter=isVisible,readonly) BOOL visible;
 
 + (void)_initializeSafeCategory;
 + (id)_popupAlertBackground;
 + (BOOL)atLeastOneAlertVisible;
 + (struct CGSize { float x1; float x2; })minimumSize;
-+ (void)noteOrientationChangingTo:(NSInteger)arg1;
++ (void)noteOrientationChangingTo:(int)arg1;
 + (id)topMostAlert;
 + (id)visibleAlert;
 
@@ -103,18 +103,18 @@
 - (void)_createSubtitleLabelIfNeeded;
 - (void)_createTaglineTextLabelIfNeeded;
 - (void)_createTitleLabelIfNeeded;
-- (NSInteger)_currentOrientation;
+- (int)_currentOrientation;
 - (id)_dimView;
 - (BOOL)_dimsBackground;
 - (void)_growAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
 - (void)_hideAnimated:(BOOL)arg1;
-- (id)_initWithTelephoneNumber:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(NSInteger)arg3 delegate:(id)arg4 context:(id)arg5;
+- (id)_initWithTelephoneNumber:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (BOOL)_isAnimating;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)_layoutIfNeeded;
-- (void)_layoutPopupAlertWithOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)_layoutPopupAlertWithOrientation:(int)arg1 animated:(BOOL)arg2;
 - (BOOL)_manualKeyboardIsVisible;
 - (float)_maxHeight;
 - (BOOL)_needsKeyboard;
@@ -130,7 +130,7 @@
 - (void)_repopupNoAnimation;
 - (void)_rotatingAnimationDidStop:(id)arg1;
 - (void)_setAlertSheetStyleFromButtonBar:(id)arg1;
-- (void)_setFirstOtherButtonIndex:(NSInteger)arg1;
+- (void)_setFirstOtherButtonIndex:(int)arg1;
 - (void)_setTextFieldsHidden:(BOOL)arg1;
 - (void)_setupInitialFrame;
 - (void)_setupTitleStyle;
@@ -145,34 +145,34 @@
 - (unsigned long long)accessibilityTraits;
 - (id)addButtonWithTitle:(id)arg1 buttonClass:(Class)arg2;
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
-- (NSInteger)addButtonWithTitle:(id)arg1;
+- (int)addButtonWithTitle:(id)arg1;
 - (id)addTextFieldWithValue:(id)arg1 label:(id)arg2;
-- (NSInteger)alertSheetStyle;
+- (int)alertSheetStyle;
 - (struct CGSize { float x1; float x2; })backgroundSize;
 - (BOOL)blocksInteraction;
-- (NSInteger)bodyMaxLineCount;
+- (int)bodyMaxLineCount;
 - (id)bodyText;
 - (id)bodyTextView;
-- (NSInteger)buttonCount;
-- (id)buttonTitleAtIndex:(NSInteger)arg1;
+- (int)buttonCount;
+- (id)buttonTitleAtIndex:(int)arg1;
 - (id)buttons;
 - (BOOL)canBecomeFirstResponder;
-- (NSInteger)cancelButtonIndex;
+- (int)cancelButtonIndex;
 - (id)context;
 - (void)dealloc;
 - (id)defaultButton;
-- (NSInteger)defaultButtonIndex;
+- (int)defaultButtonIndex;
 - (id)delegate;
 - (id)destructiveButton;
 - (BOOL)dimsBackground;
 - (void)dismiss;
 - (void)dismissAnimated:(BOOL)arg1;
-- (void)dismissWithClickedButtonIndex:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSInteger)firstOtherButtonIndex;
+- (int)firstOtherButtonIndex;
 - (BOOL)groupsTextFields;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(NSInteger)arg3 delegate:(id)arg4 context:(id)arg5;
+- (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
 - (BOOL)isAccessibilityElement;
 - (BOOL)isBodyTextTruncated;
@@ -181,9 +181,9 @@
 - (void)layout;
 - (void)layoutAnimated:(BOOL)arg1;
 - (id)message;
-- (NSInteger)numberOfButtons;
-- (NSInteger)numberOfLinesInTitle;
-- (NSInteger)numberOfRows;
+- (int)numberOfButtons;
+- (int)numberOfLinesInTitle;
+- (int)numberOfRows;
 - (void)popupAlertAnimated:(BOOL)arg1 atOffset:(float)arg2;
 - (void)popupAlertAnimated:(BOOL)arg1 fromBarButtonItem:(id)arg2;
 - (void)popupAlertAnimated:(BOOL)arg1;
@@ -195,41 +195,41 @@
 - (void)replaceAlert:(id)arg1;
 - (BOOL)requiresPortraitOrientation;
 - (BOOL)runsModal;
-- (void)setAlertSheetStyle:(NSInteger)arg1;
+- (void)setAlertSheetStyle:(int)arg1;
 - (void)setBlocksInteraction:(BOOL)arg1;
 - (void)setBodyText:(id)arg1;
-- (void)setBodyTextMaxLineCount:(NSInteger)arg1;
-- (void)setCancelButtonIndex:(NSInteger)arg1;
+- (void)setBodyTextMaxLineCount:(int)arg1;
+- (void)setCancelButtonIndex:(int)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDefaultButton:(id)arg1;
-- (void)setDefaultButtonIndex:(NSInteger)arg1;
+- (void)setDefaultButtonIndex:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDestructiveButton:(id)arg1;
 - (void)setDimView:(id)arg1;
 - (void)setDimsBackground:(BOOL)arg1;
 - (void)setGroupsTextFields:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
-- (void)setNumberOfRows:(NSInteger)arg1;
+- (void)setNumberOfRows:(int)arg1;
 - (void)setRunsModal:(BOOL)arg1;
 - (void)setShowsOverSpringBoardAlerts:(BOOL)arg1;
 - (void)setSubtitle:(id)arg1;
-- (void)setSuspendTag:(NSInteger)arg1;
+- (void)setSuspendTag:(int)arg1;
 - (void)setTableShouldShowMinimumContent:(BOOL)arg1;
 - (void)setTaglineText:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTitleMaxLineCount:(NSInteger)arg1;
+- (void)setTitleMaxLineCount:(int)arg1;
 - (BOOL)showsOverSpringBoardAlerts;
 - (id)subtitle;
-- (NSInteger)suspendTag;
+- (int)suspendTag;
 - (id)table;
 - (BOOL)tableShouldShowMinimumContent;
 - (id)tableView;
 - (id)taglineTextView;
 - (id)textField;
-- (id)textFieldAtIndex:(NSInteger)arg1;
-- (NSInteger)textFieldCount;
+- (id)textFieldAtIndex:(int)arg1;
+- (int)textFieldCount;
 - (id)title;
-- (NSInteger)titleMaxLineCount;
+- (int)titleMaxLineCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
 - (void)userDidCancelPopoverView:(id)arg1;
 

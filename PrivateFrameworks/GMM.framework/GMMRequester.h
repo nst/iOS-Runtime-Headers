@@ -13,15 +13,15 @@
     NSThread *_thread;
 }
 
-@property(retain) NSArray *bundleIdentifiers;
 @property(getter=isAnonymous) BOOL anonymous;
+@property(retain) NSArray * bundleIdentifiers;
 @property BOOL disableReplay;
 @property(readonly) BOOL wasAutomaticallyCancelled;
 
 + (id)_requestHTTPHeaders;
 + (void)_resetRequestCounts;
 + (void)_setupNetworkConfiguration;
-+ (BOOL)allowRequestForType:(NSInteger)arg1;
++ (BOOL)allowRequestForType:(int)arg1;
 
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;

@@ -20,7 +20,7 @@
 - (id)initWithInsertedObjects:(id)arg1 updatedObjects:(id)arg2 deletedObjects:(id)arg3 lockedObjects:(id)arg4;
 - (id)insertedObjects;
 - (id)lockedObjects;
-- (NSUInteger)requestType;
+- (unsigned int)requestType;
 - (void)setDeletedObjects:(id)arg1;
 - (id)updatedObjects;
 

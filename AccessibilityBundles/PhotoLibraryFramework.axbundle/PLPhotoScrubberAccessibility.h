@@ -7,7 +7,7 @@
 
 + (void)_initializeSafeCategory;
 
-- (void)_accessibilityOutputIndexChange:(NSInteger)arg1;
+- (void)_accessibilityOutputIndexChange:(int)arg1;
 - (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
 - (void)accessibilityDecrement;
 - (void)accessibilityIncrement;

@@ -10,9 +10,9 @@
 
 - (id)createHandler;
 - (id)description;
-- (NSInteger)elementCount;
-- (BOOL)getElementClassIdentifier:(id*)arg1 value:(id*)arg2 atIndex:(NSInteger)arg3;
-- (NSUInteger)hash;
+- (int)elementCount;
+- (BOOL)getElementClassIdentifier:(id*)arg1 value:(id*)arg2 atIndex:(int)arg3;
+- (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (id)modelIdentifier;
@@ -20,7 +20,7 @@
 - (id)recognitionResultByReplacingValueForClassIdentifier:(id)arg1 withValue:(id)arg2;
 - (oneway void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)setRecognitionAction:(id)arg1;
 - (id)valueOfFirstElementWithClassIdentifier:(id)arg1;
 

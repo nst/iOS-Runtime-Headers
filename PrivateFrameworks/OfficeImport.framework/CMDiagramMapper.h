@@ -9,7 +9,7 @@
     CMDrawingContext *mDrawingContext;
 }
 
-+ (NSInteger)diagramTypeFromString:(id)arg1;
++ (int)diagramTypeFromString:(id)arg1;
 
 - (id)createDiagramMapperForId:(id)arg1;
 - (id)diagram;

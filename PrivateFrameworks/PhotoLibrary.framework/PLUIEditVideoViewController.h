@@ -5,7 +5,7 @@
 @class UIImagePickerController, UINavigationItem, NSDictionary;
 
 @interface PLUIEditVideoViewController : PLUIImageViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
-    NSUInteger _canCreateMetadata;
+    unsigned int _canCreateMetadata;
     id _delegate;
     UIImagePickerController *_imagePicker;
     UINavigationItem *_navItem;
@@ -20,7 +20,7 @@
 - (id)_trimMessage;
 - (void)_trimVideo:(id)arg1;
 - (Class)_viewClass;
-- (NSInteger)cropOverlayMode;
+- (int)cropOverlayMode;
 - (void)dealloc;
 - (id)delegate;
 - (void)didChooseVideoAtPath:(id)arg1 options:(id)arg2;
@@ -31,12 +31,12 @@
 - (void)setDelegate:(id)arg1;
 - (void)setImagePickerOptions:(id)arg1;
 - (void)setViewClass:(Class)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)uiipc_imagePickerController;
 - (id)uiipc_imagePickerOptions;
 - (void)videoRemakerDidEndRemaking:(id)arg1 temporaryPath:(id)arg2;
 - (BOOL)videoViewCanCreateMetadata:(id)arg1;
 - (void)videoViewPlaybackDidFail:(id)arg1;
-- (float)videoViewScrubberYOrigin:(id)arg1 forOrientation:(NSInteger)arg2;
+- (float)videoViewScrubberYOrigin:(id)arg1 forOrientation:(int)arg2;
 
 @end

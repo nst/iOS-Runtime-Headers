@@ -6,10 +6,10 @@
 
 @interface ABFavoritesLookupChangeRecord : NSObject {
     NSString *abDatabaseUUID;
-    NSInteger identifier;
+    int identifier;
     NSString *label;
     NSString *name;
-    NSInteger uid;
+    int uid;
     NSString *value;
 }
 

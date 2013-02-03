@@ -14,10 +14,10 @@
 
 + (id)processInfo;
 
-- (void)_exitIfSuddenTerminationEnabledWithStatus:(NSInteger)arg1;
-- (void)_exitWhenSuddenTerminationEnabledWithStatus:(NSInteger)arg1;
-- (NSInteger)_suddenTerminationDisablingCount;
-- (NSUInteger)activeProcessorCount;
+- (void)_exitIfSuddenTerminationEnabledWithStatus:(int)arg1;
+- (void)_exitWhenSuddenTerminationEnabledWithStatus:(int)arg1;
+- (int)_suddenTerminationDisablingCount;
+- (unsigned int)activeProcessorCount;
 - (id)arguments;
 - (void)dealloc;
 - (void)disableSuddenTermination;
@@ -26,13 +26,13 @@
 - (id)globallyUniqueString;
 - (id)hostName;
 - (BOOL)isTranslated;
-- (NSUInteger)operatingSystem;
+- (unsigned int)operatingSystem;
 - (id)operatingSystemName;
 - (id)operatingSystemVersionString;
 - (unsigned long long)physicalMemory;
-- (NSInteger)processIdentifier;
+- (int)processIdentifier;
 - (id)processName;
-- (NSUInteger)processorCount;
+- (unsigned int)processorCount;
 - (void)setArguments:(id)arg1;
 - (void)setProcessName:(id)arg1;
 - (double)systemUptime;

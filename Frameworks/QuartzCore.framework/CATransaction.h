@@ -11,7 +11,7 @@
 + (BOOL)beginWithoutBlocking;
 + (void)commit;
 + (id)completionBlock;
-+ (NSUInteger)currentState;
++ (unsigned int)currentState;
 + (BOOL)disableActions;
 + (void)flush;
 + (void)lock;

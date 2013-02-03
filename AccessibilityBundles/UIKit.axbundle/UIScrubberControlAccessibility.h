@@ -7,6 +7,7 @@
 
 + (void)_initializeSafeCategory;
 
+- (void)_accessibilityBumpValue:(BOOL)arg1;
 - (BOOL)_axInteractionEnabled;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;

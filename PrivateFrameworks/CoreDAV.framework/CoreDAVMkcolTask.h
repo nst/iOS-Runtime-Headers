@@ -2,15 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSSet;
+@class NSSet, <CoreDAVTaskDelegate>;
 
 @interface CoreDAVMkcolTask : CoreDAVTask {
+    int _order;
     NSSet *_propertiesToSet;
+    BOOL _sendOrder;
 }
 
-@property <CoreDAVTaskDelegate> *delegate;
-@property(retain) NSSet *propertiesToSet;
+@property <CoreDAVTaskDelegate> * delegate;
+@property int order;
+@property(retain) NSSet * propertiesToSet;
 
+- (id)additionalHeaderValues;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)dealloc;
 - (id)description;
@@ -18,8 +22,10 @@
 - (id)httpMethod;
 - (id)initWithPropertiesToSet:(id)arg1 atURL:(id)arg2;
 - (id)initWithURL:(id)arg1;
+- (int)order;
 - (id)propertiesToSet;
 - (id)requestBody;
+- (void)setOrder:(int)arg1;
 - (void)setPropertiesToSet:(id)arg1;
 
 @end

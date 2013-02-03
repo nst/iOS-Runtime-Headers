@@ -6,20 +6,19 @@
    See Warning(s) below.
  */
 
-@class GKAnimatingLabelView, UIActivityIndicatorView, NSString, GKInviteButton, GKTouchInterceptView;
+@class GKInviteButton, UIActivityIndicatorView, NSString, GKTouchInterceptView;
 
 @interface GKFriendPickerCellContents : GKMultilineCellContentView <GKMultilineLayoutProtocol> {
     struct CGSize { 
         float width; 
         float height; 
     UIActivityIndicatorView *_activityView;
-    GKAnimatingLabelView *_animatingLabelView;
     BOOL _enabled;
     } _firstLineOffset;
-    NSUInteger _index;
+    unsigned int _index;
     GKInviteButton *_inviteButton;
     id _inviteButtonHandler;
-    NSInteger _inviteStatus;
+    int _inviteStatus;
     BOOL _padsForInvisibleSelectionIcon;
     NSString *_realName;
     BOOL _showingActivityIndicator;
@@ -33,40 +32,40 @@
     id _uninviteButtonHandler;
 }
 
-@property(readonly) GKInviteButton *inviteButton;
-@property(copy) ? *inviteButtonHandler;
-@property(retain) NSString *realName;
-@property(retain) GKTouchInterceptView *touchInterceptView;
-@property(copy) ? *uninviteButtonHandler;
 @property BOOL enabled;
-@property NSUInteger index;
-@property NSInteger inviteStatus;
+@property unsigned int index;
+@property(readonly) GKInviteButton * inviteButton;
+@property(copy) id inviteButtonHandler;
+@property int inviteStatus;
 @property BOOL padsForInvisibleSelectionIcon;
+@property(retain) NSString * realName;
 @property(readonly) BOOL showingInviteButton;
 @property(readonly) BOOL showingUninviteButton;
 @property BOOL showsInviteButton;
 @property BOOL showsInviteStatus;
 @property BOOL showsSelectionIcon;
 @property BOOL showsUninviteButton;
+@property(retain) GKTouchInterceptView * touchInterceptView;
+@property(copy) id uninviteButtonHandler;
 
 + (void)_initializeSafeCategory;
 
-- (NSInteger)accessibilityElementCount;
+- (int)accessibilityElementCount;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (void)createInviteMatchConfirmButton;
 - (void)dealloc;
-- (void)drawLineIndex:(NSUInteger)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 highlighted:(BOOL)arg3;
+- (void)drawLineIndex:(unsigned int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 highlighted:(BOOL)arg3;
 - (BOOL)enabled;
 - (BOOL)hasStatusForInviteButton;
 - (BOOL)hasStatusForUninviteButton;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (NSUInteger)index;
-- (id)initWithNumberOfLines:(NSUInteger)arg1;
+- (unsigned int)index;
+- (id)initWithNumberOfLines:(unsigned int)arg1;
 - (id)inviteButton;
 - (id)inviteButtonHandler;
 - (void)inviteButtonPushed;
-- (NSInteger)inviteStatus;
+- (int)inviteStatus;
 - (BOOL)isAccessibilityElement;
 - (void)layoutInviteButton;
 - (void)layoutInviteButtonAnimated:(BOOL)arg1;
@@ -77,9 +76,9 @@
 - (void)removeFromSuperview;
 - (void)setConfirmButtonHidden:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setIndex:(NSUInteger)arg1;
+- (void)setIndex:(unsigned int)arg1;
 - (void)setInviteButtonHandler:(id)arg1;
-- (void)setInviteStatus:(NSInteger)arg1;
+- (void)setInviteStatus:(int)arg1;
 - (void)setPadsForInvisibleSelectionIcon:(BOOL)arg1;
 - (void)setRealName:(id)arg1;
 - (void)setShowingActivityIndicator:(BOOL)arg1;

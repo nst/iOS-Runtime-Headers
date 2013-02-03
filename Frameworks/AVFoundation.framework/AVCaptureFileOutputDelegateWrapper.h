@@ -14,11 +14,11 @@
     BOOL _receivedDidStopRecording;
 }
 
-@property(readonly) NSArray *connections;
-@property(readonly) <AVCaptureFileOutputRecordingDelegate><AVCaptureFileOutputPauseResumeDelegate> *delegate;
-@property(copy) NSString *didStopRecordingReason;
-@property(retain) NSArray *metadata;
-@property(readonly) NSURL *outputFileURL;
+@property(readonly) NSArray * connections;
+@property(readonly) <AVCaptureFileOutputRecordingDelegate><AVCaptureFileOutputPauseResumeDelegate> * delegate;
+@property(copy) NSString * didStopRecordingReason;
+@property(retain) NSArray * metadata;
+@property(readonly) NSURL * outputFileURL;
 @property BOOL receivedDidStartRecording;
 @property BOOL receivedDidStopRecording;
 

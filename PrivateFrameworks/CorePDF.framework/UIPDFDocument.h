@@ -7,34 +7,34 @@
 @interface UIPDFDocument : NSObject {
     float _cachedWidth;
     struct CGPDFDocument { } *_cgDocument;
-    NSUInteger _numberOfPages;
+    unsigned int _numberOfPages;
     UIPDFPage **_pageArray;
 }
 
-@property(readonly) CGPDFDocument *cgPDFDocument;
-@property(readonly) NSUInteger numberOfPages;
+@property(readonly) struct CGPDFDocument { }* cgPDFDocument;
+@property(readonly) unsigned int numberOfPages;
 
 + (id)documentNamed:(id)arg1;
 
 - (void)_clearCachedState;
 - (void)_setDocument:(struct CGPDFDocument { }*)arg1;
-- (unsigned long)cfCompareFlagsFromNSOptions:(NSUInteger)arg1;
+- (unsigned long)cfCompareFlagsFromNSOptions:(unsigned int)arg1;
 - (struct CGPDFDocument { }*)cgPDFDocument;
 - (void)dealloc;
-- (id)findString:(id)arg1 fromSelection:(id)arg2 options:(NSUInteger)arg3;
-- (id)findString:(id)arg1 onPage:(id)arg2 fromSelection:(id)arg3 options:(NSUInteger)arg4;
+- (id)findString:(id)arg1 fromSelection:(id)arg2 options:(unsigned int)arg3;
+- (id)findString:(id)arg1 onPage:(id)arg2 fromSelection:(id)arg3 options:(unsigned int)arg4;
 - (id)findStringBackward:(id)arg1 onPage:(id)arg2 fromSelection:(id)arg3 compareFlags:(unsigned long)arg4;
 - (id)findStringForward:(id)arg1 onPage:(id)arg2 fromSelection:(id)arg3 compareFlags:(unsigned long)arg4;
 - (id)followingPage:(id)arg1;
-- (NSUInteger)indexForPage:(id)arg1;
+- (unsigned int)indexForPage:(id)arg1;
 - (id)initWithCGPDFDocument:(struct CGPDFDocument { }*)arg1;
 - (id)initWithURL:(id)arg1;
 - (float)maxHeight;
 - (float)maxWidth;
-- (NSUInteger)numberOfPages;
-- (id)pageAtIndex:(NSUInteger)arg1;
+- (unsigned int)numberOfPages;
+- (id)pageAtIndex:(unsigned int)arg1;
 - (id)previousPage:(id)arg1;
-- (void)purgePagesBefore:(NSUInteger)arg1;
+- (void)purgePagesBefore:(unsigned int)arg1;
 - (float)sumHeight;
 - (float)sumWidth;
 

@@ -7,13 +7,14 @@
 @interface UIPDFPage : NSObject {
     UIPDFSelection *_selection;
     struct CGPDFPage { } *cgPage;
-    NSUInteger pageNumber;
+    unsigned int pageNumber;
     NSString *stringInReadingOrder;
 }
 
-@property(readonly) CGPDFPage *CGPage;
-@property(retain) UIPDFSelection *selection;
-@property(readonly) NSUInteger pageNumber;
+@property(readonly) struct CGPDFPage { }* CGPage;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } cropBox;
+@property(readonly) unsigned int pageNumber;
+@property(retain) UIPDFSelection * selection;
 
 - (struct CGPDFPage { }*)CGPage;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropBox;
@@ -23,7 +24,7 @@
 - (id)initWithCGPDFPage:(struct CGPDFPage { }*)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mediaBox;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mediaBoxAccountForRotation;
-- (NSUInteger)pageNumber;
+- (unsigned int)pageNumber;
 - (id)selection;
 - (void)setSelection:(id)arg1;
 - (struct CGSize { float x1; float x2; })size;

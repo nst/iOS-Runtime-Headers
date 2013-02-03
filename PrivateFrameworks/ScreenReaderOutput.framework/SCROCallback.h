@@ -4,16 +4,16 @@
 
 @interface SCROCallback : NSObject <NSCoding> {
     BOOL _isAtomic;
-    NSInteger _key;
+    int _key;
     id _object;
 }
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithKey:(NSInteger)arg1 object:(id)arg2;
+- (id)initWithKey:(int)arg1 object:(id)arg2;
 - (BOOL)isAtomic;
-- (NSInteger)key;
+- (int)key;
 - (id)object;
 - (void)postToHandler:(id)arg1;
 - (void)setIsAtomic:(BOOL)arg1;

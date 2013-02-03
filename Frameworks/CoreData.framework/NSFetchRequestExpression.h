@@ -20,15 +20,15 @@
 + (id)expressionForFetch:(id)arg1 context:(id)arg2 countOnly:(BOOL)arg3;
 
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
-- (void)acceptVisitor:(id)arg1 flags:(NSUInteger)arg2;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (id)contextExpression;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)expressionType;
+- (unsigned int)expressionType;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initForFetch:(id)arg1 context:(id)arg2 countOnly:(BOOL)arg3;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isCountOnlyRequest;

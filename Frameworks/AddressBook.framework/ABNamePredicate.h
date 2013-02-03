@@ -15,15 +15,15 @@
     struct __CFArray { } *_tokenizations;
 }
 
-@property(copy) NSString *accountIdentifier;
-@property void *addressBook;
-@property void *group;
-@property(copy) NSString *name;
-@property void *source;
+@property(copy) NSString * accountIdentifier;
+@property void* addressBook;
+@property void* group;
+@property(copy) NSString * name;
 @property BOOL showPersonLinks;
+@property void* source;
 
-- (void)_doBindingWithStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 bindingOffset:(NSInteger*)arg2;
-- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(NSInteger*)arg2 predicateIdentifier:(NSInteger)arg3;
+- (void)_doBindingWithStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 bindingOffset:(int*)arg2;
+- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (id)accountIdentifier;
 - (void*)addressBook;
 - (void)dealloc;

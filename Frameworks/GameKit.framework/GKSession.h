@@ -2,20 +2,22 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
+@class <GKSessionDelegate>, NSString, <GKSessionPrivateDelegate>, GKConnection;
+
 @interface GKSession : NSObject {
     id _session;
 }
 
-@property(readonly) GKConnection *connection;
-@property <GKSessionDelegate> *delegate;
-@property(readonly) NSString *displayName;
-@property(readonly) NSString *peerID;
-@property <GKSessionPrivateDelegate> *privateDelegate;
-@property(readonly) NSString *sessionID;
 @property(getter=isAvailable) BOOL available;
 @property(getter=isBusy) BOOL busy;
+@property(readonly) GKConnection * connection;
+@property <GKSessionDelegate> * delegate;
 @property double disconnectTimeout;
-@property(readonly) NSInteger sessionMode;
+@property(readonly) NSString * displayName;
+@property(readonly) NSString * peerID;
+@property <GKSessionPrivateDelegate> * privateDelegate;
+@property(readonly) NSString * sessionID;
+@property(readonly) int sessionMode;
 @property BOOL wifiEnabled;
 
 + (void)initialize;
@@ -34,31 +36,25 @@
 - (id)displayName;
 - (id)displayNameForPeer:(id)arg1;
 - (id)initWithConnection:(id)arg1 delegate:(id)arg2;
-- (id)initWithSessionID:(id)arg1 displayName:(id)arg2 sessionMode:(NSInteger)arg3;
+- (id)initWithSessionID:(id)arg1 displayName:(id)arg2 sessionMode:(int)arg3;
 - (BOOL)isAvailable;
 - (BOOL)isBusy;
 - (BOOL)isPeerBusy:(id)arg1;
 - (id)peerID;
-- (id)peersWithConnectionState:(NSInteger)arg1;
+- (id)peersWithConnectionState:(int)arg1;
 - (id)privateDelegate;
 - (id)privateImpl;
-- (id)searchCriteria;
-- (BOOL)sendData:(id)arg1 toPeers:(id)arg2 withDataMode:(NSInteger)arg3 error:(id*)arg4;
-- (BOOL)sendDataToAllPeers:(id)arg1 withDataMode:(NSInteger)arg2 error:(id*)arg3;
+- (BOOL)sendData:(id)arg1 toPeers:(id)arg2 withDataMode:(int)arg3 error:(id*)arg4;
+- (BOOL)sendDataToAllPeers:(id)arg1 withDataMode:(int)arg2 error:(id*)arg3;
 - (id)sessionID;
-- (NSInteger)sessionMode;
+- (int)sessionMode;
 - (void)setAvailable:(BOOL)arg1;
 - (void)setBusy:(BOOL)arg1;
 - (void)setDataReceiveHandler:(id)arg1 withContext:(void*)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setDisconnectTimeout:(double)arg1;
 - (void)setPrivateDelegate:(id)arg1;
-- (void)setSearchCriteria:(id)arg1;
 - (void)setWifiEnabled:(BOOL)arg1;
-- (BOOL)startAdvertisingAndReturnError:(id*)arg1;
-- (BOOL)startSearchingAndReturnError:(id*)arg1;
-- (void)stopAdvertising;
-- (void)stopSearchingForPeers;
 - (BOOL)wifiEnabled;
 
 @end

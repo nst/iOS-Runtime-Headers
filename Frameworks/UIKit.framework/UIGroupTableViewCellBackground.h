@@ -7,20 +7,20 @@
 @interface UIGroupTableViewCellBackground : UIView {
     struct { 
         unsigned int selected : 1; 
-    NSInteger _animationCount;
+    int _animationCount;
     UIView *_bottomSeparatorView;
     } _groupBackgroundFlags;
-    NSInteger _newSectionLocation;
-    NSInteger _sectionLocation;
-    NSInteger _selectionStyle;
-    NSInteger _separatorStyle;
+    int _newSectionLocation;
+    int _sectionLocation;
+    int _selectionStyle;
+    int _separatorStyle;
     UIView *_topSeparatorView;
 }
 
-@property NSInteger sectionLocation;
+@property int sectionLocation;
 @property(getter=isSelected) BOOL selected;
-@property NSInteger selectionStyle;
-@property NSInteger separatorStyle;
+@property int selectionStyle;
+@property int separatorStyle;
 
 + (void)_flushCacheOnNotification:(id)arg1;
 + (void)initialize;
@@ -37,7 +37,7 @@
 - (void)_incrementAnimationCount;
 - (void)_layoutSubviews:(BOOL)arg1;
 - (float)_pixelDisplayedImageHeight;
-- (id)_roundedRectBezierPathInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withSectionLocation:(NSInteger)arg2 forBorder:(BOOL)arg3 cornerRadiusAdjustment:(float)arg4;
+- (id)_roundedRectBezierPathInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withSectionLocation:(int)arg2 forBorder:(BOOL)arg3 cornerRadiusAdjustment:(float)arg4;
 - (id)_sectionBorderColor;
 - (id)_separatorColor;
 - (void)_setSectionLocationAnimationDidStop;
@@ -50,15 +50,15 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isSelected;
 - (void)layoutSubviews;
-- (NSInteger)sectionLocation;
-- (NSInteger)selectionStyle;
-- (NSInteger)separatorStyle;
+- (int)sectionLocation;
+- (int)selectionStyle;
+- (int)separatorStyle;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSectionLocation:(NSInteger)arg1 animated:(BOOL)arg2;
-- (void)setSectionLocation:(NSInteger)arg1;
+- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
+- (void)setSectionLocation:(int)arg1;
 - (void)setSelected:(BOOL)arg1;
-- (void)setSelectionStyle:(NSInteger)arg1;
-- (void)setSeparatorStyle:(NSInteger)arg1;
+- (void)setSelectionStyle:(int)arg1;
+- (void)setSeparatorStyle:(int)arg1;
 
 @end

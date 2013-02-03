@@ -8,7 +8,7 @@
 - (id)_initWithAudioDeviceController:(id)arg1 videoDestinationBrowser:(id)arg2;
 - (id)_tableViewController;
 - (id)audioDeviceController;
-- (id)initWithType:(NSUInteger)arg1;
+- (id)initWithType:(unsigned int)arg1;
 - (id)videoDestinationBrowser;
 
 @end

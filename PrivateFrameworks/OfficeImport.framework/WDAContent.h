@@ -2,23 +2,16 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class OADDrawable, WDATextBox, WDAAnchor;
 
 @interface WDAContent : NSObject <OADClient, OADTextClient> {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
     WDAAnchor *mAnchor;
     OADDrawable *mDrawable;
     WDATextBox *mTextBox;
-    NSInteger mTextType;
+    int mTextType;
 }
 
-@property(readonly) WDAAnchor *anchor;
+@property(readonly) WDAAnchor * anchor;
 
 + (Class)classForType:(unsigned short)arg1;
 
@@ -26,21 +19,21 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (void)clearAnchor;
 - (id)createAnchor;
-- (id)createTextBoxWithDocument:(id)arg1 textType:(NSInteger)arg2;
+- (id)createTextBoxWithDocument:(id)arg1 textType:(int)arg2;
 - (void)dealloc;
 - (id)drawable;
 - (BOOL)floating;
 - (BOOL)hasBounds;
 - (BOOL)hasText;
 - (id)init;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isLine;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isShape;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isTopLevelObject;
+- (bool)isLine;
+- (bool)isShape;
+- (bool)isTopLevelObject;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDrawable:(id)arg1;
 - (void)setTextBox:(id)arg1;
-- (void)setTextType:(NSInteger)arg1;
+- (void)setTextType:(int)arg1;
 - (id)textBox;
-- (NSInteger)textType;
+- (int)textType;
 
 @end

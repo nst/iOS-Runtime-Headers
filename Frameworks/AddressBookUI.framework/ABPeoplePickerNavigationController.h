@@ -2,21 +2,22 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, ABModel;
+@class NSArray, ABModel, <ABStyleProvider>, <ABPeoplePickerNavigationControllerDelegate>;
 
 @interface ABPeoplePickerNavigationController : UINavigationController {
     struct { 
         unsigned int allowsEditing : 1; 
         unsigned int allowsCancel : 1; 
         unsigned int allowsActions : 1; 
+        unsigned int allowsConferencing : 1; 
         unsigned int allowsSounds : 1; 
         unsigned int hidesSearchableStores : 1; 
     void *_addressBook;
-    NSInteger _behavior;
+    int _behavior;
     NSArray *_defaultToolbarItems;
     struct __CFArray { } *_displayedProperties;
     } _flags;
-    NSInteger _insertionProperty;
+    int _insertionProperty;
     id _insertionValue;
     ABModel *_model;
     id _peoplePickerDelegate;
@@ -26,11 +27,11 @@
     id _reserved4;
 }
 
-@property(retain) NSArray *ab_defaultToolbarItems; /* unknown property attribute: Sab_setDefaultToolbarItems: */
-@property void *addressBook;
-@property(copy) NSArray *displayedProperties;
-@property <ABPeoplePickerNavigationControllerDelegate> *peoplePickerDelegate;
-@property(retain) <ABStyleProvider> *styleProvider;
+@property(setter=ab_setDefaultToolbarItems:,retain) NSArray * ab_defaultToolbarItems;
+@property void* addressBook;
+@property(copy) NSArray * displayedProperties;
+@property <ABPeoplePickerNavigationControllerDelegate> * peoplePickerDelegate;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 + (void)notifyPreferencesChanged;
 
@@ -47,25 +48,30 @@
 - (void)ab_restoreViewControllerToolbarItems:(id)arg1 animated:(BOOL)arg2;
 - (void)ab_setDefaultToolbarItems:(id)arg1 animated:(BOOL)arg2;
 - (void)ab_setDefaultToolbarItems:(id)arg1;
+- (id)ab_viewControllerToPresentCamera;
 - (id)accountsAndGroupsViewController;
 - (void)addChildViewController:(id)arg1;
 - (void*)addressBook;
 - (BOOL)allowsActions;
 - (BOOL)allowsCancel;
 - (BOOL)allowsCardEditing;
+- (BOOL)allowsConferencing;
 - (id)bannerTitle;
 - (id)bannerValue;
-- (NSInteger)behavior;
+- (int)behavior;
 - (BOOL)ckCanDismissWhenSuspending;
 - (void)dealloc;
 - (id)displayedProperties;
 - (void)hideSearchableStores;
 - (id)init;
+- (id)initAsAddressBook:(BOOL)arg1 withAddressBook:(void*)arg2 withStyle:(int)arg3;
 - (id)initAsAddressBook:(BOOL)arg1 withAddressBook:(void*)arg2;
+- (id)initAsAddressBook:(BOOL)arg1 withStyle:(int)arg2;
 - (id)initAsAddressBook:(BOOL)arg1;
 - (id)initWithAddressBook:(void*)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (NSInteger)insertionProperty;
+- (id)initWithStyle:(int)arg1;
+- (int)insertionProperty;
 - (id)insertionValue;
 - (BOOL)isDefaultViewControllerVisible;
 - (void)loadState;
@@ -75,26 +81,27 @@
 - (void)notePreferencesChanged;
 - (id)peoplePickerDelegate;
 - (void)personViewController:(id)arg1 requestedLinkForPerson:(void*)arg2;
-- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4 withMemberCell:(id)arg5;
-- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4 withMemberCell:(id)arg5;
+- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)popToDefaultViewController:(BOOL)arg1;
-- (id)promptForViewControllerType:(NSInteger)arg1;
+- (id)promptForViewControllerType:(int)arg1;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)removeChildViewController:(id)arg1;
 - (void)saveState;
 - (void)setAddressBook:(void*)arg1;
 - (void)setAllowsCancel:(BOOL)arg1;
 - (void)setAllowsCardEditing:(BOOL)arg1;
+- (void)setAllowsConferencing:(BOOL)arg1;
 - (void)setAllowsRingtone:(BOOL)arg1;
 - (void)setAllowsSounds:(BOOL)arg1;
 - (void)setBannerTitle:(id)arg1 value:(id)arg2;
-- (void)setBehavior:(NSInteger)arg1;
+- (void)setBehavior:(int)arg1;
 - (void)setContentSizeForViewInPopover:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDisplayedProperties:(id)arg1;
-- (void)setInsertionValue:(id)arg1 property:(NSInteger)arg2;
+- (void)setInsertionValue:(id)arg1 property:(int)arg2;
 - (void)setParentViewController:(id)arg1;
 - (void)setPeoplePickerDelegate:(id)arg1;
-- (void)setPrompt:(id)arg1 forViewControllerType:(NSInteger)arg2;
+- (void)setPrompt:(id)arg1 forViewControllerType:(int)arg2;
 - (void)setPrompt:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (void)setupInitialStackAndLoadState:(BOOL)arg1;

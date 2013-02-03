@@ -10,9 +10,9 @@
     UIViewController *_viewController;
 }
 
-@property(retain) NSString *name;
-@property UIViewController *viewController;
 @property BOOL animated;
+@property(retain) NSString * name;
+@property UIViewController * viewController;
 
 - (BOOL)animated;
 - (void)dealloc;

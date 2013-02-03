@@ -2,41 +2,31 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class EDCollection, EDReference;
 
 @interface EDPivotArea : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
+    boolmGrandCol;
+    boolmGrandRow;
+    boolmOutline;
     EDReference *mOffset;
     EDCollection *mReferences;
-    NSInteger mType;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mGrandCol;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mGrandRow;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mOutline;
+    int mType;
 }
 
 + (id)pivotArea;
 
 - (void)dealloc;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)grandCol;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)grandRow;
+- (bool)grandCol;
+- (bool)grandRow;
 - (id)init;
 - (id)offset;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)outline;
+- (bool)outline;
 - (id)references;
-- (void)setGrandCol:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setGrandRow:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setGrandCol:(bool)arg1;
+- (void)setGrandRow:(bool)arg1;
 - (void)setOffset:(id)arg1;
-- (void)setOutline:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setType:(NSInteger)arg1;
-- (NSInteger)type;
+- (void)setOutline:(bool)arg1;
+- (void)setType:(int)arg1;
+- (int)type;
 
 @end

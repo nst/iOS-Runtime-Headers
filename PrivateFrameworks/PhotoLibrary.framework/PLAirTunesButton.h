@@ -4,19 +4,19 @@
 
 @interface PLAirTunesButton : UINavigationButton {
     BOOL _isInMiniBar;
-    NSInteger _mode;
+    int _mode;
 }
 
 @property BOOL isInMiniBar;
-@property NSInteger mode;
+@property int mode;
 
-- (id)_imageNameForMode:(NSInteger)arg1 isInMinibar:(BOOL)arg2;
-- (void)_setImagesForMode:(NSInteger)arg1 miniBar:(BOOL)arg2;
-- (id)initWithAirTunesMode:(NSInteger)arg1;
+- (id)_imageNameForMode:(int)arg1 isInMinibar:(BOOL)arg2;
+- (void)_setImagesForMode:(int)arg1 miniBar:(BOOL)arg2;
+- (id)initWithAirTunesMode:(int)arg1;
 - (BOOL)isInMiniBar;
-- (NSInteger)mode;
+- (int)mode;
 - (void)setIsInMiniBar:(BOOL)arg1;
-- (void)setMode:(NSInteger)arg1;
+- (void)setMode:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateForMiniBarState:(BOOL)arg1;
 

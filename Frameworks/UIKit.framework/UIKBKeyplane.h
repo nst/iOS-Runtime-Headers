@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, UIKBIdentifierList, UIKBAttributeList, NSMutableArray;
 
-@interface UIKBKeyplane : NSObject <NSCoding, NSCopying> {
+@interface UIKBKeyplane : NSObject <NSCoding, NSCopying, UIKeyboardRivenKeyplane> {
     UIKBAttributeList *m_attributes;
     NSMutableArray *m_keylayouts;
     NSArray *m_keys;
@@ -12,12 +12,12 @@
     UIKBIdentifierList *m_supportedTypes;
 }
 
-@property(copy) UIKBAttributeList *attributes;
-@property(retain) NSArray *keylayouts;
-@property(readonly) NSArray *keys;
-@property(readonly) NSArray *keysOrderedByPosition;
-@property(retain) NSString *name;
-@property(copy) UIKBIdentifierList *supportedTypes;
+@property(copy) UIKBAttributeList * attributes;
+@property(retain) NSArray * keylayouts;
+@property(readonly) NSArray * keys;
+@property(readonly) NSArray * keysOrderedByPosition;
+@property(retain) NSString * name;
+@property(copy) UIKBIdentifierList * supportedTypes;
 
 + (id)keyplane;
 
@@ -48,7 +48,7 @@
 - (id)shiftAlternateKeyplaneName;
 - (BOOL)shouldSkipCandidateSelection;
 - (id)supportedTypes;
-- (BOOL)supportsType:(NSInteger)arg1;
+- (BOOL)supportsType:(int)arg1;
 - (BOOL)usesAdaptiveKeys;
 - (BOOL)usesAutoShift;
 - (BOOL)usesKeyCharging;

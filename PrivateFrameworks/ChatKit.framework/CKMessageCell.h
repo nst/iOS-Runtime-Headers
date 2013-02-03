@@ -12,7 +12,7 @@
     float _topPadding;
 }
 
-@property(readonly) CKBalloonView *balloonView;
+@property(readonly) CKBalloonView * balloonView;
 @property(retain) id replacementMessageBubbleData;
 
 + (id)_exclamationGlyphImage;
@@ -31,7 +31,7 @@
 - (id)balloonView;
 - (void)dealloc;
 - (void)didTapBalloon:(id)arg1;
-- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (void)prepareForReuse;

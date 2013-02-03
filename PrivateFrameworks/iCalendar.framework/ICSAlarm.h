@@ -2,24 +2,26 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
+@class NSArray, NSString, ICSTrigger;
+
 @interface ICSAlarm : ICSComponent {
 }
 
-@property(retain) NSArray *attach;
-@property(retain) NSArray *attendee;
-@property(retain) NSString *description;
-@property(retain) NSString *summary;
-@property(retain) ICSTrigger *trigger;
-@property(retain) NSString *x_wr_alarmuid;
-@property NSInteger action;
+@property int action;
+@property(retain) NSArray * attach;
+@property(retain) NSArray * attendee;
+@property(retain) NSString * description;
+@property(retain) NSString * summary;
+@property(retain) ICSTrigger * trigger;
+@property(retain) NSString * x_wr_alarmuid;
 
-+ (id)ICSStringFromAction:(NSInteger)arg1;
-+ (NSInteger)actionFromICSString:(id)arg1;
++ (id)ICSStringFromAction:(int)arg1;
++ (int)actionFromICSString:(id)arg1;
 + (id)name;
 
-- (NSInteger)action;
+- (int)action;
 - (void)fixAlarm;
-- (void)setAction:(NSInteger)arg1;
+- (void)setAction:(int)arg1;
 - (void)setX_wr_alarmuid:(id)arg1;
 - (id)x_wr_alarmuid;
 

@@ -8,7 +8,7 @@
     UITableViewCell *_cell;
     UITableViewCellDeleteConfirmationControl *_deleteConfirmationControl;
     UITableViewCellEditControl *_editControl;
-    NSInteger _editingStyle;
+    int _editingStyle;
     UITableViewCellReorderControl *_reorderControl;
     UIView *_reorderSeparatorView;
 }
@@ -18,7 +18,7 @@
 - (void)dealloc;
 - (id)deleteConfirmationControl:(BOOL)arg1;
 - (id)editControl:(BOOL)arg1;
-- (id)initWithTableViewCell:(id)arg1 editingStyle:(NSInteger)arg2;
+- (id)initWithTableViewCell:(id)arg1 editingStyle:(int)arg2;
 - (BOOL)isDataRequired;
 - (id)reorderControl:(BOOL)arg1;
 - (id)reorderSeparatorView:(BOOL)arg1;

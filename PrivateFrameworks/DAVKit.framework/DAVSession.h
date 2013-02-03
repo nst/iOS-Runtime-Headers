@@ -2,29 +2,30 @@
    Image: /System/Library/PrivateFrameworks/DAVKit.framework/DAVKit
  */
 
-@class <DAVAuthStore>, NSMutableArray, NSLock, NSString, AYAddress, NSMutableSet, NSMutableDictionary;
+@class NSHTTPCookieStorage, <DAVAuthStore>, NSMutableArray, NSLock, NSString, AYAddress, NSMutableSet, NSMutableDictionary;
 
 @interface DAVSession : NSObject <AYGroup> {
     NSString *_acceptEncoding;
     NSMutableSet *_adapters;
     AYAddress *_address;
     <DAVAuthStore> *_authStore;
-    NSInteger _bufferSize;
+    int _bufferSize;
     BOOL _builtinRedirect;
     BOOL _bypassCheckingServerTrust;
     BOOL _bypassProxies;
     NSLock *_certUILock;
     id _certificateDelegate;
+    NSHTTPCookieStorage *_cookieStorage;
     void *_davReserved;
     id _delegate;
     NSString *_host;
-    NSInteger _numWorkerThread;
+    int _numWorkerThread;
     NSString *_password;
     id _passwordDelegate;
     NSMutableDictionary *_permanentRedirects;
-    NSInteger _port;
+    int _port;
     NSMutableDictionary *_privateInfos;
-    NSUInteger _readTimeOut;
+    unsigned int _readTimeOut;
     NSString *_scheme;
     NSLock *_sessionLock;
     id _simpleAuthStore;
@@ -39,12 +40,12 @@
 + (id)defaultAcceptEncoding;
 + (id)defaultUserAgent;
 + (void)initialize;
-+ (id)sessionWithScheme:(id)arg1 host:(id)arg2 port:(NSInteger)arg3;
++ (id)sessionWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3;
 + (id)sessionWithURL:(id)arg1;
 + (void)setDefaultAcceptEncoding:(id)arg1;
 + (void)setDefaultUserAgent:(id)arg1;
-+ (void)setMaxRedirection:(NSInteger)arg1;
-+ (void)setMaxWorkerThreadsPerSession:(NSInteger)arg1;
++ (void)setMaxRedirection:(int)arg1;
++ (void)setMaxWorkerThreadsPerSession:(int)arg1;
 + (void)setProxiesDelegate:(id)arg1;
 
 - (id)URLToURI:(id)arg1;
@@ -54,6 +55,7 @@
 - (BOOL)bypassCheckingServerTrust;
 - (id)certificateDelegate;
 - (void)clearAuthChallenge;
+- (id)cookieStorage;
 - (void)correctBufferSizeWithSize:(long)arg1;
 - (void)dealloc;
 - (id)description;
@@ -62,7 +64,7 @@
 - (BOOL)hasCredentials;
 - (id)host;
 - (id)infoForKey:(id)arg1;
-- (id)initWithScheme:(id)arg1 host:(id)arg2 port:(NSInteger)arg3;
+- (id)initWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isBuiltinRedirect;
 - (BOOL)isBypassProxies;
@@ -74,8 +76,8 @@
 - (void)operationHasEnded:(id)arg1;
 - (BOOL)operationShouldBeLaunchedNow:(id)arg1;
 - (id)password;
-- (NSInteger)port;
-- (NSUInteger)readTimeOut;
+- (int)port;
+- (unsigned int)readTimeOut;
 - (void)removeTrustedCerts;
 - (id)scheme;
 - (void)setAuthStore:(id)arg1;
@@ -83,11 +85,12 @@
 - (void)setBypassCheckingServerTrust:(BOOL)arg1;
 - (void)setBypassProxies:(BOOL)arg1;
 - (void)setCertificateDelegate:(id)arg1;
+- (void)setCookieStorage:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInfo:(id)arg1 forKey:(id)arg2;
 - (void)setKeepAlive:(BOOL)arg1;
 - (void)setLockOwner:(id)arg1;
-- (void)setReadTimeOut:(NSUInteger)arg1;
+- (void)setReadTimeOut:(unsigned int)arg1;
 - (void)setSupportsDigest:(BOOL)arg1;
 - (void)setTrustedCerts:(id)arg1;
 - (void)setUseAuth:(BOOL)arg1;
@@ -101,6 +104,6 @@
 - (BOOL)useKerberos;
 - (id)userAgent;
 - (id)username;
-- (NSInteger)workerThreadsCount;
+- (int)workerThreadsCount;
 
 @end

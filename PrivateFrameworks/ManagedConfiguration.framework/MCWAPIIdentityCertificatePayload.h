@@ -8,9 +8,9 @@
     NSData *_pemData;
 }
 
-@property(readonly) NSData *pemData;
+@property(readonly) NSData * pemData;
 
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
 - (struct __SecCertificate { }*)copyCertificate;

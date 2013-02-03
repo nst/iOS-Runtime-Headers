@@ -7,14 +7,14 @@
 @interface GMMImage : PBCodable {
     NSData *_imageData;
     NSString *_key;
-    NSInteger _type;
+    int _type;
 }
 
-@property(retain) NSData *imageData;
-@property(retain) NSString *key;
 @property(readonly) BOOL hasImageData;
 @property(readonly) BOOL hasKey;
-@property NSInteger type;
+@property(retain) NSData * imageData;
+@property(retain) NSString * key;
+@property int type;
 
 - (void)dealloc;
 - (id)description;
@@ -27,8 +27,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setImageData:(id)arg1;
 - (void)setKey:(id)arg1;
-- (void)setType:(NSInteger)arg1;
-- (NSInteger)type;
+- (void)setType:(int)arg1;
+- (int)type;
 - (void)writeTo:(id)arg1;
 
 @end

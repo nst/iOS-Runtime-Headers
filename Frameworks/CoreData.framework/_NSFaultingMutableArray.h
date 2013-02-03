@@ -8,7 +8,7 @@
     struct _NSFaultingMutableArrayFlags { 
         unsigned int _isFault : 1; 
         unsigned int _reserved : 31; 
-    NSInteger _cd_rc;
+    int _cd_rc;
     } _flags;
     NSMutableArray *_realArray;
     NSPropertyDescription *_relationship;
@@ -21,26 +21,26 @@
 
 - (void)addObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
-- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
-- (id)descriptionWithLocale:(id)arg1 indent:(NSUInteger)arg2;
+- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
 - (id)descriptionWithLocale:(id)arg1;
 - (void)getObjects:(id*)arg1;
 - (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
-- (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (BOOL)isFault;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)objectAtIndex:(NSUInteger)arg1;
+- (id)objectAtIndex:(unsigned int)arg1;
 - (id)objectEnumerator;
 - (id)relationship;
 - (void)release;
 - (void)removeLastObject;
-- (void)removeObjectAtIndex:(NSUInteger)arg1;
-- (void)replaceObjectAtIndex:(NSUInteger)arg1 withObject:(id)arg2;
+- (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)source;
 - (void)turnIntoFault;

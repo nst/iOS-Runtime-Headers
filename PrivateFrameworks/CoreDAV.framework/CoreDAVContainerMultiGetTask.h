@@ -2,23 +2,23 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSSet, NSString;
+@class NSSet, NSString, <CoreDAVContainerMultiGetTaskDelegate>;
 
 @interface CoreDAVContainerMultiGetTask : CoreDAVTask {
     NSSet *_additionalPropElements;
     Class _appSpecificDataItemClass;
     NSString *_appSpecificDataProp;
     NSString *_appSpecificMultiGetCommand;
+    NSString *_appSpecificMultiGetNameSpace;
     NSString *_appSpecificNamespace;
     BOOL _shouldIgnoreResponseErrors;
     NSSet *_urls;
 }
 
-@property(retain) NSSet *additionalPropElements;
-@property <CoreDAVContainerMultiGetTaskDelegate> *delegate;
+@property(retain) NSSet * additionalPropElements;
+@property <CoreDAVContainerMultiGetTaskDelegate> * delegate;
 @property BOOL shouldIgnoreResponseErrors;
 
-- (id)_initWithURLs:(id)arg1 atContainerURL:(id)arg2 appSpecificDataItemClass:(Class)arg3;
 - (id)additionalPropElements;
 - (id)copyAdditionalPropElements;
 - (id)copyDefaultParserForContentType:(id)arg1;

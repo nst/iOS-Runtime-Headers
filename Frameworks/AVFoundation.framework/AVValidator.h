@@ -2,18 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVValidatorInternal;
+@class NSError, AVValidatorInternal, NSURL;
 
 @interface AVValidator : NSObject {
     AVValidatorInternal *_priv;
 }
 
-@property(readonly) NSURL *initialURL;
-@property(readonly) NSURL *resolvedURL;
+@property(readonly) NSError * error;
+@property(readonly) NSURL * initialURL;
 @property(readonly) float progress;
-@property(readonly) BOOL resourceIsInspectable;
+@property(readonly) NSURL * resolvedURL;
 @property(readonly) BOOL resourceIsPlayable;
-@property(readonly) NSInteger status;
+@property(readonly) int status;
 
 + (BOOL)_containsStreamingResource:(id)arg1;
 + (void)initialize;
@@ -23,16 +23,18 @@
 + (BOOL)isSupportedType:(id)arg1;
 + (BOOL)isSupportedURL:(id)arg1;
 
+- (void)_invokeAndReleaseCompletionHandler;
+- (BOOL)_resourceIsStreaming;
 - (void)cancelValidation;
 - (void)dealloc;
+- (id)error;
 - (id)initWithURL:(id)arg1;
 - (id)initialURL;
 - (float)progress;
 - (id)resolvedURL;
-- (BOOL)resourceIsInspectable;
 - (BOOL)resourceIsPlayable;
 - (void)setValidationPlist:(id)arg1;
-- (NSInteger)status;
+- (int)status;
 - (void)validateAsynchronouslyWithCompletionHandler:(id)arg1;
 - (id)validationPlist;
 

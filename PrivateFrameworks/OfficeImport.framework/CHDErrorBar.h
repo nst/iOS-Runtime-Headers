@@ -2,45 +2,39 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class CHDChart, CHDData, OADGraphicProperties;
 
 @interface CHDErrorBar : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
+    boolmNoEndCap;
     CHDChart *mChart;
-    NSInteger mDirection;
+    int mDirection;
     OADGraphicProperties *mGraphicProperties;
     CHDData *mMinusValues;
     CHDData *mPlusValues;
-    NSInteger mType;
+    int mType;
     double mValue;
-    NSInteger mValueType;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mNoEndCap;
+    int mValueType;
 }
 
 + (id)errorBarWithChart:(id)arg1;
 
 - (void)dealloc;
-- (NSInteger)direction;
+- (int)direction;
 - (id)graphicProperties;
 - (id)initWithChart:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isNoEndCap;
+- (bool)isNoEndCap;
 - (id)minusValues;
 - (id)plusValues;
-- (void)setDirection:(NSInteger)arg1;
+- (void)setDirection:(int)arg1;
 - (void)setGraphicProperties:(id)arg1;
 - (void)setMinusValues:(id)arg1;
-- (void)setNoEndCap:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setNoEndCap:(bool)arg1;
 - (void)setPlusValues:(id)arg1;
-- (void)setType:(NSInteger)arg1;
+- (void)setType:(int)arg1;
 - (void)setValue:(double)arg1;
-- (void)setValueType:(NSInteger)arg1;
-- (NSInteger)type;
+- (void)setValueType:(int)arg1;
+- (int)type;
 - (double)value;
-- (NSInteger)valueType;
+- (int)valueType;
 
 @end

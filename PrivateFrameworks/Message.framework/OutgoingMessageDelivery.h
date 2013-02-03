@@ -23,12 +23,12 @@
 + (id)newWithMessage:(id)arg1;
 
 - (id)_currentDeliveryObject;
-- (NSInteger)_deliverSynchronouslyWithCurrentSettings:(BOOL)arg1;
+- (int)_deliverSynchronouslyWithCurrentSettings:(BOOL)arg1;
 - (id)_deliveryAccountForInitializers;
 - (id)account;
 - (void)dealloc;
-- (NSInteger)deliverSynchronously;
-- (NSInteger)deliveryStatus;
+- (int)deliverSynchronously;
+- (int)deliveryStatus;
 - (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
 - (id)initWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
 - (id)initWithMessage:(id)arg1;

@@ -5,23 +5,24 @@
 @class NSString;
 
 @interface GrammarPart : NSObject {
-    NSInteger depth;
-    NSString *name;
-    NSInteger order;
+    int _depth;
+    NSString *_name;
+    int _order;
 }
 
-@property(readonly) NSString *name;
-@property(readonly) NSInteger depth;
-@property(readonly) NSInteger order;
+@property(readonly) int depth;
+@property(readonly) NSString * name;
+@property(readonly) int order;
 
 + (id)instanceFromPlist:(id)arg1;
 
 - (id)appliedTo:(id)arg1;
-- (NSInteger)depth;
+- (void)dealloc;
+- (int)depth;
 - (id)description;
 - (void)genericSetUpFromPlist:(id)arg1;
 - (id)name;
-- (NSInteger)order;
-- (NSInteger)orderComparedTo:(id)arg1;
+- (int)order;
+- (int)orderComparedTo:(id)arg1;
 
 @end

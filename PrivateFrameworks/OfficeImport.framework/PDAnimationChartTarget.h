@@ -3,19 +3,19 @@
  */
 
 @interface PDAnimationChartTarget : PDAnimationShapeTarget {
-    NSInteger mBuildStep;
-    NSInteger mCatagoryIndex;
-    NSInteger mSeriesIndex;
+    int mBuildStep;
+    int mCatagoryIndex;
+    int mSeriesIndex;
 }
 
-- (NSInteger)buildStep;
-- (NSInteger)catagoryIndex;
-- (NSUInteger)hash;
+- (int)buildStep;
+- (int)catagoryIndex;
+- (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
-- (NSInteger)seriesIndex;
-- (void)setBuildStep:(NSInteger)arg1;
-- (void)setCatagoryIndex:(NSInteger)arg1;
-- (void)setSeriesIndex:(NSInteger)arg1;
+- (int)seriesIndex;
+- (void)setBuildStep:(int)arg1;
+- (void)setCatagoryIndex:(int)arg1;
+- (void)setSeriesIndex:(int)arg1;
 
 @end

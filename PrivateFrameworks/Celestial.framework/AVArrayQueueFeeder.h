@@ -11,12 +11,12 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithArray:(id)arg1;
-- (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
-- (NSUInteger)itemCount;
-- (id)itemForIndex:(NSUInteger)arg1;
-- (NSUInteger)numberOfPaths;
-- (id)pathAtIndex:(NSUInteger)arg1;
-- (void)removeObjectAtIndex:(NSUInteger)arg1;
-- (void)shuffleWithCurrentIndex:(NSUInteger)arg1;
+- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (unsigned int)itemCount;
+- (id)itemForIndex:(unsigned int)arg1;
+- (unsigned int)numberOfPaths;
+- (id)pathAtIndex:(unsigned int)arg1;
+- (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)shuffleWithCurrentIndex:(unsigned int)arg1;
 
 @end

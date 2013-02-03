@@ -6,8 +6,8 @@
 
 @interface AVMetadataEnumerator : NSEnumerator {
     NSEnumerator *_arrayEnumerator;
-    NSInteger _count;
-    NSInteger _index;
+    int _count;
+    int _index;
     id _key;
     NSString *_keySpace;
     NSLocale *_locale;

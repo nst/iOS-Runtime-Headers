@@ -5,19 +5,19 @@
 @interface OABStroke : NSObject {
 }
 
-+ (NSInteger)readCapStyle:(NSInteger)arg1;
-+ (NSInteger)readCompoundType:(NSInteger)arg1;
-+ (NSInteger)readLineEndLength:(NSInteger)arg1;
-+ (NSInteger)readLineEndType:(NSInteger)arg1;
-+ (NSInteger)readLineEndWidth:(NSInteger)arg1;
-+ (id)readLineEndWithType:(NSInteger)arg1 width:(NSInteger)arg2 length:(NSInteger)arg3;
-+ (NSInteger)readPresetDashStyle:(NSInteger)arg1;
++ (int)readCapStyle:(int)arg1;
++ (int)readCompoundType:(int)arg1;
++ (int)readLineEndLength:(int)arg1;
++ (int)readLineEndType:(int)arg1;
++ (int)readLineEndWidth:(int)arg1;
++ (id)readLineEndWithType:(int)arg1 width:(int)arg2 length:(int)arg3;
++ (int)readPresetDashStyle:(int)arg1;
 + (id)readStrokeFromShapeBaseManager:(id)arg1 colorPalette:(id)arg2;
-+ (NSInteger)writeCapStyle:(NSInteger)arg1;
-+ (NSInteger)writeCompoundType:(NSInteger)arg1;
-+ (NSInteger)writeLineEndLength:(NSInteger)arg1;
-+ (NSInteger)writeLineEndType:(NSInteger)arg1;
-+ (NSInteger)writeLineEndWidth:(NSInteger)arg1;
-+ (NSInteger)writePresetDashStyle:(NSInteger)arg1;
++ (int)writeCapStyle:(int)arg1;
++ (int)writeCompoundType:(int)arg1;
++ (int)writeLineEndLength:(int)arg1;
++ (int)writeLineEndType:(int)arg1;
++ (int)writeLineEndWidth:(int)arg1;
++ (int)writePresetDashStyle:(int)arg1;
 
 @end

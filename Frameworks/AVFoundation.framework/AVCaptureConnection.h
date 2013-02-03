@@ -2,21 +2,21 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureConnectionInternal;
+@class AVCaptureConnectionInternal, AVCaptureOutput, NSArray;
 
 @interface AVCaptureConnection : NSObject {
     AVCaptureConnectionInternal *_internal;
 }
 
-@property(readonly) NSArray *audioChannels;
-@property(readonly) NSArray *inputPorts;
-@property(readonly) AVCaptureOutput *output;
 @property(getter=isActive,readonly) BOOL active;
+@property(readonly) NSArray * audioChannels;
 @property(getter=isEnabled) BOOL enabled;
+@property(readonly) NSArray * inputPorts;
+@property(readonly) AVCaptureOutput * output;
 @property(getter=isVideoMirroringSupported,readonly) BOOL supportsVideoMirroring;
 @property(getter=isVideoOrientationSupported,readonly) BOOL supportsVideoOrientation;
 @property(getter=isVideoMirrored) BOOL videoMirrored;
-@property NSInteger videoOrientation;
+@property int videoOrientation;
 
 + (id)connectionWithInputPorts:(id)arg1 output:(id)arg2;
 
@@ -42,11 +42,11 @@
 - (void)setActive:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setVideoMirrored:(BOOL)arg1;
-- (void)setVideoOrientation:(NSInteger)arg1;
+- (void)setVideoOrientation:(int)arg1;
 - (void)setVideoScaleAndCropFactor:(float)arg1;
 - (void)updateAudioChannelsArray;
 - (void)updateAudioLevelsArray;
-- (NSInteger)videoOrientation;
+- (int)videoOrientation;
 - (float)videoScaleAndCropFactor;
 
 @end

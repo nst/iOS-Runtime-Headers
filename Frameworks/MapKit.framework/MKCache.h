@@ -2,33 +2,35 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
+@class NSArray;
+
 @interface MKCache : NSObject {
     id _imp;
 }
 
-@property(readonly) NSArray *allObjects;
+@property(readonly) NSArray * allObjects;
 @property float compactionFactor;
-@property(readonly) NSUInteger count;
-@property(readonly) NSUInteger maxCapacity;
+@property(readonly) unsigned int count;
+@property(readonly) unsigned int maxCapacity;
 
-+ (id)impWithCapacity:(NSUInteger)arg1 maxCapacity:(NSUInteger)arg2 delegate:(id)arg3;
++ (id)impWithCapacity:(unsigned int)arg1 maxCapacity:(unsigned int)arg2 delegate:(id)arg3;
 
 - (id)allObjects;
 - (void)compact;
 - (float)compactionFactor;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
-- (NSUInteger)getKeys:(const void**)arg1 values:(const void**)arg2;
+- (unsigned int)getKeys:(const void**)arg1 values:(const void**)arg2;
 - (id)init;
-- (id)initWithCapacity:(NSUInteger)arg1 maxCapacity:(NSUInteger)arg2;
-- (id)initWithCapacity:(NSUInteger)arg1;
-- (NSUInteger)maxCapacity;
+- (id)initWithCapacity:(unsigned int)arg1 maxCapacity:(unsigned int)arg2;
+- (id)initWithCapacity:(unsigned int)arg1;
+- (unsigned int)maxCapacity;
 - (id)objectForKey:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectsForKeys:(id)arg1;
 - (void)setCompactionFactor:(float)arg1;
-- (void)setMaxCapacity:(NSUInteger)arg1;
+- (void)setMaxCapacity:(unsigned int)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 
 @end

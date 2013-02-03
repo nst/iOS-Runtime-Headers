@@ -6,38 +6,38 @@
 
 @interface EKEventDetailItem : NSObject <EKEventEditItemViewControllerDelegate> {
     BOOL _allowsEditing;
-    NSInteger _cellPosition;
+    int _cellPosition;
     <EKEventDetailItemDelegate> *_delegate;
     EKEvent *_event;
     EKEventStore *_store;
     EKEventEditItemViewController *_viewController;
 }
 
-@property <EKEventDetailItemDelegate> *delegate;
 @property BOOL allowsEditing;
-@property NSInteger cellPosition;
+@property int cellPosition;
+@property <EKEventDetailItemDelegate> * delegate;
 
 - (BOOL)allowsEditing;
-- (id)cellForSubitemAtIndex:(NSInteger)arg1;
-- (NSInteger)cellPosition;
+- (id)cellForSubitemAtIndex:(int)arg1;
+- (int)cellPosition;
 - (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
 - (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(NSInteger)arg1 forWidth:(float)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
 - (id)delegate;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(NSInteger)arg2;
-- (void)editItemViewController:(id)arg1 didCompleteWithAction:(NSInteger)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2;
+- (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (BOOL)eventEditItemViewControllerCommit:(id)arg1;
-- (void)eventViewController:(id)arg1 didSelectSubitem:(NSInteger)arg2;
-- (BOOL)hasDetailViewControllerAtIndex:(NSUInteger)arg1;
-- (void)layoutCellsForWidth:(float)arg1 position:(NSInteger)arg2;
+- (void)eventViewController:(id)arg1 didSelectSubitem:(int)arg2;
+- (BOOL)hasDetailViewControllerAtIndex:(unsigned int)arg1;
+- (void)layoutCellsForWidth:(float)arg1 position:(int)arg2;
 - (void)notifyDidEndEditing;
 - (void)notifyDidStartEditing;
-- (void)notifySubitemDidCommit:(NSInteger)arg1;
-- (NSInteger)numberOfSubitems;
+- (void)notifySubitemDidCommit:(int)arg1;
+- (int)numberOfSubitems;
 - (void)reset;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
 - (void)setAllowsEditing:(BOOL)arg1;
-- (void)setCellPosition:(NSInteger)arg1;
+- (void)setCellPosition:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEvent:(id)arg1 store:(id)arg2;
 

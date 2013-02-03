@@ -8,14 +8,14 @@
     NSObject<CKContentEntryBridgeClient> *_entryView;
 }
 
-@property NSObject<CKContentEntryBridgeClient> *contentEntryView;
+@property NSObject<CKContentEntryBridgeClient> * contentEntryView;
 
 + (id)newContentEntryBridge;
 
 - (id)attachments;
 - (id)contentEntryView;
 - (void)dealloc;
-- (id)documentFragmentForPasteboardItemAtIndex:(NSInteger)arg1 inTextContentView:(id)arg2;
+- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1 inTextContentView:(id)arg2;
 - (BOOL)hasContent;
 - (void)insertMessagePart:(id)arg1;
 - (id)messageComposition;

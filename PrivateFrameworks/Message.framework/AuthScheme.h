@@ -15,13 +15,13 @@
 - (id)authenticatorForAccount:(id)arg1 connection:(id)arg2;
 - (BOOL)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
 - (Class)connectionClassForAccountClass:(Class)arg1;
-- (NSUInteger)defaultPortForAccount:(id)arg1;
+- (unsigned int)defaultPortForAccount:(id)arg1;
 - (BOOL)hasEncryption;
 - (id)humanReadableName;
 - (id)name;
 - (void)release;
 - (BOOL)requiresPassword;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

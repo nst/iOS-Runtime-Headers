@@ -6,23 +6,23 @@
     double _timestamp;
 }
 
-@property(readonly) NSInteger subtype;
+@property(readonly) int subtype;
 @property(readonly) double timestamp;
-@property(readonly) NSInteger type;
+@property(readonly) int type;
 
 - (struct __GSEvent { }*)_gsEvent;
 - (id)_init;
 - (id)_initWithEvent:(struct __GSEvent { }*)arg1 touches:(id)arg2;
 - (id)_mk_copyReplacingTouch:(id)arg1 withTouch:(id)arg2;
 - (void)_setTimestamp:(double)arg1;
-- (NSInteger)_shakeState;
+- (int)_shakeState;
 - (id)_touchesForGestureRecognizer:(id)arg1;
 - (id)allTouches;
-- (NSInteger)subtype;
+- (int)subtype;
 - (double)timestamp;
 - (id)touchesForGestureRecognizer:(id)arg1;
 - (id)touchesForView:(id)arg1;
 - (id)touchesForWindow:(id)arg1;
-- (NSInteger)type;
+- (int)type;
 
 @end

@@ -5,9 +5,9 @@
 @class AVRunLoopCondition, AVWeakReference;
 
 @interface AVAssetReaderOutputInternal : NSObject {
-    NSInteger extractionID;
+    int extractionID;
     struct OpaqueFigAssetReader { } *figAssetReader;
-    NSInteger finished;
+    int finished;
     AVRunLoopCondition *sampleBufferAvailabilityCondition;
     AVWeakReference *weakReference;
     AVWeakReference *weakReferenceToAssetReader;

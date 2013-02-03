@@ -5,6 +5,6 @@
 @interface EDFontsCollection : EDCollection {
 }
 
-- (NSUInteger)indexOfObjectWithFontName:(id)arg1 color:(id)arg2;
+- (unsigned int)indexOfObjectWithFontName:(id)arg1 color:(id)arg2;
 
 @end

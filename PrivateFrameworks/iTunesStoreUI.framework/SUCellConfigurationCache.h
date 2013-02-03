@@ -14,7 +14,7 @@
 + (void)_initializeSafeCategory;
 
 - (id)cellContext;
-- (id)configurationForRow:(NSUInteger)arg1;
+- (id)configurationForRow:(unsigned int)arg1;
 - (void)dealloc;
 - (id)initWithClass:(Class)arg1 tableHeight:(float)arg2;
 - (void)reset;

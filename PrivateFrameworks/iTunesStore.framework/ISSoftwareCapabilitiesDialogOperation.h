@@ -9,7 +9,7 @@
     id _requiredCapabilities;
 }
 
-@property(readonly) NSDictionary *mismatches;
+@property(readonly) NSDictionary * mismatches;
 @property(readonly) id requiredCapabilities;
 
 - (void)_postDefaultDialog;

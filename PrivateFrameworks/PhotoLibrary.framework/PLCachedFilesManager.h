@@ -24,6 +24,7 @@
 }
 
 + (BOOL)approximateCachesNeedToBeRecreated;
++ (BOOL)instanceIsRecreatingCaches;
 
 - (void)_actuallyRecreateCaches;
 - (BOOL)_cachesDirectoryIsMissingOrIsEmpty;
@@ -40,5 +41,6 @@
 - (id)initWithPhotoLibrary:(id)arg1 imageCache:(id)arg2;
 - (void)recreateCachedFilesAfterSyncWithDelay:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setIsRecreatingCaches:(BOOL)arg1;
 
 @end

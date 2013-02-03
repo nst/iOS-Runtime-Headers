@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray, NSLock;
+@class NSArray, NSMutableArray, NSLock;
 
 @interface SUScriptAccountManager : NSObject {
     NSMutableArray *_accounts;
     NSLock *_lock;
 }
 
-@property(retain,readonly) NSArray *accounts;
+@property(retain,readonly) NSArray * accounts;
 
 + (id)beginAccountManagerSessionForObject:(id)arg1;
 + (void)endAccountManagerSessionForObject:(id)arg1;

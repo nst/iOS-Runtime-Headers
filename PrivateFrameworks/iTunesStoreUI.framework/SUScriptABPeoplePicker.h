@@ -8,7 +8,7 @@
     NSArray *_properties;
 }
 
-+ (id)newPickEventWithPerson:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3;
++ (id)newPickEventWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 
 - (id)_className;
 - (void)dealloc;

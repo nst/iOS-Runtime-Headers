@@ -5,30 +5,30 @@
 @class NSMutableArray, GMMMapPoint;
 
 @interface GMMLocationShiftResponse : PBCodable {
-    NSInteger _cacheSquareLength;
+    int _cacheSquareLength;
     NSMutableArray *_coefficients;
     BOOL _hasCacheSquareLength;
     BOOL _hasValidSquareLength;
     GMMMapPoint *_originalPoint;
-    NSInteger _status;
-    NSInteger _validSquareLength;
+    int _status;
+    int _validSquareLength;
 }
 
-@property(retain) NSMutableArray *coefficients;
-@property(retain) GMMMapPoint *originalPoint;
-@property NSInteger cacheSquareLength;
-@property(readonly) NSInteger coefficientsCount;
+@property int cacheSquareLength;
+@property(retain) NSMutableArray * coefficients;
+@property(readonly) int coefficientsCount;
 @property(readonly) BOOL hasCacheSquareLength;
 @property(readonly) BOOL hasOriginalPoint;
 @property(readonly) BOOL hasValidSquareLength;
-@property NSInteger status;
-@property NSInteger validSquareLength;
+@property(retain) GMMMapPoint * originalPoint;
+@property int status;
+@property int validSquareLength;
 
 - (void)addCoefficient:(long long)arg1;
-- (NSInteger)cacheSquareLength;
-- (long long)coefficientAtIndex:(NSUInteger)arg1;
+- (int)cacheSquareLength;
+- (long long)coefficientAtIndex:(unsigned int)arg1;
 - (id)coefficients;
-- (NSInteger)coefficientsCount;
+- (int)coefficientsCount;
 - (void)dealloc;
 - (id)description;
 - (BOOL)hasCacheSquareLength;
@@ -37,14 +37,14 @@
 - (id)init;
 - (id)originalPoint;
 - (BOOL)readFrom:(id)arg1;
-- (void)setCacheSquareLength:(NSInteger)arg1;
-- (void)setCoefficient:(long long)arg1 atIndex:(NSUInteger)arg2;
+- (void)setCacheSquareLength:(int)arg1;
+- (void)setCoefficient:(long long)arg1 atIndex:(unsigned int)arg2;
 - (void)setCoefficients:(id)arg1;
 - (void)setOriginalPoint:(id)arg1;
-- (void)setStatus:(NSInteger)arg1;
-- (void)setValidSquareLength:(NSInteger)arg1;
-- (NSInteger)status;
-- (NSInteger)validSquareLength;
+- (void)setStatus:(int)arg1;
+- (void)setValidSquareLength:(int)arg1;
+- (int)status;
+- (int)validSquareLength;
 - (void)writeTo:(id)arg1;
 
 @end

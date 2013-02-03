@@ -24,7 +24,7 @@
         unsigned int needsReload : 1; 
         unsigned int layoutTimeViews : 1; 
         unsigned int computeTrackRect : 1; 
-        NSUInteger clampingTrimRange; 
+        unsigned int clampingTrimRange; 
         unsigned int zoomed : 1; 
         unsigned int zoomAnimating : 1; 
         unsigned int trackIsPressed : 1; 
@@ -33,8 +33,8 @@
         unsigned int handleIsPressed : 1; 
         unsigned int willBeginEditing : 1; 
         unsigned int editing : 1; 
-        NSUInteger editingHandle; 
-        NSUInteger rotationDisabled; 
+        unsigned int editingHandle; 
+        unsigned int rotationDisabled; 
         unsigned int isInNavigationBar : 1; 
         unsigned int delegateValueDidChange : 1; 
         unsigned int delegateStartValueDidChange : 1; 
@@ -64,7 +64,7 @@
     BOOL _showTimeViews;
     } _sliderFlags;
     UIImageView *_thumbView;
-    NSInteger _timeComponents;
+    int _timeComponents;
     } _touchLocationWhenTrackPressBegan;
     } _trackRect;
     UIMovieScrubberTrackView *_trackView;
@@ -76,9 +76,9 @@
     float _zoomDelay;
 }
 
-@property <UIMovieScrubberDataSource> *dataSource;
-@property <UIMovieScrubberDelegate> *delegate;
 @property(getter=isContinuous) BOOL continuous;
+@property <UIMovieScrubberDataSource> * dataSource;
+@property <UIMovieScrubberDelegate> * delegate;
 @property double duration;
 @property(getter=isEditable) BOOL editable;
 @property(getter=isEditing) BOOL editing;
@@ -93,14 +93,14 @@
 @property float zoomDelay;
 
 + (void)_initializeSafeCategory;
-+ (id)timeStringForSeconds:(NSInteger)arg1 forceFullWidthComponents:(BOOL)arg2 isElapsed:(BOOL)arg3;
++ (id)timeStringForSeconds:(int)arg1 forceFullWidthComponents:(BOOL)arg2 isElapsed:(BOOL)arg3;
 
 - (void)_accessibilityDecrementMockSlider:(id)arg1;
 - (void)_accessibilityIncrementMockSlider:(id)arg1;
 - (void)_accessibilityNotifyDelegateEditingEndValueDidChange:(double)arg1;
 - (void)_accessibilityNotifyDelegateEditingStartValueDidChange:(double)arg1;
-- (void)_accessibilityNotifyDelegateScrubberDidBeginScrubbingWithHandle:(NSInteger)arg1;
-- (void)_accessibilityNotifyDelegateScrubberDidEndScrubbingWithHandle:(NSInteger)arg1;
+- (void)_accessibilityNotifyDelegateScrubberDidBeginScrubbingWithHandle:(int)arg1;
+- (void)_accessibilityNotifyDelegateScrubberDidEndScrubbingWithHandle:(int)arg1;
 - (void)_accessibilityNotifyDelegateWillBeginEditing;
 - (double)_accessibilitySliderDeltaForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
@@ -112,8 +112,8 @@
 - (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
-- (float)_editingFrameDeltaXForValue:(float)arg1 handle:(NSInteger)arg2;
-- (NSInteger)_editingHandleWithTouch:(id)arg1;
+- (float)_editingFrameDeltaXForValue:(float)arg1 handle:(int)arg2;
+- (int)_editingHandleWithTouch:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingViewFrameForEndValueWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingViewFrameForStartValueWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -154,9 +154,9 @@
 - (double)maximumTrimLength;
 - (double)minimumTrimLength;
 - (void)movieScrubberTrackView:(id)arg1 clampedSizeWidthDelta:(float)arg2 actualSizeWidthDelta:(float)arg3 originXDelta:(float)arg4 minimumVisibleValue:(float)arg5 maximumVisibleValue:(float)arg6;
-- (id)movieScrubberTrackView:(id)arg1 evenlySpacedTimestamps:(NSInteger)arg2 startingAt:(id)arg3 endingAt:(id)arg4;
+- (id)movieScrubberTrackView:(id)arg1 evenlySpacedTimestamps:(int)arg2 startingAt:(id)arg3 endingAt:(id)arg4;
 - (void)movieScrubberTrackView:(id)arg1 requestThumbnailImageForTimestamp:(id)arg2;
-- (id)movieScrubberTrackView:(id)arg1 timestampsStartingAt:(id)arg2 endingAt:(id)arg3 maxCount:(NSInteger)arg4;
+- (id)movieScrubberTrackView:(id)arg1 timestampsStartingAt:(id)arg2 endingAt:(id)arg3 maxCount:(int)arg4;
 - (void)movieScrubberTrackViewDidCollapse:(id)arg1;
 - (void)movieScrubberTrackViewDidExpand:(id)arg1;
 - (void)movieScrubberTrackViewDidFinishRequestingThumbnails:(id)arg1;

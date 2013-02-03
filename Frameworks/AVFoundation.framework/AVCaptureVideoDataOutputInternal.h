@@ -7,14 +7,14 @@
 @interface AVCaptureVideoDataOutputInternal : NSObject {
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     BOOL alwaysDiscardsLateVideoFrames;
     struct dispatch_queue_s { } *clientQueue;
     <AVCaptureVideoDataOutputSampleBufferDelegate> *delegate;
     } minFrameDuration;
-    NSUInteger pixelFormatType;
+    unsigned int pixelFormatType;
     NSDictionary *videoSettings;
 }
 

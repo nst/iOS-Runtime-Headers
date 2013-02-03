@@ -6,7 +6,7 @@
 
 @interface SUComposeReviewView : UIView <UITextContentViewDelegate> {
     unsigned int _loading : 1;
-    NSInteger _currentBodyLength;
+    int _currentBodyLength;
     <SUComposeReviewViewDelegate> *_delegate;
     SUComposeReviewHeaderView *_headerView;
     SULoadingView *_loadingView;
@@ -14,12 +14,12 @@
     UIControl *_reviewCountControl;
     UILabel *_reviewCountLabel;
     UIScrollView *_scrollView;
-    NSInteger _style;
+    int _style;
     SUTextContentView *_textContentView;
 }
 
-@property <SUComposeReviewViewDelegate> *delegate;
-@property(readonly) NSInteger composeReviewStyle;
+@property(readonly) int composeReviewStyle;
+@property <SUComposeReviewViewDelegate> * delegate;
 @property(getter=isLoading) BOOL loading;
 @property float rating;
 @property(getter=isValid,readonly) BOOL valid;
@@ -38,11 +38,11 @@
 - (void)_updateContentSize;
 - (void)composeHeaderViewValidityDidChange:(id)arg1;
 - (void)composeHeaderViewValuesDidChange:(id)arg1;
-- (NSInteger)composeReviewStyle;
+- (int)composeReviewStyle;
 - (id)copyReview;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(NSInteger)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (BOOL)isLoading;
 - (BOOL)isValid;
 - (void)layoutSubviews;
@@ -55,7 +55,7 @@
 - (void)setReview:(id)arg1;
 - (void)textContentView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)textContentView:(id)arg1 shouldChangeSizeForContentSize:(struct CGSize { float x1; float x2; })arg2;
-- (BOOL)textContentView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 replacementText:(id)arg3;
+- (BOOL)textContentView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
 - (BOOL)textContentView:(id)arg1 shouldScrollForPendingContentSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)textContentViewDidChange:(id)arg1;
 

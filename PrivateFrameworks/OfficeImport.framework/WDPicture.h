@@ -7,6 +7,6 @@
 
 - (void)dealloc;
 - (BOOL)hasContent;
-- (NSInteger)runType;
+- (int)runType;
 
 @end

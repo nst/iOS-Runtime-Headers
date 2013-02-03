@@ -2,21 +2,26 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface NSSet : NSObject <NSCopying, NSMutableCopying, NSCoding, NSFastEnumeration> {
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)set;
 + (id)setWithArray:(id)arg1 copyItems:(BOOL)arg2;
-+ (id)setWithArray:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 copyItems:(BOOL)arg3;
-+ (id)setWithArray:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
++ (id)setWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
++ (id)setWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 + (id)setWithArray:(id)arg1;
 + (id)setWithObject:(id)arg1;
 + (id)setWithObjects:(id)arg1;
-+ (id)setWithObjects:(id*)arg1 count:(NSUInteger)arg2;
++ (id)setWithObjects:(id*)arg1 count:(unsigned int)arg2;
 + (id)setWithOrderedSet:(id)arg1 copyItems:(BOOL)arg2;
-+ (id)setWithOrderedSet:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 copyItems:(BOOL)arg3;
-+ (id)setWithOrderedSet:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
++ (id)setWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
++ (id)setWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 + (id)setWithOrderedSet:(id)arg1;
 + (id)setWithSet:(id)arg1 copyItems:(BOOL)arg2;
 + (id)setWithSet:(id)arg1;
@@ -32,38 +37,38 @@
 - (id)_maxForKeyPath:(id)arg1;
 - (id)_minForKeyPath:(id)arg1;
 - (id)_sumForKeyPath:(id)arg1;
-- (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(NSUInteger)arg3 context:(void*)arg4;
+- (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4;
 - (id)allObjects;
 - (id)anyObject;
 - (Class)classForCoder;
 - (BOOL)containsObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
-- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
-- (NSUInteger)countForObject:(id)arg1;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countForObject:(id)arg1;
 - (id)description;
-- (id)descriptionWithLocale:(id)arg1 indent:(NSUInteger)arg2;
+- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
 - (id)descriptionWithLocale:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateObjectsUsingBlock:(id)arg1;
-- (void)enumerateObjectsWithOptions:(NSUInteger)arg1 usingBlock:(id)arg2;
+- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
 - (BOOL)fastIsEqualToPointerCompareSet:(id)arg1;
 - (id)filteredSetUsingPredicate:(id)arg1;
 - (void)getObjects:(id*)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithArray:(id)arg1 copyItems:(BOOL)arg2;
-- (id)initWithArray:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 copyItems:(BOOL)arg3;
-- (id)initWithArray:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (id)initWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
+- (id)initWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithArray:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithObject:(id)arg1;
 - (id)initWithObjects:(id)arg1;
-- (id)initWithObjects:(id*)arg1 count:(NSUInteger)arg2;
+- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2;
 - (id)initWithOrderedSet:(id)arg1 copyItems:(BOOL)arg2;
-- (id)initWithOrderedSet:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 copyItems:(BOOL)arg3;
-- (id)initWithOrderedSet:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (id)initWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
+- (id)initWithOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithOrderedSet:(id)arg1;
 - (id)initWithSet:(id)arg1 copyItems:(BOOL)arg2;
 - (id)initWithSet:(id)arg1;
@@ -85,17 +90,17 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;
 - (id)objectsPassingTest:(id)arg1;
-- (id)objectsWithOptions:(NSUInteger)arg1 passingTest:(id)arg2;
+- (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (id)setByAddingObject:(id)arg1;
-- (id)setByAddingObjects:(const id*)arg1 count:(NSUInteger)arg2;
+- (id)setByAddingObjects:(const id*)arg1 count:(unsigned int)arg2;
 - (id)setByAddingObjectsFromArray:(id)arg1;
 - (id)setByAddingObjectsFromOrderedSet:(id)arg1;
 - (id)setByAddingObjectsFromSet:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)sortedArrayUsingComparator:(id)arg1;
 - (id)sortedArrayUsingDescriptors:(id)arg1;
-- (id)sortedArrayWithOptions:(NSUInteger)arg1 usingComparator:(id)arg2;
+- (id)sortedArrayWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
 - (id)valueForKey:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;
 

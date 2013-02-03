@@ -2,30 +2,32 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+@class NSString;
+
 @interface MPMediaPlaylist : MPMediaItemCollection {
 }
 
-@property(readonly) NSString *name;
+@property(readonly) NSString * name;
 @property(readonly) unsigned long long persistentID;
-@property(readonly) NSInteger playlistAttributes;
+@property(readonly) int playlistAttributes;
 
 + (void)_createFilterableDictionary;
 + (BOOL)_isValidPlaylistProperty:(id)arg1;
 + (BOOL)canFilterByProperty:(id)arg1;
 
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)existsInLibrary;
 - (id)geniusMixArtworkForSize:(struct CGSize { float x1; float x2; })arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPersistentID:(unsigned long long)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)items;
-- (NSInteger)mediaTypes;
+- (int)mediaTypes;
 - (id)name;
 - (unsigned long long)persistentID;
-- (NSInteger)playlistAttributes;
+- (int)playlistAttributes;
 - (id)representativeItem;
 - (id)valueForProperty:(id)arg1;
 

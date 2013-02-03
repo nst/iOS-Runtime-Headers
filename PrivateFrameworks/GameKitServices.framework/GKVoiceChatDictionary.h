@@ -6,23 +6,23 @@
 
 @interface GKVoiceChatDictionary : NSObject {
     NSMutableDictionary *actualDictionary;
-    NSInteger orignalCallID;
-    NSUInteger type;
+    int orignalCallID;
+    unsigned int type;
 }
 
-@property NSInteger callID;
-@property NSInteger nonce;
-@property(readonly) NSInteger originalCallID;
+@property int callID;
+@property int nonce;
+@property(readonly) int originalCallID;
 
 + (id)dictionaryFromData:(id)arg1;
-+ (id)inviteDictionaryToParticipantID:(id)arg1 fromParticipantID:(id)arg2 connectionData:(id)arg3 callID:(NSInteger)arg4 focus:(BOOL)arg5;
++ (id)inviteDictionaryToParticipantID:(id)arg1 fromParticipantID:(id)arg2 connectionData:(id)arg3 callID:(int)arg4 focus:(BOOL)arg5;
 + (BOOL)validateCancel:(id)arg1;
 + (BOOL)validateDictionary:(id)arg1;
 + (BOOL)validateFocus:(id)arg1;
 + (BOOL)validateInvite:(id)arg1;
 + (BOOL)validateReply:(id)arg1;
 
-- (NSInteger)callID;
+- (int)callID;
 - (id)cancelDictionary;
 - (id)connectionData;
 - (id)createBlob;
@@ -38,21 +38,21 @@
 - (BOOL)isInviteDictionary;
 - (BOOL)isReplyDictionary;
 - (id)localVCPartyID;
-- (BOOL)matchesNonce:(NSInteger)arg1;
+- (BOOL)matchesNonce:(int)arg1;
 - (BOOL)matchesResponse:(id)arg1;
-- (NSInteger)nonce;
-- (NSInteger)originalCallID;
+- (int)nonce;
+- (int)originalCallID;
 - (id)participantID;
 - (id)remoteVCPartyID;
-- (id)replyDictionary:(NSUInteger)arg1 connectionData:(id)arg2 callID:(NSInteger)arg3 focus:(BOOL)arg4;
-- (NSUInteger)response;
-- (void)setCallID:(NSInteger)arg1;
+- (id)replyDictionary:(unsigned int)arg1 connectionData:(id)arg2 callID:(int)arg3 focus:(BOOL)arg4;
+- (unsigned int)response;
+- (void)setCallID:(int)arg1;
 - (void)setFocus:(BOOL)arg1;
 - (void)setFromParticipantID:(id)arg1;
 - (id)setLocalVCPartyID:(id)arg1;
-- (void)setNonce:(NSInteger)arg1;
+- (void)setNonce:(int)arg1;
 - (id)setRemoteVCPartyID:(id)arg1;
-- (NSUInteger)type;
+- (unsigned int)type;
 - (id)version;
 
 @end

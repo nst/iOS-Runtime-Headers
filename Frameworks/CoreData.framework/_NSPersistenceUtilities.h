@@ -6,7 +6,7 @@
 }
 
 + (BOOL)_setURL:(id)arg1 forPersistentStore:(id)arg2 withCoordinator:(id)arg3;
-+ (NSUInteger)attributeTypeForXMLInfo:(id)arg1;
++ (unsigned int)attributeTypeForXMLInfo:(id)arg1;
 + (void)initialize;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISURLRequest, NSArray, NSString, NSNumber;
+@class NSArray, NSString, NSNumber, SSURLRequestProperties;
 
 @interface SUStorePageProtocol : NSObject <NSCopying> {
     NSArray *_allowedOrientations;
@@ -12,21 +12,21 @@
     NSArray *_navigationButtons;
     NSArray *_navigationHistoryItems;
     NSArray *_navigationMenus;
-    ISURLRequest *_overlayBackgroundURLRequest;
+    SSURLRequestProperties *_overlayBackgroundURLRequestProperties;
     NSString *_rootSectionIdentifier;
     BOOL _shouldDisplayInOverlay;
     BOOL _shouldExcludeFromNavigationHistory;
 }
 
-@property(retain) NSArray *allowedOrientations;
-@property(retain) NSString *copyright;
-@property(retain) NSString *expectedClientIdentifier;
-@property(retain) NSNumber *focusedItemIdentifier;
-@property(copy) NSArray *navigationButtons;
-@property(retain) NSArray *navigationHistoryItems;
-@property(copy) NSArray *navigationMenus;
-@property(retain) ISURLRequest *overlayBackgroundURLRequest;
-@property(retain) NSString *rootSectionIdentifier;
+@property(retain) NSArray * allowedOrientations;
+@property(retain) NSString * copyright;
+@property(retain) NSString * expectedClientIdentifier;
+@property(retain) NSNumber * focusedItemIdentifier;
+@property(copy) NSArray * navigationButtons;
+@property(retain) NSArray * navigationHistoryItems;
+@property(copy) NSArray * navigationMenus;
+@property(retain) SSURLRequestProperties * overlayBackgroundURLRequestProperties;
+@property(retain) NSString * rootSectionIdentifier;
 @property BOOL shouldDisplayInOverlay;
 @property BOOL shouldExcludeFromNavigationHistory;
 
@@ -44,9 +44,10 @@
 - (id)navigationButtonForLocation:(id)arg1;
 - (id)navigationButtons;
 - (id)navigationHistoryItems;
-- (id)navigationMenuForLocation:(NSInteger)arg1;
+- (id)navigationMenuForLocation:(int)arg1;
 - (id)navigationMenus;
 - (id)overlayBackgroundURLRequest;
+- (id)overlayBackgroundURLRequestProperties;
 - (id)rootSectionIdentifier;
 - (void)setAllowedOrientations:(id)arg1;
 - (void)setCopyright:(id)arg1;
@@ -56,6 +57,7 @@
 - (void)setNavigationHistoryItems:(id)arg1;
 - (void)setNavigationMenus:(id)arg1;
 - (void)setOverlayBackgroundURLRequest:(id)arg1;
+- (void)setOverlayBackgroundURLRequestProperties:(id)arg1;
 - (void)setRootSectionIdentifier:(id)arg1;
 - (void)setShouldDisplayInOverlay:(BOOL)arg1;
 - (void)setShouldExcludeFromNavigationHistory:(BOOL)arg1;

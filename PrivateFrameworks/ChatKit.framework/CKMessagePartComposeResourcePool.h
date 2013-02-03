@@ -5,11 +5,11 @@
 @interface CKMessagePartComposeResourcePool : NSObject {
 }
 
-+ (void)addComposeImage:(id)arg1 withID:(NSInteger)arg2 forProvider:(NSInteger)arg3;
-+ (id)composeImageWithPartID:(NSInteger)arg1 providerID:(NSInteger)arg2;
-+ (void)relinquishProviderID:(NSInteger)arg1;
-+ (void)removeAllPartsForProviderID:(NSInteger)arg1;
-+ (void)removeComposeImageWithID:(NSInteger)arg1 forProvider:(NSInteger)arg2;
-+ (NSInteger)requestProviderID;
++ (void)addComposeImage:(id)arg1 withID:(int)arg2 forProvider:(int)arg3;
++ (id)composeImageWithPartID:(int)arg1 providerID:(int)arg2;
++ (void)relinquishProviderID:(int)arg1;
++ (void)removeAllPartsForProviderID:(int)arg1;
++ (void)removeComposeImageWithID:(int)arg1 forProvider:(int)arg2;
++ (int)requestProviderID;
 
 @end

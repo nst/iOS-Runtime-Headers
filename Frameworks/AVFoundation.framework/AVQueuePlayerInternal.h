@@ -5,7 +5,7 @@
 @class NSMutableArray;
 
 @interface AVQueuePlayerInternal : NSObject {
-    NSInteger beginModificationCount;
+    int beginModificationCount;
     NSMutableArray *queuedModifications;
 }
 

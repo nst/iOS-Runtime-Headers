@@ -11,7 +11,7 @@
     BOOL _executing;
     BOOL _finished;
     NSURL *_resourceURL;
-    NSInteger _result;
+    int _result;
     id _userInfoPList;
 }
 

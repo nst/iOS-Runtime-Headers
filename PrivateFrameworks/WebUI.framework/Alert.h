@@ -7,36 +7,36 @@
 @interface Alert : NSObject {
     NSString *_bodyText;
     id _context;
-    NSInteger _defaultAction;
-    NSInteger _hideAction;
-    NSInteger _indexOfSelectedTableItem;
-    NSInteger _otherAction;
-    NSInteger _tableAction;
+    int _defaultAction;
+    int _hideAction;
+    int _indexOfSelectedTableItem;
+    int _otherAction;
+    int _tableAction;
     NSMutableArray *_tableItems;
     NSString *_title;
-    NSInteger _type;
+    int _type;
 }
 
-- (id)_buttonTitleForAction:(NSInteger)arg1;
-- (NSInteger)actionForButtonTag:(NSUInteger)arg1;
+- (id)_buttonTitleForAction:(int)arg1;
+- (int)actionForButtonTag:(unsigned int)arg1;
 - (id)bodyText;
 - (id)buttonTitles;
 - (id)context;
 - (void)dealloc;
-- (NSInteger)defaultAction;
-- (NSInteger)hideAction;
-- (id)initWithType:(NSInteger)arg1 title:(id)arg2 bodyText:(id)arg3 defaultAction:(NSInteger)arg4 otherAction:(NSInteger)arg5 tableAction:(NSInteger)arg6;
-- (id)initWithType:(NSInteger)arg1 title:(id)arg2 bodyText:(id)arg3 defaultAction:(NSInteger)arg4 otherAction:(NSInteger)arg5;
-- (id)initWithType:(NSInteger)arg1 title:(id)arg2 defaultAction:(NSInteger)arg3 otherAction:(NSInteger)arg4 tableAction:(NSInteger)arg5;
-- (id)initWithType:(NSInteger)arg1 title:(id)arg2 defaultAction:(NSInteger)arg3 otherAction:(NSInteger)arg4;
+- (int)defaultAction;
+- (int)hideAction;
+- (id)initWithType:(int)arg1 title:(id)arg2 bodyText:(id)arg3 defaultAction:(int)arg4 otherAction:(int)arg5 tableAction:(int)arg6;
+- (id)initWithType:(int)arg1 title:(id)arg2 bodyText:(id)arg3 defaultAction:(int)arg4 otherAction:(int)arg5;
+- (id)initWithType:(int)arg1 title:(id)arg2 defaultAction:(int)arg3 otherAction:(int)arg4 tableAction:(int)arg5;
+- (id)initWithType:(int)arg1 title:(id)arg2 defaultAction:(int)arg3 otherAction:(int)arg4;
 - (id)selectedTableItem;
 - (void)setContext:(id)arg1;
-- (void)setHideAction:(NSInteger)arg1;
-- (void)setSelectedTableItemIndex:(NSInteger)arg1;
+- (void)setHideAction:(int)arg1;
+- (void)setSelectedTableItemIndex:(int)arg1;
 - (void)setTableItems:(id)arg1 withTitles:(id)arg2;
-- (NSInteger)tableAction;
+- (int)tableAction;
 - (id)tableItems;
 - (id)title;
-- (NSInteger)type;
+- (int)type;
 
 @end

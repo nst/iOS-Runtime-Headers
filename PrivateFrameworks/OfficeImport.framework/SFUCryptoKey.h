@@ -3,12 +3,12 @@
  */
 
 @interface SFUCryptoKey : NSObject {
-    NSUInteger mIterationCount;
+    unsigned int mIterationCount;
 }
 
-- (id)initAes128KeyFromPassphrase:(const char *)arg1 length:(NSUInteger)arg2 iterationCount:(NSUInteger)arg3;
-- (id)initAes128KeyFromPassphrase:(const char *)arg1 length:(NSUInteger)arg2;
-- (NSUInteger)iterationCount;
-- (NSInteger)keyType;
+- (id)initAes128KeyFromPassphrase:(const char *)arg1 length:(unsigned int)arg2 iterationCount:(unsigned int)arg3;
+- (id)initAes128KeyFromPassphrase:(const char *)arg1 length:(unsigned int)arg2;
+- (unsigned int)iterationCount;
+- (int)keyType;
 
 @end

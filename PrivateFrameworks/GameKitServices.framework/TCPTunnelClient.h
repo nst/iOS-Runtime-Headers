@@ -13,23 +13,24 @@
         long __sig; 
         BOOL __opaque[40]; 
     struct tagIPPORT { 
-        NSInteger iFlags; 
+        int iFlags; 
         BOOL szIfName[16]; 
         union { 
-            NSUInteger dwIPv4; 
+            unsigned int dwIPv4; 
             unsigned char abIPv6[16]; 
         } IP; 
         unsigned short wPort; 
     id _allocationResponseHandler;
     id _bindingResponseHandler;
-    NSInteger _callID;
+    int _callID;
     unsigned short _channelNumber;
-    NSInteger _connectedFD;
+    int _connectedFD;
     unsigned short _currentMsgType;
-    NSInteger _currentPadding;
-    NSInteger _currentlyReadingDataGoalLength;
+    int _currentPadding;
+    int _currentlyReadingDataGoalLength;
     NSMutableData *_currentlyReadingMessage;
     id _destroyHandler;
+    float _fTimeout;
     id _handler;
     struct dispatch_queue_s { } *_inQueue;
     BOOL _isConnected;
@@ -40,14 +41,17 @@
     NSDictionary *_reqRespDict;
     } _serverIPPort;
     id _terminationHandler;
+    struct dispatch_source_s { } *_timer;
     } mutex;
 }
 
-@property(retain) NSString *participantID;
+@property(retain) NSString * participantID;
 
 - (void)closeTunnelSocket;
+- (void)createDispatchTimer:(float)arg1 withDetailedError:(int)arg2;
 - (void)dealloc;
-- (id)initWithRelayRequestDictionary:(id)arg1 withCallID:(NSInteger)arg2;
+- (void)destroyDispatchTimer;
+- (id)initWithRelayRequestDictionary:(id)arg1 withCallID:(int)arg2;
 - (BOOL)isTunnelSocketClosed;
 - (void)lock;
 - (id)participantID;
@@ -55,7 +59,7 @@
 - (void)receivedControlData:(id)arg1;
 - (BOOL)sendAllocateMsg;
 - (BOOL)sendChannelBindingMsgWithDict:(id)arg1;
-- (BOOL)sendRefreshMsg:(NSUInteger)arg1;
+- (BOOL)sendRefreshMsg:(unsigned int)arg1;
 - (void)setAllocationResponseHandler:(id)arg1;
 - (void)setBindingResponseHandler:(id)arg1;
 - (void)setDestroyHandler:(id)arg1;
@@ -64,7 +68,7 @@
 - (void)setTerminationHandler:(id)arg1;
 - (void)unbindChannel;
 - (void)unlock;
-- (void)vcArg:(id)arg1 sendControlData:(id)arg2 toParticipantID:(id)arg3;
+- (void)vcArg:(id)arg1 sendControlData:(id)arg2 withTimeout:(float)arg3 withDetail:(int)arg4;
 - (void)vcArg:(id)arg1 sendRealTimeData:(id)arg2 toParticipantID:(id)arg3;
 
 @end

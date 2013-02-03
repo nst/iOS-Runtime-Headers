@@ -9,19 +9,19 @@
 + (void)initialize;
 + (id)mutablePlaceholder;
 
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)init;
-- (id)initWithCapacity:(NSUInteger)arg1;
+- (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
-- (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(NSUInteger)arg3;
+- (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(unsigned int)arg3;
 - (id)keyEnumerator;
 - (id)objectForKey:(id)arg1;
 - (oneway void)release;
 - (void)removeObjectForKey:(id)arg1;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 
 @end

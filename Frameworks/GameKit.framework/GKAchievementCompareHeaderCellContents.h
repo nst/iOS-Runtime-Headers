@@ -5,28 +5,28 @@
 @class GKUITheme, GKPlayer;
 
 @interface GKAchievementCompareHeaderCellContents : UIView <GKTableViewCellContents> {
-    NSUInteger _achievements;
+    unsigned int _achievements;
     GKPlayer *_player;
-    NSUInteger _points;
+    unsigned int _points;
     GKUITheme *_theme;
 }
 
-@property(retain) GKPlayer *player;
-@property(retain) GKUITheme *theme;
-@property NSUInteger achievements;
-@property NSUInteger points;
+@property unsigned int achievements;
+@property(retain) GKPlayer * player;
+@property unsigned int points;
+@property(retain) GKUITheme * theme;
 
-- (NSUInteger)achievements;
+- (unsigned int)achievements;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)player;
-- (NSUInteger)points;
-- (float)preferredHeightForOrientation:(NSInteger)arg1;
+- (unsigned int)points;
+- (float)preferredHeightForOrientation:(int)arg1;
 - (void)prepareForReuse;
-- (void)setAchievements:(NSUInteger)arg1;
+- (void)setAchievements:(unsigned int)arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setPoints:(NSUInteger)arg1;
+- (void)setPoints:(unsigned int)arg1;
 - (void)setTheme:(id)arg1;
 - (id)theme;
 

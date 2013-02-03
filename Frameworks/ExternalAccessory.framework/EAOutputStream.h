@@ -12,11 +12,11 @@
     BOOL _isAtEndEventSent;
     BOOL _isOpenCompletedEventSent;
     BOOL _isWriteAvailableThreadCancelled;
-    NSInteger _outfd;
+    int _outfd;
     struct __CFRunLoop { } *_runLoop;
     struct __CFRunLoopSource { } *_runLoopSource;
     EASession *_session;
-    NSUInteger _streamStatus;
+    unsigned int _streamStatus;
     NSThread *_writeAvailableThread;
     NSCondition *_writeAvailableThreadRunCondition;
 }
@@ -38,7 +38,7 @@
 - (void)setDelegate:(id)arg1;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)streamError;
-- (NSUInteger)streamStatus;
-- (NSInteger)write:(const char *)arg1 maxLength:(NSUInteger)arg2;
+- (unsigned int)streamStatus;
+- (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
 
 @end

@@ -7,10 +7,10 @@
 @interface DOMAttr : DOMNode {
 }
 
-@property(copy,readonly) NSString * name;
-@property(retain,readonly) DOMElement * ownerElement;
+@property(readonly) NSString * name;
+@property(readonly) DOMElement * ownerElement;
 @property(readonly) BOOL specified;
-@property(retain,readonly) DOMCSSStyleDeclaration * style;
+@property(readonly) DOMCSSStyleDeclaration * style;
 @property(copy) NSString * value;
 
 - (BOOL)isId;

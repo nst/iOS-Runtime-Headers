@@ -32,6 +32,7 @@
 + (void)forgetPersonID:(id)arg1;
 + (id)sharingManagerForPersonID:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_performNextQueuedAction;
 - (void)_requestCurrentShareState;
 - (void)_sendNextDeletion;

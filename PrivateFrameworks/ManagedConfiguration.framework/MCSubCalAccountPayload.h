@@ -23,9 +23,9 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
+- (void).cxx_destruct;
 - (id)accountDescription;
 - (id)accountPersistentUUID;
-- (void)dealloc;
 - (id)description;
 - (id)hostname;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;

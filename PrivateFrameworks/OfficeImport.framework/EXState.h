@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EXOfficeArtState, CPImportTracing, <OCCancelDelegate>, ECColumnWidthConvertor, EDWorkbook, EDSheet, EXOAVState, EDResources, EDReference, OCPPackagePart, NSMutableDictionary, NSMutableArray;
+@class CPImportTracing, EXOfficeArtState, <OCCancelDelegate>, ECColumnWidthConvertor, EDWorkbook, EDSheet, EXOAVState, EDResources, EDReference, OCPPackagePart, NSMutableDictionary, NSMutableArray;
 
 @interface EXState : OAVState {
     boolmIsPredefinedDxfsBeingRead;

@@ -27,6 +27,8 @@
 - (void)loadCachedHeaderValuesFromHeaders:(id)arg1;
 - (id)loadMeetingData;
 - (id)loadMeetingExternalID;
+- (id)loadMeetingMetadata;
+- (id)mailMessageStore;
 - (id)mailbox;
 - (void)markAsFlagged;
 - (void)markAsForwarded;

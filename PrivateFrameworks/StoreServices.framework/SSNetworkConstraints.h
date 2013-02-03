@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
-@interface SSNetworkConstraints : NSObject <SSCoding, SSXPCCoding, NSCopying> {
-    struct dispatch_queue_s { } *_dispatchQueue;
+@interface SSNetworkConstraints : NSObject <NSCoding, SSXPCCoding, NSCopying> {
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSMutableDictionary *_sizeLimits;
 }
 
@@ -20,15 +20,16 @@
 - (void)_disableAllNetworkTypes;
 - (void)_setSizeLimit:(long long)arg1 forNetworkType:(int)arg2;
 - (long long)_sizeLimitForNetworkType:(int)arg1;
-- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
 - (void)disableCellularNetworkTypes;
+- (void)encodeWithCoder:(id)arg1;
+- (BOOL)hasSizeLimitForNetworkType:(int)arg1;
 - (id)init;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isAnyNetworkTypeEnabled;
 - (BOOL)isEqual:(id)arg1;
 - (void)setAllNetworkTypesDisabled;

@@ -7,17 +7,21 @@
 @interface GKDebugHighlightView : UIView {
     NSString *_caption;
     UIColor *_color;
+    BOOL _isOval;
 }
 
 @property(retain) NSString * caption;
 @property(retain) UIColor * color;
+@property BOOL isOval;
 
 - (id)caption;
 - (id)color;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)init;
+- (BOOL)isOval;
 - (void)setCaption:(id)arg1;
 - (void)setColor:(id)arg1;
+- (void)setIsOval:(BOOL)arg1;
 
 @end

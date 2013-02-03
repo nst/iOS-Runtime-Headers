@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSMutableIndexSet, SSXPCConnection, <SSPurchaseRequestDelegate>;
+@class <SSPurchaseRequestDelegate>, NSArray;
 
-@interface SSPurchaseRequest : SSRequest <SSCoding> {
-    NSMutableIndexSet *_acknowledgedPurchases;
+@interface SSPurchaseRequest : SSRequest <SSXPCCoding> {
     BOOL _isBackgroundRequest;
     BOOL _needsAuthentication;
     NSArray *_purchases;
-    SSXPCConnection *_requestConnection;
-    SSXPCConnection *_responseConnection;
     BOOL _shouldValidatePurchases;
 }
 
@@ -20,28 +17,21 @@
 @property(readonly) NSArray * purchases;
 @property BOOL shouldValidatePurchases;
 
-- (void)_purchaseFailedNotification:(id)arg1;
-- (void)_purchaseFinishedNotification:(id)arg1;
 - (id)_purchaseForUniqueIdentifier:(id)arg1;
-- (void)_sendError:(id)arg1 forPurchase:(id)arg2;
-- (id)copyPropertyListEncoding;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
-- (void)handleDaemonExit;
 - (id)init;
-- (id)initWithPropertyListEncoding:(id)arg1;
 - (id)initWithPurchases:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isBackgroundRequest;
-- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
 - (BOOL)needsAuthentication;
 - (id)purchases;
-- (void)registerForDaemonNotifications;
 - (void)setBackgroundRequest:(BOOL)arg1;
 - (void)setNeedsAuthentication:(BOOL)arg1;
 - (void)setShouldValidatePurchases:(BOOL)arg1;
 - (BOOL)shouldValidatePurchases;
+- (BOOL)start;
+- (void)startWithCompletionBlock:(id)arg1;
 - (void)startWithPurchaseBlock:(id)arg1 completionBlock:(id)arg2;
-- (void)unregisterForDaemonNotifications;
 
 @end

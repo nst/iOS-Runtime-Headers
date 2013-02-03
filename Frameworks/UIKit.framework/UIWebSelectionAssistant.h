@@ -18,8 +18,8 @@
 
 - (void)clearSelection;
 - (void)dealloc;
+- (void)didEndScrollingOrZoomingPage;
 - (void)didEndScrollingOverflow;
-- (void)didEndScrollingPage;
 - (void)didRotate:(id)arg1;
 - (BOOL)enabled;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
@@ -40,7 +40,7 @@
 - (void)setGestureRecognizers;
 - (void)tap:(id)arg1;
 - (void)willRotate:(id)arg1;
+- (void)willStartScrollingOrZoomingPage;
 - (void)willStartScrollingOverflow;
-- (void)willStartScrollingPage;
 
 @end

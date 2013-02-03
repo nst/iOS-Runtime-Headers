@@ -5,7 +5,7 @@
 @class NSManagedObjectID, NSMutableDictionary;
 
 @interface NSAtomicStoreCacheNode : NSObject {
-    unsigned int __versionNumber;
+    unsigned long __versionNumber;
     NSManagedObjectID *_objectID;
     NSMutableDictionary *_propertyCache;
     void *_reserved1;

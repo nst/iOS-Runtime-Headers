@@ -12,7 +12,7 @@
 @property(readonly) int charCode;
 @property(readonly) BOOL ctrlKey;
 @property(readonly) int keyCode;
-@property(copy,readonly) NSString * keyIdentifier;
+@property(readonly) NSString * keyIdentifier;
 @property(readonly) unsigned int keyLocation;
 @property(readonly) BOOL metaKey;
 @property(readonly) BOOL shiftKey;

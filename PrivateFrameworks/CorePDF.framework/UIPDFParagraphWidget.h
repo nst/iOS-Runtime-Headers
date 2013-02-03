@@ -49,8 +49,8 @@
     CAShapeLayer *_trackingBorder;
 }
 
-@property(readonly) struct CGPoint { float x; float y; } currentSelectionPointOnPage;
-@property(readonly) struct CGPoint { float x; float y; } initialSelectionPointOnPage;
+@property(readonly) struct CGPoint { float x1; float x2; } currentSelectionPointOnPage;
+@property(readonly) struct CGPoint { float x1; float x2; } initialSelectionPointOnPage;
 @property UIPDFPageView * pageView;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;

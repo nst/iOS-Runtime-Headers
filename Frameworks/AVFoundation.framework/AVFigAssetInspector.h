@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSURL, NSArray;
+@class NSURL, NSData, NSArray;
 
 @interface AVFigAssetInspector : AVAssetInspector {
     struct OpaqueFigAsset { } *_figAsset;
@@ -11,12 +11,15 @@
     BOOL hasSaveRestriction;
 }
 
+@property(readonly) NSData * SHA1Digest;
 @property(readonly) NSURL * URL;
 @property(readonly) NSArray * chapterGroupInfo;
+@property(readonly) unsigned long long downloadToken;
 @property(getter=_figAsset,readonly) struct OpaqueFigAsset { }* figAsset;
 @property(readonly) BOOL hasProtectedContent;
 @property(readonly) NSURL * resolvedURL;
 
+- (id)SHA1Digest;
 - (id)URL;
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
@@ -28,6 +31,7 @@
 - (id)commonMetadata;
 - (id)creationDate;
 - (void)dealloc;
+- (unsigned long long)downloadToken;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (void)finalize;
 - (BOOL)hasProtectedContent;

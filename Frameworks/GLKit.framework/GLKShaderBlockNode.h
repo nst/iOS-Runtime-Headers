@@ -37,6 +37,7 @@
 
 + (void)buildUnrollNodeArray:(id)arg1 array:(id)arg2;
 + (id)copyTreeWithRoot:(id)arg1 parent:(id)arg2;
++ (id)copyTreeWithRootButNotSiblings:(id)arg1 parent:(id)arg2;
 + (void)insertNode:(id)arg1 afterSibling:(id)arg2;
 + (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })maskForLabel:(id)arg1 root:(id)arg2 index:(int)arg3;
 + (unsigned int)nodeCt:(id)arg1 nodeCt:(unsigned int*)arg2;

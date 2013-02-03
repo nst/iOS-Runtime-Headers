@@ -11,6 +11,7 @@
     unsigned int _status : 4;
     DeliveryAccount *_account;
     MailAccount *_archiveAccount;
+    NSArray *_charsets;
     NSDictionary *_compositionSpecification;
     id _delegate;
     MutableMessageHeaders *_headers;
@@ -25,7 +26,7 @@
 @property(retain) NSDictionary * compositionSpecification;
 
 + (BOOL)deliverMessage:(id)arg1;
-+ (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
++ (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
 + (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
 + (id)newWithMessage:(id)arg1;
 
@@ -40,7 +41,7 @@
 - (int)deliverSynchronously;
 - (int)deliveryStatus;
 - (id)headersForDelivery;
-- (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
+- (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
 - (id)initWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
 - (id)initWithMessage:(id)arg1;
 - (id)message;

@@ -20,7 +20,6 @@
 - (void)hideError;
 - (void)hideFailedAttempts;
 - (void)hidePasscodeField:(BOOL)arg1;
-- (void)layoutSubviews;
 - (void)setBlocked:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPINPolicyString:(id)arg1 visible:(BOOL)arg2;

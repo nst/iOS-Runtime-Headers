@@ -2,11 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class MFGraphicsDevice;
+@class MFGraphicsDevice, EMFPlusPlayer;
 
 @interface EMFPlayer : NSObject {
+    EMFPlusPlayer *m_emfPlusPlayer;
     MFGraphicsDevice *m_gdi;
     BOOL m_headerDone;
+    BOOL m_ignoreEMFPlusRecords;
+    BOOL m_ignoreEMFRecords;
 }
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsInLogicalUnits:(id)arg1;
@@ -14,6 +17,7 @@
 
 - (void)dealloc;
 - (void)done;
+- (id)getGdi;
 - (id)initWithGraphicsDevice:(id)arg1;
 - (int)play:(unsigned int)arg1 :(const char *)arg2;
 - (int)playAbortPath:(unsigned int)arg1 :(const char *)arg2;
@@ -95,5 +99,7 @@
 - (int)playUnknown:(unsigned int)arg1 :(unsigned int)arg2 :(const char *)arg3;
 - (int)playUnsupported:(unsigned int)arg1 :(const char *)arg2 :(const char *)arg3;
 - (int)playWidenPath:(unsigned int)arg1 :(const char *)arg2;
+- (void)setIgnoreEMFPlusRecords:(BOOL)arg1;
+- (void)setIgnoreEMFRecords:(BOOL)arg1;
 
 @end

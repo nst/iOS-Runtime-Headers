@@ -2,9 +2,18 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIInputViewAnimationStyle, UIInputViewSet;
+@class UIInputViewAnimationStyle, UIInputViewSet, UISnapshotView;
 
 @interface UIInputViewTransition : NSObject {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -93,6 +102,8 @@
     UIInputViewSet *oldSet;
     BOOL skipFencing;
     BOOL skipNotifications;
+    UISnapshotView *snapshotView;
+    } snapshotViewEndFrame;
 }
 
 @property double animationStartTime;
@@ -115,6 +126,8 @@
 @property(retain) UIInputViewSet * oldSet;
 @property BOOL skipFencing;
 @property BOOL skipNotifications;
+@property(retain) UISnapshotView * snapshotView;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshotViewEndFrame;
 @property(readonly) int transitioningState;
 
 - (double)animationStartTime;
@@ -125,7 +138,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })beginFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })beginFrameScreen;
 - (int)beginState;
-- (BOOL)canAnimate;
 - (BOOL)cancelled;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })deprecatedBounds;
@@ -161,9 +173,13 @@
 - (void)setOldSet:(id)arg1;
 - (void)setSkipFencing:(BOOL)arg1;
 - (void)setSkipNotifications:(BOOL)arg1;
+- (void)setSnapshotView:(id)arg1;
+- (void)setSnapshotViewEndFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)shouldCompleteOnSuspend;
 - (BOOL)skipFencing;
 - (BOOL)skipNotifications;
+- (id)snapshotView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })snapshotViewEndFrame;
 - (BOOL)subsumesTransition:(id)arg1;
 - (int)transitioningState;
 - (id)userInfoForTransition;

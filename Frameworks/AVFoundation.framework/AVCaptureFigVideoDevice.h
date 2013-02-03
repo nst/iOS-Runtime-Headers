@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSDictionary;
+@class AVWeakReference, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSDictionary, NSMutableArray;
 
 @interface AVCaptureFigVideoDevice : AVCaptureDevice <MCProfileConnectionObserver> {
     struct CGPoint { 
@@ -30,12 +30,14 @@
     BOOL _adjustingWB;
     float _autoExposureBias;
     BOOL _automaticallyAdjustsImageControlMode;
+    BOOL _automaticallyEnablesLowLightBoostWhenAvailable;
     float _contrast;
     NSDictionary *_deviceProperties;
     } _exposureDuration;
     float _exposureGain;
     int _exposureMode;
     } _exposurePointOfInterest;
+    BOOL _faceDetectionDrivenImageProcessingEnabled;
     BOOL _faceDetectionMetadataEnabled;
     } _faceRectangle;
     int _faceRectangleAngle;
@@ -45,13 +47,18 @@
     int _focusInFlightCount;
     int _focusMode;
     } _focusPointOfInterest;
+    NSMutableArray *_formats;
     int _imageControlMode;
     BOOL _isConnected;
+    BOOL _lowLightBoostEnabled;
     BOOL _manualExposureSupportEnabled;
+    int _pendingImageControlMode;
     struct OpaqueFigRecorder { } *_recorderForTorchApps;
     float _saturation;
-    struct dispatch_source_s { } *_torchAppsKillTimer;
-    struct dispatch_queue_s { } *_torchAppsSerialQueue;
+    BOOL _subjectMonitoringEnabled;
+    BOOL _torchActive;
+    NSObject<OS_dispatch_source> *_torchAppsKillTimer;
+    NSObject<OS_dispatch_queue> *_torchAppsSerialQueue;
     BOOL _torchAvailable;
     float _torchLevel;
     int _torchMode;
@@ -64,10 +71,11 @@
 + (id)_devices;
 + (void)initialize;
 
-- (id)_applyOverridesToCaptureOptions:(id)arg1;
+- (void)_applyOverridesToCaptureOptions:(id)arg1;
 - (void)_applyPendingPropertiesToRecorder;
 - (struct OpaqueFigRecorder { }*)_createFigRecorderForTorchApps;
-- (struct dispatch_source_s { }*)_createTorchAppsKillTimer;
+- (id)_createTorchAppsKillTimer;
+- (BOOL)_faceDetectionDebugMetadataReportingEnabled;
 - (BOOL)_faceDetectionDrivenImageProcessingEnabled;
 - (int)_flashMode;
 - (float)_floatValueForRecorderProperty:(struct __CFString { }*)arg1;
@@ -89,7 +97,8 @@
 - (BOOL)_setImageControlMode:(int)arg1;
 - (BOOL)_setSaturation:(float)arg1;
 - (BOOL)_setSubjectAreaChangeMonitoringEnabled:(BOOL)arg1;
-- (BOOL)_setTorchMode:(int)arg1;
+- (void)_setTorchActive:(BOOL)arg1;
+- (long)_setTorchMode:(int)arg1 withLevel:(float)arg2;
 - (BOOL)_setWhiteBalanceMode:(int)arg1;
 - (BOOL)_setWhiteBalanceTemperature:(float)arg1;
 - (BOOL)_subjectAreaChangeMonitoringEnabled;
@@ -101,6 +110,7 @@
 - (int)_whiteBalanceMode;
 - (float)autoExposureBias;
 - (BOOL)automaticallyAdjustsImageControlMode;
+- (BOOL)automaticallyEnablesLowLightBoostWhenAvailable;
 - (float)contrast;
 - (void)dealloc;
 - (id)devicePropertiesDictionary;
@@ -111,9 +121,11 @@
 - (struct CGPoint { float x1; float x2; })exposurePointOfInterest;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })faceRectangle;
 - (int)faceRectangleAngle;
+- (void)finishPendingAdjustmentsKVO;
 - (int)flashMode;
 - (int)focusMode;
 - (struct CGPoint { float x1; float x2; })focusPointOfInterest;
+- (id)formats;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (BOOL)hasFlash;
 - (BOOL)hasMediaType:(id)arg1;
@@ -128,15 +140,22 @@
 - (BOOL)isExposureModeSupported:(int)arg1;
 - (BOOL)isExposurePointOfInterestSupported;
 - (BOOL)isFaceDetectionDebugMetadataReportingEnabled;
+- (BOOL)isFaceDetectionDrivenImageProcessingEnabled;
+- (BOOL)isFaceDetectionDuringVideoPreviewSupported;
 - (BOOL)isFaceDetectionSupported;
 - (BOOL)isFlashActive;
 - (BOOL)isFlashAvailable;
 - (BOOL)isFlashModeSupported:(int)arg1;
 - (BOOL)isFocusModeSupported:(int)arg1;
 - (BOOL)isFocusPointOfInterestSupported;
+- (BOOL)isHDRSupported;
 - (BOOL)isImageControlModeSupported:(int)arg1;
 - (BOOL)isInUseByAnotherApplication;
+- (BOOL)isLowLightBoostEnabled;
+- (BOOL)isLowLightBoostSupported;
 - (BOOL)isManualExposureSupportEnabled;
+- (BOOL)isSubjectAreaChangeMonitoringEnabled;
+- (BOOL)isTorchActive;
 - (BOOL)isTorchAvailable;
 - (BOOL)isTorchModeSupported:(int)arg1;
 - (BOOL)isWhiteBalanceModeSupported:(int)arg1;
@@ -145,8 +164,10 @@
 - (int)position;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (float)saturation;
+- (void)setActiveInput:(id)arg1;
 - (void)setAutoExposureBias:(float)arg1;
 - (void)setAutomaticallyAdjustsImageControlMode:(BOOL)arg1;
+- (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(BOOL)arg1;
 - (void)setContrast:(float)arg1;
 - (void)setExposureDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setExposureGain:(float)arg1;
@@ -160,9 +181,9 @@
 - (void)setImageControlMode:(int)arg1;
 - (void)setManualExposureSupportEnabled:(BOOL)arg1;
 - (void)setSaturation:(float)arg1;
-- (void)setSession:(id)arg1;
 - (void)setSubjectAreaChangeMonitoringEnabled:(BOOL)arg1;
 - (void)setTorchMode:(int)arg1;
+- (BOOL)setTorchModeOnWithLevel:(float)arg1 error:(id*)arg2;
 - (void)setWhiteBalanceMode:(int)arg1;
 - (void)setWhiteBalanceTemperature:(float)arg1;
 - (BOOL)startUsingDevice:(id*)arg1;

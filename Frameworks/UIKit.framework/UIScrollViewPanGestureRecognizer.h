@@ -20,10 +20,12 @@
     SEL _scrollViewAction;
 }
 
+@property(getter=_caughtDeceleratingScrollView,readonly) BOOL caughtDeceleratingScrollView;
 @property(getter=isDirectionalLockEnabled) BOOL directionalLockEnabled;
 @property UIScrollView * scrollView;
 
 - (struct CGPoint { float x1; float x2; })_adjustScreenLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)_caughtDeceleratingScrollView;
 - (void)_centroidMovedTo:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
 - (float)_hysteresis;
 - (void)_resetGestureRecognizer;

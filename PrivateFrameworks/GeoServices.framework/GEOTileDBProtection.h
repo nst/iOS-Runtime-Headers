@@ -10,7 +10,7 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)setState:(int)arg1;
 - (int)state;
+- (void)updateState;
 
 @end

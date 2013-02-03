@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString;
+@class NSNumber, NSString, NSArray;
 
 @interface SAAssistantLoaded : SABaseClientBoundCommand {
 }
 
 @property(copy) NSString * dataAnchor;
-@property(retain) NSNumber * requestSync;
+@property(copy) NSNumber * requestSync;
+@property(copy) NSArray * syncAnchors;
 @property(copy) NSString * version;
 
 + (id)assistantLoaded;
@@ -21,7 +22,9 @@
 - (BOOL)requiresResponse;
 - (void)setDataAnchor:(id)arg1;
 - (void)setRequestSync:(id)arg1;
+- (void)setSyncAnchors:(id)arg1;
 - (void)setVersion:(id)arg1;
+- (id)syncAnchors;
 - (id)version;
 
 @end

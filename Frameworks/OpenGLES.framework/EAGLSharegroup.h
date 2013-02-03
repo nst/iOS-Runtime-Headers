@@ -2,35 +2,23 @@
    Image: /System/Library/Frameworks/OpenGLES.framework/OpenGLES
  */
 
+@class NSString;
+
 @interface EAGLSharegroup : NSObject {
-    struct _EAGLSharegroupPrivate { unsigned int x1; int x2; boolx3; struct __GLDPixelFormatRec { 
-            struct __GLDPixelFormatRec {} *next_pixel_format; 
-            unsigned int renderer_id; 
-            unsigned int os_support; 
-            unsigned int buffer_mode; 
-            unsigned int color_mode; 
-            unsigned int accum_mode; 
-            unsigned int depth_mode; 
-            unsigned int stencil_mode; 
-            short spad0; 
-            short aux_buffers; 
-            short sample_buffers; 
-            short samples; 
-            unsigned int sample_mode; 
-            unsigned char sample_alpha; 
-            unsigned char bpad1; 
-            unsigned char bpad2; 
-            unsigned char bpad3; 
-            unsigned int display_mask; 
-        } x4; struct __GLISharedRec {} *x5; void *x6; } *_private;
+    struct _EAGLSharegroupPrivate { unsigned int x1; int x2; boolx3; struct __GLDPixelFormatRec { struct __GLDPixelFormatRec {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; unsigned int x_4_1_4; unsigned int x_4_1_5; unsigned int x_4_1_6; unsigned int x_4_1_7; unsigned int x_4_1_8; short x_4_1_9; short x_4_1_10; short x_4_1_11; short x_4_1_12; unsigned int x_4_1_13; unsigned char x_4_1_14; unsigned char x_4_1_15; unsigned char x_4_1_16; unsigned char x_4_1_17; unsigned int x_4_1_18; } x4; struct __GLISharedRec {} *x5; } *_private;
+    NSString *debugLabel;
 }
+
+@property(copy) NSString * debugLabel;
 
 - (unsigned int)APIs;
 - (void)dealloc;
+- (id)debugLabel;
 - (struct __GLISharedRec { }*)getGLIShared;
 - (id)init;
 - (id)initWithAPI:(unsigned int)arg1 sharedWithCompute:(BOOL)arg2;
 - (id)initWithAPI:(unsigned int)arg1;
 - (void)loadGLIPlugin:(struct __GLDPixelFormatRec { struct __GLDPixelFormatRec {} *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; short x9; short x10; short x11; short x12; unsigned int x13; unsigned char x14; unsigned char x15; unsigned char x16; unsigned char x17; unsigned int x18; }*)arg1 sharedWithCompute:(BOOL)arg2;
+- (void)setDebugLabel:(id)arg1;
 
 @end

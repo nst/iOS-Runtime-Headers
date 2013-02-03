@@ -16,6 +16,7 @@
 - (int)compare:(id)arg1;
 - (struct CGColor { }*)copyCGColor;
 - (void)dealloc;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

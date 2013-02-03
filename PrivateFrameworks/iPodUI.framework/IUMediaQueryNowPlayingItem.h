@@ -2,74 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class MPMediaItem;
-
-@interface IUMediaQueryNowPlayingItem : MPAVItem {
-    MPMediaItem *_mediaItem;
+@interface IUMediaQueryNowPlayingItem : MPMediaQueryNowPlayingItem {
+    BOOL _loggingEnabled;
 }
 
-@property(readonly) MPMediaItem * mediaItem;
-
-+ (id)_imageCache;
++ (void)applyVolumeNormalizationForQueuedItems:(id)arg1;
 + (unsigned int)defaultScaleMode;
 + (void)setDefaultScaleMode:(unsigned int)arg1;
 
-- (id)_chapterTitleForTime:(double)arg1;
-- (void)_handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(BOOL)arg2;
-- (id)_newTimeMarkersForChapterType:(int)arg1;
-- (void)_updateBookmarkTimeIfNecessary:(double)arg1;
+- (id)_fallbackAudioOptionFromOptions:(id)arg1 locale:(id)arg2 strict:(BOOL)arg3;
+- (id)_mediaSelectionOptionFromGroup:(id)arg1 withTrackID:(int)arg2;
 - (void)_updateRentalsPlistForFinish;
-- (id)album;
-- (id)albumArtist;
-- (unsigned int)albumTrackCount;
-- (unsigned int)albumTrackNumber;
-- (BOOL)allowAutoChangingScaleModeToFill;
-- (void)applyVolumeNormalizationForQueuedItems:(id)arg1;
-- (id)artist;
-- (id)artworkImageData;
-- (id)artworkMIMEType;
-- (id)artworkTimeMarkers;
-- (id)chapterTimeMarkers;
-- (id)composer;
-- (void)dealloc;
 - (float)defaultPlaybackRate;
-- (id)description;
-- (unsigned int)discCount;
-- (unsigned int)discNumber;
-- (id)displayableText;
-- (double)durationFromExternalMetadata;
-- (id)genre;
-- (BOOL)hasAlternatesForTypes:(unsigned int)arg1;
-- (BOOL)hasDataForItemArtwork;
+- (void)handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(BOOL)arg2;
 - (BOOL)hasDisplayableText;
-- (id)imageCacheRequestWithSize:(struct CGSize { float x1; float x2; })arg1 time:(double)arg2;
+- (id)imageCache;
+- (id)imageCacheRequestWithSize:(struct CGSize { float x1; float x2; })arg1 time:(double)arg2 usePlaceholderAsFallback:(BOOL)arg3;
 - (id)initWithMediaItem:(id)arg1;
-- (BOOL)isAssetURLValid;
-- (BOOL)isPlaceholderForItem:(id)arg1;
-- (BOOL)isStreamable;
 - (BOOL)isSupportedDefaultPlaybackSpeed:(unsigned int)arg1;
-- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
-- (void)loadAssetAndPlayerItem;
-- (id)mainTitle;
-- (id)mediaItem;
-- (void)notePlaybackFinishedByHittingEnd;
-- (unsigned long long)persistentID;
-- (double)playbackCheckpointCurrentTime;
-- (void)pushBookmarkingTimesToCloud;
-- (void)setAlternateAudioTrackID:(unsigned int)arg1;
-- (void)setPlaybackCheckpointCurrentTime:(double)arg1;
-- (void)setPlaybackFinishedTime:(double)arg1;
-- (void)setPlaybackStoppedTime:(double)arg1;
-- (void)setRating:(float)arg1;
-- (void)setSubtitleTrackID:(unsigned int)arg1;
-- (void)setUserEnabledSubtitles:(BOOL)arg1;
 - (void)setupPlaybackInfo;
-- (id)titlesForTime:(double)arg1;
-- (unsigned int)type;
-- (void)updateAttributesForDefaultsChange:(id)arg1;
-- (id)urlTimeMarkers;
-- (BOOL)useEmbeddedChapterData;
-- (float)userRating;
-- (BOOL)wantsSubtitles;
 
 @end

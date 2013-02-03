@@ -7,6 +7,8 @@
 @interface EKReminderViewController : UIViewController <EKCalendarItemEditorDelegate, EKReminderEditorDelegate> {
     <EKReminderViewControllerDelegate> *_delegate;
     EKReminderEditor *_editor;
+    float _minimumTableHeight;
+    BOOL _shouldShowDatePicker;
 }
 
 @property <EKReminderViewControllerDelegate> * delegate;
@@ -20,24 +22,30 @@
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)dealloc;
 - (id)delegate;
+- (void)didEndDatePickingWithTarget:(id)arg1 animated:(BOOL)arg2;
+- (void)editItemChanged;
+- (void)editor:(id)arg1 didChangeHeightAnimated:(BOOL)arg2;
+- (void)editor:(id)arg1 didCompleteWithAction:(int)arg2;
 - (id)editor;
-- (void)eventEditor:(id)arg1 didCompleteWithAction:(int)arg2;
-- (void)eventEditorDidChangeHeight:(id)arg1;
 - (id)eventStore;
 - (id)getCurrentContext;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (id)navigationItem;
 - (id)reminder;
+- (void)saveReminderAnimated:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEditor:(id)arg1;
 - (void)setEventStore:(id)arg1;
 - (void)setReminder:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (id)viewForActionSheet;
-- (void)viewSizeChanged;
+- (void)viewSizeChangedAnimated:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)willBeginDatePickingWithDate:(id)arg1 target:(id)arg2 action:(SEL)arg3 animated:(BOOL)arg4 minimumTableHeight:(float)arg5;
 
 @end

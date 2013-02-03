@@ -12,10 +12,12 @@
 
 @property NSObject * delegate;
 
+- (void)cancel;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (void)lockDelegateLock;
+- (id)retainedDelegate;
 - (void)setDelegate:(id)arg1;
 - (void)unlockDelegateLock;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSMutableDictionary, NSDictionary;
+@class NSObject<OS_dispatch_queue>, NSMutableDictionary, NSDictionary;
 
 @interface MCRestrictionManager : NSObject {
     NSMutableDictionary *_clientRestrictions;
@@ -12,11 +12,11 @@
     struct __CFDictionary { } *_clientTypeToRecomputeComplianceSelector;
     NSMutableDictionary *_defaultRestrictions;
     NSDictionary *_effectiveUserSettings;
-    struct dispatch_queue_s { } *_nagMetaQueue;
+    NSObject<OS_dispatch_queue> *_nagMetaQueue;
     NSMutableDictionary *_profileRestrictions;
     NSMutableDictionary *_restrictions;
     int _senderPID;
-    struct dispatch_queue_s { } *_syncQueue;
+    NSObject<OS_dispatch_queue> *_syncQueue;
     NSDictionary *_userSettings;
 }
 
@@ -43,6 +43,7 @@
 + (BOOL)valueSetting:(id)arg1 valueChangedBetweenOldSettings:(id)arg2 andNewSettings:(id)arg3;
 + (id)valueSettingForFeature:(id)arg1 withUserSettingDictionary:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)_clientRestrictions;
 - (id)_clientRestrictionsForClientUUID:(id)arg1;
 - (id)_clientTypeForClientUUID:(id)arg1;

@@ -13,7 +13,7 @@
 @property(retain) SUMessagePart * nativeMessagePart;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 
 - (id)MIMEType;
 - (id)_className;

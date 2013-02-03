@@ -8,7 +8,7 @@
 }
 
 @property(copy) NSString * keyText;
-@property(retain,readonly) DOMCSSStyleDeclaration * style;
+@property(readonly) DOMCSSStyleDeclaration * style;
 
 - (id)keyText;
 - (void)setKeyText:(id)arg1;

@@ -28,6 +28,7 @@
 - (struct BTDeviceImpl { }*)device;
 - (void)disconnect;
 - (void)endVoiceCommand;
+- (id)getServiceSetting:(unsigned int)arg1 key:(id)arg2;
 - (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2 isLE:(BOOL)arg3;
 - (BOOL)isAccessory;
 - (BOOL)isLowEnergy;
@@ -39,6 +40,7 @@
 - (id)scoUID;
 - (void)setDevice:(struct BTDeviceImpl { }*)arg1;
 - (void)setPIN:(id)arg1;
+- (void)setServiceSetting:(unsigned int)arg1 key:(id)arg2 value:(id)arg3;
 - (void)setSyncGroup:(int)arg1 enabled:(BOOL)arg2;
 - (void)setSyncSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; })arg1;
 - (void)startVoiceCommand;

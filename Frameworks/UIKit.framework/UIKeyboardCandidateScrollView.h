@@ -2,21 +2,48 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboardCandidateScrollViewController;
+@class UIView, NSArray, UIKeyboardCandidateScrollViewController, UITableViewIndex;
 
 @interface UIKeyboardCandidateScrollView : UIScrollView {
+    UIView *_headerView;
+    UITableViewIndex *_index;
+    float _indexMaximumHeight;
+    NSArray *_indexTitles;
     UIKeyboardCandidateScrollViewController *_parentViewController;
+    float _previousGroupBarStartingY;
 }
 
+@property(retain) UIView * headerView;
+@property(readonly) UITableViewIndex * index;
+@property(retain) NSArray * indexTitles;
 @property UIKeyboardCandidateScrollViewController * parentViewController;
+@property float previousGroupBarStartingY;
 
+- (void)addSubview:(id)arg1;
+- (void)dealloc;
+- (void)delayUpdateIndex;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)groupBarStartingY;
+- (id)headerView;
+- (id)index;
+- (id)indexTitles;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isCellVisible:(id)arg1;
+- (void)keyboardDidHideNotification:(id)arg1;
+- (void)keyboardWillShowNotification:(id)arg1;
 - (id)parentViewController;
+- (float)previousGroupBarStartingY;
 - (void)scrollToBottomWithAnimation:(BOOL)arg1;
+- (void)scrollToOffsetFromTop:(float)arg1 withAnimation:(BOOL)arg2;
 - (void)scrollToTopWithAnimation:(BOOL)arg1;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setHeaderView:(id)arg1;
+- (void)setIndexTitles:(id)arg1;
 - (void)setParentViewController:(id)arg1;
+- (void)setPreviousGroupBarStartingY:(float)arg1;
+- (BOOL)shouldShowIndex;
+- (void)showIndex:(BOOL)arg1;
+- (void)updateIndex:(BOOL)arg1;
+- (void)updateIndex;
 
 @end

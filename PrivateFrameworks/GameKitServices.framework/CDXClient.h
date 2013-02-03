@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <CDXClientDelegate>, NSError, NSString, NSData, NSMutableDictionary;
+@class NSError, NSObject<OS_dispatch_source>, NSObject<OS_dispatch_queue>, NSMutableDictionary, NSString, NSData, <CDXClientDelegate>;
 
 @interface CDXClient : NSObject {
     struct sockaddr_in { 
@@ -24,7 +24,7 @@
     int holePunchAttemptCount_;
     double holePunchInterval_;
     unsigned long long holePunchSID_;
-    struct dispatch_source_s { } *holePunchTimer_;
+    NSObject<OS_dispatch_source> *holePunchTimer_;
     unsigned short localPort_;
     void *padding_[10];
     unsigned short port_;
@@ -32,12 +32,13 @@
     BOOL preblobIsUpToDate_;
     NSData *preblob_;
     unsigned long long prevHolePunchSID_;
-    struct dispatch_queue_s { } *queue_;
+    NSObject<OS_dispatch_queue> *queue_;
+    int restartCount_;
     struct __CFRunLoopSource { } *scDynamicStoreRunLoopSource_;
     struct __SCDynamicStore { } *scDynamicStore_;
     NSString *server_;
     NSMutableDictionary *sessionLookup_;
-    struct dispatch_source_s { } *source_;
+    NSObject<OS_dispatch_source> *source_;
     BOOL willReconfigureShortly_;
 }
 
@@ -45,7 +46,9 @@
 @property(readonly) NSError * error;
 @property(readonly) NSData * preblob;
 @property(copy) id preblobCallback;
-@property(readonly) struct dispatch_queue_s { }* queue;
+@property(readonly) NSObject<OS_dispatch_queue> * queue;
+
++ (id)sharedClient;
 
 - (id)createSessionWithTicket:(id)arg1 sessionKey:(id)arg2;
 - (void)dealloc;
@@ -59,7 +62,7 @@
 - (void)networkDidChange;
 - (id)preblob;
 - (id)preblobCallback;
-- (struct dispatch_queue_s { }*)queue;
+- (id)queue;
 - (void)resetHolepunchTimer;
 - (void)restart;
 - (void)sendHolePunch;
@@ -70,6 +73,7 @@
 - (void)setPreblobCallback:(id)arg1;
 - (void)start;
 - (void)startListeningOnSockets;
+- (void)stopHolePunchTimer;
 - (void)stopListeningOnSockets;
 
 @end

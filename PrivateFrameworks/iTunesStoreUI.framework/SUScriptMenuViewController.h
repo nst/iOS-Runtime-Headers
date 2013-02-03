@@ -14,18 +14,10 @@
 @property(retain) NSString * title;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
-- (id)_copyAction;
-- (id)_copyItems;
-- (id)_copyTitle;
-- (int)_selectedIndex;
-- (void)_setAction:(id)arg1;
-- (void)_setItems:(id)arg1;
-- (void)_setSelectedIndex:(int)arg1;
-- (void)_setTitle:(id)arg1;
 - (id)_viewController;
 - (id)action;
 - (id)attributeKeys;

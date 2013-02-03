@@ -17,7 +17,7 @@
     id _enoughTimeElapsed;
     id _imp;
     double _minimumPressDuration;
-    int _numberOfTouchesRequired;
+    unsigned int _numberOfTouchesRequired;
     } _startPointScreen;
     id _tooMuchTimeElapsed;
     NSArray *_touches;
@@ -28,8 +28,8 @@
 @property(readonly) struct CGPoint { float x1; float x2; } centroid;
 @property double delay;
 @property double minimumPressDuration;
-@property int numberOfTapsRequired;
-@property int numberOfTouchesRequired;
+@property unsigned int numberOfTapsRequired;
+@property unsigned int numberOfTouchesRequired;
 @property(readonly) struct CGPoint { float x1; float x2; } startPoint;
 @property(readonly) NSArray * touches;
 
@@ -53,15 +53,15 @@
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
 - (double)minimumPressDuration;
-- (int)numberOfTapsRequired;
+- (unsigned int)numberOfTapsRequired;
 - (unsigned int)numberOfTouches;
-- (int)numberOfTouchesRequired;
+- (unsigned int)numberOfTouchesRequired;
 - (void)setAllowableMovement:(float)arg1;
 - (void)setCancelPastAllowableMovement:(BOOL)arg1;
 - (void)setDelay:(double)arg1;
 - (void)setMinimumPressDuration:(double)arg1;
-- (void)setNumberOfTapsRequired:(int)arg1;
-- (void)setNumberOfTouchesRequired:(int)arg1;
+- (void)setNumberOfTapsRequired:(unsigned int)arg1;
+- (void)setNumberOfTouchesRequired:(unsigned int)arg1;
 - (void)setTouches:(id)arg1;
 - (void)setView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })startPoint;

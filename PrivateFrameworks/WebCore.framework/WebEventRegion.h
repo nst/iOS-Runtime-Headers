@@ -21,6 +21,7 @@
     } p4;
 }
 
+- (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (BOOL)hitTest:(struct CGPoint { float x1; float x2; })arg1;

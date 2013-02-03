@@ -16,6 +16,7 @@
 - (double)duration;
 - (id)init;
 - (id)initWithDefaultParameters;
+- (id)initWithEmptyParameters;
 - (void)setCurve:(int)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setStartTime:(double)arg1;

@@ -6,24 +6,30 @@
    See Warning(s) below.
  */
 
-@class NSError, AVPlayer, NSMutableArray, AVPlayerItem, AVAudioSessionMediaPlayerOnly, AVQueuePlayer, NSArray;
+@class NSError, NSObject<OS_dispatch_queue>, MPAudioDeviceController, NSMutableArray, AVPlayer, AVPlayerItem, NSDictionary, NSString, AVQueuePlayer, AVAudioSessionMediaPlayerOnly, NSArray;
 
-@interface MPQueuePlayer : NSObject {
+@interface MPQueuePlayer : NSObject <MPAudioDeviceControllerDelegate> {
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
+    MPAudioDeviceController *_audioDeviceController;
     AVPlayerItem *_currentItem;
     } _currentTime;
+    int _defaultItemEQPresetType;
     BOOL _isAirPlayVideoActive;
-    BOOL _pausedForPlaybackTransaction;
+    BOOL _outputObscuredDueToInsufficientExternalProtection;
+    BOOL _pausedForPlaybackQueueTransaction;
+    NSDictionary *_pickedRouteDescription;
     id _playbackQueueCommitHandler;
     int _playbackQueueTransactionCount;
     AVQueuePlayer *_player;
     NSMutableArray *_queuedOperations;
+    NSObject<OS_dispatch_queue> *_queuedOperationsAccessQueue;
     float _rate;
     float _rateBeforePlaybackQueueTransaction;
+    BOOL _routeDidChangeDuringPlaybackQueueTransaction;
     int _status;
 }
 
@@ -35,9 +41,13 @@
 @property BOOL allowsAirPlayVideo;
 @property(getter=isClosedCaptionDisplayEnabled) BOOL closedCaptionDisplayEnabled;
 @property(readonly) AVPlayerItem * currentItem;
+@property int defaultItemEQPresetType;
+@property BOOL disallowsAMRAudio;
 @property(readonly) NSError * error;
+@property(copy) NSString * externalPlaybackVideoGravity;
 @property(readonly) BOOL isPlaybackQueueTransactionActive;
 @property(readonly) NSArray * items;
+@property(readonly) BOOL outputObscuredDueToInsufficientExternalProtection;
 @property(copy) id playbackQueueCommitHandler;
 @property(readonly) AVAudioSessionMediaPlayerOnly * playerAVAudioSession;
 @property float rate;
@@ -59,15 +69,19 @@
 - (void)_setWantsVolumeChangesWhenPausedOrInactive:(BOOL)arg1;
 - (float)_volume;
 - (int)actionAtItemEnd;
-- (id)addBoundaryTimeObserverForTimes:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2 usingBlock:(id)arg3;
+- (id)addBoundaryTimeObserverForTimes:(id)arg1 queue:(id)arg2 usingBlock:(id)arg3;
 - (void)advanceToNextItem;
 - (BOOL)allowsAirPlayVideo;
+- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (void)beginPlaybackQueueTransactionAndPause:(BOOL)arg1;
 - (void)commitPlaybackQueueTransaction;
 - (id)currentItem;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
 - (void)dealloc;
+- (int)defaultItemEQPresetType;
+- (BOOL)disallowsAMRAudio;
 - (id)error;
+- (id)externalPlaybackVideoGravity;
 - (id)init;
 - (void)insertItem:(id)arg1 afterItem:(id)arg2;
 - (BOOL)isAirPlayVideoActive;
@@ -75,6 +89,7 @@
 - (BOOL)isPlaybackQueueTransactionActive;
 - (id)items;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (BOOL)outputObscuredDueToInsufficientExternalProtection;
 - (void)pause;
 - (void)play;
 - (id)playbackQueueCommitHandler;
@@ -89,6 +104,9 @@
 - (void)setAllowsAirPlayVideo:(BOOL)arg1;
 - (void)setClosedCaptionDisplayEnabled:(BOOL)arg1;
 - (void)setCurrentPlaybackQueueTransactionDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setDefaultItemEQPresetType:(int)arg1;
+- (void)setDisallowsAMRAudio:(BOOL)arg1;
+- (void)setExternalPlaybackVideoGravity:(id)arg1;
 - (void)setPlaybackQueueCommitHandler:(id)arg1;
 - (void)setRate:(float)arg1;
 - (void)setUsesAirPlayVideoWhileAirPlayScreenIsActive:(BOOL)arg1;

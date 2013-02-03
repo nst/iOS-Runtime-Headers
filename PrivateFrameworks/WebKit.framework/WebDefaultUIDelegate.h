@@ -35,6 +35,7 @@
 - (BOOL)webViewIsStatusBarVisible:(id)arg1;
 - (void)webViewShow:(id)arg1;
 - (id)webViewStatusText:(id)arg1;
+- (void)webViewSupportedOrientationsUpdated:(id)arg1;
 - (void)webViewUnfocus:(id)arg1;
 
 @end

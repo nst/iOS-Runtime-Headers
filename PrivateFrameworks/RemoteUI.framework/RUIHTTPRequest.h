@@ -14,6 +14,8 @@
 
 + (BOOL)anyRequestLoading;
 + (id)invalidResponseError;
++ (id)nonSecureConnectionNotAllowedError;
++ (id)safeBaseURL;
 + (id)serviceUnavailableError;
 
 - (void)_finishedLoading;

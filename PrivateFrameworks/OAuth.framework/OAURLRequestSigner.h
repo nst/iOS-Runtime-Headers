@@ -20,9 +20,9 @@
 - (void)setSignatureMethod:(int)arg1;
 - (int)signatureMethod;
 - (id)signatureMethodString;
-- (id)signedURLRequestWithRequest:(id)arg1 applicationID:(id)arg2;
+- (id)signedURLRequestWithRequest:(id)arg1 applicationID:(id)arg2 timestamp:(id)arg3;
 - (id)signedURLRequestWithRequest:(id)arg1;
 - (Class)signer;
-- (id)timestamp;
+- (id)timestamp:(id)arg1;
 
 @end

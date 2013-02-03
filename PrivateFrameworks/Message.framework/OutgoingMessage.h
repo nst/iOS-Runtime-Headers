@@ -5,12 +5,13 @@
 @class MessageBody, MutableMessageHeaders;
 
 @interface OutgoingMessage : MailMessage {
-    MessageBody *messageBody;
-    MutableMessageHeaders *messageHeaders;
+    MessageBody *_messageBody;
+    MutableMessageHeaders *_messageHeaders;
 }
 
 - (void)dealloc;
 - (id)headers;
+- (id)headersIfAvailable;
 - (id)messageBody;
 - (id)messageBodyIfAvailable;
 - (BOOL)messageData:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;

@@ -10,7 +10,7 @@
 @property(copy) NSString * align;
 @property(copy) NSString * ch;
 @property(copy) NSString * chOff;
-@property(retain,readonly) DOMHTMLCollection * rows;
+@property(readonly) DOMHTMLCollection * rows;
 @property(copy) NSString * vAlign;
 
 - (id)align;

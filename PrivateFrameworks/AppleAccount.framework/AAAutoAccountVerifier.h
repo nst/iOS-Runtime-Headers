@@ -19,11 +19,11 @@
 
 @property(retain) AAAccount * account;
 
+- (void).cxx_destruct;
 - (void)_validateToken:(id)arg1;
 - (void)_verify;
 - (id)account;
 - (void)cancel;
-- (void)dealloc;
 - (id)init;
 - (id)initWithAccount:(id)arg1;
 - (BOOL)search:(id)arg1 didFindResults:(id)arg2;

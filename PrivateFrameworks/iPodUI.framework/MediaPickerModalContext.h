@@ -6,6 +6,7 @@
 
 @interface MediaPickerModalContext : IUModalContext {
     unsigned int _allowsPickingMultipleItems : 1;
+    unsigned int _showsCloudItems : 1;
     unsigned int _wantsNavigationButtons : 1;
     int _mediaTypes;
     NSMutableSet *_pickedDataSourceActionRowSet;
@@ -18,6 +19,7 @@
 @property BOOL allowsPickingMultipleItems;
 @property <IUModalContextDelegate><MediaPickerModalContextDelegate> * delegate;
 @property(copy) NSString * prompt;
+@property BOOL showsCloudItems;
 @property BOOL wantsNavigationButtons;
 
 - (void)_addTrackAtIndex:(unsigned int)arg1 dataSource:(id)arg2;
@@ -40,7 +42,9 @@
 - (id)prompt;
 - (void)setAllowsPickingMultipleItems:(BOOL)arg1;
 - (void)setPrompt:(id)arg1;
+- (void)setShowsCloudItems:(BOOL)arg1;
 - (void)setWantsNavigationButtons:(BOOL)arg1;
+- (BOOL)showsCloudItems;
 - (id)viewController;
 - (BOOL)wantsNavigationButtons;
 

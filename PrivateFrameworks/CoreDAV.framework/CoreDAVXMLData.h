@@ -17,6 +17,8 @@
 @property(readonly) NSData * data;
 @property BOOL shouldAddFormattingSpaces;
 
++ (BOOL)string:(id)arg1 isEqualToXmlCharString:(const char *)arg2;
+
 - (const char *)_prefixForNameSpace:(const char *)arg1;
 - (void)_startElement:(id)arg1 inNamespace:(id)arg2 withAttributeNamesAndValues:(id)arg3 attributes:(void*)arg4;
 - (void)_startElement:(id)arg1 inNamespace:(id)arg2;

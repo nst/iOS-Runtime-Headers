@@ -5,9 +5,14 @@
 @class IMAccount, NSArray, NSString, NSDictionary, CNFRegAlias, NSMutableDictionary;
 
 @interface PSSpecifier : NSObject {
+    SEL _buttonAction;
+    SEL _confirmationAction;
+    SEL _confirmationCancelAction;
+    SEL _controllerLoadAction;
     NSString *_name;
     NSMutableDictionary *_properties;
     NSDictionary *_shortTitleDict;
+    BOOL _showContentString;
     NSDictionary *_titleDict;
     id _userInfo;
     NSArray *_values;
@@ -27,12 +32,18 @@
 
 @property(retain) IMAccount * CNFRegAccount;
 @property(retain) CNFRegAlias * CNFRegAlias;
+@property(retain) CNFRegAlias * CNFRegCallerIdAlias;
+@property SEL buttonAction;
 @property int cellType;
+@property SEL confirmationAction;
+@property SEL confirmationCancelAction;
+@property SEL controllerLoadAction;
 @property Class detailControllerClass;
 @property Class editPaneClass;
 @property(retain) NSString * identifier;
 @property(retain) NSString * name;
 @property(retain) NSDictionary * shortTitleDictionary;
+@property BOOL showContentString;
 @property id target;
 @property(retain) NSDictionary * titleDictionary;
 @property(retain) id userInfo;
@@ -49,7 +60,12 @@
 
 - (id)CNFRegAccount;
 - (id)CNFRegAlias;
+- (id)CNFRegCallerIdAlias;
+- (SEL)buttonAction;
 - (int)cellType;
+- (SEL)confirmationAction;
+- (SEL)confirmationCancelAction;
+- (SEL)controllerLoadAction;
 - (void)dealloc;
 - (id)description;
 - (Class)detailControllerClass;
@@ -61,9 +77,14 @@
 - (id)properties;
 - (id)propertyForKey:(id)arg1;
 - (void)removePropertyForKey:(id)arg1;
+- (void)setButtonAction:(SEL)arg1;
 - (void)setCNFRegAccount:(id)arg1;
 - (void)setCNFRegAlias:(id)arg1;
+- (void)setCNFRegCallerIdAlias:(id)arg1;
 - (void)setCellType:(int)arg1;
+- (void)setConfirmationAction:(SEL)arg1;
+- (void)setConfirmationCancelAction:(SEL)arg1;
+- (void)setControllerLoadAction:(SEL)arg1;
 - (void)setDetailControllerClass:(Class)arg1;
 - (void)setEditPaneClass:(Class)arg1;
 - (void)setIdentifier:(id)arg1;
@@ -72,6 +93,7 @@
 - (void)setProperties:(id)arg1;
 - (void)setProperty:(id)arg1 forKey:(id)arg2;
 - (void)setShortTitleDictionary:(id)arg1;
+- (void)setShowContentString:(BOOL)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setTitleDictionary:(id)arg1;
 - (void)setUserInfo:(id)arg1;
@@ -81,6 +103,7 @@
 - (void)setupIconImageWithBundle:(id)arg1;
 - (void)setupIconImageWithPath:(id)arg1;
 - (id)shortTitleDictionary;
+- (BOOL)showContentString;
 - (id)target;
 - (int)titleCompare:(id)arg1;
 - (id)titleDictionary;

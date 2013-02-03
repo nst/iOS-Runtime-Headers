@@ -13,12 +13,12 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
+- (void).cxx_destruct;
 - (id)_defaultMediaSettings;
 - (id)_enforcedFeatureStrings;
 - (void)_insertRestrictedBoolForKey:(id)arg1 value:(id)arg2 preferenc:(BOOL)arg3;
 - (id)_invalidFieldErrorWithFieldName:(id)arg1;
 - (id)_restrictedFeatureStrings;
-- (void)dealloc;
 - (id)description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)installationWarnings;

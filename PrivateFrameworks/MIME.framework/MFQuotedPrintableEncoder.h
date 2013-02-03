@@ -7,8 +7,8 @@
     BOOL _forTextPart;
     unsigned char _lastHorizontalWhitespace;
     BOOL _lastWasNewLine;
-    unsigned int _line;
-    unsigned int _matchedFrom;
+    unsigned long _line;
+    unsigned long _matchedFrom;
 }
 
 @property BOOL forHeader;

@@ -9,6 +9,7 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)hashTableWithOptions:(unsigned int)arg1;
 + (id)hashTableWithWeakObjects;
++ (id)weakObjectsHashTable;
 
 - (void)_mapkit_removeObjects:(id)arg1;
 - (void)addObject:(id)arg1;

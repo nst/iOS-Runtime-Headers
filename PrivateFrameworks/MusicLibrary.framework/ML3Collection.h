@@ -16,6 +16,7 @@
 
 - (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 - (void)updateCloudStatus;
+- (void)updateRepresentativeItem:(id)arg1 inLibrary:(id)arg2 withArtworkCacheID:(id)arg3;
 - (void)updateTrackValues:(id)arg1;
 
 @end

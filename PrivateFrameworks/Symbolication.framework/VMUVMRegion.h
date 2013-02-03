@@ -16,6 +16,9 @@
     unsigned int nesting_depth;
     unsigned int object_id;
     unsigned int pages_dirtied;
+    unsigned int pages_purgable_empty;
+    unsigned int pages_purgable_non_vol;
+    unsigned int pages_purgable_vol;
     unsigned int pages_resident;
     unsigned int pages_shared_now_private;
     unsigned int pages_swapped_out;

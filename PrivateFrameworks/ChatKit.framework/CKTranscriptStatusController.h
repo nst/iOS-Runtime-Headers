@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKSendingProgressView, UIView, NSString, NSTimer, CKAggregateConversation, NSMutableSet;
+@class CKSendingProgressView, UIView, NSString, CKConversation, NSTimer, NSMutableSet;
 
 @interface CKTranscriptStatusController : NSObject {
-    CKAggregateConversation *_conversation;
+    CKConversation *_conversation;
     NSMutableSet *_currentMessages;
     id _delegate;
     BOOL _finishingUp;
@@ -20,7 +20,7 @@
     BOOL _viewTitle;
 }
 
-@property(retain) CKAggregateConversation * conversation;
+@property(retain) CKConversation * conversation;
 @property id delegate;
 @property(copy) NSString * title;
 

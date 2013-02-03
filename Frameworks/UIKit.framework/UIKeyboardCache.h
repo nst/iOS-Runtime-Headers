@@ -14,7 +14,7 @@
 + (id)sharedInstance;
 
 - (void)cacheView:(id)arg1 forKey:(id)arg2 fromLayout:(id)arg3;
-- (struct CGImage { }*)cachedImageForKey:(id)arg1;
+- (struct CGImage { }*)cachedImageForKey:(id)arg1 fromLayout:(id)arg2;
 - (void)commitTransaction;
 - (void)dealloc;
 - (void)displayView:(id)arg1 imageWidth:(float)arg2 withKey:(id)arg3 fromLayout:(id)arg4;

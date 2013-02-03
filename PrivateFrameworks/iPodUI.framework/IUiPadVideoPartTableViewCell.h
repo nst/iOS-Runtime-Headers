@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class MPImageCache, UIImageView, IUiPadVideoPartTableViewCellContentView, UIView, NSMutableSet, UIImage, MPImageCacheRequest;
+@class UIImageView, UIView, IUiPadVideoPartTableViewCellContentView, UIImage, MPImageCacheRequest, MPImageCache;
 
 @interface IUiPadVideoPartTableViewCell : UITableViewCell <MPImageRequestDelegate> {
     UIView *_bottomBevel;
     MPImageCache *_imageCache;
-    NSMutableSet *_imageRequests;
     UIView *_topBevel;
     IUiPadVideoPartTableViewCellContentView *_videoChapterContentView;
     UIImageView *_videoImageView;
@@ -28,8 +27,6 @@
 - (void)dealloc;
 - (BOOL)drawAsDisabled;
 - (id)imageCache;
-- (void)imageRequest:(id)arg1 failedWithError:(id)arg2;
-- (void)imageRequest:(id)arg1 loadedImage:(id)arg2;
 - (BOOL)imageRequestIsValid:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKCalendarDate, NSString, EKRecurrenceRule, NSDate, NSNumber, EKParticipant;
+@class EKCalendarDate, NSString, NSDate, NSNumber, EKParticipant;
 
 @interface EKEvent : EKCalendarItem {
     EKCalendarDate *_occurrenceEndDate;
@@ -26,7 +26,6 @@
 @property(copy) EKCalendarDate * originalOccurrenceEndDate;
 @property(copy) NSNumber * originalOccurrenceIsAllDay;
 @property(copy) EKCalendarDate * originalOccurrenceStartDate;
-@property(retain) EKRecurrenceRule * recurrenceRule;
 @property(copy) NSDate * startDate;
 @property(readonly) int status;
 
@@ -34,9 +33,13 @@
 
 - (BOOL)_cancelWithSpan:(int)arg1 error:(id*)arg2;
 - (BOOL)_checkStartDateConstraintAgainstDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 timeZone:(id)arg2 error:(id*)arg3;
+- (id)_dateForNextOccurrence;
+- (void)_deleteThisOccurrence;
 - (BOOL)_deleteWithSpan:(int)arg1 error:(id*)arg2;
 - (void)_detachWithStartDate:(id)arg1 newStartDate:(id)arg2 future:(BOOL)arg3;
 - (id)_effectiveTimeZone;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })_gregorianDateCorrectedForTimeZoneFromCalendarDate:(id)arg1 orNSDate:(id)arg2;
+- (BOOL)_isAlarmAcknowledgedPropertyDirty;
 - (BOOL)_isAllDay;
 - (BOOL)_isInitialOccurrenceDate:(id)arg1;
 - (BOOL)_occurrenceExistsOnDate:(double)arg1 timeZone:(id)arg2;
@@ -44,6 +47,7 @@
 - (id)_persistentEvent;
 - (void)_sendModifiedNote;
 - (BOOL)_shouldCancelInsteadOfDeleteWithSpan:(int)arg1;
+- (BOOL)_shouldDeclineInsteadOfDelete;
 - (id)_sortedEKParticipantsForSortingIgnoringNonHumans:(id)arg1;
 - (BOOL)_validateAlarmIntervalConstrainedToRecurrenceInterval:(int)arg1;
 - (BOOL)_validateDatesAndRecurrencesGivenSpan:(int)arg1 error:(id*)arg2;
@@ -62,15 +66,17 @@
 - (BOOL)canDetachSingleOccurrence;
 - (BOOL)canMoveToCalendar:(id)arg1 fromCalendar:(id)arg2 error:(id*)arg3;
 - (BOOL)canSetAvailability;
-- (void)clearReadState;
+- (void)clearInvitationStatus;
 - (BOOL)commitWithSpan:(int)arg1 error:(id*)arg2;
 - (id)committedValueForKey:(id)arg1;
 - (int)compareStartDateWithEvent:(id)arg1;
+- (BOOL)dateChanged;
 - (int)daySpan;
 - (void)dealloc;
 - (id)description;
 - (void)didCommit;
 - (id)dirtyPropertiesToSkip;
+- (id)displayTitle;
 - (double)duration;
 - (id)endCalendarDate;
 - (id)endDate;
@@ -81,6 +87,7 @@
 - (id)eventStore;
 - (id)exportToICS;
 - (id)externalId;
+- (id)externalURI;
 - (id)externalURL;
 - (BOOL)hasHumanInviteesToDisplay;
 - (BOOL)hasSelfAttendee;
@@ -91,7 +98,9 @@
 - (id)initWithPersistentObject:(id)arg1;
 - (id)initialEndDate;
 - (id)initialStartDate;
+- (unsigned int)invitationStatus;
 - (BOOL)isAllDay;
+- (BOOL)isAllDayDirty;
 - (BOOL)isDetached;
 - (BOOL)isDirtyIgnoringCalendar;
 - (BOOL)isEndDateDirty;
@@ -99,6 +108,7 @@
 - (BOOL)isStartDateDirty;
 - (BOOL)isStatusDirty;
 - (BOOL)isTentative;
+- (BOOL)locationChanged;
 - (unsigned int)modifiedProperties;
 - (BOOL)needsOccurrenceCacheUpdate;
 - (id)occurrenceDate;
@@ -111,7 +121,6 @@
 - (id)originalOccurrenceStartDate;
 - (int)participationStatus;
 - (int)pendingParticipationStatus;
-- (unsigned int)readState;
 - (id)recurrenceRule;
 - (BOOL)refresh;
 - (BOOL)removeWithSpan:(int)arg1 error:(id*)arg2;
@@ -123,6 +132,7 @@
 - (void)setAllDay:(BOOL)arg1;
 - (void)setAvailability:(int)arg1;
 - (void)setEndDate:(id)arg1;
+- (void)setInvitationStatus:(unsigned int)arg1;
 - (void)setModifiedProperties:(unsigned int)arg1;
 - (void)setNeedsOccurrenceCacheUpdate:(BOOL)arg1;
 - (void)setOccurrenceEndDate:(id)arg1;
@@ -132,7 +142,6 @@
 - (void)setOriginalOccurrenceIsAllDay:(id)arg1;
 - (void)setOriginalOccurrenceStartDate:(id)arg1;
 - (void)setParticipationStatus:(int)arg1;
-- (void)setReadState:(unsigned int)arg1;
 - (void)setRecurrenceRule:(id)arg1;
 - (void)setResponseComment:(id)arg1;
 - (void)setStartDate:(id)arg1;
@@ -146,6 +155,8 @@
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDatePinnedForAllDay;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDatePinnedForAllDay;
 - (int)status;
+- (BOOL)timeChanged;
+- (BOOL)titleChanged;
 - (id)uniqueId;
 - (BOOL)validateWithSpan:(int)arg1 error:(id*)arg2;
 

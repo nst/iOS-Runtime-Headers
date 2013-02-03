@@ -11,6 +11,7 @@
     BOOL hasVolume;
     NSArray *interestingIndexes;
     BOOL isUnavailable;
+    int labelAlignments[2];
     NSArray *labelInfoArrays[4];
     NSDate *marketCloseDate;
     NSDate *marketOpenDate;
@@ -36,6 +37,7 @@
 @property(readonly) struct { double x1; double x2; unsigned long long x3; }* stockValues;
 @property(copy) NSString * symbol;
 
+- (void).cxx_destruct;
 - (struct { double x1; double x2; unsigned long long x3; }*)allocateStockValuesWithCount:(unsigned int)arg1;
 - (int)chartInterval;
 - (void)clearAllImageSets;
@@ -47,6 +49,7 @@
 - (id)initWithSymbol:(id)arg1 interval:(int)arg2;
 - (id)interestingIndexes;
 - (BOOL)isUnavailable;
+- (int)labelAlignmentForDetailedMode:(BOOL)arg1;
 - (id)labelInfoArrayForYAxis:(BOOL)arg1 detailedMode:(BOOL)arg2;
 - (id)marketCloseDate;
 - (id)marketOpenDate;
@@ -59,6 +62,7 @@
 - (void)setImageSet:(id)arg1 forStockGraphSize:(int)arg2;
 - (void)setInterestingIndexes:(id)arg1;
 - (void)setIsUnavailable:(BOOL)arg1;
+- (void)setLabelAlignment:(int)arg1 forDetailedMode:(BOOL)arg2;
 - (void)setLabelInfoArray:(id)arg1 forYAxis:(BOOL)arg2 detailedMode:(BOOL)arg3;
 - (void)setMarketCloseDate:(id)arg1;
 - (void)setMarketOpenDate:(id)arg1;

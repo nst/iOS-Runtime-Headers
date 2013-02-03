@@ -19,6 +19,7 @@
 - (id)createBackAlert;
 - (id)createFrontAlert;
 - (void)dealloc;
+- (void)didPresentAlertView:(id)arg1;
 - (void)dismiss;
 - (void)flip;
 - (id)frontAlert;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSDecimalNumberPlaceholder : NSObject {
-    struct _NSZone { } *_zone;
+@interface NSDecimalNumberPlaceholder : NSDecimalNumber {
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

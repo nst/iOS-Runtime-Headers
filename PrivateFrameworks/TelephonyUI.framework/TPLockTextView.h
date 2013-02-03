@@ -2,29 +2,32 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class UIFont, NSString, NSTimer;
+@class UIImage, NSString, NSTimer, UIFont;
 
 @interface TPLockTextView : UIView {
     float _deltaFromDefaultTrackWidth;
     float _fps;
-    BOOL _hasReverseShine;
     NSString *_label;
     UIFont *_labelFont;
+    UIImage *_maskImage;
     double _maskStartTime;
     NSTimer *_maskTimer;
     struct CGImage { } *_textCache;
     char *_textData;
 }
 
+@property(readonly) float deltaFromDefaultTrackWidth;
+
 - (void)_cacheLabel:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)dealloc;
+- (float)deltaFromDefaultTrackWidth;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)fps;
 - (id)initWithLabel:(id)arg1 fontSize:(float)arg2 trackWidthDelta:(float)arg3;
 - (BOOL)isAnimating;
 - (id)label;
 - (void)movedFromWindow:(id)arg1;
 - (void)setFPS:(float)arg1;
-- (void)setHasReverseShine:(BOOL)arg1;
 - (void)startAnimation;
 - (void)stopAnimation;
 

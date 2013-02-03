@@ -5,7 +5,4 @@
 @interface NSFontStub : NSObject {
 }
 
-- (id)findSubstituteFontForString:(id)arg1;
-- (BOOL)isSymbolicFont;
-
 @end

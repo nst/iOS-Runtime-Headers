@@ -2,26 +2,34 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class IUMediaDataSource, NSArray, MPMediaQuery, NSMutableArray, MPMediaLibrary;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface IUMediaQueriesDataSource : IUMediaListDataSource {
+@class MPStoreCompletionOffering, NSArray, MPMediaQuery, IUMediaQueriesDataSource, NSMutableArray, MPMediaLibrary;
+
+@interface IUMediaQueriesDataSource : IUMediaListDataSource <SKStoreProductViewControllerDelegate> {
     unsigned int _reloading : 1;
     unsigned int _queriesEntitiesChanged : 1;
     unsigned int _hasPendingDynamicChanges : 1;
     unsigned int _hasPendingDefaultLibraryChanges : 1;
     unsigned int _hasPendingLibraryChanges : 1;
-    IUMediaDataSource *_dataSourceForFiltering;
+    MPStoreCompletionOffering *_completionOffering;
     BOOL _hasQueriesAreEmpty;
     int _invalidationBehavior;
     MPMediaLibrary *_mediaLibrary;
     unsigned long long _nowPlayingItemPersistentID;
+    IUMediaQueriesDataSource *_overlayDataSource;
+    id _overlayDataSourceLoadBlock;
     NSArray *_queries;
     BOOL _queriesAreEmpty;
-    NSArray *_queriesBeforeFiltering;
+    NSArray *_queriesBeforeOverlay;
     NSMutableArray *_queriesEntities;
 }
 
 @property(readonly) BOOL alwaysGroupedInGridView;
+@property(retain) MPStoreCompletionOffering * completionOffering;
+@property(readonly) int filteredMediaTypes;
 @property int invalidationBehavior;
 @property(readonly) BOOL matchesNowPlayingQuery;
 @property(retain) MPMediaLibrary * mediaLibrary;
@@ -42,18 +50,18 @@
 + (id)selectionConfirmationAlertForEntity:(id)arg1;
 + (BOOL)usesNowPlayingIndicator;
 
-- (void)_addDefaultNormalActionRows;
-- (void)_addDefaultOnTheGoActionRows;
-- (void)_addPrefixActionRow:(id)arg1;
 - (void)_appDefaultsDidChangeNotification:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (id)_copyReloadedQueriesEntitiesForQueries:(id)arg1 library:(id)arg2;
 - (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
+- (void)_enabledMediaTypesDidChangeNotification:(id)arg1;
 - (void)_getMoreAction:(id)arg1;
 - (id)_getMoreURLForMediaType:(int)arg1;
 - (void)_handleDefaultMediaLibraryDidChange;
 - (void)_handleMediaLibraryDidChange;
 - (void)_handleTrackDynamicPropertiesChanged;
+- (BOOL)_hasGreaterThanOrEqualEntityCount:(unsigned int)arg1 playbackQuery:(BOOL)arg2;
+- (void)_invalidateWithOverlayDataSourceLoadBlock:(id)arg1;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)_mediaLibraryDynamicPropertiesDidChangeNotification:(id)arg1;
 - (id)_newContextForAllAlbums;
@@ -61,14 +69,18 @@
 - (id)_newContextForCopyWithIdentifier:(id)arg1;
 - (id)_newContextForShuffle;
 - (id)_newGetMoreActionRowForMediaType:(int)arg1;
-- (void)_reloadFilteredQueries;
+- (void)_reloadOverlayQueries;
+- (void)_removeStoreOffersFromQuery:(id*)arg1 entityIndex:(unsigned int*)arg2;
 - (void)_setQueriesEntities:(id)arg1;
+- (void)_wifiEnabledDidChangeNotification:(id)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (BOOL)alwaysGroupedInGridView;
 - (void)appDefaultsChanged;
 - (id)bestStoreURL;
 - (BOOL)canDeleteIndex:(unsigned int)arg1;
 - (Class)cellConfigurationClassForEntity:(id)arg1;
-- (id)cellConfigurationForIndex:(unsigned int)arg1 artworkLoadingCompletionHandler:(id)arg2;
+- (id)cellConfigurationForIndex:(unsigned int)arg1 shouldLoadArtwork:(BOOL)arg2 artworkLoadingCompletionHandler:(id)arg3;
+- (id)completionOffering;
 - (id)copyGetMoreFromITunesStoreActionRow;
 - (unsigned int)count;
 - (id)countStringFormat;
@@ -76,20 +88,20 @@
 - (id)deleteConfirmationAlertViewForIndex:(unsigned int)arg1;
 - (id)deleteConfirmationSheetForIndex:(unsigned int)arg1;
 - (BOOL)deleteIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)downloadCloudAssets;
 - (id)entitiesForQuery:(id)arg1;
 - (id)entityAtIndex:(unsigned int)arg1 localEntityIndex:(unsigned int*)arg2 localEntityCount:(unsigned int*)arg3 query:(id*)arg4;
 - (id)entityAtIndex:(unsigned int)arg1;
-- (BOOL)filterUsingDataSource:(id)arg1;
+- (int)filteredMediaTypes;
 - (BOOL)hasPlayableItems;
 - (unsigned int)indexOfEntity:(id)arg1;
+- (unsigned int)indexOfEntityWithStoreID:(unsigned long long)arg1;
 - (unsigned int)indexOfPersistentID:(unsigned long long)arg1;
 - (id)init;
 - (void)invalidate;
 - (void)invalidateDynamicTrackCaches;
 - (int)invalidationBehavior;
 - (BOOL)isEmpty;
-- (BOOL)isEmptyAfterFiltering;
-- (BOOL)isFiltered;
 - (BOOL)isRestorableNavigationPathNode;
 - (BOOL)matchesNowPlayingQuery;
 - (int)mediaDisclosureStyleForIndex:(unsigned int)arg1;
@@ -97,11 +109,12 @@
 - (unsigned long long)nowPlayingItemPersistentID;
 - (id)playbackContextForIndex:(unsigned int)arg1;
 - (id)playbackContextForQuery:(id)arg1 entityIndex:(unsigned int)arg2;
+- (void)productViewControllerDidFinish:(id)arg1;
 - (id)queries;
+- (id)queriesAppropriateForGroupingProperty:(int)arg1 mediaType:(int)arg2;
 - (id)query;
 - (id)queryForDrillingIntoRowAtIndex:(unsigned int)arg1;
 - (id)queryForIndex:(unsigned int)arg1 localEntityIndex:(unsigned int*)arg2;
-- (void)reloadActionRows;
 - (void)reloadData;
 - (void)reloadDataWithCompletionHandler:(id)arg1;
 - (void)reloadIsEmpty;
@@ -114,7 +127,9 @@
 - (BOOL)selectionPossibleForActionRow:(id)arg1;
 - (BOOL)selectionPossibleForIndex:(unsigned int)arg1;
 - (void)setArtAStillFrame:(BOOL)arg1 atIndex:(unsigned int)arg2;
+- (void)setCompletionOffering:(id)arg1;
 - (void)setInvalidationBehavior:(int)arg1;
+- (void)setIsEditing:(BOOL)arg1;
 - (void)setMediaLibrary:(id)arg1;
 - (void)setQueries:(id)arg1;
 - (void)setQuery:(id)arg1;
@@ -122,6 +137,7 @@
 - (BOOL)shouldLoadLocalImagesSynchronously;
 - (BOOL)showShuffleButtonWhenApplicable;
 - (BOOL)skipSingleItemLists;
+- (BOOL)updateQueriesPredicates;
 - (id)viewControllerContextForActionRow:(id)arg1;
 - (id)viewControllerContextForSearchCompletion;
 

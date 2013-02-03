@@ -16,6 +16,7 @@
 - (void)_UIAppearance_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)_UIAppearance_setBackButtonTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (void)_UIAppearance_setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
+- (void)_UIAppearance_setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 style:(int)arg3 barMetrics:(int)arg4;
 - (void)_UIAppearance_setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)_UIAppearance_setTintColor:(id)arg1;
 - (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
@@ -26,6 +27,7 @@
 - (float)_backButtonBackgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
 - (struct UIOffset { float x1; float x2; })_backButtonTitlePositionAdjustmentForBarMetrics:(int)arg1;
 - (float)_backgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
+- (id)_currentCustomBackgroundNeedsDarkening:(BOOL*)arg1;
 - (id)_currentTextColorForBarStyle:(int)arg1;
 - (id)_currentTextShadowColorForBarStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })_currentTextShadowOffsetForBarStyle:(int)arg1;
@@ -44,6 +46,7 @@
 - (id)_tintColor;
 - (id)_titleTextAttributesForState:(unsigned int)arg1;
 - (BOOL)_useSilverLookForBarStyle:(int)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)image;
@@ -52,6 +55,7 @@
 - (void)setPressed:(BOOL)arg1;
 - (void)setStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setStyle:(int)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)title;
 
 @end

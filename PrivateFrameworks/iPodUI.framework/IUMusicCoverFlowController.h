@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class NSTimer, UIImage, MPMediaQuery, MPImageCacheRequest, IUMusicCoverFlowPlayIndicator, UIButton, MPImageCache, MPMediaItem, IUMusicCoverFlowView, UIView, IUNowPlayingAlbumBackViewController, IUMusicPropertiesView;
+@class NSTimer, UIImage, MPMediaQuery, MPImageCacheRequest, IUMusicCoverFlowPlayIndicator, MPImageCache, UIButton, MPMediaItem, IUMusicCoverFlowView, UIView, IUNowPlayingAlbumBackViewController, IUMusicPropertiesView;
 
 @interface IUMusicCoverFlowController : NSObject {
     unsigned int _scheduledDelayedRequest : 1;
@@ -51,7 +51,6 @@
 - (void)_cancelInitialAlbumArtRequest:(id*)arg1;
 - (void)_cancelInitialAlbumArtRequestAndReleaseArt;
 - (void)_coverFlowRequestImageAtIndex:(unsigned int)arg1 quality:(unsigned int)arg2 preloadOnly:(BOOL)arg3;
-- (void)_crossedTimeMarkerNotification:(id)arg1;
 - (unsigned int)_currentSongIndexInCoverFlowQuery:(BOOL)arg1;
 - (BOOL)_displayIsFlipped;
 - (void)_finishedRotationOnlyTransition;
@@ -81,6 +80,7 @@
 - (void)_unregisterForMusicNotifications;
 - (void)_updateCoverFlowProperties;
 - (id)_updatePropertiesOfBacksideViewWithCoverIndex:(unsigned int)arg1;
+- (void)_wifiEnabledDidChangeNotification:(id)arg1;
 - (void)coverFlowView:(id)arg1 getPlaceholderIndicesForCovers:(unsigned int*)arg2;
 - (id)coverFlowView:(id)arg1 placeholderImageAtPlaceholderIndex:(unsigned int)arg2;
 - (BOOL)coverFlowView:(id)arg1 prefetch:(unsigned int)arg2 atIndex:(unsigned int)arg3;
@@ -90,6 +90,7 @@
 - (BOOL)coverFlowView:(id)arg1 shouldIgnoreImage:(id)arg2 withType:(unsigned int)arg3;
 - (void)coverFlowView:(id)arg1 transitionDidEnd:(unsigned int)arg2;
 - (void)coverFlowViewFlipDidEnd:(id)arg1;
+- (void)crossedTimeMakerWithEvent:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (int)displayedDeviceOrientation;

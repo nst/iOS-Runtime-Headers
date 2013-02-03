@@ -13,11 +13,14 @@
 @property(readonly) BOOL hasEtag;
 @property double timestamp;
 
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
 - (BOOL)hasEtag;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setEtag:(id)arg1;
 - (void)setTimestamp:(double)arg1;

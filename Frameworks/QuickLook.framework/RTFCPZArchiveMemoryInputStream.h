@@ -5,7 +5,7 @@
 @class NSData;
 
 @interface RTFCPZArchiveMemoryInputStream : NSObject <RTFCPZArchiveInputStream> {
-    char *mBytes;
+    const char *mBytes;
     NSData *mData;
     long long mSize;
 }

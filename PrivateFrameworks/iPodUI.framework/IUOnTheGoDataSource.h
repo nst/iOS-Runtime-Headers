@@ -10,7 +10,7 @@
 
 @property(readonly) MPMediaPlaylist * playlist;
 
-- (void)_mutateQueriesEntitiesAtIndex:(unsigned int)arg1 withBlock:(id)arg2;
+- (void)_mutateQueriesEntitiesWithBlock:(id)arg1;
 - (BOOL)allowsDeletion;
 - (BOOL)allowsRearrange;
 - (BOOL)canDeleteIndex:(unsigned int)arg1;
@@ -20,9 +20,10 @@
 - (BOOL)deleteIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)entitiesForQuery:(id)arg1;
 - (BOOL)hasActionRowsEvenWhenNoOtherRowsExist;
+- (BOOL)hideActionRowsOnAppear;
 - (BOOL)moveIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (id)playlist;
 - (float)rowHeight;
-- (void)setQueries:(id)arg1;
+- (BOOL)updateQueriesPredicates;
 
 @end

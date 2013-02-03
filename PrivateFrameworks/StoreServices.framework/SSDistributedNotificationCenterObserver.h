@@ -6,22 +6,22 @@
    See Warning(s) below.
  */
 
-@class NSString;
+@class NSString, NSObject<OS_dispatch_queue>;
 
 @interface SSDistributedNotificationCenterObserver : NSObject {
     id _block;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_name;
 }
 
 @property(readonly) id block;
-@property(readonly) struct dispatch_queue_s { }* dispatchQueue;
+@property(readonly) NSObject<OS_dispatch_queue> * dispatchQueue;
 @property(readonly) NSString * name;
 
 - (id)block;
 - (void)dealloc;
-- (struct dispatch_queue_s { }*)dispatchQueue;
-- (id)initWithName:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2 block:(id)arg3;
+- (id)dispatchQueue;
+- (id)initWithName:(id)arg1 queue:(id)arg2 block:(id)arg3;
 - (id)name;
 
 @end

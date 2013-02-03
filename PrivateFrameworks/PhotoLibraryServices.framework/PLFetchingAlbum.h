@@ -25,15 +25,18 @@
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
 - (void)batchFetchAssets:(id)arg1;
+- (unsigned int)batchSize;
 - (BOOL)canPerformEditOperation:(int)arg1;
 - (unsigned int)count;
 - (unsigned int)countForAssetsOfKind:(int)arg1;
 - (unsigned int)countForDisplay;
 - (void)didTurnIntoFault;
+- (id)fastPointerAccessSetForAssets:(id)arg1;
 - (id)fetchRequest;
 - (BOOL)hasAssetsCache;
 - (BOOL)isEmpty;
 - (id)keyAsset;
+- (BOOL)mayHaveAssetsInCommon:(id)arg1;
 - (id)mutableAssets;
 - (id)primitiveAssets;
 - (void)setAssets:(id)arg1;

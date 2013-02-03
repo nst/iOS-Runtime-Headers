@@ -5,4 +5,6 @@
 @interface UIPrintPanelWindow : UIWindow {
 }
 
+- (BOOL)_affectsTintView;
+
 @end

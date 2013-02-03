@@ -15,7 +15,6 @@
 - (void)cancelRequest:(id)arg1;
 - (Class)classForProviderID:(short)arg1;
 - (void)dealloc;
-- (id)hostnameForProviderID:(short)arg1;
 - (id)init;
 - (void)registerProvider:(Class)arg1;
 - (void)startRequest:(id)arg1 finished:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;

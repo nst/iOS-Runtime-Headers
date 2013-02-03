@@ -17,6 +17,7 @@
     NSString *_name;
     unsigned int _numberOfAchievements;
     unsigned int _numberOfCategories;
+    unsigned int _platform;
     BOOL _prerendered;
     BOOL _supportsAchievements;
     BOOL _supportsLeaderboards;
@@ -36,6 +37,7 @@
 @property(retain) NSString * name;
 @property unsigned int numberOfAchievements;
 @property unsigned int numberOfCategories;
+@property unsigned int platform;
 @property(getter=isPrerendered) BOOL prerendered;
 @property BOOL supportsAchievements;
 @property BOOL supportsLeaderboards;
@@ -62,6 +64,7 @@
 - (id)name;
 - (unsigned int)numberOfAchievements;
 - (unsigned int)numberOfCategories;
+- (unsigned int)platform;
 - (id)serverRepresentation;
 - (void)setAdamID:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
@@ -75,6 +78,7 @@
 - (void)setName:(id)arg1;
 - (void)setNumberOfAchievements:(unsigned int)arg1;
 - (void)setNumberOfCategories:(unsigned int)arg1;
+- (void)setPlatform:(unsigned int)arg1;
 - (void)setPrerendered:(BOOL)arg1;
 - (void)setSupportsAchievements:(BOOL)arg1;
 - (void)setSupportsLeaderboards:(BOOL)arg1;

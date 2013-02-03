@@ -2,14 +2,19 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <OCDReader>, <OCDWriter>, OCDSummary, OADBlipCollection;
+@class <OCDWriter>, OCDSummary, OADBlipCollection, OCDReader;
 
 @interface OCDDocument : NSObject {
     OADBlipCollection *mBlips;
-    <OCDReader> *mReader;
+    OCDReader *mReader;
     OCDSummary *mSummary;
     <OCDWriter> *mWriter;
 }
+
+@property(readonly) OADBlipCollection * blips;
+@property(retain) OCDReader * reader;
+@property(readonly) OCDSummary * summary;
+@property(retain) <OCDWriter> * writer;
 
 - (id)blips;
 - (void)dealloc;

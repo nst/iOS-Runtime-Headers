@@ -10,7 +10,7 @@
     int _clientsSpinLock;
     id _delegate;
     NSString *_hostGUID;
-    unsigned int _hostMaxConnections;
+    unsigned long _hostMaxConnections;
     NSString *_hostName;
     unsigned short _hostPort;
     int _hostSecuritylevel;
@@ -24,7 +24,7 @@
 @property int clientsSpinLock;
 @property id delegate;
 @property(retain) NSString * hostGUID;
-@property unsigned int hostMaxConnections;
+@property unsigned long hostMaxConnections;
 @property(retain) NSString * hostName;
 @property unsigned short hostPort;
 @property int hostSecurityLevel;

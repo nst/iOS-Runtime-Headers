@@ -9,7 +9,7 @@
     BOOL _appleDeviceHasNewFW;
     NSMutableDictionary *_arrayOf64BitFileSizes;
     BOOL _cancelOp;
-    unsigned int _contentCatalogPercentCompleted;
+    unsigned long _contentCatalogPercentCompleted;
     double _currentFDNoteTime;
     PTPWrappedBytes *_dataForTransaction;
     id _delegate;
@@ -20,15 +20,15 @@
     unsigned short _deviceProductID;
     NSString *_deviceSerialNumberString;
     unsigned short _deviceVendorID;
-    unsigned int _estimatedNumOfDownloadableObjects;
+    unsigned long _estimatedNumOfDownloadableObjects;
     PTPEventPacket *_event;
     NSMutableArray *_eventQueue;
     unsigned long long _excessReceivedDataSize;
-    unsigned int _lastAddedObject;
-    unsigned int _maxMetadataBufferSize;
+    unsigned long _lastAddedObject;
+    unsigned long _maxMetadataBufferSize;
     char *_metadataBuffer;
     BOOL _needToReopenSession;
-    unsigned int _numOfDownloadableObjectsPlusFolders;
+    unsigned long _numOfDownloadableObjectsPlusFolders;
     unsigned short _operationCode;
     BOOL _requestPending;
     PTPOperationResponsePacket *_response;
@@ -37,8 +37,8 @@
     NSMutableArray *_storages;
     unsigned long long _totalFDFileSize;
     unsigned long long _totalFDReceivedSize;
-    unsigned int _totalFDReportedProgress;
-    unsigned int _transactionID;
+    unsigned long _totalFDReportedProgress;
+    unsigned long _transactionID;
     PTPTransport *_transport;
     NSString *_userAssignedDeviceName;
 }

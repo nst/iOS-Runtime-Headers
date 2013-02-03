@@ -9,7 +9,7 @@
 
 @property(copy) NSString * acceptCharset;
 @property(copy) NSString * action;
-@property(retain,readonly) DOMHTMLCollection * elements;
+@property(readonly) DOMHTMLCollection * elements;
 @property(copy) NSString * encoding;
 @property(copy) NSString * enctype;
 @property(readonly) int length;
@@ -20,6 +20,7 @@
 - (id)acceptCharset;
 - (id)action;
 - (id)autocapitalize;
+- (id)autocomplete;
 - (BOOL)autocorrect;
 - (BOOL)checkValidity;
 - (id)elements;
@@ -33,6 +34,7 @@
 - (void)setAcceptCharset:(id)arg1;
 - (void)setAction:(id)arg1;
 - (void)setAutocapitalize:(id)arg1;
+- (void)setAutocomplete:(id)arg1;
 - (void)setAutocorrect:(BOOL)arg1;
 - (void)setEncoding:(id)arg1;
 - (void)setEnctype:(id)arg1;

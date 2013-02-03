@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSLock;
+@class NSObject<OS_dispatch_queue>, NSLock, NSMutableArray, NSObject<OS_xpc_object>;
 
 @interface GEOTileServerRemoteProxy : NSObject <GEOTileServerProxy> {
-    struct _xpc_connection_s { } *_conn;
+    BOOL _cancelling;
+    NSObject<OS_xpc_object> *_conn;
     NSLock *_connLock;
-    struct dispatch_queue_s { } *_connQueue;
+    NSObject<OS_dispatch_queue> *_connQueue;
     id _delegate;
     unsigned long long _handleCounter;
     NSMutableArray *_inProgress;
@@ -16,23 +17,28 @@
 }
 
 - (void)_handleBadDataForRequest:(id)arg1 reason:(id)arg2;
-- (void)_handleEditionUpgrade:(void*)arg1;
-- (void)_handleError:(void*)arg1;
-- (void)_handleEvent:(void*)arg1;
-- (void)_handleFinished:(void*)arg1;
-- (void)_handleNetworkBegan:(void*)arg1;
-- (void)_handleTile:(void*)arg1;
-- (id)_requestForEvent:(void*)arg1 acquireLock:(BOOL)arg2;
+- (void)_handleEditionUpgrade:(id)arg1;
+- (void)_handleError:(id)arg1;
+- (void)_handleEvent:(id)arg1;
+- (void)_handleFinished:(id)arg1;
+- (void)_handleNetworkBegan:(id)arg1;
+- (void)_handleTile:(id)arg1;
+- (id)_requestForEvent:(id)arg1 acquireLock:(BOOL)arg2;
 - (void)_sendError:(id)arg1 forRequest:(id)arg2;
+- (void)beginPreloadSessionOfSize:(unsigned long long)arg1;
 - (void)cancelLoad:(id)arg1;
 - (void)closeCacheConnection;
 - (void)dataForKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 asyncHandler:(id)arg2;
 - (id)dataForKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)dealloc;
+- (void)endPreloadSession;
 - (void)flushPendingWrites;
 - (id)init;
 - (void)loadTiles:(id)arg1 checkDisk:(BOOL)arg2 allowNetworking:(BOOL)arg3 bundleIdentifier:(id)arg4 bundleVersion:(id)arg5;
 - (void)openCacheConnection;
+- (void)reportCorruptTile:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)shrinkDiskCacheToSize:(unsigned long long)arg1 finished:(id)arg2;
+- (BOOL)skipNetworkForKeysWhenPreloading:(id)arg1;
 
 @end

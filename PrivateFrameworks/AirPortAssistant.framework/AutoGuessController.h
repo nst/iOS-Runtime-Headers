@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSThread, NSTimer, NSDictionary, NSString, <AutoGuessUIDelegate>, NSMutableDictionary, NSArray;
+@class NSThread, NSTimer, NSDictionary, <AutoGuessUIDelegate>, NSString, NSMutableDictionary, NSArray;
 
 @interface AutoGuessController : AssistantCallbackController {
     struct ACPBrowserSession { } *_acpBrowserSession;

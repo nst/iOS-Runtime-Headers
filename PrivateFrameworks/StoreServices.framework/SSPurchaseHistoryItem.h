@@ -4,18 +4,16 @@
 
 @class NSMutableDictionary;
 
-@interface SSPurchaseHistoryItem : NSObject <SSCoding, NSCopying> {
+@interface SSPurchaseHistoryItem : NSObject <SSXPCCoding, NSCopying> {
     NSMutableDictionary *_properties;
 }
 
-- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;

@@ -14,4 +14,6 @@
     } mUpper;
 }
 
+- (id).cxx_construct;
+
 @end

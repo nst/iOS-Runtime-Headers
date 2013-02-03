@@ -11,10 +11,15 @@
 @property(retain) UIView * noContentView;
 
 - (void)_goToMovieStore:(id)arg1;
+- (void)_mediaLibraryDidChangeNotification:(id)arg1;
+- (id)_movieStoreButtonItem;
+- (void)_storeRestrictionsChangedNotification:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (id)noContentView;
 - (id)noContentViewContextForContexts:(id)arg1;
 - (void)reloadSegmentedControl;
 - (void)setNoContentView:(id)arg1;
+- (void)setSelectedIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 
 @end

@@ -39,5 +39,6 @@
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (double)timestampForKey:(id)arg1;
+- (void)updateFromOriginalRelationshipCaches:(id)arg1;
 
 @end

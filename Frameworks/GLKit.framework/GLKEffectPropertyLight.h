@@ -122,26 +122,6 @@
             float q; 
         } ; 
         float v[4]; 
-    union _GLKVector4 { 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-            float w; 
-        } ; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-            float a; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-            float p; 
-            float q; 
-        } ; 
-        float v[4]; 
     union _GLKVector3 { 
         struct { 
             float x; 
@@ -159,6 +139,14 @@
             float p; 
         } ; 
         float v[3]; 
+    struct GLKBigInt_s { 
+        unsigned long long n0; 
+        unsigned long long n1; 
+    struct GLKBigInt_s { 
+        unsigned long long n0; 
+        unsigned long long n1; 
+    } _allFshMasks;
+    } _allVshMasks;
     } _ambientColor;
     int _ambientLoc;
     int _ambientTermLoc;
@@ -191,10 +179,10 @@
     float _spotExponent;
     int _spotExponentLoc;
     GLKEffectPropertyTransform *_transform;
-    unsigned char _useConstantColor;
-    } _white;
 }
 
+@property(readonly) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } allFshMasks;
+@property(readonly) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } allVshMasks;
 @property union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } ambientColor;
 @property int ambientLoc;
 @property int ambientTermLoc;
@@ -229,33 +217,28 @@
 @property float spotExponent;
 @property int spotExponentLoc;
 @property(retain) GLKEffectPropertyTransform * transform;
-@property unsigned char useConstantColor;
-@property union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } white;
 
-+ (id)effectPropertyWithAttrib:(int)arg1;
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;
 
+- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })allFshMasks;
+- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })allVshMasks;
 - (union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })ambientColor;
 - (int)ambientLoc;
 - (int)ambientTermLoc;
-- (void)attenuateMask;
 - (void)bind;
 - (float)constantAttenuation;
 - (int)constantAttenuationLoc;
 - (void)dealloc;
+- (id)description;
 - (union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })diffuseColor;
 - (int)diffuseLoc;
-- (void)directionalLightMask;
 - (void)dirtyAllUniforms;
 - (unsigned long long*)effectDirtyUniforms;
 - (unsigned char)enabled;
-- (void)enabledMask;
 - (unsigned char)firstLight;
-- (unsigned int)fshMaskCt;
-- (char **)fshMaskStr;
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)fshMasks;
-- (bool)includeShaderTextForRootNode:(id)arg1;
-- (id)initWithTransform:(id)arg1 lightingType:(int)arg2 firstLight:(unsigned char)arg3 useConstantColor:(unsigned char)arg4;
+- (bool)includeFshShaderTextForRootNode:(id)arg1;
+- (bool)includeVshShaderTextForRootNode:(id)arg1;
+- (id)initWithTransform:(id)arg1 lightingType:(int)arg2 firstLight:(unsigned char)arg3;
 - (void)initializeMasks;
 - (unsigned char)isAttenuated;
 - (unsigned char)isSpot;
@@ -270,7 +253,6 @@
 - (union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })positionEye;
 - (int)positionEyeLoc;
 - (unsigned char)positionEyeStale;
-- (void)positionalLightMask;
 - (float)quadraticAttenuation;
 - (int)quadraticAttenuationLoc;
 - (void)setAmbientColor:(union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })arg1;
@@ -288,7 +270,6 @@
 - (void)setLightingType:(int)arg1;
 - (void)setLinearAttenuation:(float)arg1;
 - (void)setLinearAttenuationLoc:(int)arg1;
-- (void)setMasks;
 - (void)setNormalize:(unsigned char)arg1;
 - (void)setNormalizeLoc:(int)arg1;
 - (void)setNormalizedSpotDirectionEye:(union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })arg1;
@@ -309,8 +290,6 @@
 - (void)setSpotExponent:(float)arg1;
 - (void)setSpotExponentLoc:(int)arg1;
 - (void)setTransform:(id)arg1;
-- (void)setUseConstantColor:(unsigned char)arg1;
-- (void)setWhite:(union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })arg1;
 - (union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })specularColor;
 - (int)specularLoc;
 - (float)spotCutoff;
@@ -319,12 +298,6 @@
 - (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })spotDirection;
 - (float)spotExponent;
 - (int)spotExponentLoc;
-- (void)spotMask;
 - (id)transform;
-- (unsigned char)useConstantColor;
-- (unsigned int)vshMaskCt;
-- (char **)vshMaskStr;
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)vshMasks;
-- (union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })white;
 
 @end

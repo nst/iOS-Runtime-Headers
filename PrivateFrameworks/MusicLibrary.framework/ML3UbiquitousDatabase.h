@@ -2,12 +2,36 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
+@class NSString;
+
 @interface ML3UbiquitousDatabase : ML3SqliteDatabase <ML3SqliteDatabaseSubclass> {
+    BOOL _isInTransaction;
+    BOOL _needsToPurgeOldEntries;
 }
 
+@property(copy) NSString * ubiquitousBookmarkDomainVersionAnchorToken;
+@property unsigned long long ubiquitousBookmarkEntityRevisionAnchor;
+
 + (id)allSchemaSQL;
++ (int)currentUserVersion;
 + (id)databasePath;
 + (BOOL)migrateFromVersion:(int)arg1 outUserVersion:(int*)arg2 usingHandle:(struct sqlite3 { }*)arg3;
-+ (int)userVersionCurrent;
+
+- (BOOL)_setValue:(id)arg1 forDatabaseProperty:(id)arg2;
+- (void)_updateUbiquitousBookmarkMetadataWithMetadataIdentifier:(id)arg1 propertyValues:(id)arg2 timestamp:(double)arg3;
+- (id)_valueForDatabaseProperty:(id)arg1;
+- (void)applyUbiqiutousBookmarkMetadataToTrack:(id)arg1;
+- (void)didCommitInDatabaseContext:(id)arg1;
+- (void)dumpUbiquitousMetadata;
+- (void)insertUbiquitousBookmarkMetadataWithMetadataIdentifier:(id)arg1 propertyValues:(id)arg2 timestamp:(double)arg3;
+- (void)insertUbiquitousBookmarkMetadataWithValuesFromTrack:(id)arg1;
+- (void)performTransactionWithBlock:(id)arg1;
+- (void)purgeOldEntriesIfNecessary;
+- (void)removeUbiquitousBookmarkMetadataForTrack:(id)arg1;
+- (void)resetUbiquitousMetadata;
+- (void)setUbiquitousBookmarkDomainVersionAnchorToken:(id)arg1;
+- (void)setUbiquitousBookmarkEntityRevisionAnchor:(unsigned long long)arg1;
+- (id)ubiquitousBookmarkDomainVersionAnchorToken;
+- (unsigned long long)ubiquitousBookmarkEntityRevisionAnchor;
 
 @end

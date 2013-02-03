@@ -20,19 +20,25 @@
 @property(readonly) MPMediaQuery * seedTracksQuery;
 
 + (id)artworkCacheDirectoryPath;
++ (id)artworkImageForMediaItem:(id)arg1 scaleMode:(int)arg2;
 + (id)artworkImageForMediaItem:(id)arg1;
++ (id)mixQueue;
 
 - (id)_cacheDirectoryPath;
 - (id)_cachedRepresentativeImagePath;
-- (unsigned long long)_entityArtworkCacheHashForRepresentativeItems:(id)arg1;
+- (unsigned long long)_entityArtworkCacheHashForRepresentativeItems:(id)arg1 ensureItemArtworkFilesExist:(BOOL)arg2;
+- (void)_generateMixImageWithTileLength:(float)arg1 imageDidLoadBlock:(id)arg2;
+- (struct CGImage { }*)_getAlreadyLoadedRepresentativeImageWithTileLength:(float)arg1 loadCompletionBlock:(id)arg2;
+- (BOOL)_observeMixImageLoadingWithImageDidLoadBlock:(id)arg1;
+- (void)_onQueueLoadRepresentativeImageWithTileLength:(float)arg1;
+- (struct CGImage { }*)_placeholderImageWithTileLength:(float)arg1;
+- (struct CGImage { }*)_placeholderMixImageWithTileLength:(float)arg1;
 - (id)_representativeImageItemsWithMaxCount:(unsigned int)arg1;
 - (BOOL)canPlayUsingNetworkType:(int)arg1;
 - (void)cancelDownload;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)countOfRepresentativeImagesWithMaxCount:(unsigned int)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)downloadMixWithCompletionHandler:(id)arg1;
 - (float)downloadProgress;
 - (void)encodeWithCoder:(id)arg1;
@@ -42,11 +48,11 @@
 - (BOOL)isCloudMix;
 - (BOOL)isDownloading;
 - (BOOL)isEqual:(id)arg1;
+- (struct CGImage { }*)loadRepresentativeImageWithTileLength:(float)arg1 completionBlock:(id)arg2;
 - (id)name;
 - (id)playlist;
+- (void)preloadRepresentativeImageWithTileLength:(float)arg1 completionBlock:(id)arg2;
 - (id)representativeArtists;
-- (struct CGImage { }*)representativeImageWithSize:(struct CGSize { float x1; float x2; })arg1 count:(unsigned int)arg2 cacheOnly:(BOOL)arg3;
-- (struct CGImage { }*)representativeImageWithSize:(struct CGSize { float x1; float x2; })arg1 count:(unsigned int)arg2;
 - (id)seedTracksQuery;
 
 @end

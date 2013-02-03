@@ -16,6 +16,7 @@
 + (float)rowHeightForGlobalContext:(id)arg1;
 
 - (struct CGSize { float x1; float x2; })artworkSize;
+- (id)backgroundColorForImageAtIndex:(unsigned int)arg1;
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (void)configureForEntity:(id)arg1 query:(id)arg2 entityIndex:(unsigned int)arg3 entityCount:(unsigned int)arg4;
 - (void)dealloc;
@@ -24,7 +25,7 @@
 - (void)invalidateDynamicTrackCaches;
 - (void)reloadImages;
 - (void)reloadLayoutInformation;
-- (void)reloadStrings;
+- (void)reloadStringsWithProperties:(id)arg1;
 - (void)setSubtitleMediaItemProperty:(id)arg1;
 - (id)subtitleMediaItemProperty;
 - (id)untruncationCalloutString;

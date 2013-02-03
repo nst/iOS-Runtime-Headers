@@ -17,7 +17,7 @@
 - (void)cancelPeripheralConnection:(id)arg1;
 - (void)connectPeripheral:(id)arg1 options:(id)arg2;
 - (id)delegate;
-- (id)initWithDelegate:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)retrieveConnectedPeripherals;
 - (void)retrievePeripherals:(id)arg1;
 - (void)scanForPeripheralsWithServices:(id)arg1 options:(id)arg2;

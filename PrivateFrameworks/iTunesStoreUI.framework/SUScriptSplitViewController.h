@@ -19,30 +19,10 @@
 @property BOOL usesSharedPlaceholder;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 
 - (id)_className;
-- (id)_copyFirstViewController;
-- (id)_copyMinimumPaneSize;
-- (id)_copySecondViewController;
-- (id)_copySplitPosition;
-- (id)_copySplitShadowColor;
-- (id)_copySplitShadowOpacity;
-- (id)_copySplitShadowRadius;
-- (id)_copySplitType;
-- (id)_copyTitle;
-- (void)_setFirstViewController:(id)arg1;
-- (void)_setMinimumPaneSize:(id)arg1;
-- (void)_setSecondViewController:(id)arg1;
-- (void)_setSplitPosition:(id)arg1;
-- (void)_setSplitShadowColor:(struct CGColor { }*)arg1;
-- (void)_setSplitShadowOpacity:(id)arg1;
-- (void)_setSplitShadowRadius:(id)arg1;
-- (void)_setSplitType:(id)arg1;
-- (void)_setTitle:(id)arg1;
-- (void)_setUsesSharedPlaceholder:(BOOL)arg1;
 - (id)_splitViewController;
-- (BOOL)_usesSharedPlaceholder;
 - (id)attributeKeys;
 - (id)firstViewController;
 - (id)minimumPaneSize;

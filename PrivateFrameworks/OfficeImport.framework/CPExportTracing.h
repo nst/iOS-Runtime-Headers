@@ -3,8 +3,6 @@
  */
 
 @interface CPExportTracing : CPTracing {
-    long mExportingOpstat;
-    long mWritingOpstat;
 }
 
 - (void)dealloc;

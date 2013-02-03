@@ -39,6 +39,7 @@
 - (void*)mutableBytes;
 - (unsigned long long)offset;
 - (double)percentFull;
+- (unsigned long long)rewindBytesToPosition64:(unsigned long long)arg1;
 - (unsigned long long)setCapacity64:(unsigned long long)arg1;
 - (void)setLength64:(unsigned long long)arg1;
 - (void)setProgressNotifierCallback:(int (*)())arg1 context:(void*)arg2;

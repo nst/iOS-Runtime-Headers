@@ -9,9 +9,9 @@
 }
 
 + (id)black;
-+ (id)rgbColorWithNSColor:(id)arg1;
 + (id)rgbColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 + (id)rgbColorWithRedByte:(float)arg1 greenByte:(float)arg2 blueByte:(float)arg3;
++ (id)rgbColorWithTSUColor:(id)arg1;
 + (id)rgbColorWithWhite:(float)arg1;
 + (id)rgbColorWithWhiteByte:(float)arg1;
 + (id)white;

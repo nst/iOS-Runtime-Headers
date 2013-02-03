@@ -16,11 +16,16 @@
 - (void)_setImagePickerMediaTypes:(id)arg1;
 - (void)_showCancelButton;
 - (void)_showDoneButton;
-- (void)albumView:(id)arg1 didTapPhotoAtIndex:(unsigned int)arg2;
+- (id)albumView:(id)arg1 badgeImageForPhotoAtIndexPath:(id)arg2;
+- (void)albumView:(id)arg1 didTapPhotoAtIndexPath:(id)arg2;
 - (void)albumViewSelectionDidChange:(id)arg1 added:(id)arg2 removed:(id)arg3;
 - (void)dealloc;
+- (id)footerAccessoryViewForAlbumView:(id)arg1;
+- (BOOL)footerSubtitleAllowsEmail:(id)arg1;
 - (void)loadView;
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
+- (void)updateUnreadMarkerAnimated:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 

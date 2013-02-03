@@ -16,7 +16,6 @@
         } size; 
     unsigned int _leftBorder : 1;
     unsigned int _rightBorder : 1;
-    unsigned int _drawsContent : 1;
     unsigned int _showsTimeMarker : 1;
     unsigned int _showsTimeLine : 1;
     UIColor *_backgroundColor;
@@ -43,7 +42,6 @@
     UIView *_topPattern;
 }
 
-@property BOOL drawsContent;
 @property BOOL drawsGrayOutsideExtents;
 @property float fixedDayWidth;
 @property int hoursToPadBottom;
@@ -68,7 +66,6 @@
 - (void)_updateTimeMarker;
 - (float)bottomPadding;
 - (void)dealloc;
-- (BOOL)drawsContent;
 - (BOOL)drawsGrayOutsideExtents;
 - (float)fixedDayWidth;
 - (float)hourHeight;
@@ -83,7 +80,6 @@
 - (void)removeFromSuperview;
 - (BOOL)rightBorderInsetsOccurrences;
 - (int)secondAtPosition:(float)arg1;
-- (void)setDrawsContent:(BOOL)arg1;
 - (void)setDrawsGrayOutsideExtents:(BOOL)arg1;
 - (void)setFixedDayWidth:(float)arg1;
 - (void)setHoursToPadBottom:(int)arg1;

@@ -10,7 +10,7 @@
 @property(copy) NSString * directionsType;
 @property(retain) SALocalSearchMapItem * itemDestination;
 @property(retain) SALocalSearchMapItem * itemSource;
-@property(retain) NSNumber * regionOfInterestRadiusInMiles;
+@property(copy) NSNumber * regionOfInterestRadiusInMiles;
 @property BOOL showDirections;
 @property BOOL showTraffic;
 @property(copy) NSURL * targetAppId;

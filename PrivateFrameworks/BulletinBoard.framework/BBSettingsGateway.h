@@ -2,18 +2,37 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@interface BBSettingsGateway : NSObject <XPCProxyTarget> {
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@interface BBSettingsGateway : NSObject <BBSettingsGatewayRemoteInterface, XPCProxyTarget> {
+    id _activeOverrideTypesChangedHandler;
+    id _overrideStatusChangeHandler;
     id _serverProxy;
 }
 
 + (void)initialize;
 
+- (void)activeBehaviorOverrideTypesChanged:(unsigned int)arg1;
+- (void)behaviorOverrideStatusChanged:(int)arg1;
 - (void)dealloc;
+- (void)getBehaviorOverridesEnabledWithCompletion:(id)arg1;
+- (void)getBehaviorOverridesWithCompletion:(id)arg1;
+- (void)getPrivilegedSenderAddressBookGroupRecordIDAndNameWithCompletion:(id)arg1;
+- (void)getPrivilegedSenderTypesWithCompletion:(id)arg1;
 - (void)getSectionInfoWithCompletion:(id)arg1;
 - (void)getSectionOrderRuleWithCompletion:(id)arg1;
 - (id)init;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)setActiveBehaviorOverrideTypesChangeHandler:(id)arg1;
+- (void)setBehaviorOverrideStatus:(int)arg1;
+- (void)setBehaviorOverrideStatusChangeHandler:(id)arg1;
+- (void)setBehaviorOverrides:(id)arg1;
+- (void)setBehaviorOverridesEnabled:(BOOL)arg1;
 - (void)setOrderedSectionIDs:(id)arg1;
+- (void)setPrivilegedSenderAddressBookGroupRecordID:(int)arg1 name:(id)arg2;
+- (void)setPrivilegedSenderTypes:(unsigned int)arg1;
 - (void)setSectionInfo:(id)arg1 forSectionID:(id)arg2;
 - (void)setSectionOrderRule:(unsigned int)arg1;
 

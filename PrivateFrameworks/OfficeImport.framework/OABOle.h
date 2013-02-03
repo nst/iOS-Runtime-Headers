@@ -17,7 +17,6 @@
 + (id)readCLSIDFromStream:(struct SsrwOOStream { int (**x1)(); }*)arg1;
 + (id)readCompressedFromStream:(struct SsrwOOStream { int (**x1)(); }*)arg1 compressedSize:(unsigned long)arg2 uncompressedSize:(unsigned long)arg3 cancel:(id)arg4;
 + (id)readFromData:(id)arg1 cancel:(id)arg2;
-+ (id)readFromFileName:(id)arg1 cancel:(id)arg2;
 + (id)readFromParentStorage:(struct SsrwOOStorage { struct _Storage {} *x1; unsigned short x2[36]; }*)arg1 storageName:(id)arg2 cancel:(id)arg3;
 + (id)readFromStream:(struct SsrwOOStream { int (**x1)(); }*)arg1 size:(unsigned long)arg2 cancel:(id)arg3;
 + (BOOL)readSharedInfoFor:(id)arg1 fromStorage:(struct SsrwOOStorage { struct _Storage {} *x1; unsigned short x2[36]; }*)arg2;

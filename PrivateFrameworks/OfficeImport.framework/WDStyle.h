@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDCharacterProperties, WDTableStyleOverride, WDStyleSheet, WDTableCellProperties, NSString, WDTableRowProperties, WDParagraphProperties, WDStyle;
+@class WDCharacterProperties, WDTableStyleOverride, WDStyleSheet, WDTableCellProperties, NSString, WDTableRowProperties, WDStyle, WDParagraphProperties;
 
 @interface WDStyle : NSObject <NSCopying> {
     WDStyle *mBaseStyle;
@@ -18,8 +18,6 @@
     WDTableRowProperties *mTableRowProperties;
     WDTableStyleOverride *mTableStyleOverrides[12];
 }
-
-+ (id)newIDFromName:(id)arg1;
 
 - (id)baseStyle;
 - (id)characterProperties;

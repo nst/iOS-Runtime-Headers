@@ -2,35 +2,35 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class UIView, GKHeaderSegmentedControl;
+@class NSString, GKHeaderSegmentedControl;
 
-@interface GKLeaderboardControlSection : NSObject <GKTableSection, GKHeaderSegmentedControlDelegate> {
-    UIView *_controlContainer;
+@interface GKLeaderboardControlSection : GKTableSection <GKHeaderSegmentedControlDelegate> {
     GKHeaderSegmentedControl *_timeScopeSegmentedControl;
+    NSString *_title;
     BOOL _visible;
 }
 
-@property(retain) UIView * controlContainer;
-@property(getter=isLoading) BOOL loading;
 @property int timeScope;
 @property(retain) GKHeaderSegmentedControl * timeScopeSegmentedControl;
 @property(getter=isVisible) BOOL visible;
 
-- (id)controlContainer;
+- (void)dealloc;
 - (void)headerSegmentedControlChanged:(id)arg1;
+- (float)heightForFooterInTableView:(id)arg1;
 - (id)init;
 - (BOOL)isVisible;
-- (float)sectionHeaderHeightInTableView:(id)arg1;
-- (id)sectionHeaderViewInTableView:(id)arg1;
-- (int)sectionRowCountInTableView:(id)arg1;
-- (void)setControlContainer:(id)arg1;
+- (int)rowCountInTableView:(id)arg1;
 - (void)setTimeScope:(int)arg1;
 - (void)setTimeScopeSegmentedControl:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (void)setVisible:(BOOL)arg1;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
 - (int)timeScope;
 - (id)timeScopeSegmentedControl;
+- (id)title;
+- (id)titleForHeaderInTableView:(id)arg1;
+- (id)viewForSectionFooterInTableView:(id)arg1;
 
 @end

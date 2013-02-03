@@ -11,14 +11,14 @@
 
 @interface CAMeshTransform : NSObject <NSCoding, NSCopying, NSMutableCopying> {
     void *_impl;
-    unsigned int _normalization;
-    int _subdivisionSteps;
+    unsigned long _normalization;
+    long _subdivisionSteps;
 }
 
-@property(copy,readonly) NSString * depthNormalization;
-@property(readonly) unsigned int faceCount;
+@property(readonly) NSString * depthNormalization;
+@property(readonly) unsigned long faceCount;
 @property(readonly) int subdivisionSteps;
-@property(readonly) unsigned int vertexCount;
+@property(readonly) unsigned long vertexCount;
 
 + (id)meshTransformWithVertexCount:(unsigned long)arg1 vertices:(const struct CAMeshVertex { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CAPoint3D { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg2 faceCount:(unsigned long)arg3 faces:(const struct CAMeshFace { unsigned int x1[4]; float x2[4]; }*)arg4 depthNormalization:(id)arg5;
 

@@ -16,8 +16,10 @@
 + (BOOL)supportsGreetingChanges;
 + (BOOL)supportsPasswordChanges;
 
+- (void)_initForBundle:(id)arg1;
 - (void)dealloc;
 - (id)initForService:(id)arg1;
+- (id)initForServiceBundleId:(id)arg1;
 - (id)parameterValueForKey:(id)arg1;
 
 @end

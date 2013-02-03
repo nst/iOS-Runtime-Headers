@@ -2,19 +2,24 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapRegion, NSString, GEOLatLng, GEOAddress, NSMutableArray;
+@class GEOLatLng, GEOMapRegion, NSString, NSMutableArray, GEOAddress;
 
 @interface GEOPlace : PBCodable {
+    struct { 
+        unsigned int geoId : 1; 
+        unsigned int uID : 1; 
+        unsigned int addressGeocodeAccuracy : 1; 
+        unsigned int type : 1; 
+        unsigned int version : 1; 
+        unsigned int isDisputed : 1; 
     GEOAddress *_address;
     int _addressGeocodeAccuracy;
     NSMutableArray *_business;
     GEOLatLng *_center;
+    NSMutableArray *_entryPoints;
     long long _geoId;
-    BOOL _hasAddressGeocodeAccuracy;
-    BOOL _hasGeoId;
-    BOOL _hasType;
-    BOOL _hasUID;
-    BOOL _hasVersion;
+    } _has;
+    BOOL _isDisputed;
     GEOMapRegion *_mapRegion;
     NSString *_name;
     GEOAddress *_phoneticAddress;
@@ -28,11 +33,13 @@
 @property int addressGeocodeAccuracy;
 @property(retain) NSMutableArray * business;
 @property(retain) GEOLatLng * center;
+@property(retain) NSMutableArray * entryPoints;
 @property long long geoId;
 @property(readonly) BOOL hasAddress;
 @property BOOL hasAddressGeocodeAccuracy;
 @property(readonly) BOOL hasCenter;
 @property BOOL hasGeoId;
+@property BOOL hasIsDisputed;
 @property(readonly) BOOL hasMapRegion;
 @property(readonly) BOOL hasName;
 @property(readonly) BOOL hasPhoneticAddress;
@@ -40,6 +47,7 @@
 @property BOOL hasType;
 @property BOOL hasUID;
 @property BOOL hasVersion;
+@property BOOL isDisputed;
 @property(retain) GEOMapRegion * mapRegion;
 @property(retain) NSString * name;
 @property(retain) GEOAddress * phoneticAddress;
@@ -47,33 +55,45 @@
 @property int type;
 @property long long uID;
 @property int version;
+@property(readonly) NSString * yelpID;
 
 - (void)addBusiness:(id)arg1;
+- (void)addEntryPoint:(id)arg1;
 - (id)address;
 - (id)addressDictionary;
 - (int)addressGeocodeAccuracy;
 - (id)business;
 - (id)businessAtIndex:(unsigned int)arg1;
 - (unsigned int)businessCount;
+- (unsigned long long)businessID;
+- (id)businessName;
 - (id)center;
+- (void)clearBusiness;
+- (void)clearEntryPoints;
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)entryPointAtIndex:(unsigned int)arg1;
+- (id)entryPoints;
+- (unsigned int)entryPointsCount;
 - (long long)geoId;
 - (BOOL)hasAddress;
 - (BOOL)hasAddressGeocodeAccuracy;
 - (BOOL)hasCenter;
 - (BOOL)hasGeoId;
+- (BOOL)hasIsDisputed;
 - (BOOL)hasMapRegion;
 - (BOOL)hasName;
 - (BOOL)hasPhoneticAddress;
 - (BOOL)hasPhoneticName;
+- (BOOL)hasSingleBusiness;
 - (BOOL)hasType;
 - (BOOL)hasUID;
 - (BOOL)hasVersion;
-- (id)initWithAddressString:(id)arg1;
-- (id)initWithGMMNewLocation:(id)arg1;
-- (id)initWithGMMSearchResult:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isDisputed;
+- (BOOL)isEqual:(id)arg1;
 - (id)mapRegion;
 - (id)name;
 - (id)phoneticAddress;
@@ -83,12 +103,15 @@
 - (void)setAddressGeocodeAccuracy:(int)arg1;
 - (void)setBusiness:(id)arg1;
 - (void)setCenter:(id)arg1;
+- (void)setEntryPoints:(id)arg1;
 - (void)setGeoId:(long long)arg1;
 - (void)setHasAddressGeocodeAccuracy:(BOOL)arg1;
 - (void)setHasGeoId:(BOOL)arg1;
+- (void)setHasIsDisputed:(BOOL)arg1;
 - (void)setHasType:(BOOL)arg1;
 - (void)setHasUID:(BOOL)arg1;
 - (void)setHasVersion:(BOOL)arg1;
+- (void)setIsDisputed:(BOOL)arg1;
 - (void)setMapRegion:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPhoneticAddress:(id)arg1;
@@ -100,5 +123,6 @@
 - (long long)uID;
 - (int)version;
 - (void)writeTo:(id)arg1;
+- (id)yelpID;
 
 @end

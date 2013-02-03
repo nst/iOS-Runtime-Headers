@@ -32,9 +32,6 @@
 - (void)dirtyAllUniforms;
 - (float*)eyePlaneByInvModelview;
 - (int)eyePlaneByInvModelviewLoc;
-- (unsigned int)fshMaskCt;
-- (char **)fshMaskStr;
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)fshMasks;
 - (id)init;
 - (id)initWithMode:(int)arg1 coord:(int)arg2;
 - (void)initializeMasks;
@@ -55,8 +52,5 @@
 - (void)setShaderBindings;
 - (void)setTextureIndex:(unsigned int)arg1;
 - (unsigned int)textureIndex;
-- (unsigned int)vshMaskCt;
-- (char **)vshMaskStr;
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)vshMasks;
 
 @end

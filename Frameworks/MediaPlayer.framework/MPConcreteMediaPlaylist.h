@@ -2,14 +2,16 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableDictionary, MPMediaQuery;
+@class MPMediaQuery, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
-@interface MPConcreteMediaPlaylist : MPMediaPlaylist {
+@interface MPConcreteMediaPlaylist : MPMediaPlaylist <NSCoding, NSCopying> {
+    NSObject<OS_dispatch_queue> *_accessQueue;
     void *_clusterPlaylist;
     MPMediaQuery *_itemsQuery;
     NSMutableDictionary *_properties;
 }
 
+- (void)_updateLibraryForPlaylistEdit:(id)arg1;
 - (void)addItem:(id)arg1 completionBlock:(id)arg2;
 - (void)addItems:(id)arg1 completionBlock:(id)arg2;
 - (BOOL)beginGeneratingGeniusClusterItemsWithSeedItems:(id)arg1 error:(id*)arg2;
@@ -28,7 +30,7 @@
 - (int)mediaTypes;
 - (void)moveItemFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2 completionBlock:(id)arg3;
 - (void)populateWithSeedItem:(id)arg1 completionBlock:(id)arg2;
-- (void)populateWithSeedItem:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2 completionBlock:(id)arg3;
+- (void)populateWithSeedItem:(id)arg1 queue:(id)arg2 completionBlock:(id)arg3;
 - (void)removeAllItems;
 - (void)removeItems:(id)arg1 atFilteredIndexes:(id)arg2 completionBlock:(id)arg3;
 - (id)representativeItem;

@@ -11,7 +11,7 @@
 
 @interface CMProgressiveArchiveManager : CMArchiveManager {
     struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); } *mCallBacks;
-    void *mClient;
+    const void *mClient;
     NSMutableString *mCssString;
     NSMutableDictionary *mDataCache;
     NSMutableString *mHtmlLogString;
@@ -25,7 +25,7 @@
 - (id)addCssStyle:(id)arg1;
 - (void)closeResourceAtPath:(id)arg1;
 - (void)commitDataAtPath:(id)arg1;
-- (id)createResourceWithName:(id)arg1;
+- (id)copyResourceWithName:(id)arg1;
 - (id)cssStylesheetString;
 - (void)dealloc;
 - (id)initWithClient:(const void*)arg1 andCallBacks:(struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;

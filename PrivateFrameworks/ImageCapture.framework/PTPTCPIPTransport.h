@@ -7,7 +7,7 @@
 @interface PTPTCPIPTransport : PTPTransport {
     PTPTCPIPConnection *_cdConnection;
     NSMutableData *_cdData;
-    unsigned int _connectionNumber;
+    unsigned long _connectionNumber;
     id _connectionRequestResponse;
     BOOL _delegateNeedsData;
     PTPTCPIPConnection *_eventConnection;
@@ -19,7 +19,7 @@
     NSString *_targetAddress;
     NSString *_targetGUID;
     NSString *_targetName;
-    unsigned int _targetPort;
+    unsigned long _targetPort;
     PTPTCPIPConnection *_tempConnection;
     NSMutableData *_tempData;
 }
@@ -40,6 +40,7 @@
 - (void)sendDataPackets:(id)arg1;
 - (BOOL)sendEvent:(id)arg1;
 - (id)sendRequest:(id)arg1 receiveData:(id)arg2 timeout:(unsigned long)arg3;
+- (id)sendRequest:(id)arg1 sendData:(id)arg2 timeout:(unsigned long)arg3;
 - (BOOL)sendResponse:(id)arg1;
 - (BOOL)sendStartData:(id)arg1;
 - (BOOL)startInitiator;
@@ -49,6 +50,8 @@
 - (id)targetGUID;
 - (id)targetName;
 - (unsigned long)targetPort;
+- (int)waitForCallbackThreadConditionSignalWithTimeout:(long)arg1;
+- (int)waitForCallbackThreadConditionSignalWithTimeoutForConnection:(long)arg1;
 - (BOOL)waitForConnectionWithTimeout:(double)arg1;
 
 @end

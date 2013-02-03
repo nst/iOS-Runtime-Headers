@@ -2,15 +2,11 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@interface DDAddToAddressBookAction : DDAction <ABUnknownPersonViewControllerDelegate> {
+@interface DDAddToAddressBookAction : DDAction {
 }
 
-- (void)_augmentRecordWithResults:(void*)arg1;
-- (void)cancelPressed:(id)arg1;
 - (int)interactionType;
 - (id)localizedName;
-- (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
-- (BOOL)unknownPersonViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (id)viewController;
+- (void)prepareViewControllerForActionController:(id)arg1;
 
 @end

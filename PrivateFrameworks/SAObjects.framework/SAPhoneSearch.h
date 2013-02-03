@@ -9,7 +9,7 @@
 
 @property(copy) NSDate * end;
 @property(copy) NSString * incomingPhoneNumber;
-@property(retain) NSNumber * limit;
+@property(copy) NSNumber * limit;
 @property BOOL missed;
 @property(copy) NSString * outgoingPhoneNumber;
 @property(copy) NSDate * start;

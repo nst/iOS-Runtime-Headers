@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView<UITextSelectingContainer>;
+@class UIResponder<UITextInput>;
 
 @interface UISelectionTapRecognizer : UITextTapRecognizer {
-    UIView<UITextSelectingContainer> *_textView;
+    UIResponder<UITextInput> *_textView;
 }
 
-@property UIView<UITextSelectingContainer> * textView;
+@property UIResponder<UITextInput> * textView;
 
 - (BOOL)isCloseToSelection;
 - (void)setState:(int)arg1;

@@ -4,16 +4,19 @@
 
 @interface ASSettingsSyncController : AccountSettingsUISyncController <UIModalViewDelegate> {
     BOOL _haveRegisteredForAccountsChanged;
+    BOOL _haveRegisteredForFolderChanges;
     BOOL _isHotmailAccount;
 }
 
 - (id)_accountFromManager;
 - (id)_accountInSpecifier;
 - (void)_accountsChanged:(id)arg1;
+- (void)_clearOutCachesAndListenForNotifications;
 - (void)_folderHierarchyChanged;
 - (void)_foldersToPushChanged;
 - (id)_foldersToPushSpecifierAccount;
 - (id)_navTitle;
+- (void)_purgeDownloadedMailForAccount;
 - (void)_reloadFoldersToPushSpecifier;
 - (Class)accountInfoControllerClass;
 - (id)accountIntegerPropertyWithSpecifier:(id)arg1;

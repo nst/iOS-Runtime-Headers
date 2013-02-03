@@ -18,5 +18,6 @@
 - (id)navigationMenu;
 - (int)numberOfMenuItems;
 - (id)titleOfMenuItemAtIndex:(int)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

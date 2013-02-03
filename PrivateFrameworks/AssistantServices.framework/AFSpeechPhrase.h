@@ -12,7 +12,7 @@
 @property(copy) NSArray * interpretations;
 @property BOOL isLowConfidence;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)dkPlistRepresentation;
 - (id)initWithDKPlistRepresentation:(id)arg1;
 - (id)interpretations;

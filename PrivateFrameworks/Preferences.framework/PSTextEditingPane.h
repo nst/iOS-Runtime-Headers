@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PreferencesTextTableCell, UITextField, UITableView;
+@class UITextField, PSTextEditingCell, UITableView;
 
 @interface PSTextEditingPane : PSEditingPane <UITableViewDelegate, UITableViewDataSource> {
-    PreferencesTextTableCell *_cell;
+    PSTextEditingCell *_cell;
     UITableView *_table;
     UITextField *_textField;
 }

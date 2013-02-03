@@ -26,12 +26,16 @@
 
 - (int (*)())cfAccessoryPortPropertyCallback;
 - (void)_addSession:(id)arg1;
+- (id)_createWakeToken;
 - (void)_endSession:(unsigned int)arg1;
 - (id)_initWithAccessory:(id)arg1;
+- (unsigned int)_internalConnectionID;
+- (BOOL)_internalNotPresentInIAPAccessoriesArray;
 - (void)_openCompleteForSession:(unsigned int)arg1;
 - (id)_protocolIDForProtocolString:(id)arg1;
 - (void)_removeSession:(id)arg1;
 - (void)_setConnected:(BOOL)arg1;
+- (void)_setNotPresentInIAPAccessoriesArray:(BOOL)arg1;
 - (id)_shortDescription;
 - (void)_updateAccessoryInfo:(id)arg1;
 - (BOOL)accessoryHasNMEASentencesAvailable;
@@ -55,6 +59,7 @@
 - (int)iPodOutOptionsMask;
 - (id)init;
 - (BOOL)isConnected;
+- (id)macAddress;
 - (id)manufacturer;
 - (id)modelNumber;
 - (id)name;
@@ -74,7 +79,10 @@
 - (BOOL)setNMEASentencesToFilter:(id)arg1;
 - (BOOL)supportsAccessibility;
 - (BOOL)supportsLocation;
+- (BOOL)supportsPointOfInterest;
 - (BOOL)supportsPublicIap;
+- (void)updateItemProperty:(int)arg1 withValue:(id)arg2;
 - (void)updateSystemProperty:(int)arg1 withValue:(id)arg2;
+- (id)wakeToken;
 
 @end

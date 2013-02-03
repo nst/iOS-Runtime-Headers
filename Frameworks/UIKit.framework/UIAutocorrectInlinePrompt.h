@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIView;
+@class NSArray, NSString, UIView, NSMutableArray;
 
 @interface UIAutocorrectInlinePrompt : UIView <UIKeyboardCandidateList> {
     struct CGRect { 
@@ -20,19 +20,25 @@
     UIView *m_correctionView;
     id m_delegate;
     BOOL m_fits;
-    unsigned int m_index;
+    int m_index;
     BOOL m_mouseDown;
     } m_originalTypedTextRect;
     float m_originalTypedTextRectCorrectionAmount;
     int m_promptTextType;
     NSString *m_typedText;
     UIView *m_typedTextAnimationView;
-    UIView *m_typedTextView;
+    NSMutableArray *m_typedTextViews;
+    NSArray *m_usageTrackingTypes;
 }
 
+@property(retain) NSArray * usageTrackingTypes;
+
 - (void)_candidateSelected:(id)arg1;
+- (id)activeCandidateList;
+- (void)addTypedTextRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
 - (id)candidateAtIndex:(unsigned int)arg1;
+- (void)candidatesDidChange;
 - (void)configureKeyboard:(id)arg1;
 - (id)correction;
 - (id)correctionAnimationView;
@@ -44,6 +50,7 @@
 - (unsigned int)currentIndex;
 - (void)dealloc;
 - (void)dismiss;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })horizontallySquishedCorrectionFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (unsigned int)index;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -65,7 +72,9 @@
 - (void)setCorrection:(id)arg1 typedText:(id)arg2 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4;
 - (void)setSelectedItem:(unsigned int)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
+- (void)setUsageTrackingTypes:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })shadowFrameForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)showCandidate:(id)arg1;
 - (void)showCandidateAtIndex:(unsigned int)arg1;
 - (void)showNextCandidate;
 - (void)showNextPage;
@@ -80,5 +89,6 @@
 - (id)typedText;
 - (id)typedTextAnimationView;
 - (id)typedTextView;
+- (id)usageTrackingTypes;
 
 @end

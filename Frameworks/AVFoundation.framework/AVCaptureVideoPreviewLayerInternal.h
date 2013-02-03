@@ -2,15 +2,27 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSString, CALayer, NSMutableArray, AVCaptureSession;
+@class NSString, AVCaptureConnection, CALayer, AVCaptureSession;
 
 @interface AVCaptureVideoPreviewLayerInternal : NSObject {
     struct CGSize { 
         float width; 
         float height; 
+    struct CGSize { 
+        float width; 
+        float height; 
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     BOOL automaticallyAdjustsMirroring;
+    } captureDeviceTransform;
+    int changeSeed;
     BOOL chromaNoiseReductionEnabled;
-    NSMutableArray *connections;
+    AVCaptureConnection *connection;
     BOOL disableActions;
     NSString *gravity;
     BOOL isPaused;
@@ -19,6 +31,9 @@
     int orientation;
     float previewRotationDegrees;
     } previewSize;
+    float rollAdjustment;
+    } sensorSize;
+    NSString *sensorToPreviewVTScalingMode;
     AVCaptureSession *session;
     CALayer *sublayer;
     BOOL visible;

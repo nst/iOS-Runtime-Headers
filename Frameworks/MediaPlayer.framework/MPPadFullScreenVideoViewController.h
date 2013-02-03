@@ -5,7 +5,6 @@
 @class MPAudioVideoRoutingPopoverController, MPPadFullScreenVideoOverlay;
 
 @interface MPPadFullScreenVideoViewController : MPAbstractFullScreenVideoViewController <MPVideoOverlayDelegate, UIPopoverControllerDelegate> {
-    unsigned int _firstVideoFrameDisplayed : 1;
     MPPadFullScreenVideoOverlay *_fullscreenVideoOverlay;
     MPAudioVideoRoutingPopoverController *_routePopoverController;
 }
@@ -16,7 +15,7 @@
 - (BOOL)canChangeScaleMode;
 - (BOOL)controlsOverlayVisible;
 - (void)dealloc;
-- (void)firstVideoFrameDisplayedNotification:(id)arg1;
+- (void)didChangeToInterfaceOrientation:(int)arg1;
 - (void)hideOverlayAnimated:(BOOL)arg1;
 - (id)init;
 - (void)loadView;
@@ -25,17 +24,19 @@
 - (void)overlayTappedScaleModeButton:(id)arg1;
 - (id)overlayView;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
-- (void)setDisabledParts:(unsigned int)arg1;
+- (void)registerForPlayerNotifications;
+- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
+- (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setItem:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setScaleMode:(unsigned int)arg1 animated:(BOOL)arg2;
-- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)showOverlayAnimated:(BOOL)arg1;
 - (void)startTicking;
 - (void)stopTicking;
 - (void)swipableView:(id)arg1 tappedWithCount:(unsigned int)arg2 atLocation:(struct CGPoint { float x1; float x2; })arg3;
-- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned int)arg2;
+- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
+- (void)unregisterForPlayerNotifications;
 - (id)videoOverlayView;
 - (id)videoOverlayViewIfLoaded;
 - (void)videoView_itemTypeAvailableNotification:(id)arg1;

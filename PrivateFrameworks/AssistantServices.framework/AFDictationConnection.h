@@ -19,6 +19,7 @@
 + (BOOL)dictationIsSupportedForLanguageCode:(id)arg1 error:(id*)arg2;
 + (void)fetchSupportedLanguageCodes:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_checkAndSetIsCapturingSpeech:(BOOL)arg1;
 - (void)_clearConnection;
 - (id)_connection;
@@ -31,7 +32,7 @@
 - (void)_msgSpeechRecordingDidEnd:(id)arg1;
 - (void)_msgSpeechRecordingDidFail:(id)arg1;
 - (void)_msgSpeechRecordingWillBegin:(id)arg1;
-- (void)_tellSpeechDelegateDidRecognizeSpeechPhrases:(id)arg1 correctionIdentifier:(id)arg2;
+- (void)_tellSpeechDelegateDidRecognizeSpeechPhrases:(id)arg1 languageModel:(id)arg2 correctionIdentifier:(id)arg3;
 - (void)_tellSpeechDelegateRecognitionDidFail:(id)arg1;
 - (void)_tellSpeechDelegateRecordingDidBegin;
 - (void)_tellSpeechDelegateRecordingDidCancel;
@@ -49,7 +50,10 @@
 - (void)sendSpeechCorrection:(id)arg1 forIdentifier:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setRecordingAlertRoute:(int)arg1;
+- (void)startDictationWithLanguageCode:(id)arg1 options:(id)arg2 speechOptions:(id)arg3;
 - (void)startDictationWithLanguageCode:(id)arg1 options:(id)arg2;
+- (void)startDictationWithSpeechFileAtURL:(id)arg1 options:(id)arg2 forLanguage:(id)arg3;
 - (void)stopSpeech;
+- (void)stopSpeechWithOptions:(id)arg1;
 
 @end

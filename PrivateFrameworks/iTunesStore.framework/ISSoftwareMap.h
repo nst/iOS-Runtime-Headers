@@ -23,7 +23,6 @@
 
 - (void)_loadFromMobileInstallation;
 - (id)_newSoftwareUpdateDictionaryForApplication:(id)arg1;
-- (id)_softwareUpdatesAccountsStringForApplications:(id)arg1;
 - (id)applicationForBundleIdentifier:(id)arg1;
 - (id)applicationForItemIdentifier:(id)arg1;
 - (id)applications;

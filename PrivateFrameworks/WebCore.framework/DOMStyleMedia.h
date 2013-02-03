@@ -7,7 +7,7 @@
 @interface DOMStyleMedia : DOMObject {
 }
 
-@property(copy,readonly) NSString * type;
+@property(readonly) NSString * type;
 
 - (void)dealloc;
 - (void)finalize;

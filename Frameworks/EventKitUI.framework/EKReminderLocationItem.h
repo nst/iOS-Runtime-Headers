@@ -2,19 +2,19 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSDictionary, NSString, EKLocation;
+@class EKStructuredLocation, NSDictionary;
 
 @interface EKReminderLocationItem : NSObject {
     NSDictionary *_addressDictionary;
     BOOL _isLocationBeingDetermined;
-    NSString *_label;
-    EKLocation *_location;
+    EKStructuredLocation *_location;
+    int _type;
 }
 
 @property(retain) NSDictionary * addressDictionary;
 @property BOOL isLocationBeingDetermined;
-@property(retain) NSString * label;
-@property(retain) EKLocation * location;
+@property(retain) EKStructuredLocation * location;
+@property int type;
 
 - (id)addressDictionary;
 - (void)dealloc;
@@ -22,10 +22,12 @@
 - (BOOL)isLocationBeingDetermined;
 - (id)label;
 - (id)location;
+- (void)reset;
 - (void)setAddressDictionary:(id)arg1;
 - (void)setIsLocationBeingDetermined:(BOOL)arg1;
-- (void)setLabel:(id)arg1;
 - (void)setLocation:(id)arg1;
+- (void)setType:(int)arg1;
 - (id)stringForSubtitle;
+- (int)type;
 
 @end

@@ -32,6 +32,7 @@
 - (BOOL)multipleNonEmptyEditsInTrackReader:(struct OpaqueFigTrackReader { }*)arg1;
 - (double)progress;
 - (void)removeListeners;
+- (id)retrieveAudioSettingForNumChannels:(id)arg1;
 - (void)setRangeStartTime:(double)arg1 endTime:(double)arg2;
 - (id)settingForFigRemaker;
 - (double)sourceDuration;

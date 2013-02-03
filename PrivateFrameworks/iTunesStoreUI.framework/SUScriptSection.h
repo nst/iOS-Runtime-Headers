@@ -17,13 +17,10 @@
 @property(readonly) SUScriptViewController * viewController;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
-- (id)_copyBadgeValue;
-- (id)_copyViewController;
-- (void)_setBadgeValue:(id)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
 - (id)attributeKeys;
 - (id)badgeValue;
 - (void)dealloc;

@@ -6,7 +6,7 @@
 }
 
 - (id)alias;
-- (id)attributedDisplayNameWithIdentifiableName:(BOOL)arg1;
+- (id)attributedDisplayNameWithIdentifiableName:(BOOL)arg1 withFont:(id)arg2;
 - (id)autorelease;
 - (id)displayNameWithIdentifiableName:(BOOL)arg1 quoteAlias:(BOOL)arg2;
 - (BOOL)isFriend;

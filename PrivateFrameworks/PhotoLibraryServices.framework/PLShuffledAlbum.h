@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class <NSObject><NSCopying>, NSMutableOrderedSet, NSObject<PLAssetContainer>, PLManagedAsset, NSOrderedSet, UIImage, NSString, NSDictionary, NSURL, NSNumber;
+@class <NSObject><NSCopying>, NSMutableOrderedSet, NSObject<PLAssetContainer>, NSOrderedSet, PLManagedAsset, UIImage, NSString, NSDictionary, NSURL, NSNumber;
 
 @interface PLShuffledAlbum : NSObject <PLIndexMappingCache, PLAssetContainer> {
     NSMutableOrderedSet *_assets;
@@ -13,15 +13,21 @@
 }
 
 @property(retain) NSMutableOrderedSet * _assets;
+@property(readonly) unsigned int approximateCount;
 @property(readonly) NSOrderedSet * assets;
+@property(readonly) unsigned int assetsCount;
 @property(readonly) NSObject<PLAssetContainer> * backingAlbum;
 @property(readonly) <NSObject><NSCopying> * cachedIndexMapState;
+@property(readonly) BOOL canShowComments;
 @property(readonly) unsigned int count;
 @property(readonly) NSURL * groupURL;
+@property BOOL hasUnseenContentBoolValue;
 @property(retain) NSString * importSessionID;
 @property(readonly) BOOL isCameraAlbum;
+@property(readonly) BOOL isCloudSharedAlbum;
 @property(readonly) BOOL isEmpty;
 @property(readonly) BOOL isLibrary;
+@property(readonly) BOOL isOwnedCloudSharedAlbum;
 @property(readonly) BOOL isPhotoStreamAlbum;
 @property(retain) PLManagedAsset * keyAsset;
 @property(readonly) NSNumber * kind;
@@ -33,8 +39,10 @@
 @property unsigned int pendingItemsType;
 @property(readonly) unsigned int photosCount;
 @property(readonly) UIImage * posterImage;
+@property(readonly) id sectioningComparator;
 @property(readonly) BOOL shouldDeleteWhenEmpty;
 @property(retain) NSDictionary * slideshowSettings;
+@property(readonly) id sortingComparator;
 @property(readonly) PLManagedAsset * startingAsset;
 @property(readonly) NSString * title;
 @property(readonly) NSString * uuid;
@@ -44,34 +52,41 @@
 + (struct NSObject { Class x1; }*)unshuffledAlbum:(struct NSObject { Class x1; }*)arg1;
 
 - (id)_assets;
+- (unsigned int)approximateCount;
 - (id)assets;
+- (unsigned int)assetsCount;
 - (struct NSObject { Class x1; }*)backingAlbum;
 - (void)batchFetchAssets:(id)arg1;
 - (id)cachedIndexMapState;
 - (BOOL)canPerformEditOperation:(int)arg1;
+- (BOOL)canShowComments;
 - (unsigned int)count;
 - (unsigned int)countOfShuffledAssets;
 - (void)createShuffledIndexesMaps;
 - (void)createShuffledIndexesMapsIfNeeded;
 - (void)dealloc;
+- (Class)derivedChangeNotificationClass;
 - (id)description;
 - (id)displayableIndexesForCount:(unsigned int)arg1;
 - (struct __CFArray { }*)fromBackingMap;
 - (id)groupURL;
+- (BOOL)hasUnseenContentBoolValue;
 - (id)importSessionID;
 - (unsigned int)indexInShuffledAssetsOfObject:(id)arg1;
 - (id)init;
 - (id)initWithBackingAlbum:(struct NSObject { Class x1; }*)arg1 startingAsset:(id)arg2;
 - (void)insertObject:(id)arg1 inShuffledAssetsAtIndex:(unsigned int)arg2;
 - (BOOL)isCameraAlbum;
+- (BOOL)isCloudSharedAlbum;
 - (BOOL)isEmpty;
 - (BOOL)isLibrary;
+- (BOOL)isOwnedCloudSharedAlbum;
 - (BOOL)isPhotoStreamAlbum;
 - (id)keyAsset;
 - (id)kind;
 - (int)kindValue;
 - (id)localizedTitle;
-- (void)mappedDataSourceChanged:(id)arg1;
+- (BOOL)mappedDataSourceChanged:(id)arg1 remoteNotificationData:(id)arg2;
 - (id)mutableAssets;
 - (id)name;
 - (id)objectInShuffledAssetsAtIndex:(unsigned int)arg1;
@@ -82,6 +97,8 @@
 - (void)reducePendingItemsCountBy:(unsigned int)arg1;
 - (void)removeObjectFromShuffledAssetsAtIndex:(unsigned int)arg1;
 - (void)replaceObjectInShuffledAssetsAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (id)sectioningComparator;
+- (void)setHasUnseenContentBoolValue:(BOOL)arg1;
 - (void)setImportSessionID:(id)arg1;
 - (void)setKeyAsset:(id)arg1;
 - (void)setPendingItemsCount:(unsigned int)arg1;
@@ -90,9 +107,11 @@
 - (void)set_assets:(id)arg1;
 - (BOOL)shouldDeleteWhenEmpty;
 - (id)slideshowSettings;
+- (id)sortingComparator;
 - (id)startingAsset;
 - (id)title;
-- (void)updateStackedImage;
+- (id)titleForSectionStartingAtIndex:(unsigned int)arg1;
+- (void)updateStackedImageShouldNotifyImmediately:(BOOL)arg1;
 - (id)uuid;
 - (unsigned int)videosCount;
 

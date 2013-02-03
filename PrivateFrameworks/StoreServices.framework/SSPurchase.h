@@ -2,26 +2,35 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, SSURLRequestProperties, SSItem, NSDictionary, NSString, SSItemOffer, NSMutableDictionary, NSArray;
+@class SSDownloadPolicy, NSNumber, SSItem, NSObject<OS_dispatch_queue>, SSNetworkConstraints, SSURLRequestProperties, NSDictionary, NSString, SSItemOffer, NSMutableDictionary, NSArray;
 
-@interface SSPurchase : NSObject <SSCoding, NSCoding, NSCopying> {
+@interface SSPurchase : NSObject <SSXPCCoding, NSCoding, NSCopying> {
     NSNumber *_accountIdentifier;
+    NSString *_affiliateIdentifier;
     NSString *_buyParameters;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    SSDownloadPolicy *_downloadPolicy;
     NSMutableDictionary *_downloadProperties;
     NSArray *_filteredAssetTypes;
+    BOOL _ignoresForcedPasswordRestriction;
     SSItem *_item;
     SSItemOffer *_itemOffer;
+    SSNetworkConstraints *_networkConstraints;
     long long _placeholderDownloadIdentifier;
     SSURLRequestProperties *_requestProperties;
     NSString *_uniqueIdentifier;
 }
 
 @property(retain) NSNumber * accountIdentifier;
+@property(copy) NSString * affiliateIdentifier;
 @property(copy) NSString * buyParameters;
+@property(copy) SSDownloadPolicy * downloadPolicy;
 @property(copy) NSDictionary * downloadProperties;
 @property(copy) NSArray * filteredAssetTypes;
+@property BOOL ignoresForcedPasswordRestriction;
 @property(readonly) SSItem * item;
 @property(readonly) SSItemOffer * itemOffer;
+@property(copy) SSNetworkConstraints * networkConstraints;
 @property long long placeholderDownloadIdentifier;
 @property(copy) SSURLRequestProperties * requestProperties;
 @property(readonly) NSString * uniqueIdentifier;
@@ -30,30 +39,36 @@
 
 - (id)_initSSPurchase;
 - (id)accountIdentifier;
+- (id)affiliateIdentifier;
 - (id)buyParameters;
-- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)downloadMetadata;
+- (id)downloadPolicy;
 - (id)downloadProperties;
 - (void)encodeWithCoder:(id)arg1;
 - (id)filteredAssetTypes;
+- (BOOL)ignoresForcedPasswordRestriction;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItem:(id)arg1 offer:(id)arg2;
 - (id)initWithItem:(id)arg1;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)item;
 - (id)itemOffer;
+- (id)networkConstraints;
 - (long long)placeholderDownloadIdentifier;
 - (id)requestProperties;
 - (void)setAccountIdentifier:(id)arg1;
+- (void)setAffiliateIdentifier:(id)arg1;
 - (void)setBuyParameters:(id)arg1;
 - (void)setDownloadMetadata:(id)arg1;
+- (void)setDownloadPolicy:(id)arg1;
 - (void)setDownloadProperties:(id)arg1;
 - (void)setFilteredAssetTypes:(id)arg1;
+- (void)setIgnoresForcedPasswordRestriction:(BOOL)arg1;
+- (void)setNetworkConstraints:(id)arg1;
 - (void)setPlaceholderDownloadIdentifier:(long long)arg1;
 - (void)setRequestProperties:(id)arg1;
 - (void)setValue:(id)arg1 forDownloadProperty:(id)arg2;

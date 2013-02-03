@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, NSData;
 
-@interface SSPlayInfoRequestContext : NSObject <SSCoding, NSCopying> {
+@interface SSPlayInfoRequestContext : NSObject <SSXPCCoding, NSCopying> {
     NSString *_playerGUID;
     NSData *_sic;
     NSArray *_sinfs;
@@ -15,12 +15,10 @@
 @property(copy) NSArray * sinfs;
 
 - (id)SICData;
-- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)playerGUID;
 - (void)setPlayerGUID:(id)arg1;
 - (void)setSICData:(id)arg1;

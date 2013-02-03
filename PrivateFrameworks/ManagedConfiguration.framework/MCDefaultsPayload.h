@@ -12,8 +12,8 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
+- (void).cxx_destruct;
 - (BOOL)_checkForValidDefaults:(id)arg1 outError:(id*)arg2;
-- (void)dealloc;
 - (id)defaultsForDomain:(id)arg1;
 - (id)description;
 - (id)domains;

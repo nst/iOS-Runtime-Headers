@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class UIView, NSString, StockChartData, NSURL;
+@class NSURL, NSString, StockChartData;
 
 @interface Stock : NSObject {
-    StockChartData *_chartDataArray[7];
+    StockChartData *_chartDataArray[9];
     BOOL _marketIsOpen;
-    UIView *_rowView;
-    int _rowViewDataType;
     NSString *averageVolume;
     NSString *companyName;
     NSString *dividendYield;
@@ -29,7 +27,6 @@
     NSString *symbol;
     double timeMetadataLastUpdated;
     double timeQuoteLastUpdated;
-    BOOL usesAlternativeDataSource;
     NSString *volume;
     NSString *yearHigh;
     NSString *yearLow;
@@ -53,59 +50,27 @@
 @property(retain) NSString * realtimeChange;
 @property(retain) NSString * realtimePrice;
 @property(retain) NSString * realtimeTimestamp;
-@property int rowViewDataType;
 @property(retain) NSString * shortCompanyName;
 @property(retain) NSString * symbol;
 @property double timeMetadataLastUpdated;
 @property double timeQuoteLastUpdated;
-@property BOOL usesAlternativeDataSource;
 @property(retain) NSString * volume;
 @property(retain) NSString * yearHigh;
 @property(retain) NSString * yearLow;
 
 + (id)BlankValueString;
-+ (void)DeleteChartData:(id)arg1;
-+ (void)RemoveChartDataFromLRU:(id)arg1;
-+ (void)UpdateChartDataInLRU:(id)arg1;
-+ (void)_checkForAddedStocks;
-+ (void)_createGTStocksArrays;
-+ (id)_defaultStockDictionaries;
-+ (void)_loadStocksFromDefaults;
-+ (id)_localeStocks;
 + (id)_potentiallyAbsentKeys;
-+ (void)addStock:(id)arg1;
-+ (BOOL)anyMarketOpen;
-+ (BOOL)anyMarketOpenWithRealtimePrice;
-+ (BOOL)anyPriceIsRealtime;
-+ (void)clearCachedChartData;
-+ (void)clearCachedChartDataImageSets;
-+ (void)clearCachedRowViews;
-+ (void)flushStocks;
 + (id)formattedStringForNumber:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(BOOL)arg3 groupingSeparators:(BOOL)arg4;
 + (id)formattedStringForNumber:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(BOOL)arg3;
 + (id)formattedStringForString:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(BOOL)arg3;
-+ (id)gtDataSourceStocks;
-+ (void)handleSyncedDataChanged:(id)arg1;
-+ (void)initialize;
-+ (id)listStocks;
 + (BOOL)localeUsesASCIIDigits;
 + (id)localizedMagnitudeAbbreviatedStringWithString:(id)arg1 fractionDigits:(unsigned int)arg2;
 + (id)localizedMagnitudeAbbreviatedStringWithString:(id)arg1;
-+ (id)makeSyncableStockListFromList:(id)arg1;
-+ (void)moveStockFromIndex:(int)arg1 toIndex:(int)arg2;
-+ (id)nonGTDataSourceStocks;
 + (id)postfixCharacterForEngineeringMagnitude:(unsigned int)arg1;
-+ (void)removeStock:(id)arg1;
 + (void)resetLocale;
-+ (void)saveChanges;
-+ (void)setListStocks:(id)arg1;
-+ (BOOL)setLocalStockListFromSyncableStockList:(id)arg1;
-+ (void)startObservers;
-+ (id)stockForURL:(id)arg1;
-+ (id)stockWithSymbol:(id)arg1;
-+ (void)stopObservers;
 + (id)urlForStock:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_updatePricePrecision;
 - (id)archiveDictionary;
 - (id)averageVolume;
@@ -115,7 +80,6 @@
 - (BOOL)changeIsZero;
 - (id)chartDataForInterval:(int)arg1;
 - (void)clearCachedGraphImageSets;
-- (void)clearRowView;
 - (id)companyName;
 - (void)dealloc;
 - (id)description;
@@ -123,9 +87,11 @@
 - (id)exchange;
 - (id)formattedChangePercent:(BOOL)arg1;
 - (id)formattedPrice;
+- (unsigned int)hash;
 - (id)high;
 - (id)infoURL;
 - (id)initWithDictionary:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isIndex;
 - (id)listName;
 - (id)low;
@@ -135,6 +101,7 @@
 - (id)nonRealtimePrice;
 - (id)open;
 - (id)peRatio;
+- (void)populateFromDictionary:(id)arg1;
 - (id)price;
 - (BOOL)priceIsRealtime;
 - (unsigned int)pricePrecision;
@@ -142,8 +109,6 @@
 - (id)realtimePrice;
 - (id)realtimeTimestamp;
 - (void)resetLocale;
-- (id)rowView;
-- (int)rowViewDataType;
 - (void)setAverageVolume:(id)arg1;
 - (void)setChartData:(id)arg1 forInterval:(int)arg2;
 - (void)setCompanyName:(id)arg1;
@@ -160,13 +125,10 @@
 - (void)setRealtimeChange:(id)arg1;
 - (void)setRealtimePrice:(id)arg1;
 - (void)setRealtimeTimestamp:(id)arg1;
-- (void)setRowView:(id)arg1 withDataType:(int)arg2;
-- (void)setRowViewDataType:(int)arg1;
 - (void)setShortCompanyName:(id)arg1;
 - (void)setSymbol:(id)arg1;
 - (void)setTimeMetadataLastUpdated:(double)arg1;
 - (void)setTimeQuoteLastUpdated:(double)arg1;
-- (void)setUsesAlternativeDataSource:(BOOL)arg1;
 - (void)setVolume:(id)arg1;
 - (void)setYearHigh:(id)arg1;
 - (void)setYearLow:(id)arg1;
@@ -176,7 +138,6 @@
 - (double)timeQuoteLastUpdated;
 - (void)updateMetadataWithDictionary:(id)arg1 forTime:(double)arg2;
 - (void)updateQuoteWithDictionary:(id)arg1 forTime:(double)arg2;
-- (BOOL)usesAlternativeDataSource;
 - (id)volume;
 - (id)yearHigh;
 - (id)yearLow;

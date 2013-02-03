@@ -14,12 +14,16 @@
 @property <EKCalendarEditItemDelegate> * delegate;
 @property(retain) <EKStyleProvider> * styleProvider;
 
+- (void)applyStyleProviderToCell:(id)arg1;
 - (BOOL)becomeFirstResponder;
 - (void)calendarEditor:(id)arg1 didSelectSubitem:(int)arg2;
 - (id)cellForSubitemAtIndex:(int)arg1;
+- (BOOL)configureWithCalendar:(id)arg1;
 - (void)dealloc;
 - (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
 - (id)delegate;
+- (float)footerHeightForSection;
+- (id)footerViewForSection;
 - (id)headerTitle;
 - (int)numberOfSubitems;
 - (void)reset;

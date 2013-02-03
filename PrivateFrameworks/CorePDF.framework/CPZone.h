@@ -39,7 +39,6 @@
 - (int)compareArea:(id)arg1;
 - (BOOL)contains:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct CGColor { }*)createBackgroundColor;
 - (void)dealloc;
 - (id)graphicsInZone;
 - (id)gutters;
@@ -56,6 +55,7 @@
 - (BOOL)mapToWords:(int (*)())arg1 passing:(void*)arg2;
 - (BOOL)mapToWordsWithIndex:(int (*)())arg1 passing:(void*)arg2;
 - (long)neighborZOrder;
+- (struct CGColor { }*)newBackgroundColor;
 - (struct CGPoint { float x1; float x2; }*)outerVertices;
 - (BOOL)rectangleBordersAtLeft:(id*)arg1 top:(id*)arg2 right:(id*)arg3 bottom:(id*)arg4;
 - (void)removeUnfilledNeighborShapes;

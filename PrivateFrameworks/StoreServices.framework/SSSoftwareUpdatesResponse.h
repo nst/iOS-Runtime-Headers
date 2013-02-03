@@ -15,12 +15,14 @@
 @property(readonly) NSArray * updateItems;
 
 - (id)copyUpdateItemDictionaries;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
 - (id)error;
-- (id)initWithDictionaryResponse:(id)arg1;
 - (id)initWithError:(id)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isFailed;
+- (void)setUpdateItemsWithItemDictionaries:(id)arg1;
 - (id)updateItems;
 
 @end

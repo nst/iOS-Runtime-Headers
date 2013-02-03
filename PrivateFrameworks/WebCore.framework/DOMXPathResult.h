@@ -11,9 +11,9 @@
 @property(readonly) BOOL invalidIteratorState;
 @property(readonly) double numberValue;
 @property(readonly) unsigned short resultType;
-@property(retain,readonly) DOMNode * singleNodeValue;
+@property(readonly) DOMNode * singleNodeValue;
 @property(readonly) unsigned int snapshotLength;
-@property(copy,readonly) NSString * stringValue;
+@property(readonly) NSString * stringValue;
 
 - (BOOL)booleanValue;
 - (void)dealloc;

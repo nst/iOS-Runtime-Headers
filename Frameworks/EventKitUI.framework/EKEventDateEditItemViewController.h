@@ -19,6 +19,7 @@
         BOOL hour; 
         BOOL minute; 
         double second; 
+    unsigned int _showsAllDaySwitch : 1;
     unsigned int _changingDate : 1;
     unsigned int _switchChanging : 1;
     unsigned int _endTimeWasMessedUp : 1;
@@ -33,17 +34,24 @@
     NSTimeZone *_timeZone;
 }
 
+@property BOOL showsAllDaySwitch;
 @property BOOL showsTimeZone;
 @property(copy) NSTimeZone * timeZone;
 
 - (void)_allDayChanged:(id)arg1;
+- (int)_allDayRow;
 - (BOOL)_cellShouldUseShortDate:(id)arg1;
 - (id)_dateColor;
 - (BOOL)_endDateIsBeforeStartDate;
+- (int)_endDateRow;
 - (void)_localeChanged;
 - (void)_pickNextReasonableTime;
 - (void)_resetStartString:(BOOL)arg1 endString:(BOOL)arg2;
+- (int)_rowForSubitem:(int)arg1;
+- (int)_startDateRow;
+- (int)_subitemAtRow:(int)arg1;
 - (id)_timeZoneDescription;
+- (int)_timeZoneRow;
 - (void)_updateDateColors;
 - (void)_updateDatePicker;
 - (void)_updateTimeWidths;
@@ -58,10 +66,12 @@
 - (id)navigationTitle;
 - (void)setAllDay:(BOOL)arg1;
 - (void)setEndDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (void)setShowsAllDaySwitch:(BOOL)arg1;
 - (void)setShowsTimeZone:(BOOL)arg1;
 - (void)setStartDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)shortenCell:(id)arg1;
+- (BOOL)showsAllDaySwitch;
 - (BOOL)showsTimeZone;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDate;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

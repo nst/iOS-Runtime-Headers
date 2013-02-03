@@ -9,7 +9,7 @@
         float x; 
         float y; 
     BOOL m_active;
-    int m_count;
+    unsigned int m_count;
     int m_directions;
     } m_point;
     double m_repeatInterval;
@@ -19,7 +19,7 @@
 }
 
 @property BOOL active;
-@property int count;
+@property unsigned int count;
 @property int directions;
 @property struct CGPoint { float x1; float x2; } point;
 @property double repeatInterval;
@@ -27,7 +27,7 @@
 @property(retain) id target;
 
 - (BOOL)active;
-- (int)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (int)directions;
 - (void)invalidate;
@@ -35,7 +35,7 @@
 - (double)repeatInterval;
 - (id)scrollContainer;
 - (void)setActive:(BOOL)arg1;
-- (void)setCount:(int)arg1;
+- (void)setCount:(unsigned int)arg1;
 - (void)setDirections:(int)arg1;
 - (void)setPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRepeatInterval:(double)arg1;

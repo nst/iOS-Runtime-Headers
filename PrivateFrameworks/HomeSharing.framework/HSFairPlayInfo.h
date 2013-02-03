@@ -5,6 +5,7 @@
 @class NSString, NSArray;
 
 @interface HSFairPlayInfo : NSObject {
+    BOOL _hasValidMescalSession;
     void *_hwInfo;
     NSArray *_requestsToSign;
     void *_session;

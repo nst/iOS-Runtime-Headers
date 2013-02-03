@@ -2,30 +2,15 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CALayer, CAContext;
+@class <CARendererDelegate>, CALayer, CAContext;
 
 @interface CARenderer : NSObject {
-    struct CARendererPriv { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; unsigned char x3; void*x4; unsigned char x5; out in void*x6; void*x7; void*x8; void*x9; void*x10; struct Weak<objc_object*> { 
-            id _value; 
-        } x11; id x12; void*x13; void*x14; void*x15; void*x16; unsigned long x17; unsigned char x18; out in void*x19; void*x20; void*x21; void*x22; void*x23; struct Context {} *x24; struct Renderer {} *x25; struct CGRect { 
-            struct CGPoint { 
-                float x; 
-                float y; 
-            } origin; 
-            struct CGSize { 
-                float width; 
-                float height; 
-            } size; 
-        } x26; struct Update {} *x27; unsigned int x28; unsigned int x29[2]; unsigned int x30[2]; unsigned int x31; unsigned int x32 : 8; unsigned int x33; BOOL x34[0]; } *_priv;
+    struct CARendererPriv { id x1; struct Weak<id> { id x_2_1_1; } x2; id x3; struct Context {} *x4; struct Renderer {} *x5; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_6_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_6_1_2; } x6; struct Update {} *x7; unsigned int x8; unsigned int x9[2]; unsigned int x10[2]; unsigned int x11; unsigned int x12 : 8; unsigned int x13; BOOL x14[0]; } *_priv;
 }
 
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } bounds;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property(retain) CAContext * context;
-@property id delegate;
+@property <CARendererDelegate> * delegate;
 @property(retain) CALayer * layer;
 
 + (id)rendererWithEAGLContext:(id)arg1 options:(id)arg2;

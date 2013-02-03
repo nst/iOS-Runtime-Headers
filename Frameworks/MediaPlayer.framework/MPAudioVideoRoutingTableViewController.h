@@ -2,26 +2,29 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableArray, MPAudioDeviceController;
+@class NSArray, MPAudioDeviceController;
 
-@interface MPAudioVideoRoutingTableViewController : UITableViewController {
+@interface MPAudioVideoRoutingTableViewController : UITableViewController <MPAudioDeviceControllerDelegate> {
     int _airPlayPasswordAlertDidAppearToken;
     BOOL _airPlayPasswordAlertDidAppearTokenIsValid;
+    int _airPlayPasswordAlertDidCancelToken;
     MPAudioDeviceController *_audioDeviceController;
     unsigned int _avItemType;
     BOOL _displayMirroringRoutes;
-    NSMutableArray *_routes;
+    NSArray *_displayedRoutes;
     BOOL _wirelessDisplayCapableRouteIsPicked;
+    BOOL _wirelessDisplayRouteIsPendingAsPicked;
 }
 
 @property(readonly) MPAudioDeviceController * audioDeviceController;
 
 + (id)routesPreferringMirroring;
 
+- (id)_availableRoutes;
+- (id)_displayedRoutes;
 - (id)_effectivePickedRouteReturningActualPickedRouteType:(int*)arg1;
 - (void)_mirroringSwitchValueDidChange:(id)arg1;
 - (id)_pickedRoute;
-- (id)_routes;
 - (BOOL)_wirelessDisplayCapableRouteIsPicked;
 - (id)audioDeviceController;
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;

@@ -12,18 +12,19 @@
 
 + (id)_filterArrayFromProperties:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 + (id)_filterArrayFromProperties:(id)arg1;
++ (id)_filterFromProperties:(id)arg1;
 + (id)_propertyArrayFromFilters:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 + (id)customAttributes;
++ (id)filterArrayFromSerializedXMP:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 error:(id*)arg3;
 + (id)filterNamesInCategories:(id)arg1;
 + (id)filterNamesInCategory:(id)arg1;
 + (id)filterWithName:(id)arg1 keysAndValues:(id)arg2;
 + (id)filterWithName:(id)arg1;
++ (id)serializedXMPFromFilters:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 
-- (void)_copyAttributesTo:(id)arg1;
 - (id)_copyFilterWithZone:(struct _NSZone { }*)arg1;
 - (id)_filterClassDescription;
 - (id)_initFromProperties:(id)arg1;
-- (BOOL)_isIdentity;
 - (BOOL)_isIdentity;
 - (id)_outputProperties;
 - (id)attributes;
@@ -40,5 +41,7 @@
 - (id)outputImage;
 - (id)outputKeys;
 - (void)setDefaults;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
 
 @end

@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSXPCConnection, <SSDownloadHandlerDelegate>, NSArray;
+@class NSArray, SSXPCConnection, <SSDownloadHandlerDelegate>, NSObject<OS_dispatch_queue>;
 
 @interface SSDownloadHandler : NSObject {
     SSXPCConnection *_controlConnection;
     <SSDownloadHandlerDelegate> *_delegate;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_delegateQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSArray *_downloadPhasesToIgnore;
     long long _handlerID;
     SSXPCConnection *_observerConnection;
@@ -23,14 +24,14 @@
 
 - (void)_connectToDaemon;
 - (id)_controlConnection;
-- (void)_handleMessage:(void*)arg1 fromServerConnection:(struct _xpc_connection_s { }*)arg2;
-- (id)_newSessionWithMessage:(void*)arg1;
-- (BOOL)_sendAuthenticationSessionWithMessage:(void*)arg1;
+- (void)_handleMessage:(id)arg1 fromServerConnection:(id)arg2;
+- (id)_newSessionWithMessage:(id)arg1;
+- (BOOL)_sendAuthenticationSessionWithMessage:(id)arg1;
 - (void)_sendDisconnectMessage;
-- (BOOL)_sendSessionCancelWithMessage:(void*)arg1;
-- (BOOL)_sendSessionHandleWithMessage:(void*)arg1;
-- (BOOL)_sendSessionPauseWithMessage:(void*)arg1;
-- (void)_setValue:(void*)arg1 forProperty:(const char *)arg2;
+- (BOOL)_sendSessionCancelWithMessage:(id)arg1;
+- (BOOL)_sendSessionHandleWithMessage:(id)arg1;
+- (BOOL)_sendSessionPauseWithMessage:(id)arg1;
+- (void)_setValue:(id)arg1 forProperty:(const char *)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;

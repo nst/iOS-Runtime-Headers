@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, NSData;
 
-@interface DAContactSearchResultElement : NSObject <NSCoding> {
+@interface DAContactSearchResultElement : NSObject <NSSecureCoding> {
     NSString *_alias;
     NSString *_appleFloor;
     NSString *_buildingName;
@@ -77,6 +77,8 @@
 @property(copy) NSString * workFaxPhone;
 @property(copy) NSString * workPhone;
 @property(copy) NSString * zip;
+
++ (BOOL)supportsSecureCoding;
 
 - (id)alias;
 - (id)appleFloor;

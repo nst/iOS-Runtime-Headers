@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MFMailComposeViewController, NSArray, UIView, UIViewController, NSMutableArray, NSMutableDictionary;
+@class <NSCoding>, NSMutableDictionary, NSMutableArray, UIView, UIViewController, MFMailComposeViewController, NSArray;
 
 @interface PLSharingController : NSObject <MFMailComposeViewControllerDelegate> {
     unsigned int _didDisplayComposeSheet : 1;
@@ -24,14 +24,16 @@
     NSMutableArray *_views;
 }
 
+@property <NSCoding> * autosaveIdentifier;
+
 + (BOOL)allowedToModifyEmailAccounts;
 + (BOOL)canSendEmail;
 + (void)copyItemsToPasteboard:(id)arg1;
 + (void)openEmailAccountPrefs;
 
-- (id)_addAudio:(id)arg1 toCompositionContext:(id)arg2;
-- (id)_addPhoto:(id)arg1 toCompositionContext:(id)arg2 index:(unsigned int)arg3;
-- (id)_addVideo:(id)arg1 toCompositionContext:(id)arg2;
+- (id)_addAudio:(id)arg1 toCompositionController:(id)arg2;
+- (id)_addPhoto:(id)arg1 toCompositionController:(id)arg2 index:(unsigned int)arg3;
+- (id)_addVideo:(id)arg1 toCompositionController:(id)arg2;
 - (void)_animateSendToEmail;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_animationDestinationRectForImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_animationDestinationRectForView:(id)arg1;

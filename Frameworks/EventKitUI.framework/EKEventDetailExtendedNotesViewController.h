@@ -20,5 +20,6 @@
 - (void)setNotes:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
+- (void)webViewDidFinishLoad:(id)arg1;
 
 @end

@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class NSDate, NSString, NSDictionary, IUUserNotificationAlert, UILocalNotification;
+@class NSDate, NSString, NSObject<OS_dispatch_queue>, NSDictionary, IUUserNotificationAlert, UILocalNotification;
 
 @interface IURentalData : NSObject {
     IUUserNotificationAlert *_alert;
     int _deferRentalEventsCount;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_downloadIdentifier;
     BOOL _failed;
     NSDictionary *_fileProcessorInfo;

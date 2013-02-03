@@ -7,11 +7,11 @@
 @interface CKConversationListController : UIViewController <UITableViewDataSource, UITableViewDelegate, CKConversationSearcherDelegate, UIActionSheetDelegate> {
     unsigned int _dirty : 1;
     unsigned int _isVisible : 1;
-    unsigned int _isUpdatingDisabled : 1;
     unsigned int _willRotate : 1;
     UIToolbar *_buttonBar;
     CKConversationList *_conversationList;
-    BOOL _disableSMSFullDialog;
+    int _disableUpdatesCount;
+    BOOL _isInitialLoad;
     CKMessagesController *_messagesController;
     NSIndexPath *_previouslySelectedIndexPath;
     CKConversationSearcher *_searcher;
@@ -23,24 +23,20 @@
 @property CKMessagesController * messagesController;
 @property(retain) NSIndexPath * previouslySelectedIndexPath;
 
-- (void)_checkIfDatabaseIsFull;
+- (void)_chatParticipantsChangedNotification:(id)arg1;
+- (void)_chatUnreadCountDidChange:(id)arg1;
 - (void)_conversationDidChange:(id)arg1;
 - (void)_conversationListDidChange:(id)arg1;
 - (void)_conversationListDidFinishLoadingConversations:(id)arg1;
 - (void)_conversationMessageWasSent:(id)arg1;
 - (void)_conversationReadItemsDidChange:(id)arg1;
 - (void)_conversationWasMarkedAsRead:(id)arg1;
-- (void)_databaseFull:(id)arg1;
-- (void)_displaySMSDatabaseFullWarning;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)_groupsChanged:(id)arg1;
 - (unsigned int)_indexOfConverationClosestToDeletedIndex:(unsigned int)arg1;
 - (unsigned int)_indexOfDefaultConversation;
 - (void)_keyboardWillShowOrHide:(id)arg1;
 - (void)_selectConversationAtIndex:(unsigned int)arg1 animated:(BOOL)arg2;
-- (BOOL)_shouldUseDefaultFirstResponder;
-- (BOOL)_shouldUseKeyWindowStack;
-- (BOOL)_shouldUseNextFirstResponder;
 - (void)accessibilityLargeTextDidChange;
 - (void)applicationWillSuspend;
 - (void)composeButtonClicked:(id)arg1;
@@ -51,6 +47,8 @@
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)disableConversationListUpdates;
 - (void)enableConversationListUpdates;
+- (void)enableConversationListUpdatesQuietly;
+- (float)heightForHeaderInTableView:(id)arg1;
 - (void)hideSearchUI;
 - (id)init;
 - (id)inputAccessoryView;
@@ -61,11 +59,13 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)previouslySelectedIndexPath;
 - (void)reloadStaleConversations;
-- (id)searcher:(id)arg1 conversationForGroupID:(id)arg2;
+- (void)scrollToTop;
+- (id)searcher:(id)arg1 conversationForChatGUID:(id)arg2;
 - (void)searcher:(id)arg1 didShowSearchResultsTableView:(id)arg2;
-- (void)searcher:(id)arg1 userDidSelectConversationGroupID:(id)arg2 messageRowID:(int)arg3 partRowID:(int)arg4;
+- (void)searcher:(id)arg1 userDidSelectChatGUID:(id)arg2 messageGUID:(id)arg3;
 - (void)searcher:(id)arg1 willHideSearchResultsTableView:(id)arg2;
 - (id)searcherContentsController:(id)arg1;
+- (void)searcherWillBeginSearch:(id)arg1;
 - (void)searcherWillEndSearch:(id)arg1;
 - (void)selectConversationClosestToDeletedIndex:(unsigned int)arg1;
 - (void)selectDefaultConversationAnimated:(BOOL)arg1;
@@ -83,6 +83,7 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (BOOL)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)updateConversationList;
 - (void)updateConversationSelection;
@@ -91,6 +92,7 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidUnload;
+- (id)viewForHeaderInTableView:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;

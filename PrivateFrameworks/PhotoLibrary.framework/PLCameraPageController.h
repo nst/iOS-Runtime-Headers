@@ -4,15 +4,18 @@
 
 @class PLApplicationCameraViewController, PLKeepDaemonAliveAssertion, UIPanGestureRecognizer, UIViewController;
 
-@interface PLCameraPageController : UIPageController <PLApplicationCameraViewControllerDelegate, PLAlbumChangeObserver, PLCameraPreviewWellImageChangeObserver, UIScrollViewDelegate, UIPageControllerDelegate> {
+@interface PLCameraPageController : UIPageController <PLApplicationCameraViewControllerDelegate, PLAlbumListChangeObserver, PLAlbumChangeObserver, PLCameraPreviewWellImageChangeObserver, PLPhotoBrowserControllerDelegate, UIScrollViewDelegate, UIPageControllerDelegate> {
     struct NSObject { Class x1; } *_cameraAlbum;
     UIViewController *_cameraAlbumNavigationController;
     UIPanGestureRecognizer *_cameraPagePanGestureRecognizer;
     PLApplicationCameraViewController *_cameraViewController;
     BOOL _delayLoadingPhotoLibrary;
+    BOOL _ignoreVolumeButtons;
+    BOOL _isDismissingCameraAlbum;
     PLKeepDaemonAliveAssertion *_keepDaemonAliveAssertion;
     UIViewController *_presentedCameraAlbumNavigationController;
     BOOL _previouslyDidntChangeStatusBar;
+    BOOL _reallyIgnoreVolumeButtonEvents;
     double _sessionStartTime;
     BOOL _shouldShowCameraAlbum;
     BOOL _supportsVideos;
@@ -26,20 +29,29 @@
 
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
-- (void)_createCameraViewControllerWithSessionAlbum:(BOOL)arg1 useCameraLocationBundleID:(BOOL)arg2;
+- (void)_cleanupForCameraEnd;
+- (void)_createCameraViewControllerWithSessionAlbum:(BOOL)arg1 useCameraLocationBundleID:(BOOL)arg2 startPreviewImmediately:(BOOL)arg3;
+- (id)_currentPhotoBrowser;
 - (void)_enableSwipeToCameraRoll:(BOOL)arg1;
-- (id)_initWithSessionID:(id)arg1 useCameraLocationBundleID:(BOOL)arg2;
+- (void)_handleVolumeButtonDown;
+- (void)_handleVolumeButtonUp;
+- (id)_initWithSessionID:(id)arg1 useCameraLocationBundleID:(BOOL)arg2 startPreviewImmediately:(BOOL)arg3;
 - (void)_libraryDidChange:(id)arg1;
 - (void)_makeViewControllersPerformSelector:(SEL)arg1 withNotification:(id)arg2;
 - (Class)_pageControllerScrollViewClass;
-- (id)_photoBrowser;
+- (id)_pagingPhotoBrowser;
+- (id)_photoBrowserForNavigationController:(id)arg1;
+- (id)_presentedPhotoBrowser;
 - (void)_resetStatusBarPosition;
+- (void)_setWantsVolumeButtonEvents:(BOOL)arg1;
 - (void)_setupSwipeGesture;
 - (void)_showCameraAlbumIndexSheet:(BOOL)arg1;
 - (void)_stopCameraPreviewAnimated:(BOOL)arg1;
 - (void)_updatePhotoBrowsersGestureEnabledState;
 - (void)_updateStatusBarPositionForView:(id)arg1;
+- (void)_updateVolumeButtonEventsAbility;
 - (void)albumDidChange:(id)arg1;
+- (void)albumListDidChange:(id)arg1;
 - (unsigned int)albumPageIndex;
 - (void)applicationDidResume;
 - (void)applicationWillSuspend;
@@ -59,21 +71,25 @@
 - (void)dismissCameraAlbumAnimated:(BOOL)arg1 forSuspension:(BOOL)arg2;
 - (void)dismissCameraAlbumForSuspension;
 - (id)init;
+- (id)initWithSessionID:(id)arg1 startPreviewImmediately:(BOOL)arg2;
 - (id)initWithSessionID:(id)arg1;
 - (id)newAlbumNavigationController;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)pageController:(id)arg1 viewControllerAtIndex:(int)arg2;
 - (void)pageControllerDidEndPaging:(id)arg1;
 - (void)pageControllerWillBeginPaging:(id)arg1;
+- (void)photoBrowserControllerDidEndPaging:(id)arg1;
+- (void)photoBrowserControllerWillBeginPaging:(id)arg1;
 - (void)prepareAlbumNavigationControllerForReuse:(id)arg1;
 - (void)prepareForDefaultImageSnapshot;
 - (void)prepareForDismissal;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setCameraAlbumNavigationController:(id)arg1;
 - (void)setCameraViewController:(id)arg1;
+- (void)setSessionID:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)showingCameraPreview;
 - (void)startCameraPreview;
+- (void)startCameraPreviewWithSavedConfiguration;
 - (void)stopCameraPreview;
 - (void)takePicture;
 - (void)viewDidAppear:(BOOL)arg1;

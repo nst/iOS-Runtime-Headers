@@ -14,8 +14,6 @@
     NSString *_path;
 }
 
-+ (id)sharedInstance;
-
 - (BOOL)_processJournalFile:(id)arg1 db:(struct sqlite3 { }*)arg2;
 - (void)_resetBuffer;
 - (BOOL)append:(const char *)arg1;
@@ -24,6 +22,5 @@
 - (BOOL)flush;
 - (id)initWithPath:(id)arg1;
 - (BOOL)mergeWithDatabase:(struct sqlite3 { }*)arg1;
-- (void)moveOrDeleteFile;
 
 @end

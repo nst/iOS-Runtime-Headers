@@ -2,23 +2,29 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSOperationQueue, NSString, NSArray, NSLock, NSDictionary;
+@class NSOperationQueue, ACAccountStore, NSLock, NSDictionary, NSString, ACAccount, NSArray;
 
 @interface AAAccount : BasicAccount <ASDynamicAccountClassLoader> {
+    ACAccountStore *_accountStore;
+    ACAccount *_appleIDAccount;
+    NSString *_appleIDAccountIdentifier;
     NSString *_cachedCommerceToken;
+    NSString *_cachedFMIPToken;
     NSString *_cachedPassword;
     NSString *_cachedToken;
+    NSLock *_fmipTokenLock;
     NSLock *_passwordLock;
     NSOperationQueue *_requesterQueue;
     NSLock *_tokenLock;
-    NSString *_unsavedToken;
 }
 
 @property(readonly) int accountServiceType;
+@property(readonly) NSString * appleIDAccountIdentifier;
 @property(readonly) NSArray * appleIDAliases;
 @property(readonly) NSString * authToken;
 @property(readonly) NSDictionary * dataclassProperties;
 @property(readonly) NSString * firstName;
+@property(readonly) NSString * fmipToken;
 @property(readonly) NSString * lastName;
 @property(readonly) int mobileMeAccountStatus;
 @property(readonly) BOOL needsRegistration;
@@ -27,6 +33,7 @@
 @property BOOL primaryAccount;
 @property(readonly) NSString * primaryEmail;
 @property(readonly) BOOL primaryEmailVerified;
+@property(readonly) NSString * protocolVersion;
 @property(readonly) NSArray * provisionedDataclasses;
 @property(readonly) BOOL serviceUnavailable;
 @property(readonly) NSDictionary * serviceUnavailableInfo;
@@ -47,6 +54,10 @@
 + (void)setAOSEnabled:(BOOL)arg1;
 + (id)supportedDataclasses;
 
+- (void).cxx_destruct;
+- (id)_accountStore;
+- (void)_accountStoreChanged:(id)arg1;
+- (id)_createNewAppleIDAccount;
 - (id)_deviceSpecificLocalizedString:(id)arg1;
 - (id)_errorWithDescriptionForResponseError:(id)arg1;
 - (id)_mailChildAccountProperties;
@@ -54,12 +65,17 @@
 - (void)_performiCloudMigration;
 - (BOOL)_removeChildAccountsOfType:(id)arg1;
 - (BOOL)_removeChildAccountsOfTypes:(id)arg1;
+- (BOOL)_requestAccessToAppleIDAccount;
+- (void)_setFMIPToken:(id)arg1;
 - (void)_setToken:(id)arg1;
+- (void)_updateAccountRequestWithHandler:(id)arg1;
 - (id)accountFirstDisplayAlert;
 - (id)accountFooterButton;
 - (id)accountFooterText;
 - (int)accountServiceType;
 - (void)addChildAccount:(id)arg1;
+- (id)appleIDAccount;
+- (id)appleIDAccountIdentifier;
 - (id)appleIDAliases;
 - (id)authToken;
 - (void)authenticateWithHandler:(id)arg1;
@@ -74,10 +90,12 @@
 - (BOOL)fixPartialiCloudMigration;
 - (void)flushCachedPassword;
 - (void)flushCachedTokens;
+- (id)fmipToken;
 - (id)initWithProperties:(id)arg1;
 - (BOOL)isConfiguredSyncAccount;
 - (BOOL)isProvisionedForDataclass:(id)arg1;
 - (id)lastName;
+- (void)lookupEmailAddresses:(id)arg1 withHandler:(id)arg2;
 - (int)mobileMeAccountStatus;
 - (BOOL)needsEmailConfiguration;
 - (BOOL)needsRegistration;
@@ -92,13 +110,18 @@
 - (id)primaryEmail;
 - (BOOL)primaryEmailVerified;
 - (id)propertiesForDataclass:(id)arg1;
+- (id)protocolVersion;
 - (id)provisionedDataclasses;
+- (void)refreshTokensWithHandler:(id)arg1;
 - (void)registerWithHandler:(id)arg1;
+- (void)removeAppleIDAccount;
 - (void)removeAppleIDCerts;
 - (void)removeChildAccountWithIdentifier:(id)arg1;
 - (void)removePasswordFromKeychain;
 - (void)removeTokensFromKeychain;
+- (void)renewCredentialsForAppleIDWithHandler:(id)arg1;
 - (void)resendVerificationEmail:(id)arg1;
+- (void)saveFMIPTokenInKeychain;
 - (void)savePasswordInKeychain;
 - (void)saveTokensInKeychain;
 - (BOOL)serviceUnavailable;
@@ -116,5 +139,6 @@
 - (void)updateAccountWithProvisioningResponse:(id)arg1;
 - (BOOL)useCellularForDataclass:(id)arg1;
 - (id)username;
+- (void)verifyCredentialsForAppleIDWithHandler:(id)arg1;
 
 @end

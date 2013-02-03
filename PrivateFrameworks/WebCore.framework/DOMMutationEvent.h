@@ -8,10 +8,10 @@
 }
 
 @property(readonly) unsigned short attrChange;
-@property(copy,readonly) NSString * attrName;
-@property(copy,readonly) NSString * newValue;
-@property(copy,readonly) NSString * prevValue;
-@property(retain,readonly) DOMNode * relatedNode;
+@property(readonly) NSString * attrName;
+@property(readonly) NSString * newValue;
+@property(readonly) NSString * prevValue;
+@property(readonly) DOMNode * relatedNode;
 
 - (unsigned short)attrChange;
 - (id)attrName;

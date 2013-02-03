@@ -31,6 +31,7 @@
 + (id)personIDsWithOutstandingActivities;
 + (void)stopAllActivities;
 
+- (void).cxx_destruct;
 - (void)_abort;
 - (id)_abortedError;
 - (void)_forget;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSError, <CoreDAVAccountInfoProvider>, NSDictionary, NSString, NSURL, NSData, NSSet;
+@class NSError, NSSet, NSDictionary, NSString, NSURL, NSData, <CoreDAVAccountInfoProvider>;
 
 @interface CoreDAVDiscoveryAccountInfo : NSObject <CoreDAVAccountInfoProvider> {
     NSString *_accountID;
@@ -58,6 +58,7 @@
 - (id)host;
 - (id)identityPersist;
 - (id)initWithAccountInfoProvider:(id)arg1;
+- (id)oauthToken;
 - (id)password;
 - (int)port;
 - (id)principalURL;

@@ -7,11 +7,13 @@
 @interface EKSideAlarm : NSManagedObject {
 }
 
+@property(retain) NSDate * acknowledgedDate;
 @property(retain) NSNumber * alarmID;
 @property(retain) NSNumber * allDay;
 @property(retain) NSDate * entityDate;
 @property(retain) NSNumber * entityID;
 @property(retain) NSString * entityTimeZone;
+@property(retain) NSString * externalID;
 @property(retain) NSDate * fireTime;
 
 @end

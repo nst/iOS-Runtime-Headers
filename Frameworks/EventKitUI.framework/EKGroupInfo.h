@@ -6,7 +6,11 @@
 
 @interface EKGroupInfo : NSObject {
     NSMutableArray *_calendars;
+    int _customGroupType;
+    NSString *_customTitle;
+    NSString *_customTitleAtBeginningOfSentence;
     BOOL _selected;
+    BOOL _showSelectAllButton;
     EKSource *_source;
 }
 
@@ -19,6 +23,7 @@
 @property(readonly) NSSet * selectedCalendarSet;
 @property(readonly) BOOL showAddCalendarButton;
 @property(readonly) BOOL showCalendarNameIfSolitary;
+@property BOOL showSelectAllButton;
 @property(readonly) int sortOrder;
 @property(retain) EKSource * source;
 @property(readonly) NSString * title;
@@ -31,6 +36,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
+- (id)initWithCustomGroupType:(int)arg1;
 - (id)initWithSource:(id)arg1;
 - (void)insertCalendarInfo:(id)arg1;
 - (BOOL)isSubscribed;
@@ -41,10 +47,13 @@
 - (void)selectNone;
 - (BOOL)selected;
 - (id)selectedCalendarSet;
+- (void)setCustomTitle:(id)arg1 forBeginningOfSentence:(id)arg2;
 - (void)setSelected:(BOOL)arg1;
+- (void)setShowSelectAllButton:(BOOL)arg1;
 - (void)setSource:(id)arg1;
 - (BOOL)showAddCalendarButton;
 - (BOOL)showCalendarNameIfSolitary;
+- (BOOL)showSelectAllButton;
 - (int)sortOrder;
 - (id)source;
 - (id)title;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSString, NSTimer, NSDate, PFUbiquityLocation, NSPersistentStoreCoordinator;
+@class NSTimer, NSLock, PFUbiquityLocation, NSString, NSPersistentStoreCoordinator, NSMutableDictionary, NSDate;
 
 @interface _PFUbiquityRecordsExporter : NSObject {
     NSDate *_lastTransactionDate;
@@ -10,6 +10,7 @@
     NSPersistentStoreCoordinator *_monitoredPersistentStoreCoordinator;
     NSMutableDictionary *_pendingTransactionsToStoreNameAndTransactionNumber;
     NSTimer *_tempMoveTimer;
+    NSLock *_transactionLock;
     PFUbiquityLocation *_ubiquityRootLocation;
 }
 
@@ -18,8 +19,7 @@
 @property(retain) NSTimer * tempMoveTimer;
 @property(readonly) PFUbiquityLocation * ubiquityRootLocation;
 
-+ (void)initialize;
-
+- (void)beginWatchingForChangesFromStore:(id)arg1;
 - (void)cleanUpFromRolledbackPendingTransaction:(id)arg1 withNotification:(id)arg2;
 - (id)createDictionaryForObjectsInSaveNotification:(id)arg1 forTransactionOfType:(int)arg2 withExportContext:(id)arg3 andSaveSnapshot:(id)arg4;
 - (id)createSetOfStoresToExportForNotification:(id)arg1;

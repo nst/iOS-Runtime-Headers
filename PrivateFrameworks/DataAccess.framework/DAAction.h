@@ -25,6 +25,7 @@
 - (void)dealloc;
 - (id)deletedContactID;
 - (id)deletedEventID;
+- (id)deletedNoteID;
 - (id)deletedToDoID;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -35,6 +36,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (int)itemChangeType;
 - (id)message;
+- (struct ASNote { Class x1; id x2; id x3; int x4; int x5; id x6; int x7; id x8; int x9; id x10; int x11; id x12; id x13; id x14; BOOL x15; BOOL x16; id x17; id x18; id x19; id x20; BOOL x21; id x22; id x23; id x24; id x25; }*)note;
 - (id)serverID;
 - (id)serverId;
 - (void)setChangeId:(int)arg1;

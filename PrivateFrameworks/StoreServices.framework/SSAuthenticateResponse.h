@@ -2,25 +2,27 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSAccount, NSDictionary;
+@class NSError, SSAccount, NSDictionary;
 
-@interface SSAuthenticateResponse : NSObject <SSCoding> {
+@interface SSAuthenticateResponse : NSObject <SSXPCCoding> {
     SSAccount *_authenticatedAccount;
+    NSError *_error;
     NSDictionary *_responseDictionary;
     int _responseType;
 }
 
 @property int authenticateResponseType;
 @property(retain) SSAccount * authenticatedAccount;
+@property(readonly) NSError * error;
 @property(copy) NSDictionary * responseDictionary;
 
+- (void)_setError:(id)arg1;
 - (int)authenticateResponseType;
 - (id)authenticatedAccount;
-- (id)copyPropertyListEncoding;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)error;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)responseDictionary;
 - (void)setAuthenticateResponseType:(int)arg1;
 - (void)setAuthenticatedAccount:(id)arg1;

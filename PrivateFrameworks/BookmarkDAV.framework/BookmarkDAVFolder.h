@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BookmarkDAV.framework/BookmarkDAV
  */
 
-@class NSData, NSMutableArray, NSDictionary, CoreDAVErrorItem, NSString, NSURL, NSArray;
+@class NSURL, NSMutableArray, NSDictionary, CoreDAVErrorItem, NSString, NSData, NSArray;
 
 @interface BookmarkDAVFolder : CoreDAVContainer <CoreDAVModifiedContainer, CoreDAVAddedContainer, CoreDAVLeafDataPayload> {
     NSDictionary *_appleAttributes;

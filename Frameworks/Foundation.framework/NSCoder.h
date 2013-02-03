@@ -11,6 +11,8 @@
 - (void)CA_encodeObject:(id)arg1 forKey:(id)arg2 conditional:(BOOL)arg3;
 - (id)_copyDecodedObjectForKey:(id)arg1 ofClass:(Class)arg2;
 - (id)_safeDecodeContainerForKey:(id)arg1 containerClass:(Class)arg2 valueClass:(Class)arg3;
+- (void)_validateAllowedClass:(Class)arg1 forKey:(id)arg2 allowingInvocations:(BOOL)arg3;
+- (id)allowedClasses;
 - (BOOL)allowsKeyedCoding;
 - (BOOL)containsValueForKey:(id)arg1;
 - (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(void*)arg3;
@@ -34,8 +36,11 @@
 - (long)decodeLongForKey:(id)arg1;
 - (id)decodeObject;
 - (id)decodeObjectForKey:(id)arg1;
+- (id)decodeObjectOfClass:(Class)arg1 forKey:(id)arg2;
+- (id)decodeObjectOfClasses:(id)arg1 forKey:(id)arg2;
 - (struct CGPoint { float x1; float x2; })decodePoint;
 - (struct CGPoint { float x1; float x2; })decodePointForKey:(id)arg1;
+- (id)decodePropertyListForKey:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })decodeRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })decodeRectForKey:(id)arg1;
 - (struct CGSize { float x1; float x2; })decodeSize;
@@ -81,6 +86,7 @@
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;
 - (void)encodeValuesOfObjCTypes:(const char *)arg1;
 - (struct _NSZone { }*)objectZone;
+- (BOOL)requiresSecureCoding;
 - (id)safeDecodeArrayForKey:(id)arg1 valueClass:(Class)arg2;
 - (id)safeDecodeDateForKey:(id)arg1;
 - (id)safeDecodeDictionaryForKey:(id)arg1 keyClass:(Class)arg2 valueClass:(Class)arg3;
@@ -89,8 +95,10 @@
 - (id)safeDecodeSetForKey:(id)arg1 valueClass:(Class)arg2;
 - (id)safeDecodeStringForKey:(id)arg1;
 - (void)safeEncodeUIColor:(id)arg1 forKey:(id)arg2;
+- (void)setAllowedClasses:(id)arg1;
 - (void)setObjectZone:(struct _NSZone { }*)arg1;
 - (unsigned int)systemVersion;
+- (void)validateAllowedClass:(Class)arg1 forKey:(id)arg2;
 - (int)versionForClassName:(id)arg1;
 
 @end

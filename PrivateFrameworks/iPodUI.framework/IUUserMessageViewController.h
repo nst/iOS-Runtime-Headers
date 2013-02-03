@@ -5,11 +5,13 @@
 @class IUUserMessageView;
 
 @interface IUUserMessageViewController : IUiPodViewController {
-    BOOL _appearShouldAttemptReturnToSourceController;
+    BOOL _didAppearShouldAttemptReturnToSourceController;
+    BOOL _didDisappearShouldAttemptReturnToSourceController;
     IUUserMessageView *_messageView;
 }
 
 - (void)_contentsDidChangeNotification:(id)arg1;
+- (void)_wifiEnabledDidChangeNotification:(id)arg1;
 - (void)attemptReturnToSourceController;
 - (id)copyArchivableContexts;
 - (void)dealloc;
@@ -19,5 +21,6 @@
 - (void)scheduleAttemptReturnToSourceController;
 - (void)setContext:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 
 @end

@@ -23,7 +23,7 @@
 
 @property BOOL catchesSingleTap;
 @property BOOL shouldScrollToFirstResponder;
-@property struct CGPoint { float x; float y; } tapLocation;
+@property struct CGPoint { float x1; float x2; } tapLocation;
 @property(retain) UIView * tappedView;
 
 - (BOOL)_scrollsToMakeFirstResponderVisible;

@@ -5,9 +5,6 @@
 @interface CKABUnknownPersonViewController : ABUnknownPersonViewController {
 }
 
-- (BOOL)_shouldUseDefaultFirstResponder;
-- (BOOL)_shouldUseKeyWindowStack;
-- (BOOL)_shouldUseNextFirstResponder;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

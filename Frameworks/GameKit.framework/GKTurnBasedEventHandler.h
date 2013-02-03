@@ -5,15 +5,23 @@
 @class NSObject<GKTurnBasedEventHandlerDelegate>;
 
 @interface GKTurnBasedEventHandler : NSObject {
-    NSObject<GKTurnBasedEventHandlerDelegate> *_delegate;
+    NSObject<GKTurnBasedEventHandlerDelegate> *_delegateWeak;
+    BOOL _didBecomeActive;
 }
 
 @property NSObject<GKTurnBasedEventHandlerDelegate> * delegate;
+@property BOOL didBecomeActive;
 
 + (id)sharedTurnBasedEventHandler;
 
+- (void)applicationDidEnterBackgroundNotification:(id)arg1;
+- (void)callTurnEventForMatch:(id)arg1;
+- (void)dealloc;
 - (id)delegate;
+- (BOOL)didBecomeActive;
+- (id)init;
 - (void)lookForEvent;
 - (void)setDelegate:(id)arg1;
+- (void)setDidBecomeActive:(BOOL)arg1;
 
 @end

@@ -2,10 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIImageView;
-
 @interface CKRecipientTableViewCell : MFRecipientTableViewCell {
-    UIImageView *_availableIcon;
     BOOL _recipientAvailable;
 }
 
@@ -15,9 +12,7 @@
 + (id)cellForRecipient:(id)arg1;
 + (id)highlightedAvailableImage;
 
-- (void)dealloc;
 - (BOOL)isRecipientAvailable;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setRecipientAvailable:(BOOL)arg1;
 
 @end

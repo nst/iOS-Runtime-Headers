@@ -25,6 +25,7 @@
         short rightMargin; 
         int rightMarginType; 
         int verticalAlignment; 
+        BOOL textDirection; 
         int deleted; 
         int edited; 
         int formattingChanged; 
@@ -53,6 +54,7 @@
         unsigned int rightMarginOverridden : 1; 
         unsigned int rightMarginTypeOverridden : 1; 
         unsigned int verticalAlignmentOverridden : 1; 
+        unsigned int textDirectionOverridden : 1; 
         unsigned int verticallyMergedCell : 1; 
         unsigned int verticallyMergedCellOverridden : 1; 
         unsigned int firstInSetOfVerticallyMergedCells : 1; 
@@ -88,6 +90,7 @@
         short rightMargin; 
         int rightMarginType; 
         int verticalAlignment; 
+        BOOL textDirection; 
         int deleted; 
         int edited; 
         int formattingChanged; 
@@ -116,6 +119,7 @@
         unsigned int rightMarginOverridden : 1; 
         unsigned int rightMarginTypeOverridden : 1; 
         unsigned int verticalAlignmentOverridden : 1; 
+        unsigned int textDirectionOverridden : 1; 
         unsigned int verticallyMergedCell : 1; 
         unsigned int verticallyMergedCellOverridden : 1; 
         unsigned int firstInSetOfVerticallyMergedCells : 1; 
@@ -141,8 +145,9 @@
     short mWidth;
 }
 
+- (id).cxx_construct;
 - (void)addProperties:(id)arg1;
-- (void)addPropertiesValues:(struct { id x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; id x9; int x10; short x11; int x12; short x13; int x14; short x15; int x16; short x17; int x18; int x19; int x20; int x21; int x22; unsigned short x23; unsigned short x24; unsigned short x25; id x26; id x27; id x28; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; unsigned int x51 : 1; unsigned int x52 : 1; unsigned int x53 : 1; unsigned int x54 : 1; unsigned int x55 : 1; unsigned int x56 : 1; unsigned int x57 : 1; unsigned int x58 : 1; unsigned int x59 : 1; unsigned int x60 : 1; unsigned int x61 : 1; unsigned int x62 : 1; }*)arg1 to:(struct { id x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; id x9; int x10; short x11; int x12; short x13; int x14; short x15; int x16; short x17; int x18; int x19; int x20; int x21; int x22; unsigned short x23; unsigned short x24; unsigned short x25; id x26; id x27; id x28; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; unsigned int x51 : 1; unsigned int x52 : 1; unsigned int x53 : 1; unsigned int x54 : 1; unsigned int x55 : 1; unsigned int x56 : 1; unsigned int x57 : 1; unsigned int x58 : 1; unsigned int x59 : 1; unsigned int x60 : 1; unsigned int x61 : 1; unsigned int x62 : 1; }*)arg2;
+- (void)addPropertiesValues:(struct { id x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; id x9; int x10; short x11; int x12; short x13; int x14; short x15; int x16; short x17; int x18; int x19; BOOL x20; int x21; int x22; int x23; unsigned short x24; unsigned short x25; unsigned short x26; id x27; id x28; id x29; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; unsigned int x51 : 1; unsigned int x52 : 1; unsigned int x53 : 1; unsigned int x54 : 1; unsigned int x55 : 1; unsigned int x56 : 1; unsigned int x57 : 1; unsigned int x58 : 1; unsigned int x59 : 1; unsigned int x60 : 1; unsigned int x61 : 1; unsigned int x62 : 1; unsigned int x63 : 1; unsigned int x64 : 1; }*)arg1 to:(struct { id x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; id x9; int x10; short x11; int x12; short x13; int x14; short x15; int x16; short x17; int x18; int x19; BOOL x20; int x21; int x22; int x23; unsigned short x24; unsigned short x25; unsigned short x26; id x27; id x28; id x29; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; unsigned int x51 : 1; unsigned int x52 : 1; unsigned int x53 : 1; unsigned int x54 : 1; unsigned int x55 : 1; unsigned int x56 : 1; unsigned int x57 : 1; unsigned int x58 : 1; unsigned int x59 : 1; unsigned int x60 : 1; unsigned int x61 : 1; unsigned int x62 : 1; unsigned int x63 : 1; unsigned int x64 : 1; }*)arg2;
 - (id)bottomBorder;
 - (short)bottomMargin;
 - (int)bottomMarginType;
@@ -191,6 +196,7 @@
 - (BOOL)isRightMarginOverridden;
 - (BOOL)isRightMarginTypeOverridden;
 - (BOOL)isShadingOverridden;
+- (BOOL)isTextDirectionOverridden;
 - (BOOL)isTopBorderOverridden;
 - (BOOL)isTopMarginOverridden;
 - (BOOL)isTopMarginTypeOverridden;
@@ -235,6 +241,7 @@
 - (void)setResolveMode:(int)arg1;
 - (void)setRightMargin:(short)arg1;
 - (void)setRightMarginType:(int)arg1;
+- (void)setTextDirection:(int)arg1;
 - (void)setTopMargin:(short)arg1;
 - (void)setTopMarginType:(int)arg1;
 - (void)setVerticalAlignment:(int)arg1;
@@ -242,6 +249,7 @@
 - (void)setWidth:(short)arg1;
 - (void)setWidthType:(int)arg1;
 - (id)shading;
+- (int)textDirection;
 - (id)topBorder;
 - (short)topMargin;
 - (int)topMarginType;

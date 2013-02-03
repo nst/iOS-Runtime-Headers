@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class NSMutableDictionary, NSMutableString, NSMutableArray, ABVCardValueSetter, NSString, NSData, ABVCardLexer;
+@class NSData, NSMutableString, NSMutableArray, ABVCardValueSetter, NSString, NSMutableDictionary, ABVCardLexer;
 
 @interface ABVCardParser : NSObject {
     BOOL _30vCard;
@@ -60,9 +60,11 @@
 - (BOOL)_setIntValueOrNoteIfNull:(int)arg1 forProperty:(int)arg2;
 - (BOOL)_setMultiValuesOrNoteIfNull:(id)arg1 forProperty:(unsigned int)arg2 valueComparator:(id)arg3;
 - (BOOL)_setStringValueOrNoteIfNull:(id)arg1 forProperty:(unsigned int)arg2;
+- (id)_socialProfileDisplayName;
 - (id)_socialProfileService;
 - (id)_socialProfileUserId;
 - (id)_socialProfileUsername;
+- (BOOL)_usesArrayForExternalPropKey:(id)arg1;
 - (id)_valueSetter;
 - (void)addAddressMultiValues;
 - (BOOL)addIMValueTo:(id)arg1;
@@ -109,6 +111,7 @@
 - (BOOL)parseUID;
 - (id)parseURL;
 - (BOOL)parseVERSION;
+- (id)parseValueArray;
 - (struct __CFArray { }*)peopleAndProperties:(const struct __CFArray {}**)arg1;
 - (id)phoneLabel;
 - (void)setLocalRecordHasAdditionalProperties:(BOOL)arg1;

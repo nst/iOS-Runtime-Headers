@@ -2,20 +2,16 @@
    Image: /System/Library/Frameworks/CoreMIDI.framework/CoreMIDI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSString;
 
 @interface MIDINetworkHost : NSObject {
-    struct _MIDINetworkHostImpl { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; unsigned short x4; void*x5; const int x6; in void*x7; void*x8; id x9; void*x10; inout unsigned short x11; unsigned short x12; void*x13; const int x14; in void*x15; void*x16; unsigned int x17; id x18; void*x19; inout unsigned short x20; unsigned short x21; void*x22; const int x23; in void*x24; void*x25; NSString *x26; } *_impl;
+    struct _MIDINetworkHostImpl { id x1; id x2; unsigned int x3; id x4; id x5; } *_impl;
 }
 
-@property(retain,readonly) NSString * address;
-@property(retain,readonly) NSString * name;
-@property(retain,readonly) NSString * netServiceDomain;
-@property(retain,readonly) NSString * netServiceName;
+@property(readonly) NSString * address;
+@property(readonly) NSString * name;
+@property(readonly) NSString * netServiceDomain;
+@property(readonly) NSString * netServiceName;
 @property(readonly) unsigned int port;
 
 + (id)fromAddressAsText:(id)arg1 withName:(id)arg2;

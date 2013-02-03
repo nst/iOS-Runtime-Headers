@@ -7,6 +7,8 @@
 
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 - (void)release;
 - (id)retain;
 

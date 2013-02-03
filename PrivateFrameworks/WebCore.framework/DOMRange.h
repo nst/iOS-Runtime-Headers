@@ -8,12 +8,12 @@
 }
 
 @property(readonly) BOOL collapsed;
-@property(retain,readonly) DOMNode * commonAncestorContainer;
-@property(retain,readonly) DOMNode * endContainer;
+@property(readonly) DOMNode * commonAncestorContainer;
+@property(readonly) DOMNode * endContainer;
 @property(readonly) int endOffset;
-@property(retain,readonly) DOMNode * startContainer;
+@property(readonly) DOMNode * startContainer;
 @property(readonly) int startOffset;
-@property(copy,readonly) NSString * text;
+@property(readonly) NSString * text;
 
 + (id)rangeForFirstPosition:(id)arg1 second:(id)arg2;
 

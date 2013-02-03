@@ -13,7 +13,8 @@
 @property(readonly) NSDictionary * dictRepresentation;
 @property(retain) CoreDAVBulkRequestsItem * simpleItem;
 
-- (id)copyParseRules;
++ (id)copyParseRules;
+
 - (id)crudItem;
 - (void)dealloc;
 - (id)description;

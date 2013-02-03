@@ -13,6 +13,7 @@
 }
 
 @property(readonly) BOOL allowAnyNetwork;
+@property(readonly) BOOL dataActiveAndReachable;
 @property BOOL enableCriticalReliability;
 @property(readonly) BOOL networkActive;
 @property(readonly) BOOL networkEnabled;
@@ -31,12 +32,11 @@
 - (void)_setReliabilityTimeoutInterval;
 - (void)_tryToEnableReliability;
 - (BOOL)allowAnyNetwork;
-- (BOOL)allowsWeakReference;
+- (BOOL)dataActiveAndReachable;
 - (BOOL)enableCriticalReliability;
 - (BOOL)networkActive;
 - (BOOL)networkEnabled;
 - (BOOL)networkReachable;
-- (BOOL)retainWeakReference;
 - (void)setEnableCriticalReliability:(BOOL)arg1;
 - (BOOL)validNetworkActive;
 - (BOOL)validNetworkEnabled;

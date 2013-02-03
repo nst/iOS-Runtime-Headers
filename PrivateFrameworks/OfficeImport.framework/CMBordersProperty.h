@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSColorStub;
+@class TSUColor;
 
 @interface CMBordersProperty : CMProperty {
-    NSColorStub *mBorderBottomColor;
-    NSColorStub *mBorderColor;
-    NSColorStub *mBorderLeftColor;
-    NSColorStub *mBorderRightColor;
+    TSUColor *mBorderBottomColor;
+    TSUColor *mBorderColor;
+    TSUColor *mBorderLeftColor;
+    TSUColor *mBorderRightColor;
     int mBorderStyle[5];
-    NSColorStub *mBorderTopColor;
+    TSUColor *mBorderTopColor;
     int mBorderWidth[5];
     int mCustomWidth;
 }

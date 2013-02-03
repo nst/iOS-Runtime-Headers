@@ -10,7 +10,7 @@
     BOOL _dirty;
     unsigned short _filesystemType;
     unsigned long long _freeSpaceInBytes;
-    unsigned int _freeSpaceInImages;
+    unsigned long _freeSpaceInImages;
     unsigned long long _maxCapacity;
     BOOL _readOnlyObject;
     NSString *_storageDescription;

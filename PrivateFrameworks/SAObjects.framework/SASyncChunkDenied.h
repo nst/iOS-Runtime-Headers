@@ -2,22 +2,21 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, SASyncAnchor;
+@class NSString, SASyncAnchor, NSArray;
 
-@interface SASyncChunkDenied : SABaseCommand <SAClientBoundCommand> {
+@interface SASyncChunkDenied : SABaseClientBoundCommand <SAClientBoundCommand> {
 }
 
 @property(copy) NSString * aceId;
+@property(copy) NSString * appId;
 @property(copy) NSArray * callbacks;
 @property(retain) SASyncAnchor * current;
 @property int errorCode;
-@property(copy) NSString * reason;
 @property(copy) NSString * refId;
 
 + (id)chunkDenied;
 + (id)chunkDeniedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)chunkDeniedWithErrorCode:(int)arg1;
-+ (id)chunkDeniedWithReason:(id)arg1;
 
 - (id)callbacks;
 - (id)current;
@@ -25,12 +24,9 @@
 - (int)errorCode;
 - (id)groupIdentifier;
 - (id)initWithErrorCode:(int)arg1;
-- (id)initWithReason:(id)arg1;
-- (id)reason;
 - (BOOL)requiresResponse;
 - (void)setCallbacks:(id)arg1;
 - (void)setCurrent:(id)arg1;
 - (void)setErrorCode:(int)arg1;
-- (void)setReason:(id)arg1;
 
 @end

@@ -6,11 +6,11 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, NSPort;
+@class NSPort, NSMutableDictionary, NSObject<OS_dispatch_source>;
 
 @interface NSConcreteTask : NSTask {
     NSMutableDictionary *_dictionary;
-    struct dispatch_source_s { } *_dsrc;
+    NSObject<OS_dispatch_source> *_dsrc;
     BOOL _hasExeced;
     BOOL _hasPostedDeathNotification;
     BOOL _isRunning;

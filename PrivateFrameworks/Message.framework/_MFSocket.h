@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFStream, NSString, NSInvocation, NSCondition;
+@class NSArray, MFStream, NSString, NSInvocation, NSCondition, NSData;
 
 @interface _MFSocket : NSObject {
     BOOL _allowsTrustPrompt;
@@ -16,10 +16,20 @@
     NSString *_protocol;
     NSString *_service;
     MFStream *_stream;
+    BOOL _usesOpportunisticSockets;
 }
 
 @property BOOL allowsTrustPrompt;
+@property(readonly) BOOL isForcedConnection;
+@property(readonly) BOOL isReadable;
+@property(readonly) BOOL isValid;
+@property(readonly) BOOL isWritable;
+@property(readonly) NSString * remoteHostname;
+@property(readonly) unsigned int remotePortNumber;
+@property(readonly) NSArray * serverCertificates;
+@property(readonly) NSData * sourceIPAddress;
 @property int timeout;
+@property BOOL usesOpportunisticSockets;
 
 - (unsigned int)_bufferedByteCount;
 - (BOOL)_startSSLHandshakeWithProtocol:(id)arg1 disableSSL2:(BOOL)arg2 errorPtr:(id*)arg3;
@@ -42,8 +52,10 @@
 - (void)setEventHandler:(id)arg1;
 - (BOOL)setSecurityProtocol:(id)arg1;
 - (void)setTimeout:(int)arg1;
+- (void)setUsesOpportunisticSockets:(BOOL)arg1;
 - (id)sourceIPAddress;
 - (int)timeout;
+- (BOOL)usesOpportunisticSockets;
 - (int)writeBytes:(const char *)arg1 length:(int)arg2;
 
 @end

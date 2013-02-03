@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSTimer, PLManagedAsset, UIImage, UIToolbar, UIAlertView, UILabel, UIScrollView, UIProgressHUD, NSUndoManager, UIView, PLImageAdjustmentView, NSDictionary, UINavigationBar, UIPopoverController, NSArray, CIFilter, NSMutableArray, UIActionSheet;
+@class NSTimer, PLManagedAsset, UIImage, UIToolbar, UIAlertView, UILabel, UIScrollView, UIProgressHUD, NSUndoManager, UIView, PLImageAdjustmentView, NSDictionary, UINavigationBar, UIPopoverController, NSArray, CIFilter, NSObject<OS_dispatch_queue>, NSMutableArray, UIActionSheet;
 
 @interface PLEditPhotoController : UIViewController <PLImageAdjustmentViewDelegate, UIScrollViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate> {
     struct CGRect { 
@@ -32,6 +32,7 @@
     unsigned int _isUserAction : 1;
     unsigned int _isCroppingImage : 1;
     unsigned int _didTapForRedEyeCorrection : 1;
+    unsigned int _didEverTapForRedEyeCorrection : 1;
     unsigned int _isCanceling : 1;
     unsigned int _isOrderedOut : 1;
     unsigned int _autoAdjustmentEnabled : 1;
@@ -47,7 +48,7 @@
     NSArray *_autoAdjustmentFilters;
     NSArray *_autoRedEyeCorrections;
     CIFilter *_autoRedEyeFilter;
-    struct dispatch_queue_s { } *_cachedImageQueue;
+    NSObject<OS_dispatch_queue> *_cachedImageQueue;
     NSDictionary *_cachedMetadata;
     int _currentMode;
     id _didEndZoomingBlock;
@@ -147,6 +148,7 @@
 - (void)_startEditingWithAsset:(id)arg1;
 - (id)_startToolbarItems;
 - (void)_undoTransformImage:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 angle:(float)arg2;
+- (void)_updateAggregateInfoForCurrentAdjustmentState;
 - (void)_updateButtons;
 - (void)_updateControls;
 - (void)_updateCropInsetsForOrientation:(int)arg1;

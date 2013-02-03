@@ -11,7 +11,6 @@
 @interface MRMediaRemoteState : NSObject {
     BOOL _canBeNowPlayingApp;
     id _commandHandlerBlock;
-    BOOL _includeVideoRoutes;
     BOOL _isOverrideApp;
     int _notifyLaunchedToken;
     NSData *_nowPlayingArtworkData;
@@ -21,7 +20,6 @@
 
 @property BOOL canBeNowPlayingApp;
 @property(copy) id commandHandlerBlock;
-@property BOOL includeVideoRoutes;
 @property BOOL isOverrideApp;
 @property(retain) NSData * nowPlayingArtworkData;
 @property(retain) NSDictionary * nowPlayingInfo;
@@ -32,14 +30,12 @@
 - (id)commandHandlerBlock;
 - (void)dealloc;
 - (void)endRouteDiscovery;
-- (BOOL)includeVideoRoutes;
 - (id)init;
 - (BOOL)isOverrideApp;
 - (id)nowPlayingArtworkData;
 - (id)nowPlayingInfo;
 - (void)setCanBeNowPlayingApp:(BOOL)arg1;
 - (void)setCommandHandlerBlock:(id)arg1;
-- (void)setIncludeVideoRoutes:(BOOL)arg1;
 - (void)setIsOverrideApp:(BOOL)arg1;
 - (void)setNowPlayingArtworkData:(id)arg1;
 - (void)setNowPlayingInfo:(id)arg1;

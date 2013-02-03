@@ -47,7 +47,8 @@
 - (void)_setBytesForExternalReference:(const void*)arg1;
 - (void)_writeExternalReferenceToInterimLocation;
 - (const void*)bytes;
-- (Class)classForCoder:(id)arg1;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 - (id)constructSafeguardStringFromString:(id)arg1;
 - (id)copy;
 - (id)databaseValue;
@@ -62,14 +63,13 @@
 - (BOOL)hasExternalReferenceContent;
 - (id)initForExternalLocation:(id)arg1 safeguardLocation:(id)arg2 data:(id)arg3 protectionLevel:(int)arg4;
 - (id)initForUbiquityDictionary:(id)arg1 store:(id)arg2;
+- (id)initWithStoreBytes:(const void*)arg1 length:(unsigned int)arg2 externalLocation:(id)arg3 safeguardLocation:(id)arg4 protectionLevel:(int)arg5 ubiquitousLocation:(id)arg6;
 - (id)initWithStoreBytes:(const void*)arg1 length:(unsigned int)arg2 externalLocation:(id)arg3 safeguardLocation:(id)arg4 protectionLevel:(int)arg5;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToData:(id)arg1;
 - (unsigned int)length;
 - (id)mutableCopy;
 - (int)preferredProtectionLevel;
-- (void)setUbiquitousLocation:(id)arg1;
 - (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)ubiquitousLocation;
 
 @end

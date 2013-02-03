@@ -13,6 +13,7 @@
 + (id)_outputSettingsWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (id)audioConverterPropertiesForAudioSettingsDictionary:(id)arg1;
 + (id)audioOutputSettingsWithAudioSettingsDictionary:(id)arg1;
++ (id)audioOutputSettingsWithTrustedAudioSettingsDictionary:(id)arg1;
 + (id)defaultAudioOutputSettings;
 + (id)registeredOutputSettingsClasses;
 

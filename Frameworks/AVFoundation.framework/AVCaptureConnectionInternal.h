@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureInputPort, NSArray, AVCaptureOutput, NSMutableArray;
+@class AVCaptureInputPort, NSArray, AVCaptureOutput, NSMutableArray, AVCaptureVideoPreviewLayer;
 
 @interface AVCaptureConnectionInternal : NSObject {
     struct { 
@@ -15,41 +15,29 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
     BOOL active;
     NSArray *audioChannelLevels;
     NSMutableArray *audioChannels;
     AVCaptureInputPort *audioInputPort;
+    BOOL automaticallyAdjustsVideoMirroring;
     BOOL enabled;
+    BOOL enablesVideoStabilizationWhenAvailable;
     NSMutableArray *inputPorts;
     long long lastGetAudioLevelsTime;
     AVCaptureOutput *output;
     int outputChangeSeedOnDisable;
-    } videoCropRect;
-    BOOL videoFirstAndLastFramesUncropped;
     AVCaptureInputPort *videoInputPort;
     } videoMaxFrameDuration;
     float videoMaxScaleAndCropFactor;
     } videoMinFrameDuration;
     BOOL videoMirrored;
-    BOOL videoMirroredIsSetByClient;
     BOOL videoMirroringSupported;
-    } videoMotionFilterOverlapRatios;
     int videoOrientation;
     BOOL videoOrientationSupported;
+    AVCaptureVideoPreviewLayer *videoPreviewLayer;
     int videoRetainedBufferCountHint;
     float videoScaleAndCropFactor;
+    BOOL videoStabilizationEnabled;
 }
 
 @end

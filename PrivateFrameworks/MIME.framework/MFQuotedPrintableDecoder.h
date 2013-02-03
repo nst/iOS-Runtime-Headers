@@ -5,7 +5,7 @@
 @interface MFQuotedPrintableDecoder : MFBaseFilterDataConsumer {
     BOOL _forTextPart;
     unsigned char _lastEncoded;
-    unsigned int _required;
+    unsigned long _required;
 }
 
 @property BOOL forTextPart;

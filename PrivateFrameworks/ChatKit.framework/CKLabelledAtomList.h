@@ -5,6 +5,6 @@
 @interface CKLabelledAtomList : MFLabelledAtomList {
 }
 
-- (id)initWithLabel:(id)arg1 title:(id)arg2 totalWidth:(float)arg3 firstLineWidth:(float)arg4 addresses:(id)arg5 arePhoneNumbers:(id)arg6 style:(int)arg7;
+- (id)initWithLabel:(id)arg1 title:(id)arg2 totalWidth:(float)arg3 firstLineWidth:(float)arg4 addresses:(id)arg5 arePhoneNumbers:(id)arg6 style:(int)arg7 addressBook:(void*)arg8 completionBlock:(id)arg9;
 
 @end

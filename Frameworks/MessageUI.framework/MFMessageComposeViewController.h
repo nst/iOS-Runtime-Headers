@@ -22,7 +22,9 @@
 + (BOOL)canSendText;
 + (void)initialize;
 
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)body;
+- (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)messageComposeDelegate;
 - (id)recipients;

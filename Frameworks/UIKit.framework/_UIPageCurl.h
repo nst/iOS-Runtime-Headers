@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIPageCurlState, UIView, NSMutableArray, NSNumber;
+@class _UIPageCurlState, UIView, NSMutableSet, NSMutableArray, NSNumber;
 
 @interface _UIPageCurl : NSObject {
     struct CGRect { 
@@ -15,38 +15,41 @@
             float height; 
         } size; 
     NSMutableArray *_activeStateQueue;
+    NSMutableSet *_completedStates;
     } _contentRect;
     UIView *_contentView;
     double _delayBetweenSuccessiveAnimations;
     float _manualPageCurlMaxDAngle;
     _UIPageCurlState *_manualPageCurlState;
-    NSMutableArray *_orderedCompletedStates;
     float _pageDiagonalAngle;
     float _pageDiagonalLength;
     NSMutableArray *_pendingStateQueue;
     int _spineLocation;
 }
 
-@property(getter=_isManualPageCurlInProgress,readonly) BOOL _manualPageCurlInProgress;
+@property(getter=_isManualPageCurlInProgressAndUncommitted,readonly) BOOL _manualPageCurlInProgressAndUncommitted;
 @property(setter=_setManualPageCurlMaxDAngle:) float _manualPageCurlMaxDAngle;
 @property(readonly) int _spineLocation;
 @property(readonly) NSNumber * _wrappedManualPageCurlDirection;
 
+- (void)_abortManualCurlAtLocation:(struct CGPoint { float x1; float x2; })arg1 withSuggestedVelocity:(float)arg2;
 - (id)_animationKeyPaths;
+- (BOOL)_areAnimationsInFlightOrPending;
 - (float)_baseAngleOffsetForState:(id)arg1;
-- (void)_beginCurlWithState:(id)arg1;
-- (void)_cancelManualCurlAtLocation:(struct CGPoint { float x1; float x2; })arg1 withSuggestedVelocity:(float)arg2;
+- (void)_beginCurlWithState:(id)arg1 previousState:(id)arg2;
+- (void)_cancelAllActiveTransitionsAndAbandonCallbacks:(BOOL)arg1;
+- (void)_cancelTransitionWithState:(id)arg1 invalidatingPageCurl:(BOOL)arg2;
 - (void)_cleanupState:(id)arg1;
 - (void)_completeManualCurlAtLocation:(struct CGPoint { float x1; float x2; })arg1 withSuggestedVelocity:(float)arg2;
 - (float)_distanceToTravelWithCurrentSpineLocation;
 - (float)_durationForManualCurlEndAnimationWithSuggestedVelocity:(float)arg1 shouldComplete:(BOOL)arg2;
 - (void)_endManualCurlAtLocation:(struct CGPoint { float x1; float x2; })arg1 withSuggestedVelocity:(float)arg2 shouldComplete:(BOOL)arg3;
-- (void)_enqueueCurlOfType:(int)arg1 fromLocation:(struct CGPoint { float x1; float x2; })arg2 inDirection:(int)arg3 withView:(id)arg4 revealingView:(id)arg5 completion:(id)arg6;
+- (void)_enqueueCurlOfType:(int)arg1 fromLocation:(struct CGPoint { float x1; float x2; })arg2 inDirection:(int)arg3 withView:(id)arg4 revealingView:(id)arg5 completion:(id)arg6 finally:(id)arg7;
 - (void)_ensureCurlFilterOnLayer:(id)arg1;
 - (void)_forceCleanupState:(id)arg1 finished:(BOOL)arg2 completed:(BOOL)arg3;
 - (void)_fromValue:(float*)arg1 toValue:(float*)arg2 fromState:(id)arg3 forAnimationWithKeyPath:(id)arg4;
 - (float)_inputTimeForProgress:(float)arg1 distanceToTravel:(float)arg2 radius:(float*)arg3 minRadius:(float)arg4 angle:(float)arg5 dAngle:(float)arg6 touchLocation:(struct CGPoint { float x1; float x2; })arg7 state:(id)arg8;
-- (BOOL)_isManualPageCurlInProgress;
+- (BOOL)_isManualPageCurlInProgressAndUncommitted;
 - (BOOL)_isPreviousCurlCompatibleWithCurlOfType:(int)arg1 inDirection:(int)arg2;
 - (float)_manualPageCurlMaxDAngle;
 - (id)_newAnimationForState:(id)arg1 withKeyPath:(id)arg2 duration:(float)arg3 fromValue:(id)arg4;
@@ -55,6 +58,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_pageViewFrame:(BOOL)arg1;
 - (BOOL)_populateFromValue:(float*)arg1 toValue:(float*)arg2 fromState:(id)arg3 forAnimationWithKeyPath:(id)arg4;
 - (struct CGPoint { float x1; float x2; })_referenceLocationForInitialLocation:(struct CGPoint { float x1; float x2; })arg1 direction:(int)arg2;
+- (void)_setContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setManualPageCurlMaxDAngle:(float)arg1;
 - (int)_spineLocation;
 - (void)_updateCurlFromState:(id)arg1 withTime:(float)arg2 radius:(float)arg3 angle:(float)arg4 addingAnimations:(id)arg5;

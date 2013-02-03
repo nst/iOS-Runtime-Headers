@@ -14,7 +14,7 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })canonicalBounds;
 
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })affineTransform;
-- (struct CGPath { }*)createShapeWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (struct CGPath { }*)copyShapeWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)dealloc;
 - (BOOL)isOffice12;
 - (float)maxAdjustedValue;

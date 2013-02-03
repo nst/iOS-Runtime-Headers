@@ -2,44 +2,64 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString;
+@class NSArray, NSString, SADistance, NSNumber;
 
 @interface SALocation : SADomainObject {
 }
 
-@property(retain) NSNumber * accuracy;
+@property(copy) NSNumber * accuracy;
 @property(copy) NSString * city;
 @property(copy) NSString * countryCode;
+@property(copy) NSArray * entryPoints;
 @property(copy) NSString * label;
-@property(retain) NSNumber * latitude;
-@property(retain) NSNumber * longitude;
+@property(copy) NSNumber * latitude;
+@property(copy) NSNumber * longitude;
 @property(copy) NSString * postalCode;
+@property(copy) NSString * regionType;
+@property(retain) SADistance * relativeDistance;
 @property(copy) NSString * stateCode;
 @property(copy) NSString * street;
+@property(copy) NSString * subThoroughfare;
+@property(copy) NSString * thoroughfare;
+@property(copy) NSString * timezoneId;
 
 + (id)location;
 + (id)locationWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)accuracy;
+- (id)afui_coreLocationRepresentation;
+- (id)afui_mapKitAddressDictionaryRepresentation;
 - (id)city;
 - (id)countryCode;
 - (id)encodedClassName;
+- (id)entryPoints;
 - (id)groupIdentifier;
 - (id)label;
 - (id)latitude;
 - (id)longitude;
 - (id)postalCode;
+- (id)regionType;
+- (id)relativeDistance;
 - (void)setAccuracy:(id)arg1;
 - (void)setCity:(id)arg1;
 - (void)setCountryCode:(id)arg1;
+- (void)setEntryPoints:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLatitude:(id)arg1;
 - (void)setLongitude:(id)arg1;
 - (void)setPostalCode:(id)arg1;
+- (void)setRegionType:(id)arg1;
+- (void)setRelativeDistance:(id)arg1;
 - (void)setStateCode:(id)arg1;
 - (void)setStreet:(id)arg1;
+- (void)setSubThoroughfare:(id)arg1;
+- (void)setThoroughfare:(id)arg1;
+- (void)setTimezoneId:(id)arg1;
 - (id)stateCode;
 - (id)street;
+- (id)subThoroughfare;
+- (id)thoroughfare;
+- (id)timezoneId;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

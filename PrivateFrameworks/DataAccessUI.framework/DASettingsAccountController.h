@@ -37,6 +37,7 @@
 - (void)_deleteAccount;
 - (void)_dismissAndUpdateParent;
 - (void)_doPostSaveActions;
+- (void)_finishSaveAccountDismissWhenDone:(BOOL)arg1;
 - (void)_handleTrustFromIdentity:(struct __SecIdentity { }*)arg1 handler:(id)arg2;
 - (void)_insertAdditionalSMIMESpecifiers;
 - (id)_persistentRefForIdentity:(struct __SecIdentity { }*)arg1;

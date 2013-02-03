@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSLocale : NSObject <NSCopying, NSCoding> {
+@interface NSLocale : NSObject <NSCopying, NSSecureCoding> {
 }
 
-+ (id)GMMLocaleID;
 + (id)ISOCountryCodes;
 + (id)ISOCurrencyCodes;
 + (id)ISOLanguageCodes;
@@ -17,12 +16,15 @@
 + (unsigned int)characterDirectionForLanguage:(id)arg1;
 + (id)commonISOCurrencyCodes;
 + (id)componentsFromLocaleIdentifier:(id)arg1;
++ (id)currentDeviceLanguageForFacebook;
 + (id)currentLocale;
++ (id)internetServicesRegion;
 + (unsigned int)lineDirectionForLanguage:(id)arg1;
 + (id)localeIdentifierFromComponents:(id)arg1;
 + (id)localeIdentifierFromWindowsLocaleCode:(unsigned int)arg1;
 + (id)localeWithLocaleIdentifier:(id)arg1;
 + (id)preferredLanguages;
++ (BOOL)supportsSecureCoding;
 + (id)systemLocale;
 + (unsigned int)windowsLocaleCodeFromLocaleIdentifier:(id)arg1;
 

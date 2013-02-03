@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKAnnotationContainerViewDelegate>, UICalloutView, MKUserLocation, NSMapTable, MKMapTileView, NSMutableArray, MKUserLocationView, MKQuadTrie, NSMutableSet, MKAnnotationView, <MKAnnotation>;
+@class <MKAnnotationContainerViewDelegate>, UICalloutView, MKUserLocation, NSMapTable, NSMutableArray, MKUserLocationView, MKQuadTrie, NSMutableSet, MKAnnotationView, <MKAnnotation>;
 
 @interface MKAnnotationContainerViewInternal : NSObject {
     struct { 
@@ -47,7 +47,6 @@
     } draggingAnnotationViewCenter;
     BOOL isAnimatingCallout;
     NSMutableArray *managedAnnotations;
-    MKMapTileView *mapTileView;
     } mapTransform;
     unsigned int mapType;
     } mouseDownPoint;

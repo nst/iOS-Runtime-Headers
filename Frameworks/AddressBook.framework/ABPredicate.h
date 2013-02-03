@@ -12,9 +12,11 @@
 + (id)personPredicateWithGroup:(void*)arg1 source:(void*)arg2 account:(id)arg3;
 + (id)personPredicateWithName:(id)arg1 addressBook:(void*)arg2;
 + (id)personPredicateWithNameLike:(id)arg1 addressBook:(void*)arg2;
-+ (id)personPredicateWithNameLike:(id)arg1 group:(void*)arg2 source:(void*)arg3 account:(id)arg4 showingPersonLinks:(BOOL)arg5 addressBook:(void*)arg6;
-+ (id)personPredicateWithNameLike:(id)arg1 group:(void*)arg2 source:(void*)arg3 account:(id)arg4 showingPersonLinks:(BOOL)arg5 includeSourceInResults:(BOOL)arg6 addressBook:(void*)arg7;
-+ (id)personPredicateWithNameLike:(id)arg1 showingPersonLinks:(BOOL)arg2 addressBook:(void*)arg3;
++ (id)personPredicateWithNameLike:(id)arg1 group:(void*)arg2 source:(void*)arg3 account:(id)arg4 addressBook:(void*)arg5;
++ (id)personPredicateWithNameLike:(id)arg1 group:(void*)arg2 source:(void*)arg3 account:(id)arg4 includeSourceInResults:(BOOL)arg5 addressBook:(void*)arg6;
++ (id)personPredicateWithNameLike:(id)arg1 groups:(id)arg2 sources:(id)arg3 addressBook:(void*)arg4;
++ (id)personPredicateWithNameLike:(id)arg1 groups:(id)arg2 sources:(id)arg3 includeSourceInResults:(BOOL)arg4 addressBook:(void*)arg5;
++ (id)personPredicateWithNameLike:(id)arg1 groups:(id)arg2 sources:(id)arg3 includeSourceInResults:(BOOL)arg4 includePhotosInResults:(BOOL)arg5 addressBook:(void*)arg6;
 + (id)personPredicateWithNameOnly:(id)arg1 account:(id)arg2 addressBook:(void*)arg3;
 + (id)personPredicateWithPhoneLike:(id)arg1 countryHint:(id)arg2 addressBook:(void*)arg3;
 + (id)personPredicateWithValue:(id)arg1 comparison:(long)arg2 forProperty:(int)arg3;

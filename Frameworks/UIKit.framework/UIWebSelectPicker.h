@@ -20,6 +20,7 @@
 @property(retain) <UIWebSelectedItemPrivate> * _singleSelectionItem;
 
 - (id)_cachedItems;
+- (int)_itemIndexForRowIndex:(int)arg1;
 - (id)_selectionNode;
 - (id)_singleSelectionItem;
 - (void)controlBeginEditing;

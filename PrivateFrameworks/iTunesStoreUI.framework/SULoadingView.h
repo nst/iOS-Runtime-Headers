@@ -5,6 +5,7 @@
 @class UIActivityIndicatorView, UIColor, UILabel;
 
 @interface SULoadingView : UIView {
+    UIColor *_activityIndicatorColor;
     int _activityIndicatorStyle;
     UILabel *_label;
     UIActivityIndicatorView *_progressIndicator;
@@ -13,17 +14,20 @@
     UIColor *_textShadowColor;
 }
 
+@property(retain) UIColor * activityIndicatorColor;
 @property int activityIndicatorStyle;
 @property(retain) UIColor * textColor;
 @property(retain) UIColor * textShadowColor;
 
 - (void)_setupSubviews;
+- (id)activityIndicatorColor;
 - (int)activityIndicatorStyle;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)newProgressIndicator;
 - (id)newTextLabel;
+- (void)setActivityIndicatorColor:(id)arg1;
 - (void)setActivityIndicatorStyle:(int)arg1;
 - (void)setStyle:(unsigned int)arg1;
 - (void)setTextColor:(id)arg1;

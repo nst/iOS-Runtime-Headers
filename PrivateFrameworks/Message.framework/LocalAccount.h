@@ -13,6 +13,7 @@
 - (id)_copyMailboxUidWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 existingMailboxUid:(id)arg4 dictionary:(id)arg5;
 - (id)_infoForMatchingURL:(id)arg1;
 - (BOOL)_setChildren:(id)arg1 forMailboxUid:(id)arg2;
+- (BOOL)_shouldConfigureMailboxCache;
 - (void)_synchronouslyLoadListingForParent:(id)arg1;
 - (BOOL)canFetch;
 - (BOOL)canGoOffline;
@@ -26,7 +27,6 @@
 - (id)pushedMailboxUids;
 - (BOOL)renameMailbox:(id)arg1 newName:(id)arg2 parent:(id)arg3;
 - (void)setHostname:(id)arg1;
-- (void)setIsOffline:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (Class)storeClass;

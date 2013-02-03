@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSString;
-
 @interface MKUserLocationAnnotation : NSObject <MKUserLocationAnnotation> {
     struct { 
         double latitude; 
@@ -13,9 +11,6 @@
 }
 
 @property double accuracy;
-@property(readonly) struct { double x1; double x2; } coordinate;
-@property(readonly) NSString * subtitle;
-@property(readonly) NSString * title;
 
 - (double)accuracy;
 - (struct { double x1; double x2; })coordinate;

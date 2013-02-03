@@ -3,20 +3,33 @@
  */
 
 @interface __NSDictionaryM : NSMutableDictionary {
-    unsigned int _used;
+    unsigned int _kvo : 1;
+    unsigned int _used : 26;
+    id *_keys;
+    unsigned long _mutations;
+    id *_objs;
+    unsigned int _size;
 }
 
-+ (id)__new:(const id*)arg1 :(const id*)arg2 :(unsigned int)arg3;
++ (id)__new:(const id*)arg1 :(const id*)arg2 :(unsigned int)arg3 :(BOOL)arg4 :(BOOL)arg5;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (void)initialize;
 
+- (void)__setObject:(id)arg1 forKey:(id)arg2;
+- (void)_mutate;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (void)finalize;
+- (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(unsigned int)arg3;
 - (id)keyEnumerator;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectForKey:(id)arg1;
+- (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
+- (void)setObservationInfo:(void*)arg1;
 
 @end

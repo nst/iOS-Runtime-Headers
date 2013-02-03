@@ -15,6 +15,7 @@
 + (id)sharedInstance;
 
 - (void)cancelSwitcherTimer;
+- (void)clearHideSwitcherTimer;
 - (void)clearSwitcherTimer;
 - (void)dealloc;
 - (BOOL)handleModifiersChangedEvent:(struct __GSEvent { }*)arg1;
@@ -27,6 +28,7 @@
 - (void)setNewMode:(id)arg1;
 - (void)showSwitcher;
 - (BOOL)switchMode:(id)arg1 withDelay:(BOOL)arg2;
+- (void)touchHideSwitcherTimer;
 - (void)touchSwitcherTimer;
 
 @end

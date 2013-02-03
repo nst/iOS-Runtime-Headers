@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface SABaseCommand : AceObject <SAAceCommand> {
+@interface SABaseCommand : AceObject <SAAceSerializable, SAAceCommand> {
 }
 
 @property(copy) NSString * aceId;

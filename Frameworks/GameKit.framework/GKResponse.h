@@ -17,9 +17,9 @@
 + (id)codedPropertyKeys;
 + (id)response;
 + (id)responseWithError:(id)arg1;
++ (id)unauthenticatedResponse;
 
 - (void)dealloc;
-- (id)description;
 - (id)error;
 - (id)result;
 - (void)setError:(id)arg1;

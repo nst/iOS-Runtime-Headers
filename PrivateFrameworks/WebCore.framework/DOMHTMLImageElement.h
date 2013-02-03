@@ -7,10 +7,10 @@
 @interface DOMHTMLImageElement : DOMHTMLElement {
 }
 
-@property(copy,readonly) NSURL * absoluteImageURL;
+@property(readonly) NSURL * absoluteImageURL;
 @property(copy) NSString * align;
 @property(copy) NSString * alt;
-@property(copy,readonly) NSString * altDisplayString;
+@property(readonly) NSString * altDisplayString;
 @property(copy) NSString * border;
 @property(readonly) BOOL complete;
 @property int height;
@@ -32,8 +32,10 @@
 - (id)align;
 - (id)alt;
 - (id)altDisplayString;
+- (BOOL)alwaysAttemptToShowTapHighlight;
 - (id)border;
 - (BOOL)complete;
+- (id)crossOrigin;
 - (id)dataRepresentation:(BOOL)arg1;
 - (int)height;
 - (int)hspace;
@@ -50,6 +52,7 @@
 - (void)setAlign:(id)arg1;
 - (void)setAlt:(id)arg1;
 - (void)setBorder:(id)arg1;
+- (void)setCrossOrigin:(id)arg1;
 - (void)setHeight:(int)arg1;
 - (void)setHspace:(int)arg1;
 - (void)setIsMap:(BOOL)arg1;

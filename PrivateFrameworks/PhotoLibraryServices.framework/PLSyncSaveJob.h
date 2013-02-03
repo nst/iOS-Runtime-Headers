@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSSet, NSNumber, CLLocation, NSString, NSURL, NSDate, NSArray;
+@class NSNumber, NSSet, CLLocation, NSString, NSURL, NSDate, NSArray;
 
 @interface PLSyncSaveJob : NSObject {
     NSSet *albumURIs;
@@ -11,6 +11,7 @@
     BOOL isSyncComplete;
     BOOL isVideo;
     CLLocation *location;
+    NSDate *modificationDate;
     NSURL *originalAssetURL;
     NSNumber *sortToken;
     NSString *uuid;
@@ -22,6 +23,7 @@
 @property BOOL isSyncComplete;
 @property BOOL isVideo;
 @property(copy) CLLocation * location;
+@property(copy) NSDate * modificationDate;
 @property(retain) NSURL * originalAssetURL;
 @property(retain) NSNumber * sortToken;
 @property(copy) NSString * uuid;
@@ -35,6 +37,7 @@
 - (BOOL)isSyncComplete;
 - (BOOL)isVideo;
 - (id)location;
+- (id)modificationDate;
 - (id)originalAssetURL;
 - (void)processFacesWithBlock:(id)arg1;
 - (id)serializedData;
@@ -44,6 +47,7 @@
 - (void)setIsSyncComplete:(BOOL)arg1;
 - (void)setIsVideo:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
+- (void)setModificationDate:(id)arg1;
 - (void)setOriginalAssetURL:(id)arg1;
 - (void)setSortToken:(id)arg1;
 - (void)setUuid:(id)arg1;

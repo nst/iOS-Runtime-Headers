@@ -2,31 +2,31 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSString;
+@class NSString, NSObject<OS_dispatch_queue>;
 
 @interface __NSHostExtraIvars : NSObject {
-    struct dispatch_queue_s { } *cacheAccessQueue;
-    struct dispatch_queue_s { } *callbackQueue;
-    struct dispatch_queue_s { } *resolveQueue;
+    NSObject<OS_dispatch_queue> *cacheAccessQueue;
+    NSObject<OS_dispatch_queue> *callbackQueue;
+    NSObject<OS_dispatch_queue> *resolveQueue;
     int resolveType;
     BOOL startedResolving;
     NSString *thingToResolve;
 }
 
-@property(readonly) struct dispatch_queue_s { }* cacheAccessQueue;
-@property(readonly) struct dispatch_queue_s { }* callbackQueue;
-@property(readonly) struct dispatch_queue_s { }* resolveQueue;
+@property(readonly) NSObject<OS_dispatch_queue> * cacheAccessQueue;
+@property(readonly) NSObject<OS_dispatch_queue> * callbackQueue;
+@property(readonly) NSObject<OS_dispatch_queue> * resolveQueue;
 @property int resolveType;
 @property BOOL startedResolving;
 @property(retain) NSString * thingToResolve;
 
-- (struct dispatch_queue_s { }*)cacheAccessQueue;
-- (struct dispatch_queue_s { }*)callbackQueue;
+- (id)cacheAccessQueue;
+- (id)callbackQueue;
 - (void)cleanup;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;
-- (struct dispatch_queue_s { }*)resolveQueue;
+- (id)resolveQueue;
 - (int)resolveType;
 - (void)setResolveType:(int)arg1;
 - (void)setStartedResolving:(BOOL)arg1;

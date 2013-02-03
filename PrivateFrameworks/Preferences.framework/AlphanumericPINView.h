@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UITextField, UITableView, PreferencesTextTableCell;
+@class UITextField, UITableView, UITableViewCell;
 
 @interface AlphanumericPINView : PINView <UITableViewDataSource> {
-    PreferencesTextTableCell *_cell;
+    UITableViewCell *_cell;
     UITextField *_passcodeField;
     UITableView *_table;
 }

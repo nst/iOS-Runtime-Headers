@@ -27,11 +27,11 @@
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 transformFunction:(id)arg4;
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3;
 
+- (void).cxx_destruct;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
-- (void)bindToSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
+- (void)bindToStatement:(id)arg1 bindingIndex:(inout int*)arg2;
 - (BOOL)caseInsensitive;
 - (int)comparison;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

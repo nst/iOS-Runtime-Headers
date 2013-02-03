@@ -6,17 +6,17 @@
    See Warning(s) below.
  */
 
-@class NSError, NSInputStream, NSOutputStream, NSMutableDictionary;
+@class NSError, NSInputStream, NSOutputStream, NSObject<OS_dispatch_queue>, NSMutableDictionary;
 
 @interface MFStream : NSObject <NSStreamDelegate> {
     char *_buffer;
     id _callback;
     BOOL _canRead;
     BOOL _canWrite;
-    unsigned int _capacity;
+    unsigned long _capacity;
     NSError *_error;
-    unsigned int _length;
-    struct dispatch_queue_s { } *_location;
+    unsigned long _length;
+    NSObject<OS_dispatch_queue> *_location;
     NSMutableDictionary *_properties;
     NSInputStream *_rStream;
     BOOL _sentCanRead;
@@ -26,7 +26,7 @@
 @property(readonly) BOOL isOpen;
 @property(readonly) NSError * streamError;
 
-+ (struct dispatch_queue_s { }*)_networkDispatchQueue;
++ (id)_networkDispatchQueue;
 + (id)networkThread;
 + (void)setNetworkThread:(id)arg1;
 
@@ -35,7 +35,7 @@
 - (void)close;
 - (void)dealloc;
 - (id)init;
-- (id)initCallBack:(id)arg1 onDispatchQueue:(struct dispatch_queue_s { }*)arg2;
+- (id)initCallBack:(id)arg1 onDispatchQueue:(id)arg2;
 - (BOOL)isOpen;
 - (void)openToHostName:(id)arg1 port:(int)arg2;
 - (id)propertyForKey:(id)arg1;

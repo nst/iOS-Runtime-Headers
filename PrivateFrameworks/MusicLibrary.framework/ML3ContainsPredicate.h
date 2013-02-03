@@ -2,19 +2,18 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSArray;
-
 @interface ML3ContainsPredicate : ML3PropertyPredicate {
-    NSArray *_values;
+    id _values;
 }
 
-@property(copy) NSArray * values;
+@property(copy) id values;
 
++ (id)predicateWithProperty:(id)arg1 valueSet:(id)arg2;
 + (id)predicateWithProperty:(id)arg1 values:(id)arg2;
 
+- (void).cxx_destruct;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
-- (void)bindToSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
-- (void)dealloc;
+- (void)bindToStatement:(id)arg1 bindingIndex:(inout int*)arg2;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -4,7 +4,7 @@
 
 @interface SFUTangierCryptoKey : SFUCryptoKey {
     char *mKey;
-    unsigned int mKeyLength;
+    unsigned long mKeyLength;
 }
 
 - (void)dealloc;

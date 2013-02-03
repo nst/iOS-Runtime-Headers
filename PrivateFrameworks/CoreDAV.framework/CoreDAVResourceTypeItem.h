@@ -24,12 +24,13 @@
 @property(readonly) NSSet * stringSet;
 @property(retain) CoreDAVItemWithNoChildren * unauthenticated;
 
++ (id)copyParseRules;
+
 - (id)addressBook;
 - (id)bookmarkBarFolder;
 - (id)bookmarkFolder;
 - (id)bookmarkMenuFolder;
 - (id)collection;
-- (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
 - (id)extraChildWithNameSpace:(id)arg1 name:(id)arg2;

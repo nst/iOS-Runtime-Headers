@@ -15,15 +15,13 @@
 - (void)_removeRangeInArrayAtIndex:(unsigned int)arg1;
 - (void)_replaceRangeInArrayAtIndex:(unsigned int)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)addIndex:(unsigned int)arg1;
+- (void)addIndexes:(const unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)addIndexes:(id)arg1;
-- (void)addIndexes:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)addIndexesFromIndexSet:(id)arg1;
 - (void)addIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (Class)classForCoder;
-- (id)copyPropertyListEncoding;
-- (void*)copyXPCEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (void)pl_extractIndexes:(id)arg1;
 - (void)removeAllIndexes;
 - (void)removeIndex:(unsigned int)arg1;

@@ -2,49 +2,51 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class AccountsManager, NSArray, ABModel, NSDictionary, NSMutableDictionary;
+@class NSArray, ABModel, NSDictionary, ACAccountStore, AccountsManager;
 
 @interface ABAccountsAndGroupDataSource : NSObject <UITableViewDataSource> {
     NSArray *_accountDisplayNames;
     NSArray *_accountIdentifiers;
+    ACAccountStore *_accountStore;
     AccountsManager *_accountsManager;
+    BOOL _dirty;
     NSDictionary *_groupsByAccountIdentifier;
-    NSMutableDictionary *_headerViewsBySection;
     BOOL _hidesGlobalGroupWrapper;
     BOOL _hidesSearchableSources;
     ABModel *_model;
 }
 
+@property(retain) ACAccountStore * accountStore;
 @property(retain) AccountsManager * accountsManager;
+@property(getter=isDirty) BOOL dirty;
 @property BOOL hidesGlobalGroupWrapper;
 @property BOOL hidesSearchableSources;
 @property(retain) ABModel * model;
 
 - (id)accountDisplayNameAtIndex:(int)arg1;
-- (id)accountGroupWrappers;
+- (id)accountStore;
 - (id)accountsManager;
-- (void)cacheHeaderView:(id)arg1 forSection:(unsigned int)arg2;
-- (id)cachedHeaderViewForSection:(unsigned int)arg1;
 - (void)cancelScheduledRefresh;
 - (void)dealloc;
 - (id)defaultGroupWrapper;
-- (id)groupNameForIndexPath:(id)arg1;
 - (id)groupWrapperForIndexPath:(id)arg1;
-- (BOOL)hasMultipleAccountsOrGroups;
 - (BOOL)hidesGlobalGroupWrapper;
 - (BOOL)hidesSearchableSources;
 - (id)indexPathForGroupWrapper:(id)arg1;
 - (id)init;
+- (BOOL)isDirty;
 - (id)model;
+- (id)newContactsFilterFromSelectedGroupWrappers;
 - (int)numberOfAccounts;
 - (int)numberOfGroupsForAccountIdentifier:(id)arg1;
 - (int)numberOfGroupsInAccountAtIndex:(int)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (int)preferredTableViewStyle;
 - (void)reloadData;
-- (void)reloadDataIncludingAccountsManager:(BOOL)arg1;
+- (void)reloadDataIncludingAccountsManager:(BOOL)arg1 usingArchivedState:(BOOL)arg2;
 - (void)scheduleRefresh;
+- (void)setAccountStore:(id)arg1;
 - (void)setAccountsManager:(id)arg1;
+- (void)setDirty:(BOOL)arg1;
 - (void)setHidesGlobalGroupWrapper:(BOOL)arg1;
 - (void)setHidesSearchableSources:(BOOL)arg1;
 - (void)setModel:(id)arg1;

@@ -9,7 +9,7 @@
     NSArray *_descriptors;
     BOOL _isBroadcasted;
     BOOL _isNotifying;
-    unsigned int _properties;
+    int _properties;
     CBService *_service;
     NSData *_value;
 }
@@ -18,17 +18,18 @@
 @property(retain) NSArray * descriptors;
 @property(readonly) BOOL isBroadcasted;
 @property(readonly) BOOL isNotifying;
-@property(readonly) unsigned int properties;
-@property(readonly) CBService * service;
+@property(readonly) int properties;
+@property CBService * service;
 @property(retain) NSData * value;
 
 - (id)UUID;
 - (id)descriptors;
 - (BOOL)isBroadcasted;
 - (BOOL)isNotifying;
-- (unsigned int)properties;
+- (int)properties;
 - (id)service;
 - (void)setDescriptors:(id)arg1;
+- (void)setService:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;
 

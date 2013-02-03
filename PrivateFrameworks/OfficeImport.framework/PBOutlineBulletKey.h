@@ -3,8 +3,8 @@
  */
 
 @interface PBOutlineBulletKey : NSObject <NSCopying> {
-    unsigned int mPlaceholderIndex;
-    unsigned int mSlideId;
+    unsigned long mPlaceholderIndex;
+    unsigned long mSlideId;
     int mTextType;
 }
 

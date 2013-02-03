@@ -9,20 +9,22 @@
     NSString *_invitedBy;
     NSDate *_lastTurnDate;
     int _matchOutcome;
-    int _order;
     NSString *_playerID;
     NSString *_sessionID;
+    int _slot;
     NSString *_status;
+    NSDate *_timeoutDate;
 }
 
 @property(retain) NSString * inviteMessage;
 @property(retain) NSString * invitedBy;
 @property(retain) NSDate * lastTurnDate;
 @property int matchOutcome;
-@property int order;
 @property(retain) NSString * playerID;
 @property(retain) NSString * sessionID;
+@property int slot;
 @property(retain) NSString * status;
+@property(retain) NSDate * timeoutDate;
 
 + (id)codedPropertyKeys;
 
@@ -33,17 +35,20 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)lastTurnDate;
 - (int)matchOutcome;
-- (int)order;
 - (id)playerID;
+- (id)serverRepresentation;
 - (id)sessionID;
 - (void)setInviteMessage:(id)arg1;
 - (void)setInvitedBy:(id)arg1;
 - (void)setLastTurnDate:(id)arg1;
 - (void)setMatchOutcome:(int)arg1;
-- (void)setOrder:(int)arg1;
 - (void)setPlayerID:(id)arg1;
 - (void)setSessionID:(id)arg1;
+- (void)setSlot:(int)arg1;
 - (void)setStatus:(id)arg1;
+- (void)setTimeoutDate:(id)arg1;
+- (int)slot;
 - (id)status;
+- (id)timeoutDate;
 
 @end

@@ -20,7 +20,7 @@
 - (void)dealloc;
 - (id)initWithResources:(id)arg1 worksheet:(id)arg2;
 - (bool)isHidden;
-- (unsigned int)key;
+- (int)key;
 - (unsigned char)outlineLevel;
 - (id)range;
 - (void)setHidden:(bool)arg1;

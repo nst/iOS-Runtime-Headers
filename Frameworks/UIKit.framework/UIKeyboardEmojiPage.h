@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, <UIKeyboardEmojiController>, NSString, UITouch, UIKeyboardEmojiView;
+@class UITouch, NSArray, UIKeyboardEmojiInputController, UIKeyboardEmojiView;
 
 @interface UIKeyboardEmojiPage : UIView {
     struct CGPoint { 
@@ -24,10 +24,10 @@
             float height; 
         } size; 
     UITouch *_activeTouch;
-    <UIKeyboardEmojiController> *_controller;
     NSArray *_emoji;
     } _emojiPadding;
     } _emojiSize;
+    UIKeyboardEmojiInputController *_inputController;
     } _keyActivationRect;
     } _margin;
     BOOL _needsEmojiRendering;
@@ -36,47 +36,48 @@
     int _numPages;
     int _numRows;
     UIKeyboardEmojiView *_onDisplay;
-    NSString *_optionalText;
     UIKeyboardEmojiView *_pendingDisplay;
     UIKeyboardEmojiView *_touched;
 }
 
 @property(retain) UITouch * activeTouch;
-@property <UIKeyboardEmojiController> * controller;
 @property(retain) NSArray * emoji;
+@property(readonly) int emojiCountPerPage;
+@property UIKeyboardEmojiInputController * inputController;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } keyActivationRect;
+@property BOOL needsLayout;
 @property(retain) UIKeyboardEmojiView * onDisplay;
-@property(retain) NSString * optionalText;
 @property(retain) UIKeyboardEmojiView * pendingDisplay;
 @property(retain) UIKeyboardEmojiView * touched;
 
 - (id)activeTouch;
 - (void)cancelPendingPopupChanges;
 - (void)checkForStalePopup:(id)arg1;
-- (void)clearSubviews;
 - (id)closestForPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)controller;
 - (void)deactivatePopUps;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)emoji;
+- (int)emojiCountPerPage;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })emojiRectForPoint:(struct CGPoint { float x1; float x2; })arg1 index:(unsigned int*)arg2;
 - (void)generateSubviews;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)inputController;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })keyActivationRect;
+- (BOOL)needsLayout;
 - (id)onDisplay;
-- (id)optionalText;
 - (id)pendingDisplay;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForRow:(int)arg1 Col:(int)arg2;
 - (void)removeDisplayedPopup:(id)arg1;
+- (void)removeFromSuperview;
 - (void)setActiveTouch:(id)arg1;
-- (void)setController:(id)arg1;
 - (void)setEmoji:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setInputController:(id)arg1;
 - (void)setKeyActivationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setNeedsLayout:(BOOL)arg1;
 - (void)setOnDisplay:(id)arg1;
-- (void)setOptionalText:(id)arg1;
 - (void)setPendingDisplay:(id)arg1;
 - (void)setTouched:(id)arg1;
 - (void)showPendingPopup:(id)arg1;

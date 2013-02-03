@@ -3,7 +3,7 @@
  */
 
 @interface CPFontKerning : NSObject <CPDisposable> {
-    char *dataPtr;
+    const char *dataPtr;
     struct __CFDictionary { } *kernDictionary;
     struct __CFData { } *kernTable;
     unsigned int kernTableLength;

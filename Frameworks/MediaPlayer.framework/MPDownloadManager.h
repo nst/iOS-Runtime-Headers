@@ -2,20 +2,23 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, NSMutableDictionary, SSDownloadManager;
+@class SSDownloadManager, NSArray, NSObject<OS_dispatch_queue>, NSMutableDictionary;
 
 @interface MPDownloadManager : NSObject <SSDownloadManagerObserverPrivate> {
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     SSDownloadManager *_downloadManager;
     NSMutableDictionary *_downloadsByID;
+    NSMutableDictionary *_downloadsByStoreItemID;
+    NSObject<OS_dispatch_queue> *_observerQueue;
     struct __CFArray { } *_observers;
 }
 
 @property(readonly) NSArray * downloads;
 
-+ (BOOL)isCellularDataRestricted;
++ (id)mediaPlayerDownloadManager;
 
 - (void)_applyBlockToObservers:(id)arg1;
+- (void)_clearCache;
 - (id)_copyObservers;
 - (void)_rebuildCacheIfNecessary;
 - (void)addObserver:(id)arg1;
@@ -27,6 +30,7 @@
 - (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (id)downloadWithIdentifier:(long long)arg1;
 - (id)downloads;
+- (id)inProgressDownloadWithStoreItemID:(long long)arg1;
 - (id)init;
 - (void)removeObserver:(id)arg1;
 

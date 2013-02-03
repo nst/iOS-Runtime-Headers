@@ -4,7 +4,7 @@
 
 @class CKTypingIndicatorView;
 
-@interface CKTypingIndicatorCell : UITableViewCell {
+@interface CKTypingIndicatorCell : CKTranscriptCell {
     CKTypingIndicatorView *_typingIndicatorView;
 }
 

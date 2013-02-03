@@ -14,6 +14,9 @@
     } _animationPoint;
     int _autoscrollDirections;
     UIView *_autoscrollRenderer;
+    int _delayedAnimationType;
+    BOOL _isAnimating;
+    BOOL _isHorizontal;
     } _magnificationPoint;
     float _magnifierOffsetFromTouch;
     UIView *_magnifierRenderer;
@@ -24,6 +27,7 @@
 }
 
 @property struct CGPoint { float x1; float x2; } animationPoint;
+@property BOOL isHorizontal;
 @property struct CGPoint { float x1; float x2; } magnificationPoint;
 @property(retain) UIView * target;
 @property(readonly) struct CGPoint { float x1; float x2; } terminalPoint;
@@ -37,11 +41,13 @@
 - (struct CGPoint { float x1; float x2; })animationPoint;
 - (void)autoscrollWillNotStart;
 - (void)beginMagnifyingTarget:(id)arg1 text:(id)arg2 magnificationPoint:(struct CGPoint { float x1; float x2; })arg3 offset:(struct CGPoint { float x1; float x2; })arg4 animated:(BOOL)arg5;
+- (struct CGPoint { float x1; float x2; })clipPoint:(struct CGPoint { float x1; float x2; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)dealloc;
 - (void)detectLostTouches:(id)arg1;
 - (int)horizontalMovement;
 - (int)horizontalMovementAtTime:(double)arg1;
 - (id)initWithDefaultFrame;
+- (BOOL)isHorizontal;
 - (struct CGPoint { float x1; float x2; })magnificationPoint;
 - (float)offsetFromMagnificationPoint;
 - (void)postAutoscrollPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -49,6 +55,7 @@
 - (void)setAnimationPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setAutoscrollDirections:(int)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setIsHorizontal:(BOOL)arg1;
 - (void)setMagnificationPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setNeedsDisplay;
 - (void)setTarget:(id)arg1;

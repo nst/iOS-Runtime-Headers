@@ -2,22 +2,33 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class UIAlertView, NSIndexPath;
+@class UIAlertView, MPStoreCompletionOffering, NSIndexPath;
 
-@interface IUVideoEpisodesViewController : IUVideoPartListViewController <UIAlertViewDelegate> {
+@interface IUVideoEpisodesViewController : IUVideoPartListViewController <IUiPadSeasonOfferTableFooterViewDelegate, UIAlertViewDelegate> {
+    unsigned int _cmaLookupToken;
     UIAlertView *_deleteConfirmAlertView;
     NSIndexPath *_expandedIndexPath;
     float _expandedRowHeight;
+    BOOL _needsTableFooterViewScrolledToVisible;
+    MPStoreCompletionOffering *_storeCompletionOffering;
 }
 
 @property(retain) NSIndexPath * expandedIndexPath;
+@property BOOL needsTableFooterViewScrolledToVisible;
+@property(retain) MPStoreCompletionOffering * storeCompletionOffering;
 
+- (BOOL)_canShowCompletionOfferings;
+- (void)_cancelCompletionLookup;
 - (void)_cancelDeleteConfirmAlertView:(BOOL)arg1;
+- (void)_clearLookupToken;
 - (void)_deleteEpisodeAtIndex:(int)arg1;
 - (void)_destroyDeleteConfirmAlertView;
+- (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)_moreButtonPressedForCell:(id)arg1;
+- (void)_reloadCompletionOffering;
 - (void)_rentalDataDidLoadNotification:(id)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)autoscrollTableFooterViewToVisibleIfNeeded;
 - (void)cancelMoreButtonExpansion;
 - (void)dealloc;
 - (id)expandedIndexPath;
@@ -25,9 +36,15 @@
 - (id)indexPathForRowOfContentPosition;
 - (id)init;
 - (id)mediaItemAtIndexPath:(id)arg1;
+- (BOOL)needsTableFooterViewScrolledToVisible;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (void)seasonOfferTableFooterView:(id)arg1 didChangeToOfferVariant:(int)arg2;
+- (void)seasonOfferTableFooterView:(id)arg1 showItemsInOffer:(id)arg2;
 - (void)setExpandedIndexPath:(id)arg1;
+- (void)setNeedsTableFooterViewScrolledToVisible:(BOOL)arg1;
+- (void)setStoreCompletionOffering:(id)arg1;
 - (void)startPlaybackFromIndexPath:(id)arg1;
+- (id)storeCompletionOffering;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
@@ -36,6 +53,9 @@
 - (Class)tableViewCellClass;
 - (id)title;
 - (unsigned int)trackToPlayInDataSource:(id)arg1;
+- (void)updateFooterView;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

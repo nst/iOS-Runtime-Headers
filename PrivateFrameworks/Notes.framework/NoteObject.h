@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@class NSNumber, NSData, NoteBodyObject, NoteStoreObject, NSURL, NSString, NSDate;
+@class NSDate, NSNumber, NoteBodyObject, NoteStoreObject, NSURL, NSString, NSData;
 
 @interface NoteObject : NSManagedObject {
 }
@@ -34,6 +34,7 @@
 @property(retain) NSString * summary;
 @property(retain) NSString * title;
 
+- (BOOL)containsAttachments;
 - (id)content;
 - (id)contentAsPlainText;
 - (id)contentAsPlainTextPreservingNewlines;

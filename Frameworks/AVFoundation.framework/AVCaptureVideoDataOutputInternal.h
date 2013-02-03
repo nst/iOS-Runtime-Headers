@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVCaptureVideoDataOutputSampleBufferDelegate>, NSDictionary;
+@class <AVCaptureVideoDataOutputSampleBufferDelegate>, NSDictionary, NSObject<OS_dispatch_queue>;
 
 @interface AVCaptureVideoDataOutputInternal : NSObject {
     struct { 
@@ -11,10 +11,9 @@
         unsigned int flags; 
         long long epoch; 
     BOOL alwaysDiscardsLateVideoFrames;
-    struct dispatch_queue_s { } *clientQueue;
+    NSObject<OS_dispatch_queue> *clientQueue;
     <AVCaptureVideoDataOutputSampleBufferDelegate> *delegate;
     } deprecatedMinFrameDuration;
-    unsigned long pixelFormatType;
     NSDictionary *videoSettings;
 }
 

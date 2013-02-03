@@ -6,9 +6,11 @@
 
 @interface MPMediaPickerControllerInternal : NSObject {
     unsigned int _allowsPickingMultipleItems : 1;
+    unsigned int _showsCloudItems : 1;
     <MPMediaPickerControllerDelegate> *_delegate;
     int _mediaTypes;
     id _modalContext;
+    int _prevStatusBarStyle;
     NSString *_prompt;
 }
 

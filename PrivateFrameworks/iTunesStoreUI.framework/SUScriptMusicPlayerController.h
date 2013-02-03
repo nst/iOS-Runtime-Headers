@@ -32,30 +32,10 @@
 
 + (void)initialize;
 + (id)scriptPlaybackStateForNativePlaybackState:(int)arg1;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
-- (void)_beginSeekingBackward;
-- (void)_beginSeekingForward;
 - (id)_className;
-- (id)_copyNowPlayingItem;
-- (id)_copyPlaybackState;
-- (id)_copyRepeatMode;
-- (id)_copyShuffleMode;
-- (void)_endSeeking;
-- (double)_mainThreadCurrentPlaybackTime;
-- (void)_pause;
-- (void)_play;
-- (void)_setPlayerType:(id)arg1;
-- (void)_setQueueWithItemCollection:(id)arg1;
-- (void)_setQueueWithQuery:(id)arg1;
-- (void)_setRepeatMode:(int)arg1;
-- (void)_setShuffleMode:(int)arg1;
-- (void)_setVolume:(float)arg1;
-- (void)_skipToBeginning;
-- (void)_skipToNextItem;
-- (void)_skipToPreviousItem;
-- (void)_stop;
 - (id)attributeKeys;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;

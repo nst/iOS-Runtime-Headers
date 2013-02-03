@@ -5,10 +5,12 @@
 @class NSString, NSMutableArray;
 
 @interface GEORating : PBCodable {
-    BOOL _hasMaxScore;
-    BOOL _hasNumberOfRatings;
-    BOOL _hasNumberOfReviews;
-    BOOL _hasScore;
+    struct { 
+        unsigned int maxScore : 1; 
+        unsigned int score : 1; 
+        unsigned int numberOfRatings : 1; 
+        unsigned int numberOfReviews : 1; 
+    } _has;
     double _maxScore;
     int _numberOfRatings;
     int _numberOfReviews;
@@ -27,12 +29,15 @@
 @property double maxScore;
 @property int numberOfRatings;
 @property int numberOfReviews;
+@property(readonly) float numberOfStars;
 @property(retain) NSString * provider;
 @property(retain) NSMutableArray * reviews;
 @property double score;
 @property(retain) NSString * uRL;
 
 - (void)addReview:(id)arg1;
+- (void)clearReviews;
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -42,9 +47,12 @@
 - (BOOL)hasProvider;
 - (BOOL)hasScore;
 - (BOOL)hasURL;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (double)maxScore;
 - (int)numberOfRatings;
 - (int)numberOfReviews;
+- (float)numberOfStars;
 - (id)provider;
 - (BOOL)readFrom:(id)arg1;
 - (id)reviewAtIndex:(unsigned int)arg1;

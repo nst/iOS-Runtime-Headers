@@ -41,10 +41,13 @@
     BOOL _dimmed;
     BOOL _dragging;
     } _fullTextRect;
+    BOOL _isAllDay;
     BOOL _isBirthday;
+    BOOL _isFacebook;
     NSString *_location;
     NSIndexSet *_locationMetrics;
     } _locationRect;
+    BOOL _needsReply;
     BOOL _tentative;
     UIColor *_textColor;
     float _textEndY;
@@ -53,39 +56,49 @@
     NSIndexSet *_titleMetrics;
     } _titleRect;
     BOOL _usesSmallText;
-    float _visibleHeight;
 }
 
+@property(getter=isAllDay) BOOL allDay;
 @property(getter=isBirthday) BOOL birthday;
 @property(getter=isBorderless) BOOL borderless;
 @property(getter=isCancelled) BOOL cancelled;
 @property(retain) UIColor * color;
 @property(getter=isDimmed) BOOL dimmed;
 @property BOOL dragging;
+@property(getter=isFacebook) BOOL facebook;
 @property(copy) NSString * location;
+@property BOOL needsReply;
 @property(getter=isTentative) BOOL tentative;
 @property(copy) NSString * title;
 @property BOOL usesSmallText;
 
++ (Class)layerClass;
+
+- (id)_allDayDashedOutlineWithColor:(id)arg1;
+- (id)_dashedOutline;
 - (void)_getTitleMetrics:(id*)arg1 endPoint:(struct CGPoint { float x1; float x2; }*)arg2 forSize:(struct CGSize { float x1; float x2; })arg3;
 - (void)_invalidateMetrics;
 - (id)_locationFont;
 - (id)_locationMetricsForSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)_tentativeOutline;
 - (id)_textColor;
 - (id)_titleFont;
 - (id)color;
 - (void)dealloc;
+- (void)displayLayer:(id)arg1;
 - (BOOL)dragging;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithContentView:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAllDay;
 - (BOOL)isBirthday;
 - (BOOL)isBorderless;
 - (BOOL)isCancelled;
 - (BOOL)isDimmed;
+- (BOOL)isFacebook;
 - (BOOL)isTentative;
 - (id)location;
+- (BOOL)needsReply;
+- (void)setAllDay:(BOOL)arg1;
 - (void)setBirthday:(BOOL)arg1;
 - (void)setBorderless:(BOOL)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -93,8 +106,11 @@
 - (void)setColor:(id)arg1;
 - (void)setDimmed:(BOOL)arg1;
 - (void)setDragging:(BOOL)arg1;
+- (void)setFacebook:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLocation:(id)arg1;
+- (void)setNeedsDisplay;
+- (void)setNeedsReply:(BOOL)arg1;
 - (void)setTentative:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUsesSmallText:(BOOL)arg1;

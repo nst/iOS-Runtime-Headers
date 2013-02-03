@@ -21,7 +21,7 @@
 + (id)objectsFromWrappers:(id)arg1;
 + (id)wrapperWithObject:(id)arg1 size:(long long)arg2;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (int)errorCount;
 - (id)initWithObject:(id)arg1 size:(long long)arg2;
 - (id)object;

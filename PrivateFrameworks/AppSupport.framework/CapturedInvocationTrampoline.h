@@ -2,10 +2,8 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSInvocation;
-
 @interface CapturedInvocationTrampoline : InvocationTrampoline {
-    NSInvocation **_outInvocation;
+    id *_outInvocation;
 }
 
 - (void)forwardInvocation:(id)arg1;

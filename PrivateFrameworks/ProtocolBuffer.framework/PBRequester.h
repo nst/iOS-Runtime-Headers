@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class NSString, NSMutableData, <PBRequesterDelegate>, NSArray, NSMutableArray, NSURLConnection, PBDataReader, NSURL, NSDictionary, NSMutableDictionary;
+@class NSString, NSMutableData, <PBRequesterDelegate>, NSArray, NSMutableArray, NSDictionary, PBDataReader, NSURLConnection, NSURL, NSMutableDictionary;
 
 @interface PBRequester : NSObject <NSURLConnectionDelegate> {
     struct { 
@@ -23,6 +23,8 @@
     NSMutableData *_data;
     PBDataReader *_dataReader;
     <PBRequesterDelegate> *_delegate;
+    BOOL _didNotifyRequestCompleted;
+    unsigned int _downloadPayloadSize;
     } _flags;
     NSMutableDictionary *_httpRequestHeaders;
     NSDictionary *_httpResponseHeaders;
@@ -35,6 +37,8 @@
     int _responseStatusCode;
     NSMutableArray *_responses;
     BOOL _shouldHandleCookies;
+    unsigned long long _timeRequestSent;
+    unsigned long long _timeResponseReceived;
     double _timeoutSeconds;
     struct __CFRunLoopTimer { } *_timeoutTimer;
     unsigned int _uploadPayloadSize;
@@ -44,12 +48,14 @@
 @property(retain) NSArray * clientCertificates;
 @property(retain) NSURLConnection * connection;
 @property id delegate;
+@property(readonly) unsigned int downloadPayloadSize;
 @property(copy) NSDictionary * httpRequestHeaders;
 @property(retain) NSDictionary * httpResponseHeaders;
 @property BOOL ignoresResponse;
 @property(retain) NSString * logRequestToFile;
 @property(retain) NSString * logResponseToFile;
 @property BOOL needsCancel;
+@property(readonly) unsigned int requestResponseTime;
 @property(readonly) NSArray * requests;
 @property BOOL shouldHandleCookies;
 @property double timeoutSeconds;
@@ -59,6 +65,7 @@
 
 - (id)URL;
 - (id)_applicationID;
+- (void)_cancelNoNotify;
 - (void)_cancelWithErrorDomain:(id)arg1 errorCode:(int)arg2 userInfo:(id)arg3;
 - (void)_cleanup;
 - (void)_failWithError:(id)arg1;
@@ -85,6 +92,7 @@
 - (void)dealloc;
 - (id)decodeResponseData:(id)arg1;
 - (id)delegate;
+- (unsigned int)downloadPayloadSize;
 - (void)encodeRequestData:(id)arg1 startRequestCallback:(id)arg2;
 - (void)handleResponse:(id)arg1 forInternalRequest:(id)arg2;
 - (id)httpRequestHeaders;
@@ -96,9 +104,12 @@
 - (id)logRequestToFile;
 - (id)logResponseToFile;
 - (BOOL)needsCancel;
+- (struct _CFURLRequest { }*)newCFMutableURLRequestWithURL:(id)arg1;
+- (id)newConnectionWithCFURLRequest:(struct _CFURLRequest { }*)arg1 delegate:(id)arg2;
 - (void)pause;
 - (BOOL)readResponsePreamble:(id)arg1;
 - (id)requestPreamble;
+- (unsigned int)requestResponseTime;
 - (id)requests;
 - (id)responseForInternalRequest:(id)arg1;
 - (id)responseForRequest:(id)arg1;

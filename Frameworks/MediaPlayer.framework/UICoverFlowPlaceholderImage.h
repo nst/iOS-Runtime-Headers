@@ -5,6 +5,6 @@
 @interface UICoverFlowPlaceholderImage : UIImage {
 }
 
-- (BOOL)isCoverflowPlaceholder;
+- (BOOL)mpIsCoverflowPlaceholder;
 
 @end

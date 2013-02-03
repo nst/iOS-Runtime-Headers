@@ -23,7 +23,7 @@
 - (id)_messageEntryView;
 - (void)_promptForSourceType;
 - (void)_reloadMessageEntryView;
-- (void)_showImagePickerForSourceType:(unsigned int)arg1;
+- (void)_showImagePickerForSourceType:(int)arg1;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)clearMessage;
 - (id)copyMessagePartsWithUTI:(id)arg1;

@@ -16,7 +16,7 @@
 @property BOOL shouldShowInOverlay;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 
 - (id)_className;
 - (id)_copyProtocol;
@@ -32,11 +32,9 @@
 - (id)protocolVersion;
 - (id)scriptAttributeKeys;
 - (void)setAllowedOrientations:(id)arg1;
-- (void)setClientIdentifier:(id)arg1;
 - (void)setCopyright:(id)arg1;
 - (void)setExcludeFromNavigationHistory:(BOOL)arg1;
 - (void)setOverlayBackgroundURLRequest:(id)arg1;
-- (void)setProtocolVersion:(id)arg1;
 - (void)setShouldShowInOverlay:(BOOL)arg1;
 - (void)setValuesFromDictionary:(id)arg1;
 - (BOOL)shouldShowInOverlay;

@@ -7,6 +7,7 @@
 @interface AFAccount : NSObject {
     NSString *_aceHost;
     NSString *_assistantIdentifier;
+    NSString *_group;
     NSString *_hostname;
     NSString *_identifier;
     BOOL _isActive;
@@ -19,6 +20,7 @@
 
 @property(copy) NSString * aceHost;
 @property(copy) NSString * assistantIdentifier;
+@property(copy) NSString * group;
 @property(copy) NSString * hostname;
 @property(copy) NSString * identifier;
 @property(readonly) BOOL isActive;
@@ -28,10 +30,11 @@
 @property(copy) NSString * predefinedServer;
 @property(copy) NSString * speechIdentifier;
 
+- (void).cxx_destruct;
 - (id)aceHost;
 - (id)assistantIdentifier;
-- (void)dealloc;
 - (id)description;
+- (id)group;
 - (id)hostname;
 - (id)identifier;
 - (id)initWithMessageDictionary:(id)arg1;
@@ -43,6 +46,7 @@
 - (id)predefinedServer;
 - (void)setAceHost:(id)arg1;
 - (void)setAssistantIdentifier:(id)arg1;
+- (void)setGroup:(id)arg1;
 - (void)setHostname:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLabel:(id)arg1;

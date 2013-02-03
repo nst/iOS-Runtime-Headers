@@ -18,6 +18,7 @@
 
 - (void)addRecords:(id)arg1;
 - (void*)addressBook;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)delegate;
 - (id)records;

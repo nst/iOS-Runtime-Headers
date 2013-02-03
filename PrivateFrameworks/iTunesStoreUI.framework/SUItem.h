@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SSItemImageCollection, NSURL, SSItemOffer, SUItemContentRating, SUItemReviewStatistics, NSDate, NSArray, SUItemLink, NSDictionary, SUItem, NSString, NSNumber;
+@class NSURL, SSItemImageCollection, SSItemOffer, SUItemContentRating, SUItemReviewStatistics, NSDate, NSDictionary, SUItemLink, NSArray, SUItem, NSString, NSNumber;
 
 @interface SUItem : NSObject <NSCopying> {
     NSString *_artistName;
@@ -35,6 +35,7 @@
     NSArray *_storeOffers;
     NSDictionary *_tellAFriendDictionary;
     NSString *_title;
+    NSDictionary *_tweetDictionary;
     NSString *_unmodifiedTitle;
     NSNumber *_versionIdentifier;
     NSArray *_versionOrdering;
@@ -75,6 +76,8 @@
 @property(readonly) NSURL * tellAFriendBodyURL;
 @property(readonly) NSString * tellAFriendSubject;
 @property(copy) NSString * title;
+@property(readonly) NSString * tweetInitialText;
+@property(readonly) NSURL * tweetURL;
 @property(copy) NSString * unmodifiedTitle;
 @property(retain) NSNumber * versionIdentifier;
 @property(copy) NSArray * versionOrdering;
@@ -168,6 +171,8 @@
 - (id)tellAFriendBodyURL;
 - (id)tellAFriendSubject;
 - (id)title;
+- (id)tweetInitialText;
+- (id)tweetURL;
 - (id)unmodifiedTitle;
 - (id)valueForProperty:(id)arg1;
 - (id)versionIdentifier;

@@ -7,33 +7,40 @@
 @interface EKCalendarInfo : NSObject {
     EKCalendar *_calendar;
     UIColor *_color;
+    int _customGroupType;
     EKGroupInfo *_group;
     BOOL _selected;
 }
 
 @property(retain) EKCalendar * calendar;
 @property(retain) UIColor * color;
+@property int customGroupType;
 @property(readonly) int displayOrder;
 @property EKGroupInfo * group;
 @property(readonly) BOOL isEditable;
+@property(readonly) BOOL isPublished;
 @property(readonly) BOOL isShared;
 @property(readonly) BOOL isSubscribed;
 @property BOOL selected;
 @property(readonly) NSString * title;
 
+- (void)_updateCustomGroupType;
 - (id)calendar;
 - (id)color;
+- (int)customGroupType;
 - (void)dealloc;
 - (id)description;
 - (int)displayOrder;
 - (id)group;
 - (id)initWithCalendar:(id)arg1;
 - (BOOL)isEditable;
+- (BOOL)isPublished;
 - (BOOL)isShared;
 - (BOOL)isSubscribed;
 - (BOOL)selected;
 - (void)setCalendar:(id)arg1;
 - (void)setColor:(id)arg1;
+- (void)setCustomGroupType:(int)arg1;
 - (void)setGroup:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (id)title;

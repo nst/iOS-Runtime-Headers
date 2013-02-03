@@ -31,7 +31,7 @@
 - (BOOL)_isIdenticalFault:(id)arg1;
 - (id)_newOrderKeys;
 - (unsigned int)_orderKeyForObject:(id)arg1;
-- (void)_populateOrderKeysUsingSnapshot:(id)arg1 orderKeys:(id)arg2 reorderedIndexes:(char **)arg3;
+- (void)_populateOrderKeysUsingSnapshot:(id)arg1 orderKeys:(id)arg2 newIndexes:(unsigned int**)arg3 reorderedIndexes:(char **)arg4;
 - (void)_setProcessingIdempotentKVO:(BOOL)arg1;
 - (BOOL)_shouldProcessKVOChange;
 - (BOOL)_tryRetain;

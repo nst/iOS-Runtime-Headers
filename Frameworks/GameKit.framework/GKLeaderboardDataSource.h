@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSPredicate, NSDate, GKGame, GKLeaderboardSection, GKPlayer, GKLeaderboardControlSection, NSString, GKGameDetailHeaderSection, NSArray;
+@class NSPredicate, GKGame, NSOrderedSet, GKLeaderboardSection, GKPlayer, GKThreadsafeDictionary, GKLeaderboardControlSection, NSString, GKGameDetailHeaderSection, NSArray;
 
 @interface GKLeaderboardDataSource : GKSectionArrayDataSource <GKSearchableSectionDataSource> {
-    BOOL _allowsFriendSelection;
     NSString *_categoryID;
     GKLeaderboardControlSection *_controlSection;
     NSPredicate *_filterPredicate;
@@ -13,36 +12,34 @@
     GKGame *_game;
     GKGameDetailHeaderSection *_gameDetailHeaderSection;
     GKLeaderboardSection *_globalSection;
-    NSArray *_items;
-    BOOL _loaded;
+    NSOrderedSet *_items;
     GKPlayer *_player;
-    NSArray *_searchableSections;
-    BOOL _showRatingControl;
+    GKThreadsafeDictionary *_playerDictionary;
+    long _playerDictionaryOnce;
+    NSOrderedSet *_searchableSections;
     NSArray *_sortDescriptors;
     int _timeScope;
-    NSArray *_visibleItems;
+    NSOrderedSet *_visibleItems;
 }
 
-@property BOOL allowsFriendSelection;
 @property(retain) NSString * categoryID;
 @property(retain) GKLeaderboardControlSection * controlSection;
-@property(retain) NSDate * expirationDate;
 @property(retain) NSPredicate * filterPredicate;
 @property(retain) GKLeaderboardSection * friendSection;
 @property(retain) GKGame * game;
 @property(retain) GKGameDetailHeaderSection * gameDetailHeaderSection;
 @property(retain) GKLeaderboardSection * globalSection;
-@property(retain) NSArray * items;
-@property BOOL loaded;
+@property(retain) NSOrderedSet * items;
 @property(retain) GKPlayer * player;
-@property(retain) NSArray * searchableSections;
+@property(retain) GKThreadsafeDictionary * playerDictionary;
+@property(retain) NSOrderedSet * searchableSections;
 @property BOOL showControlSection;
-@property BOOL showRatingControl;
 @property(retain) NSArray * sortDescriptors;
 @property int timeScope;
-@property(retain) NSArray * visibleItems;
+@property(retain) NSOrderedSet * visibleItems;
 
-- (BOOL)allowsFriendSelection;
+- (BOOL)_hasAnyScoresInTableView:(id)arg1;
+- (BOOL)_offsetPaginationRowSetsByHeaderRowCount;
 - (id)categoryID;
 - (id)controlSection;
 - (void)dealloc;
@@ -51,17 +48,18 @@
 - (id)game;
 - (id)gameDetailHeaderSection;
 - (id)globalSection;
-- (id)init;
 - (id)items;
-- (BOOL)loaded;
 - (id)player;
+- (id)playerDictionary;
+- (id)playerForScore:(id)arg1;
 - (void)prepareSections;
 - (void)purgeCachedData;
 - (void)refreshDataWithCompletionHandlerAndError:(id)arg1;
+- (id)scoreForLocalPlayer;
 - (id)searchableSections;
 - (Class)sectionClass;
-- (void)setAllowsFriendSelection:(BOOL)arg1;
 - (void)setCategoryID:(id)arg1;
+- (void)setContentSections:(id)arg1;
 - (void)setControlSection:(id)arg1;
 - (void)setFilterPredicate:(id)arg1;
 - (void)setFriendSection:(id)arg1;
@@ -70,20 +68,18 @@
 - (void)setGlobalSection:(id)arg1;
 - (void)setItems:(id)arg1;
 - (void)setLeaderboardDelegate:(id)arg1;
-- (void)setLoaded:(BOOL)arg1;
-- (void)setLoadingState:(int)arg1;
 - (void)setPlayer:(id)arg1;
+- (void)setPlayerDictionary:(id)arg1;
 - (void)setSearchableSections:(id)arg1;
 - (void)setShowControlSection:(BOOL)arg1;
-- (void)setShowRatingControl:(BOOL)arg1;
 - (void)setSortDescriptors:(id)arg1;
 - (void)setTimeScope:(int)arg1;
 - (void)setVisibleItems:(id)arg1;
 - (BOOL)showControlSection;
-- (BOOL)showRatingControl;
 - (id)sortDescriptors;
 - (void)tableView:(id)arg1 updateStatusForLeaderboard:(id)arg2;
 - (void)tableView:(id)arg1 updateStatusViewAfterLoading:(id)arg2 withError:(id)arg3;
+- (void)tableView:(id)arg1 updateStatusViewBeforeLoading:(id)arg2;
 - (int)timeScope;
 - (id)visibleItems;
 

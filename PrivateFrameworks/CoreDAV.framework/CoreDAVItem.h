@@ -10,6 +10,7 @@
     NSString *_name;
     NSString *_nameSpace;
     NSData *_payload;
+    BOOL _useCDATA;
 }
 
 @property(retain) NSMutableSet * attributes;
@@ -17,6 +18,10 @@
 @property(retain) NSString * name;
 @property(retain) NSString * nameSpace;
 @property(retain) NSData * payload;
+@property BOOL useCDATA;
+
++ (id)copyParseRules;
++ (id)parseRuleCache;
 
 - (id)attributes;
 - (id)childrenToWrite;
@@ -42,6 +47,8 @@
 - (void)setNameSpace:(id)arg1;
 - (void)setPayload:(id)arg1;
 - (void)setPayloadAsString:(id)arg1;
+- (void)setUseCDATA:(BOOL)arg1;
+- (BOOL)useCDATA;
 - (BOOL)validate;
 - (void)write:(id)arg1;
 

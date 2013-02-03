@@ -50,6 +50,7 @@
 - (float)actualFontSize;
 - (float)actualTrackingAdjustment;
 - (int)alignment;
+- (id)attributesDictionary:(BOOL)arg1;
 - (int)baselineAdjustment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

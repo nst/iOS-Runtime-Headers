@@ -15,7 +15,7 @@
 
 @property(retain) UIImage * image;
 @property int index;
-@property struct CGSize { float width; float height; } size;
+@property struct CGSize { float x1; float x2; } size;
 
 - (void)dealloc;
 - (id)image;

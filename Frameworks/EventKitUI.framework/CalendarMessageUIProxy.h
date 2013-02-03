@@ -9,6 +9,8 @@
 + (Class)ComposeRecipientViewClass;
 + (Class)MFContactsSearchManagerClass;
 + (Class)MFContactsSearchResultsModelClass;
++ (Class)MFMailComposeViewControllerClass;
++ (Class)MFMessageComposeViewControllerClass;
 + (Class)MailComposeRecipientClass;
 + (Class)RecipientTableViewCellClass;
 + (Class)SearchShadowViewClass;

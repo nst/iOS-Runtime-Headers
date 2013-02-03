@@ -7,7 +7,6 @@
 
 + (id)absoluteOrientedBoundsWithRelativeOrientedBounds:(id)arg1 parentOrientedBounds:(id)arg2 parentLogicalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 + (double)fixedPointDegToRad:(long)arg1;
-+ (double)fixedPointDegToRad:(long)arg1;
 + (float)fontSizeForText:(id)arg1 insideRectangle:(struct CGSize { float x1; float x2; })arg2;
 + (double)getFormulaResultFromCustomGeometry:(id)arg1 atIndex:(unsigned int)arg2;
 + (id)inscribedBoundsWithBounds:(id)arg1 logicalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
@@ -20,7 +19,6 @@
 + (double)milliMinutesToRad:(long)arg1;
 + (double)nativeAngleToRad:(long)arg1 isEscher:(BOOL)arg2;
 + (float)normalizedAngle:(float)arg1;
-+ (long)radToFixedPointDeg:(double)arg1;
 + (long)radToFixedPointDeg:(double)arg1;
 + (long)radToMilliMinutes:(double)arg1;
 + (long)radToNativeAngle:(double)arg1 isEscher:(BOOL)arg2;

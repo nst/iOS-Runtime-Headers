@@ -9,6 +9,7 @@
     NSString *_configuration;
     NSMutableArray *_entities;
     NSKnownKeysDictionary *_entitiesByName;
+    BOOL _hasVirtualToOnes;
     BOOL _modelHasPrecomputedKeyOrder;
     NSManagedObjectModel *_mom;
     BOOL _retainLeopardStyleDictionaries;
@@ -16,9 +17,10 @@
 
 - (void)_addIndexedEntity:(id)arg1;
 - (id)_entityMapping;
-- (void)_generateModel:(id)arg1;
+- (BOOL)_generateModel:(id)arg1 error:(id*)arg2;
 - (BOOL)_modelHasPrecomputedKeyOrder;
 - (id)_precomputedKeyOrderForEntity:(id)arg1;
+- (void)_recordHasVirtualToOnes;
 - (BOOL)_retainHashHack;
 - (id)_sqlEntityWithRenamingIdentifier:(id)arg1;
 - (BOOL)_useLeopardStyleHashing;

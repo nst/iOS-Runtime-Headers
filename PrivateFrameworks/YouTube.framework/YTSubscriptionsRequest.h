@@ -2,32 +2,33 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray, NSMutableURLRequest;
+@class NSMutableArray;
 
-@interface YTSubscriptionsRequest : XMLSAXHTTPRequest {
-    NSMutableURLRequest *_deferredRequest;
+@interface YTSubscriptionsRequest : YTXMLHTTPRequest {
     id _delegate;
     int _mode;
+    int _resultsPerPage;
+    int _startIndex;
     NSMutableArray *_subscriptions;
+    int _totalResults;
 }
 
 + (id)URLForSubscription:(id)arg1;
 + (id)displayStringForSubscription:(id)arg1;
 + (BOOL)isSubscription:(id)arg1 channelOfUser:(id)arg2;
++ (unsigned int)resultsPerRequest;
 
-- (void)_didAuthenticate:(id)arg1;
 - (void)_doRequestWithURL:(id)arg1;
-- (void)_failedToAuthenticate:(id)arg1;
-- (void)_listenForAuthenticationNotifications:(BOOL)arg1;
 - (void)createPlaylistNamed:(id)arg1;
 - (void)dealloc;
+- (void)didAuthenticate:(id)arg1;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
 - (id)init;
-- (void)loadRequest:(id)arg1;
 - (int)parseData:(id)arg1;
-- (void)requestPlaylists;
-- (void)requestSubscriptions;
+- (void)requestPlaylistsFromIndex:(unsigned int)arg1 maxResults:(unsigned int)arg2 searchTerm:(id)arg3;
+- (void)requestUserPlaylistsFromIndex:(unsigned int)arg1 maxResults:(unsigned int)arg2;
+- (void)requestUserSubscriptionsFromIndex:(unsigned int)arg1 maxResults:(unsigned int)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)subscribeToUser:(id)arg1;
 

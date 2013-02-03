@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UIPDFPageView, UILongPressGestureRecognizer, UIPDFSelectionController, UITextEffectsWindow, UIMenuController, UIPDFViewMagnifyController, UITapGestureRecognizer;
+@class UILongPressGestureRecognizer, UITapGestureRecognizer, UIPDFSelectionController, UIPDFPageView, UIPDFViewMagnifyController, UIMenuController;
 
 @interface UIPDFViewTouchHandler : UIResponder <UIGestureRecognizerDelegate> {
+    BOOL _allowMenu;
     UILongPressGestureRecognizer *_briefPressRecognizer;
     UITapGestureRecognizer *_doubleTapRecognizer;
+    BOOL _firstTouch;
     UILongPressGestureRecognizer *_longPressRecognizer;
     UIPDFViewMagnifyController *_magnifyController;
     UIMenuController *_menuController;
@@ -15,10 +17,16 @@
     BOOL _showLoupe;
     BOOL _showMagnifier;
     UITapGestureRecognizer *_singleTapRecognizer;
-    UITextEffectsWindow *_textEffectsWindow;
     BOOL _trackingSelection;
+    UITapGestureRecognizer *_twoFingerTapRecognizer;
+    BOOL _useDelegateForLinks;
 }
 
+@property BOOL allowMenu;
+
++ (void)releaseViewManager;
+
+- (BOOL)allowMenu;
 - (void)briefPressRecognized:(id)arg1;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
@@ -36,7 +44,10 @@
 - (id)nextResponder;
 - (BOOL)resignFirstResponder;
 - (void)selectAll:(id)arg1;
+- (void)setAllowMenu:(BOOL)arg1;
+- (void)setFirstTouch;
 - (void)showMenu;
 - (void)singleTapRecognized:(id)arg1;
+- (void)twoFingerTapRecognized:(id)arg1;
 
 @end

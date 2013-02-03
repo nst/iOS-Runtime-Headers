@@ -10,11 +10,10 @@
 
 @property <SKProductsRequestDelegate> * delegate;
 
-- (id)_newResponseFromDictionary:(id)arg1;
+- (void)_handleReply:(id)arg1;
+- (void)_sendXPCMessage;
 - (void)dealloc;
-- (BOOL)handleFinishResponse:(id)arg1 returningError:(id*)arg2;
 - (id)init;
 - (id)initWithProductIdentifiers:(id)arg1;
-- (void)issueRequestForIdentifier:(id)arg1;
 
 @end

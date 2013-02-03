@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class MPImageCache, MPImageModifier, UIControl, UIAlertView, IUAlbumGridCellContext, IUWildcatVideoDetailViewController, IUAlbumGridTableView, IUAlbumGridViewControllerTransitionCache, IUSegmentedViewController, NSMutableSet;
+@class MPImageCache, MPImageModifier, UIAlertView, UIControl, IUAlbumGridCellContext, IUWildcatVideoDetailViewController, IUAlbumGridTableView, IUAlbumGridViewControllerTransitionCache, IUSegmentedViewController, NSMutableSet;
 
 @interface IUAlbumGridViewController : IUiPodViewController <IUAlbumGridCellContextDelegate, IUAlbumGridRowCellDelegate, MPImageCacheDelegate, UIGestureRecognizerDelegate, UITableViewDataSource, IUAlbumGridTableViewDelegate, UIAlertViewDelegate, IUWildcatVideoDetailViewControllerDelegate> {
     Class _cachedImageModifierClass;
@@ -20,6 +20,7 @@
     id _restoreViewInfoAfterLoad;
     IUSegmentedViewController *_segmentedViewController;
     unsigned int _selectedAlbumIndex;
+    BOOL _shouldHideSelectedAlbum;
     BOOL _showCellTitles;
     UIControl *_tableFooterView;
     IUAlbumGridTableView *_tableView;
@@ -77,7 +78,6 @@
 - (void)reloadData;
 - (unsigned long long)representativeTrackPersistentUIDOfSelectedAlbum;
 - (void)restoreViewControllerInfo:(id)arg1 animated:(BOOL)arg2;
-- (void)scrollToMediaItem:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
@@ -93,6 +93,7 @@
 - (void)setSegmentedViewController:(id)arg1;
 - (void)setSelectedAlbumHidden:(BOOL)arg1;
 - (void)setVideoDetailViewController:(id)arg1;
+- (BOOL)shouldShowStoreButton;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 indexPathForSectionIndexTitle:(id)arg2 atIndex:(int)arg3;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

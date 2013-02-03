@@ -51,10 +51,10 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
+- (void).cxx_destruct;
 - (void)_validateVPNPayload:(id)arg1;
 - (id)atom;
 - (id)certificateUUID;
-- (void)dealloc;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)password;
 - (id)passwordKey;

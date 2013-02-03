@@ -6,5 +6,6 @@
 }
 
 + (BOOL)readEmbeddedSoundFromClientDataHolder:(id)arg1 toImage:(id)arg2 state:(id)arg3;
++ (void)writeMediaFromDrawable:(id)arg1 toObject:(id)arg2 state:(id)arg3;
 
 @end

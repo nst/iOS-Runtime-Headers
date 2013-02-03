@@ -11,6 +11,7 @@
     NSMutableArray *_actionQueue;
     UIViewController *_activeViewController;
     UIViewController *_backViewController;
+    BOOL _canSwipeToDismiss;
     UIViewController *_frontViewController;
     SUOverlayTransition *_lastFlipTransition;
     } _overlaySize;
@@ -27,6 +28,7 @@
 @property(getter=isActiveOverlay,readonly) BOOL activeOverlay;
 @property(readonly) UIViewController * activeViewController;
 @property(retain) UIViewController * backViewController;
+@property BOOL canSwipeToDismiss;
 @property(retain) UIViewController * frontViewController;
 @property(retain) SUMaskProvider * maskProvider;
 @property(getter=isOnFront,readonly) BOOL onFront;
@@ -59,6 +61,7 @@
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)backViewController;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (BOOL)canSwipeToDismiss;
 - (id)copyArchivableContext;
 - (void)dealloc;
 - (void)flipWithTransition:(id)arg1;
@@ -76,6 +79,7 @@
 - (void)restoreArchivableContext:(id)arg1;
 - (id)scriptWindowContext;
 - (void)setBackViewController:(id)arg1;
+- (void)setCanSwipeToDismiss:(BOOL)arg1;
 - (void)setFrontViewController:(id)arg1;
 - (void)setMaskProvider:(id)arg1;
 - (void)setOverlaySize:(struct CGSize { float x1; float x2; })arg1;

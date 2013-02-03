@@ -2,19 +2,21 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFContactsSearchManager, NSString, NSSet, NSNumber;
+@class MFContactsSearchManager, NSString, NSOrderedSet, NSNumber;
 
 @interface MFContactsSearchOperation : NSOperation {
     void *_addressBook;
     MFContactsSearchManager *_owner;
-    NSSet *_properties;
+    NSOrderedSet *_properties;
+    NSString *_sendingAddress;
     NSNumber *_taskID;
     NSString *_text;
 }
 
 @property(readonly) void* addressBook;
 @property(readonly) MFContactsSearchManager * owner;
-@property(readonly) NSSet * properties;
+@property(readonly) NSOrderedSet * properties;
+@property(readonly) NSString * sendingAddress;
 @property(readonly) NSNumber * taskID;
 @property(readonly) NSString * text;
 
@@ -24,6 +26,7 @@
 - (void)dealloc;
 - (id)owner;
 - (id)properties;
+- (id)sendingAddress;
 - (id)taskID;
 - (id)text;
 - (int)type;

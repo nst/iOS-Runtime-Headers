@@ -2,17 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class NSIndexPath, MPMediaLibrary, NSDate, IUSharedLibraryCellLayoutManager;
+@class NSIndexPath, UITableViewCell, MPMediaLibrary, NSDate, IUSharedLibraryCellLayoutManager;
 
 @interface IUSharedLibrariesViewController : IUMediaListViewController {
     NSDate *_connectionStartDate;
     IUSharedLibraryCellLayoutManager *_layoutManager;
+    UITableViewCell *_moreListTableViewCell;
     NSIndexPath *_selectedIndexPath;
     MPMediaLibrary *_selectedLibrary;
     BOOL _showsSectionHeader;
 }
 
 @property BOOL showsSectionHeader;
+
++ (id)tableViewBackgroundColor;
++ (Class)tableViewCellClass;
 
 - (void)_availableMediaLibrariesDidChangeNotification:(id)arg1;
 - (void)_cancelAndDismiss:(id)arg1;
@@ -24,6 +28,7 @@
 - (BOOL)hasSearchBar;
 - (BOOL)hideActionRowsOnAppear;
 - (id)init;
+- (id)moreListTableCell;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)performActionForActionRow:(id)arg1 animated:(BOOL)arg2;
 - (void)performDefaultActionForRow:(int)arg1;

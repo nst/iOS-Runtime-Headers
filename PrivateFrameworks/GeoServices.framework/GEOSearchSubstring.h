@@ -13,10 +13,13 @@
 @property int stringType;
 
 - (int)beginIndex;
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)endIndex;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setBeginIndex:(int)arg1;
 - (void)setEndIndex:(int)arg1;

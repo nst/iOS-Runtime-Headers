@@ -10,7 +10,7 @@
         unsigned int length; 
     <DASearchQueryConsumer> *_consumer;
     } _range;
-    unsigned int _searchID;
+    NSString *_searchID;
     NSString *_searchString;
     int _state;
     int _timeLimit;
@@ -19,7 +19,7 @@
 @property <DASearchQueryConsumer> * consumer;
 @property unsigned int maxResults;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property unsigned int searchID;
+@property(copy) NSString * searchID;
 @property(readonly) NSString * searchString;
 @property int state;
 @property int timeLimit;
@@ -35,14 +35,14 @@
 - (BOOL)isQueryRunning;
 - (unsigned int)maxResults;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (unsigned int)searchID;
+- (id)searchID;
 - (id)searchString;
 - (void)sendFinishedToConsumerWithError:(id)arg1;
 - (void)sendResultsToConsumer:(id)arg1;
 - (void)setConsumer:(id)arg1;
 - (void)setMaxResults:(unsigned int)arg1;
 - (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)setSearchID:(unsigned int)arg1;
+- (void)setSearchID:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setTimeLimit:(int)arg1;
 - (int)state;

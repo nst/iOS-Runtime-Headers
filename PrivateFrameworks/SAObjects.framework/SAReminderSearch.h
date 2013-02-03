@@ -7,7 +7,7 @@
 @interface SAReminderSearch : SABaseClientBoundCommand {
 }
 
-@property(retain) NSNumber * completionStatus;
+@property(copy) NSNumber * completionStatus;
 @property(copy) NSDate * dueAfter;
 @property(copy) NSDate * dueBefore;
 @property(copy) NSString * listName;

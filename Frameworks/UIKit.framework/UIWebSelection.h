@@ -55,6 +55,7 @@
 - (void)setBase:(id)arg1;
 - (void)setDesiredSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setExtent:(id)arg1;
+- (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1 ignoringLargeBlocks:(BOOL)arg2;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)shrinkFromEdge:(int)arg1;
 - (void)shrinkSelectionFromPoint:(struct CGPoint { float x1; float x2; })arg1 towardsPoint:(struct CGPoint { float x1; float x2; })arg2 withNewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;

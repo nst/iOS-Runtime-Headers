@@ -13,11 +13,9 @@
 @property(readonly) NSString * styleNameViewAccount;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 
 - (id)_className;
-- (void)_setStyle:(id)arg1;
-- (id)_style;
 - (id)attributeKeys;
 - (id)newNativeViewController;
 - (id)scriptAttributeKeys;

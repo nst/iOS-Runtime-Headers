@@ -15,7 +15,6 @@
 @property unsigned int entityIndex;
 @property(getter=isFocusedMediaItem) BOOL focusedMediaItem;
 @property BOOL playImmediately;
-@property(readonly) BOOL playInOppositeApp;
 @property(copy) NSArray * prefixMediaItems;
 @property(copy) MPMediaQuery * query;
 
@@ -27,7 +26,6 @@
 - (id)init;
 - (BOOL)isFocusedMediaItem;
 - (BOOL)playImmediately;
-- (BOOL)playInOppositeApp;
 - (id)prefixMediaItems;
 - (id)query;
 - (void)setEntityIndex:(unsigned int)arg1;

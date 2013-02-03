@@ -13,6 +13,7 @@
 - (float)alphaComponent;
 - (id)colorSpaceName;
 - (id)colorWithAlphaComponent:(float)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (BOOL)getWhite:(float*)arg1 alpha:(float*)arg2;

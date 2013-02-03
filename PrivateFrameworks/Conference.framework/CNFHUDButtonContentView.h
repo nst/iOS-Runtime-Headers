@@ -2,18 +2,22 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@class UIImageView, UILabel;
+@class UILabel, UIImageView, UIView;
 
 @interface CNFHUDButtonContentView : UIView {
     UIImageView *_imageView;
     int _orientation;
+    float _titleInset;
     UILabel *_titleLabel;
+    UIView *_titleView;
 }
 
 @property(retain) UIImageView * imageView;
 @property int orientation;
+@property float titleInset;
 @property(retain) UILabel * titleLabel;
 
+- (struct CGPoint { float x1; float x2; })_updatedCenter:(struct CGPoint { float x1; float x2; })arg1 forBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)dealloc;
 - (id)imageView;
 - (id)initWithTitle:(id)arg1 image:(id)arg2;
@@ -21,8 +25,10 @@
 - (int)orientation;
 - (void)setImageView:(id)arg1;
 - (void)setOrientation:(int)arg1;
+- (void)setTitleInset:(float)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (float)titleInset;
 - (id)titleLabel;
 
 @end

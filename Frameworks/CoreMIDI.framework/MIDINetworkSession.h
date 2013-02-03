@@ -2,17 +2,10 @@
    Image: /System/Library/Frameworks/CoreMIDI.framework/CoreMIDI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, NSMutableSet;
+@class NSString;
 
 @interface MIDINetworkSession : NSObject {
-    struct _MIDINetworkSessionImpl { struct OpaqueMIDIEntity {} *x1; struct OpaqueMIDIEndpoint {} *x2; struct OpaqueMIDIEndpoint {} *x3; id x4; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x5; inout unsigned short x6; unsigned short x7; void*x8; const int x9; in void*x10; void*x11; id x12; void*x13; inout unsigned short x14; void*x15; void*x16; void*x17; void*x18; unsigned int x19/* : ? */; long x20; void*x21; void*x22; int x23; BOOL x24; void*x25; int x26; out in void*x27; const void*x28; void*x29; struct ContactOrConnectionSet { 
-            boolmItemsAreConnections; 
-            NSMutableSet *mSet; 
-        } x30; } *_impl;
+    struct _MIDINetworkSessionImpl { struct OpaqueMIDIEntity {} *x1; struct OpaqueMIDIEndpoint {} *x2; struct OpaqueMIDIEndpoint {} *x3; id x4; id x5; struct ContactOrConnectionSet { boolx_6_1_1; id x_6_1_2; } x6; } *_impl;
 }
 
 @property unsigned int connectionPolicy;

@@ -56,14 +56,13 @@
 - (void)dealloc;
 - (float)density;
 - (int)densityLoc;
+- (id)description;
 - (void)dirtyAllUniforms;
 - (unsigned char)enabled;
 - (float)end;
 - (int)endLoc;
-- (unsigned int)fshMaskCt;
-- (char **)fshMaskStr;
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)fshMasks;
-- (bool)includeShaderTextForRootNode:(id)arg1;
+- (bool)includeFshShaderTextForRootNode:(id)arg1;
+- (bool)includeVshShaderTextForRootNode:(id)arg1;
 - (id)init;
 - (void)initializeMasks;
 - (int)mode;
@@ -82,8 +81,5 @@
 - (void)setStartLoc:(int)arg1;
 - (float)start;
 - (int)startLoc;
-- (unsigned int)vshMaskCt;
-- (char **)vshMaskStr;
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)vshMasks;
 
 @end

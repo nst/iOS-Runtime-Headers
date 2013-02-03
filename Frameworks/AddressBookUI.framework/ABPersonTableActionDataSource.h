@@ -9,6 +9,7 @@
     struct __CFDictionary { } *_actionsByProperty;
     NSMutableArray *_bottomActions;
     struct __CFSet { } *_hiddenActions;
+    struct __CFDictionary { } *_inlineActionsByProperty;
     NSMutableArray *_topActions;
 }
 
@@ -28,6 +29,7 @@
 - (BOOL)hasActionWithTarget:(id)arg1 selector:(SEL)arg2 matchProperty:(BOOL)arg3 property:(int)arg4 inArray:(id)arg5 outActions:(id*)arg6 outIndex:(int*)arg7;
 - (BOOL)hasActionWithTarget:(id)arg1 selector:(SEL)arg2 property:(int)arg3 actionGrouping:(int)arg4 ordering:(int)arg5 outActions:(id*)arg6 outIndex:(int*)arg7;
 - (struct __CFArray { }*)indexesOfActionsForProperty:(int)arg1 withActionGrouping:(int)arg2;
+- (struct __CFDictionary { }*)inlineActionsByProperty;
 - (BOOL)isActionHidden:(id)arg1;
 - (id)newActionsForProperty:(int)arg1;
 - (void)removeAction:(id)arg1;

@@ -5,14 +5,15 @@
 @interface PCLogging : NSObject {
 }
 
-+ (void)__appendString:(id)arg1 toFileNamed:(id)arg2;
 + (void)_appendString:(id)arg1 toFileNamed:(id)arg2;
-+ (id)_stringWithCurrentTime;
-+ (struct dispatch_group_s { }*)dispatchGroup;
-+ (struct dispatch_queue_s { }*)dispatchQueue;
++ (void)_configureLogFacilityIfNeeded:(id)arg1;
++ (id)_facilityForIdentifier:(id)arg1;
++ (id)_fileNameForIdentifier:(id)arg1;
++ (id)_formatBlock;
 + (void)enableConsoleLoggingForLevel:(int)arg1;
 + (void)enableFileLogging:(BOOL)arg1;
 + (void)enableLoggingForCustomHandler:(id)arg1;
++ (id)getMainBundleId;
 + (void)initialize;
 + (void)logAtLevel:(int)arg1 delegate:(id)arg2 format:(id)arg3 arguments:(void*)arg4;
 + (void)logAtLevel:(int)arg1 delegate:(id)arg2 format:(id)arg3;

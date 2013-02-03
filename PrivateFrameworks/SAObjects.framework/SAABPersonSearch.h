@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SAPhone, SAEmail, SALocation, NSString, NSURL, NSDate, NSNumber;
+@class NSURL, SAEmail, SALocation, NSString, SAPhone, NSDate, NSNumber;
 
 @interface SAABPersonSearch : SABaseClientBoundCommand {
 }
@@ -12,7 +12,7 @@
 @property(copy) NSDate * birthday;
 @property(copy) NSString * company;
 @property(retain) SAEmail * email;
-@property(retain) NSNumber * me;
+@property(copy) NSNumber * me;
 @property(copy) NSString * name;
 @property(retain) SAPhone * phone;
 @property(copy) NSString * relationship;

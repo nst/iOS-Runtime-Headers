@@ -31,7 +31,7 @@
 - (void)forwardRelinquishmentMessageWithKind:(id)arg1 parameters:(id)arg2 toPresenter:(id)arg3 usingReplySender:(id)arg4;
 - (void)forwardUsingMessageSender:(id)arg1 crashHandler:(id)arg2;
 - (void)granted;
-- (id)initWithClient:(struct _xpc_connection_s { }*)arg1 messageParameters:(id)arg2 replySender:(id)arg3;
+- (id)initWithClient:(id)arg1 messageParameters:(id)arg2 replySender:(id)arg3;
 - (id)initWithReadingURLs:(id)arg1 options:(unsigned int)arg2 writingURLs:(id)arg3 options:(unsigned int)arg4 claimer:(id)arg5;
 - (void)invokeClaimer;
 - (BOOL)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2;

@@ -5,6 +5,7 @@
 @interface SUSearchBar : UISearchBar {
 }
 
+- (void)_setupCancelButtonWithAppearance:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

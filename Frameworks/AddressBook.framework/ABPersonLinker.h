@@ -12,8 +12,6 @@
 }
 
 + (BOOL)isLinkDataValidForAddressBook:(void*)arg1;
-+ (void)log:(id)arg1;
-+ (BOOL)shouldLog;
 + (void)startAutoLinkingNewPeopleInAddressBook:(void*)arg1 inProcess:(BOOL)arg2;
 
 - (void)addPerson:(void*)arg1 toDictionary:(id)arg2 withProperty:(int)arg3;

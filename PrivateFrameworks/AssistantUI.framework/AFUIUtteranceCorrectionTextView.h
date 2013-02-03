@@ -12,5 +12,6 @@
 - (void)scrollRectToVisibleInContainingScrollView;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)styleString;
+- (id)undoManager;
 
 @end

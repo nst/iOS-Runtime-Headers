@@ -2,48 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class SPSearchResult, CPSearchMatcher, NSString, NSArray;
-
 @interface SPSearchResultDeserializer : PBDataReader {
     unsigned int _byteVector;
-    NSString *_category;
-    CPSearchMatcher *_diacriticMatcher;
-    NSString *_displayIdentifier;
-    unsigned int _domain;
-    CPSearchMatcher *_matcher;
     BOOL _munmapAtDealloc;
-    unsigned int _resultCount;
-    NSArray *_resultOffsetVector;
-    SPSearchResult *_sortA;
-    SPSearchResult *_sortB;
 }
 
-@property(readonly) NSString * category;
-@property(readonly) CPSearchMatcher * diacriticMatcher;
-@property(readonly) NSString * displayIdentifier;
-@property(readonly) unsigned int domain;
-@property(readonly) CPSearchMatcher * matcher;
-@property(readonly) unsigned int resultCount;
-@property(readonly) SPSearchResult * sortA;
-@property(readonly) SPSearchResult * sortB;
-
-- (void)_prepareForRandomAccess;
-- (id)category;
 - (void)dealloc;
-- (BOOL)deserializeResultAtIndex:(unsigned int)arg1 toCursor:(id)arg2;
-- (id)diacriticMatcher;
-- (id)displayIdentifier;
-- (unsigned int)domain;
+- (BOOL)deserializeNextSection:(id*)arg1;
 - (id)initWithMallocRegion:(unsigned int)arg1 length:(unsigned int)arg2;
 - (id)initWithMappedRegion:(unsigned int)arg1 length:(unsigned int)arg2;
 - (id)initWithSerializer:(id)arg1;
-- (id)matcher;
-- (int)read:(const char *)arg1 maxLength:(unsigned int)arg2;
-- (id)readBytes:(unsigned int)arg1;
-- (BOOL)readResultIntoCursor:(id)arg1;
-- (unsigned int)resultCount;
-- (id)sortA;
-- (id)sortB;
-- (void)sortResultsUsingQueryString:(id)arg1;
 
 @end

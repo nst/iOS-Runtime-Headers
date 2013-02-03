@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKTableView, NSArray, UISearchBar, GKTableViewControllerV2, UISearchDisplayController;
+@class GKTableView, UISearchBar, GKTableViewControllerV2, UISearchDisplayController, NSOrderedSet;
 
 @interface GKTableHeaderSearchController : NSObject <UISearchBarDelegate, UISearchDisplayDelegate> {
     UISearchBar *_searchBar;
     BOOL _searchBarHidden;
     UISearchDisplayController *_searchController;
-    NSArray *_searchTableSections;
+    NSOrderedSet *_searchTableSections;
     GKTableViewControllerV2 *_tableController;
     GKTableView *_tableView;
 }
@@ -16,7 +16,7 @@
 @property(retain) UISearchBar * searchBar;
 @property BOOL searchBarHidden;
 @property(retain) UISearchDisplayController * searchDisplayController;
-@property(retain) NSArray * searchTableSections;
+@property(retain) NSOrderedSet * searchTableSections;
 @property GKTableViewControllerV2 * tableController;
 @property(readonly) GKTableView * tableView;
 
@@ -47,5 +47,6 @@
 - (void)setTableView:(id)arg1 tableController:(id)arg2;
 - (id)tableController;
 - (id)tableView;
+- (void)updateStatusViewWithResults:(BOOL)arg1;
 
 @end

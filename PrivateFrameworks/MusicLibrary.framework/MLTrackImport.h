@@ -27,6 +27,7 @@
 
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (void)_addSortStrings;
 - (id)artworkData;
 - (id)assetFilePath;
@@ -35,7 +36,6 @@
 - (id)contentRating;
 - (id)copyEntityProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)entityProperties;
 - (id)init;
 - (unsigned long)mediaType;

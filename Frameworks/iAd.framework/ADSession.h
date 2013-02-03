@@ -2,26 +2,26 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class NSString, NSTimer, NSMutableArray, NSMutableDictionary;
+@class NSMutableSet, NSString, NSTimer, NSMutableDictionary;
 
 @interface ADSession : NSObject {
     NSMutableDictionary *_bannerControllers;
+    NSMutableDictionary *_bannerControllersByAdType;
     BOOL _creatingControllers;
     BOOL _isInBackground;
-    NSMutableArray *_pendingRequests;
-    NSMutableDictionary *_profilingSessions;
+    double _lastControllerCreationTime;
+    NSMutableSet *_pendingOpenControllers;
+    NSMutableSet *_reassignmentScheduledAdTypes;
     unsigned int _recentlyCreatedControllers;
+    NSMutableDictionary *_recipientsByAdType;
     id _remoteSession;
     NSString *_serverURL;
     double _visibilitySlowCheckTime;
     NSTimer *_visibilityTimer;
 }
 
-@property(retain) NSMutableDictionary * bannerControllers;
 @property BOOL creatingControllers;
 @property BOOL isInBackground;
-@property(retain) NSMutableArray * pendingRequests;
-@property(retain) NSMutableDictionary * profilingSessions;
 @property unsigned int recentlyCreatedControllers;
 @property(retain) id remoteSession;
 @property(retain) NSString * serverURL;
@@ -34,64 +34,37 @@
 - (void)_adSheetConnectionBootstrapped;
 - (void)_adSheetConnectionLost;
 - (void)_appDidBecomeActive;
-- (void)_appDidEnterBackground;
-- (void)_appDidResignActive;
-- (void)_appWillEnterForeground;
-- (void)_considerCreatingBannerControllers;
-- (id)_createBannerController;
+- (void)_appWillResignActive;
+- (BOOL)_createBannerControllerForRecipient:(id)arg1;
 - (void)_handleAdSheetMessage:(id)arg1 userInfo:(id)arg2;
 - (void)_orientationChanged;
-- (void)_remote_profilingEnded:(id)arg1;
+- (void)_reassignAllBannerControllers;
+- (void)_reassignBannerControllersForAdType:(id)arg1 pool:(id)arg2;
+- (id)_unassignedBannerControllerForAdType:(id)arg1;
+- (void)adRecipientPriorityChanged:(id)arg1;
 - (id)autorelease;
-- (unsigned int)bannerControllerCount;
 - (void)bannerControllerDidClose:(id)arg1;
-- (void)bannerControllerForRecipient:(id)arg1;
-- (id)bannerControllers;
-- (void)beginProfilingAdSheet:(id)arg1;
-- (void)checkVisibility:(id)arg1;
+- (void)bannerControllerDidOpen:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)creatingControllers;
-- (void)dropPrivileges;
-- (void)endProfilingAdSheet:(id)arg1 withResultHandler:(id)arg2;
 - (void)forwardShakeEventToAdSheet;
 - (id)init;
 - (BOOL)isInBackground;
-- (unsigned int)pendingControllerCount;
-- (id)pendingRequests;
-- (id)profilingSessions;
 - (unsigned int)recentlyCreatedControllers;
-- (void)regainPrivileges;
+- (void)registerAdRecipient:(id)arg1;
 - (oneway void)release;
 - (id)remoteSession;
-- (void)removeAllDefaultsOverrides;
-- (void)requestAdSheetAbort:(id)arg1;
-- (void)requestAdSheetClearAdCache;
-- (void)requestAdSheetClearLocationPermissionCache;
-- (void)requestAdSheetClearURLCache;
-- (void)requestAdSheetClearWebArchiveCache;
-- (void)requestAdSheetLogClientState;
-- (void)requestAdSheetReportStatusBarVisibility;
-- (void)requestAdSheetTerminate;
-- (void)resetAdSheetThrottle;
-- (void)resetBannerCreationThrottle;
-- (void)resetServerAccessCoordinator;
-- (void)resumeVisibilityCheck;
 - (id)retain;
 - (unsigned int)retainCount;
 - (id)serverURL;
-- (void)setBannerControllers:(id)arg1;
 - (void)setCreatingControllers:(BOOL)arg1;
-- (void)setDefaultsValue:(id)arg1 forKey:(id)arg2 type:(id)arg3;
 - (void)setIsInBackground:(BOOL)arg1;
-- (void)setPendingRequests:(id)arg1;
-- (void)setProfilingSessions:(id)arg1;
-- (void)setRawDefaultsValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (void)setRecentlyCreatedControllers:(unsigned int)arg1;
 - (void)setRemoteSession:(id)arg1;
 - (void)setServerURL:(id)arg1;
 - (void)setVisibilitySlowCheckTime:(double)arg1;
 - (void)setVisibilityTimer:(id)arg1;
-- (void)suspendVisibilityCheck;
+- (void)unregisterAdRecipient:(id)arg1;
 - (double)visibilitySlowCheckTime;
 - (id)visibilityTimer;
 

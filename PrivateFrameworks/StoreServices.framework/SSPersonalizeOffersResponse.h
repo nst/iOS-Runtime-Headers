@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, NSArray;
 
-@interface SSPersonalizeOffersResponse : NSObject <SSCoding> {
+@interface SSPersonalizeOffersResponse : NSObject <SSXPCCoding> {
     NSMutableDictionary *_actionDisplayNames;
     NSMutableDictionary *_actionParameters;
     NSArray *_items;
@@ -16,11 +16,9 @@
 - (void)_setPersonalizedItems:(id)arg1;
 - (id)actionDisplayNameForItemType:(id)arg1;
 - (id)actionParametersForItemIdentifier:(id)arg1;
-- (id)copyPropertyListEncoding;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)personalizedItems;
 - (id)priceDisplayForItemType:(id)arg1;
 - (void)setActionDisplayNameString:(id)arg1 forItemType:(id)arg2;

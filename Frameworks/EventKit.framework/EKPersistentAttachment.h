@@ -23,6 +23,7 @@
 - (id)XProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (int)entityType;
 - (id)fileFormat;
 - (id)fileName;
 - (id)fileSize;

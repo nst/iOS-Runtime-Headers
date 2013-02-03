@@ -8,7 +8,7 @@
 
 @class UIPopoverController;
 
-@interface CKPopoverManager : NSObject {
+@interface CKPopoverManager : NSObject <UIPopoverControllerDelegate> {
     BOOL _dismissingPopoverForRotation;
     id _handler;
     UIPopoverController *_popoverController;

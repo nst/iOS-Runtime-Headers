@@ -11,8 +11,10 @@
 
 - (struct CGColor { }*)CGColor;
 - (id)CIColor;
+- (BOOL)_getWhite:(float*)arg1 alpha:(float*)arg2;
 - (id)_rgbColor;
 - (id)colorWithAlphaComponent:(float)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (BOOL)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class UIFrameAnimation, NSString, UIColor, TPLCDTextViewScrollingView;
+@class TPLCDTextViewScrollingView, UIFrameAnimation, UIColor, NSString, UIFont;
 
 @interface TPLCDTextView : UIView {
     struct CGRect { 
@@ -21,7 +21,7 @@
     unsigned int _leftTruncates : 1;
     UIFrameAnimation *_animation;
     id _delegate;
-    struct __GSFont { } *_font;
+    UIFont *_font;
     float _fontSize;
     float _minFontSize;
     TPLCDTextViewScrollingView *_scrollingView;
@@ -50,6 +50,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setFont:(struct __GSFont { }*)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setLCDTextFont:(id)arg1;
 - (void)setLeftTruncatesText:(BOOL)arg1;
 - (void)setMinimumFontSize:(float)arg1;
 - (void)setShadowColor:(id)arg1;

@@ -17,7 +17,7 @@
 @property(copy) NSString * TVSignalType;
 @property BOOL allowsVirtualModes;
 @property(getter=isBlanked) BOOL blanked;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } bounds;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property(readonly) CAWindowServerDisplay * cloneMaster;
 @property(readonly) NSSet * clones;
 @property(copy) NSString * colorMode;
@@ -89,5 +89,6 @@
 - (void)setUsesPreferredModeRefreshRate:(BOOL)arg1;
 - (int)tag;
 - (BOOL)usesPreferredModeRefreshRate;
+- (void)willUnblank;
 
 @end

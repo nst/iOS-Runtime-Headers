@@ -9,14 +9,14 @@
 
 @property BOOL autofocus;
 @property BOOL disabled;
-@property(retain,readonly) DOMHTMLFormElement * form;
+@property(readonly) DOMHTMLFormElement * form;
 @property(readonly) int length;
 @property BOOL multiple;
 @property(copy) NSString * name;
-@property(retain,readonly) DOMHTMLOptionsCollection * options;
+@property(readonly) DOMHTMLOptionsCollection * options;
 @property int selectedIndex;
 @property int size;
-@property(copy,readonly) NSString * type;
+@property(readonly) NSString * type;
 @property(copy) NSString * value;
 @property(readonly) BOOL willValidate;
 
@@ -47,6 +47,7 @@
 - (void)remove:(int)arg1;
 - (BOOL)required;
 - (int)selectedIndex;
+- (id)selectedOptions;
 - (void)setAutofocus:(BOOL)arg1;
 - (void)setCustomValidity:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;

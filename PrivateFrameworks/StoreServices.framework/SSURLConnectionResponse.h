@@ -4,7 +4,7 @@
 
 @class NSString, NSData, NSDictionary, NSURL;
 
-@interface SSURLConnectionResponse : NSObject <SSCoding> {
+@interface SSURLConnectionResponse : NSObject <SSXPCCoding> {
     NSDictionary *_allHeaderFields;
     NSData *_body;
     long long _expectedContentLength;
@@ -26,13 +26,11 @@
 - (id)URL;
 - (id)allHeaderFields;
 - (id)bodyData;
-- (id)copyPropertyListEncoding;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (long long)expectedContentLength;
-- (id)initWithPropertyListEncoding:(id)arg1;
 - (id)initWithURLResponse:(id)arg1 bodyData:(id)arg2;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (int)statusCode;
 - (id)suggestedFilename;
 - (id)textEncodingName;

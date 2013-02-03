@@ -4,7 +4,7 @@
 
 @class CPZoneBorder;
 
-@interface CPZoneBorderIntersection : NSObject <NSCopying> {
+@interface CPZoneBorderIntersection : NSObject <NSCopying, CPCopying> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,6 +24,7 @@
 - (int)comparePositionLengthwise:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)forwardVector;
+- (id)initSuper;
 - (id)intersectingBorder;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })intersectionRect;
 - (void)setBackwardVector:(BOOL)arg1;

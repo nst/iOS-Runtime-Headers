@@ -2,55 +2,16 @@
    Image: /usr/lib/libobjc.A.dylib
  */
 
-@interface Protocol : NSObject <NSObject> {
+@interface Protocol : NSObject {
 }
 
-+ (id)autorelease;
-+ (Class)class;
-+ (BOOL)conformsToProtocol:(id)arg1;
-+ (id)debugDescription;
-+ (id)description;
-+ (unsigned int)hash;
-+ (void)initialize;
-+ (BOOL)isEqual:(id)arg1;
-+ (BOOL)isKindOfClass:(Class)arg1;
-+ (BOOL)isMemberOfClass:(Class)arg1;
-+ (BOOL)isProxy;
 + (void)load;
-+ (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
-+ (id)performSelector:(SEL)arg1 withObject:(id)arg2;
-+ (id)performSelector:(SEL)arg1;
-+ (oneway void)release;
-+ (BOOL)respondsToSelector:(SEL)arg1;
-+ (id)retain;
-+ (unsigned int)retainCount;
-+ (id)self;
-+ (Class)superclass;
-+ (struct _NSZone { }*)zone;
 
-- (id)autorelease;
-- (Class)class;
 - (BOOL)conformsTo:(id)arg1;
-- (BOOL)conformsToProtocol:(id)arg1;
-- (id)debugDescription;
-- (id)description;
 - (struct objc_method_description { SEL x1; char *x2; }*)descriptionForClassMethod:(SEL)arg1;
 - (struct objc_method_description { SEL x1; char *x2; }*)descriptionForInstanceMethod:(SEL)arg1;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isKindOfClass:(Class)arg1;
-- (BOOL)isMemberOfClass:(Class)arg1;
-- (BOOL)isProxy;
 - (const char *)name;
-- (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
-- (id)performSelector:(SEL)arg1 withObject:(id)arg2;
-- (id)performSelector:(SEL)arg1;
-- (oneway void)release;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (id)retain;
-- (unsigned int)retainCount;
-- (id)self;
-- (Class)superclass;
-- (struct _NSZone { }*)zone;
 
 @end

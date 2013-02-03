@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/NewsstandKit.framework/NewsstandKit
  */
 
-@class NSArray, NSURL, NSMapTable, NSMutableArray, NSMutableSet, NSString, NKLibrary, NSDate;
+@class NSDate, NSURL, NSMapTable, NSMutableArray, NSMutableSet, NSString, NKLibrary, NSArray;
 
 @interface NKIssue : NSObject {
     NSMutableArray *_assets;

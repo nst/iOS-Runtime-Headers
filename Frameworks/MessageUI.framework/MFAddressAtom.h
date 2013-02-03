@@ -2,77 +2,59 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFAddressAtomDelegate>, MFSlicedImageView, NSString, UITextLabel;
+@class UIImageView, <MFAddressAtomDelegate>, NSString, UILabel;
 
 @interface MFAddressAtom : UIControl {
-    struct { 
-        struct CGRect { 
-            struct CGPoint { 
-                float x; 
-                float y; 
-            } origin; 
-            struct CGSize { 
-                float width; 
-                float height; 
-            } size; 
-        } left; 
-        struct CGRect { 
-            struct CGPoint { 
-                float x; 
-                float y; 
-            } origin; 
-            struct CGSize { 
-                float width; 
-                float height; 
-            } size; 
-        } middle; 
-        struct CGRect { 
-            struct CGPoint { 
-                float x; 
-                float y; 
-            } origin; 
-            struct CGSize { 
-                float width; 
-                float height; 
-            } size; 
-        } right; 
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     unsigned int _addressIsPhoneNumber : 1;
     unsigned int _needsToSendMouseUpEvents : 1;
     unsigned int _dragging : 1;
     unsigned int _updatedABPerson : 1;
-    UITextLabel *_addressLabel;
-    } _atomImageSlices;
-    MFSlicedImageView *_center;
+    unsigned int _isDisplayStringFromAddressBook : 1;
+    unsigned int _accessoryStyle;
+    void *_addressBook;
+    UILabel *_addressLabel;
+    } _atomCapInsets;
+    UIImageView *_backgroundImageView;
     <MFAddressAtomDelegate> *_delegate;
     NSString *_displayString;
     NSString *_fullAddress;
     int _identifier;
-    MFSlicedImageView *_leftCap;
     unsigned int _maxWidth;
     void *_person;
-    MFSlicedImageView *_rightCap;
     int _style;
 }
 
+@property unsigned int accessoryStyle;
 @property int style;
 
-+ (void)initialize;
++ (id)copyDisplayStringForAddress:(id)arg1 usingAddressBook:(void*)arg2;
 
 - (void*)ABPerson;
 - (int)ABPropertyType;
-- (void)_addressBookRecordDidChange;
+- (id)_VIPImageNameForStyle:(int)arg1 selected:(BOOL)arg2;
+- (void)_addVIPImageToBackgroundImageViewIsSelected:(BOOL)arg1;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
-- (void)_registerForNotifications;
+- (void)_displayStringDidChange;
 - (void)_setupForStyle;
-- (void)_unregisterForNotifications;
 - (void)_updateABPerson;
 - (void)_updateDisplayStringIncludingABPerson:(BOOL)arg1;
+- (unsigned int)accessoryStyle;
+- (void)addressBookDidChange:(id)arg1;
 - (void)dealloc;
 - (id)displayString;
+- (id)emailAddress;
 - (int)identifier;
-- (id)initWithAddress:(id)arg1 style:(int)arg2 isPhoneNumber:(BOOL)arg3 maxWidth:(float)arg4 useDisplayString:(BOOL)arg5;
+- (id)initWithAddress:(id)arg1 style:(int)arg2 isPhoneNumber:(BOOL)arg3 maxWidth:(float)arg4 addressBook:(void*)arg5;
+- (BOOL)isDisplayStringFromAddressBook;
 - (void)layoutSubviews;
 - (void)sendAction:(SEL)arg1 to:(id)arg2 forEvent:(id)arg3;
+- (void)setAccessoryStyle:(unsigned int)arg1;
+- (void)setAddress:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;

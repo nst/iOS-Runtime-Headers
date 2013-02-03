@@ -31,6 +31,7 @@
 + (id)softwareApplicationDownloadKinds;
 
 - (void)_handleDownloadsDidChange:(id)arg1;
+- (void)_handleDownloadsRemoved:(id)arg1;
 - (id)_initWithDownloadManagerOptions:(id)arg1;
 - (void)_messageObserversWithFunction:(int (*)())arg1 context:(void*)arg2;
 - (void)_sendDownloadStatusChangedAtIndex:(int)arg1;

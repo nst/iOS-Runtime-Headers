@@ -9,6 +9,7 @@
     int _cellPosition;
     <EKEventDetailItemDelegate> *_delegate;
     EKEvent *_event;
+    BOOL _shouldIndent;
     EKEventStore *_store;
     UIViewController<EKEditItemViewControllerProtocol> *_viewController;
 }
@@ -16,6 +17,7 @@
 @property BOOL allowsEditing;
 @property int cellPosition;
 @property <EKEventDetailItemDelegate> * delegate;
+@property BOOL shouldIndent;
 
 - (BOOL)allowsEditing;
 - (id)cellForSubitemAtIndex:(int)arg1;
@@ -40,5 +42,7 @@
 - (void)setCellPosition:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEvent:(id)arg1 store:(id)arg2;
+- (void)setShouldIndent:(BOOL)arg1;
+- (BOOL)shouldIndent;
 
 @end

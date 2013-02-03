@@ -16,6 +16,7 @@
 + (void)saveDebugString;
 
 - (void)_forceRawDataDump:(id)arg1;
+- (id)aggregateDictionaryDomain;
 - (void)cancel;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;

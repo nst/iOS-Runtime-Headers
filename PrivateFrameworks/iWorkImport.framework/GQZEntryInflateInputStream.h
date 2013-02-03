@@ -25,16 +25,17 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    unsigned int mCalculatedCrc;
-    unsigned int mCheckCrc;
+    unsigned long mCalculatedCrc;
+    unsigned long mCheckCrc;
     long long mEnd;
     <GQZArchiveInputStream> *mInput;
     long long mOffset;
     char *mOutBuffer;
-    unsigned int mOutBufferSize;
+    unsigned long mOutBufferSize;
     } mStream;
 }
 
+- (id).cxx_construct;
 - (void)dealloc;
 - (id)initWithOffset:(long long)arg1 end:(long long)arg2 uncompressedSize:(unsigned long long)arg3 crc:(unsigned long)arg4 input:(id)arg5;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;

@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class IUPropertyLayoutStorage, UIImage, MPMediaItem, IUMediaListDataSource;
+@class IUPropertyLayoutStorage, UIImage, IUMediaListAggregateView, MPMediaItem, IUMediaListDataSource;
 
 @interface IUMediaListAggregateViewConfiguration : NSObject {
     struct CGSize { 
         float width; 
         float height; 
     MPMediaItem *_aggregateItem;
+    IUMediaListAggregateView *_aggregateView;
     IUPropertyLayoutStorage *_buttonStorage;
     IUMediaListDataSource *_dataSource;
     IUPropertyLayoutStorage *_labelStorage;
@@ -18,6 +19,7 @@
 }
 
 @property(retain) MPMediaItem * aggregateItem;
+@property IUMediaListAggregateView * aggregateView;
 @property(readonly) UIImage * backgroundImage;
 @property(retain) IUPropertyLayoutStorage * buttonStorage;
 @property(readonly) BOOL canDisplayShuffleButton;
@@ -32,6 +34,7 @@
 + (id)newConfigurationForDataSource:(id)arg1;
 
 - (id)aggregateItem;
+- (id)aggregateView;
 - (id)artworkImageWithLoadingCompletionHandler:(id)arg1;
 - (id)backgroundColorWithModifiers:(unsigned int)arg1;
 - (id)backgroundImage;
@@ -46,16 +49,18 @@
 - (BOOL)getShadowColor:(id*)arg1 offset:(struct CGSize { float x1; float x2; }*)arg2 forLabelAtIndex:(unsigned int)arg3 withModifiers:(unsigned int)arg4;
 - (void)initStorage;
 - (id)initWithDataSource:(id)arg1;
+- (id)itemsQuery;
 - (id)labelStorage;
 - (struct CGSize { float x1; float x2; })layoutSize;
-- (float)minFontPointSizeForLabelAtIndex:(unsigned int)arg1;
 - (id)newViewWithDelegate:(id)arg1;
 - (unsigned int)numberOfButtons;
 - (unsigned int)numberOfLabels;
+- (void)reloadAggregateItem;
 - (void)reloadData;
 - (void)reloadDisplayValues;
 - (void)reloadLayoutInformation;
 - (void)setAggregateItem:(id)arg1;
+- (void)setAggregateView:(id)arg1;
 - (void)setButtonStorage:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setLabelStorage:(id)arg1;

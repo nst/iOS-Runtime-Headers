@@ -6,7 +6,7 @@
 
 @interface UIStatusBarLayoutManager : NSObject {
     UIStatusBarForegroundView *_foregroundView;
-    UIStatusBarItemView *_itemViews[23];
+    UIStatusBarItemView *_itemViews[24];
     int _region;
 }
 
@@ -41,6 +41,8 @@
 - (void)removeDisabledItems:(BOOL*)arg1;
 - (float)removeOverlap:(float)arg1 fromItems:(id)arg2;
 - (void)setForegroundView:(id)arg1;
+- (void)setVisibilityOfAllItems:(BOOL)arg1;
+- (void)setVisibilityOfItem:(id)arg1 visible:(BOOL)arg2;
 - (BOOL)updateDoubleHeightItem;
 - (BOOL)updateItemsWithData:(id)arg1 actions:(int)arg2 animated:(BOOL)arg3;
 - (float)widthNeededForItem:(id)arg1;

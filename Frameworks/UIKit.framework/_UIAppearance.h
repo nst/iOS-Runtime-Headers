@@ -2,23 +2,33 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSMutableDictionary;
+@class NSMutableDictionary, NSArray, NSMutableArray, NSMapTable;
 
 @interface _UIAppearance : NSObject {
     Class _CustomizableClass;
     NSMutableArray *_appearanceInvocations;
+    NSArray *_containerList;
+    NSMapTable *_invocationSources;
     NSMutableDictionary *_resettableInvocations;
 }
 
 @property(readonly) Class _CustomizableClass;
 @property(setter=_setResettableInvocations:,retain) NSMutableDictionary * _resettableInvocations;
 
++ (void)_addWindow:(id)arg1 forSource:(id)arg2;
 + (id)_appearanceForClass:(Class)arg1 withContainerList:(id)arg2;
-+ (void)_applyInvocationsTo:(id)arg1 matchingSelector:(SEL)arg2;
-+ (void)_applyInvocationsTo:(id)arg1;
++ (void)_applyInvocationsTo:(id)arg1 window:(id)arg2 matchingSelector:(SEL)arg3;
++ (void)_applyInvocationsTo:(id)arg1 window:(id)arg2;
++ (id)_currentAppearanceSource;
 + (BOOL)_hasCustomizationsForClass:(Class)arg1;
++ (id)_pendingRecordInvocationsForSource:(id)arg1;
++ (id)_recorderForSource:(id)arg1;
++ (id)_recordersExcludingSource:(id)arg1 withWindow:(id)arg2;
++ (void)_removeWindow:(id)arg1 forSource:(id)arg2;
 + (id)_rootAppearancesNode;
++ (void)_setCurrentAppearanceSource:(id)arg1;
 + (void)_setInvalidatesViewsOnAppearanceChange:(BOOL)arg1;
++ (id)_windowsForSource:(id)arg1;
 
 - (Class)_CustomizableClass;
 - (id)_appearanceInvocations;

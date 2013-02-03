@@ -2,22 +2,25 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray;
+@class NSMutableDictionary;
 
 @interface _PFGarbageManager : NSObject {
-    NSMutableArray *_urlsToCleanUp;
+    NSMutableDictionary *_filesToCleanUp;
+    NSMutableDictionary *_storeLinksDirs;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)defaultInstance;
 + (void)initialize;
 
+- (void)_deleteIfNecessary:(id)arg1;
+- (void)_doCleanupForDir:(id)arg1 exceptURLs:(id)arg2;
 - (id)_init__;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
 - (id)autorelease;
 - (void)doCleanupForURL:(id)arg1;
-- (void)registerURLForCleanup:(id)arg1;
+- (BOOL)registerURLForCleanup:(id)arg1;
 - (void)release;
 - (void)removeDirectory:(id)arg1;
 - (id)retain;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUCellConfiguration, SUTableCellContentView, UIColor, SUItemOfferButton;
+@class SUCellConfiguration, SUTableCellContentView, UIColor, UIBezierPath, SUItemOfferButton;
 
 @interface SUTableCell : UITableViewCell {
     struct { 
@@ -20,6 +20,7 @@
 
 @property(retain) UIColor * bottomBorderColor;
 @property int clipCorners;
+@property(readonly) UIBezierPath * clippingPath;
 @property(retain) SUCellConfiguration * configuration;
 @property BOOL drawAsDisabled;
 @property BOOL highlightsOnlyContentView;
@@ -32,6 +33,7 @@
 - (BOOL)_canDrawContent;
 - (id)bottomBorderColor;
 - (int)clipCorners;
+- (id)clippingPath;
 - (id)configuration;
 - (id)copyPurchaseAnimationView;
 - (void)dealloc;

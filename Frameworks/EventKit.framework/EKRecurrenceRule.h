@@ -46,6 +46,7 @@
 - (id)initRecurrenceWithFrequency:(int)arg1 interval:(int)arg2 end:(id)arg3;
 - (int)interval;
 - (id)lazyLoadRelationForKey:(id)arg1;
+- (BOOL)mayOccurAfterDate:(id)arg1;
 - (id)monthsOfTheYear;
 - (id)owner;
 - (id)recurrenceEnd;

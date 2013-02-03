@@ -18,7 +18,6 @@
 - (void)_doneAction:(id)arg1;
 - (BOOL)canHandleSelectionForIndex:(unsigned int)arg1 dataSource:(id)arg2;
 - (void)configureCell:(id)arg1 forIndex:(unsigned int)arg2 dataSource:(id)arg3;
-- (void)configureDataSource:(id)arg1;
 - (void)configureNavigationItem:(id)arg1;
 - (id)copyQueryForQuery:(id)arg1;
 - (void)dealloc;

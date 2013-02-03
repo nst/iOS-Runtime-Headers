@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class UIImage, MFComposeRecipient, UITextField, NSMutableDictionary, UIButton, NSCountedSet, UIView, NSArray, NSString, MFComposeRecipientAtom, NSMutableArray, NSTimer;
+@class UIImage, UITextField, MFComposeRecipient, NSMutableDictionary, UIButton, NSCountedSet, MFComposeTextField, UIView, NSArray, MFComposeRecipientAtom, NSString, NSMutableArray, NSTimer;
 
-@interface MFMailComposeRecipientView : MFComposeHeaderView <UITextFieldDelegate, ABPeoplePickerNavigationControllerDelegate, MFComposeRecipientAtomDelegate, MFDragSource, MFDragDestination> {
+@interface MFMailComposeRecipientView : MFComposeHeaderView <UITextFieldDelegate, MFComposeRecipientAtomDelegate, MFDragSource, MFDragDestination> {
     UIButton *_addButton;
     struct __CFDictionary { } *_atomStylesByRecipient;
     NSMutableDictionary *_atoms;
@@ -13,6 +13,7 @@
     int _defaultStyle;
     NSTimer *_delayTimer;
     BOOL _deselectOnNextKeyboardInput;
+    BOOL _didIgnoreFirstResponderResign;
     int _dragSourceOriginalIndex;
     BOOL _editable;
     BOOL _focused;
@@ -25,13 +26,14 @@
     NSArray *_properties;
     NSMutableArray *_recipients;
     MFComposeRecipientAtom *_selectedAtom;
-    UITextField *_textField;
+    MFComposeTextField *_textField;
     NSCountedSet *_uncommentedAddresses;
 }
 
 @property(readonly) UIView * addButton;
 @property(copy) NSArray * addresses;
 @property int defaultAddressAtomStyle;
+@property BOOL didIgnoreFirstResponderResign;
 @property BOOL editable;
 @property BOOL focused;
 @property double inputDelay;
@@ -44,7 +46,6 @@
 @property(readonly) UITextField * textField;
 
 - (void)_addRecord:(void*)arg1 identifier:(int)arg2;
-- (void)_addRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 - (void)_addUncommentedAddress:(id)arg1;
 - (BOOL)_addable;
 - (int)_addressAtomStyleForRecipient:(id)arg1;
@@ -52,7 +53,6 @@
 - (void)_delayTimerFired:(id)arg1;
 - (void)_deleteSelectedAtom;
 - (void)_deselectAtom;
-- (void)_dismissPicker:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_inactiveTextFieldFrame;
 - (int)_recipientIndexAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_reflowAnimated:(BOOL)arg1;
@@ -66,6 +66,7 @@
 - (void)addButtonClicked:(id)arg1;
 - (void)addRecipient:(id)arg1 index:(unsigned int)arg2 animate:(BOOL)arg3;
 - (void)addRecipient:(id)arg1;
+- (void)addRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 - (id)addresses;
 - (void)animatePlaceholderForDragFailure:(id)arg1;
 - (BOOL)becomeFirstResponder;
@@ -78,6 +79,7 @@
 - (void)dealloc;
 - (int)defaultAddressAtomStyle;
 - (void)deselectComposeRecipientAtom:(id)arg1;
+- (BOOL)didIgnoreFirstResponderResign;
 - (void)dragCompletedForItem:(id)arg1 success:(BOOL)arg2;
 - (void)dragEntered:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)dragExited:(id)arg1;
@@ -106,9 +108,6 @@
 - (float)offsetForRowWithTextField;
 - (void)parentDidClose;
 - (void)parentWillClose;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
-- (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (id)placeholderRecipient;
 - (id)recipients;
 - (void)reflow;
@@ -117,6 +116,7 @@
 - (void)setAddressAtomStyle:(int)arg1 forRecipient:(id)arg2;
 - (void)setAddresses:(id)arg1;
 - (void)setDefaultAddressAtomStyle:(int)arg1;
+- (void)setDidIgnoreFirstResponderResign:(BOOL)arg1;
 - (void)setEditable:(BOOL)arg1;
 - (void)setFocused:(BOOL)arg1;
 - (void)setInputDelay:(double)arg1;

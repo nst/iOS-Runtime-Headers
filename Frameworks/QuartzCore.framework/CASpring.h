@@ -30,8 +30,8 @@
     float _stiffness;
 }
 
-@property struct CGPoint { float x; float y; } attachmentPointA;
-@property struct CGPoint { float x; float y; } attachmentPointB;
+@property struct CGPoint { float x1; float x2; } attachmentPointA;
+@property struct CGPoint { float x1; float x2; } attachmentPointB;
 @property float damping;
 @property id delegate;
 @property(getter=isEnabled) BOOL enabled;
@@ -46,6 +46,7 @@
 + (id)spring;
 
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (id).cxx_construct;
 - (struct CGPoint { float x1; float x2; })attachmentPointA;
 - (struct CGPoint { float x1; float x2; })attachmentPointB;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

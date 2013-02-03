@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSObject<OS_dispatch_queue>;
 
-@interface SSOperationProgress : NSObject <SSCoding, NSCopying> {
+@interface SSOperationProgress : NSObject <SSXPCCoding, NSCopying> {
     BOOL _canPause;
     double _changeRate;
     long long _currentValue;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     double _estimatedTimeRemaining;
     long long _maxValue;
     long long _normalizedCurrentValue;
@@ -32,16 +32,14 @@
 - (void)_updateStatisticsFromSnapshots;
 - (BOOL)canPause;
 - (double)changeRate;
-- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (long long)currentValue;
 - (void)dealloc;
 - (id)description;
 - (double)estimatedTimeRemaining;
 - (id)init;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (long long)maxValue;
 - (long long)normalizedCurrentValue;
 - (long long)normalizedMaxValue;

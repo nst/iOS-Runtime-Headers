@@ -13,6 +13,7 @@
 
 + (void)initialize;
 
+- (id)_propertyCache;
 - (id)_snapshot_;
 - (unsigned int)_versionNumber;
 - (void)dealloc;

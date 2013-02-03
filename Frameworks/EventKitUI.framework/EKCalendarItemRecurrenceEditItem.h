@@ -21,13 +21,13 @@
 }
 
 - (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
-- (id)cellForSubitemAtIndex:(int)arg1;
+- (id)cellForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2;
 - (void)dealloc;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2 inSubsection:(int)arg3;
 - (BOOL)editItemViewControllerCommit:(id)arg1 notify:(BOOL)arg2;
 - (BOOL)editItemViewControllerCommit:(id)arg1;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })minRecurrenceEndDateGr;
-- (int)numberOfSubitems;
+- (int)numberOfSubitemsInSubsection:(int)arg1;
 - (id)recurrenceDate;
 - (id)recurrenceTimeZone;
 - (void)refreshFromCalendarItemAndStore;

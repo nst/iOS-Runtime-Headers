@@ -21,6 +21,23 @@
     BOOL _watchingOrientationChanges;
 }
 
++ (id)backgroundImageName;
++ (id)backgroundPanoOffImageName;
++ (id)backgroundPanoOffPressedImageName;
++ (id)backgroundPanoOnImageName;
++ (id)backgroundPanoOnPressedImageName;
++ (id)backgroundPressedImageName;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundResizableEdgeInsets;
++ (id)backgroundVideoImageName;
++ (id)backgroundVideoPressedImageName;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
++ (id)defaultIconName;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })hitRectExtension;
++ (id)photoIconLandscapeName;
++ (id)photoIconPortraitName;
++ (id)videoOffIconName;
++ (id)videoOnIconName;
+
 - (void)_deviceOrientationChanged:(id)arg1;
 - (void)_loadPanoLandscapeResources;
 - (void)_loadPanoResources;

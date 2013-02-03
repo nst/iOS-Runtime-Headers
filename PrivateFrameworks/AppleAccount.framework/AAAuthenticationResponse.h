@@ -10,10 +10,12 @@
 }
 
 @property(readonly) NSString * authToken;
+@property(readonly) NSString * fmipToken;
 @property(readonly) NSString * personID;
 
+- (void).cxx_destruct;
 - (id)authToken;
-- (void)dealloc;
+- (id)fmipToken;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)personID;
 

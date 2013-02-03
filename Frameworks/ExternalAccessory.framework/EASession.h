@@ -11,6 +11,7 @@
     NSOutputStream *_outputStream;
     NSString *_protocolString;
     unsigned int _sessionID;
+    int _sock;
 }
 
 @property(readonly) EAAccessory * accessory;

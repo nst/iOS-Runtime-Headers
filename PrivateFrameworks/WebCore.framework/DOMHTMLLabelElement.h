@@ -8,7 +8,7 @@
 }
 
 @property(copy) NSString * accessKey;
-@property(retain,readonly) DOMHTMLFormElement * form;
+@property(readonly) DOMHTMLFormElement * form;
 @property(copy) NSString * htmlFor;
 
 - (id)accessKey;

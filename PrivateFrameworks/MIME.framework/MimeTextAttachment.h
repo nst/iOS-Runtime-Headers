@@ -10,5 +10,6 @@
 - (void)download;
 - (BOOL)hasBeenDownloaded;
 - (id)initWithMimePart:(id)arg1;
+- (id)persistentUniqueIdentifier;
 
 @end

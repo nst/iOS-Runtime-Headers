@@ -12,10 +12,10 @@
     BOOL _isAtEndEventSent;
     BOOL _isOpenCompletedEventSent;
     BOOL _isWriteAvailableThreadCancelled;
-    int _outfd;
     struct __CFRunLoop { } *_runLoop;
     struct __CFRunLoopSource { } *_runLoopSource;
     EASession *_session;
+    int _sock;
     unsigned int _streamStatus;
     NSThread *_writeAvailableThread;
     NSCondition *_writeAvailableThreadRunCondition;
@@ -31,7 +31,7 @@
 - (id)delegate;
 - (void)endStream;
 - (BOOL)hasSpaceAvailable;
-- (id)initWithAccessory:(id)arg1 forSession:(id)arg2;
+- (id)initWithAccessory:(id)arg1 forSession:(id)arg2 socket:(int)arg3;
 - (void)open;
 - (void)openCompleted;
 - (id)propertyForKey:(id)arg1;

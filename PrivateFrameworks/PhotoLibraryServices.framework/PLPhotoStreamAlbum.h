@@ -22,6 +22,5 @@
 - (id)personID;
 - (void)setPersonID:(id)arg1;
 - (BOOL)shouldDeleteWhenEmpty;
-- (id)title;
 
 @end

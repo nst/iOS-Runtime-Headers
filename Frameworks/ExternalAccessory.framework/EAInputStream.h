@@ -11,13 +11,13 @@
     char *_inputFromAccBuffer;
     NSCondition *_inputFromAccCondition;
     NSMutableData *_inputFromAccData;
-    int _inputFromAccFd;
     NSThread *_inputFromAccThread;
     BOOL _isAtEndEventSent;
     BOOL _isOpenCompletedEventSent;
     struct __CFRunLoop { } *_runLoop;
     struct __CFRunLoopSource { } *_runLoopSource;
     EASession *_session;
+    int _sock;
     unsigned int _streamStatus;
 }
 
@@ -32,7 +32,7 @@
 - (void)endStream;
 - (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
 - (BOOL)hasBytesAvailable;
-- (id)initWithAccessory:(id)arg1 forSession:(id)arg2;
+- (id)initWithAccessory:(id)arg1 forSession:(id)arg2 socket:(int)arg3;
 - (void)open;
 - (void)openCompleted;
 - (id)propertyForKey:(id)arg1;

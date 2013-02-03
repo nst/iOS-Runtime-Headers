@@ -60,7 +60,6 @@
 - (void)cancelTask:(id)arg1 withUnderlyingError:(id)arg2;
 - (void)cancelTask:(id)arg1;
 - (void)dealloc;
-- (id)deviceID;
 - (id)deviceType;
 - (id)identityPersist;
 - (id)init;
@@ -79,6 +78,7 @@
 - (void)submitQueuedTask:(id)arg1;
 - (void)taskDidFinish:(id)arg1;
 - (void)taskEndModal:(id)arg1;
+- (BOOL)taskIsModal:(id)arg1;
 - (void)taskManagerDidAddTask:(id)arg1;
 - (void)taskManagerWillRemoveTask:(id)arg1;
 - (void)taskRequestModal:(id)arg1;

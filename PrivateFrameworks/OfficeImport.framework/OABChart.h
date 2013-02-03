@@ -5,4 +5,6 @@
 @interface OABChart : NSObject {
 }
 
++ (void)writeChart:(id)arg1 toParentContainer:(id)arg2 state:(id)arg3;
+
 @end

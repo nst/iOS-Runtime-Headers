@@ -7,10 +7,10 @@
 @interface SAWeatherForecast : AceObject <SAAceSerializable> {
 }
 
-@property(retain) NSNumber * chanceOfPrecipitation;
+@property(copy) NSNumber * chanceOfPrecipitation;
 @property(retain) SAWeatherCondition * condition;
-@property(retain) NSNumber * isUserRequested;
-@property(retain) NSNumber * timeIndex;
+@property(copy) NSNumber * isUserRequested;
+@property(copy) NSNumber * timeIndex;
 
 + (id)forecast;
 + (id)forecastWithDictionary:(id)arg1 context:(id)arg2;

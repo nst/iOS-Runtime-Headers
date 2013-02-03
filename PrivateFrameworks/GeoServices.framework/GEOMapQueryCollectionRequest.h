@@ -11,9 +11,13 @@
 @property(retain) NSMutableArray * requestElements;
 
 - (void)addRequestElements:(id)arg1;
+- (void)clearRequestElements;
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)requestElements;
 - (id)requestElementsAtIndex:(unsigned int)arg1;

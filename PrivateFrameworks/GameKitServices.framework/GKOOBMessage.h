@@ -11,7 +11,7 @@
 - (BOOL)_checkSize:(unsigned long)arg1;
 - (BOOL)_checkType:(unsigned short)arg1;
 - (id)data;
-- (id)initWithBytes:(void*)arg1 length:(unsigned long)arg2;
+- (id)initWithBytes:(const void*)arg1 length:(unsigned long)arg2;
 - (id)initWithMessageType:(unsigned short)arg1;
 - (unsigned short)type;
 

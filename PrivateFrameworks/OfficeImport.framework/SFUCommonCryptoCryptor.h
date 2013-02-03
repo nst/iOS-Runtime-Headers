@@ -5,14 +5,14 @@
 @class SFUCryptoKey;
 
 @interface SFUCommonCryptoCryptor : SFUCryptor {
-    unsigned int mBlockSize;
+    unsigned long mBlockSize;
     struct _CCCryptor { } *mCryptor;
     char *mDecryptionInputBuffer;
     BOOL mFinished;
     SFUCryptoKey *mKey;
     int mOperation;
     char *mOutputBuffer;
-    unsigned int mOutputBufferAvailable;
+    unsigned long mOutputBufferAvailable;
     char *mOutputBufferPos;
 }
 

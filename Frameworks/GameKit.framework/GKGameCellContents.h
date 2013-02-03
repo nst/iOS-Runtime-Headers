@@ -18,6 +18,7 @@
 + (id)gameCellContentsWithTheme:(id)arg1;
 + (int)lineCount;
 
+- (void)_setGame:(id)arg1;
 - (id)achievementsStringWithGameRecord:(id)arg1;
 - (void)configureLines;
 - (void)dealloc;
@@ -28,12 +29,10 @@
 - (id)leaderboardStringWithGameRecord:(id)arg1 localGameRecord:(id)arg2;
 - (id)localDetails;
 - (void)prepareForReuse;
-- (void)refreshExpensiveContent;
 - (void)setDetails:(id)arg1;
 - (void)setGame:(id)arg1;
 - (void)setLocalDetails:(id)arg1;
 - (id)textForLine:(int)arg1;
-- (void)updateIconFromCache;
 - (void)updateLines;
 
 @end

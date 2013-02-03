@@ -2,44 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 /* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
    The runtime does not encode function signature information.  We use a signature of: 
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class WebView, WebNodeHighlighter, WebInspectorRemoteChannel, WebInspectorWindowController, NSString;
+@class NSString, WebView;
 
 @interface WebInspectorWindowController : NSObject {
-    struct WebInspectorFrontendClient { int (**x1)(); struct InspectorController {} *x2; struct Page {} *x3; struct ExecState {} *x4; struct RefPtr<WebCore::InspectorFrontendHost> { 
-            struct InspectorFrontendHost {} *m_ptr; 
-        } x5; struct OwnPtr<WebCore::InspectorFrontendClientLocal::Settings> { 
-            struct Settings {} *m_ptr; 
-        } x6; id x7; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x8; void*x9; void*x10; unsigned int x11/* : ? */; oneway int x12; void*x13; void*x14; void*x15; struct RetainPtr<WebInspectorWindowController> { 
-            WebInspectorWindowController *m_ptr; 
-        } x16; struct String { 
-            struct RefPtr<WTF::StringImpl> { 
-                struct StringImpl {} *m_ptr; 
-            } m_impl; 
-    struct WebInspectorClient { int (**x1)(); id x2; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x3; void*x4; void*x5; unsigned int x6/* : ? */; oneway int x7; void*x8; void*x9; void*x10; struct RetainPtr<WebNodeHighlighter> { 
-            WebNodeHighlighter *m_ptr; 
-        } x11; struct Page {} *x12; struct RetainPtr<WebInspectorWindowController> { 
-            WebInspectorWindowController *m_ptr; 
-        } x13; struct HashMap<WTF::String,WTF::String,WTF::StringHash,WTF::HashTraits<WTF::String>,WTF::HashTraits<WTF::String> > { 
-            struct HashTable<WTF::String,std::pair<WTF::String, WTF::String>,WTF::PairFirstExtractor<std::pair<WTF::String, WTF::String> >,WTF::StringHash,WTF::PairHashTraits<WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::String> >,WTF::HashTraits<WTF::String> > { 
-                struct pair<WTF::String,WTF::String> {} *m_table; 
-                int m_tableSize; 
-                int m_tableSizeMask; 
-                int m_keyCount; 
-                int m_deletedCount; 
-            } m_impl; 
     BOOL _destroyingInspectorView;
-        } x17; } *_frontendClient;
+    struct WebInspectorFrontendClient { int (**x1)(); struct InspectorController {} *x2; struct Page {} *x3; struct ExecState {} *x4; struct RefPtr<WebCore::InspectorFrontendHost> { struct InspectorFrontendHost {} *x_5_1_1; } x5; struct OwnPtr<WebCore::InspectorFrontendClientLocal::Settings> { struct Settings {} *x_6_1_1; } x6; boolx7; struct Vector<WTF::String, 0> { unsigned int x_8_1_1; struct VectorBuffer<WTF::String, 0> { struct String {} *x_2_2_1; unsigned int x_2_2_2; } x_8_1_2; } x8; struct OwnPtr<WebCore::InspectorBackendDispatchTask> { struct InspectorBackendDispatchTask {} *x_9_1_1; } x9; id x10; struct RetainPtr<WebInspectorWindowController> { struct WebInspectorWindowController { Class x_1_2_1; id x_1_2_2; struct WebInspectorFrontendClient {} *x_1_2_3; struct WebInspectorClient {} *x_1_2_4; BOOL x_1_2_5; id x_1_2_6; id x_1_2_7; } *x_11_1_1; } x11; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; } *_frontendClient;
     WebView *_inspectedWebView;
-        } x14; int x15; WebInspectorRemoteChannel *x16; } *_inspectorClient;
+    struct WebInspectorClient { int (**x1)(); int (**x2)(); id x3; struct RetainPtr<WebNodeHighlighter> { struct WebNodeHighlighter { Class x_1_2_1; id x_1_2_2; id x_1_2_3; } *x_4_1_1; } x4; struct Page {} *x5; struct RetainPtr<WebInspectorWindowController> { struct WebInspectorWindowController { Class x_1_2_1; id x_1_2_2; struct WebInspectorFrontendClient {} *x_1_2_3; struct WebInspectorClient {} *x_1_2_4; BOOL x_1_2_5; id x_1_2_6; id x_1_2_7; } *x_6_1_1; } x6; int x7; id x8; struct WebInspectorFrontendClient {} *x9; } *_inspectorClient;
     NSString *_title;
     WebView *_webView;
 }
@@ -47,15 +21,14 @@
 @property(retain) NSString * title;
 @property(readonly) WebView * webView;
 
-- (struct WebInspectorClient { int (**x1)(); id x2; struct RetainPtr<WebNodeHighlighter> { id x_3_1_1; } x3; struct Page {} *x4; struct RetainPtr<WebInspectorWindowController> { id x_5_1_1; } x5; struct HashMap<WTF::String,WTF::String,WTF::StringHash,WTF::HashTraits<WTF::String>,WTF::HashTraits<WTF::String> > { struct HashTable<WTF::String,std::pair<WTF::String, WTF::String>,WTF::PairFirstExtractor<std::pair<WTF::String, WTF::String> >,WTF::StringHash,WTF::PairHashTraits<WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::String> >,WTF::HashTraits<WTF::String> > { struct pair<WTF::String,WTF::String> {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_6_1_1; } x6; int x7; id x8; }*)inspectorClient;
+- (struct WebInspectorClient { int (**x1)(); int (**x2)(); id x3; struct RetainPtr<WebNodeHighlighter> { struct WebNodeHighlighter { Class x_1_2_1; id x_1_2_2; id x_1_2_3; } *x_4_1_1; } x4; struct Page {} *x5; struct RetainPtr<WebInspectorWindowController> { struct WebInspectorWindowController { Class x_1_2_1; id x_1_2_2; struct WebInspectorFrontendClient {} *x_1_2_3; struct WebInspectorClient {} *x_1_2_4; BOOL x_1_2_5; id x_1_2_6; id x_1_2_7; } *x_6_1_1; } x6; int x7; id x8; struct WebInspectorFrontendClient {} *x9; }*)inspectorClient;
 - (void)dealloc;
 - (void)destroyInspectorView:(bool)arg1;
 - (id)init;
 - (id)initWithInspectedWebView:(id)arg1;
-- (void)setFrontendClient:(struct WebInspectorFrontendClient { int (**x1)(); struct InspectorController {} *x2; struct Page {} *x3; struct ExecState {} *x4; struct RefPtr<WebCore::InspectorFrontendHost> { struct InspectorFrontendHost {} *x_5_1_1; } x5; struct OwnPtr<WebCore::InspectorFrontendClientLocal::Settings> { struct Settings {} *x_6_1_1; } x6; id x7; struct RetainPtr<WebInspectorWindowController> { id x_8_1_1; } x8; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_9_1_1; } x9; }*)arg1;
-- (void)setInspectorClient:(struct WebInspectorClient { int (**x1)(); id x2; struct RetainPtr<WebNodeHighlighter> { id x_3_1_1; } x3; struct Page {} *x4; struct RetainPtr<WebInspectorWindowController> { id x_5_1_1; } x5; struct HashMap<WTF::String,WTF::String,WTF::StringHash,WTF::HashTraits<WTF::String>,WTF::HashTraits<WTF::String> > { struct HashTable<WTF::String,std::pair<WTF::String, WTF::String>,WTF::PairFirstExtractor<std::pair<WTF::String, WTF::String> >,WTF::StringHash,WTF::PairHashTraits<WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::String> >,WTF::HashTraits<WTF::String> > { struct pair<WTF::String,WTF::String> {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_6_1_1; } x6; int x7; id x8; }*)arg1;
+- (void)setFrontendClient:(struct WebInspectorFrontendClient { int (**x1)(); struct InspectorController {} *x2; struct Page {} *x3; struct ExecState {} *x4; struct RefPtr<WebCore::InspectorFrontendHost> { struct InspectorFrontendHost {} *x_5_1_1; } x5; struct OwnPtr<WebCore::InspectorFrontendClientLocal::Settings> { struct Settings {} *x_6_1_1; } x6; boolx7; struct Vector<WTF::String, 0> { unsigned int x_8_1_1; struct VectorBuffer<WTF::String, 0> { struct String {} *x_2_2_1; unsigned int x_2_2_2; } x_8_1_2; } x8; struct OwnPtr<WebCore::InspectorBackendDispatchTask> { struct InspectorBackendDispatchTask {} *x_9_1_1; } x9; id x10; struct RetainPtr<WebInspectorWindowController> { struct WebInspectorWindowController { Class x_1_2_1; id x_1_2_2; struct WebInspectorFrontendClient {} *x_1_2_3; struct WebInspectorClient {} *x_1_2_4; BOOL x_1_2_5; id x_1_2_6; id x_1_2_7; } *x_11_1_1; } x11; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; }*)arg1;
+- (void)setInspectorClient:(struct WebInspectorClient { int (**x1)(); int (**x2)(); id x3; struct RetainPtr<WebNodeHighlighter> { struct WebNodeHighlighter { Class x_1_2_1; id x_1_2_2; id x_1_2_3; } *x_4_1_1; } x4; struct Page {} *x5; struct RetainPtr<WebInspectorWindowController> { struct WebInspectorWindowController { Class x_1_2_1; id x_1_2_2; struct WebInspectorFrontendClient {} *x_1_2_3; struct WebInspectorClient {} *x_1_2_4; BOOL x_1_2_5; id x_1_2_6; id x_1_2_7; } *x_6_1_1; } x6; int x7; id x8; struct WebInspectorFrontendClient {} *x9; }*)arg1;
 - (void)setTitle:(id)arg1;
-- (void)showWindow:(id)arg1;
 - (id)title;
 - (id)webView;
 

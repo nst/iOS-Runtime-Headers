@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSFileHandle, SSLogFileOptions;
+@class NSFileHandle, SSLogFileOptions, NSObject<OS_dispatch_source>, NSObject<OS_dispatch_queue>;
 
 @interface SSRollableLog : NSObject {
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSFileHandle *_fileHandle;
-    struct dispatch_source_s { } *_fileObserverSource;
+    NSObject<OS_dispatch_source> *_fileObserverSource;
     double _lastFileStatTime;
     SSLogFileOptions *_options;
 }

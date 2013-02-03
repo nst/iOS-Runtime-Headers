@@ -19,6 +19,7 @@
 + (unsigned int)currentSessionNumber;
 + (id)messageFromData:(id)arg1;
 + (id)messageFromDictionary:(id)arg1;
++ (id)messageWithName:(id)arg1 parameters:(id)arg2 session:(unsigned int)arg3;
 + (id)messageWithName:(id)arg1 parameters:(id)arg2;
 + (unsigned int)nextSessionNumber;
 + (void)setSessionNumber:(unsigned int)arg1;

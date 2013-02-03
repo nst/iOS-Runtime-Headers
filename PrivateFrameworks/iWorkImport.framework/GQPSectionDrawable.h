@@ -12,6 +12,7 @@
     GQDSStyle *mStyle;
 }
 
+- (id).cxx_construct;
 - (void)dealloc;
 
 @end

@@ -11,20 +11,20 @@
     BOOL _connected;
     NSMutableData *_eventData;
     char *_eventDataBuffer;
-    unsigned int _eventDataBufferSize;
+    unsigned long _eventDataBufferSize;
     struct IOUSBInterfaceStruct300 {} **_interfaceInterfaceRef;
     unsigned char _interruptPipeIn;
-    unsigned int _locationID;
+    unsigned long _locationID;
     int _maxPacketSizeBulkIn;
     int _maxPacketSizeBulkOut;
     int _maxPacketSizeInterruptIn;
     unsigned short _productID;
     char *_readBuffer;
-    unsigned int _readBufferSize;
+    unsigned long _readBufferSize;
     NSString *_usbSerialNumberString;
     unsigned short _vendorID;
     char *_writeBuffer;
-    unsigned int _writeBufferSize;
+    unsigned long _writeBufferSize;
 }
 
 - (void)abortPendingIO;
@@ -56,6 +56,7 @@
 - (void)stop;
 - (id)usbSerialNumberString;
 - (unsigned short)vendorID;
+- (int)waitForCallbackThreadConditionSignalWithTimeout:(long)arg1;
 - (BOOL)writeBulkData:(id)arg1;
 
 @end

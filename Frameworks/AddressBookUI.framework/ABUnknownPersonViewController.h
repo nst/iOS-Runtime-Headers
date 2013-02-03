@@ -2,14 +2,18 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABUnknownPersonViewControllerDelegate>, NSString, UIView;
+@class ABPersonTableViewActionsDelegate, ABPersonTableViewDataSource, ABPersonViewControllerHelper, UIView, ABPersonTableViewSharingDelegate, NSString, <ABStyleProvider>, <ABUnknownPersonViewControllerDelegate>, NSArray;
 
-@interface ABUnknownPersonViewController : UIViewController {
+@interface ABUnknownPersonViewController : UIViewController <UIActionSheetDelegate> {
+    ABPersonTableViewActionsDelegate *_actionsDelegate;
+    ABPersonTableViewDataSource *_dataSource;
     id _helper;
     id _reserved;
+    ABPersonTableViewSharingDelegate *_sharingDelegate;
     <ABUnknownPersonViewControllerDelegate> *_unknownPersonViewDelegate;
 }
 
+@property(readonly) ABPersonTableViewActionsDelegate * actionsDelegate;
 @property void* addressBook;
 @property BOOL allowsActions;
 @property BOOL allowsAddingToAddressBook;
@@ -19,12 +23,18 @@
 @property(copy) NSString * alternateName;
 @property(copy) NSString * attribution;
 @property(readonly) BOOL canShareContact;
+@property(readonly) ABPersonTableViewDataSource * dataSource;
 @property void* displayedPerson;
+@property(copy) NSArray * displayedProperties;
+@property(readonly) ABPersonViewControllerHelper * helper;
 @property BOOL isLocation;
+@property(readonly) BOOL isShowingMultipleVCards;
 @property(copy) NSString * message;
 @property(retain) UIView * personHeaderView;
 @property BOOL savesNewContactOnSuspend;
+@property(readonly) ABPersonTableViewSharingDelegate * sharingDelegate;
 @property BOOL shouldAlignPersonHeaderViewToImage;
+@property(retain) <ABStyleProvider> * styleProvider;
 @property <ABUnknownPersonViewControllerDelegate> * unknownPersonViewDelegate;
 
 + (id)defaultLabelsForProperty:(int)arg1 person:(void*)arg2 addressBook:(void*)arg3;
@@ -50,7 +60,10 @@
 - (id)_viewControllerForCardAtIndex:(int)arg1;
 - (int)abViewControllerType;
 - (float)ab_heightToFitForViewInPopoverView;
+- (void)accessChanged;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (id)actionsDelegate;
+- (void)addActionWithTitle:(id)arg1 content:(id)arg2 target:(id)arg3 selector:(SEL)arg4 forProperty:(int)arg5 withActionGrouping:(int)arg6 ordering:(int)arg7;
 - (void)addActionWithTitle:(id)arg1 shortTitle:(id)arg2 target:(id)arg3 selector:(SEL)arg4 forProperty:(int)arg5 withActionGrouping:(int)arg6 ordering:(int)arg7;
 - (void)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 forProperty:(int)arg4 withActionGrouping:(int)arg5 ordering:(int)arg6;
 - (void*)addressBook;
@@ -62,14 +75,18 @@
 - (id)alternateName;
 - (void)applicationDidResume;
 - (id)attribution;
+- (BOOL)badgeEmailPropertiesForMailVIP;
 - (BOOL)canShareContact;
 - (id)customFooterView;
 - (id)customHeaderView;
 - (id)customMessageView;
+- (id)dataSource;
 - (void)dealloc;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)dismissAnimated:(BOOL)arg1;
 - (void*)displayedPerson;
 - (id)displayedProperties;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (BOOL)hasActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 property:(int)arg4 actionGrouping:(int)arg5 ordering:(int)arg6;
 - (id)helper;
 - (id)init;
@@ -77,6 +94,7 @@
 - (id)initWithStyle:(int)arg1;
 - (id)initWithVCardData:(id)arg1;
 - (BOOL)isLocation;
+- (BOOL)isShowingMultipleVCards;
 - (void)loadView;
 - (id)message;
 - (id)messageDetail;
@@ -103,6 +121,8 @@
 - (void)setAlternateName:(id)arg1;
 - (void)setAttribution:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)setAttribution:(id)arg1;
+- (void)setBadgeEmailPropertiesForMailVIP:(BOOL)arg1;
+- (void)setCardContentProvider:(id)arg1;
 - (void)setCustomAppearanceProvider:(id)arg1;
 - (void)setCustomFooterView:(id)arg1;
 - (void)setCustomHeaderView:(id)arg1;
@@ -131,11 +151,13 @@
 - (void)setStyleProvider:(id)arg1;
 - (void)setUnknownPersonViewDelegate:(id)arg1;
 - (void)setWillTweetLocationCallback:(id)arg1;
+- (void)setWillWeiboLocationCallback:(id)arg1;
 - (id)shareLocationSnapshotImage;
 - (id)shareLocationURL;
 - (id)shareMessageBody;
 - (BOOL)shareMessageBodyIsHTML;
 - (id)shareMessageSubject;
+- (id)sharingDelegate;
 - (BOOL)shouldAlignPersonHeaderViewToImage;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)styleProvider;
@@ -154,5 +176,6 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (id)willTweetLocationCallback;
+- (id)willWeiboLocationCallback;
 
 @end

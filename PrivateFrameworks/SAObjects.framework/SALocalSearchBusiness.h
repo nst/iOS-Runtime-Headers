@@ -7,7 +7,7 @@
 @interface SALocalSearchBusiness : AceObject <SAAceSerializable> {
 }
 
-@property(retain) NSNumber * businessId;
+@property(copy) NSNumber * businessId;
 @property(copy) NSDictionary * businessIds;
 @property(copy) NSURL * businessUrl;
 @property(copy) NSArray * categories;
@@ -17,6 +17,7 @@
 @property(copy) NSArray * phoneNumbers;
 @property(copy) NSURL * photo;
 @property(retain) SALocalSearchRating * rating;
+@property(copy) NSArray * reviews;
 @property int totalNumberOfReviews;
 
 + (id)business;
@@ -34,6 +35,7 @@
 - (id)phoneNumbers;
 - (id)photo;
 - (id)rating;
+- (id)reviews;
 - (void)setBusinessId:(id)arg1;
 - (void)setBusinessIds:(id)arg1;
 - (void)setBusinessUrl:(id)arg1;
@@ -44,6 +46,7 @@
 - (void)setPhoneNumbers:(id)arg1;
 - (void)setPhoto:(id)arg1;
 - (void)setRating:(id)arg1;
+- (void)setReviews:(id)arg1;
 - (void)setTotalNumberOfReviews:(int)arg1;
 - (int)totalNumberOfReviews;
 

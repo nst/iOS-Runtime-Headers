@@ -5,12 +5,8 @@
 @class GQDTTable;
 
 @interface GQHTableState : NSObject {
-    struct vector<short unsigned int,std::allocator<short unsigned int> > { struct _Vector_impl { 
-            unsigned short *_M_start; 
-            unsigned short *_M_finish; 
-            unsigned short *_M_end_of_storage; 
     boolmSplitTable;
-        } x1; } *mCellCountInColumns;
+    struct vector<unsigned short, std::allocator<unsigned short> > { struct _Vector_impl { unsigned short *x_1_1_1; unsigned short *x_1_1_2; unsigned short *x_1_1_3; } x1; } *mCellCountInColumns;
     double mCurrentTablePosition;
     int mGroupLevel;
     double mLastAttachmentPosition;
@@ -22,7 +18,7 @@
 }
 
 - (void)addRowHeight:(float)arg1;
-- (struct vector<short unsigned int,std::allocator<short unsigned int> > { struct _Vector_impl { unsigned short *x_1_1_1; unsigned short *x_1_1_2; unsigned short *x_1_1_3; } x1; }*)cellCountInColumns;
+- (struct vector<unsigned short, std::allocator<unsigned short> > { struct _Vector_impl { unsigned short *x_1_1_1; unsigned short *x_1_1_2; unsigned short *x_1_1_3; } x1; }*)cellCountInColumns;
 - (double)currentTablePosition;
 - (void)dealloc;
 - (int)groupLevel;

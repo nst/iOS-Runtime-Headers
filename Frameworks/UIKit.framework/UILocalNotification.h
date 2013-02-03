@@ -15,6 +15,7 @@
 @property(copy) NSString * customLockSliderLabel;
 @property(copy) NSDate * fireDate;
 @property BOOL fireNotificationsWhenAppRunning;
+@property(copy) NSString * firedNotificationName;
 @property BOOL hasAction;
 @property BOOL hideAlertTitle;
 @property BOOL interruptAudioAndLockDevice;
@@ -24,8 +25,9 @@
 @property unsigned int repeatInterval;
 @property BOOL resumeApplicationInBackground;
 @property BOOL showAlarmStatusBarItem;
+@property(copy) NSString * snoozedNotificationName;
 @property(copy) NSString * soundName;
-@property BOOL soundNameIsARingtone;
+@property int soundType;
 @property(copy) NSTimeZone * timeZone;
 @property int totalRepeatCount;
 @property(copy) NSDictionary * userInfo;

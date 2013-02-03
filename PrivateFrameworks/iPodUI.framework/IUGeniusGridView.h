@@ -6,12 +6,14 @@
 
 @interface IUGeniusGridView : UIView {
     UILabel *_artistsLabel;
+    UILabel *_basedOnLabel;
     NSMutableArray *_coverViews;
     UIView *_coversViewContainer;
     <IUGeniusGridViewDelegate> *_delegate;
     BOOL _enabled;
     struct CGImage { } *_image;
     int _orientation;
+    unsigned int _page;
     UIImageView *_playImageView;
     NSArray *_representativeArtists;
     BOOL _showsPlayButton;
@@ -25,6 +27,7 @@
 @property(getter=isEnabled) BOOL enabled;
 @property struct CGImage { }* image;
 @property(readonly) int orientation;
+@property unsigned int page;
 @property(retain) NSArray * representativeArtists;
 @property BOOL showsPlayButton;
 @property(copy) NSString * title;
@@ -50,17 +53,18 @@
 - (BOOL)isEnabled;
 - (void)layoutSubviews;
 - (int)orientation;
+- (unsigned int)page;
 - (void)prepareForReuse;
 - (id)representativeArtists;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setImage:(struct CGImage { }*)arg1;
+- (void)setPage:(unsigned int)arg1;
 - (void)setRepresentativeArtists:(id)arg1;
 - (void)setShowsPlayButton:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (BOOL)showsPlayButton;
 - (id)title;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)viewDidUnload;
 
 @end

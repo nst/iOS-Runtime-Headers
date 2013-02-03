@@ -9,7 +9,7 @@
 
 @property(copy) NSString * accessKey;
 @property(copy) NSString * align;
-@property(retain,readonly) DOMHTMLFormElement * form;
+@property(readonly) DOMHTMLFormElement * form;
 
 - (id)accessKey;
 - (id)align;

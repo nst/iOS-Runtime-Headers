@@ -17,10 +17,10 @@
 @property(readonly) NSNumber * primaryEmailVerified;
 @property(readonly) NSArray * provisionedDataclasses;
 
+- (void).cxx_destruct;
 - (id)appleID;
 - (id)appleIDAliases;
 - (id)dataclassProperties;
-- (void)dealloc;
 - (id)firstName;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;

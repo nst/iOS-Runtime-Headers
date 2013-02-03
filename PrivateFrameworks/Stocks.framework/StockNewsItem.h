@@ -11,6 +11,7 @@
     NSURL *link;
     NSString *localizedDateString;
     NSString *source;
+    NSString *summary;
 }
 
 @property unsigned long long ID;
@@ -19,9 +20,11 @@
 @property(retain) NSURL * link;
 @property(readonly) NSString * localizedDateString;
 @property(retain) NSString * source;
+@property(retain) NSString * summary;
 
 + (id)localizedStringForDate:(id)arg1;
 
+- (void).cxx_destruct;
 - (unsigned long long)ID;
 - (id)archiveDictionary;
 - (int)chronologicalComparisonWithNewsItem:(id)arg1;
@@ -38,6 +41,8 @@
 - (void)setID:(unsigned long long)arg1;
 - (void)setLink:(id)arg1;
 - (void)setSource:(id)arg1;
+- (void)setSummary:(id)arg1;
 - (id)source;
+- (id)summary;
 
 @end

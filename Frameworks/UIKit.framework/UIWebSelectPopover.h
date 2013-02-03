@@ -4,7 +4,7 @@
 
 @class UIWebSelectTableViewController, UIKeyboard;
 
-@interface UIWebSelectPopover : UIWebRotatingPopover <UIWebFormControl> {
+@interface UIWebSelectPopover : UIWebRotatingAccessoryPopover <UIWebFormControl> {
     UIKeyboard *_keyboard;
     UIWebSelectTableViewController *_tableViewController;
 }

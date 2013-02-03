@@ -17,6 +17,7 @@
 
 - (void)_availableMediaLibrariesDidChangeNotification:(id)arg1;
 - (void)_databaseContentsDidChangeNotification:(id)arg1;
+- (void)_enabledMediaTypesDidChangeNotification:(id)arg1;
 - (id)_identifierForViewController:(id)arg1;
 - (void)_resetViewControllersWithContexts:(id)arg1;
 - (id)copyArchivableContexts;

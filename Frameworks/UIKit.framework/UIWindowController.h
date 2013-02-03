@@ -50,7 +50,7 @@
 - (struct CGPoint { float x1; float x2; })transitionView:(id)arg1 endOriginForToView:(id)arg2 forTransition:(int)arg3 defaultOrigin:(struct CGPoint { float x1; float x2; })arg4;
 - (void)transitionView:(id)arg1 startCustomTransitionWithDuration:(double)arg2;
 - (id)transitionView;
-- (void)transitionViewDidComplete:(id)arg1 fromView:(id)arg2 toView:(id)arg3;
+- (void)transitionViewDidComplete:(id)arg1 fromView:(id)arg2 toView:(id)arg3 removeFromView:(BOOL)arg4;
 - (void)transitionViewDidStart:(id)arg1;
 - (BOOL)transitionViewShouldUseViewControllerCallbacks;
 - (id)window;

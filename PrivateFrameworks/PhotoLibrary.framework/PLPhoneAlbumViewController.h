@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIActionSheet, PLSegmentedControl, NSTimer, PLPhotosPickerSession, PLPublishingAgent, PLProgressView, PLVideoRemaker, UIBarButtonItem, NSDictionary, UINavigationController, NSArray, PLPhotoPrinter, UIViewController, PLManagedAsset, NSMutableArray;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface PLPhoneAlbumViewController : PLAlbumViewController <MFMailComposeViewControllerDelegate, UIActionSheetDelegate, PLLibraryViewControllerDelegate, PLPhotoPrinterDelegate, PLPhotosPickerSessionParticipant, PLSlideshowSettingsViewControllerDelegate> {
+@class NSMutableArray, UIActionSheet, PLSegmentedControl, PLAlbumPickerViewController, PLPhotosPickerSession, UIAlertView, PLActivityViewController, PLProgressView, PLVideoRemaker, UIBarButtonItem, NSDictionary, UINavigationController, NSArray, UIViewController, PLManagedAsset, NSTimer;
+
+@interface PLPhoneAlbumViewController : PLAlbumViewController <MFMailComposeViewControllerDelegate, UIActionSheetDelegate, PLAbstractAlbumPickerViewControllerDelegate, PLActivityViewControllerDelegate, PLPhotosPickerSessionParticipant, PLSlideshowSettingsViewControllerDelegate> {
     unsigned int _showPhotosVideosFilter : 1;
     unsigned int _remaking : 1;
     unsigned int _trimmingForMMS : 1;
-    unsigned int _canPublishToMobileMe : 1;
-    unsigned int _canPublishToYouTube : 1;
     unsigned int _didSetPublishCapabilities : 1;
     unsigned int _deviceCannotShareVideo : 1;
     unsigned int _remakingWasCancelled : 1;
@@ -22,33 +24,31 @@
     unsigned int _ignoreAlbumDidChangeNotification : 1;
     unsigned int _hasChangesInEditSession : 1;
     UIActionSheet *_actionSheet;
+    SEL _activityAction;
+    id _activityTarget;
+    PLActivityViewController *_activityViewController;
     UIBarButtonItem *_addToFromItem;
+    PLAlbumPickerViewController *_albumPickerController;
     SEL _completionSelector;
     UINavigationController *_composeNavigationController;
-    UIBarButtonItem *_copyItem;
+    UIAlertView *_createAlbumAlert;
     PLPhotosPickerSession *_currentPickerSession;
-    PLPublishingAgent *_currentPublishingAgent;
     PLManagedAsset *_currentVideo;
     unsigned int _dataInsertionCount;
     UIBarButtonItem *_deleteItem;
     UIBarButtonItem *_doneItem;
     PLSegmentedControl *_filterControl;
     NSArray *_moveSheetActions;
-    PLPhotoPrinter *_photoPrinter;
+    id _nextViewDidLayoutSubviewsHandler;
     int _previousAlbumFilter;
-    int _printPhotoIndex;
     NSTimer *_progressUpdateTimer;
     PLProgressView *_progressView;
-    int _publishToMobileMeIndex;
-    int _publishToTwitterIndex;
-    int _publishToYouTubeIndex;
     PLVideoRemaker *_remaker;
     int _remakerMode;
     int _selectedImageCount;
+    int _selectedPlaceholderCount;
     int _selectedUnknownCount;
     int _selectedVideoCount;
-    int _sendViaEmailIndex;
-    int _sendViaMMSIndex;
     NSMutableArray *_shareButtonTitles;
     UIBarButtonItem *_shareItem;
     UIViewController *_slideshowSettingsViewController;
@@ -65,17 +65,19 @@
 - (id)_actionToolbarItems;
 - (BOOL)_allowSavingToCameraRoll;
 - (int)_allowedDeleteOperation;
+- (BOOL)_appAllowsSupressionOfAlerts;
 - (BOOL)_canAddAssets;
+- (BOOL)_canAddToAssets;
 - (BOOL)_canEmailMedia;
 - (BOOL)_canUploadHDVideo;
-- (void)_cancelAlbumPicker:(id)arg1;
 - (void)_cancelRemaking:(id)arg1;
 - (void)_clearPublishingAgentIfCurrent:(id)arg1;
 - (void)_copySelectedItems:(id)arg1;
+- (id)_currentPublishingAgent;
 - (id)_defaultToolbarItems;
-- (void)_deleteSelectedItems:(id)arg1;
+- (void)_deleteSelectedItems;
 - (void)_dismissActionSheet;
-- (void)_dismissCurrentPhotoPrinter;
+- (void)_displayActivitySheet:(id)arg1;
 - (void)_endSlideshowSettings;
 - (void)_fadeOut;
 - (void)_fadeOutAnimation:(id)arg1 finished:(id)arg2 context:(void*)arg3;
@@ -85,28 +87,24 @@
 - (BOOL)_isPerformingModalTransitionFromCamera;
 - (void)_loadConfiguration:(id)arg1;
 - (void)_mailAccountsDidChange:(id)arg1;
+- (void)_performPostAlbumStreamTasksWithNewlyCreatedAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)_playSlideshow;
 - (void)_presentActionSheet;
-- (void)_printSelectedItems:(id)arg1;
-- (void)_publishToMobileMe:(id)arg1;
-- (void)_publishToYouTube:(id)arg1;
 - (void)_publishingAgentDidCancel:(id)arg1;
 - (void)_publishingAgentDidEndRemaking:(id)arg1;
 - (void)_publishingAgentDidFinishPublishing:(id)arg1;
 - (void)_publishingAgentDidStartRemaking:(id)arg1;
 - (void)_publishingAgentsDidForceCancel:(id)arg1;
-- (void)_publishtoTwitter:(id)arg1;
 - (void)_remakerDidFinish:(id)arg1;
-- (void)_removeSelectedItems:(id)arg1;
+- (void)_removeSelectedItems;
 - (void)_restoreAlbumViewSelectionFromPickerSession;
 - (void)_saveAssetsToCameraRoll:(id)arg1;
 - (void)_saveConfiguration:(id)arg1;
-- (void)_sendViaEmail:(id)arg1;
-- (void)_sendViaMMS:(id)arg1;
-- (void)_shareSelectedItems:(id)arg1;
+- (void)_sendViaEmail;
+- (void)_sendViaMMS;
+- (BOOL)_shouldApplyRecentsFilterInitially;
 - (BOOL)_shouldShowActionButton;
 - (void)_showAlbumPickerToAddPhotos:(id)arg1 removeFromCurrentAlbum:(BOOL)arg2;
-- (void)_showCompositionForPublishingBundleNamed:(id)arg1 image:(id)arg2;
 - (void)_showCreateAlbumDialogWithPhotos:(id)arg1;
 - (void)_showDeleteConfirmation:(id)arg1;
 - (void)_showMMSCompositionForVideo:(id)arg1 startTime:(double)arg2 endTime:(double)arg3;
@@ -118,20 +116,21 @@
 - (void)_showTextMessageComposition:(id)arg1;
 - (void)_showTrimViewControllerForVideo:(id)arg1 maximumTrimDuration:(double)arg2 trimButtonTitle:(id)arg3;
 - (BOOL)_showTrimViewControllerIfNeededForVideo:(id)arg1 usingMode:(int)arg2;
+- (id)_suppresionContexts;
 - (id)_tabBar;
 - (void)_toggleEditing:(id)arg1;
 - (void)_transcodeVideo:(id)arg1 usingMode:(int)arg2 completionSelector:(SEL)arg3;
 - (void)_updateActionButtons;
 - (void)_updateProgressView;
-- (void)_updateShareButtonTitles:(id)arg1;
 - (void)_updateToolbarVisibilityAnimated:(BOOL)arg1 updateItems:(BOOL)arg2;
 - (void)_updateTopRightButtonAnimated:(BOOL)arg1;
 - (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
+- (void)activityViewControllerDidDismiss:(id)arg1;
 - (void)albumDidChange:(id)arg1;
-- (void)albumListDidChange:(id)arg1;
-- (BOOL)albumView:(id)arg1 canSelectPhotoAtIndex:(unsigned int)arg2;
-- (void)albumView:(id)arg1 didTapPhotoAtIndex:(unsigned int)arg2;
-- (void)albumView:(id)arg1 movePhotoAtIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
+- (BOOL)albumPickerController:(id)arg1 shouldEnableAlbum:(id)arg2;
+- (BOOL)albumView:(id)arg1 canSelectPhotoAtIndexPath:(id)arg2;
+- (void)albumView:(id)arg1 didTapPhotoAtIndexPath:(id)arg2;
+- (void)albumView:(id)arg1 movePhotoAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
 - (void)albumViewPhotoMoveDidComplete:(id)arg1;
 - (void)albumViewSelectionDidChange:(id)arg1 added:(id)arg2 removed:(id)arg3;
 - (int)allowedAlbumViewActions;
@@ -147,15 +146,17 @@
 - (void)editVideoViewControllerDidCancel:(id)arg1;
 - (id)initWithAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)libraryDidChange:(id)arg1;
-- (BOOL)libraryViewController:(id)arg1 shouldEnableRowForAlbum:(id)arg2;
-- (int)libraryViewController:(id)arg1 willSetCellAccessoryType:(int)arg2 forAlbum:(id)arg3;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)paste:(id)arg1;
-- (void)photoPrinter:(id)arg1 didPrint:(BOOL)arg2 error:(id)arg3;
+- (void)performBlockAfterNextViewDidLayoutSubviews:(id)arg1;
 - (void)prepareForDefaultImageSnapshot;
+- (BOOL)prepareForDismissingAnimated:(BOOL)arg1;
 - (void)pushPhotoScrollerViewControllerForPhoto:(id)arg1 animated:(BOOL)arg2 delayImageLoading:(BOOL)arg3;
 - (void)pushPhotoScrollerViewControllerForPhoto:(id)arg1 animated:(BOOL)arg2;
+- (void)pushPhotoScrollerViewControllerForPhoto:(id)arg1 toComment:(id)arg2 animated:(BOOL)arg3 delayImageLoading:(BOOL)arg4;
+- (void)pushPhotoScrollerViewControllerForPhoto:(id)arg1 toComment:(id)arg2 animated:(BOOL)arg3;
+- (void)scrollToRevealPhoto:(id)arg1 animated:(BOOL)arg2;
 - (id)selectedPhotos;
 - (void)setAllowedAlbumViewActions:(int)arg1;
 - (void)setCanPlaySlideshow:(BOOL)arg1;
@@ -180,6 +181,7 @@
 - (void)videoRemakerDidEndRemaking:(id)arg1 temporaryPath:(id)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

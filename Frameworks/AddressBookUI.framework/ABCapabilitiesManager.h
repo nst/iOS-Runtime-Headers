@@ -3,16 +3,14 @@
  */
 
 @interface ABCapabilitiesManager : NSObject {
-    BOOL _isRingtoneStoreAvailable;
+    BOOL _isListeningToFTCServiceAvailability;
 }
-
-@property BOOL isRingtoneStoreAvailable;
 
 + (void)_setDefaultCapabilitiesManager:(id)arg1;
 + (id)defaultCapabilitiesManager;
 
-- (void)_checkRingtoneStoreAvailability;
-- (BOOL)areCustomVibrationsEnabled;
+- (void)_startListeningToFTCServiceAvailabilityIfNecessary;
+- (void)addFTCServiceAvailabilityListener:(id)arg1 selector:(SEL)arg2;
 - (id)conferenceURLForDestinationID:(id)arg1;
 - (id)conferenceURLForPhoneNumber:(id)arg1;
 - (void)dealloc;
@@ -24,15 +22,14 @@
 - (BOOL)hasSMSCapability;
 - (BOOL)hasTelephonyCapability;
 - (BOOL)hasVibratorCapability;
-- (id)init;
 - (BOOL)isConferencingAvailable;
 - (BOOL)isConferencingEverGonnaBeAvailable;
 - (BOOL)isEmailConfigured;
 - (BOOL)isMMSConfigured;
 - (BOOL)isMadridConfigured;
-- (BOOL)isRingtoneStoreAvailable;
 - (BOOL)isSensitiveUIAllowed;
 - (BOOL)isTwitterServiceAvailable;
-- (void)setIsRingtoneStoreAvailable:(BOOL)arg1;
+- (BOOL)isWeiboServiceAvailable;
+- (void)removeFTCServiceAvailabilityListener:(id)arg1;
 
 @end

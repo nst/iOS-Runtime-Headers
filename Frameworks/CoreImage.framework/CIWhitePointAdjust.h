@@ -14,6 +14,7 @@
 
 + (id)customAttributes;
 
+- (BOOL)_isIdentity;
 - (id)_kernel;
 - (id)inputColor;
 - (id)inputImage;

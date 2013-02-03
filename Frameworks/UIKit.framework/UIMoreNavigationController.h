@@ -15,7 +15,10 @@
 @property(retain) NSArray * moreViewControllers;
 @property BOOL moreViewControllersChanged;
 
++ (Class)_moreListControllerClass;
+
 - (id)_preparedViewController:(id)arg1;
+- (void)_redisplayMoreTableView;
 - (void)_restoreOriginalNavigationController;
 - (BOOL)allowsCustomizing;
 - (void)dealloc;

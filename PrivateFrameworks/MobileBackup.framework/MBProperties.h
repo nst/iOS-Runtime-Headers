@@ -10,6 +10,7 @@
     BOOL _protected;
 }
 
+@property(readonly) NSDictionary * appleIDs;
 @property(readonly) NSDictionary * applications;
 @property(readonly) NSString * buildVersion;
 @property(retain) NSDate * date;
@@ -38,8 +39,10 @@
 - (void)_setDictionary:(id)arg1 forKey:(id)arg2;
 - (id)_stringForLockdownKey:(id)arg1;
 - (void)addApp:(id)arg1;
+- (void)addAppleIDsFromSet:(id)arg1;
 - (void)addAppsFromArray:(id)arg1;
 - (id)appWithBundleID:(id)arg1;
+- (id)appleIDs;
 - (id)applications;
 - (id)buildVersion;
 - (id)date;

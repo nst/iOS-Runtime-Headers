@@ -24,6 +24,7 @@
 - (void)setMessage:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)show;
+- (unsigned int)supportedInterfaceOrientations;
 - (BOOL)visible;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 

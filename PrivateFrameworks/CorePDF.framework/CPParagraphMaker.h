@@ -29,8 +29,8 @@
 - (BOOL)line:(id)arg1 isBelow:(id)arg2;
 - (BOOL)line:(id)arg1 isDirectlyBelow:(id)arg2;
 - (int)linesThatOverlapLineAt:(int)arg1 between:(float)arg2 and:(float)arg3 from:(int)arg4;
-- (id)makeInitialParagraph;
 - (void)makeParagraphsIn:(id)arg1;
+- (id)newInitialParagraph;
 - (int)paragraph:(id)arg1 splits:(id)arg2;
 - (id)paragraphs;
 - (BOOL)spacingOf:(id)arg1 and:(id)arg2 and:(id)arg3 is:(float*)arg4;

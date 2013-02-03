@@ -2,19 +2,19 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPersonImageView, ABNamePropertyGroup, UIImageView, UIFont, ABPersonNameEditingViewContainer, UIView, ABPersonNameDisplayView, ABMultiCellContentView, <ABPersonTableHeaderViewDelegate>, <ABStyleProvider>, NSString;
+@class ABPersonNameDisplayView, UIFont, ABMultiCellContentView, UITableView, ABNamePropertyGroup, <ABStyleProvider>, UIView, <ABPersonTableHeaderViewDelegate>, ABMultiCell, NSString, UIImageView, ABPersonImageView;
 
-@interface ABPersonTableHeaderView : UIView {
+@interface ABPersonTableHeaderView : UIView <UITableViewDelegate, UITableViewDataSource> {
     <ABPersonTableHeaderViewDelegate> *_delegate;
     ABPersonNameDisplayView *_displayView;
     BOOL _editing;
     ABMultiCellContentView *_editingView;
-    ABPersonNameEditingViewContainer *_editingViewContainer;
+    ABMultiCell *_editingViewCell;
+    UITableView *_editingViewContainer;
     UIView *_extraHeaderView;
     BOOL _extraHeaderViewAlignsToImage;
     UIImageView *_imageShadowView;
     ABPersonImageView *_imageView;
-    UIImageView *_multiplePhotoBackdropView;
     ABNamePropertyGroup *_namePropertyGroup;
     BOOL _representsLinkedPeople;
     BOOL _showsMultiplePhotoBackdropView;
@@ -26,7 +26,6 @@
 @property <ABPersonTableHeaderViewDelegate> * delegate;
 @property(readonly) ABPersonNameDisplayView * displayView;
 @property(readonly) ABMultiCellContentView * editingView;
-@property(readonly) UIView * editingViewContainer;
 @property(retain) UIView * extraHeaderView;
 @property BOOL extraHeaderViewAlignsToImage;
 @property(readonly) ABPersonImageView * imageView;
@@ -43,20 +42,16 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_displayViewFrameForWidth:(float)arg1;
 - (struct CGPoint { float x1; float x2; })_displayViewOrigin;
 - (float)_displayViewWidthForWidth:(float)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingViewFrameForWidth:(float)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingViewContainerFrameForWidth:(float)arg1;
 - (struct CGPoint { float x1; float x2; })_editingViewOrigin;
 - (float)_editingViewWidthForWidth:(float)arg1;
 - (float)_extraHeaderViewAvailableWidthForWidth:(float)arg1 whenEditing:(BOOL)arg2;
 - (struct CGPoint { float x1; float x2; })_extraHeaderViewOriginForWidth:(float)arg1 whenEditing:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForEditingView;
 - (id)_imageShadowView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageViewFrameWhenEditing:(BOOL)arg1;
 - (BOOL)_isSpecialInternalHeaderView;
 - (void)_layoutExtraHeaderView;
-- (id)_multiplePhotoBackdropView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_multiplePhotoBackdropViewFrame;
-- (id)_multiplePhotoBackdropViewImage;
-- (id)_newEditingViewContainerForWidth:(float)arg1;
+- (void)_recreateEditingViewContainer;
 - (void)_updateRecordIfNeeded;
 - (void)_updateShowsMultiplePhotoBackdrop;
 - (id)alternateName;
@@ -69,7 +64,6 @@
 - (void)deselectAnimated:(BOOL)arg1;
 - (id)displayView;
 - (id)editingView;
-- (id)editingViewContainer;
 - (id)entryFieldForRow:(unsigned int)arg1;
 - (id)extraHeaderView;
 - (BOOL)extraHeaderViewAlignsToImage;
@@ -81,11 +75,13 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isFirstResponder;
 - (void)layoutSubviews;
+- (float)marginForTableView:(id)arg1;
 - (id)message;
 - (id)messageDetail;
 - (id)messageDetailFont;
 - (id)messageFont;
 - (id)namePropertyGroup;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void*)personForImageView;
 - (void*)personForName;
 - (void)reloadData;
@@ -113,5 +109,11 @@
 - (void)setStyleProvider:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)styleProvider;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (BOOL)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

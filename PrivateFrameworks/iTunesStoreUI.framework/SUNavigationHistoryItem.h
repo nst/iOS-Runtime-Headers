@@ -17,7 +17,6 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (id)newViewControllerInSection:(id)arg1;
 - (id)title;
 
 @end

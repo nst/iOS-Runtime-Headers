@@ -2,41 +2,59 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSArray;
+@class FTCAccountMonitor, NSArray, FTCConnectionHandler, NSMutableArray;
 
 @interface CKPreferredServiceManager : NSObject {
+    FTCAccountMonitor *_accountMonitor;
+    FTCConnectionHandler *_connectionHandler;
+    NSMutableArray *_knownHandles;
+    NSArray *_potentialServices;
     NSArray *_servicePrecedence;
 }
+
+@property(copy) NSArray * potentialServices;
+@property(copy) NSArray * servicePrecedence;
 
 + (id)alloc;
 + (id)sharedPreferredServiceManager;
 
-- (id)__preferredServiceForAddressStrings:(id)arg1 checkWithServer:(BOOL)arg2 allowUnknown:(BOOL)arg3 hasAnyEmailRecipients:(BOOL*)arg4;
-- (id)__preferredServiceForEntities:(id)arg1 checkWithServer:(BOOL)arg2 allowUnknown:(BOOL)arg3 hasAnyEmailRecipients:(BOOL*)arg4;
-- (id)_addressArrayForEntityArray:(id)arg1;
+- (unsigned int)__preferredServiceTypeForRecipientCount:(int)arg1 options:(unsigned int)arg2 error:(int*)arg3;
+- (unsigned int)__preferrediMessageFallbackServiceForRecipientCount:(int)arg1 iMessageAvailable:(BOOL)arg2 options:(unsigned int)arg3 error:(int*)arg4;
+- (int)_availabilityForHandle:(id)arg1 onService:(id)arg2 checkWithServer:(BOOL)arg3;
+- (void)_clearCaches;
+- (void)_handleActiveAccountsChanged:(id)arg1;
+- (void)_handleConnectionChanged:(id)arg1;
+- (void)_handleDeviceCapabilitiesChanged:(id)arg1;
+- (void)_handleIMHandleIDStatusChanged:(id)arg1;
+- (void)_handleLoginStatusChange:(id)arg1;
+- (BOOL)_isiMessageAvailable;
 - (unsigned int)_optionsForRecipients:(id)arg1;
-- (id)_preferredServiceForAddressStrings:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 canSend:(BOOL*)arg4 error:(id*)arg5;
-- (id)_preferredServiceForAddressStrings:(id)arg1 options:(unsigned int)arg2 canSend:(BOOL*)arg3 error:(id*)arg4;
-- (id)_preferredServiceForEntities:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 canSend:(BOOL*)arg4 error:(id*)arg5;
-- (id)_preferredServiceForEntities:(id)arg1 options:(unsigned int)arg2 canSend:(BOOL*)arg3 error:(id*)arg4;
-- (id)_preferredServiceForRecipientsCount:(int)arg1 options:(unsigned int)arg2 canSend:(BOOL*)arg3 error:(id*)arg4;
-- (id)_servicePrecedence;
+- (id)_preferredServiceForAddressStrings:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 error:(int*)arg4;
+- (id)_preferredServiceForHandles:(id)arg1 allowUnknown:(BOOL)arg2 checkWithServer:(BOOL)arg3;
+- (id)_preferredServiceForHandles:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 error:(int*)arg4;
+- (id)_preferredServiceForHandles:(id)arg1 options:(unsigned int)arg2 error:(int*)arg3;
+- (id)_preferredServiceForRecipientsCount:(int)arg1 options:(unsigned int)arg2 error:(int*)arg3;
+- (void)_updatePotentialServices;
+- (int)availabilityForAddress:(id)arg1 onService:(id)arg2 checkWithServer:(BOOL)arg3;
+- (int)availabilityForHandle:(id)arg1 onService:(id)arg2 checkWithServer:(BOOL)arg3;
 - (void)dealloc;
+- (id)init;
+- (BOOL)isMultiService;
+- (void)notifyOfPotentialServicesChange;
 - (void)notifyOfServiceAvailabilityChange;
+- (id)potentialServices;
 - (id)preferredService;
-- (id)preferredServiceForAddressString:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 canSend:(BOOL*)arg4 error:(id*)arg5;
-- (id)preferredServiceForAddressStrings:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 canSend:(BOOL*)arg4 error:(id*)arg5;
-- (id)preferredServiceForAggregateConversation:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 canSend:(BOOL*)arg4 error:(id*)arg5;
-- (id)preferredServiceForEntities:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 canSend:(BOOL*)arg4 error:(id*)arg5;
-- (id)preferredServiceForMFComposeRecipients:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 canSend:(BOOL*)arg4 error:(id*)arg5;
+- (id)preferredServiceForAddressString:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 error:(int*)arg4;
+- (id)preferredServiceForConversation:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 error:(int*)arg4;
+- (id)preferredServiceForHandle:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 error:(int*)arg4;
+- (id)preferredServiceForHandles:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 error:(int*)arg4;
+- (id)preferredServiceForMFComposeRecipients:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 error:(int*)arg4;
 - (void)prepareForResume;
 - (void)refreshAvailabilityForAddressStrings:(id)arg1;
-- (void)refreshAvailabilityForEntities:(id)arg1;
+- (void)refreshAvailabilityForConversation:(id)arg1;
 - (void)refreshAvailabilityForMFComposeRecipients:(id)arg1;
-- (id)validServices;
-- (id)validServicesForAddressString:(id)arg1 checkWithServer:(BOOL)arg2;
-- (id)validServicesForAddressStrings:(id)arg1 checkWithServer:(BOOL)arg2;
-- (id)validServicesForEntities:(id)arg1 checkWithServer:(BOOL)arg2;
-- (id)validServicesForMFComposeRecipients:(id)arg1 checkWithServer:(BOOL)arg2;
+- (id)servicePrecedence;
+- (void)setPotentialServices:(id)arg1;
+- (void)setServicePrecedence:(id)arg1;
 
 @end

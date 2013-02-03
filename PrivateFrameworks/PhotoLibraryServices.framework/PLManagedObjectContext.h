@@ -2,30 +2,38 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLDelayedFiledSystemDeletions, PLPhotoLibrary, <PLManagedObjectContextPTPNotificationDelegate>, PLMergePolicy;
+@class PLDelayedFiledSystemDeletions, PLPhotoLibrary, <PLManagedObjectContextPTPNotificationDelegate>, NSObject<OS_xpc_object>, PLMergePolicy;
 
 @interface PLManagedObjectContext : NSManagedObjectContext {
     PLDelayedFiledSystemDeletions *_delayedDeletions;
     BOOL _hasMetadataChanges;
+    BOOL _isBackingALAssetsLibrary;
     BOOL _isConnectedToChangeHub;
+    BOOL _isInitializingSingletons;
     PLMergePolicy *_mergePolicy;
     BOOL _mergingChanges;
     PLPhotoLibrary *_photoLibrary;
     <PLManagedObjectContextPTPNotificationDelegate> *_ptpNotificationDelegate;
-    void *changeHubConnection;
+    BOOL _regenerateVideoThumbnails;
+    BOOL _savingDuringMerge;
+    NSObject<OS_xpc_object> *changeHubConnection;
 }
 
-@property void* changeHubConnection;
+@property NSObject<OS_xpc_object> * changeHubConnection;
 @property(retain) PLDelayedFiledSystemDeletions * delayedDeletions;
 @property BOOL hasMetadataChanges;
+@property BOOL isBackingALAssetsLibrary;
+@property BOOL isInitializingSingletons;
 @property(readonly) BOOL isUserInterfaceContext;
 @property(readonly) BOOL mergingChanges;
 @property PLPhotoLibrary * photoLibrary;
 @property <PLManagedObjectContextPTPNotificationDelegate> * ptpNotificationDelegate;
 @property BOOL regenerateVideoThumbnails;
+@property(readonly) BOOL savingDuringMerge;
 
 + (id)allContextsNotIdenticalTo:(void*)arg1;
-+ (void)asyncEnumerateAllContextsWithBlock:(id)arg1;
++ (BOOL)assetsLibraryLoggingEnabled;
++ (BOOL)canMergeRemoteChanges;
 + (void)configurePersistentStoreCoordinator:(id)arg1;
 + (id)contextForDatabaseCreation;
 + (id)contextForPhotoLibrary:(id)arg1;
@@ -34,6 +42,7 @@
 + (id)defaultStoreURL;
 + (void)getStoreURL:(id*)arg1 options:(id*)arg2 forFileURL:(id)arg3;
 + (void)getStoreURL:(id*)arg1 options:(id*)arg2;
++ (void)handleUnknownMergeEvent;
 + (BOOL)hasAtLeastOneAsset;
 + (id)managedObjectModel;
 + (void)mergeChangesFromRemoteContextSave:(id)arg1 intoAllContextsNotIdenticalTo:(id)arg2;
@@ -46,12 +55,13 @@
 + (id)sharedPersistentStoreCoordinator;
 + (BOOL)storeIsOldEnough;
 + (BOOL)useModelMigratorToCreateDatabase;
-+ (void)withDispatchGroup:(struct dispatch_group_s { }*)arg1 enumerateAllContexts:(id)arg2;
 
 - (void)_contextObjectsDidChange:(id)arg1;
 - (void)_informPTPDelegateAboutChangesFromNotification:(id)arg1;
 - (void)_mergeChangesFromDidSaveDictionary:(id)arg1 usingObjectIDs:(BOOL)arg2;
-- (void*)changeHubConnection;
+- (void)_notifyALAssetsLibraryWithChanges:(id)arg1 usingObjectIDs:(BOOL)arg2;
+- (BOOL)_tooManyAssetChangesToHandle:(unsigned int)arg1;
+- (id)changeHubConnection;
 - (void)connectToChangeHub;
 - (int)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
 - (unsigned int)countForFetchRequest:(id)arg1 error:(id*)arg2;
@@ -64,6 +74,9 @@
 - (id)globalValueForKey:(id)arg1;
 - (BOOL)hasMetadataChanges;
 - (id)initWithConcurrencyType:(unsigned int)arg1 useSharedPersistentStoreCoordinator:(BOOL)arg2;
+- (BOOL)isBackingALAssetsLibrary;
+- (BOOL)isInitializingSingletons;
+- (BOOL)isReadOnly;
 - (BOOL)isUserInterfaceContext;
 - (BOOL)mergingChanges;
 - (BOOL)obtainPermanentIDsForObjects:(id)arg1 error:(id*)arg2;
@@ -72,15 +85,18 @@
 - (BOOL)regenerateVideoThumbnails;
 - (void)registerFilesystemDeletionInfo:(id)arg1;
 - (BOOL)save:(id*)arg1;
-- (void)setChangeHubConnection:(void*)arg1;
+- (BOOL)savingDuringMerge;
+- (void)setChangeHubConnection:(id)arg1;
 - (void)setDelayedDeletions:(id)arg1;
 - (void)setGlobalValue:(id)arg1 forKey:(id)arg2;
 - (void)setHasMetadataChanges:(BOOL)arg1;
+- (void)setIsBackingALAssetsLibrary:(BOOL)arg1;
+- (void)setIsInitializingSingletons:(BOOL)arg1;
 - (void)setPhotoLibrary:(id)arg1;
 - (void)setPtpNotificationDelegate:(id)arg1;
 - (void)setRegenerateVideoThumbnails:(BOOL)arg1;
 - (void)setupLocalChangeNotifications;
 - (void)tearDownLocalChangeNotifications;
-- (void)withDispatchGroup:(struct dispatch_group_s { }*)arg1 performBlock:(id)arg2;
+- (void)withDispatchGroup:(id)arg1 performBlock:(id)arg2;
 
 @end

@@ -17,6 +17,7 @@
     void *_deviceStateChangedContext;
     CPDistributedNotificationCenter *_dnCenter;
     struct __CFRunLoop { } *_dnCenterRunLoop;
+    CPDistributedNotificationCenter *_dnCenteriAP2;
     NSLock *_lock;
     void *_pauseOnHeadphoneDisconnectChangedContext;
     void *_volumeChangedContext;

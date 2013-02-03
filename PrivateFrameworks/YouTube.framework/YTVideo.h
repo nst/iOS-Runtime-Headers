@@ -27,6 +27,7 @@
     unsigned int _numberOfViews;
     int _privacy;
     NSURL *_ratingsURL;
+    NSString *_restrictedCountries;
     NSString *_shortID;
     NSArray *_tags;
     id _thumbnailProxyBlock;
@@ -69,7 +70,7 @@
 - (unsigned int)hash;
 - (id)infoURL;
 - (id)initFromArchiveDictionary:(id)arg1;
-- (id)initWithID:(id)arg1 title:(id)arg2 dateUpdated:(id)arg3 dateAdded:(id)arg4 videoReferences:(id)arg5 infoURL:(id)arg6 videoDescription:(id)arg7 category:(id)arg8 tags:(id)arg9 author:(id)arg10 thumbnailURL:(id)arg11 numLikes:(unsigned int)arg12 numDislikes:(unsigned int)arg13 numberOfViews:(unsigned int)arg14 batchStatus:(int)arg15 commentsURL:(id)arg16 editURL:(id)arg17 ratingsURL:(id)arg18 captionsURL:(id)arg19 shortID:(id)arg20 unplayable:(id)arg21 isProcessing:(BOOL)arg22 privacy:(int)arg23;
+- (id)initWithID:(id)arg1 title:(id)arg2 dateUpdated:(id)arg3 dateAdded:(id)arg4 videoReferences:(id)arg5 infoURL:(id)arg6 videoDescription:(id)arg7 category:(id)arg8 tags:(id)arg9 author:(id)arg10 thumbnailURL:(id)arg11 numLikes:(unsigned int)arg12 numDislikes:(unsigned int)arg13 numberOfViews:(unsigned int)arg14 batchStatus:(int)arg15 commentsURL:(id)arg16 editURL:(id)arg17 ratingsURL:(id)arg18 captionsURL:(id)arg19 shortID:(id)arg20 unplayable:(id)arg21 isProcessing:(BOOL)arg22 privacy:(int)arg23 restrictedCountries:(id)arg24;
 - (BOOL)isBookmarked;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPlayable;
@@ -85,6 +86,7 @@
 - (id)privacyString;
 - (id)ratingPercentageString;
 - (id)ratingsURL;
+- (id)restrictedCountries;
 - (struct CGImage { }*)roundedThumbnailLoadIfAbsent:(BOOL)arg1;
 - (id)shortID;
 - (id)tags;

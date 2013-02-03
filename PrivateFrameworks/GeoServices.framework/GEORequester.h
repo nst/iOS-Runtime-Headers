@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSThread;
+@class NSString, NSThread;
 
 @interface GEORequester : PBRequester {
+    NSString *_debugRequestName;
     BOOL _disableReplay;
     NSThread *_thread;
+    BOOL _useBackgroundConnection;
+    BOOL _usePersistentConnection;
 }
 
+@property(retain) NSString * debugRequestName;
 @property BOOL disableReplay;
 
 + (void)replayRequests;
@@ -19,8 +23,17 @@
 - (void)_handleResumeOnThread;
 - (void)_handleSuspendOnThread;
 - (void)dealloc;
+- (id)debugRequestName;
 - (BOOL)disableReplay;
+- (id)initWithURL:(id)arg1 andDelegate:(id)arg2 usePersistentConnection:(BOOL)arg3 useBackgroundConnection:(BOOL)arg4;
+- (id)initWithURL:(id)arg1 andDelegate:(id)arg2 usePersistentConnection:(BOOL)arg3;
 - (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
+- (id)logRequestToFile;
+- (id)logResponseToFile;
+- (struct _CFURLRequest { }*)newCFMutableURLRequestWithURL:(id)arg1;
+- (id)newConnectionWithCFURLRequest:(struct _CFURLRequest { }*)arg1 delegate:(id)arg2;
+- (id)persistentConnectionSession;
+- (void)setDebugRequestName:(id)arg1;
 - (void)setDisableReplay:(BOOL)arg1;
 - (void)start;
 

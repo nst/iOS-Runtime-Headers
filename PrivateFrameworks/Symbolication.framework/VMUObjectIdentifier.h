@@ -30,6 +30,7 @@
 - (unsigned int)CFTypeCount;
 - (unsigned int)CPlusPlusClassCount;
 - (unsigned int)ObjCclassCount;
+- (void)_addobjc_opt_ro_classesForOffsets:(struct objc_classheader_t { int x1; int x2; }*)arg1 count:(unsigned int)arg2 classOptAddress:(unsigned long long)arg3;
 - (id)_classInfoForObject:(unsigned long long)arg1;
 - (id)classInfoForCFType:(struct __CFRuntimeBase { unsigned int x1; unsigned char x2[4]; }*)arg1;
 - (id)classInfoForIsaPointer:(unsigned int)arg1;

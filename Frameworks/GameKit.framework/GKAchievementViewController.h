@@ -4,7 +4,7 @@
 
 @class <GKAchievementViewControllerDelegate>;
 
-@interface GKAchievementViewController : UINavigationController {
+@interface GKAchievementViewController : GKGameCenterViewController {
     <GKAchievementViewControllerDelegate> *_achievementDelegate;
 }
 
@@ -12,12 +12,8 @@
 
 - (id)achievementDelegate;
 - (void)dealloc;
-- (void)donePressed:(id)arg1;
 - (id)init;
-- (id)initWithRootViewController:(id)arg1;
+- (void)notifyDelegateOnWillFinish;
 - (void)setAchievementDelegate:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

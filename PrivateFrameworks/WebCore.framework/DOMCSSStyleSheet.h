@@ -7,9 +7,9 @@
 @interface DOMCSSStyleSheet : DOMStyleSheet {
 }
 
-@property(retain,readonly) DOMCSSRuleList * cssRules;
-@property(retain,readonly) DOMCSSRule * ownerRule;
-@property(retain,readonly) DOMCSSRuleList * rules;
+@property(readonly) DOMCSSRuleList * cssRules;
+@property(readonly) DOMCSSRule * ownerRule;
+@property(readonly) DOMCSSRuleList * rules;
 
 - (int)addRule:(id)arg1 style:(id)arg2 index:(unsigned int)arg3;
 - (id)cssRules;

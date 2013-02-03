@@ -12,8 +12,8 @@
         unsigned char m_data4[8]; 
     int m_accessMode;
     } m_clsid;
-    int m_creationTime;
-    int m_modificationTime;
+    long m_creationTime;
+    long m_modificationTime;
     NSString *m_pstrName;
     unsigned long m_size;
     int m_type;

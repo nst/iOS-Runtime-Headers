@@ -6,6 +6,7 @@
 
 @interface SUScriptWindow : SUScriptObject {
     SUScriptViewController *_backViewController;
+    BOOL _canSwipeToDismiss;
     SUScriptWindowContext *_context;
     SUScriptViewController *_frontViewController;
     id _height;
@@ -17,6 +18,7 @@
 }
 
 @property(retain) SUScriptViewController * backViewController;
+@property(copy) id canSwipeToDismiss;
 @property(readonly) SUScriptWindowContext * context;
 @property(retain) SUScriptViewController * frontViewController;
 @property(retain) NSNumber * height;
@@ -28,23 +30,14 @@
 @property(retain) NSNumber * width;
 @property(readonly) SUScriptViewController * windowParentViewController;
 
-+ (void)_dismissWindowsAnimated:(BOOL)arg1;
 + (void)dismissWindowsWithOptions:(id)arg1;
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_backgroundViewController:(BOOL)arg1;
 - (id)_className;
-- (id)_copyBackViewController;
-- (id)_copyFrontViewController;
 - (id)_copySafeTransitionOptionsFromOptions:(id)arg1;
-- (id)_copyShouldDismissFunction;
-- (id)_copyWindowParentViewController;
-- (void)_dismiss:(id)arg1;
-- (void)_flip:(id)arg1;
-- (float)_mainThreadShadowOpacity;
-- (float)_mainThreadShadowRadius;
 - (id)_newOverlayTransitionWithOptions:(id)arg1;
 - (void)_overlayDidDismissNotification:(id)arg1;
 - (void)_overlayDidFlipNotification:(id)arg1;
@@ -52,18 +45,9 @@
 - (struct CGSize { float x1; float x2; })_overlaySize;
 - (id)_overlayViewController:(BOOL)arg1;
 - (void)_registerForOverlayNotifications;
-- (void)_reloadVisibility;
-- (void)_setBackViewController:(id)arg1;
-- (void)_setFrontViewController:(id)arg1;
-- (void)_setHeight:(float)arg1;
-- (void)_setMaskFunction:(id)arg1;
-- (void)_setShadowOpacity:(float)arg1;
-- (void)_setShadowRadius:(float)arg1;
-- (void)_setShouldDismissFunction:(id)arg1;
-- (void)_setWidth:(float)arg1;
-- (void)_show:(id)arg1;
 - (id)attributeKeys;
 - (id)backViewController;
+- (id)canSwipeToDismiss;
 - (id)context;
 - (void)dealloc;
 - (void)dismiss:(id)arg1;
@@ -75,6 +59,7 @@
 - (id)maskFunction;
 - (id)scriptAttributeKeys;
 - (void)setBackViewController:(id)arg1;
+- (void)setCanSwipeToDismiss:(id)arg1;
 - (void)setFrontViewController:(id)arg1;
 - (void)setHeight:(id)arg1;
 - (void)setMaskFunction:(id)arg1;

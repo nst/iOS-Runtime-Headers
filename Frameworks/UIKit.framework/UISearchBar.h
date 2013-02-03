@@ -4,7 +4,7 @@
 
 @class UIImage, UIImageView, UILabel, UIButton, UITextField, <UISearchBarDelegate>, NSString, UIView, UIColor, NSArray;
 
-@interface UISearchBar : UIView {
+@interface UISearchBar : UIView <UIStatusBarTinting> {
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -31,6 +31,7 @@
     } _contentInset;
     id _controller;
     <UISearchBarDelegate> *_delegate;
+    UIView *_inputAccessoryView;
     UILabel *_promptLabel;
     UIView *_scopeBar;
     NSArray *_scopes;
@@ -38,14 +39,18 @@
     UITextField *_searchField;
     int _selectedScope;
     UIImageView *_separator;
+    UIImageView *_shadowView;
+    UIColor *_statusBarTintColor;
     UIColor *_tintColor;
 }
 
+@property(setter=_setStatusBarTintColor:,retain) UIColor * _statusBarTintColor;
 @property int autocapitalizationType;
 @property int autocorrectionType;
 @property(retain) UIImage * backgroundImage;
 @property int barStyle;
 @property <UISearchBarDelegate> * delegate;
+@property(retain) UIView * inputAccessoryView;
 @property int keyboardType;
 @property(copy) NSString * placeholder;
 @property(copy) NSString * prompt;
@@ -64,17 +69,25 @@
 @property(retain) UIColor * tintColor;
 @property(getter=isTranslucent) BOOL translucent;
 
+- (float)_autolayoutSpacingAtEdge:(int)arg1 inContainer:(id)arg2;
+- (float)_autolayoutSpacingAtEdge:(int)arg1 nextToNeighbor:(id)arg2;
 - (float)_availableBoundsWidth;
 - (void)_bookmarkButtonPressed;
 - (void)_cancelButtonPressed;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (id)_currentSeparatorImage;
+- (float)_defaultHeight;
 - (void)_destroyCancelButton;
+- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
+- (BOOL)_hasCustomAutolayoutNeighborSpacing;
 - (void)_hideShowAnimationDidFinish;
 - (id)_imageForSearchBarIcon:(int)arg1 state:(unsigned int)arg2;
 - (BOOL)_isEnabled;
 - (BOOL)_isInBar;
 - (float)_landscapeScopeBarWidth;
 - (float)_landscapeSearchFieldWidth;
+- (id)_makeShadowView;
+- (id)_navigationBarForShadow;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_resultsListButtonPressed;
 - (id)_scopeBar;
@@ -84,13 +97,18 @@
 - (void)_searchFieldEndEditing;
 - (float)_searchFieldHeight;
 - (void)_searchFieldReturnPressed;
+- (id)_separatorImage;
 - (void)_setAutoDisableCancelButton:(BOOL)arg1;
 - (void)_setCancelButtonText:(id)arg1;
 - (void)_setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setEnabled:(BOOL)arg1;
 - (void)_setScopeBarHidden:(BOOL)arg1;
+- (void)_setScopeBarSegmentsEnabled:(BOOL)arg1;
+- (void)_setSeparatorImage:(id)arg1;
+- (void)_setShadowVisibleIfNecessary:(BOOL)arg1;
 - (void)_setShowsCancelButton:(BOOL)arg1;
 - (void)_setShowsSeparator:(BOOL)arg1;
+- (void)_setStatusBarTintColor:(id)arg1;
 - (void)_setTintColor:(id)arg1 forceUpdate:(BOOL)arg2;
 - (void)_setUpScopeBar;
 - (void)_setupCancelButton;
@@ -98,6 +116,8 @@
 - (void)_setupPromptLabel;
 - (void)_setupSearchField;
 - (BOOL)_shouldCombineLandscapeBars;
+- (BOOL)_shouldDisplayShadow;
+- (id)_statusBarTintColor;
 - (void)_updateMagnifyingGlassView;
 - (void)_updateOpacity;
 - (void)_updateRightView;
@@ -115,11 +135,14 @@
 - (id)controller;
 - (void)dealloc;
 - (id)delegate;
+- (void)didMoveToWindow:(id)arg1;
 - (BOOL)drawsBackground;
 - (void)encodeWithCoder:(id)arg1;
 - (id)imageForSearchBarIcon:(int)arg1 state:(unsigned int)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)inputAccessoryView;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isFirstResponder;
 - (BOOL)isSearchResultsButtonSelected;
@@ -154,6 +177,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDrawsBackground:(BOOL)arg1;
 - (void)setImage:(id)arg1 forSearchBarIcon:(int)arg2 state:(unsigned int)arg3;
+- (void)setInputAccessoryView:(id)arg1;
 - (void)setKeyboardType:(int)arg1;
 - (void)setPlaceholder:(id)arg1;
 - (void)setPositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forSearchBarIcon:(int)arg2;
@@ -194,5 +218,6 @@
 - (id)tintColor;
 - (BOOL)usesEmbeddedAppearance;
 - (void)willMoveToSuperview:(id)arg1;
+- (void)willMoveToWindow:(id)arg1;
 
 @end

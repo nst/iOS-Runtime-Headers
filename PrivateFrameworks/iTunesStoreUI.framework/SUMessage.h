@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSURL, NSMutableDictionary, NSArray;
+@class NSMutableDictionary, NSArray, NSObject<OS_dispatch_queue>, NSURL;
 
 @interface SUMessage : NSObject <NSCopying> {
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSArray *_messageParts;
     NSURL *_postURL;
     NSMutableDictionary *_uploadURLs;

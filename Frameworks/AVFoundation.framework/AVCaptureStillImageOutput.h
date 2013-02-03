@@ -19,7 +19,7 @@
 + (id)jpegStillImageNSDataRepresentationForBGRASurface:(struct __IOSurface { }*)arg1 size:(unsigned long)arg2;
 + (id)jpegStillImageNSDataRepresentationForSurface:(struct __IOSurface { }*)arg1 size:(unsigned long)arg2 metadata:(id)arg3;
 
-- (id)_applyOverridesToCaptureOptions:(id)arg1;
+- (void)_applyOverridesToCaptureOptions:(id)arg1;
 - (void)_updateStillImageDataSizeForCaptureOptions:(id)arg1;
 - (id)availableImageDataCVPixelFormatTypes;
 - (id)availableImageDataCodecTypes;
@@ -37,6 +37,8 @@
 - (BOOL)isChromaNoiseReductionEnabled;
 - (BOOL)isEV0CaptureEnabled;
 - (BOOL)isHDRCaptureEnabled;
+- (BOOL)isRawCaptureEnabled;
+- (BOOL)isRawCaptureSupported;
 - (long long)maxStillImageDataSize;
 - (id)outputSettings;
 - (struct CGSize { float x1; float x2; })previewImageSize;
@@ -47,6 +49,7 @@
 - (void)setHDRCaptureEnabled:(BOOL)arg1;
 - (void)setOutputSettings:(id)arg1;
 - (void)setPreviewImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setRawCaptureEnabled:(BOOL)arg1;
 - (void)setSuspendsVideoProcessingDuringStillImageCapture:(BOOL)arg1;
 - (BOOL)suspendsVideoProcessingDuringStillImageCapture;
 

@@ -16,6 +16,7 @@
 @property(readonly) void* preferredPerson;
 
 - (int)_addItemForProperty:(int)arg1 duringReload:(BOOL)arg2;
+- (id)_allPeople;
 - (void)_clearAllCachedInfo;
 - (int)_indexForProperty:(int)arg1;
 - (id)_indexPathForIndexPath:(id)arg1;

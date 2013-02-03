@@ -2,15 +2,21 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSNumber, PFUbiquityKnowledgeVector, NSString, PFUbiquitySaveSnapshot, PFUbiquityLocation, NSMutableDictionary;
+@class NSMutableDictionary, PFUbiquitySaveSnapshot, NSRecursiveLock, PFUbiquityLocation, NSString, PFUbiquityKnowledgeVector, NSNumber;
 
 @interface PFUbiquityTransactionLog : NSObject {
     NSMutableDictionary *_contents;
+    NSRecursiveLock *_contentsLock;
     NSString *_fileProtectionOption;
     BOOL _inPermanentLocation;
     BOOL _inStagingLocation;
     BOOL _inTemporaryLocation;
     PFUbiquityKnowledgeVector *_knowledgeVector;
+    BOOL _loadUsingRetry;
+    BOOL _loadedComparisonMetadata;
+    BOOL _loadedContents;
+    BOOL _loadedImportMetadata;
+    NSString *_localPeerID;
     PFUbiquitySaveSnapshot *_saveSnapshot;
     PFUbiquityLocation *_stagingTransactionLogLocation;
     PFUbiquityLocation *_temporaryTransactionLogLocation;
@@ -27,6 +33,8 @@
 @property(readonly) BOOL inStagingLocation;
 @property(readonly) BOOL inTemporaryLocation;
 @property(readonly) PFUbiquityKnowledgeVector * knowledgeVector;
+@property BOOL loadUsingRetry;
+@property(readonly) NSString * localPeerID;
 @property(readonly) NSString * modelVersionHash;
 @property(readonly) PFUbiquitySaveSnapshot * saveSnapshot;
 @property(readonly) PFUbiquityLocation * stagingTransactionLogLocation;
@@ -40,8 +48,8 @@
 
 + (id)createTransactionLogFilenameForLogType:(int)arg1;
 + (id)generateTransactionLogFilename;
-+ (id)loadPlistAtLocation:(id)arg1 withError:(id*)arg2;
 + (void)pruneStagingDirectoryForLocalPeerID:(id)arg1 andStoreName:(id)arg2 andModelVersionHash:(id)arg3 withStack:(id)arg4 andStoreTransactionNumber:(id)arg5;
++ (BOOL)pruneTemporaryLogDirectoryForPeerRootLocation:(id)arg1 error:(id*)arg2;
 + (id)transactionLogFilenameUUID;
 + (int)transactionLogTypeFromLocation:(id)arg1;
 + (void)truncateLogFilesBeforeBaselineMetadata:(id)arg1 withLocalPeerID:(id)arg2 andUbiquityRootLocation:(id)arg3;
@@ -60,18 +68,24 @@
 - (BOOL)inTemporaryLocation;
 - (id)init;
 - (id)initWithStoreName:(id)arg1 andSaveSnapshot:(id)arg2;
-- (id)initWithTransactionLogLocation:(id)arg1;
-- (id)initWithTransactionLogURL:(id)arg1 andUbiquityRootLocation:(id)arg2;
+- (id)initWithTransactionLogLocation:(id)arg1 andLocalPeerID:(id)arg2;
+- (id)initWithTransactionLogURL:(id)arg1 ubiquityRootLocation:(id)arg2 andLocalPeerID:(id)arg3;
 - (id)knowledgeVector;
 - (BOOL)loadComparisonMetadataWithError:(id*)arg1;
+- (BOOL)loadContents:(id*)arg1;
 - (BOOL)loadDeletedObjectsDataWithError:(id*)arg1;
 - (BOOL)loadImportMetadataWithError:(id*)arg1;
 - (BOOL)loadInsertedObjectsDataWithError:(id*)arg1;
+- (id)loadPlistAtLocation:(id)arg1 withError:(id*)arg2;
 - (BOOL)loadUpdatedObjectsDataWithError:(id*)arg1;
+- (BOOL)loadUsingRetry;
+- (id)localPeerID;
 - (id)modelVersionHash;
 - (BOOL)moveFileToPermanentLocationWithError:(id*)arg1;
 - (void)populateContents;
+- (BOOL)releaseContents:(id*)arg1;
 - (id)saveSnapshot;
+- (void)setLoadUsingRetry:(BOOL)arg1;
 - (void)setUseTemporaryLogLocation:(BOOL)arg1;
 - (id)stagingTransactionLogLocation;
 - (id)storeName;

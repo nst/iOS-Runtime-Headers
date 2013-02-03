@@ -20,6 +20,7 @@
 - (void)_performPostSaveTasks;
 - (void)_raiseOptimisticLockingExceptionWithReason:(id)arg1;
 - (id)adapter;
+- (void)addPeerRange:(id)arg1;
 - (void)addPeerRangeForPeerID:(id)arg1 entityName:(id)arg2 rangeStart:(id)arg3 rangeEnd:(id)arg4 peerRangeStart:(id)arg5 peerRangeEnd:(id)arg6;
 - (id)allPeerRanges;
 - (void)awake;
@@ -53,7 +54,7 @@
 - (int)fetchResultSet:(void*)arg1 usingFetchPlan:(id)arg2;
 - (id)fetchTableCreationSQL;
 - (id)fetchTableNames;
-- (id)fetchUbiqiutyKnowledgeVector;
+- (id)fetchUbiquityKnowledgeVector;
 - (void)finalize;
 - (void)forceTransactionClosed;
 - (long long)generatePrimaryKeysForEntity:(id)arg1 batch:(unsigned int)arg2;

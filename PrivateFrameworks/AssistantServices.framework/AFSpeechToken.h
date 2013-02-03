@@ -20,8 +20,8 @@
 @property double startTime;
 @property(copy) NSString * text;
 
+- (void).cxx_destruct;
 - (int)confidenceScore;
-- (void)dealloc;
 - (id)description;
 - (id)dkPlistRepresentation;
 - (double)endTime;

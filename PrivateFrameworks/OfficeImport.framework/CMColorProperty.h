@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSColorStub;
+@class TSUColor;
 
 @interface CMColorProperty : CMProperty {
-    NSColorStub *wdValue;
+    TSUColor *wdValue;
 }
 
-+ (struct CGColor { }*)createCGColorFromOADColor:(id)arg1 state:(id)arg2;
-+ (struct CGColor { }*)createCGColorFromOADFill:(id)arg1 state:(id)arg2;
-+ (id)cssStringFromNSColorStub:(id)arg1;
++ (struct CGColor { }*)copyCGColorFromOADColor:(id)arg1 state:(id)arg2;
++ (struct CGColor { }*)copyCGColorFromOADFill:(id)arg1 state:(id)arg2;
 + (id)cssStringFromOADColor:(id)arg1;
 + (id)cssStringFromOADGradientFill:(id)arg1 state:(id)arg2;
 + (id)cssStringFromRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
++ (id)cssStringFromTSUColor:(id)arg1;
 + (id)nsColorFromOADColor:(id)arg1 state:(id)arg2;
 + (id)nsColorFromOADFill:(id)arg1 state:(id)arg2;
 + (id)nsColorFromShading:(id)arg1;

@@ -7,6 +7,8 @@
     id _table;
 }
 
++ (BOOL)supportsSecureCoding;
+
 - (void)addObject:(id)arg1;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

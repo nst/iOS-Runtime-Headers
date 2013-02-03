@@ -2,13 +2,16 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSColorStub;
+@class TSUColor;
 
 @interface WDShading : NSObject <NSCopying> {
-    NSColorStub *mBackgroundColor;
-    NSColorStub *mForegroundColor;
+    TSUColor *mBackgroundColor;
+    TSUColor *mForegroundColor;
     int mStyle;
 }
+
++ (id)autoBackgroundColor;
++ (id)autoForegroundColor;
 
 - (id)background;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

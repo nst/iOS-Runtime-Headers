@@ -13,7 +13,7 @@
         unsigned int allowsSounds : 1; 
         unsigned int allowsVibrations : 1; 
         unsigned int hidesSearchableSources : 1; 
-        unsigned int hidesAggregateAllGroup : 1; 
+        unsigned int hidesPromptInLandscape : 1; 
     void *_addressBook;
     int _behavior;
     NSArray *_defaultToolbarItems;
@@ -38,10 +38,12 @@
 
 + (void)notifyPreferencesChanged;
 
+- (void)__loadDatabaseAtDirectory:(id)arg1;
 - (BOOL)_allowsAutorotation;
 - (void)_applicationEnteringForeground;
 - (void)_performCancel:(id)arg1;
 - (void)_setPopoverController:(id)arg1;
+- (id)_setupAccountsAndGroupsController;
 - (BOOL)_shouldPreventCancelButtonsFromShowing;
 - (void)_updateViewControllerNavigationButtons;
 - (void)ab_changeViewControllerToolbarItemsIfEmpty:(id)arg1 animated:(BOOL)arg2;
@@ -51,20 +53,23 @@
 - (void)ab_restoreViewControllerToolbarItems:(id)arg1 animated:(BOOL)arg2;
 - (void)ab_setDefaultToolbarItems:(id)arg1 animated:(BOOL)arg2;
 - (void)ab_setDefaultToolbarItems:(id)arg1;
-- (id)accountsAndGroupsViewController;
 - (void*)addressBook;
 - (BOOL)allowsActions;
 - (BOOL)allowsCancel;
 - (BOOL)allowsCardEditing;
 - (BOOL)allowsConferencing;
+- (BOOL)allowsShowingPersonsCards;
 - (id)bannerTitle;
 - (id)bannerValue;
 - (int)behavior;
 - (BOOL)ckCanDismissWhenSuspending;
 - (void)dealloc;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)displayedProperties;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)finishNavigationBarAnimation;
-- (BOOL)hidesAggregateAllGroup;
+- (void)groupsViewControllerDidFinish:(id)arg1;
+- (BOOL)hidesPromptInLandscape;
 - (BOOL)hidesSearchableSources;
 - (id)init;
 - (id)initAsAddressBook:(BOOL)arg1 withAddressBook:(void*)arg2 withStyle:(int)arg3;
@@ -91,11 +96,15 @@
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4 withMemberCell:(id)arg5;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)popToDefaultViewController:(BOOL)arg1;
-- (id)promptForViewControllerType:(int)arg1;
+- (void)presentGroupsViewController;
+- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (id)promptForViewControllerType:(int)arg1 orientation:(int)arg2;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)removeChildViewController:(id)arg1 notifyDidMove:(BOOL)arg2;
 - (void)removeChildViewController:(id)arg1;
+- (void)safePopToRootViewControllerAnimated:(BOOL)arg1;
 - (void)saveState;
+- (void)searchCurrentContactsGroupUsingQuery:(id)arg1 animated:(BOOL)arg2;
 - (void)setAddressBook:(void*)arg1;
 - (void)setAllowsCancel:(BOOL)arg1;
 - (void)setAllowsCardEditing:(BOOL)arg1;
@@ -106,27 +115,31 @@
 - (void)setBehavior:(int)arg1;
 - (void)setContentSizeForViewInPopover:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDisplayedProperties:(id)arg1;
-- (void)setHidesGlobalGroupWrapper:(BOOL)arg1;
+- (void)setHidesPromptInLandscape:(BOOL)arg1;
 - (void)setHidesSearchableSources:(BOOL)arg1;
 - (void)setInsertionValue:(id)arg1 property:(int)arg2;
 - (void)setParentViewController:(id)arg1;
 - (void)setPeoplePickerDelegate:(id)arg1;
 - (void)setPrompt:(id)arg1 forViewControllerType:(int)arg2;
 - (void)setPrompt:(id)arg1;
+- (void)setSearchCompletionDelegate:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (void)setupAsMePicker;
 - (void)setupInitialStackAndLoadState:(BOOL)arg1;
+- (BOOL)shouldContinueAfterSelectingPerson:(void*)arg1 cell:(id)arg2;
 - (BOOL)shouldPerformDefaultActionForPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3 withMemberCell:(id)arg4;
-- (BOOL)shouldShowGroups;
 - (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3 forceDisableEditing:(BOOL)arg4;
 - (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3;
 - (void)showCardForPerson:(void*)arg1;
+- (void)showMembersOfContactsFilter:(id)arg1 animate:(BOOL)arg2 loadState:(BOOL)arg3;
+- (void)showMembersOfContactsFilter:(id)arg1;
 - (void)showUnifiedCardForPerson:(void*)arg1;
 - (id)styleProvider;
 - (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
 - (BOOL)unknownPersonViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4 withMemberCell:(id)arg5;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willShowViewController:(id)arg1 animated:(BOOL)arg2;
 
 @end

@@ -15,6 +15,7 @@
 - (id)bookmark;
 - (id)collection;
 - (void)dealloc;
+- (id)description;
 - (id)initWithBookmarkCollection:(id)arg1 bookmark:(id)arg2;
 - (void)setBookmark:(id)arg1;
 

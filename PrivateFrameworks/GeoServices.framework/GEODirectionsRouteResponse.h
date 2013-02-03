@@ -2,40 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEODirectionsRouteResponse : GEODirectionsResponse {
-    int _iconVersion;
-    NSMutableArray *_icons;
-    double _requestTimestamp;
-    int _requestTimestampType;
-    int _requestTimezoneOffset;
-    int _type;
 }
 
-@property int iconVersion;
-@property(retain) NSMutableArray * icons;
-@property double requestTimestamp;
-@property int requestTimestampType;
-@property int requestTimezoneOffset;
-@property int type;
-
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)iconVersion;
-- (id)icons;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)requestCalendarDate;
-- (double)requestTimestamp;
-- (int)requestTimestampType;
-- (int)requestTimezoneOffset;
-- (void)setIconVersion:(int)arg1;
-- (void)setIcons:(id)arg1;
-- (void)setRequestTimestamp:(double)arg1;
-- (void)setRequestTimestampType:(int)arg1;
-- (void)setRequestTimezoneOffset:(int)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

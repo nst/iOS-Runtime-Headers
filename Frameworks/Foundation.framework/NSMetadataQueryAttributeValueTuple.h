@@ -9,7 +9,7 @@
     id _value;
 }
 
-- (id)_init:(id)arg1 :(id)arg2 :(id)arg3 :(unsigned int)arg4;
+- (id)_init:(id)arg1 attribute:(id)arg2 value:(id)arg3 count:(unsigned int)arg4;
 - (id)attribute;
 - (unsigned int)count;
 - (void)dealloc;

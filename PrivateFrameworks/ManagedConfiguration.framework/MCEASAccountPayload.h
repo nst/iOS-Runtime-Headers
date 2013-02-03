@@ -16,6 +16,7 @@
     NSString *_hostname;
     NSNumber *_mailNumberOfPastDaysToSync;
     NSString *_password;
+    BOOL _syncDefaultFoldersOnly;
     BOOL _useSSL;
     NSString *_username;
 }
@@ -32,17 +33,18 @@
 @property(readonly) NSString * hostname;
 @property(readonly) NSNumber * mailNumberOfPastDaysToSync;
 @property(copy) NSString * password;
+@property BOOL syncDefaultFoldersOnly;
 @property(readonly) BOOL useSSL;
 @property(copy) NSString * username;
 
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
+- (void).cxx_destruct;
 - (id)accountDescription;
 - (id)accountPersistentUUID;
 - (id)certificatePersistentID;
 - (id)certificateUUID;
-- (void)dealloc;
 - (id)description;
 - (id)emailAddress;
 - (id)embeddedCertificate;
@@ -58,12 +60,14 @@
 - (void)setEmailAddress:(id)arg1;
 - (void)setEmbeddedCertificatePassword:(id)arg1;
 - (void)setPassword:(id)arg1;
+- (void)setSyncDefaultFoldersOnly:(BOOL)arg1;
 - (void)setUsername:(id)arg1;
 - (id)stubDictionary;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)subtitle2Description;
 - (id)subtitle2Label;
+- (BOOL)syncDefaultFoldersOnly;
 - (id)title;
 - (BOOL)useSSL;
 - (id)username;

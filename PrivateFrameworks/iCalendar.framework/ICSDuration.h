@@ -7,8 +7,8 @@
 }
 
 + (id)durationFromICSString:(id)arg1;
-+ (id)durationFromICSString:(id)arg1;
 + (id)durationFromRFC2445UTF8String:(const char *)arg1;
++ (id)generateDurationFromICSString:(id)arg1;
 
 - (id)ICSStringWithOptions:(unsigned int)arg1;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;

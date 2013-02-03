@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFDragDestination>, NSMutableArray, MFMailComposeView, UIView, UIGestureRecognizer, <MFDraggableItem>, MFGobblerGestureRecognizer, NSMutableDictionary, NSTimer;
+@class <MFDragDestination>, UIWindow, NSMutableArray, NSTimer, UIView, UIGestureRecognizer, <MFDraggableItem>, MFGobblerGestureRecognizer, NSMutableDictionary;
 
 @interface MFDragManager : NSObject <UIGestureRecognizerDelegate> {
     struct CGPoint { 
@@ -22,10 +22,11 @@
         } size; 
     <MFDragDestination> *_currentDestination;
     UIGestureRecognizer *_currentGestureBeingProcessed;
-    MFMailComposeView *_currentlyDisplayedComposeView;
+    NSMutableArray *_dragContextValues;
     NSMutableArray *_dragDestinations;
     NSMutableArray *_dragSources;
     BOOL _dragWasSuccessful;
+    UIWindow *_dragWindow;
     <MFDraggableItem> *_draggedItem;
     } _draggedItemOriginalFrame;
     UIView *_draggedItemView;
@@ -39,10 +40,6 @@
     double _timeOfLastBigUpdate;
 }
 
-@property MFMailComposeView * currentlyDisplayedComposeView;
-
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (void)initialize;
 + (id)sharedInstance;
 
 - (void)_cleanUpAfterDragCompleted;
@@ -50,15 +47,16 @@
 - (void)_handleLongPress:(id)arg1;
 - (void)_processGestureUpdate;
 - (void)_scrollViewIfNecessary;
+- (void)addDragContext:(id)arg1;
 - (void)addDragDestination:(id)arg1;
 - (void)addDragSource:(id)arg1;
 - (void)cancelCurrentDragOperation;
-- (id)currentlyDisplayedComposeView;
 - (void)dealloc;
+- (void)enumerateDragContextsUsingBlock:(id)arg1;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)init;
+- (void)removeDragContext:(id)arg1;
 - (void)removeDragDestination:(id)arg1;
 - (void)removeDragSource:(id)arg1;
-- (void)setCurrentlyDisplayedComposeView:(id)arg1;
 
 @end

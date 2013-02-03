@@ -30,13 +30,13 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
+- (void).cxx_destruct;
 - (id)_invalidRightsError;
 - (id)_invalidTopicError;
 - (id)_nonHTTPSURLErrorForField:(id)arg1;
 - (int)accessRights;
 - (id)checkInURLString;
 - (BOOL)checkOutWhenRemoved;
-- (void)dealloc;
 - (id)description;
 - (id)identityPersistentID;
 - (id)identityUUID;

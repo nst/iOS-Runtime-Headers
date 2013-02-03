@@ -2,17 +2,18 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class FTCConnectionHandler;
+@class FTCConnectionHandler, NSObject<OS_xpc_object>;
 
 @interface CKClientComposeServer : NSObject {
-    struct _xpc_connection_s { } *_connection;
+    NSObject<OS_xpc_object> *_connection;
     FTCConnectionHandler *_connectionHandler;
 }
 
 + (id)sharedInstance;
 
-- (void)_finishSendingClientComposedMessage:(id)arg1 markup:(id)arg2 subject:(id)arg3 recipients:(id)arg4 attachmentPaths:(id)arg5 exportedFileNames:(id)arg6 composeOptions:(id)arg7;
-- (void)_sendClientComposedMessage:(id)arg1 markup:(id)arg2 subject:(id)arg3 recipients:(id)arg4 attachmentPaths:(id)arg5 exportedFileNames:(id)arg6 composeOptions:(id)arg7;
+- (void)_finishSendingClientComposedMessageForMarkup:(id)arg1 subject:(id)arg2 handles:(id)arg3 attachments:(id)arg4 guid:(id)arg5 forceService:(id)arg6 forceSMS:(BOOL)arg7;
+- (void)_sendClientComposedMessageForMarkup:(id)arg1 subject:(id)arg2 recipients:(id)arg3 attachments:(id)arg4 guid:(id)arg5 forceSMS:(BOOL)arg6;
+- (id)_serviceForHandles:(id)arg1;
 - (void)_startListeningForClientComposeNotifications;
 - (void)_stopListeningForClientComposeNotifications;
 - (void)dealloc;

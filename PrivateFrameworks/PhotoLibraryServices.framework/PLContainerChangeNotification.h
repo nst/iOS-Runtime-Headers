@@ -35,6 +35,7 @@
 @property(readonly) PLObjectSnapshot * snapshot;
 
 - (void)_calculateDiffs;
+- (void)_calculateDiffsIfNecessary;
 - (id)_changedObjects;
 - (id)_contentRelationshipName;
 - (BOOL)_didCalculateDiffs;

@@ -2,66 +2,74 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSURL, NSString, NSNumber;
+@class NSString;
 
-@interface SPSearchResult : NSObject <SPSearchResult, SPSearchResultCursor> {
-    NSURL *_URL;
+@interface SPSearchResult : PBCodable {
+    struct { 
+        unsigned int identifier : 1; 
+        unsigned int flags : 1; 
     NSString *_auxiliarySubtitle;
     NSString *_auxiliaryTitle;
-    NSNumber *_badge;
-    int _domain;
+    int _flags;
+    } _has;
     unsigned long long _identifier;
-    NSString *_resultDisplayIdentifier;
-    int _resultDomain;
     NSString *_subtitle;
     NSString *_summary;
     NSString *_title;
+    NSString *_url;
 }
 
-@property(retain) NSURL * URL;
 @property(retain) NSString * auxiliarySubtitle;
 @property(retain) NSString * auxiliaryTitle;
-@property(copy) NSNumber * badge;
-@property int domain;
+@property int flags;
+@property(readonly) BOOL hasAuxiliarySubtitle;
+@property(readonly) BOOL hasAuxiliaryTitle;
+@property BOOL hasFlags;
+@property BOOL hasIdentifier;
+@property(readonly) BOOL hasSubtitle;
+@property(readonly) BOOL hasSummary;
+@property(readonly) BOOL hasTitle;
+@property(readonly) BOOL hasUrl;
 @property unsigned long long identifier;
-@property(retain) NSString * resultDisplayIdentifier;
-@property int resultDomain;
 @property(retain) NSString * subtitle;
 @property(retain) NSString * summary;
 @property(retain) NSString * title;
+@property(retain) NSString * url;
 
-- (id)URL;
-- (const char *)URLUTF8String;
 - (id)auxiliarySubtitle;
-- (const char *)auxiliarySubtitleUTF8String;
 - (id)auxiliaryTitle;
-- (const char *)auxiliaryTitleUTF8String;
-- (id)badge;
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
-- (int)domain;
-- (BOOL)getBadgeValue:(float*)arg1;
+- (id)description;
+- (id)dictionaryRepresentation;
+- (int)flags;
+- (BOOL)hasAuxiliarySubtitle;
+- (BOOL)hasAuxiliaryTitle;
+- (BOOL)hasFlags;
+- (BOOL)hasIdentifier;
+- (BOOL)hasSubtitle;
+- (BOOL)hasSummary;
+- (BOOL)hasTitle;
+- (BOOL)hasUrl;
 - (unsigned int)hash;
 - (unsigned long long)identifier;
 - (BOOL)isEqual:(id)arg1;
-- (id)resultDisplayIdentifier;
-- (const char *)resultDisplayIdentifierUTF8String;
-- (int)resultDomain;
+- (BOOL)isEquivalentToResult:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAuxiliarySubtitle:(id)arg1;
 - (void)setAuxiliaryTitle:(id)arg1;
-- (void)setBadge:(id)arg1;
-- (void)setDomain:(int)arg1;
+- (void)setFlags:(int)arg1;
+- (void)setHasFlags:(BOOL)arg1;
+- (void)setHasIdentifier:(BOOL)arg1;
 - (void)setIdentifier:(unsigned long long)arg1;
-- (void)setResultDisplayIdentifier:(id)arg1;
-- (void)setResultDomain:(int)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setSummary:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setURL:(id)arg1;
+- (void)setUrl:(id)arg1;
 - (id)subtitle;
-- (const char *)subtitleUTF8String;
 - (id)summary;
-- (const char *)summaryUTF8String;
 - (id)title;
-- (const char *)titleUTF8String;
+- (id)url;
+- (void)writeTo:(id)arg1;
 
 @end

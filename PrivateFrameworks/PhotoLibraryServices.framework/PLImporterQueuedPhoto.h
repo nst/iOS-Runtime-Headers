@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSObject<PLAssetContainer>, NSString, NSArray;
+@class NSArray, NSString, NSObject<PLAssetContainer>, PLProgressStack;
 
 @interface PLImporterQueuedPhoto : NSObject {
     NSString *baseName;
     NSString *directoryPath;
     struct NSObject { Class x1; } *event;
     NSString *importIdentifier;
-    struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; } *progressStack;
+    PLProgressStack *progressStack;
     NSArray *sidecarFileInfo;
 }
 
@@ -17,22 +17,22 @@
 @property(copy) NSString * directoryPath;
 @property(retain) NSObject<PLAssetContainer> * event;
 @property(copy) NSString * importIdentifier;
-@property struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; }* progressStack;
+@property(retain) PLProgressStack * progressStack;
 @property(copy) NSArray * sidecarFileInfo;
 
-+ (id)queuedPhotoWithDirectoryPath:(id)arg1 baseName:(id)arg2 sidecarFileInfo:(id)arg3 event:(struct NSObject { Class x1; }*)arg4 progress:(struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; }*)arg5 importSessionIdentifier:(id)arg6;
++ (id)queuedPhotoWithDirectoryPath:(id)arg1 baseName:(id)arg2 sidecarFileInfo:(id)arg3 event:(struct NSObject { Class x1; }*)arg4 progress:(id)arg5 importSessionIdentifier:(id)arg6;
 
 - (id)baseName;
 - (void)dealloc;
 - (id)directoryPath;
 - (struct NSObject { Class x1; }*)event;
 - (id)importIdentifier;
-- (struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; }*)progressStack;
+- (id)progressStack;
 - (void)setBaseName:(id)arg1;
 - (void)setDirectoryPath:(id)arg1;
 - (void)setEvent:(struct NSObject { Class x1; }*)arg1;
 - (void)setImportIdentifier:(id)arg1;
-- (void)setProgressStack:(struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; }*)arg1;
+- (void)setProgressStack:(id)arg1;
 - (void)setSidecarFileInfo:(id)arg1;
 - (id)sidecarFileInfo;
 

@@ -2,41 +2,62 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray, GKConnection, NSMutableArray, GKSession, <GKMatchDelegate>, NSMutableDictionary, NSData;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSString, NSArray, GKConnection, NSMutableArray, NSDictionary, GKSession, <GKMatchDelegate>, NSMutableDictionary, NSData;
 
 @interface GKMatch : NSObject <GKSessionDelegate, GKSessionPrivateDelegate> {
+    id _chooseHostCompletion;
     GKConnection *_connection;
-    <GKMatchDelegate> *_delegate;
+    <GKMatchDelegate> *_delegateWeak;
     unsigned int _expectedPlayerCount;
-    <GKMatchDelegate> *_inviteDelegate;
+    NSMutableDictionary *_hostScores;
+    <GKMatchDelegate> *_inviteDelegateWeak;
+    BOOL _needHostScore;
+    NSDictionary *_networkStatistics;
     NSMutableArray *_opponentIDs;
     unsigned int _packetSequenceNumber;
     NSMutableDictionary *_playerEventQueues;
     NSMutableDictionary *_playerPushTokens;
     NSMutableArray *_reinvitedPlayers;
+    int _rematchCount;
+    NSString *_rematchID;
     NSData *_selfBlob;
     GKSession *_session;
     unsigned char _version;
 }
 
+@property(copy) id chooseHostCompletion;
 @property(retain) GKConnection * connection;
 @property <GKMatchDelegate> * delegate;
 @property(readonly) unsigned int expectedPlayerCount;
+@property(retain) NSMutableDictionary * hostScores;
 @property <GKMatchDelegate> * inviteDelegate;
+@property BOOL needHostScore;
+@property(retain) NSDictionary * networkStatistics;
 @property(retain) NSMutableArray * opponentIDs;
 @property unsigned int packetSequenceNumber;
 @property(retain) NSMutableDictionary * playerEventQueues;
 @property(readonly) NSArray * playerIDs;
 @property(retain) NSMutableDictionary * playerPushTokens;
 @property(retain) NSMutableArray * reinvitedPlayers;
+@property int rematchCount;
+@property(retain) NSString * rematchID;
 @property(retain) NSData * selfBlob;
 @property(retain) GKSession * session;
 @property unsigned char version;
 
 - (void)acceptRelayResponse:(id)arg1 playerID:(id)arg2;
+- (void)addHostScore:(int)arg1 forPlayer:(id)arg2;
 - (id)allIDs;
+- (void)calculateAndSendHostScore;
+- (void)chooseBestHostPlayerWithCompletionHandler:(id)arg1;
+- (id)chooseHostCompletion;
 - (void)conditionallyReinvitePlayer:(id)arg1 sessionToken:(id)arg2;
 - (void)conditionallyRelaunchPlayer:(id)arg1;
+- (void)connectToNearbyPlayer:(id)arg1 withConnectionData:(id)arg2;
 - (void)connectToPeersWithDictionaries:(id)arg1 version:(unsigned char)arg2 sessionToken:(id)arg3 cdxTicket:(id)arg4;
 - (BOOL)connected:(id)arg1;
 - (id)connection;
@@ -44,9 +65,11 @@
 - (void)dealloc;
 - (void)deferStateCallbackForPlayer:(id)arg1 state:(int)arg2;
 - (id)delegate;
+- (id)description;
 - (void)disconnect;
 - (unsigned int)expectedPlayerCount;
 - (void)getLocalConnectionDataWithCompletionHandler:(id)arg1;
+- (id)hostScores;
 - (id)init;
 - (void)initRelayConnectionForPlayer:(id)arg1;
 - (void)initRelayInfoFromCallback:(id)arg1 forPlayer:(id)arg2;
@@ -55,6 +78,9 @@
 - (void)initRelayResponse:(id)arg1 playerID:(id)arg2;
 - (id)inviteDelegate;
 - (void)inviteeComboMatched:(int)arg1;
+- (id)nearbyConnectionData;
+- (BOOL)needHostScore;
+- (id)networkStatistics;
 - (id)opponentIDs;
 - (id)packet:(unsigned char)arg1 data:(id)arg2;
 - (unsigned int)packetSequenceNumber;
@@ -72,8 +98,12 @@
 - (void)reinviteeDeclinedNotification:(id)arg1;
 - (void)relayPush:(id)arg1;
 - (void)relayPushNotification:(id)arg1;
+- (int)rematchCount;
+- (id)rematchID;
+- (void)rematchWithCompletionHandler:(id)arg1;
 - (void)requestRelayInitForPlayer:(id)arg1;
 - (void)requestRelayUpdateForPlayer:(id)arg1;
+- (void)selectHostIfAllScored;
 - (id)selfBlob;
 - (void)sendData:(id)arg1 fromPlayer:(id)arg2;
 - (BOOL)sendData:(id)arg1 toPlayers:(id)arg2 withDataMode:(int)arg3 error:(id*)arg4;
@@ -86,17 +116,24 @@
 - (void)session:(id)arg1 connectionWithPeerFailed:(id)arg2 withError:(id)arg3;
 - (void)session:(id)arg1 didFailWithError:(id)arg2;
 - (void)session:(id)arg1 initiateRelay:(id)arg2 forPeer:(id)arg3;
+- (void)session:(id)arg1 networkStatisticsChanged:(id)arg2;
 - (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3;
 - (void)session:(id)arg1 updateRelay:(id)arg2 forPeer:(id)arg3;
 - (id)session;
+- (void)setChooseHostCompletion:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setHostScores:(id)arg1;
 - (void)setInviteDelegate:(id)arg1;
+- (void)setNeedHostScore:(BOOL)arg1;
+- (void)setNetworkStatistics:(id)arg1;
 - (void)setOpponentIDs:(id)arg1;
 - (void)setPacketSequenceNumber:(unsigned int)arg1;
 - (void)setPlayerEventQueues:(id)arg1;
 - (void)setPlayerPushTokens:(id)arg1;
 - (void)setReinvitedPlayers:(id)arg1;
+- (void)setRematchCount:(int)arg1;
+- (void)setRematchID:(id)arg1;
 - (void)setSelfBlob:(id)arg1;
 - (void)setSession:(id)arg1;
 - (void)setVersion:(unsigned char)arg1;
@@ -104,6 +141,7 @@
 - (void)updateRelayConnectionForPlayer:(id)arg1;
 - (void)updateRelayInfo:(id)arg1 forPlayer:(id)arg2;
 - (void)updateRelayInfoFromCallback:(id)arg1 forPlayer:(id)arg2;
+- (void)updateRematchID;
 - (void)updateStateForPlayer:(id)arg1 state:(int)arg2;
 - (unsigned char)version;
 - (id)voiceChatWithName:(id)arg1;

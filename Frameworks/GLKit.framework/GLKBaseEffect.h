@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GLKit.framework/GLKit
  */
 
-@class NSArray, GLKEffectPropertyConstantColor, GLKEffectPropertyMaterial, GLKEffect, NSMutableArray, GLKEffectPropertyFog, GLKEffectPropertyTransform, GLKEffectPropertyTexture, NSString, GLKEffectPropertyLight;
+@class NSArray, GLKEffectPropertyConstantColor, GLKEffectPropertyMaterial, GLKEffect, NSMutableArray, GLKEffectPropertyFog, GLKEffectPropertyTransform, NSString, GLKEffectPropertyTexture, GLKEffectPropertyLight;
 
 @interface GLKBaseEffect : NSObject <GLKNamedEffect> {
     union _GLKVector4 { 

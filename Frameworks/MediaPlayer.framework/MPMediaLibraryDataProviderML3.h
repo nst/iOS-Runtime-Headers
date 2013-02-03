@@ -2,13 +2,16 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class ML3MusicLibrary, NSArray, NSString, NSSet;
+@class ML3MusicLibrary, NSArray, NSString, NSObject<OS_dispatch_queue>, NSSet;
 
 @interface MPMediaLibraryDataProviderML3 : NSObject <MPMediaLibraryDataProviderPrivate> {
     unsigned int _backgroundTask;
     unsigned int _backgroundTaskCount;
-    struct dispatch_queue_s { } *_backgroundTaskQueue;
+    NSObject<OS_dispatch_queue> *_backgroundTaskQueue;
+    BOOL _hasScheduledEventPosting;
     ML3MusicLibrary *_library;
+    int _refreshState;
+    NSString *_uniqueIdentifier;
 }
 
 @property(readonly) BOOL isGeniusEnabled;
@@ -19,22 +22,29 @@
 @property(readonly) NSSet * propertiesToCache;
 @property(readonly) BOOL requiresAuthentication;
 @property(readonly) NSString * syncValidity;
+@property(copy) NSString * ubiquitousBookmarkDomainVersionAnchorToken;
+@property unsigned long long ubiquitousBookmarkEntityRevisionAnchor;
 @property(readonly) NSString * uniqueIdentifier;
 
 + (id)_unadjustedValueForMPProperty:(id)arg1 withDefaultValue:(id)arg2;
 
+- (void)_coalesceEvents;
 - (void)_displayValuesDidChange:(id)arg1;
 - (void)_dynamicPropertiesDidChange:(id)arg1;
+- (void)_invisiblePropertiesDidChange:(id)arg1;
 - (void)_libraryContentsDidChange:(id)arg1;
-- (void)_loadEntitiesUsingFetchRequest:(id)arg1 entityQuery:(id)arg2 writeBlock:(id)arg3;
+- (void)_libraryUIDDidChange:(id)arg1;
 - (void)_loadProperties:(id)arg1 ofEntityWithIdentifier:(long long)arg2 ML3EntityClass:(Class)arg3 completionBlock:(id)arg4;
 - (void)_loadValueForAggregateFunction:(id)arg1 entityClass:(Class)arg2 property:(id)arg3 query:(id)arg4 completionBlock:(id)arg5;
+- (void)_postEvents;
 - (BOOL)_removeEntitiesWithIdentifiers:(long long*)arg1 count:(unsigned int)arg2 entityClass:(Class)arg3;
 - (void)_syncGenerationDidChange:(id)arg1;
 - (void)addItemWithIdentifier:(long long)arg1 toPlaylistWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
 - (void)addItemsWithIdentifiers:(long long*)arg1 count:(unsigned int)arg2 toPlaylistWithIdentifier:(long long)arg3 completionBlock:(id)arg4;
 - (long long)addPlaylistWithValuesForProperties:(id)arg1;
 - (id)adjustedValueForMPProperty:(id)arg1 ofEntity:(id)arg2 withDefaultValue:(id)arg3;
+- (id)collectionResultSetForQueryCriteria:(id)arg1;
+- (unsigned long long)currentEntityRevision;
 - (void)dealloc;
 - (void)downloadItemWithIdentifier:(long long)arg1 completionHandler:(id)arg2;
 - (void)enumerateCollectionIdentifiersForQueryCriteria:(id)arg1 cancelBlock:(id)arg2 usingBlock:(id)arg3;
@@ -42,16 +52,19 @@
 - (void)enumerateItemIdentifiersForQueryCriteria:(id)arg1 cancelBlock:(id)arg2 usingBlock:(id)arg3;
 - (BOOL)hasGeniusMixes;
 - (BOOL)hasMediaOfType:(int)arg1;
+- (BOOL)hasUniversalBookmarkableItems;
 - (id)initWithLibrary:(id)arg1;
 - (BOOL)itemExistsWithPersistentID:(unsigned long long)arg1;
+- (long long)itemPersistentIDForStoreID:(long long)arg1;
+- (id)itemResultSetForQueryCriteria:(id)arg1;
 - (id)lastModifiedDate;
 - (id)library;
 - (void)loadBestArtworkImageDataForSize:(struct CGSize { float x1; float x2; })arg1 ofItemWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
 - (void)loadBestTimedArtworkImageDataForSize:(struct CGSize { float x1; float x2; })arg1 ofItemWithIdentifier:(long long)arg2 atPlaybackTime:(double)arg3 completionBlock:(id)arg4;
-- (void)loadCollectionsUsingFetchRequest:(id)arg1;
-- (void)loadItemsUsingFetchRequest:(id)arg1;
-- (void)loadProperties:(id)arg1 ofCollectionWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
+- (void)loadProperties:(id)arg1 ofCollectionWithIdentifier:(long long)arg2 groupingType:(int)arg3 completionBlock:(id)arg4;
 - (void)loadProperties:(id)arg1 ofItemWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
+- (void)loadQueryCriteria:(id)arg1 countOfCollectionsWithCompletionBlock:(id)arg2;
+- (void)loadQueryCriteria:(id)arg1 countOfItemsWithCompletionBlock:(id)arg2;
 - (void)loadQueryCriteria:(id)arg1 hasCollectionsWithCompletionBlock:(id)arg2;
 - (void)loadQueryCriteria:(id)arg1 hasItemsWithCompletionBlock:(id)arg2;
 - (void)loadValueForAggregateFunction:(id)arg1 onCollectionsForProperty:(id)arg2 queryCriteria:(id)arg3 completionBlock:(id)arg4;
@@ -59,9 +72,12 @@
 - (void)moveItemFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2 inPlaylistWithIdentifier:(long long)arg3 completionBlock:(id)arg4;
 - (id)name;
 - (void)performBackgroundTaskWithBlock:(id)arg1;
+- (void)performReadTransactionWithBlock:(id)arg1;
 - (BOOL)performTransactionWithBlock:(id)arg1;
+- (void)performUbiquitousDatabaseUpdateTransaction:(id)arg1;
 - (BOOL)playlistExistsWithPersistentID:(unsigned long long)arg1;
 - (long long)playlistGeneration;
+- (void)populateLocationPropertiesOfItemWithIdentifier:(long long)arg1 withPath:(id)arg2;
 - (id)preferredAudioLanguages;
 - (id)preferredSubtitleLanguages;
 - (void)removeAllItemsInPlaylistWithIdentifier:(long long)arg1;
@@ -69,13 +85,17 @@
 - (BOOL)removeItemsWithIdentifiers:(long long*)arg1 count:(unsigned int)arg2;
 - (BOOL)removePlaylistWithIdentifier:(long long)arg1;
 - (void)setLibrary:(id)arg1;
+- (void)setUbiquitousBookmarkDomainVersionAnchorToken:(id)arg1;
+- (void)setUbiquitousBookmarkEntityRevisionAnchor:(unsigned long long)arg1;
+- (BOOL)setValue:(id)arg1 forProperty:(id)arg2 ofCollectionWithIdentifier:(long long)arg3 groupingType:(int)arg4;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2 ofItemWithIdentifier:(long long)arg3;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2 ofPlaylistWithIdentifier:(long long)arg3;
 - (unsigned long long)syncGenerationID;
 - (id)syncValidity;
-- (double)timestampForAppliedUbiquitousBookmarkKey:(id)arg1;
+- (id)ubiquitousBookmarkDomainVersionAnchorToken;
+- (unsigned long long)ubiquitousBookmarkEntityRevisionAnchor;
 - (id)uniqueIdentifier;
-- (void)updateUbiquitousBookmarksWithKey:(id)arg1 bookmarkMediaValue:(id)arg2 timestamp:(double)arg3;
+- (void)updateUbiquitousValuesForTrackWithKey:(id)arg1 mediaPropertyValues:(id)arg2 timestamp:(double)arg3;
 - (BOOL)writable;
 
 @end

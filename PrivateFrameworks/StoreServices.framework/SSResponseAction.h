@@ -7,20 +7,25 @@
 @interface SSResponseAction : NSObject <NSCopying> {
     SSAccount *_account;
     NSString *_actionType;
+    NSString *_clientIdentifier;
     NSString *_creditsString;
     SSDialog *_dialog;
     NSString *_footerSection;
     NSURL *_url;
+    int _urlBagType;
 }
 
 @property(readonly) NSURL * URL;
+@property(readonly) int URLBagType;
 @property(readonly) SSAccount * account;
 @property(readonly) NSString * actionType;
+@property(readonly) NSString * clientIdentifier;
 @property(readonly) NSString * creditsString;
 @property(readonly) SSDialog * dialog;
 @property(readonly) NSString * footerSection;
 
 + (id)_actionWithActionType:(id)arg1;
++ (id)_checkInAppQueueActionWithClientID:(id)arg1 environment:(id)arg2;
 + (id)_dialogActionWithDialog:(id)arg1;
 + (id)_invalidateURLBagsAction;
 + (id)_selectFooterActionWithSection:(id)arg1;
@@ -29,8 +34,10 @@
 + (id)_urlActionWithType:(id)arg1 URL:(id)arg2;
 
 - (id)URL;
+- (int)URLBagType;
 - (id)account;
 - (id)actionType;
+- (id)clientIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creditsString;
 - (void)dealloc;

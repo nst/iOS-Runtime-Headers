@@ -13,6 +13,7 @@
     NSString *_containerPath;
     SSItemContentRating *_contentRating;
     NSNumber *_itemIdentifier;
+    BOOL _profileValidated;
     NSString *_softwareType;
     NSNumber *_storeFrontIdentifier;
     NSNumber *_versionIdentifier;
@@ -27,6 +28,7 @@
 @property(copy) NSString * containerPath;
 @property(copy) SSItemContentRating * contentRating;
 @property(retain) NSNumber * itemIdentifier;
+@property(getter=isProfileValidated) BOOL profileValidated;
 @property(copy) NSString * softwareType;
 @property(retain) NSNumber * storeFrontIdentifier;
 @property(retain) NSNumber * versionIdentifier;
@@ -42,11 +44,12 @@
 - (id)bundleVersion;
 - (id)containerPath;
 - (id)contentRating;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
 - (id)initWithMobileInstallationDictionary:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
+- (BOOL)isProfileValidated;
 - (id)itemIdentifier;
 - (void)setAccountDSID:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
@@ -56,6 +59,7 @@
 - (void)setContainerPath:(id)arg1;
 - (void)setContentRating:(id)arg1;
 - (void)setItemIdentifier:(id)arg1;
+- (void)setProfileValidated:(BOOL)arg1;
 - (void)setSoftwareType:(id)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;
 - (void)setVersionIdentifier:(id)arg1;

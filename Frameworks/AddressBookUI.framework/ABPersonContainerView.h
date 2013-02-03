@@ -2,16 +2,56 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPersonTableViewDataSource;
+@class ABPersonTableView, UISegmentedControl, ABPersonOverlayingContainerView, UIImageView, ABPersonTableViewDataSource, UIScrollView<ABPersonTabsScrollView>, UIView;
 
-@interface ABPersonContainerView : UIView {
+@interface ABPersonContainerView : UIView <ABPersonTabsLayoutManager> {
+    UISegmentedControl *_contentSwitchingTabs;
+    UIImageView *_contentSwitchingTabsBorder;
+    UIImageView *_contentSwitchingTabsPocketShadow;
     ABPersonTableViewDataSource *_dataSource;
+    BOOL _hidesContentSwitchingTabs;
+    UIView *_nonScrollableHeaderView;
+    ABPersonOverlayingContainerView *_overlayingContainerView;
+    ABPersonTableView *_tableView;
 }
 
+@property(retain) UISegmentedControl * contentSwitchingTabs;
+@property(retain) UIImageView * contentSwitchingTabsBorder;
+@property(retain) UIImageView * contentSwitchingTabsPocketShadow;
+@property(readonly) UIScrollView<ABPersonTabsScrollView> * currentScrollView;
 @property ABPersonTableViewDataSource * dataSource;
+@property BOOL hidesContentSwitchingTabs;
+@property(retain) UIView * nonScrollableHeaderView;
+@property(retain) ABPersonOverlayingContainerView * overlayingContainerView;
+@property(retain) ABPersonTableView * tableView;
 
+- (id)contentSwitchingTabs;
+- (id)contentSwitchingTabsBorder;
+- (id)contentSwitchingTabsPocketShadow;
+- (id)currentScrollView;
 - (id)dataSource;
+- (void)dealloc;
+- (void)didChangeContentOffset:(struct CGPoint { float x1; float x2; })arg1 inScrollView:(id)arg2;
+- (float)heightForHeaderAndContentSwitchingTabs;
+- (float)heightNeededForContentSwitchingTabs;
+- (BOOL)hidesContentSwitchingTabs;
+- (void)layoutSubviews;
+- (void)moveContentSwitchingTabsAboveView:(id)arg1 inScrollView:(id)arg2;
+- (id)nonScrollableHeaderView;
+- (id)overlayingContainerView;
+- (id)prepareToRestoreTabsPosition;
+- (void)repositionContentSwitchingTabs;
+- (void)restoreTabsPosition:(id)arg1;
+- (void)setContentSwitchingTabs:(id)arg1;
+- (void)setContentSwitchingTabsBorder:(id)arg1;
+- (void)setContentSwitchingTabsPocketShadow:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHidesContentSwitchingTabs:(BOOL)arg1;
+- (void)setNonScrollableHeaderView:(id)arg1;
+- (void)setOverlayingContainerView:(id)arg1;
+- (void)setTableView:(id)arg1;
+- (id)tableView;
+- (id)viewContainingHeaderView;
 
 @end

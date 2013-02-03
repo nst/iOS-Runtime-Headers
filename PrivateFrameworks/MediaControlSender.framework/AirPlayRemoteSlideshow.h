@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MediaControlSender.framework/MediaControlSender
  */
 
-@class MediaControlClient, <AirPlayRemoteSlideshowDelegate>;
+@class <AirPlayRemoteSlideshowDelegate>, MediaControlClient, NSObject<OS_dispatch_queue>;
 
 @interface AirPlayRemoteSlideshow : NSObject {
     MediaControlClient *_client;
     <AirPlayRemoteSlideshowDelegate> *_delegate;
-    struct dispatch_queue_s { } *_internalQueue;
+    NSObject<OS_dispatch_queue> *_internalQueue;
     double _startTime;
     BOOL _started;
-    struct dispatch_queue_s { } *_userQueue;
+    NSObject<OS_dispatch_queue> *_userQueue;
 }
 
 @property <AirPlayRemoteSlideshowDelegate> * delegate;
@@ -22,7 +22,7 @@
 - (void)getFeaturesWithOptions:(unsigned int)arg1 completion:(id)arg2;
 - (id)init;
 - (void)setDelegate:(id)arg1;
-- (void)setDispatchQueue:(struct dispatch_queue_s { }*)arg1;
+- (void)setDispatchQueue:(id)arg1;
 - (void)setHost:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)startWithOptions:(id)arg1 completion:(id)arg2;

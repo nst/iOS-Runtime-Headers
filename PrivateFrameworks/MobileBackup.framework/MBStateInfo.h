@@ -4,7 +4,7 @@
 
 @class NSError, NSDate;
 
-@interface MBStateInfo : NSObject {
+@interface MBStateInfo : NSObject <NSCoding, NSCopying> {
     NSDate *_date;
     NSError *_error;
     unsigned int _estimatedTimeRemaining;

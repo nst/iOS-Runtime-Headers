@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSOperationQueue, NSThread;
+@class NSObject<OS_dispatch_queue>;
 
 @interface GraphRenderer : NSObject {
-    NSOperationQueue *_queue;
-    NSThread *_thread;
+    BOOL _cancelled;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
-+ (id)sharedInstance;
++ (void)clearSharedRenderer;
++ (id)sharedRenderer;
 
-- (void)cancelAllOperations;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)init;
 - (void)performRenderOperation:(id)arg1;
-- (void)threadMain;
 
 @end

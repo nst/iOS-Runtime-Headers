@@ -15,6 +15,7 @@
 
 @property <MSSubscribeStorageProtocolDelegate> * delegate;
 
+- (void).cxx_destruct;
 - (void)_getItemDone:(unsigned long long)arg1 path:(id)arg2 error:(id)arg3;
 - (void)_requestCompleted;
 - (void)_tellDelegateProtocolDidFinishRetrievingAssetParams:(id)arg1;

@@ -20,7 +20,6 @@
 + (id)connectionWithRequest:(id)arg1 delegate:(id)arg2;
 + (struct __CFRunLoop { }*)resourceLoaderRunLoop;
 + (void)sendAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-+ (id)sendSynchronousRequest:(id)arg1 allowRedirects:(BOOL)arg2 returningResponse:(id*)arg3 error:(id*)arg4;
 + (id)sendSynchronousRequest:(id)arg1 returningResponse:(id*)arg2 error:(id*)arg3;
 
 - (id)_cfInternal;

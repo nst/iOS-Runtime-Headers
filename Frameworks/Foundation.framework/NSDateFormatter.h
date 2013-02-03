@@ -19,11 +19,15 @@
 
 - (id)AMSymbol;
 - (id)PMSymbol;
+- (void)_clearFormatter;
 - (id)_dateFormat;
 - (void)_regenerateFormatter;
+- (void)_regenerateFormatterIfAbsent;
 - (void)_reset;
 - (void)_setDateFormat:(id)arg1;
 - (void)_setIsLenient:(BOOL)arg1;
+- (void)_setUsesCharacterDirection:(BOOL)arg1;
+- (BOOL)_usesCharacterDirection;
 - (id)calendar;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateFormat;

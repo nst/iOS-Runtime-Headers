@@ -7,6 +7,7 @@
 @interface MKUserLocationInternal : NSObject {
     <MKUserLocationAnnotation> *_annotation;
     <MKAnnotation> *annotation;
+    double course;
     CLLocation *fixedLocation;
     CLHeading *heading;
     CLLocation *location;
@@ -19,6 +20,7 @@
 }
 
 @property(readonly) <MKAnnotation> * annotation;
+@property double course;
 @property(retain) CLLocation * fixedLocation;
 @property(retain) CLHeading * heading;
 @property(retain) CLLocation * location;
@@ -30,11 +32,13 @@
 @property(getter=isUpdating) BOOL updating;
 
 - (id)annotation;
+- (double)course;
 - (id)fixedLocation;
 - (id)heading;
 - (BOOL)isUpdating;
 - (id)location;
 - (id)predictedLocation;
+- (void)setCourse:(double)arg1;
 - (void)setFixedLocation:(id)arg1;
 - (void)setHeading:(id)arg1;
 - (void)setLocation:(id)arg1;

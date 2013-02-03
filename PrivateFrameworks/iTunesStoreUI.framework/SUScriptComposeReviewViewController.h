@@ -12,11 +12,9 @@
 + (id)webScriptNameForKey:(const char *)arg1;
 
 - (id)_className;
-- (id)_copyReview;
-- (void)_initWithScriptReview:(id)arg1;
 - (id)attributeKeys;
 - (id)init;
-- (id)initWithScriptReview:(id)arg1;
+- (id)initWithScriptReview:(id)arg1 clientInterface:(id)arg2;
 - (id)newNativeViewController;
 - (id)review;
 - (id)scriptAttributeKeys;

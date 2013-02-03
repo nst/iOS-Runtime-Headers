@@ -14,6 +14,7 @@
 + (BOOL)onTheGoEnabled;
 + (void)setBoolValue:(BOOL)arg1 forKey:(id)arg2;
 + (void)setEnumValue:(int)arg1 forKey:(id)arg2;
++ (void)setValue:(id)arg1 forKey:(id)arg2 postChangeNotification:(BOOL)arg3;
 + (void)setValue:(id)arg1 forKey:(id)arg2;
 + (void)synchronize;
 + (id)valueForKey:(id)arg1;

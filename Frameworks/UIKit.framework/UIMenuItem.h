@@ -15,6 +15,7 @@
 @property(copy) NSString * title;
 
 - (SEL)action;
+- (void)dealloc;
 - (BOOL)dontDismiss;
 - (id)initWithTitle:(id)arg1 action:(SEL)arg2;
 - (void)setAction:(SEL)arg1;

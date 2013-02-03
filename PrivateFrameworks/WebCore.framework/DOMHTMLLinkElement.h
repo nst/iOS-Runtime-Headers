@@ -7,7 +7,7 @@
 @interface DOMHTMLLinkElement : DOMHTMLElement {
 }
 
-@property(copy,readonly) NSURL * absoluteLinkURL;
+@property(readonly) NSURL * absoluteLinkURL;
 @property(copy) NSString * charset;
 @property BOOL disabled;
 @property(copy) NSString * href;
@@ -15,7 +15,7 @@
 @property(copy) NSString * media;
 @property(copy) NSString * rel;
 @property(copy) NSString * rev;
-@property(retain,readonly) DOMStyleSheet * sheet;
+@property(readonly) DOMStyleSheet * sheet;
 @property(copy) NSString * target;
 @property(copy) NSString * type;
 

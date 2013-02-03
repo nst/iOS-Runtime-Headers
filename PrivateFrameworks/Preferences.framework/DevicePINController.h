@@ -37,11 +37,11 @@
 - (void)_updateErrorTextAndFailureCount:(BOOL)arg1;
 - (void)_updatePINButtons;
 - (void)_updateUI;
+- (void)adjustButtonsForPasswordLength:(unsigned int)arg1;
 - (struct __CFString { }*)blockTimeIntervalKey;
 - (struct __CFString { }*)blockedStateKey;
 - (void)cancelButtonTapped;
 - (BOOL)completedInputIsValid:(id)arg1;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)dealloc;
 - (struct __CFString { }*)defaultsID;
 - (struct __CFString { }*)failedAttemptsKey;
@@ -51,6 +51,7 @@
 - (void)performActionAfterPINEntry;
 - (void)performActionAfterPINRemove;
 - (void)performActionAfterPINSet;
+- (struct CGSize { float x1; float x2; })pinContentSizeForViewInPopover;
 - (void)pinEntered:(id)arg1;
 - (id)pinInstructionsPrompt;
 - (id)pinInstructionsPromptFont;
@@ -63,6 +64,7 @@
 - (void)setPane:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (BOOL)simplePIN;
+- (id)stringsBundle;
 - (id)stringsTable;
 - (void)suspend;
 - (BOOL)useProgressiveDelays;

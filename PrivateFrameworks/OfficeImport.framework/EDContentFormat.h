@@ -24,7 +24,7 @@
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToContentFormat:(id)arg1;
-- (unsigned int)key;
+- (int)key;
 - (bool)referenced;
 - (void)setFormatId:(unsigned int)arg1;
 - (void)setReferenced:(bool)arg1;

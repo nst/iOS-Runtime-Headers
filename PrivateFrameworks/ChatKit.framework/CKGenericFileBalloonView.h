@@ -2,48 +2,45 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIImageView, UILabel, NSString, UIImage;
+@class UIImageView, UIImage, NSString, UIView<CKTextBalloonContentView>;
 
-@interface CKGenericFileBalloonView : CKBalloonView {
+@interface CKGenericFileBalloonView : _CKTextBalloonView {
     UIImageView *_iconImageView;
-    UILabel *_subtextLabel;
-    UILabel *_textLabel;
+    UIView<CKTextBalloonContentView> *_subtextView;
 }
 
 @property(retain) UIImage * icon;
 @property(retain) UIImageView * iconImageView;
 @property(copy) NSString * subtext;
-@property(retain) UILabel * subtextLabel;
+@property(retain) UIView<CKTextBalloonContentView> * subtextView;
 @property(copy) NSString * text;
-@property(retain) UILabel * textLabel;
 
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsetsForBalloonOrientation:(int)arg1;
 + (float)entryFieldBalloonAdditionalHeight;
 + (struct CGPoint { float x1; float x2; })entryFieldBalloonOffset;
-+ (float)fixedHeight;
-+ (float)heightForText:(id)arg1 width:(float)arg2 includeBuffers:(BOOL)arg3;
-+ (id)textColorForBalloonOrientation:(int)arg1 outgoingBalloonColor:(int)arg2;
++ (BOOL)fixedWidth;
++ (BOOL)needsSingleTapGestureRecognizer;
 
+- (void)copyToPasteboard;
 - (void)dealloc;
+- (id)description;
 - (id)icon;
 - (id)iconImageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)setIcon:(id)arg1;
 - (void)setIconImageView:(id)arg1;
 - (void)setSubtext:(id)arg1;
-- (void)setSubtextLabel:(id)arg1;
+- (void)setSubtextView:(id)arg1;
 - (void)setText:(id)arg1;
-- (void)setTextLabel:(id)arg1;
-- (BOOL)shouldHaveAccessoryDiclosure;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)subtext;
-- (id)subtextLabel;
+- (id)subtextView;
 - (id)text;
-- (id)textLabel;
-- (float)tightenedWidth;
+- (id)textColor;
+- (void)updateFontSize;
 - (void)updateTextColor;
-- (void)updateTextShadowColor;
+- (void)updateTextShadow;
 
 @end

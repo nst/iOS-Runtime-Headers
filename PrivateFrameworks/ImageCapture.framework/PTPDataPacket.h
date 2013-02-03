@@ -16,7 +16,7 @@
     long long _offsetInBuffer;
     unsigned short _operationCode;
     } _range;
-    unsigned int _transactionID;
+    unsigned long _transactionID;
 }
 
 - (long long)bufferSize;

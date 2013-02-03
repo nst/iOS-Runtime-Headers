@@ -14,6 +14,7 @@
 @property(getter=isCompatibleWithSavedPhotosAlbum,readonly) BOOL compatibleWithSavedPhotosAlbum;
 @property(getter=isComposable,readonly) BOOL composable;
 @property(readonly) NSURL * downloadDestinationURL;
+@property(readonly) unsigned long long downloadToken;
 @property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
 @property(getter=isExportable,readonly) BOOL exportable;
 @property(getter=_figAsset,readonly) struct OpaqueFigAsset { }* figAsset;
@@ -48,6 +49,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)downloadDestinationURL;
+- (unsigned long long)downloadToken;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (BOOL)hasProtectedContent;
 - (id)init;

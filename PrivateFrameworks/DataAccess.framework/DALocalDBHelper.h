@@ -6,6 +6,8 @@
    See Warning(s) below.
  */
 
+@class NoteContext;
+
 @interface DALocalDBHelper : NSObject {
     int _abConnectionCount;
     void *_abDB;
@@ -14,6 +16,8 @@
     int _calConnectionCount;
     struct CalDatabase { } *_calDB;
     id _calUnitTestCallbackBlock;
+    int _noteConnectionCount;
+    NoteContext *_noteDB;
 }
 
 + (void)abSetTestABDBDir:(id)arg1;
@@ -40,9 +44,13 @@
 - (struct CalDatabase { }*)calDB;
 - (void)calOpenDB;
 - (void)calOpenDBWithChangeLogging;
-- (void)calProcessAddedRecords;
 - (BOOL)calSaveDB;
 - (BOOL)calSaveDBAndFlushCaches;
 - (void)calUnitTestsSetCallbackBlockForSave:(id)arg1;
+- (BOOL)noteCloseDBAndSave:(BOOL)arg1;
+- (int)noteConnectionCount;
+- (id)noteDB;
+- (void)noteOpenDB;
+- (BOOL)noteSaveDB;
 
 @end

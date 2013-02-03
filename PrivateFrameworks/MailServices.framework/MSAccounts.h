@@ -7,13 +7,12 @@
 
 + (void)accountValuesForKeys:(id)arg1 completionBlock:(id)arg2;
 + (void)accountValuesForKeys:(id)arg1 launchMobileMail:(BOOL)arg2 completionBlock:(id)arg3;
++ (BOOL)canSendMail;
++ (id)customSignatureForSendingEmailAddress:(id)arg1;
++ (BOOL)deleteAccountsWithUniqueIdentifiers:(id)arg1 error:(id*)arg2;
 + (BOOL)hasActiveAccounts;
-+ (id)smi_serverCommandName;
-+ (void)updateAccounts:(id)arg1 completionBlock:(id)arg2;
-+ (void)updateAccounts:(id)arg1 launchMobileMail:(BOOL)arg2 completionBlock:(id)arg3;
 
 - (void)_listAccountKeys:(id)arg1 handler:(id)arg2;
-- (void)_smi_notifyClientDidFinishWithError:(id)arg1;
-- (void)_updateAccounts:(id)arg1 handler:(id)arg2;
+- (void)_simulateServicesMethod:(id)arg1 arguments:(id)arg2 callback:(id)arg3;
 
 @end

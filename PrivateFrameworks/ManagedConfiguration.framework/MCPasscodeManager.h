@@ -35,6 +35,7 @@
 - (void)lockDevice;
 - (int)newPasscodeEntryScreenType;
 - (BOOL)passcode:(id)arg1 compliesWithPolicyCheckHistory:(BOOL)arg2 outError:(id*)arg3;
+- (void)passcodeExpiryDateCompletionBlock:(id)arg1;
 - (id)passcodeExpiryDateOutError:(id*)arg1;
 - (BOOL)unlockDeviceWithPasscode:(id)arg1 outError:(id*)arg2;
 

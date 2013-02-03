@@ -38,6 +38,7 @@
 + (id)internalRepresentationForPlayer:(id)arg1 game:(id)arg2;
 + (void)loadGameRecordForPlayer:(id)arg1 game:(id)arg2 withCompletionHandler:(id)arg3;
 + (void)loadGameRecordsForPlayer:(id)arg1 games:(id)arg2 withCompletionHandler:(id)arg3;
++ (void)partionGameRecords:(id)arg1 returniOS:(id*)arg2 returnMac:(id*)arg3;
 + (void)updateGameRecords:(id)arg1 withCompletionHandlerAndError:(id)arg2;
 
 - (void)dealloc;
@@ -59,7 +60,6 @@
 - (void)setInternal:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (void)submitRating:(float)arg1 withCompletionHandler:(id)arg2;
 - (BOOL)supportsAchievements;
 - (BOOL)supportsLeaderboards;
 - (id)valueForUndefinedKey:(id)arg1;

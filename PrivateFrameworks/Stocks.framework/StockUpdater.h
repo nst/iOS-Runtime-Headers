@@ -2,48 +2,42 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSError, NSArray;
+@class <StockUpdaterDelegate>, NSArray, QuoteParserData, NSError, NSMutableDictionary;
 
 @interface StockUpdater : XMLHTTPRequest {
+    NSMutableDictionary *_cacheDurationForParts;
+    <StockUpdaterDelegate> *_delegate;
     BOOL _ignoreNewRequests;
     BOOL _isComprehensive;
     NSError *_lastError;
+    QuoteParserData *_quoteParserData;
     NSArray *_requestStocks;
-    int _responseListCount;
-    BOOL _useAlternateDataSource;
 }
 
+@property <StockUpdaterDelegate> * delegate;
 @property BOOL isComprehensive;
+@property(retain) NSError * lastError;
 @property(retain) NSArray * requestStocks;
-@property BOOL useAlternateDataSource;
 
-+ (id)_comprehensiveUpdaterAlternate:(BOOL)arg1;
-+ (void)_createUpdatersIfNeeded;
-+ (id)_listUpdaterAlternate:(BOOL)arg1;
-+ (void)cancel;
-+ (void)failWithError:(id)arg1;
-+ (BOOL)hadError;
-+ (BOOL)isLoading;
-+ (void)resetUpdaters;
-+ (void)updateAllStocksBasic;
-+ (void)updateAllStocksComprehensive;
-+ (void)updateStockComprehensive:(id)arg1;
-
-- (void)_setLastError:(id)arg1;
+- (void).cxx_destruct;
 - (id)_symbolTagsForRequestStocks;
 - (void)_updateWithPartsTag:(id)arg1 forStocks:(id)arg2;
 - (void)_updateWithPostBody:(id)arg1;
-- (void)dealloc;
+- (id)aggregateDictionaryDomain;
+- (void)cancel;
+- (id)delegate;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
 - (BOOL)hadError;
 - (id)init;
 - (BOOL)isComprehensive;
+- (id)lastError;
 - (int)parseData:(id)arg1;
 - (id)requestStocks;
+- (void)setCacheTimeInterval:(double)arg1 forPartsTag:(id)arg2;
+- (void)setDelegate:(id)arg1;
 - (void)setIsComprehensive:(BOOL)arg1;
+- (void)setLastError:(id)arg1;
 - (void)setRequestStocks:(id)arg1;
-- (void)setUseAlternateDataSource:(BOOL)arg1;
-- (BOOL)useAlternateDataSource;
 
 @end

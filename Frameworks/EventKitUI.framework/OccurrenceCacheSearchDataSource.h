@@ -2,54 +2,27 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class CalSearch, NSMutableArray;
+@class NSMutableArray, EKOccurrenceCacheSearch;
 
-@interface OccurrenceCacheSearchDataSource : OccurrenceCacheDataSource <CalSearchDataSink> {
+@interface OccurrenceCacheSearchDataSource : OccurrenceCacheDataSource {
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    CalSearch *_calSearch;
-    } _dataSourceLock;
-    BOOL _resetting;
-    NSMutableArray *_results;
+    NSMutableArray *_processingCachedDays;
     } _resultsLock;
-    struct dispatch_queue_s { } *_searchQueue;
-    struct dispatch_group_s { } *_searchQueueGroup;
-    BOOL _searching;
+    EKOccurrenceCacheSearch *_search;
 }
 
-- (void)_addResult:(id)arg1;
-- (struct __CFArray { }*)_cachedDayIndexes;
-- (void)_clearResults;
-- (int)_lockedTotalOccurrencesCount;
-- (void)_notifyThatTheDateToShowResultsWasFound:(id)arg1;
-- (void)_processResults;
-- (void)_tellMobileCalToUpdateItsUI;
-- (int)cachedDayCount;
-- (int)cachedOccurrenceCount;
-- (int)cachedOccurrenceCountOnOrAfterDate:(double)arg1;
-- (void)calSearch:(id)arg1 foundOccurrences:(struct __CFArray { }*)arg2 cachedDays:(struct __CFArray { }*)arg3 cachedDaysIndexes:(struct __CFArray { }*)arg4;
-- (void)calSearch:(id)arg1 showResultsStartingOnDate:(double)arg2;
-- (void)calSearchComplete:(id)arg1;
-- (int)countOfOccurrencesOnDay:(double)arg1;
-- (int)dayCountBeforeDay:(double)arg1;
+- (id)_cachedDays;
+- (void)_setCachedDaysAndNotify:(id)arg1 withDateToScrollTo:(id)arg2;
+- (int)countOfOccurrencesAtDayIndex:(int)arg1;
 - (void)dealloc;
-- (void)dumpInfo;
-- (id)initWithDatabase:(struct CalDatabase { }*)arg1 filter:(struct CalFilter { }*)arg2;
-- (void)invalidateCachedDayIndexes;
-- (void)invalidateCachedDays;
+- (id)initWithEventStore:(id)arg1 calendars:(id)arg2;
+- (void)invalidate;
 - (void)invalidateCachedOccurrences;
-- (void)loadOccurrencesForRange:(struct { int x1; int x2; })arg1;
-- (void)releaseResources;
-- (void)restartSearchWithTerm:(id)arg1;
-- (void)setCachedDayRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)startSearching;
+- (void)searchWithTerm:(id)arg1;
 - (void)stopSearching;
 - (BOOL)supportsFakeTodaySection;
 - (BOOL)supportsInvitations;
-- (int)totalOccurrencesCount;
 
 @end

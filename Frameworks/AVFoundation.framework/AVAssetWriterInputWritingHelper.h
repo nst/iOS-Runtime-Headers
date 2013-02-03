@@ -26,8 +26,9 @@
 - (struct __CVPixelBufferPool { }*)pixelBufferPool;
 - (void)prepareToEndSession;
 - (BOOL)prepareToFinishWritingReturningError:(id*)arg1;
-- (void)requestMediaDataWhenReadyOnQueue:(struct dispatch_queue_s { }*)arg1 usingBlock:(id)arg2;
+- (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id)arg2;
 - (int)status;
+- (int)trackID;
 - (void)transitionToTerminalStatus:(int)arg1;
 
 @end

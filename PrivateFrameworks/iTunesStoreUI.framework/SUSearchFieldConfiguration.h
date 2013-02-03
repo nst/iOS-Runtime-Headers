@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
+@class NSString, SUClientInterface;
 
 @interface SUSearchFieldConfiguration : NSObject <NSCopying> {
     NSString *_cancelString;
+    SUClientInterface *_clientInterface;
     struct __CFDictionary { } *_hintURLs;
     int _location;
     NSString *_placeholder;
@@ -13,6 +14,8 @@
     struct __CFDictionary { } *_searchURLs;
     NSString *_userDefaultsKey;
     float _width;
+    float _widthLandscape;
+    float _widthPortrait;
 }
 
 @property(readonly) NSString * cancelString;
@@ -23,9 +26,10 @@
 @property(readonly) float width;
 
 + (id)defaultConfiguration;
++ (id)defaultConfigurationWithClientInterface:(id)arg1;
 
 - (id)URLRequestPropertiesWithBaseURL:(id)arg1 forNetworkType:(int)arg2;
-- (id)_initWithoutDictionary;
+- (id)_initWithClientInterface:(id)arg1;
 - (int)_locationForString:(id)arg1;
 - (id)_newQueryStringDictionaryForNetworkType:(int)arg1;
 - (struct __CFDictionary { }*)_newURLsDictionaryWithDictionary:(id)arg1;
@@ -37,6 +41,7 @@
 - (void)dealloc;
 - (id)hintsURLRequestPropertiesForNetworkType:(int)arg1;
 - (id)init;
+- (id)initWithDictionary:(id)arg1 clientInterface:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
 - (BOOL)isRootViewOnly;
 - (void)loadFromDictionary:(id)arg1;
@@ -45,5 +50,6 @@
 - (id)searchURLRequestPropertiesForNetworkType:(int)arg1;
 - (id)userDefaultsKey;
 - (float)width;
+- (float)widthForOrientation:(int)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
+@class NSString, NSArray;
 
 @interface UIKeyboardCandidate : NSObject <NSCopying> {
     NSString *_accessibilityLabel;
@@ -15,8 +15,10 @@
 @property(readonly) unsigned int deleteCount;
 @property(getter=isExtensionCandidate,readonly) BOOL extensionCandidate;
 @property(readonly) NSString * input;
-@property(readonly) NSString * insertion;
+@property(readonly) BOOL isAutocorrection;
 @property(readonly) BOOL isForShortcutConversion;
+@property(readonly) NSString * label;
+@property(readonly) NSArray * usageTrackingTypes;
 @property(readonly) unsigned int wordOriginFeedbackID;
 
 - (id)accessibilityLabel;
@@ -27,11 +29,13 @@
 - (unsigned int)deleteCount;
 - (unsigned int)hash;
 - (id)input;
-- (id)insertion;
+- (BOOL)isAutocorrection;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExtensionCandidate;
 - (BOOL)isForShortcutConversion;
+- (id)label;
 - (void)setAlternativeText:(id)arg1;
+- (id)usageTrackingTypes;
 - (unsigned int)wordOriginFeedbackID;
 
 @end

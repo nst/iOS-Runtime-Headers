@@ -19,12 +19,12 @@
 @property int bottomMargin;
 @property int height;
 @property(readonly) float imageableArea;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } imageableAreaRect;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageableAreaRect;
 @property(readonly) BOOL isBorderless;
 @property int leftMargin;
-@property(retain,readonly) NSString * localizedName;
+@property(readonly) NSString * localizedName;
 @property(retain) NSString * name;
-@property(readonly) struct CGSize { float width; float height; } paperSize;
+@property(readonly) struct CGSize { float x1; float x2; } paperSize;
 @property int rightMargin;
 @property int topMargin;
 @property int width;
@@ -55,6 +55,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (int)leftMargin;
 - (id)localizedName;
+- (id)localizedNameFromDimensions;
 - (id)name;
 - (id)nameWithoutSuffixes:(id)arg1;
 - (struct CGSize { float x1; float x2; })paperSize;

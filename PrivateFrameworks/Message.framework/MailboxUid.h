@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSNumber, MFWeakReferenceHolder, MailAccount, NSMutableArray, NSString, MessageCriterion, NSMutableDictionary, NSArray;
+@class NSArray, MFWeakReferenceHolder, MailAccount, NSMutableArray, NSString, MessageCriterion, NSMutableDictionary, NSNumber;
 
-@interface MailboxUid : NSObject {
+@interface MailboxUid : NSObject <NSCopying> {
     MFWeakReferenceHolder *_account;
     unsigned int _attributes;
     NSMutableArray *_children;
@@ -28,6 +28,7 @@
 
 + (BOOL)isDraftsMailboxType:(int)arg1;
 + (BOOL)isOutgoingMailboxType:(int)arg1;
++ (BOOL)isSentMailboxType:(int)arg1;
 + (id)specialNameForType:(int)arg1;
 
 - (id)URL;
@@ -51,7 +52,7 @@
 - (id)childWithPermanentTag:(id)arg1;
 - (id)children;
 - (int)compareWithMailboxUid:(id)arg1;
-- (id)copyWithZone:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)criterion;
 - (void)dealloc;
 - (id)depthFirstEnumerator;
@@ -83,10 +84,12 @@
 - (id)lastViewedMessageDate;
 - (id)lastViewedMessageID;
 - (unsigned int)mailboxID;
+- (BOOL)mergeWithUserInfo:(id)arg1;
 - (id)mutableCopyOfChildren;
 - (id)name;
 - (unsigned int)nonDeletedCount;
 - (unsigned int)numberOfChildren;
+- (unsigned int)numberOfDescendants;
 - (id)oldURLString;
 - (id)parent;
 - (id)pathRelativeToMailbox:(id)arg1;
@@ -119,6 +122,7 @@
 - (int)type;
 - (id)uniqueId;
 - (unsigned int)unreadCount;
+- (unsigned int)unreadCountMatchingCriterion:(id)arg1;
 - (BOOL)userInfoBoolForKey:(id)arg1;
 - (id)userInfoDictionary;
 - (id)userInfoForSerialization;

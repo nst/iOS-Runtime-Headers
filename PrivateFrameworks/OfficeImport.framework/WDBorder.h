@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSColorStub;
+@class TSUColor;
 
 @interface WDBorder : NSObject <NSCopying> {
-    NSColorStub *mColor;
+    TSUColor *mColor;
     BOOL mFrame;
     BOOL mShadow;
     unsigned char mSpace;

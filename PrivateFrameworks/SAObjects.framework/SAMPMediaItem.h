@@ -9,6 +9,7 @@
 
 @property(copy) NSString * album;
 @property(copy) NSString * artist;
+@property(copy) NSString * composer;
 @property(copy) NSString * genre;
 @property int playCount;
 @property int rating;
@@ -21,6 +22,7 @@
 
 - (id)album;
 - (id)artist;
+- (id)composer;
 - (id)encodedClassName;
 - (id)genre;
 - (id)groupIdentifier;
@@ -28,6 +30,7 @@
 - (int)rating;
 - (void)setAlbum:(id)arg1;
 - (void)setArtist:(id)arg1;
+- (void)setComposer:(id)arg1;
 - (void)setGenre:(id)arg1;
 - (void)setPlayCount:(int)arg1;
 - (void)setRating:(int)arg1;

@@ -9,6 +9,7 @@
 
 @property(copy) NSString * aceId;
 @property(copy) NSData * activationToken;
+@property(copy) NSString * connectionType;
 @property(copy) NSString * language;
 @property(copy) NSString * refId;
 @property(copy) NSData * validationData;
@@ -17,10 +18,12 @@
 + (id)createAssistantWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)activationToken;
+- (id)connectionType;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)language;
 - (void)setActivationToken:(id)arg1;
+- (void)setConnectionType:(id)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)setValidationData:(id)arg1;
 - (id)validationData;

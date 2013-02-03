@@ -29,6 +29,7 @@
 }
 
 - (struct _NSRange { unsigned int x1; unsigned int x2; })advanceToNextToken;
+- (id)allTokensForString:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfCurrentToken;

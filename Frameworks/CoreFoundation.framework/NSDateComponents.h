@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSDateComponents : NSObject <NSCopying, NSCoding> {
+@interface NSDateComponents : NSObject <NSCopying, NSSecureCoding> {
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -11,6 +11,7 @@
 + (id)namesForComponents:(unsigned int)arg1;
 + (unsigned int)smaller:(BOOL)arg1 componentsRelativeToComponent:(unsigned int)arg2;
 + (unsigned int)smallerComponentsRelativeToComponent:(unsigned int)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (id)calendar;
 - (void)clearTimeComponents;
@@ -35,6 +36,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isLeapMonth;
 - (int)minute;
 - (int)month;
 - (int)nanosecond;
@@ -45,6 +47,7 @@
 - (void)setDay:(int)arg1;
 - (void)setEra:(int)arg1;
 - (void)setHour:(int)arg1;
+- (void)setLeapMonth:(BOOL)arg1;
 - (void)setMinute:(int)arg1;
 - (void)setMonth:(int)arg1;
 - (void)setNanosecond:(int)arg1;

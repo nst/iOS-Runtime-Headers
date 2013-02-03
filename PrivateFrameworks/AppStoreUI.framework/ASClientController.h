@@ -10,11 +10,10 @@
 
 - (BOOL)composeReviewWithViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)initWithClientIdentifier:(id)arg1;
+- (id)initWithClientInterface:(id)arg1;
 - (BOOL)libraryContainsItemIdentifier:(unsigned long long)arg1;
 - (id)purchaseManager:(id)arg1 purchaseBatchForItems:(id)arg2;
 - (id)purchaseManager:(id)arg1 purchaseBatchForPurchases:(id)arg2;
-- (void)purchaseManager:(id)arg1 willAddPurchases:(id)arg2;
-- (BOOL)reportAProblemForItemIdentifier:(unsigned long long)arg1;
 - (void)setShouldExitAfterPurchases:(BOOL)arg1;
 - (BOOL)shouldExitAfterPurchases;
 

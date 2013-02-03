@@ -17,16 +17,11 @@
 @property(readonly) SUScriptMediaItem * representativeItem;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 
 - (void)_beginWatchingLibraryIfNecessary;
 - (id)_className;
-- (id)_copyItems;
-- (id)_copyMediaTypes;
-- (id)_copyRepresentativeItem;
 - (void)_libraryChangedNotification:(id)arg1;
-- (int)_mainThreadCount;
-- (void)_setItems:(id)arg1;
 - (id)attributeKeys;
 - (int)count;
 - (void)dealloc;

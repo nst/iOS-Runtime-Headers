@@ -2,8 +2,10 @@
    Image: /System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices
  */
 
+@class NSObject<OS_xpc_object>;
+
 @interface PLXPCData : NSData {
-    void *_data;
+    NSObject<OS_xpc_object> *_data;
 }
 
 - (const void*)bytes;
@@ -11,7 +13,7 @@
 - (id)debugDescription;
 - (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
 - (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)initWithXPCData:(void*)arg1;
+- (id)initWithXPCData:(id)arg1;
 - (unsigned int)length;
 
 @end

@@ -40,6 +40,7 @@
 - (void)animationDidStopAfterDelay:(id)arg1;
 - (void)back:(BOOL)arg1 save:(BOOL)arg2;
 - (id)buttonTitlesAndIndicesForPickingPreferredPhoto;
+- (BOOL)canTakePhoto;
 - (void)cancelPicker;
 - (void)chooseExisting;
 - (void)choosePhoto;

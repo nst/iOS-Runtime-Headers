@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUStructuredPage, SUShadow, SUSplitView, SUPlaceholderViewController, NSString, UIViewController, SUGradient, NSURL;
+@class SUStructuredPage, SUSplitView, SUShadow, SUPlaceholderViewController, NSString, UIViewController, SUGradient, NSURL;
 
 @interface SUSplitViewController : SUViewController {
     NSURL *_displayedURL;

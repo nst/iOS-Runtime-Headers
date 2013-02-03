@@ -4,7 +4,7 @@
 
 @class PLAlbumChangeNotification, NSIndexSet, PLFilteredAlbum, PLIndexMapper;
 
-@interface PLFilteredAlbumChangeNotification : PLAlbumChangeNotification <PLIndexMapperDataSource> {
+@interface PLFilteredAlbumChangeNotification : PLAlbumChangeNotification <PLIndexMapperDataSource, PLDerivedNotification> {
     PLFilteredAlbum *_album;
     PLAlbumChangeNotification *_backingNotification;
     NSIndexSet *_filteredIndexes;
@@ -16,7 +16,7 @@
 @property(readonly) PLIndexMapper * indexMapper;
 @property(readonly) NSIndexSet * updatedFilteredIndexes;
 
-+ (id)notificationForFilteredAlbum:(id)arg1 fromAlbumChangeNotification:(id)arg2;
++ (id)notificationForDerivedObject:(id)arg1 priorChangeState:(id)arg2 forBackingObjectNotification:(id)arg3;
 
 - (id)_changedObjects;
 - (id)_diffDescription;
@@ -28,7 +28,7 @@
 - (id)filteredIndexes;
 - (id)indexMapper;
 - (id)init;
-- (id)initWithFilteredAlbum:(id)arg1 albumChangeNotification:(id)arg2;
+- (id)initWithFilteredAlbum:(id)arg1 priorChangeState:(id)arg2 albumChangeNotification:(id)arg3;
 - (BOOL)keyAssetDidChange;
 - (id)object;
 - (void)setFilteredIndexes:(id)arg1;

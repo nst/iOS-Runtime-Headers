@@ -12,10 +12,11 @@
     float _letterSpacing;
     BOOL _loopNowIfNecessary;
     BOOL _loopingNecessaryForString;
-    NSString *_pathToServiceImages[3];
+    float _maxWidth;
+    NSString *_pathToServiceImages[2];
     NSString *_serviceString;
     float _serviceWidth;
-    BOOL _usingStringForStyle[3];
+    BOOL _usingStringForStyle[2];
 }
 
 - (id)_contentsImageFromString:(id)arg1 withWidth:(float)arg2 letterSpacing:(float)arg3 forStyle:(int)arg4;

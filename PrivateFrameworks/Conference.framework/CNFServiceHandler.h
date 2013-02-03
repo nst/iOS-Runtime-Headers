@@ -6,27 +6,20 @@
 }
 
 + (void)_accountRegistrationStatusChanged:(id)arg1;
-+ (void)_availabilityChanged:(id)arg1;
 + (void)_daemonConnectedNotification:(id)arg1;
 + (BOOL)_isValidProcess;
 + (void)activateFaceTime;
 + (int)activationState;
 + (unsigned long long)capabilities;
-+ (BOOL)conferencingHasValidatedAliasForAccount:(id)arg1;
-+ (BOOL)conferencingIsAvailable;
-+ (BOOL)conferencingIsRegisteredForAccount:(id)arg1;
-+ (BOOL)conferencingIsRestricted;
-+ (BOOL)conferencingIsSupported;
 + (BOOL)connect:(BOOL)arg1;
 + (BOOL)connect;
-+ (void)deactivateFaceTime;
 + (BOOL)disconnect;
++ (BOOL)faceTimeIsAvailable;
++ (BOOL)faceTimeIsSupported;
 + (id)faceTimeSourceAccount;
-+ (BOOL)invitationListener;
 + (BOOL)isConnected;
-+ (BOOL)isFaceTimeActivated;
-+ (id)services;
 + (void)setCapabilities:(unsigned long long)arg1;
++ (void)setupServiceHandlerForControllerType:(int)arg1;
 + (void)updateConferenceCapabilitiesForControllerType:(int)arg1;
 
 @end

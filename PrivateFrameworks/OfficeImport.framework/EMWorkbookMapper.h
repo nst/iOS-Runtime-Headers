@@ -38,13 +38,13 @@
 + (id)cssStyleCache;
 + (void)setBaseDate1904:(BOOL)arg1;
 
-- (id)_createMainPageAndReturnFront;
-- (id)_createStringForSheet:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 andMapper:(id)arg4;
+- (id)_copyStringForSheet:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 andMapper:(id)arg4;
+- (id)_frontPageByCopyingMainPage;
 - (id)_mainPageBack;
 - (void)_pushTabForSheet:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)archiver;
 - (id)blipAtIndex:(unsigned int)arg1;
-- (id)createSheetMapperWithEdSheet:(id)arg1;
+- (id)copySheetMapperWithEdSheet:(id)arg1;
 - (void)dealloc;
 - (id)documentTitle;
 - (id)fileName;

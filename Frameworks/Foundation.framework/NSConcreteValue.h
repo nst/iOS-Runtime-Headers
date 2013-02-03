@@ -8,6 +8,7 @@
 }
 
 + (void)initialize;
++ (BOOL)supportsSecureCoding;
 
 - (const void*)_value;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

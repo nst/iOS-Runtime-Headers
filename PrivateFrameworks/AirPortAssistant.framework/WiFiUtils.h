@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSTimer, NSMutableDictionary, NSDictionary;
+@class NSObject<OS_dispatch_semaphore>, NSTimer, NSDictionary, NSMutableDictionary;
 
 @interface WiFiUtils : NSObject {
     BOOL _joinInProgress;
@@ -12,7 +12,7 @@
     NSTimer *_scanTimer;
     BOOL _scanningActive;
     NSDictionary *_unmergedScanInfoDict;
-    struct dispatch_semaphore_s { } *_wifiBusy;
+    NSObject<OS_dispatch_semaphore> *_wifiBusy;
     struct WiFiShimContext { } *_wifiShim;
 }
 
@@ -21,8 +21,9 @@
 + (int)barsForRSSI:(int)arg1;
 + (id)getNetworkPassword:(id)arg1;
 + (BOOL)networkIsApple:(id)arg1 productID:(unsigned int*)arg2;
-+ (BOOL)networkIsSecure:(id)arg1 secMode:(int*)arg2;
++ (BOOL)networkIsSecure:(id)arg1 secMode:(int*)arg2 isEnterprise:(BOOL*)arg3;
 + (BOOL)scanInfoIs5GHz:(id)arg1;
++ (BOOL)scanInfoIsIBSS:(id)arg1;
 + (id)sharedInstance;
 + (id)sharedInstanceRef;
 + (void)sharedInstanceRelease;
@@ -44,6 +45,7 @@
 - (id)getCurrentAssociationScanInfo;
 - (id)getIfList;
 - (id)getLinkStatus;
+- (id)getNetworkPasswordForNetworkNamed:(id)arg1;
 - (id)getPreferredNetworks:(BOOL)arg1;
 - (id)init;
 - (BOOL)isCurrentlyAssociatedToAnInfrastructureNetwork:(BOOL*)arg1;

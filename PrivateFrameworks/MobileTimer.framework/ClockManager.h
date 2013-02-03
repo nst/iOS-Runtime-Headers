@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class NSArray;
+@class NSArray, NSMutableArray, ObjectUpdates;
 
 @interface ClockManager : NSObject {
+    ObjectUpdates *_localNotificationUpdates;
     BOOL _performingUpgrade;
-    NSArray *_scheduledLocalNotifications;
+    NSMutableArray *_scheduledLocalNotifications;
     BOOL ignoringNotificationPostRequests;
     BOOL runningInAssistantPlugin;
     BOOL runningInSpringBoard;
@@ -15,12 +16,14 @@
 @property(getter=isIgnoringNotificationPostRequests) BOOL ignoringNotificationPostRequests;
 @property(getter=isRunningInAssistantPlugin) BOOL runningInAssistantPlugin;
 @property(getter=isRunningInSpringBoard) BOOL runningInSpringBoard;
+@property(readonly) NSArray * scheduledLocalNotificationsCache;
+@property(readonly) ObjectUpdates * updatesToLocalNotificationsCache;
 
 + (void)loadUserPreferences;
-+ (void)openClockAppWithSection:(int)arg1;
 + (void)saveAndNotifyForUserPreferences:(BOOL)arg1 localNotifications:(BOOL)arg2;
 + (int)sectionFromClockAppURL:(id)arg1;
 + (id)sharedManager;
++ (id)urlForClockAppSection:(int)arg1;
 
 - (void)cancelLocalNotification:(id)arg1;
 - (void)dealloc;
@@ -30,11 +33,13 @@
 - (BOOL)isRunningInSpringBoard;
 - (void)postUserPreferencesChangedNotification;
 - (void)refreshScheduledLocalNotificationsCache;
+- (void)resetUpdatesToLocalNotificationsCache;
 - (void)scheduleLocalNotification:(id)arg1;
 - (id)scheduledLocalNotificationsCache;
 - (void)setIgnoringNotificationPostRequests:(BOOL)arg1;
 - (void)setRunningInAssistantPlugin:(BOOL)arg1;
 - (void)setRunningInSpringBoard:(BOOL)arg1;
+- (id)updatesToLocalNotificationsCache;
 - (BOOL)upgrade;
 - (BOOL)upgradeIfNeverAttempted;
 

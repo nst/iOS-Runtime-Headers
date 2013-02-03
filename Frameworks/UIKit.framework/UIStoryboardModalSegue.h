@@ -3,20 +3,24 @@
  */
 
 @interface UIStoryboardModalSegue : UIStoryboardSegue {
+    BOOL _animates;
     int _modalPresentationStyle;
     int _modalTransitionStyle;
     BOOL _useDefaultModalPresentationStyle;
     BOOL _useDefaultModalTransitionStyle;
 }
 
+@property BOOL animates;
 @property int modalPresentationStyle;
 @property int modalTransitionStyle;
 @property BOOL useDefaultModalPresentationStyle;
 @property BOOL useDefaultModalTransitionStyle;
 
+- (BOOL)animates;
 - (int)modalPresentationStyle;
 - (int)modalTransitionStyle;
 - (void)perform;
+- (void)setAnimates:(BOOL)arg1;
 - (void)setModalPresentationStyle:(int)arg1;
 - (void)setModalTransitionStyle:(int)arg1;
 - (void)setUseDefaultModalPresentationStyle:(BOOL)arg1;

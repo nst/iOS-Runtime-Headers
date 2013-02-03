@@ -43,8 +43,10 @@
 @property struct CGPoint { float x1; float x2; } outerShadowOffset;
 @property(retain) UIColor * topGradientColor;
 
++ (id)afui_brightGraphicsLetterpressStyle;
 + (id)defaultLetterpressStyle;
 + (id)old2xLetterpressStyle;
++ (id)pl_alternateLetterpressStyle;
 
 - (id)bottomGradientColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

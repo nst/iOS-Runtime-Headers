@@ -10,13 +10,13 @@
 @property(readonly) BOOL bubbles;
 @property BOOL cancelBubble;
 @property(readonly) BOOL cancelable;
-@property(retain,readonly) <DOMEventTarget> * currentTarget;
+@property(readonly) <DOMEventTarget> * currentTarget;
 @property(readonly) unsigned short eventPhase;
 @property BOOL returnValue;
-@property(retain,readonly) <DOMEventTarget> * srcElement;
-@property(retain,readonly) <DOMEventTarget> * target;
+@property(readonly) <DOMEventTarget> * srcElement;
+@property(readonly) <DOMEventTarget> * target;
 @property(readonly) unsigned long long timeStamp;
-@property(copy,readonly) NSString * type;
+@property(readonly) NSString * type;
 
 - (BOOL)bubbles;
 - (BOOL)cancelBubble;

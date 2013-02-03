@@ -7,7 +7,9 @@
 @interface GKPlayerInternal : GKInternalRepresentation {
     NSString *_accountName;
     NSString *_alias;
+    BOOL _allowMultiplayerInvites;
     NSArray *_emailAddresses;
+    NSString *_facebookUserID;
     BOOL _findable;
     NSString *_firstName;
     NSArray *_friends;
@@ -26,13 +28,16 @@
     NSString *_playerID;
     BOOL _purpleBuddyAccount;
     NSString *_status;
+    NSString *_twitterUserID;
     BOOL _underage;
     unsigned int _validPieces;
 }
 
 @property(retain) NSString * accountName;
 @property(retain) NSString * alias;
+@property BOOL allowMultiplayerInvites;
 @property(retain) NSArray * emailAddresses;
+@property(retain) NSString * facebookUserID;
 @property(getter=isFindable) BOOL findable;
 @property(retain) NSString * firstName;
 @property(retain) NSArray * friends;
@@ -51,18 +56,24 @@
 @property(retain) NSString * playerID;
 @property(getter=isPurpleBuddyAccount) BOOL purpleBuddyAccount;
 @property(retain) NSString * status;
+@property(retain) NSString * twitterUserID;
 @property(getter=isUnderage) BOOL underage;
 @property unsigned int validPieces;
 
 + (id)codedPropertyKeys;
++ (id)fullNameWithFirstName:(id)arg1 lastName:(id)arg2;
 
 - (id)accountName;
 - (id)alias;
+- (BOOL)allowMultiplayerInvites;
 - (void)dealloc;
-- (id)description;
+- (id)displayName;
 - (id)emailAddresses;
+- (id)facebookUserID;
 - (id)firstName;
 - (id)friends;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isFindable;
 - (BOOL)isPhotoPending;
 - (BOOL)isPurpleBuddyAccount;
@@ -82,7 +93,9 @@
 - (id)serverRepresentation;
 - (void)setAccountName:(id)arg1;
 - (void)setAlias:(id)arg1;
+- (void)setAllowMultiplayerInvites:(BOOL)arg1;
 - (void)setEmailAddresses:(id)arg1;
+- (void)setFacebookUserID:(id)arg1;
 - (void)setFindable:(BOOL)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setFriends:(id)arg1;
@@ -101,9 +114,11 @@
 - (void)setPlayerID:(id)arg1;
 - (void)setPurpleBuddyAccount:(BOOL)arg1;
 - (void)setStatus:(id)arg1;
+- (void)setTwitterUserID:(id)arg1;
 - (void)setUnderage:(BOOL)arg1;
 - (void)setValidPieces:(unsigned int)arg1;
 - (id)status;
+- (id)twitterUserID;
 - (unsigned int)validPieces;
 
 @end

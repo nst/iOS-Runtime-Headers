@@ -15,6 +15,7 @@
 @property(readonly) int type;
 @property(readonly) Class viewClass;
 
++ (BOOL)itemType:(int)arg1 appearsInRegion:(int)arg2;
 + (BOOL)itemType:(int)arg1 canBeEnabledForData:(id)arg2 style:(int)arg3;
 + (id)itemWithType:(int)arg1;
 + (BOOL)typeIsValid:(int)arg1;

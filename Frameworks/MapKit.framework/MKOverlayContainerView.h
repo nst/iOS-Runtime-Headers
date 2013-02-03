@@ -5,15 +5,8 @@
 @class <MKOverlayContainerViewDelegate>, NSMutableSet, NSArray, NSMutableArray, NSMapTable;
 
 @interface MKOverlayContainerView : UIView {
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
     <MKOverlayContainerViewDelegate> *_delegate;
-    } _mapTransform;
+    float _mapZoomScale;
     NSMutableSet *_overlaySet;
     NSMapTable *_overlayToView;
     NSMutableArray *_overlays;
@@ -22,7 +15,7 @@
 }
 
 @property <MKOverlayContainerViewDelegate> * delegate;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } mapTransform;
+@property float mapZoomScale;
 @property(readonly) NSArray * overlays;
 
 - (void)_addInternalOverlay:(id)arg1 withView:(id)arg2;
@@ -43,14 +36,15 @@
 - (void)insertOverlay:(id)arg1 aboveOverlay:(id)arg2;
 - (void)insertOverlay:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)insertOverlay:(id)arg1 belowOverlay:(id)arg2;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })mapTransform;
+- (float)mapZoomScale;
 - (id)overlays;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)removeOverlay:(id)arg1;
 - (void)removeOverlays:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDrawingEnabled:(BOOL)arg1;
 - (void)setLevelCrossFade:(BOOL)arg1;
-- (void)setMapTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setMapZoomScale:(float)arg1;
 - (void)swapViewsWithOverlay:(id)arg1 andOverlay:(id)arg2;
 - (id)viewForOverlay:(id)arg1;
 - (void)visibleRectChanged;

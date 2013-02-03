@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSData, NSMutableString, NSMutableDictionary, RTFNSColor, NSMapTable, RTF_CMArchiveManager, RTFCPZArchive, NSURL, RTFReaderState, RTFHTMLWriter;
+@class RTFReaderState, NSMutableString, NSMutableDictionary, RTFNSColor, NSMapTable, RTF_CMArchiveManager, RTFCPZArchive, NSURL, NSData, RTFHTMLWriter;
 
 @interface RTFReader : NSObject {
     union { 

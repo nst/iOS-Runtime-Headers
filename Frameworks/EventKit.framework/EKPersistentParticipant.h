@@ -2,28 +2,34 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSString;
+@class NSURL, NSString;
 
 @interface EKPersistentParticipant : EKPersistentObject <NSCopying> {
 }
 
 @property(readonly) NSString * UUID;
+@property(copy) NSURL * address;
+@property(copy) NSString * displayName;
 @property(copy) NSString * emailAddress;
-@property(copy) NSString * externalID;
-@property(copy) NSString * name;
+@property(copy) NSString * firstName;
+@property(copy) NSString * lastName;
 
 + (id)defaultPropertiesToLoad;
 
 - (id)UUID;
+- (id)address;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)displayName;
 - (id)emailAddress;
-- (id)externalID;
+- (id)firstName;
 - (unsigned int)hash;
 - (id)init;
-- (id)name;
+- (id)lastName;
 - (id)owner;
+- (void)setAddress:(id)arg1;
+- (void)setDisplayName:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
-- (void)setExternalID:(id)arg1;
-- (void)setName:(id)arg1;
+- (void)setFirstName:(id)arg1;
+- (void)setLastName:(id)arg1;
 
 @end

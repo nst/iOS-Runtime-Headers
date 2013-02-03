@@ -6,30 +6,38 @@
    See Warning(s) below.
  */
 
-@class NSError, NSLock, GEOTileKeyList;
+@class GEOTileUsageInfo, NSError, NSLock, GEOTileKeyList;
 
 @interface _GEOTileLoadListener : NSObject {
     NSLock *_callbacksLock;
+    BOOL _checkDiskAllowed;
     id _error;
+    NSError *_finishError;
     BOOL _finishWhenDecoded;
     id _finished;
     GEOTileKeyList *_networkLoadList;
-    NSError *_noNetworkError;
     GEOTileKeyList *_originalList;
+    BOOL _preload;
     id _progress;
+    struct __CFRunLoop { } *_runloop;
     GEOTileKeyList *_satisfiedList;
     int _tilesDecoding;
+    GEOTileUsageInfo *_usageInfo;
 }
 
+@property BOOL checkDiskAllowed;
 @property(copy) id error;
 @property(copy) id finished;
 @property(retain) GEOTileKeyList * networkLoadList;
 @property(retain) GEOTileKeyList * originalList;
+@property(getter=isPreload) BOOL preload;
 @property(copy) id progress;
 @property(retain) GEOTileKeyList * satisfiedList;
 
-- (void)addSatisfiedKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
+- (void)_tryFinish;
+- (void)addSatisfiedKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 fromDisk:(BOOL)arg2 dataLength:(unsigned int)arg3;
 - (void)beginDecode;
+- (BOOL)checkDiskAllowed;
 - (void)dealloc;
 - (void)endDecode;
 - (id)error;
@@ -37,15 +45,19 @@
 - (void)finishWhenDecoded;
 - (id)finished;
 - (id)init;
+- (BOOL)isPreload;
 - (void)lockCallbacks;
 - (id)networkLoadList;
 - (id)originalList;
 - (id)progress;
+- (struct __CFRunLoop { }*)runloop;
 - (id)satisfiedList;
+- (void)setCheckDiskAllowed:(BOOL)arg1;
 - (void)setError:(id)arg1;
 - (void)setFinished:(id)arg1;
 - (void)setNetworkLoadList:(id)arg1;
 - (void)setOriginalList:(id)arg1;
+- (void)setPreload:(BOOL)arg1;
 - (void)setProgress:(id)arg1;
 - (void)setSatisfiedList:(id)arg1;
 - (void)unlockCallbacks;

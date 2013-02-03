@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class APSConnection, NSData;
+@class NSObject<OS_dispatch_semaphore>, APSConnection, NSData;
 
 @interface AADeviceInfo : NSObject {
     APSConnection *_apsConnection;
     NSData *_token;
     BOOL _tokenDone;
-    struct dispatch_semaphore_s { } *_tokenSema;
-    struct _lockdown_connection { } *connection;
+    NSObject<OS_dispatch_semaphore> *_tokenSema;
 }
 
 + (id)apnsToken;
++ (id)appleIDClientIdentifier;
 + (id)clientInfoHeader;
 + (id)infoDictionary;
 + (id)osVersion;
@@ -20,14 +20,15 @@
 + (id)serialNumber;
 + (id)signatureWithDictionary:(id)arg1;
 + (id)udid;
++ (id)userAgentHeader;
 
+- (void).cxx_destruct;
 - (id)apnsToken;
+- (id)appleIDClientIdentifier;
 - (id)buildVersion;
-- (void)dealloc;
+- (id)deviceClass;
 - (id)deviceInfoDictionary;
 - (id)init;
-- (id)lockDownValueForKey:(struct __CFString { }*)arg1;
-- (id)mobileMeSetupToken;
 - (id)osName;
 - (id)osVersion;
 - (id)productType;

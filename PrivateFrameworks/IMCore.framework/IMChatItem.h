@@ -19,7 +19,9 @@
 @property(readonly) IMMessage * message;
 @property(readonly) NSString * stringValue;
 
+- (int)_compareToChatItem:(id)arg1;
 - (id)_initWithGUID:(id)arg1 date:(id)arg2 datum1:(id)arg3 datum2:(id)arg4 datum3:(id)arg5;
+- (int)_reverseCompareToChatItem:(id)arg1;
 - (void)_setIsFromArchive:(BOOL)arg1;
 - (id)date;
 - (void)dealloc;

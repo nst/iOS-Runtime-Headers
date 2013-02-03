@@ -2,11 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSString, NSDictionary, NSNumber, NSMutableDictionary;
+@class NSNumber, NSDictionary, SUClientInterface, UIImage, NSString, SSItemImageCollection, NSMutableDictionary, NSArray;
 
 @interface SUSectionsResponse : NSObject {
     BOOL _cacheable;
-    NSDictionary *_rawResponseDictionary;
+    SUClientInterface *_clientInterface;
+    UIImage *_moreListImage;
+    UIImage *_moreListSelectedImage;
+    NSMutableDictionary *_rawResponseDictionary;
     int _responseType;
     NSArray *_sections;
     NSMutableDictionary *_sectionsCache;
@@ -15,12 +18,16 @@
 
 @property(readonly) NSArray * allSections;
 @property(getter=isCacheable) BOOL cacheable;
+@property(retain) UIImage * moreListImage;
+@property(readonly) SSItemImageCollection * moreListImageCollection;
+@property(retain) UIImage * moreListSelectedImage;
 @property(readonly) NSString * moreListTitle;
 @property(readonly) NSDictionary * rawResponseDictionary;
 @property(readonly) int responseType;
 @property(readonly) NSArray * sections;
 @property(readonly) NSDictionary * sectionsDictionary;
 @property BOOL shouldResetUserOrdering;
+@property(copy) NSString * storeFrontIdentifier;
 @property(readonly) NSString * versionString;
 
 + (id)lastCachedVersionIdentifier;
@@ -28,24 +35,34 @@
 + (void)setLastCachedVersionIdentifier:(id)arg1;
 
 - (void)_applyDefaultSearchFieldConfigurationsToSections:(id)arg1;
-- (BOOL)_loadArtworkForSections:(id)arg1 fromCacheDirectory:(id)arg2;
+- (BOOL)_loadArtworkFromCacheDirectory:(id)arg1;
+- (void)_loadButtonArtworkForSection:(id)arg1 buttons:(id)arg2 cachePath:(id)arg3;
 - (id)_newImageForIdentifier:(id)arg1 variant:(id)arg2 cacheDirectory:(id)arg3;
 - (id)_newSectionsFromDictionary:(id)arg1;
+- (id)_newVariantStringForButton:(id)arg1;
+- (void)_writeButtonImagesForSection:(id)arg1 buttons:(id)arg2 cachePath:(id)arg3;
 - (void)_writeImage:(id)arg1 toCachePath:(id)arg2 forIdentifier:(id)arg3 variant:(id)arg4;
 - (id)allSections;
 - (void)dealloc;
 - (id)init;
-- (id)initWithContentsOfCacheDirectory:(id)arg1;
-- (id)initWithSectionsDictionary:(id)arg1 responseType:(int)arg2;
+- (id)initWithClientInterface:(id)arg1 cacheDirectory:(id)arg2;
+- (id)initWithClientInterface:(id)arg1 sectionsDictionary:(id)arg2 responseType:(int)arg3;
 - (BOOL)isCacheable;
+- (id)moreListImage;
+- (id)moreListImageCollection;
+- (id)moreListSelectedImage;
 - (id)moreListTitle;
 - (id)rawResponseDictionary;
 - (int)responseType;
 - (id)sections;
 - (id)sectionsDictionary;
 - (void)setCacheable:(BOOL)arg1;
+- (void)setMoreListImage:(id)arg1;
+- (void)setMoreListSelectedImage:(id)arg1;
 - (void)setShouldResetUserOrdering:(BOOL)arg1;
+- (void)setStoreFrontIdentifier:(id)arg1;
 - (BOOL)shouldResetUserOrdering;
+- (id)storeFrontIdentifier;
 - (id)versionString;
 - (BOOL)writeToCacheDirectory:(id)arg1 error:(id*)arg2;
 

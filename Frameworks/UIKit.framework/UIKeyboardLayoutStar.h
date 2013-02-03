@@ -87,6 +87,7 @@
     SEL _spaceLongAction;
     id _spaceTarget;
     BOOL _swipeDetected;
+    BOOL _touchDownInDeleteKey;
     BOOL _touchDownInMoreKey;
     BOOL _touchDownInShiftKey;
     id _touchInfo;
@@ -111,6 +112,7 @@
 @property BOOL showIntlKey;
 
 - (void)_autoSplit:(id)arg1;
+- (id)_keyplaneVariantsKeyForString:(id)arg1;
 - (void)activateCompositeKey:(id)arg1 direction:(int)arg2 flickString:(id)arg3 popupInfo:(id)arg4;
 - (id)activationIndicatorView;
 - (id)activeKey;
@@ -130,7 +132,7 @@
 - (void)clearAllTouchInfo;
 - (void)clearHandwritingStrokesIfNeeded;
 - (void)clearInfoForTouch:(id)arg1;
-- (void)clearUnusedObjects;
+- (void)clearUnusedObjects:(BOOL)arg1;
 - (id)compositeImageForKey:(id)arg1;
 - (void)confirmAction;
 - (void)deactivateActiveKeys;
@@ -146,10 +148,12 @@
 - (BOOL)doesKeyCharging;
 - (unsigned int)downActionFlagsForKey:(id)arg1;
 - (void)downActionShiftWithKey:(id)arg1;
-- (id)findLeftMoreKey;
+- (struct CGSize { float x1; float x2; })dragGestureSize;
 - (void)finishSplit;
 - (void)finishSplitTransition;
 - (void)finishSplitTransitionWithProgress:(float)arg1;
+- (id)flickPopupStringForKey:(id)arg1 withString:(id)arg2;
+- (id)flickStringForInputKey:(id)arg1 direction:(int)arg2;
 - (void)flushKeyCache:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeyWithRepresentedString:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1 onKeyplaneName:(id)arg2;
@@ -181,7 +185,6 @@
 - (id)keyHitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (id)keyHitTestClosestToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)keyHitTestContainingPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)keyHitTestContainingPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)keyHitTestForTouchInfo:(id)arg1 touchStage:(int)arg2;
 - (id)keyHitTestWithoutCharging:(struct CGPoint { float x1; float x2; })arg1;
 - (id)keyWithRepresentedString:(id)arg1;
@@ -197,10 +200,10 @@
 - (id)localizedInputKey;
 - (id)localizedInputMode;
 - (void)longPressAction;
-- (id)mergableKeyplaneSwitchKeyForRendering:(int)arg1;
 - (void)nextCandidatesAction;
 - (id)overlayCharacterImageForKey:(id)arg1 direction:(int)arg2 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 flickString:(id)arg4 popupInfo:(id)arg5;
 - (BOOL)performReturnAction;
+- (BOOL)performSpaceAction;
 - (BOOL)pinchDetected;
 - (BOOL)pinchSplitGestureEnabled;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
@@ -245,8 +248,6 @@
 - (void)setSplitProgress:(float)arg1;
 - (void)setState:(int)arg1 forKey:(id)arg2;
 - (void)setTarget:(id)arg1 forKey:(id)arg2;
-- (id)shapesForControlKeyShapes:(id)arg1 split:(BOOL)arg2 alternateCJMerge:(BOOL)arg3;
-- (id)shapesForControlKeyShapes:(id)arg1 split:(BOOL)arg2;
 - (BOOL)shift;
 - (BOOL)shouldHitTestKey:(id)arg1;
 - (BOOL)shouldPreventInputManagerHitTestingForKey:(id)arg1;
@@ -262,7 +263,6 @@
 - (void)showSplitTransitionView:(BOOL)arg1;
 - (id)simulateTouch:(struct CGPoint { float x1; float x2; })arg1;
 - (id)simulateTouchForCharacter:(id)arg1 errorVector:(struct CGPoint { float x1; float x2; })arg2 shouldTypeVariants:(BOOL)arg3 baseKeyForVariants:(BOOL)arg4;
-- (id)spaceKey;
 - (id)splitNameForKeyplane:(id)arg1;
 - (id)splitNameForKeyplaneName:(id)arg1;
 - (int)stateForKey:(id)arg1;
@@ -279,10 +279,8 @@
 - (unsigned int)upActionFlagsForKey:(id)arg1;
 - (void)upActionShift;
 - (void)updateBackgroundIfNeeded;
-- (void)updateDictationKeyOnNumberPads;
 - (void)updateKeyCentroids;
 - (void)updateKeyboardForKeyplane:(id)arg1;
-- (void)updateKeyplaneViewMask;
 - (BOOL)updateKeysWithDelegates;
 - (void)updateLocalizedKeys:(BOOL)arg1;
 - (void)updateLocalizedKeysOnKeyplane:(id)arg1;

@@ -16,7 +16,7 @@
 }
 
 @property(retain) <MFCollectingDataConsumer> * alternatePartConsumer;
-@property(retain,readonly) NSMutableData * bodyData;
+@property(readonly) NSMutableData * bodyData;
 @property(retain) <MFMessageDataConsumerFactory> * consumerFactory;
 @property(retain) <MFCollectingDataConsumer> * dataConsumer;
 @property int requestedFormat;

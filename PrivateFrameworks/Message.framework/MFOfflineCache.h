@@ -19,6 +19,7 @@
 - (void)dealloc;
 - (void)deferOperation:(id)arg1;
 - (void)deleteOfflineCacheData;
+- (void)enumerateOperationsUsingBlock:(id)arg1;
 - (BOOL)hasDeferredOperations;
 - (id)init;
 - (id)initWithLibrary:(id)arg1 account:(id)arg2;

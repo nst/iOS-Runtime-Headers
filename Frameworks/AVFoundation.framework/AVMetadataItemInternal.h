@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSLocale, NSString, NSMutableDictionary;
+@class NSLocale, NSString, NSDictionary;
 
 @interface AVMetadataItemInternal : NSObject {
     struct { 
@@ -17,7 +17,7 @@
         long long epoch; 
     NSString *commonKey;
     } duration;
-    NSMutableDictionary *extras;
+    NSDictionary *extras;
     long itemIndex;
     id key;
     NSString *keySpace;

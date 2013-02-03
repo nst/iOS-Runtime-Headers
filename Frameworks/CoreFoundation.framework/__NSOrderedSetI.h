@@ -3,11 +3,11 @@
  */
 
 @interface __NSOrderedSetI : NSOrderedSet {
-    struct __CFBasicHash { } *_set;
-    unsigned int _used;
+    unsigned int _used : 26;
+    unsigned int _szidx : 6;
 }
 
-+ (id)__new:(const id*)arg1 :(unsigned int)arg2;
++ (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 

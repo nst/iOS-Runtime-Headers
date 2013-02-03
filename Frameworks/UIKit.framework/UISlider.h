@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, UIImageView, UIColor;
+@class UIImageView, UIView, UIColor, UIImage;
 
 @interface UISlider : UIControl <NSCoding> {
     struct { 
@@ -18,6 +18,7 @@
     struct __CFDictionary { } *_contentLookup;
     float _hitOffset;
     UIColor *_maxTintColor;
+    UIView *_maxTrackClipView;
     UIImageView *_maxTrackView;
     float _maxValue;
     UIImageView *_maxValueImageView;
@@ -46,6 +47,7 @@
 
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (id)_contentForState:(unsigned int)arg1;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (void)_controlMouseDown:(struct __GSEvent { }*)arg1;
 - (void)_controlMouseDragged:(struct __GSEvent { }*)arg1;
 - (void)_controlMouseUp:(struct __GSEvent { }*)arg1;
@@ -54,6 +56,7 @@
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
 - (void)_initImages;
 - (void)_initSubviews;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_isThumbEnabled;
 - (void)_layoutSubviewsForBoundsChange:(BOOL)arg1;
 - (id)_maximumTrackImageForState:(unsigned int)arg1;
@@ -70,12 +73,14 @@
 - (void)_setThumbTintColor:(id)arg1 forStates:(unsigned int)arg2;
 - (void)_setTrackEnabled:(BOOL)arg1;
 - (void)_setValue:(float)arg1 andSendAction:(BOOL)arg2;
+- (void)_setValue:(float)arg1 minValue:(float)arg2 maxValue:(float)arg3 andSendAction:(BOOL)arg4;
 - (void)_sliderAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_sliderAnimationWillStart:(id)arg1 context:(void*)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_thumbHitEdgeInsets;
 - (id)_thumbImageForState:(unsigned int)arg1;
 - (BOOL)_trackEnabled;
 - (void)_updateAppearanceForEnabled:(BOOL)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (BOOL)beginTrackingAt:(struct CGPoint { float x1; float x2; })arg1 withEvent:(struct __GSEvent { }*)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)cancelMouseTracking;
@@ -92,6 +97,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)endTrackingAt:(struct CGPoint { float x1; float x2; })arg1 previous:(struct CGPoint { float x1; float x2; })arg2 withEvent:(struct __GSEvent { }*)arg3;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

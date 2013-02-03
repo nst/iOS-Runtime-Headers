@@ -2,41 +2,35 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class NSArray, NSString, NSMutableData, <ServiceLogoControllerDelegate>, NSURLConnection, <SynchronizedDefaultsDelegate>;
+@class <SynchronizedDefaultsDelegate>, NSString, NSArray;
 
 @interface WeatherPreferences : NSObject <NSURLConnectionDelegate> {
     NSString *_UUID;
-    NSURLConnection *_gtBacksideLogoConnection;
-    NSMutableData *_gtBacksideLogoData;
-    NSURLConnection *_gtButtonLogoConnection;
-    NSMutableData *_gtButtonLogoData;
     BOOL _isCelsius;
     NSArray *_lastUbiquitousWrittenDefaults;
-    NSString *_secondaryServiceHost;
     BOOL _serviceDebugging;
     NSString *_serviceHost;
-    <ServiceLogoControllerDelegate> *_serviceLogoDelegate;
     <SynchronizedDefaultsDelegate> *_syncDelegate;
-    NSString *twcURLString;
-    NSString *yahooWeatherURLString;
+    NSString *_twcURLString;
+    NSString *_yahooWeatherURLString;
 }
 
-@property <ServiceLogoControllerDelegate> * serviceLogoDelegate;
 @property <SynchronizedDefaultsDelegate> * syncDelegate;
 @property(copy) NSString * twcURLString;
 @property(copy) NSString * yahooWeatherURLString;
 
++ (void)clearSharedPreferences;
 + (id)serviceDebuggingPath;
 + (id)sharedPreferences;
 
 - (id)UUID;
 - (BOOL)_areDefaultCities:(id)arg1;
-- (BOOL)_arePrefsNotCurrent;
 - (id)_cacheDirectoryPath;
 - (id)_cityArrayToCloudCityArray:(id)arg1;
+- (void)_clearCachedObjects;
 - (id)_defaultCities;
 - (BOOL)_defaultsAreValid;
-- (id)_getWoeidFromLocationID:(id)arg1;
+- (BOOL)_defaultsCurrent;
 - (id)_ppt_addFakeTestCities;
 - (void)_saveUbiquitousDefaults:(id)arg1;
 - (void)_setLastUbiquitousWrittenDefaults:(id)arg1 isCloudCityArray:(BOOL)arg2;
@@ -44,38 +38,32 @@
 - (void)_synchronizedDefaultsDidChange:(id)arg1;
 - (id)cityFromPreferencesDictionary:(id)arg1;
 - (id)combineCloudCities:(id)arg1 withExisting:(id)arg2 byAppending:(BOOL)arg3;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (BOOL)isCelsius;
 - (BOOL)isLocalWeatherEnabled;
 - (int)loadActiveCity;
-- (void)loadFromDisk;
 - (id)loadSavedCities;
+- (id)loadSavedCityAtIndex:(int)arg1;
 - (BOOL)loadUnits;
 - (id)localWeatherCity;
 - (id)logoButtonImage;
 - (id)preferencesDictionaryForCity:(id)arg1;
 - (id)primaryBacksideLogoImage;
 - (id)readDefaultValueForKey:(id)arg1;
-- (void)registerDefaultPreferences;
+- (void)registerDefaultUnits;
 - (void)resetLocale;
 - (void)saveToDiskWithCities:(id)arg1 activeCity:(int)arg2;
 - (void)saveToDiskWithCities:(id)arg1;
+- (void)saveToDiskWithCity:(id)arg1 forActiveIndex:(int)arg2;
 - (void)saveToDiskWithLocalWeatherCity:(id)arg1;
 - (void)saveToUbiquitousStore;
 - (id)secondBacksideLogoImage;
-- (id)secondaryServiceBacksideImage;
-- (id)secondaryServiceHost;
-- (id)secondaryServiceLogoURL;
 - (BOOL)serviceDebugging;
 - (id)serviceHost;
-- (id)serviceLogoDelegate;
 - (void)setActiveCity:(int)arg1;
 - (void)setCelsius:(BOOL)arg1;
 - (void)setLocalWeatherEnabled:(BOOL)arg1;
-- (void)setServiceLogoDelegate:(id)arg1;
 - (void)setSyncDelegate:(id)arg1;
 - (void)setTwcURLString:(id)arg1;
 - (void)setYahooWeatherURLString:(id)arg1;

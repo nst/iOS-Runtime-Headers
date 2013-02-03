@@ -13,7 +13,7 @@
 }
 
 @property(retain) NSDate * latestDateToAdd;
-@property(retain,readonly) NSArray * matchingRemoteIDs;
+@property(readonly) NSArray * matchingRemoteIDs;
 
 - (void)dealloc;
 - (BOOL)handleItems:(id)arg1;

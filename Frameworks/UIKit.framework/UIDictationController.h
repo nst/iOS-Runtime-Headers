@@ -2,17 +2,21 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIAlertView, NSTimer, NSArray;
+@class UIAlertView, NSArray, AFDictationConnection, AFDictationOptions, NSTimer, AFPreferences;
 
-@interface UIDictationController : NSObject {
+@interface UIDictationController : NSObject <AFDictationDelegate> {
     NSArray *_availableLanguages;
     id _callCenter;
     void *_callCenterFrameworkFileHandle;
+    AFDictationConnection *_connection;
+    BOOL _connectionWasAlreadyAliveForStatisticsLogging;
     UIAlertView *_dictationAvailableSoonAlert;
-    BOOL _disabledDueToTelephonyActivity;
     void *_facetimeCallFrameworkFileHandle;
     id _facetimeCallManager;
+    AFDictationOptions *_options;
+    AFPreferences *_preferences;
     NSTimer *_recordingLimitTimer;
+    BOOL _wasDisabledDueToTelephonyActivity;
     BOOL dictationStartedFromGesture;
 }
 
@@ -23,33 +27,42 @@
 + (void)applicationDidChangeStatusBarFrame;
 + (void)applicationWillResignActive;
 + (id)bestInterpretationForDictationResult:(id)arg1;
++ (BOOL)dictationIsFunctional;
 + (void)disableGestureHandler;
 + (void)enableGestureHandlerIfNecessary;
 + (BOOL)fetchCurrentInputModeSupportsDictation;
 + (id)inputModeNameForDictation;
++ (id)interpretation:(id)arg1 forPhraseIndex:(unsigned int)arg2 isShiftLocked:(BOOL)arg3 autocapitalizationType:(int)arg4;
 + (BOOL)isRunning;
 + (void)keyboardDidSetDelegate;
 + (void)keyboardDidSetInputMode;
 + (void)keyboardDidUpdateOnScreenStatus;
 + (void)logCorrectionStatistics;
 + (void)networkReachableCallback;
-+ (void)preheatIfNecessary;
++ (BOOL)openAssistantFrameworkIfNecessary;
 + (id)prunedDictationResultForSingleLineEditor:(id)arg1;
-+ (id)serializedDictationPhrases:(id)arg1 fromKeyboard:(BOOL)arg2;
++ (id)serializedDictationPhrases:(id)arg1 fromKeyboard:(BOOL)arg2 transform:(struct __CFString { }*)arg3;
 + (id)serializedDictationPhrases:(id)arg1;
-+ (id)serializedInterpretationFromTokens:(id)arg1;
++ (id)serializedDictationPhrasesFromTokenMatrix:(id)arg1 fromKeyboard:(BOOL)arg2 transform:(struct __CFString { }*)arg3;
++ (id)serializedInterpretationFromTokens:(id)arg1 transform:(struct __CFString { }*)arg2;
++ (BOOL)setupForOpeningConnections;
++ (BOOL)setupForPhraseSerialization;
 + (id)sharedInstance;
 + (BOOL)shouldEnableGestureHandler;
++ (void)siriPreferencesChanged;
 + (void)updateLandingView;
 + (void)willEndEditingInTextView:(id)arg1;
 
-- (id)_connection;
 - (id)assistantCompatibleLanguageCodeForLanguage:(id)arg1 region:(id)arg2;
 - (float)audioLevel;
 - (void)cancelDictation;
 - (void)cancelRecordingLimitTimer;
+- (id)connection;
+- (id)connectionForStatisticsLogging;
 - (void)dealloc;
-- (void)dictationConnection:(id)arg1 didRecognizeSpeechPhrases:(id)arg2 correctionIdentifier:(id)arg3;
+- (void)delayedTelephonyCheckingSetup;
+- (void)dictationConnection:(id)arg1 didRecognizePhrases:(id)arg2 correctionIdentifier:(id)arg3;
+- (void)dictationConnection:(id)arg1 didRecognizePhrases:(id)arg2 languageModel:(id)arg3 correctionIdentifier:(id)arg4;
 - (void)dictationConnection:(id)arg1 speechRecognitionDidFail:(id)arg2;
 - (void)dictationConnection:(id)arg1 speechRecordingDidFail:(id)arg2;
 - (void)dictationConnectionSpeechRecordingDidBegin:(id)arg1;
@@ -71,14 +84,24 @@
 - (id)prefixTextForInputDelegate:(id)arg1;
 - (void)proximityStateChanged:(id)arg1;
 - (void)reenableAutorotation;
+- (void)releaseConnection;
+- (void)releaseConnectionAfterDictationRequest;
+- (void)releaseConnectionAfterStatisticsLogging;
 - (id)selectedTextForInputDelegate:(id)arg1;
 - (void)setDictationStartedFromGesture:(BOOL)arg1;
 - (void)setState:(int)arg1;
-- (void)startConnection;
+- (void)setupConnectionOptions;
+- (void)setupForDictationStart;
+- (void)startConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
+- (void)startConnectionForReason:(int)arg1;
 - (void)startDictation;
+- (void)startDictationForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
+- (void)startDictationForReason:(int)arg1;
+- (void)startDictationFromLayout;
 - (void)startRecordingLimitTimer;
 - (int)state;
 - (void)stopDictation;
 - (BOOL)supportsInputMode:(id)arg1 error:(id*)arg2;
+- (BOOL)wasDisabledDueToTelephonyActivity;
 
 @end

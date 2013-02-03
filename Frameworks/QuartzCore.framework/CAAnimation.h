@@ -7,20 +7,20 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSString, CAMediaTimingFunction;
+@class CAMediaTimingFunction, CAStateControllerTransition, NSString;
 
 @interface CAAnimation : NSObject <NSMutableCopying, CAPropertyInfo, NSCoding, NSCopying, CAMediaTiming, CAAction> {
     void *_attr;
     unsigned int _flags;
 }
 
+@property CAStateControllerTransition * CAStateControllerTransition;
 @property int _mapkit_ID;
 @property(readonly) BOOL _mapkit_isScrollingAnimation;
-@property(copy) id animationDidStartBlock;
-@property(copy) id animationDidStopBlock;
 @property int animationID;
 @property BOOL autoreverses;
 @property double beginTime;
+@property(copy) NSString * beginTimeMode;
 @property(copy) id completionBlock;
 @property(retain) id delegate;
 @property double duration;
@@ -37,7 +37,7 @@
 + (int (*)())CA_getterForType:(int)arg1;
 + (int (*)())CA_setterForType:(int)arg1;
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
-+ (BOOL)CA_encodePropertyConditionally:(unsigned int)arg1 type:(int)arg2;
++ (BOOL)CA_encodesPropertyConditionally:(unsigned int)arg1 type:(int)arg2;
 + (id)animation;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)defaultValueForKey:(id)arg1;
@@ -48,13 +48,12 @@
 - (int)_mapkit_ID;
 - (BOOL)_mapkit_isScrollingAnimation;
 - (unsigned int)_propertyFlagsForLayer:(id)arg1;
-- (BOOL)_setCARenderAnimation:(struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; unsigned int x7; unsigned int x8; }*)arg1 layer:(id)arg2;
-- (id)animationDidStartBlock;
-- (id)animationDidStopBlock;
+- (BOOL)_setCARenderAnimation:(struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Ref<CA::Render::Timing> { struct Timing {} *x_4_1_1; } x4; struct Ref<CA::Render::Vector> { struct Vector {} *x_5_1_1; } x5; void *x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; }*)arg1 layer:(id)arg2;
 - (int)animationID;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
 - (BOOL)autoreverses;
 - (double)beginTime;
+- (id)beginTimeMode;
 - (id)completionBlock;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -73,11 +72,10 @@
 - (float)repeatCount;
 - (double)repeatDuration;
 - (void)runActionForKey:(id)arg1 object:(id)arg2 arguments:(id)arg3;
-- (void)setAnimationDidStartBlock:(id)arg1;
-- (void)setAnimationDidStopBlock:(id)arg1;
 - (void)setAnimationID:(int)arg1;
 - (void)setAutoreverses:(BOOL)arg1;
 - (void)setBeginTime:(double)arg1;
+- (void)setBeginTimeMode:(id)arg1;
 - (void)setCompletionBlock:(id)arg1;
 - (void)setDefaultDuration:(double)arg1;
 - (void)setDelegate:(id)arg1;

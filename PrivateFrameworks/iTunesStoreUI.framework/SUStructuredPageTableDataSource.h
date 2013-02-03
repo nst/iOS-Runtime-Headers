@@ -2,17 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUItem, NSMutableArray, SUStructuredPage;
+@class SUStructuredPage, SUItem, SUClientInterface, NSMutableArray;
 
 @interface SUStructuredPageTableDataSource : SUTableDataSource {
     SUItem *_activeLoadMoreItem;
     NSMutableArray *_cachedHeaderViews;
+    SUClientInterface *_clientInterface;
     float _offerButtonWidth;
     SUStructuredPage *_structuredPage;
     int _style;
 }
 
 @property(retain) SUItem * activeLoadMoreItem;
+@property(retain) SUClientInterface * clientInterface;
 @property(retain) SUStructuredPage * structuredPage;
 @property int style;
 
@@ -28,6 +30,7 @@
 - (id)cellConfigurationForIndex:(int)arg1 item:(id)arg2;
 - (id)cellForIndexPath:(id)arg1;
 - (float)cellHeightForIndexPath:(id)arg1;
+- (id)clientInterface;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)dealloc;
 - (BOOL)deleteIndexPath:(id)arg1;
@@ -40,6 +43,7 @@
 - (int)sectionIndexForIndexTitle:(id)arg1 atIndex:(int)arg2;
 - (id)sectionIndexTitles;
 - (void)setActiveLoadMoreItem:(id)arg1;
+- (void)setClientInterface:(id)arg1;
 - (void)setStructuredPage:(id)arg1;
 - (void)setStyle:(int)arg1;
 - (id)structuredPage;

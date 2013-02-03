@@ -13,7 +13,7 @@
 - (id)initWithConfigurationState:(id)arg1;
 - (BOOL)isReadyForMoreMediaData;
 - (void)markAsFinished;
-- (void)requestMediaDataWhenReadyOnQueue:(struct dispatch_queue_s { }*)arg1 usingBlock:(id)arg2;
+- (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id)arg2;
 - (int)status;
 - (void)transitionToTerminalStatus:(int)arg1;
 

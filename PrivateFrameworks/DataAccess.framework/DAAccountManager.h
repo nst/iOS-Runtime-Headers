@@ -14,6 +14,7 @@
     NSMutableSet *_setAsideAccounts;
 }
 
++ (id)accountStore;
 + (id)oneshotListOfAccountPersistentUUIDs;
 + (void)reacquireClientRestrictions:(id)arg1;
 + (id)sharedInstance;
@@ -21,6 +22,8 @@
 
 - (id)_accountSettingsAccountTypes;
 - (BOOL)_addAccount:(id)arg1 checkUniqueness:(BOOL)arg2;
+- (id)_childAccountTypes;
+- (BOOL)_hasDataclassWeCareAbout:(id)arg1;
 - (void)_removeStoresForAccountWithID:(id)arg1;
 - (void)_respondToAccountsChangedNotification;
 - (BOOL)_saveAllAccountSettings:(BOOL)arg1;
@@ -29,6 +32,7 @@
 - (void)_startAgentMonitoring;
 - (void)_stopAgentMonitoring;
 - (void)_updateExternalSourcesAndAccountNamesForAccounts:(id)arg1;
+- (id)acAccountsWeOwn;
 - (id)accountWithID:(id)arg1;
 - (id)accountWithPersistentUUID:(id)arg1;
 - (id)accounts;

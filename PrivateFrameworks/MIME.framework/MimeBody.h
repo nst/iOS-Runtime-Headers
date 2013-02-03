@@ -7,7 +7,6 @@
 @interface MimeBody : MessageBody {
     unsigned int _preferredAlternative : 16;
     unsigned int _numAlternatives : 16;
-    unsigned int _preferredTextEncoding;
     MimePart *_topLevelPart;
 }
 
@@ -17,6 +16,7 @@
 - (id)attachments;
 - (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3 isComplete:(BOOL*)arg4;
 - (void)dealloc;
+- (id)firstPartPassingTest:(id)arg1;
 - (id)init;
 - (BOOL)isHTML;
 - (BOOL)isRich;
@@ -27,9 +27,7 @@
 - (id)partWithNumber:(id)arg1;
 - (int)preferredAlternative;
 - (id)preferredBodyPart;
-- (unsigned long)preferredTextEncoding;
 - (void)setPreferredAlternative:(int)arg1;
-- (void)setPreferredTextEncoding:(unsigned long)arg1;
 - (void)setTopLevelPart:(id)arg1;
 - (id)textHtmlPart;
 - (id)topLevelPart;

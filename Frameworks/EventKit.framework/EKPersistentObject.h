@@ -26,6 +26,7 @@
 - (BOOL)_areDefaultPropertiesLoaded;
 - (void)_clearReferences;
 - (void)_clearWeakRelations;
+- (void)_fastpathSetProperty:(id)arg1 forKey:(id)arg2 isRelation:(BOOL)arg3;
 - (BOOL)_isPendingDelete;
 - (BOOL)_isPendingInsert;
 - (BOOL)_isPendingUpdate;
@@ -49,6 +50,7 @@
 - (void)_setPendingUpdate:(BOOL)arg1;
 - (void)_setProperty:(id)arg1 forKey:(id)arg2;
 - (BOOL)_shouldRetainPropertyForKey:(id)arg1;
+- (void)_takeValuesForDefaultProperties:(id)arg1;
 - (void)changed;
 - (id)committedProperties;
 - (id)committedValueForKey:(id)arg1;
@@ -58,7 +60,6 @@
 - (int)entityType;
 - (id)eventStore;
 - (BOOL)existsInStore;
-- (unsigned int)hash;
 - (id)init;
 - (id)initCommon;
 - (BOOL)isDirty;
@@ -97,6 +98,7 @@
 - (void)rollback;
 - (void)saved;
 - (void)setCommittedProperties:(id)arg1;
+- (void)takeValues:(id)arg1 forProperties:(id)arg2;
 - (void)unloadPropertyForKey:(id)arg1;
 - (BOOL)validate:(id*)arg1;
 

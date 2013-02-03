@@ -16,18 +16,23 @@
     id _signature;
 }
 
++ (id)_invocationWithMethodSignature:(id)arg1 frame:(void*)arg2;
 + (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2 arguments:(void*)arg3;
 + (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2;
++ (void)executeBlock:(id)arg1;
++ (id)invocationWithBlock:(id)arg1;
 + (id)invocationWithMethodSignature:(id)arg1;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2;
 
 - (void)_addAttachedObject:(id)arg1;
+- (int)_firstXPCProxyReplyHandlerArgumentIndex;
 - (void)_webkit_invokeAndHandleException:(id)arg1;
 - (BOOL)argumentsRetained;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)debugDescription;
 - (void)getArgument:(void*)arg1 atIndex:(int)arg2;
 - (void)getReturnValue:(void*)arg1;
 - (id)init;

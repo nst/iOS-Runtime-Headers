@@ -11,14 +11,16 @@
 
 @property(readonly) ML3Container * container;
 @property(readonly) NSArray * limitedPersistentIDs;
+@property(readonly) BOOL requiresSmartLimiting;
 
-+ (id)directionalityArrayForCount:(unsigned int)arg1 isDescending:(BOOL)arg2;
-
+- (void).cxx_destruct;
 - (id)container;
-- (void)dealloc;
+- (unsigned int)countOfDistinctRowsForColumn:(id)arg1;
+- (unsigned int)countOfEntities;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)hasEntities;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithEntityClass:(Class)arg1 container:(id)arg2 predicate:(id)arg3 orderingProperties:(id)arg4;
+- (id)initWithEntityClass:(Class)arg1 container:(id)arg2 predicate:(id)arg3 orderingTerms:(id)arg4;
 - (id)limitedPersistentIDs;
 - (BOOL)requiresSmartLimiting;
 - (id)selectLimitingSQL;

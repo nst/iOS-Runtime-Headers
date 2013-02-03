@@ -2,29 +2,32 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSArray, IMDaemonListener, NSProtocolChecker, NSRecursiveLock, IMRemoteObject<FZDaemon>, NSMutableArray, NSLock, NSString, IMLocalObject, NSMutableDictionary;
+@class NSMutableDictionary, IMDaemonListener, NSObject<OS_dispatch_queue>, NSProtocolChecker, NSArray, NSMutableArray, NSLock, NSString, IMLocalObject, IMRemoteObject<IMRemoteDaemonProtocol>;
 
 @interface IMDaemonController : NSObject {
+    BOOL _acquiringDaemonConnection;
     BOOL _autoReconnect;
     NSLock *_blockingLock;
     BOOL _blocksConnectionAtResume;
     unsigned int _cachedCapabilities;
-    NSRecursiveLock *_connectionLock;
+    NSLock *_connectionLock;
     IMDaemonListener *_daemonListener;
     id _delegate;
     unsigned int _gMyFZListenerCapabilities;
     BOOL _hasBeenSuspended;
     BOOL _hasCheckedForDaemon;
     BOOL _inBlockingConnect;
+    unsigned int _lastUpdatedCapabilities;
     NSString *_listenerID;
-    struct dispatch_queue_s { } *_listenerLockQueue;
+    NSObject<OS_dispatch_queue> *_listenerLockQueue;
     NSMutableDictionary *_listenerMap;
     IMLocalObject *_localObject;
+    NSObject<OS_dispatch_queue> *_localObjectLockQueue;
     BOOL _preventReconnect;
     NSProtocolChecker *_protocol;
-    struct dispatch_queue_s { } *_remoteDaemonLockQueue;
-    struct dispatch_queue_s { } *_remoteMessageQueue;
-    IMRemoteObject<FZDaemon> *_remoteObject;
+    NSObject<OS_dispatch_queue> *_remoteDaemonLockQueue;
+    NSObject<OS_dispatch_queue> *_remoteMessageQueue;
+    IMRemoteObject<IMRemoteDaemonProtocol> *_remoteObject;
     struct __CFRunLoopSource { } *_runLoopSource;
     NSMutableArray *_services;
     NSArray *_servicesToAllow;
@@ -35,7 +38,7 @@
 @property(setter=_setBlocksConnectionAtResume:) BOOL _blocksConnectionAtResume;
 @property(setter=__setCapabilities:) unsigned int _capabilities;
 @property(setter=_setListenerID:,retain) NSString * _listenerID;
-@property(readonly) struct dispatch_queue_s { }* _remoteMessageQueue;
+@property(readonly) NSObject<OS_dispatch_queue> * _remoteMessageQueue;
 @property(setter=_setServicesToAllow:,retain) NSArray * _servicesToAllow;
 @property(setter=_setServicesToDeny:,retain) NSArray * _servicesToDeny;
 @property(readonly) unsigned int capabilities;
@@ -48,23 +51,28 @@
 + (void)_blockUntilSendQueueIsEmpty;
 + (void)_setApplicationWillTerminate;
 + (id)sharedController;
++ (id)sharedInstance;
 
+- (BOOL)__isLocalObjectValidOnQueue:(id)arg1;
+- (BOOL)__isRemoteObjectValidOnQueue:(id)arg1;
 - (void)__setCapabilities:(unsigned int)arg1;
+- (BOOL)_acquiringDaemonConnection;
 - (void)_addressBookChanged:(id)arg1;
 - (void)_agentDidLaunchNotification:(id)arg1;
 - (BOOL)_autoReconnect;
+- (void)_blockUntilSendQueueIsEmpty;
 - (BOOL)_blocksConnectionAtResume;
 - (unsigned int)_capabilities;
-- (BOOL)_connectToDaemonWithLaunch:(BOOL)arg1 capabilities:(unsigned long long)arg2;
+- (void)_connectToDaemonWithLaunch:(BOOL)arg1 capabilities:(unsigned long long)arg2;
 - (void)_handleDaemonException:(id)arg1;
 - (id)_listenerID;
 - (void)_listenerSetUpdated;
-- (void)_localObjectDiedNotification:(id)arg1;
-- (void)_makeConnectionWithLaunch:(BOOL)arg1;
+- (void)_localObjectCleanup;
+- (BOOL)_makeConnectionWithLaunch:(BOOL)arg1 completionBlock:(id)arg2;
 - (void)_noteSetupComplete;
-- (struct dispatch_queue_s { }*)_remoteMessageQueue;
+- (id)_remoteMessageQueue;
 - (id)_remoteObject;
-- (void)_remoteObjectDiedNotification:(id)arg1;
+- (void)_remoteObjectCleanup;
 - (id)_servicesToAllow;
 - (id)_servicesToDeny;
 - (void)_setAutoReconnect:(BOOL)arg1;
@@ -74,7 +82,6 @@
 - (void)_setServicesToAllow:(id)arg1;
 - (void)_setServicesToDeny:(id)arg1;
 - (BOOL)addListenerID:(id)arg1 capabilities:(unsigned int)arg2;
-- (BOOL)allowsWeakReference;
 - (void)blockUntilConnected;
 - (unsigned int)capabilities;
 - (unsigned int)capabilitiesForListenerID:(id)arg1;
@@ -95,10 +102,11 @@
 - (void)listener:(id)arg1 setValue:(id)arg2 ofProperty:(id)arg3;
 - (id)listener;
 - (void)localObjectDiedNotification:(id)arg1;
+- (BOOL)localObjectExists;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)remoteObjectDiedNotification:(id)arg1;
+- (BOOL)remoteObjectExists;
 - (BOOL)removeListenerID:(id)arg1;
-- (BOOL)retainWeakReference;
 - (void)sendABInformationToDaemon;
 - (BOOL)setCapabilities:(unsigned int)arg1 forListenerID:(id)arg2;
 - (void)setDaemonLogsOutWithoutStatusListeners:(BOOL)arg1;
@@ -109,9 +117,6 @@
 - (void)setMyStatus:(unsigned int)arg1 message:(id)arg2 forAccount:(id)arg3;
 - (void)setMyStatus:(unsigned int)arg1 message:(id)arg2;
 - (void)setPresenceValue:(id)arg1 forKey:(id)arg2 forAccount:(id)arg3;
-- (void)setVCCapabilities:(unsigned long long)arg1;
-- (void)setValue:(id)arg1 ofPersistentProperty:(id)arg2;
-- (void)setValue:(id)arg1 ofProperty:(id)arg2;
 - (void)systemApplicationDidEnterBackground;
 - (void)systemApplicationDidResume;
 - (void)systemApplicationDidSuspend;

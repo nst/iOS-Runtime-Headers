@@ -15,6 +15,8 @@
     UIImage *_image;
     NSString *_messageSubtitle;
     NSString *_messageTitle;
+    float _modalContextTopInset;
+    float _modalContextTopOffset;
     BOOL _showStrings;
 }
 
@@ -23,6 +25,7 @@
 @property(retain) UIImage * image;
 @property(retain) NSString * messageSubtitle;
 @property(retain) NSString * messageTitle;
+@property float modalContextTopOffset;
 @property(readonly) BOOL showStrings;
 
 - (void)dealloc;
@@ -35,11 +38,13 @@
 - (BOOL)isRestorableNavigationPathNode;
 - (id)messageSubtitle;
 - (id)messageTitle;
+- (float)modalContextTopOffset;
 - (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setFindContentURL:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setMessageSubtitle:(id)arg1;
 - (void)setMessageTitle:(id)arg1;
+- (void)setModalContextTopOffset:(float)arg1;
 - (BOOL)showStrings;
 
 @end

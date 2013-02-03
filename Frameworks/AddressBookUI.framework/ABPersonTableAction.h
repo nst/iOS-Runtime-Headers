@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonTableActionDelegate>, NSString, UIButton;
+@class UIButton, UIView, NSString, <ABPersonTableActionDelegate>;
 
 @interface ABPersonTableAction : NSObject <ABStyleProviding> {
+    UIButton *_FMFButton;
     BOOL _allowDifferentiationSheet;
     UIButton *_button;
+    UIView *_customContentView;
     <ABPersonTableActionDelegate> *_delegate;
     NSString *_detailText;
     NSString *_differentiationSheetTitle;
@@ -23,6 +25,7 @@
     NSString *_title;
 }
 
+@property(retain) UIView * actionContentView;
 @property BOOL allowDifferentiationSheet;
 @property(readonly) UIButton * button;
 @property <ABPersonTableActionDelegate> * delegate;
@@ -41,6 +44,7 @@
 @property(readonly) id target;
 @property(readonly) NSString * title;
 
+- (id)actionContentView;
 - (BOOL)allowDifferentiationSheet;
 - (id)button;
 - (void)buttonClicked:(id)arg1;
@@ -65,10 +69,12 @@
 - (struct __CFArray { }*)properties;
 - (int)property;
 - (SEL)selector;
+- (void)setActionContentView:(id)arg1;
 - (void)setAllowDifferentiationSheet:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDifferentiationSheetTitle:(id)arg1;
 - (void)setDisplaysShortTitle:(BOOL)arg1;
+- (void)setFMFActionButton:(id)arg1;
 - (void)setGrouping:(int)arg1;
 - (void)setIndicatesFaceTimeHistory:(BOOL)arg1;
 - (void)setOrdering:(int)arg1;

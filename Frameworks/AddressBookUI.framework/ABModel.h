@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSRecursiveLock, NSMutableArray, ABGroupWrapper;
+@class NSArray, ABContactsFilter, NSRecursiveLock, NSMutableArray;
 
 @interface ABModel : NSObject {
     struct _NSRange { 
@@ -18,30 +18,36 @@
     struct __CFArray { } *_databaseChangeDelegates;
     id _delayedNotificationHandler;
     unsigned int _displayOrdering;
-    NSMutableArray *_displayedGroups;
+    ABContactsFilter *_displayedContactsFilter;
     } _displayedMemberPreparedRange;
     BOOL _displayedMembersAreSearchResults;
     struct __CFDictionary { } *_headerSortKeyToHeaderString;
-    ABGroupWrapper *_lastSelectedGroupWrapper;
+    NSArray *_lastSeenGroups;
+    NSArray *_lastSeenSources;
+    ABContactsFilter *_lastSelectedContactsFilter;
     BOOL _loadingInBackground;
+    int _meID;
     NSRecursiveLock *_memberLock;
     unsigned int _numberOfDisplayedMembers;
     struct { struct { /* ? */ } *x1; int x2; int x3; } *_sectionLists;
-    ABGroupWrapper *_selectedGroupWrapper;
+    ABContactsFilter *_selectedContactsFilter;
     void *_selectedPerson;
 }
 
 @property void* addressBook;
-@property(retain) ABGroupWrapper * selectedGroupWrapper;
+@property(retain) ABContactsFilter * displayedContactsFilter;
+@property(readonly) ABContactsFilter * lastSelectedContactsFilter;
+@property(readonly) ABContactsFilter * selectedContactsFilter;
 
 + (void)initialize;
 + (unsigned int)sortOrdering;
 
+- (void)_cacheMeID;
 - (void)_cachePeople:(struct __CFArray { }*)arg1 atEnd:(BOOL)arg2;
-- (struct __CFArray { }*)_copyArrayOfPeopleInSelectedGroupWrapperForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inBackground:(BOOL)arg2;
+- (struct __CFArray { }*)_copyArrayOfPeopleInDisplayedContactsFilterForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inBackground:(BOOL)arg2;
 - (struct __CFArray { }*)_databaseChangeDelegates;
 - (id)_displayedGroupMembersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (long)_indexOfMember:(void*)arg1 inDisplayedMembers:(id)arg2;
+- (int)_indexOfMember:(void*)arg1 inDisplayedMembers:(id)arg2;
 - (void)_loadMembersInBackground:(id)arg1;
 - (void)_modelDatabaseChangedExternally:(struct __CFDictionary { }*)arg1;
 - (void)_modelDatabaseChangedLocally:(struct __CFDictionary { }*)arg1;
@@ -49,23 +55,31 @@
 - (void)_notifyDelegatesOfExternalDatabaseChangeWithDeletedGroup:(BOOL)arg1 deletedPerson:(BOOL)arg2;
 - (id)_partialDisplayedGroupMembersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)_startBackgroundThreadIfNecessaryScanningForward:(BOOL)arg1;
+- (void)_updateForMajorAddressBookChange:(BOOL)arg1;
 - (void)_waitUntilBackgroundThreadFinished;
 - (void)addDatabaseChangeDelegate:(id)arg1;
 - (void*)addressBook;
 - (id)allCachedModelRecords;
+- (id)allDatabaseDirectories;
+- (id)allGroups;
+- (id)allSources;
 - (void)copyDisplayedNamePieces:(id*)arg1 isGroup:(BOOL*)arg2 highlightIndex:(int*)arg3 forMemberID:(int*)arg4 atindex:(unsigned int)arg5;
+- (id)databaseFullDirectory;
+- (id)databaseHomeDirectory;
+- (id)databaseSubdirectory;
 - (void)dealloc;
+- (id)displayedContactsFilter;
 - (void*)displayedMemberAtIndex:(unsigned int)arg1;
 - (struct { struct { /* ? */ } *x1; int x2; int x3; }*)displayedMemberSectionLists;
 - (int)displayedMemberSectionListsCount;
 - (id)displayedMembersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct __CFDictionary { }*)headerSortKeyToHeaderStringDictionary;
-- (long)indexForDisplayedMember:(void*)arg1;
+- (int)indexForDisplayedMember:(void*)arg1;
 - (id)initWithAddressBook:(void*)arg1;
-- (void)invalidateDisplayedGroups;
 - (void)invalidateDisplayedMembers;
-- (void)invalidateLastSelectedGroupWrapper;
-- (id)lastSelectedGroupWrapper;
+- (void)invalidateLastSelectedContactsFilter;
+- (id)lastSelectedContactsFilter;
+- (int)meID;
 - (unsigned int)numberOfDisplayedMembers;
 - (void)prepareDisplayedMembersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)removeDatabaseChangeDelegate:(id)arg1;
@@ -73,20 +87,20 @@
 - (long)resetPartialSectionListWithMaximumCount:(int)arg1 headerSortKeyToHeaderString:(struct __CFDictionary { }*)arg2;
 - (void)resetSectionList;
 - (void)resetSortKeyToHeaderStringDictionary;
-- (void*)selectedGroup;
-- (id)selectedGroupWrapper;
+- (id)selectedContactsFilter;
 - (void*)selectedPerson;
 - (void)setAddressBook:(void*)arg1;
 - (void)setAutoInvalidateOnDatabaseChange:(BOOL)arg1;
 - (void)setDisplayNameOrdering:(unsigned int)arg1;
+- (void)setDisplayedContactsFilter:(id)arg1;
 - (void)setFilteredDisplayedMembers:(struct __CFArray { }*)arg1;
-- (void)setLastSelectedGroupWrapper:(id)arg1;
-- (void)setSelectedGroup:(void*)arg1;
-- (void)setSelectedGroupWrapper:(id)arg1;
+- (void)setLastSelectedContactsFilter:(id)arg1;
+- (void)setSelectedContactsFilter:(id)arg1;
 - (void)setSelectedPerson:(void*)arg1;
 - (void)setSortOrdering:(unsigned int)arg1;
-- (BOOL)shouldUsePartialLoadingForGroupWrapper:(id)arg1;
+- (BOOL)shouldUsePartialLoadingForContactsFilter:(id)arg1;
 - (void)startDelayingNotificationsForDatabaseChangeDelegate:(id)arg1;
 - (void)stopDelayingNotificationsForDatabaseChangeDelegate:(id)arg1 andDeliverDelayedNotifications:(BOOL)arg2;
+- (void)updateForMajorAddressBookChange;
 
 @end

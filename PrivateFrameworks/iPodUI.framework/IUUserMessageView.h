@@ -18,14 +18,14 @@
 @property(retain) IUUserMessageDataSource * dataSource;
 
 - (void)_findContentButton:(id)arg1;
-- (void)_isCloudUpdateInProgressDidChangeNotification:(id)arg1;
 - (id)_newFindContentButton;
 - (id)_newLabel;
 - (id)_newSubtitleLabel;
 - (id)_newTitleLabel;
+- (void)_reloadFindContentButton;
 - (void)_reloadView;
 - (void)_sizeLabelToFit:(id)arg1;
-- (void)_updateProgressTimer:(id)arg1;
+- (void)_storeRestrictionsChangedNotification:(id)arg1;
 - (id)dataSource;
 - (void)dealloc;
 - (void)didMoveToSuperview;

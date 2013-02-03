@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKAnimatedImageMediaObject : CKFixedImageMediaObject {
+@interface CKAnimatedImageMediaObject : CKCompressibleImageMediaObject {
 }
 
 + (id)mimeTypesToFileExtensions;
 
-- (BOOL)_imageHasAnimation;
-- (float)balloonHeightWithPreviewData:(id)arg1;
-- (Class)balloonPreviewClassWithPreviewData:(id)arg1;
-- (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
-- (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
-- (BOOL)shouldGeneratePreviewInBackground;
+- (id)extendedPreviewForOrientation:(int)arg1 highlight:(BOOL)arg2;
+- (BOOL)saveExtendedPreview:(id)arg1 toPath:(id)arg2 forOrientation:(int)arg3;
+- (id)savedExtendedPreviewFromPath:(id)arg1 forOrientation:(int)arg2;
+- (BOOL)wantsExtendedPreview;
 
 @end

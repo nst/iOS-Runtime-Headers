@@ -17,7 +17,7 @@
 @property(retain) CIContext * context;
 @property void* faceCoreAPI;
 
-- (struct FaceCoreAPI { int (**x1)(); struct Data {} *x2; int x3; struct basic_string<char, std::char_traits<char>, std::allocator<char> > { struct _Alloc_hider { char *x_1_2_1; } x_4_1_1; } x4; struct basic_string<char, std::char_traits<char>, std::allocator<char> > { struct _Alloc_hider { char *x_1_2_1; } x_5_1_1; } x5; }*)api;
+- (struct FaceCoreAPI { int (**x1)(); struct FaceCoreAPIInternal {} *x2; struct FaceCoreContext {} *x3; void *x4; }*)api;
 - (id)adjustedImageFromImage:(id)arg1 orientation:(int)arg2 inverseCTM:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg3;
 - (id)context;
 - (BOOL)createFaceCoreImage:(struct image { char *x1; int x2; int x3; }*)arg1 fromCIImage:(id)arg2;

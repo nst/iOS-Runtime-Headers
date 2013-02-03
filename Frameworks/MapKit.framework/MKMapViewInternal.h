@@ -2,7 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKMapViewDelegate><MKMapViewDelegatePrivate>, UIGestureRecognizer, MKMapView, GEOTileAvailabilityRequest, UITouch, UILabel, UIEvent, UIColor, MKMapViewPositioningChange, MKAnnotationContainerView, UILongPressGestureRecognizer, UIView, MKVariableDelayTapRecognizer, MKOverlayContainerView, MKMapTileView, MKScrollView, UITapGestureRecognizer, UIImageView, NSTimer;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class <MKMapViewDelegate><MKMapViewDelegatePrivate>, UIGestureRecognizer, MKMapView, UITouch, MKAttributionLabel, UILabel, UIEvent, MKMapViewPositioningChange, MKAnnotationContainerView, UILongPressGestureRecognizer, MKVariableDelayTapRecognizer, UIView, MKMapGestureController, MKOverlayContainerView, VKMapView, UITapGestureRecognizer, UIImageView, NSTimer;
 
 @interface MKMapViewInternal : NSObject <UITextFieldDelegate, PBRequesterDelegate> {
     struct CGRect { 
@@ -17,14 +21,12 @@
     struct { 
         unsigned int callsDelegateForAllRegionChanges : 1; 
         unsigned int changingRegion : 1; 
-        unsigned int checkTrafficAvailable : 1; 
         unsigned int debugViewHeading : 1; 
         unsigned int didStartDragging : 1; 
         unsigned int draggingInterrupted : 1; 
         unsigned int didStartSmoothScrolling : 1; 
         unsigned int drawGridBackground : 1; 
         unsigned int hasRenderedSomething : 1; 
-        unsigned int hot : 1; 
         unsigned int ignoreHeadingUpdates : 1; 
         unsigned int ignoreLocationUpdates : 1; 
         unsigned int isRunningPositioningChange : 1; 
@@ -42,7 +44,6 @@
         unsigned int scrollIsAnimated : 1; 
         unsigned int shouldRotateForHeading : 1; 
         unsigned int showsUserLocation : 1; 
-        unsigned int trafficEnabled : 1; 
         unsigned int zoomEnabled : 1; 
         unsigned int zoomIsAnimated : 1; 
         unsigned int zooming : 1; 
@@ -51,6 +52,11 @@
         unsigned int annotationViewsAreAddedImmediately : 1; 
         unsigned int nextPositioningChangeIsInstant : 1; 
         unsigned int isChangingViewSize : 1; 
+        unsigned int shouldSetRegionOnSizeChange : 1; 
+        unsigned int showsAttribution : 1; 
+        unsigned int showsAttributionBadge : 1; 
+        unsigned int wantsShowBubbleAfterRegionChange : 1; 
+        unsigned int locationUpdatesPausedForRegionChange : 1; 
         unsigned int delegateShouldReceiveTouch : 1; 
         unsigned int delegateShouldDelayTapResponse : 1; 
         unsigned int delegateWillChangeRotation : 1; 
@@ -64,18 +70,15 @@
         unsigned int delegateDidChangeUserTrackingMode : 1; 
         unsigned int delegateDidChangeUserTrackingModeButton : 1; 
         unsigned int delegateDidChangeMapType : 1; 
+    MKAttributionLabel *_attributionLabel;
     float angularVelocity;
     int animationType;
     MKAnnotationContainerView *annotationContainer;
     NSTimer *annotationTimer;
     double annotationViewPerspectiveHeading;
-    UIImageView *badgeView;
+    UIImageView *attributionBadgeView;
     } centeringRect;
     UIView *contentView;
-    UILabel *copyrightLabel;
-    NSTimer *copyrightLabelTimer;
-    UIColor *darkCopyrightShadowColor;
-    UIColor *darkCopyrightTextColor;
     NSTimer *debugTimer;
     UILabel *debugView;
     NSTimer *defaultLocationTimer;
@@ -84,50 +87,41 @@
     unsigned int eventMode;
     unsigned int eventModeHistory;
     } flags;
-    GEOTileAvailabilityRequest *hasTrafficRequest;
+    MKMapGestureController *gestureController;
     double heading;
     NSTimer *hoverExpirationTimer;
     double hoverStartTime;
     UITapGestureRecognizer *immediateTapGesture;
-    unsigned int lastCopyrightMapType;
     unsigned int levelViewLoadingCount;
-    unsigned int levelViewTrafficLoadingCount;
-    UIColor *lightCopyrightShadowColor;
-    UIColor *lightCopyrightTextColor;
     UIGestureRecognizer *locationConsoleGesture;
     UILongPressGestureRecognizer *longPressGestureRecognizer;
-    MKMapTileView *mapTileView;
     unsigned int mapType;
+    VKMapView *mapView;
     MKOverlayContainerView *overlayContainer;
     MKMapViewPositioningChange *positioningChange;
     NSTimer *positioningChangeTimer;
+    id regionSetterWhenSized;
     int rotationDirection;
     int rotationState;
     UIEvent *savedEventBegan;
     UITouch *savedTouchBegan;
+    UIView *scrollContainerView;
     NSTimer *scrollToReCenterUserTimer;
-    MKScrollView *scrollView;
     int scrollViewTouchCount;
     NSTimer *startEffectsTimer;
     unsigned int suspendedEffectsCount;
     NSTimer *tapAndHoldTimer;
     UITapGestureRecognizer *tapGestureRecognizer;
     unsigned int tileCount;
-    UIGestureRecognizer *toggleCountryGesture;
-    NSTimer *trafficAvailabilityTimer;
-    int trafficStatus;
     UITapGestureRecognizer *twoFingerTapGestureRecognizer;
     int userTrackingMode;
     MKMapView *view;
 }
 
-- (void)delayedShowAddedAnnotationsAnimated;
 - (void)runPositioningChangeIfNeeded:(id)arg1;
 - (void)runPositioningChangeIfNeeded;
 - (void)scrollToUserLocation;
-- (void)showAddedAnnotationsAndRouteAnimated;
 - (void)startEffects;
 - (void)stopHoverWithChange:(id)arg1;
-- (void)updateTrafficAvailable;
 
 @end

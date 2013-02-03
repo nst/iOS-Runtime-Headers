@@ -2,21 +2,26 @@
    Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
  */
 
-@class TLToneTableController, UITableView;
+@class NSString, TLToneTableController, UITableView;
 
 @interface TLTonePicker : UIView {
+    Class _customTableViewClass;
     id _delegate;
     UITableView *_table;
     TLToneTableController *_tableController;
 }
 
 @property id delegate;
+@property(retain) NSString * vibrationAccountIdentifier;
 
 + (id)ringtonePickerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)texttonePickerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)tonePickerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
+- (void)_buildTable;
 - (void)_reloadData;
+- (void)addMediaItems:(id)arg1;
+- (BOOL)allowsDeletingCurrentSystemVibration;
 - (void)buildUIWithAVController:(id)arg1 filter:(unsigned int)arg2 tonePicker:(BOOL)arg3;
 - (float)contentHeight;
 - (void)dealloc;
@@ -27,29 +32,42 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 avController:(id)arg2 filter:(unsigned int)arg3 tonePicker:(BOOL)arg4;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 avController:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (void)removeMediaItems:(id)arg1;
 - (void)ringtoneManagerContentsChanged:(id)arg1;
+- (void)ringtoneTableController:(id)arg1 selectedMediaItemWithIdentifier:(id)arg2;
 - (void)ringtoneTableController:(id)arg1 selectedRingtoneWithIdentifier:(id)arg2;
 - (void)ringtoneTableController:(id)arg1 willPlayRingtoneWithIdentifier:(id)arg2;
+- (id)selectedIdentifier:(BOOL*)arg1;
 - (id)selectedRingtoneIdentifier;
 - (id)selectedVibrationIdentifier;
 - (void)setAVController:(id)arg1;
+- (void)setAllowsDeletingCurrentSystemVibration:(BOOL)arg1;
+- (void)setContext:(int)arg1;
+- (void)setCustomTableViewCellClass:(Class)arg1;
+- (void)setCustomTableViewClass:(Class)arg1;
 - (void)setDefaultIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setMediaAtTop:(BOOL)arg1;
 - (void)setNoneAtTop:(BOOL)arg1;
 - (void)setNoneString:(id)arg1;
+- (void)setSelectedMediaIdentifier:(id)arg1;
 - (void)setSelectedRingtoneIdentifier:(id)arg1;
 - (void)setSelectedVibrationIdentifier:(id)arg1;
 - (void)setShowsDefault:(BOOL)arg1;
 - (void)setShowsDefaultVibration:(BOOL)arg1;
+- (void)setShowsMedia:(BOOL)arg1;
 - (void)setShowsNoVibrationSelected:(BOOL)arg1;
 - (void)setShowsNone:(BOOL)arg1;
 - (void)setShowsNoneVibration:(BOOL)arg1;
 - (void)setShowsNothingSelected:(BOOL)arg1;
 - (void)setShowsRingtonesStore:(BOOL)arg1;
+- (void)setShowsStoreButtonInNavigationBar:(BOOL)arg1;
 - (void)setShowsUserGeneratedVibrations:(BOOL)arg1;
 - (void)setShowsVibrations:(BOOL)arg1;
-- (void)setShowsVibrationsAlongsideTones:(BOOL)arg1;
+- (void)setVibrationAccountIdentifier:(id)arg1;
 - (void)stopPlaying;
 - (void)stopPlayingWithFadeOut:(BOOL)arg1;
+- (id)vibrationAccountIdentifier;
 
 @end

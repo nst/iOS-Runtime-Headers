@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class CalDAVServerVersion, NSString, NSSet, NSURL;
+@class NSSet, NSURL, CalDAVServerVersion;
 
 @interface CalDAVGetAccountPropertiesTaskGroup : CoreDAVGetAccountPropertiesTaskGroup {
-    NSString *_allowedCalendarComponentSet;
     NSSet *_calendarHomes;
     NSURL *_delegatePrincipalURL;
     NSURL *_dropboxURL;
@@ -18,7 +17,6 @@
     NSSet *_userAddresses;
 }
 
-@property(readonly) NSString * allowedCalendarComponentSet;
 @property(readonly) NSSet * calendarHomes;
 @property(retain) NSURL * delegatePrincipalURL;
 @property(readonly) NSURL * dropboxURL;
@@ -32,7 +30,6 @@
 
 - (id)_copyAccountPropertiesPropFindElements;
 - (void)_setPropertiesFromParsedResponses:(id)arg1;
-- (id)allowedCalendarComponentSet;
 - (id)calendarHomes;
 - (void)dealloc;
 - (id)delegatePrincipalURL;

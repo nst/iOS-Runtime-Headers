@@ -91,7 +91,7 @@
 - (id)currentSubController;
 - (id)currentTextField;
 - (void)dealloc;
-- (void)didReceiveMemoryWarning;
+- (BOOL)disablesAutomaticKeyboardDismissal;
 - (void)displayViewListInView:(id)arg1 newSubviews:(id)arg2 withAnimation:(BOOL)arg3;
 - (void)doneWithAssistantResult:(long)arg1;
 - (void)handeImmediateCancel;
@@ -173,6 +173,5 @@
 - (void)touchInCellAtIndexPath:(id)arg1;
 - (id)valueForItemOfType:(id)arg1 atTypeIndex:(unsigned int)arg2 inCellWithTag:(int)arg3;
 - (void)viewDidLoad;
-- (void)viewDidUnload;
 
 @end

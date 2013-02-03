@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSValue, UITabBarButtonLabel, UIView, UIImage, UITabBarButtonBadge, UITabBarSelectionIndicatorView;
+@class NSValue, _UIBadgeView, UITabBarButtonLabel, UIView, UIImage, UITabBarSelectionIndicatorView;
 
 @interface UITabBarButton : UIControl {
     struct CGRect { 
@@ -25,7 +25,7 @@
     struct UIOffset { 
         float horizontal; 
         float vertical; 
-    UITabBarButtonBadge *_badge;
+    _UIBadgeView *_badge;
     BOOL _badgeAnimated;
     BOOL _barHeight;
     UIImage *_customSelectedIndicatorImage;
@@ -45,14 +45,16 @@
 
 + (id)_defaultLabelColor;
 + (id)_defaultLabelFont;
-+ (id)_donePushButton;
 
 - (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
 - (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)_applyTabBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
 - (void)_badgeAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForSelectedIndicator;
+- (BOOL)_isSelected;
 - (void)_positionBadge;
 - (id)_scriptingInfo;
+- (id)_selectedIndicatorView;
 - (void)_setBadgeAnimated:(BOOL)arg1;
 - (void)_setBadgeValue:(id)arg1;
 - (void)_setBarHeight:(float)arg1;

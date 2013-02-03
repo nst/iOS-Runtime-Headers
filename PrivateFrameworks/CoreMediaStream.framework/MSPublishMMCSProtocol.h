@@ -16,6 +16,7 @@
 
 @property <MSPublishStorageProtocolDelegate> * delegate;
 
+- (void).cxx_destruct;
 - (void)_closeFDForAsset:(id)arg1;
 - (int)_getFileDescriptorFromItem:(unsigned long long)arg1;
 - (id)_getUTIFromItem:(unsigned long long)arg1;

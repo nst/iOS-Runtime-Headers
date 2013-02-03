@@ -24,15 +24,15 @@
 
 + (Class)classForMimePart;
 + (Class)headersClass;
++ (void)setDefaultMessageHeadersClass:(Class)arg1;
 
+- (id)_bodyForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2 updateFlags:(BOOL)arg3;
 - (id)_cachedBodyDataContainerForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_cachedBodyDataForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_cachedBodyForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_cachedHeaderDataForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_cachedHeadersForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_fetchBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 downloadIfNecessary:(BOOL)arg3 partial:(BOOL*)arg4;
-- (id)_fetchBodyForMessage:(id)arg1 updateFlags:(BOOL)arg2;
-- (id)_fetchBodyForMessage:(id)arg1;
 - (void)_flushAllCaches;
 - (void)_flushAllCachesLocking:(BOOL)arg1;
 - (void)_flushAllMessageData;

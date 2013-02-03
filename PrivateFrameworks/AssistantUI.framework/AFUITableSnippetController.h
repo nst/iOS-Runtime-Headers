@@ -13,6 +13,7 @@
 @property(readonly) AFUISnippetView * snippetView;
 @property(retain) UITableView * tableView;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)setHeaderImage:(id)arg1;
 - (void)setHeaderText:(id)arg1;

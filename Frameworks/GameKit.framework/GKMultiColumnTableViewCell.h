@@ -27,6 +27,7 @@
 @property int selectedColumn;
 @property SEL selectedColumnSetter;
 
+- (id)_gkDescriptionWithChildren:(int)arg1;
 - (void)_multiColumnHighlight:(BOOL)arg1 view:(id)arg2;
 - (void)_updateHighlightColorsForView:(id)arg1 highlighted:(BOOL)arg2;
 - (int)activeColumn;

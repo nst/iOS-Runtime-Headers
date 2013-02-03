@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class UIPushButton, NSMutableArray, NSTimer, MFComposeRecipientAtom, UIImage, UITextField, NSMutableDictionary, NSArray;
+@class MFComposeTextField, <_MFComposeRecipientViewStyleDelegate>, UIButton, MFComposeRecipientAtom, UIImage, NSMutableArray, NSTimer, NSMutableDictionary, NSArray;
 
 @interface _MFComposeRecipientView : MFComposeHeaderView <UITextFieldDelegate, ABPeoplePickerNavigationControllerDelegate, MFComposeRecipientAtomDelegate> {
-    UIPushButton *_addButton;
+    UIButton *_addButton;
     NSMutableDictionary *_atoms;
     UIImage *_buttonImage;
     NSMutableArray *_collapsedRecipientLabels;
@@ -19,9 +19,14 @@
     UIImage *_pressedImage;
     NSArray *_properties;
     NSMutableArray *_recipients;
+    unsigned int _selectablePeople;
     MFComposeRecipientAtom *_selectedAtom;
-    UITextField *_textField;
+    <_MFComposeRecipientViewStyleDelegate> *_styleDelegate;
+    MFComposeTextField *_textField;
 }
+
+@property unsigned int selectablePeople;
+@property <_MFComposeRecipientViewStyleDelegate> * styleDelegate;
 
 - (BOOL)_addable;
 - (void)_cancelDelayTimer;
@@ -63,6 +68,7 @@
 - (BOOL)onlyCollapsesUnstyledAtoms;
 - (void)parentDidClose;
 - (void)parentWillClose;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
@@ -74,6 +80,7 @@
 - (void)removeRecipient:(id)arg1;
 - (void)replaceRecipient:(id)arg1 withRecipient:(id)arg2;
 - (void)selectComposeRecipientAtom:(id)arg1;
+- (unsigned int)selectablePeople;
 - (void)setAddresses:(id)arg1;
 - (void)setEditable:(BOOL)arg1;
 - (void)setInputDelay:(double)arg1;
@@ -82,8 +89,11 @@
 - (void)setOnlyCollapsesUnstyledAtoms:(BOOL)arg1;
 - (void)setProperties:(id)arg1;
 - (void)setProperty:(int)arg1;
+- (void)setSelectablePeople:(unsigned int)arg1;
+- (void)setStyleDelegate:(id)arg1;
 - (BOOL)shouldShowCardForPerson:(void*)arg1;
 - (void)showAtoms;
+- (id)styleDelegate;
 - (id)text;
 - (void)textChanged:(id)arg1;
 - (id)textField;

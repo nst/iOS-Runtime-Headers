@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSString, NSLock;
+@class NSLock, NSString, NSObject<OS_dispatch_queue>;
 
 @interface MFCountryConfiguration : NSObject {
     NSString *_countryCode;
@@ -10,7 +10,7 @@
     BOOL _isUpdating;
     id _networkObserver;
     NSString *_oldCountryCode;
-    struct dispatch_queue_s { } *_queue;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property(copy) NSString * countryCode;

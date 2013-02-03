@@ -2,9 +2,30 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayer, NSString, AVPlayerItem, CALayer, AVSubtitleLayer;
+@class AVPlayer, NSString, NSObject<OS_dispatch_queue>, CALayer, AVSubtitleLayer, AVPlayerItem;
 
 @interface AVPlayerLayerInternal : NSObject {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    struct CGSize { 
+        float width; 
+        float height; 
     struct CGSize { 
         float width; 
         float height; 
@@ -17,8 +38,11 @@
     BOOL isReadyForDisplay;
     struct OpaqueFigSimpleMutex { } *isReadyForDisplayMutex;
     AVPlayerItem *itemMarkedReadyForDisplay;
+    } latestPlayerLayerBoundsAtRendering;
+    } latestPresentationSizeAtRendering;
+    } latestSubtitleLayoutAtRendering;
     } presentationSize;
-    struct dispatch_queue_s { } *serialQueue;
+    NSObject<OS_dispatch_queue> *serialQueue;
     BOOL shouldObservePlayer;
     NSString *subtitleGravity;
     AVSubtitleLayer *subtitleLayer;

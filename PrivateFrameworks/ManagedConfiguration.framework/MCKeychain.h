@@ -6,7 +6,6 @@
 }
 
 + (struct __CFDictionary { }*)_newQueryWithService:(id)arg1 account:(id)arg2 label:(id)arg3 description:(id)arg4 outError:(id*)arg5;
-+ (BOOL)addCertificateToKeychain:(struct __SecCertificate { }*)arg1;
 + (struct __SecCertificate { }*)copyCertificateWithPersistentID:(id)arg1;
 + (struct __SecIdentity { }*)copyIdentityWithPersistentID:(id)arg1;
 + (void*)copyItemWithPersistentID:(id)arg1;

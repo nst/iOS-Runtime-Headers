@@ -22,7 +22,7 @@
 - (id)initWithResources:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToRun:(id)arg1;
-- (unsigned int)key;
+- (int)key;
 - (void)setCharIndex:(unsigned int)arg1;
 - (void)setFont:(id)arg1;
 - (void)setFontIndex:(unsigned int)arg1;

@@ -6,6 +6,7 @@
 
 @interface MSAssetCollection : NSObject <NSCoding> {
     NSString *_assetCollectionID;
+    NSString *_ctag;
     NSArray *_derivedAssets;
     NSString *_fileName;
     MSAsset *_masterAsset;
@@ -13,6 +14,7 @@
 }
 
 @property(retain) NSString * assetCollectionID;
+@property(retain) NSString * ctag;
 @property(retain) NSArray * derivedAssets;
 @property(retain) NSString * fileName;
 @property(retain) MSAsset * masterAsset;
@@ -22,8 +24,9 @@
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)assetCollectionID;
-- (void)dealloc;
+- (id)ctag;
 - (id)derivedAssets;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -34,6 +37,7 @@
 - (id)masterAsset;
 - (id)masterAssetHash;
 - (void)setAssetCollectionID:(id)arg1;
+- (void)setCtag:(id)arg1;
 - (void)setDerivedAssets:(id)arg1;
 - (void)setFileName:(id)arg1;
 - (void)setMasterAsset:(id)arg1;

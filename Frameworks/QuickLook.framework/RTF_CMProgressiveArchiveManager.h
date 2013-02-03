@@ -11,7 +11,7 @@
 
 @interface RTF_CMProgressiveArchiveManager : RTF_CMArchiveManager {
     struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); } *mCallBacks;
-    void *mClient;
+    const void *mClient;
     NSMutableString *mCssString;
     NSMutableDictionary *mDataCache;
     NSMutableString *mHtmlLogString;

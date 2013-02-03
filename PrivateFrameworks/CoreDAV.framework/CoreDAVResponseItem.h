@@ -22,9 +22,10 @@
 @property(retain) CoreDAVLeafItem * serverUID;
 @property(retain) CoreDAVLeafItem * status;
 
++ (id)copyParseRules;
+
 - (void)addHref:(id)arg1;
 - (void)addPropStat:(id)arg1;
-- (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
 - (id)errorItem;

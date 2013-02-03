@@ -12,6 +12,7 @@
 
 - (BOOL)allowsDeletion;
 - (BOOL)canDeleteIndex:(unsigned int)arg1;
+- (Class)cellConfigurationClassForEntity:(id)arg1;
 - (void)createGlobalContexts;
 - (id)createNoContentDataSource;
 - (SEL)libraryHasDisplayableEntitiesSelector;

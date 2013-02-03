@@ -15,6 +15,8 @@
     id _iosurfaceCompletionBlock;
     BOOL _isEV0Image;
     BOOL _isHDRImage;
+    float _jpegQuality;
+    BOOL _jpegQualitySpecified;
     } _previewImageSize;
     id _sbufCompletionBlock;
     BOOL _stillImageMirrored;
@@ -27,6 +29,8 @@
 @property(copy) id iosurfaceCompletionBlock;
 @property BOOL isEV0Image;
 @property BOOL isHDRImage;
+@property float jpegQuality;
+@property BOOL jpegQualitySpecified;
 @property struct CGSize { float x1; float x2; } previewImageSize;
 @property(copy) id sbufCompletionBlock;
 @property(getter=isStillImageMirrored) BOOL stillImageMirrored;
@@ -43,6 +47,8 @@
 - (BOOL)isEV0Image;
 - (BOOL)isHDRImage;
 - (BOOL)isStillImageMirrored;
+- (float)jpegQuality;
+- (BOOL)jpegQualitySpecified;
 - (struct CGSize { float x1; float x2; })previewImageSize;
 - (id)sbufCompletionBlock;
 - (void)setChromaNoiseReductionEnabled:(BOOL)arg1;
@@ -50,6 +56,8 @@
 - (void)setIosurfaceCompletionBlock:(id)arg1;
 - (void)setIsEV0Image:(BOOL)arg1;
 - (void)setIsHDRImage:(BOOL)arg1;
+- (void)setJpegQuality:(float)arg1;
+- (void)setJpegQualitySpecified:(BOOL)arg1;
 - (void)setPreviewImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSbufCompletionBlock:(id)arg1;
 - (void)setStillImageMirrored:(BOOL)arg1;

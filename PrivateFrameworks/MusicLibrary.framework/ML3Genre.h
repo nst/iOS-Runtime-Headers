@@ -6,6 +6,7 @@
 }
 
 + (id)allProperties;
++ (id)countingQueryForMPMediaEntityProperty:(id)arg1 library:(id)arg2 identifier:(long long)arg3;
 + (id)databaseTable;
 + (id)defaultOrderingProperties;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;

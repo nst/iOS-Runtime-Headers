@@ -2,52 +2,91 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSURL, NSString, MKPlacemark;
+@class NSNumber, NSArray, NSString, MKPlacemark, NSURL;
 
 @interface MKMapItem : NSObject {
+    NSArray *_attributions;
     NSString *_businessID;
     NSString *_yelpID;
+    NSArray *entryPoints;
+    NSString *extSessionGuid;
+    BOOL isCurrentLocation;
     NSString *name;
+    NSNumber *numberOfRatings;
+    NSNumber *numberOfReviews;
     NSString *phoneNumber;
     NSString *placeID;
     MKPlacemark *placemark;
+    NSNumber *rating;
     NSURL *url;
 }
 
+@property(retain) NSArray * attributions;
+@property(copy) NSArray * attributions;
 @property(retain) NSString * businessID;
-@property(retain) NSString * businessID;
+@property(copy) NSString * businessID;
+@property(retain) NSArray * entryPoints;
+@property(copy) NSArray * entryPoints;
+@property(retain) NSString * extSessionGuid;
+@property(copy) NSString * extSessionGuid;
 @property(readonly) BOOL isBusiness;
-@property(retain) NSString * name;
-@property(retain) NSString * phoneNumber;
+@property BOOL isCurrentLocation;
+@property(copy) NSString * name;
+@property(retain) NSNumber * numberOfRatings;
+@property(copy) NSNumber * numberOfRatings;
+@property(retain) NSNumber * numberOfReviews;
+@property(copy) NSNumber * numberOfReviews;
+@property(copy) NSString * phoneNumber;
 @property(retain) NSString * placeID;
-@property(retain) NSString * placeID;
+@property(copy) NSString * placeID;
 @property(retain) MKPlacemark * placemark;
 @property(readonly) NSURL * problemURL;
+@property(retain) NSNumber * rating;
+@property(copy) NSNumber * rating;
 @property(retain) NSURL * url;
 @property(retain) NSString * yelpID;
-@property(retain) NSString * yelpID;
+@property(copy) NSString * yelpID;
 
++ (id)mapItemForCurrentLocation;
 + (id)mapItemWithDictionary:(id)arg1;
 + (id)mapItemsFromURL:(id)arg1 options:(id*)arg2;
++ (BOOL)openMapsWithItems:(id)arg1 launchOptions:(id)arg2;
++ (id)plistCompatibleDictionaryFromStandardOptions:(id)arg1;
++ (id)standardOptionsFromPlistCompatibleDictionary:(id)arg1;
 + (id)urlForMapItem:(id)arg1 options:(id)arg2;
 + (id)urlForMapItems:(id)arg1 options:(id)arg2;
 
 - (id)_queryStringForDictionary:(id)arg1;
+- (id)attributions;
 - (id)businessID;
 - (void)dealloc;
 - (id)dictionaryRepresentation;
+- (id)entryPoints;
+- (id)extSessionGuid;
 - (id)initWithPlacemark:(id)arg1;
 - (BOOL)isBusiness;
+- (BOOL)isCurrentLocation;
 - (id)name;
+- (id)numberOfRatings;
+- (id)numberOfReviews;
+- (BOOL)openInMapsWithLaunchOptions:(id)arg1;
 - (id)phoneNumber;
 - (id)placeID;
 - (id)placemark;
 - (id)problemURL;
+- (id)rating;
+- (void)setAttributions:(id)arg1;
 - (void)setBusinessID:(id)arg1;
+- (void)setEntryPoints:(id)arg1;
+- (void)setExtSessionGuid:(id)arg1;
+- (void)setIsCurrentLocation:(BOOL)arg1;
 - (void)setName:(id)arg1;
+- (void)setNumberOfRatings:(id)arg1;
+- (void)setNumberOfReviews:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (void)setPlaceID:(id)arg1;
 - (void)setPlacemark:(id)arg1;
+- (void)setRating:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setYelpID:(id)arg1;
 - (id)url;

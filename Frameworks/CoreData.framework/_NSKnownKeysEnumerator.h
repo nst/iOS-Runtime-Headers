@@ -8,9 +8,9 @@
         unsigned int length; 
     unsigned long _flags;
     unsigned long _index;
-    id *_list;
+    const id *_list;
     } _range;
-    id *_referenceItems;
+    const id *_referenceItems;
     id _target;
 }
 

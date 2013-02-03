@@ -14,10 +14,12 @@
     NSMutableArray *_preauthorizedInfos;
 }
 
+@property(readonly) NSArray * activeTransferGUIDs;
 @property(readonly) NSArray * activeTransfers;
 @property(readonly) BOOL hasActiveFileTransfers;
 @property(readonly) BOOL hasPendingFileTransfers;
 @property(readonly) NSArray * orderedTransfers;
+@property(readonly) NSArray * orderedTransfersGUIDs;
 @property(readonly) NSDictionary * transfers;
 
 + (Class)fileTransferClass;
@@ -42,9 +44,11 @@
 - (void)acceptTransfer:(id)arg1 withPath:(id)arg2 autoRename:(BOOL)arg3 overwrite:(BOOL)arg4;
 - (void)acknowledgeAllPendingTransfers;
 - (void)acknowledgePendingTransfer:(id)arg1;
+- (id)activeTransferGUIDs;
 - (id)activeTransfers;
 - (void)assignTransfer:(id)arg1 toHandle:(id)arg2;
 - (void)assignTransfer:(id)arg1 toMessage:(id)arg2 account:(id)arg3;
+- (id)chatForTransfer:(id)arg1;
 - (void)clearFinishedTransfers;
 - (void)dealloc;
 - (void)deleteTransfer:(id)arg1;
@@ -54,6 +58,7 @@
 - (BOOL)hasPendingFileTransfers;
 - (BOOL)isFileTransfer:(id)arg1 preauthorizedWithDictionary:(id)arg2;
 - (id)orderedTransfers;
+- (id)orderedTransfersGUIDs;
 - (void)preauthorizeFileTransferFromOtherPerson:(id)arg1 account:(id)arg2 filename:(id)arg3 saveToPath:(id)arg4;
 - (void)removeTransfer:(id)arg1;
 - (void)retargetTransfer:(id)arg1 toPath:(id)arg2;

@@ -4,23 +4,25 @@
 
 @class NSArray;
 
-@interface EKEventAttachmentsEditItem : EKEventEditItem <EKEventAttachmentCellControllerDelegate, EKEventAttachmentEditViewControllerDelegate> {
+@interface EKEventAttachmentsEditItem : EKEventEditItem <EKEventAttachmentCellControllerDelegate, EKEventAttachmentEditViewControllerDelegate, UIDocumentInteractionControllerDelegate> {
     NSArray *_cellControllers;
 }
 
 - (void)_cleanUpCellControllers;
+- (id)_parentViewControllerForAttachmentCellController;
 - (BOOL)_shouldCondenseIntoSingleItem;
 - (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
-- (id)cellForSubitemAtIndex:(int)arg1;
+- (id)cellForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2;
 - (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2;
-- (void)eventEditor:(id)arg1 didSelectSubitem:(int)arg2;
-- (BOOL)isInline;
-- (int)numberOfSubitems;
+- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2 forWidth:(float)arg3;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2 inSubsection:(int)arg3;
+- (id)documentInteractionControllerViewControllerForPreview:(id)arg1;
+- (void)documentInteractionControllerWillEndPreview:(id)arg1;
+- (void)editor:(id)arg1 didSelectSubitem:(int)arg2 inSubsection:(int)arg3;
+- (int)numberOfSubitemsInSubsection:(int)arg1;
 - (id)owningEventForAttachmentCellController:(id)arg1;
 - (id)owningEventForAttachmentEditViewController:(id)arg1;
-- (id)parentViewControllerForAttachmentCellController:(id)arg1;
 - (void)refreshFromCalendarItemAndStore;
+- (BOOL)usesDetailViewControllerForSubitem:(int)arg1 inSubsection:(int)arg2;
 
 @end

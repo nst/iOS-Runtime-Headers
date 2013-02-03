@@ -124,14 +124,13 @@
 - (union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })ambientColor;
 - (void)bind;
 - (void)dealloc;
+- (id)description;
 - (union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })diffuseColor;
 - (void)dirtyAllUniforms;
 - (unsigned long long*)effectDirtyUniforms;
 - (union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })emissiveColor;
-- (unsigned int)fshMaskCt;
-- (char **)fshMaskStr;
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)fshMasks;
-- (bool)includeShaderTextForRootNode:(id)arg1;
+- (bool)includeFshShaderTextForRootNode:(id)arg1;
+- (bool)includeVshShaderTextForRootNode:(id)arg1;
 - (id)init;
 - (void)initializeMasks;
 - (void)setAmbientColor:(union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })arg1;
@@ -149,9 +148,5 @@
 - (void)set_specularColorLoc:(int)arg1;
 - (float)shininess;
 - (union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })specularColor;
-- (void)specularColorMask;
-- (unsigned int)vshMaskCt;
-- (char **)vshMaskStr;
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)vshMasks;
 
 @end

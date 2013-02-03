@@ -5,13 +5,13 @@
 @class EKDayOccurrenceContentView, UIImageView, UIView, EKOccurrenceViewOverlay, NSString, UIColor, EKEvent;
 
 @interface EKDayOccurrenceView : UIControl {
+    unsigned int _needsReply : 1;
     unsigned int _tentative : 1;
     unsigned int _allDay : 1;
     unsigned int _darkensSelection : 1;
     unsigned int _dimmed : 1;
     unsigned int _touchKeptInsideOccurrence : 1;
     unsigned int _drawsResizeHandles : 1;
-    unsigned int _maskedResizeHandles : 1;
     UIImageView *_background;
     BOOL _borderless;
     UIColor *_color;
@@ -40,16 +40,17 @@
 @property BOOL dimmed;
 @property BOOL dragging;
 @property BOOL drawsResizeHandles;
+@property(getter=isFacebook) BOOL facebook;
 @property(copy) NSString * location;
-@property BOOL maskedResizeHandles;
+@property BOOL needsReply;
 @property(retain) EKEvent * occurrence;
 @property(getter=isTentative) BOOL tentative;
 @property(copy) NSString * title;
 @property BOOL usesSmallText;
 
-+ (id)_cachedImageForBackgroundColor:(id)arg1 foregroundColor:(id)arg2;
++ (id)_cachedImageForBackgroundColor:(id)arg1 foregroundColor:(id)arg2 dimmed:(BOOL)arg3;
 + (void)_clearViewCache;
-+ (id)_imageForBackgroundColor:(id)arg1 foregroundColor:(id)arg2;
++ (id)_imageForBackgroundColor:(id)arg1 foregroundColor:(id)arg2 dimmed:(BOOL)arg3;
 + (id)_viewCache;
 + (unsigned int)_viewCacheSize;
 + (float)bottomShadowMargin;
@@ -82,10 +83,11 @@
 - (BOOL)isAllDay;
 - (BOOL)isBirthday;
 - (BOOL)isCancelled;
+- (BOOL)isFacebook;
 - (BOOL)isTentative;
 - (void)layoutSubviews;
 - (id)location;
-- (BOOL)maskedResizeHandles;
+- (BOOL)needsReply;
 - (id)occurrence;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)prepareForReuse;
@@ -101,9 +103,11 @@
 - (void)setDimmed:(BOOL)arg1;
 - (void)setDragging:(BOOL)arg1;
 - (void)setDrawsResizeHandles:(BOOL)arg1;
+- (void)setFacebook:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHidden:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
-- (void)setMaskedResizeHandles:(BOOL)arg1;
+- (void)setNeedsReply:(BOOL)arg1;
 - (void)setOccurrence:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setTentative:(BOOL)arg1;

@@ -5,8 +5,18 @@
 @class NSMutableArray, AVCaptureSession;
 
 @interface AVCaptureOutputInternal : NSObject {
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     int changeSeed;
     NSMutableArray *connections;
+    } metadataTransform;
+    BOOL physicallyMirrorsVideo;
+    float rollAdjustment;
     AVCaptureSession *session;
 }
 

@@ -2,27 +2,29 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class NSOperationQueue, NSMutableDictionary, NSMutableSet;
+@class ML3QueryResultSet, NSMutableSet, NSOperationQueue, NSObject<OS_dispatch_queue>, NSMutableDictionary;
 
 @interface IURentalDataStore : NSObject {
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSMutableSet *_localNotifications;
     NSOperationQueue *_operationQueue;
     int _pendingRentalEventCount;
     NSMutableDictionary *_rentalDataByPID;
+    ML3QueryResultSet *_resultSet;
+    BOOL _shouldReloadRentalData;
 }
 
 + (id)existingInstance;
 + (id)sharedInstance;
 
-- (void)_connectToActiveRequests;
 - (void)_enqueueOperation:(id)arg1;
 - (void)_handleFinishedOperation:(id)arg1;
 - (BOOL)_isLoadingRentalData:(id)arg1;
 - (void)_libraryDidChangeNotification:(id)arg1;
+- (void)_libraryDisplayValuesDidChange:(id)arg1;
 - (void)_loadRentalDataFromLibrary;
-- (id)_rentalDataForCheckoutRequest:(id)arg1;
 - (id)_rentalDataForMediaItem:(id)arg1;
+- (id)_rentalItems;
 - (void)_resetLocalNotifications;
 - (void)_scheduleRentalEvents;
 - (void)dealloc;

@@ -2,23 +2,20 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class <NSObject>, MFWeakSet, NSLock;
+@class <NSObject>;
 
 @interface MFWeakReferenceHolder : NSObject {
-    NSLock *_lock;
-    MFWeakSet *_observers;
+    unsigned int _isZeroing : 1;
     <NSObject> *_reference;
 }
 
-+ (id)weakReferenceWithObject:(id)arg1 referenceObserver:(id)arg2;
++ (id)weakReferenceWithObject:(id)arg1 allowNonZeroing:(BOOL)arg2;
 + (id)weakReferenceWithObject:(id)arg1;
 
-- (void)_addObserver:(id)arg1;
-- (id)_initWithObject:(id)arg1;
-- (void)_override_release;
+- (id)_initWithObject:(id)arg1 allowNonZeroing:(BOOL)arg2;
 - (void)dealloc;
 - (id)init;
-- (void)removeReferenceObserver:(id)arg1;
+- (BOOL)isZeroingWeakReference;
 - (id)retainedReference;
 
 @end

@@ -2,26 +2,19 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class <PBMessageStreamDelegate>, PBStreamReader;
+@class NSInputStream;
 
 @interface PBMessageStreamReader : NSObject {
     Class _classOfNextMessage;
-    <PBMessageStreamDelegate> *_delegate;
-    PBStreamReader *_reader;
+    NSInputStream *_stream;
 }
 
 @property Class classOfNextMessage;
-@property(retain) <PBMessageStreamDelegate> * delegate;
-@property(retain) PBStreamReader * reader;
 
 - (Class)classOfNextMessage;
 - (void)dealloc;
-- (id)delegate;
 - (id)initWithStream:(id)arg1;
 - (id)nextMessage;
-- (id)reader;
 - (void)setClassOfNextMessage:(Class)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setReader:(id)arg1;
 
 @end

@@ -11,7 +11,6 @@
 
 @property(retain) UIImage * highlightedImage;
 @property(retain) UIImage * image;
-@property int imagePosition;
 @property int preset;
 @property(retain) NSString * title;
 
@@ -27,7 +26,7 @@
 - (int)preset;
 - (void)reloadImages;
 - (void)reloadLayoutInformation;
-- (void)reloadStrings;
+- (void)reloadStringsWithProperties:(id)arg1;
 - (void)setHighlightedImage:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImagePosition:(int)arg1;

@@ -15,9 +15,9 @@
 @property float contentViewHeightOffset;
 @property float contentViewOriginXOffset;
 @property float contentViewWidthOffset;
-@property(retain,readonly) UIImageView * imageView;
+@property(readonly) UIImageView * imageView;
 @property BOOL resizesToFit;
-@property(retain,readonly) UILabel * titleLabel;
+@property(readonly) UILabel * titleLabel;
 
 - (float)contentViewHeightOffset;
 - (float)contentViewOriginXOffset;
@@ -34,6 +34,7 @@
 - (void)setOrientation:(int)arg1;
 - (void)setResizesToFit:(BOOL)arg1;
 - (void)setTitle:(id)arg1 image:(id)arg2;
+- (void)setTitleInset:(float)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)titleLabel;
 

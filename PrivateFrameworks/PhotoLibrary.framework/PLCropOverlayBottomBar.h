@@ -2,12 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLCropOverlayBottomBarButton, PLCameraButton, UIImageView, UILabel, UIButton, UIView, UIImage, NSString;
+@class PLCropOverlayBottomBarButton, PLCameraButton, PLCameraToggleButton, UIImageView, UILabel, UIButton, UIView, UIImage, NSString;
 
-@interface PLCropOverlayBottomBar : UIView {
+@interface PLCropOverlayBottomBar : UIView <PLCameraButtonBarProtocol> {
     unsigned int _takingPhotoView : 1;
     unsigned int _wasEnabled : 1;
+    unsigned int _slideBottomBarVertically : 1;
+    unsigned int _isBackgroundVisible : 1;
     UIImage *_backgroundImage;
+    int _buttonBarMode;
+    int _buttonBarStyle;
     PLCropOverlayBottomBarButton *_cancelButton;
     id _delegate;
     PLCropOverlayBottomBarButton *_editCancelButton;
@@ -21,17 +25,25 @@
     PLCameraButton *_shutterButton;
     UIImageView *_takePhotoView;
     NSString *_title;
+    PLCameraToggleButton *_toggleButton;
 }
 
-- (void)_animateViewOriginDeltaX:(float)arg1;
+@property int buttonBarMode;
+@property int buttonBarStyle;
+
+- (void)_animateEditViewLeft:(BOOL)arg1;
+- (void)_animateEditViewUp:(BOOL)arg1;
 - (void)_createTakePhotoView;
 - (void)_didCapture;
 - (id)_pauseImage;
 - (id)_playImage;
 - (void)_playPause:(id)arg1;
 - (void)_prepareForPhotoEdit;
+- (void)_setVisibility:(BOOL)arg1;
 - (void)_slideAnimationComplete:(id)arg1;
 - (void)_updatePlayPauseButtonImage:(id)arg1;
+- (int)buttonBarMode;
+- (int)buttonBarStyle;
 - (void)cancelButtonClicked:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -41,10 +53,14 @@
 - (void)didPlayVideo;
 - (void)doneButtonClicked:(id)arg1;
 - (void)editCancelButtonClicked:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 buttonBarStyle:(int)arg2;
+- (BOOL)isBackgroundVisible;
 - (void)layoutSubviews;
 - (id)modeSwitch;
 - (void)prepareForVideoEdit;
+- (void)setButtonBarMode:(int)arg1 animationDuration:(double)arg2;
+- (void)setButtonBarMode:(int)arg1;
+- (void)setButtonBarStyle:(int)arg1;
 - (void)setCancelButtonHidden:(BOOL)arg1;
 - (void)setCancelButtonTitle:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -55,5 +71,7 @@
 - (void)setTitle:(id)arg1;
 - (id)shutterButton;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
+- (id)toggleButton;
+- (void)toggleButtonClicked:(id)arg1;
 
 @end

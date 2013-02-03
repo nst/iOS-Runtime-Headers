@@ -5,6 +5,8 @@
 @class NSArray, UIImage;
 
 @interface UIImageView : UIView {
+    UIImage *_decompressingHighlightedImage;
+    UIImage *_decompressingImage;
     id _storage;
 }
 
@@ -23,6 +25,7 @@
 - (id)_cachedPretiledImageForImage:(id)arg1;
 - (BOOL)_canDrawContent;
 - (void)_clearPretiledImageCacheForImage:(id)arg1;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_recomputePretilingState;
 - (BOOL)_setImageViewContents:(id)arg1;
 - (void)_setViewGeometry:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forMetric:(int)arg2;
@@ -30,13 +33,16 @@
 - (BOOL)_shouldDrawImage:(id)arg1;
 - (void)_updatePretiledImageCacheForImage:(id)arg1;
 - (void)_updateState;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (double)animationDuration;
 - (id)animationImages;
 - (int)animationRepeatCount;
 - (void)dealloc;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (unsigned long long)defaultAccessibilityTraits;
 - (int)drawMode;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)highlightedAnimationImages;
 - (id)highlightedImage;
@@ -50,6 +56,7 @@
 - (BOOL)isAnimating;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isHighlighted;
+- (void)layoutSubviews;
 - (void)setAnimating:(BOOL)arg1;
 - (void)setAnimationDuration:(double)arg1;
 - (void)setAnimationImages:(id)arg1;
@@ -57,7 +64,6 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCGImageRef:(struct CGImage { }*)arg1;
-- (void)setContentStretch:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDrawMode:(int)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;

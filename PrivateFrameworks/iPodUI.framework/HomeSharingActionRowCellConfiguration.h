@@ -5,6 +5,9 @@
 @interface HomeSharingActionRowCellConfiguration : IUSimpleCellConfiguration {
 }
 
++ (id)backgroundColorWithModifiers:(unsigned int)arg1;
+
+- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (void)reloadLayoutInformation;
 
 @end

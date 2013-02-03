@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class <GKSessionDOOBReceiveHandler>, GKTable, GKConnection, GKAutoPeerIDTable, GKVoiceChatSessionListener, GKList, <GKSessionDelegate>, <GKSessionDataReceiveHandler>, GKSession, NSString, <GKSessionPrivateDelegate>;
+@class <GKSessionPrivateDelegate>, GKTable, GKConnection, GKAutoPeerIDTable, GKVoiceChatSessionListener, GKList, <GKSessionDelegate>, <GKSessionDataReceiveHandler>, <GKSessionDOOBReceiveHandler>, GKSession, NSString;
 
 @interface GKSessionInternal : NSObject {
     struct _opaque_pthread_mutex_t { 
@@ -61,7 +61,7 @@
 @property struct OpaqueAGPSession { }* agpSessionRef;
 @property(getter=isAvailable) BOOL available;
 @property(getter=isBusy) BOOL busy;
-@property(retain,readonly) GKConnection * connection;
+@property(readonly) GKConnection * connection;
 @property id dataReceiveHandler;
 @property <GKSessionDelegate> * delegate;
 @property double disconnectTimeout;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDPane, EDColumnInfoCollection, EDRowBlocks, SFUPointerKeyDictionary, EDMergedCellCollection, EDReference, EDCollection, EDWarnings;
+@class TSUPointerKeyDictionary, EDPane, EDColumnInfoCollection, EDRowBlocks, EDMergedCellCollection, EDReference, EDCollection, EDWarnings;
 
 @interface EDWorksheet : EDSheet {
     boolmFitToPage;
@@ -16,8 +16,8 @@
     unsigned int mMaxColumnOutlineLevel;
     unsigned int mMaxRowOutlineLevel;
     EDMergedCellCollection *mMergedCells;
-    SFUPointerKeyDictionary *mMergedCols;
-    SFUPointerKeyDictionary *mMergedRows;
+    TSUPointerKeyDictionary *mMergedCols;
+    TSUPointerKeyDictionary *mMergedRows;
     EDPane *mPane;
     EDCollection *mPivotTables;
     EDRowBlocks *mRowBlocks;
@@ -30,6 +30,7 @@
 - (double)defaultColumnWidth;
 - (unsigned short)defaultRowHeight;
 - (bool)fitToPage;
+- (bool)hasMergedCells;
 - (BOOL)hasMergedCol;
 - (BOOL)hasMergedRow;
 - (id)hyperlinks;

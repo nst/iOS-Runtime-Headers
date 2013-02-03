@@ -19,7 +19,10 @@
 - (void)dealloc;
 - (id)engineID;
 - (id)game;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)reason;
+- (id)serverRepresentation;
 - (void)setEngineID:(id)arg1;
 - (void)setGame:(id)arg1;
 - (void)setReason:(id)arg1;

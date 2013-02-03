@@ -6,6 +6,7 @@
 
 @interface PCPersistentTimer : NSObject <PCLoggingDelegate> {
     BOOL _disableSystemWaking;
+    BOOL _disallowInterfaceManagerUsage;
     NSTimer *_fireRunLoopTimer;
     double _fireTime;
     double _lastUpdateTime;
@@ -42,11 +43,13 @@
 - (void)_preventSleepFired;
 - (void)_setPowerMonitoringEnabledForRunLoop:(id)arg1 mode:(id)arg2;
 - (void)_setSignificantTimeChangeMonitoringEnabledForRunLoop:(id)arg1 mode:(id)arg2;
+- (void)_significantTimeChange;
 - (void)_updateTimers;
 - (void)dealloc;
 - (id)debugDescription;
 - (BOOL)disableSystemWaking;
 - (id)initWithFireDate:(id)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
+- (id)initWithTimeInterval:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 disallowInterfaceManagerUsage:(BOOL)arg6;
 - (id)initWithTimeInterval:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
 - (void)interfaceManagerInternetReachabilityChanged:(id)arg1;
 - (void)interfaceManagerWWANInterfaceChangedPowerState:(id)arg1;

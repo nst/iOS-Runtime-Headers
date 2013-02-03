@@ -10,8 +10,9 @@
 
 @property(retain) NSMutableSet * privileges;
 
++ (id)copyParseRules;
+
 - (void)addPrivilege:(id)arg1;
-- (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
 - (BOOL)hasPrivilegeWithNameSpace:(id)arg1 andName:(id)arg2;

@@ -2,39 +2,42 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class NSString;
+@class NSString, NSArray;
 
 @interface ABNamePredicate : ABPredicate {
-    NSString *_accountIdentifier;
     void *_addressBook;
-    void *_group;
-    BOOL _matchNameOnly;
+    NSArray *_groups;
+    BOOL _matchPersonOrCompanyNamesExclusively;
+    BOOL _matchPreferredName;
     BOOL _matchWholeWords;
     NSString *_name;
-    BOOL _showPersonLinks;
-    void *_source;
+    NSArray *_sources;
     struct __CFArray { } *_tokenizationSortKeys;
-    struct __CFArray { } *_tokenizations;
+    void *_tokenizations;
 }
 
 @property(copy) NSString * accountIdentifier;
 @property void* addressBook;
 @property void* group;
-@property BOOL matchNameOnly;
+@property(retain) NSArray * groups;
+@property BOOL matchPersonOrCompanyNamesExclusively;
+@property BOOL matchPreferredName;
 @property BOOL matchWholeWords;
 @property(copy) NSString * name;
-@property BOOL showPersonLinks;
 @property void* source;
+@property(retain) NSArray * sources;
 
-- (void)_doBindingWithStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 bindingOffset:(int*)arg2;
+- (id)_personNameKeys;
 - (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (id)accountIdentifier;
 - (void*)addressBook;
 - (void)dealloc;
 - (void*)group;
+- (id)groups;
 - (id)init;
 - (BOOL)isValid;
-- (BOOL)matchNameOnly;
+- (BOOL)matchPersonOrCompanyNamesExclusively;
+- (BOOL)matchPreferredName;
 - (BOOL)matchWholeWords;
 - (id)name;
 - (id)predicateFormat;
@@ -43,13 +46,15 @@
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setAddressBook:(void*)arg1;
 - (void)setGroup:(void*)arg1;
-- (void)setMatchNameOnly:(BOOL)arg1;
+- (void)setGroups:(id)arg1;
+- (void)setMatchPersonOrCompanyNamesExclusively:(BOOL)arg1;
+- (void)setMatchPreferredName:(BOOL)arg1;
 - (void)setMatchWholeWords:(BOOL)arg1;
 - (void)setName:(id)arg1;
-- (void)setShowPersonLinks:(BOOL)arg1;
 - (void)setSource:(void*)arg1;
-- (BOOL)showPersonLinks;
+- (void)setSources:(id)arg1;
 - (void*)source;
-- (struct __CFArray { }*)tokenizations;
+- (id)sources;
+- (void*)tokenizations;
 
 @end

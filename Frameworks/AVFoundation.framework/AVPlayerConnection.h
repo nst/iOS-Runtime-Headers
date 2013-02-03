@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayer, NSError, AVPlayerItem, AVWeakReference;
+@class AVPlayer, NSError, AVPlayerItem, NSObject<OS_dispatch_queue>, AVWeakReference;
 
 @interface AVPlayerConnection : NSObject {
     NSError *_error;
@@ -16,19 +16,18 @@
 @property(readonly) NSError * error;
 @property(readonly) AVPlayer * player;
 @property(readonly) AVPlayerItem * playerItem;
-@property(readonly) struct dispatch_queue_s { }* serializationQueue;
+@property(readonly) NSObject<OS_dispatch_queue> * serializationQueue;
 @property(readonly) int status;
 
 - (BOOL)addItemToPlayQueue;
 - (void)dealloc;
 - (id)description;
-- (void)ensureItemAddedToPlayQueueWithCompletionHandler:(id)arg1;
 - (id)error;
 - (id)initWithWeakReferenceToPlayer:(id)arg1 weakReferenceToPlayerItem:(id)arg2 shouldAppendItem:(BOOL)arg3;
 - (id)player;
 - (id)playerItem;
 - (void)removeItemFromPlayQueue;
-- (struct dispatch_queue_s { }*)serializationQueue;
+- (id)serializationQueue;
 - (int)status;
 
 @end

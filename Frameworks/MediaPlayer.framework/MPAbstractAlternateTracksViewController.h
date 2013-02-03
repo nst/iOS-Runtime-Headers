@@ -17,7 +17,6 @@
 - (void)reloadData;
 - (void)removeLoadingUI;
 - (void)saveChanges;
-- (id)titleForTrack:(id)arg1;
 - (unsigned int)typeForGroup:(int)arg1;
 
 @end

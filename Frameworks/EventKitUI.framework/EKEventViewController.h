@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray, UIToolbar, UITableView, <EKEventViewDelegate>, UIActionSheet, UIButton, NSString, EKEventDetailItem, EKEvent;
+@class NSArray, UIToolbar, _UIAccessDeniedView, UITableView, <EKEventViewDelegate>, UIActionSheet, UIBarButtonItem, NSString, EKEventDetailItem, EKEvent;
 
 @interface EKEventViewController : UIViewController {
     unsigned int _didAppear : 1;
@@ -17,6 +17,8 @@
     unsigned int _icsPreview : 1;
     unsigned int _needsReload : 1;
     unsigned int _showsDoneButton : 1;
+    unsigned int _showsDelegateMessage : 1;
+    _UIAccessDeniedView *_accessDeniedView;
     UIActionSheet *_alertSheet;
     UIToolbar *_buttonBar;
     id _currentEditItem;
@@ -27,23 +29,27 @@
     NSString *_eventId;
     BOOL _ignoreDBChanges;
     NSArray *_items;
+    int _lastAuthorizationStatus;
     int _lastOrientation;
     int _pendingStatus;
-    UIButton *_responseButtons[3];
+    UIBarButtonItem *_responseButtons[3];
     int _scrollToSection;
     BOOL _showsTimeZone;
     UITableView *_tableView;
 }
 
 @property(retain) EKEventDetailItem * _currentEditItem;
+@property(retain) _UIAccessDeniedView * accessDeniedView;
 @property BOOL allowsCalendarPreview;
 @property BOOL allowsEditing;
 @property <EKEventViewDelegate> * delegate;
 @property(retain) EKEvent * event;
 @property BOOL ignoreDBChanges;
+@property int lastAuthorizationStatus;
 @property BOOL showsTimeZone;
 @property(readonly) UITableView * tableView;
 
++ (void)adjustLayoutForCell:(id)arg1 tableViewWidth:(float)arg2 numRowsInSection:(int)arg3 cellRow:(int)arg4;
 + (void)setDefaultDatesForEvent:(id)arg1;
 
 - (void)_acceptButtonPressed:(id)arg1;
@@ -57,7 +63,6 @@
 - (struct CGSize { float x1; float x2; })_idealSize;
 - (id)_items;
 - (void)_localeChanged;
-- (void)_markEventAsRead;
 - (void)_maybeButtonPressed:(id)arg1;
 - (void)_performDelete;
 - (BOOL)_performSave:(int)arg1 animated:(BOOL)arg2;
@@ -65,10 +70,14 @@
 - (void)_prepareEventForEdit;
 - (void)_presentDetachSheet;
 - (void)_presentValidationAlert:(id)arg1;
+- (void)_refreshEventAndReload;
+- (void)_reloadIfNeeded;
 - (void)_responseChanged:(id)arg1;
 - (void)_saveStatus:(int)arg1 span:(int)arg2;
 - (void)_selectButtonWithTag:(int)arg1;
-- (void)_setupAttendeesWithAcceptedItem:(id)arg1 declinedItem:(id)arg2 maybeItem:(id)arg3 noReplyItem:(id)arg4;
+- (void)_setNeedsReload;
+- (void)_setUpAttendeesWithAcceptedItem:(id)arg1 declinedItem:(id)arg2 maybeItem:(id)arg3 noReplyItem:(id)arg4;
+- (void)_setUpForEvent;
 - (BOOL)_shouldDisplayDoneButton;
 - (void)_storeChanged:(id)arg1;
 - (void)_teardownTableView;
@@ -76,6 +85,7 @@
 - (void)_updateNavBarAnimated:(BOOL)arg1;
 - (void)_updateResponse;
 - (void)_updateResponseVisibility;
+- (id)accessDeniedView;
 - (void)accessibilityLargeTextDidChange;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)allowContextProvider:(id)arg1;
@@ -87,7 +97,6 @@
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)dealloc;
 - (id)delegate;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)doneButtonPressed;
 - (void)editEvent;
 - (id)event;
@@ -101,10 +110,12 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)invokeInviteAction:(int)arg1;
 - (BOOL)isICSPreview;
+- (int)lastAuthorizationStatus;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void)reloadIfNeeded;
+- (id)rotatingFooterView;
 - (int)scrollToSection;
+- (void)setAccessDeniedView:(id)arg1;
 - (void)setAllowsCalendarPreview:(BOOL)arg1;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (void)setAllowsSubitems:(BOOL)arg1;
@@ -113,15 +124,16 @@
 - (void)setEvent:(id)arg1;
 - (void)setICSPreview:(BOOL)arg1;
 - (void)setIgnoreDBChanges:(BOOL)arg1;
-- (void)setNeedsReload;
+- (void)setLastAuthorizationStatus:(int)arg1;
 - (void)setScrollToSection:(int)arg1;
 - (void)setShowsAddToCalendar:(BOOL)arg1;
+- (void)setShowsDelegateMessage:(BOOL)arg1;
 - (void)setShowsDoneButton:(BOOL)arg1;
 - (void)setShowsTimeZone:(BOOL)arg1;
 - (void)set_currentEditItem:(id)arg1;
-- (void)setupForEvent;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)showsAddToCalendar;
+- (BOOL)showsDelegateMessage;
 - (BOOL)showsDoneButton;
 - (BOOL)showsTimeZone;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
@@ -137,6 +149,5 @@
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

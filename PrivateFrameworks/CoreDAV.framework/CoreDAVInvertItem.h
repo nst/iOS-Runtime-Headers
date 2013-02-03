@@ -10,7 +10,8 @@
 
 @property(retain) CoreDAVPrincipalItem * principal;
 
-- (id)copyParseRules;
++ (id)copyParseRules;
+
 - (void)dealloc;
 - (id)description;
 - (id)init;

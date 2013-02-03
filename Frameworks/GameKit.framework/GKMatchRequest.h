@@ -2,40 +2,52 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSArray, NSString, GKMatchRequestInternal;
 
 @interface GKMatchRequest : NSObject {
-    BOOL _attributesSet;
-    unsigned int _maxPlayers;
-    unsigned int _minPlayers;
-    unsigned int _playerAttributes;
-    unsigned int _playerGroup;
-    NSArray *_playersToInvite;
+    unsigned int _defaultNumberOfPlayers;
+    GKMatchRequestInternal *_internal;
+    id _inviteeResponseHandler;
 }
 
-@property BOOL attributesSet;
+@property unsigned int defaultNumberOfPlayers;
+@property(retain) GKMatchRequestInternal * internal;
+@property(copy) NSString * inviteMessage;
+@property(copy) id inviteeResponseHandler;
 @property unsigned int maxPlayers;
 @property unsigned int minPlayers;
 @property unsigned int playerAttributes;
 @property unsigned int playerGroup;
 @property(retain) NSArray * playersToInvite;
 
-- (BOOL)attributesSet;
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
++ (unsigned int)maxPlayersAllowedForMatchOfType:(unsigned int)arg1;
+
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (unsigned int)defaultNumberOfPlayers;
+- (BOOL)defaultNumberOfPlayersIsValid;
+- (id)description;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (unsigned int)hash;
 - (id)init;
+- (id)initWithInternalRepresentation:(id)arg1;
+- (id)internal;
+- (id)inviteeResponseHandler;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isTurnBasedValid;
 - (BOOL)isValidForHosted:(BOOL)arg1;
-- (unsigned int)maxPlayers;
-- (unsigned int)minPlayers;
-- (unsigned int)playerAttributes;
-- (unsigned int)playerGroup;
-- (id)playersToInvite;
-- (void)setAttributesSet:(BOOL)arg1;
-- (void)setMaxPlayers:(unsigned int)arg1;
-- (void)setMinPlayers:(unsigned int)arg1;
-- (void)setPlayerAttributes:(unsigned int)arg1;
-- (void)setPlayerGroup:(unsigned int)arg1;
-- (void)setPlayersToInvite:(id)arg1;
+- (BOOL)isValidWithMax:(unsigned int)arg1;
+- (void)removeLocalPlayerFromPlayersToInvite;
+- (BOOL)respondsToSelector:(SEL)arg1;
+- (void)setDefaultNumberOfPlayers:(unsigned int)arg1;
+- (void)setInternal:(id)arg1;
+- (void)setInviteeResponseHandler:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
 
 @end

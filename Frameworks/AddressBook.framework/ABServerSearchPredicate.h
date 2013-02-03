@@ -10,6 +10,7 @@
     <ABPredicateDelegate> *_delegate;
     NSConditionLock *_doneLock;
     int _error;
+    BOOL _includePhotosInResults;
     BOOL _includeSourceInResults;
     DAContactsSearchQuery *_searchQuery;
     NSMutableArray *_searchResults;
@@ -21,6 +22,7 @@
 @property(retain) DADConnection * connection;
 @property <ABPredicateDelegate> * delegate;
 @property(readonly) int error;
+@property BOOL includePhotosInResults;
 @property BOOL includeSourceInResults;
 @property(copy) NSString * searchString;
 @property void* source;
@@ -33,7 +35,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (int)error;
+- (BOOL)includePhotosInResults;
 - (BOOL)includeSourceInResults;
+- (id)initWithSearchString:(id)arg1 source:(void*)arg2 account:(id)arg3 includeSourceInResults:(BOOL)arg4 includePhotosInResults:(BOOL)arg5;
 - (id)initWithSearchString:(id)arg1 source:(void*)arg2 account:(id)arg3 includeSourceInResults:(BOOL)arg4;
 - (id)initWithSearchString:(id)arg1 source:(void*)arg2 account:(id)arg3;
 - (void)runPredicate;
@@ -44,6 +48,7 @@
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setIncludePhotosInResults:(BOOL)arg1;
 - (void)setIncludeSourceInResults:(BOOL)arg1;
 - (void)setSearchString:(id)arg1;
 - (void)setSource:(void*)arg1;

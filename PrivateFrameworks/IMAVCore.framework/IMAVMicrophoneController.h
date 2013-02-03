@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class IMAVMicrophone, NSMutableArray, NSArray;
+@class NSArray, NSObject<OS_dispatch_queue>, IMAVMicrophone, NSMutableArray;
 
 @interface IMAVMicrophoneController : NSObject {
     id _internal;
     NSMutableArray *_microphones;
-    struct dispatch_queue_s { } *_queue;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property(retain) IMAVMicrophone * currentMicrophone;
@@ -17,12 +17,10 @@
 
 - (void)_loadSavedMicrophone;
 - (void)_rebuildMicrophoneList;
-- (BOOL)allowsWeakReference;
 - (id)currentMicrophone;
 - (void)dealloc;
 - (id)init;
 - (id)microphones;
-- (BOOL)retainWeakReference;
 - (void)setCurrentMicrophone:(id)arg1;
 
 @end

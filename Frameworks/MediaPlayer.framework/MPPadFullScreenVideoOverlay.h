@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UINavigationBar, UIActivityIndicatorView, UIImageView, UINavigationItem, UILabel, MPNowPlayingItemQueueInfoButton, NSString, UINavigationButton, UIPopoverController, MPPadFullScreenTransportControls;
+@class UINavigationBar, UIActivityIndicatorView, UIImageView, UINavigationItem, UILabel, UINavigationButton, NSString, MPNowPlayingItemQueueInfoButton, UIPopoverController, MPPadFullScreenTransportControls;
 
 @interface MPPadFullScreenVideoOverlay : MPVideoOverlay <UIPopoverControllerDelegate, MPNowPlayingItemQueueInfoButtonDelegate> {
     unsigned int _layoutSubviewsActive : 1;
@@ -25,11 +25,13 @@
 
 @property(copy) NSString * title;
 
+- (void)_applicationWillResignActive:(id)arg1;
 - (void)_configureLinkButtonForCurrentItemTime;
-- (unsigned int)_convertedPartsMask:(unsigned int)arg1;
+- (unsigned long long)_convertedPartsMask:(unsigned long long)arg1;
 - (void)_doneButton:(id)arg1;
 - (void)_hideScrubInstructions;
 - (void)_initSubviews;
+- (void)_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
 - (void)_itemDurationAvailableNotification:(id)arg1;
 - (id)_navBarBackgroundImageForProgressControl:(BOOL)arg1 tallStyle:(BOOL)arg2;
 - (void)_reconfigureNavigationBarAnimated:(BOOL)arg1;
@@ -38,13 +40,13 @@
 - (void)_showScrubInstructions;
 - (void)_videoViewScaleModeDidChangeNotification:(id)arg1;
 - (BOOL)allowsWirelessPlayback;
-- (void)crossedURLTimeMarker:(id)arg1;
+- (void)crossedTimeMakerWithEvent:(id)arg1;
 - (void)dealloc;
 - (void)detailSlider:(id)arg1 didChangeScrubSpeed:(int)arg2;
 - (void)detailSliderTrackingDidBegin:(id)arg1;
 - (void)detailSliderTrackingDidCancel:(id)arg1;
 - (void)detailSliderTrackingDidEnd:(id)arg1;
-- (unsigned int)disabledParts;
+- (unsigned long long)disabledParts;
 - (void)hideAlternateTracks;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -54,14 +56,14 @@
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setAlpha:(float)arg1;
-- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
-- (void)setDisabledParts:(unsigned int)arg1;
+- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
+- (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
 - (void)setItem:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setVideoViewController:(id)arg1;
-- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)showAlternateTracks;
 - (id)title;
 

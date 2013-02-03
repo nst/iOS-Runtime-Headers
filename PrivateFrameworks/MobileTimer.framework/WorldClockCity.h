@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class ALCity, NSString, NSDictionary, NSNumber, NSURL;
+@class ALCity, NSString, City, NSDictionary, NSNumber, NSURL;
 
 @interface WorldClockCity : NSObject {
     ALCity *_alCity;
@@ -12,8 +12,10 @@
     NSString *_timeZone;
     NSString *_unlocalizedCountryName;
     NSString *_unlocalizedName;
+    City *_weatherCity;
 }
 
+@property(readonly) ALCity * alCity;
 @property(readonly) NSNumber * alCityId;
 @property(readonly) NSString * countryCode;
 @property(readonly) NSString * countryName;
@@ -23,9 +25,11 @@
 @property(readonly) NSString * timeZone;
 @property(readonly) NSString * unlocalizedCityName;
 @property(readonly) NSString * unlocalizedCountryName;
+@property(retain) City * weatherCity;
 
 + (BOOL)isWorldClockCityProperties:(id)arg1;
 
+- (id)alCity;
 - (id)alCityId;
 - (id)countryCode;
 - (id)countryName;
@@ -40,8 +44,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)name;
 - (id)properties;
+- (void)setWeatherCity:(id)arg1;
 - (id)timeZone;
 - (id)unlocalizedCityName;
 - (id)unlocalizedCountryName;
+- (id)weatherCity;
 
 @end

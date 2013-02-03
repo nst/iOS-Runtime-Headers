@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIView, NSString, UIWindow, UIWebView;
+@class _UIDictionaryDownloadViewController, UIView, NSString, UIWindow, UIWebView;
 
 @interface UIReferenceLibraryViewController : UIViewController {
     UIView *_definitionContainerView;
@@ -14,6 +14,8 @@
     unsigned int _definitionLanguageDirection;
     UIWebView *_definitionView;
     id _dismissCompletionHandler;
+    _UIDictionaryDownloadViewController *_downloadViewController;
+    BOOL _downloadableDictionaryAvailable;
     UIView *_modalHeaderView;
     int _oldPopoverStyle;
     UIWindow *_rotationDecider;
@@ -26,6 +28,8 @@
 @property(retain) NSString * definitionHTML;
 @property(readonly) UIWebView * definitionView;
 @property(copy) id dismissCompletionHandler;
+@property(retain) _UIDictionaryDownloadViewController * downloadViewController;
+@property BOOL downloadableDictionaryAvailable;
 @property(readonly) UIView * modalHeaderView;
 @property(readonly) NSString * stringToDefine;
 @property(readonly) NSString * stylesheet;
@@ -37,7 +41,6 @@
 + (id)_popoverControllerForReferenceLibraryWithString:(id)arg1;
 + (id)_viewControllerForReferenceWithString:(id)arg1 options:(unsigned int)arg2;
 + (BOOL)dictionaryHasDefinitionForTerm:(id)arg1;
-+ (void)initialize;
 
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
 - (void)_dismissModalReferenceView:(id)arg1;
@@ -45,22 +48,31 @@
 - (id)_rotationDecider;
 - (void)_setPopoverController:(id)arg1;
 - (void)_setRotationDecider:(id)arg1;
+- (void)_userChoseToDownload:(id)arg1;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
 - (void)dealloc;
 - (id)definitionContainerView;
 - (id)definitionHTML;
-- (void)definitionService:(id)arg1 hasNewHTML:(id)arg2;
 - (id)definitionView;
 - (id)dismissCompletionHandler;
+- (void)downloadActionsAreComplete:(id)arg1;
+- (id)downloadViewController;
+- (BOOL)downloadableDictionaryAvailable;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithTerm:(id)arg1;
 - (id)modalHeaderView;
 - (void)setDefinitionHTML:(id)arg1;
 - (void)setDismissCompletionHandler:(id)arg1;
+- (void)setDownloadViewController:(id)arg1;
+- (void)setDownloadableDictionaryAvailable:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)showDownloadInterface;
 - (id)stringToDefine;
 - (id)stylesheet;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillLayoutSubviews;
 
 @end

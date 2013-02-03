@@ -8,6 +8,7 @@
     NSMutableDictionary *_deletedObjects;
     NSMutableDictionary *_entityNameToIndex;
     NSMutableArray *_entityNames;
+    NSString *_exportingPeerID;
     NSArray *_filesDeletedInTransaction;
     NSMutableArray *_filesInsertedInTransaction;
     NSMutableDictionary *_globalObjectIDToIndex;
@@ -29,6 +30,7 @@
 @property(readonly) NSDictionary * deletedObjects;
 @property(readonly) NSDictionary * entityNameToIndex;
 @property(readonly) NSArray * entityNames;
+@property(retain) NSString * exportingPeerID;
 @property(readonly) NSDictionary * globalObjectIDToIndex;
 @property(readonly) NSDictionary * globalObjectIDToPermanentManagedObjectID;
 @property(readonly) NSArray * globalObjectIDs;
@@ -55,6 +57,7 @@
 - (id)description;
 - (id)entityNameToIndex;
 - (id)entityNames;
+- (id)exportingPeerID;
 - (id)filesDeletedInTransaction;
 - (id)filesInsertedInTransaction;
 - (void)generatePeerStatesWithStoreExportContext:(id)arg1;
@@ -64,8 +67,8 @@
 - (id)globalObjectIDToPermanentManagedObjectID;
 - (id)globalObjectIDs;
 - (id)init;
-- (id)initWithLocalPeerID:(id)arg1;
-- (id)initWithPersistentStoreOptions:(id)arg1 andLocalPeerID:(id)arg2;
+- (id)initWithExportingPeerID:(id)arg1;
+- (id)initWithPersistentStoreOptions:(id)arg1 andExportingPeerID:(id)arg2;
 - (id)insertedObjects;
 - (id)localPeerID;
 - (id)managedObjectIDToGlobalObjectID;
@@ -76,13 +79,15 @@
 - (id)primaryKeys;
 - (void)reserveTransactionNumberWithStoreExportContext:(id)arg1;
 - (void)setDeletedObjects:(id)arg1;
-- (void)setEntityNames:(id)arg1 globalObjectIDs:(id)arg2 primaryKeys:(id)arg3 forStoreWithName:(id)arg4;
+- (void)setEntityNames:(id)arg1 globalObjectIDs:(id)arg2 primaryKeys:(id)arg3 forStoreName:(id)arg4 withRootLocation:(id)arg5;
+- (void)setExportingPeerID:(id)arg1;
 - (void)setInsertedObjects:(id)arg1;
 - (void)setLocalPeerID:(id)arg1;
 - (void)setTransactionNumber:(id)arg1 peerStates:(id)arg2 andPeerIDs:(id)arg3;
 - (void)setUpdatedObjects:(id)arg1;
 - (id)storeOptions;
 - (id)transactionNumber;
+- (id)transactionNumberFromPeerStates:(id)arg1;
 - (id)updatedObjects;
 
 @end

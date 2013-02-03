@@ -3,6 +3,7 @@
  */
 
 @interface MPMediaLibraryDataProviderSystemML3 : MPMediaLibraryDataProviderML3 {
+    long long _currentRevision;
 }
 
 + (BOOL)_isGeniusEnabled;
@@ -13,9 +14,12 @@
 - (id)_cacheIDForItemIdentifier:(long long)arg1;
 - (void)_loadArtworkImageDataForMLArtworkFormatID:(unsigned int)arg1 artworkCacheID:(id)arg2 completionBlock:(id)arg3;
 - (void)_loadArtworkImageForMLArtworkFormatID:(unsigned int)arg1 artworkCacheID:(id)arg2 canUseSurfaceBackedImage:(BOOL)arg3 completionBlock:(id)arg4;
+- (void)_seedCloudPlaylistWithTrack:(id)arg1 container:(id)arg2 completionBlock:(id)arg3;
 - (void*)createGeniusClusterPlaylistWithSeedItemIdentifiers:(long long*)arg1 count:(unsigned int)arg2 error:(id*)arg3;
+- (id)errorResolverForMediaItem:(id)arg1;
 - (long long*)generateItemIdentifiersForGeniusClusterPlaylist:(void*)arg1 count:(unsigned int*)arg2 error:(id*)arg3;
 - (BOOL)hasArtworkImageForItemWithIdentifier:(long long)arg1;
+- (id)initWithLibrary:(id)arg1;
 - (BOOL)isArtworkImageIdenticalForItemWithIdentifier:(long long)arg1 otherItemWithIdentifier:(long long)arg2 compareRepresentativeItemArtwork:(BOOL)arg3 missingAlwaysComparesEqual:(BOOL)arg4;
 - (BOOL)isGeniusEnabled;
 - (void)loadArtworkImageForFormat:(int)arg1 ofItemWithArtworkCacheID:(id)arg2 canUseSurfaceBackedImage:(BOOL)arg3 completionBlock:(id)arg4;
@@ -28,5 +32,7 @@
 - (void)loadCoverFlowArtworkImageForSize:(struct CGSize { float x1; float x2; })arg1 ofItemWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
 - (void)releaseGeniusClusterPlaylist:(void*)arg1;
 - (void)seedPlaylistWithIdentifier:(long long)arg1 withItemWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
+- (BOOL)supportsEntityChangeTracking;
+- (void)updateEntitesToCurrentRevision;
 
 @end

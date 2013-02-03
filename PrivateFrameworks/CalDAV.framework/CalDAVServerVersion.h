@@ -6,10 +6,13 @@
 
 @interface CalDAVServerVersion : NSObject <NSCopying> {
     NSSet *_complianceClasses;
+    NSString *_serverHeader;
+    NSString *_supportedCalendarComponentSets;
     BOOL _supportsAutoSchedule;
     BOOL _supportsCalendarProxy;
     BOOL _supportsExtendedCalendarQuery;
     BOOL _supportsInboxAvailability;
+    BOOL _supportsManagedAttachments;
     BOOL _supportsPrincipalPropertySearch;
     BOOL _supportsPrivateComments;
     BOOL _supportsPrivateEvents;
@@ -25,10 +28,13 @@
 }
 
 @property(retain) NSSet * complianceClasses;
+@property(copy) NSString * serverHeader;
+@property(copy) NSString * supportedCalendarComponentSets;
 @property BOOL supportsAutoSchedule;
 @property BOOL supportsCalendarProxy;
 @property BOOL supportsExtendedCalendarQuery;
 @property BOOL supportsInboxAvailability;
+@property BOOL supportsManagedAttachments;
 @property BOOL supportsPrincipalPropertySearch;
 @property BOOL supportsPrivateComments;
 @property BOOL supportsPrivateEvents;
@@ -59,11 +65,15 @@
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (id)propertyValue;
+- (id)serverHeader;
 - (void)setComplianceClasses:(id)arg1;
+- (void)setServerHeader:(id)arg1;
+- (void)setSupportedCalendarComponentSets:(id)arg1;
 - (void)setSupportsAutoSchedule:(BOOL)arg1;
 - (void)setSupportsCalendarProxy:(BOOL)arg1;
 - (void)setSupportsExtendedCalendarQuery:(BOOL)arg1;
 - (void)setSupportsInboxAvailability:(BOOL)arg1;
+- (void)setSupportsManagedAttachments:(BOOL)arg1;
 - (void)setSupportsPrincipalPropertySearch:(BOOL)arg1;
 - (void)setSupportsPrivateComments:(BOOL)arg1;
 - (void)setSupportsPrivateEvents:(BOOL)arg1;
@@ -76,10 +86,12 @@
 - (void)setSupportsTimeRangeFilterWithoutEndDate:(BOOL)arg1;
 - (void)setSupportsTodoTimeRangeFilter:(BOOL)arg1;
 - (void)setVersion:(double)arg1;
+- (id)supportedCalendarComponentSets;
 - (BOOL)supportsAutoSchedule;
 - (BOOL)supportsCalendarProxy;
 - (BOOL)supportsExtendedCalendarQuery;
 - (BOOL)supportsInboxAvailability;
+- (BOOL)supportsManagedAttachments;
 - (BOOL)supportsPrincipalPropertySearch;
 - (BOOL)supportsPrivateComments;
 - (BOOL)supportsPrivateEvents;

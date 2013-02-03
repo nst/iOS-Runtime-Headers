@@ -6,19 +6,19 @@
    See Warning(s) below.
  */
 
-@class NSString;
+@class NSString, NSObject<OS_dispatch_queue>;
 
 @interface DADownloadContext : NSObject {
     NSString *_accountID;
     NSString *_attachmentUUID;
     id _completionBlock;
     id _progressBlock;
-    struct dispatch_queue_s { } *_queue;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 - (void)dealloc;
 - (void)finishedWithError:(id)arg1;
-- (id)initWithAttachmentUUID:(id)arg1 accountID:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 downloadProgressBlock:(id)arg4 completionBlock:(id)arg5;
+- (id)initWithAttachmentUUID:(id)arg1 accountID:(id)arg2 queue:(id)arg3 downloadProgressBlock:(id)arg4 completionBlock:(id)arg5;
 - (void)updateProgressDownloadedByteCount:(long long)arg1 totalByteCount:(long long)arg2;
 
 @end

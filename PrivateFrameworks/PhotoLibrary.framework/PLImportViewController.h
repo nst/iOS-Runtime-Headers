@@ -52,14 +52,19 @@
 - (void)_setupNavigationItem;
 - (id)_textBadgeStringForCameraItem:(id)arg1;
 - (id)_thumbnailPathString;
+- (id)albumView:(id)arg1 badgeImageForPhotoAtIndexPath:(id)arg2;
 - (void)albumView:(id)arg1 imageCount:(unsigned int*)arg2 videoCount:(unsigned int*)arg3 otherCount:(unsigned int*)arg4 pendingCount:(unsigned int*)arg5 importOperation:(int*)arg6;
-- (id)albumView:(id)arg1 imageDataForPhotoAtIndex:(unsigned int)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
-- (id)albumView:(id)arg1 textBadgeForPhotoAtIndex:(unsigned int)arg2;
+- (id)albumView:(id)arg1 imageDataForPhotoAtIndexPath:(id)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
+- (unsigned int)albumView:(id)arg1 numberOfPhotosInSection:(unsigned int)arg2;
+- (id)albumView:(id)arg1 textBadgeForPhotoAtIndexPath:(id)arg2;
 - (void)albumViewSelectionDidChange:(id)arg1 added:(id)arg2 removed:(id)arg3;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)contentScrollView;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
+- (id)footerAccessoryViewForAlbumView:(id)arg1;
+- (BOOL)footerSubtitleAllowsEmail:(id)arg1;
+- (id)footerSubtitleForAlbumView:(id)arg1;
 - (void)handleImportCompleteAlertResponse:(struct __CFUserNotification { }*)arg1 flags:(unsigned long)arg2;
 - (void)importAll;
 - (id)importDevice;
@@ -77,12 +82,10 @@
 - (BOOL)isBusy;
 - (BOOL)isImporting;
 - (void)loadView;
-- (unsigned int)numberOfPhotosForAlbumView:(id)arg1;
 - (void)setImportDevice:(id)arg1;
 - (void)setImporter:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)stopImport;
-- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

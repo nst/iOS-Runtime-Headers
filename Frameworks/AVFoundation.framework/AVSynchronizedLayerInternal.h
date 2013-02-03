@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayerItem;
+@class NSObject<OS_dispatch_queue>, AVPlayerItem;
 
 @interface AVSynchronizedLayerInternal : NSObject {
     BOOL isVisible;
     AVPlayerItem *playerItem;
-    struct dispatch_queue_s { } *serialQueue;
+    NSObject<OS_dispatch_queue> *serialQueue;
 }
 
 @end

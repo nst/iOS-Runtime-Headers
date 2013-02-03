@@ -6,6 +6,7 @@
 
 @interface UIDictationLandingView : UIView {
     float _diameter;
+    BOOL _didHaveText;
     int _highlighted;
     float _margin;
     id _placeholder;
@@ -23,6 +24,7 @@
 
 - (void)advanceLanding:(id)arg1;
 - (void)dealloc;
+- (BOOL)delegateWasEmpty;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)errorAnimationDidFinish;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

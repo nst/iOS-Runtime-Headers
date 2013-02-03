@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSObject<PhotoLibraryPTPDelegate>, PLManagedObjectContext, NSMutableArray, NSString, NSFileManager, PLPhotoLibrary, NSArray;
+@class PLPhotoLibrary, NSObject<PhotoLibraryPTPDelegate>, NSMutableArray, NSString, NSFileManager, PLManagedObjectContext, NSArray;
 
 @interface PLPTPdAssetManager : NSObject <PLManagedObjectContextPTPNotificationDelegate> {
     NSArray *_albumObjectIDs;
@@ -26,7 +26,6 @@
 - (id)_ptpInformationForAllAssets;
 - (id)albumHandles;
 - (id)albumObjectIDs;
-- (id)assetsInAlbumWithObjectID:(id)arg1;
 - (id)assetsInAssociation:(struct NSObject { Class x1; }*)arg1;
 - (id)associationsInAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)dealloc;

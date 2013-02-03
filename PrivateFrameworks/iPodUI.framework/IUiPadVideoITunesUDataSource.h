@@ -11,6 +11,7 @@
 - (void)_setQuery:(id)arg1;
 - (BOOL)deleteRemovesEntireGroup;
 - (id)detailMediaQueryForMediaItem:(id)arg1 baseQuery:(id)arg2;
+- (int)filteredMediaTypes;
 - (int)gridTitleStyle;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (void)setQuery:(id)arg1;

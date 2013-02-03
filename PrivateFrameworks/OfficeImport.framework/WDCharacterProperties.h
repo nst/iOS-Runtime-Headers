@@ -2,10 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class WDDocument;
 
 @interface WDCharacterProperties : NSObject {
@@ -13,21 +9,27 @@
     unsigned int mTracked : 1;
     unsigned int mResolved : 1;
     WDDocument *mDocument;
-    struct { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; void*x3; void*x4; unsigned short x5; void*x6; void*x7; long x8; void*x9; void*x10; id x11; void*x12; void*x13; void*x14; boolx15; out const double x16; void*x17; const void*x18; id x19; void*x20; void*x21; void*x22; unsigned short x23; void*x24; void*x25; double x26; int x27; in void*x28; void*x29; id x30; void*x31; void*x32; void*x33; void*x34; out in void*x35; void*x36; id x37; void*x38; void*x39; void*x40; void*x41; out in void*x42; void*x43; id x44; void*x45; void*x46; void*x47; void*x48; out in void*x49; void*x50; id x51; void*x52; void*x53; void*x54; void*x55; out in void*x56; void*x57; int x58; int x59; int x60; id x61; void*x62; inout unsigned short x63; unsigned char x64; out long x65; out const unsigned short x66; void*x67; void*x68; unsigned int x69/* : ? */; void*x70; id x71; void*x72; inout unsigned short x73; unsigned char x74; out long x75; out const unsigned short x76; void*x77; void*x78; unsigned int x79/* : ? */; void*x80; int x81; int x82; int x83; short x84; short x85; unsigned short x86; unsigned short x87; unsigned short x88; unsigned char x89; unsigned char x90; unsigned char x91; unsigned char x92; unsigned char x93; unsigned char x94; unsigned char x95; unsigned char x96; unsigned char x97; unsigned char x98; unsigned char x99; unsigned char x100; unsigned char x101; unsigned char x102; unsigned char x103; unsigned char x104; unsigned char x105; unsigned short x106; unsigned int x107 : 1; unsigned int x108 : 1; unsigned int x109 : 1; unsigned int x110 : 1; unsigned int x111 : 1; unsigned int x112 : 1; unsigned int x113 : 1; unsigned int x114 : 1; unsigned int x115 : 1; unsigned int x116 : 1; unsigned int x117 : 1; unsigned int x118 : 1; unsigned int x119 : 1; unsigned int x120 : 1; unsigned int x121 : 1; unsigned int x122 : 1; unsigned int x123 : 1; unsigned int x124 : 1; unsigned int x125 : 1; unsigned int x126 : 1; unsigned int x127 : 1; unsigned int x128 : 1; unsigned int x129 : 1; unsigned int x130 : 1; unsigned int x131 : 1; unsigned int x132 : 1; unsigned int x133 : 1; unsigned int x134 : 1; unsigned int x135 : 1; unsigned int x136 : 1; unsigned int x137 : 1; unsigned int x138 : 1; unsigned int x139 : 1; unsigned int x140 : 1; unsigned int x141 : 1; unsigned int x142 : 1; unsigned int x143 : 1; unsigned int x144 : 1; unsigned int x145 : 1; unsigned int x146 : 1; unsigned int x147 : 1; unsigned int x148 : 1; unsigned int x149 : 1; unsigned int x150 : 1; unsigned int x151 : 1; unsigned int x152 : 1; unsigned int x153 : 1; unsigned int x154 : 1; unsigned int x155 : 1; unsigned int x156 : 1; unsigned int x157 : 1; unsigned int x158 : 1; } *mOriginalProperties;
-    struct { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; void*x3; void*x4; unsigned short x5; void*x6; void*x7; long x8; void*x9; void*x10; id x11; void*x12; void*x13; void*x14; boolx15; out const double x16; void*x17; const void*x18; id x19; void*x20; void*x21; void*x22; unsigned short x23; void*x24; void*x25; double x26; int x27; in void*x28; void*x29; id x30; void*x31; void*x32; void*x33; void*x34; out in void*x35; void*x36; id x37; void*x38; void*x39; void*x40; void*x41; out in void*x42; void*x43; id x44; void*x45; void*x46; void*x47; void*x48; out in void*x49; void*x50; id x51; void*x52; void*x53; void*x54; void*x55; out in void*x56; void*x57; int x58; int x59; int x60; id x61; void*x62; inout unsigned short x63; unsigned char x64; out long x65; out const unsigned short x66; void*x67; void*x68; unsigned int x69/* : ? */; void*x70; id x71; void*x72; inout unsigned short x73; unsigned char x74; out long x75; out const unsigned short x76; void*x77; void*x78; unsigned int x79/* : ? */; void*x80; int x81; int x82; int x83; short x84; short x85; unsigned short x86; unsigned short x87; unsigned short x88; unsigned char x89; unsigned char x90; unsigned char x91; unsigned char x92; unsigned char x93; unsigned char x94; unsigned char x95; unsigned char x96; unsigned char x97; unsigned char x98; unsigned char x99; unsigned char x100; unsigned char x101; unsigned char x102; unsigned char x103; unsigned char x104; unsigned char x105; unsigned short x106; unsigned int x107 : 1; unsigned int x108 : 1; unsigned int x109 : 1; unsigned int x110 : 1; unsigned int x111 : 1; unsigned int x112 : 1; unsigned int x113 : 1; unsigned int x114 : 1; unsigned int x115 : 1; unsigned int x116 : 1; unsigned int x117 : 1; unsigned int x118 : 1; unsigned int x119 : 1; unsigned int x120 : 1; unsigned int x121 : 1; unsigned int x122 : 1; unsigned int x123 : 1; unsigned int x124 : 1; unsigned int x125 : 1; unsigned int x126 : 1; unsigned int x127 : 1; unsigned int x128 : 1; unsigned int x129 : 1; unsigned int x130 : 1; unsigned int x131 : 1; unsigned int x132 : 1; unsigned int x133 : 1; unsigned int x134 : 1; unsigned int x135 : 1; unsigned int x136 : 1; unsigned int x137 : 1; unsigned int x138 : 1; unsigned int x139 : 1; unsigned int x140 : 1; unsigned int x141 : 1; unsigned int x142 : 1; unsigned int x143 : 1; unsigned int x144 : 1; unsigned int x145 : 1; unsigned int x146 : 1; unsigned int x147 : 1; unsigned int x148 : 1; unsigned int x149 : 1; unsigned int x150 : 1; unsigned int x151 : 1; unsigned int x152 : 1; unsigned int x153 : 1; unsigned int x154 : 1; unsigned int x155 : 1; unsigned int x156 : 1; unsigned int x157 : 1; unsigned int x158 : 1; } *mTrackedProperties;
+    struct { id x1; id x2; id x3; id x4; id x5; id x6; id x7; int x8; int x9; int x10; id x11; id x12; int x13; int x14; int x15; short x16; short x17; id x18; id x19; float x20; unsigned short x21; unsigned short x22; unsigned short x23; unsigned char x24; unsigned char x25; unsigned char x26; unsigned char x27; unsigned char x28; unsigned char x29; unsigned char x30; unsigned char x31; unsigned char x32; unsigned char x33; unsigned char x34; unsigned char x35; unsigned char x36; unsigned char x37; unsigned char x38; unsigned char x39; unsigned char x40; unsigned char x41; unsigned char x42; unsigned char x43; unsigned short x44; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; unsigned int x51 : 1; unsigned int x52 : 1; unsigned int x53 : 1; unsigned int x54 : 1; unsigned int x55 : 1; unsigned int x56 : 1; unsigned int x57 : 1; unsigned int x58 : 1; unsigned int x59 : 1; unsigned int x60 : 1; unsigned int x61 : 1; unsigned int x62 : 1; unsigned int x63 : 1; unsigned int x64 : 1; unsigned int x65 : 1; unsigned int x66 : 1; unsigned int x67 : 1; unsigned int x68 : 1; unsigned int x69 : 1; unsigned int x70 : 1; unsigned int x71 : 1; unsigned int x72 : 1; unsigned int x73 : 1; unsigned int x74 : 1; unsigned int x75 : 1; unsigned int x76 : 1; unsigned int x77 : 1; unsigned int x78 : 1; unsigned int x79 : 1; unsigned int x80 : 1; unsigned int x81 : 1; unsigned int x82 : 1; unsigned int x83 : 1; unsigned int x84 : 1; unsigned int x85 : 1; unsigned int x86 : 1; unsigned int x87 : 1; unsigned int x88 : 1; unsigned int x89 : 1; unsigned int x90 : 1; unsigned int x91 : 1; unsigned int x92 : 1; unsigned int x93 : 1; unsigned int x94 : 1; unsigned int x95 : 1; unsigned int x96 : 1; unsigned int x97 : 1; unsigned int x98 : 1; unsigned int x99 : 1; unsigned int x100 : 1; unsigned int x101 : 1; unsigned int x102 : 1; unsigned int x103 : 1; unsigned int x104 : 1; unsigned int x105 : 1; unsigned int x106 : 1; unsigned int x107 : 1; unsigned int x108 : 1; unsigned int x109 : 1; unsigned int x110 : 1; } *mOriginalProperties;
+    struct { id x1; id x2; id x3; id x4; id x5; id x6; id x7; int x8; int x9; int x10; id x11; id x12; int x13; int x14; int x15; short x16; short x17; id x18; id x19; float x20; unsigned short x21; unsigned short x22; unsigned short x23; unsigned char x24; unsigned char x25; unsigned char x26; unsigned char x27; unsigned char x28; unsigned char x29; unsigned char x30; unsigned char x31; unsigned char x32; unsigned char x33; unsigned char x34; unsigned char x35; unsigned char x36; unsigned char x37; unsigned char x38; unsigned char x39; unsigned char x40; unsigned char x41; unsigned char x42; unsigned char x43; unsigned short x44; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; unsigned int x51 : 1; unsigned int x52 : 1; unsigned int x53 : 1; unsigned int x54 : 1; unsigned int x55 : 1; unsigned int x56 : 1; unsigned int x57 : 1; unsigned int x58 : 1; unsigned int x59 : 1; unsigned int x60 : 1; unsigned int x61 : 1; unsigned int x62 : 1; unsigned int x63 : 1; unsigned int x64 : 1; unsigned int x65 : 1; unsigned int x66 : 1; unsigned int x67 : 1; unsigned int x68 : 1; unsigned int x69 : 1; unsigned int x70 : 1; unsigned int x71 : 1; unsigned int x72 : 1; unsigned int x73 : 1; unsigned int x74 : 1; unsigned int x75 : 1; unsigned int x76 : 1; unsigned int x77 : 1; unsigned int x78 : 1; unsigned int x79 : 1; unsigned int x80 : 1; unsigned int x81 : 1; unsigned int x82 : 1; unsigned int x83 : 1; unsigned int x84 : 1; unsigned int x85 : 1; unsigned int x86 : 1; unsigned int x87 : 1; unsigned int x88 : 1; unsigned int x89 : 1; unsigned int x90 : 1; unsigned int x91 : 1; unsigned int x92 : 1; unsigned int x93 : 1; unsigned int x94 : 1; unsigned int x95 : 1; unsigned int x96 : 1; unsigned int x97 : 1; unsigned int x98 : 1; unsigned int x99 : 1; unsigned int x100 : 1; unsigned int x101 : 1; unsigned int x102 : 1; unsigned int x103 : 1; unsigned int x104 : 1; unsigned int x105 : 1; unsigned int x106 : 1; unsigned int x107 : 1; unsigned int x108 : 1; unsigned int x109 : 1; unsigned int x110 : 1; } *mTrackedProperties;
 }
 
 + (SEL)fontOverriddenSelectorForLanguageType:(int)arg1;
 + (SEL)fontSelectorForLanguageType:(int)arg1;
++ (int)languageFromString:(id)arg1;
++ (BOOL)languageIsArabicOrHebrew:(int)arg1;
++ (BOOL)languageIsCJK:(int)arg1;
++ (BOOL)languageIsChinese:(int)arg1;
 
 - (void)applyPropertiesFrom:(id)arg1 ifOverriddenIn:(id)arg2;
 - (id)baseStyle;
 - (int)bold;
 - (id)border;
+- (int)bracketTwoLinesInOne;
 - (int)caps;
 - (long)charPositionOfPictureBulletInBookmark;
 - (void)clearBaseStyle;
 - (id)color;
+- (BOOL)compressHorizontalInVertical;
 - (void)copyPropertiesInto:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -37,6 +39,7 @@
 - (int)edited;
 - (BOOL)embeddedObject;
 - (int)embossed;
+- (int)emphasisMark;
 - (id)extendedFont;
 - (id)farEastFont;
 - (id)font;
@@ -46,24 +49,28 @@
 - (int)formattingChanged;
 - (int)hidden;
 - (int)highlightColor;
+- (BOOL)horizontalInVertical;
 - (int)imprint;
 - (id)initWithDocument:(id)arg1;
 - (BOOL)isAnythingOverridden;
-- (BOOL)isAnythingOverriddenIn:(struct { id x1; id x2; id x3; id x4; id x5; id x6; id x7; int x8; int x9; int x10; id x11; id x12; int x13; int x14; int x15; short x16; short x17; unsigned short x18; unsigned short x19; unsigned short x20; unsigned char x21; unsigned char x22; unsigned char x23; unsigned char x24; unsigned char x25; unsigned char x26; unsigned char x27; unsigned char x28; unsigned char x29; unsigned char x30; unsigned char x31; unsigned char x32; unsigned char x33; unsigned char x34; unsigned char x35; unsigned char x36; unsigned char x37; unsigned short x38; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; unsigned int x51 : 1; unsigned int x52 : 1; unsigned int x53 : 1; unsigned int x54 : 1; unsigned int x55 : 1; unsigned int x56 : 1; unsigned int x57 : 1; unsigned int x58 : 1; unsigned int x59 : 1; unsigned int x60 : 1; unsigned int x61 : 1; unsigned int x62 : 1; unsigned int x63 : 1; unsigned int x64 : 1; unsigned int x65 : 1; unsigned int x66 : 1; unsigned int x67 : 1; unsigned int x68 : 1; unsigned int x69 : 1; unsigned int x70 : 1; unsigned int x71 : 1; unsigned int x72 : 1; unsigned int x73 : 1; unsigned int x74 : 1; unsigned int x75 : 1; unsigned int x76 : 1; unsigned int x77 : 1; unsigned int x78 : 1; unsigned int x79 : 1; unsigned int x80 : 1; unsigned int x81 : 1; unsigned int x82 : 1; unsigned int x83 : 1; unsigned int x84 : 1; unsigned int x85 : 1; unsigned int x86 : 1; unsigned int x87 : 1; unsigned int x88 : 1; unsigned int x89 : 1; unsigned int x90 : 1; }*)arg1;
+- (BOOL)isAnythingOverriddenIn:(struct { id x1; id x2; id x3; id x4; id x5; id x6; id x7; int x8; int x9; int x10; id x11; id x12; int x13; int x14; int x15; short x16; short x17; id x18; id x19; float x20; unsigned short x21; unsigned short x22; unsigned short x23; unsigned char x24; unsigned char x25; unsigned char x26; unsigned char x27; unsigned char x28; unsigned char x29; unsigned char x30; unsigned char x31; unsigned char x32; unsigned char x33; unsigned char x34; unsigned char x35; unsigned char x36; unsigned char x37; unsigned char x38; unsigned char x39; unsigned char x40; unsigned char x41; unsigned char x42; unsigned char x43; unsigned short x44; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; unsigned int x51 : 1; unsigned int x52 : 1; unsigned int x53 : 1; unsigned int x54 : 1; unsigned int x55 : 1; unsigned int x56 : 1; unsigned int x57 : 1; unsigned int x58 : 1; unsigned int x59 : 1; unsigned int x60 : 1; unsigned int x61 : 1; unsigned int x62 : 1; unsigned int x63 : 1; unsigned int x64 : 1; unsigned int x65 : 1; unsigned int x66 : 1; unsigned int x67 : 1; unsigned int x68 : 1; unsigned int x69 : 1; unsigned int x70 : 1; unsigned int x71 : 1; unsigned int x72 : 1; unsigned int x73 : 1; unsigned int x74 : 1; unsigned int x75 : 1; unsigned int x76 : 1; unsigned int x77 : 1; unsigned int x78 : 1; unsigned int x79 : 1; unsigned int x80 : 1; unsigned int x81 : 1; unsigned int x82 : 1; unsigned int x83 : 1; unsigned int x84 : 1; unsigned int x85 : 1; unsigned int x86 : 1; unsigned int x87 : 1; unsigned int x88 : 1; unsigned int x89 : 1; unsigned int x90 : 1; unsigned int x91 : 1; unsigned int x92 : 1; unsigned int x93 : 1; unsigned int x94 : 1; unsigned int x95 : 1; unsigned int x96 : 1; unsigned int x97 : 1; unsigned int x98 : 1; unsigned int x99 : 1; unsigned int x100 : 1; unsigned int x101 : 1; unsigned int x102 : 1; unsigned int x103 : 1; unsigned int x104 : 1; unsigned int x105 : 1; unsigned int x106 : 1; unsigned int x107 : 1; unsigned int x108 : 1; unsigned int x109 : 1; unsigned int x110 : 1; }*)arg1;
 - (BOOL)isBaseStyleOverridden;
 - (BOOL)isBoldOverridden;
 - (BOOL)isBooleanProbablyDifferent:(int)arg1 than:(int)arg2;
 - (BOOL)isBorderOverridden;
+- (BOOL)isBracketTwoLinesInOneOverridden;
 - (BOOL)isCapsOverridden;
 - (BOOL)isCharPositionOfPictureBulletInBookmarkOverridden;
 - (BOOL)isColorAuto;
 - (BOOL)isColorAutoOverridden;
 - (BOOL)isColorOverridden;
+- (BOOL)isCompressHorizontalInVerticalOverridden;
 - (BOOL)isDeletedOverridden;
 - (BOOL)isDoubleStrikeThroughOverridden;
 - (BOOL)isEditedOverridden;
 - (BOOL)isEmbeddedObjectOverridden;
 - (BOOL)isEmbossedOverridden;
+- (BOOL)isEmphasisMarkOverridden;
 - (BOOL)isExtendedFontOverridden;
 - (BOOL)isFarEastFontOverridden;
 - (BOOL)isFontOverridden;
@@ -75,12 +82,14 @@
 - (BOOL)isHighlight;
 - (BOOL)isHighlightColorOverridden;
 - (BOOL)isHighlightOverridden;
+- (BOOL)isHorizontalInVerticalOverridden;
 - (BOOL)isImprintOverridden;
 - (BOOL)isItalicOverridden;
 - (BOOL)isKerningOverridden;
 - (BOOL)isLanguageForBiTextOverridden;
 - (BOOL)isLanguageForDefaultTextOverridden;
 - (BOOL)isLanguageForFarEastOverridden;
+- (BOOL)isLigatureOverridden;
 - (BOOL)isListCharacterPictureBullet;
 - (BOOL)isListCharacterPictureBulletOverridden;
 - (BOOL)isLowerCase;
@@ -90,7 +99,11 @@
 - (BOOL)isOle2Overridden;
 - (BOOL)isOutlineOverridden;
 - (BOOL)isPositionOverridden;
+- (BOOL)isReflectionOverridden;
+- (BOOL)isRightToLeftOverridden;
 - (BOOL)isShadingOverridden;
+- (BOOL)isShadow2010OpacityOverridden;
+- (BOOL)isShadow2010Overridden;
 - (BOOL)isShadowOverridden;
 - (BOOL)isSmallCapsOverridden;
 - (BOOL)isSpacingOverridden;
@@ -99,6 +112,7 @@
 - (BOOL)isStrikeThroughOverridden;
 - (BOOL)isSymbolCharacterOverridden;
 - (BOOL)isSymbolFontOverridden;
+- (BOOL)isTwoLinesInOneOverridden;
 - (BOOL)isUnderlineColorOverridden;
 - (BOOL)isUnderlineOverridden;
 - (BOOL)isVerticalAlignOverridden;
@@ -107,6 +121,7 @@
 - (int)languageForBiText;
 - (int)languageForDefaultText;
 - (int)languageForFarEast;
+- (int)ligature;
 - (id)mutableBorder;
 - (id)mutableShading;
 - (void)negateFormattingChangesWithDefaults:(id)arg1;
@@ -115,20 +130,25 @@
 - (BOOL)ole2;
 - (int)outline;
 - (short)position;
+- (id)reflection;
 - (void)removeEmptyFormattingChanges:(id)arg1;
 - (int)resolveMode;
 - (int)reverseBooleanProperty:(int)arg1;
+- (int)rightToLeft;
 - (void)setBaseStyle:(id)arg1;
 - (void)setBold:(int)arg1;
+- (void)setBracketTwoLinesInOne:(int)arg1;
 - (void)setCaps:(int)arg1;
 - (void)setCharPositionOfPictureBulletInBookmark:(long)arg1;
 - (void)setColor:(id)arg1;
 - (void)setColorAuto:(BOOL)arg1;
+- (void)setCompressHorizontalInVertical:(BOOL)arg1;
 - (void)setDeleted:(int)arg1;
 - (void)setDoubleStrikeThrough:(int)arg1;
 - (void)setEdited:(int)arg1;
 - (void)setEmbeddedObject:(BOOL)arg1;
 - (void)setEmbossed:(int)arg1;
+- (void)setEmphasisMark:(int)arg1;
 - (void)setExtendedFont:(id)arg1;
 - (void)setFarEastFont:(id)arg1;
 - (void)setFont:(id)arg1;
@@ -138,12 +158,14 @@
 - (void)setHidden:(int)arg1;
 - (void)setHighlight:(BOOL)arg1;
 - (void)setHighlightColor:(int)arg1;
+- (void)setHorizontalInVertical:(BOOL)arg1;
 - (void)setImprint:(int)arg1;
 - (void)setItalic:(int)arg1;
 - (void)setKerning:(unsigned short)arg1;
 - (void)setLanguageForBiText:(int)arg1;
 - (void)setLanguageForDefaultText:(int)arg1;
 - (void)setLanguageForFarEast:(int)arg1;
+- (void)setLigature:(int)arg1;
 - (void)setListCharacterPictureBullet:(BOOL)arg1;
 - (void)setLowerCase:(BOOL)arg1;
 - (void)setObjectIDForOle2:(long)arg1;
@@ -151,7 +173,11 @@
 - (void)setOle2:(BOOL)arg1;
 - (void)setOutline:(int)arg1;
 - (void)setPosition:(short)arg1;
+- (void)setReflection:(id)arg1;
 - (void)setResolveMode:(int)arg1;
+- (void)setRightToLeft:(int)arg1;
+- (void)setShadow2010:(id)arg1;
+- (void)setShadow2010Opacity:(float)arg1;
 - (void)setShadow:(int)arg1;
 - (void)setSmallCaps:(int)arg1;
 - (void)setSpacing:(short)arg1;
@@ -159,16 +185,20 @@
 - (void)setStrikeThrough:(int)arg1;
 - (void)setSymbolCharacter:(unsigned short)arg1;
 - (void)setSymbolFont:(id)arg1;
+- (void)setTwoLinesInOne:(BOOL)arg1;
 - (void)setUnderline:(int)arg1;
 - (void)setUnderlineColor:(id)arg1;
 - (void)setVerticalAlign:(int)arg1;
 - (id)shading;
+- (id)shadow2010;
+- (float)shadow2010Opacity;
 - (int)shadow;
 - (int)smallCaps;
 - (short)spacing;
 - (int)strikeThrough;
 - (unsigned short)symbolCharacter;
 - (id)symbolFont;
+- (BOOL)twoLinesInOne;
 - (int)underline;
 - (id)underlineColor;
 - (int)verticalAlign;

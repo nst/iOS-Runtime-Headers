@@ -8,7 +8,7 @@
 }
 
 @property(copy) NSString * offsetTimeUnit;
-@property(retain) NSNumber * offsetValue;
+@property(copy) NSNumber * offsetValue;
 
 + (id)dateTimeTriggerOffset;
 + (id)dateTimeTriggerOffsetWithDictionary:(id)arg1 context:(id)arg2;

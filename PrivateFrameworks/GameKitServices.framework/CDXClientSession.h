@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CDXClient, NSIndexSet, NSData, <CDXClientSessionDelegate>, NSMutableIndexSet;
+@class CDXClient, NSIndexSet, NSData, <CDXClientSessionDelegate>, NSMutableIndexSet, NSObject<OS_dispatch_source>;
 
 @interface CDXClientSession : NSObject {
     CDXClient *CDXClient_;
@@ -17,18 +17,18 @@
     NSMutableIndexSet *participantsInFlight_;
     unsigned char pid_;
     int retransmitAttempts_;
-    struct dispatch_source_s { } *retransmitTimer_;
+    NSObject<OS_dispatch_source> *retransmitTimer_;
     unsigned short seq_;
     NSData *sessionKeyPrepped_;
     NSData *sessionKey_;
     NSData *ticket_;
 }
 
-@property(retain,readonly) CDXClient * CDXClient;
+@property(readonly) CDXClient * CDXClient;
 @property <CDXClientSessionDelegate> * delegate;
 @property(copy) id inboundHandler;
-@property(copy,readonly) NSIndexSet * participantsInFlight;
-@property(copy,readonly) NSData * sessionKey;
+@property(readonly) NSIndexSet * participantsInFlight;
+@property(readonly) NSData * sessionKey;
 @property(copy) NSData * ticket;
 
 - (id)CDXClient;

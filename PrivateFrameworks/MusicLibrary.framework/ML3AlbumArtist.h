@@ -7,19 +7,21 @@
 
 + (id)allProperties;
 + (id)artworkCacheIDProperty;
++ (id)countingQueryForMPMediaEntityProperty:(id)arg1 library:(id)arg2 identifier:(long long)arg3;
 + (id)databaseTable;
 + (id)defaultOrderingProperties;
 + (id)effectiveAlbumArtistNameForAlbumArtistName:(id)arg1 artistName:(id)arg2 seriesName:(id)arg3 compilation:(BOOL)arg4;
 + (id)effectiveAlbumArtistSortNameForAlbumArtistSortName:(id)arg1 albumArtistName:(id)arg2 artistSortName:(id)arg3 artistName:(id)arg4 compilation:(BOOL)arg5;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
 + (void)initialize;
-+ (id)joinClauseForProperty:(id)arg1;
++ (id)joinClausesForProperty:(id)arg1;
 + (id)predisambiguatedProperties;
 + (id)propertiesForGroupingKey;
 + (id)propertyForMPMediaEntityProperty:(id)arg1;
 + (id)sectionPropertyForProperty:(id)arg1;
 + (id)trackForeignPersistentID;
 
+- (void)updateRepresentativeItem:(id)arg1 inLibrary:(id)arg2 withArtworkCacheID:(id)arg3;
 - (void)updateTrackValues:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class SWUserInteractionSnapshotObserver, SWRunWorkout, CLLocation, SWRunWorkoutPreset, SWRemote, SWDataControllerSnapshotObserver, SWFastestDistanceWindowObserver, SWRunSensor, SWIntervalSnapshotObserver, NSDictionary, SWDataController, CLLocationManager, NSString, NSMutableArray, NSTimer;
+@class SWUserInteractionSnapshotObserver, SWRunWorkout, CLLocation, SWRunWorkoutPreset, SWDataControllerSnapshotObserver, SWRemote, SWFastestDistanceWindowObserver, SWRunSensor, SWIntervalSnapshotObserver, NSDictionary, SWDataController, CLLocationManager, NSString, NSMutableArray, NSTimer;
 
 @interface SWRunWorkoutController : NSObject <CLLocationManagerDelegate> {
     SWDataController *_dataController;

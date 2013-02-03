@@ -18,6 +18,7 @@
 
 - (void)_delayedControllerReleaseAfterPop:(id)arg1;
 - (void)addTask:(id)arg1;
+- (id)aggregateDictionaryPath;
 - (BOOL)busy;
 - (BOOL)canBeShownFromSuspendedState;
 - (id)contentViewForTopController;
@@ -30,7 +31,6 @@
 - (void)didWake;
 - (void)handleURL:(id)arg1;
 - (id)initWithTitle:(id)arg1 identifier:(id)arg2;
-- (void)lazyLoadBundle:(id)arg1;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (id)parentController;
 - (id)popToRootViewControllerAnimated:(BOOL)arg1;

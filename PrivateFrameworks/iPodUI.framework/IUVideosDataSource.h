@@ -3,7 +3,10 @@
  */
 
 @interface IUVideosDataSource : IUMediaQueriesDataSource {
+    BOOL _showMoreFromiTunesActionRow;
 }
+
+@property BOOL showMoreFromiTunesActionRow;
 
 + (Class)cellConfigurationClassForSongs;
 + (int)mediaEntityType;
@@ -17,7 +20,9 @@
 - (id)init;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (void)reloadActionRows;
+- (void)setShowMoreFromiTunesActionRow:(BOOL)arg1;
 - (BOOL)shouldDisplayWhenEmpty;
+- (BOOL)showMoreFromiTunesActionRow;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
 
 @end

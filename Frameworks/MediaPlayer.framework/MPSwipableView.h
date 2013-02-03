@@ -25,6 +25,7 @@
 - (void)_updateGestureRecognizersForEnabledTypes;
 - (void)addGestureRecognizer:(id)arg1;
 - (void)dealloc;
+- (void)didMoveToSuperview;
 - (int)enabledGestureTypes;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
@@ -35,5 +36,6 @@
 - (void)setSwipeDelegate:(id)arg1;
 - (int)simultaneousGestureTypes;
 - (id)swipeDelegate;
+- (void)willMoveToSuperview:(id)arg1;
 
 @end

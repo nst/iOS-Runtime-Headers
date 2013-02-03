@@ -9,6 +9,7 @@
 @class NSString, NSMutableSet;
 
 @interface ATXPCConnection : NSObject {
+    BOOL _assertionHeld;
     struct _xpc_connection_s { } *_conn;
     id _context;
     id _disconnectHandler;
@@ -18,6 +19,7 @@
     NSMutableSet *_outstandingMessages;
 }
 
+@property BOOL assertionHeld;
 @property(retain) id context;
 @property(copy) id disconnectHandler;
 @property(copy) id lockdownHandler;
@@ -32,6 +34,7 @@
 - (void)_removeMessage:(id)arg1;
 - (void)_sendMessage:(id)arg1 handler:(id)arg2;
 - (void)_setEventHandlerOnConnection:(struct _xpc_connection_s { }*)arg1;
+- (BOOL)assertionHeld;
 - (id)context;
 - (void)dealloc;
 - (id)disconnectHandler;
@@ -43,6 +46,7 @@
 - (void)sendMessage:(id)arg1 withReply:(id)arg2;
 - (void)sendMessage:(id)arg1;
 - (id)serviceName;
+- (void)setAssertionHeld:(BOOL)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDisconnectHandler:(id)arg1;
 - (void)setLockdownHandler:(id)arg1;

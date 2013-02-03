@@ -12,12 +12,15 @@
 @property(readonly) Class aggregateEntityClass;
 @property(readonly) NSString * foreignPersistentIDProperty;
 
+- (void).cxx_destruct;
 - (Class)aggregateEntityClass;
+- (unsigned int)countOfEntities;
 - (void)dealloc;
 - (BOOL)distinctPersistentIDProperty;
 - (void)encodeWithCoder:(id)arg1;
 - (Class)entityClass;
 - (id)foreignPersistentIDProperty;
+- (BOOL)hasEntities;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUnitQuery:(id)arg1 aggregateEntityClass:(Class)arg2 foreignPersistentIDProperty:(id)arg3;
 - (id)persistentIDProperty;

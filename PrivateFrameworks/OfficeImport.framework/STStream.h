@@ -6,12 +6,16 @@
     struct _Stream { } *m_pCStream;
 }
 
+@property(readonly) struct _Stream { }* cStream;
+
+- (struct _Stream { }*)cStream;
 - (void)close;
 - (void)dealloc;
 - (id)getInfo;
 - (unsigned long)getPos;
 - (id)initWithCStream:(struct _Stream { }*)arg1;
 - (id)readBytes:(unsigned long)arg1;
+- (unsigned long long)readLEUnsignedLongLong;
 - (unsigned char)readLEboolean;
 - (unsigned char)readLEbyte;
 - (BOOL)readLEchar;

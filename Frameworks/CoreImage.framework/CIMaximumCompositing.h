@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIMaximumCompositing : CICompositeFilter {
+@interface CIMaximumCompositing : _CICompositeFilter {
 }
 
 + (id)_filter_display_name;

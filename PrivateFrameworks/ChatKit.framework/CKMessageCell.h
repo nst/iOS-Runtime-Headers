@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIButton, CKBalloonView;
+@class UIButton, UIImageView, CKBalloonView;
 
-@interface CKMessageCell : CKTranscriptCell {
+@interface CKMessageCell : CKTranscriptCell <CKBalloonViewActionDelegate> {
     CKBalloonView *_balloonView;
     float _bottomPadding;
+    UIImageView *_contactImageView;
     UIButton *_failedButton;
     id _replacementMessageBubbleData;
     float _topPadding;
@@ -27,12 +28,12 @@
 - (id)balloonView;
 - (void)balloonViewDidTapBalloon:(id)arg1;
 - (void)balloonViewDidTapSendAsSMS:(id)arg1;
-- (BOOL)balloonViewShouldShowSendAsSMSAction:(id)arg1;
+- (id)balloonViewSendAsSMSText:(id)arg1;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })failedButtonFrame;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)prepareForReuse;
+- (void)prepareForReuseForEditing;
 - (id)replacementMessageBubbleData;
 - (void)setContactImage:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;

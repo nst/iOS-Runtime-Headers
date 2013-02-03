@@ -13,6 +13,7 @@
 @property(retain) NSData * externalRepresentation;
 @property(retain) NoteObject * owner;
 
+- (BOOL)containsAttachments;
 - (id)contentAsPlainText;
 - (id)contentAsPlainTextPreservingNewlines;
 

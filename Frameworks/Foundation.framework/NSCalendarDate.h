@@ -54,6 +54,7 @@
 - (int)monthOfYear;
 - (id)nearestMidnight;
 - (oneway void)release;
+- (id)replacementObjectForPortCoder:(id)arg1;
 - (int)secondOfMinute;
 - (void)setCalendarFormat:(id)arg1;
 - (void)setTimeZone:(id)arg1;

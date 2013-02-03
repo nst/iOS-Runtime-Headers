@@ -11,7 +11,7 @@
     int _location;
     unsigned char _masksInitialized;
     char *_nameString;
-    struct GLKEffectPropertyPrv { struct GLKBigInt_s {} *x1; struct GLKBigInt_s {} *x2; struct GLKBigInt_s {} *x3; struct GLKBigInt_s {} *x4; } *_prv;
+    struct GLKEffectPropertyPrv { struct GLKBigInt_s {} *x1; struct GLKBigInt_s {} *x2; struct GLKBigInt_s {} *x3; struct GLKBigInt_s {} *x4; id x5; } *_prv;
     char *_vshSource;
 }
 
@@ -33,7 +33,8 @@
 - (id)effect;
 - (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)fshMask;
 - (char *)fshSource;
-- (bool)includeShaderTextForRootNode:(id)arg1;
+- (bool)includeFshShaderTextForRootNode:(id)arg1;
+- (bool)includeVshShaderTextForRootNode:(id)arg1;
 - (id)init;
 - (void)initializeMasks;
 - (int)location;

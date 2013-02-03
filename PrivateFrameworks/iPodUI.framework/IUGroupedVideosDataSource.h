@@ -36,6 +36,7 @@
 - (void)dealloc;
 - (id)entitiesForQuery:(id)arg1;
 - (BOOL)hasActionRowsEvenWhenNoOtherRowsExist;
+- (BOOL)hideActionRowsOnAppear;
 - (id)init;
 - (BOOL)isRestorableNavigationPathNode;
 - (SEL)libraryHasDisplayableEntitiesSelector;

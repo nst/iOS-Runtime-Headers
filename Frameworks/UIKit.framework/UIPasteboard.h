@@ -31,6 +31,7 @@
 
 - (id)URL;
 - (id)URLs;
+- (void)_addItems:(id)arg1 oldPasteboardTypes:(id)arg2;
 - (id)_initWithName:(id)arg1 system:(BOOL)arg2 create:(BOOL)arg3;
 - (void)_pasteboardChanged:(id)arg1;
 - (void)addItems:(id)arg1;
@@ -48,6 +49,8 @@
 - (BOOL)isPersistent;
 - (id)itemSetWithPasteboardTypes:(id)arg1;
 - (id)items;
+- (void)mf_addPasteboardRepresentationsForAttachments:(id)arg1;
+- (id)mf_getAttachmentsPasteboardRepresentations;
 - (id)name;
 - (int)numberOfItems;
 - (id)pasteboardTypes;

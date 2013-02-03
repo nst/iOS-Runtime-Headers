@@ -22,6 +22,7 @@
 - (void)_getContainerHomeSet;
 - (void)_getContainerTopLevelInfo;
 - (int)containerInfoDepth;
+- (int)containerInfoDepthForURL:(id)arg1;
 - (id)containerURLs;
 - (void)dealloc;
 - (id)description;

@@ -20,15 +20,15 @@
 @property(readonly) MPMediaItem * representativeItem;
 @property int style;
 
-- (void)_crossedTimeMarkerNotification:(id)arg1;
 - (unsigned int)_currentChapterIndex;
 - (double)_durationInSecondsForIndex:(unsigned int)arg1;
 - (unsigned int)_indexOfItem:(id)arg1;
 - (BOOL)_shouldReloadQueryForChangeToItem:(id)arg1;
-- (id)cellConfigurationForIndex:(unsigned int)arg1 artworkLoadingCompletionHandler:(id)arg2;
+- (id)cellConfigurationForIndex:(unsigned int)arg1 shouldLoadArtwork:(BOOL)arg2 artworkLoadingCompletionHandler:(id)arg3;
 - (id)chapters;
 - (unsigned int)count;
 - (void)createGlobalContexts;
+- (void)crossedTimeMakerWithEvent:(id)arg1;
 - (unsigned int)currentIndex;
 - (void)dealloc;
 - (id)entityAtIndex:(unsigned int)arg1;

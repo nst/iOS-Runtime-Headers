@@ -5,17 +5,23 @@
 @class NSString;
 
 @interface UIKeyboardEmoji : NSObject {
+    unsigned short _glyph;
     NSString *emojiString;
 }
 
 @property(retain) NSString * emojiString;
+@property unsigned short glyph;
 @property(readonly) NSString * key;
+
++ (id)emojiWithString:(id)arg1;
 
 - (void)dealloc;
 - (id)emojiString;
+- (unsigned short)glyph;
 - (id)initWithString:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)key;
 - (void)setEmojiString:(id)arg1;
+- (void)setGlyph:(unsigned short)arg1;
 
 @end

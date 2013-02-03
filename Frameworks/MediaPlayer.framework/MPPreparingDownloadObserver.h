@@ -2,10 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSNumber;
-
 @interface MPPreparingDownloadObserver : MPMediaDownloadObserver {
-    NSNumber *_mediaItemPersistentIdentifier;
 }
 
 - (void)_onQueue_invalidate;

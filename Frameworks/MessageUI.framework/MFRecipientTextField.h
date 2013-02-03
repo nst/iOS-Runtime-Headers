@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFRecipientTextField : UITextField {
+@interface MFRecipientTextField : MFComposeTextField {
 }
 
 - (id)_previousKeyResponder;

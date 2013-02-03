@@ -2,24 +2,28 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSURL;
+@class NSURL, NSMutableDictionary;
 
 @interface NSFileCoordinator : NSObject {
     id _accessArbiter;
     id _accessClaimIDOrIDs;
     id _fileReactor;
     BOOL _isCancelled;
+    NSMutableDictionary *_movedItems;
     id _purposeID;
     NSURL *_recentFilePresenterURL;
-    id _reserved;
 }
 
++ (void)__itemAtURL:(id)arg1 didDisconnectWithPurposeID:(id)arg2;
 + (void)__itemAtURL:(id)arg1 didGainVersionWithClientID:(id)arg2 name:(id)arg3 purposeID:(id)arg4;
 + (void)__itemAtURL:(id)arg1 didLoseVersionWithClientID:(id)arg2 name:(id)arg3 purposeID:(id)arg4;
 + (void)__itemAtURL:(id)arg1 didMoveToURL:(id)arg2 purposeID:(id)arg3;
++ (void)__itemAtURL:(id)arg1 didReconnectWithPurposeID:(id)arg2;
 + (void)__itemAtURL:(id)arg1 didResolveConflictVersionWithClientID:(id)arg2 name:(id)arg3 purposeID:(id)arg4;
++ (void)_addFileProvider:(id)arg1 completionHandler:(id)arg2;
 + (void)_addFileProvider:(id)arg1;
 + (id)_canonicalURLForURL:(id)arg1;
++ (id)_currentFileCoordinator;
 + (id)_fileProviders;
 + (void)_removeFileProvider:(id)arg1;
 + (BOOL)_skipCoordinationWork;
@@ -39,7 +43,9 @@
 - (void)_coordinateWritingItemAtURL:(id)arg1 options:(unsigned int)arg2 writingItemAtURL:(id)arg3 options:(unsigned int)arg4 error:(id*)arg5 byAccessor:(id)arg6;
 - (void)_forgetAccessClaimForID:(id)arg1;
 - (void)_invokeAccessor:(id)arg1 orDont:(BOOL)arg2 thenRelinquishAccessClaimForID:(id)arg3;
+- (void)_invokeAccessor:(id)arg1 thenCompletionHandler:(id)arg2;
 - (void)_itemAtURL:(id)arg1 didMoveToURL:(id)arg2;
+- (void)_itemAtURL:(id)arg1 willMoveToURL:(id)arg2;
 - (void)_requestAccessClaim:(id)arg1 withProcedure:(id)arg2;
 - (void)_setFileProvider:(id)arg1;
 - (void)cancel;
@@ -51,6 +57,7 @@
 - (id)init;
 - (id)initWithFilePresenter:(id)arg1;
 - (void)itemAtURL:(id)arg1 didMoveToURL:(id)arg2;
+- (void)itemAtURL:(id)arg1 willMoveToURL:(id)arg2;
 - (void)prepareForReadingItemsAtURLs:(id)arg1 options:(unsigned int)arg2 writingItemsAtURLs:(id)arg3 options:(unsigned int)arg4 error:(id*)arg5 byAccessor:(id)arg6;
 - (id)purposeIdentifier;
 - (void)setPurposeIdentifier:(id)arg1;

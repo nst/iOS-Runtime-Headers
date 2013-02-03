@@ -26,6 +26,7 @@
 + (long)longValueForParameter:(id)arg1 forPersonID:(id)arg2 defaultValue:(long)arg3;
 + (id)objectForKey:(id)arg1 forPersonID:(id)arg2 defaultValue:(id)arg3;
 
+- (void).cxx_destruct;
 - (void)abort;
 - (id)config;
 - (id)daemon;

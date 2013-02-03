@@ -7,10 +7,12 @@
 @interface CalDAVCalendarServerChangedPropertyItem : CoreDAVItem {
     NSMutableSet *_changedParameters;
     NSString *_nameAttribute;
+    NSString *_typeAttribute;
 }
 
 @property(retain) NSMutableSet * changedParameters;
 @property(retain) NSString * nameAttribute;
+@property(retain) NSString * typeAttribute;
 
 - (void)addChangedParameter:(id)arg1;
 - (id)changedParameters;
@@ -21,5 +23,7 @@
 - (void)parserFoundAttributes:(id)arg1;
 - (void)setChangedParameters:(id)arg1;
 - (void)setNameAttribute:(id)arg1;
+- (void)setTypeAttribute:(id)arg1;
+- (id)typeAttribute;
 
 @end

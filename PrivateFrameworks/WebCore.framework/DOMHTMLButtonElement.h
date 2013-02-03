@@ -10,9 +10,9 @@
 @property(copy) NSString * accessKey;
 @property BOOL autofocus;
 @property BOOL disabled;
-@property(retain,readonly) DOMHTMLFormElement * form;
+@property(readonly) DOMHTMLFormElement * form;
 @property(copy) NSString * name;
-@property(copy,readonly) NSString * type;
+@property(readonly) NSString * type;
 @property(copy) NSString * value;
 @property(readonly) BOOL willValidate;
 

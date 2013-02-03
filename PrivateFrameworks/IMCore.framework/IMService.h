@@ -21,10 +21,15 @@
 + (id)notificationCenter;
 + (id)serviceWithName:(id)arg1;
 + (id)serviceWithNameNonBlocking:(id)arg1;
++ (id)smsService;
 + (unsigned int)statusForABPerson:(id)arg1;
 + (unsigned int)statusForIMPerson:(id)arg1;
 + (id)subnetService;
 
+- (id)__ck_displayName;
+- (BOOL)__ck_isSMS;
+- (BOOL)__ck_isiMessage;
+- (int)__ck_maxRecipientCount;
 - (id)canonicalFormOfID:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)infoForAllPeople;

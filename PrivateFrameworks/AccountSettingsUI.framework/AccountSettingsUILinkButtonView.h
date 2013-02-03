@@ -4,7 +4,7 @@
 
 @class UIFont, UIImageView, NSString, AccountSettingsUILinkButton, NSURL;
 
-@interface AccountSettingsUILinkButtonView : UIView <PreferencesTableCustomView> {
+@interface AccountSettingsUILinkButtonView : UIView <PSHeaderFooterView> {
     UIImageView *_arrowImageView;
     UIFont *_font;
     float _height;

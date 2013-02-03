@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUMediaPlayerItem, NSMutableArray, UIView;
+@class UIView, SUClientInterface, SUMediaPlayerItem, NSMutableArray;
 
 @interface SUMediaPlayerViewController : MPMoviePlayerViewController <ISOperationDelegate> {
     UIView *_backgroundContainerView;
+    SUClientInterface *_clientInterface;
     SUMediaPlayerItem *_mediaItem;
     NSMutableArray *_operations;
     int _playerState;
 }
 
+@property(retain) SUClientInterface * clientInterface;
 @property(readonly) SUMediaPlayerItem * mediaPlayerItem;
 
 + (BOOL)_URLIsITunesU:(id)arg1;
@@ -30,8 +32,10 @@
 - (void)_prepareMediaItem;
 - (void)_setIsActivePlayer:(BOOL)arg1;
 - (void)_showBackgroundImage:(id)arg1;
+- (id)clientInterface;
 - (id)copyScriptViewController;
 - (void)dealloc;
+- (void)didReceiveMemoryWarning;
 - (id)init;
 - (id)initWithMediaPlayerItem:(id)arg1;
 - (void)loadView;
@@ -39,7 +43,7 @@
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (void)operationFinished:(id)arg1;
-- (void)purgeMemoryForReason:(int)arg1;
+- (void)setClientInterface:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 

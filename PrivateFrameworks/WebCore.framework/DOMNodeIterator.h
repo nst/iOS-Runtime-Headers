@@ -8,10 +8,10 @@
 }
 
 @property(readonly) BOOL expandEntityReferences;
-@property(retain,readonly) <DOMNodeFilter> * filter;
+@property(readonly) <DOMNodeFilter> * filter;
 @property(readonly) BOOL pointerBeforeReferenceNode;
-@property(retain,readonly) DOMNode * referenceNode;
-@property(retain,readonly) DOMNode * root;
+@property(readonly) DOMNode * referenceNode;
+@property(readonly) DOMNode * root;
 @property(readonly) unsigned int whatToShow;
 
 - (void)dealloc;

@@ -2,37 +2,37 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMHTMLElement, DOMStyleSheetList, DOMAbstractView, DOMHTMLCollection, NSString, DOMImplementation, DOMElement, DOMDocumentType;
+@class DOMElement, DOMStyleSheetList, DOMAbstractView, DOMHTMLCollection, DOMHTMLElement, NSString, DOMImplementation, DOMDocumentType;
 
 @interface DOMDocument : DOMNode {
 }
 
-@property(copy,readonly) NSString * URL;
-@property(retain,readonly) DOMHTMLCollection * anchors;
-@property(retain,readonly) DOMHTMLCollection * applets;
+@property(readonly) NSString * URL;
+@property(readonly) DOMHTMLCollection * anchors;
+@property(readonly) DOMHTMLCollection * applets;
 @property(retain) DOMHTMLElement * body;
-@property(copy,readonly) NSString * characterSet;
+@property(readonly) NSString * characterSet;
 @property(copy) NSString * charset;
 @property(copy) NSString * cookie;
-@property(copy,readonly) NSString * defaultCharset;
-@property(retain,readonly) DOMAbstractView * defaultView;
-@property(retain,readonly) DOMDocumentType * doctype;
-@property(retain,readonly) DOMElement * documentElement;
+@property(readonly) NSString * defaultCharset;
+@property(readonly) DOMAbstractView * defaultView;
+@property(readonly) DOMDocumentType * doctype;
+@property(readonly) DOMElement * documentElement;
 @property(copy) NSString * documentURI;
-@property(copy,readonly) NSString * domain;
-@property(retain,readonly) DOMHTMLCollection * forms;
-@property(retain,readonly) DOMHTMLCollection * images;
-@property(retain,readonly) DOMImplementation * implementation;
-@property(copy,readonly) NSString * inputEncoding;
-@property(copy,readonly) NSString * lastModified;
-@property(retain,readonly) DOMHTMLCollection * links;
-@property(copy,readonly) NSString * preferredStylesheetSet;
-@property(copy,readonly) NSString * readyState;
-@property(copy,readonly) NSString * referrer;
+@property(readonly) NSString * domain;
+@property(readonly) DOMHTMLCollection * forms;
+@property(readonly) DOMHTMLCollection * images;
+@property(readonly) DOMImplementation * implementation;
+@property(readonly) NSString * inputEncoding;
+@property(readonly) NSString * lastModified;
+@property(readonly) DOMHTMLCollection * links;
+@property(readonly) NSString * preferredStylesheetSet;
+@property(readonly) NSString * readyState;
+@property(readonly) NSString * referrer;
 @property(copy) NSString * selectedStylesheetSet;
-@property(retain,readonly) DOMStyleSheetList * styleSheets;
+@property(readonly) DOMStyleSheetList * styleSheets;
 @property(copy) NSString * title;
-@property(copy,readonly) NSString * xmlEncoding;
+@property(readonly) NSString * xmlEncoding;
 @property BOOL xmlStandalone;
 @property(copy) NSString * xmlVersion;
 

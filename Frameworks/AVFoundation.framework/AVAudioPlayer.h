@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSData, NSDictionary, <AVAudioPlayerDelegate>, NSURL;
+@class NSArray, NSData, NSDictionary, <AVAudioPlayerDelegate>, NSURL;
 
 @interface AVAudioPlayer : NSObject {
     void *_impl;
 }
 
+@property(copy) NSArray * channelAssignments;
 @property double currentTime;
 @property(readonly) NSData * data;
 @property <AVAudioPlayerDelegate> * delegate;
@@ -27,19 +28,20 @@
 - (float)averagePowerForChannel:(unsigned int)arg1;
 - (id)baseInit;
 - (void)beginInterruption;
+- (id)channelAssignments;
 - (double)currentTime;
 - (id)data;
 - (void)dealloc;
-- (void)decodeError;
+- (void)decodeError:(id)arg1;
 - (id)delegate;
 - (double)deviceCurrentTime;
 - (double)duration;
 - (BOOL)enableRate;
 - (void)endInterruption;
-- (void)endInterruptionWithFlags;
+- (void)endInterruptionWithFlags:(id)arg1;
 - (void)finalize;
-- (void)finishedPlaying;
-- (struct AudioPlayerImpl { id x1; id x2; id x3; id x4; id x5; struct AudioStreamBasicDescription { double x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; unsigned int x_6_1_4; unsigned int x_6_1_5; unsigned int x_6_1_6; unsigned int x_6_1_7; unsigned int x_6_1_8; unsigned int x_6_1_9; } x6; struct AudioStreamBasicDescription { double x_7_1_1; unsigned int x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; unsigned int x_7_1_6; unsigned int x_7_1_7; unsigned int x_7_1_8; unsigned int x_7_1_9; } x7; unsigned int x8; char *x9; unsigned int x10; struct AudioFormatListItem {} *x11; unsigned int x12; struct OpaqueAudioFileID {} *x13; struct OpaqueAudioQueue {} *x14; long long x15; long long x16; long long x17; float x18; float x19; float x20; unsigned int x21; double x22; int x23; struct AudioFilePacketTableInfo { long long x_24_1_1; int x_24_1_2; int x_24_1_3; } x24; int x25; int x26; boolx27; boolx28; boolx29; boolx30; boolx31; boolx32; boolx33; boolx34; double x35; double x36; double x37; double x38; boolx39; struct AudioQueueLevelMeterState {} *x40; struct AudioQueueBuffer {} *x41[3]; struct AudioQueueBuffer {} *x42; int x43; boolx44; boolx45; boolx46; boolx47; boolx48; struct AudioQueueBuffer {} *x49; boolx50; unsigned int x51; boolx52; boolx53; boolx54; boolx55; long long x56; int x57; unsigned int x58; unsigned int x59; struct _opaque_pthread_mutex_t { long x_60_1_1; BOOL x_60_1_2[40]; } x60; }*)impl;
+- (void)finishedPlaying:(id)arg1;
+- (struct AudioPlayerImpl { id x1; id x2; id x3; id x4; id x5; struct AVAudioPlayerCpp {} *x6; id x7; }*)impl;
 - (id)initWithContentsOfURL:(id)arg1 error:(id*)arg2;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
 - (BOOL)isMeteringEnabled;
@@ -54,6 +56,7 @@
 - (BOOL)prepareToPlay;
 - (void)privCommonCleanup;
 - (float)rate;
+- (void)setChannelAssignments:(id)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnableRate:(BOOL)arg1;

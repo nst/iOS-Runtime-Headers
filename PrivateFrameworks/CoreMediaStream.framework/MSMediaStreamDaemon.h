@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <MSMediaStreamDaemonDelegate>;
+@class <MSMediaStreamDaemonDelegate>, NSCountedSet;
 
-@interface MSMediaStreamDaemon : NSObject {
-    int _UIBusyCount;
-    int _busyCount;
+@interface MSMediaStreamDaemon : MSDaemon {
     <MSMediaStreamDaemonDelegate> *_delegate;
+    NSCountedSet *_retainedObjects;
 }
 
 @property <MSMediaStreamDaemonDelegate> * delegate;
 
+- (void).cxx_destruct;
 - (id)_boundDeleterForPersonID:(id)arg1;
 - (id)_boundPublisherForPersonID:(id)arg1;
 - (id)_boundServerSideConfigManagerForPersonID:(id)arg1;
@@ -25,17 +25,19 @@
 - (id)delegate;
 - (void)deleteAssetCollections:(id)arg1 forPersonID:(id)arg2;
 - (void)didExceedPublishQuotaForPersonID:(id)arg1 retryDate:(id)arg2;
+- (void)didIdle;
 - (void)didReceiveAuthenticationFailureForPersonID:(id)arg1;
 - (void)didReceiveAuthenticationSuccessForPersonID:(id)arg1;
 - (void)didReceiveNewServerSideConfigurationForPersonID:(id)arg1;
 - (void)didReceiveNewShareState:(id)arg1 oldShareState:(id)arg2 forPersonID:(id)arg3;
 - (void)didReceiveServerSideConfigurationVersion:(id)arg1 forPersonID:(id)arg2;
+- (void)didUnidle;
 - (BOOL)enqueueAssetCollection:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (void)forgetPersonID:(id)arg1;
 - (BOOL)hasOutstandingActivity;
+- (id)init;
 - (id)invitationFromPushNotificationUserInfo:(id)arg1 outSourcePersonID:(id*)arg2 outTargetPersonID:(id*)arg3;
 - (id)invitationStringsFromInvitation:(id)arg1 targetPersonID:(id)arg2;
-- (BOOL)isBusy;
 - (BOOL)isInRetryState;
 - (void)modifyShare:(id)arg1 forPersonID:(id)arg2;
 - (id)nextActivityDate;
@@ -47,15 +49,9 @@
 - (void)pollForSubscriptionUpdatesTriggeredByPushNotification;
 - (void)refreshServerSideConfigurationForPersonID:(id)arg1;
 - (void)refreshShareStatesForPersonID:(id)arg1;
-- (void)releaseBusy;
-- (void)releasePowerAssertion;
-- (void)releaseUIBusy;
 - (void)removeShare:(id)arg1 forPersonID:(id)arg2;
 - (void)resetSubscriberSyncForPersonID:(id)arg1;
 - (void)respondToInvitation:(id)arg1 forPersonID:(id)arg2 accept:(BOOL)arg3;
-- (void)retainBusy;
-- (void)retainPowerAssertion;
-- (void)retainUIBusy;
 - (void)retryOutstandingActivities;
 - (void)sendInvitations:(id)arg1 forPersonID:(id)arg2;
 - (id)serverSideConfigurationForPersonID:(id)arg1;

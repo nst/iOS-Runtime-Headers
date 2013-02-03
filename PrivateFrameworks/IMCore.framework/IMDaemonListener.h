@@ -70,7 +70,7 @@
 - (void)account:(id)arg1 defaultsChanged:(id)arg2;
 - (void)account:(id)arg1 groupsChanged:(id)arg2 error:(id)arg3;
 - (void)account:(id)arg1 handleSubscriptionRequestFrom:(id)arg2 withMessage:(id)arg3;
-- (void)account:(id)arg1 loginStatusChanged:(unsigned int)arg2 message:(id)arg3 reason:(unsigned int)arg4 properties:(id)arg5;
+- (void)account:(id)arg1 loginStatusChanged:(unsigned int)arg2 message:(id)arg3 reason:(int)arg4 properties:(id)arg5;
 - (void)account:(id)arg1 postedError:(id)arg2;
 - (void)account:(id)arg1 status:(id)arg2 capabilities:(unsigned long long)arg3 serviceLoginStatus:(unsigned int)arg4 loginStatusMessage:(id)arg5;
 - (void)account:(id)arg1 statusChanged:(id)arg2;
@@ -79,6 +79,8 @@
 - (void)activeAccountsChanged:(id)arg1 forService:(id)arg2;
 - (void)addHandler:(id)arg1;
 - (id)allServices;
+- (void)databaseFull;
+- (void)databaseNoLongerFull;
 - (void)databaseUpdated:(id)arg1;
 - (void)dealloc;
 - (void)defaultsChanged:(id)arg1 forService:(id)arg2;

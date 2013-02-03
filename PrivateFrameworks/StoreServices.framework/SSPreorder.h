@@ -40,12 +40,12 @@
 - (void)_setTitle:(id)arg1;
 - (id)artistName;
 - (id)copyReleaseDateStringWithStyle:(long)arg1;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
 - (id)imageCollection;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)itemKind;
 - (long long)persistentIdentifier;

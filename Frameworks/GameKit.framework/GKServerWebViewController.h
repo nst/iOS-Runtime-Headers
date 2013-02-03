@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSURLRequest, UIAlertView, GKBackgroundView, UIWebView, NSString, NSData, GKPhotoPicker;
+@class UIActivityIndicatorView, NSURLRequest, UIAlertView, GKBackgroundView, UIWebView, NSString, NSData;
 
 @interface GKServerWebViewController : GKViewController <UIWebViewDelegate, UIAlertViewDelegate> {
     struct UIEdgeInsets { 
@@ -16,6 +16,7 @@
         float right; 
     BOOL _addedSheetFrame;
     UIAlertView *_alert;
+    int _alertTag;
     NSString *_authToken;
     } _backgroundInsets;
     GKBackgroundView *_backgroundView;
@@ -24,17 +25,19 @@
     BOOL _dismissOnAuthenticate;
     NSString *_leftCallback;
     NSString *_okCallback;
-    GKPhotoPicker *_photoPicker;
     NSString *_playerID;
     NSURLRequest *_previousRequest;
     NSData *_pushToken;
+    NSString *_rightButtonTitle;
     NSString *_rightCallback;
+    UIActivityIndicatorView *_rightNavSpinner;
     int _status;
     UIWebView *_webView;
 }
 
 @property BOOL addedSheetFrame;
 @property(retain) UIAlertView * alert;
+@property int alertTag;
 @property(retain) NSString * authToken;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } backgroundInsets;
 @property(retain) GKBackgroundView * backgroundView;
@@ -43,16 +46,18 @@
 @property BOOL dismissOnAuthenticate;
 @property(retain) NSString * leftCallback;
 @property(retain) NSString * okCallback;
-@property(retain) GKPhotoPicker * photoPicker;
 @property(retain) NSString * playerID;
 @property(retain) NSURLRequest * previousRequest;
 @property(retain) NSData * pushToken;
+@property(retain) NSString * rightButtonTitle;
 @property(retain) NSString * rightCallback;
+@property(retain) UIActivityIndicatorView * rightNavSpinner;
 @property int status;
 @property(retain) UIWebView * webView;
 
 - (BOOL)addedSheetFrame;
 - (id)alert;
+- (int)alertTag;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)authToken;
 - (void)authenticateAndTryURLRequestAgain:(id)arg1;
@@ -60,11 +65,9 @@
 - (id)backgroundView;
 - (void)cancelAlertWithoutDelegateCallback;
 - (id)cancelCallback;
-- (void)changePhoto;
 - (id)completionHandler;
 - (void)dealloc;
 - (id)decodeDashEncodedString:(id)arg1;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (BOOL)dismissOnAuthenticate;
 - (void)finish;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -75,15 +78,18 @@
 - (id)okCallback;
 - (void)parseAlertURLString:(id)arg1;
 - (void)parseNavBarURLString:(id)arg1;
-- (id)photoPicker;
 - (id)playerID;
 - (id)previousRequest;
 - (void)processGameKitURLComponents:(id)arg1;
+- (void)processSpinnerURLComponents:(id)arg1;
 - (id)pushToken;
+- (id)rightButtonTitle;
 - (id)rightCallback;
 - (void)rightNavButtonPressed;
+- (id)rightNavSpinner;
 - (void)setAddedSheetFrame:(BOOL)arg1;
 - (void)setAlert:(id)arg1;
+- (void)setAlertTag:(int)arg1;
 - (void)setAuthToken:(id)arg1;
 - (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setBackgroundView:(id)arg1;
@@ -93,23 +99,26 @@
 - (void)setHeadersForRequest:(id)arg1;
 - (void)setLeftCallback:(id)arg1;
 - (void)setOkCallback:(id)arg1;
-- (void)setPhotoPicker:(id)arg1;
 - (void)setPlayerID:(id)arg1;
 - (void)setPreviousRequest:(id)arg1;
 - (void)setPushToken:(id)arg1;
+- (void)setRightButtonTitle:(id)arg1;
 - (void)setRightCallback:(id)arg1;
+- (void)setRightNavSpinner:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (void)setWebView:(id)arg1;
 - (void)showMessageForError:(id)arg1;
+- (void)startCommandProcessingForWebView:(id)arg1;
 - (int)status;
+- (void)updateNavBarForLoading:(BOOL)arg1;
 - (void)uploadContacts;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
+- (void)webView:(id)arg1 processNativeCommand:(id)arg2;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (id)webView;
 - (void)webViewDidFinishLoad:(id)arg1;
 - (void)webViewDidStartLoad:(id)arg1;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

@@ -10,9 +10,10 @@
 
 @property(retain) NSMutableSet * accessControlEntities;
 
++ (id)copyParseRules;
+
 - (id)accessControlEntities;
 - (void)addACE:(id)arg1;
-- (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
 - (id)init;

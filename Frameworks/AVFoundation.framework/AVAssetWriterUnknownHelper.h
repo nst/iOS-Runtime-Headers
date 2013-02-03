@@ -3,11 +3,15 @@
  */
 
 @interface AVAssetWriterUnknownHelper : AVAssetWriterHelper {
+    short _alternateGroupID;
 }
 
 - (BOOL)_canAddInput:(id)arg1 exceptionReason:(id*)arg2;
+- (BOOL)_canAddInputGroup:(id)arg1 exceptionReason:(id*)arg2;
 - (void)addInput:(id)arg1;
+- (void)addInputGroup:(id)arg1;
 - (BOOL)canAddInput:(id)arg1;
+- (BOOL)canAddInputGroup:(id)arg1;
 - (void)cancelWriting;
 - (id)initWithConfigurationState:(id)arg1;
 - (id)initWithURL:(id)arg1 fileType:(id)arg2;

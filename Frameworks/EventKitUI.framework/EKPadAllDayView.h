@@ -14,6 +14,15 @@
             float width; 
             float height; 
         } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     unsigned int _drawsLeftBorder : 1;
     unsigned int _drawsAllBorders : 1;
     unsigned int _allowsOccurrenceSelection : 1;
@@ -29,8 +38,10 @@
     NSCalendar *_calendar;
     } _contentFrame;
     EKPadAllDayViewContents *_contentView;
+    float _customLeftMarginWidth;
     NSMutableArray *_dayDates;
     NSMutableArray *_dayNames;
+    NSArray *_dayStarts;
     unsigned int _daysToDisplay;
     <EKPadAllDayViewDelegate> *_delegate;
     EKEvent *_dimmedOccurrence;
@@ -39,7 +50,9 @@
     float _eventFaderInset;
     NSMutableArray *_eventFaders;
     float _fixedDayWidth;
+    } _latestVisibleRect;
     NSMutableArray *_layedOutRows;
+    BOOL _lazyAddsOccurrenceViews;
     int _maxOccurrencesWithoutScroller;
     float _minimumHeight;
     float _occurrenceHRightInset;
@@ -58,12 +71,14 @@
 }
 
 @property(copy) NSCalendar * calendar;
+@property float customLeftMarginWidth;
 @property <EKPadAllDayViewDelegate> * delegate;
 @property(retain) EKEvent * dimmedOccurrence;
 @property BOOL dimsNonSelectedItems;
 @property(readonly) float faderInset;
 @property(readonly) float firstEventYOffset;
 @property float fixedDayWidth;
+@property BOOL lazyAddsOccurrenceViews;
 @property int maxOccurrencesWithoutScroller;
 @property(readonly) float maximumHeight;
 @property float minimumHeight;
@@ -78,6 +93,7 @@
 
 - (unsigned int)_calendarOrderForCalendar:(id)arg1;
 - (id)_calendarOrderSortDescriptor;
+- (void)_computeDayStartsAndEndDate;
 - (double)_dateForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (float)_dayWidth;
 - (float)_faderWidth;
@@ -95,6 +111,7 @@
 - (float)bottomInset;
 - (void)buildDayLabel;
 - (id)calendar;
+- (float)customLeftMarginWidth;
 - (void)dayOccurrenceViewClicked:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)dayOccurrenceViewDragExited:(id)arg1;
 - (void)dayOccurrenceViewStartTouch:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
@@ -113,6 +130,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAllDayLabelHighlighted;
 - (void)layoutSubviews;
+- (BOOL)lazyAddsOccurrenceViews;
 - (id)makeAllDayLabel:(BOOL)arg1;
 - (int)maxOccurrencesWithoutScroller;
 - (float)maximumHeight;
@@ -122,6 +140,7 @@
 - (id)occurrenceViewForOccurrence:(id)arg1;
 - (id)occurrenceViews;
 - (id)occurrenceVisibleRect:(id)arg1;
+- (void)rectBecameVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)scrollToEvent:(id)arg1 animating:(BOOL)arg2;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
@@ -131,12 +150,14 @@
 - (void)setAllDayLabelHighlighted:(BOOL)arg1;
 - (void)setAllowsOccurrenceSelection:(BOOL)arg1;
 - (void)setCalendar:(id)arg1;
+- (void)setCustomLeftMarginWidth:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDimmedOccurrence:(id)arg1;
 - (void)setDimsNonSelectedItems:(BOOL)arg1;
 - (void)setDrawsLeftBorder:(BOOL)arg1;
 - (void)setDrawsRightBorder:(BOOL)arg1;
 - (void)setFixedDayWidth:(float)arg1;
+- (void)setLazyAddsOccurrenceViews:(BOOL)arg1;
 - (void)setLeftMarginIncludesTimeView:(BOOL)arg1;
 - (void)setMaxOccurrencesWithoutScroller:(int)arg1;
 - (void)setMinimumHeight:(float)arg1;

@@ -45,8 +45,6 @@
 - (id)maskImage;
 - (id)overlayImage;
 - (id)personImageView;
-- (void)setBackgroundLoadingQueue:(id)arg1 addressBook:(void*)arg2 cache:(id)arg3;
-- (void)setBackgroundLoadingQueue:(id)arg1 addressBook:(void*)arg2;
 - (void)setDisplayedPerson:(void*)arg1;
 - (void)setMaskImage:(id)arg1;
 - (void)setNeedsRecompositing;

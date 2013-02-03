@@ -8,7 +8,7 @@
     UILabel *_valueLabel;
 }
 
-@property(retain,readonly) UILabel * valueLabel;
+@property(readonly) UILabel * valueLabel;
 
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

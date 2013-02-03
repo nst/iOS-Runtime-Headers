@@ -7,12 +7,12 @@
 @interface SAAlarmSearch : SABaseClientBoundCommand {
 }
 
-@property(retain) NSNumber * enabled;
+@property(copy) NSNumber * enabled;
 @property(copy) NSArray * frequency;
-@property(retain) NSNumber * hour;
+@property(copy) NSNumber * hour;
 @property(copy) NSURL * identifier;
 @property(copy) NSString * label;
-@property(retain) NSNumber * minute;
+@property(copy) NSNumber * minute;
 @property(copy) NSURL * targetAppId;
 
 + (id)search;

@@ -23,7 +23,7 @@
 - (int)bootstrapState;
 - (void)commitFence;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)doesServerExist;
+- (id)init;
 - (BOOL)isBootstrapped;
 - (double)lastTermination;
 - (oneway void)release;

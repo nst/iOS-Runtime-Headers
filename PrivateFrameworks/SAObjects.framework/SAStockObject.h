@@ -7,34 +7,34 @@
 @interface SAStockObject : SADomainObject {
 }
 
-@property(retain) NSNumber * averageDailyVolume;
-@property(retain) NSNumber * change;
-@property(retain) NSNumber * changePercent;
+@property(copy) NSNumber * averageDailyVolume;
+@property(copy) NSNumber * change;
+@property(copy) NSNumber * changePercent;
 @property(copy) NSString * chartData;
 @property(copy) NSString * currency;
 @property(copy) NSString * displayStyle;
-@property(retain) NSNumber * dividendYield;
-@property(retain) NSNumber * earningsPerShare;
+@property(copy) NSNumber * dividendYield;
+@property(copy) NSNumber * earningsPerShare;
 @property(copy) NSString * exchange;
-@property(retain) NSNumber * high;
+@property(copy) NSNumber * high;
 @property(copy) NSString * link;
-@property(retain) NSNumber * low;
+@property(copy) NSNumber * low;
 @property(copy) NSString * marketCap;
 @property(copy) NSString * name;
-@property(retain) NSNumber * open;
-@property(retain) NSNumber * peRatio;
-@property(retain) NSNumber * prevClose;
-@property(retain) NSNumber * price;
-@property(retain) NSNumber * realTimeChange;
-@property(retain) NSNumber * realTimeChangePercent;
-@property(retain) NSNumber * realTimePrice;
-@property(retain) NSNumber * realTimeTS;
+@property(copy) NSNumber * open;
+@property(copy) NSNumber * peRatio;
+@property(copy) NSNumber * prevClose;
+@property(copy) NSNumber * price;
+@property(copy) NSNumber * realTimeChange;
+@property(copy) NSNumber * realTimeChangePercent;
+@property(copy) NSNumber * realTimePrice;
+@property(copy) NSNumber * realTimeTS;
 @property(copy) NSArray * requests;
-@property(retain) NSNumber * status;
+@property(copy) NSNumber * status;
 @property(copy) NSArray * stockNews;
 @property(copy) NSString * symbol;
-@property(retain) NSNumber * timeStamp;
-@property(retain) NSNumber * volume;
+@property(copy) NSNumber * timeStamp;
+@property(copy) NSNumber * volume;
 @property(copy) NSString * yearRange;
 
 + (id)object;

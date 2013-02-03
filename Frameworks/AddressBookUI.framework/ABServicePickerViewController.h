@@ -17,6 +17,7 @@
 @property(readonly) NSString * selectServiceTitle;
 @property(copy) NSString * selectedService;
 
++ (id)defaultService;
 + (id)defaultServices;
 
 - (id)addCustomServiceButtonLabel;

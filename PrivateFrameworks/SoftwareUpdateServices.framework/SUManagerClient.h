@@ -2,19 +2,23 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@class <SUManagerClientDelegate>;
+@class <SUManagerClientDelegate>, SUDescriptor;
 
-@interface SUManagerClient : NSObject <XPCProxyTarget> {
+@interface SUManagerClient : NSObject <XPCProxyTarget, SUManagerClientInterface> {
     int _clientType;
     BOOL _connected;
     <SUManagerClientDelegate> *_delegate;
+    SUDescriptor *_installDescriptor;
+    BOOL _installing;
     BOOL _serverIsExiting;
     id _serverProxy;
 }
 
 @property int clientType;
 @property <SUManagerClientDelegate> * delegate;
+@property(retain) SUDescriptor * installDescriptor;
 
+- (void)_invalidateProxy;
 - (void)_setClientType;
 - (void)automaticDownloadDidFailToStartForNewUpdateAvailable:(id)arg1 withError:(id)arg2;
 - (void)cancelDownload:(id)arg1;
@@ -31,6 +35,7 @@
 - (id)init;
 - (id)initWithDelegate:(id)arg1 clientType:(int)arg2;
 - (id)initWithDelegate:(id)arg1;
+- (id)installDescriptor;
 - (void)installDidFail:(id)arg1 withError:(id)arg2;
 - (void)installDidFinish:(id)arg1;
 - (void)installDidStart:(id)arg1;
@@ -41,6 +46,7 @@
 - (void)isUpdateReadyForInstallation:(id)arg1;
 - (void)noteConnectionDropped;
 - (void)noteServerExiting;
+- (void)pauseDownload:(id)arg1;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)resumeDownload:(id)arg1;
 - (void)scanDidCompleteWithNewUpdateAvailable:(id)arg1 error:(id)arg2;
@@ -49,6 +55,7 @@
 - (void)scanRequestDidStartForOptions:(id)arg1;
 - (void)setClientType:(int)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setInstallDescriptor:(id)arg1;
 - (void)startDownload:(id)arg1;
 - (void)startDownloadWithMetadata:(id)arg1 withResult:(id)arg2;
 - (void)updateDownloadMetadata:(id)arg1 withResult:(id)arg2;

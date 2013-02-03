@@ -24,7 +24,6 @@
     NSArray *_explicitPassthroughViews;
     BOOL _isHandlingActionSheetClick;
     NSMutableArray *_passThroughContexts;
-    NSMutableArray *_passThroughProviders;
     BOOL _popoverBeingHiddenDuringRotation;
     MFPopoverController *_popoverController;
     double _popoverDismissalEnd;
@@ -35,23 +34,23 @@
 @property(retain) UIActionSheet * actionSheet;
 @property unsigned int currentArrowDirections;
 @property(retain) UIBarButtonItem * currentBarButtonItem;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } currentRect;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } currentRect;
 @property(retain) UIView * currentView;
 @property BOOL popoverBeingHiddenDuringRotation;
 @property(retain) MFPopoverController * popoverController;
 @property(readonly) UIView * popoverView;
-@property BOOL preventFastMode;
 @property BOOL rasterizePopoverLayer;
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (void)initialize;
-+ (id)sharedInstance;
++ (void)dismissPopover:(id)arg1 animated:(BOOL)arg2;
++ (void)enumerateManagersUsingBlock:(id)arg1;
++ (id)managerForWindow:(id)arg1 createIfNeeded:(BOOL)arg2;
 
-- (id)_allPassthroughViewsWithViews:(id)arg1;
+- (id)_allPassthroughViewsIncludingViews:(id)arg1 excludingViews:(id)arg2;
 - (void)_cleanupCurrentPopover;
 - (id)_currentPassthroughProviders;
 - (BOOL)_delegateSupportsRotation;
 - (void)_dismissPopoverNow;
+- (id)_init;
 - (BOOL)_isEquivalentToCurrentPopover:(id)arg1;
 - (void)_popoverDismissalDidFinish;
 - (void)_willPresentPopover:(id)arg1;
@@ -62,8 +61,6 @@
 - (void)actionSheetCancel:(id)arg1;
 - (void)addPassthroughView:(id)arg1;
 - (void)addPassthroughViewProvider:(id)arg1;
-- (BOOL)allowRotation;
-- (id)autorelease;
 - (void)beginModalPassthroughContext;
 - (unsigned int)currentArrowDirections;
 - (id)currentBarButtonItem;
@@ -86,18 +83,15 @@
 - (BOOL)popoverDismissalIsDelayed;
 - (BOOL)popoverShowing;
 - (id)popoverView;
+- (void)presentActionSheetPopover:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 animated:(BOOL)arg4;
 - (void)presentPopover:(id)arg1 fromBarButtonItem:(id)arg2 animated:(BOOL)arg3;
 - (void)presentPopover:(id)arg1 fromBarButtonItem:(id)arg2 withDelegate:(id)arg3 animated:(BOOL)arg4;
 - (void)presentPopover:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 direction:(unsigned int)arg4 allowInteractionWithViews:(id)arg5 withDelegate:(id)arg6 animated:(BOOL)arg7;
 - (void)presentPopover:(id)arg1 fromView:(id)arg2 animated:(BOOL)arg3;
-- (BOOL)preventFastMode;
 - (BOOL)rasterizePopoverLayer;
-- (oneway void)release;
 - (void)removePassthroughView:(id)arg1;
 - (void)removePassthroughViewProvider:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
-- (id)retain;
-- (unsigned int)retainCount;
 - (void)setActionSheet:(id)arg1;
 - (void)setCurrentArrowDirections:(unsigned int)arg1;
 - (void)setCurrentBarButtonItem:(id)arg1;
@@ -105,7 +99,6 @@
 - (void)setCurrentView:(id)arg1;
 - (void)setPopoverBeingHiddenDuringRotation:(BOOL)arg1;
 - (void)setPopoverController:(id)arg1;
-- (void)setPreventFastMode:(BOOL)arg1;
 - (void)setRasterizePopoverLayer:(BOOL)arg1;
 - (void)willPresentActionSheet:(id)arg1;
 - (void)willRotate;

@@ -2,23 +2,22 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSCountedSet, NSMutableSet, NSString, NSMutableDictionary;
+@class NSMutableSet, NSCountedSet, NSMutableDictionary;
 
 @interface DAPowerAssertionManager : NSObject {
     struct __CFDictionary { } *_contextToGroupIdentifier;
+    struct __CFDictionary { } *_contextToPowerAssertionRef;
     NSCountedSet *_contexts;
     NSMutableDictionary *_groupIdentifierToContexts;
     NSCountedSet *_heldAsideContexts;
     NSMutableSet *_heldAsideGroupIdentifiers;
-    void *_timedAssertionRef;
-    NSString *_uuid;
 }
 
 + (id)sharedPowerAssertionManager;
 + (void)vendDaemons:(Class)arg1;
 
-- (void)_releaseAssertions;
-- (void)_retainAssertions;
+- (void)_releaseAssertionForContext:(id)arg1;
+- (void)_retainAssertionForContext:(id)arg1;
 - (void)dealloc;
 - (void)dropPowerAssertionsForGroupIdentifier:(id)arg1;
 - (id)init;

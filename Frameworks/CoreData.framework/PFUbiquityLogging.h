@@ -7,6 +7,7 @@
 
 + (BOOL)canLogMessageAtLevel:(int)arg1;
 + (void)initialize;
++ (void)setLoggingLevel:(int)arg1;
 
 - (void)dealloc;
 - (id)init;

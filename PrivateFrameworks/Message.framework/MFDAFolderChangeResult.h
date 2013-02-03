@@ -17,6 +17,7 @@
 @property(readonly) int statusCode;
 
 - (void)dealloc;
+- (id)description;
 - (id)error;
 - (id)folderID;
 - (id)folderName;

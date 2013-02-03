@@ -10,6 +10,7 @@
 }
 
 - (void)applicationDidBecomeActive;
+- (void)applicationWillResignActive;
 - (BOOL)containsRangeForStartDate:(double)arg1 endDate:(double)arg2;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;

@@ -15,27 +15,21 @@
 @property(retain) id viewControllers;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
 - (id)_copyNativeViewControllersFromScriptViewControllers:(id)arg1;
-- (id)_copyNavigationBar;
-- (id)_copyTopViewController;
-- (id)_copyViewControllers;
 - (id)_filteredViewControllers;
-- (void)_initWithRootScriptViewController:(id)arg1;
-- (BOOL)_isNavigationBarHidden;
 - (id)_navigationController;
 - (void)_popToRootViewControllerAnimated:(BOOL)arg1;
 - (void)_popViewControllerAnimated:(BOOL)arg1;
 - (void)_pushViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)_setNavigationBarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (id)attributeKeys;
 - (void)dealloc;
 - (void)didPerformBatchedInvocations;
-- (id)initWithRootScriptViewController:(id)arg1;
+- (id)initWithRootScriptViewController:(id)arg1 clientInterface:(id)arg2;
 - (id)navigationBar;
 - (BOOL)navigationBarHidden;
 - (id)newNativeViewController;

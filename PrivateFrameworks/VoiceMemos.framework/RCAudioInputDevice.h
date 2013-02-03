@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class AVCaptureConnection, AVCaptureMovieFileOutput, MPAudioDeviceController, RCSavedRecording, AVCaptureSession, NSMutableArray, NSString, NSDate, AVRemaker;
+@class AVCaptureConnection, AVCaptureMovieFileOutput, MPAudioDeviceController, RCSavedRecording, AVCaptureSession, AVAssetExportSession, NSMutableArray, NSString, NSDate;
 
-@interface RCAudioInputDevice : NSObject {
+@interface RCAudioInputDevice : NSObject <AVCaptureFileOutputRecordingDelegate, AVCaptureFileOutputPauseResumeDelegate> {
     unsigned int _recording : 1;
     unsigned int _audioInputAvailable : 1;
     unsigned int _active : 1;
@@ -22,6 +22,7 @@
     AVCaptureConnection *_captureConnection;
     AVCaptureSession *_captureController;
     double _duration;
+    AVAssetExportSession *_exportSession;
     AVCaptureMovieFileOutput *_movieFileOutput;
     NSString *_originalRecordingPath;
     NSDate *_pauseStartDate;
@@ -30,7 +31,6 @@
     NSDate *_recordingStartDate;
     NSMutableArray *_recordingsToRemake;
     NSString *_remadeRecordingPath;
-    AVRemaker *_remaker;
     double _totalPausedTime;
 }
 
@@ -45,6 +45,7 @@
 + (id)savedRecordingsDirectory;
 + (id)sharedInputDevice;
 
+- (void).cxx_destruct;
 - (void)_adjustDurationForPauseIfNecessary;
 - (void)_applicationWillTerminate:(id)arg1;
 - (BOOL)_attachCaptureDevice;
@@ -58,7 +59,6 @@
 - (void)_interruptionDidEnd:(id)arg1;
 - (void)_recordingStopped;
 - (void)_remakeRecording:(id)arg1;
-- (void)_remakingCompleted:(id)arg1;
 - (void)_removeCaptureObservers;
 - (void)_sessionDidStartRunning:(id)arg1;
 - (void)_sessionErrored:(id)arg1;

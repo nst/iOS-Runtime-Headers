@@ -6,20 +6,24 @@
    See Warning(s) below.
  */
 
-@class NSArray, NSInputStream, NSString, NSData, NSDictionary, NSURL;
+@class NSObject<OS_dispatch_queue>, NSInputStream, NSDictionary, NSString, NSURL, NSData, NSArray;
 
-@interface SSURLRequestProperties : NSObject <SSCoding, NSCoding, NSCopying, NSMutableCopying> {
+@interface SSURLRequestProperties : NSObject <SSXPCCoding, NSCoding, NSCopying, NSMutableCopying> {
     int _allowedRetryCount;
     unsigned int _cachePolicy;
     NSString *_clientIdentifier;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     long long _expectedContentLength;
     NSData *_httpBody;
     NSInputStream *_httpBodyStream;
     NSDictionary *_httpHeaders;
     NSString *_httpMethod;
     BOOL _isITunesStoreRequest;
+    unsigned int _networkServiceType;
     NSDictionary *_requestParameters;
+    BOOL _requiresExtendedValidationCertificates;
+    BOOL _shouldDecodeResponse;
+    BOOL _shouldDisableCellularFallback;
     BOOL _shouldProcessProtocol;
     double _timeoutInterval;
     NSString *_urlBagKey;
@@ -44,7 +48,11 @@
 @property(readonly) BOOL canBeResolved;
 @property(readonly) NSString * clientIdentifier;
 @property(readonly) long long expectedContentLength;
+@property(readonly) unsigned int networkServiceType;
 @property(readonly) NSDictionary * requestParameters;
+@property(readonly) BOOL requiresExtendedValidationCertificates;
+@property(readonly) BOOL shouldDecodeResponse;
+@property(readonly) BOOL shouldDisableCellularFallback;
 @property(readonly) BOOL shouldProcessProtocol;
 @property(readonly) double timeoutInterval;
 @property(readonly) NSArray * userAgentComponents;
@@ -63,24 +71,26 @@
 - (unsigned int)cachePolicy;
 - (BOOL)canBeResolved;
 - (id)clientIdentifier;
-- (id)copyPropertyListEncoding;
 - (id)copyURLRequest;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (long long)expectedContentLength;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPropertyListEncoding:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURLRequest:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isITunesStoreRequest;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned int)networkServiceType;
 - (id)requestParameters;
+- (BOOL)requiresExtendedValidationCertificates;
+- (BOOL)shouldDecodeResponse;
+- (BOOL)shouldDisableCellularFallback;
 - (BOOL)shouldProcessProtocol;
 - (double)timeoutInterval;
 - (id)userAgentComponents;

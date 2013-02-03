@@ -23,8 +23,7 @@
 - (void)removeHost:(id)arg1;
 - (void)setDiskUsageInfo:(id)arg1;
 - (void)setHasCompletedDataMigration:(BOOL)arg1;
-- (void)updateHostInfo:(id)arg1;
+- (void)updateHostInfo:(id)arg1 disabledAssetTypes:(id)arg2;
 - (void)updateLastSyncWithHostLibrary:(id)arg1;
-- (void)upgradeDefaults;
 
 @end

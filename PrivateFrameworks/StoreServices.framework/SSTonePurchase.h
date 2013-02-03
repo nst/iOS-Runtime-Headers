@@ -4,7 +4,7 @@
 
 @class NSNumber, NSString, NSArray;
 
-@interface SSTonePurchase : SSPurchase <SSCoding, NSCoding, NSCopying> {
+@interface SSTonePurchase : SSPurchase <SSXPCCoding, NSCoding, NSCopying> {
     NSArray *_allowedToneStyles;
     NSNumber *_assigneeIdentifier;
     NSString *_assigneeToneStyle;
@@ -21,15 +21,13 @@
 - (id)allowedToneStyles;
 - (id)assigneeIdentifier;
 - (id)assigneeToneStyle;
-- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItem:(id)arg1 offer:(id)arg2;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (void)setAllowedToneStyles:(id)arg1;
 - (void)setAssigneeIdentifier:(id)arg1;
 - (void)setAssigneeToneStyle:(id)arg1;

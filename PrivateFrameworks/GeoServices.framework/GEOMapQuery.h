@@ -2,23 +2,29 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapRegion, NSString, GEOLocation, GEOSessionID, GEOPlaceSearchRequest;
+@class GEOMapRegion, GEOPlaceSearchRequest, NSString, GEOLocation;
 
 @interface GEOMapQuery : PBCodable {
+    struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
+    struct { 
+        unsigned int sessionID : 1; 
+        unsigned int clientImgFmt : 1; 
+        unsigned int clientImgMaxHeight : 1; 
+        unsigned int clientImgMaxWidth : 1; 
+        unsigned int mapCenterX : 1; 
+        unsigned int mapCenterY : 1; 
+        unsigned int mapSpanX : 1; 
+        unsigned int mapSpanY : 1; 
+        unsigned int requestType : 1; 
+        unsigned int tilesizeX : 1; 
+        unsigned int tilesizeY : 1; 
+        unsigned int zoomlevel : 1; 
     int _clientImgFmt;
     int _clientImgMaxHeight;
     int _clientImgMaxWidth;
-    BOOL _hasClientImgFmt;
-    BOOL _hasClientImgMaxHeight;
-    BOOL _hasClientImgMaxWidth;
-    BOOL _hasMapCenterX;
-    BOOL _hasMapCenterY;
-    BOOL _hasMapSpanX;
-    BOOL _hasMapSpanY;
-    BOOL _hasRequestType;
-    BOOL _hasTilesizeX;
-    BOOL _hasTilesizeY;
-    BOOL _hasZoomlevel;
+    } _has;
     int _mapCenterX;
     int _mapCenterY;
     GEOMapRegion *_mapRegion;
@@ -27,7 +33,7 @@
     GEOPlaceSearchRequest *_placeSearchRequest;
     NSString *_query;
     int _requestType;
-    GEOSessionID *_sessionID;
+    } _sessionID;
     int _tilesizeX;
     int _tilesizeY;
     GEOLocation *_userLocation;
@@ -48,7 +54,7 @@
 @property(readonly) BOOL hasPlaceSearchRequest;
 @property(readonly) BOOL hasQuery;
 @property BOOL hasRequestType;
-@property(readonly) BOOL hasSessionID;
+@property BOOL hasSessionID;
 @property BOOL hasTilesizeX;
 @property BOOL hasTilesizeY;
 @property(readonly) BOOL hasUserLocation;
@@ -61,7 +67,7 @@
 @property(retain) GEOPlaceSearchRequest * placeSearchRequest;
 @property(retain) NSString * query;
 @property int requestType;
-@property(retain) GEOSessionID * sessionID;
+@property struct { unsigned long long x1; unsigned long long x2; } sessionID;
 @property int tilesizeX;
 @property int tilesizeY;
 @property(retain) GEOLocation * userLocation;
@@ -70,6 +76,7 @@
 - (int)clientImgFmt;
 - (int)clientImgMaxHeight;
 - (int)clientImgMaxWidth;
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -89,6 +96,8 @@
 - (BOOL)hasTilesizeY;
 - (BOOL)hasUserLocation;
 - (BOOL)hasZoomlevel;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (int)mapCenterX;
 - (int)mapCenterY;
 - (id)mapRegion;
@@ -98,7 +107,7 @@
 - (id)query;
 - (BOOL)readFrom:(id)arg1;
 - (int)requestType;
-- (id)sessionID;
+- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (void)setClientImgFmt:(int)arg1;
 - (void)setClientImgMaxHeight:(int)arg1;
 - (void)setClientImgMaxWidth:(int)arg1;
@@ -110,6 +119,7 @@
 - (void)setHasMapSpanX:(BOOL)arg1;
 - (void)setHasMapSpanY:(BOOL)arg1;
 - (void)setHasRequestType:(BOOL)arg1;
+- (void)setHasSessionID:(BOOL)arg1;
 - (void)setHasTilesizeX:(BOOL)arg1;
 - (void)setHasTilesizeY:(BOOL)arg1;
 - (void)setHasZoomlevel:(BOOL)arg1;
@@ -121,7 +131,7 @@
 - (void)setPlaceSearchRequest:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setRequestType:(int)arg1;
-- (void)setSessionID:(id)arg1;
+- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setTilesizeX:(int)arg1;
 - (void)setTilesizeY:(int)arg1;
 - (void)setUserLocation:(id)arg1;

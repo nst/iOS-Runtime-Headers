@@ -2,16 +2,21 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
+@class NSString;
+
 @interface ML3SqliteDatabaseContext : NSObject {
     struct sqlite3 {} **_dbStack;
     unsigned int _dbStackCurrentIndex;
+    BOOL _enableWrites;
     BOOL _isInTransaction;
+    NSString *_path;
     struct __CFDictionary { } *_statementCache;
 }
 
 @property(readonly) struct sqlite3 { }* db;
 @property BOOL isInTransaction;
 
+- (void).cxx_destruct;
 - (struct sqlite3 { }*)db;
 - (void)dealloc;
 - (BOOL)executeSQL:(id)arg1;

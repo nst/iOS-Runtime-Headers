@@ -13,8 +13,7 @@
 + (id)predicateWithProperty:(id)arg1 mask:(long long)arg2 value:(long long)arg3;
 
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
-- (void)bindToSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
-- (void)dealloc;
+- (void)bindToStatement:(id)arg1 bindingIndex:(inout int*)arg2;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -8,17 +8,20 @@
     CBUUID *_UUID;
     NSArray *_characteristics;
     NSArray *_includedServices;
+    BOOL _isPrimary;
     CBPeripheral *_peripheral;
 }
 
 @property(readonly) CBUUID * UUID;
 @property(retain) NSArray * characteristics;
 @property(retain) NSArray * includedServices;
+@property(readonly) BOOL isPrimary;
 @property(readonly) CBPeripheral * peripheral;
 
 - (id)UUID;
 - (id)characteristics;
 - (id)includedServices;
+- (BOOL)isPrimary;
 - (id)peripheral;
 - (void)setCharacteristics:(id)arg1;
 - (void)setIncludedServices:(id)arg1;

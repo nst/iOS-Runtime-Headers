@@ -16,7 +16,7 @@
 - (id)_seedItem;
 - (BOOL)allowsDeletion;
 - (BOOL)allowsRearrange;
-- (id)cellConfigurationForIndex:(unsigned int)arg1 artworkLoadingCompletionHandler:(id)arg2;
+- (id)cellConfigurationForIndex:(unsigned int)arg1 shouldLoadArtwork:(BOOL)arg2 artworkLoadingCompletionHandler:(id)arg3;
 - (void)dealloc;
 - (id)deleteConfirmationAlertViewForIndex:(unsigned int)arg1;
 - (id)deleteConfirmationSheetForIndex:(unsigned int)arg1;

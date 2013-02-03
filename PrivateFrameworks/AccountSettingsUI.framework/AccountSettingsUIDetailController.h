@@ -44,6 +44,7 @@
 - (void)setDoneButton:(id)arg1;
 - (void)setTaskCompletionEnabled:(BOOL)arg1;
 - (BOOL)shouldReloadSpecifiersOnResume;
+- (id)showConfirmationAlertWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 context:(id)arg5;
 - (id)showConfirmationViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 cancelButtonIndex:(int)arg5 context:(id)arg6;
 - (id)showConfirmationViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 context:(id)arg5;
 - (id)specifiers;

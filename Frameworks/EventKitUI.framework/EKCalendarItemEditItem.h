@@ -2,54 +2,64 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UIViewController<EKEditItemViewControllerProtocol>, <EKCalendarItemEditItemDelegate>, <EKStyleProvider>, EKCalendarItem, EKEventStore;
+@class UIViewController<EKEditItemViewControllerProtocol>, <EKCalendarItemEditItemDelegate>, <EKStyleProvider>, EKCalendarItem, UIResponder, EKEventStore;
 
 @interface EKCalendarItemEditItem : NSObject <EKEditItemViewControllerDelegate> {
     EKCalendarItem *_calendarItem;
     <EKCalendarItemEditItemDelegate> *_delegate;
+    UIResponder *_selectedResponder;
     EKEventStore *_store;
     <EKStyleProvider> *_styleProvider;
     UIViewController<EKEditItemViewControllerProtocol> *_viewController;
 }
 
 @property <EKCalendarItemEditItemDelegate> * delegate;
+@property(retain) UIResponder * selectedResponder;
 @property(retain) <EKStyleProvider> * styleProvider;
 
-- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(int)arg2;
-- (BOOL)applicationDidResume;
+- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(int)arg2 inSubsection:(int)arg3;
+- (void)applicationDidResume;
 - (id)calendarItem;
 - (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
-- (id)cellForSubitemAtIndex:(int)arg1;
+- (id)cellForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2;
 - (BOOL)configureForCalendarConstraints:(id)arg1;
 - (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2 forWidth:(float)arg3;
 - (id)delegate;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2 inSubsection:(int)arg3;
 - (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (BOOL)editItemViewControllerCommit:(id)arg1;
 - (void)editItemViewControllerWantsKeyboardPinned:(BOOL)arg1;
-- (void)eventEditor:(id)arg1 didSelectSubitem:(int)arg2;
-- (void)eventEditor:(id)arg1 didTapAccessoryButtonForSubitem:(int)arg2;
+- (BOOL)editor:(id)arg1 canSelectSubitem:(int)arg2 inSubsection:(int)arg3;
+- (void)editor:(id)arg1 didDeselectSubitem:(int)arg2 inSubsection:(int)arg3;
+- (void)editor:(id)arg1 didSelectSubitem:(int)arg2 inSubsection:(int)arg3;
+- (void)editor:(id)arg1 didStartEditingItem:(id)arg2;
+- (BOOL)editor:(id)arg1 shouldClearSelectionFromSubitem:(int)arg2 inSubsection:(int)arg3;
+- (void)editorDidScroll:(id)arg1;
 - (float)footerHeightForWidth:(float)arg1;
 - (id)footerView;
 - (BOOL)isInline;
 - (void)notifyDidEndEditing;
 - (void)notifyDidStartEditing;
 - (void)notifyRequiresHeightChange;
-- (void)notifySubitemDidCommit:(int)arg1;
+- (void)notifySubitemDidCommit:(int)arg1 inSubsection:(int)arg2;
 - (void)notifyTextChanged;
-- (int)numberOfSubitems;
+- (int)numberOfSubitemsInSubsection:(int)arg1;
+- (int)numberOfSubsections;
 - (void)refreshFromCalendarItemAndStore;
 - (BOOL)requiresReconfigurationOnCommit;
 - (void)reset;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
-- (id)selectedTextField;
+- (id)selectedResponder;
 - (void)setCalendarItem:(id)arg1 store:(id)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setSelectedResponder:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
-- (BOOL)shouldAppearForCalendarItem:(id)arg1;
 - (BOOL)shouldAppearWithVisibility:(int)arg1;
+- (BOOL)shouldPinKeyboard;
 - (id)styleProvider;
+- (id)titleForHeader;
+- (BOOL)usesDetailViewControllerForSubitem:(int)arg1 inSubsection:(int)arg2;
 - (id)viewForActionSheet;
 
 @end

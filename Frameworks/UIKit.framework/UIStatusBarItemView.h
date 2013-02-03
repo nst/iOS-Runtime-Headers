@@ -24,6 +24,7 @@
 + (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(int)arg4;
 + (id)imageNamed:(id)arg1 forForegroundStyle:(int)arg2;
 
+- (void)_drawText:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withFont:(id)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5 textAlignment:(int)arg6;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (BOOL)allowsUpdates;
 - (BOOL)animatesDataChange;
@@ -57,6 +58,7 @@
 - (float)shadowPadding;
 - (float)shadowPaddingForStyle:(int)arg1;
 - (float)standardPadding;
+- (int)textAlignment;
 - (id)textColorForStyle:(int)arg1;
 - (id)textFont;
 - (float)updateContentsAndWidth;

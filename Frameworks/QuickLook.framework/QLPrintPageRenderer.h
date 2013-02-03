@@ -2,24 +2,23 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class UIWebBrowserView, NSURLRequest, NSString, QLPreviewConverter;
+@class <QLPrintPageRendererDataSource>;
 
 @interface QLPrintPageRenderer : UIPrintPageRenderer {
-    UIWebBrowserView *_browserView;
-    NSString *_documentType;
-    QLPreviewConverter *_previewConverter;
-    NSURLRequest *_request;
+    <QLPrintPageRendererDataSource> *_dataSource;
+    int _numberOfPages;
+    int _numberOfPrintedPages;
+    BOOL _printingDone;
 }
 
-@property(retain) QLPreviewConverter * previewConverter;
+@property <QLPrintPageRendererDataSource> * dataSource;
 
-+ (BOOL)_isXPathType:(id)arg1;
-+ (id)printPageRendererWithBrowserView:(id)arg1 request:(id)arg2 documentType:(id)arg3;
-
-- (void)_waitForPreview;
-- (void)dealloc;
-- (id)initWithWebBrowserView:(id)arg1 request:(id)arg2 documentType:(id)arg3;
-- (id)previewConverter;
-- (void)setPreviewConverter:(id)arg1;
+- (id)dataSource;
+- (void)drawPageAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)init;
+- (int)numberOfPages;
+- (void)prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)prepareForPrinting;
+- (void)setDataSource:(id)arg1;
 
 @end

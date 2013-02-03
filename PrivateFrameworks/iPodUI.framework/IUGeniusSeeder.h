@@ -11,7 +11,7 @@
 @property BOOL shouldSwitchViewControllerContexts;
 
 - (id)init;
-- (BOOL)seedGeniusPlaylist:(id)arg1 withItem:(id)arg2 error:(id*)arg3;
+- (void)seedGeniusPlaylist:(id)arg1 withItem:(id)arg2 timeout:(double)arg3 completionBlock:(id)arg4;
 - (void)setShouldContinuePlayingCurrentItem:(BOOL)arg1;
 - (void)setShouldSwitchViewControllerContexts:(BOOL)arg1;
 - (BOOL)shouldContinuePlayingCurrentItem;

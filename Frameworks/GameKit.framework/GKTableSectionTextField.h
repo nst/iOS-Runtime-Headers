@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class UITextField;
+@class UITextField, NSString, NSIndexSet;
 
 @interface GKTableSectionTextField : NSObject <GKTableSection> {
     struct UIEdgeInsets { 
@@ -12,22 +12,30 @@
         float right; 
     } _backgroundInsets;
     float _headerHeight;
+    BOOL _needsRedisplay;
     UITextField *_textField;
 }
 
+@property(retain) NSString * abbreviatedTitle;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } backgroundInsets;
 @property float headerHeight;
-@property(getter=isLoading) BOOL loading;
+@property(retain) NSIndexSet * indexesOfRowsWithLoadedData;
+@property BOOL needsRedisplay;
+@property(retain) NSString * secondaryTitle;
 @property(retain) UITextField * textField;
+@property(retain) NSString * title;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInsets;
+- (struct { unsigned int x1; unsigned char x2; unsigned char x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; })currentMetricsInTableView:(id)arg1;
 - (void)dealloc;
 - (float)headerHeight;
+- (float)heightForHeaderInTableView:(id)arg1;
 - (id)init;
-- (float)sectionHeaderHeightInTableView:(id)arg1;
-- (int)sectionRowCountInTableView:(id)arg1;
+- (BOOL)needsRedisplay;
+- (int)rowCountInTableView:(id)arg1;
 - (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setHeaderHeight:(float)arg1;
+- (void)setNeedsRedisplay:(BOOL)arg1;
 - (void)setTextField:(id)arg1;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfColumnsForRow:(int)arg2;

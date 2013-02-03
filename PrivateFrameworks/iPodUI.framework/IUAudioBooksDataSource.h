@@ -16,7 +16,9 @@
 - (unsigned int)_numberOfAudibleBooks;
 - (void)createGlobalContexts;
 - (id)createNoContentDataSource;
+- (int)filteredMediaTypes;
 - (BOOL)hasActionRowsEvenWhenNoOtherRowsExist;
+- (BOOL)hideActionRowsOnAppear;
 - (id)init;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (void)reloadActionRows;

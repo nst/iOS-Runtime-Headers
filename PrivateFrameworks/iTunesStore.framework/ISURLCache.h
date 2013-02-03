@@ -16,19 +16,14 @@
 @property(readonly) NSString * persistentIdentifier;
 
 + (id)cacheDirectoryPath;
-+ (id)persistentIdentifierFromPropertyList:(id)arg1;
 
-- (BOOL)_urlStringMatchesFileExtensions:(id)arg1;
-- (BOOL)_urlStringMatchesURLPatterns:(id)arg1;
 - (id)cachedResponseForRequest:(id)arg1;
-- (BOOL)criteriaMatchesRequest:(id)arg1;
 - (unsigned int)currentDiskUsage;
 - (unsigned int)currentMemoryUsage;
 - (void)dealloc;
 - (unsigned int)diskCapacity;
 - (id)init;
 - (id)initWithCacheConfiguration:(id)arg1;
-- (BOOL)isUsableByClientWithIdentifier:(id)arg1;
 - (unsigned int)memoryCapacity;
 - (id)persistentIdentifier;
 - (void)purgeMemoryCache;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLModel, NSMutableDictionary, NSSQLEntityKey, NSSQLStoreMappingGenerator, NSSQLPrimaryKey, NSSQLStatement, NSKnownKeysMappingStrategy, NSArray, NSEntityDescription, NSString, NSSQLOptLockKey, NSSQLEntity, NSMutableArray;
+@class NSSQLModel, NSMutableDictionary, NSSQLEntityKey, NSSQLStoreMappingGenerator, NSSQLStatement, NSSQLPrimaryKey, NSKnownKeysMappingStrategy, NSArray, NSEntityDescription, NSString, NSSQLOptLockKey, NSSQLEntity, NSMutableArray;
 
 @interface NSSQLEntity : NSStoreMapping {
     struct _NSRange { 
@@ -51,7 +51,9 @@
 - (void)_addRootColumnToFetch:(id)arg1;
 - (void)_addSubentity:(id)arg1;
 - (id)_addVirtualToOneForToMany:(id)arg1 withInheritedProperty:(id)arg2;
+- (BOOL)_collectFKSlots:(id)arg1 error:(id*)arg2;
 - (void)_doPostModelGenerationCleanup;
+- (BOOL)_entityIsBroken:(id*)arg1;
 - (unsigned int)_generateIDWithSuperEntity:(id)arg1 nextID:(unsigned int)arg2;
 - (void)_generateInverseRelationshipsAndMore;
 - (void)_generateProperties;

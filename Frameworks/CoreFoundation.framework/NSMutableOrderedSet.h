@@ -66,6 +66,7 @@
 - (void)rollObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 by:(int)arg2;
 - (void)setArray:(id)arg1;
 - (void)setObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)setObject:(id)arg1 atIndexedSubscript:(unsigned int)arg2;
 - (void)setObject:(id)arg1;
 - (void)setOrderedSet:(id)arg1;
 - (void)setSet:(id)arg1;

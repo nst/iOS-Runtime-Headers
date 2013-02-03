@@ -10,6 +10,8 @@
 
 @property(readonly) NSError * parserError;
 
++ (BOOL)canHandleContentType:(id)arg1;
+
 - (void)dealloc;
 - (id)parserError;
 - (BOOL)processData:(id)arg1 forTask:(id)arg2;

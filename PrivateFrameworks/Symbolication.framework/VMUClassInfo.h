@@ -21,11 +21,11 @@
     int _remoteType;
     unsigned int _ro_flags;
     unsigned int _rw_flags;
-    char *_strongLayout;
+    const char *_strongLayout;
     BOOL *_strongMap;
     VMUClassInfo *_superclassLayout;
     unsigned int _superclassOffset;
-    char *_weakLayout;
+    const char *_weakLayout;
     BOOL *_weakMap;
 }
 

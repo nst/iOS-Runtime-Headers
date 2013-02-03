@@ -73,7 +73,7 @@
     double _value;
     double _zoomAnimationDelay;
     double _zoomAnimationDuration;
-    float _zoomDelay;
+    double _zoomDelay;
 }
 
 @property(getter=isContinuous) BOOL continuous;
@@ -90,7 +90,7 @@
 @property double trimEndValue;
 @property double trimStartValue;
 @property double value;
-@property float zoomDelay;
+@property double zoomDelay;
 
 + (id)timeStringForSeconds:(int)arg1 forceFullWidthComponents:(BOOL)arg2 isElapsed:(BOOL)arg3;
 
@@ -152,8 +152,8 @@
 - (double)movieScrubberTrackViewDuration:(id)arg1;
 - (float)movieScrubberTrackViewThumbnailAspectRatio:(id)arg1;
 - (void)movieScrubberTrackViewWillBeginRequestingThumbnails:(id)arg1;
-- (float)movieScrubberTrackViewZoomAnimationDelay:(id)arg1;
-- (float)movieScrubberTrackViewZoomAnimationDuration:(id)arg1;
+- (double)movieScrubberTrackViewZoomAnimationDelay:(id)arg1;
+- (double)movieScrubberTrackViewZoomAnimationDuration:(id)arg1;
 - (BOOL)pointInsideThumb:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)reloadData;
 - (id)scriptingInfoWithChildren;
@@ -175,8 +175,8 @@
 - (void)setTrimStartValue:(double)arg1;
 - (void)setValue:(double)arg1 animated:(BOOL)arg2;
 - (void)setValue:(double)arg1;
-- (void)setZoomAnimationDuration:(float)arg1;
-- (void)setZoomDelay:(float)arg1;
+- (void)setZoomAnimationDuration:(double)arg1;
+- (void)setZoomDelay:(double)arg1;
 - (BOOL)showTimeViews;
 - (BOOL)thumbIsVisible;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbRectForValue:(float)arg1;
@@ -185,6 +185,6 @@
 - (double)trimEndValue;
 - (double)trimStartValue;
 - (double)value;
-- (float)zoomDelay;
+- (double)zoomDelay;
 
 @end

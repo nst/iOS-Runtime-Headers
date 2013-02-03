@@ -18,7 +18,7 @@
 - (void)dealloc;
 - (id)graphicProperties;
 - (id)init;
-- (unsigned int)key;
+- (int)key;
 - (id)marker;
 - (void)setDataLabel:(id)arg1;
 - (void)setDataValueIndex:(unsigned int)arg1;

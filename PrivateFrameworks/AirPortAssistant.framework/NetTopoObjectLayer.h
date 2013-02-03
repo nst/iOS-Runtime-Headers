@@ -41,6 +41,7 @@
     } _imageFrame;
     BOOL _isExpanded;
     BubbleTextLayer *_labelLayer;
+    float _labelPinnedHeight;
     struct CGColor { } *_labelSelectedFillColor2;
     struct CGColor { } *_labelSelectedFillColor;
     struct CGColor { } *_labelSelectedTextColor;
@@ -81,6 +82,7 @@
 @property(getter=isExpanded) BOOL expanded;
 @property(getter=isGhosted) BOOL ghosted;
 @property(retain) NSString * label;
+@property float labelPinnedHeight;
 @property float layoutScale;
 @property float mod;
 @property unsigned int number;
@@ -127,6 +129,7 @@
 - (BOOL)isExpanded;
 - (BOOL)isSelectable;
 - (id)label;
+- (float)labelPinnedHeight;
 - (id)lastChild;
 - (float)layoutScale;
 - (void)layoutSublayers;
@@ -150,6 +153,7 @@
 - (void)setContourThread:(id)arg1;
 - (void)setExpanded:(BOOL)arg1;
 - (void)setLabel:(id)arg1;
+- (void)setLabelPinnedHeight:(float)arg1;
 - (void)setLayoutScale:(float)arg1;
 - (void)setMod:(float)arg1;
 - (void)setNumber:(unsigned int)arg1;

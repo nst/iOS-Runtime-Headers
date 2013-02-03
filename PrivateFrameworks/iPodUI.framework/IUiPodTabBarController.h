@@ -5,29 +5,34 @@
 @class IUModalContext, NSArray, NSString, UIViewController, IUMoreListDelegateProxy;
 
 @interface IUiPodTabBarController : UITabBarController <UINavigationControllerDelegate, ViewControllerArchiveNode> {
-    unsigned int _allowsSearch : 1;
-    int _archivedContextsToBeRestored;
+    BOOL _allowsSearch;
     NSArray *_availableIdentifiers;
     NSString *_initialIdentifier;
+    BOOL _isRestoringForModalPresentation;
     IUModalContext *_modalContext;
     IUMoreListDelegateProxy *_moreListDelegateProxy;
     IUModalContext *_presentedModalContext;
+    int _style;
 }
 
 @property BOOL allowsSearch;
 @property(readonly) NSArray * identifiers;
 @property(retain) IUModalContext * modalContext;
 @property(readonly) NSString * selectedIdentifier;
+@property int style;
 @property(readonly) UIViewController * topViewController;
 
 + (Class)_moreNavigationControllerClass;
-+ (id)_newNavigationControllerWithRootContextIdentifier:(id)arg1;
++ (id)_newNavigationControllerWithRootContextIdentifier:(id)arg1 style:(int)arg2;
 + (id)defaultIdentifiers;
 
+- (void)_availableMediaLibrariesDidChangeNotification:(id)arg1;
 - (BOOL)_canDisplayItemWithIdentifier:(id)arg1;
 - (id)_copyTabBarOrdering;
 - (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
+- (void)_enabledMediaTypesDidChangeNotification:(id)arg1;
 - (void)_fixMoreListNavigationBar;
+- (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (id)_navigationControllerForIdentifier:(id)arg1 outIndex:(unsigned int*)arg2;
 - (BOOL)_pushContextForSpecifier:(id)arg1 unlessMatchesFinalIdentifier:(id)arg2 animated:(BOOL)arg3;
 - (id)_rawSelectedIdentifier;
@@ -42,30 +47,34 @@
 - (id)copyArchivableContexts;
 - (void)dealloc;
 - (void)dismissModalViewControllerAnimated:(BOOL)arg1;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
 - (id)identifiers;
 - (id)init;
 - (id)initWithControllersWithAvailableIdentifiers:(id)arg1 initialIdentifier:(id)arg2 maximumNumberOfItems:(int)arg3;
 - (id)initWithControllersWithAvailableIdentifiers:(id)arg1 initialIdentifier:(id)arg2;
 - (id)initWithControllersWithAvailableIdentifiers:(id)arg1;
+- (void)modalContext:(id)arg1 didRestoreArchivedContexts:(id)arg2;
+- (void)modalContext:(id)arg1 willRestoreArchivedContexts:(id)arg2;
 - (id)modalContext;
-- (id)moreNavigationController;
 - (void)presentModalContext:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)restoreArchivedContexts:(id)arg1;
-- (void)saveOrderingToDefaults;
 - (void)selectControllerWithIdentifier:(id)arg1;
+- (void)selectIdentifierAfterIdentifier:(id)arg1;
 - (void)selectNextIdentifier;
 - (id)selectedIdentifier;
 - (void)setAllowsSearch:(BOOL)arg1;
 - (void)setModalContext:(id)arg1;
+- (void)setStyle:(int)arg1;
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
+- (int)style;
 - (void)switchToAlbumContextForSpecifier:(id)arg1 behindTopController:(BOOL)arg2;
 - (void)switchToContext:(id)arg1 withRootControllerIdentifier:(id)arg2;
 - (void)switchToPlaylistContextForSpecifier:(id)arg1 behindTopController:(BOOL)arg2 withPlaybackDataSource:(id)arg3;
 - (void)switchToPlaylistContextForSpecifier:(id)arg1 behindTopController:(BOOL)arg2;
 - (void)switchToShortcutIdentifier:(id)arg1;
-- (void)tabBar:(id)arg1 willEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
+- (void)tabBar:(id)arg1 didEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
+- (void)tabBar:(id)arg1 willShowCustomizationSheet:(id)arg2 withNavigationBar:(id)arg3;
 - (id)topViewController;
 - (id)visibleCustomViewControllers;
-- (void)willRestoreArchivedContexts:(id)arg1;
 
 @end

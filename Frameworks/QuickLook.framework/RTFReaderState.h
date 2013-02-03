@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSMutableData, RTFNSFont, RTFTextTable, NSMutableArray, RTFNSMutableParagraphStyle, NSMutableDictionary, NSArray;
+@class RTFTextTable, NSMutableData, RTFNSFont, NSMutableArray, RTFNSMutableParagraphStyle, NSMutableDictionary, NSArray;
 
 @interface RTFReaderState : NSObject {
     struct CGSize { 
@@ -46,7 +46,7 @@
     NSMutableArray *_currentRowArray;
     BOOL _currentRowIsLast;
     RTFTextTable *_currentTable;
-    unsigned int _defaultToUniCharEncoding;
+    unsigned long _defaultToUniCharEncoding;
     id _delegate;
     NSMutableDictionary *_documentInfoDictionary;
     BOOL _isRTLDocument;

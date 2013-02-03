@@ -2,24 +2,30 @@
    Image: /System/Library/PrivateFrameworks/MailServices.framework/MailServices
  */
 
-@class NSThread;
+@class NSObject<MSSearchDelegate>, NSObject<OS_dispatch_queue>;
 
 @interface MSSearch : MSMailDefaultService {
-    NSThread *_originalThread;
+    NSObject<MSSearchDelegate> *_delegate;
+    NSObject<OS_dispatch_queue> *_resultsQueue;
 }
+
+@property NSObject<MSSearchDelegate> * delegate;
 
 + (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(BOOL)arg3 onServer:(BOOL)arg4 delegate:(id)arg5;
 + (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(BOOL)arg3 onServer:(BOOL)arg4 onlyInboxes:(BOOL)arg5 delegate:(id)arg6;
 + (void)setUnitTestingResultsArray:(id)arg1;
-+ (id)smi_serverCommandName;
 
-- (id)_didFindMessageData:(id)arg1 userInfo:(id)arg2;
-- (id)_findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(BOOL)arg3 onServer:(BOOL)arg4 onlyInboxes:(BOOL)arg5;
+- (void)_delegateDidFindResults:(id)arg1;
+- (void)_delegateDidFinishWithError:(id)arg1;
+- (void)_findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(BOOL)arg3 onServer:(BOOL)arg4 onlyInboxes:(BOOL)arg5;
 - (id)_generateUnitTestReplyForMethod:(id)arg1 arg:(id)arg2 error:(id*)arg3;
 - (void)_generateUnitTestResponsesForResultArray:(id)arg1;
 - (id)_initWithDelegate:(id)arg1;
-- (void)_smi_notifyClientDidFinishWithError:(id)arg1;
 - (BOOL)_unitTestsAreEnabled;
 - (void)dealloc;
+- (id)delegate;
+- (void)responseConnection:(id)arg1 handleError:(id)arg2;
+- (void)responseConnection:(id)arg1 handleResponse:(id)arg2;
+- (void)setDelegate:(id)arg1;
 
 @end

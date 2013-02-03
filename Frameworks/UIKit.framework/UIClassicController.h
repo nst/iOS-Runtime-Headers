@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UIZoomViewController, UIWindow, UIStatusBarViewController;
+@class UIZoomViewController, UIView, UIWindow, UIStatusBarViewController;
 
 @interface UIClassicController : NSObject {
+    UIView *_chromeView;
     BOOL _hidesClassicChrome;
     BOOL _hidesStatusBarFiller;
-    UIImageView *_imageView;
-    BOOL _masksToWindowBounds;
     UIStatusBarViewController *_statusBarViewController;
     UIWindow *_window;
     UIZoomViewController *_zoomViewController;
@@ -16,7 +15,6 @@
 
 @property BOOL drawsClassicChrome;
 @property BOOL drawsStatusBarFiller;
-@property BOOL masksToWindowBounds;
 @property(getter=isZoomed) BOOL zoomed;
 
 + (id)sharedClassicController;
@@ -26,20 +24,19 @@
 - (void)_classicChangeStatusBarOrientationFinished:(id)arg1 finished:(BOOL)arg2 context:(void*)arg3;
 - (void)_finishZoom:(BOOL)arg1;
 - (void)_initializeStatusBarOrientation;
+- (id)_newChromeViewForOrientation:(int)arg1;
 - (void)_setupWindow;
 - (BOOL)_shouldHideStatusBar;
-- (void)_updateImageView:(id)arg1 orientation:(int)arg2;
+- (BOOL)_supportsZoom;
+- (void)_updateChromeView:(id)arg1 orientation:(int)arg2;
 - (id)_window;
 - (void)dealloc;
 - (BOOL)drawsClassicChrome;
 - (BOOL)drawsStatusBarFiller;
 - (BOOL)isClassicControlWindow:(id)arg1;
 - (BOOL)isZoomed;
-- (BOOL)masksToWindowBounds;
 - (void)setDrawsClassicChrome:(BOOL)arg1;
 - (void)setDrawsStatusBarFiller:(BOOL)arg1;
-- (void)setMasksToWindowBounds:(BOOL)arg1;
-- (void)setMasksToWindowBounds:(BOOL)arg1;
 - (void)setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2;
 - (void)setStatusBarOrientation:(int)arg1 animationParameters:(id)arg2;
 - (void)setStatusBarStyle:(int)arg1 animationParameters:(id)arg2;

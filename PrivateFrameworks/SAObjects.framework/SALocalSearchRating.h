@@ -9,6 +9,7 @@
 
 @property int count;
 @property(copy) NSString * description;
+@property double maxValue;
 @property(copy) NSString * providerId;
 @property double value;
 
@@ -19,9 +20,11 @@
 - (id)description;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (double)maxValue;
 - (id)providerId;
 - (void)setCount:(int)arg1;
 - (void)setDescription:(id)arg1;
+- (void)setMaxValue:(double)arg1;
 - (void)setProviderId:(id)arg1;
 - (void)setValue:(double)arg1;
 - (double)value;

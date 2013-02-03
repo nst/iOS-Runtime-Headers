@@ -6,7 +6,7 @@
     unsigned int _used;
 }
 
-+ (id)__new:(const id*)arg1 :(unsigned int)arg2;
++ (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 

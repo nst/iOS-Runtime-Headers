@@ -25,13 +25,13 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    unsigned int mCalculatedCrc;
-    unsigned int mCheckCrc;
+    unsigned long mCalculatedCrc;
+    unsigned long mCheckCrc;
     <SFUBufferedInputStream> *mInput;
     BOOL mIsFromZip;
     long long mOffset;
     char *mOutBuffer;
-    unsigned int mOutBufferSize;
+    unsigned long mOutBufferSize;
     BOOL mReachedEnd;
     } mStream;
 }

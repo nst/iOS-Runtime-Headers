@@ -5,6 +5,7 @@
 @class UITableView, UIDatePicker, RUITableViewRow, NSMutableArray, UIPickerView;
 
 @interface RUITableView : RUIElement <UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate> {
+    float _customMargin;
     UIDatePicker *_datePicker;
     RUITableViewRow *_defaultFirstResponderRow;
     id _delegate;
@@ -36,13 +37,18 @@
 - (id)indexPathForRow:(id)arg1;
 - (id)init;
 - (BOOL)isShowingPicker;
+- (float)marginForTableView:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)objectModelRowForIndexPath:(id)arg1;
 - (void)populatePostbackDictionary:(id)arg1;
 - (void)rowDidChange:(id)arg1;
 - (void)rowDidEndEditing:(id)arg1;
 - (void)rowIsFirstResponder:(id)arg1;
+- (void)sectionActivatedButton:(id)arg1 attributes:(id)arg2;
+- (void)sectionActivatedLink:(id)arg1 attributes:(id)arg2;
 - (id)sections;
+- (void)setAttributes:(id)arg1;
+- (void)setCustomMargin:(float)arg1;
 - (void)setDefaultFirstResponderRow:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)sourceURLForRUITableViewRow;
@@ -50,12 +56,14 @@
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (BOOL)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (id)tableView;
 - (void)textFieldStartedEditing:(id)arg1;

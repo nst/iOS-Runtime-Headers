@@ -10,7 +10,7 @@
     unsigned int _used;
 }
 
-+ (id)__new:(const id*)arg1 :(unsigned int)arg2;
++ (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
@@ -25,5 +25,6 @@
 - (id)objectAtIndex:(unsigned int)arg1;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
 - (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (void)setObject:(id)arg1 atIndex:(unsigned int)arg2;
 
 @end

@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSMutableArray;
+@class SymbolParserData, <SymbolValidatorDelegate>, NSMutableArray;
 
 @interface SymbolValidator : XMLHTTPRequest {
-    id _delegate;
-    BOOL _useGTServer;
+    <SymbolValidatorDelegate> *_delegate;
+    SymbolParserData *_symbolParserData;
     NSMutableArray *_validatedSymbols;
 }
 
 @property id delegate;
 
+- (void).cxx_destruct;
+- (id)aggregateDictionaryDomain;
 - (void)cancel;
 - (id)delegate;
 - (void)didParseData;
@@ -19,7 +21,6 @@
 - (id)initWithDelegate:(id)arg1;
 - (int)parseData:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setUsesGTServer:(BOOL)arg1;
 - (void)validateSymbol:(id)arg1 withMaxResults:(int)arg2;
 
 @end

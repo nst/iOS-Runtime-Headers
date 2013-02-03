@@ -38,7 +38,6 @@
 - (BOOL)checkedElementValidityIfRootElement;
 - (id)currentlyParsingSubItem;
 - (void)dealloc;
-- (id)description;
 - (id)element;
 - (id)initWithParser:(id)arg1 baseURL:(id)arg2 rootElementNameSpace:(id)arg3 elementName:(id)arg4 parseClass:(Class)arg5;
 - (id)initWithParser:(id)arg1 parentGenerator:(id)arg2 parentElementSetter:(SEL)arg3 element:(id)arg4;

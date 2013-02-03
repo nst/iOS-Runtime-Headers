@@ -16,8 +16,9 @@
 @property(retain) CoreDAVItem * prop;
 @property(retain) CoreDAVItemWithNoChildren * propName;
 
++ (id)copyParseRules;
+
 - (id)allProp;
-- (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
 - (id)include;

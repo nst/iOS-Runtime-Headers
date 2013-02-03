@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MSReauthorizationProtocol, <MSSubscribeStorageProtocol>, MSObjectQueue, MSSubscribeStreamsProtocol, <MSSubscriberDelegate>, MSMediaStreamDaemon, NSMutableArray, NSMutableDictionary;
+@class MSReauthorizationProtocol, MSObjectQueue, <MSSubscribeStorageProtocol>, MSSubscribeStreamsProtocol, <MSSubscriberDelegate>, MSMediaStreamDaemon, NSMutableArray, NSMutableDictionary;
 
 @interface MSSubscriber : MSCupidStateMachine <MSSubscriber, MSSubscribeStreamsProtocolDelegate, MSSubscribeStorageProtocolDelegate, MSReauthorizationProtocolDelegate> {
     NSMutableArray *_assetsBeingRetrieved;
@@ -37,6 +37,7 @@
 + (void)stopAllActivities;
 + (id)subscriberForPersonID:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_abort;
 - (void)_checkForNewAssetCollections;
 - (void)_didFinishRetrievingSubscriptionUpdate;
@@ -79,11 +80,11 @@
 - (void)subscribeStorageProtocolDidFinishRetrievingAllAssets:(id)arg1;
 - (void)subscribeStreamsProtocol:(id)arg1 didFindDisappearedSubscriptionForPersonID:(id)arg2;
 - (void)subscribeStreamsProtocol:(id)arg1 didFindShareState:(id)arg2;
+- (void)subscribeStreamsProtocol:(id)arg1 didFindTemporarilyUnavailableSubscriptionForPersonID:(id)arg2;
 - (void)subscribeStreamsProtocol:(id)arg1 didFinishError:(id)arg2;
 - (void)subscribeStreamsProtocol:(id)arg1 didFinishReceivingUpdatesForPersonID:(id)arg2 ctag:(id)arg3;
 - (void)subscribeStreamsProtocol:(id)arg1 didReceiveAssetCollections:(id)arg2 forPersonID:(id)arg3;
 - (void)subscribeStreamsProtocol:(id)arg1 didReceiveAuthenticationError:(id)arg2;
-- (void)subscribeStreamsProtocol:(id)arg1 difFindTemporarilyUnavailableSubscriptionForPersonID:(id)arg2;
 - (void)subscribeStreamsProtocol:(id)arg1 willReceiveUpdatesForPersonID:(id)arg2 wasReset:(BOOL)arg3 metadata:(id)arg4;
 - (id)subscribedStreams;
 - (long long)targetRetrievalByteCount;

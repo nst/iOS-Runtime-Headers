@@ -24,7 +24,7 @@
     } highlightRect;
     BOOL highlighted;
     } m_arrowRect;
-    float m_dividerOffsets[12];
+    float m_dividerOffsets[20];
 }
 
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } highlightRect;

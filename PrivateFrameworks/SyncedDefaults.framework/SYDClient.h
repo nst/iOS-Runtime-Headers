@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SyncedDefaults.framework/SyncedDefaults
  */
 
-@class NSString;
+@class NSObject<OS_xpc_object>, NSString, NSObject<OS_dispatch_queue>;
 
 @interface SYDClient : NSObject {
+    BOOL _additionalSource;
     NSString *_bundleIdentifier;
-    struct _xpc_connection_s { } *_connection;
-    struct dispatch_queue_s { } *_queue;
+    NSObject<OS_xpc_object> *_connection;
+    NSObject<OS_dispatch_queue> *_queue;
+    NSString *_storeIdentifier;
 }
 
 - (void)_createConnectionIfNecessary;
@@ -18,7 +20,8 @@
 - (id)_sendMessageWithReplySync:(id)arg1;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithQueue:(struct dispatch_queue_s { }*)arg1 bundleIdentifier:(struct __CFString { }*)arg2;
+- (id)initWithQueue:(id)arg1 bundleIdentifier:(struct __CFString { }*)arg2 storeIdentifier:(struct __CFString { }*)arg3 additionalSource:(BOOL)arg4;
+- (id)initWithQueue:(id)arg1 bundleIdentifier:(struct __CFString { }*)arg2 storeIdentifier:(struct __CFString { }*)arg3;
 - (void)sendMessageWithName:(id)arg1 replyHandler:(id)arg2;
 - (id)sendMessageWithName:(id)arg1 userInfo:(id)arg2;
 - (void)sendMessageWithName:(id)arg1;

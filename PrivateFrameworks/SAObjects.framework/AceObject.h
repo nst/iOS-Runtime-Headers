@@ -10,7 +10,6 @@
 }
 
 + (id)_aceObjectWithMutableDictionary:(id)arg1 context:(id)arg2;
-+ (id)_descriptionOf:(id)arg1 prefix:(id)arg2;
 + (id)_newAceObjectWithMutableDictionary:(id)arg1 context:(id)arg2;
 + (id)aceObjectArrayWithDictionaryArray:(id)arg1 baseClass:(Class)arg2 context:(id)arg3;
 + (id)aceObjectArrayWithDictionaryArray:(id)arg1 baseProtocol:(id)arg2 context:(id)arg3;
@@ -23,6 +22,7 @@
 + (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)newAceObjectWithGenericCommand:(id)arg1 context:(id)arg2;
 
+- (void)_appendDescriptionOfObject:(id)arg1 toString:(id)arg2 atDepth:(int)arg3 withPrefixes:(id)arg4;
 - (id)_initWithMutableDictionary:(id)arg1 context:(id)arg2;
 - (id)context;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

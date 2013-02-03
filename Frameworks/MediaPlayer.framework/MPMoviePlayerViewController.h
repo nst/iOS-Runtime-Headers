@@ -17,6 +17,7 @@
 - (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
 - (BOOL)canBecomeFirstResponder;
 - (void)dealloc;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)init;
 - (id)initWithContentURL:(id)arg1;
 - (void)loadView;
@@ -27,5 +28,6 @@
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

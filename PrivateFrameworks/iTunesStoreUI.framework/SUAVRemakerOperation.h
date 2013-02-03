@@ -23,6 +23,6 @@
 - (id)initWithSourceURL:(id)arg1 remakerMode:(id)arg2 options:(id)arg3;
 - (id)remakerOutput;
 - (void)run;
-- (void)stopRunLoop;
+- (BOOL)stopRunLoop;
 
 @end

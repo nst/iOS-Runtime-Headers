@@ -9,9 +9,6 @@
     <OCDDelayedNodeContext> *mDelayedContext;
 }
 
-+ (void)disableDelayedLoading;
-+ (void)enableDelayedLoading;
-
 - (void)dealloc;
 - (id)delayedContext;
 - (bool)isLoaded;

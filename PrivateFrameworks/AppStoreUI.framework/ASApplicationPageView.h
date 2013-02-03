@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AppStoreUI.framework/AppStoreUI
  */
 
-@class UIImage, UIColor, NSMutableArray, ASApplicationPageCell, UILabel, SUReviewsButton, SUGradientButton, UIView, ASApplicationPageInfoListingView, SUItem, ASApplicationPageHeaderView, ASScreenshotsViewController;
+@class UIImage, UIColor, NSMutableArray, SUClientInterface, ASApplicationPageCell, UILabel, SUReviewsButton, SUGradientButton, UIView, ASApplicationPageInfoListingView, SUItem, ASApplicationPageHeaderView, ASScreenshotsViewController;
 
 @interface ASApplicationPageView : UIView {
     UIImage *_applicationImage;
     UIColor *_bottomBorderColor;
+    SUClientInterface *_clientInterface;
     UIImage *_contentRatingImage;
     UILabel *_descriptionLabel;
     UILabel *_descriptionTitleLabel;
@@ -21,13 +22,14 @@
     SUGradientButton *_reportAProblemButton;
     SUReviewsButton *_reviewsButton;
     ASScreenshotsViewController *_screenshotsController;
+    SUGradientButton *_shareButton;
     id _target;
-    SUGradientButton *_tellAFriendButton;
     NSMutableArray *_userAgreementCells;
 }
 
 @property(retain) UIImage * applicationImage;
 @property(retain) UIColor * bottomBorderColor;
+@property(retain) SUClientInterface * clientInterface;
 @property(retain) UIImage * contentRatingImage;
 @property(readonly) UIView * screenshotsView;
 
@@ -45,16 +47,17 @@
 - (void)_reloadReportAProblemButton;
 - (void)_reloadReviewsButton;
 - (void)_reloadScreenshotView;
-- (void)_reloadTellAFriendButton;
+- (void)_reloadShareButton;
 - (void)_reloadUserAgreementCells;
 - (void)_reportAProblemAction:(id)arg1;
 - (void)_reviewsAction:(id)arg1;
+- (void)_shareAction:(id)arg1;
 - (BOOL)_shouldShowNewsstandWhatsNew;
-- (void)_tellAFriendAction:(id)arg1;
 - (void)_userAgreementAction:(id)arg1;
 - (id)applicationImage;
 - (id)bottomBorderColor;
 - (void)clearSelectionWithFade:(BOOL)arg1;
+- (id)clientInterface;
 - (id)contentRatingImage;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -65,6 +68,7 @@
 - (void)setApplicationImage:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBottomBorderColor:(id)arg1;
+- (void)setClientInterface:(id)arg1;
 - (void)setContentRatingImage:(id)arg1;
 - (void)setItem:(id)arg1;
 - (void)setTarget:(id)arg1;

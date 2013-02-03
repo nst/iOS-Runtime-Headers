@@ -26,9 +26,10 @@
 
 + (float)separatorHeight;
 
-- (void)_hideSearchField:(BOOL)arg1;
+- (void)_cleanUpResultsTable;
+- (void)_hideSearchField;
 - (void)_searchWithText:(id)arg1;
-- (void)_showSearchField:(BOOL)arg1;
+- (void)_showSearchField;
 - (void)_updateContentSize;
 - (void)_updateShowingSearch;
 - (void)animationDidStop:(id)arg1;

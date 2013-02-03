@@ -15,6 +15,7 @@
     NSString *mText;
 }
 
+- (id).cxx_construct;
 - (unsigned int)authorId;
 - (id)date;
 - (void)dealloc;

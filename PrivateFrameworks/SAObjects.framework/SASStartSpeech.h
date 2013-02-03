@@ -15,8 +15,8 @@
 @property(copy) NSString * headsetId;
 @property(copy) NSString * headsetName;
 @property(copy) NSString * motionActivity;
-@property(retain) NSNumber * motionConfidence;
-@property(retain) NSNumber * noiseReductionLevel;
+@property(copy) NSNumber * motionConfidence;
+@property(copy) NSNumber * noiseReductionLevel;
 @property(copy) NSString * origin;
 @property(copy) NSString * refId;
 

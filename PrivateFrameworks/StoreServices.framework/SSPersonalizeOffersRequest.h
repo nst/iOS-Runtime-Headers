@@ -4,22 +4,20 @@
 
 @class <SSPersonalizeOffersDelegate>, NSArray;
 
-@interface SSPersonalizeOffersRequest : SSRequest <SSCoding> {
+@interface SSPersonalizeOffersRequest : SSRequest <SSXPCCoding> {
     NSArray *_items;
 }
 
 @property <SSPersonalizeOffersDelegate> * delegate;
 @property(readonly) NSArray * items;
 
-- (void)_sendResponseToDelegate:(id)arg1;
-- (id)copyPropertyListEncoding;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
-- (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
 - (id)initWithItems:(id)arg1;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)items;
+- (BOOL)start;
+- (void)startWithCompletionBlock:(id)arg1;
+- (void)startWithPersonalizedResponseBlock:(id)arg1;
 
 @end

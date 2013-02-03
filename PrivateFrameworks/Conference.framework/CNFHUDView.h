@@ -27,6 +27,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setIconOrientation:(int)arg1;
 - (void)setTitle:(id)arg1 image:(id)arg2 forButtonTag:(int)arg3;
+- (void)setTitleInset:(float)arg1 forButtonTag:(int)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)style;
 - (void)undim;

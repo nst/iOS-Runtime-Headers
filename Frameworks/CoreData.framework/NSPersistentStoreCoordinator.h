@@ -19,6 +19,7 @@
 
 + (void)__Multithreading_Violation_AllThatIsLeftToUsIsHonor__;
 + (Class)_classForPersistentStoreAtURL:(id)arg1;
++ (BOOL)_melissaIsDebugging;
 + (void)_registerCoreDataStoreClass:(Class)arg1 forStoreType:(id)arg2;
 + (void)_registerDefaultStoreClassesAndTypes;
 + (Class)_storeClassForStoreType:(id)arg1;
@@ -36,8 +37,10 @@
 - (void)_assignObject:(id)arg1 toPersistentStore:(id)arg2;
 - (void)_assignObjects:(id)arg1 toStore:(id)arg2;
 - (BOOL)_canSaveGraphRootedAtObject:(id)arg1 intoStore:(id)arg2 withPreviouslyChecked:(struct __CFSet { }*)arg3 withAcceptableEntities:(struct __CFSet { }*)arg4;
-- (id)_checkRequestForStore:(id)arg1 originalRequest:(id)arg2 andOptimisticLocking:(id)arg3;
-- (id)_conflictsWithRowCacheForObject:(id)arg1 andStore:(id)arg2;
+- (BOOL)_checkForPostLionWriter:(id)arg1;
+- (BOOL)_checkForSkewedEntityHashes:(id)arg1 metadata:(id)arg2;
+- (id)_checkRequestForStore:(id)arg1 withContext:(id)arg2 originalRequest:(id)arg3 andOptimisticLocking:(id)arg4;
+- (id)_conflictsWithRowCacheForObject:(id)arg1 withContext:(id)arg2 andStore:(id)arg3;
 - (void)_copyMetadataFromStore:(id)arg1 toStore:(id)arg2 migrationManager:(id)arg3;
 - (BOOL)_destroyPersistentStoreAtURL:(id)arg1 withType:(id)arg2 error:(id*)arg3;
 - (BOOL)_destroyPersistentStoreAtURL:(id)arg1 withType:(id)arg2 options:(id)arg3 error:(id*)arg4;
@@ -45,15 +48,15 @@
 - (id)_fetchAllInstancesFromStore:(id)arg1 intoContext:(id)arg2 underlyingException:(id*)arg3;
 - (void)_informAffectedStoresOfInterestByChildContextInObjectsWithObjectIDs:(id)arg1 withSelector:(SEL)arg2;
 - (BOOL)_isRegisteredWithUbiquity;
-- (id)_newConflictRecordForObject:(id)arg1 andOriginalRow:(id)arg2;
-- (id)_newObjectGraphStyleRecordForRow:(id)arg1 andObject:(id)arg2;
+- (id)_newConflictRecordForObject:(id)arg1 andOriginalRow:(id)arg2 withContext:(id)arg3;
+- (id)_newObjectGraphStyleRecordForRow:(id)arg1 andObject:(id)arg2 withContext:(id)arg3;
 - (id)_persistentStoreForIdentifier:(id)arg1;
 - (void)_postStoresChangedNotificationsForStores:(id)arg1 changeKey:(id)arg2 options:(id)arg3;
 - (id)_realStoreTypeForStoreWithType:(id)arg1 URL:(id)arg2 error:(id*)arg3;
 - (BOOL)_removePersistentStore:(id)arg1;
 - (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 storeType:(id)arg5 error:(id*)arg6;
 - (id)_retainedAllMigratedObjectsInStore:(id)arg1 toStore:(id)arg2;
-- (id)_saveRequestForStore:(id)arg1 originalRequest:(id)arg2 andOptimisticLocking:(id)arg3;
+- (id)_saveRequestForStore:(id)arg1 withContext:(id)arg2 originalRequest:(id)arg3 andOptimisticLocking:(id)arg4;
 - (void)_setIsRegisteredWithUbiquity:(BOOL)arg1;
 - (id)addPersistentStoreWithType:(id)arg1 configuration:(id)arg2 URL:(id)arg3 options:(id)arg4 error:(id*)arg5;
 - (void)dealloc;

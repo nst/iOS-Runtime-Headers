@@ -40,8 +40,6 @@
 - (void)_didFinishDeletingItems:(id)arg1;
 - (void)_didFinishImportingItems:(id)arg1;
 - (void)_downloadImportItems:(id)arg1;
-- (id)_eventNameFromDate:(id)arg1;
-- (struct NSObject { Class x1; }*)_eventWithDate:(id)arg1;
 - (void)_photoLibraryFinishedImportForPhoto:(id)arg1 atPath:(id)arg2 error:(id)arg3;
 - (void)_removeImportItemsAtPathsInBackground:(id)arg1;
 - (void)_separateItems:(id)arg1 intoEventsWithGranularity:(int)arg2;

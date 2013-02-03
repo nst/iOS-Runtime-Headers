@@ -2,26 +2,28 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIAlertView, <SUDialogDelegate>, ISDialog;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class UIAlertView, ISDialog;
 
 @interface SUDialog : NSObject <UIAlertViewDelegate> {
     UIAlertView *_alertView;
-    <SUDialogDelegate> *_delegate;
+    id _completionBlock;
     ISDialog *_dialog;
 }
 
-@property <SUDialogDelegate> * delegate;
 @property(readonly) ISDialog * dialog;
 
 - (id)_alertView;
+- (void)_completeWithButtonIndex:(int)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)alertViewCancel:(id)arg1;
 - (void)dealloc;
-- (id)delegate;
 - (id)dialog;
 - (id)initWithDialog:(id)arg1;
 - (BOOL)isEquivalent:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)show;
+- (void)showWithCompletionBlock:(id)arg1;
 
 @end

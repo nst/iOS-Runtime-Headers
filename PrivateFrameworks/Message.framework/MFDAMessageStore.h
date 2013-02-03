@@ -17,6 +17,7 @@
 - (void)_remoteIDsMatchingCriterion:(id)arg1 limit:(unsigned int)arg2 filterByDate:(BOOL)arg3 handler:(id)arg4;
 - (id)additionalHeadersForForwardOfMessage:(id)arg1;
 - (id)additionalHeadersForReplyOfMessage:(id)arg1;
+- (BOOL)allMessagesAvailableLocally;
 - (BOOL)allowsAppend;
 - (id)bestAlternativeForPart:(id)arg1;
 - (BOOL)canDeleteMessage:(id)arg1;
@@ -25,14 +26,15 @@
 - (id)defaultAlternativeForPart:(id)arg1;
 - (void)deleteMessagesOlderThanNumberOfDays:(int)arg1 compact:(BOOL)arg2;
 - (int)fetchMessagesMatchingCriterion:(id)arg1 limit:(unsigned int)arg2;
-- (int)fetchNumMessages:(unsigned int)arg1 preservingUID:(id)arg2 fetchType:(int)arg3 synchronize:(BOOL)arg4 compact:(BOOL)arg5;
+- (int)fetchNumMessages:(unsigned int)arg1 preservingUID:(id)arg2 options:(unsigned int)arg3;
 - (id)initWithMailboxUid:(id)arg1 readOnly:(BOOL)arg2;
 - (void)issueFlagUpdates:(id)arg1 forMessages:(id)arg2;
 - (id)loadMeetingDataForMessage:(id)arg1;
 - (id)loadMeetingExternalIDForMessage:(id)arg1;
+- (id)loadMeetingMetadataForMessage:(id)arg1;
 - (id)messageForRemoteID:(id)arg1;
 - (void)purgeMessagesBeyondLimit:(unsigned int)arg1 keepingMessage:(id)arg2;
-- (id)remoteIDsMatchingCriterion:(id)arg1 limit:(unsigned int)arg2;
+- (id)remoteIDsMatchingCriterion:(id)arg1 limit:(unsigned int)arg2 error:(id*)arg3;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)setServerFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (BOOL)shouldDownloadBodyDataForMessage:(id)arg1;

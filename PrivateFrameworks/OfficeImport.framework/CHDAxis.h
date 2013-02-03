@@ -68,7 +68,7 @@
 - (bool)isSecondary;
 - (bool)isTickLabelAutoRotation;
 - (bool)isTickLabelVisible;
-- (unsigned int)key;
+- (int)key;
 - (id)majorGridLinesGraphicProperties;
 - (int)majorTickMark;
 - (id)minorGridLinesGraphicProperties;

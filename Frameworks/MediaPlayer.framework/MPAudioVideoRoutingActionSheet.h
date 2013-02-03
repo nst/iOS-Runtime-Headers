@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIWindow, UIViewController, MPAudioDeviceController;
+@class NSArray, UIWindow, UIViewController, MPAudioDeviceController;
 
 @interface MPAudioVideoRoutingActionSheet : UIActionSheet <UIActionSheetDelegate> {
     int _airPlayPasswordAlertDidAppearToken;
@@ -14,12 +14,13 @@
     MPAudioDeviceController *_audioDeviceController;
     unsigned int _avItemType;
     id _completionHandler;
+    NSArray *_displayedRoutes;
     UIViewController *_viewControllerForActionSheet;
     UIWindow *_windowForActionSheet;
 }
 
+- (id)_availableRoutes;
 - (BOOL)_isDeviceVideoRoute:(id)arg1;
-- (id)_routes;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)dealloc;

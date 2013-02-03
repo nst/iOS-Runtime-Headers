@@ -18,7 +18,6 @@
 @property(copy) id subscriberCellularProviderDidUpdateNotifier;
 
 - (void)cleanUpServerConnection;
-- (void)cleanUpServerConnectionNoLock;
 - (void)dealloc;
 - (BOOL)getAllowsVOIP:(BOOL*)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
 - (BOOL)getCarrierName:(id)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
@@ -27,7 +26,6 @@
 - (void)handleNotificationFromConnection:(void*)arg1 ofType:(id)arg2 withInfo:(id)arg3;
 - (id)init;
 - (void)postUpdatesIfNecessary;
-- (void)reestablishServerConnectionIfNeeded;
 - (void)setSubscriberCellularProvider:(id)arg1;
 - (void)setSubscriberCellularProviderDidUpdateNotifier:(id)arg1;
 - (BOOL)setUpServerConnection;

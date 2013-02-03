@@ -16,7 +16,5 @@
 - (id)init;
 - (id)initWithPriority:(int)arg1;
 - (void)setGestureHandler:(id)arg1;
-- (void)startWatchdogCheckins;
-- (void)stopWatchdogCheckins;
 
 @end

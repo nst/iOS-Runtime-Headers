@@ -12,15 +12,15 @@
 @property(readonly) int clientX;
 @property(readonly) int clientY;
 @property(readonly) BOOL ctrlKey;
-@property(retain,readonly) DOMNode * fromElement;
+@property(readonly) DOMNode * fromElement;
 @property(readonly) BOOL metaKey;
 @property(readonly) int offsetX;
 @property(readonly) int offsetY;
-@property(retain,readonly) <DOMEventTarget> * relatedTarget;
+@property(readonly) <DOMEventTarget> * relatedTarget;
 @property(readonly) int screenX;
 @property(readonly) int screenY;
 @property(readonly) BOOL shiftKey;
-@property(retain,readonly) DOMNode * toElement;
+@property(readonly) DOMNode * toElement;
 @property(readonly) int x;
 @property(readonly) int y;
 

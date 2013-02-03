@@ -13,7 +13,7 @@
 @property(readonly) float rotation;
 @property(readonly) float scale;
 @property(readonly) BOOL shiftKey;
-@property(retain,readonly) <DOMEventTarget> * target;
+@property(readonly) <DOMEventTarget> * target;
 
 - (BOOL)altKey;
 - (BOOL)ctrlKey;

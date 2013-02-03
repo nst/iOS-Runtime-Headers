@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIKeyboard, UITableView, NSMutableArray, UIActionSheet, UIAlertView, NSString, UIPopoverController, NSMutableDictionary, NSArray;
+@class UIKeyboard, UIAlertView, UITableView, UIActionSheet, NSMutableArray, NSString, UIPopoverController, NSMutableDictionary, NSArray;
 
 @interface PSListController : PSViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, PSViewControllerOffsetProtocol> {
     struct CGPoint { 
@@ -25,6 +25,8 @@
     BOOL _popupIsModal;
     UIPopoverController *_popupStylePopoverController;
     BOOL _popupStylePopoverShouldRePresent;
+    NSMutableArray *_prequeuedReusablePSTableCells;
+    BOOL _reusesCells;
     BOOL _showingSetupController;
     NSString *_specifierID;
     NSArray *_specifiers;
@@ -74,7 +76,9 @@
 - (BOOL)containsSpecifier:(id)arg1;
 - (id)contentScrollView;
 - (id)controllerForRowAtIndexPath:(id)arg1;
+- (id)controllerForSpecifier:(id)arg1;
 - (void)createGroupIndices;
+- (void)createPrequeuedPSTableCells:(unsigned int)arg1 etched:(BOOL)arg2;
 - (void)dealloc;
 - (id)description;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
@@ -94,6 +98,7 @@
 - (int)indexOfSpecifier:(id)arg1;
 - (int)indexOfSpecifierID:(id)arg1;
 - (id)indexPathForIndex:(int)arg1;
+- (id)indexPathForSpecifier:(id)arg1;
 - (id)init;
 - (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)insertContiguousSpecifiers:(id)arg1 afterSpecifier:(id)arg2 animated:(BOOL)arg3;
@@ -112,13 +117,18 @@
 - (void)insertSpecifier:(id)arg1 atEndOfGroup:(int)arg2;
 - (void)insertSpecifier:(id)arg1 atIndex:(int)arg2 animated:(BOOL)arg3;
 - (void)insertSpecifier:(id)arg1 atIndex:(int)arg2;
+- (void)lazyLoadBundle:(id)arg1;
 - (id)loadSpecifiersFromPlistName:(id)arg1 target:(id)arg2;
 - (void)loadView;
 - (void)loseFocus;
+- (void)migrateSpecifierMetadataFrom:(id)arg1 to:(id)arg2;
 - (int)numberOfGroups;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (BOOL)performActionForSpecifier:(id)arg1;
-- (BOOL)performCancelForSpecifier:(id)arg1;
+- (BOOL)performButtonActionForSpecifier:(id)arg1;
+- (BOOL)performConfirmationActionForSpecifier:(id)arg1;
+- (BOOL)performConfirmationCancelActionForSpecifier:(id)arg1;
+- (BOOL)performLoadActionForSpecifier:(id)arg1;
 - (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
 - (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
 - (id)popupStylePopoverController;
@@ -154,6 +164,8 @@
 - (void)setDesiredVerticalContentOffset:(float)arg1;
 - (void)setDesiredVerticalContentOffsetItemNamed:(id)arg1;
 - (void)setForceSynchronousIconLoadForCreatedCells:(BOOL)arg1;
+- (void)setReusesCells:(BOOL)arg1;
+- (void)setSpecifier:(id)arg1;
 - (void)setSpecifierID:(id)arg1;
 - (void)setSpecifiers:(id)arg1;
 - (void)setTitle:(id)arg1;
@@ -174,6 +186,7 @@
 - (int)tableStyle;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 detailTextForHeaderInSection:(int)arg2;
+- (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;

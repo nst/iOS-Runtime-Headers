@@ -14,9 +14,11 @@
         void **items; 
         BOOL wantsStrong; 
         BOOL wantsWeak; 
+        BOOL wantsARC; 
         BOOL shouldCopyIn; 
         BOOL usesStrong; 
         BOOL usesWeak; 
+        BOOL usesARC; 
         BOOL usesSentinel; 
         BOOL pointerPersonality; 
         BOOL integerPersonality; 
@@ -36,8 +38,8 @@
     } slice;
 }
 
-+ (void)initializeBackingStore:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; id x11; int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); }*)arg1 sentinel:(BOOL)arg2 compactable:(BOOL)arg3;
-+ (bool)initializeSlice:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; id x11; int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); }*)arg1 withOptions:(unsigned int)arg2;
++ (void)initializeBackingStore:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; id x13; int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); int (*x24)(); }*)arg1 sentinel:(BOOL)arg2 compactable:(BOOL)arg3;
++ (bool)initializeSlice:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; id x13; int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); int (*x24)(); }*)arg1 withOptions:(unsigned int)arg2;
 
 - (int (*)())acquireFunction;
 - (int (*)())descriptionFunction;

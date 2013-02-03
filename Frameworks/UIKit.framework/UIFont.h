@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface UIFont : NSObject {
+@interface UIFont : NSObject <NSCopying> {
 }
 
 @property(readonly) float ascender;
@@ -19,10 +19,18 @@
 + (id)__newDummy;
 + (id)_boldItalicSystemFontOfSize:(float)arg1;
 + (id)_systemFontsOfSize:(float)arg1 traits:(int)arg2;
++ (id)afui_avenirHeavyFontOfSize:(float)arg1;
++ (id)afui_avenirMediumFontOfSize:(float)arg1;
++ (id)afui_avenirRomanFontOfSize:(float)arg1;
++ (id)afui_blairMediumFontOfSize:(float)arg1;
++ (void)afui_loadFontFromBundle:(id)arg1 resourceName:(id)arg2;
 + (id)boldSystemFontOfSize:(float)arg1;
 + (float)buttonFontSize;
++ (id)classFallbacksForKeyedArchiver;
 + (id)familyNames;
 + (id)fontNamesForFamilyName:(id)arg1;
++ (id)fontWithCTFont:(struct __CTFont { }*)arg1;
++ (id)fontWithDescriptor:(struct __CTFontDescriptor { }*)arg1 size:(float)arg2;
 + (id)fontWithFamilyName:(id)arg1 traits:(int)arg2 size:(float)arg3;
 + (id)fontWithMarkupDescription:(id)arg1;
 + (id)fontWithName:(id)arg1 size:(float)arg2 traits:(int)arg3;
@@ -33,12 +41,35 @@
 + (id)systemFontOfSize:(float)arg1 traits:(int)arg2;
 + (id)systemFontOfSize:(float)arg1;
 + (float)systemFontSize;
++ (id)userFontOfSize:(float)arg1;
 
+- (struct __CTFont { }*)CTFont;
+- (struct __CTFontDescriptor { }*)CTFontDescriptor;
 - (id)_alternateSystemFonts;
+- (float)_ascenderDeltaForBehavior:(int)arg1;
+- (struct CGFont { }*)_backingCGSFont;
+- (float)_baseLineHeightForFont:(BOOL)arg1;
+- (unsigned int)_defaultGlyphForChar:(unsigned short)arg1;
+- (float)_defaultLineHeightForUILayout;
+- (id)_familyName;
+- (id)_fontScaledByScaleFactor:(float)arg1;
 - (struct __CTFont { }*)_gkCTFont;
+- (BOOL)_isDefaultFace;
+- (BOOL)_isHiraginoFont;
+- (id)_kernOverride;
+- (const unsigned short*)_latin1MappingTable:(bool*)arg1;
+- (float)_leading;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_textMatrixTransformForContext:(struct CGContext { }*)arg1;
+- (float)_totalAdvancementForNativeGlyphs:(const unsigned short*)arg1 count:(long)arg2;
+- (struct CGSize { float x1; float x2; })advancementForGlyph:(unsigned int)arg1;
 - (float)ascender;
+- (id)bestMatchingFontForCharacters:(const unsigned short*)arg1 length:(unsigned int)arg2 attributes:(id)arg3 actualCoveredLength:(unsigned int*)arg4;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectForFont;
 - (float)capHeight;
 - (Class)classForCoder;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)coveredCharacterSet;
+- (struct __CTFont { }*)ctFontRef;
 - (float)descender;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -46,17 +77,31 @@
 - (id)familyNameForCSSFontFamilyValue;
 - (id)fontName;
 - (id)fontWithSize:(float)arg1;
+- (void)getAdvancements:(struct CGSize { float x1; float x2; }*)arg1 forGlyphs:(const unsigned int*)arg2 count:(unsigned int)arg3;
+- (void)getAdvancements:(struct CGSize { float x1; float x2; }*)arg1 forPackedGlyphs:(const void*)arg2 length:(unsigned int)arg3;
+- (void)getBoundingRects:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 forCGGlyphs:(const unsigned short*)arg2 count:(unsigned int)arg3;
+- (unsigned int)getCaretPositions:(float*)arg1 forGlyph:(unsigned int)arg2 maximumLength:(unsigned int)arg3;
+- (unsigned int)glyphWithName:(id)arg1;
+- (unsigned int)hyphenGlyphForLocale:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFamilyName:(id)arg1 traits:(int)arg2 size:(float)arg3;
 - (id)initWithMarkupDescription:(id)arg1;
 - (id)initWithName:(id)arg1 size:(float)arg2;
 - (BOOL)isFixedPitch;
 - (BOOL)isSystemFont;
+- (BOOL)isVertical;
+- (id)lastResortFont;
 - (float)leading;
 - (float)lineHeight;
 - (id)markupDescription;
+- (unsigned int)numberOfGlyphs;
 - (float)pointSize;
+- (unsigned int)renderingMode;
+- (id)screenFontWithRenderingMode:(unsigned int)arg1;
+- (void)setInContext:(struct CGContext { }*)arg1;
 - (int)traits;
+- (float)underlineThickness;
+- (id)verticalFont;
 - (float)xHeight;
 
 @end

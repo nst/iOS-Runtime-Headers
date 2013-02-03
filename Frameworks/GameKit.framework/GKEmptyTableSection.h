@@ -2,16 +2,26 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
+@class NSString, NSIndexSet;
+
 @interface GKEmptyTableSection : NSObject <GKTableSection> {
+    BOOL _needsRedisplay;
 }
 
-@property(getter=isLoading) BOOL loading;
+@property(retain) NSString * abbreviatedTitle;
+@property(retain) NSIndexSet * indexesOfRowsWithLoadedData;
+@property BOOL needsRedisplay;
+@property(retain) NSString * secondaryTitle;
+@property(retain) NSString * title;
 
-+ (id)sharedEmptySection;
++ (id)emptySection;
 
-- (float)sectionFooterHeightInTableView:(id)arg1;
-- (float)sectionHeaderHeightInTableView:(id)arg1;
-- (int)sectionRowCountInTableView:(id)arg1;
+- (struct { unsigned int x1; unsigned char x2; unsigned char x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; })currentMetricsInTableView:(id)arg1;
+- (float)heightForFooterInTableView:(id)arg1;
+- (float)heightForHeaderInTableView:(id)arg1;
+- (BOOL)needsRedisplay;
+- (int)rowCountInTableView:(id)arg1;
+- (void)setNeedsRedisplay:(BOOL)arg1;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;

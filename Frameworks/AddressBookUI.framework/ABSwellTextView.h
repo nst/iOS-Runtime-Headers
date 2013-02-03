@@ -26,7 +26,7 @@
 @property float maxHeight;
 @property(getter=isScrollEnabled) BOOL scrollEnabled;
 @property(retain) UIColor * shadowColor;
-@property struct CGSize { float width; float height; } shadowOffset;
+@property struct CGSize { float x1; float x2; } shadowOffset;
 @property NSString * text;
 @property UIColor * textColor;
 

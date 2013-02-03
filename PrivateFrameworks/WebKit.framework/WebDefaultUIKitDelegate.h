@@ -21,9 +21,10 @@
 - (id)readDataFromPasteboard:(id)arg1 withIndex:(int)arg2;
 - (void)revealedSelectionByScrollingWebFrame:(id)arg1;
 - (id)supportedPasteboardTypesForCurrentSelection;
+- (void)webView:(id)arg1 addMessageToConsole:(id)arg2 withSource:(id)arg3;
 - (void)webView:(id)arg1 didChangeLocationWithinPageForFrame:(id)arg2;
 - (void)webView:(id)arg1 didCommitLoadForFrame:(id)arg2;
-- (void)webView:(id)arg1 didCreateOrUpdateScrollingLayer:(id)arg2 withContentsLayer:(id)arg3 scrollSize:(id)arg4 forNode:(id)arg5;
+- (void)webView:(id)arg1 didCreateOrUpdateScrollingLayer:(id)arg2 withContentsLayer:(id)arg3 scrollSize:(id)arg4 forNode:(id)arg5 allowHorizontalScrollbar:(BOOL)arg6 allowVerticalScrollbar:(BOOL)arg7;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didFinishDocumentLoadForFrame:(id)arg2;
 - (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
@@ -37,11 +38,10 @@
 - (void)webView:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;
 - (void)webView:(id)arg1 elementDidBlurNode:(id)arg2;
 - (void)webView:(id)arg1 elementDidFocusNode:(id)arg2;
-- (void)webView:(id)arg1 formStateDidBlurNode:(id)arg2;
-- (void)webView:(id)arg1 formStateDidFocusNode:(id)arg2;
 - (void)webView:(id)arg1 needsScrollNotifications:(id)arg2 forFrame:(id)arg3;
 - (id)webView:(id)arg1 plugInViewWithArguments:(id)arg2 fromPlugInPackage:(id)arg3;
 - (void)webView:(id)arg1 restoreStateFromHistoryItem:(id)arg2 forFrame:(id)arg3 force:(BOOL)arg4;
+- (void)webView:(id)arg1 runOpenPanelForFileButtonWithResultListener:(id)arg2 allowMultipleFiles:(BOOL)arg3 acceptMIMETypes:(id)arg4;
 - (void)webView:(id)arg1 saveStateToHistoryItem:(id)arg2 forFrame:(id)arg3;
 - (BOOL)webView:(id)arg1 shouldScrollToPoint:(struct CGPoint { float x1; float x2; })arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 willAddPlugInView:(id)arg2;
@@ -52,11 +52,9 @@
 - (void)webViewDidDrawTiles:(id)arg1;
 - (void)webViewDidEndOverflowScroll:(id)arg1;
 - (void)webViewDidLayout:(id)arg1;
-- (void)webViewDidNotSimulateClick:(id)arg1;
 - (void)webViewDidPreventDefaultForEvent:(id)arg1;
-- (void)webViewDidSimulateClick:(id)arg1;
+- (void)webViewDidRestoreFromPageCache:(id)arg1;
 - (void)webViewDidStartOverflowScroll:(id)arg1;
-- (void)webViewWillSimulateClick:(id)arg1;
 - (void)writeDataToPasteboard:(id)arg1;
 
 @end

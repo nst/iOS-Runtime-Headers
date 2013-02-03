@@ -18,6 +18,7 @@
 @property(retain) UIFont * titleFont;
 @property(retain) UIColor * titleShadowColor;
 
++ (id)backgroundColorWithModifiers:(unsigned int)arg1;
 + (float)rowHeightForGlobalContext:(id)arg1;
 + (BOOL)showsUntruncationCallout;
 

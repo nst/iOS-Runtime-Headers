@@ -7,14 +7,17 @@
         float x; 
         float y; 
     BOOL _keepScrollPosition;
-    BOOL _preventScrollSelectionToVisible;
+    int _preventScrollSelectionToVisible;
     } _scrollPosition;
 }
 
+- (void)_insertPhotoOrVideo;
 - (BOOL)becomeFirstResponder;
+- (void)beginPreventingScrollSelectionToVisible;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)decreaseQuoteLevel;
 - (id)enclosingScrollView;
+- (void)endPreventingScrollSelectionToVisible;
 - (void)ensureSelection;
 - (void)increaseQuoteLevel;
 - (void)quoteLevelMenu;

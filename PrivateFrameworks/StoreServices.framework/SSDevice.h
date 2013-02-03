@@ -2,33 +2,42 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString, SSRequest, NSSet, NSMutableArray;
+@class SSURLBag, SSKeyValueStore, NSString, NSObject<OS_dispatch_queue>, NSSet;
 
 @interface SSDevice : NSObject <SSRequestDelegate> {
+    double _batteryLevel;
+    unsigned int _batteryMonitorNotification;
+    struct IONotificationPort { } *_batteryMonitorPort;
     int _deviceType;
-    struct dispatch_queue_s { } *_dispatchQueue;
-    NSMutableArray *_loadStoreFrontHandlers;
-    SSRequest *_loadStoreFrontRequest;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    SSKeyValueStore *_keyValueStore;
     NSString *_localStoreFrontIdentifier;
     BOOL _localStoreFrontIsTransient;
     id _mediaLibraryIdentifier;
+    BOOL _pluggedIn;
+    int _pluggedInToken;
+    int _powerMonitorCount;
     NSString *_productType;
     NSString *_productVersion;
-    NSMutableArray *_simpleRequests;
     id _softwareLibraryIdentifier;
     NSString *_synchedStoreFrontIdentifier;
+    SSURLBag *_urlBag;
+    NSString *_userAgent;
 }
 
 @property(readonly) NSSet * automaticDownloadKinds;
+@property(readonly) double batteryLevel;
 @property(readonly) int deviceType;
+@property(readonly) unsigned long deviceTypeIdentifier;
 @property(copy) NSString * mediaLibraryIdentifier;
+@property(getter=isPluggedIn,readonly) BOOL pluggedIn;
 @property(readonly) NSString * productType;
 @property(readonly) NSString * productVersion;
 @property(copy) NSString * softwareLibraryIdentifier;
 @property(readonly) NSString * storeFrontIdentifier;
 @property(getter=isStoreFrontIdentifierTransient,readonly) BOOL storeFrontIdentifierTransient;
 @property(readonly) NSString * synchedStoreFrontIdentifier;
-@property(readonly) NSString * userAgentDeviceIdentifier;
+@property(readonly) NSString * userAgent;
 
 + (id)copyCachedAvailableItemKinds;
 + (id)currentDevice;
@@ -37,27 +46,39 @@
 + (void)setLastPromptAttemptDate:(id)arg1 forPromptWithIdentifier:(id)arg2;
 + (void)setPromptWithIdentifier:(id)arg1 needsDisplay:(BOOL)arg2;
 
-- (void)_cleanupSimpleRequest:(id)arg1;
+- (void)_cacheKeyValueStoreValues;
 - (id)_copyGSCapabilityValueForKey:(struct __CFString { }*)arg1;
+- (id)_copyKeyValueStoreValueForDomain:(id)arg1 key:(id)arg2;
 - (id)_copyProductType;
+- (int)_deviceClass;
 - (int)_deviceType;
-- (void)_finishRequestWithError:(id)arg1;
+- (int)_deviceTypeForProductType:(id)arg1;
+- (int)_deviceTypeForUnknownAppleTV:(id)arg1;
+- (int)_deviceTypeForUnknownIPad:(id)arg1;
+- (int)_deviceTypeForUnknownIPhone:(id)arg1;
+- (int)_deviceTypeForUnknownIPod:(id)arg1;
+- (BOOL)_getDeviceType:(unsigned int*)arg1 error:(id*)arg2;
 - (void)_invalidateSoftwareCUID;
 - (BOOL)_is1080pCapable;
 - (BOOL)_is720pCapable;
 - (void)_postStoreFrontDidChangeNotification;
+- (id)_productVersion;
 - (void)_reloadAfterStoreFrontChange;
-- (void)_reloadStoreFrontIdentifier;
-- (void)_setLocalStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
+- (void)_reloadPluggedInState;
 - (BOOL)_setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
-- (void)_trackSimpleRequest:(id)arg1;
 - (void)_updateAutomaticDownloadKinds:(id)arg1 withValue:(id)arg2 completionBlock:(id)arg3;
+- (void)_updateBatteryLevelFromService:(unsigned int)arg1;
 - (id)automaticDownloadKinds;
+- (double)batteryLevel;
 - (id)copyStoreFrontRequestHeaders;
 - (void)dealloc;
 - (int)deviceType;
+- (unsigned long)deviceTypeIdentifier;
+- (void)enableAllAutomaticDownloadKindsWithCompletionBlock:(id)arg1;
 - (void)getAvailableItemKindsWithBlock:(id)arg1;
+- (void)getCellularNetworkingAllowedWithBlock:(id)arg1;
 - (id)init;
+- (BOOL)isPluggedIn;
 - (BOOL)isStoreFrontIdentifierTransient;
 - (void)loadStoreFrontWithCompletionHandler:(id)arg1;
 - (id)mediaLibraryIdentifier;
@@ -65,22 +86,22 @@
 - (id)productType;
 - (id)productVersion;
 - (void)reloadStoreFrontIdentifier;
-- (void)request:(id)arg1 didFailWithError:(id)arg2;
-- (void)requestDidFinish:(id)arg1;
 - (void)resetStoreFrontForSignOut;
 - (void)setAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id)arg2;
+- (void)setCellularNetworkingAllowed:(BOOL)arg1;
 - (void)setMediaLibraryIdentifier:(id)arg1;
 - (void)setSoftwareLibraryIdentifier:(id)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
-- (void)setStoreFrontIdentifierWithInfo:(id)arg1;
 - (void)setStoreFrontWithResponseHeaders:(id)arg1;
 - (void)showPromptWithIdentifier:(id)arg1 completionHandler:(id)arg2;
 - (id)softwareLibraryIdentifier;
+- (void)startPowerMonitoring;
+- (void)stopPowerMonitoring;
 - (id)storeFrontIdentifier;
 - (BOOL)supportsDeviceCapability:(int)arg1;
 - (id)synchedStoreFrontIdentifier;
 - (void)synchronizeAutomaticDownloadKinds;
 - (void)unionAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id)arg2;
-- (id)userAgentDeviceIdentifier;
+- (id)userAgent;
 
 @end

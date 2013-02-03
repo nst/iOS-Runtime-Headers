@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView;
+@class UIStatusBarCorners, UIColor, UIImageView;
 
 @interface UIStatusBarBackgroundView : UIView {
     BOOL _glowEnabled;
     UIImageView *_glowView;
     int _style;
     BOOL _suppressGlow;
+    UIColor *_tintColor;
+    UIStatusBarCorners *_topCorners;
 }
 
 - (id)_baseImageForStyle:(int)arg1;
@@ -18,10 +20,12 @@
 - (void)_startGlowAnimationWaitForNextCycle:(BOOL)arg1;
 - (void)_stopGlowAnimation;
 - (BOOL)_styleCanGlow:(int)arg1;
+- (BOOL)_topCornersAreRoundedForStyle:(int)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2 tintColor:(id)arg3;
 - (void)setGlowAnimationEnabled:(BOOL)arg1;
 - (void)setSuppressesGlow:(BOOL)arg1;
 - (int)style;
+- (id)tintColor;
 
 @end

@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class NSMutableData;
+@class NSData;
 
 @interface GKVoiceChatSessionMessage : GKOOBMessage {
     unsigned int _conferenceID;
-    NSMutableData *_data;
+    NSData *_data;
     unsigned int _subtype;
 }
 
@@ -16,7 +16,7 @@
 - (id)data;
 - (void)dealloc;
 - (id)init;
-- (id)initWithBytes:(void*)arg1 length:(unsigned long)arg2;
+- (id)initWithBytes:(const void*)arg1 length:(unsigned long)arg2;
 - (id)initWithPayload:(id)arg1 conferenceID:(unsigned int)arg2 subtype:(unsigned int)arg3;
 - (id)payload;
 - (unsigned int)subtype;

@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class UIWindow, MediaApplication, UIViewController;
+@class UIWindow, UIViewController, UIApplication;
 
 @interface IUApplicationWindowTransitionController : NSObject {
-    MediaApplication *_application;
+    UIApplication *_application;
     id _delegate;
     UIViewController *_disappearingViewController;
     UIViewController *_viewController;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItemCollection, MPMusicPlayerController, MPMediaQuery;
+@class MPMediaQuery, MPMediaItemCollection, MPMusicPlayerController;
 
 @interface MPMusicPlayerControllerInternal : MPServerObjectProxy <MPMusicPlayerController> {
     unsigned int _didCheckIn : 1;
@@ -16,12 +16,17 @@
     MPMusicPlayerController *_musicPlayerController;
     int _playbackNotificationObservers;
     int _playbackState;
+    BOOL _preparedToPlay;
+    struct SBSProcessAssertion { } *_processAssertion;
     MPMediaQuery *_query;
     struct __CFRunLoopSource { } *_runLoopSource;
 }
 
 @property BOOL inBlockHandlingPlaybackStateChangedMessageFromServer;
 
+- (id)_bundleIdentifier;
+- (void)acquireProcessAssertion;
+- (void)dealloc;
 - (void)didPrepareForRemoteSelectorInvocation;
 - (BOOL)inBlockHandlingPlaybackStateChangedMessageFromServer;
 - (id)initWithMusicPlayerController:(id)arg1;

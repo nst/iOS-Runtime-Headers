@@ -12,15 +12,18 @@
     NSDate *_lastTurnDate;
     NSString *_lastTurnPlayerID;
     NSData *_matchData;
+    NSString *_matchDataVersion;
     NSString *_matchID;
     int _maxPlayers;
     NSString *_message;
     int _minPlayers;
     NSArray *_participants;
     NSString *_reason;
-    NSString *_sessionID;
     NSString *_status;
     int _turnNumber;
+    NSData *_turnSequenceData;
+    int _turnSequenceIndex;
+    NSString *_unusedID;
 }
 
 @property(retain) NSDate * creationDate;
@@ -30,15 +33,18 @@
 @property(retain) NSDate * lastTurnDate;
 @property(retain) NSString * lastTurnPlayerID;
 @property(retain) NSData * matchData;
+@property(retain) NSString * matchDataVersion;
 @property(retain) NSString * matchID;
 @property int maxPlayers;
 @property(retain) NSString * message;
 @property int minPlayers;
 @property(retain) NSArray * participants;
 @property(retain) NSString * reason;
-@property(retain) NSString * sessionID;
 @property(retain) NSString * status;
 @property int turnNumber;
+@property(retain) NSData * turnSequenceData;
+@property int turnSequenceIndex;
+@property(retain) NSString * unusedID;
 
 + (id)codedPropertyKeys;
 
@@ -52,13 +58,13 @@
 - (id)lastTurnDate;
 - (id)lastTurnPlayerID;
 - (id)matchData;
+- (id)matchDataVersion;
 - (id)matchID;
 - (int)maxPlayers;
 - (id)message;
 - (int)minPlayers;
 - (id)participants;
 - (id)reason;
-- (id)sessionID;
 - (void)setCreationDate:(id)arg1;
 - (void)setCurrentParticipant:(int)arg1;
 - (void)setCurrentPlayerID:(id)arg1;
@@ -66,16 +72,22 @@
 - (void)setLastTurnDate:(id)arg1;
 - (void)setLastTurnPlayerID:(id)arg1;
 - (void)setMatchData:(id)arg1;
+- (void)setMatchDataVersion:(id)arg1;
 - (void)setMatchID:(id)arg1;
 - (void)setMaxPlayers:(int)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMinPlayers:(int)arg1;
 - (void)setParticipants:(id)arg1;
 - (void)setReason:(id)arg1;
-- (void)setSessionID:(id)arg1;
 - (void)setStatus:(id)arg1;
 - (void)setTurnNumber:(int)arg1;
+- (void)setTurnSequenceData:(id)arg1;
+- (void)setTurnSequenceIndex:(int)arg1;
+- (void)setUnusedID:(id)arg1;
 - (id)status;
 - (int)turnNumber;
+- (id)turnSequenceData;
+- (int)turnSequenceIndex;
+- (id)unusedID;
 
 @end

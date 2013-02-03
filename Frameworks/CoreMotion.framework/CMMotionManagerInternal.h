@@ -28,6 +28,7 @@
             float y; 
             float z; 
         } rotationRate; 
+        unsigned short sampleNum; 
         boolfsync; 
     struct Sample { 
         double timestamp; 
@@ -54,6 +55,9 @@
                 float z; 
             } magneticField; 
             int magneticFieldCalibrationLevel; 
+            booldoingYawCorrection; 
+            booldoingBiasEstimation; 
+            boolisInitialized; 
         } deviceMotion; 
         boolfsync; 
     struct { 
@@ -79,22 +83,23 @@
     boolfHaveSentTrueNorthUnavailableError;
     boolfInactive;
     boolfPrivateDeviceMotionUse9Axis;
+    boolfPrivateUseAccelerometer;
     boolfShowCompassCalibrationHudOnResume;
     boolfShowsDeviceMovementDisplay;
-    struct Dispatcher { } *fAccelerometerDispatcher;
+    struct Dispatcher { int (**x1)(); } *fAccelerometerDispatcher;
     id fAccelerometerHandler;
     NSOperationQueue *fAccelerometerQueue;
     double fAccelerometerUpdateInterval;
     int fAttitudeReferenceFrame;
     void *fCompassCalibrationHud;
-    struct Dispatcher { } *fDeviceMotionDispatcher;
+    struct Dispatcher { int (**x1)(); } *fDeviceMotionDispatcher;
     id fDeviceMotionHandler;
     NSOperationQueue *fDeviceMotionQueue;
     double fDeviceMotionStartTimestamp;
     double fDeviceMotionUpdateInterval;
     } fGeomagneticModel;
     int fGeomagneticModelProviderClient;
-    struct Dispatcher { } *fGyroDispatcher;
+    struct Dispatcher { int (**x1)(); } *fGyroDispatcher;
     id fGyroHandler;
     NSOperationQueue *fGyroQueue;
     double fGyroUpdateInterval;
@@ -106,16 +111,16 @@
     } fLatestDeviceMotionSample;
     } fLatestGyroSample;
     } fLatestMagnetometerSample;
-    struct Dispatcher { } *fMagnetometerDispatcher;
+    struct Dispatcher { int (**x1)(); } *fMagnetometerDispatcher;
     id fMagnetometerHandler;
     NSOperationQueue *fMagnetometerQueue;
     double fMagnetometerUpdateInterval;
     void *fPrivateAccelerometerDataCallbackInfo;
-    struct Dispatcher { } *fPrivateAccelerometerDataDispatcher;
+    struct Dispatcher { int (**x1)(); } *fPrivateAccelerometerDataDispatcher;
     void *fPrivateDeviceMotionCallbackInfo;
-    struct Dispatcher { } *fPrivateDeviceMotionDispatcher;
+    struct Dispatcher { int (**x1)(); } *fPrivateDeviceMotionDispatcher;
     void *fPrivateGyroDataCallbackInfo;
-    struct Dispatcher { } *fPrivateGyroDataDispatcher;
+    struct Dispatcher { int (**x1)(); } *fPrivateGyroDataDispatcher;
     int fSampleLock;
 }
 

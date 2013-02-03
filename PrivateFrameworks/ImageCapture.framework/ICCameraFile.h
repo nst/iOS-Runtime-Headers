@@ -37,7 +37,6 @@
 - (unsigned int)orientation;
 - (void)overrideOrientation:(unsigned int)arg1;
 - (id)parentFolderName;
-- (BOOL)raw;
 - (void)requestMetadata;
 - (void)requestThumbnail;
 - (void)setFetchingMetadata:(BOOL)arg1;

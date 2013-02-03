@@ -8,6 +8,7 @@
     NSArray *_URIs;
     NSDictionary *_authenticationInfo;
     NSData *_csr;
+    NSDictionary *_linkInfo;
     NSString *_protocolVersion;
     NSString *_realm;
     NSArray *_responseBindings;
@@ -19,6 +20,7 @@
 @property(copy) NSArray * URIs;
 @property(copy) NSDictionary * authenticationInfo;
 @property(copy) NSData * csr;
+@property(copy) NSDictionary * linkInfo;
 @property(copy) NSString * protocolVersion;
 @property(copy) NSString * realm;
 @property(copy) NSArray * responseBindings;
@@ -36,6 +38,7 @@
 - (void)dealloc;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)init;
+- (id)linkInfo;
 - (id)messageBody;
 - (id)protocolVersion;
 - (id)realm;
@@ -46,6 +49,7 @@
 - (id)service;
 - (void)setAuthenticationInfo:(id)arg1;
 - (void)setCsr:(id)arg1;
+- (void)setLinkInfo:(id)arg1;
 - (void)setProtocolVersion:(id)arg1;
 - (void)setRealm:(id)arg1;
 - (void)setResponseBindings:(id)arg1;

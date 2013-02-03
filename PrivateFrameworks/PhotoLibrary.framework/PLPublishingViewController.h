@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLTableViewEditableCell, UIKeyboard, UITableView, NSMutableArray, PLPublishAlbum, UIView, NSString, UITableViewCell, NSArray;
+@class PLTableViewEditableCell, UIKeyboard, UITableView, PLPublishAlbum, NSMutableArray, UIView, NSString, UITableViewCell, NSArray;
 
 @interface PLPublishingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     UIView *_accountView;

@@ -6,28 +6,28 @@
    See Warning(s) below.
  */
 
-@class <MCJobQueueObserver>;
+@class NSObject<OS_dispatch_group>, <MCJobQueueObserver>, NSObject<OS_dispatch_queue>;
 
 @interface MCJobQueue : NSObject {
     id _abortCompletionBlock;
-    struct dispatch_queue_s { } *_executionQueue;
-    struct dispatch_group_s { } *_jobGroup;
-    struct dispatch_queue_s { } *_jobQueue;
+    NSObject<OS_dispatch_queue> *_executionQueue;
+    NSObject<OS_dispatch_group> *_jobGroup;
+    NSObject<OS_dispatch_queue> *_jobQueue;
     <MCJobQueueObserver> *_observer;
 }
 
-@property struct dispatch_queue_s { }* executionQueue;
+@property(retain) NSObject<OS_dispatch_queue> * executionQueue;
 @property <MCJobQueueObserver> * observer;
 
+- (void).cxx_destruct;
 - (void)abortEnqueuedJobsCompletionBlock:(id)arg1;
-- (void)dealloc;
 - (void)enqueueJob:(id)arg1;
-- (struct dispatch_queue_s { }*)executionQueue;
+- (id)executionQueue;
 - (BOOL)hasJobsEnqueued;
 - (id)init;
 - (void)jobDidFinish;
 - (id)observer;
-- (void)setExecutionQueue:(struct dispatch_queue_s { }*)arg1;
+- (void)setExecutionQueue:(id)arg1;
 - (void)setObserver:(id)arg1;
 - (void)waitForEnqueuedJobsToCompleteCompletionBlock:(id)arg1;
 

@@ -8,6 +8,7 @@
     id _internal;
 }
 
+@property int activityType;
 @property(readonly) double bestAccuracy;
 @property <CLLocationManagerDelegate> * delegate;
 @property double desiredAccuracy;
@@ -25,6 +26,7 @@
 @property(getter=isLocationServicesPreferencesDialogEnabled) BOOL locationServicesPreferencesDialogEnabled;
 @property(readonly) double maximumRegionMonitoringDistance;
 @property(readonly) NSSet * monitoredRegions;
+@property BOOL pausesLocationUpdatesAutomatically;
 @property(getter=isPersistentMonitoringEnabled) BOOL persistentMonitoringEnabled;
 @property BOOL privateMode;
 @property(copy) NSString * purpose;
@@ -37,6 +39,8 @@
 + (int)authorizationStatusForBundle:(id)arg1;
 + (int)authorizationStatusForBundleIdentifier:(id)arg1;
 + (id)dateLocationLastUsedForLocationDictionary:(id)arg1;
++ (BOOL)deferredLocationUpdatesAvailable;
++ (BOOL)dumpLogsWithMessage:(id)arg1;
 + (unsigned int)entityClassesForLocationDictionary:(id)arg1;
 + (BOOL)headingAvailable;
 + (BOOL)isEntityAuthorizedForLocationDictionary:(id)arg1;
@@ -44,6 +48,7 @@
 + (BOOL)isStatusBarIconEnabledForLocationEntityClass:(unsigned int)arg1;
 + (BOOL)locationServicesEnabled:(BOOL)arg1;
 + (BOOL)locationServicesEnabled;
++ (BOOL)mapCorrectionAvailable;
 + (unsigned int)primaryEntityClassForLocationDictionary:(id)arg1;
 + (BOOL)regionMonitoringAvailable;
 + (BOOL)regionMonitoringEnabled;
@@ -55,14 +60,18 @@
 + (void)setLocationServicesEnabled:(BOOL)arg1;
 + (void)setStatusBarIconEnabled:(BOOL)arg1 forLocationEntityClass:(unsigned int)arg2;
 + (id)sharedManager;
++ (BOOL)shutdownDaemon;
 + (BOOL)significantLocationChangeMonitoringAvailable;
 
+- (int)activityType;
+- (void)allowDeferredLocationUpdatesUntilTraveled:(double)arg1 timeout:(double)arg2;
 - (id)appsUsingLocation;
 - (id)appsUsingLocationWithDetails;
 - (double)bestAccuracy;
 - (void)dealloc;
 - (id)delegate;
 - (double)desiredAccuracy;
+- (void)disallowDeferredLocationUpdates;
 - (void)dismissHeadingCalibrationDisplay;
 - (double)distanceFilter;
 - (double)expectedGpsUpdateInterval;
@@ -86,26 +95,35 @@
 - (id)monitoredRegions;
 - (void)onClientEvent:(int)arg1 supportInfo:(id)arg2;
 - (void)onClientEventAuthStatus:(id)arg1;
+- (void)onClientEventAutopauseStatus:(id)arg1;
+- (void)onClientEventBatch:(id)arg1;
 - (void)onClientEventError:(id)arg1;
 - (void)onClientEventHeading:(id)arg1;
 - (void)onClientEventHeadingCalibration:(id)arg1;
 - (void)onClientEventHistoricLocation:(id)arg1;
+- (void)onClientEventInterrupted:(id)arg1;
 - (void)onClientEventLocation:(id)arg1;
 - (void)onClientEventLocationUnavailable:(id)arg1;
 - (void)onClientEventRegion:(id)arg1;
 - (void)onClientEventRegionError:(id)arg1;
 - (void)onClientEventRegionResponseDelayed:(id)arg1;
 - (void)onClientEventRegionSetupCompleted:(id)arg1;
+- (void)onDidBecomeActive:(id)arg1;
+- (void)pauseLocationUpdates:(BOOL)arg1;
+- (BOOL)pausesLocationUpdatesAutomatically;
 - (BOOL)privateMode;
 - (id)purpose;
 - (void)registerAsLocationClient;
 - (void)resetApps;
+- (void)resumeLocationUpdates;
+- (void)setActivityType:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredAccuracy:(double)arg1;
 - (void)setDistanceFilter:(double)arg1;
 - (void)setHeadingFilter:(double)arg1;
 - (void)setHeadingOrientation:(int)arg1;
 - (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
+- (void)setPausesLocationUpdatesAutomatically:(BOOL)arg1;
 - (void)setPersistentMonitoringEnabled:(BOOL)arg1;
 - (void)setPrivateMode:(BOOL)arg1;
 - (void)setPurpose:(id)arg1;
@@ -117,6 +135,7 @@
 - (void)startTechStatusUpdates;
 - (void)startUpdatingHeading;
 - (void)startUpdatingLocation;
+- (void)startUpdatingLocationWithPrompt;
 - (void)stopAppStatusUpdates;
 - (void)stopMonitoringForRegion:(id)arg1;
 - (void)stopMonitoringSignificantLocationChanges;

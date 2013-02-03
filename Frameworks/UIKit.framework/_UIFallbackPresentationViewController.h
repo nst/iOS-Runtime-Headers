@@ -16,7 +16,9 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)rotationDecider;
 - (void)setRotationDecider:(id)arg1;
+- (BOOL)shouldAutorotate;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
 

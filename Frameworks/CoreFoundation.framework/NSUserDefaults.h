@@ -7,8 +7,6 @@
     void *_reserved[4];
 }
 
-@property BOOL _mapkit_enabledMapTilePathDrawing;
-
 + (id)CNFObjectForKey:(id)arg1;
 + (id)CNFRegCallerIDMap;
 + (unsigned int)CNFRegEmailValidationTimeout;
@@ -37,13 +35,13 @@
 + (id)standardUserDefaults;
 
 - (id)URLForKey:(id)arg1;
-- (BOOL)_mapkit_enabledMapTilePathDrawing;
 - (void)_mapkit_setTrackingAnimationDuration:(double)arg1;
 - (double)_mapkit_trackingAnimationDuration;
 - (void)addSuiteNamed:(id)arg1;
 - (id)arrayForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1;
 - (id)dataForKey:(id)arg1;
+- (BOOL)delayedSynchronize;
 - (id)dictionaryForKey:(id)arg1;
 - (id)dictionaryRepresentation;
 - (double)doubleForKey:(id)arg1;
@@ -78,7 +76,6 @@
 - (void)setURL:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setVolatileDomain:(id)arg1 forName:(id)arg2;
-- (void)set_mapkit_enabledMapTilePathDrawing:(BOOL)arg1;
 - (id)stringArrayForKey:(id)arg1;
 - (id)stringForKey:(id)arg1;
 - (BOOL)synchronize;

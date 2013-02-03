@@ -6,20 +6,37 @@
 
 @interface UIKeyboardEmojiCategory : NSObject {
     NSArray *_emoji;
-    int _lastViewedPage;
-    NSString *_name;
+    int _lastVisibleFirstEmojiIndex;
+    int _type;
 }
 
+@property int categoryType;
+@property(readonly) NSString * displayDescription;
+@property(readonly) NSString * displayName;
+@property(readonly) NSString * displaySymbol;
 @property(retain) NSArray * emoji;
-@property int lastViewedPage;
-@property(retain) NSString * name;
+@property int lastVisibleFirstEmojiIndex;
+@property(readonly) NSString * name;
 
++ (id)categories;
++ (id)categoryForType:(int)arg1;
++ (id)emojiRecentsFromPreferences;
++ (id)getGlyphForRecents:(id)arg1;
++ (id)localizedStringForKey:(id)arg1;
++ (int)numberOfCategories;
+
+- (int)categoryType;
 - (void)dealloc;
+- (id)description;
+- (id)displayDescription;
+- (id)displayName;
+- (id)displaySymbol;
 - (id)emoji;
-- (int)lastViewedPage;
+- (int)lastVisibleFirstEmojiIndex;
 - (id)name;
+- (void)releaseCategories;
+- (void)setCategoryType:(int)arg1;
 - (void)setEmoji:(id)arg1;
-- (void)setLastViewedPage:(int)arg1;
-- (void)setName:(id)arg1;
+- (void)setLastVisibleFirstEmojiIndex:(int)arg1;
 
 @end

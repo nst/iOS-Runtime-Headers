@@ -23,7 +23,6 @@
 - (unsigned int)itemCount;
 - (id)localizedPositionInPlaylistString:(id)arg1;
 - (id)mediaItemAtIndex:(unsigned int)arg1;
-- (unsigned int)numberOfPaths;
 - (id)pathAtIndex:(unsigned int)arg1;
 - (id)query;
 - (unsigned int)realRepeatType;

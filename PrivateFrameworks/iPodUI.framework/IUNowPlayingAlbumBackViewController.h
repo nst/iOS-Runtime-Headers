@@ -36,6 +36,7 @@
 - (id)_tableViewController;
 - (void)_trackWillChangeNotification:(id)arg1;
 - (void)accessoryButtonTapped:(id)arg1;
+- (id)aggregateStatisticsDisplayCountKey;
 - (id)artworkImage;
 - (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(int)arg2;
 - (id)coverFlowDelegate;
@@ -60,5 +61,6 @@
 - (id)tableView;
 - (void)tableViewController:(id)arg1 didPerformDefaultActionForRow:(int)arg2;
 - (id)title;
+- (void)willMoveToParentViewController:(id)arg1;
 
 @end

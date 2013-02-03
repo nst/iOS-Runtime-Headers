@@ -14,6 +14,8 @@
     double _initialTouchAngle;
     double _initialTouchDistance;
     double _lastTouchTime;
+    float _postRecognitionWeight;
+    float _preRecognitionWeight;
     float _previousVelocity;
     UITouch *_touches[2];
     id _transformAnalyzer;
@@ -23,7 +25,12 @@
 @property float rotation;
 @property(readonly) float velocity;
 
+- (float)_postRecognitionWeight;
+- (float)_preRecognitionWeight;
 - (void)_resetGestureRecognizer;
+- (void)_setPostRecognitionWeight:(float)arg1;
+- (void)_setPreRecognitionWeight:(float)arg1;
+- (void)_updateTransformAnalyzerWeights;
 - (struct CGPoint { float x1; float x2; })anchorPoint;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;

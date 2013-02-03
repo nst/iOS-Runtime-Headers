@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class UITextLabel, UIImageView;
+@class UIImageView, UILabel;
 
 @interface MFComposeFromView : MFComposeHeaderView {
-    UITextLabel *_accountLabel;
+    UILabel *_accountLabel;
     UIImageView *_background;
 }
 

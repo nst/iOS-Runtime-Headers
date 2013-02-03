@@ -9,8 +9,8 @@
 @class SYDClient, NSMutableDictionary;
 
 @interface SYDRemotePreferencesSource : NSObject {
-    int _generationCount;
-    int _lastGenerationFromDisk;
+    long _generationCount;
+    long _lastGenerationFromDisk;
     struct __CFDictionary { } *cache;
     SYDClient *client;
     struct __CFDictionary { } *configurationDictionary;
@@ -26,6 +26,7 @@
 
 + (id)SYDRemotePreferencesSourceConfigurationDidChangeNotification;
 + (id)SYDRemotePreferencesSourceDidChangeNotification;
++ (void)initialize;
 + (void)noteAccountChanges:(id)arg1;
 + (void)resetAllApplicationsWithCompletionHandler:(id)arg1;
 
@@ -43,6 +44,8 @@
 - (void*)getValueForKey:(struct __CFString { }*)arg1;
 - (unsigned char)hasExternalChanges;
 - (id)initWithApplicationID:(struct __CFString { }*)arg1 shared:(BOOL)arg2;
+- (id)initWithApplicationID:(struct __CFString { }*)arg1 storeID:(struct __CFString { }*)arg2 shared:(BOOL)arg3 additionalSource:(BOOL)arg4;
+- (id)initWithApplicationID:(struct __CFString { }*)arg1 storeID:(struct __CFString { }*)arg2 shared:(BOOL)arg3;
 - (unsigned char)isInitialSync;
 - (long)maximumDataLengthPerKey;
 - (long)maximumKeyCount;
@@ -50,6 +53,7 @@
 - (long)maximumTotalDataLength;
 - (void)registerForSynchronizedDefaults;
 - (void)scheduleRemoteSynchronization;
+- (id)serverSideDebugDescription;
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (unsigned char)synchronize;
 - (unsigned char)synchronizeForced:(unsigned char)arg1;

@@ -2,13 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class UIImageView, NSArray, NSString, UIView, MPButton;
+@class UIImageView, MPButton, UIButton, NSString, IUStoreOfferDownloadActionConfiguration, MPDownloadProgressIndicator, NSArray;
 
 @interface IUiPadVideoEpisodeTableViewCellContentView : IUiPadVideoPartTableViewCellContentView {
     struct CGSize { 
         float width; 
         float height; 
-    UIView *_disabledView;
+    IUStoreOfferDownloadActionConfiguration *_downloadAction;
+    UIButton *_downloadButton;
+    MPDownloadProgressIndicator *_downloadProgressIndicator;
+    int _downloadProgressIndicatorStyle;
     BOOL _expanded;
     NSString *_expirationText;
     } _expirationTextSize;
@@ -16,6 +19,7 @@
     MPButton *_moreButton;
     SEL _moreButtonAction;
     id _moreButtonTarget;
+    BOOL _shouldHideMoreButton;
     NSString *_summary;
     NSArray *_supertitles;
     NSString *_title;
@@ -23,6 +27,9 @@
     int _unplayedState;
 }
 
+@property(retain) IUStoreOfferDownloadActionConfiguration * downloadAction;
+@property(retain) MPDownloadProgressIndicator * downloadProgressIndicator;
+@property(readonly) int downloadProgressIndicatorStyle;
 @property BOOL expanded;
 @property(retain) NSString * expirationText;
 @property BOOL expiresSoon;
@@ -36,7 +43,11 @@
 - (void)_drawText;
 - (void)_moreButtonSelected:(id)arg1;
 - (struct __CFAttributedString { }*)_newSummaryAttributedString:(id)arg1 withLineBreakMode:(unsigned char)arg2;
+- (void)_purchaseButtonPressed:(id)arg1;
 - (void)dealloc;
+- (id)downloadAction;
+- (id)downloadProgressIndicator;
+- (int)downloadProgressIndicatorStyle;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)expanded;
 - (id)expirationText;
@@ -45,6 +56,11 @@
 - (void)layoutSubviews;
 - (SEL)moreButtonAction;
 - (id)moreButtonTarget;
+- (void)prepareForReuse;
+- (void)setDownloadAction:(id)arg1;
+- (void)setDownloadProgressIndicator:(id)arg1;
+- (void)setDrawAsDisabled:(BOOL)arg1;
+- (void)setEditing:(BOOL)arg1;
 - (void)setExpanded:(BOOL)arg1;
 - (void)setExpirationText:(id)arg1;
 - (void)setExpiresSoon:(BOOL)arg1;

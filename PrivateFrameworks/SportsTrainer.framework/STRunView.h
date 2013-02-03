@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SportsTrainer.framework/SportsTrainer
  */
 
-@class STRunCaloriesLabel, STAnimatableButton, UIButton, STRunProgressView, STRunPaceLabel, UIView, STRunDistanceLabel, STRunTimeLabel, STShadowLabel, SWRunWorkoutProxy, <STRunViewDelegate>, NSString, UIImageView, NSTimer;
+@class STRunCaloriesLabel, STAnimatableButton, UIButton, STRunProgressView, STRunPaceLabel, UIView, STRunDistanceLabel, STShadowLabel, STRunTimeLabel, SWRunWorkoutProxy, <STRunViewDelegate>, NSString, UIImageView, NSTimer;
 
 @interface STRunView : UIView {
     struct { 

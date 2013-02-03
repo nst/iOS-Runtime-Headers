@@ -18,18 +18,17 @@
 + (id)assetWithURL:(id)arg1 figPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg2 trackIDs:(id)arg3 dynamicBehavior:(BOOL)arg4;
 + (id)assetWithURL:(id)arg1;
 
-- (struct __CFURL { }*)_URL;
+- (id)_absoluteURL;
 - (id)_assetInspector;
 - (id)_assetInspectorLoader;
+- (id)_chapterTracks;
 - (id)_comparisonToken;
+- (BOOL)_containsAtLeastOnePlayableAudioTrack;
+- (BOOL)_containsAtLeastOnePlayableVideoTrack;
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (id)_firstTrackGroupWithMediaType:(id)arg1;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (BOOL)_isStreaming;
-- (id)_mediaCharacteristicsOfAlternateTrackGroups:(id)arg1;
-- (id)_mediaCharacteristicsOfMediaSelectionGroups:(id)arg1;
-- (id)_mediaSelectionKeyValueGroupFromGroups:(id)arg1 forMediaCharacteristic:(id)arg2;
-- (id)_mediaSelectionTrackGroupForMediaCharacteristic:(id)arg1;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (void)_serverHasDied;
 - (void)_tracksDidChange;
@@ -40,6 +39,7 @@
 - (id)availableMediaCharacteristicsWithMediaSelectionOptions;
 - (id)availableMetadataFormats;
 - (void)cancelLoading;
+- (id)chapterMetadataGroupsBestMatchingPreferredLanguages:(id)arg1;
 - (id)chapterMetadataGroupsWithTitleLocale:(id)arg1 containingItemsWithCommonKeys:(id)arg2;
 - (id)commonMetadata;
 - (id)compatibleTrackForCompositionTrack:(id)arg1;
@@ -62,7 +62,7 @@
 - (id)mediaSelectionGroupForMediaCharacteristic:(id)arg1;
 - (id)mediaSelectionGroups;
 - (id)metadataForFormat:(id)arg1;
-- (void)mpLoadValuesAsynchronouslyForKeys:(id)arg1 completionQueue:(struct dispatch_queue_s { }*)arg2 completionHandler:(id)arg3;
+- (void)mpLoadValuesAsynchronouslyForKeys:(id)arg1 completionQueue:(id)arg2 completionHandler:(id)arg3;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;
 - (float)preferredRate;
@@ -78,6 +78,7 @@
 - (id)trackWithTrackID:(int)arg1;
 - (id)tracks;
 - (id)tracksWithMediaCharacteristic:(id)arg1;
+- (id)tracksWithMediaCharacteristics:(id)arg1;
 - (id)tracksWithMediaType:(id)arg1;
 - (int)unusedTrackID;
 - (id)valueForUndefinedKey:(id)arg1;

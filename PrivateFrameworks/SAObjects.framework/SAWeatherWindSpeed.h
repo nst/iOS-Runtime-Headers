@@ -9,7 +9,7 @@
 
 @property(copy) NSString * value;
 @property(copy) NSString * windDirection;
-@property(retain) NSNumber * windDirectionDegree;
+@property(copy) NSNumber * windDirectionDegree;
 
 + (id)windSpeed;
 + (id)windSpeedWithDictionary:(id)arg1 context:(id)arg2;

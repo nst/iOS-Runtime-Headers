@@ -8,10 +8,11 @@
 + (float)rowHeightForGlobalContext:(id)arg1;
 
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
+- (id)displayProperties;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
 - (id)init;
 - (void)reloadLayoutInformation;
-- (void)reloadStrings;
+- (void)reloadStringsWithProperties:(id)arg1;
 - (id)untruncationCalloutString;
 
 @end

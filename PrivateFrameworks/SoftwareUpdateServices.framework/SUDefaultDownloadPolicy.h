@@ -28,12 +28,14 @@
 - (BOOL)isCellularCapable;
 - (BOOL)isDownloadAllowableForCellular2G;
 - (BOOL)isDownloadAllowableForCellular;
+- (BOOL)isDownloadAllowableForCellularRoaming;
 - (BOOL)isDownloadAllowableForWiFi;
 - (BOOL)isDownloadFreeForCellular;
 - (BOOL)isDownloadable;
 - (BOOL)isDownloadableForCurrentNetworkConditions:(int*)arg1 cellularFeesApply:(BOOL*)arg2 powerRequired:(BOOL*)arg3;
 - (BOOL)isDownloadableForCurrentNetworkConditions:(int*)arg1 cellularFeesApply:(BOOL*)arg2;
 - (BOOL)isPowerRequired;
+- (BOOL)isSamePolicy:(id)arg1;
 - (id)networkMonitor;
 - (void)setCarrierPolicy:(id)arg1;
 - (void)setCellularCapable:(BOOL)arg1;

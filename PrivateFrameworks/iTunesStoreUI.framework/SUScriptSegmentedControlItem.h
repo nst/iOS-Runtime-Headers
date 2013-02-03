@@ -21,15 +21,12 @@
 @property(retain) id userInfo;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 
 - (id)_className;
-- (id)_copyTitle;
 - (void)_reloadUserInterface;
 - (id)_segmentedControl;
 - (void)_setImage:(id)arg1;
-- (void)_setImageFromURL:(id)arg1;
-- (void)_setTitle:(id)arg1;
 - (id)attributeKeys;
 - (id)canvas;
 - (void)dealloc;

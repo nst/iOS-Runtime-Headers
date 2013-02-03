@@ -9,7 +9,6 @@
     NSLock *_lock;
 }
 
-@property(readonly) long long availableDiskSpace;
 @property(readonly) long long totalDiskCapacity;
 
 + (id)sharedInstance;
@@ -20,7 +19,6 @@
 - (id)_ntsLocalDictionary;
 - (BOOL)_ntsSaveLocalDictionary;
 - (void)_setLocalValue:(void*)arg1 forKey:(struct __CFString { }*)arg2 domain:(struct __CFString { }*)arg3;
-- (long long)availableDiskSpace;
 - (id)copyAccountDictionaryForDomain:(struct __CFString { }*)arg1;
 - (struct __CFString { }*)copyDeviceGUID;
 - (void*)copyITunesValueForKey:(struct __CFString { }*)arg1 usedDomain:(const struct __CFString {}**)arg2;

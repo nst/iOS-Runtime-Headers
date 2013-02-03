@@ -17,6 +17,8 @@
         unsigned int isRotatingWithPopover : 1; 
         unsigned int cancelButtonManagementDisabled : 1; 
         unsigned int allowDisablingNavigationBarHiding : 1; 
+        unsigned int showsResultsForEmptyField : 1; 
+        unsigned int adjustsSearchBarContentInsetForIndexBar : 1; 
     struct __CFArray { } *_containingScrollViews;
     <UISearchDisplayDelegate> *_delegate;
     UIView *_dimmingView;
@@ -53,6 +55,7 @@
 @property(copy) NSString * searchResultsTitle;
 
 - (void)_adjustTableViewContentInsets;
+- (BOOL)_adjustsSearchBarContentInsetForIndexBar;
 - (BOOL)_allowDisablingNavigationBarHiding;
 - (BOOL)_areSearchContentsSplitViewMaster;
 - (void)_cleanUpSearchBar;
@@ -77,11 +80,15 @@
 - (void)_popoverKeyboardDidShow:(id)arg1;
 - (void)_searchBarSuperviewChanged;
 - (void)_searchBarSuperviewWillChange;
+- (void)_setAdjustsSearchBarContentInsetForIndexBar:(BOOL)arg1;
 - (void)_setAllowDisablingNavigationBarHiding:(BOOL)arg1;
 - (void)_setCancelButtonManagementDisabled:(BOOL)arg1;
+- (void)_setShowsResultsForEmptyField:(BOOL)arg1;
 - (void)_setTableViewVisible:(BOOL)arg1 inView:(id)arg2;
 - (void)_setupNoResultsLabelIfNecessary;
+- (BOOL)_showsResultsForEmptyField;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_tableViewFrame;
+- (id)_topShadowView;
 - (void)_updateNoSearchResultsMessageVisiblity;
 - (void)_updateSearchBarForTableViewIndexBar:(id)arg1;
 - (BOOL)automaticallyShowsNoResultsMessage;

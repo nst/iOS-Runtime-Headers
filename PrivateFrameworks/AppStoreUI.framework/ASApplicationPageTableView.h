@@ -16,9 +16,9 @@
 
 - (void)_reenableScrolling;
 - (void)_safeResetScrollingWithUIEvent:(id)arg1;
-- (void)_scrollViewAnimationEnded;
 - (void)_snapIntoPlaceIfNeededForEvent:(id)arg1;
 - (void)dealloc;
+- (void)resetAfterAnimation;
 - (id)screenshotsView;
 - (void)screenshotsViewBeganScroll:(id)arg1;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;

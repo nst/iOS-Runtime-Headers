@@ -6,7 +6,7 @@
 
 @interface PLFileSystemImportAsset : NSObject {
     NSDate *_dateCreated;
-    NSObject<PLAssetContainer> *_destinationAlbum;
+    struct NSObject { Class x1; } *_destinationAlbum;
     NSMutableSet *_urls;
     int assetKind;
 }
@@ -21,7 +21,7 @@
 - (id)dateCreated;
 - (void)dealloc;
 - (struct NSObject { Class x1; }*)destinationAlbum;
-- (id)initWithURLs:(id)arg1 creationDate:(id)arg2 destinationAlbum:(struct NSObject { Class x1; }*)arg3 isPhotoStream:(BOOL)arg4 isSavedPhotos:(BOOL)arg5 isCameraKit:(BOOL)arg6;
+- (id)initWithURLs:(id)arg1 creationDate:(id)arg2 destinationAlbum:(struct NSObject { Class x1; }*)arg3 assetKind:(int)arg4;
 - (BOOL)isCameraKit;
 - (void)setAssetKind:(int)arg1;
 - (void)setDateCreated:(id)arg1;

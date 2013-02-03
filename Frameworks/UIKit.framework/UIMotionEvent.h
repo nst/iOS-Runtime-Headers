@@ -25,16 +25,19 @@
 @property int shakeState;
 
 - (void)_accelerometerDidDetectMovementWithTimestamp:(double)arg1;
+- (BOOL)_detectWhenNotActive;
 - (float)_determineShakeLevelX:(float)arg1 y:(float)arg2 z:(float)arg3 currentState:(int)arg4;
 - (void)_enablePeakDetectionIfNecessary;
 - (int)_feedStateMachine:(float)arg1 currentState:(int)arg2 timestamp:(double)arg3;
 - (float)_highPass:(float)arg1;
 - (void)_idleTimerFired;
 - (id)_init;
+- (BOOL)_isDetectingMotionEvents;
 - (float)_lowPass:(float)arg1;
 - (void)_resetLowPassState;
 - (void)_setSubtype:(int)arg1;
 - (int)_shakeState;
+- (void)_updateAccelerometerEnabled;
 - (void)_willResume;
 - (void)_willSuspend;
 - (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;

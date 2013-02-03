@@ -14,8 +14,8 @@
 
 + (id)_abMultiValuesForPerson:(void*)arg1 property:(id)arg2 property:(int)arg3 key:(id)arg4 label:(id)arg5;
 + (id)_abValuesForPerson:(void*)arg1 property:(id)arg2 propertyID:(int)arg3 key:(id)arg4 label:(id)arg5;
-+ (id)_abValuesForProperty:(id)arg1 key:(id)arg2 label:(id)arg3;
-+ (void)_addABMatchesToArray:(id)arg1 forString:(id)arg2 atABPointer:(id)arg3;
++ (id)_abValuesForProperty:(id)arg1 key:(id)arg2 label:(id)arg3 forPerson:(void*)arg4;
++ (void)_addABMatchesToArray:(id)arg1 forString:(id)arg2 atABPointer:(id)arg3 forPerson:(void*)arg4;
 + (void)_addPreviousDataMatchesToArray:(id)arg1 forString:(id)arg2 frame:(id)arg3 fieldName:(id)arg4;
 + (void)_appWillTerminate:(id)arg1;
 + (BOOL)_autoFillPasswordInFrame:(id)arg1 autoFiller:(id)arg2;
@@ -25,7 +25,7 @@
 + (void)_frame:(id)arg1 sourceFrame:(id)arg2 willSubmitRegularForm:(id)arg3 withValues:(id)arg4;
 + (unsigned int)_indexOfMarkerInMatches:(id)arg1 matchingABMatch:(id)arg2;
 + (void)_loadCompletionDB;
-+ (id)_matchesForString:(id)arg1 frame:(id)arg2 fieldName:(id)arg3 control:(id)arg4;
++ (id)_matchesForString:(id)arg1 frame:(id)arg2 fieldName:(id)arg3 control:(id)arg4 forPerson:(void*)arg5;
 + (void)_pruneCompletionDB;
 + (void)_reapABMarker:(id)arg1 forFrame:(id)arg2 fieldName:(id)arg3;
 + (void)_saveCompletionDB:(id)arg1;
@@ -34,7 +34,7 @@
 + (BOOL)addressBookCompletionEnabled;
 + (void)alertPrompt:(id)arg1 clickedButtonAtIndex:(int)arg2;
 + (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-+ (BOOL)autoFillInWebView:(id)arg1;
++ (void)autoFillInWebView:(id)arg1;
 + (void)clearAutoFillStateForFrame:(id)arg1;
 + (void)clearPreviousDataDatabase;
 + (void)clearPreviousDataForDomain:(id)arg1;

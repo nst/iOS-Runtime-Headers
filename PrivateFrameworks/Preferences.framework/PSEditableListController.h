@@ -4,11 +4,11 @@
 
 @interface PSEditableListController : PSListController {
     BOOL _editable;
+    BOOL _editingDisabled;
 }
 
 - (id)_editButtonBarItem;
 - (void)_setEditable:(BOOL)arg1 animated:(BOOL)arg2;
-- (BOOL)_showEditButtonUponAppearing;
 - (void)_updateNavigationBar;
 - (void)didLock;
 - (void)editDoneTapped;

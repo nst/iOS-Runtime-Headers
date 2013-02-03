@@ -16,6 +16,7 @@
 + (id)notificationsForBundleID:(id)arg1;
 + (id)pushStoreForBundleID:(id)arg1;
 + (void)setEffectivePushSettings:(unsigned int)arg1 forBundleID:(id)arg2;
++ (id)uniqueIdentifierForNotification:(id)arg1;
 
 - (void)addObserver:(id)arg1;
 - (void)dealloc;

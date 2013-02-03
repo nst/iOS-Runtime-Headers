@@ -5,11 +5,11 @@
 @interface SURemoteNotificationController : NSObject {
 }
 
-@property(readonly) int enabledNotificationTypes;
+@property(readonly) unsigned int enabledNotificationTypes;
 
 + (id)sharedInstance;
 
-- (int)enabledNotificationTypes;
+- (unsigned int)enabledNotificationTypes;
 - (void)handleNotificationDictionary:(id)arg1;
 - (void)handleRegistrationFailureWithError:(id)arg1;
 - (void)handleRegistrationSuccessWithToken:(id)arg1;

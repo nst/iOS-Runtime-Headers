@@ -18,8 +18,8 @@
 @property(retain) NSNumber * proxyPort;
 @property(retain) NSString * username;
 
+- (void).cxx_destruct;
 - (id)apnName;
-- (void)dealloc;
 - (id)defaultsRepresentation;
 - (id)description;
 - (id)password;

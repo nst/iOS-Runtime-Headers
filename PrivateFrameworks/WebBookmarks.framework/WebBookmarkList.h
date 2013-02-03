@@ -18,6 +18,8 @@
 
 - (void)_moveBookmarkAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (unsigned int)_reverseOrderIndex:(unsigned int)arg1;
+- (id)bookmarkArray;
+- (id)bookmarkArrayRequestingCount:(unsigned int)arg1;
 - (id)bookmarkAtIndex:(unsigned int)arg1;
 - (unsigned int)bookmarkCount;
 - (void)dealloc;

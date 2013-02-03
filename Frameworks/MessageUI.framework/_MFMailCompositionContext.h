@@ -2,49 +2,88 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFMessageViewingContext, MailMessage;
+@class NSArray, NSString, MailMessage, MFGenericAttachmentStore, MFMessageViewingContext;
 
-@interface _MFMailCompositionContext : MFMailCompositionContext {
-    struct { 
-        unsigned int loadRest : 1; 
-        unsigned int includeAttachments : 1; 
+@interface _MFMailCompositionContext : NSObject {
+    MFGenericAttachmentStore *_attachments;
     id _autosaveIdentifier;
+    NSArray *_bccRecipients;
+    NSArray *_ccRecipients;
     int _composeType;
+    BOOL _includeAttachments;
+    BOOL _loadRest;
     MFMessageViewingContext *_loadingContext;
-    } _mailComposeFlags;
+    NSString *_messageBody;
     id _originalContent;
     MailMessage *_originalMessage;
+    BOOL _prefersFirstLineSelection;
+    NSString *_sendingAddress;
+    BOOL _showContentImmediately;
+    BOOL _showKeyboardImmediately;
+    NSString *_subject;
+    NSArray *_toRecipients;
 }
 
+@property(readonly) MFGenericAttachmentStore * attachments;
 @property(readonly) id autosaveIdentifier;
+@property(copy) NSArray * bccRecipients;
+@property(copy) NSArray * ccRecipients;
 @property(readonly) int composeType;
 @property BOOL includeAttachments;
 @property BOOL loadRest;
 @property(retain) MFMessageViewingContext * loadingContext;
 @property(retain) id originalContent;
-@property(retain,readonly) MailMessage * originalMessage;
+@property(readonly) MailMessage * originalMessage;
+@property BOOL prefersFirstLineSelection;
+@property(copy) NSString * sendingAddress;
+@property BOOL showContentImmediately;
+@property BOOL showKeyboardImmediately;
+@property(copy) NSString * subject;
+@property(copy) NSArray * toRecipients;
 
+- (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
+- (id)attachments;
 - (id)autosaveIdentifier;
+- (id)bccRecipients;
+- (id)ccRecipients;
 - (int)composeType;
 - (void)dealloc;
 - (BOOL)includeAttachments;
+- (id)init;
 - (id)initDraftRestoreOfMessage:(id)arg1;
-- (id)initDraftRestoreOfRFC822Data:(id)arg1;
 - (id)initForwardOfMessage:(id)arg1;
 - (id)initOutboxRestoreOfMessage:(id)arg1;
 - (id)initRecoveredAutosavedMessageWithIdentifier:(id)arg1;
 - (id)initReplyAllToMessage:(id)arg1;
 - (id)initReplyToMessage:(id)arg1;
+- (id)initSendAgainDraftOfMessage:(id)arg1;
 - (id)initWithComposeType:(int)arg1 originalMessage:(id)arg2;
 - (id)initWithComposeType:(int)arg1;
 - (id)initWithURL:(id)arg1 composeType:(int)arg2 originalMessage:(id)arg3;
+- (id)initWithURL:(id)arg1;
 - (BOOL)loadRest;
 - (id)loadingContext;
+- (id)messageBody;
 - (id)originalContent;
 - (id)originalMessage;
+- (BOOL)prefersFirstLineSelection;
+- (id)sendingAddress;
+- (void)setBccRecipients:(id)arg1;
+- (void)setCcRecipients:(id)arg1;
 - (void)setIncludeAttachments:(BOOL)arg1;
 - (void)setLoadRest:(BOOL)arg1;
 - (void)setLoadingContext:(id)arg1;
+- (void)setMessageBody:(id)arg1 isHTML:(BOOL)arg2;
 - (void)setOriginalContent:(id)arg1;
+- (void)setPrefersFirstLineSelection:(BOOL)arg1;
+- (void)setSendingAddress:(id)arg1;
+- (void)setShowContentImmediately:(BOOL)arg1;
+- (void)setShowKeyboardImmediately:(BOOL)arg1;
+- (void)setSubject:(id)arg1;
+- (void)setToRecipients:(id)arg1;
+- (BOOL)showContentImmediately;
+- (BOOL)showKeyboardImmediately;
+- (id)subject;
+- (id)toRecipients;
 
 @end

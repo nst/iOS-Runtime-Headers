@@ -2,37 +2,48 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@class NSURL, NSString, ACAccountStore;
+@class NSString, ACAccountStore, NSSet, NSURL;
 
 @interface ACAccountType : NSObject {
+    NSSet *_accessKeys;
     ACAccountStore *_accountStore;
     NSString *_accountTypeDescription;
     int _credentialAvailability;
     id _credentialProtectionPolicy;
     NSString *_credentialType;
     NSString *_identifier;
+    int _maximumSavedAllowed;
     NSURL *_objectID;
+    NSSet *_supportedDataclasses;
+    int _supportsAuthentication;
+    BOOL _supportsMultipleAccounts;
+    NSSet *_syncableDataclasses;
     int _visibility;
 }
 
 @property(readonly) BOOL accessGranted;
+@property(readonly) NSSet * accessKeys;
 @property ACAccountStore * accountStore;
 @property(readonly) NSString * accountTypeDescription;
-@property(readonly) BOOL authenticationSupported;
 @property int credentialAvailability;
 @property(copy) id credentialProtectionPolicy;
+@property(readonly) NSString * credentialType;
 @property(readonly) NSString * identifier;
 @property(retain) NSURL * objectID;
+@property(readonly) NSSet * supportedDataclasses;
+@property int supportsAuthentication;
+@property(readonly) BOOL supportsMultipleAccounts;
+@property(readonly) NSSet * syncableDataclasses;
 @property int visibility;
 
+- (void).cxx_destruct;
 - (BOOL)accessGranted;
+- (id)accessKeys;
 - (id)accountStore;
 - (id)accountTypeDescription;
-- (BOOL)authenticationSupported;
 - (int)credentialAvailability;
 - (id)credentialProtectionPolicy;
 - (id)credentialType;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
@@ -46,8 +57,12 @@
 - (void)setCredentialType:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setObjectID:(id)arg1;
+- (void)setSupportsAuthentication:(int)arg1;
 - (void)setVisibility:(int)arg1;
 - (id)supportedDataclasses;
+- (int)supportsAuthentication;
+- (BOOL)supportsMultipleAccounts;
+- (id)syncableDataclasses;
 - (int)visibility;
 
 @end

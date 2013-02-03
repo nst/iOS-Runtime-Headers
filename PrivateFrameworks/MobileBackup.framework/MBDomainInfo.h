@@ -10,6 +10,7 @@
     unsigned long long _localSize;
     unsigned long long _remoteSize;
     BOOL _restricted;
+    BOOL _systemApp;
 }
 
 @property(getter=isAppDomain,readonly) BOOL appDomain;
@@ -21,8 +22,9 @@
 @property unsigned long long remoteSize;
 @property(getter=isRestricted) BOOL restricted;
 @property(readonly) unsigned long long size;
+@property(getter=isSystemApp) BOOL systemApp;
 
-+ (id)domainInfoWithName:(id)arg1 remoteSize:(unsigned long long)arg2 localSize:(unsigned long long)arg3 enabled:(BOOL)arg4 restricted:(BOOL)arg5;
++ (id)domainInfoWithName:(id)arg1 systemApp:(BOOL)arg2 remoteSize:(unsigned long long)arg3 localSize:(unsigned long long)arg4 enabled:(BOOL)arg5 restricted:(BOOL)arg6;
 + (id)domainNameForBundleID:(id)arg1;
 
 - (id)bundleID;
@@ -32,11 +34,12 @@
 - (id)domainName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDomainName:(id)arg1 remoteSize:(unsigned long long)arg2 localSize:(unsigned long long)arg3 enabled:(BOOL)arg4 restricted:(BOOL)arg5;
+- (id)initWithDomainName:(id)arg1 systemApp:(BOOL)arg2 remoteSize:(unsigned long long)arg3 localSize:(unsigned long long)arg4 enabled:(BOOL)arg5 restricted:(BOOL)arg6;
 - (BOOL)isAppDomain;
 - (BOOL)isCameraRollDomain;
 - (BOOL)isEnabled;
 - (BOOL)isRestricted;
+- (BOOL)isSystemApp;
 - (unsigned long long)localSize;
 - (unsigned long long)remoteSize;
 - (void)setDomainName:(id)arg1;
@@ -44,6 +47,7 @@
 - (void)setLocalSize:(unsigned long long)arg1;
 - (void)setRemoteSize:(unsigned long long)arg1;
 - (void)setRestricted:(BOOL)arg1;
+- (void)setSystemApp:(BOOL)arg1;
 - (unsigned long long)size;
 
 @end

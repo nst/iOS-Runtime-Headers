@@ -25,6 +25,8 @@
 + (id)encodeObjectValue:(id)arg1 forTransformableAttribute:(id)arg2;
 + (void)getIndexes:(unsigned int*)arg1 fromCollection:(id)arg2 forObjectsInCollection:(id)arg3;
 + (void)initialize;
++ (BOOL)isUbiquitousURLDownloaded:(id)arg1 error:(id*)arg2;
++ (BOOL)isUbiquitousURLUploaded:(id)arg1 error:(id*)arg2;
 + (long long)lengthOfFileAtExternalReferenceLocation:(const char *)arg1;
 + (BOOL)moveInterimFileToPermanentLocation:(id)arg1;
 + (id)newArrayOfObjectIDsFromCollection:(id)arg1;

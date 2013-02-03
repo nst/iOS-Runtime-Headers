@@ -20,10 +20,10 @@
     unsigned int _wantsPlainText : 1;
     unsigned int _noFillLevel : 30;
     struct __CFArray { } *_commandStack;
-    int _currentIndex;
+    long _currentIndex;
     float _indentWidth;
     } _inputBuffer;
-    int _inputLength;
+    long _inputLength;
     int _lastQuoteLevel;
     NSMutableString *_outputBuffer;
     id _outputString;

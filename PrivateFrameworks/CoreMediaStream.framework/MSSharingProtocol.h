@@ -57,6 +57,7 @@
 + (id)shareFromPushUserInfo:(id)arg1 outSourcePersonID:(id*)arg2 outTargetPersonID:(id*)arg3 outError:(id*)arg4;
 + (id)shareStateFromProtocol:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_checkForFailedInvitesWithResponse:(id)arg1;
 - (void)_didFailAuthenticationWithError:(id)arg1;
 - (void)_didFindServerSideConfigurationVersion:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPrintPanelViewController, UILabel, UITableView, UIPrintRangePickerView;
+@class UIPrintRangePickerView, UITableView, UIPrintPanelViewController;
 
 @interface UIPrintRangeViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     struct _NSRange { 
@@ -14,7 +14,6 @@
     float _pickerWidth;
     UIPrintPanelViewController *_printPanelViewController;
     UITableView *_tableView;
-    UILabel *_toLabel;
     UIPrintRangePickerView *_toPicker;
 }
 
@@ -29,6 +28,7 @@
 - (id)pickerView:(id)arg1 viewForRow:(int)arg2 forComponent:(int)arg3 reusingView:(id)arg4;
 - (float)pickerView:(id)arg1 widthForComponent:(int)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

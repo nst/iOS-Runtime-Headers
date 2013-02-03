@@ -11,7 +11,7 @@
     <TLVibrationRecorderViewControllerDelegate> *_delegate;
     NSDictionary *_indefiniteVibrationPattern;
     BOOL _isWaitingForEndOfCurrentVibrationComponent;
-    unsigned int _mode;
+    int _mode;
     TLVibrationPattern *_recordedVibrationPattern;
     UIBarButtonItem *_saveButton;
     UIAlertView *_vibrationNameAlertView;
@@ -48,7 +48,7 @@
 - (void)_storeVibrationComponentOfTypePause:(BOOL)arg1;
 - (void)_textFieldTextDidChange:(id)arg1;
 - (id)_vibrationNameAlertView;
-- (void)_vibrationRecorderView:(id)arg1 buttonTappedWithIdentifier:(unsigned int)arg2 animateButtonUpdate:(BOOL)arg3;
+- (void)_vibrationRecorderView:(id)arg1 buttonTappedWithIdentifier:(int)arg2 animateButtonUpdate:(BOOL)arg3;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)dealloc;
 - (id)delegate;
@@ -60,7 +60,7 @@
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)vibrationComponentDidEndForVibrationRecorderView:(id)arg1;
 - (void)vibrationComponentDidStartForVibrationRecorderView:(id)arg1;
-- (void)vibrationRecorderView:(id)arg1 buttonTappedWithIdentifier:(unsigned int)arg2;
+- (void)vibrationRecorderView:(id)arg1 buttonTappedWithIdentifier:(int)arg2;
 - (void)vibrationRecorderView:(id)arg1 didExitRecordingModeWithContextObject:(id)arg2;
 - (BOOL)vibrationRecorderViewDidEnterRecordingMode:(id)arg1;
 - (void)vibrationRecorderViewDidFinishReplayingVibration:(id)arg1;

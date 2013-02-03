@@ -16,7 +16,9 @@
 
 - (void)MSRemoveOneObject:(id)arg1;
 - (void)MSRemoveOneObjectByPointerComparison:(id)arg1;
+- (void)__imRandomizeArray;
 - (void)_addObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)_gkMutableOrderedSet;
 - (void)_kb_reverse;
 - (unsigned int)_mapkit_insertSortedAnnotationView:(id)arg1 reverse:(BOOL)arg2;
 - (unsigned int)_mapkit_insertSortedAnnotationView:(id)arg1;
@@ -29,17 +31,25 @@
 - (void)_mapkit_sortUsingLongitude;
 - (void)_mapkit_sortUsingLongitudeAscending:(BOOL)arg1;
 - (void)_mutate;
+- (id)_ui_dequeue;
+- (void)_ui_enqueue:(id)arg1;
+- (id)_ui_peek;
 - (void)addItemsMatchingExtensions:(id)arg1 orTypes:(id)arg2 fromFolder:(id)arg3;
 - (void)addItemsMatchingType:(id)arg1 fromFolder:(id)arg2;
+- (void)addNonNilObject:(id)arg1;
 - (void)addObject:(id)arg1;
 - (void)addObjects:(const id*)arg1 count:(unsigned int)arg2;
+- (void)addObjects:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)addObjectsFromArray:(id)arg1;
+- (void)addObjectsFromNonNilArray:(id)arg1;
 - (void)addObjectsFromOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)addObjectsFromOrderedSet:(id)arg1;
 - (void)addObjectsFromSet:(id)arg1;
 - (Class)classForCoder;
+- (id)dequeue;
 - (id)dequeueObject;
+- (void)enqueue:(id)arg1;
 - (void)enqueueObject:(id)arg1;
 - (void)exchangeObjectAtIndex:(unsigned int)arg1 withObjectAtIndex:(unsigned int)arg2;
 - (void)filterUsingPredicate:(id)arg1;
@@ -60,18 +70,18 @@
 - (BOOL)mf_addObjectIfAbsentAccordingToEquals:(id)arg1;
 - (unsigned int)mf_insertObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3 allowDuplicates:(BOOL)arg4;
 - (BOOL)mf_isEmpty;
+- (void)mf_moveObjectAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (id)mf_popElement;
 - (unsigned int)mf_removeObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
 - (void)moveItemFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (void)moveObjectsAtIndexes:(id)arg1 toIndex:(unsigned int)arg2;
-- (void)movePlacesWithOnePhotoInto:(id)arg1;
 - (id)nextDequeuedObject;
 - (id)pop;
 - (void)push:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeAllObjectsWithClass:(Class)arg1;
 - (void)removeFirstObject;
-- (id)removeFirstObject;
+- (void)removeFirstObject;
 - (void)removeItemAtIndex:(unsigned int)arg1;
 - (void)removeLastObject;
 - (void)removeObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
@@ -81,6 +91,7 @@
 - (void)removeObjectIdenticalTo:(id)arg1;
 - (void)removeObjectsAtIndexes:(id)arg1;
 - (void)removeObjectsFromIndices:(unsigned int*)arg1 numIndices:(unsigned int)arg2;
+- (void)removeObjectsIdenticalToObjectsInArray:(id)arg1;
 - (void)removeObjectsInArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)removeObjectsInArray:(id)arg1;
 - (void)removeObjectsInOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
@@ -105,8 +116,9 @@
 - (void)replaceObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withObjectsFromSet:(id)arg2;
 - (void)rollObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 by:(int)arg2;
 - (void)setArray:(id)arg1;
-- (void)setObject:(id)arg1 atIndex:(int)arg2;
 - (void)setObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)setObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)setObject:(id)arg1 atIndexedSubscript:(unsigned int)arg2;
 - (void)setOrderedSet:(id)arg1;
 - (void)setSet:(id)arg1;
 - (void)shuffle;
@@ -117,9 +129,6 @@
 - (void)sortUsingFunction:(int (*)())arg1 context:(void*)arg2;
 - (void)sortUsingSelector:(SEL)arg1;
 - (void)sortWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
-- (id)top;
-- (id)uiDequeue;
-- (void)uiEnqueue:(id)arg1;
-- (id)uiPeek;
+- (void)trimObjectsFromIndex:(unsigned int)arg1;
 
 @end

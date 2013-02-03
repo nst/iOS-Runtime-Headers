@@ -23,6 +23,7 @@
 - (id)initWithCoder:(id)arg1;
 - (int)lastVerb;
 - (id)longID;
+- (BOOL)meetingRequestIsActionable;
 - (id)meetingRequestMetaData;
 - (id)meetingRequestUUID;
 - (id)messageClass;

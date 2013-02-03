@@ -2,31 +2,33 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableSet, PLPhotoLibrary, PLImageCache, NSMutableArray, NSMutableDictionary;
+@class NSMutableSet, PLPhotoLibrary, NSObject<OS_dispatch_queue>, PLImageCache, NSMutableArray, NSMutableDictionary;
 
 @interface PLImageLoadingThread : NSObject {
-    PLImageCache *_cache;
     BOOL _canceled;
-    struct dispatch_queue_s { } *_highPriorityQueue;
+    NSObject<OS_dispatch_queue> *_highPriorityQueue;
     NSMutableArray *_highPriorityRequests;
-    struct dispatch_queue_s { } *_highestPriorityQueue;
+    NSObject<OS_dispatch_queue> *_highestPriorityQueue;
     NSMutableArray *_highestPriorityRequests;
-    struct dispatch_queue_s { } *_isolation;
+    NSObject<OS_dispatch_queue> *_isolation;
     PLPhotoLibrary *_library;
-    struct dispatch_queue_s { } *_normalPriorityQueue;
+    NSObject<OS_dispatch_queue> *_normalPriorityQueue;
     NSMutableArray *_normalPriorityRequests;
     BOOL _paused;
     NSMutableSet *_queues;
     NSMutableDictionary *_requestsByKey;
     BOOL _running;
-    struct dispatch_queue_s { } *_workQueue;
+    PLImageCache *_weak_cache;
+    NSObject<OS_dispatch_queue> *_workQueue;
 }
 
 - (BOOL)_dequeueRequest:(id)arg1;
 - (void)_enqueueRequest:(id)arg1;
+- (id)_imageCache;
 - (void)_requeueRequest:(id)arg1 oldPriority:(int)arg2;
 - (void)_serviceRequest:(id)arg1;
 - (void)_serviceRequestFrom:(id)arg1;
+- (void)_setImageCache:(id)arg1;
 - (void)_start;
 - (void)addImageLoadingQueue:(id)arg1;
 - (void)cacheWasDeallocated;

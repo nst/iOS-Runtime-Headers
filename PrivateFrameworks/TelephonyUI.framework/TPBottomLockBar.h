@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class NSArray, TPLockKnobView, NSTimer, UIView, TPLockTextView, TPWell;
+@class TPLockTextView, TPWell, TPLockKnobView, UIImageView, NSTimer, UIView, NSArray;
 
 @interface TPBottomLockBar : TPBottomBar {
-    BOOL _animatingInSecondaryLabel;
+    UIImageView *_backgroundView;
     int _currentLabelIndex;
     NSTimer *_cycleLabelTimer;
     id _delegate;
@@ -16,9 +16,6 @@
     TPLockTextView *_labelView;
     NSArray *_labels;
     id _representedObject;
-    TPLockKnobView *_secondaryKnobView;
-    TPLockTextView *_secondaryLabel;
-    NSTimer *_secondaryLabelDisplayTimer;
     UIView *_trackArrow;
     TPWell *_well;
 }
@@ -26,25 +23,20 @@
 + (float)defaultLabelFontSize;
 + (struct CGSize { float x1; float x2; })defaultSize;
 
-- (void)_adjustKnobOrigins;
-- (void)_adjustLabelOrigins;
+- (void)_adjustKnobOrigin;
+- (void)_adjustLabelOrigin;
 - (float)_calcKnobYOffset;
 - (BOOL)_canDrawContent;
-- (void)_clearSecondaryLabelTimer;
-- (void)_knob:(id)arg1 draggedWithProgress:(float)arg2;
 - (id)_knobImageForColor:(int)arg1;
-- (void)_secondaryLabelTimerFired:(id)arg1;
-- (void)_setLabel:(id)arg1 andAssignToView:(id*)arg2;
 - (void)_setLabel:(id)arg1;
 - (BOOL)_shouldStopLabelAnimationForGrab;
-- (void)_startSecondaryLabelTimer;
 - (BOOL)allowsTouchTrackingBeyondVerticalThreshold;
 - (int)currentLabelIndex;
 - (void)cycleToLabelAtIndex:(int)arg1;
 - (void)cycleToNextLabel;
 - (void)dealloc;
 - (float)defaultWellWidth;
-- (void)downInKnob:(id)arg1;
+- (void)downInKnob;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)finishedCyclingLabelOut;
 - (float)fontSize;
@@ -63,27 +55,25 @@
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)relock;
 - (id)representedObject;
-- (id)secondaryKnob;
-- (void)secondaryKnobDragged:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFontSize:(float)arg1;
+- (void)setKnobColor:(int)arg1;
+- (void)setKnobImage:(id)arg1;
 - (void)setKnobWellWidth:(float)arg1;
 - (void)setKnobWellWidthToDefault;
 - (void)setLabel:(id)arg1;
 - (void)setLabels:(id)arg1;
-- (void)setPrimaryKnobColor:(int)arg1;
-- (void)setPrimaryKnobImage:(id)arg1;
 - (void)setRepresentedObject:(id)arg1;
-- (void)setSecondaryKnobColor:(int)arg1;
-- (void)setSecondaryKnobImage:(id)arg1;
-- (void)setSecondaryLabel:(id)arg1;
-- (void)slideBack:(BOOL)arg1 forKnob:(id)arg2;
+- (void)setSuppressDrawingBackground:(BOOL)arg1;
+- (void)setTextAlpha:(float)arg1;
+- (void)setWellAlpha:(float)arg1;
+- (void)slideBack:(BOOL)arg1;
 - (void)startAnimating;
 - (void)startCyclingLabels;
 - (void)stopAnimating;
 - (void)stopCyclingLabels;
-- (void)unlockForKnob:(id)arg1;
-- (void)upInKnob:(id)arg1 forUnlock:(BOOL)arg2;
+- (void)unlock;
+- (void)upInKnob;
 - (BOOL)usesBackgroundImage;
 - (id)well;
 - (id)wellImageName;

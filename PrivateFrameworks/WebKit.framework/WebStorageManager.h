@@ -5,6 +5,8 @@
 @interface WebStorageManager : NSObject {
 }
 
++ (id)_storageDirectoryPath;
++ (void)setStorageDatabaseIdleInterval:(double)arg1;
 + (id)sharedWebStorageManager;
 
 - (void)deleteAllOrigins;

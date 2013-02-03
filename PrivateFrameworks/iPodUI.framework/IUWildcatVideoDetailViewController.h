@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class UIImage, MPMediaItemImageRequest, UIAlertView, IUVideoTitleView, MPImageCache, MPMediaItem, NSSet, IUVideoPartListViewController, MPMediaDownloadObserver, IUWildcatVideoDetailView, IUiPodSegmentedViewController, <IUWildcatVideoDetailViewControllerDelegate>;
+@class UIImage, MPMediaItemImageRequest, UIAlertView, IUVideoTitleView, MPImageCache, MPMediaItem, NSSet, IUWildcatVideoDetailView, IUVideoPartListViewController, MPMediaDownloadObserver, IUiPodSegmentedViewController, <IUWildcatVideoDetailViewControllerDelegate>;
 
 @interface IUWildcatVideoDetailViewController : IUiPodViewController <IUSegmentedViewControllerDelegate, IUWildcatVideoDetailViewDelegate, UIAlertViewDelegate, IUVideoPartListViewControllerDelegate> {
     <IUWildcatVideoDetailViewControllerDelegate> *_delegate;
@@ -26,6 +26,7 @@
 @property(readonly) IUWildcatVideoDetailView * backstopView;
 @property <IUWildcatVideoDetailViewControllerDelegate> * delegate;
 @property(readonly) MPMediaItem * firstMediaItem;
+@property(readonly) BOOL hasAtLeastOneItem;
 @property(retain) UIImage * preloadedSnapshotImage;
 @property unsigned long long representativeTrackPersistentUID;
 @property(readonly) IUiPodSegmentedViewController * segmentedViewController;
@@ -43,11 +44,13 @@
 - (void)_destroyTemporaryAnimationViews;
 - (float)_foldingTransitionHeightOfVerticalSection:(unsigned int)arg1;
 - (void)_generatePreloadedSnapshotImageFromDefaultTrack;
+- (BOOL)_hasListOfMediaItems;
 - (BOOL)_isDownloadInProgress;
 - (BOOL)_isFirstMediaItemMovie;
 - (BOOL)_isMovie:(id)arg1;
 - (void)_layoutUI;
 - (id)_newPosterImageCacheRequest;
+- (id)_nonSelectionPlaybackMediaItem;
 - (void)_notifyDelegateOfRepresentativeTrackPersistentUID;
 - (void)_playMovie:(id)arg1;
 - (struct CGSize { float x1; float x2; })_posterImageCacheRequestSize;
@@ -73,6 +76,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })foldingTransitionFrontFaceFrame;
 - (void)foldingTransitionViewDidTakeSnapshot;
 - (void)foldingTransitionViewWillTakeSnapshot;
+- (BOOL)hasAtLeastOneItem;
 - (id)init;
 - (void)loadView;
 - (id)newSnapshotFaceViewWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 antiAliasedEdgeMask:(unsigned long)arg2;
@@ -100,6 +104,5 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

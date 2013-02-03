@@ -22,8 +22,6 @@
     unsigned int mHasIsHorizontalNormalized : 1;
     unsigned int mIsHorizontalNormalized : 1;
     unsigned int mHasCaps : 1;
-    unsigned int mHasIsShadowed : 1;
-    unsigned int mIsShadowed : 1;
     double mBaseline;
     NSString *mBidiFont;
     unsigned char mCaps;
@@ -72,7 +70,6 @@
 - (BOOL)hasIsBold;
 - (BOOL)hasIsHorizontalNormalized;
 - (BOOL)hasIsItalic;
-- (BOOL)hasIsShadowed;
 - (BOOL)hasIsVerticalText;
 - (BOOL)hasLatinFont;
 - (BOOL)hasOpacity;
@@ -90,7 +87,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isHorizontalNormalized;
 - (BOOL)isItalic;
-- (BOOL)isShadowed;
 - (BOOL)isVerticalText;
 - (id)latinFont;
 - (double)opacity;
@@ -111,7 +107,6 @@
 - (void)setIsBold:(BOOL)arg1;
 - (void)setIsHorizontalNormalized:(BOOL)arg1;
 - (void)setIsItalic:(BOOL)arg1;
-- (void)setIsShadowed:(BOOL)arg1;
 - (void)setIsVerticalText:(BOOL)arg1;
 - (void)setLatinFont:(id)arg1;
 - (void)setOpacity:(double)arg1;

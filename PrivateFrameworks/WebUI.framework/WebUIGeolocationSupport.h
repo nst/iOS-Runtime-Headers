@@ -14,7 +14,9 @@
 + (id)sharedWebUIGeolocationSupport;
 
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)clear;
+- (void)clearCache;
+- (void)dealloc;
+- (id)init;
 - (void)load;
 - (void)save;
 - (id)siteFile;

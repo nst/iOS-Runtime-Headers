@@ -9,6 +9,7 @@
     BOOL _isFullScreen;
     BOOL _isMapViewPlugIn;
     BOOL _isQuickTimePlugIn;
+    BOOL _isiAdPlugIn;
     struct __CFRunLoopObserver { } *_mainRunLoopDrawObserver;
     BOOL _parentedInLayer;
     UIView *_uiView;
@@ -17,6 +18,7 @@
 
 @property BOOL isMapViewPlugIn;
 @property BOOL isQuickTimePlugIn;
+@property BOOL isiAdPlugIn;
 @property(getter=isParentedInLayer) BOOL parentedInLayer;
 
 - (void)_attachPluginLayerOnMainThread;
@@ -36,6 +38,7 @@
 - (BOOL)isParented;
 - (BOOL)isParentedInLayer;
 - (BOOL)isQuickTimePlugIn;
+- (BOOL)isiAdPlugIn;
 - (void)layout;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)mouseDown:(id)arg1;
@@ -49,6 +52,7 @@
 - (void)setFrameSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setIsMapViewPlugIn:(BOOL)arg1;
 - (void)setIsQuickTimePlugIn:(BOOL)arg1;
+- (void)setIsiAdPlugIn:(BOOL)arg1;
 - (void)setParentedInLayer:(BOOL)arg1;
 - (void)setWebView:(id)arg1;
 - (void)viewDidMoveToWindow;

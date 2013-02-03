@@ -6,7 +6,6 @@
 
 @interface IMAVInterface : NSObject {
     id _delegate;
-    BOOL _keepCameraRunning;
 }
 
 @property(readonly) id _controller;
@@ -27,8 +26,6 @@
 @property void* localVideoLayer;
 @property unsigned int maxBitrate;
 @property(readonly) unsigned int overallChatState;
-@property void* remoteVideoBackLayer;
-@property void* remoteVideoLayer;
 @property BOOL shouldKeepCameraRunning;
 @property(readonly) BOOL supportsLayers;
 @property(readonly) BOOL supportsRelay;
@@ -40,12 +37,14 @@
 @property(readonly) BOOL systemCanRecordAudio;
 @property(readonly) BOOL systemCanRecordVideo;
 @property(readonly) BOOL systemCanVideoChat;
+@property(readonly) BOOL systemSupportsBackFacingCamera;
+@property(readonly) BOOL systemSupportsFrontFacingCamera;
 
 + (id)alloc;
 + (id)sharedInstance;
 
 - (void)_avChatDealloc:(id)arg1;
-- (int)_checkNetworkForChat:(id)arg1;
+- (int)_checkNetworkForChat:(id)arg1 requiresWifi:(BOOL)arg2;
 - (void)_conferenceEnded:(id)arg1;
 - (void)_conferenceWillStart:(id)arg1;
 - (id)_controller;
@@ -53,11 +52,12 @@
 - (id)_currentMicrophone;
 - (void)_notifyAboutPotentialCallForChat:(id)arg1;
 - (BOOL)_previewStarted;
+- (int)_runPingTestForChat:(id)arg1;
 - (void)_setCurrentCamera:(id)arg1;
 - (void)_setCurrentMicrophone:(id)arg1;
+- (BOOL)_submitEndCallMetric:(id)arg1 forChat:(id)arg2;
 - (BOOL)_submitLoggingInformation:(id)arg1 forChat:(id)arg2;
 - (BOOL)allowsVideoForAVChat:(id)arg1;
-- (BOOL)allowsWeakReference;
 - (float)audioVolumeForAVChat:(id)arg1;
 - (id)avChat:(id)arg1 IPAndPortDataWithCallerIP:(id)arg2 callerSIPPort:(unsigned int)arg3 shouldFindExternalIP:(BOOL)arg4;
 - (id)avChat:(id)arg1 IPAndPortDataWithCallerIPAndPortData:(id)arg2 shouldFindExternalIP:(BOOL)arg3;
@@ -65,12 +65,12 @@
 - (void)avChat:(id)arg1 enableSoftwareCamera:(BOOL)arg2;
 - (void)avChat:(id)arg1 enableSoftwareMicrophone:(BOOL)arg2;
 - (int)avChat:(id)arg1 endConferenceForUserID:(id)arg2;
-- (id)avChat:(id)arg1 localICEDataForHandle:(id)arg2 usingRelay:(BOOL)arg3;
+- (id)avChat:(id)arg1 localICEDataForHandleID:(id)arg2 service:(id)arg3 usingRelay:(BOOL)arg4 supportsARDMuxing:(BOOL)arg5;
 - (void)avChat:(id)arg1 prepareConnectionWithRemoteConnectionData:(id)arg2 localConnectionData:(id)arg3;
 - (void)avChat:(id)arg1 setAllowsVideo:(BOOL)arg2;
 - (void)avChat:(id)arg1 setAudioVolume:(float)arg2;
-- (void)avChat:(id)arg1 setCameraOrientation:(unsigned int)arg2;
-- (void)avChat:(id)arg1 setCameraType:(unsigned int)arg2;
+- (BOOL)avChat:(id)arg1 setCameraOrientation:(unsigned int)arg2;
+- (BOOL)avChat:(id)arg1 setCameraType:(unsigned int)arg2;
 - (void)avChat:(id)arg1 setLocalLandscapeAspectRatio:(struct CGSize { float x1; float x2; })arg2 localPortraitAspectRatio:(struct CGSize { float x1; float x2; })arg3;
 - (void)avChat:(id)arg1 setLockCamera:(BOOL)arg2;
 - (void)avChat:(id)arg1 setMute:(BOOL)arg2;
@@ -103,7 +103,6 @@
 - (void)handleRelayInitate:(id)arg1 fromParticipant:(id)arg2;
 - (void)handleRelayUpdate:(id)arg1 fromParticipant:(id)arg2;
 - (void)initAVInterface;
-- (void)invalidateAVInterface;
 - (BOOL)isAVInterfaceReady;
 - (BOOL)isMuteForAVChat:(id)arg1;
 - (BOOL)isPausedForAVChat:(id)arg1;
@@ -119,17 +118,17 @@
 - (BOOL)openCamera;
 - (unsigned int)overallChatState;
 - (void)persistentProperty:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
-- (void*)remoteVideoBackLayer;
-- (void*)remoteVideoLayer;
-- (BOOL)retainWeakReference;
+- (void*)remoteVideoBackLayerForChat:(id)arg1;
+- (void*)remoteVideoLayerForChat:(id)arg1;
 - (void)setCameraOrientation:(unsigned int)arg1;
 - (void)setCameraType:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLocalVideoBackLayer:(void*)arg1;
 - (void)setLocalVideoLayer:(void*)arg1;
 - (void)setMaxBitrate:(unsigned int)arg1;
-- (void)setRemoteVideoBackLayer:(void*)arg1;
-- (void)setRemoteVideoLayer:(void*)arg1;
+- (void)setRemoteVideoBackLayer:(void*)arg1 forChat:(id)arg2;
+- (void)setRemoteVideoLayer:(void*)arg1 forChat:(id)arg2;
+- (void)setRemoteVideoLayersFromChat:(id)arg1 toChat:(id)arg2;
 - (void)setShouldKeepCameraRunning:(BOOL)arg1;
 - (BOOL)shouldKeepCameraRunning;
 - (BOOL)startPreviewWithError:(id*)arg1;
@@ -141,14 +140,11 @@
 - (BOOL)systemCanHostARD;
 - (BOOL)systemCanHostMultiwayAudio;
 - (BOOL)systemCanHostMultiwayVideo;
-- (BOOL)systemCanReceiveHighRes;
-- (BOOL)systemCanReceiveWidescreen;
 - (BOOL)systemCanRecordAudio;
 - (BOOL)systemCanRecordVideo;
-- (BOOL)systemCanSendFullHD;
-- (BOOL)systemCanSendHighRes;
-- (BOOL)systemCanSendWidescreen;
 - (BOOL)systemCanVideoChat;
+- (BOOL)systemSupportsBackFacingCamera;
+- (BOOL)systemSupportsFrontFacingCamera;
 - (void)unsetDelegate:(id)arg1;
 
 @end

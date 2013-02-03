@@ -8,8 +8,8 @@
 }
 
 @property(copy) NSString * cssText;
-@property(retain,readonly) DOMCSSRule * parentRule;
-@property(retain,readonly) DOMCSSStyleSheet * parentStyleSheet;
+@property(readonly) DOMCSSRule * parentRule;
+@property(readonly) DOMCSSStyleSheet * parentStyleSheet;
 @property(readonly) unsigned short type;
 
 - (id)cssText;

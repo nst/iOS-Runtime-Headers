@@ -14,6 +14,7 @@
     BOOL mStroked;
 }
 
+- (id).cxx_construct;
 - (void)addElement:(id)arg1;
 - (void)dealloc;
 - (id)elementAtIndex:(unsigned int)arg1;

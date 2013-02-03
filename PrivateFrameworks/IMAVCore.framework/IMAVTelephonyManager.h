@@ -38,7 +38,6 @@
 - (BOOL)_setupCTServerConnection;
 - (BOOL)_unregisterCTRequestService;
 - (BOOL)_wantsBreakBeforeMake;
-- (BOOL)allowsWeakReference;
 - (unsigned int)callState;
 - (void)dealloc;
 - (id)init;
@@ -47,7 +46,6 @@
 - (void)notifyCallEndedForChat:(id)arg1;
 - (void)notifyCallStartedForChat:(id)arg1;
 - (void)notifyMissedCallForChat:(id)arg1;
-- (BOOL)retainWeakReference;
 - (void)startWatchingForCTRequests;
 - (void)stopWatchingForCTRequests;
 

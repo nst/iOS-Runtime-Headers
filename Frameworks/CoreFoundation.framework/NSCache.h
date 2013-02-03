@@ -8,9 +8,11 @@
     void *_reserved;
 }
 
+- (id)allObjects;
 - (unsigned int)countLimit;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)evictsObjectsWhenApplicationEntersBackground;
 - (BOOL)evictsObjectsWithDiscardedContent;
 - (void)finalize;
 - (id)init;
@@ -20,6 +22,7 @@
 - (void)removeObjectForKey:(id)arg1;
 - (void)setCountLimit:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setEvictsObjectsWhenApplicationEntersBackground:(BOOL)arg1;
 - (void)setEvictsObjectsWithDiscardedContent:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2 cost:(unsigned int)arg3;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSString, NSMutableArray;
+@class NSMutableArray, NSString, SPIndex;
 
 @interface SPContentIndexer : NSObject {
     NSString *_category;
@@ -12,7 +12,7 @@
     NSString *_displayIdentifier;
     struct __CXIndex { } *_index;
     struct __CXQuery { } *_query;
-    struct CPRecordStore { } *_store;
+    SPIndex *_store;
     unsigned int _version;
 }
 
@@ -20,20 +20,20 @@
 + (void)initialize;
 + (void)preheat;
 
-- (void*)_copyRecordForExternalID:(id)arg1;
 - (id)_indexPath;
+- (id)_legacyIndexPath;
+- (id)_legacyStorePath;
 - (void)_openOrCreateIndex;
-- (BOOL)_openOrCreateStore;
 - (id)_storePath;
 - (void)beginSearch:(id)arg1;
 - (void)cancelSearch;
-- (void)clearIndex;
 - (BOOL)commitUpdates;
-- (void*)copyResultForIdentifier:(id)arg1;
 - (void)dealloc;
+- (id)existingRecordsForExtIDs:(id)arg1;
 - (id)initWithDisplayIdentifier:(id)arg1 category:(id)arg2 version:(unsigned int)arg3;
 - (BOOL)nextSearchResults:(id*)arg1;
-- (void)removeIdentifier:(id)arg1;
-- (void)setIdentifier:(id)arg1 forRecordDictionary:(id)arg2;
+- (void)removeRecord:(id)arg1;
+- (id)resultForIdentifier:(id)arg1;
+- (void)setIdentifier:(id)arg1 forRecordDictionary:(id)arg2 existingRecord:(id)arg3;
 
 @end

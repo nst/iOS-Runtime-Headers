@@ -5,12 +5,8 @@
 @interface SUDownloadManagerTableDataSource : SUDownloadManagerDataSource {
 }
 
-- (id)_downloadCellForIndexPath:(id)arg1;
-- (id)_preorderCellForIndexPath:(id)arg1;
-- (id)cellForIndexPath:(id)arg1;
 - (float)cellHeightForIndexPath:(id)arg1;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)reloadCellContexts;
-- (int)tableViewStyle;
 
 @end

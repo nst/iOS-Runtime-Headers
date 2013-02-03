@@ -22,22 +22,31 @@
 
 + (id)key;
 + (id)keyboard;
++ (id)mergeStringForKeyName:(id)arg1;
++ (id)shapesForControlKeyShapes:(id)arg1 options:(int)arg2;
++ (BOOL)shouldSkipCacheString:(id)arg1;
 + (id)stringForType:(int)arg1;
 + (id)treeOfType:(int)arg1;
 + (id)uniqueName;
 
+- (id)_cacheRootNameForKey:(id)arg1;
+- (BOOL)_needsScaling;
 - (int)_variantType;
 - (BOOL)acceptsShiftLock;
 - (id)alternateKeyplaneName;
 - (id)attributeSet:(BOOL)arg1;
+- (id)autolocalizedKeyCacheIterator;
+- (BOOL)avoidsLanguageIndicator;
 - (BOOL)behavesAsShiftKey;
 - (BOOL)boolForProperty:(id)arg1;
 - (id)cache;
 - (id)cacheDisplayString;
 - (void)cacheKey:(id)arg1;
 - (id)cachedKeysByKeyName:(id)arg1;
+- (void)clearTransientCaches;
 - (id)clientVariantActionName;
 - (id)clientVariantRepresentedString;
+- (int)clipCorners;
 - (id)componentName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -47,12 +56,15 @@
 - (id)displayString;
 - (int)displayType;
 - (int)displayTypeHint;
+- (id)findLeftMoreKey;
 - (id)firstCachedKeyWithName:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)geometries;
+- (id)geometriesOrderedByPosition;
 - (id)geometry;
 - (id)geometrySet:(BOOL)arg1;
 - (BOOL)ghost;
+- (int)highlightedVariantIndex;
 - (int)indexOfSubtree:(id)arg1;
 - (id)initWithType:(int)arg1 withName:(id)arg2 withProperties:(id)arg3 withSubtrees:(id)arg4 withCache:(id)arg5;
 - (id)initWithType:(int)arg1;
@@ -61,6 +73,7 @@
 - (BOOL)isClientVariantOverride;
 - (BOOL)isDuplicateOfTree:(id)arg1;
 - (BOOL)isEqualToTree:(id)arg1;
+- (BOOL)isGenerated;
 - (BOOL)isHashed;
 - (BOOL)isLeafType;
 - (BOOL)isLetters;
@@ -75,12 +88,15 @@
 - (id)keysByKeyName:(id)arg1;
 - (id)keysOrderedByPosition;
 - (id)keysOrderedByPositionWithoutZip;
+- (id)keysWithString:(id)arg1;
 - (id)layoutName;
+- (id)localizationKey;
 - (BOOL)looksLike:(id)arg1;
 - (BOOL)looksLikeShiftAlternate;
 - (BOOL)modifiesKeyplane;
 - (id)name;
 - (id)nameFromAttributes;
+- (BOOL)noLanguageIndicator;
 - (BOOL)notUseCandidateSelection;
 - (id)numberForProperty:(id)arg1;
 - (id)overrideDisplayString;
@@ -96,6 +112,7 @@
 - (void)setCache:(id)arg1;
 - (void)setClientVariantActionName:(id)arg1;
 - (void)setClientVariantRepresentedString:(id)arg1;
+- (void)setClipCorners:(int)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (void)setDisplayRowHint:(int)arg1;
 - (void)setDisplayString:(id)arg1;
@@ -105,8 +122,10 @@
 - (void)setFrameOnly:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGeometry:(id)arg1;
 - (void)setGhost:(BOOL)arg1;
+- (void)setHighlightedVariantIndex:(int)arg1;
 - (void)setInteractionType:(int)arg1;
 - (void)setIsClientVariantOverride:(BOOL)arg1;
+- (void)setIsGenerated:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (BOOL)setObject:(id)arg1 forProperty:(id)arg2;
 - (void)setOverrideDisplayString:(id)arg1;
@@ -141,6 +160,9 @@
 - (int)textAlignment;
 - (int)type;
 - (id)unhashedName;
+- (void)updateDictationKeyOnNumberPads:(BOOL)arg1;
+- (void)updateMoreAndInternationalKeysWithOptions:(int)arg1;
+- (void)updateVariantTypeForActions:(unsigned int)arg1;
 - (BOOL)usesAdaptiveKeys;
 - (BOOL)usesAutoShift;
 - (BOOL)usesKeyCharging;
@@ -149,6 +171,8 @@
 - (int)variantType;
 - (BOOL)visible;
 - (int)visualStyle;
+- (void)zipAttributes;
+- (void)zipGeometries:(BOOL)arg1 attributes:(BOOL)arg2;
 - (void)zipGeometrySet;
 
 @end

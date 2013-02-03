@@ -12,7 +12,7 @@
     unsigned int mPrivateResult : 1;
     unsigned int mNested : 1;
     unsigned int mHasSeparator : 1;
-    int mFieldPosition;
+    long mFieldPosition;
     unsigned char mFieldType;
     int mMarkerType;
     WDCharacterProperties *mProperties;

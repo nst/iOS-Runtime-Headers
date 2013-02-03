@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSURL, <CoreDAVLocalDBTreeInfoProvider>, NSMutableArray, NSDictionary, NSString, NSMutableSet, NSMutableDictionary, NSArray;
+@class <CoreDAVLocalDBTreeInfoProvider>, NSURL, NSMutableArray, NSDictionary, NSString, NSMutableSet, NSMutableDictionary, NSArray;
 
 @interface CoreDAVRecursiveContainerSyncTaskGroup : CoreDAVTaskGroup <CoreDAVDeleteTaskDelegate, CoreDAVPutTaskDelegate, CoreDAVTaskGroupDelegate, CoreDAVMkcolTaskDelegate, CoreDAVPropPatchTaskDelegate> {
     NSArray *_actions;

@@ -24,6 +24,7 @@
 - (BOOL)containsMipmaps;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (unsigned int)height;
 - (id)initWithTexture:(id)arg1 textureName:(unsigned int)arg2;
 - (unsigned int)name;

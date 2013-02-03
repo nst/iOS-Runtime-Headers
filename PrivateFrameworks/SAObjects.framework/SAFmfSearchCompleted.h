@@ -8,7 +8,7 @@
 }
 
 @property(copy) NSString * aceId;
-@property(retain) NSNumber * atRequestedLocation;
+@property(copy) NSNumber * atRequestedLocation;
 @property(copy) NSArray * fmfLocations;
 @property(copy) NSString * refId;
 @property(copy) NSURL * searchContext;

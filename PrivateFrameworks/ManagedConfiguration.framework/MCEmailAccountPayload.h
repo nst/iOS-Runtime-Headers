@@ -48,7 +48,7 @@
 + (id)profileNameFromAccountTag:(id)arg1;
 + (id)typeStrings;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)emailAccountDescription;
 - (id)emailAccountName;

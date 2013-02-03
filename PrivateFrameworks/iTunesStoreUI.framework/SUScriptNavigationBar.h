@@ -8,6 +8,9 @@
 }
 
 @property(readonly) SUScriptNavigationItem * backNavigationItem;
+@property int barStyle;
+@property(readonly) int barStyleBlack;
+@property(readonly) int barStyleDefault;
 @property(retain) SUScriptButton * leftButton;
 @property(retain) <SUScriptNavigationItem> * leftItem;
 @property(readonly) NSArray * navigationItems;
@@ -15,19 +18,21 @@
 @property(retain) SUScriptButton * rightButton;
 @property(retain) <SUScriptNavigationItem> * rightItem;
 @property(readonly) SUScriptNavigationItem * topNavigationItem;
+@property(copy) id translucent;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
-- (id)_copyBackNavigationItem;
-- (id)_copyNavigationItems;
 - (id)_copyTopNavigationItem;
 - (id)_nativeNavigationBar;
 - (id)_topNavigationItem;
 - (id)attributeKeys;
 - (id)backNavigationItem;
+- (int)barStyle;
+- (int)barStyleBlack;
+- (int)barStyleDefault;
 - (id)buttonWithTitle:(id)arg1 style:(id)arg2 target:(id)arg3 action:(id)arg4;
 - (id)init;
 - (id)initWithNativeNavigationBar:(id)arg1;
@@ -39,6 +44,7 @@
 - (id)rightItem;
 - (id)scriptAttributeKeys;
 - (void)setBackNavigationItem:(id)arg1;
+- (void)setBarStyle:(int)arg1;
 - (void)setLeftButton:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftButton:(id)arg1;
 - (void)setLeftItem:(id)arg1 animated:(BOOL)arg2;
@@ -50,7 +56,9 @@
 - (void)setRightItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setRightItem:(id)arg1;
 - (void)setTopNavigationItem:(id)arg1;
+- (void)setTranslucent:(id)arg1;
 - (void)tearDownUserInterface;
 - (id)topNavigationItem;
+- (id)translucent;
 
 @end

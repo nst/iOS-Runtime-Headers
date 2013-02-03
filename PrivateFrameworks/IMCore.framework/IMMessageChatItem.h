@@ -9,6 +9,8 @@
 
 @property(readonly) IMMessage * message;
 
+- (int)_compareToChatItem:(id)arg1;
+- (int)_reverseCompareToChatItem:(id)arg1;
 - (void)_setMessage:(id)arg1;
 - (id)description;
 - (id)initWithMessage:(id)arg1;

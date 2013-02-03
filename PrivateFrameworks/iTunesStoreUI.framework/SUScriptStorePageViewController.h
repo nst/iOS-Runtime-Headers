@@ -2,19 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptSegmentedControl, NSNumber;
+@class NSArray, NSString, SUScriptSegmentedControl, NSNumber;
 
 @interface SUScriptStorePageViewController : SUScriptViewController {
+    NSArray *_initialURLStrings;
 }
 
+@property(readonly) NSArray * URLStrings;
 @property(retain) id URLs;
+@property id alwaysDispatchesScrollEvents;
 @property BOOL doubleTapEnabled;
+@property BOOL flashesScrollIndicators;
 @property(readonly) int indicatorStyleGray;
 @property(readonly) int indicatorStyleWhite;
 @property id inputViewObeysDOMFocus;
 @property int loadingIndicatorStyle;
 @property(retain) id loadingTextColor;
 @property(retain) id loadingTextShadowColor;
+@property id loadsWhenHidden;
 @property(retain) id placeholderBackgroundStyle;
 @property(readonly) id rootObject;
 @property BOOL scrollingEnabled;
@@ -23,48 +28,31 @@
 @property BOOL shouldLoadProgressively;
 @property id shouldShowFormAccessory;
 @property BOOL showsBackgroundShadow;
+@property id showsHorizontalScrollIndicator;
+@property id showsVerticalScrollIndicator;
 @property(retain) NSNumber * timeoutInterval;
+@property(retain) NSString * userInfo;
 
 + (BOOL)copyURLStrings:(id*)arg1 forValue:(id)arg2;
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
+- (id)URLStrings;
 - (id)URLs;
 - (id)_className;
-- (id)_copyPlaceholderBackgroundGradient;
-- (id)_copyRootScriptObject;
-- (id)_copySegmentedControl;
-- (id)_copyTimeoutInterval;
-- (id)_copyURLs;
 - (id)_copyURLsFromURLStrings:(id)arg1;
-- (id)_copyValueForScriptPropertyKey:(id)arg1;
-- (BOOL)_isDoubleTapEnabled;
 - (BOOL)_isSegmentedControlValid:(id)arg1;
-- (BOOL)_loadWebArchiveWithIdentifier:(id)arg1 fromDirectory:(id)arg2;
 - (id)_pathForWebArchiveWithIdentifier:(id)arg1 inDirectory:(id)arg2;
-- (void)_reload;
-- (BOOL)_saveWebArchiveWithIdentifier:(id)arg1 toDirectory:(id)arg2;
-- (BOOL)_scrollingEnabled;
-- (void)_setDoubleTapEnabled:(BOOL)arg1;
-- (void)_setPlaceholderBackgroundGradient:(id)arg1;
-- (void)_setScrollingEnabled:(BOOL)arg1;
-- (void)_setSegmentedControl:(id)arg1;
-- (void)_setShouldInvalidateForLowMemory:(BOOL)arg1;
-- (void)_setShouldLoadProgressively:(BOOL)arg1;
-- (void)_setShouldShowFormAccessory:(BOOL)arg1;
-- (void)_setShowsBackgroundShadow:(BOOL)arg1;
-- (void)_setTimeoutInterval:(double)arg1;
 - (void)_setURLs:(id)arg1;
 - (void)_setValue:(id)arg1 forScriptPropertyKey:(id)arg2;
-- (BOOL)_shouldInvalidateForLowMemory;
-- (BOOL)_shouldLoadProgressively;
-- (BOOL)_shouldShowFormAccessory;
-- (BOOL)_showsBackgroundShadow;
-- (id)_storePageScriptProperties;
 - (id)_storePageViewController;
+- (id)alwaysDispatchesScrollEvents;
+- (void)applyURLStrings:(id)arg1 toViewController:(id)arg2;
 - (id)attributeKeys;
+- (void)dealloc;
 - (BOOL)doubleTapEnabled;
+- (BOOL)flashesScrollIndicators;
 - (int)indicatorStyleGray;
 - (int)indicatorStyleWhite;
 - (id)init;
@@ -74,34 +62,44 @@
 - (int)loadingIndicatorStyle;
 - (id)loadingTextColor;
 - (id)loadingTextShadowColor;
+- (id)loadsWhenHidden;
 - (id)newNativeViewController;
 - (id)placeholderBackgroundStyle;
-- (void)reload;
+- (void)reloadWithCallback:(id)arg1;
 - (id)rootObject;
 - (id)saveWebArchiveWithIdentifier:(id)arg1 toDirectory:(id)arg2;
 - (id)scriptAttributeKeys;
 - (BOOL)scrollingEnabled;
 - (id)segmentedControl;
+- (void)setAlwaysDispatchesScrollEvents:(id)arg1;
 - (void)setDoubleTapEnabled:(BOOL)arg1;
+- (void)setFlashesScrollIndicators:(BOOL)arg1;
 - (void)setInputViewObeysDOMFocus:(id)arg1;
 - (void)setLoadingIndicatorStyle:(int)arg1;
 - (void)setLoadingTextColor:(id)arg1;
 - (void)setLoadingTextShadowColor:(id)arg1;
+- (void)setLoadsWhenHidden:(id)arg1;
 - (void)setNativeViewController:(id)arg1;
 - (void)setPlaceholderBackgroundStyle:(id)arg1;
-- (void)setRootObject:(id)arg1;
+- (void)setScrollEdgeInsetsWithTop:(float)arg1 left:(float)arg2 bottom:(float)arg3 right:(float)arg4;
 - (void)setScrollingEnabled:(BOOL)arg1;
 - (void)setSegmentedControl:(id)arg1;
 - (void)setShouldInvalidateForLowMemory:(BOOL)arg1;
 - (void)setShouldLoadProgressively:(BOOL)arg1;
 - (void)setShouldShowFormAccessory:(id)arg1;
 - (void)setShowsBackgroundShadow:(BOOL)arg1;
+- (void)setShowsHorizontalScrollIndicator:(id)arg1;
+- (void)setShowsVerticalScrollIndicator:(id)arg1;
 - (void)setTimeoutInterval:(id)arg1;
 - (void)setURLs:(id)arg1;
+- (void)setUserInfo:(id)arg1;
 - (BOOL)shouldInvalidateForLowMemory;
 - (BOOL)shouldLoadProgressively;
 - (id)shouldShowFormAccessory;
 - (BOOL)showsBackgroundShadow;
+- (id)showsHorizontalScrollIndicator;
+- (id)showsVerticalScrollIndicator;
 - (id)timeoutInterval;
+- (id)userInfo;
 
 @end

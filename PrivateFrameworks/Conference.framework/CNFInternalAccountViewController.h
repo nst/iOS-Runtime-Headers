@@ -27,7 +27,6 @@
 - (void)dealloc;
 - (id)initWithAccount:(id)arg1;
 - (BOOL)isConnectedToDaemon;
-- (void)killImagent;
 - (id)registrationFailureReason:(id)arg1;
 - (id)registrationStatus:(id)arg1;
 - (void)setAccount:(id)arg1;

@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITableViewDataSource, UITableView;
+@class UITableViewDataSource, UIRefreshControl, UITableView;
 
 @interface UITableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     struct { 
         unsigned int clearsSelectionOnViewWillAppear : 1; 
+        unsigned int insetsApplied : 1; 
+        unsigned int adjustingInsets : 1; 
     id _keyboardSupport;
     id _staticDataSource;
     } _tableViewControllerFlags;
@@ -14,12 +16,12 @@
 }
 
 @property BOOL clearsSelectionOnViewWillAppear;
+@property(retain) UIRefreshControl * refreshControl;
 @property(getter=_staticDataSource,setter=_setStaticDataSource:,retain) UITableViewDataSource * staticDataSource;
 @property(retain) UITableView * tableView;
 
 - (void)_adjustTableForKeyboardInfo:(id)arg1;
 - (id)_existingTableView;
-- (id)_gkTableView:(id)arg1 buttonCellWithTitle:(id)arg2 theme:(id)arg3;
 - (void)_setStaticDataSource:(id)arg1;
 - (id)_staticDataSource;
 - (BOOL)clearsSelectionOnViewWillAppear;
@@ -31,9 +33,11 @@
 - (id)initWithStyle:(int)arg1;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (id)refreshControl;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)setClearsSelectionOnViewWillAppear:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setRefreshControl:(id)arg1;
 - (void)setTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;

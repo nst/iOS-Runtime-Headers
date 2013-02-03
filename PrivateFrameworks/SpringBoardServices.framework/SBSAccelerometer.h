@@ -2,20 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-@class <SBSAccelerometerDelegate>, NSThread, NSLock;
+@class <SBSAccelerometerDelegate>, BKSAccelerometer;
 
-@interface SBSAccelerometer : NSObject {
-    struct __CFRunLoop { } *_accelerometerEventsRunLoop;
-    struct __CFRunLoopSource { } *_accelerometerEventsSource;
+@interface SBSAccelerometer : NSObject <BKSAccelerometerDelegate> {
+    BKSAccelerometer *_bksMirror;
     <SBSAccelerometerDelegate> *_delegate;
-    double _interval;
-    NSLock *_lock;
-    BOOL _orientationEventsEnabled;
-    NSThread *_orientationEventsThread;
-    int _orientationEventsToken;
-    float _xThreshold;
-    float _yThreshold;
-    float _zThreshold;
 }
 
 @property BOOL accelerometerEventsEnabled;
@@ -26,11 +17,8 @@
 @property float yThreshold;
 @property float zThreshold;
 
-- (void)_checkIn;
-- (void)_checkOut;
-- (void)_orientationDidChange;
-- (id)_orientationEventsThread;
-- (void)_serverWasRestarted;
+- (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
+- (void)accelerometer:(id)arg1 didChangeDeviceOrientation:(int)arg2;
 - (BOOL)accelerometerEventsEnabled;
 - (int)currentDeviceOrientation;
 - (void)dealloc;

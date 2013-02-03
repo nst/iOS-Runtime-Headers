@@ -2,38 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MailServices.framework/MailServices
  */
 
-@class CPDistributedMessagingCenter, NSObject, NSLock;
-
-@interface MSMailDefaultService : NSObject {
-    CPDistributedMessagingCenter *_action;
-    NSObject *_delegate;
-    NSLock *_lock;
-    CPDistributedMessagingCenter *_server;
+@interface MSMailDefaultService : MSService {
     BOOL _shouldLaunch;
 }
 
-@property NSObject * delegate;
 @property BOOL shouldLaunchMobileMail;
 
-+ (BOOL)shouldUseNewThreadingModel;
-+ (id)smi_serverCommandName;
-+ (void)useNewThreadingModel;
-
-- (id)_activeAction;
-- (BOOL)_callMailServicesMethod:(id)arg1 arg:(id)arg2 reply:(id*)arg3 error:(id*)arg4 responseSelector:(SEL)arg5;
-- (id)_copyServer;
-- (id)_generateUnitTestReplyForMethod:(id)arg1 arg:(id)arg2 error:(id*)arg3;
-- (void)_generateUnitTestResponsesForResultArray:(id)arg1;
-- (void)_mailServiceDidTerminate:(id)arg1;
-- (void)_setActiveAction:(id)arg1 responseSelector:(SEL)arg2;
-- (void)_setServer:(id)arg1;
-- (void)_smi_notifyClientDidFinishWithError:(id)arg1;
-- (BOOL)_unitTestsAreEnabled;
-- (void)cancel;
-- (void)dealloc;
-- (id)delegate;
+- (id)_createServiceOnQueue:(id)arg1;
+- (id)_handleMessageSendFailure:(id)arg1 message:(id)arg2 messageIndex:(long long)arg3 context:(inout id*)arg4;
 - (id)init;
-- (void)setDelegate:(id)arg1;
 - (void)setShouldLaunchMobileMail:(BOOL)arg1;
 - (BOOL)shouldLaunchMobileMail;
 

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class AVWeakReference, NSMutableDictionary, AVPropertyStorage, NSError, AVPlayerItem, AVAsset, NSDate, AVVideoComposition, NSArray, NSDictionary, AVPlayerConnection, NSString, AVAudioMix, NSMutableArray, NSURL;
+@class AVWeakReference, NSMutableDictionary, AVPropertyStorage, NSError, AVPlayerItem, AVAsset, NSDate, AVVideoComposition, NSArray, NSObject<OS_dispatch_queue>, AVPlayerConnection, NSDictionary, NSString, AVAudioMix, NSMutableArray, NSURL;
 
 @interface AVPlayerItemInternal : NSObject {
     struct { 
@@ -58,23 +58,31 @@
     BOOL externalSubtitlesEnabled;
     struct OpaqueFigCPEProtector { } *figCPEProtector;
     struct OpaqueFigPlaybackItem { } *figPlaybackItem;
+    struct OpaqueCMTimebase { } *figTimebase;
     NSDictionary *gaplessInfo;
     NSMutableArray *handlersToCallWhenReadyForEnqueueing;
     BOOL haveCPEProtector;
     BOOL haveInitialSamples;
     BOOL initialAlwaysMonitorsPlayability;
+    double initialBufferingTargetMaximum;
+    double initialBufferingTargetMinimum;
     BOOL initialContinuesPlayingDuringPrerollForRateChange;
     BOOL initialContinuesPlayingDuringPrerollForSeek;
     NSDate *initialDate;
     } initialDuration;
     NSDate *initialEstimatedDate;
+    struct __CFString { } *initialFigTimePitchAlgorithm;
     } initialForwardPlaybackEndTime;
     BOOL initialLimitReadAhead;
+    int initialPlaybackLikelyToKeepUpTrigger;
     } initialReversePlaybackEndTime;
     } initialTime;
     } initialToleranceAfter;
     } initialToleranceBefore;
+    BOOL initialWillNeverSeekBackwardsHint;
     BOOL isCurrentPlayerItem;
+    NSMutableArray *itemOutputs;
+    NSMutableArray *itemVideoOutputs;
     NSMutableDictionary *mediaOptionsSelectedByClient;
     BOOL needTimedMetadataNotification;
     AVPlayerItem *nextItem;
@@ -88,10 +96,13 @@
     NSDictionary *rampInOutInfo;
     id seekCompletionHandler;
     struct OpaqueFigSimpleMutex { } *seekIDMutex;
+    BOOL seekingWaitsForVideoCompositionRendering;
     float soundCheckVolumeNormalization;
-    struct dispatch_queue_s { } *stateDispatchQueue;
+    NSObject<OS_dispatch_queue> *stateDispatchQueue;
     int status;
     NSMutableArray *syncLayers;
+    NSObject<OS_dispatch_queue> *syncLayersQ;
+    NSArray *textStyleRules;
     NSArray *timedMetadata;
     NSArray *trackIDsForAssetWithFigPlaybackItem;
     NSMutableDictionary *tracksSelectedByClientViaAlternateTrackGroupSPI;

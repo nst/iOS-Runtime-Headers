@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIColor, <_UIDefinitionServiceDelegate>, NSURL;
+@class NSURL, UIColor, NSArray;
 
 @interface _UIDefinitionService : NSObject <UIWebViewDelegate> {
     UIColor *_backgroundColor;
-    <_UIDefinitionServiceDelegate> *_delegate;
     NSArray *_dictionaries;
     NSURL *_stylesheetURL;
 }
 
 @property(retain) UIColor * backgroundColor;
-@property <_UIDefinitionServiceDelegate> * delegate;
 @property(readonly) NSURL * stylesheetURL;
 
 + (id)backgroundColor;
@@ -21,13 +19,11 @@
 - (id)_dictionaryForString:(id)arg1;
 - (id)backgroundColor;
 - (void)dealloc;
-- (id)delegate;
 - (BOOL)hasMarkupForString:(id)arg1;
 - (id)init;
 - (unsigned int)languageDirectionForString:(id)arg1;
 - (id)markupForString:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (id)stylesheetURL;
 
 @end

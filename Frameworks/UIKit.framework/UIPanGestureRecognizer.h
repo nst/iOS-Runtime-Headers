@@ -17,6 +17,7 @@
     unsigned int _failsPastMaxTouches : 1;
     unsigned int _canPanHorizontally : 1;
     unsigned int _canPanVertically : 1;
+    unsigned int _ignoresStationaryTouches : 1;
     } _firstScreenLocation;
     float _hysteresis;
     } _lastScreenLocation;
@@ -25,6 +26,7 @@
     } _lastUnadjustedScreenLocation;
     unsigned int _maximumNumberOfTouches;
     unsigned int _minimumNumberOfTouches;
+    NSMutableArray *_movingTouches;
     id _previousVelocitySample;
     NSMutableArray *_touches;
     id _velocitySample;
@@ -42,7 +44,9 @@
 - (struct CADoublePoint { double x1; double x2; })_convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromScreenCoordinatesToView:(id)arg2;
 - (struct CADoublePoint { double x1; double x2; })_convertPoint:(struct CGPoint { float x1; float x2; })arg1 toScreenCoordinatesFromView:(id)arg2;
 - (struct CADoublePoint { double x1; double x2; })_convertVelocitySample:(id)arg1 fromScreenCoordinatesToView:(id)arg2;
+- (void)_handleEndedTouches:(id)arg1 withFinalStateAdjustments:(id)arg2;
 - (float)_hysteresis;
+- (BOOL)_ignoresStationaryTouches;
 - (int)_lastTouchCount;
 - (struct UIOffset { float x1; float x2; })_offsetInViewFromScreenLocation:(struct CGPoint { float x1; float x2; })arg1 toScreenLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)_previousVelocitySample;
@@ -52,9 +56,11 @@
 - (void)_setCanPanHorizontally:(BOOL)arg1;
 - (void)_setCanPanVertically:(BOOL)arg1;
 - (void)_setHysteresis:(float)arg1;
+- (void)_setIgnoresStationaryTouches:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })_shiftPanLocationToNewScreenLocation:(struct CGPoint { float x1; float x2; })arg1 lockingToAxis:(int)arg2;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
 - (void)_touchesListChangedFrom:(id)arg1 to:(id)arg2;
+- (BOOL)_updateMovingTouchesArraySavingOldArray:(id*)arg1;
 - (id)_velocitySample;
 - (BOOL)_willScrollX;
 - (BOOL)_willScrollY;

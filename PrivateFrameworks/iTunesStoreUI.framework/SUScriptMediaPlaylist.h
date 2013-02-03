@@ -11,13 +11,10 @@
 
 + (void)initialize;
 + (int)nativePlaylistAttributesForScriptPlaylistAttributes:(id)arg1;
-+ (id)nativePropertyForScriptProperty:(id)arg1;
 + (id)scriptPlaylistAttributesForNativePlaylistAttributes:(int)arg1;
-+ (id)scriptPropertyForNativeProperty:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
-- (id)_valueForProperty:(id)arg1;
 - (id)nativePlaylist;
 - (id)valueForProperty:(id)arg1;
 

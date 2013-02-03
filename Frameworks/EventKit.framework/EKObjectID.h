@@ -17,11 +17,13 @@
 - (id)URIRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entityName;
 - (int)entityType;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithEntityType:(int)arg1 rowID:(int)arg2 temporary:(BOOL)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isTemporary;

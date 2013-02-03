@@ -4,33 +4,29 @@
 
 @class UIBarButtonItem, UIDocumentInteractionController;
 
-@interface QLPopOverState : NSObject <UIDocumentInteractionControllerDelegate, UIPrintInteractionControllerDelegate> {
+@interface QLPopOverState : NSObject <UIDocumentInteractionControllerDelegate> {
     UIBarButtonItem *_barButtonItem;
     id _delegate;
     UIDocumentInteractionController *_documentInteractionController;
-    BOOL _inRotation;
     int _popOverState;
 }
 
 @property int popOverState;
 
+- (id)activityItemForDocumentInteractionController:(id)arg1;
 - (void)dealloc;
 - (void)didRotate;
 - (void)dismissMenuAnimated:(BOOL)arg1;
-- (BOOL)documentInteractionController:(id)arg1 canPerformAction:(SEL)arg2;
-- (BOOL)documentInteractionController:(id)arg1 performAction:(SEL)arg2;
 - (void)documentInteractionController:(id)arg1 willBeginSendingToApplication:(id)arg2;
-- (void)documentInteractionControllerDidDismissOpenInMenu:(id)arg1;
 - (void)documentInteractionControllerDidDismissOptionsMenu:(id)arg1;
-- (void)documentInteractionControllerWillPresentOpenInMenu:(id)arg1;
+- (id)documentInteractionControllerViewControllerForPreview:(id)arg1;
 - (void)documentInteractionControllerWillPresentOptionsMenu:(id)arg1;
 - (id)initWithDocumentInteractionController:(id)arg1 delegate:(id)arg2;
 - (int)popOverState;
 - (void)presentOpenInMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)presentOptionsMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (void)presentPrintMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (void)printInteractionControllerDidDismissPrinterOptions:(id)arg1;
-- (void)printInteractionControllerWillPresentPrinterOptions:(id)arg1;
+- (id)printInfoForDocumentInteractionController:(id)arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (void)setPopOverState:(int)arg1;
 - (void)willRotate;
 

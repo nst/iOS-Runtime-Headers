@@ -15,7 +15,7 @@
 - (void)dealloc;
 - (unsigned int)fragmentCount;
 - (void)getFormatFlowedString:(id*)arg1 insertedTrailingSpaces:(BOOL*)arg2 encoding:(unsigned long)arg3;
-- (void)getString:(id*)arg1 quoteLevel:(unsigned int*)arg2 ofFragmentAtIndex:(int)arg3;
+- (void)getString:(id*)arg1 quoteLevel:(unsigned int*)arg2 ofFragmentAtIndex:(unsigned int)arg3;
 - (id)quotedString:(unsigned long)arg1;
 - (id)string;
 

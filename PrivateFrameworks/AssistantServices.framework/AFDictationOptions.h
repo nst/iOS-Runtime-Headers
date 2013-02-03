@@ -11,6 +11,7 @@
     NSString *_fieldLabel;
     NSString *_interactionIdentifier;
     int _keyboardType;
+    NSString *_languageCodeOverride;
     NSString *_postfixText;
     NSString *_prefixText;
     int _returnKeyType;
@@ -23,20 +24,22 @@
 @property(copy) NSString * fieldLabel;
 @property(copy) NSString * interactionIdentifier;
 @property int keyboardType;
+@property(copy) NSString * languageCodeOverride;
 @property(copy) NSString * postfixText;
 @property(copy) NSString * prefixText;
 @property int returnKeyType;
 @property(copy) NSString * selectedText;
 
+- (void).cxx_destruct;
 - (id)applicationName;
 - (id)applicationVersion;
-- (void)dealloc;
 - (id)dkPlistRepresentation;
 - (id)fieldIdentifier;
 - (id)fieldLabel;
 - (id)initWithDKPlistRepresentation:(id)arg1;
 - (id)interactionIdentifier;
 - (int)keyboardType;
+- (id)languageCodeOverride;
 - (id)postfixText;
 - (id)prefixText;
 - (int)returnKeyType;
@@ -47,6 +50,7 @@
 - (void)setFieldLabel:(id)arg1;
 - (void)setInteractionIdentifier:(id)arg1;
 - (void)setKeyboardType:(int)arg1;
+- (void)setLanguageCodeOverride:(id)arg1;
 - (void)setPostfixText:(id)arg1;
 - (void)setPrefixText:(id)arg1;
 - (void)setReturnKeyType:(int)arg1;

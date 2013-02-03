@@ -19,6 +19,8 @@
 @property(readonly) CoreDAVErrorItem * rootError;
 @property(retain) CoreDAVXMLElementGenerator * rootErrorGenerator;
 
++ (BOOL)canHandleContentType:(id)arg1;
+
 - (id)baseURL;
 - (void)dealloc;
 - (id)initWithData:(id)arg1;

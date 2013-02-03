@@ -4,7 +4,7 @@
 
 @class MPMediaLibrary, IUVideoPlaybackViewController, UISnapshotView, IUiPodSegmentedViewController, IUWildcatVideoDetailViewController, UIViewController, IUVideosBackstopView;
 
-@interface IUWildcatVideosViewController : IUWildcatViewController <IUFoldingTransitionDelegate, IUDoorSwingTransitionViewDelegate, IUSegmentedViewControllerDelegate, ViewControllerArchiveNode> {
+@interface IUWildcatVideosViewController : IUWildcatViewController <IUFoldingTransitionDelegate, IUDoorSwingTransitionViewDelegate, IUSegmentedViewControllerDelegate, ViewControllerArchiveNode, IUStoreClientPurchaseDestination> {
     struct { 
         UIViewController *fromViewController; 
         UIViewController *toViewController; 
@@ -31,11 +31,13 @@
 - (void)_availableMediaLibrariesDidChangeNotification:(id)arg1;
 - (void)_backgroundAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_cancelCurrentTransition;
+- (void)_enabledMediaTypesDidChange:(id)arg1;
 - (void)_finishTransitionAnimation:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForViewController:(id)arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (BOOL)_isPlaybackViewController:(id)arg1;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (void)_libraryDidChangeNotification:(id)arg1;
 - (id)_newSegmentedController:(BOOL)arg1;
 - (void)_popSharedLibrary:(id)arg1;
 - (void)_popSharedLibraryAnimated:(BOOL)arg1;
@@ -54,6 +56,7 @@
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)directChildViewController;
 - (void)doorSwingTransitionView:(id)arg1 didFinishTransition:(int)arg2;
+- (void)finishPurchasedItemTransition;
 - (void)foldingTransitionDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)init;
 - (void)loadView;
@@ -62,6 +65,7 @@
 - (id)playbackViewController;
 - (void)popToBrowserViewControllerAnimated:(BOOL)arg1;
 - (void)popToDetailViewControllerAnimated:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })preparePurchasedItemForTransition:(unsigned long long)arg1;
 - (void)pushDetailViewContoller:(id)arg1 animated:(BOOL)arg2 fromFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)pushPlaybackViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)pushSharedLibrary:(id)arg1 animated:(BOOL)arg2;

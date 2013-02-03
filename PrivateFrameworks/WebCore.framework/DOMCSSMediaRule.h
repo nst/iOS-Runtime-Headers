@@ -7,8 +7,8 @@
 @interface DOMCSSMediaRule : DOMCSSRule {
 }
 
-@property(retain,readonly) DOMCSSRuleList * cssRules;
-@property(retain,readonly) DOMMediaList * media;
+@property(readonly) DOMCSSRuleList * cssRules;
+@property(readonly) DOMMediaList * media;
 
 - (id)cssRules;
 - (void)deleteRule:(unsigned int)arg1;

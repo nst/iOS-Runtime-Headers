@@ -12,7 +12,7 @@
     int (*byref_keep)();
     id containedObject;
     int flags;
-    struct Block_byref { void *x1; struct Block_byref {} *x2; int x3; int x4; int (*x5)(); int (*x6)(); } *forwarding;
+    struct Block_byref { void *x1; struct Block_byref {} *x2; int x3; unsigned int x4; int (*x5)(); int (*x6)(); } *forwarding;
     int size;
 }
 

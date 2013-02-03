@@ -14,6 +14,7 @@
 @property double y;
 @property double z;
 
+- (id)description;
 - (void)setTimestamp:(double)arg1;
 - (void)setX:(double)arg1;
 - (void)setY:(double)arg1;

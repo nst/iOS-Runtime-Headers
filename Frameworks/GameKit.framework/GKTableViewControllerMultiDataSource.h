@@ -2,36 +2,52 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSObject<GKTableViewControllerDataSource>, NSArray;
+@class GKSectionArrayDataSource, NSOrderedSet, NSArray;
 
 @interface GKTableViewControllerMultiDataSource : GKSectionArrayDataSource {
     int _currentDataSourceIndex;
     NSArray *_sectionDataSources;
 }
 
-@property(retain) NSArray * contentSections;
-@property(readonly) NSObject<GKTableViewControllerDataSource> * currentDataSource;
+@property(retain) NSOrderedSet * contentSections;
+@property(readonly) GKSectionArrayDataSource * currentDataSource;
 @property int currentDataSourceIndex;
-@property(retain) NSArray * footerSections;
-@property(retain) NSArray * headerSections;
+@property(retain) NSOrderedSet * footerSections;
+@property(retain) NSOrderedSet * headerSections;
 @property(retain) NSArray * sectionDataSources;
 
+- (id)_gkDescription;
+- (id)_gkDescriptionWithChildren:(int)arg1;
+- (BOOL)allowsUpdatesForDataSource:(id)arg1;
+- (void)beginSectionUpdates;
 - (id)contentSections;
 - (unsigned long long)contextForTableView:(id)arg1 updateStatusViewBeforeLoading:(id)arg2;
 - (id)currentDataSource;
 - (int)currentDataSourceIndex;
-- (id)currentMultiSections;
 - (void)dealloc;
 - (id)description;
+- (void)endSectionUpdates;
+- (id)footerSections;
+- (id)headerSections;
+- (void)prepareChildDataSources;
+- (void)prepareSections;
+- (struct CGPoint { float x1; float x2; })previousContentOffset;
 - (void)refreshCurrentDataSourceWithCompletionHandlerAndError:(id)arg1;
+- (int)refreshDataGeneration;
 - (void)refreshDataWithCompletionHandlerAndError:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)sectionDataSources;
+- (id)sections;
+- (void)setContentSections:(id)arg1;
 - (void)setCurrentDataSourceIndex:(int)arg1;
+- (void)setFooterSections:(id)arg1;
+- (void)setHeaderSections:(id)arg1;
+- (void)setPreviousContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setSectionDataSources:(id)arg1;
 - (void)setVisibleSections:(id)arg1;
-- (void)tableView:(id)arg1 prepareExpensiveContentAtIndexPaths:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)tableView:(id)arg1 loadAdditionalDataForIndexPaths:(id)arg2 thenUpdateView:(id)arg3;
 - (void)tableView:(id)arg1 updateStatusViewAfterLoading:(id)arg2 context:(unsigned long long)arg3 withError:(id)arg4;
+- (void)updateFlexibleSpaceHeightsInTableView:(id)arg1;
 - (id)visibleSections;
 
 @end

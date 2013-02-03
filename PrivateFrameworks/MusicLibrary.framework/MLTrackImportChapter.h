@@ -20,15 +20,16 @@
 @property unsigned int startTimeInMilliseconds;
 @property(copy) NSString * title;
 
+- (void).cxx_destruct;
 - (id)URL;
 - (id)URLTitle;
 - (int)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)imageCacheKey;
 - (id)imageData;
 - (BOOL)isEqualIgnoringTimesAndTitle:(id)arg1;
+- (void)normalizeProperties;
 - (void)setImageCacheKey:(id)arg1;
 - (void)setImageData:(id)arg1;
 - (void)setStartTimeInMilliseconds:(unsigned int)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSMutableDictionary, NSMutableSet, <BBObserverDelegate>, NSMapTable;
+@class <BBObserverDelegate>, NSMutableDictionary, NSMutableSet;
 
 @interface BBObserver : NSObject <XPCProxyTarget> {
     struct { 
@@ -20,8 +20,9 @@
         unsigned int imageForThumbData : 1; 
         unsigned int sizeForThumbSize : 1; 
         unsigned int purgeReferences : 1; 
+        unsigned int alertBehaviorOverrides : 1; 
     NSMutableDictionary *_attachmentInfoByBulletinID;
-    NSMapTable *_bulletinLifeAssertions;
+    NSMutableDictionary *_bulletinLifeAssertions;
     NSMutableDictionary *_bulletinUpdateQueuesBySectionID;
     <BBObserverDelegate> *_delegate;
     } _delegateFlags;
@@ -64,16 +65,22 @@
 - (void)assertionExpired:(id)arg1 transactionID:(unsigned int)arg2;
 - (id)attachmentImageForKey:(id)arg1 forBulletinID:(id)arg2;
 - (struct CGSize { float x1; float x2; })attachmentSizeForKey:(id)arg1 forBulletinID:(id)arg2;
+- (void)clearBulletins:(id)arg1 inSection:(id)arg2;
 - (void)clearSection:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (void)getAlertBehaviorOverridesWithCompletion:(id)arg1;
 - (void)getAttachmentImageForBulletin:(id)arg1 withCompletion:(id)arg2;
+- (void)getPrivilegedAddressBookGroupRecordIDAndNameWithCompletion:(id)arg1;
+- (void)getPrivilegedSenderTypesWithCompletion:(id)arg1;
 - (void)getRecentUnacknowledgedBulletinsForFeeds:(unsigned int)arg1 withCompletion:(id)arg2;
 - (void)getSectionInfoWithCompletion:(id)arg1;
 - (void)getSectionOrderRuleWithCompletion:(id)arg1;
 - (void)getSortDescriptorsForSectionID:(id)arg1 withCompletion:(id)arg2;
 - (id)init;
+- (id)initWithQueue:(id)arg1;
 - (void)invalidate;
+- (void)noteAlertBehaviorOverridesChanged:(id)arg1;
 - (unsigned int)observerFeed;
 - (id)parametersForSectionID:(id)arg1;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;

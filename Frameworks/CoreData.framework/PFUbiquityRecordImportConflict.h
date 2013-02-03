@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSNumber, NSArray, NSManagedObject, NSDictionary, NSString, PFUbiquityImportContext, PFUbiquityKnowledgeVector, NSDate;
+@class NSDate, NSNumber, NSManagedObject, NSDictionary, NSString, PFUbiquityImportContext, PFUbiquityKnowledgeVector, NSArray;
 
 @interface PFUbiquityRecordImportConflict : NSObject {
     NSDate *_conflictLogDate;
@@ -30,8 +30,7 @@
 @property(retain) NSManagedObject * sourceObject;
 @property(retain) NSArray * transactionHistory;
 
-+ (id)createArrayOfLogURLsForTransactionEntries:(id)arg1;
-+ (id)createTransactionLogForTransactionEntry:(id)arg1 withError:(id*)arg2;
++ (id)createTransactionLogForTransactionEntry:(id)arg1 withImportContext:(id)arg2 error:(id*)arg3;
 + (id)electAncestorKnowledgeVectorForKnowledgeVector:(id)arg1 withExportingPeerID:(id)arg2 fromPeerSnapshotCollection:(id)arg3;
 + (void)initialize;
 + (int)resolvedTypeForConflictingLogType:(int)arg1 andLatestTransactionEntry:(id)arg2 skipObject:(BOOL*)arg3;

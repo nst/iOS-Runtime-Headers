@@ -6,13 +6,13 @@
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    unsigned int _count;
+    unsigned long _count;
     unsigned int *_items;
     } _lock;
-    unsigned int _size;
+    unsigned long _size;
 }
 
-@property(readonly) unsigned int count;
+@property(readonly) unsigned long count;
 
 - (void)addID:(unsigned int)arg1;
 - (void)addIDsFromList:(id)arg1;

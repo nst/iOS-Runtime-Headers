@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboardCandidateBarBackgroundView, UIKeyboardCandidateExtended, NSMutableArray, <UIKeyboardCandidateListDelegate>, UIView, NSString, UIScrollView, NSArray;
+@class UIImageView, NSArray, NSString, UIScrollView, <UIKeyboardCandidateListDelegate>, NSMutableArray;
 
 @interface UIKeyboardCandidateBar : UIView <UIKeyboardCandidateList, UIKeyboardCandidateListDelegate> {
     struct CGRect { 
@@ -15,66 +15,67 @@
             float height; 
         } size; 
     NSArray *m_allCandidates;
-    BOOL m_animating;
+    BOOL m_canExtend;
+    UIImageView *m_candidateMaskView;
     NSArray *m_candidates;
     NSMutableArray *m_cells;
-    UIKeyboardCandidateBarBackgroundView *m_cellsContainerView;
     unsigned int m_currentCandidateIndex;
     <UIKeyboardCandidateListDelegate> *m_delegate;
-    UIView *m_extendedButton;
-    UIKeyboardCandidateExtended *m_extendedCandidatesView;
     } m_inlineRect;
     NSString *m_inlineText;
-    BOOL m_largeUIShowing;
     float m_maxX;
-    BOOL m_minimized;
     UIScrollView *m_scrollView;
-    UIView *m_shadowView;
 }
 
-@property(getter=isAnimating) BOOL animating;
-@property(retain) UIKeyboardCandidateBarBackgroundView * cellsContainerView;
-@property(retain) UIKeyboardCandidateExtended * extendedCandidatesView;
-@property(getter=isMinimized) BOOL minimized;
+@property BOOL canExtend;
+@property(readonly) UIImageView * candidateMaskView;
+@property(retain) NSArray * candidates;
+@property(readonly) NSString * inlineText;
+@property(readonly) UIScrollView * scrollView;
+@property unsigned int selectedCandidateIndex;
 
-+ (id)activeInstance;
 + (float)candidateBarHeight;
-+ (id)sharedInstance;
++ (float)defaultCandidateWidth;
 
-- (id).cxx_construct;
 - (BOOL)_addCells:(int)arg1;
 - (void)_bgAddCells:(id)arg1;
 - (void)_cellSelected:(id)arg1;
 - (void)_clearAll;
 - (void)_clearCells;
 - (void)_forceLayoutTo:(unsigned int)arg1;
-- (void)_hideExtendedCandidatesViewWithAnimation:(BOOL)arg1;
+- (float)_selectCandidateClosestToPageOffset:(float)arg1 withForwardPagingDirection:(BOOL)arg2;
 - (void)_setCurrentCandidateIndex:(unsigned int)arg1;
-- (void)_showExtendedCandidatesView;
+- (BOOL)canExtend;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
 - (id)candidateAtIndex:(unsigned int)arg1;
 - (void)candidateListAcceptCandidate:(id)arg1;
 - (void)candidateListSelectionDidChange:(id)arg1;
 - (void)candidateListShouldBeDismissed:(id)arg1;
-- (id)cellsContainerView;
+- (id)candidateMaskView;
+- (id)candidates;
+- (void)candidatesDidChange;
 - (void)configureKeyboard:(id)arg1;
 - (unsigned int)count;
 - (id)currentCandidate;
 - (unsigned int)currentIndex;
 - (void)dealloc;
-- (id)extendedCandidatesView;
+- (BOOL)hasNextPage;
+- (BOOL)hasPreviousPage;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAnimating;
-- (BOOL)isMinimized;
+- (id)inlineText;
 - (void)layout;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)layoutCells;
+- (void)layoutSubviews;
 - (struct CGSize { float x1; float x2; })screenSpaceBetweenStatusBarAndKeyboard;
-- (void)setAnimating:(BOOL)arg1;
+- (id)scrollView;
+- (unsigned int)selectedCandidateIndex;
+- (void)setCanExtend:(BOOL)arg1;
 - (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
-- (void)setCellsContainerView:(id)arg1;
-- (void)setExtendedCandidatesView:(id)arg1;
-- (void)setMinimized:(BOOL)arg1;
+- (void)setCandidates:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setSelectedCandidateIndex:(unsigned int)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
+- (void)showCandidate:(id)arg1;
 - (void)showCandidateAtIndex:(unsigned int)arg1;
 - (void)showNextCandidate;
 - (void)showNextPage;

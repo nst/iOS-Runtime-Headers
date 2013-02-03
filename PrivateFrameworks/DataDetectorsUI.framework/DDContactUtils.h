@@ -6,6 +6,5 @@
 }
 
 + (id)normalizedPhoneNumberFromString:(id)arg1;
-+ (BOOL)phoneNumber:(id)arg1 isEqualToPhoneNumber:(id)arg2;
 
 @end

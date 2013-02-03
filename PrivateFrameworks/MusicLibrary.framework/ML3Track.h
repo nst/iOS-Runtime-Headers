@@ -10,6 +10,7 @@
 + (BOOL)_deleteAssetAtPath:(id)arg1;
 + (void)_enumeratePathsToDeleteFromLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3 usingBlock:(id)arg4;
 + (id)_flattenedChapterDataWithImportChapters:(id)arg1 library:(id)arg2 trackPersistentID:(long long)arg3;
++ (id)_normalizedImportChapters:(id)arg1 trackPersistentID:(long long)arg2;
 + (id)albumAllArtistsDefaultOrderingProperties;
 + (id)albumAndArtistDefaultOrderingProperties;
 + (id)albumsDefaultOrderingProperties;
@@ -19,6 +20,7 @@
 + (id)collectionClassesToUpdateBeforeDelete;
 + (id)composersDefaultOrderingProperties;
 + (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
++ (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2 orderingTerms:(id)arg3;
 + (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2;
 + (id)containerQueryWithContainer:(id)arg1;
 + (id)databaseTable;
@@ -30,16 +32,19 @@
 + (id)foreignColumnForProperty:(id)arg1;
 + (id)foreignDatabaseTableForProperty:(id)arg1;
 + (id)genresDefaultOrderingProperties;
++ (id)importChaptersByParsingAsset:(id)arg1;
 + (void)initialize;
-+ (id)joinClauseForProperty:(id)arg1;
++ (id)joinClausesForProperty:(id)arg1;
 + (BOOL)libraryContentsChangeForProperty:(id)arg1;
-+ (id)orderingPropertiesForITTGTrackOrder:(unsigned long)arg1;
++ (BOOL)libraryDynamicChangeForProperty:(id)arg1;
++ (id)orderingTermsForITTGTrackOrder:(unsigned long)arg1 descending:(BOOL)arg2;
 + (id)persistentIDColumnForTable:(id)arg1;
 + (id)podcastsDefaultOrderingProperties;
 + (id)podcastsEpisodesDefaultOrderingProperties;
 + (void)populateSortOrdersOfPropertyValues:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 + (id)predisambiguatedProperties;
 + (id)propertyForMPMediaEntityProperty:(id)arg1;
++ (BOOL)registerBookmarkMetadataIdentifierFunctionOnConnection:(id)arg1;
 + (int)revisionTrackingCode;
 + (id)sectionPropertyForProperty:(id)arg1;
 + (id)subselectPropertyForProperty:(id)arg1;
@@ -56,10 +61,11 @@
 - (void)didChangeValueForProperties:(const id*)arg1 count:(unsigned int)arg2;
 - (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 - (BOOL)populateArtworkCacheWithArtworkData:(id)arg1;
-- (void)populateChapterDataByImportingFromAsset;
 - (void)populateChapterDataWithImportChapters:(id)arg1;
 - (void)populateLocationPropertiesWithPath:(id)arg1;
+- (id)rawIntegrity;
 - (void)updateCollectionCloudStatus;
 - (BOOL)updateIntegrity;
+- (void)updateUbiquitousBookmarkTimestamp;
 
 @end

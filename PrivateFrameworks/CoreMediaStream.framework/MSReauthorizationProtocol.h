@@ -36,6 +36,7 @@
     } _context;
 }
 
+- (void).cxx_destruct;
 - (void)_coreProtocolDidFailAuthenticationError:(id)arg1;
 - (void)_coreProtocolDidFinishResponse:(id)arg1 error:(id)arg2;
 - (void)abort;

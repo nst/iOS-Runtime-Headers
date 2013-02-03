@@ -6,12 +6,14 @@
    See Warning(s) below.
  */
 
+@class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
+
 @interface SSXPCConnection : NSObject {
-    struct _xpc_connection_s { } *_connection;
+    NSObject<OS_xpc_object> *_connection;
     id _disconnectBlock;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     id _messageBlock;
-    struct dispatch_queue_s { } *_replyQueue;
+    NSObject<OS_dispatch_queue> *_replyQueue;
 }
 
 @property(copy) id disconnectBlock;
@@ -19,18 +21,19 @@
 
 - (id)_initSSXPCConnection;
 - (void)_reloadEventHandler;
-- (struct dispatch_queue_s { }*)copyReplyQueue;
-- (struct _xpc_endpoint_s { }*)createXPCEndpoint;
+- (id)copyReplyQueue;
+- (id)createXPCEndpoint;
 - (void)dealloc;
 - (id)disconnectBlock;
 - (id)init;
 - (id)initWithServiceName:(id)arg1;
-- (id)initWithXPCConnection:(struct _xpc_connection_s { }*)arg1;
+- (id)initWithXPCConnection:(id)arg1;
 - (id)messageBlock;
-- (void)sendMessage:(void*)arg1 withReply:(id)arg2;
-- (void)sendMessage:(void*)arg1;
+- (void)sendMessage:(id)arg1 withReply:(id)arg2;
+- (void)sendMessage:(id)arg1;
+- (void)sendSynchronousMessage:(id)arg1 withReply:(id)arg2;
 - (void)setDisconnectBlock:(id)arg1;
 - (void)setMessageBlock:(id)arg1;
-- (void)setReplyQueue:(struct dispatch_queue_s { }*)arg1;
+- (void)setReplyQueue:(id)arg1;
 
 @end

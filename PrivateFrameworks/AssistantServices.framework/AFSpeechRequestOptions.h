@@ -7,19 +7,22 @@
 @interface AFSpeechRequestOptions : NSObject {
     NSString *_btDeviceAddress;
     int _event;
+    BOOL _isEyesFree;
 }
 
 @property int activationEvent;
 @property(copy) NSString * btDeviceAddress;
+@property BOOL isEyesFree;
 
+- (void).cxx_destruct;
 - (int)activationEvent;
 - (id)btDeviceAddress;
-- (void)dealloc;
 - (id)dkPlistRepresentation;
 - (id)initWithActivationEvent:(int)arg1;
 - (id)initWithDKPlistRepresentation:(id)arg1;
+- (BOOL)isEyesFree;
 - (void)setActivationEvent:(int)arg1;
 - (void)setBtDeviceAddress:(id)arg1;
-- (BOOL)wantsToPickRoute;
+- (void)setIsEyesFree:(BOOL)arg1;
 
 @end

@@ -31,7 +31,6 @@
 - (void)_findNextView:(id*)arg1 orientation:(int*)arg2 context:(id)arg3;
 - (void)_liftForDragging:(id)arg1 mouseDownPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapRectWithFraction:(double)arg1 ofVisible:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (id)_mapTileView;
 - (void)_notifyAddedAnnotationViews:(id)arg1 animated:(BOOL)arg2;
 - (void)_refreshDisplayedAnnotations;
 - (void)_registerObserverForAnnotation:(id)arg1;
@@ -131,9 +130,9 @@
 - (void)setUserLocationView:(id)arg1;
 - (void)setUserLocationViewUpdateMode:(int)arg1;
 - (void)setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)set_mapTileView:(id)arg1;
 - (BOOL)showAddedAnnotationsAnimated:(BOOL)arg1;
 - (void)showAnnotationsInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)showBubbleAfterRegionChange;
 - (void)showBubbleAfterScroll;
 - (void)updateAnnotationLocationsDuringAnimation:(BOOL)arg1;
 - (void)updateUserLocationView:(BOOL)arg1;

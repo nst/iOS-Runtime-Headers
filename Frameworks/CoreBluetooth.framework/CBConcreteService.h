@@ -16,8 +16,8 @@
 - (id)endHandle;
 - (id)handleCharacteristicsDiscovered:(id)arg1;
 - (id)handleIncludedServicesDiscovered:(id)arg1;
-- (void)handlePeripheralDisconnection;
-- (id)initWithPeripheral:(id)arg1 UUID:(id)arg2 startHandle:(id)arg3 endHandle:(id)arg4;
+- (id)initWithPeripheral:(id)arg1 primary:(BOOL)arg2 UUID:(id)arg3 startHandle:(id)arg4 endHandle:(id)arg5;
+- (void)invalidate;
 - (id)startHandle;
 
 @end

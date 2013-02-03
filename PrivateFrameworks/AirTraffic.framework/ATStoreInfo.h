@@ -20,6 +20,7 @@
 @property(retain) NSNumber * drmFree;
 @property(retain) NSString * flavor;
 @property(retain) NSNumber * matchStatus;
+@property(retain) NSString * podcastEpisodeGUID;
 @property(retain) NSNumber * redownloadStatus;
 @property(retain) NSNumber * sagaID;
 @property(retain) NSString * storefrontID;
@@ -38,6 +39,7 @@
 - (id)flavor;
 - (id)init;
 - (id)matchStatus;
+- (id)podcastEpisodeGUID;
 - (id)redownloadStatus;
 - (id)sagaID;
 - (void)setAdamID:(id)arg1;
@@ -48,6 +50,7 @@
 - (void)setDrmFree:(id)arg1;
 - (void)setFlavor:(id)arg1;
 - (void)setMatchStatus:(id)arg1;
+- (void)setPodcastEpisodeGUID:(id)arg1;
 - (void)setRedownloadStatus:(id)arg1;
 - (void)setSagaID:(id)arg1;
 - (void)setStorefrontID:(id)arg1;

@@ -19,6 +19,7 @@
 - (int)gridTitleStyle;
 - (BOOL)gridTitleVisibleAtIndex:(unsigned int)arg1;
 - (SEL)libraryHasDisplayableEntitiesSelector;
+- (void)reloadData;
 - (void)setQuery:(id)arg1;
 - (BOOL)shouldLoadLocalImagesSynchronously;
 

@@ -26,7 +26,8 @@
         unsigned int _disableDiscardEditing : 1; 
         unsigned int _isParentStoreContext : 1; 
         unsigned int _postSaveNotifications : 1; 
-        unsigned int _reservedFlags : 12; 
+        unsigned int _isMerging : 1; 
+        unsigned int _reservedFlags : 11; 
     id *_cachedObsInfoByEntity;
     int _cd_rc;
     NSMutableSet *_changedObjects;
@@ -106,6 +107,7 @@
 - (void)_growRegistrationCollectionForEntitySlot:(unsigned int)arg1 toSize:(unsigned int)arg2;
 - (BOOL)_handleError:(id)arg1 withError:(id*)arg2;
 - (BOOL)_handleOptimisticLockingError:(id)arg1 withError:(id*)arg2;
+- (BOOL)_hasIDMappings;
 - (BOOL)_ignoringChangeNotifications;
 - (id)_implicitObservationInfoForEntity:(id)arg1 forResultingClass:(Class*)arg2;
 - (void)_incrementUndoTransactionID;
@@ -118,17 +120,21 @@
 - (BOOL)_isPreflightSaveInProgress;
 - (void)_lockObjectStore_oldSchool;
 - (void)_managedObjectContextEditor:(id)arg1 didCommit:(BOOL)arg2 contextInfo:(struct { id x1; SEL x2; void *x3; }*)arg3;
+- (id)_mappedForParentStoreID:(id)arg1;
 - (void)_mergeChangesFromDidSaveDictionary:(id)arg1 usingObjectIDs:(BOOL)arg2;
 - (void)_mergeChangesFromRemoteContextSave:(id)arg1;
+- (void)_mergeRefreshEpilogueForObject:(id)arg1 mergeChanges:(BOOL)arg2;
+- (BOOL)_mergeRefreshObject:(id)arg1 mergeChanges:(BOOL)arg2 withPersistentSnapshot:(id)arg3;
 - (id)_newSaveRequestForCurrentState;
 - (id)_newUnchangedLockedObjects;
 - (void)_noop:(id)arg1;
 - (void)_objectsChangedInStore:(id)arg1;
 - (id)_orderedSetWithResultsFromFetchRequest:(id)arg1;
 - (id)_parentObjectsForFetchRequest:(id)arg1 inContext:(id)arg2 error:(id*)arg3;
-- (BOOL)_parentObtainPermanentIDsForObjects:(id)arg1 error:(id*)arg2;
+- (BOOL)_parentObtainPermanentIDsForObjects:(id)arg1 context:(id)arg2 error:(id*)arg3;
 - (id)_parentProcessSaveRequest:(id)arg1 inContext:(id)arg2 error:(id*)arg3;
 - (id)_parentStore;
+- (void)_performCoordinatorActionAndWait:(id)arg1;
 - (void)_postObjectsDidChangeNotificationWithUserInfo:(id)arg1;
 - (void)_postRefreshedObjectsNotificationAndClearList;
 - (BOOL)_postSaveNotifications;
@@ -230,6 +236,7 @@
 - (void)performBlock:(id)arg1;
 - (void)performBlockAndWait:(id)arg1;
 - (id)persistentStoreCoordinator;
+- (void)pl_refresh;
 - (void)processPendingChanges;
 - (BOOL)propagatesDeletesAtEndOfEvent;
 - (void)redo;

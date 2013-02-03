@@ -15,8 +15,11 @@
 @property(readonly) UIView * topBar;
 
 - (BOOL)_animatingToHomescreenWallpaper;
-- (void)_fadeOutCompleted:(id)arg1;
+- (float)_animationDelayForOthersActivation;
+- (float)_slideOutAnimationDelay;
+- (float)_slideOutAnimationDuration;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
+- (void)_viewAnimatedOut;
 - (void)animateDisplayIn:(float)arg1 middleDelay:(float)arg2;
 - (void)animateViewOut;
 - (id)backgroundView;
@@ -33,6 +36,7 @@
 - (void)prepareToAnimateDisplayIn;
 - (BOOL)shouldShowBottomBar;
 - (id)topBar;
+- (void)updateSpringBoardInPreparationForTransparentDismiss;
 - (void)viewDidLoad;
 - (BOOL)viewIsReadyToBeRemoved;
 - (void)viewWillAnimateOut;

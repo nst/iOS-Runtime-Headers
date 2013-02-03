@@ -2,33 +2,25 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 /* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
    The runtime does not encode function signature information.  We use a signature of: 
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class WebInspectorWindowController;
-
 @interface WebInspectorFrontend : NSObject {
-    struct WebInspectorFrontendClient { int (**x1)(); struct InspectorController {} *x2; struct Page {} *x3; struct ExecState {} *x4; struct RefPtr<WebCore::InspectorFrontendHost> { 
-            struct InspectorFrontendHost {} *m_ptr; 
-        } x5; struct OwnPtr<WebCore::InspectorFrontendClientLocal::Settings> { 
-            struct Settings {} *m_ptr; 
-        } x6; id x7; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x8; void*x9; void*x10; unsigned int x11/* : ? */; oneway int x12; void*x13; void*x14; void*x15; struct RetainPtr<WebInspectorWindowController> { 
-            WebInspectorWindowController *m_ptr; 
-        } x16; struct String { 
-            struct RefPtr<WTF::StringImpl> { 
-                struct StringImpl {} *m_ptr; 
-            } m_impl; 
-        } x17; } *m_frontendClient;
+    struct WebInspectorFrontendClient { int (**x1)(); struct InspectorController {} *x2; struct Page {} *x3; struct ExecState {} *x4; struct RefPtr<WebCore::InspectorFrontendHost> { struct InspectorFrontendHost {} *x_5_1_1; } x5; struct OwnPtr<WebCore::InspectorFrontendClientLocal::Settings> { struct Settings {} *x_6_1_1; } x6; boolx7; struct Vector<WTF::String, 0> { unsigned int x_8_1_1; struct VectorBuffer<WTF::String, 0> { struct String {} *x_2_2_1; unsigned int x_2_2_2; } x_8_1_2; } x8; struct OwnPtr<WebCore::InspectorBackendDispatchTask> { struct InspectorBackendDispatchTask {} *x_9_1_1; } x9; id x10; struct RetainPtr<WebInspectorWindowController> { struct WebInspectorWindowController { } *x_11_1_1; } x11; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; } *m_frontendClient;
 }
 
 - (void)attach;
 - (void)detach;
-- (id)initWithFrontendClient:(struct WebInspectorFrontendClient { int (**x1)(); struct InspectorController {} *x2; struct Page {} *x3; struct ExecState {} *x4; struct RefPtr<WebCore::InspectorFrontendHost> { struct InspectorFrontendHost {} *x_5_1_1; } x5; struct OwnPtr<WebCore::InspectorFrontendClientLocal::Settings> { struct Settings {} *x_6_1_1; } x6; id x7; struct RetainPtr<WebInspectorWindowController> { id x_8_1_1; } x8; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_9_1_1; } x9; }*)arg1;
+- (id)initWithFrontendClient:(struct WebInspectorFrontendClient { int (**x1)(); struct InspectorController {} *x2; struct Page {} *x3; struct ExecState {} *x4; struct RefPtr<WebCore::InspectorFrontendHost> { struct InspectorFrontendHost {} *x_5_1_1; } x5; struct OwnPtr<WebCore::InspectorFrontendClientLocal::Settings> { struct Settings {} *x_6_1_1; } x6; boolx7; struct Vector<WTF::String, 0> { unsigned int x_8_1_1; struct VectorBuffer<WTF::String, 0> { struct String {} *x_2_2_1; unsigned int x_2_2_2; } x_8_1_2; } x8; struct OwnPtr<WebCore::InspectorBackendDispatchTask> { struct InspectorBackendDispatchTask {} *x_9_1_1; } x9; id x10; struct RetainPtr<WebInspectorWindowController> { struct WebInspectorWindowController { } *x_11_1_1; } x11; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; }*)arg1;
+- (BOOL)isDebuggingEnabled;
+- (BOOL)isProfilingJavaScript;
+- (BOOL)isTimelineProfilingEnabled;
+- (void)setDebuggingEnabled:(BOOL)arg1;
+- (void)setTimelineProfilingEnabled:(BOOL)arg1;
+- (void)showConsole;
+- (void)startProfilingJavaScript;
+- (void)stopProfilingJavaScript;
 
 @end

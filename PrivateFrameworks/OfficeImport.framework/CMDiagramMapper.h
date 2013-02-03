@@ -11,7 +11,7 @@
 
 + (int)diagramTypeFromString:(id)arg1;
 
-- (id)createDiagramMapperForId:(id)arg1;
+- (id)copyDiagramMapperForId:(id)arg1;
 - (id)diagram;
 - (id)identifierFromLayoutTypeId:(id)arg1;
 - (id)initWithOddDiagram:(id)arg1 drawingContext:(id)arg2 orientedBounds:(id)arg3 parent:(id)arg4;

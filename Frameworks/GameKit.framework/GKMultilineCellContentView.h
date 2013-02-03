@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray;
+@class UIImage, NSArray;
 
 @interface GKMultilineCellContentView : GKImageCellContents {
     struct UIEdgeInsets { 
@@ -24,6 +24,13 @@
             float width; 
             float height; 
         } size; 
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    UIImage *_accessoryImage;
+    } _accessoryImageInsets;
     } _confirmationButtonRect;
     } _contentInsets;
     int _disclosureStyle;
@@ -32,6 +39,8 @@
     } _textInsets;
 }
 
+@property(retain) UIImage * accessoryImage;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } accessoryImageInsets;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } confirmationButtonRect;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property int disclosureStyle;
@@ -43,18 +52,21 @@
 + (id)oneLineContentViewWithTheme:(id)arg1;
 + (id)threeLineContentViewWithTheme:(id)arg1 shouldHighlight:(BOOL)arg2;
 + (id)threeLineContentViewWithTheme:(id)arg1;
++ (id)twoLineContentViewWithTheme:(id)arg1;
 
 - (id)accessibilityLabel;
+- (id)accessoryImage;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })accessoryImageInsets;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessoryImageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)adjustLineRects:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 forLines:(id)arg2 inTextRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })confirmationButtonRect;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (id)description;
 - (int)disclosureStyle;
-- (void)drawImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)drawLines:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithNumberOfLines:(unsigned int)arg1;
 - (BOOL)isAccessibilityElement;
@@ -62,6 +74,9 @@
 - (id)lineAtIndex:(unsigned int)arg1;
 - (id)lines;
 - (void)prepareForReuse;
+- (void)setAccessoryImage:(id)arg1;
+- (void)setAccessoryImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setAttributedHighlightedText:(id)arg1 forLine:(unsigned int)arg2;
 - (void)setAttributedText:(id)arg1 forLine:(unsigned int)arg2;
 - (void)setConfirmationButtonRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

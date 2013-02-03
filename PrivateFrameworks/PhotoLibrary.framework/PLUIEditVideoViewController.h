@@ -10,8 +10,11 @@
     UIImagePickerController *_imagePicker;
     UINavigationItem *_navItem;
     NSDictionary *_options;
+    BOOL _parentInPopoverException;
     Class _viewClass;
 }
+
+@property BOOL parentInPopoverException;
 
 - (void)_cancelTrim:(id)arg1;
 - (BOOL)_displaysFullScreen;
@@ -26,10 +29,13 @@
 - (void)didChooseVideoAtPath:(id)arg1 options:(id)arg2;
 - (id)initWithPhoto:(id)arg1 trimTitle:(id)arg2;
 - (id)initWithProperties:(id)arg1;
+- (void)loadView;
 - (id)navigationItem;
+- (BOOL)parentInPopoverException;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewFrame;
 - (void)setDelegate:(id)arg1;
 - (void)setImagePickerOptions:(id)arg1;
+- (void)setParentInPopoverException:(BOOL)arg1;
 - (void)setViewClass:(Class)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)uiipc_imagePickerController;

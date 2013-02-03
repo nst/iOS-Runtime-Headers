@@ -14,6 +14,7 @@
 @property int selectedIndex;
 
 - (BOOL)_sendDidCancel;
+- (id)_tableView;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;

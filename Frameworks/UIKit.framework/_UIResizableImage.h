@@ -13,12 +13,15 @@
 }
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentStretchInPixels;
+- (id)_initWithOtherImage:(id)arg1;
 - (BOOL)_isResizable;
 - (BOOL)_isTiledWhenStretchedToSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_resizableImageWithCapMask:(int)arg1;
 - (void)_setAlwaysStretches:(BOOL)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })capInsets;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithImage:(id)arg1 capInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (int)resizingMode;
 
 @end

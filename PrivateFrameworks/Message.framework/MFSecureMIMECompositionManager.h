@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSSet, MailAccount, <MFSecureMIMECompositionManagerDelegate>, NSLock, NSString, NSMutableSet, MFError, NSMutableDictionary;
+@class NSSet, NSObject<OS_dispatch_queue>, MailAccount, <MFSecureMIMECompositionManagerDelegate>, NSLock, NSMutableSet, NSString, MFError, NSMutableDictionary;
 
 @interface MFSecureMIMECompositionManager : NSObject {
     NSMutableDictionary *_certificatesByRecipient;
@@ -15,7 +15,7 @@
     NSMutableDictionary *_errorsByRecipient;
     BOOL _invalidated;
     NSLock *_lock;
-    struct dispatch_queue_s { } *_queue;
+    NSObject<OS_dispatch_queue> *_queue;
     NSMutableSet *_recipients;
     MailAccount *_sendingAccount;
     NSString *_sendingAddress;

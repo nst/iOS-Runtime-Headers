@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSNumber, PFUbiquityPeer, NSString, PFUbiquityStoreMetadata, NSDate, NSURL;
+@class PFUbiquityStoreMetadata, PFUbiquityPeer, NSString, NSDate, NSNumber, NSURL;
 
 @interface PFUbiquityTransactionEntry : NSManagedObject {
 }

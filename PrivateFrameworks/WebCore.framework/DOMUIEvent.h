@@ -14,7 +14,7 @@
 @property(readonly) int layerY;
 @property(readonly) int pageX;
 @property(readonly) int pageY;
-@property(retain,readonly) DOMAbstractView * view;
+@property(readonly) DOMAbstractView * view;
 @property(readonly) int which;
 
 - (int)charCode;

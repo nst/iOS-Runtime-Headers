@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSObject<MFDeviceDriver>, MFFont, MFBrush, NSColorStub, MFTransform, MFPalette, MFPen, MFPath;
+@class NSObject<MFDeviceDriver>, MFBrush, MFFont, TSUColor, MFTransform, MFPalette, MFPen, MFPath;
 
 @interface MFDeviceContext : NSObject <NSCopying> {
     struct CGPoint { 
@@ -13,7 +13,7 @@
         float y; 
     boolm_textUpdateCP;
     int m_arcDirection;
-    NSColorStub *m_bkColour;
+    TSUColor *m_bkColour;
     int m_bkMode;
     MFBrush *m_brush;
     } m_brushOrg;
@@ -30,7 +30,7 @@
     int m_textBreakCount;
     int m_textBreakExtra;
     int m_textCharExtra;
-    NSColorStub *m_textColour;
+    TSUColor *m_textColour;
     int m_textDirection;
     int m_textHorizontalAlign;
     int m_textVerticalAlign;
@@ -39,6 +39,7 @@
 
 + (id)deviceContextWithDriver:(id)arg1;
 
+- (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (int)getArcDirection;

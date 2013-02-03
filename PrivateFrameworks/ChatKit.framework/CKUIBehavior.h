@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIColor;
+@class NSString, UIColor;
 
 @interface CKUIBehavior : NSObject {
 }
@@ -12,10 +12,11 @@
 @property(readonly) float contactPhotoCornerRadius;
 @property(readonly) float contactPhotoInsideMargin;
 @property(readonly) float contactPhotoOutsideMargin;
-@property(readonly) struct CGSize { float width; float height; } contactPhotoSize;
+@property(readonly) struct CGSize { float x1; float x2; } contactPhotoSize;
+@property(readonly) NSString * conversationListDefaultPNG;
 @property(readonly) unsigned int defaultConversationSummaryMessageCount;
 @property(readonly) unsigned int defaultConversationViewingMessageCount;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } entryFieldBackgroundStretchSpecs;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } entryFieldBackgroundStretchSpecs;
 @property(readonly) float entryFieldBottomMargin;
 @property(readonly) float entryFieldLeftMargin;
 @property(readonly) float entryFieldRightMargin;
@@ -23,30 +24,31 @@
 @property(readonly) float entryFieldToSendButtonSpacing;
 @property(readonly) float escapeVelocityForHidingKeyboard;
 @property(readonly) BOOL floatingEntryFieldEnabled;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } inputFieldCoverStretchSpecs;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } inputFieldCoverStretchSpecs;
 @property(readonly) float leftSplitPaneWidth;
 @property(readonly) BOOL lowClearanceInLandscape;
 @property(readonly) int madridRegistrationAppearanceStyle;
 @property(readonly) BOOL madridRegistrationShowsSplashScreen;
 @property(readonly) BOOL madridRegistrationShowsSplashScreenOnSignin;
-@property(readonly) BOOL overrideDefaultPNGAtSuspend;
 @property(readonly) BOOL presentForwardingUIModally;
+@property(readonly) BOOL presentsQuickLookController;
 @property(readonly) BOOL returnKeySendsMessage;
 @property(readonly) float scrollToHideKeyboardGestureThreshold;
 @property(readonly) BOOL selectNewConversationOnDeletion;
 @property(readonly) BOOL selectNewConversationOnStateRestore;
 @property(readonly) float sendButtonHorizontalPadding;
 @property(readonly) BOOL shouldRoundBottomLeftCornerOfEntryField;
+@property(readonly) BOOL shouldSetConversationKeyboardOnSearchBeginEnd;
 @property(readonly) BOOL shouldShowContactPhotos;
 @property(readonly) BOOL shouldShowSendProgressIndicator;
-@property(readonly) BOOL shouldShowWaitingForDelivery;
 @property(readonly) BOOL showPendingInConversationList;
 @property(readonly) BOOL showTranscriptButtonsInNavigationBar;
 @property(readonly) BOOL showsDisclosureButtonForIncomingMedia;
 @property(readonly) BOOL splitViewEnabled;
 @property(readonly) UIColor * toolbarLabelsShadowColor;
-@property(readonly) struct CGSize { float width; float height; } toolbarLabelsShadowOffset;
+@property(readonly) struct CGSize { float x1; float x2; } toolbarLabelsShadowOffset;
 @property(readonly) UIColor * toolbarLabelsTextColor;
+@property(readonly) NSString * transcriptDefaultPNG;
 @property(readonly) BOOL usesDistanceToDetermineWhetherToHideKeyboard;
 @property(readonly) BOOL usesFullWidthMessageEntryViewWhenKeyboardIsUndocked;
 @property(readonly) BOOL usesPersistentConversationSelection;
@@ -58,13 +60,11 @@
 
 + (id)sharedBehaviors;
 
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_mysteryPreviewImagePadding;
 - (float)_transcriptAnimationScaleFactor;
-- (float)balloonImageBottomCapHeight;
-- (float)balloonImageHeight;
-- (float)balloonImageLeftCapWidth;
-- (float)balloonImageRightCapWidth;
-- (float)balloonImageTopCapHeight;
-- (float)balloonImageWidth;
+- (float)attachmentBalloonHeight;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })balloonImageCapInsets;
+- (struct CGSize { float x1; float x2; })balloonImageSize;
 - (id)balloonTextFont;
 - (float)balloonTextFontSize;
 - (float)balloonTextLineHeight;
@@ -82,6 +82,7 @@
 - (float)contactPhotoOutsideMargin;
 - (struct CGSize { float x1; float x2; })contactPhotoSize;
 - (unsigned int)conversationCacheSize;
+- (id)conversationListDefaultPNG;
 - (float)conversationListRowHeight;
 - (unsigned int)defaultConversationSummaryMessageCount;
 - (unsigned int)defaultConversationViewingMessageCount;
@@ -109,8 +110,6 @@
 - (int)madridRegistrationAppearanceStyle;
 - (BOOL)madridRegistrationShowsSplashScreen;
 - (BOOL)madridRegistrationShowsSplashScreenOnSignin;
-- (float)maxImageBubbleHeightPortrait;
-- (float)maxImageBubbleWidthLandscape;
 - (float)messageStatusHeight;
 - (float)messageStatusHeightFollowingMessageWithContactImage;
 - (id)messageStatusPrimaryTextColor;
@@ -119,10 +118,12 @@
 - (float)messageStatusTextOutsideMarginFollowingMessageWithContactImage;
 - (id)messageStatusTextShadowColor;
 - (float)messageStatusTextSize;
-- (BOOL)overrideDefaultPNGAtSuspend;
 - (float)paddingAfterLastTranscriptRow;
 - (float)paddingBeforeFirstTranscriptRow;
 - (BOOL)presentForwardingUIModally;
+- (BOOL)presentsQuickLookController;
+- (struct CGSize { float x1; float x2; })previewBalloonImageMaxSize;
+- (struct CGSize { float x1; float x2; })previewThumbnailMaxSize;
 - (float)recipientOverlaySingleLineContentHeight;
 - (float)resizeMessageEntryViewAnimationDuration;
 - (BOOL)returnKeySendsMessage;
@@ -145,10 +146,10 @@
 - (BOOL)shouldHomogenizeAtomsForPreferredService;
 - (BOOL)shouldRefreshAlternateAddressesSheet;
 - (BOOL)shouldRoundBottomLeftCornerOfEntryField;
+- (BOOL)shouldSetConversationKeyboardOnSearchBeginEnd;
 - (BOOL)shouldShowContactPhotos;
 - (BOOL)shouldShowDisclosureChevronInRecipientAtoms;
 - (BOOL)shouldShowSendProgressIndicator;
-- (BOOL)shouldShowWaitingForDelivery;
 - (BOOL)showPendingInConversationList;
 - (BOOL)showTranscriptButtonsInNavigationBar;
 - (BOOL)showsDisclosureButtonForIncomingMedia;
@@ -162,6 +163,7 @@
 - (id)toolbarLabelsShadowColor;
 - (struct CGSize { float x1; float x2; })toolbarLabelsShadowOffset;
 - (id)toolbarLabelsTextColor;
+- (id)transcriptDefaultPNG;
 - (float)typingIndicatorMargin;
 - (float)updateTranscriptInsetsAnimationDuration;
 - (BOOL)usesDistanceToDetermineWhetherToHideKeyboard;
@@ -172,7 +174,6 @@
 - (BOOL)usesTexturedTranscriptBackground;
 - (BOOL)usesVelocityDirectionToDetermineWhetherToHideKeyboard;
 - (float)velocityThresholdForHidingKeyboard;
-- (float)videoBubbleHeight;
-- (float)videoBubbleWidth;
+- (struct CGSize { float x1; float x2; })videoPreviewBalloonImageMaxSize;
 
 @end

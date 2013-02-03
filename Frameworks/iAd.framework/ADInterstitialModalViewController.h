@@ -2,23 +2,18 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class ADInterstitialView, <ADInterstitialViewDelegate>, ADHostWindowController;
+@class ADInterstitialView;
 
-@interface ADInterstitialModalViewController : UIViewController <ADInterstitialViewDelegate, ADStatusBarController> {
+@interface ADInterstitialModalViewController : UIViewController <ADInterstitialViewDelegate> {
     BOOL _hasAppeared;
-    <ADInterstitialViewDelegate> *_interstitialDelegate;
     ADInterstitialView *_interstitialView;
-    ADHostWindowController *_owner;
 }
 
 @property BOOL hasAppeared;
-@property <ADInterstitialViewDelegate> * interstitialDelegate;
 @property(retain) ADInterstitialView * interstitialView;
-@property ADHostWindowController * owner;
 
 - (void)dealloc;
 - (BOOL)hasAppeared;
-- (id)interstitialDelegate;
 - (void)interstitialView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
 - (id)interstitialView;
 - (void)interstitialViewActionDidFinish:(id)arg1;
@@ -26,11 +21,8 @@
 - (void)interstitialViewDidLoadAd:(id)arg1;
 - (void)interstitialViewDidUnloadAd:(id)arg1;
 - (void)interstitialViewWillLoadAd:(id)arg1;
-- (id)owner;
 - (void)setHasAppeared:(BOOL)arg1;
-- (void)setInterstitialDelegate:(id)arg1;
 - (void)setInterstitialView:(id)arg1;
-- (void)setOwner:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;

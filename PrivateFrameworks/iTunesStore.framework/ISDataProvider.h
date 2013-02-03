@@ -10,6 +10,7 @@
     SSURLBagContext *_bagContext;
     long long _contentLength;
     NSString *_contentType;
+    int _errorHandlerResponseType;
     id _output;
     ISOperation *_parentOperation;
     NSURL *_redirectURL;
@@ -20,6 +21,7 @@
 @property(retain) SSURLBagContext * bagContext;
 @property long long contentLength;
 @property(retain) NSString * contentType;
+@property int errorHandlerResponseType;
 @property(retain) id output;
 @property ISOperation * parentOperation;
 @property(retain) NSURL * redirectURL;
@@ -36,6 +38,7 @@
 - (id)contentType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (int)errorHandlerResponseType;
 - (BOOL)isStream;
 - (void)migrateOutputFromSubProvider:(id)arg1;
 - (id)output;
@@ -43,11 +46,13 @@
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
 - (id)redirectURL;
 - (void)resetStream;
+- (BOOL)runAuthorizationDialog:(id)arg1 error:(id*)arg2;
 - (void)setAuthenticatedAccountDSID:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setBagContext:(id)arg1;
 - (void)setContentLength:(long long)arg1;
 - (void)setContentType:(id)arg1;
+- (void)setErrorHandlerResponseType:(int)arg1;
 - (void)setOutput:(id)arg1;
 - (void)setParentOperation:(id)arg1;
 - (void)setRedirectURL:(id)arg1;

@@ -69,9 +69,9 @@
 - (void)setStartValue:(double)arg1;
 - (void)setThumbnailImage:(struct CGImage { }*)arg1 forTimestamp:(id)arg2;
 - (void)setValue:(double)arg1;
-- (void)setZoomAnimationDuration:(float)arg1;
+- (void)setZoomAnimationDuration:(double)arg1;
 - (void)unzoom;
-- (float)zoomAnimationDuration;
+- (double)zoomAnimationDuration;
 - (BOOL)zoomAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

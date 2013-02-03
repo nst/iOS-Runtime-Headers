@@ -6,7 +6,7 @@
 
 @interface _MFFormatFlowedWriter : NSObject {
     unsigned int _addedTrailingSpaces : 1;
-    unsigned int _encoding;
+    unsigned long _encoding;
     PlainTextDocument *_inputDocument;
     NSMutableString *_lineString;
     NSMutableString *_outputString;

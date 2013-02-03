@@ -6,12 +6,10 @@
 
 @interface SUScriptExecutionContext : NSObject <ISStoreURLOperationDelegate, SUWebViewDelegate> {
     ISStoreURLOperation *_loadOperation;
-    BOOL _sourceIsTrusted;
     SUWebView *_webView;
 }
 
 @property(readonly) struct OpaqueJSContext { }* globalExecutionContext;
-@property BOOL sourceIsTrusted;
 @property(readonly) id windowScriptObject;
 
 - (void)_cancelLoadOperation;
@@ -26,8 +24,6 @@
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (id)parentViewControllerForWebView:(id)arg1;
-- (void)setSourceIsTrusted:(BOOL)arg1;
-- (BOOL)sourceIsTrusted;
 - (id)windowScriptObject;
 
 @end

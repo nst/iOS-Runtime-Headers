@@ -16,12 +16,15 @@
 @property <CalDAVCalendarPropertyRefreshDelegate> * delegate;
 
 - (void)_continueHandleContainerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;
-- (void)_createDefaultCalendarForPrincipal:(id)arg1 isEventCalendar:(BOOL)arg2;
-- (void)_createDefaultCalendarsIfNeededForPrincipal:(id)arg1;
 - (void)_finishRefresh;
 - (id)_generateTimeZoneString:(id)arg1;
-- (void)_scheduleMkcalendarTaskForCalendar:(id)arg1;
-- (void)_setPropertyString:(id)arg1 forName:(id)arg2 andNamespace:(id)arg3 atURL:(id)arg4;
+- (void)_getDefaultCalendarsTasksIfNeededForPrincipal:(id)arg1 tasks:(id)arg2;
+- (id)_getDefaultMkCalendarForPrincipalTask:(id)arg1 isEventCalendar:(BOOL)arg2;
+- (id)_getMkcalendarTaskForCalendar:(id)arg1;
+- (id)_getSetPropertyStringTask:(id)arg1 forName:(id)arg2 andNamespace:(id)arg3 atURL:(id)arg4;
+- (void)_handleCalendarPublish;
+- (void)_prepareCalendarsBeforeRefresh;
+- (void)_reallyRefreshCalendarProperties;
 - (int)_sharingStatusForContainer:(id)arg1;
 - (void)containerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;
 - (void)dealloc;

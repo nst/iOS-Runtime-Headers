@@ -8,7 +8,9 @@
     NSMutableDictionary *_accountSiblingsMap;
     NSMutableArray *_allIMHandles;
     NSMutableDictionary *_candidateNamesMap;
+    NSMutableDictionary *_chatSiblingsMap;
     NSMutableDictionary *_existingAccountSiblingsMap;
+    NSMutableDictionary *_existingChatSiblingsMap;
     NSMutableSet *_knownConflictingNames;
     int _nameStyle;
     NSMutableDictionary *_siblingsMap;

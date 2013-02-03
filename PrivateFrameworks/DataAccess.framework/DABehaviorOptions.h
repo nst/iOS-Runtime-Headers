@@ -6,6 +6,7 @@
 }
 
 + (id)APSEnv;
++ (BOOL)CFNetworkLogging;
 + (BOOL)_shouldForceCookies:(BOOL*)arg1;
 + (void)_startListeningForNotifications;
 + (BOOL)allIMAPServersSupportNotesSearch;
@@ -15,6 +16,7 @@
 + (BOOL)cookiesEnabled;
 + (double)defaultDAVProbeTimeout;
 + (double)defaultEASTaskTimeoutOutWasFound:(BOOL*)arg1;
++ (BOOL)easNotesEnabled;
 + (BOOL)ignoreBadLDAPCerts;
 + (BOOL)ignoreSupportedCommands;
 + (void)initialize;
@@ -22,9 +24,12 @@
 + (BOOL)isCustomerInstall;
 + (BOOL)isInHoldingPattern;
 + (id)mobileMeServerURL;
++ (int)numForgivable401s;
++ (BOOL)perfLogging;
 + (BOOL)promptForAllCerts;
 + (int)refreshThrottleTime;
 + (BOOL)sendMeCardEverywhere;
++ (BOOL)useThunderhillBetaServers;
 + (id)whitelistedEASProtocols;
 + (BOOL)writeOutBrokenCancelationRequests;
 

@@ -2,36 +2,48 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class PFUbiquityStoreMetadata, PFUbiquityContainerIdentifier, NSDictionary, PFUbiquityPeerReceipt, _PFUbiquityStack, PFUbiquityPeerState, PFUbiquityLocation, NSString, NSURL, NSPersistentStoreCoordinator, NSMutableDictionary;
+@class NSURL, PFUbiquityPeerState, PFUbiquityContainerIdentifier, <NSObject><NSCopying><NSCoding>, _PFUbiquityStack, NSPersistentStoreCoordinator, PFUbiquityMigrationManager, NSDictionary, PFUbiquityMigrationAssistant, PFUbiquityPeerReceipt, NSString, NSMutableDictionary, PFUbiquityStoreMetadata, PFUbiquityLocation;
 
 @interface PFUbiquitySetupAssistant : NSObject {
+    BOOL _addLocalPeerToStoreKnowledgeVector;
     PFUbiquityContainerIdentifier *_containerIdentifier;
     BOOL _didBaselineCopy;
+    BOOL _didMigrateBaseline;
     BOOL _hasContainerUUID;
     BOOL _hasContainerUUIDInStore;
     BOOL _hasLocalTransactionLogs;
+    BOOL _hasMigrationOptions;
     BOOL _hasStoreMetadataEntry;
     BOOL _hasStoreMetadataFile;
+    BOOL _hasUploadingBaseline;
     NSString *_localPeerID;
     PFUbiquityPeerReceipt *_localPeerReceipt;
     PFUbiquityPeerState *_localPeerState;
+    PFUbiquityMigrationAssistant *_migrationAssistant;
+    PFUbiquityMigrationManager *_migrationManager;
     NSString *_modelVersionHash;
+    BOOL _monitorUploadingBaselineAsync;
+    BOOL _needsMetadataRecovery;
     NSMutableDictionary *_options;
     NSPersistentStoreCoordinator *_psc;
+    BOOL _replayLogsSynchronously;
+    BOOL _scheduleBaselineRollResponse;
     _PFUbiquityStack *_stack;
     BOOL _storeFileExists;
+    BOOL _storeFileIsReadOnly;
     PFUbiquityStoreMetadata *_storeMetadata;
     NSString *_storeType;
     NSURL *_storeURL;
     BOOL _ubiquityEnabled;
+    <NSObject><NSCopying><NSCoding> *_ubiquityIdentityToken;
     NSString *_ubiquityName;
     PFUbiquityLocation *_ubiquityRootLocation;
     NSURL *_ubiquityRootURL;
 }
 
+@property(readonly) BOOL needsMetadataRecovery;
 @property(readonly) NSDictionary * options;
 @property(readonly) BOOL ubiquityEnabled;
-@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
 
 + (id)createDefaultLocalPeerID;
 + (BOOL)doBasicSanityCheckForUbiquityRootURL:(id)arg1 withError:(id*)arg2;
@@ -39,17 +51,19 @@
 + (BOOL)ubiquityMetadataTablesPresentInStore:(id)arg1;
 
 - (void)_setUbiquityRootLocation:(id)arg1 storeName:(id)arg2 localPeerID:(id)arg3 andModelVersionHash:(id)arg4;
+- (BOOL)attemptMetadataRecoveryForStore:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (BOOL)doFirstMetadataConsistencyCheckWithError:(id*)arg1;
 - (BOOL)doSecondMetadataConsistencyCheckWithStore:(id)arg1 error:(id*)arg2;
 - (id)init;
 - (id)initWithPersistentStoreCoordinator:(id)arg1 andStoreOptions:(id)arg2 forPersistentStoreOfType:(id)arg3 atURL:(id)arg4;
 - (BOOL)migrateMetadataRoot:(id*)arg1;
+- (id)migrationAssistant;
+- (BOOL)needsMetadataRecovery;
 - (id)options;
 - (BOOL)performPostStoreSetupWithStore:(id)arg1 error:(id*)arg2;
 - (BOOL)performPreStoreSetupWithError:(id*)arg1;
 - (BOOL)ubiquityEnabled;
-- (id)ubiquityRootLocation;
 - (BOOL)validateOptionsWithError:(id*)arg1;
 
 @end

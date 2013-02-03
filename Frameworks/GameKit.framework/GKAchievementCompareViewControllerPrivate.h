@@ -2,26 +2,27 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKAchievementCompareViewSectionDataSource, UIImage, GKGameRecord, GKPlayer, NSArray, GKAchievementCompareHeaderDataSourceSection;
+@class UIImage, GKGameRecord, GKPlayer, NSArray, GKAchievementCompareHeaderSection, GKAchievementCompareViewSection;
 
 @interface GKAchievementCompareViewControllerPrivate : GKAchievementViewControllerPrivate {
-    GKAchievementCompareHeaderDataSourceSection *_achievementCompareFriendHeaderViewSection;
-    GKAchievementCompareHeaderDataSourceSection *_achievementCompareMeHeaderViewSection;
-    GKAchievementCompareViewSectionDataSource *_achievementCompareViewSection;
+    GKAchievementCompareHeaderSection *_achievementCompareFriendHeaderViewSection;
+    GKAchievementCompareHeaderSection *_achievementCompareMeHeaderViewSection;
+    GKAchievementCompareViewSection *_achievementCompareViewSection;
     UIImage *_compositeCheckMark;
     GKPlayer *_friend;
     NSArray *_friendAchievements;
     GKGameRecord *_friendRecord;
 }
 
-@property(retain) GKAchievementCompareHeaderDataSourceSection * achievementCompareFriendHeaderViewSection;
-@property(retain) GKAchievementCompareHeaderDataSourceSection * achievementCompareMeHeaderViewSection;
-@property(retain) GKAchievementCompareViewSectionDataSource * achievementCompareViewSection;
+@property(retain) GKAchievementCompareHeaderSection * achievementCompareFriendHeaderViewSection;
+@property(retain) GKAchievementCompareHeaderSection * achievementCompareMeHeaderViewSection;
+@property(retain) GKAchievementCompareViewSection * achievementCompareViewSection;
 @property(retain) UIImage * compositeCheckMark;
 @property(retain) NSArray * friendAchievements;
 @property(retain) GKGameRecord * friendRecord;
 
 - (void)_gkResetContents;
+- (BOOL)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
 - (id)achievementCompareFriendHeaderViewSection;
 - (id)achievementCompareMeHeaderViewSection;
@@ -43,6 +44,5 @@
 - (id)title;
 - (void)updateStatusWithError:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewDidUnload;
 
 @end

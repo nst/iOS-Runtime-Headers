@@ -9,7 +9,7 @@
 
 @class NSURL, NSString, NSDictionary;
 
-@interface NSError : NSObject <NSCopying, NSCoding> {
+@interface NSError : NSObject <NSCopying, NSSecureCoding> {
     int _code;
     NSString *_domain;
     void *_reserved;
@@ -29,11 +29,14 @@
 + (id)MCErrorWithDomain:(id)arg1 code:(int)arg2 descriptionArray:(id)arg3 errorType:(id)arg4;
 + (id)MCErrorWithDomain:(id)arg1 code:(int)arg2 descriptionArray:(id)arg3 suggestion:(id)arg4 USEnglishSuggestion:(id)arg5 underlyingError:(id)arg6 errorType:(id)arg7;
 + (id)MCErrorWithDomain:(id)arg1 code:(int)arg2 descriptionArray:(id)arg3 underlyingError:(id)arg4 errorType:(id)arg5;
++ (id)MMCSErrorWithDomain:(id)arg1 code:(int)arg2 description:(id)arg3;
 + (id)MSErrorWithDomain:(id)arg1 code:(int)arg2 description:(id)arg3 suggestion:(id)arg4;
++ (id)MSErrorWithDomain:(id)arg1 code:(int)arg2 description:(id)arg3 underlyingError:(id)arg4 additionalUserInfo:(id)arg5;
 + (id)MSErrorWithDomain:(id)arg1 code:(int)arg2 description:(id)arg3 underlyingError:(id)arg4;
 + (id)MSErrorWithDomain:(id)arg1 code:(int)arg2 description:(id)arg3;
 + (id)_defaultDescriptionForCode:(int)arg1;
-+ (id)_geo_errorFromXPCData:(void*)arg1;
++ (id)_geo_errorFromXPCData:(id)arg1;
++ (id)_gkUnauthenticatedError;
 + (void)_registerBuiltInFormatters;
 + (void)_registerFormatter:(int (*)())arg1 forErrorKey:(id)arg2 parameters:(const char *)arg3;
 + (void)_registerWebKitErrors;
@@ -44,17 +47,24 @@
 + (id)_web_errorWithDomain:(id)arg1 code:(int)arg2 failingURL:(id)arg3;
 + (void)_webkit_addErrorsWithCodesAndDescriptions:(id)arg1 inDomain:(id)arg2;
 + (id)_webkit_errorWithDomain:(id)arg1 code:(int)arg2 URL:(id)arg3;
++ (id)errorWithBTResult:(id)arg1;
 + (id)errorWithCADResult:(int)arg1 action:(id)arg2;
 + (id)errorWithCADResult:(int)arg1;
 + (id)errorWithCode:(int)arg1 description:(id)arg2;
 + (id)errorWithCode:(int)arg1;
++ (id)errorWithDomain:(id)arg1 code:(int)arg2 alertTitle:(id)arg3 alertMessage:(id)arg4 underlyingError:(id)arg5;
++ (id)errorWithDomain:(id)arg1 code:(int)arg2 alertTitle:(id)arg3 alertMessage:(id)arg4;
++ (id)errorWithDomain:(id)arg1 code:(int)arg2 description:(id)arg3 recoverySuggestion:(id)arg4;
 + (id)errorWithDomain:(id)arg1 code:(int)arg2 localizedDescription:(id)arg3;
 + (id)errorWithDomain:(id)arg1 code:(int)arg2 userInfo:(id)arg3;
 + (id)errorWithStreamDomain:(long)arg1 code:(long)arg2 localizedDescription:(id)arg3;
 + (id)genericErrorWithFile:(const char *)arg1 function:(const char *)arg2 lineNumber:(int)arg3;
 + (id)serverErrorForCode:(int)arg1 withReason:(id)arg2;
 + (id)serverErrorForCode:(int)arg1 withUserInfo:(id)arg2;
++ (BOOL)supportsSecureCoding;
++ (id)tsuErrorWithCode:(int)arg1;
 + (id)userErrorForCode:(int)arg1 underlyingError:(id)arg2;
++ (id)userErrorForCode:(int)arg1 userInfo:(id)arg2;
 + (id)userErrorForServerCode:(int)arg1 reason:(id)arg2;
 + (id)userErrorForServerError:(id)arg1;
 
@@ -65,6 +75,13 @@
 - (id)MCUSEnglishDescription;
 - (id)MCUSEnglishSuggestion;
 - (id)MCVerboseDescription;
+- (int)MMCSErrorType;
+- (BOOL)MMCSIsAuthorizationError;
+- (BOOL)MMCSIsCancelError;
+- (BOOL)MMCSIsFatalError;
+- (BOOL)MMCSIsNetworkConditionsError;
+- (id)MMCSRetryAfterDate;
+- (BOOL)MSASStateMachineIsCanceledError;
 - (BOOL)MSCanBeIgnored;
 - (BOOL)MSContainsErrorWithDomain:(id)arg1 code:(int)arg2;
 - (id)MSFindPrimaryError;
@@ -78,6 +95,7 @@
 - (id)MSMakePrimaryError;
 - (BOOL)MSNeedsBackoff;
 - (id)MSVerboseDescription;
+- (void)_MMCSApplyBlock:(id)arg1;
 - (void)_MSApplyBlock:(id)arg1;
 - (id)_MSVerboseDescriptionRecursionCount:(int)arg1;
 - (unsigned long)_cfTypeID;
@@ -87,7 +105,8 @@
 - (id)_cocoaErrorStringWithKind:(id)arg1;
 - (int)_collectApplicableUserInfoFormatters:(struct { /* ? */ }**)arg1 max:(int)arg2;
 - (id)_formatCocoaErrorString:(id)arg1 parameters:(const char *)arg2 applicableFormatters:(struct { /* ? */ }**)arg3 count:(int)arg4;
-- (void*)_geo_newXPCData;
+- (id)_geo_newXPCData;
+- (BOOL)_gkIsUnauthenticatedError;
 - (id)_initWithPluginErrorCode:(int)arg1 contentURL:(id)arg2 pluginPageURL:(id)arg3 pluginName:(id)arg4 MIMEType:(id)arg5;
 - (id)_mapkit_error;
 - (BOOL)_mapkit_isCLDenied;
@@ -103,32 +122,36 @@
 - (id)_web_localizedDescription;
 - (id)_webkit_initWithDomain:(id)arg1 code:(int)arg2 URL:(id)arg3;
 - (int)code;
-- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
 - (id)domain;
 - (void)encodeWithCoder:(id)arg1;
 - (id)encodeableError;
+- (id)encodeableError;
 - (id)errorBySettingFatalError:(BOOL)arg1;
 - (void)finalize;
+- (unsigned int)hash;
 - (id)helpAnchor;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDomain:(id)arg1 code:(int)arg2 userInfo:(id)arg3;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isConnectivityError;
 - (BOOL)isEqual:(id)arg1 compareUserInfo:(BOOL)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToError:(id)arg1;
 - (BOOL)isExpiredPasswordError;
 - (BOOL)isFatalError;
 - (BOOL)isInvalidSubscriberError;
 - (BOOL)isNewPasswordError;
+- (BOOL)isOutOfSpaceError;
 - (BOOL)isPasswordMismatchError;
 - (BOOL)isSecurityError;
 - (BOOL)isServerError;
 - (BOOL)isStreamDomain:(long)arg1 error:(long)arg2;
+- (id)localizedAlertMessage;
+- (id)localizedAlertTitle;
 - (id)localizedDescription;
 - (id)localizedFailureReason;
 - (id)localizedRecoveryOptions;
@@ -139,6 +162,7 @@
 - (BOOL)mf_shouldBeReportedToUser;
 - (id)nonRedundantDescription;
 - (id)recoveryAttempter;
+- (id)replacementObjectForPortCoder:(id)arg1;
 - (BOOL)shouldPresentErrorForTaskType:(int)arg1;
 - (id)userInfo;
 

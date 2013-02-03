@@ -2,44 +2,94 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIView;
+@class UIImageView, UIView, NSString, PSSpecifier;
 
-@interface PSTableCell : PreferencesTableCell {
+@interface PSTableCell : UITableViewCell {
+    int _alignment;
     UIView *_bottomEtchLine;
+    BOOL _cellEnabled;
+    BOOL _checked;
+    UIImageView *_checkedImageView;
     BOOL _etch;
+    NSString *_hiddenTitle;
+    BOOL _lazyIcon;
+    NSString *_lazyIconAppID;
+    BOOL _lazyIconDontUnload;
+    BOOL _lazyIconForceSynchronous;
+    SEL _pAction;
+    id _pTarget;
+    BOOL _reusedCell;
+    BOOL _shouldHideTitle;
+    PSSpecifier *_specifier;
     UIView *_topEtchLine;
+    UIView *_topShadow;
+    int _type;
+    id _value;
 }
 
-+ (id)_cellForSpecifier:(id)arg1 defaultClass:(Class)arg2 type:(int)arg3;
+@property BOOL reusedCell;
+@property(retain) PSSpecifier * specifier;
+@property int type;
+
 + (id)bottomEtchLineView;
++ (Class)cellClassForSpecifier:(id)arg1;
++ (int)cellStyle;
 + (int)cellTypeFromString:(id)arg1;
-+ (id)cellWithSpecifier:(id)arg1;
-+ (id)groupHeaderCellWithSpecifier:(id)arg1;
-+ (void)refreshCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
-+ (void)refreshSliderCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
-+ (void)refreshSwitchCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
-+ (void)refreshTextFieldCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
-+ (id)segmentCellWithSpecifier:(id)arg1;
-+ (id)sliderCellWithSpecifier:(id)arg1;
-+ (id)spinnerCellWithSpecifier:(id)arg1;
-+ (id)switchCellWithSpecifier:(id)arg1;
-+ (id)textFieldCellWithSpecifier:(id)arg1;
-+ (id)textViewCellWithSpecifier:(id)arg1;
++ (id)reuseIdentifierForBasicCellTypes:(int)arg1;
++ (id)reuseIdentifierForClassAndType:(int)arg1;
++ (id)reuseIdentifierForSpecifier:(id)arg1;
++ (id)stringFromCellType:(int)arg1;
 + (id)topEtchLineView;
 
 - (id)_automationID;
 - (id)_contentString;
+- (void)_setBottomEtchHidden:(BOOL)arg1;
+- (void)_setTopEtchHidden:(BOOL)arg1;
+- (void)_setTopShadowHidden:(BOOL)arg1;
 - (void)_updateEtchState:(BOOL)arg1;
+- (SEL)action;
+- (id)blankIcon;
+- (BOOL)canBeChecked;
 - (BOOL)canReload;
+- (BOOL)cellEnabled;
+- (void)cellRemovedFromView;
 - (void)dealloc;
+- (void)forceSynchronousIconLoadOnNextIconLoad;
+- (id)getIcon;
+- (id)getLazyIcon;
+- (id)getLazyIconID;
+- (id)iconImageView;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (BOOL)isChecked;
 - (void)layoutSubviews;
+- (void)prepareForReuse;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (void)reloadWithSpecifier:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)reusedCell;
 - (id)scriptingInfoWithChildren;
+- (void)setAction:(SEL)arg1;
+- (void)setAlignment:(int)arg1;
+- (void)setCellEnabled:(BOOL)arg1;
+- (void)setChecked:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setIcon:(id)arg1;
+- (void)setReusedCell:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setShouldHideTitle:(BOOL)arg1;
+- (void)setSpecifier:(id)arg1;
+- (void)setTarget:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setType:(int)arg1;
+- (void)setValue:(id)arg1;
 - (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 specifier:(id)arg3;
+- (id)specifier;
+- (id)target;
+- (float)textFieldOffset;
+- (id)title;
+- (id)titleLabel;
 - (id)titleTextLabel;
+- (int)type;
+- (id)value;
+- (id)valueLabel;
 
 @end

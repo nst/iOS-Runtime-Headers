@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIToolbar, UIWindow, UILabel, NSMutableArray, UIView, UIImage, NSString, UIPopoverController, <UIActionSheetDelegate>;
+@class UIToolbar, UIWindow, UIImageView, UILabel, NSMutableArray, UIView, NSAttributedString, UIImage, UIPopoverController, <UIActionSheetDelegate>, NSString;
 
 @interface UIActionSheet : UIView {
     struct { 
@@ -57,6 +57,7 @@
         unsigned int indexOfSelectedButton : 7; 
         unsigned int useCustomSelectedButtonGlyph : 1; 
     int _actionSheetStyle;
+    NSAttributedString *_attributedTitleString;
     float _bodyTextHeight;
     UILabel *_bodyTextLabel;
     UIView *_buttonTableView;
@@ -81,6 +82,7 @@
     UIPopoverController *_popoverController;
     UIImage *_selectedButtonGlyphHighlightedImage;
     UIImage *_selectedButtonGlyphImage;
+    UIImageView *_shadowImageView;
     float _startY;
     UILabel *_subtitleLabel;
     int _suspendTag;
@@ -114,6 +116,7 @@
 - (void)_alertSheetAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_alertSheetTextFieldReturn:(id)arg1;
 - (void)_appSuspended:(id)arg1;
+- (id)_attributedTitleString;
 - (float)_bottomVerticalInset;
 - (void)_bubbleAnimationNormalDidStop:(id)arg1 finished:(id)arg2;
 - (void)_bubbleAnimationShrinkDidStop:(id)arg1 finished:(id)arg2;
@@ -131,7 +134,6 @@
 - (id)_dimView;
 - (id)_dimViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_dimsBackground;
-- (void)_doneScrolling:(id)arg1;
 - (void)_growAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
 - (void)_hideActionSheetInsidePopOverAnimated:(BOOL)arg1;
@@ -157,6 +159,8 @@
 - (void)_presentSheetFromView:(id)arg1 above:(BOOL)arg2;
 - (void)_presentSheetStartingFromYCoordinate:(double)arg1 inView:(id)arg2;
 - (void)_presentSheetStartingFromYCoordinate:(double)arg1;
+- (void)_presentViaResponderChain:(id)arg1 asPopoverFromBarButtonItem:(id)arg2 orFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inView:(id)arg4 withPreferredArrowDirections:(int)arg5 passthroughViews:(id)arg6 backgroundStyle:(int)arg7 animated:(BOOL)arg8;
+- (void)_presentViaResponderChainFromYCoordinate:(float)arg1;
 - (id)_presentingViewForView:(id)arg1;
 - (id)_relinquishPopoverController;
 - (void)_removeAlertWindowOrShowAnOldAlert;
@@ -166,6 +170,7 @@
 - (void)_representHostingPopOverViewAnimated:(BOOL)arg1;
 - (void)_rotatingAnimationDidStop:(id)arg1;
 - (void)_setAlertSheetStyleFromButtonBar:(id)arg1;
+- (void)_setAttributedTitleString:(id)arg1;
 - (void)_setFirstOtherButtonIndex:(int)arg1;
 - (void)_setupInitialFrame;
 - (void)_setupTitleStyle;
@@ -239,7 +244,6 @@
 - (BOOL)requiresPortraitOrientation;
 - (BOOL)resignFirstResponder;
 - (BOOL)runsModal;
-- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)setActionSheetStyle:(int)arg1;
 - (void)setAlertSheetStyle:(int)arg1;
 - (void)setBlocksInteraction:(BOOL)arg1;
@@ -282,7 +286,6 @@
 - (BOOL)showsOverSpringBoardAlerts;
 - (id)subtitle;
 - (int)suspendTag;
-- (id)table;
 - (BOOL)tableShouldShowMinimumContent;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

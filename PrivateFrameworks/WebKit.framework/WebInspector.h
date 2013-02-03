@@ -21,6 +21,7 @@
 - (BOOL)isJavaScriptProfilingEnabled;
 - (BOOL)isProfilingJavaScript;
 - (BOOL)isTimelineProfilingEnabled;
+- (void)releaseFrontend;
 - (void)setFrontend:(id)arg1;
 - (void)setJavaScriptProfilingEnabled:(BOOL)arg1;
 - (void)setTimelineProfilingEnabled:(BOOL)arg1;
@@ -29,6 +30,7 @@
 - (void)showConsole:(id)arg1;
 - (void)showTimeline:(id)arg1;
 - (void)showWindow:(id)arg1;
+- (void)showWindow;
 - (void)startDebuggingJavaScript:(id)arg1;
 - (void)startProfilingJavaScript:(id)arg1;
 - (void)stopDebuggingJavaScript:(id)arg1;

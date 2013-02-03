@@ -12,45 +12,72 @@
         float d; 
         float tx; 
         float ty; 
+    struct CGSize { 
+        float width; 
+        float height; 
+    short _alternateGroupID;
     BOOL _attachedToPixelBufferAdaptor;
     BOOL _expectsMediaDataInRealTime;
+    NSString *_extendedLanguageTag;
+    NSString *_languageCode;
+    BOOL _marksOutputTrackAsEnabled;
     int _mediaTimeScale;
     NSString *_mediaType;
     NSArray *_metadataItems;
+    } _naturalSize;
     AVOutputSettings *_outputSettings;
-    struct opaqueCMFormatDescription { } *_sampleBufferFormatHint;
+    struct opaqueCMFormatDescription { } *_sourceFormatHint;
     NSDictionary *_sourcePixelBufferAttributes;
+    NSDictionary *_trackReferences;
     } _transform;
 }
 
+@property short alternateGroupID;
 @property BOOL attachedToPixelBufferAdaptor;
 @property BOOL expectsMediaDataInRealTime;
+@property(copy) NSString * extendedLanguageTag;
+@property(copy) NSString * languageCode;
+@property BOOL marksOutputTrackAsEnabled;
 @property int mediaTimeScale;
 @property(copy) NSString * mediaType;
 @property(copy) NSArray * metadataItems;
+@property struct CGSize { float x1; float x2; } naturalSize;
 @property(copy) AVOutputSettings * outputSettings;
-@property(retain) struct opaqueCMFormatDescription { }* sampleBufferFormatHint;
+@property(retain) struct opaqueCMFormatDescription { }* sourceFormatHint;
 @property(copy) NSDictionary * sourcePixelBufferAttributes;
+@property(copy) NSDictionary * trackReferences;
 @property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
 
+- (short)alternateGroupID;
 - (BOOL)attachedToPixelBufferAdaptor;
 - (void)dealloc;
 - (BOOL)expectsMediaDataInRealTime;
+- (id)extendedLanguageTag;
+- (id)languageCode;
+- (BOOL)marksOutputTrackAsEnabled;
 - (int)mediaTimeScale;
 - (id)mediaType;
 - (id)metadataItems;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (id)outputSettings;
-- (struct opaqueCMFormatDescription { }*)sampleBufferFormatHint;
+- (void)setAlternateGroupID:(short)arg1;
 - (void)setAttachedToPixelBufferAdaptor:(BOOL)arg1;
 - (void)setExpectsMediaDataInRealTime:(BOOL)arg1;
+- (void)setExtendedLanguageTag:(id)arg1;
+- (void)setLanguageCode:(id)arg1;
+- (void)setMarksOutputTrackAsEnabled:(BOOL)arg1;
 - (void)setMediaTimeScale:(int)arg1;
 - (void)setMediaType:(id)arg1;
 - (void)setMetadataItems:(id)arg1;
+- (void)setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setOutputSettings:(id)arg1;
-- (void)setSampleBufferFormatHint:(struct opaqueCMFormatDescription { }*)arg1;
+- (void)setSourceFormatHint:(struct opaqueCMFormatDescription { }*)arg1;
 - (void)setSourcePixelBufferAttributes:(id)arg1;
+- (void)setTrackReferences:(id)arg1;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (struct opaqueCMFormatDescription { }*)sourceFormatHint;
 - (id)sourcePixelBufferAttributes;
+- (id)trackReferences;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 
 @end

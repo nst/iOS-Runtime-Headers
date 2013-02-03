@@ -2,21 +2,27 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class <NSObject>, NSObject;
+@class <NSObject>, NSObject, NSArray;
 
 @interface ABValuePredicate : ABPredicate {
-    int _comparison;
+    long _comparison;
     BOOL _dictionaryValue;
+    NSArray *_orderedKeys;
     int _property;
     <NSObject> *_value;
 }
 
-@property int comparison;
+@property long comparison;
 @property int property;
 @property(copy) NSObject * value;
 
 + (id)stringForComparison:(id)arg1 withComparision:(long)arg2;
 
+- (id)_ftsAllQueryStrings;
+- (id)_ftsTermStringForString:(id)arg1;
+- (id)_ftsTokenizedTermStringForString:(id)arg1;
+- (BOOL)_shouldConsultIndexForKey:(id)arg1;
+- (BOOL)_supportsFTSSearch;
 - (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (long)comparison;
 - (void)dealloc;

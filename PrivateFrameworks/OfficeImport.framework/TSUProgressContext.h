@@ -33,8 +33,8 @@
 - (id)currentStage;
 - (void)dealloc;
 - (id)init;
-- (void)release;
-- (void)reportProgress:(double)arg1;
+- (oneway void)release;
+- (void)reportProgress:(double)arg1 overallProgress:(double)arg2;
 - (id)retain;
 - (unsigned int)retainCount;
 

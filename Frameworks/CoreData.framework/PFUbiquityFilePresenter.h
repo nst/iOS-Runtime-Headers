@@ -2,26 +2,37 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSURL, NSString, NSOperationQueue;
+@class NSMutableDictionary, NSOperationQueue, NSString, PFUbiquityLocation, NSURL;
 
 @interface PFUbiquityFilePresenter : NSObject <NSFilePresenter> {
+    NSMutableDictionary *_delegates;
+    unsigned long long _lastFSEventIdentifier;
+    NSString *_localPeerID;
     NSURL *_presentedItemURL;
-    NSString *_ubiquityRootPath;
+    PFUbiquityLocation *_ubiquityRootLocation;
 }
 
+@property(readonly) NSString * localPeerID;
 @property(readonly) NSOperationQueue * presentedItemOperationQueue;
 @property(readonly) NSURL * presentedItemURL;
-@property(readonly) NSString * ubiquityRootPath;
+@property(readonly) NSURL * primaryPresentedItemURL;
+@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
 
 + (void)initialize;
 + (id)sharedPrivateOperationQueue;
 
 - (void)dealloc;
-- (id)initWithUbiquityRootPath:(id)arg1;
+- (id)description;
+- (id)init;
+- (id)initWithUbiquityRootLocation:(id)arg1 andLocalPeerID:(id)arg2;
+- (unsigned long long)lastPresentedItemEventIdentifier;
+- (id)localPeerID;
 - (id)presentedItemOperationQueue;
 - (id)presentedItemURL;
+- (void)presentedSubitemDidChangeAtURL:(id)arg1;
 - (void)relinquishPresentedItemToReader:(id)arg1;
 - (void)relinquishPresentedItemToWriter:(id)arg1;
-- (id)ubiquityRootPath;
+- (void)setLastPresentedItemEventIdentifier:(unsigned long long)arg1;
+- (id)ubiquityRootLocation;
 
 @end

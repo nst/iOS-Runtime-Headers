@@ -12,19 +12,13 @@
 }
 
 - (id)_defaultOption;
-- (id)_groupID;
 - (BOOL)_isKeyValueGroup;
-- (BOOL)_matchesGroupID:(id)arg1 mediaType:(id)arg2;
-- (id)_mediaType;
-- (id)_optionWithID:(id)arg1;
-- (BOOL)allowsEmptySelection;
 - (id)asset;
 - (void)dealloc;
 - (id)dictionary;
 - (unsigned int)hash;
 - (id)initWithAsset:(id)arg1 dictionary:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
-- (id)mediaSelectionOptionWithPropertyList:(id)arg1;
 - (id)options;
 
 @end

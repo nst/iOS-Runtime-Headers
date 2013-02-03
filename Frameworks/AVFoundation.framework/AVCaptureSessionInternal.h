@@ -9,11 +9,11 @@
     int beginConfigRefCount;
     NSMutableDictionary *captureOptions;
     NSMutableArray *connections;
+    NSMutableDictionary *figRecorderOptions;
     NSMutableArray *inputs;
     BOOL interrupted;
     NSMutableArray *liveConnections;
     NSMutableArray *outputs;
-    NSMutableDictionary *previousFigRecorderOptions;
     struct OpaqueFigRecorder { } *recorder;
     BOOL recording;
     AVRunLoopCondition *runLoopCondition;

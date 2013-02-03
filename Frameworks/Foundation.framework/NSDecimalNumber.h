@@ -42,6 +42,7 @@
 + (id)two;
 + (id)zero;
 
+- (bool)_getCString:(char *)arg1 length:(int)arg2 multiplier:(double)arg3;
 - (BOOL)boolValue;
 - (BOOL)charValue;
 - (Class)classForCoder;

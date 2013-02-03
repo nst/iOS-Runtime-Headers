@@ -38,6 +38,7 @@
 - (id)_creatorClassNameForAccountType:(id)arg1 creatorType:(id)arg2 loader:(id)arg3;
 - (void)_forcedSetAccountProperty:(id)arg1 forKey:(id)arg2;
 - (void)_forcedSetEnabled:(BOOL)arg1 forDataclass:(id)arg2;
+- (id)_initHoppingBasicAccount;
 - (id)_initWithType:(id)arg1 class:(id)arg2;
 - (id)_orderedDataclasses:(id)arg1;
 - (id)_profileRestrictedDataclasses;
@@ -55,7 +56,6 @@
 - (id)childAccountPropertiesArrayBySettingChildProperties:(id)arg1 forChildAccountType:(id)arg2;
 - (id)childPropertiesForAccountType:(id)arg1 defaultProperties:(id)arg2 outParentNeedsSave:(BOOL*)arg3;
 - (void)dealloc;
-- (id)defaultContainerIdentifierForDataclass:(id)arg1;
 - (id)displayName;
 - (id)enabledDataclasses;
 - (id)fullAccountCreatorClassNameForAccountType:(id)arg1 loader:(id)arg2;

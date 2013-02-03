@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableData, NSString, NSDictionary, NSURLConnection;
+@class NSString, NSDictionary;
 
-@interface GEOCountryConfiguration : NSObject <NSURLConnectionDelegate> {
-    NSURLConnection *_connection;
+@interface GEOCountryConfiguration : NSObject {
     NSString *_countryCode;
     BOOL _isObservingReachability;
     BOOL _isUpdating;
     NSString *_oldCountryCode;
     NSDictionary *_oldProvidersInfo;
-    NSMutableData *_responseData;
 }
 
 @property(copy) NSString * countryCode;
@@ -23,17 +21,11 @@
 - (void)_reachabilityChanged:(id)arg1;
 - (void)_registerNetworkDefaults;
 - (void)_useCountryCodeProvider:(id)arg1;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (id)connection:(id)arg1 willCacheResponse:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
 - (id)countryCode;
 - (id)countryDefaultForKey:(id)arg1;
 - (void)dealloc;
 - (id)defaultForKey:(id)arg1 defaultValue:(id)arg2;
 - (void)setCountryCode:(id)arg1;
-- (void)toggleCountry;
 - (void)updateProvidersForCurrentCountry;
 
 @end

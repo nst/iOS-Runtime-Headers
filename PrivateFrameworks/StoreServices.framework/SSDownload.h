@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, SSXPCConnection, SSDownloadStatus, SSDownloadMetadata, SSNetworkConstraints, NSMutableDictionary, NSArray;
+@class SSDownloadPolicy, NSNumber, NSMutableDictionary, SSDownloadStatus, SSDownloadMetadata, SSXPCConnection, NSArray;
 
 @interface SSDownload : SSEntity <SSXPCCoding> {
     NSMutableDictionary *_localAssets;
@@ -15,9 +15,10 @@
 @property(retain) NSArray * assets;
 @property(getter=isCancelable,readonly) BOOL cancelable;
 @property(readonly) id downloadIdentifier;
+@property(copy) SSDownloadPolicy * downloadPolicy;
+@property(readonly) long long downloadSizeLimit;
 @property(getter=isExternal,readonly) BOOL external;
 @property(copy) SSDownloadMetadata * metadata;
-@property(copy) SSNetworkConstraints * networkConstraints;
 @property(readonly) long long persistentIdentifier;
 @property(retain) SSDownloadStatus * status;
 
@@ -33,8 +34,8 @@
 - (void)_addCachedPropertyValues:(id)arg1;
 - (void)_applyPhase:(id)arg1 toStatus:(id)arg2;
 - (id)_errorWithData:(id)arg1;
-- (id)_errorWithXPCReply:(void*)arg1;
-- (id)_initWithLocalPropertyValues:(void*)arg1;
+- (id)_errorWithXPCReply:(id)arg1;
+- (id)_initWithLocalPropertyValues:(id)arg1;
 - (void)_legacyLoadArtworkData;
 - (void)_resetLocalIVars;
 - (void)_resetStatus;
@@ -44,10 +45,12 @@
 - (id)assetsForType:(id)arg1;
 - (long long)bytesDownloaded;
 - (long long)bytesTotal;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)downloadIdentifier;
 - (id)downloadPhaseIdentifier;
+- (id)downloadPolicy;
+- (long long)downloadSizeLimit;
 - (double)estimatedSecondsRemaining;
 - (id)failureError;
 - (void)handleWithDownloadHandler:(id)arg1 completionBlock:(id)arg2;
@@ -68,6 +71,7 @@
 - (void)resume;
 - (void)setAssets:(id)arg1;
 - (void)setDownloadHandler:(id)arg1 completionBlock:(id)arg2;
+- (void)setDownloadPolicy:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setNetworkConstraints:(id)arg1;
 - (void)setStatus:(id)arg1;

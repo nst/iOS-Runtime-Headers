@@ -13,14 +13,18 @@
 
 @property(readonly) int action;
 @property(readonly) NSArray * certificates;
+@property(readonly) NSString * commonName;
+@property(readonly) NSString * emailAddress;
 @property(readonly) MFError * error;
 @property(readonly) NSString * sender;
 
 - (int)action;
 - (void)addTrustException;
 - (id)certificates;
+- (id)commonName;
 - (struct __SecTrust { }*)copyTrust;
 - (void)dealloc;
+- (id)emailAddress;
 - (id)error;
 - (BOOL)hasTrustException;
 - (id)initWithSender:(id)arg1 trust:(struct __SecTrust { }*)arg2 verification:(int)arg3;

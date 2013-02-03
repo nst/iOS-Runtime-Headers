@@ -5,6 +5,8 @@
 @interface __NSLocalTimeZone : NSTimeZone {
 }
 
++ (BOOL)supportsSecureCoding;
+
 - (id)abbreviationForDate:(id)arg1;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

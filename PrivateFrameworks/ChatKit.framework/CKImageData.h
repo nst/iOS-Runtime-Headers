@@ -2,29 +2,40 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSData;
+@class UIImage, NSData, NSString;
 
 @interface CKImageData : NSObject {
+    unsigned int _count;
     NSData *_data;
     struct CGImageSource { } *_imageSource;
+    int _orientation;
 }
 
-@property(readonly) NSData * data;
+@property(readonly) NSString * MIMEType;
+@property(readonly) NSString * UTIType;
+@property(readonly) unsigned int count;
+@property(retain) NSData * data;
+@property(readonly) UIImage * image;
+@property(readonly) int orientation;
+@property(readonly) struct CGSize { float x1; float x2; } ptSize;
+@property(readonly) struct CGSize { float x1; float x2; } pxSize;
 
-- (struct CGImageSource { }*)_imageSource;
-- (struct CGImage { }*)_newCGImageWithMaxLength:(int)arg1 transformOrientation:(BOOL)arg2;
-- (id)_newImageWithMaxLength:(int)arg1 transformOrientation:(BOOL)arg2;
++ (id)MIMETypeForData:(id)arg1;
+
+- (id)MIMEType;
+- (id)UTIType;
+- (id)_thumbnailFitToSize:(struct CGSize { float x1; float x2; })arg1 atIndex:(unsigned int)arg2;
+- (unsigned int)count;
 - (id)data;
 - (void)dealloc;
+- (id)durationsWithMaxCount:(unsigned int)arg1;
 - (id)image;
-- (int)imageCount;
-- (int)imageOrientation;
-- (id)imageType;
-- (id)imageWithMaxLength:(int)arg1;
 - (id)initWithData:(id)arg1;
-- (id)jpegDataWithMaxLength:(int)arg1 compression:(float)arg2;
-- (id)mimeType;
-- (id)pngDataWithMaxLength:(int)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (int)orientation;
+- (struct CGSize { float x1; float x2; })ptSize;
+- (struct CGSize { float x1; float x2; })pxSize;
+- (void)setData:(id)arg1;
+- (id)thumbnailFitToSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)thumbnailsFitToSize:(struct CGSize { float x1; float x2; })arg1 maxCount:(unsigned int)arg2;
 
 @end

@@ -5,16 +5,18 @@
 @class GEOLatLng;
 
 @interface GEOLocation : PBCodable {
+    struct { 
+        unsigned int course : 1; 
+        unsigned int heading : 1; 
+        unsigned int horizontalAccuracy : 1; 
+        unsigned int speed : 1; 
+        unsigned int timestamp : 1; 
+        unsigned int verticalAccuracy : 1; 
+        unsigned int altitude : 1; 
+        unsigned int type : 1; 
     int _altitude;
     double _course;
-    BOOL _hasAltitude;
-    BOOL _hasCourse;
-    BOOL _hasHeading;
-    BOOL _hasHorizontalAccuracy;
-    BOOL _hasSpeed;
-    BOOL _hasTimestamp;
-    BOOL _hasType;
-    BOOL _hasVerticalAccuracy;
+    } _has;
     double _heading;
     double _horizontalAccuracy;
     GEOLatLng *_latLng;
@@ -42,8 +44,11 @@
 @property int type;
 @property double verticalAccuracy;
 
-- (id)_initWithCLClientLocation:(const struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; }*)arg1;
++ (id)locationWithCLLocation:(id)arg1 course:(double)arg2;
+
+- (id)_initWithCLClientLocation:(const struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; }*)arg1;
 - (int)altitude;
+- (void)copyTo:(id)arg1;
 - (double)course;
 - (void)dealloc;
 - (id)description;
@@ -56,9 +61,13 @@
 - (BOOL)hasTimestamp;
 - (BOOL)hasType;
 - (BOOL)hasVerticalAccuracy;
+- (unsigned int)hash;
 - (double)heading;
 - (double)horizontalAccuracy;
+- (id)initWithCLLocation:(id)arg1 course:(double)arg2;
+- (id)initWithCLLocation:(id)arg1;
 - (id)initWithGEOCoordinate:(struct { double x1; double x2; })arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)latLng;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAltitude:(int)arg1;

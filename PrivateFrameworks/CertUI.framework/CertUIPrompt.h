@@ -20,7 +20,7 @@
 @property(retain) NSString * host;
 @property(retain) NSString * service;
 
-+ (struct dispatch_queue_s { }*)promptQueue;
++ (id)promptQueue;
 + (id)stringForResponse:(int)arg1;
 
 - (id)_copyPropertiesFromTrust:(struct __SecTrust { }*)arg1;

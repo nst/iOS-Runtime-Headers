@@ -20,6 +20,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)name;
 - (id)object;
+- (id)replacementObjectForPortCoder:(id)arg1;
 - (id)userInfo;
 
 @end

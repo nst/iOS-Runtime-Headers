@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUSectionsResponse, NSString;
+@class SUSectionsResponse, NSString, SUClientInterface;
 
 @interface SULoadSectionsOperation : ISOperation <ISURLOperationDelegate> {
     NSString *_activeSectionVersionString;
+    SUClientInterface *_clientInterface;
     SUSectionsResponse *_sectionsResponse;
     BOOL _shouldUseCache;
 }
@@ -22,6 +23,7 @@
 - (id)activeSectionVersionString;
 - (void)dealloc;
 - (id)init;
+- (id)initWithClientInterface:(id)arg1;
 - (void)run;
 - (id)sectionsResponse;
 - (void)setActiveSectionVersionString:(id)arg1;

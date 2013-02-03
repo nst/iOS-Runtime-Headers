@@ -11,8 +11,8 @@
 
 @interface NSManagedObject : NSObject {
     id _cd_entity;
-    unsigned int _cd_extraFlags;
-    unsigned int _cd_lockingInfo;
+    unsigned long _cd_extraFlags;
+    unsigned long _cd_lockingInfo;
     NSManagedObjectContext *_cd_managedObjectContext;
     NSManagedObjectID *_cd_objectID;
     id _cd_observationInfo;
@@ -20,7 +20,7 @@
     id _cd_rawData;
     int _cd_rc;
     id *_cd_snapshots;
-    unsigned int _cd_stateFlags;
+    unsigned long _cd_stateFlags;
 }
 
 + (struct { int x1; void *x2; unsigned long x3; unsigned char x4; unsigned int x5; void *x6; id x7; char *x8; struct _moFactoryClassFlags { unsigned int x_9_1_1 : 1; unsigned int x_9_1_2 : 1; unsigned int x_9_1_3 : 1; unsigned int x_9_1_4 : 1; unsigned int x_9_1_5 : 1; unsigned int x_9_1_6 : 1; unsigned int x_9_1_7 : 26; } x9; }*)_PFMOClassFactoryData;
@@ -162,6 +162,7 @@
 - (void)finalize;
 - (BOOL)hasChanges;
 - (BOOL)hasFaultForRelationshipNamed:(id)arg1;
+- (BOOL)hasPersistentChangedValues;
 - (unsigned int)hash;
 - (BOOL)implementsSelector:(SEL)arg1;
 - (id)init;

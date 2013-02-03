@@ -5,7 +5,6 @@
 @interface GKConnection : NSObject {
 }
 
-@property id awdMetricsCallback;
 @property id eventDelegate;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -13,7 +12,6 @@
 + (id)externalAddressForSelfConnectionData:(id)arg1;
 + (BOOL)isRelayEnabled;
 
-- (id)awdMetricsCallback;
 - (void)cancelConnectParticipant:(id)arg1;
 - (void)connect;
 - (void)connectParticipantsWithConnectionData:(id)arg1 withSessionInfo:(id)arg2;
@@ -22,14 +20,13 @@
 - (id)eventDelegate;
 - (unsigned int)gckPID;
 - (struct OpaqueGCKSession { }*)gckSession;
+- (id)getLocalConnectionDataForLocalGaming;
 - (void)getLocalConnectionDataWithCompletionHandler:(id)arg1;
-- (id)initWithParticipantID:(id)arg1 withOptions:(id)arg2;
 - (id)initWithParticipantID:(id)arg1;
 - (void)initiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
 - (id)networkStatistics;
 - (id)networkStatisticsDictionaryForGCKStats:(void*)arg1;
 - (void)preRelease;
-- (void)setAwdMetricsCallback:(id)arg1;
 - (void)setEventDelegate:(id)arg1;
 - (void)setParticipantID:(id)arg1 forPeerID:(id)arg2;
 - (void)updateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;

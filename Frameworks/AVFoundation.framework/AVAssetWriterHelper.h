@@ -12,6 +12,7 @@
 @property(readonly) NSArray * availableMediaTypes;
 @property(readonly) AVAssetWriterConfigurationState * configurationState;
 @property(readonly) NSError * error;
+@property(readonly) NSArray * inputGroups;
 @property(readonly) NSArray * inputs;
 @property(readonly) AVMediaFileType * mediaFileType;
 @property(copy) NSArray * metadata;
@@ -23,10 +24,13 @@
 @property(retain) AVWeakReference * weakReferenceToAssetWriter;
 
 - (BOOL)_canApplyOutputSettings:(id)arg1 forMediaType:(id)arg2 exceptionReason:(id*)arg3;
-- (void)_transitionToClientInitiatedTerminalStatus:(int)arg1;
+- (BOOL)_canApplyTrackReferences:(id)arg1 exceptionReason:(id*)arg2;
+- (BOOL)_transitionToClientInitiatedTerminalStatus:(int)arg1;
 - (void)addInput:(id)arg1;
+- (void)addInputGroup:(id)arg1;
 - (id)availableMediaTypes;
 - (BOOL)canAddInput:(id)arg1;
+- (BOOL)canAddInputGroup:(id)arg1;
 - (BOOL)canApplyOutputSettings:(id)arg1 forMediaType:(id)arg2;
 - (void)cancelWriting;
 - (id)configurationState;
@@ -34,8 +38,10 @@
 - (void)endSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)error;
 - (void)finishWriting;
+- (void)finishWritingWithCompletionHandler:(id)arg1;
 - (id)init;
 - (id)initWithConfigurationState:(id)arg1;
+- (id)inputGroups;
 - (id)inputs;
 - (id)mediaFileType;
 - (id)metadata;

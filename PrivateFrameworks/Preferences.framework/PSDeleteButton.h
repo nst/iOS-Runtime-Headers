@@ -4,7 +4,7 @@
 
 @class UIButton;
 
-@interface PSDeleteButton : UIView <PreferencesTableCustomView> {
+@interface PSDeleteButton : UIView <PSHeaderFooterView> {
     UIButton *_deleteButton;
 }
 

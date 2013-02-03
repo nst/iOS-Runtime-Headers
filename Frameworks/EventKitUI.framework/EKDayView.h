@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSDateComponents, EKDayTimeView, UIScrollView, <EKDayViewDelegate>, NSCalendar, EKDayAllDayView, NSDate, UIView, EKDayViewContent, NSArray, EKEvent, UIScrollAnimation, <EKDayViewDataSource>, EKPadDayAllDayView, UIImageView;
+@class NSDateComponents, EKDayTimeView, UIScrollView, <EKDayViewDelegate>, NSCalendar, EKDayAllDayView, NSDate, UIView, EKDayViewContent, NSArray, EKEvent, UIScrollAnimation, <EKDayViewDataSource>, UIImageView, EKPadDayAllDayView;
 
 @interface EKDayView : UIView <UIScrollViewDelegate, EKDayAllDayViewDelegate, EKDayViewContentDelegate, EKPadAllDayViewDelegate> {
     struct CGSize { 
@@ -11,7 +11,6 @@
     unsigned int _loadingOccurrences : 1;
     unsigned int _allowsOccurrenceSelection : 1;
     unsigned int _putSelectionOnTop : 1;
-    unsigned int _showsGrid : 1;
     unsigned int _didLoad : 1;
     unsigned int _scrollbarShowsInside : 1;
     unsigned int _scrollingToOccurrence : 1;
@@ -61,7 +60,6 @@
 @property(readonly) NSArray * occurrenceViews;
 @property int outlineStyle;
 @property(readonly) float scrollBarOffset;
-@property BOOL showsGrid;
 @property BOOL showsLeftBorder;
 @property BOOL showsSelectionOnTop;
 @property BOOL showsTimeLine;
@@ -81,7 +79,7 @@
 - (void)_notifyDelegateOfFinishedScrollingToOccurrence;
 - (void)_notifyDelegateOfPressOnEvent:(id)arg1;
 - (float)_positionOfSecond:(int)arg1;
-- (double)_scrollToSecond:(int)arg1 animated:(BOOL)arg2;
+- (void)_scrollToSecond:(int)arg1 animated:(BOOL)arg2 whenFinished:(id)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_scrollerRect;
 - (int)_secondAtPosition:(float)arg1;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })_selectedDate;
@@ -89,6 +87,7 @@
 - (void)_timeViewTapped:(id)arg1;
 - (float)_verticalOffset;
 - (void)addViewToScroller:(id)arg1 isAllDay:(BOOL)arg2;
+- (void)adjustForSignificantTimeChange;
 - (BOOL)alignsMidnightToTop;
 - (float)allDayRegionHeight;
 - (void)allDayView:(id)arg1 didSelectEvent:(id)arg2;
@@ -144,7 +143,7 @@
 - (void)resetLastSelectedOccurrencePoint;
 - (float)scrollBarOffset;
 - (void)scrollEventsIntoViewAnimated:(BOOL)arg1;
-- (double)scrollToDate:(id)arg1 animated:(BOOL)arg2;
+- (void)scrollToDate:(id)arg1 animated:(BOOL)arg2 whenFinished:(id)arg3;
 - (void)scrollToEvent:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)scrollTowardPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -169,14 +168,12 @@
 - (void)setOrientation:(int)arg1;
 - (void)setOutlineStyle:(int)arg1;
 - (void)setScrollerYInset:(float)arg1 keepingYPointVisible:(float)arg2;
-- (void)setShowsGrid:(BOOL)arg1;
 - (void)setShowsLeftBorder:(BOOL)arg1;
 - (void)setShowsSelectionOnTop:(BOOL)arg1;
 - (void)setShowsTimeLine:(BOOL)arg1;
 - (void)setShowsTimeMarker:(BOOL)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)setTopFader:(id)arg1 bottomFader:(id)arg2 sizeToImage:(BOOL)arg3;
-- (BOOL)showsGrid;
 - (BOOL)showsLeftBorder;
 - (BOOL)showsSelectionOnTop;
 - (BOOL)showsTimeLine;

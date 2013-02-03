@@ -9,7 +9,7 @@
 
 @class NSData, NSString;
 
-@interface NSData : NSObject <NSCopying, NSMutableCopying, NSCoding, ASParsingLeafNode> {
+@interface NSData : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, ASParsingLeafNode> {
 }
 
 @property(readonly) NSData * SHA1Data;
@@ -17,6 +17,8 @@
 
 + (id)MCDataWithCFData:(struct __CFData { }*)arg1;
 + (id)MCDataWithHexString:(id)arg1;
++ (id)MZStringByMD5HashingString:(id)arg1;
++ (id)MZStringFromDigestData:(id)arg1;
 + (BOOL)acceptsTopLevelLeaves;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)data;
@@ -33,6 +35,7 @@
 + (id)dataWithHexString:(id)arg1;
 + (id)dataWithHexString:(id)arg1;
 + (id)dataWithRandomBytes:(unsigned int)arg1;
++ (id)dataWithSockAddr:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1;
 + (BOOL)expectsContent;
 + (BOOL)frontingBasicTypes;
 + (id)mappedDataWithContentsOfTemporaryFile:(id)arg1 error:(id*)arg2;
@@ -40,6 +43,7 @@
 + (id)nsDataWithOcBinaryData:(const struct OcBinaryData { int (**x1)(); unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; char *x6; boolx7; struct SsrwOOStream {} *x8; }*)arg1;
 + (BOOL)parsingLeafNode;
 + (BOOL)parsingWithSubItems;
++ (BOOL)supportsSecureCoding;
 
 - (const struct CDXTicket { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; struct { unsigned char x_5_1_1[6]; unsigned short x_5_1_2; } x5; unsigned int x6; unsigned char x7[0]; }*)CDXTicket;
 - (id)CDXTicketExpirationDate;
@@ -54,20 +58,26 @@
 - (id)CDXTicketTrimmed;
 - (BOOL)CDXTicketWellFormed;
 - (id)MCHexString;
+- (void)MLBindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
 - (id)MSBase64Encoding;
 - (id)MSHexString;
 - (id)MSInitWithBase64Encoding:(id)arg1;
+- (id)MZDataByDeflatingWithGZip;
+- (id)MZDataByInflatingWithGZip;
 - (id)SHA1Data;
+- (id)SHA1Hash;
 - (id)SHA1HexString;
+- (id)SHA256Hash;
+- (id)_FTCopyGzippedData;
 - (id)_FTDecompressData;
-- (id)_FTGzippedData;
 - (id)_FTOptionallyDecompressData;
 - (id)_FTStringFromBaseData;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (BOOL)_allowsDirectEncoding;
 - (id)_asciiDescription;
 - (BOOL)_bytesAreVM;
 - (unsigned long)_cfTypeID;
-- (void*)_geo_newXPCData;
+- (id)_geo_newXPCData;
 - (id)_gkMD5HashData;
 - (id)_gkMD5HashString;
 - (id)_gkSHA1HashData;
@@ -95,15 +105,18 @@
 - (id)base64Encoding;
 - (const void*)bytes;
 - (Class)classForCoder;
+- (id)copyDeflatedData;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)decompressedGzipData;
 - (id)decompressedGzipDataUsingTemporaryFile;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)fileSafeBase64Encoding;
 - (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
 - (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)getBytes:(void*)arg1;
 - (unsigned int)hash;
+- (id)hexEncoding;
 - (id)hexString;
 - (id)hexString;
 - (id)hexStringOfBytes:(char *)arg1 withLength:(int)arg2;
@@ -132,6 +145,7 @@
 - (id)md5Digest;
 - (id)mf_MD5Digest;
 - (id)mf_copyHexString;
+- (id)mf_createAttachmentWithFilename:(id)arg1 UTIType:(id)arg2;
 - (id)mf_dataByConvertingUnixNewlinesToNetwork;
 - (id)mf_decodeBase64;
 - (id)mf_decodeBase64InRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1;
@@ -161,8 +175,11 @@
 - (void)pl_adviceWillNeed;
 - (unsigned int)pl_advisoryLength;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfData:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (id)replacementObjectForPortCoder:(id)arg1;
 - (id)sha1Digest;
+- (struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)sockAddr;
 - (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)toHexString;
 - (id)uppercaseHexStringWithoutSpaces;
 - (id)webSafeBase64Data;
 - (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2 error:(id*)arg3;

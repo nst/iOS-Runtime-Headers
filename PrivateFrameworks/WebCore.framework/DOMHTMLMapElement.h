@@ -7,7 +7,7 @@
 @interface DOMHTMLMapElement : DOMHTMLElement {
 }
 
-@property(retain,readonly) DOMHTMLCollection * areas;
+@property(readonly) DOMHTMLCollection * areas;
 @property(copy) NSString * name;
 
 - (id)areas;

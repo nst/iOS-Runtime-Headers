@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSString, NSKeyValueUnnestedProperty;
+@class NSString, NSKeyValueProperty;
 
 @interface NSKeyValueComputedProperty : NSKeyValueProperty {
     NSString *_operationArgumentKeyPath;
-    NSKeyValueUnnestedProperty *_operationArgumentProperty;
+    NSKeyValueProperty *_operationArgumentProperty;
     NSString *_operationName;
 }
 

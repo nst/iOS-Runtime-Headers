@@ -2,20 +2,22 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetInspector, NSURL, NSDictionary, AVAssetCache, NSMutableArray;
+@class AVAssetInspector, NSURL, NSObject<OS_dispatch_queue>, NSDictionary, NSMutableArray, AVAssetCache;
 
 @interface AVFigAssetInspectorLoader : AVAssetInspectorLoader {
+    NSURL *_URL;
     AVAssetCache *_assetCache;
     AVAssetInspector *_assetInspector;
     struct OpaqueFigSemaphore { } *_cameraRollValidationSemaphor;
     BOOL _compatibleWithSavedPhotosAlbum;
     long _compatibleWithSavedPhotosAlbumResult;
     int _compatibleWithSavedPhotosAlbumStatus;
-    struct dispatch_queue_s { } *_completionHandlerQueue;
+    NSObject<OS_dispatch_queue> *_completionHandlerQueue;
     NSURL *_downloadDestinationURL;
     struct OpaqueFigAsset { } *_figAsset;
     long _figAssetCreationStatus;
     struct OpaqueFigFormatReader { } *_formatReader;
+    BOOL _formatReaderObtained;
     NSMutableArray *_loadingBatches;
     BOOL _loadingCanceled;
     struct OpaqueFigSimpleMutex { } *_loadingMutex;
@@ -37,10 +39,12 @@
 - (id)URL;
 - (void)_addFigAssetNotifications;
 - (struct OpaqueFigSemaphore { }*)_cameraRollValidationSemaphor;
-- (struct dispatch_queue_s { }*)_completionHandlerQueue;
+- (id)_completionHandlerQueue;
 - (void)_ensureAllDependenciesOfKeyAreLoaded:(id)arg1;
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
+- (id)_initWithDownloadToken:(unsigned long long)arg1;
+- (id)_initWithFigAsset:(struct OpaqueFigAsset { }*)arg1 options:(id)arg2;
 - (BOOL)_isStreaming;
 - (int)_loadStatusForProperty:(id)arg1 returningError:(int*)arg2;
 - (id)_loadingBatches;
@@ -53,6 +57,7 @@
 - (id)chapterGroupInfo;
 - (void)dealloc;
 - (id)downloadDestinationURL;
+- (unsigned long long)downloadToken;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (void)finalize;
 - (BOOL)hasProtectedContent;

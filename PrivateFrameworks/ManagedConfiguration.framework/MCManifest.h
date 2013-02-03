@@ -2,18 +2,19 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSString, NSMutableDictionary;
+@class NSObject<OS_dispatch_queue>, NSString, NSMutableDictionary;
 
 @interface MCManifest : NSObject {
     NSMutableDictionary *_manifest;
     NSString *_path;
-    struct dispatch_queue_s { } *_syncQueue;
+    NSObject<OS_dispatch_queue> *_syncQueue;
 }
 
 + (void)_setManifestPath:(id)arg1;
 + (id)installedProfileWithIdentifier:(id)arg1;
 + (id)sharedManifest;
 
+- (void).cxx_destruct;
 - (id)_manifest;
 - (void)_setManifest:(id)arg1;
 - (void)addIdentifierToManifest:(id)arg1 flag:(int)arg2;

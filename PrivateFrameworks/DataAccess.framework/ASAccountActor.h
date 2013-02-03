@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@interface ASAccountActor : AKActor <ASAccountActorMessages> {
+@interface ASAccountActor : DADisableableObject <ASAccountActorMessages> {
 }
 
 - (oneway void)_accountPasswordChanged;
@@ -14,6 +14,8 @@
 - (oneway void)cancelAllSearchQueries;
 - (oneway void)cancelSearchQuery:(id)arg1;
 - (oneway void)cancelTaskWithID:(int)arg1;
+- (id)customSignature;
+- (id)delegateeInvitationICSRepresentationForMetaData:(id)arg1 inFolderWithId:(id)arg2 outSummary:(id*)arg3;
 - (id)deletedItemsFolder;
 - (id)encryptionIdentityPersistentReference;
 - (id)folderIDsThatExternalClientsCareAboutForDataclasses:(int)arg1 withTag:(id*)arg2;
@@ -28,17 +30,18 @@
 - (oneway void)monitorFoldersForUpdates:(id)arg1;
 - (int)performFetchAttachmentRequest:(id)arg1 consumer:(id)arg2;
 - (int)performFetchMessageSearchResultRequests:(id)arg1 consumer:(id)arg2;
-- (void)performFolderChange:(id)arg1;
-- (int)performMailboxRequest:(id)arg1 mailbox:(id)arg2 previousTag:(id)arg3 consumer:(id)arg4;
-- (int)performMailboxRequests:(id)arg1 mailbox:(id)arg2 previousTag:(id)arg3 consumer:(id)arg4;
+- (void)performFolderChange:(id)arg1 isUserRequested:(BOOL)arg2;
+- (int)performMailboxRequest:(id)arg1 mailbox:(id)arg2 previousTag:(id)arg3 isUserRequested:(BOOL)arg4 consumer:(id)arg5;
+- (int)performMailboxRequests:(id)arg1 mailbox:(id)arg2 previousTag:(id)arg3 isUserRequested:(BOOL)arg4 consumer:(id)arg5;
 - (int)performMoveRequests:(id)arg1 consumer:(id)arg2;
 - (int)performResolveRecipientsRequest:(id)arg1 consumer:(id)arg2;
 - (oneway void)performSearchQuery:(id)arg1;
 - (BOOL)reattemptInvitationLinkageForMetaData:(id)arg1 inFolderWithId:(id)arg2;
 - (BOOL)searchQueriesRunning;
-- (int)sendMessageWithRFC822Data:(id)arg1 messageID:(id)arg2 outgoingMessageType:(int)arg3 originalMessageFolderID:(id)arg4 originalMessageItemID:(id)arg5 originalMessageLongID:(id)arg6 originalAccountID:(id)arg7 consumer:(id)arg8 context:(void*)arg9;
+- (int)sendMessageWithRFC822Data:(id)arg1 messageID:(id)arg2 outgoingMessageType:(int)arg3 originalMessageFolderID:(id)arg4 originalMessageItemID:(id)arg5 originalMessageLongID:(id)arg6 originalAccountID:(id)arg7 useSmartTasksIfPossible:(BOOL)arg8 consumer:(id)arg9 context:(void*)arg10;
 - (id)sentItemsFolder;
 - (oneway void)setAccount:(id)arg1;
+- (oneway void)setCustomSignature:(id)arg1;
 - (oneway void)setEncryptionIdentityPersistentReference:(id)arg1;
 - (BOOL)setFolderIdsThatExternalClientsCareAboutAdded:(id)arg1 deleted:(id)arg2 foldersTag:(id)arg3;
 - (oneway void)setGeneratesBulletins:(BOOL)arg1;

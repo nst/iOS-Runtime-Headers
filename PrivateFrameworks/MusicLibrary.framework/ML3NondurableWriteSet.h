@@ -12,6 +12,7 @@
     NSMutableDictionary *_trackProperties;
 }
 
+- (void).cxx_destruct;
 - (void)addDeletedPersistentID:(long long)arg1 forEntityClass:(Class)arg2;
 - (void)addValuesFromDictionary:(id)arg1 forEntityClass:(Class)arg2 withPersistentID:(long long)arg3;
 - (void)addValuesFromWriteSet:(id)arg1;

@@ -9,7 +9,9 @@
 
 @property(readonly) NSString * UUID;
 @property(copy) NSDate * absoluteDate;
+@property(copy) NSDate * acknowledgedDate;
 @property int alarmType;
+@property(getter=isDefaultAlarm) BOOL defaultAlarm;
 @property(copy) NSData * externalData;
 @property(copy) NSString * externalID;
 @property(readonly) BOOL isAbsolute;
@@ -18,10 +20,12 @@
 @property double relativeOffset;
 @property(copy) NSTimeZone * timeZone;
 
++ (id)defaultPropertiesToLoad;
 + (id)relations;
 
 - (id)UUID;
 - (id)absoluteDate;
+- (id)acknowledgedDate;
 - (int)alarmType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -30,12 +34,15 @@
 - (id)externalID;
 - (id)init;
 - (BOOL)isAbsolute;
+- (BOOL)isDefaultAlarm;
 - (id)location;
 - (id)owner;
 - (int)proximity;
 - (double)relativeOffset;
 - (void)setAbsoluteDate:(id)arg1;
+- (void)setAcknowledgedDate:(id)arg1;
 - (void)setAlarmType:(int)arg1;
+- (void)setDefaultAlarm:(BOOL)arg1;
 - (void)setExternalData:(id)arg1;
 - (void)setExternalID:(id)arg1;
 - (void)setLocation:(id)arg1;

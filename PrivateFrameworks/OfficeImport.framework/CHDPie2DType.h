@@ -12,6 +12,7 @@
 - (id)contentFormat;
 - (int)defaultLabelPosition;
 - (int)firstSliceAngle;
+- (bool)hasExplosion;
 - (id)initWithChart:(id)arg1;
 - (bool)isBarOfPieType;
 - (bool)isDoughnutType;

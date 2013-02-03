@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPVideoViewController, UIView, UILabel, NSString, UIImageView, MPInlineAudioTransportControls;
+@class <MPVideoControllerProtocol>, UIView, UILabel, NSString, UIImageView, MPInlineAudioTransportControls;
 
 @interface MPInlineAudioOverlay : MPPlaybackControlsView {
     UIView *_backgroundView;
@@ -21,12 +21,12 @@
     int _style;
     UIImageView *_trackImageView;
     MPInlineAudioTransportControls *_transportControls;
-    MPVideoViewController *_videoViewController;
+    <MPVideoControllerProtocol> *_videoViewController;
 }
 
 @property(copy) NSString * playbackErrorDescription;
 @property int style;
-@property MPVideoViewController * videoViewController;
+@property <MPVideoControllerProtocol> * videoViewController;
 
 - (void)_availableRoutesDidChangeNotification:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameInBackgroundViewForDescriptionLabel:(id)arg1;
@@ -34,7 +34,7 @@
 - (id)_newDescriptionLabel;
 - (void)_updateVisiblePartsForAvailableRoutes;
 - (void)dealloc;
-- (unsigned int)displayablePartsInPartMask:(unsigned int)arg1;
+- (unsigned long long)displayablePartsInPartMask:(unsigned long long)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)newProgressIndicator;

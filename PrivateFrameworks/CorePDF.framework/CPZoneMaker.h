@@ -13,10 +13,10 @@
 - (void)cutHorizontalBorders:(id)arg1 whereObscuredByShape:(id)arg2;
 - (void)cutVerticalBorders:(id)arg1 whereObscuredByShape:(id)arg2;
 - (void)dealloc;
-- (id)makeZoneForStraddlersFrom:(id)arg1;
 - (void)makeZonesIn:(id)arg1;
 - (void)makeZonesWithBoundaryIn:(id)arg1;
 - (void)mergeQualifyingRectanglesIn:(id)arg1;
+- (id)newZoneForStraddlersFrom:(id)arg1;
 - (BOOL)overlap:(id)arg1 with:(id)arg2;
 
 @end

@@ -17,5 +17,6 @@
 - (void)createAirlockForDataclasses:(id)arg1;
 - (void)evacuateDataclasses:(id)arg1;
 - (void)handleCompletedAsset:(id)arg1;
+- (void)purgeAssetWithIdentifier:(id)arg1 dataclass:(id)arg2;
 
 @end

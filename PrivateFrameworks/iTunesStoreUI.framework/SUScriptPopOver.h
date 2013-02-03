@@ -8,13 +8,20 @@
     BOOL _ignoreDismiss;
 }
 
+@property int backgroundStyle;
+@property(readonly) int backgroundStyleBlack;
+@property(readonly) int backgroundStyleClear;
+@property(readonly) int backgroundStyleCream;
+@property(readonly) int backgroundStyleDefault;
+@property(readonly) int backgroundStyleShare;
 @property float contentHeight;
 @property float contentWidth;
 @property(retain) UIPopoverController * nativePopoverController;
+@property(readonly) SUScriptViewController * presentingViewController;
 @property(retain) SUScriptViewController * viewController;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_activeViewController;
@@ -28,17 +35,24 @@
 - (void)_setNativeViewController:(id)arg1;
 - (BOOL)_shouldDisplayAsPopover;
 - (void)_showAsModalViewController;
-- (void)_showFromDOMElement:(id)arg1;
-- (void)_showFromNavigationItem:(id)arg1;
 - (void)_viewControllerDidDismiss:(id)arg1;
 - (id)attributeKeys;
+- (int)backgroundStyle;
+- (int)backgroundStyleBlack;
+- (int)backgroundStyleClear;
+- (int)backgroundStyleCream;
+- (int)backgroundStyleDefault;
+- (int)backgroundStyleShare;
 - (float)contentHeight;
 - (float)contentWidth;
 - (void)dealloc;
 - (void)dismissAnimated:(id)arg1;
 - (id)init;
+- (BOOL)isVisible;
 - (id)nativePopoverController;
+- (id)presentingViewController;
 - (id)scriptAttributeKeys;
+- (void)setBackgroundStyle:(int)arg1;
 - (void)setContentHeight:(float)arg1;
 - (void)setContentWidth:(float)arg1 height:(float)arg2 animated:(BOOL)arg3;
 - (void)setContentWidth:(float)arg1;

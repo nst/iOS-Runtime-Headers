@@ -27,9 +27,10 @@
 
 - (int)URLBagType;
 - (id)URLResponse;
+- (int)_responseTypeForErrorNumber:(int)arg1;
 - (int)_responseTypeForFailureType:(int)arg1;
 - (int)_responseTypeForStatusValue:(int)arg1;
-- (id)_statusValue;
+- (id)_valueForFirstAvailableKey:(id)arg1;
 - (int)accountKind;
 - (id)accountName;
 - (id)accountUniqueIdentifier;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSDate, NSError, FZMessage, NSAttributedString, NSString, IMHandle, NSArray;
+@class FZMessage, NSDate, NSError, NSAttributedString, NSString, IMHandle, NSArray;
 
 @interface IMMessage : NSObject <NSCopying> {
     NSError *_error;
@@ -24,9 +24,7 @@
 @property(readonly) FZMessage * _fzMessage;
 @property(retain) NSError * error;
 @property(readonly) NSArray * fileTransferGUIDs;
-@property(readonly) BOOL finished;
 @property unsigned long long flags;
-@property(readonly) BOOL fromMe;
 @property(readonly) NSString * guid;
 @property(readonly) BOOL hasDataDetectorResults;
 @property(readonly) BOOL hasInlineAttachments;
@@ -44,32 +42,40 @@
 @property(readonly) BOOL isRead;
 @property(readonly) BOOL isSent;
 @property(readonly) BOOL isSystemMessage;
-@property(readonly) long long messageID;
+@property(readonly) BOOL isTypingMessage;
+@property long long messageID;
 @property(readonly) NSAttributedString * messageSubject;
 @property(readonly) NSString * plainBody;
 @property(retain) IMHandle * sender;
 @property(readonly) NSString * senderName;
 @property(readonly) IMHandle * subject;
 @property(readonly) NSString * summaryString;
-@property(readonly) NSAttributedString * text;
+@property(retain) NSAttributedString * text;
 @property(retain) NSDate * time;
 @property(retain) NSDate * timeDelivered;
 @property(retain) NSDate * timeRead;
+@property(readonly) BOOL wasDataDetected;
+@property(readonly) BOOL wasDowngraded;
 
 + (id)defaultInvitationMessageFromSender:(id)arg1 flags:(unsigned long long)arg2;
 + (id)fromMeIMHandle:(id)arg1 withText:(id)arg2 fileTransferGUIDs:(id)arg3 flags:(unsigned long long)arg4;
 + (id)instantMessageWithText:(id)arg1 flags:(unsigned long long)arg2;
++ (id)instantMessageWithText:(id)arg1 messageSubject:(id)arg2 fileTransferGUIDs:(id)arg3 flags:(unsigned long long)arg4;
 + (id)instantMessageWithText:(id)arg1 messageSubject:(id)arg2 flags:(unsigned long long)arg3;
 + (id)messageFromFZMessage:(id)arg1 sender:(id)arg2 subject:(id)arg3;
 
+- (BOOL)__ck_isEqualToMessageUsingGUID:(id)arg1;
 - (int)_compareIMMessageDates:(id)arg1;
 - (int)_compareIMMessageGUIDs:(id)arg1;
 - (int)_compareIMMessageIDs:(id)arg1;
+- (id)_copyWithFlags:(unsigned long long)arg1;
 - (id)_fzMessage;
-- (id)_initWithSender:(id)arg1 time:(id)arg2 timeRead:(id)arg3 timeDelivered:(id)arg4 text:(id)arg5 messageSubject:(id)arg6 fileTransferGUIDs:(id)arg7 flags:(unsigned long long)arg8 error:(id)arg9 guid:(id)arg10 messageID:(long long)arg11 subject:(id)arg12;
+- (id)_initWithSender:(id)arg1 time:(id)arg2 timeRead:(id)arg3 timeDelivered:(id)arg4 plainText:(id)arg5 text:(id)arg6 messageSubject:(id)arg7 fileTransferGUIDs:(id)arg8 flags:(unsigned long long)arg9 error:(id)arg10 guid:(id)arg11 messageID:(long long)arg12 subject:(id)arg13;
 - (void)_updateError:(id)arg1;
 - (void)_updateFlags:(unsigned long long)arg1;
+- (void)_updateMessageID:(long long)arg1;
 - (void)_updateSender:(id)arg1;
+- (void)_updateText:(id)arg1;
 - (void)_updateTime:(id)arg1;
 - (void)_updateTimeDelivered:(id)arg1;
 - (void)_updateTimeRead:(id)arg1;
@@ -80,9 +86,7 @@
 - (id)description;
 - (id)error;
 - (id)fileTransferGUIDs;
-- (BOOL)finished;
 - (unsigned long long)flags;
-- (BOOL)fromMe;
 - (id)guid;
 - (BOOL)hasDataDetectorResults;
 - (BOOL)hasInlineAttachments;
@@ -104,6 +108,7 @@
 - (BOOL)isRead;
 - (BOOL)isSent;
 - (BOOL)isSystemMessage;
+- (BOOL)isTypingMessage;
 - (long long)messageID;
 - (id)messageSubject;
 - (id)plainBody;
@@ -117,5 +122,7 @@
 - (id)time;
 - (id)timeDelivered;
 - (id)timeRead;
+- (BOOL)wasDataDetected;
+- (BOOL)wasDowngraded;
 
 @end

@@ -14,11 +14,9 @@
 
 - (void)_dumpAllPersons;
 - (id)_personMap;
-- (BOOL)allowsWeakReference;
 - (void)dealloc;
 - (id)personForUniqueID:(id)arg1;
 - (void)registerPerson:(id)arg1;
-- (BOOL)retainWeakReference;
 - (void)set_personMap:(id)arg1;
 - (void)unregisterPerson:(id)arg1;
 

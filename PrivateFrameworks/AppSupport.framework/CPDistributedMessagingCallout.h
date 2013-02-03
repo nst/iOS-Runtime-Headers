@@ -11,7 +11,7 @@
 
 @property(readonly) BOOL returnsVoid;
 @property(readonly) SEL selector;
-@property(retain,readonly) id target;
+@property(readonly) id target;
 
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;

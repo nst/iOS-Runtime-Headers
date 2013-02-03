@@ -20,7 +20,6 @@
 
 - (void)addListener:(id)arg1;
 - (void)addTopic:(id)arg1;
-- (BOOL)allowsWeakReference;
 - (int)connectionStatus;
 - (void)dealloc;
 - (id)init;
@@ -30,7 +29,6 @@
 - (void)removeListener:(id)arg1;
 - (void)removeTopic:(id)arg1;
 - (void)requestKeepAlive;
-- (BOOL)retainWeakReference;
 - (void)setRegistered:(BOOL)arg1;
 - (void)setTopics:(id)arg1;
 - (id)topics;

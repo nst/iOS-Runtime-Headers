@@ -10,6 +10,7 @@
     id _fillStyle;
     int _fillStyleType;
     float _height;
+    float _scale;
     float _shadowBlur;
     SUScriptColor *_shadowColor;
     float _shadowOffsetX;
@@ -35,7 +36,7 @@
 @property(readonly) float width;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
@@ -48,7 +49,7 @@
 - (void)clearRectWithX:(float)arg1 y:(float)arg2 width:(float)arg3 height:(float)arg4;
 - (void)clip;
 - (void)closePath;
-- (struct CGImage { }*)copyCanvasImage;
+- (id)copyCanvasImage;
 - (struct CGPath { }*)copyCanvasPath;
 - (void)dealloc;
 - (void)fill;

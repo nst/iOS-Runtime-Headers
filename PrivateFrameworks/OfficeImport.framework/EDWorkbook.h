@@ -13,7 +13,6 @@
     ECMappingContext *mMappingContext;
     NSMutableArray *mOtherResources;
     EDProcessors *mProcessors;
-    unsigned int mRealSheetCount;
     EDResources *mResources;
     NSMutableArray *mSheets;
     NSString *mTemporaryDirectory;
@@ -56,7 +55,6 @@
 - (unsigned int)sheetCount;
 - (id)temporaryDirectory;
 - (id)theme;
-- (void)trashSheetAtIndex:(unsigned int)arg1;
 - (id)visibleRange;
 - (id)warnings;
 - (id)workbookName;

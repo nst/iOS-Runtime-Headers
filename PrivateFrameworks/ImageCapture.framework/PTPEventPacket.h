@@ -5,8 +5,8 @@
 @interface PTPEventPacket : NSObject {
     unsigned short _eventCode;
     int _numParameters;
-    unsigned int _parameters[3];
-    unsigned int _transactionID;
+    unsigned long _parameters[3];
+    unsigned long _transactionID;
 }
 
 - (id)contentForTCP;

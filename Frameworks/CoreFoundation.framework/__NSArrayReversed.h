@@ -9,6 +9,7 @@
 
 - (unsigned int)count;
 - (void)dealloc;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithArray:(id)arg1;
 - (id)objectAtIndex:(unsigned int)arg1;
 

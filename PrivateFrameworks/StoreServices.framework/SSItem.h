@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, SSItemOffer, NSURL, SSItemImageCollection, NSMutableArray, NSDictionary, NSString, SSURLConnectionRequest, NSDate, NSArray;
+@class NSArray, SSItemOffer, NSURL, SSItemImageCollection, NSMutableArray, NSDictionary, NSString, SSURLConnectionRequest, NSDate, NSNumber;
 
 @interface SSItem : NSObject <SSURLConnectionRequestDelegate> {
     NSDate *_expirationDate;
@@ -71,8 +71,11 @@
 - (id)networkName;
 - (id)numberOfCollectionsInCollectionGroup;
 - (id)numberOfItemsInCollection;
+- (int)numberOfPrintedPages;
 - (int)numberOfUserRatings;
 - (id)playableMedia;
+- (id)podcastEpisodeGUID;
+- (id)podcastFeedURL;
 - (id)preOrderIdentifier;
 - (id)priceDisplay;
 - (id)rawItemDictionary;
@@ -91,6 +94,8 @@
 - (id)tellAFriendBodyURL;
 - (id)tellAFriendSubject;
 - (id)thumbnailImages;
+- (id)tweetInitialText;
+- (id)tweetURL;
 - (void)urlConnectionRequest:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 - (id)videoDetails;

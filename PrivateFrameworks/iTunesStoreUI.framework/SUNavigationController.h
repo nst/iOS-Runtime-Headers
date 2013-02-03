@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUSection;
+@class SUSection, SUClientInterface;
 
 @interface SUNavigationController : UINavigationController <SUScriptNativeObject> {
     BOOL _canBeWeakScriptReference;
+    SUClientInterface *_clientInterface;
     BOOL _loading;
     SUSection *_section;
 }
 
+@property(retain) SUClientInterface * clientInterface;
 @property(getter=isLoading) BOOL loading;
 @property(retain) SUSection * section;
 
@@ -17,25 +19,28 @@
 - (id)_sectionForViewController:(id)arg1;
 - (void)addChildViewController:(id)arg1;
 - (BOOL)clearsWeakScriptReferences;
+- (id)clientInterface;
 - (id)copyArchivableContext;
 - (id)copyScriptViewController;
 - (void)dealloc;
 - (id)description;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithRootViewController:(id)arg1;
 - (id)initWithSection:(id)arg1 rootViewController:(id)arg2;
 - (id)initWithSection:(id)arg1;
 - (BOOL)isLoading;
 - (id)moreListImage;
 - (id)moreListSelectedImage;
-- (id)navigationBar;
 - (void)removeChildViewController:(id)arg1;
 - (void)restoreArchivableContext:(id)arg1;
 - (id)section;
+- (void)setClientInterface:(id)arg1;
 - (void)setLoading:(BOOL)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setSection:(id)arg1;
 - (void)setViewControllers:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
 
 @end

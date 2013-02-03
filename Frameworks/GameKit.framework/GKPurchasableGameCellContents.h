@@ -2,23 +2,26 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class SSItem;
+@class GKStoreItemInternal;
 
 @interface GKPurchasableGameCellContents : GKGameCellContents {
-    SSItem *_storeItem;
+    float _capturedRating;
+    GKStoreItemInternal *_storeItem;
 }
 
-@property(retain) SSItem * storeItem;
+@property float capturedRating;
+@property(retain) GKStoreItemInternal * storeItem;
 
 + (int)lineCount;
 + (id)purchasableGameCellContentsWithTheme:(id)arg1;
 
+- (float)capturedRating;
 - (void)configureLines;
 - (void)dealloc;
 - (void)drawLineIndex:(unsigned int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 highlighted:(BOOL)arg3;
 - (void)drawStoreRatingAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)prepareForReuse;
-- (void)refreshExpensiveContent;
+- (void)setCapturedRating:(float)arg1;
 - (void)setConfirmationButtonRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGame:(id)arg1;
 - (void)setStoreItem:(id)arg1;

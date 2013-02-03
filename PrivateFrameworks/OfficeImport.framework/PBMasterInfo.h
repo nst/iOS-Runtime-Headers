@@ -6,11 +6,11 @@
 
 @interface PBMasterInfo : NSObject {
     NSDictionary *mLayoutMap;
-    unsigned int mMainPbRef;
+    unsigned long mMainPbRef;
     PDSlideMaster *mSlideMaster;
     struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; } *mSrcTextStyling;
     NSMutableArray *mTgtSlideLayoutArray;
-    unsigned int mTitlePbRef;
+    unsigned long mTitlePbRef;
 }
 
 - (id)allTargetLayoutTypes;

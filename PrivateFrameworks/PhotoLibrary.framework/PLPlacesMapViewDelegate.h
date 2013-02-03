@@ -23,11 +23,11 @@
     PLAnnotationPen *_pendingAdds;
     PLPlaces *_places;
     } _previousRegion;
+    float _previousZoomLevel;
 }
 
 - (id)_borderedPosterImageFromImage:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)_createAnnotationViewWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)_didMapViewChangeZoomLevel:(id)arg1;
 - (BOOL)_displayMoreDetailsButton;
 - (BOOL)_displaysAlbumPosterOnLeft;
 - (void)_flushAnnotation:(id)arg1 fromMap:(id)arg2;

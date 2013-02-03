@@ -62,6 +62,8 @@
 - (long)insertionOrder;
 - (BOOL)intersectsChild:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)left;
+- (id)newTakeChildren;
+- (id)newTakeChildrenAmong:(id)arg1;
 - (float)opticalLeading;
 - (void)orderedInsert:(id)arg1 usingSelector:(SEL)arg2;
 - (BOOL)overlapsHorizontallyWith:(id)arg1;
@@ -81,8 +83,6 @@
 - (void)setShrinksWithChildren:(BOOL)arg1;
 - (BOOL)shrinksWithChildren;
 - (void)sortUsingSelector:(SEL)arg1;
-- (id)takeChildren;
-- (id)takeChildrenAmong:(id)arg1;
 - (float)top;
 - (void)translateObjectYBy:(float)arg1;
 

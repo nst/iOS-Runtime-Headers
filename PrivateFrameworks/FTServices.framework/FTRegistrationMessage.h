@@ -6,6 +6,7 @@
 
 @interface FTRegistrationMessage : FTIDSMessage <NSCopying> {
     NSArray *_capabilities;
+    NSString *_deviceName;
     NSString *_hardwareVersion;
     NSString *_osVersion;
     NSString *_protocolVersion;
@@ -16,6 +17,7 @@
 }
 
 @property(copy) NSArray * capabilities;
+@property(copy) NSString * deviceName;
 @property(copy) NSString * hardwareVersion;
 @property(copy) NSString * osVersion;
 @property(copy) NSString * protocolVersion;
@@ -29,6 +31,7 @@
 - (id)capabilities;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)deviceName;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)hardwareVersion;
 - (BOOL)hasRequiredKeys:(id*)arg1;
@@ -40,6 +43,7 @@
 - (id)responseBindings;
 - (id)responseNextHBI;
 - (void)setCapabilities:(id)arg1;
+- (void)setDeviceName:(id)arg1;
 - (void)setHardwareVersion:(id)arg1;
 - (void)setOsVersion:(id)arg1;
 - (void)setProtocolVersion:(id)arg1;

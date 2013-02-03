@@ -2,33 +2,36 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@class NSMutableArray, NSString;
+@class NSString;
 
 @interface ADAdSpecification : PBCodable {
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     NSString *_section;
-    NSMutableArray *_sizes;
+    } _sizes;
 }
 
 @property(readonly) BOOL hasSection;
 @property(retain) NSString * section;
-@property(retain) NSMutableArray * sizes;
-@property(readonly) int sizesCount;
+@property(readonly) int* sizes;
+@property(readonly) unsigned int sizesCount;
 
 - (id)_uniqueIdentifier;
-- (void)addSize:(id)arg1;
+- (void)addSize:(int)arg1;
+- (void)clearSizes;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasSection;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (id)section;
 - (void)setSection:(id)arg1;
-- (void)setSize:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setSizes:(id)arg1;
-- (id)sizeAtIndex:(unsigned int)arg1;
-- (id)sizes;
-- (int)sizesCount;
+- (void)setSizes:(int*)arg1 count:(unsigned int)arg2;
+- (int)sizeAtIndex:(unsigned int)arg1;
+- (int*)sizes;
+- (unsigned int)sizesCount;
 - (void)writeTo:(id)arg1;
 
 @end

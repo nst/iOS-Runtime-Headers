@@ -10,8 +10,8 @@
     UILabel *_valueLabel2;
 }
 
-@property(retain,readonly) UILabel * detailTextLabel2;
-@property(retain,readonly) UILabel * textLabel2;
+@property(readonly) UILabel * detailTextLabel2;
+@property(readonly) UILabel * textLabel2;
 
 - (void)_copyTextLabelAttributesFrom:(id)arg1 to:(id)arg2;
 - (void)dealloc;

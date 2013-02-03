@@ -15,7 +15,7 @@
 }
 
 + (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
-+ (id)createReplacementForMissingObject:(struct _xmlTextReader { }*)arg1;
++ (id)createReplacementForMissingObject:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 + (id)createReplacementForMissingStyleOfType:(int)arg1;
 + (struct GQDSMap { }*)defaultMapForStyleType:(int)arg1;
 + (int)styleTypeForNodeName:(const char *)arg1;

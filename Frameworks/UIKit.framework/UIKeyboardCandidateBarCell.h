@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
+@class NSString, UIKeyboardCandidate;
 
 @interface UIKeyboardCandidateBarCell : UIView {
     struct CGSize { 
         float width; 
         float height; 
     SEL m_action;
-    BOOL m_arrow;
-    NSString *m_candidate;
+    UIKeyboardCandidate *m_candidate;
+    NSString *m_candidateText;
     BOOL m_highlighted;
     BOOL m_special;
     id m_target;
@@ -18,22 +18,16 @@
 }
 
 @property BOOL highlighted;
-@property(readonly) BOOL isArrow;
-@property(readonly) struct CGSize { float width; float height; } stringSize;
+@property(readonly) struct CGSize { float x1; float x2; } stringSize;
 
-+ (void)_initializeSafeCategory;
-+ (id)font;
++ (id)fontForCandidateText:(id)arg1;
 
-- (id)_accessibilityVisibleItemInList;
-- (id)accessibilityLabel;
-- (id)accessibilityLanguage;
-- (unsigned long long)accessibilityTraits;
+- (id).cxx_construct;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)highlighted;
 - (id)initWithCandidate:(id)arg1 tag:(int)arg2 target:(id)arg3 action:(SEL)arg4;
-- (BOOL)isAccessibilityElement;
-- (BOOL)isArrow;
+- (id)initWithCandidateText:(id)arg1 tag:(int)arg2 target:(id)arg3 action:(SEL)arg4;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setHighlighted:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })stringSize;

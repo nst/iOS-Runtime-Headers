@@ -13,7 +13,5 @@
 - (id)init;
 - (id)initWithReferencedObject:(id)arg1;
 - (id)referencedObject;
-- (void)referencedObjectWillBeReleased;
-- (void)referencedObjectWillBeRetained;
 
 @end

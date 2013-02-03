@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class VoiceChatMessageSendQueue, NSMutableDictionary, NSString, GKSessionInternal, GKVoiceChatSessionInternal, NSMutableArray;
+@class NSMutableDictionary, NSString, GKSessionInternal, GKVoiceChatSessionInternal, NSMutableArray;
 
 @interface VoiceChatSessionRoster : NSObject {
     struct _opaque_pthread_mutex_t { 
@@ -20,7 +20,7 @@
     BOOL _needsUpdateBeaconList;
     NSString *_peerID;
     NSMutableDictionary *_peerStateTable;
-    VoiceChatMessageSendQueue *_sendQueue;
+    struct dispatch_queue_s { } *_sendQueue;
     BOOL _waitingToCalculateFocus;
     } resMutex;
 }
@@ -31,7 +31,7 @@
 - (void)dealloc;
 - (unsigned int)focusID;
 - (BOOL)hasFocus;
-- (id)initWithGKSession:(id)arg1 peerID:(id)arg2 voiceChatSession:(id)arg3 sendQueue:(id)arg4;
+- (id)initWithGKSession:(id)arg1 peerID:(id)arg2 voiceChatSession:(id)arg3 sendQueue:(struct dispatch_queue_s { }*)arg4;
 - (void)peer:(id)arg1 didChangeState:(int)arg2;
 - (void)processSubscribeBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 beaconState:(id)arg2 fromPeer:(id)arg3;
 - (void)processUnsubscribeBeacon:(struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 beaconState:(id)arg2 fromPeer:(id)arg3;

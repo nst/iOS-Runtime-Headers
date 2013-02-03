@@ -5,23 +5,25 @@
 @class DOMRange;
 
 @interface UITextRangeImpl : UITextRange {
+    int _affinityIfCollapsed;
     DOMRange *_domRange;
 }
 
+@property int affinity;
 @property(retain) DOMRange * domRange;
 
-+ (BOOL)__original_resolveClassMethod:(SEL)arg1;
-+ (BOOL)resolveClassMethod:(SEL)arg1;
++ (id)wrapDOMRange:(id)arg1 withAffinity:(int)arg2;
 + (id)wrapDOMRange:(id)arg1;
 
-- (id)__original_forwardingTargetForSelector:(SEL)arg1;
+- (void)adjustAffinityOfPosition:(id)arg1 isStart:(BOOL)arg2;
+- (int)affinity;
 - (void)dealloc;
 - (id)description;
 - (id)domRange;
 - (id)end;
-- (id)forwardingTargetForSelector:(SEL)arg1;
 - (BOOL)isEmpty;
 - (BOOL)isEqual:(id)arg1;
+- (void)setAffinity:(int)arg1;
 - (void)setDomRange:(id)arg1;
 - (id)start;
 

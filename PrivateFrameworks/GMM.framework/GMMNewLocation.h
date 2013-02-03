@@ -7,22 +7,24 @@
 @interface GMMNewLocation : PBCodable {
     GMMGeometry *_geocode;
     BOOL _hasIsVia;
+    BOOL _hasWaypointType;
     BOOL _isVia;
     NSString *_query;
     NSString *_queryRefinementToken;
+    int _waypointType;
 }
 
-@property(readonly) struct { double latitude; double longitude; } coordinate;
 @property(retain) GMMGeometry * geocode;
 @property(readonly) BOOL hasGeocode;
-@property(readonly) BOOL hasIsVia;
+@property BOOL hasIsVia;
 @property(readonly) BOOL hasQuery;
 @property(readonly) BOOL hasQueryRefinementToken;
+@property BOOL hasWaypointType;
 @property BOOL isVia;
 @property(retain) NSString * query;
 @property(retain) NSString * queryRefinementToken;
+@property int waypointType;
 
-- (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)description;
 - (id)description;
@@ -32,16 +34,20 @@
 - (BOOL)hasIsVia;
 - (BOOL)hasQuery;
 - (BOOL)hasQueryRefinementToken;
-- (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (BOOL)hasWaypointType;
+- (id)initWithGEOPlaceSearchRequest:(id)arg1 placeToken:(id)arg2;
 - (BOOL)isVia;
 - (id)query;
 - (id)queryRefinementToken;
 - (BOOL)readFrom:(id)arg1;
 - (void)setGeocode:(id)arg1;
+- (void)setHasIsVia:(BOOL)arg1;
+- (void)setHasWaypointType:(BOOL)arg1;
 - (void)setIsVia:(BOOL)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setQueryRefinementToken:(id)arg1;
+- (void)setWaypointType:(int)arg1;
+- (int)waypointType;
 - (void)writeTo:(id)arg1;
 
 @end

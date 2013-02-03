@@ -4,7 +4,7 @@
 
 @class SUScalingFlipView, NSArray, SUTouchCaptureView, SUOverlayViewController, NSMutableArray, <SUOverlayBackgroundDelegate>;
 
-@interface SUOverlayBackgroundViewController : SUViewController <UIGestureRecognizerDelegate> {
+@interface SUOverlayBackgroundViewController : SUViewController <SUScalingFlipViewDelegate, UIGestureRecognizerDelegate> {
     struct CGRect { 
         struct CGPoint { 
             float x; 

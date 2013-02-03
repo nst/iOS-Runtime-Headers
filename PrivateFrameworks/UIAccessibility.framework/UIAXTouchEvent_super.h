@@ -5,8 +5,4 @@
 @interface UIAXTouchEvent_super : UIAccessibilitySafeCategory {
 }
 
-+ (void)_initializeSafeCategory;
-
-- (void)dealloc;
-
 @end

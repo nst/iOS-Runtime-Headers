@@ -12,7 +12,7 @@
 
 @property(retain) NSString * placeholder;
 @property(copy) NSString * text;
-@property(retain,readonly) UITextView * textView;
+@property(readonly) UITextView * textView;
 
 - (id)_placeholderLabel;
 - (void)_updatePlaceholder;

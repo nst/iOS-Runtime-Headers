@@ -10,13 +10,10 @@
 @property int height;
 @property int width;
 
-+ (id)standardThumbnail;
-
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)height;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHeight:(int)arg1;
 - (void)setWidth:(int)arg1;

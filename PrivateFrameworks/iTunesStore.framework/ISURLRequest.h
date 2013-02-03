@@ -16,7 +16,6 @@
 @property(retain) NSArray * URLs;
 @property int allowedRetryCount;
 @property(retain) NSString * appleClientApplication;
-@property int assetType;
 @property unsigned int cachePolicy;
 @property(retain) NSDictionary * customHeaders;
 @property long long expectedContentLength;
@@ -34,7 +33,6 @@
 - (id)_initCommon;
 - (int)allowedRetryCount;
 - (id)appleClientApplication;
-- (int)assetType;
 - (unsigned int)cachePolicy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customHeaders;
@@ -52,7 +50,6 @@
 - (id)requestProperties;
 - (void)setAllowedRetryCount:(int)arg1;
 - (void)setAppleClientApplication:(id)arg1;
-- (void)setAssetType:(int)arg1;
 - (void)setCachePolicy:(unsigned int)arg1;
 - (void)setCustomHeaders:(id)arg1;
 - (void)setExpectedContentLength:(long long)arg1;

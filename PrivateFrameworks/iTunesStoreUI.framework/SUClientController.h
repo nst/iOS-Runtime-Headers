@@ -8,7 +8,7 @@
     BOOL _active;
     NSString *_clientIdentifier;
     struct dispatch_queue_s { } *_dispatchQueue;
-    NSMutableArray *_downloadQueues;
+    NSMutableArray *_downloadManagers;
     SUImageCache *_imageCache;
     ISURLOperationPool *_imageOperationPool;
     ISURLOperationPool *_imagePool;
@@ -16,7 +16,7 @@
     MFMailComposeViewController *_mailComposeViewController;
     struct __CFArray { } *_offeredAssetTypes;
     NSArray *_overlayConfigurations;
-    NSMutableArray *_preOrderQueues;
+    NSMutableArray *_preorderManagers;
     SUPurchaseManager *_purchaseManager;
     UIViewController *_rootViewController;
     SUScriptExecutionContext *_scriptExecutionContext;
@@ -35,6 +35,7 @@
 @property(readonly) NSString * storeContentLanguage;
 @property(getter=isStoreEnabled,readonly) BOOL storeEnabled;
 @property(readonly) BOOL storeFrontDidChangeSinceLastSuspend;
+@property(copy) NSString * userAgent;
 @property(retain) SUViewControllerFactory * viewControllerFactory;
 
 + (void)setSharedController:(id)arg1;
@@ -42,33 +43,37 @@
 
 - (id)URLBagKeyForIdentifier:(id)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
-- (BOOL)_isEnabledForNetworkConstraints:(id)arg1;
 - (void)_memoryWarningNotification:(id)arg1;
 - (id)_newAccountViewControllerForButtonAction:(id)arg1;
 - (id)_newComposeReviewViewControllerForButtonAction:(id)arg1;
 - (void)_ntsEndQueueSession:(id)arg1 fromArray:(id)arg2;
 - (id)_ntsQueueSessionWithDownloadKinds:(id)arg1 fromArray:(id)arg2;
+- (id)_ntsQueueSessionWithManagerOptions:(id)arg1 fromArray:(id)arg2;
 - (id)_ntsQueueSessionWithQueue:(id)arg1 fromArray:(id)arg2;
 - (void)_purgeCaches;
 - (void)_reloadOverlayConfigurationsFromURLBag;
 - (void)_reloadScriptExecutionContextFromURLBag;
 - (void)_reloadUserDefaultsFromURLBag;
-- (void)_syncDidFinishNotification:(id)arg1;
+- (void)autosaveMessageWithCompletionBlock:(id)arg1;
 - (void)bagDidLoadNotification:(id)arg1;
 - (void)becomeActive;
-- (id)beginDownloadQueueSessionForDownloadKind:(id)arg1;
-- (id)beginDownloadQueueSessionWithDownloadKinds:(id)arg1;
-- (id)beginPreOrderQueueSessionWithDownloadKinds:(id)arg1;
+- (id)beginDownloadManagerSessionForDownloadKind:(id)arg1;
+- (id)beginDownloadManagerSessionWithManagerOptions:(id)arg1;
+- (id)beginPreorderManagerSessionWithItemKinds:(id)arg1;
 - (void)cancelAllOperations;
 - (id)clientIdentifier;
 - (void)composeEmailByRestoringAutosavedMessage;
+- (void)composeEmailWithSubject:(id)arg1 body:(id)arg2 animated:(BOOL)arg3;
 - (void)composeEmailWithSubject:(id)arg1 body:(id)arg2;
 - (BOOL)composeReviewWithViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)dealloc;
+- (void)dismissMailComposeViewControllerAnimated:(BOOL)arg1;
+- (void)dismissOverlayBackgroundViewController;
 - (BOOL)dismissTopViewControllerAnimated:(BOOL)arg1;
 - (BOOL)displayClientURL:(id)arg1;
-- (void)endDownloadQueueSessionForQueue:(id)arg1;
-- (void)endPreOrderQueueSessionWithDownloadKinds:(id)arg1;
+- (void)endDownloadManagerSessionForManager:(id)arg1;
+- (void)endPreorderManagerSessionWithManager:(id)arg1;
+- (void)exitStoreWithReason:(int)arg1;
 - (BOOL)gotoStorePage:(id)arg1 animated:(BOOL)arg2;
 - (id)imageCache;
 - (id)imageOperationPool;
@@ -79,16 +84,19 @@
 - (BOOL)isStoreEnabled;
 - (BOOL)libraryContainsItemIdentifier:(unsigned long long)arg1;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
-- (id)newPreOrderQueue;
 - (id)newScriptInterface;
 - (struct __CFArray { }*)offeredAssetTypes;
 - (BOOL)openClientURL:(id)arg1;
 - (BOOL)openURL:(id)arg1 inClientWithIdentifier:(id)arg2;
 - (BOOL)openURL:(id)arg1;
+- (id)overlayBackgroundViewController;
 - (id)overlayConfigurationForStorePage:(id)arg1;
 - (BOOL)performActionForDialog:(id)arg1 button:(id)arg2;
 - (BOOL)presentAccountViewController:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)presentAccountViewController:(id)arg1 showNavigationBar:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)presentExternalURLViewController:(id)arg1;
+- (void)presentMailComposeViewController:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)presentOverlayBackgroundViewController:(id)arg1;
 - (void)purchaseManager:(id)arg1 didAddPurchases:(id)arg2;
 - (void)purchaseManager:(id)arg1 failedToAddPurchases:(id)arg2;
 - (void)purchaseManager:(id)arg1 willAddPurchases:(id)arg2;
@@ -103,9 +111,11 @@
 - (void)setOfferedAssetTypes:(struct __CFArray { }*)arg1;
 - (void)setRootViewController:(id)arg1;
 - (void)setURLBagKey:(id)arg1 forIdentifier:(id)arg2;
+- (void)setUserAgent:(id)arg1;
 - (void)setViewControllerFactory:(id)arg1;
 - (id)storeContentLanguage;
 - (BOOL)storeFrontDidChangeSinceLastSuspend;
+- (id)userAgent;
 - (id)viewControllerFactory;
 
 @end

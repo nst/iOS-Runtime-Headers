@@ -58,6 +58,7 @@
 @property int interface;
 @property BOOL isLockScreen;
 @property int orientation;
+@property(readonly) SWRunWorkoutProxy * workoutProxy;
 
 - (void)_applicationResumed:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
@@ -144,5 +145,6 @@
 - (void)setIsLockScreen:(BOOL)arg1;
 - (void)setOrientation:(int)arg1;
 - (void)suspend;
+- (id)workoutProxy;
 
 @end

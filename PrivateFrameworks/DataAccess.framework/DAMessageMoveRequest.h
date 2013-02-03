@@ -18,8 +18,11 @@
 
 - (id)context;
 - (void)dealloc;
+- (id)description;
 - (id)fromFolder;
+- (unsigned int)hash;
 - (id)initMoveRequestWithMessage:(id)arg1 fromFolder:(id)arg2 toFolder:(id)arg3;
+- (BOOL)isEqual:(id)arg1;
 - (id)message;
 - (void)setContext:(id)arg1;
 - (id)toFolder;

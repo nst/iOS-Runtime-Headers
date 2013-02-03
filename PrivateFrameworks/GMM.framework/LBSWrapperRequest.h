@@ -11,20 +11,21 @@
 }
 
 @property(readonly) BOOL hasRequest;
-@property(readonly) BOOL hasRequestType;
+@property BOOL hasRequestType;
 @property(retain) LBSGLocRequest * request;
 @property int requestType;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasRequest;
 - (BOOL)hasRequestType;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (id)request;
 - (int)requestType;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
+- (void)setHasRequestType:(BOOL)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setRequestType:(int)arg1;
 - (void)writeTo:(id)arg1;

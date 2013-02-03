@@ -16,7 +16,7 @@
 - (id)bundle;
 - (void)dealloc;
 - (id)getAccountNameForSpecifier:(id)arg1;
-- (id)specifiers;
+- (id)specifierList;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)turnOnTapped:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

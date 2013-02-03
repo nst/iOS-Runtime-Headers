@@ -29,6 +29,7 @@
 @property(readonly) int version;
 
 + (id)badFieldTypeErrorWithField:(id)arg1;
++ (id)badFieldValueErrorWithField:(id)arg1;
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)payloadFromDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 + (id)payloadsFromArray:(id)arg1 profile:(id)arg2 outError:(id*)arg3;

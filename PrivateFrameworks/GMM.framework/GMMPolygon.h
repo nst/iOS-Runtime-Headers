@@ -16,12 +16,11 @@
 }
 
 @property int fillColor;
-@property(readonly) BOOL hasFillColor;
+@property BOOL hasFillColor;
 @property(readonly) BOOL hasLine;
-@property(readonly) BOOL hasLineColor;
-@property(readonly) BOOL hasLineWidth;
+@property BOOL hasLineColor;
+@property BOOL hasLineWidth;
 @property(retain) NSMutableArray * innerBoundarys;
-@property(readonly) int innerBoundarysCount;
 @property(retain) NSData * line;
 @property int lineColor;
 @property int lineWidth;
@@ -35,16 +34,17 @@
 - (BOOL)hasLine;
 - (BOOL)hasLineColor;
 - (BOOL)hasLineWidth;
-- (id)init;
 - (id)innerBoundaryAtIndex:(unsigned int)arg1;
 - (id)innerBoundarys;
-- (int)innerBoundarysCount;
+- (unsigned int)innerBoundarysCount;
 - (id)line;
 - (int)lineColor;
 - (int)lineWidth;
 - (BOOL)readFrom:(id)arg1;
 - (void)setFillColor:(int)arg1;
-- (void)setInnerBoundary:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)setHasFillColor:(BOOL)arg1;
+- (void)setHasLineColor:(BOOL)arg1;
+- (void)setHasLineWidth:(BOOL)arg1;
 - (void)setInnerBoundarys:(id)arg1;
 - (void)setLine:(id)arg1;
 - (void)setLineColor:(int)arg1;

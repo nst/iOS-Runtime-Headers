@@ -2,32 +2,25 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView, UIImage;
+@class UIView, UIImageView, UIImage;
 
 @interface PLCameraImageWellView : UIView {
     UIImageView *_containerImageView;
     int _deviceOrientation;
     UIImage *_thumbnailImage;
-    UIImage *_thumbnailImageSelected;
     UIImageView *_thumbnailImageView;
+    UIView *_thumbnailOverlayView;
     BOOL _watchingOrientationChanges;
 }
 
-+ (void)_initializeSafeCategory;
-
-- (void)_albumChangedInLibrary:(id)arg1;
-- (void)_computeSelectedThumbnailImage;
 - (void)_deviceOrientationChanged:(id)arg1;
-- (void)_previewImageDidChange:(id)arg1;
+- (void)_setImageViewHighlighted:(BOOL)arg1;
 - (void)_startWatchingDeviceOrientationChanges;
 - (void)_stopWatchingDeviceOrientationChanges;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (id)accessibilityLabel;
 - (void)addMaskedSubview:(id)arg1;
 - (void)beginContentFadeOutWithDuration:(float)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(id)arg2;
 - (void)layoutSubviews;
 - (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setEnabled:(BOOL)arg1;

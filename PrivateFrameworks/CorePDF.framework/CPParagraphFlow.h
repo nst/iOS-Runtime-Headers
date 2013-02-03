@@ -21,6 +21,7 @@
 }
 
 @property int calloutType;
+@property float fBottom;
 @property float fLeft;
 @property float fRight;
 @property CPParagraph * nextInColumn;
@@ -35,6 +36,7 @@
 - (float)dBelow;
 - (void)dealloc;
 - (id)description;
+- (float)fBottom;
 - (float)fLeft;
 - (float)fRight;
 - (id)ignoreCallouts:(unsigned int)arg1;
@@ -56,11 +58,11 @@
 - (BOOL)placed;
 - (void)removeFromAbove:(id)arg1;
 - (void)removeFromBelow:(id)arg1;
-- (void)removeFromFlow;
 - (void)replaceAbove:(id)arg1 withOneOf:(id)arg2;
 - (void)replaceBelow:(id)arg1 withOneOf:(id)arg2;
 - (int)rightOrder;
 - (void)setCalloutType:(int)arg1;
+- (void)setFBottom:(float)arg1;
 - (void)setFLeft:(float)arg1;
 - (void)setFRight:(float)arg1;
 - (void)setNextInColumn:(id)arg1;

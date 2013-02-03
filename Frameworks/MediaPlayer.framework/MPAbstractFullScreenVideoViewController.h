@@ -8,6 +8,8 @@
     unsigned int _showControlsAfterRotate : 1;
     unsigned int _autoHidingForItemChange : 1;
     unsigned int _scheduledAutoHide : 1;
+    unsigned int _orientationForStatusBarOverrideActive : 1;
+    int _orientationForStatusBarOverride;
 }
 
 - (void)_autohideControlsOverlay;
@@ -21,15 +23,18 @@
 - (void)bufferingStateChangedNotification:(id)arg1;
 - (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(int)arg2;
 - (BOOL)canHideOverlay:(BOOL)arg1;
+- (BOOL)canShowControlsOverlay;
 - (void)cancelControlsOverlayAutohide;
 - (BOOL)controlsOverlayVisible;
 - (void)dealloc;
 - (void)displayVideoViewOnScreen;
+- (BOOL)forceScaleToFitInPortrait;
 - (void)hideOverlayAnimated:(BOOL)arg1;
 - (BOOL)inhibitOverlay;
 - (id)init;
 - (void)loadView;
 - (id)newAlternateTracksTransition;
+- (int)orientationForStatusBar;
 - (BOOL)phoneTVOutModeEnabled;
 - (void)playbackStateDidChangeNotification:(id)arg1;
 - (void)scheduleControlsOverlayAutohideAfterDelay:(double)arg1;
@@ -41,10 +46,12 @@
 - (void)setInhibitOverlay:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
+- (void)setPlayer:(id)arg1;
 - (void)setTVOutEnabled:(BOOL)arg1;
 - (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
 - (void)showOverlayAnimated:(BOOL)arg1;
 - (void)showOverlayIfNecessary;
+- (int)statusBarStyle;
 - (void)swipableView:(id)arg1 tappedWithCount:(unsigned int)arg2 atLocation:(struct CGPoint { float x1; float x2; })arg3;
 - (void)swipableViewHadActivity:(id)arg1;
 - (void)transformVideoForInterfaceOrientation:(int)arg1 animate:(BOOL)arg2;

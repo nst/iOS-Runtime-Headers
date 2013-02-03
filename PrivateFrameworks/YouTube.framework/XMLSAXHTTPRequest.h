@@ -9,7 +9,7 @@
 
 @class NSURLRequest, NSURLConnection, NSMutableData;
 
-@interface XMLSAXHTTPRequest : NSObject {
+@interface XMLSAXHTTPRequest : NSObject <NSURLConnectionDelegate> {
     struct _xmlSAXHandler { 
         int (*internalSubset)(); 
         int (*isStandalone)(); 

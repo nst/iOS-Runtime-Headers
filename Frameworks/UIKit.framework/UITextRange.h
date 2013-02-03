@@ -9,8 +9,12 @@
 
 @property(getter=isEmpty,readonly) BOOL empty;
 @property(readonly) UITextPosition * end;
+@property(getter=_isCaret,readonly) BOOL isCaret;
+@property(getter=_isRanged,readonly) BOOL isRanged;
 @property(readonly) UITextPosition * start;
 
+- (BOOL)_isCaret;
+- (BOOL)_isRanged;
 - (id)end;
 - (BOOL)isEmpty;
 - (id)start;

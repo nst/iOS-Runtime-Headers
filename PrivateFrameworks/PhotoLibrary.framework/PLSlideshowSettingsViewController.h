@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MPMediaItemCollection, PLSlideshowAirPlayRoutesViewController, <PLSlideshowSettingsViewControllerDelegate>, MPMediaPickerController, UITableView, UIView, NSString, PLSlideshowTransitionsViewController, UITableViewCell, NSArray;
+@class MPMediaItemCollection, PLSlideshowAirPlayRoutesViewController, <PLSlideshowSettingsViewControllerDelegate>, MPMediaPickerController, UITableView, NSString, PLSlideshowTransitionsViewController, UITableViewCell, NSArray;
 
 @interface PLSlideshowSettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, MPMediaPickerControllerDelegate> {
     PLSlideshowAirPlayRoutesViewController *_airPlayRoutesController;
     NSArray *_airPlayServices;
     NSArray *_alternateTransitionLocalizations;
-    UIView *_containerView;
     <PLSlideshowSettingsViewControllerDelegate> *_delegate;
     MPMediaPickerController *_mediaPicker;
     UITableViewCell *_playMusicSwitchCell;
-    UITableViewCell *_playSlideshowCell;
     unsigned int _selectedAirPlayServiceIndex;
     UITableViewCell *_selectedMusicCell;
     MPMediaItemCollection *_selectedMusicCollection;
@@ -44,7 +42,6 @@
 - (void)_preheatMediaPicker;
 - (id)_selectedAirPlayService;
 - (id)_selectedMusic;
-- (unsigned int)_startSection;
 - (void)_updateSettingsInfo;
 - (void)applySlideshowSettings:(id)arg1;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
@@ -67,6 +64,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)updateTransitionKeys:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

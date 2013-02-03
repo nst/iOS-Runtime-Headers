@@ -20,10 +20,10 @@
 - (id)authTokenHeaderValue;
 - (id)bagKey;
 - (void)cancelTapped;
+- (void)completeHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
 - (void)dealloc;
 - (id)delegate;
-- (void)doHandoffWithStatus:(int)arg1 appleId:(id)arg2 password:(id)arg3;
-- (id)initWithAuthID:(id)arg1 token:(id)arg2;
+- (id)initWithRegController:(id)arg1 authID:(id)arg2 token:(id)arg3;
 - (id)logName;
 - (void)setAuthID:(id)arg1;
 - (void)setAuthToken:(id)arg1;

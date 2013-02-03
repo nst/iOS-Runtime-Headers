@@ -21,12 +21,12 @@
 
 @property int age;
 @property int cellid;
-@property(readonly) BOOL hasAge;
-@property(readonly) BOOL hasMcc;
-@property(readonly) BOOL hasMnc;
-@property(readonly) BOOL hasPrimaryScramblingCode;
-@property(readonly) BOOL hasRssi;
-@property(readonly) BOOL hasTimingAdvance;
+@property BOOL hasAge;
+@property BOOL hasMcc;
+@property BOOL hasMnc;
+@property BOOL hasPrimaryScramblingCode;
+@property BOOL hasRssi;
+@property BOOL hasTimingAdvance;
 @property int lac;
 @property int mcc;
 @property int mnc;
@@ -45,7 +45,6 @@
 - (BOOL)hasPrimaryScramblingCode;
 - (BOOL)hasRssi;
 - (BOOL)hasTimingAdvance;
-- (id)init;
 - (int)lac;
 - (int)mcc;
 - (int)mnc;
@@ -54,6 +53,12 @@
 - (int)rssi;
 - (void)setAge:(int)arg1;
 - (void)setCellid:(int)arg1;
+- (void)setHasAge:(BOOL)arg1;
+- (void)setHasMcc:(BOOL)arg1;
+- (void)setHasMnc:(BOOL)arg1;
+- (void)setHasPrimaryScramblingCode:(BOOL)arg1;
+- (void)setHasRssi:(BOOL)arg1;
+- (void)setHasTimingAdvance:(BOOL)arg1;
 - (void)setLac:(int)arg1;
 - (void)setMcc:(int)arg1;
 - (void)setMnc:(int)arg1;

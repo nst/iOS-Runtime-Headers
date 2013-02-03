@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKService, NSString;
+@class CKService, NSString, UIImage;
 
 @interface CKEntity : NSObject {
     void *_abRecord;
     int _addressBookUID;
+    unsigned int _addressHash;
+    id _contactImageThumbnail;
     BOOL _foundABNameForSender;
     int _identifier;
     int _propertyType;
@@ -16,28 +18,45 @@
 
 @property(readonly) void* abRecord;
 @property int addressBookUID;
+@property(readonly) unsigned int addressHash;
+@property(retain,readonly) UIImage * contactImageThumbnail;
 @property(readonly) BOOL foundABNameForSender;
+@property(readonly) BOOL hasContactImage;
 @property int identifier;
 @property(readonly) NSString * name;
+@property(readonly) NSString * normalizedRawAddress;
+@property(readonly) struct __CFPhoneNumber { }* phoneNumberRef;
 @property int propertyType;
 @property(readonly) NSString * rawAddress;
 @property(readonly) BOOL senderIsVoicemail;
 @property(readonly) CKService * service;
+@property(readonly) unsigned int textTone;
+
++ (id)contactImageThumbnailForMeCard;
++ (id)copyAllEntities;
++ (void)resetClassCache;
 
 - (id)_initWithService:(id)arg1;
 - (void*)abRecord;
 - (int)addressBookUID;
+- (unsigned int)addressHash;
+- (id)contactImageThumbnail;
 - (void)dealloc;
 - (BOOL)foundABNameForSender;
+- (BOOL)hasContactImage;
 - (int)identifier;
 - (id)name;
+- (id)normalizedRawAddress;
+- (struct __CFPhoneNumber { }*)phoneNumberRef;
 - (int)propertyType;
 - (id)rawAddress;
 - (void)resetCaches;
 - (BOOL)senderIsVoicemail;
 - (id)service;
+- (void)setABRecord:(void*)arg1 withIdentifier:(int)arg2;
 - (void)setAddressBookUID:(int)arg1;
 - (void)setIdentifier:(int)arg1;
 - (void)setPropertyType:(int)arg1;
+- (unsigned long)textTone;
 
 @end

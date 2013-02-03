@@ -12,6 +12,7 @@
 @property(copy) NSString * htmlFor;
 
 - (id)accessKey;
+- (id)control;
 - (id)form;
 - (id)htmlFor;
 - (void)setAccessKey:(id)arg1;

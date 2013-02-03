@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSCFNumber : __NSCFType {
+@interface __NSCFNumber : NSNumber {
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
@@ -10,7 +10,9 @@
 - (long)_cfNumberType;
 - (unsigned long)_cfTypeID;
 - (unsigned char)_getValue:(void*)arg1 forType:(long)arg2;
+- (BOOL)_isDeallocating;
 - (int)_reverseCompare:(id)arg1;
+- (BOOL)_tryRetain;
 - (BOOL)boolValue;
 - (BOOL)charValue;
 - (int)compare:(id)arg1;

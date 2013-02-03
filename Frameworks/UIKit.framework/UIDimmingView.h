@@ -23,18 +23,8 @@
 @property BOOL ignoresTouches;
 @property(retain) NSArray * passthroughViews;
 
-+ (void)_initializeSafeCategory;
 + (id)defaultDimmingColor;
 
-- (BOOL)_accessibilityCanDismiss;
-- (BOOL)_accessibilityCoversScreen;
-- (BOOL)_accessibilityEscape;
-- (id)_accessibilityObscuredScreenAllowedViews;
-- (BOOL)_accessibilityObscuresScreen;
-- (void)accessibilityActivate;
-- (id)accessibilityHint;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (void)dealloc;
 - (id)delegate;
 - (id)dimmingColor;

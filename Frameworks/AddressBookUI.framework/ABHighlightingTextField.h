@@ -19,8 +19,6 @@
 @property <ABResponderDelegate> * responderDelegate;
 @property BOOL showsClearButtonWhenEmpty;
 
-+ (void)_initializeSafeCategory;
-
 - (id)_nextKeyResponder;
 - (id)_previousKeyResponder;
 - (BOOL)_showsClearButtonWhenEmpty;
@@ -30,9 +28,6 @@
 - (void)abSetHighlighted:(BOOL)arg1;
 - (void)abSetHighlightedTextColor:(id)arg1;
 - (void)abSetHighlightingEnabled:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (BOOL)becomeFirstResponder;
 - (void)dealloc;
 - (id)responderDelegate;

@@ -33,6 +33,7 @@
 - (void)dealloc;
 - (BOOL)deepTraversal;
 - (id)dictionaryRepresentation;
+- (id)initWithDictionaryRepresentation:(id)arg1 consumer:(id)arg2;
 - (id)initWithSearchString:(id)arg1 consumer:(id)arg2;
 - (id)priorToDate;
 - (BOOL)rebuildResults;

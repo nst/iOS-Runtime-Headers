@@ -12,6 +12,7 @@
 + (id)defaultCapabilitiesManager;
 
 - (void)_checkRingtoneStoreAvailability;
+- (BOOL)areCustomVibrationsEnabled;
 - (id)conferenceURLForDestinationID:(id)arg1;
 - (id)conferenceURLForPhoneNumber:(id)arg1;
 - (void)dealloc;
@@ -22,13 +23,16 @@
 - (BOOL)hasPreviouslyConferencedWithID:(id)arg1;
 - (BOOL)hasSMSCapability;
 - (BOOL)hasTelephonyCapability;
+- (BOOL)hasVibratorCapability;
 - (id)init;
 - (BOOL)isConferencingAvailable;
 - (BOOL)isConferencingEverGonnaBeAvailable;
 - (BOOL)isEmailConfigured;
 - (BOOL)isMMSConfigured;
+- (BOOL)isMadridConfigured;
 - (BOOL)isRingtoneStoreAvailable;
 - (BOOL)isSensitiveUIAllowed;
+- (BOOL)isTwitterServiceAvailable;
 - (void)setIsRingtoneStoreAvailable:(BOOL)arg1;
 
 @end

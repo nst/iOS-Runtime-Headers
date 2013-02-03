@@ -2,17 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@interface CNFServiceHandler : NSObject <MCProfileConnectionObserver> {
+@interface CNFServiceHandler : NSObject {
 }
 
-+ (void)_accountActivationChanged:(id)arg1;
-+ (void)_accountLoginStateChanged:(id)arg1;
 + (void)_accountRegistrationStatusChanged:(id)arg1;
-+ (void)_aliasValidationStatusChanged:(id)arg1;
-+ (void)_configureDaemon;
++ (void)_availabilityChanged:(id)arg1;
 + (void)_daemonConnectedNotification:(id)arg1;
-+ (void)_daemonDisconnectedNotification:(id)arg1;
-+ (void)_deviceCapabilityChanged:(id)arg1;
++ (BOOL)_isValidProcess;
 + (void)activateFaceTime;
 + (int)activationState;
 + (unsigned long long)capabilities;
@@ -25,21 +21,12 @@
 + (BOOL)connect;
 + (void)deactivateFaceTime;
 + (BOOL)disconnect;
++ (id)faceTimeSourceAccount;
 + (BOOL)invitationListener;
 + (BOOL)isConnected;
-+ (BOOL)isConnecting;
 + (BOOL)isFaceTimeActivated;
++ (id)services;
 + (void)setCapabilities:(unsigned long long)arg1;
-+ (void)setInvitationListener:(BOOL)arg1;
-+ (void)updateConferencingIsAvailable;
-
-- (id)_accountDomainForAccount:(id)arg1;
-- (void)_handlePeopleChanged:(id)arg1;
-- (void)_handleStatusChanged:(id)arg1;
-- (id)availableFaceTimeURLs;
-- (void)dealloc;
-- (id)imAccountForAVURL:(id)arg1;
-- (id)init;
-- (id)services;
++ (void)updateConferenceCapabilitiesForControllerType:(int)arg1;
 
 @end

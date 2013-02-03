@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@class UIWebView, <AdSheetBannerViewDelegate>;
+@class ADWebView, <AdSheetBannerViewDelegate>;
 
 @interface ADBannerJSO : ADJavaScriptObject {
     struct CGRect { 
@@ -21,22 +21,21 @@
     <AdSheetBannerViewDelegate> *_delegate;
     } _screenRectBeforeTransition;
     } _tapLocationBeforeTransition;
-    UIWebView *_webView;
+    ADWebView *_webView;
 }
 
 @property BOOL contentVisible;
 @property <AdSheetBannerViewDelegate> * delegate;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } screenRectBeforeTransition;
-@property struct CGPoint { float x; float y; } tapLocationBeforeTransition;
-@property UIWebView * webView;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } screenRectBeforeTransition;
+@property struct CGPoint { float x1; float x2; } tapLocationBeforeTransition;
+@property ADWebView * webView;
 
 + (id)scriptSelectors;
 + (id)scriptingKeys;
 
-- (void)_dispatchDOMEvent:(id)arg1;
 - (BOOL)contentVisible;
 - (id)delegate;
-- (void)log:(id)arg1;
+- (void)fireTestProbe:(id)arg1 withOptions:(id)arg2;
 - (void)readyForTransitionIn;
 - (id)rectOnScreen;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenRectBeforeTransition;

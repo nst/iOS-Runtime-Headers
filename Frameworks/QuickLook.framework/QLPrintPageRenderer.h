@@ -14,7 +14,6 @@
 @property(retain) QLPreviewConverter * previewConverter;
 
 + (BOOL)_isXPathType:(id)arg1;
-+ (BOOL)isSpreadsheetType:(id)arg1;
 + (id)printPageRendererWithBrowserView:(id)arg1 request:(id)arg2 documentType:(id)arg3;
 
 - (void)_waitForPreview;

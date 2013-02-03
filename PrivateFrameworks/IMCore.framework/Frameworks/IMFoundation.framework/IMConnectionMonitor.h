@@ -12,13 +12,13 @@
 @property <IMConnectionMonitorDelegate> * delegate;
 @property(setter=setDataConnectionActive:) BOOL isDataConnectionActive;
 @property(readonly) BOOL isImmediatelyReachable;
-@property(readonly) BOOL isReachableAfterModemDial;
 @property(readonly) NSString * remoteHost;
 @property(readonly) BOOL requiresDataConnectionActivation;
 
 + (id)alloc;
 
 - (void)_setup;
+- (void)clear;
 - (void)dealloc;
 - (id)delegate;
 - (void)goConnectedWithLocalSocketAddress:(id)arg1 remoteSocketAddress:(id)arg2;
@@ -26,11 +26,9 @@
 - (id)initWithRemoteHost:(id)arg1 delegate:(id)arg2;
 - (BOOL)isDataConnectionActive;
 - (BOOL)isImmediatelyReachable;
-- (BOOL)isReachableAfterModemDial;
 - (id)remoteHost;
 - (BOOL)requiresDataConnectionActivation;
 - (void)setDataConnectionActive:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (BOOL)startDialUp;
 
 @end

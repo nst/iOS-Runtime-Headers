@@ -18,12 +18,9 @@
 
 - (id)buttonTitle;
 - (id)buttonUsageHelp;
-- (id)cacheKey;
-- (int)cachePriority;
-- (int)cacheType;
 - (void)dealloc;
 - (BOOL)friendFinderVisible;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
+- (void)handleResponseFromServer:(id)arg1;
 - (id)key;
 - (id)request;
 - (id)sectionTitle;

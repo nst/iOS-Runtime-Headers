@@ -16,6 +16,7 @@
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
 - (id)modelVersions;
+- (id)optimizedVersionURL;
 - (id)urlForModelVersionWithName:(id)arg1;
 - (id)versionHashInfo;
 - (id)versionInfoDictionary;

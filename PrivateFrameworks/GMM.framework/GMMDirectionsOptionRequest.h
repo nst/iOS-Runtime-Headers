@@ -7,10 +7,8 @@
 
 - (void)dealloc;
 - (id)description;
-- (id)init;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
-- (unsigned int)requestTypeCode;
-- (Class)responseClass;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -12,6 +12,7 @@
     UIWebSelectPopover *_popover;
     DOMHTMLSelectElement *_selectionNode;
     unsigned int _singleSelectionIndex;
+    int _textAlignment;
 }
 
 @property(retain) NSArray * _cachedItems;
@@ -25,6 +26,7 @@
 @property int keyboardType;
 @property int returnKeyType;
 @property(getter=isSecureTextEntry) BOOL secureTextEntry;
+@property int spellCheckingType;
 
 - (id)_cachedItems;
 - (BOOL)_hasItems;

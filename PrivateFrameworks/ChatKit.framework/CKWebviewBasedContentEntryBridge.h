@@ -11,6 +11,7 @@
 }
 
 - (id)_htmlForMessagePart:(id)arg1;
+- (id)_imageURLForPart:(id)arg1 partID:(int)arg2;
 - (id)_nodeForImagePart:(id)arg1 forRichContentView:(id)arg2;
 - (void)_removeImages;
 - (void)_resetResourcePool;
@@ -29,5 +30,6 @@
 - (void)richContentView:(id)arg1 didRemoveImage:(id)arg2;
 - (void)setMessageComposition:(id)arg1;
 - (void)setMessageParts:(id)arg1;
+- (void)updateComposition;
 
 @end

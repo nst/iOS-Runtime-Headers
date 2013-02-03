@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray;
+@class NSString, NSArray;
 
 @interface MKPolygon : MKMultiPoint <MKOverlay> {
     struct { 
@@ -14,9 +14,11 @@
 }
 
 @property BOOL _isDefinitelyConvex;
-@property(readonly) struct { struct { double x; double y; } origin; struct { double width; double height; } size; } boundingMapRect;
-@property(readonly) struct { double latitude; double longitude; } coordinate;
+@property(readonly) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } boundingMapRect;
+@property(readonly) struct { double x1; double x2; } coordinate;
 @property(readonly) NSArray * interiorPolygons;
+@property(readonly) NSString * subtitle;
+@property(readonly) NSString * title;
 
 + (id)polygonEnclosingMapPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
 + (id)polygonWithCoordinates:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2 interiorPolygons:(id)arg3;

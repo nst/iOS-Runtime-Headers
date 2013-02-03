@@ -12,20 +12,15 @@
 
 @property(getter=isEmpty,readonly) BOOL empty;
 @property(readonly) double expirationTime;
-@property(getter=isExpired,readonly) BOOL expired;
-@property(getter=isSoonExpired,readonly) BOOL soonExpired;
 
 + (double)defaultExpirationTime;
 
 - (void)dealloc;
-- (id)description;
 - (double)expirationTime;
 - (id)getRoadsAtSpeed:(int)arg1;
 - (id)init;
 - (void)invalidate;
 - (BOOL)isEmpty;
-- (BOOL)isExpired;
-- (BOOL)isSoonExpired;
 - (BOOL)readFromStream:(struct InputDataStream { char *x1; unsigned int x2; unsigned int x3; boolx4; boolx5; }*)arg1 tilePath:(const struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; }*)arg2;
 
 @end

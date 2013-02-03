@@ -11,6 +11,7 @@
 + (id)supportedImageMIMETypes;
 + (id)supportedMIMETypes;
 + (id)supportedNonImageMIMETypes;
++ (id)unsupportedTextMIMETypes;
 
 - (id)DOMDocument;
 - (BOOL)_isDisplayingWebArchive;

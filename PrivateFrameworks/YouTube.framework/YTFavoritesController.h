@@ -38,7 +38,7 @@
 - (void)saveBookmarksIfNeeded;
 - (void)searchRequestReturnedVideos:(id)arg1;
 - (void)setBatchURL:(id)arg1;
-- (void)setLocalBookmarksMergeOffered;
+- (void)setLocalBookmarksMergeOffered:(BOOL)arg1;
 - (void)setUsingAccountFavorites:(BOOL)arg1;
 - (BOOL)shouldOfferMergeOfLocalBookmarks;
 - (BOOL)usingAccountFavorites;

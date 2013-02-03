@@ -11,6 +11,7 @@
 @property(retain) NSDictionary * context;
 @property(readonly) BOOL didMigrateBackupFromDifferentDevice;
 @property(readonly) BOOL didRestoreFromBackup;
+@property(readonly) BOOL didRestoreFromCloudBackup;
 @property(readonly) BOOL shouldPreserveSettingsAfterRestore;
 @property(readonly) BOOL wasPasscodeSetInBackup;
 
@@ -19,6 +20,7 @@
 - (void)dealloc;
 - (BOOL)didMigrateBackupFromDifferentDevice;
 - (BOOL)didRestoreFromBackup;
+- (BOOL)didRestoreFromCloudBackup;
 - (float)estimatedDuration;
 - (float)migrationProgress;
 - (BOOL)performMigration;

@@ -21,7 +21,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (BOOL)prepareForSnapshotOfLayer:(id)arg1;
+- (BOOL)prepareForSnapshotOfLayer:(id)arg1 withPlayer:(id)arg2;
 - (id)snapshot;
 - (void)snapshotLayer:(id)arg1;
 - (float)time;

@@ -8,6 +8,7 @@
     NSURLDownloadInternal *_internal;
 }
 
++ (id)_downloadWithLoadingCFURLConnection:(struct _CFURLConnection { }*)arg1 request:(struct _CFURLRequest { }*)arg2 response:(struct _CFURLResponse { }*)arg3 delegate:(id)arg4 proxy:(id)arg5;
 + (id)_downloadWithLoadingConnection:(id)arg1 request:(id)arg2 response:(id)arg3 delegate:(id)arg4 proxy:(id)arg5;
 + (id)_downloadWithRequest:(id)arg1 delegate:(id)arg2 directory:(id)arg3;
 + (BOOL)_isEncodingMIMETypeResumable:(id)arg1;
@@ -17,6 +18,7 @@
 - (BOOL)_deletesFileAfterFailure;
 - (id)_directoryPath;
 - (BOOL)_downloadActive;
+- (id)_initWithLoadingCFURLConnection:(struct _CFURLConnection { }*)arg1 request:(struct _CFURLRequest { }*)arg2 response:(struct _CFURLResponse { }*)arg3 delegate:(id)arg4 proxy:(id)arg5;
 - (id)_initWithLoadingConnection:(id)arg1 request:(id)arg2 response:(id)arg3 delegate:(id)arg4 proxy:(id)arg5;
 - (id)_initWithRequest:(id)arg1 delegate:(id)arg2 directory:(id)arg3;
 - (id)_initWithResumeInformation:(id)arg1 delegate:(id)arg2 path:(id)arg3;

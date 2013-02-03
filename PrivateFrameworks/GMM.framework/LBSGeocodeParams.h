@@ -17,9 +17,9 @@
 
 @property int addressLinesLimit;
 @property(retain) LBSGRectangle * boundingBox;
-@property(readonly) BOOL hasAddressLinesLimit;
+@property BOOL hasAddressLinesLimit;
 @property(readonly) BOOL hasBoundingBox;
-@property(readonly) BOOL hasIncludeBoundingBoxes;
+@property BOOL hasIncludeBoundingBoxes;
 @property(readonly) BOOL hasLocation;
 @property BOOL includeBoundingBoxes;
 @property(retain) LBSUserLocation * location;
@@ -36,13 +36,14 @@
 - (BOOL)hasIncludeBoundingBoxes;
 - (BOOL)hasLocation;
 - (BOOL)includeBoundingBoxes;
-- (id)init;
 - (id)location;
 - (int)numFeatureLimit;
 - (BOOL)readFrom:(id)arg1;
 - (id)resultLanguage;
 - (void)setAddressLinesLimit:(int)arg1;
 - (void)setBoundingBox:(id)arg1;
+- (void)setHasAddressLinesLimit:(BOOL)arg1;
+- (void)setHasIncludeBoundingBoxes:(BOOL)arg1;
 - (void)setIncludeBoundingBoxes:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setNumFeatureLimit:(int)arg1;

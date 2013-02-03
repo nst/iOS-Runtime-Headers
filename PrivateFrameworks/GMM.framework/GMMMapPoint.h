@@ -10,18 +10,10 @@
 @property int latitude;
 @property int longitude;
 
-+ (id)mapPointWithCoordinate:(struct { double x1; double x2; })arg1;
-
-- (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)description;
-- (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (id)init;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1;
-- (id)initWithOldMapPoint:(struct MapPoint { int x1; int x2; int x3; int x4; }*)arg1;
-- (BOOL)isEqual:(id)arg1;
 - (int)latitude;
 - (int)longitude;
 - (BOOL)readFrom:(id)arg1;

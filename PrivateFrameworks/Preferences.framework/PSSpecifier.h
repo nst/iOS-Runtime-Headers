@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSArray, NSString, NSDictionary, NSMutableDictionary;
+@class IMAccount, NSArray, NSString, NSDictionary, CNFRegAlias, NSMutableDictionary;
 
 @interface PSSpecifier : NSObject {
     NSString *_name;
@@ -25,7 +25,19 @@
     int textFieldType;
 }
 
-+ (void)_initializeSafeCategory;
+@property(retain) IMAccount * CNFRegAccount;
+@property(retain) CNFRegAlias * CNFRegAlias;
+@property int cellType;
+@property Class detailControllerClass;
+@property Class editPaneClass;
+@property(retain) NSString * identifier;
+@property(retain) NSString * name;
+@property(retain) NSDictionary * shortTitleDictionary;
+@property id target;
+@property(retain) NSDictionary * titleDictionary;
+@property(retain) id userInfo;
+@property(retain) NSArray * values;
+
 + (int)autoCapsTypeForString:(id)arg1;
 + (int)autoCorrectionTypeForNumber:(id)arg1;
 + (id)buttonSpecifierWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3 confirmationInfo:(id)arg4;
@@ -35,9 +47,13 @@
 + (id)preferenceSpecifierNamed:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(int)arg6 edit:(Class)arg7;
 + (id)switchSpecifierWithTitle:(id)arg1 target:(id)arg2 setter:(SEL)arg3 getter:(SEL)arg4 key:(id)arg5;
 
-- (id)accessibilityIdentification;
+- (id)CNFRegAccount;
+- (id)CNFRegAlias;
+- (int)cellType;
 - (void)dealloc;
 - (id)description;
+- (Class)detailControllerClass;
+- (Class)editPaneClass;
 - (id)identifier;
 - (id)init;
 - (void)loadValuesAndTitlesFromDataSource;
@@ -45,6 +61,12 @@
 - (id)properties;
 - (id)propertyForKey:(id)arg1;
 - (void)removePropertyForKey:(id)arg1;
+- (void)setCNFRegAccount:(id)arg1;
+- (void)setCNFRegAlias:(id)arg1;
+- (void)setCellType:(int)arg1;
+- (void)setDetailControllerClass:(Class)arg1;
+- (void)setEditPaneClass:(Class)arg1;
+- (void)setIdentifier:(id)arg1;
 - (void)setKeyboardType:(int)arg1 autoCaps:(int)arg2 autoCorrection:(int)arg3;
 - (void)setName:(id)arg1;
 - (void)setProperties:(id)arg1;
@@ -59,6 +81,7 @@
 - (void)setupIconImageWithBundle:(id)arg1;
 - (void)setupIconImageWithPath:(id)arg1;
 - (id)shortTitleDictionary;
+- (id)target;
 - (int)titleCompare:(id)arg1;
 - (id)titleDictionary;
 - (id)userInfo;

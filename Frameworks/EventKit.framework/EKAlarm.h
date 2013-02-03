@@ -2,38 +2,51 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate;
+@class NSDate, EKObjectToOneRelation;
 
-@interface EKAlarm : NSObject <NSCopying> {
-    NSDate *_absoluteDate;
-    BOOL _dirtyFlag;
-    double _relativeOffset;
+@interface EKAlarm : EKObject <NSCopying> {
+    EKObjectToOneRelation *_locationRelation;
 }
 
 @property(copy) NSDate * absoluteDate;
+@property(retain) EKObjectToOneRelation * locationRelation;
 @property double relativeOffset;
 
 + (id)alarmWithAbsoluteDate:(id)arg1;
 + (id)alarmWithRelativeOffset:(double)arg1;
++ (BOOL)areLocationsAllowed;
++ (BOOL)areLocationsAllowedWithAuthorizationStatus:(int)arg1;
++ (BOOL)areLocationsAvailable;
 
-- (id)_localizedDescription:(BOOL)arg1;
+- (id)UUID;
+- (id)_localizedDescription:(BOOL)arg1 forEvent:(BOOL)arg2 isAllDay:(BOOL)arg3;
+- (id)_locationRelation;
 - (id)absoluteDate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (id)init;
 - (id)initWithAbsoluteDate:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithRelativeOffset:(double)arg1;
 - (BOOL)isAbsolute;
-- (BOOL)isDirty;
-- (BOOL)isEqual:(id)arg1;
+- (id)lazyLoadRelationForKey:(id)arg1;
+- (id)localizedAllDayDescription;
 - (id)localizedDescription;
+- (id)localizedDescriptionForReminder;
+- (id)locationRelation;
+- (id)longLocalizedAllDayDescription;
 - (id)longLocalizedDescription;
+- (id)owner;
+- (id)ownerUUID;
+- (int)proximity;
+- (BOOL)rebase;
 - (double)relativeOffset;
 - (void)setAbsoluteDate:(id)arg1;
+- (void)setLocationRelation:(id)arg1;
+- (void)setProximity:(int)arg1;
 - (void)setRelativeOffset:(double)arg1;
-- (id)triggerDateRelativeTo:(id)arg1;
+- (void)setStructuredLocation:(id)arg1;
+- (id)structuredLocation;
+- (BOOL)validate:(id*)arg1;
 
 @end

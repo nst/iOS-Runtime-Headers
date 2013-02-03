@@ -4,7 +4,7 @@
 
 @class NSNumber, NSString;
 
-@interface MCEmailAccountPayload : MCPayload {
+@interface MCEmailAccountPayload : MCEmailAccountPayloadBase {
     NSString *_emailAccountDescription;
     NSString *_emailAccountName;
     NSString *_emailAccountType;

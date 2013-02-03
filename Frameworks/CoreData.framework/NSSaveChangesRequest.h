@@ -8,6 +8,8 @@
     NSSet *_deletedObjects;
     NSSet *_insertedObjects;
     NSSet *_optimisticallyLockedObjects;
+    void *_reserved1;
+    void *_reserved2;
     NSSet *_updatedObjects;
 }
 

@@ -6,10 +6,6 @@
 }
 
 + (void)combineShapesIn:(id)arg1;
-+ (void)makeCompoundShapesIn:(id)arg1;
-
-- (BOOL)isGraphicObjectRegion:(id)arg1;
-- (void)makeGraphicObjects:(id)arg1;
-- (void)makeRegionsFromGraphicsObjects:(id)arg1;
++ (void)makeCombinedShapesIn:(id)arg1;
 
 @end

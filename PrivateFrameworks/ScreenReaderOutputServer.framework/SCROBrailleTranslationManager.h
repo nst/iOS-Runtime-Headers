@@ -5,27 +5,44 @@
 @class <SCROBrailleTranslatorProtocol>, NSBundle, NSLock;
 
 @interface SCROBrailleTranslationManager : NSObject {
+    BOOL _auxTableSupportsContractedBraille;
+    BOOL _auxTableSupportsEightDotBraille;
+    <SCROBrailleTranslatorProtocol> *_auxTranslator;
+    NSBundle *_auxTranslatorBundle;
     NSLock *_contentLock;
+    BOOL _tableSupportsContractedBraille;
+    BOOL _tableSupportsEightDotBraille;
     <SCROBrailleTranslatorProtocol> *_translator;
     NSBundle *_translatorBundle;
 }
+
+@property(readonly) BOOL auxiliaryTableSupportsContractedBraille;
+@property(readonly) BOOL auxiliaryTableSupportsEightDotBraille;
+@property(readonly) BOOL primaryTableSupportsContractedBraille;
+@property(readonly) BOOL primaryTableSupportsEightDotBraille;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 + (id)sharedManager;
 
 - (id)autorelease;
+- (id)auxiliaryTableIdentifier;
+- (BOOL)auxiliaryTableSupportsContractedBraille;
+- (BOOL)auxiliaryTableSupportsEightDotBraille;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)primaryTableIdentifier;
+- (BOOL)primaryTableSupportsContractedBraille;
+- (BOOL)primaryTableSupportsEightDotBraille;
 - (id)printBrailleForText:(id)arg1 contracted:(BOOL)arg2 eightDot:(BOOL)arg3 locations:(id*)arg4;
+- (id)printBrailleForText:(id)arg1 primaryTable:(BOOL)arg2 contracted:(BOOL)arg3 eightDot:(BOOL)arg4 locations:(id*)arg5;
 - (void)release;
 - (id)retain;
 - (unsigned int)retainCount;
-- (void)setTranslationTableWithTableIdentifier:(id)arg1;
-- (id)tableIdentifier;
-- (BOOL)tableSupportsContractedBraille;
-- (BOOL)tableSupportsEightDotBraille;
+- (void)setAuxiliaryTranslationTableWithTableIdentifier:(id)arg1;
+- (void)setPrimaryTranslationTableWithTableIdentifier:(id)arg1;
 - (id)textForPrintBraille:(id)arg1 contracted:(BOOL)arg2 eightDot:(BOOL)arg3 locations:(id*)arg4;
+- (id)textForPrintBraille:(id)arg1 primaryTable:(BOOL)arg2 contracted:(BOOL)arg3 eightDot:(BOOL)arg4 locations:(id*)arg5;
 
 @end

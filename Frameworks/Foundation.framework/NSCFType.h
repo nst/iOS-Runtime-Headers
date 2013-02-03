@@ -7,11 +7,13 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (BOOL)allowsWeakReference;
 - (void)finalize;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 
 @end

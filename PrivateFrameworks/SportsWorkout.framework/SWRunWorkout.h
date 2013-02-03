@@ -4,7 +4,7 @@
 
 @class SWRunSensor, SWPaceModel, NSData;
 
-@interface SWRunWorkout : SWWorkout {
+@interface SWRunWorkout : SWWorkout <SWRunSensorPacketObserver> {
     BOOL _hasStarted;
     BOOL _isCalibration;
     SWPaceModel *_paceModel;

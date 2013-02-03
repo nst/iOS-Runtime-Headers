@@ -28,20 +28,15 @@
     BOOL _touchInside;
 }
 
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } hitRectEdgeInsets;
-
-+ (void)_initializeSafeCategory;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } hitRectEdgeInsets;
 
 - (id)_buttonWellImage;
 - (id)_buttonWellLandscapeImage;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (void)dealloc;
 - (void)drawImageForSlice;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })hitRectEdgeInsets;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;

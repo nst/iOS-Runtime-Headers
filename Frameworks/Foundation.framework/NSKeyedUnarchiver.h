@@ -3,7 +3,7 @@
  */
 
 @interface NSKeyedUnarchiver : NSCoder {
-    char *_bytes;
+    const char *_bytes;
     id _containers;
     id _data;
     id _delegate;
@@ -25,6 +25,7 @@
 + (Class)classForClassName:(id)arg1;
 + (void)initialize;
 + (void)setClass:(Class)arg1 forClassName:(id)arg2;
++ (id)unarchiveObjectWithData:(id)arg1 allowedClasses:(id)arg2;
 + (id)unarchiveObjectWithData:(id)arg1;
 + (id)unarchiveObjectWithFile:(id)arg1;
 

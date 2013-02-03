@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKUserLocationLayer, MKAccuracyLayer, MKUserLocationView, CALayer, MKUserLocationPositionAnimation, MKHoverAnimation;
+@class MKUserLocationPositionAnimation, MKDotBounceAnimation, MKHoverAnimation, CAAnimationGroup, MKUserLocationView, MKAccuracyLayer, MKUserLocationAccuracyAnimation, CALayer, MKUserLocationLayer;
 
 @interface MKUserLocationViewInternal : NSObject {
     struct { 
@@ -19,6 +19,11 @@
         unsigned int delegateDidQuiesce : 1; 
         unsigned int delegateIsZooming : 1; 
         unsigned int willAnimateProperty : 1; 
+    MKUserLocationAccuracyAnimation *_accuracyAnimation;
+    MKDotBounceAnimation *_dotBounceAnimation;
+    CAAnimationGroup *_haloAnimation;
+    MKHoverAnimation *_hoverAnimation;
+    MKUserLocationPositionAnimation *_positionAnimation;
     float accuracy;
     MKAccuracyLayer *accuracyLayer;
     CALayer *bounceLayer;
@@ -42,7 +47,6 @@
 @property(readonly) BOOL canHaloExcludingEffects;
 @property id delegate;
 @property BOOL disableAccuracyDidUpdate;
-@property(getter=isDisplayingAccuracy,readonly) BOOL displayingAccuracy;
 @property BOOL effectsVisible;
 @property(readonly) BOOL hasHalo;
 @property(readonly) BOOL hasQuiesced;
@@ -51,7 +55,7 @@
 @property(getter=isHovering,readonly) BOOL hovering;
 @property unsigned int mapType;
 @property(readonly) BOOL needsHalo;
-@property struct CADoublePoint { double x; double y; } position;
+@property struct CADoublePoint { double x1; double x2; } position;
 @property(readonly) MKUserLocationPositionAnimation * positionAnimation;
 @property BOOL shouldDisplayAccuracy;
 @property BOOL shouldDisplayEffects;
@@ -61,7 +65,7 @@
 @property int zoomDirection;
 
 + (float)accuracyDiameter:(float)arg1 level:(unsigned int)arg2;
-+ (id)bounceImages;
++ (id)bounceImageRects;
 + (id)dotImage;
 + (id)dotPressedImage;
 + (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })effectiveFrameWithFrame:(struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -95,7 +99,7 @@
 - (BOOL)disableAccuracyDidUpdate;
 - (id)dotBounceAnimation;
 - (void)drawAccuracy:(float)arg1;
-- (id)dropUserLocationBreadCrumbAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)dropTeleportingUserLocationAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)effectsVisible;
 - (void)effectsVisibleDidChange;
 - (id)haloAnimation;

@@ -5,21 +5,21 @@
 @class NSString;
 
 @interface DAMoveAction : DAAction {
-    NSString *_newContainerId;
-    NSString *_oldContainerId;
-    NSString *_oldServerId;
+    NSString *_destinationContainerId;
+    NSString *_sourceContainerId;
+    NSString *_sourceServerId;
 }
 
-@property(readonly) NSString * newContainerId;
-@property(readonly) NSString * oldContainerId;
-@property(readonly) NSString * oldServerId;
+@property(readonly) NSString * destinationContainerId;
+@property(readonly) NSString * sourceContainerId;
+@property(readonly) NSString * sourceServerId;
 
 - (void)dealloc;
+- (id)destinationContainerId;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithAction:(int)arg1 context:(id)arg2 oldContainerId:(id)arg3 oldServerId:(id)arg4 newContainerId:(id)arg5;
 - (id)initWithCoder:(id)arg1;
-- (id)newContainerId;
-- (id)oldContainerId;
-- (id)oldServerId;
+- (id)initWithItemChangeType:(int)arg1 changedItem:(id)arg2 sourceContainerId:(id)arg3 sourceServerId:(id)arg4 destinationContainerId:(id)arg5;
+- (id)sourceContainerId;
+- (id)sourceServerId;
 
 @end

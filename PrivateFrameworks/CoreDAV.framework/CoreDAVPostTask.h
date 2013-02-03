@@ -8,7 +8,7 @@
 }
 
 @property <CoreDAVTaskDelegate> * delegate;
-@property(retain,readonly) NSData * responseBodyPayload;
+@property(readonly) NSData * responseBodyPayload;
 
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;

@@ -5,24 +5,22 @@
 @class NSMutableArray;
 
 @interface GEOMapQueryCollectionRequest : PBRequest {
-    NSMutableArray *_requestElementss;
+    NSMutableArray *_requestElements;
 }
 
-@property(retain) NSMutableArray * requestElementss;
-@property(readonly) int requestElementssCount;
+@property(retain) NSMutableArray * requestElements;
 
 - (void)addRequestElements:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)init;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
+- (id)requestElements;
 - (id)requestElementsAtIndex:(unsigned int)arg1;
-- (id)requestElementss;
-- (int)requestElementssCount;
+- (unsigned int)requestElementsCount;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (void)setRequestElements:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setRequestElementss:(id)arg1;
+- (void)setRequestElements:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDictionary;
+@class AVMetadataItem;
 
 @interface MPTimedMetadataInternal : NSObject {
-    NSDictionary *_metadataDictionary;
+    AVMetadataItem *_metadataItem;
 }
 
 @end

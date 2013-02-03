@@ -4,7 +4,7 @@
 
 @class SSMutableURLRequestProperties, UISegmentedControl, SSURLRequestProperties, SUNavigationMenuViewController, SUPageSectionGroup, SUSearchFieldController, SUStorePageProtocol, SUViewController, UIPopoverController, SSAuthenticationContext;
 
-@interface SUStorePageViewController : SUViewController <ISURLOperationDelegate> {
+@interface SUStorePageViewController : SUViewController <SUMenuViewControllerDelegate, UIPopoverControllerDelegate, ISURLOperationDelegate> {
     SUViewController *_activeChildViewController;
     int _activeSectionIndex;
     struct __CFSet { } *_allowedInterfaceOrientations;
@@ -29,14 +29,12 @@
 @property(readonly) SUViewController * activeChildViewController;
 @property(retain) SSAuthenticationContext * authenticationContext;
 @property(readonly) BOOL canBeResolved;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } documentBounds;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } documentBounds;
 @property(getter=isExternalRequest) BOOL externalRequest;
 @property BOOL needsAuthentication;
 @property(readonly) SUSearchFieldController * searchFieldController;
 @property(readonly) SUPageSectionGroup * sectionGroup;
 @property(readonly) UISegmentedControl * sectionSegmentedControl;
-
-+ (void)_initializeSafeCategory;
 
 - (id)URLRequest;
 - (id)URLRequestProperties;
@@ -55,12 +53,13 @@
 - (void)_handleViewControllerBecameReady:(id)arg1;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_moveChildViewController:(id)arg1 toOverlayForProtocol:(id)arg2;
-- (void)_moveToRootSectionForChildViewController:(id)arg1;
+- (void)_moveToRootSectionForChildViewController:(id)arg1 protocol:(id)arg2;
 - (void)_navigationButtonAction:(id)arg1;
 - (void)_navigationMenuButtonAction:(id)arg1;
 - (id)_newSegmentedControlWithItems:(id)arg1;
 - (void)_performActionForProtocolButton:(id)arg1;
 - (void)_reloadForAppearance:(BOOL)arg1;
+- (void)_reloadForNetworkTypeChange:(id)arg1;
 - (void)_reloadNavigationBar;
 - (void)_reloadNavigationButtons;
 - (void)_reloadNavigationMenus;
@@ -69,13 +68,16 @@
 - (BOOL)_reloadWithURLRequestProperties:(id)arg1 preserveSectionControl:(BOOL)arg2;
 - (void)_repositionForChildViewController:(id)arg1;
 - (void)_sectionControlAction:(id)arg1;
+- (BOOL)_sectionIsNetworkConstrained;
 - (void)_sendFailureAfterDialogsFinished:(id)arg1;
 - (void)_setActiveChildViewController:(id)arg1;
 - (void)_setAllowedOrientations:(id)arg1;
 - (void)_setLeftNavigationItem:(id)arg1 forTag:(int)arg2;
 - (void)_setPendingChildViewController:(id)arg1;
 - (void)_setRightNavigationItem:(id)arg1 forTag:(int)arg2;
+- (BOOL)_shouldDisplayControlsInNavigationBar;
 - (BOOL)_shouldFetchAutomatically;
+- (void)_tabConfigurationChanged:(id)arg1;
 - (void)_tearDownNavigationMenu;
 - (void)_verifyStorePageProtocol:(id)arg1;
 - (id)activeChildViewController;
@@ -98,6 +100,8 @@
 - (void)enqueueFetchOperationForPageSection:(id)arg1;
 - (void)handleApplicationURL:(id)arg1;
 - (void)handleFailureWithError:(id)arg1;
+- (void)handleStoreFailureWithError:(id)arg1;
+- (id)iTunesStoreUI_searchFieldController;
 - (id)init;
 - (void)invalidate;
 - (void)invalidateForMemoryPurge;
@@ -117,18 +121,15 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
-- (id)parentViewControllerForSearchFieldController:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (BOOL)pushStorePage:(id)arg1 withTarget:(int)arg2 animated:(BOOL)arg3;
 - (void)reload;
-- (void)reloadForNetworkTypeChange;
 - (BOOL)reloadForSectionsWithGroup:(id)arg1;
 - (void)reloadWithStorePage:(id)arg1 ofType:(int)arg2 forURL:(id)arg3;
 - (BOOL)reloadWithURLRequestProperties:(id)arg1;
 - (void)resetNavigationItem:(id)arg1;
 - (void)restoreArchivableContext:(id)arg1;
 - (id)searchFieldController;
-- (void)searchFieldControllerDidChange:(id)arg1;
 - (id)sectionGroup;
 - (id)sectionSegmentedControl;
 - (void)setAuthenticationContext:(id)arg1;

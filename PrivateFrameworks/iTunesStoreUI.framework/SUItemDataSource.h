@@ -8,11 +8,10 @@
 + (void)setSharedDataSource:(id)arg1;
 + (id)sharedDataSource;
 
-- (id)_newDownloadAssetsForDocumentItem:(id)arg1 storeOffer:(id)arg2;
-- (id)_newDownloadAssetsForPodcastEpisode:(id)arg1 storeOffer:(id)arg2;
-- (id)_newDownloadMetadataForDocumentItem:(id)arg1 storeOffer:(id)arg2;
+- (id)_newDownloadForDocumentItem:(id)arg1 storeOffer:(id)arg2;
+- (id)_newDownloadForPodcastEpisode:(id)arg1 storeOffer:(id)arg2;
 - (id)_newDownloadMetadataForPodcastEpisode:(id)arg1 storeOffer:(id)arg2;
-- (id)_newRingtonePurchaseWithPurchase:(id)arg1;
+- (id)_newTonePurchaseWithPurchase:(id)arg1;
 - (id)_thumbnailImageForItem:(id)arg1;
 - (long long)estimatedDiskSpaceNeededForItem:(id)arg1 storeOffer:(id)arg2;
 - (int)itemTypeForItem:(id)arg1;

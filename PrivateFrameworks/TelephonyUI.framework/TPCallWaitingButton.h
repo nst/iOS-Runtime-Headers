@@ -2,14 +2,13 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class TPPushButton;
+@class TPButton;
 
-@interface TPCallWaitingButton : UIThreePartButton {
+@interface TPCallWaitingButton : UIImageView {
     unsigned int _type : 1;
-    TPPushButton *_innerButton;
+    TPButton *_innerButton;
 }
 
-+ (void)_initializeSafeCategory;
 + (struct CGSize { float x1; float x2; })defaultSizeForType:(int)arg1;
 + (float)defaultVerticalCenteringOffset;
 
@@ -19,11 +18,9 @@
 - (id)initBottomForIncomingCallWaiting;
 - (id)initBottomForSecondIncomingCallWaiting;
 - (id)initBottomForTTYWithTitle:(id)arg1;
-- (id)initForIncomingCallWaitingOnVideoCall;
 - (id)initTopForIncomingCallWaiting;
 - (id)initTopForTTY;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 type:(int)arg2;
-- (BOOL)isAccessibilityElement;
 - (BOOL)isEnabled;
 - (void)removeTarget:(id)arg1 forControlEvents:(unsigned int)arg2;
 - (void)removeTarget:(id)arg1 forEvents:(int)arg2;

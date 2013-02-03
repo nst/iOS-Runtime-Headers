@@ -5,7 +5,10 @@
 @interface __NSMallocBlock : NSBlock {
 }
 
-- (void)release;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (oneway void)release;
 - (id)retain;
+- (unsigned int)retainCount;
 
 @end

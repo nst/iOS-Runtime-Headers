@@ -9,6 +9,9 @@
     NSDictionary *_bulkRequests;
     NSString *_containerTitle;
     BOOL _isUnauthenticated;
+    NSString *_maxImageSize;
+    NSString *_maxResourceSize;
+    NSURL *_meCardURL;
     NSURL *_owner;
     NSSet *_privileges;
     NSString *_pushKey;
@@ -18,6 +21,7 @@
     NSURL *_resourceID;
     CoreDAVResourceTypeItem *_resourceType;
     NSSet *_supportedReports;
+    NSString *_syncToken;
     NSURL *_url;
 }
 
@@ -32,6 +36,9 @@
 @property(readonly) BOOL isSearchAddressBook;
 @property(readonly) BOOL isSharedAddressBook;
 @property BOOL isUnauthenticated;
+@property(retain) NSString * maxImageSize;
+@property(retain) NSString * maxResourceSize;
+@property(retain) NSURL * meCardURL;
 @property(retain) NSURL * owner;
 @property(retain) NSSet * privileges;
 @property(readonly) NSSet * privilegesAsStringSet;
@@ -46,6 +53,7 @@
 @property(readonly) NSSet * supportedReportsAsStringSet;
 @property(readonly) BOOL supportsPrincipalPropertySearchReport;
 @property(readonly) BOOL supportsSyncCollectionReport;
+@property(retain) NSString * syncToken;
 @property(retain) NSURL * url;
 
 + (id)convertPushTransportsForNSServerNotificationCenter:(id)arg1;
@@ -66,6 +74,9 @@
 - (BOOL)isSearchAddressBook;
 - (BOOL)isSharedAddressBook;
 - (BOOL)isUnauthenticated;
+- (id)maxImageSize;
+- (id)maxResourceSize;
+- (id)meCardURL;
 - (id)owner;
 - (id)privileges;
 - (id)privilegesAsStringSet;
@@ -80,6 +91,9 @@
 - (void)setBulkRequests:(id)arg1;
 - (void)setContainerTitle:(id)arg1;
 - (void)setIsUnauthenticated:(BOOL)arg1;
+- (void)setMaxImageSize:(id)arg1;
+- (void)setMaxResourceSize:(id)arg1;
+- (void)setMeCardURL:(id)arg1;
 - (void)setOwner:(id)arg1;
 - (void)setPrivileges:(id)arg1;
 - (void)setPushKey:(id)arg1;
@@ -89,11 +103,13 @@
 - (void)setResourceID:(id)arg1;
 - (void)setResourceType:(id)arg1;
 - (void)setSupportedReports:(id)arg1;
+- (void)setSyncToken:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)supportedReports;
 - (id)supportedReportsAsStringSet;
 - (BOOL)supportsPrincipalPropertySearchReport;
 - (BOOL)supportsSyncCollectionReport;
+- (id)syncToken;
 - (id)url;
 
 @end

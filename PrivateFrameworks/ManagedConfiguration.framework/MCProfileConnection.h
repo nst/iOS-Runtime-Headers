@@ -62,6 +62,8 @@
 - (int)boolRestrictionForFeature:(id)arg1;
 - (void)cancelUserInputResponses;
 - (BOOL)changePasscodeFrom:(id)arg1 to:(id)arg2 outError:(id*)arg3;
+- (id)chaperoneOrganization;
+- (void)checkCarrierProfile;
 - (void)checkIn;
 - (void)checkInAsynchronously;
 - (BOOL)clearPasscodeWithEscrowKeybagData:(id)arg1 secret:(id)arg2 outError:(id*)arg3;
@@ -72,6 +74,8 @@
 - (id)defaultParametersForBoolSetting:(id)arg1;
 - (id)defaultParametersForValueSetting:(id)arg1;
 - (id)defaultValueForSetting:(id)arg1;
+- (id)doNotBackupAppIDs;
+- (id)doNotDocumentSyncAppIDs;
 - (int)effectiveBoolValueForSetting:(id)arg1;
 - (id)effectiveParametersForBoolSetting:(id)arg1;
 - (id)effectiveParametersForValueSetting:(id)arg1;
@@ -80,10 +84,10 @@
 - (id)effectiveUserSettings;
 - (id)effectiveValueForSetting:(id)arg1;
 - (int)getPasscodeComplianceWarningLastLockDate:(id)arg1 outLocalizedTitle:(id*)arg2 outLocalizedMessage:(id*)arg3;
-- (id)installCarrierProfileData:(id)arg1 outError:(id*)arg2;
 - (BOOL)installConfigurationProfileWithData:(id)arg1;
 - (void)installProfile:(id)arg1 interactionDelegate:(id)arg2;
 - (id)installProfile:(id)arg1 outError:(id*)arg2;
+- (id)installProfileData:(id)arg1 context:(id)arg2 managingProfileIdentifier:(id)arg3 outError:(id*)arg4;
 - (void)installProfileData:(id)arg1 interactionDelegate:(id)arg2;
 - (id)installProfileData:(id)arg1 managingProfileIdentifier:(id)arg2 outError:(id*)arg3;
 - (id)installProfileData:(id)arg1 outError:(id*)arg2;
@@ -91,6 +95,7 @@
 - (id)installedProfileWithIdentifier:(id)arg1;
 - (id)installedProfilesWithFilterFlags:(int)arg1;
 - (BOOL)isBoolSettingLockedDownByRestrictions:(id)arg1;
+- (BOOL)isChaperoned;
 - (BOOL)isContentProtectionInEffect;
 - (BOOL)isPasscodeRequired;
 - (BOOL)isPasscodeRequiredByPolicy;
@@ -99,6 +104,7 @@
 - (BOOL)isValueSettingLockedDownByRestrictions:(id)arg1;
 - (id)localizedDescriptionOfCurrentPasscodeConstraints;
 - (void)lockDevice;
+- (id)managedAppIDsWithFlags:(int)arg1;
 - (id)managedSystemConfigurationServiceIDs;
 - (id)managedWiFiNetworkNames;
 - (void)migratePostDataMigrator;
@@ -112,6 +118,7 @@
 - (BOOL)passcode:(id)arg1 meetsCurrentConstraintsOutError:(id*)arg2;
 - (id)passcodeExpiryDate;
 - (id)passcodeExpiryDateOutError:(id*)arg1;
+- (void)performBootTimeChecks;
 - (id)popProfileFromHeadOfInstallationQueue;
 - (id)popProvisioningProfileDataFromHeadOfInstallationQueue;
 - (void)preflightUserInputResponses:(id)arg1 forPayloadIndex:(unsigned int)arg2;
@@ -126,9 +133,9 @@
 - (id)queueProfileForInstallation:(id)arg1 outError:(id*)arg2;
 - (void)recomputeUserComplianceWarning;
 - (void)removeBoolSetting:(id)arg1;
-- (void)removeCarrierProfile;
 - (void)removeObserver:(id)arg1;
-- (void)removeOrphanedClientTruths;
+- (void)removeOrphanedClientRestrictions;
+- (void)removeProfileAsyncWithIdentifier:(id)arg1;
 - (void)removeProfileWithIdentifier:(id)arg1 completion:(id)arg2;
 - (void)removeProfileWithIdentifier:(id)arg1;
 - (void)removeProfilesFromInstallationQueue;

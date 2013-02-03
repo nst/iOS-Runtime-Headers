@@ -18,6 +18,7 @@
 - (id)description;
 - (id)groupIdentifier;
 - (id)init;
+- (BOOL)isDiscardable;
 - (void)markBegin;
 - (void)markEnd;
 - (unsigned int)max;
@@ -28,6 +29,7 @@
 - (void)removeAllObjects;
 - (void)removeAllObjectsWithTarget:(id)arg1;
 - (void)removeObject:(id)arg1;
+- (void)setDiscardable:(BOOL)arg1;
 - (void)setGroupIdentifier:(id)arg1;
 - (void)setMax:(unsigned int)arg1;
 - (id)topUndoObject;

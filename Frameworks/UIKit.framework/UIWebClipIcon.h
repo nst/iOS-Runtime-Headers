@@ -14,13 +14,13 @@
     NSURL *_url;
 }
 
-@property struct CGSize { float width; float height; } bestSize;
+@property struct CGSize { float x1; float x2; } bestSize;
 @property(getter=isPrecomposed) BOOL precomposed;
 @property(getter=isSiteWide) BOOL siteWide;
 @property(retain) NSURL * url;
 
 - (struct CGSize { float x1; float x2; })bestSize;
-- (int)compare:(id)arg1 forVariant:(int)arg2;
+- (int)compare:(id)arg1 preferringDeviceIconSizes:(BOOL)arg2;
 - (void)dealloc;
 - (BOOL)isPrecomposed;
 - (BOOL)isSiteWide;

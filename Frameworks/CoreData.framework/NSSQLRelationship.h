@@ -9,6 +9,7 @@
     NSSQLRelationship *_inverse;
 }
 
+- (void)_setForeignOrderKey:(id)arg1;
 - (void)_setInverseRelationship:(id)arg1;
 - (void)copyValuesForReadOnlyFetch:(id)arg1;
 - (id)correlationTableName;
@@ -18,6 +19,7 @@
 - (id)initForReadOnlyFetchWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (id)inverseRelationship;
+- (BOOL)isOrdered;
 - (id)relationshipDescription;
 - (id)sourceEntity;
 

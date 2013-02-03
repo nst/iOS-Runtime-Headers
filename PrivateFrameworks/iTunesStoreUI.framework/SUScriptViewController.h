@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptNavigationItem, SUScriptPopOver, SUScriptSection, SUScriptNavigationController, NSString, SUScriptViewController, UIViewController, SUScriptSplitViewController;
+@class SUScriptSplitViewController, SUScriptNavigationItem, SUScriptPopOver, SUScriptSection, SUScriptNavigationController, NSString, SUScriptViewController, UIViewController, NSArray;
 
 @interface SUScriptViewController : SUScriptObject {
+    NSArray *_scriptToolbarItems;
 }
 
 @property(retain) id backgroundColor;
@@ -19,11 +20,13 @@
 @property(readonly) SUScriptPopOver * popOver;
 @property(retain) SUScriptSection * section;
 @property(readonly) SUScriptSplitViewController * splitViewController;
+@property(copy) id toolbarItems;
 @property(retain) id topBackgroundColor;
 @property(retain) SUScriptViewController * transientViewController;
 @property(readonly) SUScriptViewController * volumeViewController;
 @property id wantsFullScreenLayout;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
@@ -57,6 +60,7 @@
 - (int)_transitionForString:(id)arg1;
 - (id)attributeKeys;
 - (id)backgroundColor;
+- (void)dealloc;
 - (void)dismissModalViewControllerAnimated:(BOOL)arg1;
 - (void)dismissModalViewControllerWithTransition:(id)arg1;
 - (void)dismissVolumeViewControllerAnimated:(id)arg1;
@@ -87,11 +91,15 @@
 - (void)setPopOver:(id)arg1;
 - (void)setSection:(id)arg1;
 - (void)setSplitViewController:(id)arg1;
+- (void)setToolbarItems:(id)arg1 animated:(BOOL)arg2;
+- (void)setToolbarItems:(id)arg1;
 - (void)setTopBackgroundColor:(id)arg1;
 - (void)setTransientViewController:(id)arg1;
 - (void)setVolumeViewController:(id)arg1;
 - (void)setWantsFullScreenLayout:(id)arg1;
 - (id)splitViewController;
+- (void)tearDownUserInterface;
+- (id)toolbarItems;
 - (id)topBackgroundColor;
 - (id)transientViewController;
 - (id)volumeViewController;

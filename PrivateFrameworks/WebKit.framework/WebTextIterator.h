@@ -25,7 +25,7 @@
 - (const unsigned short*)currentTextPointer;
 - (BOOL)dd_checkCurrentRangeAgainstString:(struct __CFString { }*)arg1;
 - (id)dd_collectDDRangesForQuery:(struct __DDScanQuery { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryFragment {} *x2; int x3; int x4; int (*x5)(); void *x6; }*)arg1 forResults:(id)arg2;
-- (id)dd_doUrlificationForQuery:(struct __DDScanQuery { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryFragment {} *x2; int x3; int x4; int (*x5)(); void *x6; }*)arg1 forResults:(id)arg2 document:(id)arg3 DOMWasModified:(BOOL*)arg4 URLificationBlock:(id)arg5;
+- (id)dd_doUrlificationForQuery:(struct __DDScanQuery { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryFragment {} *x2; int x3; int x4; int (*x5)(); void *x6; }*)arg1 forResults:(id)arg2 referenceDate:(id)arg3 document:(id)arg4 DOMWasModified:(BOOL*)arg5 URLificationBlock:(id)arg6;
 - (void)dealloc;
 - (id)initWithRange:(id)arg1;
 

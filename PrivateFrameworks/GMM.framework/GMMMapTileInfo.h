@@ -16,7 +16,6 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasCopyright;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCopyright:(id)arg1;
 - (void)writeTo:(id)arg1;

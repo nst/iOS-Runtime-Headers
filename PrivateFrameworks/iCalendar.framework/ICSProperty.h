@@ -14,6 +14,7 @@
 - (id)ICSStringWithOptions:(unsigned int)arg1;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2 additionalParameters:(id)arg3;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (void)_setParsedValues:(id)arg1 type:(unsigned int)arg2;
 - (void)addParameter:(id)arg1 withRawValue:(id)arg2 options:(unsigned int)arg3;
 - (void)addParametersFromDictionary:(id)arg1;
 - (id)allParameters;
@@ -22,6 +23,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithValue:(id)arg1 type:(unsigned int)arg2;
+- (BOOL)isMultiValued;
 - (id)parameterValueForName:(id)arg1;
 - (id)parameters;
 - (void)removeParameterValueForName:(id)arg1;

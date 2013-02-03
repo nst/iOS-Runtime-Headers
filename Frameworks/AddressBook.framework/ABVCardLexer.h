@@ -15,6 +15,7 @@
     BOOL _unicode;
 }
 
+- (void)_applyNextStringInEncoding:(unsigned int)arg1 quotedPrintable:(BOOL)arg2 stopTokens:(int)arg3 trim:(BOOL)arg4 intoString:(id)arg5;
 - (BOOL)advancePastEOL;
 - (BOOL)advancePastEOLSingle;
 - (BOOL)advancePastEOLUnicode;

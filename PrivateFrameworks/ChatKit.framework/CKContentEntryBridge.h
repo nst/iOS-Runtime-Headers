@@ -6,9 +6,11 @@
 
 @interface CKContentEntryBridge : NSObject {
     NSObject<CKContentEntryBridgeClient> *_entryView;
+    int _outgoingBubbleColor;
 }
 
 @property NSObject<CKContentEntryBridgeClient> * contentEntryView;
+@property int outgoingBubbleColor;
 
 + (id)newContentEntryBridge;
 
@@ -22,8 +24,11 @@
 - (id)messageCompositionIfTextOnly;
 - (id)messageParts;
 - (id)newContentViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)outgoingBubbleColor;
 - (void)setContentEntryView:(id)arg1;
 - (void)setMessageComposition:(id)arg1;
 - (void)setMessageParts:(id)arg1;
+- (void)setOutgoingBubbleColor:(int)arg1;
+- (void)updateComposition;
 
 @end

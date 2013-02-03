@@ -14,6 +14,7 @@
 + (id)canonicalRequestForRequest:(id)arg1;
 + (id)errorForURL:(id)arg1;
 + (void)initialize;
++ (id)mimeTypeForAttachmentURL:(id)arg1;
 + (id)newURLWithContentID:(id)arg1 baseURL:(id)arg2;
 + (id)newUniqueURLWithName:(id)arg1;
 + (void)registerPreview:(id)arg1;

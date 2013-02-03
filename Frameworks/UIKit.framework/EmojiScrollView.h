@@ -9,16 +9,9 @@
 
 @property double delay;
 
-+ (void)_initializeSafeCategory;
-
-- (BOOL)_accessibilityIsScrollAncestor;
-- (void)_accessibilityMovePage:(BOOL)arg1;
-- (BOOL)_accessibilityShouldAnimateScroll;
 - (void)_lookForScrolling;
 - (void)_stopLookingForScrolling;
 - (double)_touchDelayForScrollDetection;
-- (void)accessibilityScrollLeftPage;
-- (void)accessibilityScrollRightPage;
 - (double)delay;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;

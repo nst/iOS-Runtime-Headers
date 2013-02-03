@@ -6,42 +6,43 @@
 
 @interface MessageTextAttachment : NSObject {
     NSMutableDictionary *_cache;
-    MessageFileWrapper *_fileWrapper;
 }
 
-- (BOOL)allowDownload;
+@property(retain) MessageFileWrapper * fileWrapper;
+
+- (id)_contentTypeByStrippingZipIfNeeded:(BOOL)arg1;
+- (BOOL)_isSinglePagePDFThatIsAllowedToBeInline;
 - (unsigned int)approximateSize;
 - (id)cachedValueForKey:(id)arg1;
 - (id)contentType;
-- (id)contentTypeAndMimeType:(id*)arg1;
 - (void)dealloc;
 - (id)description;
+- (void)download;
 - (id)fileWrapper;
 - (id)fileWrapperForcingDownload:(BOOL)arg1;
 - (BOOL)hasBeenDownloaded;
 - (unsigned int)imageScalingFlags;
 - (id)init;
 - (id)initWithWrapper:(id)arg1;
-- (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2 ignoreCachedData:(BOOL)arg3;
 - (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2;
 - (BOOL)isCalendarFile;
 - (BOOL)isContentDownloadable;
 - (BOOL)isContentOpenable;
-- (BOOL)isContentTypeDisplayableByMobileMail:(id)arg1;
 - (BOOL)isDisplayableInline;
 - (BOOL)isDisplayableInsidePlugin;
 - (BOOL)isPlaceholder;
-- (BOOL)isRestrictedMimeType:(id)arg1;
-- (BOOL)isSinglePagePDFThatIsAllowedToBeInline;
-- (id)mf_copyMarkupURL;
 - (struct CGSize { float x1; float x2; })mf_markupSizeForImageScale:(int)arg1;
 - (id)mf_markupStringForComposition:(BOOL)arg1 prependBlankLine:(BOOL)arg2 imageScale:(int)arg3;
+- (id)mf_markupURL;
 - (id)mimePart;
+- (id)mimeType;
 - (void)scaleImageToFit:(int)arg1;
 - (void)setCachedValue:(id)arg1 forKey:(id)arg2;
-- (void)setDisplayableInline:(BOOL)arg1;
 - (void)setFileWrapper:(id)arg1;
 - (void)setImageScalingFlags:(unsigned int)arg1;
+- (void)setMimePart:(id)arg1;
 - (BOOL)shouldDownloadAttachmentOnDisplay;
+- (id)textEncodingGuess;
+- (id)unzippedContentType;
 
 @end

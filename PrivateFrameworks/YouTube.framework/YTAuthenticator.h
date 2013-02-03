@@ -33,6 +33,7 @@
 - (void)invalidateToken;
 - (BOOL)isAccountAuthenticated;
 - (BOOL)isWaitingForAuthentication;
+- (BOOL)loadStoredCredentials;
 - (void)setAccount:(id)arg1 password:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)userCancelledAccountAuthentication;

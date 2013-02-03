@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class FetchICEDataOp, NSString, IMExtendedOperation, IMAVChatParticipant, NSMutableDictionary;
+@class FetchICEDataOp, NSString, IMExtendedOperation, IMAVChatParticipant, NSDictionary, NSMutableDictionary;
 
 @interface AVChatNegotiationOp : IMExtendedOperation {
     unsigned int _useICE : 1;
     IMExtendedOperation *_ardChannelOp;
     NSString *_conferenceID;
+    NSDictionary *_extraContext;
     FetchICEDataOp *_fetchICEDataOp;
     IMAVChatParticipant *_participant;
     NSMutableDictionary *_result;

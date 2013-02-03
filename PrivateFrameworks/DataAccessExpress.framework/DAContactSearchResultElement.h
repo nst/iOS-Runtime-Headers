@@ -19,9 +19,12 @@
     NSString *_firstName;
     NSString *_homePhone;
     NSString *_homePostalAddress;
+    NSString *_iPhone;
+    NSString *_identifierOnServer;
     NSString *_imAddress;
     NSData *_jpegPhoto;
     NSString *_lastName;
+    NSString *_mainPhone;
     NSString *_mobilePhone;
     NSString *_office;
     NSString *_pagerNumber;
@@ -34,6 +37,7 @@
     NSString *_street;
     NSString *_title;
     NSString *_uri;
+    NSString *_workFaxPhone;
     NSString *_workPhone;
     NSString *_zip;
 }
@@ -52,9 +56,12 @@
 @property(copy) NSString * firstName;
 @property(copy) NSString * homePhone;
 @property(copy) NSString * homePostalAddress;
+@property(copy) NSString * iPhone;
+@property(retain) NSString * identifierOnServer;
 @property(copy) NSString * imAddress;
 @property(copy) NSData * jpegPhoto;
 @property(copy) NSString * lastName;
+@property(copy) NSString * mainPhone;
 @property(copy) NSString * mobilePhone;
 @property(copy) NSString * office;
 @property(copy) NSString * pagerNumber;
@@ -67,6 +74,7 @@
 @property(copy) NSString * street;
 @property(copy) NSString * title;
 @property(copy) NSString * uri;
+@property(copy) NSString * workFaxPhone;
 @property(copy) NSString * workPhone;
 @property(copy) NSString * zip;
 
@@ -87,14 +95,17 @@
 - (id)firstName;
 - (id)homePhone;
 - (id)homePostalAddress;
+- (id)iPhone;
+- (id)identifierOnServer;
 - (id)imAddress;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToDAContactSearchResultElement:(id)arg1;
 - (id)jpegPhoto;
 - (id)lastName;
+- (id)mainPhone;
 - (id)mobilePhone;
-- (void*)newAddressBookRecord;
+- (void*)newAddressBookRecordWithSource:(void*)arg1;
 - (id)office;
 - (id)pagerNumber;
 - (id)postalAddress;
@@ -116,9 +127,12 @@
 - (void)setFirstName:(id)arg1;
 - (void)setHomePhone:(id)arg1;
 - (void)setHomePostalAddress:(id)arg1;
+- (void)setIPhone:(id)arg1;
+- (void)setIdentifierOnServer:(id)arg1;
 - (void)setImAddress:(id)arg1;
 - (void)setJpegPhoto:(id)arg1;
 - (void)setLastName:(id)arg1;
+- (void)setMainPhone:(id)arg1;
 - (void)setMobilePhone:(id)arg1;
 - (void)setOffice:(id)arg1;
 - (void)setPagerNumber:(id)arg1;
@@ -131,12 +145,14 @@
 - (void)setStreet:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUri:(id)arg1;
+- (void)setWorkFaxPhone:(id)arg1;
 - (void)setWorkPhone:(id)arg1;
 - (void)setZip:(id)arg1;
 - (id)state;
 - (id)street;
 - (id)title;
 - (id)uri;
+- (id)workFaxPhone;
 - (id)workPhone;
 - (id)zip;
 

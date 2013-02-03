@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSString, NSArray;
+@class NSArray, NSString, NSLocale, AVWeakReference;
 
-@interface AVAssetTrackInspector : NSObject {
+@interface AVAssetTrackInspector : AVFigObjectInspector <AVAsynchronousKeyValueLoading> {
+    AVWeakReference *_weakReference;
 }
 
 @property(readonly) NSArray * availableMetadataFormats;
@@ -15,10 +16,13 @@
 @property(readonly) NSString * extendedLanguageTag;
 @property(readonly) NSArray * formatDescriptions;
 @property(readonly) NSString * languageCode;
+@property(readonly) int layer;
+@property(readonly) NSLocale * locale;
 @property(readonly) NSString * mediaType;
 @property(readonly) struct CGSize { float width; float height; } naturalSize;
 @property(readonly) int naturalTimeScale;
 @property(readonly) float nominalFrameRate;
+@property(getter=isPlayable,readonly) BOOL playable;
 @property(readonly) struct CGAffineTransform { float a; float b; float c; float d; float tx; float ty; } preferredTransform;
 @property(readonly) float preferredVolume;
 @property(copy,readonly) NSArray * segments;
@@ -29,15 +33,26 @@
 
 + (id)assetTrackInspectorWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
 
+- (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
+- (id)_initWithAsset:(id)arg1 trackID:(int)arg2;
+- (id)_initWithAsset:(id)arg1 trackIndex:(long)arg2;
+- (id)_weakReference;
 - (id)availableMetadataFormats;
 - (id)commonMetadata;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (float)estimatedDataRate;
 - (id)extendedLanguageTag;
 - (id)formatDescriptions;
+- (id)init;
 - (BOOL)isEnabled;
 - (BOOL)isExcludedFromAutoselectionInTrackGroup;
+- (BOOL)isPlayable;
 - (BOOL)isSelfContained;
 - (id)languageCode;
+- (int)layer;
+- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
+- (id)locale;
 - (id)mediaType;
 - (id)metadataForFormat:(id)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;
@@ -48,6 +63,7 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })samplePresentationTimeForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)segmentForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)segments;
+- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 - (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
 - (long long)totalSampleDataLength;
 - (int)trackID;

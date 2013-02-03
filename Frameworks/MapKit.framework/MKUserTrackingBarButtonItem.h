@@ -24,7 +24,6 @@
 
 + (Class)_activityIndicatorClass;
 + (int)_activityIndicatorStyle;
-+ (void)_initializeSafeCategory;
 + (id)_trackingEmpty;
 + (id)_trackingFollowImage;
 + (id)_trackingFollowWithHeadingImage;
@@ -47,8 +46,6 @@
 - (id)_toolbar;
 - (void)_updateState;
 - (float)_verticalOffsetForState:(int)arg1;
-- (id)accessibilityHint;
-- (id)accessibilityLabel;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)createViewForNavigationItem:(id)arg1;
 - (id)createViewForToolbar:(id)arg1;

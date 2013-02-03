@@ -10,8 +10,8 @@
 
 @property(readonly) int _mapkit_source;
 @property(readonly) double altitude;
-@property(readonly) struct { int suitability; struct { double latitude; double longitude; } coordinate; double horizontalAccuracy; double altitude; double verticalAccuracy; double speed; double course; double timestamp; int confidence; double lifespan; int type; } clientLocation;
-@property(readonly) struct { double latitude; double longitude; } coordinate;
+@property(readonly) struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; } clientLocation;
+@property(readonly) struct { double x1; double x2; } coordinate;
 @property(readonly) double course;
 @property(readonly) double horizontalAccuracy;
 @property(readonly) NSString * iso6709Notation;
@@ -26,22 +26,21 @@
 - (id)_initWithCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7;
 - (int)_mapkit_source;
 - (double)altitude;
-- (struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; int x9; double x10; int x11; })clientLocation;
+- (struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; })clientLocation;
 - (struct { double x1; double x2; })coordinate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)course;
 - (void)dealloc;
 - (id)description;
-- (double)distanceFromLocation:(const id)arg1;
+- (double)distanceFromLocation:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (double)getDistanceFrom:(const id)arg1;
+- (double)getDistanceFrom:(id)arg1;
 - (double)horizontalAccuracy;
 - (id)init;
-- (id)initWithClientLocation:(struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; int x9; double x10; int x11; })arg1;
+- (id)initWithClientLocation:(struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; })arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 timestamp:(id)arg5;
-- (id)initWithIso6709Notation:(id)arg1;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (BOOL)isEqualToLocationCoordinate:(struct { double x1; double x2; })arg1;
 - (id)iso6709Notation;
@@ -49,6 +48,7 @@
 - (id)propagateLocationToTime:(double)arg1;
 - (void)setHorizontalAccuracy:(double)arg1;
 - (id)shortDescription;
+- (id)snapToResolution:(double)arg1;
 - (double)speed;
 - (id)timestamp;
 - (int)type;

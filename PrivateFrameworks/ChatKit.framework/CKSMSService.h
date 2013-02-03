@@ -2,66 +2,97 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableSet;
+@class NSMutableDictionary;
 
 @interface CKSMSService : CKService {
-    NSMutableSet *_deliveryObjects;
+    int _cachedUnreadCount;
+    NSMutableDictionary *_cachedUnreadCountPerConversation;
+    BOOL _doneResuming;
+    BOOL _inBulkDeleteMode;
+    int _lastMessageRowID;
+    NSMutableDictionary *_messagesToBulkDelete;
+    int _sequenceNumberAtSuspend;
 }
 
++ (id)_sharedSMSServiceLoadUnconditionally;
 + (id)dbPath;
 + (void)migrate;
 + (id)sharedSMSService;
++ (BOOL)willSendMMSByDefaultForAddresses:(id)arg1;
 + (BOOL)willSendMMSByDefaultForConversation:(id)arg1;
 
-- (void)_appDidEnterBackground:(id)arg1;
-- (void)_appWillEnterForeground:(id)arg1;
+- (void)_clearUnreadBadgeCountCache;
+- (void)_clearUnreadCountCache;
 - (void)_databaseFull:(id)arg1;
+- (id)_localizedErrorForReason:(int)arg1;
+- (BOOL)_mediaObjectPassesDurationCheck:(id)arg1;
+- (BOOL)_mediaObjectPassesRestriction:(id)arg1;
+- (id)_newCKSMSMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1;
 - (id)_newMMSMessageWithComposition:(id)arg1 forConversation:(id)arg2;
 - (id)_newMMSMessageWithParts:(id)arg1 forConversation:(id)arg2 subject:(id)arg3;
 - (id)_newSMSMessageWithText:(id)arg1 forConversation:(id)arg2;
-- (void)_receivedDeliveryReceiptForMessage:(struct __CKSMSRecord { }*)arg1;
-- (void)_receivedMessage:(struct __CKSMSRecord { }*)arg1 replace:(BOOL)arg2;
+- (void)_receivedDeliveryReceiptForMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1;
+- (void)_receivedMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1 replace:(BOOL)arg2 postInternalNotification:(BOOL)arg3;
 - (void)_registerForCTNotifications;
-- (void)_sendError:(struct __CKSMSRecord { }*)arg1;
-- (void)_sentMessage:(struct __CKSMSRecord { }*)arg1;
+- (void)_sendError:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1;
+- (void)_sentMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1 replace:(BOOL)arg2 postInternalNotification:(BOOL)arg3;
+- (void)_setCachedUnreadCount:(int)arg1 forConversation:(id)arg2;
+- (int)_unreadCountForConversation:(id)arg1;
 - (id)abPropertyTypes;
+- (void)applicationDidResume;
+- (void)beginBulkDeleteMode;
+- (int)buttonColor;
 - (BOOL)canAcceptMediaObject:(id)arg1 givenMediaObjects:(id)arg2;
 - (BOOL)canAcceptMediaObjectType:(int)arg1 givenMediaObjects:(id)arg2;
+- (BOOL)canSendMessageWithMediaObjectTypes:(int*)arg1 errorCode:(int*)arg2;
 - (BOOL)canSendMessageWithMediaObjectTypes:(int*)arg1;
+- (BOOL)canSendMessageWithParts:(id)arg1 subject:(id)arg2 error:(id*)arg3;
 - (BOOL)canSendToRecipients:(id)arg1 withAttachments:(id)arg2 alertIfUnable:(BOOL)arg3;
-- (int)conversationIDWithRecipients:(id)arg1;
-- (id)conversationSummaries:(id*)arg1 groupIDs:(id*)arg2;
+- (BOOL)containsConversation:(id)arg1;
+- (id)conversationIDWithRecipients:(id)arg1;
+- (id)conversationSummaries:(id)arg1 groupIDs:(id)arg2 groupedRecipients:(id)arg3;
 - (id)copyEntityForAddressString:(id)arg1;
-- (int)createConversationWithRecipients:(id)arg1;
+- (id)createConversationWithRecipients:(id)arg1;
 - (BOOL)dbFull;
 - (void)dealloc;
+- (void)deleteMessage:(id)arg1 fromConversation:(id)arg2;
 - (void)deleteMessagesForConversationIDs:(id)arg1 removeConversations:(BOOL)arg2;
+- (id)displayName;
+- (void)endBulkDeleteMode;
+- (Class)entityClass;
 - (int)failedSendCount;
-- (void)fixupNames;
 - (BOOL)hasActiveConversations;
 - (id)headerTitleForComposeRecipients:(id)arg1 mediaObjects:(id)arg2 subject:(id)arg3;
 - (id)headerTitleForEntities:(id)arg1;
 - (id)init;
+- (BOOL)isAvailable;
 - (BOOL)isSMSDeliverableComposition:(id)arg1 forConversationWithRecipientCount:(unsigned int)arg2 recipientsRequired:(BOOL)arg3;
 - (BOOL)isValidAddress:(id)arg1;
+- (id)lookupRecipientsForAddresses:(id)arg1;
 - (id)lookupRecipientsForConversation:(id)arg1;
 - (void)markAllMessagesInConversationAsRead:(id)arg1;
 - (int)maxAttachmentCount;
 - (int)maxRecipientCount;
 - (double)maxTrimDurationForMediaType:(int)arg1;
-- (int)messageCount;
-- (id)messagesForConversation:(id)arg1 limit:(int)arg2 moreToLoad:(BOOL*)arg3;
-- (id)newDeliverableMessageEncodingInfoWithComposition:(id)arg1;
+- (void)messagesForConversation:(id)arg1;
 - (id)newMessageWithComposition:(id)arg1 forConversation:(id)arg2;
 - (id)newMessageWithMessage:(id)arg1 forConversation:(id)arg2 isForward:(BOOL)arg3;
+- (int)outgoingBubbleColor;
 - (id)placeholderMessageForConversation:(id)arg1 withDate:(id)arg2;
+- (void)prepareForResume;
+- (void)prepareForSuspend;
+- (int)processChangesSinceSuspend;
+- (void)resetEntityCaches;
 - (BOOL)restrictsMediaObjects;
 - (void)sendMessage:(id)arg1;
+- (BOOL)supportsCharacterCountForAddresses:(id)arg1;
+- (BOOL)supportsCharacterCountForConversation:(id)arg1;
 - (BOOL)supportsMediaAttachments;
 - (id)unknownEntity;
 - (int)unreadConversationCount;
 - (int)unreadCount;
 - (int)unreadCountForConversation:(id)arg1;
+- (void)updateRecipients:(id)arg1 forConversation:(id)arg2;
 - (id)userFormattedAlphanumericStringForAddress:(id)arg1;
 
 @end

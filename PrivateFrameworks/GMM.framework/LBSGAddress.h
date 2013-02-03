@@ -10,26 +10,21 @@
 }
 
 @property(retain) NSMutableArray * components;
-@property(readonly) int componentsCount;
 @property(retain) NSMutableArray * formattedAddressLines;
-@property(readonly) int formattedAddressLinesCount;
 
 - (void)addComponent:(id)arg1;
 - (void)addFormattedAddressLine:(id)arg1;
 - (id)componentAtIndex:(unsigned int)arg1;
 - (id)components;
-- (int)componentsCount;
+- (unsigned int)componentsCount;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)formattedAddressLineAtIndex:(unsigned int)arg1;
 - (id)formattedAddressLines;
-- (int)formattedAddressLinesCount;
-- (id)init;
+- (unsigned int)formattedAddressLinesCount;
 - (BOOL)readFrom:(id)arg1;
-- (void)setComponent:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setComponents:(id)arg1;
-- (void)setFormattedAddressLine:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setFormattedAddressLines:(id)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -40,7 +40,7 @@
 - (void)_deletedItemsTimerFired:(id)arg1;
 - (void)_endImport;
 - (void)_endUninterruptibleOperation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)_icSleepPreventionTimerFired:(id)arg1;
 - (id)_localizedCameraName;
 - (id)_localizedDeviceType;
@@ -52,10 +52,10 @@
 - (void)_setupNavigationItem;
 - (id)_textBadgeStringForCameraItem:(id)arg1;
 - (id)_thumbnailPathString;
-- (void)albumView:(id)arg1 imageCount:(unsigned int*)arg2 videoCount:(unsigned int*)arg3 otherCount:(unsigned int*)arg4;
+- (void)albumView:(id)arg1 imageCount:(unsigned int*)arg2 videoCount:(unsigned int*)arg3 otherCount:(unsigned int*)arg4 pendingCount:(unsigned int*)arg5 importOperation:(int*)arg6;
 - (id)albumView:(id)arg1 imageDataForPhotoAtIndex:(unsigned int)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (id)albumView:(id)arg1 textBadgeForPhotoAtIndex:(unsigned int)arg2;
-- (void)albumViewSelectionDidChange:(id)arg1;
+- (void)albumViewSelectionDidChange:(id)arg1 added:(id)arg2 removed:(id)arg3;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)contentScrollView;
 - (void)dealloc;

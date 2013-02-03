@@ -8,11 +8,13 @@
     NSArray *_dataclasses;
     NSString *_otherDataclassHeader;
     PSSpecifier *_specifier;
+    BOOL _wantsToBeLast;
 }
 
 @property(retain) NSArray * dataclasses;
 @property(retain) NSString * otherDataclassHeader;
 @property(retain) PSSpecifier * specifier;
+@property BOOL wantsToBeLast;
 
 - (id)dataclasses;
 - (void)dealloc;
@@ -22,6 +24,8 @@
 - (void)setDataclasses:(id)arg1;
 - (void)setOtherDataclassHeader:(id)arg1;
 - (void)setSpecifier:(id)arg1;
+- (void)setWantsToBeLast:(BOOL)arg1;
 - (id)specifier;
+- (BOOL)wantsToBeLast;
 
 @end

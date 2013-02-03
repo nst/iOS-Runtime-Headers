@@ -12,5 +12,6 @@
 - (unsigned int)addOrEquivalentObject:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 
 @end

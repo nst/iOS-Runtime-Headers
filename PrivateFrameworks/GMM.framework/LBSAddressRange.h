@@ -2,59 +2,68 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, NSString;
+@class NSString;
 
 @interface LBSAddressRange : PBCodable {
-    BOOL _hasParameter_is_synthesized;
-    BOOL _hasSame_parity;
-    NSMutableArray *_numbers;
-    BOOL _parameter_is_synthesized;
-    NSMutableArray *_parameters;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    struct { 
+        float *list; 
+        unsigned int count; 
+        unsigned int size; 
+    BOOL _hasParameterIsSynthesized;
+    BOOL _hasSameParity;
+    } _numbers;
+    BOOL _parameterIsSynthesized;
+    } _parameters;
     NSString *_prefix;
-    BOOL _same_parity;
+    BOOL _sameParity;
     NSString *_suffix;
 }
 
-@property(readonly) BOOL hasParameter_is_synthesized;
+@property BOOL hasParameterIsSynthesized;
 @property(readonly) BOOL hasPrefix;
-@property(readonly) BOOL hasSame_parity;
+@property BOOL hasSameParity;
 @property(readonly) BOOL hasSuffix;
-@property(retain) NSMutableArray * numbers;
-@property(readonly) int numbersCount;
-@property BOOL parameter_is_synthesized;
-@property(retain) NSMutableArray * parameters;
-@property(readonly) int parametersCount;
+@property(readonly) int* numbers;
+@property(readonly) unsigned int numbersCount;
+@property BOOL parameterIsSynthesized;
+@property(readonly) float* parameters;
+@property(readonly) unsigned int parametersCount;
 @property(retain) NSString * prefix;
-@property BOOL same_parity;
+@property BOOL sameParity;
 @property(retain) NSString * suffix;
 
 - (void)addNumber:(int)arg1;
 - (void)addParameter:(float)arg1;
+- (void)clearNumbers;
+- (void)clearParameters;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasParameter_is_synthesized;
+- (BOOL)hasParameterIsSynthesized;
 - (BOOL)hasPrefix;
-- (BOOL)hasSame_parity;
+- (BOOL)hasSameParity;
 - (BOOL)hasSuffix;
-- (id)init;
 - (int)numberAtIndex:(unsigned int)arg1;
-- (id)numbers;
-- (int)numbersCount;
+- (int*)numbers;
+- (unsigned int)numbersCount;
 - (float)parameterAtIndex:(unsigned int)arg1;
-- (BOOL)parameter_is_synthesized;
-- (id)parameters;
-- (int)parametersCount;
+- (BOOL)parameterIsSynthesized;
+- (float*)parameters;
+- (unsigned int)parametersCount;
 - (id)prefix;
 - (BOOL)readFrom:(id)arg1;
-- (BOOL)same_parity;
-- (void)setNumber:(int)arg1 atIndex:(unsigned int)arg2;
-- (void)setNumbers:(id)arg1;
-- (void)setParameter:(float)arg1 atIndex:(unsigned int)arg2;
-- (void)setParameter_is_synthesized:(BOOL)arg1;
-- (void)setParameters:(id)arg1;
+- (BOOL)sameParity;
+- (void)setHasParameterIsSynthesized:(BOOL)arg1;
+- (void)setHasSameParity:(BOOL)arg1;
+- (void)setNumbers:(int*)arg1 count:(unsigned int)arg2;
+- (void)setParameterIsSynthesized:(BOOL)arg1;
+- (void)setParameters:(float*)arg1 count:(unsigned int)arg2;
 - (void)setPrefix:(id)arg1;
-- (void)setSame_parity:(BOOL)arg1;
+- (void)setSameParity:(BOOL)arg1;
 - (void)setSuffix:(id)arg1;
 - (id)suffix;
 - (void)writeTo:(id)arg1;

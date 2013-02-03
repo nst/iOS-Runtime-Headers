@@ -2,24 +2,25 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class UIImage, NSAttributedString, IMPeople, NSData, NSDate, NSArray, NSDictionary, IMRemoteProxy<IMServiceSessionProtocol>, IMServiceImpl, NSString, NSMutableDictionary, IMHandle;
+@class NSAttributedString, UIImage, IMPeople, NSData, NSDate, NSArray, NSDictionary, IMRemoteProxy<IMServiceSessionProtocol>, IMServiceImpl, NSString, NSMutableDictionary, IMHandle;
 
 @interface IMAccount : NSObject <IMSystemMonitorListener> {
     UIImage *_accountImage;
     NSData *_accountImageData;
+    NSDictionary *_accountPersistentProperties;
+    NSMutableDictionary *_accountPersistentPropertiesChanges;
     NSDictionary *_accountPreferences;
     NSMutableDictionary *_accountPreferencesChanges;
-    BOOL _allowsVCRelay;
     BOOL _asleep;
     BOOL _blockIdleStatus;
-    BOOL _blockOtherAddresses;
     IMPeople *_buddyList;
     NSArray *_cachedAllowList;
     NSArray *_cachedBlockList;
-    int _cachedBlockingMode;
+    unsigned int _cachedBlockingMode;
     unsigned long long _capabilities;
     int _coalesceCount;
     NSMutableDictionary *_coalescedChanges;
+    NSString *_countryCode;
     NSMutableDictionary *_currentAccountStatus;
     NSDictionary *_data;
     NSMutableDictionary *_dataChanges;
@@ -55,17 +56,18 @@
     UIImage *_smallImage;
     NSMutableDictionary *_sortOrders;
     NSDictionary *_subtypeInfo;
-    BOOL _syncedBuddies;
     BOOL _syncedWithRemoteBuddyList;
     NSArray *_targetGroupState;
     NSString *_uniqueID;
     BOOL _useMeCardName;
 }
 
+@property(readonly) NSDictionary * _persistentProperties;
 @property(retain) NSString * accountDescription;
 @property(readonly) NSData * accountImageData;
 @property(readonly) NSDictionary * accountPreferences;
 @property(readonly) NSDictionary * accountSubtypeInfo;
+@property(readonly) int accountType;
 @property(readonly) NSArray * addressBookProperties;
 @property(readonly) NSString * addressBookProperty;
 @property(readonly) NSArray * aliases;
@@ -81,8 +83,8 @@
 @property unsigned int blockingMode;
 @property(readonly) IMPeople * buddyList;
 @property(readonly) BOOL canActivate;
-@property(readonly) BOOL canBeSecure;
 @property(readonly) unsigned long long capabilities;
+@property(readonly) NSString * countryCode;
 @property(readonly) NSDictionary * dictionary;
 @property(copy) NSString * displayName;
 @property(readonly) NSArray * emailDomains;
@@ -96,6 +98,7 @@
 @property(readonly) int invalidSettings;
 @property(getter=isInvisible) BOOL invisible;
 @property(readonly) BOOL isActive;
+@property(readonly) BOOL isAsleep;
 @property(readonly) BOOL isAwaitingTargetGroupState;
 @property(readonly) BOOL isConnected;
 @property(readonly) BOOL isConnecting;
@@ -119,18 +122,19 @@
 @property(readonly) NSDictionary * profileInfo;
 @property(readonly) int registrationFailureReason;
 @property(readonly) int registrationStatus;
-@property BOOL secureImEnabled;
 @property(readonly) NSString * server;
 @property(readonly) IMServiceImpl * service;
 @property(readonly) NSString * serviceName;
 @property(readonly) NSString * shortName;
 @property(readonly) BOOL supportsAuthorization;
 @property(readonly) BOOL supportsRegistration;
+@property(readonly) NSString * temporaryPassword;
 @property(readonly) NSString * uniqueID;
 @property(readonly) BOOL useSSL;
 @property(readonly) BOOL validLogin;
 @property(readonly) BOOL validPort;
 @property(readonly) BOOL validServer;
+@property(readonly) NSArray * vettedAliases;
 
 + (id)_groupSummaryFromGroupList:(id)arg1;
 + (id)allBuddyListIMHandles;
@@ -138,21 +142,34 @@
 + (id)nameOfLoginStatus:(unsigned int)arg1;
 + (id)passwordForAccount:(id)arg1 forServiceName:(id)arg2;
 + (void)removePasswordForAccount:(id)arg1 forServiceName:(id)arg2;
++ (void)removeTemporaryPasswordForAccount:(id)arg1 forServiceName:(id)arg2;
 + (void)setPassword:(id)arg1 forAccount:(id)arg2 forServiceName:(id)arg3;
++ (void)setTemporaryPassword:(id)arg1 forAccount:(id)arg2 forServiceName:(id)arg3;
++ (id)temporaryPasswordForAccount:(id)arg1 forServiceName:(id)arg2;
 
 - (id)_aliasInfoForAlias:(id)arg1;
 - (id)_aliases;
 - (void)_applyChangesToTemporaryCache:(id)arg1;
+- (void)_clearImageCache;
 - (void)_ensureGroupsExists:(id)arg1;
+- (void)_handleDeliveredCommand:(id)arg1 withProperties:(id)arg2 fromBuddyInfo:(id)arg3;
+- (void)_handleIncomingCommand:(id)arg1 withProperties:(id)arg2 fromBuddyInfo:(id)arg3;
+- (void)_handleIncomingData:(id)arg1 fromBuddyInfo:(id)arg2;
+- (void)_loadFromDictionary:(id)arg1 force:(BOOL)arg2;
 - (void)_loginWithAutoLogin:(BOOL)arg1;
+- (void)_markHasSyncedWithRemoteBuddies;
 - (void)_notJustLoggedIn;
+- (id)_persistentProperties;
+- (id)_persistentPropertyForKey:(id)arg1;
 - (void)_refreshLoginIMHandle;
 - (id)_remoteSession;
+- (void)_removePersistentPropertyForKey:(id)arg1;
 - (void)_resumeBuddyUpdatesNow;
 - (id)_serverWithSSL:(BOOL)arg1;
 - (void)_serviceDidConnect:(id)arg1;
 - (void)_serviceDidDisconnect:(id)arg1;
 - (void)_serviceDidReconnect:(id)arg1;
+- (void)_setPersistentPropertyObject:(id)arg1 forKey:(id)arg2;
 - (id)_statuses;
 - (void)_syncWithRemoteBuddies;
 - (BOOL)_updateDisplayName:(id)arg1;
@@ -167,6 +184,7 @@
 - (id)accountImageData;
 - (id)accountPreferences;
 - (id)accountSubtypeInfo;
+- (int)accountType;
 - (void)accountWillBeRemoved;
 - (BOOL)addAlias:(id)arg1 type:(int)arg2;
 - (BOOL)addAlias:(id)arg1;
@@ -181,6 +199,7 @@
 - (id)allowList;
 - (BOOL)allowsVCRelay;
 - (id)arrayOfAllIMHandles;
+- (BOOL)authenticateAccount;
 - (id)authorizationID;
 - (id)authorizationToken;
 - (BOOL)autoLogin;
@@ -197,7 +216,7 @@
 - (void)buddyPictureChanged:(id)arg1 imageData:(id)arg2 imageHash:(id)arg3;
 - (void)buddyPropertiesChanged:(id)arg1;
 - (BOOL)canActivate;
-- (BOOL)canBeSecure;
+- (id)canonicalFormOfID:(id)arg1 countryCode:(id)arg2;
 - (id)canonicalFormOfID:(id)arg1;
 - (unsigned long long)capabilities;
 - (void)changeBuddyList:(id)arg1 add:(BOOL)arg2 groups:(id)arg3 atLocation:(int)arg4;
@@ -210,6 +229,7 @@
 - (int)compareNames:(id)arg1;
 - (int)compareServices:(id)arg1;
 - (int)compareStatus:(id)arg1;
+- (id)countryCode;
 - (void)dealloc;
 - (id)defaultChatSuffix;
 - (unsigned long long)defaultHandleCapabilities;
@@ -217,15 +237,14 @@
 - (id)dictionary;
 - (id)dictionaryDataForKey:(id)arg1;
 - (id)dictionaryDataForPreferenceKey:(id)arg1;
-- (void)disableCertificatesForIMHandle:(id)arg1;
 - (void)disconnectAllIMHandles;
 - (id)displayName;
 - (BOOL)emailAddressIsID:(id)arg1;
 - (id)emailDomains;
-- (void)enableSecureIM:(BOOL)arg1;
 - (void)endChanges;
 - (BOOL)equalID:(id)arg1 andID:(id)arg2;
 - (id)existingIMHandleWithID:(id)arg1 alreadyCanonical:(BOOL)arg2;
+- (id)existingIMHandleWithID:(id)arg1 countryCode:(id)arg2;
 - (id)existingIMHandleWithID:(id)arg1;
 - (id)existingIMHandleWithInfo:(id)arg1 alreadyCanonical:(BOOL)arg2;
 - (id)existingIMHandleWithInfo:(id)arg1;
@@ -248,6 +267,7 @@
 - (void)imHandle:(id)arg1 buddyStatusChanged:(BOOL)arg2;
 - (Class)imHandleClass;
 - (id)imHandleWithID:(id)arg1 alreadyCanonical:(BOOL)arg2;
+- (id)imHandleWithID:(id)arg1 countryCode:(id)arg2;
 - (id)imHandleWithID:(id)arg1;
 - (id)imHandleWithInfo:(id)arg1 alreadyCanonical:(BOOL)arg2;
 - (id)imHandleWithInfo:(id)arg1;
@@ -259,6 +279,7 @@
 - (id)internalName;
 - (int)invalidSettings;
 - (BOOL)isActive;
+- (BOOL)isAsleep;
 - (BOOL)isAwaitingTargetGroupState;
 - (BOOL)isConnected;
 - (BOOL)isConnecting;
@@ -268,6 +289,7 @@
 - (void)loadFromDictionary:(id)arg1;
 - (id)login;
 - (void)loginAccount;
+- (id)loginDisplayString;
 - (id)loginIMHandle;
 - (unsigned int)loginStatus;
 - (void)loginStatusChanged:(unsigned int)arg1 message:(id)arg2 reason:(unsigned int)arg3 properties:(id)arg4;
@@ -288,6 +310,7 @@
 - (id)objectForKey:(id)arg1;
 - (id)objectForPreferenceKey:(id)arg1;
 - (id)password;
+- (id)personForIMHandle:(id)arg1 identifier:(int*)arg2;
 - (id)personForIMHandle:(id)arg1;
 - (id)personSibsForIMHandle:(id)arg1;
 - (int)port;
@@ -312,6 +335,7 @@
 - (void)removePassword;
 - (BOOL)removePeople:(id)arg1 fromGroups:(id)arg2;
 - (BOOL)removeProfileValueForKey:(id)arg1;
+- (void)removeTemporaryPassword;
 - (void)renameGroup:(id)arg1 to:(id)arg2;
 - (void)reorderGroup:(id)arg1 order:(id)arg2;
 - (void)reorderGroups:(id)arg1;
@@ -321,7 +345,6 @@
 - (void)requestProperty:(id)arg1 ofIMHandle:(id)arg2;
 - (void)resetToDefaults;
 - (void)resumeBuddyUpdates;
-- (BOOL)secureImEnabled;
 - (id)server;
 - (id)service;
 - (id)serviceName;
@@ -359,18 +382,16 @@
 - (void)setPassword:(id)arg1;
 - (BOOL)setProfileString:(id)arg1 forKey:(id)arg2;
 - (BOOL)setProfileValue:(id)arg1 forKey:(id)arg2;
-- (void)setSecureImEnabled:(BOOL)arg1;
-- (void)setSigningCertificate:(struct __SecCertificate { }*)arg1 encryptionCertificate:(struct __SecCertificate { }*)arg2;
 - (void)setString:(id)arg1 forKey:(id)arg2;
 - (void)setString:(id)arg1 forPreferenceKey:(id)arg2;
 - (void)setTargetGroupsState:(id)arg1;
+- (void)setTemporaryPassword:(id)arg1;
 - (void)setUniqueID:(id)arg1;
 - (void)setValue:(id)arg1 ofExtraProperty:(id)arg2 ofIMHandle:(id)arg3;
 - (void)setWaitForTargetState;
 - (id)shortName;
 - (unsigned int)sortOrderForIMHandle:(id)arg1 inGroup:(id)arg2;
 - (void)startWatchingIMHandle:(id)arg1;
-- (unsigned int)status;
 - (void)stopWatchingIMHandle:(id)arg1;
 - (id)stringForKey:(id)arg1;
 - (id)stringForPreferenceKey:(id)arg1;
@@ -380,10 +401,12 @@
 - (void)systemDidWake;
 - (void)systemWillSleep;
 - (void)targetGroupStateTimeout;
+- (id)temporaryPassword;
 - (int)typeForAlias:(id)arg1;
 - (id)uniqueID;
 - (BOOL)unregisterAccount;
 - (void)unregisterIMHandle:(id)arg1;
+- (BOOL)updateAuthorizationCredentials:(id)arg1 token:(id)arg2;
 - (void)updateCapabilities:(unsigned long long)arg1;
 - (void)updateWithTargetGroups;
 - (BOOL)useSSL;
@@ -398,6 +421,7 @@
 - (int)validationStatusForAlias:(id)arg1 type:(int)arg2;
 - (int)validationStatusForAlias:(id)arg1;
 - (struct _FZChatRoomValidity { int x1; unsigned short x2; })validityOfChatRoomName:(id)arg1;
+- (id)vettedAliases;
 - (void)watchBuddiesIfNecessary;
 - (void)writeSettings;
 

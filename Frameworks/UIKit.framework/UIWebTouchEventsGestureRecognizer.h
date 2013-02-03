@@ -26,7 +26,7 @@
 
 @property(getter=isDefaultPrevented) BOOL defaultPrevented;
 @property(readonly) BOOL inJavaScriptGesture;
-@property(readonly) struct CGPoint { float x; float y; } locationInWindow;
+@property(readonly) struct CGPoint { float x1; float x2; } locationInWindow;
 @property(readonly) float rotation;
 @property(readonly) float scale;
 @property(retain) NSMutableArray * touchIdentifiers;
@@ -34,6 +34,7 @@
 @property(retain) NSMutableArray * touchPhases;
 @property(readonly) int type;
 
+- (unsigned int)_getNextTouchIdentifier;
 - (BOOL)_hitTestTouches:(id)arg1;
 - (id)_identifiersDescription;
 - (id)_locationsDescription;

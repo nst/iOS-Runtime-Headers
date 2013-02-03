@@ -4,7 +4,7 @@
 
 @class UIRoundedCornerView, UIView;
 
-@interface UILayoutContainerView : UIView <NSCoding> {
+@interface UILayoutContainerView : UIView <NSCoding, _UIViewFastModeSupport> {
     float _cornerRadius;
     id _delegate;
     BOOL _fastMode;
@@ -20,9 +20,6 @@
 @property BOOL usesInnerShadow;
 @property BOOL usesRoundedCorners;
 
-+ (void)_initializeSafeCategory;
-
-- (BOOL)_accessibilityServesAsContainingParentForOrdering;
 - (void)_beginFastMode;
 - (void)_endFastMode;
 - (void)_installShadowViews;

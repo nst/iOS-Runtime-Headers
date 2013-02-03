@@ -11,16 +11,16 @@
 @property <MFMailComposeViewControllerDelegate> * mailComposeDelegate;
 
 + (BOOL)canSendMail;
-+ (BOOL)hasAutosavedMessage;
-+ (void)removeAutosavedMessage;
++ (BOOL)hasAutosavedMessageWithIdentifier:(id)arg1;
++ (void)removeAutosavedMessageWithIdentifier:(id)arg1;
 
 - (id)_mailComposeController;
 - (id)_mailComposeView;
 - (id)_rootViewController;
 - (void)_setCompositionContext:(id)arg1;
+- (id)_validEmailAddressesFromArray:(id)arg1;
 - (void)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
-- (void)autosaveImmediately;
-- (void)autosaveImmediatelyWithBundleIdentifier:(id)arg1;
+- (void)autosaveWithHandler:(id)arg1;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForAttachmentWithIdentifier:(id)arg1;
 - (id)initWithComposition:(id)arg1 contentSize:(struct CGSize { float x1; float x2; })arg2 mailComposeControllerOptions:(unsigned int)arg3;
@@ -29,9 +29,9 @@
 - (id)initWithURL:(id)arg1;
 - (BOOL)isDirty;
 - (id)mailComposeDelegate;
-- (void)recoverAutosavedMessage;
+- (id)performAutosaveImmediately;
+- (void)recoverAutosavedMessageWithIdentifier:(id)arg1;
 - (int)resolution;
-- (void)resume;
 - (void)scrollToTopAnimated:(BOOL)arg1;
 - (void)setAutorotationDelegate:(id)arg1;
 - (void)setBccRecipients:(id)arg1;
@@ -44,7 +44,8 @@
 - (void)setSubject:(id)arg1;
 - (void)setToRecipients:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)suspend;
 - (id)view;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

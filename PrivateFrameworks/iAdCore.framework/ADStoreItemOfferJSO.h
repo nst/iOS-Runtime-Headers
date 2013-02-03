@@ -11,10 +11,10 @@
     NSString *_price;
 }
 
-@property(copy,readonly) NSString * action;
-@property(copy,readonly) NSString * identifier;
+@property(readonly) NSString * action;
+@property(readonly) NSString * identifier;
 @property(readonly) BOOL preorder;
-@property(copy,readonly) NSString * price;
+@property(readonly) NSString * price;
 
 + (id)scriptingKeys;
 

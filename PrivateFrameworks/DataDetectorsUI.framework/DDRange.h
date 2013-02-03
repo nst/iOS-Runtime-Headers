@@ -5,14 +5,14 @@
 @class DOMNode;
 
 @interface DDRange : NSObject {
-    int _endOffset;
+    long _endOffset;
     DOMNode *_node;
-    int _startOffset;
+    long _startOffset;
 }
 
-@property int endOffset;
+@property long endOffset;
 @property(retain) DOMNode * node;
-@property int startOffset;
+@property long startOffset;
 
 + (id)rangeWithDOMRange:(id)arg1;
 

@@ -11,7 +11,6 @@
     BOOL _respondsToAuxiliarySubtitleUTF8String;
     BOOL _respondsToAuxiliaryTitleUTF8String;
     BOOL _respondsToBadgeValue;
-    BOOL _respondsToDate;
     BOOL _respondsToIdentifier;
     BOOL _respondsToResultDisplayIdentifierUTF8String;
     BOOL _respondsToResultDomain;

@@ -3,7 +3,7 @@
  */
 
 @interface GMMRoad : NSObject {
-    unsigned int numPoints;
+    unsigned long numPoints;
     struct Point { int x1; int x2; } *points;
 }
 

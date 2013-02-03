@@ -39,6 +39,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isSubmap;
 - (unsigned int)protection;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })range;
 - (id)type;
 
 @end

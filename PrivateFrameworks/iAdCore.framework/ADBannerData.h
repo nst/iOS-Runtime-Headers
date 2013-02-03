@@ -2,87 +2,113 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@class NSOperationQueue, ADAdBatchRecord, <ADBannerDataDelegate>, NSString, NSMutableArray, NSURL;
+@class NSURL, <ADBannerDataDelegate>, ADResourceDownloadJob, NSMutableArray, NSString, ADAdData, ADAdBatchRecord, WebArchive;
 
-@interface ADBannerData : ADBannerRepr {
+@interface ADBannerData : NSObject {
+    unsigned int _activeDownloads;
+    unsigned int _actualNumberOfImpressions;
     NSString *_authenticationUserName;
+    ADAdData *_bannerDescription;
+    ADResourceDownloadJob *_bannerDownload;
+    WebArchive *_bannerWebArchive;
     ADAdBatchRecord *_batch;
+    NSString *_batchId;
     <ADBannerDataDelegate> *_delegate;
     BOOL _failedLoading;
-    NSOperationQueue *_fetchQueue;
+    BOOL _hasStartedLoading;
     NSMutableArray *_internalAssetMetrics;
     double _lastAccessed;
     BOOL _local;
     unsigned int _provisionalNumberOfImpressions;
-    NSOperationQueue *_storyboardQueue;
+    ADResourceDownloadJob *_storyboardDownload;
+    WebArchive *_storyboardWebArchive;
+    BOOL _supplyMetrics;
     BOOL _supportsAuthentication;
 }
 
+@property unsigned int activeDownloads;
+@property unsigned int actualNumberOfImpressions;
 @property(retain) NSString * authenticationUserName;
+@property(retain) ADAdData * bannerDescription;
+@property(retain) ADResourceDownloadJob * bannerDownload;
+@property(retain) WebArchive * bannerWebArchive;
 @property(retain) ADAdBatchRecord * batch;
+@property(retain) NSString * batchId;
 @property(readonly) NSURL * contentURL;
 @property <ADBannerDataDelegate> * delegate;
 @property BOOL failedLoading;
-@property(retain) NSOperationQueue * fetchQueue;
+@property BOOL hasStartedLoading;
 @property(retain) NSMutableArray * internalAssetMetrics;
 @property double lastAccessed;
 @property(getter=isLocal) BOOL local;
 @property unsigned int provisionalNumberOfImpressions;
-@property(retain) NSOperationQueue * storyboardQueue;
+@property(retain) ADResourceDownloadJob * storyboardDownload;
+@property(retain) WebArchive * storyboardWebArchive;
+@property BOOL supplyMetrics;
 @property BOOL supportsAuthentication;
 
-+ (id)bannerDataForLocalAdAtPath:(id)arg1 usingCreativeNamed:(id)arg2;
++ (id)bannerDataForLocalAdAtPath:(id)arg1 usingCreativeNamed:(id)arg2 error:(id*)arg3;
++ (id)sharedDownloader;
 
 - (void)_downloadStoryboardData;
 - (void)_failWithError:(id)arg1;
 - (void)_queueFinished;
-- (void)_stopLoadingStoryboard;
+- (unsigned int)activeDownloads;
 - (unsigned int)actualImpressionsRemaining;
+- (unsigned int)actualNumberOfImpressions;
 - (id)assetMetrics;
 - (id)authenticationUserName;
 - (id)backgroundColor;
+- (id)bannerDescription;
+- (id)bannerDownload;
+- (id)bannerWebArchive;
 - (id)batch;
+- (id)batchId;
+- (void)cancelLoading;
 - (void)checkoutProvisionalImpression;
 - (int)compareForDistribution:(id)arg1;
 - (id)contentURL;
 - (unsigned int)currentImpressionSequence;
-- (id)dataForAdImage:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (BOOL)failedLoading;
-- (id)fetchQueue;
-- (id)fullImageForAdImage:(id)arg1;
-- (id)imageForSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)hasStartedLoading;
+- (id)initWithAdData:(id)arg1 error:(id*)arg2;
 - (id)internalAssetMetrics;
 - (BOOL)isExpired;
-- (BOOL)isLoading;
 - (BOOL)isLocal;
 - (double)lastAccessed;
 - (int)nextMessageSequence;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (unsigned int)provisionalImpressionsRemaining;
 - (unsigned int)provisionalNumberOfImpressions;
-- (BOOL)readFrom:(id)arg1;
+- (id)requestWithURL:(id)arg1 andMethod:(id)arg2;
 - (void)returnProvisionalImpression;
-- (id)revealImageForSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setActiveDownloads:(unsigned int)arg1;
+- (void)setActualNumberOfImpressions:(unsigned int)arg1;
 - (void)setAuthenticationUserName:(id)arg1;
+- (void)setBannerDescription:(id)arg1;
+- (void)setBannerDownload:(id)arg1;
+- (void)setBannerWebArchive:(id)arg1;
 - (void)setBatch:(id)arg1;
+- (void)setBatchId:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFailedLoading:(BOOL)arg1;
-- (void)setFetchQueue:(id)arg1;
+- (void)setHasStartedLoading:(BOOL)arg1;
 - (void)setInternalAssetMetrics:(id)arg1;
 - (void)setLastAccessed:(double)arg1;
 - (void)setLocal:(BOOL)arg1;
 - (void)setProvisionalNumberOfImpressions:(unsigned int)arg1;
-- (void)setStoryboardQueue:(id)arg1;
+- (void)setStoryboardDownload:(id)arg1;
+- (void)setStoryboardWebArchive:(id)arg1;
+- (void)setSupplyMetrics:(BOOL)arg1;
 - (void)setSupportsAuthentication:(BOOL)arg1;
-- (BOOL)startClientLoading;
 - (void)startLoading;
-- (void)stopLoading;
-- (id)storyboardQueue;
+- (id)storyboardDownload;
+- (id)storyboardWebArchive;
+- (BOOL)supplyMetrics;
 - (BOOL)supportsAuthentication;
 - (double)timeRemaining;
-- (BOOL)trackImpressionWithSequence:(unsigned int)arg1;
+- (void)trackImpressionWithSequence:(unsigned int)arg1;
 
 @end

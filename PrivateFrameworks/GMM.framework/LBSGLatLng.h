@@ -13,7 +13,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)init;
 - (float)lat;
 - (int)latE7;
 - (int)lngE7;

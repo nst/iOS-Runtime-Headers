@@ -10,16 +10,6 @@
     UIColor *_textColor;
 }
 
-+ (void)_initializeSafeCategory;
-
-- (BOOL)_accessibilityAlwaysReturnsChild;
-- (id)_accessibilityChildren;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
-- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)_accessibilityTextViewTextOperationResponder;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canResignFirstResponder;

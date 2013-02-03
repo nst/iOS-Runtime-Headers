@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIColor, NSObject, NSMutableArray;
+@class NSArray, UIColor, UIKeyboardCandidateScrollViewController, <UIKeyboardCandidateListDelegate>, NSMutableArray;
 
 @interface UIKBCandidateView : UIKBKeyView <UIKeyboardCandidateList> {
     struct CGRect { 
@@ -21,18 +21,18 @@
     int m_candidatesPerPage;
     int m_columns;
     int m_current;
-    NSObject *m_delegate;
+    <UIKeyboardCandidateListDelegate> *m_delegate;
     int m_firstComposition;
     int m_firstShown;
     struct CGColor { } *m_highlightColor;
     BOOL m_respondsToAccept;
     BOOL m_respondsToSelect;
+    UIKeyboardCandidateScrollViewController *m_scrollViewController;
     } m_symbolRect;
     UIColor *m_textColor;
 }
 
-+ (void)_initializeSafeCategory;
-
+- (id).cxx_construct;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
 - (id)candidateAtIndex:(unsigned int)arg1;
 - (id)candidateList;
@@ -55,6 +55,6 @@
 - (void)showPageAtIndex:(unsigned int)arg1;
 - (void)showPreviousCandidate;
 - (void)showPreviousPage;
-- (void)updateKeyboard:(id)arg1 key:(id)arg2;
+- (void)updateForKeyboard:(id)arg1 key:(id)arg2;
 
 @end

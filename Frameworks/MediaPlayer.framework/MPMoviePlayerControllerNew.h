@@ -2,9 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSError, NSMutableArray, MPMovieView, MPMoviePlayerController, MPVideoViewController, NSMutableDictionary, NSArray;
+@class NSMutableSet, NSError, NSMutableDictionary, MPMovieErrorLog, MPMovieAccessLog, NSMutableArray, MPMovieView, MPMoviePlayerController, MPVideoViewController, MPAVController, NSArray;
 
-@interface MPMoviePlayerControllerNew : NSObject <MPMediaPlayback> {
+@interface MPMoviePlayerControllerNew : NSObject <MPMovieViewDelegate, MPMediaPlayback> {
+    NSMutableSet *_asyncImageGenerators;
+    MPMovieAccessLog *_cachedAccessLog;
+    MPMovieErrorLog *_cachedErrorLog;
     BOOL _canPostDidFinishNotificationOnItemChange;
     BOOL _canShowControlsOverlayBeforeResignedActive;
     int _controlStyle;
@@ -25,6 +28,7 @@
     NSArray *_movies;
     BOOL _playWhenSourceTypeIsDetermined;
     NSError *_playbackError;
+    MPAVController *_player;
     BOOL _prepareWhenSourceTypeIsDetermined;
     BOOL _preparedQueue;
     NSMutableArray *_queuedThumbnailRequests;
@@ -44,13 +48,15 @@
 @property double currentPlaybackTime;
 @property(readonly) BOOL isPreparedToPlay;
 
+- (BOOL)_areControlsHidden;
 - (void)_bufferingStateDidChangeNotification:(id)arg1;
+- (void)_cacheAccessAndErrorLogs;
 - (BOOL)_canContinuePlayingWhenLocked;
 - (void)_clearPlaybackStateAfterTimeJumpIfNecessary;
 - (void)_didBecomeActiveNotification:(id)arg1;
 - (void)_ensureActive;
+- (void)_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
 - (void)_itemDidChangeNotification:(id)arg1;
-- (void)_itemDidGenerateCGImage:(id)arg1;
 - (void)_itemPlaybackDidEndNotification:(id)arg1;
 - (void)_itemPlaybackErrorNotification:(id)arg1;
 - (void)_itemReadyToPlayNotification:(id)arg1;
@@ -59,8 +65,11 @@
 - (void)_moviePlayerDidBecomeActiveNotification:(id)arg1;
 - (void)_moviePlayerWillBecomeActiveNotification:(id)arg1;
 - (void)_movieSourceTypeAvailableNotification:(id)arg1;
+- (id)_movieSubtitle;
+- (id)_movieTitle;
 - (void)_movieTypeAvailableNotification:(id)arg1;
 - (id)_movies;
+- (id)_navigationBar;
 - (id)_nowPlayingMovie;
 - (void)_pausePlaybackForSuspension;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
@@ -70,11 +79,18 @@
 - (void)_prepareToPlayWithStartIndex:(unsigned int)arg1;
 - (void)_resignActive;
 - (void)_restartPlaybackFromBeginning;
+- (void)_setControlsHidden:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_setControlsHidden:(BOOL)arg1;
+- (void)_setMovieMediaTypesOverride:(int)arg1;
 - (void)_setMoviePlayer:(id)arg1;
+- (void)_setMovieSubtitle:(id)arg1;
+- (void)_setMovieTitle:(id)arg1;
 - (void)_setMovies:(id)arg1;
 - (void)_setNowPlayingMovie:(id)arg1;
+- (void)_setShouldEnforceHDCP:(BOOL)arg1;
 - (void)_setUseApplicationAudioSession:(BOOL)arg1;
 - (BOOL)_shouldContinuePlaybackInBackground;
+- (BOOL)_shouldEnforceHDCP;
 - (void)_simpleRemoteNotification:(id)arg1;
 - (void)_timeDidJumpNotification:(id)arg1;
 - (void)_timedMetadataAvailableNotification:(id)arg1;
@@ -103,6 +119,7 @@
 - (id)errorLog;
 - (id)init;
 - (double)initialPlaybackTime;
+- (BOOL)isAirPlayVideoActive;
 - (BOOL)isFullscreen;
 - (BOOL)isPreparedToPlay;
 - (int)loadState;

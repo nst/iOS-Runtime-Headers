@@ -8,21 +8,18 @@
     int _timeZoneOffsetMin;
 }
 
-@property(readonly) BOOL hasTimeZoneOffsetMin;
+@property BOOL hasTimeZoneOffsetMin;
 @property long long secsSinceEpoch;
 @property int timeZoneOffsetMin;
 
-+ (id)date;
-
-- (id)calendarDate;
 - (void)dealloc;
 - (id)description;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasTimeZoneOffsetMin;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (long long)secsSinceEpoch;
+- (void)setHasTimeZoneOffsetMin:(BOOL)arg1;
 - (void)setSecsSinceEpoch:(long long)arg1;
 - (void)setTimeZoneOffsetMin:(int)arg1;
 - (int)timeZoneOffsetMin;

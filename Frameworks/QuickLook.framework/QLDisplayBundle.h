@@ -2,49 +2,98 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSURLRequest, QLPreviewConverter, <QLPreviewItem>;
+@class NSURLRequest, QLPreviewController, UIImageView, QLPreviewConverter, UIView, UIImage, <QLPreviewItem>, QLProgressLayer;
 
-@interface QLDisplayBundle : UIViewController <QLDisplayable> {
+@interface QLDisplayBundle : UIViewController {
     id _delegate;
-    BOOL _loading;
+    UIView *_displayView;
+    UIView *_displayViewContainer;
+    int _index;
+    BOOL _loaded;
+    BOOL _loadingProgressVisible;
+    QLPreviewController *_owner;
+    BOOL _preloaded;
+    BOOL _preloading;
     QLPreviewConverter *_previewConverter;
     <QLPreviewItem> *_previewItem;
     NSURLRequest *_previewRequest;
+    QLProgressLayer *_progressLayer;
+    UIImage *_swipeImage;
+    UIImageView *_swipeImageView;
 }
 
 @property id delegate;
-@property BOOL loading;
-@property QLPreviewConverter * previewConverter;
+@property(retain) UIView * displayView;
+@property int index;
+@property BOOL loaded;
+@property QLPreviewController * owner;
+@property BOOL preloaded;
+@property BOOL preloading;
+@property(retain) QLPreviewConverter * previewConverter;
 @property(retain) <QLPreviewItem> * previewItem;
 @property(retain) NSURLRequest * previewRequest;
+@property(retain) UIImage * swipeImage;
 
++ (id)backgroundColorForBackgroundType:(int)arg1;
++ (BOOL)canComputeSwipeImage;
++ (BOOL)canPreloadInThread;
++ (id)copySwipeImageOperation;
+
+- (void)_addProgressUI;
+- (void)_addSwipeImage;
 - (void)_notifyDidFailLoadingWithError:(id)arg1;
-- (void)_notifyDidLoad;
-- (id)backgroundColor;
+- (void)_removeProgressiveUI;
+- (void)_removeProgressiveUIAnimation:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)_removeSwipeImage;
+- (void)_showLoadingProgress:(BOOL)arg1;
+- (BOOL)acceptControllerTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
+- (int)backgroundType;
 - (BOOL)canPrint;
 - (void)cancelLoad;
+- (void)deactivate;
 - (void)dealloc;
 - (id)delegate;
-- (void)didFadeIn;
+- (id)description;
 - (void)didFailLoadingWithError:(id)arg1;
 - (void)didLoad;
+- (id)displayView;
+- (BOOL)hasCustomToolbar;
+- (int)index;
 - (id)initWithPreviewItem:(id)arg1 owner:(id)arg2;
+- (void)loadView;
 - (void)loadWithHints:(id)arg1;
-- (BOOL)loading;
+- (BOOL)loaded;
+- (int)modalPresentationStyle;
+- (void)overlayWillAppearAnimated:(BOOL)arg1;
+- (void)overlayWillDisappearAnimated:(BOOL)arg1;
+- (id)owner;
 - (id)pdfPreviewURL;
+- (void)preloadInThread;
+- (BOOL)preloaded;
+- (BOOL)preloading;
+- (void)prepareForSlidingIn:(id)arg1;
+- (void)prepareForSlidingOut;
+- (void)prepareForZoomingIn;
+- (void)prepareForZoomingOut;
 - (id)previewConverter;
 - (id)previewItem;
 - (id)previewRequest;
 - (id)printPageRenderer;
-- (void)reloadUI;
 - (void)setDelegate:(id)arg1;
-- (void)setLoading:(BOOL)arg1;
-- (void)setNavigationBarHeight:(float)arg1 animated:(BOOL)arg2;
+- (void)setDisplayView:(id)arg1;
+- (void)setIndex:(int)arg1;
+- (void)setLoaded:(BOOL)arg1;
+- (void)setOwner:(id)arg1;
+- (void)setPreloaded:(BOOL)arg1;
+- (void)setPreloading:(BOOL)arg1;
 - (void)setPreviewConverter:(id)arg1;
 - (void)setPreviewItem:(id)arg1;
 - (void)setPreviewRequest:(id)arg1;
-- (BOOL)shouldDisplayFullScreen;
+- (void)setSwipeImage:(id)arg1;
+- (void)startLoadWithHints:(id)arg1;
+- (void)startSlidingIn:(id)arg1;
+- (void)startTearDownUI;
+- (id)swipeImage;
 - (void)tearDownUI;
-- (void)willFadeIn;
 
 @end

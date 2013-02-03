@@ -8,10 +8,12 @@
     UIPushButton *_addButton;
     NSMutableDictionary *_atoms;
     UIImage *_buttonImage;
+    NSMutableArray *_collapsedRecipientLabels;
     NSTimer *_delayTimer;
     BOOL _editable;
     double _inputDelay;
     int _maxRecipients;
+    BOOL _onlyCollapsesUnstyledAtoms;
     BOOL _parentIsClosing;
     BOOL _picking;
     UIImage *_pressedImage;
@@ -21,22 +23,27 @@
     UITextField *_textField;
 }
 
-+ (void)_initializeSafeCategory;
-
 - (BOOL)_addable;
 - (void)_cancelDelayTimer;
 - (void)_delayTimerFired:(id)arg1;
 - (void)_deleteSelectedAtom;
 - (void)_deselectAtom;
 - (void)_dismissPicker:(id)arg1;
+- (void)_hideAddButton;
+- (void)_reallySelectComposeRecipientAtom:(id)arg1;
+- (void)_reflowCollapsed;
+- (void)_reflowCollapsedWithoutCollapsingStyledAtoms;
+- (void)_reflowExpanded;
 - (void)addAddress:(id)arg1;
 - (id)addButton;
 - (id)addButton;
 - (void)addButtonClicked:(id)arg1;
+- (void)addRecipient:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)addRecipient:(id)arg1;
 - (void)addRecord:(void*)arg1 identifier:(int)arg2;
 - (void)addRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 - (id)addresses;
+- (int)atomStyleForRecipient:(id)arg1;
 - (BOOL)becomeFirstResponder;
 - (void)clearText;
 - (void)composeRecipientAtomSelectNext:(id)arg1;
@@ -53,6 +60,7 @@
 - (int)maxRecipients;
 - (int)numberOfRowsOfTextInField;
 - (float)offsetForRowWithTextField;
+- (BOOL)onlyCollapsesUnstyledAtoms;
 - (void)parentDidClose;
 - (void)parentWillClose;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
@@ -64,12 +72,14 @@
 - (void)removeAddressAtIndex:(int)arg1;
 - (void)removeAddresses;
 - (void)removeRecipient:(id)arg1;
+- (void)replaceRecipient:(id)arg1 withRecipient:(id)arg2;
 - (void)selectComposeRecipientAtom:(id)arg1;
 - (void)setAddresses:(id)arg1;
 - (void)setEditable:(BOOL)arg1;
 - (void)setInputDelay:(double)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setMaxRecipients:(int)arg1;
+- (void)setOnlyCollapsesUnstyledAtoms:(BOOL)arg1;
 - (void)setProperties:(id)arg1;
 - (void)setProperty:(int)arg1;
 - (BOOL)shouldShowCardForPerson:(void*)arg1;

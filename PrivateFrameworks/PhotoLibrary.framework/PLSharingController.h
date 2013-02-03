@@ -44,8 +44,9 @@
 - (void)_performSendViaEmail;
 - (void)_reallySendViaEmail:(id)arg1 animated:(BOOL)arg2;
 - (void)_setComposeParentViewController:(id)arg1;
-- (void)_showMailComposeSheetForAutosavedMessage;
+- (void)_showMailComposeSheetForAutosavedMessageWithIdentifier:(id)arg1;
 - (void)_slideImagesOverMessage;
+- (id)autosaveIdentifier;
 - (void)composeMailForPhotos:(id)arg1;
 - (void)dealloc;
 - (void)emailPhotos:(id)arg1;
@@ -53,6 +54,7 @@
 - (BOOL)isComposeSheetReady;
 - (void)mailComposeController:(id)arg1 bodyFinishedLoadingWithResult:(BOOL)arg2 error:(id)arg3;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
+- (void)setAutosaveIdentifier:(id)arg1;
 - (void)setTrimmedPath:(id)arg1 forVideo:(id)arg2;
 - (id)views;
 

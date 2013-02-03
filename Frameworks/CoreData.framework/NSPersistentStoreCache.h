@@ -22,7 +22,5 @@
 - (int)refCountForObjectID:(id)arg1;
 - (void)registerExternalData:(id)arg1 forObjectID:(id)arg2 options:(unsigned int)arg3;
 - (void)registerExternalData:(id)arg1 forSourceObjectID:(id)arg2 key:(id)arg3 options:(unsigned int)arg4 andTimestamp:(double)arg5;
-- (BOOL)shouldPersistObjectForObjectID:(id)arg1;
-- (BOOL)shouldRefreshObjectForObjectID:(id)arg1;
 
 @end

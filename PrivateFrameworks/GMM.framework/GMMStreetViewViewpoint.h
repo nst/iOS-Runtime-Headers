@@ -13,10 +13,10 @@
     int _zoomingCount;
 }
 
-@property(readonly) BOOL hasNavigationCount;
-@property(readonly) BOOL hasPanningCount;
-@property(readonly) BOOL hasScene;
-@property(readonly) BOOL hasZoomingCount;
+@property BOOL hasNavigationCount;
+@property BOOL hasPanningCount;
+@property BOOL hasScene;
+@property BOOL hasZoomingCount;
 @property int navigationCount;
 @property int panningCount;
 @property int scene;
@@ -29,11 +29,14 @@
 - (BOOL)hasPanningCount;
 - (BOOL)hasScene;
 - (BOOL)hasZoomingCount;
-- (id)init;
 - (int)navigationCount;
 - (int)panningCount;
 - (BOOL)readFrom:(id)arg1;
 - (int)scene;
+- (void)setHasNavigationCount:(BOOL)arg1;
+- (void)setHasPanningCount:(BOOL)arg1;
+- (void)setHasScene:(BOOL)arg1;
+- (void)setHasZoomingCount:(BOOL)arg1;
 - (void)setNavigationCount:(int)arg1;
 - (void)setPanningCount:(int)arg1;
 - (void)setScene:(int)arg1;

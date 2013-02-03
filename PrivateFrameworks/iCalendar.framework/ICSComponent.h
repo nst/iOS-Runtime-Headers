@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class ICSDuration, ICSTrigger, NSURL, ICSUserAddress, NSMutableArray, NSString, ICSDate, NSMutableDictionary, NSArray;
+@class ICSDuration, ICSTrigger, NSURL, ICSUserAddress, NSMutableArray, ICSStructuredLocation, NSString, ICSDate, NSMutableDictionary, NSArray;
 
 @interface ICSComponent : NSObject <ICSWriting> {
     NSMutableArray *_components;
@@ -13,6 +13,7 @@
 @property(retain) NSArray * attendee;
 @property int classification;
 @property(retain) NSArray * components;
+@property(retain) NSArray * conferences;
 @property(retain) ICSDate * created;
 @property(retain) NSString * description;
 @property(retain) ICSDate * dtend;
@@ -21,9 +22,11 @@
 @property(retain) ICSDuration * duration;
 @property(retain) NSArray * exdate;
 @property(retain) NSArray * exrule;
+@property(readonly) BOOL isAllDay;
 @property(retain) ICSDate * last_modified;
 @property(retain) NSString * location;
 @property(retain) ICSUserAddress * organizer;
+@property unsigned int priority;
 @property(retain) NSArray * rdate;
 @property(retain) ICSDate * recurrence_id;
 @property(retain) NSArray * rrule;
@@ -34,16 +37,23 @@
 @property(retain) NSString * uid;
 @property(retain) NSURL * url;
 @property(retain) NSString * x_apple_dropbox;
+@property(retain) NSString * x_apple_etag;
 @property(retain) NSString * x_apple_ews_changekey;
 @property(retain) NSString * x_apple_ews_itemid;
 @property BOOL x_apple_ews_needsserverconfirmation;
 @property(retain) NSString * x_apple_ews_permission;
 @property BOOL x_apple_ignore_on_restore;
+@property(retain) NSString * x_apple_scheduletag;
+@property(retain) NSString * x_apple_serverFilename;
+@property(retain) ICSStructuredLocation * x_apple_structured_location;
 @property int x_calendarserver_access;
 
 + (id)inheritanceKeywords;
++ (id)makeUID;
 + (id)name;
 + (id)newUID;
++ (int)statusFromString:(id)arg1;
++ (id)stringFromStatus:(int)arg1;
 
 - (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (id)ICSStringWithOptions:(unsigned int)arg1;
@@ -54,6 +64,7 @@
 - (id)attendee;
 - (int)classification;
 - (id)components;
+- (id)conferences;
 - (id)created;
 - (void)dealloc;
 - (id)debugDescription;
@@ -74,9 +85,11 @@
 - (void)fixRecurrenceDates;
 - (void)fixRecurrenceRules;
 - (id)init;
+- (BOOL)isAllDay;
 - (id)last_modified;
 - (id)location;
 - (id)organizer;
+- (unsigned int)priority;
 - (id)properties;
 - (id)propertiesForName:(id)arg1;
 - (id)rdate;
@@ -89,6 +102,7 @@
 - (void)setAttendee:(id)arg1;
 - (void)setClassification:(int)arg1;
 - (void)setComponents:(id)arg1;
+- (void)setConferences:(id)arg1;
 - (void)setCreated:(id)arg1;
 - (void)setDescription:(id)arg1;
 - (void)setDtend:(id)arg1;
@@ -100,6 +114,7 @@
 - (void)setLast_modified:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setOrganizer:(id)arg1;
+- (void)setPriority:(unsigned int)arg1;
 - (void)setProperties:(id)arg1 forName:(id)arg2;
 - (void)setProperty:(id)arg1 forName:(id)arg2;
 - (void)setPropertyValue:(id)arg1 forName:(id)arg2;
@@ -114,11 +129,15 @@
 - (void)setUid:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setX_apple_dropbox:(id)arg1;
+- (void)setX_apple_etag:(id)arg1;
 - (void)setX_apple_ews_changekey:(id)arg1;
 - (void)setX_apple_ews_itemid:(id)arg1;
 - (void)setX_apple_ews_needsserverconfirmation:(BOOL)arg1;
 - (void)setX_apple_ews_permission:(id)arg1;
 - (void)setX_apple_ignore_on_restore:(BOOL)arg1;
+- (void)setX_apple_scheduletag:(id)arg1;
+- (void)setX_apple_serverFilename:(id)arg1;
+- (void)setX_apple_structured_location:(id)arg1;
 - (void)setX_calendarserver_access:(int)arg1;
 - (int)status;
 - (id)summary;
@@ -127,11 +146,15 @@
 - (id)url;
 - (BOOL)validate:(id*)arg1;
 - (id)x_apple_dropbox;
+- (id)x_apple_etag;
 - (id)x_apple_ews_changekey;
 - (id)x_apple_ews_itemid;
 - (BOOL)x_apple_ews_needsserverconfirmation;
 - (id)x_apple_ews_permission;
 - (BOOL)x_apple_ignore_on_restore;
+- (id)x_apple_scheduletag;
+- (id)x_apple_serverFilename;
+- (id)x_apple_structured_location;
 - (int)x_calendarserver_access;
 
 @end

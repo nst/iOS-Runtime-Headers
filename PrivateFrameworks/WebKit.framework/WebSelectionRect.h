@@ -15,6 +15,7 @@
     BOOL m_containsEnd;
     BOOL m_containsStart;
     BOOL m_isFirstOnLine;
+    BOOL m_isInFixedPosition;
     BOOL m_isLastOnLine;
     BOOL m_isLineBreak;
     } m_rect;
@@ -24,6 +25,7 @@
 @property BOOL containsEnd;
 @property BOOL containsStart;
 @property BOOL isFirstOnLine;
+@property BOOL isInFixedPosition;
 @property BOOL isLastOnLine;
 @property BOOL isLineBreak;
 @property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } rect;
@@ -39,12 +41,14 @@
 - (id)description;
 - (id)init;
 - (BOOL)isFirstOnLine;
+- (BOOL)isInFixedPosition;
 - (BOOL)isLastOnLine;
 - (BOOL)isLineBreak;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rect;
 - (void)setContainsEnd:(BOOL)arg1;
 - (void)setContainsStart:(BOOL)arg1;
 - (void)setIsFirstOnLine:(BOOL)arg1;
+- (void)setIsInFixedPosition:(BOOL)arg1;
 - (void)setIsLastOnLine:(BOOL)arg1;
 - (void)setIsLineBreak:(BOOL)arg1;
 - (void)setRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

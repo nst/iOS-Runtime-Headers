@@ -9,8 +9,6 @@
     UITableCell *_tableCell;
 }
 
-+ (void)_initializeSafeCategory;
-
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (void)_controlMouseDown:(struct __GSEvent { }*)arg1;
 - (void)_controlMouseDragged:(struct __GSEvent { }*)arg1;
@@ -19,13 +17,10 @@
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
 - (id)_scriptingInfo;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (float)buttonWidth;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithRemoveControl:(id)arg1 withTarget:(id)arg2 withLabel:(id)arg3;
-- (BOOL)isAccessibilityElement;
 - (void)sizeToFit;
 
 @end

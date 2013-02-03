@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-@class WebView;
+@class WebInspectorFrontend, WebView;
 
 @interface WebInspector : NSObject {
+    WebInspectorFrontend *_frontend;
     WebView *_webView;
 }
 
@@ -12,14 +13,15 @@
 
 - (void)attach:(id)arg1;
 - (void)close:(id)arg1;
+- (void)dealloc;
 - (void)detach:(id)arg1;
 - (void)evaluateInFrontend:(id)arg1 callId:(long)arg2 script:(id)arg3;
 - (id)initWithWebView:(id)arg1;
-- (id)inspectorWebView;
 - (BOOL)isDebuggingJavaScript;
 - (BOOL)isJavaScriptProfilingEnabled;
 - (BOOL)isProfilingJavaScript;
 - (BOOL)isTimelineProfilingEnabled;
+- (void)setFrontend:(id)arg1;
 - (void)setJavaScriptProfilingEnabled:(BOOL)arg1;
 - (void)setTimelineProfilingEnabled:(BOOL)arg1;
 - (void)setWebFrame:(id)arg1;

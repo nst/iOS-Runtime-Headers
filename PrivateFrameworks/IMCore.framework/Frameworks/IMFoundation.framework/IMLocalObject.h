@@ -2,23 +2,14 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSMachPort, NSString, NSRecursiveLock, NSMutableArray, NSProtocolChecker;
+@class NSString, NSMachPort;
 
 @interface IMLocalObject : NSObject {
-    BOOL _busyForwarding;
-    struct dispatch_semaphore_s { } *_deathLock;
-    NSMutableArray *_incomingQueue;
-    NSRecursiveLock *_lock;
-    int _pid;
-    unsigned int _port;
-    NSString *_portName;
-    NSProtocolChecker *_protocolChecker;
-    struct dispatch_queue_s { } *_queue;
-    struct dispatch_source_s { } *_source;
-    id _target;
+    id _internal;
 }
 
 @property(readonly) BOOL isValid;
+@property(readonly) unsigned int mach_port;
 @property int pid;
 @property(readonly) NSMachPort * port;
 @property(readonly) NSString * portName;
@@ -31,25 +22,32 @@
 
 - (void)_cancelHandlerCompleted;
 - (void)_clearPort:(BOOL)arg1;
-- (void)_dequeueInvocationIfNecessary;
-- (void)_enqueueInvocation:(id)arg1;
-- (void)_handleComponents:(id)arg1;
+- (void)_enqueueComponents:(id)arg1;
 - (BOOL)_handleInvocation:(id)arg1;
+- (void)_handleNewInvocations;
+- (void)_noteNewInvocation;
+- (id)_peekInvocation;
+- (void)_popInvocation;
 - (unsigned int)_port;
 - (void)_portDidBecomeInvalid;
 - (void)_systemShutdown:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)handleHeaderData:(unsigned long long*)arg1 headerLength:(unsigned int)arg2 data:(char *)arg3 dataLength:(unsigned int)arg4 fromPid:(int)arg5;
-- (void)handleInvocation:(id)arg1;
+- (BOOL)handleInvocation:(id)arg1;
+- (id)initWithTarget:(id)arg1 port:(unsigned int)arg2 protocol:(id)arg3;
+- (id)initWithTarget:(id)arg1 portName:(id)arg2 checkInPort:(BOOL)arg3 protocol:(id)arg4;
 - (id)initWithTarget:(id)arg1 portName:(id)arg2 protocol:(id)arg3;
+- (id)initWithTarget:(id)arg1 protocol:(id)arg2;
 - (void)invalidate;
 - (BOOL)isValid;
 - (BOOL)isValidSelector:(SEL)arg1;
+- (unsigned int)mach_port;
 - (int)pid;
 - (id)port;
 - (id)portName;
 - (void)setPid:(int)arg1;
+- (void)setPortName:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (id)target;
 - (void)terminated;

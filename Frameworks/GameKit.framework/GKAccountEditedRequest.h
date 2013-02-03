@@ -20,6 +20,7 @@
 - (id)alias;
 - (void)dealloc;
 - (id)firstName;
+- (void)handleResponseFromServer:(id)arg1;
 - (id)key;
 - (id)lastName;
 - (id)request;

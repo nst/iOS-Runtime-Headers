@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIButton;
+@class UIButton, UIGestureRecognizer;
 
-@interface UIKeyboardLayoutEmoji_iPad : UIKeyboardLayoutEmoji {
+@interface UIKeyboardLayoutEmoji_iPad : UIKeyboardLayoutEmoji <UIGestureRecognizerDelegate> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -25,22 +25,27 @@
         } size; 
     UIButton *_dismissButton;
     } _dismissFrame;
+    UIGestureRecognizer *_longPressForMenu;
     UIButton *_spaceButton;
     } _spaceFrame;
+    UIGestureRecognizer *_translateRecognizer;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } dismissFrame;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } spaceFrame;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } dismissFrame;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } spaceFrame;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })categoryFrame;
 - (void)dealloc;
 - (void)dismiss;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })dismissFrame;
+- (void)dismissTranslateDetected:(id)arg1;
 - (void)generateControlKeyRects;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (struct CGSize { float x1; float x2; })leftControlSize;
 - (struct CGSize { float x1; float x2; })rightControlSize;
+- (void)showSplitControlMenu:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })spaceFrame;
 - (void)spaceUp;
 - (void)updateControlButtonImages;

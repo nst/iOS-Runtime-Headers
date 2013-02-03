@@ -2,24 +2,20 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPVideoBufferLayerContainer, UIView, MPMovieSnapshotController, UIMovieSubtitlesView, CALayer, NSString;
+@class MPVideoBufferLayerContainer, MPAVController, UIView, MPMovieSnapshotController, CALayer, NSString;
 
 @interface MPVideoView : UIView {
-    struct CGSize { 
-        float width; 
-        float height; 
     unsigned int _disableFudgingScaleToFullScreen : 1;
     unsigned int _requiresIntegralScreenFrame : 1;
     unsigned int _effectiveScaleMode;
     NSString *_moviePath;
     NSString *_movieSubtitle;
     NSString *_movieTitle;
+    MPAVController *_player;
     unsigned int _scaleMode;
     MPMovieSnapshotController *_snapshotController;
     double _startTime;
     double _stopTime;
-    } _subtitlesMargin;
-    UIMovieSubtitlesView *_subtitlesView;
     MPVideoBufferLayerContainer *_videoBufferContainerLayer;
     UIView *_videoBufferContainerView;
     CALayer *_videoBufferLayer;
@@ -28,42 +24,34 @@
 
 @property(readonly) BOOL canChangeScaleMode;
 @property unsigned int effectiveScaleMode;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } movieFrame;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } movieFrame;
 @property(retain) NSString * movieSubtitle;
 @property(retain) NSString * movieTitle;
+@property MPAVController * player;
 @property BOOL requiresIntegralScreenFrame;
 @property unsigned int scaleMode;
 @property double startTime;
 @property double stopTime;
-@property float subtitlesFontSize;
-@property struct CGSize { float width; float height; } subtitlesMargin;
-@property struct CGSize { float width; float height; } subtitlesPadding;
 @property(copy) NSString * videoID;
 
-+ (void)_initializeSafeCategory;
-
+- (void)_AddVideoBufferLayerToViewHierarchyAndHideIfNecessary;
 - (BOOL)_allowFudgingScaleToFullScreen;
-- (id)_avController;
 - (void)_bufferingStateChangedNotification:(id)arg1;
 - (BOOL)_isCloseToFullScreenWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (BOOL)_isExactlyFullScreenWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)_itemWillChangeNotification:(id)arg1;
 - (void)_layoutSublayers;
-- (void)_layoutSubtitleLayers;
 - (void)_layoutVideoLayers:(BOOL)arg1;
 - (void)_playbackStateChangedNotification:(id)arg1;
 - (void)_sizeDidChangedNotification:(id)arg1;
 - (BOOL)_sizeDifferenceFromFullScreenIsLessThan:(struct CGSize { float x1; float x2; })arg1 allowingZero:(BOOL)arg2 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
 - (void)_validityChangedNotification:(id)arg1;
-- (id)accessibilityHint;
-- (id)accessibilityLabel;
 - (void)addSubview:(id)arg1;
-- (id)avController;
+- (id)avPlayer;
 - (void)bringSubviewToFront:(id)arg1;
 - (int)bufferingStatusMask;
 - (BOOL)canChangeScaleMode;
 - (void)cancelSnapshots;
-- (void)clearSubtitles;
 - (double)currentTime;
 - (void)dealloc;
 - (double)duration;
@@ -73,7 +61,6 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertSubview:(id)arg1 atIndex:(int)arg2;
 - (void)insertSubview:(id)arg1 below:(id)arg2;
-- (BOOL)isAccessibilityElement;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })movieFrame;
 - (id)moviePath;
 - (id)movieSubtitle;
@@ -86,7 +73,9 @@
 - (void)playWhenLikelyToKeepUp;
 - (int)playableContentType;
 - (int)playbackState;
+- (id)player;
 - (void)prepareAVControllerQueue;
+- (void)prepareToDisplayVideo;
 - (BOOL)requiresIntegralScreenFrame;
 - (unsigned int)scaleMode;
 - (void)scheduleThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 orientation:(int)arg2 time:(float)arg3 delegate:(id)arg4;
@@ -99,7 +88,7 @@
 - (void)setMovieWithPath:(id)arg1;
 - (void)setNeedsDisplay;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setRepeatGap:(double)arg1;
+- (void)setPlayer:(id)arg1;
 - (void)setRepeatMode:(int)arg1;
 - (void)setRequiresIntegralScreenFrame:(BOOL)arg1;
 - (void)setScaleMode:(unsigned int)arg1 animated:(BOOL)arg2;
@@ -107,18 +96,10 @@
 - (void)setScaleMode:(unsigned int)arg1;
 - (void)setStartTime:(double)arg1;
 - (void)setStopTime:(double)arg1;
-- (void)setSubtitlesFontSize:(float)arg1;
-- (void)setSubtitlesMargin:(struct CGSize { float x1; float x2; })arg1;
-- (void)setSubtitlesPadding:(struct CGSize { float x1; float x2; })arg1;
 - (void)setVideoID:(id)arg1;
 - (double)startTime;
 - (void)stop;
 - (double)stopTime;
-- (void)subtitlesDidClear:(id)arg1;
-- (void)subtitlesDidUpdate:(id)arg1;
-- (float)subtitlesFontSize;
-- (struct CGSize { float x1; float x2; })subtitlesMargin;
-- (struct CGSize { float x1; float x2; })subtitlesPadding;
 - (void)toggleScaleMode:(BOOL)arg1;
 - (id)videoID;
 - (id)viewWithTag:(int)arg1;

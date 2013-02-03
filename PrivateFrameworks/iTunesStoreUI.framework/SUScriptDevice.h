@@ -19,6 +19,11 @@
 @property(readonly) NSString * capabilityNamePodcasts;
 @property(readonly) NSString * capabilityNameWiFi;
 @property(readonly) NSNumber * diskSpaceAvailable;
+@property(readonly) int freeSpaceEffortLevelAutomaticOnly;
+@property(readonly) int freeSpaceEffortLevelDoNothing;
+@property(readonly) int freeSpaceEffortLevelManualSpaceManagement;
+@property(readonly) int freeSpaceEffortLevelPromptUser;
+@property(readonly) NSString * freeSpaceOptionEffortLevel;
 @property(readonly) int hardwareType;
 @property(readonly) int hardwareTypeIPadK93;
 @property(readonly) int hardwareTypeIPadK94;
@@ -28,10 +33,12 @@
 @property(readonly) int hardwareTypeIPhoneN88;
 @property(readonly) int hardwareTypeIPhoneN90;
 @property(readonly) int hardwareTypeIPhoneN92;
+@property(readonly) int hardwareTypeIPhoneN94;
 @property(readonly) int hardwareTypeIPodTouchN18;
 @property(readonly) int hardwareTypeIPodTouchN45;
 @property(readonly) int hardwareTypeIPodTouchN72;
 @property(readonly) int hardwareTypeIPodTouchN81;
+@property(readonly) int hardwareTypeIPodTouchN81a;
 @property(readonly) int hardwareTypeUnknown;
 @property(readonly) int hardwareTypeWildcatK48;
 @property(readonly) NSNumber * mainScreenScale;
@@ -64,6 +71,7 @@
 @property(readonly) NSString * restrictionVideoConferencingAllowed;
 @property(readonly) NSString * restrictionYouTubeAllowed;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
@@ -90,6 +98,11 @@
 - (id)checkCapabilitiesPropertyListString:(id)arg1 showFailureDialog:(BOOL)arg2;
 - (void)dealloc;
 - (id)diskSpaceAvailable;
+- (int)freeSpaceEffortLevelAutomaticOnly;
+- (int)freeSpaceEffortLevelDoNothing;
+- (int)freeSpaceEffortLevelManualSpaceManagement;
+- (int)freeSpaceEffortLevelPromptUser;
+- (id)freeSpaceOptionEffortLevel;
 - (int)hardwareType;
 - (int)hardwareTypeIPadK93;
 - (int)hardwareTypeIPadK94;
@@ -99,10 +112,12 @@
 - (int)hardwareTypeIPhoneN88;
 - (int)hardwareTypeIPhoneN90;
 - (int)hardwareTypeIPhoneN92;
+- (int)hardwareTypeIPhoneN94;
 - (int)hardwareTypeIPodTouchN18;
 - (int)hardwareTypeIPodTouchN45;
 - (int)hardwareTypeIPodTouchN72;
 - (int)hardwareTypeIPodTouchN81;
+- (int)hardwareTypeIPodTouchN81a;
 - (int)hardwareTypeUnknown;
 - (int)hardwareTypeWildcatK48;
 - (id)hasCapability:(id)arg1;
@@ -116,6 +131,7 @@
 - (id)orientationStringLandscapeRight;
 - (id)orientationStringPortrait;
 - (id)orientationStringPortraitUpsideDown;
+- (void)requestFreeSpaceWithBytes:(id)arg1 options:(id)arg2 completionHandler:(id)arg3;
 - (id)restrictionAccountModificationAllowed;
 - (id)restrictionAllowGlobalBackgroundFetchWhenRoaming;
 - (id)restrictionAllowVoiceDialing;

@@ -4,12 +4,12 @@
 
 @class NSMutableSet, <SUPurchaseManagerDelegate>, NSSet, SUAuthenticationObserver, NSMutableArray;
 
-@interface SUPurchaseManager : NSObject <SUAuthenticationDelegate, SUContinuationDelegate, SSDownloadQueueObserver, SSPurchaseRequestDelegate> {
+@interface SUPurchaseManager : NSObject <SUAuthenticationDelegate, SUContinuationDelegate, SSDownloadManagerObserver, SSPurchaseRequestDelegate> {
     SUAuthenticationObserver *_authenticationObserver;
     <SUPurchaseManagerDelegate> *_delegate;
     NSMutableSet *_futurePurchases;
     NSMutableSet *_inflightContinuations;
-    NSMutableArray *_observedDownloadQueues;
+    NSMutableArray *_observedDownloadManagers;
     NSMutableArray *_pendingContinuations;
     NSMutableArray *_pendingPurchases;
     NSMutableArray *_purchaseRequests;
@@ -32,7 +32,7 @@
 - (void)_addBatchForPurchases:(id)arg1 options:(id)arg2;
 - (id)_authenticationObserver;
 - (void)_dialogDidFinish:(id)arg1;
-- (id)_downloadQueueForDownloadKind:(id)arg1;
+- (id)_downloadManagerForDownloadKind:(id)arg1;
 - (void)_enqueueContinuations:(id)arg1;
 - (void)_enqueueExternalDownload:(id)arg1;
 - (void)_enqueuePurchases:(id)arg1;
@@ -54,6 +54,7 @@
 - (void)addFuturePurchase:(id)arg1;
 - (BOOL)addPurchaseBatch:(id)arg1;
 - (void)addPurchasedItemIdentifier:(unsigned long long)arg1;
+- (void)addPurchasedItemIdentifiers:(id)arg1;
 - (void)authenticationDidFail:(id)arg1;
 - (void)authenticationDidFinish:(id)arg1;
 - (void)authenticationDidTimeout:(id)arg1;
@@ -61,10 +62,10 @@
 - (void)cancelFuturePurchase:(id)arg1;
 - (void)continuation:(id)arg1 failedWithError:(id)arg2;
 - (void)continuationFinished:(id)arg1;
+- (id)copyPurchaseForScriptObject:(id)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
 - (id)copyPurchaseForScriptObject:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)downloadQueue:(id)arg1 changedWithRemovals:(id)arg2;
 - (void)endUpdates;
 - (void)enqueueScriptPurchases:(id)arg1;
 - (id)futurePurchases;
@@ -75,7 +76,7 @@
 - (int)numberOfPendingPurchases;
 - (void)purchaseRequest:(id)arg1 purchaseDidFail:(id)arg2 withError:(id)arg3;
 - (void)purchaseRequest:(id)arg1 purchaseDidSucceed:(id)arg2;
-- (void)purchaseScriptObject:(id)arg1 withOptions:(id)arg2;
+- (void)purchaseScriptObject:(id)arg1 withOptions:(id)arg2 inContext:(struct OpaqueJSContext { }*)arg3;
 - (void)purchaseScriptObject:(id)arg1;
 - (id)purchasedItemIdentifiers;
 - (void)removePurchasedItemIdentifier:(unsigned long long)arg1;

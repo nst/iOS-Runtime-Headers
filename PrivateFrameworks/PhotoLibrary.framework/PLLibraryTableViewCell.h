@@ -2,17 +2,43 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLLibraryTableViewCell : UITableViewCell {
-    unsigned int _multiplePhotoStreamsPresent : 1;
+@class UITextField, <PLLibraryTableViewCellEditingDelegate>;
+
+@interface PLLibraryTableViewCell : UITableViewCell <UITextFieldDelegate> {
+    BOOL _allowsRename;
+    BOOL _cellEnabled;
+    UITextField *_editableText;
+    <PLLibraryTableViewCellEditingDelegate> *_editingDelegate;
 }
+
+@property BOOL allowsRename;
+@property BOOL cellEnabled;
+@property <PLLibraryTableViewCellEditingDelegate> * editingDelegate;
+@property(getter=isRenaming,readonly) BOOL renaming;
 
 + (id)photoCountFormatter;
 
-- (id)initWithReuseIdentifier:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editableFieldFrame;
+- (BOOL)allowsRename;
+- (void)animatePopRowWithDuration:(double)arg1 completion:(id)arg2;
+- (BOOL)cellEnabled;
+- (struct CGPoint { float x1; float x2; })destinationPointForMovePhotosAnimation;
+- (void)didTransitionToState:(unsigned int)arg1;
+- (id)editingDelegate;
+- (void)endRenaming;
+- (id)initWithReuseIdentifier:(id)arg1;
+- (BOOL)isRenaming;
 - (void)layoutSubviews;
-- (BOOL)multiplePhotoStreamsPresent;
 - (void)prepareForReuse;
-- (void)setMutliplePhotoStreamsPresent:(BOOL)arg1;
+- (void)setAllowsRename:(BOOL)arg1;
+- (void)setCellEnabled:(BOOL)arg1;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setEditingDelegate:(id)arg1;
 - (void)setText:(id)arg1 photoCount:(int)arg2 posterImage:(id)arg3;
+- (void)textFieldDidBeginEditing:(id)arg1;
+- (void)textFieldDidEndEditing:(id)arg1;
+- (BOOL)textFieldShouldBeginEditing:(id)arg1;
+- (BOOL)textFieldShouldReturn:(id)arg1;
+- (void)willTransitionToState:(unsigned int)arg1;
 
 @end

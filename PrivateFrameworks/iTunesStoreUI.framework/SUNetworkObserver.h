@@ -24,7 +24,7 @@
 - (void)_mainThreadScheduleNetworkActivityUpdate;
 - (void)_mainThreadSetPartnerIdentifier:(id)arg1;
 - (void)_networkTypeChanged:(id)arg1;
-- (void)_networkUsageStatedChanged:(id)arg1;
+- (void)_networkUsageStateChanged:(id)arg1;
 - (void)_partnerHeaderChanged:(id)arg1;
 - (void)_startupTimer:(id)arg1;
 - (void)_updateNetworkActivityIndicator;

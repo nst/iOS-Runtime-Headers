@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSString, NSDictionary;
+@class NSArray, NSString, NSDictionary, NSNumber;
 
 @interface MCWiFiPayload : MCPayload {
+    BOOL _autoJoin;
     NSString *_certificateUUID;
+    NSString *_credentialUUID;
     NSDictionary *_eapClientConfig;
     NSString *_encryptionType;
     BOOL _hidden;
@@ -14,12 +16,20 @@
     NSString *_password;
     BOOL _passwordRequired;
     NSArray *_payloadCertificateAnchorUUID;
+    NSString *_proxyPACURLString;
+    NSString *_proxyPassword;
+    NSString *_proxyServer;
+    NSNumber *_proxyServerPort;
+    int _proxyType;
+    NSString *_proxyUsername;
     NSString *_ssid;
     NSString *_username;
     BOOL _usernameRequired;
 }
 
+@property(readonly) BOOL autoJoin;
 @property(readonly) NSString * certificateUUID;
+@property(retain) NSString * credentialUUID;
 @property(readonly) NSDictionary * eapClientConfig;
 @property(readonly) NSString * encryptionType;
 @property(readonly) BOOL isHidden;
@@ -28,6 +38,12 @@
 @property(retain) NSString * password;
 @property(readonly) BOOL passwordRequired;
 @property(readonly) NSArray * payloadCertificateAnchorUUID;
+@property(readonly) NSString * proxyPACURLString;
+@property(readonly) NSString * proxyPassword;
+@property(readonly) NSString * proxyServer;
+@property(readonly) NSNumber * proxyServerPort;
+@property(readonly) int proxyType;
+@property(readonly) NSString * proxyUsername;
 @property(readonly) NSString * ssid;
 @property(retain) NSString * username;
 @property(readonly) BOOL usernameRequired;
@@ -38,7 +54,10 @@
 - (BOOL)_configIsValid:(id)arg1 error:(id*)arg2;
 - (id)_eapPasswordFromConfig:(id)arg1 isRequired:(BOOL*)arg2;
 - (id)_eapUsernameFromConfig:(id)arg1 isRequired:(BOOL*)arg2;
+- (BOOL)_isEAPSIMConfig:(id)arg1;
+- (BOOL)autoJoin;
 - (id)certificateUUID;
+- (id)credentialUUID;
 - (void)dealloc;
 - (id)description;
 - (id)eapClientConfig;
@@ -50,6 +69,13 @@
 - (id)password;
 - (BOOL)passwordRequired;
 - (id)payloadCertificateAnchorUUID;
+- (id)proxyPACURLString;
+- (id)proxyPassword;
+- (id)proxyServer;
+- (id)proxyServerPort;
+- (int)proxyType;
+- (id)proxyUsername;
+- (void)setCredentialUUID:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)ssid;

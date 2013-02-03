@@ -18,7 +18,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)predicateFormat;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 

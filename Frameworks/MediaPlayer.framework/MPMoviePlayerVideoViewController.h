@@ -8,10 +8,9 @@
 
 @property BOOL hideNavigationBar;
 
-- (void)_showOverlay;
 - (void)backgroundViewDidUpdate;
 - (BOOL)hideNavigationBar;
 - (void)setHideNavigationBar:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)showOverlayAnimated:(BOOL)arg1;
 
 @end

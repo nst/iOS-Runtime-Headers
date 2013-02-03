@@ -10,6 +10,7 @@
     NSString *_message;
     NSString *_originator;
     NSString *_originatorEmail;
+    BOOL _purpleBuddyAccount;
     NSString *_recipient;
     int _recipientKind;
     NSString *_requestID;
@@ -21,6 +22,7 @@
 @property(retain) NSString * message;
 @property(retain) NSString * originator;
 @property(retain) NSString * originatorEmail;
+@property BOOL purpleBuddyAccount;
 @property(retain) NSString * recipient;
 @property int recipientKind;
 @property(retain) NSString * requestID;
@@ -37,6 +39,7 @@
 - (id)message;
 - (id)originator;
 - (id)originatorEmail;
+- (BOOL)purpleBuddyAccount;
 - (id)recipient;
 - (int)recipientKind;
 - (id)requestID;
@@ -45,6 +48,7 @@
 - (void)setMessage:(id)arg1;
 - (void)setOriginator:(id)arg1;
 - (void)setOriginatorEmail:(id)arg1;
+- (void)setPurpleBuddyAccount:(BOOL)arg1;
 - (void)setRecipient:(id)arg1;
 - (void)setRecipientKind:(int)arg1;
 - (void)setRequestID:(id)arg1;

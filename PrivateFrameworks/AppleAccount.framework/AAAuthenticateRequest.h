@@ -16,11 +16,13 @@
 
 - (void)dealloc;
 - (id)initWithURLString:(id)arg1 username:(id)arg2 password:(id)arg3;
+- (id)initWithUsername:(id)arg1 password:(id)arg2;
 - (id)password;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)urlCredential;
 - (id)urlRequest;
+- (id)urlString;
 - (id)username;
 
 @end

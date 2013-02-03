@@ -10,24 +10,26 @@
     EKSource *_source;
 }
 
-@property(retain,readonly) NSArray * calendarInfos;
-@property(copy,readonly) NSSet * calendarSet;
+@property(readonly) NSArray * calendarInfos;
+@property(readonly) NSSet * calendarSet;
 @property(readonly) BOOL isSubscribed;
 @property(readonly) int numCalendars;
 @property(readonly) int numSelectedCalendars;
 @property BOOL selected;
-@property(copy,readonly) NSSet * selectedCalendarSet;
+@property(readonly) NSSet * selectedCalendarSet;
+@property(readonly) BOOL showAddCalendarButton;
 @property(readonly) BOOL showCalendarNameIfSolitary;
 @property(readonly) int sortOrder;
 @property(retain) EKSource * source;
-@property(copy,readonly) NSString * title;
-@property(copy,readonly) NSString * typeTitle;
+@property(readonly) NSString * title;
+@property(readonly) NSString * typeTitle;
 
 - (id)calendarAtIndex:(int)arg1;
 - (id)calendarInfos;
 - (id)calendarSet;
 - (id)copyCalendars;
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (id)initWithSource:(id)arg1;
 - (void)insertCalendarInfo:(id)arg1;
@@ -41,6 +43,7 @@
 - (id)selectedCalendarSet;
 - (void)setSelected:(BOOL)arg1;
 - (void)setSource:(id)arg1;
+- (BOOL)showAddCalendarButton;
 - (BOOL)showCalendarNameIfSolitary;
 - (int)sortOrder;
 - (id)source;

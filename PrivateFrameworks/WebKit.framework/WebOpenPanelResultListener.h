@@ -3,9 +3,9 @@
  */
 
 @interface WebOpenPanelResultListener : NSObject <WebOpenPanelResultListener> {
-    struct FileChooser { int x1; struct FileChooserClient {} *x2; struct Vector<WebCore::String,0ul> { 
+    struct FileChooser { int x1; struct FileChooserClient {} *x2; struct Vector<WTF::String,0ul> { 
             unsigned int m_size; 
-            struct VectorBuffer<WebCore::String,0ul> { 
+            struct VectorBuffer<WTF::String,0ul> { 
                 struct String {} *m_buffer; 
                 unsigned int m_capacity; 
             } m_buffer; 

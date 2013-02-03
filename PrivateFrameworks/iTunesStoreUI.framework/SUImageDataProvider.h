@@ -15,7 +15,7 @@
 }
 
 @property(retain) UIColor * fillColor;
-@property struct CGSize { float width; float height; } finalSize;
+@property struct CGSize { float x1; float x2; } finalSize;
 @property float inputImageScale;
 @property(retain) SUImageModifier * modifier;
 

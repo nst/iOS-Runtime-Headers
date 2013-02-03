@@ -10,9 +10,11 @@
 
 @property(readonly) SUScriptNavigationBar * navigationBar;
 @property BOOL navigationBarHidden;
+@property(copy) id toolbarHidden;
 @property(readonly) SUScriptViewController * topViewController;
 @property(retain) id viewControllers;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
@@ -44,9 +46,12 @@
 - (void)setNavigationBar:(id)arg1;
 - (void)setNavigationBarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setNavigationBarHidden:(BOOL)arg1;
+- (void)setToolbarHidden:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setToolbarHidden:(id)arg1;
 - (void)setTopViewController:(id)arg1;
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (void)setViewControllers:(id)arg1;
+- (id)toolbarHidden;
 - (id)topViewController;
 - (id)viewControllers;
 - (void)willPerformBatchedInvocations;

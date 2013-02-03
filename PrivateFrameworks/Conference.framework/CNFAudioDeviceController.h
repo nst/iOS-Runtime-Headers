@@ -20,6 +20,7 @@
 - (void)_pickableRoutesChanged;
 - (id)_pickedRoute;
 - (void)_registerForAVControllerNotifications;
+- (BOOL)_routeIsAirTunes:(id)arg1;
 - (BOOL)_routeIsHandset:(id)arg1;
 - (BOOL)_routeIsReceiver:(id)arg1;
 - (BOOL)_routeIsSpeaker:(id)arg1;
@@ -29,6 +30,7 @@
 - (id)currentAudioRoute;
 - (void)dealloc;
 - (void)invalidateAVController;
+- (BOOL)isAirPlayMirroring;
 - (int)numberOfAudioRoutes;
 - (BOOL)pickHandsetRoute;
 - (void)pickRouteAtIndex:(unsigned int)arg1;

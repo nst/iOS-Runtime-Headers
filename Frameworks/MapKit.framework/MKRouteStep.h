@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKPolygon, MKSearchResult, MKDate, NSString, UIImage, NSArray;
+@class MKPolygon, UIImage, MKDate, NSString, NSArray, GEOTransitAgent;
 
 @interface MKRouteStep : NSObject <MKAnnotation> {
     struct { 
@@ -29,50 +29,52 @@
     BOOL _displaysDistanceInMetric;
     int _distanceMeters;
     int _durationSeconds;
-    BOOL _hasTransitAgencyIndex;
-    long long _iconID;
+    NSString *_iconName;
     NSString *_instructions;
     int _mode;
     UIImage *_nonCacheableIcon;
     NSArray *_notices;
     unsigned int _numberOfPoints;
+    id _object;
     unsigned int _pointIndex;
-    MKSearchResult *_searchResult;
     unsigned int _stepIndex;
-    int _transitAgencyIndex;
+    GEOTransitAgent *_transitAgent;
+    NSString *_transitCaption;
     int _type;
 }
 
-@property(readonly) NSString * arrivalAddress;
-@property(readonly) MKDate * arrivalDate;
-@property struct { struct { double x; double y; } origin; struct { double width; double height; } size; } boundingMapRect;
+@property(retain) NSString * arrivalAddress;
+@property(retain) MKDate * arrivalDate;
+@property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } boundingMapRect;
 @property(retain) MKPolygon * boundingPolygon;
-@property(readonly) struct { double latitude; double longitude; } coordinate;
-@property(readonly) NSString * departureAddress;
-@property(readonly) MKDate * departureDate;
+@property(readonly) struct { double x1; double x2; } coordinate;
+@property(retain) NSString * departureAddress;
+@property(retain) MKDate * departureDate;
 @property(readonly) int departureIntervalSeconds;
-@property(readonly) NSString * direction;
+@property(retain) NSString * direction;
 @property(readonly) NSString * distance;
 @property(readonly) int distanceMeters;
 @property(readonly) int durationSeconds;
-@property(readonly) BOOL hasTransitAgencyIndex;
 @property(readonly) UIImage * icon;
+@property(readonly) NSString * iconName;
 @property(readonly) NSString * instructions;
 @property(readonly) int mode;
-@property(readonly) MKSearchResult * newSearchResult;
-@property(readonly) NSArray * notices;
+@property(retain) UIImage * nonCacheableIcon;
+@property(retain) NSArray * notices;
 @property unsigned int numberOfPoints;
+@property(retain) id object;
 @property(readonly) unsigned int pointIndex;
-@property(readonly) MKSearchResult * searchResult;
 @property(readonly) NSString * shortInstructions;
 @property unsigned int stepIndex;
-@property(readonly) int transitAgencyIndex;
+@property(readonly) NSString * subtitle;
+@property(readonly) NSString * title;
+@property(readonly) GEOTransitAgent * transitAgent;
+@property(retain) NSString * transitCaption;
 @property(readonly) NSString * tripDescription;
 @property(readonly) int type;
 
-- (id)_initWithSearchResult:(id)arg1 distanceMeters:(int)arg2 displaysMetric:(BOOL)arg3 coordinate:(struct { double x1; double x2; })arg4 type:(int)arg5 pointIndex:(unsigned int)arg6;
-- (id)_initWithStep:(id)arg1 distanceMeters:(int)arg2 displaysMetric:(BOOL)arg3 type:(int)arg4 coordinate:(struct { double x1; double x2; })arg5 pointIndex:(unsigned int)arg6;
-- (id)_initWithType:(int)arg1 mode:(int)arg2 coordinate:(struct { double x1; double x2; })arg3 pointIndex:(unsigned int)arg4 instructions:(id)arg5 distanceMeters:(int)arg6 displaysMetric:(BOOL)arg7 iconID:(long long)arg8;
+- (id)_initWithStep:(id)arg1 distanceMeters:(int)arg2 displaysMetric:(BOOL)arg3 type:(int)arg4 coordinate:(struct { double x1; double x2; })arg5 pointIndex:(unsigned int)arg6 transitAgent:(id)arg7;
+- (id)_initWithType:(int)arg1 mode:(int)arg2 coordinate:(struct { double x1; double x2; })arg3 pointIndex:(unsigned int)arg4 instructions:(id)arg5 distanceMeters:(int)arg6 displaysMetric:(BOOL)arg7 iconName:(id)arg8;
 - (id)_transitDepartureInterval;
 - (id)_transitDistance;
 - (id)_transitDuration;
@@ -90,27 +92,34 @@
 - (id)distance;
 - (int)distanceMeters;
 - (int)durationSeconds;
-- (BOOL)hasTransitAgencyIndex;
 - (id)icon;
-- (long long)iconID;
+- (id)iconName;
 - (id)instructions;
 - (int)mode;
-- (id)newSearchResult;
 - (id)nonCacheableIcon;
 - (id)notices;
 - (unsigned int)numberOfPoints;
+- (id)object;
 - (unsigned int)pointIndex;
-- (id)searchResult;
+- (void)setArrivalAddress:(id)arg1;
+- (void)setArrivalDate:(id)arg1;
 - (void)setBoundingMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setBoundingPolygon:(id)arg1;
+- (void)setDepartureAddress:(id)arg1;
+- (void)setDepartureDate:(id)arg1;
+- (void)setDirection:(id)arg1;
 - (void)setNonCacheableIcon:(id)arg1;
+- (void)setNotices:(id)arg1;
 - (void)setNumberOfPoints:(unsigned int)arg1;
+- (void)setObject:(id)arg1;
 - (void)setStepIndex:(unsigned int)arg1;
+- (void)setTransitCaption:(id)arg1;
 - (id)shortInstructions;
 - (unsigned int)stepIndex;
 - (id)subtitle;
 - (id)title;
-- (int)transitAgencyIndex;
+- (id)transitAgent;
+- (id)transitCaption;
 - (id)tripDescription;
 - (int)type;
 

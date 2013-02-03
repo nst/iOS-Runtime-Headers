@@ -5,7 +5,7 @@
 @interface NSTextCheckingResult : NSObject <NSCopying, NSCoding> {
 }
 
-@property(readonly) struct _NSRange { unsigned int location; unsigned int length; } range;
+@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
 @property(readonly) unsigned long long resultType;
 
 + (id)addressCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 components:(id)arg2;

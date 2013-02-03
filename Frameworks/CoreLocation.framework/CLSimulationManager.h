@@ -17,14 +17,20 @@
 @property double locationSpeed;
 
 - (void)appendSimulatedLocation:(id)arg1;
+- (id)availableScenarios;
 - (void)clearSimulatedCells;
 - (void)clearSimulatedLocations;
+- (void)flush;
 - (id)init;
+- (void)loadScenarioFromURL:(id)arg1;
+- (id)localizedNameForScenario:(id)arg1;
 - (int)locationDeliveryBehavior;
 - (double)locationDistance;
 - (double)locationInterval;
 - (int)locationRepeatBehavior;
 - (double)locationSpeed;
+- (id)scenariosPath;
+- (void)selectScenario:(id)arg1;
 - (void)setLocationDeliveryBehavior:(int)arg1;
 - (void)setLocationDistance:(double)arg1;
 - (void)setLocationInterval:(double)arg1;

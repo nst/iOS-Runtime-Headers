@@ -2,30 +2,21 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPopoverController, UIWebSelectTableViewController, UIKeyboard;
+@class UIWebSelectTableViewController, UIKeyboard;
 
-@interface UIWebSelectPopover : NSObject <UIWebSelectControl, UIPopoverControllerDelegate> {
-    BOOL _isRotating;
+@interface UIWebSelectPopover : UIWebRotatingPopover <UIWebFormControl> {
     UIKeyboard *_keyboard;
-    UIPopoverController *_popoverController;
     UIWebSelectTableViewController *_tableViewController;
 }
 
-@property(retain) UIPopoverController * _popoverController;
 @property(retain) UIWebSelectTableViewController * _tableViewController;
 
-- (id)_popoverController;
-- (void)_popoverDismissed;
 - (id)_tableViewController;
 - (void)_userActionDismissedPopover:(id)arg1;
 - (void)controlBeginEditing;
 - (id)controlView;
 - (void)dealloc;
-- (void)didRotate:(id)arg1;
 - (id)initWithDOMHTMLSelectElement:(id)arg1 cachedItems:(id)arg2 singleSelectionItem:(id)arg3 singleSelectionIndex:(unsigned int)arg4 multipleSelection:(BOOL)arg5;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)set_popoverController:(id)arg1;
 - (void)set_tableViewController:(id)arg1;
-- (void)willRotate:(id)arg1;
 
 @end

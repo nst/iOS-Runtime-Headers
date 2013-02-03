@@ -4,22 +4,22 @@
 
 @interface GMMDirectionsOptionValue : PBCodable {
     BOOL _hasValue;
-    int _iD;
+    int _optionID;
     int _value;
 }
 
-@property(readonly) BOOL hasValue;
-@property int iD;
+@property BOOL hasValue;
+@property int optionID;
 @property int value;
 
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasValue;
-- (int)iD;
-- (id)init;
+- (int)optionID;
 - (BOOL)readFrom:(id)arg1;
-- (void)setID:(int)arg1;
+- (void)setHasValue:(BOOL)arg1;
+- (void)setOptionID:(int)arg1;
 - (void)setValue:(int)arg1;
 - (int)value;
 - (void)writeTo:(id)arg1;

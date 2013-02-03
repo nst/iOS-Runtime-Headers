@@ -2,7 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, AVPropertyStorage, NSError, AVPlayerItem, AVAsset, NSDate, AVVideoComposition, NSArray, NSDictionary, AVPlayerConnection, AVAudioMix, NSMutableArray, NSURL;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class AVWeakReference, NSMutableDictionary, AVPropertyStorage, NSError, AVPlayerItem, AVAsset, NSDate, AVVideoComposition, NSArray, NSDictionary, AVPlayerConnection, NSString, AVAudioMix, NSMutableArray, NSURL;
 
 @interface AVPlayerItemInternal : NSObject {
     struct { 
@@ -38,13 +42,20 @@
     NSURL *URL;
     AVAsset *asset;
     AVAsset *assetWithFigPlaybackItem;
+    NSDictionary *audibleDRMInfo;
     AVAudioMix *audioMix;
-    NSArray *chapterImageTimes;
+    NSString *dataYouTubeID;
+    BOOL didApplyInitialAudioMix;
+    BOOL didBecomeReadyForInspectionOfMediaSelectionOptions;
+    BOOL didBecomeReadyForInspectionOfPresentationSize;
+    BOOL didBecomeReadyForInspectionOfTracks;
     BOOL didFireKVOForAssetForNonStreamingItem;
     BOOL didInformObserversAboutAvailabilityOfTracks;
     BOOL didSetAssetToAssetWithFigPlaybackItem;
+    int eqPreset;
     NSError *error;
     BOOL externalProtectionRequested;
+    BOOL externalSubtitlesEnabled;
     struct OpaqueFigCPEProtector { } *figCPEProtector;
     struct OpaqueFigPlaybackItem { } *figPlaybackItem;
     NSDictionary *gaplessInfo;
@@ -64,21 +75,26 @@
     } initialToleranceAfter;
     } initialToleranceBefore;
     BOOL isCurrentPlayerItem;
+    NSMutableDictionary *mediaOptionsSelectedByClient;
     BOOL needTimedMetadataNotification;
     AVPlayerItem *nextItem;
+    int nextSeekIDToGenerate;
     BOOL nonForcedSubtitleDisplayEnabled;
+    int pendingSeekID;
     AVPlayerConnection *playerConnection;
     AVWeakReference *playerReference;
     AVPlayerItem *previousItem;
     AVPropertyStorage *propertyStorage;
-    NSDictionary *protectedContentAuthorizationInfo;
-    NSURL *protectedContentPersistentStoragePath;
-    NSDictionary *protectedContentProtectionInfo;
+    NSDictionary *rampInOutInfo;
+    id seekCompletionHandler;
+    struct OpaqueFigSimpleMutex { } *seekIDMutex;
     float soundCheckVolumeNormalization;
     struct dispatch_queue_s { } *stateDispatchQueue;
     int status;
     NSMutableArray *syncLayers;
     NSArray *timedMetadata;
+    NSArray *trackIDsForAssetWithFigPlaybackItem;
+    NSMutableDictionary *tracksSelectedByClientViaAlternateTrackGroupSPI;
     AVVideoComposition *videoComposition;
     float volumeAdjustment;
     BOOL wasInitializedWithURL;

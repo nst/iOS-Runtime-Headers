@@ -7,6 +7,7 @@
 @interface MCMDMPayload : MCPayload {
     int _accessRights;
     NSString *_checkInURLString;
+    BOOL _checkOutWhenRemoved;
     NSData *_identityPersistentID;
     NSString *_identityUUID;
     NSString *_serverURLString;
@@ -17,6 +18,7 @@
 
 @property(readonly) int accessRights;
 @property(readonly) NSString * checkInURLString;
+@property(readonly) BOOL checkOutWhenRemoved;
 @property(retain) NSData * identityPersistentID;
 @property(readonly) NSString * identityUUID;
 @property(readonly) NSArray * localizedAccessRightDescriptions;
@@ -30,8 +32,10 @@
 
 - (id)_invalidRightsError;
 - (id)_invalidTopicError;
+- (id)_nonHTTPSURLErrorForField:(id)arg1;
 - (int)accessRights;
 - (id)checkInURLString;
+- (BOOL)checkOutWhenRemoved;
 - (void)dealloc;
 - (id)description;
 - (id)identityPersistentID;

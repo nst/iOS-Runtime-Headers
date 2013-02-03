@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, <ADJSODelegate>, WebScriptObject;
 
-@interface ADSMSComposerJSO : ADJavaScriptObject {
+@interface ADSMSComposerJSO : ADJavaScriptObject <MFMessageComposeViewControllerDelegate> {
     <ADJSODelegate> *_delegate;
     WebScriptObject *_listener;
     NSString *_messageBody;

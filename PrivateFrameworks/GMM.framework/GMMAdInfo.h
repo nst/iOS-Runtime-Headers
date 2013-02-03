@@ -36,7 +36,6 @@
 - (BOOL)hasLinkText;
 - (BOOL)hasLinkUrl;
 - (id)headline;
-- (id)init;
 - (id)linkText;
 - (id)linkUrl;
 - (BOOL)readFrom:(id)arg1;

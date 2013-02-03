@@ -2,28 +2,43 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSMutableArray, NSMutableDictionary;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class NSOperationQueue, NSMutableDictionary, NSArray;
 
 @interface MFContactsSearchResultsModel : NSObject {
-    unsigned int _finishedSearchingForRecentRecipients : 1;
-    unsigned int _finishedSearchingForLocalContacts : 1;
-    unsigned int _finishedSearchingForRemoteContacts : 1;
-    unsigned int _favorMobileNumbers : 1;
+    BOOL _favorMobileNumbers;
+    struct __CFSet { } *_finishedResultTypes;
     NSMutableDictionary *_localSearchResultsByAddress;
-    NSMutableArray *_recentSearchResults;
+    int _preferredType;
+    NSOperationQueue *_queue;
+    NSArray *_recentSearchResults;
     NSMutableDictionary *_recipientsByAddress;
-    NSMutableArray *_searchResults;
+    int _resetCount;
+    struct __CFArray { } *_resultTypesPriorityOrder;
+    struct __CFArray { } *_resultTypesSortOrder;
     NSMutableDictionary *_serverSearchResultsByAddress;
 }
 
 - (void)_addBestRecipientsForRecipients:(id)arg1 excluding:(id)arg2 toArray:(id)arg3;
+- (void)_addResults:(id)arg1 ofType:(int)arg2;
+- (void)_appendSortedResultsOfType:(int)arg1 excluding:(id)arg2 toResults:(id)arg3;
 - (id)_bestRecipientForAddress:(id)arg1 fallback:(id)arg2;
+- (id)_dictionaryForResultType:(int)arg1;
+- (BOOL)_didFinishSearchForType:(int)arg1;
+- (void)_enumerateSearchResultTypesInSortOrderUsingBlock:(id)arg1;
+- (void)_finishSearchOfType:(int)arg1;
+- (BOOL)_isResetting;
+- (BOOL)_shouldProcessResultsAfterFinishingType:(int)arg1;
 - (void)addResults:(id)arg1 ofType:(int)arg2;
 - (void)dealloc;
-- (void)finishedAddingResultsOfType:(int)arg1;
 - (id)init;
 - (id)initWithFavorMobileNumbers:(BOOL)arg1;
-- (void)resetIncludingResults:(BOOL)arg1;
-- (id)results;
+- (id)initWithResultTypeSortOrderComparator:(int (*)())arg1 resultTypePriorityComparator:(int (*)())arg2 favorMobileNumbers:(BOOL)arg3;
+- (void)processAddedResultsOfType:(int)arg1 completion:(id)arg2;
+- (void)reset;
 
 @end

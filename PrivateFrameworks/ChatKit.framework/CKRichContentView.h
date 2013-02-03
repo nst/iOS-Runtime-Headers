@@ -8,6 +8,7 @@
 
 @property id richContentDelegate;
 
+- (id)DOMDocument;
 - (void)_wvHelperThawSelectionTag;
 - (void)_wvInsertHTML:(id)arg1;
 - (void)_wvRegisterForDOMEvents;
@@ -19,8 +20,7 @@
 - (id)html;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertHTML:(id)arg1;
-- (void)insertImage:(id)arg1 ID:(id)arg2 URL:(id)arg3;
-- (id)nodeForImage:(id)arg1 ID:(id)arg2 URL:(id)arg3;
+- (id)nodeForImageSize:(struct CGSize { float x1; float x2; })arg1 ID:(id)arg2 URL:(id)arg3;
 - (id)richContentDelegate;
 - (void)setHTML:(id)arg1;
 - (void)setRichContentDelegate:(id)arg1;

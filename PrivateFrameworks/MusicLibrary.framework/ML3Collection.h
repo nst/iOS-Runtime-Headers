@@ -5,8 +5,16 @@
 @interface ML3Collection : ML3Entity {
 }
 
++ (id)artworkCacheIDProperty;
 + (id)countedPropertyForMPMediaEntityProperty:(id)arg1;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
 + (void)initialize;
++ (id)propertiesForGroupingKey;
++ (id)trackForeignPersistentID;
++ (BOOL)updateRepresentativeItemPersistentIDsInLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3;
+
+- (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
+- (void)updateCloudStatus;
+- (void)updateTrackValues:(id)arg1;
 
 @end

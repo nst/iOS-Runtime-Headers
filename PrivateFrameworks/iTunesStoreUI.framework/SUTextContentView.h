@@ -10,9 +10,6 @@
 
 @property(retain) NSString * placeholder;
 
-+ (void)_initializeSafeCategory;
-
-- (id)accessibilityLabel;
 - (BOOL)becomeFirstResponder;
 - (void)dealloc;
 - (void)keyboardInputChangedSelection:(id)arg1;

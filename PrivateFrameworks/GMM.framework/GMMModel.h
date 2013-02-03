@@ -20,7 +20,6 @@
 - (id)dictionaryRepresentation;
 - (BOOL)hasDepthMap;
 - (BOOL)hasPanoMap;
-- (id)init;
 - (id)panoMap;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDepthMap:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSString, NSInputStream, NSDictionary, NSData, NSURL;
+@class NSArray, NSString, NSData, NSDictionary, NSInputStream, NSURL;
 
 @interface SSMutableURLRequestProperties : SSURLRequestProperties {
 }
@@ -18,17 +18,16 @@
 @property(copy) id URLBagURLBlock;
 @property(copy) NSArray * URLs;
 @property int allowedRetryCount;
-@property int assetType;
 @property unsigned int cachePolicy;
 @property(copy) NSString * clientIdentifier;
 @property long long expectedContentLength;
 @property(copy) NSDictionary * requestParameters;
 @property BOOL shouldProcessProtocol;
 @property double timeoutInterval;
+@property(copy) NSArray * userAgentComponents;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setAllowedRetryCount:(int)arg1;
-- (void)setAssetType:(int)arg1;
 - (void)setCachePolicy:(unsigned int)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setExpectedContentLength:(long long)arg1;
@@ -45,6 +44,7 @@
 - (void)setURLBagType:(int)arg1;
 - (void)setURLBagURLBlock:(id)arg1;
 - (void)setURLs:(id)arg1;
+- (void)setUserAgentComponents:(id)arg1;
 - (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
 - (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
 

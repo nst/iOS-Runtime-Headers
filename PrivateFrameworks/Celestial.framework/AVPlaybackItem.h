@@ -22,7 +22,8 @@
     struct OpaqueFigPlaybackItem { } *_fpItem;
     NSDictionary *_inspectionNotificationInfo;
     BOOL _isInPlayQueue;
-    BOOL _isPreparingForInspection;
+    BOOL _isPreparingForInspectionAccurateDuration;
+    BOOL _isPreparingForInspectionInitialSamples;
     NSDictionary *_lyricsNotificationInfo;
     NSDictionary *_playToEndNotificationInfo;
     NSDictionary *_streamStateNotificationInfo;
@@ -30,7 +31,9 @@
 
 @property(retain) NSDictionary * inspectionNotificationInfo;
 @property BOOL isInPlayQueue;
-@property BOOL isPreparingForInspection;
+@property(readonly) BOOL isPreparingForInspection;
+@property BOOL isPreparingForInspectionAccurateDuration;
+@property BOOL isPreparingForInspectionInitialSamples;
 @property(retain) NSDictionary * lyricsNotificationInfo;
 @property(retain) NSDictionary * playToEndNotificationInfo;
 @property(retain) NSDictionary * streamStateNotificationInfo;
@@ -58,6 +61,8 @@
 - (id)inspectionNotificationInfo;
 - (BOOL)isInPlayQueue;
 - (BOOL)isPreparingForInspection;
+- (BOOL)isPreparingForInspectionAccurateDuration;
+- (BOOL)isPreparingForInspectionInitialSamples;
 - (id)itemAttribute:(id)arg1 forKey:(id)arg2;
 - (id)lyricsNotificationInfo;
 - (void)makeReadyForInspection;
@@ -71,7 +76,8 @@
 - (void)setBookmarkTime:(double)arg1;
 - (void)setInspectionNotificationInfo:(id)arg1;
 - (void)setIsInPlayQueue:(BOOL)arg1;
-- (void)setIsPreparingForInspection:(BOOL)arg1;
+- (void)setIsPreparingForInspectionAccurateDuration:(BOOL)arg1;
+- (void)setIsPreparingForInspectionInitialSamples:(BOOL)arg1;
 - (void)setItemAttribute:(id)arg1 value:(id)arg2 forKey:(id)arg3 error:(id*)arg4;
 - (void)setLyricsNotificationInfo:(id)arg1;
 - (void)setPlayToEndNotificationInfo:(id)arg1;

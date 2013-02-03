@@ -8,7 +8,10 @@
 }
 
 - (int)bodyFormat;
+- (id)description;
+- (unsigned int)hash;
 - (id)initRequestForBodyFormat:(int)arg1 withBodySizeLimit:(int)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (int)maxSize;
 
 @end

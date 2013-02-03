@@ -12,6 +12,7 @@
 @property int outputType;
 @property(copy) ISPropertyListProvider * propertyListDataProvider;
 
+- (void)_loadPersonalizedStoreOffersForPage:(id)arg1;
 - (void)dealloc;
 - (int)outputType;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;

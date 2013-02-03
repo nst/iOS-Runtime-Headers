@@ -22,6 +22,7 @@
 - (int)day;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)icsString;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithYear:(int)arg1 month:(int)arg2 day:(int)arg3;
 - (int)month;

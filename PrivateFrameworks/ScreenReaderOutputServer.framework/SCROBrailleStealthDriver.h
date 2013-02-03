@@ -11,6 +11,7 @@
     int _statusSize;
 }
 
+- (int)brailleInputMode;
 - (void)dealloc;
 - (id)getInputEvents;
 - (id)init;

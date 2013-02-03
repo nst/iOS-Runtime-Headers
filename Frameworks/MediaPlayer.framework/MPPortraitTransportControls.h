@@ -12,10 +12,10 @@
 
 - (void)_layoutBasicParts;
 - (void)_layoutComplexParts;
-- (id)createVolumeSlider;
 - (void)dealloc;
 - (id)init;
 - (void)layoutSubviews;
+- (id)newVolumeSlider;
 - (void)reloadForAdditions:(id)arg1 removals:(id)arg2 animate:(BOOL)arg3;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 

@@ -5,7 +5,7 @@
 @interface CFXPreferencesSource : NSObject {
     struct __CFDictionary { } *_dict;
     BOOL _disabled;
-    int _generationCount;
+    long _generationCount;
 }
 
 - (struct __CFDictionary { }*)copyDictionary;
@@ -15,6 +15,7 @@
 - (long)generationCount;
 - (void*)getValueForKey:(struct __CFString { }*)arg1;
 - (id)init;
+- (void)setDisabled:(BOOL)arg1;
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (unsigned char)synchronize;
 

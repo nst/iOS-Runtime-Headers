@@ -9,6 +9,8 @@
 + (id)defaultInstance;
 + (void)initialize;
 
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -18,7 +20,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)predicateFormat;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 

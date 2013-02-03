@@ -14,7 +14,10 @@
 
 @property(readonly) BOOL connectionRequired;
 @property <IMReachabilityDelegate> * delegate;
-@property(readonly) unsigned int flags;
+@property unsigned int flags;
+@property BOOL gettingFlags;
+@property(retain) NSString * reachabilityDescription;
+@property void* reachabilityRef;
 @property(readonly) unsigned int status;
 
 + (id)reachabilityForInternetConnection;
@@ -31,9 +34,16 @@
 - (id)delegate;
 - (id)description;
 - (unsigned int)flags;
+- (BOOL)gettingFlags;
 - (id)initWithLocalSocketAddress:(id)arg1 remoteSocketAddress:(id)arg2 delegate:(id)arg3;
 - (id)initWithRemoteHost:(id)arg1 delegate:(id)arg2;
+- (id)reachabilityDescription;
+- (void*)reachabilityRef;
 - (void)setDelegate:(id)arg1;
+- (void)setFlags:(unsigned int)arg1;
+- (void)setGettingFlags:(BOOL)arg1;
+- (void)setReachabilityDescription:(id)arg1;
+- (void)setReachabilityRef:(void*)arg1;
 - (unsigned int)status;
 
 @end

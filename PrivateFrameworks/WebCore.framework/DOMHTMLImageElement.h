@@ -46,6 +46,7 @@
 - (id)name;
 - (int)naturalHeight;
 - (int)naturalWidth;
+- (void)recursivelyRemoveMailAttributes;
 - (void)setAlign:(id)arg1;
 - (void)setAlt:(id)arg1;
 - (void)setBorder:(id)arg1;

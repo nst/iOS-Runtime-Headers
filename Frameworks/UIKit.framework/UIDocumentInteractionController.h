@@ -33,9 +33,6 @@
         unsigned int delegateCanPerformAction : 1; 
         unsigned int delegatePerformAction : 1; 
         unsigned int delegateUnzipURL : 1; 
-        unsigned int delegateShouldRemoveUnzippedDocument : 1; 
-        unsigned int delegateDidUnzipDocumentAtURL : 1; 
-    NSString *_UTI;
     int _alternateOpenButtonIndex;
     id _annotation;
     id _applicationToOpen;
@@ -77,6 +74,9 @@
 @property BOOL shouldUnzipDocument;
 @property(retain) NSString * uniqueIdentifier;
 
++ (id)_UTIForFilename:(id)arg1;
++ (id)_applicationsForFilename:(id)arg1 UTI:(id)arg2;
++ (struct dispatch_queue_s { }*)_unzippingQueue;
 + (void)initialize;
 + (id)interactionControllerWithURL:(id)arg1;
 
@@ -84,9 +84,11 @@
 - (id)UTI;
 - (id)_applicationToOpen;
 - (id)_applications:(BOOL)arg1;
+- (BOOL)_canPreviewUnzippedDocument;
 - (BOOL)_canUnzipDocument;
-- (void)_cleanUpUnzippedDocument;
+- (BOOL)_canUnzipDocumentAndPresentOptions;
 - (BOOL)_delegateExistsAndImplementsRequiredMethods:(id*)arg1;
+- (BOOL)_documentNeedsHelpUnzippingForPreview;
 - (void)_finishedCopyingResource;
 - (void)_interfaceOrientationWillChange:(id)arg1;
 - (void)_invalidate;
@@ -103,10 +105,8 @@
 - (BOOL)_setupForOpenInMenu;
 - (BOOL)_setupForOptionsMenu;
 - (BOOL)_setupPreviewController;
-- (void)_unzipDocument;
-- (void)_unzipDocumentToDirectory:(id)arg1;
+- (void)_unzipFileAndSetupPayload:(id)arg1;
 - (id)_unzippedDocumentURL;
-- (void)_zipOperationCompleted;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)actionSheetCancel:(id)arg1;

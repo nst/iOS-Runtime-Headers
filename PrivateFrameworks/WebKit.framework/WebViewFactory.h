@@ -7,35 +7,4 @@
 
 + (void)createSharedFactory;
 
-- (id)AXMenuListActionVerb;
-- (id)AXMenuListPopupActionVerb;
-- (id)copyImageUnknownFileLabel;
-- (id)crashedPluginText;
-- (id)defaultLanguageCode;
-- (id)fileButtonChooseFileLabel;
-- (id)fileButtonNoFileSelectedLabel;
-- (id)htmlSelectMultipleItems:(int)arg1;
-- (id)imageTitleForFilename:(id)arg1 width:(int)arg2 height:(int)arg3;
-- (id)inputElementAltText;
-- (id)localizedMediaControlElementHelpText:(id)arg1;
-- (id)localizedMediaControlElementString:(id)arg1;
-- (id)localizedMediaTimeDescription:(float)arg1;
-- (id)mediaElementLiveBroadcastStateText;
-- (id)mediaElementLoadingStateText;
-- (id)missingPluginText;
-- (id)multipleFileUploadTextForNumberOfFiles:(unsigned int)arg1;
-- (id)pluginsInfo;
-- (void)refreshPlugins;
-- (id)resetButtonDefaultLabel;
-- (id)searchableIndexIntroduction;
-- (id)submitButtonDefaultLabel;
-- (id)unknownFileSizeText;
-- (id)validationMessagePatternMismatchText;
-- (id)validationMessageRangeOverflowText;
-- (id)validationMessageRangeUnderflowText;
-- (id)validationMessageStepMismatchText;
-- (id)validationMessageTooLongText;
-- (id)validationMessageTypeMismatchText;
-- (id)validationMessageValueMissingText;
-
 @end

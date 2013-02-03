@@ -54,7 +54,6 @@
 - (int)compareZDescending:(id)arg1;
 - (id)copyAndSplitChildrenAtIndex:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)countOfClass:(Class)arg1;
 - (id)describeBounds;
 - (void)fitBoundsToChildren;
 - (float)fontSize;
@@ -83,6 +82,7 @@
 - (BOOL)shrinksWithChildren;
 - (void)sortUsingSelector:(SEL)arg1;
 - (id)takeChildren;
+- (id)takeChildrenAmong:(id)arg1;
 - (float)top;
 - (void)translateObjectYBy:(float)arg1;
 

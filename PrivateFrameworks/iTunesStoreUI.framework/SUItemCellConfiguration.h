@@ -5,9 +5,6 @@
 @interface SUItemCellConfiguration : SUArtworkCellConfiguration {
 }
 
-+ (void)_initializeSafeCategory;
 + (id)copyDefaultContext;
-
-- (id)_accessibilityVideoIconString;
 
 @end

@@ -7,11 +7,14 @@
 @interface CKVideoMediaObject : CKAVMediaObject {
     NSDictionary *_transcodeOptions;
     NSString *_transcodePath;
+    UIImage *_videoImage;
     UIImage *_videoPreviewImage;
 }
 
++ (id)mimeTypesAllowedForMMS;
 + (id)mimeTypesToFileExtensions;
 
+- (void)_generateImageOnMainThreadForVideoFile:(id)arg1;
 - (void)_generatePreviewOnMainThreadForVideoFile:(id)arg1;
 - (id)_newPreviewImageForIncomingVideoWithTailStyle:(int)arg1;
 - (id)_newPreviewImageWithTailStyle:(int)arg1;
@@ -27,6 +30,7 @@
 - (int)mediaType;
 - (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
 - (id)optionsForMedia;
+- (void)prepareForTranscode;
 - (BOOL)shouldGeneratePreviewInBackground;
 - (BOOL)shouldTranscodeForMMS;
 - (unsigned long long)sizeInBytes;
@@ -37,5 +41,6 @@
 - (double)transcodeStartTime;
 - (id)transcodedFilename;
 - (id)transcodedPathExtension;
+- (id)videoImage;
 
 @end

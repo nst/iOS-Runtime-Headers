@@ -32,6 +32,9 @@
             float width; 
             float height; 
         } size; 
+    struct CGPoint { 
+        float x; 
+        float y; 
     UIKeyboardEmojiCategoriesControl *_categoriesView;
     UIKeyboardEmojiCategoryController *_categoryController;
     } _categoryFrame;
@@ -41,25 +44,24 @@
     UIKeyboardEmojiScrollView *_emojiView;
     UIButton *_globeButton;
     } _globeFrame;
+    } _initialDragPoint;
     UIKeyboardEmojiRecentsController *_recentsController;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } categoryFrame;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } deleteFrame;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } globeFrame;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } categoryFrame;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } deleteFrame;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } globeFrame;
 
-+ (void)_initializeSafeCategory;
 + (void)emojiKeyboardPreferencesChanged;
 + (id)emojiLayout;
 + (BOOL)isLandscape;
 + (id)localizedStringForKey:(id)arg1;
 
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)accessibilityContainerElements;
 - (void)categoryChanged;
 - (void)categoryChangedNoSounds;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })categoryFrame;
 - (void)categoryReselected;
+- (void)clearUnusedObjects;
 - (void)deactivateActiveKeys;
 - (void)dealloc;
 - (id)defaultsDictionary;
@@ -67,12 +69,14 @@
 - (void)deleteEnd;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })deleteFrame;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)emojiForCodePoint:(id)arg1;
+- (id)emojiForPrivateCodePoint:(id)arg1;
 - (void)emojiSelected:(id)arg1;
 - (void)globeDown;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })globeFrame;
 - (void)globeLongPressGestureRecognized:(id)arg1;
 - (void)globeSwitch;
+- (void)handleFrameChangeNotification:(id)arg1;
+- (SEL)handlerForNotification:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)recents;

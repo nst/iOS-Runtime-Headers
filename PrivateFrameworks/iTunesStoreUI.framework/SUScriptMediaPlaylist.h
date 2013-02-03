@@ -9,6 +9,7 @@
 
 @property(readonly) MPMediaPlaylist * nativePlaylist;
 
++ (void)initialize;
 + (int)nativePlaylistAttributesForScriptPlaylistAttributes:(id)arg1;
 + (id)nativePropertyForScriptProperty:(id)arg1;
 + (id)scriptPlaylistAttributesForNativePlaylistAttributes:(int)arg1;

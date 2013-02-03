@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class FTRegion, NSArray, NSString, NSDictionary;
+@class NSArray, FTRegion, NSString, NSDictionary;
 
 @interface FTRegion : NSObject {
     NSDictionary *_dictionary;
@@ -10,6 +10,8 @@
     NSArray *_subRegions;
 }
 
+@property(retain) NSDictionary * _dictionary;
+@property(retain) FTRegion * _parentRegion;
 @property(readonly) NSString * basePhoneNumber;
 @property(readonly) NSString * isoCode;
 @property(readonly) NSString * label;
@@ -17,7 +19,9 @@
 @property(readonly) NSString * regionID;
 @property(readonly) NSArray * subRegions;
 
+- (id)_dictionary;
 - (id)_initWithDictionary:(id)arg1;
+- (id)_parentRegion;
 - (void)_setParentRegion:(id)arg1;
 - (id)basePhoneNumber;
 - (void)dealloc;
@@ -29,6 +33,8 @@
 - (id)regionID;
 - (id)regionWithID:(id)arg1;
 - (BOOL)search:(id)arg1 withResults:(id)arg2;
+- (void)set_dictionary:(id)arg1;
+- (void)set_parentRegion:(id)arg1;
 - (id)subRegions;
 
 @end

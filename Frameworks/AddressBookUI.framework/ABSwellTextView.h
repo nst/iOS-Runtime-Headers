@@ -30,7 +30,6 @@
 @property NSString * text;
 @property UIColor * textColor;
 
-+ (void)_initializeSafeCategory;
 + (float)lineHeightWithFont:(id)arg1;
 
 - (void)_beginPinningInputViews;
@@ -38,7 +37,6 @@
 - (void)_endPinningInputViews;
 - (void)abUITextView:(id)arg1 contentSizeChanged:(struct CGSize { float x1; float x2; })arg2;
 - (float)abUITextView:(id)arg1 heightForContentSize:(struct CGSize { float x1; float x2; })arg2;
-- (id)accessibilityValue;
 - (BOOL)allowsEditing;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;

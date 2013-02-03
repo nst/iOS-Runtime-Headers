@@ -6,9 +6,11 @@
 
 @interface CoreDAVHrefItem : CoreDAVLeafItem {
     NSURL *_baseURL;
+    int _writeStyle;
 }
 
 @property(retain) NSURL * baseURL;
+@property int writeStyle;
 
 - (id)baseURL;
 - (void)dealloc;
@@ -19,6 +21,8 @@
 - (id)payloadAsFullURL;
 - (id)payloadAsOriginalURL;
 - (void)setBaseURL:(id)arg1;
+- (void)setWriteStyle:(int)arg1;
 - (void)write:(id)arg1;
+- (int)writeStyle;
 
 @end

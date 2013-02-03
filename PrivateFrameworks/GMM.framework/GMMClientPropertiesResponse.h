@@ -5,19 +5,19 @@
 @class NSString;
 
 @interface GMMClientPropertiesResponse : PBCodable {
-    NSString *_new_cohort;
+    NSString *_replacementCohort;
 }
 
-@property(readonly) BOOL hasNew_cohort;
-@property(retain) NSString * new_cohort;
+@property(readonly) BOOL hasReplacementCohort;
+@property(retain) NSString * replacementCohort;
 
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasNew_cohort;
-- (id)init;
-- (id)new_cohort;
+- (id)dictionaryRepresentation;
+- (BOOL)hasReplacementCohort;
 - (BOOL)readFrom:(id)arg1;
-- (void)setNew_cohort:(id)arg1;
+- (id)replacementCohort;
+- (void)setReplacementCohort:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

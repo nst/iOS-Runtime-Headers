@@ -9,11 +9,13 @@
     UIMoreListCellLayoutManager *_layoutManager;
     UIBarButtonItem *_moreEditButtonItem;
     NSArray *_moreViewControllers;
+    BOOL _moreViewControllersChanged;
     UITableView *_table;
 }
 
 @property BOOL allowsCustomizing;
 @property(retain) NSArray * moreViewControllers;
+@property BOOL moreViewControllersChanged;
 
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_layoutCells;
@@ -23,9 +25,11 @@
 - (id)init;
 - (void)loadView;
 - (id)moreViewControllers;
+- (BOOL)moreViewControllersChanged;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)setAllowsCustomizing:(BOOL)arg1;
 - (void)setMoreViewControllers:(id)arg1;
+- (void)setMoreViewControllersChanged:(BOOL)arg1;
 - (id)tabBarItem;
 - (id)table;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

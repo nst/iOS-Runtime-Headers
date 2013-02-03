@@ -5,6 +5,8 @@
 @interface NSPlaceholderMutableString : NSMutableString {
 }
 
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (id)autorelease;
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
 - (void)dealloc;

@@ -11,7 +11,7 @@
     int _zoomLevel;
 }
 
-@property(readonly) BOOL hasTextSize;
+@property BOOL hasTextSize;
 @property int textSize;
 @property int tileIndexX;
 @property int tileIndexY;
@@ -22,8 +22,8 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasTextSize;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
+- (void)setHasTextSize:(BOOL)arg1;
 - (void)setTextSize:(int)arg1;
 - (void)setTileIndexX:(int)arg1;
 - (void)setTileIndexY:(int)arg1;

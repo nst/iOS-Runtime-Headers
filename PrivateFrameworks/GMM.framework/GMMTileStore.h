@@ -3,10 +3,7 @@
  */
 
 @interface GMMTileStore : NSObject {
-    struct TileStore { long long x1; struct _opaque_pthread_mutex_t { 
-            long __sig; 
-            BOOL __opaque[40]; 
-        } x2; char *x3; struct sqlite3 {} *x4; struct sqlite3_stmt {} *x5; struct sqlite3_stmt {} *x6; struct sqlite3_stmt {} *x7; struct sqlite3_stmt {} *x8; struct sqlite3_stmt {} *x9; struct sqlite3_stmt {} *x10; struct sqlite3_stmt {} *x11; struct sqlite3_stmt {} *x12; } *_tileStore;
+    struct TileStore { long long x1; struct _opaque_pthread_mutex_t { long x_2_1_1; BOOL x_2_1_2[40]; } x2; char *x3; struct sqlite3 {} *x4; struct sqlite3_stmt {} *x5; struct sqlite3_stmt {} *x6; struct sqlite3_stmt {} *x7; struct sqlite3_stmt {} *x8; struct sqlite3_stmt {} *x9; struct sqlite3_stmt {} *x10; struct sqlite3_stmt {} *x11; struct sqlite3_stmt {} *x12; } *_tileStore;
 }
 
 @property int tileEdition;

@@ -11,6 +11,7 @@
     EDFormula *mFormula;
     EDName *mParentName;
     int mRowOffset;
+    EDFormula *mTokensToClean;
 }
 
 - (void)addOffsetsToRow:(int*)arg1 rowRelative:(bool)arg2 column:(int*)arg3 columnRelative:(bool)arg4;
@@ -27,7 +28,6 @@
 - (void)cleanFormula:(id)arg1 sheet:(id)arg2;
 - (bool)cleanFunc:(unsigned int)arg1;
 - (bool)cleanFuncVar:(unsigned int)arg1;
-- (bool)cleanIsect:(unsigned int)arg1 removedTokenCount:(unsigned int*)arg2;
 - (bool)cleanName:(unsigned int)arg1 nameIndex:(unsigned int)arg2 sheetIndex:(unsigned int)arg3;
 - (bool)cleanName:(unsigned int)arg1;
 - (bool)cleanNameX:(unsigned int)arg1;
@@ -36,7 +36,7 @@
 - (bool)cleanRef:(unsigned int)arg1;
 - (bool)cleanTokenAtIndex:(unsigned int)arg1 removedTokenCount:(unsigned int*)arg2;
 - (bool)cleanUnion:(unsigned int)arg1;
-- (bool)combineCellReferences:(unsigned int)arg1 intersection:(bool)arg2 removedTokenCount:(unsigned int*)arg3;
+- (bool)combineCellReferences:(unsigned int)arg1 removedTokenCount:(unsigned int*)arg2;
 - (void)dealloc;
 - (id)extractFormulaToCleanFromSharedFormula:(id)arg1;
 - (bool)isLinkReferenceIndexSupported:(unsigned int)arg1 allowExternal:(bool)arg2;

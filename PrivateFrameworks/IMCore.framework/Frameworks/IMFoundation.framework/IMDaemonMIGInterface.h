@@ -5,9 +5,11 @@
 @class <IMDaemonMIGInterfaceDelegate>;
 
 @interface IMDaemonMIGInterface : NSObject {
+    unsigned int _activePort;
+    struct dispatch_source_s { } *_activeSource;
     id _delegate;
     unsigned int _port;
-    struct dispatch_queue_s { } *_queue;
+    BOOL _shuttingDown;
     struct dispatch_source_s { } *_source;
 }
 
@@ -15,12 +17,12 @@
 
 + (id)sharedInstance;
 
-- (void)_portDidBecomeInvalid;
+- (void)__setupServer;
 - (void)acceptIncomingGrantRequests;
-- (id)autorelease;
+- (BOOL)allowsWeakReference;
 - (id)delegate;
-- (oneway void)release;
-- (unsigned int)retainCount;
+- (void)denyIncomingGrantRequests;
+- (BOOL)retainWeakReference;
 - (void)setDelegate:(id)arg1;
 
 @end

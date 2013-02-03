@@ -118,6 +118,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayInputAccessMode:(int)arg1;
 - (void)setLineDescriptorDisplayCallbackEnabled:(BOOL)arg1;
+- (void)setMainAttributedString:(id)arg1 forceUpdate:(BOOL)arg2;
 - (void)setMainAttributedString:(id)arg1;
 - (void)setMasterStatusCellIndex:(long)arg1;
 - (void)setPrepareToMemorizeNextKey:(BOOL)arg1 immediate:(BOOL)arg2 forDisplayWithToken:(long)arg3;

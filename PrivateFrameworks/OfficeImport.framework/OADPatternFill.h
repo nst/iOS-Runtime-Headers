@@ -25,7 +25,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFgColorOverridden;
 - (BOOL)isPatternOverridden;
-- (id)namedImageDataWithDrawingGroup:(id)arg1;
+- (id)namedImageDataWithBlipCollection:(id)arg1;
 - (id)pattern;
 - (void)setBgColor:(id)arg1;
 - (void)setColor:(id)arg1;

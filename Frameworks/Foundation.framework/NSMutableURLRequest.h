@@ -14,9 +14,12 @@
 - (void)addValue:(id)arg1 forHTTPHeaderField:(id)arg2;
 - (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void*)copyXPCEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
+- (id)initWithXPCEncoding:(void*)arg1;
 - (unsigned int)requestPriority;
 - (void)setAllHTTPHeaderFields:(id)arg1;
+- (void)setBoundInterfaceIdentifier:(id)arg1;
 - (void)setBuildVersion:(id)arg1;
 - (void)setCachePolicy:(unsigned int)arg1;
 - (void)setContentDispositionEncodingFallbackArray:(id)arg1;
@@ -33,6 +36,7 @@
 - (void)setHTTPShouldUsePipelining:(BOOL)arg1;
 - (void)setHTTPUserAgent:(id)arg1;
 - (void)setInternal:(BOOL)arg1;
+- (void)setLocale:(id)arg1;
 - (void)setMainDocumentURL:(id)arg1;
 - (void)setNetworkServiceType:(unsigned int)arg1;
 - (void)setPlayerID:(id)arg1 authToken:(id)arg2;

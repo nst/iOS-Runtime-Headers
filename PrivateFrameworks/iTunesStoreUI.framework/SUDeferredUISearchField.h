@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, UIFont;
+@class NSString;
 
 @interface SUDeferredUISearchField : UISearchField <SUDeferredUIView> {
     struct CGRect { 
@@ -15,7 +15,7 @@
             float height; 
         } size; 
     int _deferredClearButtonMode;
-    UIFont *_deferredFont;
+    id _deferredFont;
     } _deferredFrame;
     float _deferredPaddingLeft;
     float _deferredPaddingTop;

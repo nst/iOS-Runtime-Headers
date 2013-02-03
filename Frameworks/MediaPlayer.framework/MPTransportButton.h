@@ -2,14 +2,17 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+@class MPAVController;
+
 @interface MPTransportButton : MPButton {
+    MPAVController *player;
 }
 
-+ (void)_initializeSafeCategory;
+@property(retain) MPAVController * player;
 
 - (id)_automationID;
-- (id)accessibilityHint;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
+- (void)dealloc;
+- (id)player;
+- (void)setPlayer:(id)arg1;
 
 @end

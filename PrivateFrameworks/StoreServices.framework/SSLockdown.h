@@ -16,6 +16,7 @@
 
 - (void*)_copyLocalValueForKey:(struct __CFString { }*)arg1 domain:(struct __CFString { }*)arg2;
 - (id)_localDictionaryDirectory;
+- (id)_localDictionaryFileName;
 - (id)_ntsLocalDictionary;
 - (BOOL)_ntsSaveLocalDictionary;
 - (void)_setLocalValue:(void*)arg1 forKey:(struct __CFString { }*)arg2 domain:(struct __CFString { }*)arg3;

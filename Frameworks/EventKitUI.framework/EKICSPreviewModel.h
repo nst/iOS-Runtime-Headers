@@ -8,6 +8,7 @@
     NSData *_data;
     EKEventStore *_destStore;
     NSMutableArray *_importedEvents;
+    unsigned int _options;
     EKEventStore *_tempStore;
     NSMutableArray *_unimportedEvents;
 }
@@ -27,7 +28,7 @@
 - (id)importEvent:(id)arg1 intoCalendar:(id)arg2;
 - (int)importedEventCount;
 - (id)importedEvents;
-- (id)initWithICSData:(id)arg1 eventStore:(id)arg2;
+- (id)initWithICSData:(id)arg1 eventStore:(id)arg2 options:(unsigned int)arg3;
 - (int)totalEventCount;
 - (int)unimportedEventCount;
 - (id)unimportedEvents;

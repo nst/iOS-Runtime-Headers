@@ -5,13 +5,13 @@
 @class NSError, AVRunLoopCondition, AVCaptureFigAudioDevice, NSMutableArray, AVWeakReference, AVCaptureFigVideoDevice, NSString, AVCaptureVideoPreviewLayer, NSMutableDictionary;
 
 @interface AVCaptureSessionInternal : NSObject {
-    NSMutableArray *activeConnections;
     AVCaptureFigAudioDevice *audioDevice;
     int beginConfigRefCount;
     NSMutableDictionary *captureOptions;
     NSMutableArray *connections;
     NSMutableArray *inputs;
     BOOL interrupted;
+    NSMutableArray *liveConnections;
     NSMutableArray *outputs;
     NSMutableDictionary *previousFigRecorderOptions;
     struct OpaqueFigRecorder { } *recorder;

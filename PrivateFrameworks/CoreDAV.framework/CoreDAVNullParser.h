@@ -12,7 +12,6 @@
 
 - (void)dealloc;
 - (id)parserError;
-- (BOOL)processData:(id)arg1;
-- (BOOL)task:(id)arg1 receivedData:(id)arg2;
+- (BOOL)processData:(id)arg1 forTask:(id)arg2;
 
 @end

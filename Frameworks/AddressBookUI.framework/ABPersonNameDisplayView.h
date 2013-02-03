@@ -5,6 +5,7 @@
 @class ABNamePropertyGroup, UILabel, NSString, ABStyleProvider, UIView, UIFont;
 
 @interface ABPersonNameDisplayView : ABPasteboardControl {
+    BOOL _alignOnBottom;
     NSString *_customHeadline;
     NSString *_customMessage;
     NSString *_customMessageDetail;
@@ -23,6 +24,7 @@
     UILabel *_tagLineLabel;
 }
 
+@property BOOL alignOnBottom;
 @property(retain) UIView * customMessageView;
 @property(copy) NSString * headline;
 @property(copy) NSString * message;
@@ -51,6 +53,7 @@
 - (void)abMenuControllerWillHide;
 - (void)abMenuControllerWillShow:(id)arg1;
 - (BOOL)abShouldShowMenu;
+- (BOOL)alignOnBottom;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)copy:(id)arg1;
 - (id)customMessageView;
@@ -69,6 +72,7 @@
 - (int)primaryProperty;
 - (id)primaryPropertyFormattingCountryCode;
 - (void)reloadNameDataAnimated:(BOOL)arg1;
+- (void)setAlignOnBottom:(BOOL)arg1;
 - (void)setCustomMessageView:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHeadline:(id)arg1;

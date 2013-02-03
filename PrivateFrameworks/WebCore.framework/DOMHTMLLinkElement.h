@@ -19,6 +19,7 @@
 @property(copy) NSString * target;
 @property(copy) NSString * type;
 
+- (BOOL)_mediaQueryMatches;
 - (BOOL)_mediaQueryMatchesForOrientation:(int)arg1;
 - (id)absoluteLinkURL;
 - (id)charset;

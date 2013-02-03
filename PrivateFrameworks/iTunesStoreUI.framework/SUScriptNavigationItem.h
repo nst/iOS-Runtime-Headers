@@ -6,16 +6,22 @@
 
 @interface SUScriptNavigationItem : SUScriptObject {
     id _scriptLeftItem;
+    id _scriptLeftMostItem;
     id _scriptRightItem;
 }
 
 @property id hidesBackButton;
 @property(retain) <SUScriptNavigationItem> * leftItem;
+@property(retain) <SUScriptNavigationItem> * leftMostItem;
 @property(readonly) UINavigationItem * nativeNavigationItem;
 @property(retain) NSString * prompt;
 @property(retain) <SUScriptNavigationItem> * rightItem;
 @property(retain) NSString * title;
 
++ (void)_disconnectNavigationItem:(id)arg1 scriptObject:(id)arg2;
++ (id)_rootScriptObjectForObject:(id)arg1;
++ (void)disconnectNavigationItem:(id)arg1 forScriptObject:(id)arg2;
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
@@ -32,6 +38,7 @@
 - (void)_setPrompt:(id)arg1;
 - (void)_setRightItem:(id)arg1 animated:(BOOL)arg2;
 - (void)_setScriptLeftItem:(id)arg1;
+- (void)_setScriptLeftMostItem:(id)arg1;
 - (void)_setScriptRightItem:(id)arg1;
 - (void)_setTitle:(id)arg1;
 - (id)attributeKeys;
@@ -40,6 +47,7 @@
 - (id)init;
 - (id)initWithNativeNavigationItem:(id)arg1;
 - (id)leftItem;
+- (id)leftMostItem;
 - (id)nativeNavigationItem;
 - (id)prompt;
 - (id)rightItem;
@@ -48,6 +56,8 @@
 - (void)setHidesBackButton:(id)arg1;
 - (void)setLeftItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftItem:(id)arg1;
+- (void)setLeftMostItem:(id)arg1 animated:(BOOL)arg2;
+- (void)setLeftMostItem:(id)arg1;
 - (void)setPrompt:(id)arg1;
 - (void)setRightItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setRightItem:(id)arg1;

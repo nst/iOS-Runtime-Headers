@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class NSNumber, NSString;
+@class IMAVMicrophone, NSString, IMAVCamera;
 
 @interface IMAVInterface : NSObject {
     id _delegate;
     BOOL _keepCameraRunning;
 }
 
+@property(readonly) id _controller;
+@property(setter=_setCurrentCamera:,retain) IMAVCamera * _currentCamera;
+@property(setter=_setCurrentMicrophone:,retain) IMAVMicrophone * _currentMicrophone;
+@property(readonly) BOOL _previewStarted;
 @property unsigned int cameraOrientation;
 @property unsigned int cameraType;
 @property(readonly) unsigned long long capabilities;
@@ -22,7 +26,6 @@
 @property void* localVideoBackLayer;
 @property void* localVideoLayer;
 @property unsigned int maxBitrate;
-@property(readonly) NSNumber * natType;
 @property(readonly) unsigned int overallChatState;
 @property void* remoteVideoBackLayer;
 @property void* remoteVideoLayer;
@@ -34,25 +37,28 @@
 @property(readonly) BOOL systemCanHostARD;
 @property(readonly) BOOL systemCanHostMultiwayAudio;
 @property(readonly) BOOL systemCanHostMultiwayVideo;
-@property(readonly) BOOL systemCanReceiveHighRes;
-@property(readonly) BOOL systemCanReceiveWidescreen;
 @property(readonly) BOOL systemCanRecordAudio;
 @property(readonly) BOOL systemCanRecordVideo;
-@property(readonly) BOOL systemCanSendFullHD;
-@property(readonly) BOOL systemCanSendHighRes;
-@property(readonly) BOOL systemCanSendWidescreen;
 @property(readonly) BOOL systemCanVideoChat;
 
 + (id)alloc;
 + (id)sharedInstance;
 
-- (int)_checkNetwork;
+- (void)_avChatDealloc:(id)arg1;
+- (int)_checkNetworkForChat:(id)arg1;
 - (void)_conferenceEnded:(id)arg1;
 - (void)_conferenceWillStart:(id)arg1;
-- (void)_notifyAboutPotentialCall;
+- (id)_controller;
+- (id)_currentCamera;
+- (id)_currentMicrophone;
+- (void)_notifyAboutPotentialCallForChat:(id)arg1;
+- (BOOL)_previewStarted;
+- (void)_setCurrentCamera:(id)arg1;
+- (void)_setCurrentMicrophone:(id)arg1;
+- (BOOL)_submitLoggingInformation:(id)arg1 forChat:(id)arg2;
 - (BOOL)allowsVideoForAVChat:(id)arg1;
+- (BOOL)allowsWeakReference;
 - (float)audioVolumeForAVChat:(id)arg1;
-- (id)autorelease;
 - (id)avChat:(id)arg1 IPAndPortDataWithCallerIP:(id)arg2 callerSIPPort:(unsigned int)arg3 shouldFindExternalIP:(BOOL)arg4;
 - (id)avChat:(id)arg1 IPAndPortDataWithCallerIPAndPortData:(id)arg2 shouldFindExternalIP:(BOOL)arg3;
 - (unsigned int)avChat:(id)arg1 enableAudioReflector:(BOOL)arg2;
@@ -61,9 +67,11 @@
 - (int)avChat:(id)arg1 endConferenceForUserID:(id)arg2;
 - (id)avChat:(id)arg1 localICEDataForHandle:(id)arg2 usingRelay:(BOOL)arg3;
 - (void)avChat:(id)arg1 prepareConnectionWithRemoteConnectionData:(id)arg2 localConnectionData:(id)arg3;
-- (struct __SecCertificate { }*)avChat:(id)arg1 remoteCertificateForUser:(id)arg2;
 - (void)avChat:(id)arg1 setAllowsVideo:(BOOL)arg2;
 - (void)avChat:(id)arg1 setAudioVolume:(float)arg2;
+- (void)avChat:(id)arg1 setCameraOrientation:(unsigned int)arg2;
+- (void)avChat:(id)arg1 setCameraType:(unsigned int)arg2;
+- (void)avChat:(id)arg1 setLocalLandscapeAspectRatio:(struct CGSize { float x1; float x2; })arg2 localPortraitAspectRatio:(struct CGSize { float x1; float x2; })arg3;
 - (void)avChat:(id)arg1 setLockCamera:(BOOL)arg2;
 - (void)avChat:(id)arg1 setMute:(BOOL)arg2;
 - (void)avChat:(id)arg1 setPaused:(BOOL)arg2;
@@ -75,7 +83,9 @@
 - (void)avChat:(id)arg1 setValidatedIdentity:(struct __SecIdentity { }*)arg2;
 - (BOOL)avChat:(id)arg1 startConferenceWithUserID:(id)arg2;
 - (unsigned int)cameraOrientation;
+- (unsigned int)cameraOrientationForAVChat:(id)arg1;
 - (unsigned int)cameraType;
+- (unsigned int)cameraTypeForAVChat:(id)arg1;
 - (unsigned long long)capabilities;
 - (unsigned long long)capabilitiesOfCPU;
 - (unsigned long long)capabilitiesOfNetwork;
@@ -99,22 +109,19 @@
 - (BOOL)isPausedForAVChat:(id)arg1;
 - (BOOL)isRemoteMuteForAVChat:(id)arg1;
 - (BOOL)isRemotePausedForAVChat:(id)arg1;
-- (BOOL)isSecurityEnabledForAVChat:(id)arg1;
-- (BOOL)isSecurityValidForAVChat:(id)arg1;
 - (BOOL)isSendingAudioForAVChat:(id)arg1;
 - (BOOL)isSendingVideoForAVChat:(id)arg1;
 - (void*)localVideoBackLayer;
 - (void*)localVideoLayer;
 - (BOOL)lockCameraForAVChat:(id)arg1;
 - (unsigned int)maxBitrate;
-- (id)natType;
+- (id)natTypeForAVChat:(id)arg1;
 - (BOOL)openCamera;
 - (unsigned int)overallChatState;
 - (void)persistentProperty:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
-- (oneway void)release;
 - (void*)remoteVideoBackLayer;
 - (void*)remoteVideoLayer;
-- (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 - (void)setCameraOrientation:(unsigned int)arg1;
 - (void)setCameraType:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;

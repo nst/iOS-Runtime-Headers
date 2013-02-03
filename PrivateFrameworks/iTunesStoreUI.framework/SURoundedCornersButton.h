@@ -7,6 +7,7 @@
 @interface SURoundedCornersButton : SUSubtitledButton {
     UIBezierPath *_bezierPath;
     UIView *_highlightedBackgroundView;
+    UIBezierPath *_shadowPath;
 }
 
 - (id)_highlightedBackgroundView;

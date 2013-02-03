@@ -25,6 +25,6 @@
 - (unsigned int)limitCount;
 - (BOOL)requiresSmartLimiting;
 - (id)selectLimitingSQL;
-- (id)selectPersistentIDsSQL;
+- (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(BOOL)arg2;
 
 @end

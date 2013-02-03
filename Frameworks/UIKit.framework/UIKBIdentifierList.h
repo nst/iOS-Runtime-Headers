@@ -5,13 +5,13 @@
 @class NSArray, NSString, NSMutableArray;
 
 @interface UIKBIdentifierList : NSObject <NSCoding, NSCopying> {
-    BOOL m_explicit;
+    BOOL m_explicitlySpecified;
     NSMutableArray *m_list;
     NSString *m_name;
 }
 
 @property(readonly) unsigned int count;
-@property BOOL explicit;
+@property BOOL explicitlySpecified;
 @property(readonly) NSArray * list;
 @property(copy) NSString * name;
 
@@ -21,12 +21,12 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)explicit;
+- (BOOL)explicitlySpecified;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)list;
 - (id)name;
-- (void)setExplicit:(BOOL)arg1;
+- (void)setExplicitlySpecified:(BOOL)arg1;
 - (void)setName:(id)arg1;
 
 @end

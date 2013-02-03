@@ -2,9 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLVideoView, PLRotationView, MLPhoto, UIImageView, UIGestureRecognizer, PLImageScrollView, UIImage, PLExpandableImageView, <PLPhotoTileViewControllerDelegate>;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface PLPhotoTileViewController : UIViewController <UIScrollViewDelegate, PLImageRotationAnimationProtocol> {
+@class PLVideoView, PLManagedAsset, UIImageView, <PLPhotoTileViewControllerDelegate>, UIGestureRecognizer, PLImageScrollView, UIImage, PLExpandableImageView;
+
+@interface PLPhotoTileViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate> {
     struct CGSize { 
         float width; 
         float height; 
@@ -60,7 +64,6 @@
     unsigned int _photoShouldBeHDRBadged : 1;
     unsigned int _hdrBadgeShouldBeVisible : 1;
     unsigned int _didSetHDRForModelPhoto : 1;
-    unsigned int _isRotating : 1;
     BOOL _allowZoomToFill;
     BOOL _centerContentVertically;
     BOOL _clientIsTemporarilyWallpaper;
@@ -68,27 +71,23 @@
     } _cropRect;
     } _cropRectBeforeDragging;
     float _cropRectZoomScale;
-    int _currentRotationDegrees;
+    id _didEndZoomingBlock;
     UIGestureRecognizer *_doubleTapGestureRecognizer;
     BOOL _force1XCroppedImage;
     BOOL _forceNativeScreenScale;
     UIImageView *_gradientView;
     UIImageView *_hdrBadgeImageView;
     UIImage *_image;
-    int _imageIndex;
     int _imageOrientation;
-    int _imageRotationDegrees;
     } _imageSize;
     PLExpandableImageView *_imageView;
-    BOOL _isBeingDeleted;
     int _lastDisplayedOrientation;
     float _maxZoomScale;
     float _minZoomScale;
     int _mode;
-    MLPhoto *_modelPhoto;
+    PLManagedAsset *_modelPhoto;
     id _orientationDelegate;
     UIImage *_pendingImage;
-    PLRotationView *_rotationView;
     PLImageScrollView *_scrollView;
     UIGestureRecognizer *_singleTapGestureRecognizer;
     <PLPhotoTileViewControllerDelegate> *_tileDelegate;
@@ -107,22 +106,17 @@
 @property BOOL centerContentVertically;
 @property BOOL force1XCroppedImage;
 @property BOOL forceNativeScreenScale;
-@property unsigned int imageIndex;
-@property BOOL isBeingDeleted;
-@property(retain) MLPhoto * photo;
-@property(readonly) int rotationDegrees;
+@property(readonly) PLManagedAsset * photo;
 @property(retain) UIImage * thumbnailImage;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } tileFrame;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } tileFrame;
 @property(retain) UIImage * unscaledImage;
 
-+ (void)_initializeSafeCategory;
 + (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(id)arg2 allowZoomToFill:(BOOL)arg3 mode:(int)arg4;
 + (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 imageRef:(struct CGImage { }*)arg2 imageOrientation:(int)arg3 allowZoomToFill:(BOOL)arg4 mode:(int)arg5;
 + (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 modelPhoto:(id)arg2 mode:(int)arg3;
 + (struct CGSize { float x1; float x2; })tileSize;
 + (struct CGSize { float x1; float x2; })tvOutTileSize;
 
-- (void)_addRotationView;
 - (void)_adjustScrollViewContentInsetWithContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_adjustScrollViewVerticalContentOffset;
 - (void)_adjustZoomForEnteringMode:(BOOL)arg1;
@@ -133,20 +127,19 @@
 - (void)_handleDoubleTap:(id)arg1;
 - (void)_handleSingleTap:(id)arg1;
 - (int)_imageOrientation;
-- (BOOL)_imageRotationAngleAffectsBounds;
-- (float)_minZoomScaleInView:(id)arg1;
 - (id)_newOriginalImageForPickerFromCachedData;
+- (void)_performDidEndZoomBlock;
 - (void)_repositionHDRBadge;
 - (void)_requestFullSizeImage;
-- (void)_resetRotationState;
 - (void)_setDefaultZoomScale;
+- (void)_setDidEndZoomingBlock:(id)arg1;
 - (void)_setImage:(id)arg1 isThumbnail:(BOOL)arg2;
-- (void)_setRotationDegrees:(int)arg1;
+- (void)_setPhoto:(id)arg1;
 - (void)_setupHDRBadge;
+- (void)_showHDRBadgeIfAppropriate;
 - (void)_updateGradientImageForOrientation:(int)arg1;
 - (void)_updateModelPhotoWithImage:(id)arg1;
 - (void)_updateZoomScalesForView:(id)arg1;
-- (float)_zoomToFillScaleInView:(id)arg1;
 - (BOOL)allowsEditing;
 - (BOOL)centerContentVertically;
 - (void)contentViewFrameChanged;
@@ -155,8 +148,6 @@
 - (float)defaultZoomScale;
 - (id)description;
 - (id)dictionaryWithCroppedImageForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withOptions:(int)arg2;
-- (void)didCancelRotation;
-- (void)didFinishRotation;
 - (BOOL)didRequestFullSizeImage;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)ensureFullSizeImageLoaded;
@@ -165,32 +156,29 @@
 - (BOOL)forceNativeScreenScale;
 - (void)forceZoomingGesturesEnabled;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForImageAtDefaultScale;
+- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gesturesEnabled;
 - (BOOL)hasFullSizeImage;
 - (id)image;
-- (unsigned int)imageIndex;
 - (int)imageOrientation;
 - (id)imageView;
 - (id)init;
 - (id)initForPageController;
 - (id)initWithPhoto:(id)arg1 image:(id)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 isThumbnail:(BOOL)arg4 imageOrientation:(int)arg5 allowZoomToFill:(BOOL)arg6 mode:(int)arg7;
 - (id)initWithPhoto:(id)arg1 thumbnailImage:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3;
-- (BOOL)isBeingDeleted;
-- (BOOL)isRotating;
 - (BOOL)isTVOut;
 - (BOOL)isZoomedOut;
-- (id)layoutHistory;
 - (void)loadView;
 - (float)maxZoomScale;
 - (float)minRotatedScale;
 - (float)minZoomScale;
 - (id)newCGImageBackedUIImage;
 - (id)newImageWithCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 croppedImageData:(id*)arg2 fullScreenImageData:(id*)arg3 fullScreenImage:(struct CGImage {}**)arg4 imageCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5 intersectCropWithFullRect:(BOOL)arg6;
+- (void)noteParentViewControllerDidDisappear;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)photo;
 - (BOOL)photoShouldHaveHDRBadge;
-- (void)prepareForReuse;
 - (void)refreshTileWithFullScreenImage:(id)arg1;
-- (int)rotationDegrees;
 - (struct CGSize { float x1; float x2; })scrollView:(id)arg1 contentSizeForZoomScale:(float)arg2 withProposedSize:(struct CGSize { float x1; float x2; })arg3;
 - (id)scrollView;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -208,11 +196,8 @@
 - (void)setFullSizeImage:(id)arg1;
 - (void)setGesturesEnabled:(BOOL)arg1;
 - (void)setHDRBadgeVisible:(BOOL)arg1;
-- (void)setImageIndex:(unsigned int)arg1;
-- (void)setIsBeingDeleted:(BOOL)arg1;
 - (void)setLockedUnderCropOverlay:(BOOL)arg1;
 - (void)setOrientationDelegate:(id)arg1;
-- (void)setPhoto:(id)arg1;
 - (void)setTVOut:(BOOL)arg1;
 - (void)setThumbnailImage:(id)arg1;
 - (void)setTileDelegate:(id)arg1;
@@ -233,11 +218,12 @@
 - (id)videoView;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidLoad;
 - (id)viewForZoomingInScrollView:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillUnload;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willStartRotatingByDegrees:(int)arg1;
 - (float)zoomToFillScale;
+- (float)zoomToFitScale;
+- (void)zoomToScale:(float)arg1 completionBlock:(id)arg2;
 
 @end

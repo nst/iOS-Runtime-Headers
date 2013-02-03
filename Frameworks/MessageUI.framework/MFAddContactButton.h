@@ -5,9 +5,6 @@
 @interface MFAddContactButton : UIPushButton {
 }
 
-+ (void)_initializeSafeCategory;
-
-- (id)accessibilityLabel;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 
 @end

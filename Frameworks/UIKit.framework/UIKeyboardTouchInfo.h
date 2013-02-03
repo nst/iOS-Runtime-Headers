@@ -2,23 +2,25 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBKeyplane, UIKBKey, UITouch;
+@class UIKBTree, UITouch;
 
 @interface UIKeyboardTouchInfo : NSObject {
     struct CGPoint { 
         float x; 
         float y; 
     } _initialPoint;
-    UIKBKey *_key;
-    UIKBKeyplane *_keyplane;
-    UIKBKey *_slidOffKey;
+    UIKBTree *_key;
+    UIKBTree *_keyplane;
+    UIKBTree *_slidOffKey;
+    int _stage;
     UITouch *_touch;
 }
 
-@property struct CGPoint { float x; float y; } initialPoint;
-@property(retain) UIKBKey * key;
-@property(retain) UIKBKeyplane * keyplane;
-@property(retain) UIKBKey * slidOffKey;
+@property struct CGPoint { float x1; float x2; } initialPoint;
+@property(retain) UIKBTree * key;
+@property(retain) UIKBTree * keyplane;
+@property(retain) UIKBTree * slidOffKey;
+@property int stage;
 @property(retain) UITouch * touch;
 
 - (void)dealloc;
@@ -29,8 +31,10 @@
 - (void)setKey:(id)arg1;
 - (void)setKeyplane:(id)arg1;
 - (void)setSlidOffKey:(id)arg1;
+- (void)setStage:(int)arg1;
 - (void)setTouch:(id)arg1;
 - (id)slidOffKey;
+- (int)stage;
 - (id)touch;
 
 @end

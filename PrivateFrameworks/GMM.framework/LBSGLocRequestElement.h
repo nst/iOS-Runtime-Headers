@@ -4,7 +4,7 @@
 
 @class LBSGGeocodeRequest, LBSGCellularProfile, LBSGLocation;
 
-@interface LBSGLocRequestElement : PBRequest {
+@interface LBSGLocRequestElement : PBCodable {
     LBSGCellularProfile *_cellularProfile;
     LBSGGeocodeRequest *_geocode;
     LBSGLocation *_location;
@@ -25,7 +25,6 @@
 - (BOOL)hasCellularProfile;
 - (BOOL)hasGeocode;
 - (BOOL)hasLocation;
-- (id)init;
 - (id)location;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCellularProfile:(id)arg1;

@@ -2,21 +2,30 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView, UILabel, UIActivityIndicatorView, PLProgressView;
+@class UILabel, NSNumberFormatter, UIActivityIndicatorView;
 
-@interface PLSyncProgressView : UIImageView {
-    int _currentOrientation;
-    UIImageView *_icon;
+@interface PLSyncProgressView : UIView {
+    NSNumberFormatter *_countFormatter;
+    unsigned int _currentCount;
     UILabel *_infoLabel;
-    PLProgressView *_progressView;
+    int _progressType;
     UIActivityIndicatorView *_spinner;
-    UILabel *_titleLabel;
+    unsigned int _totalCount;
 }
 
-- (id)_emptyRollImageForInterfaceOrientation:(int)arg1;
-- (void)_libraryRebuildProgressDidUpdate:(id)arg1;
+@property unsigned int currentCount;
+@property int progressType;
+@property unsigned int totalCount;
+
+- (id)_progressDescription;
+- (unsigned int)currentCount;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithLargeMetrics:(BOOL)arg1;
 - (void)layoutSubviews;
+- (int)progressType;
+- (void)setCurrentCount:(unsigned int)arg1;
+- (void)setProgressType:(int)arg1;
+- (void)setTotalCount:(unsigned int)arg1;
+- (unsigned int)totalCount;
 
 @end

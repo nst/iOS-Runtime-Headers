@@ -13,7 +13,7 @@
 + (id)fullNameWithFirstName:(id)arg1 lastName:(id)arg2;
 + (id)sharedAddressBook;
 
-- (id)_emailSearchPredicateForEmailDictionaries:(id)arg1;
+- (id)_emailSearchPredicateForEmails:(id)arg1;
 - (void)acquireNamesForEmailAddresses:(id)arg1 completionHandler:(id)arg2;
 - (void)dealloc;
 - (id)searchQueue;

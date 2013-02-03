@@ -4,7 +4,8 @@
 
 @class SUSection;
 
-@interface SUNavigationController : UINavigationController {
+@interface SUNavigationController : UINavigationController <SUScriptNativeObject> {
+    BOOL _canBeWeakScriptReference;
     BOOL _loading;
     SUSection *_section;
 }
@@ -15,9 +16,11 @@
 - (void)_loadingDidChangeNotification:(id)arg1;
 - (id)_sectionForViewController:(id)arg1;
 - (void)addChildViewController:(id)arg1;
+- (BOOL)clearsWeakScriptReferences;
 - (id)copyArchivableContext;
 - (id)copyScriptViewController;
 - (void)dealloc;
+- (id)description;
 - (id)initWithRootViewController:(id)arg1;
 - (id)initWithSection:(id)arg1 rootViewController:(id)arg2;
 - (id)initWithSection:(id)arg1;

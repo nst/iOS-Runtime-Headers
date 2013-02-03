@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MessageBody, MimePart, ActivityMonitor, MailMessage, NSLock, NSObject<MFMessageViewingContextDelegate>;
+@class ActivityMonitor, NSObject<MFMessageViewingContextDelegate>, MailMessage, NSTimer, MimePart, MessageBody, MFLock, MFError, NSArray;
 
 @interface MFMessageViewingContext : NSObject {
     unsigned int _loadedFullData : 1;
@@ -11,41 +11,75 @@
     unsigned int _failedToLoad : 1;
     unsigned int _isOutgoingMessage : 1;
     unsigned int _isDraftMessage : 1;
+    unsigned int _isEditableMessage : 1;
     MessageBody *_body;
     id _content;
-    NSLock *_contentLock;
+    MFLock *_contentLock;
     unsigned int _contentOffset;
     NSObject<MFMessageViewingContextDelegate> *_delegate;
     unsigned int _loadIncrement;
     ActivityMonitor *_loadTask;
     MimePart *_loadedPart;
     MailMessage *_message;
+    struct __CFDictionary { } *_progresses;
+    MFError *_secureMIMEError;
+    NSArray *_signers;
+    NSTimer *_updater;
 }
+
+@property(readonly) id content;
+@property(readonly) unsigned int contentOffset;
+@property NSObject<MFMessageViewingContextDelegate> * delegate;
+@property(readonly) BOOL failedToLoad;
+@property(readonly) BOOL hasLoaded;
+@property(readonly) BOOL hasNoContent;
+@property BOOL isDraftMessage;
+@property BOOL isEditableMessage;
+@property(readonly) BOOL isMessageEncrypted;
+@property(readonly) BOOL isMessageSigned;
+@property BOOL isOutgoingMessage;
+@property(readonly) BOOL isPartial;
+@property(readonly) ActivityMonitor * loadTask;
+@property(readonly) MimePart * loadedPart;
+@property(readonly) MailMessage * message;
+@property(readonly) MessageBody * messageBody;
+@property(readonly) MFError * secureMimeError;
+@property(readonly) NSArray * signers;
 
 + (unsigned int)nextOffsetForOffset:(unsigned int)arg1 totalLength:(unsigned int)arg2 requestedAmount:(unsigned int)arg3;
 
 - (void)_loadAttachments:(id)arg1;
-- (void)_notifyAttachmentComplete:(id)arg1;
+- (void)_notifyAttachmentComplete:(id)arg1 monitor:(id)arg2;
 - (void)_notifyCompletelyComplete;
 - (void)_notifyFullMessageLoadFailed;
 - (void)_notifyInitialLoadComplete;
-- (void)abortAttachmentLoad:(id)arg1 pluginClient:(id)arg2;
+- (void)_setContent:(id)arg1;
+- (void)_setContentOffset:(unsigned int)arg1;
+- (void)_setLoadedPart:(id)arg1;
+- (void)_setMessageBody:(id)arg1;
+- (void)_setSecureMIMEError:(id)arg1;
+- (void)_setSigners:(id)arg1;
+- (void)_updateProgress:(id)arg1;
 - (id)attachments;
 - (void)cancelLoad;
 - (id)content;
 - (unsigned int)contentOffset;
 - (void)dealloc;
+- (id)delegate;
 - (BOOL)failedToLoad;
 - (id)fileWrappersForImageAttachments;
 - (BOOL)hasLoaded;
 - (BOOL)hasNoContent;
 - (id)initWithMessage:(id)arg1;
 - (BOOL)isDraftMessage;
+- (BOOL)isEditableMessage;
+- (BOOL)isMessageEncrypted;
+- (BOOL)isMessageSigned;
 - (BOOL)isOutgoingMessage;
 - (BOOL)isPartial;
 - (void)load;
-- (void)loadAsPlainText:(BOOL)arg1 asHTML:(BOOL)arg2;
-- (void)loadAttachment:(id)arg1 pluginClient:(id)arg2;
+- (void)loadAsPlainText:(BOOL)arg1 asHTML:(BOOL)arg2 downloadIfNecessary:(BOOL)arg3;
+- (void)loadAttachment:(id)arg1 progress:(id)arg2;
 - (void)loadBestAlternative;
 - (void)loadFull;
 - (void)loadMore;
@@ -55,14 +89,13 @@
 - (id)message;
 - (id)messageBody;
 - (unsigned int)numberOfImageAttachments;
-- (void)setContent:(id)arg1;
-- (void)setContentOffset:(unsigned int)arg1;
+- (id)secureMimeError;
 - (void)setDelegate:(id)arg1;
 - (void)setIsDraftMessage:(BOOL)arg1;
+- (void)setIsEditableMessage:(BOOL)arg1;
+- (void)setIsOutgoingMessage:(BOOL)arg1;
 - (void)setLoadTask:(id)arg1;
-- (void)setLoadedPart:(id)arg1;
-- (void)setMessageBody:(id)arg1;
-- (void)setOutgoingMessage:(BOOL)arg1;
+- (id)signers;
 - (id)uniqueID;
 - (void)unload;
 

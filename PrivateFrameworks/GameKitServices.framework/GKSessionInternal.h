@@ -66,12 +66,12 @@
 @property <GKSessionDelegate> * delegate;
 @property double disconnectTimeout;
 @property(readonly) NSString * displayName;
-@property(retain) NSString * domain;
+@property(copy) NSString * domain;
 @property unsigned int maxPeers;
 @property(readonly) NSString * peerID;
 @property unsigned int port;
 @property <GKSessionPrivateDelegate> * privateDelegate;
-@property(retain) NSString * serviceType;
+@property(copy) NSString * serviceType;
 @property(readonly) NSString * sessionID;
 @property(readonly) int sessionMode;
 @property struct OpaqueGCKSession { }* sessionRef;
@@ -86,7 +86,7 @@
 - (void)connectToPeer:(id)arg1 withTimeout:(double)arg2;
 - (id)connection;
 - (id)createNSErrorFromGKSessionError:(int)arg1 description:(id)arg2 reason:(id)arg3;
-- (id)createNSErrorFromHRESULT:(int)arg1 description:(id)arg2 reason:(id)arg3;
+- (id)createNSErrorFromHRESULT:(long)arg1 description:(id)arg2 reason:(id)arg3;
 - (id)dataReceiveHandler;
 - (void)dealloc;
 - (id)delegate;
@@ -162,6 +162,7 @@
 - (void)tellDelegate_gotInvited:(id)arg1;
 - (void)tellDelegate_initiateRelay:(id)arg1;
 - (void)tellDelegate_isConnectingPeer:(id)arg1;
+- (void)tellDelegate_networkStatisticsChanged:(id)arg1;
 - (void)tellDelegate_peerDidBecomeAvailable:(id)arg1;
 - (void)tellDelegate_peerDidBecomeBusy:(id)arg1;
 - (void)tellDelegate_peerDidBecomeUnavailable:(id)arg1;

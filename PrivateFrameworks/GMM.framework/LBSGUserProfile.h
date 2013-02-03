@@ -20,7 +20,6 @@
 - (id)dictionaryRepresentation;
 - (BOOL)hasAuthToken;
 - (BOOL)hasUserName;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAuthToken:(id)arg1;
 - (void)setUserName:(id)arg1;

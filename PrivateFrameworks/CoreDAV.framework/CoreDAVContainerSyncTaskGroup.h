@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSURL, <CoreDAVLocalDBInfoProvider>, NSMutableArray, NSString, NSMutableSet, NSMutableDictionary, NSArray;
+@class NSArray, <CoreDAVLocalDBInfoProvider>, NSMutableArray, NSDictionary, NSMutableSet, NSString, NSMutableDictionary, NSURL;
 
-@interface CoreDAVContainerSyncTaskGroup : CoreDAVTaskGroup <CoreDAVContainerMultiGetTaskDelegate, CoreDAVDeleteTaskDelegate, CoreDAVPutTaskDelegate, CoreDAVGetTaskDelegate> {
-    NSArray *_actions;
+@interface CoreDAVContainerSyncTaskGroup : CoreDAVTaskGroup <CoreDAVDeleteTaskDelegate, CoreDAVPutTaskDelegate, CoreDAVGetTaskDelegate> {
+    NSMutableArray *_actions;
+    BOOL _actionsOnly;
     NSURL *_addMemberURL;
     Class _appSpecificDataItemClass;
+    NSString *_bulkChangeCheckCTag;
+    NSDictionary *_bulkRequests;
     void *_context;
+    BOOL _ensureUpdatedCTag;
     NSURL *_folderURL;
     NSMutableArray *_localItemURLOrder;
     unsigned int _maxIndependentTasks;
@@ -18,6 +22,8 @@
     int _phase;
     NSString *_previousCTag;
     NSString *_previousSyncToken;
+    NSMutableDictionary *_remainingHREFsToModDeleteActions;
+    NSMutableDictionary *_remainingUUIDsToAddActions;
     BOOL _syncItemOrder;
     NSMutableSet *_syncReportDeletedURLs;
     NSMutableArray *_unsubmittedTasks;
@@ -26,18 +32,25 @@
     BOOL _useSyncCollection;
 }
 
+@property BOOL actionsOnly;
 @property(retain) NSURL * addMemberURL;
+@property(retain) NSString * bulkChangeCheckCTag;
+@property(retain) NSDictionary * bulkRequests;
 @property(readonly) void* context;
 @property <CoreDAVLocalDBInfoProvider> * delegate;
+@property BOOL ensureUpdatedCTag;
 @property(readonly) NSURL * folderURL;
 @property(readonly) NSArray * localItemURLOrder;
 @property unsigned int maxIndependentTasks;
 @property unsigned int multiGetBatchSize;
-@property(readonly) NSString * previousCTag;
+@property(retain) NSString * nextCTag;
+@property(retain) NSString * previousCTag;
 @property(retain) NSString * previousSyncToken;
 @property BOOL useMultiGet;
 @property BOOL useSyncCollection;
 
+- (void)_bulkChange;
+- (void)_bulkChangeTask:(id)arg1 didFinishWithError:(id)arg2;
 - (void)_getCTag;
 - (void)_getDataPayloads;
 - (void)_getETags;
@@ -45,39 +58,55 @@
 - (void)_getTask:(id)arg1 finishedWithParsedContents:(id)arg2 error:(id)arg3;
 - (void)_postTask:(id)arg1 didFinishWithError:(id)arg2;
 - (void)_pushActions;
+- (void)_sendNextBatch;
 - (unsigned int)_submitTasks;
 - (void)_syncReportTask:(id)arg1 didFinishWithError:(id)arg2;
 - (void)_tearDownAllUnsubmittedTasks;
+- (BOOL)actionsOnly;
 - (id)addMemberURL;
+- (void)applyAdditionalPropertiesFromPostTask:(id)arg1;
+- (void)applyAdditionalPropertiesFromPutTask:(id)arg1;
 - (void)bailWithError:(id)arg1;
+- (id)bulkChangeCheckCTag;
+- (Class)bulkChangeTaskClass;
+- (id)bulkRequests;
 - (void)cancelTaskGroup;
-- (void)cancelTasks;
-- (void)containerMultiGetTask:(id)arg1 parsedContents:(id)arg2 error:(id)arg3;
 - (void*)context;
 - (id)copyAdditionalResourcePropertiesToFetch;
+- (id)copyGetEtagTaskWithPropertiesToFind:(id)arg1;
 - (id)copyGetTaskWithURL:(id)arg1;
 - (id)copyMultiGetTaskWithURLs:(id)arg1;
+- (id)copyPostTaskWithPayloadItem:(id)arg1 forAction:(id)arg2;
+- (id)copyPutTaskWithPayloadItem:(id)arg1 forAction:(id)arg2;
 - (id)dataContentType;
 - (void)dealloc;
 - (void)deleteTask:(id)arg1 completedWithError:(id)arg2;
 - (id)description;
+- (BOOL)ensureUpdatedCTag;
 - (id)folderURL;
 - (void)getTask:(id)arg1 data:(id)arg2 error:(id)arg3;
-- (id)initWithFolderURL:(id)arg1 previousCTag:(id)arg2 previousSyncToken:(id)arg3 actions:(id)arg4 context:(void*)arg5 accountInfoProvider:(id)arg6 taskManager:(id)arg7;
 - (id)initWithFolderURL:(id)arg1 previousCTag:(id)arg2 previousSyncToken:(id)arg3 actions:(id)arg4 syncItemOrder:(BOOL)arg5 context:(void*)arg6 accountInfoProvider:(id)arg7 taskManager:(id)arg8;
 - (id)localItemURLOrder;
 - (unsigned int)maxIndependentTasks;
 - (unsigned int)multiGetBatchSize;
+- (id)nextCTag;
 - (id)previousCTag;
 - (id)previousSyncToken;
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)putTask:(id)arg1 completedWithNewETag:(id)arg2 error:(id)arg3;
+- (void)setActionsOnly:(BOOL)arg1;
 - (void)setAddMemberURL:(id)arg1;
+- (void)setBulkChangeCheckCTag:(id)arg1;
+- (void)setBulkRequests:(id)arg1;
+- (void)setEnsureUpdatedCTag:(BOOL)arg1;
 - (void)setMaxIndependentTasks:(unsigned int)arg1;
 - (void)setMultiGetBatchSize:(unsigned int)arg1;
+- (void)setNextCTag:(id)arg1;
+- (void)setPreviousCTag:(id)arg1;
 - (void)setPreviousSyncToken:(id)arg1;
 - (void)setUseMultiGet:(BOOL)arg1;
 - (void)setUseSyncCollection:(BOOL)arg1;
+- (BOOL)shouldFetchMoreETags;
 - (BOOL)shouldFetchResourceWithEtag:(id)arg1 propertiesToValues:(id)arg2;
 - (void)startTaskGroup;
 - (void)syncAway;

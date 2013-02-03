@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class GKInviteButton, UIActivityIndicatorView, NSString, GKTouchInterceptView;
+@class GKInviteButton, UIActivityIndicatorView, UIImage, NSString, GKTouchInterceptView;
 
-@interface GKFriendPickerCellContents : GKMultilineCellContentView <GKMultilineLayoutProtocol> {
+@interface GKFriendPickerCellContents : GKPlayerCellContentView <GKMultilineLayoutProtocol> {
     struct CGSize { 
         float width; 
         float height; 
@@ -20,7 +20,9 @@
     id _inviteButtonHandler;
     int _inviteStatus;
     BOOL _padsForInvisibleSelectionIcon;
-    NSString *_realName;
+    NSString *_rankString;
+    UIImage *_selectionIcon;
+    BOOL _shouldShowRank;
     BOOL _showingActivityIndicator;
     BOOL _showingConfirmButton;
     BOOL _showingInviteButton;
@@ -38,7 +40,9 @@
 @property(copy) id inviteButtonHandler;
 @property int inviteStatus;
 @property BOOL padsForInvisibleSelectionIcon;
-@property(retain) NSString * realName;
+@property(retain) NSString * rankString;
+@property(retain) UIImage * selectionIcon;
+@property BOOL shouldShowRank;
 @property(readonly) BOOL showingInviteButton;
 @property(readonly) BOOL showingUninviteButton;
 @property BOOL showsInviteButton;
@@ -48,39 +52,40 @@
 @property(retain) GKTouchInterceptView * touchInterceptView;
 @property(copy) id uninviteButtonHandler;
 
-+ (void)_initializeSafeCategory;
-
-- (int)accessibilityElementCount;
-- (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (void)createInviteMatchConfirmButton;
 - (void)dealloc;
 - (void)drawLineIndex:(unsigned int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 highlighted:(BOOL)arg3;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)enabled;
 - (BOOL)hasStatusForInviteButton;
 - (BOOL)hasStatusForUninviteButton;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (unsigned int)index;
 - (id)initWithNumberOfLines:(unsigned int)arg1;
 - (id)inviteButton;
 - (id)inviteButtonHandler;
 - (void)inviteButtonPushed;
 - (int)inviteStatus;
-- (BOOL)isAccessibilityElement;
 - (void)layoutInviteButton;
 - (void)layoutInviteButtonAnimated:(BOOL)arg1;
 - (void)layoutSubviews;
 - (BOOL)padsForInvisibleSelectionIcon;
 - (void)prepareForReuse;
-- (id)realName;
+- (id)rankString;
 - (void)removeFromSuperview;
+- (id)selectionIcon;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionIconRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setConfirmButtonHidden:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setIndex:(unsigned int)arg1;
 - (void)setInviteButtonHandler:(id)arg1;
 - (void)setInviteStatus:(int)arg1;
 - (void)setPadsForInvisibleSelectionIcon:(BOOL)arg1;
-- (void)setRealName:(id)arg1;
+- (void)setRankString:(id)arg1;
+- (void)setSelectionIcon:(id)arg1;
+- (void)setShouldShowRank:(BOOL)arg1;
 - (void)setShowingActivityIndicator:(BOOL)arg1;
 - (void)setShowsInviteButton:(BOOL)arg1;
 - (void)setShowsInviteStatus:(BOOL)arg1;
@@ -90,15 +95,18 @@
 - (void)setTouchInterceptView:(id)arg1;
 - (void)setTouchesIntercepted:(BOOL)arg1;
 - (void)setUninviteButtonHandler:(id)arg1;
+- (BOOL)shouldShowRank;
 - (BOOL)showingInviteButton;
 - (BOOL)showingUninviteButton;
 - (BOOL)showsInviteButton;
 - (BOOL)showsInviteStatus;
 - (BOOL)showsSelectionIcon;
 - (BOOL)showsUninviteButton;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)touchInterceptView;
 - (id)uninviteButtonHandler;
 - (void)updateInviteButton;
 - (void)updateInviteButtonAnimated:(BOOL)arg1;
+- (void)updateLines;
 
 @end

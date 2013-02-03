@@ -23,6 +23,8 @@
 - (id)_getNewIDForObject:(id)arg1;
 - (void)_insertNodeIntoEntityCache:(id)arg1;
 - (void)_insertNodeIntoMainCache:(id)arg1;
+- (void)_preflightCrossCheck;
+- (id)_rawMetadata__;
 - (void)_registerCacheNode:(id)arg1;
 - (void)_removeObject:(id)arg1;
 - (id)_retainedObjectIDForEntity:(id)arg1 referenceObject:(id)arg2;

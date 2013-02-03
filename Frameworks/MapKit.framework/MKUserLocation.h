@@ -2,19 +2,28 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CLLocation, NSString, MKUserLocationInternal;
+@class CLLocation, CLHeading, NSString, MKUserLocationInternal;
 
 @interface MKUserLocation : NSObject <MKAnnotation> {
     MKUserLocationInternal *_internal;
 }
 
-@property(readonly) struct { double latitude; double longitude; } coordinate;
-@property(readonly) CLLocation * location;
-@property(retain) NSString * subtitle;
-@property(retain) NSString * title;
-@property(getter=isUpdating,readonly) BOOL updating;
+@property struct { double x1; double x2; } coordinate;
+@property(retain) CLLocation * fixedLocation;
+@property(retain) CLHeading * heading;
+@property(retain) CLLocation * location;
+@property(retain) CLLocation * predictedLocation;
+@property(readonly) NSString * shortDescription;
+@property int source;
+@property(copy) NSString * subtitle;
+@property double timestamp;
+@property(copy) NSString * title;
+@property(getter=isUpdating) BOOL updating;
+
++ (void)_setAnnotationClass:(Class)arg1;
 
 - (void)_updateCoordinate;
+- (id)annotation;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)fixedLocation;
@@ -25,7 +34,6 @@
 - (id)location;
 - (id)predictedLocation;
 - (void)reset;
-- (id)searchResult;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setFixedLocation:(id)arg1;
 - (void)setHeading:(id)arg1;

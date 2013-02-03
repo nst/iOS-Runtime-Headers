@@ -4,14 +4,24 @@
 
 @class UIImageView, GKTableView, UIView;
 
-@interface GKTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface GKTableViewController : GKViewController <UITableViewDelegate, UITableViewDataSource> {
+    struct CGPoint { 
+        float x; 
+        float y; 
+    struct CGPoint { 
+        float x; 
+        float y; 
     unsigned int _pendingReload : 1;
     unsigned int _pendingAnimation : 1;
     UIImageView *_bottomShadowView;
     BOOL _clearsSelectionOnViewWillAppear;
+    BOOL _isInFormSheet;
+    } _landscapeContentOffset;
     GKTableView *_landscapeTableView;
     UIView *_overlayTouchView;
+    } _portraitContentOffset;
     GKTableView *_portraitTableView;
+    float _previousBottomContentInset;
     BOOL _shouldDelayTableReloadForDeselectAnimation;
     GKTableView *_tableView;
     int _tableViewStyle;
@@ -19,36 +29,57 @@
 
 @property(retain) UIImageView * bottomShadowView;
 @property BOOL clearsSelectionOnViewWillAppear;
+@property BOOL isInFormSheet;
+@property struct CGPoint { float x1; float x2; } landscapeContentOffset;
 @property(retain) GKTableView * landscapeTableView;
 @property(retain) UIView * overlayTouchView;
+@property struct CGPoint { float x1; float x2; } portraitContentOffset;
 @property(retain) GKTableView * portraitTableView;
+@property float previousBottomContentInset;
 @property BOOL shouldDelayTableReloadForDeselectAnimation;
 @property(retain) GKTableView * tableView;
 @property(readonly) int tableViewStyle;
 
 - (id)_gkTableView:(id)arg1 buttonCellWithTitle:(id)arg2 theme:(id)arg3;
 - (id)addTouchCaptureOverlayViewWithTarget:(id)arg1 action:(SEL)arg2;
+- (void)animateViewsToOrientation:(int)arg1;
 - (id)bottomShadowView;
 - (BOOL)clearsSelectionOnViewWillAppear;
+- (id)contentsAtIndexPaths:(id)arg1 inTableView:(id)arg2;
 - (void)dealloc;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (BOOL)indexPath:(id)arg1 isValidForTableView:(id)arg2;
 - (id)initWithStyle:(int)arg1;
+- (BOOL)isInFormSheet;
 - (void)keyboardWillHideShow:(id)arg1;
+- (struct CGPoint { float x1; float x2; })landscapeContentOffset;
 - (id)landscapeTableView;
 - (void)loadView;
 - (void)localeDidChangeNotification:(id)arg1;
 - (id)overlayTouchView;
+- (struct CGPoint { float x1; float x2; })portraitContentOffset;
 - (id)portraitTableView;
+- (void)prepareExpensiveVisibleContents;
+- (float)previousBottomContentInset;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectToKeepVisibleAboveKeyboardWithinView:(id)arg1;
 - (void)reloadAllTables;
 - (void)reloadTableData;
 - (void)removeTouchCaptureOverlayView;
+- (id)rootNavigationItem;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (id)searchTitle;
 - (void)setBottomShadowView:(id)arg1;
 - (void)setClearsSelectionOnViewWillAppear:(BOOL)arg1;
+- (void)setIsInFormSheet:(BOOL)arg1;
+- (void)setLandscapeContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setLandscapeTableView:(id)arg1;
 - (void)setOverlayTouchView:(id)arg1;
+- (void)setPortraitContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPortraitTableView:(id)arg1;
+- (void)setPreviousBottomContentInset:(float)arg1;
 - (void)setShouldDelayTableReloadForDeselectAnimation:(BOOL)arg1;
+- (void)setStatusViewVisible:(BOOL)arg1;
 - (void)setTableView:(id)arg1;
 - (void)setupViewsWithOrientation:(int)arg1;
 - (BOOL)shouldAdjustInsetsForKeyboard;
@@ -67,9 +98,11 @@
 - (void)updateTableViewFrame:(id)arg1;
 - (BOOL)usesCrossfade;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

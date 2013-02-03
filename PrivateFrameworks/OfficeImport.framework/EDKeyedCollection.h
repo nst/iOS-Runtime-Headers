@@ -19,5 +19,6 @@
 - (void)removeAllObjects;
 - (void)removeFromMap:(id)arg1;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 
 @end

@@ -15,6 +15,7 @@
 - (BOOL)eject;
 - (void)enumerateContent;
 - (void)finalize;
+- (id)initWithTCPIPInfo:(id)arg1;
 - (id)initWithUSBLocationID:(unsigned int)arg1;
 - (id)initiator;
 

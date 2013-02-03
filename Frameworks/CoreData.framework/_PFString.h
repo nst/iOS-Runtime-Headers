@@ -16,6 +16,8 @@
 
 - (const char *)UTF8String;
 - (const char *)_fastCStringContents:(BOOL)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (const char *)cString;
 - (unsigned int)cStringLength;
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
@@ -32,7 +34,7 @@
 - (BOOL)isEqualToString:(id)arg1;
 - (unsigned int)length;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 

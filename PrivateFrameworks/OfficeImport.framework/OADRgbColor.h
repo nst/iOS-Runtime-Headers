@@ -12,6 +12,8 @@
 + (id)rgbColorWithNSColor:(id)arg1;
 + (id)rgbColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 + (id)rgbColorWithRedByte:(float)arg1 greenByte:(float)arg2 blueByte:(float)arg3;
++ (id)rgbColorWithWhite:(float)arg1;
++ (id)rgbColorWithWhiteByte:(float)arg1;
 + (id)white;
 
 - (float)blue;
@@ -22,6 +24,8 @@
 - (unsigned int)hash;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 - (id)initWithRedByte:(float)arg1 greenByte:(float)arg2 blueByte:(float)arg3;
+- (id)initWithWhite:(float)arg1;
+- (id)initWithWhiteByte:(float)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (float)red;
 - (unsigned char)redByte;

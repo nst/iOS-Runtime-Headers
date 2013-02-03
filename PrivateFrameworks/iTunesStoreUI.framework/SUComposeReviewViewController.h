@@ -4,7 +4,7 @@
 
 @class SURatingAlertView, ISReview, SUComposeReviewView;
 
-@interface SUComposeReviewViewController : SUViewController <UIAlertViewDelegate> {
+@interface SUComposeReviewViewController : SUViewController <SUComposeReviewViewDelegate, UIAlertViewDelegate> {
     SUComposeReviewView *_composeView;
     SURatingAlertView *_ratingAlert;
     ISReview *_review;

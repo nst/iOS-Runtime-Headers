@@ -2,9 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
+@class NSArray, NSString, NSNumber, SUScriptABRecord;
 
 @interface SUScriptAddressBook : SUScriptObject {
+    BOOL _databaseAccess;
+    void *_observedAddressBook;
 }
 
 @property(readonly) NSString * addressKeyCity;
@@ -13,6 +15,11 @@
 @property(readonly) NSString * addressKeyState;
 @property(readonly) NSString * addressKeyStreet;
 @property(readonly) NSString * addressKeyZipCode;
+@property(readonly) int defaultSortOrder;
+@property(readonly) SUScriptABRecord * defaultSource;
+@property(readonly) NSArray * groups;
+@property(readonly) int imageFormatOriginal;
+@property(readonly) int imageFormatThumbnail;
 @property(readonly) NSString * instantMessageKeyService;
 @property(readonly) NSString * instantMessageKeyUsername;
 @property(readonly) NSString * instantMessageServiceAIM;
@@ -43,11 +50,15 @@
 @property(readonly) NSString * labelSister;
 @property(readonly) NSString * labelSpouse;
 @property(readonly) NSString * labelWork;
+@property(readonly) NSNumber * numberOfGroupsInAddressBook;
+@property(readonly) NSNumber * numberOfPeopleInAddressBook;
+@property(readonly) NSArray * people;
 @property(readonly) int propertyAddress;
 @property(readonly) int propertyBirthday;
 @property(readonly) int propertyDepartment;
 @property(readonly) int propertyEmail;
 @property(readonly) int propertyFirstName;
+@property(readonly) int propertyGroupName;
 @property(readonly) int propertyInstantMessage;
 @property(readonly) int propertyJobTitle;
 @property(readonly) int propertyKind;
@@ -58,12 +69,42 @@
 @property(readonly) int propertyPhoneNumber;
 @property(readonly) int propertyPrefix;
 @property(readonly) int propertyRelatedNames;
+@property(readonly) int propertySourceName;
+@property(readonly) int propertySourceType;
 @property(readonly) int propertySuffix;
+@property(readonly) unsigned int propertyTypeDateTime;
+@property(readonly) unsigned int propertyTypeDictionary;
+@property(readonly) unsigned int propertyTypeInteger;
+@property(readonly) unsigned int propertyTypeInvalid;
+@property(readonly) unsigned int propertyTypeMultiDateTime;
+@property(readonly) unsigned int propertyTypeMultiDictionary;
+@property(readonly) unsigned int propertyTypeMultiInteger;
+@property(readonly) unsigned int propertyTypeMultiReal;
+@property(readonly) unsigned int propertyTypeMultiString;
+@property(readonly) unsigned int propertyTypeReal;
+@property(readonly) unsigned int propertyTypeString;
 @property(readonly) int propertyURL;
+@property(readonly) int recordTypeGroup;
+@property(readonly) int recordTypePerson;
+@property(readonly) int recordTypeSource;
 @property(readonly) int searchScopeLocal;
 @property(readonly) int searchScopeRecent;
 @property(readonly) int searchScopeRemote;
+@property(readonly) int sortOrderByFirstName;
+@property(readonly) int sortOrderByLastName;
+@property(readonly) int sourceTypeCardDAV;
+@property(readonly) int sourceTypeCardDAVSearch;
+@property(readonly) int sourceTypeExchange;
+@property(readonly) int sourceTypeExchangeGAL;
+@property(readonly) int sourceTypeLDAP;
+@property(readonly) int sourceTypeLocal;
+@property(readonly) int sourceTypeMobileMe;
+@property(readonly) NSArray * sources;
 
++ (void)initialize;
++ (id)newScriptRecordsForNativeRecords:(struct __CFArray { }*)arg1;
++ (id)newScriptValueForNativeValue:(void*)arg1 propertyType:(unsigned int)arg2;
++ (void*)threadAddressBook;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
@@ -75,7 +116,16 @@
 - (id)addressKeyStreet;
 - (id)addressKeyZipCode;
 - (id)attributeKeys;
+- (void)dealloc;
+- (int)defaultSortOrder;
+- (id)defaultSource;
+- (id)groupWithRecordID:(id)arg1;
+- (id)groups;
+- (id)groupsInSource:(id)arg1;
+- (int)imageFormatOriginal;
+- (int)imageFormatThumbnail;
 - (id)init;
+- (id)initWithDatabaseAccess:(BOOL)arg1;
 - (id)instantMessageKeyService;
 - (id)instantMessageKeyUsername;
 - (id)instantMessageServiceAIM;
@@ -106,12 +156,20 @@
 - (id)labelSister;
 - (id)labelSpouse;
 - (id)labelWork;
+- (id)localizedLabelForLabel:(id)arg1;
+- (id)numberOfGroupsInAddressBook;
+- (id)numberOfPeopleInAddressBook;
+- (id)people;
+- (id)peopleInSource:(id)arg1 withSortOrder:(id)arg2;
 - (id)peoplePickerWithOptions:(id)arg1;
+- (id)peopleWithName:(id)arg1;
+- (id)personWithRecordID:(id)arg1;
 - (int)propertyAddress;
 - (int)propertyBirthday;
 - (int)propertyDepartment;
 - (int)propertyEmail;
 - (int)propertyFirstName;
+- (int)propertyGroupName;
 - (int)propertyInstantMessage;
 - (int)propertyJobTitle;
 - (int)propertyKind;
@@ -122,12 +180,39 @@
 - (int)propertyPhoneNumber;
 - (int)propertyPrefix;
 - (int)propertyRelatedNames;
+- (int)propertySourceName;
+- (int)propertySourceType;
 - (int)propertySuffix;
+- (unsigned int)propertyTypeDateTime;
+- (unsigned int)propertyTypeDictionary;
+- (unsigned int)propertyTypeInteger;
+- (unsigned int)propertyTypeInvalid;
+- (unsigned int)propertyTypeMultiDateTime;
+- (unsigned int)propertyTypeMultiDictionary;
+- (unsigned int)propertyTypeMultiInteger;
+- (unsigned int)propertyTypeMultiReal;
+- (unsigned int)propertyTypeMultiString;
+- (unsigned int)propertyTypeReal;
+- (unsigned int)propertyTypeString;
 - (int)propertyURL;
+- (int)recordTypeGroup;
+- (int)recordTypePerson;
+- (int)recordTypeSource;
 - (id)scriptAttributeKeys;
 - (id)searchResultsViewControllerWithOptions:(id)arg1;
 - (int)searchScopeLocal;
 - (int)searchScopeRecent;
 - (int)searchScopeRemote;
+- (int)sortOrderByFirstName;
+- (int)sortOrderByLastName;
+- (int)sourceTypeCardDAV;
+- (int)sourceTypeCardDAVSearch;
+- (int)sourceTypeExchange;
+- (int)sourceTypeExchangeGAL;
+- (int)sourceTypeLDAP;
+- (int)sourceTypeLocal;
+- (int)sourceTypeMobileMe;
+- (id)sourceWithRecordID:(id)arg1;
+- (id)sources;
 
 @end

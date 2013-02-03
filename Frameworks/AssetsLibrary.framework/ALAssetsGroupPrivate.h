@@ -2,38 +2,47 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class MLAlbum, ALAssetsLibrary, ALAssetsFilter;
+@class ALAssetsFilter, PLPhotoLibrary, ALAssetsLibrary, NSObject<PLAssetContainer>, NSMutableDictionary;
 
 @interface ALAssetsGroupPrivate : NSObject <ALAssetsLibraryAsset> {
-    MLAlbum *_album;
+    NSObject<PLAssetContainer> *_album;
     ALAssetsFilter *_assetsFilter;
     unsigned int _groupType;
     BOOL _isValid;
     ALAssetsLibrary *_library;
     BOOL _loadedAssets;
+    PLPhotoLibrary *_photoLibrary;
+    NSMutableDictionary *_propertyValues;
 }
 
-@property(retain) MLAlbum * album;
+@property(retain) PLPhotoLibrary * _photoLibrary;
+@property(retain) NSObject<PLAssetContainer> * album;
 @property(retain) ALAssetsFilter * assetsFilter;
 @property unsigned int groupType;
 @property BOOL isValid;
 @property ALAssetsLibrary * library;
+@property(retain) NSMutableDictionary * propertyValues;
 
-- (id)album;
+- (void)_performBlockAndWait:(id)arg1;
+- (id)_photoLibrary;
+- (struct NSObject { Class x1; }*)album;
 - (id)assetsFilter;
 - (void)dealloc;
 - (unsigned int)groupType;
-- (id)initWithAlbum:(id)arg1 library:(id)arg2;
+- (id)initWithAlbum:(struct NSObject { Class x1; }*)arg1 library:(id)arg2;
 - (BOOL)isValid;
 - (id)library;
 - (void)libraryDidChange;
 - (void)libraryWillDisappear;
 - (void)populateAssets;
+- (id)propertyValues;
 - (void)resetAssets;
-- (void)setAlbum:(id)arg1;
+- (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)setAssetsFilter:(id)arg1;
 - (void)setGroupType:(unsigned int)arg1;
 - (void)setIsValid:(BOOL)arg1;
 - (void)setLibrary:(id)arg1;
+- (void)setPropertyValues:(id)arg1;
+- (void)set_photoLibrary:(id)arg1;
 
 @end

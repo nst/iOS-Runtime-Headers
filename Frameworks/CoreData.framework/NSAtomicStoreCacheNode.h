@@ -15,6 +15,7 @@
 + (void)initialize;
 
 - (void)_setVersionNumber:(unsigned int)arg1;
+- (id)_snapshot_;
 - (unsigned int)_versionNumber;
 - (void)dealloc;
 - (id)init;

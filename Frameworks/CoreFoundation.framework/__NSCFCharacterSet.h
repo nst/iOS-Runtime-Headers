@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSCFCharacterSet : __NSCFType {
+@interface __NSCFCharacterSet : NSMutableCharacterSet {
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)addCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)addCharactersInString:(id)arg1;
 - (id)bitmapRepresentation;

@@ -20,18 +20,6 @@
     NSString *_workoutState;
 }
 
-@property(readonly) NSString * currentSongName;
-@property(readonly) float goal;
-@property(readonly) NSString * goalType;
-@property(readonly) BOOL hasPowerSong;
-@property(readonly) int musicSelection;
-@property(readonly) NSString * powerSongName;
-@property(readonly) NSString * presetGoal;
-@property(readonly) NSString * sensorSearchState;
-@property(readonly) BOOL shouldControlMusic;
-@property(readonly) NSDictionary * workoutData;
-@property(readonly) NSString * workoutState;
-
 - (void)_checkinWithServer;
 - (void)_handlePropertyUpdateNotification:(id)arg1;
 - (void)_nowPlayingChanged:(id)arg1;

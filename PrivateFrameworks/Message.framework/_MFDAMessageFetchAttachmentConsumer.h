@@ -8,12 +8,14 @@
     NSMutableData *_accumulatedData;
     BOOL _dataWasBase64;
     unsigned int _expectedLength;
+    BOOL _fetchSucceeded;
     ActivityMonitor *_monitor;
 }
 
 @property(readonly) NSData * accumulatedData;
 @property(readonly) BOOL dataWasBase64;
 @property unsigned int expectedLength;
+@property(readonly) BOOL fetchSucceeded;
 
 - (id)accumulatedData;
 - (void)attachmentFetchCompletedWithStatus:(int)arg1 forAttachmentNamed:(id)arg2 ofMessageWithServerID:(id)arg3 dataWasBase64:(BOOL)arg4;
@@ -21,6 +23,7 @@
 - (BOOL)dataWasBase64;
 - (void)dealloc;
 - (unsigned int)expectedLength;
+- (BOOL)fetchSucceeded;
 - (id)initWithActivityMonitor:(id)arg1;
 - (void)setExpectedLength:(unsigned int)arg1;
 

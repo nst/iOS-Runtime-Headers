@@ -7,53 +7,36 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSMutableSet, NSArray, NSSet, NSMutableArray, NSLock;
+@class NSSet, NSArray, SSDownloadManager;
 
-@interface SSDownloadQueue : NSObject {
-    NSSet *_downloadKinds;
-    NSMutableArray *_downloads;
-    NSMutableSet *_kindsUsingNetwork;
-    int _lastUpdatedIndex;
-    NSLock *_lock;
+@interface SSDownloadQueue : NSObject <SSDownloadManagerObserverPrivate> {
+    BOOL _autoFinishDownloads;
+    SSDownloadManager *_downloadManager;
     struct __CFSet { } *_observers;
-    NSMutableArray *_placeholders;
-    NSMutableArray *_preorders;
-    BOOL _registeringWithDaemon;
 }
 
 @property(readonly) NSSet * downloadKinds;
+@property(readonly) SSDownloadManager * downloadManager;
 @property(readonly) NSArray * downloads;
 @property(readonly) NSArray * placeholderDownloads;
 @property(readonly) NSArray * preorders;
+@property BOOL shouldAutomaticallyFinishDownloads;
 @property(getter=isUsingNetwork,readonly) BOOL usingNetwork;
 
++ (id)cachedArtworkForDownload:(id)arg1;
++ (void)cancelLoadArtworkForDownload:(id)arg1;
++ (void)loadArtworkForDownload:(id)arg1;
 + (id)mediaDownloadKinds;
++ (void)setCachedArtwork:(id)arg1 forDownload:(id)arg2;
 + (id)softwareApplicationDownloadKinds;
-+ (void)triggerDownloads;
 
-- (id)_copyPlaceholdersByRemovingIdentifier:(id)arg1;
-- (void)_daemonExited:(id)arg1;
-- (void)_daemonExitedMainThread:(id)arg1;
-- (void)_downloadReplaced:(id)arg1;
-- (void)_downloadStatusChanged:(id)arg1;
-- (void)_downloadsAdded:(id)arg1;
-- (void)_downloadsChanged:(id)arg1;
-- (void)_downloadsRemoved:(id)arg1;
-- (void)_filterPlaceholderDownloads;
-- (int)_indexOfDownloadWithIdentifier:(id)arg1;
+- (void)_handleDownloadsDidChange:(id)arg1;
+- (id)_initWithDownloadManagerOptions:(id)arg1;
 - (void)_messageObserversWithFunction:(int (*)())arg1 context:(void*)arg2;
-- (void)_networkUsageChanged:(id)arg1;
-- (void)_observeDaemon;
-- (void)_preOrdersChanged:(id)arg1;
-- (void)_registerAfterDaemonLaunch;
-- (void)_registerWithDaemon;
-- (void)_removeAllPlaceholders;
-- (void)_resetKindsUsingNetwork;
 - (void)_sendDownloadStatusChangedAtIndex:(int)arg1;
 - (void)_sendQueueChangedWithRemovals:(id)arg1;
 - (void)_sendQueueNetworkUsageChanged;
 - (void)_sendQueuePreOrdersChanged;
-- (void)_stopObservingDaemon;
 - (BOOL)addDownload:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)addPlaceholderDownloads:(id)arg1;
@@ -62,15 +45,24 @@
 - (void)dealloc;
 - (id)downloadForItemIdentifier:(unsigned long long)arg1;
 - (id)downloadKinds;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
+- (void)downloadManager:(id)arg1 downloadsDidChange:(id)arg2;
+- (id)downloadManager;
+- (void)downloadManagerDownloadsDidChange:(id)arg1;
+- (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (id)downloads;
+- (void)getDownloadsUsingBlock:(id)arg1;
 - (id)init;
 - (id)initWithDownloadKinds:(id)arg1;
+- (id)initWithDownloadManagerOptions:(id)arg1;
 - (BOOL)isUsingNetwork;
 - (id)placeholderDownloads;
 - (id)preorders;
 - (BOOL)reloadFromServer;
 - (void)removeObserver:(id)arg1;
 - (void)removePlaceholderDownload:(id)arg1;
+- (void)setShouldAutomaticallyFinishDownloads:(BOOL)arg1;
+- (BOOL)shouldAutomaticallyFinishDownloads;
 - (BOOL)startPreOrderDownload:(id)arg1;
 
 @end

@@ -7,16 +7,19 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class AVWeakReference;
+
 @interface AVCMNotificationDispatcherListenerAndCallback : NSObject {
     int (*_callback)();
-    id _listener;
+    AVWeakReference *_weakReferenceToListener;
 }
 
 @property(readonly) int (* callback;
 @property(readonly) id listener;
 
 - (int (*)())callback;
-- (id)initWithListener:(id)arg1 callback:(int (*)())arg2;
+- (void)dealloc;
+- (id)initWithWeakReferenceToListener:(id)arg1 callback:(int (*)())arg2;
 - (id)listener;
 
 @end

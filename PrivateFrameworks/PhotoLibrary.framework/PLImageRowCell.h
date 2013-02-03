@@ -6,24 +6,21 @@
 
 @interface PLImageRowCell : UITableViewCell {
     struct CGImage { } *_rowImage;
-    NSMutableArray *_stackItemViews;
+    NSMutableArray *_stackItemCells;
 }
 
-@property(readonly) NSArray * stackItemViews;
+@property(readonly) NSArray * stackItemCells;
 
-+ (void)_initializeSafeCategory;
 + (Class)layerClass;
 
-- (BOOL)_accessibilityAlwaysReturnsChild;
-- (void)addStackItemView:(id)arg1;
 - (void)clearContents;
 - (void)dealloc;
 - (id)initWithReuseIdentifier:(id)arg1;
+- (void)insertStackItemCell:(id)arg1 atColumn:(unsigned int)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
-- (void)redrawStackItemView:(id)arg1;
-- (void)removeStackItemView:(id)arg1;
+- (void)removeStackItemCell:(id)arg1;
 - (void)setRowImage:(struct CGImage { }*)arg1;
-- (id)stackItemViews;
+- (id)stackItemCells;
 
 @end

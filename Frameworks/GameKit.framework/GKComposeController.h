@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSURL, NSString, <GKComposeControllerDelegate>;
+@class NSMutableSet, NSString, <GKComposeControllerDelegate>, NSURL;
 
 @interface GKComposeController : GKAbstractComposeController {
     BOOL _alertShown;
@@ -11,6 +11,7 @@
     BOOL _dismissed;
     int _failCount;
     BOOL _messageWasSetExternally;
+    NSMutableSet *_playerFriendRequestsSent;
     NSURL *_serverAddFriendsURL;
     int _successCount;
 }
@@ -18,6 +19,7 @@
 @property(copy) NSString * defaultMessage;
 @property <GKComposeControllerDelegate> * delegate;
 @property BOOL messageWasSetExternally;
+@property(retain) NSMutableSet * playerFriendRequestsSent;
 @property(retain) NSURL * serverAddFriendsURL;
 
 - (void)addPlayerRecipients:(id)arg1;
@@ -29,6 +31,7 @@
 - (void)dismiss;
 - (void)loadView;
 - (BOOL)messageWasSetExternally;
+- (id)playerFriendRequestsSent;
 - (void)send:(id)arg1;
 - (void)serverAddFriendsButtonWasTouched;
 - (id)serverAddFriendsURL;
@@ -36,14 +39,13 @@
 - (void)setDefaultMessageWithRealName;
 - (void)setDelegate:(id)arg1;
 - (void)setMessageWasSetExternally:(BOOL)arg1;
+- (void)setPlayerFriendRequestsSent:(id)arg1;
 - (void)setServerAddFriendsURL:(id)arg1;
 - (void)showAlertForError:(id)arg1;
 - (void)showAlertForFailures:(id)arg1 allFailed:(BOOL)arg2;
-- (void)showAlertForSuccess;
 - (void)updateNavigationButtons;
 - (void)updateTitle;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

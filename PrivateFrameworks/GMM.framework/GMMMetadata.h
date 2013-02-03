@@ -13,12 +13,10 @@
 
 @property BOOL fetchDepthMap;
 @property BOOL fetchPanoMap;
-@property(readonly) BOOL hasFetchDepthMap;
-@property(readonly) BOOL hasFetchPanoMap;
-@property(readonly) BOOL hasNeedsLinkStreetRange;
+@property BOOL hasFetchDepthMap;
+@property BOOL hasFetchPanoMap;
+@property BOOL hasNeedsLinkStreetRange;
 @property BOOL needsLinkStreetRange;
-
-+ (id)standardMetadata;
 
 - (void)dealloc;
 - (id)description;
@@ -28,11 +26,13 @@
 - (BOOL)hasFetchDepthMap;
 - (BOOL)hasFetchPanoMap;
 - (BOOL)hasNeedsLinkStreetRange;
-- (id)init;
 - (BOOL)needsLinkStreetRange;
 - (BOOL)readFrom:(id)arg1;
 - (void)setFetchDepthMap:(BOOL)arg1;
 - (void)setFetchPanoMap:(BOOL)arg1;
+- (void)setHasFetchDepthMap:(BOOL)arg1;
+- (void)setHasFetchPanoMap:(BOOL)arg1;
+- (void)setHasNeedsLinkStreetRange:(BOOL)arg1;
 - (void)setNeedsLinkStreetRange:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 

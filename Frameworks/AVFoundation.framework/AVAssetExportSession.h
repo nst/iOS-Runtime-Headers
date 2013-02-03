@@ -2,14 +2,16 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSError, AVAudioMix, AVAssetExportSessionInternal, NSString, NSURL, AVVideoComposition, NSArray;
+@class NSError, AVAsset, AVAudioMix, AVAssetExportSessionInternal, NSString, NSURL, AVVideoComposition, NSArray;
 
 @interface AVAssetExportSession : NSObject {
     AVAssetExportSessionInternal *_exportSession;
 }
 
+@property(retain,readonly) AVAsset * asset;
 @property(copy) AVAudioMix * audioMix;
 @property(readonly) NSError * error;
+@property(readonly) long long estimatedOutputFileLength;
 @property long long fileLengthLimit;
 @property(readonly) struct { long long value; int timescale; unsigned int flags; long long epoch; } maxDuration;
 @property(copy) NSArray * metadata;
@@ -23,14 +25,20 @@
 @property struct { struct { long long value; int timescale; unsigned int flags; long long epoch; } start; struct { long long value; int timescale; unsigned int flags; long long epoch; } duration; } timeRange;
 @property(copy) AVVideoComposition * videoComposition;
 
++ (long long)_estimatedOutputFileLengthForPreset:(id)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 properties:(id)arg3;
 + (id)_figRemakerNotificationNames;
++ (struct { long long x1; int x2; unsigned int x3; long long x4; })_maximumDurationForPreset:(id)arg1 fileSizeBytesLimit:(long long)arg2 properties:(id)arg3;
 + (id)_settingForPreset:(id)arg1;
++ (id)_utTypesForAudioOnly;
 + (id)_utTypesForPresets;
 + (id)allExportPresets;
++ (long long)estimatedOutputFileLengthForPreset:(id)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 properties:(id)arg3;
 + (id)exportPresetsCompatibleWithAsset:(id)arg1;
 + (id)exportSessionWithAsset:(id)arg1 presetName:(id)arg2;
++ (struct { long long x1; int x2; unsigned int x3; long long x4; })maximumDurationForPreset:(id)arg1 properties:(id)arg2;
 
 - (id)_actualPresetName;
+- (id)_actualSettingForPreset:(id)arg1;
 - (void)_addListeners;
 - (BOOL)_canPassThroughAudio:(id)arg1 checkEnabled:(BOOL)arg2 checkProtected:(BOOL)arg3;
 - (BOOL)_canPassThroughVideo:(id)arg1 checkEnabled:(BOOL)arg2 checkAll:(BOOL)arg3 checkProtected:(BOOL)arg4;
@@ -45,11 +53,13 @@
 - (BOOL)_totalSizeOfTracksIsWithinFileLengthLimit:(id)arg1 forSetting:(id)arg2;
 - (void)_transitionToStatus:(int)arg1 error:(id)arg2;
 - (void)_updateProgress;
+- (id)asset;
 - (id)audioMix;
 - (void)cancelExport;
 - (void)dealloc;
 - (id)description;
 - (id)error;
+- (long long)estimatedOutputFileLength;
 - (void)exportAsynchronouslyWithCompletionHandler:(id)arg1;
 - (long long)fileLengthLimit;
 - (void)finalize;
@@ -61,8 +71,6 @@
 - (id)outputURL;
 - (id)presetName;
 - (float)progress;
-- (void)release;
-- (id)retain;
 - (void)setAudioMix:(id)arg1;
 - (void)setFileLengthLimit:(long long)arg1;
 - (void)setMetadata:(id)arg1;

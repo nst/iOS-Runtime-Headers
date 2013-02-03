@@ -20,6 +20,7 @@
 - (void)addXmlCharContent:(const char *)arg1;
 - (struct __CFData { }*)createHtml;
 - (struct __CFData { }*)createHtmlWithCss:(struct __CFString { }*)arg1;
+- (struct __CFData { }*)createProgressiveHtml;
 - (void)dealloc;
 - (void)endElement;
 - (void)endElementWithExpectedName:(const char *)arg1;

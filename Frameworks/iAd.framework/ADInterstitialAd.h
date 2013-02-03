@@ -2,18 +2,20 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class ADInterstitialView, <ADInterstitialAdDelegate>;
+@class ADInterstitialView, ADInterstitialModalViewController, <ADInterstitialAdDelegate>;
 
-@interface ADInterstitialAd : NSObject {
-    <ADInterstitialAdDelegate> *_delegate;
+@interface ADInterstitialAd : NSObject <ADInterstitialViewDelegate> {
     ADInterstitialView *_interstitialView;
+    ADInterstitialModalViewController *_modalViewController;
     BOOL _presentedInView;
+    <ADInterstitialAdDelegate> *_weakDelegate;
 }
 
 @property(getter=isActionInProgress,readonly) BOOL actionInProgress;
 @property <ADInterstitialAdDelegate> * delegate;
 @property(retain) ADInterstitialView * interstitialView;
 @property(getter=isLoaded,readonly) BOOL loaded;
+@property(retain) ADInterstitialModalViewController * modalViewController;
 @property BOOL presentedInView;
 
 - (void)cancelAction;
@@ -26,8 +28,10 @@
 - (BOOL)interstitialViewActionShouldBegin:(id)arg1 willLeaveApplication:(BOOL)arg2;
 - (void)interstitialViewDidLoadAd:(id)arg1;
 - (void)interstitialViewDidUnloadAd:(id)arg1;
+- (void)interstitialViewWillLoadAd:(id)arg1;
 - (BOOL)isActionInProgress;
 - (BOOL)isLoaded;
+- (id)modalViewController;
 - (void)presentFromViewController:(id)arg1;
 - (BOOL)presentInView:(id)arg1;
 - (BOOL)presentedInView;
@@ -36,6 +40,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setInterstitialView:(id)arg1;
 - (void)setLocalAd:(id)arg1;
+- (void)setModalViewController:(id)arg1;
 - (void)setPresentedInView:(BOOL)arg1;
 - (void)setSection:(id)arg1;
 

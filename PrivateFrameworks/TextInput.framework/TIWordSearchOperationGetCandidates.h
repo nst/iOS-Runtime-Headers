@@ -6,6 +6,7 @@
 
 @interface TIWordSearchOperationGetCandidates : TIWordSearchOperation {
     SEL _action;
+    NSArray *_geometryModelData;
     NSString *_inputString;
     NSArray *_results;
     id _target;
@@ -13,15 +14,17 @@
 }
 
 @property(readonly) SEL action;
+@property(readonly) NSArray * geometryModelData;
 @property(readonly) NSString * inputString;
 @property(retain) NSArray * results;
 @property(retain,readonly) id target;
 @property(readonly) BOOL withPrediction;
 
 - (SEL)action;
-- (void)completeSearchOnMainThread;
+- (void)completeSearchOnMainThreadWithResults:(id)arg1;
 - (void)dealloc;
-- (id)initWithTIWordSearch:(id)arg1 inputString:(id)arg2 withPrediction:(BOOL)arg3 target:(id)arg4 action:(SEL)arg5;
+- (id)geometryModelData;
+- (id)initWithTIWordSearch:(id)arg1 inputString:(id)arg2 withPrediction:(BOOL)arg3 target:(id)arg4 action:(SEL)arg5 geometryModelData:(id)arg6;
 - (id)inputString;
 - (void)perform;
 - (id)results;

@@ -18,7 +18,6 @@
 }
 
 + (int)blipTypeToResourceType:(int)arg1;
-+ (id)hashKeyFor:(id)arg1;
 + (id)resourceTypeToExtension:(int)arg1;
 + (id)resourceTypeToMIME:(int)arg1;
 

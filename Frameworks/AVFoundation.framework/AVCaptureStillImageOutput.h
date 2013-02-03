@@ -10,6 +10,7 @@
 
 @property(readonly) NSArray * availableImageDataCVPixelFormatTypes;
 @property(readonly) NSArray * availableImageDataCodecTypes;
+@property(getter=isCapturingStillImage,readonly) BOOL capturingStillImage;
 @property(copy) NSDictionary * outputSettings;
 
 + (struct CGImage { }*)cgImageForBGRASurface:(struct __IOSurface { }*)arg1 size:(unsigned long)arg2;

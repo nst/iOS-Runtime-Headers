@@ -89,6 +89,8 @@
 - (void)internalInitiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
 - (void)internalUpdateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
 - (void)internal_setRemoteConnectionData:(id)arg1 fromParticipantID:(id)arg2 pendingConnectionPIDList:(id)arg3;
+- (id)networkStatistics;
+- (id)networkStatisticsDictionaryForGCKStats:(void*)arg1;
 - (id)pidToConnectTimeoutSource;
 - (void)preRelease;
 - (void)setCdxClient:(id)arg1;

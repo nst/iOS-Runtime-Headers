@@ -8,9 +8,9 @@
     id _internal;
 }
 
-@property(copy,readonly) NSString * productIdentifier;
+@property(readonly) NSString * productIdentifier;
 @property(readonly) int quantity;
-@property(copy,readonly) NSData * requestData;
+@property(readonly) NSData * requestData;
 
 + (id)paymentWithProduct:(id)arg1;
 + (id)paymentWithProductIdentifier:(id)arg1;

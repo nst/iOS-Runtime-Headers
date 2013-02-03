@@ -12,6 +12,7 @@
 
 + (id)deviceInputWithDevice:(id)arg1 error:(id*)arg2;
 
+- (id)_applyOverridesToCaptureOptions:(id)arg1;
 - (void)_setDevice:(id)arg1;
 - (void)dealloc;
 - (id)description;
@@ -25,5 +26,6 @@
 - (id)ports;
 - (void)setDevice:(id)arg1;
 - (void)setSession:(id)arg1;
+- (void)willStartForSession:(id)arg1;
 
 @end

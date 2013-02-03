@@ -2,21 +2,25 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSString, NSLock;
+@class NSString;
 
 @interface ISDevice : NSObject <ISSingleton> {
     unsigned int _daemonLaunchCount;
+    struct dispatch_queue_s { } *_dispatchQueue;
     NSString *_guid;
     NSString *_hardwareModel;
-    NSLock *_lock;
+    BOOL _pluggedIn;
+    int _pluggedInToken;
     NSString *_productVersion;
     int _type;
 }
 
 @property(readonly) NSString * deviceName;
-@property(retain,readonly) NSString * guid;
-@property(retain,readonly) NSString * hardwareModel;
-@property(retain,readonly) NSString * productVersion;
+@property(readonly) NSString * guid;
+@property(readonly) NSString * hardwareModel;
+@property(readonly) NSString * hardwareName;
+@property(getter=isPluggedIn,readonly) BOOL pluggedIn;
+@property(readonly) NSString * productVersion;
 @property(readonly) NSString * serialNumber;
 @property(readonly) NSString * systemName;
 @property(readonly) int type;
@@ -26,15 +30,13 @@
 
 - (void)_cancelScheduledPowerAssertionRelease:(id)arg1;
 - (id)_copyCapabilityValueForKey:(struct __CFString { }*)arg1;
-- (void*)_copyDeviceTreeProperty:(id)arg1;
-- (id)_copyStringForDeviceTreeProperty:(id)arg1;
 - (int)_deviceTypeForModelString:(id)arg1;
 - (void)_initDeviceType;
-- (void)_initProductVersion;
 - (BOOL)_isHDVideoCapable;
 - (BOOL)_isPodcastCapable;
 - (BOOL)_releasePowerAssertion:(id)arg1;
 - (void)_schedulePowerAssertionRelease:(id)arg1;
+- (void)_setPluggedIn:(BOOL)arg1;
 - (BOOL)checkCapabilities:(id)arg1 withMismatches:(id*)arg2;
 - (id)copyProtocolConditionalContext;
 - (id)copyPurchaseValidationContext;
@@ -45,11 +47,13 @@
 - (id)deviceName;
 - (id)guid;
 - (id)hardwareModel;
+- (id)hardwareName;
 - (BOOL)hasCapability:(int)arg1;
 - (id)init;
 - (BOOL)isAnyIPhone;
 - (BOOL)isAnyIPod;
 - (BOOL)isAnyWildcat;
+- (BOOL)isPluggedIn;
 - (id)productVersion;
 - (BOOL)releasePowerAssertion:(id)arg1;
 - (id)serialNumber;

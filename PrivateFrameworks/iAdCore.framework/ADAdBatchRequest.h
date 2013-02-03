@@ -13,32 +13,31 @@
 }
 
 @property unsigned long long defaultsLastUpdate;
-@property(readonly) BOOL hasDefaultsLastUpdate;
+@property BOOL hasDefaultsLastUpdate;
 @property(readonly) BOOL hasRequestProperties;
 @property(readonly) BOOL hasSpecification;
 @property(retain) ADRequestProperties * requestProperties;
 @property(retain) NSMutableArray * requesterIdentifiers;
-@property(readonly) int requesterIdentifiersCount;
 @property(retain) ADAdSpecification * specification;
 
 - (void)addRequesterIdentifier:(id)arg1;
 - (void)dealloc;
 - (unsigned long long)defaultsLastUpdate;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasDefaultsLastUpdate;
 - (BOOL)hasRequestProperties;
 - (BOOL)hasSpecification;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (id)requestProperties;
 - (unsigned int)requestTypeCode;
 - (id)requesterIdentifierAtIndex:(unsigned int)arg1;
 - (id)requesterIdentifiers;
-- (int)requesterIdentifiersCount;
+- (unsigned int)requesterIdentifiersCount;
 - (Class)responseClass;
 - (void)setDefaultsLastUpdate:(unsigned long long)arg1;
+- (void)setHasDefaultsLastUpdate:(BOOL)arg1;
 - (void)setRequestProperties:(id)arg1;
-- (void)setRequesterIdentifier:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setRequesterIdentifiers:(id)arg1;
 - (void)setSpecification:(id)arg1;
 - (id)specification;

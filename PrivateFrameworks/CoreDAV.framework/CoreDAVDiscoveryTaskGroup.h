@@ -4,7 +4,7 @@
 
 @class <CoreDAVDiscoveryTaskGroupDelegate>, NSArray, NSString, NSMutableArray, <CoreDAVAccountInfoProvider>;
 
-@interface CoreDAVDiscoveryTaskGroup : CoreDAVTaskGroup <CoreDAVOptionsTaskDelegate, CoreDAVPropFindTaskDelegate, CoreDAVSVRLookupTaskDelegate> {
+@interface CoreDAVDiscoveryTaskGroup : CoreDAVTaskGroup <CoreDAVOptionsTaskDelegate, CoreDAVPropFindTaskDelegate> {
     BOOL _didReceiveAuthenticationError;
     <CoreDAVAccountInfoProvider> *_discoveredAccountInfo;
     NSMutableArray *_discoveries;
@@ -12,38 +12,51 @@
     NSString *_httpServiceString;
     NSArray *_httpsPorts;
     NSString *_httpsServiceString;
+    NSArray *_potentialContextPaths;
     NSString *_requiredComplianceClass;
-    NSArray *_wellKnownPaths;
+    NSString *_wellKnownPath;
 }
 
 @property <CoreDAVDiscoveryTaskGroupDelegate> * delegate;
 @property BOOL didReceiveAuthenticationError;
 @property(retain) <CoreDAVAccountInfoProvider> * discoveredAccountInfo;
+@property(retain) NSArray * potentialContextPaths;
+@property(retain) NSString * wellKnownPath;
 
 - (void)addToDiscoveryArray:(id*)arg1 discovery:(id)arg2;
 - (id)allDiscoveryPaths:(id)arg1;
 - (id)allDiscoveryPorts:(id)arg1 withScheme:(id)arg2;
 - (void)cancelTaskGroup;
-- (void)cancelTasks;
 - (id)cleanedStringsFromResponseHeaders:(id)arg1 forHeader:(id)arg2;
-- (void)completeDiscovery:(id)arg1 gotPrincipalURL:(id)arg2 error:(id)arg3;
+- (void)completeDiscovery:(id)arg1 error:(id)arg2;
+- (void)completeOptionsTask:(id)arg1 error:(id)arg2;
 - (void)dealloc;
 - (BOOL)didReceiveAuthenticationError;
 - (id)discoveredAccountInfo;
+- (id)extractPrincipalURLFromPropFindTask:(id)arg1 error:(id*)arg2;
 - (void)getDiscoveryStatus:(id)arg1 priorFailed:(id*)arg2 subsequentFailed:(id*)arg3 priorIncomplete:(id*)arg4 subsequentIncomplete:(id*)arg5 priorSuccess:(id*)arg6 subsequentSuccess:(id*)arg7;
+- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 httpPorts:(id)arg3 httpsPorts:(id)arg4 httpServiceString:(id)arg5 httpsServiceString:(id)arg6 wellKnownPath:(id)arg7 potentialContextPaths:(id)arg8 requiredComplianceClass:(id)arg9;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 httpPorts:(id)arg3 httpsPorts:(id)arg4 httpServiceString:(id)arg5 httpsServiceString:(id)arg6 wellKnownPaths:(id)arg7 requiredComplianceClass:(id)arg8;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
 - (void)optionsTask:(id)arg1 error:(id)arg2;
-- (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
+- (id)potentialContextPaths;
+- (id)propFindProperties;
+- (void)propFindTaskFinished:(id)arg1;
 - (void)setDidReceiveAuthenticationError:(BOOL)arg1;
 - (void)setDiscoveredAccountInfo:(id)arg1;
+- (void)setPotentialContextPaths:(id)arg1;
+- (void)setWellKnownPath:(id)arg1;
 - (id)setupDiscoveries:(id)arg1 withSchemes:(id)arg2;
-- (void)srvLookupTask:(id)arg1 host:(id)arg2 port:(int)arg3 error:(id)arg4;
+- (void)srvLookupTask:(id)arg1 error:(id)arg2;
 - (void)startOptionsTask:(id)arg1;
 - (void)startPropfindTask:(id)arg1;
 - (void)startSRVLookup:(id)arg1 serviceString:(id)arg2;
 - (void)startTaskGroup;
+- (void)startWellKnownFallbackHeadTask:(id)arg1 withURL:(id)arg2;
+- (void)startWellKnownLocationTask:(id)arg1 withURL:(id)arg2;
 - (void)syncAway;
+- (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)taskGroupWillCancelWithError:(id)arg1;
+- (id)wellKnownPath;
 
 @end

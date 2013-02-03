@@ -2,17 +2,20 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSTimer, UITextRangeView, UIView<UITextSelectingContainer>, UITextSelection;
+@class UIView, NSTimer, UITextRangeView, UIView<UITextSelectingContainer>, NSArray, UITextSelection;
 
 @interface UITextSelectionView : UIView {
     BOOL m_activated;
     BOOL m_caretBlinks;
-    BOOL m_caretNeedsColorUpdate;
     BOOL m_caretShowingNow;
     NSTimer *m_caretTimer;
     UIView *m_caretView;
+    BOOL m_deferSelectionCommands;
     BOOL m_delayShowingCommands;
+    BOOL m_grammarReplacementsMode;
+    struct __CFRunLoopObserver { } *m_observer;
     UITextRangeView *m_rangeView;
+    NSArray *m_replacements;
     UITextSelection *m_selection;
     int m_showingCommandsCounter;
     UIView<UITextSelectingContainer> *m_view;
@@ -23,14 +26,12 @@
 @property BOOL caretBlinks;
 @property(readonly) UIView * caretView;
 @property(readonly) UITextRangeView * rangeView;
+@property(retain) NSArray * replacements;
 @property(readonly) UITextSelection * selection;
 @property(readonly) BOOL selectionCommandsShowing;
 @property(readonly) UIView<UITextSelectingContainer> * view;
 @property BOOL visible;
 
-+ (void)_initializeSafeCategory;
-
-- (void)_axPostAfterDelay:(id)arg1;
 - (void)activate;
 - (BOOL)affectedByScrollerNotification:(id)arg1;
 - (void)appearOrFadeIfNecessary;
@@ -43,11 +44,13 @@
 - (void)clearCaretBlinkTimer;
 - (void)clearRange;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clippedTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)configureForHighlightMode;
 - (void)configureForReplacementMode;
 - (void)configureForSelectionMode;
-- (id)convertedSelectionRects;
 - (void)deactivate;
 - (void)dealloc;
+- (void)deferredUpdateSelectionCommands;
+- (void)deferredUpdateSelectionRects;
 - (void)detach;
 - (void)didRotate:(id)arg1;
 - (void)doneMagnifying;
@@ -57,12 +60,17 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithView:(id)arg1;
 - (void)inputViewDidAnimate;
+- (void)inputViewDidChange;
+- (void)inputViewDidMove;
 - (void)inputViewWillAnimate;
+- (void)inputViewWillChange;
+- (void)inputViewWillMove;
 - (void)installIfNecessary;
-- (void)layoutChanged;
+- (void)layoutChangedByScrolling:(BOOL)arg1;
 - (void)prepareForMagnification;
 - (id)rangeView;
 - (void)removeFromSuperview;
+- (id)replacements;
 - (void)scaleDidChange:(id)arg1;
 - (void)scaleWillChange:(id)arg1;
 - (id)scrollView;
@@ -73,24 +81,28 @@
 - (void)selectionDidScroll:(id)arg1;
 - (void)selectionWillScroll:(id)arg1;
 - (void)setCaretBlinks:(BOOL)arg1;
+- (void)setReplacements:(id)arg1;
 - (void)setVisible:(BOOL)arg1;
 - (BOOL)shouldBeVisible;
+- (void)showCalloutBarAfterDelay:(double)arg1;
 - (void)showCaret:(int)arg1;
 - (void)showCommandsWithReplacements:(id)arg1;
-- (void)showReplacementsWithGenerator:(id)arg1 afterDelay:(double)arg2;
+- (void)showReplacementsWithGenerator:(id)arg1 forGrammarChecking:(BOOL)arg2 afterDelay:(double)arg3;
 - (void)showSelectionCommands;
 - (void)showSelectionCommandsAfterDelay:(double)arg1;
 - (void)startCaretBlinkIfNeeded;
 - (void)textSelectionViewActivated:(id)arg1;
 - (void)touchCaretBlinkTimer;
-- (void)updateBaseIsStartWithContentPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)updateBaseIsStartWithDocumentPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)updateCalloutBarRects:(id)arg1 effectsWindow:(id)arg2;
 - (void)updateSelectionCommands;
 - (void)updateSelectionDots;
 - (void)updateSelectionRects;
-- (void)updateSelectionWithContentPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)updateSelectionRectsIfNeeded;
+- (void)updateSelectionWithDocumentPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)updateWithMagnifierTerminalPoint:(BOOL)arg1;
 - (id)view;
+- (void)viewAnimate:(id)arg1;
 - (BOOL)visible;
 - (void)willRotate:(id)arg1;
 

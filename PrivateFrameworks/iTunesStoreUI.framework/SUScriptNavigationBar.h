@@ -16,6 +16,7 @@
 @property(retain) <SUScriptNavigationItem> * rightItem;
 @property(readonly) SUScriptNavigationItem * topNavigationItem;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
@@ -49,6 +50,7 @@
 - (void)setRightItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setRightItem:(id)arg1;
 - (void)setTopNavigationItem:(id)arg1;
+- (void)tearDownUserInterface;
 - (id)topNavigationItem;
 
 @end

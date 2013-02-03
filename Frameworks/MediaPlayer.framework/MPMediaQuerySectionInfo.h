@@ -11,7 +11,7 @@
 
 @property(readonly) unsigned int count;
 @property(copy) NSArray * sectionIndexTitles;
-@property(copy,readonly) NSArray * sections;
+@property(readonly) NSArray * sections;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;

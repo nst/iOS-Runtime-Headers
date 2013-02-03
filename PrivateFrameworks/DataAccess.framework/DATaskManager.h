@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSMutableArray, NSMutableSet, NSArray, DAAccount, <DATask>;
+@class NSMutableArray, NSMutableSet, NSTimer, NSArray, DAAccount, <DATask>;
 
 @interface DATaskManager : NSObject {
     DAAccount *_account;
@@ -11,6 +11,7 @@
     <DATask> *_activeQueuedTask;
     NSMutableSet *_heldIndependentTasks;
     NSMutableSet *_independentTasks;
+    NSTimer *_managerIdleTimer;
     <DATask> *_modalHeldActiveQueuedTask;
     NSMutableSet *_modalHeldIndependentTasks;
     NSMutableArray *_queuedExclusiveTasks;
@@ -32,6 +33,7 @@
 - (id)_getQueuedExclusiveTasks;
 - (id)_getQueuedModalTasks;
 - (id)_getQueuedTasks;
+- (BOOL)_hasTasksForcingNetworkConnection;
 - (void)_makeStateTransition;
 - (void)_performTask:(id)arg1;
 - (void)_populateVersionDescriptions;
@@ -43,7 +45,10 @@
 - (void)_scheduleSelector:(SEL)arg1 withArgument:(id)arg2;
 - (void)_scheduleStartModal:(id)arg1;
 - (void)_startModal:(id)arg1;
+- (BOOL)_taskForcesNetworking:(id)arg1;
+- (BOOL)_taskInQueueForcesNetworkConnection:(id)arg1;
 - (BOOL)_useFakeDescriptions;
+- (void)_useOpportunisticSocketsAgain;
 - (id)_version;
 - (id)account;
 - (id)accountID;

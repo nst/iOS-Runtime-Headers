@@ -27,6 +27,7 @@
 - (void)cancelButtonClicked:(id)arg1;
 - (BOOL)ckCanDismissWhenSuspending;
 - (id)delegate;
+- (id)initWithNavigationController:(id)arg1;
 - (BOOL)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
 - (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
 - (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
@@ -35,6 +36,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setMimeType:(BOOL)arg1;
 - (void)setTextEntryContentsVisible:(BOOL)arg1;
+- (BOOL)shouldDismissAfterSend;
 - (void)transitionFromNewMessageToConversation;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

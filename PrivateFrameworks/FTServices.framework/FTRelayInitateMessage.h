@@ -4,7 +4,7 @@
 
 @class NSNumber, NSData, NSString;
 
-@interface FTRelayInitateMessage : FTMessage {
+@interface FTRelayInitateMessage : FTFaceTimeMessage <NSCopying> {
     NSString *_peerID;
     NSNumber *_peerNATIP;
     NSNumber *_peerNatType;
@@ -39,6 +39,7 @@
 @property(copy) NSNumber * selfRelayPort;
 
 - (id)bagKey;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)messageBody;

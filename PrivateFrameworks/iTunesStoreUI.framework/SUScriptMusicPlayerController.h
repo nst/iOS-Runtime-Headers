@@ -30,6 +30,7 @@
 @property(readonly) NSString * shuffleModeSongs;
 @property(retain) NSNumber * volume;
 
++ (void)initialize;
 + (id)scriptPlaybackStateForNativePlaybackState:(int)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;

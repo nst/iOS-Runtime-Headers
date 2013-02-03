@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSString, NSDictionary, NSMutableDictionary;
+@class NSArray, NSString, NSDictionary, NSNumber, NSMutableDictionary;
 
 @interface SUSectionsResponse : NSObject {
     BOOL _cacheable;
@@ -10,7 +10,7 @@
     int _responseType;
     NSArray *_sections;
     NSMutableDictionary *_sectionsCache;
-    BOOL _shouldResetUserOrdering;
+    NSNumber *_shouldResetUserOrdering;
 }
 
 @property(readonly) NSArray * allSections;
@@ -23,11 +23,19 @@
 @property BOOL shouldResetUserOrdering;
 @property(readonly) NSString * versionString;
 
++ (id)lastCachedVersionIdentifier;
++ (id)sectionsCacheDirectory;
++ (void)setLastCachedVersionIdentifier:(id)arg1;
+
 - (void)_applyDefaultSearchFieldConfigurationsToSections:(id)arg1;
+- (BOOL)_loadArtworkForSections:(id)arg1 fromCacheDirectory:(id)arg2;
+- (id)_newImageForIdentifier:(id)arg1 variant:(id)arg2 cacheDirectory:(id)arg3;
 - (id)_newSectionsFromDictionary:(id)arg1;
+- (void)_writeImage:(id)arg1 toCachePath:(id)arg2 forIdentifier:(id)arg3 variant:(id)arg4;
 - (id)allSections;
 - (void)dealloc;
 - (id)init;
+- (id)initWithContentsOfCacheDirectory:(id)arg1;
 - (id)initWithSectionsDictionary:(id)arg1 responseType:(int)arg2;
 - (BOOL)isCacheable;
 - (id)moreListTitle;
@@ -39,5 +47,6 @@
 - (void)setShouldResetUserOrdering:(BOOL)arg1;
 - (BOOL)shouldResetUserOrdering;
 - (id)versionString;
+- (BOOL)writeToCacheDirectory:(id)arg1 error:(id*)arg2;
 
 @end

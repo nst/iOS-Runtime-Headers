@@ -2,51 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UIPDFPageView, CALayer, UIPDFPage;
+@class CALayer;
 
-@interface UIPDFPageContentLayer : CATiledLayer {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGColor { } *_highLightColor;
-    UIPDFPage *_page;
-    UIPDFPageView *_view;
-    } cropBox;
-    } mediaBox;
+@interface UIPDFPageContentLayer : CALayer {
     CALayer *selectionLayer;
-    } transformToFit;
 }
 
 - (void)dealloc;
-- (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (void)drawLayerPossible:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (id)init;
-- (id)initWithPDFPageView:(id)arg1;
 - (void)layoutSublayers;
 - (void)setNeedsDisplay;
-- (void)setPage:(id)arg1;
 
 @end

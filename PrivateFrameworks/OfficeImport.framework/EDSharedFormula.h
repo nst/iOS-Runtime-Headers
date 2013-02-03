@@ -18,6 +18,7 @@
 - (int)columnBaseOrOffset;
 - (void)dealloc;
 - (id)init;
+- (id)initWithFormula:(id)arg1;
 - (bool)isBaseFormula;
 - (bool)isSharedFormula;
 - (int)rowBaseOrOffset;

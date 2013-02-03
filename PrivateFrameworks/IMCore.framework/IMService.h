@@ -11,6 +11,7 @@
 + (id)canonicalFormOfID:(id)arg1 withIDSensitivity:(int)arg2;
 + (id)facetimeService;
 + (void)forgetStatusImageAppearance;
++ (id)iMessageService;
 + (id)imageNameForStatus:(unsigned int)arg1;
 + (id)imageURLForStatus:(unsigned int)arg1;
 + (BOOL)isEmailAddress:(id)arg1 inDomains:(id)arg2;

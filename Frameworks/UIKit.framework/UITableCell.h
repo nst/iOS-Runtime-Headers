@@ -27,21 +27,6 @@
     _UITableCellTransientData *_transientData;
 }
 
-+ (void)_initializeSafeCategory;
-
-- (id)_accessibilityChildren;
-- (void)_accessibilityClearChildren;
-- (void)_accessibilityHandleRemoveConfirm;
-- (void)_accessibilityHandleRemoveSwitch;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)_accessibilityInternalData;
-- (BOOL)_accessibilityIsRemoveConfirmVisible;
-- (id)_accessibilityMockParent;
-- (void)_accessibilityReuseChildren:(id)arg1 forMockParent:(id)arg2;
-- (id)_accessibilityTextContent;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityTextElementFrame;
-- (void)_accessibilityUpdatePrimaryElement;
-- (void)_accessibilityUpdateRemoveControl;
 - (id)_createDisclosureView;
 - (void)_deselectWithFlashCount:(int)arg1 duration:(double)arg2;
 - (id)_disclosureView;
@@ -54,7 +39,6 @@
 - (void)_layoutSubviewsAnimated:(BOOL)arg1;
 - (void)_releaseGrabber;
 - (void)_releaseRemoveControl;
-- (void)_setAccessibilityMockParent:(id)arg1;
 - (void)_setDisclosureHidden:(BOOL)arg1;
 - (void)_setDrawsTopSeparator:(BOOL)arg1;
 - (void)_setGrabberHidden:(BOOL)arg1;
@@ -66,10 +50,6 @@
 - (void)_showDeleteOrInsertion:(BOOL)arg1 withDisclosure:(BOOL)arg2 animated:(BOOL)arg3 isDelete:(BOOL)arg4 andRemoveConfirmation:(BOOL)arg5;
 - (void)_uiRemoveControlMinusButtonHideAnimationDone:(id)arg1;
 - (void)_willBeDeleted;
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)accessibilityElementCount;
-- (id)accessibilityTableViewCellText;
-- (unsigned long long)accessibilityTraits;
 - (BOOL)cancelMouseTracking;
 - (BOOL)cancelTouchTracking;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
@@ -86,15 +66,12 @@
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)drawSeparatorInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (int)indexOfAccessibilityElement:(id)arg1;
 - (void)insertControl:(id)arg1 shouldInsertWithTarget:(id)arg2;
-- (BOOL)isAccessibilityElement;
 - (BOOL)isAtLeastHalfSelected;
 - (BOOL)isRemoveControlVisible;
 - (BOOL)isReorderingEnabled;
 - (BOOL)isSelected;
 - (void)layoutSubviews;
-- (void)registerMockChild:(id)arg1;
 - (float)removeButtonAnimationDuration;
 - (void)removeControl:(id)arg1 didRemoveTarget:(id)arg2;
 - (BOOL)removeControl:(id)arg1 shouldRemoveTarget:(id)arg2;
@@ -124,8 +101,6 @@
 - (BOOL)showDisclosure;
 - (BOOL)showDisclosureWhenReordering;
 - (BOOL)showSelection;
-- (void)unregisterAllChildren;
-- (void)unregisterMockChild:(id)arg1;
 - (void)updateHighlightColors;
 
 @end

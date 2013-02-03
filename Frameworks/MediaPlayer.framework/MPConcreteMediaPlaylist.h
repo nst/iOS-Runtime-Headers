@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, NSMutableDictionary, MPMediaQuery;
+@class NSMutableDictionary, MPMediaQuery;
 
 @interface MPConcreteMediaPlaylist : MPMediaPlaylist {
     void *_clusterPlaylist;
-    BOOL _ignoreNextLibraryChange;
-    NSArray *_items;
     MPMediaQuery *_itemsQuery;
     NSMutableDictionary *_properties;
 }
 
-- (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)addItem:(id)arg1 completionBlock:(id)arg2;
+- (void)addItems:(id)arg1 completionBlock:(id)arg2;
 - (BOOL)beginGeneratingGeniusClusterItemsWithSeedItems:(id)arg1 error:(id*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
@@ -25,15 +23,13 @@
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProperties:(id)arg1 itemsQuery:(id)arg2;
-- (void)insertItem:(id)arg1 atIndex:(unsigned int)arg2 completionBlock:(id)arg3;
-- (void)insertItems:(id)arg1 atIndex:(unsigned int)arg2 completionBlock:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)items;
 - (int)mediaTypes;
 - (void)moveItemFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2 completionBlock:(id)arg3;
 - (void)populateWithSeedItem:(id)arg1 completionBlock:(id)arg2;
 - (void)removeAllItems;
-- (void)removeItemAtIndex:(unsigned int)arg1 completionBlock:(id)arg2;
+- (void)removeItems:(id)arg1 atFilteredIndexes:(id)arg2 completionBlock:(id)arg3;
 - (id)representativeItem;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;

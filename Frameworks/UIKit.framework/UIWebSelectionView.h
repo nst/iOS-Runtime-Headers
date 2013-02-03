@@ -51,7 +51,7 @@
     } _autoscrollData;
     } _blockSelectionData;
     UIWebSelectionHandle *_bottom;
-    BOOL _calloutBarIsHideBeforeRotation;
+    BOOL _calloutBarIsHiddenBeforeRotation;
     UIView *_center;
     BOOL _creatingSelection;
     UIWebDocumentView *_documentView;
@@ -64,6 +64,7 @@
     BOOL _rotating;
     } _selectionFrame;
     UIWebSelectionGraph *_selectionGraph;
+    int _selectionInFixedPosition;
     UIWebSelectionNode *_selectionNode;
     float _shrinkThreshold;
     UIWebTextRangeView *_textRangeView;
@@ -71,7 +72,7 @@
 }
 
 @property(readonly) UIWebSelection * selection;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } selectionFrame;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectionFrame;
 @property(retain) UIWebSelectionNode * selectionNode;
 
 - (void)_didScroll;
@@ -90,8 +91,12 @@
 - (void)contractForActiveHandle;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })desiredBox;
+- (void)didEndScrollingOverflow;
+- (void)didEndScrollingPage;
 - (void)endSelectionCreationWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)expandForActiveHandle;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fetchSelectionBoundingRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fetchSelectionBoundingTextSelectionRect;
 - (id)handleWithPosition:(int)arg1;
 - (id)handles;
 - (void)hideControls;
@@ -99,8 +104,10 @@
 - (void)hideCopyCallout;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithWebDocumentView:(id)arg1;
-- (void)layoutChanged;
+- (void)layoutChangedByScrolling:(BOOL)arg1;
 - (id)nodeInPristineGraphAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)onAfterScrollShowingSelection:(BOOL)arg1;
+- (void)onBeforeScrollHidingSelection:(BOOL)arg1;
 - (void)removeFromSuperview;
 - (void)resetSelection;
 - (void)scaleChanged;
@@ -129,8 +136,12 @@
 - (void)updateAutoscrollForHandle:(id)arg1;
 - (void)updateForChangedLayoutWhileManipulatingBlockSelectionHandle;
 - (void)updateForChangedLayoutWhileManipulatingTextSelectionHandle;
-- (void)updateFrameAndHandles;
+- (void)updateFrameAndHandlesWithAnimation:(BOOL)arg1;
+- (BOOL)updateRectForCalloutBar:(id)arg1 inWindow:(id)arg2;
 - (void)updateSelectionCreationWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)updateSelectionRects;
+- (void)updateTextRangeViewSelectionRects;
+- (void)willStartScrollingOverflow;
+- (void)willStartScrollingPage;
 
 @end

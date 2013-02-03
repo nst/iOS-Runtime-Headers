@@ -14,5 +14,6 @@
 - (void)dealloc;
 - (id)initWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1 mediaType:(id)arg2 mediaFileType:(id)arg3 outputSettings:(id)arg4 sourcePixelBufferAttributes:(id)arg5 error:(id*)arg6;
 - (BOOL)markEndOfDataReturningError:(id*)arg1;
+- (void)prepareToEndSession;
 
 @end

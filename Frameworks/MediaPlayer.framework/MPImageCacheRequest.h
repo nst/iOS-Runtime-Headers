@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIImage, UIColor, MPImageModifier, NSString, MPImageCache, <MPImageRequestDelegate>;
+@class UIImage, UIColor, MPImageModifier, <NSObject><NSCopying>, MPImageCache, <MPImageRequestDelegate>;
 
 @interface MPImageCacheRequest : NSOperation {
     struct CGSize { 
@@ -21,7 +21,7 @@
     } _finalSize;
     MPImageModifier *_modifier;
     long long _tag;
-    NSString *_uniqueKey;
+    <NSObject><NSCopying> *_uniqueKey;
 }
 
 @property MPImageCache * cache;
@@ -31,15 +31,17 @@
 @property BOOL decodeOnFetch;
 @property <MPImageRequestDelegate> * delegate;
 @property(retain) UIColor * fillColor;
-@property struct CGSize { float width; float height; } finalSize;
+@property struct CGSize { float x1; float x2; } finalSize;
 @property(retain) MPImageModifier * modifier;
 @property(readonly) UIImage * placeholderImage;
 @property long long tag;
-@property(retain) NSString * uniqueKey;
+@property(retain) <NSObject><NSCopying> * uniqueKey;
 
-- (void)_mainThreadSendErrorToDelegate:(id)arg1;
-- (void)_mainThreadSendImageToDelegate:(id)arg1;
-- (id)_newBitmapImageFrom:(id)arg1 finalSize:(struct CGSize { float x1; float x2; })arg2;
+- (BOOL)_canUseInputImageAsFinalOutput:(id)arg1;
+- (void)_getGeometryForCreatingNewImage:(id)arg1 finalSize:(struct CGSize { float x1; float x2; })arg2 contentSize:(struct CGSize { float x1; float x2; }*)arg3 contentSubRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4 imageFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
+- (id)_newBitmapImageFromImage:(id)arg1 finalSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)_sendErrorToDelegate:(id)arg1;
+- (void)_sendImageToDelegate:(id)arg1;
 - (id)cache;
 - (BOOL)canRequestSynchronously;
 - (void)cancel;
@@ -53,15 +55,12 @@
 - (id)description;
 - (id)fillColor;
 - (struct CGSize { float x1; float x2; })finalSize;
-- (void)getGeometryForCreatingNewImage:(id)arg1 finalSize:(struct CGSize { float x1; float x2; })arg2 contentSize:(struct CGSize { float x1; float x2; }*)arg3 contentSubRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4 imageFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
 - (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (void)main;
 - (id)modifier;
 - (id)placeholderImage;
-- (void)sendErrorToDelegate:(id)arg1;
-- (void)sendImageToDelegate:(id)arg1;
 - (void)setCache:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
 - (void)setContentMode:(int)arg1;

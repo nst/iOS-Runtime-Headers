@@ -2,14 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSString, NSDate, NSNumber, NSURL;
+@class NSURL, NSString, NSNumber;
 
 @interface SPSearchResult : NSObject <SPSearchResult, SPSearchResultCursor> {
     NSURL *_URL;
     NSString *_auxiliarySubtitle;
     NSString *_auxiliaryTitle;
     NSNumber *_badge;
-    NSDate *_date;
     int _domain;
     unsigned long long _identifier;
     NSString *_resultDisplayIdentifier;
@@ -23,7 +22,6 @@
 @property(retain) NSString * auxiliarySubtitle;
 @property(retain) NSString * auxiliaryTitle;
 @property(copy) NSNumber * badge;
-@property(retain) NSDate * date;
 @property int domain;
 @property unsigned long long identifier;
 @property(retain) NSString * resultDisplayIdentifier;
@@ -39,11 +37,9 @@
 - (id)auxiliaryTitle;
 - (const char *)auxiliaryTitleUTF8String;
 - (id)badge;
-- (id)date;
 - (void)dealloc;
 - (int)domain;
 - (BOOL)getBadgeValue:(float*)arg1;
-- (BOOL)getDateSinceReferenceDate:(double*)arg1;
 - (unsigned int)hash;
 - (unsigned long long)identifier;
 - (BOOL)isEqual:(id)arg1;
@@ -53,7 +49,6 @@
 - (void)setAuxiliarySubtitle:(id)arg1;
 - (void)setAuxiliaryTitle:(id)arg1;
 - (void)setBadge:(id)arg1;
-- (void)setDate:(id)arg1;
 - (void)setDomain:(int)arg1;
 - (void)setIdentifier:(unsigned long long)arg1;
 - (void)setResultDisplayIdentifier:(id)arg1;

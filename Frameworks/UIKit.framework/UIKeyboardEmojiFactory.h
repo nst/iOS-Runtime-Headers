@@ -9,7 +9,8 @@
 }
 
 - (void)dealloc;
-- (id)emojiWithCodePoint:(id)arg1;
+- (id)emojiWithKey:(id)arg1;
+- (id)emojiWithPrivateCodePoint:(id)arg1;
 - (id)init;
 
 @end

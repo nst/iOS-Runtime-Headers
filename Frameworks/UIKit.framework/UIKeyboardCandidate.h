@@ -2,16 +2,35 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSString;
+
 @interface UIKeyboardCandidate : NSObject <NSCopying> {
+    NSString *_alternativeText;
 }
 
+@property(readonly) NSString * accessibilityLabel;
+@property(copy) NSString * alternativeText;
+@property(readonly) NSString * candidate;
+@property(readonly) unsigned int deleteCount;
+@property(getter=isExtensionCandidate,readonly) BOOL extensionCandidate;
+@property(readonly) NSString * input;
+@property(readonly) NSString * insertion;
+@property(readonly) BOOL isForShortcutConversion;
+@property(readonly) unsigned int wordOriginFeedbackID;
+
+- (id)accessibilityLabel;
+- (id)alternativeText;
 - (id)candidate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (unsigned int)deleteCount;
 - (unsigned int)hash;
 - (id)input;
 - (id)insertion;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isExtensionCandidate;
+- (BOOL)isForShortcutConversion;
+- (void)setAlternativeText:(id)arg1;
 - (unsigned int)wordOriginFeedbackID;
 
 @end

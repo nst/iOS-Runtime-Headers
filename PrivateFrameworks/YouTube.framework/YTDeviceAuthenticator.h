@@ -4,7 +4,7 @@
 
 @class NSMutableData, NSString, NSData, NSURLConnection;
 
-@interface YTDeviceAuthenticator : NSObject {
+@interface YTDeviceAuthenticator : NSObject <NSURLConnectionDelegate> {
     NSURLConnection *_connection;
     NSData *_hmac;
     int _phase;

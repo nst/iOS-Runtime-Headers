@@ -17,6 +17,7 @@
     UIColor *_sectionBorderColor;
     int _sectionLocation;
     BOOL _selected;
+    UIColor *_selectionColor;
     int _selectionStyle;
     UIColor *_separatorColor;
     } _size;
@@ -32,9 +33,10 @@
 @property(retain) UIColor * sectionBorderColor;
 @property int sectionLocation;
 @property BOOL selected;
+@property(retain) UIColor * selectionColor;
 @property int selectionStyle;
 @property(retain) UIColor * separatorColor;
-@property struct CGSize { float width; float height; } size;
+@property struct CGSize { float x1; float x2; } size;
 @property(retain) UIColor * topShadowColor;
 
 - (id)backgroundColor;
@@ -51,6 +53,7 @@
 - (id)sectionBorderColor;
 - (int)sectionLocation;
 - (BOOL)selected;
+- (id)selectionColor;
 - (int)selectionStyle;
 - (id)separatorColor;
 - (void)setBackgroundColor:(id)arg1;
@@ -62,6 +65,7 @@
 - (void)setSectionBorderColor:(id)arg1;
 - (void)setSectionLocation:(int)arg1;
 - (void)setSelected:(BOOL)arg1;
+- (void)setSelectionColor:(id)arg1;
 - (void)setSelectionStyle:(int)arg1;
 - (void)setSeparatorColor:(id)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;

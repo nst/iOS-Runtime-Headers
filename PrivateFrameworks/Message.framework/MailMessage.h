@@ -13,9 +13,9 @@
 
 @property unsigned long long modSequenceNumber;
 
++ (Class)dataMessageStoreToUse;
 + (unsigned int)displayablePriorityForPriority:(int)arg1;
 + (id)forwardedMessagePrefixWithSpacer:(BOOL)arg1;
-+ (id)messageWithRFC822Data:(id)arg1;
 + (id)replyPrefixWithSpacer:(BOOL)arg1;
 + (unsigned int)validatePriority:(int)arg1;
 
@@ -23,11 +23,14 @@
 - (id)account;
 - (id)copyMessageInfo;
 - (void)dealloc;
+- (id)externalConversationID;
 - (void)loadCachedHeaderValuesFromHeaders:(id)arg1;
 - (id)loadMeetingData;
 - (id)loadMeetingExternalID;
 - (id)mailbox;
+- (void)markAsFlagged;
 - (void)markAsForwarded;
+- (void)markAsNotFlagged;
 - (void)markAsNotViewed;
 - (void)markAsReplied;
 - (void)markAsViewed;
@@ -37,13 +40,14 @@
 - (unsigned short)numberOfAttachments;
 - (id)originalMailboxURL;
 - (int)priority;
+- (id)refreshedMessage;
 - (id)remoteMailboxURL;
 - (void)setMessageFlags:(unsigned long long)arg1;
 - (void)setMessageFlagsWithoutCommitting:(unsigned long long)arg1;
-- (void)setMessageInfo:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceivedTimeIntervalSince1970:(double)arg6 dateSentTimeIntervalSince1970:(double)arg7 messageIDHeaderDigest:(id)arg8 inReplyToHeaderDigest:(id)arg9 conversationID:(id)arg10 summary:(id)arg11;
 - (void)setModSequenceNumber:(unsigned long long)arg1;
 - (void)setMutableInfoFromMessage:(id)arg1;
 - (void)setPriorityFromHeaders:(id)arg1;
+- (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(long long)arg8 conversationIDHash:(long long)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
 - (void)setSubject:(id)arg1;
 - (void)setSummary:(id)arg1;
 - (BOOL)shouldSetSummary;

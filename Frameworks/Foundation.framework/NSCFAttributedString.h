@@ -7,6 +7,8 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)addAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)appendAttributedString:(id)arg1;

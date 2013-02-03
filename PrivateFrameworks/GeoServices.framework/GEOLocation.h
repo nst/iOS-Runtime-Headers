@@ -26,14 +26,14 @@
 
 @property int altitude;
 @property double course;
-@property(readonly) BOOL hasAltitude;
-@property(readonly) BOOL hasCourse;
-@property(readonly) BOOL hasHeading;
-@property(readonly) BOOL hasHorizontalAccuracy;
-@property(readonly) BOOL hasSpeed;
-@property(readonly) BOOL hasTimestamp;
-@property(readonly) BOOL hasType;
-@property(readonly) BOOL hasVerticalAccuracy;
+@property BOOL hasAltitude;
+@property BOOL hasCourse;
+@property BOOL hasHeading;
+@property BOOL hasHorizontalAccuracy;
+@property BOOL hasSpeed;
+@property BOOL hasTimestamp;
+@property BOOL hasType;
+@property BOOL hasVerticalAccuracy;
 @property double heading;
 @property double horizontalAccuracy;
 @property(retain) GEOLatLng * latLng;
@@ -42,6 +42,7 @@
 @property int type;
 @property double verticalAccuracy;
 
+- (id)_initWithCLClientLocation:(const struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; }*)arg1;
 - (int)altitude;
 - (double)course;
 - (void)dealloc;
@@ -57,11 +58,19 @@
 - (BOOL)hasVerticalAccuracy;
 - (double)heading;
 - (double)horizontalAccuracy;
-- (id)init;
+- (id)initWithGEOCoordinate:(struct { double x1; double x2; })arg1;
 - (id)latLng;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAltitude:(int)arg1;
 - (void)setCourse:(double)arg1;
+- (void)setHasAltitude:(BOOL)arg1;
+- (void)setHasCourse:(BOOL)arg1;
+- (void)setHasHeading:(BOOL)arg1;
+- (void)setHasHorizontalAccuracy:(BOOL)arg1;
+- (void)setHasSpeed:(BOOL)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasType:(BOOL)arg1;
+- (void)setHasVerticalAccuracy:(BOOL)arg1;
 - (void)setHeading:(double)arg1;
 - (void)setHorizontalAccuracy:(double)arg1;
 - (void)setLatLng:(id)arg1;

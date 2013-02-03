@@ -18,7 +18,6 @@
     NSString *_trimmedPath;
 }
 
-+ (void)_initializeSafeCategory;
 + (long long)approximateByteSizeForMode:(int)arg1 duration:(double)arg2;
 + (int)getHDRemakerModeForMode:(int)arg1;
 + (int)getSDRemakerModeForMode:(int)arg1;

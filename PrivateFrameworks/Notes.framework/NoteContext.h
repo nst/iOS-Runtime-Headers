@@ -30,10 +30,12 @@
 }
 
 @property(readonly) BOOL isIndexing;
-@property(retain,readonly) NSManagedObjectContext * managedObjectContext;
+@property(readonly) NSManagedObjectContext * managedObjectContext;
 
++ (BOOL)databaseIsCorrupt:(id)arg1;
 + (BOOL)shouldLogIndexing;
 
+- (void).cxx_destruct;
 - (void)_createLocalAccount:(id*)arg1 andStore:(id*)arg2;
 - (id)_notePropertyObjectForKey:(id)arg1;
 - (id)accountForAccountId:(id)arg1;
@@ -69,6 +71,7 @@
 - (BOOL)deleteStore:(id)arg1;
 - (void)destroySearchIndex;
 - (void)enableChangeLogging:(BOOL)arg1;
+- (id)findNotesWithText:(id)arg1 betweenDate:(id)arg2 andDate:(id)arg3;
 - (BOOL)forceDeleteAccount:(id)arg1;
 - (void)forceSetUpUniqueObjects;
 - (id)getNextIdObject;
@@ -126,6 +129,7 @@
 - (BOOL)shouldResumeIndexing;
 - (void)sortNotes:(id)arg1;
 - (id)storeForObjectID:(id)arg1;
+- (id)storeOptions;
 - (void)tearDownCoreDataStack;
 - (void)trackChanges:(id)arg1;
 - (void)updateSearchIndex:(id)arg1;

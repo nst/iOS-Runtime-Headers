@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVPropFindTask, <CoreDAVTaskGroupDelegate>, NSSet, NSURL;
+@class NSSet, NSURL, CoreDAVPropFindTask;
 
 @interface CoreDAVUpdateACLTaskGroup : CoreDAVTaskGroup <CoreDAVPropFindTaskDelegate, CoreDAVACLTaskDelegate> {
     NSSet *_aceItems;
@@ -12,7 +12,6 @@
 }
 
 @property(retain) NSSet * aceItems;
-@property <CoreDAVTaskGroupDelegate> * delegate;
 @property(retain) CoreDAVPropFindTask * fetchTask;
 @property int state;
 @property(retain) NSURL * url;

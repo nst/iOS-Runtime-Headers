@@ -8,7 +8,7 @@
 
 @class NSString, NSArray;
 
-@interface HSBrowser : NSObject {
+@interface HSBrowser : NSObject <NSNetServiceDelegate> {
     id _addLibraryHandler;
     NSArray *_availableLibraries;
     struct _DNSServiceRef_t { } *_dnsService;

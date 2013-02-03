@@ -14,6 +14,7 @@
 @property UIView * contentView;
 @property float cornerRadius;
 
+- (BOOL)_wantsCornerSnapshotsForScrolling;
 - (id)contentView;
 - (float)cornerRadius;
 - (void)dealloc;

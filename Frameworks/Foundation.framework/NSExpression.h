@@ -7,8 +7,7 @@
     void *_reserved;
 }
 
-+ (id)_keyPathExpressionForString:(id)arg1;
-+ (id)_keyPathExpressionForString:(id)arg1;
++ (id)_newKeyPathExpressionForString:(id)arg1;
 + (id)expressionForAggregate:(id)arg1;
 + (id)expressionForBlock:(id)arg1 arguments:(id)arg2;
 + (id)expressionForConstantValue:(id)arg1;

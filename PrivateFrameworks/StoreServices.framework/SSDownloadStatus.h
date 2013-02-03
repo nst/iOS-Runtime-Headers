@@ -4,7 +4,7 @@
 
 @class SSDownloadPhase, NSError;
 
-@interface SSDownloadStatus : NSObject <NSCopying> {
+@interface SSDownloadStatus : NSObject <SSCoding, NSCopying> {
     SSDownloadPhase *_activePhase;
     BOOL _contentRestricted;
     NSError *_error;
@@ -17,16 +17,18 @@
 @property(retain) NSError * error;
 @property(getter=isFailed) BOOL failed;
 @property(getter=isFailedTransient,readonly) BOOL failedTransient;
-@property(getter=isPausable,readonly) BOOL pausable;
+@property(getter=isPausable) BOOL pausable;
 @property(getter=isPaused) BOOL paused;
 @property(readonly) float percentComplete;
 
 - (id)activePhase;
 - (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void*)copyXPCEncoding;
 - (void)dealloc;
 - (id)error;
 - (id)initWithPropertyListEncoding:(id)arg1;
+- (id)initWithXPCEncoding:(void*)arg1;
 - (BOOL)isContentRestricted;
 - (BOOL)isFailed;
 - (BOOL)isFailedTransient;
@@ -37,6 +39,9 @@
 - (void)setError:(id)arg1;
 - (void)setFailed:(BOOL)arg1;
 - (void)setOperationProgress:(id)arg1;
+- (void)setOperationType:(int)arg1;
+- (void)setPausable:(BOOL)arg1;
 - (void)setPaused:(BOOL)arg1;
+- (void)setPercentComplete:(float)arg1;
 
 @end

@@ -15,14 +15,13 @@
 - (int)affinity;
 - (BOOL)atAlphaNumericBoundaryInDirection:(int)arg1;
 - (BOOL)atBoundaryOfGranularity:(int)arg1 inDirection:(int)arg2;
-- (id)boundaryOfEnclosingTextUnitOfGranularity:(int)arg1 inDirection:(int)arg2;
 - (int)compare:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (BOOL)directionIsDownstream:(int)arg1;
 - (int)distanceFromPosition:(id)arg1;
+- (id)enclosingRangeWithMarsVoltaAlternatives:(id*)arg1;
 - (id)enclosingTextUnitOfGranularity:(int)arg1 inDirectionIfAtBoundary:(int)arg2;
-- (id)enclosingTextUnitOfGranularity:(int)arg1;
 - (BOOL)isEditable;
 - (BOOL)isEqual:(id)arg1;
 - (id)nextCharacterBoundaryInDirection:(int)arg1;
@@ -35,11 +34,9 @@
 - (id)positionByMovingInDirection:(int)arg1 amount:(unsigned long)arg2 withAffinityDownstream:(BOOL)arg3;
 - (id)positionByMovingInDirection:(int)arg1 amount:(unsigned long)arg2;
 - (id)positionOfNextBoundaryOfGranularity:(int)arg1 inDirection:(int)arg2;
-- (id)positionWithinAdjacentTextUnitOfGranularity:(int)arg1 inDirection:(int)arg2;
 - (BOOL)requiresContextForWordBoundary;
 - (void)setAffinity:(int)arg1;
 - (int)textDirection;
 - (BOOL)withinTextUnitOfGranularity:(int)arg1 inDirectionIfAtBoundary:(int)arg2;
-- (BOOL)withinTextUnitOfGranularity:(int)arg1;
 
 @end

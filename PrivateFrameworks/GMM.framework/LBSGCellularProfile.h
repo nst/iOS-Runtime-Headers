@@ -6,18 +6,16 @@
 
 @interface LBSGCellularProfile : PBCodable {
     BOOL _hasPrefetchMode;
-    NSMutableArray *_historicalCellss;
-    NSMutableArray *_neighborss;
+    NSMutableArray *_historicalCells;
+    NSMutableArray *_neighbors;
     int _prefetchMode;
     LBSGCell *_primaryCell;
     long long _timestamp;
 }
 
-@property(readonly) BOOL hasPrefetchMode;
-@property(retain) NSMutableArray * historicalCellss;
-@property(readonly) int historicalCellssCount;
-@property(retain) NSMutableArray * neighborss;
-@property(readonly) int neighborssCount;
+@property BOOL hasPrefetchMode;
+@property(retain) NSMutableArray * historicalCells;
+@property(retain) NSMutableArray * neighbors;
 @property int prefetchMode;
 @property(retain) LBSGCell * primaryCell;
 @property long long timestamp;
@@ -28,20 +26,18 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasPrefetchMode;
+- (id)historicalCells;
 - (id)historicalCellsAtIndex:(unsigned int)arg1;
-- (id)historicalCellss;
-- (int)historicalCellssCount;
-- (id)init;
+- (unsigned int)historicalCellsCount;
+- (id)neighbors;
 - (id)neighborsAtIndex:(unsigned int)arg1;
-- (id)neighborss;
-- (int)neighborssCount;
+- (unsigned int)neighborsCount;
 - (int)prefetchMode;
 - (id)primaryCell;
 - (BOOL)readFrom:(id)arg1;
-- (void)setHistoricalCells:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setHistoricalCellss:(id)arg1;
-- (void)setNeighbors:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setNeighborss:(id)arg1;
+- (void)setHasPrefetchMode:(BOOL)arg1;
+- (void)setHistoricalCells:(id)arg1;
+- (void)setNeighbors:(id)arg1;
 - (void)setPrefetchMode:(int)arg1;
 - (void)setPrimaryCell:(id)arg1;
 - (void)setTimestamp:(long long)arg1;

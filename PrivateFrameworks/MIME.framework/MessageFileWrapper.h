@@ -15,8 +15,6 @@
     NSString *_url;
 }
 
-+ (id)_supportedImageFileExtensions;
-
 - (id)URL;
 - (void)_isImage:(BOOL*)arg1 orPDFFile:(BOOL*)arg2;
 - (id)contentID;
@@ -28,7 +26,6 @@
 - (id)fileWrappers;
 - (id)filename;
 - (unsigned short)finderFlags;
-- (unsigned int)imageBytes;
 - (id)inferredMimeType;
 - (id)initRegularFileWithContents:(id)arg1;
 - (id)initSymbolicLinkWithDestination:(id)arg1;

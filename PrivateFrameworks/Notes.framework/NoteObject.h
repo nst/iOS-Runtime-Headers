@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@class NSURL, NSDate, NoteBodyObject, NoteStoreObject, NSString, NSData, NSNumber;
+@class NSNumber, NSData, NoteBodyObject, NoteStoreObject, NSURL, NSString, NSDate;
 
 @interface NoteObject : NSManagedObject {
 }
@@ -36,6 +36,7 @@
 
 - (id)content;
 - (id)contentAsPlainText;
+- (id)contentAsPlainTextPreservingNewlines;
 - (id)externalContentRef;
 - (id)externalRepresentation;
 - (unsigned long long)flags;

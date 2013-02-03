@@ -24,7 +24,7 @@
     unsigned int mHasCaps : 1;
     unsigned int mHasIsShadowed : 1;
     unsigned int mIsShadowed : 1;
-    int mBaseline;
+    double mBaseline;
     NSString *mBidiFont;
     unsigned char mCaps;
     OADHyperlink *mClickHyperlink;
@@ -48,7 +48,7 @@
 
 + (void)initialize;
 
-- (int)baseline;
+- (double)baseline;
 - (id)bidiFont;
 - (int)caps;
 - (id)clickHyperlink;
@@ -96,7 +96,7 @@
 - (double)opacity;
 - (void)overrideWithProperties:(id)arg1;
 - (void)removeUnnecessaryOverrides;
-- (void)setBaseline:(int)arg1;
+- (void)setBaseline:(double)arg1;
 - (void)setBidiFont:(id)arg1;
 - (void)setCaps:(int)arg1;
 - (void)setClickHyperlink:(id)arg1;

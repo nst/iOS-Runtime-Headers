@@ -18,26 +18,34 @@
     int __RC;
     unsigned char __cached_isReady;
     id __completion;
-    int __deps_count;
+    id __dependencies;
+    id __down_dependencies;
     void *__implicitObsInfo;
+    unsigned char __isBarrier;
     unsigned char __isCancelled;
     NSOperation *__nextOp;
+    NSOperation *__nextPriOp;
     void *__obsInfo;
     NSOperation *__outerOp;
-    int __outerRC;
+    unsigned char __pad1[16];
+    unsigned char __pad2[4];
+    unsigned char __pad3[40];
+    NSOperation *__prevOp;
     BOOL __prio;
     NSOperationQueue *__queue;
+    long long __seqno;
     int __state;
     double __thread_prio;
-    int __unfinished_deps;
+    long long __unfinished_deps;
     } __wait_cond;
     } __wait_mutex;
 }
 
-@property(copy) id completionBlock;
-
 + (void)_observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 changeKind:(unsigned int)arg3 oldValue:(id)arg4 newValue:(id)arg5 indexes:(id)arg6 context:(void*)arg7;
 
+- (id)__;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)addDependency:(id)arg1;
 - (void)cancel;
 - (id)completionBlock;
@@ -45,12 +53,13 @@
 - (id)dependencies;
 - (void)finalize;
 - (id)init;
+- (void)invalidate;
 - (BOOL)isCancelled;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
 - (BOOL)isReady;
 - (int)queuePriority;
-- (void)release;
+- (oneway void)release;
 - (void)removeDependency:(id)arg1;
 - (id)retain;
 - (unsigned int)retainCount;

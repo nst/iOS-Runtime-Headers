@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class AVItemErrorLog, NSData, NSArray;
+@class NSArray, NSData, AVPlayerItemErrorLog;
 
 @interface MPMovieErrorLog : NSObject <NSCopying> {
     struct MPMovieErrorLogInternal { 
-        AVItemErrorLog *errorLog; 
+        AVPlayerItemErrorLog *errorLog; 
     } _internal;
 }
 
-@property struct MPMovieErrorLogInternal { AVItemErrorLog *errorLog; } _internal;
+@property struct MPMovieErrorLogInternal { id x1; } _internal;
 @property(readonly) NSArray * events;
 @property(readonly) NSData * extendedLogData;
 @property(readonly) unsigned int extendedLogDataStringEncoding;

@@ -2,12 +2,26 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@interface FTDeregistrationMessage : FTMessage {
+@class NSData, NSString;
+
+@interface FTDeregistrationMessage : FTIDSMessage <NSCopying> {
+    NSString *_protocolVersion;
+    NSData *_validationData;
 }
 
+@property(copy) NSString * protocolVersion;
+@property(copy) NSData * validationData;
+
+- (id)additionalMessageHeaders;
 - (id)bagKey;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (BOOL)hasRequiredKeys:(id*)arg1;
 - (id)messageBody;
+- (id)protocolVersion;
 - (id)requiredKeys;
+- (void)setProtocolVersion:(id)arg1;
+- (void)setValidationData:(id)arg1;
+- (id)validationData;
 
 @end

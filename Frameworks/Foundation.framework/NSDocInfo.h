@@ -10,7 +10,7 @@
         unsigned int _pad : 13; 
     } flags;
     unsigned short mode;
-    int time;
+    long time;
 }
 
 - (id)copy;

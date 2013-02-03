@@ -2,14 +2,18 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSString;
+@class NSString, NSMutableDictionary;
 
 @interface EKDaemonConnection : NSObject {
     unsigned int _connectionPort;
     NSString *_dbPath;
     id _delegate;
     unsigned int _machPort;
-    unsigned int _options;
+    unsigned int _nextID;
+    unsigned long _options;
+    struct dispatch_queue_s { } *_replyHandlerLock;
+    NSMutableDictionary *_replyHandlers;
+    struct dispatch_source_s { } *_replySource;
     unsigned int _serverPort;
 }
 
@@ -18,10 +22,15 @@
 
 - (BOOL)_connectToServer;
 - (void)_daemonRestarted;
+- (void)_finishAllRepliesOnServerDeath;
+- (void)_processReplyWithID:(unsigned int)arg1 data:(id)arg2;
+- (id)addReplyHandler:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (void)disconnect;
 - (id)initWithOptions:(unsigned long)arg1 path:(id)arg2;
 - (unsigned int)port;
+- (void)removeReplyHandler:(id)arg1;
 - (void)setDelegate:(id)arg1;
 
 @end

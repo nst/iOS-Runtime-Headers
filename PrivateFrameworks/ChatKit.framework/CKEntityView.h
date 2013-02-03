@@ -4,7 +4,8 @@
 
 @class CKEntity, UILabel;
 
-@interface CKEntityView : UITableViewCell {
+@interface CKEntityView : CKTranscriptCell {
+    float _bottomMargin;
     CKEntity *_entity;
     UILabel *_label;
 }
@@ -15,6 +16,8 @@
 
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)setBottomMargin:(float)arg1;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEntity:(id)arg1;
 - (void)sizeToFit;
 - (void)updateFontSize;

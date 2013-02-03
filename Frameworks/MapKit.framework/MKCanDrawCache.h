@@ -6,7 +6,7 @@
 
 @interface MKCanDrawCache : NSObject {
     NSLock *_cacheLock;
-    struct Cache<GMMTilePath,int> {} **_caches;
+    struct Cache<_MKCanDrawCacheKey, int> {} **_caches;
     unsigned int _lodCount;
 }
 

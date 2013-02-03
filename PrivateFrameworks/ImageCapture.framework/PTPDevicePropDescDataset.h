@@ -22,8 +22,6 @@
 }
 
 - (id)content;
-- (unsigned long)contentSize;
-- (void)copyContent:(char *)arg1 ofSize:(unsigned long)arg2;
 - (id)currentValue;
 - (unsigned short)dataTypeCode;
 - (void)dealloc;

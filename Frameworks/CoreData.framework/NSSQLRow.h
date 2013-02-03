@@ -2,12 +2,10 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
+@class _CDSnapshot;
+
 @interface NSSQLRow : NSExternalRefCountedData {
-    unsigned short _fk_count;
-    void *_keySlots;
-    struct _NSScalarObjectID { Class x1; } *_oid;
-    long long _optLock;
-    unsigned short _property_count;
+    _CDSnapshot *_snapshot;
 }
 
 + (id)allocForSQLEntity:(id)arg1;
@@ -15,6 +13,7 @@
 + (void)initialize;
 + (unsigned int)newBatchRowAllocation:(id*)arg1 count:(unsigned int)arg2 forSQLEntity:(id)arg3 withOwnedObjectIDs:(struct _NSScalarObjectID {}**)arg4 andTimestamp:(double)arg5;
 
+- (id)_snapshot_;
 - (void)_validateToOnes;
 - (unsigned int)_versionNumber;
 - (id)attributeValueForSlot:(unsigned int)arg1;
@@ -25,6 +24,7 @@
 - (unsigned int)entityID;
 - (unsigned int)foreignEntityKeyForSlot:(unsigned int)arg1;
 - (long long)foreignKeyForSlot:(unsigned int)arg1;
+- (unsigned int)foreignOrderKeyForSlot:(unsigned int)arg1;
 - (id)initWithSQLEntity:(id)arg1 objectID:(struct _NSScalarObjectID { Class x1; }*)arg2;
 - (id)initWithSQLEntity:(id)arg1 ownedObjectID:(struct _NSScalarObjectID { Class x1; }*)arg2 andTimestamp:(double)arg3;
 - (BOOL)isEqual:(id)arg1;
@@ -34,9 +34,9 @@
 - (struct _NSScalarObjectID { Class x1; }*)objectID;
 - (long long)optLock;
 - (long long)pk64;
-- (void)setAttributeSlotNoRetain:(unsigned int)arg1 withObject:(id)arg2;
 - (void)setForeignEntityKeySlot:(unsigned int)arg1 unsigned:(unsigned int)arg2;
 - (void)setForeignKeySlot:(unsigned int)arg1 int64:(long long)arg2;
+- (void)setForeignOrderKeySlot:(unsigned int)arg1 unsigned:(unsigned int)arg2;
 - (void)setObjectID:(struct _NSScalarObjectID { Class x1; }*)arg1;
 - (void)setOptLock:(long long)arg1;
 - (id)valueForKey:(id)arg1;

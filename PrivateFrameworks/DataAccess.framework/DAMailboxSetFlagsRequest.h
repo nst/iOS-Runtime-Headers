@@ -11,7 +11,10 @@
 }
 
 - (void)dealloc;
+- (id)description;
+- (unsigned int)hash;
 - (id)initRequestWithSetFlags:(unsigned long long)arg1 unsetFlags:(unsigned long long)arg2 message:(id)arg3;
+- (BOOL)isEqual:(id)arg1;
 - (id)messageID;
 - (unsigned long long)offFlags;
 - (unsigned long long)onFlags;

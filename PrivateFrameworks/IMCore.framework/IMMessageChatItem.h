@@ -9,8 +9,10 @@
 
 @property(readonly) IMMessage * message;
 
+- (void)_setMessage:(id)arg1;
 - (id)description;
 - (id)initWithMessage:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)message;
 
 @end

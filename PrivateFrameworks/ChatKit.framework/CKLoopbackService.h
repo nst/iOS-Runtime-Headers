@@ -13,13 +13,12 @@
 - (void)_reallySendMessage:(id)arg1;
 - (void)_receiveMessageForMessage:(id)arg1;
 - (void)addMessageToStore:(id)arg1 incrementUnreadCount:(BOOL)arg2;
-- (id)conversationSummaries:(id*)arg1 groupIDs:(id*)arg2;
-- (int)createConversationWithRecipients:(id)arg1;
+- (id)conversationSummaries:(id)arg1 groupIDs:(id)arg2;
+- (id)createConversationWithRecipients:(id)arg1;
 - (BOOL)dbFull;
 - (void)dealloc;
-- (void)fixupNames;
 - (id)lookupRecipientsForConversation:(id)arg1;
-- (id)messagesForConversation:(id)arg1 limit:(int)arg2 moreToLoad:(BOOL*)arg3;
+- (void)messagesForConversation:(id)arg1;
 - (id)newMessageWithComposition:(id)arg1 forConversation:(id)arg2;
 - (id)placeholderMessageForConversation:(id)arg1 withDate:(id)arg2;
 - (void)sendMessage:(id)arg1;

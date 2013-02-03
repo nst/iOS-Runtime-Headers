@@ -22,6 +22,7 @@
 @property(retain) WebScriptObject * target;
 @property(retain) NSString * title;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 
 - (id)_boxedNativeButton;
@@ -29,6 +30,7 @@
 - (id)_copyStyle;
 - (id)_copySubtitle;
 - (id)_copyTitle;
+- (id)_initSUScriptButton;
 - (BOOL)_isEnabled;
 - (BOOL)_isLoading;
 - (id)_nativeButton;
@@ -37,6 +39,7 @@
 - (void)_setStyle:(id)arg1;
 - (void)_setSubtitle:(id)arg1;
 - (void)_setTitle:(id)arg1;
+- (id)_systemItemString;
 - (id)action;
 - (id)attributeKeys;
 - (id)buttonItem;
@@ -45,6 +48,7 @@
 - (BOOL)enabled;
 - (id)image;
 - (id)init;
+- (id)initWithSystemItemString:(id)arg1;
 - (BOOL)loading;
 - (id)nativeButtonOfType:(int)arg1;
 - (void)performActionWithArguments:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class NSDecimalNumber, NSString, NSData, NSSet, NSDate, NSNumber;
+@class NSDecimalNumber, NSString, NSData, NSDate, NSNumber, NSSet;
 
 @interface SWRunWorkoutRecord : NSManagedObject {
 }

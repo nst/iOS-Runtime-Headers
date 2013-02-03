@@ -5,6 +5,7 @@
 @class AVRunLoopCondition, AVWeakReference;
 
 @interface AVAssetReaderOutputInternal : NSObject {
+    BOOL alwaysCopiesSampleData;
     int extractionID;
     struct OpaqueFigAssetReader { } *figAssetReader;
     int finished;

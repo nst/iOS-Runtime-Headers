@@ -5,17 +5,14 @@
 @class WAKView;
 
 @interface WAKScrollView : WAKView <WebCoreFrameScrollView> {
+    struct CGPoint { 
+        float x; 
+        float y; 
     id _delegate;
     WAKView *_documentView;
+    } _scrollOrigin;
 }
 
-+ (void)_initializeSafeCategory;
-
-- (id)accessibilityContainer;
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)accessibilityElementCount;
-- (BOOL)accessibilityIsIgnored;
-- (id)accessibilityObject;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })actualDocumentVisibleRect;
 - (id)contentView;
 - (void)dealloc;
@@ -29,10 +26,10 @@
 - (BOOL)hasVerticalScroller;
 - (float)horizontalLineScroll;
 - (int)horizontalScrollingMode;
-- (int)indexOfAccessibilityElement:(id)arg1;
+- (BOOL)inProgrammaticScroll;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
 - (void)reflectScrolledClipView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })scrollOrigin;
 - (void)scrollWheel:(id)arg1;
 - (void)scrollingModes:(int*)arg1 vertical:(int*)arg2;
 - (void)setActualScrollPosition:(struct CGPoint { float x1; float x2; })arg1;
@@ -45,6 +42,7 @@
 - (void)setHorizontalScrollingMode:(int)arg1;
 - (void)setLineScroll:(float)arg1;
 - (void)setScrollBarsSuppressed:(BOOL)arg1 repaintOnUnsuppress:(BOOL)arg2;
+- (void)setScrollOrigin:(struct CGPoint { float x1; float x2; })arg1 updatePositionAtAll:(BOOL)arg2 immediately:(BOOL)arg3;
 - (void)setScrollingMode:(int)arg1;
 - (void)setScrollingModes:(int)arg1 vertical:(int)arg2 andLock:(BOOL)arg3;
 - (void)setVerticalScrollingMode:(int)arg1;

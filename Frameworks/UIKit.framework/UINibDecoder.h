@@ -47,14 +47,14 @@
     Class dictionaryClass;
     int failedByKeyMask;
     } header;
-    int inlinedValueKey;
+    long inlinedValueKey;
     } keyIDCache;
     UINibStringIDTable *keyIDTable;
     unsigned int *keyMasks;
     unsigned int *longObjectClassIDs;
     int lookupRounds;
     int maxPossibleLookupRounds;
-    NSString **missingClasses;
+    id *missingClasses;
     struct UINibDecoderObjectEntry { unsigned int x1; unsigned int x2; } *objects;
     id *objectsByObjectID;
     } recursiveState;
@@ -63,7 +63,7 @@
     char *shortObjectClassIDs;
     } valueCache;
     void *valueData;
-    unsigned int valueDataSize;
+    unsigned long valueDataSize;
     char *valueTypes;
     struct UINibDecoderValue { unsigned int x1; unsigned int x2; } *values;
 }

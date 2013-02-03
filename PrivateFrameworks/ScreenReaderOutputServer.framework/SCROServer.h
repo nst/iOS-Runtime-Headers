@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@class <SCROServerDelegate>;
+@class <SCROServerDelegate>, NSLock;
 
 @interface SCROServer : NSObject {
     int _clientCount;
+    NSLock *_contentLock;
     unsigned int _deathPort;
     struct __CFRunLoopSource { } *_deathSource;
     struct __CFRunLoopTimer { } *_deathTimer;
@@ -20,8 +21,9 @@
 + (id)sharedServer;
 
 - (long)_clientCount;
-- (unsigned int)_deathPort;
 - (struct __CFRunLoopTimer { }*)_deathTimer;
+- (long)_incrementClientCount;
+- (int)_registerForNotificationOnDeathPort:(unsigned int)arg1;
 - (void)_setClientCount:(long)arg1;
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

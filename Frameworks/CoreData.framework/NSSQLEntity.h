@@ -21,6 +21,7 @@
     NSSQLStatement *_faultingStatementCache;
     void *_fetch_entity_plan;
     NSMutableArray *_fkColumns;
+    NSMutableArray *_fokColumns;
     NSSQLStatement *_insertStatementCache;
     NSSQLStoreMappingGenerator *_mappingGenerator;
     long long _maxPK;
@@ -42,9 +43,11 @@
     NSString *_tableName;
     NSMutableDictionary *_toManyRelationshipStatementCache;
     } _toOneRange;
+    NSMutableArray *_virtualFKs;
 }
 
 - (void)_addColumnToFetch:(id)arg1;
+- (void)_addForeignOrderKeyForToOne:(id)arg1 entity:(id)arg2;
 - (void)_addRootColumnToFetch:(id)arg1;
 - (void)_addSubentity:(id)arg1;
 - (id)_addVirtualToOneForToMany:(id)arg1 withInheritedProperty:(id)arg2;
@@ -57,6 +60,7 @@
 - (id)_propertySearchMapping;
 - (void)_resetPKCount;
 - (void)_setMaxPK:(long long)arg1;
+- (id)_sqlPropertyWithRenamingIdentifier:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_toOneRange;
 - (void)addInsertedObject:(id)arg1 toArray:(id)arg2;
 - (BOOL)addPropertiesForReadOnlyFetch:(id)arg1 keys:(id)arg2 context:(id)arg3;
@@ -64,7 +68,7 @@
 - (id)attributeNamed:(id)arg1;
 - (id)attributes;
 - (void)cacheDeletionStatement:(id)arg1;
-- (void)cacheFaultingStatement:(id)arg1 forRelationship:(id)arg2;
+- (void)cacheFaultingStatement:(id)arg1 andFetchRequest:(id)arg2 forRelationship:(id)arg3;
 - (void)cacheFaultingStatement:(id)arg1;
 - (void)cacheInsertStatement:(id)arg1;
 - (void)clearCachedStatements;
@@ -78,11 +82,11 @@
 - (unsigned int)entityID;
 - (id)externalName;
 - (id)faultingStatement;
-- (id)faultingStatementForRelationship:(id)arg1;
 - (unsigned int)fetchIndexForKey:(id)arg1;
 - (void)finalize;
 - (id)foreignEntityKeyColumns;
 - (id)foreignKeyColumns;
+- (id)foreignOrderKeyColumns;
 - (BOOL)hasAttributesWithExternalDataReferences;
 - (BOOL)hasInheritance;
 - (BOOL)hasSubentities;
@@ -96,6 +100,7 @@
 - (id)name;
 - (long long)nextPrimaryKey64;
 - (id)optLockKey;
+- (id)preparedFaultingCachesForRelationship:(id)arg1;
 - (id)primaryKey;
 - (id)properties;
 - (id)propertiesByName;
@@ -111,5 +116,6 @@
 - (id)superentity;
 - (id)tableName;
 - (id)toManyRelationships;
+- (id)virtualForeignKeyColumns;
 
 @end

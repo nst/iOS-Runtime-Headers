@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSURL, NSString, NSData;
+@class NSArray, NSString, NSData, NSURL;
 
 @interface CoreDAVLeafDataPayload : NSObject <CoreDAVLeafDataPayload> {
     NSData *_dataPayload;
@@ -10,6 +10,7 @@
     NSString *_syncKey;
 }
 
+@property(readonly) NSArray * childrenOrder;
 @property(readonly) NSData * dataPayload;
 @property(retain) NSURL * serverID;
 @property(readonly) NSString * syncKey;

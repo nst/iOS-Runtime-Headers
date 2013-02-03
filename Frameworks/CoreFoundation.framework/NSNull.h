@@ -9,6 +9,7 @@
 + (id)null;
 
 - (unsigned long)_cfTypeID;
+- (void)appendJsonStringToString:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

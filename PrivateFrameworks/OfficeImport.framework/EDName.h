@@ -20,6 +20,7 @@
 - (BOOL)isEqualToString:(id)arg1;
 - (id)maxWorksheetReferences;
 - (id)nameString;
+- (void)setCleanedFormula:(id)arg1;
 - (void)setFormula:(id)arg1 workbook:(id)arg2;
 - (void)setNameString:(id)arg1;
 - (void)setSheetIndex:(unsigned int)arg1;

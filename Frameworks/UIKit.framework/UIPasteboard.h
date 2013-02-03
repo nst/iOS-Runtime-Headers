@@ -52,6 +52,10 @@
 - (int)numberOfItems;
 - (id)pasteboardTypes;
 - (id)pasteboardTypesForItemSet:(id)arg1;
+- (id)pl_assetsInPhotoLibrary:(id)arg1;
+- (BOOL)pl_containsAssets;
+- (void)pl_setAsset:(id)arg1;
+- (void)pl_setAssets:(id)arg1;
 - (void)setColor:(id)arg1;
 - (void)setColors:(id)arg1;
 - (void)setData:(id)arg1 forPasteboardType:(id)arg2;

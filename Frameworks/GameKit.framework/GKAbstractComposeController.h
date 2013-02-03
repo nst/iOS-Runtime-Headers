@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class UINavigationItem, UIResponder, GKRecipientGenerator, GKImageBackgroundView, UITextView, GKUITheme, GKRecipientSelectionView, ABPeoplePickerNavigationController, UINavigationController, NSDictionary, UIPopoverController, UIView, NSString, UIImageView, NSMutableArray;
+@class NSMutableArray, UIResponder, NSNumber, GKRecipientGenerator, GKImageBackgroundView, UITextView, GKUITheme, GKRecipientSelectionView, ABPeoplePickerNavigationController, UIView, NSDictionary, UIPopoverController, NSString, UIImageView, UINavigationItem;
 
-@interface GKAbstractComposeController : UIViewController <UIActionSheetDelegate, UIModalViewDelegate, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, UITextViewDelegate, UIPopoverControllerDelegate> {
+@interface GKAbstractComposeController : GKViewController <UIActionSheetDelegate, UIModalViewDelegate, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, UITextViewDelegate, UIPopoverControllerDelegate> {
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -23,7 +23,7 @@
     NSDictionary *_abPropertiesCache;
     UIView *_accessoryView;
     GKImageBackgroundView *_backgroundView;
-    UIImageView *_beneathMessageView;
+    UIView *_beneathMessageView;
     id _composeDelegate;
     BOOL _composeFieldsHidden;
     UIPopoverController *_composePopoverController;
@@ -33,12 +33,13 @@
     UIImageView *_messageView;
     BOOL _mightHaveAccessoryView;
     UINavigationItem *_navItem;
-    UINavigationController *_navigationController;
     ABPeoplePickerNavigationController *_peoplePickerController;
+    int _popoverHideCount;
     } _previousKeyboardFrame;
     GKRecipientGenerator *_recipientGenerator;
     GKRecipientSelectionView *_recipientSelectionView;
     NSMutableArray *_recipients;
+    NSNumber *_rid;
     UIResponder *_savedFirstResponder;
     int _savedStatusBarStyle;
     BOOL _sending;
@@ -46,29 +47,32 @@
 }
 
 @property(retain) UIView * accessoryView;
-@property(readonly) UIImageView * beneathMessageView;
+@property(readonly) UIView * beneathMessageView;
 @property id composeDelegate;
 @property BOOL composeFieldsHidden;
 @property(retain) UIPopoverController * composePopoverController;
+@property BOOL isPopoverHidden;
 @property(retain) NSString * lastMessage;
 @property(readonly) UITextView * messageEntryView;
 @property BOOL mightHaveAccessoryView;
 @property(readonly) ABPeoplePickerNavigationController * peoplePickerController;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } previousKeyboardFrame;
+@property int popoverHideCount;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } previousKeyboardFrame;
 @property(readonly) GKRecipientSelectionView * recipientSelectionView;
 @property(readonly) NSMutableArray * recipients;
+@property(retain) NSNumber * rid;
 @property(retain) UIResponder * savedFirstResponder;
 @property int savedStatusBarStyle;
 @property BOOL sending;
 @property(retain) GKUITheme * theme;
 
+- (id)_gkBackgroundView;
 - (void)_localeChanged:(id)arg1;
 - (id)_recipientGenerator;
 - (void)_resetEntryViewSize;
 - (void)_resetEntryViewSizeForInterfaceOrientation:(int)arg1 withKeyboardFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_resetPopoverPosition;
 - (void)_setupRecipientSelectionView;
-- (void)_updateUI;
 - (id)accessoryView;
 - (void)addRecipient:(void*)arg1 property:(int)arg2 identifier:(int)arg3 address:(id)arg4 makingContentEntryViewActive:(BOOL)arg5;
 - (void)addRecipients:(id)arg1;
@@ -81,13 +85,13 @@
 - (id)composePopoverController;
 - (void)dealloc;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)dismissModalViewControllerAnimated:(BOOL)arg1;
-- (void)dismissPeoplePicker:(id)arg1;
 - (void)dismissPeoplePicker;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
 - (id)fadeTransition;
-- (id)gkBackgroundView;
-- (id)initWithNavigationController:(id)arg1;
+- (void)hidePopoverAnimated:(BOOL)arg1;
+- (id)init;
 - (BOOL)isNewRecipient;
+- (BOOL)isPopoverHidden;
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
 - (id)lastMessage;
@@ -109,6 +113,7 @@
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)popFirstResponder;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
+- (int)popoverHideCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previousKeyboardFrame;
 - (id)proposedRecipients;
 - (void)pushFirstResponder;
@@ -126,10 +131,10 @@
 - (void)recipientSelectionViewTextChanged:(id)arg1;
 - (id)recipients;
 - (void)reload:(BOOL)arg1;
+- (id)rid;
 - (id)savedFirstResponder;
 - (int)savedStatusBarStyle;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)scrollViewWillBeginDragging:(id)arg1;
 - (BOOL)sending;
 - (void)setAccessoryView:(id)arg1;
 - (void)setComposeDelegate:(id)arg1;
@@ -137,7 +142,9 @@
 - (void)setComposePopoverController:(id)arg1;
 - (void)setLastMessage:(id)arg1;
 - (void)setMightHaveAccessoryView:(BOOL)arg1;
+- (void)setPopoverHideCount:(int)arg1;
 - (void)setPreviousKeyboardFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setRid:(id)arg1;
 - (void)setSavedFirstResponder:(id)arg1;
 - (void)setSavedStatusBarStyle:(int)arg1;
 - (void)setSending:(BOOL)arg1;
@@ -145,6 +152,7 @@
 - (void)setupForNewRecipient;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)showPeoplePickerWithDelegate:(id)arg1;
+- (void)showPopoverAnimated:(BOOL)arg1;
 - (void)textViewDidBeginEditing:(id)arg1;
 - (void)textViewDidChange:(id)arg1;
 - (id)theme;

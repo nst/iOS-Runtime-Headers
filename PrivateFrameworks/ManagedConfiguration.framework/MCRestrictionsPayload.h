@@ -20,6 +20,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)installationWarnings;
 - (id)restrictions;
 - (id)stubDictionary;
 - (id)subtitle1Description;

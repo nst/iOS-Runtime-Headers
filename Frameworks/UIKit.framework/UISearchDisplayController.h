@@ -16,6 +16,7 @@
         unsigned int dimTableViewOnEmptySearchString : 1; 
         unsigned int isRotatingWithPopover : 1; 
         unsigned int cancelButtonManagementDisabled : 1; 
+        unsigned int allowDisablingNavigationBarHiding : 1; 
     struct __CFArray { } *_containingScrollViews;
     <UISearchDisplayDelegate> *_delegate;
     UIView *_dimmingView;
@@ -25,6 +26,7 @@
     UILabel *_noResultsLabel;
     NSString *_noResultsMessage;
     UIPopoverController *_popoverController;
+    NSString *_resultsTitle;
     UISearchBar *_searchBar;
     } _searchDisplayControllerFlags;
     int _searchResultsTableViewStyle;
@@ -48,10 +50,10 @@
 @property <UITableViewDataSource> * searchResultsDataSource;
 @property <UITableViewDelegate> * searchResultsDelegate;
 @property(readonly) UITableView * searchResultsTableView;
-
-+ (void)_initializeSafeCategory;
+@property(copy) NSString * searchResultsTitle;
 
 - (void)_adjustTableViewContentInsets;
+- (BOOL)_allowDisablingNavigationBarHiding;
 - (BOOL)_areSearchContentsSplitViewMaster;
 - (void)_cleanUpSearchBar;
 - (void)_clearViewController;
@@ -75,6 +77,7 @@
 - (void)_popoverKeyboardDidShow:(id)arg1;
 - (void)_searchBarSuperviewChanged;
 - (void)_searchBarSuperviewWillChange;
+- (void)_setAllowDisablingNavigationBarHiding:(BOOL)arg1;
 - (void)_setCancelButtonManagementDisabled:(BOOL)arg1;
 - (void)_setTableViewVisible:(BOOL)arg1 inView:(id)arg2;
 - (void)_setupNoResultsLabelIfNecessary;
@@ -109,6 +112,7 @@
 - (id)searchResultsDataSource;
 - (id)searchResultsDelegate;
 - (id)searchResultsTableView;
+- (id)searchResultsTitle;
 - (void)setActive:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setActive:(BOOL)arg1;
 - (void)setAutomaticallyShowsNoResultsMessage:(BOOL)arg1;
@@ -121,6 +125,7 @@
 - (void)setSearchContentsController:(id)arg1;
 - (void)setSearchResultsDataSource:(id)arg1;
 - (void)setSearchResultsDelegate:(id)arg1;
+- (void)setSearchResultsTitle:(id)arg1;
 - (void)showHideAnimationDidFinish;
 - (void)windowDidRotate:(id)arg1;
 - (void)windowWillAnimateRotation:(id)arg1;

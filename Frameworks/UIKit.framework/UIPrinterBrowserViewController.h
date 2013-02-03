@@ -5,6 +5,7 @@
 @class UIPrintPanelViewController, PKPrinter, UIPrinterSearchingView, NSMutableArray, PKPrinterBrowser;
 
 @interface UIPrinterBrowserViewController : UITableViewController <PKPrinterBrowserDelegate> {
+    BOOL _clearCurrentPrinter;
     double _displayTime;
     BOOL _loaded;
     PKPrinter *_lockedPrinter;
@@ -13,8 +14,6 @@
     NSMutableArray *_printers;
     UIPrinterSearchingView *_searchingView;
 }
-
-+ (void)_initializeSafeCategory;
 
 - (void)addPrinter:(id)arg1 moreComing:(BOOL)arg2;
 - (void)adjustPopoverSize;

@@ -2,37 +2,48 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSDictionary, NSString, NSArray;
+@class NSString, NSData, NSArray;
 
-@interface FTRegistrationMessage : FTMessage {
-    NSDictionary *_aliasInfo;
-    NSDictionary *_responseAliasInfo;
-    NSString *_responseSignature;
-    NSString *_responseUserID;
-    NSArray *_supportedProtocols;
+@interface FTRegistrationMessage : FTIDSMessage <NSCopying> {
+    NSArray *_capabilities;
+    NSString *_hardwareVersion;
+    NSString *_osVersion;
+    NSString *_protocolVersion;
+    NSArray *_responseBindings;
+    NSString *_softwareVersion;
+    NSData *_validationData;
 }
 
-@property(copy) NSDictionary * aliasInfo;
-@property(copy) NSDictionary * responseAliasInfo;
-@property(copy) NSString * responseSignature;
-@property(copy) NSString * responseUserID;
-@property(copy) NSArray * supportedProtocols;
+@property(copy) NSArray * capabilities;
+@property(copy) NSString * hardwareVersion;
+@property(copy) NSString * osVersion;
+@property(copy) NSString * protocolVersion;
+@property(copy) NSArray * responseBindings;
+@property(copy) NSString * softwareVersion;
+@property(copy) NSData * validationData;
 
 - (id)additionalMessageHeaders;
-- (id)aliasInfo;
 - (id)bagKey;
+- (id)capabilities;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)handleResponseDictionary:(id)arg1;
+- (id)hardwareVersion;
+- (BOOL)hasRequiredKeys:(id*)arg1;
 - (id)messageBody;
+- (id)nonStandardMessageHeadersForOutgoingPush;
+- (id)osVersion;
+- (id)protocolVersion;
 - (id)requiredKeys;
-- (id)responseAliasInfo;
-- (id)responseSignature;
-- (id)responseUserID;
-- (void)setAliasInfo:(id)arg1;
-- (void)setResponseAliasInfo:(id)arg1;
-- (void)setResponseSignature:(id)arg1;
-- (void)setResponseUserID:(id)arg1;
-- (void)setSupportedProtocols:(id)arg1;
-- (id)supportedProtocols;
+- (id)responseBindings;
+- (void)setCapabilities:(id)arg1;
+- (void)setHardwareVersion:(id)arg1;
+- (void)setOsVersion:(id)arg1;
+- (void)setProtocolVersion:(id)arg1;
+- (void)setResponseBindings:(id)arg1;
+- (void)setSoftwareVersion:(id)arg1;
+- (void)setValidationData:(id)arg1;
+- (id)softwareVersion;
+- (id)validationData;
 
 @end

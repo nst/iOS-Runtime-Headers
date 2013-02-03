@@ -21,6 +21,7 @@
 - (void)_clearTimeoutTimer;
 - (void)_doSendDone;
 - (void)_setTimeoutTimer;
+- (void)_stopWatchingThread;
 - (void)_threadedDoStart;
 - (void)_timedOut;
 - (void)_timeoutHit:(id)arg1;

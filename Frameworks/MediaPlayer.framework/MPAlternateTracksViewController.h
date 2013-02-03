@@ -12,8 +12,6 @@
     UITableView *_table;
 }
 
-+ (void)_initializeSafeCategory;
-
 - (void)_cancelButtonAction:(id)arg1;
 - (void)_doneButtonAction:(id)arg1;
 - (void)_exitAnimated:(BOOL)arg1;

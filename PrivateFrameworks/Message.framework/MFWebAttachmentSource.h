@@ -2,25 +2,20 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSURL;
+@class NSMutableDictionary, MFLock;
 
-@interface MFWebAttachmentSource : MFWeakObject {
-    NSURL *_baseURL;
-    unsigned int _uniqueId;
+@interface MFWebAttachmentSource : NSObject {
+    NSMutableDictionary *_attachmentsByURL;
+    MFLock *_attachmentsLock;
 }
 
-@property(readonly) NSURL * baseURL;
-
 + (id)allSources;
-+ (id)contentIDFileURLWithMessageFileWrapper:(id)arg1;
-+ (id)invalidBaseURL;
-+ (id)sourceForURL:(id)arg1;
 
 - (id)attachmentForURL:(id)arg1;
-- (id)baseURL;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (int)priority;
+- (void)removeAttachmentForURL:(id)arg1;
+- (BOOL)setAttachment:(id)arg1 forURL:(id)arg2;
 
 @end

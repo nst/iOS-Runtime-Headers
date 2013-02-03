@@ -3,23 +3,32 @@
  */
 
 @interface __NSArrayM : NSMutableArray {
+    unsigned int _doHardRetain : 1;
+    unsigned int _doWeakAccess : 1;
+    unsigned int _hasObjects : 1;
+    unsigned int _hasStrongReferences : 1;
+    unsigned int _size : 30;
+    unsigned int _offset : 30;
     id *_list;
     unsigned long _mutations;
-    unsigned int _offset;
-    unsigned int _size;
     unsigned int _used;
 }
 
-+ (id)__new:(id*)arg1 :(unsigned int)arg2;
++ (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3 :(BOOL)arg4;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (BOOL)_hasObjects;
+- (BOOL)_hasStrongReferences;
+- (void)_mutate;
 - (void)addObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
+- (void)finalize;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)indexOfObjectIdenticalTo:(id)arg1;
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (void)removeLastObject;

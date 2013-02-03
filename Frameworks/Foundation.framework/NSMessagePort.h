@@ -10,6 +10,8 @@
 + (void)_fixNSMessagePortLeak;
 + (BOOL)sendBeforeTime:(double)arg1 streamData:(id)arg2 components:(id)arg3 to:(id)arg4 from:(id)arg5 msgid:(unsigned int)arg6 reserved:(unsigned int)arg7;
 
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)dealloc;
 - (id)delegate;
 - (void)finalize;

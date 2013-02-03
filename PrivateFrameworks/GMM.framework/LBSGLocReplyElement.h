@@ -11,7 +11,6 @@
 }
 
 @property(retain) NSMutableArray * deviceLocations;
-@property(readonly) int deviceLocationsCount;
 @property(readonly) BOOL hasLocation;
 @property(retain) LBSGLocation * location;
 @property int status;
@@ -21,13 +20,11 @@
 - (id)description;
 - (id)deviceLocationAtIndex:(unsigned int)arg1;
 - (id)deviceLocations;
-- (int)deviceLocationsCount;
+- (unsigned int)deviceLocationsCount;
 - (id)dictionaryRepresentation;
 - (BOOL)hasLocation;
-- (id)init;
 - (id)location;
 - (BOOL)readFrom:(id)arg1;
-- (void)setDeviceLocation:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setDeviceLocations:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setStatus:(int)arg1;

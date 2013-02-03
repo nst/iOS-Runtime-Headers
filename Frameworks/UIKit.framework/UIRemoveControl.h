@@ -22,7 +22,6 @@
     UIView *_target;
 }
 
-+ (void)_initializeSafeCategory;
 + (void)hideAllRemoveConfirmationsInView:(id)arg1;
 + (float)removeButtonWidth;
 + (BOOL)removeConfirmationsVisibleInView:(id)arg1;

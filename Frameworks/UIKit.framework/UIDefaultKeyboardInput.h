@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextPosition, UIView<UITextSelectingContent>, UITextSelectionView, UIColor, UITextInputTraits, UIView, <UITextInputDelegate>, NSDictionary, <UITextInputTokenizer>, UITextInteractionAssistant, UITextRange;
+@class UITextPosition, UIImage, UITextSelectionView, UITextInputTraits, UIColor, UITextRange, UITextInteractionAssistant, <UITextInputDelegate>, <UITextInputTokenizer>, UIView, UIView<UITextSelectingContent>, NSDictionary, UIResponder<UITextSelection>;
 
 @interface UIDefaultKeyboardInput : UIView <UIKeyboardInput> {
     UITextInputTraits *m_traits;
@@ -10,32 +10,44 @@
 
 @property BOOL acceptsEmoji;
 @property BOOL acceptsFloatingKeyboard;
+@property BOOL acceptsForwardDelete;
 @property BOOL acceptsSplitKeyboard;
 @property int autocapitalizationType;
 @property int autocorrectionType;
 @property(readonly) UITextPosition * beginningOfDocument;
 @property(readonly) UIView<UITextSelectingContent> * content;
 @property BOOL contentsIsSingleValue;
+@property BOOL displaySecureTextUsingPlainText;
 @property(getter=isEditable,readonly) BOOL editable;
 @property(getter=isEditing,readonly) BOOL editing;
 @property int emptyContentReturnKeyType;
 @property BOOL enablesReturnKeyAutomatically;
 @property(readonly) UITextPosition * endOfDocument;
+@property BOOL forceEnableForwardDelete;
 @property <UITextInputDelegate> * inputDelegate;
 @property(retain) UIColor * insertionPointColor;
 @property unsigned int insertionPointWidth;
 @property(readonly) UITextInteractionAssistant * interactionAssistant;
 @property int keyboardAppearance;
 @property int keyboardType;
+@property BOOL learnsCorrections;
 @property(readonly) UITextRange * markedTextRange;
 @property(copy) NSDictionary * markedTextStyle;
-@property BOOL plainText;
 @property BOOL returnKeyGoesToNextResponder;
 @property int returnKeyType;
+@property(getter=isRichText) BOOL richText;
 @property(getter=isSecureTextEntry) BOOL secureTextEntry;
 @property(copy) UITextRange * selectedTextRange;
 @property int selectionAffinity;
+@property(retain) UIColor * selectionBarColor;
+@property(retain) UIImage * selectionDragDotImage;
+@property int selectionGranularity;
+@property(retain) UIColor * selectionHighlightColor;
 @property(readonly) UITextSelectionView * selectionView;
+@property int shortcutConversionType;
+@property int spellCheckingType;
+@property BOOL suppressReturnKeyStyling;
+@property(readonly) UIResponder<UITextSelection> * textDocument;
 @property(readonly) UIView * textInputView;
 @property int textLoupeVisibility;
 @property int textSelectionBehavior;
@@ -67,7 +79,6 @@
 - (void)deleteBackward;
 - (void)detachInteractionAssistant;
 - (void)detachSelectionView;
-- (id)editingDelegate;
 - (id)endOfDocument;
 - (void)endSelectionChange;
 - (void)expandSelectionToStartOfWordContainingCaretSelection;
@@ -91,17 +102,20 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)moveBackward:(unsigned int)arg1;
 - (void)moveForward:(unsigned int)arg1;
+- (id)nextUnperturbedMarsVoltasBoundaryFromPosition:(id)arg1;
 - (int)offsetFromPosition:(id)arg1 toPosition:(id)arg2;
 - (id)positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3;
 - (id)positionFromPosition:(id)arg1 offset:(int)arg2;
 - (id)positionFromPosition:(id)arg1 toBoundary:(int)arg2 inDirection:(int)arg3;
 - (id)positionWithinRange:(id)arg1 farthestInDirection:(int)arg2;
+- (id)previousUnperturbedMarsVoltasBoundaryFromPosition:(id)arg1;
 - (id)rangeByExtendingCurrentSelection:(int)arg1;
 - (id)rangeByMovingCurrentSelection:(int)arg1;
 - (id)rangeEnclosingPosition:(id)arg1 withGranularity:(int)arg2 inDirection:(int)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectContainingCaretSelection;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForNSRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)rectsForNSRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)rectsForRange:(id)arg1;
 - (void)replaceCurrentWordWithText:(id)arg1;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
 - (void)replaceRangeWithText:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementText:(id)arg2;
@@ -118,7 +132,6 @@
 - (void)setAcceptsEmoji:(BOOL)arg1;
 - (void)setBaseWritingDirection:(int)arg1 forRange:(id)arg2;
 - (void)setBecomesEditableWithGestures:(BOOL)arg1;
-- (void)setEditingDelegate:(id)arg1;
 - (void)setInputDelegate:(id)arg1;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setMarkedText:(id)arg1;
@@ -129,10 +142,10 @@
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
 - (void)setupPlaceholderTextIfNeeded;
-- (BOOL)shouldEnableAutoShift;
 - (void)takeTraitsFrom:(id)arg1;
 - (id)text;
 - (id)textColorForCaretSelection;
+- (id)textDocument;
 - (id)textInRange:(id)arg1;
 - (id)textInputTraits;
 - (id)textRangeFromPosition:(id)arg1 toPosition:(id)arg2;
@@ -141,7 +154,6 @@
 - (void)updateSelection;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBounds;
 - (id)wordContainingCaretSelection;
-- (id)wordInRange:(id)arg1;
 - (int)wordOffsetInRange:(id)arg1;
 - (id)wordRangeContainingCaretSelection;
 

@@ -2,38 +2,29 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
+@class NSString, NSArray;
 
 @interface HSFairPlayInfo : NSObject {
-    struct { 
-        int (*fairPlaySAPInitFunc)(); 
-        int (*fairPlaySAPTeardownFunc)(); 
-        int (*fairPlaySAPExchangeFunc)(); 
-        int (*fairPlaySAPEncryptFunc)(); 
-    } _fairPlayInfoFunctions;
     void *_hwInfo;
+    NSArray *_requestsToSign;
     void *_session;
 }
 
 @property(readonly) NSString * deviceGUID;
-@property(readonly) struct { int (*fairPlaySAPInitFunc)(); int (*fairPlaySAPTeardownFunc)(); int (*fairPlaySAPExchangeFunc)(); int (*fairPlaySAPEncryptFunc)(); } fairPlayInfoFunctions;
 
-+ (id)fairPlayInfoWithFunctions:(struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); })arg1;
-
-- (struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); })fairPlayInfoFunctions;
 - (BOOL)_getHardwareInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; }*)arg1;
 - (id)_hexStringForData:(id)arg1;
 - (id)beginNegotiation;
 - (id)continueNegotationWithData:(id)arg1 isComplete:(BOOL*)arg2;
 - (void)dealloc;
 - (id)deviceGUID;
+- (void)endMescalSession;
 - (void)endSecuritySession;
-- (id)initWithFunctions:(struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); })arg1;
+- (id)init;
+- (id)processSignedResponseData:(id)arg1 withSignature:(id)arg2;
 - (id)securityInfoForURL:(id)arg1;
+- (BOOL)setupMescalWithURL:(id)arg1 certificateURL:(id)arg2 requestsToSign:(id)arg3 userAgent:(id)arg4;
+- (BOOL)shouldSignRequestAction:(id)arg1;
+- (id)signatureForData:(id)arg1;
 
 @end

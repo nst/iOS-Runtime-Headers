@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, NSData, NSDictionary, NSNumber;
 
-@interface FTInitiateMessage : FTMessage {
+@interface FTInitiateMessage : FTFaceTimeMessage <NSCopying> {
     NSData *_aliasSignature;
     NSString *_aliasUserID;
     NSArray *_canonicalizedPeers;
@@ -27,12 +27,15 @@
 @property(copy) NSData * selfPushToken;
 
 - (id)additionalMessageHeaders;
+- (id)additionalMessageHeadersForOutgoingPush;
 - (id)aliasSignature;
 - (id)aliasUserID;
 - (id)bagKey;
 - (id)canonicalizedPeers;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)handleResponseDictionary:(id)arg1;
+- (id)init;
 - (id)messageBody;
 - (id)peers;
 - (id)regionInformation;

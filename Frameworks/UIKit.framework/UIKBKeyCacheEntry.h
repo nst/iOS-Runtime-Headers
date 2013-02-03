@@ -9,8 +9,8 @@
     UIKBKeyplane *m_keyplane;
 }
 
-@property(retain,readonly) UIKBKey * key;
-@property(retain,readonly) UIKBKeyplane * keyplane;
+@property(readonly) UIKBKey * key;
+@property(readonly) UIKBKeyplane * keyplane;
 
 + (id)entryWithKey:(id)arg1 keyPlane:(id)arg2;
 

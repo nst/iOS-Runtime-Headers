@@ -23,25 +23,18 @@
 @property(retain) SUCellConfiguration * configuration;
 @property BOOL drawAsDisabled;
 @property BOOL highlightsOnlyContentView;
-@property(retain,readonly) SUItemOfferButton * itemOfferButton;
-@property struct { unsigned int localIndex; unsigned int localCount; unsigned int globalIndex; unsigned int globalCount; } position;
+@property(readonly) SUItemOfferButton * itemOfferButton;
+@property struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } position;
 @property BOOL showHighlight;
 @property(retain) UIColor * topBorderColor;
 @property BOOL usesSubviews;
 
-+ (void)_initializeSafeCategory;
-
 - (BOOL)_canDrawContent;
-- (id)accessibilityHint;
-- (id)accessibilityLanguage;
-- (id)accessibilityTableViewCellText;
-- (unsigned long long)accessibilityTraits;
 - (id)bottomBorderColor;
 - (int)clipCorners;
 - (id)configuration;
 - (id)copyPurchaseAnimationView;
 - (void)dealloc;
-- (id)description;
 - (BOOL)drawAsDisabled;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)highlightsOnlyContentView;

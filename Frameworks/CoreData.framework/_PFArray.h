@@ -21,9 +21,11 @@
 + (void)initialize;
 
 - (unsigned int)_flags;
+- (BOOL)_isDeallocating;
 - (id*)_objectsPointer;
 - (void)_setShouldRelease:(BOOL)arg1;
 - (void)_setShouldUseExtendedRelease:(BOOL)arg1;
+- (BOOL)_tryRetain;
 - (id)arrayFromObjectIDs;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
@@ -42,7 +44,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newArrayFromObjectIDs;
 - (id)objectAtIndex:(unsigned int)arg1;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 - (id)subarrayWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

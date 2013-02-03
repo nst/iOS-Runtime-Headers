@@ -22,7 +22,5 @@
 - (void)invalidate;
 - (void)itemTimeJumped;
 - (id)player;
-- (void)release;
-- (id)retain;
 
 @end

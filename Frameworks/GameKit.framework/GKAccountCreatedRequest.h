@@ -6,26 +6,31 @@
 
 @interface GKAccountCreatedRequest : GKDataRequest {
     NSString *_accountName;
+    NSString *_alias;
     NSString *_authToken;
     BOOL _authenticateFinished;
     NSString *_playerID;
 }
 
 @property(retain) NSString * accountName;
+@property(retain) NSString * alias;
 @property(retain) NSString * authToken;
 @property BOOL authenticateFinished;
 @property(retain) NSString * playerID;
 
 - (id)accountName;
+- (id)alias;
 - (id)authToken;
 - (BOOL)authenticateFinished;
 - (BOOL)authenticationRequired;
 - (void)dealloc;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
+- (void)handleResponseFromServer:(id)arg1;
 - (id)key;
 - (id)playerID;
 - (id)request;
+- (Class)responseClass;
 - (void)setAccountName:(id)arg1;
+- (void)setAlias:(id)arg1;
 - (void)setAuthToken:(id)arg1;
 - (void)setAuthenticateFinished:(BOOL)arg1;
 - (void)setPlayerID:(id)arg1;

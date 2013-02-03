@@ -13,7 +13,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (void)setSuperTileData:(id)arg1;
 - (id)superTileData;

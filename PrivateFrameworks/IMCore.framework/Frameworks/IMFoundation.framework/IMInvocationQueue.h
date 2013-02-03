@@ -17,8 +17,12 @@
 @property(readonly) unsigned int count;
 @property id delegate;
 @property double dequeueRate;
+@property(readonly) BOOL holdQueue;
 @property(readonly) BOOL isEmpty;
+@property(readonly) NSMutableArray * options;
 @property(retain) Protocol * protocol;
+@property(readonly) NSProtocolChecker * protocolChecker;
+@property(readonly) NSMutableArray * queue;
 @property id target;
 
 - (BOOL)_acceptsOptions:(unsigned int)arg1;
@@ -40,12 +44,16 @@
 - (id)delegate;
 - (double)dequeueRate;
 - (void)forwardInvocation:(id)arg1;
+- (BOOL)holdQueue;
 - (id)init;
 - (void)invokeAll;
 - (BOOL)isEmpty;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (id)options;
 - (id)peek;
 - (id)protocol;
+- (id)protocolChecker;
+- (id)queue;
 - (void)removeAllInvocations;
 - (void)setDelegate:(id)arg1;
 - (void)setDequeueRate:(double)arg1;

@@ -40,7 +40,7 @@
 @property BOOL isStartVisible;
 @property(retain) CLLocation * location;
 @property int locationSource;
-@property struct CADoublePoint { double x; double y; } position;
+@property struct CADoublePoint { double x1; double x2; } position;
 @property(readonly) NSValue * positionObject;
 @property(readonly) unsigned int runCount;
 @property BOOL shouldHalo;
@@ -51,7 +51,6 @@
 - (float)accuracy;
 - (id)accuracyObject;
 - (void)clearAccuracy;
-- (void)clearDistance;
 - (void)clearMetrics;
 - (void)clearPosition;
 - (void)clearShouldHalo;
@@ -61,7 +60,6 @@
 - (void)dealloc;
 - (id)description;
 - (double)distance;
-- (id)distanceObject;
 - (BOOL)hasAccuracy;
 - (BOOL)hasChanges;
 - (BOOL)hasComputedMetrics;
@@ -95,11 +93,8 @@
 - (void)setShouldScrollToLocation:(BOOL)arg1;
 - (void)setZoomLevel:(float)arg1;
 - (BOOL)shouldHalo;
-- (id)shouldHaloObject;
 - (BOOL)shouldHover;
-- (id)shouldHoverObject;
 - (BOOL)shouldScrollToLocation;
 - (float)zoomLevel;
-- (id)zoomLevelObject;
 
 @end

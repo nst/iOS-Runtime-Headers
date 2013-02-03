@@ -2,40 +2,43 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class GMMClientCapabilities, NSMutableArray;
+@class GMMClientCapabilities;
 
 @interface GMMDirectionsIconRequest : PBRequest {
-    NSMutableArray *_cachedIconIDs;
+    struct { 
+        long long *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _cachedIconIDs;
     int _cachedIconVersion;
     GMMClientCapabilities *_capabilities;
     BOOL _hasCachedIconVersion;
 }
 
-@property(retain) NSMutableArray * cachedIconIDs;
-@property(readonly) int cachedIconIDsCount;
+@property(readonly) long long* cachedIconIDs;
+@property(readonly) unsigned int cachedIconIDsCount;
 @property int cachedIconVersion;
 @property(retain) GMMClientCapabilities * capabilities;
-@property(readonly) BOOL hasCachedIconVersion;
+@property BOOL hasCachedIconVersion;
 @property(readonly) BOOL hasCapabilities;
 
 - (void)addCachedIconID:(long long)arg1;
 - (long long)cachedIconIDAtIndex:(unsigned int)arg1;
-- (id)cachedIconIDs;
-- (int)cachedIconIDsCount;
+- (long long*)cachedIconIDs;
+- (unsigned int)cachedIconIDsCount;
 - (int)cachedIconVersion;
 - (id)capabilities;
+- (void)clearCachedIconIDs;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasCachedIconVersion;
 - (BOOL)hasCapabilities;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (unsigned int)requestTypeCode;
-- (Class)responseClass;
-- (void)setCachedIconID:(long long)arg1 atIndex:(unsigned int)arg2;
-- (void)setCachedIconIDs:(id)arg1;
+- (void)setCachedIconIDs:(long long*)arg1 count:(unsigned int)arg2;
 - (void)setCachedIconVersion:(int)arg1;
 - (void)setCapabilities:(id)arg1;
+- (void)setHasCachedIconVersion:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -12,10 +12,10 @@
 }
 
 - (void)dealloc;
+- (void)dismissModalViewControllerAnimated:(BOOL)arg1;
 - (id)initWithWindow:(id)arg1 interactionDelegate:(id)arg2;
 - (void)loadView;
 - (void)presentModalViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)removeChildViewController:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

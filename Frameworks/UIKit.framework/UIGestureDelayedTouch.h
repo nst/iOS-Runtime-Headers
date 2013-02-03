@@ -37,7 +37,7 @@
 - (void)setTouch:(id)arg1;
 - (id)stateWhenDelayed;
 - (id)stateWhenDelivered;
-- (int)timestampForDelivery;
+- (double)timestampForDelivery;
 - (id)touch;
 
 @end

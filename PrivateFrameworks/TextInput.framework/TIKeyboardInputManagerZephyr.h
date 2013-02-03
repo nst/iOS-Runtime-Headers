@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSMutableString;
+@class TIWordTokenizer, <UIKeyboardTypology>, NSMutableString;
 
 @interface TIKeyboardInputManagerZephyr : UIKeyboardInputManager {
     struct TIInputManagerZephyr { int (**x1)(); struct StaticDictionaryAlphabet { 
@@ -85,7 +85,7 @@
                         struct PackedTrieSibling { 
                             union { 
                                 unsigned int whole; 
-                                struct $_561 { 
+                                struct $_574 { 
                                     unsigned int child_offset : 24; 
                                     unsigned int patricia_key_size_1 : 2; 
                                     unsigned int has_child_offset_type : 2; 
@@ -94,7 +94,7 @@
                                     unsigned int has_freq : 1; 
                                     unsigned int more_siblings : 1; 
                                 } v2fields; 
-                                struct $_562 { 
+                                struct $_575 { 
                                     unsigned int child_offset_byte0 : 8; 
                                     unsigned int child_offset_byte1 : 8; 
                                     unsigned int child_offset_byte2 : 8; 
@@ -103,12 +103,12 @@
                             } sortNchild; 
                             union { 
                                 unsigned int whole; 
-                                struct $_564 { 
+                                struct $_577 { 
                                     unsigned int word_offset : 23; 
                                     unsigned int word_is_0freq : 1; 
                                     unsigned int compacted_freq : 8; 
                                 } fields; 
-                                struct $_565 { 
+                                struct $_578 { 
                                     unsigned int word_offset_or_prob_byte0 : 8; 
                                     unsigned int word_offset_byte1 : 8; 
                                     unsigned int word_offset_byte2 : 8; 
@@ -117,6 +117,7 @@
                             } freqNword; 
                             unsigned char patricia_key_bytes[4]; 
                         } m_values[256]; 
+                        unsigned int m_compilation_flags; 
                         char *m_base_addr; 
                     } root; 
                     struct TrieArrayCache<KB::PackedTrieSibling,const char*> { 
@@ -126,7 +127,7 @@
                         struct PackedTrieSibling { 
                             union { 
                                 unsigned int whole; 
-                                struct $_561 { 
+                                struct $_574 { 
                                     unsigned int child_offset : 24; 
                                     unsigned int patricia_key_size_1 : 2; 
                                     unsigned int has_child_offset_type : 2; 
@@ -135,7 +136,7 @@
                                     unsigned int has_freq : 1; 
                                     unsigned int more_siblings : 1; 
                                 } v2fields; 
-                                struct $_562 { 
+                                struct $_575 { 
                                     unsigned int child_offset_byte0 : 8; 
                                     unsigned int child_offset_byte1 : 8; 
                                     unsigned int child_offset_byte2 : 8; 
@@ -144,12 +145,12 @@
                             } sortNchild; 
                             union { 
                                 unsigned int whole; 
-                                struct $_564 { 
+                                struct $_577 { 
                                     unsigned int word_offset : 23; 
                                     unsigned int word_is_0freq : 1; 
                                     unsigned int compacted_freq : 8; 
                                 } fields; 
-                                struct $_565 { 
+                                struct $_578 { 
                                     unsigned int word_offset_or_prob_byte0 : 8; 
                                     unsigned int word_offset_byte1 : 8; 
                                     unsigned int word_offset_byte2 : 8; 
@@ -158,6 +159,7 @@
                             } freqNword; 
                             unsigned char patricia_key_bytes[4]; 
                         } m_values[256]; 
+                        unsigned int m_compilation_flags; 
                         char *m_base_addr; 
                     } deep; 
                 } m_trie_array_cache_set; 
@@ -217,12 +219,30 @@
             struct HashTraits<KB::String> { } m_traits; 
             struct Bucket<KB::String,KB::Word> {} *m_table; 
             struct Bucket<KB::String,KB::Word> {} *m_extra; 
-        } x9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; int x16; struct __CFString {} *x17; struct __CFLocale {} *x18; struct DynamicDictionary { 
+        } x9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; int x16; struct __CFString {} *x17; struct __CFLocale {} *x18; struct String { 
+            unsigned short m_size; 
+            unsigned short m_capacity; 
+            unsigned short m_length; 
+            unsigned short m_sort_key_length; 
+            unsigned char m_buffer_type; 
+            char *m_buffer; 
+            BOOL m_static_buffer[16]; 
+        } x19; struct String { 
+            unsigned short m_size; 
+            unsigned short m_capacity; 
+            unsigned short m_length; 
+            unsigned short m_sort_key_length; 
+            unsigned char m_buffer_type; 
+            char *m_buffer; 
+            BOOL m_static_buffer[16]; 
+        } x20; struct DynamicDictionary { 
             struct RefPtr<KB::DynamicDictionaryImpl> { 
                 struct DynamicDictionaryImpl {} *m_ptr; 
             } m_impl; 
             int m_log_level; 
-        } x19; struct StrokeBuildManager {} *x20; struct SortedKeyLayout { 
+        } x21; struct WordinessStore { 
+            struct ReadOnlyDataFile {} *m_trigrams; 
+        } x22; struct StrokeBuildManager {} *x23; struct SortedKeyLayout { 
             unsigned int m_size; 
             unsigned int m_capacity; 
             struct KeyArea {} *m_elements; 
@@ -250,7 +270,7 @@
             float k_errorStdev_InterFinger; 
             float k_errorStdev_InterThumb; 
             float k_errorStdev_InterNonAlphabetic; 
-        } x21; struct TIKeyLayout {} *x22; struct String { 
+        } x24; struct TIKeyLayout {} *x25; struct String { 
             unsigned short m_size; 
             unsigned short m_capacity; 
             unsigned short m_length; 
@@ -258,7 +278,7 @@
             unsigned char m_buffer_type; 
             char *m_buffer; 
             BOOL m_static_buffer[16]; 
-        } x23; struct LayoutDictionaryContext { 
+        } x26; boolx27; struct LayoutDictionaryContext { 
             struct SortedKeyLayout {} *key_layout; 
             struct WordTrie {} *static_trie; 
             struct DynamicDictionary {} *dynamic_dict; 
@@ -276,7 +296,8 @@
             unsigned int compoundable_meta_flags; 
             boolallow_space_corrections; 
             booluses_candidate_selection; 
-        } x24; struct Hashmap<KB::String,KB::FPoint> { 
+            struct WordinessStore {} *wordiness; 
+        } x28; struct Hashmap<KB::String,KB::FPoint> { 
             unsigned int m_size; 
             unsigned int m_capacity; 
             unsigned int m_table_size; 
@@ -286,26 +307,41 @@
             struct HashTraits<KB::String> { } m_traits; 
             struct Bucket<KB::String,KB::FPoint> {} *m_table; 
             struct Bucket<KB::String,KB::FPoint> {} *m_extra; 
+        } x29; int x30; boolx31; struct String { 
+            unsigned short m_size; 
+            unsigned short m_capacity; 
+            unsigned short m_length; 
+            unsigned short m_sort_key_length; 
+            unsigned char m_buffer_type; 
+            char *m_buffer; 
+            BOOL m_static_buffer[16]; 
+        } x32; struct Vector<KB::String> { 
+            unsigned int m_size; 
+            unsigned int m_capacity; 
+            struct String {} *m_elements; 
     NSMutableString *m_composedText;
     unsigned int m_defaultCandidateIndex;
-        } x25; int x26; boolx27; } *m_impl;
+        } x33; <UIKeyboardTypology> *x34; } *m_impl;
+    TIWordTokenizer *m_wordTokenizer;
 }
 
-- (struct TIInputManagerZephyr { int (**x1)(); struct StaticDictionaryAlphabet { int (**x_2_1_1)(); struct WordTrie { struct ReadOnlyDataFile {} *x_2_2_1; struct ReadOnlyDataFile {} *x_2_2_2; unsigned int x_2_2_3; struct RefPtr<KB::WordTrieNode> { struct WordTrieNode {} *x_4_3_1; } x_2_2_4; struct WordTrieSearch { struct Vector<WTF::RefPtr<KB::WordTrieNode>,0ul> { unsigned int x_1_4_1; struct VectorBuffer<WTF::RefPtr<KB::WordTrieNode>,0ul> { struct RefPtr<KB::WordTrieNode> {} *x_2_5_1; unsigned int x_2_5_2; } x_1_4_2; } x_5_3_1; int x_5_3_2; struct String { unsigned short x_3_4_1; unsigned short x_3_4_2; unsigned short x_3_4_3; unsigned short x_3_4_4; unsigned char x_3_4_5; char *x_3_4_6; BOOL x_3_4_7[16]; } x_5_3_3; struct String { unsigned short x_4_4_1; unsigned short x_4_4_2; unsigned short x_4_4_3; unsigned short x_4_4_4; unsigned char x_4_4_5; char *x_4_4_6; BOOL x_4_4_7[16]; } x_5_3_4; } x_2_2_5; struct WordTrieSearch { struct Vector<WTF::RefPtr<KB::WordTrieNode>,0ul> { unsigned int x_1_4_1; struct VectorBuffer<WTF::RefPtr<KB::WordTrieNode>,0ul> { struct RefPtr<KB::WordTrieNode> {} *x_2_5_1; unsigned int x_2_5_2; } x_1_4_2; } x_6_3_1; int x_6_3_2; struct String { unsigned short x_3_4_1; unsigned short x_3_4_2; unsigned short x_3_4_3; unsigned short x_3_4_4; unsigned char x_3_4_5; char *x_3_4_6; BOOL x_3_4_7[16]; } x_6_3_3; struct String { unsigned short x_4_4_1; unsigned short x_4_4_2; unsigned short x_4_4_3; unsigned short x_4_4_4; unsigned char x_4_4_5; char *x_4_4_6; BOOL x_4_4_7[16]; } x_6_3_4; } x_2_2_6; boolx_2_2_7; boolx_2_2_8; struct TrieArrayCacheSet<KB::TrieArrayCache<KB::PackedTrieSibling, const char*>,const char*> { struct TrieArrayCache<KB::PackedTrieSibling,const char*> { char *x_1_4_1; int x_1_4_2; unsigned char x_1_4_3[256]; struct PackedTrieSibling { union { unsigned int x_1_6_1; struct $_561 { unsigned int x_2_7_1 : 24; unsigned int x_2_7_2 : 2; unsigned int x_2_7_3 : 2; unsigned int x_2_7_4 : 1; unsigned int x_2_7_5 : 1; unsigned int x_2_7_6 : 1; unsigned int x_2_7_7 : 1; } x_1_6_2; struct $_562 { unsigned int x_3_7_1 : 8; unsigned int x_3_7_2 : 8; unsigned int x_3_7_3 : 8; unsigned int x_3_7_4 : 8; } x_1_6_3; } x_4_5_1; union { unsigned int x_2_6_1; struct $_564 { unsigned int x_2_7_1 : 23; unsigned int x_2_7_2 : 1; unsigned int x_2_7_3 : 8; } x_2_6_2; struct $_565 { unsigned int x_3_7_1 : 8; unsigned int x_3_7_2 : 8; unsigned int x_3_7_3 : 8; unsigned int x_3_7_4 : 8; } x_2_6_3; } x_4_5_2; unsigned char x_4_5_3[4]; } x_1_4_4[256]; char *x_1_4_5; } x_9_3_1; struct TrieArrayCache<KB::PackedTrieSibling,const char*> { char *x_2_4_1; int x_2_4_2; unsigned char x_2_4_3[256]; struct PackedTrieSibling { union { unsigned int x_1_6_1; struct $_561 { unsigned int x_2_7_1 : 24; unsigned int x_2_7_2 : 2; unsigned int x_2_7_3 : 2; unsigned int x_2_7_4 : 1; unsigned int x_2_7_5 : 1; unsigned int x_2_7_6 : 1; unsigned int x_2_7_7 : 1; } x_1_6_2; struct $_562 { unsigned int x_3_7_1 : 8; unsigned int x_3_7_2 : 8; unsigned int x_3_7_3 : 8; unsigned int x_3_7_4 : 8; } x_1_6_3; } x_4_5_1; union { unsigned int x_2_6_1; struct $_564 { unsigned int x_2_7_1 : 23; unsigned int x_2_7_2 : 1; unsigned int x_2_7_3 : 8; } x_2_6_2; struct $_565 { unsigned int x_3_7_1 : 8; unsigned int x_3_7_2 : 8; unsigned int x_3_7_3 : 8; unsigned int x_3_7_4 : 8; } x_2_6_3; } x_4_5_2; unsigned char x_4_5_3[4]; } x_2_4_4[256]; char *x_2_4_5; } x_9_3_2; } x_2_2_9; unsigned int x_2_2_10; unsigned int x_2_2_11; unsigned int x_2_2_12; float x_2_2_13; struct SortKeyByteConverter { int (**x_14_3_1)(); unsigned int x_14_3_2[256]; boolx_14_3_3[256]; struct Hashmap<KB::String,unsigned int> { unsigned int x_4_4_1; unsigned int x_4_4_2; unsigned int x_4_4_3; unsigned int x_4_4_4; unsigned int x_4_4_5; boolx_4_4_6; struct HashTraits<KB::String> { } x_4_4_7; struct Bucket<KB::String,unsigned int> {} *x_4_4_8; struct Bucket<KB::String,unsigned int> {} *x_4_4_9; } x_14_3_4; } x_2_2_14; } x_2_1_2; int x_2_1_3; } x2; struct Vector<KB::Input> { unsigned int x_3_1_1; unsigned int x_3_1_2; struct Input {} *x_3_1_3; } x3; struct String { unsigned short x_4_1_1; unsigned short x_4_1_2; unsigned short x_4_1_3; unsigned short x_4_1_4; unsigned char x_4_1_5; char *x_4_1_6; BOOL x_4_1_7[16]; } x4; struct String { unsigned short x_5_1_1; unsigned short x_5_1_2; unsigned short x_5_1_3; unsigned short x_5_1_4; unsigned char x_5_1_5; char *x_5_1_6; BOOL x_5_1_7[16]; } x5; struct Vector<KB::String> { unsigned int x_6_1_1; unsigned int x_6_1_2; struct String {} *x_6_1_3; } x6; unsigned int x7; unsigned int x8; struct Hashmap<KB::String,KB::Word> { unsigned int x_9_1_1; unsigned int x_9_1_2; unsigned int x_9_1_3; unsigned int x_9_1_4; unsigned int x_9_1_5; boolx_9_1_6; struct HashTraits<KB::String> { } x_9_1_7; struct Bucket<KB::String,KB::Word> {} *x_9_1_8; struct Bucket<KB::String,KB::Word> {} *x_9_1_9; } x9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; int x16; struct __CFString {} *x17; struct __CFLocale {} *x18; struct DynamicDictionary { struct RefPtr<KB::DynamicDictionaryImpl> { struct DynamicDictionaryImpl {} *x_1_2_1; } x_19_1_1; int x_19_1_2; } x19; struct StrokeBuildManager {} *x20; struct SortedKeyLayout { unsigned int x_21_1_1; unsigned int x_21_1_2; struct KeyArea {} *x_21_1_3; struct KeyArea {} *x_21_1_4[13]; int x_21_1_5; int x_21_1_6; float x_21_1_7; struct CGPoint { float x_8_2_1; float x_8_2_2; } x_21_1_8; struct KeyCharClassifier { unsigned short x_9_2_1; } x_21_1_9; float x_21_1_10; float x_21_1_11; float x_21_1_12; float x_21_1_13; float x_21_1_14; float x_21_1_15; float x_21_1_16; float x_21_1_17; float x_21_1_18; float x_21_1_19; float x_21_1_20; float x_21_1_21; float x_21_1_22; } x21; struct TIKeyLayout {} *x22; struct String { unsigned short x_23_1_1; unsigned short x_23_1_2; unsigned short x_23_1_3; unsigned short x_23_1_4; unsigned char x_23_1_5; char *x_23_1_6; BOOL x_23_1_7[16]; } x23; struct LayoutDictionaryContext { struct SortedKeyLayout {} *x_24_1_1; struct WordTrie {} *x_24_1_2; struct DynamicDictionary {} *x_24_1_3; struct Vector<ZT::PriorTouchKeyVectors> { unsigned int x_4_2_1; unsigned int x_4_2_2; struct PriorTouchKeyVectors {} *x_4_2_3; } x_24_1_4; struct Vector<KB::DictionaryCursors> { unsigned int x_5_2_1; unsigned int x_5_2_2; struct DictionaryCursors {} *x_5_2_3; } x_24_1_5; struct SortKeyByteConverter {} *x_24_1_6; unsigned int x_24_1_7; boolx_24_1_8; boolx_24_1_9; } x24; struct Hashmap<KB::String,KB::FPoint> { unsigned int x_25_1_1; unsigned int x_25_1_2; unsigned int x_25_1_3; unsigned int x_25_1_4; unsigned int x_25_1_5; boolx_25_1_6; struct HashTraits<KB::String> { } x_25_1_7; struct Bucket<KB::String,KB::FPoint> {} *x_25_1_8; struct Bucket<KB::String,KB::FPoint> {} *x_25_1_9; } x25; int x26; boolx27; }*)initImplementation;
+- (struct TIInputManagerZephyr { int (**x1)(); struct StaticDictionaryAlphabet { int (**x_2_1_1)(); struct WordTrie { struct ReadOnlyDataFile {} *x_2_2_1; struct ReadOnlyDataFile {} *x_2_2_2; unsigned int x_2_2_3; struct RefPtr<KB::WordTrieNode> { struct WordTrieNode {} *x_4_3_1; } x_2_2_4; struct WordTrieSearch { struct Vector<WTF::RefPtr<KB::WordTrieNode>,0ul> { unsigned int x_1_4_1; struct VectorBuffer<WTF::RefPtr<KB::WordTrieNode>,0ul> { struct RefPtr<KB::WordTrieNode> {} *x_2_5_1; unsigned int x_2_5_2; } x_1_4_2; } x_5_3_1; int x_5_3_2; struct String { unsigned short x_3_4_1; unsigned short x_3_4_2; unsigned short x_3_4_3; unsigned short x_3_4_4; unsigned char x_3_4_5; char *x_3_4_6; BOOL x_3_4_7[16]; } x_5_3_3; struct String { unsigned short x_4_4_1; unsigned short x_4_4_2; unsigned short x_4_4_3; unsigned short x_4_4_4; unsigned char x_4_4_5; char *x_4_4_6; BOOL x_4_4_7[16]; } x_5_3_4; } x_2_2_5; struct WordTrieSearch { struct Vector<WTF::RefPtr<KB::WordTrieNode>,0ul> { unsigned int x_1_4_1; struct VectorBuffer<WTF::RefPtr<KB::WordTrieNode>,0ul> { struct RefPtr<KB::WordTrieNode> {} *x_2_5_1; unsigned int x_2_5_2; } x_1_4_2; } x_6_3_1; int x_6_3_2; struct String { unsigned short x_3_4_1; unsigned short x_3_4_2; unsigned short x_3_4_3; unsigned short x_3_4_4; unsigned char x_3_4_5; char *x_3_4_6; BOOL x_3_4_7[16]; } x_6_3_3; struct String { unsigned short x_4_4_1; unsigned short x_4_4_2; unsigned short x_4_4_3; unsigned short x_4_4_4; unsigned char x_4_4_5; char *x_4_4_6; BOOL x_4_4_7[16]; } x_6_3_4; } x_2_2_6; boolx_2_2_7; boolx_2_2_8; struct TrieArrayCacheSet<KB::TrieArrayCache<KB::PackedTrieSibling, const char*>,const char*> { struct TrieArrayCache<KB::PackedTrieSibling,const char*> { char *x_1_4_1; int x_1_4_2; unsigned char x_1_4_3[256]; struct PackedTrieSibling { union { unsigned int x_1_6_1; struct $_574 { unsigned int x_2_7_1 : 24; unsigned int x_2_7_2 : 2; unsigned int x_2_7_3 : 2; unsigned int x_2_7_4 : 1; unsigned int x_2_7_5 : 1; unsigned int x_2_7_6 : 1; unsigned int x_2_7_7 : 1; } x_1_6_2; struct $_575 { unsigned int x_3_7_1 : 8; unsigned int x_3_7_2 : 8; unsigned int x_3_7_3 : 8; unsigned int x_3_7_4 : 8; } x_1_6_3; } x_4_5_1; union { unsigned int x_2_6_1; struct $_577 { unsigned int x_2_7_1 : 23; unsigned int x_2_7_2 : 1; unsigned int x_2_7_3 : 8; } x_2_6_2; struct $_578 { unsigned int x_3_7_1 : 8; unsigned int x_3_7_2 : 8; unsigned int x_3_7_3 : 8; unsigned int x_3_7_4 : 8; } x_2_6_3; } x_4_5_2; unsigned char x_4_5_3[4]; } x_1_4_4[256]; unsigned int x_1_4_5; char *x_1_4_6; } x_9_3_1; struct TrieArrayCache<KB::PackedTrieSibling,const char*> { char *x_2_4_1; int x_2_4_2; unsigned char x_2_4_3[256]; struct PackedTrieSibling { union { unsigned int x_1_6_1; struct $_574 { unsigned int x_2_7_1 : 24; unsigned int x_2_7_2 : 2; unsigned int x_2_7_3 : 2; unsigned int x_2_7_4 : 1; unsigned int x_2_7_5 : 1; unsigned int x_2_7_6 : 1; unsigned int x_2_7_7 : 1; } x_1_6_2; struct $_575 { unsigned int x_3_7_1 : 8; unsigned int x_3_7_2 : 8; unsigned int x_3_7_3 : 8; unsigned int x_3_7_4 : 8; } x_1_6_3; } x_4_5_1; union { unsigned int x_2_6_1; struct $_577 { unsigned int x_2_7_1 : 23; unsigned int x_2_7_2 : 1; unsigned int x_2_7_3 : 8; } x_2_6_2; struct $_578 { unsigned int x_3_7_1 : 8; unsigned int x_3_7_2 : 8; unsigned int x_3_7_3 : 8; unsigned int x_3_7_4 : 8; } x_2_6_3; } x_4_5_2; unsigned char x_4_5_3[4]; } x_2_4_4[256]; unsigned int x_2_4_5; char *x_2_4_6; } x_9_3_2; } x_2_2_9; unsigned int x_2_2_10; unsigned int x_2_2_11; unsigned int x_2_2_12; float x_2_2_13; struct SortKeyByteConverter { int (**x_14_3_1)(); unsigned int x_14_3_2[256]; boolx_14_3_3[256]; struct Hashmap<KB::String,unsigned int> { unsigned int x_4_4_1; unsigned int x_4_4_2; unsigned int x_4_4_3; unsigned int x_4_4_4; unsigned int x_4_4_5; boolx_4_4_6; struct HashTraits<KB::String> { } x_4_4_7; struct Bucket<KB::String,unsigned int> {} *x_4_4_8; struct Bucket<KB::String,unsigned int> {} *x_4_4_9; } x_14_3_4; } x_2_2_14; } x_2_1_2; int x_2_1_3; } x2; struct Vector<KB::Input> { unsigned int x_3_1_1; unsigned int x_3_1_2; struct Input {} *x_3_1_3; } x3; struct String { unsigned short x_4_1_1; unsigned short x_4_1_2; unsigned short x_4_1_3; unsigned short x_4_1_4; unsigned char x_4_1_5; char *x_4_1_6; BOOL x_4_1_7[16]; } x4; struct String { unsigned short x_5_1_1; unsigned short x_5_1_2; unsigned short x_5_1_3; unsigned short x_5_1_4; unsigned char x_5_1_5; char *x_5_1_6; BOOL x_5_1_7[16]; } x5; struct Vector<KB::String> { unsigned int x_6_1_1; unsigned int x_6_1_2; struct String {} *x_6_1_3; } x6; unsigned int x7; unsigned int x8; struct Hashmap<KB::String,KB::Word> { unsigned int x_9_1_1; unsigned int x_9_1_2; unsigned int x_9_1_3; unsigned int x_9_1_4; unsigned int x_9_1_5; boolx_9_1_6; struct HashTraits<KB::String> { } x_9_1_7; struct Bucket<KB::String,KB::Word> {} *x_9_1_8; struct Bucket<KB::String,KB::Word> {} *x_9_1_9; } x9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; int x16; struct __CFString {} *x17; struct __CFLocale {} *x18; struct String { unsigned short x_19_1_1; unsigned short x_19_1_2; unsigned short x_19_1_3; unsigned short x_19_1_4; unsigned char x_19_1_5; char *x_19_1_6; BOOL x_19_1_7[16]; } x19; struct String { unsigned short x_20_1_1; unsigned short x_20_1_2; unsigned short x_20_1_3; unsigned short x_20_1_4; unsigned char x_20_1_5; char *x_20_1_6; BOOL x_20_1_7[16]; } x20; struct DynamicDictionary { struct RefPtr<KB::DynamicDictionaryImpl> { struct DynamicDictionaryImpl {} *x_1_2_1; } x_21_1_1; int x_21_1_2; } x21; struct WordinessStore { struct ReadOnlyDataFile {} *x_22_1_1; } x22; struct StrokeBuildManager {} *x23; struct SortedKeyLayout { unsigned int x_24_1_1; unsigned int x_24_1_2; struct KeyArea {} *x_24_1_3; struct KeyArea {} *x_24_1_4[13]; int x_24_1_5; int x_24_1_6; float x_24_1_7; struct CGPoint { float x_8_2_1; float x_8_2_2; } x_24_1_8; struct KeyCharClassifier { unsigned short x_9_2_1; } x_24_1_9; float x_24_1_10; float x_24_1_11; float x_24_1_12; float x_24_1_13; float x_24_1_14; float x_24_1_15; float x_24_1_16; float x_24_1_17; float x_24_1_18; float x_24_1_19; float x_24_1_20; float x_24_1_21; float x_24_1_22; } x24; struct TIKeyLayout {} *x25; struct String { unsigned short x_26_1_1; unsigned short x_26_1_2; unsigned short x_26_1_3; unsigned short x_26_1_4; unsigned char x_26_1_5; char *x_26_1_6; BOOL x_26_1_7[16]; } x26; boolx27; struct LayoutDictionaryContext { struct SortedKeyLayout {} *x_28_1_1; struct WordTrie {} *x_28_1_2; struct DynamicDictionary {} *x_28_1_3; struct Vector<ZT::PriorTouchKeyVectors> { unsigned int x_4_2_1; unsigned int x_4_2_2; struct PriorTouchKeyVectors {} *x_4_2_3; } x_28_1_4; struct Vector<KB::DictionaryCursors> { unsigned int x_5_2_1; unsigned int x_5_2_2; struct DictionaryCursors {} *x_5_2_3; } x_28_1_5; struct SortKeyByteConverter {} *x_28_1_6; unsigned int x_28_1_7; boolx_28_1_8; boolx_28_1_9; struct WordinessStore {} *x_28_1_10; } x28; struct Hashmap<KB::String,KB::FPoint> { unsigned int x_29_1_1; unsigned int x_29_1_2; unsigned int x_29_1_3; unsigned int x_29_1_4; unsigned int x_29_1_5; boolx_29_1_6; struct HashTraits<KB::String> { } x_29_1_7; struct Bucket<KB::String,KB::FPoint> {} *x_29_1_8; struct Bucket<KB::String,KB::FPoint> {} *x_29_1_9; } x29; int x30; boolx31; struct String { unsigned short x_32_1_1; unsigned short x_32_1_2; unsigned short x_32_1_3; unsigned short x_32_1_4; unsigned char x_32_1_5; char *x_32_1_6; BOOL x_32_1_7[16]; } x32; struct Vector<KB::String> { unsigned int x_33_1_1; unsigned int x_33_1_2; struct String {} *x_33_1_3; } x33; id x34; }*)initImplementation;
 - (void)acceptInput;
 - (BOOL)acceptsCharacter:(unsigned short)arg1;
 - (id)addInput:(id)arg1 flags:(unsigned int)arg2 point:(struct CGPoint { float x1; float x2; })arg3 firstDelete:(unsigned int*)arg4 fromVariantKey:(BOOL)arg5;
 - (void)addToTypingHistory:(id)arg1;
+- (void)appendToInputContext:(id)arg1;
 - (id)autocorrection;
 - (BOOL)canHandleKeyHitTest;
 - (id)candidates;
 - (struct __CFDictionary { }*)chargedKeyProbabilities;
+- (void)checkAutocorrectionDictionaries;
 - (void)clearAllCentroids;
 - (void)clearDynamicDictionary;
 - (void)clearInput;
+- (void)clearInputContext;
 - (void)clearKeyAreas;
-- (void)configureInputModeSpecificFeatures:(id)arg1;
-- (void)configureKeyboard:(id)arg1 forCandidates:(id)arg2;
+- (void)configureInputModeSpecificFeatures:(id)arg1 withLayout:(id)arg2;
 - (void)dealloc;
 - (void)decreaseUserFrequency:(id)arg1;
 - (id)defaultCandidate;
@@ -324,13 +360,15 @@
 - (id)inputString;
 - (unsigned int)internalIndexToExternal:(unsigned int)arg1;
 - (id)internalStringToExternal:(id)arg1;
+- (int)keyHitTest:(struct CGPoint { float x1; float x2; })arg1 touchStage:(int)arg2 atTime:(double)arg3 withTouch:(id)arg4 forceShift:(BOOL)arg5 forcingKey:(int)arg6;
 - (int)keyHitTest:(struct CGPoint { float x1; float x2; })arg1 touchStage:(int)arg2 atTime:(double)arg3 withTouch:(id)arg4 forceShift:(BOOL)arg5;
 - (BOOL)keySlidIntoSwipe;
 - (void)loadDictionaries;
+- (unsigned int)maximumShortcutLengthAllowed;
 - (void)registerCentroid:(struct CGPoint { float x1; float x2; })arg1 forKey:(id)arg2;
 - (void)registerKeyArea:(struct CGPoint { float x1; float x2; })arg1 withRadii:(struct CGPoint { float x1; float x2; })arg2 forKeyCode:(unsigned short)arg3 forLowerKey:(id)arg4 forUpperKey:(id)arg5;
+- (BOOL)removeSuffixOfInputContext:(id)arg1;
 - (void)setAutoCorrects:(BOOL)arg1;
-- (void)setAutoShift:(BOOL)arg1;
 - (void)setCalculatesChargedKeyProbabilities:(BOOL)arg1;
 - (void)setCollatorLocale;
 - (void)setInHardwareKeyboardMode:(BOOL)arg1;
@@ -340,8 +378,15 @@
 - (void)setKeyboardEventsLagging:(BOOL)arg1;
 - (void)setShallowPrediction:(BOOL)arg1;
 - (void)setShift:(BOOL)arg1;
+- (void)setTypologyRecorder:(id)arg1;
 - (id)shadowTyping;
+- (id)shortcutConversionForInput:(id)arg1 andExistingString:(id)arg2 existingStringStartsInMiddleOfWord:(BOOL)arg3;
+- (id)shortcutConversionForString:(id)arg1 stringStartsInMiddleOfWord:(BOOL)arg2;
+- (BOOL)shouldShiftAfterChar:(unsigned short)arg1 withSpaces:(int)arg2 currentShift:(BOOL)arg3;
+- (BOOL)shouldSuppressAutocorrectionWithTerminator:(id)arg1;
+- (BOOL)supportsShortcutConversion;
 - (void)textAccepted:(id)arg1;
 - (BOOL)usesCandidateSelection;
+- (unsigned int)wordHistoryDepth;
 
 @end

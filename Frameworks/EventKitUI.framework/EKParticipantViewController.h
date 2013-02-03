@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKParticipant;
+@class <EKEditItemViewControllerDelegate>, EKParticipant;
 
-@interface EKParticipantViewController : ABPersonViewController <ABPersonViewControllerDelegate> {
+@interface EKParticipantViewController : ABPersonViewController <ABPersonViewControllerDelegate, EKEditItemViewControllerProtocol> {
     EKParticipant *_participant;
 }
+
+@property <EKEditItemViewControllerDelegate> * editDelegate;
 
 - (void)dealloc;
 - (id)initWithParticipant:(id)arg1;

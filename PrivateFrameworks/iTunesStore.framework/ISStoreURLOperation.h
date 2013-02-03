@@ -6,6 +6,7 @@
 
 @interface ISStoreURLOperation : ISURLOperation {
     NSNumber *_authenticatedDSID;
+    BOOL _canSendGUIDParameter;
     BOOL _needsAuthentication;
     BOOL _needsURLBag;
     BOOL _urlKnownToBeTrusted;
@@ -13,6 +14,7 @@
 }
 
 @property(retain) NSNumber * authenticatedDSID;
+@property BOOL canSendGUIDParameter;
 @property <ISStoreURLOperationDelegate> * delegate;
 @property BOOL needsAuthentication;
 @property BOOL needsURLBag;
@@ -31,11 +33,14 @@
 - (void)_addStandardQueryParametersForURL:(id)arg1;
 - (BOOL)_authenticateReturningError:(id*)arg1;
 - (BOOL)_canSendTokenToURL:(id)arg1;
+- (id)_copyAuthenticationContext;
 - (id)_copyURLBagContext;
 - (void)_runURLOperation;
+- (id)_storeFrontIdentifier;
 - (id)_urlFromURLBagForRequestProperties:(id)arg1 inBagContext:(id)arg2;
 - (id)authenticatedAccountDSID;
 - (id)authenticatedDSID;
+- (BOOL)canSendGUIDParameter;
 - (void)dealloc;
 - (BOOL)handleRedirectFromDataProvider:(id)arg1;
 - (void)handleResponse:(id)arg1;
@@ -45,6 +50,7 @@
 - (id)newRequestWithURL:(id)arg1;
 - (void)run;
 - (void)setAuthenticatedDSID:(id)arg1;
+- (void)setCanSendGUIDParameter:(BOOL)arg1;
 - (void)setNeedsAuthentication:(BOOL)arg1;
 - (void)setNeedsURLBag:(BOOL)arg1;
 - (void)setUrlKnownToBeTrusted:(BOOL)arg1;

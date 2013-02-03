@@ -15,12 +15,25 @@
 @property(readonly) NSURLResponse * previewResponse;
 @property(readonly) NSString * previewUTI;
 
++ (id)_csvUTIs;
++ (id)_iWorkUTIs;
++ (id)_lpdfUTIs;
++ (id)_officeUTIs;
++ (id)_rtfUTIs;
++ (id)_spreadSheetUTIs;
 + (BOOL)canConvertDocumentType:(id)arg1;
++ (BOOL)isCSVDocumentType:(id)arg1;
++ (BOOL)isIWorkDocumentType:(id)arg1;
++ (BOOL)isLPDFDocumentType:(id)arg1;
++ (BOOL)isOfficeDocumentType:(id)arg1;
++ (BOOL)isRTFDocumentType:(id)arg1;
 + (BOOL)isSafeRequest:(id)arg1;
 + (BOOL)isSafeURL:(id)arg1;
++ (BOOL)isSpreadSheetDocumentType:(id)arg1;
 
 - (void)_register;
 - (void)appendData:(id)arg1;
+- (void)appendDataArray:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (void)finishConverting;

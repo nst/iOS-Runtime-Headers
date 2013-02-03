@@ -2,13 +2,29 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKUserLocationViewInternal;
+@class CALayer, MKUserLocationViewInternal;
 
 @interface MKUserLocationView : MKAnnotationView {
     MKUserLocationViewInternal *_imp;
 }
 
-+ (void)_initializeSafeCategory;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _mapkit_visibleRect;
+@property float accuracy;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } accuracyBounds;
+@property id delegate;
+@property(getter=isDisplayingAccuracy,readonly) BOOL displayingAccuracy;
+@property BOOL effectsVisible;
+@property double headingAccuracy;
+@property(readonly) CALayer * headingLayer;
+@property(getter=isHovering,readonly) BOOL hovering;
+@property struct CADoublePoint { double x1; double x2; } position;
+@property BOOL shouldDisplayAccuracy;
+@property BOOL shouldDisplayEffects;
+@property BOOL shouldDisplayHalo;
+@property BOOL shouldDisplayHeading;
+@property(getter=isStale) BOOL stale;
+@property int zoomDirection;
+
 + (unsigned int)_selectedZIndex;
 + (unsigned int)_zIndex;
 + (float)accuracyDiameter:(float)arg1 level:(unsigned int)arg2;
@@ -16,10 +32,9 @@
 + (void)initialize;
 + (Class)layerClass;
 
-- (id)_searchResult;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_mapkit_visibleRect;
 - (void)_setCalloutView:(id)arg1;
 - (void)_setMapType:(unsigned int)arg1;
-- (id)accessibilityLabel;
 - (float)accuracy;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accuracyBounds;
 - (unsigned int)accuracyIntersectionPoints:(struct CGPoint { float x1; float x2; }*)arg1 layer:(id)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
@@ -64,7 +79,6 @@
 - (BOOL)shouldDisplayHeading;
 - (void)stopHover;
 - (void)updateHalo;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 - (void)willMoveToWindow:(id)arg1;
 - (int)zoomDirection;
 

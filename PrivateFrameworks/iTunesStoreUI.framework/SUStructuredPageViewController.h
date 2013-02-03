@@ -13,9 +13,6 @@
 @property(retain) Class dataSourceClass;
 @property(retain) SUStructuredPage * structuredPage;
 
-+ (void)_initializeSafeCategory;
-
-- (void)_accessibilityClearTable:(id)arg1;
 - (BOOL)_gotoURLForItem:(id)arg1 withURLIndex:(int)arg2;
 - (BOOL)_handleLoadMoreForIndexPath:(id)arg1;
 - (void)_loadMoreOperation:(id)arg1 finishedWithOutput:(id)arg2;

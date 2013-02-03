@@ -10,11 +10,9 @@
 + (void)routeMusicToAirTunesService:(id)arg1;
 + (void)setEnableRouteDiscovery:(BOOL)arg1;
 + (void)setShouldRepeatMusic:(BOOL)arg1;
-+ (void)startMusicForAlbum:(id)arg1;
++ (void)startMusicForAlbum:(struct NSObject { Class x1; }*)arg1;
 + (void)startMusicWithSettings:(id)arg1;
 + (void)stopMusic;
 + (void)stopRoutingMusicToAirTunes;
-
-- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 
 @end

@@ -16,10 +16,10 @@
 
 @property int addressLinesLimit;
 @property(retain) LBSGRectangle * boundingBox;
-@property(readonly) BOOL hasAddressLinesLimit;
+@property BOOL hasAddressLinesLimit;
 @property(readonly) BOOL hasBoundingBox;
-@property(readonly) BOOL hasIncludeBoundingBoxes;
-@property(readonly) BOOL hasNumFeatureLimit;
+@property BOOL hasIncludeBoundingBoxes;
+@property BOOL hasNumFeatureLimit;
 @property BOOL includeBoundingBoxes;
 @property unsigned int numFeatureLimit;
 
@@ -27,18 +27,19 @@
 - (id)boundingBox;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasAddressLinesLimit;
 - (BOOL)hasBoundingBox;
 - (BOOL)hasIncludeBoundingBoxes;
 - (BOOL)hasNumFeatureLimit;
 - (BOOL)includeBoundingBoxes;
-- (id)init;
 - (unsigned int)numFeatureLimit;
 - (BOOL)readFrom:(id)arg1;
-- (unsigned int)requestTypeCode;
-- (Class)responseClass;
 - (void)setAddressLinesLimit:(int)arg1;
 - (void)setBoundingBox:(id)arg1;
+- (void)setHasAddressLinesLimit:(BOOL)arg1;
+- (void)setHasIncludeBoundingBoxes:(BOOL)arg1;
+- (void)setHasNumFeatureLimit:(BOOL)arg1;
 - (void)setIncludeBoundingBoxes:(BOOL)arg1;
 - (void)setNumFeatureLimit:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;

@@ -37,6 +37,7 @@
 - (id)localName;
 - (id)networkName;
 - (unsigned int)networkPort;
+- (void)refreshBonjourName;
 - (BOOL)removeConnection:(id)arg1;
 - (BOOL)removeContact:(id)arg1;
 - (void)sessionChanged;

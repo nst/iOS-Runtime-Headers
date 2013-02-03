@@ -15,33 +15,32 @@
 @property(retain) ADAdData * badResponse;
 @property int errorCode;
 @property(readonly) BOOL hasBadResponse;
-@property(readonly) BOOL hasErrorCode;
+@property BOOL hasErrorCode;
 @property(readonly) BOOL hasMetaData;
 @property(retain) ADLogMetaData * metaData;
 @property(retain) NSMutableArray * urlWithErrors;
-@property(readonly) int urlWithErrorsCount;
 
 - (void)addUrlWithError:(id)arg1;
 - (id)badResponse;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (int)errorCode;
 - (BOOL)hasBadResponse;
 - (BOOL)hasErrorCode;
 - (BOOL)hasMetaData;
-- (id)init;
 - (id)metaData;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setBadResponse:(id)arg1;
 - (void)setErrorCode:(int)arg1;
+- (void)setHasErrorCode:(BOOL)arg1;
 - (void)setMetaData:(id)arg1;
-- (void)setUrlWithError:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setUrlWithErrors:(id)arg1;
 - (id)urlWithErrorAtIndex:(unsigned int)arg1;
 - (id)urlWithErrors;
-- (int)urlWithErrorsCount;
+- (unsigned int)urlWithErrorsCount;
 - (void)writeTo:(id)arg1;
 
 @end

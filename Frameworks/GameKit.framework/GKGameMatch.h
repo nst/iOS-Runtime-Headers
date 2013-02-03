@@ -2,31 +2,28 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKGame, NSDate, GKPlayer;
+@class NSString, GKGame, NSDate, GKRecentMatchInternal;
 
 @interface GKGameMatch : NSObject {
-    NSDate *_date;
     GKGame *_game;
-    GKPlayer *_player;
-    int _score;
+    GKRecentMatchInternal *_internal;
 }
 
 @property(retain) NSDate * date;
 @property(retain) GKGame * game;
-@property(retain) GKPlayer * player;
-@property int score;
+@property(retain) GKRecentMatchInternal * internal;
+@property(retain) NSString * playerID;
 
-+ (id)gameMatchWithDictionary:(id)arg1;
-+ (id)gameMatchesWithDictionaries:(id)arg1;
-
-- (id)date;
 - (void)dealloc;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)game;
-- (id)player;
-- (int)score;
-- (void)setDate:(id)arg1;
+- (id)init;
+- (id)initWithInternalRepresentation:(id)arg1 game:(id)arg2;
+- (id)internal;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (void)setGame:(id)arg1;
-- (void)setPlayer:(id)arg1;
-- (void)setScore:(int)arg1;
+- (void)setInternal:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
 
 @end

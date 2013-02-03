@@ -2,15 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSMutableArray, NSArray;
+@class NSArray;
 
 @interface ISSoftwareMap : NSObject {
-    NSMutableArray *_applications;
+    NSArray *_applications;
 }
 
 @property(readonly) NSArray * applications;
 
 + (void)_startWatchingInstallationNotifications;
++ (id)applicationForBundleIdentifier:(id)arg1 applicationType:(struct __CFString { }*)arg2;
 + (id)applicationForBundleIdentifier:(id)arg1;
 + (id)currentMap;
 + (BOOL)currentMapIsValid;
@@ -27,6 +28,7 @@
 - (id)applicationForItemIdentifier:(id)arg1;
 - (id)applications;
 - (id)copySoftwareUpdatesPropertyList;
+- (id)copySoftwareUpdatesPropertyListWithUpdatesContext:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

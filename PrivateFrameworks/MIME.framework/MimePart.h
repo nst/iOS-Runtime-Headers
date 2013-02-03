@@ -2,19 +2,20 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class MFPartialNetworkData, MimePart, NSString, NSData, MFData, NSMutableDictionary;
+@class MFPartialNetworkData, MimePart, MFWeakReferenceHolder, NSString, NSData, NSMutableDictionary;
 
-@interface MimePart : MFWeakObject <MFWeakReferenceHolder> {
+@interface MimePart : NSObject {
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
+    MFWeakReferenceHolder *_body;
     NSMutableDictionary *_bodyParameters;
     NSString *_contentTransferEncoding;
-    MFData *_decodedData;
+    MFWeakReferenceHolder *_decodedData;
     NSData *_fullData;
     MimePart *_nextPart;
     NSMutableDictionary *_otherIvars;
-    id _parentOrBody;
+    MFWeakReferenceHolder *_parent;
     MFPartialNetworkData *_partialData;
     } _range;
     NSString *_subtype;
@@ -24,12 +25,20 @@
 + (Class)attachmentClass;
 + (void)initialize;
 + (BOOL)isRecognizedClassForContent:(id)arg1;
++ (BOOL)parseContentTypeHeader:(id)arg1 type:(id*)arg2 subtype:(id*)arg3 info:(id*)arg4;
 + (BOOL)parseContentTypeHeader:(id)arg1 type:(id*)arg2 subtype:(id*)arg3;
 
+- (id)SMIMEError;
 - (void)_contents:(id*)arg1 toOffset:(unsigned int)arg2 resultOffset:(unsigned int*)arg3 downloadIfNecessary:(BOOL)arg4 asHTML:(BOOL)arg5 isComplete:(BOOL*)arg6;
+- (void)_ensureBodyDataToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3 isComplete:(BOOL*)arg4 decoded:(id*)arg5;
 - (id)_fullMimeTypeEvenInsideAppleDouble;
 - (BOOL)_hasCompleteBodyDataToOffset:(unsigned int)arg1;
+- (BOOL)_needsSignatureVerification:(id*)arg1;
 - (id)_partThatIsAttachment;
+- (void)_setDecryptedMessageBody:(id)arg1 isEncrypted:(BOOL)arg2 isSigned:(BOOL)arg3;
+- (void)_setRFC822DecodedMessageBody:(id)arg1;
+- (void)_setSMIMEError:(id)arg1;
+- (void)_setSigners:(id)arg1;
 - (BOOL)_shouldContinueDecodingProcess;
 - (void)addSubpart:(id)arg1;
 - (id)alternativeAtIndex:(int)arg1;
@@ -61,12 +70,16 @@
 - (id)copyBodyDataToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3 isComplete:(BOOL*)arg4;
 - (id)copyBodyDataToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3;
 - (id)copyBodyDataToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2;
+- (id)copySigners;
 - (void)dealloc;
 - (id)decodeApplicationOctet_stream;
+- (id)decodeApplicationPkcs7_mime;
 - (id)decodeApplicationZip;
+- (void)decodeIfNecessary;
 - (id)decodeMultipart;
 - (id)decodeMultipartAlternative;
 - (id)decodeMultipartRelated;
+- (id)decodeMultipartSigned;
 - (id)decodeText;
 - (id)decodedDataForData:(id)arg1;
 - (id)decryptedMessageBodyIsEncrypted:(BOOL*)arg1 isSigned:(BOOL*)arg2;
@@ -74,6 +87,7 @@
 - (id)disposition;
 - (id)dispositionParameterForKey:(id)arg1;
 - (id)dispositionParameterKeys;
+- (void)download;
 - (id)fileWrapper;
 - (id)fileWrapperForDecodedObject:(id)arg1 withFileData:(id*)arg2;
 - (id)fileWrapperForcingDownload:(BOOL)arg1;
@@ -87,16 +101,18 @@
 - (BOOL)isRich;
 - (id)languages;
 - (id)mimeBody;
+- (id)newEncryptedPartWithData:(id)arg1 compositionSpecification:(id)arg2 encryptedData:(id*)arg3;
+- (id)newSignedPartWithData:(id)arg1 sender:(id)arg2 compositionSpecification:(id)arg3 signatureData:(id*)arg4;
 - (id)nextSiblingPart;
 - (int)numberOfAlternatives;
 - (unsigned int)numberOfAttachments;
-- (void)objectWillBeDeallocated:(id)arg1;
 - (id)parentPart;
 - (BOOL)parseIMAPPropertyList:(id)arg1;
 - (BOOL)parseMimeBody;
 - (id)partNumber;
 - (id)preservedHeaderValueForKey:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (id)rfc822DecodedMessageBody;
 - (void)setBodyParameter:(id)arg1 forKey:(id)arg2;
 - (void)setContentDescription:(id)arg1;
 - (void)setContentID:(id)arg1;

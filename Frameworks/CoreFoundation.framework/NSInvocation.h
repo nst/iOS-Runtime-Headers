@@ -2,6 +2,11 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface NSInvocation : NSObject {
     id _container;
     void *_frame;
@@ -28,9 +33,9 @@
 - (id)init;
 - (void)invoke;
 - (void)invokeSuper;
+- (void)invokeUsingIMP:(int (*)())arg1;
 - (void)invokeWithTarget:(id)arg1;
 - (id)methodSignature;
-- (void)mf_invokeWithObject:(id)arg1;
 - (BOOL)mf_shouldLogInvocation;
 - (void)retainArguments;
 - (SEL)selector;

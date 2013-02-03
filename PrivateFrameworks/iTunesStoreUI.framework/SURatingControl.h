@@ -28,17 +28,10 @@
 @property float starWidth;
 @property float value;
 
-+ (void)_initializeSafeCategory;
-
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_foregroundImageClipBounds;
 - (id)_newExplanationLabel;
 - (void)_updateValueForPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)accessibilityDecrement;
-- (void)accessibilityIncrement;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)canHandleSwipes;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -47,7 +40,6 @@
 - (id)explanationText;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
 - (id)initWithBackgroundImage:(id)arg1 foregroundImage:(id)arg2;
-- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setExplanationText:(id)arg1;

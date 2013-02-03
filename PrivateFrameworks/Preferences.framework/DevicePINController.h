@@ -13,6 +13,7 @@
     int _mode;
     UIBarButtonItem *_nextButton;
     NSString *_oldPassword;
+    id _pinDelegate;
     int _substate;
     BOOL _success;
 }
@@ -45,6 +46,7 @@
 - (struct __CFString { }*)defaultsID;
 - (struct __CFString { }*)failedAttemptsKey;
 - (id)init;
+- (void)loadView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paneFrame;
 - (void)performActionAfterPINEntry;
 - (void)performActionAfterPINRemove;
@@ -59,6 +61,7 @@
 - (void)setOldPassword:(id)arg1;
 - (void)setPIN:(id)arg1;
 - (void)setPane:(id)arg1;
+- (void)setSpecifier:(id)arg1;
 - (BOOL)simplePIN;
 - (id)stringsTable;
 - (void)suspend;
@@ -66,6 +69,7 @@
 - (BOOL)validatePIN:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillLayoutSubviews;
 - (void)willUnlock;
 
 @end

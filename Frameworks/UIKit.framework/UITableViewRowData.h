@@ -2,15 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSIndexPath, UISectionRowData, UITableView;
+@class NSIndexPath, UITableView;
 
 @interface UITableViewRowData : NSObject <NSCopying> {
+    NSIndexPath *_gapIndexPath;
     float _heightForTableHeaderViewHiding;
     float _minimumRowHeight;
     int _numSections;
     NSIndexPath *_reorderedIndexPath;
     float _reorderedRowHeight;
-    UISectionRowData **_sectionRowData;
+    id *_sectionRowData;
     int _sectionRowDataCapacity;
     float _tableBottomPadding;
     float _tableFooterHeight;
@@ -32,6 +33,7 @@
 @property float tableTopPadding;
 
 - (void)_ensureSectionOffsetIsValidForSection:(int)arg1;
+- (int)_sectionForPoint:(struct CGPoint { float x1; float x2; })arg1 beginningWithSection:(int)arg2 numberOfSections:(int)arg3;
 - (int)_sectionRowForGlobalRow:(int)arg1 inSection:(int*)arg2;
 - (void)_updateNumSections;
 - (void)_updateSectionRowDataArrayForNumSections:(int)arg1;

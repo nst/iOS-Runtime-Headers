@@ -2,39 +2,37 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, SUPreOrderQueue, SSDownloadQueue, NSSet, NSString;
+@class SSPreorderManager, SSDownloadManager, NSArray, NSString;
 
-@interface SUScriptDownloadQueue : SUScriptObject <SSDownloadQueueObserver, SUPreOrderQueueObserver> {
-    NSSet *_downloadKinds;
-    SSDownloadQueue *_downloadQueue;
+@interface SUScriptDownloadQueue : SUScriptObject <SSDownloadManagerObserver, SSPreorderManagerObserver> {
+    SSDownloadManager *_downloadManager;
     NSArray *_downloads;
-    SUPreOrderQueue *_preOrderQueue;
+    SSPreorderManager *_preorderManager;
     NSString *_queueType;
 }
 
-@property(getter=_downloads,setter=set_downloads:,retain) NSArray * downloads;
-@property(getter=_queueType,setter=set_queueType:,retain) NSString * queueType;
+@property(readonly) NSArray * downloads;
+@property(readonly) NSString * queueType;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (void)_checkQueues;
 - (id)_className;
-- (id)_downloads;
+- (id)_copyScriptDownloads;
 - (void)_handleDownloadsChanged;
-- (id)_ntsCopyScriptDownloads;
 - (void)_ntsResetDownloads;
 - (void)_ntsTearDownQueues;
-- (id)_queueType;
+- (id)attributeKeys;
 - (void)checkQueue;
 - (void)dealloc;
-- (void)downloadQueue:(id)arg1 changedWithRemovals:(id)arg2;
-- (void)downloadQueue:(id)arg1 downloadStatesChangedAtIndexes:(id)arg2;
-- (void)downloadQueuePreOrdersChanged:(id)arg1;
+- (void)downloadManagerDownloadsDidChange:(id)arg1;
+- (id)downloads;
 - (void)finalizeForWebScript;
 - (id)initWithQueueType:(id)arg1;
-- (void)preOrderQueueChanged:(id)arg1;
-- (void)set_downloads:(id)arg1;
-- (void)set_queueType:(id)arg1;
+- (void)preorderManagerPreordersDidChange:(id)arg1;
+- (id)queueType;
+- (id)scriptAttributeKeys;
 
 @end

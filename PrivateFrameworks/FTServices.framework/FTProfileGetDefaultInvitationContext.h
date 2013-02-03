@@ -4,7 +4,7 @@
 
 @class NSString, NSDictionary;
 
-@interface FTProfileGetDefaultInvitationContext : FTProfileMessage {
+@interface FTProfileGetDefaultInvitationContext : FTProfileMessage <NSCopying> {
     NSString *_responseBasePhoneNumber;
     NSDictionary *_responseExtraInfo;
     NSString *_responseRegionID;
@@ -17,8 +17,10 @@
 @property BOOL responseValidated;
 
 - (id)bagKey;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)handleResponseDictionary:(id)arg1;
+- (id)init;
 - (id)messageBody;
 - (id)requiredKeys;
 - (id)responseBasePhoneNumber;

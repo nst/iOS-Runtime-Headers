@@ -9,6 +9,9 @@
     NSArray *_white;
 }
 
+- (id)allowedClasses;
+- (BOOL)classAllowed:(Class)arg1;
 - (void)dealloc;
+- (void)setAllowedClasses:(id)arg1;
 
 @end

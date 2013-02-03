@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView;
-
 @interface UICalloutBarOverlay : UIView {
     struct CGRect { 
         struct CGPoint { 
@@ -14,15 +12,32 @@
             float width; 
             float height; 
         } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } highlightRect;
+    BOOL highlighted;
     } m_arrowRect;
-    float m_dividerOffsets[8];
-    UIImageView *m_hiArrow;
+    float m_dividerOffsets[12];
 }
+
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } highlightRect;
+@property BOOL highlighted;
 
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })highlightRect;
+- (BOOL)highlighted;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDividerOffsets:(float*)arg1;
+- (void)setHighlightRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1 forFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)setHighlighted:(BOOL)arg1;
 
 @end

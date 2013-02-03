@@ -14,7 +14,7 @@
 
 - (void)dealloc;
 - (id)initWithStream:(id)arg1;
-- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
+- (int)read:(const char *)arg1 maxLength:(unsigned int)arg2;
 - (id)readBytes:(unsigned int)arg1;
 - (id)readProtoBuffer;
 - (BOOL)seekToOffset:(unsigned int)arg1;

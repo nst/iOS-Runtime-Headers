@@ -6,18 +6,24 @@
    See Warning(s) below.
  */
 
+@class CNFRegController;
+
 @interface CNFRegListController : PSListController {
     id _appearBlock;
     BOOL _appeared;
+    CNFRegController *_regController;
     BOOL _shouldRerootPreferences;
     BOOL _showingChildController;
 }
 
 @property(copy) id appearBlock;
 @property(readonly) int currentAppearanceStyle;
+@property(retain) CNFRegController * regController;
 @property BOOL shouldRerootPreferences;
 @property BOOL showingChildController;
 
+- (id)_existingLabelForSection:(int)arg1 header:(BOOL)arg2;
+- (id)_existingLabelForSpecifier:(id)arg1 header:(BOOL)arg2;
 - (BOOL)_handleURLDictionary:(id)arg1;
 - (void)_performAppearBlock;
 - (void)_setFieldsEnabled:(BOOL)arg1 animated:(BOOL)arg2;
@@ -25,25 +31,36 @@
 - (void)_setSpecifierEnabled:(id)arg1 enabled:(BOOL)arg2 animated:(BOOL)arg3;
 - (BOOL)_showWiFiAlertIfNecessary;
 - (void)_updateExistingLabelForSpecifier:(id)arg1 header:(BOOL)arg2;
+- (void)_updateTableLabel:(id)arg1 withTableView:(id)arg2 isTopMostHeader:(BOOL)arg3;
+- (void)_updateTitle;
 - (id)appearBlock;
 - (void)applicationDidResume;
 - (void)authorizationController:(id)arg1 authorizedAccount:(BOOL)arg2;
 - (void)changePasswordControllerDidCancel:(id)arg1;
-- (void)changePasswordControllerDidFinish:(id)arg1 withPassword:(id)arg2;
+- (void)changePasswordControllerDidFinish:(id)arg1 withAppleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
 - (int)currentAppearanceStyle;
+- (id)customTitle;
 - (void)dealloc;
 - (void)handleURL:(id)arg1;
-- (id)init;
 - (id)initWithParentController:(id)arg1;
+- (id)initWithRegController:(id)arg1;
 - (void)loadView;
 - (id)logName;
+- (id)regController;
 - (void)setAppearBlock:(id)arg1;
+- (void)setRegController:(id)arg1;
 - (void)setShouldRerootPreferences:(BOOL)arg1;
 - (void)setShowingChildController:(BOOL)arg1;
+- (void)setSpecifier:(id)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)shouldRerootPreferences;
 - (BOOL)shouldSelectResponderOnAppearance;
 - (BOOL)showingChildController;
+- (id)specifierList;
+- (id)specifiers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)viewDidAppear:(BOOL)arg1;

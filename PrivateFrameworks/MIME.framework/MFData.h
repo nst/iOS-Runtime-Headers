@@ -4,14 +4,13 @@
 
 @class NSData, NSString;
 
-@interface MFData : NSData <NSCopying, NSMutableCopying, WeaklyReferencedObject> {
+@interface MFData : NSData <NSCopying, NSMutableCopying> {
     NSData *_internal;
     NSData *_parent;
     NSString *_path;
     BOOL _subdata;
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)setDefaultMappingThresholdInBytes:(unsigned int)arg1;
 
 - (id)_initWithData:(id)arg1 maybeMutable:(BOOL)arg2;
@@ -35,9 +34,6 @@
 - (unsigned int)length;
 - (BOOL)mf_immutable;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)release;
-- (id)retain;
-- (unsigned int)retainCount;
 - (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
 - (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;

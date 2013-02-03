@@ -15,7 +15,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)privileges;
 - (void)setPrivileges:(id)arg1;
 - (void)write:(id)arg1;

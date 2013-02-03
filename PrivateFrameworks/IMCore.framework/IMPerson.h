@@ -5,44 +5,57 @@
 @class NSData, NSString, NSArray;
 
 @interface IMPerson : NSObject {
-    void *_abRecordRef;
+    BOOL _beingTornDown;
+    int _recordID;
     BOOL _registered;
 }
 
-@property(readonly) void* abRecordRef;
+@property(readonly) BOOL _beingTornDown;
+@property(readonly) int _recordID;
+@property(readonly) void* _recordRef;
+@property(readonly) BOOL _registered;
 @property(readonly) NSArray * allEmails;
 @property(readonly) NSString * companyName;
-@property(retain,readonly) NSString * displayName;
+@property(readonly) NSString * displayName;
 @property(copy) NSArray * emails;
 @property(copy) NSString * firstName;
-@property(retain,readonly) NSString * fullName;
-@property(retain,readonly) NSArray * groups;
+@property(readonly) NSString * fullName;
+@property(readonly) NSArray * groups;
 @property(retain) NSData * imageData;
 @property(readonly) NSData * imageDataWithoutLoading;
 @property(readonly) BOOL isCompany;
 @property(readonly) BOOL isInAddressBook;
 @property(copy) NSString * lastName;
 @property(readonly) NSArray * mobileNumbers;
+@property(readonly) NSString * name;
 @property(copy) NSString * nickname;
 @property(readonly) NSArray * phoneNumbers;
+@property(readonly) int recordID;
 @property(readonly) unsigned int status;
 @property(readonly) NSString * uniqueID;
 
 + (id)allPeople;
 + (id)existingABPersonForPerson:(id)arg1;
++ (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5 countryCode:(id)arg6 identifier:(int*)arg7;
++ (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5 identifier:(int*)arg6;
++ (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5;
++ (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 orEmail:(id)arg3 orNumber:(id)arg4;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 orEmail:(id)arg3;
 + (id)existingABPersonWithFirstName:(id)arg1 lastName:(id)arg2;
-+ (id)personWithRecordRef:(void*)arg1;
 
 - (void)_abPersonChanged:(id)arg1;
+- (BOOL)_beingTornDown;
+- (int)_recordID;
+- (void*)_recordRef;
+- (BOOL)_registered;
 - (id)_valuesAndLabelsForProperty:(id)arg1;
-- (void*)abRecordRef;
 - (id)allEmails;
 - (id)allHandlesForProperty:(id)arg1;
 - (void)appendID:(id)arg1 toProperty:(id)arg2;
 - (id)companyName;
 - (BOOL)containsHandle:(id)arg1 forServiceProperty:(id)arg2;
 - (void)dealloc;
+- (id)description;
 - (id)displayName;
 - (id)emailHandlesForService:(id)arg1 includeBaseEmail:(BOOL)arg2;
 - (id)emailHandlesForService:(id)arg1;
@@ -56,15 +69,18 @@
 - (id)imageData;
 - (id)imageDataWithoutLoading;
 - (id)init;
-- (id)initWithABRecordRef:(void*)arg1;
+- (id)initWithABRecordID:(int)arg1;
 - (BOOL)isCompany;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToIMPerson:(id)arg1;
 - (BOOL)isInAddressBook;
 - (id)lastName;
 - (id)mobileNumbers;
+- (id)name;
 - (id)nickname;
 - (id)phoneNumbers;
+- (int)recordID;
+- (oneway void)release;
 - (void)save;
 - (void)setEmails:(id)arg1;
 - (void)setFirstName:(id)arg1 lastName:(id)arg2;

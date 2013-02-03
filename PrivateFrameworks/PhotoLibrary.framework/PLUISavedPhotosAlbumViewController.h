@@ -5,6 +5,6 @@
 @interface PLUISavedPhotosAlbumViewController : PLUIAlbumViewController {
 }
 
-- (void)setParentViewController:(id)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

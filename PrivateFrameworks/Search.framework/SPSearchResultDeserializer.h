@@ -44,7 +44,6 @@
 - (unsigned int)resultCount;
 - (id)sortA;
 - (id)sortB;
-- (void)sortResultsByDate;
 - (void)sortResultsUsingQueryString:(id)arg1;
 
 @end

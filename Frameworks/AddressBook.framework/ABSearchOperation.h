@@ -2,7 +2,11 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class <ABSearchOperationDelegate>, NSPredicate, NSArray;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSArray, NSThread, <ABSearchOperationDelegate>, NSPredicate;
 
 @interface ABSearchOperation : NSOperation {
     void *_addressBook;
@@ -11,6 +15,8 @@
     void *_internalSearchAddressBook;
     NSPredicate *_predicate;
     NSArray *_prefetchProperties;
+    id _progressBlock;
+    NSThread *_progressBlockThread;
     unsigned int _sortOrdering;
 }
 
@@ -20,14 +26,19 @@
 @property void* internalSearchAddressBook;
 @property(retain) NSPredicate * predicate;
 @property(copy) NSArray * prefetchProperties;
+@property(copy) id progressBlock;
 @property unsigned int sortOrdering;
 
 + (id)personPredicateWithAnyValueForProperty:(int)arg1 addressBook:(void*)arg2;
 + (id)personPredicateWithGroup:(void*)arg1 addressBook:(void*)arg2;
++ (id)personPredicateWithName:(id)arg1 addressBook:(void*)arg2;
 + (id)personPredicateWithNameLike:(id)arg1 addressBook:(void*)arg2;
 + (id)personPredicateWithNameLike:(id)arg1 inAccount:(id)arg2 addressBook:(void*)arg3;
 + (id)personPredicateWithNameLike:(id)arg1 inGroup:(void*)arg2 addressBook:(void*)arg3;
 + (id)personPredicateWithNameLike:(id)arg1 inSource:(void*)arg2 addressBook:(void*)arg3;
++ (id)personPredicateWithNameLike:(id)arg1 inSource:(void*)arg2 includeSourceInResults:(BOOL)arg3 addressBook:(void*)arg4;
++ (id)personPredicateWithNameOnly:(id)arg1 inAccount:(id)arg2 addressBook:(void*)arg3;
++ (id)personPredicateWithPhoneLike:(id)arg1 countryHint:(id)arg2 addressBook:(void*)arg3;
 + (id)personPredicateWithValue:(id)arg1 comparison:(long)arg2 forProperty:(int)arg3 addressBook:(void*)arg4;
 
 - (void)_mainThread_tellDelegateSearchFoundMatch:(void*)arg1;
@@ -37,17 +48,20 @@
 - (void)dealloc;
 - (id)delegate;
 - (void*)internalSearchAddressBook;
+- (BOOL)isConcurrent;
 - (void)main;
 - (id)predicate;
 - (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
 - (BOOL)predicateShouldContinue:(id)arg1;
 - (id)prefetchProperties;
+- (id)progressBlock;
 - (void)setAddressBook:(void*)arg1;
 - (void)setContext:(void*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInternalSearchAddressBook:(void*)arg1;
 - (void)setPredicate:(id)arg1;
 - (void)setPrefetchProperties:(id)arg1;
+- (void)setProgressBlock:(id)arg1;
 - (void)setSortOrdering:(unsigned int)arg1;
 - (unsigned int)sortOrdering;
 

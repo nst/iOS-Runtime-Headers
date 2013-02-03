@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/BookmarkDAV.framework/BookmarkDAV
  */
 
-@class NSString, NSMutableString, NSDictionary, NSData, NSURL;
+@class NSArray, NSMutableString, NSDictionary, CoreDAVErrorItem, NSString, NSData, NSURL;
 
 @interface BookmarkDAVBookmark : NSObject <CoreDAVLeafDataPayload, NSXMLParserDelegate> {
     NSMutableString *_appleAttributeString;
     NSDictionary *_appleAttributes;
     NSURL *_bookmarkURL;
+    CoreDAVErrorItem *_bulkUploadErrorItem;
     int _ignoreLevel;
     NSString *_name;
     int _parseState;
@@ -15,15 +16,18 @@
     NSString *_syncKey;
 }
 
-@property(retain,readonly) NSDictionary * appleAttributes;
-@property(retain,readonly) NSURL * bookmarkURL;
+@property(readonly) NSDictionary * appleAttributes;
+@property(readonly) NSURL * bookmarkURL;
+@property(retain) CoreDAVErrorItem * bulkUploadErrorItem;
+@property(readonly) NSArray * childrenOrder;
 @property(readonly) NSData * dataPayload;
-@property(retain,readonly) NSString * name;
+@property(readonly) NSString * name;
 @property(retain) NSURL * serverID;
 @property(readonly) NSString * syncKey;
 
 - (id)appleAttributes;
 - (id)bookmarkURL;
+- (id)bulkUploadErrorItem;
 - (id)dataPayload;
 - (void)dealloc;
 - (id)initWithBookmarkURL:(id)arg1 serverID:(id)arg2 name:(id)arg3 syncKey:(id)arg4 appleAttributes:(id)arg5;
@@ -34,6 +38,7 @@
 - (void)parser:(id)arg1 foundCDATA:(id)arg2;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
 - (id)serverID;
+- (void)setBulkUploadErrorItem:(id)arg1;
 - (void)setPropertiesFromXBEL:(id)arg1;
 - (void)setServerID:(id)arg1;
 - (id)syncKey;

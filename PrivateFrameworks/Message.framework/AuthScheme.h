@@ -19,7 +19,7 @@
 - (BOOL)hasEncryption;
 - (id)humanReadableName;
 - (id)name;
-- (void)release;
+- (oneway void)release;
 - (BOOL)requiresPassword;
 - (id)retain;
 - (unsigned int)retainCount;

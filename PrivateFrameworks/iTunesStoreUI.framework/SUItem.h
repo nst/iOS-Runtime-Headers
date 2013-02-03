@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUItemContentRating, NSArray, NSDate, SUItemReviewStatistics, SUItemLink, NSDictionary, SSItemImageCollection, SUItem, NSString, SSItemOffer;
+@class SSItemImageCollection, NSURL, SSItemOffer, SUItemContentRating, SUItemReviewStatistics, NSDate, NSArray, SUItemLink, NSDictionary, SUItem, NSString, NSNumber;
 
 @interface SUItem : NSObject <NSCopying> {
     NSString *_artistName;
@@ -19,6 +19,7 @@
     BOOL _gameCenterEnabled;
     NSString *_genreName;
     NSString *_humanReadableDescription;
+    BOOL _isInstalled;
     int _itemDisplayType;
     unsigned long long _itemIdentifier;
     SSItemImageCollection *_itemImageCollection;
@@ -30,9 +31,13 @@
     int _representedItemCount;
     SUItemReviewStatistics *_reviewStatistics;
     NSString *_secondaryTitle;
+    NSString *_softwareType;
     NSArray *_storeOffers;
+    NSDictionary *_tellAFriendDictionary;
     NSString *_title;
     NSString *_unmodifiedTitle;
+    NSNumber *_versionIdentifier;
+    NSArray *_versionOrdering;
 }
 
 @property(copy) NSString * artistName;
@@ -50,6 +55,7 @@
 @property(getter=isGameCenterEnabled) BOOL gameCenterEnabled;
 @property(copy) NSString * genreName;
 @property(copy) NSString * humanReadableDescription;
+@property(getter=isInstalled,readonly) BOOL installed;
 @property(readonly) NSDictionary * itemDictionary;
 @property int itemDisplayType;
 @property unsigned long long itemIdentifier;
@@ -62,9 +68,16 @@
 @property int representedItemCount;
 @property(copy) SUItemReviewStatistics * reviewStatistics;
 @property(copy) NSString * secondaryTitle;
+@property(copy) NSString * softwareType;
 @property(copy) NSArray * storeOffers;
+@property(readonly) NSString * tellAFriendBody;
+@property(readonly) NSString * tellAFriendBodyMIMEType;
+@property(readonly) NSURL * tellAFriendBodyURL;
+@property(readonly) NSString * tellAFriendSubject;
 @property(copy) NSString * title;
 @property(copy) NSString * unmodifiedTitle;
+@property(retain) NSNumber * versionIdentifier;
+@property(copy) NSArray * versionOrdering;
 
 - (int)_linkTargetForTargetString:(id)arg1 typeString:(id)arg2;
 - (int)_linkTypeForString:(id)arg1;
@@ -103,6 +116,7 @@
 - (BOOL)isDisplayable:(id*)arg1;
 - (BOOL)isDownloadable;
 - (BOOL)isGameCenterEnabled;
+- (BOOL)isInstalled;
 - (id)itemDictionary;
 - (int)itemDisplayType;
 - (unsigned long long)itemIdentifier;
@@ -112,6 +126,7 @@
 - (id)itemMediaKind;
 - (int)itemType;
 - (id)itemTypeString;
+- (id)relatedItemsForRelationType:(id)arg1;
 - (id)releaseDate;
 - (int)representedItemCount;
 - (id)reviewStatistics;
@@ -138,14 +153,24 @@
 - (void)setRepresentedItemCount:(int)arg1;
 - (void)setReviewStatistics:(id)arg1;
 - (void)setSecondaryTitle:(id)arg1;
+- (void)setSoftwareType:(id)arg1;
 - (void)setStoreOffers:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUnmodifiedTitle:(id)arg1;
+- (void)setVersionIdentifier:(id)arg1;
+- (void)setVersionOrdering:(id)arg1;
+- (id)softwareType;
 - (id)storeOfferForIdentifier:(id)arg1;
 - (id)storeOffers;
 - (id)stringValueForProperty:(id)arg1;
+- (id)tellAFriendBody;
+- (id)tellAFriendBodyMIMEType;
+- (id)tellAFriendBodyURL;
+- (id)tellAFriendSubject;
 - (id)title;
 - (id)unmodifiedTitle;
 - (id)valueForProperty:(id)arg1;
+- (id)versionIdentifier;
+- (id)versionOrdering;
 
 @end

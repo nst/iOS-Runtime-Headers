@@ -8,32 +8,35 @@
     unsigned int _accepted : 1;
     unsigned int _generated : 1;
     NSString *_cachedName;
-    struct __CKSMSAddress { } *_smsAddress;
+    struct __IMDSMSAddress { } *_smsAddress;
 }
 
-@property struct __CKSMSAddress { }* smsAddress;
+@property struct __IMDSMSAddress { }* smsAddress;
 
++ (id)copyAllEntities;
 + (id)copyAllSMSEntities;
 
 - (void)_addToSharedSet;
 - (id)_existingEntityFromSharedSet;
 - (void)_generateCachedName;
 - (void)_generateName;
-- (id)_initWithSMSAddress:(struct __CKSMSAddress { }*)arg1 service:(id)arg2;
+- (id)_initWithSMSAddress:(struct __IMDSMSAddress { }*)arg1 service:(id)arg2;
 - (void)_removeFromSharedSet;
-- (struct __CKSMSAddress { }*)_smsAddress;
+- (struct __IMDSMSAddress { }*)_smsAddress;
 - (void*)abRecord;
 - (int)addressBookUID;
 - (void)dealloc;
+- (id)description;
 - (unsigned int)hash;
 - (int)identifier;
 - (BOOL)isEqual:(id)arg1;
-- (void)manuallyGenerateWithABRecord:(void*)arg1 identifier:(int)arg2;
 - (id)name;
+- (struct __CFPhoneNumber { }*)phoneNumberRef;
 - (int)propertyType;
 - (id)rawAddress;
 - (void)resetCaches;
-- (void)setSmsAddress:(struct __CKSMSAddress { }*)arg1;
-- (struct __CKSMSAddress { }*)smsAddress;
+- (void)setABRecord:(void*)arg1 withIdentifier:(int)arg2;
+- (void)setSmsAddress:(struct __IMDSMSAddress { }*)arg1;
+- (struct __IMDSMSAddress { }*)smsAddress;
 
 @end

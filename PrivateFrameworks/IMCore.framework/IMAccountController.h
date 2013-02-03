@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableArray, NSArray;
+@class NSArray, NSMutableArray, NSMutableDictionary;
 
 @interface IMAccountController : NSObject {
+    NSMutableDictionary *_accountMap;
     NSMutableArray *_accounts;
     BOOL _isReadOnly;
 }
 
+@property(readonly) NSMutableArray * _accounts;
 @property(readonly) NSArray * accounts;
 @property(readonly) NSArray * activeAccounts;
 @property(readonly) id aimAccount;
@@ -21,6 +23,7 @@
 + (id)bestAccountFromAccounts:(id)arg1;
 + (id)sharedInstance;
 
+- (id)_accounts;
 - (void)_activeAccountChanged:(id)arg1;
 - (BOOL)accountActive:(id)arg1;
 - (id)accountAtIndex:(int)arg1;
@@ -34,7 +37,10 @@
 - (BOOL)activateAccount:(id)arg1 force:(BOOL)arg2;
 - (BOOL)activateAccount:(id)arg1 locally:(BOOL)arg2;
 - (BOOL)activateAccount:(id)arg1;
+- (BOOL)activateAccounts:(id)arg1 force:(BOOL)arg2 locally:(BOOL)arg3;
+- (BOOL)activateAccounts:(id)arg1;
 - (BOOL)activateAndHandleReconnectAccount:(id)arg1;
+- (BOOL)activateAndHandleReconnectAccounts:(id)arg1;
 - (id)activeAccounts;
 - (id)activeAccountsForService:(id)arg1;
 - (BOOL)addAccount:(id)arg1 atIndex:(int)arg2 locally:(BOOL)arg3;
@@ -42,6 +48,8 @@
 - (BOOL)addAccount:(id)arg1 locally:(BOOL)arg2;
 - (BOOL)addAccount:(id)arg1;
 - (id)aimAccount;
+- (BOOL)allowsWeakReference;
+- (id)anyAccountForService:(id)arg1 login:(id)arg2 guid:(id)arg3;
 - (id)anyAccountForService:(id)arg1 withLogin:(id)arg2;
 - (id)anyAccountForService:(id)arg1;
 - (id)anyActiveAccountForService:(id)arg1 withLogin:(id)arg2;
@@ -49,15 +57,17 @@
 - (id)anyConnectedAccountForService:(id)arg1 withLogin:(id)arg2;
 - (id)anyConnectedAccountForService:(id)arg1;
 - (void)autoLogin;
-- (id)autorelease;
 - (id)bestAccountForStatus;
 - (BOOL)canActivateAccount:(id)arg1;
+- (BOOL)canActivateAccounts:(id)arg1;
 - (BOOL)canDeleteAccount:(id)arg1;
 - (id)connectedAccounts;
 - (id)connectedAccountsForService:(id)arg1;
 - (id)connectedAccountsWithCapability:(unsigned long long)arg1;
 - (BOOL)deactivateAccount:(id)arg1 withDisable:(BOOL)arg2;
 - (BOOL)deactivateAccount:(id)arg1;
+- (BOOL)deactivateAccounts:(id)arg1 withDisable:(BOOL)arg2;
+- (BOOL)deactivateAccounts:(id)arg1;
 - (void)dealloc;
 - (BOOL)deleteAccount:(id)arg1 locally:(BOOL)arg2;
 - (BOOL)deleteAccount:(id)arg1;
@@ -66,8 +76,7 @@
 - (id)mostLoggedInAccount;
 - (int)numberOfAccounts;
 - (BOOL)readOnly;
-- (oneway void)release;
-- (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 - (void)setReadOnly:(BOOL)arg1;
 
 @end

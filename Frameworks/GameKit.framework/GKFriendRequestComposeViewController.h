@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class <GKFriendRequestComposeViewControllerDelegate>, GKComposeController, NSString;
+@class GKComposeController, <GKFriendRequestComposeViewControllerDelegate>, NSString, NSNumber;
 
-@interface GKFriendRequestComposeViewController : UINavigationController {
+@interface GKFriendRequestComposeViewController : UINavigationController <GKComposeControllerDelegate> {
     GKComposeController *_composeController;
     <GKFriendRequestComposeViewControllerDelegate> *_composeViewDelegate;
     NSString *_message;
@@ -15,6 +15,7 @@
 @property <GKFriendRequestComposeViewControllerDelegate> * composeViewDelegate;
 @property(retain) NSString * message;
 @property unsigned int recipientCount;
+@property(retain) NSNumber * rid;
 
 + (unsigned int)maxNumberOfRecipients;
 
@@ -22,6 +23,7 @@
 - (void)addRecipientsWithAliases:(id)arg1;
 - (void)addRecipientsWithEmailAddresses:(id)arg1;
 - (void)addRecipientsWithPlayerIDs:(id)arg1;
+- (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (id)composeController;
 - (void)composeControllerAppeared:(id)arg1;
 - (void)composeControllerCancelled:(id)arg1;
@@ -33,12 +35,15 @@
 - (id)message;
 - (void)prepareForNewRecipients:(id)arg1;
 - (unsigned int)recipientCount;
-- (void)sendFinishedMessageToDelegate;
+- (id)rid;
+- (void)sendFinishedMessageToDelegateCancelled:(BOOL)arg1;
 - (void)setComposeController:(id)arg1;
 - (void)setComposeViewDelegate:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setRecipientCount:(unsigned int)arg1;
+- (void)setRid:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

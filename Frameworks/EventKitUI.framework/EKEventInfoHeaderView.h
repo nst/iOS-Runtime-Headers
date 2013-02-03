@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UIImageView, UIButton, UIView, StrikethroughLabel, UILabel, CalendarCustomTimeView;
+@class UIImageView, UIButton, UIView, EKStrikethroughLabel, UIView<CalendarLabelTextMetrics>, CalendarCustomTimeView;
 
 @interface EKEventInfoHeaderView : UIView {
     CalendarCustomTimeView *_customTimeView;
@@ -12,20 +12,17 @@
     BOOL _isBirthday;
     float _lastLayoutWidth;
     float _lastMaxY;
-    UILabel *_locationView;
+    UIView<CalendarLabelTextMetrics> *_locationView;
     int _style;
     UIView *_timeClippingView;
-    StrikethroughLabel *_titleView;
+    EKStrikethroughLabel *_titleView;
     unsigned int _visibleHeaderItems;
 }
-
-+ (void)_initializeSafeCategory;
 
 - (id)_customTimeView;
 - (id)_editButton;
 - (id)_locationView;
 - (id)_titleView;
-- (id)accessibilityLabel;
 - (void)dealloc;
 - (id)editButton;
 - (id)initWithEvent:(id)arg1 color:(id)arg2 style:(int)arg3 opaque:(BOOL)arg4;

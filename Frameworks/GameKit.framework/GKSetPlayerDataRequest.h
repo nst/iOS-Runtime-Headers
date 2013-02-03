@@ -5,7 +5,4 @@
 @interface GKSetPlayerDataRequest : GKDataRequest {
 }
 
-- (int)cacheType;
-- (id)invalidateCacheKeys;
-
 @end

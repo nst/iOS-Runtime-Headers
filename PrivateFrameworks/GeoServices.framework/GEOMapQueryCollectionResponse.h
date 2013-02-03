@@ -7,7 +7,7 @@
 
 - (void)dealloc;
 - (id)description;
-- (id)init;
+- (id)dictionaryRepresentation;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 

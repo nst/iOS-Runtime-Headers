@@ -8,6 +8,8 @@
     NSArray *_affectedStores;
 }
 
++ (void)initialize;
+
 - (id)affectedStores;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

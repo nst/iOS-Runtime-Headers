@@ -7,13 +7,17 @@
         float width; 
         float height; 
     int mCurrentSlide;
+    int mProgressiveIndex;
     } mSlideSize;
 }
 
 - (int)currentSlide;
 - (void)incrementCurrentSlide;
+- (int)progressiveIndex;
+- (void)setProgressiveIndex:(int)arg1;
 - (void)setSlideSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)shouldMapLinkWithUrl:(struct __CFString { }*)arg1;
+- (BOOL)shouldStreamContent;
 - (struct CGSize { float x1; float x2; })slideSize;
 
 @end

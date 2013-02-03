@@ -15,7 +15,6 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasValueText;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (void)setValueText:(id)arg1;
 - (id)valueText;

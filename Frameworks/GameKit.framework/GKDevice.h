@@ -35,6 +35,7 @@
 - (id)processNameHeader;
 - (id)protocolVersionHeader;
 - (id)screenCapabilities;
+- (id)storeUserAgent;
 - (id)udid;
 - (id)userAgent;
 - (id)userAgentWithProcessName:(id)arg1 protocolVersion:(id)arg2;

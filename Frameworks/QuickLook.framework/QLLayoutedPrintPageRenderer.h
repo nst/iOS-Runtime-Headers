@@ -5,7 +5,6 @@
 @class NSMutableArray, UIWebPaginationInfo;
 
 @interface QLLayoutedPrintPageRenderer : QLPrintPageRenderer {
-    unsigned int _currentNodeIndex;
     NSMutableArray *_nodes;
     UIWebPaginationInfo *_paginationInfo;
 }

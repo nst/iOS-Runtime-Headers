@@ -37,6 +37,8 @@
 @property(retain) GKSessionInternal * session;
 @property struct _DNSServiceRef_t { }* txtRecordService;
 
++ (void)freeLookupList:(struct _DNSServiceRef_t {}**)arg1 andAddrList:(id*)arg2 andInterfaceList:(unsigned int*)arg3 count:(int)arg4;
+
 - (void)addLookup:(struct _DNSServiceRef_t { }*)arg1;
 - (void)cleanupForGKTable:(id)arg1;
 - (void)clearResolving;

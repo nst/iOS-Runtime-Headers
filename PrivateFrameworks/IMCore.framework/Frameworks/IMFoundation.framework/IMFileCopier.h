@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSURL, <IMFileCopierDelegate>;
+@class <IMFileCopierDelegate>, NSURL;
 
 @interface IMFileCopier : NSObject {
     <IMFileCopierDelegate> *_delegate;
@@ -18,7 +18,9 @@
 @property <IMFileCopierDelegate> * delegate;
 @property(readonly) BOOL didErrorOccur;
 @property(readonly) id identifier;
+@property BOOL inProgress;
 @property(readonly) NSURL * inputURL;
+@property unsigned int operation;
 @property(readonly) NSURL * outputURL;
 @property(readonly) BOOL wasCancelled;
 
@@ -32,10 +34,14 @@
 - (id)delegate;
 - (BOOL)didErrorOccur;
 - (id)identifier;
+- (BOOL)inProgress;
 - (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(unsigned int)arg4 delegate:(id)arg5;
 - (id)inputURL;
+- (unsigned int)operation;
 - (id)outputURL;
 - (void)setDelegate:(id)arg1;
+- (void)setInProgress:(BOOL)arg1;
+- (void)setOperation:(unsigned int)arg1;
 - (void)start;
 - (BOOL)wasCancelled;
 

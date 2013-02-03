@@ -12,7 +12,7 @@
             int run_state; 
             unsigned long long dispatch_queue_serial_num; 
         } context; 
-        unsigned int *frames; 
+        unsigned long long *frames; 
         char *frame_types; 
         unsigned int length; 
     } _callstack;
@@ -20,7 +20,7 @@
 }
 
 - (struct _CSTypeRef { unsigned int x1; unsigned int x2; })_symbolicator;
-- (unsigned int*)backtrace;
+- (unsigned long long*)backtrace;
 - (unsigned int)backtraceLength;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -39,6 +39,6 @@
 - (void)setThreadState:(int)arg1;
 - (unsigned int)thread;
 - (int)threadState;
-- (unsigned int)topmostFrame;
+- (unsigned long long)topmostFrame;
 
 @end

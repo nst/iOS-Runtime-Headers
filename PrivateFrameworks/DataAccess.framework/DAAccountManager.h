@@ -46,6 +46,7 @@
 - (id)init;
 - (id)pendingAccounts;
 - (void)reloadAccounts;
+- (BOOL)removeAccount:(id)arg1 forAccountIDReset:(BOOL)arg2;
 - (BOOL)removeAccount:(id)arg1;
 - (void)removePendingAccountSetup;
 - (BOOL)saveAllAccountSettings;

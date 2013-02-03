@@ -9,13 +9,16 @@
         float width; 
         float height; 
     BOOL automaticallyAdjustsMirroring;
+    BOOL chromaNoiseReductionEnabled;
     NSMutableArray *connections;
     BOOL disableActions;
     NSString *gravity;
     BOOL isPaused;
     BOOL isPresentationLayer;
+    BOOL layerDebuggingEnabled;
     BOOL mirrored;
     int orientation;
+    float previewRotationDegrees;
     } previewSize;
     AVCaptureSession *session;
     CALayer *sublayer;

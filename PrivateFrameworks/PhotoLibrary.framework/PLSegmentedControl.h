@@ -16,6 +16,7 @@
 - (void)insertSegmentWithTitle:(id)arg1 atIndex:(unsigned int)arg2 animated:(BOOL)arg3;
 - (void)removeAllSegments;
 - (void)removeSegmentAtIndex:(unsigned int)arg1 animated:(BOOL)arg2;
+- (unsigned int)segmentIndexForTag:(unsigned int)arg1;
 - (int)selectedTag;
 - (void)setSelectedTag:(int)arg1;
 - (void)setTag:(int)arg1 forSegmentAtIndex:(unsigned int)arg2;

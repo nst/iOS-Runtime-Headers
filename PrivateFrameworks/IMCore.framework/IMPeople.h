@@ -31,7 +31,6 @@
 - (id)groups;
 - (BOOL)hidePeople;
 - (void)imHandle:(id)arg1 buddyStatusChanged:(BOOL)arg2;
-- (id)init;
 - (id)people;
 - (BOOL)removeIMHandle:(id)arg1;
 - (void)removeNotificationObserver:(id)arg1;

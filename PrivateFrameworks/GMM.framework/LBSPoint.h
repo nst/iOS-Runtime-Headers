@@ -3,22 +3,21 @@
  */
 
 @interface LBSPoint : PBCodable {
-    unsigned int _lat_e7;
-    unsigned int _lng_e7;
+    unsigned int _latE7;
+    unsigned int _lngE7;
 }
 
-@property unsigned int lat_e7;
-@property unsigned int lng_e7;
+@property unsigned int latE7;
+@property unsigned int lngE7;
 
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)init;
-- (unsigned int)lat_e7;
-- (unsigned int)lng_e7;
+- (unsigned int)latE7;
+- (unsigned int)lngE7;
 - (BOOL)readFrom:(id)arg1;
-- (void)setLat_e7:(unsigned int)arg1;
-- (void)setLng_e7:(unsigned int)arg1;
+- (void)setLatE7:(unsigned int)arg1;
+- (void)setLngE7:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

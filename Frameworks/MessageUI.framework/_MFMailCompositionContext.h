@@ -8,6 +8,7 @@
     struct { 
         unsigned int loadRest : 1; 
         unsigned int includeAttachments : 1; 
+    id _autosaveIdentifier;
     int _composeType;
     MFMessageViewingContext *_loadingContext;
     } _mailComposeFlags;
@@ -15,6 +16,7 @@
     MailMessage *_originalMessage;
 }
 
+@property(readonly) id autosaveIdentifier;
 @property(readonly) int composeType;
 @property BOOL includeAttachments;
 @property BOOL loadRest;
@@ -22,16 +24,20 @@
 @property(retain) id originalContent;
 @property(retain,readonly) MailMessage * originalMessage;
 
+- (id)autosaveIdentifier;
 - (int)composeType;
 - (void)dealloc;
 - (BOOL)includeAttachments;
 - (id)initDraftRestoreOfMessage:(id)arg1;
+- (id)initDraftRestoreOfRFC822Data:(id)arg1;
 - (id)initForwardOfMessage:(id)arg1;
 - (id)initOutboxRestoreOfMessage:(id)arg1;
+- (id)initRecoveredAutosavedMessageWithIdentifier:(id)arg1;
 - (id)initReplyAllToMessage:(id)arg1;
 - (id)initReplyToMessage:(id)arg1;
 - (id)initWithComposeType:(int)arg1 originalMessage:(id)arg2;
 - (id)initWithComposeType:(int)arg1;
+- (id)initWithURL:(id)arg1 composeType:(int)arg2 originalMessage:(id)arg3;
 - (BOOL)loadRest;
 - (id)loadingContext;
 - (id)originalContent;

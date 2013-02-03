@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class CMMotionManager, NSTimer;
+@class CMMotionManager, NSTimer, CLLocationManager;
 
 @interface CoreMotionManager : NSObject {
     struct HashSet<WebCore::DeviceMotionClientIPhone*,WTF::PtrHash<WebCore::DeviceMotionClientIPhone*>,WTF::HashTraits<WebCore::DeviceMotionClientIPhone*> > { 
@@ -29,6 +29,8 @@
     } m_deviceMotionClients;
     } m_deviceOrientationClients;
     BOOL m_gyroAvailable;
+    BOOL m_headingAvailable;
+    CLLocationManager *m_locationManager;
     CMMotionManager *m_motionManager;
     NSTimer *m_updateTimer;
 }
@@ -42,12 +44,13 @@
 - (void)checkClientStatus;
 - (void)dealloc;
 - (BOOL)gyroAvailable;
+- (BOOL)headingAvailable;
 - (id)init;
 - (void)initializeOnMainThread;
 - (void)removeMotionClient:(struct DeviceMotionClientIPhone { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; boolx5; }*)arg1;
 - (void)removeOrientationClient:(struct DeviceOrientationClientIPhone { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientation> { struct DeviceOrientation {} *x_4_1_1; } x4; boolx5; }*)arg1;
 - (void)sendAccelerometerData:(id)arg1;
-- (void)sendMotionData:(id)arg1;
+- (void)sendMotionData:(id)arg1 withHeading:(id)arg2;
 - (void)update;
 
 @end

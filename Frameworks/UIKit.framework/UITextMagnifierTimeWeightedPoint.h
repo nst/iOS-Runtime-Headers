@@ -13,7 +13,7 @@
     } m_points[16];
 }
 
-@property(readonly) struct CGPoint { float x; float y; } weightedPoint;
+@property(readonly) struct CGPoint { float x1; float x2; } weightedPoint;
 
 - (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)clearHistory;

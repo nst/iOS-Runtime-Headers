@@ -21,6 +21,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
+- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
 - (void)getObjects:(id*)arg1;
 - (id)initWithContainer:(id)arg1 key:(id)arg2 mutableSet:(id)arg3;
 - (void)intersectSet:(id)arg1;
@@ -32,6 +33,7 @@
 - (void)minusSet:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;
+- (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (void)removeAllObjects;
 - (void)removeObject:(id)arg1;
 - (void)setSet:(id)arg1;

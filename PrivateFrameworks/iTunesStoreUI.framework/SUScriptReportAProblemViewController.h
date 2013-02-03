@@ -9,6 +9,7 @@
 
 @property(readonly) NSNumber * adamID;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 
 - (id)_className;

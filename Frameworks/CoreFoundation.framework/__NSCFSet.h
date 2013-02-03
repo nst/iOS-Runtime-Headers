@@ -3,11 +3,17 @@
  */
 
 @interface __NSCFSet : NSMutableSet {
+    unsigned int _bits[4];
+    void *_callbacks;
+    unsigned char _cfinfo[4];
+    id *_values;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (BOOL)_isDeallocating;
 - (unsigned int)_trueCount;
+- (BOOL)_tryRetain;
 - (void)addObject:(id)arg1;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

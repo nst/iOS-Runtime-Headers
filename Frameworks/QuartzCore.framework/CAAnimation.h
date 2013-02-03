@@ -15,10 +15,13 @@
 }
 
 @property int _mapkit_ID;
-@property(readonly) BOOL _mapkit_isHeadingRotationAnimation;
 @property(readonly) BOOL _mapkit_isScrollingAnimation;
+@property(copy) id animationDidStartBlock;
+@property(copy) id animationDidStopBlock;
+@property int animationID;
 @property BOOL autoreverses;
 @property double beginTime;
+@property(copy) id completionBlock;
 @property(retain) id delegate;
 @property double duration;
 @property(getter=isEnabled) BOOL enabled;
@@ -43,13 +46,16 @@
 
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (int)_mapkit_ID;
-- (BOOL)_mapkit_isHeadingRotationAnimation;
 - (BOOL)_mapkit_isScrollingAnimation;
 - (unsigned int)_propertyFlagsForLayer:(id)arg1;
 - (BOOL)_setCARenderAnimation:(struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; unsigned int x7; unsigned int x8; }*)arg1 layer:(id)arg2;
+- (id)animationDidStartBlock;
+- (id)animationDidStopBlock;
+- (int)animationID;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
 - (BOOL)autoreverses;
 - (double)beginTime;
+- (id)completionBlock;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)debugDescription;
@@ -62,12 +68,17 @@
 - (BOOL)isEnabled;
 - (BOOL)isRemovedOnCompletion;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (void)performCompletionBlock:(BOOL)arg1;
 - (BOOL)removedOnCompletion;
 - (float)repeatCount;
 - (double)repeatDuration;
 - (void)runActionForKey:(id)arg1 object:(id)arg2 arguments:(id)arg3;
+- (void)setAnimationDidStartBlock:(id)arg1;
+- (void)setAnimationDidStopBlock:(id)arg1;
+- (void)setAnimationID:(int)arg1;
 - (void)setAutoreverses:(BOOL)arg1;
 - (void)setBeginTime:(double)arg1;
+- (void)setCompletionBlock:(id)arg1;
 - (void)setDefaultDuration:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(double)arg1;

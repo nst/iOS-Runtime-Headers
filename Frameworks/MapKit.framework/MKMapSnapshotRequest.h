@@ -2,12 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class MKMapSnapshotCreator, UIImage;
+@class NSMutableDictionary, UIImage, NSString, MKMapSnapshotCreator, GEOTileKeyList;
 
 @interface MKMapSnapshotRequest : NSObject {
     struct { 
@@ -16,45 +11,48 @@
     struct CGSize { 
         float width; 
         float height; 
-    struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { 
-            long __sig; 
-            BOOL __opaque[40]; 
     struct CGPoint { 
         float x; 
         float y; 
+    NSString *_attributionString;
     id _context;
     } _coordinate;
     MKMapSnapshotCreator *_delegate;
+    id _foregroundObserver;
     UIImage *_image;
     unsigned int _maxX;
     unsigned int _maxY;
     unsigned int _minX;
     unsigned int _minY;
+    NSMutableDictionary *_objects;
     BOOL _paused;
     } _renderOffset;
     id _requester;
     } _size;
-        } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; } *_tileRequester;
+    GEOTileKeyList *_tileKeyList;
     unsigned int _zoomAdd;
     unsigned int _zoomLevel;
 }
 
+@property(retain) NSString * attributionString;
 @property(retain) id context;
-@property struct { double latitude; double longitude; } coordinate;
+@property struct { double x1; double x2; } coordinate;
 @property MKMapSnapshotCreator * delegate;
 @property(readonly) UIImage * image;
 @property(retain) id requester;
-@property struct CGSize { float width; float height; } size;
+@property struct CGSize { float x1; float x2; } size;
 @property unsigned int zoomLevel;
 
-- (void)_appResumed:(id)arg1;
+- (id)attributionString;
 - (id)context;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (id)image;
+- (id)init;
 - (id)requester;
+- (void)setAttributionString:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setDelegate:(id)arg1;
@@ -64,9 +62,8 @@
 - (struct CGSize { float x1; float x2; })size;
 - (void)startLoading;
 - (void)stopLoading;
-- (void)tileRequester:(struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; }*)arg1 failedWithError:(id)arg2;
-- (void)tileRequesterCompleted:(struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; }*)arg1;
-- (void)tileRequesterProgress:(struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; }*)arg1;
+- (void)tileRequesterCompleted;
+- (void)tileRequesterFailedWithError:(id)arg1;
 - (unsigned int)zoomLevel;
 
 @end

@@ -7,21 +7,21 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSString;
+@class NSString, AVWeakReference;
 
 @interface AVCMNotificationDispatcherListenerKey : NSObject <NSCopying> {
     int (*_callback)();
-    id _listener;
     NSString *_name;
     void *_object;
+    AVWeakReference *_weakReferenceToListener;
 }
 
-+ (id)listenerKeyWithListener:(id)arg1 callback:(int (*)())arg2 name:(id)arg3 object:(const void*)arg4;
++ (id)listenerKeyWithWeakReferenceToListener:(id)arg1 callback:(int (*)())arg2 name:(id)arg3 object:(const void*)arg4;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (unsigned int)hash;
-- (id)initWithListener:(id)arg1 callback:(int (*)())arg2 name:(id)arg3 object:(const void*)arg4;
+- (id)initWithWeakReferenceToListener:(id)arg1 callback:(int (*)())arg2 name:(id)arg3 object:(const void*)arg4;
 - (BOOL)isEqual:(id)arg1;
 
 @end

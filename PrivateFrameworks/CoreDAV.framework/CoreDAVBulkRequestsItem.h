@@ -2,25 +2,40 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVLeafItem, NSDictionary;
+@class CoreDAVLeafItem, NSMutableSet, NSDictionary, NSSet;
 
 @interface CoreDAVBulkRequestsItem : CoreDAVItem {
     CoreDAVLeafItem *_maxResourcesItem;
     CoreDAVLeafItem *_maxSizeItem;
+    NSMutableSet *_supportedItems;
 }
 
 @property(readonly) NSDictionary * dictRepresentation;
+@property(readonly) int maxResources;
 @property(retain) CoreDAVLeafItem * maxResourcesItem;
+@property(readonly) int maxSize;
 @property(retain) CoreDAVLeafItem * maxSizeItem;
+@property(readonly) NSSet * supportedItems;
+@property(readonly) BOOL supportsDelete;
+@property(readonly) BOOL supportsInsert;
+@property(readonly) BOOL supportsUpdate;
 
+- (void)addSupportedItem:(id)arg1;
 - (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
 - (id)dictRepresentation;
 - (id)init;
+- (int)maxResources;
 - (id)maxResourcesItem;
+- (int)maxSize;
 - (id)maxSizeItem;
 - (void)setMaxResourcesItem:(id)arg1;
 - (void)setMaxSizeItem:(id)arg1;
+- (id)supportedItems;
+- (BOOL)supportsDelete;
+- (BOOL)supportsInsert;
+- (BOOL)supportsItemWithNameSpace:(id)arg1 name:(id)arg2;
+- (BOOL)supportsUpdate;
 
 @end

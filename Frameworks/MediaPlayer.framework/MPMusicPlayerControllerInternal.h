@@ -18,7 +18,6 @@
     int _playbackState;
     MPMediaQuery *_query;
     struct __CFRunLoopSource { } *_runLoopSource;
-    struct dispatch_queue_s { } *_springboardNowPlayingInfoQueue;
 }
 
 @property BOOL inBlockHandlingPlaybackStateChangedMessageFromServer;

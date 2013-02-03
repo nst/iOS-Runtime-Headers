@@ -5,19 +5,15 @@
 @class NSArray;
 
 @interface GKGetGameMetadataRequest : GKDataRequest {
-    NSArray *_gamesPlayed;
+    NSArray *_games;
 }
 
-@property(retain) NSArray * gamesPlayed;
+@property(retain) NSArray * games;
 
-- (id)cacheKey;
-- (int)cachePriority;
-- (int)cacheType;
 - (void)dealloc;
-- (id)gamesPlayed;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
+- (id)games;
 - (id)key;
 - (id)request;
-- (void)setGamesPlayed:(id)arg1;
+- (void)setGames:(id)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @class <MPMediaPickerControllerDelegate>, NSString, MPMediaPickerControllerInternal;
 
-@interface MPMediaPickerController : UIViewController {
+@interface MPMediaPickerController : UIViewController <MediaPickerModalContextDelegate, UIScrollViewDelegate> {
     MPMediaPickerControllerInternal *_internal;
 }
 
@@ -15,32 +15,21 @@
 
 + (void)preheatMediaPicker;
 
-- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
-- (void)_applicationWillTerminate:(id)arg1;
-- (BOOL)_canReloadView;
-- (void)_invalidateReplyPort;
-- (void)_orderFront;
-- (void)_orderOut;
 - (void)_pickerDidCancel;
 - (void)_pickerDidPickItems:(id)arg1;
-- (void)_viewDidMoveToWindow;
-- (void)_viewSizeDidChange;
-- (void)_viewWillMoveFromWindow;
-- (void)_windowDidCreateContextNotification:(id)arg1;
-- (void)_windowWillDestoryContextNotification:(id)arg1;
 - (BOOL)allowsPickingMultipleItems;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (id)initWithMediaTypes:(int)arg1;
 - (void)loadView;
+- (void)mediaPickerModalContext:(id)arg1 didPickMediaItems:(id)arg2;
 - (int)mediaTypes;
+- (void)modalContextDidDismiss:(id)arg1 withSuccess:(BOOL)arg2;
 - (id)prompt;
-- (BOOL)scrollViewShouldScrollToTop:(id)arg1;
 - (void)setAllowsPickingMultipleItems:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPrompt:(id)arg1;
 - (void)viewDidUnload;
-- (void)viewWillAppear:(BOOL)arg1;
 
 @end

@@ -2,12 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIDOMHTMLOptionPickerCell : UIPickerTableCell {
+@interface UIDOMHTMLOptionPickerCell : UIPickerContentView {
 }
 
 - (id)initCommon;
 - (id)initWithHTMLOptionNode:(id)arg1;
-- (void)layoutSubviews;
-- (float)textWidth;
 
 @end

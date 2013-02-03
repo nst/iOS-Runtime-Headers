@@ -6,14 +6,15 @@
 
 @interface ISNetworkObserver : NSObject <ISSingleton, SSDownloadQueueObserver> {
     struct dispatch_queue_s { } *_dispatchQueue;
+    BOOL _isCellularRestricted;
     double _lastNetworkTypeChangeTime;
     int _networkType;
     int _networkUsageCount;
-    struct __CFBag { } *_networkUsageCountByAsset;
     NSMutableSet *_observedDownloadQueues;
     struct __SCNetworkReachability { } *_reachability;
 }
 
+@property(getter=isCellularDataRestricted,readonly) BOOL cellularDataRestricted;
 @property(readonly) NSString * connectionTypeHeader;
 @property(readonly) double lastNetworkTypeChangeTime;
 @property int networkType;
@@ -33,22 +34,21 @@
 - (BOOL)_ntsIsUsingNetwork;
 - (void)_postTypeChangedNotificationFromValue:(int)arg1 toValue:(int)arg2;
 - (void)_postUsageChangedToValue:(BOOL)arg1;
+- (void)_reloadCellularRestriction;
 - (void)_reloadNetworkType;
 - (int)_setNetworkType:(int)arg1;
 - (void)_telephonyObserverAvailableNotification:(id)arg1;
 - (void)beginObservingDownloadQueue:(id)arg1;
 - (void)beginUsingNetwork;
-- (void)beginUsingNetworkForAssetType:(int)arg1;
 - (id)connectionTypeHeader;
-- (id)copyActiveAssetTypes;
 - (id)copyValueForCarrierBundleKey:(id)arg1;
 - (void)dealloc;
 - (void)downloadQueue:(id)arg1 changedWithRemovals:(id)arg2;
 - (void)downloadQueueNetworkUsageChanged:(id)arg1;
 - (void)endObservingDownloadQueue:(id)arg1;
 - (void)endUsingNetwork;
-- (void)endUsingNetworkForAssetType:(int)arg1;
 - (id)init;
+- (BOOL)isCellularDataRestricted;
 - (BOOL)isUsingNetwork;
 - (BOOL)isWiFiEnabled;
 - (double)lastNetworkTypeChangeTime;

@@ -18,14 +18,13 @@
 
 @property(retain) id context;
 @property BOOL isDeleteConfirmationVisible;
-@property struct CGSize { float width; float height; } layoutSize;
+@property struct CGSize { float x1; float x2; } layoutSize;
 @property BOOL needsDisplay;
 @property(readonly) unsigned int numberOfImages;
 @property(readonly) unsigned int numberOfLabels;
 @property(retain) id representedObject;
 @property UIView<SUCellConfigurationView> * view;
 
-+ (void)_initializeSafeCategory;
 + (id)copyDefaultContext;
 + (float)minimumRowHeight;
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;

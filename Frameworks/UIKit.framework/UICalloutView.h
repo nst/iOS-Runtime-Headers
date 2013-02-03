@@ -84,7 +84,6 @@
 
 + (id)_backgroundImage;
 + (id)_bottomAnchorImage;
-+ (void)_initializeSafeCategory;
 + (id)_leftCapImage;
 + (id)_rightCapImage;
 + (id)_topAnchorImage;
@@ -99,8 +98,6 @@
 - (float)UICalloutViewLayoutDuration;
 - (float)UICalloutViewMinimumWidth;
 - (float)UICalloutViewVerticalMargin;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)_accessibilityServesAsContainingParentForOrdering;
 - (void)_fadeViewsIn:(BOOL)arg1;
 - (void)_layoutAnimation;
 - (void)_layoutSubviews:(BOOL)arg1;
@@ -124,6 +121,7 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isExpanded;
 - (id)leftView;
 - (float)maximumWidth;
 - (struct CGPoint { float x1; float x2; })offset;

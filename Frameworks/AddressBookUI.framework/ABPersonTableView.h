@@ -10,9 +10,6 @@
 
 @property ABPersonViewControllerHelper * helper;
 
-+ (void)_initializeSafeCategory;
-
-- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 - (id)helper;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setHelper:(id)arg1;

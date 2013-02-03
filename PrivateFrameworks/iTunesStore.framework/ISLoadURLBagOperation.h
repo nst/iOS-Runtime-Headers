@@ -10,7 +10,7 @@
 
 @property(readonly) SSURLBagContext * context;
 
-- (void)_addStoreFrontHeadersToRequestProperties:(id)arg1;
+- (void)_addHeadersToRequestProperties:(id)arg1;
 - (id)_copyBootstrapURLs;
 - (id)_copyProductionBootstrapURLs;
 - (id)_copySandboxBootstrapURLs;

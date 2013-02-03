@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface CalendarArrowButton : UIPushButton {
+@interface CalendarArrowButton : UIButton {
     unsigned int _didRepeat : 1;
     id _delegate;
+    double _lastArrowDown;
 }
 
 - (id)_automationID;
@@ -13,6 +14,7 @@
 - (void)_performDownRepeat;
 - (void)_repeatCancelled;
 - (void)_scheduleDownRepeat;
+- (void)_touchExitOrOutside;
 - (int)arrowType;
 - (void)dealloc;
 - (id)initWithArrowType:(int)arg1;

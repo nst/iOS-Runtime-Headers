@@ -2,22 +2,22 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSData, CKMediaObject, UIImage;
+@class NSData, CKMediaObject, NSArray;
 
 @interface CKMediaObjectMessagePart : CKMessagePart {
     NSData *_composeData;
-    UIImage *_composeImage;
+    NSArray *_composeImages;
     NSData *_dataForHighlight;
     CKMediaObject *_mediaObject;
     NSData *_previewData;
 }
 
-@property(readonly) UIImage * composeImage;
+@property(copy) NSArray * composeImages;
 @property(readonly) CKMediaObject * mediaObject;
 
 - (int)_orientation;
 - (id)composeData;
-- (id)composeImage;
+- (id)composeImages;
 - (void)copyToPasteboard;
 - (void)dealloc;
 - (id)detachedCopy;
@@ -27,7 +27,9 @@
 - (id)mediaObject;
 - (id)previewData;
 - (void)setComposeData:(id)arg1;
+- (void)setComposeImages:(id)arg1;
 - (void)setPreviewData:(id)arg1;
 - (int)type;
+- (BOOL)usesColoredBalloon;
 
 @end

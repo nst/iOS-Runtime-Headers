@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKTilePathHashTable, NSLock;
+@class NSLock;
 
 @interface MKMiniTiledLayer : CALayer {
     struct CADoubleSize { 
@@ -18,6 +18,7 @@
             double height; 
         } size; 
     BOOL _drawingEnabled;
+    void *_hash;
     unsigned int _lastPrefetchTiles;
     } _lastTileRect;
     float _lastTileZoomScale;
@@ -25,17 +26,17 @@
     unsigned int _prefetchTiles;
     float _roundedZoomScale;
     NSLock *_tileLock;
-    MKTilePathHashTable *_tileLookup;
     } _tileSize;
-    unsigned int _zoomLevel;
+    int _zoomLevel;
     float _zoomScale;
 }
 
 @property(getter=isDrawingEnabled) BOOL drawingEnabled;
 @property float maximumTileScale;
 @property unsigned int prefetchTiles;
-@property struct CGSize { float width; float height; } tileSize;
+@property struct CGSize { float x1; float x2; } tileSize;
 
+- (id).cxx_construct;
 - (id)actionForKey:(id)arg1;
 - (BOOL)canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2;
 - (void)dealloc;

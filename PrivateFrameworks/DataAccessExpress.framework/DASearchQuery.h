@@ -8,42 +8,44 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    struct __CFMachPort { } *_callbackPort;
-    BOOL _cancelled;
     <DASearchQueryConsumer> *_consumer;
     } _range;
     unsigned int _searchID;
     NSString *_searchString;
+    int _state;
     int _timeLimit;
 }
 
-@property BOOL cancelled;
 @property <DASearchQueryConsumer> * consumer;
-@property struct _NSRange { unsigned int location; unsigned int length; } range;
+@property unsigned int maxResults;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property unsigned int searchID;
 @property(readonly) NSString * searchString;
+@property int state;
 @property int timeLimit;
 
 + (id)searchQueryWithSearchString:(id)arg1 consumer:(id)arg2;
 
-- (struct __CFMachPort { }*)callbackPort;
-- (BOOL)cancelled;
 - (id)consumer;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (void)handleBrokenPipe;
+- (id)initWithDictionaryRepresentation:(id)arg1 consumer:(id)arg2;
 - (id)initWithSearchString:(id)arg1 consumer:(id)arg2;
+- (BOOL)isQueryRunning;
+- (unsigned int)maxResults;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (unsigned int)searchID;
 - (id)searchString;
 - (void)sendFinishedToConsumerWithError:(id)arg1;
 - (void)sendResultsToConsumer:(id)arg1;
-- (void)setCallbackPort:(struct __CFMachPort { }*)arg1;
-- (void)setCancelled:(BOOL)arg1;
 - (void)setConsumer:(id)arg1;
+- (void)setMaxResults:(unsigned int)arg1;
 - (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setSearchID:(unsigned int)arg1;
+- (void)setState:(int)arg1;
 - (void)setTimeLimit:(int)arg1;
+- (int)state;
 - (int)timeLimit;
 
 @end

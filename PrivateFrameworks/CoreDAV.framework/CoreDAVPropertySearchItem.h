@@ -16,6 +16,7 @@
 
 - (void)dealloc;
 - (id)description;
+- (id)init;
 - (id)initWithSearchPropertyNameSpace:(id)arg1 andName:(id)arg2;
 - (id)match;
 - (id)matchTypeAttribute;
@@ -23,6 +24,7 @@
 - (void)setMatch:(id)arg1;
 - (void)setMatchTypeAttribute:(id)arg1;
 - (void)setProp:(id)arg1;
+- (int)wellKnownPrincipalSearchType;
 - (void)write:(id)arg1;
 
 @end

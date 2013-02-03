@@ -18,7 +18,6 @@
 
 + (id)_deleteImage;
 + (id)_deleteImageBackground;
-+ (void)_initializeSafeCategory;
 + (id)_insertImage;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_minusRect;
 + (id)_multiSelectHighlightedImage;
@@ -32,11 +31,7 @@
 - (void)_toggleRotate;
 - (void)_toggleRotateAnimationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)_updateImageView;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
 - (id)initWithTableViewCell:(id)arg1 editingStyle:(int)arg2;
-- (BOOL)isAccessibilityElement;
 - (BOOL)isHiding;
 - (BOOL)isRotated;
 - (BOOL)isRotating;

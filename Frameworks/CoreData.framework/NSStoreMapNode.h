@@ -17,6 +17,7 @@
 - (id)_relatedNodes;
 - (void)_setMap:(id)arg1;
 - (void)_setVersionNumber:(unsigned int)arg1;
+- (id)_snapshot_;
 - (unsigned int)_versionNumber;
 - (id)configurationName;
 - (void)dealloc;

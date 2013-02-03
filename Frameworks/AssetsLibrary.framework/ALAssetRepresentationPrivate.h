@@ -2,19 +2,23 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class ALAssetsLibrary, NSString, MLPhoto;
+@class PLSidecarFile, NSString, ALAssetsLibrary, PLPhotoLibrary, PLManagedAsset;
 
 @interface ALAssetRepresentationPrivate : NSObject <ALAssetsLibraryAsset> {
     NSString *_extension;
     BOOL _isValid;
     ALAssetsLibrary *_library;
-    MLPhoto *_photo;
+    PLManagedAsset *_photo;
+    PLPhotoLibrary *_photoLibrary;
+    PLSidecarFile *_sidecar;
 }
 
+@property(retain) PLPhotoLibrary * _photoLibrary;
 @property(copy) NSString * extension;
 @property BOOL isValid;
 @property ALAssetsLibrary * library;
-@property(retain) MLPhoto * photo;
+@property(retain) PLManagedAsset * photo;
+@property(retain) PLSidecarFile * sidecar;
 
 + (void)_clearFileDescriptorQueue;
 + (int)_fileDescriptorForPersistentURL:(id)arg1;
@@ -23,9 +27,11 @@
 
 - (BOOL)_isImage;
 - (BOOL)_isVideo;
+- (void)_performBlockAndWait:(id)arg1;
+- (id)_photoLibrary;
 - (void)dealloc;
 - (id)extension;
-- (id)initWithMLPhoto:(id)arg1 extension:(id)arg2 library:(id)arg3;
+- (id)initWithManagedAsset:(id)arg1 sidecar:(id)arg2 extension:(id)arg3 library:(id)arg4;
 - (BOOL)isValid;
 - (id)library;
 - (void)libraryDidChange;
@@ -35,5 +41,8 @@
 - (void)setIsValid:(BOOL)arg1;
 - (void)setLibrary:(id)arg1;
 - (void)setPhoto:(id)arg1;
+- (void)setSidecar:(id)arg1;
+- (void)set_photoLibrary:(id)arg1;
+- (id)sidecar;
 
 @end

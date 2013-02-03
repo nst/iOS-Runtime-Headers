@@ -13,7 +13,7 @@
 }
 
 @property(retain) GMMMapPoint * center;
-@property(readonly) BOOL hasZoomLevel;
+@property BOOL hasZoomLevel;
 @property int latitudeSpan;
 @property int longitudeSpan;
 @property int zoomLevel;
@@ -23,13 +23,13 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasZoomLevel;
-- (id)init;
-- (id)initWithRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomLevel:(int)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithGEOMapRegion:(id)arg1 withZoom:(int)arg2;
+- (id)initWithSearchRequest:(id)arg1;
 - (int)latitudeSpan;
 - (int)longitudeSpan;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCenter:(id)arg1;
+- (void)setHasZoomLevel:(BOOL)arg1;
 - (void)setLatitudeSpan:(int)arg1;
 - (void)setLongitudeSpan:(int)arg1;
 - (void)setZoomLevel:(int)arg1;

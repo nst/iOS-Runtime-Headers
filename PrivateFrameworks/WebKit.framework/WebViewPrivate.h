@@ -7,11 +7,11 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSURL, <WebFormDelegate>, WebVideoFullscreenController, <WebCaretChangeListener>, WebPreferences, WebEvent, WAKWindow, NSMutableSet, <WebGeolocationProvider>, WebNodeHighlight, WebInspector, NSString, NSTimer;
+@class NSURL, WebFixedPositionContent, <WebFormDelegate>, WebVideoFullscreenController, <WebCaretChangeListener>, WebPreferences, WebEvent, WAKWindow, NSMutableSet, <WebGeolocationProvider>, <WebDeviceOrientationProvider>, WebNodeHighlight, WebInspector, NSString, NSTimer;
 
 @interface WebViewPrivate : NSObject {
     struct String { 
-        struct RefPtr<WebCore::StringImpl> { 
+        struct RefPtr<WTF::StringImpl> { 
             struct StringImpl {} *m_ptr; 
         } m_impl; 
     struct WebResourceDelegateImplementationCache { 
@@ -22,6 +22,11 @@
         int (*webThreadDidFinishLoadingFromDataSourceFunc)(); 
         int (*webThreadDidFailLoadingWithErrorFromDataSourceFunc)(); 
         int (*webThreadIdentifierForRequestFunc)(); 
+        int (*webThreadDidLoadResourceFromMemoryCacheFunc)(); 
+        int (*webThreadWillSendRequestFunc)(); 
+        int (*webThreadDidReceiveResponseFunc)(); 
+        int (*webThreadDidReceiveContentLengthFunc)(); 
+        int (*webThreadWillCacheResponseFunc)(); 
         int (*identifierForRequestFunc)(); 
         int (*willSendRequestFunc)(); 
         int (*didReceiveResponseFunc)(); 
@@ -32,6 +37,7 @@
         int (*willCacheResponseFunc)(); 
         int (*plugInFailedWithErrorFunc)(); 
         int (*shouldUseCredentialStorageFunc)(); 
+        int (*shouldPaintBrokenImageForURLFunc)(); 
     struct WebFrameLoadDelegateImplementationCache { 
         int (*didClearWindowObjectForFrameFunc)(); 
         int (*didClearWindowObjectForFrameInScriptWorldFunc)(); 
@@ -59,6 +65,7 @@
         int (*didRunInsecureContentFunc)(); 
     struct WebScriptDebugDelegateImplementationCache { 
         BOOL didParseSourceExpectsBaseLineNumber; 
+        BOOL exceptionWasRaisedExpectsHasHandlerFlag; 
         int (*didParseSourceFunc)(); 
         int (*failedToParseSourceFunc)(); 
         int (*didEnterCallFrameFunc)(); 
@@ -85,6 +92,8 @@
     struct CGSize { 
         float width; 
         float height; 
+    struct RefPtr<WebCore::HistoryItem> { 
+        struct HistoryItem {} *m_ptr; 
     id UIDelegate;
     id UIDelegateForwarder;
     id UIKitDelegate;
@@ -92,10 +101,13 @@
     id WebMailDelegate;
     <WebCaretChangeListener> *_caretChangeListener;
     NSMutableSet *_caretChangeListeners;
+    WebFixedPositionContent *_fixedPositionContent;
     <WebGeolocationProvider> *_geolocationProvider;
+    } _globalHistoryItem;
     int _keyboardUIMode;
     BOOL _keyboardUIModeAccessed;
     BOOL allowsMessaging;
+    BOOL allowsRemoteInspection;
     BOOL allowsUndo;
     NSString *applicationNameForUserAgent;
     NSTimer *autoscrollTimer;
@@ -111,7 +123,6 @@
     int didDrawTiles;
     id downloadDelegate;
     BOOL drawsBackground;
-    BOOL editable;
     id editingDelegate;
     id editingDelegateForwarder;
     } fixedLayoutSize;
@@ -131,10 +142,12 @@
     BOOL ignoringMouseDraggedEvents;
     BOOL includesFlattenedCompositingLayersWhenDrawingToBitmap;
     WebInspector *inspector;
+    BOOL interactiveFormValidationEnabled;
     BOOL isStopping;
     WebEvent *keyDownEvent;
     } lastLayoutSize;
     struct __CFRunLoopObserver { } *layerSyncRunLoopObserver;
+    <WebDeviceOrientationProvider> *m_deviceOrientationProvider;
     BOOL mainFrameDocumentReady;
     BOOL mainViewIsScrollingOrZooming;
     NSString *mediaStyle;
@@ -153,7 +166,6 @@
     id scriptDebugDelegate;
     } scriptDebugDelegateImplementations;
     BOOL selectTrailingWhitespaceEnabled;
-    BOOL shouldCacheFileURLs;
     BOOL shouldCloseWithWindow;
     BOOL shouldUpdateWhileOffscreen;
     BOOL smartInsertDeleteEnabled;
@@ -164,9 +176,10 @@
     BOOL userAgentOverridden;
     NSURL *userStyleSheetLocation;
     BOOL usesDocumentViews;
-    BOOL usesLoaderCache;
     BOOL usesPageCache;
+    int validationMessageTimerMagnification;
     float zoomMultiplier;
+    BOOL zoomsTextOnly;
 }
 
 + (void)initialize;

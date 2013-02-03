@@ -16,6 +16,7 @@
 - (id)_pluginsWithCommonSpecifierMode:(int)arg1;
 - (void)dealloc;
 - (id)initWithParentController:(id)arg1 includeNonAccountBundles:(BOOL)arg2;
+- (void)invalidatePluginParentController;
 - (id)orderedPluginsForAdd;
 - (id)plugins;
 - (id)pluginsForAccountTypes:(id)arg1;

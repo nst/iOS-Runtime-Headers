@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPVideoViewController, MPAVItem, MPDetailSlider, <MPVideoOverlayDelegate>, NSMutableDictionary;
+@class UINavigationBar, MPDetailSlider, <MPVideoOverlayDelegate>, MPAVItem, MPVideoViewController, MPAVController, NSMutableDictionary;
 
 @interface MPVideoOverlay : UIView <MPVideoOverlay, MPDetailSliderDelegate> {
     BOOL _controlsAutohideDisabled;
@@ -12,6 +12,7 @@
     int _interfaceOrientation;
     MPAVItem *_item;
     double _lastTickTime;
+    MPAVController *_player;
     MPDetailSlider *_scrubControl;
     NSMutableDictionary *_tickTimeEvents;
     MPVideoViewController *_videoViewController;
@@ -25,6 +26,8 @@
 @property unsigned int disabledParts;
 @property int interfaceOrientation;
 @property(retain) MPAVItem * item;
+@property(readonly) UINavigationBar * navigationBar;
+@property(retain) MPAVController * player;
 @property MPVideoViewController * videoViewController;
 @property unsigned int visibleParts;
 
@@ -33,7 +36,6 @@
 - (void)_itemDurationDidChangeNotification:(id)arg1;
 - (double)_playableDuration;
 - (void)_tickNotification:(id)arg1;
-- (void)_updateTimeBasedValues;
 - (BOOL)allowsWirelessPlayback;
 - (void)cancelPreviousPerformTickEventsForSelector:(SEL)arg1;
 - (void)dealloc;
@@ -51,7 +53,9 @@
 - (int)interfaceOrientation;
 - (id)item;
 - (void)layoutSubviews;
+- (id)navigationBar;
 - (void)performSelector:(SEL)arg1 whenTickingPastTime:(double)arg2;
+- (id)player;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
@@ -59,12 +63,14 @@
 - (void)setDisabledParts:(unsigned int)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
 - (void)setItem:(id)arg1;
+- (void)setPlayer:(id)arg1;
 - (void)setVideoViewController:(id)arg1;
 - (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
 - (void)setVisibleParts:(unsigned int)arg1;
 - (void)showAlternateTracks;
 - (void)startTicking;
 - (void)stopTicking;
+- (BOOL)updateTimeBasedValues;
 - (id)videoViewController;
 - (unsigned int)visibleParts;
 

@@ -2,14 +2,16 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSPersistentStoreMap;
+@class NSSet, NSPersistentStoreMap;
 
 @interface NSMappedObjectStore : NSPersistentStore {
+    NSSet *_entitiesToFetch;
     NSPersistentStoreMap *_theMap;
 }
 
 - (void)_addObject:(id)arg1 objectIDMap:(id)arg2;
 - (id)_pathFromURI:(id)arg1;
+- (id)_rawMetadata__;
 - (void)_removeObject:(id)arg1 objectIDMap:(id)arg2;
 - (void)_setMap:(id)arg1;
 - (id)_theMap;
@@ -23,6 +25,7 @@
 - (id)getNewIDForObject:(id)arg1;
 - (id)identifier;
 - (id)init;
+- (id)initWithPersistentStoreCoordinator:(id)arg1 configurationName:(id)arg2 URL:(id)arg3 options:(id)arg4;
 - (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1;
 - (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1;
 - (id)metadata;

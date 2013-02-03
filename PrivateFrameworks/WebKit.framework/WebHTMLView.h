@@ -9,11 +9,10 @@
 
 @class WebHTMLViewPrivate;
 
-@interface WebHTMLView : WAKView <WebDocumentSelection, WebDocumentIncrementalSearching, WebDocumentElement, WebMultipleTextMatches, WebDocumentView, WebDocumentSearching> {
+@interface WebHTMLView : WAKView <WebDocumentSelection, WebDocumentIncrementalSearching, WebDocumentElement, WebMultipleTextMatches, WebDocumentOptionsSearching, WebDocumentView, WebDocumentSearching> {
     WebHTMLViewPrivate *_private;
 }
 
-+ (void)_initializeSafeCategory;
 + (void)initialize;
 + (id)supportedImageMIMETypes;
 + (id)supportedMIMETypes;
@@ -27,6 +26,7 @@
 - (void)_autoscroll;
 - (BOOL)_beginPrintModeWithMinimumPageWidth:(float)arg1 height:(float)arg2 maximumPageWidth:(float)arg3;
 - (BOOL)_beginPrintModeWithPageWidth:(float)arg1 height:(float)arg2 shrinkToFit:(BOOL)arg3;
+- (BOOL)_beginScreenPaginationModeWithPageSize:(struct CGSize { float x1; float x2; })arg1 shrinkToFit:(BOOL)arg2;
 - (BOOL)_canAlterCurrentSelection;
 - (BOOL)_canDecreaseSelectionListLevel;
 - (BOOL)_canEdit;
@@ -42,10 +42,13 @@
 - (id)_documentRange;
 - (id)_emptyStyle;
 - (void)_endPrintMode;
+- (void)_endScreenPaginationMode;
+- (void)_executeSavedKeypressCommands;
+- (BOOL)_findString:(id)arg1 options:(unsigned int)arg2;
 - (id)_frame;
 - (void)_frameOrBoundsChanged;
 - (id)_frameView;
-- (BOOL)_handleEditingKeyEvent:(struct KeyboardEvent { int (**x1)(); int x2; struct AtomicString { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; boolx4; boolx5; boolx6; boolx7; boolx8; boolx9; boolx10; unsigned short x11; struct EventTarget {} *x12; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_13_1_1; } x13; unsigned long long x14; struct RefPtr<WebCore::Event> { struct Event {} *x_15_1_1; } x15; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_16_1_1; } x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; struct OwnPtr<WebCore::PlatformKeyboardEvent> { struct PlatformKeyboardEvent {} *x_22_1_1; } x22; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_23_1_1; } x23; unsigned int x24; unsigned int x25 : 1; struct Vector<WebCore::KeypressCommand,0ul> { unsigned int x_26_1_1; struct VectorBuffer<WebCore::KeypressCommand,0ul> { struct KeypressCommand {} *x_2_2_1; unsigned int x_2_2_2; } x_26_1_2; } x26; }*)arg1;
+- (BOOL)_handleEditingKeyEvent:(struct KeyboardEvent { int (**x1)(); int x2; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; boolx4; boolx5; boolx6; boolx7; boolx8; boolx9; boolx10; unsigned short x11; struct EventTarget {} *x12; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_13_1_1; } x13; unsigned long long x14; struct RefPtr<WebCore::Event> { struct Event {} *x_15_1_1; } x15; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_16_1_1; } x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; struct OwnPtr<WebCore::PlatformKeyboardEvent> { struct PlatformKeyboardEvent {} *x_22_1_1; } x22; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_23_1_1; } x23; unsigned int x24; unsigned int x25 : 1; struct Vector<WebCore::KeypressCommand,0ul> { unsigned int x_26_1_1; struct VectorBuffer<WebCore::KeypressCommand,0ul> { struct KeypressCommand {} *x_2_2_1; unsigned int x_2_2_2; } x_26_1_2; } x26; }*)arg1;
 - (BOOL)_hasHTMLDocument;
 - (BOOL)_hasInsertionPoint;
 - (BOOL)_hasSelection;
@@ -59,6 +62,7 @@
 - (BOOL)_insideAnotherHTMLView;
 - (BOOL)_isEditable;
 - (BOOL)_isInPrintMode;
+- (BOOL)_isInScreenPaginationMode;
 - (BOOL)_isSelectionEvent:(id)arg1;
 - (BOOL)_isTopHTMLView;
 - (BOOL)_isUsingAcceleratedCompositing;
@@ -73,7 +77,7 @@
 - (void)_setAsideSubviews;
 - (void)_setHighlighter:(id)arg1 ofType:(id)arg2;
 - (void)_setMouseDownEvent:(id)arg1;
-- (void)_setPrinting:(BOOL)arg1 minimumPageWidth:(float)arg2 height:(float)arg3 maximumPageWidth:(float)arg4 adjustViewSize:(BOOL)arg5;
+- (void)_setPrinting:(BOOL)arg1 minimumPageLogicalWidth:(float)arg2 logicalHeight:(float)arg3 maximumPageLogicalWidth:(float)arg4 adjustViewSize:(BOOL)arg5 paginateScreenContent:(BOOL)arg6;
 - (void)_setToolTip:(id)arg1;
 - (void)_setTransparentBackground:(BOOL)arg1;
 - (BOOL)_shouldDeleteRange:(id)arg1;
@@ -84,14 +88,16 @@
 - (void)_stopAutoscrollTimer;
 - (id)_topHTMLView;
 - (BOOL)_transparentBackground;
+- (void)_updateControlTints;
 - (void)_updateSelectionForInputManager;
 - (BOOL)_wantsKeyDownForEvent:(id)arg1;
 - (id)_webView;
-- (void)_web_layoutIfNeededRecursive;
+- (BOOL)_web_isDrawingIntoLayer;
+- (void)_web_makePluginSubviewsPerformSelector:(SEL)arg1 withObject:(id)arg2;
+- (void)_web_updateLayoutAndStyleIfNeededRecursive;
 - (oneway void)_webcore_releaseOnWebThread;
+- (void)_windowChangedKeyState;
 - (BOOL)acceptsFirstResponder;
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)accessibilityElementCount;
 - (id)accessibilityFocusedUIElement;
 - (id)accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (id)accessibilityRootElement;
@@ -112,9 +118,9 @@
 - (void)closeIfNotCurrentView;
 - (int)conversationIdentifier;
 - (void)copy:(id)arg1;
-- (struct Command { struct RefPtr<WebCore::Frame> { struct Frame {} *x_1_1_1; } x1; struct EditorInternalCommand {} *x2; int x3; })coreCommandByName:(const char *)arg1;
-- (struct Command { struct RefPtr<WebCore::Frame> { struct Frame {} *x_1_1_1; } x1; struct EditorInternalCommand {} *x2; int x3; })coreCommandBySelector:(SEL)arg1;
-- (unsigned int)countMatchesForText:(id)arg1 caseSensitive:(BOOL)arg2 limit:(unsigned int)arg3 markMatches:(BOOL)arg4;
+- (struct Command { struct EditorInternalCommand {} *x1; int x2; struct RefPtr<WebCore::Frame> { struct Frame {} *x_3_1_1; } x3; })coreCommandByName:(const char *)arg1;
+- (struct Command { struct EditorInternalCommand {} *x1; int x2; struct RefPtr<WebCore::Frame> { struct Frame {} *x_3_1_1; } x3; })coreCommandBySelector:(SEL)arg1;
+- (unsigned int)countMatchesForText:(id)arg1 inDOMRange:(id)arg2 options:(unsigned int)arg3 limit:(unsigned int)arg4 markMatches:(BOOL)arg5;
 - (void)cut:(id)arg1;
 - (void)dataSourceUpdated:(id)arg1;
 - (void)dealloc;
@@ -131,6 +137,8 @@
 - (void)deleteWordForward:(id)arg1;
 - (void)deselectAll;
 - (void)detachRootLayer;
+- (void)doCommandBySelector:(SEL)arg1;
+- (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)drawSingleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)elementAtPoint:(struct CGPoint { float x1; float x2; })arg1 allowShadowContent:(BOOL)arg2;
@@ -143,7 +151,6 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (void)ignoreSpelling:(id)arg1;
 - (void)indent:(id)arg1;
-- (int)indexOfAccessibilityElement:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertBacktab:(id)arg1;
 - (void)insertLineBreak:(id)arg1;
@@ -166,7 +173,6 @@
 - (void)makeTextWritingDirectionLeftToRight:(id)arg1;
 - (void)makeTextWritingDirectionNatural:(id)arg1;
 - (void)makeTextWritingDirectionRightToLeft:(id)arg1;
-- (unsigned int)markAllMatchesForText:(id)arg1 caseSensitive:(BOOL)arg2 limit:(unsigned int)arg3;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })markedRange;
 - (BOOL)markedTextMatchesAreHighlighted;
 - (void)markedTextUpdate:(id)arg1;
@@ -220,6 +226,7 @@
 - (void)pageDownAndModifySelection:(id)arg1;
 - (void)pageUp:(id)arg1;
 - (void)pageUpAndModifySelection:(id)arg1;
+- (void)paste:(id)arg1;
 - (void)pasteAsPlainText:(id)arg1;
 - (void)reapplyStyles;
 - (id)rectsForTextMatches;
@@ -256,6 +263,9 @@
 - (BOOL)supportsTextEncoding;
 - (void)swapWithMark:(id)arg1;
 - (void)toggleBaseWritingDirection:(id)arg1;
+- (void)toggleBold:(id)arg1;
+- (void)toggleItalic:(id)arg1;
+- (void)toggleUnderline:(id)arg1;
 - (void)touch:(id)arg1;
 - (void)transpose:(id)arg1;
 - (void)underline:(id)arg1;

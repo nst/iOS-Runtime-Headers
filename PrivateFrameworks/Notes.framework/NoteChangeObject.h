@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@class NSNumber, NoteStoreObject, NSMutableSet;
+@class NoteStoreObject, NSNumber, NSMutableSet;
 
 @interface NoteChangeObject : NSManagedObject {
 }

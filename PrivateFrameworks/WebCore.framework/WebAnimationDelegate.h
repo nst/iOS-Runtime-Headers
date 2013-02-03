@@ -2,115 +2,17 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class WebAnimationDelegate, WebLayer, CALayer;
+@class NSObject, CALayer;
 
 @interface WebAnimationDelegate : NSObject {
-    struct GraphicsLayerCA { int (**x1)(); struct GraphicsLayerClient {} *x2; struct String { 
-            struct RefPtr<WebCore::StringImpl> { 
-                struct StringImpl {} *m_ptr; 
-            } m_impl; 
-        } x3; struct IntSize { 
-            int m_width; 
-            int m_height; 
-        } x4; struct FloatPoint { 
-            float m_x; 
-            float m_y; 
-        } x5; struct FloatPoint3D { 
-            float m_x; 
-            float m_y; 
-            float m_z; 
-        } x6; struct FloatSize { 
-            float m_width; 
-            float m_height; 
-        } x7; struct TransformationMatrix { 
-            double m_matrix[4][4]; 
-        } x8; struct TransformationMatrix { 
-            double m_matrix[4][4]; 
-        } x9; struct Color { 
-            unsigned int m_color; 
-            boolm_valid; 
-        } x10; float x11; float x12; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; int x20; int x21; int x22; struct Vector<WebCore::GraphicsLayer*,0ul> { 
-            unsigned int m_size; 
-            struct VectorBuffer<WebCore::GraphicsLayer*,0ul> { 
-                struct GraphicsLayer {} **m_buffer; 
-                unsigned int m_capacity; 
-            } m_buffer; 
-        } x23; struct GraphicsLayer {} *x24; struct GraphicsLayer {} *x25; struct GraphicsLayer {} *x26; struct GraphicsLayer {} *x27; struct FloatPoint { 
-            float m_x; 
-            float m_y; 
-        } x28; struct IntRect { 
-            struct IntPoint { 
-                int m_x; 
-                int m_y; 
-            } m_location; 
-            struct IntSize { 
-                int m_width; 
-                int m_height; 
-            } m_size; 
-        } x29; int x30; struct RetainPtr<WebLayer> { 
-            WebLayer *m_ptr; 
-        } x31; struct RetainPtr<CALayer> { 
+    struct PlatformCALayer { int x1; struct PlatformCALayerClient {} *x2; int x3; struct RetainPtr<CALayer> { 
             CALayer *m_ptr; 
-        } x32; struct RetainPtr<CALayer> { 
-            CALayer *m_ptr; 
-        } x33; struct OwnPtr<WTF::HashMap<WebCore::String, WTF::RetainPtr<CALayer>, WebCore::StringHash, WTF::HashTraits<WebCore::String>, WTF::HashTraits<WTF::RetainPtr<CALayer> > > > { 
-            struct HashMap<WebCore::String,WTF::RetainPtr<CALayer>,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WTF::RetainPtr<CALayer> > > {} *m_ptr; 
-        } x34; struct OwnPtr<WTF::HashMap<WebCore::String, WTF::RetainPtr<CALayer>, WebCore::StringHash, WTF::HashTraits<WebCore::String>, WTF::HashTraits<WTF::RetainPtr<CALayer> > > > { 
-            struct HashMap<WebCore::String,WTF::RetainPtr<CALayer>,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WTF::RetainPtr<CALayer> > > {} *m_ptr; 
-        } x35; struct OwnPtr<WTF::HashMap<WebCore::String, WTF::RetainPtr<CALayer>, WebCore::StringHash, WTF::HashTraits<WebCore::String>, WTF::HashTraits<WTF::RetainPtr<CALayer> > > > { 
-            struct HashMap<WebCore::String,WTF::RetainPtr<CALayer>,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WTF::RetainPtr<CALayer> > > {} *m_ptr; 
-        } x36; int x37; unsigned int x38 : 1; struct RetainPtr<WebAnimationDelegate> { 
-            WebAnimationDelegate *m_ptr; 
-        } x39; struct RetainPtr<CGImage*> { 
-            struct CGImage {} *m_ptr; 
-        } x40; struct RetainPtr<CGImage*> { 
-            struct CGImage {} *m_ptr; 
-        } x41; struct Vector<WebCore::GraphicsLayerCA::LayerAnimation,0ul> { 
-            unsigned int m_size; 
-            struct VectorBuffer<WebCore::GraphicsLayerCA::LayerAnimation,0ul> { 
-                struct LayerAnimation {} *m_buffer; 
-                unsigned int m_capacity; 
-            } m_buffer; 
-        } x42; struct HashSet<int,WTF::IntHash<unsigned int>,WTF::HashTraits<int> > { 
-            struct HashTable<int,int,WTF::IdentityExtractor<int>,WTF::IntHash<unsigned int>,WTF::HashTraits<int>,WTF::HashTraits<int> > { 
-                int *m_table; 
-                int m_tableSize; 
-                int m_tableSizeMask; 
-                int m_keyCount; 
-                int m_deletedCount; 
-            } m_impl; 
-        } x43; struct HashMap<WebCore::String,WebCore::GraphicsLayerCA::AnimationProcessingAction,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::GraphicsLayerCA::AnimationProcessingAction> > { 
-            struct HashTable<WebCore::String,std::pair<WebCore::String, WebCore::GraphicsLayerCA::AnimationProcessingAction>,WTF::PairFirstExtractor<std::pair<WebCore::String, WebCore::GraphicsLayerCA::AnimationProcessingAction> >,WebCore::StringHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::String>, WTF::HashTraits<WebCore::GraphicsLayerCA::AnimationProcessingAction> >,WTF::HashTraits<WebCore::String> > { 
-                struct pair<WebCore::String,WebCore::GraphicsLayerCA::AnimationProcessingAction> {} *m_table; 
-                int m_tableSize; 
-                int m_tableSizeMask; 
-                int m_keyCount; 
-                int m_deletedCount; 
-            } m_impl; 
-        } x44; struct HashMap<WebCore::String,WTF::Vector<std::pair<int, int>, 0ul>,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WTF::Vector<std::pair<int, int>, 0ul> > > { 
-            struct HashTable<WebCore::String,std::pair<WebCore::String, WTF::Vector<std::pair<int, int>, 0ul> >,WTF::PairFirstExtractor<std::pair<WebCore::String, WTF::Vector<std::pair<int, int>, 0ul> > >,WebCore::StringHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::String>, WTF::HashTraits<WTF::Vector<std::pair<int, int>, 0ul> > >,WTF::HashTraits<WebCore::String> > { 
-                struct pair<WebCore::String,WTF::Vector<std::pair<int, int>, 0ul> > {} *m_table; 
-                int m_tableSize; 
-                int m_tableSizeMask; 
-                int m_keyCount; 
-                int m_deletedCount; 
-            } m_impl; 
-        } x45; struct Vector<WebCore::FloatRect,0ul> { 
-            unsigned int m_size; 
-            struct VectorBuffer<WebCore::FloatRect,0ul> { 
-                struct FloatRect {} *m_buffer; 
-                unsigned int m_capacity; 
-            } m_buffer; 
-        } x46; unsigned int x47; float x48; } *m_graphicsLayer;
+        } x4; struct RetainPtr<NSObject> { 
+            NSObject *m_ptr; 
+        } x5; } *m_owner;
 }
 
-- (struct GraphicsLayerCA { int (**x1)(); struct GraphicsLayerClient {} *x2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct IntSize { int x_4_1_1; int x_4_1_2; } x4; struct FloatPoint { float x_5_1_1; float x_5_1_2; } x5; struct FloatPoint3D { float x_6_1_1; float x_6_1_2; float x_6_1_3; } x6; struct FloatSize { float x_7_1_1; float x_7_1_2; } x7; struct TransformationMatrix { double x_8_1_1[4][4]; } x8; struct TransformationMatrix { double x_9_1_1[4][4]; } x9; struct Color { unsigned int x_10_1_1; boolx_10_1_2; } x10; float x11; float x12; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; int x20; int x21; int x22; struct Vector<WebCore::GraphicsLayer*,0ul> { unsigned int x_23_1_1; struct VectorBuffer<WebCore::GraphicsLayer*,0ul> { struct GraphicsLayer {} **x_2_2_1; unsigned int x_2_2_2; } x_23_1_2; } x23; struct GraphicsLayer {} *x24; struct GraphicsLayer {} *x25; struct GraphicsLayer {} *x26; struct GraphicsLayer {} *x27; struct FloatPoint { float x_28_1_1; float x_28_1_2; } x28; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_29_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_29_1_2; } x29; int x30; struct RetainPtr<WebLayer> { id x_31_1_1; } x31; struct RetainPtr<CALayer> { id x_32_1_1; } x32; struct RetainPtr<CALayer> { id x_33_1_1; } x33; struct OwnPtr<WTF::HashMap<WebCore::String, WTF::RetainPtr<CALayer>, WebCore::StringHash, WTF::HashTraits<WebCore::String>, WTF::HashTraits<WTF::RetainPtr<CALayer> > > > { struct HashMap<WebCore::String,WTF::RetainPtr<CALayer>,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WTF::RetainPtr<CALayer> > > {} *x_34_1_1; } x34; struct OwnPtr<WTF::HashMap<WebCore::String, WTF::RetainPtr<CALayer>, WebCore::StringHash, WTF::HashTraits<WebCore::String>, WTF::HashTraits<WTF::RetainPtr<CALayer> > > > { struct HashMap<WebCore::String,WTF::RetainPtr<CALayer>,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WTF::RetainPtr<CALayer> > > {} *x_35_1_1; } x35; struct OwnPtr<WTF::HashMap<WebCore::String, WTF::RetainPtr<CALayer>, WebCore::StringHash, WTF::HashTraits<WebCore::String>, WTF::HashTraits<WTF::RetainPtr<CALayer> > > > { struct HashMap<WebCore::String,WTF::RetainPtr<CALayer>,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WTF::RetainPtr<CALayer> > > {} *x_36_1_1; } x36; int x37; unsigned int x38 : 1; struct RetainPtr<WebAnimationDelegate> { id x_39_1_1; } x39; struct RetainPtr<CGImage*> { struct CGImage {} *x_40_1_1; } x40; struct RetainPtr<CGImage*> { struct CGImage {} *x_41_1_1; } x41; struct Vector<WebCore::GraphicsLayerCA::LayerAnimation,0ul> { unsigned int x_42_1_1; struct VectorBuffer<WebCore::GraphicsLayerCA::LayerAnimation,0ul> { struct LayerAnimation {} *x_2_2_1; unsigned int x_2_2_2; } x_42_1_2; } x42; struct HashSet<int,WTF::IntHash<unsigned int>,WTF::HashTraits<int> > { struct HashTable<int,int,WTF::IdentityExtractor<int>,WTF::IntHash<unsigned int>,WTF::HashTraits<int>,WTF::HashTraits<int> > { int *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_43_1_1; } x43; struct HashMap<WebCore::String,WebCore::GraphicsLayerCA::AnimationProcessingAction,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::GraphicsLayerCA::AnimationProcessingAction> > { struct HashTable<WebCore::String,std::pair<WebCore::String, WebCore::GraphicsLayerCA::AnimationProcessingAction>,WTF::PairFirstExtractor<std::pair<WebCore::String, WebCore::GraphicsLayerCA::AnimationProcessingAction> >,WebCore::StringHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::String>, WTF::HashTraits<WebCore::GraphicsLayerCA::AnimationProcessingAction> >,WTF::HashTraits<WebCore::String> > { struct pair<WebCore::String,WebCore::GraphicsLayerCA::AnimationProcessingAction> {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_44_1_1; } x44; struct HashMap<WebCore::String,WTF::Vector<std::pair<int, int>, 0ul>,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WTF::Vector<std::pair<int, int>, 0ul> > > { struct HashTable<WebCore::String,std::pair<WebCore::String, WTF::Vector<std::pair<int, int>, 0ul> >,WTF::PairFirstExtractor<std::pair<WebCore::String, WTF::Vector<std::pair<int, int>, 0ul> > >,WebCore::StringHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::String>, WTF::HashTraits<WTF::Vector<std::pair<int, int>, 0ul> > >,WTF::HashTraits<WebCore::String> > { struct pair<WebCore::String,WTF::Vector<std::pair<int, int>, 0ul> > {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_45_1_1; } x45; struct Vector<WebCore::FloatRect,0ul> { unsigned int x_46_1_1; struct VectorBuffer<WebCore::FloatRect,0ul> { struct FloatRect {} *x_2_2_1; unsigned int x_2_2_2; } x_46_1_2; } x46; unsigned int x47; float x48; }*)graphicsLayer;
 - (void)animationDidStart:(id)arg1;
-- (void)setLayer:(struct GraphicsLayerCA { int (**x1)(); struct GraphicsLayerClient {} *x2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct IntSize { int x_4_1_1; int x_4_1_2; } x4; struct FloatPoint { float x_5_1_1; float x_5_1_2; } x5; struct FloatPoint3D { float x_6_1_1; float x_6_1_2; float x_6_1_3; } x6; struct FloatSize { float x_7_1_1; float x_7_1_2; } x7; struct TransformationMatrix { double x_8_1_1[4][4]; } x8; struct TransformationMatrix { double x_9_1_1[4][4]; } x9; struct Color { unsigned int x_10_1_1; boolx_10_1_2; } x10; float x11; float x12; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; int x20; int x21; int x22; struct Vector<WebCore::GraphicsLayer*,0ul> { unsigned int x_23_1_1; struct VectorBuffer<WebCore::GraphicsLayer*,0ul> { struct GraphicsLayer {} **x_2_2_1; unsigned int x_2_2_2; } x_23_1_2; } x23; struct GraphicsLayer {} *x24; struct GraphicsLayer {} *x25; struct GraphicsLayer {} *x26; struct GraphicsLayer {} *x27; struct FloatPoint { float x_28_1_1; float x_28_1_2; } x28; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_29_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_29_1_2; } x29; int x30; struct RetainPtr<WebLayer> { id x_31_1_1; } x31; struct RetainPtr<CALayer> { id x_32_1_1; } x32; struct RetainPtr<CALayer> { id x_33_1_1; } x33; struct OwnPtr<WTF::HashMap<WebCore::String, WTF::RetainPtr<CALayer>, WebCore::StringHash, WTF::HashTraits<WebCore::String>, WTF::HashTraits<WTF::RetainPtr<CALayer> > > > { struct HashMap<WebCore::String,WTF::RetainPtr<CALayer>,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WTF::RetainPtr<CALayer> > > {} *x_34_1_1; } x34; struct OwnPtr<WTF::HashMap<WebCore::String, WTF::RetainPtr<CALayer>, WebCore::StringHash, WTF::HashTraits<WebCore::String>, WTF::HashTraits<WTF::RetainPtr<CALayer> > > > { struct HashMap<WebCore::String,WTF::RetainPtr<CALayer>,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WTF::RetainPtr<CALayer> > > {} *x_35_1_1; } x35; struct OwnPtr<WTF::HashMap<WebCore::String, WTF::RetainPtr<CALayer>, WebCore::StringHash, WTF::HashTraits<WebCore::String>, WTF::HashTraits<WTF::RetainPtr<CALayer> > > > { struct HashMap<WebCore::String,WTF::RetainPtr<CALayer>,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WTF::RetainPtr<CALayer> > > {} *x_36_1_1; } x36; int x37; unsigned int x38 : 1; struct RetainPtr<WebAnimationDelegate> { id x_39_1_1; } x39; struct RetainPtr<CGImage*> { struct CGImage {} *x_40_1_1; } x40; struct RetainPtr<CGImage*> { struct CGImage {} *x_41_1_1; } x41; struct Vector<WebCore::GraphicsLayerCA::LayerAnimation,0ul> { unsigned int x_42_1_1; struct VectorBuffer<WebCore::GraphicsLayerCA::LayerAnimation,0ul> { struct LayerAnimation {} *x_2_2_1; unsigned int x_2_2_2; } x_42_1_2; } x42; struct HashSet<int,WTF::IntHash<unsigned int>,WTF::HashTraits<int> > { struct HashTable<int,int,WTF::IdentityExtractor<int>,WTF::IntHash<unsigned int>,WTF::HashTraits<int>,WTF::HashTraits<int> > { int *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_43_1_1; } x43; struct HashMap<WebCore::String,WebCore::GraphicsLayerCA::AnimationProcessingAction,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::GraphicsLayerCA::AnimationProcessingAction> > { struct HashTable<WebCore::String,std::pair<WebCore::String, WebCore::GraphicsLayerCA::AnimationProcessingAction>,WTF::PairFirstExtractor<std::pair<WebCore::String, WebCore::GraphicsLayerCA::AnimationProcessingAction> >,WebCore::StringHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::String>, WTF::HashTraits<WebCore::GraphicsLayerCA::AnimationProcessingAction> >,WTF::HashTraits<WebCore::String> > { struct pair<WebCore::String,WebCore::GraphicsLayerCA::AnimationProcessingAction> {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_44_1_1; } x44; struct HashMap<WebCore::String,WTF::Vector<std::pair<int, int>, 0ul>,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WTF::Vector<std::pair<int, int>, 0ul> > > { struct HashTable<WebCore::String,std::pair<WebCore::String, WTF::Vector<std::pair<int, int>, 0ul> >,WTF::PairFirstExtractor<std::pair<WebCore::String, WTF::Vector<std::pair<int, int>, 0ul> > >,WebCore::StringHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::String>, WTF::HashTraits<WTF::Vector<std::pair<int, int>, 0ul> > >,WTF::HashTraits<WebCore::String> > { struct pair<WebCore::String,WTF::Vector<std::pair<int, int>, 0ul> > {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_45_1_1; } x45; struct Vector<WebCore::FloatRect,0ul> { unsigned int x_46_1_1; struct VectorBuffer<WebCore::FloatRect,0ul> { struct FloatRect {} *x_2_2_1; unsigned int x_2_2_2; } x_46_1_2; } x46; unsigned int x47; float x48; }*)arg1;
+- (void)setOwner:(struct PlatformCALayer { int x1; struct PlatformCALayerClient {} *x2; int x3; struct RetainPtr<CALayer> { id x_4_1_1; } x4; struct RetainPtr<NSObject> { id x_5_1_1; } x5; }*)arg1;
 
 @end

@@ -2,29 +2,24 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSSpecifier;
-
 @interface PSEditableTableCell : PreferencesTextTableCell {
+    BOOL _isEditing;
     id _realTarget;
     SEL _targetSetter;
-    int _type;
-    PSSpecifier *_userInfo;
     BOOL _valueChanged;
 }
-
-@property int type;
 
 - (void)_saveForExit;
 - (void)_setValueChanged;
 - (BOOL)canReload;
 - (void)controlChanged:(id)arg1;
 - (void)dealloc;
+- (void)endEditingAndSave;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (void)setType:(int)arg1;
-- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 userInfo:(id)arg3;
+- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 specifier:(id)arg3;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
-- (int)type;
+- (void)willMoveToSuperview:(id)arg1;
 
 @end

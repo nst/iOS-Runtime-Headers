@@ -33,6 +33,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)keyCache;
 - (id)keyplaneForKey:(id)arg1;
 - (id)keyplaneWithName:(id)arg1;

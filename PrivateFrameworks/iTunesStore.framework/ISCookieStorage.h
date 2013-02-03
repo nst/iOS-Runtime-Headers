@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSURL;
+@class NSURL, ISSQLiteDatabase;
 
 @interface ISCookieStorage : NSObject {
+    ISSQLiteDatabase *_db;
     struct dispatch_queue_s { } *_dispatchQueue;
     void *_processAssertion;
     int _processAssertionCount;
@@ -23,6 +24,7 @@
 - (id)_cookieForSelectStatement:(struct sqlite3_stmt { }*)arg1;
 - (struct __CFSet { }*)_copyPrivateCookiesForURL:(id)arg1 userIdentifier:(id)arg2;
 - (void)_endProcessAssertion;
+- (BOOL)_setupCookieDatabase:(id)arg1;
 - (id)cookieHeadersForURL:(id)arg1 userIdentifier:(id)arg2;
 - (void)dealloc;
 - (id)init;

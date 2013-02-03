@@ -2,47 +2,38 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUPageSectionGroup, NSArray, NSString, UIImage, SUSearchFieldConfiguration, NSURL;
+@class NSArray, SUPageSectionGroup, UIImage, NSString, NSURL, NSMutableDictionary, SUSearchFieldConfiguration;
 
 @interface SUSection : NSObject {
-    NSString *_identifier;
+    NSMutableDictionary *_dictionary;
     UIImage *_image;
-    NSString *_imageBaseName;
-    BOOL _isDefaultSection;
     BOOL _isLocationSection;
-    NSArray *_itemImages;
-    int _minimumNetworkType;
     UIImage *_moreListImage;
-    SUPageSectionGroup *_pageSectionGroup;
-    NSString *_partnerHeader;
     SUSearchFieldConfiguration *_searchFieldConfiguration;
     UIImage *_selectedImage;
     UIImage *_selectedMoreListImage;
-    NSString *_title;
-    int _type;
-    NSURL *_url;
-    NSString *_urlBagKey;
 }
 
-@property(getter=isDefaultSection) BOOL defaultSection;
-@property(retain) NSString * identifier;
+@property(getter=isDefaultSection,readonly) BOOL defaultSection;
+@property(readonly) NSString * identifier;
 @property(retain) UIImage * image;
-@property(retain) NSArray * itemImages;
+@property(readonly) NSArray * itemImages;
 @property(getter=isLocationSection) BOOL locationSection;
-@property int minimumNetworkType;
+@property(readonly) int minimumNetworkType;
 @property(retain) UIImage * moreListImage;
-@property(copy) SUPageSectionGroup * pageSectionGroup;
-@property(retain) NSString * partnerHeader;
+@property(readonly) SUPageSectionGroup * pageSectionGroup;
+@property(readonly) NSString * partnerHeader;
 @property(retain) SUSearchFieldConfiguration * searchFieldConfiguration;
 @property(retain) UIImage * selectedImage;
 @property(retain) UIImage * selectedMoreListImage;
-@property(retain) NSString * title;
+@property(readonly) NSString * title;
 @property(getter=isTransient,readonly) BOOL transient;
-@property int type;
-@property(retain) NSURL * url;
-@property(retain) NSString * urlBagKey;
+@property(readonly) int type;
+@property(readonly) NSURL * url;
+@property(readonly) NSString * urlBagKey;
 @property(getter=isUsingLocalArtwork,readonly) BOOL usingLocalArtwork;
 
+- (id)_imageBaseName;
 - (int)_minimumNetworkTypeFromDictionary:(id)arg1;
 - (int)_typeForString:(id)arg1;
 - (void)dealloc;
@@ -62,25 +53,16 @@
 - (id)searchFieldConfiguration;
 - (id)selectedImage;
 - (id)selectedMoreListImage;
-- (void)setDefaultSection:(BOOL)arg1;
-- (void)setIdentifier:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setItemImages:(id)arg1;
 - (void)setLocationSection:(BOOL)arg1;
-- (void)setMinimumNetworkType:(int)arg1;
 - (void)setMoreListImage:(id)arg1;
-- (void)setPageSectionGroup:(id)arg1;
-- (void)setPartnerHeader:(id)arg1;
 - (void)setSearchFieldConfiguration:(id)arg1;
 - (void)setSelectedImage:(id)arg1;
 - (void)setSelectedMoreListImage:(id)arg1;
-- (void)setTitle:(id)arg1;
-- (void)setType:(int)arg1;
-- (void)setUrl:(id)arg1;
-- (void)setUrlBagKey:(id)arg1;
 - (id)title;
 - (int)type;
 - (id)url;
 - (id)urlBagKey;
+- (id)valueForProperty:(id)arg1;
 
 @end

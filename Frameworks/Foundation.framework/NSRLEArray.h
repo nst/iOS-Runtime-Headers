@@ -3,10 +3,7 @@
  */
 
 @interface NSRLEArray : NSObject <NSCopying, NSMutableCopying> {
-    struct _NSRefCountedRunArray { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; struct _NSRunArrayItem { 
-            unsigned int length; 
-            id obj; 
-        } x8[0]; } *theList;
+    struct _NSRefCountedRunArray { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; struct _NSRunArrayItem { unsigned int x_8_1_1; id x_8_1_2; } x8[0]; } *theList;
 }
 
 - (void)_makeNewListFrom:(struct _NSRefCountedRunArray { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; struct _NSRunArrayItem { unsigned int x_8_1_1; id x_8_1_2; } x8[0]; }*)arg1;

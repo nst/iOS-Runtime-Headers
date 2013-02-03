@@ -19,17 +19,23 @@
 + (id)devices;
 + (id)devicesWithMediaType:(id)arg1;
 
+- (id)_applyOverridesToCaptureOptions:(id)arg1;
 - (void)_forceClosed;
 - (void)_sessionDidStart;
+- (void)_sessionWillStart;
 - (BOOL)_startUsingDevice:(id*)arg1;
 - (void)_stopUsingDevice;
+- (float)autoExposureBias;
 - (BOOL)automaticallyAdjustsImageControlMode;
 - (void)close;
+- (float)contrast;
 - (void)dealloc;
 - (id)description;
 - (void)deviceConnectionDidChange;
 - (void)deviceConnectionWillChange;
 - (BOOL)doesHandleNotification:(id)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })exposureDuration;
+- (float)exposureGain;
 - (int)exposureMode;
 - (struct CGPoint { float x1; float x2; })exposurePointOfInterest;
 - (int)flashMode;
@@ -47,6 +53,7 @@
 - (BOOL)isConnected;
 - (BOOL)isExposureModeSupported:(int)arg1;
 - (BOOL)isExposurePointOfInterestSupported;
+- (BOOL)isFaceDetectionDrivenImageProcessingEnabled;
 - (BOOL)isFlashActive;
 - (BOOL)isFlashAvailable;
 - (BOOL)isFlashModeSupported:(int)arg1;
@@ -55,6 +62,7 @@
 - (BOOL)isImageControlModeSupported:(int)arg1;
 - (BOOL)isInUseByAnotherApplication;
 - (BOOL)isLockedForConfiguration;
+- (BOOL)isManualExposureSupportEnabled;
 - (BOOL)isOpen;
 - (BOOL)isSubjectAreaChangeMonitoringEnabled;
 - (BOOL)isTorchAvailable;
@@ -65,18 +73,27 @@
 - (id)modelID;
 - (BOOL)open:(id*)arg1;
 - (int)position;
+- (float)saturation;
 - (id)session;
+- (void)setAutoExposureBias:(float)arg1;
 - (void)setAutomaticallyAdjustsImageControlMode:(BOOL)arg1;
+- (void)setContrast:(float)arg1;
+- (void)setExposureDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setExposureGain:(float)arg1;
 - (void)setExposureMode:(int)arg1;
 - (void)setExposurePointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setFaceDetectionDrivenImageProcessingEnabled:(BOOL)arg1;
 - (void)setFlashMode:(int)arg1;
 - (void)setFocusMode:(int)arg1;
 - (void)setFocusPointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setImageControlMode:(int)arg1;
+- (void)setManualExposureSupportEnabled:(BOOL)arg1;
+- (void)setSaturation:(float)arg1;
 - (void)setSession:(id)arg1;
 - (void)setSubjectAreaChangeMonitoringEnabled:(BOOL)arg1;
 - (void)setTorchMode:(int)arg1;
 - (void)setWhiteBalanceMode:(int)arg1;
+- (void)setWhiteBalanceTemperature:(float)arg1;
 - (BOOL)startUsingDevice:(id*)arg1;
 - (void)stopUsingDevice;
 - (BOOL)supportsAVCaptureSessionPreset:(id)arg1;
@@ -85,5 +102,6 @@
 - (id)uniqueID;
 - (void)unlockForConfiguration;
 - (int)whiteBalanceMode;
+- (float)whiteBalanceTemperature;
 
 @end

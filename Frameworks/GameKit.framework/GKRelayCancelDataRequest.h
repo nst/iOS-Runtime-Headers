@@ -12,7 +12,7 @@
 
 - (id)cancelRelayRequest;
 - (void)dealloc;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
+- (void)handleResponseFromServer:(id)arg1;
 - (id)key;
 - (id)request;
 - (void)setCancelRelayRequest:(id)arg1;

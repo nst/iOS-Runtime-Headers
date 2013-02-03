@@ -16,7 +16,7 @@
 @property(readonly) unsigned int count;
 @property(readonly) unsigned int index;
 
-- (void)_writeCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQueryCriteria:(id)arg3;
+- (void)_writeCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQueryCriteria:(id)arg3 representativeItemIdentifier:(long long)arg4;
 - (void)cancel;
 - (unsigned int)count;
 - (void)dealloc;
@@ -24,6 +24,7 @@
 - (unsigned int)index;
 - (id)initWithEntityStreamArray:(id)arg1 queryCriteria:(id)arg2 count:(unsigned int)arg3;
 - (BOOL)isCancelled;
+- (void)writeCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 representativeItemIdentifier:(long long)arg3;
 - (void)writeCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2;
 - (void)writeItemWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2;
 

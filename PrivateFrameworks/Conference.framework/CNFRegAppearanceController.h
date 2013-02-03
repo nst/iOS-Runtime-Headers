@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@class UIColor, UIImage;
+@class UIFont, UIColor, UIImage;
 
 @interface CNFRegAppearanceController : NSObject {
 }
@@ -18,6 +18,11 @@
 @property(readonly) int navigationBarActivityIndicatorStyle;
 @property(readonly) BOOL navigationBarIsTranslucent;
 @property(readonly) int navigationBarStyle;
+@property(readonly) UIColor * searchResultsTableSeparatorBottomShadowColor;
+@property(readonly) UIColor * searchResultsTableSeparatorColor;
+@property(readonly) int searchResultsTableSeparatorStyle;
+@property(readonly) UIColor * searchResultsTableSeparatorTopShadowColor;
+@property(readonly) BOOL styleUsesCustomSearchResultsStyle;
 @property(readonly) BOOL styleUsesCustomSeparatorStyle;
 @property(readonly) BOOL styleUsesCustomTableStyle;
 @property(retain,readonly) UIColor * tableBackgroundColor;
@@ -35,7 +40,10 @@
 @property(retain,readonly) UIColor * tableCellEditableTextPlaceholderColor;
 @property(retain,readonly) UIColor * tableCellTextLabelBackgroundColor;
 @property(retain,readonly) UIColor * tableCellTextLabelColor;
+@property(retain,readonly) UIFont * tableFooterFont;
+@property(retain,readonly) UIFont * tableHeaderFont;
 @property(retain,readonly) UIColor * tableHeaderTextColor;
+@property(retain,readonly) UIColor * tableHeaderTextColorSelected;
 @property(retain,readonly) UIColor * tableHeaderTextShadowColor;
 @property(readonly) struct CGSize { float width; float height; } tableHeaderTextShadowOffset;
 @property(retain,readonly) UIColor * tableSectionBorderColor;
@@ -66,6 +74,11 @@
 - (int)navigationBarActivityIndicatorStyle;
 - (BOOL)navigationBarIsTranslucent;
 - (int)navigationBarStyle;
+- (id)searchResultsTableSeparatorBottomShadowColor;
+- (id)searchResultsTableSeparatorColor;
+- (int)searchResultsTableSeparatorStyle;
+- (id)searchResultsTableSeparatorTopShadowColor;
+- (BOOL)styleUsesCustomSearchResultsStyle;
 - (BOOL)styleUsesCustomSeparatorStyle;
 - (BOOL)styleUsesCustomTableStyle;
 - (id)tableBackgroundColor;
@@ -83,7 +96,10 @@
 - (id)tableCellEditableTextPlaceholderColor;
 - (id)tableCellTextLabelBackgroundColor;
 - (id)tableCellTextLabelColor;
+- (id)tableFooterFont;
+- (id)tableHeaderFont;
 - (id)tableHeaderTextColor;
+- (id)tableHeaderTextColorSelected;
 - (id)tableHeaderTextShadowColor;
 - (struct CGSize { float x1; float x2; })tableHeaderTextShadowOffset;
 - (id)tableSectionBorderColor;

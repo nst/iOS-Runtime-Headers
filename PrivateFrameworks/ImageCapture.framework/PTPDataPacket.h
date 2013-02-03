@@ -24,7 +24,9 @@
 - (id)contentForTCP;
 - (id)contentForUSB;
 - (id)contentForUSBUsingBuffer:(void*)arg1 capacity:(unsigned long)arg2;
+- (long long)copyDataToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2 fromOffset:(unsigned long long)arg3;
 - (long long)copyFromBuffer:(void*)arg1 numBytes:(long long)arg2;
+- (long long)copyHeaderToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2;
 - (long long)copyToBuffer:(void*)arg1 numBytes:(long long)arg2;
 - (long long)copyToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2;
 - (id)data;

@@ -2,35 +2,36 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@class NSString, ADTimeStamp, NSData, ADDeviceOrientation, ADAdConnection;
+@class ADTimeStamp, NSString, NSData;
 
 @interface ADLogMetaData : PBCodable {
     NSString *_batchId;
-    ADAdConnection *_connectionType;
+    int _connectionType;
+    BOOL _hasConnectionType;
     BOOL _hasImpressionSequence;
     BOOL _hasMessageSequence;
     BOOL _hasOverclickCount;
     NSData *_impressionIdentifierData;
     int _impressionSequence;
     int _messageSequence;
-    ADDeviceOrientation *_orientation;
+    int _orientation;
     int _overclickCount;
     ADTimeStamp *_timeStamp;
 }
 
 @property(retain) NSString * batchId;
-@property(retain) ADAdConnection * connectionType;
+@property int connectionType;
 @property(readonly) BOOL hasBatchId;
-@property(readonly) BOOL hasConnectionType;
+@property BOOL hasConnectionType;
 @property(readonly) BOOL hasImpressionIdentifierData;
-@property(readonly) BOOL hasImpressionSequence;
-@property(readonly) BOOL hasMessageSequence;
-@property(readonly) BOOL hasOverclickCount;
+@property BOOL hasImpressionSequence;
+@property BOOL hasMessageSequence;
+@property BOOL hasOverclickCount;
 @property(readonly) BOOL hasTimeStamp;
 @property(retain) NSData * impressionIdentifierData;
 @property int impressionSequence;
 @property int messageSequence;
-@property(retain) ADDeviceOrientation * orientation;
+@property int orientation;
 @property int overclickCount;
 @property(retain) ADTimeStamp * timeStamp;
 
@@ -38,7 +39,7 @@
 + (id)metadataForAd:(id)arg1 impressionSequence:(unsigned int)arg2 overclickCount:(unsigned int)arg3;
 
 - (id)batchId;
-- (id)connectionType;
+- (int)connectionType;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -51,17 +52,20 @@
 - (BOOL)hasTimeStamp;
 - (id)impressionIdentifierData;
 - (int)impressionSequence;
-- (id)init;
 - (int)messageSequence;
-- (id)orientation;
+- (int)orientation;
 - (int)overclickCount;
 - (BOOL)readFrom:(id)arg1;
 - (void)setBatchId:(id)arg1;
-- (void)setConnectionType:(id)arg1;
+- (void)setConnectionType:(int)arg1;
+- (void)setHasConnectionType:(BOOL)arg1;
+- (void)setHasImpressionSequence:(BOOL)arg1;
+- (void)setHasMessageSequence:(BOOL)arg1;
+- (void)setHasOverclickCount:(BOOL)arg1;
 - (void)setImpressionIdentifierData:(id)arg1;
 - (void)setImpressionSequence:(int)arg1;
 - (void)setMessageSequence:(int)arg1;
-- (void)setOrientation:(id)arg1;
+- (void)setOrientation:(int)arg1;
 - (void)setOverclickCount:(int)arg1;
 - (void)setTimeStamp:(id)arg1;
 - (id)timeStamp;

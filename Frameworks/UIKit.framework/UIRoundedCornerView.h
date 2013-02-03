@@ -17,6 +17,7 @@
 - (void)dealloc;
 - (void)didMoveToSuperview;
 - (id)initWithCornerRadius:(float)arg1 size:(float)arg2 inset:(float)arg3;
+- (void)setCornerMaskColor:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setImageBackground:(id)arg1;
 - (void)setUseSnapshot:(BOOL)arg1;

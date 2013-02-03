@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIImageView;
+@class UIImageView, SUReflectionView;
 
 @interface SUReflectionImageView : UIView {
     unsigned int _nonSquareImage : 1;
     UIImageView *_imageView;
-    UIImageView *_reflection;
+    SUReflectionView *_reflection;
     float _reflectionAlpha;
     float _reflectionHeight;
     float _spacing;

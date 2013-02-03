@@ -13,7 +13,6 @@
 
 + (unsigned int)defaultMinTrackCount;
 + (unsigned int)defaultTrackCount;
-+ (BOOL)hasGeniusCapableiTunes;
 + (BOOL)hasGeniusDataAvailable;
 + (BOOL)hasGeniusFeatureEnabled;
 + (void)ignoreUnusedWarnings;
@@ -22,8 +21,8 @@
 + (BOOL)useFakeGeniusData;
 
 - (BOOL)_canIncludeTrackInGeniusContainer:(id)arg1;
-- (BOOL)_canIncludeTrackInGeniusPlaylist:(id)arg1;
 - (BOOL)_createClusterPlaylistWithSeedTracks:(id)arg1 error:(id*)arg2;
+- (id)_debugGetTracksStartingAtTrackWithPersistentID:(unsigned long long)arg1 maxTracks:(unsigned int)arg2 stride:(int)arg3;
 - (BOOL)_fakePopulateContainer:(id)arg1 withSeedTrack:(id)arg2 error:(id*)arg3;
 - (BOOL)_populateContainer:(id)arg1 seedTrack:(id)arg2 error:(id*)arg3;
 - (id)_sharedBlobMutableData;

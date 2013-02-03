@@ -16,6 +16,8 @@
     BOOL hasAction;
     BOOL hideAlertTitle;
     BOOL interruptAudioAndLockDevice;
+    BOOL isSystemAlert;
+    int remainingRepeatCount;
     NSCalendar *repeatCalendar;
     unsigned int repeatInterval;
     BOOL resumeApplicationInBackground;
@@ -23,29 +25,10 @@
     NSString *soundName;
     BOOL soundNameIsARingtone;
     NSTimeZone *timeZone;
+    int totalRepeatCount;
     NSData *userInfoData;
 }
 
-@property(copy) NSString * alertAction;
-@property(copy) NSString * alertBody;
-@property(copy) NSString * alertLaunchImage;
-@property BOOL allowSnooze;
-@property int applicationIconBadgeNumber;
-@property(copy) NSString * customLockSliderLabel;
-@property(copy) NSDate * fireDate;
-@property BOOL fireNotificationsWhenAppRunning;
-@property BOOL hasAction;
-@property BOOL hideAlertTitle;
-@property BOOL interruptAudioAndLockDevice;
-@property(copy) NSCalendar * repeatCalendar;
-@property unsigned int repeatInterval;
-@property BOOL resumeApplicationInBackground;
-@property BOOL showAlarmStatusBarItem;
-@property(copy) NSString * soundName;
-@property BOOL soundNameIsARingtone;
-@property(copy) NSTimeZone * timeZone;
-
-- (void)_addCalendarUnits:(unsigned int)arg1 toDateComponents:(id)arg2;
 - (void)_setUserInfoData:(id)arg1;
 - (id)alertAction;
 - (id)alertBody;
@@ -68,9 +51,11 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)interruptAudioAndLockDevice;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isSystemAlert;
 - (BOOL)isValid;
 - (id)nextFireDateAfterDate:(id)arg1 localTimeZone:(id)arg2;
 - (id)nextFireDateForLastFireDate:(id)arg1;
+- (int)remainingRepeatCount;
 - (id)repeatCalendar;
 - (unsigned int)repeatInterval;
 - (BOOL)resumeApplicationInBackground;
@@ -85,6 +70,8 @@
 - (void)setHasAction:(BOOL)arg1;
 - (void)setHideAlertTitle:(BOOL)arg1;
 - (void)setInterruptAudioAndLockDevice:(BOOL)arg1;
+- (void)setIsSystemAlert:(BOOL)arg1;
+- (void)setRemainingRepeatCount:(int)arg1;
 - (void)setRepeatCalendar:(id)arg1;
 - (void)setRepeatInterval:(unsigned int)arg1;
 - (void)setResumeApplicationInBackground:(BOOL)arg1;
@@ -92,11 +79,13 @@
 - (void)setSoundName:(id)arg1;
 - (void)setSoundNameIsARingtone:(BOOL)arg1;
 - (void)setTimeZone:(id)arg1;
+- (void)setTotalRepeatCount:(int)arg1;
 - (void)setUserInfo:(id)arg1;
 - (BOOL)showAlarmStatusBarItem;
 - (id)soundName;
 - (BOOL)soundNameIsARingtone;
 - (id)timeZone;
+- (int)totalRepeatCount;
 - (id)userInfo;
 
 @end

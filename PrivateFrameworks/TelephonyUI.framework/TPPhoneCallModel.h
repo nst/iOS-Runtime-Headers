@@ -15,14 +15,16 @@
 - (struct __CFDictionary { }*)_callManagementDictionary;
 - (int)_intValueForKey:(struct __CFString { }*)arg1;
 - (void)_invalidateCachedState;
+- (BOOL)_isAmbiguousCallList;
+- (BOOL)_isAmbiguousMultiPartyCall;
 - (int)ambiguityState;
 - (int)cellTelephonyType;
 - (void)dealloc;
 - (id)description;
 - (id)init;
 - (BOOL)isAddCallAllowed;
-- (BOOL)isAmbiguousCallList;
-- (BOOL)isAmbiguousMultiPartyCall;
+- (BOOL)isAmbiguous;
+- (BOOL)isEndAndAnswerAllowed;
 - (BOOL)isHardPauseAvailable;
 - (BOOL)isHoldAllowed;
 - (BOOL)isMergeable;

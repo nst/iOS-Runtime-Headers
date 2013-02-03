@@ -25,10 +25,12 @@
 
 + (id)indexSet;
 + (id)indexSetWithIndex:(unsigned int)arg1;
++ (id)indexSetWithIndexes:(unsigned int)arg1;
 + (id)indexSetWithIndexes:(unsigned int*)arg1 count:(unsigned int)arg2;
 + (id)indexSetWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 - (unsigned int)__getContainmentVector:(out BOOL*)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)_indexAtIndex:(unsigned int)arg1;
 - (unsigned int)_indexClosestToIndex:(unsigned int)arg1 equalAllowed:(BOOL)arg2 following:(BOOL)arg3;
 - (unsigned int)_indexOfRangeAfterOrContainingIndex:(unsigned int)arg1;
 - (unsigned int)_indexOfRangeBeforeOrContainingIndex:(unsigned int)arg1;
@@ -37,13 +39,12 @@
 - (id)_numberEnumerator;
 - (void)_setContentToContentFromIndexSet:(id)arg1;
 - (Class)classForCoder;
-- (id)commaSeparatedString;
-- (id)commaSeparatedString;
 - (BOOL)containsIndex:(unsigned int)arg1;
 - (BOOL)containsIndexes:(id)arg1;
 - (BOOL)containsIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void*)copyXPCEncoding;
 - (unsigned int)count;
 - (unsigned int)countOfIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)dealloc;
@@ -52,6 +53,9 @@
 - (void)enumerateIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (void)enumerateIndexesUsingBlock:(id)arg1;
 - (void)enumerateIndexesWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateRangesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
+- (void)enumerateRangesUsingBlock:(id)arg1;
+- (void)enumerateRangesWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
 - (unsigned int)firstIndex;
 - (unsigned int)getIndexes:(unsigned int*)arg1 maxCount:(unsigned int)arg2 inIndexRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
 - (unsigned int)hash;
@@ -72,11 +76,14 @@
 - (id)initWithIndexes:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (id)initWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)initWithPropertyListEncoding:(id)arg1;
+- (id)initWithXPCEncoding:(void*)arg1;
 - (BOOL)intersectsIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToIndexSet:(id)arg1;
 - (unsigned int)lastIndex;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)pl_indexSetByExtractingIndexes:(id)arg1;
+- (id)pl_shortDescription;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeAtIndex:(unsigned int)arg1;
 - (unsigned int)rangeCount;
 

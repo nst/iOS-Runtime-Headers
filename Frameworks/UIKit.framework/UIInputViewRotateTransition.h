@@ -6,6 +6,7 @@
 }
 
 - (BOOL)canAnimate;
+- (BOOL)fadeAccessoryView;
 - (void)postNotificationsForTransitionEnd;
 - (void)postNotificationsForTransitionStart;
 - (BOOL)shouldCompleteOnSuspend;

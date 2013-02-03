@@ -11,7 +11,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)init;
 - (int)mode;
 - (BOOL)readFrom:(id)arg1;
 - (void)setMode:(int)arg1;

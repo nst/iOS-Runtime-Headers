@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKScore, NSString, NSArray;
+@class NSArray, NSString, GKScore, NSObject<GKLeaderboardDelegate>;
 
 @interface GKLeaderboard : NSObject {
     struct _NSRange { 
@@ -19,27 +19,34 @@
     int _sequenceNumber;
     int _timeScope;
     NSString *_title;
+    NSObject<GKLeaderboardDelegate> *_weakDelegate;
 }
 
 @property(retain) NSString * category;
+@property NSObject<GKLeaderboardDelegate> * delegate;
 @property(getter=isLoading,readonly) BOOL loading;
 @property int loadingCount;
 @property(retain) GKScore * localPlayerScore;
 @property unsigned int maxRange;
 @property(retain) NSArray * playerIDs;
 @property int playerScope;
-@property struct _NSRange { unsigned int location; unsigned int length; } range;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
 @property(retain) NSArray * scores;
 @property int sequenceNumber;
 @property int timeScope;
 @property(retain) NSString * title;
 
 + (void)loadCategoriesForGame:(id)arg1 withCompletionHandler:(id)arg2;
++ (void)loadCategoriesForGame:(id)arg1 withPlayer:(id)arg2 withCompletionHandler:(id)arg3;
 + (void)loadCategoriesWithCompletionHandler:(id)arg1;
++ (void)setDefaultLeaderboard:(id)arg1 withCompletionHandler:(id)arg2;
 
 - (id)category;
 - (void)dealloc;
+- (void)decrementLoadingCountAtomically;
+- (id)delegate;
 - (id)description;
+- (void)incrementLoadingCountAtomically;
 - (id)init;
 - (id)initWithPlayerIDs:(id)arg1;
 - (BOOL)isLoading;
@@ -54,6 +61,7 @@
 - (id)scores;
 - (int)sequenceNumber;
 - (void)setCategory:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setLoadingCount:(int)arg1;
 - (void)setLocalPlayerScore:(id)arg1;
 - (void)setMaxRange:(unsigned int)arg1;

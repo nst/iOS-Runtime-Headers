@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSOperationQueue, UISearchDisplayController, <ABMembersControllerDelegate>, ABMembersDataSource, UISearchBar, NSIndexPath, UIView, <ABStyleProvider>, ABMembersFilteredDataSource, UIViewController, ABBannerView;
+@class NSIndexPath, ABMembersFilteredDataSource, NSString, ABBannerView, <ABStyleProvider>, ABMembersDataSource, UIView, UIViewController, UISearchDisplayController, <ABMembersControllerDelegate>, NSOperationQueue, UISearchBar;
 
 @interface ABMembersController : ABContentController <ABMembersDataSourceDelegate, UITextFieldDelegate, UISearchDisplayDelegate, ABSearchOperationDelegate, UISearchBarDelegate> {
     ABBannerView *_bannerView;
@@ -27,25 +27,29 @@
     BOOL _wasKeyboardShowing;
 }
 
+@property(readonly) NSString * currentSearchText;
+@property(readonly) BOOL isServerSearchGroup;
 @property <ABMembersControllerDelegate> * membersControllerDelegate;
 @property(getter=isSearchEnabled) BOOL searchEnabled;
-@property(readonly) BOOL shouldShowImages;
 @property(retain) <ABStyleProvider> * styleProvider;
 
 + (id)newNameSearchOperationWithString:(id)arg1 groupWrapper:(id)arg2 addressBook:(void*)arg3 delegate:(id)arg4 inOutSequenceNumber:(unsigned int*)arg5;
 
 - (void)_applyStylesToTableView:(id)arg1;
+- (void)_cancelGALSearch;
 - (void)_deselectAllRowsWithAnimation;
+- (id)_localizedStringForError:(int)arg1;
 - (void)_reloadFontSizes;
 - (void)_reselectLastSelectedCellIfNeeded;
 - (void)_searchForWords:(id)arg1;
 - (void*)_selectedPerson;
 - (void)_setSelectedIndexPath:(id)arg1;
+- (BOOL)_shouldDeactivateOnCancelButtonClicked;
 - (void)_updateCountString;
 - (void)_updateEmptyTableViewAnimated:(BOOL)arg1;
 - (void)_updateNoContactsViewAnimated:(BOOL)arg1;
 - (BOOL)abDataSource:(id)arg1 selectedPerson:(void*)arg2 atIndexPath:(id)arg3 withMemberCell:(id)arg4 animate:(BOOL)arg5;
-- (BOOL)abDataSource:(id)arg1 shouldAllowSelectingPerson:(void*)arg2;
+- (BOOL)abDataSource:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
 - (void)abDataSourceSelectedSearchInIndex:(id)arg1;
 - (id)accessoryView;
 - (void)cancelSearching:(id)arg1;
@@ -59,25 +63,25 @@
 - (void)didReceiveMemoryWarning;
 - (void)displayedMembersListChanged;
 - (int)globalIndexOfMember:(void*)arg1;
+- (id)groupWrapper;
 - (id)initWithAddressBook:(void*)arg1;
 - (BOOL)isSearchEnabled;
 - (BOOL)isSearching;
+- (BOOL)isServerSearchGroup;
 - (void)loadState;
 - (void)makeMainTableViewVisible;
 - (id)membersControllerDelegate;
 - (id)membersDataSource;
 - (id)operationQueue;
-- (void)photosEverywhereChanged;
 - (void)relayoutAccessoryView;
 - (void)reload;
-- (void)reloadCellForPerson:(void*)arg1;
 - (void)restoreScrollPosition;
 - (void)resume;
 - (void)saveScrollPosition:(void*)arg1;
 - (void)saveState:(void*)arg1;
-- (BOOL)scrollMemberVisible:(void*)arg1;
 - (void)scrollTableViewToSearchField:(id)arg1 animated:(BOOL)arg2;
 - (void)scrollTableViewToSearchFieldIfNotAlreadyScrolled;
+- (void)searchBarCancelButtonClicked:(id)arg1;
 - (void)searchBarSearchButtonClicked:(id)arg1;
 - (void)searchBarTextDidBeginEditing:(id)arg1;
 - (id)searchDataSource;
@@ -88,18 +92,16 @@
 - (void)searchDisplayControllerWillBeginSearch:(id)arg1;
 - (void)searchDisplayControllerWillEndSearch:(id)arg1;
 - (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
-- (void)selectMember:(void*)arg1 animated:(BOOL)arg2;
-- (void)selectMemberOnlyInTable:(void*)arg1 scrollPosition:(int)arg2;
+- (BOOL)selectAndScrollMemberVisible:(void*)arg1;
 - (id)selectedCell;
+- (void)setAddressBook:(void*)arg1;
 - (void)setBannerTitle:(id)arg1 value:(id)arg2;
 - (void)setCellsCreated:(unsigned int)arg1;
 - (void)setMembersControllerDelegate:(id)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setSearchEnabled:(BOOL)arg1;
 - (void)setStyleProvider:(id)arg1;
-- (BOOL)shouldShowImages;
 - (BOOL)shouldShowIndex;
-- (BOOL)showCardForPerson:(void*)arg1 animate:(BOOL)arg2;
 - (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3;
 - (void)stopScrolling;
 - (id)styleProvider;

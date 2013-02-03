@@ -4,7 +4,7 @@
 
 @class NSArray, MPAudioDeviceController;
 
-@interface MPAudioRoutingPicker : UIAlertView {
+@interface MPAudioRoutingPicker : UIAlertView <UITableViewDataSource, UITableViewDelegate> {
     MPAudioDeviceController *_audioDeviceController;
     BOOL _ignoringInteractionEvents;
     NSArray *_routes;
@@ -13,9 +13,9 @@
 - (BOOL)_pickRouteAtIndex:(unsigned int)arg1 withPassword:(id)arg2;
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (void)dealloc;
-- (id)initWithAVController:(id)arg1;
+- (id)initWithAVPlayer:(id)arg1;
 - (BOOL)requiresPortraitOrientation;
-- (void)setAVController:(id)arg1;
+- (void)setAVPlayer:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

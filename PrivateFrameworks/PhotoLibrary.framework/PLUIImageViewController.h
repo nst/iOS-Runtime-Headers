@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLVideoView, PLVideoRemaker, PLImage, PLPhotoTileViewController, PLImageCache, MLPhoto, PLImageLoadingQueue, UIImage, NSString, PLImageSource, PLCropOverlay;
+@class PLVideoView, PLVideoRemaker, PLManagedAsset, PLPhotoTileViewController, PLImageCache, PLImageLoadingQueue, UIImage, NSString, PLImageSource, PLCropOverlay;
 
 @interface PLUIImageViewController : UIViewController <PLVideoViewDelegate, PLImageLoadingQueueDelegate, PLPhotoTileViewControllerDelegate> {
     struct CGRect { 
@@ -27,26 +27,23 @@
     struct CGImage { } *_imageRef;
     PLImageSource *_imageSource;
     PLPhotoTileViewController *_imageTile;
-    int _newStatusBarMode;
-    MLPhoto *_photo;
-    PLImage *_plImage;
-    int _previousStatusBarMode;
+    int _newStatusBarStyle;
+    PLManagedAsset *_photo;
+    int _previousStatusBarStyle;
     PLVideoRemaker *_remaker;
     NSString *_videoPath;
     PLVideoView *_videoView;
 }
 
-+ (void)_initializeSafeCategory;
-
 - (unsigned int)_contentAutoresizingMask;
 - (BOOL)_displaysFullScreen;
 - (void)_editabilityChanged:(id)arg1;
 - (void)_enableCropOverlayIfNecessary;
-- (int)_imagePickerStatusBarMode;
+- (int)_imagePickerStatusBarStyle;
+- (void)_removedAsTopViewController;
 - (unsigned int)_tileAutoresizingMask;
 - (id)_trimMessage;
 - (void)_updateGestureSettings;
-- (void)_updateTitles;
 - (Class)_viewClass;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewFrame;
 - (BOOL)clientIsWallpaper;
@@ -59,13 +56,14 @@
 - (void)dealloc;
 - (void)didChooseVideoAtPath:(id)arg1 options:(id)arg2;
 - (int)imageFormat;
-- (void)imageLoadingQueue:(id)arg1 didLoadImage:(id)arg2 forObject:(id)arg3 fromSource:(id)arg4;
+- (void)imageLoadingQueue:(id)arg1 didLoadImage:(id)arg2 forAsset:(id)arg3 fromSource:(id)arg4;
 - (id)initWithImage:(struct CGImage { }*)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)initWithImageData:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)initWithPhoto:(id)arg1;
 - (id)initWithUIImage:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)initWithVideoPath:(id)arg1;
 - (void)loadView;
+- (void)photoTileViewController:(id)arg1 didAppear:(BOOL)arg2;
 - (void)photoTileViewController:(id)arg1 didDisappear:(BOOL)arg2;
 - (void)photoTileViewController:(id)arg1 willAppear:(BOOL)arg2;
 - (BOOL)photoTileViewControllerAllowsEditing:(id)arg1;
@@ -78,7 +76,6 @@
 - (void)photoTileViewControllerWillBeginGesture:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewFrame;
 - (void)setAllowsEditing:(BOOL)arg1;
-- (void)setParentViewController:(id)arg1;
 - (void)setupNavigationItem;
 - (id)useButtonTitle;
 - (void)videoRemakerDidBeginRemaking:(id)arg1;
@@ -90,7 +87,6 @@
 - (void)videoViewDidPausePlayback:(id)arg1 didFinish:(BOOL)arg2;
 - (void)videoViewIsReadyToBeginPlayback:(id)arg1;
 - (float)videoViewScrubberYOrigin:(id)arg1 forOrientation:(int)arg2;
-- (BOOL)videoViewShouldDisplayScrubber:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

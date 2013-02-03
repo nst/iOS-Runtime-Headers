@@ -32,9 +32,13 @@
 + (id)_DOMElementFromJSContext:(struct OpaqueJSContext { }*)arg1 value:(struct OpaqueJSValue { }*)arg2;
 + (BOOL)isRichTextStyle:(id)arg1;
 
+- (struct OpaqueJSValue { }*)_ensureShadowRoot:(struct OpaqueJSContext { }*)arg1;
 - (struct __GSFont { }*)_font;
 - (id)_getURLAttribute:(id)arg1;
 - (id)_markerTextForListItem;
+- (void)_removeShadowRoot;
+- (id)_shadowPseudoId;
+- (struct OpaqueJSValue { }*)_shadowRoot:(struct OpaqueJSContext { }*)arg1;
 - (void)blur;
 - (unsigned int)childElementCount;
 - (int)clientHeight;
@@ -56,6 +60,7 @@
 - (id)getElementsByTagName:(id)arg1;
 - (id)getElementsByTagNameNS:(id)arg1 :(id)arg2;
 - (id)getElementsByTagNameNS:(id)arg1 localName:(id)arg2;
+- (void)getTextWritingDirection:(int*)arg1 override:(BOOL*)arg2;
 - (BOOL)hasAttribute:(id)arg1;
 - (BOOL)hasAttributeNS:(id)arg1 :(id)arg2;
 - (BOOL)hasAttributeNS:(id)arg1 localName:(id)arg2;
@@ -69,6 +74,7 @@
 - (BOOL)isRichTextElementType;
 - (id)lastElementChild;
 - (int)mf_quoteLevelDelta;
+- (void)mf_stripCSSStyle;
 - (id)nextElementSibling;
 - (int)offsetHeight;
 - (int)offsetLeft;

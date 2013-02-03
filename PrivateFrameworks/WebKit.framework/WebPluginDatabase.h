@@ -27,7 +27,6 @@
 - (id)init;
 - (BOOL)isMIMETypeRegistered:(id)arg1;
 - (id)pluginForExtension:(id)arg1;
-- (id)pluginForKey:(id)arg1 withEnumeratorSelector:(SEL)arg2;
 - (id)pluginForMIMEType:(id)arg1;
 - (id)plugins;
 - (void)refresh;

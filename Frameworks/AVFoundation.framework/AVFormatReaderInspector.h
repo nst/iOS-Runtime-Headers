@@ -12,8 +12,8 @@
 
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (BOOL)_hasQTSaveRestriction;
-- (void*)_propertyAccessor:(struct __CFString { }*)arg1;
 - (void)_setFormatReader:(struct OpaqueFigFormatReader { }*)arg1;
+- (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
 - (id)alternateTrackGroups;
 - (id)availableMetadataFormats;
 - (id)commonMetadata;

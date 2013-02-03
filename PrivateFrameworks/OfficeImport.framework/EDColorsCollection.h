@@ -17,6 +17,7 @@
 - (void)addPalette:(const unsigned int*)arg1 paletteSize:(unsigned long)arg2 paletteX:(const unsigned int*)arg3 paletteXSize:(unsigned int)arg4;
 - (id)colorWithIndex:(unsigned int)arg1;
 - (unsigned int)defaultColorsCount;
+- (const unsigned int*)defaultPalette;
 - (id)initWithDefaultSetup:(bool)arg1;
 - (void)setupDefaults;
 

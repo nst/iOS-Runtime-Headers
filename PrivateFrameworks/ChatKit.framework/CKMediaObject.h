@@ -2,31 +2,42 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSString, NSData;
+@class NSString, NSData, NSDictionary, NSURL;
 
-@interface CKMediaObject : NSObject {
+@interface CKMediaObject : NSObject <QLPreviewItem> {
     NSData *_data;
+    BOOL _dataIsPropertyListData;
     double _duration;
     NSString *_exportedFilename;
     NSString *_filename;
     NSString *_mimeType;
+    NSString *_transferGUID;
 }
 
+@property(copy) NSDictionary * SMSComposePropertyList;
 @property(readonly) NSData * data;
+@property(retain,readonly) NSString * displayFilename;
 @property double duration;
-@property(readonly) NSString * exportedFilename;
+@property(copy) NSString * exportedFilename;
 @property(readonly) NSString * filename;
-@property(readonly) NSString * mimeType;
+@property(copy) NSString * mimeType;
+@property(readonly) NSString * previewItemTitle;
+@property(readonly) NSURL * previewItemURL;
+@property(copy) NSString * transferGUID;
 
 + (id)fileExtensionForMIMEType:(id)arg1;
++ (id)mimeTypesAllowedForMMS;
 + (id)mimeTypesToFileExtensions;
 + (id)previewDataMIMEType;
 + (id)supportedMIMETypes;
 + (BOOL)supportsMIMEType:(id)arg1;
 + (struct CGSize { float x1; float x2; })transcodeMaxSize;
 
+- (id)SMSComposePropertyList;
+- (id)_savedPreviewPathForOrientation:(int)arg1;
 - (float)balloonHeightWithPreviewData:(id)arg1;
 - (Class)balloonPreviewClassWithPreviewData:(id)arg1;
+- (BOOL)canBeQuickLooked;
 - (void)cleanupAfterTranscode;
 - (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
 - (void)copyToPasteboard:(id)arg1;
@@ -35,6 +46,7 @@
 - (id)dataForMedia;
 - (id)dataRepresentation;
 - (void)dealloc;
+- (id)displayFilename;
 - (double)duration;
 - (id)exportedFilename;
 - (id)filename;
@@ -47,11 +59,22 @@
 - (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
 - (id)newTranscodingForMMSWithMaxByteLength:(int)arg1;
 - (id)optionsForMedia;
+- (id)previewItemURL;
 - (id)previewTitle;
+- (void)savePreviewData:(id)arg1 forOrientation:(int)arg2;
+- (id)savedPreviewDataForOrientation:(int)arg1;
 - (void)setDuration:(double)arg1;
+- (void)setExportedFilename:(id)arg1;
+- (void)setMimeType:(id)arg1;
+- (void)setSMSComposePropertyList:(id)arg1;
+- (void)setTransferGUID:(id)arg1;
 - (BOOL)shouldGeneratePreviewInBackground;
 - (BOOL)shouldTranscodeForMMS;
 - (unsigned long long)sizeInBytes;
 - (id)sizeInBytesString;
+- (double)transcodeDuration;
+- (double)transcodeEndTime;
+- (double)transcodeStartTime;
+- (id)transferGUID;
 
 @end

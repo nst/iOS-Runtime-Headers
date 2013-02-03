@@ -16,6 +16,7 @@
 @property(copy) NSString * sendButtonTitle;
 @property(retain) id shouldSendMessageFunction;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 

@@ -11,30 +11,17 @@
     UILabel *_valueSuffixLabel;
 }
 
-+ (void)_initializeSafeCategory;
-+ (id)standardTextTableCell;
-
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
-- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)_disabledFontColor;
 - (void)_textFieldEndEditing:(id)arg1;
 - (void)_textFieldEndEditingOnReturn:(id)arg1;
 - (void)_textFieldStartEditing:(id)arg1;
 - (void)_textValueChanged:(id)arg1;
 - (void)_updateSuffixFrame;
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)accessibilityElementCount;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
 - (void)dealloc;
 - (BOOL)hasValueSuffix;
-- (int)indexOfAccessibilityElement:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (BOOL)resignFirstResponder;
 - (void)setPlaceHolderValue:(id)arg1;

@@ -17,7 +17,9 @@
 
 - (void)_coreCreationForKeys:(const id*)arg1 count:(unsigned long)arg2;
 - (void)_coreDealloc:(BOOL)arg1;
+- (BOOL)_isDeallocating;
 - (struct __CFArray { }*)_makeBranchTableForKeys:(const char **)arg1 count:(unsigned long)arg2;
+- (BOOL)_tryRetain;
 - (id)allKeys;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -33,7 +35,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (const id*)keys;
 - (unsigned int)length;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 

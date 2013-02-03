@@ -4,7 +4,7 @@
 
 @class UIButton, UILabel;
 
-@interface DDLinksEventController : UIViewController {
+@interface DDLinksEventController : UIViewController <EKEventEditViewDelegate> {
     UIButton *_button;
     UILabel *_label;
     struct __DDResult { } *_result;

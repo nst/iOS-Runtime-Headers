@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UITableViewRowData, UITableView, NSMutableIndexSet, UIView, NSMutableArray;
+@class NSArray, UITableViewRowData, UITableView, NSMutableIndexSet, NSMutableArray;
 
 @interface _UITableViewUpdateSupport : NSObject {
     struct _NSRange { 
@@ -42,12 +42,15 @@
             float height; 
         } size; 
     id _context;
-    UIView **animatedCells;
-    UIView **animatedFooters;
-    UIView **animatedHeaders;
+    id *animatedCells;
+    id *animatedFooters;
+    id *animatedHeaders;
     NSMutableArray *deletedSections;
+    NSMutableArray *gaps;
     int globalReorderingRow;
     NSMutableArray *insertedSections;
+    NSMutableIndexSet *movedRows;
+    NSMutableIndexSet *movedSections;
     int newGlobalRow;
     int newGlobalRowCount;
     int *newGlobalRowMap;
@@ -76,6 +79,8 @@
 }
 
 - (void)_addBottomShadowViewViewForViewAnimation:(id)arg1;
+- (void)_computeAutomaticAnimationTypes;
+- (void)_computeGaps;
 - (void)_computeRowUpdates;
 - (void)_computeSectionUpdates;
 - (void)_computeVisibleBounds;
@@ -85,6 +90,7 @@
 - (void)_setupAnimationForTableFooter;
 - (void)_setupAnimationForTableHeader;
 - (void)_setupAnimationStructures;
+- (void)_setupAnimations;
 - (void)_setupAnimationsForDeletedCells;
 - (void)_setupAnimationsForDeletedHeadersAndFooters;
 - (void)_setupAnimationsForExistingHeadersAndFooters;

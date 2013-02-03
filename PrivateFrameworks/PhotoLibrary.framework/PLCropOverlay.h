@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLCropOverlayBottomBar, TPPushButton, UIImageView, UILabel, PLCropOverlayCropView, UIView, TPBottomDualButtonBar, TPCameraPushButton, UIProgressHUD, UIButton, PLToolbar;
+@class PLCropOverlayBottomBar, UIButton, UIImageView, UILabel, PLCropOverlayCropView, UIView, TPButton, TPBottomDoubleButtonBar, TPCameraButton, UIProgressHUD, PLToolbar;
 
 @interface PLCropOverlay : UIView {
     struct CGRect { 
@@ -14,6 +14,7 @@
             float width; 
             float height; 
         } size; 
+    unsigned int _previewMode : 1;
     unsigned int _cropRectIsVisible : 1;
     unsigned int _offsetStatusBar : 1;
     unsigned int _tookPhoto : 1;
@@ -23,7 +24,7 @@
     PLCropOverlayBottomBar *_bottomBar;
     UIImageView *_bottomShineView;
     UIButton *_cancelButton;
-    TPPushButton *_cancelPushButton;
+    TPButton *_cancelPushButton;
     } _cropRect;
     PLCropOverlayCropView *_cropView;
     PLToolbar *_customToolbar;
@@ -31,8 +32,8 @@
     UIProgressHUD *_hud;
     int _mode;
     UIButton *_okButton;
-    TPCameraPushButton *_okPushButton;
-    TPBottomDualButtonBar *_oldBottomBar;
+    TPCameraButton *_okPushButton;
+    TPBottomDoubleButtonBar *_oldBottomBar;
     UIView *_overlayContainerView;
     UIImageView *_shadowView;
     float _statusBarHeight;
@@ -42,9 +43,8 @@
     UIView *_wildcatPickerTopView;
 }
 
-+ (void)_initializeSafeCategory;
+@property BOOL previewMode;
 
-- (BOOL)_accessibilityAllowsSiblingsWhenOvergrown;
 - (void)_backgroundSavePhoto:(id)arg1;
 - (void)_createCropView;
 - (void)_fadeOutCompleted:(id)arg1;
@@ -54,6 +54,7 @@
 - (void)_playButtonPressed:(id)arg1;
 - (void)_savePhotoFinished:(id)arg1;
 - (void)_setMode:(int)arg1;
+- (void)_updateTitle;
 - (void)_updateToolbarItems:(BOOL)arg1;
 - (void)beginBackgroundSaveWithTile:(id)arg1 progressTitle:(id)arg2 completionCallbackTarget:(id)arg3 options:(int)arg4;
 - (id)bottomBar;
@@ -81,6 +82,7 @@
 - (id)modeSwitch;
 - (void)okButtonClicked:(id)arg1;
 - (id)overlayContainerView;
+- (BOOL)previewMode;
 - (void)removeProgress;
 - (void)setCancelButtonHidden:(BOOL)arg1;
 - (void)setCancelButtonTitle:(id)arg1;
@@ -93,6 +95,7 @@
 - (void)setOKButtonShowsCamera:(BOOL)arg1;
 - (void)setOKButtonTitle:(id)arg1;
 - (void)setOverlayContainerView:(id)arg1;
+- (void)setPreviewMode:(BOOL)arg1;
 - (void)setProgressDone;
 - (void)setShowProgress:(BOOL)arg1 title:(id)arg2;
 - (void)setShowsCropRegion:(BOOL)arg1;
@@ -101,6 +104,8 @@
 - (void)setTitleHidden:(BOOL)arg1 animationDuration:(float)arg2;
 - (id)shutterButton;
 - (void)statusBarHeightDidChange:(id)arg1;
+- (id)telephonyUIBottomBar;
+- (id)telephonyUIShutterButton;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
 
 @end

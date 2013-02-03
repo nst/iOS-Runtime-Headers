@@ -4,13 +4,15 @@
 
 @class NSNumber, NSString, NSData;
 
-@interface MCEASAccountPayload : MCPayload {
+@interface MCEASAccountPayload : MCEmailAccountPayloadBase {
     NSString *_accountDescription;
     NSString *_accountPersistentUUID;
-    NSData *_certificate;
-    NSString *_certificateName;
-    NSString *_certificatePassword;
+    NSData *_certificatePersistentID;
+    NSString *_certificateUUID;
     NSString *_emailAddress;
+    NSData *_embeddedCertificate;
+    NSString *_embeddedCertificateName;
+    NSString *_embeddedCertificatePassword;
     NSString *_hostname;
     NSNumber *_mailNumberOfPastDaysToSync;
     NSString *_password;
@@ -20,10 +22,13 @@
 
 @property(readonly) NSString * accountDescription;
 @property(copy) NSString * accountPersistentUUID;
-@property(readonly) NSData * certificate;
-@property(readonly) NSString * certificateName;
-@property(copy) NSString * certificatePassword;
+@property(retain) NSData * certificatePersistentID;
+@property(readonly) NSString * certificateUUID;
 @property(copy) NSString * emailAddress;
+@property(readonly) NSData * embeddedCertificate;
+@property(readonly) NSString * embeddedCertificateName;
+@property(copy) NSString * embeddedCertificatePassword;
+@property(readonly) BOOL hasCertificate;
 @property(readonly) NSString * hostname;
 @property(readonly) NSNumber * mailNumberOfPastDaysToSync;
 @property(copy) NSString * password;
@@ -35,19 +40,23 @@
 
 - (id)accountDescription;
 - (id)accountPersistentUUID;
-- (id)certificate;
-- (id)certificateName;
-- (id)certificatePassword;
+- (id)certificatePersistentID;
+- (id)certificateUUID;
 - (void)dealloc;
 - (id)description;
 - (id)emailAddress;
+- (id)embeddedCertificate;
+- (id)embeddedCertificateName;
+- (id)embeddedCertificatePassword;
+- (BOOL)hasCertificate;
 - (id)hostname;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)mailNumberOfPastDaysToSync;
 - (id)password;
 - (void)setAccountPersistentUUID:(id)arg1;
-- (void)setCertificatePassword:(id)arg1;
+- (void)setCertificatePersistentID:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
+- (void)setEmbeddedCertificatePassword:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)stubDictionary;

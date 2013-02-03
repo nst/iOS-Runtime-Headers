@@ -2,23 +2,30 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class CIColor, NSString;
+
 @interface UIColor : NSObject <NSCoding> {
+    NSString *_systemColorName;
 }
 
 @property(readonly) struct CGColor { }* CGColor;
+@property(readonly) CIColor * CIColor;
+@property(getter=_systemColorName,setter=_setSystemColorName:,retain) NSString * systemColorName;
 
-+ (id)_adlib_colorWithRGBA:(unsigned int)arg1;
 + (id)_gkColorFromRGBAHexString:(id)arg1;
++ (id)_iAd_colorWithRGBA:(unsigned int)arg1;
 + (id)_mapkit_userLocationAccuracyRingFillColor;
 + (id)_mapkit_userLocationAccuracyRingStrokeColor;
-+ (id)_textCaretColorDefault;
-+ (id)_textCaretColorNotes;
++ (id)_remoteUI_colorWithString:(id)arg1;
++ (id)_systemColorForColor:(id)arg1 withName:(id)arg2;
++ (id)_systemColorWithName:(id)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)blackColor;
 + (id)blueColor;
 + (id)brownColor;
 + (id)clearColor;
 + (id)colorWithCGColor:(struct CGColor { }*)arg1;
++ (id)colorWithCIColor:(id)arg1;
 + (id)colorWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
 + (id)colorWithPatternImage:(id)arg1;
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
@@ -27,11 +34,13 @@
 + (id)cyanColor;
 + (id)darkGrayColor;
 + (id)darkTextColor;
++ (id)disabledTextColor;
 + (id)grayColor;
 + (id)greenColor;
 + (id)groupTableViewBackgroundColor;
 + (id)infoTextOverPinStripeTextColor;
 + (void)initialize;
++ (id)insertionPointColor;
 + (id)lightGrayColor;
 + (id)lightTextColor;
 + (id)magentaColor;
@@ -64,13 +73,12 @@
 + (id)sectionHeaderBorderColor;
 + (id)sectionHeaderOpaqueBackgroundColor;
 + (id)sectionListBorderColor;
-+ (id)selectionCaretColor;
 + (id)selectionHighlightColor;
-+ (id)selectionTintColor;
 + (id)tableBackgroundColor;
 + (id)tableCellBlueTextColor;
 + (id)tableCellGrayTextColor;
 + (id)tableCellGroupedBackgroundColor;
++ (id)tableCellGroupedBackgroundColorLegacyWhite;
 + (id)tableCellPlainBackgroundColor;
 + (id)tableCellValue1BlueColor;
 + (id)tableCellValue2BlueColor;
@@ -82,20 +90,22 @@
 + (id)tableSeparatorDarkColor;
 + (id)tableSeparatorLightColor;
 + (id)tableShadowColor;
-+ (id)textCaretColor;
 + (id)textFieldAtomBlueColor;
 + (id)textFieldAtomPurpleColor;
++ (id)texturedTranscriptBackgroundColor;
 + (id)tileBackgroundColor;
 + (id)tileGridBackgroundColor;
++ (id)translucentPaperTextureColor;
 + (id)underPageBackgroundColor;
 + (id)viewFlipsideBackgroundColor;
 + (id)whiteColor;
++ (id)whitePaperTextureColor;
 + (id)yellowColor;
 
 - (struct CGColor { }*)CGColor;
-- (id)_mapkit_initWithInteger:(unsigned int)arg1;
-- (BOOL)_mapkit_isWhite;
-- (struct { unsigned char x1[3]; unsigned char x2; })_mapkit_ubyteColorWithForcedAlpha:(unsigned char)arg1;
+- (id)CIColor;
+- (void)_setSystemColorName:(id)arg1;
+- (id)_systemColorName;
 - (float)alphaComponent;
 - (float)blueComponent;
 - (float)brightnessComponent;
@@ -104,12 +114,17 @@
 - (Class)classForCoder;
 - (id)colorWithAlphaComponent:(float)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (float)differenceFromColor:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)getHue:(float*)arg1 saturation:(float*)arg2 brightness:(float*)arg3 alpha:(float*)arg4;
+- (BOOL)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
+- (BOOL)getWhite:(float*)arg1 alpha:(float*)arg2;
 - (float)greenComponent;
 - (unsigned int)hash;
 - (float)hueComponent;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
+- (id)initWithCIColor:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
 - (id)initWithPatternImage:(id)arg1;
@@ -127,6 +142,7 @@
 - (void)setFill;
 - (void)setStroke;
 - (id)soverWithColor:(id)arg1;
+- (id)styleString;
 - (id)styleString;
 
 @end

@@ -11,18 +11,20 @@
 @property(readonly) NSArray * connections;
 
 - (id)_applyOverridesToCaptureOptions:(id)arg1;
-- (id)activeConnections;
 - (id)addConnection:(id)arg1 error:(id*)arg2;
 - (void)bumpChangeSeed;
 - (BOOL)canAddConnectionForMediaType:(id)arg1;
 - (int)changeSeed;
+- (id)connectionWithMediaType:(id)arg1;
 - (id)connections;
 - (void)dealloc;
 - (void)didStartForSession:(id)arg1;
 - (void)didStopForSession:(id)arg1 error:(id)arg2;
 - (id)firstEnabledConnectionForMediaType:(id)arg1;
+- (void)handleEnabledChangedForConnection:(id)arg1;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (id)init;
+- (id)liveConnections;
 - (id)notReadyError;
 - (void)removeConnection:(id)arg1;
 - (id)session;

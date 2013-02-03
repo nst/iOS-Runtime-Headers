@@ -14,7 +14,7 @@
 }
 
 @property(readonly) NSDate * date;
-@property(readonly) NSString * guid;
+@property(retain) NSString * guid;
 @property(readonly) BOOL isFromArchive;
 @property(readonly) IMMessage * message;
 @property(readonly) NSString * stringValue;
@@ -26,6 +26,7 @@
 - (id)guid;
 - (BOOL)isFromArchive;
 - (id)message;
+- (void)setGuid:(id)arg1;
 - (id)stringValue;
 
 @end

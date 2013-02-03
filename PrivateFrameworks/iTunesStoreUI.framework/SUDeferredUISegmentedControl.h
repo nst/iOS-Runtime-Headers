@@ -26,8 +26,6 @@
 
 @property(getter=isDeferringInterfaceUpdates) BOOL deferringInterfaceUpdates;
 
-+ (void)_initializeSafeCategory;
-
 - (void)_commitDeferredInterfaceUpdates;
 - (void)_insertSegmentWithValue:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_saveCurrentStateAsDeferred;

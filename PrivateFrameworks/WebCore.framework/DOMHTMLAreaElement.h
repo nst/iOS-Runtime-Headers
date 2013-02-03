@@ -38,6 +38,7 @@
 - (id)href;
 - (BOOL)noHref;
 - (id)pathname;
+- (id)ping;
 - (id)port;
 - (id)protocol;
 - (id)search;
@@ -46,6 +47,7 @@
 - (void)setCoords:(id)arg1;
 - (void)setHref:(id)arg1;
 - (void)setNoHref:(BOOL)arg1;
+- (void)setPing:(id)arg1;
 - (void)setShape:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (id)shape;

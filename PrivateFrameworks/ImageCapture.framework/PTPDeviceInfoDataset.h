@@ -27,8 +27,6 @@
 - (id)canonicalManufacturer;
 - (id)captureFormats;
 - (id)content;
-- (unsigned long)contentSize;
-- (void)copyContent:(char *)arg1 ofSize:(unsigned long)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)devicePropertiesSupported;

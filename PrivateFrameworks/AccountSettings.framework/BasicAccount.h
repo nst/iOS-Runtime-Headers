@@ -2,14 +2,17 @@
    Image: /System/Library/PrivateFrameworks/AccountSettings.framework/AccountSettings
  */
 
-@class NSMutableDictionary, <AccountFullAccountProtocol>, BasicAccount, <AccountRefreshProtocol>;
+@class <AccountRefreshProtocol>, <AccountFullAccountProtocol>, NSDictionary, BasicAccount, NSMutableDictionary;
 
 @interface BasicAccount : NSObject <AccountFullAccountProtocol> {
     <AccountFullAccountProtocol> *_fullAccount;
+    NSDictionary *_originalProperties;
     BasicAccount *_parentAccount;
     NSMutableDictionary *_properties;
     <AccountRefreshProtocol> *_syncAccount;
 }
+
+@property(retain) NSDictionary * originalProperties;
 
 + (id)_accountCreationMap;
 + (id)_creatorsInfo;
@@ -25,6 +28,7 @@
 + (BOOL)isMultitaskingEnabled;
 + (BOOL)multipleStoresSupportedByDataclass:(id)arg1;
 + (id)removeActionsIncompatibleWithSingleStoreDataclass:(id)arg1;
++ (BOOL)showRemindersSeparatelyForAccountType:(id)arg1;
 + (id)supportedDataclassesForAccountType:(id)arg1;
 + (id)userActionsToDisableDataclass:(id)arg1 forAccountType:(id)arg2;
 + (id)userActionsToEnableDataclass:(id)arg1 forAccountType:(id)arg2;
@@ -36,6 +40,7 @@
 - (void)_forcedSetEnabled:(BOOL)arg1 forDataclass:(id)arg2;
 - (id)_initWithType:(id)arg1 class:(id)arg2;
 - (id)_orderedDataclasses:(id)arg1;
+- (id)_profileRestrictedDataclasses;
 - (id)accountClass;
 - (BOOL)accountClassStringIsIMAPSubclass;
 - (BOOL)accountPropertiesHaveBookmarkDAVEnabled:(id)arg1;
@@ -66,13 +71,17 @@
 - (BOOL)isValidCardDAVChildAccount;
 - (BOOL)isValidDAMMeAccount;
 - (BOOL)isValidIMAPNotesAccount;
+- (id)originalProperties;
 - (id)parentAccount;
 - (id)parentAccountIdentifier;
 - (id)properties;
 - (id)propertiesToSave;
 - (id)provisionedDataclasses;
+- (BOOL)refreshContainerListForDataclass:(id)arg1 isUserRequested:(BOOL)arg2;
 - (BOOL)refreshContainerListForDataclass:(id)arg1;
+- (BOOL)refreshContainerWithIdentifier:(id)arg1 forDataclass:(id)arg2 isUserRequested:(BOOL)arg3;
 - (BOOL)refreshContainerWithIdentifier:(id)arg1 forDataclass:(id)arg2;
+- (BOOL)refreshContainersForDataclass:(id)arg1 isUserRequested:(BOOL)arg2;
 - (BOOL)refreshContainersForDataclass:(id)arg1;
 - (void)removeAccountPropertyForKey:(id)arg1;
 - (void)renewAccountCredentialsWithHandler:(id)arg1;
@@ -82,6 +91,7 @@
 - (void)setEnabled:(BOOL)arg1 forDataclass:(id)arg2;
 - (void)setEnabledForDataclasses:(id)arg1;
 - (void)setFullAccount:(id)arg1;
+- (void)setOriginalProperties:(id)arg1;
 - (void)setParentAccount:(id)arg1;
 - (id)shortTypeString;
 - (id)subscribedCalendarRecords;

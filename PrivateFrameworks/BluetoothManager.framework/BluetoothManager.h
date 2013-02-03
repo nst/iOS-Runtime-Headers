@@ -26,8 +26,10 @@
 - (struct BTAccessoryManagerImpl { }*)_accessoryManager;
 - (BOOL)_attach:(id)arg1;
 - (void)_cleanup:(BOOL)arg1;
+- (void)_connectabilityChanged;
 - (void)_connectedStatusChanged;
-- (BOOL)_isConnectedToNonSensorDevice;
+- (void)_discoveryStateChanged;
+- (BOOL)_onlySensorsConnected;
 - (void)_postNotification:(id)arg1;
 - (void)_postNotificationWithArray:(id)arg1;
 - (void)_powerChanged;
@@ -57,10 +59,13 @@
 - (BOOL)enabled;
 - (void)endVoiceCommand:(id)arg1;
 - (id)init;
+- (BOOL)isAnyoneScanning;
 - (BOOL)isDiscoverable;
 - (BOOL)isServiceSupported:(unsigned int)arg1;
 - (int)localDeviceSupportsService:(unsigned int)arg1;
+- (id)pairedDevices:(BOOL)arg1;
 - (id)pairedDevices;
+- (id)pairedLEDevices;
 - (void)postNotification:(id)arg1;
 - (void)postNotificationName:(id)arg1 object:(id)arg2 error:(id)arg3;
 - (void)postNotificationName:(id)arg1 object:(id)arg2;
@@ -72,7 +77,6 @@
 - (void)sendAllContactsToDevice:(id)arg1;
 - (void)sendContact:(id)arg1 toDevice:(id)arg2;
 - (void)setAudioConnected:(BOOL)arg1;
-- (void)setAuthorizedServices:(unsigned int)arg1 forDevice:(id)arg2;
 - (void)setConnectable:(BOOL)arg1;
 - (void)setDevicePairingEnabled:(BOOL)arg1;
 - (void)setDeviceScanningEnabled:(BOOL)arg1;

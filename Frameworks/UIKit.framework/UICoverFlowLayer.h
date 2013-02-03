@@ -6,8 +6,6 @@
     void *_private;
 }
 
-+ (void)_initializeSafeCategory;
-
 - (unsigned int)_coverAtScreenPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_notifySelectionDidChange;
 - (void)_prefetch:(unsigned int)arg1 atIndex:(unsigned int)arg2;

@@ -15,6 +15,8 @@
     unsigned int mFlipX : 1;
     unsigned int mFlipY : 1;
     } mBounds;
+    int mModeX;
+    int mModeY;
     float mRotation;
 }
 
@@ -37,5 +39,9 @@
 - (void)setFlipY:(BOOL)arg1;
 - (void)setOrientedBounds:(id)arg1;
 - (void)setRotation:(float)arg1;
+- (void)setXMode:(int)arg1;
+- (void)setYMode:(int)arg1;
+- (int)xMode;
+- (int)yMode;
 
 @end

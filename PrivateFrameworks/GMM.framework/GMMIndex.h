@@ -10,7 +10,7 @@
 }
 
 @property int face;
-@property(readonly) BOOL hasFace;
+@property BOOL hasFace;
 @property int tileXIndex;
 @property int tileYIndex;
 
@@ -19,9 +19,9 @@
 - (id)dictionaryRepresentation;
 - (int)face;
 - (BOOL)hasFace;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (void)setFace:(int)arg1;
+- (void)setHasFace:(BOOL)arg1;
 - (void)setTileXIndex:(int)arg1;
 - (void)setTileYIndex:(int)arg1;
 - (int)tileXIndex;

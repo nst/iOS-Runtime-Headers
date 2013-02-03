@@ -12,6 +12,7 @@
 @property(readonly) NSString * mediaType;
 @property(readonly) SUMediaObject * nativeMediaObject;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 

@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
+@class NSMutableArray;
+
 @interface ADJavaScriptObject : NSObject {
     BOOL _busy;
+    NSMutableArray *_downloads;
 }
 
 @property(getter=isBusy) BOOL busy;
+@property(retain) NSMutableArray * downloads;
 
-+ (id)childClasses;
++ (void)initialize;
 + (void)initializeInContext:(struct OpaqueJSContext { }*)arg1;
 + (id)inputRequiredProperties;
 + (BOOL)isKeyExcludedFromWebScript:(const char *)arg1;
@@ -19,9 +23,13 @@
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
+- (void)adWillDismiss;
 - (id)attributeKeys;
+- (void)dealloc;
 - (id)description;
+- (id)downloads;
 - (BOOL)isBusy;
 - (void)setBusy:(BOOL)arg1;
+- (void)setDownloads:(id)arg1;
 
 @end

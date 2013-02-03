@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSHashTable, MKMapTileNormalizerView, <MKMapTileViewDelegate>, MKMapTileView, NSTimer, MKTilePathArray, MKTiledLayer, MKTrafficHighlightView;
+@class MKTrafficHighlightView, MKMapTileNormalizerView, <MKMapTileViewDelegate>, MKMapTileView, NSLock, GEOTileKeyList, MKTiledLayer, NSMutableSet, NSTimer;
 
 @interface MKMapTileViewImp : NSObject {
-    struct $_1157 { 
+    struct { 
         unsigned int canDrawOnMainThread : 1; 
         unsigned int canDisplayTraffic : 1; 
         unsigned int drawing : 1; 
@@ -14,6 +14,7 @@
         unsigned int shouldDisplayBaseTiles : 1; 
         unsigned int shouldDisplayTraffic : 1; 
         unsigned int shouldDisplayEffects : 1; 
+        unsigned int shouldReloadSynchronously : 1; 
         unsigned int delegateDidStartRendering : 1; 
         unsigned int delegateDidFinishRendering : 1; 
         unsigned int delegateDidStartLoading : 1; 
@@ -23,16 +24,20 @@
     <MKMapTileViewDelegate> *delegate;
     NSTimer *drawingExpirationTimer;
     } flags;
-    double lastTileRequestTime;
     MKTiledLayer *layer;
+    NSLock *loadingEnabledLock;
     unsigned int loadingTileCount;
     unsigned int mapType;
     MKMapTileNormalizerView *normalizerView;
-    MKTilePathArray *requestTiles;
-    NSHashTable *requesters;
+    unsigned short provider;
+    GEOTileKeyList *requestTiles;
+    NSLock *requestTilesLock;
+    NSMutableSet *requesters;
+    NSLock *requestersLock;
     float screenScale;
     NSTimer *tileExpirationTimer;
     NSTimer *tileRequestTimer;
+    NSLock *tileRequestTimerLock;
     MKTrafficHighlightView *trafficHighlightView;
     MKMapTileView *view;
 }

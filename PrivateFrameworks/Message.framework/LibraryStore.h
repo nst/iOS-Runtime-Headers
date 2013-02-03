@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MessageLibrary, NSMutableSet, MessageCriterion;
+@class NSMutableSet, MessageLibrary, NSDate, MessageCriterion;
 
 @interface LibraryStore : MailMessageStore {
     MessageCriterion *_criterion;
+    NSDate *_earliestReceivedDate;
     double _lastUpdated;
     MessageLibrary *_library;
     BOOL _mailboxUnreadCountUpdatePending;
@@ -15,6 +16,8 @@
     unsigned int _serverMessageCount;
     unsigned int _serverUnreadCount;
 }
+
+@property(retain) NSDate * earliestReceivedDate;
 
 + (id)_storeCacheMapTable;
 + (BOOL)createEmptyStoreForPath:(id)arg1;
@@ -41,19 +44,19 @@
 - (void)_flushAllCachesLocking:(BOOL)arg1;
 - (void)_flushAllMessageData;
 - (void)_handleFlagsChangedForMessages:(id)arg1 flags:(id)arg2 oldFlagsByMessage:(id)arg3;
-- (void)_newMessagesAvailable:(id)arg1;
 - (void)_rebuildTableOfContentsSynchronously;
 - (void)_setNeedsAutosave;
 - (void)_updateMailboxUnreadCount;
 - (void)addCountsForMessages:(id)arg1 shouldUpdateUnreadCount:(BOOL)arg2;
 - (BOOL)allowsAppend;
 - (int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3 newMessages:(id)arg4 flagsToSet:(id)arg5;
-- (id)bodyDataForMessage:(id)arg1 isComplete:(BOOL*)arg2 downloadIfNecessary:(BOOL)arg3;
+- (id)bodyDataForMessage:(id)arg1 isComplete:(BOOL*)arg2 isPartial:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
 - (BOOL)canCompact;
 - (void)compactMessages:(id)arg1;
 - (struct __CFSet { }*)copyLibraryIDsWithoutConversationHashes;
 - (id)copyMessagesMatchingCriterion:(id)arg1 options:(unsigned int)arg2;
 - (id)copyMessagesMatchingText:(id)arg1 options:(unsigned int)arg2;
+- (id)copyMessagesWithRemoteIDs:(id)arg1 options:(unsigned int)arg2;
 - (id)copyOfAllMessages;
 - (id)copyOfAllMessagesForBodyLoadingFromRowID:(unsigned int)arg1 limit:(unsigned int)arg2;
 - (id)copyOfAllMessagesWithOptions:(unsigned int)arg1;
@@ -67,12 +70,13 @@
 - (void)deleteMessages:(id)arg1 moveToTrash:(BOOL)arg2;
 - (void)deleteMessagesOlderThanNumberOfDays:(int)arg1 compact:(BOOL)arg2;
 - (void)doCompact;
+- (id)earliestReceivedDate;
 - (id)filterMessagesByMembership:(id)arg1;
 - (void)forceResync;
 - (id)fullBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4 usePartDatas:(BOOL)arg5;
 - (id)fullBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
 - (void)handleMessageFlagsChanged:(id)arg1;
-- (void)handleMessagesAdded:(id)arg1;
+- (void)handleMessagesAdded:(id)arg1 earliestReceivedDate:(id)arg2;
 - (void)handleMessagesCompacted:(id)arg1;
 - (BOOL)hasCompleteDataForMimePart:(id)arg1;
 - (BOOL)hasMessageForAccount:(id)arg1;
@@ -90,9 +94,8 @@
 - (id)messageWithLibraryID:(unsigned int)arg1;
 - (void)messagesAdded:(id)arg1;
 - (void)messagesCompacted:(id)arg1;
-- (void)messagesWereAdded:(id)arg1 forIncrementalLoading:(BOOL)arg2;
+- (void)messagesWereAdded:(id)arg1 forIncrementalLoading:(BOOL)arg2 earliestReceivedDate:(id)arg3;
 - (id)mutableCopyOfAllMessages;
-- (void)newMessagesAvailable:(id)arg1;
 - (unsigned int)nonDeletedCountIncludingServerSearch:(BOOL)arg1 andThreadSearch:(BOOL)arg2;
 - (void)openAsynchronouslyWithOptions:(unsigned int)arg1;
 - (void)openSynchronously;
@@ -100,6 +103,7 @@
 - (void)purgeMessagesBeyondLimit:(unsigned int)arg1 keepingMessage:(id)arg2;
 - (id)serverSearchResults;
 - (void)setData:(id)arg1 forMimePart:(id)arg2 isComplete:(BOOL)arg3;
+- (void)setEarliestReceivedDate:(id)arg1;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (id)setFlagsLocallyFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)setLibrary:(id)arg1;
@@ -109,6 +113,7 @@
 - (unsigned int)unreadCount;
 - (void)updateMetadata;
 - (void)updateUserInfoToLatestValues;
+- (void)willFetchMessages;
 - (void)writeUpdatedMessageDataToDisk;
 
 @end

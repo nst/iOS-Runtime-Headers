@@ -17,12 +17,12 @@
     NSSQLiteStatement *_commitStatement;
     struct sqlite3 { } *_db;
     NSString *_dbPathRegisteredWithBackupd;
+    unsigned long long _debugInode;
     void *_extraBuffersForRegisteredFunctions[5];
     struct sqlite3_stmt { } *_fetchPKStatement;
     NSSQLEntity *_finalEntity;
     NSSQLEntity *_lastEntity;
     unsigned int _lastEntityKey;
-    NSString *_pathname;
     NSMutableDictionary *_pragmaSettings;
     NSSQLiteStatement *_rollbackStatement;
     int _rowsProcessedCount;
@@ -34,11 +34,13 @@
     struct sqlite3_stmt { } *_vmstatement;
 }
 
-+ (BOOL)_destroyPersistentStoreAtURL:(id)arg1 error:(id*)arg2;
-+ (BOOL)_preflightDatabaseAtURL:(id)arg1;
++ (void)__INode_Changed_AllThatIsLeftToUsIsHonor__;
++ (const char *)_databaseOpenURLStringForURL:(id)arg1;
++ (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
++ (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id*)arg5;
 + (void)_setDebugFlags:(int)arg1;
 + (void)initialize;
-+ (int)readMagicWordFromFD:(int)arg1;
++ (int)readMagicWordFromPath:(const char *)arg1;
 
 - (id)_adapter;
 - (void)_bindVariablesWithDeletedRow:(id)arg1;
@@ -53,8 +55,9 @@
 - (void)_configureAutoVacuum;
 - (void)_configureIntegrityCheck;
 - (void)_configurePageSize;
-- (void)_configurePragmaOptions;
+- (void)_configurePragmaOptions:(int)arg1;
 - (void)_configureSynchronousMode;
+- (void)_configureUbiquityMetadataTable;
 - (void)_ensureDatabaseOpen;
 - (void)_ensureNoFetchInProgress;
 - (void)_ensureNoStatementPrepared;
@@ -70,6 +73,8 @@
 - (int)_rowsChangedByLastExecute;
 - (void)_setupVacuumIfNecessary;
 - (struct sqlite3_stmt { }*)_vmstatement;
+- (void)addPeerRangeForPeerID:(id)arg1 entityName:(id)arg2 rangeStart:(id)arg3 rangeEnd:(id)arg4 peerRangeStart:(id)arg5 peerRangeEnd:(id)arg6;
+- (id)allPeerRanges;
 - (void)beginTransaction;
 - (void)cacheCurrentDBStatementOn:(id)arg1;
 - (void)cacheUpdateStatement:(id)arg1 forEntity:(id)arg2 andDeltasMask:(struct __CFBitVector { }*)arg3;
@@ -87,9 +92,10 @@
 - (void)endPrimaryKeyGeneration;
 - (void)execute;
 - (long long)fetchMaxPrimaryKeyForEntity:(id)arg1;
-- (int)fetchResultSet:(void*)arg1 usingFetchPlan:(void*)arg2;
+- (int)fetchResultSet:(void*)arg1 usingFetchPlan:(id)arg2;
 - (id)fetchTableCreationSQL;
 - (id)fetchTableNames;
+- (id)fetchUbiqiutyKnowledgeVector;
 - (void)finalize;
 - (long long)generatePrimaryKeysForEntity:(id)arg1 batch:(unsigned int)arg2;
 - (void)handleCorruptedDB:(id)arg1;
@@ -99,6 +105,7 @@
 - (void)insertCorrelation:(id)arg1;
 - (void)insertRow:(id)arg1;
 - (BOOL)isFetchInProgress;
+- (BOOL)isLocalFS;
 - (BOOL)isOpen;
 - (id)newFetchedArray;
 - (BOOL)performIntegrityCheck;
@@ -109,7 +116,10 @@
 - (void)resetSQLStatement;
 - (void)rollbackTransaction;
 - (void)setExclusiveLockingMode:(BOOL)arg1;
+- (void)updateCorrelation:(id)arg1;
 - (void)updateRow:(id)arg1;
+- (void)updateUbiquityKnowledgeForPeerWithID:(id)arg1 andTransactionNumber:(id)arg2;
+- (void)updateUbiquityKnowledgeVector:(id)arg1;
 - (void)willCreateSchema;
 
 @end

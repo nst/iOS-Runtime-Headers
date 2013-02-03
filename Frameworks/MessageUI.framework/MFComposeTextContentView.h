@@ -3,15 +3,22 @@
  */
 
 @interface MFComposeTextContentView : UITextContentView {
+    struct CGPoint { 
+        float x; 
+        float y; 
+    BOOL _keepScrollPosition;
     BOOL _preventScrollSelectionToVisible;
+    } _scrollPosition;
 }
 
-+ (void)_initializeSafeCategory;
-
-- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
-- (id)accessibilityLabel;
 - (BOOL)becomeFirstResponder;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (void)decreaseQuoteLevel;
+- (id)enclosingScrollView;
 - (void)ensureSelection;
+- (void)increaseQuoteLevel;
+- (void)quoteLevelMenu;
+- (BOOL)resignFirstResponder;
 - (void)scrollSelectionToVisible:(BOOL)arg1;
 - (id)supportedPasteboardTypesForCurrentSelection;
 

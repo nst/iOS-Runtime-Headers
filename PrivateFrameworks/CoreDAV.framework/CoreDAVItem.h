@@ -19,13 +19,11 @@
 @property(retain) NSData * payload;
 
 - (id)attributes;
+- (id)childrenToWrite;
 - (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
 - (id)extraChildItems;
-- (void)generateItemTreeString:(id)arg1 withDepth:(unsigned int)arg2;
-- (id)generateItemTreeString;
-- (id)generateStandardItemStringWithDepth:(unsigned int)arg1;
 - (id)generateXMLString;
 - (id)hashString;
 - (id)init;

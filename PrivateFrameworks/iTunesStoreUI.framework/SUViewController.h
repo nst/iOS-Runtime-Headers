@@ -4,8 +4,9 @@
 
 @class SURotationController, SUViewControllerFactory, SUViewControllerScriptProperties, NSMutableArray, SUNavigationItem, SUViewControllerContext, NSString, UIViewController;
 
-@interface SUViewController : UIViewController <ISOperationDelegate> {
+@interface SUViewController : UIViewController <SUScriptNativeObject, ISOperationDelegate> {
     SUViewControllerScriptProperties *_cachedScriptProperties;
+    BOOL _canBeWeakScriptReference;
     NSMutableArray *_cancelOnDeallocOperations;
     BOOL _excludeFromNavigationHistory;
     UIViewController *_footerViewController;
@@ -27,10 +28,9 @@
 @property(readonly) UIViewController * footerViewController;
 @property(retain) UIViewController * inputAccessoryViewController;
 @property(getter=isLoading) BOOL loading;
-@property(retain,readonly) SUNavigationItem * navigationItem;
+@property(readonly) SUNavigationItem * navigationItem;
 @property BOOL shouldExcludeFromNavigationHistory;
 @property BOOL shouldInvalidateForMemoryPurge;
-@property(readonly) int statusBarStyle;
 @property(readonly) SUViewControllerFactory * viewControllerFactory;
 @property(getter=isVisible,readonly) BOOL visible;
 @property(getter=isVisibleAndFrontmost,readonly) BOOL visibleAndFrontmost;
@@ -56,15 +56,16 @@
 - (void)applicationDidResume;
 - (void)applicationWillEnterForeground;
 - (void)applicationWillSuspend;
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
 - (void)cancelOperations;
+- (BOOL)clearsWeakScriptReferences;
 - (id)copyArchivableContext;
 - (id)copyChildViewControllersForReason:(int)arg1;
 - (id)copyDefaultScriptProperties;
 - (id)copyScriptProperties;
 - (void)dealloc;
-- (id)defaultFirstResponder;
 - (double)defaultPNGExpirationTime;
 - (id)defaultPNGName;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
@@ -109,7 +110,6 @@
 - (void)setTitle:(id)arg1;
 - (BOOL)shouldExcludeFromNavigationHistory;
 - (BOOL)shouldInvalidateForMemoryPurge;
-- (int)statusBarStyle;
 - (void)storePageProtocolDidChange;
 - (void)trackOperation:(id)arg1 cancelOnDealloc:(BOOL)arg2;
 - (id)viewControllerFactory;

@@ -16,6 +16,11 @@
 - (int)modalPresentationStyle;
 - (BOOL)navigationBarIsTranslucent;
 - (int)navigationBarStyle;
+- (id)searchResultsTableSeparatorBottomShadowColor;
+- (id)searchResultsTableSeparatorColor;
+- (int)searchResultsTableSeparatorStyle;
+- (id)searchResultsTableSeparatorTopShadowColor;
+- (BOOL)styleUsesCustomSearchResultsStyle;
 - (BOOL)styleUsesCustomSeparatorStyle;
 - (BOOL)styleUsesCustomTableStyle;
 - (id)tableBackgroundColor;

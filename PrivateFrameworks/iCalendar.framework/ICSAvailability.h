@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class ICSUserAddress, ICSDate, NSString, ICSDuration, NSURL;
+@class ICSDate, ICSUserAddress, NSString, ICSDuration, NSURL;
 
 @interface ICSAvailability : ICSComponent {
 }

@@ -7,17 +7,19 @@
 @interface MPMediaChapterTimeMarker : MPTimeMarker {
     unsigned int _chapterIndex;
     NSArray *_chapters;
-    BOOL _triedToLoadThumbnail;
+    BOOL _hasArtworkAtPlaybackTime;
 }
 
 @property unsigned int chapterIndex;
 @property(retain) NSArray * chapters;
+@property BOOL hasArtworkAtPlaybackTime;
 
 - (unsigned int)chapterIndex;
 - (id)chapters;
 - (void)dealloc;
+- (BOOL)hasArtworkAtPlaybackTime;
 - (void)setChapterIndex:(unsigned int)arg1;
 - (void)setChapters:(id)arg1;
-- (id)thumbnail;
+- (void)setHasArtworkAtPlaybackTime:(BOOL)arg1;
 
 @end

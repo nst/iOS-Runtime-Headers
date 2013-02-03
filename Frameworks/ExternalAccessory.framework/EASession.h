@@ -7,6 +7,7 @@
 @interface EASession : NSObject {
     EAAccessory *_accessory;
     NSInputStream *_inputStream;
+    BOOL _openCompleted;
     NSOutputStream *_outputStream;
     NSString *_protocolString;
     unsigned int _sessionID;
@@ -17,15 +18,19 @@
 @property(readonly) NSOutputStream * outputStream;
 @property(readonly) NSString * protocolString;
 
+- (void)_endStreams;
 - (unsigned int)_sessionID;
 - (id)_shortDescription;
+- (void)_streamClosed;
 - (id)accessory;
 - (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)initWithAccessory:(id)arg1 forProtocol:(id)arg2;
 - (id)inputStream;
+- (BOOL)isOpenCompleted;
 - (id)outputStream;
 - (id)protocolString;
+- (void)setOpenCompleted:(BOOL)arg1;
 
 @end

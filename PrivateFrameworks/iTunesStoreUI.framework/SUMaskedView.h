@@ -10,10 +10,7 @@
 
 @property(retain) SUMaskProvider * maskProvider;
 
-+ (void)_initializeSafeCategory;
-
 - (void)_reloadMask;
-- (BOOL)accessibilityTreeHidden;
 - (struct CGPath { }*)copyMaskPath;
 - (void)dealloc;
 - (id)maskProvider;

@@ -4,22 +4,26 @@
 
 @class NSURLAuthenticationChallengeInternal;
 
-@interface NSURLAuthenticationChallenge : NSObject {
+@interface NSURLAuthenticationChallenge : NSObject <NSCoding> {
     NSURLAuthenticationChallengeInternal *_internal;
 }
 
-+ (id)_authenticationChallengeForCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
++ (id)_createAuthenticationChallengeForCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
 
 - (struct _CFURLAuthChallenge { }*)_createCFAuthChallenge;
+- (id)_initWithCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)error;
 - (id)failureResponse;
 - (id)init;
 - (id)initWithAuthenticationChallenge:(id)arg1 sender:(id)arg2;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithProtectionSpace:(id)arg1 proposedCredential:(id)arg2 previousFailureCount:(int)arg3 failureResponse:(id)arg4 error:(id)arg5 sender:(id)arg6;
 - (int)previousFailureCount;
 - (id)proposedCredential;
 - (id)protectionSpace;
 - (id)sender;
+- (void)setSender:(id)arg1;
 
 @end

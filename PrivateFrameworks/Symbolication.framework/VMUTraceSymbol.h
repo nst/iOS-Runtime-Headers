@@ -10,7 +10,7 @@
 @class NSString;
 
 @interface VMUTraceSymbol : NSObject {
-    unsigned int address;
+    unsigned long long address;
     NSString *filename;
     NSString *library;
     int lineNumber;
@@ -19,7 +19,7 @@
 
 - (id)filename;
 - (id)initWithCString:(char *)arg1 length:(long)arg2 withLine:(int)arg3;
-- (id)initWithPC:(unsigned int)arg1 withSymbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
+- (id)initWithPC:(unsigned long long)arg1 withSymbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
 - (id)library;
 - (int)lineNumber;
 - (id)name;

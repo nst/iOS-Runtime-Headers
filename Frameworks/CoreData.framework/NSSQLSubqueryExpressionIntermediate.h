@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLEntity, NSSQLFetchIntermediate, NSMutableString, NSMutableArray, NSSQLColumn, NSExpression, NSString, NSSQLJoinIntermediate;
+@class NSSQLEntity, NSSQLFetchIntermediate, NSMutableString, NSMutableArray, NSSQLColumn, NSExpression, NSString;
 
 @interface NSSQLSubqueryExpressionIntermediate : NSSQLExpressionIntermediate {
-    BOOL _allowMoreToMany;
-    BOOL _allowTrailingKeypath;
     NSSQLFetchIntermediate *_fetchIntermediate;
     NSSQLEntity *_governingEntityForVariable;
+    BOOL _hasTrailingFunction;
     BOOL _isCount;
     NSMutableArray *_keypathsToPromote;
     BOOL _onlyTrailIsCount;
@@ -16,12 +15,13 @@
     NSMutableString *_selectFromCorrelationTarget;
     NSSQLEntity *_selectFromEntity;
     BOOL _subqueryHasTruePredicate;
+    NSString *_targetAlias;
+    NSSQLColumn *_targetColumn;
     NSExpression *_trailingKeypath;
     BOOL _useDistinct;
     NSString *_variableAlias;
     NSSQLColumn *_variableColumn;
     NSExpression *_variableExpression;
-    NSSQLJoinIntermediate *_variableJoin;
 }
 
 - (void)_createCollectionJoinsForFetchInContext:(id)arg1;

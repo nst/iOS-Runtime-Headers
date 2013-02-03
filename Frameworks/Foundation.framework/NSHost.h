@@ -2,15 +2,16 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray;
+@class __NSHostExtraIvars, NSArray;
 
 @interface NSHost : NSObject {
     NSArray *addresses;
     NSArray *names;
-    void *reserved;
+    id reserved;
 }
 
-+ (void)_fixNSHostLeak;
+@property __NSHostExtraIvars * reserved;
+
 + (id)currentHost;
 + (void)flushHostCache;
 + (id)hostWithAddress:(id)arg1;
@@ -18,13 +19,20 @@
 + (BOOL)isHostCacheEnabled;
 + (void)setHostCacheEnabled:(BOOL)arg1;
 
+- (void)__resolveWithFlags:(int)arg1 resultArray:(id)arg2 handler:(id)arg3;
 - (id)address;
 - (id)addresses;
+- (void)blockingResolveUntil:(int)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)initToResolve:(id)arg1 as:(int)arg2;
 - (BOOL)isEqualToHost:(id)arg1;
 - (id)localizedName;
 - (id)name;
 - (id)names;
+- (id)reserved;
+- (void)resolve:(id)arg1;
+- (void)resolveCurrentHostWithHandler:(id)arg1;
+- (void)setReserved:(id)arg1;
 
 @end

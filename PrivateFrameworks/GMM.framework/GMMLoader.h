@@ -7,16 +7,16 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSThread, NSMutableData, NSDictionary, NSURLConnection;
+@class NSURLConnection, NSMutableData, NSThread;
 
-@interface GMMLoader : NSObject {
-    unsigned int _bodyOffset;
+@interface GMMLoader : NSObject <NSURLConnectionDelegate> {
+    unsigned long _bodyOffset;
     NSURLConnection *_connection;
     NSMutableData *_data;
     BOOL _needsCancel;
     BOOL _readPreamble;
     struct Requester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; } *_requester;
-    struct Response { int (**x1)(); NSDictionary *x2; } *_response;
+    struct Response { int (**x1)(); id x2; } *_response;
     NSThread *_thread;
 }
 

@@ -2,16 +2,13 @@
    Image: /usr/lib/libobjc.A.dylib
  */
 
-@interface Protocol : Object <NSObject> {
-    struct objc_method_description_list { } *class_methods;
-    struct objc_method_description_list { } *instance_methods;
-    struct objc_protocol_list { } *protocol_list;
-    char *protocol_name;
+@interface Protocol : NSObject <NSObject> {
 }
 
 + (id)autorelease;
 + (Class)class;
 + (BOOL)conformsToProtocol:(id)arg1;
++ (id)debugDescription;
 + (id)description;
 + (unsigned int)hash;
 + (void)initialize;
@@ -35,6 +32,7 @@
 - (Class)class;
 - (BOOL)conformsTo:(id)arg1;
 - (BOOL)conformsToProtocol:(id)arg1;
+- (id)debugDescription;
 - (id)description;
 - (struct objc_method_description { SEL x1; char *x2; }*)descriptionForClassMethod:(SEL)arg1;
 - (struct objc_method_description { SEL x1; char *x2; }*)descriptionForInstanceMethod:(SEL)arg1;

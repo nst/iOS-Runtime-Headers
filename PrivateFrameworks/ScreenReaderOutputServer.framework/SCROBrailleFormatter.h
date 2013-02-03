@@ -20,6 +20,7 @@
     struct __CFDictionary { } *_tokenDictionary;
 }
 
+- (void)addText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 token:(int)arg4 focused:(BOOL)arg5;
 - (void)addText:(id)arg1 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 token:(int)arg3 focused:(BOOL)arg4;
 - (BOOL)anyUnread;
 - (id)appToken;

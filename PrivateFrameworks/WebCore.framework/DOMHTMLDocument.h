@@ -22,6 +22,8 @@
 @property(copy) NSString * vlinkColor;
 @property(readonly) int width;
 
++ (id)mf_listElements;
+
 - (id)_createDocumentFragmentWithMarkupString:(id)arg1 baseURLString:(id)arg2;
 - (id)_createDocumentFragmentWithText:(id)arg1;
 - (id)activeElement;
@@ -40,6 +42,7 @@
 - (BOOL)hasFocus;
 - (int)height;
 - (id)linkColor;
+- (id)mf_createMessageQuoteElement;
 - (void)open;
 - (id)plugins;
 - (void)releaseEvents;

@@ -6,11 +6,13 @@
 
 @interface UIWebFormAccessory : UIToolbar {
     UIBarButtonItem *_autofill;
+    UIBarButtonItem *_clearButton;
     UISegmentedControl *_tab;
     <UIWebFormAccessoryDelegate> *delegate;
 }
 
 @property(retain) UIBarButtonItem * _autofill;
+@property(retain) UIBarButtonItem * _clearButton;
 @property(retain) UISegmentedControl * _tab;
 @property(getter=isAutoFillEnabled) BOOL autoFillEnabled;
 @property <UIWebFormAccessoryDelegate> * delegate;
@@ -18,10 +20,12 @@
 @property(getter=isPreviousEnabled) BOOL previousEnabled;
 
 - (id)_autofill;
+- (id)_clearButton;
 - (void)_orientationDidChange:(id)arg1;
 - (id)_tab;
 - (void)_updateFrame;
 - (void)autoFill:(id)arg1;
+- (void)clear:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)done:(id)arg1;
@@ -30,10 +34,13 @@
 - (BOOL)isNextEnabled;
 - (BOOL)isPreviousEnabled;
 - (void)setAutoFillEnabled:(BOOL)arg1;
+- (void)setAutoFillVisible:(BOOL)arg1;
+- (void)setClearVisible:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNextEnabled:(BOOL)arg1;
 - (void)setPreviousEnabled:(BOOL)arg1;
 - (void)set_autofill:(id)arg1;
+- (void)set_clearButton:(id)arg1;
 - (void)set_tab:(id)arg1;
 - (void)tab:(id)arg1;
 

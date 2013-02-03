@@ -2,18 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class <CoreDAVTaskDelegate>, NSString;
+@class NSString;
 
 @interface CoreDAVSyncReportTask : CoreDAVPropertyFindBaseTask {
     BOOL _moreToSync;
-    NSString *_newSyncToken;
+    NSString *_nextSyncToken;
     NSString *_previousSyncToken;
     BOOL _wasInvalidSyncToken;
 }
 
-@property <CoreDAVTaskDelegate> * delegate;
 @property(readonly) BOOL moreToSync;
-@property(readonly) NSString * newSyncToken;
+@property(readonly) NSString * nextSyncToken;
 @property(readonly) BOOL wasInvalidSyncToken;
 
 - (id)copyDefaultParserForContentType:(id)arg1;
@@ -23,7 +22,7 @@
 - (id)httpMethod;
 - (id)initWithPropertiesToFind:(id)arg1 atURL:(id)arg2 withDepth:(int)arg3 previousSyncToken:(id)arg4;
 - (BOOL)moreToSync;
-- (id)newSyncToken;
+- (id)nextSyncToken;
 - (id)notFoundHREFs;
 - (id)requestBody;
 - (BOOL)wasInvalidSyncToken;

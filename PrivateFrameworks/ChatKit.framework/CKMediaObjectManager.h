@@ -13,6 +13,7 @@
 - (void)_registerAllMediaTypes;
 - (void)dealloc;
 - (Class)mediaObjectClassForMIMEType:(id)arg1;
+- (Class)mediaObjectClassForPath:(id)arg1;
 - (id)newMediaObjectForData:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3;
 - (id)newMediaObjectForFilename:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3;
 

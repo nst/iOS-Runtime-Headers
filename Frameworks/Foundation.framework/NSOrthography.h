@@ -30,5 +30,6 @@
 - (id)languageMap;
 - (id)languagesForScript:(id)arg1;
 - (unsigned int)orthographyFlags;
+- (id)replacementObjectForPortCoder:(id)arg1;
 
 @end

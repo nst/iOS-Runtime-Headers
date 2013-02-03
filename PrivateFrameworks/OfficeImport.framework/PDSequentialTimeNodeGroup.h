@@ -2,7 +2,40 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+@class NSString, PDAnimationTargetElement;
+
 @interface PDSequentialTimeNodeGroup : PDCommonTimeNodeData {
 }
+
+@property double delay;
+@property double direction;
+@property(retain) NSString * groupId;
+@property int iterateType;
+@property int presetClass;
+@property int presetId;
+@property(retain) PDAnimationTargetElement * targetElement;
+@property int triggerType;
+
++ (id)createSequentialTimeNodeGroupForAnimationInfo;
+
+- (double)delay;
+- (double)direction;
+- (id)groupId;
+- (int)iterateType;
+- (id)level1ParallelTimeNodeGroup;
+- (id)level2ParallelTimeNodeGroup;
+- (id)level3SetBehavior;
+- (int)presetClass;
+- (int)presetId;
+- (void)setDelay:(double)arg1;
+- (void)setDirection:(double)arg1;
+- (void)setGroupId:(id)arg1;
+- (void)setIterateType:(int)arg1;
+- (void)setPresetClass:(int)arg1;
+- (void)setPresetId:(int)arg1;
+- (void)setTargetElement:(id)arg1;
+- (void)setTriggerType:(int)arg1;
+- (id)targetElement;
+- (int)triggerType;
 
 @end

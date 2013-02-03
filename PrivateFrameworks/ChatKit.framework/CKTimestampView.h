@@ -4,7 +4,7 @@
 
 @class UILabel;
 
-@interface CKTimestampView : UITableViewCell {
+@interface CKTimestampView : CKTranscriptCell {
     UILabel *_label;
 }
 

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWindow, UIPrintPanelTableViewController, UIPrintInteractionController, PKPrinter, UIViewController, UIPopoverController, UINavigationController;
+@class UIPrintPaper, UIWindow, UIPrintPanelTableViewController, UIPrintInteractionController, PKPrinter, UIViewController, UIPopoverController, UINavigationController, NSArray;
 
 @interface UIPrintPanelViewController : NSObject {
     BOOL _animated;
@@ -10,6 +10,7 @@
     UINavigationController *_navigationController;
     BOOL _observingRotation;
     UIViewController *_parentController;
+    BOOL _parentHasNoPopover;
     UIPopoverController *_poverController;
     UIPrintInteractionController *_printInteractionController;
     PKPrinter *_printer;
@@ -20,12 +21,13 @@
 @property int copies;
 @property BOOL duplex;
 @property(readonly) int pageCount;
-@property struct _NSRange { unsigned int location; unsigned int length; } pageRange;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } pageRange;
+@property(retain) UIPrintPaper * paper;
+@property(readonly) NSArray * paperList;
 @property(retain) PKPrinter * printer;
 @property(readonly) BOOL showDuplex;
 @property(readonly) BOOL showPageRange;
-
-+ (void)_initializeSafeCategory;
+@property(readonly) BOOL showPaper;
 
 - (void)_keyWindowWillRotate:(id)arg1;
 - (void)_presentInParentAnimated:(BOOL)arg1;
@@ -40,6 +42,8 @@
 - (id)initWithPrintInterationController:(id)arg1 inParentController:(id)arg2;
 - (int)pageCount;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })pageRange;
+- (id)paper;
+- (id)paperList;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)presentPrintPanelAnimated:(BOOL)arg1;
 - (void)presentPrintPanelFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
@@ -48,10 +52,12 @@
 - (void)setCopies:(int)arg1;
 - (void)setDuplex:(BOOL)arg1;
 - (void)setPageRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setPaper:(id)arg1;
 - (void)setPrinter:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)showDuplex;
 - (BOOL)showPageRange;
+- (BOOL)showPaper;
 - (void)startPrinting;
 
 @end

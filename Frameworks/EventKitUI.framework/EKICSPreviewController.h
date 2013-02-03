@@ -7,7 +7,9 @@
 @interface EKICSPreviewController : NSObject {
     BOOL _allowsEditing;
     BOOL _allowsImport;
+    BOOL _allowsInvalidProperties;
     BOOL _allowsSubitems;
+    BOOL _allowsToDos;
     UIViewController *_contentViewController;
     EKEventViewController *_currentImport;
     EKEventStore *_eventStore;
@@ -18,7 +20,9 @@
 
 @property BOOL allowsEditing;
 @property BOOL allowsImport;
+@property BOOL allowsInvalidProperties;
 @property BOOL allowsSubitems;
+@property BOOL allowsToDos;
 @property(readonly) BOOL isImporting;
 @property <EKICSPreviewControllerDelegate> * previewDelegate;
 @property(readonly) int totalEventCount;
@@ -27,9 +31,11 @@
 - (void)_databaseChanged:(id)arg1;
 - (BOOL)allowsEditing;
 - (BOOL)allowsImport;
+- (BOOL)allowsInvalidProperties;
 - (BOOL)allowsSubitems;
-- (void)calendarChooserCanceled:(id)arg1;
-- (void)calendarChooserDone:(id)arg1;
+- (BOOL)allowsToDos;
+- (void)calendarChooserDidCancel:(id)arg1;
+- (void)calendarChooserDidFinish:(id)arg1;
 - (void)dealloc;
 - (id)detailViewForEvent:(id)arg1 eventInRealStore:(BOOL)arg2;
 - (void)eventViewControllerDidRequestAddToCalendar:(id)arg1;
@@ -38,7 +44,9 @@
 - (void)importAllIntoCalendar:(id)arg1;
 - (void)importAllRequested:(id)arg1;
 - (void)importEventFromController:(id)arg1 intoCalendar:(id)arg2;
+- (id)initWithData:(id)arg1 eventStore:(id)arg2 options:(unsigned int)arg3;
 - (id)initWithData:(id)arg1 eventStore:(id)arg2;
+- (id)initWithURL:(id)arg1 eventStore:(id)arg2 options:(unsigned int)arg3;
 - (id)initWithURL:(id)arg1 eventStore:(id)arg2;
 - (BOOL)isImporting;
 - (id)popoverContentController;
@@ -46,7 +54,9 @@
 - (id)previewDelegate;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (void)setAllowsImport:(BOOL)arg1;
+- (void)setAllowsInvalidProperties:(BOOL)arg1;
 - (void)setAllowsSubitems:(BOOL)arg1;
+- (void)setAllowsToDos:(BOOL)arg1;
 - (void)setPreviewDelegate:(id)arg1;
 - (int)totalEventCount;
 - (int)unimportedEventCount;

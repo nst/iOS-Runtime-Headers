@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutput.framework/ScreenReaderOutput
  */
 
-@class NSMutableAttributedString, NSData, NSLock, SCROConnection, NSAttributedString;
+@class SCRCTargetSelectorTimer, NSMutableAttributedString, NSData, NSLock, SCROConnection, NSAttributedString;
 
-@interface SCROBrailleClient : NSObject {
+@interface SCROBrailleClient : SCRCThreadedWeakLinkedObject {
     NSData *_aggregatedStatusCache;
     NSData *_aggregatedStatusPending;
     SCROConnection *_connection;
+    SCRCTargetSelectorTimer *_deathTimer;
     id _delegate;
     BOOL _delegateWantsKeypresses;
     BOOL _displayDescriptorCallbackEnabled;
@@ -17,20 +18,18 @@
     NSAttributedString *_mainStringCache;
     NSMutableAttributedString *_mainStringPending;
     BOOL _needsDisplay;
-    int _statusSize;
     BOOL _wantsDisconnectMessage;
     BOOL _wantsDisplayConfigurationChanged;
     BOOL _wantsReconnectMessage;
 }
 
+- (void)_deathTimerHandler;
 - (void)_deviceConnected:(id)arg1;
 - (id)_getWorkingString;
-- (BOOL)_isReady;
 - (id)_lazyConnection;
 - (void)_refreshAfterReconnect;
 - (void)_registerDelegate;
 - (void)_setupDeviceDetection;
-- (void)_tryToKillConnection;
 - (id)aggregatedStatus;
 - (int)contractionMode;
 - (void)dealloc;
@@ -44,7 +43,9 @@
 - (void)handleCallback:(id)arg1;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
+- (void)invalidateThreadsWithWeakLinks;
 - (BOOL)isConfigured;
+- (BOOL)isConnected;
 - (BOOL)keepConnectionAlive;
 - (void)loadDisplayWithBluetoothDeviceAddress:(id)arg1;
 - (id)mainAttributedString;

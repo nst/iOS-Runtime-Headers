@@ -4,7 +4,7 @@
 
 @class <UIWebSelectedItemPrivate>, DOMHTMLSelectElement, NSArray;
 
-@interface UIWebSelectPicker : UIPickerView <UIWebSelectControl, UIPickerViewDataSource, UIPickerViewDelegate> {
+@interface UIWebSelectPicker : UIPickerView <UIWebFormControl, UIPickerViewDataSource, UIPickerViewDelegate> {
     NSArray *_cachedItems;
     float _fontSize;
     float _layoutWidth;
@@ -12,15 +12,13 @@
     DOMHTMLSelectElement *_selectionNode;
     unsigned int _singleSelectionIndex;
     <UIWebSelectedItemPrivate> *_singleSelectionItem;
+    int _textAlignment;
 }
 
 @property(retain) NSArray * _cachedItems;
 @property(retain) DOMHTMLSelectElement * _selectionNode;
 @property(retain) <UIWebSelectedItemPrivate> * _singleSelectionItem;
 
-+ (void)_initializeSafeCategory;
-
-- (BOOL)_accessibilityServesAsFirstElement;
 - (id)_cachedItems;
 - (id)_selectionNode;
 - (id)_singleSelectionItem;
@@ -33,7 +31,6 @@
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
 - (void)pickerView:(id)arg1 row:(int)arg2 column:(int)arg3 checked:(BOOL)arg4;
 - (id)pickerView:(id)arg1 viewForRow:(int)arg2 forComponent:(int)arg3 reusingView:(id)arg4;
-- (void)pickerViewLoaded:(id)arg1;
 - (void)set_cachedItems:(id)arg1;
 - (void)set_selectionNode:(id)arg1;
 - (void)set_singleSelectionItem:(id)arg1;

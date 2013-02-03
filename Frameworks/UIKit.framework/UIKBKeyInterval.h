@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBKey;
+@class UIKBTree;
 
 @interface UIKBKeyInterval : NSObject {
     double _interval;
-    UIKBKey *_key;
+    UIKBTree *_key;
 }
 
 @property double interval;
-@property(retain) UIKBKey * key;
+@property(retain) UIKBTree * key;
 
 - (void)dealloc;
 - (id)initWithKey:(id)arg1 interval:(double)arg2;

@@ -29,7 +29,7 @@
 - (void)cancelSearch;
 - (void)clearIndex;
 - (BOOL)commitUpdates;
-- (void*)copyResultForIdentifier:(unsigned long long)arg1;
+- (void*)copyResultForIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)initWithDisplayIdentifier:(id)arg1 category:(id)arg2 version:(unsigned int)arg3;
 - (BOOL)nextSearchResults:(id*)arg1;

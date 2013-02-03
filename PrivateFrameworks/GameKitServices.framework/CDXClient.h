@@ -31,6 +31,7 @@
     id preblobCallback_;
     BOOL preblobIsUpToDate_;
     NSData *preblob_;
+    unsigned long long prevHolePunchSID_;
     struct dispatch_queue_s { } *queue_;
     struct __CFRunLoopSource { } *scDynamicStoreRunLoopSource_;
     struct __SCDynamicStore { } *scDynamicStore_;
@@ -60,6 +61,7 @@
 - (id)preblobCallback;
 - (struct dispatch_queue_s { }*)queue;
 - (void)resetHolepunchTimer;
+- (void)restart;
 - (void)sendHolePunch;
 - (BOOL)sendRaw:(id)arg1;
 - (void)setDelegate:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OAXTableStyleCache, OADFontScheme, OADColorMap, OCPPackagePart, OADColorScheme, NSMutableArray, OAVState, OADStyleMatrix, OAXClient, NSMutableDictionary, OADDrawingGroup;
+@class OAXTableStyleCache, OADFontScheme, OADColorMap, OCPPackagePart, OADColorScheme, NSMutableArray, OAVState, OADStyleMatrix, OAXClient, NSMutableDictionary, OADBlipCollection;
 
 @interface OAXDrawingState : NSObject {
     OAXClient *mClient;
@@ -17,8 +17,8 @@
     NSMutableDictionary *mSrcURLToTgtBulletBlipIndexMap;
     OADStyleMatrix *mStyleMatrix;
     OAXTableStyleCache *mTableStyleCache;
+    OADBlipCollection *mTgtBlipCollection;
     NSMutableArray *mTgtBulletBlips;
-    OADDrawingGroup *mTgtDrawingGroup;
 }
 
 - (id)blipRefForURL:(id)arg1;
@@ -45,10 +45,10 @@
 - (void)setPackagePart:(id)arg1;
 - (void)setStyleMatrix:(id)arg1;
 - (void)setTableStyleCache:(id)arg1;
+- (void)setTargetBlipCollection:(id)arg1;
 - (void)setTargetBulletBlipArray:(id)arg1;
-- (void)setTargetDrawingGroup:(id)arg1;
 - (id)styleMatrix;
 - (id)tableStyleCache;
-- (id)targetDrawingGroup;
+- (id)targetBlipCollection;
 
 @end

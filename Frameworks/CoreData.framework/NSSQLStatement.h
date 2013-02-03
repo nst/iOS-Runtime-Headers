@@ -17,11 +17,13 @@
 - (void)cacheFakeEntityForFetch:(id)arg1;
 - (void)clearCaches;
 - (void)dealloc;
+- (id)description;
 - (id)entity;
 - (id)fakeEntityForFetch;
 - (id)initWithEntity:(id)arg1 sqlString:(id)arg2;
 - (id)initWithEntity:(id)arg1;
 - (BOOL)isImpossibleCondition;
+- (BOOL)isReadOnly;
 - (void)removeAllBindVariables;
 - (void)setBindVariables:(id)arg1;
 - (void)setImpossibleCondition:(BOOL)arg1;

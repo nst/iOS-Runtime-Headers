@@ -2,94 +2,90 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSMutableArray, NSMutableDictionary, GKGameInviteMessageViewController, <GKFriendPickerViewControllerDelegate>, UILabel, UIView, UISearchBar, GKTableView, GKUITheme, GKImageBackgroundView, NSArray;
+@class NSArray, GKGameInviteMessageViewController, GKSectionArrayDataSource, <GKFriendPickerViewControllerDelegate>, GKMatchmakerNavView, GKFriendPickerListSection, GKUITheme, NSString, NSMutableDictionary, GKTableHeaderSearchController;
 
-@interface GKFriendPickerViewController : GKTableViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate> {
+@interface GKFriendPickerViewController : GKTableViewControllerV2 <GKGameInviteMessageViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate> {
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
-    NSArray *_allFriends;
-    NSMutableDictionary *_avatarImages;
-    GKImageBackgroundView *_backgroundView;
     <GKFriendPickerViewControllerDelegate> *_delegate;
     } _formSheetInsets;
-    GKTableView *_friendTable;
-    NSArray *_friends;
+    GKFriendPickerListSection *_friendListSection;
+    GKSectionArrayDataSource *_friendPickerDataSource;
+    NSString *_inviteMessage;
     BOOL _loadingFriendsFailed;
     int _maxPlayers;
     GKGameInviteMessageViewController *_messageViewController;
-    UILabel *_navPlayersLabel;
-    UILabel *_navTitleLabel;
-    UIView *_navView;
+    GKMatchmakerNavView *_navView;
     int _numSelected;
     NSMutableDictionary *_ranks;
-    UISearchBar *_searchBar;
-    NSMutableArray *_searchFriends;
+    GKTableHeaderSearchController *_searchController;
     GKUITheme *_theme;
 }
 
-@property(retain) NSMutableDictionary * avatarImages;
 @property <GKFriendPickerViewControllerDelegate> * delegate;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } formSheetInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } formSheetInsets;
+@property(retain) GKFriendPickerListSection * friendListSection;
+@property(retain) GKSectionArrayDataSource * friendPickerDataSource;
+@property(retain) NSString * inviteMessage;
 @property BOOL loadingFriendsFailed;
 @property int maxPlayers;
+@property(retain) GKMatchmakerNavView * navView;
+@property int numSelected;
 @property(retain) NSArray * pickableFriends;
 @property(retain) NSMutableDictionary * ranks;
+@property(retain) GKTableHeaderSearchController * searchController;
 @property(retain) GKUITheme * theme;
 
-- (id)avatarImages;
+- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
+- (id)contentsForItem:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)didReceiveMemoryWarning;
+- (void)didSelectPlayer:(id)arg1;
 - (void)done;
 - (void)donePickingPlayersWithMessage:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })formSheetInsets;
+- (id)friendListSection;
+- (id)friendPickerDataSource;
 - (void)gameInviteMessageViewController:(id)arg1 didFinishWithMessage:(id)arg2;
 - (id)initWithTheme:(id)arg1;
-- (void)keyboardWillHideShow:(id)arg1;
-- (void)loadImageForCellAtIndexPath:(id)arg1;
+- (id)inviteMessage;
 - (void)loadView;
 - (BOOL)loadingFriendsFailed;
-- (float)marginForTableView:(id)arg1;
 - (int)maxPlayers;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)navView;
+- (int)numSelected;
 - (id)pickableFriends;
+- (id)predicateForSearchText:(id)arg1;
 - (id)ranks;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
-- (void)searchBarCancelButtonClicked:(id)arg1;
-- (void)searchBarSearchButtonClicked:(id)arg1;
-- (void)searchBarTextDidBeginEditing:(id)arg1;
-- (void)searchBarTextDidEndEditing:(id)arg1;
-- (void)searchTableViewForText:(id)arg1;
+- (id)searchController;
 - (void)selectFriends:(id)arg1;
 - (id)selectedPlayers;
-- (void)setAvatarImages:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFormSheetInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setFriendListSection:(id)arg1;
+- (void)setFriendPickerDataSource:(id)arg1;
+- (void)setInviteMessage:(id)arg1;
 - (void)setLoadingFriendsFailed:(BOOL)arg1;
 - (void)setMaxPlayers:(int)arg1;
+- (void)setNavView:(id)arg1;
+- (void)setNumSelected:(int)arg1;
 - (void)setPickableFriends:(id)arg1;
 - (void)setPlayerRangeText;
 - (void)setRanks:(id)arg1;
-- (void)setSearchBarHidden:(BOOL)arg1;
+- (void)setSearchController:(id)arg1;
 - (void)setTheme:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)showMessageViewController;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (id)theme;
+- (void)updateEnabledStateForVisibleCells;
 - (void)updateNavViewLayoutForOrientation:(int)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (id)visibleTableView;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

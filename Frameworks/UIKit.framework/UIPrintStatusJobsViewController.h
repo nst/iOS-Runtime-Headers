@@ -12,6 +12,7 @@
 
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)dealloc;
+- (void)handleJobListDidChange;
 - (id)init;
 - (void)loadView;
 - (void)pushJob:(id)arg1 animated:(BOOL)arg2;
@@ -22,8 +23,7 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)updateForJobCountChange;
-- (void)updateJobInfo;
-- (void)updateJobInfoAnimated:(BOOL)arg1;
+- (void)updateJobInfo:(id)arg1;
 - (void)updateTableViewCell:(id)arg1 withJob:(id)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

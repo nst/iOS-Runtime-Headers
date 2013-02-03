@@ -4,7 +4,7 @@
 
 @class NSArray, <ADJSODelegate>, WebScriptObject, NSString;
 
-@interface ADMailComposerJSO : ADJavaScriptObject {
+@interface ADMailComposerJSO : ADJavaScriptObject <MFMailComposeViewControllerDelegate> {
     unsigned int _attachmentDownloadCount;
     NSArray *_attachmentDownloads;
     <ADJSODelegate> *_delegate;
@@ -36,8 +36,6 @@
 - (BOOL)isHTML;
 - (id)listener;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
-- (void)mailComposerAttachmentDownload:(id)arg1 didFailWithError:(id)arg2;
-- (void)mailComposerAttachmentDownloadDidFinish:(id)arg1;
 - (id)messageBody;
 - (id)messageRecipients;
 - (void)reset;

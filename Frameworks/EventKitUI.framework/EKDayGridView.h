@@ -2,25 +2,50 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKCurrentTimeMarkerView, UIView, UIColor, NSTimer, NSMutableArray;
+@class UIImageView, UIView, UIColor, EKCurrentTimeMarkerView, NSTimer, NSMutableArray;
 
 @interface EKDayGridView : UIView {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     unsigned int _leftBorder : 1;
     unsigned int _rightBorder : 1;
     unsigned int _drawsContent : 1;
     unsigned int _showsTimeMarker : 1;
     unsigned int _showsTimeLine : 1;
+    UIImageView *_background;
     UIColor *_backgroundColor;
     unsigned int _daysToDisplay;
-    NSMutableArray *_leftBorderViews;
+    BOOL _drawsGrayOutsideExtents;
+    float _fixedDayWidth;
+    float _hourHeight;
+    int _hoursToPadBottom;
+    int _hoursToPadTop;
+    } _lastBounds;
+    UIView *_leftBorderView;
+    NSMutableArray *_middleBorderViews;
+    int _orientation;
+    BOOL _rightBorderInsetsOccurrences;
     UIView *_rightBorderView;
     int _selected;
+    float _timeInset;
     EKCurrentTimeMarkerView *_timeMarker;
     NSTimer *_timeMarkerTimer;
     float _timeWidth;
 }
 
 @property BOOL drawsContent;
+@property BOOL drawsGrayOutsideExtents;
+@property float fixedDayWidth;
+@property int hoursToPadBottom;
+@property int hoursToPadTop;
+@property BOOL rightBorderInsetsOccurrences;
 @property(getter=isSelected) BOOL selected;
 @property BOOL showsLeftBorder;
 @property BOOL showsRightBorder;
@@ -30,30 +55,38 @@
 @property(readonly) float timeWidth;
 @property(readonly) float widthForOccurrences;
 
-+ (void)_clearCaches;
-+ (void)_initializeSafeCategory;
 + (void)cacheBackgroundImage:(id)arg1 forKey:(id)arg2;
 + (id)cachedBackgroundImageForKey:(id)arg1;
 
-- (void)_accessibilityOccurrencesChanged:(id)arg1;
+- (float)_dayWidth;
 - (id)_generateGridImage;
 - (void)_invalidateMarkerTimer;
 - (void)_setMarkerTimer;
 - (void)_updateTimeMarker;
-- (id)accessibilityContainerElements;
-- (unsigned long long)accessibilityTraits;
+- (float)bottomPadding;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)drawsContent;
+- (BOOL)drawsGrayOutsideExtents;
+- (float)fixedDayWidth;
+- (float)hourHeight;
+- (int)hoursToPadBottom;
+- (int)hoursToPadTop;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundColor:(id)arg2 opaque:(BOOL)arg3 numberOfDaysToDisplay:(unsigned int)arg4;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
+- (BOOL)isSelected;
 - (void)layoutSubviews;
 - (float)positionOfSecond:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForStartSeconds:(int)arg1 endSeconds:(int)arg2;
 - (void)removeFromSuperview;
+- (BOOL)rightBorderInsetsOccurrences;
 - (int)secondAtPosition:(float)arg1;
 - (void)setDrawsContent:(BOOL)arg1;
+- (void)setDrawsGrayOutsideExtents:(BOOL)arg1;
+- (void)setFixedDayWidth:(float)arg1;
+- (void)setHoursToPadBottom:(int)arg1;
+- (void)setHoursToPadTop:(int)arg1;
+- (void)setOrientation:(int)arg1;
+- (void)setRightBorderInsetsOccurrences:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setShowsLeftBorder:(BOOL)arg1;
 - (void)setShowsRightBorder:(BOOL)arg1;
@@ -63,8 +96,10 @@
 - (BOOL)showsRightBorder;
 - (BOOL)showsTimeLine;
 - (BOOL)showsTimeMarker;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (float)timeInset;
 - (float)timeWidth;
+- (float)topPadding;
 - (void)updateMarkerPosition;
 - (float)widthForOccurrences;
 

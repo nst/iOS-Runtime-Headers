@@ -5,7 +5,7 @@
 @class UIPopoverController, UIImageView, NSMutableArray, UIButton, ABSearchOperation, GKComposeSuggestedContactsController, GKUITheme, UIScrollView, GKComposeRecipientView, NSArray;
 
 @interface GKRecipientSelectionView : UIView <GKComposeRecipientViewDelegate, ABSearchOperationDelegate, GKComposeSuggestedContactsControllerDelegate> {
-    void *_ABAddressBook;
+    const void *_ABAddressBook;
     NSArray *_abProperties;
     UIButton *_addContactButton;
     UIImageView *_backgroundView;
@@ -24,7 +24,7 @@
 }
 
 @property(readonly) void* ABAddressBook;
-@property(retain,readonly) UIButton * addContactButton;
+@property(readonly) UIButton * addContactButton;
 @property(retain) UIPopoverController * composePopoverController;
 @property id delegate;
 @property BOOL duringRotation;
@@ -32,8 +32,6 @@
 @property(getter=isShowingSearchResults,readonly) BOOL showingSearchResults;
 @property(retain) GKComposeSuggestedContactsController * suggestedContactsController;
 @property(retain) GKUITheme * theme;
-
-+ (void)_initializeSafeCategory;
 
 - (void*)ABAddressBook;
 - (void)_hideSearchResults:(BOOL)arg1;

@@ -42,23 +42,20 @@
             } size; 
     NSMutableSet *subviewReferences;
     } viewContext;
-        } x7; unsigned int x8 : 1; unsigned int x9; float x10; boolx11; } *viewRef;
+        } x7; unsigned int x8 : 1; unsigned int x9; float x10; boolx11; void *x12; } *viewRef;
 }
 
-+ (void)_addViewWrapper:(id)arg1;
-+ (void)_removeViewWrapper:(id)arg1;
-+ (struct __CFDictionary { }*)_viewWrappers;
-+ (id)_wrapperForViewRef:(struct WKView { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8 : 1; unsigned int x9; float x10; boolx11; }*)arg1;
++ (id)_wrapperForViewRef:(struct WKView { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8 : 1; unsigned int x9; float x10; boolx11; void *x12; }*)arg1;
 + (id)focusView;
 
 - (void)_appendDescriptionToString:(id)arg1 atLevel:(int)arg2;
 - (id)_frame;
 - (void)_handleEvent:(id)arg1;
 - (BOOL)_handleResponderCall:(int)arg1;
-- (id)_initWithViewRef:(struct WKView { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8 : 1; unsigned int x9; float x10; boolx11; }*)arg1;
+- (id)_initWithViewRef:(struct WKView { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8 : 1; unsigned int x9; float x10; boolx11; void *x12; }*)arg1;
 - (void)_setDrawsOwnDescendants:(BOOL)arg1;
 - (id)_subviewReferences;
-- (struct WKView { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8 : 1; unsigned int x9; float x10; boolx11; }*)_viewRef;
+- (struct WKView { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8 : 1; unsigned int x9; float x10; boolx11; void *x12; }*)_viewRef;
 - (id)_webView;
 - (void)_web_addDescendantWebHTMLViewsToArray:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_web_convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toView:(id)arg2;
@@ -110,6 +107,7 @@
 - (void)scrollPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)scrollRectToVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setAutoresizingMask:(unsigned int)arg1;
+- (void)setBoundsOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setBoundsSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrameOrigin:(struct CGPoint { float x1; float x2; })arg1;

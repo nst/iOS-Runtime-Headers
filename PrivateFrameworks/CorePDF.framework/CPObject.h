@@ -72,6 +72,7 @@
 - (void)setZOrder:(long)arg1;
 - (id)shallowDescendantsOfClass:(Class)arg1;
 - (id)takeChildren;
+- (id)takeChildrenAmong:(id)arg1;
 - (void)updateZOrder:(long)arg1;
 - (long)zOrder;
 

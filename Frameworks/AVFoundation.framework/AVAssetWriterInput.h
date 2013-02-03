@@ -16,6 +16,7 @@
 @property(readonly) NSDictionary * outputSettings;
 @property(getter=_pixelBufferPool,readonly) struct __CVPixelBufferPool { }* pixelBufferPool;
 @property(getter=isReadyForMoreMediaData,readonly) BOOL readyForMoreMediaData;
+@property(retain) struct opaqueCMFormatDescription { }* sampleBufferFormatHint;
 @property(getter=_sourcePixelBufferAttributes,setter=_setSourcePixelBufferAttributes:,copy) NSDictionary * sourcePixelBufferAttributes;
 @property(getter=_status,readonly) int status;
 @property(getter=_weakReferenceToAssetWriter,setter=_setWeakReferenceToAssetWriter:,retain) AVWeakReference * weakReferenceToAssetWriter;
@@ -30,6 +31,7 @@
 - (BOOL)_isAttachedToPixelBufferAdaptor;
 - (struct __CVPixelBufferPool { }*)_pixelBufferPool;
 - (BOOL)_prepareForWritingWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1 mediaFileType:(id)arg2 error:(id*)arg3;
+- (void)_prepareToEndSession;
 - (BOOL)_prepareToFinishWritingReturningError:(id*)arg1;
 - (void)_setAttachedToPixelBufferAdaptor:(BOOL)arg1;
 - (void)_setHelper:(id)arg1;
@@ -53,12 +55,12 @@
 - (id)mediaType;
 - (id)metadata;
 - (id)outputSettings;
-- (void)release;
 - (void)requestMediaDataWhenReadyOnQueue:(struct dispatch_queue_s { }*)arg1 usingBlock:(id)arg2;
-- (id)retain;
+- (struct opaqueCMFormatDescription { }*)sampleBufferFormatHint;
 - (void)setExpectsMediaDataInRealTime:(BOOL)arg1;
 - (void)setMediaTimeScale:(int)arg1;
 - (void)setMetadata:(id)arg1;
+- (void)setSampleBufferFormatHint:(struct opaqueCMFormatDescription { }*)arg1;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 

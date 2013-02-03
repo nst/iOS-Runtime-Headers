@@ -10,5 +10,6 @@
 - (void)dealloc;
 - (void)finalize;
 - (unsigned long long)size;
+- (id)type;
 
 @end

@@ -2,14 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, MFContactsSearchManager, UITableView, <SUContactsSearchDelegate>, NSNumber, MFContactsSearchResultsModel;
+@class NSNumber, MFContactsSearchManager, MFContactsSearchResultsModel, NSMutableArray, UITableView, <SUContactsSearchDelegate>, NSArray;
 
-@interface SUContactsSearchViewController : SUViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface SUContactsSearchViewController : SUViewController <MFContactsSearchConsumer, UITableViewDataSource, UITableViewDelegate> {
     NSNumber *_activeSearchTag;
     <SUContactsSearchDelegate> *_delegate;
     NSArray *_properties;
     int _scope;
     MFContactsSearchManager *_searchManager;
+    NSMutableArray *_searchResults;
     MFContactsSearchResultsModel *_searchResultsModel;
     UITableView *_tableView;
 }

@@ -15,14 +15,18 @@
 
 @property(copy) NSString * TVMode;
 @property(copy) NSString * TVSignalType;
+@property BOOL allowsVirtualModes;
 @property(getter=isBlanked) BOOL blanked;
 @property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } bounds;
 @property(readonly) CAWindowServerDisplay * cloneMaster;
 @property(readonly) NSSet * clones;
+@property(copy) NSString * colorMode;
 @property float contrast;
 @property(readonly) NSString * deviceName;
 @property(readonly) unsigned int displayId;
+@property float idealRefreshRate;
 @property BOOL invertsColors;
+@property float maximumRefreshRate;
 @property float minimumRefreshRate;
 @property(getter=isMirroringEnabled) BOOL mirroringEnabled;
 @property(readonly) NSString * name;
@@ -30,17 +34,20 @@
 @property float overscanAmount;
 @property(readonly) unsigned int rendererFlags;
 @property int tag;
+@property BOOL usesPreferredModeRefreshRate;
 
 - (id)TVMode;
 - (id)TVSignalType;
-- (id)_initWithCADisplayServer:(struct Server { int (**x1)(); struct SpinLock { struct { int x_1_2_1; } x_2_1_1; } x2; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_3_1_1; } x3; struct Display {} *x4; struct __CFString {} *x5; struct ContextItem {} *x6; unsigned int x7; unsigned int x8; struct SpinLock { struct { int x_1_2_1; } x_9_1_1; } x9; struct PendingOperation {} *x10; struct Context {} *x11; struct Context {} *x12; unsigned int x13; struct Shape {} *x14; unsigned int x15; struct Context {} *x16; double x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; }*)arg1;
+- (id)_initWithCADisplayServer:(struct Server { int (**x1)(); struct SpinLock { struct { int x_1_2_1; } x_2_1_1; } x2; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_3_1_1; } x3; struct Display {} *x4; struct __CFString {} *x5; struct ContextItem {} *x6; unsigned int x7; unsigned int x8; struct SpinLock { struct { int x_1_2_1; } x_9_1_1; } x9; struct PendingOperation {} *x10; struct Context {} *x11; unsigned int x12; struct Shape {} *x13; unsigned int x14; struct Context {} *x15; struct Renderer {} *x16; double x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; }*)arg1;
 - (void)addClone:(id)arg1 options:(id)arg2;
 - (void)addClone:(id)arg1;
+- (BOOL)allowsVirtualModes;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (unsigned int)clientPortAtPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (unsigned int)clientPortOfContextId:(unsigned int)arg1;
 - (id)cloneMaster;
 - (id)clones;
+- (id)colorMode;
 - (unsigned int)contextIdAtPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (unsigned int)contextIdHostingContextId:(unsigned int)arg1;
 - (id)contextIdsWithClientPort:(unsigned int)arg1;
@@ -52,10 +59,12 @@
 - (id)deviceName;
 - (unsigned int)displayId;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfContextId:(unsigned int)arg1;
+- (float)idealRefreshRate;
 - (void)invalidate;
 - (BOOL)invertsColors;
 - (BOOL)isBlanked;
 - (BOOL)isMirroringEnabled;
+- (float)maximumRefreshRate;
 - (float)minimumRefreshRate;
 - (id)name;
 - (id)orientation;
@@ -63,9 +72,13 @@
 - (void)removeAllClones;
 - (void)removeClone:(id)arg1;
 - (unsigned int)rendererFlags;
+- (void)setAllowsVirtualModes:(BOOL)arg1;
 - (void)setBlanked:(BOOL)arg1;
+- (void)setColorMode:(id)arg1;
 - (void)setContrast:(float)arg1;
+- (void)setIdealRefreshRate:(float)arg1;
 - (void)setInvertsColors:(BOOL)arg1;
+- (void)setMaximumRefreshRate:(float)arg1;
 - (void)setMinimumRefreshRate:(float)arg1;
 - (void)setMirroringEnabled:(BOOL)arg1;
 - (void)setOrientation:(id)arg1;
@@ -73,6 +86,8 @@
 - (void)setTVMode:(id)arg1;
 - (void)setTVSignalType:(id)arg1;
 - (void)setTag:(int)arg1;
+- (void)setUsesPreferredModeRefreshRate:(BOOL)arg1;
 - (int)tag;
+- (BOOL)usesPreferredModeRefreshRate;
 
 @end

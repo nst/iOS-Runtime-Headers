@@ -9,8 +9,8 @@
 @property(readonly) int status;
 
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithAction:(int)arg1 context:(id)arg2 status:(int)arg3;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithItemChangeType:(int)arg1 changedItem:(id)arg2 serverId:(id)arg3 status:(int)arg4;
 - (int)status;
 
 @end

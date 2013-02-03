@@ -15,15 +15,21 @@
 @property(readonly) struct CGAffineTransform { float a; float b; float c; float d; float tx; float ty; } preferredTransform;
 @property(readonly) float preferredVolume;
 
++ (id)assetWithURL:(id)arg1 figPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg2 trackIDs:(id)arg3 dynamicBehavior:(BOOL)arg4;
++ (id)assetWithURL:(id)arg1;
+
 - (struct __CFURL { }*)_URL;
 - (id)_assetInspector;
 - (id)_assetInspectorLoader;
 - (id)_comparisonToken;
+- (struct OpaqueFigAsset { }*)_figAsset;
 - (id)_firstTrackGroupWithMediaType:(id)arg1;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
-- (struct OpaqueFigFormatReaderLoader { }*)_formatReaderLoader;
-- (BOOL)_isReadyForBasicInspection;
 - (BOOL)_isStreaming;
+- (id)_mediaCharacteristicsOfAlternateTrackGroups:(id)arg1;
+- (id)_mediaCharacteristicsOfMediaSelectionGroups:(id)arg1;
+- (id)_mediaSelectionKeyValueGroupFromGroups:(id)arg1 forMediaCharacteristic:(id)arg2;
+- (id)_mediaSelectionTrackGroupForMediaCharacteristic:(id)arg1;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (void)_serverHasDied;
 - (void)_tracksDidChange;
@@ -31,33 +37,39 @@
 - (id)alternateTrackGroups;
 - (id)audioAlternatesTrackGroup;
 - (id)availableChapterLocales;
+- (id)availableMediaCharacteristicsWithMediaSelectionOptions;
 - (id)availableMetadataFormats;
 - (void)cancelLoading;
 - (id)chapterMetadataGroupsWithTitleLocale:(id)arg1 containingItemsWithCommonKeys:(id)arg2;
 - (id)commonMetadata;
 - (id)compatibleTrackForCompositionTrack:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)creationDate;
 - (void)dealloc;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (BOOL)hasProtectedContent;
 - (unsigned int)hash;
 - (id)init;
+- (BOOL)isCompatibleWithSavedPhotosAlbum;
 - (BOOL)isComposable;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExportable;
 - (BOOL)isPlayable;
 - (BOOL)isReadable;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
+- (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id)arg3;
 - (id)lyrics;
+- (id)mediaSelectionGroupForMediaCharacteristic:(id)arg1;
+- (id)mediaSelectionGroups;
 - (id)metadataForFormat:(id)arg1;
+- (void)mpLoadValuesAsynchronouslyForKeys:(id)arg1 completionQueue:(struct dispatch_queue_s { }*)arg2 completionHandler:(id)arg3;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;
 - (float)preferredRate;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
 - (float)preferredVolume;
 - (BOOL)providesPreciseDurationAndTiming;
-- (void)release;
-- (id)retain;
+- (unsigned int)referenceRestrictions;
 - (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 - (int)statusOfValueForKey:(id)arg1;
 - (id)subtitleAlternatesTrackGroup;
@@ -68,5 +80,6 @@
 - (id)tracksWithMediaCharacteristic:(id)arg1;
 - (id)tracksWithMediaType:(id)arg1;
 - (int)unusedTrackID;
+- (id)valueForUndefinedKey:(id)arg1;
 
 @end

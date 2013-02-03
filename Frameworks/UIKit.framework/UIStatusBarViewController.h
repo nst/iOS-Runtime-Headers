@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UIWindow, UIView;
+@class UIClassicStatusBarView, UIWindow, UIView;
 
 @interface UIStatusBarViewController : UIViewController {
     UIWindow *_leftBottomCorner;
     UIWindow *_rightBottomCorner;
     UIView *_statusBar;
-    UIImageView *_statusBarBackgroundImage;
+    UIClassicStatusBarView *_statusBarBackgroundImage;
     UIWindow *_window;
 }
 

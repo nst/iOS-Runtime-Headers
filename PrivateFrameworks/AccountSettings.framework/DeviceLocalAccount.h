@@ -8,7 +8,7 @@
 + (id)_identifier;
 + (id)accountWithBasicAccount:(id)arg1;
 + (id)basicAccountProperties;
-+ (void*)createSyncDataSourceForDataclass:(id)arg1;
++ (void*)createSyncDataSourceForDataclass:(id)arg1 options:(id)arg2;
 + (id)displayedAccountTypeString;
 + (id)displayedShortAccountTypeString;
 + (BOOL)isTetheredSyncingDataclass:(id)arg1;

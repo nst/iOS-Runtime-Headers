@@ -10,10 +10,7 @@
 
 @property UIPageController * pageController;
 
-+ (void)_initializeSafeCategory;
-
-- (float)_accessibilityScrollAnimationDurationDelay;
-- (id)_accessibilityScrollStatus;
+- (int)_abuttedPagingEdges;
 - (void)_scrollViewAnimationEnded;
 - (void)_scrollViewDidEndDecelerating;
 - (void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)arg1;

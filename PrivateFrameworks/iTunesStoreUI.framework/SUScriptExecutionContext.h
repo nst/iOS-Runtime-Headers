@@ -17,7 +17,7 @@
 - (void)_cancelLoadOperation;
 - (id)_newLoadOperation;
 - (id)_webView;
-- (id)callWebScriptMethod:(id)arg1 withArguments:(id)arg2;
+- (void)callWebScriptMethod:(id)arg1 withArguments:(id)arg2;
 - (void)dealloc;
 - (BOOL)evaluateData:(id)arg1 MIMEType:(id)arg2 textEncodingName:(id)arg3 baseURL:(id)arg4;
 - (void)evaluateScriptAtURL:(id)arg1;

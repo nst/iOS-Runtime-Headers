@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPVideoBufferLayer : CALayer {
+@interface MPVideoBufferLayer : AVPlayerLayer {
     unsigned int _animationsEnablesCount;
 }
 

@@ -6,6 +6,11 @@
     unsigned int eventMask;
 }
 
+@property(readonly) SEL action;
+@property unsigned int eventMask;
+@property(readonly) id target;
+
+- (SEL)action;
 - (void)connect;
 - (void)connectForSimulator;
 - (id)description;
@@ -13,5 +18,6 @@
 - (unsigned int)eventMask;
 - (id)initWithCoder:(id)arg1;
 - (void)setEventMask:(unsigned int)arg1;
+- (id)target;
 
 @end

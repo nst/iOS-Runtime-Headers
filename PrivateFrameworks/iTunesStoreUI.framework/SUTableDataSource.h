@@ -38,6 +38,7 @@
 - (void)didEndPreferringUserInteraction;
 - (void)endPreferringUserInteraction;
 - (id)headerViewForSection:(int)arg1;
+- (float)heightForFooterInSection:(int)arg1;
 - (float)heightForPlaceholderCells;
 - (id)imageCache;
 - (id)imagePool;

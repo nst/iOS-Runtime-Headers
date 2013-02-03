@@ -2,54 +2,44 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSString, UIImage;
+@class UIImage, NSString, GKAchievementDescriptionInternal;
 
 @interface GKAchievementDescription : NSObject <NSCoding> {
-    NSString *_achievedDescription;
-    BOOL _hidden;
-    NSString *_identifier;
     UIImage *_image;
-    NSString *_imageURL;
-    int _pointMax;
-    NSString *_title;
-    NSString *_unachievedDescription;
+    GKAchievementDescriptionInternal *_internal;
 }
 
-@property(retain) NSString * achievedDescription;
-@property(getter=isHidden) BOOL hidden;
-@property(retain) NSString * identifier;
+@property(readonly) NSString * achievedDescription;
+@property(getter=isHidden,readonly) BOOL hidden;
+@property(readonly) NSString * identifier;
 @property(retain) UIImage * image;
-@property(retain) NSString * imageURL;
-@property int maximumPoints;
-@property(retain) NSString * title;
-@property(retain) NSString * unachievedDescription;
+@property(readonly) NSString * imageURL;
+@property(retain) GKAchievementDescriptionInternal * internal;
+@property(readonly) int maximumPoints;
+@property(readonly) NSString * title;
+@property(readonly) NSString * unachievedDescription;
 
 + (id)incompleteAchievementImage;
++ (void)loadAchievementDescriptionWithIdentifier:(id)arg1 forGame:(id)arg2 withCompletionHandler:(id)arg3;
 + (void)loadAchievementDescriptionsForGame:(id)arg1 withCompletionHandler:(id)arg2;
 + (void)loadAchievementDescriptionsWithCompletionHandler:(id)arg1;
 + (id)placeholderCompletedAchievementImage;
 
-- (id)achievedDescription;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)identifier;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)image;
 - (id)imageURL;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDictionary:(id)arg1;
-- (BOOL)isHidden;
+- (id)initWithInternalRepresentation:(id)arg1;
+- (id)internal;
 - (void)loadImageWithCompletionHandler:(id)arg1;
-- (int)maximumPoints;
-- (void)setAchievedDescription:(id)arg1;
-- (void)setHidden:(BOOL)arg1;
-- (void)setIdentifier:(id)arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (void)setImage:(id)arg1;
-- (void)setImageURL:(id)arg1;
-- (void)setMaximumPoints:(int)arg1;
-- (void)setTitle:(id)arg1;
-- (void)setUnachievedDescription:(id)arg1;
-- (id)title;
-- (id)unachievedDescription;
+- (void)setInternal:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
 
 @end

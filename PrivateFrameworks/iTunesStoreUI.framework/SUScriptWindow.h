@@ -5,37 +5,35 @@
 @class SUScriptWindowContext, WebScriptObject, SUScriptFunction, NSString, SUScriptViewController, SUScriptCanvasFunction, NSNumber;
 
 @interface SUScriptWindow : SUScriptObject {
-    id _backViewController;
+    SUScriptViewController *_backViewController;
     SUScriptWindowContext *_context;
-    id _frontViewController;
+    SUScriptViewController *_frontViewController;
     id _height;
     SUScriptCanvasFunction *_maskFunction;
     id _shadowOpacity;
     id _shadowRadius;
     SUScriptFunction *_shouldDismissFunction;
-    id _style;
     id _width;
-    id _windowParentViewController;
 }
 
-@property(getter=_backViewController,setter=set_backViewController:,retain) SUScriptViewController * backViewController;
+@property(retain) SUScriptViewController * backViewController;
 @property(readonly) SUScriptWindowContext * context;
-@property(getter=_frontViewController,setter=set_frontViewController:,retain) SUScriptViewController * frontViewController;
-@property(getter=_height,readonly) NSNumber * height;
-@property(getter=_maskFunction,setter=set_maskFunction:,retain) WebScriptObject * maskFunction;
-@property(getter=_shadowOpacity,setter=set_shadowOpacity:,retain) NSNumber * shadowOpacity;
-@property(getter=_shadowRadius,setter=set_shadowRadius:,retain) NSNumber * shadowRadius;
-@property(getter=_shouldDismissFunction,setter=set_shouldDismissFunction:,retain) WebScriptObject * shouldDismissFunction;
-@property(getter=_style,setter=set_style:,retain) NSString * style;
-@property(getter=_width,readonly) NSNumber * width;
-@property(getter=_windowParentViewController,readonly) SUScriptViewController * windowParentViewController;
+@property(retain) SUScriptViewController * frontViewController;
+@property(retain) NSNumber * height;
+@property(retain) WebScriptObject * maskFunction;
+@property(retain) NSNumber * shadowOpacity;
+@property(retain) NSNumber * shadowRadius;
+@property(retain) WebScriptObject * shouldDismissFunction;
+@property(readonly) NSString * style;
+@property(retain) NSNumber * width;
+@property(readonly) SUScriptViewController * windowParentViewController;
 
 + (void)_dismissWindowsAnimated:(BOOL)arg1;
 + (void)dismissWindowsWithOptions:(id)arg1;
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
-- (id)_backViewController;
 - (id)_backgroundViewController:(BOOL)arg1;
 - (id)_className;
 - (id)_copyBackViewController;
@@ -45,11 +43,8 @@
 - (id)_copyWindowParentViewController;
 - (void)_dismiss:(id)arg1;
 - (void)_flip:(id)arg1;
-- (id)_frontViewController;
-- (id)_height;
 - (float)_mainThreadShadowOpacity;
 - (float)_mainThreadShadowRadius;
-- (id)_maskFunction;
 - (id)_newOverlayTransitionWithOptions:(id)arg1;
 - (void)_overlayDidDismissNotification:(id)arg1;
 - (void)_overlayDidFlipNotification:(id)arg1;
@@ -66,29 +61,33 @@
 - (void)_setShadowRadius:(float)arg1;
 - (void)_setShouldDismissFunction:(id)arg1;
 - (void)_setWidth:(float)arg1;
-- (id)_shadowOpacity;
-- (id)_shadowRadius;
-- (id)_shouldDismissFunction;
 - (void)_show:(id)arg1;
-- (id)_style;
-- (id)_width;
-- (id)_windowParentViewController;
+- (id)attributeKeys;
+- (id)backViewController;
 - (id)context;
 - (void)dealloc;
 - (void)dismiss:(id)arg1;
 - (void)flip:(id)arg1;
+- (id)frontViewController;
+- (id)height;
 - (id)init;
 - (id)initWithContext:(id)arg1;
-- (void)set_backViewController:(id)arg1;
-- (void)set_frontViewController:(id)arg1;
-- (void)set_height:(id)arg1;
-- (void)set_maskFunction:(id)arg1;
-- (void)set_shadowOpacity:(id)arg1;
-- (void)set_shadowRadius:(id)arg1;
-- (void)set_shouldDismissFunction:(id)arg1;
-- (void)set_style:(id)arg1;
-- (void)set_width:(id)arg1;
-- (void)set_windowParentViewController:(id)arg1;
+- (id)maskFunction;
+- (id)scriptAttributeKeys;
+- (void)setBackViewController:(id)arg1;
+- (void)setFrontViewController:(id)arg1;
+- (void)setHeight:(id)arg1;
+- (void)setMaskFunction:(id)arg1;
+- (void)setShadowOpacity:(id)arg1;
+- (void)setShadowRadius:(id)arg1;
+- (void)setShouldDismissFunction:(id)arg1;
+- (void)setWidth:(id)arg1;
+- (id)shadowOpacity;
+- (id)shadowRadius;
+- (id)shouldDismissFunction;
 - (void)show:(id)arg1;
+- (id)style;
+- (id)width;
+- (id)windowParentViewController;
 
 @end

@@ -2,23 +2,32 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3MusicLibrary;
+@class ML3MusicLibrary, NSDictionary;
 
 @interface ML3TrackImporter : NSObject {
     ML3MusicLibrary *_library;
+    NSDictionary *_nameOrders;
+    BOOL _updateSmartPlaylists;
 }
 
+@property(retain) NSDictionary * nameOrders;
+@property BOOL updateSmartPlaylists;
+
 - (id)_addAlbumArtistForImportTrackProperties:(id)arg1;
-- (id)_addAlbumForImportTrack:(id)arg1 properties:(id)arg2;
+- (id)_addAlbumForImportTrackProperties:(id)arg1;
 - (id)_addArtistForImportTrackProperties:(id)arg1;
 - (id)_addComposerForImportTrackProperties:(id)arg1;
 - (id)_addGenreForImportTrackProperties:(id)arg1;
 - (id)_addStoreLinkForImportTrackProperties:(id)arg1;
-- (id)_newTrackPropertiesByProcessingImportTrack:(id)arg1;
+- (id)_newTrackPropertiesByProcessingImportTrack:(id)arg1 insertStringsIntoSortMap:(BOOL)arg2;
 - (BOOL)_shouldInsertITMediaKindIntoPurchasedPlaylist:(unsigned long)arg1;
 - (void)dealloc;
 - (void)importTrack:(id)arg1 withCompletionBlock:(id)arg2;
 - (id)initWithMusicLibrary:(id)arg1;
+- (id)nameOrders;
+- (void)setNameOrders:(id)arg1;
+- (void)setUpdateSmartPlaylists:(BOOL)arg1;
+- (BOOL)updateSmartPlaylists;
 - (BOOL)updateTrack:(id)arg1 withImportTrack:(id)arg2;
 
 @end

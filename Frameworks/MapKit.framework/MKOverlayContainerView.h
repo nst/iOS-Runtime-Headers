@@ -22,7 +22,7 @@
 }
 
 @property <MKOverlayContainerViewDelegate> * delegate;
-@property struct CGAffineTransform { float a; float b; float c; float d; float tx; float ty; } mapTransform;
+@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } mapTransform;
 @property(readonly) NSArray * overlays;
 
 - (void)_addInternalOverlay:(id)arg1 withView:(id)arg2;

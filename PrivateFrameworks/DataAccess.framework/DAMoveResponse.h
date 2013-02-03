@@ -17,6 +17,7 @@
 @property(readonly) int status;
 
 - (void)dealloc;
+- (id)description;
 - (id)destID;
 - (id)initWithStatus:(int)arg1 sourceID:(id)arg2 destID:(id)arg3;
 - (id)origRequest;

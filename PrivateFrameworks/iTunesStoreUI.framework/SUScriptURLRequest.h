@@ -12,6 +12,7 @@
 @property(copy) id URLs;
 @property(copy) NSNumber * timeoutInterval;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 
 - (id)URLBagKey;

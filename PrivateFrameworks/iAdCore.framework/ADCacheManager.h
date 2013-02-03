@@ -21,8 +21,8 @@
 - (void)discardCachesForBundleIdentifier:(id)arg1;
 - (id)init;
 - (void)loadDataForController:(id)arg1 withSpecification:(id)arg2;
-- (void)release;
-- (void)removeCacheForBundleIdentifier:(id)arg1 specificationIdentifier:(id)arg2;
+- (oneway void)release;
+- (void)removeCache:(id)arg1 forBundleIdentifier:(id)arg2 specificationIdentifier:(id)arg3;
 - (void)removeControllerFromAnyCaches:(id)arg1;
 - (id)retain;
 - (unsigned int)retainCount;

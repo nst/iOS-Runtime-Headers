@@ -7,12 +7,17 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@interface NSNumber : NSValue {
+@interface NSNumber : NSValue <ASParsingLeafNode> {
 }
 
++ (BOOL)acceptsTopLevelLeaves;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)boolFromICSString:(id)arg1;
++ (BOOL)expectsContent;
++ (BOOL)frontingBasicTypes;
++ (BOOL)notifyOfUnknownTokens;
 + (id)numberWithBool:(BOOL)arg1;
++ (id)numberWithCGFloat:(float)arg1;
 + (id)numberWithChar:(BOOL)arg1;
 + (id)numberWithDouble:(double)arg1;
 + (id)numberWithFloat:(float)arg1;
@@ -32,6 +37,8 @@
 + (BOOL)parseString:(id)arg1 intoNSUInteger:(unsigned int*)arg2;
 + (BOOL)parseString:(id)arg1 intoSInt64:(long long*)arg2;
 + (BOOL)parseString:(id)arg1 intoUInt64:(unsigned long long*)arg2;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
 
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (id)CA_addValue:(id)arg1 multipliedBy:(int)arg2;
@@ -46,7 +53,9 @@
 - (unsigned long)_cfTypeID;
 - (unsigned char)_getValue:(void*)arg1 forType:(long)arg2;
 - (int)_reverseCompare:(id)arg1;
+- (void)appendJsonStringToString:(id)arg1;
 - (BOOL)boolValue;
+- (float)cgFloatValue;
 - (BOOL)charValue;
 - (Class)classForCoder;
 - (int)compare:(id)arg1;
@@ -58,7 +67,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (float)floatValue;
 - (unsigned int)hash;
+- (id)initWithASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 lengthUntilEndOfTerminator:(int)arg6;
 - (id)initWithBool:(BOOL)arg1;
+- (id)initWithCGFloat:(float)arg1;
 - (id)initWithChar:(BOOL)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDouble:(double)arg1;
@@ -84,6 +95,7 @@
 - (id)localizedString;
 - (long long)longLongValue;
 - (long)longValue;
+- (int)parsingState;
 - (short)shortValue;
 - (id)stringValue;
 - (unsigned char)unsignedCharValue;

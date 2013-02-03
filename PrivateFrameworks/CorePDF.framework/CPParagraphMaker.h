@@ -27,6 +27,7 @@
 - (BOOL)isGraphicBetween:(id)arg1 and:(id)arg2;
 - (BOOL)line:(id)arg1 isAlignedWith:(id)arg2;
 - (BOOL)line:(id)arg1 isBelow:(id)arg2;
+- (BOOL)line:(id)arg1 isDirectlyBelow:(id)arg2;
 - (int)linesThatOverlapLineAt:(int)arg1 between:(float)arg2 and:(float)arg3 from:(int)arg4;
 - (id)makeInitialParagraph;
 - (void)makeParagraphsIn:(id)arg1;

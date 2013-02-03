@@ -2,25 +2,29 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableDictionary, NSString, MailboxUid, MailAccount, NSMutableArray, MessageCriterion;
+@class NSNumber, MFWeakReferenceHolder, MailAccount, NSMutableArray, NSString, MessageCriterion, NSMutableDictionary, NSArray;
 
-@interface MailboxUid : MFWeakObject <MFWeakReferenceHolder> {
-    MailAccount *_account;
+@interface MailboxUid : NSObject {
+    MFWeakReferenceHolder *_account;
     unsigned int _attributes;
     NSMutableArray *_children;
     MessageCriterion *_criterion;
+    NSArray *_extraAttributes;
     unsigned int _mailboxID;
-    MailboxUid *_parent;
+    MFWeakReferenceHolder *_parent;
     NSString *_pathComponent;
+    NSNumber *_pendingLevel;
     NSString *_permanentTag;
     NSString *_realFullPath;
     MailAccount *_representedAccount;
     int _type;
     NSMutableDictionary *_userInfo;
     BOOL allCriteriaMustBeSatisfied;
-    NSString *pendingNameChange;
     NSString *uniqueId;
 }
+
+@property(retain) NSArray * extraAttributes;
+@property(retain) NSString * permanentTag;
 
 + (BOOL)isDraftsMailboxType:(int)arg1;
 + (BOOL)isOutgoingMailboxType:(int)arg1;
@@ -30,8 +34,9 @@
 - (id)URLString;
 - (id)URLStringNonNil;
 - (id)URLStringWithAccount:(id)arg1;
-- (void)_deleteChildrenWithURLsIfInvalid:(id)arg1 fullPaths:(id)arg2;
+- (id)_initWithName:(id)arg1 attributes:(unsigned int)arg2 forAccount:(id)arg3;
 - (id)_loadUserInfo;
+- (id)_mutableChildren;
 - (id)account;
 - (id)accountRelativePath;
 - (void)addToPostOrderTraversal:(id)arg1;
@@ -41,6 +46,7 @@
 - (id)childAtIndex:(unsigned int)arg1;
 - (id)childEnumerator;
 - (id)childEnumeratorIncludingHiddenChildren:(BOOL)arg1;
+- (id)childWithExtraAttribute:(id)arg1;
 - (id)childWithName:(id)arg1;
 - (id)childWithPermanentTag:(id)arg1;
 - (id)children;
@@ -49,10 +55,12 @@
 - (id)criterion;
 - (void)dealloc;
 - (id)depthFirstEnumerator;
+- (id)descendantWithExtraAttribute:(id)arg1;
 - (id)descendantWithPermanentTag:(id)arg1;
 - (id)description;
 - (id)displayName;
 - (id)displayNameUsingSpecialNames;
+- (id)extraAttributes;
 - (void)flushCriteria;
 - (id)fullPath;
 - (id)fullPathNonNil;
@@ -61,6 +69,7 @@
 - (int)indexToInsertChildMailboxUid:(id)arg1;
 - (id)init;
 - (id)initWithAccount:(id)arg1;
+- (id)initWithName:(id)arg1 attributes:(unsigned int)arg2 forAccount:(id)arg3 extraAttributes:(id)arg4;
 - (id)initWithName:(id)arg1 attributes:(unsigned int)arg2 forAccount:(id)arg3 permanentTag:(id)arg4;
 - (void)invalidate;
 - (BOOL)isContainer;
@@ -78,10 +87,10 @@
 - (id)name;
 - (unsigned int)nonDeletedCount;
 - (unsigned int)numberOfChildren;
-- (void)objectWillBeDeallocated:(id)arg1;
 - (id)oldURLString;
 - (id)parent;
 - (id)pathRelativeToMailbox:(id)arg1;
+- (id)pathRelativeToMailboxForDisplay:(id)arg1;
 - (id)permanentTag;
 - (id)realFullPath;
 - (void)removeChild:(id)arg1;
@@ -91,10 +100,10 @@
 - (void)setAttributes:(unsigned int)arg1;
 - (BOOL)setChildren:(id)arg1;
 - (void)setCriterion:(id)arg1;
+- (void)setExtraAttributes:(id)arg1;
 - (void)setLastViewedMessageID:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setParent:(id)arg1;
-- (void)setPendingNameChange:(id)arg1;
 - (void)setPermanentTag:(id)arg1;
 - (void)setRepresentedAccount:(id)arg1;
 - (void)setType:(int)arg1;

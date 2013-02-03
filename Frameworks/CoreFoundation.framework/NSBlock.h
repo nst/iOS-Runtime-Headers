@@ -5,6 +5,8 @@
 @interface NSBlock : NSObject <NSCopying> {
 }
 
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)invoke;

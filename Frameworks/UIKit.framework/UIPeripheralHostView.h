@@ -8,14 +8,11 @@
     int _explicitLayoutCount;
 }
 
-@property(retain,readonly) UIPeripheralHostLayer * layer;
+@property(readonly) UIPeripheralHostLayer * layer;
 
-+ (void)_initializeSafeCategory;
 + (Class)layerClass;
 
 - (BOOL)_shouldUseKeyWindowStack;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (void)beginExplicitLayout;
 - (void)dealloc;
 - (void)endExplicitLayout;
@@ -23,6 +20,8 @@
 - (id)layer;
 - (void)layoutSubviews;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)removeFromSuperview;
+- (void)resizeForKeyplaneSize:(struct CGSize { float x1; float x2; })arg1;
 - (int)textEffectsVisibilityLevel;
 
 @end

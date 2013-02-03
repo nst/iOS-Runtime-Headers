@@ -13,8 +13,8 @@
 - (id)MIMEType;
 - (id)URL;
 - (struct _CFURLResponse { }*)_CFURLResponse;
+- (id)_cacheTime;
 - (double)_calculatedExpiration;
-- (id)_contentDispositionBytes;
 - (id)_createdDate;
 - (double)_freshnessLifetime;
 - (id)_initWithCFURLResponse:(struct _CFURLResponse { }*)arg1;
@@ -23,7 +23,6 @@
 - (id)_peerCertificateChain;
 - (void)_setExpectedContentLength:(long long)arg1;
 - (void)_setMIMEType:(id)arg1;
-- (void)adjustMIMETypeIfNecessary;
 - (id)allHeaderFields;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

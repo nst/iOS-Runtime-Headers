@@ -2,12 +2,14 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem, MPMediaQuery;
+@class MPMediaItem, MPMediaQuery, MPMediaPlaylist;
 
 @interface MPMusicPlayerClientState : NSObject {
     BOOL _allowsRemoteUIAccess;
     int _backgroundPlaybackAccess;
     MPMediaItem *_firstItem;
+    MPMediaPlaylist *_geniusMixPlaylist;
+    BOOL _hasAudioBackgroundMode;
     MPMediaQuery *_query;
     int _repeatMode;
     BOOL _seeking;
@@ -19,6 +21,8 @@
 @property BOOL allowsRemoteUIAccess;
 @property int backgroundPlaybackAccess;
 @property(retain) MPMediaItem * firstItem;
+@property(retain) MPMediaPlaylist * geniusMixPlaylist;
+@property BOOL hasAudioBackgroundMode;
 @property(retain) MPMediaQuery * query;
 @property int repeatMode;
 @property BOOL seeking;
@@ -30,12 +34,16 @@
 - (int)backgroundPlaybackAccess;
 - (void)dealloc;
 - (id)firstItem;
+- (id)geniusMixPlaylist;
+- (BOOL)hasAudioBackgroundMode;
 - (id)query;
 - (int)repeatMode;
 - (BOOL)seeking;
 - (void)setAllowsRemoteUIAccess:(BOOL)arg1;
 - (void)setBackgroundPlaybackAccess:(int)arg1;
 - (void)setFirstItem:(id)arg1;
+- (void)setGeniusMixPlaylist:(id)arg1;
+- (void)setHasAudioBackgroundMode:(BOOL)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setRepeatMode:(int)arg1;
 - (void)setSeeking:(BOOL)arg1;

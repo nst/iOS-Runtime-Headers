@@ -8,7 +8,7 @@
 
 @class PSSpecifier, NSString, CNFRegLearnMoreButton;
 
-@interface CNFRegSignInController : CNFRegFirstRunController <CNFRegCreateAccountControllerDelegate> {
+@interface CNFRegSignInController : CNFRegFirstRunController {
     PSSpecifier *_actionGroupSpecifier;
     id _alertHandler;
     PSSpecifier *_createAccountButtonSpecifier;
@@ -17,6 +17,7 @@
     PSSpecifier *_passwordSpecifier;
     NSString *_pendingPassword;
     NSString *_pendingUsername;
+    BOOL _showSplash;
     PSSpecifier *_signInButtonSpecifier;
     unsigned int _signinFailureCount;
     PSSpecifier *_usernameSpecifier;
@@ -26,12 +27,15 @@
 @property BOOL hideLearnMoreButton;
 @property(copy) NSString * pendingPassword;
 @property(copy) NSString * pendingUsername;
+@property BOOL showSplash;
 @property unsigned int signinFailureCount;
 
 - (void)_buildCreateAccountButtonSpecifierCache:(id)arg1;
 - (void)_buildCredentialSpecifierCache:(id)arg1;
 - (void)_buildSignInGroupSpecifierCache:(id)arg1;
 - (void)_buildSpecifierCache:(id)arg1;
+- (id)_existingLearnMoreViewForSection:(int)arg1;
+- (id)_existingLearnMoreViewForSpecifier:(id)arg1;
 - (void)_finishSignInWithAccount:(id)arg1 animated:(BOOL)arg2;
 - (void)_handleTimeout;
 - (void)_incrementSigninFailureCount;
@@ -39,7 +43,7 @@
 - (void)_layoutLearnMoreButton;
 - (void)_resetSigninFailureCount;
 - (void)_resignFirstResponders;
-- (void)_returnKeyWasPressed:(id)arg1;
+- (void)_returnKeyPressed;
 - (id)_rightButtonItem;
 - (void)_setFieldsEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setupAppearBlockForAccountAuthorizeWithAuthID:(id)arg1 token:(id)arg2;
@@ -57,7 +61,7 @@
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)bundle;
 - (void)cancelButtonTapped;
-- (void)createAccountControllerDidFinish:(id)arg1 withAppleId:(id)arg2 andPassword:(id)arg3;
+- (void)createAccountControllerDidFinish:(id)arg1 withAppleId:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
 - (void)dealloc;
 - (id)getPasswordForSpecifier:(id)arg1;
 - (id)getUserNameForSpecifier:(id)arg1;
@@ -78,20 +82,25 @@
 - (void)setPasswordEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setPendingPassword:(id)arg1;
 - (void)setPendingUsername:(id)arg1;
+- (void)setShowSplash:(BOOL)arg1;
 - (void)setSignInButtonEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSigninFailureCount:(unsigned int)arg1;
 - (void)setSpecifier:(id)arg1;
 - (void)setUsernameEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)showCreateAccountController;
+- (BOOL)showSplash;
 - (void)signInTapped:(id)arg1;
 - (unsigned int)signinFailureCount;
-- (id)specifiers;
+- (id)specifierList;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)usernameFieldEmptyStateChanged:(id)arg1 forSpecifier:(id)arg2;
 - (BOOL)usernameIsEmpty;
 - (id)usernameTextField;
 - (id)validationString;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)willBecomeActive;

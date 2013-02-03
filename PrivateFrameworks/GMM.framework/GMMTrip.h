@@ -2,27 +2,39 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSString;
 
 @interface GMMTrip : PBCodable {
+    int _detailLevel;
+    BOOL _hasDetailLevel;
     NSMutableArray *_routes;
+    NSString *_tripSummary;
 }
 
+@property int detailLevel;
+@property BOOL hasDetailLevel;
+@property(readonly) BOOL hasTripSummary;
 @property(retain) NSMutableArray * routes;
-@property(readonly) int routesCount;
+@property(retain) NSString * tripSummary;
 
 - (void)addRoute:(id)arg1;
+- (id)altDescription;
 - (void)dealloc;
 - (id)description;
 - (id)description;
+- (int)detailLevel;
 - (id)dictionaryRepresentation;
-- (id)init;
+- (BOOL)hasDetailLevel;
+- (BOOL)hasTripSummary;
 - (BOOL)readFrom:(id)arg1;
 - (id)routeAtIndex:(unsigned int)arg1;
 - (id)routes;
-- (int)routesCount;
-- (void)setRoute:(id)arg1 atIndex:(unsigned int)arg2;
+- (unsigned int)routesCount;
+- (void)setDetailLevel:(int)arg1;
+- (void)setHasDetailLevel:(BOOL)arg1;
 - (void)setRoutes:(id)arg1;
+- (void)setTripSummary:(id)arg1;
+- (id)tripSummary;
 - (void)writeTo:(id)arg1;
 
 @end

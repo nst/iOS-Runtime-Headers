@@ -4,7 +4,7 @@
 
 @class <NSObject>, MPAVController, NSDictionary;
 
-@interface MPQueueFeeder : AVQueueFeeder {
+@interface MPQueueFeeder : NSObject <AVPlaylistFeeder> {
     MPAVController *_avController;
     BOOL _deallocating;
     BOOL _fullScreenPlaybackQueue;
@@ -20,7 +20,7 @@
 @property BOOL fullScreenPlaybackQueue;
 @property BOOL isSourceChangeInProgress;
 @property(readonly) Class itemClass;
-@property(retain,readonly) NSDictionary * preferredLanguages;
+@property(readonly) NSDictionary * preferredLanguages;
 @property(readonly) unsigned int realRepeatType;
 @property(readonly) unsigned int realShuffleType;
 @property unsigned int repeatType;
@@ -36,11 +36,11 @@
 - (void)_fixNextStartTimesByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)addReferenceToItem:(id)arg1;
 - (void)archiveAVControllerPlaybackQueue:(id)arg1 toArchiver:(id)arg2;
+- (void)assumeOwnershipOfItems:(id)arg1;
 - (void)beginSourceChange;
 - (void)clearReferencesToItem:(id)arg1;
 - (void)commitSourceChangeWithStartQueueIndex:(unsigned int)arg1;
 - (void)contentInvalidatedWithCurrentItemMovedToIndex:(unsigned int)arg1;
-- (void)contentsDidChangeByInsertingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)contentsDidChangeByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)copyRawItemAtIndex:(unsigned int)arg1;
 - (void)dealloc;
@@ -49,9 +49,13 @@
 - (void)invalidateQueueCaches;
 - (BOOL)isSourceChangeInProgress;
 - (Class)itemClass;
+- (unsigned int)itemCount;
 - (id)itemForIndex:(unsigned int)arg1;
 - (unsigned int)itemTypeForIndex:(unsigned int)arg1;
 - (id)localizedPositionInPlaylistString:(id)arg1;
+- (id)mix;
+- (unsigned int)numberOfPaths;
+- (id)pathAtIndex:(unsigned int)arg1;
 - (id)playbackInfoAtIndex:(unsigned int)arg1;
 - (id)preferredLanguages;
 - (unsigned int)realRepeatType;
@@ -64,6 +68,7 @@
 - (void)setAVController:(id)arg1;
 - (void)setFullScreenPlaybackQueue:(BOOL)arg1;
 - (void)setIsSourceChangeInProgress:(BOOL)arg1;
+- (void)setMix:(id)arg1;
 - (void)setNextStartTime:(double)arg1 forIndex:(unsigned int)arg2;
 - (void)setRepeatType:(unsigned int)arg1;
 - (void)setRepresentedObject:(id)arg1;

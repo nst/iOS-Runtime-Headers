@@ -14,7 +14,10 @@
 + (id)mailAccounts;
 + (void)reloadAccounts;
 
+- (id)_emailAddressesAndAliases;
 - (id)_initWithProperties:(id)arg1;
+- (BOOL)_isActive;
+- (BOOL)_isRestricted;
 - (BOOL)allowsEmoji;
 - (void)dealloc;
 - (id)emailAddresses;
@@ -22,6 +25,8 @@
 - (id)fromEmailAddresses;
 - (id)fullUserName;
 - (BOOL)isDefaultDeliveryAccount;
+- (id)mailAccount;
+- (BOOL)restrictsRepliesAndForwards;
 - (BOOL)supportsEmoji;
 - (id)uniqueID;
 - (id)username;

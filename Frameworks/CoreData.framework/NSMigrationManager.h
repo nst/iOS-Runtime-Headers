@@ -36,6 +36,7 @@
 - (BOOL)_doThirdPassForMapping:(id)arg1 error:(id*)arg2;
 - (id)_evaluateSourceExpressionForMapping:(id)arg1 entityPolicy:(id)arg2;
 - (id)_mappingNamed:(id)arg1;
+- (BOOL)_migrateStoreFromURL:(id)arg1 type:(id)arg2 options:(id)arg3 withMappingModel:(id)arg4 toDestinationURL:(id)arg5 destinationType:(id)arg6 destinationOptions:(id)arg7 error:(id*)arg8;
 - (id)_migrationContext;
 - (BOOL)_validateAllObjectsAfterMigration:(id*)arg1;
 - (void)associateSourceInstance:(id)arg1 withDestinationInstance:(id)arg2 forEntityMapping:(id)arg3;

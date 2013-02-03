@@ -8,7 +8,7 @@
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    struct $_711 { 
+    struct { 
         unsigned int levelCrossFade : 1; 
         unsigned int drawingDisabled : 1; 
     } _flags;
@@ -21,6 +21,7 @@
 
 + (Class)layerClass;
 
+- (id).cxx_construct;
 - (BOOL)_canDrawContent;
 - (void)_setNeedsDisplayForSubview:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)appendCluster:(id)arg1;

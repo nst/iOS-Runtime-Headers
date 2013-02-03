@@ -7,7 +7,6 @@
 @interface PLCachedFilesManager : NSObject {
     unsigned int _dcimDirectoryHasChanged : 1;
     unsigned int _iTunesDatastoreHasChanged : 1;
-    unsigned int _cameraRollNeedsToBeMigrated : 1;
     unsigned int _recreateCachesDirectory : 1;
     unsigned int _iTunesDataExists : 1;
     NSMutableDictionary *_cachingMetadata;
@@ -23,12 +22,10 @@
     BOOL _recreateCachesAfterCancel;
 }
 
-+ (BOOL)approximateCachesNeedToBeRecreated;
 + (BOOL)instanceIsRecreatingCaches;
 
 - (void)_actuallyRecreateCaches;
 - (BOOL)_cachesDirectoryIsMissingOrIsEmpty;
-- (BOOL)_cameraRollNeedsToBeMigrated;
 - (void)_cancelRecreatingCachedFiles;
 - (BOOL)_dcimDirectoryHasChanged;
 - (void)_finishRecreatingCaches;

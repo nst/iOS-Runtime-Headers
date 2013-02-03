@@ -19,7 +19,6 @@
 
 @property(retain) AAAccount * account;
 
-- (void)_downloadURLConfiguration:(id)arg1;
 - (void)_validateToken:(id)arg1;
 - (void)_verify;
 - (id)account;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSOperationQueue, NSMutableArray, NSArray;
+@class AAAccount, NSOperationQueue, NSArray, NSMutableArray;
 
 @interface AAAccountManager : NSObject {
     NSMutableArray *_accounts;
@@ -11,12 +11,14 @@
 }
 
 @property(readonly) NSArray * accounts;
+@property(readonly) AAAccount * primaryAccount;
 
 + (id)sharedManager;
 + (void)showMobileMeOfferIfNecessary;
 
 - (void)_delayNextCheckByFourToFiveDays;
-- (void)_downloadURLConfiguration:(id)arg1;
+- (id)accountWithIdentifier:(id)arg1;
+- (id)accountWithPersonID:(id)arg1;
 - (id)accountWithUsername:(id)arg1;
 - (id)accounts;
 - (id)accountsEnabledForDataclass:(id)arg1;
@@ -24,6 +26,7 @@
 - (void)dealloc;
 - (void)downloadMobileMeOffer;
 - (void)presentMobileMeOfferWithTitle:(id)arg1 message:(id)arg2;
+- (id)primaryAccount;
 - (void)reloadAccounts;
 - (void)removeAccount:(id)arg1;
 - (void)saveAllAccounts;

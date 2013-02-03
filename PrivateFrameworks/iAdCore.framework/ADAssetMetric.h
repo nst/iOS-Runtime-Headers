@@ -11,7 +11,7 @@
     NSString *_url;
 }
 
-@property(readonly) BOOL hasTime;
+@property BOOL hasTime;
 @property(readonly) BOOL hasUniqueIdentifier;
 @property(readonly) BOOL hasUrl;
 @property unsigned long long time;
@@ -24,8 +24,8 @@
 - (BOOL)hasTime;
 - (BOOL)hasUniqueIdentifier;
 - (BOOL)hasUrl;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
+- (void)setHasTime:(BOOL)arg1;
 - (void)setTime:(unsigned long long)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (void)setUrl:(id)arg1;

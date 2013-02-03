@@ -4,7 +4,8 @@
 
 @class SWSyncHost, NSString, SWSyncServiceConnection, <SWSyncControllerDelegate>, NSMutableArray;
 
-@interface SWSyncController : NSObject {
+@interface SWSyncController : NSObject <SWSyncServiceConnectionDelegate, SWGeneratePINConnectionDelegate, SWSyncWorkoutConnectionDelegate, SWPINStatusConnectionDelegate> {
+    int _attemptedUploadCount;
     NSString *_baseDirectoryPath;
     SWSyncServiceConnection *_currentSyncConnection;
     NSString *_currentlySyncingWorkoutFilePath;
@@ -20,6 +21,9 @@
 @property BOOL shouldMoveFilesToSynchedDirectoryWhenDone;
 @property <SWSyncControllerDelegate> * syncDelegate;
 @property int uploadCount;
+
++ (void)releaseSyncInProgressFileLock;
++ (BOOL)takeSyncInProgressFileLock:(BOOL)arg1;
 
 - (id)_syncHost;
 - (void)_syncNextWorkout;
@@ -41,6 +45,7 @@
 - (BOOL)shouldMoveFilesToSynchedDirectoryWhenDone;
 - (void)syncAllWorkouts;
 - (id)syncDelegate;
+- (unsigned int)unsyncedWorkoutsCount;
 - (int)uploadCount;
 - (void)visitNikeWebSite;
 

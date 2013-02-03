@@ -2,15 +2,18 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSMutableDictionary, <GKMatchDelegate>, GKSession, NSData, NSArray, GKConnection;
+@class NSArray, GKConnection, NSMutableArray, GKSession, <GKMatchDelegate>, NSMutableDictionary, NSData;
 
-@interface GKMatch : NSObject {
+@interface GKMatch : NSObject <GKSessionDelegate, GKSessionPrivateDelegate> {
     GKConnection *_connection;
     <GKMatchDelegate> *_delegate;
     unsigned int _expectedPlayerCount;
     <GKMatchDelegate> *_inviteDelegate;
+    NSMutableArray *_opponentIDs;
     unsigned int _packetSequenceNumber;
     NSMutableDictionary *_playerEventQueues;
+    NSMutableDictionary *_playerPushTokens;
+    NSMutableArray *_reinvitedPlayers;
     NSData *_selfBlob;
     GKSession *_session;
     unsigned char _version;
@@ -20,14 +23,20 @@
 @property <GKMatchDelegate> * delegate;
 @property(readonly) unsigned int expectedPlayerCount;
 @property <GKMatchDelegate> * inviteDelegate;
+@property(retain) NSMutableArray * opponentIDs;
 @property unsigned int packetSequenceNumber;
 @property(retain) NSMutableDictionary * playerEventQueues;
 @property(readonly) NSArray * playerIDs;
+@property(retain) NSMutableDictionary * playerPushTokens;
+@property(retain) NSMutableArray * reinvitedPlayers;
 @property(retain) NSData * selfBlob;
 @property(retain) GKSession * session;
 @property unsigned char version;
 
 - (void)acceptRelayResponse:(id)arg1 playerID:(id)arg2;
+- (id)allIDs;
+- (void)conditionallyReinvitePlayer:(id)arg1 sessionToken:(id)arg2;
+- (void)conditionallyRelaunchPlayer:(id)arg1;
 - (void)connectToPeersWithDictionaries:(id)arg1 version:(unsigned char)arg2 sessionToken:(id)arg3 cdxTicket:(id)arg4;
 - (BOOL)connected:(id)arg1;
 - (id)connection;
@@ -46,16 +55,21 @@
 - (void)initRelayResponse:(id)arg1 playerID:(id)arg2;
 - (id)inviteDelegate;
 - (void)inviteeComboMatched:(int)arg1;
+- (id)opponentIDs;
 - (id)packet:(unsigned char)arg1 data:(id)arg2;
 - (unsigned int)packetSequenceNumber;
 - (id)peerFromPlayer:(id)arg1;
 - (id)playerEventQueues;
 - (id)playerFromPeer:(id)arg1;
 - (id)playerIDs;
+- (id)playerPushTokens;
 - (void)preLoadInviter:(id)arg1 sessionToken:(id)arg2;
 - (void)preemptRelay:(id)arg1;
 - (void)queueData:(id)arg1 forPlayer:(id)arg2;
 - (void)receiveData:(id)arg1 fromPeer:(id)arg2 inSession:(id)arg3 context:(void*)arg4;
+- (id)reinvitedPlayers;
+- (void)reinviteeAcceptedNotification:(id)arg1;
+- (void)reinviteeDeclinedNotification:(id)arg1;
 - (void)relayPush:(id)arg1;
 - (void)relayPushNotification:(id)arg1;
 - (void)requestRelayInitForPlayer:(id)arg1;
@@ -78,8 +92,11 @@
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInviteDelegate:(id)arg1;
+- (void)setOpponentIDs:(id)arg1;
 - (void)setPacketSequenceNumber:(unsigned int)arg1;
 - (void)setPlayerEventQueues:(id)arg1;
+- (void)setPlayerPushTokens:(id)arg1;
+- (void)setReinvitedPlayers:(id)arg1;
 - (void)setSelfBlob:(id)arg1;
 - (void)setSession:(id)arg1;
 - (void)setVersion:(unsigned char)arg1;

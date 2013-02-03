@@ -10,7 +10,5 @@
 - (BOOL)canShowAlerts;
 - (void)menuButtonUp:(struct __GSEvent { }*)arg1;
 - (void)sendEvent:(id)arg1;
-- (void)setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2 changeApplicationFlag:(BOOL)arg3;
-- (void)setStatusBarOrientation:(int)arg1 animationParameters:(id)arg2;
 
 @end

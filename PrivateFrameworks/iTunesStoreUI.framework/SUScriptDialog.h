@@ -12,35 +12,38 @@
     NSString *_title;
 }
 
-@property(getter=_body,setter=set_body:,retain) NSString * body;
-@property(getter=_buttons,setter=set_buttons:,retain) id buttons;
-@property(getter=_cancelButtonIndex,setter=set_cancelButtonIndex:,retain) NSNumber * cancelButtonIndex;
-@property(getter=_textFields,setter=set_textFields:,retain) id textFields;
-@property(getter=_title,setter=set_title:,retain) NSString * title;
+@property(retain) NSString * body;
+@property(retain) id buttons;
+@property(retain) NSNumber * cancelButtonIndex;
+@property(retain) id textFields;
+@property(retain) NSString * title;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
-- (id)_body;
-- (id)_buttons;
-- (id)_cancelButtonIndex;
 - (id)_className;
 - (void)_dismiss;
 - (void)_logSheetWarnings;
 - (id)_nativeDialog;
 - (void)_show;
 - (void)_showFromDOMElement:(id)arg1;
-- (id)_textFields;
-- (id)_title;
+- (id)attributeKeys;
+- (id)body;
+- (id)buttons;
+- (id)cancelButtonIndex;
 - (void)dealloc;
 - (void)dismiss;
-- (void)set_body:(id)arg1;
-- (void)set_buttons:(id)arg1;
-- (void)set_cancelButtonIndex:(id)arg1;
-- (void)set_textFields:(id)arg1;
-- (void)set_title:(id)arg1;
+- (id)scriptAttributeKeys;
+- (void)setBody:(id)arg1;
+- (void)setButtons:(id)arg1;
+- (void)setCancelButtonIndex:(id)arg1;
+- (void)setTextFields:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (void)show;
 - (void)showFromDOMElement:(id)arg1;
 - (void)showSheet;
+- (id)textFields;
+- (id)title;
 
 @end

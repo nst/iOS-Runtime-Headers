@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIImageView, NSString;
+@class PSSpecifier, UIImageView, NSString;
 
 @interface PreferencesTableCell : UITableViewCell {
     int _alignment;
@@ -10,21 +10,30 @@
     BOOL _checked;
     UIImageView *_checkedImageView;
     NSString *_hiddenTitle;
+    BOOL _lazyIcon;
+    NSString *_lazyIconAppID;
+    BOOL _lazyIconDontUnload;
+    BOOL _lazyIconForceSynchronous;
     SEL _pAction;
     id _pTarget;
     BOOL _shouldHideTitle;
+    PSSpecifier *_specifier;
+    int _type;
     id _value;
 }
 
-+ (void)_initializeSafeCategory;
+@property(retain) PSSpecifier * specifier;
+@property int type;
 
-- (id)accessibilityTableViewCellText;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
 - (SEL)action;
+- (id)blankIcon;
 - (BOOL)canReload;
 - (BOOL)cellEnabled;
 - (void)dealloc;
+- (void)didMoveToSuperview;
+- (void)forceSynchronousIconLoadOnNextIconLoad;
+- (id)getIcon;
+- (id)getLazyIcon;
 - (id)iconImageView;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isChecked;
@@ -37,13 +46,18 @@
 - (void)setChecked:(BOOL)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setShouldHideTitle:(BOOL)arg1;
+- (void)setSpecifier:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setType:(int)arg1;
 - (void)setValue:(id)arg1;
+- (id)specifier;
 - (id)target;
 - (id)title;
 - (id)titleLabel;
+- (int)type;
 - (id)value;
 - (id)valueLabel;
+- (void)willMoveToSuperview:(id)arg1;
 
 @end

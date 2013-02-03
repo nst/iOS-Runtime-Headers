@@ -35,9 +35,12 @@
     SEL _willStartSelector;
 }
 
+@property(readonly) BOOL _allowsUserInteraction;
+
 + (void)popAnimationState;
 + (void)pushViewAnimationState:(id)arg1 context:(void*)arg2;
 
+- (BOOL)_allowsUserInteraction;
 - (void)animationDidStart:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;

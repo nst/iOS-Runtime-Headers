@@ -2,42 +2,62 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString, SSItemOffer, SSDownloadMetadata, NSNumber, SSItem;
+@class NSNumber, SSURLRequestProperties, SSItem, NSDictionary, NSString, SSItemOffer, NSMutableDictionary, NSArray;
 
-@interface SSPurchase : NSObject <NSCoding, NSCopying> {
+@interface SSPurchase : NSObject <SSCoding, NSCoding, NSCopying> {
     NSNumber *_accountIdentifier;
     NSString *_buyParameters;
-    SSDownloadMetadata *_downloadMetadata;
+    NSMutableDictionary *_downloadProperties;
+    NSArray *_filteredAssetTypes;
     SSItem *_item;
     SSItemOffer *_itemOffer;
+    long long _placeholderDownloadIdentifier;
+    SSURLRequestProperties *_requestProperties;
     NSString *_uniqueIdentifier;
 }
 
 @property(retain) NSNumber * accountIdentifier;
 @property(copy) NSString * buyParameters;
-@property(copy) SSDownloadMetadata * downloadMetadata;
+@property(copy) NSDictionary * downloadProperties;
+@property(copy) NSArray * filteredAssetTypes;
 @property(readonly) SSItem * item;
 @property(readonly) SSItemOffer * itemOffer;
+@property long long placeholderDownloadIdentifier;
+@property(copy) SSURLRequestProperties * requestProperties;
 @property(readonly) NSString * uniqueIdentifier;
 
 + (id)purchaseWithBuyParameters:(id)arg1;
 
+- (id)_initSSPurchase;
 - (id)accountIdentifier;
 - (id)buyParameters;
 - (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void*)copyXPCEncoding;
 - (void)dealloc;
 - (id)downloadMetadata;
+- (id)downloadProperties;
 - (void)encodeWithCoder:(id)arg1;
+- (id)filteredAssetTypes;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItem:(id)arg1 offer:(id)arg2;
 - (id)initWithItem:(id)arg1;
 - (id)initWithPropertyListEncoding:(id)arg1;
+- (id)initWithXPCEncoding:(void*)arg1;
 - (id)item;
 - (id)itemOffer;
+- (long long)placeholderDownloadIdentifier;
+- (id)requestProperties;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setBuyParameters:(id)arg1;
 - (void)setDownloadMetadata:(id)arg1;
+- (void)setDownloadProperties:(id)arg1;
+- (void)setFilteredAssetTypes:(id)arg1;
+- (void)setPlaceholderDownloadIdentifier:(long long)arg1;
+- (void)setRequestProperties:(id)arg1;
+- (void)setValue:(id)arg1 forDownloadProperty:(id)arg2;
 - (id)uniqueIdentifier;
+- (id)valueForDownloadProperty:(id)arg1;
 
 @end

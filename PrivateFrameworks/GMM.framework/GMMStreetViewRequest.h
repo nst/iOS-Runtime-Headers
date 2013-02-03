@@ -2,9 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class GMMOutgoingSuperTile, GMMOutgoingTile, GMMMetadata, NSMutableArray, NSString, GMMOutgoingThumbnail, GMMMapPoint;
+@class GMMOutgoingTile, GMMOutgoingThumbnail, NSString, GMMOutgoingSuperTile, GMMMetadata, GMMMapPoint;
 
 @interface GMMStreetViewRequest : PBRequest {
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     int _cbkVersion;
     BOOL _clientSideThrottlingSupported;
     BOOL _hasCbkVersion;
@@ -20,23 +24,23 @@
     GMMOutgoingThumbnail *_outgoingThumbnail;
     GMMOutgoingTile *_outgoingTile;
     NSString *_panoId;
-    NSMutableArray *_renderers;
+    } _renderers;
     BOOL _requestSignature;
 }
 
 @property int cbkVersion;
 @property BOOL clientSideThrottlingSupported;
-@property(readonly) BOOL hasCbkVersion;
-@property(readonly) BOOL hasClientSideThrottlingSupported;
-@property(readonly) BOOL hasIsPrefetch;
+@property BOOL hasCbkVersion;
+@property BOOL hasClientSideThrottlingSupported;
+@property BOOL hasIsPrefetch;
 @property(readonly) BOOL hasLatLon;
-@property(readonly) BOOL hasLinkSkip;
+@property BOOL hasLinkSkip;
 @property(readonly) BOOL hasMetadata;
 @property(readonly) BOOL hasOutgoingSuperTile;
 @property(readonly) BOOL hasOutgoingThumbnail;
 @property(readonly) BOOL hasOutgoingTile;
 @property(readonly) BOOL hasPanoId;
-@property(readonly) BOOL hasRequestSignature;
+@property BOOL hasRequestSignature;
 @property BOOL isPrefetch;
 @property(retain) GMMMapPoint * latLon;
 @property int linkSkip;
@@ -45,15 +49,17 @@
 @property(retain) GMMOutgoingThumbnail * outgoingThumbnail;
 @property(retain) GMMOutgoingTile * outgoingTile;
 @property(retain) NSString * panoId;
-@property(retain) NSMutableArray * renderers;
-@property(readonly) int renderersCount;
+@property(readonly) int* renderers;
+@property(readonly) unsigned int renderersCount;
 @property BOOL requestSignature;
 
 - (void)addRenderer:(int)arg1;
 - (int)cbkVersion;
+- (void)clearRenderers;
 - (BOOL)clientSideThrottlingSupported;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasCbkVersion;
 - (BOOL)hasClientSideThrottlingSupported;
 - (BOOL)hasIsPrefetch;
@@ -65,7 +71,6 @@
 - (BOOL)hasOutgoingTile;
 - (BOOL)hasPanoId;
 - (BOOL)hasRequestSignature;
-- (id)init;
 - (BOOL)isPrefetch;
 - (id)latLon;
 - (int)linkSkip;
@@ -76,13 +81,18 @@
 - (id)panoId;
 - (BOOL)readFrom:(id)arg1;
 - (int)rendererAtIndex:(unsigned int)arg1;
-- (id)renderers;
-- (int)renderersCount;
+- (int*)renderers;
+- (unsigned int)renderersCount;
 - (BOOL)requestSignature;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setCbkVersion:(int)arg1;
 - (void)setClientSideThrottlingSupported:(BOOL)arg1;
+- (void)setHasCbkVersion:(BOOL)arg1;
+- (void)setHasClientSideThrottlingSupported:(BOOL)arg1;
+- (void)setHasIsPrefetch:(BOOL)arg1;
+- (void)setHasLinkSkip:(BOOL)arg1;
+- (void)setHasRequestSignature:(BOOL)arg1;
 - (void)setIsPrefetch:(BOOL)arg1;
 - (void)setLatLon:(id)arg1;
 - (void)setLinkSkip:(int)arg1;
@@ -91,8 +101,7 @@
 - (void)setOutgoingThumbnail:(id)arg1;
 - (void)setOutgoingTile:(id)arg1;
 - (void)setPanoId:(id)arg1;
-- (void)setRenderer:(int)arg1 atIndex:(unsigned int)arg2;
-- (void)setRenderers:(id)arg1;
+- (void)setRenderers:(int*)arg1 count:(unsigned int)arg2;
 - (void)setRequestSignature:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 

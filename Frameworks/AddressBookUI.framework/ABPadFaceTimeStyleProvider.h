@@ -105,6 +105,7 @@
 - (id)personViewGetFavoritesBadgeHighlighted;
 - (BOOL)presentDatePickerInPopover;
 - (BOOL)presentModalViewInPopover;
+- (BOOL)presentNewContactsControllersInPopover;
 - (id)separatorColorForCellStyle:(int)arg1;
 - (int)separatorStyleForCellStyle:(int)arg1;
 - (void)setIndicatesFaceTimeHistory:(BOOL)arg1 onActionButton:(id)arg2;

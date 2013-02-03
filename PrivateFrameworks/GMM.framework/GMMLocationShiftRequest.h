@@ -12,7 +12,7 @@
 
 - (void)dealloc;
 - (id)description;
-- (id)init;
+- (id)dictionaryRepresentation;
 - (id)originalPoint;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;

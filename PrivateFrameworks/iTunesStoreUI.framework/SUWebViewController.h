@@ -24,9 +24,7 @@
 @property(copy) SSAuthenticationContext * authenticationContext;
 @property int style;
 @property BOOL viewIsReady;
-@property(retain,readonly) SUWebView * webView;
-
-+ (void)_initializeSafeCategory;
+@property(readonly) SUWebView * webView;
 
 - (void)_addPlaceholderBackgroundView;
 - (void)_applySavedScrollOffsetIfPossible;
@@ -45,7 +43,6 @@
 - (void)_setLastKnownOrientation:(int)arg1;
 - (void)_setTrackListController:(id)arg1;
 - (void)_updateTrackListRootItem;
-- (unsigned long long)accessibilityTraits;
 - (void)applicationDidEnterBackground;
 - (void)applicationWillEnterForeground;
 - (id)authenticationContext;

@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class APSConnection;
+@class APSConnection, NSData;
 
 @interface FTEmbeddedPushHandler : FTPushHandler <APSConnectionDelegate> {
     Class _APSConnectionClass;
     APSConnection *_apsConnection;
+    NSData *_cachedPushToken;
+    int _cachedStatus;
     BOOL _fastUserSwitched;
 }
 
@@ -14,17 +16,30 @@
 - (void)_handleAcceptPush:(id)arg1;
 - (void)_handleCancelPush:(id)arg1;
 - (void)_handleEmailConfirmedPush:(id)arg1;
+- (void)_handleGenericCommandPush:(id)arg1;
+- (void)_handleGenericDataPush:(id)arg1;
+- (void)_handleIncomingAttachmentMessage:(id)arg1;
+- (void)_handleIncomingDeliveryReceipt:(id)arg1;
+- (void)_handleIncomingMessageError:(id)arg1;
+- (void)_handleIncomingReadReceipt:(id)arg1;
+- (void)_handleIncomingTextMessage:(id)arg1;
 - (void)_handleInitatePush:(id)arg1;
+- (void)_handlePendingMessagePush:(id)arg1;
 - (void)_handleRejectPush:(id)arg1;
 - (void)_handleRelayCancelPush:(id)arg1;
 - (void)_handleRelayInitatePush:(id)arg1;
 - (void)_handleRelayUpdatePush:(id)arg1;
 - (void)_handleReregisterPush:(id)arg1;
+- (void)_handleSendPush:(id)arg1;
 - (void)_ignoreIncomingPushes;
+- (void)_updateTopics;
+- (void)connection:(id)arg1 didChangeConnectedStatus:(BOOL)arg2;
 - (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;
 - (void)connection:(id)arg1 didReceiveMessageForTopic:(id)arg2 userInfo:(id)arg3;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
 - (void)connection:(id)arg1 didSendOutgoingMessage:(id)arg2;
+- (void)connectionDidReconnect:(id)arg1;
+- (int)connectionStatus;
 - (void)dealloc;
 - (id)initWithTopics:(id)arg1;
 - (id)pushToken;
@@ -32,5 +47,6 @@
 - (void)setRegistered:(BOOL)arg1;
 - (void)systemDidFastUserSwitchIn;
 - (void)systemDidFastUserSwitchOut;
+- (void)updateTopics;
 
 @end

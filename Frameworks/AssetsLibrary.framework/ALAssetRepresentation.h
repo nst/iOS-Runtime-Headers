@@ -10,16 +10,18 @@
 
 @property(retain) ALAssetRepresentationPrivate * internal;
 
+- (struct CGImage { }*)CGImageWithOptions:(id)arg1 format:(int)arg2 bakeInOrientation:(int)arg3;
 - (struct CGImage { }*)CGImageWithOptions:(id)arg1;
 - (id)UTI;
-- (id)_dataFromFileDescriptor;
 - (int)_fileDescriptor;
+- (id)_imageData;
 - (void)dealloc;
 - (id)description;
+- (id)filename;
 - (struct CGImage { }*)fullResolutionImage;
 - (struct CGImage { }*)fullScreenImage;
 - (unsigned int)getBytes:(char *)arg1 fromOffset:(long long)arg2 length:(unsigned int)arg3 error:(id*)arg4;
-- (id)initWithMLPhoto:(id)arg1 extension:(id)arg2 library:(id)arg3;
+- (id)initWithManagedAsset:(id)arg1 sidecar:(id)arg2 extension:(id)arg3 library:(id)arg4;
 - (id)internal;
 - (BOOL)isValid;
 - (id)metadata;

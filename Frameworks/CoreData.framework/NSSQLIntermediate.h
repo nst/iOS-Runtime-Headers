@@ -11,6 +11,7 @@
 + (BOOL)expressionIsBasicKeypath:(id)arg1;
 + (BOOL)isSimpleKeypath:(id)arg1;
 
+- (BOOL)_canDoASubselectForExpression:(id)arg1 inContext:(id)arg2;
 - (BOOL)_functionExpressionIsSubqueryFollowedByKeypath:(id)arg1;
 - (id)_generateSQLForConstantCollection:(id)arg1 inContext:(id)arg2;
 - (id)_generateSQLForConstantValue:(id)arg1 inContext:(id)arg2;

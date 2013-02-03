@@ -18,6 +18,7 @@
 @property(retain) NSString * title;
 @property BOOL usesSharedPlaceholder;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 
 - (id)_className;

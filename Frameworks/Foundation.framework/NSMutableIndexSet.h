@@ -21,7 +21,10 @@
 - (void)addIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (Class)classForCoder;
 - (id)copyPropertyListEncoding;
+- (void*)copyXPCEncoding;
 - (id)initWithPropertyListEncoding:(id)arg1;
+- (id)initWithXPCEncoding:(void*)arg1;
+- (void)pl_extractIndexes:(id)arg1;
 - (void)removeAllIndexes;
 - (void)removeIndex:(unsigned int)arg1;
 - (void)removeIndexes:(id)arg1;

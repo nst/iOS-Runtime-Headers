@@ -27,8 +27,9 @@
 - (void)_setLazyDestinationEntityName:(id)arg1;
 - (void)_updateInverse:(id)arg1;
 - (BOOL)_validateValuesAreOfDestinationEntity:(id)arg1 source:(id)arg2;
+- (void)_versionHash:(char *)arg1 proxyContext:(id)arg2;
 - (void)_versionHash:(char *)arg1;
-- (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(const id)arg6;
+- (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(const id)arg6 fetchRequests:(id)arg7;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (unsigned int)deleteRule;
@@ -40,6 +41,7 @@
 - (id)inverseRelationship;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isIndexed;
+- (BOOL)isOrdered;
 - (BOOL)isToMany;
 - (unsigned int)maxCount;
 - (unsigned int)minCount;
@@ -48,6 +50,7 @@
 - (void)setInverseRelationship:(id)arg1;
 - (void)setMaxCount:(unsigned int)arg1;
 - (void)setMinCount:(unsigned int)arg1;
+- (void)setOrdered:(BOOL)arg1;
 - (id)versionHash;
 
 @end

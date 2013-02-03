@@ -10,7 +10,7 @@
     unsigned int _sectionIndex;
 }
 
-@property struct _NSRange { unsigned int location; unsigned int length; } range;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
 @property unsigned int sectionIndex;
 
 - (void)dealloc;

@@ -4,10 +4,10 @@
 
 @class NSURL, NSData, NSString;
 
-@interface MLTrackImportChapter : NSObject {
+@interface MLTrackImportChapter : NSObject <NSCopying> {
+    NSString *_imageCacheKey;
     NSData *_imageData;
     unsigned int _startTimeInMilliseconds;
-    unsigned int _time;
     NSString *_title;
     NSURL *_url;
     NSString *_urlTitle;
@@ -15,6 +15,7 @@
 
 @property(copy) NSURL * URL;
 @property(copy) NSString * URLTitle;
+@property(copy) NSString * imageCacheKey;
 @property(copy) NSData * imageData;
 @property unsigned int startTimeInMilliseconds;
 @property(copy) NSString * title;
@@ -22,8 +23,13 @@
 - (id)URL;
 - (id)URLTitle;
 - (int)compare:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
+- (id)imageCacheKey;
 - (id)imageData;
+- (BOOL)isEqualIgnoringTimesAndTitle:(id)arg1;
+- (void)setImageCacheKey:(id)arg1;
 - (void)setImageData:(id)arg1;
 - (void)setStartTimeInMilliseconds:(unsigned int)arg1;
 - (void)setTitle:(id)arg1;

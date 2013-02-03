@@ -9,8 +9,10 @@
     NSString *_transcodePath;
 }
 
++ (id)mimeTypesAllowedForMMS;
 + (id)mimeTypesToFileExtensions;
 
+- (id)_transcodeOptions;
 - (void)dealloc;
 - (id)effectiveExportedFilename;
 - (id)filenameForMedia;

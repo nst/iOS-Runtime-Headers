@@ -14,6 +14,7 @@
 @property int lastViewedPage;
 @property(retain) NSString * name;
 
+- (void)dealloc;
 - (id)emoji;
 - (int)lastViewedPage;
 - (id)name;

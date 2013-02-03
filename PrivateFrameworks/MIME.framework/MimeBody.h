@@ -12,13 +12,11 @@
 }
 
 + (id)copyNewMimeBoundary;
-+ (void)initialize;
 + (id)versionString;
 
 - (id)attachments;
 - (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3 isComplete:(BOOL*)arg4;
 - (void)dealloc;
-- (void)decodeIfNecessary;
 - (id)init;
 - (BOOL)isHTML;
 - (BOOL)isRich;

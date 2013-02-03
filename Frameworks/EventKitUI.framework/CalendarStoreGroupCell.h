@@ -2,22 +2,20 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UILabel;
+@class <EKStyleProvider>, UILabel;
 
 @interface CalendarStoreGroupCell : UIView {
     UILabel *_nameLabel;
+    <EKStyleProvider> *_styleProvider;
     UILabel *_typeLabel;
 }
 
-+ (void)_initializeSafeCategory;
-+ (float)standardHeight;
++ (float)standardHeightForStyleProvider:(id)arg1;
 
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (void)setStoreName:(id)arg1;
 - (void)setStoreType:(id)arg1;

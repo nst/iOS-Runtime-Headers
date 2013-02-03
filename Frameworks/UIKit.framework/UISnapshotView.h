@@ -18,6 +18,11 @@
         float left; 
         float bottom; 
         float right; 
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     struct CGPoint { 
         float x; 
         float y; 
@@ -32,6 +37,7 @@
         } size; 
     unsigned int _disableEdgeAntialiasing : 1;
     unsigned int _disableVerticalStretch : 1;
+    } _contentBeyondBounds;
     } _contentOffset;
     } _contentSize;
     } _edgeInsets;
@@ -42,13 +48,13 @@
     } _snapshotRect;
 }
 
-@property(getter=_contentOffset,setter=_setContentOffset:) struct CGPoint { float x; float y; } contentOffset;
-@property(getter=_contentSize,readonly) struct CGSize { float width; float height; } contentSize;
+@property(getter=_contentOffset,setter=_setContentOffset:) struct CGPoint { float x1; float x2; } contentOffset;
+@property(getter=_contentSize,readonly) struct CGSize { float x1; float x2; } contentSize;
 @property(getter=isEdgeAntialiasingEnabled) BOOL edgeAntialiasingEnabled;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } edgeInsets;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } edgePadding;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgePadding;
 @property(retain) UIColor * edgePaddingColor;
-@property(getter=_snapshotRect,setter=_setSnapshotRect:) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } snapshotRect;
+@property(getter=_snapshotRect,setter=_setSnapshotRect:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshotRect;
 @property(getter=_snapshotView,readonly) UIView * snapshotView;
 @property(getter=isVerticalStretchEnabled) BOOL verticalStretchEnabled;
 
@@ -65,6 +71,7 @@
 - (id)_snapshotView;
 - (void)_updateContentsRect;
 - (void)captureSnapshotOfView:(id)arg1 withSnapshotType:(int)arg2;
+- (void)captureSnapshotRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromView:(id)arg2 withSnapshotType:(int)arg3;
 - (void)dealloc;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgePadding;

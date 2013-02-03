@@ -24,6 +24,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
+- (BOOL)isTurnBasedValid;
 - (BOOL)isValidForHosted:(BOOL)arg1;
 - (unsigned int)maxPlayers;
 - (unsigned int)minPlayers;

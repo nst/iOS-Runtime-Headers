@@ -19,14 +19,10 @@
 @property(readonly) UILabel * rightLabel;
 @property int textAlignment;
 
-+ (void)_initializeSafeCategory;
-
 - (BOOL)_labelsNeedSizing;
 - (void)_sizeLabelsToFit;
-- (id)accessibilityLabel;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
 - (float)labelSpacing;
 - (void)layoutSubviews;
 - (id)leftLabel;

@@ -35,6 +35,7 @@
 @property(readonly) id sourceTypePhotoLibrary;
 @property(readonly) id sourceTypeSavedPhotosAlbum;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 

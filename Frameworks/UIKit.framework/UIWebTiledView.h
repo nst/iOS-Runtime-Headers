@@ -19,8 +19,10 @@
 - (unsigned int)adjustedMaxTileCount;
 - (void)dealloc;
 - (BOOL)drawsGrid;
+- (void)dumpTiles;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isTilingEnabled;
+- (BOOL)keepsZoomedOutTiles;
 - (void)layoutSubviews;
 - (BOOL)layoutTilesInMainThread;
 - (void)layoutTilesNow;
@@ -31,8 +33,10 @@
 - (unsigned int)maxTileCount;
 - (void)removeAllNonVisibleTiles;
 - (void)removeAllTiles;
+- (void)removeForegroundTiles;
 - (void)setDrawsGrid:(BOOL)arg1;
 - (void)setInGesture:(int)arg1;
+- (void)setKeepsZoomedOutTiles:(BOOL)arg1;
 - (void)setLayoutTilesInMainThread:(BOOL)arg1;
 - (void)setLogsTilingChanges:(BOOL)arg1;
 - (void)setMaxTileCount:(unsigned int)arg1;
@@ -40,12 +44,12 @@
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNeedsLayout;
 - (void)setTileDrawingEnabled:(BOOL)arg1;
-- (void)setTileMinificationFilter:(id)arg1;
 - (void)setTileSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTilesOpaque:(BOOL)arg1;
 - (void)setTilingArea:(int)arg1;
 - (void)setTilingEnabled:(BOOL)arg1;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setWAKWindow:(id)arg1;
 - (BOOL)tileDrawingEnabled;
 - (struct CGSize { float x1; float x2; })tileSize;
 - (BOOL)tilesOpaque;

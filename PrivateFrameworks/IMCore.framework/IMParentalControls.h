@@ -2,62 +2,50 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSSet, NSMutableSet;
+@class NSMutableDictionary;
 
 @interface IMParentalControls : NSObject {
-    unsigned int _active : 1;
-    unsigned int _disableAV : 1;
-    unsigned int _disableAimService : 1;
-    unsigned int _forceAimWhitelist : 1;
-    unsigned int _disableSubnetService : 1;
-    unsigned int _forceSubnetWhitelist : 1;
-    unsigned int _disableJabberService : 1;
-    unsigned int _forceJabberWhitelist : 1;
-    unsigned int _forceChatLogging : 1;
-    unsigned int _shouldPostNotifications : 1;
-    NSMutableSet *_aimWhitelist;
-    NSMutableSet *_jabberWhitelist;
-    NSMutableSet *_subnetWhitelist;
+    BOOL _active;
+    BOOL _disableAV;
+    BOOL _forceChatLogging;
+    NSMutableDictionary *_parentalControls;
+    BOOL _shouldPostNotifications;
 }
 
+@property(readonly) BOOL _disableAV;
+@property(readonly) BOOL _forceChatLogging;
+@property(readonly) NSMutableDictionary * _parentalControls;
 @property(readonly) BOOL active;
-@property(readonly) NSSet * aimWhitelist;
 @property(readonly) BOOL disableAV;
-@property(readonly) BOOL disableAimService;
-@property(readonly) BOOL disableJabberService;
-@property(readonly) BOOL disableSubnetService;
-@property(readonly) BOOL forceAimWhitelist;
 @property(readonly) BOOL forceChatLogging;
-@property(readonly) BOOL forceJabberWhitelist;
-@property(readonly) BOOL forceSubnetWhitelist;
-@property(readonly) NSSet * jabberWhitelist;
-@property(readonly) NSSet * subnetWhitelist;
+@property BOOL shouldPostNotifications;
 
 + (id)objectForKey:(id)arg1;
 + (id)standardControls;
 
+- (BOOL)_disableAV;
+- (BOOL)_forceChatLogging;
 - (void)_managedPrefsNotification:(id)arg1;
+- (id)_parentalControls;
+- (id)_serviceWithName:(id)arg1;
 - (void)_updateParentalSettings;
 - (BOOL)accountHasWhitelist:(id)arg1;
 - (BOOL)accountIsEnabled:(id)arg1;
 - (BOOL)active;
-- (id)aimWhitelist;
-- (id)autorelease;
+- (BOOL)allowsWeakReference;
 - (void)dealloc;
 - (BOOL)disableAV;
-- (BOOL)disableAimService;
-- (BOOL)disableJabberService;
-- (BOOL)disableSubnetService;
-- (BOOL)forceAimWhitelist;
+- (BOOL)disableAccount:(id)arg1;
+- (BOOL)disableService:(id)arg1;
 - (BOOL)forceChatLogging;
-- (BOOL)forceJabberWhitelist;
-- (BOOL)forceSubnetWhitelist;
+- (BOOL)forceWhitelistForAccount:(id)arg1;
+- (BOOL)forceWhitelistForService:(id)arg1;
 - (id)init;
-- (id)jabberWhitelist;
 - (BOOL)okToConnectAccount:(id)arg1;
-- (oneway void)release;
-- (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 - (void)setShouldPostNotifications:(BOOL)arg1;
-- (id)subnetWhitelist;
+- (BOOL)shouldPostNotifications;
+- (id)whitelistForAccount:(id)arg1;
+- (id)whitelistForService:(id)arg1;
 
 @end

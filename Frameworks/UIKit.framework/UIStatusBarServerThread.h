@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSMutableDictionary;
 
 @interface UIStatusBarServerThread : NSThread {
     struct { 
-        BOOL itemIsEnabled[22]; 
+        BOOL itemIsEnabled[23]; 
         BOOL timeString[64]; 
         int gsmSignalStrengthRaw; 
         int gsmSignalStrengthBars; 
         BOOL serviceString[100]; 
-        BOOL serviceImageBlack[100]; 
-        BOOL serviceImageSilver[100]; 
+        BOOL serviceCrossfadeString[100]; 
+        BOOL serviceImages[3][100]; 
         BOOL operatorDirectory[1024]; 
         unsigned int serviceContentType; 
         int wifiSignalStrengthRaw; 
@@ -25,18 +25,19 @@
         int thermalColor; 
         unsigned int thermalSunlightMode : 1; 
         unsigned int slowActivity : 1; 
+        unsigned int syncActivity : 1; 
         BOOL activityDisplayId[256]; 
         unsigned int bluetoothConnected : 1; 
         unsigned int displayRawGSMSignal : 1; 
         unsigned int displayRawWifiSignal : 1; 
     struct { 
-        BOOL itemIsEnabled[22]; 
+        BOOL itemIsEnabled[23]; 
         BOOL timeString[64]; 
         int gsmSignalStrengthRaw; 
         int gsmSignalStrengthBars; 
         BOOL serviceString[100]; 
-        BOOL serviceImageBlack[100]; 
-        BOOL serviceImageSilver[100]; 
+        BOOL serviceCrossfadeString[100]; 
+        BOOL serviceImages[3][100]; 
         BOOL operatorDirectory[1024]; 
         unsigned int serviceContentType; 
         int wifiSignalStrengthRaw; 
@@ -49,18 +50,18 @@
         int thermalColor; 
         unsigned int thermalSunlightMode : 1; 
         unsigned int slowActivity : 1; 
+        unsigned int syncActivity : 1; 
         BOOL activityDisplayId[256]; 
         unsigned int bluetoothConnected : 1; 
         unsigned int displayRawGSMSignal : 1; 
         unsigned int displayRawWifiSignal : 1; 
     struct { 
-        BOOL overrideItemIsEnabled[22]; 
+        BOOL overrideItemIsEnabled[23]; 
         unsigned int overrideTimeString : 1; 
         unsigned int overrideGsmSignalStrengthRaw : 1; 
         unsigned int overrideGsmSignalStrengthBars : 1; 
         unsigned int overrideServiceString : 1; 
-        unsigned int overrideServiceImageBlack : 1; 
-        unsigned int overrideServiceImageSilver : 1; 
+        unsigned int overrideServiceImages : 3; 
         unsigned int overrideOperatorDirectory : 1; 
         unsigned int overrideServiceContentType : 1; 
         unsigned int overrideWifiSignalStrengthRaw : 1; 
@@ -76,13 +77,13 @@
         unsigned int overrideDisplayRawGSMSignal : 1; 
         unsigned int overrideDisplayRawWifiSignal : 1; 
         struct { 
-            BOOL itemIsEnabled[22]; 
+            BOOL itemIsEnabled[23]; 
             BOOL timeString[64]; 
             int gsmSignalStrengthRaw; 
             int gsmSignalStrengthBars; 
             BOOL serviceString[100]; 
-            BOOL serviceImageBlack[100]; 
-            BOOL serviceImageSilver[100]; 
+            BOOL serviceCrossfadeString[100]; 
+            BOOL serviceImages[3][100]; 
             BOOL operatorDirectory[1024]; 
             unsigned int serviceContentType; 
             int wifiSignalStrengthRaw; 
@@ -95,6 +96,7 @@
             int thermalColor; 
             unsigned int thermalSunlightMode : 1; 
             unsigned int slowActivity : 1; 
+            unsigned int syncActivity : 1; 
             BOOL activityDisplayId[256]; 
             unsigned int bluetoothConnected : 1; 
             unsigned int displayRawGSMSignal : 1; 
@@ -104,6 +106,7 @@
     } _composedStatusBarData;
     BOOL _composedStatusBarDataValid;
     struct __CFDictionary { } *_doubleHeightStatusStrings;
+    NSMutableDictionary *_glowAnimationEndTimes;
     struct __CFDictionary { } *_glowAnimationStates;
     } _overrides;
     NSMutableArray *_publishers;
@@ -116,19 +119,22 @@
 - (void)_broadcastStatusBarDataWithActions:(int)arg1;
 - (void)_broadcastStyleOverrides;
 - (id)_doubleHeightStatusStringForStyle:(int)arg1;
+- (double)_glowAnimationEndTimeForStyle:(int)arg1;
 - (BOOL)_glowAnimationStateForStyle:(int)arg1;
 - (BOOL)_permanentizeStatusBarOverrideData;
 - (void)_postDoubleHeightStatus:(char *)arg1 forStyle:(int)arg2;
 - (void)_postGlowAnimationState:(BOOL)arg1 forStyle:(int)arg2;
-- (void)_postStatusBarData:(struct { BOOL x1[22]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; BOOL x20[256]; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg1 actions:(int)arg2;
-- (void)_postStatusBarOverrideData:(struct { BOOL x1[22]; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; struct { BOOL x_22_1_1[22]; BOOL x_22_1_2[64]; int x_22_1_3; int x_22_1_4; BOOL x_22_1_5[100]; BOOL x_22_1_6[100]; BOOL x_22_1_7[100]; BOOL x_22_1_8[1024]; unsigned int x_22_1_9; int x_22_1_10; int x_22_1_11; unsigned int x_22_1_12; int x_22_1_13; unsigned int x_22_1_14; BOOL x_22_1_15[150]; int x_22_1_16; int x_22_1_17; unsigned int x_22_1_18 : 1; unsigned int x_22_1_19 : 1; BOOL x_22_1_20[256]; unsigned int x_22_1_21 : 1; unsigned int x_22_1_22 : 1; unsigned int x_22_1_23 : 1; } x22; }*)arg1;
+- (void)_postStatusBarData:(struct { BOOL x1[23]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[3][100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; BOOL x21[256]; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; }*)arg1 actions:(int)arg2;
+- (void)_postStatusBarOverrideData:(struct { BOOL x1[23]; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 3; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; struct { BOOL x_21_1_1[23]; BOOL x_21_1_2[64]; int x_21_1_3; int x_21_1_4; BOOL x_21_1_5[100]; BOOL x_21_1_6[100]; BOOL x_21_1_7[3][100]; BOOL x_21_1_8[1024]; unsigned int x_21_1_9; int x_21_1_10; int x_21_1_11; unsigned int x_21_1_12; int x_21_1_13; unsigned int x_21_1_14; BOOL x_21_1_15[150]; int x_21_1_16; int x_21_1_17; unsigned int x_21_1_18 : 1; unsigned int x_21_1_19 : 1; unsigned int x_21_1_20 : 1; BOOL x_21_1_21[256]; unsigned int x_21_1_22 : 1; unsigned int x_21_1_23 : 1; unsigned int x_21_1_24 : 1; } x21; }*)arg1;
 - (id)_publisherForPort:(unsigned int)arg1;
+- (void)_removeAnimationEndTimesForOverrides:(int)arg1;
 - (void)_removeClient:(struct __CFMachPort { }*)arg1;
 - (void)_removePublisher:(struct __CFMachPort { }*)arg1;
 - (void)_removeStatusBarItem:(int)arg1 forPublisher:(id)arg2;
 - (void)_removeStyleOverrides:(int)arg1 forPublisher:(id)arg2;
-- (struct { BOOL x1[22]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; BOOL x20[256]; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)_statusBarData;
-- (struct { BOOL x1[22]; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; struct { BOOL x_22_1_1[22]; BOOL x_22_1_2[64]; int x_22_1_3; int x_22_1_4; BOOL x_22_1_5[100]; BOOL x_22_1_6[100]; BOOL x_22_1_7[100]; BOOL x_22_1_8[1024]; unsigned int x_22_1_9; int x_22_1_10; int x_22_1_11; unsigned int x_22_1_12; int x_22_1_13; unsigned int x_22_1_14; BOOL x_22_1_15[150]; int x_22_1_16; int x_22_1_17; unsigned int x_22_1_18 : 1; unsigned int x_22_1_19 : 1; BOOL x_22_1_20[256]; unsigned int x_22_1_21 : 1; unsigned int x_22_1_22 : 1; unsigned int x_22_1_23 : 1; } x22; }*)_statusBarOverrideData;
+- (void)_setAnimationEndTimesForOverrides:(int)arg1;
+- (struct { BOOL x1[23]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[3][100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; BOOL x21[256]; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; }*)_statusBarData;
+- (struct { BOOL x1[23]; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 3; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; struct { BOOL x_21_1_1[23]; BOOL x_21_1_2[64]; int x_21_1_3; int x_21_1_4; BOOL x_21_1_5[100]; BOOL x_21_1_6[100]; BOOL x_21_1_7[3][100]; BOOL x_21_1_8[1024]; unsigned int x_21_1_9; int x_21_1_10; int x_21_1_11; unsigned int x_21_1_12; int x_21_1_13; unsigned int x_21_1_14; BOOL x_21_1_15[150]; int x_21_1_16; int x_21_1_17; unsigned int x_21_1_18 : 1; unsigned int x_21_1_19 : 1; unsigned int x_21_1_20 : 1; BOOL x_21_1_21[256]; unsigned int x_21_1_22 : 1; unsigned int x_21_1_23 : 1; unsigned int x_21_1_24 : 1; } x21; }*)_statusBarOverrideData;
 - (int)_styleOverrides;
 - (void)main;
 

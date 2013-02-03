@@ -24,11 +24,13 @@
     id _editor;
     EKEvent *_event;
     NSString *_eventId;
+    BOOL _ignoreDBChanges;
     NSArray *_items;
     int _lastOrientation;
     int _pendingStatus;
     UIButton *_responseButtons[3];
     int _scrollToSection;
+    BOOL _showsTimeZone;
     UITableView *_tableView;
 }
 
@@ -37,6 +39,8 @@
 @property BOOL allowsEditing;
 @property <EKEventViewDelegate> * delegate;
 @property(retain) EKEvent * event;
+@property BOOL ignoreDBChanges;
+@property BOOL showsTimeZone;
 @property(readonly) UITableView * tableView;
 
 + (void)setDefaultDatesForEvent:(id)arg1;
@@ -66,18 +70,20 @@
 - (void)_setupAttendeesWithAcceptedItem:(id)arg1 declinedItem:(id)arg2 maybeItem:(id)arg3 noReplyItem:(id)arg4;
 - (BOOL)_shouldDisplayDoneButton;
 - (void)_storeChanged:(id)arg1;
+- (void)_teardownTableView;
 - (void)_updateFooterIfNeeded;
 - (void)_updateNavBarAnimated:(BOOL)arg1;
 - (void)_updateResponse;
 - (void)_updateResponseVisibility;
 - (void)accessibilityLargeTextDidChange;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (BOOL)allowContextProvider:(id)arg1;
 - (BOOL)allowsCalendarPreview;
 - (BOOL)allowsEditing;
 - (BOOL)allowsSubitems;
 - (BOOL)alwaysShowsCalendarPreview;
 - (void)completeWithAction:(int)arg1;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)dealloc;
 - (id)delegate;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
@@ -88,6 +94,8 @@
 - (void)eventItemDidCommit:(id)arg1;
 - (void)eventItemDidEndEditing:(id)arg1;
 - (void)eventItemDidStartEditing:(id)arg1;
+- (id)getCurrentContext;
+- (BOOL)ignoreDBChanges;
 - (id)initWithEvent:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)invokeInviteAction:(int)arg1;
@@ -103,20 +111,25 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEvent:(id)arg1;
 - (void)setICSPreview:(BOOL)arg1;
+- (void)setIgnoreDBChanges:(BOOL)arg1;
 - (void)setNeedsReload;
 - (void)setScrollToSection:(int)arg1;
 - (void)setShowsAddToCalendar:(BOOL)arg1;
+- (void)setShowsTimeZone:(BOOL)arg1;
 - (void)set_currentEditItem:(id)arg1;
 - (void)setupForEvent;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)showsAddToCalendar;
+- (BOOL)showsTimeZone;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (id)tableView;
+- (id)viewControllerForEventItem:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;

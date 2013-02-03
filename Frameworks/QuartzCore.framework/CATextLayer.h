@@ -10,12 +10,7 @@
 @class NSString;
 
 @interface CATextLayer : CALayer {
-    struct CATextLayerPrivate { struct Mutex { 
-            struct _opaque_pthread_mutex_t { 
-                long __sig; 
-                BOOL __opaque[40]; 
-            } _m; 
-        } x1; struct __CTTypesetter {} *x2; } *_state;
+    struct CATextLayerPrivate { } *_state;
 }
 
 @property(copy) NSString * alignmentMode;
@@ -36,7 +31,6 @@
 - (id)_createStringDict;
 - (struct __CTLine { }*)_createTruncationToken;
 - (void)_drawLine:(struct __CTLine { }*)arg1 inContext:(struct CGContext { }*)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
-- (id)_implicitActionForKey:(id)arg1;
 - (struct CGSize { float x1; float x2; })_preferredSize;
 - (void)_prepareContext:(struct CGContext { }*)arg1;
 - (struct __CTTypesetter { }*)_retainTypesetter;
@@ -48,6 +42,7 @@
 - (void*)font;
 - (float)fontSize;
 - (struct CGColor { }*)foregroundColor;
+- (id)implicitAnimationForKeyPath:(id)arg1;
 - (id)init;
 - (id)initWithLayer:(id)arg1;
 - (BOOL)isWrapped;

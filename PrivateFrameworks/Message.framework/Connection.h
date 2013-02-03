@@ -21,6 +21,7 @@
     unsigned int _desiredBufferLength;
     unsigned int _dontLogReads;
     struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } *_inflater;
+    double _lastUsedTime;
     NSData *_logData;
     unsigned int _readBytesNotLogged;
     NSMutableString *_readBytesToLog;
@@ -43,9 +44,7 @@
 + (void)setLogClasses:(id)arg1;
 + (BOOL)shouldTryFallbacksAfterError:(id)arg1;
 
-- (id)_newSocket;
 - (void)_setupNetworkLogging;
-- (id)_socket;
 - (BOOL)authenticateUsingAccount:(id)arg1 authenticator:(id)arg2;
 - (BOOL)authenticateUsingAccount:(id)arg1;
 - (id)authenticationMechanisms;
@@ -54,6 +53,7 @@
 - (BOOL)connectUsingFallbacksForAccount:(id)arg1;
 - (BOOL)connectUsingSettings:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (void)disconnect;
 - (void)enableReadLogging:(BOOL)arg1;
 - (BOOL)hasBytesAvailable;
@@ -65,6 +65,7 @@
 - (BOOL)loginDisabled;
 - (BOOL)readBytesIntoData:(id)arg1 desiredLength:(unsigned int)arg2;
 - (BOOL)readLineIntoData:(id)arg1;
+- (id)securityProtocol;
 - (void)setAllowsFallbacks:(BOOL)arg1;
 - (void)setDesiredReadBufferLength:(unsigned int)arg1;
 - (void)setIsFetching:(BOOL)arg1;

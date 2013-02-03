@@ -2,9 +2,12 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray, GKPlayer, GKScore, GKGame, NSError;
+@class NSArray, GKPlayer, GKScore, GKGame, NSError, NSMutableArray;
 
 @interface GKSparseLeaderboard : GKLeaderboard {
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -25,24 +28,31 @@
     NSError *_error;
     GKGame *_game;
     unsigned int _maxLoaded;
+    } _oldRange;
+    NSMutableArray *_oldScores;
     GKPlayer *_player;
     NSArray *_showcasedScores;
     } _totalRange;
 }
 
-@property(readonly) struct _NSRange { unsigned int location; unsigned int length; } availableRange;
+@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } availableRange;
 @property(retain) NSArray * availableScores;
 @property(retain) GKScore * comparePlayerScore;
 @property(readonly) BOOL displayComparePlayer;
 @property(readonly) BOOL displayLocalPlayer;
-@property struct _NSRange { unsigned int location; unsigned int length; } displayedRange;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } displayedRange;
 @property(retain) NSError * error;
 @property(retain) GKGame * game;
-@property(readonly) struct _NSRange { unsigned int location; unsigned int length; } loadedRange;
+@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } loadedRange;
 @property(readonly) BOOL moreScoresAvailable;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } oldRange;
+@property(retain) NSMutableArray * oldScores;
 @property(retain) GKPlayer * player;
 @property(readonly) BOOL showcasedScoresAdjacent;
-@property(readonly) struct _NSRange { unsigned int location; unsigned int length; } totalRange;
+@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } totalRange;
+
++ (struct _NSRange { unsigned int x1; unsigned int x2; })rangeForScoreArray:(id)arg1;
++ (id)unionOldScoreArray:(id)arg1 withScoreArray:(id)arg2;
 
 - (struct _NSRange { unsigned int x1; unsigned int x2; })availableRange;
 - (id)availableScores;
@@ -54,18 +64,26 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })displayedRange;
 - (id)error;
 - (id)game;
+- (unsigned int)indexOfScoreForPlayerID:(id)arg1;
 - (id)initWithGame:(id)arg1;
 - (void)loadScoresInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withCompletionHandler:(id)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })loadedRange;
 - (BOOL)moreScoresAvailable;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })oldRange;
+- (id)oldScores;
 - (id)player;
+- (void)purgeOldScores;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeToLoadForRank:(unsigned int)arg1;
 - (id)scoreAtIndex:(unsigned int)arg1;
+- (id)scoreForPlayerID:(id)arg1;
+- (id)scoresForPlayerIDs:(id)arg1;
 - (void)setAvailableScores:(id)arg1;
 - (void)setComparePlayerScore:(id)arg1;
 - (void)setDisplayedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setError:(id)arg1;
 - (void)setGame:(id)arg1;
+- (void)setOldRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setOldScores:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (id)showcasedScoreAtShowcaseIndex:(unsigned int)arg1;
 - (BOOL)showcasedScoresAdjacent;

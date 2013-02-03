@@ -13,9 +13,9 @@
 @property(readonly) BOOL hasPassword;
 @property(retain) NSString * localizedMessage;
 @property(retain) NSString * localizedTitle;
-@property(retain,readonly) NSString * password;
+@property(readonly) NSString * password;
 @property(readonly) <NSURLAuthenticationChallengeSender> * sender;
-@property(retain,readonly) NSString * user;
+@property(readonly) NSString * user;
 @property(readonly) BOOL userNameIsEditable;
 @property(readonly) BOOL userNameIsEmail;
 

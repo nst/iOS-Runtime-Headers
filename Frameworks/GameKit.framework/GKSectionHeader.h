@@ -5,53 +5,59 @@
 @class UIImageView, UILabel, NSString, GKUITheme;
 
 @interface GKSectionHeader : UIView <GKTableViewCellContents> {
+    NSString *_alternatePrimaryText;
     float _bottomOffset;
     float _fontSize;
+    float _horizontalContentInset;
     UILabel *_leftLabel;
     UIImageView *_leftOrnamentView;
+    NSString *_primaryText;
     UILabel *_rightLabel;
     UIImageView *_rightOrnamentView;
     int _style;
     GKUITheme *_theme;
 }
 
+@property(retain) NSString * alternatePrimaryText;
 @property float bottomOffset;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } confirmationButtonRect;
 @property float fontSize;
+@property float horizontalContentInset;
 @property(retain) UILabel * leftLabel;
 @property(retain) UIImageView * leftOrnamentView;
-@property int primaryLineBreakMode;
 @property(retain) NSString * primaryText;
 @property(retain) UILabel * rightLabel;
 @property(retain) UIImageView * rightOrnamentView;
-@property int secondaryLineBreakMode;
 @property(retain) NSString * secondaryText;
 @property int style;
 @property(retain) GKUITheme * theme;
 
+- (id)alternatePrimaryText;
 - (float)bottomOffset;
 - (void)dealloc;
 - (float)fontSize;
+- (float)horizontalContentInset;
 - (id)init;
 - (void)layoutSubviews;
+- (void)layoutSubviewsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)leftLabel;
 - (id)leftOrnamentView;
 - (float)preferredHeightForOrientation:(int)arg1;
 - (void)prepareForReuse;
-- (int)primaryLineBreakMode;
+- (void)prepareOrnamentViews;
 - (id)primaryText;
 - (id)rightLabel;
 - (id)rightOrnamentView;
-- (int)secondaryLineBreakMode;
 - (id)secondaryText;
+- (void)setAlternatePrimaryText:(id)arg1;
 - (void)setBottomOffset:(float)arg1;
 - (void)setFontSize:(float)arg1;
+- (void)setHorizontalContentInset:(float)arg1;
 - (void)setLeftLabel:(id)arg1;
 - (void)setLeftOrnamentView:(id)arg1;
-- (void)setPrimaryLineBreakMode:(int)arg1;
 - (void)setPrimaryText:(id)arg1;
 - (void)setRightLabel:(id)arg1;
 - (void)setRightOrnamentView:(id)arg1;
-- (void)setSecondaryLineBreakMode:(int)arg1;
 - (void)setSecondaryText:(id)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setTheme:(id)arg1;

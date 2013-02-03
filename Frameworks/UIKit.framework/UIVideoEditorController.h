@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UINavigationControllerDelegate><UIVideoEditorControllerDelegate>, NSMutableDictionary, NSString;
+@class NSString, NSMutableDictionary, <UINavigationControllerDelegate><UIVideoEditorControllerDelegate>;
 
 @interface UIVideoEditorController : UINavigationController {
     struct { 
@@ -10,7 +10,7 @@
         unsigned int isCleaningUp : 1; 
         unsigned int didRevertStatusBar : 1; 
     } _flags;
-    int _previousStatusBarMode;
+    int _previousStatusBarStyle;
     NSMutableDictionary *_properties;
 }
 
@@ -36,7 +36,6 @@
 - (void)editVideoViewController:(id)arg1 didTrimVideoWithOptions:(id)arg2;
 - (void)editVideoViewControllerDidCancel:(id)arg1;
 - (id)init;
-- (void)setParentViewController:(id)arg1;
 - (void)setVideoMaximumDuration:(double)arg1;
 - (void)setVideoPath:(id)arg1;
 - (void)setVideoQuality:(unsigned int)arg1;
@@ -46,5 +45,6 @@
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillUnload;
 
 @end

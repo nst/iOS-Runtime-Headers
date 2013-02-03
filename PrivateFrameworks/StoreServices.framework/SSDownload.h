@@ -2,47 +2,75 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, SSDownloadStatus, NSData, SSDownloadMetadata;
+@class NSNumber, SSXPCConnection, SSDownloadStatus, SSDownloadMetadata, SSNetworkConstraints, NSMutableDictionary, NSArray;
 
-@interface SSDownload : NSObject {
-    NSArray *_assets;
-    id _identifier;
-    BOOL _loadingThumbnailData;
+@interface SSDownload : SSEntity <SSXPCCoding> {
+    NSMutableDictionary *_localAssets;
     SSDownloadMetadata *_metadata;
+    NSNumber *_prioritizeAboveDownload;
     SSDownloadStatus *_status;
-    NSData *_thumbnailImageData;
 }
 
+@property(getter=_XPCConnection,readonly) SSXPCConnection * _XPCConnection;
 @property(retain) NSArray * assets;
+@property(getter=isCancelable,readonly) BOOL cancelable;
 @property(readonly) id downloadIdentifier;
 @property(getter=isExternal,readonly) BOOL external;
 @property(copy) SSDownloadMetadata * metadata;
+@property(copy) SSNetworkConstraints * networkConstraints;
+@property(readonly) long long persistentIdentifier;
 @property(retain) SSDownloadStatus * status;
 
-- (void)_artworkFailedNotification:(id)arg1;
-- (void)_artworkFinishedNotification:(id)arg1;
-- (void)_daemonExited:(id)arg1;
-- (void)_mainThreadDaemonExited:(id)arg1;
-- (BOOL)_requestThumbnailData;
-- (void)_setDownloadIdentifier:(id)arg1;
-- (BOOL)_shouldObserveArtworkNotification:(id)arg1;
-- (void)_startWatchingDaemon;
-- (void)_stopWatchingDaemon;
++ (long long)_getExternalValuesMessage;
++ (long long)_getValueMessage;
++ (long long)_setExternalValuesMessage;
++ (long long)_setValuesMessage;
++ (void)loadThumbnailImageDataForDownloadID:(long long)arg1 connection:(id)arg2 completionBlock:(id)arg3;
+
+- (id)_XPCConnection;
+- (void)_addCachedExternalValues:(id)arg1;
+- (void)_addCachedPropertyValues:(id)arg1;
+- (void)_applyPhase:(id)arg1 toStatus:(id)arg2;
+- (id)_errorWithData:(id)arg1;
+- (id)_errorWithXPCReply:(void*)arg1;
+- (id)_initWithLocalPropertyValues:(void*)arg1;
+- (void)_legacyLoadArtworkData;
+- (void)_resetLocalIVars;
+- (void)_resetStatus;
+- (id)_thumbnailImageURL;
+- (BOOL)addAsset:(id)arg1 forType:(id)arg2;
 - (id)assets;
-- (id)copyPropertyListEncoding;
+- (id)assetsForType:(id)arg1;
+- (long long)bytesDownloaded;
+- (long long)bytesTotal;
+- (void*)copyXPCEncoding;
 - (void)dealloc;
 - (id)downloadIdentifier;
-- (id)init;
-- (id)initWithAssets:(id)arg1 metadata:(id)arg2;
-- (id)initWithPropertyListEncoding:(id)arg1;
+- (id)downloadPhaseIdentifier;
+- (double)estimatedSecondsRemaining;
+- (id)failureError;
+- (void)handleWithDownloadHandler:(id)arg1 completionBlock:(id)arg2;
+- (id)initWithDownloadMetadata:(id)arg1;
+- (id)initWithPersistentIdentifier:(long long)arg1;
+- (BOOL)isCancelable;
+- (BOOL)isEligibleForRestore:(id*)arg1;
 - (BOOL)isExternal;
 - (BOOL)loadThumbnailImageData;
+- (void)loadThumbnailImageDataWithCompletionBlock:(id)arg1;
 - (id)metadata;
+- (id)networkConstraints;
 - (void)pause;
+- (double)percentComplete;
+- (long long)persistentIdentifier;
+- (void)prioritizeAboveDownload:(id)arg1 completionBlock:(id)arg2;
+- (BOOL)removeAsset:(id)arg1;
 - (void)resume;
 - (void)setAssets:(id)arg1;
+- (void)setDownloadHandler:(id)arg1 completionBlock:(id)arg2;
 - (void)setMetadata:(id)arg1;
+- (void)setNetworkConstraints:(id)arg1;
 - (void)setStatus:(id)arg1;
+- (void)setValuesWithStoreDownloadMetadata:(id)arg1;
 - (id)status;
 - (id)thumbnailImageData;
 

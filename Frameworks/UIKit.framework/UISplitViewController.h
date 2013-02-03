@@ -4,7 +4,7 @@
 
 @class UIView, NSString, UIBarButtonItem, UIPopoverController, NSArray, <UISplitViewControllerDelegate>;
 
-@interface UISplitViewController : UIViewController {
+@interface UISplitViewController : UIViewController <GKContentRefresh, GKURLHandling> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -23,7 +23,16 @@
             float width; 
             float height; 
         } size; 
-    unsigned int _hidesMasterViewInPortrait : 1;
+    struct { 
+        unsigned int hidesMasterViewInPortrait : 1; 
+        unsigned int delegateImplementsShouldHide : 1; 
+        unsigned int hidden : 3; 
+        unsigned int delegateHandlesTogglingMaster : 1; 
+        unsigned int delegateProvidesBackgroundView : 1; 
+        unsigned int delegateWantsUnSlideCallback : 1; 
+        unsigned int masterOnSlide : 1; 
+        unsigned int delegateWantsWillShowCallback : 1; 
+        unsigned int delegateWantsWillHideCallback : 1; 
     UIBarButtonItem *_barButtonItem;
     NSString *_buttonTitle;
     NSArray *_cornerImageViews;
@@ -31,30 +40,41 @@
     id _delegate;
     float _gutterWidth;
     UIPopoverController *_hiddenPopoverController;
+    int _lastPresentedOrientation;
+    UIView *_masterBackgroundView;
     float _masterColumnWidth;
     } _rotatingFromMasterViewFrame;
     int _rotatingFromOrientation;
     } _rotatingToMasterViewFrame;
     UIView *_rotationSnapshotView;
-    NSArray *_viewControllers;
+    unsigned int _slideTransitionCount;
+    } _splitViewControllerFlags;
 }
 
 @property <UISplitViewControllerDelegate> * delegate;
 @property(copy) NSArray * viewControllers;
 
-+ (void)_initializeSafeCategory;
++ (BOOL)_optsOutOfPopoverControllerHierarchyCheck;
 
+- (void)__viewWillLayoutSubviews;
+- (BOOL)_canSlideMaster;
 - (void)_commonInit;
-- (struct CGContext { }*)_createContextForCachingWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isOpaque:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrame;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
-- (void)_gkRefreshContents;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
+- (void)_gkForceNextContentUpdate;
+- (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
+- (void)_gkResetContents;
+- (void)_gkSetContentsNeedUpdateWithHandler:(id)arg1;
+- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
 - (BOOL)_isLandscape;
 - (void)_loadNewSubviews:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_masterViewFrame;
 - (BOOL)_masterViewShown;
 - (void)_removeRoundedCorners;
 - (void)_setupRoundedCorners;
+- (BOOL)_shouldPersistViewWhenCoding;
+- (void)_slideIn:(BOOL)arg1 viewController:(id)arg2 animated:(BOOL)arg3 totalDuration:(double)arg4 completion:(id)arg5;
+- (void)_toggleVisibilityOfViewController:(id)arg1;
 - (void)_updateMasterViewControllerFrame;
 - (void)_viewControllerHiding:(id)arg1;
 - (void)dealloc;
@@ -63,6 +83,7 @@
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (float)gutterWidth;
 - (BOOL)hidesMasterViewDuringRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
+- (BOOL)hidesMasterViewInLandscape;
 - (BOOL)hidesMasterViewInPortrait;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -84,14 +105,13 @@
 - (void)snapshotAllViews;
 - (void)snapshotForRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
 - (void)snapshotMasterView;
-- (void)toggleMasterInPopover:(id)arg1;
+- (void)toggleMasterVisible:(id)arg1;
 - (void)unloadViewForced:(BOOL)arg1;
 - (id)viewControllers;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillLayoutSubviews;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 

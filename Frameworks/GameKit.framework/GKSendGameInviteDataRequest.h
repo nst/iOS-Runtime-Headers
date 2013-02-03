@@ -22,7 +22,7 @@
 
 - (id)connectionData;
 - (void)dealloc;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
+- (void)handleResponseFromServer:(id)arg1;
 - (id)header;
 - (BOOL)hosted;
 - (id)key;

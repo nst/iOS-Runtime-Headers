@@ -14,25 +14,22 @@
 @property int numHorizontalTiles;
 @property int numVerticalTiles;
 @property(retain) NSMutableArray * tiles;
-@property(readonly) int tilesCount;
 @property int zoom;
 
 - (void)addTile:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)init;
 - (int)numHorizontalTiles;
 - (int)numVerticalTiles;
 - (BOOL)readFrom:(id)arg1;
 - (void)setNumHorizontalTiles:(int)arg1;
 - (void)setNumVerticalTiles:(int)arg1;
-- (void)setTile:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setTiles:(id)arg1;
 - (void)setZoom:(int)arg1;
 - (id)tileAtIndex:(unsigned int)arg1;
 - (id)tiles;
-- (int)tilesCount;
+- (unsigned int)tilesCount;
 - (void)writeTo:(id)arg1;
 - (int)zoom;
 

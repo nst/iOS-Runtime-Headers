@@ -91,32 +91,31 @@
     } endFrameScreen;
     UIInputViewSet *newSet;
     UIInputViewSet *oldSet;
+    BOOL skipFencing;
     BOOL skipNotifications;
 }
 
 @property double animationStartTime;
 @property int animationState;
 @property(retain) UIInputViewAnimationStyle * animationStyle;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } beginFloatingFrame;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } beginFloatingFrameScreen;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } beginFrame;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } beginFrameScreen;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } beginFloatingFrame;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } beginFloatingFrameScreen;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } beginFrame;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } beginFrameScreen;
 @property(readonly) int beginState;
 @property BOOL cancelled;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } deprecatedBounds;
-@property(readonly) struct CGPoint { float x; float y; } deprecatedCenterBegin;
-@property(readonly) struct CGPoint { float x; float y; } deprecatedCenterEnd;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } endFloatingFrame;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } endFloatingFrameScreen;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } endFrame;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } endFrameScreen;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } deprecatedBounds;
+@property(readonly) struct CGPoint { float x1; float x2; } deprecatedCenterBegin;
+@property(readonly) struct CGPoint { float x1; float x2; } deprecatedCenterEnd;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFloatingFrame;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFloatingFrameScreen;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFrame;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFrameScreen;
 @property(readonly) int endState;
-@property(retain) UIInputViewSet * newSet;
 @property(retain) UIInputViewSet * oldSet;
+@property BOOL skipFencing;
 @property BOOL skipNotifications;
 @property(readonly) int transitioningState;
-
-+ (void)_initializeSafeCategory;
 
 - (double)animationStartTime;
 - (int)animationState;
@@ -138,6 +137,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endFrameScreen;
 - (int)endState;
+- (BOOL)fadeAccessoryView;
 - (BOOL)isAlmostDone;
 - (BOOL)isOnScreen;
 - (id)newSet;
@@ -159,10 +159,13 @@
 - (void)setEndFrameScreen:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNewSet:(id)arg1;
 - (void)setOldSet:(id)arg1;
+- (void)setSkipFencing:(BOOL)arg1;
 - (void)setSkipNotifications:(BOOL)arg1;
 - (BOOL)shouldCompleteOnSuspend;
+- (BOOL)skipFencing;
 - (BOOL)skipNotifications;
 - (BOOL)subsumesTransition:(id)arg1;
 - (int)transitioningState;
+- (id)userInfoForTransition;
 
 @end

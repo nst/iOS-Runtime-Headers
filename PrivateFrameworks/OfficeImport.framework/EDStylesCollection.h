@@ -12,6 +12,7 @@
 - (id)init;
 - (void)removeAllObjects;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)setDefaultWorkbookStyleIndex:(unsigned int)arg1;
 
 @end

@@ -2,17 +2,9 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKInvite;
-
 @interface GKGetAcceptedGameInviteDataRequest : GKDataRequest {
-    GKInvite *_invite;
 }
 
-@property(readonly) GKInvite * invite;
-
-- (void)dealloc;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
-- (id)invite;
 - (id)key;
 - (id)request;
 

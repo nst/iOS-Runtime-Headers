@@ -2,14 +2,15 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CLLocation, CLHeading, NSString, MKUserLocationSearchResult;
+@class CLLocation, CLHeading, NSString, <MKUserLocationAnnotation>, <MKAnnotation>;
 
 @interface MKUserLocationInternal : NSObject {
+    <MKUserLocationAnnotation> *_annotation;
+    <MKAnnotation> *annotation;
     CLLocation *fixedLocation;
     CLHeading *heading;
     CLLocation *location;
     CLLocation *predictedLocation;
-    MKUserLocationSearchResult *searchResult;
     int source;
     NSString *subtitle;
     double timestamp;
@@ -17,23 +18,23 @@
     BOOL updating;
 }
 
+@property(readonly) <MKAnnotation> * annotation;
 @property(retain) CLLocation * fixedLocation;
 @property(retain) CLHeading * heading;
 @property(retain) CLLocation * location;
 @property(retain) CLLocation * predictedLocation;
-@property(readonly) MKUserLocationSearchResult * searchResult;
 @property int source;
 @property(retain) NSString * subtitle;
 @property double timestamp;
 @property(retain) NSString * title;
 @property(getter=isUpdating) BOOL updating;
 
+- (id)annotation;
 - (id)fixedLocation;
 - (id)heading;
 - (BOOL)isUpdating;
 - (id)location;
 - (id)predictedLocation;
-- (id)searchResult;
 - (void)setFixedLocation:(id)arg1;
 - (void)setHeading:(id)arg1;
 - (void)setLocation:(id)arg1;

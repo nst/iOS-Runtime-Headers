@@ -48,6 +48,7 @@
         unsigned int delegateWillDismiss2 : 1; 
         unsigned int delegateDidDismiss : 1; 
         unsigned int delegateDidDismiss2 : 1; 
+        unsigned int delegateShouldEnableFirstOtherButton : 1; 
         unsigned int forceHorizontalButtonsLayout : 1; 
         unsigned int suppressKeyboardOnPopup : 1; 
         unsigned int keyboardShowing : 1; 
@@ -58,6 +59,9 @@
         unsigned int shouldHandleFirstKeyUpEvent : 1; 
         unsigned int forceKeyboardUse : 1; 
         unsigned int cancelWhenDoneAnimating : 1; 
+        unsigned int alertViewStyle : 3; 
+        unsigned int isSBAlert : 1; 
+        unsigned int isBeingDismissed : 1; 
     UIView *_backgroundImageView;
     float _bodyTextHeight;
     UILabel *_bodyTextLabel;
@@ -84,6 +88,7 @@
     UIToolbar *_toolbar;
 }
 
+@property int alertViewStyle;
 @property int cancelButtonIndex;
 @property id delegate;
 @property(readonly) int firstOtherButtonIndex;
@@ -93,17 +98,20 @@
 @property(getter=isVisible,readonly) BOOL visible;
 
 + (id)_alertWindow;
-+ (void)_initializeSafeCategory;
 + (id)_popupAlertBackground:(BOOL)arg1;
 + (void)applyTransformToAllAlerts:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 + (struct CGSize { float x1; float x2; })minimumSize;
 
-- (void)_accessibilitySendAlert;
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2 buttonClass:(Class)arg3;
 - (id)_addButtonWithTitle:(id)arg1;
+- (id)_addButtonWithTitleText:(id)arg1;
 - (void)_addSubview:(id)arg1 positioned:(int)arg2 relativeTo:(id)arg3;
+- (void)_addTextEntryFieldsWithStyle:(int)arg1;
+- (id)_addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (void)_adjustLabelFontSizes;
+- (int)_alertOrientation;
 - (void)_alertSheetAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_alertSheetTextFieldDidChange:(id)arg1;
 - (void)_alertSheetTextFieldDidEndEditing:(id)arg1;
 - (void)_alertSheetTextFieldDidStartEditing:(id)arg1;
 - (void)_alertSheetTextFieldReturn:(id)arg1;
@@ -111,6 +119,7 @@
 - (float)_bottomVerticalInset;
 - (void)_bubbleAnimationNormalDidStop:(id)arg1 finished:(id)arg2;
 - (void)_bubbleAnimationShrinkDidStop:(id)arg1 finished:(id)arg2;
+- (id)_buttonAtIndex:(int)arg1;
 - (void)_buttonClicked:(id)arg1;
 - (float)_buttonHeight;
 - (BOOL)_canShowAlerts;
@@ -122,11 +131,15 @@
 - (void)_createTaglineTextLabelIfNeeded;
 - (void)_createTitleLabelIfNeeded;
 - (int)_currentOrientation;
+- (id)_defaultButton;
+- (id)_destructiveButton;
 - (id)_dimView;
 - (BOOL)_dimsBackground;
+- (id)_firstOtherButton;
 - (void)_growAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
 - (BOOL)_isAnimating;
+- (BOOL)_isSBAlert;
 - (void)_jiggleStage1AnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_jiggleStage2AnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_jiggleStage3AnimationDidStop:(id)arg1 finished:(id)arg2;
@@ -142,6 +155,7 @@
 - (BOOL)_manualKeyboardIsVisible;
 - (float)_maxHeight;
 - (BOOL)_needsKeyboard;
+- (void)_nukeOldTextFields;
 - (void)_performPopoutAnimationAnimated:(BOOL)arg1;
 - (void)_performPopup:(BOOL)arg1 animationType:(int)arg2;
 - (void)_performPopup:(BOOL)arg1;
@@ -155,6 +169,8 @@
 - (void)_repopupNoAnimation;
 - (void)_rotatingAnimationDidStop:(id)arg1;
 - (void)_setAlertSheetStyleFromButtonBar:(id)arg1;
+- (void)_setDefaultButton:(id)arg1;
+- (void)_setDestructiveButton:(id)arg1;
 - (void)_setFirstOtherButtonIndex:(int)arg1;
 - (void)_setTextFieldsHidden:(BOOL)arg1;
 - (void)_setupKBWatcher;
@@ -164,6 +180,7 @@
 - (void)_showManualKBIfNecessary;
 - (void)_slideSheetOut:(BOOL)arg1;
 - (void)_temporarilyHideAnimated:(BOOL)arg1;
+- (id)_textFieldAtIndex:(int)arg1;
 - (float)_titleHorizontalInset;
 - (float)_titleVerticalBottomInset;
 - (float)_titleVerticalTopInset;
@@ -177,6 +194,7 @@
 - (int)addButtonWithTitle:(id)arg1;
 - (id)addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (int)alertSheetStyle;
+- (int)alertViewStyle;
 - (struct CGSize { float x1; float x2; })backgroundSize;
 - (BOOL)becomeFirstResponder;
 - (BOOL)blocksInteraction;
@@ -229,6 +247,7 @@
 - (BOOL)resignFirstResponder;
 - (BOOL)runsModal;
 - (void)setAlertSheetStyle:(int)arg1;
+- (void)setAlertViewStyle:(int)arg1;
 - (void)setBlocksInteraction:(BOOL)arg1;
 - (void)setBodyText:(id)arg1;
 - (void)setBodyTextMaxLineCount:(int)arg1;

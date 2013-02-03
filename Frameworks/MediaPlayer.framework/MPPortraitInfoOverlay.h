@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIImage, MPAVItem, MPTextView, MPNowPlayingItemQueueInfoButton, MPPortraitControlsOverlay;
+@class MPAVController, MPAVItem, UIImage, MPTextView, MPNowPlayingItemQueueInfoButton, MPPortraitControlsOverlay;
 
 @interface MPPortraitInfoOverlay : UIView <MPPlaybackControlsDelegate> {
     unsigned int _transitioning : 1;
@@ -13,6 +13,7 @@
     MPTextView *_displayableTextView;
     MPAVItem *_item;
     MPNowPlayingItemQueueInfoButton *_itemQueueInfoButton;
+    MPAVController *_player;
     unsigned int _visibleParts;
 }
 
@@ -20,6 +21,7 @@
 @property(retain) UIImage * artworkImage;
 @property id delegate;
 @property(retain) MPAVItem * item;
+@property(retain) MPAVController * player;
 @property unsigned int visibleParts;
 
 - (BOOL)_configureNowPlayingQueueInfoButton:(id)arg1 item:(id)arg2 time:(double)arg3;
@@ -54,11 +56,13 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)item;
 - (void)layoutSubviews;
+- (id)player;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
 - (void)setAlpha:(float)arg1;
 - (void)setArtworkImage:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setItem:(id)arg1;
+- (void)setPlayer:(id)arg1;
 - (void)setVisibleParts:(unsigned int)arg1;
 - (void)startTicking;
 - (void)stopTicking;

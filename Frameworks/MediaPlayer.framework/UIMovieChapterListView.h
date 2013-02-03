@@ -7,18 +7,18 @@
 @interface UIMovieChapterListView : UIView {
     UIImageView *_backgroundImageView;
     unsigned int _pinnedRow;
-    UITableView *_table;
+    UITableView *_tableView;
     float _topPadding;
 }
 
-@property(readonly) UITableView * table;
+@property(readonly) UITableView * tableView;
 @property float topPadding;
 
 - (id)init;
 - (void)layoutSubviews;
 - (void)pinVisibleRow:(unsigned int)arg1;
 - (void)setTopPadding:(float)arg1;
-- (id)table;
+- (id)tableView;
 - (float)topPadding;
 
 @end

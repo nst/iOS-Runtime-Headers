@@ -9,9 +9,8 @@
     UIWindow *_window;
 }
 
-+ (void)_initializeSafeCategory;
+@property(retain) UIWindow * window;
 
-- (id)_accessibilityContentLanguage;
 - (void)_applicationDidFinishLaunching:(id)arg1;
 - (void)_exitForStoreNotAvailable;
 - (void)_exitIfStoreNotAvailable;

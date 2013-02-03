@@ -2,6 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface UIAnimation : NSObject {
     struct { 
         unsigned int curve : 4; 
@@ -9,6 +13,7 @@
         unsigned int reserved : 27; 
     SEL _action;
     } _animationFlags;
+    id _completion;
     id _delegate;
     double _duration;
     double _startTime;
@@ -17,6 +22,7 @@
 }
 
 - (SEL)action;
+- (id)completion;
 - (void)dealloc;
 - (id)delegate;
 - (float)fractionForTime:(double)arg1;
@@ -26,6 +32,7 @@
 - (float)progressForFraction:(float)arg1;
 - (void)setAction:(SEL)arg1;
 - (void)setAnimationCurve:(int)arg1;
+- (void)setCompletion:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setProgress:(float)arg1;

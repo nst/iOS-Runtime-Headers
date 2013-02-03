@@ -4,7 +4,7 @@
 
 @class NSArray, EKEventAttendeePicker;
 
-@interface EKEventAttendeesEditViewController : EKEventEditItemViewController {
+@interface EKEventAttendeesEditViewController : EKEditItemViewController {
     EKEventAttendeePicker *_picker;
 }
 

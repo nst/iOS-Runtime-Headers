@@ -10,12 +10,19 @@
 
 @property(readonly) int actionType;
 @property(readonly) NSString * alertBodyString;
+@property(readonly) NSString * alertCancelString;
+@property(readonly) NSString * alertOKString;
+@property(readonly) NSString * alertTitleString;
 @property(readonly) id badgeValue;
 @property(readonly) NSDictionary * notificationUserInfo;
 @property(readonly) NSString * soundFileName;
 
+- (id)_valueForAlertKey:(id)arg1;
 - (int)actionType;
 - (id)alertBodyString;
+- (id)alertCancelString;
+- (id)alertOKString;
+- (id)alertTitleString;
 - (id)badgeValue;
 - (void)dealloc;
 - (id)initWithNotificationUserInfo:(id)arg1;

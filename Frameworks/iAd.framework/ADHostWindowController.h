@@ -2,15 +2,16 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class UIWindow, UIViewController, UIView;
+@class UIView, UIViewController<ADStatusBarController>, UIWindow, UIViewController;
 
 @interface ADHostWindowController : NSObject {
     UIView *_bannerView;
     UIViewController *_bannerViewController;
-    BOOL _bannerViewControllerIsStandAlone;
     UIWindow *_bannerWindow;
+    BOOL _mustShowStatusWindow;
     BOOL _presented;
     float _savedWindowLevel;
+    UIViewController<ADStatusBarController> *_statusBarViewController;
     BOOL _supportsLandscapeLeft;
     BOOL _supportsLandscapeRight;
     BOOL _supportsPortrait;
@@ -19,11 +20,11 @@
 
 @property UIView * bannerView;
 @property(retain) UIViewController * bannerViewController;
-@property BOOL bannerViewControllerIsStandAlone;
 @property(retain) UIWindow * bannerWindow;
+@property BOOL mustShowStatusWindow;
 @property BOOL presented;
 @property float savedWindowLevel;
-@property(getter=isStatusBarHidden) BOOL statusBarHidden;
+@property(retain) UIViewController<ADStatusBarController> * statusBarViewController;
 @property BOOL supportsLandscapeLeft;
 @property BOOL supportsLandscapeRight;
 @property BOOL supportsPortrait;
@@ -34,7 +35,6 @@
 - (void)_showHostUI;
 - (id)bannerView;
 - (id)bannerViewController;
-- (BOOL)bannerViewControllerIsStandAlone;
 - (id)bannerWindow;
 - (void)beginTransitionIn;
 - (void)beginTransitionOut;
@@ -43,22 +43,25 @@
 - (void)endTransitionIn;
 - (void)endTransitionOut;
 - (id)init;
-- (BOOL)isStatusBarHidden;
+- (BOOL)mustShowStatusWindow;
 - (BOOL)presented;
 - (float)savedWindowLevel;
 - (void)setBannerView:(id)arg1;
 - (void)setBannerViewController:(id)arg1;
-- (void)setBannerViewControllerIsStandAlone:(BOOL)arg1;
 - (void)setBannerWindow:(id)arg1;
+- (void)setMustShowStatusWindow:(BOOL)arg1;
 - (void)setPresented:(BOOL)arg1;
 - (void)setSavedWindowLevel:(float)arg1;
 - (void)setStatusBarHidden:(BOOL)arg1;
+- (void)setStatusBarViewController:(id)arg1;
 - (void)setSupportsLandscapeLeft:(BOOL)arg1;
 - (void)setSupportsLandscapeRight:(BOOL)arg1;
 - (void)setSupportsPortrait:(BOOL)arg1;
 - (void)setSupportsPortraitUpsideDown:(BOOL)arg1;
+- (id)statusBarViewController;
 - (BOOL)supportsLandscapeLeft;
 - (BOOL)supportsLandscapeRight;
+- (BOOL)supportsOrientation:(int)arg1;
 - (BOOL)supportsPortrait;
 - (BOOL)supportsPortraitUpsideDown;
 

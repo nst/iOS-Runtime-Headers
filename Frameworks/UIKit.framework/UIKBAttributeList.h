@@ -6,13 +6,13 @@
 
 @interface UIKBAttributeList : NSObject <NSCoding, NSCopying> {
     NSMutableDictionary *m_dict;
-    BOOL m_explicit;
+    BOOL m_explicitlySpecified;
     NSString *m_name;
 }
 
 @property(readonly) unsigned int count;
 @property(readonly) NSDictionary * dict;
-@property BOOL explicit;
+@property BOOL explicitlySpecified;
 @property(copy) NSString * name;
 @property(readonly) NSArray * names;
 
@@ -24,7 +24,7 @@
 - (id)description;
 - (id)dict;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)explicit;
+- (BOOL)explicitlySpecified;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
@@ -33,7 +33,7 @@
 - (id)name;
 - (id)names;
 - (void)setBoolValueForName:(BOOL)arg1 forName:(id)arg2;
-- (void)setExplicit:(BOOL)arg1;
+- (void)setExplicitlySpecified:(BOOL)arg1;
 - (void)setIntValueForName:(int)arg1 forName:(id)arg2;
 - (void)setName:(id)arg1;
 - (void)setValue:(id)arg1 forName:(id)arg2;

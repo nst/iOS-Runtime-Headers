@@ -11,14 +11,20 @@
     struct CGPoint { 
         float x; 
         float y; 
+    struct CGPoint { 
+        float x; 
+        float y; 
     unsigned int _failsPastMaxTouches : 1;
+    unsigned int _canPanHorizontally : 1;
+    unsigned int _canPanVertically : 1;
     } _firstScreenLocation;
     float _hysteresis;
     } _lastScreenLocation;
     unsigned int _lastTouchCount;
     double _lastTouchTime;
-    unsigned int _maxTouchCount;
-    unsigned int _minTouchCount;
+    } _lastUnadjustedScreenLocation;
+    unsigned int _maximumNumberOfTouches;
+    unsigned int _minimumNumberOfTouches;
     id _previousVelocitySample;
     NSMutableArray *_touches;
     id _velocitySample;
@@ -29,23 +35,33 @@
 @property unsigned int maximumNumberOfTouches;
 @property unsigned int minimumNumberOfTouches;
 
+- (struct CGPoint { float x1; float x2; })_adjustScreenLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)_canPanHorizontally;
+- (BOOL)_canPanVertically;
 - (void)_centroidMovedTo:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
 - (struct CADoublePoint { double x1; double x2; })_convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromScreenCoordinatesToView:(id)arg2;
 - (struct CADoublePoint { double x1; double x2; })_convertPoint:(struct CGPoint { float x1; float x2; })arg1 toScreenCoordinatesFromView:(id)arg2;
 - (struct CADoublePoint { double x1; double x2; })_convertVelocitySample:(id)arg1 fromScreenCoordinatesToView:(id)arg2;
 - (float)_hysteresis;
 - (int)_lastTouchCount;
+- (struct UIOffset { float x1; float x2; })_offsetInViewFromScreenLocation:(struct CGPoint { float x1; float x2; })arg1 toScreenLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)_previousVelocitySample;
+- (void)_removeHysteresisFromTranslation;
 - (void)_resetGestureRecognizer;
 - (void)_resetVelocitySamples;
+- (void)_setCanPanHorizontally:(BOOL)arg1;
+- (void)_setCanPanVertically:(BOOL)arg1;
 - (void)_setHysteresis:(float)arg1;
+- (struct CGPoint { float x1; float x2; })_shiftPanLocationToNewScreenLocation:(struct CGPoint { float x1; float x2; })arg1 lockingToAxis:(int)arg2;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
 - (void)_touchesListChangedFrom:(id)arg1 to:(id)arg2;
 - (id)_velocitySample;
 - (BOOL)_willScrollX;
 - (BOOL)_willScrollY;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (BOOL)failsPastMaxTouches;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;

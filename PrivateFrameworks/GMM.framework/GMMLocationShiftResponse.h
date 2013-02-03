@@ -2,11 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, GMMMapPoint;
+@class GMMMapPoint;
 
 @interface GMMLocationShiftResponse : PBCodable {
+    struct { 
+        long long *list; 
+        unsigned int count; 
+        unsigned int size; 
     int _cacheSquareLength;
-    NSMutableArray *_coefficients;
+    } _coefficients;
     BOOL _hasCacheSquareLength;
     BOOL _hasValidSquareLength;
     GMMMapPoint *_originalPoint;
@@ -15,31 +19,33 @@
 }
 
 @property int cacheSquareLength;
-@property(retain) NSMutableArray * coefficients;
-@property(readonly) int coefficientsCount;
-@property(readonly) BOOL hasCacheSquareLength;
+@property(readonly) long long* coefficients;
+@property(readonly) unsigned int coefficientsCount;
+@property BOOL hasCacheSquareLength;
 @property(readonly) BOOL hasOriginalPoint;
-@property(readonly) BOOL hasValidSquareLength;
+@property BOOL hasValidSquareLength;
 @property(retain) GMMMapPoint * originalPoint;
 @property int status;
 @property int validSquareLength;
 
 - (void)addCoefficient:(long long)arg1;
 - (int)cacheSquareLength;
+- (void)clearCoefficients;
 - (long long)coefficientAtIndex:(unsigned int)arg1;
-- (id)coefficients;
-- (int)coefficientsCount;
+- (long long*)coefficients;
+- (unsigned int)coefficientsCount;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasCacheSquareLength;
 - (BOOL)hasOriginalPoint;
 - (BOOL)hasValidSquareLength;
-- (id)init;
 - (id)originalPoint;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCacheSquareLength:(int)arg1;
-- (void)setCoefficient:(long long)arg1 atIndex:(unsigned int)arg2;
-- (void)setCoefficients:(id)arg1;
+- (void)setCoefficients:(long long*)arg1 count:(unsigned int)arg2;
+- (void)setHasCacheSquareLength:(BOOL)arg1;
+- (void)setHasValidSquareLength:(BOOL)arg1;
 - (void)setOriginalPoint:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (void)setValidSquareLength:(int)arg1;

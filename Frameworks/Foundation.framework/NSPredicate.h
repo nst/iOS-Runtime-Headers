@@ -19,12 +19,14 @@
 - (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (BOOL)ab_hasCallback;
 - (id)ab_newQueryWithSortOrder:(unsigned int)arg1 addressBook:(void*)arg2 propertyIndices:(const struct __CFDictionary {}**)arg3;
+- (void)ab_runPredicateWithSortOrder:(unsigned int)arg1 inAddressBook:(void*)arg2 withDelegate:(id)arg3;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
 - (BOOL)evaluateWithObject:(id)arg1;
+- (id)generateMetadataDescription;
 - (id)initWithCoder:(id)arg1;
 - (id)minimalFormInContext:(id)arg1;
 - (id)predicateFormat;

@@ -11,6 +11,7 @@
 @property <GKAchievementViewControllerDelegate> * achievementDelegate;
 
 - (id)achievementDelegate;
+- (void)dealloc;
 - (void)donePressed:(id)arg1;
 - (id)init;
 - (id)initWithRootViewController:(id)arg1;

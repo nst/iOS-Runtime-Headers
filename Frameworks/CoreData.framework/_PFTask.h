@@ -26,6 +26,8 @@
 + (unsigned long long)getPhysicalMemory;
 + (double)getProcessorSpeed;
 
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)dealloc;
 - (void)finalize;
 - (id)initWithFunction:(int (*)())arg1 withArgument:(void*)arg2 andPriority:(int)arg3;

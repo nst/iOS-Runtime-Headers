@@ -42,6 +42,7 @@
 - (id)init;
 - (id)initWithContentURL:(id)arg1;
 - (double)initialPlaybackTime;
+- (BOOL)isAirPlayVideoActive;
 - (BOOL)isFullscreen;
 - (BOOL)isPreparedToPlay;
 - (int)loadState;

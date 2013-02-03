@@ -10,13 +10,12 @@
     NSDictionary *_rootInfo;
 }
 
-+ (void)_initializeSafeCategory;
-
 - (id)controller;
 - (void)dealloc;
 - (void)dismiss;
 - (void)dismissAnimated:(BOOL)arg1;
 - (void)forwardInvocation:(id)arg1;
+- (void)handleURL:(id)arg1;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)parentController;
@@ -29,7 +28,6 @@
 - (void)statusBarWillChangeHeight:(id)arg1;
 - (BOOL)usePopupStyle;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillBecomeVisible:(void*)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

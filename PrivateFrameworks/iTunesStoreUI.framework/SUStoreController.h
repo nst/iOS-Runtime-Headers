@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUPurchaseManager, SUTabBarController, SUClient, SUSectionsResponse, UINavigationController, MFMailComposeViewController, NSDictionary, ISOperation, SULocationObserver, NSArray, NSString, NSURL;
+@class SUPurchaseManager, SUTabBarController, SUClient, SUSectionsResponse, UINavigationController, MFMailComposeViewController, NSDictionary, ISOperation, SULocationObserver, NSArray, NSString, UIWindow, NSURL;
 
 @interface SUStoreController : NSObject <SUClientDelegate, SUPurchaseManagerDelegate, SUTabBarControllerDelegate, UIApplicationDelegate, MFMailComposeViewControllerDelegate> {
     SUClient *_client;
@@ -24,11 +24,11 @@
 
 @property(readonly) NSString * defaultPNGNameForSuspend;
 @property(retain) NSURL * launchURL;
-@property(readonly) int statusBarStyleForSuspend;
 @property(getter=isStoreEnabled,readonly) BOOL storeEnabled;
 @property(readonly) SUTabBarController * tabBarController;
 @property(getter=isTabBarControllerLoaded,readonly) BOOL tabBarControllerLoaded;
 @property(readonly) UINavigationController * topNavigationController;
+@property(retain) UIWindow * window;
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
@@ -45,7 +45,6 @@
 - (void)_handleSearchURL:(id)arg1;
 - (void)_handleSectionsLoadFailedWithError:(id)arg1;
 - (BOOL)_isAccountViewControllerVisible;
-- (BOOL)_isEnabledForNetworkConstraints:(id)arg1;
 - (BOOL)_loadSectionsAllowingCache:(BOOL)arg1 withCompletionBlock:(id)arg2;
 - (void)_mainThreadStoreFrontChangedNotification:(id)arg1;
 - (void)_presentSectionFetchUI;
@@ -73,6 +72,8 @@
 - (void)dealloc;
 - (double)defaultImageSnapshotExpiration;
 - (id)defaultPNGNameForSuspend;
+- (void)dismissMailComposeViewControllerAnimated:(BOOL)arg1;
+- (void)dismissOverlayBackgroundViewController;
 - (id)downloadQueueForClient:(id)arg1 downloadKinds:(id)arg2;
 - (void)endPurchaseBatch;
 - (void)exitStoreAfterDialogsDismiss;
@@ -88,10 +89,12 @@
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (BOOL)matchesClientApplication:(id)arg1;
 - (id)newScriptInterface;
+- (id)overlayBackgroundViewController;
 - (id)overlayConfigurationForStorePage:(id)arg1;
-- (id)preOrderQueueForClient:(id)arg1 downloadKinds:(id)arg2;
 - (void)prepareForSuspend;
 - (void)presentExternalURLViewController:(id)arg1;
+- (void)presentMailComposeViewController:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)presentOverlayBackgroundViewController:(id)arg1;
 - (void)purchaseManager:(id)arg1 didAddPurchases:(id)arg2;
 - (void)purchaseManager:(id)arg1 failedToAddPurchases:(id)arg2;
 - (void)purchaseManager:(id)arg1 willAddPurchases:(id)arg2;
@@ -103,7 +106,6 @@
 - (void)setLaunchURL:(id)arg1;
 - (void)setupUI;
 - (BOOL)showDialogForCapabilities:(id)arg1 mismatches:(id)arg2;
-- (int)statusBarStyleForSuspend;
 - (id)storeContentLanguage;
 - (void)tabBarController:(id)arg1 didEndCustomizingViewControllers:(id)arg2 changed:(BOOL)arg3;
 - (id)tabBarController;

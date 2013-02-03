@@ -23,9 +23,8 @@
     DOMHTMLElement *_textElement;
 }
 
-@property struct CGPoint { float x; float y; } autoscrollContentOffset;
+@property struct CGPoint { float x1; float x2; } autoscrollContentOffset;
 
-+ (void)_initializeSafeCategory;
 + (id)activeFieldEditor;
 + (void)releaseSharedInstance;
 + (id)sharedFieldEditor;
@@ -50,8 +49,8 @@
 - (BOOL)hasMarkedText;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)interactionAssistant;
-- (BOOL)isAccessibilityElement;
 - (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
+- (BOOL)keyboardInput:(id)arg1 shouldReplaceTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
 - (BOOL)keyboardInputChanged:(id)arg1;
 - (void)keyboardInputChangedSelection:(id)arg1;
 - (BOOL)keyboardInputShouldDelete:(id)arg1;
@@ -61,6 +60,7 @@
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (BOOL)notificationsDisabled;
 - (id)proxiedView;
+- (BOOL)resignFirstResponder;
 - (void)resumeWithNotification:(id)arg1;
 - (void)revealSelection;
 - (void)scrollSelectionToVisible:(BOOL)arg1;
@@ -74,7 +74,6 @@
 - (id)selectionView;
 - (void)setAutoscrollContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setBaseWritingDirection:(int)arg1;
-- (void)setCaretColor:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNotificationsDisabled:(BOOL)arg1;
 - (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2 adjustForPurpleCaret:(BOOL)arg3;

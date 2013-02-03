@@ -7,7 +7,9 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (BOOL)_isDeallocating;
 - (unsigned int)_trueCount;
+- (BOOL)_tryRetain;
 - (void)addObject:(id)arg1;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

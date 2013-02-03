@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSArray, <UINavigationControllerDelegate><UIImagePickerControllerDelegate>, NSMutableDictionary;
+@class NSArray, UIView, <UINavigationControllerDelegate><UIImagePickerControllerDelegate>, NSMutableDictionary;
 
 @interface UIImagePickerController : UINavigationController <NSCoding> {
     struct CGRect { 
@@ -23,7 +23,7 @@
     id _image;
     } _imagePickerFlags;
     NSArray *_mediaTypes;
-    int _previousStatusBarMode;
+    int _previousStatusBarStyle;
     NSMutableDictionary *_properties;
     unsigned int _sourceType;
 }
@@ -34,7 +34,7 @@
 @property unsigned int cameraDevice;
 @property int cameraFlashMode;
 @property(retain) UIView * cameraOverlayView;
-@property struct CGAffineTransform { float a; float b; float c; float d; float tx; float ty; } cameraViewTransform;
+@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } cameraViewTransform;
 @property <UINavigationControllerDelegate><UIImagePickerControllerDelegate> * delegate;
 @property(copy) NSArray * mediaTypes;
 @property BOOL showsCameraControls;
@@ -42,7 +42,6 @@
 @property double videoMaximumDuration;
 @property unsigned int videoQuality;
 
-+ (void)_initializeSafeCategory;
 + (BOOL)_isMediaTypeAvailable:(id)arg1 forSource:(unsigned int)arg2;
 + (BOOL)_reviewCapturedItems;
 + (id)availableCaptureModesForCameraDevice:(unsigned int)arg1;
@@ -53,12 +52,14 @@
 
 - (struct CGSize { float x1; float x2; })_adjustedContentSizeForPopover:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_allowsImageEditing;
+- (BOOL)_allowsMultipleSelection;
 - (void)_autoDismiss;
 - (id)_cameraViewController;
 - (id)_createInitialController;
 - (BOOL)_didRevertStatusBar;
 - (void)_imagePickerDidCancel;
 - (void)_imagePickerDidCompleteWithInfo:(id)arg1;
+- (void)_imagePickerDidCompleteWithInfoArray:(id)arg1;
 - (unsigned int)_imagePickerSavingOptions;
 - (id)_initWithSourceImageData:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_initializeProperties;
@@ -68,6 +69,7 @@
 - (id)_properties;
 - (void)_removeAllChildren;
 - (void)_setAllowsImageEditing:(BOOL)arg1;
+- (void)_setAllowsMultipleSelection:(BOOL)arg1;
 - (void)_setImagePickerSavingOptions:(unsigned int)arg1;
 - (void)_setProperties:(id)arg1;
 - (void)_setValue:(id)arg1 forProperty:(id)arg2;
@@ -97,7 +99,6 @@
 - (void)setCameraOverlayView:(id)arg1;
 - (void)setCameraViewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setMediaTypes:(id)arg1;
-- (void)setParentViewController:(id)arg1;
 - (void)setShowsCameraControls:(BOOL)arg1;
 - (void)setSourceType:(unsigned int)arg1;
 - (void)setVideoMaximumDuration:(double)arg1;
@@ -112,5 +113,6 @@
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillUnload;
 
 @end

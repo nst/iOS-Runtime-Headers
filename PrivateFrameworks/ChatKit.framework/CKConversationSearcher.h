@@ -13,6 +13,7 @@
         unsigned int length; 
         unsigned int capacity; 
         struct _CKSpotlightSearchResult {} *array; 
+    BOOL _active;
     } _allSearchResults;
     <CKConversationSearcherDelegate> *_delegate;
     SPSearchResultDeserializer *_deserializer;
@@ -23,14 +24,19 @@
     UISearchBar *_searchBar;
     UISearchDisplayController *_searchController;
     BOOL _shouldDisplayNoResults;
+    BOOL _showingSearchResults;
 }
 
+@property(getter=isActive,readonly) BOOL active;
 @property(readonly) UISearchDisplayController * searchController;
+@property(getter=isShowingSearchResults,readonly) BOOL showingSearchResults;
 
 - (void)_cancel;
 - (void)_processSearchResults;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
+- (BOOL)isActive;
+- (BOOL)isShowingSearchResults;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (id)searchBar;
 - (void)searchBarCancelButtonClicked:(id)arg1;
@@ -39,7 +45,15 @@
 - (void)searchDaemonQuery:(id)arg1 addedResults:(id)arg2;
 - (void)searchDaemonQuery:(id)arg1 encounteredError:(id)arg2;
 - (void)searchDaemonQueryCompleted:(id)arg1;
+- (void)searchDisplayController:(id)arg1 didHideSearchResultsTableView:(id)arg2;
+- (void)searchDisplayController:(id)arg1 didShowSearchResultsTableView:(id)arg2;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willHideSearchResultsTableView:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willShowSearchResultsTableView:(id)arg2;
+- (void)searchDisplayControllerDidBeginSearch:(id)arg1;
+- (void)searchDisplayControllerDidEndSearch:(id)arg1;
+- (void)searchDisplayControllerWillBeginSearch:(id)arg1;
+- (void)searchDisplayControllerWillEndSearch:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

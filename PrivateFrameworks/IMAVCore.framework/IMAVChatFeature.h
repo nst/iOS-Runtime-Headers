@@ -8,7 +8,7 @@
     IMAVChat *_avChat;
 }
 
-@property(setter=setAVChat:) IMAVChat * avChat;
+@property IMAVChat * avChat;
 
 - (unsigned int)addStatusForIMHandle:(id)arg1 asVideo:(BOOL)arg2 ardRole:(int)arg3;
 - (id)avChat;

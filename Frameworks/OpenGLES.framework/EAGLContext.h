@@ -14,7 +14,7 @@
 @class EAGLSharegroup;
 
 @interface EAGLContext : NSObject {
-    struct _EAGLContextPrivate { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; void*x3; void*x4; void*x5; unsigned long x6; unsigned char x7; out in void*x8; void*x9; void*x10; void*x11; void*x12; id x13; void*x14; void*x15; void*x16; void*x17; unsigned long x18; unsigned short x19; void*x20; void*x21; const void*x22; void*x23; const out void*x24; void*x25; void*x26; unsigned int x27; struct __GLIContextRec {} *x28; struct __GLIFunctionDispatchRec { 
+    struct _EAGLContextPrivate { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; void*x3; void*x4; void*x5; unsigned long x6; unsigned char x7; out in void*x8; void*x9; void*x10; void*x11; void*x12; id x13; void*x14; void*x15; void*x16; void*x17; unsigned long x18; unsigned short x19; void*x20; void*x21; const void*x22; void*x23; const out void*x24; void*x25; void*x26; unsigned int x27; unsigned int x28; struct __GLIContextRec {} *x29; struct __GLIFunctionDispatchRec { 
             int (*accum)(); 
             int (*alpha_func)(); 
             int (*are_textures_resident)(); 
@@ -818,9 +818,43 @@
             int (*sampler_parameterIiv)(); 
             int (*sampler_parameterIuiv)(); 
             int (*get_sampler_parameteriv)(); 
-            int (*get_sampler_parameterIiv)(); 
             int (*get_sampler_parameterfv)(); 
-            int (*get_sampler_parameterIfv)(); 
+            int (*get_sampler_parameterIiv)(); 
+            int (*get_sampler_parameterIuiv)(); 
+            int (*label_object_EXT)(); 
+            int (*get_object_label_EXT)(); 
+            int (*insert_event_marker_EXT)(); 
+            int (*push_group_marker_EXT)(); 
+            int (*pop_group_marker_EXT)(); 
+            int (*use_program_stages)(); 
+            int (*active_shader_program)(); 
+            int (*create_shader_programv)(); 
+            int (*bind_program_pipeline)(); 
+            int (*delete_program_pipelines)(); 
+            int (*gen_program_pipelines)(); 
+            int (*is_program_pipeline)(); 
+            int (*get_program_pipelineiv)(); 
+            int (*validate_program_pipeline)(); 
+            int (*get_program_pipeline_info_log)(); 
+            int (*program_uniform1i)(); 
+            int (*program_uniform2i)(); 
+            int (*program_uniform3i)(); 
+            int (*program_uniform4i)(); 
+            int (*program_uniform1f)(); 
+            int (*program_uniform2f)(); 
+            int (*program_uniform3f)(); 
+            int (*program_uniform4f)(); 
+            int (*program_uniform1iv)(); 
+            int (*program_uniform2iv)(); 
+            int (*program_uniform3iv)(); 
+            int (*program_uniform4iv)(); 
+            int (*program_uniform1fv)(); 
+            int (*program_uniform2fv)(); 
+            int (*program_uniform3fv)(); 
+            int (*program_uniform4fv)(); 
+            int (*program_uniform_matrix2fv)(); 
+            int (*program_uniform_matrix3fv)(); 
+            int (*program_uniform_matrix4fv)(); 
             int (*alpha_funcx)(); 
             int (*clear_colorx)(); 
             int (*clear_depthf)(); 
@@ -884,8 +918,9 @@
             int (*release_shader_compiler_OES)(); 
             int (*discard_framebuffer_EXT)(); 
             int (*framebuffer_parameteri_APPLE)(); 
+            int (*get_framebuffer_parameteri_APPLE)(); 
             int (*resolve_multisample_framebuffer_APPLE)(); 
-        } x29; struct __GLIFunctionDispatchRec { 
+        } x30; struct __GLIFunctionDispatchRec { 
             int (*accum)(); 
             int (*alpha_func)(); 
             int (*are_textures_resident)(); 
@@ -1689,9 +1724,43 @@
             int (*sampler_parameterIiv)(); 
             int (*sampler_parameterIuiv)(); 
             int (*get_sampler_parameteriv)(); 
-            int (*get_sampler_parameterIiv)(); 
             int (*get_sampler_parameterfv)(); 
-            int (*get_sampler_parameterIfv)(); 
+            int (*get_sampler_parameterIiv)(); 
+            int (*get_sampler_parameterIuiv)(); 
+            int (*label_object_EXT)(); 
+            int (*get_object_label_EXT)(); 
+            int (*insert_event_marker_EXT)(); 
+            int (*push_group_marker_EXT)(); 
+            int (*pop_group_marker_EXT)(); 
+            int (*use_program_stages)(); 
+            int (*active_shader_program)(); 
+            int (*create_shader_programv)(); 
+            int (*bind_program_pipeline)(); 
+            int (*delete_program_pipelines)(); 
+            int (*gen_program_pipelines)(); 
+            int (*is_program_pipeline)(); 
+            int (*get_program_pipelineiv)(); 
+            int (*validate_program_pipeline)(); 
+            int (*get_program_pipeline_info_log)(); 
+            int (*program_uniform1i)(); 
+            int (*program_uniform2i)(); 
+            int (*program_uniform3i)(); 
+            int (*program_uniform4i)(); 
+            int (*program_uniform1f)(); 
+            int (*program_uniform2f)(); 
+            int (*program_uniform3f)(); 
+            int (*program_uniform4f)(); 
+            int (*program_uniform1iv)(); 
+            int (*program_uniform2iv)(); 
+            int (*program_uniform3iv)(); 
+            int (*program_uniform4iv)(); 
+            int (*program_uniform1fv)(); 
+            int (*program_uniform2fv)(); 
+            int (*program_uniform3fv)(); 
+            int (*program_uniform4fv)(); 
+            int (*program_uniform_matrix2fv)(); 
+            int (*program_uniform_matrix3fv)(); 
+            int (*program_uniform_matrix4fv)(); 
             int (*alpha_funcx)(); 
             int (*clear_colorx)(); 
             int (*clear_depthf)(); 
@@ -1755,8 +1824,9 @@
             int (*release_shader_compiler_OES)(); 
             int (*discard_framebuffer_EXT)(); 
             int (*framebuffer_parameteri_APPLE)(); 
+            int (*get_framebuffer_parameteri_APPLE)(); 
             int (*resolve_multisample_framebuffer_APPLE)(); 
-        } x30; } *_private;
+        } x31; } *_private;
 }
 
 @property(readonly) unsigned int API;
@@ -1766,10 +1836,12 @@
 + (BOOL)setCurrentContext:(id)arg1;
 
 - (unsigned int)API;
+- (struct EAGLMacroContext { }*)GetMacroContextPrivate;
 - (BOOL)attachImage:(unsigned int)arg1 toCoreSurface:(struct __IOSurface { }*)arg2 invertedRender:(BOOL)arg3;
 - (void)dealloc;
 - (unsigned int)getParameter:(unsigned int)arg1 to:(int*)arg2;
 - (id)initWithAPI:(unsigned int)arg1 properties:(id)arg2;
+- (id)initWithAPI:(unsigned int)arg1 sharedWithCompute:(BOOL)arg2;
 - (id)initWithAPI:(unsigned int)arg1 sharegroup:(id)arg2;
 - (id)initWithAPI:(unsigned int)arg1;
 - (BOOL)presentRenderbuffer:(unsigned int)arg1;

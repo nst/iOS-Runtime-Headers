@@ -45,5 +45,6 @@
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
 - (void)mapViewWillStartLoadingMap:(id)arg1;
 - (void)setDetailsDelegate:(id)arg1;
+- (void)updateMapView:(id)arg1 WithAddedAssets:(id)arg2 deletedAssets:(id)arg3 updatedAssets:(id)arg4;
 
 @end

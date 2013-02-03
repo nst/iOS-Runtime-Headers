@@ -20,8 +20,6 @@
 
 - (unsigned short)accessCapability;
 - (id)content;
-- (unsigned long)contentSize;
-- (void)copyContent:(char *)arg1 ofSize:(unsigned long)arg2;
 - (void)dealloc;
 - (id)description;
 - (unsigned short)filesystemType;

@@ -16,6 +16,7 @@
     double _lastTouchTime;
     float _previousVelocity;
     UITouch *_touches[2];
+    id _transformAnalyzer;
     float _velocity;
 }
 
@@ -24,6 +25,9 @@
 
 - (void)_resetGestureRecognizer;
 - (struct CGPoint { float x1; float x2; })anchorPoint;
+- (void)dealloc;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (float)rotation;
 - (void)setRotation:(float)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

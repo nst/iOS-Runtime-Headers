@@ -23,8 +23,6 @@
     NSString *_title;
 }
 
-+ (void)_initializeSafeCategory;
-
 - (void)_animateViewOriginDeltaX:(float)arg1;
 - (void)_createTakePhotoView;
 - (void)_didCapture;

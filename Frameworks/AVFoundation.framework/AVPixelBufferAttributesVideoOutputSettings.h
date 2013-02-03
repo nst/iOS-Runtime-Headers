@@ -7,9 +7,7 @@
 @interface AVPixelBufferAttributesVideoOutputSettings : AVVideoOutputSettings <AVDecodedVideoSettingsForFig> {
 }
 
-@property(readonly) int height;
 @property(readonly) NSDictionary * pixelBufferAttributes;
-@property(readonly) int width;
 
 + (id)_videoOutputSettingsWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (id)eligibleOutputSettingsDictionaryKeys;

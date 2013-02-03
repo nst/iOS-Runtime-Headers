@@ -12,6 +12,7 @@
 @property(readonly) NSString * encodingBase64;
 @property(retain) SUMessagePart * nativeMessagePart;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 
 - (id)MIMEType;

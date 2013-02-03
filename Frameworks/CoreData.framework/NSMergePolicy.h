@@ -17,10 +17,12 @@
 - (void)_mergeChangesStoreUpdatesTrumpForObject:(id)arg1 withRecord:(id)arg2;
 - (void)_mergeDeletionWithStoreChangesForObject:(id)arg1 withRecord:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMergeType:(unsigned int)arg1;
 - (id)initWithType:(unsigned int)arg1;
+- (void)mergeToManyRelationshipForSourceObject:(id)arg1 withOldSnapshot:(id)arg2 newSnapshot:(id)arg3 andAncestor:(id)arg4 andLegacyPath:(BOOL)arg5;
 - (unsigned int)mergeType;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)resolveConflict:(id)arg1;

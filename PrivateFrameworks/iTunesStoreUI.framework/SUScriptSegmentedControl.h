@@ -20,6 +20,7 @@
 @property(readonly) SUStorePageViewController * storePageViewController;
 @property(retain) NSString * style;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 

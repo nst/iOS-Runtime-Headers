@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface Account : BasicAccount <WeaklyReferencedObject, ASDynamicAccountClassLoader, AccountCreationProtocol> {
+@interface Account : BasicAccount <ASDynamicAccountClassLoader, AccountCreationProtocol> {
     unsigned int _isOffline : 1;
     unsigned int _autosynchronizingEnabled : 1;
     unsigned int _isActive : 2;
 }
 
++ (BOOL)_shouldUpdateAccountsInPlace;
 + (id)accountPropertiesValueForKey:(id)arg1 value:(id)arg2;
 + (id)accountTypeString;
 + (id)accountWithBasicAccount:(id)arg1;
@@ -17,7 +18,6 @@
 + (id)displayedShortAccountTypeString;
 + (BOOL)haveAccountsBeenConfigured;
 + (id)hostname;
-+ (void)initialize;
 + (BOOL)isPredefinedAccountType;
 + (BOOL)isSSLEditable;
 + (void*)keychainProtocol;
@@ -42,6 +42,7 @@
 - (BOOL)_shouldTryDirectSSLConnectionOnPort:(unsigned int)arg1;
 - (void)accountInfoDidChange;
 - (BOOL)acquireCredentialsWithPassword:(id)arg1;
+- (BOOL)allowsTrustPrompt;
 - (id)alternateConnectionSettings;
 - (void)applySettingsAsDefault:(id)arg1;
 - (id)authenticatedConnection;
@@ -82,14 +83,11 @@
 - (id)promptUserForPasswordWithMessage:(id)arg1;
 - (id)promptUserIfNeededForPasswordWithMessage:(id)arg1;
 - (id)propertiesToSave;
-- (void)release;
 - (void)releaseAllConnections;
 - (void)releaseAllForcedConnections;
 - (void)removeValueInAccountPropertiesForKey:(id)arg1;
 - (void)reportAuthenticationError:(id)arg1 authScheme:(id)arg2;
 - (BOOL)requiresAuthentication;
-- (id)retain;
-- (unsigned int)retainCount;
 - (id)secureConnectionSettings;
 - (id)secureServiceName;
 - (id)serviceName;

@@ -6,9 +6,11 @@
 
 @interface UIPageController : UIViewController {
     struct { 
+        unsigned int delegateViewControllerAtIndex : 1; 
         unsigned int delegateWillBeginPaging : 1; 
         unsigned int delegateDidEndPaging : 1; 
         unsigned int displaysPageControl : 1; 
+        unsigned int wraps : 1; 
     <UIPageControllerDelegate> *_delegate;
     int _notificationState[3];
     UIPageControl *_pageControl;
@@ -26,17 +28,19 @@
 @property int pageCount;
 @property float pageSpacing;
 @property int visibleIndex;
-@property(retain,readonly) UIViewController * visibleViewController;
+@property(readonly) UIViewController * visibleViewController;
+@property BOOL wraps;
 
 - (void)_adjustScrollViewContentInsets;
 - (BOOL)_allowsAutorotation;
 - (void)_createPageControl;
 - (BOOL)_doesVisibleViewControllerSupportInterfaceOrientation:(int)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (BOOL)_hasNextViewController;
 - (BOOL)_hasPreviousViewController;
 - (BOOL)_hasVisibleViewController;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (BOOL)_isViewControllerBeingUnloaded:(id)arg1 atIndex:(int)arg2;
 - (id)_loadNextViewController;
 - (id)_loadPreviousViewController;
 - (id)_loadVisibleViewControllerAndNotify:(BOOL)arg1;
@@ -53,6 +57,7 @@
 - (id)_pageControllerScrollView;
 - (id)_previousViewController;
 - (int)_previousViewControllerNotificationState;
+- (void)_replaceViewControllerAtIndex:(int)arg1 withViewController:(id)arg2;
 - (void)_scrollView:(id)arg1 boundsDidChangeToSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)_scrollView;
 - (void)_scrollViewDidEndPaging;
@@ -87,6 +92,7 @@
 - (void)setVisibleIndex:(int)arg1 animated:(BOOL)arg2;
 - (void)setVisibleIndex:(int)arg1 preservingLoadedViewControllers:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)setVisibleIndex:(int)arg1;
+- (void)setWraps:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
@@ -99,5 +105,6 @@
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (BOOL)wraps;
 
 @end

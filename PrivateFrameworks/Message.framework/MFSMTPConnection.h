@@ -18,8 +18,6 @@
     BOOL _useSaveSent;
 }
 
-+ (void)initialize;
-
 - (BOOL)_connectUsingAccount:(id)arg1;
 - (id)_dataForCommand:(const char *)arg1 length:(unsigned int)arg2 argument:(id)arg3 trailer:(const char *)arg4;
 - (int)_doHandshakeUsingAccount:(id)arg1;

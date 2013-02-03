@@ -4,7 +4,7 @@
 
 @class NSMutableSet, NSArray, NSMutableArray, <UITapRecognizerDelegate>;
 
-@interface UITapRecognizer : NSObject {
+@interface UITapRecognizer : NSObject <NSCoding> {
     struct CGPoint { 
         float x; 
         float y; 
@@ -41,7 +41,9 @@
 - (void)clearTapTimer;
 - (void)dealloc;
 - (id)delegate;
+- (void)encodeWithCoder:(id)arg1;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (double)maximumIntervalBetweenSuccessiveTaps;
 - (double)maximumSingleTapDuration;

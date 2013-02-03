@@ -16,7 +16,7 @@
     UILabel *_titleLabel;
 }
 
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } edgeInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 
 - (id)_newLabelWithText:(id)arg1 withFont:(id)arg2;
 - (void)dealloc;

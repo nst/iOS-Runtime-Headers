@@ -10,6 +10,7 @@
 - (void)setExpectsMediaDataInRealTime:(BOOL)arg1;
 - (void)setMediaTimeScale:(int)arg1;
 - (void)setMetadata:(id)arg1;
+- (void)setSampleBufferFormatHint:(struct opaqueCMFormatDescription { }*)arg1;
 - (void)setSourcePixelBufferAttributes:(id)arg1;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (int)status;

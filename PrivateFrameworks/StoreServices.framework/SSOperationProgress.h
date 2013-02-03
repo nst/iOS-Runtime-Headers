@@ -4,10 +4,11 @@
 
 @class NSMutableArray;
 
-@interface SSOperationProgress : NSObject <NSCopying> {
+@interface SSOperationProgress : NSObject <SSCoding, NSCopying> {
     BOOL _canPause;
     double _changeRate;
     long long _currentValue;
+    struct dispatch_queue_s { } *_dispatchQueue;
     double _estimatedTimeRemaining;
     long long _maxValue;
     long long _normalizedCurrentValue;
@@ -33,12 +34,14 @@
 - (double)changeRate;
 - (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void*)copyXPCEncoding;
 - (long long)currentValue;
 - (void)dealloc;
 - (id)description;
 - (double)estimatedTimeRemaining;
 - (id)init;
 - (id)initWithPropertyListEncoding:(id)arg1;
+- (id)initWithXPCEncoding:(void*)arg1;
 - (long long)maxValue;
 - (long long)normalizedCurrentValue;
 - (long long)normalizedMaxValue;

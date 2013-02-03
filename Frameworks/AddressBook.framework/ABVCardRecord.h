@@ -8,23 +8,29 @@
 }
 
 + (void)clearPrivateFields;
++ (BOOL)includeABClipRectInVCardPhotos;
++ (BOOL)includeImageURIInVCards;
 + (BOOL)includeNotesInVCards;
 + (BOOL)includePhotosInVCards;
++ (BOOL)includeREVInVCards;
 + (BOOL)privateVCardEnabled;
 + (void)setIncludeNotesInVCards:(BOOL)arg1;
 + (void)setIncludePhotosInVCards:(BOOL)arg1;
++ (void)setIncludeREVInVCards:(BOOL)arg1;
 + (void)setPrivateVCardEnabled:(BOOL)arg1;
 + (void)setVCardField:(id)arg1 isPrivate:(BOOL)arg2;
 + (struct __CFArray { }*)supportedProperties;
 + (BOOL)vcardFieldisPrivate:(id)arg1;
 
 - (id)ISO8061StringFromDate:(id)arg1;
+- (id)ISO8061StringFromDateTime:(id)arg1;
 - (id)_21vCardRepresentationAsData;
 - (id)_copyGroupVCardRepresentationAsStringIncludeExternalProperties:(BOOL)arg1;
-- (id)_copyVCardRepresentationAsStringIncludeExternalProperties:(BOOL)arg1 withPhoto:(id)arg2;
+- (id)_copyVCardRepresentationAsStringIncludeExternalProperties:(BOOL)arg1 withPhoto:(id)arg2 extraPhotoParameters:(id)arg3;
 - (id)_fullName;
 - (id)_fullNameIncludingAuxiliaryElements:(BOOL)arg1;
 - (BOOL)_isCompany;
+- (id)_prodID;
 - (id)_realCompositeName;
 - (BOOL)_showField:(unsigned int)arg1 identifier:(int)arg2;
 - (BOOL)_showField:(unsigned int)arg1;
@@ -36,6 +42,7 @@
 - (void)appendLabel:(id)arg1 toVCardRep:(id)arg2 inGroup:(id)arg3;
 - (void*)copyValueForProperty:(unsigned int)arg1;
 - (id)dataForInstantMessageProperties;
+- (id)dataForSocialProfileProperty:(void*)arg1 groupCount:(int*)arg2;
 - (void)dealloc;
 - (id)encodedDataForValue:(id)arg1 charsetName:(id*)arg2;
 - (id)encodedLineForValue:(id)arg1;
@@ -47,6 +54,7 @@
 - (id)propertyLineForGenericABProperty21:(unsigned int)arg1 vCardProperty:(id)arg2;
 - (id)propertyLineForGenericABProperty:(unsigned int)arg1 vCardProperty:(id)arg2 is21:(BOOL)arg3 groupCount:(int*)arg4;
 - (id)propertyLineForIMHandles:(id)arg1 labels:(id)arg2 vCardProperty:(id)arg3;
+- (id)propertyLineForIMPPProperty:(id)arg1 groupCount:(int*)arg2;
 - (id)propertyLineForInstantMessageHandles:(id)arg1 groupCount:(int*)arg2;
 - (void*)record;
 - (BOOL)setValue:(void*)arg1 forProperty:(unsigned int)arg2;

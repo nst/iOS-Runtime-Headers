@@ -18,7 +18,7 @@
 @property(retain) NSString * selectedLabel;
 
 - (BOOL)_allowsAutorotation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (float)ab_heightToFitForViewInPopoverView;
 - (void)dealloc;
 - (BOOL)didCreateNewLabel;

@@ -2,10 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
+@class WebBookmark;
+
 @interface WebBookmarkCollection : NSObject {
     struct sqlite3 { } *_db;
+    BOOL _dirty;
     struct __CFLocale { } *_locale;
     BOOL _merging;
+    WebBookmark *_rootBookmark;
     struct __CFStringTokenizer { } *_wordTokenizer;
 }
 
@@ -22,12 +26,12 @@
 - (BOOL)_addChildrenOfID:(unsigned int)arg1 toCollection:(id)arg2 recursive:(BOOL)arg3 error:(id*)arg4;
 - (id)_bookmarkDictionaryForSqliteRow:(struct sqlite3_stmt { }*)arg1 recursive:(BOOL)arg2 error:(id*)arg3;
 - (unsigned int)_bookmarkIDForServerID:(id)arg1;
-- (id)_bookmarkWithAddress:(id)arg1 parent:(unsigned int)arg2;
 - (id)_bookmarkWithServerID:(id)arg1;
 - (id)_bookmarkWithSpecialID:(unsigned int)arg1;
 - (id)_bookmarksFromStatementSelectingIDs:(const char *)arg1 withQuery:(id)arg2;
-- (id)_bookmarksInListWithID:(unsigned int)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3 includeHidden:(BOOL)arg4;
+- (id)_bookmarksInListWhere:(id)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
 - (id)_changeList;
+- (BOOL)_clearAllDAVSyncData;
 - (BOOL)_clearAllSyncKeys;
 - (BOOL)_clearAllTombstones;
 - (void)_clearAndCreateAncestorTable;
@@ -40,12 +44,13 @@
 - (id)_databaseTitleForSpecialID:(unsigned int)arg1;
 - (BOOL)_deleteAncestorTableEntriesForBookmarkID:(unsigned int)arg1;
 - (BOOL)_deleteBookmark:(id)arg1 leaveTombstone:(BOOL)arg2;
-- (BOOL)_deleteRecursively:(unsigned int)arg1 isFolder:(BOOL)arg2;
+- (BOOL)_deleteRecursively:(unsigned int)arg1;
 - (BOOL)_deleteSyncPropertyForKey:(id)arg1;
+- (id)_errorForMostRecentSQLiteError;
 - (int)_executeSQL:(id)arg1;
 - (int)_executeSQLWithCString:(const char *)arg1;
 - (int)_finalizeStatementIfNotNull:(struct sqlite3_stmt { }*)arg1;
-- (id)_folderWithTitle:(id)arg1 parent:(unsigned int)arg2;
+- (id)_firstBookmarkWithURLMatchingString:(id)arg1 prefixMatch:(BOOL)arg2 inParent:(unsigned int)arg3;
 - (BOOL)_importBookmarksPlist:(id)arg1;
 - (BOOL)_importSyncAnchorPlist:(id)arg1;
 - (BOOL)_incrementDAVGeneration;
@@ -58,12 +63,20 @@
 - (int)_intFromExecutingSQL:(id)arg1;
 - (BOOL)_markBookmarkID:(unsigned int)arg1 withSpecialID:(unsigned int)arg2;
 - (BOOL)_markSpecialBookmarks;
+- (id)_mergeCandidateBookmarkWithAddress:(id)arg1 parent:(unsigned int)arg2;
+- (id)_mergeCandidateFolderWithTitle:(id)arg1 parent:(unsigned int)arg2;
 - (BOOL)_mergeChildrenOfID:(unsigned int)arg1 referencingBase:(id)arg2 error:(id*)arg3;
 - (BOOL)_migrateBookmarksPlist:(id)arg1 syncAnchorPlist:(id)arg2;
 - (void)_migrateSchemaVersion0ToVersion1;
 - (void)_migrateSchemaVersion10ToVersion11;
-- (void)_migrateSchemaVersion11ToVersion12;
+- (void)_migrateSchemaVersion11And12And13ToVersion14;
+- (void)_migrateSchemaVersion14ToVersion15;
+- (void)_migrateSchemaVersion15ToVersion16;
+- (void)_migrateSchemaVersion16AndVersion17AndVersion18ToVersion19;
+- (void)_migrateSchemaVersion19And20ToVersion21;
 - (void)_migrateSchemaVersion1And2ToVersion3;
+- (void)_migrateSchemaVersion21ToVersion22;
+- (void)_migrateSchemaVersion22ToVersion23;
 - (void)_migrateSchemaVersion3ToVersion4;
 - (void)_migrateSchemaVersion4ToVersion5;
 - (void)_migrateSchemaVersion5ToVersion6;
@@ -72,19 +85,27 @@
 - (void)_migrateSchemaVersion8ToVersion9;
 - (void)_migrateSchemaVersion9ToVersion10;
 - (void)_migrateToCurrentSchema;
+- (BOOL)_moveBookmark:(id)arg1 toIndex:(unsigned int)arg2;
 - (void)_normalizeDatabaseURLs;
 - (void)_normalizeSearchString:(struct __CFString { }*)arg1;
+- (BOOL)_openDatabaseAtPath:(id)arg1 error:(id*)arg2;
 - (BOOL)_orderChildrenWithServerIDs:(id)arg1 inFolderWithServerID:(id)arg2;
 - (int)_orderIndexForBookmarkInsertedIntoParent:(unsigned int)arg1 insertAtBeginning:(BOOL)arg2;
 - (void)_postBookmarksFolderContentsDidChangeNotification:(unsigned int)arg1;
 - (void)_postBookmarksSpecialFoldersDidChangeNotification;
 - (void)_postDistributedBookmarksDidReloadNotification;
+- (void)_postDistributedBookmarksDidReloadNotificationIfChangesWereMade;
 - (struct sqlite3_stmt { }*)_prefixSearch:(id)arg1 usingColumns:(const char *)arg2 maxCount:(unsigned int)arg3;
+- (id)_readingListWithUnreadOnly:(BOOL)arg1;
 - (BOOL)_rebuildAncestorTable;
 - (void)_registerForSyncBookmarksFileChangedNotification;
 - (BOOL)_reindexBookmarkID:(unsigned int)arg1 title:(id)arg2;
+- (void)_rerunMigrationsIfNecessary;
 - (BOOL)_restoreBookmarkBarIfMissing;
+- (BOOL)_restoreMissingSpecialBookmarks;
+- (void)_restoreOrMergeReadingListFolderWithChangeNotification:(BOOL)arg1;
 - (BOOL)_saveBookmark:(id)arg1 withSpecialID:(unsigned int)arg2 updateGeneration:(BOOL)arg3;
+- (struct sqlite3_stmt { }*)_selectBookmarksWhere:(id)arg1 countOnly:(BOOL)arg2;
 - (struct sqlite3_stmt { }*)_selectBookmarksWhere:(id)arg1;
 - (id)_serverIDForBookmarkID:(unsigned int)arg1;
 - (id)_serverIDsInFolderWithServerID:(id)arg1;
@@ -114,7 +135,10 @@
 - (void)commitSyncTransaction;
 - (void)dealloc;
 - (BOOL)deleteBookmark:(id)arg1;
+- (id)firstReadingListBookmarkWithIconDataWithBaseURL:(id)arg1;
+- (id)firstReadingListBookmarkWithURLMatchingString:(id)arg1 prefixMatch:(BOOL)arg2;
 - (unsigned int)generation;
+- (unsigned int)indexOfReadingListBookmark:(id)arg1 countingOnlyUnread:(BOOL)arg2;
 - (id)initWithPath:(id)arg1 migratingBookmarksPlist:(id)arg2 syncAnchorPlist:(id)arg3;
 - (id)initWithPath:(id)arg1;
 - (BOOL)isMerging;
@@ -123,8 +147,13 @@
 - (id)listWithID:(unsigned int)arg1;
 - (id)listWithSpecialID:(unsigned int)arg1;
 - (void)localeSettingsChanged;
-- (BOOL)mergeWithBookmarksDictionary:(id)arg1 error:(id*)arg2;
+- (BOOL)mergeWithBookmarksDictionary:(id)arg1 clearHidden:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)moveBookmark:(id)arg1 toFolderWithID:(unsigned int)arg2;
+- (id)readingList;
+- (id)readingListFolder;
+- (unsigned int)readingListFolderBookmarkID;
+- (id)readingListItemsWithIconData:(BOOL)arg1 unreadOnly:(BOOL)arg2;
+- (BOOL)reorderBookmark:(id)arg1 toIndex:(unsigned int)arg2;
 - (BOOL)reorderList:(id)arg1 moveBookmarkAtIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
 - (void)retrieveBookmarksMatchingString:(id)arg1 delegate:(id)arg2 userInfo:(void*)arg3;
 - (void)rollbackSyncTransaction;
@@ -137,6 +166,7 @@
 - (id)syncDataForKey:(id)arg1;
 - (BOOL)syncSetString:(id)arg1 forKey:(id)arg2;
 - (id)syncStringForKey:(id)arg1;
+- (id)unreadReadingList;
 - (BOOL)vacuum;
 
 @end

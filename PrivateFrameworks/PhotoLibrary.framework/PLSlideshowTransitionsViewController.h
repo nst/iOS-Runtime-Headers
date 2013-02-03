@@ -17,6 +17,7 @@
 @property(retain) NSString * selectedTransition;
 @property(retain) NSArray * transitionKeys;
 
+- (void)_configureTableCells;
 - (id)alternateLocalizations;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
 - (void)dealloc;
@@ -25,6 +26,7 @@
 - (id)selectedTransition;
 - (void)setAlternateLocalizations:(id)arg1;
 - (void)setSelectedTransition:(id)arg1;
+- (void)setTransitionKeys:(id)arg1 alternateLocalizations:(id)arg2;
 - (void)setTransitionKeys:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

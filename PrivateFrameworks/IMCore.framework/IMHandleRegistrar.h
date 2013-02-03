@@ -13,6 +13,8 @@
     NSMutableDictionary *_usedUniqueNames;
 }
 
+@property NSInteger nameStyle;
+
 + (id)sharedInstance;
 
 - (void)_addressBookChanged;

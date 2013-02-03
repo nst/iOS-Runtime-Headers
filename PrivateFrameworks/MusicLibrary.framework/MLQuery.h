@@ -45,9 +45,7 @@
 - (id)_cpred;
 - (void)_debugLogAllEntitiesWithMessage:(id)arg1;
 - (void)_evaluateIfNecessary;
-- (void)_filterByRemovingPredicatesForProperty:(unsigned long)arg1;
 - (void)_filterPredicatesChanged;
-- (NSInteger)_filteredMediaType;
 - (BOOL)_needsEvaluationForAnyReason;
 - (void)_normailizeFilterPredicates;
 - (void)_noteIndexMappingTypeForEntityCount:(NSUInteger)arg1 oldEntityCount:(NSUInteger)arg2 anchorIndex:(NSUInteger*)arg3 currentIndex:(NSUInteger*)arg4;
@@ -102,8 +100,6 @@
 - (BOOL)isFilteredByAnyPropertyExcluding:(NSUInteger*)arg1 count:(NSInteger)arg2;
 - (BOOL)isFilteredByProperty:(unsigned long)arg1;
 - (void)loadAllEntities;
-- (unsigned long long)playlistPersistentUID;
-- (id)predicateForProperty:(unsigned long)arg1;
 - (NSUInteger)querySearchCriteriaHash;
 - (BOOL)querySearchCriteriaIsEqualTo:(id)arg1;
 - (void)replaceFirstFilterForProperty:(unsigned long)arg1 withPredicate:(id)arg2;

@@ -6,6 +6,7 @@
 
 @interface MCFormatterVendor : NSObject {
     NSNumberFormatter *_numberFormatter;
+    struct dispatch_queue_s { } *_syncQueue;
 }
 
 + (id)sharedInstance;

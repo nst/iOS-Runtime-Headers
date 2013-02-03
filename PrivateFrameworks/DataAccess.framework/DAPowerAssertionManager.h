@@ -10,6 +10,7 @@
     NSMutableDictionary *_groupIdentifierToContexts;
     NSCountedSet *_heldAsideContexts;
     NSMutableSet *_heldAsideGroupIdentifiers;
+    void *_timedAssertionRef;
     NSString *_uuid;
 }
 

@@ -10,10 +10,10 @@
 
 @interface WebScriptCallFramePrivate : NSObject {
     struct DebuggerCallFrame { struct ExecState {} *x1; struct JSValue { 
-            union $_729 { 
+            union $_684 { 
                 long long asEncodedJSValue; 
                 double asDouble; 
-                struct $_730 { 
+                struct $_685 { 
                     NSInteger payload; 
                     NSInteger tag; 
                 } asBits; 

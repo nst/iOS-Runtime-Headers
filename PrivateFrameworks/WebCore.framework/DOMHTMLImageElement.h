@@ -38,6 +38,8 @@
 - (BOOL)isMap;
 - (id)longDesc;
 - (id)lowsrc;
+- (void)mf_constrainImageToSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)mf_unconstrainImageSize;
 - (id)mimeType;
 - (id)name;
 - (NSInteger)naturalHeight;

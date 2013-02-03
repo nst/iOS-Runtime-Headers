@@ -64,6 +64,7 @@
 - (id)selectedAlbum;
 - (NSInteger)selectedUploadOption;
 - (void)setAlbums:(id)arg1;
+- (void)setContentTitle:(id)arg1;
 - (void)setEnableHDUploadOption:(BOOL)arg1;
 - (void)setHdUploadSize:(long long)arg1;
 - (void)setSdUploadSize:(long long)arg1;
@@ -80,7 +81,7 @@
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(NSInteger)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (id)tilteCellPlaceholderText;
+- (id)titleCellPlaceholderText;
 - (void)updateDoneButton;
 - (void)viewWillAppear:(BOOL)arg1;
 

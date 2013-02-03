@@ -20,6 +20,8 @@
 + (id)friendRequestsWithDictionaries:(id)arg1;
 
 - (id)date;
+- (void)dealloc;
+- (id)description;
 - (id)initWithRequestID:(id)arg1;
 - (id)message;
 - (id)player;

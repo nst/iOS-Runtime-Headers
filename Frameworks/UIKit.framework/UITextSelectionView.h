@@ -11,8 +11,10 @@
     BOOL m_caretShowingNow;
     NSTimer *m_caretTimer;
     UIView *m_caretView;
+    BOOL m_delayShowingCommands;
     UITextRangeView *m_rangeView;
     UITextSelection *m_selection;
+    NSInteger m_showingCommandsCounter;
     UIView<UITextSelectingContainer> *m_view;
     BOOL m_visible;
     BOOL m_wasShowingCommands;
@@ -30,6 +32,7 @@
 
 - (void)_axPostAfterDelay:(id)arg1;
 - (void)activate;
+- (BOOL)affectedByScrollerNotification:(id)arg1;
 - (void)appearOrFadeIfNecessary;
 - (void)calculateAndShowReplacements:(id)arg1;
 - (void)cancelDelayedCommandRequests;
@@ -60,8 +63,8 @@
 - (void)prepareForMagnification;
 - (id)rangeView;
 - (void)removeFromSuperview;
-- (void)scaleDidChange;
-- (void)scaleWillChange;
+- (void)scaleDidChange:(id)arg1;
+- (void)scaleWillChange:(id)arg1;
 - (id)scrollView;
 - (id)selection;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionBoundingBox;
@@ -71,6 +74,7 @@
 - (void)selectionWillScroll:(id)arg1;
 - (void)setCaretBlinks:(BOOL)arg1;
 - (void)setVisible:(BOOL)arg1;
+- (BOOL)shouldBeVisible;
 - (void)showCaret:(NSInteger)arg1;
 - (void)showCommandsWithReplacements:(id)arg1;
 - (void)showReplacementsWithGenerator:(id)arg1 afterDelay:(double)arg2;

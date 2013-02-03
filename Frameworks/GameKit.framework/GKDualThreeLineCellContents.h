@@ -17,6 +17,7 @@
 - (void)dealloc;
 - (id)init;
 - (void)layoutSubviews;
+- (float)preferredHeightForOrientation:(NSInteger)arg1;
 - (void)prepareForReuse;
 - (void)setBottomContents:(id)arg1;
 - (void)setTheme:(id)arg1;

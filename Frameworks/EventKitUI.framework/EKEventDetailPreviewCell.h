@@ -9,10 +9,8 @@
 @property BOOL alwaysVisible;
 
 - (BOOL)alwaysVisible;
-- (BOOL)hasCustomLayout;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
 - (void)setAlwaysVisible:(BOOL)arg1;
 - (BOOL)update;
-- (id)viewControllerForCell;
 
 @end

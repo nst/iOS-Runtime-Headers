@@ -10,7 +10,13 @@
         NSInteger timescale; 
         NSUInteger flags; 
         long long epoch; 
+    struct { 
+        long long value; 
+        NSInteger timescale; 
+        NSUInteger flags; 
+        long long epoch; 
     NSString *commonKey;
+    } duration;
     NSMutableDictionary *extras;
     NSInteger itemIndex;
     id key;

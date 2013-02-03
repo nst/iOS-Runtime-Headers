@@ -55,7 +55,7 @@
 @property NSInteger textSelectionBehavior;
 @property id textSuggestionDelegate;
 
-- (struct Element { int (**x1)(); int (**x2)(); NSInteger x3; struct Node {} *x4; struct Document {} *x5; struct Node {} *x6; struct Node {} *x7; struct RenderObject {} *x8; unsigned int x9 : 2; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; struct Node {} *x30; struct Node {} *x31; struct QualifiedName { struct QualifiedNameImpl {} *x_32_1_1; } x32; struct RefPtr<WebCore::NamedNodeMap> { struct NamedNodeMap {} *x_33_1_1; } x33; }*)_linkElement;
+- (struct Element { int (**x1)(); int (**x2)(); NSInteger x3; struct Node {} *x4; struct WeakGCPtr<WebCore::DOMObject> { struct DOMObject {} *x_5_1_1; } x5; struct Document {} *x6; struct Node {} *x7; struct Node {} *x8; struct RenderObject {} *x9; NSUInteger x10; struct Node {} *x11; struct Node {} *x12; struct QualifiedName { struct QualifiedNameImpl {} *x_13_1_1; } x13; struct RefPtr<WebCore::NamedNodeMap> { struct NamedNodeMap {} *x_14_1_1; } x14; }*)_linkElement;
 - (void)_fixParagraphsAndQuotesFromMicrosoftNodesToRemove:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_lastRectForRange:(id)arg1;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })_markedTextNSRange;
@@ -65,12 +65,12 @@
 - (BOOL)_requiresAccessoryView;
 - (BOOL)_requiresInputView;
 - (struct RootObject { }*)_rootObject;
-- (void)_setMarkedText:(id)arg1 selectedRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (void)_startAssistingDocumentView:(id)arg1;
 - (void)_stopAssistingDocumentView:(id)arg1;
 - (id)_subresourceURLs;
 - (BOOL)_supportsAutoFill;
 - (id)_textFormElement;
+- (id)_textSelectingContainer;
 - (struct _WKQuad { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; })absoluteQuad;
 - (id)absoluteQuads;
 - (id)absoluteQuadsAtPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -109,6 +109,7 @@
 - (NSInteger)comparePosition:(id)arg1 toPosition:(id)arg2;
 - (float)computedFontSize;
 - (void)confirmMarkedText:(id)arg1;
+- (struct CGPoint { float x1; float x2; })constrainedPoint:(struct CGPoint { float x1; float x2; })arg1 withInset:(float)arg2;
 - (struct CGPoint { float x1; float x2; })constrainedPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)containsBlock:(id)arg1;
 - (BOOL)containsNode:(id)arg1;

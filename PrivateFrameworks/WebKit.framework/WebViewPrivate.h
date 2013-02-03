@@ -123,6 +123,7 @@
     BOOL hoverFeedbackSuspended;
     } identifierMap;
     BOOL ignoringMouseDraggedEvents;
+    BOOL includesFlattenedCompositingLayersWhenDrawingToBitmap;
     WebInspector *inspector;
     BOOL isStopping;
     WebEvent *keyDownEvent;

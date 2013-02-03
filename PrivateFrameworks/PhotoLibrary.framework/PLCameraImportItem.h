@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLPhotoAlbum, UIImage, NSString, NSData, NSMutableDictionary;
+@class PLPhotoAlbum, UIImage, NSString, NSData, NSError, NSMutableDictionary;
 
 @interface PLCameraImportItem : PLPhoto {
+    NSString *_basePath;
     PLPhotoAlbum *_event;
     NSString *_identifier;
+    NSError *_importError;
     BOOL _metadataRequested;
     NSString *_parentFolder;
     NSMutableDictionary *_representationsMapping;
@@ -17,8 +19,10 @@
     NSInteger _thumbnailState;
 }
 
+@property(retain) NSString *basePath;
 @property(retain) PLPhotoAlbum *event;
 @property(readonly) NSString *identifier;
+@property(retain) NSError *importError;
 @property(readonly) NSString *parentFolder;
 @property(readonly) UIImage *thumbnail;
 @property(retain) NSData *thumbnailData;
@@ -30,6 +34,7 @@
 - (void)_removeRepresentation:(id)arg1;
 - (void)addRepresentationForCameraFile:(id)arg1;
 - (id)audioExtension;
+- (id)basePath;
 - (BOOL)canRequestMetadata;
 - (BOOL)canRequestThumbnail;
 - (void)cancelThumbnailRequest;
@@ -43,6 +48,7 @@
 - (unsigned long long)fileSize;
 - (BOOL)hasAllMetadata;
 - (id)identifier;
+- (id)importError;
 - (id)initWithIdentifier:(id)arg1 parentFolder:(id)arg2;
 - (BOOL)isAudio;
 - (BOOL)isInDatabaseForce:(BOOL)arg1;
@@ -65,7 +71,9 @@
 - (id)representations;
 - (void)requestMetadata;
 - (void)requestThumbnail;
+- (void)setBasePath:(id)arg1;
 - (void)setEvent:(id)arg1;
+- (void)setImportError:(id)arg1;
 - (void)setShouldImport:(BOOL)arg1;
 - (void)setThumbnailData:(id)arg1;
 - (void)setThumbnailState:(NSInteger)arg1;

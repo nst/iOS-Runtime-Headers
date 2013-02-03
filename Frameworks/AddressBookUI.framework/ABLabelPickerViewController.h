@@ -25,7 +25,6 @@
 - (struct CGSize { float x1; float x2; })fullScreenContentSize;
 - (id)initWithAddressBook:(void*)arg1 propertyGroup:(id)arg2 itemIndex:(NSInteger)arg3 additionalLabels:(id)arg4;
 - (void)itemLabelPicker:(id)arg1 deletedCustomLabel:(id)arg2;
-- (void)itemLabelPicker:(id)arg1 dismissSimpleTextInputLayer:(id)arg2 afterSelectionConfirmed:(BOOL)arg3;
 - (void)itemLabelPicker:(id)arg1 endedWithSelectionConfirmed:(BOOL)arg2 animate:(BOOL)arg3;
 - (void)itemLabelPickerDeletedLastCustomLabel:(id)arg1;
 - (void)itemLabelPickerDidChangeSelection:(id)arg1;

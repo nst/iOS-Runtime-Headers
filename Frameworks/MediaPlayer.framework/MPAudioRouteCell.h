@@ -4,7 +4,7 @@
 
 @class UIImageView;
 
-@interface MPAudioRouteCell : UIAlertSheetTableCell {
+@interface MPAudioRouteCell : _UIAlertTableViewCell {
     UIImageView *_pickedImage;
 }
 
@@ -15,6 +15,5 @@
 - (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (void)setPicked:(BOOL)arg1;
-- (void)updateHighlightColors;
 
 @end

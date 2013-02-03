@@ -10,6 +10,7 @@
     NSSQLEntity *_entity;
     NSString *_entityAlias;
     NSArray *_fetchColumns;
+    BOOL _isCount;
     BOOL _useDistinct;
 }
 
@@ -22,6 +23,7 @@
 - (void)setColumnAlias:(id)arg1;
 - (void)setFetchColumns:(id)arg1;
 - (void)setFetchEntity:(id)arg1;
+- (void)setIsCount:(BOOL)arg1;
 - (void)setUseDistinct:(BOOL)arg1;
 
 @end

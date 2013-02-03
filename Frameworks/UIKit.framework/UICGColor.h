@@ -15,6 +15,7 @@
 - (NSUInteger)hash;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isPatternColor;
 - (void)set;
 - (void)setFill;
 - (void)setStroke;

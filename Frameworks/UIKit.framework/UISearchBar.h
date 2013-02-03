@@ -24,6 +24,7 @@
         unsigned int searchResultsButtonSelected : 1; 
         unsigned int pretendsIsInBar : 1; 
         unsigned int disabled : 1; 
+    id _appearance;
     UIView *_background;
     UIButton *_cancelButton;
     NSString *_cancelButtonText;
@@ -75,6 +76,7 @@
 - (void)_searchFieldEndEditing;
 - (void)_searchFieldReturnPressed;
 - (void)_setAutoDisableCancelButton:(BOOL)arg1;
+- (void)_setCancelButtonBackgroundImage:(id)arg1 forStates:(NSUInteger)arg2;
 - (void)_setCancelButtonText:(id)arg1;
 - (void)_setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setEnabled:(BOOL)arg1;
@@ -84,6 +86,7 @@
 - (void)_setupCancelButton;
 - (void)_setupPromptLabel;
 - (void)_setupSearchField;
+- (void)_takeAppearanceFromNavigationBarAppearance:(id)arg1;
 - (void)_updateOpacity;
 - (void)_updateRightView;
 - (void)_updateSearchFieldArt;

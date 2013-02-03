@@ -6,85 +6,38 @@
    See Warning(s) below.
  */
 
-@class NSOperationQueue, NSAutoreleasePool;
+@class NSOperationQueue;
 
 @interface CMMotionManagerInternal : NSObject {
-    struct { 
-        double x; 
-        double y; 
-        double z; 
-        double timestamp; 
-    struct { 
-        double x; 
-        double y; 
-        double z; 
-        double timestamp; 
-    struct { 
-        double bestAccuracy; 
-    struct CLPreferences { int (**x1)(); struct __CFDictionary {} *x2; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x3; struct basic_string<char,std::char_traits<char>,std::allocator<char> > { 
-            struct _Alloc_hider { 
-                char *_M_p; 
-            } _M_dataplus; 
-    struct queue<Operation,std::deque<Operation, std::allocator<Operation> > > { struct deque<Operation,std::allocator<Operation> > { 
-            struct _Deque_impl { 
-                struct Operation {} **_M_map; 
-                NSUInteger _M_map_size; 
-                struct _Deque_iterator<Operation,Operation&,Operation*> { 
-                    struct Operation {} *_M_cur; 
-                    struct Operation {} *_M_first; 
-                    struct Operation {} *_M_last; 
-                    struct Operation {} **_M_node; 
-                } _M_start; 
-                struct _Deque_iterator<Operation,Operation&,Operation*> { 
-                    struct Operation {} *_M_cur; 
-                    struct Operation {} *_M_first; 
-                    struct Operation {} *_M_last; 
-                    struct Operation {} **_M_node; 
-                } _M_finish; 
-            } _M_impl; 
-    } fAccelerometer;
-    struct CLAccelerometerDataSource { struct CLIoHidManager {} *x1; int (*x2)(); void *x3; } *fAccelerometerDataSource;
+    struct CLAccelerometer { int (**x1)(); char *x2; struct NotificationInfo {} *x3; NSInteger x4; NSInteger x5; struct CLSensorInterface {} *x6; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x7; } *fAccelerometer;
+    struct Dispatcher { int (**x1)(); } *fAccelerometerDispatcher;
     id fAccelerometerHandler;
     NSOperationQueue *fAccelerometerQueue;
-    struct __CFRunLoopSource { } *fAccelerometerRls;
-    struct __CFRunLoop { } *fAccelerometerRunloop;
     double fAccelerometerUpdateInterval;
-    } fCapabilities;
-    struct __CLClient { } *fClient;
-    struct Condition { void *x1; } *fCondition;
-    double fCurrentAccelerometerIoHidUpdateInterval;
-    double fCurrentGyroIoHidUpdateInterval;
+    struct CLDeviceMotion { int (**x1)(); char *x2; struct NotificationInfo {} *x3; NSInteger x4; NSInteger x5; struct Dispatcher {} *x6; struct Dispatcher {} *x7; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x8; void*x9; double x10; double x11; float x12; double x13; struct CLSensorFusion {} *x14; struct CLGyroMotionCalc {} *x15; NSInteger x16; NSInteger x17; } *fDeviceMotion;
+    struct Dispatcher { int (**x1)(); } *fDeviceMotionDispatcher;
     id fDeviceMotionHandler;
     NSOperationQueue *fDeviceMotionQueue;
     double fDeviceMotionUpdateInterval;
-    struct CLSensorFusion { int (**x1)(); } *fFusion;
-    } fGyro;
-    struct CLGyroDataSource { struct CLIoHidManager {} *x1; int (*x2)(); void *x3; double x4; float x5; float x6[3]; NSInteger x7; NSInteger x8; NSInteger x9; } *fGyroDataSource;
+    struct CLGyro { int (**x1)(); char *x2; struct NotificationInfo {} *x3; NSInteger x4; NSInteger x5; struct CLSensorInterface {} *x6; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x7; } *fGyro;
+    struct Dispatcher { int (**x1)(); } *fGyroDispatcher;
     id fGyroHandler;
     NSOperationQueue *fGyroQueue;
     double fGyroUpdateInterval;
-    struct __CFRunLoopSource { } *fIoHidRls;
     double fLastAccelerometerNotificationTimestamp;
-    double fLastAccelerometerTimestamp;
     double fLastDeviceMotionNotificationTimestamp;
-    double fLastDrainTimestamp;
     double fLastGyroNotificationTimestamp;
-    double fLastGyroTemperatureTimestamp;
-    double fLastGyroTimestamp;
-    struct Mutex { void *x1; } *fMutex;
-        } x1; } *fOperationQueue;
-    NSAutoreleasePool *fPool;
-        } x4; struct __CFString {} *x5; struct __CFString {} *x6; NSUInteger x7; NSUInteger x8; void*x9; } *fPreferences;
-    double fPreviousAccelerometerIoHidUpdateInterval;
-    double fPreviousGyroIoHidUpdateInterval;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fCapabilitiesValid;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fHaveBiasFit;
+    double fLastMagnetometerNotificationTimestamp;
+    struct CLMagnetometer { int (**x1)(); char *x2; struct NotificationInfo {} *x3; NSInteger x4; NSInteger x5; struct CLSensorInterface {} *x6; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x7; } *fMagnetometer;
+    struct Dispatcher { int (**x1)(); } *fMagnetometerDispatcher;
+    id fMagnetometerHandler;
+    NSOperationQueue *fMagnetometerQueue;
+    double fMagnetometerUpdateInterval;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fInactive;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fLog;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fRunningInLocationd;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fUpdatingAccelerometer;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fUpdatingDeviceMotion;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fUpdatingGyro;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fStartAccelerometerOnResume;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fStartDeviceMotionOnResume;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fStartGyroOnResume;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*fStartMagnetometerOnResume;
 }
 
 - (void)dealloc;

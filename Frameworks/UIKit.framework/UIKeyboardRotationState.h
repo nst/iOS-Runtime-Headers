@@ -9,14 +9,16 @@
     NSInteger _postRotationState;
     BOOL _requiresNewState;
     NSInteger _state;
+    NSInteger _targetOrientation;
 }
 
 @property(retain) UIInputViewAnimationStyle *animationStyle;
 @property NSInteger postRotationState;
 @property BOOL requiresNewState;
 @property NSInteger state;
+@property NSInteger targetOrientation;
 
-+ (id)stateWithState:(NSInteger)arg1;
++ (id)stateWithState:(NSInteger)arg1 targetOrientation:(NSInteger)arg2;
 
 - (id)animationStyle;
 - (void)dealloc;
@@ -27,6 +29,8 @@
 - (void)setPostRotationState:(NSInteger)arg1;
 - (void)setRequiresNewState:(BOOL)arg1;
 - (void)setState:(NSInteger)arg1;
+- (void)setTargetOrientation:(NSInteger)arg1;
 - (NSInteger)state;
+- (NSInteger)targetOrientation;
 
 @end

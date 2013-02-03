@@ -30,6 +30,7 @@
         unsigned int isChangingOrientationForPop : 1; 
         unsigned int pretendNavBarHidden : 1; 
         unsigned int avoidMovingNavBarOffscreenBeforeUnhiding : 1; 
+        unsigned int searchBarHidNavBar : 1; 
     float _bottomInsetDelta;
     UIView *_containerView;
     UILayoutContainerView *_containerViewInSheet;
@@ -71,6 +72,7 @@
 - (BOOL)_animationParametersForHidingNavigationBar:(BOOL)arg1 lastOperation:(NSInteger)arg2 edge:(NSInteger*)arg3 duration:(double*)arg4;
 - (void)_applyScrollContentInsetDelta:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 toScrollView:(id)arg2;
 - (void)_applyScrollContentOffsetDelta:(float)arg1 toScrollView:(id)arg2;
+- (void)_axPostMoveTo:(id)arg1;
 - (void)_clearLastOperation;
 - (void)_computeAndApplyScrollContentInsetDeltaForViewController:(id)arg1;
 - (void)_configureToolbar;
@@ -80,6 +82,10 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 displyingTopView:(BOOL)arg2 andBottomView:(BOOL)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForViewController:(id)arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_gkAddFormSheetFrameImages;
+- (void)_gkRefreshContents;
+- (void)_gkRestoreStatusBarStyle:(BOOL)arg1;
+- (void)_gkSaveStatusBarStyle:(BOOL)arg1;
 - (BOOL)_hasTranslucentNavigationBarIncludingViewController:(id)arg1;
 - (void)_hideOrShowBottomBarIfNeededWithTransition:(NSInteger)arg1;
 - (void)_hideShowNavigationBarDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
@@ -116,7 +122,6 @@
 - (BOOL)_shouldPersistViewWhenCoding;
 - (BOOL)_shouldPopFromLandscapeToPortraitOrientation;
 - (BOOL)_shouldUseOnePartRotation;
-- (struct CGSize { float x1; float x2; })_sizeForViewInPopoverView;
 - (id)_snapshotView;
 - (void)_startDeferredTransitionIfNeeded;
 - (void)_startTransition:(NSInteger)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
@@ -128,6 +133,7 @@
 - (void)_updateToolbarItemsFromViewController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)avoidMovingNavBarOffscreenBeforeUnhiding;
 - (id)bottomViewController;
+- (BOOL)ckCanDismissWhenSuspending;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)dealloc;
 - (id)defaultFirstResponder;
@@ -145,6 +151,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithRootViewController:(id)arg1;
+- (void)invalidate;
 - (BOOL)isExpanded;
 - (BOOL)isModalInPopover;
 - (BOOL)isNavigationBarHidden;
@@ -186,6 +193,7 @@
 - (void)pushViewController:(id)arg1 transition:(NSInteger)arg2;
 - (id)rotatingFooterView;
 - (id)rotatingHeaderView;
+- (BOOL)searchBarHidNavBar;
 - (void)setAvoidMovingNavBarOffscreenBeforeUnhiding:(BOOL)arg1;
 - (void)setContentSizeForViewInPopover:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDelegate:(id)arg1;
@@ -200,6 +208,7 @@
 - (void)setNeedsDeferredTransition:(BOOL)arg1;
 - (void)setNeedsDeferredTransition;
 - (void)setPretendNavBarHidden:(BOOL)arg1;
+- (void)setSearchBarHidNavBar:(BOOL)arg1;
 - (void)setToolbar:(id)arg1;
 - (void)setToolbarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setToolbarHidden:(BOOL)arg1;

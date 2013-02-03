@@ -9,6 +9,8 @@
     NSMutableDictionary *_threadNameToChatMap;
 }
 
+@property(readonly) NSArray *allExistingChats;
+
 + (Class)chatClass;
 + (Class)chatRegistryClass;
 + (Class)messageClass;

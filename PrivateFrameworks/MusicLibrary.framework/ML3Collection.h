@@ -5,4 +5,8 @@
 @interface ML3Collection : ML3Entity {
 }
 
++ (id)countedPropertyForMPMediaEntityProperty:(id)arg1;
++ (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
++ (void)initialize;
+
 @end

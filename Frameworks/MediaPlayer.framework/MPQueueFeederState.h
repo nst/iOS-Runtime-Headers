@@ -11,7 +11,7 @@
     NSInteger _feederMode;
 }
 
-@property(copy) MPQueueFeeder *feeder;
+@property(retain) MPQueueFeeder *feeder;
 @property NSUInteger currentItemIndex;
 @property double currentTime;
 @property NSInteger feederMode;

@@ -5,7 +5,10 @@
 @interface MKCustomLocationManager : NSObject <MKReverseGeocoderDelegate> {
     struct __CFDictionary { } *_reverseGeocodersForSearchResults;
     struct __CFDictionary { } *_searchResultsForReverseGeocoders;
+    BOOL _useCLReverseGeocoder;
 }
+
+@property BOOL useCLReverseGeocoder;
 
 + (id)sharedManager;
 
@@ -15,5 +18,7 @@
 - (void)processSearchResult:(id)arg1;
 - (void)reverseGeocoder:(id)arg1 didFailWithError:(id)arg2;
 - (void)reverseGeocoder:(id)arg1 didFindPlacemark:(id)arg2;
+- (void)setUseCLReverseGeocoder:(BOOL)arg1;
+- (BOOL)useCLReverseGeocoder;
 
 @end

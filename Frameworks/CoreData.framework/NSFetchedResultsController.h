@@ -78,6 +78,7 @@
 - (BOOL)_restoreCachedSectionInfo;
 - (id)_sectionCachePath;
 - (id)_sectionNameForObject:(id)arg1;
+- (NSUInteger)_sectionNumberForIndex:(NSUInteger)arg1;
 - (void)_updateCachedStoreInfo;
 - (void)_updateSectionOffsetsStartingAtSection:(id)arg1;
 - (id)cacheName;

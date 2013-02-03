@@ -17,6 +17,7 @@
 - (NSInteger)addressTypeVideo;
 - (void)appendAudioAttribute:(id)arg1;
 - (void)appendAudioMedia:(NSInteger)arg1;
+- (void)appendDeviceInfo;
 - (void)appendSessionAttribute:(id)arg1;
 - (void)appendVideoAttribute:(id)arg1;
 - (void)appendVideoMedia:(NSInteger)arg1;
@@ -42,6 +43,8 @@
 - (id)defaultAudioPayloads:(BOOL)arg1;
 - (id)defaultAudioPayloads;
 - (char *)featuresListString;
+- (BOOL)getAUNumber:(NSUInteger*)arg1;
+- (BOOL)getOS:(id*)arg1 model:(id*)arg2;
 - (id)hardwareInfo;
 - (BOOL)hasAudioCodec:(NSInteger)arg1 withPeerSDP:(id)arg2;
 - (BOOL)hasAudioCodec:(NSInteger)arg1;

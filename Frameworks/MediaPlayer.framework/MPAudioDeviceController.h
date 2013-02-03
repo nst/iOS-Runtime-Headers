@@ -13,17 +13,25 @@
     NSDictionary *_pickedRoute;
 }
 
+@property BOOL routeDiscoveryEnabled;
+
++ (BOOL)routeDiscoveryEnabled;
++ (void)setRouteDiscoveryEnabled:(BOOL)arg1;
+
 - (void)_mediaServerDied;
-- (void)_pickRoute:(id)arg1;
+- (BOOL)_pickRoute:(id)arg1 withPassword:(id)arg2;
+- (BOOL)_pickRoute:(id)arg1;
 - (id)_pickableRoutes;
 - (void)_pickableRoutesChanged;
 - (id)_pickedRoute;
+- (void)_portStatusDidChangeNotification:(id)arg1;
 - (void)_registerForAVControllerNotifications;
 - (BOOL)_routeIsHandset:(id)arg1;
 - (BOOL)_routeIsReceiver:(id)arg1;
 - (BOOL)_routeIsSpeaker:(id)arg1;
 - (BOOL)_routeIsWireless:(id)arg1;
 - (void)_sendFakeRouteChange;
+- (BOOL)airtunesRouteIsPicked;
 - (void)clearCachedRoutes;
 - (void)dealloc;
 - (BOOL)handsetRouteIsPicked;
@@ -34,16 +42,21 @@
 - (id)nameOfPickedRoute;
 - (NSUInteger)numberOfAudioRoutes;
 - (BOOL)pickHandsetRoute;
-- (void)pickRouteAtIndex:(NSUInteger)arg1;
+- (BOOL)pickRouteAtIndex:(NSUInteger)arg1 withPassword:(id)arg2;
+- (BOOL)pickRouteAtIndex:(NSUInteger)arg1;
 - (BOOL)pickSpeakerRoute;
 - (BOOL)receiverRouteIsPicked;
 - (void)restorePickedRoute;
+- (BOOL)routeDiscoveryEnabled;
 - (id)routeNameAtIndex:(NSUInteger)arg1 isPicked:(BOOL*)arg2;
 - (BOOL)routeOtherThanHandsetAndSpeakerIsAvailable;
 - (BOOL)routeOtherThanHandsetIsAvailable;
+- (BOOL)routeRequiresPasswordAtIndex:(NSUInteger)arg1;
+- (id)routeTypeAtIndex:(NSUInteger)arg1;
 - (void)setAVController:(id)arg1;
 - (void)setCategory:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setRouteDiscoveryEnabled:(BOOL)arg1;
 - (BOOL)speakerRouteIsPicked;
 - (BOOL)volumeControlIsAvailable;
 - (BOOL)wirelessRouteIsPicked;

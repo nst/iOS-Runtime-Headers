@@ -5,7 +5,8 @@
 @interface UIToolbarAccessibility_super : UIAccessibilitySafeCategory {
 }
 
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)_accessibilityFuzzyHitTestElements;
+- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 - (void)_buttonBarFinishedAnimating;
 - (void)_buttonUp:(id)arg1;
 - (void)_showButtons:(NSInteger*)arg1 withCount:(NSInteger)arg2 group:(NSInteger)arg3 withDuration:(double)arg4 adjustPositions:(BOOL)arg5 skipTag:(NSInteger)arg6;

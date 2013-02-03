@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptAccountManager, SUScriptWindowContext, SUScriptNotificationObserver, WebScriptObject, SUScriptMediaLibrary, <SUScriptInterfaceDelegate>, NSURL, NSMutableDictionary, SUScriptOperationDelegate;
+@class SUScriptAccountManager, SUScriptWindowContext, SUScriptNotificationObserver, WebScriptObject, SUScriptMediaLibrary, <SUScriptInterfaceDelegate>, SUWebImagePool, NSURL, NSMutableDictionary, SUScriptOperationDelegate;
 
 @interface SUScriptInterface : SUScriptObject {
     SUScriptAccountManager *_accountManager;
@@ -15,12 +15,14 @@
     SUScriptWindowContext *_scriptWindowContext;
     BOOL _sourceIsTrusted;
     id _threadSafeDelegate;
+    SUWebImagePool *_webImagePool;
     WebScriptObject *_windowScriptObject;
 }
 
 @property(readonly) NSArray *accounts;
 @property(readonly) SUScriptAddressBook *addressBook;
 @property(readonly) SUScriptApplication *application;
+@property(copy) NSString *cookie;
 @property <SUScriptInterfaceDelegate> *delegate;
 @property(readonly) SUScriptDevice *device;
 @property(retain) NSURL *mainFrameURL;
@@ -74,6 +76,7 @@
 - (BOOL)checkCapabilitiesPropertyListString:(id)arg1 showFailureDialog:(BOOL)arg2;
 - (void)composeEmailWithSubject:(id)arg1 body:(id)arg2;
 - (void)composeReviewWithURL:(id)arg1 itemIdentifier:(id)arg2 type:(id)arg3;
+- (id)cookie;
 - (struct OpaqueJSContext { }*)copyJavaScriptContext;
 - (void)dealloc;
 - (void)deallocAuthentication;
@@ -98,6 +101,7 @@
 - (void)handleTrackListWithPropertyListString:(id)arg1;
 - (id)hardwareType;
 - (BOOL)haveAccount;
+- (id)imagePool;
 - (id)init;
 - (void)initAuthentication;
 - (BOOL)isExplicitContentDisabled;
@@ -115,14 +119,18 @@
 - (id)makeColorWithWhite:(id)arg1 alpha:(id)arg2;
 - (id)makeComposeReviewViewControllerWithReview:(id)arg1;
 - (id)makeDialog;
+- (id)makeDocumentInteractionController;
 - (id)makeLinearGradientWithX0:(float)arg1 y0:(float)arg2 x1:(float)arg3 y1:(float)arg4;
 - (id)makeMenuViewController;
+- (id)makeMessage;
+- (id)makeMessageEntryViewController;
 - (id)makeNavigationControllerWithRootViewController:(id)arg1;
 - (id)makeNumberFormatterWithStyle:(id)arg1;
 - (id)makePopOverWithViewController:(id)arg1;
 - (id)makeRadialGradientWithX0:(float)arg1 y0:(float)arg2 r0:(float)arg3 x1:(float)arg4 y1:(float)arg5 r1:(float)arg6;
 - (id)makeReportAProblemViewControllerWithAdamID:(id)arg1;
 - (id)makeReviewWithAdamID:(id)arg1;
+- (id)makeScriptImagePickerController;
 - (id)makeSegmentedControl;
 - (id)makeSplitViewController;
 - (id)makeStorePageWithURLs:(id)arg1;
@@ -151,6 +159,7 @@
 - (void)selectTrackListItemWithIdentifier:(id)arg1;
 - (void)sendPostOfType:(id)arg1 withOptions:(id)arg2;
 - (void)setAccounts:(id)arg1;
+- (void)setCookie:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDevice:(id)arg1;
 - (void)setGlobalRootObject:(id)arg1;

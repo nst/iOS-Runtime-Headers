@@ -11,14 +11,14 @@
 
 @property void *ab_context;
 
-- (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(NSInteger)arg3 tag2:(NSInteger)arg4 tag3:(NSInteger)arg5;
+- (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(NSInteger)arg3 tag2:(NSInteger)arg4 tag3:(const void*)arg5;
 - (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(NSInteger)arg3 tag2:(NSInteger)arg4;
 - (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(NSInteger)arg3;
 - (NSInteger)ab_addButtonWithTitle:(id)arg1 tag:(NSInteger)arg2 tag2:(NSInteger)arg3;
 - (NSInteger)ab_addButtonWithTitle:(id)arg1 tag:(NSInteger)arg2;
 - (void*)ab_context;
 - (NSInteger)ab_tag2AtIndex:(NSInteger)arg1;
-- (NSInteger)ab_tag3AtIndex:(NSInteger)arg1;
+- (const void*)ab_tag3AtIndex:(NSInteger)arg1;
 - (NSInteger)ab_tagAtIndex:(NSInteger)arg1;
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (NSInteger)addButtonWithTitle:(id)arg1;

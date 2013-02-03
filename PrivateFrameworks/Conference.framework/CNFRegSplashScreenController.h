@@ -11,11 +11,13 @@
 }
 
 @property <CNFRegFirstRunDelegate> *delegate;
+@property(readonly) NSInteger currentAppearanceStyle;
 @property BOOL requiresAlias;
 
 - (void)_getStartedPressed:(id)arg1;
 - (void)_learnMorePressed:(id)arg1;
 - (id)_shadowedLabelWithFont:(id)arg1 text:(id)arg2 y:(float)arg3;
+- (NSInteger)currentAppearanceStyle;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;

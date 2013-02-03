@@ -74,7 +74,6 @@
 - (void)_setPathIdentity:(unsigned char)arg1;
 - (void)_setPathIndex:(unsigned char)arg1;
 - (void)_setPathMajorRadius:(float)arg1;
-- (BOOL)_touchesBeganWasDelayed;
 - (void)dealloc;
 - (id)description;
 - (id)gestureRecognizers;

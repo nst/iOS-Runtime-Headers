@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImage, UIImageView, UIView;
+@class UIImage, UIImageView, UIView<PLStackableImage>;
 
 @interface PLStackItemView : UIView {
     struct CGSize { 
@@ -13,15 +13,19 @@
     UIImageView *_badgeView;
     BOOL _didHaveSourceView;
     } _lastItemSize;
-    UIView *_sourceView;
+    UIView<PLStackableImage> *_sourceView;
     NSInteger _stackLevel;
     float _stackedAngle;
 }
 
 @property(retain) UIImage *badgeImage;
+@property(readonly) UIView *badgeView;
+@property(readonly) PLImageView *imageView;
+@property(retain) UIView<PLStackableImage> *sourceView;
 @property NSUInteger imageIndex;
 @property(getter=isShadowEnabled) BOOL shadowEnabled;
 @property BOOL showBadge;
+@property float stackedAngle;
 
 + (void)_initializeSafeCategory;
 + (struct CGSize { float x1; float x2; })badgeOffset;
@@ -51,9 +55,5 @@
 - (BOOL)showBadge;
 - (id)sourceView;
 - (float)stackedAngle;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 
 @end

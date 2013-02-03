@@ -3,9 +3,28 @@
  */
 
 @interface IMPerson : NSObject {
-    unsigned int _registered : 1;
     void *_abRecordRef;
+    BOOL _registered;
 }
+
+@property(readonly) void *abRecordRef;
+@property(readonly) NSArray *allEmails;
+@property(readonly) NSString *companyName;
+@property(retain,readonly) NSString *displayName;
+@property(copy) NSArray *emails;
+@property(copy) NSString *firstName;
+@property(retain,readonly) NSString *fullName;
+@property(retain,readonly) NSArray *groups;
+@property(retain) NSData *imageData;
+@property(readonly) NSData *imageDataWithoutLoading;
+@property(copy) NSString *lastName;
+@property(readonly) NSArray *mobileNumbers;
+@property(copy) NSString *nickname;
+@property(readonly) NSArray *phoneNumbers;
+@property(readonly) NSString *uniqueID;
+@property(readonly) BOOL isCompany;
+@property(readonly) BOOL isInAddressBook;
+@property(readonly) NSUInteger status;
 
 + (id)allPeople;
 + (id)existingABPersonForPerson:(id)arg1;
@@ -14,6 +33,7 @@
 + (id)personWithRecordRef:(void*)arg1;
 
 - (void)_abPersonChanged:(id)arg1;
+- (id)_valuesAndLabelsForProperty:(id)arg1;
 - (void*)abRecordRef;
 - (id)allEmails;
 - (id)allHandlesForProperty:(id)arg1;
@@ -21,12 +41,14 @@
 - (id)companyName;
 - (BOOL)containsHandle:(id)arg1 forServiceProperty:(id)arg2;
 - (void)dealloc;
+- (id)displayName;
 - (id)emailHandlesForService:(id)arg1 includeBaseEmail:(BOOL)arg2;
 - (id)emailHandlesForService:(id)arg1;
 - (id)emails;
 - (void)finalize;
 - (id)firstName;
 - (id)fullName;
+- (id)groups;
 - (NSUInteger)hash;
 - (id)imHandleRegistrarGUID;
 - (id)imageData;
@@ -40,6 +62,7 @@
 - (id)lastName;
 - (id)mobileNumbers;
 - (id)nickname;
+- (id)phoneNumbers;
 - (void)save;
 - (void)setEmails:(id)arg1;
 - (void)setFirstName:(id)arg1 lastName:(id)arg2;

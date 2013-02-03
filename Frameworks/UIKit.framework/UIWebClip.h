@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, NSString, NSMutableData, NSURLConnection, NSURL;
+@class NSArray, NSString, UIImage, NSMutableData, NSURLConnection, NSURL;
 
 @interface UIWebClip : NSObject {
     struct CGPoint { 
@@ -15,14 +15,16 @@
     NSURLConnection *_startupImageConnection;
     NSURLConnection *_startupLandscapeImageConnection;
     BOOL classicMode;
+    NSUInteger currentIconIndex;
     id delegate;
     BOOL fullScreen;
     UIImage *iconImage;
+    BOOL iconIsPrecomposed;
+    BOOL iconIsPrerendered;
     BOOL iconIsScreenShotBased;
-    NSURL *iconURL;
+    NSArray *icons;
     NSString *identifier;
     NSURL *pageURL;
-    NSURL *precomposedIconURL;
     BOOL removalDisallowed;
     float scale;
     } scrollPoint;
@@ -36,10 +38,9 @@
 
 @property(retain) UIImage *iconImage;
 @property(readonly) NSString *iconImagePath;
-@property(retain) NSURL *iconURL;
+@property(retain) NSArray *icons;
 @property(copy) NSString *identifier;
 @property(retain) NSURL *pageURL;
-@property(retain) NSURL *precomposedIconURL;
 @property(retain) UIImage *startupImage;
 @property(retain) NSURL *startupImageURL;
 @property(retain) UIImage *startupLandscapeImage;
@@ -48,6 +49,8 @@
 @property BOOL classicMode;
 @property id delegate;
 @property BOOL fullScreen;
+@property(readonly) BOOL iconIsPrecomposed;
+@property(readonly) BOOL iconIsPrerendered;
 @property(readonly) BOOL iconIsScreenShotBased;
 @property BOOL removalDisallowed;
 @property float scale;
@@ -71,6 +74,8 @@
 - (id)_info;
 - (id)_initWithIdentifier:(id)arg1;
 - (void)_readPropertiesFromBundle:(struct __CFBundle { }*)arg1;
+- (void)_reloadProperties;
+- (void)_setIconImage:(id)arg1 isPrecomposed:(BOOL)arg2 isScreenShotBased:(BOOL)arg3;
 - (BOOL)_writeImage:(id)arg1 toDiskWithFileName:(id)arg2;
 - (BOOL)classicMode;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
@@ -81,15 +86,17 @@
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)fullScreen;
+- (id)generateIconImageForFormat:(NSInteger)arg1 scale:(float)arg2;
 - (id)getStartupImage:(NSInteger)arg1;
 - (id)getStartupImage;
 - (id)iconImage;
 - (id)iconImagePath;
+- (BOOL)iconIsPrecomposed;
+- (BOOL)iconIsPrerendered;
 - (BOOL)iconIsScreenShotBased;
-- (id)iconURL;
+- (id)icons;
 - (id)identifier;
 - (id)pageURL;
-- (id)precomposedIconURL;
 - (BOOL)removalDisallowed;
 - (BOOL)removeFromDisk;
 - (void)requestCustomIconUpdateWithDelegate:(id)arg1;
@@ -102,12 +109,12 @@
 - (void)setClassicMode:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFullScreen:(BOOL)arg1;
-- (void)setIconImage:(id)arg1 isScreenShotBased:(BOOL)arg2;
+- (void)setIconImage:(id)arg1 isPrecomposed:(BOOL)arg2;
 - (void)setIconImage:(id)arg1;
-- (void)setIconURL:(id)arg1;
+- (void)setIconImageFromScreenshot:(id)arg1;
+- (void)setIcons:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setPageURL:(id)arg1;
-- (void)setPrecomposedIconURL:(id)arg1;
 - (void)setRemovalDisallowed:(BOOL)arg1;
 - (void)setScale:(float)arg1;
 - (void)setScrollPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -126,6 +133,7 @@
 - (void)stopLoadingStartupImage;
 - (void)stopLoadingStartupLandscapeImage;
 - (id)title;
+- (BOOL)tryLoadingNextCustomIcon;
 - (void)updateCustomMediaLocationsFromWebDocumentView:(id)arg1;
 - (BOOL)updateOnDisk;
 

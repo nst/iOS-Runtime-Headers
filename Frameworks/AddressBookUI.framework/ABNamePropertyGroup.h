@@ -50,7 +50,6 @@
 - (void)reloadFromModel;
 - (NSUInteger)rowForProperty:(NSInteger)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setPeople:(id)arg1;
 - (void)setValue:(id)arg1 atRow:(NSUInteger)arg2;
 - (BOOL)showsMultipleValuePlaceholderAtRow:(NSUInteger)arg1;
 - (BOOL)showsMultipleValuePlaceholderForProperty:(NSInteger)arg1;

@@ -29,8 +29,8 @@
     NSError *_playbackError;
     } _playerBitfield;
     UIWindow *_previousKeyWindow;
-    NSUInteger _previousStatusBarMode;
     NSUInteger _previousStatusBarOrientation;
+    NSInteger _previousStatusBarStyle;
     NSInteger _scalingMode;
     MPMoviePlayerVideoViewController *_videoViewController;
     UIWindow *_window;

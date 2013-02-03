@@ -2,21 +2,23 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSSet, NSString;
+@class NSSet;
 
 @interface CardDAVGetAccountPropertiesTaskGroup : CoreDAVGetAccountPropertiesTaskGroup {
     NSSet *_addressBookHomes;
-    NSString *_directoryGatewayPath;
+    NSSet *_directoryGatewayURLs;
 }
 
 @property(readonly) NSSet *addressBookHomes;
-@property(readonly) NSString *directoryGatewayPath;
+@property(readonly) NSSet *directoryGatewayURLs;
 
 - (id)_copyAccountPropertiesPropFindElements;
-- (void)_setPropertiesFromParsedResponces:(id)arg1;
+- (void)_setPropertiesFromParsedResponses:(id)arg1;
 - (id)addressBookHomes;
 - (void)dealloc;
 - (id)description;
-- (id)directoryGatewayPath;
+- (id)directoryGatewayURL;
+- (id)directoryGatewayURLs;
+- (id)homeSet;
 
 @end

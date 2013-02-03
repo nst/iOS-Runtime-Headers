@@ -12,6 +12,7 @@
 @property float restAccuracy;
 
 + (id)bounceAnimation;
++ (id)defaultValueForKey:(id)arg1;
 + (id)fallAnimation;
 + (id)hoverAnimation;
 

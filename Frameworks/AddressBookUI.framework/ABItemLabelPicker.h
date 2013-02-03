@@ -4,7 +4,7 @@
 
 @class NSIndexPath, UITableView, NSString, ABStyleProvider, NSMutableArray, ABPropertyGroup;
 
-@interface ABItemLabelPicker : UIView <UITableViewDataSource, UITableViewDelegate, ABSimpleTextInputViewControllerDelegate, ABSimpleTextInputLayerDelegate> {
+@interface ABItemLabelPicker : UIView <UITableViewDataSource, UITableViewDelegate, ABSimpleTextInputViewControllerDelegate> {
     BOOL _addLabelDisabled;
     NSMutableArray *_additionalLabels;
     void *_addressBook;
@@ -73,7 +73,6 @@
 - (void)setSelectedLabel:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (BOOL)shouldPopItem;
-- (void)simpleTextInputLayer:(id)arg1 endedWithSelectionConfirmed:(BOOL)arg2 animate:(BOOL)arg3;
 - (void)simpleTextInputViewController:(id)arg1 didCompleteWithValue:(id)arg2;
 - (BOOL)simpleTextInputViewControllerShouldDismissKeyboard:(id)arg1;
 - (id)styleProvider;

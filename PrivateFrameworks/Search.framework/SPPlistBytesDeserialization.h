@@ -4,7 +4,7 @@
 
 @interface SPPlistBytesDeserialization : NSObject {
     char *_buffer;
-    NSUInteger _length;
+    unsigned long _length;
 }
 
 - (void)dealloc;

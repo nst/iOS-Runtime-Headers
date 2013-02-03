@@ -2,21 +2,41 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSArray, UIBarButtonItem, UIPopoverController, NSMutableArray;
+@class UIView, NSString, UIBarButtonItem, UIPopoverController, NSArray;
 
 @interface UISplitViewController : UIViewController {
-    unsigned int _isLandscape : 1;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     unsigned int _hidesMasterViewInPortrait : 1;
-    unsigned int _rotatingClockwise : 1;
     UIBarButtonItem *_barButtonItem;
+    NSString *_buttonTitle;
     NSArray *_cornerImageViews;
     float _cornerRadius;
     id _delegate;
     float _gutterWidth;
     UIPopoverController *_hiddenPopoverController;
     float _masterColumnWidth;
+    } _rotatingFromMasterViewFrame;
+    NSInteger _rotatingFromOrientation;
+    } _rotatingToMasterViewFrame;
     UIView *_rotationSnapshotView;
-    NSMutableArray *_viewControllers;
+    NSArray *_viewControllers;
 }
 
 @property <UISplitViewControllerDelegate> *delegate;
@@ -28,42 +48,50 @@
 - (struct CGContext { }*)_createContextForCachingWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isOpaque:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrame;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
-- (void)_layoutChildViewControllers;
-- (void)_layoutChildViewControllersForOrientation:(NSInteger)arg1 includingMaster:(BOOL)arg2;
+- (void)_gkRefreshContents;
+- (BOOL)_isLandscape;
+- (void)_loadNewSubviews:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_masterViewFrame;
 - (BOOL)_masterViewShown;
 - (void)_removeRoundedCorners;
 - (void)_setupRoundedCorners;
+- (void)_updateMasterViewControllerFrame;
 - (void)_viewControllerHiding:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)detailViewController;
 - (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
 - (float)gutterWidth;
+- (BOOL)hidesMasterViewDuringRotationFromInterfaceOrientation:(NSInteger)arg1 toInterfaceOrientation:(NSInteger)arg2;
 - (BOOL)hidesMasterViewInPortrait;
-- (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (BOOL)isRotating;
 - (float)leftColumnWidth;
 - (void)loadSubviews;
 - (void)loadView;
 - (float)masterColumnWidth;
 - (id)masterViewController;
+- (void)purgeMemoryForReason:(NSInteger)arg1;
+- (BOOL)revealsMasterViewDuringRotationFromInterfaceOrientation:(NSInteger)arg1 toInterfaceOrientation:(NSInteger)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setDetailViewController:(id)arg1;
 - (void)setGutterWidth:(float)arg1;
 - (void)setHidesMasterViewInPortrait:(BOOL)arg1;
 - (void)setLeftColumnWidth:(float)arg1;
 - (void)setMasterColumnWidth:(float)arg1;
-- (void)setMasterViewController:(id)arg1;
 - (void)setViewControllers:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
-- (void)showMasterInPopover:(id)arg1;
+- (void)snapshotAllViews;
+- (void)snapshotForRotationFromInterfaceOrientation:(NSInteger)arg1 toInterfaceOrientation:(NSInteger)arg2;
+- (void)snapshotMasterView;
+- (void)toggleMasterInPopover:(id)arg1;
 - (void)unloadViewForced:(BOOL)arg1;
 - (id)viewControllers;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillLayoutSubviews;
 - (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 

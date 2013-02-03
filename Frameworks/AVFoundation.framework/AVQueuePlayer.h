@@ -8,6 +8,7 @@
     AVQueuePlayerInternal *_queuePlayer;
 }
 
++ (void)initialize;
 + (id)playerWithPlayerItem:(id)arg1;
 + (id)playerWithURL:(id)arg1;
 + (id)queuePlayerWithItems:(id)arg1;

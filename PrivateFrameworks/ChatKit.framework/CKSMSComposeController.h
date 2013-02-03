@@ -25,6 +25,7 @@
 - (void)_addPart:(id)arg1;
 - (BOOL)_insertMediaObject:(id)arg1;
 - (void)cancelButtonClicked:(id)arg1;
+- (BOOL)ckCanDismissWhenSuspending;
 - (id)delegate;
 - (BOOL)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
 - (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;

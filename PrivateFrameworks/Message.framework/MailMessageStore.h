@@ -94,13 +94,13 @@
 - (BOOL)isDrafts;
 - (BOOL)isOpened;
 - (BOOL)isReadOnly;
-- (id)lastViewedMessage;
 - (id)lastViewedMessageDate;
+- (id)lastViewedMessageWithOptions:(NSUInteger)arg1;
 - (id)loadMeetingDataForMessage:(id)arg1;
 - (id)loadMeetingExternalIDForMessage:(id)arg1;
 - (id)mailboxUid;
 - (void)messageFlagsDidChange:(id)arg1 flags:(id)arg2;
-- (id)messageForMessageID:(id)arg1;
+- (id)messageForMessageID:(id)arg1 options:(NSUInteger)arg2;
 - (id)messageForRemoteID:(id)arg1;
 - (id)messageWithValue:(id)arg1 forHeader:(id)arg2 options:(NSUInteger)arg3;
 - (void)messagesWereAdded:(id)arg1 forIncrementalLoading:(BOOL)arg2;

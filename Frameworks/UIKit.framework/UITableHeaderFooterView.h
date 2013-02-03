@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, UITableView, UILabel;
+@class UITableView, UITableHeaderFooterViewLabel, UIImage;
 
 @interface UITableHeaderFooterView : UIView {
     struct CGRect { 
@@ -16,7 +16,8 @@
         } size; 
     UIImage *_backgroundImage;
     } _frame;
-    UILabel *_label;
+    UITableHeaderFooterViewLabel *_label;
+    BOOL _labelBackgroundColorNeedsUpdate;
     float _maxTitleWidth;
     BOOL _sectionHeader;
     UITableView *_tableView;
@@ -33,17 +34,22 @@
 
 + (id)_defaultFontForTableViewStyle:(NSInteger)arg1 isSectionHeader:(BOOL)arg2;
 
+- (void)_invalidateLabelBackgroundColor;
 - (id)_label:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrame;
 - (id)_scriptingInfo;
 - (struct CGSize { float x1; float x2; })_textSizeForWidth:(float)arg1;
 - (void)_updateBackgroundImage;
+- (void)_updateLabelBackgroundColor;
+- (void)_updateLabelBackgroundColorIfNeeeded;
+- (void)_updateLayerContents;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
 - (float)maxTitleWidth;
 - (BOOL)sectionHeader;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMaxTitleWidth:(float)arg1;
 - (void)setOpaque:(BOOL)arg1;

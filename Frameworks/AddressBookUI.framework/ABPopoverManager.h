@@ -2,16 +2,15 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIResponder, UIActionSheet, UIView, UIBarButtonItem, NSInvocation, UIPopoverController, <ABPopoverRepresentDelegate>;
+@class UIResponder, UIView, UIBarButtonItem, UIPopoverController, UIActionSheet, <ABPopoverRepresentDelegate>;
 
 @interface ABPopoverManager : NSObject {
     UIActionSheet *_autorotateActionSheet;
     UIBarButtonItem *_autorotateBarButtonItem;
-    NSUInteger _autorotateDirrections;
+    NSUInteger _autorotateDirections;
     UIPopoverController *_autorotatePopoverController;
     UIResponder *_autorotateResponder;
     UIView *_autorotateView;
-    NSInvocation *_delayedInvocation;
     id _realDelegate;
     <ABPopoverRepresentDelegate> *_representDelegate;
     BOOL _rotating;
@@ -22,7 +21,6 @@
 @property(retain) UIPopoverController *autorotatePopoverController;
 @property(retain) UIResponder *autorotateResponder;
 @property(retain) UIView *autorotateView;
-@property(retain) NSInvocation *delayedInvocation;
 @property(readonly) UIWindow *observedWindow;
 @property(retain) <ABPopoverRepresentDelegate> *representDelegate;
 @property NSUInteger autorotateDirrections;
@@ -32,7 +30,9 @@
 + (void)actionSheet:(id)arg1 showFromBarButtonItem:(id)arg2 animated:(BOOL)arg3 autorotate:(BOOL)arg4;
 + (void)actionSheet:(id)arg1 showFromBarButtonItem:(id)arg2 animated:(BOOL)arg3;
 + (void)actionSheet:(id)arg1 showFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 animated:(BOOL)arg4;
++ (void)actionSheet:(id)arg1 showFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 direction:(NSUInteger)arg4 animated:(BOOL)arg5;
 + (void)actionSheet:(id)arg1 showFromView:(id)arg2 animated:(BOOL)arg3 autorotate:(BOOL)arg4;
++ (void)actionSheet:(id)arg1 showFromView:(id)arg2 animated:(BOOL)arg3 direction:(NSUInteger)arg4 autorotate:(BOOL)arg5;
 + (id)managerForPresenter:(id)arg1;
 + (void)popoverController:(id)arg1 dismissPopoverAnimated:(BOOL)arg2;
 + (void)popoverController:(id)arg1 presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 permittedArrowDirections:(NSUInteger)arg4 animated:(BOOL)arg5;
@@ -49,13 +49,12 @@
 - (id)autorotateResponder;
 - (id)autorotateView;
 - (BOOL)autorotates;
-- (void)cancelPreviousInvoke;
 - (void)dealloc;
-- (id)delayedInvocation;
 - (id)delegateOwner;
 - (void)forwardInvocation:(id)arg1;
-- (void)invokeOnKeyboardDidHide:(id)arg1;
+- (id)init;
 - (void)keyboardDidHide:(id)arg1;
+- (void)keyboardDidShow:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)observedWindow;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
@@ -69,7 +68,6 @@
 - (void)setAutorotatePopoverController:(id)arg1;
 - (void)setAutorotateResponder:(id)arg1;
 - (void)setAutorotateView:(id)arg1;
-- (void)setDelayedInvocation:(id)arg1;
 - (void)setRealDelegate:(id)arg1;
 - (void)setRepresentDelegate:(id)arg1;
 - (void)startAutorotateActionSheet:(id)arg1 fromBarButtonItem:(id)arg2;

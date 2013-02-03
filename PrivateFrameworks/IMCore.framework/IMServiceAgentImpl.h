@@ -38,7 +38,6 @@
 - (id)notificationCenter;
 - (id)serviceWithName:(id)arg1;
 - (id)serviceWithNameNonBlocking:(id)arg1;
-- (oneway void)services:(id)arg1 myStatus:(id)arg2 persistentProperties:(id)arg3;
 - (void)setMyStatus:(NSUInteger)arg1 message:(id)arg2;
 - (oneway void)setupComplete;
 - (unsigned long long)vcCapabilities;

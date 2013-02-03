@@ -17,13 +17,13 @@
 + (void)startAutoLinkingNewPeopleInAddressBook:(void*)arg1 inProcess:(BOOL)arg2;
 
 - (void)addPerson:(void*)arg1 toDictionary:(id)arg2 withProperty:(NSInteger)arg3;
-- (id)copyArrayOfAllPeopleWithROWIDGreatThan:(NSInteger)arg1;
+- (id)copyArrayOfAllPeopleWithROWIDGreatThan:(NSInteger)arg1 withLimit:(NSInteger)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)initWithAddressBook:(void*)arg1;
-- (void)linkPeopleFromAddedRecords:(id)arg1 countingOuterIterations:(NSInteger*)arg2;
-- (void)linkPeopleFromAddedRecords:(id)arg1;
+- (void)linkNewlyAddedPerson:(void*)arg1;
 - (void)linkRecentlyAddedPeople;
+- (BOOL)linkRecentlyAddedPeopleWithLimit:(NSInteger)arg1;
 - (void)makeInitialLinks;
 - (void)makeInitialLinksCountingOuterIterations:(NSInteger*)arg1;
 - (void)makeLinksForAddedPeople:(id)arg1 inInitialLinking:(BOOL)arg2 countingOuterIterations:(NSInteger*)arg3;

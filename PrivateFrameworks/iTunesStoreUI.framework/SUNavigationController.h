@@ -24,6 +24,7 @@
 - (BOOL)isLoading;
 - (id)moreListImage;
 - (id)moreListSelectedImage;
+- (id)navigationBar;
 - (void)removeChildViewController:(id)arg1;
 - (void)restoreArchivableContext:(id)arg1;
 - (id)section;

@@ -2,13 +2,19 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
+@class NSString;
+
 @interface NSSQLAliasGenerator : NSObject {
     NSUInteger _nextTableAlias;
     NSUInteger _nextVariableAlias;
+    NSString *_tableBase;
+    NSString *_variableBase;
 }
 
+- (void)dealloc;
 - (id)generateSubqueryVariableAlias;
 - (id)generateTableAlias;
 - (id)init;
+- (id)initWithNestingLevel:(NSUInteger)arg1;
 
 @end

@@ -33,6 +33,7 @@
 - (id)init;
 - (BOOL)isEnabled;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isExcludedFromAutoselectionInTrackGroup;
 - (BOOL)isSelfContained;
 - (id)languageCode;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;

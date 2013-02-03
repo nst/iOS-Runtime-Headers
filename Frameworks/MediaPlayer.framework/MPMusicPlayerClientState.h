@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MLTrack, MLQuery;
+@class MPMediaItem, MPMediaQuery;
 
 @interface MPMusicPlayerClientState : NSObject {
     BOOL _allowsRemoteUIAccess;
     NSInteger _backgroundPlaybackAccess;
-    MLTrack *_firstItem;
-    MLQuery *_query;
+    MPMediaItem *_firstItem;
+    MPMediaQuery *_query;
     NSInteger _repeatMode;
     BOOL _seeking;
     NSInteger _shuffleMode;
@@ -16,8 +16,8 @@
     BOOL _videoPlaybackEnabled;
 }
 
-@property(retain) MLTrack *firstItem;
-@property(retain) MLQuery *query;
+@property(retain) MPMediaItem *firstItem;
+@property(retain) MPMediaQuery *query;
 @property BOOL allowsRemoteUIAccess;
 @property NSInteger backgroundPlaybackAccess;
 @property NSInteger repeatMode;

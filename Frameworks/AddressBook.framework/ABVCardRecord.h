@@ -21,7 +21,7 @@
 - (id)ISO8061StringFromDate:(id)arg1;
 - (id)_21vCardRepresentationAsData;
 - (id)_copyGroupVCardRepresentationAsStringIncludeExternalProperties:(BOOL)arg1;
-- (id)_copyVCardRepresentationAsStringIncludeExternalProperties:(BOOL)arg1;
+- (id)_copyVCardRepresentationAsStringIncludeExternalProperties:(BOOL)arg1 withPhoto:(id)arg2;
 - (id)_fullName;
 - (id)_fullNameIncludingAuxiliaryElements:(BOOL)arg1;
 - (BOOL)_isCompany;
@@ -50,6 +50,7 @@
 - (id)propertyLineForInstantMessageHandles:(id)arg1 groupCount:(NSInteger*)arg2;
 - (void*)record;
 - (BOOL)setValue:(void*)arg1 forProperty:(NSUInteger)arg2;
+- (BOOL)useThumbnailImageFormatIfAvailable;
 - (id)vCardRepresentationForMode:(NSInteger)arg1;
 - (void*)valueForProperty:(NSUInteger)arg1;
 

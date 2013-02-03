@@ -2,24 +2,40 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSMutableDictionary, AccountsManager;
+@class NSTimer, NSMutableDictionary, AccountsManager;
 
 @interface ABRefreshController : NSObject {
     AccountsManager *_accountsManager;
+    NSMutableDictionary *_groupWrappersToRefreshByObserver;
+    NSMutableDictionary *_groupWrappersToRefreshGroupsByObserver;
     NSMutableDictionary *_lastAccountRefreshDates;
     NSMutableDictionary *_lastGroupListRefreshDates;
+    double _refreshDelay;
+    NSTimer *_refreshTimer;
 }
 
 + (id)sharedInstance;
 
 - (void)_actuallyRefreshOrphanedAccountsWithAddressBook:(void*)arg1;
+- (void)_addWrapper:(id)arg1 withObserver:(void*)arg2 toDictionary:(id*)arg3;
+- (void)_invalidateTimer;
+- (void)_postponeAllRefreshes;
+- (void)_proceedWithRefresh:(id)arg1;
+- (void)_resumeAllRefreshes;
+- (void)_scheduleRefreshTimerIfNeeded;
+- (void)_setAccountsManager:(id)arg1;
+- (void)_setRefreshDelay:(double)arg1;
 - (BOOL)accountGroupListNeedsRefresh:(id)arg1;
 - (void)accountsChanged;
+- (id)accountsManager;
+- (void)cancelAllScheduledRefreshesWithObserver:(void*)arg1;
 - (void)dealloc;
 - (BOOL)groupWrapperNeedsRefresh:(id)arg1;
-- (id)mobileAccounts;
+- (id)init;
 - (void)refreshAccountGroupList:(id)arg1;
 - (void)refreshGroupWrapper:(id)arg1;
+- (void)scheduleRefreshIfNeededForGroupWrapper:(id)arg1 withObserver:(void*)arg2;
+- (void)scheduleRefreshIfNeededForGroupsInGroupWrapper:(id)arg1 withObserver:(void*)arg2;
 - (void)startRefreshingOrphanedAccountsWithAddressBook:(void*)arg1;
 
 @end

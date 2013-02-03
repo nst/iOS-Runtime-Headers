@@ -32,15 +32,15 @@
 - (double)durationInMilliseconds;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })faceRectangles:(id)arg1;
 - (id)filenameWithoutExtension;
-- (id)fullSizeImagePath;
 - (BOOL)hasFullSizeImageData;
 - (NSInteger)imageID;
 - (id)initWithImageID:(NSInteger)arg1;
 - (BOOL)isWritePending;
 - (double)latitude;
 - (double)longitude;
-- (id)pathForImageFormat:(NSInteger)arg1;
+- (id)pathForImageFile;
 - (id)pathForVideoFile;
+- (id)pathForVideoPreviewFile;
 - (NSInteger)photoType;
 - (void)setCaptureTime:(double)arg1;
 - (void)setDate:(id)arg1;

@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSString;
+@class NSString, NSDictionary;
 
 @interface FTProfileAuthenticationMessage : FTMessage {
     NSString *_authToken;
     NSString *_password;
     NSString *_profileID;
+    NSDictionary *_responseAlert;
     NSString *_username;
 }
 
 @property(copy) NSString *password;
+@property(copy) NSDictionary *responseAlertInfo;
 @property(copy) NSString *responseAuthorizationToken;
 @property(copy) NSString *responseProfileID;
 @property(copy) NSString *username;
@@ -22,9 +24,11 @@
 - (id)messageBody;
 - (id)password;
 - (id)requiredKeys;
+- (id)responseAlertInfo;
 - (id)responseAuthorizationToken;
 - (id)responseProfileID;
 - (void)setPassword:(id)arg1;
+- (void)setResponseAlertInfo:(id)arg1;
 - (void)setResponseAuthorizationToken:(id)arg1;
 - (void)setResponseProfileID:(id)arg1;
 - (void)setUsername:(id)arg1;

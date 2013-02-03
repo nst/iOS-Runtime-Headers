@@ -39,6 +39,7 @@
     NSMutableDictionary *_initRelayQueue;
     NSMutableArray *_pendingConnectionPIDList;
     NSString *_pidGUID;
+    NSMutableDictionary *_pidToConnectTimeoutSource;
     NSMutableDictionary *_pidToConnectionDataMap;
     NSMutableDictionary *_pidToPlayerIDMap;
     NSMutableDictionary *_pidToPreblobMap;
@@ -59,11 +60,13 @@
 
 @property(retain) CDXClient *cdxClient;
 @property(retain) NSMutableDictionary *cdxSessions;
+@property(retain) NSMutableDictionary *pidToConnectTimeoutSource;
 
 - (void)CDXClient:(id)arg1 error:(id)arg2;
 - (void)CDXClient:(id)arg1 preblob:(id)arg2;
 - (void)CDXClientSession:(id)arg1 receivedData:(id)arg2 from:(NSInteger)arg3;
 - (void)addEvent:(struct { NSInteger x1; char *x2; NSInteger x3; NSUInteger x4; }*)arg1 remotePeer:(NSUInteger)arg2;
+- (struct dispatch_queue_s { }*)asyncWorkQueue;
 - (void)cancelConnectParticipant:(id)arg1;
 - (id)cdxClient;
 - (id)cdxSessions;
@@ -86,11 +89,15 @@
 - (void)internalInitiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
 - (void)internalUpdateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
 - (void)internal_setRemoteConnectionData:(id)arg1 fromParticipantID:(id)arg2 pendingConnectionPIDList:(id)arg3;
+- (id)pidToConnectTimeoutSource;
 - (void)preRelease;
 - (void)setCdxClient:(id)arg1;
 - (void)setCdxSessions:(id)arg1;
 - (void)setEventDelegate:(id)arg1;
 - (void)setParticipantID:(id)arg1 forPeerID:(id)arg2;
+- (void)setPidToConnectTimeoutSource:(id)arg1;
+- (BOOL)shouldWeInitiateRelayWithPID:(NSUInteger)arg1;
+- (struct dispatch_queue_s { }*)timerQueue;
 - (void)updateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
 
 @end

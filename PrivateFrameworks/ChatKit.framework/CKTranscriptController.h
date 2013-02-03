@@ -8,7 +8,7 @@
 
 @class NSDictionary, ABPeoplePickerNavigationController, CKTranscriptStatusController, NSMutableSet, UINavigationItem, NSMutableArray, CKLinksController, CKService, CKContentOffsetAnimation, CKMessageEncodingInfo, NSOperationQueue, NSNotification, CKMessageEntryView, PLPhotoScrollerViewController, UIBarButtonItem, CKRecipientListView, CKTranscriptBubbleData, UIToolbar, CKMessageComposition, UIFrameAnimation, CKRecipientGenerator, CKBalloonView, CKRecipientSelectionView, NSArray, NSIndexPath, CKMessage, CKConversation, CKTranscriptTableView, UIView, UINavigationController;
 
-@interface CKTranscriptController : UIViewController <UIActionSheetDelegate, UIModalViewDelegate, UITableViewDataSource, UITableViewDelegate, ABPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABUnknownPersonViewControllerDelegate, ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate> {
+@interface CKTranscriptController : UIViewController <UIActionSheetDelegate, UIModalViewDelegate, UITableViewDataSource, UITableViewDelegate, ABPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABUnknownPersonViewControllerDelegate, ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, CKTranscriptHeaderDelegate> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -35,7 +35,6 @@
     unsigned int _willRotateView : 1;
     unsigned int _isAnimatingMessageSend : 1;
     unsigned int _isDeleting : 1;
-    unsigned int _ignoresOverlayViewsForLayout : 1;
     unsigned int _didCancel : 1;
     unsigned int _entryViewWasActiveBeforeEdit : 1;
     unsigned int _entryViewWasActiveBeforePushingViewController : 1;
@@ -111,7 +110,7 @@
 + (void)_sendDidStartSavingMediaNotification;
 + (id)tableColor;
 
-- (void)CKTranscriptHeaderView:(id)arg1 buttonClicked:(NSInteger)arg2;
+- (void)CKTranscriptHeaderView:(id)arg1 buttonClicked:(short)arg2;
 - (id)_abPersonViewControllerForPerson:(void*)arg1 property:(NSInteger)arg2 withIdentifier:(NSInteger)arg3;
 - (id)_actionsToolbar;
 - (void)_actuallyClearCurrentMessageThread;
@@ -140,19 +139,20 @@
 - (void)_enteredForeground:(id)arg1;
 - (void)_entryDebugShowEntryHUD;
 - (void)_entryViewWillRotate:(id)arg1;
+- (void)_faceTimeAvailabilityChange:(id)arg1;
 - (id)_fieldForFocus;
 - (void)_finishedCreatingNewMessageForSending:(id)arg1;
 - (void)_flashHighlightedCell;
 - (void)_forwardSelectedMessages:(id)arg1;
 - (void)_generatePreviewsForMediaObject:(id)arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
+- (void)_handleAddressBookChangedNotification:(id)arg1;
 - (void)_hideAccessoryView;
 - (void)_hideRecipientListView;
 - (void)_hideTranscriptButtons;
 - (void)_incrementRotationBlockingAnimationCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keyboardFrame;
 - (void)_keyboardWillShowOrHide:(id)arg1;
-- (void)_loadMore;
 - (void)_localeChanged:(id)arg1;
 - (void)_makeContentEntryViewActive;
 - (void)_makeFieldForFocusActive;
@@ -165,6 +165,7 @@
 - (float)_overlayViewMinHeight;
 - (id)_personViewControllerForProps:(id)arg1;
 - (id)_recipientGenerator;
+- (void)_reflowTranscriptCells;
 - (void)_refreshTranscript:(BOOL)arg1;
 - (void)_refreshTranscript;
 - (void)_reloadTranscriptLayer;
@@ -210,6 +211,7 @@
 - (void)_updateFirstResponder;
 - (void)_updatePhotoButtonEnabled;
 - (void)_updateRecipientListView:(BOOL)arg1;
+- (void)_updateTranscriptButtons;
 - (void)_updateUI;
 - (void)_userDidCancelCapturingImage;
 - (void)_userDidCaptureImage;
@@ -295,8 +297,8 @@
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)peoplePickerNavigationControllerDisplayedGroups:(id)arg1;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
-- (void)photoScroller:(id)arg1 showActionSheetInView:(id)arg2;
-- (BOOL)photoScrollerShouldShowActionItem:(id)arg1;
+- (void)photoBrowserController:(id)arg1 willShowActionSheetInView:(id)arg2;
+- (BOOL)photoBrowserControllerShouldShowActionItem:(id)arg1;
 - (void)prepareForSuspend;
 - (id)presetMessageParts;
 - (id)proposedRecipients;
@@ -368,6 +370,7 @@
 - (void)updateEnablednessOfSendButton;
 - (void)updateNavigationButtons;
 - (void)updateTitle;
+- (void)video:(id)arg1 didFinishSavingWithError:(id)arg2 contextInfo:(void*)arg3;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;

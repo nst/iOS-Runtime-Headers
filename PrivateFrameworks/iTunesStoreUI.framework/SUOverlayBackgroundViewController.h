@@ -57,6 +57,7 @@
 - (float)_viewControllerHorizontalPadding;
 - (float)_viewControllerKeyboardOffset;
 - (id)copyArchivableContext;
+- (id)copyArchivableJetsamContext;
 - (id)copyChildViewControllersForReason:(NSInteger)arg1;
 - (void)dealloc;
 - (id)delegate;

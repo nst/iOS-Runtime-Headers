@@ -4,7 +4,7 @@
 
 @class NSURLResponse, NSString, NSMutableData, NSError, NSURL;
 
-@interface WebCoreSynchronousLoader : NSObject {
+@interface WebCoreSynchronousLoader : NSObject <NSURLConnectionDelegate> {
     struct Credential { 
         struct String { 
             struct RefPtr<WebCore::StringImpl> { 

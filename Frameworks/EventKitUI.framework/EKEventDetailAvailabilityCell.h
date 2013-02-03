@@ -4,7 +4,7 @@
 
 @class UILabel;
 
-@interface EKEventDetailAvailabilityCell : EKEventDetailCell <EKEventEditItemViewControllerDelegate> {
+@interface EKEventDetailAvailabilityCell : EKEventDetailCell {
     UILabel *_availabilityTitleView;
     UILabel *_availabilityView;
 }
@@ -12,12 +12,9 @@
 - (id)_availabilityTitleView;
 - (id)_availabilityView;
 - (void)dealloc;
-- (void)editItemViewController:(id)arg1 didCompleteWithAction:(NSInteger)arg2;
-- (BOOL)eventEditItemViewControllerCommit:(id)arg1;
 - (BOOL)isEditableForEvent;
 - (void)layoutForWidth:(float)arg1 position:(NSInteger)arg2;
 - (void)setAvailability:(NSInteger)arg1;
 - (BOOL)update;
-- (id)viewControllerForCell;
 
 @end

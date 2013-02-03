@@ -40,7 +40,7 @@
      /* Encoded args for previous method: B44@0:4*8i12i16I20i24d28f36L40 */
      /* Encoded args for previous method: B28@0:4*8i12i16I20f24 */
      /* Encoded args for previous method: B20@0:4c8i12i16 */
-     /* Encoded args for previous method: B32@0:4^@8^{tagHANDLE=i}12^{tagHANDLE=i}16c20c24*28 */
+     /* Encoded args for previous method: B36@0:4^@8^{tagHANDLE=i}12^{tagHANDLE=i}16i20c24c28*32 */
      /* Encoded args for previous method: B16@0:4c8^@12 */
      /* Encoded args for previous method: B48@0:4^{__CVBuffer=}8{?=qiIq}12B36B40I44 */
      /* Encoded args for previous method: B40@0:4^{__CVBuffer=}8{?=qiIq}12^{tagCameraStatus=CCCC}36 */
@@ -190,13 +190,14 @@
 - (NSInteger)captureAsFocusClient:(char *)arg1 numBytes:(NSInteger)arg2 numSamples:(NSInteger)arg3 timeStamp:(NSUInteger)arg4 timeStampDelta:(NSInteger)arg5 averagePower:(unsigned char)arg6;
 - (NSInteger)captureMeshMode:(char *)arg1 numBytes:(NSInteger)arg2 numSamples:(NSInteger)arg3 timeStamp:(NSUInteger)arg4 timeStampDelta:(NSInteger)arg5 hostTime:(double)arg6;
 - (NSInteger)chatMode;
-- (void)cleanup;
+- (void)cleanupManager;
 - (void)cleanupProc:(id)arg1;
+- (void)cleanupQueues;
 - (void)cleanupSession:(id)arg1 didRemoteCancel:(BOOL)arg2;
 - (void)cleanupSession:(id)arg1 withDelay:(NSUInteger)arg2;
 - (float)conferenceVolume;
 - (id)connectionBlobForParticipantID:(id)arg1 callID:(NSInteger*)arg2 error:(id*)arg3;
-- (NSUInteger)connectionResultCallbackForCallID:(NSInteger)arg1 result:(struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; NSUInteger x12; }*)arg2 didReceiveICEPacket:(BOOL)arg3 didUseRelay:(BOOL)arg4;
+- (NSUInteger)connectionResultCallbackForCallID:(NSInteger)arg1 result:(struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; struct tagIPPORT { NSInteger x_12_1_1; BOOL x_12_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_12_1_3; unsigned short x_12_1_4; } x12; NSUInteger x13; }*)arg2 didReceiveICEPacket:(BOOL)arg3 didUseRelay:(BOOL)arg4;
 - (id)currentFocus;
 - (void)dealloc;
 - (void)defaultCleanupSession:(id)arg1;
@@ -232,7 +233,7 @@
 - (NSInteger)localVideoSlot:(BOOL)arg1;
 - (id)loopbackSessionWaitingForSIPInvite;
 - (BOOL)matchesCallID:(NSInteger)arg1;
-- (BOOL)matchesIncomingConnectionResult:(struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; NSUInteger x12; }*)arg1;
+- (BOOL)matchesIncomingConnectionResult:(struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; struct tagIPPORT { NSInteger x_12_1_1; BOOL x_12_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_12_1_3; unsigned short x_12_1_4; } x12; NSUInteger x13; }*)arg1;
 - (BOOL)matchesOpenSessionForParticipantID:(id)arg1;
 - (BOOL)matchesParticipantID:(id)arg1;
 - (NSInteger)natType;
@@ -278,7 +279,7 @@
 - (void)session:(id)arg1 inititiateRelayRequest:(id)arg2;
 - (void)session:(id)arg1 receivedNoPacketsForSeconds:(double)arg2;
 - (void)session:(id)arg1 sendRelayResponse:(id)arg2;
-- (id)sessionForIncomingConnectionResult:(struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; NSUInteger x12; }*)arg1;
+- (id)sessionForIncomingConnectionResult:(struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; struct tagIPPORT { NSInteger x_12_1_1; BOOL x_12_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_12_1_3; unsigned short x_12_1_4; } x12; NSUInteger x13; }*)arg1;
 - (id)sessionForIncomingParticipantID:(id)arg1;
 - (id)sessionForParticipantID:(id)arg1;
 - (BOOL)setActive:(BOOL)arg1;
@@ -330,7 +331,7 @@
 - (id)speakingDelegate;
 - (BOOL)startConnectionWithParticipantID:(id)arg1 callID:(NSInteger)arg2 usingBlob:(id)arg3 isCaller:(BOOL)arg4 capabilities:(id)arg5 error:(id*)arg6;
 - (BOOL)startPreviewWithError:(id*)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)startVideoIO:(id*)arg1 rtpVideo:(struct tagHANDLE { NSInteger x1; }*)arg2 rtpAudio:(struct tagHANDLE { NSInteger x1; }*)arg3 enableUEP:(BOOL)arg4 enableControlByte:(BOOL)arg5 featuresListString:(char *)arg6;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)startVideoIO:(id*)arg1 rtpVideo:(struct tagHANDLE { NSInteger x1; }*)arg2 rtpAudio:(struct tagHANDLE { NSInteger x1; }*)arg3 actualVideoPayload:(NSInteger)arg4 enableUEP:(BOOL)arg5 enableControlByte:(BOOL)arg6 featuresListString:(char *)arg7;
 - (void)startVideoProc:(id)arg1;
 - (NSInteger)stateForCallID:(NSInteger)arg1;
 - (void)stopCallID:(NSInteger)arg1 didRemoteCancel:(BOOL)arg2;

@@ -55,6 +55,7 @@
 - (void)setValues:(id)arg1 titles:(id)arg2 shortTitles:(id)arg3;
 - (void)setValues:(id)arg1 titles:(id)arg2;
 - (void)setValues:(id)arg1;
+- (void)setupIconImageWithBundle:(id)arg1;
 - (void)setupIconImageWithPath:(id)arg1;
 - (id)shortTitleDictionary;
 - (NSInteger)titleCompare:(id)arg1;

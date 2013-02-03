@@ -19,6 +19,7 @@
 - (void)_webkit_setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)_webkit_setFloat:(float)arg1 forKey:(id)arg2;
 - (void)_webkit_setInt:(NSInteger)arg1 forKey:(id)arg2;
+- (void)_webkit_setLongLong:(long long)arg1 forKey:(id)arg2;
 - (void)_webkit_setObject:(id)arg1 forUncopiedKey:(id)arg2;
 - (void)_webkit_setUnsignedLongLong:(unsigned long long)arg1 forKey:(id)arg2;
 - (void)addEntriesFromDictionary:(id)arg1;
@@ -43,7 +44,6 @@
 - (id)mf_objectForKey:(id)arg1 ofClass:(Class)arg2;
 - (void)mf_setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)mf_setInteger:(NSInteger)arg1 forKey:(id)arg2;
-- (id)objectForColonDelimitedKey:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeKeysForObject:(id)arg1;
 - (void)removeObjectForIntegerKey:(NSInteger)arg1;
@@ -54,7 +54,6 @@
 - (void)removeObjectsForKeys:(id)arg1;
 - (void)replaceObject:(id)arg1 forKey:(id)arg2;
 - (void)setDictionary:(id)arg1;
-- (void)setObject:(id)arg1 forColonDelimitedKey:(id)arg2;
 - (void)setObject:(id)arg1 forIntegerKey:(NSInteger)arg2;
 - (void)setObject:(id)arg1 forIntegerKey:(NSInteger)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

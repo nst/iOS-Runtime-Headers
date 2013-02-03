@@ -103,6 +103,7 @@
 - (void)setLayer:(id)arg1;
 - (void)setMuted:(BOOL)arg1;
 - (void)setOutputQTESFilePath:(id)arg1;
+- (BOOL)setPickedRouteWithPassword:(id)arg1 withPassword:(id)arg2;
 - (void)setQueue:(id)arg1;
 - (void)setQueueFeeder:(id)arg1 withIndex:(NSInteger)arg2;
 - (void)setQueueFeeder:(id)arg1;

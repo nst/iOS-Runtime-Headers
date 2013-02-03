@@ -17,6 +17,5 @@
 - (struct { NSUInteger x1[8]; }*)clientAuditToken;
 - (NSInteger)clientPID;
 - (id)init;
-- (void)prepareForDecodingWithCoder:(id)arg1;
 
 @end

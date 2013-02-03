@@ -192,6 +192,7 @@
 - (void)setSelectionToEnd;
 - (void)setSelectionToStart;
 - (void)setSelectionVisible:(BOOL)arg1;
+- (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setShowScrollerIndicators:(BOOL)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextAlignment:(NSInteger)arg1;

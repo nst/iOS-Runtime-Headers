@@ -5,39 +5,45 @@
 @interface GKPreferences : NSObject {
 }
 
+@property(getter=isAddingFriendsRestricted,readonly) BOOL addingFriendsRestricted;
 @property BOOL alertsEnabled;
+@property BOOL allowUnsignedBag;
 @property BOOL badgesEnabled;
 @property NSInteger environment;
 @property BOOL forceRelay;
 @property BOOL ignoreSandbox;
 @property NSUInteger maxPlayersHosted;
 @property NSUInteger maxPlayersP2P;
+@property(getter=isMultiplayerGamingRestricted,readonly) BOOL multiplayerGamingRestricted;
 @property NSUInteger operationRetryCount;
 @property double operationRetryDelay;
 @property double operationTimeout;
-@property(readonly) BOOL parentalControlsEnabled;
 @property BOOL preemptiveRelay;
 @property NSInteger pushEnvironment;
 @property BOOL soundsEnabled;
 @property BOOL useTestProtocols;
 @property BOOL verboseLogging;
 
++ (BOOL)isSystemWideNotificationsEnabled;
 + (id)sharedPreferences;
 
 - (BOOL)alertsEnabled;
+- (BOOL)allowUnsignedBag;
 - (BOOL)badgesEnabled;
 - (NSInteger)environment;
 - (BOOL)forceRelay;
 - (BOOL)ignoreSandbox;
+- (BOOL)isAddingFriendsRestricted;
+- (BOOL)isMultiplayerGamingRestricted;
 - (NSUInteger)maxPlayersHosted;
 - (NSUInteger)maxPlayersP2P;
 - (NSUInteger)operationRetryCount;
 - (double)operationRetryDelay;
 - (double)operationTimeout;
-- (BOOL)parentalControlsEnabled;
 - (BOOL)preemptiveRelay;
 - (NSInteger)pushEnvironment;
 - (void)setAlertsEnabled:(BOOL)arg1;
+- (void)setAllowUnsignedBag:(BOOL)arg1;
 - (void)setBadgesEnabled:(BOOL)arg1;
 - (void)setEnvironment:(NSInteger)arg1;
 - (void)setForceRelay:(BOOL)arg1;

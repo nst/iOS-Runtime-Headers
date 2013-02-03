@@ -2,23 +2,55 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
+@class UIImageView, GKTableView, UIView;
+
 @interface GKTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     unsigned int _pendingReload : 1;
     unsigned int _pendingAnimation : 1;
+    UIImageView *_bottomShadowView;
+    BOOL _clearsSelectionOnViewWillAppear;
+    GKTableView *_landscapeTableView;
+    UIView *_overlayTouchView;
+    GKTableView *_portraitTableView;
     BOOL _shouldDelayTableReloadForDeselectAnimation;
+    GKTableView *_tableView;
     NSInteger _tableViewStyle;
 }
 
-@property(readonly) GKTableView *tableView;
+@property(retain) UIImageView *bottomShadowView;
+@property(retain) GKTableView *landscapeTableView;
+@property(retain) UIView *overlayTouchView;
+@property(retain) GKTableView *portraitTableView;
+@property(retain) GKTableView *tableView;
+@property BOOL clearsSelectionOnViewWillAppear;
 @property BOOL shouldDelayTableReloadForDeselectAnimation;
 @property(readonly) NSInteger tableViewStyle;
 
 - (id)_gkTableView:(id)arg1 buttonCellWithTitle:(id)arg2 theme:(id)arg3;
+- (id)addTouchCaptureOverlayViewWithTarget:(id)arg1 action:(SEL)arg2;
+- (id)bottomShadowView;
+- (BOOL)clearsSelectionOnViewWillAppear;
 - (void)dealloc;
 - (id)initWithStyle:(NSInteger)arg1;
+- (void)keyboardWillHideShow:(id)arg1;
+- (id)landscapeTableView;
 - (void)loadView;
+- (void)localeDidChangeNotification:(id)arg1;
+- (id)overlayTouchView;
+- (id)portraitTableView;
+- (void)reloadAllTables;
 - (void)reloadTableData;
+- (void)removeTouchCaptureOverlayView;
+- (id)searchTitle;
+- (void)setBottomShadowView:(id)arg1;
+- (void)setClearsSelectionOnViewWillAppear:(BOOL)arg1;
+- (void)setLandscapeTableView:(id)arg1;
+- (void)setOverlayTouchView:(id)arg1;
+- (void)setPortraitTableView:(id)arg1;
 - (void)setShouldDelayTableReloadForDeselectAnimation:(BOOL)arg1;
+- (void)setTableView:(id)arg1;
+- (void)setupViewsWithOrientation:(NSInteger)arg1;
+- (BOOL)shouldAdjustInsetsForKeyboard;
 - (BOOL)shouldDelayTableReloadForDeselectAnimation;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
@@ -29,7 +61,14 @@
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView;
 - (NSInteger)tableViewStyle;
+- (void)updateBottomShadowFrame;
+- (void)updateTableInsetsForKeyboardHeight:(float)arg1;
+- (void)updateTableViewFrame:(id)arg1;
+- (BOOL)usesCrossfade;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

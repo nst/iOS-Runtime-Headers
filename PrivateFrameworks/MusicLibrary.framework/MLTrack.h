@@ -10,10 +10,6 @@
 
 - (id)_getImageDataForImageType:(NSInteger)arg1 artworkFormatID:(NSUInteger)arg2 size:(struct CGSize { float x1; float x2; })arg3 timeInMS:(NSUInteger)arg4 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { NSUInteger x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; NSUInteger x_1_1_4; NSInteger x_1_1_5; NSInteger x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg5;
 - (BOOL)_isFilePathPlayable;
-- (id)_libraryLinkArtist;
-- (id)_libraryLinkKind;
-- (id)_libraryLinkPlaylistName;
-- (id)_libraryLinkURL:(BOOL)arg1;
 - (unsigned long long)accountID;
 - (id)album;
 - (id)albumArtist;
@@ -30,7 +26,6 @@
 - (void)clearLastPlayedBookmarkTime;
 - (id)comments;
 - (id)composer;
-- (id)containerLibraryLinkURL;
 - (id)contentRatingInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyright;
@@ -41,7 +36,6 @@
 - (double)demoRentalPlaybackStartTime;
 - (double)demoRentalStartTime;
 - (id)description;
-- (id)directStoreURL;
 - (unsigned long)discNumber;
 - (NSInteger)duration;
 - (NSInteger)durationInMS;
@@ -84,12 +78,11 @@
 - (double)lastPlayedBookmarkTimeInSeconds;
 - (double)lastPlayedDate;
 - (double)lastSkippedDate;
-- (id)libraryLinkURL;
 - (id)lyrics;
 - (BOOL)markAsDeleted;
-- (BOOL)markHidden:(BOOL)arg1;
 - (void)markNominalAmountHasBeenPlayed;
 - (unsigned long)mediaType;
+- (id)mobileArtworkCacheFolder;
 - (id)movieInfo;
 - (double)nominalHasBeenPlayedThresholdInSeconds;
 - (void)noteWasPlayedToTime:(double)arg1 skipped:(BOOL*)arg2;
@@ -101,7 +94,6 @@
 - (NSUInteger)playCount;
 - (id)podcastDirectStoreURL;
 - (id)podcastName;
-- (id)podcastStoreURL;
 - (id)podcastURL;
 - (BOOL)rating;
 - (unsigned long)ratingLevel;
@@ -114,7 +106,7 @@
 - (void)setRating:(BOOL)arg1;
 - (void)setVideoAudioTrackID:(NSUInteger)arg1;
 - (void)setVideoSubtitleTrackID:(NSUInteger)arg1;
-- (BOOL)sharesArtworkWithTrack:(id)arg1 artworkType:(NSInteger)arg2 formatID:(NSUInteger)arg3 timeInMS:(NSUInteger)arg4;
+- (BOOL)sharesArtworkWithTrack:(id)arg1 artworkType:(NSInteger)arg2 formatID:(NSUInteger)arg3 timeInMS:(NSUInteger)arg4 missingAlwaysComparesEqual:(BOOL)arg5;
 - (BOOL)shouldBookmarkLastPlayedTime;
 - (NSUInteger)skipCount;
 - (id)sortAlbum;
@@ -136,7 +128,6 @@
 - (unsigned long)uniqueID;
 - (unsigned long long)unsignedValueForProperty:(unsigned long)arg1;
 - (NSUInteger)videoAudioTrackID;
-- (id)videoCodecs;
 - (BOOL)videoHasAlternateAudio;
 - (BOOL)videoHasSubtitles;
 - (NSUInteger)videoSubtitleTrackID;

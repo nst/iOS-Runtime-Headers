@@ -78,6 +78,7 @@
 - (BOOL)personViewControllerHelper:(id)arg1 shouldContinueAfterSelectingPropertyAtIndex:(NSInteger)arg2 inPropertyGroup:(id)arg3;
 - (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 forProperty:(NSInteger)arg3 withActionGrouping:(NSInteger)arg4 ordering:(NSInteger)arg5;
 - (BOOL)savesNewContactOnSuspend;
+- (void)setActionShouldPickHighlightedItem:(BOOL)arg1;
 - (void)setAddressBook:(void*)arg1;
 - (void)setAllowsActions:(BOOL)arg1;
 - (void)setAllowsAddingToAddressBook:(BOOL)arg1;

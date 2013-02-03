@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDictionary, NSMutableDictionary, MPItem;
+@class MPAVItem, NSMutableDictionary, NSDictionary;
 
 @interface MPAlternateTracks : NSObject {
+    NSMutableDictionary *_ac3TracksByLanguage;
     NSDictionary *_alternateTracks;
-    MPItem *_item;
+    MPAVItem *_item;
     NSMutableDictionary *_trackChangeDictionary;
 }
 
@@ -23,6 +24,7 @@
 - (BOOL)isLoaded;
 - (void)reloadData;
 - (void)setTrack:(id)arg1 forType:(NSUInteger)arg2;
+- (NSUInteger)trackCountForTypes:(NSUInteger)arg1;
 - (id)tracksForType:(NSUInteger)arg1;
 
 @end

@@ -6,6 +6,8 @@
 }
 
 - (void)_cancelButtonPressed;
+- (void)_disableButtons;
+- (void)_enableButtons;
 - (void)_okButtonPressed;
 - (id)init;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;

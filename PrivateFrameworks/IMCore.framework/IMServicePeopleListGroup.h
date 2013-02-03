@@ -11,7 +11,7 @@
 + (id)bonjourGroup;
 
 - (void)dealloc;
-- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; })filterForIMHandle:(id)arg1;
+- (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; })filterForIMHandle:(id)arg1;
 - (id)initWithServiceFilter:(id)arg1;
 - (BOOL)shouldConsumeIMHandle:(id)arg1;
 - (BOOL)shouldContainIMHandle:(id)arg1;

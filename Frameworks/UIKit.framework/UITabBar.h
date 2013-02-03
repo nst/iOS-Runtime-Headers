@@ -30,7 +30,10 @@
 + (void)_initializeSafeCategory;
 + (float)defaultHeightForBarSize:(NSInteger)arg1;
 
+- (id)_accessibilityFuzzyHitTestElements;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
+- (BOOL)_accessibilityServesAsContainingParentForOrdering;
 - (void)_adjustButtonSelection:(id)arg1;
 - (void)_alertDidHide;
 - (void)_alertWillShow:(BOOL)arg1 duration:(float)arg2;
@@ -51,6 +54,8 @@
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
 - (void)_setBackgroundImage:(id)arg1;
 - (void)_setLabelFont:(id)arg1;
+- (void)_setLabelShadowColor:(id)arg1;
+- (void)_setLabelShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setLabelTextColor:(id)arg1 selectedTextColor:(id)arg2;
 - (void)_setSelectionIndicatorImage:(id)arg1;
 - (void)_tabBarFinishedAnimating;
@@ -87,6 +92,7 @@
 - (void)setSelectedItem:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 

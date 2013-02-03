@@ -10,6 +10,9 @@
 
 @property ABPersonViewControllerHelper *helper;
 
++ (void)_initializeSafeCategory;
+
+- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 - (id)helper;
 - (void)setHelper:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

@@ -20,6 +20,7 @@
 
 - (BOOL)allowsVOIP;
 - (id)carrierName;
+- (void)dealloc;
 - (id)description;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;

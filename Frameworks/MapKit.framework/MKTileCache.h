@@ -24,8 +24,8 @@
         } x32; struct _opaque_pthread_cond_t { 
             long __sig; 
             BOOL __opaque[24]; 
-     /* Encoded args for previous method: v12@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@}8 */
-     /* Encoded args for previous method: v20@0:4^{?=b6b26b26b6}8I12^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@}16 */
+     /* Encoded args for previous method: v12@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@B}8 */
+     /* Encoded args for previous method: v20@0:4^{?=b6b26b26b6}8I12^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@B}16 */
     _MKTileCache *_mapCache;
         } x33; void*x34; } *_private;
     NSInteger _tile_edition;
@@ -39,13 +39,14 @@
 + (void)setRootDirectory:(id)arg1;
 + (id)sharedCache;
 
-- (void)cancelRequests:(struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; }*)arg1;
+- (id)attributionStringForTilePaths:(id)arg1;
+- (void)cancelRequests:(struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; void*x15; }*)arg1;
 - (void)clear;
 - (void)compact;
 - (void)enterBackground;
 - (void)enterForeground;
 - (id)init;
-- (void)readTilePaths:(struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; }*)arg1 count:(NSUInteger)arg2 requester:(struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; }*)arg3;
+- (void)readTilePaths:(struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; }*)arg1 count:(NSUInteger)arg2 requester:(struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; void*x15; }*)arg3;
 - (void)removeExpiredTrafficTiles:(id*)arg1 nextExpireTime:(double*)arg2;
 - (id)renderObjectForTilePath:(struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; }*)arg1 useStore:(BOOL)arg2;
 - (id)renderObjectForTilePath:(struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; }*)arg1;

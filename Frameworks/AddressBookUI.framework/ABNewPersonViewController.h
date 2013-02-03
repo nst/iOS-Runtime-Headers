@@ -30,6 +30,7 @@
 - (void*)addressBook;
 - (void)applicationDidResume;
 - (void)applicationWillSuspend;
+- (void)applicationWillTerminate:(id)arg1;
 - (void)attemptSaveAndTellDelegate:(BOOL)arg1;
 - (void)cancel:(id)arg1;
 - (void)dealloc;

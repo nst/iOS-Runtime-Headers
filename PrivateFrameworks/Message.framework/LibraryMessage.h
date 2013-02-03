@@ -6,13 +6,16 @@
    See Warning(s) below.
  */
 
-@class NSString;
+@class NSMutableSet, NSString, MFLock, NSMutableDictionary;
 
 @interface LibraryMessage : MailMessage {
     id _deallocationHandler;
     NSUInteger _libraryID;
     NSUInteger _mailboxID;
     NSString *_messageID;
+    NSMutableDictionary *_metadata;
+    NSMutableSet *_metadataChangedKeys;
+    MFLock *_metadataLock;
     NSUInteger _originalMailboxID;
     NSString *_remoteID;
     NSUInteger _size;
@@ -23,6 +26,7 @@
 
 + (id)messageWithLibraryID:(NSUInteger)arg1;
 
+- (id)_attachmentStorageLocation;
 - (void)_updateUID;
 - (id)account;
 - (BOOL)canBeDeleted;
@@ -53,6 +57,7 @@
 - (id)messageID;
 - (NSUInteger)messageSize;
 - (id)messageStore;
+- (id)metadataValueForKey:(id)arg1;
 - (NSUInteger)originalMailboxID;
 - (id)originalMailboxURL;
 - (id)path;
@@ -70,6 +75,7 @@
 - (void)setMessageFlags:(unsigned long long)arg1;
 - (void)setMessageFlagsWithoutCommitting:(unsigned long long)arg1;
 - (void)setMessageSize:(NSUInteger)arg1;
+- (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (void)setMutableInfoFromMessage:(id)arg1;
 - (void)setOriginalMailboxID:(NSUInteger)arg1;
 - (void)setPreferredEncoding:(unsigned long)arg1;

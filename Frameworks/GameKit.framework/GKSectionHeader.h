@@ -4,11 +4,14 @@
 
 @class GKUITheme, UIImageView, UILabel;
 
-@interface GKSectionHeader : UIView {
+@interface GKSectionHeader : UIView <GKTableViewCellContents> {
+    float _bottomOffset;
+    float _fontSize;
     UILabel *_leftLabel;
     UIImageView *_leftOrnamentView;
     UILabel *_rightLabel;
     UIImageView *_rightOrnamentView;
+    NSInteger _style;
     GKUITheme *_theme;
 }
 
@@ -19,23 +22,34 @@
 @property(retain) UIImageView *rightOrnamentView;
 @property(retain) NSString *secondaryText;
 @property(retain) GKUITheme *theme;
+@property float bottomOffset;
+@property float fontSize;
+@property NSInteger style;
 
+- (float)bottomOffset;
 - (void)dealloc;
+- (float)fontSize;
 - (id)init;
 - (void)layoutSubviews;
 - (id)leftLabel;
 - (id)leftOrnamentView;
+- (float)preferredHeightForOrientation:(NSInteger)arg1;
+- (void)prepareForReuse;
 - (id)primaryText;
 - (id)rightLabel;
 - (id)rightOrnamentView;
 - (id)secondaryText;
+- (void)setBottomOffset:(float)arg1;
+- (void)setFontSize:(float)arg1;
 - (void)setLeftLabel:(id)arg1;
 - (void)setLeftOrnamentView:(id)arg1;
 - (void)setPrimaryText:(id)arg1;
 - (void)setRightLabel:(id)arg1;
 - (void)setRightOrnamentView:(id)arg1;
 - (void)setSecondaryText:(id)arg1;
+- (void)setStyle:(NSInteger)arg1;
 - (void)setTheme:(id)arg1;
+- (NSInteger)style;
 - (id)theme;
 
 @end

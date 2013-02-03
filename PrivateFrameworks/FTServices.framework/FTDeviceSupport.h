@@ -5,14 +5,14 @@
 @class NSString;
 
 @interface FTDeviceSupport : NSObject {
-    unsigned int _supportsSMS : 1;
-    unsigned int _supportsFT : 1;
-    unsigned int _duringRestore : 1;
-    unsigned int _commCenterDead : 1;
     NSInteger _carrierBundleSupported;
-    struct __CTServerConnection { } *_ctServer;
+    BOOL _commCenterDead;
+    BOOL _duringRestore;
     NSString *_lastDeviceID;
     NSString *_model;
+    BOOL _shouldUseSIMState;
+    BOOL _supportsFT;
+    BOOL _supportsSMS;
 }
 
 @property(readonly) NSDictionary *CTNetworkInformation;
@@ -33,15 +33,20 @@
 + (id)sharedInstance;
 
 - (id)CTNetworkInformation;
+- (void)_carrierChanged;
 - (void)_commCenterAlive;
 - (void)_handleSIMStateChanged:(id)arg1;
 - (void)_lockdownStateChanged:(id)arg1;
+- (void)_operatorChanged;
+- (void)_registerForCapabilityNotifications;
 - (void)_registerForCommCenterReadyNotifications;
 - (void)_registerForCoreTelephonyNotifications;
 - (void)_registerForLockdownNotifications;
+- (void)_unregisterForCapabilityNotifications;
 - (void)_unregisterForCommCenterReadyNotifications;
 - (void)_unregisterForCoreTelephonyNotifications;
 - (void)_unregisterForLockdownNotifications;
+- (void)_updateCapabilities;
 - (id)autorelease;
 - (BOOL)canReceiveCalls;
 - (BOOL)canRegister;

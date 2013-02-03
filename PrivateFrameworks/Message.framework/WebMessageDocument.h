@@ -23,6 +23,7 @@
 - (id)attachmentsInDocument;
 - (BOOL)containsRemoteContent;
 - (void)dealloc;
+- (id)description;
 - (BOOL)downloadRemoteURLs;
 - (id)fileWrapper;
 - (id)htmlData;

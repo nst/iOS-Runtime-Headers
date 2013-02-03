@@ -23,6 +23,7 @@
 @property(getter=isPersistent) BOOL persistent;
 
 + (id)_findPasteboard;
++ (id)_printPasteboard;
 + (id)generalPasteboard;
 + (id)pasteboardWithName:(id)arg1 create:(BOOL)arg2;
 + (id)pasteboardWithUniqueName;

@@ -5,11 +5,13 @@
 @class NSMutableArray;
 
 @interface IMOfflinePeopleListGroup : IMPeopleListGroup {
-    unsigned int _pendingClear : 1;
     NSInteger _changes;
     NSMutableArray *_dontShowMembers;
+    BOOL _pendingClear;
     NSMutableArray *_visibleMembers;
 }
+
+@property(readonly) BOOL isChanging;
 
 - (void)_clearVisibleMembers;
 - (void)addPeopleListItem:(id)arg1;

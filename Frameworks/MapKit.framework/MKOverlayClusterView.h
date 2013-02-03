@@ -8,7 +8,7 @@
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    struct $_713 { 
+    struct $_718 { 
         unsigned int levelCrossFade : 1; 
         unsigned int drawingDisabled : 1; 
     } _flags;

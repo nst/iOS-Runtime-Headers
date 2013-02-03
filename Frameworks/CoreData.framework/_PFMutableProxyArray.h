@@ -8,8 +8,9 @@
     NSInteger _cd_rc;
     NSUInteger _editCount;
     struct __CFArray { } *_indicesVeneer;
+    NSUInteger _limit;
+    NSUInteger _offset;
     _PFArray *_originalArray;
-    _PFArray *_originalIDs;
     NSMutableArray *_updatedObjectsArray;
 }
 
@@ -20,6 +21,11 @@
 - (void)dealloc;
 - (void)finalize;
 - (NSUInteger)indexOfManagedObjectForObjectID:(id)arg1;
+- (NSUInteger)indexOfObject:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (NSUInteger)indexOfObject:(id)arg1;
+- (NSUInteger)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (NSUInteger)indexOfObjectIdenticalTo:(id)arg1;
+- (id)initWithPFArray:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (id)initWithPFArray:(id)arg1;
 - (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
 - (id)managedObjectIDAtIndex:(NSUInteger)arg1;
@@ -31,5 +37,6 @@
 - (void)replaceObjectAtIndex:(NSUInteger)arg1 withObject:(id)arg2;
 - (id)retain;
 - (NSUInteger)retainCount;
+- (id)subarrayWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 
 @end

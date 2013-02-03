@@ -25,6 +25,7 @@
 - (id)decodeTextPlain;
 - (id)decodeTextRichtext;
 - (id)fileWrapperForDecodedObject:(id)arg1 withFileData:(id*)arg2;
+- (id)fileWrapperForcingDownload:(BOOL)arg1;
 - (id)htmlContent;
 - (id)htmlContentToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2 downloadIfNecessary:(BOOL)arg3;
 - (id)htmlContentToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2;

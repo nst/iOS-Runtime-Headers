@@ -5,6 +5,6 @@
 @interface UIClassicWindow : UIWindow {
 }
 
-- (BOOL)_isClassicControllerWindow;
+- (void)_updateTransformLayerForClassicPresentation;
 
 @end

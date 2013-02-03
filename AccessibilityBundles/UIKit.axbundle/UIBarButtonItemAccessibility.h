@@ -15,5 +15,6 @@
 - (void)setAccessibilityLabel:(id)arg1;
 - (void)setAccessibilityTraits:(unsigned long long)arg1;
 - (void)setAccessibilityValue:(id)arg1;
+- (void)setIsAccessibilityElement:(BOOL)arg1;
 
 @end

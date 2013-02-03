@@ -2,22 +2,32 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UITextView, UILabel;
+@class UITextView, UIFont, UILabel;
 
 @interface EKEventDetailNotesCell : EKEventDetailCell {
+    UIFont *_font;
+    BOOL _isTruncatingNotes;
     UILabel *_notesTitleView;
     UITextView *_notesView;
 }
 
+@property(retain) UIFont *_font;
+@property BOOL isTruncatingNotes;
+
 + (void)_initializeSafeCategory;
 
+- (id)_font;
 - (id)_notesTitleView;
 - (id)_notesView;
+- (struct CGSize { float x1; float x2; })_truncatedNotesViewSize:(float)arg1;
 - (id)accessibilityLabel;
+- (id)accessibilityValue;
 - (void)dealloc;
 - (BOOL)isAccessibilityElement;
+- (BOOL)isTruncatingNotes;
 - (void)layoutForWidth:(float)arg1 position:(NSInteger)arg2;
-- (void)setNotes:(id)arg1;
+- (void)setIsTruncatingNotes:(BOOL)arg1;
+- (void)set_font:(id)arg1;
 - (BOOL)update;
 
 @end

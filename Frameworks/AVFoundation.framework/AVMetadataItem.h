@@ -4,7 +4,7 @@
 
 @class AVMetadataItemInternal;
 
-@interface AVMetadataItem : NSObject <NSCopying, NSMutableCopying> {
+@interface AVMetadataItem : NSObject <AVAsynchronousKeyValueLoading, NSCopying, NSMutableCopying> {
     AVMetadataItemInternal *_priv;
 }
 
@@ -18,6 +18,7 @@
 @property(readonly) NSNumber *numberValue;
 @property(readonly) NSString *stringValue;
 @property(copy,readonly) <NSObject><NSCopying> *value;
+@property(readonly) ? duration;
 @property(readonly) ? time;
 
 + (id)_figMetadataPropertyFromMetadataItems:(id)arg1;
@@ -33,22 +34,27 @@
 - (void)_makePropertiesReady;
 - (void)_makeValueReady;
 - (void)_updateCommonKey;
+- (void)cancelLoading;
 - (id)commonKey;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataValue;
 - (id)dateValue;
 - (void)dealloc;
 - (id)description;
+- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })duration;
 - (id)extraAttributes;
 - (void)finalize;
 - (NSUInteger)hash;
+- (struct CGImage { }*)imageValue;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (id)key;
 - (id)keySpace;
+- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (id)locale;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)numberValue;
+- (NSInteger)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 - (id)stringValue;
 - (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })time;
 - (id)value;

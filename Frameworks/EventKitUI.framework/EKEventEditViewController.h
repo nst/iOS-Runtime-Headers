@@ -20,8 +20,8 @@
 
 - (void)_storeChanged:(id)arg1;
 - (void)completeWithAction:(NSInteger)arg1;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
 - (id)editViewDelegate;
 - (id)event;
 - (void)eventEditor:(id)arg1 didCompleteWithAction:(NSInteger)arg2;
@@ -30,10 +30,11 @@
 - (id)initWithEvent:(id)arg1 store:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)saveWithSpan:(NSInteger)arg1 animated:(BOOL)arg2;
+- (BOOL)scrollToNotes;
 - (void)setEditViewDelegate:(id)arg1;
 - (void)setEvent:(id)arg1;
 - (void)setEventStore:(id)arg1;
+- (void)setScrollToNotes:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

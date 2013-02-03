@@ -9,6 +9,7 @@
 + (id)allServices;
 + (id)allServicesNonBlocking;
 + (id)canonicalFormOfID:(id)arg1 withIDSensitivity:(NSInteger)arg2;
++ (id)facetimeService;
 + (void)forgetStatusImageAppearance;
 + (id)imageNameForStatus:(NSUInteger)arg1;
 + (id)imageURLForStatus:(NSUInteger)arg1;
@@ -31,11 +32,13 @@
 - (id)infoForPerson:(id)arg1;
 - (id)infoForPreferredScreenNames;
 - (id)infoForScreenName:(id)arg1;
+- (BOOL)initialSyncPerformed;
 - (BOOL)isEnabled;
 - (id)localizedName;
 - (id)localizedShortName;
 - (void)login;
 - (void)logout;
+- (id)myScreenNames;
 - (id)name;
 - (id)peopleWithScreenName:(id)arg1;
 - (id)screenNamesForPerson:(id)arg1;

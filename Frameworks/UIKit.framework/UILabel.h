@@ -93,6 +93,7 @@
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isEnabled;
 - (BOOL)isHighlighted;
+- (BOOL)isTextFieldCenteredLabel;
 - (NSInteger)lineBreakMode;
 - (NSInteger)lineSpacing;
 - (float)minimumFontSize;

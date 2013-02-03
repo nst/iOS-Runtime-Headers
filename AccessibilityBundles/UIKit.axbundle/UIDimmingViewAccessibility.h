@@ -7,6 +7,7 @@
 
 + (void)_initializeSafeCategory;
 
+- (BOOL)_accessibilityCanDismiss;
 - (BOOL)_accessibilityCoversScreen;
 - (BOOL)_accessibilityEscape;
 - (id)_accessibilityObscuredScreenAllowedViews;

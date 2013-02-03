@@ -17,6 +17,23 @@
     NSDate *_time;
 }
 
+@property(retain) NSString *URL;
+@property(retain) NSDictionary *attributes;
+@property(retain) NSAttributedString *body;
+@property(retain) NSError *error;
+@property(retain) NSArray *fileTransferGUIDs;
+@property(retain) NSString *guid;
+@property(retain) NSString *sender;
+@property(retain) NSDictionary *senderInfo;
+@property(retain) NSString *subject;
+@property(retain) NSDate *time;
+@property NSInteger flags;
+@property(readonly) BOOL isAlert;
+@property(readonly) BOOL isEmpty;
+@property(readonly) BOOL isFinished;
+@property(readonly) BOOL isPrepared;
+@property NSInteger securityLevel;
+
 - (id)URL;
 - (void)_cleanMessage;
 - (void)adjustIsEmptyFlag;
@@ -45,6 +62,7 @@
 - (void)setError:(id)arg1;
 - (void)setFileTransferGUIDs:(id)arg1;
 - (void)setFlags:(NSInteger)arg1;
+- (void)setGuid:(id)arg1;
 - (void)setSecurityLevel:(NSInteger)arg1;
 - (void)setSender:(id)arg1;
 - (void)setSenderInfo:(id)arg1;

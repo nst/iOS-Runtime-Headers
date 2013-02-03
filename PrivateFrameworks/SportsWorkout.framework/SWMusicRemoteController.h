@@ -2,19 +2,25 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class NSArray, NSTimer, NSString;
+@class NSTimer, NSString, MPMediaQuery, NSMutableArray, MPMediaItem;
 
 @interface SWMusicRemoteController : NSObject {
     NSInteger _currentVolumeDirection;
+    MPMediaItem *_interruptedItem;
+    double _interruptedPlaybackTime;
+    MPMediaQuery *_interruptedQueueAsQuery;
+    NSInteger _interruptedRepeatMode;
     NSString *_latestSelectedPlaylistName;
     NSInteger _musicSelection;
-    NSArray *_playlists;
+    NSMutableArray *_playlists;
+    MPMediaItem *_powersongItem;
     NSTimer *_volumeAdjustTimer;
-    NSArray *_workoutMixes;
+    NSMutableArray *_workoutMixes;
 }
 
 @property(copy) NSString *latestSelectedPlaylistName;
 @property NSInteger musicSelection;
+@property(readonly) BOOL powersongIsNowPlayingItem;
 @property(readonly) BOOL shouldControlMusic;
 
 + (void)clearCachedDatabaseData;
@@ -29,6 +35,7 @@
 - (void)_nowPlayingItemChanged:(id)arg1;
 - (unsigned long long)_persistentUIDForPlaylistIndex:(NSUInteger)arg1 isWorkoutMix:(BOOL)arg2;
 - (void)_releaseRemoteCachedData;
+- (void)_resumeInterruptedQueue;
 - (void)_startPlaylistAtIndex:(NSUInteger)arg1 isWorkoutMix:(BOOL)arg2;
 - (void)_startPlaylistWithPersistentUID:(unsigned long long)arg1;
 - (void)beginAdjustingVolume:(NSInteger)arg1;
@@ -49,6 +56,7 @@
 - (unsigned long long)persistentUIDForWorkoutMixIndex:(NSUInteger)arg1;
 - (void)play;
 - (id)playlists;
+- (BOOL)powersongIsNowPlayingItem;
 - (void)selectNextSong;
 - (void)selectPreviousSong;
 - (void)setLatestSelectedPlaylistName:(id)arg1;

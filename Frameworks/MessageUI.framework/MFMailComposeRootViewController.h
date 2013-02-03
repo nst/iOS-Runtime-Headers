@@ -12,9 +12,11 @@
     _MFMailCompositionContext *_compositionContext;
     } _contentSize;
     <MFMailComposeViewControllerDelegate> *_delegate;
+    BOOL _hasViewAppeared;
     BOOL _isSuspended;
     MFMailComposeController *_mailComposeController;
     NSUInteger _mailComposeControllerOptions;
+    BOOL _rotationSnapshotTaken;
 }
 
 @property id autorotationDelegate;
@@ -23,6 +25,7 @@
 - (BOOL)_canReloadView;
 - (id)_compositionContext;
 - (void)_dismissPeoplePicker:(id)arg1;
+- (void)_dismissPersonCard:(id)arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
 - (id)_mailComposeController;
 - (id)_mailComposeView;
@@ -49,8 +52,10 @@
 - (void)setDelegate:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)tearDownUI;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 

@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABModel;
+@class <ABStyleProvider>, ABModel;
 
 @interface ABAbstractViewController : UIViewController {
     ABModel *_model;
+    <ABStyleProvider> *_styleProvider;
 }
 
 @property(retain) ABModel *model;
+@property(retain) <ABStyleProvider> *styleProvider;
 
 - (BOOL)_allowsAutorotation;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
@@ -23,6 +25,8 @@
 - (id)peoplePickerNavigationController;
 - (void)setModel:(id)arg1;
 - (void)setParentViewController:(id)arg1;
+- (void)setStyleProvider:(id)arg1;
+- (id)styleProvider;
 - (void)updateNavigationButtons;
 - (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 

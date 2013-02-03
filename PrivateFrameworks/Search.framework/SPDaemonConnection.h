@@ -19,7 +19,7 @@
 - (void)cancelQuery:(id)arg1;
 - (void)dealloc;
 - (BOOL)endRecordUpdatesForApplication:(id)arg1 andCategory:(id)arg2;
-- (BOOL)indexUpdatedContent:(id)arg1;
+- (BOOL)indexUpdatedContent:(id)arg1 moreComing:(BOOL)arg2;
 - (id)init;
 - (void)invalidateServerPort;
 - (void)preheat;

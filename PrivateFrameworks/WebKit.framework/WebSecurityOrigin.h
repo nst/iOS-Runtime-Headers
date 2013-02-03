@@ -6,16 +6,20 @@
    See Warning(s) below.
  */
 
-@class WebSecurityOriginPrivate;
+@class <WebQuotaManager>, WebSecurityOriginPrivate;
 
 @interface WebSecurityOrigin : NSObject {
-     /* Encoded args for previous method: ^{SecurityOrigin=ii{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}SBBBB}8@0:4 */
-     /* Encoded args for previous method: @12@0:4^{SecurityOrigin=ii{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}SBBBB}8 */
+     /* Encoded args for previous method: ^{SecurityOrigin=ii{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}SBBBBB}8@0:4 */
+     /* Encoded args for previous method: @12@0:4^{SecurityOrigin=ii{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}SBBBBB}8 */
+    <WebQuotaManager> *_applicationCacheQuotaManager;
+    <WebQuotaManager> *_databaseQuotaManager;
     WebSecurityOriginPrivate *_private;
 }
 
-- (struct SecurityOrigin { NSInteger x1; NSInteger x2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; unsigned short x7; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x8; void*x9; void*x10; void*x11; }*)_core;
-- (id)_initWithWebCoreSecurityOrigin:(struct SecurityOrigin { NSInteger x1; NSInteger x2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; unsigned short x7; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x8; void*x9; void*x10; void*x11; }*)arg1;
+- (struct SecurityOrigin { NSInteger x1; NSInteger x2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_7_1_1; } x7; unsigned short x8; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x9; void*x10; void*x11; void*x12; void*x13; }*)_core;
+- (id)_initWithWebCoreSecurityOrigin:(struct SecurityOrigin { NSInteger x1; NSInteger x2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_7_1_1; } x7; unsigned short x8; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x9; void*x10; void*x11; void*x12; void*x13; }*)arg1;
+- (id)applicationCacheQuotaManager;
+- (id)databaseQuotaManager;
 - (void)dealloc;
 - (id)domain;
 - (void)finalize;

@@ -24,6 +24,7 @@
 - (id)queryForUnitEntitiesAtIndex:(NSUInteger)arg1 directCollectionQuery:(id)arg2 ordered:(BOOL)arg3 usingSections:(BOOL)arg4;
 - (id)queryForUnitEntitiesAtIndex:(NSUInteger)arg1 usingSections:(BOOL)arg2;
 - (id)representativeUnitEntityAtIndex:(NSUInteger)arg1;
+- (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(BOOL)arg2;
 - (void)visitGroupMembersOfEntityAtIndex:(NSUInteger)arg1 visitor:(int (*)())arg2 context:(void*)arg3;
 
 @end

@@ -19,6 +19,7 @@
 + (id)symbolOwnerWithName:(id)arg1 signature:(id)arg2 textMemory:(id)arg3 regions:(id)arg4 symbols:(id)arg5 sourceInfos:(id)arg6 flags:(NSUInteger)arg7 currentVersion:(NSUInteger)arg8 compatibilityVersion:(NSUInteger)arg9;
 
 - (id)architecture;
+- (NSInteger)compare:(id)arg1;
 - (NSUInteger)compatibilityVersion;
 - (BOOL)containsAddress:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -19,6 +19,7 @@
 - (id)documentTitle;
 - (id)fileName;
 - (BOOL)hasSessionBreakAtIndex:(NSUInteger)arg1;
+- (float)headerMargin;
 - (id)initWithWDom:(id)arg1 archiver:(id)arg2;
 - (float)leftMargin;
 - (void)mapDefaultCssStylesAt:(id)arg1;

@@ -7,16 +7,17 @@
     unsigned int _rotateAfterHidingControls : 1;
     unsigned int _showControlsAfterRotate : 1;
     unsigned int _autoHidingForItemChange : 1;
+    unsigned int _scheduledAutoHide : 1;
 }
 
 - (void)_autohideControlsOverlay;
-- (void)_bufferingStateChangedNotification:(id)arg1;
 - (void)_hideOverlayWithAnimation:(BOOL)arg1 shouldUpdateAutohideFlag:(BOOL)arg2;
 - (void)_hideOverlayWithAnimation:(BOOL)arg1;
-- (void)_setStatusBarVisible:(BOOL)arg1 duration:(float)arg2 fenceID:(NSInteger)arg3;
+- (void)_setStatusBarVisible:(BOOL)arg1 duration:(float)arg2;
 - (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
 - (void)_stopWatchingAVController;
 - (NSInteger)_validInterfaceOrientation;
+- (void)bufferingStateChangedNotification:(id)arg1;
 - (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(NSInteger)arg2;
 - (BOOL)canHideOverlay:(BOOL)arg1;
 - (void)cancelControlsOverlayAutohide;
@@ -50,9 +51,9 @@
 - (BOOL)transportControls:(id)arg1 heldButtonPart:(NSUInteger)arg2;
 - (BOOL)transportControls:(id)arg1 releasedHeldButtonPart:(NSUInteger)arg2;
 - (BOOL)transportControls:(id)arg1 tappedButtonPart:(NSUInteger)arg2;
-- (BOOL)usePosterForTVOut;
 - (void)videoView_resumeEventsOnlyNotification:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

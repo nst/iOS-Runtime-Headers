@@ -6,6 +6,8 @@
 }
 
 - (BOOL)_accessibilityAlwaysOrderedFirst;
+- (id)_accessibilityFuzzyHitTestElements;
+- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 - (BOOL)_accessibilityServesAsContainingParentForOrdering;
 - (BOOL)_canHandleStatusBarMouseEvents:(struct __GSEvent { }*)arg1;
 - (void)_navBarButtonPressed:(id)arg1;

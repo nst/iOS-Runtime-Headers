@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPItem, MPViewController, MPTransitionController, NSTimer;
+@class MPAVItem, MPViewController, MPTransitionController, NSTimer;
 
 @interface MPViewController : UIViewController {
     unsigned int _appearing : 1;
@@ -10,13 +10,13 @@
     id _delegate;
     NSTimer *_idleTimerDisablerTimer;
     NSInteger _interfaceOrientation;
-    MPItem *_item;
+    MPAVItem *_item;
     MPTransitionController *_pushedTransitionController;
     MPViewController *_pushedViewController;
 }
 
 @property(getter=idleTimerDisabled) BOOL idleTimerDisabled; /* unknown property attribute: SsetIdleTimerDisabled: */
-@property(retain) MPItem *item;
+@property(retain) MPAVItem *item;
 @property id delegate;
 @property BOOL observesApplicationSuspendResumeEventsOnly;
 @property NSInteger orientation;

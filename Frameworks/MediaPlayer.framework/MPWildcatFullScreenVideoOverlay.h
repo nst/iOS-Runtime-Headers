@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UINavigationBar, UIActivityIndicatorView, UIImageView, MPWildcatFullScreenTransportControls, UINavigationItem, UILabel, UINavigationButton, NSString, UIBarButtonItem, UIPopoverController;
+@class UINavigationBar, UIActivityIndicatorView, UIImageView, MPWildcatFullScreenTransportControls, UINavigationItem, UILabel, MPNowPlayingItemQueueInfoButton, NSString, UINavigationButton, UIPopoverController;
 
-@interface MPWildcatFullScreenVideoOverlay : MPVideoOverlay {
-    UIBarButtonItem *_doneButton;
+@interface MPWildcatFullScreenVideoOverlay : MPVideoOverlay <MPNowPlayingItemQueueInfoButtonDelegate> {
+    unsigned int _layoutSubviewsActive : 1;
     UIImageView *_hudImageView;
+    MPNowPlayingItemQueueInfoButton *_itemQueueInfoButton;
     UIActivityIndicatorView *_loadingMovieIndicator;
     UILabel *_loadingMovieLabel;
     UINavigationBar *_navigationBar;
@@ -24,6 +25,7 @@
 
 @property(copy) NSString *title;
 
+- (void)_configureLinkButtonForCurrentItemTime;
 - (NSUInteger)_convertedPartsMask:(NSUInteger)arg1;
 - (void)_doneButton:(id)arg1;
 - (void)_hideScrubInstructions;
@@ -35,6 +37,8 @@
 - (void)_scheduleHidePopoverTimer;
 - (void)_showScrubInstructions;
 - (void)_videoViewScaleModeDidChangeNotification:(id)arg1;
+- (BOOL)allowsWirelessPlayback;
+- (void)crossedURLTimeMarker:(id)arg1;
 - (void)dealloc;
 - (void)detailSlider:(id)arg1 didChangeScrubSpeed:(NSInteger)arg2;
 - (void)detailSliderTrackingDidBegin:(id)arg1;
@@ -45,7 +49,9 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (NSInteger)nowPlayingItemQueueInfoButton:(id)arg1 willDisplayInfoType:(NSInteger)arg2;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setAlpha:(float)arg1;
 - (void)setDesiredParts:(NSUInteger)arg1 animate:(BOOL)arg2;
 - (void)setDisabledParts:(NSUInteger)arg1;

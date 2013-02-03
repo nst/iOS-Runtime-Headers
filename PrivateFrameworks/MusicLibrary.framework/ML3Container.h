@@ -16,18 +16,35 @@
 
 + (id)databaseTable;
 + (id)defaultOrderingProperties;
++ (id)extraTablesToDelete;
++ (id)foreignColumnForProperty:(id)arg1;
++ (id)foreignDatabaseTableForProperty:(id)arg1;
 + (BOOL)hasCriterionInCriteriaList:(struct OpaqueSearchCriteriaList { }*)arg1 forITDBTrackField:(NSInteger)arg2;
 + (void)initialize;
 + (id)joinClauseForProperty:(id)arg1;
++ (id)nextFilepathForPlaylistType:(NSInteger)arg1 withPersistentID:(unsigned long long)arg2 inLibrary:(id)arg3;
++ (id)persistentIDColumnForTable:(id)arg1;
++ (void)populateDynamicContainersWithTrackPersistentID:(id)arg1 inLibrary:(id)arg2;
 + (void)populateStaticItemsOfDynamicContainersOnHandle:(struct sqlite3 { }*)arg1;
 + (id)predicateForCriteriaList:(struct OpaqueSearchCriteriaList { }*)arg1 dynamicCriteria:(BOOL)arg2;
++ (id)propertyForMPMediaEntityProperty:(id)arg1;
 + (id)sectionPropertyForProperty:(id)arg1;
 
+- (BOOL)_computeBeginPhysicalOrder:(long long*)arg1 andIncrement:(long long*)arg2 forCount:(NSUInteger)arg3 afterPhysicalOrder:(long long)arg4 forceReorder:(BOOL)arg5;
+- (BOOL)_insertTracksWithPersistentIDs:(long long*)arg1 count:(NSUInteger)arg2 afterPhysicalOrder:(long long)arg3 insertedPhysicalOrdersOut:(long long*)arg4 fullReorderOccurredOut:(BOOL*)arg5 forceReorder:(BOOL)arg6;
 - (BOOL)_isDescendingForTrackOrderProperty:(id)arg1 reverseOrderProperty:(id)arg2;
+- (BOOL)_removeTrackAtPhysicalOrderNoSave:(long long)arg1;
+- (BOOL)addTrackWithPersistentID:(long long)arg1 insertedPhysicalOrderOut:(long long*)arg2 fullReorderOccurredOut:(BOOL*)arg3;
+- (BOOL)addTrackWithPersistentID:(long long)arg1;
 - (void)bindPopulateStatement:(struct sqlite3_stmt { }*)arg1 withStaticTrackPersistentID:(id)arg2;
+- (BOOL)deleteFromLibrary;
 - (id)dynamicPredicate;
 - (void)getDisplayOrderingProperties:(id*)arg1 isDescending:(BOOL*)arg2;
 - (struct OpaqueSearchCriteriaList { }*)importedCriteriaList;
+- (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2;
+- (BOOL)insertTrackWithPersistentID:(long long)arg1 afterPhysicalOrder:(long long)arg2 insertedPhysicalOrderOut:(long long*)arg3 fullReorderOccurredOut:(BOOL*)arg4;
+- (BOOL)insertTrackWithPersistentID:(long long)arg1 afterPhysicalOrder:(long long)arg2;
+- (BOOL)insertTracksWithPersistentIDs:(long long*)arg1 count:(NSUInteger)arg2 afterPhysicalOrder:(long long)arg3 insertedPhysicalOrdersOut:(long long*)arg4 fullReorderOccurredOut:(BOOL*)arg5;
 - (BOOL)isCustomContainerOrderingDescending;
 - (BOOL)isLimitOrderingDescending;
 - (BOOL)isLimitedByCount;
@@ -35,7 +52,14 @@
 - (id)limitOrderingProperties;
 - (long long)limitValue;
 - (id)limitingProperty;
+- (BOOL)moveTrackFromPhysicalOrder:(long long)arg1 toAfterPhysicalOrder:(long long)arg2 insertedPhysicalOrderOut:(long long*)arg3 fullReorderOccurredOut:(BOOL*)arg4;
+- (BOOL)moveTrackFromPhysicalOrder:(long long)arg1 toAfterPhysicalOrder:(long long)arg2;
+- (long long)nextPhysicalOrderAfterPhysicalOrder:(long long)arg1;
 - (id)populateSQLWithStaticTrackPersistentID:(id)arg1;
+- (void)removeAllTracks;
+- (void)removeTrackAtPhysicalOrder:(long long)arg1;
+- (void)setNeedsSave;
+- (void)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)staticPredicate;
 
 @end

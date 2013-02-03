@@ -11,6 +11,7 @@
 @property BOOL doubleTapEnabled;
 @property(readonly) NSInteger indicatorStyleGray;
 @property(readonly) NSInteger indicatorStyleWhite;
+@property id inputViewObeysDOMFocus;
 @property NSInteger loadingIndicatorStyle;
 @property(retain) id loadingTextColor;
 @property(retain) id loadingTextShadowColor;
@@ -65,6 +66,7 @@
 - (NSInteger)indicatorStyleWhite;
 - (id)init;
 - (id)initWithURLStrings:(id)arg1;
+- (id)inputViewObeysDOMFocus;
 - (id)loadWebArchiveWithIdentifier:(id)arg1 fromDirectory:(id)arg2;
 - (NSInteger)loadingIndicatorStyle;
 - (id)loadingTextColor;
@@ -78,6 +80,7 @@
 - (BOOL)scrollingEnabled;
 - (id)segmentedControl;
 - (void)setDoubleTapEnabled:(BOOL)arg1;
+- (void)setInputViewObeysDOMFocus:(id)arg1;
 - (void)setLoadingIndicatorStyle:(NSInteger)arg1;
 - (void)setLoadingTextColor:(id)arg1;
 - (void)setLoadingTextShadowColor:(id)arg1;

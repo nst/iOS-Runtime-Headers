@@ -41,6 +41,7 @@
 - (void)_setDate:(id)arg1 andInformDelegate:(BOOL)arg2;
 - (BOOL)_shouldEnableClearButton;
 - (void)_updateClearButton;
+- (void)_updateLabelText;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canResignFirstResponder;

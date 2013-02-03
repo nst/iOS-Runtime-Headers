@@ -21,17 +21,12 @@
 
 + (void)_initializeSafeCategory;
 
-- (void)_adlib_loadBannerContentURL:(id)arg1;
-- (void)_adlib_loadHTMLString:(id)arg1;
-- (void)_adlib_loadWebArchiveData:(id)arg1;
 - (id)_browserView;
-- (id)_createWebArchiveForData:(id)arg1;
 - (id)_documentView;
 - (void)_frameOrBoundsChanged;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (Class)_printFormatterClass;
 - (void)_reportError:(id)arg1;
-- (BOOL)_sanitizeWebArchiveArray:(id)arg1;
-- (BOOL)_sanitizeWebArchiveDictionary:(id)arg1;
 - (id)_scrollView;
 - (void)_setDrawInWebThread:(BOOL)arg1;
 - (void)_setDrawsCheckeredPattern:(BOOL)arg1;
@@ -110,8 +105,10 @@
 - (void)webView:(id)arg1 didReceiveServerRedirectForProvisionalLoadForFrame:(id)arg2;
 - (void)webView:(id)arg1 didReceiveTitle:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;
+- (void)webView:(id)arg1 exceededApplicationCacheOriginQuotaForSecurityOrigin:(id)arg2;
 - (void)webView:(id)arg1 frame:(id)arg2 exceededDatabaseQuotaForSecurityOrigin:(id)arg3 database:(id)arg4;
 - (id)webView:(id)arg1 identifierForInitialRequest:(id)arg2 fromDataSource:(id)arg3;
+- (BOOL)webView:(id)arg1 resource:(id)arg2 canAuthenticateAgainstProtectionSpace:(id)arg3 forDataSource:(id)arg4;
 - (void)webView:(id)arg1 resource:(id)arg2 didCancelAuthenticationChallenge:(id)arg3 fromDataSource:(id)arg4;
 - (void)webView:(id)arg1 resource:(id)arg2 didFailLoadingWithError:(id)arg3 fromDataSource:(id)arg4;
 - (void)webView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;

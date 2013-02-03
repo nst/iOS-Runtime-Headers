@@ -19,6 +19,8 @@
 
 + (id)storeWithOptions:(unsigned long)arg1 path:(id)arg2;
 
+- (void)_databaseChangedExternally;
+- (id)_eventWithURI:(id)arg1 checkValid:(BOOL)arg2;
 - (void)_notifyStoreChanged;
 - (id)_orderedDefaultColors;
 - (void)_save;
@@ -27,7 +29,6 @@
 - (id)calendars;
 - (id)colorForCalendar:(id)arg1;
 - (void)daemonRestarted;
-- (void)databaseChangedExternally;
 - (void)dealloc;
 - (id)defaultCalendarForNewEvents;
 - (id)defaultCalendarForNewTasks;
@@ -35,6 +36,7 @@
 - (id)eventForUID:(id)arg1 occurrenceDate:(id)arg2;
 - (id)eventStoreIdentifier;
 - (id)eventWithIdentifier:(id)arg1;
+- (id)eventWithUniqueId:(id)arg1;
 - (id)eventsMatchingPredicate:(id)arg1;
 - (id)importICS:(id)arg1 intoCalendar:(id)arg2 options:(NSUInteger)arg3;
 - (id)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(NSUInteger)arg3;
@@ -45,13 +47,15 @@
 - (id)predicateForEventsWithStartDate:(id)arg1 endDate:(id)arg2 eventIdentifier:(id)arg3 calendars:(id)arg4;
 - (NSInteger)readWriteCalendarCount;
 - (id)readWriteCalendars;
+- (void)refreshAccountDataIfNecessary;
+- (void)refreshAccountListIfNecessary;
 - (BOOL)removeCalendar:(id)arg1 error:(id*)arg2;
 - (BOOL)removeEvent:(id)arg1 span:(NSInteger)arg2 error:(id*)arg3;
 - (BOOL)saveCalendar:(id)arg1 deferred:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)saveCalendar:(id)arg1 error:(id*)arg2;
 - (BOOL)saveEvent:(id)arg1 span:(NSInteger)arg2 error:(id*)arg3;
-- (id)searchOperationForPredicate:(id)arg1 callback:(id)arg2;
 - (NSUInteger)serverPort;
+- (void)setDefaultCalendarForNewEvents:(id)arg1;
 - (BOOL)setEventParticipationStatus:(id)arg1 status:(NSInteger)arg2 applyToAll:(BOOL)arg3 error:(id*)arg4;
 - (void)setTimeZone:(id)arg1;
 - (id)sourceWithID:(id)arg1;

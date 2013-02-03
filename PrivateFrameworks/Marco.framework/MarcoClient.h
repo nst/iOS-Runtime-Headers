@@ -8,6 +8,10 @@
     IMRemoteObject *_remoteObject;
 }
 
+@property(readonly) <MarcoLogServerProtocol> *remoteServer;
+@property(readonly) BOOL connect;
+@property(readonly) BOOL isConnected;
+
 - (BOOL)connect;
 - (BOOL)disconnect;
 - (BOOL)isConnected;

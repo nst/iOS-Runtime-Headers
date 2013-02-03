@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSMutableDictionary, PSSnapshotView, UIKeyboard, UIAlertView, NSMutableArray, UIActionSheet, NSString, UIPopoverController, PreferencesTable, NSArray;
+@class NSMutableDictionary, UIKeyboard, UIAlertView, NSMutableArray, UIActionSheet, NSString, UIPopoverController, PreferencesTable, NSArray;
 
 @interface PSListController : PSViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, PSViewControllerOffsetProtocol> {
     struct CGPoint { 
@@ -24,7 +24,6 @@
     UIPopoverController *_popupStylePopoverController;
     BOOL _popupStylePopoverShouldRePresent;
     BOOL _showingSetupController;
-    PSSnapshotView *_snapshotTable;
     NSString *_specifierID;
     NSArray *_specifiers;
     NSMutableDictionary *_specifiersByID;
@@ -45,6 +44,7 @@
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)_loadBundleControllers;
+- (NSInteger)_nextGroupInSpecifiersAfterIndex:(NSInteger)arg1 inArray:(id)arg2;
 - (void)_removeContiguousSpecifiers:(id)arg1 animated:(BOOL)arg2;
 - (void)_removeIdentifierForSpecifier:(id)arg1;
 - (void)_returnKeyPressed:(id)arg1;
@@ -72,6 +72,7 @@
 - (id)description;
 - (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
 - (void)dismissPopover;
+- (void)dismissPopoverAnimated:(BOOL)arg1;
 - (void)endUpdates;
 - (id)findFirstVisibleResponder;
 - (void)formSheetViewWillDisappear;
@@ -110,6 +111,7 @@
 - (BOOL)performActionForSpecifier:(id)arg1;
 - (void)popoverController:(id)arg1 animationCompleted:(NSInteger)arg2;
 - (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
+- (id)popupStylePopoverController;
 - (void)popupViewWillDisappear;
 - (void)prepareSpecifiersMetadata;
 - (void)pushController:(id)arg1 animate:(BOOL)arg2;
@@ -168,6 +170,8 @@
 - (id)tableView:(id)arg1 viewForFooterInSection:(NSInteger)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
 - (Class)tableViewClass;
+- (void)updateSpecifiers:(id)arg1 withSpecifiers:(id)arg2;
+- (void)updateSpecifiersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withSpecifiers:(id)arg2;
 - (float)verticalContentOffset;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;

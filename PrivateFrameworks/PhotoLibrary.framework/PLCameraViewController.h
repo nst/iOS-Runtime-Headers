@@ -11,7 +11,6 @@
 }
 
 - (BOOL)_displaysFullScreen;
-- (void)_libraryRebuildProgressDidUpdate:(id)arg1;
 - (void)dealloc;
 - (void)loadView;
 - (void)viewDidAppear:(BOOL)arg1;

@@ -9,6 +9,7 @@
         NSUInteger location; 
         NSUInteger length; 
     void *_addressBook;
+    BOOL _autoInvalidateOnDatabaseChange;
     BOOL _backgroundInvalidated;
     NSLock *_backgroundLoadingLock;
     NSMutableArray *_cachedModelRecords;
@@ -40,9 +41,10 @@
 - (struct __CFArray { }*)_databaseChangeDelegates;
 - (id)_displayedGroupMembersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)_loadMembersInBackground:(id)arg1;
-- (void)_modelDatabaseChanged:(struct __CFDictionary { }*)arg1;
+- (void)_modelDatabaseChangedExternally:(struct __CFDictionary { }*)arg1;
+- (void)_modelDatabaseChangedLocally:(struct __CFDictionary { }*)arg1;
 - (id)_newModelRecordFromRecord:(void*)arg1;
-- (void)_notifyDelegatesOfDatabaseChangeWithDeletedGroup:(BOOL)arg1 deletedPerson:(BOOL)arg2;
+- (void)_notifyDelegatesOfExternalDatabaseChangeWithDeletedGroup:(BOOL)arg1 deletedPerson:(BOOL)arg2;
 - (id)_partialDisplayedGroupMembersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)_startBackgroundThreadIfNecessaryScanningForward:(BOOL)arg1;
 - (void)_waitUntilBackgroundThreadFinished;

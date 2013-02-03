@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSString;
+@class NSString, PreferencesValueCell;
 
-@interface EKEventRecurrenceEditItem : EKEventEditItem {
+@interface EKEventRecurrenceEditItem : EKEventEditItem <EKCellShortener> {
     struct { 
         NSInteger year; 
         BOOL month; 
@@ -13,17 +13,22 @@
         BOOL minute; 
         double second; 
     NSString *_customRepeatDescription;
+    PreferencesValueCell *_dateCell;
     NSInteger _originalRepeatType;
     } _repeatEndGr;
     NSInteger _repeatType;
+    NSInteger _shorteningStatus;
 }
 
 - (id)cellForSubitemAtIndex:(NSInteger)arg1;
 - (BOOL)configureForCalendarConstraints:(id)arg1;
+- (void)dealloc;
 - (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(NSInteger)arg2;
 - (BOOL)eventEditItemViewControllerCommit:(id)arg1;
 - (NSInteger)numberOfSubitems;
+- (void)reset;
 - (void)setEvent:(id)arg1 store:(id)arg2;
+- (void)shortenCell:(id)arg1;
 - (BOOL)validateRecurrenceType:(id)arg1;
 
 @end

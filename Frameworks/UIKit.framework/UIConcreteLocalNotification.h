@@ -18,6 +18,7 @@
     BOOL interruptAudioAndLockDevice;
     NSCalendar *repeatCalendar;
     NSUInteger repeatInterval;
+    BOOL resumeApplicationInBackground;
     BOOL showAlarmStatusBarItem;
     NSString *soundName;
     BOOL soundNameIsARingtone;
@@ -40,6 +41,7 @@
 @property BOOL hideAlertTitle;
 @property BOOL interruptAudioAndLockDevice;
 @property NSUInteger repeatInterval;
+@property BOOL resumeApplicationInBackground;
 @property BOOL showAlarmStatusBarItem;
 @property BOOL soundNameIsARingtone;
 
@@ -71,6 +73,7 @@
 - (id)nextFireDateForLastFireDate:(id)arg1;
 - (id)repeatCalendar;
 - (NSUInteger)repeatInterval;
+- (BOOL)resumeApplicationInBackground;
 - (void)setAlertAction:(id)arg1;
 - (void)setAlertBody:(id)arg1;
 - (void)setAlertLaunchImage:(id)arg1;
@@ -84,6 +87,7 @@
 - (void)setInterruptAudioAndLockDevice:(BOOL)arg1;
 - (void)setRepeatCalendar:(id)arg1;
 - (void)setRepeatInterval:(NSUInteger)arg1;
+- (void)setResumeApplicationInBackground:(BOOL)arg1;
 - (void)setShowAlarmStatusBarItem:(BOOL)arg1;
 - (void)setSoundName:(id)arg1;
 - (void)setSoundNameIsARingtone:(BOOL)arg1;

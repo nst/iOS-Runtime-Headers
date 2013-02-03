@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString;
+@class NSAttributedString;
 
 @interface UIMovieSubtitlesView : UIView {
     struct CGSize { 
@@ -13,25 +13,32 @@
         float height; 
     unsigned int _sizeIsDirty : 1;
     id _delegate;
-    NSString *_markup;
+    float _fontSize;
     } _markupSize;
     } _padding;
+    NSAttributedString *_subtitleString;
     BOOL _subtitlesAreForced;
 }
 
+@property(retain) NSAttributedString *subtitleString;
+@property float fontSize;
+@property CGSize padding;
 @property(readonly) BOOL subtitlesAreForced;
 
-- (id)_copyMarkupFromAttributedString:(struct __CFAttributedString { }*)arg1;
-- (id)_htmlColorForColor:(struct CGColor { }*)arg1;
+- (id)_translateUIMovieAttributesOfAttributedString:(id)arg1;
 - (void)clearSubtitle;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)fontSize;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })padding;
 - (void)setDelegate:(id)arg1;
+- (void)setFontSize:(float)arg1;
 - (void)setPadding:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSubtitleString:(id)arg1;
 - (void)setSubtitleString:(struct __CFAttributedString { }*)arg1 forced:(BOOL)arg2;
 - (void)sizeToFitWidth:(float)arg1;
+- (id)subtitleString;
 - (BOOL)subtitlesAreForced;
 
 @end

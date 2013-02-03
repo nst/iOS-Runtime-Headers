@@ -29,6 +29,7 @@
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (BOOL)textFieldShouldBeginEditing:(id)arg1;
+- (BOOL)textFieldShouldClear:(id)arg1;
 - (BOOL)textFieldShouldEndEditing:(id)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)textFieldTextDidChange:(id)arg1;

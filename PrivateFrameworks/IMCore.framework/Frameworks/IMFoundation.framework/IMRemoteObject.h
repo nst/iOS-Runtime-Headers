@@ -2,18 +2,24 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSProtocolChecker, NSString, NSDate;
+@class NSString, NSRecursiveLock, NSDate, NSProtocolChecker;
 
 @interface IMRemoteObject : NSObject {
-    unsigned int _willBeTerminated : 1;
     NSDate *_firstDateClientWasInformedOfDisconnected;
+    NSRecursiveLock *_lock;
     NSUInteger _port;
     NSString *_portName;
     NSProtocolChecker *_protocolChecker;
     struct dispatch_queue_s { } *_queue;
     struct dispatch_source_s { } *_source;
     double _timeout;
+    BOOL _willBeTerminated;
 }
+
+@property(readonly) NSString *portName;
+@property(readonly) BOOL isValid;
+@property double messageSendTimeout;
+@property(readonly) NSInteger pid;
 
 + (void)initialize;
 

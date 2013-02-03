@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLImportSessionInfo, PLThumbnailStorage, PLCameraImporter, UIAlertView, NSMutableArray, NSTimer, PLEmptyAlbumView, UIBarButtonItem;
+@class PLImportSessionInfo, PLCameraImporter, PLImageTable, UIAlertView, NSMutableArray, NSTimer, PLEmptyAlbumView, UIBarButtonItem;
 
 @interface PLImportViewController : UIViewController <PLCameraImporterDelegate, PLAlbumViewDataSource, PLAlbumViewDelegate> {
     NSUInteger _busyCount;
@@ -22,7 +22,7 @@
     NSUInteger _otherCount;
     BOOL _readingImportItems;
     UIBarButtonItem *_stopImportBarButton;
-    PLThumbnailStorage *_thumbStorage;
+    PLImageTable *_thumbStorage;
     NSUInteger _videoCount;
 }
 

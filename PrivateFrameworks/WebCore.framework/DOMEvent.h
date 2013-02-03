@@ -21,6 +21,7 @@
 - (BOOL)cancelable;
 - (id)currentTarget;
 - (void)dealloc;
+- (BOOL)defaultPrevented;
 - (unsigned short)eventPhase;
 - (void)finalize;
 - (void)initEvent:(id)arg1 :(BOOL)arg2 :(BOOL)arg3;
@@ -30,6 +31,7 @@
 - (void)setCancelBubble:(BOOL)arg1;
 - (void)setReturnValue:(BOOL)arg1;
 - (id)srcElement;
+- (void)stopImmediatePropagation;
 - (void)stopPropagation;
 - (id)target;
 - (unsigned long long)timeStamp;

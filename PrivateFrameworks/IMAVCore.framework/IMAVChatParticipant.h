@@ -5,19 +5,8 @@
 @class NSOperationQueue, NSTimer, NSDictionary, NSString, IMAVChat, IMHandle, NSData;
 
 @interface IMAVChatParticipant : NSObject {
-    unsigned int _inviteDelivered : 1;
-    unsigned int _sendingAudio : 1;
-    unsigned int _sendingVideo : 1;
-    unsigned int _sendingAuxVideo : 1;
-    unsigned int _audioMuted : 1;
-    unsigned int _videoPaused : 1;
-    unsigned int _networkStalled : 1;
-    unsigned int _isInitiator : 1;
-    unsigned int _isAOLInterop : 1;
-    unsigned int _isRecording : 1;
-    unsigned int _vcSecurityVerified : 1;
-    unsigned int _usingICE : 1;
     NSInteger _ardRole;
+    BOOL _audioMuted;
     IMAVChat *_avChat;
     NSInteger _avRelayStatus;
     NSUInteger _cameraOrientation;
@@ -28,46 +17,64 @@
     NSTimer *_connectTimeoutTimer;
     NSString *_errorString;
     IMHandle *_imHandle;
+    BOOL _inviteDelivered;
     IMHandle *_inviter;
+    BOOL _isAOLInterop;
+    BOOL _isInitiator;
+    BOOL _isRecording;
     NSData *_localICEData;
     NSOperationQueue *_messagingQueue;
+    BOOL _networkStalled;
     NSDictionary *_preemptiveRelayRequest;
     NSDictionary *_preemptiveRelayUpdate;
     NSDictionary *_properties;
     NSString *_rawErrorString;
     NSData *_remoteICEData;
     struct __SecCertificate { } *_savedCertificate;
+    BOOL _sendingAudio;
+    BOOL _sendingAuxVideo;
+    BOOL _sendingVideo;
     NSUInteger _state;
+    BOOL _usingICE;
     NSString *_vcPartyID;
+    BOOL _vcSecurityVerified;
+    BOOL _videoPaused;
 }
 
-@property BOOL isSendingAuxVideo; /* unknown property attribute: SsetSendingAuxVideo: */
-@property BOOL isAudioMuted; /* unknown property attribute: SsetAudioMuted: */
+@property(retain) NSString *vcPartyID; /* unknown property attribute: SsetVCPartyID: */
+@property NSInteger avRelayStatus; /* unknown property attribute: SsetAVRelayStatus: */
+@property BOOL isRecording; /* unknown property attribute: SsetRecording: */
+@property BOOL isAOLInterop; /* unknown property attribute: SsetAOLInterop: */
 @property BOOL isVideoPaused; /* unknown property attribute: SsetVideoPaused: */
-@property(readonly) IMAVChat *avChat;
+@property BOOL isAudioMuted; /* unknown property attribute: SsetAudioMuted: */
+@property BOOL isNetworkStalled; /* unknown property attribute: SsetNetworkStalled: */
+@property BOOL isSendingAuxVideo; /* unknown property attribute: SsetSendingAuxVideo: */
+@property(retain) NSDictionary *_preemptiveRelayUpdate; /* unknown property attribute: S_setPreemptiveRelayUpdate: */
+@property(retain) NSDictionary *_preemptiveRelayInitate; /* unknown property attribute: S_setPreemptiveRelayInitate: */
+@property NSInteger ardRole; /* unknown property attribute: SsetARDRole: */
+@property BOOL vcSecurityVerified; /* unknown property attribute: SsetVCSecurityVerified: */
+@property IMAVChat *avChat; /* unknown property attribute: SsetAVChat: */
+@property NSUInteger cameraOrientation; /* unknown property attribute: S_setCameraOrientation: */
+@property NSUInteger cameraType; /* unknown property attribute: S_setCameraType: */
 @property(readonly) __SecCertificate *certificate;
-@property(readonly) NSString *errorString;
-@property(readonly) IMHandle *imHandle;
-@property(readonly) IMHandle *invitedBy;
-@property(readonly) NSString *name;
-@property(readonly) NSString *rawErrorString;
+@property(retain,readonly) NSString *errorString;
+@property(retain,readonly) IMHandle *imHandle;
+@property(retain,readonly) IMHandle *invitedBy;
+@property(retain,readonly) NSString *name;
+@property(retain) NSDictionary *properties;
+@property(retain,readonly) NSString *rawErrorString;
 @property(readonly) IMAVChatParticipant *remoteErrorParticipant;
-@property(readonly) NSString *vcPartyID;
-@property(readonly) NSInteger avRelayStatus;
-@property(readonly) NSUInteger cameraOrientation;
-@property(readonly) NSUInteger cameraType;
+@property NSData *remoteICEData;
+@property void *videoBackLayer;
+@property void *videoLayer;
 @property(readonly) NSInteger error;
-@property(readonly) BOOL isAOLInterop;
 @property(readonly) BOOL isInitiator;
 @property(readonly) BOOL isLocalParticipant;
-@property(readonly) BOOL isNetworkStalled;
-@property(readonly) BOOL isRecording;
 @property(readonly) BOOL isSendingAudio;
 @property(readonly) BOOL isSendingVideo;
 @property(readonly) BOOL isUsingICE;
 @property(readonly) NSUInteger reasonChatEnded;
 @property NSUInteger state;
-@property(readonly) BOOL vcSecurityVerified;
 
 - (void)_cancelMessagesQueue;
 - (void)_connectTimeout:(id)arg1;
@@ -139,6 +146,7 @@
 - (void)sendVCUpdate;
 - (void)setAOLInterop:(BOOL)arg1;
 - (void)setARDRole:(NSInteger)arg1;
+- (void)setAVChat:(id)arg1;
 - (void)setAVRelayStatus:(NSInteger)arg1;
 - (void)setAudioMuted:(BOOL)arg1;
 - (void)setNetworkStalled:(BOOL)arg1;
@@ -153,11 +161,15 @@
 - (void)setStateToEndedWithReason:(NSUInteger)arg1 andError:(NSInteger)arg2;
 - (void)setVCPartyID:(id)arg1;
 - (void)setVCSecurityVerified:(BOOL)arg1;
+- (void)setVideoBackLayer:(void*)arg1;
+- (void)setVideoLayer:(void*)arg1;
 - (void)setVideoPaused:(BOOL)arg1;
 - (void)setWaitingToConnect:(BOOL)arg1;
 - (NSUInteger)state;
 - (id)statusNugget;
 - (id)vcPartyID;
 - (BOOL)vcSecurityVerified;
+- (void*)videoBackLayer;
+- (void*)videoLayer;
 
 @end

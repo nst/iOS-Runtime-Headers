@@ -6,6 +6,7 @@
 
 @interface WebFrameViewPrivate : NSObject {
     WAKScrollView *frameScrollView;
+    BOOL includedInWebKitStatistics;
     WebFrame *webFrame;
 }
 

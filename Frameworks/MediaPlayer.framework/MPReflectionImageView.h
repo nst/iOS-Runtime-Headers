@@ -16,6 +16,7 @@
 @property BOOL squareImage;
 
 + (void)_initializeSafeCategory;
++ (float)defaultReflectionHeight;
 
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
@@ -27,6 +28,7 @@
 - (id)reflectionGradient;
 - (void)setAlbumAlpha:(float)arg1 reflectionAlpha:(float)arg2;
 - (void)setAlbumArtImage:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withReflectionHeight:(float)arg2;
 - (void)setReflectionGradient:(id)arg1;
 - (void)setReflectionVisible:(BOOL)arg1 withDuration:(float)arg2;
 - (void)setSquareImage:(BOOL)arg1;

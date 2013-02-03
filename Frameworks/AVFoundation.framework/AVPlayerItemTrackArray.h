@@ -2,17 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAsset;
+@class AVAsset, AVWeakReference;
 
 @interface AVPlayerItemTrackArray : NSArray {
     AVAsset *_asset;
     struct OpaqueFigPlaybackItem { } *_figPlaybackItem;
+    AVWeakReference *_weakReferenceToPlayerItem;
 }
 
 - (NSUInteger)count;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 asset:(id)arg2;
+- (id)initWithPlayerItem:(id)arg1;
 - (id)objectAtIndex:(NSUInteger)arg1;
 
 @end

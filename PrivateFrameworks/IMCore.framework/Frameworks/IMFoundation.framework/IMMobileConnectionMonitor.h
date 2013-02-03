@@ -3,7 +3,7 @@
  */
 
 @interface IMMobileConnectionMonitor : IMConnectionMonitor {
-    unsigned int _isHostReachable : 1;
+    BOOL _isHostReachable;
 }
 
 - (void)_handleNetworkObserverDidChange:(id)arg1;

@@ -2,15 +2,32 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSString, UIImage;
+@class UIImage, NSString, GKUITheme, GKRotatedIconView, NSURL;
 
 @interface GKInviteHeaderView : UIView {
-    UIImage *_gameIcon;
-    NSString *_gameTitle;
+    NSURL *_fontURL;
+    GKRotatedIconView *_iconView;
+    UIImage *_outlineImage;
+    GKUITheme *_theme;
+    NSString *_title;
 }
+
+@property(retain) NSURL *fontURL;
+@property(retain) UIImage *outlineImage;
+@property(retain) GKUITheme *theme;
+@property(retain) NSString *title;
 
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)fontURL;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (id)outlineImage;
+- (void)setFontURL:(id)arg1;
+- (void)setOutlineImage:(id)arg1;
+- (void)setTheme:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (id)theme;
+- (id)title;
 
 @end

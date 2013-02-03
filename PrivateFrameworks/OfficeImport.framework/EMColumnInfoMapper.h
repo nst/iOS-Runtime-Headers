@@ -12,7 +12,7 @@
 
 - (double)columnWidth;
 - (id)initWithDefaultWidth:(double)arg1 span:(NSInteger)arg2 parent:(id)arg3;
-- (id)initWithEDColumnInfo:(id)arg1 parent:(id)arg2;
+- (id)initWithEDColumnInfo:(id)arg1 maxSpan:(NSInteger)arg2 parent:(id)arg3;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 
 @end

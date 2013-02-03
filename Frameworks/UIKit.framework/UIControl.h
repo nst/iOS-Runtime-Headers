@@ -50,6 +50,7 @@
 - (void)_sendDelayedActions;
 - (void)_setHighlightOnMouseDown:(BOOL)arg1;
 - (void)_unhighlight;
+- (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (BOOL)accessibilityTreeHidden;
 - (id)actionsForTarget:(id)arg1 forControlEvent:(NSUInteger)arg2;

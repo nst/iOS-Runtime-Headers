@@ -9,18 +9,31 @@
     long long _persistentID;
 }
 
-@property(readonly) ML3MusicLibrary *library;
+@property ML3MusicLibrary *library;
+@property(readonly) BOOL existsInLibrary;
 @property(readonly) long long persistentID;
 
 + (id)aggregateQueryWithUnitQuery:(id)arg1 foreignPersistentIDProperty:(id)arg2;
++ (id)anyInLibrary:(id)arg1 predicate:(id)arg2;
++ (id)countedPropertyForMPMediaEntityProperty:(id)arg1;
++ (id)defaultOrderingProperties;
 + (id)directCollectionQueryWithAggregateQuery:(id)arg1 predicate:(id)arg2 usingSections:(BOOL)arg3;
 + (id)disambiguatedSQLForProperty:(id)arg1;
++ (id)extraTablesToDelete;
++ (id)foreignColumnForProperty:(id)arg1;
++ (id)foreignDatabaseTableForProperty:(id)arg1;
++ (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
 + (id)indexableSQLForProperties:(id)arg1;
++ (BOOL)insertValues:(id)arg1 intoTable:(id)arg2 persistentID:(long long)arg3 library:(id)arg4;
++ (id)joinClauseForProperty:(id)arg1;
++ (BOOL)libraryContentsChangeForProperty:(id)arg1;
++ (id)newWithDictionary:(id)arg1 inLibrary:(id)arg2;
 + (id)newWithPersistentID:(long long)arg1 inLibrary:(id)arg2;
 + (id)orderingSQLForProperties:(id)arg1 directionality:(id)arg2;
-+ (void)performValueRequestsForLibrary:(id)arg1;
++ (id)persistentIDColumnForTable:(id)arg1;
 + (void)predisambiguateProperties:(id)arg1 toDictionary:(id)arg2;
 + (id)predisambiguatedProperties;
++ (id)propertyForMPMediaEntityProperty:(id)arg1;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3 usingSections:(BOOL)arg4;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2 usingSections:(BOOL)arg3;
@@ -29,18 +42,20 @@
 + (id)subselectPropertyForProperty:(id)arg1;
 + (id)subselectStatementForProperty:(id)arg1;
 
-- (id)cachedValueForProperty:(id)arg1;
+- (BOOL)_deleteRowFromTable:(id)arg1 usingColumn:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)deleteFromLibrary;
+- (BOOL)existsInLibrary;
 - (void)getValues:(id*)arg1 forProperties:(id*)arg2 count:(NSUInteger)arg3;
 - (NSUInteger)hash;
+- (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2;
 - (id)initWithPersistentID:(long long)arg1 inLibrary:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)library;
 - (BOOL)matchesPredicate:(id)arg1;
 - (id)newSelectSQLForProperties:(id*)arg1 count:(NSUInteger)arg2 predicate:(id)arg3;
-- (void)performRequestsForPropertyValues;
 - (long long)persistentID;
-- (void)requestValueForProperty:(id)arg1;
+- (void)setLibrary:(id)arg1;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 

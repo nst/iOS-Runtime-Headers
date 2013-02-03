@@ -19,6 +19,8 @@
 @property BOOL treatNullAsBlank;
 @property(retain) id value;
 
++ (id)predicateWithProperty:(id)arg1 equalToInteger:(NSInteger)arg2;
++ (id)predicateWithProperty:(id)arg1 equalToValue:(id)arg2;
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(NSInteger)arg3 caseInsensitive:(BOOL)arg4 treatNullAsBlank:(BOOL)arg5;
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(NSInteger)arg3 caseInsensitive:(BOOL)arg4;
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(NSInteger)arg3 transformFunction:(id)arg4;

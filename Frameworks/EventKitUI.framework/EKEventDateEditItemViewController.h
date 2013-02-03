@@ -4,7 +4,7 @@
 
 @class EKPickerTableView;
 
-@interface EKEventDateEditItemViewController : EKEventEditItemViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface EKEventDateEditItemViewController : EKEventEditItemViewController <UITableViewDataSource, UITableViewDelegate, EKCellShortener> {
     struct { 
         NSInteger year; 
         BOOL month; 
@@ -23,11 +23,11 @@
     unsigned int _switchChanging : 1;
     unsigned int _endTimeWasMessedUp : 1;
     unsigned int _dontAnimateDateChange : 1;
-    unsigned int _datesTooLong : 1;
     BOOL _allDay;
     EKPickerTableView *_contentView;
     } _endGr;
     NSInteger _lastSelectedRow;
+    NSInteger _shorteningStatus;
     } _startGr;
 }
 
@@ -38,7 +38,6 @@
 - (void)_localeChanged;
 - (void)_pickNextReasonableTime;
 - (void)_resetStartString:(BOOL)arg1 endString:(BOOL)arg2;
-- (void)_shortenDates;
 - (void)_updateDateColors;
 - (void)_updateDatePicker;
 - (void)_updateTimeWidths;
@@ -46,6 +45,7 @@
 - (void)datePickerChanged:(id)arg1;
 - (void)dealloc;
 - (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDate;
+- (BOOL)fitsPopoverWhenKeyboardActive;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAllDay;
 - (void)loadView;
@@ -53,6 +53,7 @@
 - (void)setAllDay:(BOOL)arg1;
 - (void)setEndDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
 - (void)setStartDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (void)shortenCell:(id)arg1;
 - (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDate;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

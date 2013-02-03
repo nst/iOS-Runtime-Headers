@@ -2,41 +2,42 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSNumber, SSAccount, NSString;
+@class SSAccount;
 
 @interface SUScriptAccount : SUScriptObject {
     SSAccount *_account;
-    NSString *_credits;
-    NSNumber *_dsID;
-    NSString *_identifier;
-    NSString *_kind;
 }
 
-@property(getter=_credits,retain) NSString *credits; /* unknown property attribute: Sset_credits: */
-@property(getter=_dsID,retain) NSNumber *dsID; /* unknown property attribute: Sset_dsID: */
-@property(getter=_identifier,retain) NSString *identifier; /* unknown property attribute: Sset_identifier: */
-@property(getter=_kind,retain) NSString *kind; /* unknown property attribute: Sset_kind: */
 @property(retain) SSAccount *account;
+@property(copy) NSString *credits;
+@property(retain) NSNumber *dsID;
+@property(copy) NSString *identifier;
+@property(copy) NSString *kind;
+@property(retain) id socialEnabled;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
 - (void)_commitChanges;
-- (id)_credits;
-- (id)_dsID;
-- (id)_identifier;
-- (id)_kind;
 - (id)account;
+- (id)attributeKeys;
+- (id)credits;
 - (void)dealloc;
+- (id)dsID;
+- (id)identifier;
 - (id)init;
 - (BOOL)isPrimaryAccount;
 - (BOOL)isSecureTokenValid;
+- (id)kind;
+- (id)scriptAttributeKeys;
 - (void)setAccount:(id)arg1;
+- (void)setCredits:(id)arg1;
+- (void)setDsID:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setKind:(id)arg1;
 - (void)setSecureToken:(id)arg1;
-- (void)set_credits:(id)arg1;
-- (void)set_dsID:(id)arg1;
-- (void)set_identifier:(id)arg1;
-- (void)set_kind:(id)arg1;
+- (void)setSocialEnabled:(id)arg1;
+- (id)socialEnabled;
 
 @end

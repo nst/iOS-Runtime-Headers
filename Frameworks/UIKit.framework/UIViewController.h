@@ -8,6 +8,9 @@
     struct CGSize { 
         float width; 
         float height; 
+    struct CGSize { 
+        float width; 
+        float height; 
     struct { 
         unsigned int appearState : 2; 
         unsigned int isEditing : 1; 
@@ -26,6 +29,8 @@
         unsigned int oldModalInPopover : 1; 
         unsigned int isModalInPopover : 1; 
         unsigned int restoreDeepestFirstResponder : 1; 
+        unsigned int isInWillRotateCallback : 1; 
+        unsigned int disallowMixedOrientationPresentations : 1; 
     UIViewController *_childModalViewController;
     NSHashTable *_childViewControllers;
     } _contentSizeForViewInPopover;
@@ -34,6 +39,7 @@
     UIDimmingView *_dimmingView;
     UIDropShadowView *_dropShadowView;
     UIBarButtonItem *_editButtonItem;
+    } _formSheetSize;
     NSInteger _lastKnownInterfaceOrientation;
     NSInteger _modalPresentationStyle;
     UIResponder *_modalPreservedFirstResponder;
@@ -61,6 +67,7 @@
 @property(retain) NSHashTable *childViewControllers;
 @property(retain) UIDropShadowView *dropShadowView;
 @property(retain,readonly) GKImageBackgroundView *gkBackgroundView;
+@property(readonly) UIPopoverController *gkPopoverController;
 @property(readonly) SUKeyboardBackstopViewController *keyboardBackstopViewController;
 @property(retain) UITransitionView *modalTransitionView;
 @property(readonly) UIViewController *modalViewController;
@@ -79,16 +86,19 @@
 @property(retain) UIView *view;
 @property(readonly) BOOL _isDimmingBackground;
 @property(readonly) BOOL _isModalSheet;
+@property(readonly) BOOL _isPresentedModally;
 @property(readonly) BOOL _useSheetRotation;
-@property(readonly) BOOL ab_isInPopover;
 @property CGSize contentSizeForViewInPopover;
+@property(readonly) CGRect documentBounds;
 @property BOOL hidesBottomBarWhenPushed;
+@property(getter=isInWillRotateCallback) BOOL inWillRotateCallback;
 @property NSInteger interfaceOrientation;
 @property(getter=isLoaded,readonly) BOOL loaded;
 @property(getter=isLoading,readonly) BOOL loading;
 @property BOOL modalInPopover;
 @property NSInteger modalPresentationStyle;
 @property NSInteger modalTransitionStyle;
+@property BOOL searchBarHidNavBar;
 @property(readonly) BOOL shouldInvalidateForMemoryPurge;
 @property BOOL wantsFullScreenLayout;
 
@@ -101,7 +111,9 @@
 + (NSInteger)_keyboardDirectionForTransition:(NSInteger)arg1 isOrderingIn:(BOOL)arg2;
 + (BOOL)_shouldUseLegacyModalViewControllers;
 + (void)beginTransitionSafety;
++ (void)configureStatusBarForTransitionToViewController:(id)arg1 animated:(BOOL)arg2;
 + (double)customTransitionDuration;
++ (struct CGSize { float x1; float x2; })defaultFormSheetSize;
 + (BOOL)doesOverrideViewControllerMethod:(SEL)arg1;
 + (double)durationForTransition:(NSInteger)arg1;
 + (void)endTransitionSafety;
@@ -117,6 +129,7 @@
 - (BOOL)_allowsAutorotation;
 - (id)_ancestorViewControllerOfClass:(Class)arg1 allowModalParent:(BOOL)arg2;
 - (NSInteger)_appearState;
+- (id)_backgroundColorForModalFormSheet;
 - (void)_beginDisablingInterfaceAutorotation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundsForOrientation:(NSInteger)arg1;
 - (BOOL)_canReloadView;
@@ -128,8 +141,10 @@
 - (void)_didFinishDismissTransition;
 - (void)_didFinishPresentTransition;
 - (void)_didReceiveMemoryWarning:(id)arg1;
+- (BOOL)_disallowMixedOrientationPresentations;
 - (void)_dismissModalOverlayAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_dismissModalOverlayViewControllerAnimated:(BOOL)arg1;
+- (void)_dismissModalViewControllerWithTransition:(NSInteger)arg1 from:(id)arg2;
 - (BOOL)_displaysFullScreen;
 - (void)_doCommonSetup;
 - (void)_editingAnimationFinished;
@@ -141,6 +156,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 displyingTopView:(BOOL)arg2 andBottomView:(BOOL)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
+- (void)_gkRefreshContents;
 - (void)_handleDismiss;
 - (BOOL)_hasAppeared;
 - (NSInteger)_imagePickerStatusBarMode;
@@ -148,6 +164,7 @@
 - (BOOL)_isDimmingBackground;
 - (BOOL)_isInterfaceAutorotationDisabled;
 - (BOOL)_isModalSheet;
+- (BOOL)_isPresentedModally;
 - (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
 - (BOOL)_isViewInWindowWithoutParentViewController;
 - (void)_keyboardWillHide:(id)arg1;
@@ -158,7 +175,9 @@
 - (void)_legacyModalPresentTransitionDidComplete;
 - (void)_legacyPresentModalViewController:(id)arg1 withTransition:(NSInteger)arg2;
 - (void)_loadViewFromNibNamed:(id)arg1 bundle:(id)arg2;
+- (id)_modalParentViewController;
 - (id)_moreListTitle;
+- (id)_nonModalAncestorViewController;
 - (id)_nonModalParentViewController;
 - (void)_notifyPopOverThatView:(id)arg1 isTransitioning:(BOOL)arg2;
 - (void)_overlayPresentAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
@@ -166,9 +185,12 @@
 - (void)_populateArchivedChildViewControllers:(id)arg1;
 - (NSInteger)_preferredInterfaceOrientationGivenCurrentOrientation:(NSInteger)arg1;
 - (BOOL)_reallyWantsFullScreenLayout;
+- (void)_resetViewController;
 - (void)_resignRootViewController;
+- (id)_rootAncestorViewController;
 - (id)_sectionForViewController:(id)arg1;
 - (void)_setAllowsAutorotation:(BOOL)arg1;
+- (void)_setDisallowMixedOrientationPresentations:(BOOL)arg1;
 - (void)_setExistingNavigationItem:(id)arg1;
 - (void)_setExistingTabBarItem:(id)arg1;
 - (void)_setImagePickerMediaTypes:(id)arg1;
@@ -179,12 +201,13 @@
 - (void)_setUseTelephonyUI:(BOOL)arg1;
 - (void)_sheetDismissAnimationDidStop;
 - (void)_sheetPresentAnimationDidStop;
+- (BOOL)_shouldAutoPinInputViewsForModalFormSheet;
 - (BOOL)_shouldChildViewControllerUseFullScreenLayout:(id)arg1;
+- (BOOL)_shouldIgnoreTouchesForModalFormSheet;
 - (BOOL)_shouldPersistViewWhenCoding;
 - (BOOL)_shouldUseFullScreenLayout;
 - (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
 - (BOOL)_shouldUseOnePartRotation;
-- (struct CGSize { float x1; float x2; })_sizeForViewInPopoverView;
 - (void)_startModalPresentationInPopover;
 - (void)_startPresentCustomTransitionWithDuration:(double)arg1;
 - (float)_statusBarHeightForCurrentInterfaceOrientation;
@@ -199,7 +222,6 @@
 - (void)_viewWillStartPresentCustomTransition;
 - (id)_visibleView;
 - (NSInteger)abViewControllerType;
-- (BOOL)ab_isInPopover;
 - (BOOL)ab_wantsToPresentModalViewControllerWithoutAnyHelp;
 - (void)accessibilityLargeTextDidChange;
 - (void)addChildViewController:(id)arg1;
@@ -210,7 +232,6 @@
 - (void)autoresizeArchivedView;
 - (BOOL)autoresizesArchivedViewToFullSize;
 - (void)awakeFromNib;
-- (void)beginPopping:(BOOL)arg1;
 - (BOOL)canDisplaySectionGroup:(id)arg1;
 - (BOOL)canHandleSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
 - (id)childModalViewController;
@@ -219,6 +240,7 @@
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
 - (id)copyArchivableContext;
+- (id)copyArchivableJetsamContext;
 - (id)copyObjectForScriptFromPoolWithClass:(Class)arg1;
 - (id)copyScriptViewController;
 - (id)currentAction;
@@ -236,30 +258,28 @@
 - (void)dismissMoviePlayerViewControllerAnimated;
 - (void)dismissOverlayBackgroundViewController;
 - (id)displayedURL;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
 - (id)dropShadowView;
 - (double)durationForTransition:(NSInteger)arg1;
 - (id)editButtonItem;
 - (void)encodeWithCoder:(id)arg1;
 - (id)existingView;
 - (void)forceUnloadView;
+- (struct CGSize { float x1; float x2; })formSheetSize;
 - (void)getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1 forWindow:(id)arg2;
 - (void)gkAdjustBackgroundForSplitPosition;
 - (id)gkBackgroundView;
+- (id)gkPopoverController;
 - (BOOL)hasDisplayableContent;
-- (float)heightForViewInPopoverView;
-- (void)hidePopoverView;
 - (BOOL)hidesBottomBarWhenPushed;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)interactionCancelledWithView:(id)arg1;
-- (id)interactiveStackController;
-- (void)interactiveStackControllerDidFinishWithOverlayView:(id)arg1;
-- (id)interactiveStackControllerIfTop;
 - (NSInteger)interfaceOrientation;
 - (BOOL)isDescendantOfViewController:(id)arg1;
 - (BOOL)isEditing;
 - (BOOL)isInMoreList;
+- (BOOL)isInWillRotateCallback;
 - (BOOL)isLoaded;
 - (BOOL)isLoading;
 - (BOOL)isModalInPopover;
@@ -291,7 +311,6 @@
 - (id)nibBundle;
 - (id)nibName;
 - (id)overlayBackgroundViewController;
-- (id)overlayView;
 - (id)overlayViewController;
 - (id)parentModalViewController;
 - (id)parentViewController;
@@ -320,6 +339,7 @@
 - (id)rotatingHeaderViewForWindow:(id)arg1;
 - (id)savedHeaderSuperview;
 - (id)scriptWindowContext;
+- (BOOL)searchBarHidNavBar;
 - (id)searchDisplayController;
 - (id)section;
 - (void)setAutoresizesArchivedViewToFullSize:(BOOL)arg1;
@@ -332,7 +352,9 @@
 - (void)setDropShadowView:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEditing:(BOOL)arg1;
+- (void)setFormSheetSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setHidesBottomBarWhenPushed:(BOOL)arg1;
+- (void)setInWillRotateCallback:(BOOL)arg1;
 - (void)setInterfaceOrientation:(NSInteger)arg1;
 - (void)setIsSheet:(BOOL)arg1;
 - (void)setModalInPopover:(BOOL)arg1;
@@ -342,6 +364,7 @@
 - (void)setNibBundle:(id)arg1;
 - (void)setNibName:(id)arg1;
 - (void)setParentViewController:(id)arg1;
+- (void)setSearchBarHidNavBar:(BOOL)arg1;
 - (void)setSearchDisplayController:(id)arg1;
 - (void)setShowsBackgroundShadow:(BOOL)arg1;
 - (NSInteger)setStatusBarForFullScreenViewAnimated:(BOOL)arg1 useTelephonyUI:(BOOL)arg2 canHideStatusBar:(BOOL)arg3 newStatusBarMode:(NSInteger*)arg4;
@@ -381,15 +404,12 @@
 - (id)view;
 - (id)viewControllerForRotation;
 - (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidAppearInteractivelyWithView:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidDisappearInteractivelyWithView:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
 - (void)viewDidUnload;
 - (BOOL)viewIsReady;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillAppearInteractivelyWithView:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)viewWillUnload;

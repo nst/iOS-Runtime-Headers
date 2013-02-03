@@ -74,6 +74,7 @@
 - (void)handleMessageFlagsChanged:(id)arg1;
 - (void)handleMessagesAdded:(id)arg1;
 - (void)handleMessagesCompacted:(id)arg1;
+- (BOOL)hasCompleteDataForMimePart:(id)arg1;
 - (BOOL)hasMessageForAccount:(id)arg1;
 - (NSUInteger)indexOfMessage:(id)arg1;
 - (id)initWithCriterion:(id)arg1 mailbox:(id)arg2 readOnly:(BOOL)arg3;
@@ -85,7 +86,7 @@
 - (NSUInteger)locationOfMessage:(id)arg1;
 - (id)mailbox;
 - (void)messageFlagsChanged:(id)arg1;
-- (id)messageForMessageID:(id)arg1;
+- (id)messageForMessageID:(id)arg1 options:(NSUInteger)arg2;
 - (id)messageWithLibraryID:(NSUInteger)arg1;
 - (void)messagesAdded:(id)arg1;
 - (void)messagesCompacted:(id)arg1;

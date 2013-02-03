@@ -55,16 +55,18 @@
 @property NSInteger remakerMode;
 @property NSInteger selectedOption;
 @property BOOL shouldCancelPublish;
-@property double trimEndTime;
-@property double trimStartTime;
 
-+ (id)publishingAgentForBundleNamed:(id)arg1;
++ (id)publishingAgentForBundleNamed:(id)arg1 toPublishMedia:(id)arg2;
 
 - (void)_agentIsReadyToPublish:(id)arg1;
 - (void)_cancelRemaking:(id)arg1;
 - (void)_networkReachabilityDidChange:(id)arg1;
 - (void)_remakerDidFinish:(id)arg1;
 - (NSInteger)_remakerModeForSelectedOption;
+- (void)_setApproximateVideoUploadSizes;
+- (void)_setUpPublishingParams;
+- (void)_startNetworkObservation;
+- (void)_stopNetworkObservation;
 - (void)_transcodeVideo:(id)arg1;
 - (void)_updateStatisticsFromSnapshots;
 - (BOOL)allowsHDOver3GUpload;
@@ -80,7 +82,7 @@
 - (void)doneButtonClicked;
 - (BOOL)enableHDUpload;
 - (double)estimatedTimeRemaining;
-- (id)init;
+- (id)initWithMedia:(id)arg1;
 - (BOOL)isPublishing;
 - (BOOL)isRemaking;
 - (BOOL)isVideoMedia;
@@ -95,7 +97,7 @@
 - (BOOL)ownerIsCamera;
 - (id)parentNavigationController;
 - (float)percentComplete;
-- (void)presentModalSheetInNavigationController:(id)arg1;
+- (void)presentModalSheetInViewController:(id)arg1;
 - (float)progressMultiplier;
 - (id)progressViewMessageDuringRemake;
 - (void)publish;
@@ -121,16 +123,13 @@
 - (void)setSelectedOption:(NSInteger)arg1;
 - (void)setShouldCancelPublish:(BOOL)arg1;
 - (void)setTotalBytesWritten:(NSInteger)arg1 totalBytes:(NSInteger)arg2;
-- (void)setTrimEndTime:(double)arg1;
-- (void)setTrimStartTime:(double)arg1;
+- (void)setTrimStartTime:(double)arg1 andEndTime:(double)arg2;
 - (void)setUserInfo:(id)arg1;
 - (BOOL)shouldCancelPublish;
 - (void)snapshot;
 - (id)tellAFriendBody;
 - (id)tellAFriendSubject;
 - (id)tellAFriendURL;
-- (double)trimEndTime;
-- (double)trimStartTime;
 - (id)userInfo;
 - (void)videoRemaker:(id)arg1 progressDidChange:(float)arg2;
 - (void)videoRemakerDidBeginRemaking:(id)arg1;

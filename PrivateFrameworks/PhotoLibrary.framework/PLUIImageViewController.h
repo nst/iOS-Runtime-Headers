@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLVideoView, PLVideoRemaker, PLImageCache, PLPhotoTileViewController, PLImageLoadingQueue, MLPhoto, UIImage, NSString, PLImageSource, PLCropOverlay;
+@class PLVideoView, PLVideoRemaker, PLImage, PLPhotoTileViewController, PLImageCache, MLPhoto, PLImageLoadingQueue, UIImage, NSString, PLImageSource, PLCropOverlay;
 
 @interface PLUIImageViewController : UIViewController <PLVideoViewDelegate, PLImageLoadingQueueDelegate, PLPhotoTileViewControllerDelegate> {
     struct CGRect { 
@@ -29,6 +29,7 @@
     PLPhotoTileViewController *_imageTile;
     NSInteger _newStatusBarMode;
     MLPhoto *_photo;
+    PLImage *_plImage;
     NSInteger _previousStatusBarMode;
     PLVideoRemaker *_remaker;
     NSString *_videoPath;
@@ -60,12 +61,12 @@
 - (NSInteger)imageFormat;
 - (void)imageLoadingQueue:(id)arg1 didLoadImage:(id)arg2 forObject:(id)arg3 fromSource:(id)arg4;
 - (id)initWithImage:(struct CGImage { }*)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)initWithImageData:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)initWithPhoto:(id)arg1;
 - (id)initWithUIImage:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)initWithVideoPath:(id)arg1;
 - (void)loadView;
 - (void)photoTileViewController:(id)arg1 didDisappear:(BOOL)arg2;
-- (void)photoTileViewController:(id)arg1 didZoomToScale:(float)arg2;
 - (void)photoTileViewController:(id)arg1 willAppear:(BOOL)arg2;
 - (BOOL)photoTileViewControllerAllowsEditing:(id)arg1;
 - (void)photoTileViewControllerCancelImageRequests:(id)arg1;
@@ -88,7 +89,7 @@
 - (void)videoViewDidEndPlayback:(id)arg1 didFinish:(BOOL)arg2;
 - (void)videoViewDidPausePlayback:(id)arg1 didFinish:(BOOL)arg2;
 - (void)videoViewIsReadyToBeginPlayback:(id)arg1;
-- (float)videoViewScrubberYOrigin:(id)arg1;
+- (float)videoViewScrubberYOrigin:(id)arg1 forOrientation:(NSInteger)arg2;
 - (BOOL)videoViewShouldDisplayScrubber:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

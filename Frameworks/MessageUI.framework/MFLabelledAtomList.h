@@ -20,6 +20,7 @@
 - (void)_setNeedsReflow;
 - (unsigned long long)accessibilityTraits;
 - (void)addressAtom:(id)arg1 displayStringDidChange:(id)arg2;
+- (id)addressAtoms;
 - (id)atomDisplayStrings;
 - (void)dealloc;
 - (id)initWithLabel:(id)arg1 title:(id)arg2 totalWidth:(float)arg3 firstLineWidth:(float)arg4 addresses:(id)arg5 arePhoneNumbers:(id)arg6;
@@ -32,6 +33,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setFirstLineWidth:(float)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setOpaque:(BOOL)arg1;
 - (id)title;
 
 @end

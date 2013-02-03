@@ -34,6 +34,7 @@
 - (void)setContentMode:(NSInteger)arg1;
 - (void)setFilter:(NSInteger)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidLoad;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 

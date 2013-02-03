@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage;
+@class UIColor, UIImage;
 
 @interface _UINavigationBarAppearance : NSObject {
     UIImage *backButtonBackgroundImage;
@@ -10,6 +10,8 @@
     UIImage *backgroundImage;
     UIImage *buttonBackgroundImage;
     UIImage *buttonBackgroundImagePressed;
+    UIColor *buttonItemShadowColor;
+    UIColor *buttonItemTextColor;
     UIImage *miniBackButtonBackgroundImage;
     UIImage *miniBackButtonBackgroundImagePressed;
     UIImage *miniBackgroundImage;

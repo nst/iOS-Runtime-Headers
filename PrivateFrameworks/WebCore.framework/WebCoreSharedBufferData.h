@@ -2,9 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface WebCoreSharedBufferData : NSData {
     struct RefPtr<WebCore::SharedBuffer> { 
         struct SharedBuffer {} *m_ptr; 
+     /* Encoded args for previous method: @12@0:4^{SharedBuffer=iI{Vector<char,0ul>=I{VectorBuffer<char,0ul>=*I}}{Vector<char*,0ul>=I{VectorBuffer<char*,0ul>=^*I}}B{OwnPtr<WebCore::PurgeableBuffer>=^{PurgeableBuffer}}{RetainPtr<const __CFData*>=^{__CFData}}}8 */
     } sharedBuffer;
 }
 
@@ -15,7 +20,7 @@
 - (const void*)bytes;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithSharedBuffer:(struct SharedBuffer { NSInteger x1; NSUInteger x2; struct Vector<char,0ul> { NSUInteger x_3_1_1; struct VectorBuffer<char,0ul> { char *x_2_2_1; NSUInteger x_2_2_2; } x_3_1_2; } x3; struct Vector<char*,0ul> { NSUInteger x_4_1_1; struct VectorBuffer<char*,0ul> { char **x_2_2_1; NSUInteger x_2_2_2; } x_4_1_2; } x4; struct OwnPtr<WebCore::PurgeableBuffer> { struct PurgeableBuffer {} *x_5_1_1; } x5; struct RetainPtr<const __CFData*> { struct __CFData {} *x_6_1_1; } x6; }*)arg1;
+- (id)initWithSharedBuffer:(struct SharedBuffer { NSInteger x1; NSUInteger x2; struct Vector<char,0ul> { NSUInteger x_3_1_1; struct VectorBuffer<char,0ul> { char *x_2_2_1; NSUInteger x_2_2_2; } x_3_1_2; } x3; struct Vector<char*,0ul> { NSUInteger x_4_1_1; struct VectorBuffer<char*,0ul> { char **x_2_2_1; NSUInteger x_2_2_2; } x_4_1_2; } x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; struct OwnPtr<WebCore::PurgeableBuffer> { struct PurgeableBuffer {} *x_6_1_1; } x6; struct RetainPtr<const __CFData*> { struct __CFData {} *x_7_1_1; } x7; }*)arg1;
 - (NSUInteger)length;
 
 @end

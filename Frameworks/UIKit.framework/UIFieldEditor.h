@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMHTMLElement, NSString, UIView, DOMDocument;
+@class DOMHTMLElement, NSString, DOMDocument, UIView<UITextSelectingContainer>;
 
 @interface UIFieldEditor : UIWebDocumentView <UIAutoscrollContainer> {
     unsigned int _baseWritingDirectionIsRTL : 1;
@@ -18,7 +18,7 @@
     NSString *_currentStyle;
     DOMDocument *_document;
     NSString *_initialText;
-    UIView *_proxiedView;
+    UIView<UITextSelectingContainer> *_proxiedView;
     DOMHTMLElement *_sizeElement;
     DOMHTMLElement *_textElement;
 }
@@ -30,14 +30,18 @@
 + (void)releaseSharedInstance;
 + (id)sharedFieldEditor;
 
+- (void)_deleteBackwardAndNotify:(BOOL)arg1;
 - (id)_responderForBecomeFirstResponder;
 - (void)_selectNSRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)_setTextElementString:(id)arg1;
 - (void)_setTextElementStyle:(id)arg1;
+- (id)_textSelectingContainer;
 - (id)automaticallySelectedOverlay;
 - (struct CGPoint { float x1; float x2; })autoscrollContentOffset;
 - (void)autoscrollWillNotStart;
 - (void)becomeFieldEditorForView:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForVisiblePosition:(id)arg1;
 - (NSUInteger)characterOffsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrameForView:(id)arg1;
 - (struct CGSize { float x1; float x2; })contentSize;
@@ -55,6 +59,7 @@
 - (void)mouseDragged:(struct __GSEvent { }*)arg1;
 - (BOOL)mouseEventsChangeSelection;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
+- (BOOL)notificationsDisabled;
 - (id)proxiedView;
 - (void)resumeWithNotification:(id)arg1;
 - (void)revealSelection;

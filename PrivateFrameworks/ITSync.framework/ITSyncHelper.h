@@ -28,6 +28,7 @@
 - (void)_generateIDBPPrepEndedIfNeeded;
 - (void)_generateSyncEndedAbnormally;
 - (void)_generateSyncEndedNormally;
+- (void)_handleHostAttachStateChangeToState:(BOOL)arg1;
 - (void)_handleStateChanged;
 - (id)_init;
 - (void)_noteITDBPrepWillBegin;

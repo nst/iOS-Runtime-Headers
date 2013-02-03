@@ -7,13 +7,15 @@
 
 + (void)_initializeSafeCategory;
 
-- (id)_accessibilityAncestorForSiblings;
+- (id)_accessibilityAncestorForSiblingsWithTraits:(unsigned long long)arg1;
 - (id)_accessibilityConvertDataArrayToTextMarkerArray:(id)arg1;
 - (id)_accessibilityConvertTextMarkersToDataArray:(id)arg1;
 - (void)_accessibilityDecreaseSelection:(id)arg1;
 - (void)_accessibilityIncreaseSelection:(id)arg1;
 - (BOOL)_accessibilityIsFirstSibling;
+- (BOOL)_accessibilityIsFirstSiblingForTrait:(unsigned long long)arg1;
 - (BOOL)_accessibilityIsLastSibling;
+- (BOOL)_accessibilityIsLastSiblingForTrait:(unsigned long long)arg1;
 - (id)_accessibilityLineEndMarker:(id)arg1;
 - (id)_accessibilityLinePosition:(BOOL)arg1 withMarker:(id)arg2;
 - (id)_accessibilityLineStartMarker:(id)arg1;
@@ -26,20 +28,27 @@
 - (id)_accessibilityPreviousElementsWithCount:(unsigned long)arg1 originalElement:(id)arg2;
 - (id)_accessibilityPreviousMarker:(id)arg1;
 - (void)_accessibilityScrollToVisible;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedNSRangeForObject;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
 - (void)_accessibilitySetSelectedTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (BOOL)_accessibilitySiblingWithAncestor:(id)arg1 isFirst:(BOOL)arg2 isLast:(BOOL)arg3 sawAXElement:(BOOL*)arg4;
 - (BOOL)_accessibilitySiblingWithAncestor:(id)arg1 isFirst:(BOOL)arg2 isLast:(BOOL)arg3;
+- (BOOL)_accessibilitySupportsActivateAction;
 - (id)_accessibilityTextMarkerRange;
 - (id)_accessibilityTextMarkerRangeForSelection;
 - (id)_accessibilityTextViewTextOperationResponder;
 - (id)_accessibilityWebDocumentView;
 - (BOOL)_isCheckBox;
+- (void)accessibilityActivate;
 - (id)accessibilityArrayOfTextForTextMarkers:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityBoundsForTextMarkers:(id)arg1;
+- (BOOL)accessibilityCanFuzzyHitTest;
 - (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
 - (id)accessibilityElementAtIndex:(NSInteger)arg1;
 - (void)accessibilityElementDidBecomeFocused;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (id)accessibilityLanguage;
+- (id)accessibilityPlaceholderValue;
 - (id)accessibilityPostProcessHitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (id)accessibilityStringForTextMarkers:(id)arg1;
 - (unsigned long long)accessibilityTraits;
@@ -49,8 +58,11 @@
 - (void)accessibilityZoomOutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)description;
 - (NSInteger)indexOfAccessibilityElement:(id)arg1;
+- (BOOL)isScreenReaderRunning;
 - (void)postFocusChangeNotification;
 - (void)postLayoutChangeNotification;
+- (void)postScreenChangeNotification;
 - (void)postSelectedTextChangeNotification;
+- (id)screenReaderVersion;
 
 @end

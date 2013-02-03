@@ -2,33 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSString;
-
-@interface CoreDAVCopyTask : CoreDAVTask {
-    NSString *_destinationURL;
-    NSInteger _overwrite;
+@interface CoreDAVCopyTask : CoreDAVCopyOrMoveTask {
 }
 
 @property <CoreDAVCopyTaskDelegate> *delegate;
-@property(retain) NSString *destinationURL;
-@property NSInteger overwrite;
 
-+ (id)stringFromOverwriteValue:(NSInteger)arg1;
-
-- (id)additionalHeaderValues;
+- (void)_callBackToDelegateWithResponses:(id)arg1 error:(id)arg2;
 - (void)dealloc;
-- (id)description;
-- (id)destinationURL;
-- (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
-- (id)initWithRelativeURI:(id)arg1;
-- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 andOverwrite:(NSInteger)arg3;
-- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2;
-- (NSInteger)overwrite;
-- (BOOL)processData:(id)arg1 withParser:(id)arg2;
-- (id)requestBody;
-- (void)setDestinationURL:(id)arg1;
-- (void)setOverwrite:(NSInteger)arg1;
 - (BOOL)validate:(id*)arg1;
 
 @end

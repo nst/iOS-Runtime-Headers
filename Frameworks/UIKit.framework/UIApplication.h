@@ -34,6 +34,7 @@
         unsigned int deviceOrientation : 3; 
         unsigned int delegateShouldBeReleasedUponSet : 1; 
         unsigned int delegateHandleOpenURL : 1; 
+        unsigned int delegateOpenURL : 1; 
         unsigned int delegateDidReceiveMemoryWarning : 1; 
         unsigned int delegateWillTerminate : 1; 
         unsigned int delegateSignificantTimeChange : 1; 
@@ -49,7 +50,6 @@
         unsigned int delegateWillEnterForeground : 1; 
         unsigned int delegateWillSuspend : 1; 
         unsigned int delegateDidResume : 1; 
-        unsigned int idleTimerDisableActive : 1; 
         unsigned int userDefaultsSyncDisabled : 1; 
         unsigned int headsetButtonClickCount : 4; 
         unsigned int isHeadsetButtonDown : 1; 
@@ -64,7 +64,10 @@
         unsigned int touchRotationDisabled : 1; 
         unsigned int taskSuspendingUnsupported : 1; 
         unsigned int isUnitTests : 1; 
+        unsigned int requiresHighResolution : 1; 
         unsigned int disableViewContentScaling : 1; 
+        unsigned int singleUseLaunchOrientation : 3; 
+        unsigned int defaultInterfaceOrientation : 3; 
     } _applicationFlags;
     <UIApplicationDelegate> *_delegate;
     id _editAlertView;
@@ -112,6 +115,7 @@
 + (id)stringForInterfaceOrientation:(NSInteger)arg1;
 + (id)stringForStatusBarStyle:(NSInteger)arg1;
 
+- (BOOL)_accessibilityAllowsNotificationsDuringSuspension;
 - (NSInteger)_accessibilityApplicationForPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_accessibilityApplicationIsSystemWideServer;
 - (id)_accessibilityBundleIdentifier;
@@ -125,6 +129,8 @@
 - (void)_accessibilityInitialize;
 - (BOOL)_accessibilityIsSystemWideServer;
 - (BOOL)_accessibilityIsSystemWideServer;
+- (void)_accessibilityKeyboardDidHide:(id)arg1;
+- (void)_accessibilityKeyboardDidShow:(id)arg1;
 - (id)_accessibilityLastElement;
 - (id)_accessibilityMainWindow;
 - (id)_accessibilityNextElementsWithCount:(unsigned long)arg1 originalElement:(id)arg2;
@@ -141,10 +147,12 @@
 - (id)_accessibilityUserTestingChildren;
 - (void)_addRecorder:(id)arg1;
 - (void)_alertSheetStackChanged;
+- (BOOL)_alertWindowShouldRotate;
 - (void)_applicationOpenURL:(id)arg1 event:(struct __GSEvent { }*)arg2;
+- (void)_applicationOpenURL:(id)arg1 payload:(id)arg2;
 - (id)_backgroundModes;
 - (void)_beginShowingNetworkActivityIndicator;
-- (void)_callApplicationResumeHandlersForURL:(id)arg1 event:(struct __GSEvent { }*)arg2;
+- (void)_callApplicationResumeHandlersForURL:(id)arg1 payload:(id)arg2;
 - (void)_callInitializationDelegatesForURL:(id)arg1 payload:(id)arg2 suspended:(BOOL)arg3;
 - (BOOL)_canOpenURL:(id)arg1 publicURLsOnly:(BOOL)arg2;
 - (void)_cancelAllTouches;
@@ -158,12 +166,14 @@
 - (id)_createCurrentSnapshot;
 - (struct CGImage { }*)_createDefaultImageSnapshot;
 - (void)_createStatusBarWithRequestedStyle:(NSInteger)arg1 orientation:(NSInteger)arg2 hidden:(BOOL)arg3;
+- (NSInteger)_currentExpectedInterfaceOrientation;
 - (id)_currentTests;
 - (void)_dumpScreenContents:(struct __GSEvent { }*)arg1;
 - (void)_dumpUIHierarchy:(struct __GSEvent { }*)arg1;
 - (void)_endShowingNetworkActivityIndicator;
 - (id)_event;
 - (id)_exclusiveTouchWindows;
+- (BOOL)_executableWasLinkedWithUIKit;
 - (id)_extendLaunchTest;
 - (void)_fetchInfoPlistFlags;
 - (id)_findContainerAccessibleElement:(id)arg1 first:(BOOL)arg2;
@@ -208,9 +218,9 @@
 - (void)_noteAnimationFinished:(id)arg1;
 - (void)_noteAnimationStarted:(id)arg1;
 - (void)_notifyDidChangeStatusBarFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_notifySpringBoardOfStatusBarOrientationChangeAndFenceWithAnimationDuration:(double)arg1;
 - (void)_notifyWillChangeStatusBarFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_pathForFrameworkName:(id)arg1 inPrivate:(BOOL)arg2;
-- (id)_pathToDefaultImageNamed:(id)arg1 inDirectoryPath:(id)arg2;
 - (void)_performMemoryWarning;
 - (void)_playbackEvents:(id)arg1 atPlaybackRate:(float)arg2 messageWhenDone:(id)arg3 withSelector:(SEL)arg4;
 - (void)_playbackTimerCallback:(id)arg1;
@@ -231,6 +241,7 @@
 - (void)_removeSnapshotImage;
 - (void)_reportAppLaunchFinished;
 - (void)_reportResults:(id)arg1;
+- (BOOL)_requiresHighResolution;
 - (BOOL)_rotationDisabledDuringTouch;
 - (void)_run;
 - (void)_runWithURL:(id)arg1 payload:(id)arg2 launchOrientation:(NSInteger)arg3 statusBarStyle:(NSInteger)arg4 statusBarHidden:(BOOL)arg5;
@@ -281,6 +292,7 @@
 - (void)_updateOrientation;
 - (BOOL)_usesEmoji;
 - (BOOL)_usesPreMTAlertBehavior;
+- (NSInteger)_validateStatusBarStyle:(NSInteger)arg1;
 - (void)_wakeTimerFired;
 - (void)_writeApplicationDefaultPNGSnapshot;
 - (void)acceleratedInX:(float)arg1 Y:(float)arg2 Z:(float)arg3;
@@ -336,7 +348,6 @@
 - (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4 requireTopApplication:(BOOL)arg5;
 - (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4;
 - (NSUInteger)blockInteractionEventsCount;
-- (id)cacheDirectoryPath;
 - (BOOL)canOpenURL:(id)arg1;
 - (BOOL)canShowAlerts;
 - (void)cancelAllLocalNotifications;
@@ -346,7 +357,6 @@
 - (id)defaultFirstResponder;
 - (double)defaultImageSnapshotExpiration;
 - (id)delegate;
-- (void)deviceOrientationChanged:(struct __GSEvent { }*)arg1;
 - (void)didDismissMiniAlert;
 - (void)didReceiveMemoryWarning;
 - (void)didReceiveUrgentMemoryWarningSuspendedAndWillTerminate;
@@ -380,7 +390,6 @@
 - (id)init;
 - (NSInteger)interfaceOrientation;
 - (BOOL)isAnimatingSuspensionOrResumption;
-- (BOOL)isChinaDevice;
 - (BOOL)isHandlingOpenShortCut;
 - (BOOL)isHandlingURL;
 - (BOOL)isIdleTimerDisabled;
@@ -412,10 +421,11 @@
 - (void)menuButtonUp:(struct __GSEvent { }*)arg1;
 - (void)motionEnded:(NSInteger)arg1 withEvent:(id)arg2;
 - (id)nameOfDefaultImageToUpdateAtSuspension;
+- (void)openStoreURL:(id)arg1 forContext:(id)arg2;
 - (BOOL)openURL:(id)arg1;
 - (NSInteger)orientation;
-- (id)pathForSettingsFile:(id)arg1 ofType:(id)arg2;
 - (id)pathToDefaultImageNamed:(id)arg1;
+- (void)performDisablingStatusBarStyleValidation:(id)arg1;
 - (void)popRunLoopMode:(id)arg1;
 - (void)prepareForDefaultImageSnapshot;
 - (void)presentLocalNotificationNow:(id)arg1;
@@ -429,7 +439,6 @@
 - (void)removeStatusBarStyleOverrides:(NSInteger)arg1;
 - (BOOL)reportApplicationSuspended;
 - (void)requestDeviceUnlock;
-- (void)resetIdleDuration:(double)arg1;
 - (void)resetIdleTimerAndUndim;
 - (id)resultsForTest:(id)arg1;
 - (void)ringerChanged:(NSInteger)arg1;
@@ -459,6 +468,7 @@
 - (void)setExpectsFaceContact:(BOOL)arg1;
 - (void)setGlowAnimationEnabled:(BOOL)arg1 forStyle:(NSInteger)arg2;
 - (void)setHardwareKeyboardLayoutName:(id)arg1;
+- (void)setHardwareVolumeControlEnabled:(BOOL)arg1;
 - (void)setHasMiniAlerts:(BOOL)arg1;
 - (void)setIdleTimerDisabled:(BOOL)arg1;
 - (void)setIgnoresInteractionEvents:(BOOL)arg1;
@@ -468,6 +478,7 @@
 - (void)setProximitySensorEnabled:(BOOL)arg1;
 - (void)setReceivesMemoryWarnings:(BOOL)arg1;
 - (void)setRunningInTaskSwitcher:(BOOL)arg1;
+- (void)setScheduledLocalNotifications:(id)arg1;
 - (void)setSimpleRemoteRoutingPriority:(NSUInteger)arg1;
 - (void)setStatusBarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2 changeApplicationFlag:(BOOL)arg3;
@@ -496,7 +507,6 @@
 - (void)setSystemVolumeHUDEnabled:(BOOL)arg1 forAudioCategory:(id)arg2;
 - (void)setSystemVolumeHUDEnabled:(BOOL)arg1;
 - (void)setUsesBackgroundNetwork:(BOOL)arg1;
-- (id)settingsDirectoryPath;
 - (BOOL)shouldFenceStatusBarRotation;
 - (BOOL)shouldLaunchSafe;
 - (void)showNetworkPromptsIfNecessary:(BOOL)arg1;

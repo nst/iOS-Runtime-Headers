@@ -15,7 +15,7 @@
 @property(readonly) SUSectionsResponse *sectionsResponse;
 
 - (id)_copyLoadedItemImage:(id)arg1 returningError:(id*)arg2;
-- (id)_itemImageForSection:(id)arg1 imageType:(NSInteger)arg2;
+- (id)_itemImageForSection:(id)arg1 imageKind:(id)arg2;
 - (BOOL)_loadArtworkForSections:(id)arg1 returningError:(id*)arg2;
 - (void)_setSectionsResponse:(id)arg1;
 - (id)baseOperation;

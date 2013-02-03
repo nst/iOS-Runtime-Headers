@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKEvent, NSArray, UIActionSheet, EKEventEditItem, EKEventStore, <EKEventEditorDelegate>;
+@class NSArray, EKEventEditItem, <EKEventEditorDelegate>, UIResponder, UIActionSheet, EKEventStore, EKEvent;
 
 @interface EKEventEditor : UITableViewController <EKEventEditItemDelegate, UIActionSheetDelegate> {
     UIActionSheet *_alertSheet;
@@ -11,14 +11,19 @@
     NSArray *_editItems;
     <EKEventEditorDelegate> *_editorDelegate;
     EKEvent *_event;
+    BOOL _giveTitleCellKeyboardFocus;
+    UIResponder *_responderToRestoreOnAppearence;
     id _revertState;
+    BOOL _scrollToNotes;
     BOOL _simpleView;
     EKEventStore *_store;
 }
 
 @property <EKEventEditorDelegate> *editorDelegate;
 @property(retain) EKEvent *event;
+@property(retain) UIResponder *responderToRestoreOnAppearence;
 @property(retain) EKEventStore *store;
+@property BOOL scrollToNotes;
 
 - (BOOL)_canDetachSingleOccurrence;
 - (void)_cancelSheetButtonPressed:(NSInteger)arg1;
@@ -32,26 +37,34 @@
 - (void)_localeChanged;
 - (void)_performDelete:(NSInteger)arg1;
 - (BOOL)_performSave:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)_pinKeyboard:(BOOL)arg1;
 - (void)_presentDetachSheet;
+- (void)_presentValidationAlert:(id)arg1;
 - (void)_revertEvent;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
-- (void)adjustToOrientation:(NSInteger)arg1;
 - (void)cancel:(id)arg1;
 - (void)completeWithAction:(NSInteger)arg1 animated:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
 - (void)done:(id)arg1;
 - (id)editorDelegate;
 - (id)event;
+- (void)eventEditItem:(id)arg1 wantsKeyboardPinned:(BOOL)arg2;
 - (void)eventEditItemDidCommit:(id)arg1;
 - (void)eventEditItemDidEndEditing:(id)arg1;
 - (void)eventEditItemDidStartEditing:(id)arg1;
+- (void)eventEditItemTextChanged:(id)arg1;
 - (id)init;
 - (void)loadView;
 - (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (id)responderToRestoreOnAppearence;
 - (BOOL)saveWithSpan:(NSInteger)arg1 animated:(BOOL)arg2;
+- (BOOL)scrollToNotes;
 - (void)setEditorDelegate:(id)arg1;
 - (void)setEvent:(id)arg1;
+- (void)setResponderToRestoreOnAppearence:(id)arg1;
+- (void)setScrollToNotes:(BOOL)arg1;
 - (void)setStore:(id)arg1;
 - (void)setupForEvent;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
@@ -60,7 +73,9 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

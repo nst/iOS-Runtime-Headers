@@ -61,6 +61,7 @@
 - (id)_automationValue;
 - (id)_keyboardResponder;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (Class)_printFormatterClass;
 - (void)_setLtoRTextDirection:(id)arg1;
 - (void)_setRtoLTextDirection:(id)arg1;
 - (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;

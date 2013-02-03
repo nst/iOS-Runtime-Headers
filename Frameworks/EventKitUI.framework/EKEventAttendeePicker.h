@@ -4,7 +4,7 @@
 
 @class NSNumber, UIKeyboard, _MFComposeRecipientView, UITableView, MFContactsSearchManager, MFContactsSearchResultsModel, MFSearchShadowView, NSString, UIScrollView, NSArray;
 
-@interface EKEventAttendeePicker : UIViewController <ABPeoplePickerNavigationControllerDelegate, MFContactsSearchConsumer, _MFComposeRecipientViewDelegate> {
+@interface EKEventAttendeePicker : UIViewController <ABPeoplePickerNavigationControllerDelegate, MFContactsSearchConsumer, _MFComposeRecipientViewDelegate, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -29,12 +29,14 @@
     BOOL _showingSearchField;
 }
 
+@property(readonly) NSArray *addresses;
+@property(copy) NSArray *recipients;
+@property(readonly) NSString *remainingText;
 @property(copy) NSString *searchAccountID;
 
 - (void)_copyRecipientsFromComposeView;
 - (void)_hideSearchFieldAndCancelOutstandingSearches:(BOOL)arg1;
 - (float)_maxScrollerHeight;
-- (id)_modalViewPresenter;
 - (float)_properHeight;
 - (id)_searchManager;
 - (id)_searchResultsView;
@@ -49,6 +51,7 @@
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(NSInteger)arg3;
 - (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)composeRecipientView:(id)arg1 requestDeleteRecipientAtIndex:(NSInteger)arg2;
+- (void)composeRecipientView:(id)arg1 showPersonCardForAtom:(id)arg2;
 - (void)composeRecipientView:(id)arg1 textDidChange:(id)arg2;
 - (void)composeRecipientViewDidFinishEnteringRecipient:(id)arg1;
 - (void)composeRecipientViewDidFinishPickingRecipient:(id)arg1;
@@ -58,10 +61,12 @@
 - (void)endedNetworkActivity;
 - (void)finishedSearchingForType:(NSInteger)arg1;
 - (void)finishedTaskWithID:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)loadView;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
+- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
 - (id)recipients;
 - (id)remainingText;
 - (id)searchAccountID;
@@ -72,6 +77,8 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
+- (BOOL)unknownPersonViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
 - (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;

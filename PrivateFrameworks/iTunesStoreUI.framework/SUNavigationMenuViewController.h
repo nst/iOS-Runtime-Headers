@@ -11,6 +11,7 @@
 @property(readonly) SUNavigationMenu *navigationMenu;
 
 - (void)_cancelAction:(id)arg1;
+- (void)_protocolButtonAction:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithNavigationMenu:(id)arg1;

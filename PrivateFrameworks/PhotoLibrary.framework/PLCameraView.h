@@ -95,6 +95,7 @@
 @property NSInteger flashMode;
 @property(readonly) BOOL isCameraReady;
 @property NSInteger photoFlashMode;
+@property NSInteger photoFlashModeBeforeHDR;
 @property NSInteger previewZoomMode;
 
 + (void)_initializeSafeCategory;
@@ -145,6 +146,7 @@
 - (void)_removeSnapshotView;
 - (void)_removeVideoCaptureFileAtPath:(id)arg1;
 - (void)_resetDiskSpaceWarning;
+- (void)_resetImageTile;
 - (id)_scriptingInfo;
 - (void)_setBottomBarEnabled:(BOOL)arg1;
 - (void)_setHDRButtonAlpha:(float)arg1 duration:(float)arg2;
@@ -207,6 +209,7 @@
 - (void)cropOverlayWasOKed:(id)arg1;
 - (void)dealloc;
 - (void)didMoveToSuperview;
+- (void)didMoveToWindow;
 - (void)disableCamera;
 - (void)enableCamera;
 - (void)flashButtonDidCollapse:(id)arg1;
@@ -223,6 +226,7 @@
 - (void)openIrisWithDidFinishSelector:(SEL)arg1;
 - (id)overlayView;
 - (NSInteger)photoFlashMode;
+- (NSInteger)photoFlashModeBeforeHDR;
 - (NSInteger)photoSavingOptions;
 - (BOOL)photoTileViewControllerIsDisplayingLandscape:(id)arg1;
 - (void)prepareForDefaultImageSnapshot;
@@ -249,6 +253,7 @@
 - (void)setManipulatingCrop:(BOOL)arg1;
 - (void)setOverlayView:(id)arg1;
 - (void)setPhotoFlashMode:(NSInteger)arg1;
+- (void)setPhotoFlashModeBeforeHDR:(NSInteger)arg1;
 - (void)setPhotoSavingOptions:(NSInteger)arg1;
 - (void)setPreviewViewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setPreviewZoomMode:(NSInteger)arg1;
@@ -269,7 +274,7 @@
 - (void)videoViewDidEndPlayback:(id)arg1 didFinish:(BOOL)arg2;
 - (void)videoViewDidPausePlayback:(id)arg1;
 - (void)videoViewIsReadyToBeginPlayback:(id)arg1;
-- (float)videoViewScrubberYOrigin:(id)arg1;
+- (float)videoViewScrubberYOrigin:(id)arg1 forOrientation:(NSInteger)arg2;
 - (BOOL)videoViewShouldDisplayScrubber:(id)arg1;
 - (void)viewDidAppear;
 - (void)viewWillBeDisplayed;

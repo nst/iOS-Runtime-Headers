@@ -2,13 +2,23 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIButton, UILabel, MPVolumeSlider, MPAudioDeviceController;
+@class UIButton, UILabel, MPAudioVideoRoutingActionSheet, MPVolumeSlider, MPAudioVideoRoutingPopoverController, MPAudioDeviceController;
 
 @interface MPVolumeViewInternal : NSObject {
+    MPAudioVideoRoutingActionSheet *_actionSheet;
     MPAudioDeviceController *_audioDeviceController;
+    BOOL _hidesRouteLabelWhenNoRouteChoice;
     UIButton *_routeButton;
     UILabel *_routeLabel;
+    MPAudioVideoRoutingPopoverController *_routePopoverController;
+    BOOL _showingButton;
+    BOOL _showingLabel;
+    BOOL _showingSlider;
+    BOOL _showsRouteButton;
+    BOOL _showsVolumeSlider;
+    NSInteger _style;
     MPVolumeSlider *_volumeSlider;
+    BOOL _volumeSliderShrinksFromBothEnds;
 }
 
 @end

@@ -2,39 +2,54 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class UIColor, NSArray;
+@class NSArray;
 
-@interface GKMultiColumnTableViewCell : UITableViewCell {
+@interface GKMultiColumnTableViewCell : GKTableViewCell {
     NSUInteger _columnCount;
-    UIColor *_columnSeparatorColor;
+    SEL _columnCountSetter;
     float _columnSeparatorWidth;
-    NSArray *_columnSeparators;
-    BOOL _columnSeparatorsHidden;
     NSArray *_contentsArray;
+    BOOL _multiCellEnabled;
+    NSInteger _selectedColumn;
+    SEL _selectedColumnSetter;
 }
 
-@property(retain) UIColor *columnSeparatorColor;
-@property(copy) NSArray *columnSeparators;
+@property(readonly) GKCellBackgroundView *cellBackgroundView;
 @property(copy) NSArray *contentsArray;
+@property(readonly) GKCellBackgroundView *selectedCellBackgroundView;
 @property NSUInteger columnCount;
+@property SEL columnCountSetter;
 @property float columnSeparatorWidth;
-@property BOOL columnSeparatorsHidden;
+@property BOOL multiCellEnabled;
+@property NSInteger selectedColumn;
+@property SEL selectedColumnSetter;
 
-- (void)_configureSeparatorsForColumnCount:(NSUInteger)arg1;
+- (void)_updateHighlightColorsForView:(id)arg1 highlighted:(BOOL)arg2;
+- (id)cellBackgroundView;
 - (NSUInteger)columnCount;
-- (id)columnSeparatorColor;
+- (SEL)columnCountSetter;
 - (float)columnSeparatorWidth;
-- (id)columnSeparators;
-- (BOOL)columnSeparatorsHidden;
+- (void)configureBackgroundView;
 - (id)contentsArray;
 - (void)dealloc;
-- (id)initWithReuseIdentifier:(id)arg1;
+- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(NSInteger)arg3 backgroundStyle:(NSInteger)arg4;
 - (void)layoutSubviews;
+- (BOOL)multiCellEnabled;
+- (void)prepareForReuse;
+- (id)selectedCellBackgroundView;
+- (NSInteger)selectedColumn;
+- (SEL)selectedColumnSetter;
 - (void)setColumnCount:(NSUInteger)arg1;
-- (void)setColumnSeparatorColor:(id)arg1;
+- (void)setColumnCountSetter:(SEL)arg1;
 - (void)setColumnSeparatorWidth:(float)arg1;
-- (void)setColumnSeparators:(id)arg1;
-- (void)setColumnSeparatorsHidden:(BOOL)arg1;
 - (void)setContentsArray:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setMultiCellEnabled:(BOOL)arg1;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSelectedColumn:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)setSelectedColumn:(NSInteger)arg1;
+- (void)setSelectedColumnSetter:(SEL)arg1;
+- (void)updateBackgroundViews;
 
 @end

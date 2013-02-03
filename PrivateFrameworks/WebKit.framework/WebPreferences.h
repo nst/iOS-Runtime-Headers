@@ -18,9 +18,10 @@
 + (void)_setInstance:(id)arg1 forIdentifier:(id)arg2;
 + (unsigned long)_systemCFStringEncoding;
 + (void)initialize;
-+ (id)standardMailWebPreferences:(BOOL)arg1;
++ (id)standardMailWebPreferencesForDisplayStyle:(NSInteger)arg1 regenerate:(BOOL)arg2;
 + (id)standardPreferences;
 
+- (BOOL)_allowMultiElementImplicitFormSubmission;
 - (BOOL)_alwaysUseBaselineOfPrimaryFont;
 - (double)_backForwardCacheExpirationInterval;
 - (BOOL)_boolValueForKey:(id)arg1;
@@ -32,11 +33,13 @@
 - (void)_invalidateCachedPreferences;
 - (NSInteger)_layoutInterval;
 - (id)_localStorageDatabasePath;
+- (long long)_longLongValueForKey:(id)arg1;
 - (float)_maxParseDuration;
 - (unsigned long)_maximumImageSize;
 - (long long)_maximumResourceDataLength;
 - (float)_minimumZoomFontSize;
 - (void)_postPreferencesChangesNotification;
+- (void)_setAllowMultiElementImplicitFormSubmission:(BOOL)arg1;
 - (void)_setAlwaysUseBaselineOfPrimaryFont:(BOOL)arg1;
 - (void)_setBoolValue:(BOOL)arg1 forKey:(id)arg2;
 - (void)_setFTPDirectoryTemplatePath:(id)arg1;
@@ -46,6 +49,7 @@
 - (void)_setIntegerValue:(NSInteger)arg1 forKey:(id)arg2;
 - (void)_setLayoutInterval:(NSInteger)arg1;
 - (void)_setLocalStorageDatabasePath:(id)arg1;
+- (void)_setLongLongValue:(long long)arg1 forKey:(id)arg2;
 - (void)_setMaxParseDuration:(float)arg1;
 - (void)_setMinimumZoomFontSize:(float)arg1;
 - (void)_setPreferenceForTestWithValue:(id)arg1 forKey:(id)arg2;
@@ -61,9 +65,12 @@
 - (BOOL)_useSiteSpecificSpoofing;
 - (id)_valueForKey:(id)arg1;
 - (BOOL)acceleratedCompositingEnabled;
+- (BOOL)allowFileAccessFromFileURLs;
 - (BOOL)allowUniversalAccessFromFileURLs;
 - (BOOL)allowsAnimatedImageLooping;
 - (BOOL)allowsAnimatedImages;
+- (long long)applicationCacheDefaultOriginQuota;
+- (long long)applicationCacheTotalQuota;
 - (BOOL)applicationChromeModeEnabled;
 - (BOOL)arePlugInsEnabled;
 - (BOOL)authorAndUserStylesEnabled;
@@ -87,6 +94,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
+- (BOOL)isDNSPrefetchingEnabled;
 - (BOOL)isDOMPasteAllowed;
 - (BOOL)isFrameFlatteningEnabled;
 - (BOOL)isJavaEnabled;
@@ -105,15 +113,19 @@
 - (id)sansSerifFontFamily;
 - (id)serifFontFamily;
 - (void)setAcceleratedCompositingEnabled:(BOOL)arg1;
+- (void)setAllowFileAccessFromFileURLs:(BOOL)arg1;
 - (void)setAllowUniversalAccessFromFileURLs:(BOOL)arg1;
 - (void)setAllowsAnimatedImageLooping:(BOOL)arg1;
 - (void)setAllowsAnimatedImages:(BOOL)arg1;
+- (void)setApplicationCacheDefaultOriginQuota:(long long)arg1;
+- (void)setApplicationCacheTotalQuota:(long long)arg1;
 - (void)setApplicationChromeModeEnabled:(BOOL)arg1;
 - (void)setAuthorAndUserStylesEnabled:(BOOL)arg1;
 - (void)setAutomaticallyDetectsCacheModel:(BOOL)arg1;
 - (void)setAutosaves:(BOOL)arg1;
 - (void)setCacheModel:(NSUInteger)arg1;
 - (void)setCursiveFontFamily:(id)arg1;
+- (void)setDNSPrefetchingEnabled:(BOOL)arg1;
 - (void)setDOMPasteAllowed:(BOOL)arg1;
 - (void)setDatabasesEnabled:(BOOL)arg1;
 - (void)setDefaultFixedFontSize:(NSInteger)arg1;

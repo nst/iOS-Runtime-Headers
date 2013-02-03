@@ -7,10 +7,15 @@
 
 + (void)_initializeSafeCategory;
 
+- (id)_accessibilityHeaderElement;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)_accessibilityScrollStatus;
+- (BOOL)_accessibilityServesAsContainingParentForOrdering;
+- (id)_accessibilitySubviews;
 - (id)_accessibilitySupplementaryFooterViews;
 - (id)_accessibilitySupplementaryHeaderViews;
+- (id)_accessibilityUserTestingVisibleCells;
+- (id)_accessibilityUserTestingVisibleSections;
 - (void)_endReorderingForCell:(id)arg1 wasCancelled:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)_reorderPositionChangedForCell:(id)arg1;
 - (id)accessibilityElementAtIndex:(NSInteger)arg1;
@@ -25,6 +30,7 @@
 - (void)deleteRowsAtIndexPaths:(id)arg1 withRowAnimation:(NSInteger)arg2;
 - (void)deleteSections:(id)arg1 withRowAnimation:(NSInteger)arg2;
 - (id)dequeueReusableCellWithIdentifier:(id)arg1;
+- (id)description;
 - (NSInteger)indexOfAccessibilityElement:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(NSInteger)arg2;
 - (void)insertRowsAtIndexPaths:(id)arg1 withRowAnimation:(NSInteger)arg2;
@@ -33,6 +39,7 @@
 - (void)reloadData;
 - (void)reloadRowsAtIndexPaths:(id)arg1 withRowAnimation:(NSInteger)arg2;
 - (void)reloadSections:(id)arg1 withRowAnimation:(NSInteger)arg2;
+- (void)setCountString:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setTableHeaderViewShouldAutoHide:(BOOL)arg1;
 

@@ -16,6 +16,7 @@
 - (void)dealloc;
 - (id)defaultsData;
 - (id)initWithController:(id)arg1;
+- (void)releaseCategories;
 - (void)setDefaultsData:(id)arg1;
 - (void)updateRecents;
 

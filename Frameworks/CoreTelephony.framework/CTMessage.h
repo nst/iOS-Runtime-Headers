@@ -54,6 +54,9 @@
 - (NSInteger)messageType;
 - (id)rawHeaders;
 - (id)recipients;
+- (void)removePartAtIndex:(NSUInteger)arg1;
+- (void)removeRecipient:(id)arg1;
+- (void)removeRecipientsInArray:(id)arg1;
 - (NSUInteger)replaceMessage;
 - (id)sender;
 - (id)serviceCenter;
@@ -62,6 +65,8 @@
 - (void)setMessageId:(NSUInteger)arg1;
 - (void)setMessageType:(NSInteger)arg1;
 - (void)setRawHeaders:(id)arg1;
+- (void)setRecipient:(id)arg1;
+- (void)setRecipients:(id)arg1;
 - (void)setReplaceMessage:(NSUInteger)arg1;
 - (void)setSender:(id)arg1;
 - (void)setServiceCenter:(id)arg1;

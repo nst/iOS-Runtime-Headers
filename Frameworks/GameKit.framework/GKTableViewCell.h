@@ -19,6 +19,7 @@
         float bottom; 
         float right; 
     } _backgroundInsets;
+    NSInteger _backgroundStyle;
     } _contentInsets;
     UIView<GKTableViewCellContents> *_contents;
     UIImageView *_disclosureIndicator;
@@ -29,16 +30,22 @@
 @property(retain) UIView<GKTableViewCellContents> *contents;
 @property(retain) GKUITheme *theme;
 @property UIEdgeInsets backgroundInsets;
+@property NSInteger backgroundStyle;
 @property UIEdgeInsets contentInsets;
 @property(readonly) BOOL isGroupedTableView;
 @property BOOL leaveAccessorySpace;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInsets;
+- (NSInteger)backgroundStyle;
 - (void)configureBackgroundView;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)contents;
 - (void)dealloc;
-- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(NSInteger)arg3;
+- (id)description;
+- (id)initWithReuseIdentifier:(id)arg1 tableViewStyle:(NSInteger)arg2 backgroundStyle:(NSInteger)arg3;
+- (id)initWithReuseIdentifier:(id)arg1 tableViewStyle:(NSInteger)arg2;
+- (id)initWithReuseIdentifier:(id)arg1;
+- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(NSInteger)arg3 backgroundStyle:(NSInteger)arg4;
 - (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isGroupedTableView;
 - (BOOL)isSelectable;
@@ -47,6 +54,7 @@
 - (void)prepareForReuse;
 - (void)setAccessoryType:(NSInteger)arg1;
 - (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setBackgroundStyle:(NSInteger)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setContents:(id)arg1;

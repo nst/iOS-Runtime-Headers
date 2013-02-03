@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSURL, UIActionSheet, <UIDocumentInteractionControllerDelegate>, UIView, NSString, UIPopoverController, UIViewController, NSArray;
+@class UIBarButtonItem, NSURL, UIActionSheet, <UIDocumentInteractionControllerDelegate>, UIView, NSString, UIPopoverController, UIViewController, NSArray;
 
 @interface UIDocumentInteractionController : NSObject <UIActionSheetDelegate> {
     struct CGRect { 
@@ -51,11 +51,13 @@
     UIViewController *_openInViewController;
     UIActionSheet *_optionsMenu;
     UIPopoverController *_popoverController;
+    UIBarButtonItem *_presentItem;
     } _presentRect;
     UIView *_presentView;
     UIViewController *_presentingViewController;
     id _previewController;
     id _previewItemProxy;
+    NSInteger _printButtonIndex;
     NSInteger _quickLookButtonIndex;
     BOOL _shouldUnzipDocument;
     NSString *_uniqueIdentifier;

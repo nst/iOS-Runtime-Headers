@@ -5,6 +5,6 @@
 @interface CoreDAVAddressBookMultiGetTask : CoreDAVContainerMultiGetTask {
 }
 
-- (id)initWithHREFs:(id)arg1 atRelativeURI:(id)arg2 appSpecificDataItemClass:(Class)arg3;
+- (id)initWithURLs:(id)arg1 atContainerURL:(id)arg2 appSpecificDataItemClass:(Class)arg3;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUItemImage, NSString, NSDictionary;
+@class SSItemArtworkImage, NSString, NSDictionary;
 
 @interface SUItemContentRating : NSObject <NSCopying> {
     NSDictionary *_dictionary;
@@ -10,13 +10,13 @@
     NSString *_ratingDescription;
     NSString *_ratingLabel;
     NSInteger _ratingSystem;
-    SUItemImage *_ratingSystemLogo;
+    SSItemArtworkImage *_ratingSystemLogo;
     BOOL _shouldHideWhenRestricted;
 }
 
 @property(copy) NSString *ratingDescription;
 @property(copy) NSString *ratingLabel;
-@property(copy) SUItemImage *ratingSystemLogo;
+@property(copy) SSItemArtworkImage *ratingSystemLogo;
 @property(getter=isExplicitContent,readonly) BOOL explicitContent;
 @property NSInteger rank;
 @property NSInteger ratingSystem;
@@ -25,6 +25,10 @@
 
 + (NSInteger)ratingSystemFromString:(id)arg1;
 
+- (BOOL)_isRatingSystemForApps:(NSInteger)arg1;
+- (BOOL)_isRatingSystemForMovies:(NSInteger)arg1;
+- (BOOL)_isRatingSystemForMusic:(NSInteger)arg1;
+- (BOOL)_isRatingSystemForTV:(NSInteger)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;

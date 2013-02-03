@@ -10,6 +10,7 @@
 
 + (void)_dbSaveCoalesceBegin;
 + (void)_dbSaveCoalesceEnd;
++ (void)_dbSyncAlreadyActive;
 + (void)_dbSyncDidEnd;
 + (void)_dbSyncWillBegin;
 + (id)geniusDatabasePath;

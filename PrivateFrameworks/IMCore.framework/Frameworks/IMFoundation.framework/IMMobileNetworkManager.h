@@ -5,13 +5,24 @@
 @class NSMutableSet, NSLock;
 
 @interface IMMobileNetworkManager : IMNetworkManager {
-    unsigned int _registered : 1;
-    unsigned int _shouldBringUpDataContext : 1;
-    unsigned int _dataContextActive : 1;
     NSMutableSet *_autoAssociationTokens;
+    BOOL _dataContextActive;
     NSLock *_lock;
+    BOOL _registered;
+    BOOL _shouldBringUpDataContext;
     void *_wifiManager;
 }
+
+@property BOOL isDataConnectionActive; /* unknown property attribute: SsetDataConnectionActive: */
+@property(retain,readonly) NSNumber *wiFiScaledRSSI;
+@property(retain,readonly) NSNumber *wiFiScaledRate;
+@property(retain,readonly) NSNumber *wiFiSignalStrength;
+@property(readonly) BOOL autoAssociateWiFi;
+@property(readonly) BOOL dataConnectionExists;
+@property(readonly) BOOL isWiFiAssociated;
+@property(readonly) BOOL isWiFiEnabled;
+@property(readonly) BOOL willTryToAutoAssociateWiFiNetwork;
+@property(readonly) BOOL willTryToSearchForWiFiNetwork;
 
 - (void)_adjustWiFiAutoAssociation;
 - (void)_adjustWiFiAutoAssociationLocked;
@@ -31,6 +42,9 @@
 - (BOOL)isWiFiEnabled;
 - (void)removeWiFiAutoAssociationClientToken:(id)arg1;
 - (void)setDataConnectionActive:(BOOL)arg1;
+- (id)wiFiScaledRSSI;
+- (id)wiFiScaledRate;
+- (id)wiFiSignalStrength;
 - (BOOL)willTryToAutoAssociateWiFiNetwork;
 - (BOOL)willTryToSearchForWiFiNetwork;
 

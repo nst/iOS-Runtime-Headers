@@ -18,6 +18,9 @@
 - (void)_setupUI;
 - (void)_storeEnabledChangeNotification:(id)arg1;
 - (void)_teardownUI;
+- (void)application:(id)arg1 didFailToRegisterForRemoteNotificationsWithError:(id)arg2;
+- (void)application:(id)arg1 didReceiveRemoteNotification:(id)arg2;
+- (void)application:(id)arg1 didRegisterForRemoteNotificationsWithDeviceToken:(id)arg2;
 - (BOOL)application:(id)arg1 handleOpenURL:(id)arg2;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationDidFinishLaunching:(id)arg1;

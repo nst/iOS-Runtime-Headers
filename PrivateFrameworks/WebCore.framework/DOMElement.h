@@ -27,10 +27,12 @@
 @property NSInteger scrollTop;
 @property(readonly) NSInteger scrollWidth;
 
++ (id)_DOMElementFromJSContext:(struct OpaqueJSContext { }*)arg1 value:(struct OpaqueJSValue { }*)arg2;
 + (BOOL)isRichTextStyle:(id)arg1;
 
 - (struct __GSFont { }*)_font;
 - (id)_getURLAttribute:(id)arg1;
+- (id)_markerTextForListItem;
 - (void)blur;
 - (NSUInteger)childElementCount;
 - (NSInteger)clientHeight;

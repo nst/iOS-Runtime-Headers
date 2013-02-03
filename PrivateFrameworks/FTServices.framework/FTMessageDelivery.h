@@ -5,7 +5,6 @@
 @class NSNumber, NSMutableData, PCPersistentTimer, NSDate, FTMessageQueue, NSURLConnection, NSString, NSData, NSArray;
 
 @interface FTMessageDelivery : NSObject <FTMessageQueueDelegate> {
-    unsigned int _shouldQueue : 1;
     NSArray *_clientCertificates;
     struct __SecIdentity { } *_clientIdentity;
     NSMutableData *_currentResponseData;
@@ -20,6 +19,7 @@
     NSUInteger _retries;
     NSDate *_retryDate;
     PCPersistentTimer *_retryTimer;
+    BOOL _shouldQueue;
     NSData *_signature;
     NSString *_userAgent;
     NSString *_userID;

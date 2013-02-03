@@ -26,7 +26,9 @@
 + (BOOL)isRecognizedClassForContent:(id)arg1;
 + (BOOL)parseContentTypeHeader:(id)arg1 type:(id*)arg2 subtype:(id*)arg3;
 
+- (void)_contents:(id*)arg1 toOffset:(NSUInteger)arg2 resultOffset:(NSUInteger*)arg3 downloadIfNecessary:(BOOL)arg4 asHTML:(BOOL)arg5 isComplete:(BOOL*)arg6;
 - (id)_fullMimeTypeEvenInsideAppleDouble;
+- (BOOL)_hasCompleteBodyDataToOffset:(NSUInteger)arg1;
 - (id)_partThatIsAttachment;
 - (BOOL)_shouldContinueDecodingProcess;
 - (void)addSubpart:(id)arg1;
@@ -77,6 +79,7 @@
 - (id)fileWrapperForcingDownload:(BOOL)arg1;
 - (id)firstChildPart;
 - (void)getNumberOfAttachments:(NSUInteger*)arg1 isSigned:(BOOL*)arg2 isEncrypted:(BOOL*)arg3;
+- (BOOL)hasContents;
 - (id)init;
 - (BOOL)isAttachment;
 - (BOOL)isHTML;

@@ -26,7 +26,7 @@
 - (void)cancelLoadFromSource:(id)arg1 forObject:(id)arg2 forImageLoadingQueue:(id)arg3;
 - (void)dealloc;
 - (id)initWithImageCache:(id)arg1;
-- (id)loadImageFromSource:(id)arg1 forObject:(id)arg2 forImageLoadingQueue:(id)arg3 synchronously:(BOOL)arg4 priority:(NSInteger)arg5;
+- (id)loadImageFromSource:(id)arg1 forObject:(id)arg2 forImageLoadingQueue:(id)arg3 synchronously:(BOOL)arg4 priority:(NSInteger)arg5 completion:(id)arg6;
 - (void)pause;
 - (void)removeImageLoadingQueue:(id)arg1;
 - (void)resume;

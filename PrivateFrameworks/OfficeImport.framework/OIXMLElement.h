@@ -12,7 +12,7 @@
 + (void)_initEmptyHTMLNames;
 + (BOOL)isEmptyHTMLElement:(id)arg1;
 
-- (void)_appendXMLStringToString:(struct __CFString { }*)arg1;
+- (void)_appendXMLStringToString:(struct __CFString { }*)arg1 level:(NSInteger)arg2;
 - (void)addAttribute:(id)arg1;
 - (void)addChild:(id)arg1;
 - (NSInteger)attributeCount;

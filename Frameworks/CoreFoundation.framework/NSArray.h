@@ -35,6 +35,7 @@
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
 - (id)CA_interpolateValues:(id)arg1 :(id)arg2 :(id)arg3 interpolator:(const struct ValueInterpolator { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x10; }*)arg4;
 - (BOOL)ICSContainsArray:(id)arg1;
+- (BOOL)MPIsEmpty;
 - (void)_ICSParametersAppendingToString:(id)arg1;
 - (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
 - (id)_avgForKeyPath:(id)arg1;
@@ -46,6 +47,7 @@
 - (id)_distinctUnionOfSetsForKeyPath:(id)arg1;
 - (struct CGSize { float x1; float x2; })_drawComponentsJoinedByString:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; }*)arg2 forWidth:(float)arg3 withFont:(id)arg4 lineBreakMode:(NSInteger)arg5;
 - (id)_initWithObjectsFromArray:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (id)_intersectionWithArray:(id)arg1;
 - (id)_kb_firstObject;
 - (BOOL)_kb_firstObjectsEqual:(NSUInteger)arg1;
 - (BOOL)_kb_firstTwoObjectsEqual;
@@ -59,9 +61,9 @@
 - (id)_minForKeyPath:(id)arg1;
 - (id)_mutableArrayValueForKeyPath:(id)arg1 ofObjectAtIndex:(NSUInteger)arg2;
 - (id)_mutableSetValueForKeyPath:(id)arg1 ofObjectAtIndex:(NSUInteger)arg2;
-- (id)_newPasteboardDictionaryForMediaFileAtPath:(id)arg1;
 - (id)_nextKeywordUsingCursors:(struct __CFDictionary { }*)arg1;
 - (id)_nextToLastObject;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_rangeWithStartIndex:(NSInteger)arg1 endIndex:(NSInteger)arg2;
 - (id)_scrambledKeywordsAndAddToSet:(id)arg1;
 - (void)_setValue:(id)arg1 forKeyPath:(id)arg2 ofObjectAtIndex:(NSUInteger)arg3;
 - (id)_spliceAt:(NSInteger)arg1 amount:(NSInteger)arg2 andInsert:(id)arg3;
@@ -204,7 +206,6 @@
 - (id)sortedArrayUsingSelector:(SEL)arg1 hint:(id)arg2;
 - (id)sortedArrayUsingSelector:(SEL)arg1;
 - (id)sortedArrayWithOptions:(NSUInteger)arg1 usingComparator:(id)arg2;
-- (id)sortedAttendeeDisplayStringsIgnoringNonHumans;
 - (id)sortedPartsFromSMIL;
 - (id)specifierForID:(id)arg1;
 - (id)stringsByAppendingPathComponent:(id)arg1;

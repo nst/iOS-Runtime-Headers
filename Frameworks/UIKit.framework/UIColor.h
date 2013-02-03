@@ -7,20 +7,11 @@
 
 @property(readonly) CGColor *CGColor;
 
-+ (id)_adlib_colorWithRGBA:(NSUInteger)arg1;
 + (id)_gkColorFromRGBAHexString:(id)arg1;
 + (id)_mapkit_userLocationAccuracyRingFillColor;
 + (id)_mapkit_userLocationAccuracyRingStrokeColor;
 + (id)_textCaretColorDefault;
 + (id)_textCaretColorNotes;
-+ (id)abCardBackgroundColor;
-+ (id)abCardFrameBackgroundColor;
-+ (id)abDimmingBackgroundColor;
-+ (id)abGridViewBackgroundColor;
-+ (id)abLargeCardBackgroundColor;
-+ (id)abMasterDividerColor;
-+ (id)abMoreLabelColor;
-+ (id)abPersonCellMapFrameColor;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)blackColor;
 + (id)blueColor;
@@ -30,7 +21,6 @@
 + (id)colorWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
 + (id)colorWithPatternImage:(id)arg1;
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-+ (id)colorWithString:(id)arg1;
 + (id)colorWithStyleString:(id)arg1;
 + (id)colorWithWhite:(float)arg1 alpha:(float)arg2;
 + (id)cyanColor;
@@ -109,6 +99,7 @@
 - (id)initWithWhite:(float)arg1 alpha:(float)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isGreenOrYellow;
+- (BOOL)isPatternColor;
 - (float)luminance;
 - (id)overlayWithColor:(id)arg1;
 - (float)redComponent;
@@ -117,7 +108,6 @@
 - (void)setFill;
 - (void)setStroke;
 - (id)soverWithColor:(id)arg1;
-- (id)stringValue;
 - (id)styleString;
 
 @end

@@ -37,6 +37,7 @@
 - (BOOL)ownsTransportControls;
 - (void)restoreOverlayViewAfterTransition:(id)arg1;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
+- (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2 force:(BOOL)arg3;
 - (void)setDesiredParts:(NSUInteger)arg1 animate:(BOOL)arg2;
 - (void)setDisabledParts:(NSUInteger)arg1;
@@ -52,7 +53,6 @@
 - (void)swipableView:(id)arg1 tappedWithCount:(NSUInteger)arg2;
 - (BOOL)transportControls:(id)arg1 tappedButtonPart:(NSUInteger)arg2;
 - (void)transportControlsDidResize:(id)arg1;
-- (BOOL)usePosterForTVOut;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

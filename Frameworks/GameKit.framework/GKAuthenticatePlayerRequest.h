@@ -6,6 +6,7 @@
 
 @interface GKAuthenticatePlayerRequest : GKDataRequest {
     NSDictionary *_alertDictionary;
+    BOOL _loginDisabled;
     NSString *_password;
     NSString *_username;
 }
@@ -13,15 +14,18 @@
 @property(retain) NSDictionary *alertDictionary;
 @property(retain) NSString *password;
 @property(retain) NSString *username;
+@property BOOL loginDisabled;
 
 - (id)alertDictionary;
 - (BOOL)authenticationRequired;
 - (void)dealloc;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)key;
+- (BOOL)loginDisabled;
 - (id)password;
 - (id)request;
 - (void)setAlertDictionary:(id)arg1;
+- (void)setLoginDisabled:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;

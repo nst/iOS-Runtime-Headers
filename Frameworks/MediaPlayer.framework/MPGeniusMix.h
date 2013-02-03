@@ -2,21 +2,22 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MLQuery, NSArray, MLPlaylist, NSMutableArray;
+@class MPMediaPlaylist, NSArray, MPMediaQuery, NSMutableArray;
 
 @interface MPGeniusMix : NSObject <NSCoding> {
-    MLPlaylist *_playlist;
+    MPMediaPlaylist *_playlist;
     NSArray *_representativeArtists;
-    NSMutableArray *_representativeImageTracks;
-    MLQuery *_seedTracksQuery;
+    NSMutableArray *_representativeImageItems;
+    MPMediaQuery *_seedTracksQuery;
 }
 
 @property(readonly) NSString *name;
+@property(readonly) MPMediaPlaylist *playlist;
 @property(readonly) NSArray *representativeArtists;
-@property(readonly) MLQuery *seedTracksQuery;
+@property(readonly) MPMediaQuery *seedTracksQuery;
 
 + (id)artworkCacheDirectoryPath;
-+ (id)artworkImageForTrack:(id)arg1;
++ (id)artworkImageForMediaItem:(id)arg1;
 
 - (id)_cacheDirectoryPath;
 - (id)_cachedRepresentativeImagePath;
@@ -27,9 +28,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (NSUInteger)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMLPlaylist:(id)arg1;
+- (id)initWithMPMediaPlaylist:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)name;
+- (id)playlist;
 - (id)representativeArtists;
 - (struct CGImage { }*)representativeImageWithSize:(struct CGSize { float x1; float x2; })arg1 count:(NSUInteger)arg2 cacheOnly:(BOOL)arg3;
 - (struct CGImage { }*)representativeImageWithSize:(struct CGSize { float x1; float x2; })arg1 count:(NSUInteger)arg2;

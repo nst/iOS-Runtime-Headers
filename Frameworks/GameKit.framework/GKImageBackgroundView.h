@@ -2,20 +2,19 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSMutableArray, UIImage;
+@class NSArray;
 
 @interface GKImageBackgroundView : GKBackgroundView {
-    UIImage *_backgroundImage;
-    NSMutableArray *_imageViews;
+    NSArray *_backgroundTiles;
 }
 
 @property(retain,readonly) UIImage *backgroundImage;
-@property(retain) NSMutableArray *imageViews;
+@property(retain) NSArray *backgroundTiles;
 
 - (id)backgroundImage;
+- (id)backgroundTiles;
 - (void)dealloc;
-- (id)imageViews;
 - (void)layoutSubviews;
-- (void)setImageViews:(id)arg1;
+- (void)setBackgroundTiles:(id)arg1;
 
 @end

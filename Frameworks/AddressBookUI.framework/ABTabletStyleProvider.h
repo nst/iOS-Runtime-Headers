@@ -6,15 +6,13 @@
 }
 
 - (NSInteger)cardActionButtonType;
-- (float)cardHeaderImageTopMargin;
-- (BOOL)cardNeedsAdjusterForKeyboardInOrientation:(NSInteger)arg1 inPopover:(BOOL)arg2;
 - (id)cardTableCellBorderColor;
 - (NSInteger)composeModalPresentationStyle;
 - (id)editorViewColor;
 - (id)editorViewLargeFont;
 - (id)editorViewSmallFont;
 - (NSInteger)headerViewBorderStyle;
-- (BOOL)isPopover;
+- (BOOL)labelPickerShouldPushCustomLabelCreator;
 - (id)personActionColor;
 - (id)personActionFont;
 - (float)personEditorFieldVerticalInset;
@@ -30,11 +28,7 @@
 - (float)personValueFontMinSize;
 - (id)personValueHighlightColor;
 - (id)personValueImportantColor;
-- (float)personViewDefaultRowHeight;
 - (float)personViewHorizontalCellInset;
-- (float)personViewLabelRightPosition;
-- (float)personViewLabelValueSpacing;
-- (float)personViewValueLeftPosition;
 - (BOOL)searchControllerForceKeyboardDisplayEnabled;
 - (BOOL)searchIsAlwaysActive;
 - (BOOL)serverSearchNavigationBarHidingEnabled;

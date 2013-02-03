@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSURL, AVFileValidator, MPItem;
+@class MPAVItem, NSURL, AVFileValidator;
 
 @interface MPMovieInternal : NSObject {
     struct CGSize { 
@@ -11,7 +11,7 @@
     double _endPlaybackTime;
     BOOL _explicitlySetMovieSourceType;
     AVFileValidator *_fileValidator;
-    MPItem *_item;
+    MPAVItem *_item;
     double _lastKnownDuration;
     } _lastKnownNaturalSize;
     NSUInteger _lastKnownType;

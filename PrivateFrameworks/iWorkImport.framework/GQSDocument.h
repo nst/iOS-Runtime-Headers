@@ -25,6 +25,7 @@
     Class mCurrentTableGenerator;
     <GQWrapPointGenerator> *mCurrentWrapPointGenerator;
     BOOL mDoExternalTextWrap;
+    struct __CFString { } *mFilename;
     BOOL mGeneratingThumbnail;
     BOOL mGeneratorBeginWasCalled;
     id mGeneratorState;
@@ -51,11 +52,12 @@
 - (id)currentWrapPointGenerator;
 - (void)dealloc;
 - (BOOL)doExternalTextWrap;
+- (struct __CFString { }*)filename;
 - (BOOL)generatorBeginWasCalled;
 - (id)generatorState;
-- (id)initWithRoot:(id)arg1 processor:(id)arg2 archive:(id)arg3 outputBundle:(id)arg4;
+- (id)initWithRoot:(id)arg1 processor:(id)arg2 archive:(id)arg3 outputBundle:(id)arg4 filename:(struct __CFString { }*)arg5;
 - (id)initWithRoot:(id)arg1 processor:(id)arg2 bundleUrl:(struct __CFURL { }*)arg3 outputBundle:(id)arg4;
-- (id)initWithRoot:(id)arg1 processor:(id)arg2 outputBundle:(id)arg3;
+- (id)initWithRoot:(id)arg1 processor:(id)arg2 outputBundle:(id)arg3 filename:(struct __CFString { }*)arg4;
 - (BOOL)isGeneratingThumbnail;
 - (BOOL)isReadingStorageAttachments;
 - (BOOL)isThumbnailGenerationDone;

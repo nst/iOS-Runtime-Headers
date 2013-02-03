@@ -62,6 +62,7 @@
         unsigned int isDisclosure : 1; 
         unsigned int position : 3; 
         unsigned int autosizeText : 1; 
+        unsigned int isMomentary : 1; 
         } x13; BOOL x14; } *_appearance;
     NSInteger _barStyle;
     } _contentOffset;
@@ -73,6 +74,7 @@
 
 @property NSInteger controlSize;
 @property(getter=isHighlighted) BOOL highlighted;
+@property(getter=isMomentary) BOOL momentary;
 @property(getter=isSelected) BOOL selected;
 
 + (void)_initializeSafeCategory;
@@ -110,6 +112,7 @@
 - (void)insertDividerView;
 - (BOOL)isAccessibilityElement;
 - (BOOL)isHighlighted;
+- (BOOL)isMomentary;
 - (BOOL)isSelected;
 - (void)setAutosizeText:(BOOL)arg1;
 - (void)setBarStyle:(NSInteger)arg1;
@@ -120,6 +123,7 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setInfo:(id)arg1;
+- (void)setMomentary:(BOOL)arg1;
 - (void)setPosition:(NSUInteger)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setShowDivider:(BOOL)arg1;

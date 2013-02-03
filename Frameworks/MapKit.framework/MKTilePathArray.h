@@ -10,7 +10,6 @@
 + (id)arrayWithCapacity:(NSUInteger)arg1;
 
 - (void)addValue:(struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; })arg1;
-- (void)addValuesFromArray:(id)arg1;
 - (NSUInteger)count;
 - (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
 - (void)dealloc;

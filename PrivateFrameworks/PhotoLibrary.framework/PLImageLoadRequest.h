@@ -2,17 +2,21 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableSet, PLImageSource;
+@class NSMutableSet, NSMutableArray, PLImageSource;
 
 @interface PLImageLoadRequest : NSObject {
+    NSMutableArray *_completionBlocks;
     id _object;
     NSInteger _priority;
     NSMutableSet *_queues;
     PLImageSource *_source;
 }
 
+@property(readonly) NSArray *completionBlocks;
 @property NSInteger priority;
 
+- (void)addCompletionBlock:(id)arg1;
+- (id)completionBlocks;
 - (void)dealloc;
 - (void)deregisterImageLoadingQueue:(id)arg1;
 - (id)description;

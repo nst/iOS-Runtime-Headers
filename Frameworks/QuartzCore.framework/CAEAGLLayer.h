@@ -14,19 +14,16 @@
             int (*begin)(); 
             int (*swap)(); 
             int (*collect)(); 
-        } x1; struct EAGLNativeWindowCallbacksRec { 
-            void *callback_data; 
-            int (*create_buffer)(); 
-            int (*destroy_buffer)(); 
-        } x2; struct x_list_struct {} *x3; struct Atomic { 
+            int (*properties)(); 
+        } x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); struct x_list_struct {} *x6; struct Atomic { 
             struct { 
                 NSInteger x; 
             } _v; 
-        } x4; struct SpinLock { 
+        } x7; struct SpinLock { 
             struct { 
                 NSInteger x; 
             } _l; 
-        } x5; struct _CAImageQueue {} *x6; id x7; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x8; unsigned char x9; void*x10; void*x11; void*x12; void*x13; unsigned long x14; unsigned long x15; void*x16; void*x17; void*x18; const void*x19; struct x_list_struct {} *x20; NSUInteger x21; struct CAEAGLBuffer {} *x22; struct CAEAGLBuffer {} *x23; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; } *_win;
+        } x8; struct _CAImageQueue {} *x9; id x10; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x11; unsigned char x12; void*x13; void*x14; void*x15; void*x16; unsigned long x17; unsigned long x18; void*x19; void*x20; void*x21; const void*x22; struct x_list_struct {} *x23; NSUInteger x24; struct CAEAGLBuffer {} *x25; struct CAEAGLBuffer {} *x26; NSUInteger x27; NSUInteger x28; NSUInteger x29; struct CAEAGLBuffer {} *x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; } *_win;
 }
 
 @property(copy) NSDictionary *drawableProperties;
@@ -34,7 +31,7 @@
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (id)defaultValueForKey:(id)arg1;
 
-- (struct _EAGLNativeWindowObject { NSInteger x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); }*)nativeWindow;
+- (struct _EAGLNativeWindowObject { NSInteger x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); }*)nativeWindow;
 - (void)_display;
 - (void)dealloc;
 - (void)didChangeValueForKey:(id)arg1;

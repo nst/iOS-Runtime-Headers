@@ -6,8 +6,10 @@
 }
 
 + (id)activeInstance;
++ (void)beginRegisteringKeyplaneWithName:(id)arg1;
 + (void)clearAllCentroids;
 + (id)dynamicDictionaryFilePathForInputMode:(id)arg1;
++ (void)endRegisteringKeyplane;
 + (id)keyboardUserDirectory;
 + (void)registerCentroid:(struct CGPoint { float x1; float x2; })arg1 forKey:(id)arg2;
 + (void)releaseSharedInstance;
@@ -21,6 +23,7 @@
 - (id)addInputObject:(id)arg1;
 - (void)addToTypingHistory:(id)arg1;
 - (id)autocorrection;
+- (void)beginRegisteringKeyplaneWithName:(id)arg1;
 - (BOOL)canHandleKeyHitTest;
 - (void)candidateAccepted:(id)arg1;
 - (id)candidates;
@@ -38,6 +41,7 @@
 - (NSUInteger)defaultCandidateIndex;
 - (id)deleteFromInput:(NSUInteger*)arg1;
 - (void)deleteFromStrokeHistory:(BOOL)arg1;
+- (void)endRegisteringKeyplane;
 - (void)increaseUserFrequency:(id)arg1;
 - (NSUInteger)inputCount;
 - (BOOL)inputEmpty;
@@ -70,6 +74,7 @@
 - (void)setShift:(BOOL)arg1;
 - (id)shadowTyping;
 - (BOOL)shouldExtendPriorWord;
+- (BOOL)shouldShiftAfterChar:(unsigned short)arg1 withSpaces:(NSInteger)arg2 currentShift:(BOOL)arg3;
 - (BOOL)stringEndsWord:(id)arg1;
 - (id)stringForDoubleKey:(id)arg1;
 - (BOOL)suppliesCompletions;

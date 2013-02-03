@@ -14,6 +14,7 @@
     NSString *_attributionText;
     NSString *_attributionURL;
     long long _cid;
+    BOOL _closedListing;
     NSString *_countryCode;
     NSString *_countryName;
     NSString *_dependentLocality;
@@ -26,12 +27,14 @@
     BOOL _hasAddressID;
     BOOL _hasAddressRecordID;
     BOOL _hasCid;
+    BOOL _hasClosedListing;
     BOOL _hasFlags;
     BOOL _hasGmmContentType;
     BOOL _hasInexactPosition;
     BOOL _hasLatitudeE6Value;
     BOOL _hasLongitudeE6Value;
     BOOL _hasResultIndex;
+    BOOL _hasUnverifiedListing;
     BOOL _hasZoomLevel;
     BOOL _inexactPosition;
     NSInteger _latitudeE6Value;
@@ -50,6 +53,7 @@
     NSInteger _resultIndex;
     NSString *_thoroughfare;
     NSInteger _type;
+    BOOL _unverifiedListing;
     NSUInteger _zoomLevel;
 }
 
@@ -79,6 +83,7 @@
 @property(readonly) NSInteger addressLinesCount;
 @property NSInteger addressRecordID;
 @property long long cid;
+@property BOOL closedListing;
 @property NSUInteger flags;
 @property NSInteger gmmContentType;
 @property(readonly) BOOL hasAdActionsSent;
@@ -89,6 +94,7 @@
 @property(readonly) BOOL hasAttributionText;
 @property(readonly) BOOL hasAttributionURL;
 @property(readonly) BOOL hasCid;
+@property(readonly) BOOL hasClosedListing;
 @property(readonly) BOOL hasCountryCode;
 @property(readonly) BOOL hasCountryName;
 @property(readonly) BOOL hasDependentLocality;
@@ -111,6 +117,7 @@
 @property(readonly) BOOL hasRegion;
 @property(readonly) BOOL hasResultIndex;
 @property(readonly) BOOL hasThoroughfare;
+@property(readonly) BOOL hasUnverifiedListing;
 @property(readonly) BOOL hasZoomLevel;
 @property BOOL inexactPosition;
 @property NSInteger latitudeE6Value;
@@ -119,6 +126,7 @@
 @property NSInteger originalType;
 @property NSInteger resultIndex;
 @property NSInteger type;
+@property BOOL unverifiedListing;
 @property NSUInteger zoomLevel;
 
 - (NSUInteger)adActionsSent;
@@ -133,6 +141,7 @@
 - (id)attributionText;
 - (id)attributionURL;
 - (long long)cid;
+- (BOOL)closedListing;
 - (id)countryCode;
 - (id)countryName;
 - (void)dealloc;
@@ -152,6 +161,7 @@
 - (BOOL)hasAttributionText;
 - (BOOL)hasAttributionURL;
 - (BOOL)hasCid;
+- (BOOL)hasClosedListing;
 - (BOOL)hasCountryCode;
 - (BOOL)hasCountryName;
 - (BOOL)hasDependentLocality;
@@ -174,6 +184,7 @@
 - (BOOL)hasRegion;
 - (BOOL)hasResultIndex;
 - (BOOL)hasThoroughfare;
+- (BOOL)hasUnverifiedListing;
 - (BOOL)hasZoomLevel;
 - (BOOL)inexactPosition;
 - (id)init;
@@ -202,6 +213,7 @@
 - (void)setAttributionText:(id)arg1;
 - (void)setAttributionURL:(id)arg1;
 - (void)setCid:(long long)arg1;
+- (void)setClosedListing:(BOOL)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setCountryName:(id)arg1;
 - (void)setDependentLocality:(id)arg1;
@@ -227,9 +239,11 @@
 - (void)setResultIndex:(NSInteger)arg1;
 - (void)setThoroughfare:(id)arg1;
 - (void)setType:(NSInteger)arg1;
+- (void)setUnverifiedListing:(BOOL)arg1;
 - (void)setZoomLevel:(NSUInteger)arg1;
 - (id)thoroughfare;
 - (NSInteger)type;
+- (BOOL)unverifiedListing;
 - (void)writeTo:(id)arg1;
 - (NSUInteger)zoomLevel;
 

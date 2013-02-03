@@ -5,9 +5,10 @@
 @class UITextInputTraits, NSTimer, MFComposeRecipient;
 
 @interface MFComposeRecipientAtom : MFAtomView {
+    unsigned int _wasSelectedWhenTouchesBegan : 1;
+    unsigned int _touchesWereCancelled : 1;
     NSTimer *_holdTimer;
     MFComposeRecipient *_recipient;
-    BOOL _showedPersonCardDuringTouchSequence;
     UITextInputTraits *_traits;
 }
 

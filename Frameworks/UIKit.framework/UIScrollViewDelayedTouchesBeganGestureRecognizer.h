@@ -13,7 +13,6 @@
 }
 
 - (void)_resetGestureRecognizer;
-- (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (void)clearTimer;
 - (void)dealloc;
 - (void)sendDelayedTouches;

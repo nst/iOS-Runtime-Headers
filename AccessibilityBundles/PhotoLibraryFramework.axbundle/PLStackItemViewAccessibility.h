@@ -10,5 +10,6 @@
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (BOOL)isAccessibilityElement;
+- (void)setShowBadge:(BOOL)arg1;
 
 @end

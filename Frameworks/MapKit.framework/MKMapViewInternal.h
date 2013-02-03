@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKScrollView, UIImageView, GMMRequester, <MKMapViewDelegate><MKMapViewDelegatePrivate>, MKAnnotationView, NSMutableArray, NSTimer, UIEvent, UITapGestureRecognizer, MKMapViewPositioningChange, MKMapView, MKOverlayContainerView, UITextField, UILongPressGestureRecognizer, MKMapTileView, MKSearchResult, <MKOverlay>, MKRouteLoader, UITouch, MKRouteOverlayView, NSArray, MKAnnotationContainerView, UIView;
+@class MKScrollView, UIImageView, GMMRequester, <MKMapViewDelegate><MKMapViewDelegatePrivate>, MKAnnotationView, NSMutableArray, NSTimer, UIEvent, UITapGestureRecognizer, MKMapViewPositioningChange, MKMapView, MKOverlayContainerView, UITextField, UILongPressGestureRecognizer, UILabel, MKSearchResult, MKMapTileView, <MKOverlay>, MKRouteLoader, NSArray, MKRouteOverlayView, UITouch, UIColor, MKAnnotationContainerView, UIView;
 
 @interface MKMapViewInternal : NSObject <UITextFieldDelegate, PBRequesterDelegate, UILongPressGestureRecognizerDelegate> {
     struct { 
@@ -34,7 +34,7 @@
             NSInteger longitude_; 
             NSInteger x_pixels_at_max_zoom_; 
             NSInteger y_pixels_at_max_zoom_; 
-    struct $_1070 { 
+    struct $_1096 { 
         unsigned int animateFlagWhileSuspendedResultProcessing : 1; 
         unsigned int callsDelegateForAllRegionChanges : 1; 
         unsigned int changingRegion : 1; 
@@ -49,8 +49,6 @@
         unsigned int headingSupported : 1; 
         unsigned int headingTrackingEnabled : 1; 
         unsigned int hot : 1; 
-        unsigned int forwardingTouches : 1; 
-        unsigned int pinchGesturing : 1; 
         unsigned int ignoreHeadingUpdates : 1; 
         unsigned int ignoreLocationUpdates : 1; 
         unsigned int isLoadingEnabled : 1; 
@@ -106,6 +104,10 @@
         } x3; NSInteger x4; NSInteger x5; unsigned char x6; } *billingPointTracker;
     } centeringRect;
     UIView *contentView;
+    UILabel *copyrightLabel;
+    NSTimer *copyrightLabelTimer;
+    UIColor *darkCopyrightShadowColor;
+    UIColor *darkCopyrightTextColor;
     UITextField *debugView;
     NSTimer *defaultLocationTimer;
     <MKMapViewDelegate><MKMapViewDelegatePrivate> *delegate;
@@ -123,8 +125,11 @@
     double heading;
     NSTimer *hoverExpirationTimer;
     double hoverStartTime;
+    NSUInteger lastCopyrightMapType;
     NSUInteger levelViewLoadingCount;
     NSUInteger levelViewTrafficLoadingCount;
+    UIColor *lightCopyrightShadowColor;
+    UIColor *lightCopyrightTextColor;
     UILongPressGestureRecognizer *longPressGestureRecognizer;
     MKMapTileView *mapTileView;
     NSUInteger mapType;

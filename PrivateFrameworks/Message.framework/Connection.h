@@ -39,6 +39,7 @@
 + (BOOL)shouldTryFallbacksAfterError:(id)arg1;
 
 - (id)_newSocket;
+- (void)_setupNetworkLogging;
 - (id)_socket;
 - (BOOL)authenticateUsingAccount:(id)arg1 authenticator:(id)arg2;
 - (BOOL)authenticateUsingAccount:(id)arg1;
@@ -64,6 +65,7 @@
 - (void)setIsFetching:(BOOL)arg1;
 - (BOOL)startCompression;
 - (BOOL)startTLSForAccount:(id)arg1;
+- (BOOL)writeBytes:(const char *)arg1 length:(NSUInteger)arg2 dontLogBytesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
 - (BOOL)writeData:(id)arg1 dontLogBytesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (BOOL)writeData:(id)arg1;
 

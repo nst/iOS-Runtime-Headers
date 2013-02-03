@@ -5,10 +5,12 @@
 @class GMMMapInfo, NSString, NSData, GMMClientCapabilities;
 
 @interface GMMSearchRequest : PBRequest {
+    BOOL _addLabelToClosedListings;
     BOOL _addLabelToUnverifiedListings;
     BOOL _adjustViewport;
     GMMClientCapabilities *_capabilities;
     NSString *_gaiaSid;
+    BOOL _hasAddLabelToClosedListings;
     BOOL _hasAddLabelToUnverifiedListings;
     BOOL _hasAdjustViewport;
     BOOL _hasIncludeAdResults;
@@ -50,8 +52,10 @@
 @property(retain) NSData *kmlDocument;
 @property(retain) GMMMapInfo *mapInfo;
 @property(retain) NSString *query;
+@property BOOL addLabelToClosedListings;
 @property BOOL addLabelToUnverifiedListings;
 @property BOOL adjustViewport;
+@property(readonly) BOOL hasAddLabelToClosedListings;
 @property(readonly) BOOL hasAddLabelToUnverifiedListings;
 @property(readonly) BOOL hasAdjustViewport;
 @property(readonly) BOOL hasCapabilities;
@@ -88,12 +92,14 @@
 @property NSInteger type;
 @property BOOL useSeparateRefinementString;
 
+- (BOOL)addLabelToClosedListings;
 - (BOOL)addLabelToUnverifiedListings;
 - (BOOL)adjustViewport;
 - (id)capabilities;
 - (void)dealloc;
 - (id)description;
 - (id)gaiaSid;
+- (BOOL)hasAddLabelToClosedListings;
 - (BOOL)hasAddLabelToUnverifiedListings;
 - (BOOL)hasAdjustViewport;
 - (BOOL)hasCapabilities;
@@ -132,6 +138,7 @@
 - (NSUInteger)requestTypeCode;
 - (Class)responseClass;
 - (NSInteger)resultOffset;
+- (void)setAddLabelToClosedListings:(BOOL)arg1;
 - (void)setAddLabelToUnverifiedListings:(BOOL)arg1;
 - (void)setAdjustViewport:(BOOL)arg1;
 - (void)setCapabilities:(id)arg1;

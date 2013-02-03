@@ -16,6 +16,6 @@
 - (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)setChecked:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

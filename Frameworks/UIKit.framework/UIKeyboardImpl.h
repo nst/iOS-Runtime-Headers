@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSTimer, UITextInputTraits, UIDelayedAction, <UIKeyboardImplGeometryDelegate>, UIKeyboardLayout, UIView, UIKeyboardCandidate, NSArray, UITextInputArrowKeyHistory, UIKeyboardInputManager, <UIKeyboardCandidateList>, NSObject<UIKeyboardRecording><UIApplicationEventRecording>, NSString, NSMutableDictionary, <UIKeyInput>, UIAutocorrectInlinePrompt;
+@class NSMutableArray, NSTimer, UITextInputTraits, <UIKeyboardRivenCenterView>, UIDelayedAction, <UIKeyboardImplGeometryDelegate>, UIKeyboardLayout, UIView, UIKeyboardCandidate, NSArray, UITextInputArrowKeyHistory, UIKeyboardInputManager, <UIKeyboardCandidateList>, NSObject<UIKeyboardRecording><UIApplicationEventRecording>, NSString, NSMutableDictionary, <UIKeyInput>, UIAutocorrectInlinePrompt;
 
 @interface UIKeyboardImpl : UIView {
     struct { 
@@ -12,6 +12,7 @@
     struct CGPoint { 
         float x; 
         float y; 
+    <UIKeyboardRivenCenterView> *_centerView;
     BOOL m_acceptingCandidate;
     BOOL m_anotherTouchWaiting;
     UITextInputArrowKeyHistory *m_arrowKeyHistory;
@@ -33,6 +34,7 @@
     <UIKeyboardCandidateList> *m_candidateList;
     NSArray *m_candidates;
     BOOL m_caretShowingNow;
+    <UIKeyboardRivenCenterView> *m_centerView;
     NSInteger m_changeCount;
     BOOL m_changeNotificationDisabled;
     double m_changeTime;
@@ -60,18 +62,22 @@
     UIKeyboardInputManager *m_inputManager;
     NSString *m_inputModeLastChosen;
     } m_inputPoint;
+    BOOL m_insideKeyInputDelegateCall;
     NSMutableDictionary *m_keyedLayouts;
     NSMutableArray *m_keyplaneNamesCurrentDelegate;
     NSMutableArray *m_keyplaneNamesPreviousDelegate;
     UIView *m_languageIndicator;
+    BOOL m_lastUsedInputModeChangedBySystem;
     UIKeyboardLayout *m_layout;
     BOOL m_longPress;
     UIDelayedAction *m_longPressAction;
+    UIView *m_markedTextOverlay;
     struct __CFRunLoopObserver { } *m_observer;
     NSInteger m_orientation;
     NSInteger m_originalOrientation;
     BOOL m_performDecomposingDelete;
     BOOL m_performanceLoggingEnabled;
+    float m_persistentOffset;
     BOOL m_preRotateShift;
     BOOL m_preRotateShiftLocked;
     BOOL m_preferencesNeedSynchronization;
@@ -80,8 +86,15 @@
     NSObject<UIKeyboardRecording><UIApplicationEventRecording> *m_recorder;
     BOOL m_replacingWord;
     NSInteger m_returnKeyState;
+    BOOL m_rivenCenterDismissPreference;
+    BOOL m_rivenCenterViewPreference;
+    BOOL m_rivenMiniPreference;
+    BOOL m_rivenPopupHammersPreference;
+    BOOL m_rivenPreference;
+    NSUInteger m_rivenSeparationStyle;
+    BOOL m_rivenTranslationPreference;
+    NSUInteger m_rivenVisualStyle;
     BOOL m_selecting;
-    NSUInteger m_selectionChangeCount;
     BOOL m_settingShift;
     BOOL m_shift;
     BOOL m_shiftHeldDownNeedsUpdated;
@@ -91,8 +104,10 @@
     BOOL m_shiftPreventAutoshift;
     BOOL m_shouldChargeKeys;
     BOOL m_shouldSkipCandidateSelection;
+    BOOL m_shouldUpdateCacheOnInputModesChange;
     BOOL m_showInputModeIndicator;
     BOOL m_showingCandidateBar;
+    float m_splitProgress;
     BOOL m_suppressGeometryChangeNotifications;
     BOOL m_suppressUpdateCandidateView;
     BOOL m_swipeToTabPreference;
@@ -110,6 +125,7 @@
 
 @property(getter=isZoomed) BOOL zoomed; /* unknown property attribute: SsetZoomed: */
 @property(retain) UITextInputArrowKeyHistory *arrowKeyHistory;
+@property(retain) <UIKeyboardRivenCenterView> *centerView;
 @property(retain) UIResponder<UIKeyInput> *delegate;
 @property(readonly) UIResponder *delegateAsResponder;
 @property <UIKeyboardImplGeometryDelegate> *geometryDelegate;
@@ -122,8 +138,19 @@
 @property(retain) id changedDelegate;
 @property BOOL currentInputModeChanged;
 @property(getter=isInHardwareKeyboardMode) BOOL inHardwareKeyboardMode;
+@property CGPoint persistentOffset;
+@property BOOL preferencesNeedSynchronization;
+@property(readonly) BOOL rivenCenterDismissPreference;
+@property(readonly) BOOL rivenCenterViewPreference;
+@property(readonly) BOOL rivenMiniPreference;
+@property(readonly) BOOL rivenPopupHammersPreference;
+@property(readonly) BOOL rivenPreference;
+@property(readonly) NSUInteger rivenSeparationStyle;
+@property(readonly) BOOL rivenTranslationPreference;
+@property(readonly) NSUInteger rivenVisualStyle;
 @property BOOL shouldSkipCandidateSelection;
 @property BOOL showInputModeIndicator;
+@property float splitProgress;
 @property(getter=isZoomEnabled,readonly) BOOL zoomEnabled;
 
 + (void)_clearHardwareKeyboardMinimizationPreference;
@@ -140,6 +167,7 @@
 + (void)hardwareKeyboardAvailabilityChanged;
 + (void)markElapsed:(id)arg1;
 + (void)markPerformance:(id)arg1;
++ (void)newCarrierChange;
 + (id)normalizedInputModesFromPreference;
 + (NSInteger)orientationForSize:(struct CGSize { float x1; float x2; })arg1;
 + (void)releaseSharedInstance;
@@ -167,7 +195,7 @@
 - (void)acceptCurrentCandidate;
 - (void)acceptCurrentCandidateIfSelected;
 - (BOOL)acceptInputString:(id)arg1;
-- (void)acceptWord:(id)arg1 firstDelete:(NSUInteger)arg2 addString:(id)arg3;
+- (BOOL)acceptWord:(id)arg1 firstDelete:(NSUInteger)arg2;
 - (void)addAutocorrectionRecord:(id)arg1 forTyping:(id)arg2;
 - (void)addInputObject:(id)arg1;
 - (void)addInputString:(id)arg1 fromVariantKey:(BOOL)arg2;
@@ -201,13 +229,13 @@
 - (BOOL)callShouldDelete;
 - (BOOL)callShouldInsertText:(id)arg1;
 - (BOOL)canHandleKeyHitTest;
-- (BOOL)canWriteKeyboardsExpandedPreferences;
 - (void)cancelAllKeyEvents;
 - (id)candidateList;
 - (void)candidateListAcceptCandidate:(id)arg1;
 - (void)candidateListSelectionDidChange:(id)arg1;
 - (BOOL)caretBlinks;
 - (BOOL)caretVisible;
+- (id)centerView;
 - (NSInteger)changeCount;
 - (BOOL)changeNotificationDisabled;
 - (id)changedDelegate;
@@ -240,6 +268,8 @@
 - (BOOL)delegateIsSMSTextView;
 - (BOOL)delegateSuggestionsForCurrentInput;
 - (BOOL)delegateSupportsCorrectionUI;
+- (void)deleteBackward;
+- (void)deleteBackwardAndNotify:(BOOL)arg1;
 - (void)deleteFromInput;
 - (void)detach;
 - (void)dismissKeyboard;
@@ -285,6 +315,7 @@
 - (id)inputModePreference;
 - (id)inputModesLastUsedForLanguagePreference;
 - (id)inputOverlayContainer;
+- (void)insertText:(id)arg1;
 - (void)installRecorder;
 - (BOOL)isAllowedInputMode:(id)arg1;
 - (BOOL)isAutoDeleteActive;
@@ -311,20 +342,24 @@
 - (id)keyplaneNameInCurrentDelegateListForIndex:(NSInteger)arg1;
 - (void)layoutHasChanged;
 - (id)legacyInputDelegate;
-- (id)localePreference;
 - (void)longPressAction;
+- (id)markedTextOverlay;
 - (void)mediaKeyDown:(struct __GSEvent { }*)arg1;
 - (void)movePhraseBoundaryToDirection:(NSInteger)arg1;
+- (BOOL)needKeyboardsIncludeIntlPreference;
 - (BOOL)needsToDeferUpdateTextCandidateView;
+- (void)newCarrierChange;
 - (BOOL)noContent;
 - (void)notifyShiftState;
 - (NSInteger)orientation;
 - (void)performClientVariantActionNamed:(id)arg1;
 - (BOOL)performanceLoggingPreference;
+- (struct CGPoint { float x1; float x2; })persistentOffset;
 - (NSUInteger)phraseBoundary;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)postEmptyDelegateNotificationIfNeeded;
+- (BOOL)preferencesNeedSynchronization;
 - (void)prepareForGeometryChange;
 - (void)prepareForSelectionChange;
 - (void)prepareLayoutForInterfaceOrientation:(NSInteger)arg1;
@@ -333,6 +368,7 @@
 - (void)recomputeActiveInputModes;
 - (void)recomputeActiveInputModesFromList:(id)arg1;
 - (id)recorder;
+- (void)refreshRivenPreferences;
 - (void)registerKeyArea:(struct CGPoint { float x1; float x2; })arg1 withRadii:(struct CGPoint { float x1; float x2; })arg2 forKeyCode:(unsigned short)arg3 forLowerKey:(id)arg4 forUpperKey:(id)arg5;
 - (void)releaseKeyplaneNameFromPreviousDelegateList:(id)arg1;
 - (void)removeAutocorrectPrompt;
@@ -342,6 +378,14 @@
 - (id)returnKeyDisplayName;
 - (BOOL)returnKeyEnabled;
 - (NSInteger)returnKeyType;
+- (BOOL)rivenCenterDismissPreference;
+- (BOOL)rivenCenterViewPreference;
+- (BOOL)rivenMiniPreference;
+- (BOOL)rivenPopupHammersPreference;
+- (BOOL)rivenPreference;
+- (NSUInteger)rivenSeparationStyle;
+- (BOOL)rivenTranslationPreference;
+- (NSUInteger)rivenVisualStyle;
 - (void)saveInputModesPreference:(id)arg1;
 - (void)scheduleReplacementsWithOptions:(NSUInteger)arg1;
 - (id)searchStringForMarkedText;
@@ -356,6 +400,7 @@
 - (void)setCandidates:(id)arg1;
 - (void)setCaretBlinks:(BOOL)arg1;
 - (void)setCaretVisible:(BOOL)arg1;
+- (void)setCenterView:(id)arg1;
 - (void)setChangeNotificationDisabled:(BOOL)arg1;
 - (void)setChanged;
 - (void)setChangedDelegate:(id)arg1;
@@ -369,11 +414,11 @@
 - (void)setInHardwareKeyboardMode:(BOOL)arg1;
 - (void)setInitialDirection;
 - (void)setInputManager:(id)arg1;
+- (void)setInputMode:(id)arg1 userInitiated:(BOOL)arg2;
 - (void)setInputMode:(id)arg1;
 - (void)setInputModeFromPreferences;
 - (void)setInputModeLastChosenPreference;
 - (void)setInputModeLastUsedPreference;
-- (void)setInputModePreference;
 - (void)setInputModeToNextASCIICapableInPreferredList;
 - (void)setInputModeToNextInPreferredList;
 - (void)setInputObject:(id)arg1;
@@ -382,10 +427,13 @@
 - (void)setKeyboardsExpandedPreference;
 - (void)setMarkedText;
 - (void)setOrientationForSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPersistentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPhraseBoundary:(NSUInteger)arg1;
+- (void)setPreferencesNeedSynchronization:(BOOL)arg1;
 - (void)setPreviousInputString:(id)arg1;
 - (void)setRecorder:(id)arg1;
 - (void)setReturnKeyEnabled:(BOOL)arg1;
+- (void)setRivenPreference:(BOOL)arg1;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setShift:(BOOL)arg1 autoshift:(BOOL)arg2;
 - (void)setShift:(BOOL)arg1;
@@ -396,7 +444,9 @@
 - (void)setShiftPreventAutoshift:(BOOL)arg1;
 - (void)setShouldChargeKeys:(BOOL)arg1;
 - (void)setShouldSkipCandidateSelection:(BOOL)arg1;
+- (void)setShouldUpdateCacheOnInputModesChange:(BOOL)arg1;
 - (void)setShowInputModeIndicator:(BOOL)arg1;
+- (void)setSplitProgress:(float)arg1;
 - (void)setZoomed:(BOOL)arg1;
 - (BOOL)shiftLockPreference;
 - (BOOL)shiftLockedEnabled;
@@ -408,6 +458,7 @@
 - (BOOL)showInputModeIndicator;
 - (void)showKeyboard;
 - (void)showNextCandidates;
+- (float)splitProgress;
 - (void)startAutoDeleteTimer;
 - (void)startCaretBlinkIfNeeded;
 - (void)startKeyboardRecording;
@@ -453,7 +504,9 @@
 - (void)updateReturnKey:(BOOL)arg1;
 - (void)updateReturnKey;
 - (void)updateShiftState;
+- (void)updateSplitCenterView;
 - (void)updateTextCandidateView;
+- (BOOL)usesCandidateBar;
 - (BOOL)zoomPreference;
 
 @end

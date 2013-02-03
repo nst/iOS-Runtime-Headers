@@ -15,14 +15,17 @@
 }
 
 @property BOOL nonSquareImage;
+@property float reflectionSpacing;
 
 - (void)dealloc;
 - (id)init;
 - (id)initWithReflectionHeight:(float)arg1 spacing:(float)arg2;
 - (BOOL)nonSquareImage;
+- (float)reflectionSpacing;
 - (void)setImage:(id)arg1;
 - (void)setNonSquareImage:(BOOL)arg1;
 - (void)setReflectionAlphaWhenVisible:(float)arg1;
+- (void)setReflectionSpacing:(float)arg1;
 - (void)setReflectionVisible:(BOOL)arg1;
 - (void)setUseImageSize:(BOOL)arg1;
 

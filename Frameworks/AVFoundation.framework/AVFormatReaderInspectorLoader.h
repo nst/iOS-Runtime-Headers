@@ -10,13 +10,11 @@
 + (id)formatReaderInspectorLoaderWithURL:(id)arg1 options:(id)arg2;
 
 - (struct OpaqueFigFormatReader { }*)_copyFormatReaderFromFigObjectWithFigErrorCode:(NSInteger*)arg1;
-- (id)_dictionaryOfSpecialTestsOfKeys;
+- (id)_dictionaryOfSpecialGettersForKeyValueStatus;
 - (struct OpaqueFigFormatReaderLoader { }*)_formatReaderLoader;
 - (id)_formatReaderLoaderProductsForKeys:(id)arg1;
 - (void)_loadDurationSynchronously;
-- (void)_loadLyricsSynchronously;
-- (BOOL)_loadValuesForKeys:(id)arg1;
-- (id)_lyrics;
+- (id)_loadValuesUsingDefaultLoadingMethodWhileMutexLockedForKeys:(id)arg1;
 - (BOOL)_providesAccurateTiming;
 - (void)_removeFormatReaderLoaderNotifications;
 - (id)assetInspector;

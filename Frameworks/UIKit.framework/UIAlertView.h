@@ -53,9 +53,12 @@
         unsigned int keyboardShowing : 1; 
         unsigned int dontCallDismissDelegate : 1; 
         unsigned int useAutomaticKB : 1; 
+        unsigned int manualKeyboardVisible : 1; 
+        unsigned int rotatingManualKeybaord : 1; 
         unsigned int shouldHandleFirstKeyUpEvent : 1; 
         unsigned int forceKeyboardUse : 1; 
         unsigned int cancelWhenDoneAnimating : 1; 
+    UIView *_backgroundImageView;
     float _bodyTextHeight;
     UILabel *_bodyTextLabel;
     NSMutableArray *_buttons;
@@ -101,6 +104,8 @@
 - (void)_addSubview:(id)arg1 positioned:(NSInteger)arg2 relativeTo:(id)arg3;
 - (void)_adjustLabelFontSizes;
 - (void)_alertSheetAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_alertSheetTextFieldDidEndEditing:(id)arg1;
+- (void)_alertSheetTextFieldDidStartEditing:(id)arg1;
 - (void)_alertSheetTextFieldReturn:(id)arg1;
 - (void)_appSuspended:(id)arg1;
 - (float)_bottomVerticalInset;
@@ -111,6 +116,7 @@
 - (BOOL)_canShowAlerts;
 - (void)_cancelAnimated:(BOOL)arg1;
 - (void)_cleanupAfterPopupAnimation;
+- (void)_cleanupKBWatcher;
 - (void)_createBodyTextLabelIfNeeded;
 - (void)_createSubtitleLabelIfNeeded;
 - (void)_createTaglineTextLabelIfNeeded;
@@ -127,10 +133,13 @@
 - (void)_jiggleStage4AnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_jiggleStage5AnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_jiggleStage6AnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_keyboardDidHide:(id)arg1;
+- (void)_keyboardHiddingAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)_layoutIfNeeded;
 - (void)_layoutPopupAlertWithOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
+- (BOOL)_manualKeyboardIsVisible;
 - (float)_maxHeight;
 - (BOOL)_needsKeyboard;
 - (void)_performPopoutAnimationAnimated:(BOOL)arg1;
@@ -148,8 +157,11 @@
 - (void)_setAlertSheetStyleFromButtonBar:(id)arg1;
 - (void)_setFirstOtherButtonIndex:(NSInteger)arg1;
 - (void)_setTextFieldsHidden:(BOOL)arg1;
+- (void)_setupKBWatcher;
 - (void)_setupTitleStyle;
 - (BOOL)_shouldOrderInAutomaticKeyboard;
+- (void)_showKeyboard:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_showManualKBIfNecessary;
 - (void)_slideSheetOut:(BOOL)arg1;
 - (void)_temporarilyHideAnimated:(BOOL)arg1;
 - (float)_titleHorizontalInset;
@@ -157,7 +169,9 @@
 - (float)_titleVerticalTopInset;
 - (void)_truncateViewHeight:(id)arg1 toFitInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withMinimumHeight:(float)arg3;
 - (void)_updateFrameForDisplay;
+- (void)_updateKeyboardStateForPreviousResponder:(id)arg1;
 - (void)_useUndoStyle:(BOOL)arg1;
+- (void)_willRotateKeyboard;
 - (id)addButtonWithTitle:(id)arg1 buttonClass:(Class)arg2;
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (NSInteger)addButtonWithTitle:(id)arg1;
@@ -185,7 +199,6 @@
 - (void)dismiss;
 - (void)dismissAnimated:(BOOL)arg1;
 - (void)dismissWithClickedButtonIndex:(NSInteger)arg1 animated:(BOOL)arg2;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (NSInteger)firstOtherButtonIndex;
 - (BOOL)forceHorizontalButtonsLayout;
 - (BOOL)groupsTextFields;
@@ -247,6 +260,7 @@
 - (NSInteger)suspendTag;
 - (id)table;
 - (BOOL)tableShouldShowMinimumContent;
+- (id)tableView;
 - (id)taglineTextLabel;
 - (id)textField;
 - (id)textFieldAtIndex:(NSInteger)arg1;

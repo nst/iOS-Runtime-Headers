@@ -8,12 +8,14 @@
 + (void)_setDefaultCapabilitiesManager:(id)arg1;
 + (id)defaultCapabilitiesManager;
 
+- (BOOL)hasAdditionalTextTones;
 - (BOOL)hasCameraCapability;
 - (BOOL)hasCellularDataCapability;
 - (BOOL)hasCellularTelephonyCapability;
 - (BOOL)hasSMSCapability;
 - (BOOL)hasTelephonyCapability;
 - (BOOL)isConferencingAvailable;
+- (BOOL)isConferencingEverGonnaBeAvailable;
 - (BOOL)isEmailConfigured;
 - (BOOL)isMMSConfigured;
 - (BOOL)isSensitiveUIAllowed;

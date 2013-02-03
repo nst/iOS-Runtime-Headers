@@ -62,6 +62,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectOfElementWithID:(id)arg1;
 - (void)replaceImages;
 - (void)replaceImagesIfNecessary;
+- (void)scaleImagesToScale:(NSInteger)arg1 withAttachmentStore:(id)arg2;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })selectedRange;
 - (void)setAttachmentStore:(id)arg1;
 - (void)setDirty:(BOOL)arg1;
@@ -74,6 +75,7 @@
 - (void)setPinHeight:(float)arg1;
 - (void)setReplaceAttachmentsWithFilename:(BOOL)arg1;
 - (void)setSelectedRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)unscaleImages;
 - (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
 - (void)webView:(id)arg1 didFirstVisuallyNonEmptyLayoutInFrame:(id)arg2;
 - (id)webView:(id)arg1 identifierForInitialRequest:(id)arg2 fromDataSource:(id)arg3;

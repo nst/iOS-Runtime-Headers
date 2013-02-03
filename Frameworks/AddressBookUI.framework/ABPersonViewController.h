@@ -33,9 +33,9 @@
 @property BOOL allowsConferencing;
 @property BOOL allowsDeletion;
 @property BOOL allowsEditing;
-@property BOOL allowsRingtone;
 @property BOOL allowsSettingAsPreferredCardForName;
 @property BOOL allowsSharing;
+@property BOOL allowsSounds;
 @property BOOL appearsInLinkingPeoplePicker;
 @property BOOL personHeaderViewScrolls;
 @property BOOL shareMessageBodyIsHTML;
@@ -59,9 +59,9 @@
 - (BOOL)allowsConferencing;
 - (BOOL)allowsDeletion;
 - (BOOL)allowsEditing;
-- (BOOL)allowsRingtone;
 - (BOOL)allowsSettingAsPreferredCardForName;
 - (BOOL)allowsSharing;
+- (BOOL)allowsSounds;
 - (BOOL)appearsInLinkingPeoplePicker;
 - (void)applicationDidResume;
 - (void)applicationWillSuspend;
@@ -79,6 +79,7 @@
 - (id)editDelegate;
 - (void)helper:(id)arg1 didToggleEditingWhileInViewMode:(BOOL)arg2;
 - (id)helper;
+- (void)ignoreNextLocalChange;
 - (id)init;
 - (id)initWithAddressBook:(void*)arg1;
 - (id)initWithModel:(id)arg1;
@@ -88,10 +89,13 @@
 - (BOOL)isReadonly;
 - (void)loadView;
 - (BOOL)makeFirstFieldBecomeFirstResponder;
+- (BOOL)manuallyLinkPerson:(void*)arg1;
+- (BOOL)manuallyUnlinkPerson:(void*)arg1;
 - (id)message;
 - (id)messageDetail;
 - (id)messageDetailFont;
 - (id)messageFont;
+- (void)model:(id)arg1 localChangeWithInfo:(struct __CFDictionary { }*)arg2;
 - (id)model;
 - (void)modelDatabaseChange:(id)arg1;
 - (void)peoplePickerLinkButtonTapped;
@@ -101,6 +105,7 @@
 - (void)pickerCancel:(id)arg1;
 - (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 forProperty:(NSInteger)arg3 withActionGrouping:(NSInteger)arg4 ordering:(NSInteger)arg5;
 - (void)saveChanges;
+- (void)setActionShouldPickHighlightedItem:(BOOL)arg1;
 - (void)setAddressBook:(void*)arg1;
 - (void)setAllowsActions:(BOOL)arg1;
 - (void)setAllowsAddToFavorites:(BOOL)arg1;
@@ -108,9 +113,9 @@
 - (void)setAllowsConferencing:(BOOL)arg1;
 - (void)setAllowsDeletion:(BOOL)arg1;
 - (void)setAllowsEditing:(BOOL)arg1;
-- (void)setAllowsRingtone:(BOOL)arg1;
 - (void)setAllowsSettingAsPreferredCardForName:(BOOL)arg1;
 - (void)setAllowsSharing:(BOOL)arg1;
+- (void)setAllowsSounds:(BOOL)arg1;
 - (void)setAppearsInLinkingPeoplePicker:(BOOL)arg1;
 - (void)setAttribution:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)setAttribution:(id)arg1;
@@ -131,6 +136,7 @@
 - (void)setMessageDetailFont:(id)arg1;
 - (void)setMessageFont:(id)arg1;
 - (void)setModel:(id)arg1;
+- (void)setPeopleForUnifiedCard:(id)arg1;
 - (void)setPersonHeaderView:(id)arg1;
 - (void)setPersonHeaderViewScrolls:(BOOL)arg1;
 - (void)setPersonViewDelegate:(id)arg1;

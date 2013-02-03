@@ -80,6 +80,7 @@
 - (id)_keyboardResponder;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
+- (void)_pdfPageNumberLabelAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (id)_requestWithUDIDHeaderIfAppropriate:(id)arg1;
 - (BOOL)_requiresKeyboardResetOnReload;
 - (BOOL)_requiresKeyboardWhenFirstResponder;
@@ -96,10 +97,11 @@
 - (void)_stopAssistingKeyboard;
 - (void)_stopAssistingSelectForNode:(id)arg1;
 - (void)_updateAccessory;
-- (void)_updatePDFPageNumberLabelWithUserScrolling:(BOOL)arg1;
+- (void)_updatePDFPageNumberLabelWithUserScrolling:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateScrollerViewForInputView:(id)arg1;
 - (void)_webTouchEventsRecognized:(id)arg1;
 - (void)_zoomToNode:(id)arg1 forceScroll:(BOOL)arg2;
+- (void)_zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 ensuringVisibilityOfRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withScale:(float)arg3 forceScroll:(BOOL)arg4 formAssistantFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 animationDuration:(double)arg6;
 - (void)_zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 ensuringVisibilityOfRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withScale:(float)arg3 forceScroll:(BOOL)arg4;
 - (void)_zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withScale:(float)arg2;
 - (void)acceptedAutoFillWord:(id)arg1;
@@ -117,6 +119,7 @@
 - (id)formElement;
 - (BOOL)hasEditedTextField;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithWebView:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)inputAccessoryView;
 - (id)inputView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })inputViewBounds;
@@ -151,6 +154,5 @@
 - (void)webView:(id)arg1 willCloseFrame:(id)arg2;
 - (void)webViewDidPreventDefaultForEvent:(id)arg1;
 - (void)webViewFormEditedStatusHasChanged:(id)arg1;
-- (id)webVisiblePositionForPoint:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

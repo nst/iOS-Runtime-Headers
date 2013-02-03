@@ -10,6 +10,7 @@
     NSMutableDictionary *htmlResource;
     OADColorMap *mColorMap;
     OADColorScheme *mColorScheme;
+    BOOL mIsOnPhone;
     BOOL mIsThumbnail;
     NSString *mResourceUrlPrefix;
     id mResources;
@@ -24,6 +25,7 @@
 - (id)getHtmlResource;
 - (id)init;
 - (BOOL)isOffice12;
+- (BOOL)isOnPhone;
 - (BOOL)isThumbnail;
 - (void)popTextLevel;
 - (void)pushTextLevel;
@@ -33,6 +35,7 @@
 - (void)setColorScheme:(id)arg1;
 - (void)setComponentWithName:(id)arg1 value:(id)arg2;
 - (void)setHtmlResource:(id)arg1;
+- (void)setIsOnPhone:(BOOL)arg1;
 - (void)setIsThumbnail:(BOOL)arg1;
 - (void)setResourceUrlPrefix:(id)arg1;
 - (void)setResources:(id)arg1;

@@ -4,7 +4,7 @@
 
 @interface SPPlistBytesSerialization : NSObject {
     char *_buffer;
-    NSUInteger _length;
+    unsigned long _length;
 }
 
 - (char *)bytes;

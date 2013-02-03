@@ -18,6 +18,7 @@
 - (id)image;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (BOOL)pressed;
+- (void)setNeedsDisplay;
 - (void)setPressed:(BOOL)arg1;
 - (void)setStyle:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)setStyle:(NSInteger)arg1;

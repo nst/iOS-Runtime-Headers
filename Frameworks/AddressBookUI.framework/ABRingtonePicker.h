@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABRingtoneTableController, UIPreferencesTable;
+@class ABRingtoneTableController, UITableView;
 
 @interface ABRingtonePicker : UIView {
     id _delegate;
-    UIPreferencesTable *_table;
+    BOOL _isTextTone;
+    UITableView *_table;
     ABRingtoneTableController *_tableController;
 }
 
@@ -18,6 +19,7 @@
 - (id)delegate;
 - (void)displayScrollerIndicators;
 - (void)finishedWithPicker;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 avController:(id)arg2 asRingtonePicker:(BOOL)arg3;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 avController:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)ringtoneManagerContentsChanged:(id)arg1;

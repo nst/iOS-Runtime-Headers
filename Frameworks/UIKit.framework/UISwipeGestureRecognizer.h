@@ -8,10 +8,6 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    unsigned int _tableViewGesture : 1;
     unsigned int _failed : 1;
     NSInteger _direction;
     double _maximumDuration;
@@ -22,7 +18,6 @@
     NSUInteger _numberOfTouchesRequired;
     float _rateOfMaximumMovementDecay;
     float _rateOfMinimumMovementDecay;
-    } _startContentOffset;
     } _startLocation;
     struct CGPoint { float x1; float x2; } *_startLocations;
     double _startTime;
@@ -39,7 +34,6 @@
 @property float rateOfMaximumMovementDecay;
 @property float rateOfMinimumMovementDecay;
 @property(readonly) CGPoint startPoint;
-@property(getter=isTableViewGesture) BOOL tableViewGesture;
 
 + (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 direction:(NSInteger)arg4 touchCount:(NSUInteger)arg5;
 + (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 direction:(NSInteger)arg4;
@@ -52,7 +46,6 @@
 - (void)dealloc;
 - (NSInteger)direction;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (BOOL)isTableViewGesture;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })locationOfTouch:(NSUInteger)arg1 inView:(id)arg2;
 - (double)maximumDuration;
@@ -73,7 +66,6 @@
 - (void)setNumberOfTouchesRequired:(NSUInteger)arg1;
 - (void)setRateOfMaximumMovementDecay:(float)arg1;
 - (void)setRateOfMinimumMovementDecay:(float)arg1;
-- (void)setTableViewGesture:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })startPoint;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

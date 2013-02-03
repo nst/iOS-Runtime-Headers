@@ -8,6 +8,7 @@
 + (void)_initializeSafeCategory;
 
 - (BOOL)_accessibilityIsTitleElement;
+- (BOOL)_accessibilityServesAsFirstElement;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (BOOL)isAccessibilityElement;

@@ -5,8 +5,8 @@
 @class NSArray;
 
 @interface FTPushHandler : NSObject {
-    unsigned int _registeredForPush : 1;
     id _delegate;
+    BOOL _registeredForPush;
     NSArray *_topics;
 }
 

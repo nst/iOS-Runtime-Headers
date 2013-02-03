@@ -7,6 +7,8 @@
 @interface SUViewControllerScriptProperties : NSObject <NSCoding, NSCopying> {
     UIColor *_backgroundColor;
     BOOL _doubleTapEnabled;
+    BOOL _embedded;
+    BOOL _inputViewObeysDOMFocus;
     NSInteger _loadingIndicatorStyle;
     UIColor *_loadingTextColor;
     UIColor *_loadingTextShadowColor;
@@ -24,6 +26,8 @@
 @property(retain) SUGradient *placeholderBackgroundGradient;
 @property(retain) UIColor *topExtensionColor;
 @property(getter=isDoubleTapEnabled) BOOL doubleTapEnabled;
+@property(getter=isEmbedded) BOOL embedded;
+@property BOOL inputViewObeysDOMFocus;
 @property NSInteger loadingIndicatorStyle;
 @property(getter=isScrollingDisabled) BOOL scrollingDisabled;
 @property BOOL shouldLoadProgressively;
@@ -35,7 +39,9 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)inputViewObeysDOMFocus;
 - (BOOL)isDoubleTapEnabled;
+- (BOOL)isEmbedded;
 - (BOOL)isScrollingDisabled;
 - (NSInteger)loadingIndicatorStyle;
 - (id)loadingTextColor;
@@ -43,6 +49,8 @@
 - (id)placeholderBackgroundGradient;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setDoubleTapEnabled:(BOOL)arg1;
+- (void)setEmbedded:(BOOL)arg1;
+- (void)setInputViewObeysDOMFocus:(BOOL)arg1;
 - (void)setLoadingIndicatorStyle:(NSInteger)arg1;
 - (void)setLoadingTextColor:(id)arg1;
 - (void)setLoadingTextShadowColor:(id)arg1;

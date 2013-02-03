@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUItemContentRating, NSDate, SUItemReviewStatistics, NSDictionary, NSString, SUItem, SSItemOffer, NSArray;
+@class SUItemContentRating, NSArray, NSDate, SUItemReviewStatistics, NSDictionary, SSItemImageCollection, SUItem, NSString, SSItemOffer;
 
 @interface SUItem : NSObject <NSCopying> {
     NSString *_artistName;
@@ -16,11 +16,12 @@
     SSItemOffer *_defaultStoreOffer;
     NSDictionary *_dictionary;
     NSString *_disclaimerString;
+    BOOL _gameCenterEnabled;
     NSString *_genreName;
     NSString *_humanReadableDescription;
     NSInteger _itemDisplayType;
     unsigned long long _itemIdentifier;
-    NSArray *_itemImages;
+    SSItemImageCollection *_itemImageCollection;
     NSArray *_itemLinks;
     NSString *_itemMediaKind;
     NSInteger _itemType;
@@ -48,7 +49,7 @@
 @property(copy) NSString *genreName;
 @property(copy) NSString *humanReadableDescription;
 @property(readonly) NSDictionary *itemDictionary;
-@property(copy) NSArray *itemImages;
+@property(copy) SSItemImageCollection *itemImageCollection;
 @property(copy) NSArray *itemLinks;
 @property(copy) NSString *itemMediaKind;
 @property(readonly) NSString *itemTypeString;
@@ -59,16 +60,14 @@
 @property(copy) NSString *title;
 @property(copy) NSString *unmodifiedTitle;
 @property(getter=isDownloadable,readonly) BOOL downloadable;
+@property(getter=isGameCenterEnabled) BOOL gameCenterEnabled;
 @property NSInteger itemDisplayType;
 @property unsigned long long itemIdentifier;
 @property NSInteger itemType;
 @property NSInteger representedItemCount;
 
-- (id)_copyItemImagesFromValue:(id)arg1;
-- (id)_imagesForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (NSInteger)_linkTargetForTargetString:(id)arg1 typeString:(id)arg2;
 - (NSInteger)_linkTypeForString:(id)arg1;
-- (id)_newImagesForDictionary:(id)arg1;
 - (id)_newItemLinkWithType:(NSInteger)arg1 URLKey:(id)arg2 titleKey:(id)arg3;
 - (id)_newItemLinkWithType:(NSInteger)arg1 dictionary:(id)arg2;
 - (id)_newPrimaryItemLink;
@@ -81,7 +80,6 @@
 - (id)_squishImageForSquishDictionary:(id)arg1;
 - (id)_valueForFirstAvailableKey:(id)arg1;
 - (id)artistName;
-- (id)bestImageForSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)boolValueForProperty:(id)arg1;
 - (id)bundleIdentifier;
 - (id)bundleVersion;
@@ -100,16 +98,15 @@
 - (id)firstItemLinkForType:(NSInteger)arg1;
 - (id)genreName;
 - (id)humanReadableDescription;
-- (id)imagesForSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)imagesForType:(NSInteger)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (NSInteger)integerValueForProperty:(id)arg1;
 - (BOOL)isDisplayable:(id*)arg1;
 - (BOOL)isDownloadable;
+- (BOOL)isGameCenterEnabled;
 - (id)itemDictionary;
 - (NSInteger)itemDisplayType;
 - (unsigned long long)itemIdentifier;
-- (id)itemImages;
+- (id)itemImageCollection;
 - (id)itemLinks;
 - (id)itemLinksForType:(NSInteger)arg1;
 - (id)itemMediaKind;
@@ -128,11 +125,12 @@
 - (void)setContentRating:(id)arg1;
 - (void)setCopyrightString:(id)arg1;
 - (void)setDisclaimerString:(id)arg1;
+- (void)setGameCenterEnabled:(BOOL)arg1;
 - (void)setGenreName:(id)arg1;
 - (void)setHumanReadableDescription:(id)arg1;
 - (void)setItemDisplayType:(NSInteger)arg1;
 - (void)setItemIdentifier:(unsigned long long)arg1;
-- (void)setItemImages:(id)arg1;
+- (void)setItemImageCollection:(id)arg1;
 - (void)setItemLinks:(id)arg1;
 - (void)setItemMediaKind:(id)arg1;
 - (void)setItemType:(NSInteger)arg1;

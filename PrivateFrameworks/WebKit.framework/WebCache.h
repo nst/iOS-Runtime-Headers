@@ -5,6 +5,7 @@
 @interface WebCache : NSObject {
 }
 
++ (void)clearCachedCredentials;
 + (void)empty;
 + (void)emptyInMemoryResources;
 + (void)initialize;

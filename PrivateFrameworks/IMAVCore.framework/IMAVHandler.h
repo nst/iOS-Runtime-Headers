@@ -36,6 +36,7 @@
 - (oneway void)audioReflectorRequested:(BOOL)arg1 transactionID:(NSUInteger)arg2;
 - (oneway void)currentAVChatInfoRequestedWithTransactionID:(NSUInteger)arg1;
 - (void)dealloc;
+- (oneway void)pendingVCRequestComplete;
 - (oneway void)persistentProperty:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
 - (oneway void)property:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
 - (oneway void)services:(id)arg1 properties:(id)arg2 persistentProperties:(id)arg3;

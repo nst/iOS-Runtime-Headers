@@ -7,7 +7,6 @@
 @interface CNFConferenceController : NSObject <IMAVControllerDelegate, IMAVInvitationControllerDelegate, IMAVChatDelegate> {
     IMAVChat *_activeAVChat;
     NSMutableArray *_avChatList;
-    struct __CTCall { } *_call;
     NSURL *_delayedInvitationURL;
     BOOL _fullConferenceCapable;
     BOOL _isConnected;
@@ -39,9 +38,7 @@
 - (BOOL)_blockingIsInConference;
 - (void)_cancelWaitingForFirstRemoteFrameTimer;
 - (void)_cleanUpAfterAVChat;
-- (void)_createMissedCallEntryForConferenceURL:(id)arg1 isOriginator:(BOOL)arg2;
 - (void)_fakeFirstRemoteFrameNotification:(id)arg1;
-- (void)_finalizeRecentCallEntryForConference:(id)arg1 withReason:(NSUInteger)arg2;
 - (void)_handleAVChatStateChangeFromState:(NSUInteger)arg1 to:(NSUInteger)arg2 withReason:(NSUInteger)arg3;
 - (void)_handleAccountNotRegisteredForURL:(id)arg1 registrationInProgress:(BOOL)arg2;
 - (void)_handleChangeForRemoteIsMuted:(BOOL)arg1;
@@ -61,7 +58,6 @@
 - (void)_presentCallScreenForIMAVChat:(id)arg1;
 - (void)_sendPresentConferenceNotification;
 - (void)_setupWaitingForFirstRemoteFrameTimerForAVChat:(id)arg1;
-- (void)_startRecentCallEntryForConference:(id)arg1;
 - (void)_updateEnabledStatusChanged;
 - (void)acceptConferenceInvitationFrom:(id)arg1 conferenceID:(id)arg2;
 - (BOOL)accountsAreLoggedIn;
@@ -72,9 +68,11 @@
 - (void)avChat:(id)arg1 stateChanged:(NSUInteger)arg2;
 - (id)avChat;
 - (void)avChatStateChangedFrom:(NSUInteger)arg1 to:(NSUInteger)arg2 reason:(NSUInteger)arg3;
-- (id)availableConferenceURLs;
+- (id)availableFaceTimeURLs;
 - (BOOL)canInitiateConferenceForDestinationID:(id)arg1;
 - (BOOL)canInitiateConferenceForPhoneNumber:(id)arg1;
+- (BOOL)canInitiateFaceTimeForDestinationID:(id)arg1;
+- (BOOL)canInitiateFaceTimeForPhoneNumber:(id)arg1;
 - (BOOL)canSendConferenceInvitationTo:(id)arg1;
 - (void)conference:(id)arg1 handleMissedInvitationFromIMHandle:(id)arg2;
 - (void)conference:(id)arg1 receivedCancelledInvitationFromIMHandle:(id)arg2;
@@ -86,10 +84,12 @@
 - (BOOL)conferencingIsAvailable;
 - (void)connectToService;
 - (BOOL)contactCanBeConferenced:(void*)arg1;
-- (id)contactConferenceURLForABRecord:(void*)arg1;
+- (id)contactFaceTimeURLForABRecord:(void*)arg1;
 - (void)dealloc;
 - (void)disconnectFromService;
 - (void)endConference;
+- (id)faceTimeURLForDestinationID:(id)arg1;
+- (id)faceTimeURLForPhoneNumber:(id)arg1;
 - (void)hangUpConference;
 - (BOOL)havePreviouslyConferencedWithID:(id)arg1;
 - (void)iChatAgentConnected;

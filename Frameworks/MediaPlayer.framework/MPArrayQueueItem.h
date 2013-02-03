@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString, MPItem;
+@class MPAVItem, NSString;
 
 @interface MPArrayQueueItem : NSObject {
     NSString *_path;
-    MPItem *_rawItem;
+    MPAVItem *_rawItem;
     double _startTime;
     double _stopTime;
 }
 
 @property(retain) NSString *path;
-@property(retain) MPItem *rawItem;
+@property(retain) MPAVItem *rawItem;
 @property double startTime;
 @property double stopTime;
 

@@ -21,32 +21,27 @@
 @property(readonly) CGSize size;
 @property(readonly) NSInteger topCapHeight;
 
-+ (id)_adlib_imageNamed:(id)arg1;
 + (id)_applicationIconImageForBundleIdentifier:(id)arg1 roleIdentifier:(id)arg2 format:(NSInteger)arg3 scale:(float)arg4;
 + (id)_applicationIconImageForBundleIdentifier:(id)arg1 roleIdentifier:(id)arg2 format:(NSInteger)arg3;
++ (id)_backgroundGradientWithStartColor:(id)arg1 andEndColor:(id)arg2;
 + (id)_balloonImage:(BOOL)arg1 color:(BOOL)arg2;
 + (id)_balloonMask:(BOOL)arg1;
 + (id)_defaultBackgroundGradient;
 + (void)_flushCacheOnMemoryWarning:(id)arg1;
 + (void)_flushSharedImageCache;
++ (void)_gkPurgeRemoteImageCache;
++ (void)_gkloadRemoteImageForURL:(id)arg1 withCompletionHandler:(id)arg2;
 + (id)_highlightImage;
 + (id)_iconForResourceProxy:(id)arg1 format:(NSInteger)arg2;
 + (id)_iconForResourceProxy:(id)arg1 variant:(NSInteger)arg2 variantsScale:(float)arg3;
 + (NSInteger)_iconVariantForUIApplicationIconFormat:(NSInteger)arg1 scale:(float*)arg2;
 + (id)_imageWithColor:(BOOL)arg1;
-+ (id)_imageWithContentsOfFileIfPathExists:(id)arg1;
 + (void)_initializeSafeCategory;
 + (id)_mapkit_imageNamed:(id)arg1;
 + (id)abImageNamed:(id)arg1;
 + (id)applicationImageNamed:(id)arg1;
 + (id)ckImageNamed:(id)arg1;
 + (id)ckImageWithData:(id)arg1;
-+ (id)defaultDesktopImage;
-+ (id)desktopImagePathForVariant:(NSInteger)arg1;
-+ (id)desktopImageThumbnailPathForVariant:(NSInteger)arg1;
-+ (BOOL)getDefaultDesktopImage:(id*)arg1 composedPortraitImage:(id*)arg2 composedLandscapeImage:(id*)arg3 forVariant:(NSInteger)arg4;
-+ (BOOL)getDefaultDesktopImageIfExists:(id*)arg1 composedPortraitImage:(id*)arg2 composedLandscapeImage:(id*)arg3 forVariant:(NSInteger)arg4;
-+ (BOOL)getDefaultDesktopThumbnailImage:(id*)arg1 forVariant:(NSInteger)arg2;
 + (id)imageAtPath:(id)arg1;
 + (id)imageFromAlbumArtData:(id)arg1 artworkInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { NSUInteger x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; NSUInteger x_1_1_4; NSInteger x_1_1_5; NSInteger x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg2 cache:(BOOL)arg3;
 + (id)imageFromAlbumArtData:(id)arg1 height:(NSInteger)arg2 width:(NSInteger)arg3 bytesPerRow:(NSInteger)arg4 cache:(BOOL)arg5;
@@ -54,6 +49,7 @@
 + (id)imageNamed:(id)arg1;
 + (id)imageWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 orientation:(NSInteger)arg3;
 + (id)imageWithCGImage:(struct CGImage { }*)arg1;
++ (id)imageWithContentsOfCPBitmapFile:(id)arg1 flags:(NSInteger)arg2;
 + (id)imageWithContentsOfFile:(id)arg1;
 + (id)imageWithData:(id)arg1 scale:(float)arg2;
 + (id)imageWithData:(id)arg1;
@@ -62,18 +58,15 @@
 + (struct CGImage { }*)missingMapTileImage;
 + (id)nikeBackgroundImage;
 + (id)nikeRunLandscapeBackgroundImage;
-+ (void)removeAllWallpaper;
-+ (void)removeComposedWallpaper;
 + (void)removeImageNameFromCache:(id)arg1;
 + (id)reversedNikeRunLandscapeBackgroundImage;
-+ (void)setDesktopImageData:(id)arg1 composedPortraitImageData:(id)arg2 composedLandscapeImageData:(id)arg3 forVariant:(NSInteger)arg4;
-+ (void)setDesktopThumbnailImageData:(id)arg1 forVariant:(NSInteger)arg2;
 + (void)setPreferredSharedImageScale:(float)arg1;
 + (id)sharedImageNamed:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 drawUsingBlock:(id)arg3;
 + (id)tpImageNamed:(id)arg1 inBundle:(id)arg2;
 
 - (struct CGImage { }*)CGImage;
 - (id)GKScaleToSize:(struct CGSize { float x1; float x2; })arg1;
+- (void*)PL_imageContents;
 - (void*)PL_imageContents;
 - (id)_applicationIconImageForFormat:(NSInteger)arg1 precomposed:(BOOL)arg2 scale:(float)arg3;
 - (id)_applicationIconImageForFormat:(NSInteger)arg1 precomposed:(BOOL)arg2;
@@ -103,6 +96,7 @@
 - (void)compositeToPoint:(struct CGPoint { float x1; float x2; })arg1 operation:(NSInteger)arg2 fraction:(float)arg3;
 - (void)compositeToPoint:(struct CGPoint { float x1; float x2; })arg1 operation:(NSInteger)arg2;
 - (void)compositeToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 operation:(NSInteger)arg3 fraction:(float)arg4;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)draw1PartImageInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fraction:(float)arg2 operation:(NSInteger)arg3;
 - (void)draw1PartImageInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fraction:(float)arg2;
@@ -125,6 +119,7 @@
 - (id)initWithCGImage:(struct CGImage { }*)arg1 imageOrientation:(NSInteger)arg2;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 orientation:(NSInteger)arg3;
 - (id)initWithCGImage:(struct CGImage { }*)arg1;
+- (id)initWithContentsOfCPBitmapFile:(id)arg1 flags:(NSInteger)arg2;
 - (id)initWithContentsOfFile:(id)arg1 cache:(BOOL)arg2;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithData:(id)arg1 cache:(BOOL)arg2;
@@ -138,6 +133,8 @@
 - (id)newBalloonImageWithTail:(BOOL)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)newColoredImageWithColor:(id)arg1;
 - (id)newImageRotatedByDegrees:(float)arg1;
+- (id)newImageRotatedByDegrees:(float)arg1;
+- (id)newImageWithOrientation:(NSInteger)arg1;
 - (id)newImageWithOrientation:(NSInteger)arg1;
 - (id)patternColor;
 - (void)removeFromCache;
@@ -148,5 +145,6 @@
 - (id)stretchableImageWithLeftCapWidth:(NSInteger)arg1 rightCapWidth:(NSInteger)arg2;
 - (id)stretchableImageWithLeftCapWidth:(NSInteger)arg1 topCapHeight:(NSInteger)arg2;
 - (NSInteger)topCapHeight;
+- (BOOL)writeToCPBitmapFile:(id)arg1 flags:(NSInteger)arg2;
 
 @end

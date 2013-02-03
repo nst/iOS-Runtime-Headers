@@ -4,7 +4,7 @@
 
 @class NSFileHandle;
 
-@interface WebCoreResourceHandleAsDelegate : NSObject {
+@interface WebCoreResourceHandleAsDelegate : NSObject <NSURLConnectionDelegate> {
     struct ResourceHandle { int (**x1)(); NSInteger x2; struct OwnPtr<WebCore::ResourceHandleInternal> { 
             struct ResourceHandleInternal {} *m_ptr; 
     id m_converter;

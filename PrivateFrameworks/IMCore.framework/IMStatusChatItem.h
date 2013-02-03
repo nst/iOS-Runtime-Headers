@@ -5,6 +5,11 @@
 @interface IMStatusChatItem : IMChatItem {
 }
 
+@property(readonly) NSString *formatString;
+@property(readonly) NSArray *handles;
+@property(readonly) NSString *stringValue;
+@property(readonly) NSInteger statusType;
+
 - (id)description;
 - (id)formatString;
 - (id)handles;

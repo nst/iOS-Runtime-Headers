@@ -8,6 +8,13 @@
     NSDictionary *_currentAVChatInfo;
 }
 
+@property(readonly) NSDictionary *currentAVChatInfo;
+@property(readonly) NSArray *myAvailableMessages;
+@property(readonly) NSArray *myAwayMessages;
+@property(readonly) NSUInteger requestAudioReflectorStart;
+@property(readonly) NSUInteger requestAudioReflectorStop;
+@property(readonly) unsigned long long vcCapabilities;
+
 + (oneway void)forgetStatusImageAppearance;
 + (id)imageNameForStatus:(NSUInteger)arg1;
 + (id)imageURLForStatus:(NSUInteger)arg1;
@@ -18,6 +25,7 @@
 
 - (id)currentAVChatInfo;
 - (void)dealloc;
+- (oneway void)launchIfNecessary;
 - (id)myAvailableMessages;
 - (id)myAwayMessages;
 - (id)myPictureData;

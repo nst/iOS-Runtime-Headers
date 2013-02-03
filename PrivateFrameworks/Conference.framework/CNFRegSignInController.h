@@ -82,6 +82,7 @@
 - (BOOL)usernameFieldIsEmpty;
 - (id)usernameTextField;
 - (id)validationString;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)willBecomeActive;

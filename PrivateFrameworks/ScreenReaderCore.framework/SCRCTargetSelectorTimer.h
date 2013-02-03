@@ -28,6 +28,7 @@
 - (void)invalidate;
 - (BOOL)isCancelled;
 - (BOOL)isPending;
+- (void)release;
 - (id)threadKey;
 
 @end

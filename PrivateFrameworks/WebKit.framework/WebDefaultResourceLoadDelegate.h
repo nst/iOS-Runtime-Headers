@@ -19,6 +19,7 @@
 - (void)webView:(id)arg1 resource:(id)arg2 didReceiveContentLength:(NSInteger)arg3 fromDataSource:(id)arg4;
 - (void)webView:(id)arg1 resource:(id)arg2 didReceiveResponse:(id)arg3 fromDataSource:(id)arg4;
 - (BOOL)webView:(id)arg1 resource:(id)arg2 shouldUseCredentialStorageForDataSource:(id)arg3;
+- (id)webView:(id)arg1 resource:(id)arg2 willCacheResponse:(id)arg3 fromDataSource:(id)arg4;
 - (id)webView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
 
 @end

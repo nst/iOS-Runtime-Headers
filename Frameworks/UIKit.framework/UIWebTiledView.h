@@ -24,6 +24,7 @@
 - (void)layoutSubviews;
 - (BOOL)layoutTilesInMainThread;
 - (void)layoutTilesNow;
+- (void)layoutTilesNowForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutTilesNowOnWebThread;
 - (void)lockTilingMode;
 - (BOOL)logsTilingChanges;
@@ -52,6 +53,7 @@
 - (void)unlockTilingMode;
 - (void)updateTilingMode;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
+- (id)wakWindow;
 - (void)willMoveToWindow:(id)arg1;
 - (struct WKWindow { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; id x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct WKView {} *x4; struct WKView {} *x5; struct WKView {} *x6; struct CGSize { float x_7_1_1; float x_7_1_2; } x7; struct CGSize { float x_8_1_1; float x_8_1_2; } x8; float x9; unsigned int x10 : 1; }*)wkWindow;
 

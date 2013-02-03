@@ -2,33 +2,98 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItemInternal;
-
-@interface MPMediaItem : NSObject <NSCoding> {
-    MPMediaItemInternal *_internal;
+@interface MPMediaItem : MPMediaEntity {
 }
 
+@property(readonly) NSString *albumArtist;
+@property(readonly) NSString *albumTitle;
+@property(readonly) NSString *artist;
+@property(readonly) MPMediaItemArtwork *artwork;
 @property(readonly) NSArray *chapters;
+@property(readonly) NSString *composer;
+@property(readonly) NSString *effectiveAlbumArtist;
+@property(readonly) NSString *genre;
+@property(copy) NSDate *lastPlayedDate;
+@property(copy) NSDate *lastSkippedDate;
+@property(readonly) NSString *podcastTitle;
+@property(readonly) NSDate *releaseDate;
+@property(readonly) NSString *title;
+@property double bookmarkTime;
+@property(readonly) double effectiveStopTime;
+@property BOOL hasBeenPlayed;
+@property(readonly) BOOL isRental;
+@property(readonly) NSInteger mediaType;
+@property NSUInteger playCount;
+@property NSUInteger playCountSinceSync;
+@property(readonly) double playbackDuration;
+@property NSUInteger rating;
+@property(readonly) BOOL rememberBookmarkTime;
+@property NSUInteger skipCount;
+@property NSUInteger skipCountSinceSync;
+@property(readonly) double startTime;
+@property(readonly) double stopTime;
+@property(readonly) NSUInteger year;
 
 + (void)_createFilterableDictionary;
 + (void)_didReceiveMemoryWarning;
 + (BOOL)_isValidItemProperty:(id)arg1;
 + (BOOL)canFilterByProperty:(id)arg1;
++ (id)dynamicProperties;
++ (id)persistentIDPropertyForGroupingType:(NSInteger)arg1;
++ (id)titlePropertyForGroupingType:(NSInteger)arg1;
 
-- (void)_cacheValuesForProperties:(id)arg1;
 - (void)_didReceiveMemoryWarning;
-- (BOOL)_hasCachedValueForProperty:(id)arg1;
-- (void)_initInternalWithPersistentID:(unsigned long long)arg1;
+- (id)albumArtist;
+- (id)albumTitle;
+- (id)artist;
+- (id)artwork;
+- (double)bookmarkTime;
+- (id)chapterOfType:(NSInteger)arg1 atIndex:(NSUInteger)arg2;
+- (id)chapterOfType:(NSInteger)arg1 atTime:(double)arg2;
 - (id)chapters;
-- (void)dealloc;
-- (id)description;
+- (id)chaptersOfType:(NSInteger)arg1;
+- (id)composer;
+- (NSUInteger)countOfChaptersOfType:(NSInteger)arg1;
+- (void)didReceiveMemoryWarning;
+- (id)effectiveAlbumArtist;
+- (double)effectiveStopTime;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
+- (BOOL)existsInLibrary;
+- (void)gaplessHeuristicInfo:(NSUInteger*)arg1 duration:(NSUInteger*)arg2 lastPacketsResync:(NSUInteger*)arg3 encodingDelay:(NSUInteger*)arg4 encodingDrain:(NSUInteger*)arg5;
+- (id)genre;
+- (BOOL)hasBeenPlayed;
 - (NSUInteger)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPersistentID:(unsigned long long)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (id)playbackTimesForChapterArtwork;
+- (BOOL)isRental;
+- (id)lastPlayedDate;
+- (id)lastSkippedDate;
+- (NSInteger)mediaType;
+- (NSUInteger)playCount;
+- (NSUInteger)playCountSinceSync;
+- (double)playbackDuration;
+- (id)podcastTitle;
+- (id)predicateForProperty:(id)arg1;
+- (NSUInteger)rating;
+- (id)releaseDate;
+- (BOOL)rememberBookmarkTime;
+- (id)representativeItem;
+- (void)setBookmarkTime:(double)arg1;
+- (void)setHasBeenPlayed:(BOOL)arg1;
+- (void)setLastPlayedDate:(id)arg1;
+- (void)setLastSkippedDate:(id)arg1;
+- (void)setPlayCount:(NSUInteger)arg1;
+- (void)setPlayCountSinceSync:(NSUInteger)arg1;
+- (void)setRating:(NSUInteger)arg1;
+- (void)setSkipCount:(NSUInteger)arg1;
+- (void)setSkipCountSinceSync:(NSUInteger)arg1;
+- (NSUInteger)skipCount;
+- (NSUInteger)skipCountSinceSync;
+- (double)startTime;
+- (double)stopTime;
+- (id)title;
 - (id)valueForProperty:(id)arg1;
+- (NSUInteger)year;
 
 @end

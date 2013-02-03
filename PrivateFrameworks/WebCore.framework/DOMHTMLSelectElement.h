@@ -18,6 +18,7 @@
 @property NSInteger size;
 @property(readonly) BOOL willValidate;
 
+- (void)_activateItemAtIndex:(NSInteger)arg1 allowMultipleSelection:(BOOL)arg2;
 - (void)_activateItemAtIndex:(NSInteger)arg1;
 - (BOOL)_requiresAccessoryView;
 - (BOOL)_requiresInputView;

@@ -2,7 +2,11 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKUITheme, UIActivityIndicatorView, UILabel;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class UIImageView, UIActivityIndicatorView, UILabel, GKUITheme;
 
 @interface GKBackgroundView : UIView {
     struct UIEdgeInsets { 
@@ -10,21 +14,43 @@
         float left; 
         float bottom; 
         float right; 
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _imageInsets;
     BOOL _loading;
+    id _loadingHandler;
     UIActivityIndicatorView *_loadingSpinner;
+    UIImageView *_lowerShadowView;
+    } _shadowInsets;
+    NSInteger _shadowStyle;
     BOOL _shouldHideLabelAfterLoading;
+    } _statusInsets;
     UILabel *_statusLabel;
     GKUITheme *_theme;
+    UIImageView *_upperShadowView;
 }
 
+@property(copy) ? *loadingHandler;
 @property(retain) UIActivityIndicatorView *loadingSpinner;
+@property(retain) UIImageView *lowerShadowView;
 @property(retain) NSString *status;
 @property(retain) UILabel *statusLabel;
 @property(retain) GKUITheme *theme;
+@property(retain) UIImageView *upperShadowView;
 @property UIEdgeInsets imageInsets;
 @property BOOL loading;
+@property UIEdgeInsets shadowInsets;
+@property NSInteger shadowStyle;
 @property BOOL shouldHideLabelAfterLoading;
+@property UIEdgeInsets statusInsets;
 
 + (void)_initializeSafeCategory;
 
@@ -35,18 +61,32 @@
 - (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (BOOL)loading;
+- (id)loadingHandler;
 - (id)loadingSpinner;
+- (id)lowerShadowView;
 - (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setLoading:(BOOL)arg1;
+- (void)setLoadingHandler:(id)arg1;
 - (void)setLoadingSpinner:(id)arg1;
+- (void)setLoadingWithNoDelay;
+- (void)setLowerShadowView:(id)arg1;
+- (void)setShadowInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setShadowStyle:(NSInteger)arg1;
 - (void)setShouldHideLabelAfterLoading:(BOOL)arg1;
 - (void)setStatus:(id)arg1;
+- (void)setStatusInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setStatusLabel:(id)arg1;
 - (void)setTheme:(id)arg1;
+- (void)setUpperShadowView:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })shadowInsets;
+- (NSInteger)shadowStyle;
 - (BOOL)shouldHideLabelAfterLoading;
 - (id)status;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })statusInsets;
 - (id)statusLabel;
 - (id)theme;
 - (void)updateLoading;
+- (void)updateShadowViews;
+- (id)upperShadowView;
 
 @end

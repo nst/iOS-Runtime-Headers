@@ -17,6 +17,7 @@
     UIColor *_sectionBorderColor;
     NSInteger _sectionLocation;
     BOOL _selected;
+    NSInteger _selectionStyle;
     UIColor *_separatorColor;
     } _size;
     UIColor *_topShadowColor;
@@ -33,6 +34,7 @@
 @property float rightPhase;
 @property NSInteger sectionLocation;
 @property BOOL selected;
+@property NSInteger selectionStyle;
 @property CGSize size;
 
 - (id)backgroundColor;
@@ -49,6 +51,7 @@
 - (id)sectionBorderColor;
 - (NSInteger)sectionLocation;
 - (BOOL)selected;
+- (NSInteger)selectionStyle;
 - (id)separatorColor;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBottomShadowColor:(id)arg1;
@@ -59,6 +62,7 @@
 - (void)setSectionBorderColor:(id)arg1;
 - (void)setSectionLocation:(NSInteger)arg1;
 - (void)setSelected:(BOOL)arg1;
+- (void)setSelectionStyle:(NSInteger)arg1;
 - (void)setSeparatorColor:(id)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTopShadowColor:(id)arg1;

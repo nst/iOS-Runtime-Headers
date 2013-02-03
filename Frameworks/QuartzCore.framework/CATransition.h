@@ -5,6 +5,7 @@
 @interface CATransition : CAAnimation {
 }
 
+@property(copy) NSDictionary *options;
 @property(copy) NSString *subtype;
 @property(copy) NSString *type;
 @property float endProgress;
@@ -16,8 +17,10 @@
 - (NSUInteger)_propertyFlagsForLayer:(id)arg1;
 - (float)endProgress;
 - (id)filter;
+- (id)options;
 - (void)setEndProgress:(float)arg1;
 - (void)setFilter:(id)arg1;
+- (void)setOptions:(id)arg1;
 - (void)setStartProgress:(float)arg1;
 - (void)setSubtype:(id)arg1;
 - (void)setTransitionFlags:(NSUInteger)arg1;

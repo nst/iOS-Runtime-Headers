@@ -38,6 +38,7 @@
     struct __CFDictionary { } *_statementCachesByDB;
     struct sqlite3 { } *_writerDB;
     BOOL _writerDBIsBeingUsedAsReader;
+    struct dispatch_queue_s { } *_writingQueue;
 }
 
 + (id)defaultInstance;
@@ -105,6 +106,7 @@
 - (void)handleKeybagLock;
 - (void)handleKeybagUnlock;
 - (NSInteger)handleSqliteError:(struct sqlite3 { }*)arg1 format:(id)arg2;
+- (BOOL)hasCompleteDataForMimePart:(id)arg1;
 - (id)headerDataAtPath:(id)arg1;
 - (id)headerDataForMessage:(id)arg1;
 - (id)hiddenPOPUIDsInMailbox:(id)arg1;
@@ -126,10 +128,9 @@
 - (id)mailboxUidForMessage:(id)arg1;
 - (NSUInteger)maximumRemoteIDForMailbox:(id)arg1;
 - (void)maybeCommitTransaction;
-- (id)messageWithLibraryID:(NSUInteger)arg1 options:(NSUInteger)arg2;
-- (id)messageWithLibraryID:(NSUInteger)arg1;
+- (id)messageWithLibraryID:(NSUInteger)arg1 options:(NSUInteger)arg2 inMailbox:(id)arg3;
 - (id)messageWithMessageID:(id)arg1 inMailbox:(id)arg2;
-- (id)messageWithMessageID:(id)arg1;
+- (id)messageWithMessageID:(id)arg1 options:(NSUInteger)arg2 inMailbox:(id)arg3;
 - (id)messageWithRemoteID:(id)arg1 inRemoteMailbox:(id)arg2;
 - (id)messagesForMailbox:(id)arg1 olderThanNumberOfDays:(NSInteger)arg2;
 - (id)messagesMatchingCriterion:(id)arg1 options:(NSUInteger)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
@@ -141,6 +142,7 @@
 - (id)messagesWithSummariesForMailbox:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (id)messagesWithoutSummariesForMailbox:(id)arg1 fromRowID:(NSUInteger)arg2 limit:(NSUInteger)arg3;
 - (id)messagesWithoutSummariesForMailbox:(id)arg1;
+- (id)metadataForMessage:(id)arg1 key:(id)arg2;
 - (void)migrateExternalFilesForMessage:(id)arg1 withLibraryID:(NSUInteger)arg2 andMailboxID:(NSInteger)arg3 externalID:(id)arg4 listingsByDirectory:(id)arg5;
 - (NSUInteger)minimumRemoteIDForMailbox:(id)arg1;
 - (NSUInteger)nonDeletedCountForMailbox:(id)arg1 includeServerSearchResults:(BOOL)arg2 includeThreadSearchResults:(BOOL)arg3;
@@ -206,6 +208,7 @@
 - (NSUInteger)totalCountForMailbox:(id)arg1;
 - (void)unlockDB:(struct sqlite3 { }*)arg1;
 - (NSUInteger)unreadCountForMailbox:(id)arg1;
+- (void)updateMessage:(id)arg1 withMetadata:(id)arg2;
 - (void)updateRecipientsForMessage:(id)arg1 fromHeaders:(id)arg2;
 - (NSUInteger)updateSequenceNumber;
 - (void)updateThreadingInfoForMessage:(id)arg1 fromHeaders:(id)arg2;

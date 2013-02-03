@@ -25,7 +25,6 @@
 - (void)didPrepareForRemoteSelectorInvocation;
 - (BOOL)inBlockHandlingPlaybackStateChangedMessageFromServer;
 - (id)initWithMusicPlayerController:(id)arg1;
-- (void)prepareForDecodingWithCoder:(id)arg1;
 - (BOOL)prepareForRemoteSelectorInvocation;
 - (void)serverConnectionDied;
 - (void)setInBlockHandlingPlaybackStateChangedMessageFromServer:(BOOL)arg1;

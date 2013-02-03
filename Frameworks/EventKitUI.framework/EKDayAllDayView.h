@@ -2,38 +2,52 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UILabel, <EKDayAllDayViewDelegate>, UIScrollView, NSMutableArray;
+@class UILabel, <EKDayAllDayViewDelegate>, UIScrollView, NSMutableArray, <EKDayAllDayViewDataSource>;
 
 @interface EKDayAllDayView : UIView {
     UILabel *_allDay;
     BOOL _allowSelection;
+    <EKDayAllDayViewDataSource> *_dataSource;
     <EKDayAllDayViewDelegate> *_delegate;
+    BOOL _dimsNonSelectedItems;
     NSInteger _maxVisibleItems;
     float _occurrenceInset;
     NSMutableArray *_occurrenceViews;
     UIScrollView *_scroller;
+    NSUInteger _selectedEventIndex;
     BOOL _showSelection;
 }
 
+@property <EKDayAllDayViewDataSource> *dataSource;
 @property <EKDayAllDayViewDelegate> *delegate;
 @property BOOL allowsOccurrenceSelection;
+@property BOOL dimsNonSelectedItems;
 @property NSInteger maxVisibleItems;
 @property BOOL showsSelection;
 
 - (BOOL)allowsOccurrenceSelection;
+- (id)dataSource;
 - (void)dayOccurrenceViewClicked:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)dealloc;
 - (id)delegate;
 - (void)didMoveToWindow;
+- (BOOL)dimsNonSelectedItems;
+- (NSUInteger)eventIndexForView:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (NSInteger)maxVisibleItems;
+- (void)reloadData;
+- (void)removeAllOccurrenceViews;
+- (void)selectItemWithEventIndex:(NSUInteger)arg1;
+- (NSUInteger)selectedEventIndex;
 - (void)setAllowsOccurrenceSelection:(BOOL)arg1;
+- (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDimsNonSelectedItems:(BOOL)arg1;
 - (void)setMaxVisibleItems:(NSInteger)arg1;
 - (void)setOccurrenceInset:(float)arg1 labelInset:(float)arg2;
-- (void)setOccurrences:(id)arg1;
 - (void)setShowsSelection:(BOOL)arg1;
 - (BOOL)showsSelection;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)viewForEventIndex:(NSUInteger)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUSearchFieldConfiguration, UISearchField, SUCompletionTableViewController, <SUSearchFieldControllerDelegate>, SUKeyboardBackstopViewController, UIPopoverController;
+@class SUKeyboardBackstopViewController, SUScriptTextFieldDelegate, UISearchField, <SUSearchFieldControllerDelegate>, UIPopoverController, SUCompletionTableViewController, SUSearchFieldConfiguration;
 
 @interface SUSearchFieldController : NSObject <SUCompletionTableDelegate, SUKeyboardBackstopDelegate, UIPopoverControllerDelegate, UITextFieldDelegate> {
     SUCompletionTableViewController *_completionsViewController;
@@ -12,6 +12,7 @@
     UIPopoverController *_popoverController;
     BOOL _redisplayPopover;
     UISearchField *_searchField;
+    SUScriptTextFieldDelegate *_textFieldDelegate;
 }
 
 @property <SUSearchFieldControllerDelegate> *delegate;
@@ -52,6 +53,7 @@
 - (void)keyboardBackstopDidDismiss:(id)arg1;
 - (void)keyboardBackstopRequestsDismiss:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)scriptDidChangeTextForTextField:(id)arg1;
 - (id)searchField;
 - (id)searchFieldConfiguration;
 - (void)setDelegate:(id)arg1;

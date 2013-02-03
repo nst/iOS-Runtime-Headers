@@ -19,11 +19,11 @@
 - (void)generateIntermediateForOffset:(NSUInteger)arg1 inContext:(id)arg2;
 - (id)generateIntermediatesForFetchInContext:(id)arg1 countOnly:(BOOL)arg2;
 - (void)generateOrderIntermediateInContext:(id)arg1;
-- (id)generateSQLStatementForFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2 countOnly:(BOOL)arg3;
 - (void)generateSelectIntermediateInContext:(id)arg1;
 - (void)generateWhereIntermediatesInContext:(id)arg1;
 - (id)initWithPersistentStore:(id)arg1;
-- (id)initializeContextForFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2;
+- (id)initializeContextForFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2 nestingLevel:(NSUInteger)arg3;
+- (id)newSQLStatementForFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2 countOnly:(BOOL)arg3 nestingLevel:(NSUInteger)arg4;
 - (id)predicateForFetchRequestInContext:(id)arg1;
 
 @end

@@ -2,25 +2,31 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUViewControllerContext, UIViewController, SUViewControllerScriptProperties, NSMutableArray;
+@class SURotationController, SUViewControllerContext, UIViewController, SUViewControllerScriptProperties, NSMutableArray;
 
 @interface SUViewController : UIViewController <ISOperationDelegate> {
     SUViewControllerScriptProperties *_cachedScriptProperties;
     NSMutableArray *_cancelOnDeallocOperations;
     BOOL _excludeFromNavigationHistory;
     UIViewController *_footerViewController;
+    UIViewController *_inputAccessoryViewController;
+    BOOL _isEnteringForeground;
     BOOL _loading;
     SUViewControllerContext *_memoryPurgeContext;
     NSMutableArray *_operations;
     NSMutableArray *_pendingDialogs;
     SUViewControllerContext *_restoredContext;
+    SURotationController *_rotationController;
+    NSInteger _rotationState;
     BOOL _shouldInvalidateForMemoryPurge;
     NSInteger _transitionSafetyCount;
 }
 
 @property(readonly) NSString *defaultPNGName;
 @property(readonly) UIViewController *footerViewController;
+@property(retain) UIViewController *inputAccessoryViewController;
 @property(retain,readonly) SUNavigationItem *navigationItem;
+@property(readonly) SUViewControllerFactory *viewControllerFactory;
 @property(readonly) double defaultPNGExpirationTime;
 @property(getter=isLoading) BOOL loading;
 @property BOOL shouldExcludeFromNavigationHistory;
@@ -40,19 +46,25 @@
 - (void)_keyboardDidShowNotification:(id)arg1;
 - (void)_keyboardWillHideNotification:(id)arg1;
 - (void)_keyboardWillShowNotification:(id)arg1;
+- (void)_performScheduledRotation:(id)arg1;
 - (NSInteger)_preferredInterfaceOrientationGivenCurrentOrientation:(NSInteger)arg1;
 - (void)_presentFooterAnimationDidStop;
+- (id)_rotationController;
 - (void)_setExistingNavigationItem:(id)arg1;
+- (BOOL)_shouldUseDefaultFirstResponder;
 - (void)applicationDidEnterBackground;
 - (void)applicationDidResume;
 - (void)applicationWillEnterForeground;
 - (void)applicationWillSuspend;
+- (BOOL)becomeFirstResponder;
+- (BOOL)canBecomeFirstResponder;
 - (void)cancelOperations;
 - (id)copyArchivableContext;
 - (id)copyChildViewControllersForReason:(NSInteger)arg1;
 - (id)copyDefaultScriptProperties;
 - (id)copyScriptProperties;
 - (void)dealloc;
+- (id)defaultFirstResponder;
 - (double)defaultPNGExpirationTime;
 - (id)defaultPNGName;
 - (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
@@ -63,7 +75,10 @@
 - (void)handleApplicationURL:(id)arg1;
 - (id)init;
 - (id)initWithSection:(id)arg1;
+- (id)inputAccessoryView;
+- (id)inputAccessoryViewController;
 - (NSInteger)interfaceOrientation;
+- (void)invalidate;
 - (void)invalidateForMemoryPurge;
 - (BOOL)isLoading;
 - (BOOL)isVisible;
@@ -72,6 +87,7 @@
 - (id)moreListImage;
 - (id)moreListSelectedImage;
 - (id)navigationItem;
+- (id)newRotationController;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operationFinished:(id)arg1;
 - (BOOL)presentDialog:(id)arg1 pendUntilVisible:(BOOL)arg2;
@@ -82,6 +98,7 @@
 - (void)reloadContentSizeForViewInPopover;
 - (void)resetRestoredContext;
 - (void)restoreArchivableContext:(id)arg1;
+- (void)setInputAccessoryViewController:(id)arg1;
 - (void)setLoading:(BOOL)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setScriptProperties:(id)arg1;
@@ -94,6 +111,7 @@
 - (NSInteger)statusBarStyle;
 - (void)storePageProtocolDidChange;
 - (void)trackOperation:(id)arg1 cancelOnDealloc:(BOOL)arg2;
+- (id)viewControllerFactory;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

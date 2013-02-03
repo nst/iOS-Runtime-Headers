@@ -20,7 +20,7 @@
 - (BOOL)getArtworkData:(id*)arg1 artworkInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { NSUInteger x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; NSUInteger x_1_1_4; NSInteger x_1_1_5; NSInteger x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg2 track:(id)arg3 artworkType:(NSInteger)arg4 formatID:(NSUInteger)arg5 timeInMS:(NSInteger)arg6 size:(struct CGSize { float x1; float x2; })arg7;
 - (void*)imageLibraryRef;
 - (BOOL)isImageDataAvailableForTrack:(id)arg1 artworkType:(NSInteger)arg2;
-- (BOOL)isImageDataIdenticalForTrack:(id)arg1 otherTrack:(id)arg2 artworkType:(NSInteger)arg3 artworkFormatID:(NSUInteger)arg4;
+- (BOOL)isImageDataIdenticalForTrack:(id)arg1 otherTrack:(id)arg2 artworkType:(NSInteger)arg3 missingAlwaysComparesEqual:(BOOL)arg4;
 - (BOOL)loadDatabase;
 
 @end

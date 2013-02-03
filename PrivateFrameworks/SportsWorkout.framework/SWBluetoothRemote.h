@@ -56,6 +56,7 @@
 - (void)beginSearching;
 - (void)cancelLinking;
 - (void)cancelSearching;
+- (void)deactivate;
 - (void)dealloc;
 - (id)init;
 - (void)unlink;

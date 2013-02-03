@@ -2,21 +2,21 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UILabel;
+@class EKEventDetailAttendeesListView;
 
 @interface EKEventDetailAttendeesCell : EKEventDetailCell {
-    UILabel *_attendeesLabel;
-    UILabel *_attendeesTitleView;
+    EKEventDetailAttendeesListView *_attendeesListView;
 }
 
-- (id)_attendeesLabel;
-- (id)_attendeesString:(id)arg1;
-- (id)_attendeesTitleView;
++ (void)_initializeSafeCategory;
+
+- (id)_attendeesListView;
+- (id)_axStringForArray:(id)arg1;
+- (id)accessibilityLabel;
 - (void)dealloc;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
 - (void)layoutForWidth:(float)arg1 position:(NSInteger)arg2;
 - (void)setAttendees:(id)arg1;
-- (id)sortedAttendeeDisplayStringsIgnoringNonHumans:(id)arg1;
 - (BOOL)update;
 - (id)viewControllerForCell;
 

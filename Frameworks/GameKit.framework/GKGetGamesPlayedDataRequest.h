@@ -2,14 +2,16 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray, GKPlayer;
+@class GKGame, NSArray, GKPlayer;
 
 @interface GKGetGamesPlayedDataRequest : GKDataRequest {
     NSArray *_games;
+    GKGame *_lookupGame;
     GKPlayer *_player;
 }
 
 @property(readonly) NSArray *games;
+@property(retain) GKGame *lookupGame;
 @property(retain) GKPlayer *player;
 
 - (id)cacheKey;
@@ -19,8 +21,10 @@
 - (id)games;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)key;
+- (id)lookupGame;
 - (id)player;
 - (id)request;
+- (void)setLookupGame:(id)arg1;
 - (void)setPlayer:(id)arg1;
 
 @end

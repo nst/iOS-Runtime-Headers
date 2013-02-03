@@ -75,6 +75,7 @@
 - (void)permanentlyRemoveMessage;
 - (id)previewText;
 - (void)reloadFailedSendCount;
+- (void)resetHeightAndFlags;
 - (id)sender;
 - (NSInteger)sentCount;
 - (void)setConversation:(id)arg1;

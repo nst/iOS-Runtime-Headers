@@ -5,6 +5,13 @@
 @class NSString, GKImageBackgroundView, UIWebView;
 
 @interface GKServerWebViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate> {
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    BOOL _addedSheetFrame;
+    } _backgroundInsets;
     GKImageBackgroundView *_backgroundView;
     NSString *_cancelCallback;
     NSString *_leftCallback;
@@ -17,8 +24,10 @@
 @property(retain) NSString *leftCallback;
 @property(retain) NSString *okCallback;
 @property(retain) NSString *rightCallback;
+@property UIEdgeInsets backgroundInsets;
 
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInsets;
 - (id)cancelCallback;
 - (void)dealloc;
 - (id)decodeDashEncodedString:(id)arg1;
@@ -31,6 +40,7 @@
 - (void)parseNavBarURLString:(id)arg1;
 - (id)rightCallback;
 - (void)rightNavButtonPressed;
+- (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setCancelCallback:(id)arg1;
 - (void)setHeadersForRequest:(id)arg1;
 - (void)setLeftCallback:(id)arg1;

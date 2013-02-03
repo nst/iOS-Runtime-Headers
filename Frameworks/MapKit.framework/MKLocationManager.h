@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKLocationShiftFunction, NSHashTable, CLLocation, CLHeading, CLLocationManager, NSMutableArray, MKRouteStep, NSTimer, NSString, MKTripRecorder, GMMLocationShiftRequester;
+@class RadiosPreferences, CLLocation, MKTripRecorder, MKRouteStep, MKLocationShiftFunction, CLHeading, CLLocationManager, NSHashTable, NSString, GMMLocationShiftRequester, NSMutableArray, NSTimer;
 
-@interface MKLocationManager : NSObject <CLLocationManagerDelegateInternal, PBRequesterDelegate> {
+@interface MKLocationManager : NSObject <CLLocationManagerDelegateInternal, PBRequesterDelegate, RadiosPreferencesDelegate> {
     double _GPSStartTime;
     double _applicationResumeTime;
     double _applicationSuspendTime;
@@ -19,12 +19,13 @@
     double _headingUpdateTime;
     BOOL _isLastLocationRouteCorrected;
     BOOL _isLastLocationStale;
-    BOOL _isLocationServicesDenied;
+    BOOL _isWiFiEnabled;
     CLLocation *_lastLocation;
     double _lastLocationReportTime;
     double _lastLocationUpdateTime;
     double _locationAccuracyUpdateTime;
     NSHashTable *_locationObservers;
+    RadiosPreferences *_radiosPreferences;
     MKTripRecorder *_recorder;
     MKRouteStep *_routeStep;
     MKLocationShiftFunction *_shiftFunction;
@@ -55,6 +56,7 @@
 @property id headingObserver;
 @property NSInteger headingOrientation;
 @property(readonly) double headingUpdateTimeInterval;
+@property(readonly) BOOL isAirplaneModeBlockingLocation;
 @property(readonly) BOOL isHeadingServicesAvailable;
 @property(readonly) BOOL isLastLocationRouteCorrected;
 @property(readonly) BOOL isLastLocationStale;
@@ -63,6 +65,7 @@
 @property(readonly) BOOL isLocationServicesDenied;
 @property(readonly) BOOL isLocationServicesEnabled;
 @property(readonly) BOOL isLocationServicesPossiblyAvailable;
+@property(readonly) BOOL isLocationServicesRestricted;
 @property(readonly) NSInteger lastLocationSource;
 @property(readonly) CGPoint longLat;
 @property BOOL shouldThrottleHeading;
@@ -73,6 +76,7 @@
 
 - (id)_applyChinaLocationShift:(id)arg1;
 - (BOOL)_isTimeToResetOnResume;
+- (id)_radiosPreferences;
 - (void)_reportHeadingFailureWithError:(id)arg1;
 - (void)_reportHeadingSuccess;
 - (void)_reportLocationFailureWithError:(id)arg1;
@@ -81,17 +85,18 @@
 - (void)_reportLocationSuccess;
 - (id)_routeCorrectedLocationForLocation:(id)arg1 routeStep:(id*)arg2;
 - (void)_setDelayedDeliveryTimer:(id)arg1;
-- (void)_setLocationServicesDenied:(BOOL)arg1;
 - (void)_setTrackingHeading:(BOOL)arg1;
 - (void)_setTrackingLocation:(BOOL)arg1;
 - (void)_startCoalescingUpdates:(NSInteger)arg1;
 - (void)_stopCoalescingUpdates;
 - (double)accuracy;
+- (void)airplaneModeChanged;
 - (void)applicationResumed:(id)arg1;
 - (void)applicationSuspended:(id)arg1;
 - (BOOL)chinaShiftEnabled;
 - (id)clLocationManager;
 - (void)dampenGPSLocationAccuracy:(id*)arg1 oldLocationSource:(NSInteger)arg2;
+- (void)dismissHeadingCalibrationDisplay;
 - (BOOL)displayCoreLocationStats;
 - (double)expectedTimeTillNextUpdate;
 - (BOOL)hasHiFiCapability;
@@ -101,6 +106,7 @@
 - (NSInteger)headingOrientation;
 - (double)headingUpdateTimeInterval;
 - (id)init;
+- (BOOL)isAirplaneModeBlockingLocation;
 - (BOOL)isGPSWarmingUp;
 - (BOOL)isHeadingServicesAvailable;
 - (BOOL)isLastLocationRouteCorrected;
@@ -110,16 +116,17 @@
 - (BOOL)isLocationServicesDenied;
 - (BOOL)isLocationServicesEnabled;
 - (BOOL)isLocationServicesPossiblyAvailable;
+- (BOOL)isLocationServicesRestricted;
 - (id)lastLocation;
 - (NSInteger)lastLocationSource;
 - (void)loadRecording:(id)arg1;
 - (void)loadRecordings:(id)arg1;
+- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(NSInteger)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateHeading:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
 - (BOOL)locationManagerShouldDisplayHeadingCalibration:(id)arg1;
 - (struct CGPoint { float x1; float x2; })longLat;
-- (void)refreshLocationServicesApproval;
 - (void)reportCoalescedUpdated;
 - (void)repostLastKnownLocation;
 - (void)requestShiftFunctionForLocation:(id)arg1 wrap:(BOOL)arg2;
@@ -165,6 +172,7 @@
 - (void)unloadRecording;
 - (double)userLocationCacheDuration;
 - (BOOL)usesRouteCorrection;
+- (void)wiFiStatusChanged:(id)arg1;
 - (void)writeCoreLocationLog;
 - (void)writeRecording;
 - (void)writeRecordingToPath:(id)arg1;

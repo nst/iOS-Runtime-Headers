@@ -12,7 +12,7 @@
 
 + (id)mappedImageDataForFile:(id)arg1 offset:(long long)arg2 length:(unsigned long)arg3 fileIsFixedSize:(BOOL)arg4;
 
-- (void*)bytes;
+- (const void*)bytes;
 - (void)dealloc;
 - (id)initWithMappedFileSegment:(id)arg1 bytes:(void*)arg2 length:(unsigned long)arg3;
 - (NSUInteger)length;

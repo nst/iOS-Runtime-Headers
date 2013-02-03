@@ -42,6 +42,8 @@
 - (BOOL)_isToManyRelationship;
 - (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
 - (NSUInteger)_propertyType;
+- (id)_rawValidationPredicates;
+- (id)_rawValidationWarnings;
 - (void)_replaceValidationPredicates:(id)arg1 andWarnings:(id)arg2;
 - (void)_restoreValidation;
 - (void)_setEntity:(id)arg1;

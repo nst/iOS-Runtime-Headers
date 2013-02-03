@@ -2,87 +2,91 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKDayViewContentDelegate>, NSArray, EKDayOccurrenceView, NSDate, EKDayGridView;
+@class <EKDayViewContentDelegate>, <EKDayViewContentDataSource>, NSDate, NSMutableArray, EKDayGridView;
 
 @interface EKDayViewContent : UIView {
-    struct { 
-        NSInteger year; 
-        BOOL month; 
-        BOOL day; 
-        BOOL hour; 
-        BOOL minute; 
-        double second; 
     unsigned int _loadingOccurrences : 1;
     unsigned int _allowsOccurrenceSelection : 1;
     unsigned int _putSelectionOnTop : 1;
     unsigned int _showsGrid : 1;
-    unsigned int _showsDaySelection : 1;
-    unsigned int _allowsDaySelection : 1;
-    unsigned int _allowsOccurrenceDeselecting : 1;
     unsigned int _darkensSelection : 1;
     unsigned int _eventsFillGrid : 1;
-    unsigned int _fixedToDayOfWeek : 1;
-    unsigned int _fixedToDate : 1;
+    unsigned int _dimsNonSelectedItems : 1;
+    <EKDayViewContentDataSource> *_dataSource;
     double _dayEndGMTOffset;
     double _dayStart;
     double _dayStartGMTOffset;
+    NSMutableArray *_dayStarts;
+    NSUInteger _daysToDisplay;
     <EKDayViewContentDelegate> *_delegate;
-    NSInteger _firstEventSecond;
-    } _fixedDate;
-    NSInteger _fixedDayOfWeek;
     EKDayGridView *_grid;
-    NSArray *_occurrences;
+    NSMutableArray *_itemsByDay;
     NSDate *_selectedDate;
-    EKDayOccurrenceView *_selectedOccurrenceView;
-    BOOL _usedInWeekView;
+    NSUInteger _selectedEventIndex;
 }
 
+@property <EKDayViewContentDataSource> *dataSource;
 @property <EKDayViewContentDelegate> *delegate;
+@property BOOL allowsOccurrenceSelection;
+@property BOOL darkensSelection;
+@property BOOL dimsNonSelectedItems;
+@property BOOL eventsFillGrid;
+@property(readonly) double firstEventSecond;
+@property BOOL showsGrid;
+@property BOOL showsLeftBorder;
 
 + (void)_initializeSafeCategory;
 
-- (void)_handleOccurrenceViewClick:(id)arg1;
-- (double)_offsetTimeForDST:(double)arg1 timeZone:(struct __CFTimeZone { }*)arg2;
+- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })_dateForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_dayRangeForEventAtIndex:(NSInteger)arg1;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_dayRangeForEventWithStartDate:(id)arg1 duration:(double)arg2;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_dayRangeForOccurrence:(id)arg1;
+- (float)_dayWidth;
+- (void)_layoutContentItems:(id)arg1 forDayStart:(id)arg2 xPosition:(float)arg3 width:(float)arg4;
+- (double)_offsetTimeForDST:(double)arg1 timeZone:(struct __CFTimeZone { }*)arg2 dayStartTimeZone:(id)arg3;
 - (void)_selectedOccurrenceChanged:(id)arg1;
-- (void)calendarDayOccurrenceViewClicked:(id)arg1;
-- (void)calendarDayOccurrenceViewStartTouch:(id)arg1;
+- (BOOL)allowsOccurrenceSelection;
+- (BOOL)darkensSelection;
+- (id)dataSource;
 - (void)dayOccurrenceViewClicked:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)dayOccurrenceViewDragExited:(id)arg1;
+- (void)dayOccurrenceViewStartTouch:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)dimsNonSelectedItems;
+- (BOOL)eventIndexExists:(NSUInteger)arg1;
+- (NSUInteger)eventIndexForView:(id)arg1;
+- (BOOL)eventsFillGrid;
 - (BOOL)eventsIntersectRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSInteger)firstEventSecond;
-- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })fixedDate;
-- (NSInteger)fixedDayOfWeek;
+- (double)firstEventSecond;
 - (id)getAllOccurrenceViews;
 - (id)grid;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundColor:(id)arg2 opaque:(BOOL)arg3 numberOfDaysToDisplay:(NSUInteger)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundColor:(id)arg2 opaque:(BOOL)arg3;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 opaque:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isFixedToDate;
-- (BOOL)isFixedToDayOfWeek;
 - (void)layoutSubviews;
-- (void)longPress:(id)arg1;
+- (id)occurrenceViewForEventOccurrence:(id)arg1 onDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2;
 - (id)occurrenceViewForOccurrence:(id)arg1;
-- (void)relayoutDueToOrienationChange;
-- (void)reloadOccurrenceViews;
+- (struct CGPoint { float x1; float x2; })pointForDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (void)reloadData;
 - (void)removeAllOccurrenceViews;
-- (id)selectedOccurrenceView;
-- (void)setAllowsDaySelection:(BOOL)arg1;
-- (void)setAllowsOccurrenceDeselecting:(BOOL)arg1;
+- (void)selectItemWithEventIndex:(NSUInteger)arg1;
+- (NSUInteger)selectedEventIndex;
 - (void)setAllowsOccurrenceSelection:(BOOL)arg1;
 - (void)setDarkensSelection:(BOOL)arg1;
+- (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDimsNonSelectedItems:(BOOL)arg1;
 - (void)setEventsFillGrid:(BOOL)arg1;
-- (void)setFixedDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
-- (void)setFixedDayOfWeek:(NSInteger)arg1;
-- (void)setIsFixedToDate:(BOOL)arg1;
-- (void)setIsFixedToDayOfWeek:(BOOL)arg1;
-- (void)setOccurrences:(id)arg1 animated:(BOOL)arg2;
 - (void)setSelectedDate:(id)arg1;
-- (void)setShowsDaySelection:(BOOL)arg1;
 - (void)setShowsGrid:(BOOL)arg1;
 - (void)setShowsLeftBorder:(BOOL)arg1;
-- (void)setUsedInWeekView:(BOOL)arg1;
+- (void)setViewsDimmed:(BOOL)arg1 forEventIndex:(NSUInteger)arg2;
+- (BOOL)showsGrid;
+- (BOOL)showsLeftBorder;
+- (id)startDateForEventIndex:(NSUInteger)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (BOOL)usedInWeekView;
+- (id)viewForEventIndex:(NSUInteger)arg1;
 
 @end

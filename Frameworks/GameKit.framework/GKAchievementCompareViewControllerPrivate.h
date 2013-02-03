@@ -20,6 +20,9 @@
 @property NSUInteger friendNumberOfAchievementsAchieved;
 @property NSUInteger friendPointsTally;
 
+- (void)_gkRefreshContents;
+- (id)achievementCompareCellAtIndexPath:(id)arg1;
+- (void)addNonAchievedAchievementsTo:(id)arg1 withAchievementDescription:(id)arg2;
 - (id)compositeCheckMark;
 - (void)dealloc;
 - (id)friend;
@@ -27,9 +30,10 @@
 - (id)friendAchievements;
 - (NSUInteger)friendNumberOfAchievementsAchieved;
 - (NSUInteger)friendPointsTally;
+- (id)headerCellAtIndexPath:(id)arg1;
 - (id)initWithGame:(id)arg1 withFriend:(id)arg2;
+- (NSInteger)numberOfSectionsInTableView:(id)arg1;
 - (void)playTapped;
-- (void)reloadData;
 - (void)setCompositeCheckMark:(id)arg1;
 - (void)setFriend:(id)arg1;
 - (void)setFriendAchievementDictionary:(id)arg1;
@@ -38,10 +42,14 @@
 - (void)setFriendPointsTally:(NSUInteger)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)title;
 - (void)updateFriendGameAchievements:(id)arg1;
+- (void)updateStatusWithError:(id)arg1;
+- (void)viewDidLoad;
 - (void)viewDidUnload;
 
 @end

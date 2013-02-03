@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@class NSNumber, NSString, CPExclusiveLock, NSManagedObjectContext, NoteAccountObject, NoteStoreObject, NSPersistentStoreCoordinator, NSPredicate, NSManagedObjectModel;
+@class NSNumber, NSString, NSMutableDictionary, CPExclusiveLock, NSManagedObjectContext, NoteAccountObject, NoteStoreObject, NSPersistentStoreCoordinator, NSPredicate, NSManagedObjectModel;
 
 @interface NoteContext : NSObject {
     struct __CXIndex { } *__SharedNoteStoreSearchIndex;
@@ -20,10 +20,12 @@
     NSNumber *_nextId;
     NSManagedObjectContext *_nextIdContext;
     CPExclusiveLock *_nextIdLock;
+    NSMutableDictionary *_notePropertyObjectsRealized;
     NSUInteger _notificationCount;
     CPExclusiveLock *_objectCreationLock;
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;
     NSPredicate *_searchPredicate;
+    NSString *_testingFilePath;
     NSString *_testingFilePrefix;
 }
 
@@ -32,6 +34,7 @@
 
 + (BOOL)shouldLogIndexing;
 
+- (id)_notePropertyObjectForKey:(id)arg1;
 - (id)accountForAccountId:(id)arg1;
 - (id)allAccounts;
 - (id)allNotes;
@@ -65,13 +68,16 @@
 - (BOOL)deleteStore:(id)arg1;
 - (void)destroySearchIndex;
 - (void)enableChangeLogging:(BOOL)arg1;
+- (void)forceSetUpUniqueObjects;
 - (id)getNextIdObject;
 - (void)handleMigration;
+- (BOOL)handleSaveErrors:(id)arg1;
 - (BOOL)hasMultipleEnabledStores;
 - (void)indexInBatches:(BOOL)arg1;
 - (void)indexNotes:(id)arg1;
 - (id)init;
 - (id)initForMigrator;
+- (id)initWithTestingFilePrefix:(id)arg1 atPath:(id)arg2 inMigrator:(BOOL)arg3;
 - (id)initWithTestingFilePrefix:(id)arg1 inMigrator:(BOOL)arg2;
 - (id)initWithTestingFilePrefix:(id)arg1;
 - (void)invalidate;

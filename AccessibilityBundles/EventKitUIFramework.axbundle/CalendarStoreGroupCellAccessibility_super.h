@@ -8,6 +8,7 @@
 + (void)_initializeSafeCategory;
 
 - (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (BOOL)isAccessibilityElement;
 
 @end

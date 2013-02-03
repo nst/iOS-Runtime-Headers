@@ -16,6 +16,14 @@
      /* Encoded args for previous method: v12@0:4^{OcText=^^?iIII**B}8 */
 }
 
+@property(readonly) NSData *_FTDataFromBase64String;
+@property(readonly) NSData *_FTDataFromHexString;
+@property(readonly) NSString *mobileMeDomain;
+@property(readonly) NSString *stripMobileMSuffixIfPresent;
+@property(readonly) NSInteger _FTBestGuessFTIDType;
+@property(readonly) NSInteger _FTIDType;
+@property(readonly) BOOL hasMobileMeSuffix;
+
 + (id)IANACharSetNameFromEncoding:(NSUInteger)arg1;
 + (id)MCMakeUUID;
 + (id)_attendeeNameExtensions;
@@ -33,6 +41,7 @@
 + (void)_pushAscentRoundingEnabled:(BOOL)arg1;
 + (void)_pushWordRoundingEnabled:(BOOL)arg1;
 + (id)_referenceDateWithTimeZone:(id)arg1;
++ (id)_stringWithUnichar:(unsigned long)arg1;
 + (BOOL)_web_ascentRoundingEnabled;
 + (void)_web_setAscentRoundingEnabled:(BOOL)arg1;
 + (void)_web_setWordRoundingEnabled:(BOOL)arg1;
@@ -54,7 +63,7 @@
 + (id)generatedRoomNameForGroupChat;
 + (unsigned short)indexBarBucketCharacterForCharacter:(unsigned short)arg1;
 + (id)indexBarBucketStringForCharacter:(unsigned short)arg1;
-+ (id)indexBarBucketStringForCharacters:(unsigned short*)arg1 count:(NSUInteger)arg2;
++ (id)indexBarBucketStringForCharacters:(const unsigned short*)arg1 count:(NSUInteger)arg2;
 + (id)indexBarBucketStringForSortKeyBytes:(void*)arg1 length:(NSInteger)arg2;
 + (void)initialize;
 + (unsigned char)languagePreferenceSortKeyPrefixForCharacters:(const unsigned short*)arg1 count:(NSUInteger)arg2;
@@ -77,6 +86,8 @@
 + (id)numberSymbols;
 + (id)numberSymbols;
 + (id)pathWithComponents:(id)arg1;
++ (id)profileCacheKeyForPlayerID:(id)arg1 detailed:(BOOL)arg2 realName:(BOOL)arg3;
++ (id)profileCacheKeyForPlayerID:(id)arg1 detailed:(BOOL)arg2;
 + (void*)sectionSortKeyBytesForCharacters:(const unsigned short*)arg1 count:(NSUInteger)arg2 getLength:(NSInteger*)arg3;
 + (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)skipString:(id)arg1;
 + (id)sqlFormattedStringWithCPRecordID:(NSInteger)arg1;
@@ -103,7 +114,7 @@
 + (id)stringWithCsString:(const struct CsString { int (**x1)(); unsigned short *x2; NSUInteger x3; NSUInteger x4; }*)arg1;
 + (id)stringWithFormat:(id)arg1 locale:(id)arg2;
 + (id)stringWithFormat:(id)arg1;
-+ (id)stringWithNameSpace:(const char *)arg1 elementName:(const char *)arg2;
++ (id)stringWithNumberOfSpaces:(NSUInteger)arg1;
 + (id)stringWithOcText:(const struct OcText { int (**x1)(); NSInteger x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; char *x6; char *x7; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x8; }*)arg1;
 + (id)stringWithString:(id)arg1;
 + (id)stringWithUTF8String:(const char *)arg1;
@@ -111,12 +122,15 @@
 + (id)stringWithWideCString:(NSInteger*)arg1;
 + (id)stringWithXmlChars:(const char *)arg1;
 + (id)stringWithXmlString:(const char *)arg1;
++ (float)widthFittingMaximumInteger:(NSInteger)arg1 withFont:(id)arg2;
 
 - (id)MCAppendDeviceName;
 - (id)MCAppendGreenteaSuffix;
 - (id)MCSHA256DigestWithSalt;
 - (id)MCSafeFilenameHash;
 - (id)MCSafeFilenameHashWithExtension:(id)arg1;
+- (id)MLSortString;
+- (id)SHA1Hash;
 - (const char *)UTF8String;
 - (NSInteger)_FTBestGuessFTIDType;
 - (id)_FTDataFromBase64String;
@@ -130,20 +144,27 @@
 - (id)_ICSStringForParameterValue;
 - (id)_ICSStringForProperyValue;
 - (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
+- (struct CGSize { float x1; float x2; })__web_drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(struct __GSFont { }*)arg3 ellipsis:(NSInteger)arg4 letterSpacing:(float)arg5 includeEmoji:(BOOL)arg6 measureOnly:(BOOL)arg7 renderedStringOut:(id*)arg8;
 - (struct CGSize { float x1; float x2; })__web_drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(struct __GSFont { }*)arg3 ellipsis:(NSInteger)arg4 letterSpacing:(float)arg5 includeEmoji:(BOOL)arg6 measureOnly:(BOOL)arg7;
+- (struct CGSize { float x1; float x2; })__web_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(struct __GSFont { }*)arg2 ellipsis:(NSInteger)arg3 alignment:(NSInteger)arg4 letterSpacing:(float)arg5 lineSpacing:(float)arg6 includeEmoji:(BOOL)arg7 truncationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg8 measureOnly:(BOOL)arg9 renderedStringOut:(id*)arg10;
 - (struct CGSize { float x1; float x2; })__web_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(struct __GSFont { }*)arg2 ellipsis:(NSInteger)arg3 alignment:(NSInteger)arg4 letterSpacing:(float)arg5 lineSpacing:(float)arg6 includeEmoji:(BOOL)arg7 truncationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg8 measureOnly:(BOOL)arg9;
+- (id)_asUnicodeHex;
 - (BOOL)_attendeeAppearsToBeAnInitial;
 - (id)_attendeeTrimCommasSpacesQuotes;
 - (NSInteger)_brailleTableCompare:(id)arg1;
 - (NSInteger)_brailleTableCompare:(id)arg1;
 - (NSInteger)_caseInsensitiveNumericCompare:(id)arg1;
 - (unsigned long)_cfTypeID;
+- (BOOL)_containsSubstring:(id)arg1;
 - (id)_copyFormatStringWithConfiguration:(id)arg1;
 - (id)_copyWithoutInsignificantPrefix:(BOOL)arg1 andCharacters:(BOOL)arg2;
 - (id)_createCsvRows:(NSUInteger*)arg1 usingDelimiter:(id)arg2 columnCountIsConstant:(BOOL*)arg3;
 - (id)_createSubstringWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (struct CGSize { float x1; float x2; })_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(NSInteger)arg3 alignment:(NSInteger)arg4 lineSpacing:(NSInteger)arg5 includeEmoji:(BOOL)arg6 truncationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg7;
+- (NSUInteger)_editDistanceFrom:(id)arg1;
 - (unsigned char)_encodingCantBeStoredInEightBitCFString;
+- (BOOL)_endsSentence;
+- (BOOL)_endsWord;
 - (const char *)_fastCStringContents:(BOOL)arg1;
 - (const unsigned short*)_fastCharacterContents;
 - (unsigned long)_fastestEncodingInCFStringEncoding;
@@ -151,11 +172,24 @@
 - (void)_flushRegularExpressionCaches;
 - (void)_getBlockStart:(NSUInteger*)arg1 end:(NSUInteger*)arg2 contentsEnd:(NSUInteger*)arg3 forRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg4 stopAtLineSeparators:(BOOL)arg5;
 - (BOOL)_getCString:(char *)arg1 maxLength:(NSUInteger)arg2 encoding:(unsigned long)arg3;
+- (id)_gkQuotedString;
 - (id)_initWithBytesOfUnknownEncoding:(char *)arg1 length:(NSUInteger)arg2 copy:(BOOL)arg3 usedEncoding:(NSUInteger*)arg4;
 - (id)_initWithDataOfUnknownEncoding:(id)arg1;
 - (id)_initWithUTF8String:(const char *)arg1 maxLength:(NSUInteger)arg2;
 - (BOOL)_isCString;
+- (BOOL)_isDelete;
+- (BOOL)_isLeftAssociative;
+- (BOOL)_isNaturallyRTL;
+- (BOOL)_isNewlineOrReturn;
+- (BOOL)_isPlainSpace;
+- (BOOL)_isSpace;
+- (BOOL)_isSpaceOrReturn;
+- (BOOL)_isTripledPunctuation;
 - (BOOL)_isWhitespace;
+- (BOOL)_looksLikeEmailAddress;
+- (BOOL)_looksLikeNumberInput;
+- (BOOL)_looksLikeURL;
+- (void)_makeNeededAdjustmentsToAttributes:(id)arg1 andPoint:(struct CGPoint { float x1; float x2; }*)arg2 forWidth:(float)arg3;
 - (id)_mf_bestMimeCharset:(id)arg1;
 - (id)_newSubstringWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 zone:(struct _NSZone { }*)arg2;
 - (id)_possibleURLsForForUserTypedString:(BOOL)arg1;
@@ -165,10 +199,16 @@
 - (BOOL)_shouldUseKeyWindowStack;
 - (BOOL)_shouldUseNextFirstResponder;
 - (unsigned long)_smallestEncodingInCFStringEncoding;
+- (id)_stringByReplacingCharacter:(unsigned long)arg1 withCharacter:(unsigned long)arg2;
+- (id)_stringByReplacingCharactersInSet:(struct __CFCharacterSet { }*)arg1 withCharacter:(unsigned long)arg2;
 - (id)_stringByReplacingOccurrencesOfRegularExpressionPattern:(id)arg1 withTemplate:(id)arg2 options:(NSUInteger)arg3 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg4;
 - (id)_stringByResolvingSymlinksInPathUsingCache:(BOOL)arg1;
 - (id)_stringByStandardizingPathUsingCache:(BOOL)arg1;
+- (id)_stringByTrimmingCharactersInCFCharacterSet:(struct __CFCharacterSet { }*)arg1;
+- (id)_stringByTrimmingLastCharacter;
 - (id)_stringRepresentation;
+- (id)_stringWithPublicEmojiCodePoints;
+- (id)_stringWithSoftBankEmojiCodePoints;
 - (id)_uikit_stringByTrimmingWhitespaceAndNewlines;
 - (id)_web_HTTPStyleLanguageCode;
 - (id)_web_HTTPStyleLanguageCodeWithoutRegion;
@@ -413,7 +453,7 @@
 - (id)initWithFormat:(id)arg1 locale:(id)arg2 arguments:(void*)arg3;
 - (id)initWithFormat:(id)arg1 locale:(id)arg2;
 - (id)initWithFormat:(id)arg1;
-- (id)initWithNameSpace:(const char *)arg1 elementName:(const char *)arg2;
+- (id)initWithNameSpace:(id)arg1 elementName:(id)arg2;
 - (id)initWithOcText:(const struct OcText { int (**x1)(); NSInteger x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; char *x6; char *x7; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x8; }*)arg1;
 - (id)initWithString:(id)arg1;
 - (id)initWithUTF8String:(const char *)arg1;
@@ -430,6 +470,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToIgnoringCase:(id)arg1;
 - (BOOL)isEqualToString:(id)arg1;
+- (BOOL)isEqualToXmlCharString:(const char *)arg1;
 - (BOOL)isFeedURLString;
 - (BOOL)isICQ;
 - (BOOL)isICQorPhone;
@@ -538,7 +579,6 @@
 - (id)propertyList;
 - (id)propertyListFromStringsFileFormat;
 - (id)queryKeysAndValues;
-- (id)quotedString;
 - (id)quotedStringRepresentation;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })rangeOfCharacterFromSet:(id)arg1 options:(NSUInteger)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })rangeOfCharacterFromSet:(id)arg1 options:(NSUInteger)arg2;
@@ -588,6 +628,7 @@
 - (id)stringByAppendingFormat:(id)arg1;
 - (id)stringByAppendingPathComponent:(id)arg1;
 - (id)stringByAppendingPathExtension:(id)arg1;
+- (id)stringByAppendingSlashIfNeeded;
 - (id)stringByAppendingString:(id)arg1;
 - (id)stringByConvertingPathToURL;
 - (id)stringByConvertingURLToPath;
@@ -609,6 +650,7 @@
 - (id)stringByRemovingPercentEscapes;
 - (id)stringByRemovingPercentEscapesForHREF;
 - (id)stringByRemovingPercentEscapesForUsername;
+- (id)stringByRemovingSlashIfNeeded;
 - (id)stringByRemovingURLEscapes;
 - (id)stringByRemovingWhitespace;
 - (id)stringByReplacingCharacter:(unsigned long)arg1 withCharacter:(unsigned long)arg2;

@@ -11,23 +11,37 @@
         int (*retain)(); 
         int (*release)(); 
         int (*copyDescription)(); 
-    unsigned int _inOpened : 1;
-    unsigned int _outOpened : 1;
-    unsigned int _closing : 1;
-    unsigned int _fastReadCallback : 1;
-    unsigned int _EOFReached : 1;
-    unsigned int _inTrimmedMemoryUseState : 1;
+    BOOL _EOFReached;
     NSInteger _bufSz;
+    BOOL _closing;
     double _connectTimeout;
     NSTimer *_connectTimer;
+    BOOL _fastReadCallback;
     NSInteger _fastReadCounter;
     struct __CFHTTPMessage { } *_httpResponse;
     struct __CFReadStream { } *_in;
+    BOOL _inOpened;
+    BOOL _inTrimmedMemoryUseState;
     struct __CFWriteStream { } *_out;
     NSMutableData *_outBuffer;
+    BOOL _outOpened;
     char *_readBuffer;
     } _streamCallbackContext;
 }
+
+@property(readonly) NSError *inputError;
+@property(readonly) __CFReadStream *inputStream;
+@property(readonly) NSData *localSocketAddress;
+@property(readonly) NSError *outputError;
+@property(readonly) __CFWriteStream *outputStream;
+@property(readonly) NSData *remoteSocketAddress;
+@property(readonly) NSInteger incomingBufferSize;
+@property(readonly) NSInteger incomingMinimumBufferSize;
+@property(readonly) BOOL inputOpened;
+@property(readonly) BOOL isReadyForData;
+@property(readonly) NSInteger outgoingBufferSize;
+@property(readonly) NSInteger outgoingMinimumBufferSize;
+@property(readonly) BOOL outputOpened;
 
 - (void)EOFReached;
 - (void)_canAcceptBytes;
@@ -54,7 +68,6 @@
 - (void)errorOccurred:(id)arg1 onStream:(void*)arg2;
 - (NSInteger)incomingBufferSize;
 - (NSInteger)incomingMinimumBufferSize;
-- (id)init;
 - (id)inputError;
 - (BOOL)inputOpened;
 - (struct __CFReadStream { }*)inputStream;

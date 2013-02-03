@@ -13,7 +13,8 @@
 + (id)sharedFenceController;
 
 - (void)_fenceCompleted;
-- (void)_fenceWindows:(id)arg1 withFenceID:(NSUInteger)arg2 additionalWindows:(NSInteger)arg3;
+- (NSUInteger)_fenceWindows:(id)arg1 additionalWindows:(NSInteger)arg2;
+- (id)_fenceableWindows;
 - (void)fenceAllApplicationWindows;
 - (id)init;
 

@@ -21,6 +21,6 @@
 - (void)readFile:(id)arg1 xmlFlag:(BOOL)arg2 archiver:(id)arg3;
 - (void)readerDidEndDocument:(id)arg1;
 - (void)readerDidReadElement:(id)arg1 atIndex:(NSUInteger)arg2 inDocument:(id)arg3 isLastElement:(BOOL)arg4;
-- (void)readerDidStartDocument:(id)arg1;
+- (void)readerDidStartDocument:(id)arg1 withElementCount:(NSInteger)arg2;
 
 @end

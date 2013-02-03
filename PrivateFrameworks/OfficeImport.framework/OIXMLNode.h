@@ -18,7 +18,7 @@
 + (id)textWithStringValue:(id)arg1;
 
 - (id)XMLString;
-- (void)_appendXMLStringToString:(struct __CFString { }*)arg1;
+- (void)_appendXMLStringToString:(struct __CFString { }*)arg1 level:(NSInteger)arg2;
 - (id)closingTagString;
 - (id)contentString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

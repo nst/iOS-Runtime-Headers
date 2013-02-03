@@ -12,6 +12,7 @@
 @property(retain) UIImage *image;
 @property(retain) NSURL *url;
 
+- (BOOL)authenticationRequired;
 - (id)cacheKey;
 - (NSInteger)cachePriority;
 - (NSInteger)cacheType;

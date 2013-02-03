@@ -2,60 +2,45 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLAlbumsController, UINavigationItem, NSArray;
+@class UINavigationItem, NSArray;
 
-@interface PLPhotoScrollerViewController : UIViewController {
-    unsigned int _canShowCopyCallout : 1;
+@interface PLPhotoScrollerViewController : PLPhotoBrowserController {
     unsigned int _didDisplay : 1;
     unsigned int _modalSheetIsPresent : 1;
     unsigned int _dontChangeStatusBar : 1;
     unsigned int _toolbarWasHiddenWhenSelfWasPushed : 1;
-    unsigned int _viewDidUnload : 1;
-    PLAlbumsController *_albumsController;
-    id _delegate;
+    unsigned int _viewWillDisappear : 1;
     NSUInteger _itemIndex;
     NSArray *_items;
     UINavigationItem *_navItem;
     NSInteger _previousInterfaceOrientation;
 }
 
-@property <PLPhotoScrollerViewControllerDelegate> *delegate;
-@property BOOL canShowCopyCallout;
 @property NSUInteger visibleItemIndex;
 
 - (void)_forceRotationToPortaitIfNecessary;
 - (id)_initWithAlbum:(id)arg1 lockStatusBar:(BOOL)arg2 currentImageIndex:(NSInteger)arg3;
 - (void)_setCurrentImageIndex:(NSUInteger)arg1;
-- (void)_updateNavigationItemTitle;
 - (BOOL)_visibleItemAllowsRotation;
 - (void)albumDidChange:(id)arg1;
-- (void)albumsController:(id)arg1 didMoveToPhotoAtIndex:(NSUInteger)arg2;
-- (BOOL)albumsControllerShouldShowActionItem:(id)arg1;
-- (BOOL)albumsControllerShowActionSheet:(id)arg1 inView:(id)arg2;
-- (BOOL)canShowCopyCallout;
-- (void)copy:(id)arg1;
 - (void)dealloc;
-- (id)delegate;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
+- (void)didMoveToPhotoAtIndex:(NSUInteger)arg1;
 - (BOOL)dontChangeStatusBar;
 - (id)initWithItems:(id)arg1;
 - (id)itemAtIndex:(NSUInteger)arg1;
 - (void)loadView;
 - (id)navigationItem;
-- (void)photoDidChange:(id)arg1;
-- (id)rotatingFooterView;
-- (void)setCanShowCopyCallout:(BOOL)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setDontChangeStatusBar:(BOOL)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setVisibleItemIndex:(NSUInteger)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (void)startSettingWallpaper;
 - (id)toolbarItems;
+- (void)updateNavigationItemTitle;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (NSUInteger)visibleItemIndex;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

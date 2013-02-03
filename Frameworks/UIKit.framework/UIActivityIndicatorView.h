@@ -22,6 +22,8 @@
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_setUpAnimation;
 - (void)_tearDownAnimation;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
 - (NSInteger)activityIndicatorViewStyle;
 - (void)dealloc;

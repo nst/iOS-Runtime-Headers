@@ -7,6 +7,8 @@
 
 + (void)_markSetup;
 + (void)acceptInvitationRequestFromBuddy:(id)arg1 forConference:(id)arg2;
++ (id)curentAVChatConnectedDate;
++ (id)curentAVChatRemoteUserID;
 + (NSUInteger)currentAVChatEndedReason;
 + (NSUInteger)currentAVChatState;
 + (void)declineInvitationRequestFromBuddy:(id)arg1 forConference:(id)arg2;

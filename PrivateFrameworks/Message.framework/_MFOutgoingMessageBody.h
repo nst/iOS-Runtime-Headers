@@ -2,14 +2,22 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableData;
+@class MFBufferedDataConsumer, NSData;
 
-@interface _MFOutgoingMessageBody : MessageBody {
-    NSMutableData *rawData;
+@interface _MFOutgoingMessageBody : MessageBody <MFCollectingDataConsumer> {
+    MFBufferedDataConsumer *_consumer;
+    NSUInteger _count;
+    BOOL _lastNewLine;
+    NSData *_rawData;
 }
 
+- (NSInteger)appendData:(id)arg1;
+- (unsigned long)count;
+- (id)data;
 - (void)dealloc;
-- (id)mutableData;
+- (void)done;
+- (id)init;
+- (BOOL)isLastCharacterNewLine;
 - (id)rawData;
 
 @end

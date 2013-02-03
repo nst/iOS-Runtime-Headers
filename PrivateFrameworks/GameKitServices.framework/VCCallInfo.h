@@ -5,8 +5,11 @@
 @class NSString, NSData, NSDictionary, NSMutableDictionary;
 
 @interface VCCallInfo : NSObject {
+    NSUInteger auNumber;
     NSInteger callID;
     NSData *connectionData;
+    NSString *hardwareVersion;
+    NSString *osVersion;
     NSString *participantID;
     NSData *relayConnectionData;
     NSDictionary *relayRequest;
@@ -15,24 +18,33 @@
 }
 
 @property(retain) NSData *connectionData;
+@property(retain) NSString *hardwareVersion;
+@property(retain) NSString *osVersion;
 @property(retain) NSString *participantID;
 @property(retain) NSData *relayConnectionData;
 @property(retain) NSDictionary *relayRequest;
 @property(retain) NSMutableDictionary *relayRequestResponse;
 @property(retain) NSDictionary *relayUpdate;
+@property NSUInteger auNumber;
 @property NSInteger callID;
 
+- (unsigned long)auNumber;
 - (NSInteger)callID;
 - (id)connectionData;
 - (void)dealloc;
+- (id)hardwareVersion;
 - (id)init;
+- (id)osVersion;
 - (id)participantID;
 - (id)relayConnectionData;
 - (id)relayRequest;
 - (id)relayRequestResponse;
 - (id)relayUpdate;
+- (void)setAuNumber:(unsigned long)arg1;
 - (void)setCallID:(NSInteger)arg1;
 - (void)setConnectionData:(id)arg1;
+- (void)setHardwareVersion:(id)arg1;
+- (void)setOsVersion:(id)arg1;
 - (void)setParticipantID:(id)arg1;
 - (void)setRelayConnectionData:(id)arg1;
 - (void)setRelayRequest:(id)arg1;

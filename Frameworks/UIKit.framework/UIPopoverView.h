@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWindow, UIActionSheet, UIView, UILayoutContainerView, UIViewController, UIDimmingView, NSArray;
+@class NSArray, UIView, UIWindow, UIViewController, UILayoutContainerView, UIActionSheet;
 
 @interface UIPopoverView : UIView {
     struct CGRect { 
@@ -50,9 +50,9 @@
     struct { 
         unsigned int hasResizedDownOnce : 1; 
         unsigned int useToolbarShine : 1; 
-        unsigned int ignoreTapsInDimmingView : 1; 
         unsigned int hideTopView : 1; 
         unsigned int hideBottomView : 1; 
+        unsigned int preventFastMode : 1; 
     NSInteger _backgroundStyle;
     UIView *_bgView;
     UIView *_bottomView;
@@ -61,7 +61,6 @@
     UIView *_contentView;
     id _delegate;
     } _desiredPresentationRect;
-    UIDimmingView *_dimmingView;
     NSInteger _direction;
     SEL _dismissAnimationCompletedSelector;
     BOOL _fastMode;
@@ -82,9 +81,9 @@
     UIViewController *_viewController;
 }
 
+@property BOOL _preventFastMode; /* unknown property attribute: S_setPreventFastMode: */
 @property(retain) UIView *bottomView;
 @property(retain,readonly) UIView *contentView;
-@property(readonly) UIDimmingView *dimmingView;
 @property(retain) NSArray *passthroughViews;
 @property UIActionSheet *presentedActionSheet;
 @property UILayoutContainerView *roundedLayoutContainerView;
@@ -109,7 +108,6 @@
 + (id)_viewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contentsImage:(struct CGImage { }*)arg2 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 center:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 antialiasingMask:(NSUInteger)arg5;
 + (id)popoverViewContainingView:(id)arg1;
 
-- (BOOL)_accessibilityAlwaysOrderedFirst;
 - (BOOL)_accessibilityServesAsContainingParentForOrdering;
 - (void)_backgroundStyleAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_dismissalAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
@@ -121,14 +119,18 @@
 - (void)_modalPresentationDidEndForViewController:(id)arg1;
 - (void)_modalPresentationWillBeginForViewController:(id)arg1;
 - (void)_modalPresentationWillEndForViewController:(id)arg1;
+- (id)_nearestNavigationController;
+- (id)_popoverController;
 - (NSInteger)_positionFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_presentationAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (BOOL)_preventFastMode;
 - (void)_resizeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_runAwayFromTheKeyboard:(id)arg1;
 - (void)_setBackgroundStyle:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)_setBottomBarHidden:(BOOL)arg1;
 - (void)_setDimmingViewIsDimmed:(BOOL)arg1;
 - (void)_setIgnoreTapsInDimmingView:(BOOL)arg1;
+- (void)_setPreventFastMode:(BOOL)arg1;
 - (struct CGPath { }*)_shadowPathForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 direction:(NSInteger)arg2 andOffset:(float)arg3;
 - (NSInteger)_style;
 - (id)_viewForModalPresentationOfViewController:(id)arg1;
@@ -146,8 +148,6 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didMoveToWindow;
-- (id)dimmingView;
-- (void)dimmingViewWasTapped:(id)arg1;
 - (void)disableAutomaticKeyboard:(id)arg1;
 - (void)dismissAnimated:(BOOL)arg1 notifyDelegate:(BOOL)arg2;
 - (void)dismissAnimated:(BOOL)arg1;

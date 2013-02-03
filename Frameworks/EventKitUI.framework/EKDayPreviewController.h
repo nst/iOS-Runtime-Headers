@@ -10,12 +10,15 @@
 
 @property(retain) EKEvent *event;
 
+- (void)_updateTitle;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
 - (void)dealloc;
 - (id)event;
 - (id)eventsForStartDate:(id)arg1 endDate:(id)arg2;
 - (void)loadView;
 - (void)setEvent:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

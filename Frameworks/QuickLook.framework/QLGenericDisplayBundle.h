@@ -7,6 +7,7 @@
 @interface QLGenericDisplayBundle : QLDisplayBundle {
     UIView *_containerView;
     UIImageView *_iconView;
+    UILabel *_subtitleLabel;
     UILabel *_titleLabel;
 }
 

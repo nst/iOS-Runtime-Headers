@@ -5,11 +5,8 @@
 @class UITransitionView, NSDictionary;
 
 @interface PLUIController : NSObject {
-    struct { 
-        unsigned int showingCamera : 1; 
     NSDictionary *_configuration;
     id _delegate;
-    } _flags;
     UITransitionView *_fullScreenTransitionView;
 }
 
@@ -18,11 +15,8 @@
 - (id)configuration;
 - (id)contentViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
-- (id)defaultPNGName;
 - (id)init;
 - (void)setConfiguration:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setShowCamera:(BOOL)arg1;
-- (BOOL)showCamera;
 
 @end

@@ -3,21 +3,13 @@
  */
 
 @interface UIInputSwitcherTableCellBackgroundView : UIView {
-    BOOL m_first;
-    BOOL m_last;
     BOOL m_selected;
 }
 
-@property BOOL first;
-@property BOOL last;
 @property BOOL selected;
 
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)first;
-- (BOOL)last;
 - (BOOL)selected;
-- (void)setFirst:(BOOL)arg1;
-- (void)setLast:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 
 @end

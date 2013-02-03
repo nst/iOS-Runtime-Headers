@@ -21,6 +21,7 @@
 + (id)castObject:(id)arg1 toType:(id)arg2;
 + (id)ceiling:(id)arg1;
 + (id)count:(id)arg1;
++ (id)distinct:(id)arg1;
 + (id)divide:(id)arg1 by:(id)arg2;
 + (id)exp:(id)arg1;
 + (id)floor:(id)arg1;

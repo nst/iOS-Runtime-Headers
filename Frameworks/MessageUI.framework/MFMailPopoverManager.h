@@ -40,6 +40,7 @@
 @property NSUInteger currentArrowDirections;
 @property CGRect currentRect;
 @property BOOL popoverBeingHiddenDuringRotation;
+@property BOOL preventFastMode;
 @property BOOL rasterizePopoverLayer;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -88,6 +89,7 @@
 - (void)presentPopover:(id)arg1 fromBarButtonItem:(id)arg2 animated:(BOOL)arg3;
 - (void)presentPopover:(id)arg1 fromBarButtonItem:(id)arg2 withDelegate:(id)arg3 animated:(BOOL)arg4;
 - (void)presentPopover:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 direction:(NSUInteger)arg4 allowInteractionWithViews:(id)arg5 withDelegate:(id)arg6 animated:(BOOL)arg7;
+- (BOOL)preventFastMode;
 - (BOOL)rasterizePopoverLayer;
 - (void)release;
 - (void)removePassthroughView:(id)arg1;
@@ -102,6 +104,7 @@
 - (void)setCurrentView:(id)arg1;
 - (void)setPopoverBeingHiddenDuringRotation:(BOOL)arg1;
 - (void)setPopoverController:(id)arg1;
+- (void)setPreventFastMode:(BOOL)arg1;
 - (void)setRasterizePopoverLayer:(BOOL)arg1;
 - (void)willPresentActionSheet:(id)arg1;
 - (void)willRotate;

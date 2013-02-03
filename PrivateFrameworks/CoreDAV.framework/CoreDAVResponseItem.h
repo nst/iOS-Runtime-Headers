@@ -2,47 +2,45 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVErrorItem, NSString, NSMutableDictionary;
+@class CoreDAVLeafItem, NSMutableSet, CoreDAVErrorItem, CoreDAVItemWithHrefChildItem, NSMutableArray;
 
-@interface CoreDAVResponseItem : CoreDAVItem <CoreDAVParsingAcceptingTopLevelItems> {
-    BOOL _hasPropertyError;
-    NSString *_href;
-    NSString *_responseDescription;
-    NSMutableDictionary *_retrievedSuccessfulPropertiesToValues;
-    CoreDAVErrorItem *_topLevelErrorItem;
-    NSString *_topLevelStatus;
+@interface CoreDAVResponseItem : CoreDAVItem {
+    CoreDAVErrorItem *_errorItem;
+    NSMutableArray *_hrefs;
+    CoreDAVItemWithHrefChildItem *_location;
+    NSMutableSet *_propStats;
+    CoreDAVLeafItem *_responseDescription;
+    CoreDAVLeafItem *_status;
 }
 
-@property(retain) NSString *href;
-@property(retain) NSString *responseDescription;
-@property(retain) NSMutableDictionary *retrievedSuccessfulPropertiesToValues;
-@property(readonly) NSDictionary *successfulPropertiesToValues;
-@property(retain) CoreDAVErrorItem *topLevelErrorItem;
-@property(retain) NSString *topLevelStatus;
-@property BOOL hasPropertyError;
+@property(retain) CoreDAVErrorItem *errorItem;
+@property(retain) NSMutableArray *hrefs;
+@property(retain) CoreDAVItemWithHrefChildItem *location;
+@property(retain) NSMutableSet *propStats;
+@property(retain) CoreDAVLeafItem *responseDescription;
+@property(retain) CoreDAVLeafItem *status;
 
-+ (BOOL)acceptsTopLevelLeaves;
-+ (BOOL)errorOnUnknownChildren;
-+ (BOOL)parsingWithSubItems;
-
-- (void)addNewTopLevelItem:(id)arg1;
-- (id)copyCoreDAVParseRules;
+- (void)addHref:(id)arg1;
+- (void)addPropStat:(id)arg1;
+- (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
+- (id)errorItem;
+- (id)firstHref;
+- (void)generateItemTreeString:(id)arg1 withDepth:(NSUInteger)arg2;
 - (BOOL)hasPropertyError;
-- (id)href;
-- (id)initWithXMLParser:(id)arg1 nameSpace:(id)arg2 elementName:(id)arg3 nodeAttributes:(id)arg4 root:(id)arg5 parent:(id)arg6 parentSetter:(SEL)arg7 ruleForMe:(id)arg8;
+- (id)hrefs;
+- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)location;
+- (id)propStats;
 - (id)responseDescription;
-- (id)retrievedSuccessfulPropertiesToValues;
-- (void)setHasPropertyError:(BOOL)arg1;
-- (void)setHref:(id)arg1;
+- (void)setErrorItem:(id)arg1;
+- (void)setHrefs:(id)arg1;
+- (void)setLocation:(id)arg1;
+- (void)setPropStats:(id)arg1;
 - (void)setResponseDescription:(id)arg1;
-- (void)setRetrievedSuccessfulPropertiesToValues:(id)arg1;
-- (void)setTopLevelErrorItem:(id)arg1;
-- (void)setTopLevelStatus:(id)arg1;
-- (void)setUnescapedHref:(id)arg1;
+- (void)setStatus:(id)arg1;
+- (id)status;
 - (id)successfulPropertiesToValues;
-- (id)topLevelErrorItem;
-- (id)topLevelStatus;
 
 @end

@@ -4,25 +4,22 @@
 
 @class UILabel;
 
-@interface EKEventDetailAlarmCell : EKEventDetailCell <EKEventEditItemViewControllerDelegate> {
+@interface EKEventDetailAlarmCell : EKEventDetailCell {
     UILabel *_alert2View;
     UILabel *_alertTitleView;
     UILabel *_alertView;
+    NSInteger _style;
     NSUInteger _visibleItems;
 }
 
-- (void)_alarmsChanged;
 - (id)_alert2View;
 - (id)_alertTitleView;
 - (id)_alertView;
 - (void)dealloc;
-- (void)editItemViewController:(id)arg1 didCompleteWithAction:(NSInteger)arg2;
-- (BOOL)eventEditItemViewControllerCommit:(id)arg1;
-- (BOOL)hasCustomLayout;
+- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 platformStyle:(NSInteger)arg3;
 - (BOOL)isEditable;
 - (void)layoutForWidth:(float)arg1 position:(NSInteger)arg2;
 - (void)setAlarms:(id)arg1;
 - (BOOL)update;
-- (id)viewControllerForCell;
 
 @end

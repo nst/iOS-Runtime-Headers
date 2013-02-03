@@ -34,7 +34,6 @@
 - (NSUInteger)gridSection;
 - (NSUInteger)indexAtPosition:(NSUInteger)arg1;
 - (id)indexPathByAddingIndex:(NSUInteger)arg1;
-- (id)indexPathByIncrementingRow:(NSUInteger)arg1;
 - (id)indexPathByRemovingLastIndex;
 - (id)indexPathBySettingSection:(NSUInteger)arg1;
 - (id)init;

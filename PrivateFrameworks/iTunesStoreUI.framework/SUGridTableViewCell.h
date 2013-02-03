@@ -2,19 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UITableView;
-
 @interface SUGridTableViewCell : SUTableCell {
     NSInteger _gridPosition;
-    UITableView *_tableView;
 }
 
 @property NSInteger gridPosition;
 
-- (id)_tableView;
 - (void)deleteConfirmationControlWasClicked:(id)arg1;
 - (NSInteger)gridPosition;
-- (void)layoutSubviews;
 - (void)removeControl:(id)arg1 willRemoveTarget:(id)arg2;
 - (void)setGridPosition:(NSInteger)arg1;
 

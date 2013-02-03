@@ -46,15 +46,14 @@
 - (void)_clearSelectedSegment;
 - (void)_commonSegmentedControlInit;
 - (void)_createSegmentAtIndex:(NSInteger)arg1 position:(NSUInteger)arg2 withInfo:(id)arg3;
+- (void)_gkApplyTheme:(id)arg1;
 - (void)_insertSegment:(NSInteger)arg1 withInfo:(id)arg2 animated:(BOOL)arg3;
-- (struct CGPoint { float x1; float x2; })_offsetForMiniBarState:(BOOL)arg1;
 - (void)_removeSegmentAnimationFinished:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_resetForAppearanceChange;
 - (void)_setAutosizeText:(BOOL)arg1;
 - (void)_setSegmentedControlAppearance:(struct { id x1; float x2; float x3; struct { id x_4_1_1; id x_4_1_2; id x_4_1_3; id x_4_1_4; id x_4_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_4_1_6; } x4; struct { id x_5_1_1; id x_5_1_2; id x_5_1_3; id x_5_1_4; id x_5_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_5_1_6; } x5; struct { id x_6_1_1; id x_6_1_2; id x_6_1_3; id x_6_1_4; id x_6_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_6_1_6; } x6; struct { id x_7_1_1; id x_7_1_2; id x_7_1_3; id x_7_1_4; id x_7_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_7_1_6; } x7; BOOL x8; }*)arg1;
 - (BOOL)accessibilityTreeHidden;
 - (void)addSegmentWithTitle:(id)arg1;
-- (void)applyTheme:(id)arg1;
 - (NSInteger)barStyle;
 - (struct CGSize { float x1; float x2; })contentOffsetForSegment:(NSUInteger)arg1;
 - (struct CGSize { float x1; float x2; })contentOffsetForSegmentAtIndex:(NSUInteger)arg1;

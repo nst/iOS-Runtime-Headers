@@ -14,6 +14,11 @@
     NSMutableArray *_preauthorizedInfos;
 }
 
+@property(readonly) NSDictionary *activeTransfers;
+@property(readonly) NSArray *orderedTransfers;
+@property(readonly) BOOL hasActiveFileTransfers;
+@property(readonly) BOOL hasPendingFileTransfers;
+
 + (Class)fileTransferClass;
 + (void)setTransferCenterClass:(Class)arg1;
 + (id)sharedInstance;
@@ -37,9 +42,9 @@
 - (void)acknowledgeAllPendingTransfers;
 - (void)acknowledgePendingTransfer:(id)arg1;
 - (id)activeTransfers;
-- (void)assignTransfer:(id)arg1 toAccount:(id)arg2 otherPerson:(id)arg3 securityLevel:(NSInteger)arg4;
+- (void)assignTransfer:(id)arg1 toHandle:(id)arg2 securityLevel:(NSInteger)arg3;
 - (void)dealloc;
-- (BOOL)doesLocalURLRequireArchiving:(id)arg1;
+- (BOOL)doesLocalURLRequireArchiving:(id)arg1 toHandle:(id)arg2;
 - (id)guidForNewOutgoingTransferWithLocalURL:(id)arg1;
 - (BOOL)hasActiveFileTransfers;
 - (BOOL)hasPendingFileTransfers;

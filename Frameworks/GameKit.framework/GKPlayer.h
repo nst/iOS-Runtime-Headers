@@ -91,7 +91,6 @@
 - (id)GKABPlayer;
 - (void)_loadAvatarImageForSize:(NSInteger)arg1 withCompletionHandler:(id)arg2;
 - (void)_postChangeNotification;
-- (void)_receivedMemoryWarning:(id)arg1;
 - (void)acceptFriendRequestForHandle:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)achievementListFromServer;
 - (id)achievementsAchievedList;
@@ -108,7 +107,6 @@
 - (void)dealloc;
 - (void)declineFriendRequest:(id)arg1;
 - (id)description;
-- (void)displayRatingViewWithCompletionHandler:(id)arg1;
 - (id)email;
 - (id)firstName;
 - (id)friendRequestID;
@@ -116,6 +114,7 @@
 - (BOOL)hasDetailInfo;
 - (NSUInteger)hash;
 - (id)initWithPlayerID:(id)arg1;
+- (void)invalidateCachedProfileWithCompletionHandler:(id)arg1;
 - (NSInteger)inviteStatus;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFriend;
@@ -126,7 +125,9 @@
 - (double)lastSeenTime;
 - (void)loadAvatarForSize:(NSInteger)arg1 withCompletionHandler:(id)arg2;
 - (void)loadAvatarImageForSize:(NSInteger)arg1 withCompletionHandler:(id)arg2;
+- (void)loadGamePlayedRecord:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)loadGamesPlayed:(id)arg1;
+- (void)loadInfoDetailed:(BOOL)arg1 realName:(BOOL)arg2 withCompletionHandler:(id)arg3;
 - (void)loadInfoDetailed:(BOOL)arg1 withCompletionHandler:(id)arg2;
 - (void)loadRecentMatchesForGame:(id)arg1 block:(id)arg2;
 - (id)numberAchievedForCurrentGame;

@@ -47,6 +47,7 @@
 - (id)indexOfNowPlayingItem;
 - (id)init;
 - (id)isGeniusAvailable;
+- (id)isNowPlayingItemFromGeniusMix;
 - (id)nowPlayingItem;
 - (id)nowPlayingItemAtIndex:(id)arg1;
 - (id)numberOfItems;
@@ -56,11 +57,11 @@
 - (void)playItem:(id)arg1;
 - (id)playbackSpeed;
 - (id)playbackState;
-- (void)prepareForDecodingWithCoder:(id)arg1;
 - (void)prepareQueueForPlayback;
 - (id)queueAsQuery;
 - (void)registerForServerDiedNotifications;
 - (id)repeatMode;
+- (id)serverIsAlive;
 - (void)setAllowsRemoteUIAccess:(id)arg1;
 - (void)setCurrentChapterIndex:(id)arg1;
 - (void)setCurrentPlaybackTime:(id)arg1;

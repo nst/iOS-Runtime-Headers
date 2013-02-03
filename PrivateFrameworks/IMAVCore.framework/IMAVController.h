@@ -11,6 +11,7 @@
 + (void)_setServiceVCCaps:(unsigned long long)arg1 toCaps:(unsigned long long)arg2;
 + (BOOL)_shouldHandleInvites;
 + (BOOL)_shouldRunConferences;
++ (void)_updateOverallChatState;
 + (BOOL)ardMuxingSupported;
 + (BOOL)blockARDCapable;
 + (BOOL)blockAudioOnlyCalls;
@@ -33,6 +34,7 @@
 + (BOOL)multiVideoCapable;
 + (NSUInteger)overallChatState;
 + (void)pushCachedVCCapsToDaemon;
++ (void)requestPendingVCInvitations;
 + (void)setBlockARDCapable:(BOOL)arg1;
 + (void)setBlockAudioOnlyCalls:(BOOL)arg1;
 + (void)setBlockCameraCapable:(BOOL)arg1;

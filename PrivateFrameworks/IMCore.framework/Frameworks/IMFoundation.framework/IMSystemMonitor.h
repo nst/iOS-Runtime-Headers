@@ -2,27 +2,41 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSDate, NSMutableArray, NSTimer;
+@class NSTimer, NSString, NSDate, NSMutableArray;
 
 @interface IMSystemMonitor : NSObject {
-    unsigned int _screensaverActive : 1;
-    unsigned int _screenLocked : 1;
-    unsigned int _active : 1;
-    unsigned int _backingUp : 1;
-    unsigned int _willSleep : 1;
+    BOOL _active;
+    BOOL _backingUp;
     double _delayTime;
     NSDate *_idleStart;
     NSMutableArray *_listeners;
+    BOOL _screenLocked;
+    BOOL _screensaverActive;
+    BOOL _switchedOut;
     NSTimer *_timer;
+    NSString *_userID;
+    BOOL _willSleep;
 }
+
+@property BOOL isActive; /* unknown property attribute: SsetActive: */
+@property(readonly) BOOL isBackingUp;
+@property BOOL isFastUserSwitched;
+@property(readonly) BOOL isScreenLocked;
+@property(readonly) BOOL isScreenSaverActive;
+@property(readonly) BOOL isSystemIdle;
+@property(readonly) double systemIdleTime;
+@property(readonly) BOOL systemIsShuttingDown;
+@property(readonly) BOOL systemIsSleeping;
 
 + (id)sharedMonitor;
 
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_deliverNotificationSelector:(SEL)arg1;
+- (void)_handleLoginWindowNotification:(id)arg1;
 - (void)_postScreenLocked;
 - (void)_postScreenSaverStarted;
+- (void)_registerForLoginWindowNotifications;
 - (void)_registerForRestoreNotifications;
 - (void)_restoreDidStart;
 - (void)_restoreDidStop;
@@ -36,6 +50,7 @@
 - (void)_systemDidWake;
 - (void)_systemWillShutdown;
 - (void)_systemWillSleep;
+- (void)_unregisterForLoginWindowNotifications;
 - (void)_unregisterForRestoreNotifications;
 - (void)addListener:(id)arg1;
 - (id)autorelease;
@@ -43,6 +58,7 @@
 - (id)init;
 - (BOOL)isActive;
 - (BOOL)isBackingUp;
+- (BOOL)isFastUserSwitched;
 - (BOOL)isScreenLocked;
 - (BOOL)isScreenSaverActive;
 - (BOOL)isSystemIdle;
@@ -50,6 +66,7 @@
 - (void)removeListener:(id)arg1;
 - (NSUInteger)retainCount;
 - (void)setActive:(BOOL)arg1;
+- (void)setIsFastUserSwitched:(BOOL)arg1;
 - (double)systemIdleTime;
 - (BOOL)systemIsShuttingDown;
 - (BOOL)systemIsSleeping;

@@ -4,7 +4,8 @@
 
 @class NSObject<CNFConferenceManagerDelegate>, AVController, NSURL, CNFDisplayController, CNFAudioPlayer, CNFAudioDeviceController;
 
-@interface CNFConferenceManager : NSObject <UIApplicationDelegate, CNFDisplayControllerDelegate, CNFSoundPlayerDelegateProtocol> {
+@interface CNFConferenceManager : NSObject <UIApplicationDelegate, CNFDisplayControllerDelegate, CNFSoundPlayerDelegateProtocol, CNFAudioDeviceControllerProtocol> {
+    BOOL _audioWasInterrupted;
     AVController *_avController;
     NSObject<CNFConferenceManagerDelegate> *_delegate;
     CNFAudioDeviceController *_deviceController;
@@ -16,6 +17,7 @@
 }
 
 @property NSObject<CNFConferenceManagerDelegate> *delegate;
+@property(retain,readonly) CNFAudioDeviceController *deviceController;
 @property(retain,readonly) CNFDisplayController *displayController;
 @property(retain) NSURL *originationURL;
 @property BOOL initialMuteState;
@@ -39,7 +41,6 @@
 - (void)_handleFirstRemoteFrame:(id)arg1;
 - (void)_handleInvitationSent:(id)arg1;
 - (void)_handlePresentConference:(id)arg1;
-- (void)_hangUpPhoneCall;
 - (void)_muteConference:(BOOL)arg1;
 - (void)_playOutgoingRingSound;
 - (void)_setUpConferenceManager;
@@ -65,8 +66,10 @@
 - (void)conferenceDisplayController:(id)arg1 muteConferenceWithReason:(NSUInteger)arg2;
 - (void)conferenceDisplayController:(id)arg1 retryVideoConferenceInvitationWithReason:(NSUInteger)arg2;
 - (void)conferenceDisplayController:(id)arg1 returnToVoiceCallWithReason:(NSUInteger)arg2;
+- (void)conferenceDisplayControllerEndedWhileSuspending:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (id)deviceController;
 - (id)displayController;
 - (void)hangUpConferenceOnScreenLock;
 - (id)initWithDelegate:(id)arg1;
@@ -79,8 +82,8 @@
 - (void)setInitialMuteState:(BOOL)arg1;
 - (void)setIsOutgoingInvitation:(BOOL)arg1;
 - (void)setOriginationURL:(id)arg1;
-- (void)setupDisplayController;
 - (BOOL)shouldDisplayMuteOption;
+- (void)showCallBarsAnimated:(BOOL)arg1;
 - (void)startConferenceWithURL:(id)arg1;
 
 @end

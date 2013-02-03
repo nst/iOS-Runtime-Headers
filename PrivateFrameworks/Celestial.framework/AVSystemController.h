@@ -20,11 +20,13 @@
 - (BOOL)changeVolumeBy:(float)arg1 forCategory:(id)arg2;
 - (BOOL)currentRouteHasVolumeControl;
 - (void)dealloc;
+- (BOOL)enablePortDiscovery:(BOOL)arg1;
 - (BOOL)getActiveCategoryMuted:(BOOL*)arg1 forRoute:(id)arg2 andDeviceIdentifier:(id)arg3;
 - (BOOL)getActiveCategoryMuted:(BOOL*)arg1;
 - (BOOL)getActiveCategoryVolume:(float*)arg1 andName:(id*)arg2 fallbackCategory:(id)arg3;
 - (BOOL)getActiveCategoryVolume:(float*)arg1 andName:(id*)arg2 forRoute:(id)arg3 andDeviceIdentifier:(id)arg4;
 - (BOOL)getActiveCategoryVolume:(float*)arg1 andName:(id*)arg2;
+- (BOOL)getPortDiscoveryEnabled;
 - (BOOL)getVolume:(float*)arg1 forCategory:(id)arg2;
 - (void)handleServerDied;
 - (id)init;
@@ -38,6 +40,7 @@
 - (BOOL)setActiveCategoryVolumeTo:(float)arg1 forRoute:(id)arg2 andDeviceIdentifier:(id)arg3;
 - (BOOL)setActiveCategoryVolumeTo:(float)arg1;
 - (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (BOOL)setPickedRouteWithPassword:(id)arg1 withPassword:(id)arg2;
 - (BOOL)setVolumeTo:(float)arg1 forCategory:(id)arg2;
 - (BOOL)toggleActiveCategoryMuted;
 - (BOOL)toggleActiveCategoryMutedForRoute:(id)arg1 andDeviceIdentifier:(id)arg2;

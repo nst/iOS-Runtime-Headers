@@ -41,6 +41,8 @@
 - (void)_freezeCurrentTitleView;
 - (id)_leftBarButtonItem;
 - (void)_removeBackButtonView;
+- (void)_removeCustomLeftView;
+- (void)_removeCustomRightView;
 - (void)_removeTitleAndButtonViews;
 - (id)_rightBarButtonItem;
 - (void)_setBackButtonTitle:(id)arg1 lineBreakMode:(NSInteger)arg2;

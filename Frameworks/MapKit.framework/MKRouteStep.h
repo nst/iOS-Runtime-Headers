@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKSearchResult, MKDate, NSString, UIImage, NSArray;
+@class MKPolygon, MKSearchResult, MKDate, NSString, UIImage, NSArray;
 
 @interface MKRouteStep : NSObject <MKAnnotation> {
     struct { 
@@ -20,6 +20,7 @@
     NSString *_arrivalAddress;
     MKDate *_arrivalDate;
     } _boundingMapRect;
+    MKPolygon *_boundingPolygon;
     } _coordinate;
     NSString *_departureAddress;
     MKDate *_departureDate;
@@ -44,6 +45,7 @@
 
 @property(readonly) NSString *arrivalAddress;
 @property(readonly) MKDate *arrivalDate;
+@property(retain) MKPolygon *boundingPolygon;
 @property(readonly) NSString *departureAddress;
 @property(readonly) MKDate *departureDate;
 @property(readonly) NSString *direction;
@@ -77,6 +79,7 @@
 - (id)arrivalAddress;
 - (id)arrivalDate;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingMapRect;
+- (id)boundingPolygon;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)departureAddress;
@@ -99,6 +102,7 @@
 - (NSUInteger)pointIndex;
 - (id)searchResult;
 - (void)setBoundingMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBoundingPolygon:(id)arg1;
 - (void)setNonCacheableIcon:(id)arg1;
 - (void)setNumberOfPoints:(NSUInteger)arg1;
 - (void)setStepIndex:(NSUInteger)arg1;

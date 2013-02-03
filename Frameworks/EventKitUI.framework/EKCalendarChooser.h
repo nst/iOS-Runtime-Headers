@@ -2,14 +2,16 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSMutableDictionary, NSArray, NSMutableSet, NSIndexPath, EKEventStore, <EKCalendarChooserDelegate>;
+@class UITableView, NSIndexPath, EKEventStore, <EKCalendarChooserDelegate>, NSMutableSet, NSMutableDictionary, NSArray;
 
-@interface EKCalendarChooser : UITableViewController {
+@interface EKCalendarChooser : UIViewController {
     unsigned int _listIsFlat : 1;
     unsigned int _showAll : 1;
     unsigned int _showColors : 1;
     unsigned int _allSelected : 1;
     unsigned int _allowsRotation : 1;
+    unsigned int _showsDoneButton : 1;
+    unsigned int _showsCancelButton : 1;
     NSIndexPath *_checkedRow;
     <EKCalendarChooserDelegate> *_delegate;
     NSArray *_groups;
@@ -17,14 +19,15 @@
     EKEventStore *_store;
     NSMutableDictionary *_storeGroupMap;
     NSInteger _style;
+    UITableView *_tableView;
 }
 
-@property(retain) EKCalendar *checkedCalendar;
 @property <EKCalendarChooserDelegate> *delegate;
+@property(retain) EKEventStore *eventStore;
 @property(copy) NSSet *selectedCalendars;
-@property BOOL allowsRotation;
+@property BOOL showsCancelButton;
+@property BOOL showsDoneButton;
 @property(readonly) NSInteger style;
-@property(readonly) BOOL tableIsFlat;
 
 - (void)_applySelection;
 - (id)_groupForSource:(id)arg1;
@@ -39,21 +42,29 @@
 - (void)_setCalendars:(id)arg1;
 - (BOOL)allowsRotation;
 - (void)calendarsChanged:(id)arg1;
-- (id)checkedCalendar;
+- (void)cancel:(id)arg1;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
 - (void)dealloc;
 - (id)delegate;
 - (void)done:(id)arg1;
-- (id)initWithChooserStyle:(NSInteger)arg1 store:(id)arg2;
+- (id)eventStore;
+- (id)initWithChooserStyle:(NSInteger)arg1;
+- (void)loadView;
 - (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (id)selectedCalendar;
 - (id)selectedCalendars;
 - (void)setAllowsRotation:(BOOL)arg1;
-- (void)setCheckedCalendar:(id)arg1;
 - (void)setCheckedRow:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setEventStore:(id)arg1;
+- (void)setSelectedCalendar:(id)arg1;
 - (void)setSelectedCalendars:(id)arg1;
+- (void)setShowsCancelButton:(BOOL)arg1;
+- (void)setShowsDoneButton:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)showsCancelButton;
+- (BOOL)showsDoneButton;
 - (NSInteger)style;
-- (BOOL)tableIsFlat;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;

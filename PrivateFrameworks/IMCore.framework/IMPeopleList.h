@@ -5,33 +5,55 @@
 @class IMServicePeopleListGroup, NSArray, NSString, NSDictionary, NSMutableArray, IMOfflinePeopleListGroup;
 
 @interface IMPeopleList : IMDirectlyObservableObject <IMDirectlyObservableObjectObserver> {
-    unsigned int _pendingResort : 1;
-    unsigned int _allowsIMHandleSubstitution : 1;
-    unsigned int _hideOfflinePeople : 1;
-    unsigned int _hideAwayPeople : 1;
-    unsigned int _hideIdlePeople : 1;
-    unsigned int _hideUnknownPeople : 1;
-    unsigned int _hideNoStatusPeople : 1;
-    unsigned int _usesOfflineGroup : 1;
-    unsigned int _usesBonjourGroup : 1;
-    unsigned int _arrangesByGroup : 1;
-    unsigned int _allowsGroupOrdering : 1;
-    unsigned int _allowsSearching : 1;
-    unsigned int _inSearchMode : 1;
+    BOOL _allowsGroupOrdering;
+    BOOL _allowsIMHandleSubstitution;
+    BOOL _allowsSearching;
+    BOOL _arrangesByGroup;
     IMServicePeopleListGroup *_bonjourGroup;
     NSInteger _coalesceCount;
     NSString *_collapsedGroupsPrefKey;
     Class _customPeopleListItemClass;
     NSDictionary *_groupProperties;
     NSArray *_groupsOrdering;
+    BOOL _hideAwayPeople;
+    BOOL _hideIdlePeople;
+    BOOL _hideNoStatusPeople;
+    BOOL _hideOfflinePeople;
+    BOOL _hideUnknownPeople;
+    BOOL _inSearchMode;
     NSMutableArray *_items;
     NSMutableArray *_itemsToCleanup;
     IMOfflinePeopleListGroup *_offlineGroup;
+    BOOL _pendingResort;
     NSMutableArray *_peopleListGroups;
     NSMutableArray *_peopleListItems;
     NSString *_searchString;
     NSMutableArray *_smartGroups;
+    BOOL _usesBonjourGroup;
+    BOOL _usesOfflineGroup;
 }
+
+@property(readonly) NSArray *allIMHandles;
+@property(retain) NSString *collapsedGroupsPrefKey;
+@property(readonly) NSString *groupForNewIMHandles;
+@property(retain) NSDictionary *groupProperties;
+@property(readonly) NSArray *items;
+@property(readonly) NSArray *peopleListGroups;
+@property(readonly) NSArray *peopleListItems;
+@property(retain) NSString *searchString;
+@property BOOL allowsIMHandleSubstitution;
+@property BOOL allowsSearching;
+@property BOOL arrangesByGroup;
+@property(retain) Class customPeopleListItemClass;
+@property(readonly) BOOL inSearchMode;
+@property(readonly) NSUInteger numberOfIMHandles;
+@property(readonly) Class peopleListItemClass;
+@property BOOL showsAwayPeople;
+@property BOOL showsIdlePeople;
+@property BOOL showsNoStatusPeople;
+@property BOOL showsOfflinePeople;
+@property BOOL showsUnknownPeople;
+@property BOOL usesOfflineGroup;
 
 + (id)_notificationNames;
 + (id)_notificationSelectors;

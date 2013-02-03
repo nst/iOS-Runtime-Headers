@@ -9,6 +9,8 @@
     UIButton *_zoomButton;
 }
 
+@property(readonly) UIWindow *window;
+
 + (void)_initializeSafeCategory;
 
 - (void)_accessibilitySetZoomButtonLabel;
@@ -25,5 +27,6 @@
 - (id)init;
 - (BOOL)isClassicControlWindow:(id)arg1;
 - (void)loadView;
+- (id)window;
 
 @end

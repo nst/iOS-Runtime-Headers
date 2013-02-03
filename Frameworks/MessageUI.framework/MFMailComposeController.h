@@ -2,16 +2,15 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFMailComposeControllerDelegate>, UINavigationItem, OutgoingMessageDelivery, MFComposeSubjectView, MFMailComposeView, OutgoingMessage, MutableMessageHeaders, _MFComposeRecipientView, NSTimer, MailboxUid, MFError, _MFMailCompositionContext, NSArray, UITextContentView, MFComposeBodyField, NSString, MFGenericAttachmentStore;
+@class UINavigationItem, UIActionSheet, NSString, MFComposeSubjectView, MFMailComposeView, MFGenericAttachmentStore, OutgoingMessageDelivery, _MFComposeRecipientView, OutgoingMessage, MailboxUid, MutableMessageHeaders, _MFMailCompositionContext, NSTimer, MFError, NSArray, UITextContentView, MFComposeBodyField, MFComposeImageSizeView, <MFMailComposeControllerDelegate>;
 
-@interface MFMailComposeController : NSObject <UIActionSheetDelegate, MFMailComposeViewDelegate, MFComposeHeaderViewDelegate, MFComposeSubjectViewDelegate> {
+@interface MFMailComposeController : NSObject <UIActionSheetDelegate, MFMailComposeViewDelegate, MFComposeHeaderViewDelegate, MFComposeSubjectViewDelegate, MFComposeImageSizeViewDelegate> {
     struct CGSize { 
         float width; 
         float height; 
     struct _NSRange { 
         NSUInteger location; 
         NSUInteger length; 
-    unsigned int _showKeyboardImmediately : 1;
     unsigned int _isDirty : 1;
     unsigned int _shouldAutosaveWithSuspendInfo : 1;
     unsigned int _suspendedPickingTo : 1;
@@ -27,6 +26,7 @@
     unsigned int _disabledAutosave : 1;
     unsigned int _stillLoading : 1;
     unsigned int _hosted : 1;
+    UIActionSheet *_activeSheet;
     MFGenericAttachmentStore *_attachmentStore;
     NSTimer *_autosaveTimer;
     NSArray *_bccAddresses;
@@ -39,6 +39,7 @@
     <MFMailComposeControllerDelegate> *_delegate;
     OutgoingMessageDelivery *_delivery;
     MFError *_error;
+    MFComposeImageSizeView *_imageSizeField;
     NSUInteger _initialAttachmentCount;
     NSString *_initialTitle;
     MailboxUid *_lastDraftMailboxUid;
@@ -48,6 +49,7 @@
     NSUInteger _options;
     NSArray *_originalBccAddresses;
     NSString *_originalSendingEmailAddress;
+    NSUInteger _pendingImageScalingOperations;
     NSInteger _resolution;
     MutableMessageHeaders *_savedHeaders;
     } _selectedRange;
@@ -60,6 +62,9 @@
     _MFComposeRecipientView *_toField;
     MFMailComposeView *_view;
 }
+
+@property(retain) UIActionSheet *activeSheet;
+@property(retain) MFGenericAttachmentStore *attachmentStore;
 
 + (id)_autosavePath;
 + (id)_defaultAccount;
@@ -74,12 +79,12 @@
 + (id)signature;
 + (void)tearDownViewOnMainThread:(id)arg1;
 
-- (BOOL)_addAttachment:(id)arg1;
-- (id)_autosavedMessage;
 - (void)_bodyTextChanged:(id)arg1;
+- (void)_checkForInvalidAddresses;
 - (void)_close;
 - (void)_composeViewDidDraw:(id)arg1;
 - (unsigned long)_estimateMessageSize;
+- (void)_finishedLoadingAllContentAndAttachments:(id)arg1;
 - (void)_focusGained:(id)arg1;
 - (BOOL)_fromAccountAllowsEmoji;
 - (void)_getMessage:(id)arg1;
@@ -90,12 +95,15 @@
 - (void)_loadAttachments:(id)arg1;
 - (void)_loadingContextDidLoad:(id)arg1;
 - (id)_markupForInlineAttachment:(id)arg1 willBeIncluded:(BOOL)arg2 prependBlankLine:(BOOL)arg3;
+- (void)_physicallyScaleImagesToScale:(NSInteger)arg1;
 - (void)_pickInitialFirstResponder;
-- (void)_quoteBody:(id)arg1;
+- (void)_prepareImagesForSend;
 - (void)_quoteForwardedMessage:(id)arg1 content:(id)arg2;
 - (void)_quoteReplyMessage:(id)arg1 content:(id)arg2;
+- (void)_reallyAutosaveImmediately:(id)arg1 bundleIdentifier:(id)arg2;
 - (void)_reallyAutosaveImmediately:(id)arg1;
 - (void)_removeLastDraftWithStore:(id)arg1;
+- (void)_scaleImages;
 - (void)_searchBegan:(id)arg1;
 - (void)_searchEnded:(id)arg1;
 - (void)_setCodePointTranslationEnabled:(BOOL)arg1;
@@ -104,7 +112,7 @@
 - (void)_setUpDeliveryObject;
 - (void)_setupForAutosavedMessage:(id)arg1;
 - (void)_setupForDraft:(id)arg1;
-- (void)_setupForExistingNewMessage:(id)arg1 headers:(id)arg2;
+- (void)_setupForExistingNewMessage:(id)arg1 content:(id)arg2;
 - (void)_setupForForwardOfMessage:(id)arg1;
 - (void)_setupForNewMessage;
 - (void)_setupForOutbox:(id)arg1;
@@ -114,12 +122,15 @@
 - (BOOL)_shouldPrependBlankLineForAttachments;
 - (void)_textChanged:(id)arg1;
 - (void)_tryAddSenderToBccRecipients;
+- (void)_unscaleImages;
 - (void)_unthrottleScalingAfterDelay;
+- (void)_updateImageSizeTitles;
 - (void)_updateOriginalBccStatusForRestore;
 - (void)_updateOriginalBccStatusForRestoreAddingAddress:(BOOL)arg1;
 - (void)_updateTableCell:(id)arg1 isChecked:(BOOL)arg2;
 - (void)accountsChanged:(id)arg1;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (id)activeSheet;
 - (void)addAddress:(id)arg1 field:(NSInteger)arg2;
 - (void)addInlineAttachment:(id)arg1;
 - (void)addInlineAttachmentAtPath:(id)arg1 includeDirectoryContents:(BOOL)arg2;
@@ -129,14 +140,19 @@
 - (void)addSignature:(BOOL)arg1;
 - (void)addSignature;
 - (id)addressesForField:(NSInteger)arg1;
-- (void)alertSheet:(id)arg1 buttonClicked:(NSInteger)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)attachmentCachedSizesWillChange:(id)arg1;
+- (void)attachmentFinishedCachingScaledSizes:(id)arg1;
 - (void)attachmentFinishedLoading:(id)arg1;
+- (id)attachmentStore;
 - (id)attachments;
 - (void)attachmentsRemoved:(id)arg1;
 - (void)autosaveImmediately;
+- (void)autosaveImmediatelyWithBundleIdentifier:(id)arg1;
 - (BOOL)bccAddressesDirtied;
 - (id)bottomView;
 - (BOOL)canShowFromField;
+- (BOOL)canShowImageSizeField;
 - (void)cancelAutosave;
 - (void)clearAllFields;
 - (void)clearInitialTitle;
@@ -146,12 +162,13 @@
 - (void)composeHeaderViewDidConfirmValue:(id)arg1;
 - (void)composeSubjectViewTextFieldDidResignFirstResponder:(id)arg1;
 - (NSInteger)composeType;
+- (id)currentScaleImageSize;
 - (void)dealloc;
 - (BOOL)deliverMessage;
 - (BOOL)deliverMessageRemotely;
 - (void)didSelectCellAtRow:(NSUInteger)arg1;
+- (void)dismissSheet;
 - (id)draftMessage;
-- (void)emptyContent;
 - (id)error;
 - (id)errorDescription;
 - (id)errorTitle;
@@ -159,6 +176,8 @@
 - (BOOL)hasAttachments;
 - (id)headersUseSuspendInfo:(BOOL)arg1;
 - (BOOL)hosted;
+- (NSInteger)imageScaleFromUserDefaults;
+- (void)imageSizeView:(id)arg1 changedSelectedScaleTo:(NSInteger)arg2;
 - (id)init;
 - (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1 navigationItem:(id)arg2 options:(NSUInteger)arg3;
 - (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1 navigationItem:(id)arg2;
@@ -178,7 +197,6 @@
 - (id)pickerView:(id)arg1 viewForRow:(NSInteger)arg2 forComponent:(NSInteger)arg3 reusingView:(id)arg4;
 - (void)prependPreamble:(id)arg1;
 - (void)prependQuotedMarkup:(id)arg1;
-- (void)recoverAutosavedMessage;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectOfAttachment:(id)arg1;
 - (void)removeAddressAtIndex:(NSInteger)arg1 field:(NSInteger)arg2;
 - (NSInteger)resolution;
@@ -193,7 +211,9 @@
 - (id)sendingEmailAddress;
 - (id)sendingEmailAddressIfExists;
 - (BOOL)sendingEmailDirtied;
+- (void)setActiveSheet:(id)arg1;
 - (void)setAddresses:(id)arg1 field:(NSInteger)arg2;
+- (void)setAttachmentStore:(id)arg1;
 - (void)setBccRecipients:(id)arg1;
 - (void)setCcRecipients:(id)arg1;
 - (void)setCompositionContext:(id)arg1;
@@ -208,6 +228,7 @@
 - (void)setRecipientsKeyboardType:(NSInteger)arg1;
 - (void)setSendingEmailAddress:(id)arg1 addIfNotPresent:(BOOL)arg2;
 - (void)setSendingEmailAddress:(id)arg1;
+- (void)setSheet:(id)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setToRecipients:(id)arg1;
 - (void)suspend;

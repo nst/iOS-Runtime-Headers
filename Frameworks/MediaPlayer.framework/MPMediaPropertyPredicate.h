@@ -2,10 +2,8 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaPropertyPredicateInternal;
-
 @interface MPMediaPropertyPredicate : MPMediaPredicate {
-    MPMediaPropertyPredicateInternal *_internal;
+    void *_internal;
 }
 
 @property(copy) NSString *property;
@@ -15,10 +13,13 @@
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2 comparisonType:(NSInteger)arg3;
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2;
 
-- (id)_MLPredicate;
+- (id)ML3PredicateForContainer;
+- (id)ML3PredicateForTrack;
+- (id)_ML3PredicateForML3EntityProperty:(id)arg1;
 - (NSInteger)comparisonType;
 - (void)dealloc;
 - (id)description;
+- (id)descriptionOfValue:(id)arg1 forProperty:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (NSUInteger)hash;
 - (id)init;

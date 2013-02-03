@@ -16,8 +16,6 @@
     float attRingRoll[64];
     double attRingTime[64];
     float attRingYaw[64];
-    struct __CLClient { } *coreLocationClient;
-    struct __IOHIDEventSystemClient { } *eventSystemClient;
     BOOL manageAccel;
     BOOL manageAttitude;
     BOOL manageRotation;
@@ -27,24 +25,22 @@
     float rotRingX[64];
     float rotRingY[64];
     float rotRingZ[64];
-    struct __CFRunLoop { } *runLoop;
 }
 
 - (id)copyAccelerationData;
 - (id)copyAttitudeData;
 - (id)copyRotationData;
 - (void)dealloc;
-- (void)deferOnRunloop_initManagerUsingCL;
 - (void)deferOnRunloop_initManagerUsingIOHID;
 - (void)deferOnRunloop_stopEvents;
-- (void)didUpdateAcceleration;
 - (void)didUpdateAccelerationWithEventInfo:(struct { double x1; double x2; double x3; double x4; }*)arg1;
-- (void)didUpdateAttitude;
-- (void)didUpdateRotationRate;
+- (void)didUpdateRotationRateWithEventInfo:(struct { double x1; double x2; double x3; NSUInteger x4; double x5; }*)arg1;
 - (void)getAttitude:(float*)arg1 :(float*)arg2 :(float*)arg3 forTimeStamp:(double)arg4;
 - (void)getRotation:(float*)arg1 :(float*)arg2 :(float*)arg3 forTimeStamp:(double)arg4;
 - (void)getVector:(float*)arg1 :(float*)arg2 :(float*)arg3 forTimeStamp:(double)arg4;
 - (id)init;
 - (id)initWithOptions:(BOOL)arg1 enableRotation:(BOOL)arg2 enableAttitude:(BOOL)arg3;
+- (BOOL)managingAccel;
+- (BOOL)managingRotation;
 
 @end

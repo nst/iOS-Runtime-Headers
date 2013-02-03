@@ -11,6 +11,7 @@
         unsigned int enforceLowerBound : 1; 
         unsigned int shouldDisplayHalo : 1; 
         unsigned int shouldDisplayEffects : 1; 
+        unsigned int effectsVisible : 1; 
         unsigned int shouldDisplayAccuracy : 1; 
         unsigned int shouldDisplayHeading : 1; 
         unsigned int stale : 1; 
@@ -44,6 +45,7 @@
 @property id delegate;
 @property BOOL disableAccuracyDidUpdate;
 @property(getter=isDisplayingAccuracy,readonly) BOOL displayingAccuracy;
+@property BOOL effectsVisible;
 @property(readonly) BOOL hasHalo;
 @property(readonly) BOOL hasQuiesced;
 @property double headingAccuracy;
@@ -94,6 +96,8 @@
 - (id)dotBounceAnimation;
 - (void)drawAccuracy:(float)arg1;
 - (id)dropUserLocationBreadCrumbAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)effectsVisible;
+- (void)effectsVisibleDidChange;
 - (id)haloAnimation;
 - (BOOL)hasHalo;
 - (BOOL)hasQuiesced;
@@ -130,6 +134,7 @@
 - (void)setContentsScale:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisableAccuracyDidUpdate:(BOOL)arg1;
+- (void)setEffectsVisible:(BOOL)arg1;
 - (void)setHeadingAccuracy:(double)arg1;
 - (void)setMapType:(NSUInteger)arg1;
 - (void)setPosition:(struct CADoublePoint { double x1; double x2; })arg1;

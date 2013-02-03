@@ -2,40 +2,48 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptViewController;
-
 @interface SUScriptPopOver : SUScriptObject {
     BOOL _ignoreDismiss;
-    SUScriptViewController *_viewController;
 }
 
-@property(getter=_viewController,retain) SUScriptViewController *viewController; /* unknown property attribute: Sset_viewController: */
 @property(retain) UIPopoverController *nativePopoverController;
+@property(retain) SUScriptViewController *viewController;
+@property float contentHeight;
+@property float contentWidth;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_activeViewController;
 - (id)_className;
-- (id)_copyViewController;
 - (void)_dismissAnimated:(BOOL)arg1;
-- (id)_newPopOverController;
+- (BOOL)_isViewControllerVisible;
+- (id)_nativeViewController;
+- (void)_overlayWillShowNotification:(id)arg1;
 - (id)_popOverController;
 - (void)_setIgnoresDismiss:(BOOL)arg1;
-- (void)_setViewController:(id)arg1;
+- (void)_setNativeViewController:(id)arg1;
+- (BOOL)_shouldDisplayAsPopover;
 - (void)_showAsModalViewController;
 - (void)_showFromDOMElement:(id)arg1;
 - (void)_showFromNavigationItem:(id)arg1;
-- (id)_viewController;
 - (void)_viewControllerDidDismiss:(id)arg1;
+- (id)attributeKeys;
+- (float)contentHeight;
+- (float)contentWidth;
 - (void)dealloc;
 - (void)dismissAnimated:(id)arg1;
 - (id)init;
 - (id)nativePopoverController;
+- (id)scriptAttributeKeys;
+- (void)setContentHeight:(float)arg1;
+- (void)setContentWidth:(float)arg1 height:(float)arg2 animated:(BOOL)arg3;
+- (void)setContentWidth:(float)arg1;
 - (void)setNativePopoverController:(id)arg1;
-- (void)set_viewController:(id)arg1;
+- (void)setViewController:(id)arg1;
 - (BOOL)showFromElement:(id)arg1;
 - (BOOL)showFromNavigationItem:(id)arg1;
 - (void)tearDownUserInterface;
+- (id)viewController;
 
 @end

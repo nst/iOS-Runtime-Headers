@@ -6,6 +6,8 @@
     NSInteger _status;
 }
 
+@property(readonly) NSInteger status;
+
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAction:(NSInteger)arg1 context:(id)arg2 status:(NSInteger)arg3;
 - (id)initWithCoder:(id)arg1;

@@ -13,7 +13,6 @@
     NSInteger _rightButtonBehavior;
 }
 
-@property(retain) <ABStyleProvider> *styleProvider;
 @property(readonly) BOOL allowsCancel;
 @property(readonly) BOOL allowsCardEditing;
 @property(readonly) BOOL shouldShowGroups;
@@ -24,7 +23,6 @@
 - (void)_applicationEnteringForeground;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
 - (void*)_personToUseForSavingState;
-- (void)_refreshAccount;
 - (NSInteger)abViewControllerType;
 - (void)addPerson:(id)arg1;
 - (BOOL)allowsCancel;
@@ -55,7 +53,7 @@
 - (id)model;
 - (void)modelDatabaseChange:(id)arg1;
 - (void)modelSelectedPersonWasDeleted:(id)arg1;
-- (void)nameChangedForPerson:(void*)arg1;
+- (void)nameUpdatedForPerson:(void*)arg1;
 - (BOOL)newContactViewControllerCompleted:(id)arg1 withNewPerson:(void*)arg2;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2 informDelegate:(BOOL)arg3;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;

@@ -2,30 +2,31 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, NSArray, UIBarButtonItem, UIWindow;
+@class UIImageView, NSArray, UIColor, UIBarButtonItem;
 
 @interface UIDimmingView : UIView {
     UIImageView *_backgroundGlow;
     id _delegate;
-    BOOL _dimsStatusBar;
+    UIColor *_dimmingColor;
     BOOL _displayed;
     UIBarButtonItem *_highlightedBarButtonItem;
     UIImageView *_highlightedImageView;
     BOOL _ignoresTouches;
     BOOL _inPassthroughHitTest;
     NSArray *_passthroughViews;
-    UIWindow *_statusBarDimmingWindow;
 }
 
+@property(retain) UIColor *dimmingColor;
 @property(retain) UIBarButtonItem *highlightedBarButtonItem;
 @property(retain) NSArray *passthroughViews;
 @property id delegate;
-@property BOOL dimsStatusBar;
 @property BOOL displayed;
 @property BOOL ignoresTouches;
 
 + (void)_initializeSafeCategory;
++ (id)defaultDimmingColor;
 
+- (BOOL)_accessibilityCanDismiss;
 - (BOOL)_accessibilityCoversScreen;
 - (BOOL)_accessibilityEscape;
 - (id)_accessibilityObscuredScreenAllowedViews;
@@ -36,8 +37,8 @@
 - (unsigned long long)accessibilityTraits;
 - (void)dealloc;
 - (id)delegate;
+- (id)dimmingColor;
 - (void)dimmingRemovalAnimationDidStop;
-- (BOOL)dimsStatusBar;
 - (void)display:(BOOL)arg1 withAnimationDuration:(float)arg2 afterDelay:(float)arg3;
 - (BOOL)displayed;
 - (id)highlightedBarButtonItem;
@@ -48,7 +49,7 @@
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (id)passthroughViews;
 - (void)setDelegate:(id)arg1;
-- (void)setDimsStatusBar:(BOOL)arg1;
+- (void)setDimmingColor:(id)arg1;
 - (void)setDisplayed:(BOOL)arg1;
 - (void)setHighlightedBarButtonItem:(id)arg1;
 - (void)setIgnoresTouches:(BOOL)arg1;

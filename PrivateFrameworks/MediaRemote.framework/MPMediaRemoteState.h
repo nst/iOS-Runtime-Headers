@@ -6,32 +6,25 @@
    See Warning(s) below.
  */
 
-@class NSMachPort;
-
 @interface MPMediaRemoteState : NSObject {
     BOOL _canBeNowPlayingApp;
     id _commandHandlerBlock;
     BOOL _isOverrideApp;
     NSInteger _notifyLaunchedToken;
-    NSMachPort *_serverPort;
 }
 
 @property(copy) ? *commandHandlerBlock;
-@property(retain) NSMachPort *serverPort;
 @property BOOL canBeNowPlayingApp;
 @property BOOL isOverrideApp;
 
 - (void)_avSystemControllerServerConnectionDiedNotification:(id)arg1;
-- (void)_portDidInvalidateNotification:(id)arg1;
 - (BOOL)canBeNowPlayingApp;
 - (id)commandHandlerBlock;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isOverrideApp;
-- (id)serverPort;
 - (void)setCanBeNowPlayingApp:(BOOL)arg1;
 - (void)setCommandHandlerBlock:(id)arg1;
 - (void)setIsOverrideApp:(BOOL)arg1;
-- (void)setServerPort:(id)arg1;
 
 @end

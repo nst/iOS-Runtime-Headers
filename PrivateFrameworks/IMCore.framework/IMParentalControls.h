@@ -20,6 +20,19 @@
     NSMutableSet *_subnetWhitelist;
 }
 
+@property(readonly) NSSet *aimWhitelist;
+@property(readonly) NSSet *jabberWhitelist;
+@property(readonly) NSSet *subnetWhitelist;
+@property(readonly) BOOL active;
+@property(readonly) BOOL disableAV;
+@property(readonly) BOOL disableAimService;
+@property(readonly) BOOL disableJabberService;
+@property(readonly) BOOL disableSubnetService;
+@property(readonly) BOOL forceAimWhitelist;
+@property(readonly) BOOL forceChatLogging;
+@property(readonly) BOOL forceJabberWhitelist;
+@property(readonly) BOOL forceSubnetWhitelist;
+
 + (id)objectForKey:(id)arg1;
 + (id)standardControls;
 

@@ -16,7 +16,7 @@
                 float width; 
                 float height; 
             } size; 
-        } x41; struct Update {} *x42; NSUInteger x43[2]; NSUInteger x44[2]; NSUInteger x45; unsigned int x46 : 8; NSUInteger x47; BOOL x48[0]; } *_priv;
+        } x41; struct Update {} *x42; NSUInteger x43; NSUInteger x44[2]; NSUInteger x45[2]; NSUInteger x46; unsigned int x47 : 8; NSUInteger x48; BOOL x49[0]; } *_priv;
 }
 
 @property(retain) CAContext *context;

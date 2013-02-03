@@ -5,13 +5,19 @@
 @class UIFont, UIColor, UIImage;
 
 @interface _UITabBarAppearance : NSObject {
+    struct CGSize { 
+        float width; 
+        float height; 
     UIImage *backgroundImage;
     UIFont *labelFont;
     UIColor *labelSelectedTextColor;
+    UIColor *labelShadowColor;
+    } labelShadowOffset;
     UIColor *labelTextColor;
     UIImage *selectionIndicatorImage;
 }
 
 - (void)dealloc;
+- (id)init;
 
 @end

@@ -26,6 +26,7 @@
 - (NSInteger)_getReply;
 - (BOOL)_hasParameter:(id)arg1 forKeyword:(id)arg2;
 - (NSInteger)_readResponseRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg1 isContinuation:(BOOL*)arg2;
+- (NSInteger)_sendBytes:(const char *)arg1 length:(NSUInteger)arg2;
 - (NSInteger)_sendCommand:(const char *)arg1 length:(NSUInteger)arg2 argument:(id)arg3 trailer:(const char *)arg4;
 - (NSInteger)_sendData:(id)arg1;
 - (void)_setLastResponse:(id)arg1;

@@ -11,6 +11,6 @@
 + (BOOL)canSendMail;
 + (id)createComposeViewController;
 + (id)createComposeViewControllerWithComposition:(id)arg1;
-+ (id)createMailCompositionContextWithComposeType:(NSInteger)arg1;
++ (id)createMailCompositionContext;
 
 @end

@@ -46,9 +46,12 @@
 - (NSUInteger)achievementPoints;
 - (NSUInteger)achievements;
 - (void)dealloc;
+- (id)description;
 - (NSUInteger)friendRank;
 - (id)game;
+- (NSUInteger)hash;
 - (id)initWithDictionary:(id)arg1 forGame:(id)arg2 forPlayer:(id)arg3;
+- (BOOL)isEqual:(id)arg1;
 - (id)lastAchievementAchievedIconURL;
 - (id)lastAchievementAchievedIdentifier;
 - (id)lastAchievementAchievedTime;

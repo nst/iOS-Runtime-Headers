@@ -23,6 +23,12 @@
     NSUInteger _underlineCount;
 }
 
+@property BOOL isRightToLeft; /* unknown property attribute: SsetRightToLeft: */
+@property(retain) NSString *backgroundColor;
+@property(readonly) NSAttributedString *body;
+@property(retain) NSArray *fileTransferGUIDs;
+@property(retain) NSString *foregroundColor;
+
 - (void)_clearIvars;
 - (void)_initIvars;
 - (void)_popValueFromStack:(id)arg1 attributeName:(id)arg2;
@@ -45,6 +51,7 @@
 - (void)incrementItalicCount;
 - (void)incrementStrikethroughCount;
 - (void)incrementUnderlineCount;
+- (BOOL)isRightToLeft;
 - (id)name;
 - (void)popBackgroundColor;
 - (void)popFontFamily;
@@ -59,6 +66,7 @@
 - (void)reset;
 - (id)resultsForLogging;
 - (void)setBackgroundColor:(id)arg1;
+- (void)setFileTransferGUIDs:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (void)setRightToLeft:(BOOL)arg1;
 

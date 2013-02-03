@@ -10,8 +10,6 @@
     NSInteger _granularity;
     DOMRange *_initialExtent;
     DOMRange *_selectedRange;
-    NSUInteger _selectionChangeCount;
-    NSInteger _state;
     UIView<UITextSelectingContainer> *_view;
 }
 
@@ -21,7 +19,6 @@
 @property(readonly) UIView<UITextSelectingContainer> *view;
 @property NSInteger affinity;
 @property NSInteger granularity;
-@property(readonly) NSUInteger selectionChangeCount;
 @property(readonly) NSInteger state;
 
 - (NSInteger)affinity;
@@ -45,7 +42,6 @@
 - (BOOL)pointAtStartOfLine:(struct CGPoint { float x1; float x2; })arg1;
 - (id)selectedRange;
 - (id)selectedText;
-- (NSUInteger)selectionChangeCount;
 - (void)selectionChanged;
 - (id)selectionRects;
 - (void)setAffinity:(NSInteger)arg1;

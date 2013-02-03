@@ -2,48 +2,46 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIImageView;
+@class UIImageView, UIView;
 
 @interface MPVideoBackgroundView : UIView {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     UIImageView *_backgroundPlaceholderImageView;
+    UIView *_backgroundPlaceholderPosterImageView;
     UIImageView *_backgroundPlaceholderView;
     UIImageView *_customBackgroundImageView;
     UIImageView *_iconView;
     UIImageView *_imageView;
     NSInteger _interfaceOrientation;
-    } _rectForIconCentering;
 }
 
 @property(retain) UIImage *backgroundPlaceholderImage;
+@property(retain) UIView *backgroundPlaceholderPosterImageView;
 @property(readonly) UIView *backgroundPlaceholderView;
 @property NSInteger interfaceOrientation;
 
 + (void)_initializeSafeCategory;
 
 - (void)_createInformationalTitleView:(id*)arg1 systemFont:(id)arg2 lineBreakMode:(NSInteger)arg3;
+- (void)_destinationDidChangeNotification:(id)arg1;
+- (void)_playbackStateDidChangeNotification:(id)arg1;
+- (void)_tvOutCapabilityDidChangeNotification:(id)arg1;
+- (void)_updateDestinationBackgroundViewAnimated:(BOOL)arg1;
 - (id)accessibilityLabel;
 - (BOOL)accessibilityTreeHidden;
 - (id)avController;
 - (id)backgroundPlaceholderImage;
+- (id)backgroundPlaceholderPosterImageView;
 - (id)backgroundPlaceholderView;
 - (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (NSInteger)interfaceOrientation;
 - (BOOL)isAccessibilityElement;
-- (void)layoutForCurrentOrientation;
+- (void)layoutSubviews;
 - (id)qtIcon;
 - (void)setBackgroundPlaceholderImage:(id)arg1;
+- (void)setBackgroundPlaceholderPosterImageView:(id)arg1;
 - (void)setCustomBackgroundImage:(id)arg1;
 - (void)setInterfaceOrientation:(NSInteger)arg1;
-- (void)setRectForIconCentering:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setShowQTAudioOnlyUI:(BOOL)arg1;
 
 @end

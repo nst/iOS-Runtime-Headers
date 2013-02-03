@@ -6,6 +6,7 @@
 
 @interface CNFRegFirstRunController : CNFRegListController <CNFRegFirstRunExperience> {
     UIActivityIndicatorView *_activityIndicator;
+    BOOL _cancelled;
     Class _completionControllerClass;
     UIBarButtonItem *_customLeftButton;
     UIBarButtonItem *_customRightButton;
@@ -25,11 +26,14 @@
 @property(retain) UIBarButtonItem *previousLeftButton;
 @property(retain) UIBarButtonItem *previousRightButton;
 @property Class completionControllerClass;
+@property(readonly) NSInteger currentAppearanceStyle;
 @property BOOL previousHidesBackButton;
 @property BOOL requiresAlias;
 @property BOOL timedOut;
 
+- (void)_cancelValidationMode;
 - (void)_handleTimeout;
+- (void)_handleValidationModeCancelled;
 - (BOOL)_hidesBackButton;
 - (void)_layoutActivityIndicator;
 - (id)_leftButtonItem;
@@ -39,15 +43,22 @@
 - (id)_rightButtonItem;
 - (void)_rightButtonTapped;
 - (void)_setupEventHandlers;
+- (void)_startActivityIndicatorWithTitle:(id)arg1 animated:(BOOL)arg2 allowCancel:(BOOL)arg3;
+- (void)_startActivityIndicatorWithTitle:(id)arg1 animated:(BOOL)arg2;
 - (void)_startTimeoutWithDuration:(double)arg1;
+- (void)_startValidationModeAnimated:(BOOL)arg1 allowCancel:(BOOL)arg2;
 - (void)_startValidationModeAnimated:(BOOL)arg1;
+- (void)_stopActivityIndicatorAnimated:(BOOL)arg1;
+- (void)_stopActivityIndicatorWithTitle:(id)arg1 animated:(BOOL)arg2;
 - (void)_stopTimeout;
 - (void)_stopValidationModeAnimated:(BOOL)arg1;
 - (void)_timeoutFired:(id)arg1;
 - (void)_updateControllerState;
 - (void)_updateUI;
+- (id)_validationModeCancelButton;
 - (BOOL)canBeShownFromSuspendedState;
 - (Class)completionControllerClass;
+- (NSInteger)currentAppearanceStyle;
 - (id)customLeftButton;
 - (id)customRightButton;
 - (void)dealloc;
@@ -70,9 +81,6 @@
 - (void)setRequiresAlias:(BOOL)arg1;
 - (void)setSpecifier:(id)arg1;
 - (void)setTimedOut:(BOOL)arg1;
-- (void)startActivityIndicatorWithTitle:(id)arg1 animated:(BOOL)arg2;
-- (void)stopActivityIndicatorAnimated:(BOOL)arg1;
-- (void)stopActivityIndicatorWithTitle:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)timedOut;
 - (id)titleString;
 - (id)validationString;

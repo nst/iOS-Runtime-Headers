@@ -13,15 +13,18 @@
 @property(copy) NSString *keySpace;
 @property(copy) NSLocale *locale;
 @property(copy) <NSObject><NSCopying> *value;
+@property ? duration;
 @property ? time;
 
 + (id)metadataItem;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })duration;
 - (id)extraAttributes;
 - (id)key;
 - (id)keySpace;
 - (id)locale;
+- (void)setDuration:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
 - (void)setExtraAttributes:(id)arg1;
 - (void)setKey:(id)arg1;
 - (void)setKeySpace:(id)arg1;

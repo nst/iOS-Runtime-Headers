@@ -2,18 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MediaToolbox.framework/MediaToolbox
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
+@class AVLayerSynchronizerPrivate;
 
 @interface AVLayerSynchronizer : NSObject {
-    struct AVLayerSynchronizerPrivate { struct OpaqueFigReentrantMutex {} *x1; double x2; double *x3; double *x4; id x5; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x6; inout unsigned short x7; void*x8; const const void*x9; void*x10; void*x11; unsigned char x12; unsigned char x13; } *_priv;
+    AVLayerSynchronizerPrivate *_priv;
 }
 
 + (id)layerSynchronizerWithLayer:(id)arg1 error:(id*)arg2;
 + (id)layerSynchronizerWithLayers:(id)arg1 error:(id*)arg2;
 
 - (void)dealloc;
+- (void)finalize;
 - (id)initWithLayer:(id)arg1 error:(id*)arg2;
 - (id)initWithLayers:(id)arg1 error:(id*)arg2;
 - (long)setLayerArray:(id)arg1;

@@ -7,6 +7,7 @@
 @interface GKScore : NSObject <NSCoding> {
     NSString *_category;
     NSDate *_date;
+    BOOL _fakeScore;
     NSString *_formattedValue;
     NSString *_playerID;
     NSInteger _rank;
@@ -17,6 +18,7 @@
 @property(retain) NSDate *date;
 @property(retain) NSString *formattedValue;
 @property(retain) NSString *playerID;
+@property BOOL fakeScore;
 @property NSInteger rank;
 @property long long value;
 
@@ -25,6 +27,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)fakeScore;
 - (id)formattedValue;
 - (id)init;
 - (id)initWithCategory:(id)arg1;
@@ -35,6 +38,7 @@
 - (void)reportScoreWithCompletionHandler:(id)arg1;
 - (void)setCategory:(id)arg1;
 - (void)setDate:(id)arg1;
+- (void)setFakeScore:(BOOL)arg1;
 - (void)setFormattedValue:(id)arg1;
 - (void)setPlayerID:(id)arg1;
 - (void)setRank:(NSInteger)arg1;

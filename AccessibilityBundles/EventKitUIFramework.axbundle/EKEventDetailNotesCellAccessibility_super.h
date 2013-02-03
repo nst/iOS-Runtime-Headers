@@ -8,6 +8,7 @@
 + (void)_initializeSafeCategory;
 
 - (id)accessibilityLabel;
+- (id)accessibilityValue;
 - (BOOL)isAccessibilityElement;
 
 @end

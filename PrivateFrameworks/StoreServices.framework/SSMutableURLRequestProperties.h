@@ -6,6 +6,7 @@
 }
 
 @property(copy) NSData *HTTPBody;
+@property(retain) NSInputStream *HTTPBodyStream;
 @property(copy) NSDictionary *HTTPHeaders;
 @property(copy) NSString *HTTPMethod;
 @property(retain) NSURL *URL;
@@ -22,6 +23,7 @@
 - (void)setCachePolicy:(NSUInteger)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setHTTPBody:(id)arg1;
+- (void)setHTTPBodyStream:(id)arg1;
 - (void)setHTTPHeaders:(id)arg1;
 - (void)setHTTPMethod:(id)arg1;
 - (void)setITunesStoreRequest:(BOOL)arg1;

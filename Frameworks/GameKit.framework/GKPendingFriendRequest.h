@@ -29,6 +29,7 @@
 + (id)pushDictionaryForQuery:(id)arg1;
 
 - (void)dealloc;
+- (id)description;
 - (NSUInteger)friendRequestCount;
 - (id)handle;
 - (id)initWithPushDictionary:(id)arg1;

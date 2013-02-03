@@ -9,6 +9,7 @@
     BOOL _allDay;
     NSMutableArray *_attendees;
     NSInteger _availability;
+    NSInteger _birthdayId;
     EKCalendar *_calendar;
     NSNumber *_calendarId;
     NSDate *_dateStamp;
@@ -74,6 +75,7 @@
 - (BOOL)_commitAttendees:(id*)arg1;
 - (BOOL)_commitRecurrenceRule:(id*)arg1;
 - (void)_disassociate;
+- (void)_loadPropertyIfNeeded:(NSInteger)arg1 loader:(id)arg2;
 - (BOOL)_occurrenceExistsOnDate:(double)arg1;
 - (void)_reconnectCalendar;
 - (void)_reconnectEvent;
@@ -93,6 +95,8 @@
 - (NSInteger)attendeeCount;
 - (id)attendees;
 - (NSInteger)availability;
+- (NSInteger)birthdayId;
+- (id)birthdayTitleWithAddressBook:(void*)arg1;
 - (id)calendar;
 - (BOOL)canAddAttendees;
 - (BOOL)canAddRecurrence;
@@ -115,9 +119,12 @@
 - (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDatePinnedForAllDay;
 - (id)eventIdentifier;
 - (id)exceptionDates;
+- (id)exportToICS;
 - (id)externalId;
+- (id)externalURL;
 - (BOOL)hasActionWithExternalAndFolderID;
 - (BOOL)hasAlarm;
+- (BOOL)hasHumanInviteesToDisplay;
 - (BOOL)hasSelfAttendee;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -175,6 +182,9 @@
 - (void)setTimeZone:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setURL:(id)arg1;
+- (void)setUnread:(BOOL)arg1;
+- (id)sortEKParticipantsIgnoringNonHumans:(id)arg1;
+- (id)sortedEKParticipantsDisplayStringsIgnoringNonHumans:(id)arg1;
 - (id)startDate;
 - (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDateGr;
 - (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDatePinnedForAllDay;
@@ -183,5 +193,6 @@
 - (id)store;
 - (id)timeZone;
 - (id)title;
+- (id)uniqueId;
 
 @end

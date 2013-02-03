@@ -27,7 +27,6 @@
 - (BOOL)shouldPlayMusic;
 - (BOOL)shouldRepeat;
 - (BOOL)shouldShuffle;
-- (NSInteger)smoothScrollBehavior;
 - (NSInteger)transition;
 - (NSInteger)transitionForAnimationMovingForward:(BOOL)arg1;
 

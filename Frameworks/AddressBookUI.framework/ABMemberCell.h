@@ -5,6 +5,7 @@
 @class NSArray, ABStyleProvider, ABPersonIconImageView;
 
 @interface ABMemberCell : UITableViewCell {
+    BOOL _drawsComponentsRTL;
     NSInteger _highlightIndex;
     BOOL _isGroup;
     void *_member;

@@ -21,6 +21,7 @@
 + (id)_mapkit_stringWithType:(NSInteger)arg1;
 + (NSInteger)_mapkit_typeWithSource:(NSInteger)arg1;
 
+- (id)_initWithCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7;
 - (NSInteger)_mapkit_source;
 - (double)altitude;
 - (struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; NSInteger x9; double x10; NSInteger x11; })clientLocation;
@@ -36,6 +37,7 @@
 - (id)init;
 - (id)initWithClientLocation:(struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; NSInteger x9; double x10; NSInteger x11; })arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 timestamp:(id)arg5;
 - (id)initWithIso6709Notation:(id)arg1;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;

@@ -58,6 +58,7 @@
 @property BOOL isDisplayed;
 @property(readonly) BOOL isLoading;
 @property(readonly) BOOL isTransitEnabled;
+@property(readonly) BOOL isUpdatingCurrentLocation;
 @property NSInteger mode;
 @property(readonly) BOOL needsSave;
 @property(readonly) NSUInteger previousStepIndex;
@@ -91,7 +92,7 @@
 - (void)_setResponsesUpdated;
 - (void)_setRouteUnavailableForMode:(NSInteger)arg1;
 - (void)_setUpdatingCurrentLocation:(BOOL)arg1;
-- (void)_startLoad;
+- (void)_startLoad:(BOOL)arg1;
 - (id)_startLocation;
 - (void)_startTransitLoadWithRequest:(id)arg1;
 - (void)_updateStartAndEndSearchResults;
@@ -120,6 +121,7 @@
 - (BOOL)isDisplayed;
 - (BOOL)isLoading;
 - (BOOL)isTransitEnabled;
+- (BOOL)isUpdatingCurrentLocation;
 - (void)loadFromDictionaryRepresentation:(id)arg1 restoreSearchResults:(id)arg2;
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;

@@ -15,9 +15,9 @@
     struct CGPoint { 
         float x; 
         float y; 
-    unsigned int _scrollViewGesture : 1;
-    unsigned int _hasParentScrollView : 1;
+    unsigned int _endsOnSingleTouch : 1;
     } _anchorPoint;
+    float _hysteresis;
     float _initialTouchDistance;
     float _initialTouchScale;
     double _lastTouchTime;
@@ -28,31 +28,29 @@
     float _velocity;
 }
 
+@property(getter=_hysteresis) float hysteresis; /* unknown property attribute: S_setHysteresis: */
 @property(readonly) CGPoint anchorPoint;
 @property float scale;
 @property float scaleThreshold;
-@property(getter=isScrollViewGesture) BOOL scrollViewGesture;
-@property(readonly) CGAffineTransform transform;
 @property(readonly) float velocity;
 
 + (void)addPinchGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
 
-- (float)_distanceBetweenTouches:(id)arg1;
+- (BOOL)_endsOnSingleTouch;
+- (float)_hysteresis;
 - (void)_resetGestureRecognizer;
+- (void)_setEndsOnSingleTouch:(BOOL)arg1;
+- (void)_setHysteresis:(float)arg1;
 - (struct CGPoint { float x1; float x2; })anchorPoint;
-- (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (BOOL)isScrollViewGesture;
 - (float)scale;
 - (float)scaleThreshold;
 - (void)setScale:(float)arg1;
 - (void)setScaleThreshold:(float)arg1;
-- (void)setScrollViewGesture:(BOOL)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 - (float)velocity;
 
 @end

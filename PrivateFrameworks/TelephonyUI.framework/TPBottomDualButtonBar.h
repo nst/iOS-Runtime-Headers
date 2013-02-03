@@ -9,7 +9,11 @@
     TPPushButton *_button2;
 }
 
++ (id)_backgroundImage;
+
 - (float)_buttonWidth;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calcButton2Frame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calcButtonFrame;
 - (void)_updateButtonSettings:(id)arg1;
 - (id)button2;
 - (void)dealloc;
@@ -22,5 +26,6 @@
 - (void)setButton2:(id)arg1;
 - (void)setButton:(id)arg1;
 - (void)setDrawsSeparateWells:(BOOL)arg1;
+- (void)setOrientation:(NSInteger)arg1;
 
 @end

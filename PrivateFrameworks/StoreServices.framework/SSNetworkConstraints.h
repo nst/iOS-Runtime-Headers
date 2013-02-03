@@ -2,23 +2,33 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary;
+@class NSMutableDictionary;
 
 @interface SSNetworkConstraints : NSObject {
-    NSDictionary *_dictionary;
+    NSMutableDictionary *_dictionary;
+    struct dispatch_queue_s { } *_dispatchQueue;
     NSInteger _networkType;
 }
 
 @property(readonly) NSDictionary *constraintDictionary;
-@property(readonly) NSInteger networkType;
+@property NSInteger networkType;
 
++ (id)disableEverythingConstraints;
++ (id)enableEverythingConstraints;
+
+- (id)_initSSNetworkConstraints;
 - (id)constraintDictionary;
 - (void)dealloc;
 - (id)init;
 - (id)initWithConstraintDictionary:(id)arg1 forNetworkType:(NSInteger)arg2;
+- (id)networkTooSlowErrorWithAssetType:(NSInteger)arg1 itemName:(id)arg2 canDownloadInITunes:(BOOL)arg3;
 - (id)networkTooSlowErrorWithAssetType:(NSInteger)arg1 itemName:(id)arg2;
 - (NSInteger)networkType;
 - (id)searchQueryParametersForAssetType:(NSInteger)arg1;
+- (void)setContentEnabled:(BOOL)arg1 forConstraintCategory:(id)arg2;
+- (void)setNetworkType:(NSInteger)arg1;
+- (void)setSearchQueryParameters:(id)arg1 forAssetType:(NSInteger)arg2;
+- (void)setSizeLimit:(long long)arg1 forAssetType:(NSInteger)arg2;
 - (long long)sizeLimitForAssetType:(NSInteger)arg1;
 
 @end

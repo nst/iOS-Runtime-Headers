@@ -2,54 +2,71 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSArray, NSString, NSMutableArray, NSMutableDictionary;
+@class NSMutableDictionary, NSArray, NSString, NSMutableArray, NSURL;
 
-@interface CoreDAVContainerSyncTaskGroup : CoreDAVTaskGroup <CoreDAVContainerMultiGetTaskDelegate, CoreDAVDeleteTaskDelegate, CoreDAVPutTaskDelegate> {
+@interface CoreDAVContainerSyncTaskGroup : CoreDAVTaskGroup <CoreDAVContainerMultiGetTaskDelegate, CoreDAVDeleteTaskDelegate, CoreDAVPutTaskDelegate, CoreDAVGetTaskDelegate> {
     NSArray *_actions;
+    NSURL *_addMemberURL;
     Class _appSpecificDataItemClass;
     void *_context;
-    NSString *_folderID;
+    NSURL *_folderURL;
     NSUInteger _maxIndependentTasks;
     NSUInteger _multiGetBatchSize;
     NSString *_nextCTag;
-    NSMutableDictionary *_pathToETag;
     NSInteger _phase;
     NSString *_previousCTag;
     NSMutableArray *_unsubmittedTasks;
+    NSMutableDictionary *_urlToETag;
+    BOOL _useMultiGet;
 }
 
+@property(retain) NSURL *addMemberURL;
 @property(readonly) void *context;
 @property <CoreDAVLocalDBInfoProvider> *delegate;
-@property(readonly) NSString *folderID;
+@property(readonly) NSURL *folderURL;
 @property(readonly) NSString *previousTag;
 @property NSUInteger maxIndependentTasks;
 @property NSUInteger multiGetBatchSize;
+@property BOOL useMultiGet;
 
 - (void)_getCTag;
 - (void)_getDataPayloads;
 - (void)_getETags;
-- (id)_initWithFolderID:(id)arg1 previousTag:(id)arg2 actions:(id)arg3 context:(void*)arg4 accountInfoProvider:(id)arg5 taskManager:(id)arg6;
+- (void)_getTask:(id)arg1 finishedWithParsedContents:(id)arg2 error:(id)arg3;
+- (id)_initWithFolderURL:(id)arg1 previousTag:(id)arg2 actions:(id)arg3 context:(void*)arg4 accountInfoProvider:(id)arg5 taskManager:(id)arg6;
 - (void)_pushActions;
 - (NSUInteger)_submitTasks;
 - (void)_tearDownAllUnsubmittedTasks;
+- (id)addMemberURL;
 - (void)bailWithError:(id)arg1;
+- (void)cancelTaskGroup;
 - (void)cancelTasks;
 - (void)containerMultiGetTask:(id)arg1 parsedContents:(id)arg2 error:(id)arg3;
 - (void*)context;
+- (id)copyAdditionalResourcePropertiesToFetch;
+- (id)copyGetTaskWithURL:(id)arg1;
+- (id)copyMultiGetTaskWithURLs:(id)arg1;
 - (id)dataContentType;
 - (void)dealloc;
 - (void)deleteTask:(id)arg1 completedWithError:(id)arg2;
 - (id)description;
-- (id)folderID;
-- (id)initWithFolderID:(id)arg1 previousTag:(id)arg2 actions:(id)arg3 context:(void*)arg4 accountInfoProvider:(id)arg5 taskManager:(id)arg6;
+- (id)folderURL;
+- (void)getTask:(id)arg1 data:(id)arg2 error:(id)arg3;
+- (id)initWithFolderURL:(id)arg1 previousTag:(id)arg2 actions:(id)arg3 context:(void*)arg4 accountInfoProvider:(id)arg5 taskManager:(id)arg6;
 - (NSUInteger)maxIndependentTasks;
 - (NSUInteger)multiGetBatchSize;
 - (id)previousTag;
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)putTask:(id)arg1 completedWithNewETag:(id)arg2 error:(id)arg3;
+- (void)setAddMemberURL:(id)arg1;
 - (void)setMaxIndependentTasks:(NSUInteger)arg1;
 - (void)setMultiGetBatchSize:(NSUInteger)arg1;
+- (void)setUseMultiGet:(BOOL)arg1;
+- (BOOL)shouldFetchResourceWithEtag:(id)arg1 propertiesToValues:(id)arg2;
+- (void)startTaskGroup;
 - (void)syncAway;
+- (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)taskGroupWillCancelWithError:(id)arg1;
+- (BOOL)useMultiGet;
 
 @end

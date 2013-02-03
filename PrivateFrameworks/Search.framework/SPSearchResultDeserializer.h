@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class CPSearchMatcher, NSString, NSArray;
+@class SPSearchResult, CPSearchMatcher, NSString, NSArray;
 
 @interface SPSearchResultDeserializer : PBDataReader {
     NSUInteger _byteVector;
@@ -14,12 +14,16 @@
     BOOL _munmapAtDealloc;
     NSUInteger _resultCount;
     NSArray *_resultOffsetVector;
+    SPSearchResult *_sortA;
+    SPSearchResult *_sortB;
 }
 
 @property(readonly) NSString *category;
 @property(readonly) CPSearchMatcher *diacriticMatcher;
 @property(readonly) NSString *displayIdentifier;
 @property(readonly) CPSearchMatcher *matcher;
+@property(readonly) SPSearchResult *sortA;
+@property(readonly) SPSearchResult *sortB;
 @property(readonly) NSUInteger domain;
 @property(readonly) NSUInteger resultCount;
 
@@ -38,6 +42,9 @@
 - (id)readBytes:(NSUInteger)arg1;
 - (BOOL)readResultIntoCursor:(id)arg1;
 - (NSUInteger)resultCount;
+- (id)sortA;
+- (id)sortB;
+- (void)sortResultsByDate;
 - (void)sortResultsUsingQueryString:(id)arg1;
 
 @end

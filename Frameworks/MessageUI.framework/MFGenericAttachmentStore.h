@@ -5,6 +5,7 @@
 @class NSConditionLock, NSMutableDictionary, NSMutableArray;
 
 @interface MFGenericAttachmentStore : MFWebAttachmentSource {
+    struct __CFDictionary { } *_attachmentSizes;
     NSMutableDictionary *_attachmentsByURL;
     NSMutableArray *_attachmentsOrder;
     BOOL _didCancelImageScalingOperations;
@@ -16,19 +17,24 @@
     NSUInteger _size;
 }
 
++ (void)beginPreventingInlinePDFs;
++ (void)endPreventingInlinePDFs;
++ (BOOL)isPreventingInlinePDFs;
+
 - (void)_delayedSetScalingEnabled;
-- (void)_enqueueScaleAttachment:(id)arg1 withFlags:(NSUInteger)arg2;
+- (void)_enqueueScaleAttachment:(id)arg1 withFlags:(NSUInteger)arg2 originalSize:(NSUInteger)arg3;
 - (BOOL)addAttachment:(id)arg1 renamingContentID:(BOOL)arg2;
 - (id)attachmentForURL:(id)arg1;
 - (id)attachments;
 - (void)cancelImageScalingOperations;
 - (void)dealloc;
+- (id)description;
 - (BOOL)didCancelImageScalingOperations;
 - (id)initOutgoing;
 - (NSInteger)priority;
 - (void)removeAttachmentsForURLs:(id)arg1;
 - (void)setPriority:(NSInteger)arg1;
 - (void)setScalingThrottled:(BOOL)arg1;
-- (unsigned long)totalSizeForScale:(NSInteger)arg1;
+- (unsigned long)sizeForScale:(NSInteger)arg1 imagesOnly:(BOOL)arg2;
 
 @end

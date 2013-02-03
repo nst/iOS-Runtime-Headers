@@ -5,13 +5,15 @@
 @class APSConnection, NSMutableArray, AVConference;
 
 @interface IMAVEmbeddedInterface : IMAVInterface <AVConferenceDelegate> {
-    unsigned int _duringInit : 1;
-    unsigned int _previewStarted : 1;
-    unsigned int _pendingCleanup : 1;
     APSConnection *_apsConnection;
     NSMutableArray *_avConferencesToCleanup;
+    BOOL _duringInit;
+    BOOL _pendingCleanup;
+    BOOL _previewStarted;
     AVConference *_vcc;
 }
+
+@property(readonly) AVConference *controller;
 
 + (id)bestChatForCallID:(NSInteger)arg1 errorString:(id)arg2;
 

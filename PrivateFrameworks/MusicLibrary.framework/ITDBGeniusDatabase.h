@@ -7,7 +7,7 @@
  */
 
 @interface ITDBGeniusDatabase : NSObject {
-    struct CPSqliteDatabase { struct __CFString {} *x1; struct CPSqliteConnection {} *x2; int (*x3)(); int (*x4)(); int (*x5)(); void *x6; int (*x7)(); int (*x8)(); int (*x9)(); /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x10; void *x11; NSInteger x12; struct $_798 { 
+    struct CPSqliteDatabase { struct __CFString {} *x1; struct CPSqliteConnection {} *x2; int (*x3)(); int (*x4)(); int (*x5)(); void *x6; int (*x7)(); int (*x8)(); int (*x9)(); /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x10; void *x11; NSInteger x12; struct { 
             unsigned int checkVersion : 1; 
             unsigned int checkedJournalPermissions : 1; 
             unsigned int propertiesDisabled : 1; 
@@ -21,7 +21,7 @@
         } x13; struct _opaque_pthread_mutex_t { 
             long __sig; 
             BOOL __opaque[40]; 
-     /* Encoded args for previous method: ^{CPSqliteDatabase=^{__CFString}^{CPSqliteConnection}^?^?^?^v^?^?^?B^vi{$_798=b1b1b1b1b1b1b1b1b1b1}{_opaque_pthread_mutex_t=l[40c]}i^?^?^?^?^vi^{__CFString}}12@0:4@8 */
+     /* Encoded args for previous method: ^{CPSqliteDatabase=^{__CFString}^{CPSqliteConnection}^?^?^?^v^?^?^?B^vi{?=b1b1b1b1b1b1b1b1b1b1}{_opaque_pthread_mutex_t=l[40c]}i^?^?^?^?^vi^{__CFString}}12@0:4@8 */
     unsigned int _hasGeniusSchema : 1;
     unsigned int _hasGeniusSchemaCached : 1;
     double _connectionFailedTime;
@@ -34,7 +34,7 @@
 + (id)geniusDatabaseFilePath;
 + (id)sharedGeniusDatabase;
 
-- (struct CPSqliteDatabase { struct __CFString {} *x1; struct CPSqliteConnection {} *x2; int (*x3)(); int (*x4)(); int (*x5)(); void *x6; int (*x7)(); int (*x8)(); int (*x9)(); /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x10; void *x11; NSInteger x12; struct $_798 { unsigned int x_13_1_1 : 1; unsigned int x_13_1_2 : 1; unsigned int x_13_1_3 : 1; unsigned int x_13_1_4 : 1; unsigned int x_13_1_5 : 1; unsigned int x_13_1_6 : 1; unsigned int x_13_1_7 : 1; unsigned int x_13_1_8 : 1; unsigned int x_13_1_9 : 1; unsigned int x_13_1_10 : 1; } x13; struct _opaque_pthread_mutex_t { long x_14_1_1; BOOL x_14_1_2[40]; } x14; NSInteger x15; int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); void *x20; NSInteger x21; struct __CFString {} *x22; }*)_loadedDatabaseAtPath:(id)arg1;
+- (struct CPSqliteDatabase { struct __CFString {} *x1; struct CPSqliteConnection {} *x2; int (*x3)(); int (*x4)(); int (*x5)(); void *x6; int (*x7)(); int (*x8)(); int (*x9)(); /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x10; void *x11; NSInteger x12; struct { unsigned int x_13_1_1 : 1; unsigned int x_13_1_2 : 1; unsigned int x_13_1_3 : 1; unsigned int x_13_1_4 : 1; unsigned int x_13_1_5 : 1; unsigned int x_13_1_6 : 1; unsigned int x_13_1_7 : 1; unsigned int x_13_1_8 : 1; unsigned int x_13_1_9 : 1; unsigned int x_13_1_10 : 1; } x13; struct _opaque_pthread_mutex_t { long x_14_1_1; BOOL x_14_1_2[40]; } x14; NSInteger x15; int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); void *x20; NSInteger x21; struct __CFString {} *x22; }*)_loadedDatabaseAtPath:(id)arg1;
 - (struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)_cachedStatementForReading:(id)arg1;
 - (void)_connect;
 - (BOOL)_copyBlobData:(id*)arg1 blobAllocType:(NSInteger)arg2 table:(id)arg3 blobColumn:(id)arg4 where:(id)arg5 limit:(NSUInteger)arg6 sqliteStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg7;

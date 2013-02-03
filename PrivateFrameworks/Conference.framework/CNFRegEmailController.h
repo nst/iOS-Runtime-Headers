@@ -21,6 +21,7 @@
 - (void)_buildSpecifierCache:(id)arg1;
 - (void)_failValidationWithError:(id)arg1;
 - (void)_finishValidation;
+- (void)_handleValidationModeCancelled;
 - (void)_returnKeyWasPressed;
 - (id)_rightButtonItem;
 - (void)_setFieldsEnabled:(BOOL)arg1 animated:(BOOL)arg2;

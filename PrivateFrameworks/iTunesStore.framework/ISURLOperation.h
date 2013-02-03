@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSMutableData, NSCountedSet, NSURLRequest, ISURLRequest, NSURLConnection, ISDataProvider, NSURLResponse;
+@class NSURLResponse, NSMutableData, NSCountedSet, NSURLRequest, ISURLRequest, NSURLConnection, ISDataProvider, SSAuthenticationContext;
 
 @interface ISURLOperation : ISOperation {
     NSURLRequest *_activeURLRequest;
+    SSAuthenticationContext *_authenticationContext;
     NSURLConnection *_connection;
     long long _contentLength;
     NSMutableData *_dataBuffer;
@@ -14,8 +15,11 @@
     NSCountedSet *_redirectURLs;
     ISURLRequest *_request;
     NSURLResponse *_response;
+    BOOL _shouldSetCookies;
 }
 
+@property(getter=_shouldSetCookies) BOOL _shouldSetCookies; /* unknown property attribute: S_setShouldSetCookies: */
+@property(retain) SSAuthenticationContext *authenticationContext;
 @property(retain) ISDataProvider *dataProvider;
 @property <ISURLOperationDelegate> *delegate;
 @property(copy) ISURLRequest *request;
@@ -23,6 +27,7 @@
 
 + (id)copyUserAgent;
 
+- (id)_accountIdentifier;
 - (id)_activeURL;
 - (long long)_contentLength;
 - (id)_copyAcceptLanguageString;
@@ -48,9 +53,12 @@
 - (void)_sendResponseToDelegate:(id)arg1;
 - (void)_setActiveURLRequest:(id)arg1;
 - (void)_setContentLength:(long long)arg1;
+- (void)_setShouldSetCookies:(BOOL)arg1;
+- (BOOL)_shouldSetCookies;
 - (void)_stopConnection;
 - (void)_updateProgress;
 - (BOOL)_validateContentLength:(long long)arg1 error:(id*)arg2;
+- (id)authenticationContext;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
@@ -66,6 +74,7 @@
 - (id)request;
 - (id)response;
 - (void)run;
+- (void)setAuthenticationContext:(id)arg1;
 - (void)setDataProvider:(id)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setResponse:(id)arg1;

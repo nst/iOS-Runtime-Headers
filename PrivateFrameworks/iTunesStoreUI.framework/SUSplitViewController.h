@@ -52,7 +52,6 @@
 - (id)copyChildViewControllersForReason:(NSInteger)arg1;
 - (id)copyScriptViewController;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
 - (id)displayedURL;
 - (id)firstViewController;
 - (id)init;
@@ -62,6 +61,7 @@
 - (void)loadView;
 - (id)mainTitle;
 - (float)minimumPaneSize;
+- (id)newRotationController;
 - (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
 - (void)removeChildViewController:(id)arg1;
 - (void)restoreArchivableContext:(id)arg1;
@@ -89,6 +89,5 @@
 - (id)storePageProtocol;
 - (BOOL)usesSharedPlaceholder;
 - (BOOL)viewIsReady;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

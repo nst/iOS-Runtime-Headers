@@ -31,5 +31,6 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
 - (id)titleOfMenuItemAtIndex:(NSInteger)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 
 @end

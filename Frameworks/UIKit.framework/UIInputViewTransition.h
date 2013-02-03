@@ -86,10 +86,12 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })deprecatedBounds;
 - (struct CGPoint { float x1; float x2; })deprecatedCenterBegin;
 - (struct CGPoint { float x1; float x2; })deprecatedCenterEnd;
+- (id)description;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endFrameScreen;
 - (NSInteger)endState;
 - (BOOL)isAlmostDone;
+- (BOOL)isOnScreen;
 - (id)newSet;
 - (id)oldSet;
 - (void)postNotificationsForTransitionEnd;

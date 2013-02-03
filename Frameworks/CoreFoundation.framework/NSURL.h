@@ -12,7 +12,6 @@
 }
 
 + (NSInteger)CDVClassicPortForScheme:(id)arg1;
-+ (id)CDVURLWithDirtyString:(id)arg1;
 + (id)CDVURLWithScheme:(id)arg1 host:(id)arg2 port:(NSInteger)arg3 uri:(id)arg4;
 + (id)CDVURLWithScheme:(id)arg1 host:(id)arg2 user:(id)arg3 port:(NSInteger)arg4 uri:(id)arg5;
 + (id)URLByResolvingBookmarkData:(id)arg1 options:(NSUInteger)arg2 relativeToURL:(id)arg3 bookmarkDataIsStale:(BOOL*)arg4 error:(id*)arg5;
@@ -30,8 +29,8 @@
 + (id)URLWithTelephoneNumber:(id)arg1;
 + (id)_URLWithData:(id)arg1 relativeToURL:(id)arg2;
 + (id)_URLWithDataAsString:(id)arg1 relativeToURL:(id)arg2;
-+ (id)_applyConferenceScheme:(id)arg1 toConferenceURL:(id)arg2;
-+ (id)_conferenceURLWithDestinationID:(id)arg1 prompt:(BOOL)arg2 accept:(BOOL)arg3;
++ (id)_applyFaceTimeScheme:(id)arg1 toFaceTimeURL:(id)arg2;
++ (id)_faceTimeURLWithDestinationID:(id)arg1 prompt:(BOOL)arg2 accept:(BOOL)arg3;
 + (id)_web_URLWithComponents:(struct { id x1; id x2; id x3; id x4; NSInteger x5; id x6; id x7; id x8; })arg1;
 + (id)_web_URLWithData:(id)arg1 relativeToURL:(id)arg2;
 + (id)_web_URLWithData:(id)arg1;
@@ -47,18 +46,17 @@
 + (id)bookmarkDataWithContentsOfURL:(id)arg1 error:(id*)arg2;
 + (NSInteger)classicPortForScheme:(id)arg1;
 + (NSInteger)classicPortForScheme:(id)arg1;
-+ (id)conferenceAcceptURLWithURL:(id)arg1;
-+ (id)conferenceURLWithIMHandle:(id)arg1;
-+ (id)conferenceURLWithURL:(id)arg1;
 + (id)copyDictionaryForQueryString:(id)arg1 unescapedValues:(BOOL)arg2;
 + (id)escapedStringForString:(id)arg1;
++ (id)faceTimeAcceptURLWithURL:(id)arg1;
++ (id)faceTimeURLWithIMHandle:(id)arg1;
++ (id)faceTimeURLWithURL:(id)arg1;
 + (id)fileURLWithPath:(id)arg1 isDirectory:(BOOL)arg2;
 + (id)fileURLWithPath:(id)arg1;
 + (id)fileURLWithPathComponents:(id)arg1;
-+ (id)mapsURLWithFriendUserID:(id)arg1;
++ (id)mapsURLWithAddress:(id)arg1;
 + (id)mapsURLWithQuery:(id)arg1;
 + (id)mapsURLWithSourceAddress:(id)arg1 destinationAddress:(id)arg2;
-+ (id)mapsURLWithSourceFriendUserID:(id)arg1 destinationFriendUserID:(id)arg2;
 + (BOOL)openURL:(id)arg1;
 + (id)queryStringForDictionary:(id)arg1 escapedValues:(BOOL)arg2;
 + (id)resourceValuesForKeys:(id)arg1 fromBookmarkData:(id)arg2;
@@ -68,12 +66,14 @@
 + (id)videoCallPromptURLWithURL:(id)arg1;
 + (BOOL)writeBookmarkData:(id)arg1 toURL:(id)arg2 options:(NSUInteger)arg3 error:(id*)arg4;
 
+- (BOOL)CDVIsEqualToURL:(id)arg1;
 - (id)CDVRawPath;
 - (id)CDVServerURL;
+- (id)CNFQueryDictionary;
+- (id)URLByAppendingCNFQueryDictionary:(id)arg1;
 - (id)URLByAppendingPathComponent:(id)arg1 isDirectory:(BOOL)arg2;
 - (id)URLByAppendingPathComponent:(id)arg1;
 - (id)URLByAppendingPathExtension:(id)arg1;
-- (id)URLByAppendingQueryDictionary:(id)arg1;
 - (id)URLByDeletingLastPathComponent;
 - (id)URLByDeletingPathExtension;
 - (id)URLByDeletingQueryParameterWithKey:(id)arg1;
@@ -90,8 +90,11 @@
 - (id)URLWithoutUsername;
 - (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
 - (id)_URLByEscapingSpacesAndControlChars;
+- (id)_adlib_URLByReplacingScheme:(id)arg1;
 - (BOOL)_adlib_isHttpOnly;
 - (BOOL)_adlib_isHttpOrHttps;
+- (id)_adlib_queryDictionary;
+- (id)_adlib_simpleQueryDictionary;
 - (unsigned long)_cfTypeID;
 - (struct __CFURL { }*)_cfurl;
 - (struct __CFDictionary { }*)_clientsCreatingIfNecessary:(BOOL)arg1;
@@ -144,23 +147,23 @@
 - (id)callBackPhoneNumber;
 - (id)callBackString;
 - (BOOL)checkResourceIsReachableAndReturnError:(id*)arg1;
-- (id)conferenceDestinationAccount;
 - (id)conferenceDestinationDisplayNameUsingController:(id)arg1 andImage:(id*)arg2;
-- (id)conferenceDestinationDisplayNameUsingController:(id)arg1;
-- (id)conferenceSourceAccount;
 - (id)copyQueryStringDictionaryWithUnescapedValues:(BOOL)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateQueryWithBlock:(id)arg1;
+- (id)faceTimeDestinationAccount;
+- (id)faceTimeDestinationDisplayNameUsingController:(id)arg1 andImage:(id*)arg2;
+- (id)faceTimeSourceAccount;
 - (id)filePathURL;
 - (id)fileReferenceURL;
 - (void)finalize;
 - (id)formattedConferenceDestinationAccount;
+- (id)formattedFaceTimeDestinationAccount;
 - (id)formattedPhoneNumberFromString:(id)arg1;
 - (id)fragment;
-- (id)friendFinderURL;
 - (id)gamecenterURL;
 - (void)getPhoneNumber:(id*)arg1 addressBookUID:(NSInteger*)arg2;
 - (BOOL)getResourceValue:(id*)arg1 forKey:(id)arg2 error:(id*)arg3;
@@ -178,11 +181,12 @@
 - (id)initWithScheme:(id)arg1 host:(id)arg2 port:(NSInteger)arg3 uri:(id)arg4;
 - (id)initWithString:(id)arg1 relativeToURL:(id)arg2;
 - (id)initWithString:(id)arg1;
-- (BOOL)isConferenceAcceptURL;
 - (BOOL)isConferenceAcceptance;
-- (BOOL)isConferencePromptURL;
 - (BOOL)isConferenceUpgradeURLForDestinationID:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isFaceTimeAcceptURL;
+- (BOOL)isFaceTimePromptURL;
+- (BOOL)isFaceTimeUpgradeURLForDestinationID:(id)arg1;
 - (BOOL)isFileReferenceURL;
 - (BOOL)isFileURL;
 - (BOOL)isGoogleMapsURL;
@@ -197,6 +201,7 @@
 - (BOOL)isSpringboardHandledURL;
 - (BOOL)isStoreServicesURL;
 - (BOOL)isValidConferenceURL;
+- (BOOL)isValidFaceTimeURL;
 - (BOOL)isVideoCallURL;
 - (BOOL)isWebSafeTelephoneURL;
 - (BOOL)isWebcalURL;
@@ -216,7 +221,6 @@
 - (id)port;
 - (id)previewItemURL;
 - (id)query;
-- (id)queryDictionary;
 - (id)queryParameters;
 - (id)radarWebURL;
 - (id)rawPath;
@@ -238,6 +242,7 @@
 - (NSInteger)storeURLType;
 - (id)uri;
 - (id)uri;
+- (id)urlByAddingQueryParameters:(id)arg1;
 - (id)urlByReplacingSchemeWithScheme:(id)arg1;
 - (id)urlBySettingHost:(id)arg1 keepUsername:(BOOL)arg2;
 - (id)urlBySettingHost:(id)arg1;

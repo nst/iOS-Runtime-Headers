@@ -2,9 +2,18 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UICalloutView, MKSearchResult, NSMapTable, MKMapTileView, NSMutableArray, MKUserLocation, MKUserLocationView, NSMutableSet, NSMutableDictionary, MKAnnotationView;
+@class UICalloutView, MKSearchResult, NSMapTable, MKMapTileView, NSMutableArray, MKUserLocation, MKUserLocationView, MKQuadTrie, NSMutableSet, NSMutableDictionary, MKAnnotationView;
 
 @interface MKAnnotationContainerViewInternal : NSObject {
+    struct { 
+        struct { 
+            double x; 
+            double y; 
+        } origin; 
+        struct { 
+            double width; 
+            double height; 
+        } size; 
     struct CGPoint { 
         float x; 
         float y; 
@@ -23,8 +32,8 @@
         float ty; 
     BOOL animationsEnabled;
     NSMutableArray *annotationViews;
-    NSMutableArray *annotations;
     NSMapTable *annotationsToViews;
+    MKQuadTrie *annotationsTrie;
     NSMutableArray *awaitingDropPins;
     UICalloutView *bubble;
     MKAnnotationView *bubbleAnnotationView;
@@ -38,10 +47,10 @@
     MKAnnotationView *draggingAnnotationView;
     } draggingAnnotationViewPosition;
     BOOL isAnimatingCallout;
-    BOOL isHandlingTouches;
     BOOL isShowingTransitCallouts;
     } lastMetaDataCoordinate;
     double lastMetaDataUpdateTime;
+    NSMutableArray *managedAnnotations;
     MKMapTileView *mapTileView;
     } mapTransform;
     NSUInteger mapType;
@@ -57,6 +66,7 @@
     MKUserLocation *userLocation;
     MKUserLocationView *userLocationView;
     NSInteger userLocationViewUpdateMode;
+    } visibleMapRect;
 }
 
 @end

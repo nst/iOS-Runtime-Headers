@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class NSString, NSTimer;
+@class NSDate, NSString, NSTimer;
 
 @interface PCPersistentTimer : NSObject <PCLoggingDelegate> {
     BOOL _disableSystemWaking;
@@ -16,6 +16,7 @@
     struct __CFRunLoopSource { } *_pmRunLoopSource;
     NSUInteger _powerAssertionID;
     NSTimer *_preventSleepRunLoopTimer;
+    NSDate *_scheduledWakeDate;
     SEL _selector;
     NSString *_serviceIdentifier;
     BOOL _sleepIsImminent;
@@ -24,7 +25,6 @@
     id _timeChangeSource;
     BOOL _triggerOnGMTChange;
     id _userInfo;
-    BOOL _wakeIsScheduled;
 }
 
 @property(readonly) NSString *loggingIdentifier;
@@ -40,7 +40,6 @@
 - (double)_nextForcedAlignmentAbsoluteTime;
 - (void)_powerChangedMessageType:(NSUInteger)arg1 notificationID:(void*)arg2;
 - (void)_preventSleepFired;
-- (id)_scheduleWakeDate;
 - (void)_setPowerMonitoringEnabledForRunLoop:(id)arg1 mode:(id)arg2;
 - (void)_setSignificantTimeChangeMonitoringEnabledForRunLoop:(id)arg1 mode:(id)arg2;
 - (void)_updateTimers;

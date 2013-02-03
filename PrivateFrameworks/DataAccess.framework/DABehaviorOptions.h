@@ -12,6 +12,7 @@
 + (double)defaultEASTaskTimeoutOutWasFound:(BOOL*)arg1;
 + (BOOL)ignoreBadLDAPCerts;
 + (BOOL)ignoreSupportedCommands;
++ (BOOL)isCustomerInstall;
 + (NSInteger)refreshThrottleTime;
 + (id)whitelistedEASProtocols;
 

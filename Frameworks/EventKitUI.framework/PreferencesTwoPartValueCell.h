@@ -2,25 +2,20 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class TwoPartTextLabel;
+@class <EKCellShortener>, TwoPartTextLabel;
 
 @interface PreferencesTwoPartValueCell : UITableViewCell {
     NSUInteger _notifiedShort;
-    id _shortener;
+    <EKCellShortener> *_shortener;
     TwoPartTextLabel *_twoPartLabel;
 }
 
-@property(retain) ? *shortener;
+@property <EKCellShortener> *shortener;
 @property(retain,readonly) TwoPartTextLabel *twoPartTextLabel;
 @property(retain,readonly) UIColor *valueColor;
 
 - (void)_layoutSubviewsCore;
 - (void)checkValueWidths;
-- (void)dealloc;
 - (void)layoutSubviews;
 - (void)layoutText:(id)arg1 andValue:(id)arg2;
 - (void)setShortener:(id)arg1;

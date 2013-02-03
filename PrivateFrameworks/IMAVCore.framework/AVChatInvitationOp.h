@@ -5,7 +5,7 @@
 @class NSMutableDictionary;
 
 @interface AVChatInvitationOp : AVChatNegotiationOp {
-    unsigned int _audioOnly : 1;
+    BOOL _audioOnly;
     NSMutableDictionary *_inviteesInfo;
 }
 

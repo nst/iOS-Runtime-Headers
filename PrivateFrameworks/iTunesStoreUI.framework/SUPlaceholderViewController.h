@@ -7,12 +7,15 @@
 @interface SUPlaceholderViewController : SUViewController {
     SUGradient *_backgroundGradient;
     SUGradient *_defaultBackgroundGradient;
+    BOOL _hideLoadingView;
     SULoadingView *_loadingView;
+    BOOL _shouldShowLoadingView;
 }
 
 @property(copy) SUGradient *backgroundGradient;
 @property(copy) SUGradient *defaultBackgroundGradient;
 @property(readonly) SULoadingView *loadingView;
+@property BOOL shouldShowLoadingView;
 
 - (void)_bagDidLoadNotification:(id)arg1;
 - (id)_newURLBagBackgroundGradient;
@@ -28,5 +31,7 @@
 - (void)setBackgroundGradient:(id)arg1;
 - (void)setDefaultBackgroundGradient:(id)arg1;
 - (void)setLoading:(BOOL)arg1;
+- (void)setShouldShowLoadingView:(BOOL)arg1;
+- (BOOL)shouldShowLoadingView;
 
 @end

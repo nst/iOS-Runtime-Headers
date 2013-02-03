@@ -5,4 +5,8 @@
 @interface ADBannerViewAccessibility_super : UIAccessibilitySafeCategory {
 }
 
++ (void)_initializeSafeCategory;
+
+- (BOOL)isAccessibilityElement;
+
 @end

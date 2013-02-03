@@ -16,8 +16,10 @@
 + (id)alarmWithAbsoluteDate:(id)arg1;
 + (id)alarmWithRelativeOffset:(double)arg1;
 
+- (id)_localizedDescription:(BOOL)arg1;
 - (id)absoluteDate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (NSUInteger)hash;
@@ -28,6 +30,7 @@
 - (BOOL)isDirty;
 - (BOOL)isEqual:(id)arg1;
 - (id)localizedDescription;
+- (id)longLocalizedDescription;
 - (double)relativeOffset;
 - (void)setAbsoluteDate:(id)arg1;
 - (void)setRelativeOffset:(double)arg1;

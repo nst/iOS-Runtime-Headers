@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSArray, NSString, NSSet, NSURLCache;
+@class ISURLCacheConfiguration, NSURLCache;
 
 @interface ISURLCache : NSObject {
     NSURLCache *_cache;
-    NSArray *_clientIdentifiers;
-    NSSet *_fileExtensions;
-    NSString *_persistentIdentifier;
-    NSArray *_urlPatterns;
+    ISURLCacheConfiguration *_configuration;
 }
 
 @property(readonly) NSString *persistentIdentifier;
@@ -21,10 +18,6 @@
 + (id)cacheDirectoryPath;
 + (id)persistentIdentifierFromPropertyList:(id)arg1;
 
-- (BOOL)_parseClientCriteriaFromPropertyList:(id)arg1;
-- (BOOL)_parseCriteriaFromPropertyList:(id)arg1;
-- (BOOL)_parseFileExtensionCriteriaFromPropertyList:(id)arg1;
-- (BOOL)_parseURLPatternCriteriaFromPropertyList:(id)arg1;
 - (BOOL)_urlStringMatchesFileExtensions:(id)arg1;
 - (BOOL)_urlStringMatchesURLPatterns:(id)arg1;
 - (id)cachedResponseForRequest:(id)arg1;
@@ -34,12 +27,12 @@
 - (void)dealloc;
 - (NSUInteger)diskCapacity;
 - (id)init;
-- (id)initWithPropertyList:(id)arg1;
+- (id)initWithCacheConfiguration:(id)arg1;
 - (BOOL)isUsableByClientWithIdentifier:(id)arg1;
 - (NSUInteger)memoryCapacity;
 - (id)persistentIdentifier;
 - (void)purgeMemoryCache;
-- (BOOL)reloadWithPropertyList:(id)arg1;
+- (void)reloadWithCacheConfiguration:(id)arg1;
 - (void)removeAllCachedResponses;
 - (void)removeCachedResponseForRequest:(id)arg1;
 - (void)saveMemoryCacheToDisk;

@@ -11,13 +11,10 @@
     NSArray *_stack;
 }
 
-- (id)_data:(BOOL)arg1;
 - (NSInteger)appendData:(id)arg1;
 - (id)data;
 - (void)dealloc;
 - (void)done;
 - (id)init;
-- (id)initWithData:(id)arg1;
-- (id)mutableData;
 
 @end

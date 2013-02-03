@@ -9,9 +9,14 @@
     BOOL _done;
     BOOL _inProgress;
     BOOL _kill;
-    float _timeout;
+    double _timeout;
     NSTimer *_timeoutTimer;
 }
+
+@property id delegate;
+@property(readonly) BOOL done;
+@property(readonly) BOOL inProgress;
+@property double timeout;
 
 - (void)_clearTimeoutTimer;
 - (void)_doSendDone;
@@ -30,5 +35,6 @@
 - (void)setTimeout:(double)arg1;
 - (void)startThread;
 - (void)stopWatchingThread;
+- (double)timeout;
 
 @end

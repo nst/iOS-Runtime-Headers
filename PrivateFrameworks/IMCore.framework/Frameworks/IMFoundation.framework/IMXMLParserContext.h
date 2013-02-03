@@ -8,6 +8,10 @@
     NSData *_inContentAsData;
 }
 
+@property(retain,readonly) NSData *inContentAsData;
+@property(retain,readonly) NSString *name;
+@property(retain,readonly) NSArray *resultsForLogging;
+
 - (void)dealloc;
 - (id)inContent;
 - (id)inContentAsData;

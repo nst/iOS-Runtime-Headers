@@ -15,6 +15,7 @@
     UITapGestureRecognizer *_singleTap;
     UIView *_subjectLine;
     CKTextContentView *_subjectView;
+    CKTextContentView *_textView;
 }
 
 @property(readonly) NSArray *contentViews;

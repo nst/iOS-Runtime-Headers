@@ -5,6 +5,15 @@
 @class NSArray, NSString, <UIKeyboardEmojiController>, UITouch, NSMutableArray, UIKeyboardEmojiView;
 
 @interface UIKeyboardEmojiPage : UIControl {
+    struct CGPoint { 
+        float x; 
+        float y; 
+    struct CGPoint { 
+        float x; 
+        float y; 
+    struct CGSize { 
+        float width; 
+        float height; 
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -17,9 +26,11 @@
     UITouch *_activeTouch;
     <UIKeyboardEmojiController> *_controller;
     NSArray *_emoji;
+    } _emojiPadding;
+    } _emojiSize;
     NSMutableArray *_emojiViews;
-    float _horizontalGap;
     } _keyActivationRect;
+    } _margin;
     BOOL _needsLayout;
     NSInteger _numCols;
     NSInteger _numPages;
@@ -28,7 +39,6 @@
     NSString *_optionalText;
     UIKeyboardEmojiView *_pendingDisplay;
     UIKeyboardEmojiView *_touched;
-    float _verticalGap;
 }
 
 @property(retain) UITouch *activeTouch;
@@ -40,11 +50,14 @@
 @property(retain) UIKeyboardEmojiView *touched;
 @property CGRect keyActivationRect;
 
++ (struct CGSize { float x1; float x2; })emojiSize:(BOOL)arg1;
+
 - (id)activeTouch;
 - (void)cancelPendingPopupChanges;
 - (void)checkForStalePopup:(id)arg1;
 - (void)clearSubviews;
 - (id)closestForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (unsigned char)colCount:(BOOL)arg1;
 - (id)controller;
 - (void)dealloc;
 - (id)emoji;
@@ -52,11 +65,14 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })keyActivationRect;
+- (struct CGPoint { float x1; float x2; })margin:(BOOL)arg1;
 - (id)onDisplay;
 - (id)optionalText;
+- (struct CGPoint { float x1; float x2; })padding:(BOOL)arg1;
 - (id)pendingDisplay;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForRow:(NSInteger)arg1 Col:(NSInteger)arg2;
 - (void)removeDisplayedPopup:(id)arg1;
+- (unsigned char)rowCount:(BOOL)arg1;
 - (void)setActiveTouch:(id)arg1;
 - (void)setController:(id)arg1;
 - (void)setEmoji:(id)arg1;

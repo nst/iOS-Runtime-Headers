@@ -2,7 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class NSError, NSMutableDictionary, NSThread, NSTimer, NSRunLoop, NSString, NSData, <CDXClientDelegate>;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class <CDXClientDelegate>, NSError, NSString, NSData, NSMutableDictionary;
 
 @interface CDXClient : NSObject {
     struct sockaddr_in { 
@@ -20,25 +24,27 @@
     NSInteger holePunchAttemptCount_;
     double holePunchInterval_;
     unsigned long long holePunchSID_;
-    NSTimer *holePunchTimer_;
+    struct dispatch_source_s { } *holePunchTimer_;
     unsigned short localPort_;
     void *padding_[10];
     unsigned short port_;
+    id preblobCallback_;
     BOOL preblobIsUpToDate_;
     NSData *preblob_;
-    struct __CFRunLoopSource { } *runLoopSource_;
-    NSRunLoop *runLoop_;
+    struct dispatch_queue_s { } *queue_;
     struct __CFRunLoopSource { } *scDynamicStoreRunLoopSource_;
     struct __SCDynamicStore { } *scDynamicStore_;
     NSString *server_;
     NSMutableDictionary *sessionLookup_;
-    NSThread *thread_;
+    struct dispatch_source_s { } *source_;
     BOOL willReconfigureShortly_;
 }
 
 @property <CDXClientDelegate> *delegate;
 @property(readonly) NSError *error;
 @property(readonly) NSData *preblob;
+@property(copy) ? *preblobCallback;
+@property(readonly) dispatch_queue_s *queue;
 
 - (id)createSessionWithTicket:(id)arg1 sessionKey:(id)arg2;
 - (void)dealloc;
@@ -51,15 +57,17 @@
 - (void)invalidateSession:(id)arg1;
 - (void)networkDidChange;
 - (id)preblob;
+- (id)preblobCallback;
+- (struct dispatch_queue_s { }*)queue;
 - (void)resetHolepunchTimer;
 - (void)sendHolePunch;
 - (BOOL)sendRaw:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setPreblob:(id)arg1;
+- (void)setPreblobCallback:(id)arg1;
 - (void)start;
 - (void)startListeningOnSockets;
 - (void)stopListeningOnSockets;
-- (void)threadRunLoop:(id)arg1;
 
 @end

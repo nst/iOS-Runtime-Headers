@@ -10,6 +10,8 @@
 
 @property(retain) MKUserLocationViewInternal *viewImpl;
 
++ (id)defaultValueForKey:(id)arg1;
+
 - (void)animationDidStart:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;

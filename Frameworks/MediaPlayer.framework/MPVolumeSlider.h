@@ -5,7 +5,6 @@
 @class UIImageView, MPAVController, NSString, NSTimer, UILabel;
 
 @interface MPVolumeSlider : UISlider {
-    unsigned int _superviewIsVolumeView : 1;
     MPAVController *_avController;
     NSTimer *_commitTimer;
     UILabel *_routeNameLabel;
@@ -19,11 +18,11 @@
 @property(copy) NSString *volumeAudioCategory;
 @property(readonly) NSInteger style;
 
-+ (void)_disableSystemVolumeHUDForAudioCategory:(id)arg1;
-+ (void)_enableSystemVolumeHUDForAudioCategory:(id)arg1;
 + (void)_initializeSafeCategory;
 
 - (id)MPAVController;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
+- (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_availableRoutesDidChangeNotification:(id)arg1;
 - (void)_commitVolumeChange;
 - (void)_endTracking;
@@ -44,6 +43,7 @@
 - (id)createThumbView;
 - (void)dealloc;
 - (void)didMoveToSuperview;
+- (void)didMoveToWindow;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(NSInteger)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -51,7 +51,9 @@
 - (float)maximumValue;
 - (float)minimumValue;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)setAlpha:(float)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHidden:(BOOL)arg1;
 - (void)setMPAVController:(id)arg1;
 - (void)setVolumeAudioCategory:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

@@ -5,6 +5,6 @@
 @interface ABVCardCardDAVExporter : ABVCardExporter {
 }
 
-+ (id)copyVCardRepresentationOfRecord:(void*)arg1;
++ (id)copyVCardRepresentationOfRecord:(void*)arg1 withPhoto:(id)arg2;
 
 @end

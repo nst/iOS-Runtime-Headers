@@ -34,8 +34,13 @@
 
 + (void)_handleMemoryWarning:(id)arg1;
 + (void)_initializeSafeCategory;
++ (void)applicationDidBecomeActive:(id)arg1;
++ (void)applicationDidEnterBackground:(id)arg1;
++ (void)applicationDidTakeSuspensionSnapshot:(id)arg1;
++ (void)applicationWillTerminate:(id)arg1;
 + (void)initialize;
 + (NSUInteger)minZoomLevel;
++ (NSUInteger)minZoomLevelForMapType:(NSUInteger)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2;
 + (NSUInteger)minZoomLevelForMapType:(NSUInteger)arg1;
 + (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })regionThatFitsMapType:(NSUInteger)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2 region:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 + (void)setUserLocationCacheDuration:(double)arg1;
@@ -87,6 +92,8 @@
 - (BOOL)_drawGridBackground;
 - (void)_dropDraggingAnnotationView:(BOOL)arg1;
 - (void)_ensureLiveTrackingResourcesInitialized;
+- (void)_fadeInCopyrightlabel;
+- (void)_fadeInCopyrightlabelAfterDelay:(id)arg1;
 - (void)_finalizeChange:(id)arg1 rotation:(float)arg2 layer:(id)arg3 type:(NSInteger)arg4;
 - (void)_fixUserLocationFromPresentationValue;
 - (void)_freezeScrollingAnimation;
@@ -123,7 +130,6 @@
 - (float)_maxZoomLevelForCoordinate:(struct { double x1; double x2; })arg1;
 - (float)_maxZoomLevelForCurrentPosition;
 - (NSInteger)_maxZoomLevelForMapType:(NSUInteger)arg1;
-- (NSInteger)_minZoomLevelForMapType:(NSUInteger)arg1;
 - (BOOL)_needsToPanRoutePositionView;
 - (void)_notifyMapRotationChange:(id)arg1;
 - (void)_notifyWillPanRoutePositionWithDuration:(double)arg1;
@@ -135,6 +141,7 @@
 - (id)_positioningChangeWithLocation:(id)arg1 source:(NSInteger)arg2 hasFocus:(BOOL)arg3 isUpdated:(BOOL)arg4;
 - (void)_processDisplayPromise;
 - (void)_reachabilityChanged:(id)arg1;
+- (void)_registerForGlobalNotifications;
 - (void)_removeDisplayPromises;
 - (void)_removeScrollingAnimation;
 - (void)_resetAnnotationContainerPerspective;
@@ -149,8 +156,6 @@
 - (void)_runPositioningChange;
 - (void)_runPositioningChangeIfNeeded:(id)arg1;
 - (void)_runPositioningChangeIfNeeded;
-- (id)_savedEventBegan;
-- (id)_savedTouchBegan;
 - (void)_scheduleCheckTrafficAvailable;
 - (void)_scheduleDisplayPromise:(id)arg1;
 - (void)_scheduleRunPositioningChange:(id)arg1 delay:(double)arg2;
@@ -160,8 +165,6 @@
 - (void)_scheduleStartIdle;
 - (id)_scrollToReCenterUserTimer;
 - (void)_scrollToUserLocation;
-- (BOOL)_scrollView:(id)arg1 shouldHandlePinch:(id)arg2;
-- (void)_scrollView:(id)arg1 willHandlePinch:(id)arg2;
 - (struct CGPoint { float x1; float x2; })_scrollViewCenterForCenterMapPoint:(struct { double x1; double x2; })arg1 zoomScale:(float)arg2;
 - (struct CGPoint { float x1; float x2; })_scrollViewCenterForCenterPoint:(struct CGPoint { float x1; float x2; })arg1 zoomScale:(float)arg2;
 - (struct CGPoint { float x1; float x2; })_scrollViewOffsetForCenterCoordinate:(struct { double x1; double x2; })arg1;
@@ -173,7 +176,6 @@
 - (void)_scrollViewTouchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_scrollViewTouchesEnded:(id)arg1 withEvent:(id)arg2 cancelled:(BOOL)arg3;
 - (void)_scrollViewTouchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)_scrollViewTouchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)_selectUserLocationTypeWithDeltaZoomLevel:(float)arg1;
 - (void)_setAnimationType:(NSInteger)arg1;
 - (void)_setCalloutViewClass:(Class)arg1;
@@ -190,7 +192,6 @@
 - (void)_setZoomScale:(float)arg1 centerMapPoint:(struct { double x1; double x2; })arg2 duration:(double)arg3 animationType:(NSInteger)arg4;
 - (BOOL)_shouldChangeZoomLevel:(float*)arg1 withChange:(id)arg2;
 - (BOOL)_shouldConservePowerAnimationType:(NSInteger)arg1;
-- (BOOL)_shouldHandleTouchesMoved:(id)arg1 withEvent:(id)arg2;
 - (BOOL)_shouldZoomOnLiveTracking;
 - (void)_showAddedAnnotationsAndRouteAnimated:(BOOL)arg1;
 - (void)_showAddedAnnotationsAnimated:(BOOL)arg1;
@@ -218,10 +219,12 @@
 - (void)_updateAngularVelocityWithAnimation:(id)arg1;
 - (void)_updateAnnotationContainerPerspective;
 - (void)_updateAnnotationContainerView;
+- (void)_updateAttribution;
 - (void)_updateBackgroundFillColor;
-- (void)_updateBadge;
+- (void)_updateBadgeFrame;
 - (void)_updateCenteredAttributesWithCoordinate:(struct { double x1; double x2; })arg1;
 - (void)_updateContentBounds;
+- (void)_updateCopyrightFrame;
 - (void)_updateGridBackground:(BOOL)arg1;
 - (void)_updateGridBackground;
 - (void)_updateHeading:(id)arg1 rotationType:(NSInteger)arg2 animated:(BOOL)arg3;
@@ -250,6 +253,7 @@
 - (void)_userScrollingEnded;
 - (NSInteger)_viewIndexForSubview:(id)arg1;
 - (NSUInteger)_visibleSearchResultsCount:(id)arg1 forZoomLevel:(NSInteger)arg2 returnVisibleSearchResults:(id)arg3;
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_visibleUnderRotationMapRect;
 - (BOOL)_wasScrolling;
 - (void)_willChangeRegionAnimated:(BOOL)arg1 userInitiated:(BOOL)arg2;
 - (void)_willHideRoute;
@@ -263,7 +267,6 @@
 - (float)_zoomLevelForLocation:(id)arg1 previousLocation:(id)arg2;
 - (float)_zoomLevelForRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 includeAccessoryPadding:(BOOL)arg2;
 - (float)_zoomLevelForUserLocation:(id)arg1 distanceHysteresis:(BOOL)arg2 positionViewHysteresis:(BOOL)arg3;
-- (NSInteger)_zoomLevelsForMapType:(NSUInteger)arg1;
 - (struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_zoomRegionForMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 edgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 maxZoomLevel:(NSInteger)arg3 minZoomLevel:(NSInteger)arg4;
 - (struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_zoomRegionForStep:(id)arg1 inRoute:(id)arg2;
 - (float)_zoomScale;
@@ -296,6 +299,7 @@
 - (void)annotationContainerWillDropPins:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })annotationVisibleRect;
 - (id)annotations;
+- (id)annotationsInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
@@ -317,6 +321,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 toRectToView:(id)arg2;
 - (id)createViewForOverlay:(id)arg1;
 - (void)dealloc;
+- (void)deferred_animateRoutePositionViewPan;
 - (id)delegate;
 - (id)dequeueReusableAnnotationViewWithIdentifier:(id)arg1;
 - (id)descriptionForLocation:(id)arg1 compact:(BOOL)arg2;
@@ -325,6 +330,7 @@
 - (void)disableHeadingTracking:(BOOL)arg1;
 - (void)disableLiveTracking;
 - (void)disableMapRotation:(BOOL)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forViewPrintFormatter:(id)arg2;
 - (void)dropCustomPinForSearchResult:(id)arg1 animate:(BOOL)arg2;
 - (void)dropPinsForRouteFromSearchResult:(id)arg1 toSearchResult:(id)arg2 animate:(BOOL)arg3;
 - (void)dropPinsForSearchResults:(id)arg1 animate:(BOOL)arg2;
@@ -359,6 +365,7 @@
 - (void)insertOverlay:(id)arg1 belowOverlay:(id)arg2;
 - (BOOL)isBoundedByUserLocation;
 - (BOOL)isCachedUserLocation;
+- (BOOL)isGoingToDefaultLocation;
 - (BOOL)isHeadingEnabled;
 - (BOOL)isHeadingSupported;
 - (BOOL)isHeadingTrackingEnabled;
@@ -473,6 +480,7 @@
 - (void)setShowingRoute:(BOOL)arg1 animate:(BOOL)arg2 includingPins:(BOOL)arg3;
 - (void)setShowingTraffic:(BOOL)arg1;
 - (void)setShowsBadge:(BOOL)arg1;
+- (void)setShowsCopyright:(BOOL)arg1;
 - (void)setShowsPinAtRouteEnd:(BOOL)arg1;
 - (void)setShowsPinAtRouteStart:(BOOL)arg1;
 - (void)setShowsUserLocation:(BOOL)arg1;
@@ -494,8 +502,6 @@
 - (void)set_hoverExpirationTimer:(id)arg1;
 - (void)set_positioningChangeTimer:(id)arg1;
 - (void)set_rotationState:(NSInteger)arg1;
-- (void)set_savedEventBegan:(id)arg1;
-- (void)set_savedTouchBegan:(id)arg1;
 - (void)set_scrollToReCenterUserTimer:(id)arg1;
 - (void)set_startIdleTimer:(id)arg1;
 - (void)set_touchRecepientAnnotationView:(id)arg1;
@@ -503,6 +509,7 @@
 - (void)set_zoomScale:(float)arg1;
 - (BOOL)shouldRotateForHeading;
 - (BOOL)showsBadge;
+- (BOOL)showsCopyright;
 - (BOOL)showsPinAtRouteEnd;
 - (BOOL)showsPinAtRouteStart;
 - (BOOL)showsUserLocation;

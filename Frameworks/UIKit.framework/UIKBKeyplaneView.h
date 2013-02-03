@@ -5,25 +5,31 @@
 @class UIKBCandidateView, NSString, UIKBKeyplane, UIKBKeyboard, UIKBHandwritingView;
 
 @interface UIKBKeyplaneView : UIView {
-    UIKBCandidateView *m_candidateView;
-    UIKBHandwritingView *m_handwritingView;
-    UIKBKeyboard *m_keyboard;
-    UIKBKeyplane *m_keyplane;
-    NSString *m_visualStyle;
+    UIKBCandidateView *_candidateView;
+    UIKBHandwritingView *_handwritingView;
+    UIKBKeyboard *_keyboard;
+    UIKBKeyplane *_keyplane;
+    BOOL _redrawBackground;
+    NSString *_visualStyle;
 }
 
 @property UIKBCandidateView *candidateView;
 @property UIKBHandwritingView *handwritingView;
 @property(retain) UIKBKeyplane *keyplane;
 @property(readonly) NSString *visualStyle;
+@property BOOL backgroundNeedsRedraw;
 
+- (BOOL)backgroundNeedsRedraw;
+- (id)cacheKey;
 - (id)candidateView;
 - (void)dealloc;
+- (void)displayLayer:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)handwritingView;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyboard:(id)arg2 keyplane:(id)arg3;
 - (id)keyplane;
+- (void)setBackgroundNeedsRedraw:(BOOL)arg1;
 - (void)setCandidateView:(id)arg1;
 - (void)setHandwritingView:(id)arg1;
 - (void)setKeyplane:(id)arg1;

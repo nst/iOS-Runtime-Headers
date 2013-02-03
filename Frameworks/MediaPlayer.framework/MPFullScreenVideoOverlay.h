@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPVideoOverlayDelegate>, UINavigationButton, UILabel, MPTransportControls, UIView, MPNowPlayingItemQueueInfoButton, UINavigationBar, MPVideoViewController, MPDetailSlider, MPItem, UIImageView, UINavigationItem;
+@class <MPVideoOverlayDelegate>, UINavigationButton, UILabel, MPAVItem, MPTransportControls, UIView, MPNowPlayingItemQueueInfoButton, UINavigationBar, MPVideoViewController, MPDetailSlider, UIImageView, UINavigationItem;
 
 @interface MPFullScreenVideoOverlay : MPSwipableView <MPNowPlayingItemQueueInfoButtonDelegate, MPVideoOverlay> {
     unsigned int _tvOutEnabled : 1;
@@ -14,8 +14,8 @@
     NSUInteger _desiredParts;
     NSUInteger _disabledParts;
     NSInteger _interfaceOrientation;
-    MPItem *_item;
-    MPNowPlayingItemQueueInfoButton *_linkInfoButton;
+    MPAVItem *_item;
+    MPNowPlayingItemQueueInfoButton *_itemQueueInfoButton;
     UIView *_loadingMovieIndicatorView;
     UINavigationBar *_navigationBar;
     UIImageView *_navigationBarBackground;
@@ -31,12 +31,13 @@
 }
 
 @property <MPVideoOverlayDelegate> *delegate;
-@property(retain) MPItem *item;
+@property(retain) MPAVItem *item;
 @property(retain,readonly) UINavigationBar *navigationBar;
 @property(retain,readonly) MPTransportControls *transportControls;
 @property MPVideoViewController *videoViewController;
 @property BOOL TVOutEnabled;
 @property BOOL allowsDetailScrubbing;
+@property BOOL allowsWirelessPlayback;
 @property NSUInteger desiredParts;
 @property NSUInteger disabledParts;
 @property NSInteger interfaceOrientation;
@@ -69,6 +70,7 @@
 - (void)_validityChangedNotification:(id)arg1;
 - (NSUInteger)_visiblePartsForTransportControlsWithParts:(NSUInteger)arg1;
 - (BOOL)allowsDetailScrubbing;
+- (BOOL)allowsWirelessPlayback;
 - (void)crossedURLTimeMarker:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -92,11 +94,13 @@
 - (NSInteger)nowPlayingItemQueueInfoButton:(id)arg1 willDisplayInfoType:(NSInteger)arg2;
 - (void)restoreSanity;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
+- (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setAlpha:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredParts:(NSUInteger)arg1 animate:(BOOL)arg2;
 - (void)setDesiredParts:(NSUInteger)arg1;
 - (void)setDisabledParts:(NSUInteger)arg1;
+- (void)setHidden:(BOOL)arg1;
 - (void)setInterfaceOrientation:(NSInteger)arg1;
 - (void)setItem:(id)arg1;
 - (void)setTVOutEnabled:(BOOL)arg1;

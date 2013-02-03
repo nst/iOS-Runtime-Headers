@@ -6,6 +6,8 @@
    See Warning(s) below.
  */
 
+@class NSArray;
+
 @interface ML3QueryLoadEntitesOperation : ML3QueryLoadOperation {
     struct _NSRange { 
         NSUInteger location; 
@@ -13,21 +15,25 @@
     id _block;
     } _loadRange;
     BOOL _ordered;
+    NSArray *_properties;
 }
 
 @property(copy) ? *block;
+@property(copy) NSArray *properties;
 @property _NSRange loadRange;
 @property BOOL ordered;
 
 - (id)block;
 - (void)dealloc;
-- (id)initWithQuery:(id)arg1 loadRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 ordered:(BOOL)arg3 block:(id)arg4;
+- (id)initWithQuery:(id)arg1 loadRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 ordered:(BOOL)arg3 properties:(id)arg4 block:(id)arg5;
 - (id)initWithQuery:(id)arg1;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })loadRange;
 - (void)main;
 - (BOOL)ordered;
+- (id)properties;
 - (void)setBlock:(id)arg1;
 - (void)setLoadRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)setOrdered:(BOOL)arg1;
+- (void)setProperties:(id)arg1;
 
 @end

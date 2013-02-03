@@ -6,12 +6,16 @@
 
 @interface GMMStreetViewReportRequest : PBRequest {
     NSMutableArray *_panoramaVisiteds;
+    NSMutableArray *_viewpoints;
 }
 
 @property(retain) NSMutableArray *panoramaVisiteds;
+@property(retain) NSMutableArray *viewpoints;
 @property(readonly) NSInteger panoramaVisitedsCount;
+@property(readonly) NSInteger viewpointsCount;
 
 - (void)addPanoramaVisited:(id)arg1;
+- (void)addViewpoint:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)init;
@@ -23,6 +27,11 @@
 - (Class)responseClass;
 - (void)setPanoramaVisited:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setPanoramaVisiteds:(id)arg1;
+- (void)setViewpoint:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setViewpoints:(id)arg1;
+- (id)viewpointAtIndex:(NSUInteger)arg1;
+- (id)viewpoints;
+- (NSInteger)viewpointsCount;
 - (void)writeTo:(id)arg1;
 
 @end

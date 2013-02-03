@@ -6,18 +6,23 @@
 
 @interface GKModalRootViewController : UIViewController {
     NSInteger _statusBarOrientation;
-    UIViewController *oldDelegate;
+    BOOL callDismiss;
+    id oldDelegate;
     UIViewController *oldRootViewController;
 }
 
-@property(retain) UIViewController *oldDelegate;
 @property(retain) UIViewController *oldRootViewController;
+@property BOOL callDismiss;
+@property(retain) id oldDelegate;
 
+- (BOOL)callDismiss;
 - (void)dealloc;
+- (id)init;
 - (void)loadView;
 - (id)oldDelegate;
 - (id)oldRootViewController;
 - (void)removeChildViewController:(id)arg1;
+- (void)setCallDismiss:(BOOL)arg1;
 - (void)setOldDelegate:(id)arg1;
 - (void)setOldRootViewController:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;

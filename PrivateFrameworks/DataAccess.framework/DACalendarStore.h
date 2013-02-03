@@ -13,6 +13,7 @@
 - (id)calendars;
 - (id)events;
 - (id)externalID;
+- (NSUInteger)hash;
 - (BOOL)isEqual:(id)arg1;
 - (NSInteger)uid;
 

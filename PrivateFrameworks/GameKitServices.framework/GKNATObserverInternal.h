@@ -2,47 +2,36 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class NSThread, NSString, <GKNATObserverDelegate>, NSRunLoop, NSMutableDictionary;
+@class GKNATObserver_SCContext, NSRecursiveLock, <GKNATObserverDelegate>, NSMutableDictionary;
 
 @interface GKNATObserverInternal : GKNATObserver {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    struct _opaque_pthread_cond_t { 
-        long __sig; 
-        BOOL __opaque[24]; 
-    } _cNATCheck;
     NSMutableDictionary *_commNATFlagDictionary;
-    NSString *_currentWifiName;
+    NSMutableDictionary *_currentNetworkNames;
     <GKNATObserverDelegate> *_delegate;
     struct __SCDynamicStore { } *_dynamicStore;
-    BOOL _fCurrentNATCheckDone;
     BOOL _fNATCheckQueued;
     NSInteger _lastReportedNATType;
     struct dispatch_group_s { } *_natCheckGroup;
     struct dispatch_queue_s { } *_natCheckQueue;
+    BOOL _nonCellularInterfacesOnly;
     struct dispatch_queue_s { } *_reportNATQueue;
-    NSRunLoop *_runLoop;
-    struct __CFRunLoopSource { } *_runLoopSource;
-    NSThread *_thread;
-    double _wakeTime;
-    BOOL _wifiOnly;
-    } _xNATCheck;
+    GKNATObserver_SCContext *_sccontext;
+    NSRecursiveLock *_xNATCheck;
 }
 
-- (void)GKNATObserverRunLoop:(id)arg1;
-- (void)GKNATObserverRunLoop;
+- (void)NATCheckWithIPPort:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1 useCache:(BOOL)arg2;
+- (void)cacheNATFlags:(id)arg1 forNetwork:(id)arg2;
 - (struct tagCommNATInfo { NSUInteger x1; NSUInteger x2; unsigned short x3[3]; NSUInteger x4; }*)callCommNATTestFromIPPort:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
-- (void)carrierNATCheckWithIPPort:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (id)initWithOptions:(id)arg1;
-- (id)nameForWifi;
+- (id)lookupCachedNATFlagsForNetwork:(id)arg1;
+- (id)nameForNetworkWithIPPort:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
 - (void)registerForNetworkChanges;
+- (void)release;
 - (void)reportNATType;
 - (void)setDelegate:(id)arg1;
 - (void)tryNATCheck;
-- (void)wifiNATCheckWithIPPort:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
 
 @end

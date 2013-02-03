@@ -21,6 +21,9 @@
 + (id)_brailleTableDictionaryForBrailleTableIdentifier:(id)arg1;
 + (id)_brailleTableDictionaryForBrailleTableIdentifier:(id)arg1;
 + (void)_initializeSafeCategory;
++ (id)_rivenBundle;
++ (id)_textInputBundle;
++ (id)_textInputFactory;
 + (id)allBundles;
 + (id)allFrameworks;
 + (id)brailleDriverBundleWithIdentifier:(id)arg1;
@@ -39,6 +42,7 @@
 + (id)bundleWithIdentifier:(id)arg1;
 + (id)bundleWithPath:(id)arg1;
 + (id)bundleWithURL:(id)arg1;
++ (id)centerViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)debugDescription;
 + (BOOL)doesBrailleTableSupportContractions:(id)arg1;
 + (BOOL)doesBrailleTableSupportContractions:(id)arg1;
@@ -59,8 +63,10 @@
 + (id)preferredLocalizationsFromArray:(id)arg1 forPreferences:(id)arg2;
 + (id)preferredLocalizationsFromArray:(id)arg1;
 + (void)setSystemLanguages:(id)arg1;
++ (id)splitGestureRecognizerWithTarget:(id)arg1 action:(SEL)arg2;
 + (id)tableIdentifiersForLanguageIdentifier:(id)arg1;
 + (id)tableIdentifiersForLanguageIdentifier:(id)arg1;
++ (id)transitionView;
 
 - (id)URLForAuxiliaryExecutable:(id)arg1;
 - (id)URLForResource:(id)arg1 withExtension:(id)arg2 subdirectory:(id)arg3 localization:(id)arg4;

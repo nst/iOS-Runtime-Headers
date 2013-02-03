@@ -17,17 +17,21 @@
     unsigned int _loadStarted : 1;
     UICheckeredPatternView *_checkeredView;
     NSInteger _lastOrientation;
+    float _navigationBarHeight;
     } _savedOffset;
     QLDelayedScrollView *_scrollView;
     UITapGestureRecognizer *_tapRecognizer;
     UIWebBrowserView *_webView;
 }
 
-+ (BOOL)isSpreadsheetType:(id)arg1;
++ (BOOL)_isIWorkType:(id)arg1;
++ (BOOL)_isSpreadsheetType:(id)arg1;
 
 - (void)_finishLoading;
+- (float)_pdfPageNumberLabelYOffset;
 - (void)_viewWasTapped:(id)arg1;
 - (id)_webView;
+- (BOOL)canPrint;
 - (void)cancelLoad;
 - (void)dealloc;
 - (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
@@ -35,7 +39,8 @@
 - (void)loadView;
 - (void)loadWithHints:(id)arg1;
 - (struct CGSize { float x1; float x2; })minimumSizeOfWebLayerControlledByScroller:(id)arg1;
-- (void)presenterWillFadeIn;
+- (id)pdfPreviewURL;
+- (id)printPageRenderer;
 - (void)reloadUI;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
@@ -43,6 +48,8 @@
 - (void)scrollViewDidZoom:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
+- (void)setNavigationBarHeight:(float)arg1 animated:(BOOL)arg2;
+- (BOOL)shouldDisplayFullScreen;
 - (void)tearDownUI;
 - (void)view:(id)arg1 didSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 oldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 asResultOfZoom:(BOOL)arg4;
 - (id)viewForZoomingInScrollView:(id)arg1;

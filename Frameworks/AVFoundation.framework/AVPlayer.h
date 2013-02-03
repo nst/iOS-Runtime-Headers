@@ -8,22 +8,26 @@
     AVPlayerInternal *_player;
 }
 
+@property(copy) NSArray *_displaysUsedForPlayback; /* unknown property attribute: S_setDisplaysUsedForPlayback: */
 @property(readonly) AVPlayerItem *currentItem;
 @property(readonly) NSError *error;
+@property(readonly) NSInteger _externalProtectionStatus;
 @property NSInteger actionAtItemEnd;
+@property(getter=isAudioPlaybackEnabledAtAllRates,readonly) BOOL audioPlaybackEnabledAtAllRates;
 @property(getter=isClosedCaptionDisplayEnabled) BOOL closedCaptionDisplayEnabled;
+@property float maxRateForAudioPlayback;
+@property float minRateForAudioPlayback;
 @property float rate;
 @property(readonly) NSInteger status;
 
 + (BOOL)automaticallyNotifiesObserversOfActionAtItemEnd;
 + (BOOL)automaticallyNotifiesObserversOfClosedCaptionDisplayEnabled;
 + (BOOL)automaticallyNotifiesObserversOfCurrentItem;
-+ (BOOL)automaticallyNotifiesObserversOfPreferredLanguages;
 + (BOOL)automaticallyNotifiesObserversOfRate;
 + (BOOL)automaticallyNotifiesObserversOfSubtitleDisplayEnabled;
++ (void)initialize;
 + (id)keyPathsForValuesAffectingActionAtItemEnd;
 + (id)keyPathsForValuesAffectingClosedCaptionDisplayEnabled;
-+ (id)keyPathsForValuesAffectingPreferredLanguages;
 + (id)keyPathsForValuesAffectingRate;
 + (id)keyPathsForValuesAffectingSubtitleDisplayEnabled;
 + (id)playerWithPlayerItem:(id)arg1;
@@ -33,13 +37,16 @@
 - (void)_addFPListeners;
 - (void)_addLayer:(id)arg1;
 - (void)_advanceCurrentItemToItemContainingFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1;
+- (BOOL)_attachItem:(id)arg1 andPerformOperation:(NSInteger)arg2 withObject:(id)arg3;
 - (void)_attachLayerToFigPlayer;
 - (void)_beginInterruption;
 - (void)_changeStatusToFailedWithError:(id)arg1;
 - (void)_checkDefaultsWriteForPerformanceLogging;
 - (id)_currentItem;
 - (NSInteger)_defaultActionAtItemEnd;
+- (id)_displaysUsedForPlayback;
 - (void)_enumerateItemsUsingBlock:(id)arg1;
+- (NSInteger)_externalProtectionStatus;
 - (struct OpaqueFigPlayer { }*)_figPlayer;
 - (id)_fpNotificationNames;
 - (BOOL)_insertItem:(id)arg1 afterItem:(id)arg2;
@@ -48,8 +55,11 @@
 - (BOOL)_isSubtitleDisplayEnabled;
 - (id)_items;
 - (void)_logPerformanceDataForCurrentItem;
+- (void)_logPerformanceDataForPreviousItem;
+- (id)_playbackDisplaysForFigPlayer;
 - (id)_playerLayers;
-- (id)_preferredLanguages;
+- (NSInteger)_playerType;
+- (void)_preparePlaybackItemOfItemForEnqueueing:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)_propertyStorage;
 - (float)_rate;
 - (void)_removeAllItems;
@@ -59,9 +69,11 @@
 - (void)_removeLayer:(id)arg1;
 - (void)_setActionAtItemEnd:(NSInteger)arg1 allowingAdvance:(BOOL)arg2;
 - (void)_setCurrentItem:(id)arg1;
+- (void)_setDisplaysUsedForPlayback:(id)arg1;
 - (void)_setLayer:(id)arg1;
 - (void)_setVideoCompositor:(id)arg1;
 - (void)_setVideoCompositorToMatchItem:(id)arg1;
+- (BOOL)_shouldLogPerformanceData;
 - (struct dispatch_queue_s { }*)_stateDispatchQueue;
 - (id)_videoCompositor;
 - (id)_weakReference;
@@ -77,13 +89,17 @@
 - (id)init;
 - (id)initWithPlayerItem:(id)arg1;
 - (id)initWithURL:(id)arg1;
+- (BOOL)isAudioPlaybackEnabledAtAllRates;
 - (BOOL)isClosedCaptionDisplayEnabled;
 - (BOOL)isSubtitleDisplayEnabled;
+- (float)maxRateForAudioPlayback;
+- (float)minRateForAudioPlayback;
 - (void)pause;
 - (void)play;
-- (id)preferredLanguages;
+- (void)prepareItem:(id)arg1 withCompletionHandler:(id)arg2;
 - (float)rate;
 - (void)release;
+- (void)removeAudioPlaybackRateLimits;
 - (void)removeTimeObserver:(id)arg1;
 - (void)replaceCurrentItemWithPlayerItem:(id)arg1;
 - (id)retain;
@@ -91,10 +107,13 @@
 - (void)seekToTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
 - (void)setActionAtItemEnd:(NSInteger)arg1;
 - (void)setClosedCaptionDisplayEnabled:(BOOL)arg1;
-- (void)setPreferredLanguages:(id)arg1;
+- (void)setMaxRateForAudioPlayback:(float)arg1;
+- (void)setMinRateForAudioPlayback:(float)arg1;
 - (void)setRate:(float)arg1;
 - (void)setSubtitleDisplayEnabled:(BOOL)arg1;
+- (void)setWaitsUntilItemsAreReadyForInspectionBeforeMakingEligibleForPlayback:(BOOL)arg1;
 - (NSInteger)status;
+- (BOOL)waitsUntilItemsAreReadyForInspectionBeforeMakingEligibleForPlayback;
 - (void)willChangeValueForKey:(id)arg1;
 
 @end

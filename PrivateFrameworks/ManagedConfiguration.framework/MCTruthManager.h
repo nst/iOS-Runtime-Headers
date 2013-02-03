@@ -26,6 +26,11 @@
 + (void)_setPathsTruthFilePath:(id)arg1 defaultTruthFilePath:(id)arg2 clientTypeLoadersFilePath:(id)arg3 profileTruthFilePath:(id)arg4 clientTruthFilePath:(id)arg5 userSettingsFilePath:(id)arg6 effectiveUserSettingsFilePath:(id)arg7;
 + (BOOL)boolSetting:(id)arg1 valueChangedBetweenOldSettings:(id)arg2 andNewSettings:(id)arg3;
 + (NSInteger)boolSettingForFeature:(id)arg1 withUserSettingDictionary:(id)arg2;
++ (NSInteger)defaultBoolValueForSetting:(id)arg1;
++ (id)defaultParametersForBoolSetting:(id)arg1;
++ (id)defaultParametersForValueSetting:(id)arg1;
++ (id)defaultSettingsDict;
++ (id)defaultValueForSetting:(id)arg1;
 + (id)filterRestrictionDictionaryForPublicUse:(id)arg1;
 + (id)objectForFeature:(id)arg1 withTruthDictionary:(id)arg2;
 + (BOOL)restrictedBool:(id)arg1 changedBetweenOldRestrictions:(id)arg2 andNewRestrictions:(id)arg3;
@@ -51,6 +56,7 @@
 - (id)_profileTruth;
 - (BOOL)_recomputeEffectiveUserSettings;
 - (BOOL)_setAllClientTruths:(id)arg1 outTruthChanged:(BOOL*)arg2 outEffectiveSettingsChanged:(BOOL*)arg3 outError:(id*)arg4;
+- (void)_setClientTruthsWithoutNotifications:(id)arg1;
 - (BOOL)_setEffectiveUserSettings:(id)arg1;
 - (void)_setTruth:(id)arg1;
 - (BOOL)_setUserSettings:(id)arg1;

@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableSet, NSString, RunLoopContinuation, NSMutableDictionary;
+@class NSMutableSet, NSString, <MLPurchasedContentFolderDelegate>, RunLoopContinuation, NSMutableDictionary;
 
 @interface MLPurchasedContentFolder : NSObject {
     NSString *_basePath;
-    id _delegate;
+    <MLPurchasedContentFolderDelegate> *_delegate;
     double _lastPurchaseNotificationTime;
     RunLoopContinuation *_loadPurchasesContinuation;
     NSMutableDictionary *_purchasedContentInfo;
@@ -26,7 +26,7 @@
 - (void)_removeXMLFilenameFromPurchasedConent:(id)arg1;
 - (void)_savePurchaseDBInfo;
 - (id)_storePurchasesInfoFilePath;
-- (BOOL)_updatePurchasedContentInfoWithXMLFilename:(id)arg1 itemInserted:(BOOL*)arg2;
+- (BOOL)_updatePurchasedContentInfoWithXMLFilename:(id)arg1 didInsertBlock:(id)arg2;
 - (id)basePath;
 - (void)clearWeakReference:(id)arg1;
 - (NSUInteger)countOfPurchasedContent;

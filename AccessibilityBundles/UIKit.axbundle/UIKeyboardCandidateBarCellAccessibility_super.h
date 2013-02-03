@@ -5,7 +5,9 @@
 @interface UIKeyboardCandidateBarCellAccessibility_super : UIAccessibilitySafeCategory {
 }
 
+- (id)_accessibilityVisibleItemInList;
 - (id)accessibilityLabel;
+- (id)accessibilityLanguage;
 - (unsigned long long)accessibilityTraits;
 - (BOOL)isAccessibilityElement;
 

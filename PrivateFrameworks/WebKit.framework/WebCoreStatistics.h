@@ -21,6 +21,7 @@
 + (unsigned long)javaScriptGlobalObjectsCount;
 + (unsigned long)javaScriptInterpretersCount;
 + (unsigned long)javaScriptNoGCAllowedObjectsCount;
++ (id)javaScriptObjectTypeCounts;
 + (unsigned long)javaScriptObjectsCount;
 + (unsigned long)javaScriptProtectedGlobalObjectsCount;
 + (id)javaScriptProtectedObjectTypeCounts;

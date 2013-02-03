@@ -102,6 +102,7 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setIsAccessibilityElement:(BOOL)arg1;
 - (void)setIsMinibarView:(BOOL)arg1;
 - (void)setPossibleTitles:(id)arg1;
 - (void)setSelected:(BOOL)arg1;

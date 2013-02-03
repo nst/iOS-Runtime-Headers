@@ -23,18 +23,17 @@
     struct { 
         double bestAccuracy; 
     struct { 
-        double magneticHeading; 
-        double trueHeading; 
-        double accuracy; 
-        NSInteger calibration; 
         double x; 
         double y; 
         double z; 
+        double magneticHeading; 
+        double trueHeading; 
+        double accuracy; 
+        double timestamp; 
         double temperature; 
         double magnitude; 
         double inclination; 
-        double timestamp; 
-        double machtimestamp; 
+        NSInteger calibration; 
     } fCapabilities;
     BOOL fCapabilitiesValid;
     struct __CLClient { } *fClient;

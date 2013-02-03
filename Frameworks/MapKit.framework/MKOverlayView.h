@@ -21,7 +21,7 @@
         float d; 
         float tx; 
         float ty; 
-    struct $_721 { 
+    struct $_727 { 
         unsigned int keepAlive : 1; 
         unsigned int levelCrossFade : 1; 
         unsigned int drawingDisabled : 1; 

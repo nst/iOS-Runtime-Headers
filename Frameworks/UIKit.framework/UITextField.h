@@ -29,7 +29,6 @@
         unsigned int adjustsFontSizeToFitWidth : 1; 
         unsigned int fieldEditorAttached : 1; 
         unsigned int canBecomeFirstResponder : 1; 
-        unsigned int inDeferredBecomeFirstResponder : 1; 
         unsigned int inResignFirstResponder : 1; 
         unsigned int undoDisabled : 1; 
         unsigned int contentsRTL : 1; 
@@ -113,6 +112,7 @@
 
 - (NSInteger)_accessibilityCountAccessibleChildren:(id)arg1;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 - (id)_accessibilityInternalButton;
 - (id)_accessibilityInternalData;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
@@ -124,6 +124,7 @@
 - (void)_clearBackgroundViews;
 - (id)_clearButton;
 - (void)_clearButtonClicked:(id)arg1;
+- (void)_clearSelectionUI;
 - (void)_clearStyle;
 - (id)_copyFont:(id)arg1 newSize:(float)arg2 maxSize:(float)arg3;
 - (id)_createCSSStyleDeclarationForWebView:(id)arg1;
@@ -141,6 +142,7 @@
 - (id)_placeholderView;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (BOOL)_requiresKeyboardResetOnReload;
+- (void)_resetSelectionUI;
 - (void)_resignFirstResponder;
 - (struct CGSize { float x1; float x2; })_rightViewOffset;
 - (id)_scriptingInfo;
@@ -158,6 +160,7 @@
 - (BOOL)_showsAtomBackground;
 - (BOOL)_showsClearButton:(BOOL)arg1;
 - (BOOL)_showsClearButtonWhenEmpty;
+- (BOOL)_showsClearButtonWhenNonEmpty:(BOOL)arg1;
 - (BOOL)_showsLeftView;
 - (BOOL)_showsRightView;
 - (void)_sizeChanged:(BOOL)arg1;
@@ -180,10 +183,12 @@
 - (id)accessibilityElementAtIndex:(NSInteger)arg1;
 - (NSInteger)accessibilityElementCount;
 - (id)accessibilityLabel;
+- (id)accessibilityPlaceholderValue;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
 - (id)actualFont;
 - (float)actualMinimumFontSize;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustedCaretRectForCaretRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)adjustsFontSizeToFitWidth;
 - (NSInteger)atomStyle;
 - (void)attachFieldEditor:(id)arg1;
@@ -214,7 +219,6 @@
 - (id)customOverlayContainer;
 - (void)cut:(id)arg1;
 - (void)dealloc;
-- (void)deferredBecomeFirstResponder;
 - (id)delegate;
 - (id)disabledBackground;
 - (id)documentFragmentForPasteboardItemAtIndex:(NSInteger)arg1;

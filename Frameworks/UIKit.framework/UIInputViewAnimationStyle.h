@@ -19,6 +19,7 @@
 + (id)animationStyleImmediate;
 
 - (BOOL)animated;
+- (id)description;
 - (double)duration;
 - (BOOL)force;
 - (BOOL)isEqual:(id)arg1;

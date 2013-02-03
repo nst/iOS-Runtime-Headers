@@ -9,6 +9,8 @@
     NSMutableString *_plainString;
 }
 
+@property(readonly) NSString *plainString;
+
 - (void)dealloc;
 - (id)initWithAttributedString:(id)arg1 extractLinks:(BOOL)arg2;
 - (id)initWithAttributedString:(id)arg1;

@@ -2,8 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class UIColor, UIImage;
+
 @interface UIProgressView : UIView <NSCoding> {
     NSInteger _barStyle;
+    UIColor *_customColor;
+    UIImage *_customColorImage;
     float _progress;
     NSInteger _progressViewStyle;
 }
@@ -16,6 +20,9 @@
 + (NSInteger)_styleImageIndexForStyle:(NSInteger)arg1 barStyle:(NSInteger)arg2;
 + (struct CGSize { float x1; float x2; })defaultSize;
 
+- (id)_progressColor;
+- (void)_setProgressColor:(id)arg1;
+- (id)_tintedImage;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;

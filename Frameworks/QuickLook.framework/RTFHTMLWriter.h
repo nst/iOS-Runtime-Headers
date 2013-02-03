@@ -21,6 +21,7 @@
 - (id)_fontNameByAppendingSerif:(id)arg1;
 - (id)_paragraphStyleStringFromState:(id)arg1;
 - (id)_tableStyleStringFromCell:(id)arg1;
+- (id)_textBumpFromState:(id)arg1;
 - (id)_textStyleStringFromState:(id)arg1;
 - (void)dealloc;
 - (void)finishDocumentWithState:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSError, AVAsset, NSArray, NSMutableArray, AVWeakReference, AVPlayerItem, AVAudioMix, NSDictionary, NSURL, AVVideoComposition, AVPropertyStorage;
+@class AVWeakReference, AVPropertyStorage, NSError, AVPlayerItem, AVAsset, AVVideoComposition, NSArray, NSDictionary, AVPlayerConnection, AVAudioMix, NSMutableArray, NSURL;
 
 @interface AVPlayerItemInternal : NSObject {
     struct { 
@@ -34,25 +34,39 @@
     AVAsset *asset;
     AVAudioMix *audioMix;
     NSArray *chapterImageTimes;
+    BOOL didInformObserversAboutAvailabilityOfTracks;
     NSError *error;
+    BOOL externalProtectionRequested;
+    struct OpaqueFigCPEProtector { } *figCPEProtector;
     struct OpaqueFigPlaybackItem { } *figPlaybackItem;
     NSDictionary *gaplessInfo;
+    NSMutableArray *handlersToCallWhenReadyForEnqueueing;
+    BOOL initialAlwaysMonitorsPlayability;
+    BOOL initialContinuesPlayingDuringPrerollForRateChange;
+    BOOL initialContinuesPlayingDuringPrerollForSeek;
     } initialForwardPlaybackEndTime;
+    BOOL initialLimitReadAhead;
     } initialReversePlaybackEndTime;
     } initialTime;
     } initialToleranceAfter;
     } initialToleranceBefore;
-    BOOL isMakingReady;
     BOOL needTimedMetadataNotification;
     AVPlayerItem *nextItem;
+    BOOL nonForcedSubtitleDisplayEnabled;
+    AVPlayerConnection *playerConnection;
     AVWeakReference *playerReference;
     AVPlayerItem *previousItem;
     AVPropertyStorage *propertyStorage;
+    NSDictionary *protectedContentAuthorizationInfo;
+    NSURL *protectedContentPersistentStoragePath;
+    NSDictionary *protectedContentProtectionInfo;
+    float soundCheckVolumeNormalization;
     struct dispatch_queue_s { } *stateDispatchQueue;
     NSInteger status;
     NSMutableArray *syncLayers;
     NSArray *timedMetadata;
     AVVideoComposition *videoComposition;
+    float volumeAdjustment;
     AVWeakReference *weakReference;
 }
 

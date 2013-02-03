@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayer, NSString, AVWeakKeyValueObserverProxy, CALayer, AVWeakReference, AVPlayerItem;
+@class AVPlayer, AVWeakKeyValueObserverProxy, AVWeakReference, AVPlayerItem, NSString, CALayer, AVSubtitleLayer;
 
 @interface AVPlayerLayerInternal : NSObject {
     AVWeakKeyValueObserverProxy *KVOProxy;
@@ -15,6 +15,8 @@
     BOOL isReadyForDisplay;
     struct OpaqueFigSimpleMutex { } *isReadyForDisplayMutex;
     AVPlayerItem *itemMarkedReadyForDisplay;
+    NSString *subtitleGravity;
+    AVSubtitleLayer *subtitleLayer;
     NSString *videoGravity;
     AVWeakReference *weakReference;
 }

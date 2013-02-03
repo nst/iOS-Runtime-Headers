@@ -12,6 +12,12 @@
     NSString *_filterSingleGroup;
 }
 
+@property(readonly) NSString *group;
+@property(readonly) NSSet *groups;
+@property(readonly) IMPerson *person;
+@property(readonly) IMServiceImpl *service;
+@property(readonly) NSUInteger sortOrder;
+
 - (id)_filterSingleGroup;
 - (BOOL)canAddIMHandle:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

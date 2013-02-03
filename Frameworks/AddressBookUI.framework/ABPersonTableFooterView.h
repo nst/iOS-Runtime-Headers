@@ -5,6 +5,7 @@
 @class UIButton, UIView, ABPersonTableAction, <ABStyleProvider>;
 
 @interface ABPersonTableFooterView : UIView <ABPersonTableActionDelegate> {
+    UIView *_accessoryView;
     UIButton *_attributionButton;
     ABPersonTableAction *_deleteAction;
     UIView *_deleteView;
@@ -12,11 +13,13 @@
     <ABStyleProvider> *_styleProvider;
 }
 
+@property(retain) UIView *accessoryView;
 @property(readonly) NSString *attribution;
 @property(retain) <ABStyleProvider> *styleProvider;
 @property(getter=isAttributionEnabled,readonly) BOOL attributionEnabled;
 @property(getter=isEditing) BOOL tableEditing;
 
+- (id)accessoryView;
 - (id)attribution;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })attributionFrame;
 - (void)dealloc;
@@ -26,6 +29,7 @@
 - (BOOL)isEditing;
 - (void)layoutSubviews;
 - (void)removeDeleteAction;
+- (void)setAccessoryView:(id)arg1;
 - (void)setAttribution:(id)arg1 enabled:(BOOL)arg2 target:(id)arg3 action:(SEL)arg4;
 - (void)setDeleteActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 animated:(BOOL)arg4;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;

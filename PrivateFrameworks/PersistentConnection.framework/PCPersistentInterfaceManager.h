@@ -48,7 +48,6 @@
 @property(readonly) BOOL isWWANInterfaceInProlongedHighPowerState;
 @property(readonly) BOOL isWWANInterfaceUp;
 @property(readonly) BOOL isWakeOnWiFiSupported;
-@property(readonly) BOOL prefersWakeOnWiFiToWWANForPush;
 
 + (id)sharedInstance;
 
@@ -84,6 +83,7 @@
 - (void)bindCFStreamToWWANInterface:(struct __CFReadStream { }*)arg1;
 - (void)bindSocket:(NSInteger)arg1 toWWANInterface:(BOOL)arg2;
 - (void)bindSocketToWWANInterface:(NSInteger)arg1;
+- (id)dhcpLeaseExpirationDate;
 - (BOOL)doesWWANInterfaceExist;
 - (void)enableWakeOnWiFi:(BOOL)arg1 forDelegate:(id)arg2;
 - (void)enableWiFiAutoAssociation:(BOOL)arg1 forDelegate:(id)arg2;
@@ -99,7 +99,6 @@
 - (BOOL)isWWANInterfaceUp;
 - (BOOL)isWakeOnWiFiSupported;
 - (void)keepWWANInterfaceUp:(BOOL)arg1 forDelegate:(id)arg2;
-- (BOOL)prefersWakeOnWiFiToWWANForPush;
 - (void)removeDelegate:(id)arg1;
 - (id)urlConnectionBoundToWWANInterface:(BOOL)arg1 withRequest:(id)arg2 delegate:(id)arg3 usesCache:(BOOL)arg4 maxContentLength:(long long)arg5 startImmediately:(BOOL)arg6 connectionProperties:(id)arg7;
 - (id)urlConnectionBoundToWWANInterfaceWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(BOOL)arg3 maxContentLength:(long long)arg4 startImmediately:(BOOL)arg5 connectionProperties:(id)arg6;

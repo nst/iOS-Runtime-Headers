@@ -9,7 +9,9 @@
     NSMutableDictionary *_phoneNumberHistory;
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
+@property(retain) NSMutableDictionary *emailAddressHistory;
+@property(retain) NSMutableDictionary *phoneNumberHistory;
+
 + (id)sharedManager;
 
 - (id)_fullPathToConferenceHistoryPlist;
@@ -18,11 +20,14 @@
 - (void)_writeConferenceHistory;
 - (id)autorelease;
 - (void)dealloc;
+- (id)emailAddressHistory;
 - (BOOL)havePreviouslyConferencedWithID:(id)arg1;
 - (id)init;
-- (void)release;
-- (id)retain;
+- (id)phoneNumberHistory;
+- (oneway void)release;
 - (NSUInteger)retainCount;
+- (void)setEmailAddressHistory:(id)arg1;
 - (void)setHavePreviouslyConferenced:(BOOL)arg1 withID:(id)arg2;
+- (void)setPhoneNumberHistory:(id)arg1;
 
 @end

@@ -19,6 +19,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)getFeaturesWithCompletion:(id)arg1;
+- (void)getFeaturesWithOptions:(unsigned int)arg1 completion:(id)arg2;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)setDispatchQueue:(struct dispatch_queue_s { }*)arg1;

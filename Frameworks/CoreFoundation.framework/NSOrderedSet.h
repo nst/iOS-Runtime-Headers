@@ -94,6 +94,7 @@
 - (id)objectsPassingTest:(id)arg1;
 - (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (unsigned int)pl_indexOfObjectIdenticalTo:(id)arg1;
+- (BOOL)pl_isSortedUsingComparator:(id)arg1;
 - (id)pl_shortDescription;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;

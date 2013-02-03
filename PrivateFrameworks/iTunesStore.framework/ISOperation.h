@@ -65,6 +65,7 @@
 - (BOOL)runSubOperation:(id)arg1 onQueue:(id)arg2 error:(id*)arg3;
 - (BOOL)runSubOperation:(id)arg1 returningError:(id*)arg2;
 - (void)sendCompletionCallback:(id)arg1;
+- (void)sendDidTakeSerializationLocks;
 - (void)sendProgressToDelegate;
 - (id)serializationLockIdentifiers;
 - (void)setDelegate:(id)arg1;

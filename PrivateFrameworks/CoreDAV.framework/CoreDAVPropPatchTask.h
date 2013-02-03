@@ -2,22 +2,25 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSSet, <CoreDAVPropPatchTaskDelegate>, CoreDAVResponseItem;
+@class <CoreDAVPropPatchTaskDelegate>, CoreDAVResponseItem, NSSet, NSURL;
 
-@interface CoreDAVPropPatchTask : CoreDAVTask {
-    int _order;
+@interface CoreDAVPropPatchTask : CoreDAVActionBackedTask {
+    int _absoluteOrder;
+    NSURL *_priorOrderedURL;
     NSSet *_propPatchRemoveElements;
     NSSet *_propPatchSetElements;
     CoreDAVResponseItem *_responseItem;
     BOOL _sendOrder;
 }
 
+@property int absoluteOrder;
 @property <CoreDAVPropPatchTaskDelegate> * delegate;
-@property int order;
+@property(retain) NSURL * priorOrderedURL;
 @property(retain) NSSet * propPatchRemoveElements;
 @property(retain) NSSet * propPatchSetElements;
 @property(retain) CoreDAVResponseItem * responseItem;
 
+- (int)absoluteOrder;
 - (id)additionalHeaderValues;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)dealloc;
@@ -26,12 +29,13 @@
 - (id)httpMethod;
 - (id)initWithPropertiesToSet:(id)arg1 andRemove:(id)arg2 atURL:(id)arg3;
 - (id)initWithURL:(id)arg1;
-- (int)order;
+- (id)priorOrderedURL;
 - (id)propPatchRemoveElements;
 - (id)propPatchSetElements;
 - (id)requestBody;
 - (id)responseItem;
-- (void)setOrder:(int)arg1;
+- (void)setAbsoluteOrder:(int)arg1;
+- (void)setPriorOrderedURL:(id)arg1;
 - (void)setPropPatchRemoveElements:(id)arg1;
 - (void)setPropPatchSetElements:(id)arg1;
 - (void)setResponseItem:(id)arg1;

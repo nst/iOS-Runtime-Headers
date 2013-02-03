@@ -21,6 +21,7 @@
 + (struct CGSize { float x1; float x2; })scaledFullImageSizeForOriginalImageSize:(struct CGSize { float x1; float x2; })arg1 andCroppedSize:(struct CGSize { float x1; float x2; })arg2;
 
 - (int)adjustmentType;
+- (id)metadataProperties;
 - (void)setAdjustmentType:(int)arg1;
 
 @end

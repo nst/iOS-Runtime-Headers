@@ -15,8 +15,8 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    int chapterGroupIndex;
-    int chapterIndex;
+    long chapterGroupIndex;
+    long chapterIndex;
     NSString *chapterType;
     NSMutableArray *completions;
     } duration;
@@ -25,7 +25,7 @@
     struct dispatch_queue_s { } *readWriteQueue;
     } time;
     id value;
-    int valueErrorCode;
+    long valueErrorCode;
     int valueStatus;
     AVWeakReference *weakReference;
 }

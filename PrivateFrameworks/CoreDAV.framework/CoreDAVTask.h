@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, <CoreDAVTaskManager>, NSHTTPURLResponse, NSURLRequest, NSMutableArray, NSError, NSDate, NSDictionary, CoreDAVRequestLogger, <CoreDAVAccountInfoProvider>, <CoreDAVResponseBodyParser>, <CoreDAVTaskDelegate>, NSURLConnection, NSURL;
+@class NSMutableDictionary, <CoreDAVTaskManager>, NSHTTPURLResponse, NSURLRequest, NSMutableArray, NSData, NSError, NSDate, NSDictionary, CoreDAVRequestLogger, <CoreDAVAccountInfoProvider>, <CoreDAVResponseBodyParser>, <CoreDAVTaskDelegate>, NSURLConnection, NSURL;
 
 @interface CoreDAVTask : NSObject {
     <CoreDAVAccountInfoProvider> *_accountInfoProvider;
@@ -25,7 +25,11 @@
     BOOL _didReceiveResponse;
     BOOL _didSendRequest;
     NSError *_error;
+    BOOL _everTriedTokenAuth;
+    NSData *_fakeResponseData;
     BOOL _finished;
+    BOOL _haveParsedFakeResponseData;
+    BOOL _justTriedTokenAuth;
     CoreDAVRequestLogger *_logger;
     int _numDownloadedElements;
     NSMutableDictionary *_overriddenHeaders;
@@ -35,6 +39,7 @@
     NSURLRequest *_request;
     BOOL _requestIsCompressed;
     id _requestProgressBlock;
+    NSDictionary *_requestProperties;
     NSHTTPURLResponse *_response;
     <CoreDAVResponseBodyParser> *_responseBodyParser;
     id _responseProgressBlock;
@@ -42,7 +47,6 @@
     <CoreDAVTaskManager> *_taskManager;
     double _timeoutInterval;
     unsigned int _totalBytesReceived;
-    BOOL _triedTokenAuth;
     NSURL *_url;
 }
 
@@ -55,6 +59,7 @@
 @property(retain) NSError * error;
 @property(getter=isFinished,readonly) BOOL finished;
 @property(copy) id requestProgressBlock;
+@property(retain) NSDictionary * requestProperties;
 @property(retain) <CoreDAVResponseBodyParser> * responseBodyParser;
 @property(readonly) NSDictionary * responseHeaders;
 @property(copy) id responseProgressBlock;
@@ -111,6 +116,7 @@
 - (id)requestBody;
 - (id)requestBodyStream;
 - (id)requestProgressBlock;
+- (id)requestProperties;
 - (void)reset;
 - (id)responseBodyParser;
 - (id)responseHeaders;
@@ -124,6 +130,7 @@
 - (void)setDepth:(int)arg1;
 - (void)setError:(id)arg1;
 - (void)setRequestProgressBlock:(id)arg1;
+- (void)setRequestProperties:(id)arg1;
 - (void)setResponseBodyParser:(id)arg1;
 - (void)setResponseProgressBlock:(id)arg1;
 - (void)setResponseStatusCode:(int)arg1;

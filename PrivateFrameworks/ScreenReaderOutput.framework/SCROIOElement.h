@@ -3,7 +3,7 @@
  */
 
 @interface SCROIOElement : NSObject <SCROIOElementProtocol, NSCopying> {
-    int _identifier;
+    long _identifier;
     unsigned int _ioObject;
 }
 

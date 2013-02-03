@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class IUNowPlayingNavigationButton;
+@class NSDate, IUNowPlayingNavigationButton;
 
 @interface IUMediaViewControllerCommonDelegate : NSObject <UINavigationControllerDelegate, UITabBarControllerDelegate> {
     int _ignoreNowPlayingChangeCount;
     int _ignoreStatusBarChangeCount;
     IUNowPlayingNavigationButton *_nowPlayingButton;
+    NSDate *_timeWhenRootViewControllerWasShown;
 }
 
 + (id)sharedInstance;
@@ -15,6 +16,7 @@
 - (void)_nowPlayingButtonAction:(id)arg1;
 - (void)_nowPlayingChangedNotification:(id)arg1;
 - (void)_playbackStateChangedNotification:(id)arg1;
+- (void)_pushNowPlayingControllerAnimated:(BOOL)arg1;
 - (void)_setNowPlayingButtonVisible:(BOOL)arg1 forController:(id)arg2 animated:(BOOL)arg3;
 - (void)beginIgnoringNowPlayingChanges;
 - (void)beginIgnoringStatusBarChanges;
@@ -28,6 +30,7 @@
 - (void)tabBarController:(id)arg1 didEndCustomizingViewControllers:(id)arg2 changed:(BOOL)arg3;
 - (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
 - (void)tabBarController:(id)arg1 willSelectViewController:(id)arg2;
+- (id)timeWhenRootViewControllerWasShown;
 - (void)updateNowPlayingForTopViewController;
 - (void)updateNowPlayingForTopViewControllerAnimated:(BOOL)arg1;
 

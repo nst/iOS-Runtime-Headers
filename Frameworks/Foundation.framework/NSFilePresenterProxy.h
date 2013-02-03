@@ -27,7 +27,9 @@
 - (void)forwardUsingMessageSender:(id)arg1;
 - (BOOL)hasRelinquishedToWriter;
 - (void)observeChangeByWriterWithPurposeID:(id)arg1;
+- (void)observeChangeOfSubitemAtURL:(id)arg1 byWriterWithPurposeID:(id)arg2;
 - (void)observeMoveByWriterWithPurposeID:(id)arg1;
+- (void)observeMoveOfSubitemAtURL:(id)arg1 toURL:(id)arg2 byWriterWithPurposeID:(id)arg3;
 - (void)observeVersionChangeOfKind:(id)arg1 withClientID:(id)arg2 name:(id)arg3 subitemPath:(id)arg4;
 - (void)relinquishToReadingClaimWithID:(id)arg1 options:(unsigned int)arg2 purposeID:(id)arg3 resultHandler:(id)arg4;
 - (void)relinquishToWritingClaimWithID:(id)arg1 options:(unsigned int)arg2 purposeID:(id)arg3 subitemPath:(id)arg4 resultHandler:(id)arg5;

@@ -4,7 +4,7 @@
 
 @class UIKeyboardLayoutStar, UIKBTree, NSTimer, NSMutableDictionary;
 
-@interface UIKBKeyplaneView : UIView {
+@interface UIKBKeyplaneView : UIView <UIKBCacheableView> {
     NSTimer *_activatedTimer;
     NSMutableDictionary *_activeViewIndex;
     NSMutableDictionary *_delayedDeactivationKeys;
@@ -17,11 +17,13 @@
     NSMutableDictionary *_subviewIndex;
 }
 
+@property(readonly) BOOL cacheDeferable;
 @property(retain) UIKBTree * keyplane;
 @property UIKeyboardLayoutStar * layout;
 
 - (void)activateKeys;
 - (void)addKeyToDelayedDeactivationSet:(id)arg1;
+- (BOOL)cacheDeferable;
 - (id)cacheIdentifierForKey:(id)arg1 withState:(int)arg2;
 - (id)cacheIdentifierForKey:(id)arg1;
 - (id)cacheKey;

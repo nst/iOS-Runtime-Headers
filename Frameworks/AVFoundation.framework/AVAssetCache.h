@@ -8,7 +8,7 @@
     AVAssetCacheInternal *_priv;
 }
 
-@property(copy,readonly) NSURL * URL;
+@property(readonly) NSURL * URL;
 @property(readonly) long long currentSize;
 @property long long maxEntrySize;
 @property long long maxSize;

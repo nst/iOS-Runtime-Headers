@@ -15,6 +15,7 @@
     long long _publishTargetByteCount;
     NSMutableArray *_requestAuthQueue;
     NSMutableArray *_sendingQueue;
+    unsigned int _sendingQueueCount;
     int _state;
     <MSPublishStorageProtocol> *_storageProtocol;
     NSURL *_storageProtocolURL;
@@ -42,7 +43,7 @@
 - (void)_abort;
 - (id)_abortedError;
 - (void)_addAssetToFileHashMap:(id)arg1;
-- (void)_categorizeError:(id)arg1 setOutIsIgnorable:(BOOL*)arg2 setOutIsCounted:(BOOL*)arg3 setOutNeedsBackoff:(BOOL*)arg4 setOutIsTemporary:(BOOL*)arg5 setOutIsTokenAuth:(BOOL*)arg6;
+- (void)_categorizeError:(id)arg1 setOutIsIgnorable:(BOOL*)arg2 setOutIsCounted:(BOOL*)arg3 setOutIsFatal:(BOOL*)arg4 setOutNeedsBackoff:(BOOL*)arg5 setOutIsTemporary:(BOOL*)arg6 setOutIsTokenAuth:(BOOL*)arg7 setOutIsAuthError:(BOOL*)arg8;
 - (void)_didFinishUsingAssetCollections:(id)arg1;
 - (void)_forget;
 - (id)_invalidStreamsResponseErrorUnderlyingError:(id)arg1;

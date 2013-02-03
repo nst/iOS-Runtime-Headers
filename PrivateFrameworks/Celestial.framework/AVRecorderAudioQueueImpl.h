@@ -16,24 +16,24 @@
         unsigned int mBitsPerChannel; 
         unsigned int mReserved; 
     NSMutableDictionary *_attributes;
-    unsigned int _audioCodec;
+    unsigned long _audioCodec;
     struct OpaqueAudioFileID { } *_audioFile;
     struct AudioQueueLevelMeterState { float x1; float x2; } *_audioLevels;
     struct AudioQueueLevelMeterState { float x1; float x2; } *_audioLevelsDB;
     struct OpaqueAudioQueue { } *_audioQueue;
     BOOL _bufferUsed[3];
     struct AudioQueueBuffer {} *_buffers[3];
-    unsigned int _fileType;
+    unsigned long _fileType;
     BOOL _haveRecordedMaxPCMFrames;
     BOOL _isActive;
     BOOL _isRecording;
     BOOL _isWriting;
     long long _maxPCMFramesToRecord;
-    unsigned int _numDeviceChannels;
+    unsigned long _numDeviceChannels;
     } _recordingFormat;
-    unsigned int _totalBytesRecorded;
-    unsigned int _totalFramesRecorded;
-    unsigned int _totalPacketsRecorded;
+    unsigned long _totalBytesRecorded;
+    unsigned long _totalFramesRecorded;
+    unsigned long _totalPacketsRecorded;
 }
 
 - (BOOL)activate:(id*)arg1;

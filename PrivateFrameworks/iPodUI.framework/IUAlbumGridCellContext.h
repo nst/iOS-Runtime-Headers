@@ -32,11 +32,12 @@
 @property(retain) IUMediaDataSource * dataSource;
 @property <IUAlbumGridCellContextDelegate> * delegate;
 @property BOOL drawShadow;
+@property(readonly) BOOL hasPlaceholderImage;
 @property(retain) MPImageCache * imageCache;
 @property int imageContentMode;
 @property(retain) MPImageModifier * imageModifier;
 @property BOOL overlapIndexBar;
-@property(readonly) UIImage * placeholderImage;
+@property(retain) UIImage * placeholderImage;
 @property(retain) MPImageCacheRequest * placeholderImageCacheRequest;
 @property(retain) MPMediaQuery * query;
 @property(retain) UIColor * subtitleColor;
@@ -59,6 +60,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)drawShadow;
+- (BOOL)hasPlaceholderImage;
 - (id)imageCache;
 - (int)imageContentMode;
 - (id)imageModifier;
@@ -75,6 +77,7 @@
 - (void)setImageContentMode:(int)arg1;
 - (void)setImageModifier:(id)arg1;
 - (void)setOverlapIndexBar:(BOOL)arg1;
+- (void)setPlaceholderImage:(id)arg1;
 - (void)setPlaceholderImageCacheRequest:(id)arg1;
 - (void)setPlaceholderImageRequest:(id)arg1;
 - (void)setQuery:(id)arg1;

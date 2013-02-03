@@ -9,6 +9,7 @@
 + (id)countedPropertyForMPMediaEntityProperty:(id)arg1;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
 + (void)initialize;
++ (BOOL)libraryContentsChangeForProperty:(id)arg1;
 + (id)propertiesForGroupingKey;
 + (id)trackForeignPersistentID;
 + (BOOL)updateRepresentativeItemPersistentIDsInLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3;

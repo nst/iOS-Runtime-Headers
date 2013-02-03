@@ -13,6 +13,7 @@
 }
 
 - (void)_crossedTimeMarkerNotification:(id)arg1;
+- (void)_displayValuesDidChangeNotification:(id)arg1;
 - (void)_handleDoubleTap:(id)arg1;
 - (void)_handleSingleTap;
 - (void)_handleSwipeRight;

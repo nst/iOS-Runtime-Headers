@@ -45,6 +45,7 @@
 - (float)CA_distanceToValue:(id)arg1;
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
 - (id)CA_interpolateValues:(id)arg1 :(id)arg2 :(id)arg3 interpolator:(const struct ValueInterpolator { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; boolx10; }*)arg4;
+- (id)MPMediaLibraryDataProviderSystemML3CoercedString;
 - (void)_ICSBoolAppendingToString:(id)arg1;
 - (void)_ICSFBTypeAppendingToString:(id)arg1;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;

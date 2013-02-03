@@ -6,29 +6,24 @@
    See Warning(s) below.
  */
 
-@class NSURL, NSString;
+@class NSURL, NSMutableDictionary, NSFileWatcherObservations;
 
 @interface NSFileWatcher : NSObject {
-    BOOL _didObserveAttributeChanging;
-    BOOL _didObserveContentsChanging;
-    BOOL _didObserveDeleting;
-    BOOL _didObserveMoving;
-    BOOL _didResetURL;
     struct dispatch_source_s { } *_eventSource;
+    struct __FSEventStream { } *_eventStream;
+    NSURL *_formerURL;
     BOOL _isUnsettled;
     BOOL _isWatching;
-    NSString *_lastObservedPath;
+    NSFileWatcherObservations *_itemObservations;
     id _observer;
     struct dispatch_queue_s { } *_queue;
+    NSMutableDictionary *_subitemObservationsByEventPath;
     NSURL *_url;
 }
 
 - (void)dealloc;
+- (void)handleFSEventPath:(id)arg1 flags:(unsigned long)arg2 id:(unsigned long long)arg3;
 - (id)initWithQueue:(struct dispatch_queue_s { }*)arg1;
-- (void)itemAttributeWasChanged;
-- (void)itemContentsWasChanged;
-- (void)itemWasDeleted;
-- (void)itemWasMovedToPath:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)settle;
 - (void)startWithObserver:(id)arg1;

@@ -40,6 +40,7 @@
 - (void)dealloc;
 - (void)didActivate;
 - (void)didDeactivateForReason:(int)arg1;
+- (void)didFailToActivate;
 - (BOOL)didPlayPresentationSound;
 - (void)dismiss:(int)arg1;
 - (void)dismiss;

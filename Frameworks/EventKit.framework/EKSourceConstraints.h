@@ -8,6 +8,7 @@
         unsigned int maxRecurrencesAllowed : 1; 
         unsigned int supportsAlarmTriggerIntervals : 1; 
         unsigned int supportsAlarmTriggerDates : 1; 
+        unsigned int supportsAlarmsTriggeringAfterStartDate : 1; 
         unsigned int organizerCanSeeAttendeeStatuses : 1; 
         unsigned int inviteesCanSeeAttendeeStatuses : 1; 
         unsigned int statusesAreAccurate : 1; 
@@ -54,7 +55,7 @@
 @property BOOL deliverySourceOrExternalIDRequiredForResponse;
 @property BOOL eventAvalabilityLimited;
 @property BOOL eventDurationConstrainedToRecurrenceInterval;
-@property struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; } flags;
+@property struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; } flags;
 @property BOOL futureStartDateLimitedToOccurrenceCacheBounds;
 @property BOOL inviteesCanSeeAttendeeStatuses;
 @property int maxAlarmsAllowed;
@@ -72,6 +73,7 @@
 @property BOOL supportsAlarmProximity;
 @property BOOL supportsAlarmTriggerDates;
 @property BOOL supportsAlarmTriggerIntervals;
+@property BOOL supportsAlarmsTriggeringAfterStartDate;
 @property BOOL supportsAllDayDueDates;
 @property BOOL supportsIncomingInvitations;
 @property BOOL supportsInvitationModifications;
@@ -92,7 +94,7 @@
 - (BOOL)deliverySourceOrExternalIDRequiredForResponse;
 - (BOOL)eventAvalabilityLimited;
 - (BOOL)eventDurationConstrainedToRecurrenceInterval;
-- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; })flags;
+- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; })flags;
 - (BOOL)futureStartDateLimitedToOccurrenceCacheBounds;
 - (id)init;
 - (id)initWithMaxAlarms:(int)arg1 maxRecurrences:(int)arg2 constraintFlags:(unsigned long long)arg3;
@@ -116,7 +118,7 @@
 - (void)setDeliverySourceOrExternalIDRequiredForResponse:(BOOL)arg1;
 - (void)setEventAvalabilityLimited:(BOOL)arg1;
 - (void)setEventDurationConstrainedToRecurrenceInterval:(BOOL)arg1;
-- (void)setFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; })arg1;
+- (void)setFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; })arg1;
 - (void)setFutureStartDateLimitedToOccurrenceCacheBounds:(BOOL)arg1;
 - (void)setInviteesCanSeeAttendeeStatuses:(BOOL)arg1;
 - (void)setMaxAlarmsAllowed:(int)arg1;
@@ -134,6 +136,7 @@
 - (void)setSupportsAlarmProximity:(BOOL)arg1;
 - (void)setSupportsAlarmTriggerDates:(BOOL)arg1;
 - (void)setSupportsAlarmTriggerIntervals:(BOOL)arg1;
+- (void)setSupportsAlarmsTriggeringAfterStartDate:(BOOL)arg1;
 - (void)setSupportsAllDayDueDates:(BOOL)arg1;
 - (void)setSupportsIncomingInvitations:(BOOL)arg1;
 - (void)setSupportsInvitationModifications:(BOOL)arg1;
@@ -149,6 +152,7 @@
 - (BOOL)supportsAlarmProximity;
 - (BOOL)supportsAlarmTriggerDates;
 - (BOOL)supportsAlarmTriggerIntervals;
+- (BOOL)supportsAlarmsTriggeringAfterStartDate;
 - (BOOL)supportsAllDayDueDates;
 - (BOOL)supportsIncomingInvitations;
 - (BOOL)supportsInvitationModifications;

@@ -22,6 +22,7 @@
 @property int x;
 @property int y;
 
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

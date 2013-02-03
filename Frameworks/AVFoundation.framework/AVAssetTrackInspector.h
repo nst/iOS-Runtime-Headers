@@ -19,15 +19,15 @@
 @property(readonly) int layer;
 @property(readonly) NSLocale * locale;
 @property(readonly) NSString * mediaType;
-@property(readonly) struct CGSize { float width; float height; } naturalSize;
+@property(readonly) struct CGSize { float x1; float x2; } naturalSize;
 @property(readonly) int naturalTimeScale;
 @property(readonly) float nominalFrameRate;
 @property(getter=isPlayable,readonly) BOOL playable;
-@property(readonly) struct CGAffineTransform { float a; float b; float c; float d; float tx; float ty; } preferredTransform;
+@property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
 @property(readonly) float preferredVolume;
-@property(copy,readonly) NSArray * segments;
+@property(readonly) NSArray * segments;
 @property(getter=isSelfContained,readonly) BOOL selfContained;
-@property(readonly) struct { struct { long long value; int timescale; unsigned int flags; long long epoch; } start; struct { long long value; int timescale; unsigned int flags; long long epoch; } duration; } timeRange;
+@property(readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
 @property(readonly) long long totalSampleDataLength;
 @property(readonly) int trackID;
 

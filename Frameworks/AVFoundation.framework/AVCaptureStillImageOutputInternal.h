@@ -11,7 +11,7 @@
     BOOL EV0CaptureEnabled;
     BOOL HDRCaptureEnabled;
     BOOL chromaNoiseReductionEnabled;
-    unsigned int imageDataFormatType;
+    unsigned long imageDataFormatType;
     long long imageMaxDataSize;
     BOOL isCapturingPhoto;
     NSDictionary *outputSettings;

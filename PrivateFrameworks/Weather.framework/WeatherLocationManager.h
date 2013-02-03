@@ -5,17 +5,21 @@
 @class <CLLocationManagerDelegate>, NSTimer, CLLocationManager, NSDate;
 
 @interface WeatherLocationManager : NSObject <CLLocationManagerDelegate> {
+    struct { 
+        double latitude; 
+        double longitude; 
     NSTimer *_accuracyFallbackTimer;
     int _authorizationStatus;
+    NSTimer *_automaticLocationUpdateTimer;
     <CLLocationManagerDelegate> *_delegate;
     BOOL _isTrackingLocation;
     BOOL _isTrackingLocationEnabled;
     float _lastLocationAccuracy;
+    } _lastLocationCoord;
     NSDate *_lastLocationTimeStamp;
     double _lastLocationUpdateTime;
     CLLocationManager *_locationManager;
     double _nextPlannedUpdate;
-    NSTimer *_nonSLCLocationUpdateTimer;
     double _oldestAcceptedTime;
 }
 
@@ -24,6 +28,7 @@
 @property BOOL isTrackingLocation;
 @property BOOL isTrackingLocationEnabled;
 @property float lastLocationAccuracy;
+@property struct { double latitude; double longitude; } lastLocationCoord;
 @property(copy) NSDate * lastLocationTimeStamp;
 @property(retain) CLLocationManager * locationManager;
 
@@ -44,6 +49,7 @@
 - (BOOL)isTrackingLocation;
 - (BOOL)isTrackingLocationEnabled;
 - (float)lastLocationAccuracy;
+- (struct { double x1; double x2; })lastLocationCoord;
 - (id)lastLocationTimeStamp;
 - (BOOL)loadAndPrepareLocationTrackingState;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
@@ -54,6 +60,7 @@
 - (void)setIsTrackingLocation:(BOOL)arg1;
 - (void)setIsTrackingLocationEnabled:(BOOL)arg1;
 - (void)setLastLocationAccuracy:(float)arg1;
+- (void)setLastLocationCoord:(struct { double x1; double x2; })arg1;
 - (void)setLastLocationTimeStamp:(id)arg1;
 - (void)setLocationManager:(id)arg1;
 - (void)setLocationTrackingActive:(BOOL)arg1;

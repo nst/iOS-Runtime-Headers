@@ -11,6 +11,7 @@
     unsigned int _machPort;
     unsigned int _nextID;
     unsigned long _options;
+    BOOL _registeredForStartNote;
     struct dispatch_queue_s { } *_replyHandlerLock;
     NSMutableDictionary *_replyHandlers;
     struct dispatch_source_s { } *_replySource;

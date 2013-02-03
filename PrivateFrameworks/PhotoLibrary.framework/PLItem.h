@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSURL, NSString, NSData;
+@class PLManagedAsset, NSString, NSData, NSURL;
 
 @interface PLItem : NSObject {
     NSString *_temporaryFileName;
@@ -11,6 +11,7 @@
 
 @property(readonly) NSURL * URL;
 @property(readonly) BOOL allowsRotation;
+@property(readonly) PLManagedAsset * asset;
 @property(readonly) NSData * imageData;
 @property(readonly) int itemType;
 @property(copy) NSString * title;

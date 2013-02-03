@@ -48,6 +48,7 @@
 - (void)_handleDownloadsChanged:(void*)arg1;
 - (void)_handleDownloadsRemoved:(void*)arg1;
 - (void)_handleMessage:(void*)arg1 fromServerConnection:(struct _xpc_connection_s { }*)arg2;
+- (void)_handleReply:(void*)arg1 forDownloads:(id)arg2 message:(void*)arg3 isRetry:(BOOL)arg4 block:(id)arg5;
 - (id)_initSSDownloadManager;
 - (void)_insertDownloads:(id)arg1 before:(id)arg2 after:(id)arg3 completionBlock:(id)arg4;
 - (void)_loadDownloadKindsUsingNetwork;

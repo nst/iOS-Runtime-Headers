@@ -89,6 +89,7 @@
 - (id)CDVInitWithDirtyString:(id)arg1;
 - (BOOL)CDVIsEqualToURL:(id)arg1;
 - (id)CDVPassword;
+- (id)CDVRawLastPathComponent;
 - (id)CDVRawPath;
 - (id)CDVServerURL;
 - (id)CDVURLByDeletingLastPathComponent;
@@ -226,6 +227,8 @@
 - (id)initWithString:(id)arg1 relativeToURL:(id)arg2;
 - (id)initWithString:(id)arg1;
 - (id)initWithXPCEncoding:(void*)arg1;
+- (BOOL)isAMOSCommittedIdentifier;
+- (BOOL)isAMOSIdentifier;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToDAVURL:(id)arg1;
 - (BOOL)isEqualToURL:(id)arg1;

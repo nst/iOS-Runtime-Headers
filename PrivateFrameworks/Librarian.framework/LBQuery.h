@@ -38,6 +38,7 @@
     struct dispatch_source_s { } *_notifyTimer;
     struct __LBItemUpdateObserver { } *_observer;
     NSPredicate *_predicate;
+    int _previousQueryState;
     NSString *_query;
     int _queryState;
     NSMutableIndexSet *_removalSet;
@@ -54,7 +55,6 @@
     NSMutableDictionary *_toBeReplaced;
     NSArray *_values;
     bool_pendingChanges;
-    bool_pendingNote;
     bool_ubiquitousGatherComplete;
 }
 
@@ -68,7 +68,6 @@
 - (void)_postNote:(struct __CFString { }*)arg1;
 - (void)_processChanges;
 - (void)_processUpdates;
-- (void)_real_dealloc;
 - (void)_runQuery;
 - (void)_stop;
 - (void)_willChange:(unsigned int)arg1 inSet:(id)arg2;
@@ -85,7 +84,6 @@
 - (void)disableUpdates;
 - (void)enableUpdates;
 - (unsigned char)executeWithOptions:(unsigned long)arg1;
-- (void)finalize;
 - (int)indexOfResult:(const void*)arg1;
 - (id)initWithQuery:(id)arg1 values:(id)arg2 sortingAttributes:(id)arg3 items:(struct __CFArray { }*)arg4;
 - (void)postNote:(struct __CFString { }*)arg1;
@@ -99,6 +97,7 @@
 - (void)setCreateValueFunction:(int (*)())arg1 withContext:(void*)arg2 callbacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
 - (void)setSearchScope:(id)arg1 withOptions:(unsigned long)arg2;
 - (void)setSortComparator:(int (*)())arg1 withContext:(void*)arg2;
+- (void)startObserver;
 - (void)stop;
 - (void)updateQueryResultForURL:(id)arg1 info:(id)arg2 updateType:(int)arg3;
 - (id)valuesOfAttribute:(id)arg1;

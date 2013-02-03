@@ -16,7 +16,10 @@
 - (id)_createContentsAnimation;
 - (void)_fadeOut;
 - (void)_fadeOutDidFinish;
+- (void)_loadImagesWithImageSize:(struct CGSize { float x1; float x2; }*)arg1;
 - (void)dealloc;
+- (double)fadeInDuration;
+- (double)fadeOutDuration;
 - (void)focusDidEnd;
 - (id)init;
 - (id)nameForDarkImage;

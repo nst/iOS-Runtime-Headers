@@ -2,15 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <NSCacheDelegate>, NSLock;
+@class NSLock;
 
 @interface GEOCache : NSCache {
+    BOOL _caresAboutEvictions;
     void *_hotseatCache;
     NSLock *_hotseatLock;
     unsigned long long _hotseatTouch;
     unsigned int _minCapacity;
-    <NSCacheDelegate> *_proxiedDelegate;
-    BOOL _proxiedDelegateListens;
 }
 
 @property(readonly) unsigned int minCapacity;
@@ -19,7 +18,6 @@
 - (void)_enteredBackground:(id)arg1;
 - (void)cache:(id)arg1 willEvictObject:(id)arg2;
 - (void)dealloc;
-- (id)delegate;
 - (id)init;
 - (id)initWithMinCapacity:(unsigned int)arg1;
 - (unsigned int)minCapacity;
@@ -29,5 +27,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2 cost:(unsigned int)arg3;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
+- (void)willEvictObject:(id)arg1;
 
 @end

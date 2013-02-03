@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUTabBarController, ISOperation, SSRemoteNotificationClient, SUPlaceholderViewController, SULocationObserver, SUSectionsResponse, NSURL, NSString, UINavigationController;
+@class SUTabBarController, UINavigationController, ISOperation, SSRemoteNotificationClient, SUPlaceholderViewController, SULocationObserver, SUSectionsResponse, SUMediaPlayerViewController, NSURL, NSString;
 
 @interface SUClientApplicationController : SUClientController <SUTabBarControllerDelegate> {
+    SUMediaPlayerViewController *_activeMediaPlayer;
     SUPlaceholderViewController *_fetchSectionsPlaceholder;
     int _ignoreDownloadQueueChangeCount;
     SUSectionsResponse *_lastBackgroundSectionsResponse;
@@ -12,12 +13,14 @@
     NSURL *_launchURL;
     ISOperation *_loadSectionsOperation;
     SULocationObserver *_locationObserver;
+    NSString *_preMediaDefaultPNG;
     BOOL _reloadForStorefrontChangeAfterAccountSetup;
     BOOL _reloadSectionsOnNextLaunch;
     SSRemoteNotificationClient *_remoteNotificationClient;
     SUTabBarController *_tabBarController;
 }
 
+@property(getter=_activeMediaPlayer,setter=_setActiveMediaPlayer:,retain) SUMediaPlayerViewController * _activeMediaPlayer;
 @property(readonly) NSString * defaultPNGNameForSuspend;
 @property(getter=isIgnoringDownloadQueueChanges,readonly) BOOL ignoringDownloadQueueChanges;
 @property(readonly) NSURL * launchURL;
@@ -31,6 +34,7 @@
 
 - (void)_accountControllerDisappearedNotification:(id)arg1;
 - (id)_accountViewController;
+- (id)_activeMediaPlayer;
 - (void)_beginObservingLocation;
 - (void)_cancelLoadSectionsOperation;
 - (void)_cancelSectionFetchPlaceholder;
@@ -48,10 +52,12 @@
 - (BOOL)_reloadForStorefrontChange;
 - (void)_reloadWithSectionsResponse:(id)arg1;
 - (void)_remoteNotificationsAvailableNotification:(id)arg1;
+- (void)_restorePreMediaPlayerSettings;
 - (void)_restrictionsChangedNotification:(id)arg1;
 - (id)_resumableViewController;
 - (void)_retrySectionsAfterNetworkTransition;
 - (void)_selectFooterSectionNotification:(id)arg1;
+- (void)_setActiveMediaPlayer:(id)arg1;
 - (void)_setupTabBarController;
 - (BOOL)_showWildcatAccountViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)_storeFrontChangedNotification:(id)arg1;

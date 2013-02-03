@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSDictionary, NSData, NSString;
+@class NSData, NSString;
 
 @interface FTProfileMessage : FTMessage <NSCopying> {
     NSString *_authToken;
     NSString *_profileID;
     NSData *_pushToken;
-    NSDictionary *_responseAlert;
 }
 
 @property(copy) NSString * authToken;
 @property(copy) NSString * profileID;
 @property(copy) NSData * pushToken;
-@property(copy) NSDictionary * responseAlertInfo;
 
 - (id)additionalMessageHeaders;
 - (id)additionalMessageHeadersForOutgoingPush;
@@ -27,12 +25,10 @@
 - (id)init;
 - (id)profileID;
 - (id)pushToken;
-- (id)responseAlertInfo;
 - (int)responseCommand;
 - (void)setAuthToken:(id)arg1;
 - (void)setProfileID:(id)arg1;
 - (void)setPushToken:(id)arg1;
-- (void)setResponseAlertInfo:(id)arg1;
 - (BOOL)wantsBagKey;
 - (BOOL)wantsBinaryPush;
 - (BOOL)wantsCompressedBody;

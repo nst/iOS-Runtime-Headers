@@ -29,7 +29,7 @@
     struct __CFSet { } *_deleteTable;
     NSString *_externalDataLinksDirectory;
     NSString *_externalDataReferencesDirectory;
-    NSMutableArray *_externalDataReferencesToDelete;
+    NSMutableSet *_externalDataReferencesToDelete;
     NSMutableArray *_externalDataReferencesToSave;
     NSSQLEntity *_lastEntity;
     int _lazyFaultDebugLevel;
@@ -47,6 +47,7 @@
 
 + (BOOL)SQLGenerationV1Default;
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
++ (id)_figureOutWhereExternalReferencesEndedUpRelativeTo:(id)arg1;
 + (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id*)arg5;
 + (BOOL)coloredLoggingDefault;
 + (int)debugDefault;

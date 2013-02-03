@@ -36,6 +36,8 @@
 @property(getter=isClosedCaptionDisplayEnabled) BOOL closedCaptionDisplayEnabled;
 @property(readonly) AVPlayerItem * currentItem;
 @property(readonly) NSError * error;
+@property(readonly) BOOL isPlaybackQueueTransactionActive;
+@property(readonly) NSArray * items;
 @property(copy) id playbackQueueCommitHandler;
 @property(readonly) AVAudioSessionMediaPlayerOnly * playerAVAudioSession;
 @property float rate;
@@ -70,6 +72,8 @@
 - (void)insertItem:(id)arg1 afterItem:(id)arg2;
 - (BOOL)isAirPlayVideoActive;
 - (BOOL)isClosedCaptionDisplayEnabled;
+- (BOOL)isPlaybackQueueTransactionActive;
+- (id)items;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pause;
 - (void)play;

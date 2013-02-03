@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSNumber, PFUbiquitySaveSnapshot, NSString, PFUbiquityLocation, NSMutableDictionary;
+@class NSNumber, PFUbiquityKnowledgeVector, NSString, PFUbiquitySaveSnapshot, PFUbiquityLocation, NSMutableDictionary;
 
 @interface PFUbiquityTransactionLog : NSObject {
     NSMutableDictionary *_contents;
@@ -10,6 +10,7 @@
     BOOL _inPermanentLocation;
     BOOL _inStagingLocation;
     BOOL _inTemporaryLocation;
+    PFUbiquityKnowledgeVector *_knowledgeVector;
     PFUbiquitySaveSnapshot *_saveSnapshot;
     PFUbiquityLocation *_stagingTransactionLogLocation;
     PFUbiquityLocation *_temporaryTransactionLogLocation;
@@ -25,6 +26,7 @@
 @property(readonly) BOOL inPermanentLocation;
 @property(readonly) BOOL inStagingLocation;
 @property(readonly) BOOL inTemporaryLocation;
+@property(readonly) PFUbiquityKnowledgeVector * knowledgeVector;
 @property(readonly) NSString * modelVersionHash;
 @property(readonly) PFUbiquitySaveSnapshot * saveSnapshot;
 @property(readonly) PFUbiquityLocation * stagingTransactionLogLocation;
@@ -56,9 +58,11 @@
 - (BOOL)inPermanentLocation;
 - (BOOL)inStagingLocation;
 - (BOOL)inTemporaryLocation;
+- (id)init;
 - (id)initWithStoreName:(id)arg1 andSaveSnapshot:(id)arg2;
 - (id)initWithTransactionLogLocation:(id)arg1;
 - (id)initWithTransactionLogURL:(id)arg1 andUbiquityRootLocation:(id)arg2;
+- (id)knowledgeVector;
 - (BOOL)loadComparisonMetadataWithError:(id*)arg1;
 - (BOOL)loadDeletedObjectsDataWithError:(id*)arg1;
 - (BOOL)loadImportMetadataWithError:(id*)arg1;

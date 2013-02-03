@@ -61,6 +61,7 @@
 - (id)_geniusButtonImage:(unsigned int)arg1;
 - (void)_handleGeniusButtonClick;
 - (void)_initializeControls;
+- (void)_isGeniusEnabledDidChangeNotification:(id)arg1;
 - (void)_mailButton:(id)arg1;
 - (id)_mailButtonImage;
 - (void)_playbackSpeedButton:(id)arg1;

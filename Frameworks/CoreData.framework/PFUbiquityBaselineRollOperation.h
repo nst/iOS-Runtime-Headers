@@ -2,27 +2,18 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectModel, NSString, PFUbiquityLocation;
+@class NSObject<PFUbiquityBaselineRollOperationDelegate>;
 
-@interface PFUbiquityBaselineRollOperation : NSOperation {
-    NSString *_localPeerID;
-    NSManagedObjectModel *_model;
-    NSString *_storeName;
-    PFUbiquityLocation *_ubiquityRootLocation;
+@interface PFUbiquityBaselineRollOperation : PFUbiquityBaselineOperation {
 }
 
-@property(readonly) NSString * localPeerID;
-@property(readonly) NSManagedObjectModel * model;
-@property(readonly) NSString * storeName;
-@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
+@property NSObject<PFUbiquityBaselineRollOperationDelegate> * delegate;
 
-- (void)dealloc;
-- (id)initWithStore:(id)arg1 andLocalPeerID:(id)arg2;
+- (id)delegate;
+- (BOOL)haveConsistentStateForBaselineRoll;
 - (BOOL)isEqual:(id)arg1;
-- (id)localPeerID;
 - (void)main;
-- (id)model;
-- (id)storeName;
-- (id)ubiquityRootLocation;
+- (BOOL)rollBaselineWithError:(id*)arg1;
+- (void)setDelegate:(id)arg1;
 
 @end

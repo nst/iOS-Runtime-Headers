@@ -46,6 +46,7 @@
 - (id)_assets;
 - (id)assets;
 - (struct NSObject { Class x1; }*)backingAlbum;
+- (void)batchFetchAssets:(id)arg1;
 - (id)cachedIndexMapState;
 - (BOOL)canPerformEditOperation:(int)arg1;
 - (unsigned int)count;

@@ -130,8 +130,11 @@
 - (id)bannerWebArchiveURL;
 - (id)cancelButtonForPurchaseDialog;
 - (id)cancelLabelForExitDialog;
+- (void)clearParameters;
+- (void)clearTrackingURLs;
 - (float)confirmedClickTimeInterval;
 - (id)continueLabelForExitDialog;
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

@@ -9,9 +9,10 @@
 
 @property(readonly) float bubbleIndentationDuringEditMode;
 @property(readonly) float contactPhotoBorderThickness;
+@property(readonly) float contactPhotoCornerRadius;
 @property(readonly) float contactPhotoInsideMargin;
 @property(readonly) float contactPhotoOutsideMargin;
-@property(readonly) float contactPhotoSize;
+@property(readonly) struct CGSize { float width; float height; } contactPhotoSize;
 @property(readonly) unsigned int defaultConversationSummaryMessageCount;
 @property(readonly) unsigned int defaultConversationViewingMessageCount;
 @property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } entryFieldBackgroundStretchSpecs;
@@ -76,9 +77,10 @@
 - (BOOL)centersEditToolbarButtons;
 - (float)collapsedRecipientListLeftPadding;
 - (float)contactPhotoBorderThickness;
+- (float)contactPhotoCornerRadius;
 - (float)contactPhotoInsideMargin;
 - (float)contactPhotoOutsideMargin;
-- (float)contactPhotoSize;
+- (struct CGSize { float x1; float x2; })contactPhotoSize;
 - (unsigned int)conversationCacheSize;
 - (float)conversationListRowHeight;
 - (unsigned int)defaultConversationSummaryMessageCount;

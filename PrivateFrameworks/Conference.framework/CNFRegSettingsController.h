@@ -117,7 +117,6 @@
 - (void)reloadCallerIdValues;
 - (void)returnKeyPressed:(id)arg1;
 - (void)setAlertHandler:(id)arg1;
-- (void)setCallerId:(id)arg1 animated:(BOOL)arg2;
 - (void)setCurrentCallerIdValue:(id)arg1;
 - (void)setFaceTimeEnabled:(id)arg1 specifier:(id)arg2 animated:(BOOL)arg3;
 - (void)setFaceTimeEnabled:(id)arg1 specifier:(id)arg2;

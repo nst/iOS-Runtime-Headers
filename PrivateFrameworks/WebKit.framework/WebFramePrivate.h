@@ -229,7 +229,7 @@
             boolm_isExecutingJavaScriptFormAction; 
             boolm_didCallImplicitClose; 
             boolm_wasUnloadEventEmitted; 
-            boolm_pageDismissalEventBeingDispatched; 
+            int m_pageDismissalEventBeingDispatched; 
             boolm_isComplete; 
             boolm_isLoadingMainResource; 
             struct RefPtr<WebCore::SerializedScriptValue> { 

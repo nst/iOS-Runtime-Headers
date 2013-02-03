@@ -21,6 +21,7 @@
 - (id)_uniqueIdentifier;
 - (void)addSize:(int)arg1;
 - (void)clearSizes;
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

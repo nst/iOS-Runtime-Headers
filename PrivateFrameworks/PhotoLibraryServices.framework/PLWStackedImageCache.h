@@ -10,20 +10,22 @@
     PLFixedSizeLRUCache *_stackedImagesCache;
 }
 
++ (id)_bakedStackedImageFilenameForWithKey:(id)arg1;
++ (id)_pathToBakedCachedStackedImageWithKey:(id)arg1;
 + (id)absolutePathToCachedStackedImagesDirectory;
 + (id)absolutePathToCachesDirectory;
++ (void)preheatStackedImageWithKey:(id)arg1;
 + (id)sharedInstance;
 
 - (BOOL)KVOChange:(id)arg1 affectsStackedImageForAlbum:(struct NSObject { Class x1; }*)arg2;
-- (id)_bakedStackedImageFilenameForWithKey:(id)arg1;
 - (BOOL)_createBaseDirectoryForStackedImagesCache;
-- (id)_pathToBakedCachedStackedImageWithKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)invalidateAll;
 - (void)invalidateEntryForKey:(id)arg1;
-- (void)prefetchStackedImagesWithKey1:(id)arg1 key2:(id)arg2 key3:(id)arg3 key4:(id)arg4;
+- (void)prefetchStackedImagesWithKeys:(id)arg1;
 - (void)removeEntryForKey:(id)arg1;
+- (void)setInMemoryStackedImage:(id)arg1 forKey:(id)arg2 options:(id)arg3;
 - (void)setStackedImage:(id)arg1 forKey:(id)arg2 options:(id)arg3;
 - (id)stackedImageWithKey:(id)arg1 options:(id*)arg2;
 

@@ -5,7 +5,7 @@
 @class <SCROServerDelegate>, NSLock;
 
 @interface SCROServer : NSObject {
-    int _clientCount;
+    long _clientCount;
     NSLock *_contentLock;
     unsigned int _deathPort;
     struct __CFRunLoopSource { } *_deathSource;

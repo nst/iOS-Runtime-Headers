@@ -30,6 +30,7 @@
 - (void)dealloc;
 - (void)didStartForSession:(id)arg1;
 - (void)didStopForSession:(id)arg1 error:(id)arg2;
+- (id)init;
 - (id)initWithLayer:(id)arg1;
 - (id)initWithSession:(id)arg1;
 - (BOOL)isChromaNoiseReductionEnabled;

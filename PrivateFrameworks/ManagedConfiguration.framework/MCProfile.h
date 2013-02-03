@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSString, NSData, NSDate, NSMutableArray, NSDictionary;
+@class NSArray, NSString, NSData, NSDate, NSDictionary;
 
 @interface MCProfile : NSObject {
     NSString *_UUID;
@@ -21,7 +21,7 @@
     NSData *_profileData;
     NSString *_profileDescription;
     NSString *_removalPasscode;
-    NSMutableArray *_signerCertificates;
+    NSArray *_signerCertificates;
     struct dispatch_queue_s { } *_signerEvaluationQueue;
     BOOL _signerHasBeenEvaluated;
     NSString *_signerSummary;

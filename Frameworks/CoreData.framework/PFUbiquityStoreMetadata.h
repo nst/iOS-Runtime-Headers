@@ -9,6 +9,7 @@
 
 @property(retain) NSString * modelVersionHashString;
 @property(retain) NSSet * peerStates;
+@property(retain) NSSet * primaryKeyRanges;
 @property(retain) NSString * storeIdentifier;
 @property(retain) NSDictionary * storeOptions;
 @property(retain) NSData * storeOptionsBinaryPlistData;
@@ -31,8 +32,8 @@
 + (BOOL)isBaselineRootURL:(id)arg1;
 + (id)metadataForStoreWithName:(id)arg1 inManagedObjectContext:(id)arg2;
 
+- (id)createKnowledgeVectorForBaseline;
 - (id)createPeerRangesForBaselineWithLocalPeerID:(id)arg1;
-- (id)createPeerStatesDictionaryForBaseline;
 - (id)initWithUbiquityName:(id)arg1 andUbiquityRootLocation:(id)arg2 insertIntoManagedObjectContext:(id)arg3;
 - (void)loadFromBaselineMetadata:(id)arg1 withLocalPeerID:(id)arg2;
 - (id)peerStateForPeerID:(id)arg1;

@@ -17,6 +17,7 @@
 - (void)reloadActionRows;
 - (void)setHideVideoIcon:(BOOL)arg1;
 - (BOOL)shouldDisplayWhenEmpty;
+- (id)viewControllerContextForActionRow:(id)arg1;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
 
 @end

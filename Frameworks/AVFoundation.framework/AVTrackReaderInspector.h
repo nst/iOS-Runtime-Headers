@@ -6,7 +6,7 @@
 
 @interface AVTrackReaderInspector : AVAssetTrackInspector {
     struct OpaqueFigFormatReader { } *_formatReader;
-    unsigned int _mediaType;
+    unsigned long _mediaType;
     int _trackID;
     struct OpaqueFigTrackReader { } *_trackReader;
     AVWeakReference *_weakReferenceToAsset;

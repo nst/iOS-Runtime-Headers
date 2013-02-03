@@ -27,7 +27,6 @@
 - (BOOL)_canDisplayItemWithIdentifier:(id)arg1;
 - (id)_copyTabBarOrdering;
 - (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
-- (void)_delayedPopViewController:(id)arg1;
 - (void)_fixMoreListNavigationBar;
 - (id)_navigationControllerForIdentifier:(id)arg1 outIndex:(unsigned int*)arg2;
 - (BOOL)_pushContextForSpecifier:(id)arg1 unlessMatchesFinalIdentifier:(id)arg2 animated:(BOOL)arg3;
@@ -36,7 +35,7 @@
 - (void)_setNavigationControllerDelegates:(id)arg1;
 - (void)_setSelectedViewController:(id)arg1;
 - (BOOL)_shouldPushContextDuringSwitch:(id)arg1;
-- (void)_switchToContextBehindCurrentController:(id)arg1 withRootControllerIdentifier:(id)arg2;
+- (void)_switchToContextBehindCurrentController:(id)arg1 withRootControllerIdentifier:(id)arg2 withPlaybackDataSource:(id)arg3;
 - (void)_updateControllersAvailable;
 - (void)_updateViewControllersModalContext;
 - (BOOL)allowsSearch;
@@ -61,6 +60,7 @@
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (void)switchToAlbumContextForSpecifier:(id)arg1 behindTopController:(BOOL)arg2;
 - (void)switchToContext:(id)arg1 withRootControllerIdentifier:(id)arg2;
+- (void)switchToPlaylistContextForSpecifier:(id)arg1 behindTopController:(BOOL)arg2 withPlaybackDataSource:(id)arg3;
 - (void)switchToPlaylistContextForSpecifier:(id)arg1 behindTopController:(BOOL)arg2;
 - (void)switchToShortcutIdentifier:(id)arg1;
 - (void)tabBar:(id)arg1 willEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;

@@ -30,6 +30,7 @@
     unsigned int _indexInQueueFeeder;
     BOOL _isAssetLoaded;
     MPAVController *_player;
+    float _soundCheckVolumeNormalization;
     unsigned int _type;
     NSArray *_urlTimeMarkers;
 }
@@ -79,6 +80,7 @@
 @property(readonly) NSURL * podcastURL;
 @property(readonly) struct CGSize { float x1; float x2; } presentationSize;
 @property(readonly) BOOL requiresExternalProtection;
+@property float soundCheckVolumeNormalization;
 @property(readonly) int status;
 @property(getter=isStreamable,readonly) BOOL streamable;
 @property(readonly) double timeOfSeekableEnd;
@@ -111,6 +113,7 @@
 - (BOOL)allowAutoChangingScaleModeToFill;
 - (id)alternateTracks;
 - (unsigned int)alternatesCountForTypes:(unsigned int)arg1;
+- (void)applyVolumeNormalizationForQueuedItems:(id)arg1;
 - (id)artist;
 - (id)artworkImageData;
 - (id)artworkMIMEType;
@@ -156,6 +159,7 @@
 - (BOOL)isPlaceholderForItem:(id)arg1;
 - (BOOL)isStreamable;
 - (BOOL)isSupportedDefaultPlaybackSpeed:(unsigned int)arg1;
+- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)loadAssetAndPlayerItem;
 - (id)localeForAssetTrack:(id)arg1;
 - (id)localizedPositionInPlaylistString;
@@ -195,6 +199,7 @@
 - (void)setPlaybackStoppedTime:(double)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setRating:(float)arg1;
+- (void)setSoundCheckVolumeNormalization:(float)arg1;
 - (void)setSubtitleTrackID:(unsigned int)arg1;
 - (void)setUrlTimeMarkers:(id)arg1;
 - (void)setUserAdvancedDuringPlayback:(BOOL)arg1;
@@ -202,6 +207,7 @@
 - (void)setUserSkippedPlayback:(BOOL)arg1;
 - (void)setVideoID:(id)arg1;
 - (void)setupPlaybackInfo;
+- (float)soundCheckVolumeNormalization;
 - (int)status;
 - (double)timeOfSeekableEnd;
 - (double)timeOfSeekableStart;

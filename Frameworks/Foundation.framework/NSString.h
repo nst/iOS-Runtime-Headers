@@ -146,6 +146,7 @@
 - (id)MCSafeFilenameHash;
 - (id)MCSafeFilenameHashWithExtension:(id)arg1;
 - (id)MLSortString;
+- (id)MPMediaLibraryDataProviderSystemML3CoercedString;
 - (id)MSHexData;
 - (unsigned long long)MSUniqueID;
 - (id)SHA1Hash;
@@ -177,7 +178,6 @@
 - (struct CGSize { float x1; float x2; })__web_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(struct __GSFont { }*)arg2 ellipsis:(int)arg3 alignment:(int)arg4 letterSpacing:(float)arg5 lineSpacing:(float)arg6 includeEmoji:(BOOL)arg7 truncationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg8 measureOnly:(BOOL)arg9;
 - (BOOL)_appearsToBeEmail;
 - (BOOL)_appearsToBePhoneNumber;
-- (id)_asUnicodeHex;
 - (BOOL)_attendeeAppearsToBeAnInitial;
 - (id)_attendeeTrimCommasSpacesQuotes;
 - (int)_brailleTableCompare:(id)arg1;
@@ -244,8 +244,6 @@
 - (id)_stringByTrimmingCharactersInCFCharacterSet:(struct __CFCharacterSet { }*)arg1;
 - (id)_stringByTrimmingLastCharacter;
 - (id)_stringRepresentation;
-- (id)_stringWithPublicEmojiCodePoints;
-- (id)_stringWithSoftBankEmojiCodePoints;
 - (id)_uikit_stringByTrimmingWhitespaceAndNewlines;
 - (id)_uikit_stringWithWritingDirection:(int)arg1 asOverride:(BOOL)arg2;
 - (id)_web_HTTPStyleLanguageCode;
@@ -692,6 +690,7 @@
 - (id)stringByResolvingSymlinksInPath;
 - (id)stringByStandardizingPath;
 - (id)stringByStandardizingWhitespace;
+- (id)stringByStrippingControlCharacters;
 - (id)stringByStrippingControlCharacters;
 - (id)stringByStrippingEmojiCharacters;
 - (id)stringByStrippingLeadingAndTrailingWhitespace;

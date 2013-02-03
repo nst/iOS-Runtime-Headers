@@ -13,6 +13,7 @@
 + (BOOL)enabled;
 + (id)sharedInstance;
 
+- (void)cacheView:(id)arg1 forKey:(id)arg2 fromLayout:(id)arg3;
 - (struct CGImage { }*)cachedImageForKey:(id)arg1;
 - (void)commitTransaction;
 - (void)dealloc;

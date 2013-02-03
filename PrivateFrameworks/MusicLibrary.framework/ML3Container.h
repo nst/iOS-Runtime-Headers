@@ -30,7 +30,9 @@
 + (id)joinClauseForProperty:(id)arg1;
 + (id)nextFilepathForPlaylistType:(int)arg1 withPersistentID:(unsigned long long)arg2 inLibrary:(id)arg3;
 + (id)persistentIDColumnForTable:(id)arg1;
++ (void)populateDynamicContainersInLibrary:(id)arg1 createBuiltinSmartPlaylists:(BOOL)arg2;
 + (void)populateDynamicContainersInLibrary:(id)arg1;
++ (void)populateDynamicContainersWithTrackPersistentID:(id)arg1 inLibrary:(id)arg2 createBuiltinSmartPlaylists:(BOOL)arg3;
 + (void)populateDynamicContainersWithTrackPersistentID:(id)arg1 inLibrary:(id)arg2;
 + (void)populateSortOrdersOfPropertyValues:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 + (void)populateStaticItemsOfDynamicContainersOnHandle:(struct sqlite3 { }*)arg1;
@@ -41,7 +43,6 @@
 + (BOOL)smartCriteriaCanBeEvaluated:(id)arg1;
 
 - (void)_accessCurrentSwappedPersisentIDsUsingBlock:(id)arg1;
-- (BOOL)_isDescendingForTrackOrderProperty:(id)arg1 reverseOrderProperty:(id)arg2;
 - (BOOL)_setSwappedItemPersistentIDs:(const long long*)arg1 size:(int)arg2 notify:(BOOL)arg3;
 - (BOOL)_setSwappedItemPersistentIDs:(const long long*)arg1 size:(int)arg2;
 - (BOOL)addTrackWithPersistentID:(long long)arg1;

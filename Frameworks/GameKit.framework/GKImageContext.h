@@ -18,13 +18,18 @@
 @property(readonly) float scale;
 @property struct CGSize { float x1; float x2; } size;
 
++ (id)drawWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 opaque:(BOOL)arg3 usingBlock:(id)arg4;
++ (id)imageFromRawPixelsAtURL:(id)arg1;
+
 - (struct CGContext { }*)CGContext;
 - (void)dealloc;
 - (id)image;
 - (id)initMaskContextWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 opaque:(BOOL)arg3 data:(void*)arg4;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 opaque:(BOOL)arg3;
 - (float)scale;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })size;
+- (BOOL)writeRawPixelsToURL:(id)arg1 error:(id*)arg2;
 
 @end

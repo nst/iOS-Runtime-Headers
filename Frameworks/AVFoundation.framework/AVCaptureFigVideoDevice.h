@@ -50,6 +50,8 @@
     BOOL _manualExposureSupportEnabled;
     struct OpaqueFigRecorder { } *_recorderForTorchApps;
     float _saturation;
+    struct dispatch_source_s { } *_torchAppsKillTimer;
+    struct dispatch_queue_s { } *_torchAppsSerialQueue;
     BOOL _torchAvailable;
     float _torchLevel;
     int _torchMode;
@@ -65,6 +67,7 @@
 - (id)_applyOverridesToCaptureOptions:(id)arg1;
 - (void)_applyPendingPropertiesToRecorder;
 - (struct OpaqueFigRecorder { }*)_createFigRecorderForTorchApps;
+- (struct dispatch_source_s { }*)_createTorchAppsKillTimer;
 - (BOOL)_faceDetectionDrivenImageProcessingEnabled;
 - (int)_flashMode;
 - (float)_floatValueForRecorderProperty:(struct __CFString { }*)arg1;
@@ -91,6 +94,7 @@
 - (BOOL)_setWhiteBalanceTemperature:(float)arg1;
 - (BOOL)_subjectAreaChangeMonitoringEnabled;
 - (void)_teardownFigRecorderForTorchApps;
+- (void)_teardownTorchAppsKillTimer;
 - (int)_torchMode;
 - (void)_updateFlashAndTorchAvailability;
 - (void)_updateImageControlMode;

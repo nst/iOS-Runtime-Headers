@@ -15,6 +15,8 @@
 + (id)assistantUIViewControllerWithParameters:(id)arg1;
 + (void)cancelAirPortAssistantController;
 + (BOOL)isUnconfiguredBaseStation:(id)arg1 productID:(char *)arg2 productFamily:(unsigned int*)arg3;
++ (BOOL)launchAUForDevice:(id)arg1 getAUFromAppStore:(BOOL)arg2;
++ (BOOL)launchAUForNetwork:(id)arg1 withMacAddress:(id)arg2 getAUFromAppStore:(BOOL)arg3;
 + (id)sharedInstance;
 + (id)unconfiguredBaseStationName:(unsigned char)arg1;
 + (id)uniqueBaseStationName:(id)arg1 withBssid:(id)arg2;

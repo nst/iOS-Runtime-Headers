@@ -40,6 +40,8 @@
 
 - (void)_addGroupMessage:(id)arg1;
 - (void)_cleanupMessages;
+- (id)_existingMessageForMessage:(id)arg1;
+- (id)_existingMessageWithIdentifier:(int)arg1;
 - (void)_postChangeUpdate:(BOOL)arg1;
 - (void)_refreshMoreToLoadFlag;
 - (void*)abRecord;

@@ -54,6 +54,7 @@
 - (void)_setShouldSetCookies:(BOOL)arg1;
 - (BOOL)_shouldSetCookies;
 - (void)_stopConnection;
+- (void)_stopIfCancelled;
 - (void)_updateProgress;
 - (BOOL)_validateContentLength:(long long)arg1 error:(id*)arg2;
 - (id)authenticationContext;
@@ -65,7 +66,7 @@
 - (void)connectionDidFinishLoading:(id)arg1;
 - (id)dataProvider;
 - (void)dealloc;
-- (BOOL)handleRedirectFromDataProvider:(id)arg1;
+- (BOOL)handleRedirectFromDataProvider:(id)arg1 error:(id*)arg2;
 - (void)handleResponse:(id)arg1;
 - (id)init;
 - (id)newRequestWithURL:(id)arg1;

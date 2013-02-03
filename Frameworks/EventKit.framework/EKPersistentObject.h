@@ -9,8 +9,9 @@
     NSMutableSet *_dirtyProperties;
     EKEventStore *_eventStore;
     unsigned int _flags;
-    NSMutableDictionary *_loadedProperties;
+    struct __CFDictionary { } *_loadedProperties;
     id _objectID;
+    NSMutableDictionary *_referencers;
 }
 
 @property(retain) NSMutableDictionary * committedProperties;
@@ -21,7 +22,10 @@
 
 - (void)_addDirtyProperty:(id)arg1;
 - (void)_addObjectCore:(id)arg1 toValues:(id)arg2 relation:(id)arg3;
+- (void)_addReference:(id)arg1 forKey:(id)arg2;
 - (BOOL)_areDefaultPropertiesLoaded;
+- (void)_clearReferences;
+- (void)_clearWeakRelations;
 - (BOOL)_isPendingDelete;
 - (BOOL)_isPendingInsert;
 - (BOOL)_isPendingUpdate;
@@ -29,11 +33,14 @@
 - (void)_loadDefaultPropertiesIfNeeded;
 - (BOOL)_loadRelationForKey:(id)arg1 value:(id*)arg2;
 - (id)_loadStringValueForKey:(id)arg1;
+- (id)_loadedPropertyKeys;
 - (void)_primitiveSetValue:(id)arg1 forKey:(id)arg2 daemonSetter:(id)arg3;
 - (id)_primitiveValueForKey:(id)arg1 loader:(id)arg2;
 - (id)_propertyForKey:(id)arg1;
 - (id)_relationForKey:(id)arg1;
+- (void)_releaseLoadedProperties;
 - (void)_removeObjectCore:(id)arg1 fromValues:(id)arg2 relation:(id)arg3;
+- (void)_removeReference:(id)arg1 forKey:(id)arg2;
 - (void)_setDefaultPropertiesLoaded:(BOOL)arg1;
 - (void)_setEventStore:(id)arg1;
 - (void)_setObjectID:(id)arg1;
@@ -41,6 +48,7 @@
 - (void)_setPendingInsert:(BOOL)arg1;
 - (void)_setPendingUpdate:(BOOL)arg1;
 - (void)_setProperty:(id)arg1 forKey:(id)arg2;
+- (BOOL)_shouldRetainPropertyForKey:(id)arg1;
 - (void)changed;
 - (id)committedProperties;
 - (id)committedValueForKey:(id)arg1;

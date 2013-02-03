@@ -10,11 +10,13 @@
     BOOL _customSelected;
     NSString *_customString;
     int _selectedItem;
+    BOOL _shouldAllowAlarmsTriggeringAfterStartDate;
     <EKStyleProvider> *_styleProvider;
     BOOL _useAllDayAlarms;
 }
 
 @property <CalendarEventAlarmTableDelegate> * alarmTableDelegate;
+@property BOOL shouldAllowAlarmsTriggeringAfterStartDate;
 @property(retain) <EKStyleProvider> * styleProvider;
 @property BOOL useAllDayAlarms;
 
@@ -33,8 +35,10 @@
 - (void)setCustomSelected:(BOOL)arg1;
 - (void)setCustomString:(id)arg1;
 - (void)setPresetIdentifier:(int)arg1;
+- (void)setShouldAllowAlarmsTriggeringAfterStartDate:(BOOL)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (void)setUseAllDayAlarms:(BOOL)arg1;
+- (BOOL)shouldAllowAlarmsTriggeringAfterStartDate;
 - (id)styleProvider;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

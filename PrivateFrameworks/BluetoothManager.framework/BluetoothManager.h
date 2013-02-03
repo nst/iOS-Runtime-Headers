@@ -16,7 +16,6 @@
     BOOL _scanningEnabled;
     BOOL _scanningInProgress;
     unsigned int _scanningServiceMask;
-    NSMutableDictionary *_seekingInProgressDict;
     struct BTSessionImpl { } *_session;
 }
 
@@ -36,10 +35,8 @@
 - (void)_removeDevice:(id)arg1;
 - (void)_restartScan;
 - (void)_scanForServices:(unsigned int)arg1 withMode:(int)arg2;
-- (void)_sendSeekStart:(id)arg1 forDevice:(id)arg2;
 - (void)_setScanState:(int)arg1;
 - (BOOL)_setup:(struct BTSessionImpl { }*)arg1;
-- (void)_stopSeeking:(id)arg1 forDevice:(id)arg2;
 - (void)acceptSSP:(int)arg1 forDevice:(id)arg2;
 - (id)addDeviceIfNeeded:(struct BTDeviceImpl { }*)arg1;
 - (BOOL)audioConnected;
@@ -74,8 +71,6 @@
 - (void)resetDeviceScanning;
 - (void)scanForConnectableDevices:(unsigned int)arg1;
 - (void)scanForServices:(unsigned int)arg1;
-- (void)sendAllContactsToDevice:(id)arg1;
-- (void)sendContact:(id)arg1 toDevice:(id)arg2;
 - (void)setAudioConnected:(BOOL)arg1;
 - (void)setConnectable:(BOOL)arg1;
 - (void)setDevicePairingEnabled:(BOOL)arg1;

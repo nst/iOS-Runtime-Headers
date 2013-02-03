@@ -28,6 +28,7 @@
 - (void)_assignOrderKeysUsingCount:(unsigned int)arg1;
 - (BOOL)_hasOrderKeys;
 - (BOOL)_isDeallocating;
+- (BOOL)_isIdenticalFault:(id)arg1;
 - (id)_newOrderKeys;
 - (unsigned int)_orderKeyForObject:(id)arg1;
 - (void)_populateOrderKeysUsingSnapshot:(id)arg1 orderKeys:(id)arg2 reorderedIndexes:(char **)arg3;

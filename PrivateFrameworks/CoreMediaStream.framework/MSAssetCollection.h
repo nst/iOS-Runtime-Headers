@@ -9,6 +9,7 @@
     NSArray *_derivedAssets;
     NSString *_fileName;
     MSAsset *_masterAsset;
+    BOOL _wasDeleted;
 }
 
 @property(retain) NSString * assetCollectionID;
@@ -16,6 +17,7 @@
 @property(retain) NSString * fileName;
 @property(retain) MSAsset * masterAsset;
 @property(readonly) NSData * masterAssetHash;
+@property BOOL wasDeleted;
 
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2;
@@ -35,5 +37,7 @@
 - (void)setDerivedAssets:(id)arg1;
 - (void)setFileName:(id)arg1;
 - (void)setMasterAsset:(id)arg1;
+- (void)setWasDeleted:(BOOL)arg1;
+- (BOOL)wasDeleted;
 
 @end

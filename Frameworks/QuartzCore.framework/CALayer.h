@@ -23,6 +23,8 @@
 @property BOOL acceptsLights;
 @property(copy) NSDictionary * actions;
 @property BOOL allowsDisplayCompositing;
+@property BOOL allowsEdgeAntialiasing;
+@property BOOL allowsGroupOpacity;
 @property BOOL allowsHitTesting;
 @property float ambientReflectance;
 @property struct CGPoint { float x; float y; } anchorPoint;
@@ -140,6 +142,8 @@
 - (void)addSublayer:(id)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })affineTransform;
 - (BOOL)allowsDisplayCompositing;
+- (BOOL)allowsEdgeAntialiasing;
+- (BOOL)allowsGroupOpacity;
 - (BOOL)allowsHitTesting;
 - (BOOL)allowsWeakReference;
 - (float)ambientReflectance;
@@ -275,6 +279,8 @@
 - (void)setActions:(id)arg1;
 - (void)setAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setAllowsDisplayCompositing:(BOOL)arg1;
+- (void)setAllowsEdgeAntialiasing:(BOOL)arg1;
+- (void)setAllowsGroupOpacity:(BOOL)arg1;
 - (void)setAllowsHitTesting:(BOOL)arg1;
 - (void)setAmbientReflectance:(float)arg1;
 - (void)setAnchorPoint:(struct CGPoint { float x1; float x2; })arg1;

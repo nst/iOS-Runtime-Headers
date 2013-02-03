@@ -8,11 +8,11 @@
     AVCaptureFileOutputInternal *_fileOutputInternal;
 }
 
-@property struct { long long value; int timescale; unsigned int flags; long long epoch; } maxRecordedDuration;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } maxRecordedDuration;
 @property long long maxRecordedFileSize;
 @property long long minFreeDiskSpaceLimit;
 @property(readonly) NSURL * outputFileURL;
-@property(readonly) struct { long long value; int timescale; unsigned int flags; long long epoch; } recordedDuration;
+@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } recordedDuration;
 @property(readonly) long long recordedFileSize;
 @property(getter=isRecording,readonly) BOOL recording;
 

@@ -4,7 +4,7 @@
 
 @class UIKBTree;
 
-@interface UIKBKeyView : UIView {
+@interface UIKBKeyView : UIView <UIKBCacheableView> {
     struct CGPoint { 
         float x; 
         float y; 
@@ -15,11 +15,13 @@
     int m_state;
 }
 
+@property(readonly) BOOL cacheDeferable;
 @property struct CGPoint { float x1; float x2; } drawOrigin;
 @property(readonly) UIKBTree * key;
 @property(readonly) UIKBTree * keyboard;
 @property(readonly) int state;
 
+- (BOOL)cacheDeferable;
 - (id)cacheKey;
 - (void)dealloc;
 - (void)displayLayer:(id)arg1;

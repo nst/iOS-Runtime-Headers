@@ -19,7 +19,7 @@
 - (void)detectDisplays;
 - (id)init;
 - (BOOL)isAutoDetectEnabled;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 - (void)stopDetectingDisplays;

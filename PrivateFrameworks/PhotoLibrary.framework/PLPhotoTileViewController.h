@@ -117,8 +117,7 @@
 + (struct CGSize { float x1; float x2; })tileSize;
 + (struct CGSize { float x1; float x2; })tvOutTileSize;
 
-- (void)_adjustScrollViewContentInsetWithContentSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)_adjustScrollViewVerticalContentOffset;
+- (void)_adjustScrollViewContentOffsetForInsets;
 - (void)_adjustZoomForEnteringMode:(BOOL)arg1;
 - (float)_calculateZoomScale:(BOOL)arg1 inView:(id)arg2;
 - (void)_centerImageInScrollView;
@@ -137,6 +136,7 @@
 - (void)_setPhoto:(id)arg1;
 - (void)_setupHDRBadge;
 - (void)_showHDRBadgeIfAppropriate;
+- (void)_updateContentInset;
 - (void)_updateGradientImageForOrientation:(int)arg1;
 - (void)_updateModelPhotoWithImage:(id)arg1;
 - (void)_updateZoomScalesForView:(id)arg1;
@@ -155,7 +155,6 @@
 - (BOOL)force1XCroppedImage;
 - (BOOL)forceNativeScreenScale;
 - (void)forceZoomingGesturesEnabled;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForImageAtDefaultScale;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gesturesEnabled;
 - (BOOL)hasFullSizeImage;

@@ -42,6 +42,7 @@
 - (void)loadImageForIdentifier:(id)arg1 imageBrush:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)loadRawImageForImageID:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)name;
+- (id)renderedImageWithImage:(id)arg1 imageBrush:(id)arg2 returnContext:(id*)arg3;
 - (id)renderedImageWithImage:(id)arg1 imageBrush:(id)arg2;
 - (void)setCache:(id)arg1;
 - (void)setDefaultImage:(id)arg1;

@@ -16,7 +16,9 @@
 @property(getter=_localValues,setter=_setLocalValues:,copy) NSDictionary * _localValues;
 @property(getter=_isManaged,readonly) BOOL _managed;
 @property(readonly) long long _persistentIdentifier;
+@property(readonly) BOOL exists;
 
++ (long long)_existsMessage;
 + (long long)_getExternalValuesMessage;
 + (long long)_getValueMessage;
 + (long long)_setExternalValuesMessage;
@@ -38,6 +40,7 @@
 - (void*)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
+- (BOOL)exists;
 - (void)getValues:(id*)arg1 forExternalProperties:(id*)arg2 count:(unsigned int)arg3;
 - (void)getValues:(id*)arg1 forProperties:(id*)arg2 count:(unsigned int)arg3;
 - (unsigned int)hash;

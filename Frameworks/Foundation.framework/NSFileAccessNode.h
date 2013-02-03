@@ -17,6 +17,8 @@
     NSFileAccessNode *_parent;
     id _presenterOrPresenters;
     id _provider;
+    NSFileAccessNode *_symbolicLinkDestination;
+    unsigned int _symbolicLinkReferenceCount;
 }
 
 - (void)addAccessClaim:(id)arg1;
@@ -36,6 +38,7 @@
 - (void)forEachDescendantPerformProcedure:(id)arg1;
 - (void)forEachPresenterOfContainedItemPerformProcedure:(id)arg1;
 - (void)forEachPresenterOfContainingFilePackagePerformProcedure:(id)arg1;
+- (void)forEachPresenterOfContainingItemPerformProcedure:(id)arg1;
 - (void)forEachPresenterOfItemOrContainedItemPerformProcedure:(id)arg1;
 - (void)forEachPresenterOfItemOrContainingItemPerformProcedure:(id)arg1;
 - (void)forEachPresenterOfItemPerformProcedure:(id)arg1;
@@ -47,6 +50,7 @@
 - (BOOL)itemIsItemAtLocation:(id)arg1;
 - (BOOL)itemIsSubarbitrable;
 - (id)itemProvider;
+- (id)pathExceptPrivate;
 - (id)pathFromAncestor:(id)arg1;
 - (id)pathToDescendantForFileURL:(id)arg1 componentRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (void)removeAccessClaim:(id)arg1;
@@ -57,6 +61,8 @@
 - (void)setChild:(id)arg1 forName:(id)arg2 normalizedName:(id)arg3;
 - (void)setParent:(id)arg1 name:(id)arg2;
 - (void)setProvider:(id)arg1;
+- (void)setSymbolicLinkDestination:(id)arg1;
+- (id)standardizedURL;
 - (id)url;
 
 @end

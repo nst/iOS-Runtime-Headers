@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, UIImageView, UIKeyboardEmoji;
+@class UIView, UIKeyboardEmojiImageView, UIKeyboardEmoji;
 
 @interface UIKeyboardEmojiView : UIControl {
     UIKeyboardEmoji *_emoji;
-    UIImageView *_imageView;
+    UIKeyboardEmojiImageView *_imageView;
     UIView *_popup;
 }
 
 @property(retain) UIKeyboardEmoji * emoji;
-@property(retain) UIImageView * imageView;
+@property(retain) UIKeyboardEmojiImageView * imageView;
 @property(retain) UIView * popup;
 
 + (id)emojiViewForEmoji:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;

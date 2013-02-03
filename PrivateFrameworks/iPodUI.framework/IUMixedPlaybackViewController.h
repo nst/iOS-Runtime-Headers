@@ -19,7 +19,6 @@
 @property BOOL nextPushWillZoomArtwork;
 
 - (void)_backOfAlbumTrackChangeNotification:(id)arg1;
-- (void)_delayedTearDown:(id)arg1;
 - (void)_exitToAlbumContext:(id)arg1 animated:(BOOL)arg2;
 - (void)_exitToPlaylistContext:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)_isExistingGeniusMixForDataSource:(id)arg1;

@@ -14,8 +14,12 @@
 - (id)_copyBootstrapURLs;
 - (id)_copyProductionBootstrapURLs;
 - (id)_copySandboxBootstrapURLs;
+- (id)_copyURLBagFromDiskCache;
+- (struct __CFString { }*)_diskCacheExpirationTimeKey;
+- (id)_diskCachePath;
 - (void)_loadConfigurationFromURLBag:(id)arg1;
 - (void)_loadURLBagFromURL:(id)arg1;
+- (void)_writeURLBagToDiskCache:(id)arg1;
 - (id)context;
 - (void)dealloc;
 - (id)init;

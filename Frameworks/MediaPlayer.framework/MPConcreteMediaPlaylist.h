@@ -28,6 +28,7 @@
 - (int)mediaTypes;
 - (void)moveItemFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2 completionBlock:(id)arg3;
 - (void)populateWithSeedItem:(id)arg1 completionBlock:(id)arg2;
+- (void)populateWithSeedItem:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2 completionBlock:(id)arg3;
 - (void)removeAllItems;
 - (void)removeItems:(id)arg1 atFilteredIndexes:(id)arg2 completionBlock:(id)arg3;
 - (id)representativeItem;

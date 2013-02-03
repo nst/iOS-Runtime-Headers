@@ -5,6 +5,7 @@
 @interface ASProtocol12_1 : ASProtocol2_5 {
 }
 
+- (BOOL)allowsReminderOnCompletedTasks;
 - (id)protocolVersion;
 - (BOOL)requiresExplicitlyFalseGetChanges;
 - (BOOL)sendAttendeeRole;

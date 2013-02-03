@@ -98,6 +98,7 @@
     BOOL m_shiftPreventAutoshift;
     BOOL m_shouldChargeKeys;
     BOOL m_shouldSetInputModeInNextRun;
+    BOOL m_shouldSkipCandidateGeneration;
     BOOL m_shouldSkipCandidateSelection;
     BOOL m_shouldUpdateCacheOnInputModesChange;
     BOOL m_showInputModeIndicator;
@@ -164,6 +165,8 @@
 + (void)markPerformance:(id)arg1;
 + (id)normalizedInputModesFromPreference;
 + (int)orientationForSize:(struct CGSize { float x1; float x2; })arg1;
++ (int)persistentDictationTargetZone;
++ (struct CGPoint { float x1; float x2; })persistentDictationWindowOffset;
 + (struct CGPoint { float x1; float x2; })persistentOffset;
 + (float)persistentSplitProgress;
 + (void)refreshRivenStateWithTraits:(id)arg1;
@@ -172,6 +175,8 @@
 + (BOOL)rivenPreference;
 + (BOOL)rivenTranslationPreference;
 + (void)setParentTestForProfiling:(id)arg1;
++ (void)setPersistentDictationTargetZone:(int)arg1;
++ (void)setPersistentDictationWindowOffset:(struct CGPoint { float x1; float x2; })arg1;
 + (void)setPersistentOffset:(struct CGPoint { float x1; float x2; })arg1;
 + (void)setPersistentSplitProgress:(float)arg1;
 + (id)sharedInstance;
@@ -368,7 +373,7 @@
 - (BOOL)isMinimized;
 - (BOOL)isShiftLocked;
 - (BOOL)isShifted;
-- (BOOL)isUsingMarsVoltaInsertionLayout;
+- (BOOL)isUsingDictationLayout;
 - (BOOL)isValidKeyInput:(id)arg1;
 - (void)keyActivated;
 - (void)keyDeactivated;
@@ -500,7 +505,6 @@
 - (BOOL)shouldSkipCandidateSelection;
 - (BOOL)shouldSkipCandidateSelectionForPopupVariantString:(id)arg1;
 - (BOOL)shouldSwitchInputMode:(id)arg1;
-- (void)showForwardDeleteKeyInfoAlertIfNeeded;
 - (void)showInformationalAlertIfNeededForReason:(int)arg1;
 - (BOOL)showInputModeIndicator;
 - (void)showInternationalKeyInfoAlertIfNeeded;
@@ -524,6 +528,7 @@
 - (void)testAutocorrectionPromptWithCorrection:(id)arg1;
 - (void)textChanged:(id)arg1;
 - (void)textDidChange:(id)arg1;
+- (void)textFrameChanged:(id)arg1;
 - (int)textInputChangingCount;
 - (id)textInputTraits;
 - (void)textWillChange:(id)arg1;

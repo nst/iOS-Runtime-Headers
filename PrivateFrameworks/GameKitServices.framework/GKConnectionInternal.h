@@ -25,6 +25,7 @@
         long __sig; 
         BOOL __opaque[40]; 
     NSMutableArray *_allowRelayPIDList;
+    id _awdMetricsCallback;
     } _cPreblobFetch;
     } _cPrepareThread;
     CDXClient *_cdxClient;
@@ -58,6 +59,7 @@
     } _xRelay;
 }
 
+@property id awdMetricsCallback;
 @property(retain) CDXClient * cdxClient;
 @property(retain) NSMutableDictionary * cdxSessions;
 @property(retain) NSMutableDictionary * pidToConnectTimeoutSource;
@@ -67,6 +69,7 @@
 - (void)CDXClientSession:(id)arg1 receivedData:(id)arg2 from:(int)arg3;
 - (void)addEvent:(struct { int x1; char *x2; int x3; unsigned int x4; }*)arg1 remotePeer:(unsigned int)arg2;
 - (struct dispatch_queue_s { }*)asyncWorkQueue;
+- (id)awdMetricsCallback;
 - (void)cancelConnectParticipant:(id)arg1;
 - (id)cdxClient;
 - (id)cdxSessions;
@@ -84,6 +87,7 @@
 - (unsigned int)gckPID;
 - (struct OpaqueGCKSession { }*)gckSession;
 - (void)getLocalConnectionDataWithCompletionHandler:(id)arg1;
+- (id)initWithParticipantID:(id)arg1 withOptions:(id)arg2;
 - (id)initWithParticipantID:(id)arg1;
 - (void)initiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
 - (void)internalInitiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
@@ -93,6 +97,7 @@
 - (id)networkStatisticsDictionaryForGCKStats:(void*)arg1;
 - (id)pidToConnectTimeoutSource;
 - (void)preRelease;
+- (void)setAwdMetricsCallback:(id)arg1;
 - (void)setCdxClient:(id)arg1;
 - (void)setCdxSessions:(id)arg1;
 - (void)setEventDelegate:(id)arg1;

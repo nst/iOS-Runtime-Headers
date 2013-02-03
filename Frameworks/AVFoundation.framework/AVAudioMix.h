@@ -8,7 +8,7 @@
     AVAudioMixInternal *_audioMix;
 }
 
-@property(copy,readonly) NSArray * inputParameters;
+@property(readonly) NSArray * inputParameters;
 
 - (id)_audioVolumeCurveForTrackID:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

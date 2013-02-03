@@ -9,6 +9,7 @@
     NSLock *_connLock;
     struct dispatch_queue_s { } *_connQueue;
     id _delegate;
+    unsigned long long _handleCounter;
     NSMutableArray *_inProgress;
     NSLock *_inProgressLock;
     int _suspendCount;

@@ -18,6 +18,7 @@
 - (void)_preflightCrossCheck;
 - (BOOL)_prepareForExecuteRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)_rawMetadata__;
+- (void)dealloc;
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (BOOL)load:(id*)arg1;
 - (BOOL)loadMetadata:(id*)arg1;

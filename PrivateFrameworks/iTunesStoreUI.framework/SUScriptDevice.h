@@ -15,6 +15,8 @@
 @property(readonly) NSArray * automaticDownloadMediaTypes;
 @property(readonly) NSString * capabilityNameEmail;
 @property(readonly) NSString * capabilityNameExplicitMedia;
+@property(readonly) NSString * capabilityNameHDVideo1080p;
+@property(readonly) NSString * capabilityNameHDVideo720p;
 @property(readonly) NSString * capabilityNameHDVideo;
 @property(readonly) NSString * capabilityNamePodcasts;
 @property(readonly) NSString * capabilityNameWiFi;
@@ -25,7 +27,11 @@
 @property(readonly) int freeSpaceEffortLevelPromptUser;
 @property(readonly) NSString * freeSpaceOptionEffortLevel;
 @property(readonly) int hardwareType;
+@property(readonly) int hardwareTypeIPadJ1;
+@property(readonly) int hardwareTypeIPadJ2;
+@property(readonly) int hardwareTypeIPadJ2a;
 @property(readonly) int hardwareTypeIPadK93;
+@property(readonly) int hardwareTypeIPadK93a;
 @property(readonly) int hardwareTypeIPadK94;
 @property(readonly) int hardwareTypeIPadK95;
 @property(readonly) int hardwareTypeIPhoneM68;
@@ -44,6 +50,12 @@
 @property(readonly) NSNumber * mainScreenScale;
 @property(readonly) int networkType2G;
 @property(readonly) int networkType3G;
+@property(readonly) int networkType4G;
+@property(readonly) int networkType5G;
+@property(readonly) int networkType6G;
+@property(readonly) int networkType7G;
+@property(readonly) int networkType8G;
+@property(readonly) int networkType9G;
 @property(readonly) int networkTypeNone;
 @property(readonly) int networkTypeWiFi;
 @property(readonly) NSString * orientationStringLandscapeLeft;
@@ -92,6 +104,8 @@
 - (int)boolValueForRestriction:(id)arg1;
 - (id)capabilityNameEmail;
 - (id)capabilityNameExplicitMedia;
+- (id)capabilityNameHDVideo1080p;
+- (id)capabilityNameHDVideo720p;
 - (id)capabilityNameHDVideo;
 - (id)capabilityNamePodcasts;
 - (id)capabilityNameWiFi;
@@ -104,7 +118,11 @@
 - (int)freeSpaceEffortLevelPromptUser;
 - (id)freeSpaceOptionEffortLevel;
 - (int)hardwareType;
+- (int)hardwareTypeIPadJ1;
+- (int)hardwareTypeIPadJ2;
+- (int)hardwareTypeIPadJ2a;
 - (int)hardwareTypeIPadK93;
+- (int)hardwareTypeIPadK93a;
 - (int)hardwareTypeIPadK94;
 - (int)hardwareTypeIPadK95;
 - (int)hardwareTypeIPhoneM68;
@@ -125,6 +143,12 @@
 - (id)mainScreenScale;
 - (int)networkType2G;
 - (int)networkType3G;
+- (int)networkType4G;
+- (int)networkType5G;
+- (int)networkType6G;
+- (int)networkType7G;
+- (int)networkType8G;
+- (int)networkType9G;
 - (int)networkTypeNone;
 - (int)networkTypeWiFi;
 - (id)orientationStringLandscapeLeft;

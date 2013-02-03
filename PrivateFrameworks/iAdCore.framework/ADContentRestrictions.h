@@ -38,6 +38,7 @@
 - (BOOL)allowITunes;
 - (BOOL)allowInstallApps;
 - (int)appsRank;
+- (void)copyTo:(id)arg1;
 - (id)countryCode;
 - (void)dealloc;
 - (BOOL)denyExplicit;

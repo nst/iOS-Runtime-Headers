@@ -14,6 +14,7 @@
 @property(retain) NSData * payload;
 @property(copy) NSString * type;
 
++ (id)multiPartWithName:(id)arg1 payload:(id)arg2 type:(id)arg3;
 + (id)multipartBoundary;
 
 - (void)dealloc;

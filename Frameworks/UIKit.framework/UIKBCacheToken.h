@@ -19,6 +19,7 @@
 @property(readonly) NSString * string;
 
 + (id)tokenForKey:(id)arg1 style:(int)arg2 state:(int)arg3;
++ (id)tokenForKeyplane:(id)arg1;
 + (id)tokenTemplateFilledForKey:(id)arg1 style:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3;
 + (id)tokenTemplateForKey:(id)arg1 name:(id)arg2 style:(int)arg3 size:(struct CGSize { float x1; float x2; })arg4;
 + (id)tokenTemplateForKey:(id)arg1 style:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3;
@@ -40,6 +41,7 @@
 - (struct CGSize { float x1; float x2; })size;
 - (id)string;
 - (id)stringForKey:(id)arg1 state:(int)arg2;
+- (id)stringForSplitState:(BOOL)arg1;
 - (id)stringForState:(int)arg1;
 
 @end

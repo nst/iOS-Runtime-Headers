@@ -46,7 +46,7 @@
 @property BOOL monitorSubjectArea;
 @property int noiseReductionMethod;
 @property(readonly) int noiseReductionMethodCount;
-@property(retain,readonly) NSString * noiseReductionMethodName;
+@property(readonly) NSString * noiseReductionMethodName;
 @property(retain) NSString * orientation;
 @property BOOL pauseRecordingOnInterruption;
 @property(retain) NSString * qualityPreset;

@@ -40,6 +40,7 @@
 - (id)_copyGUIDPatternsFromDictionary:(id)arg1;
 - (id)_copyGUIDSchemesFromDictionary:(id)arg1;
 - (id)_copyHeaderPatternsFromDictionary:(id)arg1;
+- (struct __CFString { }*)_diskCacheExpirationTimeKey;
 - (BOOL)_loadFromSignedDictionary:(id)arg1 returningError:(id*)arg2;
 - (id)_networkConstraintsCachePath;
 - (void)_setDictionary:(id)arg1;
@@ -49,6 +50,7 @@
 - (id)copyExtraHeadersForURL:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithRawDictionary:(id)arg1;
 - (id)initWithURLBagContext:(id)arg1;
 - (void)invalidate;
@@ -64,5 +66,6 @@
 - (id)urlForKey:(id)arg1;
 - (BOOL)urlIsTrusted:(id)arg1;
 - (id)valueForKey:(id)arg1;
+- (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 
 @end

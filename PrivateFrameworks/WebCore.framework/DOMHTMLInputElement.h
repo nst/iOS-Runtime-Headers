@@ -78,6 +78,7 @@
 - (id)formTarget;
 - (BOOL)incremental;
 - (BOOL)indeterminate;
+- (BOOL)isEditing;
 - (BOOL)isLikelyToBeginPageLoad;
 - (BOOL)isSecure;
 - (BOOL)isTextControl;

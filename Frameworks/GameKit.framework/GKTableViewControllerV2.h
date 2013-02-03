@@ -2,10 +2,12 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class <GKTableViewControllerDataSource>, GKMultiColumnTableViewCell, UIView<GKTableViewCellContents>;
+@class <GKTableViewControllerDataSource>, UIView<GKTableViewCellContents>, GKInviteButton, UIView, GKMultiColumnTableViewCell;
 
 @interface GKTableViewControllerV2 : GKTableViewController <UIGestureRecognizerDelegate> {
     float _columnSeparatorWidth;
+    GKInviteButton *_confirmationButton;
+    UIView *_confirmationClipView;
     UIView<GKTableViewCellContents> *_editingContentView;
     BOOL _isStoreDemoModeEnabled;
     <GKTableViewControllerDataSource> *_retainedSectionDataSource;
@@ -17,6 +19,8 @@
 }
 
 @property float columnSeparatorWidth;
+@property(retain) GKInviteButton * confirmationButton;
+@property(retain) UIView * confirmationClipView;
 @property(retain) UIView<GKTableViewCellContents> * editingContentView;
 @property(retain) <GKTableViewControllerDataSource> * retainedSectionDataSource;
 @property BOOL scrollDisabledForConfirmation;
@@ -29,6 +33,8 @@
 - (void)cancelSwipeToDeleteConfirmation;
 - (int)columnCountForTableView:(id)arg1 rowAtIndexPath:(id)arg2;
 - (float)columnSeparatorWidth;
+- (id)confirmationButton;
+- (id)confirmationClipView;
 - (id)contentsAtIndexPaths:(id)arg1 inTableView:(id)arg2;
 - (void)dealloc;
 - (void)deleteConfirmationWasTouched:(id)arg1;
@@ -51,6 +57,8 @@
 - (id)selectedCell;
 - (unsigned int)selectedColumn;
 - (void)setColumnSeparatorWidth:(float)arg1;
+- (void)setConfirmationButton:(id)arg1;
+- (void)setConfirmationClipView:(id)arg1;
 - (void)setEditingContentView:(id)arg1;
 - (void)setRetainedSectionDataSource:(id)arg1;
 - (void)setScrollDisabledForConfirmation:(BOOL)arg1;
@@ -63,6 +71,7 @@
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 indexPathWithColumnForCell:(id)arg2 withIndexPath:(id)arg3 atPoint:(struct CGPoint { float x1; float x2; })arg4 extendEdgeColumnsToInfinity:(BOOL)arg5;
 - (id)tableView:(id)arg1 indexPathWithColumnForCell:(id)arg2 withIndexPath:(id)arg3 atPoint:(struct CGPoint { float x1; float x2; })arg4;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 prepareContentViewsForCell:(id)arg2 atIndexPath:(id)arg3;

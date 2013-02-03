@@ -7,6 +7,7 @@
 @interface PLCameraImporter : NSObject <ICDeviceDelegate, ICCameraDeviceDelegate> {
     BOOL _autosplitEvents;
     ICCameraDevice *_camera;
+    NSMutableArray *_coalescedDeletedItems;
     id _delegate;
     PLCameraImportQueue *_deleteQueue;
     PLCameraImportQueue *_downloadQueue;
@@ -32,6 +33,7 @@
 
 - (void)_addImportItemFromCameraFile:(id)arg1;
 - (void)_clearImportItemsForDownload:(id)arg1;
+- (void)_coalescedRemoveImportItems;
 - (void)_deleteImportItemFromDisk:(id)arg1;
 - (void)_deleteImportItems:(id)arg1;
 - (void)_deleteImportItemsFromDiskInBackground:(id)arg1;
@@ -41,7 +43,6 @@
 - (id)_eventNameFromDate:(id)arg1;
 - (struct NSObject { Class x1; }*)_eventWithDate:(id)arg1;
 - (void)_photoLibraryFinishedImportForPhoto:(id)arg1 atPath:(id)arg2 error:(id)arg3;
-- (void)_removeImportItemForCameraFile:(id)arg1;
 - (void)_removeImportItemsAtPathsInBackground:(id)arg1;
 - (void)_separateItems:(id)arg1 intoEventsWithGranularity:(int)arg2;
 - (void)_stopImport;

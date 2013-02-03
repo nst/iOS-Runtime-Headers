@@ -220,6 +220,7 @@
 - (void)composeSubjectViewTextFieldDidResignFirstResponder:(id)arg1;
 - (int)composeType;
 - (id)compositionContext;
+- (int)compositionType;
 - (id)currentScaleImageSize;
 - (void)dealloc;
 - (id)delegate;

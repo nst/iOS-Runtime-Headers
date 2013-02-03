@@ -21,6 +21,7 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (BOOL)_isDeallocating;
+- (BOOL)_isIdenticalFault:(id)arg1;
 - (BOOL)_shouldProcessKVOChange;
 - (BOOL)_tryRetain;
 - (void)addObject:(id)arg1;

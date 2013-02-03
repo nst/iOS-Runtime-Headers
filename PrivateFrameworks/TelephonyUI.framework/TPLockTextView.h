@@ -7,6 +7,7 @@
 @interface TPLockTextView : UIView {
     float _deltaFromDefaultTrackWidth;
     float _fps;
+    BOOL _hasReverseShine;
     NSString *_label;
     UIFont *_labelFont;
     double _maskStartTime;
@@ -23,6 +24,7 @@
 - (id)label;
 - (void)movedFromWindow:(id)arg1;
 - (void)setFPS:(float)arg1;
+- (void)setHasReverseShine:(BOOL)arg1;
 - (void)startAnimation;
 - (void)stopAnimation;
 

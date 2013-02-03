@@ -16,6 +16,7 @@
     unsigned int _showsAddToCalendar : 1;
     unsigned int _icsPreview : 1;
     unsigned int _needsReload : 1;
+    unsigned int _showsDoneButton : 1;
     UIActionSheet *_alertSheet;
     UIToolbar *_buttonBar;
     id _currentEditItem;
@@ -115,11 +116,13 @@
 - (void)setNeedsReload;
 - (void)setScrollToSection:(int)arg1;
 - (void)setShowsAddToCalendar:(BOOL)arg1;
+- (void)setShowsDoneButton:(BOOL)arg1;
 - (void)setShowsTimeZone:(BOOL)arg1;
 - (void)set_currentEditItem:(id)arg1;
 - (void)setupForEvent;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)showsAddToCalendar;
+- (BOOL)showsDoneButton;
 - (BOOL)showsTimeZone;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

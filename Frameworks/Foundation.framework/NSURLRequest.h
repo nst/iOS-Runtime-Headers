@@ -8,6 +8,8 @@
     NSURLRequestInternal *_internal;
 }
 
+@property(readonly) BOOL HS_isCancelled;
+
 + (BOOL)allowsAnyHTTPSCertificateForHost:(id)arg1;
 + (id)allowsSpecificHTTPSCertificateForHost:(id)arg1;
 + (void)checkForSharedCookieStoreNeed:(struct _CFURLRequest { }*)arg1;
@@ -19,6 +21,8 @@
 + (void)setDefaultTimeoutInterval:(double)arg1;
 
 - (id)DARequestByApplyingStorageSession:(struct __CFURLStorageSession { }*)arg1;
+- (void)HS_cancel;
+- (BOOL)HS_isCancelled;
 - (id)HTTPBody;
 - (id)HTTPBodyStream;
 - (id)HTTPContentType;

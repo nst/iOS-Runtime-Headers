@@ -41,6 +41,7 @@
 - (id)destinationURL;
 - (id)destinationURLForMigration:(id)arg1 sourceURL:(id)arg2 sourceMetadata:(id)arg3 error:(id*)arg4;
 - (void)didPerformMigrationWithManager:(id)arg1;
+- (id)externalDataReferencesURLForDestination:(id)arg1 forStoreOfType:(id)arg2;
 - (void)handleMigrationError:(id)arg1 inManager:(id)arg2;
 - (id)managerForSourceModel:(id)arg1 destinationModel:(id)arg2 error:(id*)arg3;
 - (id)mappingModel;

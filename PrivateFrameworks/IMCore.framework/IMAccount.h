@@ -120,6 +120,7 @@
 @property(readonly) NSString * password;
 @property(readonly) int port;
 @property(readonly) NSDictionary * profileInfo;
+@property(readonly) NSDictionary * registrationFailureAlertInfo;
 @property(readonly) int registrationFailureReason;
 @property(readonly) int registrationStatus;
 @property(readonly) NSString * server;
@@ -324,6 +325,7 @@
 - (id)recalculatedSubtypeInfo;
 - (BOOL)registerAccount;
 - (void)registerIMHandle:(id)arg1;
+- (id)registrationFailureAlertInfo;
 - (int)registrationFailureReason;
 - (int)registrationStatus;
 - (BOOL)removeAlias:(id)arg1 type:(int)arg2;

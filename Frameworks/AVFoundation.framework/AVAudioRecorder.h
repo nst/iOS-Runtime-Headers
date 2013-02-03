@@ -17,7 +17,6 @@
 
 - (float)averagePowerForChannel:(unsigned int)arg1;
 - (id)baseInit;
-- (void)baseInitFailed;
 - (void)beginInterruption;
 - (double)currentTime;
 - (void)dealloc;

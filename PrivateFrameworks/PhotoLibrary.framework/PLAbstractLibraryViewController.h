@@ -47,7 +47,7 @@
 - (struct NSObject { Class x1; }*)albumList;
 - (void)albumListDidChange:(id)arg1;
 - (BOOL)albumsListViewInSync;
-- (void)beginAddPhotosSessionForAlbum:(struct NSObject { Class x1; }*)arg1 completionHandler:(id)arg2;
+- (void)beginAddPhotosSessionForAlbum:(id)arg1 completionHandler:(id)arg2;
 - (int)contentMode;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;

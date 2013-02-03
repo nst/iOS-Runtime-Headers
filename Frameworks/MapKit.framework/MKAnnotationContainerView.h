@@ -110,6 +110,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pinDidDrop:(id)arg1 animated:(BOOL)arg2;
 - (void)removeAnnotation:(id)arg1;
+- (void)removeAnnotationViewsRotationAnimations;
 - (void)removeAnnotations:(id)arg1;
 - (void)resetBubble;
 - (void)resetUserLocation;

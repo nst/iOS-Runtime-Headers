@@ -14,7 +14,6 @@
 
 @property BOOL acceptsEmoji;
 @property BOOL acceptsFloatingKeyboard;
-@property BOOL acceptsForwardDelete;
 @property BOOL acceptsSplitKeyboard;
 @property(retain,readonly) DOMNamedNodeMap * attributes;
 @property int autocapitalizationType;
@@ -31,7 +30,7 @@
 @property BOOL enablesReturnKeyAutomatically;
 @property(readonly) UITextPosition * endOfDocument;
 @property(retain,readonly) DOMNode * firstChild;
-@property BOOL forceEnableForwardDelete;
+@property BOOL forceEnableDictation;
 @property <UITextInputDelegate> * inputDelegate;
 @property(retain) UIColor * insertionPointColor;
 @property unsigned int insertionPointWidth;
@@ -176,6 +175,7 @@
 - (id)firstDescendantOfAboutTheSameWidthOrHeightAsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withDescentDirection:(int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })firstRectForRange:(id)arg1;
 - (id)fontForCaretSelection;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDictationResultPlaceholder:(id)arg1;
 - (void)handleKeyWebEvent:(id)arg1;
 - (BOOL)hasAttributes;
 - (BOOL)hasChildNodes;
@@ -194,9 +194,9 @@
 - (id)inputDelegate;
 - (id)insertBefore:(id)arg1 :(id)arg2;
 - (id)insertBefore:(id)arg1 refChild:(id)arg2;
-- (void)insertMarsVoltas:(id)arg1 withCorrectionIdentifier:(id)arg2;
+- (void)insertDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
+- (id)insertDictationResultPlaceholder;
 - (void)insertText:(id)arg1;
-- (id)insertYakushimasPlaceholder:(struct CGSize { float x1; float x2; })arg1;
 - (id)interactionAssistant;
 - (BOOL)isAutoFillMode;
 - (BOOL)isContentEditable;
@@ -230,7 +230,7 @@
 - (id)markedTextRange;
 - (id)markedTextStyle;
 - (id)markupString;
-- (id)metadataDictionariesForMarsVoltas;
+- (id)metadataDictionariesForDictationResults;
 - (id)mf_appendBlockPlaceholder;
 - (id)mf_blockNodeAncestor;
 - (id)mf_commonAncestorWithNode:(id)arg1;
@@ -261,7 +261,7 @@
 - (id)namespaceURI;
 - (id)nextFocusNode;
 - (id)nextSibling;
-- (id)nextUnperturbedMarsVoltasBoundaryFromPosition:(id)arg1;
+- (id)nextUnperturbedDictationResultBoundaryFromPosition:(id)arg1;
 - (BOOL)nodeCanBecomeFirstResponder;
 - (id)nodeName;
 - (unsigned short)nodeType;
@@ -280,7 +280,7 @@
 - (id)prefix;
 - (id)previousFocusNode;
 - (id)previousSibling;
-- (id)previousUnperturbedMarsVoltasBoundaryFromPosition:(id)arg1;
+- (id)previousUnperturbedDictationResultBoundaryFromPosition:(id)arg1;
 - (id)rangeByExtendingCurrentSelection:(int)arg1;
 - (id)rangeByMovingCurrentSelection:(int)arg1;
 - (id)rangeEnclosingPosition:(id)arg1 withGranularity:(int)arg2 inDirection:(int)arg3;
@@ -294,9 +294,9 @@
 - (id)rectsForRange:(id)arg1;
 - (void)recursivelyRemoveMailAttributes;
 - (id)removeChild:(id)arg1;
+- (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (void)removeEventListener:(id)arg1 :(id)arg2 :(BOOL)arg3;
 - (void)removeEventListener:(id)arg1 listener:(id)arg2 useCapture:(BOOL)arg3;
-- (void)removeYakushimasPlaceholder:(id)arg1 willInsertText:(BOOL)arg2;
 - (BOOL)rendersAsBlock;
 - (id)replaceChild:(id)arg1 :(id)arg2;
 - (id)replaceChild:(id)arg1 oldChild:(id)arg2;

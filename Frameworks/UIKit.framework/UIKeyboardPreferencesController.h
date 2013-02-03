@@ -10,6 +10,7 @@
 }
 
 @property BOOL dontSynchronizePreferences;
+@property(readonly) BOOL isInternalInstall;
 
 + (void)preferencesChangedCallback:(id)arg1;
 + (id)sharedPreferencesController;
@@ -23,6 +24,7 @@
 - (struct { id x1; id x2; BOOL x3; BOOL x4; unsigned long long x5; }*)domains;
 - (BOOL)dontSynchronizePreferences;
 - (id)init;
+- (BOOL)isInternalInstall;
 - (struct { id x1; id x2; int x3; id x4; id x5; int x6; }*)preferences;
 - (void)releaseDontSynchronizePreferences;
 - (void)saveInputModes:(id)arg1;

@@ -11,6 +11,7 @@
 @interface GKLocalPlayer : GKPlayer {
     GKInvite *_acceptedInvite;
     GKAddressBook *_addressBook;
+    BOOL _alreadyShown;
     NSDictionary *_authenticateAlertDictionary;
     NSError *_authenticateError;
     GKAuthenticatePlayerRequest *_authenticateRequest;
@@ -27,6 +28,7 @@
     NSArray *_friendRequests;
     NSSet *_friendTestSet;
     BOOL _gameCenterAuthenticating;
+    int _lastAuthResult;
     NSString *_lastUsernameAttempted;
     UIAlertView *_loginAlertView;
     GKModalRootViewController *_rootViewController;
@@ -37,6 +39,7 @@
 @property(retain) GKInvite * acceptedInvite;
 @property(retain) NSString * accountName;
 @property(retain) GKAddressBook * addressBook;
+@property BOOL alreadyShown;
 @property(retain) NSDictionary * authenticateAlertDictionary;
 @property(retain) NSError * authenticateError;
 @property(retain) GKAuthenticatePlayerRequest * authenticateRequest;
@@ -56,6 +59,7 @@
 @property(retain) NSSet * friendTestSet;
 @property(readonly) NSArray * friends;
 @property BOOL gameCenterAuthenticating;
+@property int lastAuthResult;
 @property(retain) NSString * lastUsernameAttempted;
 @property(retain) UIAlertView * loginAlertView;
 @property(getter=isPurpleBuddyAccount) BOOL purpleBuddyAccount;
@@ -78,6 +82,8 @@
 - (void)alertAndSendFriendRequest:(id)arg1 destination:(id)arg2;
 - (BOOL)alertUserInStoreDemoModeEnabled;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (BOOL)alreadyShown;
+- (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationWillEnterForeground:(id)arg1;
 - (id)attributedDisplayNameWithIdentifiableName:(BOOL)arg1;
 - (id)authenticateAlertDictionary;
@@ -126,6 +132,7 @@
 - (BOOL)isFriend;
 - (BOOL)isLocalPlayer;
 - (BOOL)isPlayerAFriend:(id)arg1;
+- (int)lastAuthResult;
 - (id)lastUsernameAttempted;
 - (void)loadFriendRecommendationsWithCompletionHandler:(id)arg1;
 - (void)loadFriendRequests:(id)arg1;
@@ -150,6 +157,7 @@
 - (void)sendFriendRequestToPlayer:(id)arg1 withMessage:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)setAcceptedInvite:(id)arg1;
 - (void)setAddressBook:(id)arg1;
+- (void)setAlreadyShown:(BOOL)arg1;
 - (void)setAuthenticateAlertDictionary:(id)arg1;
 - (void)setAuthenticateError:(id)arg1;
 - (void)setAuthenticateRequest:(id)arg1;
@@ -169,6 +177,7 @@
 - (void)setFriends:(id)arg1;
 - (void)setGameCenterAuthenticating:(BOOL)arg1;
 - (void)setInternal:(id)arg1 withFriends:(id)arg2;
+- (void)setLastAuthResult:(int)arg1;
 - (void)setLastUsernameAttempted:(id)arg1;
 - (void)setLoginAlertView:(id)arg1;
 - (void)setPhoto:(id)arg1 withCompletionHandler:(id)arg2;
@@ -182,6 +191,8 @@
 - (void)showAlertForTag:(unsigned int)arg1;
 - (void)showAlertWithDictionary:(id)arg1;
 - (void)showAuthenticateAlert;
+- (void)showCreateAccountRestrictedAlert;
+- (void)showEditAccountRestrictedAlert;
 - (void)showViewController:(id)arg1 wrapInNavController:(BOOL)arg2;
 - (void)signOutWithCompletionHandler:(id)arg1;
 - (void)userCancelledAuthentication;

@@ -89,6 +89,5 @@
 - (BOOL)viewControllerEnabledAtIndex:(unsigned int)arg1;
 - (id)viewControllers;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
 
 @end

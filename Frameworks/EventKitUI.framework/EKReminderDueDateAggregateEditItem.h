@@ -13,6 +13,7 @@
 
 - (void)_handleCommitForDueDateEditViewController:(id)arg1;
 - (BOOL)_shouldShowRecurrence;
+- (BOOL)applicationDidResume;
 - (id)cellForSubitemAtIndex:(int)arg1;
 - (BOOL)configureForCalendarConstraints:(id)arg1;
 - (void)dealloc;

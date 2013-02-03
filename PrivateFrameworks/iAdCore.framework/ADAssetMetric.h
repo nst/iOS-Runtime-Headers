@@ -18,6 +18,7 @@
 @property(retain) NSString * uniqueIdentifier;
 @property(retain) NSString * url;
 
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

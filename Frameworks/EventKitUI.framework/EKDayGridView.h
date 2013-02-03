@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UIImageView, UIView, UIColor, EKCurrentTimeMarkerView, NSTimer, NSMutableArray;
+@class EKCurrentTimeMarkerView, UIView, UIColor, NSTimer, NSMutableArray;
 
 @interface EKDayGridView : UIView {
     struct CGRect { 
@@ -19,8 +19,9 @@
     unsigned int _drawsContent : 1;
     unsigned int _showsTimeMarker : 1;
     unsigned int _showsTimeLine : 1;
-    UIImageView *_background;
     UIColor *_backgroundColor;
+    UIView *_bottomGrayView;
+    UIView *_bottomPattern;
     unsigned int _daysToDisplay;
     BOOL _drawsGrayOutsideExtents;
     float _fixedDayWidth;
@@ -38,6 +39,8 @@
     EKCurrentTimeMarkerView *_timeMarker;
     NSTimer *_timeMarkerTimer;
     float _timeWidth;
+    UIView *_topGrayView;
+    UIView *_topPattern;
 }
 
 @property BOOL drawsContent;

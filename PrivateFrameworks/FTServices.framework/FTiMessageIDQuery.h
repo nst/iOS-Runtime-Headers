@@ -20,6 +20,7 @@
 - (void)dealloc;
 - (void)handleResponseDictionary:(id)arg1;
 - (void)handleResponseHeaders:(id)arg1;
+- (BOOL)hasRequiredKeys:(id*)arg1;
 - (id)init;
 - (id)messageBody;
 - (id)requiredKeys;

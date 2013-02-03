@@ -19,6 +19,7 @@
 + (id)_remoteUI_colorWithString:(id)arg1;
 + (id)_systemColorForColor:(id)arg1 withName:(id)arg2;
 + (id)_systemColorWithName:(id)arg1;
++ (id)_translucentPaperTextureColor;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)blackColor;
 + (id)blueColor;
@@ -95,11 +96,9 @@
 + (id)texturedTranscriptBackgroundColor;
 + (id)tileBackgroundColor;
 + (id)tileGridBackgroundColor;
-+ (id)translucentPaperTextureColor;
 + (id)underPageBackgroundColor;
 + (id)viewFlipsideBackgroundColor;
 + (id)whiteColor;
-+ (id)whitePaperTextureColor;
 + (id)yellowColor;
 
 - (struct CGColor { }*)CGColor;

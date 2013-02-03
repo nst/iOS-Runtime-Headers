@@ -5,8 +5,8 @@
 @class ML3NondurableWriteSet, ML3MusicLibrary_SQLiteDatabaseContext, ML3UbiquitousDatabase, NSMutableArray, NSString, ML3DatabaseMetadata, ML3Container, NSArray;
 
 @interface ML3MusicLibrary : NSObject {
-    int _artworkBlobFD;
-    struct dispatch_queue_s { } *_artworkQueue;
+    NSString *_artworkDirectory;
+    BOOL _artworkDirectoryFilesystemRepresentation[1024];
     ML3MusicLibrary_SQLiteDatabaseContext *_backgroundDatabaseContext;
     struct dispatch_queue_s { } *_backgroundQueue;
     struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[596]; } *_backgroundQueueOwner;
@@ -91,7 +91,6 @@
 + (int)userVersionUsingHandle:(struct sqlite3 { }*)arg1;
 
 - (void)_accessAccountCacheDBForSQL:(id)arg1 usingBlock:(id)arg2;
-- (void)_accessArtworkBlobFDWithBlock:(id)arg1;
 - (void)_accessDatabaseContextUsingBlock:(id)arg1;
 - (BOOL)_commitNondurableWrites;
 - (void)_delayableNotifyPost:(id)arg1;
@@ -105,6 +104,7 @@
 - (void)_postDisplayValuesChangeNotificationLocalOnly:(BOOL)arg1;
 - (void)_postNonContentsChangeNotificationAndScheduleFlushLocalOnly:(BOOL)arg1;
 - (void)_scheduleCommitNondurableWritesAfterTimeInterval:(double)arg1;
+- (BOOL)_writeImageBytes:(const void*)arg1 length:(unsigned long)arg2 formatID:(unsigned int)arg3 cacheID:(id)arg4;
 - (void)accessDatabaseUsingBlock:(id)arg1;
 - (void)accessSortKeyBuilder:(id)arg1;
 - (long long)addStringToSortMap:(id)arg1;
@@ -113,10 +113,12 @@
 - (id)appleIDForDSID:(unsigned long long)arg1;
 - (void)applyUbiquitousBookmarksToTrack:(id)arg1;
 - (id)artistForArtistName:(id)arg1 seriesName:(id)arg2;
+- (id)artworkDataForCacheID:(id)arg1 formatID:(unsigned int)arg2;
 - (long long)autoFilledTracksTotalSize;
 - (id)backgroundQueue_backgroundDatabaseContext;
 - (BOOL)buildDatabaseTables;
 - (void)checkForChangesOnConnection:(id)arg1 completionHandler:(id)arg2;
+- (void)clearTrackAndCollectionCloudStatus;
 - (BOOL)coerceValidDatabase;
 - (BOOL)compactArtwork;
 - (id)composerForComposerName:(id)arg1;
@@ -134,9 +136,9 @@
 - (void)fillContainerForHomeSharingConnection:(id)arg1 containerID:(long long)arg2 completionHandler:(id)arg3;
 - (id)genreForGenre:(id)arg1;
 - (id)groupingKeyForString:(id)arg1;
+- (BOOL)hasArtworkForCacheID:(id)arg1 ensureArtworkFileExists:(BOOL)arg2;
 - (BOOL)hasArtworkForCacheID:(id)arg1;
 - (BOOL)hasEverConnectedToDatabase;
-- (void)incrementalVaccuumIfAppropriate;
 - (id)initWithPath:(id)arg1 enableWrites:(BOOL)arg2;
 - (BOOL)insertArtworkWithImageData:(id)arg1 forCacheID:(id)arg2;
 - (long long)insertStringIntoSortMapNoTransaction:(id)arg1;
@@ -149,6 +151,7 @@
 - (id)locationKindForKind:(id)arg1;
 - (id)mainDatabaseContext;
 - (BOOL)mediaRestrictionEnabled;
+- (BOOL)migrateLegacyArtworkFromArtworkBlobFilePath:(id)arg1;
 - (void)migratePresignedValidity;
 - (struct { long long x1; int x2; })nameOrderForString:(id)arg1;
 - (id)nondurableWriteSetForReading;

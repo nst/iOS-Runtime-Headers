@@ -31,7 +31,7 @@
 @property(copy) AVOutputSettings * outputSettings;
 @property(retain) struct opaqueCMFormatDescription { }* sampleBufferFormatHint;
 @property(copy) NSDictionary * sourcePixelBufferAttributes;
-@property struct CGAffineTransform { float a; float b; float c; float d; float tx; float ty; } transform;
+@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
 
 - (BOOL)attachedToPixelBufferAdaptor;
 - (void)dealloc;

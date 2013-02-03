@@ -37,6 +37,7 @@
 - (BOOL)isAutoDownload;
 - (BOOL)isEnabledFor2G;
 - (BOOL)isEnabledFor3G;
+- (BOOL)isEnabledForNetworkType:(int)arg1;
 - (BOOL)isEnabledForWifi;
 - (BOOL)isEnabledOnBatteryPower;
 - (BOOL)isEqual:(id)arg1;

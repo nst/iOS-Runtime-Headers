@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSMutableArray, UIResponder, NSNumber, GKRecipientGenerator, GKImageBackgroundView, UITextView, GKUITheme, GKRecipientSelectionView, ABPeoplePickerNavigationController, UIView, NSDictionary, UIPopoverController, NSString, UIImageView, UINavigationItem;
+@class NSMutableArray, NSNumber, GKRecipientGenerator, GKComposeMessageView, GKUITheme, GKRecipientSelectionView, GKComposeControllerBackgroundView, ABPeoplePickerNavigationController, UIView, NSDictionary, UIPopoverController, NSString, UIResponder, UINavigationItem;
 
 @interface GKAbstractComposeController : GKViewController <UIActionSheetDelegate, UIModalViewDelegate, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, UITextViewDelegate, UIPopoverControllerDelegate> {
     struct _NSRange { 
@@ -22,15 +22,13 @@
     unsigned int _newRecipient : 1;
     NSDictionary *_abPropertiesCache;
     UIView *_accessoryView;
-    GKImageBackgroundView *_backgroundView;
-    UIView *_beneathMessageView;
+    GKComposeControllerBackgroundView *_backgroundView;
     id _composeDelegate;
     BOOL _composeFieldsHidden;
     UIPopoverController *_composePopoverController;
     NSString *_lastMessage;
     } _lastSelectedRange;
-    UITextView *_messageEntryView;
-    UIImageView *_messageView;
+    GKComposeMessageView *_messageView;
     BOOL _mightHaveAccessoryView;
     UINavigationItem *_navItem;
     ABPeoplePickerNavigationController *_peoplePickerController;
@@ -47,13 +45,13 @@
 }
 
 @property(retain) UIView * accessoryView;
-@property(readonly) UIView * beneathMessageView;
+@property(retain) GKComposeControllerBackgroundView * backgroundView;
 @property id composeDelegate;
 @property BOOL composeFieldsHidden;
 @property(retain) UIPopoverController * composePopoverController;
 @property BOOL isPopoverHidden;
 @property(retain) NSString * lastMessage;
-@property(readonly) UITextView * messageEntryView;
+@property(retain) GKComposeMessageView * messageView;
 @property BOOL mightHaveAccessoryView;
 @property(readonly) ABPeoplePickerNavigationController * peoplePickerController;
 @property int popoverHideCount;
@@ -77,7 +75,7 @@
 - (void)addRecipient:(void*)arg1 property:(int)arg2 identifier:(int)arg3 address:(id)arg4 makingContentEntryViewActive:(BOOL)arg5;
 - (void)addRecipients:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (id)beneathMessageView;
+- (id)backgroundView;
 - (void)cancelButtonClicked:(id)arg1;
 - (void)composeControllerCancelled:(id)arg1;
 - (id)composeDelegate;
@@ -101,7 +99,7 @@
 - (void)makeContentEntryViewInactive;
 - (void)makeRecipientEntryViewActive;
 - (void)makeRecipientEntryViewInactive;
-- (id)messageEntryView;
+- (id)messageView;
 - (BOOL)mightHaveAccessoryView;
 - (id)navigationItem;
 - (id)peoplePickerController;
@@ -137,10 +135,12 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (BOOL)sending;
 - (void)setAccessoryView:(id)arg1;
+- (void)setBackgroundView:(id)arg1;
 - (void)setComposeDelegate:(id)arg1;
 - (void)setComposeFieldsHidden:(BOOL)arg1;
 - (void)setComposePopoverController:(id)arg1;
 - (void)setLastMessage:(id)arg1;
+- (void)setMessageView:(id)arg1;
 - (void)setMightHaveAccessoryView:(BOOL)arg1;
 - (void)setPopoverHideCount:(int)arg1;
 - (void)setPreviousKeyboardFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

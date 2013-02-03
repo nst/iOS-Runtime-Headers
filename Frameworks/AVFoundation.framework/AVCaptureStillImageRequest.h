@@ -11,7 +11,7 @@
         float width; 
         float height; 
     BOOL _chromaNoiseReductionEnabled;
-    unsigned int _imageDataFormatType;
+    unsigned long _imageDataFormatType;
     id _iosurfaceCompletionBlock;
     BOOL _isEV0Image;
     BOOL _isHDRImage;
@@ -23,11 +23,11 @@
 }
 
 @property BOOL chromaNoiseReductionEnabled;
-@property unsigned int imageDataFormatType;
+@property unsigned long imageDataFormatType;
 @property(copy) id iosurfaceCompletionBlock;
 @property BOOL isEV0Image;
 @property BOOL isHDRImage;
-@property struct CGSize { float width; float height; } previewImageSize;
+@property struct CGSize { float x1; float x2; } previewImageSize;
 @property(copy) id sbufCompletionBlock;
 @property(getter=isStillImageMirrored) BOOL stillImageMirrored;
 @property int stillImageOrientation;

@@ -18,6 +18,7 @@
 @property(readonly) NSString * finalizedPath;
 @property(readonly) NSArray * sinfs;
 
++ (long long)_existsMessage;
 + (long long)_getExternalValuesMessage;
 + (long long)_getValueMessage;
 + (long long)_setValuesMessage;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPickerView, NSLocale, NSCalendar, NSDate, NSTimeZone;
+@class NSTimeZone, NSLocale, NSCalendar, NSDate, UIPickerView;
 
 @interface UIDatePicker : UIControl <NSCoding> {
     UIPickerView *_pickerView;
@@ -12,6 +12,7 @@
 @property double countDownDuration;
 @property(retain) NSDate * date;
 @property int datePickerMode;
+@property(getter=_dateUnderSelectionBar,readonly) NSDate * dateUnderSelectionBar;
 @property(retain) NSLocale * locale;
 @property(retain) NSDate * maximumDate;
 @property(retain) NSDate * minimumDate;
@@ -20,6 +21,7 @@
 @property(getter=_usesBlackChrome,setter=_setUsesBlackChrome:) BOOL usesBlackChrome;
 
 - (float)_contentWidth;
+- (id)_dateUnderSelectionBar;
 - (void)_insertPickerView;
 - (id)_locale;
 - (void)_populateArchivedSubviews:(id)arg1;

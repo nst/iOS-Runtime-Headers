@@ -2,22 +2,31 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLPhotoLibrary, NSMutableIndexSet;
+@class PLPhotoLibrary, NSMutableSet, NSMutableIndexSet, NSMutableDictionary;
 
 @interface PLFileSystemAssetImporter : NSObject {
+    NSMutableSet *_existingUUIDs;
+    NSMutableDictionary *_existingUUIDsByPath;
     BOOL _hasProcessedAnyAssets;
     PLPhotoLibrary *_photoLibrary;
     NSMutableIndexSet *_thumbIndexes;
 }
 
+@property(retain) NSMutableSet * existingUUIDs;
+@property(retain) NSMutableDictionary * existingUUIDsByPath;
+
 - (id)_addAssetWithURL:(id)arg1;
-- (id)addAssetWithURLs:(id)arg1 usingThumbnailsInformation:(id)arg2 duplicateUUIDs:(id)arg3 force:(BOOL)arg4;
-- (id)addAssetWithURLs:(id)arg1 usingThumbnailsInformation:(id)arg2 duplicateUUIDs:(id)arg3;
 - (id)addAssetWithURLs:(id)arg1 usingThumbnailsInformation:(id)arg2 force:(BOOL)arg3;
+- (id)addAssetWithURLs:(id)arg1 usingThumbnailsInformation:(id)arg2;
+- (id)assetURLisDuplicate:(id)arg1;
 - (void)createThumbnailForVideoAsset:(id)arg1;
 - (void)dealloc;
+- (id)existingUUIDs;
+- (id)existingUUIDsByPath;
 - (id)initWithPhotoLibrary:(id)arg1;
 - (unsigned int)nextThumbnailIndex;
+- (void)setExistingUUIDs:(id)arg1;
+- (void)setExistingUUIDsByPath:(id)arg1;
 - (void)setModificationAndCreationDateOnAsset:(id)arg1 withURL:(id)arg2;
 - (BOOL)setupPhotoAsset:(id)arg1 withURL:(id)arg2 thumbnailsInformation:(id)arg3 allowedToResetThumbnails:(BOOL)arg4;
 

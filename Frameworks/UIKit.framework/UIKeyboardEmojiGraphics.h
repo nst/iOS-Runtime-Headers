@@ -29,9 +29,14 @@
     struct CGColor { } *_symbolColor;
 }
 
-+ (id)emojiWithName:(id)arg1;
++ (unsigned char)colCount:(BOOL)arg1;
++ (struct __CFDictionary { }*)createEmojiFontAttributes:(BOOL)arg1;
++ (struct __CFDictionary { }*)emojiFontAttributes;
++ (struct CGSize { float x1; float x2; })emojiSize:(BOOL)arg1;
 + (id)imageWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 name:(id)arg2 pressed:(BOOL)arg3;
-+ (void)mapImagesIfNecessary;
++ (struct CGPoint { float x1; float x2; })margin:(BOOL)arg1;
++ (struct CGPoint { float x1; float x2; })padding:(BOOL)arg1;
++ (unsigned char)rowCount:(BOOL)arg1;
 + (id)sharedInstance;
 
 - (id)backgroundGradientGenerator:(id)arg1;

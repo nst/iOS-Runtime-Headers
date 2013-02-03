@@ -27,18 +27,14 @@
 @property <PLLibraryViewControllerDelegate> * delegate;
 @property(readonly) UITableView * tableView;
 
-+ (void)initialize;
-
 - (void)_keyboardDidHide:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
-- (void)_logDebuggingStateInfoForChange:(id)arg1;
 - (void)_presentActionSheet:(id)arg1;
 - (BOOL)_shouldShowAlbumList;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (BOOL)allowsEditingAlbums;
 - (void)animateBannerThumbnailToAlbum:(struct NSObject { Class x1; }*)arg1 completion:(id)arg2;
-- (void)applicationDidResume;
 - (id)contentScrollView;
 - (id)currentPickerSession;
 - (void)dealloc;

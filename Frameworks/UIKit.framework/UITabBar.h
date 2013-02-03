@@ -24,6 +24,7 @@
     } _tabBarFlags;
 }
 
+@property(setter=_setBackgroundView:,retain) UIView * _backgroundView;
 @property(retain) UIImage * backgroundImage;
 @property <UITabBarDelegate> * delegate;
 @property(copy) NSArray * items;
@@ -39,6 +40,7 @@
 - (void)_alertDidHide;
 - (void)_alertWillShow:(BOOL)arg1 duration:(float)arg2;
 - (id)_appearanceStorage;
+- (id)_backgroundView;
 - (void)_buttonCancel:(id)arg1;
 - (void)_buttonDown:(id)arg1;
 - (void)_buttonDownDelayed:(id)arg1;
@@ -56,6 +58,7 @@
 - (void)_positionTabBarButtons:(id)arg1 ignoringItem:(id)arg2;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
 - (void)_setBackgroundImage:(id)arg1;
+- (void)_setBackgroundView:(id)arg1;
 - (void)_setLabelFont:(id)arg1;
 - (void)_setLabelShadowColor:(id)arg1;
 - (void)_setLabelShadowOffset:(struct CGSize { float x1; float x2; })arg1;
@@ -86,6 +89,7 @@
 - (id)selectedImageTintColor;
 - (id)selectedItem;
 - (id)selectionIndicatorImage;
+- (void)setAutoresizingMask:(unsigned int)arg1;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setBadgeAnimated:(BOOL)arg1 forButton:(int)arg2;
 - (void)setBadgeGlyph:(id)arg1 forButton:(int)arg2;
@@ -93,7 +97,6 @@
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setButtonItems:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setItems:(id)arg1;

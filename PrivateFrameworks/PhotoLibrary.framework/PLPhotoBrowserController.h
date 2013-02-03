@@ -108,6 +108,7 @@
     void *_person;
     long _personCount;
     SEL _photoAction;
+    id _photoActionInvoker;
     PLPhotoPrinter *_photoPrinter;
     PLPhotoScrubber *_photoScrubber;
     UIBarButtonItem *_playSlideshowItem;
@@ -290,6 +291,7 @@
 - (void)_playCurrentSlide;
 - (BOOL)_playSlideshow;
 - (void)_playTimerFired:(id)arg1;
+- (id)_playbackVideoView;
 - (int)_preferredStatusBarStyle;
 - (id)_preloadNextTileInCache:(id)arg1;
 - (void)_prepareForSucking;
@@ -329,7 +331,6 @@
 - (void)_setShouldRasterizeOverlays:(BOOL)arg1;
 - (void)_setupPhotoScrubber:(BOOL)arg1;
 - (BOOL)_shouldShowAssignToContactOption;
-- (BOOL)_shouldShowVideoPlayOverlay;
 - (void)_showCompositionForPublishingBundleNamed:(id)arg1;
 - (void)_showConfirmationForPassthroughTrimming:(id)arg1;
 - (void)_showCropOverlayWithTitle:(id)arg1 subtitle:(id)arg2 cropButtonTitle:(id)arg3 disablingRotation:(BOOL)arg4 duration:(float)arg5;
@@ -343,6 +344,7 @@
 - (void)_showTrimUI;
 - (void)_showVideoTooLongAlert;
 - (void)_simpleRemoteActionDidOccur:(id)arg1;
+- (BOOL)_slideshowNotRunning;
 - (void)_slideshowViewWasTapped:(id)arg1;
 - (void)_startAirTunesSlideShow;
 - (void)_startSettingWallpaper:(id)arg1;
@@ -434,7 +436,6 @@
 - (void)editImageViewControllerDidCancel:(id)arg1;
 - (void)enableAutohideControls;
 - (void)endSettingWallpaper;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForCurrentImageAtDefaultScale;
 - (void)hideOverlays;
 - (void)hideOverlaysWithDuration:(float)arg1 hideStatusBar:(BOOL)arg2;
 - (void)imageViewDidSwitchToFullSizeImage:(id)arg1;

@@ -32,6 +32,7 @@
 
 + (int)_authorizationStatus;
 + (int)_authorizationStatusForBundleIdentifier:(id)arg1 bundle:(id)arg2;
++ (unsigned int)activeLocationServiceTypesForLocationDictionary:(id)arg1;
 + (int)authorizationStatus;
 + (int)authorizationStatusForBundle:(id)arg1;
 + (int)authorizationStatusForBundleIdentifier:(id)arg1;

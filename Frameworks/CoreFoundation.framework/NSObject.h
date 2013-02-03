@@ -135,6 +135,7 @@
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
 - (id)CA_interpolateValues:(id)arg1 :(id)arg2 :(id)arg3 interpolator:(const struct ValueInterpolator { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; boolx10; }*)arg4;
 - (void)CA_prepareRenderValue;
+- (id)MPMediaLibraryDataProviderSystemML3CoercedString;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (id)_ICSStringWithOptions:(unsigned int)arg1;
 - (BOOL)__accessibilityReadAllOnFocus;
@@ -366,6 +367,7 @@
 - (void)_mf_checkToAllowLock:(id)arg1;
 - (void)_mf_checkToAllowOrderingWithLock:(id)arg1;
 - (void)_mf_checkToAllowStrictProgressionWithLock:(id)arg1;
+- (void)_mf_dumpLockCallStacks:(unsigned int)arg1 ordering:(id)arg2;
 - (id)_mf_lockOrderingForType:(int)arg1;
 - (BOOL)_mf_ntsIsLocked;
 - (void)_moveCurrentSelection:(int)arg1;

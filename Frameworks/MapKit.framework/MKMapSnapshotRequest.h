@@ -18,7 +18,6 @@
     id _context;
     } _coordinate;
     MKMapSnapshotCreator *_delegate;
-    id _foregroundObserver;
     UIImage *_image;
     unsigned int _maxX;
     unsigned int _maxY;
@@ -43,6 +42,7 @@
 @property struct CGSize { float x1; float x2; } size;
 @property unsigned int zoomLevel;
 
+- (void)_restartLoadingAfterPause:(id)arg1;
 - (id)attributionString;
 - (id)context;
 - (struct { double x1; double x2; })coordinate;

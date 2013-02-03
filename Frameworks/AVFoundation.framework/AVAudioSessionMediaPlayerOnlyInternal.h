@@ -10,6 +10,7 @@
     struct OpaqueFigPlayer { } *figPlayer;
     BOOL isActive;
     BOOL isAppAudioSession;
+    NSString *mode;
     AVWeakReference *weakReference;
 }
 

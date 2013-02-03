@@ -18,11 +18,13 @@
     <ServiceLogoControllerDelegate> *_serviceLogoDelegate;
     <SynchronizedDefaultsDelegate> *_syncDelegate;
     NSString *twcURLString;
+    NSString *yahooWeatherURLString;
 }
 
 @property <ServiceLogoControllerDelegate> * serviceLogoDelegate;
 @property <SynchronizedDefaultsDelegate> * syncDelegate;
 @property(copy) NSString * twcURLString;
+@property(copy) NSString * yahooWeatherURLString;
 
 + (id)serviceDebuggingPath;
 + (id)sharedPreferences;
@@ -53,10 +55,9 @@
 - (id)loadSavedCities;
 - (BOOL)loadUnits;
 - (id)localWeatherCity;
-- (id)logoBacksideImage;
 - (id)logoButtonImage;
-- (id)logoURL;
 - (id)preferencesDictionaryForCity:(id)arg1;
+- (id)primaryBacksideLogoImage;
 - (id)readDefaultValueForKey:(id)arg1;
 - (void)registerDefaultPreferences;
 - (void)resetLocale;
@@ -64,6 +65,7 @@
 - (void)saveToDiskWithCities:(id)arg1;
 - (void)saveToDiskWithLocalWeatherCity:(id)arg1;
 - (void)saveToUbiquitousStore;
+- (id)secondBacksideLogoImage;
 - (id)secondaryServiceBacksideImage;
 - (id)secondaryServiceHost;
 - (id)secondaryServiceLogoURL;
@@ -76,9 +78,13 @@
 - (void)setServiceLogoDelegate:(id)arg1;
 - (void)setSyncDelegate:(id)arg1;
 - (void)setTwcURLString:(id)arg1;
+- (void)setYahooWeatherURLString:(id)arg1;
 - (id)syncDelegate;
 - (void)synchronizeStateToDisk;
+- (id)twcLogoURL;
 - (id)twcURLString;
 - (void)writeDefaultValue:(id)arg1 forKey:(id)arg2;
+- (id)yahooLogoURL;
+- (id)yahooWeatherURLString;
 
 @end

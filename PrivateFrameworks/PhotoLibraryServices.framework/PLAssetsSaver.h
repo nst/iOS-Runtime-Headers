@@ -18,11 +18,13 @@
 - (void)_saveVideoAtPath:(id)arg1 properties:(id)arg2 completionBlock:(id)arg3;
 - (void)dealloc;
 - (id)defaultExtensionForAssetType:(int)arg1;
+- (void)deletePhotoStreamAssetsWithUUIDs:(id)arg1 streamID:(id)arg2;
 - (void)deletePhotoStreamDataForStreamID:(id)arg1;
 - (void)importFilesWithMasterPath:(id)arg1 sidecarFileInfo:(id)arg2 intoEventWithName:(id)arg3 importSessionIdentifier:(id)arg4 isPhotoStreamsPublishCandidate:(BOOL)arg5;
 - (id)pathForNewAssetOfType:(int)arg1 extension:(id)arg2;
 - (void)queueJobData:(id)arg1 completionBlock:(id)arg2;
 - (void)queueJobData:(id)arg1 requestEnqueuedBlock:(id)arg2 completionBlock:(id)arg3 imageSurface:(struct __IOSurface { }*)arg4 previewImageSurface:(struct __IOSurface { }*)arg5;
+- (void)reenqueueAssetUUIDsForPhotoStreamPublication:(id)arg1;
 - (void)regenerateVideoThumbnailsForVideo:(id)arg1 withCreationDate:(id)arg2 progressStack:(struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; }*)arg3 completionBlock:(id)arg4;
 - (void)requestAsynchronousImageFromAsset:(id)arg1 withFormat:(int)arg2 completionBlock:(id)arg3;
 - (void)requestSynchronousImageFromAsset:(id)arg1 withFormat:(int)arg2 completionBlock:(id)arg3;
@@ -30,10 +32,10 @@
 - (void)saveCameraVideoAtPath:(id)arg1 withMetadata:(id)arg2 thumbnailImage:(id)arg3 createPreviewWellImage:(BOOL)arg4 progressStack:(struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; }*)arg5 videoHandler:(id)arg6 requestEnqueuedBlock:(id)arg7 completionBlock:(id)arg8;
 - (void)saveImage:(id)arg1 imageData:(id)arg2 properties:(id)arg3 completionTarget:(id)arg4 completionSelector:(SEL)arg5 contextInfo:(void*)arg6;
 - (void)saveImage:(id)arg1 properties:(id)arg2 completionBlock:(id)arg3;
+- (void)saveImageAtPathToCameraRoll:(id)arg1 creationDate:(id)arg2 completionBlock:(id)arg3;
 - (void)saveImageRef:(struct CGImage { }*)arg1 orientation:(int)arg2 imageData:(id)arg3 properties:(id)arg4 completionBlock:(id)arg5;
 - (void)saveOneWayATCSyncedImage:(id)arg1 imageData:(id)arg2 eventUUID:(id)arg3 properties:(id)arg4 completionBlock:(id)arg5;
 - (void)savePhotoStreamImage:(id)arg1 imageData:(id)arg2 properties:(id)arg3 completionBlock:(id)arg4;
-- (void)savePhotoStreamImageAtPathToCameraRoll:(id)arg1 completionBlock:(id)arg2;
 - (void)savePhotoStreamVideoAtPath:(id)arg1 properties:(id)arg2 completionBlock:(id)arg3;
 - (void)saveSyncedAssets:(id)arg1 completionBlock:(id)arg2;
 - (void)saveVideoAtPath:(id)arg1 properties:(id)arg2 completionBlock:(id)arg3;

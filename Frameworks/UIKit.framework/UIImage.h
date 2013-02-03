@@ -43,7 +43,7 @@
 + (void)_flushSharedImageCache;
 + (void)_gkloadRemoteImageForURL:(id)arg1 withCompletionHandler:(id)arg2;
 + (id)_highlightImage;
-+ (id)_iAd_imageNamed:(id)arg1;
++ (id)_iAdCore_imageNamed:(id)arg1;
 + (id)_iconForResourceProxy:(id)arg1 format:(int)arg2;
 + (id)_iconForResourceProxy:(id)arg1 variant:(int)arg2 variantsScale:(float)arg3;
 + (int)_iconVariantForUIApplicationIconFormat:(int)arg1 scale:(float*)arg2;
@@ -151,10 +151,8 @@
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (int)imageOrientation;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectFromBitmapRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGImage { }*)imageRef;
-- (id)imageScaledToSize:(struct CGSize { float x1; float x2; })arg1 interpolationQuality:(int)arg2;
-- (id)imageWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)imageScaledToSize:(struct CGSize { float x1; float x2; })arg1 cornerRadius:(float)arg2;
 - (id)images;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 imageOrientation:(int)arg2;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 orientation:(int)arg3;

@@ -4,7 +4,7 @@
 
 @class <CoreDAVTaskDelegate>, NSString;
 
-@interface CoreDAVDeleteTask : CoreDAVTask {
+@interface CoreDAVDeleteTask : CoreDAVActionBackedTask {
     NSString *_previousETag;
 }
 

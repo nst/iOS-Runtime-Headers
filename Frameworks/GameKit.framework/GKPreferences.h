@@ -13,6 +13,7 @@
 }
 
 @property BOOL HTTPShouldUsePipelining;
+@property(getter=isAccountModificationRestricted,readonly) BOOL accountModificationRestricted;
 @property(getter=isAddingFriendsRestricted,readonly) BOOL addingFriendsRestricted;
 @property BOOL allowUnsignedBag;
 @property(getter=isAppInstallationRestricted,readonly) BOOL appInstallationRestricted;
@@ -59,6 +60,7 @@
 - (double)garbageCollectionInterval;
 - (BOOL)ignoreSandbox;
 - (id)init;
+- (BOOL)isAccountModificationRestricted;
 - (BOOL)isAddingFriendsRestricted;
 - (BOOL)isAppInstallationRestricted;
 - (BOOL)isMultiplayerGamingRestricted;

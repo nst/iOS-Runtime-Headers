@@ -31,6 +31,7 @@
 - (void)barrierWithCompletionHandler:(id)arg1;
 - (void)beginFence;
 - (id)bundleId;
+- (void)closeConnection;
 - (void)commitFence;
 - (struct _xpc_connection_s { }*)connection;
 - (void*)currentMessage;

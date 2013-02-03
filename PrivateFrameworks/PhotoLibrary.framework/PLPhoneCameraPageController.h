@@ -9,7 +9,7 @@
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)_transformViewToPortrait:(id)arg1 fromOrientation:(int)arg2;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)dismissCameraAlbumAnimated:(BOOL)arg1;
+- (void)dismissCameraAlbumAnimated:(BOOL)arg1 forSuspension:(BOOL)arg2;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (id)newAlbumNavigationController;
 - (void)prepareAlbumNavigationControllerForReuse:(id)arg1;

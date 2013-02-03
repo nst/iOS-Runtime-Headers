@@ -2,15 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class NSString, ATConnection;
+@class NSString;
 
-@interface IUSongsDataSource : IUMediaQueriesDataSource <ATConnectionDelegate> {
-    ATConnection *_airTrafficConnection;
+@interface IUSongsDataSource : IUMediaQueriesDataSource {
     int _interfaceOrientation;
     BOOL _showAlbum;
     BOOL _showAlbumConfigured;
     BOOL _showDuration;
     BOOL _showDurationConfigured;
+    unsigned int _syncAssetTotal;
+    int _syncAssetTotalToken;
+    BOOL _syncAssetTotalTokenIsValid;
+    unsigned int _syncCurrentAssetNumber;
+    int _syncCurrentAssetNumberToken;
+    BOOL _syncCurrentAssetNumberTokenIsValid;
     NSString *_syncProgressString;
 }
 
@@ -25,12 +30,11 @@
 + (id)tabBarItemTitleKey;
 
 - (int)_containingParentEntityType;
+- (void)_updateSyncProgressString;
 - (BOOL)allowsDeletion;
 - (BOOL)allowsDownloadingAllEntities;
 - (Class)cellConfigurationClass;
 - (Class)cellConfigurationClassForEntity:(id)arg1;
-- (void)connection:(id)arg1 updatedProgress:(id)arg2;
-- (void)connectionWasInterrupted:(id)arg1;
 - (id)countStringFormat;
 - (void)createGlobalContexts;
 - (void)dealloc;

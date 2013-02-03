@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@class NSAttributedString, NSData, SCROBrailleDisplay, NSLock, SCROBrailleEventDispatcher, NSMutableSet, <SCROSBrailleDisplayManagerDelegate>, SCROBrailleDisplayManagedQueue, SCROBrailleFormatter, NSMutableDictionary, NSMutableArray, SCROBrailleDisplayHistory;
+@class SCRODBluetoothBrailleDisplay, NSAttributedString, NSData, SCROBrailleDisplay, NSLock, SCROBrailleEventDispatcher, NSMutableSet, <SCROSBrailleDisplayManagerDelegate>, SCROBrailleDisplayManagedQueue, SCROBrailleFormatter, NSMutableDictionary, NSMutableArray, SCROBrailleDisplayHistory;
 
 @interface SCROBrailleDisplayManager : NSObject <SCROBrailleDisplayDelegate> {
     struct { 
@@ -15,7 +15,7 @@
     double _alertTimeout;
     struct __CFRunLoopTimer { } *_alertTimer;
     NSAttributedString *_blankUIString;
-    SCROBrailleDisplay *_bluetoothBrailleDisplay;
+    SCRODBluetoothBrailleDisplay *_bluetoothBrailleDisplay;
     NSLock *_contentLock;
     int _contractionMode;
     SCROBrailleFormatter *_currentBrailleFormatter;

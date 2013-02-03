@@ -9,19 +9,19 @@
     AVAssetInspector *_assetInspector;
     struct OpaqueFigSemaphore { } *_cameraRollValidationSemaphor;
     BOOL _compatibleWithSavedPhotosAlbum;
-    int _compatibleWithSavedPhotosAlbumResult;
+    long _compatibleWithSavedPhotosAlbumResult;
     int _compatibleWithSavedPhotosAlbumStatus;
     struct dispatch_queue_s { } *_completionHandlerQueue;
     NSURL *_downloadDestinationURL;
     struct OpaqueFigAsset { } *_figAsset;
-    int _figAssetCreationStatus;
+    long _figAssetCreationStatus;
     struct OpaqueFigFormatReader { } *_formatReader;
     NSMutableArray *_loadingBatches;
     BOOL _loadingCanceled;
     struct OpaqueFigSimpleMutex { } *_loadingMutex;
     struct OpaqueFigSemaphore { } *_playabilityValidationSemaphore;
     BOOL _playable;
-    int _playableResult;
+    long _playableResult;
     int _playableStatus;
     unsigned int _referenceRestrictions;
     BOOL _shouldMatchDataInCacheByURLPathComponentOnly;
@@ -29,10 +29,6 @@
     NSDictionary *_validationPlist;
 }
 
-@property(readonly) AVAssetCache * assetCache;
-@property(readonly) NSURL * downloadDestinationURL;
-@property(readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
-@property(readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
 @property(readonly) NSDictionary * validationPlist;
 
 + (id)_figAssetPropertiesForKeys;

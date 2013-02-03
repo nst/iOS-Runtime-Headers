@@ -26,7 +26,10 @@
 - (id)imageCache;
 - (id)imageLookup;
 - (id)imageNamed:(id)arg1;
+- (id)imageNames;
+- (struct GKImageAtlasImageInfo { unsigned int x1; long long x2; unsigned int x3; unsigned int x4; float x5; unsigned char x6; BOOL x7; })infoForImageNamed:(id)arg1;
 - (id)initWithName:(id)arg1 inBundle:(id)arg2;
+- (id)initWithPath:(id)arg1 inBundle:(id)arg2;
 - (void)processHeader;
 - (void)setBundle:(id)arg1;
 - (void)setData:(id)arg1;

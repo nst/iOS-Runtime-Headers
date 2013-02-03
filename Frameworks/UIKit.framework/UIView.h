@@ -224,6 +224,7 @@
 - (id)_previousKeyResponder;
 - (Class)_printFormatterClass;
 - (void)_promoteDescendantToFirstResponderIfNecessary;
+- (void)_reconsiderFastModeGivenScrollViewInNotification:(id)arg1;
 - (void)_removeAllAnimations:(BOOL)arg1;
 - (void)_removeFirstResponderFromSubtree;
 - (void)_renderSnapshotWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
@@ -415,6 +416,7 @@
 - (struct CGImage { }*)newSnapshotWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)nextResponder;
 - (struct CGPoint { float x1; float x2; })origin;
+- (void)pl_debugSetLayerNames;
 - (BOOL)pl_isOnScreen:(id)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;

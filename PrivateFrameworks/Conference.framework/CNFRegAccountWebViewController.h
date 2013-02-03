@@ -39,6 +39,7 @@
 - (void)handleLeftButtonError:(id)arg1;
 - (void)handleRightButtonError:(id)arg1;
 - (id)initWithRegController:(id)arg1;
+- (id)interfaceLayoutHeaderValue;
 - (void)loadView;
 - (id)logName;
 - (void)parseHandoffUrl:(id)arg1;

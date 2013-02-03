@@ -32,6 +32,8 @@
 - (void)minusOrderedSet:(id)arg1;
 - (void)minusSet:(id)arg1;
 - (void)moveObjectsAtIndexes:(id)arg1 toIndex:(unsigned int)arg2;
+- (void)pl_addObjectsFromArray:(id)arg1;
+- (void)pl_removeObjectsInArray:(id)arg1;
 - (BOOL)pl_replaceObjectsAtIndexes:(id)arg1 wihtObjectsIfDifferent:(id)arg2;
 - (void)removeAllObjects;
 - (void)removeFirstObject;

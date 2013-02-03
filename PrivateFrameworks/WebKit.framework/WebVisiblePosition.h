@@ -20,7 +20,7 @@
 - (id)description;
 - (BOOL)directionIsDownstream:(int)arg1;
 - (int)distanceFromPosition:(id)arg1;
-- (id)enclosingRangeWithMarsVoltaAlternatives:(id*)arg1;
+- (id)enclosingRangeWithDictationPhraseAlternatives:(id*)arg1;
 - (id)enclosingTextUnitOfGranularity:(int)arg1 inDirectionIfAtBoundary:(int)arg2;
 - (BOOL)isEditable;
 - (BOOL)isEqual:(id)arg1;

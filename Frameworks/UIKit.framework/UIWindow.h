@@ -100,7 +100,6 @@
 - (void)_createContext;
 - (int)_degreesToRotateFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
 - (void)_destroyContext;
-- (BOOL)_disableEdgeAntialiasing;
 - (BOOL)_disableGroupOpacity;
 - (BOOL)_disableViewScaling;
 - (void)_endModalSession;
@@ -235,11 +234,11 @@
 - (void)setRootViewController:(id)arg1;
 - (void)setScreen:(id)arg1;
 - (void)setWindowLevel:(float)arg1;
+- (void)setupForOrientation:(int)arg1;
 - (void)synchronizeDrawingWithID:(int)arg1 count:(unsigned int)arg2;
 - (void)synchronizeDrawingWithID:(int)arg1;
 - (void)undo:(id)arg1;
 - (id)undoManager;
-- (void)updateForOrientation:(int)arg1;
 - (struct CGPoint { float x1; float x2; })warpPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (float)windowLevel;
 - (int)windowOutput;

@@ -52,6 +52,7 @@
 @property(retain) NSString * transactionIdentifier;
 
 - (id)MD5HashStrings;
+- (id)_assetDictionary;
 - (id)_dateValueForValue:(id)arg1;
 - (id)_newDateFormatter;
 - (id)_newImageCollectionWithURLString:(id)arg1;

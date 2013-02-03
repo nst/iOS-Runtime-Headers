@@ -11,7 +11,7 @@
     struct OpaqueFigSimpleMutex { } *_loadingMutex;
     struct OpaqueFigSemaphore { } *_playabilityValidationSemaphore;
     BOOL _playable;
-    int _playableResult;
+    long _playableResult;
     int _playableStatus;
     AVWeakReference *_weakReferenceToAsset;
 }

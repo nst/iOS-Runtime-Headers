@@ -36,6 +36,7 @@
 + (void)initialize;
 + (int)resolvedTypeForConflictingLogType:(int)arg1 andLatestTransactionEntry:(id)arg2 skipObject:(BOOL*)arg3;
 
+- (id)_newNormalizedSnapshot:(id)arg1 forObject:(id)arg2;
 - (id)conflictLogDate;
 - (id)conflictingLogContent;
 - (id)conflictingLogKnowledgeVector;

@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSString, NSFileManager, PLPhotoLibrary, PLManagedObjectContext, NSObject<PhotoLibraryPTPDelegate>;
+@class NSObject<PhotoLibraryPTPDelegate>, PLManagedObjectContext, NSMutableArray, NSString, NSFileManager, PLPhotoLibrary, NSArray;
 
 @interface PLPTPdAssetManager : NSObject <PLManagedObjectContextPTPNotificationDelegate> {
     NSArray *_albumObjectIDs;
     NSObject<PhotoLibraryPTPDelegate> *_delegate;
     NSString *_firstDCIMFolderServiced;
+    NSMutableArray *_inflightAssets;
     NSFileManager *fileManager;
     PLPhotoLibrary *photoLibrary;
 }
@@ -18,7 +19,6 @@
 @property(readonly) PLManagedObjectContext * managedObjectContext;
 @property(retain) PLPhotoLibrary * photoLibrary;
 
-- (void)_albumDidChange:(id)arg1;
 - (id)_allAssetObjectIDs;
 - (BOOL)_isPTPAlbum:(id)arg1;
 - (void)_performBlockAndWait:(id)arg1;

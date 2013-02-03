@@ -33,8 +33,9 @@
 - (id)_newSMSMessageWithText:(id)arg1 forConversation:(id)arg2;
 - (void)_receivedDeliveryReceiptForMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1;
 - (void)_receivedMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1 replace:(BOOL)arg2 postInternalNotification:(BOOL)arg3;
+- (void)_receivedMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1 replace:(BOOL)arg2 replacedRecordIdentifier:(int)arg3 postInternalNotification:(BOOL)arg4;
 - (void)_registerForCTNotifications;
-- (void)_sendError:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1;
+- (void)_sendError:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1 postInternalNotification:(BOOL)arg2;
 - (void)_sentMessage:(struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; }*)arg1 replace:(BOOL)arg2 postInternalNotification:(BOOL)arg3;
 - (void)_setCachedUnreadCount:(int)arg1 forConversation:(id)arg2;
 - (int)_unreadCountForConversation:(id)arg1;

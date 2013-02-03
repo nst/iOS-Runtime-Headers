@@ -21,7 +21,6 @@
 - (BOOL)hasActionRowsEvenWhenNoOtherRowsExist;
 - (int)initialSelectedIndex;
 - (int)initialVisibleIndex;
-- (void)invalidate;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (int)mediaDisclosureStyleForIndex:(unsigned int)arg1;
 - (id)prefixActionRows;

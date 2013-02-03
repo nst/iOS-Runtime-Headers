@@ -12,6 +12,7 @@
     NSArray *_sourceMediaQueryItems;
 }
 
+@property(readonly) NSArray * items;
 @property(readonly) MPMediaQuery * sourceMediaQuery;
 
 - (id)_includeInShuffleItemsForQuery:(id)arg1;
@@ -31,6 +32,7 @@
 - (id)initWithSourceMediaQuery:(id)arg1 orderedItems:(id)arg2 shuffleType:(unsigned int)arg3;
 - (id)initWithSourceMediaQuery:(id)arg1;
 - (void)invalidateSourceMediaQueryAndLoadItems;
+- (id)items;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (void)shuffleAlbumsWithInitialIndex:(unsigned int)arg1;
 - (void)shuffleItemsWithInitialIndex:(unsigned int)arg1;

@@ -8,12 +8,12 @@
     AVMutableMetadataItemInternal *_mutablePriv;
 }
 
-@property struct { long long value; int timescale; unsigned int flags; long long epoch; } duration;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
 @property(copy) NSDictionary * extraAttributes;
 @property(copy) <NSObject><NSCopying> * key;
 @property(copy) NSString * keySpace;
 @property(copy) NSLocale * locale;
-@property struct { long long value; int timescale; unsigned int flags; long long epoch; } time;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } time;
 @property(copy) <NSObject><NSCopying> * value;
 
 + (id)metadataItem;

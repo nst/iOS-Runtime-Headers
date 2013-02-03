@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutput.framework/ScreenReaderOutput
  */
 
-@class SCRCTargetSelectorTimer, NSMutableAttributedString, NSData, NSLock, SCROConnection, NSAttributedString;
+@class NSMutableAttributedString, NSData, NSLock, SCROConnection, SCRCTargetSelectorTimer;
 
 @interface SCROBrailleClient : SCRCThreadedWeakLinkedObject {
     NSData *_aggregatedStatusCache;
@@ -15,7 +15,7 @@
     BOOL _isReady;
     BOOL _keepConnectionAlive;
     NSLock *_lock;
-    NSAttributedString *_mainStringCache;
+    NSMutableAttributedString *_mainStringCache;
     NSMutableAttributedString *_mainStringPending;
     BOOL _needsDisplay;
     BOOL _wantsDisconnectMessage;

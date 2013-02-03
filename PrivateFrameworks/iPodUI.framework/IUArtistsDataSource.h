@@ -11,6 +11,7 @@
 + (id)tabBarItemIconName;
 + (id)tabBarItemTitleKey;
 
+- (void)_updateGroupingPropertyForQueries:(id)arg1;
 - (BOOL)allowsDeletion;
 - (void)appDefaultsChanged;
 - (Class)cellConfigurationClassForEntity:(id)arg1;

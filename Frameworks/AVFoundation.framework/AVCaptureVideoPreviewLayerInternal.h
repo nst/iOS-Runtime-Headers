@@ -15,7 +15,6 @@
     NSString *gravity;
     BOOL isPaused;
     BOOL isPresentationLayer;
-    BOOL layerDebuggingEnabled;
     BOOL mirrored;
     int orientation;
     float previewRotationDegrees;

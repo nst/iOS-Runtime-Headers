@@ -33,6 +33,7 @@
 - (id)MMCSAccessHeader;
 - (id)MMCSURL;
 - (unsigned long long)_fileSize;
+- (unsigned long long)_fileSizeOnDisk;
 - (void)addMetadataValue:(id)arg1 forKey:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

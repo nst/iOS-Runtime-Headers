@@ -42,6 +42,7 @@
 - (BOOL)_applyReturnedFolders:(id)arg1 parentToArrayOfChildrenFolders:(struct __CFDictionary { }*)arg2 topmostFolders:(struct __CFArray { }*)arg3 postedToURL:(id)arg4;
 - (BOOL)_applyUnmatchedParsedFolders:(id)arg1;
 - (id)_bookmarkXBELDataForBookmarkChanges:(struct __CFArray { }*)arg1 pushedBookmarks:(struct __CFArray { }*)arg2 maxResources:(int)arg3 maxSize:(int)arg4;
+- (int)_clientOrderOfItemPrecedingItemAtServerOrder:(int)arg1 inParentWithURL:(id)arg2;
 - (void)_closeDBAndSave:(BOOL)arg1;
 - (id)_copyDAVBookmarkFromBookmarkRef:(void*)arg1;
 - (id)_copyDAVFolderFromFolderRef:(void*)arg1;

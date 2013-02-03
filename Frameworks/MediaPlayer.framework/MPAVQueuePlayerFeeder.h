@@ -2,18 +2,20 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableSet, MPAVItem, NSArray, MPQueuePlayer, NSMutableArray, <MPAVQueuePlayerFeederSource>;
+@class NSArray, NSMutableArray, MPAVItem, MPQueuePlayer, NSMutableSet, <MPAVQueuePlayerFeederSource>, MPDownloadManager;
 
-@interface MPAVQueuePlayerFeeder : NSObject {
+@interface MPAVQueuePlayerFeeder : NSObject <SSDownloadManagerObserver> {
     int _desiredQueueDepth;
+    MPDownloadManager *_downloadManager;
     BOOL _fillQueueActive;
     BOOL _forceSynchronousQueueFilling;
     NSMutableArray *_items;
-    NSMutableSet *_itemsToIgnoreCurrentItemChanges;
     int _nextFillQueueToken;
+    NSMutableSet *_pausedDownloads;
     MPQueuePlayer *_player;
     struct dispatch_queue_s { } *_playerQueue;
     <MPAVQueuePlayerFeederSource> *_playlistItemSource;
+    NSMutableSet *_reusableItems;
 }
 
 @property(readonly) MPAVItem * currentItem;
@@ -22,18 +24,23 @@
 @property(readonly) NSArray * items;
 
 - (void)_fillInQueue;
+- (id)_fillInQueueWithExtraSpace:(int)arg1 ignoreExistingItems:(BOOL)arg2 removeCurrentItem:(BOOL)arg3;
 - (id)_fillInQueueWithExtraSpace:(int)arg1 ignoreExistingItems:(BOOL)arg2;
 - (id)_fillInQueueWithExtraSpace:(int)arg1;
+- (void)_markIsReusable:(BOOL)arg1 item:(id)arg2;
+- (void)_pauseOrResumeDownloads:(id)arg1 currentDownloadID:(long long)arg2;
 - (void)_removeCurrentItem;
 - (void)_removeInvalidItems:(id)arg1;
 - (void)_updatePlayerQueueWithRemovedItems:(id)arg1 addedItems:(id)arg2 removeCurrentItem:(BOOL)arg3;
 - (void)_updateQueueDepthForRateChange;
-- (void)_validatePlaybackQueue;
+- (id)acquireReusableItemsUsingBlock:(id)arg1;
 - (void)advanceToNextItem;
+- (void)cancelReusableItemsPassingTest:(id)arg1;
 - (id)currentItem;
 - (void)dealloc;
 - (id)description;
 - (int)desiredQueueDepth;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (BOOL)forceSynchronousQueueFilling;
 - (id)initWithAVQueuePlayer:(id)arg1 itemSource:(id)arg2;
 - (void)invalidate;

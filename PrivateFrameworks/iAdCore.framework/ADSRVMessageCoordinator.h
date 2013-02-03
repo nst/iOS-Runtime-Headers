@@ -30,7 +30,6 @@
 - (void)_handleBannerMessage:(id)arg1 forSession:(id)arg2 userInfo:(id)arg3;
 - (void)_handleListenConnectionEvent:(void*)arg1;
 - (void)_handleMessage:(id)arg1 forSession:(id)arg2 userInfo:(id)arg3;
-- (id)_sessionForConnection:(id)arg1 create:(BOOL)arg2;
 - (id)autorelease;
 - (id)bannerControllers;
 - (id)clientHistory;

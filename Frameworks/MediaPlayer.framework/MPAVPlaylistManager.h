@@ -27,8 +27,11 @@
 @property(retain) <AVPlaylistFeeder> * playlistFeeder;
 @property int repeatMode;
 
+- (id)_feeder;
+- (id)_feederItemForIndex:(int)arg1;
 - (BOOL)_isDeallocating;
 - (id)_itemToFollowItemIndex:(int)arg1 skipUnavailableContent:(BOOL)arg2;
+- (void)_networkTypeDidChangeNotification:(id)arg1;
 - (int)_nextItemIndex:(int)arg1 repeatMode:(int)arg2;
 - (int)_prepareToQueuePlaybackIndex:(int)arg1 selectionDirection:(int)arg2;
 - (void)_reloadQueuedItemsIfPathBecameAvailable;

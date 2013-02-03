@@ -10,7 +10,6 @@
         float height; 
     AVPlayer *_player;
     CALayer *contentLayer;
-    BOOL disableActions;
     BOOL hasPlayerToObserve;
     BOOL isObservingPlayer;
     BOOL isOverscanSubtitleSupportEnabled;

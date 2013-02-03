@@ -35,8 +35,8 @@
 + (id)anonymousPlayer;
 + (void)loadPlayersForIdentifiers:(id)arg1 withCompletionHandler:(id)arg2;
 + (void)loadPlayersForIdentifiers:(id)arg1 withPieces:(unsigned int)arg2 withCompletionHandler:(id)arg3;
-+ (id)photoKeyForSize:(int)arg1;
 + (id)sharedCache;
++ (int)sizeForPhotoSize:(int)arg1;
 + (id)unknownPlayer;
 
 - (void)_postChangeNotification;

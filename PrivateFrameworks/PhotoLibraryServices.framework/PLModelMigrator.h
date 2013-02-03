@@ -17,25 +17,34 @@
 @property(retain) NSFileManager * fileManager;
 @property(readonly) PLPhotoLibrary * photoLibrary;
 
++ (void)_waitForDataMigratorToExit;
 + (void)addSingletonObjectsToContext:(id)arg1;
++ (void)cleanupDualCameraRollAfterTellurideCorruption;
 + (void)cleanupModelAfterRestoreFromiTunes;
 + (void)createDatabase;
 + (BOOL)didImportFileSystemAssets;
 + (void)dontImportFileSystemDataIntoDatabase;
++ (void)importAfterCrash;
 + (void)loadFileSystemDataIntoDatabase;
 + (id)modelMigrator;
 + (void)recalculateCachedCounts;
 + (void)recreateThumbnailTablesIfNecessary;
 + (BOOL)restartingAfterOTAMigration;
++ (long long)secondsNeededToCleanupDualCameraRollAfterTellurideCorruption;
 + (long long)secondsNeededToCleanupModelAfteriTunesRestore;
++ (void)setDidImportFileSystemAssets:(BOOL)arg1;
 
 - (void)_importAllDCIMAssets;
+- (id)_orderedAssetsToImportReadOnly:(BOOL)arg1;
+- (BOOL)_shouldReimportDCIMAssets;
 - (id)_thumbnailsInformation;
+- (void)cleanupDualCameraRollAfterTellurideCorruption;
 - (void)cleanupModelAfterRestoreFromiTunes;
 - (void)collectContentsOfDirectoryURL:(id)arg1 forAddingToAlbum:(id)arg2 intoAssetsArray:(id)arg3 isPhotoStream:(BOOL)arg4 isSavedPhotos:(BOOL)arg5 isCameraKit:(BOOL)arg6;
 - (void)dealloc;
 - (void)dontImportFileSystemDataIntoDatabase;
 - (id)fileManager;
+- (void)importAfterCrash;
 - (void)importFileSystemImportAssets:(id)arg1;
 - (id)init;
 - (void)loadFileSystemDataIntoDatabase;
@@ -45,8 +54,8 @@
 - (void)recreateThumbnailTablesIfNecessary;
 - (BOOL)restartingAfterOTADataMigration;
 - (void)resumePhotoStreams;
+- (long long)secondsNeededToCleanupDualCameraRollAfterTellurideCorruption;
 - (long long)secondsNeededToCleanupModelAfteriTunesRestore;
-- (void)setDidImportFileSystemAssets:(BOOL)arg1;
 - (void)setFileManager:(id)arg1;
 - (void)set_thumbnailsInformation:(id)arg1;
 - (BOOL)shouldRebuildDCIMDirectoryAtURL:(id)arg1 directoryEnumerator:(id)arg2 isPhotoStream:(BOOL*)arg3;

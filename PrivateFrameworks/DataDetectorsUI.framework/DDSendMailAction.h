@@ -2,13 +2,9 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@class NSString;
-
 @interface DDSendMailAction : DDAction <MFMailComposeViewControllerDelegate> {
-    NSString *_recipient;
 }
 
-- (void)dealloc;
 - (id)initWithURL:(id)arg1 result:(struct __DDResult { }*)arg2 context:(id)arg3;
 - (int)interactionType;
 - (id)localizedName;

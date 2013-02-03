@@ -2,14 +2,16 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface CIContext : NSObject {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    } _mutex;
-    void *_priv;
+    struct CIContextInternal { struct Context {} *x1; struct _opaque_pthread_mutex_t { long x_2_1_1; BOOL x_2_1_2[40]; } x2; boolx3; id x4; } *_priv;
 }
 
++ (struct Context { int (**x1)(); unsigned int x2; struct CGColorSpace {} *x3; struct CGColorSpace {} *x4; }*)glesInternalContextOptions:(id)arg1;
 + (id)_singletonContext;
 + (id)clContextOptions:(id)arg1;
 + (id)context;
@@ -18,10 +20,9 @@
 + (id)contextWithOptions:(id)arg1;
 + (id)glesContextOptions:(id)arg1;
 
-- (id).cxx_construct;
 - (struct CGColorSpace { }*)_colorspace;
+- (void)_gpuContextCheck;
 - (id)_initWithInternalRepresentation:(void*)arg1;
-- (void*)_internalRepresentation;
 - (bool)_isGPUContext;
 - (struct CGImage { }*)createCGImage:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 format:(int)arg3 colorSpace:(struct CGColorSpace { }*)arg4;
 - (struct CGImage { }*)createCGImage:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 format:(int)arg3;

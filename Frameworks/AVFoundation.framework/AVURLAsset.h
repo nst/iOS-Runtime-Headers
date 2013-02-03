@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVURLAssetFailedURLRequestHandling>, NSString, AVURLAssetInternal, AVAssetCache, NSURL;
+@class <AVURLAssetFailedURLRequestHandling>, AVURLAssetInternal, NSString, AVAssetCache, NSURL;
 
 @interface AVURLAsset : AVAsset {
     AVURLAssetInternal *_asset;
 }
 
-@property(copy,readonly) NSURL * URL;
+@property(readonly) NSURL * URL;
 @property(readonly) AVAssetCache * assetCache;
 @property(readonly) NSString * cacheKey;
 @property(setter=setFailedURLRequestDelegate:) <AVURLAssetFailedURLRequestHandling> * failedURLRequestDelegate;

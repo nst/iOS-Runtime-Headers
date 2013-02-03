@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSString, NSData, NSArray;
+@class NSArray, NSString, NSData, NSNumber;
 
 @interface FTRegistrationMessage : FTIDSMessage <NSCopying> {
     NSArray *_capabilities;
@@ -10,6 +10,7 @@
     NSString *_osVersion;
     NSString *_protocolVersion;
     NSArray *_responseBindings;
+    NSNumber *_responseNextHBI;
     NSString *_softwareVersion;
     NSData *_validationData;
 }
@@ -19,6 +20,7 @@
 @property(copy) NSString * osVersion;
 @property(copy) NSString * protocolVersion;
 @property(copy) NSArray * responseBindings;
+@property(copy) NSNumber * responseNextHBI;
 @property(copy) NSString * softwareVersion;
 @property(copy) NSData * validationData;
 
@@ -36,11 +38,13 @@
 - (id)protocolVersion;
 - (id)requiredKeys;
 - (id)responseBindings;
+- (id)responseNextHBI;
 - (void)setCapabilities:(id)arg1;
 - (void)setHardwareVersion:(id)arg1;
 - (void)setOsVersion:(id)arg1;
 - (void)setProtocolVersion:(id)arg1;
 - (void)setResponseBindings:(id)arg1;
+- (void)setResponseNextHBI:(id)arg1;
 - (void)setSoftwareVersion:(id)arg1;
 - (void)setValidationData:(id)arg1;
 - (id)softwareVersion;

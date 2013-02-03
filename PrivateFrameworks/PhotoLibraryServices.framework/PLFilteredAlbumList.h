@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class <NSObject><NSCopying>, NSMutableOrderedSet, NSIndexSet, PLIndexMapper, NSMutableIndexSet, PLManagedAlbumList, PLPhotoLibrary, NSString, NSPredicate;
+@class <NSObject><NSCopying>, NSMutableOrderedSet, PLIndexMapper, NSIndexSet, NSMutableIndexSet, PLManagedAlbumList, PLPhotoLibrary, NSString, NSPredicate;
 
-@interface PLFilteredAlbumList : NSObject <PLIndexMapperDataSource, PLIndexMappingCache, PLAlbumContainer> {
+@interface PLFilteredAlbumList : NSObject <PLAlbumContainer, PLIndexMapperDataSource, PLIndexMappingCache> {
     NSMutableOrderedSet *_albums;
     NSMutableIndexSet *_filteredIndexes;
     PLIndexMapper *_indexMapper;

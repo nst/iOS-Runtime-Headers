@@ -5,10 +5,12 @@
 @interface PFUbiquityFileCoordinator : NSFileCoordinator {
 }
 
-+ (void)destroyFileCoordinatorForUbiquityRootPath:(id)arg1;
-+ (id)fileCoordinatorForUbiquitizedStore:(id)arg1;
-+ (id)fileCoordinatorForUbiquitousExternalDataReferenceLocation:(id)arg1;
-+ (id)fileCoordinatorForUbiquityRootPath:(id)arg1;
++ (void)destroyFilePresenterForUbiquityRootPath:(id)arg1;
 + (void)initialize;
++ (id)newFileCoordinatorForUbiquitizedStore:(id)arg1;
++ (id)newFileCoordinatorForUbiquitousExternalDataReferenceLocation:(id)arg1;
++ (id)newFileCoordinatorForUbiquityRootPath:(id)arg1;
+
+- (void)coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 retryOnError:(BOOL)arg3 error:(id*)arg4 byAccessor:(id)arg5;
 
 @end

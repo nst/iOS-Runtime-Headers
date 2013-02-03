@@ -91,7 +91,7 @@
 - (void)_displayValuesDidChangeNotification:(id)arg1;
 - (id)_initWithLibraryDataProvider:(id)arg1;
 - (struct MPMediaLibraryInternal { id x1; int x2; struct dispatch_queue_s {} *x3; id x4; id x5; id x6; BOOL x7; float x8; id x9; double x10; int x11; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; BOOL x27; BOOL x28; BOOL x29; BOOL x30; BOOL x31; BOOL x32; BOOL x33; BOOL x34; BOOL x35; BOOL x36; BOOL x37; BOOL x38; BOOL x39; BOOL x40; BOOL x41; BOOL x42; BOOL x43; BOOL x44; })_internal;
-- (id)_itemsForQueryCriteria:(id)arg1;
+- (id)_itemsForQueryCriteria:(id)arg1 immediate:(BOOL)arg2;
 - (unsigned long long)_persistentIDForAssetURL:(id)arg1;
 - (void)_reloadLibraryForContentsChangeWithNotificationInfo:(id)arg1;
 - (void)_reloadLibraryForDynamicPropertyChangeWithNotificationInfo:(id)arg1;
@@ -154,6 +154,7 @@
 - (id)pathForAssetURL:(id)arg1;
 - (BOOL)performTransactionWithBlock:(id)arg1;
 - (BOOL)playlistExistsWithPersistentID:(unsigned long long)arg1;
+- (long long)playlistGeneration;
 - (id)playlistWithPersistentID:(unsigned long long)arg1;
 - (id)preferredAudioLanguages;
 - (id)preferredSubtitleLanguages;

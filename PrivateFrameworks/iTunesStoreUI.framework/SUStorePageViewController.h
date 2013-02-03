@@ -41,7 +41,6 @@
 - (id)_activeChildViewController;
 - (id)_activePageSection;
 - (void)_applyPropertiesToViewController:(id)arg1;
-- (void)_delayedFetchPage;
 - (void)_dismissNavigationMenuViewController;
 - (void)_documentBoundsChangeNotification:(id)arg1;
 - (double)_expirationTime;

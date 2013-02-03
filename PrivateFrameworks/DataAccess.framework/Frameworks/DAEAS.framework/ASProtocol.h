@@ -14,6 +14,7 @@
 - (id)_usernameOnlyPortionOfUserString:(id)arg1;
 - (id)addressBookConstraintsPath;
 - (BOOL)allAttachmentsAreBase64ed;
+- (BOOL)allowsReminderOnCompletedTasks;
 - (id)calendarConstraintsPath;
 - (void)dealloc;
 - (BOOL)fetchAttachmentsWithItemOperations;

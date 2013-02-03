@@ -14,7 +14,6 @@
     BOOL _isOnADay;
     BOOL _locationAlertsAvailable;
     EKReminderLocationPickerModel *_locationPickerModel;
-    BOOL _locationRestricted;
     BOOL _showsLocation;
     EKLocation *_structuredLocation;
     UIAlertView *_wifiDisabledAlert;
@@ -27,7 +26,6 @@
 @property BOOL showsLocation;
 @property(copy) EKLocation * structuredLocation;
 
-- (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applyStylesToCell:(id)arg1;
 - (void)_datePickerDateChanged:(id)arg1;
 - (void)_deselectDatePickerRowIfSelected;
@@ -45,7 +43,6 @@
 - (void)_updateDateText;
 - (void)_updateDateTextOnCell:(id)arg1;
 - (void)_updateExplanatoryText;
-- (void)_updateLocationRestricted;
 - (void)_updateLocationText;
 - (void)_wifiStatusDidChange:(id)arg1;
 - (int)alarmProximity;

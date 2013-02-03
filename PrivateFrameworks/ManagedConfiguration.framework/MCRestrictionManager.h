@@ -92,6 +92,7 @@
 - (int)restrictedBoolForFeature:(id)arg1;
 - (int)senderPID;
 - (BOOL)setAllClientRestrictions:(id)arg1 outRestrictionsChanged:(BOOL*)arg2 outEffectiveSettingsChanged:(BOOL*)arg3 outRecomputedNag:(BOOL*)arg4 outError:(id*)arg5;
+- (void)setBoolValue:(BOOL)arg1 forSetting:(id)arg2;
 - (BOOL)setClientRestrictions:(id)arg1 clientType:(id)arg2 clientUUID:(id)arg3 localizedClientDescription:(id)arg4 localizedWarning:(id)arg5 outRestrictionsChanged:(BOOL*)arg6 outEffectiveSettingsChanged:(BOOL*)arg7 outRecomputedNag:(BOOL*)arg8 outError:(id*)arg9;
 - (BOOL)setParametersForSettingsByType:(id)arg1;
 - (BOOL)setProfileRestrictions:(id)arg1 outRestrictionsChanged:(BOOL*)arg2 outEffectiveSettingsChanged:(BOOL*)arg3 outRecomputedNag:(BOOL*)arg4 outError:(id*)arg5;

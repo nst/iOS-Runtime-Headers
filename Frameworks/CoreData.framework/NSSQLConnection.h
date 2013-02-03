@@ -30,6 +30,9 @@
 - (void)connect;
 - (void)createIndexesForEntity:(id)arg1;
 - (void)createManyToManyTablesForEntity:(id)arg1;
+- (id)createMapOfEntityNameToPKMaxForEntities:(id)arg1;
+- (id)createMapOfEntityNameToPKMaxForEntitiesFromPKTable:(id)arg1;
+- (id)createMapOfEntityNameToPKMaxForEntitiesFromUBRangeTable:(id)arg1;
 - (void)createMetadata;
 - (void)createPrimaryKeyTableForModel:(id)arg1 knownEmpty:(BOOL)arg2;
 - (void)createSchema;
@@ -77,11 +80,14 @@
 - (void)selectAttributes:(id)arg1 fetchRequest:(id)arg2 lock:(BOOL)arg3 entity:(id)arg4;
 - (void)setColumnsToFetch:(id)arg1;
 - (void)setExclusiveLockingMode:(BOOL)arg1;
+- (void)setUbiquityTableValue:(id)arg1 forKey:(id)arg2;
 - (void)sleep;
 - (id)sqlStatement;
 - (void)transactionDidBegin;
 - (void)transactionDidCommit;
 - (void)transactionDidRollback;
+- (id)ubiquityTableKeysAndValues;
+- (id)ubiquityTableValueForKey:(id)arg1;
 - (void)updateCorrelation:(id)arg1;
 - (void)updateRow:(id)arg1;
 - (void)updateUbiquityKnowledgeForPeerWithID:(id)arg1 andTransactionNumber:(id)arg2;

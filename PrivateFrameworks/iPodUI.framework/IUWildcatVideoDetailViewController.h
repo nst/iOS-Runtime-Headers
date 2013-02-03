@@ -38,6 +38,7 @@
 - (void)_cancelImageRequest:(id*)arg1;
 - (void)_cancelRentalAlertView:(BOOL)arg1;
 - (void)_databaseContentsDidChangeNotification:(id)arg1;
+- (void)_databaseDynamicContentsDidChangeNotification:(id)arg1;
 - (void)_destroyRentalAlertView;
 - (void)_destroyTemporaryAnimationViews;
 - (float)_foldingTransitionHeightOfVerticalSection:(unsigned int)arg1;

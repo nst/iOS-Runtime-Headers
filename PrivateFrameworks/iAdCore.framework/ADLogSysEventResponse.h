@@ -5,6 +5,7 @@
 @interface ADLogSysEventResponse : PBCodable {
 }
 
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

@@ -5,14 +5,11 @@
 @class NSURLAuthenticationChallenge;
 
 @interface SSDownloadAuthenticationSession : SSDownloadSession {
-    NSURLAuthenticationChallenge *_challenge;
-    id _sender;
 }
 
 @property(readonly) NSURLAuthenticationChallenge * authenticationChallenge;
 
 - (void)_finishWithType:(int)arg1 credential:(id)arg2;
 - (id)authenticationChallenge;
-- (void)dealloc;
 
 @end

@@ -44,7 +44,6 @@
     int _publishToYouTubeIndex;
     PLVideoRemaker *_remaker;
     int _remakerMode;
-    UIBarButtonItem *_savePhotoItem;
     int _selectedImageCount;
     int _selectedUnknownCount;
     int _selectedVideoCount;
@@ -64,7 +63,7 @@
 @property BOOL showPhotosVideosFilter;
 
 - (id)_actionToolbarItems;
-- (void)_addPhotos:(id)arg1 toAlbum:(struct NSObject { Class x1; }*)arg2 removeFromCurrentAlbum:(BOOL)arg3;
+- (BOOL)_allowSavingToCameraRoll;
 - (int)_allowedDeleteOperation;
 - (BOOL)_canAddAssets;
 - (BOOL)_canEmailMedia;
@@ -100,8 +99,8 @@
 - (void)_remakerDidFinish:(id)arg1;
 - (void)_removeSelectedItems:(id)arg1;
 - (void)_restoreAlbumViewSelectionFromPickerSession;
+- (void)_saveAssetsToCameraRoll:(id)arg1;
 - (void)_saveConfiguration:(id)arg1;
-- (void)_saveSelectedItems:(id)arg1;
 - (void)_sendViaEmail:(id)arg1;
 - (void)_sendViaMMS:(id)arg1;
 - (void)_shareSelectedItems:(id)arg1;

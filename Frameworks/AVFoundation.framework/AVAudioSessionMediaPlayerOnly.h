@@ -14,6 +14,7 @@
 @property(readonly) double currentHardwareSampleRate;
 @property <AVAudioSessionDelegateMediaPlayerOnly> * delegate;
 @property(readonly) BOOL inputIsAvailable;
+@property(readonly) NSString * mode;
 @property(readonly) double preferredHardwareSampleRate;
 @property(readonly) double preferredIOBufferDuration;
 
@@ -21,7 +22,7 @@
 
 - (void)_addFPListeners;
 - (void)_removeFPListeners;
-- (BOOL)_setFigPlayer:(struct OpaqueFigPlayer { }*)arg1;
+- (void)_setFigPlayer:(struct OpaqueFigPlayer { }*)arg1;
 - (id)_weakReference;
 - (id)category;
 - (int)currentHardwareInputNumberOfChannels;
@@ -32,6 +33,7 @@
 - (id)init;
 - (BOOL)inputIsAvailable;
 - (BOOL)isApplicationAudioSession;
+- (id)mode;
 - (double)preferredHardwareSampleRate;
 - (double)preferredIOBufferDuration;
 - (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
@@ -39,6 +41,7 @@
 - (void)setApplicationAudioSession:(BOOL)arg1;
 - (BOOL)setCategory:(id)arg1 error:(id*)arg2;
 - (void)setDelegate:(id)arg1;
+- (BOOL)setMode:(id)arg1 error:(id*)arg2;
 - (BOOL)setPreferredHardwareSampleRate:(double)arg1 error:(id*)arg2;
 - (BOOL)setPreferredIOBufferDuration:(double)arg1 error:(id*)arg2;
 

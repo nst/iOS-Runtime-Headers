@@ -10,7 +10,6 @@
 
 @property BOOL acceptsEmoji;
 @property BOOL acceptsFloatingKeyboard;
-@property BOOL acceptsForwardDelete;
 @property BOOL acceptsSplitKeyboard;
 @property int autocapitalizationType;
 @property int autocorrectionType;
@@ -23,7 +22,7 @@
 @property int emptyContentReturnKeyType;
 @property BOOL enablesReturnKeyAutomatically;
 @property(readonly) UITextPosition * endOfDocument;
-@property BOOL forceEnableForwardDelete;
+@property BOOL forceEnableDictation;
 @property <UITextInputDelegate> * inputDelegate;
 @property(retain) UIColor * insertionPointColor;
 @property unsigned int insertionPointWidth;
@@ -102,13 +101,13 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)moveBackward:(unsigned int)arg1;
 - (void)moveForward:(unsigned int)arg1;
-- (id)nextUnperturbedMarsVoltasBoundaryFromPosition:(id)arg1;
+- (id)nextUnperturbedDictationResultBoundaryFromPosition:(id)arg1;
 - (int)offsetFromPosition:(id)arg1 toPosition:(id)arg2;
 - (id)positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3;
 - (id)positionFromPosition:(id)arg1 offset:(int)arg2;
 - (id)positionFromPosition:(id)arg1 toBoundary:(int)arg2 inDirection:(int)arg3;
 - (id)positionWithinRange:(id)arg1 farthestInDirection:(int)arg2;
-- (id)previousUnperturbedMarsVoltasBoundaryFromPosition:(id)arg1;
+- (id)previousUnperturbedDictationResultBoundaryFromPosition:(id)arg1;
 - (id)rangeByExtendingCurrentSelection:(int)arg1;
 - (id)rangeByMovingCurrentSelection:(int)arg1;
 - (id)rangeEnclosingPosition:(id)arg1 withGranularity:(int)arg2 inDirection:(int)arg3;

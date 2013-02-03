@@ -11,6 +11,7 @@
 + (id)tabBarItemTitleKey;
 
 - (BOOL)allowsDeletion;
+- (BOOL)allowsDownloadingAllEntities;
 - (Class)cellConfigurationClassForEntity:(id)arg1;
 - (BOOL)deleteRemovesEntireGroup;
 - (SEL)libraryHasDisplayableEntitiesSelector;

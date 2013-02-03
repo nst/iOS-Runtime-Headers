@@ -26,6 +26,8 @@
 - (int)cardCellSelectionStyle;
 - (id)cardClippingImageLabelBevelColor;
 - (id)cardClippingImageLabelColor;
+- (id)cardDeleteButtonImage;
+- (id)cardDeleteButtonImagePressed;
 - (id)cardHeaderDefaultLabelTextColor;
 - (id)cardHeadlineTextColor;
 - (id)cardLabelEmphasizedHighlightedTextColor;

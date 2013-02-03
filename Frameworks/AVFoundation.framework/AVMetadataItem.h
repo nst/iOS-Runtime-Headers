@@ -8,18 +8,18 @@
     AVMetadataItemInternal *_priv;
 }
 
-@property(copy,readonly) NSString * commonKey;
+@property(readonly) NSString * commonKey;
 @property(readonly) NSData * dataValue;
 @property(readonly) NSDate * dateValue;
-@property(readonly) struct { long long value; int timescale; unsigned int flags; long long epoch; } duration;
-@property(copy,readonly) NSDictionary * extraAttributes;
-@property(copy,readonly) <NSObject><NSCopying> * key;
-@property(copy,readonly) NSString * keySpace;
-@property(copy,readonly) NSLocale * locale;
+@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
+@property(readonly) NSDictionary * extraAttributes;
+@property(readonly) <NSObject><NSCopying> * key;
+@property(readonly) NSString * keySpace;
+@property(readonly) NSLocale * locale;
 @property(readonly) NSNumber * numberValue;
 @property(readonly) NSString * stringValue;
-@property(readonly) struct { long long value; int timescale; unsigned int flags; long long epoch; } time;
-@property(copy,readonly) <NSObject><NSCopying> * value;
+@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } time;
+@property(readonly) <NSObject><NSCopying> * value;
 
 + (id)_figMetadataPropertyFromMetadataItems:(id)arg1;
 + (id)metadataItemsFromArray:(id)arg1 withKey:(id)arg2 keySpace:(id)arg3;

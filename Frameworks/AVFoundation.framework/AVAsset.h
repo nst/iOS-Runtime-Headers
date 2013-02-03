@@ -9,10 +9,10 @@
 }
 
 @property(readonly) NSArray * availableChapterLocales;
-@property(readonly) struct { long long value; int timescale; unsigned int flags; long long epoch; } duration;
-@property(readonly) struct CGSize { float width; float height; } naturalSize;
+@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
+@property(readonly) struct CGSize { float x1; float x2; } naturalSize;
 @property(readonly) float preferredRate;
-@property(readonly) struct CGAffineTransform { float a; float b; float c; float d; float tx; float ty; } preferredTransform;
+@property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
 @property(readonly) float preferredVolume;
 
 + (id)assetWithURL:(id)arg1 figPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg2 trackIDs:(id)arg3 dynamicBehavior:(BOOL)arg4;

@@ -5,7 +5,7 @@
 @class AVWeakReference;
 
 @interface AVPlaybackItemTrackInspector : AVAssetTrackInspector {
-    unsigned int _mediaType;
+    unsigned long _mediaType;
     struct OpaqueFigPlaybackItem { } *_playbackItem;
     int _trackID;
     AVWeakReference *_weakReferenceToAsset;

@@ -21,6 +21,8 @@
 @property(retain) ADAdSpecification * specification;
 
 - (void)addRequesterIdentifier:(id)arg1;
+- (void)clearRequesterIdentifiers;
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (unsigned long long)defaultsLastUpdate;
 - (id)description;

@@ -242,6 +242,7 @@
 - (void)presentSheetFromButtonBar:(id)arg1;
 - (void)presentSheetInView:(id)arg1;
 - (void)presentSheetToAboveView:(id)arg1;
+- (void)removeFromSuperview;
 - (void)replaceAlert:(id)arg1;
 - (BOOL)requiresPortraitOrientation;
 - (BOOL)resignFirstResponder;

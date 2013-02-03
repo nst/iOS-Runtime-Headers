@@ -22,6 +22,7 @@
 - (void)checkForOutstandingActivities;
 - (BOOL)computeHashForAsset:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (void)dealloc;
+- (void)deleteAssetCollections:(id)arg1 personID:(id)arg2;
 - (BOOL)enqueueAssetCollections:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (void)forgetPersonID:(id)arg1;
 - (void)handleSubscriptionPush;

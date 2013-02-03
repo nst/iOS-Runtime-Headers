@@ -157,12 +157,13 @@
 
 + (id)_allDescriptions;
 + (void)_beginAppearanceTransitionFromViewController:(id)arg1 toViewController:(id)arg2 animated:(BOOL)arg3;
-+ (void)_dequeueTransitionSafeInvocations;
 + (void)_disableNestedViewControllerSupport:(BOOL)arg1;
 + (BOOL)_doesOverrideLegacyShouldAutorotateMethod;
 + (void)_endAppearanceTransitionFromViewController:(id)arg1 toViewController:(id)arg2;
-+ (void)_enqueueTransitionSafeInvocation:(id)arg1;
 + (void)_forceLegacyModalViewControllers:(BOOL)arg1;
++ (void)_iTunesStoreUI_dequeueTransitionSafeInvocations;
++ (void)_iTunesStoreUI_enqueueTransitionSafeInvocation:(id)arg1;
++ (void)_iTunesStoreUI_timeoutTransitionSafety;
 + (BOOL)_isNestedViewControllerSupportDisabled;
 + (BOOL)_isViewSizeFullScreen:(id)arg1 inWindow:(id)arg2 ignoreInWindowCheck:(BOOL)arg3;
 + (BOOL)_isViewSizeFullScreen:(id)arg1 inWindow:(id)arg2;

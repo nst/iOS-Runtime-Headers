@@ -6,6 +6,7 @@
 
 @interface GKTableHeaderSearchController : NSObject <UISearchBarDelegate, UISearchDisplayDelegate> {
     UISearchBar *_searchBar;
+    BOOL _searchBarHidden;
     UISearchDisplayController *_searchController;
     NSArray *_searchTableSections;
     GKTableViewControllerV2 *_tableController;
@@ -13,6 +14,7 @@
 }
 
 @property(retain) UISearchBar * searchBar;
+@property BOOL searchBarHidden;
 @property(retain) UISearchDisplayController * searchDisplayController;
 @property(retain) NSArray * searchTableSections;
 @property GKTableViewControllerV2 * tableController;
@@ -29,6 +31,7 @@
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (id)searchBar;
 - (void)searchBarCancelButtonClicked:(id)arg1;
+- (BOOL)searchBarHidden;
 - (void)searchBarSearchButtonClicked:(id)arg1;
 - (void)searchBarTextDidBeginEditing:(id)arg1;
 - (void)searchBarTextDidEndEditing:(id)arg1;
@@ -37,6 +40,7 @@
 - (id)searchDisplayController;
 - (id)searchTableSections;
 - (void)setSearchBar:(id)arg1;
+- (void)setSearchBarHidden:(BOOL)arg1;
 - (void)setSearchDisplayController:(id)arg1;
 - (void)setSearchTableSections:(id)arg1;
 - (void)setTableController:(id)arg1;

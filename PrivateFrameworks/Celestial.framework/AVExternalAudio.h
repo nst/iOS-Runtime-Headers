@@ -2,12 +2,8 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface AVExternalAudio : NSObject {
-    struct AVExternalAudioPrivate { BOOL x1; struct OpaqueFigPlayer {} *x2; id x3; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x4; void*x5; oneway void*x6; void*x7; void*x8; void*x9; const in void*x10; long x11; void*x12; void*x13; double x14; int x15; out void*x16; void*x17; long x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; BOOL x25; } *_priv;
+    struct AVExternalAudioPrivate { BOOL x1; struct OpaqueFigPlayer {} *x2; id x3; BOOL x4; } *_priv;
 }
 
 + (id)avExternalAudio:(id)arg1;

@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class SSDownload;
-
 @interface MPStoreMediaDownloadObserver : MPMediaDownloadObserver <SSDownloadManagerObserver> {
-    SSDownload *_download;
+    long long _downloadID;
     BOOL _isRestoreDownload;
 }
 
+- (id)_download;
 - (void)_onQueue_invalidate;
 - (BOOL)canCancel;
 - (void)cancelDownload;

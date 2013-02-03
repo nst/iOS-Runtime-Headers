@@ -7,7 +7,7 @@
     id _target;
 }
 
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)initWithActionSheetTarget:(id)arg1 action:(SEL)arg2;
 
 @end

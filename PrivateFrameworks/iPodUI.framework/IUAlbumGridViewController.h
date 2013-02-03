@@ -38,7 +38,7 @@
 
 - (unsigned int)_albumsPerRow;
 - (void)_cancelDeleteConfirmationAlert:(BOOL)arg1;
-- (id)_createCellContextWithBackgroundColor:(id)arg1 albumFillColor:(id)arg2 titleColor:(id)arg3 subtitleColor:(id)arg4;
+- (id)_createCellContextWithBackgroundColor:(id)arg1 albumFillColor:(id)arg2 titleColor:(id)arg3 subtitleColor:(id)arg4 previousContext:(id)arg5;
 - (void)_expireWasRecentlyScrolling;
 - (void)_fixupDataSource;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_fromFrameForTransitionFromCell:(id)arg1 albumIndex:(unsigned int)arg2;

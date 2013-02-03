@@ -13,8 +13,8 @@
 @property(getter=_helper,setter=_setHelper:,retain) AVAssetWriterHelper * helper;
 @property(readonly) NSArray * inputs;
 @property(copy) NSArray * metadata;
-@property(copy,readonly) NSString * outputFileType;
-@property(copy,readonly) NSURL * outputURL;
+@property(readonly) NSString * outputFileType;
+@property(readonly) NSURL * outputURL;
 @property BOOL shouldOptimizeForNetworkUse;
 @property(readonly) int status;
 

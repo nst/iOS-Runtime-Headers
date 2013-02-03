@@ -21,6 +21,7 @@
 @property(readonly) long long persistentIdentifier;
 @property(retain) SSDownloadStatus * status;
 
++ (long long)_existsMessage;
 + (long long)_getExternalValuesMessage;
 + (long long)_getValueMessage;
 + (long long)_setExternalValuesMessage;

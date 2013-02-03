@@ -8,7 +8,7 @@
     NSURL *_URL;
     AVAssetCache *_assetCache;
     AVAssetInspector *_assetInspector;
-    int _basicInspectionFailureCode;
+    long _basicInspectionFailureCode;
     NSURL *_downloadDestinationURL;
     struct OpaqueFigFormatReader { } *_formatReader;
     NSMutableArray *_keysAwaitingCompletion;

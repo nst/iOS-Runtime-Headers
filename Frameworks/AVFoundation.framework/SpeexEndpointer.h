@@ -6,7 +6,7 @@
     void *_impl;
     double mEndWaitTime;
     int mEndpointMode;
-    unsigned int mFrameRate;
+    unsigned long mFrameRate;
     double mInterspeechWaitTime;
     int mLastStatus;
     double mStartWaitTime;

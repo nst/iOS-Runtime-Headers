@@ -13,6 +13,7 @@
 - (unsigned int)countForQueueFeeder;
 - (double)currentTimeDisplayOverride;
 - (BOOL)isPlaceholderForItem:(id)arg1;
+- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)setCountForQueueFeeder:(unsigned int)arg1;
 - (void)setCurrentTimeDisplayOverride:(double)arg1;
 

@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKCurrentTimeMarkerView, NSTimer;
+@class NSTimer, EKCurrentTimeMarkerView, UIView;
 
 @interface EKDayTimeView : UIView {
     unsigned int _leftBorder : 1;
     unsigned int _rightBorder : 1;
+    UIView *_bottomContentView;
     float _designatorSize;
     double _highlightedHour;
     float _hourHeight;
@@ -17,6 +18,7 @@
     EKCurrentTimeMarkerView *_timeMarker;
     NSTimer *_timeMarkerTimer;
     float _timeWidth;
+    UIView *_topContentView;
     BOOL _useLightText;
 }
 
@@ -45,13 +47,15 @@
 - (void)_updateMarkerPosition;
 - (void)dealloc;
 - (float)defaultHeight;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forContentView:(id)arg2 withHourRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (double)highlightedHour;
 - (float)hourHeight;
 - (int)hoursToPad;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlightedHour:(double)arg1;
 - (void)setHoursToPad:(int)arg1;
+- (void)setOpaque:(BOOL)arg1;
 - (void)setOrientation:(int)arg1;
 - (void)setShowsLeftBorder:(BOOL)arg1;
 - (void)setShowsRightBorder:(BOOL)arg1;

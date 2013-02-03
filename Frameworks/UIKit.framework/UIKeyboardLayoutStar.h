@@ -48,6 +48,7 @@
     float _initialPinchSeparation;
     float _initialSplitProgress;
     BOOL _isOutOfBounds;
+    BOOL _isRebuilding;
     } _keyPeripheralInset;
     UIKBTree *_keyboard;
     BOOL _keyboardImageViewIsDim;
@@ -80,7 +81,7 @@
     double _shiftLockFirstTapTime;
     BOOL _shiftLockReady;
     int _shiftTrackingChangeCount;
-    BOOL _showForwardDeleteKey;
+    BOOL _showDictationKey;
     BOOL _showIntlKey;
     SEL _spaceAction;
     SEL _spaceLongAction;
@@ -106,7 +107,7 @@
 @property(readonly) NSString * localizedInputMode;
 @property(getter=isRotating,readonly) BOOL rotating;
 @property BOOL shift;
-@property(readonly) BOOL showForwardDeleteKey;
+@property(readonly) BOOL showDictationKey;
 @property BOOL showIntlKey;
 
 - (void)_autoSplit:(id)arg1;
@@ -133,7 +134,7 @@
 - (id)compositeImageForKey:(id)arg1;
 - (void)confirmAction;
 - (void)deactivateActiveKeys;
-- (void)deactivateAllInActivatedSet;
+- (void)deactivateActiveKeysClearingTouchInfo:(BOOL)arg1 clearingDimming:(BOOL)arg2;
 - (void)dealloc;
 - (id)defaultNameForKeyplaneName:(id)arg1;
 - (void)deleteAction;
@@ -207,13 +208,13 @@
 - (void)prepareForSplitTransition;
 - (void)rebuildSplitTransitionView;
 - (void)rebuildSplitTransitionViewFromKeyplane:(id)arg1 toKeyplane:(id)arg2;
-- (void)refreshForAvailablityDidChange;
+- (void)refreshForDictationAvailablityDidChange;
 - (void)refreshForRivenPreferences;
 - (void)refreshGhostKeyState;
 - (void)removeFromSuperview;
 - (struct CGImage { }*)renderedImageWithStateFallbacksForToken:(id)arg1;
 - (struct CGImage { }*)renderedImageWithToken:(id)arg1;
-- (struct CGImage { }*)renderedKeyplaneWithName:(id)arg1 split:(BOOL)arg2;
+- (struct CGImage { }*)renderedKeyplaneWithToken:(id)arg1 split:(BOOL)arg2;
 - (void)resizeForKeyplaneSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)restoreDefaultsForAllKeys;
 - (void)restoreDefaultsForKey:(id)arg1;
@@ -229,6 +230,7 @@
 - (void)setDidLongPress:(BOOL)arg1;
 - (void)setKeyForTouchInfo:(id)arg1 key:(id)arg2;
 - (void)setKeyboardAppearance:(int)arg1;
+- (void)setKeyboardDim:(BOOL)arg1 amount:(float)arg2 withDuration:(float)arg3;
 - (void)setKeyboardDim:(BOOL)arg1;
 - (void)setKeyboardName:(id)arg1 appearance:(int)arg2;
 - (void)setKeyboardName:(id)arg1;
@@ -249,10 +251,10 @@
 - (BOOL)shouldHitTestKey:(id)arg1;
 - (BOOL)shouldPreventInputManagerHitTestingForKey:(id)arg1;
 - (BOOL)shouldRetestKey:(id)arg1 withKeyplane:(id)arg2;
-- (BOOL)shouldShowForwardDeleteKey;
+- (BOOL)shouldShowDictationKey;
 - (BOOL)shouldShowIndicator;
+- (BOOL)showDictationKey;
 - (void)showFlickView:(int)arg1 withKey:(id)arg2 flickString:(id)arg3;
-- (BOOL)showForwardDeleteKey;
 - (BOOL)showIntlKey;
 - (void)showKeyboardType:(int)arg1 appearance:(int)arg2 orientation:(id)arg3 withShift:(BOOL)arg4;
 - (void)showPopupVariantsForKey:(id)arg1;
@@ -277,7 +279,7 @@
 - (unsigned int)upActionFlagsForKey:(id)arg1;
 - (void)upActionShift;
 - (void)updateBackgroundIfNeeded;
-- (void)updateForwardDeleteKeyOnNumberPads;
+- (void)updateDictationKeyOnNumberPads;
 - (void)updateKeyCentroids;
 - (void)updateKeyboardForKeyplane:(id)arg1;
 - (void)updateKeyplaneViewMask;

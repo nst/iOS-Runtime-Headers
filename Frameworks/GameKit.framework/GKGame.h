@@ -23,6 +23,8 @@
 @property(getter=isInternal,readonly) BOOL internal;
 @property(retain) GKGameInternal * internal;
 @property(readonly) NSString * name;
+@property(readonly) BOOL nearbyMultiplayerEnabled;
+@property(retain) NSNumber * nearbyMultiplayerOverride;
 @property unsigned int platform;
 @property(getter=isPrerendered) BOOL prerendered;
 @property(getter=isSandboxed) BOOL sandboxed;
@@ -70,8 +72,10 @@
 - (void)loadStoreItemWithCompletionHandler:(id)arg1;
 - (void)loadTellAFriendMessageWithCompletionHandler:(id)arg1;
 - (id)macBrushForIconStyle:(int)arg1;
+- (BOOL)nearbyMultiplayerEnabled;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)setInternal:(id)arg1;
+- (void)setNearbyMultiplayerOverride:(id)arg1;
 - (void)setSandboxed:(BOOL)arg1;
 - (void)setStoreItem:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;

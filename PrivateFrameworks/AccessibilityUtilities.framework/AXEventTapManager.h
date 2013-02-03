@@ -6,10 +6,11 @@
    See Warning(s) below.
  */
 
-@class NSMutableArray, NSMutableSet;
+@class NSRecursiveLock, NSMutableArray, NSMutableSet;
 
 @interface AXEventTapManager : NSObject {
     NSMutableArray *_addedEventTapPairs;
+    NSRecursiveLock *_eventTapLock;
     NSMutableArray *_eventTaps;
     id _installationCallback;
     BOOL _isEnumeratingEventTaps;

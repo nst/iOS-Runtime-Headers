@@ -2,15 +2,28 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class SUMescalSession, NSString;
+
 @interface SUAccountViewController : SUStorePageViewController {
     BOOL _failed;
+    SUMescalSession *_mescalSession;
+    int _mescalState;
+    NSString *_primingSignature;
     int _style;
 }
 
+@property(getter=_mescalSession,readonly) SUMescalSession * _mescalSession;
 @property int style;
+
++ (id)_latestAccountViewController;
 
 - (id)_authenticationQueryParametersForStyle:(int)arg1;
 - (id)_bagKeyForStyle:(int)arg1;
+- (void)_closeMescalSession;
+- (void)_mescalDidOpenWithSession:(id)arg1 error:(id)arg2;
+- (id)_mescalSession;
+- (void)dealloc;
+- (void)enqueueFetchOperation;
 - (void)handleFailureWithError:(id)arg1;
 - (id)init;
 - (id)newFetchOperation;

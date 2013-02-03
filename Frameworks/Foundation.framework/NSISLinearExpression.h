@@ -34,6 +34,7 @@
 - (void)replaceVariable:(id)arg1 withVariablePlusDelta:(float)arg2 timesVariable:(id)arg3 processVariableNewToReceiver:(id)arg4 processVariableDroppedFromReceiver:(id)arg5;
 - (void)replaceVariable:(id)arg1 withVariablePlusDelta:(float)arg2;
 - (void)scaleBy:(float)arg1;
+- (void)scalePrescaledVariablesBy:(double)arg1;
 - (void)setCoefficient:(float)arg1 forVariable:(id)arg2;
 - (void)setConstant:(float)arg1;
 

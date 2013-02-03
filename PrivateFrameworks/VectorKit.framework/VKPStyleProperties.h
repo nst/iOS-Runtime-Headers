@@ -132,6 +132,7 @@
         unsigned int layerShadowsVisible : 1; 
         unsigned int onlyShowIfTappable : 1; 
         unsigned int shieldVisible : 1; 
+        unsigned int showShieldTextAsLabel : 1; 
         unsigned int simpleLine : 1; 
         unsigned int strokeColorInterpolate : 1; 
         unsigned int trafficVisible : 1; 
@@ -242,6 +243,7 @@
     float _secondFillTextureOpacity;
     float _shieldTiltLimit;
     BOOL _shieldVisible;
+    BOOL _showShieldTextAsLabel;
     BOOL _simpleLine;
     unsigned int _strokeColor;
     BOOL _strokeColorInterpolate;
@@ -413,6 +415,7 @@
 @property BOOL hasSecondFillTextureOpacity;
 @property BOOL hasShieldTiltLimit;
 @property BOOL hasShieldVisible;
+@property BOOL hasShowShieldTextAsLabel;
 @property BOOL hasSimpleLine;
 @property BOOL hasStrokeColor;
 @property BOOL hasStrokeColorInterpolate;
@@ -495,6 +498,7 @@
 @property float secondFillTextureOpacity;
 @property float shieldTiltLimit;
 @property BOOL shieldVisible;
+@property BOOL showShieldTextAsLabel;
 @property BOOL simpleLine;
 @property unsigned int strokeColor;
 @property BOOL strokeColorInterpolate;
@@ -683,6 +687,7 @@
 - (BOOL)hasSecondFillTextureOpacity;
 - (BOOL)hasShieldTiltLimit;
 - (BOOL)hasShieldVisible;
+- (BOOL)hasShowShieldTextAsLabel;
 - (BOOL)hasSimpleLine;
 - (BOOL)hasStrokeColor;
 - (BOOL)hasStrokeColorInterpolate;
@@ -906,6 +911,7 @@
 - (void)setHasSecondFillTextureOpacity:(BOOL)arg1;
 - (void)setHasShieldTiltLimit:(BOOL)arg1;
 - (void)setHasShieldVisible:(BOOL)arg1;
+- (void)setHasShowShieldTextAsLabel:(BOOL)arg1;
 - (void)setHasSimpleLine:(BOOL)arg1;
 - (void)setHasStrokeColor:(BOOL)arg1;
 - (void)setHasStrokeColorInterpolate:(BOOL)arg1;
@@ -982,6 +988,7 @@
 - (void)setSecondFillTextureOpacity:(float)arg1;
 - (void)setShieldTiltLimit:(float)arg1;
 - (void)setShieldVisible:(BOOL)arg1;
+- (void)setShowShieldTextAsLabel:(BOOL)arg1;
 - (void)setSimpleLine:(BOOL)arg1;
 - (void)setStrokeColor:(unsigned int)arg1;
 - (void)setStrokeColorInterpolate:(BOOL)arg1;
@@ -1006,6 +1013,7 @@
 - (void)setZIndex:(unsigned int)arg1;
 - (float)shieldTiltLimit;
 - (BOOL)shieldVisible;
+- (BOOL)showShieldTextAsLabel;
 - (BOOL)simpleLine;
 - (unsigned int)strokeColor;
 - (BOOL)strokeColorInterpolate;

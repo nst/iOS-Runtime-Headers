@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIImage, NSData, WLCardContent, WLCardImages, NSDate, NSSet, NSArray, WLCardDisplayProfile, WLImage, WLBarcode, NSString, NSURL;
+@class UIImage, NSData, PKPassDisplayProfile, PKImage, NSDate, NSSet, NSArray, PKPassImages, PKPassContent, PKBarcode, NSString, NSURL;
 
 @interface PKPass : NSObject <NSCopying, NSSecureCoding> {
     NSString *_authenticationToken;
-    WLCardContent *_content;
-    WLCardDisplayProfile *_displayProfile;
+    PKPassContent *_content;
+    PKPassDisplayProfile *_displayProfile;
     NSDate *_expirationDate;
-    WLCardImages *_images[4];
+    PKPassImages *_images[4];
     NSDate *_ingestedDate;
     BOOL _isPreIngested;
     NSString *_localizedDescription;
@@ -17,9 +17,10 @@
     NSData *_manifestHash;
     NSDate *_modifiedDate;
     NSString *_organizationName;
-    WLImage *_partialFrontFaceImagePlaceholder;
+    PKImage *_partialFrontFaceImagePlaceholder;
     NSString *_passTypeIdentifier;
     NSDate *_relevantDate;
+    BOOL _revoked;
     NSString *_serialNumber;
     int _settings;
     NSString *_teamID;
@@ -29,19 +30,17 @@
 
 @property(copy) NSDate * activationDate;
 @property(copy) NSString * authenticationToken;
-@property(readonly) WLImage * backFaceImage;
+@property(readonly) PKImage * backFaceImage;
 @property(readonly) NSArray * backFieldBuckets;
-@property(readonly) WLBarcode * barcode;
-@property(copy) NSString * bundleID;
+@property(readonly) PKBarcode * barcode;
 @property(readonly) int cardTemplate;
-@property(copy) WLCardDisplayProfile * displayProfile;
+@property(copy) PKPassDisplayProfile * displayProfile;
 @property(copy) NSDate * expirationDate;
-@property(readonly) WLImage * footerImage;
-@property(readonly) WLImage * frontFaceImage;
+@property(readonly) PKImage * footerImage;
+@property(readonly) PKImage * frontFaceImage;
 @property(readonly) NSArray * frontFieldBuckets;
 @property(readonly) UIImage * icon;
-@property(readonly) WLImage * iconImage;
-@property(copy) NSString * identifier;
+@property(readonly) PKImage * iconImage;
 @property(retain) NSDate * ingestedDate;
 @property(copy) NSString * institution;
 @property BOOL isPreIngested;
@@ -55,13 +54,14 @@
 @property(retain) NSDate * modifiedDate;
 @property(copy) NSString * name;
 @property(copy) NSString * organizationName;
-@property(readonly) WLImage * partialFrontFaceImage;
-@property(readonly) WLImage * partialFrontFaceImagePlaceholder;
+@property(readonly) PKImage * partialFrontFaceImage;
+@property(readonly) PKImage * partialFrontFaceImagePlaceholder;
 @property(copy) NSString * passTypeIdentifier;
 @property(readonly) NSURL * passURL;
 @property(readonly) NSString * pluralTemplateDescription;
 @property(copy) NSURL * pushURL;
 @property(copy) NSDate * relevantDate;
+@property(getter=isRevoked) BOOL revoked;
 @property(copy) NSString * serialNumber;
 @property int settings;
 @property(readonly) NSArray * storeIdentifiers;
@@ -85,7 +85,6 @@
 - (id)backFaceImage;
 - (id)backFieldBuckets;
 - (id)barcode;
-- (id)bundleID;
 - (int)cardTemplate;
 - (BOOL)contentIsLoaded;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -96,21 +95,20 @@
 - (void)fetchContentWithCompletion:(id)arg1;
 - (void)fetchImageSet:(int)arg1 withCompletion:(id)arg2;
 - (void)flushCachedImageSets;
+- (void)flushFormattedFieldValues;
 - (id)footerImage;
 - (id)frontFaceImage;
 - (id)frontFieldBuckets;
 - (BOOL)hasTimeOrLocationRelevancyInfo;
 - (id)icon;
 - (id)iconImage;
-- (id)identifier;
 - (BOOL)imageSetIsLoaded:(int)arg1;
 - (id)ingestedDate;
-- (id)initWithBundleArchiveData:(id)arg1;
-- (id)initWithBundleArchiveURL:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
 - (id)institution;
 - (BOOL)isPreIngested;
+- (BOOL)isRevoked;
 - (BOOL)isUpdatable;
 - (void)loadContentAsyncWithCompletion:(id)arg1;
 - (void)loadContentSync;
@@ -138,10 +136,8 @@
 - (id)serialNumber;
 - (void)setActivationDate:(id)arg1;
 - (void)setAuthenticationToken:(id)arg1;
-- (void)setBundleID:(id)arg1;
 - (void)setDisplayProfile:(id)arg1;
 - (void)setExpirationDate:(id)arg1;
-- (void)setIdentifier:(id)arg1;
 - (void)setIngestedDate:(id)arg1;
 - (void)setInstitution:(id)arg1;
 - (void)setIsPreIngested:(BOOL)arg1;
@@ -154,6 +150,7 @@
 - (void)setPassTypeIdentifier:(id)arg1;
 - (void)setPushURL:(id)arg1;
 - (void)setRelevantDate:(id)arg1;
+- (void)setRevoked:(BOOL)arg1;
 - (void)setSerialNumber:(id)arg1;
 - (void)setSettings:(int)arg1;
 - (void)setTeamID:(id)arg1;

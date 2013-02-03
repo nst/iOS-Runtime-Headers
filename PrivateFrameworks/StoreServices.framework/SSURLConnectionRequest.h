@@ -6,11 +6,13 @@
 
 @interface SSURLConnectionRequest : SSRequest <SSXPCCoding> {
     SSURLRequestProperties *_requestProperties;
+    BOOL _shouldMescalSign;
 }
 
 @property(readonly) NSURLRequest * URLRequest;
 @property <SSURLConnectionRequestDelegate> * delegate;
 @property(readonly) SSURLRequestProperties * requestProperties;
+@property BOOL shouldMescalSign;
 
 - (id)URLRequest;
 - (id)copyXPCEncoding;
@@ -21,6 +23,8 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)requestProperties;
 - (id)sendSynchronousRequestReturningError:(id*)arg1;
+- (void)setShouldMescalSign:(BOOL)arg1;
+- (BOOL)shouldMescalSign;
 - (BOOL)start;
 - (void)startWithCompletionBlock:(id)arg1;
 - (void)startWithConnectionResponseBlock:(id)arg1;

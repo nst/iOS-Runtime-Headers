@@ -128,6 +128,7 @@
 - (id)localParticipant;
 - (id)matchRequest;
 - (int)maxParticipants;
+- (void)nearbyMultiplayerSwitchChanged:(id)arg1;
 - (int)numberAccepted;
 - (int)numberInvited;
 - (int)numberInvitesRemaining;
@@ -179,6 +180,7 @@
 - (void)setupParticipants;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)shouldShowInfoLabel;
+- (BOOL)shouldShowNearbySwitch;
 - (void)showFriendPicker;
 - (int)status;
 - (struct CGSize { float x1; float x2; })statusSize;

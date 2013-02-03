@@ -4,7 +4,7 @@
 
 @class VKWorld, VKCamera, VKScene, VKLayoutContext, NSArray, NSMutableArray;
 
-@interface VKScreenCanvas : VGLScreenCanvas <VKCameraDelegate, VKWorldDelegate, VKCameraControllerCanvasDelegate> {
+@interface VKScreenCanvas : VGLScreenCanvas <VKWorldDelegate, VKCameraControllerCanvasDelegate, VKCameraDelegate> {
     VKCamera *_camera;
     NSMutableArray *_cameraControllers;
     float _debugFramesPerSecond;
@@ -69,6 +69,7 @@
 - (void)setNeedsLayout;
 - (void)setRendersInBackground:(BOOL)arg1;
 - (int)state;
+- (void)takeSnapshotIfNeeded;
 - (void)updateCameraForFrameResize;
 - (void)willMoveToWindow:(id)arg1;
 - (id)world;

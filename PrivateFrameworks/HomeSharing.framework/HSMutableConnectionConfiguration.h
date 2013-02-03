@@ -11,6 +11,8 @@
 @property(copy) NSURL * baseURL;
 @property(copy) NSString * buildIdentifier;
 @property(copy) NSDictionary * cookieHeaders;
+@property(copy) NSString * purchaseClientIdentifier;
+@property long long requestReason;
 @property(copy) NSDictionary * urlBag;
 @property(copy) NSString * userAgent;
 
@@ -18,10 +20,14 @@
 - (id)baseURL;
 - (id)buildIdentifier;
 - (id)cookieHeaders;
+- (id)purchaseClientIdentifier;
+- (long long)requestReason;
 - (void)setAccount:(id)arg1;
 - (void)setBaseURL:(id)arg1;
 - (void)setBuildIdentifier:(id)arg1;
 - (void)setCookieHeaders:(id)arg1;
+- (void)setPurchaseClientIdentifier:(id)arg1;
+- (void)setRequestReason:(long long)arg1;
 - (void)setUrlBag:(id)arg1;
 - (void)setUserAgent:(id)arg1;
 - (id)urlBag;

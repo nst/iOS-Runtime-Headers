@@ -78,7 +78,7 @@
 + (id)imageWithContentsOfFile:(id)arg1;
 + (id)imageWithData:(id)arg1 scale:(float)arg2;
 + (id)imageWithData:(id)arg1;
-+ (id)imageWithWLImage:(id)arg1;
++ (id)imageWithPKImage:(id)arg1;
 + (void)initialize;
 + (id)kitImageNamed:(id)arg1;
 + (void)loadImageWithURL:(id)arg1 completion:(id)arg2;

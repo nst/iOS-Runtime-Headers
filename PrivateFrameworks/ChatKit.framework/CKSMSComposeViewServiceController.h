@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class XPCProxy<CKSMSComposeRemoteViewControllerDelegate>, CKModalTranscriptController;
+@class CKModalTranscriptController, XPCProxy<CKSMSComposeRemoteViewControllerDelegate>;
 
 @interface CKSMSComposeViewServiceController : UINavigationController <CKTranscriptComposeDelegate> {
     BOOL _canEditRecipients;

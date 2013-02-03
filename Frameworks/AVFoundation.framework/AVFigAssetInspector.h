@@ -47,6 +47,7 @@
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;
 - (float)preferredRate;
+- (float)preferredSoundCheckVolumeNormalization;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
 - (float)preferredVolume;
 - (BOOL)providesPreciseDurationAndTiming;

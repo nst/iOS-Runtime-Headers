@@ -15,6 +15,7 @@
     BOOL _installed;
     unsigned int _maxAchievementPoints;
     NSString *_name;
+    NSNumber *_nearbyMultiplayerOverride;
     unsigned int _numberOfAchievements;
     unsigned int _numberOfCategories;
     unsigned int _platform;
@@ -35,6 +36,7 @@
 @property(getter=isInstalled) BOOL installed;
 @property unsigned int maxAchievementPoints;
 @property(retain) NSString * name;
+@property(retain) NSNumber * nearbyMultiplayerOverride;
 @property unsigned int numberOfAchievements;
 @property unsigned int numberOfCategories;
 @property unsigned int platform;
@@ -62,6 +64,7 @@
 - (BOOL)isValid;
 - (unsigned int)maxAchievementPoints;
 - (id)name;
+- (id)nearbyMultiplayerOverride;
 - (unsigned int)numberOfAchievements;
 - (unsigned int)numberOfCategories;
 - (unsigned int)platform;
@@ -76,6 +79,7 @@
 - (void)setInstalled:(BOOL)arg1;
 - (void)setMaxAchievementPoints:(unsigned int)arg1;
 - (void)setName:(id)arg1;
+- (void)setNearbyMultiplayerOverride:(id)arg1;
 - (void)setNumberOfAchievements:(unsigned int)arg1;
 - (void)setNumberOfCategories:(unsigned int)arg1;
 - (void)setPlatform:(unsigned int)arg1;

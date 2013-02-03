@@ -2,7 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface IUNowPlayingPortraitInfoOverlay : IUPortraitInfoOverlay <SKStoreProductViewControllerDelegate, MFMailComposeViewControllerDelegate> {
+    id _actionSheetCompletionHandler;
     id _itemToShare;
 }
 

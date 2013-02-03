@@ -6,14 +6,16 @@
    See Warning(s) below.
  */
 
-@class CTCarrier;
+@class CTCarrier, CTRadioAccessTechnology;
 
 @interface CTTelephonyNetworkInfo : NSObject {
     void *_internal;
+    CTRadioAccessTechnology *_radioAccessTechnology;
     CTCarrier *_subscriberCellularProvider;
     id _subscriberCellularProviderDidUpdateNotifier;
 }
 
+@property(retain) CTRadioAccessTechnology * radioAccessTechnology;
 @property(retain) CTCarrier * subscriberCellularProvider;
 @property(copy) id subscriberCellularProviderDidUpdateNotifier;
 
@@ -26,6 +28,8 @@
 - (void)handleNotificationFromConnection:(void*)arg1 ofType:(id)arg2 withInfo:(id)arg3;
 - (id)init;
 - (void)postUpdatesIfNecessary;
+- (id)radioAccessTechnology;
+- (void)setRadioAccessTechnology:(id)arg1;
 - (void)setSubscriberCellularProvider:(id)arg1;
 - (void)setSubscriberCellularProviderDidUpdateNotifier:(id)arg1;
 - (BOOL)setUpServerConnection;

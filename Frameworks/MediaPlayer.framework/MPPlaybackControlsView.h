@@ -16,6 +16,7 @@
     unsigned int _needsUpdateButtonVisibility : 1;
     UIActivityIndicatorView *_activityIndicator;
     <MPPlaybackControlsDelegate> *_delegate;
+    unsigned long long _disabledParts;
     MPButton *_fastFowardButton;
     UIView *_fastFowardButtonBezel;
     MPButton *_geniusButton;
@@ -38,6 +39,7 @@
 }
 
 @property <MPPlaybackControlsDelegate> * delegate;
+@property unsigned long long disabledParts;
 @property(readonly) BOOL hideGeniusButton;
 @property(readonly) BOOL isScrubbing;
 @property(retain) MPAVItem * item;
@@ -86,6 +88,7 @@
 - (void)detailSliderTrackingDidCancel:(id)arg1;
 - (void)detailSliderTrackingDidEnd:(id)arg1;
 - (void)didMoveToSuperview;
+- (unsigned long long)disabledParts;
 - (unsigned long long)displayablePartsInPartMask:(unsigned long long)arg1;
 - (id)geniusButtonImageForControlState:(unsigned int)arg1;
 - (void)handleChangeToRepeatType:(unsigned int)arg1;
@@ -111,6 +114,7 @@
 - (void)resetDetailSlider:(id)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setItem:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setVisibleParts:(unsigned long long)arg1;

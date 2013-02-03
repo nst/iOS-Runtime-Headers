@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class ADAdRecipientRecord, NSString, ADLocalViewController;
+@class ADAdRecipientRecord, ADLocalViewController, NSString;
 
 @interface ADBannerController : NSObject {
     int _adState;
@@ -12,6 +12,7 @@
     double _createdAt;
     NSString *_identifier;
     BOOL _isOpen;
+    NSString *_lastAdvertisingSection;
     ADLocalViewController *_localViewController;
     ADAdRecipientRecord *_recipient;
     id _remoteBannerController;
@@ -26,6 +27,7 @@
 @property double createdAt;
 @property(readonly) NSString * identifier;
 @property(readonly) BOOL isOpen;
+@property(copy) NSString * lastAdvertisingSection;
 @property(retain) ADLocalViewController * localViewController;
 @property ADAdRecipientRecord * recipient;
 @property(retain) id remoteBannerController;
@@ -71,6 +73,7 @@
 - (void)interstitialTouchedDismissAreaWithControlEvent:(unsigned int)arg1;
 - (void)interstitialWasRemovedFromSuperview:(id)arg1;
 - (BOOL)isOpen;
+- (id)lastAdvertisingSection;
 - (id)localViewController;
 - (id)recipient;
 - (void)refuseBannerViewAction;
@@ -79,11 +82,13 @@
 - (unsigned int)remoteWindowContextId;
 - (void)reportVisibility:(int)arg1;
 - (void)setCreatedAt:(double)arg1;
+- (void)setLastAdvertisingSection:(id)arg1;
 - (void)setLocalViewController:(id)arg1;
 - (void)setRecipient:(id)arg1;
 - (void)setRemoteBannerController:(id)arg1;
 - (void)setRemoteSession:(id)arg1;
 - (void)setSupportedOrientations:(int)arg1;
+- (void)storyboardPresentationFailed;
 - (int)supportedOrientations;
 - (void)updateAdViewProperties:(id)arg1;
 

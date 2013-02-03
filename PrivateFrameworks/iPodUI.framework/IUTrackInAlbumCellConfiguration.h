@@ -24,7 +24,6 @@
 @property int preset;
 @property(retain) NSString * title;
 
-+ (float)_widthForDurationText:(double)arg1;
 + (id)backgroundColorWithModifiers:(unsigned int)arg1;
 + (void)configureTableDisplaySettings:(id)arg1 dataSource:(id)arg2;
 + (id)customActionRowConfigurationWithSimpleCellConfiguration:(id)arg1;
@@ -33,17 +32,18 @@
 + (Class)globalContextClass;
 + (float)rowHeightForGlobalContext:(id)arg1;
 
-- (float)_durationColumnWidth;
-- (double)_durationInSeconds;
 - (float)_indexColumnWidth;
+- (void)_updateSubtitleText;
 - (id)actionRowTitle;
 - (id)artist;
 - (id)backgroundColorWithModifiers:(unsigned int)arg1;
+- (BOOL)canShowPurchasableMediaViews;
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (void)configureForEntity:(id)arg1 query:(id)arg2 entityIndex:(unsigned int)arg3 entityCount:(unsigned int)arg4;
 - (void)dealloc;
 - (id)displayProperties;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })downloadProgressIndicatorFrame;
+- (struct CGPoint { float x1; float x2; })downloadButtonOrigin;
+- (struct CGPoint { float x1; float x2; })downloadProgressIndicatorOrigin;
 - (void)drawBackgroundWithModifiers:(unsigned int)arg1;
 - (void)drawWithModifiers:(unsigned int)arg1;
 - (BOOL)drawsDurationColumn;

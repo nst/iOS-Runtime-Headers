@@ -44,6 +44,7 @@
 @property(readonly) NSString * urlString;
 
 - (id)_authenticationResponseForRequest:(id)arg1;
+- (void)_cleanupListenSocket;
 - (void)_connection:(id)arg1 didReceiveRequest:(id)arg2;
 - (void)_connection:(id)arg1 hadError:(id)arg2;
 - (void)_connectionComplete:(id)arg1;

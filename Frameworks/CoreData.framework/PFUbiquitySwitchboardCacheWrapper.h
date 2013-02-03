@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class PFUbiquityGlobalObjectIDCache, PFUbiquityBaseline, PFUbiquityPeerRangeCache, PFUbiquityPeerReceipt, NSLock, NSObject<OS_dispatch_semaphore>, PFUbiquityLocation, PFUbiquityTransactionLogCache, NSString, PFUbiquityTransactionHistoryCache;
+@class PFUbiquityGlobalObjectIDCache, PFUbiquityBaseline, PFUbiquityPeerRangeCache, PFUbiquityPeerReceipt, NSLock, NSObject<OS_dispatch_semaphore>, PFUbiquityLocation, PFUbiquityTransactionLogCache, NSString, PFUbiquityTransactionHistoryCache, PFUbiquityKnowledgeVector;
 
 @interface PFUbiquitySwitchboardCacheWrapper : NSObject {
     BOOL _allowReplacementOfBaseline;
@@ -12,6 +12,7 @@
     NSObject<OS_dispatch_semaphore> *_baselineSemaphore;
     BOOL _baselineUploaded;
     PFUbiquityGlobalObjectIDCache *_globalIDCache;
+    PFUbiquityKnowledgeVector *_kv;
     NSString *_localPeerID;
     PFUbiquityPeerRangeCache *_peerRangeCache;
     PFUbiquityPeerReceipt *_peerReceipt;
@@ -24,6 +25,7 @@
 }
 
 @property(readonly) PFUbiquityGlobalObjectIDCache * globalIDCache;
+@property(retain) PFUbiquityKnowledgeVector * kv;
 @property(readonly) NSString * localPeerID;
 @property(readonly) PFUbiquityPeerRangeCache * peerRangeCache;
 @property(readonly) PFUbiquityPeerReceipt * peerReceipt;
@@ -39,12 +41,14 @@
 - (id)globalIDCache;
 - (id)init;
 - (id)initWithStoreName:(id)arg1 privateStore:(id)arg2 forLocalPeerID:(id)arg3 andUbiquityRootLocation:(id)arg4;
+- (id)kv;
 - (id)localPeerID;
 - (BOOL)monitorUploadOfBaseline:(id)arg1 synchronously:(BOOL)arg2 error:(id*)arg3;
 - (id)peerRangeCache;
 - (id)peerReceipt;
 - (BOOL)pendingBaselineMove;
 - (void)scheduleReceiptFileWrite:(id)arg1;
+- (void)setKv:(id)arg1;
 - (void)timerFinishedUploadingPeerFile;
 - (id)transactionHistoryCache;
 - (id)transactionLogCache;

@@ -14,6 +14,7 @@
 @property(retain) SADistance * distance;
 @property(copy) NSNumber * distanceInMiles;
 @property(copy) NSString * label;
+@property(copy) NSNumber * localSearchProviderId;
 @property(retain) SALocation * location;
 @property(copy) NSNumber * placeId;
 
@@ -29,6 +30,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)label;
+- (id)localSearchProviderId;
 - (id)location;
 - (id)placeId;
 - (void)setAttributions:(id)arg1;
@@ -38,6 +40,7 @@
 - (void)setDistance:(id)arg1;
 - (void)setDistanceInMiles:(id)arg1;
 - (void)setLabel:(id)arg1;
+- (void)setLocalSearchProviderId:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setPlaceId:(id)arg1;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;

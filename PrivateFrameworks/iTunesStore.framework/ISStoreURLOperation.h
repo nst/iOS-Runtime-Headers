@@ -38,6 +38,8 @@
 - (id)_copyAuthenticationContext;
 - (id)_copyURLBagContext;
 - (BOOL)_isErrorTokenError:(id)arg1;
+- (id)_resolvedURL;
+- (id)_resolvedURLInBagContext:(id)arg1 URLBag:(id*)arg2;
 - (void)_runURLOperation;
 - (void)_setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
 - (id)_urlFromURLBagForRequestProperties:(id)arg1 inBagContext:(id)arg2;

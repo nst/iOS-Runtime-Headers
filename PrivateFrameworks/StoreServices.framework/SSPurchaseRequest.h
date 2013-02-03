@@ -5,6 +5,7 @@
 @class <SSPurchaseRequestDelegate>, NSArray;
 
 @interface SSPurchaseRequest : SSRequest <SSXPCCoding> {
+    BOOL _createsDownloads;
     BOOL _isBackgroundRequest;
     BOOL _needsAuthentication;
     NSArray *_purchases;
@@ -12,6 +13,7 @@
 }
 
 @property(getter=isBackgroundRequest) BOOL backgroundRequest;
+@property BOOL createsDownloads;
 @property <SSPurchaseRequestDelegate> * delegate;
 @property BOOL needsAuthentication;
 @property(readonly) NSArray * purchases;
@@ -19,6 +21,7 @@
 
 - (id)_purchaseForUniqueIdentifier:(id)arg1;
 - (id)copyXPCEncoding;
+- (BOOL)createsDownloads;
 - (void)dealloc;
 - (id)init;
 - (id)initWithPurchases:(id)arg1;
@@ -27,11 +30,13 @@
 - (BOOL)needsAuthentication;
 - (id)purchases;
 - (void)setBackgroundRequest:(BOOL)arg1;
+- (void)setCreatesDownloads:(BOOL)arg1;
 - (void)setNeedsAuthentication:(BOOL)arg1;
 - (void)setShouldValidatePurchases:(BOOL)arg1;
 - (BOOL)shouldValidatePurchases;
 - (BOOL)start;
 - (void)startWithCompletionBlock:(id)arg1;
 - (void)startWithPurchaseBlock:(id)arg1 completionBlock:(id)arg2;
+- (void)startWithPurchaseResponseBlock:(id)arg1 completionBlock:(id)arg2;
 
 @end

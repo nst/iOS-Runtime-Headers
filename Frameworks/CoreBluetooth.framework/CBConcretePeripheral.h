@@ -10,13 +10,11 @@
     NSNumber *_handle;
     BOOL _isConnecting;
     BOOL _isUserRetained;
-    BOOL _isUserVisible;
 }
 
 @property(readonly) NSNumber * handle;
 @property BOOL isConnecting;
 @property BOOL isUserRetained;
-@property BOOL isUserVisible;
 
 - (void)acceptPairing:(BOOL)arg1 ofType:(id)arg2 withPasskey:(id)arg3;
 - (id)attributeForHandle:(id)arg1;
@@ -53,7 +51,6 @@
 - (void)invalidateAllAttributes;
 - (BOOL)isConnecting;
 - (BOOL)isUserRetained;
-- (BOOL)isUserVisible;
 - (void)pair;
 - (void)readRSSI;
 - (void)readValueForCharacteristic:(id)arg1;
@@ -67,7 +64,6 @@
 - (void)setIndicateValue:(BOOL)arg1 forCharacteristic:(id)arg2;
 - (void)setIsConnecting:(BOOL)arg1;
 - (void)setIsUserRetained:(BOOL)arg1;
-- (void)setIsUserVisible:(BOOL)arg1;
 - (void)setNotifyValue:(BOOL)arg1 forCharacteristic:(id)arg2;
 - (void)setOrphan;
 - (void)setUUID:(struct __CFUUID { }*)arg1;

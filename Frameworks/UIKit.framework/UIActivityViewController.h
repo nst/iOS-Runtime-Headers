@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSArray, NSString, UIActivity, NSOperationQueue, UIActivityListViewController;
+@class NSOperationQueue, NSArray, NSString, UIActivity, UIActivityListViewController;
 
 @interface UIActivityViewController : UIViewController {
     UIActivity *_activity;

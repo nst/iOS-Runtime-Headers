@@ -48,6 +48,8 @@
 - (id)_handleLogImpressionRequest:(id)arg1 message:(id)arg2;
 - (id)_handleLogSysEventRequest:(id)arg1 message:(id)arg2;
 - (id)_handleManifestRequest:(id)arg1 message:(id)arg2;
+- (id)_handleMescalSignSAPSetupCertificateRequest:(id)arg1 message:(id)arg2;
+- (id)_handleMescalSignSAPSetupRequest:(id)arg1 message:(id)arg2;
 - (id)_handleOptOutRequest:(id)arg1 message:(id)arg2;
 - (id)_handlePostRequest:(id)arg1;
 - (id)_handleRewardRequest:(id)arg1 message:(id)arg2;
@@ -66,6 +68,7 @@
 - (int)cacheMaxAge;
 - (void)dealloc;
 - (id)defaultAdData;
+- (id)defaultDisplayPolicy;
 - (BOOL)defaultsToNoQualifiedAds;
 - (id)delegate;
 - (BOOL)digestAuthenticationEnabled;
@@ -83,6 +86,7 @@
 - (id)httpServer:(id)arg1 rewritePath:(id)arg2;
 - (BOOL)httpServer:(id)arg1 shouldAllowRequest:(id)arg2 withAuthorization:(id)arg3;
 - (id)httpServer:(id)arg1 unhandledRequest:(id)arg2;
+- (void)httpServerListenSocketFailed:(id)arg1;
 - (id)init;
 - (id)initWithPort:(unsigned short)arg1 adPath:(id)arg2;
 - (double)kbps;

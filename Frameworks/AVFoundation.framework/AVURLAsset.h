@@ -37,6 +37,7 @@
 - (void)_handleURLRequest:(id)arg1;
 - (void)_removeFigAssetNotifications;
 - (void)_setAssetInspectorLoader:(id)arg1;
+- (BOOL)_shouldOptimizeAccessForLinearMoviePlayback;
 - (id)_tracks;
 - (void)_tracksDidChange;
 - (id)assetCache;

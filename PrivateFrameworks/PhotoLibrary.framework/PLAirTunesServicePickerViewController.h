@@ -8,6 +8,7 @@
     NSArray *_availableServices;
     id _delegate;
     PLAirTunesService *_selectedService;
+    BOOL _showDebugOption;
     UITableView *_table;
 }
 
@@ -17,7 +18,7 @@
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithAvailableAirTunesServices:(id)arg1 previouslySelectedService:(id)arg2;
+- (id)initWithAvailableAirTunesServices:(id)arg1 previouslySelectedService:(id)arg2 showDebugOption:(BOOL)arg3;
 - (void)loadView;
 - (void)setAvailableServices:(id)arg1;
 - (void)setDelegate:(id)arg1;

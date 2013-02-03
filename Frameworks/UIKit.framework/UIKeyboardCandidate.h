@@ -13,6 +13,7 @@
 @property(copy) NSString * alternativeText;
 @property(readonly) NSString * candidate;
 @property(readonly) unsigned int deleteCount;
+@property(getter=isEmojiCandidate,readonly) BOOL emojiCandidate;
 @property(getter=isExtensionCandidate,readonly) BOOL extensionCandidate;
 @property(readonly) NSString * input;
 @property(readonly) BOOL isAutocorrection;
@@ -30,6 +31,7 @@
 - (unsigned int)hash;
 - (id)input;
 - (BOOL)isAutocorrection;
+- (BOOL)isEmojiCandidate;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExtensionCandidate;
 - (BOOL)isForShortcutConversion;

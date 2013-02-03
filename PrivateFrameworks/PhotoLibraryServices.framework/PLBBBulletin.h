@@ -69,7 +69,7 @@
 - (id)expirationDate;
 - (BOOL)hasThumbnail;
 - (id)init;
-- (id)initWithAssetAdded:(id)arg1 atIndex:(unsigned int)arg2 toAlbum:(id)arg3;
+- (id)initWithAssetAdded:(id)arg1 atIndex:(unsigned int)arg2 toAlbum:(id)arg3 misc:(id)arg4;
 - (id)initWithCommentAdded:(id)arg1;
 - (id)initWithInvitationAlbum:(id)arg1;
 - (id)initWithInvitationRecordStatusChanged:(id)arg1;

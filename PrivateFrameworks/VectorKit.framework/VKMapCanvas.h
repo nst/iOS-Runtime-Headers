@@ -263,6 +263,7 @@
 - (void)updateTrackingForPointOfReference:(struct { double x1; double x2; })arg1 referenceHeading:(double)arg2 pointOfFocus:(struct { double x1; double x2; })arg3 pointsOfInterest:(id)arg4 viewStyle:(int)arg5 focusStyle:(int)arg6 animated:(BOOL)arg7;
 - (id)viewportInfo;
 - (id)visibleTileSets;
+- (BOOL)writeVisibleTrafficTilesToDirectory:(id)arg1 error:(id*)arg2;
 - (double)yaw;
 - (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id)arg3;
 

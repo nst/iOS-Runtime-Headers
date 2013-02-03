@@ -24,6 +24,7 @@
     VKLayoutContext *_rasterizeLayoutContext;
     VKScene *_rasterizeScene;
     NSMutableSet *_rasterizeTilesToRender;
+    unsigned int _rasterizingScaleFactor;
     VKModelObject *_root;
     VKTileProvider *_tileProvider;
 }
@@ -31,20 +32,24 @@
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } backgroundColor;
 @property(readonly) const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }* keyToRasterize;
 @property VKMapModel * mapModel;
+@property unsigned int rasterizingScaleFactor;
 @property VKTileProvider * tileProvider;
 
 - (void)addSubmodel:(id)arg1;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })backgroundColor;
 - (void)dealloc;
 - (void)drawScene:(id)arg1 withContext:(id)arg2;
+- (void)flushTextureCache;
 - (id)init;
 - (const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)keyToRasterize;
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (id)mapModel;
 - (void)rasterizeKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 scene:(id)arg2;
+- (unsigned int)rasterizingScaleFactor;
 - (void)recursiveDrawScene:(id)arg1 withContext:(id)arg2;
 - (void)setBackgroundColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setMapModel:(id)arg1;
+- (void)setRasterizingScaleFactor:(unsigned int)arg1;
 - (void)setTileProvider:(id)arg1;
 - (id)tileProvider;
 

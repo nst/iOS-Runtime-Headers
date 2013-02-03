@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class MZUniversalPlaybackPositionSyncHandler, NSTimer, MZAsynchronousTask, NSObject<OS_dispatch_queue>, <MZUniversalPlaybackPositionDataSource>, NSDate;
+@class MZUniversalPlaybackPositionSyncHandler, NSTimer, MZAsynchronousTask, <MZUniversalPlaybackPositionDataSource>, NSObject<OS_dispatch_queue>, NSDate;
 
 @interface MZUniversalPlaybackPositionStore : NSObject {
     id _accountsObserver;

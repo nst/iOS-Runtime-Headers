@@ -28,8 +28,10 @@
 - (void)didIdle;
 - (void)didReceiveAuthenticationFailureForPersonID:(id)arg1;
 - (void)didReceiveAuthenticationSuccessForPersonID:(id)arg1;
+- (void)didReceiveGlobalResetSyncForPersonID:(id)arg1;
 - (void)didReceiveNewServerSideConfigurationForPersonID:(id)arg1;
 - (void)didReceiveNewShareState:(id)arg1 oldShareState:(id)arg2 forPersonID:(id)arg3;
+- (void)didReceivePushNotificationForPersonID:(id)arg1;
 - (void)didReceiveServerSideConfigurationVersion:(id)arg1 forPersonID:(id)arg2;
 - (void)didUnidle;
 - (BOOL)enqueueAssetCollection:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
@@ -39,6 +41,7 @@
 - (id)invitationFromPushNotificationUserInfo:(id)arg1 outSourcePersonID:(id*)arg2 outTargetPersonID:(id*)arg3;
 - (id)invitationStringsFromInvitation:(id)arg1 targetPersonID:(id)arg2;
 - (BOOL)isInRetryState;
+- (BOOL)mayDownloadPersonID:(id)arg1;
 - (void)modifyShare:(id)arg1 forPersonID:(id)arg2;
 - (id)nextActivityDate;
 - (id)notificationStringsForShareStateTransitionOldShares:(id)arg1 newShares:(id)arg2;

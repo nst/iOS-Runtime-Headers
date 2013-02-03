@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class MZKeyValueStoreTransaction, NSError, NSObject<OS_dispatch_queue>, MZUPPBagContext, MZKeyValueStoreController, <MZUniversalPlaybackPositionDataSource>, <MZUniversalPlaybackPositionTransactionContext>, NSString, NSMutableDictionary;
+@class NSError, MZUPPBagContext, MZKeyValueStoreController, NSObject<OS_dispatch_queue>, MZKeyValueStoreTransaction, <MZUniversalPlaybackPositionDataSource>, <MZUniversalPlaybackPositionTransactionContext>, NSString, NSMutableDictionary;
 
 @interface MZUniversalPlaybackPositionSyncHandler : NSObject <MZKeyValueStoreControllerDelegate, MZKeyValueStoreTransactionProcessing> {
     MZUPPBagContext *_bagContext;

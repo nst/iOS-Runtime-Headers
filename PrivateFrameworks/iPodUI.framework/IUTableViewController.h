@@ -66,6 +66,7 @@
 - (void)_tableViewController_defaultMediaLibraryDidChangeNotification:(id)arg1;
 - (void)_tableViewController_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;
 - (void)_tableViewController_networkTypeDidChangeNotification:(id)arg1;
+- (void)_tableViewController_purchasableMediaDidFinishNotification:(id)arg1;
 - (void)_updateCellConfigurations;
 - (void)_updateForChangedEditingState:(BOOL)arg1;
 - (void)_updateHeightForTableHeaderViewHiding;

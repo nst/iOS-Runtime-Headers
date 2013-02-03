@@ -18,6 +18,7 @@
     BOOL _showing;
     NSString *_title;
     UILabel *_titleLabel;
+    id _touchHandler;
 }
 
 @property(readonly) UIImageView * backgroundView;
@@ -29,6 +30,7 @@
 @property BOOL showing;
 @property(retain) NSString * title;
 @property(readonly) UILabel * titleLabel;
+@property(copy) id touchHandler;
 
 + (id)bannerWindow;
 + (void)decrementCount;
@@ -39,6 +41,7 @@
 - (void)_hide;
 - (void)_layoutForOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)_show;
+- (void)_wasTouched:(id)arg1;
 - (id)backgroundView;
 - (id)completionHandler;
 - (void)dealloc;
@@ -55,9 +58,12 @@
 - (void)setMessage:(id)arg1;
 - (void)setShowing:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setTouchHandler:(id)arg1;
 - (void)showWithCompletionHandler:(id)arg1;
+- (void)showWithTouchHandler:(id)arg1;
 - (BOOL)showing;
 - (id)title;
 - (id)titleLabel;
+- (id)touchHandler;
 
 @end

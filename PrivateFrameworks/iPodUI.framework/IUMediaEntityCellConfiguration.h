@@ -29,13 +29,13 @@
 
 - (id)artwork;
 - (struct CGSize { float x1; float x2; })artworkSize;
+- (BOOL)canShowPurchasableMediaViews;
 - (void)configureForEntity:(id)arg1 query:(id)arg2 entityIndex:(unsigned int)arg3 entityCount:(unsigned int)arg4;
 - (void)dealloc;
 - (id)description;
 - (id)displayProperties;
 - (BOOL)displaysArtworkFromRepresentativeItem;
 - (id)downloadObserver;
-- (id)downloadableAsset;
 - (id)entity;
 - (BOOL)isDisabled;
 - (BOOL)isGenius;

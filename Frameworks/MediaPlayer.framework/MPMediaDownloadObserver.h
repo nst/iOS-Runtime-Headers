@@ -24,9 +24,8 @@
 @property(copy) id progressHandler;
 @property(getter=isRestoreDownload,readonly) BOOL restoreDownload;
 
-+ (id)newObserverForDownloadIdentifier:(id)arg1 downloadStatus:(int)arg2 downloadPersistentID:(long long)arg3;
-+ (id)newObserverForDownloadIdentifier:(id)arg1 downloadStatus:(int)arg2 itemPersistentID:(long long)arg3;
 + (id)newObserverForMediaItem:(id)arg1;
++ (id)newObserverForMediaItemPersistentID:(unsigned long long)arg1 downloadStatus:(int)arg2 storeID:(long long)arg3;
 + (id)sharedITunesStoreDownloadManager;
 
 - (BOOL)_isDeallocating;

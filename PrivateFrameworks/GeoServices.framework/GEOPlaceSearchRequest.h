@@ -22,8 +22,11 @@
         unsigned int size; 
     struct { 
         unsigned int sessionGUID : 1; 
+        unsigned int distanceTraveled : 1; 
         unsigned int geoId : 1; 
         unsigned int intersectingGeoId : 1; 
+        unsigned int timeSinceMapEnteredForeground : 1; 
+        unsigned int timeSinceMapViewportChanged : 1; 
         unsigned int timestamp : 1; 
         unsigned int businessSortOrder : 1; 
         unsigned int localSearchProviderID : 1; 
@@ -44,8 +47,10 @@
         unsigned int includeStatusCodeInfo : 1; 
         unsigned int includeSuggestionsOnly : 1; 
         unsigned int includeUnmatchedStrings : 1; 
+        unsigned int isFromAPI : 1; 
         unsigned int isStrictMapRegion : 1; 
         unsigned int structuredSearch : 1; 
+        unsigned int suppressResultsRequiringAttribution : 1; 
     GEOAddress *_address;
     BOOL _allowABTestResponse;
     } _businessIDs;
@@ -53,6 +58,7 @@
     int _businessSortOrder;
     NSString *_deviceCountryCode;
     GEOLatLng *_deviceLocation;
+    double _distanceTraveled;
     BOOL _excludeAddressInResults;
     NSMutableArray *_filterByBusinessCategorys;
     long long _geoId;
@@ -71,6 +77,7 @@
     GEOIndexQueryNode *_indexFilter;
     NSString *_inputLanguage;
     unsigned long long _intersectingGeoId;
+    BOOL _isFromAPI;
     BOOL _isStrictMapRegion;
     int _localSearchProviderID;
     GEOLocation *_location;
@@ -91,6 +98,9 @@
     int _sessionID;
     BOOL _structuredSearch;
     NSString *_suggestionsPrefix;
+    BOOL _suppressResultsRequiringAttribution;
+    double _timeSinceMapEnteredForeground;
+    double _timeSinceMapViewportChanged;
     double _timestamp;
     NSData *_zilchPoints;
 }
@@ -103,6 +113,7 @@
 @property int businessSortOrder;
 @property(retain) NSString * deviceCountryCode;
 @property(retain) GEOLatLng * deviceLocation;
+@property double distanceTraveled;
 @property BOOL excludeAddressInResults;
 @property(retain) NSMutableArray * filterByBusinessCategorys;
 @property long long geoId;
@@ -112,6 +123,7 @@
 @property BOOL hasBusinessSortOrder;
 @property(readonly) BOOL hasDeviceCountryCode;
 @property(readonly) BOOL hasDeviceLocation;
+@property BOOL hasDistanceTraveled;
 @property BOOL hasExcludeAddressInResults;
 @property BOOL hasGeoId;
 @property BOOL hasIncludeBusinessCategories;
@@ -127,6 +139,7 @@
 @property(readonly) BOOL hasIndexFilter;
 @property(readonly) BOOL hasInputLanguage;
 @property BOOL hasIntersectingGeoId;
+@property BOOL hasIsFromAPI;
 @property BOOL hasIsStrictMapRegion;
 @property BOOL hasLocalSearchProviderID;
 @property(readonly) BOOL hasLocation;
@@ -144,6 +157,9 @@
 @property BOOL hasSessionID;
 @property BOOL hasStructuredSearch;
 @property(readonly) BOOL hasSuggestionsPrefix;
+@property BOOL hasSuppressResultsRequiringAttribution;
+@property BOOL hasTimeSinceMapEnteredForeground;
+@property BOOL hasTimeSinceMapViewportChanged;
 @property BOOL hasTimestamp;
 @property(readonly) BOOL hasZilchPoints;
 @property(readonly) int* includeAdditionalPlaceTypes;
@@ -161,6 +177,7 @@
 @property(retain) GEOIndexQueryNode * indexFilter;
 @property(retain) NSString * inputLanguage;
 @property unsigned long long intersectingGeoId;
+@property BOOL isFromAPI;
 @property BOOL isStrictMapRegion;
 @property int localSearchProviderID;
 @property(retain) GEOLocation * location;
@@ -182,6 +199,9 @@
 @property int sessionID;
 @property BOOL structuredSearch;
 @property(retain) NSString * suggestionsPrefix;
+@property BOOL suppressResultsRequiringAttribution;
+@property double timeSinceMapEnteredForeground;
+@property double timeSinceMapViewportChanged;
 @property double timestamp;
 @property(retain) NSData * zilchPoints;
 
@@ -212,6 +232,7 @@
 - (id)deviceCountryCode;
 - (id)deviceLocation;
 - (id)dictionaryRepresentation;
+- (double)distanceTraveled;
 - (BOOL)excludeAddressInResults;
 - (id)filterByBusinessCategoryAtIndex:(unsigned int)arg1;
 - (id)filterByBusinessCategorys;
@@ -223,6 +244,7 @@
 - (BOOL)hasBusinessSortOrder;
 - (BOOL)hasDeviceCountryCode;
 - (BOOL)hasDeviceLocation;
+- (BOOL)hasDistanceTraveled;
 - (BOOL)hasExcludeAddressInResults;
 - (BOOL)hasGeoId;
 - (BOOL)hasIncludeBusinessCategories;
@@ -238,6 +260,7 @@
 - (BOOL)hasIndexFilter;
 - (BOOL)hasInputLanguage;
 - (BOOL)hasIntersectingGeoId;
+- (BOOL)hasIsFromAPI;
 - (BOOL)hasIsStrictMapRegion;
 - (BOOL)hasLocalSearchProviderID;
 - (BOOL)hasLocation;
@@ -255,6 +278,9 @@
 - (BOOL)hasSessionID;
 - (BOOL)hasStructuredSearch;
 - (BOOL)hasSuggestionsPrefix;
+- (BOOL)hasSuppressResultsRequiringAttribution;
+- (BOOL)hasTimeSinceMapEnteredForeground;
+- (BOOL)hasTimeSinceMapViewportChanged;
 - (BOOL)hasTimestamp;
 - (BOOL)hasZilchPoints;
 - (unsigned int)hash;
@@ -275,6 +301,7 @@
 - (id)inputLanguage;
 - (unsigned long long)intersectingGeoId;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isFromAPI;
 - (BOOL)isStrictMapRegion;
 - (int)localSearchProviderID;
 - (id)location;
@@ -309,11 +336,13 @@
 - (void)setBusinessSortOrder:(int)arg1;
 - (void)setDeviceCountryCode:(id)arg1;
 - (void)setDeviceLocation:(id)arg1;
+- (void)setDistanceTraveled:(double)arg1;
 - (void)setExcludeAddressInResults:(BOOL)arg1;
 - (void)setFilterByBusinessCategorys:(id)arg1;
 - (void)setGeoId:(long long)arg1;
 - (void)setHasAllowABTestResponse:(BOOL)arg1;
 - (void)setHasBusinessSortOrder:(BOOL)arg1;
+- (void)setHasDistanceTraveled:(BOOL)arg1;
 - (void)setHasExcludeAddressInResults:(BOOL)arg1;
 - (void)setHasGeoId:(BOOL)arg1;
 - (void)setHasIncludeBusinessCategories:(BOOL)arg1;
@@ -327,6 +356,7 @@
 - (void)setHasIncludeSuggestionsOnly:(BOOL)arg1;
 - (void)setHasIncludeUnmatchedStrings:(BOOL)arg1;
 - (void)setHasIntersectingGeoId:(BOOL)arg1;
+- (void)setHasIsFromAPI:(BOOL)arg1;
 - (void)setHasIsStrictMapRegion:(BOOL)arg1;
 - (void)setHasLocalSearchProviderID:(BOOL)arg1;
 - (void)setHasMaxBusinessReviews:(BOOL)arg1;
@@ -336,6 +366,9 @@
 - (void)setHasSessionGUID:(BOOL)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
 - (void)setHasStructuredSearch:(BOOL)arg1;
+- (void)setHasSuppressResultsRequiringAttribution:(BOOL)arg1;
+- (void)setHasTimeSinceMapEnteredForeground:(BOOL)arg1;
+- (void)setHasTimeSinceMapViewportChanged:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setIncludeAdditionalPlaceTypes:(int*)arg1 count:(unsigned int)arg2;
 - (void)setIncludeBusinessCategories:(BOOL)arg1;
@@ -351,6 +384,7 @@
 - (void)setIndexFilter:(id)arg1;
 - (void)setInputLanguage:(id)arg1;
 - (void)setIntersectingGeoId:(unsigned long long)arg1;
+- (void)setIsFromAPI:(BOOL)arg1;
 - (void)setIsStrictMapRegion:(BOOL)arg1;
 - (void)setLocalSearchProviderID:(int)arg1;
 - (void)setLocation:(id)arg1;
@@ -371,10 +405,16 @@
 - (void)setSessionID:(int)arg1;
 - (void)setStructuredSearch:(BOOL)arg1;
 - (void)setSuggestionsPrefix:(id)arg1;
+- (void)setSuppressResultsRequiringAttribution:(BOOL)arg1;
+- (void)setTimeSinceMapEnteredForeground:(double)arg1;
+- (void)setTimeSinceMapViewportChanged:(double)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setZilchPoints:(id)arg1;
 - (BOOL)structuredSearch;
 - (id)suggestionsPrefix;
+- (BOOL)suppressResultsRequiringAttribution;
+- (double)timeSinceMapEnteredForeground;
+- (double)timeSinceMapViewportChanged;
 - (double)timestamp;
 - (void)writeTo:(id)arg1;
 - (id)zilchPoints;

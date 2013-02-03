@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <SLDFacebookPostUploadDelegate><NSObject>, ACAccount, NSString, SLFacebookPost, NSMutableArray, SLDFacebookImageAssetDataProvider;
+@class SLFacebookPost, ACAccount, NSString, <SLDFacebookPostUploadDelegate><NSObject>, NSMutableArray, SLDFacebookImageAssetDataProvider;
 
 @interface SLDFacebookPostUpload : NSObject {
     ACAccount *_account;

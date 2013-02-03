@@ -12,9 +12,9 @@
     NSThread *_startThread;
 }
 
-+ (struct { unsigned int x1; double x2; }*)expiringTilesets;
 + (unsigned int)expiringTilesetsCount;
 + (Class)multiDownloaderClass;
++ (struct { unsigned int x1; double x2; }*)newExpiringTilesets;
 + (Class)simpleRequesterClass;
 + (BOOL)skipNetworkForKeysWhenPreloading:(id)arg1;
 + (unsigned char)tileProviderIdentifier;

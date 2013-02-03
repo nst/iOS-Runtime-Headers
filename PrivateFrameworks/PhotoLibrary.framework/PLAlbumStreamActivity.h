@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLAlbumStreamActivityDelegate>, PLModalDimmingViewController, PLCloudSharedCreateAlbumViewController, UIViewController, NSObject<PLUserEditableAssetContainer>;
+@class NSObject<PLUserEditableAssetContainer>, PLModalDimmingViewController, PLCloudSharedCreateAlbumViewController, UIViewController, <PLAlbumStreamActivityDelegate>;
 
 @interface PLAlbumStreamActivity : PLActivity <PLCloudSharedCreateAlbumViewControllerDelegate, PLAbstractAlbumPickerViewControllerDelegate> {
     PLCloudSharedCreateAlbumViewController *_createAlbumViewController;

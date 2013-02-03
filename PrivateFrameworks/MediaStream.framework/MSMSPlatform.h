@@ -22,6 +22,7 @@
 - (id)UDID;
 - (id)_accountForPersonID:(id)arg1;
 - (struct __CFString { }*)_facilityStringForFacility:(int)arg1;
+- (BOOL)_mayPerformFileTransfer;
 - (void)_rereadDefaults;
 - (id)appBundleInfoString;
 - (id)authTokenForPersonID:(id)arg1;

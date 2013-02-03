@@ -6,17 +6,20 @@
 
 @interface ACOAuthSigner : NSObject <XPCProxyTarget> {
     ACAccount *_account;
+    struct _xpc_connection_s { } *_connection;
+    struct dispatch_queue_s { } *_connectionQueue;
+    XPCProxy<ACDOAuthSignerProtocol> *_oauthSignerProxy;
     BOOL _shouldIncludeAppIdInRequest;
-    struct _xpc_connection_s { } *connection;
-    struct dispatch_queue_s { } *connectionQueue;
-    XPCProxy<ACDOAuthSignerProtocol> *oauthSignerProxy;
 }
 
 @property BOOL shouldIncludeAppIdInRequest;
 
 - (void).cxx_destruct;
+- (void)_configureWithConnection:(struct _xpc_connection_s { }*)arg1;
+- (void)_tearDownConnection;
 - (void)dealloc;
 - (id)initWithAccount:(id)arg1;
+- (id)oauthSignerProxy;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)setShouldIncludeAppIdInRequest:(BOOL)arg1;
 - (BOOL)shouldIncludeAppIdInRequest;

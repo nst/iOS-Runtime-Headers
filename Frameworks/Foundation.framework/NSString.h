@@ -27,7 +27,6 @@
 + (id)MSMakeUUID;
 + (id)MSStringWithBool:(BOOL)arg1;
 + (id)MSTempFilePath;
-+ (id)UUIDString;
 + (id)_attendeeNameExtensions;
 + (id)_attendeePartialSurnames;
 + (struct USet { }*)_characterSetWithPattern:(id)arg1;
@@ -37,10 +36,7 @@
 + (struct USet { }*)_ideographSet;
 + (struct USet { }*)_japaneseLetterSet;
 + (struct USet { }*)_japaneseLetterSet;
-+ (id)_mapkit_formattedStringForFloat:(float)arg1;
-+ (id)_mapkit_formattedStringForInt:(int)arg1;
-+ (id)_mapkit_localizedDistanceStringWithMeters:(unsigned int)arg1 inMetric:(BOOL)arg2 displaysYardsForShortDistances:(BOOL)arg3 includeTrip:(BOOL)arg4;
-+ (id)_mapkit_voiceOverLocalizedDistanceStringWithMeters:(unsigned int)arg1 inMetric:(BOOL)arg2 displaysYardsForShortDistances:(BOOL)arg3 includeTrip:(BOOL)arg4;
++ (id)_mapkit_formattedStringForCoordinate:(struct { double x1; double x2; })arg1;
 + (struct USet { }*)_nonHiraganaKatakanaOrBopomofoSet;
 + (struct USet { }*)_nonHiraganaOrKatakanaSet;
 + (struct USet { }*)_nonIdeographicCharacterSet;
@@ -314,6 +310,7 @@
 - (id)_stringByStandardizingPathUsingCache:(BOOL)arg1;
 - (id)_stringByTranscribingFromLanguage:(id)arg1 usingTokenizer:(struct __CFStringTokenizer { }*)arg2;
 - (id)_stringByTranscribingFromLanguage:(id)arg1;
+- (id)_stringByTransliteratingToZhuyin;
 - (id)_stringByTrimmingCharactersInCFCharacterSet:(struct __CFCharacterSet { }*)arg1;
 - (id)_stringByTrimmingLastCharacter;
 - (id)_stringRepresentation;
@@ -611,6 +608,7 @@
 - (BOOL)isSpecialCustomNumberFormatTokenOfType:(int)arg1;
 - (BOOL)isSpecialCustomNumberFormatTokenOfType:(int)arg1;
 - (BOOL)isTripledPunctuation;
+- (BOOL)isValidEmailFormat;
 - (int)languageTypeAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (id)lastPathComponent;
 - (unsigned int)length;
@@ -748,6 +746,7 @@
 - (BOOL)roomNameIsProbablyAutomaticallyGenerated;
 - (unsigned short)safeCharacterAtIndex:(unsigned int)arg1;
 - (id)safeFilename;
+- (id)sanitizedString;
 - (unsigned short)scaleCharacterInCustomNumberFormatScaleToken;
 - (unsigned short)scaleCharacterInCustomNumberFormatScaleToken;
 - (id)searchAndReplaceString:(id)arg1 withString:(id)arg2;

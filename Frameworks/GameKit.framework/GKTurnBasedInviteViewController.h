@@ -6,7 +6,7 @@
 
 @interface GKTurnBasedInviteViewController : GKMultiplayerViewController <UIActionSheetDelegate, GKFriendPickerViewControllerDelegate> {
     NSError *_creationError;
-    <GKTurnBasedInviteViewControllerDelegate> *_delegate;
+    <GKTurnBasedInviteViewControllerDelegate> *_delegateWeak;
     NSMutableDictionary *_inviteMessageDictionary;
     BOOL _showCancelButton;
 }

@@ -15,6 +15,7 @@
 - (void)_requestAccess;
 - (void)_saveImage:(id)arg1 imageData:(id)arg2 properties:(id)arg3 completionBlock:(id)arg4;
 - (void)_saveVideoAtPath:(id)arg1 properties:(id)arg2 completionBlock:(id)arg3;
+- (void)copyAssetToCameraRoll:(id)arg1;
 - (void)dealloc;
 - (id)defaultExtensionForAssetType:(int)arg1;
 - (void)deletePhotoStreamAssetsWithUUIDs:(id)arg1 streamID:(id)arg2;
@@ -31,7 +32,6 @@
 - (void)saveCameraVideoAtPath:(id)arg1 withMetadata:(id)arg2 thumbnailImage:(id)arg3 createPreviewWellImage:(BOOL)arg4 progressStack:(id)arg5 videoHandler:(id)arg6 requestEnqueuedBlock:(id)arg7 completionBlock:(id)arg8;
 - (void)saveImage:(id)arg1 imageData:(id)arg2 properties:(id)arg3 completionTarget:(id)arg4 completionSelector:(SEL)arg5 contextInfo:(void*)arg6;
 - (void)saveImage:(id)arg1 properties:(id)arg2 completionBlock:(id)arg3;
-- (void)saveImageAtPathToCameraRoll:(id)arg1;
 - (void)saveImageRef:(struct CGImage { }*)arg1 orientation:(int)arg2 imageData:(id)arg3 properties:(id)arg4 completionBlock:(id)arg5;
 - (void)saveOneWayATCSyncedImage:(id)arg1 imageData:(id)arg2 eventUUID:(id)arg3 properties:(id)arg4 completionBlock:(id)arg5;
 - (void)savePhotoStreamImage:(id)arg1 imageData:(id)arg2 properties:(id)arg3 completionBlock:(id)arg4;

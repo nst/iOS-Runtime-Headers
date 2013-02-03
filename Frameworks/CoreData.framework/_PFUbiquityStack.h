@@ -24,6 +24,7 @@
 + (BOOL)shouldRecoverStackMetadataForStore:(id)arg1 withLocalPeerID:(id)arg2;
 
 - (id)allPeers;
+- (id)createMetadataStoreKnowledgeVector:(id*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)importStateForStoreName:(id)arg1 andPeerID:(id)arg2;

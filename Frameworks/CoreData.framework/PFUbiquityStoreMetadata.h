@@ -33,7 +33,6 @@
 + (id)metadataForStoreWithName:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)storeMetadatasWithName:(id)arg1 inManagedObjectContext:(id)arg2;
 
-- (id)createKnowledgeVectorForBaseline;
 - (id)createPeerRangesForBaselineWithLocalPeerID:(id)arg1;
 - (id)initWithUbiquityName:(id)arg1 andUbiquityRootLocation:(id)arg2 insertIntoManagedObjectContext:(id)arg3;
 - (void)loadFromBaselineMetadata:(id)arg1 withLocalPeerID:(id)arg2;

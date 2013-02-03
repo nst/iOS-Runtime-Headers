@@ -160,6 +160,8 @@
 + (id)sortedCloudSharedAssetsWithDerivativesInLibrary:(id)arg1;
 + (int)thumbnailFormat;
 + (id)uniformTypeIdentifierFromPathExtension:(id)arg1 assetType:(int)arg2;
++ (id)uuidFromAssetURL:(id)arg1 fileExtension:(id*)arg2 sidecarIndex:(id*)arg3;
++ (id)uuidFromAssetURL:(id)arg1;
 + (int)wildcatCachedStackImageFormat;
 + (int)wildcatIndexSheetFormat;
 + (int)wildcatPhotoScrubberFormat;

@@ -6,21 +6,25 @@
 
 @interface GEOUsageCollectionRequest : PBRequest {
     NSMutableArray *_directionsFeedbackCollections;
+    NSMutableArray *_mapsUsageFeedbackCollections;
     NSMutableArray *_placeSearchFeedbackCollections;
     NSMutableArray *_transitAppLaunchFeedbackCollections;
     NSMutableArray *_usageCollections;
 }
 
 @property(retain) NSMutableArray * directionsFeedbackCollections;
+@property(retain) NSMutableArray * mapsUsageFeedbackCollections;
 @property(retain) NSMutableArray * placeSearchFeedbackCollections;
 @property(retain) NSMutableArray * transitAppLaunchFeedbackCollections;
 @property(retain) NSMutableArray * usageCollections;
 
 - (void)addDirectionsFeedbackCollection:(id)arg1;
+- (void)addMapsUsageFeedbackCollection:(id)arg1;
 - (void)addPlaceSearchFeedbackCollection:(id)arg1;
 - (void)addTransitAppLaunchFeedbackCollection:(id)arg1;
 - (void)addUsageCollection:(id)arg1;
 - (void)clearDirectionsFeedbackCollections;
+- (void)clearMapsUsageFeedbackCollections;
 - (void)clearPlaceSearchFeedbackCollections;
 - (void)clearTransitAppLaunchFeedbackCollections;
 - (void)clearUsageCollections;
@@ -33,6 +37,9 @@
 - (unsigned int)directionsFeedbackCollectionsCount;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)mapsUsageFeedbackCollectionAtIndex:(unsigned int)arg1;
+- (id)mapsUsageFeedbackCollections;
+- (unsigned int)mapsUsageFeedbackCollectionsCount;
 - (id)placeSearchFeedbackCollectionAtIndex:(unsigned int)arg1;
 - (id)placeSearchFeedbackCollections;
 - (unsigned int)placeSearchFeedbackCollectionsCount;
@@ -40,6 +47,7 @@
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setDirectionsFeedbackCollections:(id)arg1;
+- (void)setMapsUsageFeedbackCollections:(id)arg1;
 - (void)setPlaceSearchFeedbackCollections:(id)arg1;
 - (void)setTransitAppLaunchFeedbackCollections:(id)arg1;
 - (void)setUsageCollections:(id)arg1;

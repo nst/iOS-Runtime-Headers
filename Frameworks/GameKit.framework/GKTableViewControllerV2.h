@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKInviteButton, NSArray, NSObject<OS_dispatch_source>, UIImageView, GKSectionArrayDataSource, NSIndexPath, UIView, GKTableView, UIPopoverController, GKMultiColumnTableViewCell, UIView<GKTableViewCellContents>;
+@class GKInviteButton, NSObject<OS_dispatch_source>, NSArray, UIImageView, GKSectionArrayDataSource, NSIndexPath, UIView, GKTableView, UIPopoverController, GKMultiColumnTableViewCell, UIView<GKTableViewCellContents>;
 
 @interface GKTableViewControllerV2 : GKViewController <UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource, GKTableViewControllerDelegate, UIPopoverControllerDelegate> {
     struct CGPoint { 

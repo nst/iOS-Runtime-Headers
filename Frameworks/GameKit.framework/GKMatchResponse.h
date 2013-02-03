@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray, NSString, NSData, NSObject<OS_dispatch_group>, GKMatchRequestInternal, NSDictionary;
+@class NSArray, NSString, GKMatchRequestInternal, NSData, NSDictionary, NSObject<OS_dispatch_group>;
 
 @interface GKMatchResponse : GKResponse {
     NSData *_cdxTicket;

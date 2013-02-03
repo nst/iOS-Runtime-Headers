@@ -55,7 +55,6 @@
 + (id)_applyFaceTimeScheme:(id)arg1 toFaceTimeURL:(id)arg2;
 + (id)_faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2;
 + (id)_gkURLWithStringAndFallbacks:(id)arg1;
-+ (id)_iAd_validatedURLForURL:(id)arg1;
 + (BOOL)_isBetaSwitchEnabledForKey:(struct __CFString { }*)arg1;
 + (id)_web_URLWithComponents:(struct { id x1; id x2; id x3; id x4; int x5; id x6; id x7; id x8; })arg1;
 + (id)_web_URLWithData:(id)arg1 relativeToURL:(id)arg2;
@@ -120,6 +119,7 @@
 - (id)URLByAppendingPathComponent:(id)arg1 isDirectory:(BOOL)arg2;
 - (id)URLByAppendingPathComponent:(id)arg1;
 - (id)URLByAppendingPathExtension:(id)arg1;
+- (id)URLByAppendingQueryParameter:(id)arg1 value:(id)arg2;
 - (id)URLByDeletingLastPathComponent;
 - (id)URLByDeletingPathExtension;
 - (id)URLByDeletingQueryParameterWithKey:(id)arg1;
@@ -151,9 +151,6 @@
 - (id)_gkURLByAddingQueryParameters:(id)arg1;
 - (id)_gkURLByReplacingSchemeWithScheme:(id)arg1;
 - (id)_hostString;
-- (id)_iAd_URLByReplacingQueryStringWithString:(id)arg1;
-- (BOOL)_iAd_isHttpOnly;
-- (BOOL)_iAd_isHttpOrHttps;
 - (id)_initWithMinimalBookmarkData:(id)arg1;
 - (BOOL)_isAbsolute;
 - (BOOL)_isDeallocating;

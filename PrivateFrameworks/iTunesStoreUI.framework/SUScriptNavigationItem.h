@@ -58,6 +58,7 @@
 - (void)setRightItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setRightItems:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setTitleView:(id)arg1 animated:(BOOL)arg2;
 - (void)setTitleView:(id)arg1;
 - (void)tearDownUserInterface;
 - (id)title;

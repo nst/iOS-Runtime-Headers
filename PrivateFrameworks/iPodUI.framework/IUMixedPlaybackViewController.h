@@ -31,7 +31,6 @@
 - (id)coverFlowViewController;
 - (void)dealloc;
 - (void)exitPlayerAnimated:(BOOL)arg1;
-- (void)exitPlayerForAccessorySplash;
 - (id)init;
 - (BOOL)isShowingCoverFlow;
 - (id)newMediaNavigationItem;

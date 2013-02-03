@@ -49,6 +49,7 @@
 - (void)dismissDeviceMovementDisplay;
 - (id)gyroData;
 - (double)gyroUpdateInterval;
+- (int)gyttNumTemperatures;
 - (id)init;
 - (id)initPrivate;
 - (id)initUsing6AxisSensorFusion;
@@ -68,6 +69,7 @@
 - (void)onGeomagneticModel:(const struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; }*)arg1;
 - (void)onGyro:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; unsigned short x3; boolx4; }*)arg1;
 - (void)onMagnetometer:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
+- (void)rebuildGytt;
 - (void)setAccelerometerDataCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3;
 - (void)setAccelerometerUpdateInterval:(double)arg1;
 - (void)setAccelerometerUpdateIntervalPrivate:(double)arg1;

@@ -2,30 +2,31 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class EASession, NSThread, NSCondition, EAAccessory;
+@class EAAccessory, NSRecursiveLock, EASession;
 
 @interface EAOutputStream : NSOutputStream {
     EAAccessory *_accessory;
+    struct __CFSocket { } *_cfSocket;
     id _delegate;
     BOOL _hasSpaceAvailable;
     BOOL _hasSpaceAvailableEventSent;
     BOOL _isAtEndEventSent;
     BOOL _isOpenCompletedEventSent;
-    BOOL _isWriteAvailableThreadCancelled;
     struct __CFRunLoop { } *_runLoop;
     struct __CFRunLoopSource { } *_runLoopSource;
+    NSRecursiveLock *_runloopLock;
     EASession *_session;
     int _sock;
+    struct __CFRunLoopSource { } *_socketRunLoopSource;
+    NSRecursiveLock *_statusLock;
     unsigned int _streamStatus;
-    NSThread *_writeAvailableThread;
-    NSCondition *_writeAvailableThreadRunCondition;
 }
 
 - (void)_accessoryDidDisconnect:(id)arg1;
 - (void)_performAtEndOfStreamValidation;
 - (void)_scheduleCallback;
 - (void)_streamEventTrigger;
-- (void)_writeAvailableThread;
+- (void)_streamWriteable;
 - (void)close;
 - (void)dealloc;
 - (id)delegate;

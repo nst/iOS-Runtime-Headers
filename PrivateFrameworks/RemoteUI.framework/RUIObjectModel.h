@@ -4,7 +4,7 @@
 
 @class NSArray, RUIPage, UIAlertView, NSTimer, NSMutableArray, NSDictionary, NSString, <RUIObjectModelDelegate>, NSMutableDictionary, NSURL;
 
-@interface RUIObjectModel : NSObject {
+@interface RUIObjectModel : NSObject <UIWebViewDelegate, RUITableViewDelegate, RUIPageDelegate> {
     NSDictionary *_alert;
     NSDictionary *_clientInfo;
     UIAlertView *_confirmationAlert;
@@ -55,6 +55,7 @@
 - (void)RUIPage:(id)arg1 toggledEditing:(BOOL)arg2;
 - (void)_cleanupConfirmation;
 - (void)_cleanupRefreshTimer;
+- (void)_displaySupplementalPage:(id)arg1;
 - (id)_firstPageForPresentation;
 - (void)_handleButtonPress:(id)arg1 attributes:(id)arg2;
 - (void)_handleButtonPressConfirmed:(id)arg1 attributes:(id)arg2;

@@ -15,12 +15,15 @@
     unsigned int _avItemType;
     id _completionHandler;
     NSArray *_displayedRoutes;
+    BOOL _shouldPauseAfterDismissing;
     UIViewController *_viewControllerForActionSheet;
     UIWindow *_windowForActionSheet;
 }
 
 - (id)_availableRoutes;
+- (void)_debugButtonAction:(id)arg1;
 - (BOOL)_isDeviceVideoRoute:(id)arg1;
+- (BOOL)_shouldShowDebugButton;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)dealloc;

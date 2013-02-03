@@ -10,6 +10,7 @@
     id _context;
     <GEOTileRequesterDelegate> *_delegate;
     GEOTileKeyList *_keyList;
+    BOOL _requireWiFi;
     NSThread *_thread;
 }
 
@@ -18,10 +19,11 @@
 @property(retain) id context;
 @property(retain) <GEOTileRequesterDelegate> * delegate;
 @property(readonly) GEOTileKeyList * keyList;
+@property BOOL requireWiFi;
 @property(retain) NSThread * thread;
 
-+ (struct { unsigned int x1; double x2; }*)expiringTilesets;
 + (unsigned int)expiringTilesetsCount;
++ (struct { unsigned int x1; double x2; }*)newExpiringTilesets;
 + (BOOL)skipNetworkForKeysWhenPreloading:(id)arg1;
 + (unsigned char)tileProviderIdentifier;
 
@@ -33,10 +35,12 @@
 - (id)delegate;
 - (id)initWithKeyList:(id)arg1;
 - (id)keyList;
+- (BOOL)requireWiFi;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setRequireWiFi:(BOOL)arg1;
 - (void)setThread:(id)arg1;
 - (void)start;
 - (id)thread;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSArray, NSString, NSDictionary, NSNumber, NSMutableArray;
+@class PFUbiquityKnowledgeVector, NSNumber, NSMutableArray, NSDictionary, NSString, NSMutableDictionary, NSArray;
 
 @interface PFUbiquityStoreSaveSnapshot : NSObject {
     NSMutableDictionary *_deletedObjects;
@@ -22,6 +22,7 @@
     NSMutableDictionary *_peerStates;
     NSMutableDictionary *_primaryKeyToIndex;
     NSMutableArray *_primaryKeys;
+    PFUbiquityKnowledgeVector *_storeKV;
     NSDictionary *_storeOptions;
     NSNumber *_transactionNumber;
     NSMutableDictionary *_updatedObjects;
@@ -42,6 +43,7 @@
 @property(readonly) NSDictionary * peerStates;
 @property(readonly) NSDictionary * primaryKeyToIndex;
 @property(readonly) NSArray * primaryKeys;
+@property(retain) PFUbiquityKnowledgeVector * storeKV;
 @property(readonly) NSDictionary * storeOptions;
 @property(readonly) NSNumber * transactionNumber;
 @property(readonly) NSDictionary * updatedObjects;
@@ -83,8 +85,10 @@
 - (void)setExportingPeerID:(id)arg1;
 - (void)setInsertedObjects:(id)arg1;
 - (void)setLocalPeerID:(id)arg1;
+- (void)setStoreKV:(id)arg1;
 - (void)setTransactionNumber:(id)arg1 peerStates:(id)arg2 andPeerIDs:(id)arg3;
 - (void)setUpdatedObjects:(id)arg1;
+- (id)storeKV;
 - (id)storeOptions;
 - (id)transactionNumber;
 - (id)transactionNumberFromPeerStates:(id)arg1;

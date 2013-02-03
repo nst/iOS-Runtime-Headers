@@ -8,6 +8,7 @@
     NSString *_accountName;
     NSString *_alias;
     BOOL _allowMultiplayerInvites;
+    BOOL _allowNearbyMultiplayer;
     NSArray *_emailAddresses;
     NSString *_facebookUserID;
     BOOL _findable;
@@ -36,6 +37,7 @@
 @property(retain) NSString * accountName;
 @property(retain) NSString * alias;
 @property BOOL allowMultiplayerInvites;
+@property BOOL allowNearbyMultiplayer;
 @property(retain) NSArray * emailAddresses;
 @property(retain) NSString * facebookUserID;
 @property(getter=isFindable) BOOL findable;
@@ -66,6 +68,7 @@
 - (id)accountName;
 - (id)alias;
 - (BOOL)allowMultiplayerInvites;
+- (BOOL)allowNearbyMultiplayer;
 - (void)dealloc;
 - (id)displayName;
 - (id)emailAddresses;
@@ -94,6 +97,7 @@
 - (void)setAccountName:(id)arg1;
 - (void)setAlias:(id)arg1;
 - (void)setAllowMultiplayerInvites:(BOOL)arg1;
+- (void)setAllowNearbyMultiplayer:(BOOL)arg1;
 - (void)setEmailAddresses:(id)arg1;
 - (void)setFacebookUserID:(id)arg1;
 - (void)setFindable:(BOOL)arg1;

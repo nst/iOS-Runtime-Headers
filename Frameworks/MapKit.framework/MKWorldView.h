@@ -31,6 +31,7 @@
 @property(getter=isLoadingEnabled) BOOL loadingEnabled;
 @property(getter=isLocationPropagationEnabled) BOOL locationPropagationEnabled;
 @property(getter=isLocationPulseEnabled) BOOL locationPulseEnabled;
+@property double longPressDuration;
 @property(retain) GEOMapRegion * mapRegion;
 @property(readonly) GEOMapRegion * mapRegionOfInterest;
 @property unsigned int mapType;
@@ -141,12 +142,12 @@
 - (void)gestureControllerDidStopRotating:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)gestureControllerDidStopRotatingDecelerating:(id)arg1;
 - (void)gestureControllerDidStopUserInteraction:(id)arg1;
-- (void)gestureControllerDidStopZooming:(id)arg1 willDecelerate:(BOOL)arg2;
-- (void)gestureControllerDidStopZoomingDecelerating:(id)arg1;
+- (void)gestureControllerDidStopZooming:(id)arg1 direction:(int)arg2 willDecelerate:(BOOL)arg3;
+- (void)gestureControllerDidStopZoomingDecelerating:(id)arg1 direction:(int)arg2;
 - (void)gestureControllerWillStartPanning:(id)arg1;
 - (void)gestureControllerWillStartRotating:(id)arg1;
 - (void)gestureControllerWillStartUserInteraction:(id)arg1;
-- (void)gestureControllerWillStartZooming:(id)arg1;
+- (void)gestureControllerWillStartZooming:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)goToCenterCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(float)arg2 animationType:(int)arg3;
 - (void)goToCoordinateRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 animationType:(int)arg2;
@@ -176,6 +177,7 @@
 - (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;
 - (void)locationManagerUpdatedHeading:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
+- (double)longPressDuration;
 - (id)mapAttributionWithStringAttributes:(id)arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRectThatFits:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 edgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (id)mapRegion;
@@ -250,6 +252,7 @@
 - (void)setLoadingEnabled:(BOOL)arg1;
 - (void)setLocationPropagationEnabled:(BOOL)arg1;
 - (void)setLocationPulseEnabled:(BOOL)arg1;
+- (void)setLongPressDuration:(double)arg1;
 - (void)setMapRegion:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)setMapRegion:(id)arg1 animated:(BOOL)arg2;
 - (void)setMapRegion:(id)arg1 animationDuration:(double)arg2 pitch:(double)arg3 yaw:(double)arg4 completion:(id)arg5;
@@ -271,6 +274,7 @@
 - (void)showAnimationForSearchResult:(id)arg1 withMapRegion:(id)arg2;
 - (BOOL)showingTraffic;
 - (BOOL)showsUserLocation;
+- (id)snapshotImage;
 - (void)startEffects;
 - (void)startPlaceCardAnimationAtCoordinate:(struct { double x1; double x2; })arg1 andDistance:(double)arg2;
 - (void)stopEffects;
@@ -283,6 +287,7 @@
 - (id)viewportDictionary;
 - (id)visibleTileSets;
 - (id)wrappedAnnotationForAnnotation:(id)arg1;
+- (BOOL)writeVisibleTrafficTilesToDirectory:(id)arg1 error:(id*)arg2;
 - (double)yaw;
 - (float)zoomLevel;
 

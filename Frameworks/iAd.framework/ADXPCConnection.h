@@ -11,6 +11,7 @@
     <ADXPCConnectionDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSObject<OS_dispatch_queue> *_internalQueue;
+    int _pid;
     unsigned int _synchronizationPort;
     double _synchronizationTime;
 }
@@ -22,6 +23,7 @@
 @property <ADXPCConnectionDelegate> * delegate;
 @property NSObject<OS_dispatch_queue> * dispatchQueue;
 @property NSObject<OS_dispatch_queue> * internalQueue;
+@property(readonly) int pid;
 @property unsigned int synchronizationPort;
 @property double synchronizationTime;
 
@@ -42,6 +44,7 @@
 - (id)initWithConnection:(id)arg1 delegate:(id)arg2 dispatchQueue:(id)arg3;
 - (id)initWithConnection:(id)arg1 delegate:(id)arg2;
 - (id)internalQueue;
+- (int)pid;
 - (void)sendMessage:(id)arg1 userInfo:(id)arg2 replyHandler:(id)arg3;
 - (void)sendMessage:(id)arg1 userInfo:(id)arg2;
 - (void)setBundleId:(id)arg1;

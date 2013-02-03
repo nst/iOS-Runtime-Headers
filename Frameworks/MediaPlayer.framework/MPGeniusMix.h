@@ -39,7 +39,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)downloadMixWithCompletionHandler:(id)arg1;
+- (void)downloadMixWithPermissionHandler:(id)arg1 completionHandler:(id)arg2;
 - (float)downloadProgress;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSString;
+@class NSString, NSDictionary;
 
 @interface GKPreferences : NSObject {
     BOOL _HTTPShouldUsePipelining;
@@ -37,6 +37,7 @@
 @property unsigned int maxPlayersTurnBased;
 @property double minimumCacheTTL;
 @property(getter=isMultiplayerGamingRestricted,readonly) BOOL multiplayerGamingRestricted;
+@property(retain) NSDictionary * nearbyMultiplayerOverride;
 @property BOOL notificationAlertsEnabled;
 @property BOOL notificationBadgesEnabled;
 @property(getter=isNotificationCenterEnabled) BOOL notificationCenterEnabled;
@@ -97,6 +98,7 @@
 - (unsigned int)maxPlayersP2P;
 - (unsigned int)maxPlayersTurnBased;
 - (double)minimumCacheTTL;
+- (id)nearbyMultiplayerOverride;
 - (BOOL)notificationAlertsEnabled;
 - (BOOL)notificationBadgesEnabled;
 - (BOOL)notificationSoundsEnabled;
@@ -125,6 +127,7 @@
 - (void)setMaxPlayersP2P:(unsigned int)arg1;
 - (void)setMaxPlayersTurnBased:(unsigned int)arg1;
 - (void)setMinimumCacheTTL:(double)arg1;
+- (void)setNearbyMultiplayerOverride:(id)arg1;
 - (void)setNotificationAlertsEnabled:(BOOL)arg1;
 - (void)setNotificationBadgesEnabled:(BOOL)arg1;
 - (void)setNotificationCenterEnabled:(BOOL)arg1;

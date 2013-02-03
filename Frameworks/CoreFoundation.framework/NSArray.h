@@ -85,7 +85,6 @@
 - (BOOL)_hasObjects;
 - (BOOL)_hasSameMembers:(id)arg1;
 - (BOOL)_hasStrongReferences;
-- (id)_iAd_arrayWithTruncatedDataDescriptions;
 - (id)_initWithObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)_intersectionWithArray:(id)arg1;
 - (id)_kb_firstObject;

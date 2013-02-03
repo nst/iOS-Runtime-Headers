@@ -11,6 +11,7 @@
     NSDictionary *_localizableMessage;
     unsigned int _matchType;
     NSString *_message;
+    NSString *_participantID;
     NSData *_peerBlob;
     NSString *_peerID;
     NSData *_peerNATIP;
@@ -31,6 +32,7 @@
 @property(retain) NSDictionary * localizableMessage;
 @property unsigned int matchType;
 @property(retain) NSString * message;
+@property(retain) NSString * participantID;
 @property(retain) NSData * peerBlob;
 @property(retain) NSString * peerID;
 @property(retain) NSData * peerNATIP;
@@ -44,7 +46,7 @@
 @property unsigned char version;
 
 + (id)codedPropertyKeys;
-+ (id)inviteFromNearbyPlayer:(id)arg1 deviceID:(id)arg2 bundleID:(id)arg3 connectionData:(id)arg4;
++ (id)inviteFromNearbyPlayer:(id)arg1 participantID:(id)arg2 deviceID:(id)arg3 bundleID:(id)arg4 connectionData:(id)arg5;
 + (id)inviteWithDictionary:(id)arg1;
 + (id)nearbyInviteIDForPlayerID:(id)arg1 deviceID:(id)arg2 bundleID:(id)arg3;
 
@@ -59,6 +61,7 @@
 - (id)localizableMessage;
 - (unsigned int)matchType;
 - (id)message;
+- (id)participantID;
 - (id)peerBlob;
 - (id)peerID;
 - (id)peerNATIP;
@@ -75,6 +78,7 @@
 - (void)setLocalizableMessage:(id)arg1;
 - (void)setMatchType:(unsigned int)arg1;
 - (void)setMessage:(id)arg1;
+- (void)setParticipantID:(id)arg1;
 - (void)setPeerBlob:(id)arg1;
 - (void)setPeerID:(id)arg1;
 - (void)setPeerNATIP:(id)arg1;

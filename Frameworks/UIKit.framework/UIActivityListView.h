@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPageControl, UIView, UIButton, UIScrollView, UIImageView;
+@class UIPageControl, UIButton, UIImageView, UIScrollView, UIView;
 
 @interface UIActivityListView : UIView <UIScrollViewDelegate> {
     struct CGSize { 

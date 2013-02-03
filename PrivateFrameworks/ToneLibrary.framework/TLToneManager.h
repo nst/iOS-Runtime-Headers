@@ -58,6 +58,8 @@
 - (unsigned long)currentNewReminderAlertToneSoundID;
 - (id)currentNewVoicemailToneIdentifier;
 - (unsigned long)currentNewVoicemailToneSoundID;
+- (id)currentPhotoStreamPostToneIdentifier;
+- (unsigned long)currentPhotoStreamPostToneSoundID;
 - (id)currentReminderAlertToneIdentifier;
 - (id)currentRingtoneIdentifier;
 - (id)currentRingtoneName;
@@ -73,6 +75,7 @@
 - (id)defaultIdentifierForContext:(int)arg1;
 - (id)defaultNewMailToneIdentifier;
 - (id)defaultNewVoicemailToneIdentifier;
+- (id)defaultPhotoStreamPostToneIdentifier;
 - (id)defaultReminderAlertToneIdentifier;
 - (id)defaultRingtoneIdentifier;
 - (id)defaultRingtoneName;

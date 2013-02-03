@@ -40,6 +40,7 @@
 - (void)setEmailChoice:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setupDelegateAccountsWithParameters:(id)arg1 handler:(id)arg2;
+- (void)shouldPresentUpgradeFlowWithCompletion:(id)arg1;
 - (void)updateAppleIDWithParameters:(id)arg1 handler:(id)arg2;
 - (void)upgradeiCloudTermsIfNecessaryWithHandler:(id)arg1;
 

@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class UITableView, UIDatePicker, RUITableViewRow, NSMutableArray, UIPickerView;
+@class UITableView, UIDatePicker, RUITableViewRow, RUIObjectModel, NSMutableArray, UIPickerView;
 
 @interface RUITableView : RUIElement <UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate> {
     float _customMargin;
     UIDatePicker *_datePicker;
     RUITableViewRow *_defaultFirstResponderRow;
-    id _delegate;
     float _fullscreenCellHeight;
     float _lastLayoutWidth;
+    RUIObjectModel *_objectModel;
     BOOL _registeredForNotifications;
     NSMutableArray *_sections;
     UIPickerView *_selectPicker;
@@ -21,6 +21,7 @@
 }
 
 @property(retain) RUITableViewRow * defaultFirstResponderRow;
+@property RUIObjectModel * objectModel;
 @property(readonly) NSMutableArray * sections;
 @property(getter=isShowingPicker,readonly) BOOL showingPicker;
 
@@ -39,6 +40,7 @@
 - (BOOL)isShowingPicker;
 - (float)marginForTableView:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (id)objectModel;
 - (id)objectModelRowForIndexPath:(id)arg1;
 - (void)populatePostbackDictionary:(id)arg1;
 - (void)rowDidChange:(id)arg1;
@@ -50,7 +52,7 @@
 - (void)setAttributes:(id)arg1;
 - (void)setCustomMargin:(float)arg1;
 - (void)setDefaultFirstResponderRow:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (void)setObjectModel:(id)arg1;
 - (id)sourceURLForRUITableViewRow;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;

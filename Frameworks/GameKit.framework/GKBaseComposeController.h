@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKScrollView, UIView, NSArray, GKComposeMessageField, GKComposeHeaderFieldBackgroundView;
+@class GKScrollView, NSArray, UIView, GKComposeMessageField, GKComposeHeaderFieldBackgroundView;
 
 @interface GKBaseComposeController : GKViewController <UITextViewDelegate> {
     struct CGRect { 

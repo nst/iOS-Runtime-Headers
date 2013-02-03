@@ -103,6 +103,7 @@
 
 - (void)_airplaneModeChanged;
 - (id)_applyChinaLocationShift:(id)arg1;
+- (BOOL)_canHarvestTrafficWithBundle:(id)arg1;
 - (void)_countryProvidersDidChange:(id)arg1;
 - (BOOL)_isTimeToResetOnResume;
 - (void)_refreshAirplaneMode;

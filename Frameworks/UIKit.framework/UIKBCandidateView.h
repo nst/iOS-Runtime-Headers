@@ -92,5 +92,6 @@
 - (void)updateAppearanceForDictationButton:(id)arg1;
 - (void)updateForKeyboard:(id)arg1 key:(id)arg2;
 - (void)updateScrollViewController;
+- (void)updateScrollViewControllerWithVisualStyle:(int)arg1;
 
 @end

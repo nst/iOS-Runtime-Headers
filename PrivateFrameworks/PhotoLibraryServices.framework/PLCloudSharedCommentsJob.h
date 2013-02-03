@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSString, NSDictionary;
+@class NSDictionary, NSString, NSArray;
 
 @interface PLCloudSharedCommentsJob : PLCloudSharingJob {
     NSString *_albumGUID;

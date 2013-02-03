@@ -9,6 +9,8 @@
     NSURL *_baseURL;
     NSString *_buildIdentifier;
     NSDictionary *_cookieHeaders;
+    NSString *_purchaseClientIdentifier;
+    long long _requestReason;
     NSDictionary *_urlBag;
     NSString *_userAgent;
 }
@@ -17,6 +19,8 @@
 @property(readonly) NSURL * baseURL;
 @property(readonly) NSString * buildIdentifier;
 @property(readonly) NSDictionary * cookieHeaders;
+@property(readonly) NSString * purchaseClientIdentifier;
+@property(readonly) long long requestReason;
 @property(readonly) NSDictionary * urlBag;
 @property(readonly) NSString * userAgent;
 
@@ -32,6 +36,8 @@
 - (id)init;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)purchaseClientIdentifier;
+- (long long)requestReason;
 - (id)urlBag;
 - (id)userAgent;
 

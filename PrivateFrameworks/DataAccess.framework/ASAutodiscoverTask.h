@@ -37,6 +37,7 @@
 - (BOOL)requiresEASVersionInformaton;
 - (BOOL)shouldHandlePasswordErrors;
 - (BOOL)shouldLogIncomingData;
+- (BOOL)shouldStallAfterCannotFindHost;
 - (double)timeoutInterval;
 
 @end

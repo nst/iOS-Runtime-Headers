@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class SLFacebookPlaceManager, NSTimer, NSString, NSLock, UISearchDisplayController, NSArray;
+@class NSArray, NSTimer, NSString, NSLock, UISearchDisplayController, SLFacebookPlaceManager;
 
 @interface SLFacebookPlaceSearchController : NSObject <UITableViewDataSource, SLFacebookPlaceManagerDelegate> {
     NSTimer *_delayTimer;

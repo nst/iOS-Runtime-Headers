@@ -17,6 +17,7 @@
 - (id)_contextForFullList:(id)arg1;
 - (id)_contextForNetworkList:(id)arg1;
 - (void)_registerBuiltInProviders;
+- (void)_updateExpiringTilesets;
 - (void)beginPreloadSessionOfSize:(unsigned long long)arg1;
 - (void)cancelLoad:(id)arg1;
 - (void)closeCacheConnection;
@@ -26,7 +27,7 @@
 - (void)endPreloadSession;
 - (void)flushPendingWrites;
 - (id)initWithCacheLocation:(id)arg1;
-- (void)loadTiles:(id)arg1 checkDisk:(BOOL)arg2 allowNetworking:(BOOL)arg3 bundleIdentifier:(id)arg4 bundleVersion:(id)arg5;
+- (void)loadTiles:(id)arg1 checkDisk:(BOOL)arg2 allowNetworking:(BOOL)arg3 requireWiFi:(BOOL)arg4 bundleIdentifier:(id)arg5 bundleVersion:(id)arg6;
 - (void)openCacheConnection;
 - (void)registerProvider:(Class)arg1;
 - (void)reportCorruptTile:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;

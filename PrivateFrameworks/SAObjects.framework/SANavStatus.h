@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface SANavStatus : AceObject <SAAceSerializable> {
+@interface SANavStatus : AceObject <SABackgroundContextObject> {
 }
 
 @property(copy) NSString * statusValue;

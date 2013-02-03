@@ -20,6 +20,7 @@
 - (void)_layoutSubviews;
 - (id)buttonImageForPart:(unsigned long long)arg1;
 - (void)dealloc;
+- (id)disabledButtonImageForPart:(unsigned long long)arg1;
 - (id)init;
 - (void)layoutSubviews;
 - (id)newVolumeSlider;

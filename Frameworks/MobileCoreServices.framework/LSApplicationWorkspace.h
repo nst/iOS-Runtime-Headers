@@ -12,6 +12,7 @@
 - (id)applicationIdentifierForOpeningResource:(id)arg1;
 - (id)applicationsAvailableForHandlingURLScheme:(id)arg1;
 - (id)applicationsAvailableForOpeningDocument:(id)arg1;
+- (void)clearAdvertisingIdentifier;
 - (id)deviceIdentifierForAdvertising;
 - (id)deviceIdentifierForVendor;
 - (id)directionsApplications;

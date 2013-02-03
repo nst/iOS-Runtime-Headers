@@ -22,11 +22,13 @@
 
 - (id)album;
 - (id)artist;
+- (BOOL)canShowPurchasableMediaViews;
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)displayProperties;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })downloadProgressIndicatorFrame;
+- (struct CGPoint { float x1; float x2; })downloadButtonOrigin;
+- (struct CGPoint { float x1; float x2; })downloadProgressIndicatorOrigin;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
 - (BOOL)getShadowColor:(id*)arg1 offset:(struct CGSize { float x1; float x2; }*)arg2 forLabelAtIndex:(unsigned int)arg3 withModifiers:(unsigned int)arg4;
 - (id)init;

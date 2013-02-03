@@ -8,6 +8,7 @@
     NSString *_action;
     NSDictionary *_arguments;
     NSData *_bodyData;
+    BOOL _excludeSessionIDFromURL;
     NSDictionary *_headers;
     struct __CFHTTPMessage { } *_message;
     int _method;
@@ -15,6 +16,7 @@
 
 @property(readonly) NSString * action;
 @property(copy) NSData * bodyData;
+@property BOOL excludeSessionIDFromURL;
 @property int method;
 
 + (id)request;
@@ -29,11 +31,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithoutHeaderFields;
+- (BOOL)excludeSessionIDFromURL;
 - (id)initWithAction:(id)arg1;
 - (int)method;
 - (id)requestURLForBaseURL:(id)arg1 sessionID:(unsigned int)arg2;
 - (id)requestURLForConnection:(id)arg1;
 - (void)setBodyData:(id)arg1;
+- (void)setExcludeSessionIDFromURL:(BOOL)arg1;
 - (void)setMethod:(int)arg1;
 - (void)setValue:(id)arg1 forArgument:(id)arg2;
 - (void)setValue:(id)arg1 forHeaderField:(id)arg2;

@@ -7,15 +7,21 @@
 @interface RUIParser : NSObject <NSXMLParserDelegate> {
     int _actionSignal;
     NSURL *_baseURL;
+    NSMutableArray *_currentPageStack;
     NSMutableArray *_pages;
     NSXMLParser *_parser;
     int _parserState;
+    BOOL _succeeded;
     RUIObjectModel *_uiObjectModel;
 }
 
 @property(retain) NSURL * baseURL;
+@property(readonly) BOOL succeeded;
 
+- (void)_addNavigationBarWithAttributes:(id)arg1;
+- (void)_addSectionWithAttributes:(id)arg1;
 - (id)_createNewPage;
+- (id)_createSupplementalPageNamed:(id)arg1;
 - (id)_lastPageCreateIfNeeded;
 - (id)_lastRow;
 - (void)_newRowWithAttributeDict:(id)arg1;
@@ -30,6 +36,7 @@
 - (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
 - (void)parser:(id)arg1 validationErrorOccurred:(id)arg2;
 - (void)setBaseURL:(id)arg1;
+- (BOOL)succeeded;
 - (id)uiObjectModel;
 
 @end

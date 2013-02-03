@@ -38,6 +38,8 @@
 - (void)setLoading:(BOOL)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setSection:(id)arg1;
+- (void)setToolbarHidden:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setToolbarHidden:(BOOL)arg1;
 - (void)setViewControllers:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

@@ -29,6 +29,7 @@
 @property(retain) NSString * kind;
 @property(copy) NSString * longDescription;
 @property(readonly) NSNumber * numberOfBytesToHash;
+@property(copy) NSString * pageProgressionDirection;
 @property unsigned long long preOrderIdentifier;
 @property(copy) NSString * preferredAssetFlavor;
 @property(readonly) NSDictionary * primaryAssetDictionary;
@@ -122,6 +123,7 @@
 - (id)numberOfBytesToHash;
 - (id)numberOfCollectionsInCollectionGroup;
 - (id)numberOfItemsInCollection;
+- (id)pageProgressionDirection;
 - (id)podcastEpisodeGUID;
 - (id)podcastFeedURL;
 - (id)podcastType;
@@ -176,6 +178,7 @@
 - (void)setNetworkName:(id)arg1;
 - (void)setNumberOfCollectionsInCollectionGroup:(id)arg1;
 - (void)setNumberOfItemsInCollection:(id)arg1;
+- (void)setPageProgressionDirection:(id)arg1;
 - (void)setPodcastEpisodeGUID:(id)arg1;
 - (void)setPodcastFeedURL:(id)arg1;
 - (void)setPodcastType:(id)arg1;

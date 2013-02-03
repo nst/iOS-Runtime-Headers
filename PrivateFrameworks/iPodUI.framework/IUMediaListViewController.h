@@ -21,10 +21,10 @@
 
 + (Class)tableViewClass;
 
-- (void)_accessorySplashViewWillAppearNotification:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_autoscrollNowPlayingItemToVisibleWithIndexPath:(id)arg1 persistentID:(unsigned long long)arg2;
 - (id)_baseViewController;
+- (void)_canShowCloudDownloadButtonsDidChangeNotification:(id)arg1;
 - (BOOL)_canShowCoverFlow;
 - (void)_coverFlowDidTransitionOut:(id)arg1;
 - (void)_coverFlowTransitionInDidStop:(id)arg1 finished:(id)arg2;
@@ -35,7 +35,9 @@
 - (void)_handleNowPlayingItemChangedAndScrollToVisible;
 - (void)_handleTrackDynamicPropertiesChanged;
 - (void)_localizedDateFormatsDidChange:(id)arg1;
+- (void)_mediaList_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)_nowPlayingItemChanged:(id)arg1;
+- (void)_purchasableMediaDidChangeNotification:(id)arg1;
 - (void)_trackDynamicPropertiesChangedNotification:(id)arg1;
 - (void)_transitionFromCoverFlow;
 - (void)_transitionToCoverFlowWithInterfaceOrientation:(int)arg1;

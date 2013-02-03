@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UITransitionView, PLPhotoScrubber, PLVideoView, UINavigationController, PLPublishingAgent, UIPageController, NSOrderedSet, PLCommentsButton, NSString, NSObject<PLAssetContainer>, NSNumberFormatter, PLCropOverlay, UIAlertView, UILongPressGestureRecognizer, PLVideoRemaker, UINavigationBar, PLAirTunesServiceBrowser, PLManagedAsset, UIViewController, NSMutableSet, PLLibraryImageDataProvider, UIBarButtonItem, UIWindow, UIScrollView, UIPopoverController, UIView, NSArray, PLSlideshowSettingsViewController, PLPictureFramePlugin, UIImage, PLAirPlayBackgroundView, UIImageView, PLEditPhotoController, PLProgressView, UIActionSheet, NSTimer, <PLPhotoBrowserControllerDelegate>, PLAirTunesService, UIToolbar, PLPhotoTileViewController, PLActivityViewController, NSMutableDictionary, UIProgressHUD;
+@class UITransitionView, PLPhotoScrubber, PLVideoView, UINavigationController, PLPublishingAgent, UIPageController, NSOrderedSet, PLCommentsButton, NSString, NSObject<PLAssetContainer>, AirPlayDiagnosticsPopoverController, NSNumberFormatter, PLCropOverlay, UIAlertView, UILongPressGestureRecognizer, PLVideoRemaker, UINavigationBar, PLAirTunesServiceBrowser, PLManagedAsset, UIViewController, NSMutableSet, PLLibraryImageDataProvider, UIBarButtonItem, UIWindow, UIScrollView, UIPopoverController, UIView, NSArray, PLSlideshowSettingsViewController, PLPictureFramePlugin, UIImage, PLAirPlayBackgroundView, UIImageView, PLEditPhotoController, PLProgressView, UIActionSheet, NSTimer, <PLPhotoBrowserControllerDelegate>, PLAirTunesService, UIToolbar, PLPhotoTileViewController, PLActivityViewController, NSMutableDictionary, UIProgressHUD;
 
 @interface PLPhotoBrowserController : UIViewController <ABPeoplePickerNavigationControllerDelegate, PLAlbumChangeObserver, PLAirTunesServicePhotoBrowsingDataSource, PLPublishingActivityDelegate, PLActivityViewControllerDelegate, UIPageControllerDelegate, PLPhotoTileViewControllerDelegate, PLVideoViewDelegate, UIScrollViewDelegate, UIToolbarDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIActionSheetDelegate, PhotoScrubberDataSource, UIPopoverControllerDelegate, PLUIEditImageViewControllerDelegate, PLSlideshowSettingsViewControllerDelegate, PLSlideshowPluginDelegate, PLAirTunesServicePickerViewControllerDelegate, AirPlayRemoteSlideshowDelegate, PLDismissableViewController> {
     struct CGSize { 
@@ -52,6 +52,7 @@
     unsigned int _isEditingComment : 1;
     unsigned int _slideShowIsStreamed : 1;
     unsigned int _airTunesSlideShowIsEnding : 1;
+    <PLPhotoBrowserControllerDelegate> *__delegate;
     SEL _actionAfterForcedRotation;
     UIBarButtonItem *_actionItem;
     UIActionSheet *_actionView;
@@ -62,6 +63,7 @@
     PLAirPlayBackgroundView *_airTunesBackgroundView;
     PLAirTunesServiceBrowser *_airTunesBrowser;
     UIPopoverController *_airTunesServicePickerPopover;
+    AirPlayDiagnosticsPopoverController *_airplayDiagnosticsPopoverController;
     struct NSObject { Class x1; } *_album;
     UIAlertView *_alertView;
     BOOL _animating;
@@ -90,7 +92,6 @@
     PLPublishingAgent *_currentPublishingAgent;
     PLManagedAsset *_currentVideo;
     BOOL _delayImageLoading;
-    <PLPhotoBrowserControllerDelegate> *_delegate;
     unsigned int _deletedIndex;
     PLPhotoTileViewController *_deletedTile;
     PLEditPhotoController *_editController;
@@ -205,6 +206,7 @@
 - (void)_airTunesServicesDidChange:(id)arg1;
 - (void)_airTunesSlideShowTimerFired;
 - (void)_airTunesSlideShowViewWasTapped;
+- (void)_airplayDebugOptionWasClicked:(id)arg1;
 - (void)_airplaySetup;
 - (id)_albumAssetsForSlideShow:(id)arg1 startingAtIndex:(unsigned int)arg2;
 - (BOOL)_albumScrollerIsVisible;
@@ -244,12 +246,13 @@
 - (void)_disableIdleTimer;
 - (void)_discardPhotoScrubber;
 - (void)_dismissActivityControllerPopover;
+- (void)_dismissAirplayDiagnosticsPopover;
 - (void)_dismissAirtunesServicePickerPopover;
 - (void)_dismissCropOverlay;
 - (void)_dismissModalViewControllerAnimated:(BOOL)arg1;
 - (void)_dismissPeoplePickerPopover;
 - (BOOL)_dismissPopovers;
-- (void)_displayAirTunesPopoverRelativeToView:(id)arg1;
+- (void)_displayAirTunesPopover:(id)arg1 relativeToView:(id)arg2;
 - (void)_displayComposeSheet;
 - (void)_displayLastImageForSlideshowPlugin:(id)arg1;
 - (double)_durationForCurrentVideo;
@@ -346,6 +349,7 @@
 - (void)_setShouldRasterizeOverlays:(BOOL)arg1;
 - (void)_setupPhotoScrubber:(BOOL)arg1;
 - (BOOL)_shouldShowAssignToContactOption;
+- (BOOL)_shouldShowDebugAirplayOption;
 - (void)_showCommentTableIfNecessary:(float)arg1;
 - (void)_showCompositionForPublishingBundleNamed:(id)arg1;
 - (void)_showConfirmationForPassthroughTrimming:(id)arg1;
@@ -406,6 +410,8 @@
 - (id)airTunesService:(id)arg1 nextPhotoForPhoto:(id)arg2;
 - (id)airTunesService:(id)arg1 previousPhotoForPhoto:(id)arg2;
 - (void)airTunesServicePickerViewController:(id)arg1 didSelectService:(id)arg2;
+- (void)airTunesServicePickerViewControllerDidSelectDebugOption:(id)arg1;
+- (id)airplayDiagnosticsPopoverController;
 - (BOOL)airplayRemoteSlideshow:(id)arg1 handleEvent:(id)arg2;
 - (BOOL)airplayRemoteSlideshow:(id)arg1 requestAssetWithInfo:(id)arg2 completion:(id)arg3;
 - (struct NSObject { Class x1; }*)album;

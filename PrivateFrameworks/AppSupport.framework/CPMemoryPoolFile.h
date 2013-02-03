@@ -7,17 +7,17 @@
         long __sig; 
         BOOL __opaque[40]; 
     struct __CFAllocator { } *_deallocator;
+    int _fd;
     } _mutex;
     unsigned long _slotCount;
-    unsigned long _slotSize;
-    void *_slots;
+    unsigned long _slotLength;
+    char *_slots;
     struct __CFBitVector { } *_usedSlots;
 }
 
 - (void)dealloc;
-- (id)initWithLabel:(const char *)arg1 slotCount:(unsigned long)arg2 slotSize:(unsigned long)arg3 swappable:(BOOL)arg4;
-- (id)nextSlot;
+- (id)initWithLabel:(const char *)arg1 slotCount:(unsigned long)arg2 slotLength:(unsigned long)arg3;
+- (id)nextSlotWithBytes:(const void*)arg1 length:(unsigned long)arg2;
 - (void)returnSlot:(void*)arg1;
-- (void)sync;
 
 @end

@@ -27,6 +27,8 @@
 @property(copy) id playerLostHandler;
 @property(copy) id receiveDataHandler;
 
++ (id)parseDeviceIDFromServiceName:(id)arg1;
+
 - (void)addInterface:(unsigned int)arg1 withDiscoveryInfo:(id)arg2 forPeerWithServiceName:(id)arg3;
 - (id)bonjour;
 - (void)cleanUpPeersForBrowse;

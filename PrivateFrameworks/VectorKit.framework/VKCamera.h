@@ -83,7 +83,6 @@
     } _viewProjectionMatrixUnscaled;
     VKViewVolume *_viewVolume;
     } _worldMatrix;
-    <VKCameraDelegate> *delegate;
 }
 
 @property BOOL allowDatelineWraparound;

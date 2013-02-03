@@ -32,7 +32,6 @@
     unsigned long long _disabledParts;
     BOOL _displayPlaybackErrorAlerts;
     UITapGestureRecognizer *_doubleTapGestureRecognizer;
-    int _extendedModeNotifyToken;
     MPInlineVideoFullscreenViewController *_fullscreenViewController;
     BOOL _fullscreenViewSizeIsExternallyManaged;
     UIWindow *_fullscreenWindow;
@@ -46,6 +45,7 @@
     MPAVItem *_item;
     unsigned int _itemTypeOverride;
     UIActivityIndicatorView *_loadingIndicator;
+    BOOL _navigationBarHidden;
     BOOL _ownsStatusBar;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
     NSString *_playbackErrorDescription;
@@ -77,6 +77,7 @@
 @property id delegate;
 @property(readonly) UIView * fullscreenView;
 @property(retain) MPAVItem * item;
+@property BOOL navigationBarHidden;
 @property int orientation;
 @property(copy) NSString * playbackErrorDescription;
 @property(retain) MPAVController * player;
@@ -109,8 +110,8 @@
 - (void)_hideLoadingIndicator;
 - (void)_hideOverlayAnimated:(BOOL)arg1;
 - (void)_hideOverlayDidEnd:(id)arg1 finished:(id)arg2;
-- (void)_isAirPlayVideoActiveDidChange:(id)arg1;
 - (BOOL)_isAnimatingFullscreenTransition;
+- (void)_isExternalPlaybackActiveDidChange:(id)arg1;
 - (void)_itemTypeAvailable:(id)arg1;
 - (unsigned int)_itemTypeWithActualTypePreference;
 - (void)_overlayIdleTimerFired:(id)arg1;
@@ -192,6 +193,7 @@
 - (BOOL)isFullscreen;
 - (id)item;
 - (unsigned int)itemTypeOverride;
+- (BOOL)navigationBarHidden;
 - (void)noteIgnoredChangeTypes:(unsigned int)arg1;
 - (int)orientation;
 - (void)overlayDidBeginScrubbing:(id)arg1;
@@ -234,6 +236,7 @@
 - (void)setInlinePlaybackUsesTVOut:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)setItemTypeOverride:(unsigned int)arg1;
+- (void)setNavigationBarHidden:(BOOL)arg1;
 - (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
 - (void)setOrientation:(int)arg1;
 - (void)setOwnsStatusBar:(BOOL)arg1;

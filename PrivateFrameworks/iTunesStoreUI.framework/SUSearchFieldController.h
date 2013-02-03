@@ -59,6 +59,7 @@
 - (BOOL)searchBarShouldBeginEditing:(id)arg1;
 - (BOOL)searchBarShouldEndEditing:(id)arg1;
 - (void)searchBarTextDidEndEditing:(id)arg1;
+- (void)searchBarWillRemoveFromSuperview:(id)arg1;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (id)searchFieldConfiguration;
 - (int)searchFieldStyle;

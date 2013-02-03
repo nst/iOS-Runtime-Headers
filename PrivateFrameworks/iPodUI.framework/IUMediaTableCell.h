@@ -5,6 +5,7 @@
 @class UIButton, MPMediaDownloadObserver, MPDownloadProgressIndicator, IUMediaTableCellContentView, IUTableCellConfiguration;
 
 @interface IUMediaTableCell : UITableViewCell {
+    BOOL _canShowPurchasableMediaSubviews;
     UIButton *_downloadButton;
     MPMediaDownloadObserver *_downloadObserver;
     MPDownloadProgressIndicator *_downloadProgressIndicator;
@@ -19,6 +20,7 @@
 }
 
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } artworkFrame;
+@property BOOL canShowPurchasableMediaSubviews;
 @property(retain) IUTableCellConfiguration * configuration;
 @property BOOL drawAsDisabled;
 @property BOOL drawInAlternateStyle;
@@ -30,7 +32,8 @@
 @property BOOL transparentSelectionHighlightStyle;
 @property BOOL useSubviewLayout;
 
-- (void)_cancelDownloadAction:(id)arg1;
+- (void)_canShowCloudDownloadButtonsDidChangeNotification:(id)arg1;
+- (void)_cancelButtonAction:(id)arg1;
 - (void)_clearPurchaseActionConfigurationButton;
 - (id)_contentString;
 - (void)_didCreateContentView;
@@ -38,14 +41,15 @@
 - (void)_drawBackgroundInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
 - (void)_drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
 - (void)_fixupDebugBackgroundColors;
+- (id)_mediaContentView;
 - (id)_otgPlusButton;
 - (void)_purchasableMediaDidChangeNotification:(id)arg1;
-- (id)_purchaseActionConfiguration;
 - (void)_purchaseButtonPressed:(id)arg1;
 - (void)_updateHighlightColors;
 - (void)_updateMediaContentViewFrame;
-- (void)_updateProgressIndicator;
+- (void)_updatePurchasableMediaSubviewsWithReload:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })artworkFrame;
+- (BOOL)canShowPurchasableMediaSubviews;
 - (id)configuration;
 - (void)dealloc;
 - (BOOL)drawAsDisabled;
@@ -62,6 +66,7 @@
 - (id)scriptingInfoWithChildren;
 - (void)setAccessoryView:(id)arg1 reloadConfiguration:(BOOL)arg2;
 - (void)setAccessoryView:(id)arg1;
+- (void)setCanShowPurchasableMediaSubviews:(BOOL)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setConfigurationNeedsDisplay;
 - (void)setDrawAsDisabled:(BOOL)arg1;

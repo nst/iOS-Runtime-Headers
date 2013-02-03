@@ -18,7 +18,7 @@
     AVPlayerItem *_currentItem;
     } _currentTime;
     int _defaultItemEQPresetType;
-    BOOL _isAirPlayVideoActive;
+    BOOL _isExternalPlaybackActive;
     BOOL _outputObscuredDueToInsufficientExternalProtection;
     BOOL _pausedForPlaybackQueueTransaction;
     NSDictionary *_pickedRouteDescription;
@@ -37,13 +37,14 @@
 @property(readonly) int _externalProtectionStatus;
 @property(readonly) AVPlayer * _player;
 @property int actionAtItemEnd;
-@property(getter=isAirPlayVideoActive,readonly) BOOL airPlayVideoActive;
-@property BOOL allowsAirPlayVideo;
+@property BOOL allowsExternalPlayback;
 @property(getter=isClosedCaptionDisplayEnabled) BOOL closedCaptionDisplayEnabled;
 @property(readonly) AVPlayerItem * currentItem;
 @property int defaultItemEQPresetType;
 @property BOOL disallowsAMRAudio;
 @property(readonly) NSError * error;
+@property(getter=isExternalPlaybackActive,readonly) BOOL externalPlaybackActive;
+@property(readonly) int externalPlaybackType;
 @property(copy) NSString * externalPlaybackVideoGravity;
 @property(readonly) BOOL isPlaybackQueueTransactionActive;
 @property(readonly) NSArray * items;
@@ -52,7 +53,7 @@
 @property(readonly) AVAudioSessionMediaPlayerOnly * playerAVAudioSession;
 @property float rate;
 @property(readonly) int status;
-@property BOOL usesAirPlayVideoWhileAirPlayScreenIsActive;
+@property BOOL usesExternalPlaybackWhileExternalScreenIsActive;
 
 - (BOOL)_CALayerDestinationIsTVOut;
 - (id)_displaysUsedForPlayback;
@@ -71,7 +72,7 @@
 - (int)actionAtItemEnd;
 - (id)addBoundaryTimeObserverForTimes:(id)arg1 queue:(id)arg2 usingBlock:(id)arg3;
 - (void)advanceToNextItem;
-- (BOOL)allowsAirPlayVideo;
+- (BOOL)allowsExternalPlayback;
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (void)beginPlaybackQueueTransactionAndPause:(BOOL)arg1;
 - (void)commitPlaybackQueueTransaction;
@@ -81,11 +82,12 @@
 - (int)defaultItemEQPresetType;
 - (BOOL)disallowsAMRAudio;
 - (id)error;
+- (int)externalPlaybackType;
 - (id)externalPlaybackVideoGravity;
 - (id)init;
 - (void)insertItem:(id)arg1 afterItem:(id)arg2;
-- (BOOL)isAirPlayVideoActive;
 - (BOOL)isClosedCaptionDisplayEnabled;
+- (BOOL)isExternalPlaybackActive;
 - (BOOL)isPlaybackQueueTransactionActive;
 - (id)items;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -101,7 +103,7 @@
 - (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActionAtItemEnd:(int)arg1;
-- (void)setAllowsAirPlayVideo:(BOOL)arg1;
+- (void)setAllowsExternalPlayback:(BOOL)arg1;
 - (void)setClosedCaptionDisplayEnabled:(BOOL)arg1;
 - (void)setCurrentPlaybackQueueTransactionDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setDefaultItemEQPresetType:(int)arg1;
@@ -109,8 +111,8 @@
 - (void)setExternalPlaybackVideoGravity:(id)arg1;
 - (void)setPlaybackQueueCommitHandler:(id)arg1;
 - (void)setRate:(float)arg1;
-- (void)setUsesAirPlayVideoWhileAirPlayScreenIsActive:(BOOL)arg1;
+- (void)setUsesExternalPlaybackWhileExternalScreenIsActive:(BOOL)arg1;
 - (int)status;
-- (BOOL)usesAirPlayVideoWhileAirPlayScreenIsActive;
+- (BOOL)usesExternalPlaybackWhileExternalScreenIsActive;
 
 @end

@@ -33,10 +33,10 @@
 + (id)colorWithCGColor:(struct CGColor { }*)arg1;
 + (id)colorWithCIColor:(id)arg1;
 + (id)colorWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
++ (id)colorWithPKColor:(id)arg1;
 + (id)colorWithPatternImage:(id)arg1;
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 + (id)colorWithStyleString:(id)arg1;
-+ (id)colorWithWLColor:(id)arg1;
 + (id)colorWithWhite:(float)arg1 alpha:(float)arg2;
 + (id)cyanColor;
 + (id)darkGrayColor;

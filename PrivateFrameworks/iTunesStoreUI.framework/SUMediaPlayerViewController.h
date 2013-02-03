@@ -46,5 +46,6 @@
 - (void)setClientInterface:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

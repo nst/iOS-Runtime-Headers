@@ -12,12 +12,14 @@
     NSSet *_guidSchemes;
     NSDictionary *_headerPatterns;
     double _invalidationTime;
+    BOOL _loadedFromDiskCache;
 }
 
 @property(copy) SSURLBagContext * URLBagContext;
 @property(readonly) NSDictionary * URLBagDictionary;
 @property(readonly) NSSet * availableStorefrontItemKinds;
 @property double invalidationTime;
+@property BOOL loadedFromDiskCache;
 @property(getter=isValid,readonly) BOOL valid;
 @property(readonly) long long versionIdentifier;
 
@@ -25,7 +27,7 @@
 + (BOOL)_allowUnsignedBags;
 + (id)_copyFallbackContextForContext:(id)arg1;
 + (void)_loadItemKindURLBagKeyMap;
-+ (void)_observeStoreFrontChanges;
++ (void)_observeExternalChanges;
 + (void)_setURLBag:(id)arg1 forContext:(id)arg2;
 + (id)_urlBagForContext:(id)arg1;
 + (id)copyExtraHeadersForURL:(id)arg1 inBagContext:(id)arg2;
@@ -62,10 +64,12 @@
 - (double)invalidationTime;
 - (BOOL)isValid;
 - (BOOL)loadFromDictionary:(id)arg1 returningError:(id*)arg2;
+- (BOOL)loadedFromDiskCache;
 - (id)networkConstraintsForDownloadKind:(id)arg1;
 - (id)sanitizedURLForURL:(id)arg1;
 - (id)searchQueryParametersForClientIdentifier:(id)arg1 networkType:(int)arg2;
 - (void)setInvalidationTime:(double)arg1;
+- (void)setLoadedFromDiskCache:(BOOL)arg1;
 - (void)setURLBagContext:(id)arg1;
 - (BOOL)shouldSendGUIDForURL:(id)arg1;
 - (id)urlForKey:(id)arg1;

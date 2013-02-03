@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUTabBarControllerDelegate>, NSMutableArray, SUClientInterface, UIImage, NSString, SUPreviewOverlayViewController, UIViewController, NSArray;
+@class SUPreviewOverlayViewController, <SUTabBarControllerDelegate>, NSMutableArray, SUClientInterface, UIImage, NSString, SUViewController, UIViewController, NSArray;
 
 @interface SUTabBarController : UITabBarController <SUOverlayBackgroundDelegate> {
     SUClientInterface *_clientInterface;
@@ -12,6 +12,9 @@
     UIImage *_moreListUnselectedImage;
     NSMutableArray *_overlayBackgroundViewControllers;
     UIViewController *_preTransientSelectedViewController;
+    SUViewController *_preloadedViewController;
+    NSString *_preloadedViewControllerIdentifier;
+    NSString *_preloadedViewControllerKey;
     SUPreviewOverlayViewController *_previewOverlayViewController;
     int _reloadingUnderneathTransientControllerCount;
     NSArray *_sections;
@@ -68,6 +71,7 @@
 - (id)init;
 - (id)initWithClientInterface:(id)arg1;
 - (BOOL)loadFromDefaults;
+- (BOOL)loadFromDefaultsAndSetSections:(id)arg1;
 - (void)loadView;
 - (id)moreListTitle;
 - (id)overlayBackgroundViewController;

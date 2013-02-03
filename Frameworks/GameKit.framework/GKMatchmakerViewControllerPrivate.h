@@ -104,6 +104,7 @@
 - (void)setSentAccept:(BOOL)arg1;
 - (void)setupForGeniusMatchmaking;
 - (BOOL)shouldFindMorePlayers;
+- (BOOL)shouldShowNearbySwitch;
 - (void)showAlertForTag:(int)arg1;
 - (BOOL)showAlertIfPendingInvites;
 - (void)startGameNotifyOthers:(BOOL)arg1;

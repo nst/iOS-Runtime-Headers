@@ -9,10 +9,19 @@
         unsigned int ethernetPortCount; 
         unsigned int productID; 
         unsigned int productFamily; 
+        int deviceKind; 
     struct { 
         unsigned int ethernetPortCount; 
         unsigned int productID; 
         unsigned int productFamily; 
+        int deviceKind; 
+    UIImageView *airplayDeviceImageView;
+    UILabel *airplayDeviceLabel;
+    UIView *audioCableView;
+    UIImageView *audioCablingImageFirstFrame;
+    UIImageView *audioCablingImageLastFrame;
+    UIImageView *audioInsetImageView;
+    UILabel *audioPortLabel;
     UIImageView *cablingImageFirstFrame;
     UIImageView *cablingImageLastFrame;
     UIView *containerView;
@@ -38,6 +47,8 @@
     UIImageView *routerImageView;
     UILabel *routerLabel;
     } sourceDevice;
+    UIImageView *speakerImageView;
+    UILabel *speakerLabel;
     UILabel *spinnerWithStatusAdjacentLabel;
     UIActivityIndicatorView *spinnerWithStatusAdjacentSpinner;
     UIView *spinnerWithStatusAdjacentView;
@@ -58,6 +69,13 @@
     UILabel *wanPortLabel;
 }
 
+@property(retain) UIImageView * airplayDeviceImageView;
+@property(retain) UILabel * airplayDeviceLabel;
+@property(retain) UIView * audioCableView;
+@property(retain) UIImageView * audioCablingImageFirstFrame;
+@property(retain) UIImageView * audioCablingImageLastFrame;
+@property(retain) UIImageView * audioInsetImageView;
+@property(retain) UILabel * audioPortLabel;
 @property(retain) UIImageView * cablingImageFirstFrame;
 @property(retain) UIImageView * cablingImageLastFrame;
 @property(retain) UIView * containerView;
@@ -77,6 +95,8 @@
 @property(retain) UIView * resetBroadband2View;
 @property(retain) UIImageView * routerImageView;
 @property(retain) UILabel * routerLabel;
+@property(retain) UIImageView * speakerImageView;
+@property(retain) UILabel * speakerLabel;
 @property(retain) UIView * swapCableView;
 @property(retain) UIImageView * swapCableViewCablingImageFirstFrame;
 @property(retain) UIImageView * swapCableViewCablingImageLastFrame;
@@ -91,26 +111,37 @@
 @property(retain) UIView * wanCableView;
 @property(retain) UILabel * wanPortLabel;
 
+- (void)addAudioPluginUI;
 - (void)addInternetNotWorkingUI;
 - (void)addInternetWANPluginUI;
 - (void)addSwapCablingUI;
+- (id)airplayDeviceImageView;
+- (id)airplayDeviceLabel;
+- (id)audioCableView;
+- (id)audioCablingImageFirstFrame;
+- (id)audioCablingImageLastFrame;
+- (id)audioInsetImageView;
+- (id)audioPortLabel;
+- (id)builtInImageNamed:(id)arg1;
 - (id)cablingImageFirstFrame;
 - (id)cablingImageLastFrame;
 - (void)changeDiagram:(id)arg1;
 - (id)containerView;
 - (id)descriptionContainerView;
 - (id)descriptionLabel;
-- (void)determineInfoForProductID:(unsigned int)arg1 deviceDiagramInfo:(struct { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg2;
-- (id)deviceImageForDeviceDiagramInfo:(struct { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
+- (void)determineInfoForDevice:(id)arg1 deviceDiagramInfo:(struct { unsigned int x1; unsigned int x2; unsigned int x3; int x4; }*)arg2;
+- (id)deviceImageForDeviceDiagramInfo:(struct { unsigned int x1; unsigned int x2; unsigned int x3; int x4; }*)arg1 audioImage:(BOOL)arg2;
 - (id)deviceImageView;
 - (id)deviceLabel;
 - (id)diagramContainerView;
 - (id)diagramView;
-- (id)insetImageForDeviceDiagramInfo:(struct { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
+- (id)insetImageForDeviceDiagramInfo:(struct { unsigned int x1; unsigned int x2; unsigned int x3; int x4; }*)arg1 audioImage:(BOOL)arg2;
 - (id)insetImageView;
 - (unsigned int)internetFlow;
 - (id)internetLabel;
 - (id)pageControl;
+- (void)presentAudioPluginCompleteUI;
+- (void)presentAudioPluginUI;
 - (void)presentInternetDisconnectedUI;
 - (void)presentInternetWANPluginUI;
 - (void)presentSwapCablingCompleteUI;
@@ -123,6 +154,13 @@
 - (id)routerLabel;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)setAirplayDeviceImageView:(id)arg1;
+- (void)setAirplayDeviceLabel:(id)arg1;
+- (void)setAudioCableView:(id)arg1;
+- (void)setAudioCablingImageFirstFrame:(id)arg1;
+- (void)setAudioCablingImageLastFrame:(id)arg1;
+- (void)setAudioInsetImageView:(id)arg1;
+- (void)setAudioPortLabel:(id)arg1;
 - (void)setCablingImageFirstFrame:(id)arg1;
 - (void)setCablingImageLastFrame:(id)arg1;
 - (void)setContainerView:(id)arg1;
@@ -142,6 +180,8 @@
 - (void)setResetBroadband2View:(id)arg1;
 - (void)setRouterImageView:(id)arg1;
 - (void)setRouterLabel:(id)arg1;
+- (void)setSpeakerImageView:(id)arg1;
+- (void)setSpeakerLabel:(id)arg1;
 - (void)setSwapCableView:(id)arg1;
 - (void)setSwapCableViewCablingImageFirstFrame:(id)arg1;
 - (void)setSwapCableViewCablingImageLastFrame:(id)arg1;
@@ -155,7 +195,8 @@
 - (void)setSwapCableViewTargetLabel:(id)arg1;
 - (void)setWanCableView:(id)arg1;
 - (void)setWanPortLabel:(id)arg1;
-- (id)sizedImageNamed:(id)arg1;
+- (id)speakerImageView;
+- (id)speakerLabel;
 - (void)startAnimatingCablingForView:(id)arg1 startingOpacity:(float)arg2 endingOpacity:(float)arg3 duration:(double)arg4;
 - (id)swapCableView;
 - (id)swapCableViewCablingImageFirstFrame;

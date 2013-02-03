@@ -37,7 +37,7 @@
 @property(retain) GKInvite * acceptedInvite;
 @property(retain) NSString * accountName;
 @property(retain) UIViewController * activeViewController;
-@property BOOL allowMultiplayerInvites;
+@property(readonly) BOOL allowNearbyMultiplayer;
 @property(retain) GKAuthenticateViewController * authViewController;
 @property(retain) NSDictionary * authenticateAlertDictionary;
 @property(copy) id authenticateHandler;

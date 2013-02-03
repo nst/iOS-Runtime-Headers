@@ -48,6 +48,7 @@
 + (id)createDefaultLocalPeerID;
 + (BOOL)doBasicSanityCheckForUbiquityRootURL:(id)arg1 withError:(id*)arg2;
 + (id)generateMachineUUIDString;
++ (void)removeUbiquityMetadataFromStore:(id)arg1;
 + (BOOL)ubiquityMetadataTablesPresentInStore:(id)arg1;
 
 - (void)_setUbiquityRootLocation:(id)arg1 storeName:(id)arg2 localPeerID:(id)arg3 andModelVersionHash:(id)arg4;

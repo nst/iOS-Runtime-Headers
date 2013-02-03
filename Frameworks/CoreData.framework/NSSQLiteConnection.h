@@ -96,6 +96,7 @@
 - (void)deleteRow:(id)arg1;
 - (id)describeResults;
 - (void)disconnect;
+- (void)dropUbiquityTables;
 - (void)endFetch;
 - (void)endPrimaryKeyGeneration;
 - (void)execute;

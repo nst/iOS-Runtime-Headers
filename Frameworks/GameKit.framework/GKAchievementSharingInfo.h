@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class UIImage, GKPlayer, GKAchievement, GKGame, GKAchievementDescription;
+@class UIImage, GKPlayer, GKAchievementDescription, GKGame, GKAchievement;
 
 @interface GKAchievementSharingInfo : NSObject <NSCoding> {
     GKAchievement *_achievement;

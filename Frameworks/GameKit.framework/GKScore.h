@@ -8,7 +8,6 @@
     GKGame *_game;
     GKScoreInternal *_internal;
     BOOL _shouldSetDefaultLeaderboard;
-    BOOL _valueSet;
 }
 
 @property(retain) NSString * category;
@@ -56,10 +55,7 @@
 - (void)setInternal:(id)arg1;
 - (void)setShouldSetDefaultLeaderboard:(BOOL)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (void)setValue:(long long)arg1;
-- (void)setValueSet:(BOOL)arg1;
 - (BOOL)shouldSetDefaultLeaderboard;
 - (id)valueForUndefinedKey:(id)arg1;
-- (BOOL)valueSet;
 
 @end

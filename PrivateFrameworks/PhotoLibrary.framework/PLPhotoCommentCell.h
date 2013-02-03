@@ -18,6 +18,7 @@
 
 + (id)_attributedStringForBylineText:(id)arg1;
 + (id)_attributedStringForCommentText:(id)arg1;
++ (id)_synthesizedAttributedString:(id)arg1 withWordWrapping:(BOOL)arg2;
 + (id)bylineStringForComment:(id)arg1;
 + (float)heightForComment:(id)arg1 forWidth:(float)arg2 forInterfaceOrientation:(int)arg3;
 + (float)heightForCommentText:(id)arg1 bylineText:(id)arg2 forWidth:(float)arg3 forInterfaceOrientation:(int)arg4;

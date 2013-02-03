@@ -106,6 +106,7 @@
 
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_checkAllowsBlockingDurationCall;
+- (void)_clearAsset;
 - (void)_closedCaptioningStatusDidChangeNotification:(id)arg1;
 - (double)_durationFromExternalMetadataIfAvailable;
 - (double)_durationInSeconds;

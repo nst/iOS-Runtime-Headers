@@ -5,6 +5,7 @@
 @class AXDialectMap, NSString, NSArray;
 
 @interface AXLangMap : NSObject {
+    NSArray *_alternateLanguageIDs;
     BOOL _ambiguous;
     NSArray *_dialects;
     NSString *_generalLanguageID;
@@ -12,6 +13,7 @@
     BOOL _western;
 }
 
+@property(retain) NSArray * alternateLanguageIDs;
 @property(getter=isAmbiguous) BOOL ambiguous;
 @property(readonly) AXDialectMap * defaultDialect;
 @property(retain) NSArray * dialects;
@@ -19,6 +21,7 @@
 @property AXDialectMap * userPreferredDialect;
 @property(getter=isWestern) BOOL western;
 
+- (id)alternateLanguageIDs;
 - (id)basicDescription;
 - (void)dealloc;
 - (id)debugDescription;
@@ -27,9 +30,10 @@
 - (id)dialectWithLocaleIdentifier:(id)arg1;
 - (id)dialects;
 - (id)generalLanguageID;
-- (id)initWithLanguageID:(id)arg1 isWestern:(BOOL)arg2 isAmbiguous:(BOOL)arg3 dialects:(id)arg4;
+- (id)initWithLanguageID:(id)arg1 isWestern:(BOOL)arg2 isAmbiguous:(BOOL)arg3 dialects:(id)arg4 alternateLanguageIDs:(id)arg5;
 - (BOOL)isAmbiguous;
 - (BOOL)isWestern;
+- (void)setAlternateLanguageIDs:(id)arg1;
 - (void)setAmbiguous:(BOOL)arg1;
 - (void)setDialects:(id)arg1;
 - (void)setGeneralLanguageID:(id)arg1;

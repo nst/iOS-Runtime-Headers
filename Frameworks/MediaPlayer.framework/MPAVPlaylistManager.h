@@ -35,6 +35,7 @@
 
 - (void)_assetCancelNotification:(id)arg1;
 - (id)_audioSessionModeForMediaItem:(id)arg1;
+- (void)_downloadCancelledNotification:(id)arg1;
 - (id)_feeder;
 - (id)_feederItemForIndex:(int)arg1;
 - (BOOL)_isDeallocating;

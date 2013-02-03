@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSError, NSString, NSObject<OS_dispatch_source>, NSObject<OS_dispatch_queue>, MZTaskAssertion, NSMutableArray;
+@class NSError, NSString, NSObject<OS_dispatch_source>, NSObject<OS_dispatch_queue>, NSMutableArray, MZTaskAssertion;
 
 @interface MZAsynchronousTask : NSObject {
     int _cancelType;

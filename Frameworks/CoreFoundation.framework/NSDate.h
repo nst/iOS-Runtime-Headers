@@ -98,7 +98,7 @@
 - (BOOL)isNSDate__;
 - (id)laterDate:(id)arg1;
 - (id)mf_descriptionForMimeHeaders;
-- (id)mf_replyPrefixForSender:(id)arg1 withSpacer:(BOOL)arg2;
+- (id)mf_replyPrefixForSender:(id)arg1;
 - (id)nearestMidnight;
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (double)timeIntervalSince1970;

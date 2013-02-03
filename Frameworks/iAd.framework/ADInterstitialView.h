@@ -18,6 +18,7 @@
     BOOL _interstitialWasDismissedByUser;
     BOOL _loaded;
     UIViewController<ADInterstitialViewDelegate> *_modalViewController;
+    BOOL _policyEngineManaged;
     BOOL _presentedInView;
     int _previousOrientation;
     ADAdRecipientRecord *_recipientRecord;
@@ -39,6 +40,7 @@
 @property BOOL interstitialWasDismissedByUser;
 @property(getter=isLoaded) BOOL loaded;
 @property UIViewController<ADInterstitialViewDelegate> * modalViewController;
+@property BOOL policyEngineManaged;
 @property BOOL presentedInView;
 @property int previousOrientation;
 @property(retain) ADRemoteView * remoteView;
@@ -84,6 +86,7 @@
 - (BOOL)isActionInProgress;
 - (BOOL)isLoaded;
 - (id)modalViewController;
+- (BOOL)policyEngineManaged;
 - (BOOL)presentedInView;
 - (int)previousOrientation;
 - (id)remoteView;
@@ -111,12 +114,14 @@
 - (void)setInterstitialAd:(id)arg1;
 - (void)setInterstitialWasDismissedByUser:(BOOL)arg1;
 - (void)setModalViewController:(id)arg1;
+- (void)setPolicyEngineManaged:(BOOL)arg1;
 - (void)setPresentedInView:(BOOL)arg1;
 - (void)setPreviousOrientation:(int)arg1;
 - (void)setRemoteView:(id)arg1;
 - (void)setSection:(id)arg1;
 - (void)setTouchesBeganOnCloseBox:(BOOL)arg1;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)storyboardViewControllerDidPresent;
 - (BOOL)touchesBeganOnCloseBox;
 
 @end

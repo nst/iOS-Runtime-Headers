@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKUITheme, NSString, NSNumber;
+@class GKUITheme, NSNumber, NSString;
 
 @interface GKComposeRemoteViewController : GKRemoteViewController {
     NSString *_defaultMessage;

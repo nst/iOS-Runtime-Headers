@@ -6,9 +6,17 @@
    See Warning(s) below.
  */
 
-@class GeolocationCoreLocationDelegate, WebGeolocationPosition, NSTimer, m_tableSize;
+@class WebGeolocationPosition, GeolocationCoreLocationDelegate, NSTimer, m_tableSize;
 
 @interface WebGeolocationProviderIOS : NSObject <WebGeolocationProvider, GeolocationUpdateListener> {
+    struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
+        /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
+            m_tableSize **m_table; 
+        } m_impl; 
+    struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
+        /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
+            m_tableSize **m_table; 
+        } m_impl; 
     struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
         /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
             m_tableSize **m_table; 
@@ -24,14 +32,6 @@
             int m_tableSizeMask; 
             int m_keyCount; 
             int m_deletedCount; 
-        } m_impl; 
-    struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
-        /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
-            m_tableSize **m_table; 
-        } m_impl; 
-    struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
-        /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
-            m_tableSize **m_table; 
         } m_impl; 
     BOOL _enableHighAccuracy;
     GeolocationCoreLocationDelegate *_geolocationCoreLocationDelegate;

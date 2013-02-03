@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileAsset.framework/MobileAsset
  */
 
-@class NSArray, NSString, NSPredicate;
+@class NSString, NSPredicate, NSArray;
 
 @interface ASAssetQuery : NSObject {
     NSString *_assetType;

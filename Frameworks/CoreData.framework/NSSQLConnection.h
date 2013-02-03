@@ -46,6 +46,7 @@
 - (id)describeResults;
 - (void)didCreateSchema;
 - (void)disconnect;
+- (void)dropUbiquityTables;
 - (void)endFetch;
 - (void)endPrimaryKeyGeneration;
 - (void)execute;

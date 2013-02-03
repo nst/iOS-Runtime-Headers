@@ -60,8 +60,6 @@
     BOOL _tracking;
     VKViewTransform *_viewTransform;
     VKWorld *_world;
-    BOOL _worldNeedsDisplay;
-    BOOL _worldNeedsLayout;
     VKGlobeViewWrapperImp *_wrapper;
 }
 
@@ -197,6 +195,8 @@
 - (void)mapView:(id)arg1 canEnter3DModeDidChange:(BOOL)arg2;
 - (void)mapView:(id)arg1 canShowFlyoverDidChange:(BOOL)arg2;
 - (void)mapView:(id)arg1 didBecomePitched:(BOOL)arg2;
+- (void)mapView:(id)arg1 didResizeToWidth:(unsigned int)arg2 height:(unsigned int)arg3;
+- (void)mapView:(id)arg1 willDrawInContext:(struct CGContext { }*)arg2;
 - (void)mapViewDidChangeVisibleRegion:(id)arg1;
 - (void)mapViewDidFinishLoadingTiles:(id)arg1;
 - (void)mapViewDidStartLoadingTiles:(id)arg1;
@@ -289,6 +289,7 @@
 - (void)waitForFirstFrame;
 - (void)worldDisplayDidChange:(id)arg1;
 - (void)worldLayoutDidChange:(id)arg1;
+- (BOOL)writeVisibleTrafficTilesToDirectory:(id)arg1 error:(id*)arg2;
 - (double)yaw;
 - (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id)arg3;
 

@@ -18,6 +18,7 @@
     NSString *_identifier;
     int _internalAdType;
     <ADBannerViewDelegate> *_internalDelegate;
+    BOOL _policyEngineManaged;
     ADAdRecipientRecord *_recipientRecord;
     ADRemoteView *_remoteView;
     <ADBannerViewDelegate> *_weakDelegate;
@@ -37,6 +38,7 @@
 @property BOOL hasFailedHitTest;
 @property(copy) NSString * identifier;
 @property int internalAdType;
+@property BOOL policyEngineManaged;
 @property(retain) ADRemoteView * remoteView;
 
 + (void)setServerURL:(id)arg1;
@@ -72,6 +74,7 @@
 - (int)internalAdType;
 - (BOOL)isBannerLoaded;
 - (BOOL)isBannerViewActionInProgress;
+- (BOOL)policyEngineManaged;
 - (id)remoteView;
 - (id)requiredContentSizeIdentifiers;
 - (void)resizeWithOldSuperviewSize:(struct CGSize { float x1; float x2; })arg1;
@@ -97,10 +100,12 @@
 - (void)setHidden:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setInternalAdType:(int)arg1;
+- (void)setPolicyEngineManaged:(BOOL)arg1;
 - (void)setRemoteView:(id)arg1;
 - (void)setRequiredContentSizeIdentifiers:(id)arg1;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)set_internalDelegate:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)storyboardViewControllerDidPresent;
 
 @end

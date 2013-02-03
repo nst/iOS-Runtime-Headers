@@ -18,11 +18,14 @@
 - (void)_downloadFileSizeAvailableNotification:(id)arg1;
 - (id)_downloadKeyCookieWithValue:(id)arg1 URL:(id)arg2;
 - (void)_downloadSucceededNotification:(id)arg1;
+- (void)_matchCellularDataRestrictedDidChangeNotification:(id)arg1;
+- (void)_networkTypeChangedNotification:(id)arg1;
 - (id)_newAVAssetForMediaItem:(id)arg1;
 - (id)_newAVAssetForPurchaseResponseDictionary:(id)arg1 mediaItem:(id)arg2 preferredAssetFlavor:(id)arg3;
 - (id)_newAssetForExistingDownloadSession:(id)arg1;
 - (void)_removeNotificationObserversForDownloadSession:(id)arg1;
 - (void)_resumedPausedDownloadSessionsForCompletedMediaItemID:(unsigned long long)arg1;
+- (void)_stopDownloadsBasedOnCurrentNetworkIfNeeded;
 - (id)_urlConnectionRequestForMediaItem:(id)arg1;
 - (id)assetForMediaItem:(id)arg1;
 - (void)dealloc;

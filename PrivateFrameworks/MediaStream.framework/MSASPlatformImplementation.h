@@ -6,6 +6,8 @@
 }
 
 - (int)MMCSConcurrentConnectionsCount;
+- (id)MMCSDownloadSocketOptionsForPersonID:(id)arg1;
+- (id)MMCSUploadSocketOptionsForPersonID:(id)arg1;
 - (BOOL)MSASIsAllowedToTransferMetadata;
 - (BOOL)MSASIsAllowedToUploadAssets;
 - (BOOL)MSASPersonIDIsAllowedToDownloadAssets:(id)arg1;

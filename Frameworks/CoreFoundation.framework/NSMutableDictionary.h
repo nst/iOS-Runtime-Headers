@@ -28,9 +28,6 @@
 - (void)__addObject:(id)arg1 forKey:(id)arg2;
 - (void)__setObject:(id)arg1 forKey:(id)arg2;
 - (void)_gkAddEntriesFromFormEncodedString:(id)arg1;
-- (int)_gkInviteStatusForPlayer:(id)arg1;
-- (int)_gkInviteStatusForPlayerID:(id)arg1;
-- (void)_gkSetInviteStatus:(int)arg1 forPlayer:(id)arg2;
 - (void)_mutate;
 - (void)_web_setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)_web_setInt:(int)arg1 forKey:(id)arg2;

@@ -10,13 +10,14 @@
     NSString *_url;
 }
 
-@property(retain) NSString *domain; /* unknown property attribute: V_domain */
-@property(retain) NSString *title; /* unknown property attribute: V_title */
-@property(retain) NSString *url; /* unknown property attribute: V_url */
+@property(retain) NSString *domain;
+@property(retain) NSString *title;
+@property(retain) NSString *url;
 
 - (void)dealloc;
 - (id)description;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)domain;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;

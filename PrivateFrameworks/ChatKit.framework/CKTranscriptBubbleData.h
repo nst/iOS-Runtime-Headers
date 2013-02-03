@@ -10,7 +10,7 @@
     NSDate *_nextEligibleTimestamp;
 }
 
-@property float balloonWidth; /* unknown property attribute: V_balloonWidth */
+@property float balloonWidth;
 
 + (unsigned long)_processFlags:(unsigned long)arg1 forText:(id)arg2;
 + (Class)balloonClassForFlags:(unsigned long)arg1;

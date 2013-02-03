@@ -15,18 +15,19 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct $_497 { 
+    struct $_503 { 
         NSMutableArray *tiles; 
         SEL didEndSelector; 
         unsigned int isEnabled : 1; 
         unsigned int isPulsingIn : 1; 
         unsigned int isPulsingOut : 1; 
         unsigned int startingPulse : 1; 
-     /* Encoded args for previous method: v12@0:4^{MKTileRequester=^^?i^{Connection}*BBB^{TileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@^{__CFSet}}8 */
+     /* Encoded args for previous method: v12@0:4^{MKTileRequester=^^?i^{Connection}*BBBB^{TileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@^{__CFSet}}8 */
     BOOL _checksForTraffic;
     NSMutableSet *_expiringTiles;
     struct MKHasTrafficRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; struct HasTrafficResponse {} *x7; id x8; } *_hasTrafficRequester;
     BOOL _isLoadingEnabled;
+    BOOL _isPanning;
     } _loadingStartPoint;
     NSMutableSet *_loadingTileViews;
     NSMutableSet *_loadingTrafficViews;
@@ -40,15 +41,17 @@
     UIView *_visibleView;
 }
 
-@property(retain) UIView *visibleView; /* unknown property attribute: V_visibleView */
-@property BOOL suppressLayout; /* unknown property attribute: V_suppressLayout */
-@property BOOL checksForTraffic; /* unknown property attribute: V_checksForTraffic */
-@property BOOL trafficEnabled; /* unknown property attribute: V_trafficEnabled */
+@property(retain) UIView *visibleView;
+@property BOOL checksForTraffic;
+@property(getter=isPanning) BOOL panning;
+@property BOOL suppressLayout;
 @property(readonly) BOOL tilesCoverVisibleRect;
+@property BOOL trafficEnabled;
 
 + (Class)tileClass;
 
 - (BOOL)_allVisibleTilesAreLoaded;
+- (void)_didScroll;
 - (BOOL)_isTrafficSupported;
 - (void)_pulsateTraffic:(BOOL)arg1 delay:(double)arg2 didEndSelector:(SEL)arg3;
 - (void)_pulsatedTrafficOutFinished:(id)arg1 pulsateAgainSoon:(BOOL)arg2;
@@ -71,6 +74,7 @@
 - (void)hasTrafficRequesterFailed;
 - (void)hasTrafficRequesterReceivedAnswer:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isPanning;
 - (void)layoutSubviews;
 - (void)pulsateTrafficInAndOutAfterDelay:(double)arg1 didEndSelector:(SEL)arg2;
 - (void)pulsatedTrafficIn:(id)arg1 finished:(id)arg2;
@@ -79,6 +83,7 @@
 - (void)setChecksForTraffic:(BOOL)arg1;
 - (void)setLoadingEnabled:(BOOL)arg1;
 - (void)setLoadingStartPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPanning:(BOOL)arg1;
 - (void)setPulsatesTraffic:(BOOL)arg1;
 - (void)setSuppressLayout:(BOOL)arg1;
 - (void)setTrafficEnabled:(BOOL)arg1;
@@ -91,7 +96,7 @@
 - (void)stopTileLoading;
 - (BOOL)suppressLayout;
 - (void)tileRequesterFailed:(id)arg1;
-- (void)tileRequesterProgress:(struct MKTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; struct TileResponse {} *x8; struct __CFRunLoop {} *x9; struct __CFRunLoopTimer {} *x10; NSUInteger x11; id x12; struct __CFSet {} *x13; }*)arg1;
+- (void)tileRequesterProgress:(struct MKTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct TileResponse {} *x9; struct __CFRunLoop {} *x10; struct __CFRunLoopTimer {} *x11; NSUInteger x12; id x13; struct __CFSet {} *x14; }*)arg1;
 - (void)tileRequesterReceivedColor:(struct CGColor { }*)arg1 forTile:(id)arg2;
 - (void)tileRequesterReceivedImage:(struct CGImage { }*)arg1 forTile:(id)arg2;
 - (void)tileRequesterReceivedMissingImageForTile:(id)arg1;

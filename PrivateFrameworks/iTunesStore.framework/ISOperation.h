@@ -19,18 +19,18 @@
     id _threadSafeDelegate;
 }
 
-@property NSInteger threadPriority; /* unknown property attribute: V_threadPriority */
-@property BOOL success; /* unknown property attribute: V_success */
-@property(retain) ISOperation *subOperation; /* unknown property attribute: V_subOperation */
-@property(retain) NSString *powerAssertionIdentifier; /* unknown property attribute: V_powerAssertionIdentifier */
-@property(retain) ISOperation *parentOperation; /* unknown property attribute: V_parentOperation */
-@property(retain) NSRunLoop *operationRunLoop; /* unknown property attribute: V_operationRunLoop */
-@property(retain) NSError *error; /* unknown property attribute: V_error */
 @property <ISOperationDelegate> *delegate;
+@property(retain) NSError *error;
+@property(retain) NSRunLoop *operationRunLoop;
+@property(retain) ISOperation *parentOperation;
+@property(retain) NSString *powerAssertionIdentifier;
 @property(readonly) ISOperationProgress *progress;
+@property(retain) ISOperation *subOperation;
 @property(readonly) NSString *uniqueKey;
 @property(readonly) NSInteger progressWeight;
 @property BOOL shouldMessageMainThread;
+@property BOOL success;
+@property NSInteger threadPriority;
 @property(readonly) id threadSafeDelegate;
 
 - (void)_failAfterException;
@@ -64,6 +64,7 @@
 - (void)setOperationRunLoop:(id)arg1;
 - (void)setParentOperation:(id)arg1;
 - (void)setPowerAssertionIdentifier:(id)arg1;
+- (void)setScriptPostOptions:(id)arg1;
 - (void)setShouldMessageMainThread:(BOOL)arg1;
 - (void)setSubOperation:(id)arg1;
 - (void)setSuccess:(BOOL)arg1;

@@ -13,8 +13,8 @@
     double _updateInterval;
 }
 
-@property <UIAccelerometerDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property double updateInterval; /* unknown property attribute: V_updateInterval */
+@property <UIAccelerometerDelegate> *delegate;
+@property double updateInterval;
 
 + (id)sharedAccelerometer;
 

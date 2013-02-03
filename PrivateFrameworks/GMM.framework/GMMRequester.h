@@ -10,16 +10,18 @@
     GMMRequester *_pbRequester;
 }
 
-@property(retain) NSArray *bundleIdentifiers; /* unknown property attribute: V_bundleIdentifiers */
-@property(getter=isAnonymous) BOOL anonymous; /* unknown property attribute: V_anonymous */
+@property(retain) NSArray *bundleIdentifiers;
+@property(getter=isAnonymous) BOOL anonymous;
 
 + (id)_requestHTTPHeaders;
 + (void)_resetRequestCounts;
 + (void)_setupNetworkConfiguration;
 + (BOOL)allowRequestForType:(NSInteger)arg1;
 
+- (void)_prepareClientProperties;
 - (id)bundleIdentifiers;
 - (void)dealloc;
+- (void)handleResponse:(id)arg1 forInternalRequest:(id)arg2;
 - (id)initWithRequesterDelegate:(id)arg1;
 - (BOOL)isAnonymous;
 - (BOOL)readResponsePreamble:(id)arg1;

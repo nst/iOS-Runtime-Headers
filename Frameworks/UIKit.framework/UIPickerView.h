@@ -28,9 +28,9 @@
     UIView *_topFrame;
 }
 
-@property(readonly) NSInteger numberOfComponents; /* unknown property attribute: V_numberOfComponents */
-@property <UIPickerViewDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property <UIPickerViewDataSource> *dataSource; /* unknown property attribute: V_dataSource */
+@property <UIPickerViewDataSource> *dataSource;
+@property <UIPickerViewDelegate> *delegate;
+@property(readonly) NSInteger numberOfComponents;
 @property BOOL showsSelectionIndicator;
 
 + (struct CGSize { float x1; float x2; })defaultSizeForCurrentOrientation;

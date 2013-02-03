@@ -11,10 +11,10 @@
     NSString *_value;
 }
 
-@property(retain) NSString *value; /* unknown property attribute: V_value */
-@property(retain) NSString *title; /* unknown property attribute: V_title */
-@property(getter=isSecure) BOOL secure; /* unknown property attribute: V_secure */
-@property NSInteger keyboardType; /* unknown property attribute: V_keyboardType */
+@property(retain) NSString *title;
+@property(retain) NSString *value;
+@property NSInteger keyboardType;
+@property(getter=isSecure) BOOL secure;
 
 + (id)textFieldWithTitle:(id)arg1;
 

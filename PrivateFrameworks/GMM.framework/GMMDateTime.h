@@ -8,14 +8,17 @@
     NSInteger _timeZoneOffsetMin;
 }
 
-@property(readonly) BOOL hasTimeZoneOffsetMin; /* unknown property attribute: V_hasTimeZoneOffsetMin */
-@property NSInteger timeZoneOffsetMin; /* unknown property attribute: V_timeZoneOffsetMin */
-@property long long secsSinceEpoch; /* unknown property attribute: V_secsSinceEpoch */
+@property(readonly) BOOL hasTimeZoneOffsetMin;
+@property long long secsSinceEpoch;
+@property NSInteger timeZoneOffsetMin;
+
++ (id)date;
 
 - (id)calendarDate;
 - (void)dealloc;
 - (id)description;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasTimeZoneOffsetMin;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;

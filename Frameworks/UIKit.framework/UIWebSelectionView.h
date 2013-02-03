@@ -52,6 +52,7 @@
     } _blockSelectionData;
     UIWebSelectionHandle *_bottom;
     UIView *_center;
+    BOOL _creatingSelection;
     UIWebDocumentView *_documentView;
     float _growThreshold;
     UIWebSelectionHandle *_left;
@@ -67,8 +68,8 @@
     UIWebSelectionHandle *_top;
 }
 
-@property(retain) UIWebSelectionNode *selectionNode; /* unknown property attribute: V_selectionNode */
 @property(readonly) UIWebSelection *selection;
+@property(retain) UIWebSelectionNode *selectionNode;
 @property CGRect selectionFrame;
 
 - (void)_didScroll;

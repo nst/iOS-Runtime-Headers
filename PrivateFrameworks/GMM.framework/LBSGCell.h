@@ -19,20 +19,20 @@
     NSInteger _timingAdvance;
 }
 
-@property(readonly) BOOL hasPrimaryScramblingCode; /* unknown property attribute: V_hasPrimaryScramblingCode */
-@property NSInteger primaryScramblingCode; /* unknown property attribute: V_primaryScramblingCode */
-@property(readonly) BOOL hasTimingAdvance; /* unknown property attribute: V_hasTimingAdvance */
-@property NSInteger timingAdvance; /* unknown property attribute: V_timingAdvance */
-@property(readonly) BOOL hasAge; /* unknown property attribute: V_hasAge */
-@property NSInteger age; /* unknown property attribute: V_age */
-@property(readonly) BOOL hasRssi; /* unknown property attribute: V_hasRssi */
-@property NSInteger rssi; /* unknown property attribute: V_rssi */
-@property(readonly) BOOL hasMcc; /* unknown property attribute: V_hasMcc */
-@property NSInteger mcc; /* unknown property attribute: V_mcc */
-@property(readonly) BOOL hasMnc; /* unknown property attribute: V_hasMnc */
-@property NSInteger mnc; /* unknown property attribute: V_mnc */
-@property NSInteger cellid; /* unknown property attribute: V_cellid */
-@property NSInteger lac; /* unknown property attribute: V_lac */
+@property NSInteger age;
+@property NSInteger cellid;
+@property(readonly) BOOL hasAge;
+@property(readonly) BOOL hasMcc;
+@property(readonly) BOOL hasMnc;
+@property(readonly) BOOL hasPrimaryScramblingCode;
+@property(readonly) BOOL hasRssi;
+@property(readonly) BOOL hasTimingAdvance;
+@property NSInteger lac;
+@property NSInteger mcc;
+@property NSInteger mnc;
+@property NSInteger primaryScramblingCode;
+@property NSInteger rssi;
+@property NSInteger timingAdvance;
 
 - (NSInteger)age;
 - (NSInteger)cellid;

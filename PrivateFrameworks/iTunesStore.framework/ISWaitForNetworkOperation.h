@@ -6,7 +6,7 @@
     NSUInteger _networkType;
 }
 
-@property NSUInteger networkType; /* unknown property attribute: V_networkType */
+@property NSUInteger networkType;
 
 - (void)_networkTypeChanged:(id)arg1;
 - (void)_timeoutTimer:(id)arg1;

@@ -10,6 +10,8 @@
 - (id)_accessibilityNextElementsWithCount:(unsigned long)arg1;
 - (id)_accessibilityParentView;
 - (id)_accessibilityPreviousElementsWithCount:(unsigned long)arg1;
+- (void)accessibilityZoomInAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)accessibilityZoomOutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)dealloc;
 - (id)description;
 - (id)init;

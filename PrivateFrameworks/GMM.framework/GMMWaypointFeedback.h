@@ -10,16 +10,17 @@
     NSMutableArray *_waypoints;
 }
 
-@property(retain) NSString *streetViewPanoId; /* unknown property attribute: V_streetViewPanoId */
-@property(retain) NSMutableArray *waypoints; /* unknown property attribute: V_waypoints */
-@property NSInteger status; /* unknown property attribute: V_status */
+@property(retain) NSString *streetViewPanoId;
+@property(retain) NSMutableArray *waypoints;
 @property(readonly) BOOL hasStreetViewPanoId;
+@property NSInteger status;
 @property(readonly) NSInteger waypointsCount;
 
 - (void)addWaypoint:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasStreetViewPanoId;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;

@@ -10,10 +10,10 @@
     NSInteger _requestType;
 }
 
-@property(retain) LBSGLocRequest *request; /* unknown property attribute: V_request */
-@property(readonly) BOOL hasRequestType; /* unknown property attribute: V_hasRequestType */
-@property NSInteger requestType; /* unknown property attribute: V_requestType */
+@property(retain) LBSGLocRequest *request;
 @property(readonly) BOOL hasRequest;
+@property(readonly) BOOL hasRequestType;
+@property NSInteger requestType;
 
 - (void)dealloc;
 - (id)description;

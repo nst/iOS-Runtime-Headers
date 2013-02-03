@@ -11,10 +11,10 @@
     NSString *m_visualStyle;
 }
 
-@property(retain) NSDictionary *keyCache; /* unknown property attribute: Vm_keyCache */
-@property(retain) NSArray *keyplanes; /* unknown property attribute: Vm_keyplanes */
-@property(retain) NSString *visualStyle; /* unknown property attribute: Vm_visualStyle */
-@property(retain) NSString *name; /* unknown property attribute: Vm_name */
+@property(retain) NSDictionary *keyCache;
+@property(retain) NSArray *keyplanes;
+@property(retain) NSString *name;
+@property(retain) NSString *visualStyle;
 
 + (id)keyboard;
 

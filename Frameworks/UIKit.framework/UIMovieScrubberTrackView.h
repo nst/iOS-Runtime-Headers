@@ -14,6 +14,8 @@
         unsigned int delegateDidCollapse : 1; 
         unsigned int delegateWillRequestThumbs : 1; 
         unsigned int delegateDidRequestThumbs : 1; 
+        unsigned int delegateZoomAnimationDuration : 1; 
+        unsigned int delegateZoomAnimationDelay : 1; 
         unsigned int needsReload : 1; 
         unsigned int editing : 1; 
         NSUInteger editingHandle; 
@@ -35,6 +37,7 @@
     NSMutableDictionary *_thumbnailViews;
     NSArray *_timestamps;
     } _trackFlags;
+    float _unclampedZoomWidthDelta;
     double _value;
     float _zoomAnimationDuration;
     float _zoomOriginXDelta;
@@ -46,6 +49,7 @@
 
 - (id)_createImageViewForTimestamp:(id)arg1;
 - (void)_reallyReloadData;
+- (void)_setOverlayViewIsZoomed:(BOOL)arg1 minValue:(float)arg2 maxValue:(float)arg3;
 - (void)_unzoomAnimation:(id)arg1 didFinish:(id)arg2 context:(void*)arg3;
 - (void)_zoomAnimation:(id)arg1 didFinish:(id)arg2 context:(void*)arg3;
 - (void)animateFillFramesAway;
@@ -67,6 +71,7 @@
 - (void)setValue:(double)arg1;
 - (void)setZoomAnimationDuration:(float)arg1;
 - (void)unzoom;
+- (float)zoomAnimationDuration;
 - (BOOL)zoomAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

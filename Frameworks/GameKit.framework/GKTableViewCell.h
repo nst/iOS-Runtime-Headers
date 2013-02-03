@@ -6,7 +6,7 @@
     BOOL _topSeparator;
 }
 
-@property BOOL topSeparator; /* unknown property attribute: V_topSeparator */
+@property BOOL topSeparator;
 
 + (void)initialize;
 + (float)separatorHeight;

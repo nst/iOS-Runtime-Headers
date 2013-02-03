@@ -22,30 +22,30 @@
     NSMutableArray *_waypointFeedbacks;
 }
 
-@property(retain) NSMutableArray *alternateModes; /* unknown property attribute: V_alternateModes */
-@property(retain) NSMutableArray *alerts; /* unknown property attribute: V_alerts */
-@property(retain) NSMutableArray *optionsUseds; /* unknown property attribute: V_optionsUseds */
-@property(readonly) BOOL hasRecommendedDistanceUnits; /* unknown property attribute: V_hasRecommendedDistanceUnits */
-@property NSInteger recommendedDistanceUnits; /* unknown property attribute: V_recommendedDistanceUnits */
-@property(retain) NSMutableArray *agencys; /* unknown property attribute: V_agencys */
-@property(retain) NSString *notice; /* unknown property attribute: V_notice */
-@property(retain) GMMDirectionsIconResponse *icons; /* unknown property attribute: V_icons */
-@property(retain) NSMutableArray *trips; /* unknown property attribute: V_trips */
-@property(retain) NSMutableArray *waypointFeedbacks; /* unknown property attribute: V_waypointFeedbacks */
-@property(readonly) BOOL hasRequestedTimeType; /* unknown property attribute: V_hasRequestedTimeType */
-@property NSInteger requestedTimeType; /* unknown property attribute: V_requestedTimeType */
-@property(retain) GMMDateTime *requestedDateTime; /* unknown property attribute: V_requestedDateTime */
-@property(retain) NSMutableArray *modes; /* unknown property attribute: V_modes */
-@property NSInteger status; /* unknown property attribute: V_status */
+@property(retain) NSMutableArray *agencys;
+@property(retain) NSMutableArray *alerts;
+@property(retain) NSMutableArray *alternateModes;
+@property(retain) GMMDirectionsIconResponse *icons;
+@property(retain) NSMutableArray *modes;
+@property(retain) NSString *notice;
+@property(retain) NSMutableArray *optionsUseds;
+@property(retain) GMMDateTime *requestedDateTime;
+@property(retain) NSMutableArray *trips;
+@property(retain) NSMutableArray *waypointFeedbacks;
 @property(readonly) NSInteger agencysCount;
 @property(readonly) NSInteger alertsCount;
 @property(readonly) NSInteger alternateModesCount;
 @property(readonly) BOOL hasIcons;
 @property(readonly) BOOL hasNotice;
+@property(readonly) BOOL hasRecommendedDistanceUnits;
 @property(readonly) BOOL hasRequestedDateTime;
+@property(readonly) BOOL hasRequestedTimeType;
 @property(readonly) NSInteger mode;
 @property(readonly) NSInteger modesCount;
 @property(readonly) NSInteger optionsUsedsCount;
+@property NSInteger recommendedDistanceUnits;
+@property NSInteger requestedTimeType;
+@property NSInteger status;
 @property(readonly) NSInteger tripsCount;
 @property(readonly) NSInteger waypointFeedbacksCount;
 

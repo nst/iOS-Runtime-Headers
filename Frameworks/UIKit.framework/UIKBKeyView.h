@@ -14,10 +14,10 @@
     NSInteger m_state;
 }
 
-@property CGPoint drawOrigin; /* unknown property attribute: Vm_drawOrigin */
-@property(readonly) NSInteger state; /* unknown property attribute: Vm_state */
-@property(readonly) UIKBKey *key; /* unknown property attribute: Vm_key */
-@property(readonly) UIKBKeyboard *keyboard; /* unknown property attribute: Vm_keyboard */
+@property(readonly) UIKBKey *key;
+@property(readonly) UIKBKeyboard *keyboard;
+@property CGPoint drawOrigin;
+@property(readonly) NSInteger state;
 
 - (void)dealloc;
 - (struct CGPoint { float x1; float x2; })drawOrigin;

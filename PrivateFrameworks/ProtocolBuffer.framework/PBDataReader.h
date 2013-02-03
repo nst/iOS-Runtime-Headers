@@ -11,8 +11,8 @@
     NSUInteger _pos;
 }
 
-@property NSUInteger position; /* unknown property attribute: V_pos */
-@property NSUInteger length; /* unknown property attribute: V_length */
+@property NSUInteger length;
+@property NSUInteger position;
 
 - (id)data;
 - (void)dealloc;

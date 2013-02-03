@@ -9,8 +9,8 @@
     UIView<UIFormPeripheral> *_nextPeripheral;
 }
 
-@property(retain) UIView<UIFormPeripheral> *_nextPeripheral; /* unknown property attribute: V_nextPeripheral */
-@property(retain) DOMNode *_nextNode; /* unknown property attribute: V_nextNode */
+@property(retain) DOMNode *_nextNode;
+@property(retain) UIView<UIFormPeripheral> *_nextPeripheral;
 
 - (id)_nextNode;
 - (id)_nextPeripheral;

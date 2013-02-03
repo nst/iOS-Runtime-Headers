@@ -13,7 +13,7 @@
     ABModel *_model;
 }
 
-@property(retain) ABModel *model; /* unknown property attribute: V_model */
+@property(retain) ABModel *model;
 
 - (id)accountGroupWrappers;
 - (void)dealloc;

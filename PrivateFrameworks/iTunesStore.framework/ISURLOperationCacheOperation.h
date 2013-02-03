@@ -10,8 +10,8 @@
     ISURLOperation *_operation;
 }
 
-@property(retain) ISURLOperation *operation; /* unknown property attribute: V_operation */
-@property ISURLOperationCache *cache; /* unknown property attribute: V_cache */
+@property ISURLOperationCache *cache;
+@property(retain) ISURLOperation *operation;
 
 - (void)addAdditionalOperation:(id)arg1;
 - (id)cache;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccountSettingsUI.framework/AccountSettingsUI
  */
 
-@class NSMutableDictionary, NSArray, DeviceLocalAccount, UIProgressHUD, NSString, UIProgressIndicator, UINavigationItem, UIActionSheet, PSSpecifier;
+@class NSMutableDictionary, NSArray, DeviceLocalAccount, UIProgressHUD, NSString, UIProgressIndicator, UINavigationItem, UIActionSheet;
 
 @interface AccountSettingsUISyncController : PSListController <UIActionSheetDelegate> {
     id _account;
@@ -22,29 +22,29 @@
     BOOL _isFirstSetup;
     BOOL _isSavingSyncSettingsInBackground;
     BOOL _isUpdateSetup;
-    PSSpecifier *_lastDataclassSwitch;
     BOOL _mergedDataOnAccountDelete;
     UINavigationItem *_navigationItem;
     UIProgressIndicator *_progressIndicator;
     UIActionSheet *_reallyConfirmEnableSyncSheet;
+    UIActionSheet *_reallyConfirmKeepLocalDataSheet;
     BOOL _showsDeleteAccountButton;
     id _syncActionsAccount;
     NSMutableDictionary *_syncSaveOperationsByDataclass;
 }
 
-@property BOOL didDeleteAccount; /* unknown property attribute: V_didDeleteAccount */
-@property BOOL didFinishFirstSetup; /* unknown property attribute: V_didFinishFirstSetup */
-@property(getter=isUpdateSetup) BOOL updateSetup; /* unknown property attribute: V_isUpdateSetup */
-@property(getter=isFirstSetup) BOOL firstSetup; /* unknown property attribute: V_isFirstSetup */
-@property(retain) id account; /* unknown property attribute: V_account */
+@property(retain) id account;
+@property BOOL didDeleteAccount;
+@property BOOL didFinishFirstSetup;
+@property(getter=isFirstSetup) BOOL firstSetup;
 @property BOOL showsDeleteAccountButton;
+@property(getter=isUpdateSetup) BOOL updateSetup;
 
 + (BOOL)_doesSyncedDataExistForDataclass:(id)arg1;
++ (id)deviceSpecificLocalizedStringKey:(id)arg1;
 
 - (id)_accountInfoSpecifier;
 - (void)_backgroundDeleteAccountData:(id)arg1;
 - (void)_backgroundSaveSyncSettings:(id)arg1;
-- (void)_beginSaveSyncSettings;
 - (void)_clearAnchorsForDataclass:(id)arg1;
 - (void)_clearAnchorsForLocalDataclass:(id)arg1;
 - (void)_createLocalDataSourceForDataclass:(id)arg1;
@@ -77,6 +77,7 @@
 - (Class)accountInfoControllerClass;
 - (void)alertSheet:(id)arg1 buttonClicked:(NSInteger)arg2;
 - (BOOL)backgroundDeleteAccountData;
+- (void)beginSaveSyncSettings;
 - (void)cancelAccountsCreation;
 - (void)configureDeleteAccountConfirmationSheet:(id)arg1;
 - (void)configureDisableConfirmationSheet:(id)arg1 toEnableDataclass:(id)arg2;
@@ -87,13 +88,13 @@
 - (id)confirmationTextForDataclassToDisable:(id)arg1 userCanKeepCurrentData:(BOOL)arg2;
 - (id)confirmationTextForDataclassToEnable:(id)arg1 userCanKeepCurrentData:(BOOL)arg2 localDataExists:(BOOL)arg3;
 - (id)confirmationTextForDataclassToReallyEnable:(id)arg1;
+- (id)confirmationTextForDataclassToReallyKeepLocalData:(id)arg1;
 - (void)createAccounts;
 - (id)createDeleteCellWithSpecifier:(id)arg1 width:(float)arg2;
 - (void)dealloc;
 - (void)deleteAccount;
 - (void)deleteAccountAndData:(id)arg1;
 - (id)deleteActionsWithSyncDataclassesEnabled:(BOOL)arg1;
-- (id)deviceSpecificLocalizedStringKey:(id)arg1;
 - (void)didConfirmDeleteAccount:(id)arg1;
 - (void)didConfirmDisableSyncSettings:(id)arg1;
 - (void)didConfirmEnableSyncSettings:(id)arg1;
@@ -101,6 +102,7 @@
 - (BOOL)didDeleteAccount;
 - (BOOL)didFinishFirstSetup;
 - (void)didReallyConfirmEnableSyncSettings:(id)arg1;
+- (void)didReallyConfirmKeepLocalData:(id)arg1;
 - (void)doneButtonClicked:(id)arg1;
 - (void)ensurePreconditionIsMetToDisableDataclass:(id)arg1;
 - (void)ensurePreconditionIsMetToEnableDataclass:(id)arg1;
@@ -109,7 +111,6 @@
 - (BOOL)hasSyncDataclassesEnabled;
 - (void)hideModalProgress;
 - (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)insertContiguousSpecifiersAfterLastDataclassSwitch:(id)arg1 animated:(BOOL)arg2;
 - (id)isDataclassEnabled:(id)arg1;
 - (BOOL)isEnabledForDataclass:(id)arg1;
 - (BOOL)isFirstSetup;
@@ -128,6 +129,7 @@
 - (BOOL)preconditionNeedsToBeMetToEnableDataclass:(id)arg1;
 - (void)preconditionNotMetToEnableDataclass:(id)arg1;
 - (id)preferencesTable:(id)arg1 cellForRow:(NSInteger)arg2 inGroup:(NSInteger)arg3;
+- (void)reallyConfirmKeepLocalDataWithText:(id)arg1 dataclass:(id)arg2;
 - (void)reallyConfirmStartSyncingWithText:(id)arg1 dataclass:(id)arg2;
 - (void)removeActionForSyncDataclass:(id)arg1;
 - (void)saveSyncSettings:(id)arg1 forAccount:(id)arg2;
@@ -148,7 +150,9 @@
 - (BOOL)showingModalProgress;
 - (BOOL)showsDeleteAccountButton;
 - (id)specifiers;
+- (id)specifiersForDataclasses:(id)arg1;
 - (void)syncDataclass:(id)arg1 withAction:(id)arg2;
+- (BOOL)syncSaveOperationsHasDataclass:(id)arg1;
 - (id)titleForAccountDeleteAction:(id)arg1 hasSyncDataclassesEnabled:(BOOL)arg2 supportsMerge:(BOOL)arg3;
 - (id)titleForAccountSettingsAction:(id)arg1;
 - (void)updateLocalStoresAfterRemovingAccountInformation;

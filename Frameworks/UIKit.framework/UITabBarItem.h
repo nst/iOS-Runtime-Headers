@@ -33,13 +33,13 @@
     UIView *_view;
 }
 
-@property NSInteger tag; /* unknown property attribute: V_tag */
 @property(copy) NSString *badgeValue;
 @property(retain) UIImage *selectedImage;
 @property(retain) UIImage *unselectedImage;
 @property(retain) UIView *view;
 @property SEL action;
 @property BOOL animatedBadge;
+@property NSInteger tag;
 @property id target;
 @property BOOL viewIsCustom;
 

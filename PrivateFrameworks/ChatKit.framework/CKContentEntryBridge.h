@@ -8,7 +8,7 @@
     NSObject<CKContentEntryBridgeClient> *_entryView;
 }
 
-@property NSObject<CKContentEntryBridgeClient> *contentEntryView; /* unknown property attribute: V_entryView */
+@property NSObject<CKContentEntryBridgeClient> *contentEntryView;
 
 + (id)newContentEntryBridge;
 

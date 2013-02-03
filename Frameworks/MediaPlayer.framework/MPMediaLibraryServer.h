@@ -15,6 +15,7 @@
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)init;
+- (BOOL)isFilteringDisabled;
 - (id)methodSignatureForSelector:(SEL)arg1;
 
 @end

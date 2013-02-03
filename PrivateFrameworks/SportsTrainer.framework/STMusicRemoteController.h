@@ -2,41 +2,34 @@
    Image: /System/Library/PrivateFrameworks/SportsTrainer.framework/SportsTrainer
  */
 
-@class NSMachPort, NSArray, NSString, STPlayerConnection;
+@class NSArray, NSString;
 
 @interface STMusicRemoteController : NSObject {
     NSInteger _currentSeekDirection;
     NSString *_latestSelectedPlaylistName;
     NSInteger _musicSelection;
-    NSInteger _nowPlayingInfoChangedNotificationToken;
-    NSMachPort *_nowPlayingInfoChangedPort;
-    STPlayerConnection *_playerConnection;
     NSArray *_playlists;
     NSArray *_workoutMixes;
 }
 
-@property(copy) NSString *latestSelectedPlaylistName; /* unknown property attribute: V_latestSelectedPlaylistName */
+@property(copy) NSString *latestSelectedPlaylistName;
 @property NSInteger musicSelection;
 @property(readonly) BOOL shouldControlMusic;
 
 + (void)clearCachedDatabaseData;
 + (id)sharedMusicController;
 
-- (NSUInteger)_activePlayerControlConnection;
 - (id)_init;
-- (void)_nowPlayingInfoChangePortInvalidated:(id)arg1;
+- (void)_nowPlayingItemChanged:(id)arg1;
 - (unsigned long long)_persistentUIDForPlaylistIndex:(NSUInteger)arg1 isWorkoutMix:(BOOL)arg2;
-- (void)_registerForNowPlayingInfoChangeNotifications;
 - (void)_releaseRemoteCachedData;
 - (void)_startPlaylistAtIndex:(NSUInteger)arg1 isWorkoutMix:(BOOL)arg2;
-- (void)_startPlaylistWithPersistentUID:(unsigned long long)arg1 isWorkoutMix:(BOOL)arg2;
-- (void)_unregisterForNowPlayingInfoChangeNotifications;
+- (void)_startPlaylistWithPersistentUID:(unsigned long long)arg1;
 - (BOOL)beginSeek:(NSInteger)arg1;
 - (id)currentSongName;
 - (void)dealloc;
 - (BOOL)endSeek:(NSInteger)arg1;
 - (void)goToNowPlaying;
-- (void)handleMachMessage:(void*)arg1;
 - (id)init;
 - (void)interruptPlaybackForTrackUID:(id)arg1;
 - (BOOL)isNowPlaying;
@@ -49,7 +42,6 @@
 - (id)playlists;
 - (void)selectNextSong;
 - (void)selectPreviousSong;
-- (void)setCanLaunchPlayer:(BOOL)arg1;
 - (void)setLatestSelectedPlaylistName:(id)arg1;
 - (void)setMusicSelection:(NSInteger)arg1;
 - (BOOL)shouldControlMusic;

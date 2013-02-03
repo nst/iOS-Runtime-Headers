@@ -14,6 +14,7 @@
     <PCPersistentInterfaceManagerDelegate> *_delegate;
     NSString *_identifier;
     void *_interfaceAssertion;
+    double _lastActivationTime;
     NSString *_lastRegistrationStatus;
     NSRecursiveLock *_lock;
     NSThread *_thread;

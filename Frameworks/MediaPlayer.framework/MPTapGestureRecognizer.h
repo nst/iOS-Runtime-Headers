@@ -14,7 +14,7 @@
     UITouch *_trackingTouch;
 }
 
-@property NSUInteger tapCount; /* unknown property attribute: V_lastTapCount */
+@property NSUInteger tapCount;
 
 - (void)_delayedHandleTaps:(id)arg1;
 - (void)_resetTapTimer;

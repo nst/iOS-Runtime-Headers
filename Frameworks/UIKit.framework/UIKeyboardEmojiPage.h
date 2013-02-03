@@ -31,14 +31,14 @@
     float _verticalGap;
 }
 
-@property CGRect keyActivationRect; /* unknown property attribute: V_keyActivationRect */
-@property(retain) UIKeyboardEmojiView *onDisplay; /* unknown property attribute: V_onDisplay */
-@property(retain) UIKeyboardEmojiView *pendingDisplay; /* unknown property attribute: V_pendingDisplay */
-@property(retain) UITouch *activeTouch; /* unknown property attribute: V_activeTouch */
-@property(retain) NSString *optionalText; /* unknown property attribute: V_optionalText */
-@property <UIKeyboardEmojiController> *controller; /* unknown property attribute: V_controller */
-@property(retain) NSArray *emoji; /* unknown property attribute: V_emoji */
-@property(retain) UIKeyboardEmojiView *touched; /* unknown property attribute: V_touched */
+@property(retain) UITouch *activeTouch;
+@property <UIKeyboardEmojiController> *controller;
+@property(retain) NSArray *emoji;
+@property(retain) UIKeyboardEmojiView *onDisplay;
+@property(retain) NSString *optionalText;
+@property(retain) UIKeyboardEmojiView *pendingDisplay;
+@property(retain) UIKeyboardEmojiView *touched;
+@property CGRect keyActivationRect;
 
 - (id)activeTouch;
 - (void)cancelPendingPopupChanges;

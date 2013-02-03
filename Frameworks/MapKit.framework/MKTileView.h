@@ -7,7 +7,7 @@
     struct Tile { unsigned char x1; unsigned char x2; NSInteger x3; NSInteger x4; NSInteger x5; } *_tile;
 }
 
-@property(getter=isVisible) BOOL visible; /* unknown property attribute: V_isVisible */
+@property(getter=isVisible) BOOL visible;
 
 - (void)dealloc;
 - (void)didMoveToWindow;

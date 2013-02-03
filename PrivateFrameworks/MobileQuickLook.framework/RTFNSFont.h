@@ -10,9 +10,9 @@
     float _pointSize;
 }
 
-@property float pointSize; /* unknown property attribute: V_pointSize */
-@property float fontSize; /* unknown property attribute: V_fontSize */
-@property(retain) NSString *fontName; /* unknown property attribute: V_fontName */
+@property(retain) NSString *fontName;
+@property float fontSize;
+@property float pointSize;
 
 + (id)fontWithName:(id)arg1 size:(float)arg2;
 + (id)systemFontOfSize:(float)arg1;

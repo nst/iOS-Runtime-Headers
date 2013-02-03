@@ -16,15 +16,15 @@
     BOOL updating;
 }
 
-@property(retain) NSString *subtitle; /* unknown property attribute: Vsubtitle */
-@property(retain) NSString *title; /* unknown property attribute: Vtitle */
-@property double timestamp; /* unknown property attribute: Vtimestamp */
-@property NSInteger source; /* unknown property attribute: Vsource */
-@property(retain) MKUserLocationSearchResult *searchResult; /* unknown property attribute: VsearchResult */
-@property(retain) CLLocation *predictedLocation; /* unknown property attribute: VpredictedLocation */
-@property(retain) CLLocation *location; /* unknown property attribute: Vlocation */
-@property(retain) CLLocation *fixedLocation; /* unknown property attribute: VfixedLocation */
-@property(getter=isUpdating) BOOL updating; /* unknown property attribute: Vupdating */
+@property(retain) CLLocation *fixedLocation;
+@property(retain) CLLocation *location;
+@property(retain) CLLocation *predictedLocation;
+@property(retain) MKUserLocationSearchResult *searchResult;
+@property(retain) NSString *subtitle;
+@property(retain) NSString *title;
+@property NSInteger source;
+@property double timestamp;
+@property(getter=isUpdating) BOOL updating;
 
 - (id)fixedLocation;
 - (BOOL)isUpdating;

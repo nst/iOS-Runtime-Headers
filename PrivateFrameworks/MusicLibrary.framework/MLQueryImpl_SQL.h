@@ -11,7 +11,7 @@
 
 - (NSUInteger)_countOfEntitiesGroupedByEntityAtIndex:(NSUInteger)arg1;
 - (NSInteger)_getDBRecordIDOfEntityAtIndex:(NSUInteger)arg1;
-- (struct __CFArray { }*)bucketizedInfoByFirstCharacterForStringProperty:(unsigned long)arg1;
+- (struct CPRecordStore { }*)_storeRef;
 - (unsigned long)containedMediaTypesForEntityAtIndex:(NSUInteger)arg1;
 - (id)copyStringValueForProperty:(unsigned long)arg1 ofMLSItemRef:(void*)arg2;
 - (NSUInteger)countOfEntities;
@@ -19,9 +19,12 @@
 - (BOOL)entityMatchesPredicates:(id)arg1 entityIndex:(NSUInteger)arg2;
 - (void)freeQueryResults;
 - (void*)getDBRecordOfEntityAtIndex:(NSUInteger)arg1;
+- (void)getValues:(id*)arg1 forProperties:(NSUInteger*)arg2 count:(NSUInteger)arg3 ofEntityAtIndex:(NSUInteger)arg4;
 - (struct __CPRecordIDArray { }*)groupMembersOfEntityAtIndex:(NSUInteger)arg1;
 - (NSUInteger)indexOfFirstEntityMatchingPredicates:(id)arg1;
 - (void)playlistContentsDidChangeNotification:(id)arg1;
+- (void)prepareToEvaluate;
+- (id)sectionDataForStringProperty:(unsigned long)arg1;
 - (struct CPRecordStore { }*)storeRef;
 - (double)timeValueForProperty:(unsigned long)arg1 ofMLSItemRef:(void*)arg2;
 - (unsigned long long)unsignedValueForProperty:(unsigned long)arg1 ofMLSItemRef:(void*)arg2;

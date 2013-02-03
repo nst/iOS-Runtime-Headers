@@ -10,9 +10,9 @@
     NSUndoManager *_undoManager;
 }
 
-@property(readonly) NSUndoManager *undoManager; /* unknown property attribute: V_undoManager */
-@property(readonly) NSInteger redoButtonIndex; /* unknown property attribute: V_redoButtonIndex */
-@property(readonly) NSInteger undoButtonIndex; /* unknown property attribute: V_undoButtonIndex */
+@property(readonly) NSUndoManager *undoManager;
+@property(readonly) NSInteger redoButtonIndex;
+@property(readonly) NSInteger undoButtonIndex;
 
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1 undoManager:(id)arg2;

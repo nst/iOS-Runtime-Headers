@@ -5,16 +5,17 @@
 @class MobileCalDAVAccountRefreshActor;
 
 @interface MobileCalDAVAccountRefreshQueueableOperation : CalDAVQueueableOperation <CalDAVRefreshActorCallback> {
-    BOOL _calsOnly;
     MobileCalDAVAccountRefreshActor *_refreshActor;
 }
 
+@property(readonly) CalDAVRefreshContext *context;
+
 - (oneway void)calDAVRefreshCompletedWithError:(id)arg1 backgroundActor:(id)arg2;
 - (void)cancel;
+- (id)context;
 - (void)dealloc;
 - (void)finishOperation;
-- (id)initWithQueue:(id)arg1 force:(BOOL)arg2 calendarsOnly:(BOOL)arg3;
-- (BOOL)isCalendarsOnlyRefresh;
+- (id)initWithQueue:(id)arg1 context:(id)arg2;
 - (void)performOperation;
 - (id)readableDescription;
 

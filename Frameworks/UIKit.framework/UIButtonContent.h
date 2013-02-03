@@ -12,11 +12,11 @@
     UIColor *titleColor;
 }
 
-@property(retain) UIColor *shadowColor; /* unknown property attribute: VshadowColor */
-@property(retain) UIColor *titleColor; /* unknown property attribute: VtitleColor */
-@property(retain) UIImage *background; /* unknown property attribute: Vbackground */
-@property(retain) UIImage *image; /* unknown property attribute: Vimage */
-@property(retain) NSString *title; /* unknown property attribute: Vtitle */
+@property(retain) UIImage *background;
+@property(retain) UIImage *image;
+@property(retain) UIColor *shadowColor;
+@property(retain) NSString *title;
+@property(retain) UIColor *titleColor;
 @property(readonly) BOOL isEmpty;
 
 - (id)background;

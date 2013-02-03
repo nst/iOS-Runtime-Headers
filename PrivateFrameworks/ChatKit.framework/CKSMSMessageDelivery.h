@@ -12,7 +12,7 @@
     NSString *_text;
 }
 
-@property CKSMSMessage *message; /* unknown property attribute: V_message */
+@property CKSMSMessage *message;
 
 - (void)_errorSendingMessage:(struct __CKSMSRecord { }*)arg1;
 - (void)_fakeSendMessage:(struct __CKSMSRecord { }*)arg1 afterDelay:(double)arg2;

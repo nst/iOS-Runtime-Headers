@@ -8,7 +8,7 @@
 - (void)_setImagePickerMediaTypes:(id)arg1;
 - (void)cancelButtonClicked:(id)arg1;
 - (void)dealloc;
-- (void)iTunesSyncHasCompleted:(NSInteger)arg1;
+- (void)iTunesSyncDidFinish;
 - (void)libraryView:(id)arg1 didSelectAlbum:(id)arg2;
 - (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;

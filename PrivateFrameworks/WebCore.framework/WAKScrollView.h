@@ -14,7 +14,6 @@
 - (BOOL)allowsScrolling;
 - (BOOL)allowsVerticalScrolling;
 - (id)contentView;
-- (struct CGPoint { float x1; float x2; })contentsPoint;
 - (void)dealloc;
 - (id)delegate;
 - (id)documentView;

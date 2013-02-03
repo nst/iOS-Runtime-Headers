@@ -4,7 +4,8 @@
 
 @class ABClippingImageView, ABImageWellLabelView, UIImage;
 
-@interface ABPersonImageView : UIControl {
+@interface ABPersonImageView : ABPasteboardControl {
+    BOOL _allowsEditing;
     ABClippingImageView *_currentBorderView;
     UIImage *_defaultOrganizationImage;
     void *_displayedPerson;
@@ -17,6 +18,8 @@
     BOOL _needsReflow;
     ABClippingImageView *_outlineBorderView;
     UIImage *_outlineImage;
+    UIImage *_pasteboardMaskImage;
+    ABClippingImageView *_pasteboardMaskImageView;
     UIImage *_personImage;
     ABClippingImageView *_personImageView;
     UIImage *_pressedImage;
@@ -27,8 +30,20 @@
     ABImageWellLabelView *_wellLabel;
 }
 
+@property BOOL allowsEditing;
+
 + (id)createImageIfNeeded:(id*)arg1 withName:(id)arg2;
 
+- (id)_createDictionaryFromCropRectX:(NSInteger)arg1 y:(NSInteger)arg2 width:(NSInteger)arg3 height:(NSInteger)arg4;
+- (id)_createDictionaryWithImageData;
+- (void)_extractCropRectFromDictionary:(id)arg1 x:(NSInteger*)arg2 y:(NSInteger*)arg3 width:(NSInteger*)arg4 height:(NSInteger*)arg5;
+- (id)_supportedPasteboardImageTypesIncludingCustomTypes:(BOOL)arg1;
+- (void)abMenuControllerWillHide;
+- (void)abMenuControllerWillShow:(id)arg1;
+- (BOOL)abShouldShowMenu;
+- (BOOL)allowsEditing;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (void)copy:(id)arg1;
 - (void)dealloc;
 - (void*)displayedPerson;
 - (id)editOverlayImage;
@@ -39,10 +54,13 @@
 - (void)layoutSubviews;
 - (id)maskImage;
 - (id)outlineImage;
+- (void)paste:(id)arg1;
+- (id)pasteboardMaskImage;
 - (id)pressedImage;
 - (void)reflow;
 - (void)reflowIfNeeded;
 - (void)reload;
+- (void)setAllowsEditing:(BOOL)arg1;
 - (void)setDisplayedPerson:(void*)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setIsEditing:(BOOL)arg1 animate:(BOOL)arg2;

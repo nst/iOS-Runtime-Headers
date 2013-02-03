@@ -11,8 +11,8 @@
     CPLRUDictionaryNode *prev;
 }
 
-@property(retain) id object; /* unknown property attribute: V_object */
-@property(readonly) id key; /* unknown property attribute: V_key */
+@property(readonly) id key;
+@property(retain) id object;
 
 - (void)dealloc;
 - (id)initWithKey:(id)arg1 object:(id)arg2;

@@ -45,13 +45,13 @@
     } _viewFlags;
 }
 
-@property(retain,readonly) CALayer *layer; /* unknown property attribute: V_layer */
-@property NSInteger tag; /* unknown property attribute: V_tag */
 @property(copy) NSArray *gestureRecognizers;
+@property(retain,readonly) CALayer *layer;
 @property BOOL capturesDescendantTouches;
 @property BOOL deliversTouchesForGesturesToSuperview;
 @property BOOL gesturesEnabled;
 @property BOOL skipsSubviewEnumeration;
+@property NSInteger tag;
 @property(getter=isUserInteractionEnabled) BOOL userInteractionEnabled;
 
 + (void)_beginDisablingPromoteDescendantToFirstResponder;
@@ -143,6 +143,7 @@
 - (id)_mapKit_mapView;
 - (NSUInteger)_mapkit_countOfSet:(id)arg1 minusSubset:(id)arg2;
 - (id)_mapkit_currentLayer;
+- (float)_minimumZoomScaleDelta;
 - (void)_mouseDown:(struct __GSEvent { }*)arg1;
 - (void)_mouseDragged:(struct __GSEvent { }*)arg1;
 - (void)_mouseUp:(struct __GSEvent { }*)arg1;
@@ -197,7 +198,7 @@
 - (void)_zoomToScale:(float)arg1 event:(struct __GSEvent { }*)arg2;
 - (void)_zoomToScrollPoint:(struct CGPoint { float x1; float x2; })arg1 scale:(float)arg2 duration:(float)arg3 event:(struct __GSEvent { }*)arg4;
 - (void)_zoomToWindowPoint:(struct CGPoint { float x1; float x2; })arg1 scale:(float)arg2 duration:(float)arg3 constrainScrollPoint:(BOOL)arg4 event:(struct __GSEvent { }*)arg5;
-- (void)_zoomWithEvent:(struct __GSEvent { }*)arg1;
+- (BOOL)_zoomWithEvent:(struct __GSEvent { }*)arg1;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
 - (void)addGestureRecognizer:(id)arg1;

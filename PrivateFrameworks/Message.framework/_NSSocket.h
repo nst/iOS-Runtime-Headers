@@ -11,7 +11,7 @@
     unsigned int _canWrite : 1;
     unsigned int _error : 1;
     unsigned int _closed : 1;
-    NSInteger _dataContextIdentifier;
+    struct __CFString { } *_connectionServiceType;
     NSInvocation *_eventHandler;
     double _lastUsedTime;
     NSString *_protocol;
@@ -53,7 +53,7 @@
 - (NSUInteger)remotePortNumber;
 - (id)securityProtocol;
 - (id)serverCertificates;
-- (void)setDataContextIdentifier:(long)arg1;
+- (void)setConnectionServiceType:(struct __CFString { }*)arg1;
 - (void)setEventHandler:(id)arg1;
 - (BOOL)setSecurityProtocol:(id)arg1 serverCertificateDigest:(id)arg2;
 - (void)setTimeout:(NSInteger)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSString, MailboxUid, MFError, MessageLibrary;
+@class NSMutableDictionary, NSString, MailboxUid, MFError, MessageLibrary;
 
 @interface MailAccount : Account {
     struct { 
@@ -12,6 +12,7 @@
         unsigned int cacheHasBeenRead : 1; 
         unsigned int disableCacheWrite : 1; 
         unsigned int _UNUSED_ : 12; 
+    NSMutableDictionary *_currentChokedActions;
     MailboxUid *_draftsMailboxUid;
     } _flags;
     MailboxUid *_inboxMailboxUid;
@@ -43,7 +44,7 @@
 + (id)accountWithUniqueId:(id)arg1;
 + (id)activeAccounts;
 + (id)addressesThatReceivedMessage:(id)arg1;
-+ (id)allEmailAddressesIncludingFullUserName:(BOOL)arg1;
++ (id)allEmailAddressesIncludingFullUserName:(BOOL)arg1 includeReceiveAliases:(BOOL)arg2;
 + (id)allMailboxUids;
 + (void)connectAllAccounts;
 + (id)createAccountWithDictionary:(id)arg1;
@@ -93,6 +94,7 @@
 - (BOOL)_assignSpecialMailboxToAppropriateIvar:(id)arg1 forType:(NSInteger)arg2 delete:(BOOL)arg3;
 - (void)_backgroundFetchCompleted;
 - (void)_backgroundFetchCompletedCount:(NSUInteger)arg1;
+- (id)_cachedSpecialMailboxOfType:(NSInteger)arg1;
 - (BOOL)_canEmptyMessagesFromMailboxUid:(id)arg1;
 - (BOOL)_canReceiveNewMailNotifications;
 - (BOOL)_cleanInboxDuplication:(id)arg1;
@@ -124,6 +126,7 @@
 - (void)_setSpecialMailbox:(id)arg1 forType:(NSInteger)arg2;
 - (void)_setSpecialMailboxName:(id)arg1 forType:(NSInteger)arg2;
 - (BOOL)_shouldLogDeleteActivity;
+- (id*)_specialMailboxIvarOfType:(NSInteger)arg1;
 - (id)_specialMailboxUidWithType:(NSInteger)arg1 create:(BOOL)arg2;
 - (void)_synchronizeMailboxListWithFileSystem;
 - (void)_synchronouslyInvalidateAndDelete:(NSUInteger)arg1;
@@ -134,6 +137,7 @@
 - (void)_writeCustomInfoToMailboxCache:(id)arg1;
 - (void)_writeMailboxCacheWithPrejudice:(BOOL)arg1;
 - (void)accountDidLoad;
+- (void)addUserFocusMailbox:(id)arg1;
 - (id)allMailboxUids;
 - (BOOL)archiveSentMessages;
 - (NSInteger)cachePolicy;
@@ -160,11 +164,13 @@
 - (id)deliveryAccountAlternates;
 - (void)deliveryAccountWillBeRemoved:(id)arg1;
 - (id)description;
+- (void)didFinishActionForChokePoint:(id)arg1 coalescePoint:(id)arg2 withResult:(id)arg3;
 - (id)displayName;
 - (id)displayNameForMailboxUid:(id)arg1;
 - (id)displayNameUsingSpecialNamesForMailboxUid:(id)arg1;
 - (id)displayUsername;
 - (id)emailAddresses;
+- (id)emailAddressesAndAliases;
 - (NSInteger)emptyFrequencyForMailboxType:(NSInteger)arg1;
 - (void)emptyTrash;
 - (void)fetchAsynchronously;
@@ -198,9 +204,11 @@
 - (id)path;
 - (void)postUserInfoHasChangedForMailboxUid:(id)arg1 userInfo:(id)arg2;
 - (id)primaryMailboxUid;
+- (id)receiveEmailAliasAddresses;
 - (BOOL)reconstituteOrphanedMeetingInMessage:(id)arg1;
 - (void)releaseAllConnections;
 - (void)releaseAllForcedConnections;
+- (void)removeUserFocusMailbox:(id)arg1;
 - (BOOL)renameMailbox:(id)arg1 newName:(id)arg2 parent:(id)arg3;
 - (void)resetMailboxTimer;
 - (void)resetMailboxURLs;
@@ -222,6 +230,7 @@
 - (void)setMailboxUid:(id)arg1 forMailboxType:(NSInteger)arg2;
 - (void)setPath:(id)arg1;
 - (void)setPortNumber:(NSUInteger)arg1;
+- (void)setReceiveEmailAliasAddresses:(id)arg1;
 - (void)setUnreadCount:(NSUInteger)arg1 forMailbox:(id)arg2;
 - (void)setUsername:(id)arg1;
 - (void)setValueInAccountProperties:(id)arg1 forKey:(id)arg2;
@@ -241,5 +250,6 @@
 - (void)systemWillSleep;
 - (id)tildeAbbreviatedPath;
 - (id)transferDisabledMailboxUids;
+- (BOOL)willPerformActionForChokePoint:(id)arg1 coalescePoint:(id)arg2 result:(id*)arg3;
 
 @end

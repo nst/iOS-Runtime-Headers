@@ -10,9 +10,9 @@
     id _value;
 }
 
-@property(copy) NSString *placeholder; /* unknown property attribute: V_placeholder */
-@property(copy) NSString *stringValue; /* unknown property attribute: V_value */
-@property <ABSimpleTextInputViewControllerDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <ABSimpleTextInputViewControllerDelegate> *delegate;
+@property(copy) NSString *placeholder;
+@property(copy) NSString *stringValue;
 
 - (BOOL)_allowsAutorotation;
 - (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;

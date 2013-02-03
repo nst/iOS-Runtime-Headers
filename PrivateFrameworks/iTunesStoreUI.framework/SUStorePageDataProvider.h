@@ -6,7 +6,7 @@
     NSInteger _outputType;
 }
 
-@property NSInteger outputType; /* unknown property attribute: V_outputType */
+@property NSInteger outputType;
 
 - (NSInteger)outputType;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;

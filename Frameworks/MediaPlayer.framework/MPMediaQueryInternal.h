@@ -9,6 +9,7 @@
     NSMutableSet *_filterPredicates;
     NSInteger _groupingType;
     NSArray *_items;
+    BOOL _prefetchProperties;
 }
 
 @end

@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class AVCapture, PLPreviewView, <PLCameraControllerDelegate>;
+@class AVCapture, PLPreviewView, NSString, <PLCameraControllerDelegate>;
 
 @interface PLCameraController : NSObject {
     struct { 
         unsigned int supportsVideo : 1; 
         unsigned int supportsAccurateStillCapture : 1; 
         unsigned int supportsFocus : 1; 
+        unsigned int supportsExposure : 1; 
         unsigned int capturingVideo : 1; 
         unsigned int deferStopPreview : 1; 
         unsigned int deferStartVideoCapture : 1; 
@@ -22,31 +23,36 @@
         unsigned int didSetPreviewLayer : 1; 
         unsigned int didNotifyCaptureEnded : 1; 
         unsigned int dontShowFocus : 1; 
+        unsigned int restartLocationAfterCapture : 1; 
+        unsigned int didSetLocationData : 1; 
         unsigned int isChangingMode : 1; 
-        unsigned int lowResolutionCapture : 1; 
         unsigned int delegateModeDidChange : 1; 
         unsigned int delegateTookPicture : 1; 
         unsigned int delegateReadyStateChanged : 1; 
         unsigned int delegateVideoCaptureDidStart : 1; 
         unsigned int delegateVideoCaptureDidStop : 1; 
-        unsigned int delegateVideoAdded : 1; 
         unsigned int delegateFocusFinished : 1; 
     NSInteger _autofocusCount;
     AVCapture *_avCapture;
     } _cameraFlags;
     NSInteger _cameraMode;
     NSInteger _captureOrientation;
+    NSInteger _captureQuality;
     <PLCameraControllerDelegate> *_delegate;
     NSInteger _focusCount;
     BOOL _isLocked;
     BOOL _isPreviewing;
+    NSString *_lastLocationStr;
+    double _maximumCaptureDuration;
     PLPreviewView *_previewView;
     NSUInteger _previousSimpleRemotePriority;
     double _startTime;
 }
 
++ (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })defaultPreviewViewTransform;
 + (id)sharedInstance;
 
+- (void)_addMoreMetadataToVideo:(id)arg1;
 - (void)_applicationResumed;
 - (void)_applicationSuspended;
 - (void)_autofocusOperationFinished;
@@ -64,6 +70,7 @@
 - (void)_focusWasCancelled:(id)arg1;
 - (void)_inCallStatusChanged:(BOOL)arg1;
 - (void)_interruptionEnded:(id)arg1;
+- (void)_locationChanged;
 - (void)_previewStarted:(id)arg1;
 - (void)_previewStopped:(id)arg1;
 - (void)_serverDied:(id)arg1;
@@ -71,6 +78,7 @@
 - (void)_setIsReady;
 - (void)_setVideoPreviewLayer;
 - (BOOL)_setupCamera;
+- (void)_stopPreview;
 - (void)_stopVideoCaptureAndPausePreview:(id)arg1;
 - (void)_tearDownCamera;
 - (void)_tookPhoto:(id)arg1;
@@ -95,12 +103,13 @@
 - (void)restartAutoFocus;
 - (void)resumePreview;
 - (void)setCameraMode:(NSInteger)arg1;
-- (void)setCaptureAtFullResolution:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDontShowFocus:(BOOL)arg1;
 - (void)setFocusDisabled:(BOOL)arg1;
+- (void)setVideoCaptureMaximumDuration:(double)arg1;
+- (void)setVideoCaptureQuality:(NSInteger)arg1;
 - (void)startPreview;
-- (BOOL)startVideoCaptureAtPath:(id)arg1;
+- (BOOL)startVideoCaptureAtPath:(id)arg1 deviceOrientation:(NSInteger)arg2;
 - (void)stopPreview;
 - (void)stopVideoCaptureAndPausePreview:(BOOL)arg1;
 - (BOOL)supportsAccurateStillCapture;

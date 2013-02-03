@@ -16,7 +16,6 @@
 + (void)vendDaemonManagers:(Class)arg1;
 
 - (id)_accountSettingsAccountTypes;
-- (BOOL)_clearOrphanedSubscribedCalendars:(void*)arg1 eventAccountIds:(id)arg2;
 - (void)_reloadAccounts;
 - (void)_removeStoresForAccountWithID:(id)arg1;
 - (void)_respondToAccountsChangedNotification;
@@ -31,7 +30,6 @@
 - (void)addPendingAccountSetup;
 - (void)checkValidityForAccount:(id)arg1 consumer:(id)arg2;
 - (void)cleanupLaunchdSemaphore;
-- (void)clearOrphanedStores;
 - (void)dealloc;
 - (void)disableDaemon;
 - (void)enableDaemon;

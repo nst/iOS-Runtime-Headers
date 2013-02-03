@@ -11,6 +11,7 @@
 - (BOOL)shouldSendClassForFolderItemsSync;
 - (BOOL)shouldSendFullContactInfo;
 - (BOOL)shouldUseWBXMLProvisioning;
+- (BOOL)useBooleanFolderItemsSyncDeletesAsMoves;
 - (BOOL)usesAirSyncBaseNamespace;
 
 @end

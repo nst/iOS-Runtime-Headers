@@ -14,13 +14,13 @@
     BOOL _shouldResetUserOrdering;
 }
 
-@property(retain) NSArray *sections; /* unknown property attribute: V_sections */
-@property BOOL shouldResetUserOrdering; /* unknown property attribute: V_shouldResetUserOrdering */
-@property(retain) NSDictionary *rawOutput; /* unknown property attribute: V_rawOutput */
-@property(retain) NSString *expectedVersionString; /* unknown property attribute: V_expectedVersionString */
-@property(getter=isCacheable) BOOL cacheable; /* unknown property attribute: V_cacheable */
-@property(retain) ISStoreURLOperation *baseOperation; /* unknown property attribute: V_baseOperation */
-@property(retain) NSString *actualVersionString; /* unknown property attribute: V_actualVersionString */
+@property(retain) NSString *actualVersionString;
+@property(retain) ISStoreURLOperation *baseOperation;
+@property(retain) NSString *expectedVersionString;
+@property(retain) NSDictionary *rawOutput;
+@property(retain) NSArray *sections;
+@property(getter=isCacheable) BOOL cacheable;
+@property BOOL shouldResetUserOrdering;
 
 - (id)_copyLoadedImageForURL:(id)arg1 returningError:(id*)arg2;
 - (BOOL)_loadArtworkForSections:(id)arg1 returningError:(id*)arg2;

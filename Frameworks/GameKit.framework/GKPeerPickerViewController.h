@@ -30,29 +30,29 @@
     BOOL _updating;
 }
 
-@property(retain) NSTimer *invitationWaitTimer; /* unknown property attribute: V_invitationWaitTimer */
-@property BOOL updating; /* unknown property attribute: V_updating */
-@property NSInteger pendingState; /* unknown property attribute: V_pendingState */
-@property NSInteger state; /* unknown property attribute: V_state */
-@property BOOL alertPresented; /* unknown property attribute: V_alertPresented */
-@property(getter=isAnimating) BOOL animating; /* unknown property attribute: V_animating */
-@property(retain) NSMutableArray *menuQueue; /* unknown property attribute: V_menuQueue */
-@property NSInteger bluetoothStatus; /* unknown property attribute: V_bluetoothStatus */
-@property NSString *currentConnectionTypeKey; /* unknown property attribute: V_currentConnectionTypeKey */
-@property NSUInteger connectionTypesMask; /* unknown property attribute: V_connectionTypesMask */
-@property(retain) NSMutableArray *peers; /* unknown property attribute: V_peers */
-@property(copy) NSString *searchingForServicesString; /* unknown property attribute: V_searchingForServicesString */
-@property(retain) UITableView *peerTableView; /* unknown property attribute: V_peerTableView */
-@property(readonly) GKContentView *currentView; /* unknown property attribute: V_currentView */
-@property(retain) GKContentView *noPeersView; /* unknown property attribute: V_noPeersView */
-@property(retain) GKContentView *connectTypeView; /* unknown property attribute: V_connectTypeView */
-@property(retain) GKContentView *inviteView; /* unknown property attribute: V_inviteView */
-@property(retain) GKContentView *statusView; /* unknown property attribute: V_statusView */
-@property(retain) GKContentView *listView; /* unknown property attribute: V_listView */
-@property(retain) GKContentView *btView; /* unknown property attribute: V_btView */
-@property(retain) NSMutableDictionary *sessionMap; /* unknown property attribute: V_sessionMap */
-@property id delegate; /* unknown property attribute: V_delegate */
+@property(retain) GKContentView *btView;
+@property(retain) GKContentView *connectTypeView;
+@property NSString *currentConnectionTypeKey;
 @property(readonly) GKSession *currentSession;
+@property(readonly) GKContentView *currentView;
+@property(retain) NSTimer *invitationWaitTimer;
+@property(retain) GKContentView *inviteView;
+@property(retain) GKContentView *listView;
+@property(retain) NSMutableArray *menuQueue;
+@property(retain) GKContentView *noPeersView;
+@property(retain) UITableView *peerTableView;
+@property(retain) NSMutableArray *peers;
+@property(copy) NSString *searchingForServicesString;
+@property(retain) NSMutableDictionary *sessionMap;
+@property(retain) GKContentView *statusView;
+@property BOOL alertPresented;
+@property(getter=isAnimating) BOOL animating;
+@property NSInteger bluetoothStatus;
+@property NSUInteger connectionTypesMask;
+@property id delegate;
+@property NSInteger pendingState;
+@property NSInteger state;
+@property BOOL updating;
 @property(getter=isVisible,readonly) BOOL visible;
 
 - (void)_acceptInvitation:(id)arg1;

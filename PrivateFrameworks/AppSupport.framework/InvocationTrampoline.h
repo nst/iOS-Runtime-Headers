@@ -6,7 +6,7 @@
     id _target;
 }
 
-@property(retain) id target; /* unknown property attribute: V_target */
+@property(retain) id target;
 
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;

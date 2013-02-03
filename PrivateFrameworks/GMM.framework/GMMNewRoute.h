@@ -22,28 +22,28 @@
     NSInteger _trafficDelaySeconds;
 }
 
-@property(retain) NSString *deprecatedDuration; /* unknown property attribute: V_deprecatedDuration */
-@property(retain) NSString *deprecatedDistance; /* unknown property attribute: V_deprecatedDistance */
-@property(readonly) BOOL hasMode; /* unknown property attribute: V_hasMode */
-@property NSInteger mode; /* unknown property attribute: V_mode */
-@property(retain) NSMutableArray *steps; /* unknown property attribute: V_steps */
-@property(retain) NSMutableArray *offsetPolylines; /* unknown property attribute: V_offsetPolylines */
-@property(retain) NSString *cost; /* unknown property attribute: V_cost */
-@property(retain) GMMDateTime *arrivalDateTime; /* unknown property attribute: V_arrivalDateTime */
-@property(retain) GMMDateTime *departureDateTime; /* unknown property attribute: V_departureDateTime */
-@property(readonly) BOOL hasTrafficDelaySeconds; /* unknown property attribute: V_hasTrafficDelaySeconds */
-@property NSInteger trafficDelaySeconds; /* unknown property attribute: V_trafficDelaySeconds */
-@property(readonly) BOOL hasDurationSeconds; /* unknown property attribute: V_hasDurationSeconds */
-@property NSInteger durationSeconds; /* unknown property attribute: V_durationSeconds */
-@property(readonly) BOOL hasDistanceMeters; /* unknown property attribute: V_hasDistanceMeters */
-@property NSInteger distanceMeters; /* unknown property attribute: V_distanceMeters */
+@property(retain) GMMDateTime *arrivalDateTime;
+@property(retain) NSString *cost;
+@property(retain) GMMDateTime *departureDateTime;
+@property(retain) NSString *deprecatedDistance;
+@property(retain) NSString *deprecatedDuration;
+@property(retain) NSMutableArray *offsetPolylines;
+@property(retain) NSMutableArray *steps;
+@property NSInteger distanceMeters;
+@property NSInteger durationSeconds;
 @property(readonly) BOOL hasArrivalDateTime;
 @property(readonly) BOOL hasCost;
 @property(readonly) BOOL hasDepartureDateTime;
 @property(readonly) BOOL hasDeprecatedDistance;
 @property(readonly) BOOL hasDeprecatedDuration;
+@property(readonly) BOOL hasDistanceMeters;
+@property(readonly) BOOL hasDurationSeconds;
+@property(readonly) BOOL hasMode;
+@property(readonly) BOOL hasTrafficDelaySeconds;
+@property NSInteger mode;
 @property(readonly) NSInteger offsetPolylinesCount;
 @property(readonly) NSInteger stepsCount;
+@property NSInteger trafficDelaySeconds;
 
 - (void)addOffsetPolyline:(id)arg1;
 - (void)addStep:(id)arg1;
@@ -55,6 +55,7 @@
 - (id)deprecatedDuration;
 - (id)description;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (NSInteger)distanceMeters;
 - (NSInteger)durationSeconds;
 - (BOOL)hasArrivalDateTime;

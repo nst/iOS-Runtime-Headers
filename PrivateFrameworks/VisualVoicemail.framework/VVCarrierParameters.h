@@ -10,7 +10,6 @@
 
 + (id)carrierServiceName;
 + (BOOL)ignoresRoamingSwitch;
-+ (long)legacyDataContextIdentifier;
 + (id)messageNotificationFallbackTimeout;
 + (id)retryIntervals;
 + (BOOL)supportsGreetingChanges;

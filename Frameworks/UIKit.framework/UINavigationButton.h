@@ -13,12 +13,12 @@
     UIColor *_tintColor;
 }
 
-@property(retain) UIColor *tintColor; /* unknown property attribute: V_tintColor */
-@property NSInteger barStyle; /* unknown property attribute: V_barStyle */
-@property NSInteger style; /* unknown property attribute: V_style */
 @property(retain) UIImage *image;
+@property(retain) UIColor *tintColor;
 @property(retain) NSString *title;
+@property NSInteger barStyle;
 @property NSInteger controlSize;
+@property NSInteger style;
 
 + (id)defaultFont;
 

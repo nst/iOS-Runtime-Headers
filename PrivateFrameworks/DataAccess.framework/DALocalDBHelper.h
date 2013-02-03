@@ -30,6 +30,7 @@
 - (struct CalDatabase { }*)calDB;
 - (void)calOpenDB;
 - (BOOL)calSaveDB;
+- (BOOL)calSaveDBAndFlushCaches;
 - (void)calSetTestCalDBDir:(id)arg1;
 - (id)calTestCalDBDir;
 - (void)calUnitTestsSetCallbackObjectForSave:(id)arg1 callbackSelector:(SEL)arg2;

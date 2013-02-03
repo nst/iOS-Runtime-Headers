@@ -29,33 +29,33 @@
     NSMutableArray *_waypoints;
 }
 
-@property(readonly) BOOL hasReturnMultipleRoutes; /* unknown property attribute: V_hasReturnMultipleRoutes */
-@property BOOL returnMultipleRoutes; /* unknown property attribute: V_returnMultipleRoutes */
-@property(readonly) BOOL hasIncludeStructuredInstructions; /* unknown property attribute: V_hasIncludeStructuredInstructions */
-@property BOOL includeStructuredInstructions; /* unknown property attribute: V_includeStructuredInstructions */
-@property(readonly) BOOL hasAddStepNoticesToInstructionText; /* unknown property attribute: V_hasAddStepNoticesToInstructionText */
-@property BOOL addStepNoticesToInstructionText; /* unknown property attribute: V_addStepNoticesToInstructionText */
-@property(readonly) BOOL hasIncludeStreetViewPanoId; /* unknown property attribute: V_hasIncludeStreetViewPanoId */
-@property BOOL includeStreetViewPanoId; /* unknown property attribute: V_includeStreetViewPanoId */
-@property(retain) NSMutableArray *optionss; /* unknown property attribute: V_optionss */
-@property(retain) GMMMapInfo *mapViewport; /* unknown property attribute: V_mapViewport */
-@property(readonly) BOOL hasResultPageOffset; /* unknown property attribute: V_hasResultPageOffset */
-@property NSInteger resultPageOffset; /* unknown property attribute: V_resultPageOffset */
-@property(readonly) BOOL hasRequestedResultType; /* unknown property attribute: V_hasRequestedResultType */
-@property NSInteger requestedResultType; /* unknown property attribute: V_requestedResultType */
-@property(retain) GMMDirectionsIconRequest *iconRequest; /* unknown property attribute: V_iconRequest */
-@property(readonly) BOOL hasTripMaxCount; /* unknown property attribute: V_hasTripMaxCount */
-@property NSInteger tripMaxCount; /* unknown property attribute: V_tripMaxCount */
-@property(readonly) BOOL hasRequestedTimeType; /* unknown property attribute: V_hasRequestedTimeType */
-@property NSInteger requestedTimeType; /* unknown property attribute: V_requestedTimeType */
-@property(retain) GMMDateTime *requestedDateTime; /* unknown property attribute: V_requestedDateTime */
-@property(retain) NSMutableArray *waypoints; /* unknown property attribute: V_waypoints */
-@property(retain) NSMutableArray *modes; /* unknown property attribute: V_modes */
+@property(retain) GMMDirectionsIconRequest *iconRequest;
+@property(retain) GMMMapInfo *mapViewport;
+@property(retain) NSMutableArray *modes;
+@property(retain) NSMutableArray *optionss;
+@property(retain) GMMDateTime *requestedDateTime;
+@property(retain) NSMutableArray *waypoints;
+@property BOOL addStepNoticesToInstructionText;
+@property(readonly) BOOL hasAddStepNoticesToInstructionText;
 @property(readonly) BOOL hasIconRequest;
+@property(readonly) BOOL hasIncludeStreetViewPanoId;
+@property(readonly) BOOL hasIncludeStructuredInstructions;
 @property(readonly) BOOL hasMapViewport;
 @property(readonly) BOOL hasRequestedDateTime;
+@property(readonly) BOOL hasRequestedResultType;
+@property(readonly) BOOL hasRequestedTimeType;
+@property(readonly) BOOL hasResultPageOffset;
+@property(readonly) BOOL hasReturnMultipleRoutes;
+@property(readonly) BOOL hasTripMaxCount;
+@property BOOL includeStreetViewPanoId;
+@property BOOL includeStructuredInstructions;
 @property(readonly) NSInteger modesCount;
 @property(readonly) NSInteger optionssCount;
+@property NSInteger requestedResultType;
+@property NSInteger requestedTimeType;
+@property NSInteger resultPageOffset;
+@property BOOL returnMultipleRoutes;
+@property NSInteger tripMaxCount;
 @property(readonly) NSInteger waypointsCount;
 
 - (void)addMode:(NSInteger)arg1;

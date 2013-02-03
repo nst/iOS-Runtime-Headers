@@ -11,13 +11,14 @@
     BOOL _usedCache;
 }
 
-@property BOOL usedCache; /* unknown property attribute: V_usedCache */
-@property BOOL shouldUseCache; /* unknown property attribute: V_shouldUseCache */
-@property BOOL shouldResetUserOrdering; /* unknown property attribute: V_shouldResetUserOrdering */
-@property(retain) NSArray *sections; /* unknown property attribute: V_sections */
+@property(retain) NSArray *sections;
+@property BOOL shouldResetUserOrdering;
+@property BOOL shouldUseCache;
+@property BOOL usedCache;
 
 - (id)_baseCachePath;
 - (id)_cachePathForVersion:(id)arg1 create:(BOOL)arg2;
+- (id)_copySectionsDictionaryFromPath:(id)arg1;
 - (BOOL)_loadArtworkForSections:(id)arg1 fromCacheDirectory:(id)arg2;
 - (BOOL)_loadDefaultSections;
 - (BOOL)_loadSectionsFromCacheForVersion:(id)arg1;

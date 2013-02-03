@@ -168,6 +168,7 @@
 - (void)_enableScrollingIfNecessary;
 - (id)_gestureTargetHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)_hideScrollIndicators;
+- (struct CGPoint { float x1; float x2; })_initialTouchPosition;
 - (BOOL)_isAutoscrolling;
 - (BOOL)_isScrollingEnabled;
 - (BOOL)_isUserScrolling;

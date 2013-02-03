@@ -11,8 +11,8 @@
     UITextField *_textField;
 }
 
-@property <ABPropertyEditingTableViewCellDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property(copy) NSString *placeholder; /* unknown property attribute: V_placeholder */
+@property <ABPropertyEditingTableViewCellDelegate> *delegate;
+@property(copy) NSString *placeholder;
 @property(copy) NSString *value;
 @property NSInteger property;
 @property BOOL usesLargeFont;

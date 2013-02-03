@@ -14,9 +14,9 @@
     MPVideoView *_videoView;
 }
 
-@property(retain) NSArray *chapterTimeMarkers; /* unknown property attribute: V_chapterTimeMarkers */
-@property(retain) MPVideoView *videoView; /* unknown property attribute: V_videoView */
-@property NSUInteger currentMarkerIndex; /* unknown property attribute: V_currentMarker */
+@property(retain) NSArray *chapterTimeMarkers;
+@property(retain) MPVideoView *videoView;
+@property NSUInteger currentMarkerIndex;
 @property float topPadding;
 @property BOOL videoOutActive;
 

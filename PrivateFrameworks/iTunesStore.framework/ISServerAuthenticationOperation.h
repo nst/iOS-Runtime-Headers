@@ -11,13 +11,14 @@
     NSURL *_redirectURL;
 }
 
-@property(retain) NSURL *redirectURL; /* unknown property attribute: V_redirectURL */
-@property(retain) ISDialog *dialog; /* unknown property attribute: V_dialog */
-@property(retain) NSNumber *authenticatedAccountDSID; /* unknown property attribute: V_authenticatedAccountDSID */
-@property(retain) ISAuthenticationContext *authenticationContext; /* unknown property attribute: V_authenticationContext */
+@property(retain) NSNumber *authenticatedAccountDSID;
+@property(retain) ISAuthenticationContext *authenticationContext;
+@property(retain) ISDialog *dialog;
+@property(retain) NSURL *redirectURL;
 
 - (id)_authenticationContext;
 - (BOOL)_copyAccountIdentifier:(id*)arg1 returningError:(id*)arg2;
+- (id)_copyButtonForDialogSkip;
 - (BOOL)_copySelectedButton:(id*)arg1 returningError:(id*)arg2;
 - (BOOL)_handleSelectedButton:(id)arg1;
 - (BOOL)_shouldAuthenticateForButton:(id)arg1;

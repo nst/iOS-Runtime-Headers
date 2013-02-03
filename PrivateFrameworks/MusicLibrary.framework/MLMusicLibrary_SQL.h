@@ -11,14 +11,18 @@
     struct CPRecordStore { } *_storeRef;
 }
 
++ (void)_dbSaveCoalesceBegin;
++ (void)_dbSaveCoalesceEnd;
 + (void)_dbSyncDidEnd;
 + (void)_dbSyncWillBegin;
 + (id)_nextFilepathForPlaylistOfType:(NSInteger)arg1;
-+ (void)beginLanguageMigrationIfNecessary;
++ (struct CPRecordStore { }*)_sharedInstanceStoreRef;
++ (void)beginDatabaseMigrationIfNecessary;
 + (id)geniusDatabasePath;
 + (BOOL)hasContent;
 + (Class)implClassForEvaluatingQuery:(id)arg1;
 + (void)noteItemTableWasModified;
++ (void)noteSharedRecordStoreChangedToStoreRef:(struct CPRecordStore { }*)arg1;
 + (void)recursiveEvaluationLockLock;
 + (void)recursiveEvaluationLockUnlock;
 + (void)resetLibrary;
@@ -28,6 +32,7 @@
 - (void)_dbSyncDidEnd;
 - (BOOL)_hasEntitiesWithMediaType:(unsigned long)arg1 whenGroupedByProperty:(unsigned long)arg2 additionalPredicates:(id)arg3;
 - (BOOL)_hasEntitiesWithMediaType:(unsigned long)arg1 whenGroupedByProperty:(unsigned long)arg2;
+- (BOOL)_hasPlaylistOfDistinguishedKind:(NSInteger)arg1 hidden:(BOOL)arg2;
 - (void)_loadMainStore;
 - (void)_loadPurchaseData;
 - (void)_preloadNextItemChunk;
@@ -46,6 +51,7 @@
 - (BOOL)deletePlaylist:(id)arg1;
 - (void)endPreloadingItems;
 - (BOOL)flushImplNow;
+- (void)flushPreparedStatementCacheImpl;
 - (id)getPlaylistWithPersistentUID:(unsigned long long)arg1 visibleOnly:(BOOL)arg2;
 - (id)getPlaylistWithUniqueID:(NSUInteger)arg1 visibleOnly:(BOOL)arg2;
 - (id)getTrackWithGlobalID:(unsigned long long)arg1 visibleOnly:(BOOL)arg2;
@@ -57,7 +63,9 @@
 - (BOOL)hasAudioBooks;
 - (BOOL)hasCompilations;
 - (BOOL)hasComposers;
+- (BOOL)hasGeniusMixes;
 - (BOOL)hasGenres;
+- (BOOL)hasITunesUContent;
 - (BOOL)hasPlaylists;
 - (BOOL)hasPodcasts;
 - (BOOL)hasSongs;
@@ -65,15 +73,19 @@
 - (id)imageDataForTrack:(id)arg1 artworkFormatID:(NSUInteger)arg2 size:(struct CGSize { float x1; float x2; })arg3 chapterIndex:(NSUInteger)arg4 chapterTOC:(id)arg5 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { NSUInteger x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; NSUInteger x_1_1_4; NSInteger x_1_1_5; NSInteger x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg6;
 - (id)initWithBasePath:(id)arg1;
 - (id)insertItemFromPurchaseFolder:(id)arg1 withItemProperties:(id)arg2;
+- (void)jetsamMemoryImpl;
 - (void)loadArtwork;
 - (BOOL)markAndDeleteTracks:(id)arg1;
 - (BOOL)markHiddenTracks:(id)arg1 hidden:(BOOL)arg2;
 - (void)memoryLevelDidChange;
+- (void)mutatePlaylistChangeGroupBegin;
+- (void)mutatePlaylistChangeGroupEnd;
 - (void)mutatePlaylistImpl:(id)arg1 insertTracks:(id)arg2 atIndex:(NSUInteger)arg3;
 - (void)mutatePlaylistImpl:(id)arg1 insertTracksFromQuery:(id)arg2 entityRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3 atIndex:(NSUInteger)arg4;
 - (void)mutatePlaylistImpl:(id)arg1 insertTracksWithRecordIDs:(struct __CPRecordIDArray { }*)arg2 atIndex:(NSUInteger)arg3;
 - (void)mutatePlaylistImpl:(id)arg1 moveEntitiesFromRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 toIndex:(NSUInteger)arg3;
 - (void)mutatePlaylistImpl:(id)arg1 removeTracksInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (void)noteSharedRecordStoreChangedToStoreRef:(struct CPRecordStore { }*)arg1;
 - (void)postInitSetup;
 - (id)preferredAudioTracks;
 - (id)preferredSubtitleTracks;
@@ -81,8 +93,6 @@
 - (BOOL)purchasedContentFolder:(id)arg1 loadItemWithProperties:(id)arg2 propertiesToSave:(id*)arg3;
 - (void)purchasedContentFolder:(id)arg1 willProcessItemWithXMLFilenames:(id)arg2;
 - (id)purchasedItemsPlaylist;
-- (void)sharedRecordStoreDidChangeNotification:(id)arg1;
-- (struct CPRecordStore { }*)storeRef;
 - (void)trackDynamicPropertyDidChange:(id)arg1 propertySelector:(SEL)arg2;
 - (void)unloadArtwork;
 - (void)writePlaylistToSavedFile:(id)arg1;

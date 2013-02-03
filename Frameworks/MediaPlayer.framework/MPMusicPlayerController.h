@@ -11,10 +11,12 @@
 + (id)applicationMusicPlayer;
 + (id)iPodMusicPlayer;
 
-- (void)_clientCheckIn;
+- (void)_clientCheckInIfNecessary;
 - (void)_nowPlayingItemDidChange;
 - (void)_playbackStateDidChange:(NSInteger)arg1;
 - (void)_runMigServerOnPort:(NSUInteger)arg1;
+- (void)_serverDied:(id)arg1;
+- (void)_setUseApplicationSpecificQueue:(BOOL)arg1;
 - (void)_stopMigServer;
 - (void)_systemVolumeDidChange:(id)arg1;
 - (void)beginGeneratingPlaybackNotifications;
@@ -25,12 +27,16 @@
 - (id)init;
 - (BOOL)isGeniusAvailable;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (void)pauseWithFadeoutDuration:(double)arg1;
 - (NSInteger)playbackState;
 - (NSInteger)repeatMode;
 - (void)setCurrentPlaybackTime:(double)arg1;
+- (void)setQueueWithItemCollection:(id)arg1;
+- (void)setQueueWithQuery:(id)arg1;
 - (BOOL)setQueueWithSeedItems:(id)arg1;
 - (void)setRepeatMode:(NSInteger)arg1;
 - (void)setShuffleMode:(NSInteger)arg1;
+- (void)setUseCachedPlaybackState:(BOOL)arg1;
 - (void)setVolume:(float)arg1;
 - (NSInteger)shuffleMode;
 - (float)volume;

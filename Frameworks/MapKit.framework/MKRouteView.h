@@ -31,10 +31,10 @@
     } _synchronousDrawRect;
 }
 
-@property(readonly) ? routeCenterCoordinate; /* unknown property attribute: V_routeCenterCoordinate */
-@property(readonly) ? routeBottomRightCoordinate; /* unknown property attribute: V_routeBottomRightCoordinate */
-@property(readonly) ? routeTopLeftCoordinate; /* unknown property attribute: V_routeTopLeftCoordinate */
-@property(retain) MKRoute *route; /* unknown property attribute: V_route */
+@property(retain) MKRoute *route;
+@property(readonly) ? routeBottomRightCoordinate;
+@property(readonly) ? routeCenterCoordinate;
+@property(readonly) ? routeTopLeftCoordinate;
 
 - (void)_createPath;
 - (id)_createTileWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

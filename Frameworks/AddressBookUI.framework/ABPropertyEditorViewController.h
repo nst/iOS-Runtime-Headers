@@ -15,7 +15,7 @@
     UINavigationButton *_saveButton;
 }
 
-@property <ABPropertyEditorViewControllerDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <ABPropertyEditorViewControllerDelegate> *delegate;
 
 - (BOOL)_allowsAutorotation;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; float x5; NSInteger x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; }*)arg1;

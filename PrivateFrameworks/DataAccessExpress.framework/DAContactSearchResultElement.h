@@ -34,35 +34,34 @@
     NSString *_zip;
 }
 
-@property(copy) NSString *pagerNumber; /* unknown property attribute: V_pagerNumber */
-@property(copy) NSString *buildingName; /* unknown property attribute: V_buildingName */
-@property(copy) NSString *uri; /* unknown property attribute: V_uri */
-@property(copy) NSString *imAddress; /* unknown property attribute: V_imAddress */
-@property(copy) NSData *jpegPhoto; /* unknown property attribute: V_jpegPhoto */
-@property(copy) NSString *country; /* unknown property attribute: V_country */
-@property(copy) NSString *zip; /* unknown property attribute: V_zip */
-@property(copy) NSString *state; /* unknown property attribute: V_state */
-@property(copy) NSString *city; /* unknown property attribute: V_city */
-@property(copy) NSString *street; /* unknown property attribute: V_street */
-@property(copy) NSString *department; /* unknown property attribute: V_department */
-@property(copy) NSString *faxPhone; /* unknown property attribute: V_faxPhone */
-@property(copy) NSString *recordName; /* unknown property attribute: V_recordName */
-@property(copy) NSString *serverSource; /* unknown property attribute: V_serverSource */
-@property(copy) NSString *office; /* unknown property attribute: V_office */
-@property(copy) NSString *homePhone; /* unknown property attribute: V_homePhone */
-@property(copy) NSString *alias; /* unknown property attribute: V_alias */
-@property(copy) NSString *title; /* unknown property attribute: V_title */
-@property(copy) NSString *company; /* unknown property attribute: V_company */
-@property(copy) NSString *mobilePhone; /* unknown property attribute: V_mobilePhone */
-@property(copy) NSString *workPhone; /* unknown property attribute: V_workPhone */
-@property(copy) NSString *emailAddress; /* unknown property attribute: V_emailAddress */
-@property(copy) NSString *lastName; /* unknown property attribute: V_lastName */
-@property(copy) NSString *firstName; /* unknown property attribute: V_firstName */
-@property(copy) NSString *displayName; /* unknown property attribute: V_displayName */
+@property(copy) NSString *alias;
+@property(copy) NSString *buildingName;
+@property(copy) NSString *city;
+@property(copy) NSString *company;
+@property(copy) NSString *country;
+@property(copy) NSString *department;
+@property(copy) NSString *displayName;
+@property(copy) NSString *emailAddress;
+@property(copy) NSString *faxPhone;
+@property(copy) NSString *firstName;
+@property(copy) NSString *homePhone;
+@property(copy) NSString *homePostalAddress;
+@property(copy) NSString *imAddress;
+@property(copy) NSData *jpegPhoto;
+@property(copy) NSString *lastName;
+@property(copy) NSString *mobilePhone;
+@property(copy) NSString *office;
+@property(copy) NSString *pagerNumber;
+@property(copy) NSString *postalAddress;
+@property(copy) NSString *recordName;
+@property(copy) NSString *serverSource;
+@property(copy) NSString *state;
+@property(copy) NSString *street;
+@property(copy) NSString *title;
+@property(copy) NSString *uri;
+@property(copy) NSString *workPhone;
+@property(copy) NSString *zip;
 
-- (void)_cleanUpDanglingPostalAddresses;
-- (void)_setHomePostalAddress:(id)arg1;
-- (void)_setPostalAddress:(id)arg1;
 - (id)alias;
 - (id)buildingName;
 - (id)city;
@@ -78,6 +77,7 @@
 - (id)faxPhone;
 - (id)firstName;
 - (id)homePhone;
+- (id)homePostalAddress;
 - (id)imAddress;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -87,6 +87,7 @@
 - (id)mobilePhone;
 - (id)office;
 - (id)pagerNumber;
+- (id)postalAddress;
 - (id)recordName;
 - (id)serverSource;
 - (void)setAlias:(id)arg1;
@@ -100,12 +101,14 @@
 - (void)setFaxPhone:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setHomePhone:(id)arg1;
+- (void)setHomePostalAddress:(id)arg1;
 - (void)setImAddress:(id)arg1;
 - (void)setJpegPhoto:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setMobilePhone:(id)arg1;
 - (void)setOffice:(id)arg1;
 - (void)setPagerNumber:(id)arg1;
+- (void)setPostalAddress:(id)arg1;
 - (void)setRecordName:(id)arg1;
 - (void)setServerSource:(id)arg1;
 - (void)setState:(id)arg1;

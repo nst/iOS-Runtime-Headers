@@ -9,14 +9,15 @@
     NSString *_userName;
 }
 
-@property(retain) NSString *authToken; /* unknown property attribute: V_authToken */
-@property(retain) NSString *userName; /* unknown property attribute: V_userName */
+@property(retain) NSString *authToken;
+@property(retain) NSString *userName;
 @property(readonly) BOOL hasAuthToken;
 @property(readonly) BOOL hasUserName;
 
 - (id)authToken;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasAuthToken;
 - (BOOL)hasUserName;
 - (id)init;

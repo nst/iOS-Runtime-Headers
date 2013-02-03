@@ -2,88 +2,44 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSDictionary, NSString, CLLocation;
+@class NSString, CLLocation, UIImage, MKAddressBookAddress;
 
-@interface MKSearchResult : NSObject <NSCopying, MKLocatableObject, MKAnnotation> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface MKSearchResult : MKSearchResultRepr <NSCopying, MKLocatableObject, MKAnnotation> {
     struct { 
         double latitude; 
         double longitude; 
-    NSString *_address1;
-    NSString *_address2;
-    NSString *_attributionText;
-    NSString *_attributionURL;
-    long long _cid;
-    BOOL _completedReverseGeocodeCheck;
+    UIImage *_adIcon;
+    MKAddressBookAddress *_address;
     } _coordinate;
-    NSString *_countryCode;
-    NSString *_countryName;
-    NSString *_dependentLocality;
-    NSString *_formattedAddress;
-    BOOL _inexactPosition;
-    NSDictionary *_info;
-    NSInteger _latitudeE6Value;
-    NSString *_locality;
+    BOOL _hasMergedFormattedAddress;
     CLLocation *_location;
-    } _longLat;
-    BOOL _longLatSet;
-    NSInteger _longitudeE6Value;
-    NSUInteger _mapType;
-    NSString *_mapsURL;
-    NSString *_name;
-    NSInteger _originalType;
     BOOL _originatedFromHistory;
-    NSString *_panoramaID;
-    NSString *_phone;
-    NSString *_postalCode;
-    NSString *_referenceURL;
-    NSString *_region;
     NSString *_resultIdentifier;
-    NSUInteger _result_index;
+    NSString *_routeDistanceSummary;
     NSString *_singleLineAddress;
     NSString *_singleLineAddressWithHomeCountry;
-    NSString *_thoroughfare;
-    NSInteger _type;
-    NSUInteger _zoomLevel;
 }
 
-@property(retain) NSString *panoramaID; /* unknown property attribute: V_panoramaID */
-@property BOOL originatedFromHistory; /* unknown property attribute: V_originatedFromHistory */
-@property BOOL inexactPosition; /* unknown property attribute: V_inexactPosition */
-@property BOOL completedReverseGeocodeCheck; /* unknown property attribute: V_completedReverseGeocodeCheck */
-@property(retain) NSString *dependentLocality; /* unknown property attribute: V_dependentLocality */
-@property(retain) NSString *thoroughfare; /* unknown property attribute: V_thoroughfare */
-@property NSInteger longitudeE6Value; /* unknown property attribute: V_longitudeE6Value */
-@property NSInteger latitudeE6Value; /* unknown property attribute: V_latitudeE6Value */
-@property NSUInteger result_index; /* unknown property attribute: V_result_index */
-@property long long cid; /* unknown property attribute: V_cid */
-@property(retain) NSString *mapsURL; /* unknown property attribute: V_mapsURL */
-@property ? coordinate; /* unknown property attribute: V_coordinate */
-@property(retain) NSString *attributionURL; /* unknown property attribute: V_attributionURL */
-@property(retain) NSString *attributionText; /* unknown property attribute: V_attributionText */
-@property(retain) NSString *referenceURL; /* unknown property attribute: V_referenceURL */
-@property(retain) NSString *phone; /* unknown property attribute: V_phone */
-@property(retain) NSString *countryName; /* unknown property attribute: V_countryName */
-@property(retain) NSString *countryCode; /* unknown property attribute: V_countryCode */
-@property(retain) NSString *postalCode; /* unknown property attribute: V_postalCode */
-@property(retain) NSString *region; /* unknown property attribute: V_region */
-@property(retain) NSString *locality; /* unknown property attribute: V_locality */
-@property(retain) NSString *address2; /* unknown property attribute: V_address2 */
-@property(retain) NSString *address1; /* unknown property attribute: V_address1 */
-@property(retain) NSString *name; /* unknown property attribute: V_name */
+@property(readonly) UIImage *adIcon;
+@property(readonly) NSString *adLine1;
+@property(readonly) NSString *adLine2;
+@property(retain) NSString *author;
 @property(readonly) NSString *defaultName;
 @property(readonly) NSString *displayTitle;
+@property(readonly) NSString *infoCardTitle;
 @property(readonly) CLLocation *location;
+@property(retain) NSString *panoramaID;
 @property(readonly) NSString *resultIdentifier;
-@property(readonly) BOOL hasPanoramaId;
+@property(retain) NSString *routeDistanceSummary;
+@property ? coordinate;
+@property(readonly) BOOL hasStructuredAddress;
+@property(readonly) BOOL isAd;
 @property(readonly) BOOL isDynamicCurrentLocation;
-@property(readonly) CGPoint longLat;
-@property(readonly) NSUInteger mapType;
 @property(readonly) BOOL needsReverseGeocodeCheck;
+@property BOOL originatedFromHistory;
 @property(readonly) BOOL requiresPanoramaIDCheck;
-@property(readonly) NSUInteger zoomLevel;
+@property(getter=isReverseGeocoded) BOOL reverseGeocoded;
+@property(getter=isUserCreated,readonly) BOOL userCreated;
 
 + (NSInteger)_indexToInsertResultWithDistance:(double)arg1 distanceDictionary:(id)arg2 sortedArray:(id)arg3;
 + (id)currentLocationSearchResult;
@@ -98,18 +54,21 @@
 + (id)searchResultWithDictionaryRepresentation:(id)arg1 fileVersion:(NSInteger)arg2;
 + (id)searchResultWithDictionaryRepresentation:(id)arg1;
 
-- (id)_addressWithHomeCounty:(BOOL)arg1;
+- (id)_addressWithHomeCountry:(BOOL)arg1;
 - (id)_formattedAddress;
+- (id)_formattedAddressDictionary;
 - (id)_longLatString;
-- (id)address1;
-- (id)address2;
+- (void)_parseAndMergeFormattedAddress;
+- (id)_structuredAddressDictionaryWithHomeCounty:(BOOL)arg1;
+- (id)adIcon;
+- (id)adLine1;
+- (id)adLine2;
+- (id)address;
 - (id)addressDictionary;
-- (id)attributionText;
-- (id)attributionURL;
+- (id)author;
+- (void)becomeDefaultTypeIfAdType;
 - (void)becomeDefaultTypeIfCustomType;
-- (long long)cid;
 - (NSInteger)color;
-- (BOOL)completedReverseGeocodeCheck;
 - (struct { double x1; double x2; })coordinate;
 - (id)copyWithCoordinate:(struct { double x1; double x2; })arg1;
 - (id)copyWithLongLat:(struct CGPoint { float x1; float x2; })arg1 includeStreetView:(BOOL)arg2 includeAddress:(BOOL)arg3;
@@ -117,78 +76,49 @@
 - (id)copyWithType:(NSInteger)arg1 name:(id)arg2 mapType:(NSUInteger)arg3 zoomLevel:(NSUInteger)arg4;
 - (id)copyWithType:(NSInteger)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)countryCode;
-- (id)countryName;
 - (void)dealloc;
 - (id)defaultName;
-- (id)dependentLocality;
 - (id)description;
-- (id)dictionaryRepresentation;
 - (void)didUpdateAddress;
 - (id)displayTitle;
-- (BOOL)hasPanoramaId;
-- (BOOL)inexactPosition;
+- (BOOL)hasStructuredAddress;
+- (id)infoCardTitle;
 - (id)init;
-- (id)initWithGMMSearchResult:(id)arg1 type:(NSInteger)arg2;
+- (id)initWithGMMSearchResult:(id)arg1 type:(NSInteger)arg2 originalQuery:(id)arg3;
+- (id)initWithSearchResult:(id)arg1 address:(id)arg2;
 - (id)initWithSearchResult:(id)arg1 includeStreetView:(BOOL)arg2 includeAddress:(BOOL)arg3;
 - (id)initWithSearchResult:(id)arg1 type:(NSInteger)arg2;
 - (id)initWithSearchResult:(id)arg1;
+- (id)initWithSearchResultStrippingName:(id)arg1 address:(id)arg2;
 - (id)initWithType:(NSInteger)arg1;
+- (BOOL)isAd;
+- (BOOL)isAddressBookResult;
 - (BOOL)isDynamicCurrentLocation;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isReverseGeocoded;
+- (BOOL)isUserCreated;
 - (BOOL)isValid;
-- (NSInteger)latitudeE6Value;
-- (id)locality;
 - (id)location;
-- (struct CGPoint { float x1; float x2; })longLat;
-- (NSInteger)longitudeE6Value;
 - (BOOL)looksLikeBusiness;
-- (NSUInteger)mapType;
 - (id)mapsURL;
 - (id)name;
 - (BOOL)needsReverseGeocodeCheck;
-- (NSInteger)originalType;
 - (BOOL)originatedFromHistory;
-- (id)panoramaID;
-- (id)phone;
-- (id)postalCode;
-- (id)referenceURL;
-- (id)region;
+- (BOOL)readFrom:(id)arg1;
 - (BOOL)requiresPanoramaIDCheck;
 - (void)resetMetadata;
 - (id)resultIdentifier;
-- (NSUInteger)result_index;
+- (id)routeDistanceSummary;
 - (id)routeLocation;
-- (void)setAddress1:(id)arg1;
-- (void)setAddress2:(id)arg1;
-- (void)setAttributionText:(id)arg1;
-- (void)setAttributionURL:(id)arg1;
-- (void)setCid:(long long)arg1;
-- (void)setCompletedReverseGeocodeCheck:(BOOL)arg1;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
-- (void)setCountryCode:(id)arg1;
-- (void)setCountryName:(id)arg1;
-- (void)setDependentLocality:(id)arg1;
-- (void)setInexactPosition:(BOOL)arg1;
-- (void)setLatitudeE6Value:(NSInteger)arg1;
-- (void)setLocality:(id)arg1;
-- (void)setLongitudeE6Value:(NSInteger)arg1;
-- (void)setMapsURL:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setOriginatedFromHistory:(BOOL)arg1;
-- (void)setPanoramaID:(id)arg1;
-- (void)setPhone:(id)arg1;
-- (void)setPostalCode:(id)arg1;
-- (void)setReferenceURL:(id)arg1;
-- (void)setRegion:(id)arg1;
-- (void)setResult_index:(NSUInteger)arg1;
-- (void)setThoroughfare:(id)arg1;
+- (void)setReverseGeocoded:(BOOL)arg1;
+- (void)setRouteDistanceSummary:(id)arg1;
 - (id)singleLineAddress;
 - (id)singleLineAddressWithHomeCountry;
 - (id)subtitle;
-- (id)thoroughfare;
 - (id)title;
-- (NSInteger)type;
-- (NSUInteger)zoomLevel;
+- (void)writeTo:(id)arg1;
 
 @end

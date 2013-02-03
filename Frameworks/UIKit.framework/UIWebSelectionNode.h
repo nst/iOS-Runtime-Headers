@@ -18,7 +18,7 @@
     UIWebSelectionGraph *_sharedGraph;
 }
 
-@property(retain) UIWebSelection *selection; /* unknown property attribute: V_selection */
+@property(retain) UIWebSelection *selection;
 
 - (void)dealloc;
 - (id)initWithSelection:(id)arg1 inGraph:(id)arg2;

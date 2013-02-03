@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUStorePageViewControllerDelegate>, NSDictionary, NSString, UISegmentedControl, SUPageSectionGroup, SUViewController, NSURL;
+@class NSDictionary, NSString, UISegmentedControl, ISAuthenticationContext, SUPageSectionGroup, SUViewController, NSURL;
 
 @interface SUStorePageViewController : SUViewController <ISURLOperationDelegate> {
     SUViewController *_activeChildViewController;
     NSInteger _activeSectionIndex;
+    ISAuthenticationContext *_authContext;
     NSDictionary *_customHeaders;
-    <SUStorePageViewControllerDelegate> *_delegate;
     BOOL _loadingForSectionChange;
     BOOL _needsAuthentication;
     NSInteger _pageType;
@@ -23,30 +23,32 @@
     NSString *_urlBagKey;
 }
 
-@property(retain) NSString *urlBagKey; /* unknown property attribute: V_urlBagKey */
-@property(retain) NSURL *url; /* unknown property attribute: V_url */
-@property BOOL shouldFetchAutomatically; /* unknown property attribute: V_shouldFetchAutomatically */
-@property(retain) NSDictionary *queryStringDictionary; /* unknown property attribute: V_queryStringDictionary */
-@property BOOL needsAuthentication; /* unknown property attribute: V_needsAuthentication */
-@property <SUStorePageViewControllerDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property(retain) NSDictionary *customHeaders; /* unknown property attribute: V_customHeaders */
+@property(retain) ISAuthenticationContext *authenticationContext;
+@property(retain) NSDictionary *customHeaders;
+@property(retain) NSDictionary *queryStringDictionary;
+@property(retain) NSURL *url;
+@property(retain) NSString *urlBagKey;
+@property BOOL needsAuthentication;
+@property BOOL shouldFetchAutomatically;
 
 - (void)_delayedFetchPage;
 - (void)_fetchPage:(BOOL)arg1;
 - (void)_finishSuccessfulLoad;
 - (void)_fireRefreshTimer;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForActiveViewController;
+- (void)_moveToRootSectionIfNecessary;
 - (void)_reloadForOutput:(id)arg1 ofType:(NSInteger)arg2 fromURL:(id)arg3;
 - (void)_resetRefreshTimerWithTimeInterval:(double)arg1;
 - (void)_sectionControlAction:(id)arg1;
 - (void)_setActiveChildViewController:(id)arg1;
 - (void)_setPendingChildViewController:(id)arg1;
+- (id)authenticationContext;
 - (id)copyArchivableContext;
 - (id)createFetchOperation;
 - (id)createPlaceholderViewController;
 - (id)createViewControllerForPage:(id)arg1 ofType:(NSInteger)arg2 returningError:(id*)arg3;
 - (id)customHeaders;
 - (void)dealloc;
-- (id)delegate;
 - (id)displayedURL;
 - (void)handleFailureWithError:(id)arg1;
 - (id)init;
@@ -59,7 +61,7 @@
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (void)purgeMemoryForReason:(NSInteger)arg1;
-- (BOOL)pushStorePageWithURL:(id)arg1 withAuthentication:(BOOL)arg2 animated:(BOOL)arg3;
+- (BOOL)pushStorePageWithURL:(id)arg1 needsAuthentication:(BOOL)arg2 withContext:(id)arg3 animated:(BOOL)arg4;
 - (id)queryStringDictionary;
 - (void)reload;
 - (void)reloadForNetworkTypeChange;
@@ -67,14 +69,16 @@
 - (BOOL)reloadWithURL:(id)arg1;
 - (void)resetNavigationItem:(id)arg1;
 - (void)restoreArchivableContext:(id)arg1;
+- (void)setAuthenticationContext:(id)arg1;
 - (void)setCustomHeaders:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (id)setDisplayedSectionGroup:(id)arg1;
 - (void)setLoading:(BOOL)arg1;
 - (void)setNeedsAuthentication:(BOOL)arg1;
 - (void)setQueryStringDictionary:(id)arg1;
 - (void)setShouldFetchAutomatically:(BOOL)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setUrlBagKey:(id)arg1;
+- (BOOL)shouldExcludeFromNavigationHistory;
 - (BOOL)shouldFetchAutomatically;
 - (void)showPlaceholderViewController;
 - (id)url;

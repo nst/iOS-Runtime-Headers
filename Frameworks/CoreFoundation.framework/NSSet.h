@@ -33,7 +33,6 @@
 - (id)anyObject;
 - (Class)classForCoder;
 - (BOOL)containsObject:(id)arg1;
-- (void)copyPhotosToPasteboard;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (NSUInteger)count;
 - (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;

@@ -9,8 +9,8 @@
     NSMutableArray *_collectionIDs;
 }
 
-@property(retain) NSArray *collectionIDs; /* unknown property attribute: V_collectionIDs */
-@property(retain) NSArray *classes; /* unknown property attribute: V_classes */
+@property(retain) NSArray *classes;
+@property(retain) NSArray *collectionIDs;
 
 + (BOOL)acceptsTopLevelLeaves;
 + (BOOL)frontingBasicTypes;

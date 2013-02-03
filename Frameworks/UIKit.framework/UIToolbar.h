@@ -29,8 +29,8 @@
     NSInteger _trackingTag;
 }
 
-@property(retain) UIColor *tintColor; /* unknown property attribute: V_tintColor */
 @property(copy) NSArray *items;
+@property(retain) UIColor *tintColor;
 @property NSInteger barStyle;
 @property(getter=isTranslucent) BOOL translucent;
 

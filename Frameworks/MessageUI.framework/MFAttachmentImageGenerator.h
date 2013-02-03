@@ -8,6 +8,7 @@
     struct CGSize { 
         float width; 
         float height; 
+    UIImage *_cutout;
     NSString *_displayString;
     UIImage *_image;
     } _textSize;

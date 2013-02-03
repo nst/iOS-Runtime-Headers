@@ -21,6 +21,7 @@
 + (id)genresQuery;
 + (id)playlistsQuery;
 + (id)podcastsQuery;
++ (void)setFilteringDisabled:(BOOL)arg1;
 + (id)songsQuery;
 + (id)videosQuery;
 
@@ -38,8 +39,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFilterPredicates:(id)arg1;
 - (id)items;
+- (BOOL)prefetchProperties;
 - (void)removeFilterPredicate:(id)arg1;
 - (void)setFilterPredicates:(id)arg1;
 - (void)setGroupingType:(NSInteger)arg1;
+- (void)setPrefetchProperties:(BOOL)arg1;
 
 @end

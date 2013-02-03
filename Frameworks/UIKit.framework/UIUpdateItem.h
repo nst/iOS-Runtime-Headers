@@ -11,10 +11,10 @@
     float _offset;
 }
 
-@property float offset; /* unknown property attribute: V_offset */
-@property(readonly) NSInteger animation; /* unknown property attribute: V_animation */
-@property(readonly) NSIndexPath *indexPath; /* unknown property attribute: V_indexPath */
-@property(readonly) NSInteger action; /* unknown property attribute: V_action */
+@property(readonly) NSIndexPath *indexPath;
+@property(readonly) NSInteger action;
+@property(readonly) NSInteger animation;
+@property float offset;
 
 - (id)_actionDescription;
 - (NSInteger)action;

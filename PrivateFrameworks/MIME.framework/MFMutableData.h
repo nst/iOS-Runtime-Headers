@@ -37,6 +37,7 @@
 - (id)initWithData:(id)arg1;
 - (id)initWithLength:(NSUInteger)arg1;
 - (NSUInteger)length;
+- (BOOL)mf_immutable;
 - (void)mf_makeImmutable;
 - (const void*)mutableBytes;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

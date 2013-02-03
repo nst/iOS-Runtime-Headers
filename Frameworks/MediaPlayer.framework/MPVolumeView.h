@@ -9,6 +9,7 @@
 }
 
 - (void)_createSubviews;
+- (id)_routeButtonImage;
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (void)dealloc;
 - (void)displayAudioRoutePicker;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class VMUArchitecture, NSDate, NSString;
+@class VMUArchitecture, NSDate, NSString, NSMutableDictionary;
 
 @interface VMUMemory_File : VMUMemory_Base <VMUMemory> {
     struct _VMURange { 
@@ -18,14 +18,17 @@
     char *_mappedAddress;
     NSUInteger _mappedSize;
     NSString *_path;
+    NSMutableDictionary *_sharedCacheMap;
 }
 
++ (id)headerFromSharedCacheWithPath:(id)arg1;
 + (id)headerWithPath:(id)arg1;
 + (id)memoryWithPath:(id)arg1 fileRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg2 mapToAddress:(unsigned long long)arg3 architecture:(id)arg4;
 + (id)memoryWithPath:(id)arg1;
 
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
 - (id)architecture;
+- (void)buildSharedCacheMap;
 - (void)dealloc;
 - (id)description;
 - (void)finalize;
@@ -36,6 +39,7 @@
 - (id)memoryAtAddress:(unsigned long long)arg1 maxSize:(unsigned long long)arg2;
 - (id)memoryFromSubRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 mapToAddress:(unsigned long long)arg2 architecture:(id)arg3;
 - (id)path;
+- (unsigned long long)sharedCacheHeaderOffsetForPath:(id)arg1;
 - (id)swappedView;
 - (id)view;
 

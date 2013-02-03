@@ -14,8 +14,8 @@
     NSString *_searchTermForAppear;
 }
 
-@property(retain) NSString *hintsURLBagKey; /* unknown property attribute: V_hintsURLBagKey */
-@property NSInteger assetTypesForSearchParameters; /* unknown property attribute: V_assetTypesForSearchParameters */
+@property(retain) NSString *hintsURLBagKey;
+@property NSInteger assetTypesForSearchParameters;
 
 - (void)_backstopViewAction:(id)arg1;
 - (id)_copyQueryStringDictionaryForTerm:(id)arg1;
@@ -37,8 +37,9 @@
 - (NSInteger)assetTypesForSearchParameters;
 - (void)completionTableController:(id)arg1 pickedCompletionItem:(id)arg2;
 - (id)copyArchivableContext;
+- (id)createViewControllerForPage:(id)arg1 ofType:(NSInteger)arg2 returningError:(id*)arg3;
 - (void)dealloc;
-- (void)handleExternalURL:(id)arg1;
+- (void)handleApplicationURL:(id)arg1;
 - (id)hintsURLBagKey;
 - (id)initWithSection:(id)arg1;
 - (void)purgeMemoryForReason:(NSInteger)arg1;

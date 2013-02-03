@@ -14,11 +14,11 @@
     NSURL *_url;
 }
 
-@property(retain) NSURL *url; /* unknown property attribute: V_url */
-@property CGSize size; /* unknown property attribute: V_size */
-@property ISArtworkGroup *group; /* unknown property attribute: V_group */
-@property NSUInteger format; /* unknown property attribute: V_format */
+@property ISArtworkGroup *group;
+@property(retain) NSURL *url;
+@property NSUInteger format;
 @property(readonly) NSInteger orientation;
+@property CGSize size;
 
 - (BOOL)_artworkSize:(struct CGSize { float x1; float x2; })arg1 matchesSize:(struct CGSize { float x1; float x2; })arg2 withQuality:(NSInteger*)arg3;
 - (NSUInteger)_formatForSize:(struct CGSize { float x1; float x2; })arg1;

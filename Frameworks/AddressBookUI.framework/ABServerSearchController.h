@@ -23,8 +23,8 @@
     ABGroupWrapper *_selectedGroupWrapper;
 }
 
-@property(retain) ABGroupWrapper *selectedGroupWrapper; /* unknown property attribute: V_selectedGroupWrapper */
 @property(readonly) UIView *navigationTitleView;
+@property(retain) ABGroupWrapper *selectedGroupWrapper;
 
 - (void)_beginSearch;
 - (void)_clearSearchResults;

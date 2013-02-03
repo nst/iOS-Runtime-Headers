@@ -17,20 +17,20 @@
     BOOL _requestSignature;
 }
 
-@property(readonly) BOOL hasClientSideThrottlingSupported; /* unknown property attribute: V_hasClientSideThrottlingSupported */
-@property BOOL clientSideThrottlingSupported; /* unknown property attribute: V_clientSideThrottlingSupported */
-@property(readonly) BOOL hasIsPrefetch; /* unknown property attribute: V_hasIsPrefetch */
-@property BOOL isPrefetch; /* unknown property attribute: V_isPrefetch */
-@property(readonly) BOOL hasRequestSignature; /* unknown property attribute: V_hasRequestSignature */
-@property BOOL requestSignature; /* unknown property attribute: V_requestSignature */
-@property(retain) GMMOutgoingTile *outgoingTile; /* unknown property attribute: V_outgoingTile */
-@property(retain) GMMMetadata *metadata; /* unknown property attribute: V_metadata */
-@property(retain) GMMMapPoint *latLon; /* unknown property attribute: V_latLon */
-@property(retain) NSString *panoId; /* unknown property attribute: V_panoId */
+@property(retain) GMMMapPoint *latLon;
+@property(retain) GMMMetadata *metadata;
+@property(retain) GMMOutgoingTile *outgoingTile;
+@property(retain) NSString *panoId;
+@property BOOL clientSideThrottlingSupported;
+@property(readonly) BOOL hasClientSideThrottlingSupported;
+@property(readonly) BOOL hasIsPrefetch;
 @property(readonly) BOOL hasLatLon;
 @property(readonly) BOOL hasMetadata;
 @property(readonly) BOOL hasOutgoingTile;
 @property(readonly) BOOL hasPanoId;
+@property(readonly) BOOL hasRequestSignature;
+@property BOOL isPrefetch;
+@property BOOL requestSignature;
 
 - (BOOL)clientSideThrottlingSupported;
 - (void)dealloc;

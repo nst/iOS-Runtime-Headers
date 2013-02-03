@@ -19,10 +19,10 @@
     NSMutableArray *_transformedManyToManys;
 }
 
-@property(readonly) NSInteger migrationType; /* unknown property attribute: V_migrationType */
-@property(readonly) NSEntityMapping *entityMapping; /* unknown property attribute: V_entityMapping */
-@property(readonly) NSSQLEntity *destinationEntity; /* unknown property attribute: V_dstEntity */
-@property(readonly) NSSQLEntity *sourceEntity; /* unknown property attribute: V_srcEntity */
+@property(readonly) NSSQLEntity *destinationEntity;
+@property(readonly) NSEntityMapping *entityMapping;
+@property(readonly) NSSQLEntity *sourceEntity;
+@property(readonly) NSInteger migrationType;
 
 - (void)_configureJoinWithEntity:(id)arg1 foreignKeyColumn:(id)arg2;
 - (void)_generateSQLValueMappingsWithMigrationContext:(struct _NSSQLMigrationContext { id x1; })arg1;

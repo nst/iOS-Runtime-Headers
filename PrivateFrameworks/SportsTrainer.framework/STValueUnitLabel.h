@@ -13,11 +13,11 @@
     NSInteger _textAlignment;
 }
 
-@property NSInteger textAlignment; /* unknown property attribute: V_textAlignment */
-@property float labelSpacing; /* unknown property attribute: V_labelSpacing */
-@property(readonly) UILabel *rightLabel; /* unknown property attribute: V_rightLabel */
-@property(readonly) UILabel *leftLabel; /* unknown property attribute: V_leftLabel */
+@property(readonly) UILabel *leftLabel;
+@property(readonly) UILabel *rightLabel;
+@property float labelSpacing;
 @property BOOL reversesLabels;
+@property NSInteger textAlignment;
 
 - (BOOL)_labelsNeedSizing;
 - (void)_sizeLabelsToFit;

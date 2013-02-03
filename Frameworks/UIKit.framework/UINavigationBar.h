@@ -23,6 +23,7 @@
         unsigned int isLocked : 1; 
         unsigned int shouldUpdatePromptAfterTransition : 1; 
         unsigned int roundedCorners : 1; 
+        unsigned int crossfadeItems : 1; 
     UIView *_accessoryView;
     id _delegate;
     NSMutableArray *_itemStack;
@@ -36,9 +37,9 @@
     UIView *_titleView;
 }
 
-@property(retain) UIColor *tintColor; /* unknown property attribute: V_tintColor */
 @property(retain,readonly) UINavigationItem *backItem;
 @property(copy) NSArray *items;
+@property(retain) UIColor *tintColor;
 @property(retain,readonly) UINavigationItem *topItem;
 @property NSInteger barStyle;
 @property id delegate;
@@ -74,9 +75,11 @@
 - (void)_hideButtonsAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_navBarButtonPressed:(id)arg1;
 - (void)_navigationAnimationDidFinish:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (id)_popNavigationItemWithTransition:(NSInteger)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_prepareForPopAnimationWithNewTopItem:(id)arg1;
 - (void)_prepareForPushAnimationWithItems:(id)arg1;
+- (void)_pushNavigationItem:(id)arg1 transition:(NSInteger)arg2;
 - (void)_removeAccessoryView;
 - (void)_removeItemsFromSuperview:(id)arg1;
 - (void)_setItems:(id)arg1 transition:(NSInteger)arg2;

@@ -2,26 +2,31 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSString;
 
 @interface GMMRating : PBCodable {
     BOOL _hasStarRatingAverage_E3;
     BOOL _hasTotalReviews;
     NSMutableArray *_numReviewsStarRating1To5s;
+    NSString *_snippet;
     NSInteger _starRatingAverage_E3;
     NSInteger _totalReviews;
 }
 
-@property(retain) NSMutableArray *numReviewsStarRating1To5s; /* unknown property attribute: V_numReviewsStarRating1To5s */
-@property(readonly) BOOL hasTotalReviews; /* unknown property attribute: V_hasTotalReviews */
-@property NSInteger totalReviews; /* unknown property attribute: V_totalReviews */
-@property(readonly) BOOL hasStarRatingAverage_E3; /* unknown property attribute: V_hasStarRatingAverage_E3 */
-@property NSInteger starRatingAverage_E3; /* unknown property attribute: V_starRatingAverage_E3 */
+@property(retain) NSMutableArray *numReviewsStarRating1To5s;
+@property(retain) NSString *snippet;
+@property(readonly) BOOL hasSnippet;
+@property(readonly) BOOL hasStarRatingAverage_E3;
+@property(readonly) BOOL hasTotalReviews;
 @property(readonly) NSInteger numReviewsStarRating1To5sCount;
+@property NSInteger starRatingAverage_E3;
+@property NSInteger totalReviews;
 
 - (void)addNumReviewsStarRating1To5:(NSInteger)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
+- (BOOL)hasSnippet;
 - (BOOL)hasStarRatingAverage_E3;
 - (BOOL)hasTotalReviews;
 - (id)init;
@@ -31,8 +36,10 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setNumReviewsStarRating1To5:(NSInteger)arg1 atIndex:(NSUInteger)arg2;
 - (void)setNumReviewsStarRating1To5s:(id)arg1;
+- (void)setSnippet:(id)arg1;
 - (void)setStarRatingAverage_E3:(NSInteger)arg1;
 - (void)setTotalReviews:(NSInteger)arg1;
+- (id)snippet;
 - (NSInteger)starRatingAverage_E3;
 - (NSInteger)totalReviews;
 - (void)writeTo:(id)arg1;

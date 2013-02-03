@@ -157,8 +157,10 @@
     NSInteger _direction;
     NSInteger _directions[7];
     float _distance;
+    double _echoWaitTime;
     unsigned short _fingerCount;
     } _finger[2];
+    float _flickVelocityThreshold;
     } _gutterFrame;
     SCRCTargetSelectorTimer *_gutterUpTimer;
     float _lastDegrees;
@@ -185,6 +187,7 @@
     } _tapFrame;
     } _tapMultiFrame;
     SCRCTargetSelectorTimer *_tapTimer;
+    double _tapVelocityThreshold;
     float _thumbRegion;
     SCRCTargetSelectorTimer *_trackingTimer;
 }
@@ -208,7 +211,9 @@
 - (float)distance;
 - (struct CGPoint { float x1; float x2; })endLocation;
 - (NSUInteger)fingerCount;
+- (float)flickSpeed;
 - (NSInteger)gestureState;
+- (id)gestureStateString;
 - (void)handleGestureEvent:(id)arg1;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 delegate:(id)arg2 threadKey:(id)arg3;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 delegate:(id)arg2;
@@ -217,7 +222,9 @@
 - (NSInteger)orientation;
 - (struct CGPoint { float x1; float x2; })rawLocation;
 - (void)reset;
+- (void)setFlickSpeed:(float)arg1;
 - (void)setOrientation:(NSInteger)arg1;
+- (void)setTapSpeed:(float)arg1;
 - (struct CGPoint { float x1; float x2; })startLocation;
 - (NSUInteger)tapCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tapFrame;
@@ -225,6 +232,7 @@
 - (BOOL)tapIsDown;
 - (struct CGPoint { float x1; float x2; })tapPoint;
 - (struct CGPoint { float x1; float x2; })tapPointWeightedToSides;
+- (float)tapSpeed;
 - (float)vector;
 - (float)velocity;
 

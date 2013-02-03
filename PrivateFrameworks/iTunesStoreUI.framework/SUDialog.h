@@ -10,8 +10,8 @@
     ISDialog *_dialog;
 }
 
-@property(readonly) ISDialog *dialog; /* unknown property attribute: V_dialog */
-@property <SUDialogDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <SUDialogDelegate> *delegate;
+@property(readonly) ISDialog *dialog;
 
 - (id)_alertView;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;

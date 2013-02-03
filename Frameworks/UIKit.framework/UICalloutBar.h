@@ -39,17 +39,20 @@
     } m_pointBelowControls;
     BOOL m_pointPositionedBelowControls;
     NSMutableArray *m_rectsToEvade;
+    id m_responderTarget;
+    BOOL m_shouldAppear;
     } m_targetRect;
     BOOL m_updateVisibleItems;
 }
 
-@property CGRect targetRect; /* unknown property attribute: Vm_targetRect */
-@property(readonly) NSArray *rectsToEvade; /* unknown property attribute: Vm_rectsToEvade */
-@property id delegate; /* unknown property attribute: Vm_delegate */
-@property CGRect controlFrame; /* unknown property attribute: Vm_controlFrame */
-@property BOOL pointPositionedBelowControls; /* unknown property attribute: Vm_pointPositionedBelowControls */
-@property CGPoint pointBelowControls; /* unknown property attribute: Vm_pointBelowControls */
-@property CGPoint pointAboveControls; /* unknown property attribute: Vm_pointAboveControls */
+@property(readonly) NSArray *rectsToEvade;
+@property UIResponder *responderTarget;
+@property CGRect controlFrame;
+@property id delegate;
+@property CGPoint pointAboveControls;
+@property CGPoint pointBelowControls;
+@property BOOL pointPositionedBelowControls;
+@property CGRect targetRect;
 @property(readonly) BOOL visible;
 
 + (void)fadeSharedCalloutBar;
@@ -70,7 +73,9 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })controlFrame;
 - (void)dealloc;
 - (id)delegate;
+- (void)expandAfterAlertOrBecomeActive:(id)arg1;
 - (void)fade;
+- (void)flattenForAlertOrResignActive:(id)arg1;
 - (void)hide;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGPoint { float x1; float x2; })pointAboveControls;
@@ -82,11 +87,13 @@
 - (BOOL)rectClear:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)rectsToEvade;
 - (void)removeFromSuperview;
+- (id)responderTarget;
 - (void)setControlFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPointAboveControls:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPointBelowControls:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPointPositionedBelowControls:(BOOL)arg1;
+- (void)setResponderTarget:(id)arg1;
 - (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 pointBelowControls:(struct CGPoint { float x1; float x2; })arg2 pointAboveControls:(struct CGPoint { float x1; float x2; })arg3;
 - (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)targetForAction:(SEL)arg1;

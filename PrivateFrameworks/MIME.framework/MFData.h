@@ -4,15 +4,17 @@
 
 @class NSData, NSString;
 
-@interface MFData : NSData <NSCopying, NSMutableCopying> {
+@interface MFData : NSData <NSCopying, NSMutableCopying, WeaklyReferencedObject> {
     NSData *_internal;
     NSData *_parent;
     NSString *_path;
     BOOL _subdata;
 }
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)setDefaultMappingThresholdInBytes:(NSUInteger)arg1;
 
+- (id)_initWithData:(id)arg1 maybeMutable:(BOOL)arg2;
 - (id)_initWithFile:(id)arg1;
 - (id)_initWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 from:(id)arg2 retainingParent:(BOOL)arg3;
 - (const void*)bytes;
@@ -29,8 +31,13 @@
 - (id)initWithContentsOfURL:(id)arg1 options:(NSUInteger)arg2 error:(id*)arg3;
 - (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithData:(id)arg1;
+- (id)initWithImmutableData:(id)arg1;
 - (NSUInteger)length;
+- (BOOL)mf_immutable;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (void)release;
+- (id)retain;
+- (NSUInteger)retainCount;
 - (id)subdataWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
 - (BOOL)writeToFile:(id)arg1 options:(NSUInteger)arg2 error:(id*)arg3;

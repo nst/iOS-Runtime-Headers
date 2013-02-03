@@ -17,9 +17,9 @@
     UITouch *_touch;
 }
 
-@property float allowableMovement; /* unknown property attribute: V_allowableMovement */
-@property(retain) UITouch *touch; /* unknown property attribute: V_touch */
-@property NSInteger numberOfFullTaps; /* unknown property attribute: V_numberOfFullTaps */
+@property(retain) UITouch *touch;
+@property float allowableMovement;
+@property NSInteger numberOfFullTaps;
 
 - (void)_verifyMovementInAllowableRange;
 - (float)allowableMovement;

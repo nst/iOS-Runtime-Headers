@@ -7,21 +7,38 @@
 @interface CalDAVCalendarProperties : NSObject {
     NSString *_calendarColor;
     NSString *_calendarDescription;
+    NSString *_ctag;
     NSString *_displayName;
     NSString *_path;
     NSArray *_supportedComponents;
+    NSInteger _writeable;
 }
+
+@property(retain) NSString *calendarColor;
+@property(retain) NSString *calendarDescription;
+@property(retain) NSString *ctag;
+@property(retain) NSString *displayName;
+@property(retain) NSString *path;
+@property(retain) NSArray *supportedComponents;
+@property(getter=isWriteable) NSInteger writeable;
+
++ (id)writeableStringForWriteable:(NSInteger)arg1;
 
 - (id)calendarColor;
 - (id)calendarDescription;
+- (id)ctag;
 - (void)dealloc;
+- (id)description;
 - (id)displayName;
+- (NSInteger)isWriteable;
 - (id)path;
 - (void)setCalendarColor:(id)arg1;
 - (void)setCalendarDescription:(id)arg1;
+- (void)setCtag:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setPath:(id)arg1;
 - (void)setSupportedComponents:(id)arg1;
+- (void)setWriteable:(NSInteger)arg1;
 - (id)supportedComponents;
 
 @end

@@ -9,7 +9,8 @@
         unsigned int animationInProgress : 1; 
         unsigned int ignoresInteractionEvents : 1; 
         unsigned int shouldNotifyDidCompleteImmediately : 1; 
-        unsigned int reserved : 29; 
+        unsigned int shouldRestoreFromViewAlpha : 1; 
+        unsigned int reserved : 28; 
     id _delegate;
     UIResponder *_firstResponderToRemember;
     UIView *_fromView;

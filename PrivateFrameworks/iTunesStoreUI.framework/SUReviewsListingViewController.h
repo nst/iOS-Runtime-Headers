@@ -13,10 +13,11 @@
 - (id)_headerItem;
 - (void)_reloadHeaderView;
 - (void)_writeAReview:(id)arg1;
-- (id)createDataSource;
 - (void)dealloc;
+- (id)init;
 - (void)loadView;
 - (void)reloadData;
+- (void)reloadForChangedRowCount:(NSInteger)arg1;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewWillAppear:(BOOL)arg1;
 

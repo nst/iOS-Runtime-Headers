@@ -11,9 +11,9 @@
     NSUInteger _queryID;
 }
 
-@property(readonly) SPSearchQuery *query; /* unknown property attribute: V_query */
-@property(readonly) NSUInteger queryID; /* unknown property attribute: V_queryID */
-@property <SPDaemonQueryDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <SPDaemonQueryDelegate> *delegate;
+@property(readonly) SPSearchQuery *query;
+@property(readonly) NSUInteger queryID;
 
 - (void)_callbackPipeBrokenCallback:(struct __CFMachPort { }*)arg1;
 - (void)_sendCompletion;

@@ -16,7 +16,7 @@
         unsigned int didFinishBodyDataLoad : 1; 
         unsigned int bodyDataReadSize : 1; 
         unsigned int setServerMessageCount : 1; 
-    unsigned int _capabilityFlags : 12;
+    unsigned int _capabilityFlags : 13;
     unsigned int _capabilitiesAreFresh : 1;
     unsigned int _gotBadResponse : 1;
     unsigned int _connectionState : 3;

@@ -11,10 +11,10 @@
     UILabel *_titleLabel;
 }
 
-@property NSInteger layoutPreset; /* unknown property attribute: V_layoutPreset */
 @property(retain) NSString *body;
 @property(retain) UIImage *image;
 @property(retain) NSString *title;
+@property NSInteger layoutPreset;
 
 - (id)_bodyLabel;
 - (id)_imageView;

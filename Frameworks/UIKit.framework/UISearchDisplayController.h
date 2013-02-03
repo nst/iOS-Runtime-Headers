@@ -26,19 +26,21 @@
     UIViewController *_viewController;
 }
 
-@property(readonly) UITableView *searchResultsTableView; /* unknown property attribute: V_tableView */
-@property <UITableViewDelegate> *searchResultsDelegate; /* unknown property attribute: V_tableViewDelegate */
-@property <UITableViewDataSource> *searchResultsDataSource; /* unknown property attribute: V_tableViewDataSource */
-@property(readonly) UISearchBar *searchBar; /* unknown property attribute: V_searchBar */
-@property(readonly) UIViewController *searchContentsController; /* unknown property attribute: V_viewController */
-@property <UISearchDisplayDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <UISearchDisplayDelegate> *delegate;
 @property(copy) NSString *noResultsMessage;
+@property(readonly) UISearchBar *searchBar;
+@property(readonly) UIViewController *searchContentsController;
+@property <UITableViewDataSource> *searchResultsDataSource;
+@property <UITableViewDelegate> *searchResultsDelegate;
+@property(readonly) UITableView *searchResultsTableView;
 @property(getter=isActive) BOOL active;
 @property BOOL automaticallyShowsNoResultsMessage;
 @property BOOL noResultsMessageVisible;
 
+- (void)_cleanUpSearchBar;
 - (void)_clearViewController;
 - (void)_configureNewSearchBar;
+- (void)_configureSearchBarForTableView;
 - (id)_containingTableView;
 - (id)_containingViewOfClass:(Class)arg1;
 - (void)_destroyManagedTableView;
@@ -48,6 +50,8 @@
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)_managedTableViewDidScroll;
+- (void)_searchBarSuperviewChanged;
+- (void)_searchBarSuperviewWillChange;
 - (void)_setTableViewVisible:(BOOL)arg1 inView:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_tableViewFrame;
 - (void)_updateNoSearchResultsMessageVisiblity;

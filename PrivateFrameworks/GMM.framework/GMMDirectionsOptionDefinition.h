@@ -12,12 +12,12 @@
     NSInteger _type;
 }
 
-@property NSInteger defaultValue; /* unknown property attribute: V_defaultValue */
-@property(retain) NSMutableArray *allowableValuess; /* unknown property attribute: V_allowableValuess */
-@property NSInteger type; /* unknown property attribute: V_type */
-@property(retain) NSString *optionText; /* unknown property attribute: V_optionText */
-@property NSInteger iD; /* unknown property attribute: V_iD */
+@property(retain) NSMutableArray *allowableValuess;
+@property(retain) NSString *optionText;
 @property(readonly) NSInteger allowableValuessCount;
+@property NSInteger defaultValue;
+@property NSInteger iD;
+@property NSInteger type;
 
 - (void)addAllowableValues:(id)arg1;
 - (id)allowableValuesAtIndex:(NSUInteger)arg1;
@@ -26,6 +26,7 @@
 - (void)dealloc;
 - (NSInteger)defaultValue;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (NSInteger)iD;
 - (id)init;
 - (id)optionText;

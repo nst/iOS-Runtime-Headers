@@ -14,7 +14,7 @@
     UITouch *_trackingTouch;
 }
 
-@property(readonly) NSInteger swipeDirection; /* unknown property attribute: V_swipeDirection */
+@property(readonly) NSInteger swipeDirection;
 
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;

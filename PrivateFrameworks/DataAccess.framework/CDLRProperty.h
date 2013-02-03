@@ -10,9 +10,9 @@
     NSString *value;
 }
 
-@property NSInteger statusCode; /* unknown property attribute: VstatusCode */
-@property(retain) NSString *value; /* unknown property attribute: Vvalue */
-@property NSInteger type; /* unknown property attribute: Vtype */
+@property(retain) NSString *value;
+@property NSInteger statusCode;
+@property NSInteger type;
 
 - (void)dealloc;
 - (id)initWithType:(NSInteger)arg1 value:(id)arg2 statusCode:(NSInteger)arg3;

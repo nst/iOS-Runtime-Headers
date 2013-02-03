@@ -10,9 +10,9 @@
     NSString *_searchDescription;
 }
 
-@property NSInteger scope; /* unknown property attribute: V_scope */
-@property(retain) NSString *searchBase; /* unknown property attribute: V_searchBase */
-@property(retain) NSString *searchDescription; /* unknown property attribute: V_searchDescription */
+@property(retain) NSString *searchBase;
+@property(retain) NSString *searchDescription;
+@property NSInteger scope;
 
 - (void)dealloc;
 - (id)description;

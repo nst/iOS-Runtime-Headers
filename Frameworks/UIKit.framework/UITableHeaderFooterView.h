@@ -21,8 +21,8 @@
     NSInteger _tableViewStyle;
 }
 
-@property BOOL sectionHeader; /* unknown property attribute: V_sectionHeader */
 @property(retain) NSString *text;
+@property BOOL sectionHeader;
 @property NSInteger tableViewStyle;
 
 + (id)_defaultFontForTableViewStyle:(NSInteger)arg1 isSectionHeader:(BOOL)arg2;

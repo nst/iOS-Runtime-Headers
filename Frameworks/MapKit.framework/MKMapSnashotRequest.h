@@ -16,11 +16,11 @@
     NSUInteger _zoomLevel;
 }
 
-@property CGSize size; /* unknown property attribute: V_size */
-@property NSUInteger zoomLevel; /* unknown property attribute: V_zoomLevel */
-@property ? coordinate; /* unknown property attribute: V_coordinate */
-@property(retain) id requester; /* unknown property attribute: V_requester */
-@property(retain) id context; /* unknown property attribute: V_context */
+@property(retain) id context;
+@property ? coordinate;
+@property(retain) id requester;
+@property CGSize size;
+@property NSUInteger zoomLevel;
 
 - (id)context;
 - (struct { double x1; double x2; })coordinate;

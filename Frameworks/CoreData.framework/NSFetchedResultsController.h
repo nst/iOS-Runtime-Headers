@@ -31,13 +31,13 @@
     id _sortKeys;
 }
 
-@property <NSFetchedResultsControllerDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property(readonly) NSString *cacheName; /* unknown property attribute: V_cacheName */
-@property(readonly) NSString *sectionNameKeyPath; /* unknown property attribute: V_sectionNameKeyPath */
-@property(readonly) NSManagedObjectContext *managedObjectContext; /* unknown property attribute: V_managedObjectContext */
-@property(readonly) NSFetchRequest *fetchRequest; /* unknown property attribute: V_fetchRequest */
+@property(readonly) NSString *cacheName;
+@property <NSFetchedResultsControllerDelegate> *delegate;
+@property(readonly) NSFetchRequest *fetchRequest;
 @property(readonly) NSArray *fetchedObjects;
+@property(readonly) NSManagedObjectContext *managedObjectContext;
 @property(readonly) NSArray *sectionIndexTitles;
+@property(readonly) NSString *sectionNameKeyPath;
 @property(readonly) NSArray *sections;
 
 + (id)_CoreDataSectionCachesPath;
@@ -48,6 +48,7 @@
 - (id)_createNewSectionForObject:(id)arg1;
 - (BOOL)_didUseCachedSectionInfo;
 - (void)_dumpSectionInfo;
+- (BOOL)_hasFetchedObjects;
 - (NSUInteger)_indexOfFetchedID:(id)arg1;
 - (id)_indexPathForIndex:(NSUInteger)arg1;
 - (void)_insertObjectInFetchedObjects:(id)arg1 atIndex:(NSUInteger)arg2;

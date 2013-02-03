@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class UIModalView;
+@class NSMutableArray, UIModalView;
 
 @interface SheetController : NSObject <BrowserPanel, UIModalViewDelegate> {
     NSInteger _actionToPerform;
+    NSMutableArray *_alertInvocationQueue;
     id _delegate;
     UIModalView *_sheet;
     struct __CFDictionary { } *_sheets;

@@ -42,6 +42,7 @@
 - (void)_releaseLockDueNotificationPostFailure:(id)arg1;
 - (void)_seedFlockerWaitingForITDBPrepIfNecessary;
 - (void)_seedObserversNeedingStartNotification;
+- (void)_seedWillStartNotificationIfAlreadySyncing;
 - (BOOL)_waitingForFilelock;
 - (void)dealloc;
 - (BOOL)iTunesIsSyncing;

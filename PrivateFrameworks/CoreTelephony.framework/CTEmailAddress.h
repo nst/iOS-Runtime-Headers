@@ -8,7 +8,7 @@
     NSString *_address;
 }
 
-@property(readonly) NSString *address; /* unknown property attribute: V_address */
+@property(readonly) NSString *address;
 
 + (id)emailAddress:(id)arg1;
 

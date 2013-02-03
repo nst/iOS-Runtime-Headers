@@ -13,12 +13,12 @@
     BOOL _userNameIsEditable;
 }
 
-@property BOOL userNameIsEditable; /* unknown property attribute: V_userNameIsEditable */
-@property(retain) NSString *user; /* unknown property attribute: V_user */
-@property <NSURLAuthenticationChallengeSender> *sender; /* unknown property attribute: V_sender */
-@property(retain) NSString *password; /* unknown property attribute: V_password */
-@property BOOL hasPassword; /* unknown property attribute: V_hasPassword */
-@property NSInteger failureCount; /* unknown property attribute: V_failureCount */
+@property(retain) NSString *password;
+@property <NSURLAuthenticationChallengeSender> *sender;
+@property(retain) NSString *user;
+@property NSInteger failureCount;
+@property BOOL hasPassword;
+@property BOOL userNameIsEditable;
 
 - (void)dealloc;
 - (NSInteger)failureCount;

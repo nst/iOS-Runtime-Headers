@@ -8,7 +8,7 @@
     MPMediaPickerController *_parentController;
 }
 
-@property MPMediaPickerController *parentController; /* unknown property attribute: V_parentController */
+@property MPMediaPickerController *parentController;
 
 - (void)didMoveToWindow;
 - (id)parentController;

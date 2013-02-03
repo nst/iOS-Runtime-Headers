@@ -10,11 +10,11 @@
     NSString *m_name;
 }
 
-@property BOOL explicit; /* unknown property attribute: Vm_explicit */
-@property(readonly) NSArray *list; /* unknown property attribute: Vm_list */
-@property(copy) NSString *name; /* unknown property attribute: Vm_name */
+@property(readonly) NSArray *list;
+@property(copy) NSString *name;
 @property(readonly) NSArray *names;
 @property(readonly) NSUInteger count;
+@property BOOL explicit;
 
 - (id)arrayValueForName:(id)arg1;
 - (BOOL)boolValueForName:(id)arg1;

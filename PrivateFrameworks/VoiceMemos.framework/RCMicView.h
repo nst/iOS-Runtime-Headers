@@ -10,7 +10,7 @@
     UIImageView *_whiteGlowView;
 }
 
-@property <RCMicViewDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <RCMicViewDelegate> *delegate;
 
 - (void)dealloc;
 - (id)delegate;

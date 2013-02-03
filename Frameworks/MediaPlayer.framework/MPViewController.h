@@ -16,10 +16,10 @@
 }
 
 @property(getter=idleTimerDisabled) BOOL idleTimerDisabled; /* unknown property attribute: SsetIdleTimerDisabled: */
-@property NSInteger orientation; /* unknown property attribute: V_orientation */
-@property(retain) MPItem *item; /* unknown property attribute: V_item */
+@property(retain) MPItem *item;
 @property id delegate;
 @property BOOL observesApplicationSuspendResumeEventsOnly;
+@property NSInteger orientation;
 
 - (void)_disableIdleTimer:(id)arg1;
 - (void)_popTransitionEnded:(id)arg1;

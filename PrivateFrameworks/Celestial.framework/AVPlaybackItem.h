@@ -28,12 +28,12 @@
     NSDictionary *_streamStateNotificationInfo;
 }
 
-@property BOOL isPreparingForInspection; /* unknown property attribute: V_isPreparingForInspection */
-@property BOOL isInPlayQueue; /* unknown property attribute: V_isInPlayQueue */
-@property(retain) NSDictionary *lyricsNotificationInfo; /* unknown property attribute: V_lyricsNotificationInfo */
-@property(retain) NSDictionary *streamStateNotificationInfo; /* unknown property attribute: V_streamStateNotificationInfo */
-@property(retain) NSDictionary *playToEndNotificationInfo; /* unknown property attribute: V_playToEndNotificationInfo */
-@property(retain) NSDictionary *inspectionNotificationInfo; /* unknown property attribute: V_inspectionNotificationInfo */
+@property(retain) NSDictionary *inspectionNotificationInfo;
+@property(retain) NSDictionary *lyricsNotificationInfo;
+@property(retain) NSDictionary *playToEndNotificationInfo;
+@property(retain) NSDictionary *streamStateNotificationInfo;
+@property BOOL isInPlayQueue;
+@property BOOL isPreparingForInspection;
 
 - (void)addFPListeners;
 - (BOOL)addToPlayQueue:(struct OpaqueFigPlayer { }*)arg1 afterItem:(struct OpaqueFigPlaybackItem { }*)arg2;
@@ -75,6 +75,5 @@
 - (void)setStreamStateNotificationInfo:(id)arg1;
 - (void)stealControlOfAVItem;
 - (id)streamStateNotificationInfo;
-- (id)urlFromPath:(id)arg1;
 
 @end

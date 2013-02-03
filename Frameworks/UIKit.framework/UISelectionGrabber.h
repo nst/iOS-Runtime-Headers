@@ -14,13 +14,13 @@
     BOOL m_navigationTransitionFlattened;
 }
 
-@property BOOL animating; /* unknown property attribute: Vm_animating */
-@property BOOL navigationTransitionFlattened; /* unknown property attribute: Vm_navigationTransitionFlattened */
-@property BOOL activeFlattened; /* unknown property attribute: Vm_activeFlattened */
-@property BOOL alertFlattened; /* unknown property attribute: Vm_alertFlattened */
-@property BOOL isStart; /* unknown property attribute: Vm_isStart */
-@property BOOL isDotted; /* unknown property attribute: Vm_isDotted */
 @property(readonly) UITextRangeView *hostView;
+@property BOOL activeFlattened;
+@property BOOL alertFlattened;
+@property BOOL animating;
+@property BOOL isDotted;
+@property BOOL isStart;
+@property BOOL navigationTransitionFlattened;
 
 - (BOOL)activeFlattened;
 - (BOOL)alertFlattened;

@@ -39,11 +39,11 @@
     NSUInteger m_uid;
 }
 
-@property(readonly) NSUInteger uid; /* unknown property attribute: Vm_uid */
-@property CGRect paddedFrame; /* unknown property attribute: Vm_paddedFrame */
-@property(readonly) CGRect originalFrame; /* unknown property attribute: Vm_originalFrame */
-@property CGRect frame; /* unknown property attribute: Vm_frame */
-@property(retain) UIKBGeometry *geometry; /* unknown property attribute: Vm_geometry */
+@property(retain) UIKBGeometry *geometry;
+@property CGRect frame;
+@property(readonly) CGRect originalFrame;
+@property CGRect paddedFrame;
+@property(readonly) NSUInteger uid;
 
 + (id)shape;
 

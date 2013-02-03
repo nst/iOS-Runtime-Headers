@@ -34,8 +34,10 @@
 - (id)_kb_firstObject;
 - (BOOL)_kb_firstObjectsEqual:(NSUInteger)arg1;
 - (BOOL)_kb_firstTwoObjectsEqual;
+- (id)_mapkit_annotationViewsWithoutClass:(Class)arg1;
 - (id)_mapkit_arrayByRemovingObject:(id)arg1;
 - (NSUInteger)_mapkit_indexForObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
+- (void)_mapkit_orientableAnnotationViewsFixed:(id*)arg1 notFixed:(id*)arg2;
 - (id)_maxForKeyPath:(id)arg1;
 - (id)_minForKeyPath:(id)arg1;
 - (id)_mutableArrayValueForKeyPath:(id)arg1 ofObjectAtIndex:(NSUInteger)arg2;
@@ -74,6 +76,7 @@
 - (BOOL)containsObjectIdenticalTo:(id)arg1;
 - (BOOL)containsObjectIdenticalTo:(id)arg1;
 - (id)convertToXML;
+- (void)copyPhotosToPasteboard;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (NSUInteger)count;
 - (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
@@ -127,7 +130,6 @@
 - (id)mf_indicesOfStringsWithPrefix:(id)arg1;
 - (id)mf_uncommentedAddressList;
 - (id)mutableCopyOfComponentsJoinedByString:(id)arg1;
-- (id)mutableCopyOfComponentsJoinedByString:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)nextToLastObject;
 - (id)objectAtIndex:(NSUInteger)arg1;
@@ -149,7 +151,7 @@
 - (id)sortedArrayUsingFunction:(int (*)())arg1 context:(void*)arg2;
 - (id)sortedArrayUsingSelector:(SEL)arg1 hint:(id)arg2;
 - (id)sortedArrayUsingSelector:(SEL)arg1;
-- (id)sortedAttendeeDisplayStrings;
+- (id)sortedAttendeeDisplayStringsIgnoringNonHumans;
 - (id)sortedPartsFromSMIL;
 - (id)specifierForID:(id)arg1;
 - (id)stringsByAppendingPathComponent:(id)arg1;

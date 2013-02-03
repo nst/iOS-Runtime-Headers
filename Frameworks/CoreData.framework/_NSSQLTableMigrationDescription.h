@@ -20,8 +20,8 @@
     NSMutableArray *_transformedManyToManys;
 }
 
-@property(readonly) NSSQLEntity *rootEntity; /* unknown property attribute: V_rootEntity */
-@property(readonly) NSInteger migrationType; /* unknown property attribute: V_migrationType */
+@property(readonly) NSSQLEntity *rootEntity;
+@property(readonly) NSInteger migrationType;
 
 - (id)_addedManyToManys;
 - (BOOL)_hasTransformedTableSchema;

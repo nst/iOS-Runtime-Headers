@@ -2,10 +2,12 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSExpression;
 
 @interface NSSQLSimpleWhereIntermediate : NSSQLWhereIntermediate {
     NSMutableArray *_comparisonPredicateScopedItem;
+    NSExpression *_effectiveLeftExpression;
+    NSExpression *_effectiveRightExpression;
 }
 
 - (long)_cfStringOptionsFromPredicateOptions:(NSUInteger)arg1;
@@ -28,5 +30,7 @@
 - (id)_sqlTokenForPredicateOperator:(NSUInteger)arg1 inContext:(id)arg2;
 - (void)dealloc;
 - (id)generateSQLStringInContext:(id)arg1;
+- (id)initWithPredicate:(id)arg1 inScope:(id)arg2;
+- (BOOL)isOrScoped;
 
 @end

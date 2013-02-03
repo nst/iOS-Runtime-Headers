@@ -7,10 +7,12 @@
 @interface CTPhoneNumber : NSObject <NSCopying, CTMessageAddress> {
     NSString *_countryCode;
     NSString *_digits;
+    BOOL _isShortCode;
 }
 
-@property(readonly) NSString *countryCode; /* unknown property attribute: V_countryCode */
-@property(readonly) NSString *digits; /* unknown property attribute: V_digits */
+@property(readonly) NSString *countryCode;
+@property(readonly) NSString *digits;
+@property BOOL isShortCode;
 
 + (id)phoneNumberWithDigits:(id)arg1 countryCode:(id)arg2;
 
@@ -22,5 +24,8 @@
 - (id)encodedString;
 - (id)formatForCallingCountry:(id)arg1;
 - (id)initWithDigits:(id)arg1 countryCode:(id)arg2;
+- (BOOL)isShortCode;
+- (NSInteger)numberOfDigitsForShortCodeNumber;
+- (void)setIsShortCode:(BOOL)arg1;
 
 @end

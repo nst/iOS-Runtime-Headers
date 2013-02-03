@@ -81,7 +81,6 @@
 - (id)mf_pathsAtDirectory:(id)arg1 beginningWithString:(id)arg2;
 - (BOOL)moveItemAtPath:(id)arg1 toPath:(id)arg2 error:(id*)arg3;
 - (id)pathContentOfSymbolicLinkAtPath:(id)arg1;
-- (id)rawDirectoryContentsAtPath:(id)arg1;
 - (BOOL)removeExtendedAttributeForKey:(id)arg1 atPath:(id)arg2 error:(id*)arg3;
 - (BOOL)removeFileAtPath:(id)arg1 handler:(id)arg2;
 - (BOOL)removeItemAtPath:(id)arg1 error:(id*)arg2;

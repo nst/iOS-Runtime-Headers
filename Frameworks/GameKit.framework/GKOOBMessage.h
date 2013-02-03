@@ -6,7 +6,7 @@
     NSInteger _type;
 }
 
-@property(readonly) NSInteger type; /* unknown property attribute: V_type */
+@property(readonly) NSInteger type;
 
 - (id)data;
 - (id)initWithBytes:(void*)arg1 length:(unsigned long)arg2;

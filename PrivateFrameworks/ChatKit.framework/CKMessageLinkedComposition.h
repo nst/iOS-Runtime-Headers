@@ -8,7 +8,7 @@
     CKMessage *_message;
 }
 
-@property(retain) CKMessage *message; /* unknown property attribute: V_message */
+@property(retain) CKMessage *message;
 
 - (void)dealloc;
 - (BOOL)isTextOnly;

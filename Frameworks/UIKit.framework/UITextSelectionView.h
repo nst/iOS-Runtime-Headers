@@ -18,14 +18,14 @@
     BOOL m_visible;
 }
 
-@property BOOL showRangedSelection; /* unknown property attribute: Vm_showRangedSelection */
-@property BOOL visible; /* unknown property attribute: Vm_visible */
-@property(readonly) UIView<UITextSelectingContainer> *view; /* unknown property attribute: Vm_view */
-@property(readonly) NSInteger state; /* unknown property attribute: Vm_state */
-@property(readonly) UIView *caretView; /* unknown property attribute: Vm_caretView */
-@property BOOL caretBlinks; /* unknown property attribute: Vm_caretBlinks */
+@property(readonly) UIView *caretView;
 @property(readonly) UITextRangeView *rangeView;
+@property(readonly) UIView<UITextSelectingContainer> *view;
+@property BOOL caretBlinks;
 @property(readonly) BOOL selectionCommandsShowing;
+@property BOOL showRangedSelection;
+@property(readonly) NSInteger state;
+@property BOOL visible;
 
 - (void)activate;
 - (void)cancelDelayedSelectionCommandRequests;

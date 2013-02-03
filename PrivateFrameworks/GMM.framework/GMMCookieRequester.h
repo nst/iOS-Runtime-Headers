@@ -6,7 +6,7 @@
     unsigned long long _cookie;
 }
 
-@property(readonly) unsigned long long cookie; /* unknown property attribute: V_cookie */
+@property(readonly) unsigned long long cookie;
 
 - (unsigned long long)cookie;
 - (BOOL)readResponsePreamble:(id)arg1;

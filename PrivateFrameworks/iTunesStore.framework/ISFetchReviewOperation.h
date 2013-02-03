@@ -13,12 +13,12 @@
     NSURL *_url;
 }
 
-@property(retain) NSURL *url; /* unknown property attribute: V_url */
-@property NSUInteger softwareVersionIdentifier; /* unknown property attribute: V_softwareVersionIdentifier */
-@property(retain) ISReview *review; /* unknown property attribute: V_review */
-@property unsigned long long itemIdentifier; /* unknown property attribute: V_itemIdentifier */
-@property(getter=isBackgroundReview) BOOL backgroundReview; /* unknown property attribute: V_backgroundReview */
-@property NSInteger assetType; /* unknown property attribute: V_assetType */
+@property(retain) ISReview *review;
+@property(retain) NSURL *url;
+@property NSInteger assetType;
+@property(getter=isBackgroundReview) BOOL backgroundReview;
+@property unsigned long long itemIdentifier;
+@property NSUInteger softwareVersionIdentifier;
 
 - (void)_fetchReviewInformation;
 - (NSInteger)assetType;

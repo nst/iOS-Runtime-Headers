@@ -12,12 +12,12 @@
     NSMutableArray *m_supportedTypes;
 }
 
-@property(copy) NSArray *supportedTypes; /* unknown property attribute: Vm_supportedTypes */
-@property(copy) UIKBAttributeList *attributes; /* unknown property attribute: Vm_attributes */
-@property(retain) NSArray *keylayouts; /* unknown property attribute: Vm_keylayouts */
-@property(retain) NSString *name; /* unknown property attribute: Vm_name */
+@property(copy) UIKBAttributeList *attributes;
+@property(retain) NSArray *keylayouts;
 @property(readonly) NSArray *keys;
 @property(readonly) NSArray *keysOrderedByPosition;
+@property(retain) NSString *name;
+@property(copy) NSArray *supportedTypes;
 
 + (id)keyplane;
 

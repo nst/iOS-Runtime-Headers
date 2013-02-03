@@ -64,30 +64,30 @@
     } m_touchOffset;
 }
 
-@property BOOL rotating; /* unknown property attribute: Vm_rotating */
-@property BOOL scaling; /* unknown property attribute: Vm_scaling */
-@property BOOL isScrolling; /* unknown property attribute: Vm_scrolling */
-@property BOOL inGesture; /* unknown property attribute: Vm_inGesture */
-@property BOOL magnifying; /* unknown property attribute: Vm_magnifying */
-@property BOOL commandsWereShowing; /* unknown property attribute: Vm_commandsWereShowing */
-@property BOOL animateUpdate; /* unknown property attribute: Vm_animateUpdate */
-@property(retain) UISelectionGrabber *endGrabber; /* unknown property attribute: Vm_endGrabber */
-@property(retain) UISelectionGrabber *startGrabber; /* unknown property attribute: Vm_startGrabber */
-@property double firstMovedTime; /* unknown property attribute: Vm_firstMovedTime */
-@property CGPoint touchOffset; /* unknown property attribute: Vm_touchOffset */
-@property float initialDistance; /* unknown property attribute: Vm_initialDistance */
-@property CGPoint initialExtentPoint; /* unknown property attribute: Vm_initialExtentPoint */
-@property CGPoint initialBasePoint; /* unknown property attribute: Vm_initialBasePoint */
-@property CGPoint extentPoint; /* unknown property attribute: Vm_extentPoint */
-@property CGPoint basePoint; /* unknown property attribute: Vm_basePoint */
-@property CGRect endEdge; /* unknown property attribute: Vm_endEdge */
-@property CGRect startEdge; /* unknown property attribute: Vm_startEdge */
-@property BOOL baseIsStart; /* unknown property attribute: Vm_baseIsStart */
-@property(retain) UITouch *activeTouch; /* unknown property attribute: Vm_activeTouch */
-@property(copy) NSArray *rects; /* unknown property attribute: Vm_rects */
+@property(retain) UITouch *activeTouch;
 @property(readonly) UIView<UITextSelectingContainer> *container;
+@property(retain) UISelectionGrabber *endGrabber;
+@property(copy) NSArray *rects;
 @property(readonly) UITextSelectionView *selectionView;
+@property(retain) UISelectionGrabber *startGrabber;
+@property BOOL animateUpdate;
 @property(readonly) BOOL autoscrolled;
+@property BOOL baseIsStart;
+@property CGPoint basePoint;
+@property BOOL commandsWereShowing;
+@property CGRect endEdge;
+@property CGPoint extentPoint;
+@property double firstMovedTime;
+@property BOOL inGesture;
+@property CGPoint initialBasePoint;
+@property float initialDistance;
+@property CGPoint initialExtentPoint;
+@property BOOL isScrolling;
+@property BOOL magnifying;
+@property BOOL rotating;
+@property BOOL scaling;
+@property CGRect startEdge;
+@property CGPoint touchOffset;
 
 - (id)activeTouch;
 - (BOOL)animateUpdate;

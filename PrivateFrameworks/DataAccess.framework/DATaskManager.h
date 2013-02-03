@@ -18,10 +18,10 @@
     NSInteger _state;
 }
 
-@property(readonly) NSArray *queuedTasks; /* unknown property attribute: V_queuedTasks */
-@property(readonly) <DATask> *activeQueuedTask; /* unknown property attribute: V_activeQueuedTask */
-@property(readonly) <DATask> *activeModalTask; /* unknown property attribute: V_activeModalTask */
+@property(readonly) <DATask> *activeModalTask;
+@property(readonly) <DATask> *activeQueuedTask;
 @property(readonly) NSArray *allTasks;
+@property(readonly) NSArray *queuedTasks;
 
 - (void)_cancelTasksWithReason:(NSInteger)arg1;
 - (id)_getHeldIndependentTasks;

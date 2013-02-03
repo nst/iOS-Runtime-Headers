@@ -14,16 +14,16 @@
     NSString *_raw_text;
 }
 
-@property(retain) NSMutableArray *cross_streets; /* unknown property attribute: V_cross_streets */
-@property(readonly) BOOL hasIs_mailing; /* unknown property attribute: V_hasIs_mailing */
-@property BOOL is_mailing; /* unknown property attribute: V_is_mailing */
-@property(readonly) BOOL hasIs_physical; /* unknown property attribute: V_hasIs_physical */
-@property BOOL is_physical; /* unknown property attribute: V_is_physical */
-@property(retain) NSMutableArray *components; /* unknown property attribute: V_components */
-@property(retain) NSString *raw_text; /* unknown property attribute: V_raw_text */
+@property(retain) NSMutableArray *components;
+@property(retain) NSMutableArray *cross_streets;
+@property(retain) NSString *raw_text;
 @property(readonly) NSInteger componentsCount;
 @property(readonly) NSInteger cross_streetsCount;
+@property(readonly) BOOL hasIs_mailing;
+@property(readonly) BOOL hasIs_physical;
 @property(readonly) BOOL hasRaw_text;
+@property BOOL is_mailing;
+@property BOOL is_physical;
 
 - (void)addComponent:(id)arg1;
 - (void)addCross_street:(id)arg1;
@@ -35,6 +35,7 @@
 - (NSInteger)cross_streetsCount;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasIs_mailing;
 - (BOOL)hasIs_physical;
 - (BOOL)hasRaw_text;

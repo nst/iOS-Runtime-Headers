@@ -17,9 +17,6 @@
 - (void)_mapkit_sortUsingLatitudeAscending:(BOOL)arg1;
 - (void)_mapkit_sortUsingLongitude;
 - (void)_mapkit_sortUsingLongitudeAscending:(BOOL)arg1;
-- (id)abPop;
-- (void)abPush:(id)arg1;
-- (id)abTop;
 - (void)addMessageEntry:(id)arg1;
 - (void)addObject:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;

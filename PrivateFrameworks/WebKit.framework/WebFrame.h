@@ -200,7 +200,6 @@
 - (BOOL)pointAtStartOfLine:(struct CGPoint { float x1; float x2; })arg1;
 - (NSInteger)preferredHeight;
 - (id)provisionalDataSource;
-- (BOOL)rangeAtSentenceStart:(id)arg1;
 - (id)rangeByExtendingCurrentSelection:(NSInteger)arg1;
 - (id)rangeByMovingCurrentSelection:(NSInteger)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForScrollToVisible;
@@ -253,6 +252,7 @@
 - (void)setText:(id)arg1 asChildOfElement:(id)arg2 breakLines:(BOOL)arg3;
 - (void)setTimeoutsPaused:(BOOL)arg1;
 - (void)setUserStyleSheet:(id)arg1;
+- (BOOL)shouldEnableAutoShift;
 - (void)smartExtendRangedSelection:(NSInteger)arg1;
 - (BOOL)spaceFollowsWordInRange:(id)arg1;
 - (void)stopLoading;

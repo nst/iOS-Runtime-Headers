@@ -20,6 +20,7 @@
 - (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
 - (void)dealloc;
 - (id)description;
+- (id)descriptionWithLocale:(id)arg1;
 - (void)getObjects:(id*)arg1;
 - (id)initWithContainer:(id)arg1 key:(id)arg2 mutableSet:(id)arg3;
 - (void)intersectSet:(id)arg1;

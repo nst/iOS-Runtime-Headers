@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSMutableDictionary, NSString, PartialNetworkData, NSData, MimePart;
+@class NSMutableDictionary, NSString, PartialNetworkData, NSData, MimePart, MFData;
 
 @interface MimePart : WRObject <WeakReferenceHolder> {
     struct _NSRange { 
@@ -10,6 +10,7 @@
         NSUInteger length; 
     NSMutableDictionary *_bodyParameters;
     NSString *_contentTransferEncoding;
+    MFData *_decodedData;
     NSData *_fullData;
     MimePart *_nextPart;
     NSMutableDictionary *_otherIvars;

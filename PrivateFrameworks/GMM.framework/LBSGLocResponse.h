@@ -10,11 +10,11 @@
     NSInteger _status;
 }
 
-@property(retain) NSString *platformKey; /* unknown property attribute: V_platformKey */
-@property(retain) NSMutableArray *replyElementss; /* unknown property attribute: V_replyElementss */
-@property NSInteger status; /* unknown property attribute: V_status */
+@property(retain) NSString *platformKey;
+@property(retain) NSMutableArray *replyElementss;
 @property(readonly) BOOL hasPlatformKey;
 @property(readonly) NSInteger replyElementssCount;
+@property NSInteger status;
 
 - (void)addReplyElements:(id)arg1;
 - (void)dealloc;

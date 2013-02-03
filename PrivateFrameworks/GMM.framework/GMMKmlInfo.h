@@ -2,54 +2,29 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, NSString, GMMDocumentInfo;
+@class GMMDocumentInfo;
 
 @interface GMMKmlInfo : PBCodable {
-    NSString *_description;
-    NSMutableArray *_folderNames;
     BOOL _hasIsUserCreated;
     BOOL _isUserCreated;
-    NSString *_kmlId;
-    NSString *_snippet;
     GMMDocumentInfo *_sourceDocument;
 }
 
-@property(readonly) BOOL hasIsUserCreated; /* unknown property attribute: V_hasIsUserCreated */
-@property BOOL isUserCreated; /* unknown property attribute: V_isUserCreated */
-@property(retain) NSString *kmlId; /* unknown property attribute: V_kmlId */
-@property(retain) GMMDocumentInfo *sourceDocument; /* unknown property attribute: V_sourceDocument */
-@property(retain) NSString *description; /* unknown property attribute: V_description */
-@property(retain) NSString *snippet; /* unknown property attribute: V_snippet */
-@property(retain) NSMutableArray *folderNames; /* unknown property attribute: V_folderNames */
-@property(readonly) NSInteger folderNamesCount;
-@property(readonly) BOOL hasDescription;
-@property(readonly) BOOL hasKmlId;
-@property(readonly) BOOL hasSnippet;
+@property(retain) GMMDocumentInfo *sourceDocument;
+@property(readonly) BOOL hasIsUserCreated;
 @property(readonly) BOOL hasSourceDocument;
+@property BOOL isUserCreated;
 
-- (void)addFolderName:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)folderNameAtIndex:(NSUInteger)arg1;
-- (id)folderNames;
-- (NSInteger)folderNamesCount;
-- (BOOL)hasDescription;
+- (id)dictionaryRepresentation;
 - (BOOL)hasIsUserCreated;
-- (BOOL)hasKmlId;
-- (BOOL)hasSnippet;
 - (BOOL)hasSourceDocument;
 - (id)init;
 - (BOOL)isUserCreated;
-- (id)kmlId;
 - (BOOL)readFrom:(id)arg1;
-- (void)setDescription:(id)arg1;
-- (void)setFolderName:(id)arg1 atIndex:(NSUInteger)arg2;
-- (void)setFolderNames:(id)arg1;
 - (void)setIsUserCreated:(BOOL)arg1;
-- (void)setKmlId:(id)arg1;
-- (void)setSnippet:(id)arg1;
 - (void)setSourceDocument:(id)arg1;
-- (id)snippet;
 - (id)sourceDocument;
 - (void)writeTo:(id)arg1;
 

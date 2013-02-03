@@ -11,9 +11,9 @@
     UIColor *_topColor;
 }
 
-@property(retain) UIColor *borderColor; /* unknown property attribute: V_borderColor */
-@property(retain) UIColor *bottomColor; /* unknown property attribute: V_bottomColor */
-@property(retain) UIColor *topColor; /* unknown property attribute: V_topColor */
+@property(retain) UIColor *borderColor;
+@property(retain) UIColor *bottomColor;
+@property(retain) UIColor *topColor;
 
 - (id)_gradient;
 - (void)_invalidateGradient;

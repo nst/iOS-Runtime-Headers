@@ -52,7 +52,7 @@
 - (id)displayedMembersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (struct __CFDictionary { }*)headerSortKeyToHeaderStringDictionary;
 - (long)indexForDisplayedMember:(void*)arg1;
-- (id)initWithUIController:(id)arg1 addressBook:(void*)arg2;
+- (id)initWithAddressBook:(void*)arg1;
 - (void)invalidateDisplayedGroups;
 - (void)invalidateDisplayedMembers;
 - (void)invalidateLastSelectedGroupWrapper;

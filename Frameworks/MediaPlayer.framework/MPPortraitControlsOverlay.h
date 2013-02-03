@@ -35,9 +35,9 @@
     NSUInteger _visibleParts;
 }
 
-@property NSUInteger visibleParts; /* unknown property attribute: V_visibleParts */
-@property(retain) MPItem *item; /* unknown property attribute: V_item */
-@property id delegate; /* unknown property attribute: V_delegate */
+@property(retain) MPItem *item;
+@property id delegate;
+@property NSUInteger visibleParts;
 
 - (void)_changeGeniusImageToNormalImage:(id)arg1;
 - (void)_changeGeniusImageToPressedImage:(id)arg1;

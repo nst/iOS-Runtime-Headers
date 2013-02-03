@@ -13,12 +13,12 @@
     UIView *_sheetView;
 }
 
-@property NSInteger returnCode; /* unknown property attribute: V_returnCode */
-@property void *context; /* unknown property attribute: V_context */
-@property SEL selector; /* unknown property attribute: V_selector */
-@property id delegate; /* unknown property attribute: V_delegate */
-@property(retain) UIRemoteView *remoteView; /* unknown property attribute: V_remoteView */
-@property(retain) UIView *sheetView; /* unknown property attribute: V_sheetView */
+@property void *context;
+@property(retain) UIRemoteView *remoteView;
+@property(retain) UIView *sheetView;
+@property id delegate;
+@property NSInteger returnCode;
+@property SEL selector;
 
 - (void*)context;
 - (void)dealloc;

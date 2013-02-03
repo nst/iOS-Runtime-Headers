@@ -6,7 +6,7 @@
     float _progress;
 }
 
-@property float progress; /* unknown property attribute: V_progress */
+@property float progress;
 
 - (id)_goalCompletedImage;
 - (id)_gradientImage;

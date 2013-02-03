@@ -18,13 +18,13 @@
     NSTimer *m_timer;
 }
 
-@property BOOL active; /* unknown property attribute: Vm_active */
-@property NSInteger count; /* unknown property attribute: Vm_count */
-@property double repeatInterval; /* unknown property attribute: Vm_repeatInterval */
-@property NSInteger directions; /* unknown property attribute: Vm_directions */
-@property CGPoint point; /* unknown property attribute: Vm_point */
-@property(retain) UIView<UIAutoscrollContainer> *scrollContainer; /* unknown property attribute: Vm_scrollContainer */
-@property(retain) id target; /* unknown property attribute: Vm_target */
+@property(retain) UIView<UIAutoscrollContainer> *scrollContainer;
+@property BOOL active;
+@property NSInteger count;
+@property NSInteger directions;
+@property CGPoint point;
+@property double repeatInterval;
+@property(retain) id target;
 
 - (BOOL)active;
 - (NSInteger)count;

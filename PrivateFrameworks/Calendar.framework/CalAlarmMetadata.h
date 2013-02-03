@@ -11,10 +11,10 @@
     NSString *_summary;
 }
 
-@property(retain) NSString *summary; /* unknown property attribute: V_summary */
-@property(retain) NSString *description; /* unknown property attribute: V_description */
-@property(retain) NSArray *attendee; /* unknown property attribute: V_attendee */
-@property(retain) NSArray *attach; /* unknown property attribute: V_attach */
+@property(retain) NSArray *attach;
+@property(retain) NSArray *attendee;
+@property(retain) NSString *description;
+@property(retain) NSString *summary;
 
 + (id)metadataWithData:(id)arg1;
 

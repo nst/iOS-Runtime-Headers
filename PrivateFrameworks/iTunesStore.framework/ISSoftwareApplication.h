@@ -15,14 +15,14 @@
     NSArray *_versionOrdering;
 }
 
-@property(retain) NSArray *versionOrdering; /* unknown property attribute: V_versionOrdering */
-@property(retain) NSNumber *versionIdentifier; /* unknown property attribute: V_versionIdentifier */
-@property(retain) NSNumber *storeFrontIdentifier; /* unknown property attribute: V_storeFrontIdentifier */
-@property(retain) NSNumber *itemIdentifier; /* unknown property attribute: V_itemIdentifier */
-@property(retain) NSString *bundleVersion; /* unknown property attribute: V_bundleVersion */
-@property(retain) NSString *bundleIdentifier; /* unknown property attribute: V_bundleIdentifier */
-@property(retain) NSString *accountIdentifier; /* unknown property attribute: V_accountIdentifier */
-@property(retain) NSNumber *accountDSID; /* unknown property attribute: V_accountDSID */
+@property(retain) NSNumber *accountDSID;
+@property(retain) NSString *accountIdentifier;
+@property(retain) NSString *bundleIdentifier;
+@property(retain) NSString *bundleVersion;
+@property(retain) NSNumber *itemIdentifier;
+@property(retain) NSNumber *storeFrontIdentifier;
+@property(retain) NSNumber *versionIdentifier;
+@property(retain) NSArray *versionOrdering;
 
 - (void)_loadMetadataFromContainer:(id)arg1;
 - (id)accountDSID;

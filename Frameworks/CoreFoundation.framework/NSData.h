@@ -53,7 +53,6 @@
 - (id)calculateMD5;
 - (Class)classForCoder;
 - (id)copyHexDescription;
-- (id)copyHexDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)digestForSubCal;
@@ -96,6 +95,7 @@
 - (id)mf_encodeBase64WithoutLineBreaksOrPadding;
 - (id)mf_encodeModifiedBase64;
 - (id)mf_encodeQuotedPrintableForText:(BOOL)arg1 allowCancel:(BOOL)arg2;
+- (BOOL)mf_immutable;
 - (BOOL)mf_isValidBase64Data;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })mf_rangeOfByteFromSet:(id)arg1 options:(NSUInteger)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })mf_rangeOfByteFromSet:(id)arg1;

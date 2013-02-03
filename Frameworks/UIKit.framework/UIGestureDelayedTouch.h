@@ -11,10 +11,10 @@
     UITouch *_touchState;
 }
 
-@property(retain) UIEvent *event; /* unknown property attribute: V_event */
-@property(retain) UITouch *savedTouchState; /* unknown property attribute: V_savedTouchState */
-@property(retain) UITouch *touchState; /* unknown property attribute: V_touchState */
-@property(retain) UITouch *touch; /* unknown property attribute: V_touch */
+@property(retain) UIEvent *event;
+@property(retain) UITouch *savedTouchState;
+@property(retain) UITouch *touch;
+@property(retain) UITouch *touchState;
 
 - (void)dealloc;
 - (id)event;

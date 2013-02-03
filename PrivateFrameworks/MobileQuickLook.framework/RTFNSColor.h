@@ -9,10 +9,10 @@
     float _red;
 }
 
-@property float alpha; /* unknown property attribute: V_alpha */
-@property float blue; /* unknown property attribute: V_blue */
-@property float green; /* unknown property attribute: V_green */
-@property float red; /* unknown property attribute: V_red */
+@property float alpha;
+@property float blue;
+@property float green;
+@property float red;
 
 + (id)blackColor;
 + (id)colorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;

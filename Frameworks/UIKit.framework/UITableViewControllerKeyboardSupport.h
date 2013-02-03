@@ -11,7 +11,7 @@
     UITableViewController *_tableViewController;
 }
 
-@property float adjustmentForKeyboard; /* unknown property attribute: V_adjustmentForKeyboard */
+@property float adjustmentForKeyboard;
 @property BOOL registeredForNotifications;
 @property BOOL viewIsDisappearing;
 

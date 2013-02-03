@@ -17,12 +17,14 @@
 @property(getter=isLoading,readonly) BOOL loading;
 @property BOOL scalesPageToFit;
 
+- (BOOL)_allowsPopUps;
 - (id)_buildVersion;
 - (id)_documentView;
 - (void)_frameOrBoundsChanged;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_reportError:(id)arg1;
 - (id)_scroller;
+- (void)_setAllowsPopUps:(BOOL)arg1;
 - (void)_setDrawInWebThread:(BOOL)arg1;
 - (void)_setDrawsCheckeredPattern:(BOOL)arg1;
 - (void)_setRichTextReaderViewportSettings;
@@ -73,6 +75,7 @@
 - (void)stopLoading;
 - (id)stringByEvaluatingJavaScriptFromString:(id)arg1;
 - (void)view:(id)arg1 didSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 oldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (void)webView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 decidePolicyForNewWindowAction:(id)arg2 request:(id)arg3 newFrameName:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 didCommitLoadForFrame:(id)arg2;

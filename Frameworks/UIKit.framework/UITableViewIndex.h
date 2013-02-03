@@ -20,12 +20,12 @@
     NSArray *_titles;
 }
 
-@property(readonly) BOOL pastBottom; /* unknown property attribute: V_pastBottom */
-@property(readonly) BOOL pastTop; /* unknown property attribute: V_pastTop */
-@property(readonly) NSInteger selectedSection; /* unknown property attribute: V_selectedSection */
 @property(retain) UIFont *font;
 @property(readonly) NSString *selectedSectionTitle;
 @property(retain) NSArray *titles;
+@property(readonly) BOOL pastBottom;
+@property(readonly) BOOL pastTop;
+@property(readonly) NSInteger selectedSection;
 
 - (id)_createTouchesWithMouseEvent:(struct __GSEvent { }*)arg1 phase:(NSInteger)arg2;
 - (id)_displayTitles;

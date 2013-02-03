@@ -6,21 +6,32 @@
    See Warning(s) below.
  */
 
+@class AVCallbackHandler, NSString;
+
 @interface AVFileValidator : NSObject {
     struct AVFileValidatorPrivate { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; void*x4; void*x5; unsigned long x6; void*x7; struct FigOpaqueMediaValidator {} *x8; struct FigMediaValidatorDataLocation { 
             unsigned long long offset; 
             unsigned long long size; 
-        } x9; struct OpaqueFigByteStream {} *x10; BOOL x11; BOOL x12; } *_priv;
+        } x9; struct OpaqueFigByteStream {} *x10; BOOL x11; BOOL x12; AVCallbackHandler *x13; } *_priv;
+    NSString *_validationRules;
 }
+
+@property(retain) NSString *validationRules;
 
 - (void)cancel;
 - (void)dealloc;
-- (void)fileCheckResult:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isCompleted;
 - (BOOL)isStreaming;
+- (id)notificationForFileCheckResult:(id)arg1;
+- (void)postNotificationForCallback:(id)arg1;
 - (float)progress;
+- (void)setValidationRules:(id)arg1;
 - (id)url;
 - (void)validate;
+- (id)validateBlocking:(BOOL)arg1;
+- (void)validateForCameraRoll;
+- (BOOL)validateSyncWithError:(id*)arg1;
+- (id)validationRules;
 
 @end

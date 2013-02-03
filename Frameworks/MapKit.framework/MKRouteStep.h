@@ -30,28 +30,28 @@
     NSInteger _type;
 }
 
-@property(readonly) NSInteger transitAgencyIndex; /* unknown property attribute: V_transitAgencyIndex */
-@property(readonly) BOOL hasTransitAgencyIndex; /* unknown property attribute: V_hasTransitAgencyIndex */
-@property(readonly) NSArray *notices; /* unknown property attribute: V_notices */
-@property(readonly) NSCalendarDate *arrivalDate; /* unknown property attribute: V_arrivalDate */
-@property(readonly) NSCalendarDate *departureDate; /* unknown property attribute: V_departureDate */
-@property(readonly) NSInteger durationSeconds; /* unknown property attribute: V_durationSeconds */
-@property(readonly) NSInteger departureIntervalSeconds; /* unknown property attribute: V_departureIntervalSeconds */
-@property(readonly) NSString *arrivalAddress; /* unknown property attribute: V_arrivalAddress */
-@property(readonly) NSString *departureAddress; /* unknown property attribute: V_departureAddress */
-@property(readonly) NSString *direction; /* unknown property attribute: V_direction */
-@property(readonly) MKSearchResult *searchResult; /* unknown property attribute: V_searchResult */
-@property(readonly) NSInteger distanceMeters; /* unknown property attribute: V_distanceMeters */
-@property(readonly) NSString *instructions; /* unknown property attribute: V_instructions */
-@property(readonly) NSUInteger pointIndex; /* unknown property attribute: V_pointIndex */
-@property(readonly) ? coordinate; /* unknown property attribute: V_coordinate */
-@property(readonly) NSInteger mode; /* unknown property attribute: V_mode */
-@property(readonly) NSInteger type; /* unknown property attribute: V_type */
+@property(readonly) NSString *arrivalAddress;
+@property(readonly) NSCalendarDate *arrivalDate;
+@property(readonly) NSString *departureAddress;
+@property(readonly) NSCalendarDate *departureDate;
+@property(readonly) NSString *direction;
 @property(readonly) NSString *distance;
 @property(readonly) UIImage *icon;
+@property(readonly) NSString *instructions;
 @property(readonly) MKSearchResult *newSearchResult;
+@property(readonly) NSArray *notices;
+@property(readonly) MKSearchResult *searchResult;
 @property(readonly) NSString *shortInstructions;
 @property(readonly) NSString *tripDescription;
+@property(readonly) ? coordinate;
+@property(readonly) NSInteger departureIntervalSeconds;
+@property(readonly) NSInteger distanceMeters;
+@property(readonly) NSInteger durationSeconds;
+@property(readonly) BOOL hasTransitAgencyIndex;
+@property(readonly) NSInteger mode;
+@property(readonly) NSUInteger pointIndex;
+@property(readonly) NSInteger transitAgencyIndex;
+@property(readonly) NSInteger type;
 
 - (id)_initWithSearchResult:(id)arg1 distanceMeters:(NSInteger)arg2 displaysMetric:(BOOL)arg3 coordinate:(struct { double x1; double x2; })arg4 type:(NSInteger)arg5 pointIndex:(NSUInteger)arg6;
 - (id)_initWithStep:(id)arg1 distanceMeters:(NSInteger)arg2 displaysMetric:(BOOL)arg3 type:(NSInteger)arg4 coordinate:(struct { double x1; double x2; })arg5 pointIndex:(NSUInteger)arg6;

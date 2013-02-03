@@ -6,7 +6,7 @@
     BOOL _backgroundReview;
 }
 
-@property(getter=isBackgroundReview) BOOL backgroundReview; /* unknown property attribute: V_backgroundReview */
+@property(getter=isBackgroundReview) BOOL backgroundReview;
 
 - (BOOL)isBackgroundReview;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;

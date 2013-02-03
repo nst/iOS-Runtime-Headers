@@ -36,7 +36,6 @@
     UIWebDocumentView *m_webView;
 }
 
-@property(getter=isEditing) BOOL editing; /* unknown property attribute: Vm_editing */
 @property <UITextViewDelegate> *delegate;
 @property(retain) UIFont *font;
 @property(copy) NSString *text;
@@ -45,6 +44,7 @@
 @property NSInteger autocorrectionType;
 @property NSUInteger dataDetectorTypes;
 @property(getter=isEditable) BOOL editable;
+@property(getter=isEditing) BOOL editing;
 @property BOOL enablesReturnKeyAutomatically;
 @property NSInteger keyboardAppearance;
 @property NSInteger keyboardType;

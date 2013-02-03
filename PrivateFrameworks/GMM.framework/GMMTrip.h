@@ -8,13 +8,14 @@
     NSMutableArray *_routes;
 }
 
-@property(retain) NSMutableArray *routes; /* unknown property attribute: V_routes */
+@property(retain) NSMutableArray *routes;
 @property(readonly) NSInteger routesCount;
 
 - (void)addRoute:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (id)routeAtIndex:(NSUInteger)arg1;

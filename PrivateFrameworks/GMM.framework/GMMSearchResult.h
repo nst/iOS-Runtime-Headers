@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class GMMGeometry, GMMAdInfo, NSString, GMMRating, NSMutableArray, GMMStructuredAddress, GMMFriendProfileInfo, GMMKmlInfo;
+@class GMMGeometry, GMMAdInfo, NSString, GMMRating, NSMutableArray, GMMStructuredAddress, GMMKmlInfo;
 
 @interface GMMSearchResult : PBCodable {
     GMMAdInfo *_adInfo;
@@ -11,12 +11,14 @@
     NSString *_attributionUrl;
     unsigned long long _cid;
     NSMutableArray *_enhancedContents;
-    GMMFriendProfileInfo *_friendProfileInfo;
     GMMGeometry *_geometry;
     BOOL _hasCid;
     BOOL _hasInexactPosition;
     BOOL _hasLocationSource;
+    BOOL _hasSesameDetailsEditable;
+    BOOL _hasSesameEditable;
     BOOL _hasShowIcon;
+    BOOL _hasUnverifiedListing;
     NSMutableArray *_images;
     BOOL _inexactPosition;
     GMMKmlInfo *_kmlInfo;
@@ -27,55 +29,65 @@
     NSString *_queryRefinementString;
     GMMRating *_rating;
     NSMutableArray *_references;
+    BOOL _sesameDetailsEditable;
+    BOOL _sesameEditable;
+    NSString *_sesameFeatureId;
     BOOL _showIcon;
     NSString *_streetViewPanoId;
     GMMStructuredAddress *_structuredAddress;
     NSInteger _type;
+    BOOL _unverifiedListing;
 }
 
-@property(retain) NSString *streetViewPanoId; /* unknown property attribute: V_streetViewPanoId */
-@property(readonly) BOOL hasInexactPosition; /* unknown property attribute: V_hasInexactPosition */
-@property BOOL inexactPosition; /* unknown property attribute: V_inexactPosition */
-@property(readonly) BOOL hasLocationSource; /* unknown property attribute: V_hasLocationSource */
-@property NSInteger locationSource; /* unknown property attribute: V_locationSource */
-@property(readonly) BOOL hasCid; /* unknown property attribute: V_hasCid */
-@property unsigned long long cid; /* unknown property attribute: V_cid */
-@property(retain) GMMRating *rating; /* unknown property attribute: V_rating */
-@property(retain) NSString *queryRefinementString; /* unknown property attribute: V_queryRefinementString */
-@property(retain) GMMAdInfo *adInfo; /* unknown property attribute: V_adInfo */
-@property(retain) GMMFriendProfileInfo *friendProfileInfo; /* unknown property attribute: V_friendProfileInfo */
-@property(retain) NSString *mapsUrl; /* unknown property attribute: V_mapsUrl */
-@property(retain) GMMStructuredAddress *structuredAddress; /* unknown property attribute: V_structuredAddress */
-@property(retain) NSMutableArray *images; /* unknown property attribute: V_images */
-@property(retain) GMMKmlInfo *kmlInfo; /* unknown property attribute: V_kmlInfo */
-@property(retain) NSString *attributionUrl; /* unknown property attribute: V_attributionUrl */
-@property(retain) NSString *attributionText; /* unknown property attribute: V_attributionText */
-@property(readonly) BOOL hasShowIcon; /* unknown property attribute: V_hasShowIcon */
-@property BOOL showIcon; /* unknown property attribute: V_showIcon */
-@property(retain) NSMutableArray *references; /* unknown property attribute: V_references */
-@property(retain) NSMutableArray *enhancedContents; /* unknown property attribute: V_enhancedContents */
-@property(retain) NSString *phone; /* unknown property attribute: V_phone */
-@property(retain) NSMutableArray *addressLines; /* unknown property attribute: V_addressLines */
-@property(retain) GMMGeometry *geometry; /* unknown property attribute: V_geometry */
-@property(retain) NSString *name; /* unknown property attribute: V_name */
-@property NSInteger type; /* unknown property attribute: V_type */
+@property(retain) GMMAdInfo *adInfo;
+@property(retain) NSMutableArray *addressLines;
+@property(retain) NSString *attributionText;
+@property(retain) NSString *attributionUrl;
+@property(retain) NSMutableArray *enhancedContents;
+@property(retain) GMMGeometry *geometry;
+@property(retain) NSMutableArray *images;
+@property(retain) GMMKmlInfo *kmlInfo;
+@property(retain) NSString *mapsUrl;
+@property(retain) NSString *name;
+@property(retain) NSString *phone;
+@property(retain) NSString *queryRefinementString;
+@property(retain) GMMRating *rating;
+@property(retain) NSMutableArray *references;
+@property(retain) NSString *sesameFeatureId;
+@property(retain) NSString *streetViewPanoId;
+@property(retain) GMMStructuredAddress *structuredAddress;
 @property(readonly) NSInteger addressLinesCount;
+@property unsigned long long cid;
 @property(readonly) NSInteger enhancedContentsCount;
 @property(readonly) BOOL hasAdInfo;
 @property(readonly) BOOL hasAttributionText;
 @property(readonly) BOOL hasAttributionUrl;
-@property(readonly) BOOL hasFriendProfileInfo;
+@property(readonly) BOOL hasCid;
 @property(readonly) BOOL hasGeometry;
+@property(readonly) BOOL hasInexactPosition;
 @property(readonly) BOOL hasKmlInfo;
+@property(readonly) BOOL hasLocationSource;
 @property(readonly) BOOL hasMapsUrl;
 @property(readonly) BOOL hasName;
 @property(readonly) BOOL hasPhone;
 @property(readonly) BOOL hasQueryRefinementString;
 @property(readonly) BOOL hasRating;
+@property(readonly) BOOL hasSesameDetailsEditable;
+@property(readonly) BOOL hasSesameEditable;
+@property(readonly) BOOL hasSesameFeatureId;
+@property(readonly) BOOL hasShowIcon;
 @property(readonly) BOOL hasStreetViewPanoId;
 @property(readonly) BOOL hasStructuredAddress;
+@property(readonly) BOOL hasUnverifiedListing;
 @property(readonly) NSInteger imagesCount;
+@property BOOL inexactPosition;
+@property NSInteger locationSource;
 @property(readonly) NSInteger referencesCount;
+@property BOOL sesameDetailsEditable;
+@property BOOL sesameEditable;
+@property BOOL showIcon;
+@property NSInteger type;
+@property BOOL unverifiedListing;
 
 - (id)adInfo;
 - (void)addAddressLine:(id)arg1;
@@ -90,16 +102,15 @@
 - (unsigned long long)cid;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)enhancedContentAtIndex:(NSUInteger)arg1;
 - (id)enhancedContents;
 - (NSInteger)enhancedContentsCount;
-- (id)friendProfileInfo;
 - (id)geometry;
 - (BOOL)hasAdInfo;
 - (BOOL)hasAttributionText;
 - (BOOL)hasAttributionUrl;
 - (BOOL)hasCid;
-- (BOOL)hasFriendProfileInfo;
 - (BOOL)hasGeometry;
 - (BOOL)hasInexactPosition;
 - (BOOL)hasKmlInfo;
@@ -109,9 +120,13 @@
 - (BOOL)hasPhone;
 - (BOOL)hasQueryRefinementString;
 - (BOOL)hasRating;
+- (BOOL)hasSesameDetailsEditable;
+- (BOOL)hasSesameEditable;
+- (BOOL)hasSesameFeatureId;
 - (BOOL)hasShowIcon;
 - (BOOL)hasStreetViewPanoId;
 - (BOOL)hasStructuredAddress;
+- (BOOL)hasUnverifiedListing;
 - (id)imageAtIndex:(NSUInteger)arg1;
 - (id)images;
 - (NSInteger)imagesCount;
@@ -128,6 +143,9 @@
 - (id)referenceAtIndex:(NSUInteger)arg1;
 - (id)references;
 - (NSInteger)referencesCount;
+- (BOOL)sesameDetailsEditable;
+- (BOOL)sesameEditable;
+- (id)sesameFeatureId;
 - (void)setAdInfo:(id)arg1;
 - (void)setAddressLine:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setAddressLines:(id)arg1;
@@ -136,7 +154,6 @@
 - (void)setCid:(unsigned long long)arg1;
 - (void)setEnhancedContent:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setEnhancedContents:(id)arg1;
-- (void)setFriendProfileInfo:(id)arg1;
 - (void)setGeometry:(id)arg1;
 - (void)setImage:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setImages:(id)arg1;
@@ -150,14 +167,19 @@
 - (void)setRating:(id)arg1;
 - (void)setReference:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setReferences:(id)arg1;
+- (void)setSesameDetailsEditable:(BOOL)arg1;
+- (void)setSesameEditable:(BOOL)arg1;
+- (void)setSesameFeatureId:(id)arg1;
 - (void)setShowIcon:(BOOL)arg1;
 - (void)setStreetViewPanoId:(id)arg1;
 - (void)setStructuredAddress:(id)arg1;
 - (void)setType:(NSInteger)arg1;
+- (void)setUnverifiedListing:(BOOL)arg1;
 - (BOOL)showIcon;
 - (id)streetViewPanoId;
 - (id)structuredAddress;
 - (NSInteger)type;
+- (BOOL)unverifiedListing;
 - (void)writeTo:(id)arg1;
 
 @end

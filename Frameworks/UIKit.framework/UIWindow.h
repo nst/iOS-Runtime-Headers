@@ -86,6 +86,7 @@
 - (BOOL)_ignoresHitTest;
 - (BOOL)_isLayerHidden;
 - (BOOL)_isScrollingEnabledForView:(id)arg1;
+- (BOOL)_isTextEffectsWindow;
 - (void)_orderFrontWithoutMakingKey;
 - (BOOL)_pointInStatusBar:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_positionHeaderView:(id)arg1 andFooterView:(id)arg2 outsideContentViewForInterfaceOrientation:(NSInteger)arg3;

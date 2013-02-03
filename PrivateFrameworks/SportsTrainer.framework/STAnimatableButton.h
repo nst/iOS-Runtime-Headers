@@ -28,7 +28,7 @@
     BOOL _touchInside;
 }
 
-@property UIEdgeInsets hitRectEdgeInsets; /* unknown property attribute: V_hitRectEdgeInsets */
+@property UIEdgeInsets hitRectEdgeInsets;
 
 - (id)_buttonWellImage;
 - (id)_buttonWellLandscapeImage;

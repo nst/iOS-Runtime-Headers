@@ -5,7 +5,7 @@
 @class MLQuery;
 
 @interface MPMediaServerQuery : NSObject <NSCoding> {
-    NSUInteger _groupingProperty;
+    BOOL _prefetchProperties;
     MLQuery *_query;
 }
 

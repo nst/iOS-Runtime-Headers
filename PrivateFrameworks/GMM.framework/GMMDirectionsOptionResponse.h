@@ -8,7 +8,7 @@
     NSMutableArray *_options;
 }
 
-@property(retain) NSMutableArray *options; /* unknown property attribute: V_options */
+@property(retain) NSMutableArray *options;
 @property(readonly) NSInteger optionsCount;
 
 - (void)addOption:(id)arg1;

@@ -9,7 +9,7 @@
     DOMNode *_textNode;
 }
 
-@property(retain) DOMNode *_textNode; /* unknown property attribute: V_textNode */
+@property(retain) DOMNode *_textNode;
 
 + (id)createPeripheral;
 

@@ -9,8 +9,8 @@
     NSInteger _weekday;
 }
 
-@property(retain) NSNumber *number; /* unknown property attribute: V_number */
-@property NSInteger weekday; /* unknown property attribute: V_weekday */
+@property(retain) NSNumber *number;
+@property NSInteger weekday;
 
 + (id)byDayValueFromICSString:(id)arg1;
 + (NSInteger)weekdayFromICSString:(id)arg1;

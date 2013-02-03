@@ -12,8 +12,8 @@
     float _topPadding;
 }
 
-@property(retain) id replacementMessageBubbleData; /* unknown property attribute: V_replacementMessageBubbleData */
-@property(readonly) CKBalloonView *balloonView; /* unknown property attribute: V_balloonView */
+@property(readonly) CKBalloonView *balloonView;
+@property(retain) id replacementMessageBubbleData;
 
 + (id)_exclamationGlyphImage;
 + (id)_failImage;

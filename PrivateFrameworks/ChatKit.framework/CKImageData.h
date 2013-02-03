@@ -9,7 +9,7 @@
     struct CGImageSource { } *_imageSource;
 }
 
-@property(readonly) NSData *data; /* unknown property attribute: V_data */
+@property(readonly) NSData *data;
 
 - (struct CGImageSource { }*)_imageSource;
 - (struct CGImage { }*)_newCGImageWithMaxLength:(NSInteger)arg1 transformOrientation:(BOOL)arg2;

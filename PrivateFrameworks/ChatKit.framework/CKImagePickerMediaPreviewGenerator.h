@@ -12,10 +12,10 @@
     struct CGImage { } *_videoPreviewCGImage;
 }
 
-@property(retain) UIImagePickerController *imagePickerController; /* unknown property attribute: V_imagePickerController */
-@property(retain) NSDictionary *editingInfo; /* unknown property attribute: V_editingInfo */
-@property(retain) NSData *imageData; /* unknown property attribute: V_imageData */
-@property(retain) UIImage *image; /* unknown property attribute: V_image */
+@property(retain) NSDictionary *editingInfo;
+@property(retain) UIImage *image;
+@property(retain) NSData *imageData;
+@property(retain) UIImagePickerController *imagePickerController;
 
 - (void)_generatePreviewOnMainThreadForVideoFile:(id)arg1;
 - (void)dealloc;

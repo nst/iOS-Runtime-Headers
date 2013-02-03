@@ -8,7 +8,7 @@
     MKUserLocationViewInternal *viewImpl;
 }
 
-@property(retain) MKUserLocationViewInternal *viewImpl; /* unknown property attribute: VviewImpl */
+@property(retain) MKUserLocationViewInternal *viewImpl;
 @property BOOL hidDot;
 
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;

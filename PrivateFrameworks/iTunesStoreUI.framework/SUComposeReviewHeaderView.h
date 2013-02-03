@@ -13,9 +13,9 @@
     SUComposeTextFieldListView *_textFieldListView;
 }
 
-@property(retain) ISReview *review; /* unknown property attribute: V_review */
-@property <SUComposeReviewHeaderDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <SUComposeReviewHeaderDelegate> *delegate;
 @property(readonly) NSString *nickname;
+@property(retain) ISReview *review;
 @property(readonly) NSString *title;
 @property float rating;
 

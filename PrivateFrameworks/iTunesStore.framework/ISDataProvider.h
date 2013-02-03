@@ -14,13 +14,13 @@
     NSURL *_redirectURL;
 }
 
-@property(retain) NSURL *redirectURL; /* unknown property attribute: V_redirectURL */
-@property(retain) id output; /* unknown property attribute: V_output */
-@property(retain) NSString *contentType; /* unknown property attribute: V_contentType */
-@property long long contentLength; /* unknown property attribute: V_contentLength */
-@property(retain) ISURLBagContext *bagContext; /* unknown property attribute: V_bagContext */
-@property(retain) NSNumber *authenticatedAccountDSID; /* unknown property attribute: V_authenticatedAccountDSID */
-@property(retain) ISAuthenticationContext *authenticationContext; /* unknown property attribute: V_authenticationContext */
+@property(retain) NSNumber *authenticatedAccountDSID;
+@property(retain) ISAuthenticationContext *authenticationContext;
+@property(retain) ISURLBagContext *bagContext;
+@property(retain) NSString *contentType;
+@property(retain) NSURL *redirectURL;
+@property long long contentLength;
+@property(retain) id output;
 @property(getter=isStream,readonly) BOOL stream;
 @property(readonly) long long streamedBytes;
 

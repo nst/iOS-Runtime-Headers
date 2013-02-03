@@ -10,13 +10,14 @@
     NSString *_name;
 }
 
-@property(retain) NSString *locale; /* unknown property attribute: V_locale */
-@property NSInteger featureType; /* unknown property attribute: V_featureType */
-@property(retain) NSString *name; /* unknown property attribute: V_name */
+@property(retain) NSString *locale;
+@property(retain) NSString *name;
+@property NSInteger featureType;
 @property(readonly) BOOL hasLocale;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (NSInteger)featureType;
 - (BOOL)hasLocale;
 - (id)init;

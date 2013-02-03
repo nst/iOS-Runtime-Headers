@@ -10,9 +10,9 @@
     UIViewController *_viewController;
 }
 
-@property BOOL animated; /* unknown property attribute: V_animated */
-@property(retain) NSString *name; /* unknown property attribute: V_name */
-@property UIViewController *viewController; /* unknown property attribute: V_viewController */
+@property(retain) NSString *name;
+@property UIViewController *viewController;
+@property BOOL animated;
 
 - (BOOL)animated;
 - (void)dealloc;

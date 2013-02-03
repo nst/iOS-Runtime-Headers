@@ -12,13 +12,14 @@
     NSInteger _style;
 }
 
-@property NSInteger style; /* unknown property attribute: V_style */
-@property(retain) NSIndexPath *loadMoreIndexPath; /* unknown property attribute: V_loadMoreIndexPath */
-@property(retain) SUItemList *itemList; /* unknown property attribute: V_itemList */
+@property(retain) SUItemList *itemList;
+@property(retain) NSIndexPath *loadMoreIndexPath;
+@property NSInteger style;
 
 - (void)_configureLoadMoreCell:(id)arg1 forIndexPath:(id)arg2;
 - (id)_priceButtonForCell:(id)arg1 item:(id)arg2;
 - (BOOL)_shouldShowPriceButtonForItem:(id)arg1;
+- (BOOL)canDeleteIndexPath:(id)arg1;
 - (BOOL)canSelectIndexPath:(id)arg1;
 - (BOOL)canShowPriceButtonForItem:(id)arg1;
 - (Class)cellClassForItem:(id)arg1 reuseIdentifier:(id*)arg2;
@@ -29,6 +30,7 @@
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (id)createHeaderViewForSection:(NSInteger)arg1;
 - (void)dealloc;
+- (BOOL)deleteIndexPath:(id)arg1;
 - (void)didBeginPreferringUserInteraction;
 - (void)didEndPreferringUserInteraction;
 - (id)headerViewForSection:(NSInteger)arg1;
@@ -42,5 +44,6 @@
 - (void)setLoadMoreIndexPath:(id)arg1;
 - (void)setStyle:(NSInteger)arg1;
 - (NSInteger)style;
+- (id)titleForDeleteConfirmationForIndexPath:(id)arg1;
 
 @end

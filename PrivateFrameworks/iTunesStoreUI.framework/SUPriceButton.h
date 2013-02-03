@@ -20,11 +20,11 @@
     } _stylizedTitleSize;
 }
 
-@property NSUInteger style; /* unknown property attribute: V_style */
-@property(getter=isShowingConfirmation) BOOL showingConfirmation; /* unknown property attribute: V_showingConfirmation */
-@property(retain) SUScriptWidget *scriptWidget; /* unknown property attribute: V_scriptWidget */
-@property BOOL leftAnchored; /* unknown property attribute: V_leftAnchored */
-@property(retain) NSString *confirmationTitle; /* unknown property attribute: V_confirmationTitle */
+@property(retain) NSString *confirmationTitle;
+@property(retain) SUScriptWidget *scriptWidget;
+@property BOOL leftAnchored;
+@property(getter=isShowingConfirmation) BOOL showingConfirmation;
+@property NSUInteger style;
 
 + (NSUInteger)_styleForItem:(id)arg1;
 + (double)defaultAnimationDuration;

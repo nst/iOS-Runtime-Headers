@@ -3,25 +3,33 @@
  */
 
 @interface GMMMapTile : PBCodable {
+    BOOL _hasTextSize;
+    NSInteger _textSize;
     NSInteger _tileIndexX;
     NSInteger _tileIndexY;
     NSInteger _tileType;
     NSInteger _zoomLevel;
 }
 
-@property NSInteger zoomLevel; /* unknown property attribute: V_zoomLevel */
-@property NSInteger tileIndexY; /* unknown property attribute: V_tileIndexY */
-@property NSInteger tileIndexX; /* unknown property attribute: V_tileIndexX */
-@property NSInteger tileType; /* unknown property attribute: V_tileType */
+@property(readonly) BOOL hasTextSize;
+@property NSInteger textSize;
+@property NSInteger tileIndexX;
+@property NSInteger tileIndexY;
+@property NSInteger tileType;
+@property NSInteger zoomLevel;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
+- (BOOL)hasTextSize;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
+- (void)setTextSize:(NSInteger)arg1;
 - (void)setTileIndexX:(NSInteger)arg1;
 - (void)setTileIndexY:(NSInteger)arg1;
 - (void)setTileType:(NSInteger)arg1;
 - (void)setZoomLevel:(NSInteger)arg1;
+- (NSInteger)textSize;
 - (NSInteger)tileIndexX;
 - (NSInteger)tileIndexY;
 - (NSInteger)tileType;

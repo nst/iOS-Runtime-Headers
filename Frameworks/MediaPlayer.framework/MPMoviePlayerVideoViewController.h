@@ -6,10 +6,12 @@
     BOOL _hideNavigationBar;
 }
 
-@property BOOL hideNavigationBar; /* unknown property attribute: V_hideNavigationBar */
+@property BOOL hideNavigationBar;
 
 - (void)_showOverlay;
+- (void)backgroundViewDidUpdate;
 - (BOOL)hideNavigationBar;
 - (void)setHideNavigationBar:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 
 @end

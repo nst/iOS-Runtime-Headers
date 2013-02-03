@@ -22,27 +22,27 @@
     long long _timestamp;
 }
 
-@property(readonly) BOOL hasLocType; /* unknown property attribute: V_hasLocType */
-@property NSInteger locType; /* unknown property attribute: V_locType */
-@property long long timestamp; /* unknown property attribute: V_timestamp */
-@property(retain) NSString *locationString; /* unknown property attribute: V_locationString */
-@property(retain) NSMutableArray *features; /* unknown property attribute: V_features */
-@property(readonly) BOOL hasObsolete; /* unknown property attribute: V_hasObsolete */
-@property BOOL obsolete; /* unknown property attribute: V_obsolete */
-@property(retain) NSString *misc; /* unknown property attribute: V_misc */
-@property(retain) LBSAddress *address; /* unknown property attribute: V_address */
-@property(readonly) BOOL hasConfidence; /* unknown property attribute: V_hasConfidence */
-@property NSInteger confidence; /* unknown property attribute: V_confidence */
-@property(readonly) BOOL hasAccuracy; /* unknown property attribute: V_hasAccuracy */
-@property NSInteger accuracy; /* unknown property attribute: V_accuracy */
-@property(retain) NSString *source; /* unknown property attribute: V_source */
-@property(retain) LBSPoint *latLng; /* unknown property attribute: V_latLng */
+@property(retain) LBSAddress *address;
+@property(retain) NSMutableArray *features;
+@property(retain) LBSPoint *latLng;
+@property(retain) NSString *locationString;
+@property(retain) NSString *misc;
+@property(retain) NSString *source;
+@property NSInteger accuracy;
+@property NSInteger confidence;
 @property(readonly) NSInteger featuresCount;
+@property(readonly) BOOL hasAccuracy;
 @property(readonly) BOOL hasAddress;
+@property(readonly) BOOL hasConfidence;
 @property(readonly) BOOL hasLatLng;
+@property(readonly) BOOL hasLocType;
 @property(readonly) BOOL hasLocationString;
 @property(readonly) BOOL hasMisc;
+@property(readonly) BOOL hasObsolete;
 @property(readonly) BOOL hasSource;
+@property NSInteger locType;
+@property BOOL obsolete;
+@property long long timestamp;
 
 - (NSInteger)accuracy;
 - (void)addFeature:(id)arg1;
@@ -50,6 +50,7 @@
 - (NSInteger)confidence;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)featureAtIndex:(NSUInteger)arg1;
 - (id)features;
 - (NSInteger)featuresCount;

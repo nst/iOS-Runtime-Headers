@@ -104,6 +104,7 @@
 - (id)keyEnumerator;
 - (id)keysSortedByValueUsingSelector:(SEL)arg1;
 - (NSInteger)lineNumber;
+- (BOOL)matchesUID:(id)arg1;
 - (id)mutableCopyWithElementsCopy;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;

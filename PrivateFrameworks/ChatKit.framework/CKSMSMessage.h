@@ -10,8 +10,8 @@
     NSMutableArray *_messages;
 }
 
-@property(retain) CKSMSMessageDelivery *delivery; /* unknown property attribute: V_delivery */
-@property(readonly) NSInteger associationID; /* unknown property attribute: V_associationID */
+@property(retain) CKSMSMessageDelivery *delivery;
+@property(readonly) NSInteger associationID;
 
 - (id)_createParts;
 - (double)_loadDate;

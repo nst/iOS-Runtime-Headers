@@ -18,15 +18,15 @@
     NSInteger _units;
 }
 
-@property NSInteger units; /* unknown property attribute: V_units */
-@property NSInteger operationType; /* unknown property attribute: V_operationType */
-@property long long normalizedMaxValue; /* unknown property attribute: V_normalizedMaxValue */
-@property long long normalizedCurrentValue; /* unknown property attribute: V_normalizedCurrentValue */
-@property long long maxValue; /* unknown property attribute: V_maxValue */
-@property double estimatedTimeRemaining; /* unknown property attribute: V_estimatedTimeRemaining */
-@property long long currentValue; /* unknown property attribute: V_currentValue */
-@property double changeRate; /* unknown property attribute: V_changeRate */
-@property BOOL canPause; /* unknown property attribute: V_canPause */
+@property BOOL canPause;
+@property double changeRate;
+@property long long currentValue;
+@property double estimatedTimeRemaining;
+@property long long maxValue;
+@property long long normalizedCurrentValue;
+@property long long normalizedMaxValue;
+@property NSInteger operationType;
+@property NSInteger units;
 
 - (void)_updateStatisticsFromSnapshots;
 - (BOOL)canPause;

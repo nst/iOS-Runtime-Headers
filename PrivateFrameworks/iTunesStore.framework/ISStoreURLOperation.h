@@ -14,14 +14,14 @@
     BOOL _urlKnownToBeTrusted;
 }
 
-@property BOOL urlKnownToBeTrusted; /* unknown property attribute: V_urlKnownToBeTrusted */
-@property(retain) NSString *urlBagKey; /* unknown property attribute: V_urlBagKey */
-@property BOOL needsURLBag; /* unknown property attribute: V_needsURLBag */
-@property BOOL needsAuthentication; /* unknown property attribute: V_needsAuthentication */
-@property NSInteger bagType; /* unknown property attribute: V_bagType */
-@property(retain) NSNumber *authenticatedDSID; /* unknown property attribute: V_authenticatedDSID */
-@property(retain) ISAuthenticationContext *authenticationContext; /* unknown property attribute: V_authenticationContext */
-@property <ISURLOperationDelegate> *delegate;
+@property(retain) NSNumber *authenticatedDSID;
+@property(retain) ISAuthenticationContext *authenticationContext;
+@property <ISStoreURLOperationDelegate> *delegate;
+@property(retain) NSString *urlBagKey;
+@property NSInteger bagType;
+@property BOOL needsAuthentication;
+@property BOOL needsURLBag;
+@property BOOL urlKnownToBeTrusted;
 
 + (void)addITunesStoreHeadersToRequest:(id)arg1;
 + (void)handleITunesStoreResponseHeaders:(id)arg1;
@@ -30,6 +30,7 @@
 + (void)setDefaultClientApplication:(id)arg1;
 
 - (id)_account;
+- (void)_addStandardQueryParametersForURL:(id)arg1;
 - (BOOL)_authenticateReturningError:(id*)arg1;
 - (BOOL)_canSendTokenToURL:(id)arg1;
 - (id)_copyURLBagContext;
@@ -53,6 +54,7 @@
 - (void)setNeedsURLBag:(BOOL)arg1;
 - (void)setUrlBagKey:(id)arg1;
 - (void)setUrlKnownToBeTrusted:(BOOL)arg1;
+- (BOOL)shouldFollowRedirectWithRequest:(id)arg1 returningError:(id*)arg2;
 - (id)urlBagKey;
 - (BOOL)urlKnownToBeTrusted;
 

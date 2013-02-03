@@ -15,23 +15,24 @@
     NSString *_suffix;
 }
 
-@property(retain) NSString *suffix; /* unknown property attribute: V_suffix */
-@property(retain) NSString *prefix; /* unknown property attribute: V_prefix */
-@property(readonly) BOOL hasSame_parity; /* unknown property attribute: V_hasSame_parity */
-@property BOOL same_parity; /* unknown property attribute: V_same_parity */
-@property(readonly) BOOL hasParameter_is_synthesized; /* unknown property attribute: V_hasParameter_is_synthesized */
-@property BOOL parameter_is_synthesized; /* unknown property attribute: V_parameter_is_synthesized */
-@property(retain) NSMutableArray *parameters; /* unknown property attribute: V_parameters */
-@property(retain) NSMutableArray *numbers; /* unknown property attribute: V_numbers */
+@property(retain) NSMutableArray *numbers;
+@property(retain) NSMutableArray *parameters;
+@property(retain) NSString *prefix;
+@property(retain) NSString *suffix;
+@property(readonly) BOOL hasParameter_is_synthesized;
 @property(readonly) BOOL hasPrefix;
+@property(readonly) BOOL hasSame_parity;
 @property(readonly) BOOL hasSuffix;
 @property(readonly) NSInteger numbersCount;
+@property BOOL parameter_is_synthesized;
 @property(readonly) NSInteger parametersCount;
+@property BOOL same_parity;
 
 - (void)addNumber:(NSInteger)arg1;
 - (void)addParameter:(float)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasParameter_is_synthesized;
 - (BOOL)hasPrefix;
 - (BOOL)hasSame_parity;

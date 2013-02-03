@@ -7,8 +7,8 @@
     struct CGPath { } *_path;
 }
 
-@property(readonly) NSInteger mode; /* unknown property attribute: V_mode */
-@property(readonly) CGPath *path; /* unknown property attribute: V_path */
+@property(readonly) CGPath *path;
+@property(readonly) NSInteger mode;
 
 - (void)dealloc;
 - (id)initWithPath:(struct CGPath { }*)arg1 mode:(NSInteger)arg2;

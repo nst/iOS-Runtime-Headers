@@ -9,8 +9,8 @@
     id m_value;
 }
 
-@property(copy) id value; /* unknown property attribute: Vm_value */
-@property(copy) NSString *name; /* unknown property attribute: Vm_name */
+@property(copy) NSString *name;
+@property(copy) id value;
 
 + (id)attributeWithName:(id)arg1 value:(id)arg2;
 

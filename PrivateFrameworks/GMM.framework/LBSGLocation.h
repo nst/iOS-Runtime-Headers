@@ -30,34 +30,34 @@
     NSInteger _verticalAccuracy;
 }
 
-@property(retain) NSString *locationString; /* unknown property attribute: V_locationString */
-@property(readonly) BOOL hasHeading; /* unknown property attribute: V_hasHeading */
-@property NSInteger heading; /* unknown property attribute: V_heading */
-@property(readonly) BOOL hasVelocity; /* unknown property attribute: V_hasVelocity */
-@property NSInteger velocity; /* unknown property attribute: V_velocity */
-@property(readonly) BOOL hasVerticalAccuracy; /* unknown property attribute: V_hasVerticalAccuracy */
-@property NSInteger verticalAccuracy; /* unknown property attribute: V_verticalAccuracy */
-@property(readonly) BOOL hasAltitude; /* unknown property attribute: V_hasAltitude */
-@property NSInteger altitude; /* unknown property attribute: V_altitude */
-@property(retain) NSString *misc; /* unknown property attribute: V_misc */
-@property(readonly) BOOL hasLocType; /* unknown property attribute: V_hasLocType */
-@property NSInteger locType; /* unknown property attribute: V_locType */
-@property(readonly) BOOL hasObsolete; /* unknown property attribute: V_hasObsolete */
-@property BOOL obsolete; /* unknown property attribute: V_obsolete */
-@property(readonly) BOOL hasTimestamp; /* unknown property attribute: V_hasTimestamp */
-@property long long timestamp; /* unknown property attribute: V_timestamp */
-@property(retain) NSMutableArray *features; /* unknown property attribute: V_features */
-@property(readonly) BOOL hasConfidence; /* unknown property attribute: V_hasConfidence */
-@property NSInteger confidence; /* unknown property attribute: V_confidence */
-@property(readonly) BOOL hasAccuracy; /* unknown property attribute: V_hasAccuracy */
-@property NSInteger accuracy; /* unknown property attribute: V_accuracy */
-@property(retain) NSString *source; /* unknown property attribute: V_source */
-@property(retain) LBSGLatLng *latLng; /* unknown property attribute: V_latLng */
+@property(retain) NSMutableArray *features;
+@property(retain) LBSGLatLng *latLng;
+@property(retain) NSString *locationString;
+@property(retain) NSString *misc;
+@property(retain) NSString *source;
+@property NSInteger accuracy;
+@property NSInteger altitude;
+@property NSInteger confidence;
 @property(readonly) NSInteger featuresCount;
+@property(readonly) BOOL hasAccuracy;
+@property(readonly) BOOL hasAltitude;
+@property(readonly) BOOL hasConfidence;
+@property(readonly) BOOL hasHeading;
 @property(readonly) BOOL hasLatLng;
+@property(readonly) BOOL hasLocType;
 @property(readonly) BOOL hasLocationString;
 @property(readonly) BOOL hasMisc;
+@property(readonly) BOOL hasObsolete;
 @property(readonly) BOOL hasSource;
+@property(readonly) BOOL hasTimestamp;
+@property(readonly) BOOL hasVelocity;
+@property(readonly) BOOL hasVerticalAccuracy;
+@property NSInteger heading;
+@property NSInteger locType;
+@property BOOL obsolete;
+@property long long timestamp;
+@property NSInteger velocity;
+@property NSInteger verticalAccuracy;
 
 - (NSInteger)accuracy;
 - (void)addFeature:(id)arg1;
@@ -65,6 +65,7 @@
 - (NSInteger)confidence;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)featureAtIndex:(NSUInteger)arg1;
 - (id)features;
 - (NSInteger)featuresCount;

@@ -2,17 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUVariableCellConfigurationCache, ISURLOperationCache;
+@class SUVariableCellConfigurationCache;
 
 @interface SUTableDataSource : NSObject {
     id _cellReuseSource;
     SUVariableCellConfigurationCache *_configurationCache;
-    ISURLOperationCache *_imageCache;
     NSInteger _preferringUserInteractionCount;
 }
 
-@property(retain) ISURLOperationCache *imageCache; /* unknown property attribute: V_imageCache */
-@property id cellReuseSource; /* unknown property attribute: V_cellReuseSource */
+@property(readonly) ISURLOperationCache *imageCache;
+@property id cellReuseSource;
 @property(readonly) NSInteger numberOfSections;
 @property(getter=isPreferringUserInteraction,readonly) BOOL preferringUserInteraction;
 
@@ -42,6 +41,6 @@
 - (void)reloadData;
 - (void)resetCaches;
 - (void)setCellReuseSource:(id)arg1;
-- (void)setImageCache:(id)arg1;
+- (id)titleForDeleteConfirmationForIndexPath:(id)arg1;
 
 @end

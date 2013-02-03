@@ -12,20 +12,21 @@
     NSString *_queryRefinementToken;
 }
 
-@property(readonly) BOOL hasIsVia; /* unknown property attribute: V_hasIsVia */
-@property BOOL isVia; /* unknown property attribute: V_isVia */
-@property(retain) NSString *queryRefinementToken; /* unknown property attribute: V_queryRefinementToken */
-@property(retain) GMMGeometry *geocode; /* unknown property attribute: V_geocode */
-@property(retain) NSString *query; /* unknown property attribute: V_query */
+@property(retain) GMMGeometry *geocode;
+@property(retain) NSString *query;
+@property(retain) NSString *queryRefinementToken;
 @property(readonly) ? coordinate;
 @property(readonly) BOOL hasGeocode;
+@property(readonly) BOOL hasIsVia;
 @property(readonly) BOOL hasQuery;
 @property(readonly) BOOL hasQueryRefinementToken;
+@property BOOL isVia;
 
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)description;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)geocode;
 - (BOOL)hasGeocode;
 - (BOOL)hasIsVia;

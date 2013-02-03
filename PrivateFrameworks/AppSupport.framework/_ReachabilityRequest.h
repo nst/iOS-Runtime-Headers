@@ -14,7 +14,7 @@
     BOOL _receivedAtLeastOneCallback;
 }
 
-@property NSString *hostname; /* unknown property attribute: V_hostname */
+@property NSString *hostname;
 
 - (void)addObserver:(id)arg1 selector:(SEL)arg2;
 - (void)dealloc;

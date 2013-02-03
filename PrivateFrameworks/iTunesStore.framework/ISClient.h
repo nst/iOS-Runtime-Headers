@@ -12,16 +12,19 @@
     NSString *_storeFrontID;
 }
 
-@property(retain) NSString *storeFrontID; /* unknown property attribute: V_storeFrontID */
-@property BOOL prefersHighQuality; /* unknown property attribute: V_prefersHighQuality */
-@property(retain) NSString *partnerHeader; /* unknown property attribute: V_partnerHeader */
-@property(retain) NSString *identifier; /* unknown property attribute: V_identifier */
+@property(retain) NSString *identifier;
+@property(readonly) NSString *mediaLibraryIdentifier;
+@property(retain) NSString *partnerHeader;
+@property(retain) NSString *softwareLibraryIdentifier;
+@property(retain) NSString *storeFrontID;
+@property BOOL prefersHighQuality;
 
 + (id)currentClient;
 
 - (id)_copyDefaultStoreFrontID;
 - (BOOL)_defaultPrefersHighQuality;
 - (void)_handleStoreFrontChangedNotification;
+- (void)_postStoreFrontChangedNotifications;
 - (void)_postStoreFrontChangedToValue:(id)arg1;
 - (void)_registerForStoreFrontChangeNotification;
 - (BOOL)_setStoreFrontID:(id)arg1 updateLockdown:(BOOL)arg2;
@@ -31,12 +34,16 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)mediaLibraryIdentifier;
 - (id)partnerHeader;
 - (BOOL)prefersHighQuality;
+- (void)resetStoreFrontForSignOut;
 - (void)setIdentifier:(id)arg1;
 - (void)setPartnerHeader:(id)arg1;
 - (void)setPrefersHighQuality:(BOOL)arg1;
+- (void)setSoftwareLibraryIdentifier:(id)arg1;
 - (void)setStoreFrontID:(id)arg1;
+- (id)softwareLibraryIdentifier;
 - (id)storeFrontID;
 
 @end

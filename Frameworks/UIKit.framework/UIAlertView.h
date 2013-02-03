@@ -176,6 +176,7 @@
 - (void)layoutAnimated:(BOOL)arg1;
 - (id)message;
 - (NSInteger)numberOfButtons;
+- (NSInteger)numberOfLinesInTitle;
 - (NSInteger)numberOfRows;
 - (void)popupAlertAnimated:(BOOL)arg1 animationType:(NSInteger)arg2 atOffset:(float)arg3;
 - (void)popupAlertAnimated:(BOOL)arg1 animationType:(NSInteger)arg2;

@@ -15,12 +15,12 @@
     BOOL _triedCreatingAlternatePartConsumer;
 }
 
-@property(readonly) double timeOfLastActivity; /* unknown property attribute: V_timeOfLastActivity */
-@property NSInteger requestedFormat; /* unknown property attribute: V_requestedFormat */
-@property(retain) <MessageDataConsumerFactory> *consumerFactory; /* unknown property attribute: V_consumerFactory */
-@property(retain,readonly) NSMutableData *bodyData; /* unknown property attribute: V_bodyData */
-@property(retain) <DataConsumer> *alternatePartConsumer; /* unknown property attribute: V_alternatePartConsumer */
-@property(retain) <DataConsumer> *dataConsumer; /* unknown property attribute: V_dataConsumer */
+@property(retain) <DataConsumer> *alternatePartConsumer;
+@property(retain,readonly) NSMutableData *bodyData;
+@property(retain) <MessageDataConsumerFactory> *consumerFactory;
+@property(retain) <DataConsumer> *dataConsumer;
+@property NSInteger requestedFormat;
+@property(readonly) double timeOfLastActivity;
 
 - (id)alternatePartConsumer;
 - (id)bodyData;

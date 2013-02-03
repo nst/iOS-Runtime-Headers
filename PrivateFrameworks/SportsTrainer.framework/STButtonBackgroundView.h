@@ -9,7 +9,7 @@
     NSUInteger _buttonCount;
 }
 
-@property NSUInteger buttonCount; /* unknown property attribute: V_buttonCount */
+@property NSUInteger buttonCount;
 
 - (NSUInteger)buttonCount;
 - (void)dealloc;

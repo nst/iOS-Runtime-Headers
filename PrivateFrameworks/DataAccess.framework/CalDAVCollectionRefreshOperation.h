@@ -9,7 +9,6 @@
     CalDAVCacheManager *_cache;
     MobileCalDAVCalendar *_calendar;
     id _delegate;
-    BOOL _force;
 }
 
 + (id)propertiesForCollection;
@@ -19,7 +18,6 @@
 - (void)_delegateDidAbortRefresh;
 - (void)_delegateDidCompleteRefresh;
 - (void)_delegateProcessError:(id)arg1;
-- (void)_delegateProcessProperties:(id)arg1;
 - (void)_delegateProcessResources:(id)arg1;
 - (BOOL)_delegateShouldAcceptEntryModification:(id)arg1 isDeleted:(BOOL)arg2;
 - (BOOL)_delegateShouldContinueProcessingResources;
@@ -27,15 +25,11 @@
 - (BOOL)_multiget:(id)arg1 error:(id*)arg2;
 - (id)account;
 - (id)cache;
-- (void)closeDBAndSave:(BOOL)arg1;
 - (void)dealloc;
 - (BOOL)download:(id)arg1 error:(id*)arg2;
-- (id)initWithAccount:(id)arg1 calendar:(id)arg2 delegate:(id)arg3 force:(BOOL)arg4;
-- (BOOL)isDBOpen;
+- (id)initWithAccount:(id)arg1 calendar:(id)arg2 delegate:(id)arg3;
 - (id)listing:(id*)arg1;
-- (struct CalDatabase { }*)openDB;
 - (id)path;
-- (id)properties:(id*)arg1;
 - (id)reconcile:(id)arg1;
 - (void)refresh;
 - (BOOL)useMultiGet;

@@ -7,8 +7,8 @@
     NSInteger _progressViewStyle;
 }
 
-@property float progress; /* unknown property attribute: V_progress */
-@property NSInteger progressViewStyle; /* unknown property attribute: V_progressViewStyle */
+@property float progress;
+@property NSInteger progressViewStyle;
 
 + (void)_loadResourcesForStyle:(NSInteger)arg1;
 + (struct CGSize { float x1; float x2; })defaultSize;

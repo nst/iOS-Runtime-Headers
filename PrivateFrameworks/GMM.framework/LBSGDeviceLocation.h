@@ -9,8 +9,8 @@
     LBSGLocation *_location;
 }
 
-@property(retain) LBSGCell *cell; /* unknown property attribute: V_cell */
-@property(retain) LBSGLocation *location; /* unknown property attribute: V_location */
+@property(retain) LBSGCell *cell;
+@property(retain) LBSGLocation *location;
 @property(readonly) BOOL hasCell;
 @property(readonly) BOOL hasLocation;
 

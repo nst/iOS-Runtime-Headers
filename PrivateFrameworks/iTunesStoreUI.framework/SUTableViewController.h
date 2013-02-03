@@ -15,15 +15,16 @@
     NSIndexPath *_firstTapIndexPath;
     } _originalEdgeInsets;
     NSInteger _placeholderRowCount;
+    BOOL _preferUserInteractionWhileScrolling;
     UITableView *_tableView;
     NSInteger _tableViewStyle;
 }
 
-@property NSInteger tableViewStyle; /* unknown property attribute: V_tableViewStyle */
-@property(readonly) UITableView *tableView; /* unknown property attribute: V_tableView */
-@property(retain) SUTableDataSource *dataSource; /* unknown property attribute: V_dataSource */
-@property(retain) UIView *bottomOverlayView; /* unknown property attribute: V_bottomOverlayView */
+@property(retain) UIView *bottomOverlayView;
+@property(retain) SUTableDataSource *dataSource;
+@property(readonly) UITableView *tableView;
 @property(readonly) NSUInteger numberOfRows;
+@property NSInteger tableViewStyle;
 
 - (void)_addBottomOverlayView;
 - (void)_deliverTapCount:(NSInteger)arg1 forIndexPath:(id)arg2;
@@ -43,6 +44,7 @@
 - (NSInteger)numberOfSectionsInTableView:(id)arg1;
 - (void)purgeMemoryForReason:(NSInteger)arg1;
 - (void)reloadData;
+- (void)reloadForChangedRowCount:(NSInteger)arg1;
 - (void)scrollToRowAtIndexPath:(id)arg1 atScrollPosition:(NSInteger)arg2 animated:(BOOL)arg3;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
@@ -57,6 +59,7 @@
 - (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (id)tableView:(id)arg1 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;

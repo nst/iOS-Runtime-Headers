@@ -7,8 +7,8 @@
     id _streetViewDelegate;
 }
 
-@property(retain) id streetViewDelegate; /* unknown property attribute: V_streetViewDelegate */
-@property(retain) id notificationObject; /* unknown property attribute: V_notificationObject */
+@property(retain) id notificationObject;
+@property(retain) id streetViewDelegate;
 
 - (void)dealloc;
 - (id)notificationObject;

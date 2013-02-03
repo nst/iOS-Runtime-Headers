@@ -10,9 +10,9 @@
     SUWebView *_webView;
 }
 
-@property SUWebView *webView; /* unknown property attribute: V_webView */
-@property(readonly) WebScriptObject *scriptObject; /* unknown property attribute: V_scriptObject */
 @property(readonly) NSString *DOMIdentifier;
+@property(readonly) WebScriptObject *scriptObject;
+@property SUWebView *webView;
 @property(readonly) NSInteger type;
 
 - (id)DOMIdentifier;

@@ -26,16 +26,16 @@
     UIView *_view;
 }
 
-@property(readonly) BOOL editing; /* unknown property attribute: V_editing */
-@property(readonly) BOOL shouldDeleteAfterAnimation; /* unknown property attribute: V_shouldDeleteAfterAnimation */
-@property(readonly) BOOL animateFromCurrentPosition; /* unknown property attribute: V_animateFromCurrentPosition */
-@property(readonly) NSInteger curve; /* unknown property attribute: V_curve */
-@property(readonly) float endFraction; /* unknown property attribute: V_endFraction */
-@property(readonly) float startFraction; /* unknown property attribute: V_startFraction */
-@property(readonly) float endAlpha; /* unknown property attribute: V_endAlpha */
-@property(readonly) CGRect endRect; /* unknown property attribute: V_endRect */
-@property(readonly) NSIndexPath *indexPath; /* unknown property attribute: V_indexPath */
-@property(readonly) UIView *view; /* unknown property attribute: V_view */
+@property(readonly) NSIndexPath *indexPath;
+@property(readonly) UIView *view;
+@property(readonly) BOOL animateFromCurrentPosition;
+@property(readonly) NSInteger curve;
+@property(readonly) BOOL editing;
+@property(readonly) float endAlpha;
+@property(readonly) float endFraction;
+@property(readonly) CGRect endRect;
+@property(readonly) BOOL shouldDeleteAfterAnimation;
+@property(readonly) float startFraction;
 
 - (BOOL)animateFromCurrentPosition;
 - (NSInteger)curve;

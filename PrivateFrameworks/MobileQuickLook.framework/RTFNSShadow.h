@@ -13,9 +13,9 @@
     } shadowOffset;
 }
 
-@property float shadowBlurRadius; /* unknown property attribute: VshadowBlurRadius */
-@property CGSize shadowOffset; /* unknown property attribute: VshadowOffset */
-@property(retain) RTFNSColor *shadowColor; /* unknown property attribute: VshadowColor */
+@property(retain) RTFNSColor *shadowColor;
+@property float shadowBlurRadius;
+@property CGSize shadowOffset;
 
 - (void)setShadowBlurRadius:(float)arg1;
 - (void)setShadowColor:(id)arg1;

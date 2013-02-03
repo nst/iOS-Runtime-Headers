@@ -24,6 +24,7 @@
     unsigned int _didBeginTracking : 1;
     unsigned int _needsCommit : 1;
     unsigned int _canCommit : 1;
+    unsigned int _durationAllowsDetailScrubbing : 1;
     unsigned int _autoscrubActive : 1;
     NSTimer *_autoscrubTimer;
     double _availableDuration;
@@ -46,13 +47,13 @@
     float _trackInset;
 }
 
-@property float detailScrubbingVerticalRange; /* unknown property attribute: V_detailScrubbingVerticalRange */
-@property UIEdgeInsets timeLabelInsets; /* unknown property attribute: V_timeLabelInsets */
-@property double availableDuration; /* unknown property attribute: V_availableDuration */
-@property double duration; /* unknown property attribute: V_duration */
-@property <MPDetailSliderDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <MPDetailSliderDelegate> *delegate;
 @property(readonly) NSString *localizedScrubSpeedText;
 @property BOOL allowsDetailScrubbing;
+@property double availableDuration;
+@property float detailScrubbingVerticalRange;
+@property double duration;
+@property UIEdgeInsets timeLabelInsets;
 
 + (float)defaultHeight;
 

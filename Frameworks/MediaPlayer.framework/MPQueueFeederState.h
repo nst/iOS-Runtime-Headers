@@ -11,10 +11,10 @@
     NSInteger _feederMode;
 }
 
-@property NSInteger feederMode; /* unknown property attribute: V_feederMode */
-@property double currentTime; /* unknown property attribute: V_currentTime */
-@property NSUInteger currentItemIndex; /* unknown property attribute: V_currentItemIndex */
-@property(copy) MPQueueFeeder *feeder; /* unknown property attribute: V_feeder */
+@property(copy) MPQueueFeeder *feeder;
+@property NSUInteger currentItemIndex;
+@property double currentTime;
+@property NSInteger feederMode;
 
 - (NSUInteger)currentItemIndex;
 - (double)currentTime;

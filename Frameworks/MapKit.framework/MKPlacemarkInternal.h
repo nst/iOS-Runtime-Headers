@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSDictionary;
+@class NSDictionary, GMMMapPoint;
 
 @interface MKPlacemarkInternal : NSObject {
     struct { 
@@ -10,6 +10,9 @@
         double longitude; 
     NSDictionary *address;
     } coordinate;
+    GMMMapPoint *gmmMapPoint;
+    NSUInteger heapTime;
+    NSUInteger updateTime;
 }
 
 @end

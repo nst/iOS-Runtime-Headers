@@ -8,9 +8,9 @@
     NSInteger _year;
 }
 
-@property(readonly) NSInteger day; /* unknown property attribute: V_day */
-@property(readonly) NSInteger month; /* unknown property attribute: V_month */
-@property(readonly) NSInteger year; /* unknown property attribute: V_year */
+@property(readonly) NSInteger day;
+@property(readonly) NSInteger month;
+@property(readonly) NSInteger year;
 
 + (id)dateFromICSString:(id)arg1;
 + (id)dateFromICSUTF8String:(const char *)arg1;

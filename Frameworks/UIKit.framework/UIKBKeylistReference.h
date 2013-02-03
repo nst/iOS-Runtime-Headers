@@ -13,14 +13,12 @@
     id m_value;
 }
 
-@property(readonly) NSInteger endKeyIndex; /* unknown property attribute: Vm_endKeyIndex */
-@property(readonly) NSInteger startKeyIndex; /* unknown property attribute: Vm_startKeyIndex */
-@property(readonly) NSArray *nameElements; /* unknown property attribute: Vm_nameElements */
-@property(readonly) NSUInteger flags; /* unknown property attribute: Vm_flags */
-@property(retain) id value; /* unknown property attribute: Vm_value */
-@property(retain) NSString *name; /* unknown property attribute: Vm_name */
 @property(readonly) NSString *keyName;
 @property(readonly) NSString *keylistName;
+@property(retain) NSString *name;
+@property(readonly) NSArray *nameElements;
+@property(readonly) NSInteger endKeyIndex;
+@property(readonly) NSUInteger flags;
 @property(readonly) BOOL isAttributesReference;
 @property(readonly) BOOL isGeometryReference;
 @property(readonly) BOOL isKeyIndexRangeReference;
@@ -29,6 +27,8 @@
 @property(readonly) BOOL isKeysReference;
 @property(readonly) BOOL isKeysetReference;
 @property(readonly) BOOL isNamedKeyReference;
+@property(readonly) NSInteger startKeyIndex;
+@property(retain) id value;
 
 + (id)referenceWithName:(id)arg1 value:(id)arg2 flags:(NSUInteger)arg3;
 

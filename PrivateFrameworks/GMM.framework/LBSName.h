@@ -14,21 +14,22 @@
     NSString *_text;
 }
 
-@property(retain) NSString *short_text; /* unknown property attribute: V_short_text */
-@property(retain) NSString *raw_text; /* unknown property attribute: V_raw_text */
-@property(readonly) BOOL hasRoute_direction; /* unknown property attribute: V_hasRoute_direction */
-@property NSInteger route_direction; /* unknown property attribute: V_route_direction */
-@property(retain) NSMutableArray *flags; /* unknown property attribute: V_flags */
-@property(retain) NSString *language; /* unknown property attribute: V_language */
-@property(retain) NSString *text; /* unknown property attribute: V_text */
+@property(retain) NSMutableArray *flags;
+@property(retain) NSString *language;
+@property(retain) NSString *raw_text;
+@property(retain) NSString *short_text;
+@property(retain) NSString *text;
 @property(readonly) NSInteger flagsCount;
 @property(readonly) BOOL hasLanguage;
 @property(readonly) BOOL hasRaw_text;
+@property(readonly) BOOL hasRoute_direction;
 @property(readonly) BOOL hasShort_text;
+@property NSInteger route_direction;
 
 - (void)addFlag:(NSInteger)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (NSInteger)flagAtIndex:(NSUInteger)arg1;
 - (id)flags;
 - (NSInteger)flagsCount;

@@ -6,7 +6,7 @@
     id _richContentDelegate;
 }
 
-@property id richContentDelegate; /* unknown property attribute: V_richContentDelegate */
+@property id richContentDelegate;
 
 - (void)_wvHelperThawSelectionTag;
 - (void)_wvInsertHTML:(id)arg1;

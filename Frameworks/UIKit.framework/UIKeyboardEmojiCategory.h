@@ -10,9 +10,9 @@
     NSString *_name;
 }
 
-@property NSInteger lastViewedPage; /* unknown property attribute: V_lastViewedPage */
-@property(retain) NSArray *emoji; /* unknown property attribute: V_emoji */
-@property(retain) NSString *name; /* unknown property attribute: V_name */
+@property(retain) NSArray *emoji;
+@property(retain) NSString *name;
+@property NSInteger lastViewedPage;
 
 - (id)emoji;
 - (NSInteger)lastViewedPage;

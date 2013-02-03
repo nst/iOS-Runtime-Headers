@@ -16,7 +16,7 @@
     CKTextContentView *_subjectView;
 }
 
-@property(readonly) NSArray *contentViews; /* unknown property attribute: V_contentViews */
+@property(readonly) NSArray *contentViews;
 @property BOOL showsSubject;
 
 - (void)_addContentView:(id)arg1;

@@ -15,11 +15,11 @@
     void *_person;
 }
 
-@property void *person; /* unknown property attribute: V_person */
-@property <ABPersonTableFooterViewDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property(getter=isEditing) BOOL editing; /* unknown property attribute: V_editing */
 @property(readonly) NSString *attribution;
+@property <ABPersonTableFooterViewDelegate> *delegate;
+@property void *person;
 @property(getter=isAttributionEnabled,readonly) BOOL attributionEnabled;
+@property(getter=isEditing) BOOL editing;
 
 - (void)_addAction:(id)arg1 withOrdering:(NSInteger)arg2;
 - (void)_removeActionAtIndex:(NSInteger)arg1;

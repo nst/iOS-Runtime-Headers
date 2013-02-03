@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSData;
+@class NSData, UINibDecoder;
 
 @interface UINib : NSObject {
     NSData *archiveData;
     BOOL instantiatingForSimulator;
+    UINibDecoder *nibDecoder;
 }
 
 - (void)dealloc;
@@ -17,5 +18,6 @@
 - (id)instantiateWithOwner:(id)arg1 loadingResourcesFromBundle:(id)arg2;
 - (BOOL)instantiatingForSimulator;
 - (void)setInstantiatingForSimulator:(BOOL)arg1;
+- (id)unarchiverForInstantiatingReturningError:(id*)arg1;
 
 @end

@@ -29,7 +29,6 @@
 - (id)currentPolicyKeyForAccountID:(id)arg1;
 - (void)dealloc;
 - (id)defaultContainerIdentifierForAccountID:(id)arg1 andDataClass:(NSInteger)arg2;
-- (id)getSubscribedCalendars;
 - (void)handleBrokenPipe;
 - (BOOL)handleURL:(id)arg1;
 - (id)init;
@@ -37,7 +36,6 @@
 - (NSInteger)openDADConnectionOnRunLoop:(struct __CFRunLoop { }*)arg1;
 - (BOOL)performServerContactsSearch:(id)arg1 forAccountWithID:(id)arg2 onRunloop:(id)arg3;
 - (BOOL)processMeetingRequests:(id)arg1 inFolderWithId:(id)arg2 forAccountWithId:(id)arg3;
-- (BOOL)processSubscribedCalendars:(id)arg1;
 - (NSUInteger)publicPort;
 - (BOOL)removeStoresForAccountWithID:(id)arg1;
 - (BOOL)reportFolderItemsSyncSuccess:(BOOL)arg1 forFolderWithID:(id)arg2 andAccountWithID:(id)arg3;

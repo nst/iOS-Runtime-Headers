@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIToolbar;
+@class UIToolbar, _UISwappableImageViewAnimationProxy;
 
 @interface UISwappableImageView : UIView {
     id _alternate;
@@ -14,6 +14,7 @@
     SEL _didFinishSelector;
     id _didFinishTarget;
     BOOL _flipped;
+    _UISwappableImageViewAnimationProxy *_proxy;
     BOOL _showAlternate;
     BOOL _updateImage;
     id _value;

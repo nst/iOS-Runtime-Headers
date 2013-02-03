@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSString, LoopbackSocketTunnel, <GKVoiceChatClient>, GKVoiceChatDictionary, NSRecursiveLock, GKVoiceChatService;
+@class NSString, LoopbackSocketTunnel, ICEResultWaitQueue, NSRecursiveLock, <GKVoiceChatClient>, GKVoiceChatDictionary, GKVoiceChatService;
 
 @interface GKVoiceChatServicePrivate : NSObject {
     struct tagCONNRESULT { 
@@ -84,6 +84,7 @@
     float outputMeterLevel;
     BOOL outputMeteringEnabled;
     float remoteParticipantVolume;
+    ICEResultWaitQueue *resultQueue;
     struct tagHANDLE { NSInteger x1; } *rtpHandle;
     NSString *sdp;
     NSInteger state;
@@ -92,15 +93,15 @@
     GKVoiceChatService *wrapperService;
 }
 
-@property GKVoiceChatService *wrapperService; /* unknown property attribute: VwrapperService */
-@property NSInteger state; /* unknown property attribute: Vstate */
-@property(getter=isMicrophoneMuted) BOOL microphoneMuted; /* unknown property attribute: VmicrophoneMuted */
-@property float inputMeterLevel; /* unknown property attribute: VinputMeterLevel */
-@property float outputMeterLevel; /* unknown property attribute: VoutputMeterLevel */
-@property(getter=isInputMeteringEnabled) BOOL inputMeteringEnabled; /* unknown property attribute: VinputMeteringEnabled */
-@property(getter=isOutputMeteringEnabled) BOOL outputMeteringEnabled; /* unknown property attribute: VoutputMeteringEnabled */
-@property float remoteParticipantVolume; /* unknown property attribute: VremoteParticipantVolume */
-@property <GKVoiceChatClient> *client; /* unknown property attribute: Vclient */
+@property <GKVoiceChatClient> *client;
+@property GKVoiceChatService *wrapperService;
+@property float inputMeterLevel;
+@property(getter=isInputMeteringEnabled) BOOL inputMeteringEnabled;
+@property(getter=isMicrophoneMuted) BOOL microphoneMuted;
+@property float outputMeterLevel;
+@property(getter=isOutputMeteringEnabled) BOOL outputMeteringEnabled;
+@property float remoteParticipantVolume;
+@property NSInteger state;
 
 + (id)defaultVoiceChatService;
 

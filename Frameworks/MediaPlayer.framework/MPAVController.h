@@ -53,36 +53,36 @@
 }
 
 @property(getter=destinationIsTVOut) BOOL destinationIsTVOut; /* unknown property attribute: SsetDestinationIsTVOut: */
-@property NSInteger feederMode; /* unknown property attribute: V_feederMode */
-@property(retain,readonly) VolumeController *volumeController; /* unknown property attribute: V_volumeController */
-@property(retain,readonly) CALayer *videoLayer; /* unknown property attribute: V_videoLayer */
-@property(retain,readonly) id subtitlesRecipient; /* unknown property attribute: V_subtitlesRecipient */
-@property(readonly) NSUInteger state; /* unknown property attribute: V_state */
-@property double repeatGap; /* unknown property attribute: V_repeatGap */
-@property double nextFadeOutDuration; /* unknown property attribute: V_nextFadeOutDuration */
-@property(retain) MPQueueFeeder *feeder; /* unknown property attribute: V_feeder */
-@property NSInteger EQPreset; /* unknown property attribute: V_eqPreset */
-@property(readonly) NSUInteger bufferingState; /* unknown property attribute: V_bufferingState */
-@property(retain,readonly) MPAudioDeviceController *audioDeviceController; /* unknown property attribute: V_audioDeviceController */
+@property(retain,readonly) MPAudioDeviceController *audioDeviceController;
 @property(retain,readonly) AVController *avController;
 @property(retain,readonly) MPItem *currentItem;
+@property(retain) MPQueueFeeder *feeder;
+@property(retain,readonly) CALayer *videoLayer;
+@property(retain,readonly) VolumeController *volumeController;
+@property NSInteger EQPreset;
 @property(readonly) NSUInteger activeRepeatType;
 @property(readonly) NSUInteger activeShuffleType;
 @property BOOL alwaysPlayWheneverPossible;
 @property BOOL autoPlayWhenLikelyToKeepUp;
+@property(readonly) NSUInteger bufferingState;
 @property BOOL closedCaptioningEnabled;
 @property double currentTime;
+@property NSInteger feederMode;
 @property(readonly) BOOL handlingRemoteEvent;
+@property double nextFadeOutDuration;
 @property(readonly) NSUInteger numberOfItems;
 @property NSInteger playbackMode;
 @property(getter=isPlaying,readonly) BOOL playing;
 @property float rate;
+@property double repeatGap;
 @property NSUInteger repeatType;
 @property(getter=isRewindHoldingAtStart,readonly) BOOL rewindHoldingAtStart;
 @property NSUInteger shuffleType;
 @property(getter=isShuffled,readonly) BOOL shuffled;
+@property(readonly) NSUInteger state;
 @property BOOL stopAtEnd;
 @property BOOL subtitlesEnabled;
+@property(retain,readonly) id subtitlesRecipient;
 @property(getter=isValid,readonly) BOOL valid;
 @property float volume;
 
@@ -108,6 +108,7 @@
 - (void)_disconnectAVControllerWithReason:(NSInteger)arg1;
 - (NSUInteger)_displayPlaybackState;
 - (void)_endSeekAndChangeRate:(BOOL)arg1;
+- (id)_extractImageFromMetadataPayload:(id)arg1;
 - (BOOL)_isPlayingForState:(NSUInteger)arg1;
 - (void)_itemAttributeAvailableNotification:(id)arg1;
 - (void)_itemCompletedDecodeNotification:(id)arg1;
@@ -142,6 +143,7 @@
 - (void)_suspendedEventsOnlyNotification:(id)arg1;
 - (void)_suspendedNotification:(id)arg1;
 - (void)_timeHasJumpedNotification:(id)arg1;
+- (void)_timedMetadataAvailableNotification:(id)arg1;
 - (void)_unregisterForAVItemNotifications:(id)arg1;
 - (void)_unregisterForAVNotifications:(id)arg1;
 - (void)_updateProgress:(struct __CFRunLoopTimer { }*)arg1;

@@ -8,10 +8,13 @@
     NSMutableDictionary *_dictionary;
 }
 
+@property(retain,readonly) NSString *artistName;
 @property(retain,readonly) NSString *bundleID;
 @property(retain) NSDictionary *dictionary;
 @property(retain,readonly) NSURL *displayableArtworkURL;
 @property(retain,readonly) NSString *downloadKey;
+@property(retain,readonly) NSNumber *durationInMS;
+@property(retain,readonly) NSString *genre;
 @property(retain,readonly) NSString *kind;
 @property(retain,readonly) NSString *playlistName;
 @property(retain,readonly) NSArray *sinfs;
@@ -25,13 +28,16 @@
 
 - (id)_valueForFirstAvailableKey:(id)arg1;
 - (id)_valueForKey:(id)arg1;
+- (id)artistName;
 - (BOOL)artworkIsPrerendered;
 - (id)bundleID;
 - (void)dealloc;
 - (id)dictionary;
 - (id)displayableArtworkURL;
 - (id)downloadKey;
+- (id)durationInMS;
 - (void)encodeWithCoder:(id)arg1;
+- (id)genre;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (BOOL)isRental;

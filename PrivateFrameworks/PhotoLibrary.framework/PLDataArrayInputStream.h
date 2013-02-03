@@ -28,7 +28,7 @@
     NSUInteger _streamStatus;
 }
 
-@property <PLDataArrayInputStreamProgressDelegate> *progressDelegate; /* unknown property attribute: V_progressDelegate */
+@property <PLDataArrayInputStreamProgressDelegate> *progressDelegate;
 
 - (void)_scheduleCallback;
 - (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;

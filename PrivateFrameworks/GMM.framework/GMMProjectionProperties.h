@@ -21,26 +21,27 @@
     NSInteger _tiltYawDegreeE6;
 }
 
-@property(readonly) BOOL hasMaxVisiblePitchE6; /* unknown property attribute: V_hasMaxVisiblePitchE6 */
-@property NSInteger maxVisiblePitchE6; /* unknown property attribute: V_maxVisiblePitchE6 */
-@property(readonly) BOOL hasMinVisiblePitchE6; /* unknown property attribute: V_hasMinVisiblePitchE6 */
-@property NSInteger minVisiblePitchE6; /* unknown property attribute: V_minVisiblePitchE6 */
-@property(readonly) BOOL hasHorizontalFovE6; /* unknown property attribute: V_hasHorizontalFovE6 */
-@property NSInteger horizontalFovE6; /* unknown property attribute: V_horizontalFovE6 */
-@property(readonly) BOOL hasProjectionType; /* unknown property attribute: V_hasProjectionType */
-@property NSInteger projectionType; /* unknown property attribute: V_projectionType */
-@property(readonly) BOOL hasCameraPitchDegreeE6; /* unknown property attribute: V_hasCameraPitchDegreeE6 */
-@property NSInteger cameraPitchDegreeE6; /* unknown property attribute: V_cameraPitchDegreeE6 */
-@property(readonly) BOOL hasTiltPitchDegreeE6; /* unknown property attribute: V_hasTiltPitchDegreeE6 */
-@property NSInteger tiltPitchDegreeE6; /* unknown property attribute: V_tiltPitchDegreeE6 */
-@property(readonly) BOOL hasTiltYawDegreeE6; /* unknown property attribute: V_hasTiltYawDegreeE6 */
-@property NSInteger tiltYawDegreeE6; /* unknown property attribute: V_tiltYawDegreeE6 */
-@property(readonly) BOOL hasPanoYawDegreeE6; /* unknown property attribute: V_hasPanoYawDegreeE6 */
-@property NSInteger panoYawDegreeE6; /* unknown property attribute: V_panoYawDegreeE6 */
+@property NSInteger cameraPitchDegreeE6;
+@property(readonly) BOOL hasCameraPitchDegreeE6;
+@property(readonly) BOOL hasHorizontalFovE6;
+@property(readonly) BOOL hasMaxVisiblePitchE6;
+@property(readonly) BOOL hasMinVisiblePitchE6;
+@property(readonly) BOOL hasPanoYawDegreeE6;
+@property(readonly) BOOL hasProjectionType;
+@property(readonly) BOOL hasTiltPitchDegreeE6;
+@property(readonly) BOOL hasTiltYawDegreeE6;
+@property NSInteger horizontalFovE6;
+@property NSInteger maxVisiblePitchE6;
+@property NSInteger minVisiblePitchE6;
+@property NSInteger panoYawDegreeE6;
+@property NSInteger projectionType;
+@property NSInteger tiltPitchDegreeE6;
+@property NSInteger tiltYawDegreeE6;
 
 - (NSInteger)cameraPitchDegreeE6;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasCameraPitchDegreeE6;
 - (BOOL)hasHorizontalFovE6;
 - (BOOL)hasMaxVisiblePitchE6;

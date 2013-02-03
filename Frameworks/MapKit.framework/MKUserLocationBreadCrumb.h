@@ -9,7 +9,7 @@
     } _coordinate;
 }
 
-@property ? coordinate; /* unknown property attribute: V_coordinate */
+@property ? coordinate;
 @property(readonly) Class viewClass;
 
 - (struct { double x1; double x2; })coordinate;

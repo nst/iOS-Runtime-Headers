@@ -8,7 +8,7 @@
     UIView<UITextSelectingContent> *_textView;
 }
 
-@property UIView<UITextSelectingContent> *textView; /* unknown property attribute: V_textView */
+@property UIView<UITextSelectingContent> *textView;
 
 - (BOOL)isCloseToCaret;
 - (void)setTextView:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIToolbar, MLPhotoAlbum, PLEmptyAlbumView, PLThumbnailTableCell, UITableView, PLImageCountCell, NSMutableSet;
+@class UIToolbar, MLPhotoAlbum, PLEmptyAlbumView, PLThumbnailTableCell, NSMutableArray, UITableView, PLImageCountCell;
 
 @interface PLAlbumView : UIView <UITableViewDataSource, UITableViewDelegate> {
     struct CGSize { 
@@ -30,13 +30,13 @@
     } _lastTableContentInset;
     BOOL _pictureWasTakenSinceLastReload;
     struct __CFDictionary { } *_selectedPhotoIndexesByRow;
-    NSMutableSet *_selectedPhotos;
+    NSMutableArray *_selectedPhotos;
     BOOL _showImageCount;
     UIToolbar *_toolbar;
 }
 
 @property(retain) MLPhotoAlbum *album;
-@property(readonly) NSSet *selectedPhotos;
+@property(readonly) NSArray *selectedPhotos;
 @property(retain) UIToolbar *toolbar;
 @property BOOL canShowCopyCallout;
 @property id delegate;
@@ -44,10 +44,10 @@
 @property BOOL multipleSelectionEnabled;
 
 - (void)_albumContentsDidChange:(id)arg1;
-- (NSUInteger)_calculateGridHeightForCount:(NSInteger)arg1;
+- (NSUInteger)_calculateGridHeightForAlbum:(id)arg1;
 - (void)_cameraAlbumDidChange:(id)arg1;
 - (id)_imageCountCell;
-- (struct CGSize { float x1; float x2; })_indexCellSizeForCount:(NSInteger)arg1;
+- (struct CGSize { float x1; float x2; })_indexCellSizeForAlbum:(id)arg1;
 - (void)_scrollToBottom;
 - (void)_setupIndexTable;
 - (void)_updateToolbar;
@@ -75,7 +75,7 @@
 - (void)storeCurrentConfiguration:(id)arg1;
 - (void)tableCell:(id)arg1 requestsDeletionOfPhotoAtIndex:(NSUInteger)arg2;
 - (void)tableCellCopyCalloutWillDisappear:(id)arg1;
-- (void)tableCellSelectionStateDidChange:(id)arg1;
+- (void)tableCellSelectionStateDidChange:(id)arg1 photo:(id)arg2 wasSelected:(BOOL)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

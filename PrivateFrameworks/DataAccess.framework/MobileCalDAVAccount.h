@@ -15,10 +15,10 @@
     <DAValidityCheckConsumer> *_validityConsumer;
 }
 
-@property(retain) NSSet *calendars; /* unknown property attribute: V_calendars */
-@property(retain) NSSet *calendarUserAddresses; /* unknown property attribute: V_calendarUserAddresses */
 @property(retain) CalDAVAccount *account;
 @property(retain) NSString *calendarHomePath;
+@property(retain) NSSet *calendarUserAddresses;
+@property(retain) NSSet *calendars;
 @property(retain) NSString *dropBoxPath;
 @property(retain) NSString *fullName;
 @property(retain) NSString *inboxPath;
@@ -65,7 +65,6 @@
 - (id)dateToSyncTo;
 - (void)davSessionShouldAllowTrustInfo:(id)arg1;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
 - (id)dropBoxPath;
 - (void)dropPowerAssertions;
 - (id)fullName;
@@ -89,8 +88,8 @@
 - (id)principalURL;
 - (id)properties;
 - (void)reattainPowerAssertions;
-- (void)refreshForced:(BOOL)arg1 calendarsOnly:(BOOL)arg2;
 - (void)refreshOperation:(id)arg1 didCompleteWithError:(id)arg2;
+- (void)refreshWithContext:(id)arg1;
 - (void)releasePowerAssertion;
 - (void)removeCalendar:(id)arg1;
 - (void)removeCalendarUserAddress:(id)arg1;

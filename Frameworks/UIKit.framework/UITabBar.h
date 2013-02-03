@@ -21,7 +21,7 @@
     } _tabBarFlags;
 }
 
-@property <UITabBarDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <UITabBarDelegate> *delegate;
 @property(copy) NSArray *items;
 @property UITabBarItem *selectedItem;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableDictionary, DAAccount, NSString, NSArray, DAMailbox, NSObject<ASAccountActorMessages>;
+@class NSMutableDictionary, NSArray, NSString, NSCountedSet, NSObject<ASAccountActorMessages>, DAAccount, DAMailbox, NSSet;
 
 @interface DAMailAccount : MailAccount {
     NSObject<ASAccountActorMessages> *_accountConduit;
@@ -24,6 +24,8 @@
     BOOL _startListeningOnHierarchyChange;
     NSInteger _supportsServerSearch;
     DAMailbox *_temporaryInbox;
+    NSCountedSet *_userFocusMailboxIds;
+    NSSet *_watchedFolderIds;
 }
 
 + (id)_URLScheme;
@@ -51,6 +53,7 @@
 - (id)accountPropertyForKey:(id)arg1;
 - (void)addRequest:(id)arg1 mailbox:(id)arg2 consumer:(id)arg3;
 - (void)addRequests:(id)arg1 mailbox:(id)arg2 consumers:(id)arg3;
+- (void)addUserFocusMailbox:(id)arg1;
 - (id)allMailboxUids;
 - (BOOL)canFetchMessagesByNumericRange;
 - (void)cancelSearchQuery:(id)arg1;
@@ -75,10 +78,11 @@
 - (id)primaryMailboxUid;
 - (void)pushedFoldersPrefsChanged:(id)arg1;
 - (BOOL)reconstituteOrphanedMeetingInMessage:(id)arg1;
+- (void)removeUserFocusMailbox:(id)arg1;
 - (void)resetFolderID:(id)arg1;
 - (void)resetSpecialMailboxes;
 - (void)setDAAccount:(id)arg1;
-- (void)setSyncAnchor:(id)arg1 forFolderID:(id)arg2;
+- (void)setSyncAnchor:(id)arg1 forFolderID:(id)arg2 mailbox:(id*)arg3;
 - (BOOL)shouldAppearInMailSettings;
 - (BOOL)shouldDisplayHostnameInErrorMessages;
 - (BOOL)shouldRestoreMessagesAfterFailedDelete;
@@ -87,7 +91,7 @@
 - (Class)storeClass;
 - (BOOL)supportsRemoteAppend;
 - (BOOL)supportsServerSearch;
-- (id)syncAnchorForFolderID:(id)arg1;
+- (id)syncAnchorForFolderID:(id)arg1 mailbox:(id*)arg2;
 - (id)syncAnchorForMailbox:(id)arg1;
 - (id)uniqueId;
 - (id)username;

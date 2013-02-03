@@ -9,11 +9,12 @@
     NSString *_panoId;
 }
 
-@property(retain) GMMMapPoint *latLon; /* unknown property attribute: V_latLon */
-@property(retain) NSString *panoId; /* unknown property attribute: V_panoId */
+@property(retain) GMMMapPoint *latLon;
+@property(retain) NSString *panoId;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)init;
 - (id)latLon;
 - (id)panoId;

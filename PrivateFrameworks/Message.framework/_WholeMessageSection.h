@@ -8,7 +8,7 @@
     NSData *_data;
 }
 
-@property(retain) NSData *data; /* unknown property attribute: V_data */
+@property(retain) NSData *data;
 
 - (id)data;
 - (void)dealloc;

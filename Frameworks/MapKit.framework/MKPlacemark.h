@@ -21,6 +21,10 @@
 @property(readonly) ? coordinate;
 
 - (id)_formattedAddressLines;
+- (NSUInteger)_mapkit_cache_heapTime;
+- (id)_mapkit_cache_key;
+- (NSUInteger)_mapkit_cache_updateTime;
+- (id)_mergedThoroughfare;
 - (id)addressDictionary;
 - (id)administrativeArea;
 - (struct { double x1; double x2; })coordinate;
@@ -30,6 +34,8 @@
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1 addressDictionary:(id)arg2;
 - (id)locality;
 - (id)postalCode;
+- (void)set_mapkit_cache_heapTime:(NSUInteger)arg1;
+- (void)set_mapkit_cache_updateTime:(NSUInteger)arg1;
 - (id)subAdministrativeArea;
 - (id)subLocality;
 - (id)subThoroughfare;

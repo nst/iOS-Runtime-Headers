@@ -9,9 +9,9 @@
     id _target;
 }
 
-@property(readonly) BOOL returnsVoid; /* unknown property attribute: V_returnsVoid */
-@property(readonly) SEL selector; /* unknown property attribute: V_selector */
-@property(retain,readonly) id target; /* unknown property attribute: V_target */
+@property(readonly) BOOL returnsVoid;
+@property(readonly) SEL selector;
+@property(retain,readonly) id target;
 
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;

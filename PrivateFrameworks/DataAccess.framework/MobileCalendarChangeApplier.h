@@ -9,7 +9,7 @@
     NSInteger _numChanges;
 }
 
-@property(readonly) NSInteger numChanges; /* unknown property attribute: V_numChanges */
+@property(readonly) NSInteger numChanges;
 
 - (BOOL)_addOrModifyEvent:(id)arg1 inICSCalendar:(id)arg2 calCalendar:(void*)arg3 calDatabase:(struct CalDatabase { }*)arg4;
 - (void*)_copyOurCalAttendeeFromEvent:(void*)arg1;
@@ -22,7 +22,6 @@
 - (NSInteger)numChanges;
 - (void)operation:(id)arg1 deleteResourcesWithFilenames:(id)arg2;
 - (void)operation:(id)arg1 processError:(id)arg2;
-- (void)operation:(id)arg1 processProperties:(id)arg2;
 - (void)operation:(id)arg1 processResources:(id)arg2;
 - (BOOL)operation:(id)arg1 shouldAcceptRemoteModification:(id)arg2 isDeleted:(BOOL)arg3;
 - (BOOL)operationShouldContinueProcessingResources:(id)arg1;

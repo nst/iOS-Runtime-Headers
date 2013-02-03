@@ -25,8 +25,8 @@
     NSString *_text;
 }
 
-@property CKConversation *conversation; /* unknown property attribute: V_conversation */
-@property(readonly) NSArray *messageParts; /* unknown property attribute: V_messageParts */
+@property CKConversation *conversation;
+@property(readonly) NSArray *messageParts;
 
 - (id)_createParts;
 - (double)_loadDate;

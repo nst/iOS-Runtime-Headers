@@ -9,8 +9,8 @@
     NSURL *_url;
 }
 
-@property(retain) NSURL *url; /* unknown property attribute: V_url */
-@property(retain) NSString *title; /* unknown property attribute: V_title */
+@property(retain) NSString *title;
+@property(retain) NSURL *url;
 
 - (void)dealloc;
 - (id)initWithPropertyList:(id)arg1;

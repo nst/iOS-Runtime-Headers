@@ -11,10 +11,10 @@
     NSNumber *_total;
 }
 
-@property(copy) NSNumber *total; /* unknown property attribute: V_total */
-@property(copy) NSString *range; /* unknown property attribute: V_range */
-@property(copy) NSNumber *status; /* unknown property attribute: V_status */
-@property(retain) NSArray *results; /* unknown property attribute: V_results */
+@property(copy) NSString *range;
+@property(retain) NSArray *results;
+@property(copy) NSNumber *status;
+@property(copy) NSNumber *total;
 
 + (BOOL)acceptsTopLevelLeaves;
 + (BOOL)frontingBasicTypes;

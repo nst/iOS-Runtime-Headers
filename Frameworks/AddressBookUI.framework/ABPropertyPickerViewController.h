@@ -11,8 +11,8 @@
     struct __CFArray { } *_properties;
 }
 
-@property <ABPropertyPickerViewControllerDelegate> *delegate; /* unknown property attribute: V_delegate */
 @property void *addressBook;
+@property <ABPropertyPickerViewControllerDelegate> *delegate;
 @property void *person;
 @property __CFArray *properties;
 

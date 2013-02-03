@@ -44,6 +44,8 @@
 + (id)tableBackgroundColor;
 + (id)tableCellBlueTextColor;
 + (id)tableCellGrayTextColor;
++ (id)tableCellValue1BlueColor;
++ (id)tableCellValue2BlueColor;
 + (id)tableSelectionColor;
 + (id)tableSeparatorDarkColor;
 + (id)tableSeparatorLightColor;

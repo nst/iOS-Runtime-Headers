@@ -13,7 +13,9 @@
 + (id)sharedAggregateDictionary;
 
 - (void)addValue:(NSInteger)arg1 forKey:(id)arg2;
-- (void)clearKey:(id)arg1;
+- (void)clearDistributionKey:(id)arg1;
+- (void)clearScalarKey:(id)arg1;
+- (void)commit;
 - (void)dealloc;
 - (void)decrementKey:(id)arg1;
 - (void)incrementKey:(id)arg1;
@@ -25,6 +27,7 @@
 - (void)sendMessageName:(id)arg1 key:(id)arg2;
 - (void)setValue:(NSInteger)arg1 forScalarKey:(id)arg2;
 - (void)setValue:(double)arg1 forDistributionKey:(id)arg2;
+- (void)significantTimeChanged;
 - (void)subtractValue:(NSInteger)arg1 forKey:(id)arg2;
 
 @end

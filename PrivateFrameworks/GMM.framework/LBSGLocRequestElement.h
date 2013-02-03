@@ -10,9 +10,9 @@
     LBSGLocation *_location;
 }
 
-@property(retain) LBSGGeocodeRequest *geocode; /* unknown property attribute: V_geocode */
-@property(retain) LBSGLocation *location; /* unknown property attribute: V_location */
-@property(retain) LBSGCellularProfile *cellularProfile; /* unknown property attribute: V_cellularProfile */
+@property(retain) LBSGCellularProfile *cellularProfile;
+@property(retain) LBSGGeocodeRequest *geocode;
+@property(retain) LBSGLocation *location;
 @property(readonly) BOOL hasCellularProfile;
 @property(readonly) BOOL hasGeocode;
 @property(readonly) BOOL hasLocation;

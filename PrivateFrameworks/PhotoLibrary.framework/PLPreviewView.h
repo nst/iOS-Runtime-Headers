@@ -9,6 +9,7 @@
         float x; 
         float y; 
     unsigned int _canShowFocus : 1;
+    unsigned int _controlsAreVisible : 1;
     PLCameraFocusView *_autoFocusView;
     UIView *_disabledView;
     PLCameraFocusView *_focusView;
@@ -23,6 +24,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)motionEnded:(NSInteger)arg1 withEvent:(id)arg2;
 - (void)removeFocusView;
+- (void)setControlsAreVisible:(BOOL)arg1;
 - (void)setDontShowFocus:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)showAutofocusView;

@@ -7,7 +7,7 @@
     double _delay;
 }
 
-@property double delay; /* unknown property attribute: V_delay */
+@property double delay;
 
 - (void)_lookForScrolling;
 - (void)_stopLookingForScrolling;

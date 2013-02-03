@@ -14,13 +14,13 @@
     NSString *_thoroughfare;
 }
 
-@property(retain) NSString *countryName; /* unknown property attribute: V_countryName */
-@property(retain) NSString *countryCode; /* unknown property attribute: V_countryCode */
-@property(retain) NSString *postalCode; /* unknown property attribute: V_postalCode */
-@property(retain) NSString *region; /* unknown property attribute: V_region */
-@property(retain) NSString *locality; /* unknown property attribute: V_locality */
-@property(retain) NSString *dependentLocality; /* unknown property attribute: V_dependentLocality */
-@property(retain) NSString *thoroughfare; /* unknown property attribute: V_thoroughfare */
+@property(retain) NSString *countryCode;
+@property(retain) NSString *countryName;
+@property(retain) NSString *dependentLocality;
+@property(retain) NSString *locality;
+@property(retain) NSString *postalCode;
+@property(retain) NSString *region;
+@property(retain) NSString *thoroughfare;
 @property(readonly) BOOL hasCountryCode;
 @property(readonly) BOOL hasCountryName;
 @property(readonly) BOOL hasDependentLocality;
@@ -35,6 +35,7 @@
 - (id)dependentLocality;
 - (id)description;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasCountryCode;
 - (BOOL)hasCountryName;
 - (BOOL)hasDependentLocality;

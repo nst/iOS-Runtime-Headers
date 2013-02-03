@@ -56,8 +56,8 @@
     ComposeRecipientView *_toField;
 }
 
-@property(retain) NSNumber *searchTaskID; /* unknown property attribute: V_searchTaskID */
-@property <MailComposeViewDelegate> *composeViewDelegate; /* unknown property attribute: V_mailComposeViewDelegate */
+@property <MailComposeViewDelegate> *composeViewDelegate;
+@property(retain) NSNumber *searchTaskID;
 
 - (void)_adjustScrollerForBottomViewHeight:(float)arg1;
 - (void)_closeButtonClicked:(id)arg1;

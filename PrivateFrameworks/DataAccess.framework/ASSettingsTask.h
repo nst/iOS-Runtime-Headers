@@ -9,8 +9,8 @@
     NSDictionary *_setters;
 }
 
-@property(retain) NSDictionary *setters; /* unknown property attribute: V_setters */
-@property(retain) NSArray *getters; /* unknown property attribute: V_getters */
+@property(retain) NSArray *getters;
+@property(retain) NSDictionary *setters;
 
 - (NSInteger)commandCode;
 - (void)dealloc;

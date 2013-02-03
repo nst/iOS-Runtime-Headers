@@ -7,8 +7,8 @@
     NSInteger minHBInterval;
 }
 
-@property NSInteger maxHBInterval; /* unknown property attribute: VmaxHBInterval */
-@property NSInteger minHBInterval; /* unknown property attribute: VminHBInterval */
+@property NSInteger maxHBInterval;
+@property NSInteger minHBInterval;
 
 - (NSInteger)calculateWithAction:(NSInteger)arg1;
 - (NSInteger)currentInterval;

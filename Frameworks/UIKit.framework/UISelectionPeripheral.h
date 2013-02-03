@@ -12,8 +12,8 @@
     DOMHTMLSelectElement *_selectionNode;
 }
 
-@property(retain) <UISelectedItemPrivate> *_selectedItem; /* unknown property attribute: V_selectedItem */
-@property(retain) DOMHTMLSelectElement *_selectionNode; /* unknown property attribute: V_selectionNode */
+@property(retain) <UISelectedItemPrivate> *_selectedItem;
+@property(retain) DOMHTMLSelectElement *_selectionNode;
 
 + (id)createPeripheral;
 

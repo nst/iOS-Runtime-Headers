@@ -11,13 +11,13 @@
     } _range;
     NSString *_searchString;
     NSInteger _state;
-    NSInteger _timeLimit;
+    NSUInteger _timeLimit;
 }
 
-@property(readonly) NSString *searchString; /* unknown property attribute: V_searchString */
-@property NSInteger timeLimit; /* unknown property attribute: V_timeLimit */
-@property _NSRange range; /* unknown property attribute: V_range */
-@property NSInteger maxResults;
+@property(readonly) NSString *searchString;
+@property NSUInteger maxResults;
+@property _NSRange range;
+@property NSUInteger timeLimit;
 
 - (void)_copyProperties:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -29,14 +29,14 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToDADSearchQuery:(id)arg1;
 - (BOOL)isQueryRunning;
-- (NSInteger)maxResults;
+- (NSUInteger)maxResults;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })range;
 - (id)searchString;
-- (void)setMaxResults:(NSInteger)arg1;
+- (void)setMaxResults:(NSUInteger)arg1;
 - (void)setRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)setState:(NSInteger)arg1;
-- (void)setTimeLimit:(NSInteger)arg1;
+- (void)setTimeLimit:(NSUInteger)arg1;
 - (NSInteger)state;
-- (NSInteger)timeLimit;
+- (NSUInteger)timeLimit;
 
 @end

@@ -11,10 +11,10 @@
     NSMutableArray *_values;
 }
 
-@property(retain) NSString *url; /* unknown property attribute: V_url */
-@property(retain) NSMutableArray *values; /* unknown property attribute: V_values */
-@property(retain) NSMutableArray *keys; /* unknown property attribute: V_keys */
-@property(retain) NSString *source; /* unknown property attribute: V_source */
+@property(retain) NSMutableArray *keys;
+@property(retain) NSString *source;
+@property(retain) NSString *url;
+@property(retain) NSMutableArray *values;
 @property(readonly) NSInteger keysCount;
 @property(readonly) NSInteger valuesCount;
 
@@ -23,6 +23,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)init;
 - (id)keyAtIndex:(NSUInteger)arg1;
 - (id)keys;

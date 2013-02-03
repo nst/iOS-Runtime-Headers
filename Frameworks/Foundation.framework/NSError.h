@@ -17,6 +17,7 @@
 @property(getter=_mapkit_isCLLocationUnknown,readonly) BOOL _mapkit_CLLocationUnknown;
 
 + (id)_errorWithDomain:(id)arg1 code:(NSInteger)arg2 URL:(id)arg3 userInfoObjectsAndKeys:(id)arg4;
++ (id)_mapkit_unavailableError;
 + (void)_registerBuiltInFormatters;
 + (void)_registerFormatter:(int (*)())arg1 forErrorKey:(id)arg2 parameters:(const char *)arg3;
 + (void)_registerWebKitErrors;
@@ -66,6 +67,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDomain:(id)arg1 code:(NSInteger)arg2 userInfo:(id)arg3;
 - (BOOL)isConnectivityError;
+- (BOOL)isEqual:(id)arg1 compareUserInfo:(BOOL)arg2;
 - (BOOL)isEqualToError:(id)arg1;
 - (BOOL)isExpiredPasswordError;
 - (BOOL)isFatalError;
@@ -76,6 +78,7 @@
 - (BOOL)isServerError;
 - (BOOL)isStreamDomain:(long)arg1 error:(long)arg2;
 - (BOOL)isSubCalAuthError;
+- (BOOL)isSubCalReachabilityError;
 - (BOOL)isUserCancelledError;
 - (id)localizedDescription;
 - (id)localizedFailureReason;

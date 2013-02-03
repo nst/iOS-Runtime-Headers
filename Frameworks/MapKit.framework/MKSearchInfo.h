@@ -21,14 +21,14 @@
     unsigned char status;
 }
 
-@property unsigned char flags; /* unknown property attribute: Vflags */
-@property unsigned char status; /* unknown property attribute: Vstatus */
-@property CGSize longLatSpan; /* unknown property attribute: VlongLatSpan */
-@property CGPoint centerLongLat; /* unknown property attribute: VcenterLongLat */
-@property(retain) NSError *error; /* unknown property attribute: Verror */
-@property(retain) NSString *spellingSuggestion; /* unknown property attribute: VspellingSuggestion */
-@property(retain) NSString *message; /* unknown property attribute: Vmessage */
-@property(retain) NSArray *results; /* unknown property attribute: Vresults */
+@property(retain) NSError *error;
+@property(retain) NSString *message;
+@property(retain) NSArray *results;
+@property(retain) NSString *spellingSuggestion;
+@property CGPoint centerLongLat;
+@property unsigned char flags;
+@property CGSize longLatSpan;
+@property unsigned char status;
 
 - (struct CGPoint { float x1; float x2; })centerLongLat;
 - (void)dealloc;

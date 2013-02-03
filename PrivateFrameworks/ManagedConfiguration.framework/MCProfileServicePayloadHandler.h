@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSString, NSDictionary;
+@class NSArray, NSString, NSDictionary, NSURL;
 
 @interface MCProfileServicePayloadHandler : MCPayloadHandler {
     NSString *_challenge;
@@ -12,6 +12,7 @@
     NSString *_password;
     NSInteger _phase;
     BOOL _reenroll;
+    NSURL *_reenroll_url;
     NSDictionary *_scep;
     NSString *_url;
     NSString *_username;
@@ -23,6 +24,7 @@
 + (id)registration;
 + (BOOL)saveRegistration;
 + (BOOL)shouldValidateCommonAttributes;
++ (id)updateURL:(id)arg1;
 
 - (id)UUID;
 - (id)buildMachineIdentification;
@@ -37,6 +39,7 @@
 - (id)performInstallStep;
 - (id)performMachineIdentification:(struct __SecIdentity { }*)arg1;
 - (id)profileServiceIdentity;
+- (id)reenroll_url;
 - (void)setReenroll;
 - (id)url;
 

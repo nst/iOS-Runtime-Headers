@@ -12,8 +12,8 @@
     NSMutableArray *_pendingOperations;
 }
 
-@property(retain) ISOperationQueue *operationQueue; /* unknown property attribute: V_operationQueue */
-@property NSInteger cacheSize; /* unknown property attribute: V_cacheSize */
+@property(retain) ISOperationQueue *operationQueue;
+@property NSInteger cacheSize;
 
 - (void)_cacheOutput:(id)arg1 forKey:(id)arg2;
 - (void)_enqueueOperation:(id)arg1;

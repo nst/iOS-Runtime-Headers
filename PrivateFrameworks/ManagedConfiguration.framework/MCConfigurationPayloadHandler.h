@@ -26,5 +26,7 @@
 - (id)performInstallStep:(NSInteger)arg1 withRoot:(id)arg2 truth:(id)arg3;
 - (BOOL)produceProfileUpdate;
 - (id)rawPayloads;
+- (id)updateURL;
+- (BOOL)wantsReboot;
 
 @end

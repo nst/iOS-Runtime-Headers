@@ -9,8 +9,8 @@
     NSString *_searchScope;
 }
 
-@property(retain) NSString *searchScope; /* unknown property attribute: V_searchScope */
-@property(retain) NSString *searchBase; /* unknown property attribute: V_searchBase */
+@property(retain) NSString *searchBase;
+@property(retain) NSString *searchScope;
 
 + (id)contactsSearchQueryWithSearchString:(id)arg1 searchBase:(id)arg2 searchScope:(id)arg3;
 

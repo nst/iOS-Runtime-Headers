@@ -15,11 +15,11 @@
     NSString *_searchString;
 }
 
-@property(readonly) double cancellationTime; /* unknown property attribute: V_cancellationTime */
-@property(readonly) double creationTime; /* unknown property attribute: V_creationTime */
-@property(readonly) NSString *searchString; /* unknown property attribute: V_searchString */
 @property(readonly) NSArray *searchDomains;
+@property(readonly) NSString *searchString;
+@property(readonly) double cancellationTime;
 @property(readonly) BOOL cancelled;
+@property(readonly) double creationTime;
 
 - (void)cancel;
 - (double)cancellationTime;

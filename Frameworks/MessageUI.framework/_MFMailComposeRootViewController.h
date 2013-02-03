@@ -12,8 +12,8 @@
     MailComposeController *_mailComposeController;
 }
 
-@property id autorotationDelegate; /* unknown property attribute: V_autorotationDelegate */
-@property <MFMailComposeViewControllerDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <MFMailComposeViewControllerDelegate> *delegate;
+@property id autorotationDelegate;
 
 - (id)_compositionContext;
 - (void)_dismissPeoplePicker:(id)arg1;

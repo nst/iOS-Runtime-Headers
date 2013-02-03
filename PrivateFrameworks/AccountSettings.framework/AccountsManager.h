@@ -2,27 +2,29 @@
    Image: /System/Library/PrivateFrameworks/AccountSettings.framework/AccountSettings
  */
 
-@class NSMutableArray, NSMutableDictionary;
+@class NSMutableArray, NSMutableDictionary, NSArray;
 
 @interface AccountsManager : NSObject {
     NSMutableArray *_accounts;
     NSMutableDictionary *_accountsByID;
     NSUInteger _dataVersion;
+    NSArray *_runtimeFixers;
 }
 
 + (void)_migrateAccountsIfNeeded;
 + (BOOL)_oldDAAccountsInformationFound;
 + (BOOL)_oldMailAccountsInformationFound;
 + (BOOL)accountSettingsNeedsToBeMigrated;
-+ (void)beginMigration;
++ (id)createAndLockMigrationLockToPerformMigration:(BOOL)arg1;
 + (NSUInteger)currentVersion;
 + (id)displayNameForGroupOfAccountType:(id)arg1 forBeginningOfSentence:(BOOL)arg2;
-+ (void)endMigration;
-+ (BOOL)getMigrationLock;
-+ (void)releaseMigrationLock;
++ (id)fullPathToAccountSettingsPlist;
++ (void)releaseMigrationLock:(id)arg1;
 + (void)removeNewAccountSettingsToMigrateOldAccountInformation;
 + (void)shouldMigrateOldMailAccounts:(BOOL*)arg1 oldDAAccounts:(BOOL*)arg2 newAccountSettings:(BOOL*)arg3;
++ (void)waitForMigrationToFinish;
 
+- (id)_createRuntimeFixers;
 - (id)_initInsideOfMigration;
 - (id)_initWithAccountsInfo:(id)arg1;
 - (id)accountWithIdentifier:(id)arg1;
@@ -41,6 +43,7 @@
 - (id)displayNameForAccountWithSyncIdentifier:(id)arg1;
 - (id)fullAccountWithIdentifier:(id)arg1;
 - (id)fullDeviceLocalAccount;
+- (BOOL)hasActiveDAMMeAccounts;
 - (id)init;
 - (id)initWithAccounsInfoArray:(id)arg1;
 - (void)insertAccount:(id)arg1;

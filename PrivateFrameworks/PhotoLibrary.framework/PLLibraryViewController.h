@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLPhotoLibrary;
+@class PLCachedVideoFilesManager, PLPhotoLibrary;
 
 @interface PLLibraryViewController : UIViewController {
     struct { 
@@ -11,6 +11,7 @@
         unsigned int filter : 3; 
         unsigned int didSetPreviousStatusBarMode : 1; 
         unsigned int reserved : 26; 
+    PLCachedVideoFilesManager *_cachedVideoFileManager;
     PLPhotoLibrary *_library;
     } _libraryControllerFlags;
     NSInteger _newStatusBarMode;
@@ -20,12 +21,15 @@
 - (NSInteger)_imagePickerStatusBarMode;
 - (id)_library;
 - (void)_reloadLibrary;
+- (void)_runVideoPostProcessIfNecessary;
 - (void)_updateAlbumsIfNecessary;
 - (id)contentScrollView;
 - (void)dealloc;
 - (NSInteger)filter;
-- (void)iTunesSyncHasCompleted:(NSInteger)arg1;
-- (void)iTunesSyncRequestedStart;
+- (void)iTunesSyncDidFinish;
+- (void)iTunesSyncDidStart;
+- (void)iTunesSyncPhaseDidFinish:(NSInteger)arg1 reason:(NSInteger)arg2;
+- (void)iTunesSyncPhaseWillStart:(NSInteger)arg1;
 - (id)init;
 - (void)loadView;
 - (void)setFilter:(NSInteger)arg1;

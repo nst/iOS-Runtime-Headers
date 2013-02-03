@@ -3,20 +3,21 @@
  */
 
 @interface ISPropertyListProvider : ISDataProvider {
+    BOOL _shouldPostFooterSectionChanged;
     BOOL _shouldProcessAccount;
     BOOL _shouldProcessDialogs;
     BOOL _shouldProcessProtocol;
     BOOL _shouldTriggerDownloads;
 }
 
-@property BOOL shouldTriggerDownloads; /* unknown property attribute: V_shouldTriggerDownloads */
-@property BOOL shouldProcessProtocol; /* unknown property attribute: V_shouldProcessProtocol */
-@property BOOL shouldProcessDialogs; /* unknown property attribute: V_shouldProcessDialogs */
-@property BOOL shouldProcessAccount; /* unknown property attribute: V_shouldProcessAccount */
+@property BOOL shouldPostFooterSectionChanged;
+@property BOOL shouldProcessAccount;
+@property BOOL shouldProcessDialogs;
+@property BOOL shouldProcessProtocol;
+@property BOOL shouldTriggerDownloads;
 
 - (void)_processAccount:(id)arg1 fallback:(id)arg2;
 - (void)_processActions:(id)arg1 fallback:(id)arg2;
-- (BOOL)_processDialog:(id)arg1 returningError:(id*)arg2;
 - (void)_processPingsInDictionary:(id)arg1;
 - (void)_processPreferences:(id)arg1;
 - (void)_processStoreCredits:(id)arg1 fallback:(id)arg2;
@@ -25,11 +26,14 @@
 - (BOOL)_runAuthorizationDialog:(id)arg1 returningError:(id*)arg2;
 - (id)init;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
+- (BOOL)processDialogFromPropertyList:(id)arg1 returningError:(id*)arg2;
 - (BOOL)processPropertyList:(id)arg1 returningError:(id*)arg2;
+- (void)setShouldPostFooterSectionChanged:(BOOL)arg1;
 - (void)setShouldProcessAccount:(BOOL)arg1;
 - (void)setShouldProcessDialogs:(BOOL)arg1;
 - (void)setShouldProcessProtocol:(BOOL)arg1;
 - (void)setShouldTriggerDownloads:(BOOL)arg1;
+- (BOOL)shouldPostFooterSectionChanged;
 - (BOOL)shouldProcessAccount;
 - (BOOL)shouldProcessDialogs;
 - (BOOL)shouldProcessProtocol;

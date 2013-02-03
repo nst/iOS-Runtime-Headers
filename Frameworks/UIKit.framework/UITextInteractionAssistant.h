@@ -28,13 +28,13 @@
     UILongPressGestureRecognizer *loupeGesture;
 }
 
-@property BOOL autoscrolled; /* unknown property attribute: V_autoscrolled */
-@property CGPoint autoscrollUntransformedExtentPoint; /* unknown property attribute: V_autoscrollUntransformedExtentPoint */
-@property(readonly) UIView<UITextSelectingContainer> *view; /* unknown property attribute: V_view */
-@property BOOL inGesture; /* unknown property attribute: V_inGesture */
-@property(retain) UILongPressGestureRecognizer *loupeGesture; /* unknown property attribute: VloupeGesture */
 @property(readonly) UIFieldEditor *fieldEditor;
+@property(retain) UILongPressGestureRecognizer *loupeGesture;
 @property(readonly) UIScrollView *scrollView;
+@property(readonly) UIView<UITextSelectingContainer> *view;
+@property CGPoint autoscrollUntransformedExtentPoint;
+@property BOOL autoscrolled;
+@property BOOL inGesture;
 
 - (id)addHighlightLinkRecognizer;
 - (id)addLoupeGestureRecognizer:(BOOL)arg1;

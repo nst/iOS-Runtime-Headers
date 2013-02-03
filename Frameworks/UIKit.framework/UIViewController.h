@@ -43,24 +43,24 @@
     } _viewControllerFlags;
 }
 
-@property NSInteger modalTransitionStyle; /* unknown property attribute: V_modalTransitionStyle */
-@property(retain) UIViewController *childModalViewController; /* unknown property attribute: V_childModalViewController */
-@property(retain) NSHashTable *childViewControllers; /* unknown property attribute: V_childViewControllers */
-@property(copy) NSString *title; /* unknown property attribute: V_title */
-@property(retain) NSBundle *nibBundle; /* unknown property attribute: V_nibBundle */
-@property(readonly) UIView *savedHeaderSuperview; /* unknown property attribute: V_savedHeaderSuperview */
-@property(copy) NSString *nibName; /* unknown property attribute: V_nibName */
+@property(retain) UIViewController *childModalViewController;
+@property(retain) NSHashTable *childViewControllers;
 @property(retain) UITransitionView *modalTransitionView;
 @property(readonly) UIViewController *modalViewController;
 @property(retain,readonly) UINavigationController *navigationController;
 @property(retain,readonly) UINavigationItem *navigationItem;
+@property(retain) NSBundle *nibBundle;
+@property(copy) NSString *nibName;
 @property UIViewController *parentViewController;
+@property(readonly) UIView *savedHeaderSuperview;
 @property(retain) UISearchDisplayController *searchDisplayController;
 @property(retain,readonly) UITabBarController *tabBarController;
 @property(retain) UITabBarItem *tabBarItem;
+@property(copy) NSString *title;
 @property(retain) UIView *view;
 @property BOOL hidesBottomBarWhenPushed;
 @property NSInteger interfaceOrientation;
+@property NSInteger modalTransitionStyle;
 @property BOOL wantsFullScreenLayout;
 
 + (void)_dequeueTransitionSafeInvocations;
@@ -115,6 +115,7 @@
 - (void)_legacyModalPresentTransitionDidComplete;
 - (void)_legacyPresentModalViewController:(id)arg1 withTransition:(NSInteger)arg2;
 - (void)_loadViewFromNibNamed:(id)arg1 bundle:(id)arg2;
+- (id)_moreListTitle;
 - (id)_nonModalParentViewController;
 - (void)_overlayPresentAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_populateArchivedChildViewControllers:(id)arg1;
@@ -147,12 +148,14 @@
 - (id)_visibleView;
 - (NSInteger)abViewControllerType;
 - (void)addChildViewController:(id)arg1;
+- (BOOL)allowEditing;
 - (void)applicationDidResume;
 - (void)applicationWillSuspend;
 - (void)attentionClassDumpUser:(id)arg1 yesItsUsAgain:(id)arg2 althoughSwizzlingAndOverridingPrivateMethodsIsFun:(id)arg3 itWasntMuchFunWhenYourAppStoppedWorking:(id)arg4 pleaseRefrainFromDoingSoInTheFutureOkayThanksBye:(id)arg5;
 - (void)autoresizeArchivedView;
 - (BOOL)autoresizesArchivedViewToFullSize;
 - (void)awakeFromNib;
+- (BOOL)canDisplaySectionGroup:(id)arg1;
 - (BOOL)canHandleSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
 - (id)childModalViewController;
 - (id)childViewControllers;
@@ -180,6 +183,7 @@
 - (BOOL)hasDisplayableContent;
 - (BOOL)hidesBottomBarWhenPushed;
 - (id)imagePickerController;
+- (id)imagePickerOptions;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -187,6 +191,7 @@
 - (BOOL)isEditing;
 - (BOOL)isInMoreList;
 - (BOOL)isPerformingModalTransition;
+- (BOOL)isRootViewController;
 - (BOOL)isViewLoaded;
 - (BOOL)loadMoreWithURL:(id)arg1;
 - (void)loadView;
@@ -208,7 +213,7 @@
 - (void)presentMovieViewController:(id)arg1;
 - (id)presentedViewController;
 - (void)purgeMemoryForReason:(NSInteger)arg1;
-- (BOOL)pushStorePageWithURL:(id)arg1 withAuthentication:(BOOL)arg2 animated:(BOOL)arg3;
+- (BOOL)pushStorePageWithURL:(id)arg1 needsAuthentication:(BOOL)arg2 withContext:(id)arg3 animated:(BOOL)arg4;
 - (void)reloadForNetworkTypeChange;
 - (BOOL)reloadForSectionsWithGroup:(id)arg1;
 - (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
@@ -229,6 +234,7 @@
 - (void)setAutoresizesArchivedViewToFullSize:(BOOL)arg1;
 - (void)setChildModalViewController:(id)arg1;
 - (void)setChildViewControllers:(id)arg1;
+- (id)setDisplayedSectionGroup:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEditing:(BOOL)arg1;
 - (void)setHidesBottomBarWhenPushed:(BOOL)arg1;
@@ -260,6 +266,7 @@
 - (void)unloadViewIfReloadable;
 - (void)updateTabBarItemForViewController:(id)arg1;
 - (void)updateTitleForViewController:(id)arg1;
+- (BOOL)useTelephonyUI;
 - (id)view;
 - (id)viewControllerForRotation;
 - (void)viewDidAppear:(BOOL)arg1;

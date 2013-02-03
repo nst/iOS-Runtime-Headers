@@ -18,7 +18,6 @@
 
 - (double)altitude;
 - (struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; NSInteger x8; double x9; })clientLocation;
-- (struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; NSInteger x8; double x9; })clientLocation;
 - (struct { double x1; double x2; })coordinate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)course;
@@ -36,6 +35,7 @@
 - (id)iso6709Notation;
 - (id)locationDescription;
 - (id)propagateLocationToTime:(double)arg1;
+- (void)setHorizontalAccuracy:(double)arg1;
 - (id)shortDescription;
 - (double)speed;
 - (id)timestamp;

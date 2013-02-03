@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class AVCamera, NSMutableDictionary, NSString, NSURL, CALayer;
+@class AVCamera, NSMutableDictionary, NSString, NSDictionary, NSURL, CALayer;
 
 @interface AVCapture : NSObject {
     struct CGSize { 
@@ -14,6 +14,7 @@
     NSUInteger _audioCaptureFormat;
     BOOL _audioMeteringEnabled;
     NSString *_captureMode;
+    NSDictionary *_captureOptions;
     BOOL _disableRemoteImplementation;
     BOOL _dumpSensorInfo;
     NSURL *_fileURLForRecording;
@@ -30,6 +31,7 @@
     BOOL _monitorSubjectArea;
     NSInteger _noiseReductionMethod;
     NSString *_orientation;
+    BOOL _pauseRecordingOnInterruption;
     struct AVCapturePrivate { struct OpaqueFigRecorder {} *x1; } *_priv;
     NSString *_qualityPreset;
     double _recordedDurationLimit;
@@ -40,39 +42,39 @@
     CALayer *_videoPreviewLayer;
 }
 
-@property BOOL disableRemoteImplementation; /* unknown property attribute: V_disableRemoteImplementation */
-@property NSInteger noiseReductionMethod; /* unknown property attribute: V_noiseReductionMethod */
-@property BOOL lockAutoWhiteBalance; /* unknown property attribute: V_lockAutoWhiteBalance */
-@property BOOL lockAutoExposure; /* unknown property attribute: V_lockAutoExposure */
-@property BOOL monitorSubjectArea; /* unknown property attribute: V_monitorSubjectArea */
-@property(retain) NSString *qualityPreset; /* unknown property attribute: V_qualityPreset */
-@property long long freeDiskSpaceLimit; /* unknown property attribute: V_freeDiskSpaceLimit */
-@property double recordedDurationLimit; /* unknown property attribute: V_recordedDurationLimit */
-@property long long recordedFileSizeBytesLimit; /* unknown property attribute: V_recordedFileSizeBytesLimit */
-@property(readonly) BOOL isCapturingPhoto; /* unknown property attribute: V_isCapturingPhoto */
-@property NSUInteger audioCaptureFormat; /* unknown property attribute: V_audioCaptureFormat */
-@property(readonly) BOOL isPaused; /* unknown property attribute: V_isPaused */
-@property(readonly) BOOL isRecording; /* unknown property attribute: V_isRecording */
-@property BOOL suspendPreviewOnPhotoCapture; /* unknown property attribute: V_suspendPreviewOnPhotoCapture */
-@property(readonly) BOOL isPreviewing; /* unknown property attribute: V_isPreviewing */
-@property(retain) NSURL *fileURLForRecording; /* unknown property attribute: V_fileURLForRecording */
-@property BOOL audioMeteringEnabled; /* unknown property attribute: V_audioMeteringEnabled */
-@property(copy) NSDictionary *metadata; /* unknown property attribute: V_metadata */
-@property(retain) NSString *orientation; /* unknown property attribute: V_orientation */
-@property CGSize videoDimensions; /* unknown property attribute: V_videoDimensions */
-@property(retain) AVCamera *sourceCamera; /* unknown property attribute: V_sourceCamera */
-@property BOOL dumpSensorInfo; /* unknown property attribute: V_dumpSensorInfo */
 @property(readonly) NSArray *audioLevel;
 @property(retain) NSString *captureMode;
+@property(retain) NSURL *fileURLForRecording;
+@property(copy) NSDictionary *metadata;
 @property(readonly) NSNumber *noiseReductionMethodCount;
+@property(retain) NSString *orientation;
+@property(retain) NSString *qualityPreset;
+@property(retain) AVCamera *sourceCamera;
 @property(retain) CALayer *videoPreviewLayer;
+@property NSUInteger audioCaptureFormat;
+@property BOOL audioMeteringEnabled;
+@property BOOL disableRemoteImplementation;
+@property BOOL dumpSensorInfo;
+@property long long freeDiskSpaceLimit;
+@property(readonly) BOOL isCapturingPhoto;
+@property(readonly) BOOL isPaused;
+@property(readonly) BOOL isPreviewing;
+@property(readonly) BOOL isRecording;
+@property BOOL lockAutoExposure;
+@property BOOL lockAutoWhiteBalance;
+@property BOOL monitorSubjectArea;
+@property NSInteger noiseReductionMethod;
+@property BOOL pauseRecordingOnInterruption;
 @property(readonly) double recordedDuration;
+@property double recordedDurationLimit;
 @property(readonly) long long recordedFileSizeBytes;
+@property long long recordedFileSizeBytesLimit;
+@property BOOL suspendPreviewOnPhotoCapture;
+@property CGSize videoDimensions;
 
 + (id)availableModes;
 + (id)convertMoofToMoovInFile:(id)arg1;
 + (id)focusModeMap;
-+ (struct __CFString { }*)mapQualityPreset:(id)arg1;
 + (id)presetMap;
 + (id)updateMetadataInFile:(id)arg1 withMetadata:(id)arg2;
 
@@ -112,9 +114,11 @@
 - (id)noiseReductionMethodCount;
 - (id)noiseReductionMethodName;
 - (id)objectForMetadataKey:(id)arg1;
+- (id)optionsForCaptureMode:(id)arg1 qualityPreset:(id)arg2;
 - (id)orientation;
 - (void)pausePreview;
 - (BOOL)pauseRecording;
+- (BOOL)pauseRecordingOnInterruption;
 - (void)photoTakenHandler:(id)arg1;
 - (id)qualityPreset;
 - (double)recordedDuration;
@@ -141,6 +145,7 @@
 - (void)setNoiseReductionMethod:(NSInteger)arg1;
 - (void)setObject:(id)arg1 forMetadataKey:(id)arg2;
 - (void)setOrientation:(id)arg1;
+- (void)setPauseRecordingOnInterruption:(BOOL)arg1;
 - (void)setQualityPreset:(id)arg1;
 - (void)setRecordedDurationLimit:(double)arg1;
 - (void)setRecordedFileSizeBytesLimit:(long long)arg1;

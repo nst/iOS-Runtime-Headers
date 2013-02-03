@@ -2,15 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUSectionController, SULocationObserver, SUTabBarController, NSDictionary, UIWindow, NSMutableArray, NSURL, MFMailComposeViewController;
+@class SUSectionController, MFMailComposeViewController, SULocationObserver, SUClient, SUTabBarController, NSDictionary, UIWindow, NSMutableArray, NSURL, SUPurchaseManager;
 
-@interface SUApplication : UIApplication <SUSectionControllerDelegate, SUStorePageViewControllerDelegate, SUTabBarControllerDelegate, UIApplicationDelegate, MFMailComposeViewControllerDelegate> {
+@interface SUApplication : UIApplication <SUClientDelegate, SUPurchaseManagerDelegate, SUSectionControllerDelegate, SUTabBarControllerDelegate, UIApplicationDelegate, MFMailComposeViewControllerDelegate> {
+    SUClient *_client;
     NSInteger _delayTerminateCount;
     BOOL _dontSaveNavigationPath;
     NSURL *_launchURL;
     SULocationObserver *_locationObserver;
     NSMutableArray *_longLivedViewControllers;
     MFMailComposeViewController *_mailComposeViewController;
+    SUPurchaseManager *_purchaseManager;
+    BOOL _reloadForStorefrontChangeAfterAccountSetup;
     NSInteger _requiredAssetTypes;
     SUSectionController *_sectionController;
     NSDictionary *_storeFrontLanguages;
@@ -18,26 +21,30 @@
     UIWindow *_window;
 }
 
-@property(readonly) SUTabBarController *tabBarController; /* unknown property attribute: V_tabBarController */
-@property NSInteger requiredAssetTypes; /* unknown property attribute: V_requiredAssetTypes */
-@property(retain) NSURL *launchURL; /* unknown property attribute: V_launchURL */
 @property(readonly) NSString *defaultPNGNameForSuspend;
-@property(readonly) SUPurchaseManager *purchaseManager;
+@property(retain) NSURL *launchURL;
+@property(readonly) SUTabBarController *tabBarController;
 @property(readonly) UINavigationController *topNavigationController;
 @property(getter=isDelayingTerminate,readonly) BOOL delayingTerminate;
+@property NSInteger requiredAssetTypes;
 @property(readonly) NSInteger statusBarStyleForSuspend;
 
 + (void)loadMessageUIIfNecessary;
 
+- (void)_accountControllerDisappearedNotification:(id)arg1;
 - (void)_bagDidLoadNotification:(id)arg1;
 - (void)_cancelSuspendAfterDialogsDismissed;
 - (void)_dialogDidFinishNotification:(id)arg1;
+- (BOOL)_isAccountViewControllerVisible;
 - (void)_presentSectionFetchUI;
+- (void)_reloadForStorefrontChange;
 - (id)_resumableViewController;
 - (void)_saveArchivedNavigationPath;
 - (id)_sectionController;
+- (void)_selectFooterSectionNotification:(id)arg1;
 - (void)_setupUI;
 - (void)_showAssetTypeLockoutUI;
+- (void)_showAssetTypeLockoutUIIfNecessary;
 - (void)_storeFrontChangedNotification:(id)arg1;
 - (void)_teardownUI;
 - (BOOL)application:(id)arg1 handleOpenURL:(id)arg2;
@@ -49,29 +56,31 @@
 - (void)beginPPTWithName:(id)arg1;
 - (void)checkInLongLivedViewController:(id)arg1;
 - (void)checkOutLongLivedViewController:(id)arg1;
+- (BOOL)client:(id)arg1 presentModalViewController:(id)arg2 animated:(BOOL)arg3;
+- (BOOL)client:(id)arg1 presentRedeemCodeViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)composeEmailByRestoringAutosavedMessage;
 - (void)composeEmailWithSubject:(id)arg1 body:(id)arg2;
 - (BOOL)composeReviewWithURL:(id)arg1 itemIdentifier:(unsigned long long)arg2 assetType:(NSInteger)arg3;
-- (id)createPlaceholderViewController;
 - (id)createWindow;
 - (void)dealloc;
 - (id)defaultPNGNameForSuspend;
 - (void)endCurrentPPT;
 - (void)endDelayingTerminate;
-- (BOOL)enterAccountFlowWithURL:(id)arg1 style:(NSInteger)arg2 continuationData:(id)arg3;
-- (BOOL)gotoStoreURL:(id)arg1 withAuthentication:(BOOL)arg2;
-- (void)handleExternalURL:(id)arg1;
+- (BOOL)enterAccountFlowWithURL:(id)arg1 style:(NSInteger)arg2 queryStringDictionary:(id)arg3;
+- (BOOL)gotoStoreURL:(id)arg1 needsAuthentication:(BOOL)arg2 withContext:(id)arg3;
+- (void)handleApplicationURL:(id)arg1;
 - (id)init;
 - (BOOL)isComposingEmail;
 - (BOOL)isDelayingTerminate;
 - (id)launchURL;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(NSInteger)arg2 error:(id)arg3;
 - (BOOL)openURL:(id)arg1 inClientApplication:(id)arg2;
-- (id)placeholderViewControllerForStorePageController:(id)arg1;
 - (BOOL)popTopViewController;
-- (id)purchaseManager;
+- (void)purchaseManager:(id)arg1 didAddPurchases:(id)arg2;
+- (void)purchaseManager:(id)arg1 failedToAddPurchases:(id)arg2;
+- (void)purchaseManager:(id)arg1 willAddPurchases:(id)arg2;
 - (void)reloadForNetworkTypeChange;
-- (void)reloadForStorefrontChange;
+- (BOOL)reloadSectionWithIdentifier:(id)arg1 url:(id)arg2;
 - (NSInteger)requiredAssetTypes;
 - (BOOL)runTest:(id)arg1 options:(id)arg2;
 - (void)runTestInvocation:(id)arg1;

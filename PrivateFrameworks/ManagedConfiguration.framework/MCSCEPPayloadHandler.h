@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSDictionary, NSString, NSNumber;
+@class NSArray, NSDictionary, NSString, NSData, NSNumber;
 
 @interface MCSCEPPayloadHandler : MCIdentityCertificatePayloadHandler {
     struct __CFData { } *_certificate;
@@ -10,11 +10,14 @@
     NSDictionary *_payload_dict;
     NSInteger _phase;
     NSString *_scep_base_url;
+    NSArray *_scep_ca_caps;
+    NSData *_scep_ca_fingerprint;
     NSString *_scep_challenge;
     BOOL _scep_challenge_skipped;
     NSString *_scep_instance_name;
     NSNumber *_scep_key_usage;
     NSArray *_scep_subject;
+    NSDictionary *_scep_subject_alt_name;
     void *_subject;
 }
 
@@ -26,7 +29,6 @@
 - (void)dealloc;
 - (id)detailDescription;
 - (id)displayName;
-- (struct __SecCertificate { }*)getCACert:(id)arg1 instance:(id)arg2;
 - (id)initWithPayload:(id)arg1;
 - (id)installPayload;
 - (BOOL)needsPreparationWithRoot:(id)arg1 truth:(id)arg2;
@@ -35,7 +37,6 @@
 - (id)preparePayload;
 - (id)removePayloadWithRoot:(id)arg1;
 - (id)rootDisplayName;
-- (id)scepURLWithBase:(id)arg1 operation:(id)arg2 instance:(id)arg3;
 - (id)scep_details;
 - (void)setUserPromptedValues:(id)arg1;
 - (id)userPromptValues;

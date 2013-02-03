@@ -22,12 +22,12 @@
     UIView *_titleView;
 }
 
-@property(retain) UIView *titleView; /* unknown property attribute: V_titleView */
 @property(retain) UIBarButtonItem *backBarButtonItem;
 @property(retain) UIBarButtonItem *leftBarButtonItem;
 @property(copy) NSString *prompt;
 @property(retain) UIBarButtonItem *rightBarButtonItem;
 @property(copy) NSString *title;
+@property(retain) UIView *titleView;
 @property BOOL hidesBackButton;
 
 + (id)defaultFont;

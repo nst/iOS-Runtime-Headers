@@ -11,7 +11,7 @@
     double _timeout;
 }
 
-@property double timeout; /* unknown property attribute: V_timeout */
+@property double timeout;
 
 - (void)dealloc;
 - (id)initWithIdentifier:(id)arg1 timeout:(double)arg2;

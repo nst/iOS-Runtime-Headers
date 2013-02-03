@@ -12,17 +12,18 @@
     NSInteger _type;
 }
 
-@property(retain) NSString *iconText; /* unknown property attribute: V_iconText */
-@property(retain) NSString *iconUrl; /* unknown property attribute: V_iconUrl */
-@property(retain) NSString *name; /* unknown property attribute: V_name */
-@property(readonly) BOOL hasType; /* unknown property attribute: V_hasType */
-@property NSInteger type; /* unknown property attribute: V_type */
+@property(retain) NSString *iconText;
+@property(retain) NSString *iconUrl;
+@property(retain) NSString *name;
 @property(readonly) BOOL hasIconText;
 @property(readonly) BOOL hasIconUrl;
 @property(readonly) BOOL hasName;
+@property(readonly) BOOL hasType;
+@property NSInteger type;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasIconText;
 - (BOOL)hasIconUrl;
 - (BOOL)hasName;

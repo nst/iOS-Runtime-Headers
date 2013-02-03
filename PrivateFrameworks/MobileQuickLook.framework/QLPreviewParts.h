@@ -22,17 +22,17 @@
     NSMutableSet *registeredURLs;
 }
 
-@property(readonly) NSURL *previewURL; /* unknown property attribute: VpreviewURL */
-@property(retain) id delegate; /* unknown property attribute: V_delegate */
-@property(retain) NSURLConnection *connection; /* unknown property attribute: V_connection */
-@property unknown type *urlCallback; /* unknown property attribute: V_urlCallback */
-@property unknown type *dataCallback; /* unknown property attribute: V_dataCallback */
-@property BOOL progressive; /* unknown property attribute: V_progressive */
-@property(retain) NSString *uti; /* unknown property attribute: V_uti */
-@property(retain) NSData *data; /* unknown property attribute: V_data */
-@property(retain) NSURL *url; /* unknown property attribute: V_url */
+@property(retain) NSURLConnection *connection;
+@property(retain) NSData *data;
+@property unknown type *dataCallback;
 @property(readonly) NSURLRequest *previewRequest;
 @property(readonly) NSURLResponse *previewResponse;
+@property(readonly) NSURL *previewURL;
+@property(retain) NSURL *url;
+@property unknown type *urlCallback;
+@property(retain) NSString *uti;
+@property(retain) id delegate;
+@property BOOL progressive;
 
 + (BOOL)isSafeRequest:(id)arg1;
 + (BOOL)isSafeURL:(id)arg1;

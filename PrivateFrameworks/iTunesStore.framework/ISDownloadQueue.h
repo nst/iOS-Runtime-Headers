@@ -2,29 +2,33 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSMutableArray, <ISDownloadQueueDelegate>;
+@class NSMutableArray, NSMutableDictionary, <ISDownloadQueueDelegate>;
 
 @interface ISDownloadQueue : NSObject {
     NSInteger _assetTypes;
     <ISDownloadQueueDelegate> *_delegate;
     NSMutableArray *_downloads;
+    NSMutableDictionary *_downloadsByItemIdentifier;
     NSInteger _lastUpdatedIndex;
     NSMutableArray *_placeholders;
     NSMutableArray *_preorders;
     BOOL _registeredWithDaemon;
 }
 
-@property(retain,readonly) NSArray *preorders; /* unknown property attribute: V_preorders */
-@property(retain,readonly) NSArray *placeholderDownloads; /* unknown property attribute: V_placeholders */
-@property(retain,readonly) NSArray *downloads; /* unknown property attribute: V_downloads */
-@property <ISDownloadQueueDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property NSInteger assetTypes; /* unknown property attribute: V_assetTypes */
+@property <ISDownloadQueueDelegate> *delegate;
+@property(retain,readonly) NSArray *downloads;
+@property(retain,readonly) NSArray *placeholderDownloads;
+@property(retain,readonly) NSArray *preorders;
+@property NSInteger assetTypes;
 
 + (id)bundlesInstalledSinceLastSync;
 + (id)downloadQueueForAssetType:(NSInteger)arg1;
++ (void)postTriggerDownloadNotifications;
 
 - (void)_checkIn;
 - (void)_checkOut;
+- (id)_copyDownloadsByItemIdentifier;
+- (id)_copyDownloadsByRemovingPlaceholdersForIdentifier:(unsigned long long)arg1;
 - (id)_createRepresentativeDownloadForPreOrder:(id)arg1;
 - (void)_daemonExited:(id)arg1;
 - (void)_daemonExitedMainThread:(id)arg1;
@@ -35,7 +39,9 @@
 - (void)_downloadsReplaced:(id)arg1;
 - (void)_filterPlaceholderDownloads;
 - (NSInteger)_indexOfDownloadWithIdentifier:(unsigned long long)arg1;
+- (void)_noteQueueChangedWithRemovals:(id)arg1;
 - (void)_preOrdersChanged:(id)arg1;
+- (void)_purchaseRemovedNotification:(id)arg1;
 - (void)_registerWithDaemon;
 - (void)addDownload:(id)arg1;
 - (void)addPlaceholderDownloads:(id)arg1;
@@ -43,11 +49,13 @@
 - (BOOL)checkQueue;
 - (void)dealloc;
 - (id)delegate;
+- (id)downloadForItemIdentifier:(id)arg1;
 - (id)downloads;
 - (id)initWithAssetTypes:(NSInteger)arg1;
 - (id)placeholderDownloads;
 - (id)preorders;
 - (BOOL)removeDownload:(id)arg1;
+- (void)removePlaceholderDownload:(id)arg1;
 - (void)setAssetTypes:(NSInteger)arg1;
 - (void)setDelegate:(id)arg1;
 - (BOOL)startPreOrderDownload:(id)arg1;

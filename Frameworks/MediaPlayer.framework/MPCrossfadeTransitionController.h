@@ -6,7 +6,7 @@
     NSInteger _statusBarMode;
 }
 
-@property NSInteger statusBarMode; /* unknown property attribute: V_statusBarMode */
+@property NSInteger statusBarMode;
 
 - (void)_animationDidFinish:(id)arg1;
 - (id)init;

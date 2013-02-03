@@ -12,6 +12,7 @@
 
 + (id)sharedManager;
 
+- (oneway void)connect;
 - (void)connection:(id)arg1 didReceiveMessageForTopic:(id)arg2 userInfo:(id)arg3;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
 - (void)dealloc;

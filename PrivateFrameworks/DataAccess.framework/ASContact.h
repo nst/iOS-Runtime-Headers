@@ -72,69 +72,69 @@
     NSString *_yomiLastName;
 }
 
-@property(retain) NSString *mms; /* unknown property attribute: V_mms */
-@property(retain) NSString *nickName; /* unknown property attribute: V_nickName */
-@property(retain) NSString *accountName; /* unknown property attribute: V_accountName */
-@property(retain) NSString *companyMainPhone; /* unknown property attribute: V_companyMainPhone */
-@property(retain) NSString *managerName; /* unknown property attribute: V_managerName */
-@property(retain) NSString *im3Address; /* unknown property attribute: V_im3Address */
-@property(retain) NSString *im2Address; /* unknown property attribute: V_im2Address */
-@property(retain) NSString *im1Address; /* unknown property attribute: V_im1Address */
-@property(retain) NSString *governmentID; /* unknown property attribute: V_governmentID */
-@property(retain) NSString *customerID; /* unknown property attribute: V_customerID */
-@property(retain) NSString *yomiLastName; /* unknown property attribute: V_yomiLastName */
-@property(retain) NSString *yomiFirstName; /* unknown property attribute: V_yomiFirstName */
-@property(retain) NSString *yomiCompanyName; /* unknown property attribute: V_yomiCompanyName */
-@property(retain) NSString *webpage; /* unknown property attribute: V_webpage */
-@property(retain) NSString *title; /* unknown property attribute: V_title */
-@property(retain) NSString *suffix; /* unknown property attribute: V_suffix */
-@property(retain) NSString *spouse; /* unknown property attribute: V_spouse */
-@property(retain) NSString *radioTelephoneNumber; /* unknown property attribute: V_radioTelephoneNumber */
-@property(retain) NSString *picture; /* unknown property attribute: V_picture */
-@property(retain) NSString *pagerNumber; /* unknown property attribute: V_pagerNumber */
-@property(retain) NSString *otherAddressStreet; /* unknown property attribute: V_otherAddressStreet */
-@property(retain) NSString *otherAddressState; /* unknown property attribute: V_otherAddressState */
-@property(retain) NSString *otherAddressPostalCode; /* unknown property attribute: V_otherAddressPostalCode */
-@property(retain) NSString *otherAddressCountry; /* unknown property attribute: V_otherAddressCountry */
-@property(retain) NSString *otherAddressCity; /* unknown property attribute: V_otherAddressCity */
-@property(retain) NSString *officeLocation; /* unknown property attribute: V_officeLocation */
-@property(retain) NSString *mobileTelephoneNumber; /* unknown property attribute: V_mobileTelephoneNumber */
-@property(retain) NSString *middleName; /* unknown property attribute: V_middleName */
-@property(retain) NSString *lastName; /* unknown property attribute: V_lastName */
-@property(retain) NSString *jobTitle; /* unknown property attribute: V_jobTitle */
-@property(retain) NSString *homeFaxNumber; /* unknown property attribute: V_homeFaxNumber */
-@property(retain) NSString *homeTelephoneNumber; /* unknown property attribute: V_homeTelephoneNumber */
-@property(retain) NSString *homeAddressStreet; /* unknown property attribute: V_homeAddressStreet */
-@property(retain) NSString *homeAddressState; /* unknown property attribute: V_homeAddressState */
-@property(retain) NSString *homeAddressPostalCode; /* unknown property attribute: V_homeAddressPostalCode */
-@property(retain) NSString *homeAddressCountry; /* unknown property attribute: V_homeAddressCountry */
-@property(retain) NSString *homeAddressCity; /* unknown property attribute: V_homeAddressCity */
-@property(retain) NSString *home2TelephoneNumber; /* unknown property attribute: V_home2TelephoneNumber */
-@property(retain) NSString *firstName; /* unknown property attribute: V_firstName */
-@property(retain) NSString *fileAs; /* unknown property attribute: V_fileAs */
-@property(retain) NSString *email3Address; /* unknown property attribute: V_email3Address */
-@property(retain) NSString *email2Address; /* unknown property attribute: V_email2Address */
-@property(retain) NSString *email1Address; /* unknown property attribute: V_email1Address */
-@property(retain) NSString *department; /* unknown property attribute: V_department */
-@property(retain) NSString *companyName; /* unknown property attribute: V_companyName */
-@property(retain) NSString *carTelephoneNumber; /* unknown property attribute: V_carTelephoneNumber */
-@property(retain) NSArray *children; /* unknown property attribute: V_children */
-@property(retain) NSArray *categories; /* unknown property attribute: V_categories */
-@property(retain) NSString *businessTelephoneNumber; /* unknown property attribute: V_businessTelephoneNumber */
-@property(retain) NSString *businessFaxNumber; /* unknown property attribute: V_businessFaxNumber */
-@property(retain) NSString *businessAddressStreet; /* unknown property attribute: V_businessAddressStreet */
-@property(retain) NSString *businessAddressState; /* unknown property attribute: V_businessAddressState */
-@property(retain) NSString *businessAddressPostalCode; /* unknown property attribute: V_businessAddressPostalCode */
-@property(retain) NSString *businessAddressCountry; /* unknown property attribute: V_businessAddressCountry */
-@property(retain) NSString *businessAddressCity; /* unknown property attribute: V_businessAddressCity */
-@property(retain) NSString *business2TelephoneNumber; /* unknown property attribute: V_business2TelephoneNumber */
-@property BOOL bodyTruncated; /* unknown property attribute: V_bodyTruncated */
-@property NSInteger bodySize; /* unknown property attribute: V_bodySize */
-@property(retain) NSString *body; /* unknown property attribute: V_body */
-@property(retain) NSDate *birthday; /* unknown property attribute: V_birthday */
-@property(retain) NSString *assistantTelephoneNumber; /* unknown property attribute: V_assistantTelephoneNumber */
-@property(retain) NSString *assistantName; /* unknown property attribute: V_assistantName */
-@property(retain) NSDate *anniversary; /* unknown property attribute: V_anniversary */
+@property(retain) NSString *accountName;
+@property(retain) NSDate *anniversary;
+@property(retain) NSString *assistantName;
+@property(retain) NSString *assistantTelephoneNumber;
+@property(retain) NSDate *birthday;
+@property(retain) NSString *body;
+@property(retain) NSString *business2TelephoneNumber;
+@property(retain) NSString *businessAddressCity;
+@property(retain) NSString *businessAddressCountry;
+@property(retain) NSString *businessAddressPostalCode;
+@property(retain) NSString *businessAddressState;
+@property(retain) NSString *businessAddressStreet;
+@property(retain) NSString *businessFaxNumber;
+@property(retain) NSString *businessTelephoneNumber;
+@property(retain) NSString *carTelephoneNumber;
+@property(retain) NSArray *categories;
+@property(retain) NSArray *children;
+@property(retain) NSString *companyMainPhone;
+@property(retain) NSString *companyName;
+@property(retain) NSString *customerID;
+@property(retain) NSString *department;
+@property(retain) NSString *email1Address;
+@property(retain) NSString *email2Address;
+@property(retain) NSString *email3Address;
+@property(retain) NSString *fileAs;
+@property(retain) NSString *firstName;
+@property(retain) NSString *governmentID;
+@property(retain) NSString *home2TelephoneNumber;
+@property(retain) NSString *homeAddressCity;
+@property(retain) NSString *homeAddressCountry;
+@property(retain) NSString *homeAddressPostalCode;
+@property(retain) NSString *homeAddressState;
+@property(retain) NSString *homeAddressStreet;
+@property(retain) NSString *homeFaxNumber;
+@property(retain) NSString *homeTelephoneNumber;
+@property(retain) NSString *im1Address;
+@property(retain) NSString *im2Address;
+@property(retain) NSString *im3Address;
+@property(retain) NSString *jobTitle;
+@property(retain) NSString *lastName;
+@property(retain) NSString *managerName;
+@property(retain) NSString *middleName;
+@property(retain) NSString *mms;
+@property(retain) NSString *mobileTelephoneNumber;
+@property(retain) NSString *nickName;
+@property(retain) NSString *officeLocation;
+@property(retain) NSString *otherAddressCity;
+@property(retain) NSString *otherAddressCountry;
+@property(retain) NSString *otherAddressPostalCode;
+@property(retain) NSString *otherAddressState;
+@property(retain) NSString *otherAddressStreet;
+@property(retain) NSString *pagerNumber;
+@property(retain) NSString *picture;
+@property(retain) NSString *radioTelephoneNumber;
+@property(retain) NSString *spouse;
+@property(retain) NSString *suffix;
+@property(retain) NSString *title;
+@property(retain) NSString *webpage;
+@property(retain) NSString *yomiCompanyName;
+@property(retain) NSString *yomiFirstName;
+@property(retain) NSString *yomiLastName;
+@property NSInteger bodySize;
+@property BOOL bodyTruncated;
 
 + (BOOL)acceptsTopLevelLeaves;
 + (id)contactWithABRecord:(void*)arg1 serverID:(id)arg2;

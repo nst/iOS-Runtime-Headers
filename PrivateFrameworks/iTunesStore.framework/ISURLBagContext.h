@@ -9,9 +9,9 @@
     NSNumber *_userIdentifier;
 }
 
-@property(retain) NSNumber *userIdentifier; /* unknown property attribute: V_userIdentifier */
-@property NSInteger bagType; /* unknown property attribute: V_bagType */
 @property(readonly) NSString *cacheKey;
+@property(retain) NSNumber *userIdentifier;
+@property NSInteger bagType;
 
 + (id)contextWithBagType:(NSInteger)arg1;
 

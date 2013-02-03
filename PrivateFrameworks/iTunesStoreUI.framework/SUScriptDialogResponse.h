@@ -9,8 +9,8 @@
     NSString *_textFieldValue;
 }
 
-@property(retain) NSString *textFieldValue; /* unknown property attribute: V_textFieldValue */
-@property NSInteger buttonIndex; /* unknown property attribute: V_buttonIndex */
+@property(retain) NSString *textFieldValue;
+@property NSInteger buttonIndex;
 
 - (NSInteger)buttonIndex;
 - (void)dealloc;

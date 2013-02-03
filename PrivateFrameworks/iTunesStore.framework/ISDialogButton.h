@@ -11,10 +11,10 @@
     NSInteger _urlType;
 }
 
-@property NSInteger urlType; /* unknown property attribute: V_urlType */
-@property(retain) NSString *title; /* unknown property attribute: V_title */
-@property(retain) id parameter; /* unknown property attribute: V_parameter */
-@property NSInteger actionType; /* unknown property attribute: V_actionType */
+@property(retain) NSString *title;
+@property NSInteger actionType;
+@property(retain) id parameter;
+@property NSInteger urlType;
 
 + (id)buttonWithTitle:(id)arg1;
 

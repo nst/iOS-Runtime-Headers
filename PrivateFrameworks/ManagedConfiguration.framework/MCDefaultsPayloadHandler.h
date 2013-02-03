@@ -11,7 +11,7 @@
 
 + (id)descriptionForPayloadCount:(NSUInteger)arg1;
 + (void)removeDefaults:(id)arg1 forDomain:(id)arg2;
-+ (BOOL)removeDefaults:(id)arg1 forManagedDomain:(id)arg2;
++ (void)removeDefaults:(id)arg1 forManagedDomain:(id)arg2;
 + (BOOL)removeManagedDomain:(id)arg1;
 + (void)setDefaults:(id)arg1 forDomain:(id)arg2;
 + (BOOL)setDefaults:(id)arg1 forManagedDomain:(id)arg2;
@@ -22,6 +22,7 @@
 - (id)defaultsToSet;
 - (id)initWithPayload:(id)arg1;
 - (id)installPayload;
+- (void)migrateDefaults;
 - (BOOL)needsPreparationWithRoot:(id)arg1 truth:(id)arg2;
 - (void)neuteredPayloadDictionaryCopy:(id)arg1;
 - (id)performInstallStep:(NSInteger)arg1 withRoot:(id)arg2 truth:(id)arg3;

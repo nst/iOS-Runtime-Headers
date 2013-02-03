@@ -7,18 +7,21 @@
 @interface GMMAdInfo : PBCodable {
     NSString *_creativeLine1;
     NSString *_creativeLine2;
+    NSString *_headline;
     NSString *_linkText;
     NSString *_linkUrl;
     NSString *_uniqueId;
 }
 
-@property(retain) NSString *linkUrl; /* unknown property attribute: V_linkUrl */
-@property(retain) NSString *linkText; /* unknown property attribute: V_linkText */
-@property(retain) NSString *creativeLine2; /* unknown property attribute: V_creativeLine2 */
-@property(retain) NSString *creativeLine1; /* unknown property attribute: V_creativeLine1 */
-@property(retain) NSString *uniqueId; /* unknown property attribute: V_uniqueId */
+@property(retain) NSString *creativeLine1;
+@property(retain) NSString *creativeLine2;
+@property(retain) NSString *headline;
+@property(retain) NSString *linkText;
+@property(retain) NSString *linkUrl;
+@property(retain) NSString *uniqueId;
 @property(readonly) BOOL hasCreativeLine1;
 @property(readonly) BOOL hasCreativeLine2;
+@property(readonly) BOOL hasHeadline;
 @property(readonly) BOOL hasLinkText;
 @property(readonly) BOOL hasLinkUrl;
 
@@ -26,16 +29,20 @@
 - (id)creativeLine2;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasCreativeLine1;
 - (BOOL)hasCreativeLine2;
+- (BOOL)hasHeadline;
 - (BOOL)hasLinkText;
 - (BOOL)hasLinkUrl;
+- (id)headline;
 - (id)init;
 - (id)linkText;
 - (id)linkUrl;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCreativeLine1:(id)arg1;
 - (void)setCreativeLine2:(id)arg1;
+- (void)setHeadline:(id)arg1;
 - (void)setLinkText:(id)arg1;
 - (void)setLinkUrl:(id)arg1;
 - (void)setUniqueId:(id)arg1;

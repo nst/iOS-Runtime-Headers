@@ -21,8 +21,8 @@
 + (BOOL)parsingLeafNode;
 + (BOOL)parsingWithSubItems;
 
-- (void*)_createRecurrence;
 - (BOOL)_loadAttributesFromCalRecurrence:(void*)arg1 parentStartDate:(id)arg2 parentItem:(id)arg3;
+- (void*)_newRecurrence;
 - (BOOL)_requiresParentEvent;
 - (id)_transformedUntilDateForActiveSync:(id)arg1;
 - (id)_untilDateForCalFramework;

@@ -11,6 +11,7 @@
     NSString *_temporaryPath;
     NSURL *_url;
     PLVideoFileGroup *_videoFileGroup;
+    NSUInteger _videoWasCaptured;
 }
 
 - (struct CGImage { }*)_createCGImageForSize:(struct CGSize { float x1; float x2; })arg1;
@@ -23,6 +24,10 @@
 - (id)fileGroup;
 - (BOOL)hasFullSizeImage;
 - (BOOL)isVideo;
+- (id)pathForVideoFile;
+- (id)pathForVideoPreviewFile;
+- (void)setPathForVideoPreviewFile:(id)arg1;
+- (void)setVideoWasCaptured:(BOOL)arg1;
 - (id)title;
 
 @end

@@ -10,13 +10,13 @@
         unsigned int subscribed : 1; 
         unsigned int initialSetupRequired : 1; 
         unsigned int fakeInitialSetup : 1; 
+        unsigned int launchedWithFakeInitialSetup : 1; 
         unsigned int mwiState : 1; 
         unsigned int notificationFallbackEnabled : 1; 
         unsigned int capabilitiesLoaded : 1; 
     NSError *_activationError;
     NSUInteger _capabilities;
     id _carrierParameters;
-    NSInteger _dataContextIdentifier;
     NSRecursiveLock *_lock;
     NSInteger _mailboxUsage;
     struct __CFDate { } *_nextRetryWakeDate;
@@ -78,7 +78,7 @@
 - (id)carrierParameterValueForKey:(id)arg1;
 - (void)changePassword:(id)arg1 fromPassword:(id)arg2;
 - (void)clearActivationError;
-- (long)dataContextIdentifier;
+- (struct __CFString { }*)connectionServiceType;
 - (BOOL)dataForRecordPending:(void*)arg1 progressiveLoadInProgress:(BOOL*)arg2;
 - (void)dealloc;
 - (void)displayPasswordRequestIfNecessary;

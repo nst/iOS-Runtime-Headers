@@ -7,15 +7,17 @@
  */
 
 @interface MLSICUSortDataCreator : NSObject {
-    struct CPSqliteDatabase { struct __CFString {} *x1; struct CPSqliteConnection {} *x2; int (*x3)(); int (*x4)(); int (*x5)(); void *x6; int (*x7)(); int (*x8)(); int (*x9)(); /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x10; void *x11; NSInteger x12; struct $_480 { 
+    struct CPSqliteDatabase { struct __CFString {} *x1; struct CPSqliteConnection {} *x2; int (*x3)(); int (*x4)(); int (*x5)(); void *x6; int (*x7)(); int (*x8)(); int (*x9)(); /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x10; void *x11; NSInteger x12; struct $_347 { 
             unsigned int checkVersion : 1; 
             unsigned int checkedJournalPermissions : 1; 
             unsigned int propertiesDisabled : 1; 
             unsigned int threadSafety : 1; 
-            unsigned int shouldNotifyAndYield : 1; 
+            unsigned int shouldNotify : 1; 
+            unsigned int shouldYield : 1; 
             unsigned int notifyRegisterAttempted : 1; 
             unsigned int notifyRegisterSucceeded : 1; 
             unsigned int postedRequest : 1; 
+            unsigned int receivedRequest : 1; 
         } x13; struct _opaque_pthread_mutex_t { 
             long __sig; 
             BOOL __opaque[40]; 

@@ -23,9 +23,9 @@
     NSUInteger _pressedLinkIndex;
 }
 
-@property NSUInteger pressedLinkIndex; /* unknown property attribute: V_pressedLinkIndex */
-@property BOOL linkPressed; /* unknown property attribute: V_linkPressed */
-@property float opacity; /* unknown property attribute: V_opacity */
+@property BOOL linkPressed;
+@property float opacity;
+@property NSUInteger pressedLinkIndex;
 
 - (void)dealloc;
 - (void)drawWithLabelCache:(id)arg1;

@@ -10,9 +10,9 @@
     UIImage *thumb;
 }
 
-@property(retain) UIImage *maxTrack; /* unknown property attribute: VmaxTrack */
-@property(retain) UIImage *minTrack; /* unknown property attribute: VminTrack */
-@property(retain) UIImage *thumb; /* unknown property attribute: Vthumb */
+@property(retain) UIImage *maxTrack;
+@property(retain) UIImage *minTrack;
+@property(retain) UIImage *thumb;
 @property(readonly) BOOL isEmpty;
 
 - (void)dealloc;

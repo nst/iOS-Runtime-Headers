@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSMutableSet;
 
 @interface CKWebviewBasedContentEntryBridge : CKContentEntryBridge {
     NSInteger _composeResourcePoolID;
+    NSMutableSet *_imageDeletionSet;
     NSMutableArray *_resources;
 }
 
 - (id)_htmlForMessagePart:(id)arg1;
 - (id)_nodeForImagePart:(id)arg1 forRichContentView:(id)arg2;
+- (void)_removeImages;
 - (void)_resetResourcePool;
 - (id)_textView;
 - (id)attachments;

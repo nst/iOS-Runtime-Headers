@@ -10,9 +10,9 @@
     PBStreamReader *_reader;
 }
 
-@property Class classOfNextMessage; /* unknown property attribute: V_classOfNextMessage */
-@property(retain) <PBMessageStreamDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property(retain) PBStreamReader *reader; /* unknown property attribute: V_reader */
+@property(retain) <PBMessageStreamDelegate> *delegate;
+@property(retain) PBStreamReader *reader;
+@property Class classOfNextMessage;
 
 - (Class)classOfNextMessage;
 - (void)dealloc;

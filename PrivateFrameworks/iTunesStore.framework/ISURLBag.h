@@ -9,7 +9,7 @@
     double _invalidationTime;
 }
 
-@property double invalidationTime; /* unknown property attribute: V_invalidationTime */
+@property double invalidationTime;
 @property(getter=isValid,readonly) BOOL valid;
 
 + (id)_copyFallbackContextForContext:(id)arg1;

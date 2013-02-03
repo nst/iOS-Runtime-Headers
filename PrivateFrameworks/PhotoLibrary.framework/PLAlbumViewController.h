@@ -11,9 +11,9 @@
     NSInteger _previousStatusBarMode;
 }
 
-@property NSInteger previousStatusBarMode; /* unknown property attribute: V_previousStatusBarMode */
 @property(readonly) MLPhotoAlbum *album;
 @property(readonly) PLAlbumView *albumView;
+@property NSInteger previousStatusBarMode;
 
 - (NSInteger)_imagePickerStatusBarMode;
 - (id)album;

@@ -12,11 +12,11 @@
     UIButton *_saveButton;
 }
 
-@property <ABPropertyEditorViewControllerDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property NSInteger identifier; /* unknown property attribute: V_identifier */
-@property void *person; /* unknown property attribute: V_person */
-@property void *addressBook; /* unknown property attribute: V_addressBook */
+@property void *addressBook;
+@property <ABPropertyEditorViewControllerDelegate> *delegate;
+@property void *person;
 @property(readonly) BOOL hasChanges;
+@property NSInteger identifier;
 @property(readonly) NSInteger property;
 
 - (BOOL)_allowsAutorotation;

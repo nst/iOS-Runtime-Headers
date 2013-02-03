@@ -41,9 +41,9 @@
     } _velocity;
 }
 
-@property(readonly) CGAffineTransform transform; /* unknown property attribute: V_transform */
 @property(getter=isDirectionalLockEnabled) BOOL directionalLockEnabled;
 @property(readonly) CGSize offset;
+@property(readonly) CGAffineTransform transform;
 @property(readonly) CGPoint velocity;
 
 - (BOOL)_hasChildScrollViewForTouches:(id)arg1;

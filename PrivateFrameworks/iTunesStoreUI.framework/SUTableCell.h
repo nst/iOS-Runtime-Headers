@@ -17,14 +17,14 @@
     UIColor *_topBorderColor;
 }
 
-@property(retain) UIColor *topBorderColor; /* unknown property attribute: V_topBorderColor */
-@property ? position; /* unknown property attribute: V_position */
-@property(retain) UIColor *bottomBorderColor; /* unknown property attribute: V_bottomBorderColor */
+@property(retain) UIColor *bottomBorderColor;
 @property(retain) SUCellConfiguration *configuration;
 @property(retain,readonly) SUPriceButton *priceButton;
+@property(retain) UIColor *topBorderColor;
 @property NSInteger clipCorners;
 @property BOOL drawAsDisabled;
 @property BOOL highlightsOnlyContentView;
+@property ? position;
 @property BOOL showHighlight;
 @property BOOL usesSubviews;
 

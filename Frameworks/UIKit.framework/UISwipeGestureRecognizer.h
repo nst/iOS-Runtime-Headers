@@ -23,13 +23,13 @@
     double _startTime;
 }
 
-@property float rateOfMaximumMovementDecay; /* unknown property attribute: V_rateOfMaximumMovementDecay */
-@property float rateOfMinimumMovementDecay; /* unknown property attribute: V_rateOfMinimumMovementDecay */
-@property float maximumVerticalMovement; /* unknown property attribute: V_maximumVerticalMovement */
-@property float minimumVerticalMovement; /* unknown property attribute: V_minimumVerticalMovement */
-@property float maximumHorizontalMovement; /* unknown property attribute: V_maximumHorizontalMovement */
-@property float minimumHorizontalMovement; /* unknown property attribute: V_minimumHorizontalMovement */
-@property double maximumDuration; /* unknown property attribute: V_maximumDuration */
+@property double maximumDuration;
+@property float maximumHorizontalMovement;
+@property float maximumVerticalMovement;
+@property float minimumHorizontalMovement;
+@property float minimumVerticalMovement;
+@property float rateOfMaximumMovementDecay;
+@property float rateOfMinimumMovementDecay;
 @property(readonly) CGPoint startPoint;
 
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;

@@ -20,10 +20,10 @@
     UIButton *_unlinkButton;
 }
 
-@property BOOL bordered; /* unknown property attribute: V_bordered */
-@property <STLinkingViewDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property NSInteger linkingType; /* unknown property attribute: V_linkingType */
+@property <STLinkingViewDelegate> *delegate;
 @property(copy) NSString *serialNumber;
+@property BOOL bordered;
+@property NSInteger linkingType;
 
 - (id)_createButton;
 - (void)_done;

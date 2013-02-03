@@ -12,11 +12,11 @@
     NSDictionary *_userInfo;
 }
 
-@property(retain) NSDictionary *userInfo; /* unknown property attribute: V_userInfo */
-@property NSUInteger optionFlags; /* unknown property attribute: V_optionFlags */
-@property(retain) NSDictionary *dictionary; /* unknown property attribute: V_dictionary */
-@property NSInteger currentRetryCount; /* unknown property attribute: V_currentRetryCount */
-@property NSInteger allowedRetryCount; /* unknown property attribute: V_allowedRetryCount */
+@property(retain) NSDictionary *dictionary;
+@property(retain) NSDictionary *userInfo;
+@property NSInteger allowedRetryCount;
+@property NSInteger currentRetryCount;
+@property NSUInteger optionFlags;
 
 - (NSInteger)allowedRetryCount;
 - (struct __CFUserNotification { }*)copyUserNotification;

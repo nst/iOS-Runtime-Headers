@@ -14,7 +14,7 @@
     } _regex;
 }
 
-@property(readonly) NSString *pattern; /* unknown property attribute: V_pattern */
+@property(readonly) NSString *pattern;
 
 + (BOOL)matchesString:(id)arg1 pattern:(id)arg2 ignoreCase:(BOOL)arg3;
 + (id)regexWithPattern:(id)arg1 ignoreCase:(BOOL)arg2;

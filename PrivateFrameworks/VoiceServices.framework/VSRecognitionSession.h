@@ -14,6 +14,7 @@
         unsigned int preferredEngine : 2; 
         unsigned int performHandlerActions : 1; 
         unsigned int allowSensitiveActions : 1; 
+        unsigned int bluetoothAllowed : 1; 
         unsigned int resetNextAction : 1; 
         unsigned int actionBegan : 1; 
         unsigned int actionBeginning : 1; 
@@ -57,6 +58,7 @@
 - (id)init;
 - (id)initWithModelIdentifier:(id)arg1;
 - (float)inputLevel;
+- (BOOL)isActivelyRecognizing;
 - (BOOL)isBusy;
 - (BOOL)isFinished;
 - (BOOL)isRecognizing;
@@ -68,6 +70,7 @@
 - (void)recognitionResultHandlingThread:(id)arg1 didHandleResults:(id)arg2 nextAction:(id)arg3;
 - (id)reset;
 - (BOOL)sensitiveActionsEnabled;
+- (BOOL)setBluetoothInputAllowed:(BOOL)arg1;
 - (BOOL)setDebugDumpEnabled:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInputLevelUpdateInterval:(double)arg1;

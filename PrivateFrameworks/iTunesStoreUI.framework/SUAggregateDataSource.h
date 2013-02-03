@@ -9,7 +9,7 @@
     NSMutableArray *_sources;
 }
 
-@property(readonly) NSArray *sources; /* unknown property attribute: V_sources */
+@property(readonly) NSArray *sources;
 
 - (NSInteger)_localIndexForSectionIndex:(NSInteger)arg1;
 - (void)addDataSource:(id)arg1 withHeaderView:(id)arg2;

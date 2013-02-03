@@ -5,6 +5,7 @@
 @class WebView, UISegmentedControl, UIImageView, UIButton, UITransitionView, UIView<UIFormPeripheral>, UIPeripheralTransition;
 
 @interface UIFormAssistant : UIView {
+    BOOL _autoFillAllowed;
     UIButton *_autofill;
     UIView<UIFormPeripheral> *_currentPeripheral;
     UIButton *_done;
@@ -16,8 +17,8 @@
     WebView *_webView;
 }
 
-@property(retain) UIPeripheralTransition *_helper; /* unknown property attribute: V_helper */
-@property(retain) UIView<UIFormPeripheral> *_currentPeripheral; /* unknown property attribute: V_currentPeripheral */
+@property(retain) UIView<UIFormPeripheral> *_currentPeripheral;
+@property(retain) UIPeripheralTransition *_helper;
 
 + (id)_navigationImage;
 + (BOOL)isShowing;
@@ -30,6 +31,7 @@
 - (void)assistView:(id)arg1;
 - (id)assistedFormNode;
 - (void)autoFill:(id)arg1;
+- (BOOL)autoFillAllowed;
 - (void)autoFillWithFormNode:(id)arg1;
 - (void)beginEditingPeripheral:(id)arg1;
 - (BOOL)canAutoFill;

@@ -20,7 +20,9 @@
 
 + (id)EASPoliciesQuestionsPath;
 + (id)EASPolicyDictionaryPath;
++ (void)_addVersionNumbersToDictionary:(id)arg1;
 + (void)_deleteAllFilesAtPath:(id)arg1;
++ (void)_migrateDefaults;
 + (id)_payloadHandlerForPayloadWithUUID:(id)arg1;
 + (id)activeProfileIdentifiers;
 + (BOOL)allActiveProfilesContainPayloadType:(id)arg1;
@@ -54,10 +56,12 @@
 + (id)managedSystemConfigurationServiceIDs;
 + (id)managedWiFiNetworkNames;
 + (id)managedWiFiNetworks;
++ (id)manifestPath;
 + (NSInteger)maximumAutoLockTime;
 + (NSInteger)maximumFailedAttempts;
 + (NSInteger)maximumLockGracePeriod;
 + (NSInteger)maximumPINAge;
++ (void)migrate;
 + (id)mostRecentPINs;
 + (id)neuteredProfileDataForProfileID:(id)arg1;
 + (BOOL)passwordHasExpired;
@@ -95,6 +99,7 @@
 + (void)setProfileWithIdentifier:(id)arg1 isHidden:(BOOL)arg2;
 + (void)setTag:(id)arg1 forPayloadUUID:(id)arg2;
 + (id)sharedInstance;
++ (BOOL)showDebugButtonsForProfileWithIdentifier:(id)arg1;
 + (BOOL)stagingFileMatchesPreviouslyInstalledSignature;
 + (BOOL)stagingFilePreviouslyInstalled;
 + (id)stagingPayloadPath;
@@ -151,6 +156,8 @@
 - (id)prepareForInstallWithPayloadData:(id)arg1;
 - (id)prepareProfile;
 - (BOOL)produceProfileUpdate;
+- (id)productBuildVersion;
+- (id)productVersion;
 - (id)profileDictionary;
 - (id)profileDictionaryForProfileData:(id)arg1;
 - (id)profileIdentifier;

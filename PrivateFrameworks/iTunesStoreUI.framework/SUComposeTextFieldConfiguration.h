@@ -16,12 +16,12 @@
     NSString *_value;
 }
 
-@property(retain) NSString *value; /* unknown property attribute: V_value */
-@property ? position; /* unknown property attribute: V_position */
-@property(retain) NSString *placeholder; /* unknown property attribute: V_placeholder */
-@property NSUInteger maxLength; /* unknown property attribute: V_maxLength */
-@property(retain) NSString *label; /* unknown property attribute: V_label */
-@property BOOL isRequired; /* unknown property attribute: V_isRequired */
+@property(retain) NSString *label;
+@property(retain) NSString *placeholder;
+@property(retain) NSString *value;
+@property BOOL isRequired;
+@property NSUInteger maxLength;
+@property ? position;
 
 - (void)dealloc;
 - (BOOL)isRequired;

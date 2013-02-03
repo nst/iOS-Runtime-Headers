@@ -10,9 +10,9 @@
     NSNumber *_sumLimitValue;
 }
 
-@property(copy) NSString *sumLimitColumnName; /* unknown property attribute: V_sumLimitColumnName */
-@property(copy) NSNumber *sumLimitValue; /* unknown property attribute: V_sumLimitValue */
-@property(copy) NSNumber *countLimit; /* unknown property attribute: V_countLimit */
+@property(copy) NSNumber *countLimit;
+@property(copy) NSString *sumLimitColumnName;
+@property(copy) NSNumber *sumLimitValue;
 
 - (struct __CPRecordIDArray { }*)copyFilteredRecordIDArray:(struct __CPRecordIDArray { }*)arg1 limitValueArray:(struct __CFArray { }*)arg2;
 - (id)countLimit;

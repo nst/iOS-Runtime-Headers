@@ -50,11 +50,11 @@
     UIImageView *_transportControlsDivider;
 }
 
-@property <STRunViewDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property NSInteger orientation; /* unknown property attribute: V_orientation */
-@property NSInteger interface; /* unknown property attribute: V_interface */
+@property <STRunViewDelegate> *delegate;
 @property BOOL animateForResumeEventsOnly;
+@property NSInteger interface;
 @property BOOL isLockScreen;
+@property NSInteger orientation;
 
 - (void)_applicationResumed:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;

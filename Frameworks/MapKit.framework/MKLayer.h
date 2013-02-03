@@ -23,9 +23,9 @@
     } _hitOutset;
 }
 
-@property(readonly) CGRect hitBounds; /* unknown property attribute: V_hitBounds */
-@property CGPoint hitOutset; /* unknown property attribute: V_hitOutset */
-@property CGPoint hitOffset; /* unknown property attribute: V_hitOffset */
+@property(readonly) CGRect hitBounds;
+@property CGPoint hitOffset;
+@property CGPoint hitOutset;
 
 - (void)_updateHitBounds;
 - (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;

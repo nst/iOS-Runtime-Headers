@@ -64,11 +64,13 @@
     UIImageView *_topAnchor;
 }
 
-@property(retain) UIView *rightView; /* unknown property attribute: V_rightView */
-@property(retain) UIView *leftView; /* unknown property attribute: V_leftView */
+@property(retain) UIView *leftView;
+@property(retain) UIView *rightView;
 @property BOOL canAnchorFromBottom;
 @property NSInteger subtitleLineBreakMode;
+@property NSInteger subtitleTextAlignment;
 @property NSInteger titleLineBreakMode;
+@property NSInteger titleTextAlignment;
 
 + (id)_backgroundImage;
 + (id)_bottomAnchorImage;
@@ -116,13 +118,17 @@
 - (void)setSubtitle:(id)arg1 animated:(BOOL)arg2;
 - (void)setSubtitle:(id)arg1;
 - (void)setSubtitleLineBreakMode:(NSInteger)arg1;
+- (void)setSubtitleTextAlignment:(NSInteger)arg1;
 - (void)setTemporaryTitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleLineBreakMode:(NSInteger)arg1;
+- (void)setTitleTextAlignment:(NSInteger)arg1;
 - (id)subtitle;
 - (NSInteger)subtitleLineBreakMode;
+- (NSInteger)subtitleTextAlignment;
 - (id)temporaryTitle;
 - (id)title;
 - (NSInteger)titleLineBreakMode;
+- (NSInteger)titleTextAlignment;
 
 @end

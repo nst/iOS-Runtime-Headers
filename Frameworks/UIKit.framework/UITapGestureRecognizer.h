@@ -16,10 +16,10 @@
     NSInteger _touchesAtMaxTaps;
 }
 
-@property NSInteger numberOfFingers; /* unknown property attribute: V_numberOfFingers */
-@property NSInteger numberOfTaps; /* unknown property attribute: V_numberOfTaps */
-@property(readonly) CGPoint location; /* unknown property attribute: V_location */
 @property(readonly) NSArray *touches;
+@property(readonly) CGPoint location;
+@property NSInteger numberOfFingers;
+@property NSInteger numberOfTaps;
 
 - (void)_doubleTapTooSlow;
 - (void)_tapTooSlow;

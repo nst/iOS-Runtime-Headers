@@ -9,8 +9,8 @@
     UILabel *_secondaryLabel;
 }
 
-@property(readonly) UILabel *secondaryLabel; /* unknown property attribute: V_secondaryLabel */
-@property(readonly) UILabel *primaryLabel; /* unknown property attribute: V_primaryLabel */
+@property(readonly) UILabel *primaryLabel;
+@property(readonly) UILabel *secondaryLabel;
 
 + (id)defaultFormatForSecondaryLabel;
 + (id)defaultTextForPrimaryLabel;

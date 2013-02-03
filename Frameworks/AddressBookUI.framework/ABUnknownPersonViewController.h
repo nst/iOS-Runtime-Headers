@@ -10,13 +10,13 @@
     <ABUnknownPersonViewControllerDelegate> *_unknownPersonViewDelegate;
 }
 
-@property <ABUnknownPersonViewControllerDelegate> *unknownPersonViewDelegate; /* unknown property attribute: V_unknownPersonViewDelegate */
 @property void *addressBook;
 @property(copy) NSString *alternateName;
 @property(copy) NSString *attribution;
 @property void *displayedPerson;
 @property(copy) NSString *message;
 @property(retain) UIView *personHeaderView;
+@property <ABUnknownPersonViewControllerDelegate> *unknownPersonViewDelegate;
 @property BOOL allowsActions;
 @property BOOL allowsAddingToAddressBook;
 @property BOOL allowsSendingTextMessage;
@@ -50,6 +50,7 @@
 - (BOOL)allowsSendingTextMessage;
 - (id)alternateName;
 - (id)attribution;
+- (id)customMessageView;
 - (void)dealloc;
 - (void*)displayedPerson;
 - (id)helper;
@@ -72,6 +73,7 @@
 - (void)setAlternateName:(id)arg1;
 - (void)setAttribution:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)setAttribution:(id)arg1;
+- (void)setCustomMessageView:(id)arg1;
 - (void)setDates:(id)arg1 withMessageFormat:(id)arg2;
 - (void)setDisplayedPerson:(void*)arg1;
 - (void)setHighlightedItemForProperty:(NSInteger)arg1 withIdentifier:(NSInteger)arg2 important:(BOOL)arg3;

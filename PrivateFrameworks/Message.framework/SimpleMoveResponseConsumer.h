@@ -10,7 +10,7 @@
     NSDictionary *messagesByMessageID;
 }
 
-@property(retain) MFError *error; /* unknown property attribute: V_error */
+@property(retain) MFError *error;
 
 - (void)actionFailed:(NSInteger)arg1 forTask:(id)arg2 error:(id)arg3;
 - (void)dealloc;

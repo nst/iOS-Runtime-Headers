@@ -18,7 +18,7 @@
     NSUInteger _willBeMarkedReadCount;
 }
 
-@property CKConversationList *conversationList; /* unknown property attribute: V_conversationList */
+@property CKConversationList *conversationList;
 
 - (void)_conversationDidChange:(id)arg1;
 - (void)_conversationMessageWasSent:(id)arg1;

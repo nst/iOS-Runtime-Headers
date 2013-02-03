@@ -12,7 +12,7 @@
     DADContactsSearchQuery *_query;
 }
 
-@property(readonly) DADContactsSearchQuery *query; /* unknown property attribute: V_query */
+@property(readonly) DADContactsSearchQuery *query;
 
 - (void)_appendKey:(id)arg1 value:(id)arg2 toSearchResultElement:(id)arg3;
 - (id)_copyContactSearchElementFromLDAPElement:(struct ldapmsg { }*)arg1;

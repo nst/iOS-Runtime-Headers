@@ -11,15 +11,16 @@
     NSInteger _zoom;
 }
 
-@property(retain) NSMutableArray *tiles; /* unknown property attribute: V_tiles */
-@property NSInteger numVerticalTiles; /* unknown property attribute: V_numVerticalTiles */
-@property NSInteger numHorizontalTiles; /* unknown property attribute: V_numHorizontalTiles */
-@property NSInteger zoom; /* unknown property attribute: V_zoom */
+@property(retain) NSMutableArray *tiles;
+@property NSInteger numHorizontalTiles;
+@property NSInteger numVerticalTiles;
 @property(readonly) NSInteger tilesCount;
+@property NSInteger zoom;
 
 - (void)addTile:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)init;
 - (NSInteger)numHorizontalTiles;
 - (NSInteger)numVerticalTiles;

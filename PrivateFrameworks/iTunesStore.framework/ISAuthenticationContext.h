@@ -2,42 +2,42 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSNumber, NSDictionary, NSString;
+@class NSNumber, NSDictionary;
 
 @interface ISAuthenticationContext : NSObject <NSCoding> {
     NSNumber *_accountID;
     NSDictionary *_additionalQueryParameters;
     NSInteger _bagType;
-    BOOL _forced;
-    NSString *_newAccountContinuationString;
+    NSDictionary *_newAccountQueryParameters;
     BOOL _shouldFollowAccountButtons;
     BOOL _shouldWaitForNetwork;
+    NSInteger _style;
     BOOL _useCachedCredentials;
 }
 
-@property BOOL useCachedCredentials; /* unknown property attribute: V_useCachedCredentials */
-@property BOOL shouldWaitForNetwork; /* unknown property attribute: V_shouldWaitForNetwork */
-@property BOOL shouldFollowAccountButtons; /* unknown property attribute: V_shouldFollowAccountButtons */
-@property(retain) NSString *newAccountContinuationString; /* unknown property attribute: V_newAccountContinuationString */
-@property(getter=isForced) BOOL forced; /* unknown property attribute: V_forced */
-@property NSInteger bagType; /* unknown property attribute: V_bagType */
-@property(retain) NSDictionary *additionalQueryParameters; /* unknown property attribute: V_additionalQueryParameters */
-@property(retain,readonly) NSNumber *accountID; /* unknown property attribute: V_accountID */
+@property(retain,readonly) NSNumber *accountID;
+@property(retain) NSDictionary *additionalQueryParameters;
+@property(retain) NSDictionary *newAccountQueryParameters;
+@property NSInteger authenticationStyle;
+@property NSInteger bagType;
+@property BOOL shouldFollowAccountButtons;
+@property BOOL shouldWaitForNetwork;
+@property BOOL useCachedCredentials;
 
 - (id)accountID;
 - (id)additionalQueryParameters;
+- (NSInteger)authenticationStyle;
 - (NSInteger)bagType;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithAccountID:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isForced;
-- (id)newAccountContinuationString;
+- (id)newAccountQueryParameters;
 - (void)setAdditionalQueryParameters:(id)arg1;
+- (void)setAuthenticationStyle:(NSInteger)arg1;
 - (void)setBagType:(NSInteger)arg1;
-- (void)setForced:(BOOL)arg1;
-- (void)setNewAccountContinuationString:(id)arg1;
+- (void)setNewAccountQueryParameters:(id)arg1;
 - (void)setShouldFollowAccountButtons:(BOOL)arg1;
 - (void)setShouldWaitForNetwork:(BOOL)arg1;
 - (void)setUseCachedCredentials:(BOOL)arg1;

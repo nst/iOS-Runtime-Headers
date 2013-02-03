@@ -8,7 +8,7 @@
     SUSection *_section;
 }
 
-@property(retain) SUSection *section; /* unknown property attribute: V_section */
+@property(retain) SUSection *section;
 
 - (id)_sectionForViewController:(id)arg1;
 - (void)dealloc;

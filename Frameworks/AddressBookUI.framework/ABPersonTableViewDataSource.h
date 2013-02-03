@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, NSArray, NSString, UILabel, ABRingtoneManager, NSMutableArray, <ABPersonTableViewDataSourceDelegate>, ABActionsController, UITableView, ABPersonTableHeaderView, ABPersonTableFooterView;
 
-@interface ABPersonTableViewDataSource : NSObject <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, ABPersonTableHeaderViewDelegateProtocol, ABPersonTableFooterViewDelegate> {
+@interface ABPersonTableViewDataSource : NSObject <UITableViewDelegate, UITableViewDataSourcePrivate, UIActionSheetDelegate, ABPersonTableHeaderViewDelegateProtocol, ABPersonTableFooterViewDelegate> {
     struct __CFDictionary { } *_actionGroupingsByProperty;
     NSInteger _actionSheetType;
     struct __CFDictionary { } *_actionsByProperty;
@@ -39,36 +39,38 @@
     UITableView *_tableView;
 }
 
-@property BOOL highlightedValueIsImportant; /* unknown property attribute: V_highlightedValueIsImportant */
-@property NSInteger highlightedValueIdentifier; /* unknown property attribute: V_highlightedValueIdentifier */
-@property NSInteger highlightedValueProperty; /* unknown property attribute: V_highlightedValueProperty */
-@property(copy) NSString *datesMessageFormat; /* unknown property attribute: V_datesMessageFormat */
-@property(copy) NSArray *dates; /* unknown property attribute: V_dates */
-@property __CFArray *displayedProperties; /* unknown property attribute: V_displayedProperties */
-@property BOOL showsAddressActions; /* unknown property attribute: V_showsAddressActions */
-@property BOOL allowsRingtone; /* unknown property attribute: V_allowsRingtone */
-@property BOOL allowsDeletion; /* unknown property attribute: V_allowsDeletion */
-@property BOOL allowsAddToFavorites; /* unknown property attribute: V_allowsAddToFavorites */
-@property BOOL allowsEditing; /* unknown property attribute: V_allowsEditing */
-@property BOOL allowsActions; /* unknown property attribute: V_allowsActions */
-@property void *person; /* unknown property attribute: V_person */
-@property void *addressBook; /* unknown property attribute: V_addressBook */
-@property(retain) UITableView *tableView; /* unknown property attribute: V_tableView */
-@property <ABPersonTableViewDataSourceDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property void *addressBook;
 @property(copy) NSString *alternateName;
 @property(readonly) NSString *attribution;
+@property(retain) UIView *customMessageView;
+@property(copy) NSArray *dates;
+@property(copy) NSString *datesMessageFormat;
+@property <ABPersonTableViewDataSourceDelegate> *delegate;
+@property __CFArray *displayedProperties;
 @property(copy) NSString *message;
 @property(copy) NSString *messageDetail;
 @property(retain) UIFont *messageDetailFont;
 @property(retain) UIFont *messageFont;
+@property void *person;
 @property(retain) UIView *personHeaderView;
 @property(readonly) ABPersonImageView *personImageView;
+@property(retain) UITableView *tableView;
+@property BOOL allowsActions;
+@property BOOL allowsAddToFavorites;
+@property BOOL allowsDeletion;
+@property BOOL allowsEditing;
+@property BOOL allowsRingtone;
 @property BOOL allowsSendingTextMessage;
 @property(getter=isAttributionEnabled,readonly) BOOL attributionEnabled;
 @property(getter=isEditing) BOOL editing;
+@property NSInteger highlightedValueIdentifier;
+@property BOOL highlightedValueIsImportant;
+@property NSInteger highlightedValueProperty;
 @property(getter=isPartiallyFilled,readonly) BOOL partiallyFilled;
+@property BOOL showsAddressActions;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_footerViewFrame;
+- (NSInteger)_tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2 whenEditing:(BOOL)arg3;
 - (NSInteger)actionGroupingCountForPropertyGroup:(id)arg1 whenEditing:(BOOL)arg2;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
 - (id)actionsController;
@@ -93,6 +95,7 @@
 - (id)createFooterView;
 - (id)createPropertyGroupsForEditing:(BOOL)arg1 person:(void*)arg2 withDisplayedProperties:(struct __CFArray { }*)arg3;
 - (id)createPropertyGroupsForEditing:(BOOL)arg1;
+- (id)customMessageView;
 - (id)dates;
 - (id)datesMessageFormat;
 - (void)dealloc;
@@ -143,12 +146,13 @@
 - (void)reloadData;
 - (void)reloadImageData;
 - (void)reloadNameDataAnimated:(BOOL)arg1;
-- (void)reloadNoValueLabel;
+- (void)reloadNoValueLabelAnimated:(BOOL)arg1;
 - (void)reloadPhoneActionCellsAnimated:(BOOL)arg1;
 - (void)reloadPhoneValueCellsAnimated:(BOOL)arg1;
 - (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 property:(NSInteger)arg3 actionGrouping:(NSInteger)arg4 ordering:(NSInteger)arg5;
 - (void)reselectLastSelectedCellIfNeeded:(id)arg1 forProperty:(NSInteger)arg2;
 - (id)ringtoneManager;
+- (id)sectionAnimationsDictionaryForEditing:(BOOL)arg1;
 - (NSInteger)sectionIndexForPropertyGroup:(id)arg1 withPropertyGroups:(id)arg2 whenEditing:(BOOL)arg3;
 - (void)sendTextMessage:(id)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3;
 - (void)setAddressBook:(void*)arg1;
@@ -160,6 +164,7 @@
 - (void)setAllowsSendingTextMessage:(BOOL)arg1;
 - (void)setAlternateName:(id)arg1;
 - (void)setAttribution:(id)arg1 enabled:(BOOL)arg2 target:(id)arg3 action:(SEL)arg4;
+- (void)setCustomMessageView:(id)arg1;
 - (void)setDates:(id)arg1 withMessageFormat:(id)arg2;
 - (void)setDates:(id)arg1;
 - (void)setDatesMessageFormat:(id)arg1;
@@ -191,6 +196,7 @@
 - (BOOL)showsAddressActions;
 - (void)sizeToFit;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
+- (BOOL)tableView:(id)arg1 canPerformAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (void)tableView:(id)arg1 cell:(id*)arg2 orTag:(NSInteger*)arg3 forRowAtIndexPath:(id)arg4 allowDequeing:(BOOL)arg5;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(NSInteger)arg2 forRowAtIndexPath:(id)arg3;
@@ -199,6 +205,8 @@
 - (NSInteger)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (void)tableView:(id)arg1 performAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
+- (BOOL)tableView:(id)arg1 shouldShowMenuForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
 - (id)tableView;
 - (id)tableViewCellForActions:(id)arg1 tableView:(id)arg2 row:(NSInteger)arg3 editing:(BOOL)arg4 allowDequeing:(BOOL)arg5 tag:(NSInteger*)arg6;

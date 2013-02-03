@@ -20,12 +20,12 @@
     NSArray *_touches;
 }
 
-@property <UILongPressGestureRecognizerDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property float allowableMovement; /* unknown property attribute: V_allowableMovement */
-@property double delay; /* unknown property attribute: V_delay */
-@property NSInteger numberOfFingers; /* unknown property attribute: V_numberOfFingers */
-@property(retain) NSArray *touches; /* unknown property attribute: V_touches */
+@property <UILongPressGestureRecognizerDelegate> *delegate;
+@property(retain) NSArray *touches;
+@property float allowableMovement;
 @property(readonly) CGPoint centroid;
+@property double delay;
+@property NSInteger numberOfFingers;
 @property(readonly) CGPoint startPoint;
 
 - (float)allowableMovement;

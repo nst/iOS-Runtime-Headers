@@ -19,20 +19,20 @@
     BOOL m_visible;
 }
 
-@property(copy) NSString *overrideDisplayString; /* unknown property attribute: Vm_overrideDisplayString */
-@property(copy) NSArray *variantKeys; /* unknown property attribute: Vm_variantKeys */
-@property(retain) NSString *displayRowHint; /* unknown property attribute: Vm_displayRowHint */
-@property NSUInteger displayTypeHint; /* unknown property attribute: Vm_displayTypeHint */
-@property BOOL visible; /* unknown property attribute: Vm_visible */
-@property(copy) UIKBAttributeList *attributes; /* unknown property attribute: Vm_attributes */
-@property(copy) NSString *variantType; /* unknown property attribute: Vm_variantType */
-@property(copy) NSString *interactionType; /* unknown property attribute: Vm_interactionType */
-@property(copy) NSString *displayType; /* unknown property attribute: Vm_displayType */
-@property(copy) NSString *displayString; /* unknown property attribute: Vm_displayString */
-@property(copy) NSString *representedString; /* unknown property attribute: Vm_representedString */
-@property(copy) NSString *name; /* unknown property attribute: Vm_name */
+@property(copy) UIKBAttributeList *attributes;
+@property(retain) NSString *displayRowHint;
+@property(copy) NSString *displayString;
+@property(copy) NSString *displayType;
+@property(copy) NSString *interactionType;
+@property(copy) NSString *name;
+@property(copy) NSString *overrideDisplayString;
+@property(copy) NSString *representedString;
+@property(copy) NSArray *variantKeys;
+@property(copy) NSString *variantType;
 @property BOOL disabled;
+@property NSUInteger displayTypeHint;
 @property BOOL hidden;
+@property BOOL visible;
 
 + (id)key;
 + (id)keyWithKey:(id)arg1;

@@ -9,16 +9,18 @@
     NSMutableSet *_itemsWithReferencesToClear;
     struct __CFDictionary { } *_nextStartTimes;
     NSUInteger _repeatType;
+    id _representedObject;
     NSUInteger _shuffleType;
 }
 
-@property NSUInteger shuffleType; /* unknown property attribute: V_shuffleType */
-@property NSUInteger repeatType; /* unknown property attribute: V_repeatType */
-@property MPAVController *AVController; /* unknown property attribute: V_avController */
+@property MPAVController *AVController;
 @property(retain,readonly) NSDictionary *preferredLanguages;
+@property(retain) <NSObject> *representedObject;
 @property(readonly) Class itemClass;
 @property(readonly) NSUInteger realRepeatType;
 @property(readonly) NSUInteger realShuffleType;
+@property NSUInteger repeatType;
+@property NSUInteger shuffleType;
 @property(readonly) BOOL trackChangesCanEndPlayback;
 
 - (id)AVController;
@@ -42,10 +44,13 @@
 - (id)preferredLanguages;
 - (NSUInteger)realRepeatType;
 - (NSUInteger)realShuffleType;
+- (BOOL)reloadWithDataSource:(id)arg1;
 - (NSUInteger)repeatType;
+- (id)representedObject;
 - (void)setAVController:(id)arg1;
 - (void)setNextStartTime:(double)arg1 forIndex:(NSUInteger)arg2;
 - (void)setRepeatType:(NSUInteger)arg1;
+- (void)setRepresentedObject:(id)arg1;
 - (void)setShuffleType:(NSUInteger)arg1;
 - (void)shuffleItemsWithAnchor:(NSUInteger*)arg1;
 - (NSUInteger)shuffleType;

@@ -8,6 +8,7 @@
     unsigned long long _address;
     NSUInteger _fileType;
     NSUInteger _flags;
+    unsigned long long _linkEditBase;
     NSArray *_loadCommands;
     <VMUMemory> *_memory;
     NSString *_name;
@@ -26,8 +27,10 @@
 - (NSUInteger)fileType;
 - (NSUInteger)flags;
 - (BOOL)isCommpage;
+- (BOOL)isFromSharedCache;
 - (BOOL)isMachO;
 - (BOOL)isProtected;
+- (unsigned long long)linkEditBase;
 - (id)loadCommands;
 - (id)memory;
 - (id)name;

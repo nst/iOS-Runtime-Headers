@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLVideoRemaker, UINavigationController, PLToolbar, PLPhotoScrollerViewController, MLPhotoAlbum, PLImageTileView, PLEmptyAlbumView, UIView, UITransitionView, PLCropOverlay, PLMobileMeHelper, UIActionSheet, PLAlbumScrollView, NSData, PLPublishingAgent, PLCameraImage, UIProgressHUD, UIModalView, UILongPressGestureRecognizer, UIWindow, <PLAlbumsControllerDelegate>, PLAlbumView, PLProgressView, NSTimer;
+@class PLVideoRemaker, UINavigationController, PLToolbar, PLPhotoScrollerViewController, MLPhotoAlbum, PLImageTileView, PLEmptyAlbumView, UIView, UITransitionView, PLCropOverlay, PLMobileMeHelper, UIActionSheet, PLAlbumScrollView, NSData, PLPublishingAgent, UILongPressGestureRecognizer, UIProgressHUD, UIModalView, MLPhoto, UIWindow, <PLAlbumsControllerDelegate>, PLAlbumView, PLProgressView, NSTimer;
 
 @interface PLAlbumsController : NSObject <PLAlbumScrollViewDelegate, PLImageScrollViewDelegate, PLVideoViewDelegate, UIScrollViewDelegate, UIToolbarDelegate, UIModalViewDelegate, UINavigationControllerDelegate, UIActionSheetDelegate> {
     struct CGRect { 
@@ -68,7 +68,7 @@
     PLCropOverlay *_cropOverlay;
     NSUInteger _currentIndex;
     PLPublishingAgent *_currentPublishingAgent;
-    PLCameraImage *_currentVideo;
+    MLPhoto *_currentVideo;
     <PLAlbumsControllerDelegate> *_delegate;
     NSUInteger _deletedIndex;
     NSInteger _deviceOrientation;
@@ -137,12 +137,12 @@
     struct __CFDictionary { } *_videoViewCache;
 }
 
-@property <PLAlbumsControllerDelegate> *delegate; /* unknown property attribute: V_delegate */
 @property(retain) MLPhotoAlbum *album;
 @property(readonly) PLAlbumScrollView *albumScroller;
 @property(readonly) PLToolbar *buttonBar;
 @property(readonly) UIView *buttonBarContainerView;
 @property(retain) MLPhoto *currentImage;
+@property <PLAlbumsControllerDelegate> *delegate;
 @property(readonly) MLPhoto *nextImage;
 @property(readonly) MLPhoto *previousImage;
 @property BOOL canEditVideo;
@@ -192,6 +192,7 @@
 - (void)_longPressRecognized:(id)arg1;
 - (id)_modelImageForIndex:(NSInteger)arg1;
 - (id)_navigationController;
+- (void)_passthroughTrimWasConfirmed:(id)arg1;
 - (void)_performSendViaEmail;
 - (void)_performSetWallpaper;
 - (id)_photoScrollerViewController;
@@ -209,6 +210,7 @@
 - (void)_publishingAgentDidFinishPublishing:(id)arg1;
 - (void)_publishingAgentDidStartPublishing:(id)arg1;
 - (void)_reallyDismissActionMenu;
+- (void)_reallyDismissActionMenuAnimated:(BOOL)arg1;
 - (void)_reallySendViaEmail:(id)arg1;
 - (void)_reallyShowPeoplePicker;
 - (void)_remakerDidFinish:(id)arg1;
@@ -234,6 +236,7 @@
 - (BOOL)_shouldRespondToButtonBarButtons;
 - (void)_showButtonGroup:(NSInteger)arg1 withDuration:(NSInteger)arg2;
 - (void)_showCompositionForPublishingBundleNamed:(id)arg1 transcodedVideoPath:(id)arg2;
+- (void)_showConfirmationForPassthroughTrimming;
 - (void)_showCropOverlayWithTitle:(id)arg1 subtitle:(id)arg2 cropButtonTitle:(id)arg3;
 - (void)_showMMSComposeSheet;
 - (void)_showMailComposition:(id)arg1 transcodedVideoPath:(id)arg2;
@@ -384,6 +387,7 @@
 - (void)videoRemakerDidEndRemaking:(id)arg1 temporaryPath:(id)arg2;
 - (void)videoView:(id)arg1 remakingProgressDidChange:(float)arg2;
 - (BOOL)videoViewCanBeginPlayback:(id)arg1;
+- (BOOL)videoViewCanCreateMetadata:(id)arg1;
 - (BOOL)videoViewCanFlushOnViewRemoval:(id)arg1;
 - (void)videoViewDidBeginEditing:(id)arg1;
 - (void)videoViewDidBeginPlayback:(id)arg1;

@@ -13,8 +13,8 @@
     BOOL _trackingNetworkType;
 }
 
-@property(retain) NSArray *sections; /* unknown property attribute: V_sections */
 @property <SUTabBarControllerDelegate> *delegate;
+@property(retain) NSArray *sections;
 @property(retain) NSString *selectedIdentifier;
 
 - (void)_beginReloadingUnderneathTransientViewController;
@@ -46,6 +46,7 @@
 - (BOOL)loadFromDefaults;
 - (void)presentModalViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)reloadForNetworkTypeChange;
+- (void)resetUserDefaults;
 - (void)rootTransientViewController:(id)arg1 inSectionWithIdentifier:(id)arg2;
 - (BOOL)saveOrderingToDefaults;
 - (BOOL)saveToDefaults;

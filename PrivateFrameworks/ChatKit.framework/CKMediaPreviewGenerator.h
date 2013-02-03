@@ -13,12 +13,12 @@
     NSData *_previewResult;
 }
 
-@property(readonly) NSData *composePreviewResult; /* unknown property attribute: V_composePreviewResult */
-@property(readonly) NSData *previewResult; /* unknown property attribute: V_previewResult */
-@property id delegate; /* unknown property attribute: V_delegate */
-@property(retain) CKMediaObject *mediaObject; /* unknown property attribute: V_mediaObject */
-@property BOOL generateComposePreview; /* unknown property attribute: V_generateComposePreview */
-@property NSInteger orientation; /* unknown property attribute: V_orientation */
+@property(readonly) NSData *composePreviewResult;
+@property(retain) CKMediaObject *mediaObject;
+@property(readonly) NSData *previewResult;
+@property id delegate;
+@property BOOL generateComposePreview;
+@property NSInteger orientation;
 
 - (id)composePreviewResult;
 - (void)dealloc;

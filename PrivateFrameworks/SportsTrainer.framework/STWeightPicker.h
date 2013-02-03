@@ -8,8 +8,8 @@
     id _weightPickerDelegate;
 }
 
-@property(readonly) NSInteger selectedWeightUnit; /* unknown property attribute: V_selectedWeightUnit */
-@property <STWeightPickerDelegate> *weightPickerDelegate; /* unknown property attribute: V_weightPickerDelegate */
+@property <STWeightPickerDelegate> *weightPickerDelegate;
+@property(readonly) NSInteger selectedWeightUnit;
 @property(readonly) float weightInKg;
 @property float weightInLbs;
 

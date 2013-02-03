@@ -28,6 +28,7 @@
         unsigned int zoomed : 1; 
         unsigned int zoomAnimating : 1; 
         unsigned int trackIsPressed : 1; 
+        unsigned int trackAnimating : 1; 
         unsigned int thumbIsVisible : 1; 
         unsigned int handleIsPressed : 1; 
         unsigned int willBeginEditing : 1; 
@@ -66,23 +67,25 @@
     double _trimEndValue;
     double _trimStartValue;
     double _value;
+    double _zoomAnimationDelay;
+    double _zoomAnimationDuration;
     float _zoomDelay;
 }
 
-@property double minimumTrimLength; /* unknown property attribute: V_minTrimmedLength */
-@property double maximumTrimLength; /* unknown property attribute: V_maxTrimmedLength */
-@property BOOL showTimeViews; /* unknown property attribute: V_showTimeViews */
-@property float zoomDelay; /* unknown property attribute: V_zoomDelay */
 @property <UIMovieScrubberDataSource> *dataSource;
 @property <UIMovieScrubberDelegate> *delegate;
 @property(getter=isContinuous) BOOL continuous;
 @property double duration;
 @property(getter=isEditable) BOOL editable;
 @property(getter=isEditing) BOOL editing;
+@property double maximumTrimLength;
+@property double minimumTrimLength;
+@property BOOL showTimeViews;
 @property BOOL thumbIsVisible;
 @property double trimEndValue;
 @property double trimStartValue;
 @property double value;
+@property float zoomDelay;
 
 + (id)timeStringForSeconds:(NSInteger)arg1 forceFullWidthComponents:(BOOL)arg2 isElapsed:(BOOL)arg3;
 
@@ -100,6 +103,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingViewFrameForEndValueWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingViewFrameForStartValueWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_initSubviews;
+- (id)_scriptingInfo;
 - (void)_sendDelayedActions;
 - (void)_setValue:(double)arg1 andSendAction:(BOOL)arg2;
 - (void)_sliderAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
@@ -129,9 +133,9 @@
 - (void)layoutSubviews;
 - (double)maximumTrimLength;
 - (double)minimumTrimLength;
+- (void)movieScrubberTrackView:(id)arg1 clampedSizeWidthDelta:(float)arg2 actualSizeWidthDelta:(float)arg3 originXDelta:(float)arg4 minimumVisibleValue:(float)arg5 maximumVisibleValue:(float)arg6;
 - (id)movieScrubberTrackView:(id)arg1 evenlySpacedTimestamps:(NSInteger)arg2 startingAt:(id)arg3 endingAt:(id)arg4;
 - (void)movieScrubberTrackView:(id)arg1 requestThumbnailImageForTimestamp:(id)arg2;
-- (void)movieScrubberTrackView:(id)arg1 sizeWidthDelta:(float)arg2 originXDelta:(float)arg3 minimumVisibleValue:(float)arg4 maximumVisibleValue:(float)arg5;
 - (id)movieScrubberTrackView:(id)arg1 timestampsStartingAt:(id)arg2 endingAt:(id)arg3 maxCount:(NSInteger)arg4;
 - (void)movieScrubberTrackViewDidCollapse:(id)arg1;
 - (void)movieScrubberTrackViewDidExpand:(id)arg1;
@@ -139,8 +143,11 @@
 - (double)movieScrubberTrackViewDuration:(id)arg1;
 - (float)movieScrubberTrackViewThumbnailAspectRatio:(id)arg1;
 - (void)movieScrubberTrackViewWillBeginRequestingThumbnails:(id)arg1;
+- (float)movieScrubberTrackViewZoomAnimationDelay:(id)arg1;
+- (float)movieScrubberTrackViewZoomAnimationDuration:(id)arg1;
 - (BOOL)pointInsideThumb:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)reloadData;
+- (id)scriptingInfoWithChildren;
 - (void)setContinuous:(BOOL)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;

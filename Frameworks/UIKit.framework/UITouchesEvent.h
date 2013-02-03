@@ -4,8 +4,7 @@
 
 @class NSMutableSet;
 
-@interface UITouchesEvent : UIEvent {
-    struct __GSEvent { } *_gsEvent;
+@interface UITouchesEvent : UIInternalEvent {
     struct __CFDictionary { } *_keyedTouches;
     NSMutableSet *_touches;
 }
@@ -18,7 +17,6 @@
 - (id)_cloneEvent;
 - (id)_firstTouchForView:(id)arg1;
 - (id)_gestureRecognizersForWindow:(id)arg1;
-- (struct __GSEvent { }*)_gsEvent;
 - (id)_init;
 - (id)_initWithEvent:(struct __GSEvent { }*)arg1 touches:(id)arg2;
 - (id)_initWithTouches:(id)arg1 keyedTouches:(struct __CFDictionary { }*)arg2;
@@ -26,7 +24,6 @@
 - (void)_removeTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
 - (void)_removeTouch:(id)arg1;
 - (void)_removeTouchesForKey:(id)arg1;
-- (void)_setGSEvent:(struct __GSEvent { }*)arg1;
 - (id)_sortedGestureRecognizersForWindow:(id)arg1;
 - (void)_touchesForGesture:(id)arg1 withPhase:(NSInteger)arg2 intoSet:(id)arg3;
 - (id)_touchesForGesture:(id)arg1 withPhase:(NSInteger)arg2;

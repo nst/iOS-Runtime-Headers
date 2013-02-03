@@ -15,6 +15,7 @@
 - (id)initWithData:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (NSInteger)itemType;
+- (id)pathForVideoFile;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

@@ -18,12 +18,12 @@
     NSMutableSet *_viewsToFadeOut;
 }
 
-@property(retain) MPViewController *toViewController; /* unknown property attribute: V_toViewController */
-@property NSInteger toOrientation; /* unknown property attribute: V_toOrientation */
-@property(retain) UIView *rootView; /* unknown property attribute: V_rootView */
-@property(retain) MPViewController *fromViewController; /* unknown property attribute: V_fromViewController */
-@property NSInteger fromOrientation; /* unknown property attribute: V_fromOrientation */
-@property float duration; /* unknown property attribute: V_duration */
+@property(retain) MPViewController *fromViewController;
+@property(retain) UIView *rootView;
+@property(retain) MPViewController *toViewController;
+@property float duration;
+@property NSInteger fromOrientation;
+@property NSInteger toOrientation;
 
 - (void)addObserver:(id)arg1 didEndSelector:(SEL)arg2;
 - (void)addViewToFadeIn:(id)arg1 restoreOnPop:(BOOL)arg2;

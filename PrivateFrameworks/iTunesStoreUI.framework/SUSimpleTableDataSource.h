@@ -9,8 +9,8 @@
     NSArray *_objects;
 }
 
-@property(retain) NSArray *objects; /* unknown property attribute: V_objects */
-@property(retain) Class cellConfigurationClass; /* unknown property attribute: V_cellConfigurationClass */
+@property(retain) NSArray *objects;
+@property(retain) Class cellConfigurationClass;
 
 - (Class)cellConfigurationClass;
 - (id)cellForIndexPath:(id)arg1;

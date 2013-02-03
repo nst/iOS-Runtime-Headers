@@ -14,8 +14,8 @@
     BOOL _wasResourceModifiedByServer;
 }
 
-@property(readonly) NSString *resourcePath; /* unknown property attribute: V_resourcePath */
-@property(readonly) BOOL wasResourceModifiedByServer; /* unknown property attribute: V_wasResourceModifiedByServer */
+@property(readonly) NSString *resourcePath;
+@property(readonly) BOOL wasResourceModifiedByServer;
 
 - (void)dealloc;
 - (id)initWithCalendar:(id)arg1 overwrite:(BOOL)arg2 calendarURL:(id)arg3 account:(id)arg4 cache:(id)arg5;

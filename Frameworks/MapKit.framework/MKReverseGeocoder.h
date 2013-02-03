@@ -13,10 +13,12 @@
 @property(getter=isQuerying,readonly) BOOL querying;
 
 - (id)_bestAddressInResponse:(id)arg1;
-- (void)_extractPlacemarkAndSendResult:(id)arg1;
 - (void)_notifyError:(id)arg1;
 - (void)_notifyNoResults;
 - (void)_notifyResult:(id)arg1;
+- (id)_placemarkWithResponse:(id)arg1;
+- (void)_scheduleErrorNotify:(id)arg1;
+- (void)_schedulePlacemarkNotify:(id)arg1;
 - (void)cancel;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;

@@ -14,7 +14,7 @@
     UIScrollView *_scrollView;
 }
 
-@property <UIKeyboardEmojiController> *controller; /* unknown property attribute: V_controller */
+@property <UIKeyboardEmojiController> *controller;
 
 - (void)clearPages;
 - (id)controller;

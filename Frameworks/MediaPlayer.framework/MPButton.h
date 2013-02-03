@@ -13,8 +13,8 @@
     double _holdDelayInterval;
 }
 
-@property double holdDelayInterval; /* unknown property attribute: V_holdDelayInterval */
-@property UIEdgeInsets hitRectInsets; /* unknown property attribute: V_hitRectInsets */
+@property UIEdgeInsets hitRectInsets;
+@property double holdDelayInterval;
 
 - (void)_delayedTriggerHold;
 - (void)_handleTouchCancel;

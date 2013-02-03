@@ -15,21 +15,22 @@
     NSString *_resultLanguage;
 }
 
-@property(readonly) BOOL hasAddressLinesLimit; /* unknown property attribute: V_hasAddressLinesLimit */
-@property NSInteger addressLinesLimit; /* unknown property attribute: V_addressLinesLimit */
-@property(retain) LBSGRectangle *boundingBox; /* unknown property attribute: V_boundingBox */
-@property(retain) LBSUserLocation *location; /* unknown property attribute: V_location */
-@property(readonly) BOOL hasIncludeBoundingBoxes; /* unknown property attribute: V_hasIncludeBoundingBoxes */
-@property BOOL includeBoundingBoxes; /* unknown property attribute: V_includeBoundingBoxes */
-@property NSInteger numFeatureLimit; /* unknown property attribute: V_numFeatureLimit */
-@property(retain) NSString *resultLanguage; /* unknown property attribute: V_resultLanguage */
+@property(retain) LBSGRectangle *boundingBox;
+@property(retain) LBSUserLocation *location;
+@property(retain) NSString *resultLanguage;
+@property NSInteger addressLinesLimit;
+@property(readonly) BOOL hasAddressLinesLimit;
 @property(readonly) BOOL hasBoundingBox;
+@property(readonly) BOOL hasIncludeBoundingBoxes;
 @property(readonly) BOOL hasLocation;
+@property BOOL includeBoundingBoxes;
+@property NSInteger numFeatureLimit;
 
 - (NSInteger)addressLinesLimit;
 - (id)boundingBox;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasAddressLinesLimit;
 - (BOOL)hasBoundingBox;
 - (BOOL)hasIncludeBoundingBoxes;

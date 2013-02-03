@@ -12,11 +12,11 @@
     NSString *_mimeType;
 }
 
-@property double duration; /* unknown property attribute: V_duration */
-@property(readonly) NSString *exportedFilename; /* unknown property attribute: V_exportedFilename */
-@property(readonly) NSString *mimeType; /* unknown property attribute: V_mimeType */
-@property(readonly) NSString *filename; /* unknown property attribute: V_filename */
-@property(readonly) NSData *data; /* unknown property attribute: V_data */
+@property(readonly) NSData *data;
+@property(readonly) NSString *exportedFilename;
+@property(readonly) NSString *filename;
+@property(readonly) NSString *mimeType;
+@property double duration;
 
 + (id)fileExtensionForMIMEType:(id)arg1;
 + (id)mimeTypesToFileExtensions;

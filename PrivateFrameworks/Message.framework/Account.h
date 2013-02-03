@@ -43,11 +43,11 @@
 - (id)authenticatedConnection;
 - (BOOL)canGoOffline;
 - (Class)connectionClass;
+- (struct __CFString { }*)connectionServiceType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customDescriptionForError:(id)arg1 authScheme:(id)arg2 defaultDescription:(id)arg3;
 - (id)customTitleForAuthenticationError:(id)arg1 authScheme:(id)arg2 defaultTitle:(id)arg3;
 - (id)customTitleForError:(id)arg1 authScheme:(id)arg2 defaultTitle:(id)arg3;
-- (long)dataContextIdentifier;
 - (void)dealloc;
 - (id)defaultConnectionSettings;
 - (NSUInteger)defaultPortNumber;

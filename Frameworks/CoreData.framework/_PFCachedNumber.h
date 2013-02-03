@@ -22,7 +22,6 @@
 - (double)doubleValue;
 - (float)floatValue;
 - (void)getValue:(void*)arg1;
-- (NSUInteger)hash;
 - (id)init;
 - (id)initWithBytes:(const void*)arg1 objCType:(const char *)arg2;
 - (NSInteger)intValue;

@@ -15,9 +15,9 @@
     NSMutableArray *_typesToInsert;
 }
 
-@property BOOL mimeType; /* unknown property attribute: V_mimeType */
-@property(retain) NSMutableArray *presetMessageParts; /* unknown property attribute: V_presetMessageParts */
-@property id delegate; /* unknown property attribute: V_delegate */
+@property(retain) NSMutableArray *presetMessageParts;
+@property id delegate;
+@property BOOL mimeType;
 
 + (id)_newMediaObjectForFilename:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
 + (BOOL)acceptsMIMEType:(id)arg1;

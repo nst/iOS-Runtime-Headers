@@ -27,36 +27,37 @@
     UIViewController *_viewController;
 }
 
-@property(copy) NSString *shareMessageSubject; /* unknown property attribute: V_shareMessageSubject */
-@property(copy) NSString *shareMessageBody; /* unknown property attribute: V_shareMessageBody */
-@property BOOL shareMessageBodyIsHTML; /* unknown property attribute: V_shareMessageBodyIsHTML */
-@property <ABPersonNameDisplayChangeDelegate> *nameDisplayChangeDelegate; /* unknown property attribute: V_nameDisplayChangeDelegate */
-@property(retain) ABModel *model; /* unknown property attribute: V_model */
-@property BOOL isLocation; /* unknown property attribute: V_isLocation */
-@property BOOL shouldAddToAddressBookWhenPropertyIsSaved; /* unknown property attribute: V_shouldAddToAddressBookWhenPropertyIsSaved */
-@property BOOL showsCancelButton; /* unknown property attribute: V_showsCancelButton */
-@property BOOL allowsAddingToAddressBook; /* unknown property attribute: V_allowsAddingToAddressBook */
-@property BOOL automaticallySetEditing; /* unknown property attribute: V_automaticallySetEditing */
 @property void *addressBook;
 @property(copy) NSString *alternateName;
 @property(readonly) NSString *attribution;
+@property(retain) UIView *customMessageView;
 @property void *displayedPerson;
 @property(copy) NSString *message;
 @property(copy) NSString *messageDetail;
 @property(retain) UIFont *messageDetailFont;
 @property(retain) UIFont *messageFont;
+@property(retain) ABModel *model;
+@property <ABPersonNameDisplayChangeDelegate> *nameDisplayChangeDelegate;
 @property(retain) UIView *personHeaderView;
 @property(readonly) ABPersonTableViewDataSource *personTableViewDataSource;
+@property(copy) NSString *shareMessageBody;
+@property(copy) NSString *shareMessageSubject;
 @property(readonly) UIViewController *viewController;
 @property(readonly) UIView *viewForActionSheet;
 @property BOOL allowsActions;
 @property BOOL allowsAddToFavorites;
+@property BOOL allowsAddingToAddressBook;
 @property BOOL allowsCardEditing;
 @property BOOL allowsRingtone;
 @property BOOL allowsSendingTextMessage;
 @property BOOL allowsSharing;
 @property(getter=isAttributionEnabled,readonly) BOOL attributionEnabled;
+@property BOOL automaticallySetEditing;
+@property BOOL isLocation;
 @property(getter=isPartiallyFilled,readonly) BOOL partiallyFilled;
+@property BOOL shareMessageBodyIsHTML;
+@property BOOL shouldAddToAddressBookWhenPropertyIsSaved;
+@property BOOL showsCancelButton;
 
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
 - (void)addActionWithTitle:(id)arg1 shortTitle:(id)arg2 target:(id)arg3 selector:(SEL)arg4 forProperty:(NSInteger)arg5 withActionGrouping:(NSInteger)arg6 ordering:(NSInteger)arg7;
@@ -73,12 +74,12 @@
 - (id)attribution;
 - (BOOL)automaticallySetEditing;
 - (void)cancel:(id)arg1;
-- (id)cardController;
+- (id)customMessageView;
 - (void)dealloc;
 - (void)deleteSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
 - (void)dismissModalViewControllerForMail:(id)arg1;
 - (void*)displayedPerson;
-- (void)getVCardData:(id*)arg1 fileName:(id*)arg2;
+- (void)getVCardData:(id*)arg1 exportMode:(NSInteger)arg2 fileName:(id*)arg3;
 - (BOOL)hasActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 property:(NSInteger)arg4 actionGrouping:(NSInteger)arg5 ordering:(NSInteger)arg6;
 - (void)imagePicker:(id)arg1 pickedPhoto:(id)arg2;
 - (void)imagePicker:(id)arg1 presentActionSheet:(id)arg2;
@@ -107,8 +108,8 @@
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldShowCardForPerson:(void*)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldShowInsertEditorForPerson:(void*)arg2 insertProperty:(NSInteger*)arg3 copyInsertValue:(id*)arg4 copyInsertLabel:(id*)arg5;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (void)perfomActionAtIndex:(NSInteger)arg1 forPropertyAtIndex:(NSInteger)arg2 inPropertyGroup:(id)arg3 property:(NSInteger)arg4;
-- (void)perfomActionAtIndex:(NSInteger)arg1 forPropertyAtIndex:(NSInteger)arg2 inPropertyGroup:(id)arg3;
+- (void)performAction:(NSInteger)arg1 forPropertyAtIndex:(NSInteger)arg2 inPropertyGroup:(id)arg3;
+- (void)performDefaultActionForPropertyAtIndex:(NSInteger)arg1 inPropertyGroup:(id)arg2;
 - (id)personHeaderView;
 - (id)personImageView;
 - (void)personTableViewDataSource:(id)arg1 selectedAddOptionalProperties:(struct __CFArray { }*)arg2;
@@ -152,6 +153,7 @@
 - (void)setAlternateName:(id)arg1;
 - (void)setAttribution:(id)arg1 enabled:(BOOL)arg2 target:(id)arg3 action:(SEL)arg4;
 - (void)setAutomaticallySetEditing:(BOOL)arg1;
+- (void)setCustomMessageView:(id)arg1;
 - (void)setDates:(id)arg1 withMessageFormat:(id)arg2;
 - (void)setDisplayedPerson:(void*)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;

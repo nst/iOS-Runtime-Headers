@@ -10,9 +10,9 @@
     PSSpecifier *_specifier;
 }
 
-@property(retain) NSString *otherDataclassHeader; /* unknown property attribute: V_otherDataclassHeader */
-@property(retain) NSArray *dataclasses; /* unknown property attribute: V_dataclasses */
-@property(retain) PSSpecifier *specifier; /* unknown property attribute: V_specifier */
+@property(retain) NSArray *dataclasses;
+@property(retain) NSString *otherDataclassHeader;
+@property(retain) PSSpecifier *specifier;
 
 - (id)dataclasses;
 - (void)dealloc;

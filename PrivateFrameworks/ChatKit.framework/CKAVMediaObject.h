@@ -12,7 +12,7 @@
     AVRemaker *_remaker;
 }
 
-@property BOOL remakeDidEnd; /* unknown property attribute: V_remakeDidEnd */
+@property BOOL remakeDidEnd;
 
 + (void)_dequeueNextTranscodeOnMainThread;
 + (void)initialize;
@@ -26,6 +26,7 @@
 - (Class)balloonPreviewClassWithPreviewData:(id)arg1;
 - (void)cleanupAfterTranscode;
 - (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
+- (void)copyToPasteboard:(id)arg1;
 - (void)dealloc;
 - (id)effectiveExportedFilename;
 - (id)fileForDataWithExtension:(id)arg1;

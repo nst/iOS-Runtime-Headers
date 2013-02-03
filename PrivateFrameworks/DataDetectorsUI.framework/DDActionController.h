@@ -14,6 +14,8 @@
     struct __DDResult { } *_savedResult;
 }
 
+@property(retain) id interactionDelegate;
+
 - (void)_augmentRecord:(void*)arg1 withResult:(struct __DDResult { }*)arg2;
 - (void)_cleanup;
 - (void)_copyURL:(id)arg1;
@@ -29,6 +31,7 @@
 - (void)dealloc;
 - (void)dismissCurrentControllerDone:(BOOL)arg1;
 - (id)init;
+- (id)interactionDelegate;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
@@ -38,6 +41,7 @@
 - (void)performActionNumber:(NSInteger)arg1 forURL:(id)arg2 isDefaultAction:(BOOL)arg3 inView:(id)arg4 interactionDelegate:(id)arg5;
 - (void)performActionNumber:(NSInteger)arg1 forURL:(id)arg2 isDefaultAction:(BOOL)arg3 inView:(id)arg4;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (void)setInteractionDelegate:(id)arg1;
 - (void)viewControllerWasDismissed:(id)arg1;
 
 @end

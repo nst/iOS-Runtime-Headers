@@ -6,7 +6,7 @@
     NSInteger _buttonState;
 }
 
-@property NSInteger buttonState; /* unknown property attribute: V_buttonState */
+@property NSInteger buttonState;
 @property(readonly) NSInteger nextButtonState;
 
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;

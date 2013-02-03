@@ -4,13 +4,13 @@
 
 @class ISURLBagContext;
 
-@interface ISLoadURLBagOperation : ISOperation <ISURLOperationDelegate> {
+@interface ISLoadURLBagOperation : ISOperation <ISStoreURLOperationDelegate> {
     ISURLBagContext *_context;
     BOOL _shouldWaitForNetwork;
 }
 
-@property BOOL shouldWaitForNetwork; /* unknown property attribute: V_shouldWaitForNetwork */
-@property(readonly) ISURLBagContext *context; /* unknown property attribute: V_context */
+@property(readonly) ISURLBagContext *context;
+@property BOOL shouldWaitForNetwork;
 
 - (id)_copyBootstrapURLs;
 - (id)_copyProductionBootstrapURLs;

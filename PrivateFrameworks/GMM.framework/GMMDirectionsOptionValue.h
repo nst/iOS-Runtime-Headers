@@ -8,12 +8,13 @@
     NSInteger _value;
 }
 
-@property(readonly) BOOL hasValue; /* unknown property attribute: V_hasValue */
-@property NSInteger value; /* unknown property attribute: V_value */
-@property NSInteger iD; /* unknown property attribute: V_iD */
+@property(readonly) BOOL hasValue;
+@property NSInteger iD;
+@property NSInteger value;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasValue;
 - (NSInteger)iD;
 - (id)init;

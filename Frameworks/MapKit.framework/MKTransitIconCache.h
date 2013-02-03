@@ -13,11 +13,11 @@
     BOOL _isEnabled;
 }
 
-@property BOOL isEnabled; /* unknown property attribute: V_isEnabled */
-@property NSUInteger iconSize; /* unknown property attribute: V_iconSize */
-@property NSInteger iconVersion; /* unknown property attribute: V_iconVersion */
-@property(retain) NSString *cacheFolderPath; /* unknown property attribute: V_cacheFolderPath */
+@property(retain) NSString *cacheFolderPath;
 @property(readonly) NSArray *iconIDs;
+@property NSUInteger iconSize;
+@property NSInteger iconVersion;
+@property BOOL isEnabled;
 
 + (id)sharedTransitIconCache;
 

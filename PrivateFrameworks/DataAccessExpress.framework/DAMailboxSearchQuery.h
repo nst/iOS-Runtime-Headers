@@ -15,14 +15,14 @@
     long long _truncationSize;
 }
 
-@property BOOL rebuildResults; /* unknown property attribute: V_rebuildResults */
-@property BOOL deepTraversal; /* unknown property attribute: V_deepTraversal */
-@property NSInteger MIMESupport; /* unknown property attribute: V_MIMESupport */
-@property(retain) NSDate *priorToDate; /* unknown property attribute: V_priorToDate */
-@property BOOL allOrNone; /* unknown property attribute: V_allOrNone */
-@property long long truncationSize; /* unknown property attribute: V_truncationSize */
-@property NSInteger bodyType; /* unknown property attribute: V_bodyType */
-@property(retain) NSString *collectionID; /* unknown property attribute: V_collectionID */
+@property(retain) NSString *collectionID;
+@property(retain) NSDate *priorToDate;
+@property NSInteger MIMESupport;
+@property BOOL allOrNone;
+@property NSInteger bodyType;
+@property BOOL deepTraversal;
+@property BOOL rebuildResults;
+@property long long truncationSize;
 
 + (id)mailboxSearchQueryWithSearchString:(id)arg1 consumer:(id)arg2;
 

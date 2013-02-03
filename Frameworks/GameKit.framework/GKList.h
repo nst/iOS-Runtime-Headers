@@ -12,7 +12,7 @@
     NSUInteger _size;
 }
 
-@property(readonly) NSUInteger count; /* unknown property attribute: V_count */
+@property(readonly) NSUInteger count;
 
 - (void)addID:(NSUInteger)arg1;
 - (void)addIDsFromList:(id)arg1;

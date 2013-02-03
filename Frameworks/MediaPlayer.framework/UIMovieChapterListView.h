@@ -11,8 +11,8 @@
     float _topPadding;
 }
 
-@property float topPadding; /* unknown property attribute: V_topPadding */
-@property(readonly) UITableView *table; /* unknown property attribute: V_table */
+@property(readonly) UITableView *table;
+@property float topPadding;
 
 - (id)init;
 - (void)layoutSubviews;

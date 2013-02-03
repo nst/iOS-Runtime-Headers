@@ -13,9 +13,9 @@
     SUImageModifier *_modifier;
 }
 
-@property(retain) SUImageModifier *modifier; /* unknown property attribute: V_modifier */
-@property CGSize finalSize; /* unknown property attribute: V_finalSize */
-@property(retain) UIColor *fillColor; /* unknown property attribute: V_fillColor */
+@property(retain) UIColor *fillColor;
+@property(retain) SUImageModifier *modifier;
+@property CGSize finalSize;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createImageFromImage:(id)arg1;

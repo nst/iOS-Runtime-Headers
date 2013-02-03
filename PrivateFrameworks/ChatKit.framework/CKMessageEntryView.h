@@ -25,7 +25,7 @@
     BOOL _textFieldLoaded;
 }
 
-@property id delegate; /* unknown property attribute: V_delegate */
+@property id delegate;
 
 + (float)defaultHeight;
 + (float)defaultWidthInPortrait;

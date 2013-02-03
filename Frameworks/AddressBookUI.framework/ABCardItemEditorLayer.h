@@ -34,7 +34,7 @@
     NSString *_savedLabel;
 }
 
-@property <ABFirstResponderDelegate> *firstResponderDelegate; /* unknown property attribute: V_firstResponderDelegate */
+@property <ABFirstResponderDelegate> *firstResponderDelegate;
 
 + (struct CGSize { float x1; float x2; })defaultSizeForProperty:(NSInteger)arg1 displayingPerson:(BOOL)arg2 orientation:(NSInteger)arg3;
 + (id)formattedFieldEditableKeysForPropertyByLine:(NSInteger)arg1 forCountryCode:(id)arg2;

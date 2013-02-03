@@ -13,11 +13,11 @@
     ISDownloadStatus *_status;
 }
 
-@property(retain) ISDownloadStatus *status; /* unknown property attribute: V_status */
-@property(retain) ISDownloadMetadata *metadata; /* unknown property attribute: V_metadata */
-@property <ISDownloadDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property(retain) NSArray *assets; /* unknown property attribute: V_assets */
+@property(retain) NSArray *assets;
 @property(readonly) NSString *bundleID;
+@property <ISDownloadDelegate> *delegate;
+@property(retain) ISDownloadMetadata *metadata;
+@property(retain) ISDownloadStatus *status;
 @property(readonly) NSString *title;
 @property(readonly) NSString *uniqueID;
 @property(readonly) BOOL artworkURLIsPrerendered;

@@ -10,9 +10,9 @@
     UIImage *_placeholderImage;
 }
 
-@property(retain) UIImage *placeholderImage; /* unknown property attribute: V_placeholderImage */
-@property(retain) SUImageDataProvider *imageProvider; /* unknown property attribute: V_imageProvider */
-@property(retain) ISURLOperationCache *imageCache; /* unknown property attribute: V_imageCache */
+@property(retain) ISURLOperationCache *imageCache;
+@property(retain) SUImageDataProvider *imageProvider;
+@property(retain) UIImage *placeholderImage;
 
 - (void)dealloc;
 - (id)imageCache;

@@ -10,9 +10,9 @@
     id _userInfo;
 }
 
-@property(retain) id userInfo; /* unknown property attribute: V_userInfo */
-@property(retain) NSURL *url; /* unknown property attribute: V_url */
-@property(retain) NSString *title; /* unknown property attribute: V_title */
+@property(retain) NSString *title;
+@property(retain) NSURL *url;
+@property(retain) id userInfo;
 
 - (void)dealloc;
 - (BOOL)isEqual:(id)arg1;

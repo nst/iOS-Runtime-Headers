@@ -8,11 +8,12 @@
     NSString *_valueText;
 }
 
-@property(retain) NSString *valueText; /* unknown property attribute: V_valueText */
+@property(retain) NSString *valueText;
 @property(readonly) BOOL hasValueText;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasValueText;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;

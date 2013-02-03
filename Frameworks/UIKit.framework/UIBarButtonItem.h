@@ -29,18 +29,18 @@
     float _width;
 }
 
-@property NSInteger tag; /* unknown property attribute: V_tag */
-@property id target; /* unknown property attribute: V_target */
-@property SEL action; /* unknown property attribute: V_action */
 @property(readonly) UIToolbarButton *_toolbarButton;
 @property(retain) UIView *customView;
 @property(copy) NSSet *possibleTitles;
 @property(retain) UIView *view;
+@property SEL action;
 @property(getter=isEnabled) BOOL enabled;
 @property(readonly) BOOL isCustomViewItem;
 @property(readonly) BOOL isSystemItem;
 @property NSInteger style;
 @property(readonly) NSInteger systemItem;
+@property NSInteger tag;
+@property id target;
 @property float width;
 
 + (Class)classForNavigationButton;

@@ -8,7 +8,7 @@
     UIColor *_tintColor;
 }
 
-@property(retain) UIColor *tintColor; /* unknown property attribute: V_tintColor */
+@property(retain) UIColor *tintColor;
 
 - (id)backgroundImageForState:(NSUInteger)arg1;
 - (void)dealloc;

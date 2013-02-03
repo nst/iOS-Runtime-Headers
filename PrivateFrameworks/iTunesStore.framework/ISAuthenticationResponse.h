@@ -12,11 +12,11 @@
     NSString *_token;
 }
 
-@property(readonly) NSString *token; /* unknown property attribute: V_token */
-@property(readonly) NSNumber *dsID; /* unknown property attribute: V_dsID */
-@property(readonly) NSString *creditString; /* unknown property attribute: V_creditString */
-@property(readonly) NSInteger accountKind; /* unknown property attribute: V_accountKind */
-@property(readonly) NSString *accountIdentifier; /* unknown property attribute: V_accountIdentifier */
+@property(readonly) NSString *accountIdentifier;
+@property(readonly) NSString *creditString;
+@property(readonly) NSNumber *dsID;
+@property(readonly) NSString *token;
+@property(readonly) NSInteger accountKind;
 
 - (BOOL)_loadFromDictionary:(id)arg1;
 - (id)accountIdentifier;

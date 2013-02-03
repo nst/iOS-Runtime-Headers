@@ -6,6 +6,7 @@
 
 @interface ISDialog : NSObject {
     BOOL _allowDuplicates;
+    BOOL _authorizationIsForced;
     NSArray *_buttons;
     BOOL _dismissOnLock;
     BOOL _expectsResponse;
@@ -19,19 +20,21 @@
     NSMutableDictionary *_userInfo;
 }
 
-@property(retain) NSString *title; /* unknown property attribute: V_title */
-@property(retain) NSArray *textFields; /* unknown property attribute: V_textFields */
-@property BOOL oneButtonPerLine; /* unknown property attribute: V_oneButtonPerLine */
-@property(retain) NSString *message; /* unknown property attribute: V_message */
-@property NSInteger kind; /* unknown property attribute: V_kind */
-@property BOOL groupsTextFields; /* unknown property attribute: V_groupsTextFields */
-@property BOOL expectsResponse; /* unknown property attribute: V_expectsResponse */
-@property BOOL dismissOnLock; /* unknown property attribute: V_dismissOnLock */
-@property(retain) NSArray *buttons; /* unknown property attribute: V_buttons */
-@property BOOL allowDuplicates; /* unknown property attribute: V_allowDuplicates */
+@property(retain) NSArray *buttons;
+@property(retain) NSString *message;
+@property(retain) NSArray *textFields;
+@property(retain) NSString *title;
+@property BOOL allowDuplicates;
+@property BOOL authorizationIsForced;
+@property BOOL dismissOnLock;
+@property BOOL expectsResponse;
+@property BOOL groupsTextFields;
+@property NSInteger kind;
+@property BOOL oneButtonPerLine;
 
 - (NSInteger)_kindForString:(id)arg1;
 - (BOOL)allowDuplicates;
+- (BOOL)authorizationIsForced;
 - (id)buttons;
 - (id)copyUserNotification;
 - (void)dealloc;
@@ -48,6 +51,7 @@
 - (id)message;
 - (BOOL)oneButtonPerLine;
 - (void)setAllowDuplicates:(BOOL)arg1;
+- (void)setAuthorizationIsForced:(BOOL)arg1;
 - (void)setButtons:(id)arg1;
 - (void)setDismissOnLock:(BOOL)arg1;
 - (void)setExpectsResponse:(BOOL)arg1;

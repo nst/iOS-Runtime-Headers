@@ -14,13 +14,13 @@
     NSNumber *_attSize;
 }
 
-@property(copy) NSNumber *isInline; /* unknown property attribute: V_attIsInline */
-@property(copy) NSString *contentLocation; /* unknown property attribute: V_attContentLocation */
-@property(copy) NSString *contentId; /* unknown property attribute: V_attContentId */
-@property(copy) NSString *displayName; /* unknown property attribute: V_attDisplayName */
-@property(copy) NSNumber *method; /* unknown property attribute: V_attMethod */
-@property(copy) NSNumber *size; /* unknown property attribute: V_attSize */
-@property(copy) NSString *name; /* unknown property attribute: V_attName */
+@property(copy) NSString *contentId;
+@property(copy) NSString *contentLocation;
+@property(copy) NSString *displayName;
+@property(copy) NSNumber *isInline;
+@property(copy) NSNumber *method;
+@property(copy) NSString *name;
+@property(copy) NSNumber *size;
 
 + (BOOL)acceptsTopLevelLeaves;
 + (BOOL)frontingBasicTypes;

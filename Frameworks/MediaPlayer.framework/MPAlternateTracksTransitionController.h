@@ -9,7 +9,7 @@
     MPVideoViewController *_videoController;
 }
 
-@property MPVideoViewController *videoController; /* unknown property attribute: V_videoController */
+@property MPVideoViewController *videoController;
 
 - (void)_animationDidStop;
 - (void)setVideoController:(id)arg1;

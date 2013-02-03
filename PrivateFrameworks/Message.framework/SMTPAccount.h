@@ -30,9 +30,9 @@
 - (void)checkInConnection:(id)arg1;
 - (Class)connectionClass;
 - (void)connectionExpired:(id)arg1;
+- (struct __CFString { }*)connectionServiceType;
 - (id)connectionSettingsForAuthentication:(BOOL)arg1 secure:(id)arg2 insecure:(id)arg3;
 - (id)customAuthenticationErrorStringForError:(id)arg1 authScheme:(id)arg2;
-- (long)dataContextIdentifier;
 - (void)dealloc;
 - (NSUInteger)defaultPortNumber;
 - (Class)deliveryClass;

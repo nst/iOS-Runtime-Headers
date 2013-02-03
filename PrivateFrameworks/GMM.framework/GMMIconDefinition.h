@@ -9,12 +9,13 @@
     NSData *_image;
 }
 
-@property(retain) NSData *image; /* unknown property attribute: V_image */
-@property long long iconId; /* unknown property attribute: V_iconId */
+@property(retain) NSData *image;
 @property(readonly) BOOL hasImage;
+@property long long iconId;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasImage;
 - (long long)iconId;
 - (id)image;

@@ -11,8 +11,8 @@
     ISOperationProgress *_progress;
 }
 
-@property(retain) ISOperationProgress *progress; /* unknown property attribute: V_progress */
-@property(retain) NSError *error; /* unknown property attribute: V_error */
+@property(retain) NSError *error;
+@property(retain) ISOperationProgress *progress;
 @property(getter=isFailed) BOOL failed;
 @property(getter=isPaused) BOOL paused;
 

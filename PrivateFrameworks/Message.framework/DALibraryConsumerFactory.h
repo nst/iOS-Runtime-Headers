@@ -9,8 +9,8 @@
     Message *_message;
 }
 
-@property(retain) Message *message; /* unknown property attribute: V_message */
-@property(retain) MessageLibrary *library; /* unknown property attribute: V_library */
+@property(retain) MessageLibrary *library;
+@property(retain) Message *message;
 
 - (id)dataConsumerForPart:(id)arg1;
 - (void)dealloc;

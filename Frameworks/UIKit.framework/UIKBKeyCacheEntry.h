@@ -9,8 +9,8 @@
     UIKBKeyplane *m_keyplane;
 }
 
-@property(retain,readonly) UIKBKeyplane *keyplane; /* unknown property attribute: Vm_keyplane */
-@property(retain,readonly) UIKBKey *key; /* unknown property attribute: Vm_key */
+@property(retain,readonly) UIKBKey *key;
+@property(retain,readonly) UIKBKeyplane *keyplane;
 
 - (id)initWithKey:(id)arg1 keyPlane:(id)arg2;
 - (id)key;

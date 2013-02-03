@@ -8,7 +8,7 @@
     SUCellConfiguration *_configuration;
 }
 
-@property(retain) SUCellConfiguration *configuration; /* unknown property attribute: V_configuration */
+@property(retain) SUCellConfiguration *configuration;
 
 - (id)configuration;
 - (void)dealloc;

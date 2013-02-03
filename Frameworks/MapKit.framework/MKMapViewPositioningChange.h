@@ -23,10 +23,8 @@
     NSNumber *_zoomLevel;
 }
 
-@property(readonly) NSUInteger runCount; /* unknown property attribute: V_runCount */
-@property NSInteger locationSource; /* unknown property attribute: V_locationSource */
-@property(retain) CLLocation *location; /* unknown property attribute: V_location */
 @property(readonly) NSNumber *accuracyObject;
+@property(retain) CLLocation *location;
 @property(readonly) NSValue *positionObject;
 @property float accuracy;
 @property double distance;
@@ -42,7 +40,9 @@
 @property(readonly) BOOL hasZoomLevel;
 @property BOOL isEndVisible;
 @property BOOL isStartVisible;
+@property NSInteger locationSource;
 @property CGPoint position;
+@property(readonly) NSUInteger runCount;
 @property BOOL shouldHalo;
 @property BOOL shouldHover;
 @property BOOL shouldScrollToLocation;

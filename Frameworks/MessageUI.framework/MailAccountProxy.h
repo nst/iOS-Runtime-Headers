@@ -22,6 +22,7 @@
 - (id)firstEmailAddress;
 - (id)fullUserName;
 - (BOOL)isDefaultDeliveryAccount;
+- (id)receiveEmailAliasAddresses;
 - (BOOL)supportsEmoji;
 - (id)uniqueID;
 - (id)username;

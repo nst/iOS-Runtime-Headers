@@ -10,9 +10,9 @@
     NSInteger _updateDistance;
 }
 
-@property NSInteger updateDistance; /* unknown property attribute: V_updateDistance */
-@property(retain) NSArray *sections; /* unknown property attribute: V_sections */
-@property(retain) CLLocation *location; /* unknown property attribute: V_location */
+@property(retain) CLLocation *location;
+@property(retain) NSArray *sections;
+@property NSInteger updateDistance;
 
 - (id)_copyBaseOperation;
 - (void)dealloc;

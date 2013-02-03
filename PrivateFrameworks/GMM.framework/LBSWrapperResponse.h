@@ -10,10 +10,10 @@
     NSInteger _status;
 }
 
-@property(retain) LBSGLocResponse *reply; /* unknown property attribute: V_reply */
-@property(readonly) BOOL hasStatus; /* unknown property attribute: V_hasStatus */
-@property NSInteger status; /* unknown property attribute: V_status */
+@property(retain) LBSGLocResponse *reply;
 @property(readonly) BOOL hasReply;
+@property(readonly) BOOL hasStatus;
+@property NSInteger status;
 
 - (void)dealloc;
 - (id)description;

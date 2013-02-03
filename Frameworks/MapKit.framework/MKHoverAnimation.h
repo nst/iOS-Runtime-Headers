@@ -8,7 +8,7 @@
     MKUserLocationViewInternal *viewImpl;
 }
 
-@property MKUserLocationViewInternal *viewImpl; /* unknown property attribute: VviewImpl */
+@property MKUserLocationViewInternal *viewImpl;
 @property float restAccuracy;
 
 + (id)bounceAnimation;

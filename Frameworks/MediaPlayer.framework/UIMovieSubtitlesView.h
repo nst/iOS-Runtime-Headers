@@ -19,7 +19,7 @@
     BOOL _subtitlesAreForced;
 }
 
-@property(readonly) BOOL subtitlesAreForced; /* unknown property attribute: V_subtitlesAreForced */
+@property(readonly) BOOL subtitlesAreForced;
 
 - (id)_createMarkupFromAttributedString:(struct __CFAttributedString { }*)arg1;
 - (id)_htmlColorForColor:(struct CGColor { }*)arg1;

@@ -54,6 +54,7 @@
 - (void)setTVOutEnabled:(BOOL)arg1;
 - (void)setVisibleParts:(NSUInteger)arg1 animate:(BOOL)arg2;
 - (void)showChaptersController;
+- (void)showOverlayIfNecessary;
 - (void)startTicking;
 - (void)stopTicking;
 - (id)swipableView:(id)arg1 overrideHitTest:(struct CGPoint { float x1; float x2; })arg2 forEvent:(struct __GSEvent { }*)arg3;

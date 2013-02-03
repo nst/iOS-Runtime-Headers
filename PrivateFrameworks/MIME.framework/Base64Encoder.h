@@ -14,10 +14,10 @@
     char *_table;
 }
 
-@property BOOL padChar; /* unknown property attribute: V_padChar */
-@property NSUInteger lineBreak; /* unknown property attribute: V_lineBreak */
-@property(readonly) <MFDataConsumer> *dataConsumer; /* unknown property attribute: V_consumer */
+@property(readonly) <MFDataConsumer> *dataConsumer;
 @property BOOL allowSlash;
+@property NSUInteger lineBreak;
+@property BOOL padChar;
 
 + (id)encoderWithConsumer:(id)arg1;
 

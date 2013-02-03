@@ -15,12 +15,12 @@
     MailMessage *_originalMessage;
 }
 
-@property(retain) MessageViewingContext *loadingContext; /* unknown property attribute: V_loadingContext */
-@property(retain) id originalContent; /* unknown property attribute: V_originalContent */
-@property(retain,readonly) MailMessage *originalMessage; /* unknown property attribute: V_originalMessage */
-@property(readonly) NSInteger composeType; /* unknown property attribute: V_composeType */
+@property(retain) MessageViewingContext *loadingContext;
+@property(retain,readonly) MailMessage *originalMessage;
+@property(readonly) NSInteger composeType;
 @property BOOL includeAttachments;
 @property BOOL loadRest;
+@property(retain) id originalContent;
 
 - (NSInteger)composeType;
 - (void)dealloc;

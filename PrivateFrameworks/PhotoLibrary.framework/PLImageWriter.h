@@ -13,11 +13,15 @@
 + (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
 + (id)sharedWriter;
 
+- (void)_decorateThumbnail:(id)arg1;
 - (void)_notifyJobCompletion:(id)arg1;
 - (NSInteger)_orientationForExifProperties:(id)arg1;
 - (void)_processImageJob:(id)arg1;
 - (void)_processJob:(id)arg1;
 - (void)_processVideoJob:(id)arg1 saveCameraRollPosterImage:(BOOL)arg2;
+- (void)_processVideoSaveJob:(id)arg1;
+- (NSInteger)_subSampleFactorForImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_sufficientDiskSpaceToCopyVideoAtPath:(id)arg1;
 - (void)_writerThread;
 - (void)dealloc;
 - (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;

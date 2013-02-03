@@ -32,6 +32,7 @@
         unsigned int drawn : 1; 
         unsigned int drawingDisabled : 1; 
         unsigned int style : 12; 
+        unsigned int showingMenu : 1; 
     SEL _accessoryAction;
     UIButton *_accessoryView;
     UIColor *_backgroundColor;
@@ -97,6 +98,7 @@
 - (id)_accessoryView:(BOOL)arg1;
 - (void)_animateFloatingSeparatorForInsertion:(BOOL)arg1 withRowAnimation:(NSInteger)arg2;
 - (BOOL)_canDrawContent;
+- (void)_cancelInternalPerformRequests;
 - (id)_contentBackgroundColor;
 - (id)_createRemoveControlForStyle:(NSInteger)arg1;
 - (void)_createReorderControlIfNeeded;
@@ -132,8 +134,11 @@
 - (BOOL)_isHighlighted;
 - (BOOL)_isReorderable;
 - (void)_layoutSubviewsAnimated:(BOOL)arg1;
+- (void)_longPressGestureRecognized:(id)arg1;
+- (void)_menuDismissed:(id)arg1;
 - (id)_multiselectBackgroundColor;
 - (void)_multiselectColorChanged;
+- (void)_performAction:(SEL)arg1 sender:(id)arg2;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_releaseRemoveControl;
 - (void)_releaseReorderingControl;
@@ -157,6 +162,7 @@
 - (void)_setTableBackgroundCGColor:(struct CGColor { }*)arg1;
 - (void)_setTarget:(id)arg1;
 - (void)_setupSelectedBackgroundView;
+- (void)_setupTableViewCellCommon;
 - (void)_showReorderControl;
 - (void)_startToEditTextField;
 - (void)_syncAccessoryViewsIfNecessary;
@@ -181,10 +187,13 @@
 - (id)backgroundColor;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)backgroundView;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForState:(NSUInteger)arg1;
 - (id)contentView;
+- (void)copy:(id)arg1;
 - (NSUInteger)currentStateMask;
+- (void)cut:(id)arg1;
 - (void)dealloc;
 - (void)deleteConfirmationControlWasCancelled:(id)arg1;
 - (void)deleteConfirmationControlWasClicked:(id)arg1;
@@ -222,7 +231,9 @@
 - (id)layoutManager;
 - (void)layoutSubviews;
 - (NSInteger)lineBreakMode;
+- (BOOL)longPressGestureCanTransitionToRecognizedState:(id)arg1;
 - (id)oldEditingData;
+- (void)paste:(id)arg1;
 - (void)prepareForReuse;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })removeControl:(id)arg1 endFrameForTarget:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })removeControl:(id)arg1 startFrameForTarget:(id)arg2;

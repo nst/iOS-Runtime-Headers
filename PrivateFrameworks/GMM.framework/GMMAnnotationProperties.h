@@ -12,17 +12,18 @@
     NSMutableArray *_links;
 }
 
-@property(retain) NSMutableArray *links; /* unknown property attribute: V_links */
-@property(readonly) BOOL hasAnnotationHeightFractionE6; /* unknown property attribute: V_hasAnnotationHeightFractionE6 */
-@property NSInteger annotationHeightFractionE6; /* unknown property attribute: V_annotationHeightFractionE6 */
-@property(readonly) BOOL hasHorizonHeightFractionE6; /* unknown property attribute: V_hasHorizonHeightFractionE6 */
-@property NSInteger horizonHeightFractionE6; /* unknown property attribute: V_horizonHeightFractionE6 */
+@property(retain) NSMutableArray *links;
+@property NSInteger annotationHeightFractionE6;
+@property(readonly) BOOL hasAnnotationHeightFractionE6;
+@property(readonly) BOOL hasHorizonHeightFractionE6;
+@property NSInteger horizonHeightFractionE6;
 @property(readonly) NSInteger linksCount;
 
 - (void)addLink:(id)arg1;
 - (NSInteger)annotationHeightFractionE6;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasAnnotationHeightFractionE6;
 - (BOOL)hasHorizonHeightFractionE6;
 - (NSInteger)horizonHeightFractionE6;

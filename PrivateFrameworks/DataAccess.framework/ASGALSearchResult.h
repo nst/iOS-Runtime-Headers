@@ -21,19 +21,19 @@
     NSString *_title;
 }
 
-@property(copy) NSString *emailAddress; /* unknown property attribute: V_emailAddress */
-@property(copy) NSString *mobilePhone; /* unknown property attribute: V_mobilePhone */
-@property(copy) NSString *homePhone; /* unknown property attribute: V_homePhone */
-@property(copy) NSString *lastName; /* unknown property attribute: V_lastName */
-@property(copy) NSString *firstName; /* unknown property attribute: V_firstName */
-@property(copy) NSString *alias; /* unknown property attribute: V_alias */
-@property(copy) NSString *company; /* unknown property attribute: V_company */
-@property(copy) NSString *title; /* unknown property attribute: V_title */
-@property(copy) NSString *office; /* unknown property attribute: V_office */
-@property(copy) NSString *phone; /* unknown property attribute: V_phone */
-@property(retain) NSArray *collectionIDs; /* unknown property attribute: V_collectionIDs */
-@property(retain) NSArray *classes; /* unknown property attribute: V_classes */
-@property(retain) NSString *longID; /* unknown property attribute: V_longID */
+@property(copy) NSString *alias;
+@property(retain) NSArray *classes;
+@property(retain) NSArray *collectionIDs;
+@property(copy) NSString *company;
+@property(copy) NSString *emailAddress;
+@property(copy) NSString *firstName;
+@property(copy) NSString *homePhone;
+@property(copy) NSString *lastName;
+@property(retain) NSString *longID;
+@property(copy) NSString *mobilePhone;
+@property(copy) NSString *office;
+@property(copy) NSString *phone;
+@property(copy) NSString *title;
 
 + (BOOL)acceptsTopLevelLeaves;
 + (BOOL)frontingBasicTypes;

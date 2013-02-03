@@ -63,7 +63,6 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)moveBackward:(NSUInteger)arg1;
 - (void)moveForward:(NSUInteger)arg1;
-- (BOOL)rangeAtSentenceStart:(id)arg1;
 - (id)rangeByExtendingCurrentSelection:(NSInteger)arg1;
 - (id)rangeByMovingCurrentSelection:(NSInteger)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectContainingCaretSelection;
@@ -91,6 +90,7 @@
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
 - (void)setupPlaceholderTextIfNeeded;
+- (BOOL)shouldEnableAutoShift;
 - (void)takeTraitsFrom:(id)arg1;
 - (id)text;
 - (id)textColorForCaretSelection;

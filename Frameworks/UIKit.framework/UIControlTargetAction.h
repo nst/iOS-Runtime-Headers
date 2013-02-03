@@ -9,7 +9,7 @@
     id _target;
 }
 
-@property BOOL cancelled; /* unknown property attribute: V_cancelled */
+@property BOOL cancelled;
 
 - (BOOL)cancelled;
 - (void)setCancelled:(BOOL)arg1;

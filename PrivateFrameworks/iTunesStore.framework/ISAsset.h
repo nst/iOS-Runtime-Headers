@@ -15,18 +15,18 @@
     NSURL *_url;
 }
 
-@property(retain) NSURL *url; /* unknown property attribute: V_url */
-@property NSInteger type; /* unknown property attribute: V_type */
-@property long long numberOfBytesToHash; /* unknown property attribute: V_numberOfBytesToHash */
-@property(retain) NSArray *hashes; /* unknown property attribute: V_hashes */
-@property(retain) NSString *finalizedFileName; /* unknown property attribute: V_finalizedFileName */
-@property long long fileSize; /* unknown property attribute: V_fileSize */
-@property(getter=isExternal) BOOL external; /* unknown property attribute: V_external */
-@property(retain) NSString *downloadFileName; /* unknown property attribute: V_downloadFileName */
+@property(retain) NSString *downloadFileName;
 @property(readonly) NSString *downloadInformationKey;
 @property(readonly) NSString *downloadPath;
+@property(retain) NSString *finalizedFileName;
 @property(readonly) NSString *finalizedPath;
+@property(retain) NSArray *hashes;
 @property(readonly) NSString *purchaseManifestKey;
+@property(retain) NSURL *url;
+@property(getter=isExternal) BOOL external;
+@property long long fileSize;
+@property long long numberOfBytesToHash;
+@property NSInteger type;
 
 + (id)externalAssetWithURL:(id)arg1 type:(NSInteger)arg2;
 

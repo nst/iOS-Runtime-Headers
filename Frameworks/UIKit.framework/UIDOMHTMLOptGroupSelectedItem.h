@@ -8,7 +8,7 @@
     DOMHTMLOptGroupElement *_node;
 }
 
-@property(retain) DOMHTMLOptGroupElement *_node; /* unknown property attribute: V_node */
+@property(retain) DOMHTMLOptGroupElement *_node;
 
 - (id)_node;
 - (void)dealloc;

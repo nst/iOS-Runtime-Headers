@@ -9,8 +9,8 @@
     UIKBKey *m_key;
 }
 
-@property double interval; /* unknown property attribute: Vm_interval */
-@property(retain) UIKBKey *key; /* unknown property attribute: Vm_key */
+@property(retain) UIKBKey *key;
+@property double interval;
 
 - (void)dealloc;
 - (id)initWithKey:(id)arg1 interval:(double)arg2;

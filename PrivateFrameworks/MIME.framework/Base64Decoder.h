@@ -7,17 +7,17 @@
 @interface Base64Decoder : NSObject <MFDataConsumer> {
     BOOL _bound;
     <MFDataConsumer> *_consumer;
-    BOOL _convertCommas;
     NSUInteger _decodedBits;
     NSUInteger _equalCount;
     NSMutableData *_leftovers;
+    char *_table;
     NSUInteger _validBytes;
 }
 
-@property BOOL isBound; /* unknown property attribute: V_bound */
-@property(readonly) NSUInteger unconverted; /* unknown property attribute: V_validBytes */
-@property BOOL convertCommas; /* unknown property attribute: V_convertCommas */
-@property(readonly) <MFDataConsumer> *dataConsumer; /* unknown property attribute: V_consumer */
+@property(readonly) <MFDataConsumer> *dataConsumer;
+@property BOOL convertCommas;
+@property BOOL isBound;
+@property(readonly) NSUInteger unconverted;
 
 + (id)decoderWithConsumer:(id)arg1;
 

@@ -9,10 +9,10 @@
     double z;
 }
 
-@property double z; /* unknown property attribute: Vz */
-@property double y; /* unknown property attribute: Vy */
-@property double x; /* unknown property attribute: Vx */
-@property double timestamp; /* unknown property attribute: Vtimestamp */
+@property double timestamp;
+@property double x;
+@property double y;
+@property double z;
 
 - (void)setTimestamp:(double)arg1;
 - (void)setX:(double)arg1;

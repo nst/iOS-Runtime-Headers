@@ -8,9 +8,9 @@
     NSInteger _status;
 }
 
-@property(readonly) id result; /* unknown property attribute: V_result */
-@property(readonly) NSInteger status; /* unknown property attribute: V_status */
-@property(readonly) NSInteger key; /* unknown property attribute: V_key */
+@property(readonly) NSInteger key;
+@property(readonly) id result;
+@property(readonly) NSInteger status;
 
 - (void)dealloc;
 - (id)initWithKey:(NSInteger)arg1 status:(NSInteger)arg2 result:(id)arg3;

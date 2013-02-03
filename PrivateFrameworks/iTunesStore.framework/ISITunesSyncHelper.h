@@ -13,8 +13,8 @@
     NSDate *_preSyncCheckForPurchasesDate;
 }
 
-@property BOOL iTunesCheckedForPurchasesDuringSync; /* unknown property attribute: V_checkedForPurchases */
 @property(getter=isBlockingSync,readonly) BOOL blockingSync;
+@property BOOL iTunesCheckedForPurchasesDuringSync;
 @property(readonly) BOOL iTunesIsSynching;
 
 + (void)setSharedInstance:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSURLCacheNode, NSString, NSCachedURLResponse, NSURLRequest;
+@class NSURLRequest, NSString, NSCachedURLResponse, NSURLCacheNode;
 
 @interface NSURLCacheNode : NSObject {
     NSCachedURLResponse *cachedResponse;

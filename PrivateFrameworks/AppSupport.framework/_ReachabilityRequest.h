@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSLock, NSString;
+@class NSString, NSLock;
 
 @interface _ReachabilityRequest : NSObject {
     NSUInteger _flags;

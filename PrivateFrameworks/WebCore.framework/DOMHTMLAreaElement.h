@@ -9,7 +9,14 @@
 @property(copy) NSString *accessKey;
 @property(copy) NSString *alt;
 @property(copy) NSString *coords;
+@property(copy,readonly) NSString *hashName;
+@property(copy,readonly) NSString *host;
+@property(copy,readonly) NSString *hostname;
 @property(copy) NSString *href;
+@property(copy,readonly) NSString *pathname;
+@property(copy,readonly) NSString *port;
+@property(copy,readonly) NSString *protocol;
+@property(copy,readonly) NSString *search;
 @property(copy) NSString *shape;
 @property(copy) NSString *target;
 @property BOOL noHref;

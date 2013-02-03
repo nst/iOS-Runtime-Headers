@@ -6,7 +6,9 @@
     NSInteger mPoints;
 }
 
-- (id)initWithPoints:(NSUInteger)arg1;
-- (NSUInteger)points;
+- (NSUInteger)hash;
+- (id)initWithPoints:(NSInteger)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (NSInteger)points;
 
 @end

@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSLock, NSString;
+@class NSString, NSLock;
 
 @interface ISDevice : NSObject <ISSingleton> {
     NSUInteger _daemonLaunchCount;
+    NSInteger _deferMemoryLevelSuicideCount;
     NSString *_guid;
     NSString *_hardwareModel;
     NSLock *_lock;
@@ -15,8 +16,8 @@
 
 @property(retain,readonly) NSString *guid;
 @property(retain,readonly) NSString *hardwareModel;
-@property(retain) NSString *productVersion;
-@property NSInteger type;
+@property(retain,readonly) NSString *productVersion;
+@property(readonly) NSInteger type;
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
@@ -26,24 +27,32 @@
 - (void*)_copyDeviceTreeProperty:(id)arg1;
 - (id)_copyStringForDeviceTreeProperty:(id)arg1;
 - (NSInteger)_deviceTypeForModelString:(id)arg1;
+- (void)_initDeviceType;
+- (void)_initProductVersion;
+- (BOOL)_isHDVideoCapable;
 - (BOOL)_isPodcastCapable;
 - (BOOL)_releasePowerAssertion:(id)arg1;
 - (void)_schedulePowerAssertionRelease:(id)arg1;
+- (void)beginDeferringMemoryLevelSuicide;
 - (BOOL)checkCapabilities:(id)arg1 withMismatches:(id*)arg2;
+- (id)copyProtocolConditionalContext;
+- (id)copyPurchaseValidationContext;
 - (void)daemonDidLaunch;
 - (NSUInteger)daemonLaunchCount;
 - (void)daemonWillExitCleanly;
 - (void)dealloc;
+- (void)endDeferringMemoryLevelSuicide;
 - (id)guid;
 - (id)hardwareModel;
 - (BOOL)hasCapability:(NSInteger)arg1;
 - (id)init;
 - (BOOL)isAnyIPhone;
 - (BOOL)isAnyIPod;
+- (BOOL)isAnyWildcat;
+- (BOOL)isDeferringMemoryLevelSuicide;
 - (id)productVersion;
 - (BOOL)releasePowerAssertion:(id)arg1;
-- (void)setProductVersion:(id)arg1;
-- (void)setType:(NSInteger)arg1;
+- (id)supportedOfferDeviceForDevices:(id)arg1;
 - (BOOL)takePowerAssertion:(id)arg1;
 - (NSInteger)type;
 

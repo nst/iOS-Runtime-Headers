@@ -13,14 +13,20 @@
 @property BOOL allowsPickingMultipleItems;
 @property(readonly) NSInteger mediaTypes;
 
++ (void)preheatMediaPicker;
+
 - (void)_applicationWillTerminate:(id)arg1;
+- (BOOL)_canReloadView;
 - (void)_invalidateReplyPort;
 - (void)_moveLayerHostToLayer:(id)arg1;
 - (void)_pickerDidCancel;
 - (void)_pickerDidPickItems:(id)arg1;
 - (void)_serverPortInvalidated;
 - (void)_viewDidMoveToWindow;
+- (void)_viewSizeDidChange;
 - (void)_viewWillMoveFromWindow;
+- (void)_windowDidCreateContextNotification:(id)arg1;
+- (void)_windowWillDestoryContextNotification:(id)arg1;
 - (BOOL)allowsPickingMultipleItems;
 - (void)dealloc;
 - (id)delegate;
@@ -34,5 +40,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setPrompt:(id)arg1;
 - (void)viewDidUnload;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

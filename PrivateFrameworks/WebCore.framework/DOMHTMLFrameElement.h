@@ -6,14 +6,18 @@
 }
 
 @property(retain,readonly) DOMDocument *contentDocument;
+@property(retain,readonly) DOMAbstractView *contentWindow;
 @property(copy) NSString *frameBorder;
+@property(copy) NSString *location;
 @property(copy) NSString *longDesc;
 @property(copy) NSString *marginHeight;
 @property(copy) NSString *marginWidth;
 @property(copy) NSString *name;
 @property(copy) NSString *scrolling;
 @property(copy) NSString *src;
+@property(readonly) NSInteger height;
 @property BOOL noResize;
+@property(readonly) NSInteger width;
 
 - (id)contentDocument;
 - (id)contentFrame;

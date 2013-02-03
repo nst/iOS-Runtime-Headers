@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableDictionary, NSURLCacheNode, NSString, NSURLQueue, NSLock, NSMutableSet;
+@class NSURLCacheNode, NSMutableSet, NSString, NSURLQueue, NSLock, NSMutableDictionary;
 
 @interface NSURLCacheInternal : NSObject {
     struct _CFURLCache { } *_cacheRef;

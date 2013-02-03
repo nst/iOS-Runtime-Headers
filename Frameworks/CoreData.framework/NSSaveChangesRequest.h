@@ -2,34 +2,26 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSSet;
+@class NSSet;
 
 @interface NSSaveChangesRequest : NSPersistentStoreRequest {
-    NSArray *_changedObjectIDs;
     NSSet *_deletedObjects;
     NSSet *_insertedObjects;
     NSSet *_optimisticallyLockedObjects;
-    BOOL _suppressNotification;
     NSSet *_updatedObjects;
 }
 
 + (void)initialize;
 
-- (id)_changedObjectIDs;
-- (void)_setChangedObjectIDs:(id)arg1;
-- (void)_setSuppressNotification:(BOOL)arg1;
-- (BOOL)_suppressNotification;
 - (void)dealloc;
 - (id)deletedObjects;
 - (BOOL)hasChanges;
 - (id)init;
+- (id)initWithInsertedObjects:(id)arg1 updatedObjects:(id)arg2 deletedObjects:(id)arg3 lockedObjects:(id)arg4;
 - (id)insertedObjects;
 - (id)lockedObjects;
 - (NSUInteger)requestType;
 - (void)setDeletedObjects:(id)arg1;
-- (void)setInsertedObjects:(id)arg1;
-- (void)setLockedObjects:(id)arg1;
-- (void)setUpdatedObjects:(id)arg1;
 - (id)updatedObjects;
 
 @end

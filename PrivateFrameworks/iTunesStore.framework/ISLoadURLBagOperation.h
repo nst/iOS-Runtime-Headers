@@ -6,24 +6,24 @@
 
 @interface ISLoadURLBagOperation : ISOperation <ISStoreURLOperationDelegate> {
     ISURLBagContext *_context;
-    BOOL _shouldWaitForNetwork;
 }
 
 @property(readonly) ISURLBagContext *context;
-@property BOOL shouldWaitForNetwork;
 
+- (void)_addStoreFrontHeadersToRequest:(id)arg1;
 - (id)_copyBootstrapURLs;
 - (id)_copyProductionBootstrapURLs;
 - (id)_copySandboxBootstrapURLs;
+- (void)_loadConfigurationFromURLBag:(id)arg1;
 - (void)_loadURLBagFromURL:(id)arg1;
 - (id)context;
 - (void)dealloc;
 - (id)init;
 - (id)initWithBagContext:(id)arg1;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
+- (BOOL)operation:(id)arg1 shouldSetStoreFrontID:(id)arg2;
+- (void)operation:(id)arg1 willSendRequest:(id)arg2;
 - (void)run;
-- (void)setShouldWaitForNetwork:(BOOL)arg1;
-- (BOOL)shouldWaitForNetwork;
 - (id)uniqueKey;
 
 @end

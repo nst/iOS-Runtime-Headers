@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSString, NSError;
+@class NSError, NSString;
 
 @interface NSFilesystemItemMoveOperation : NSOperation {
     id _delegate;
@@ -18,6 +18,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)error;
+- (BOOL)filesystemItemCopyOperation:(id)arg1 shouldProceedAfterError:(id)arg2 copyingItemAtPath:(id)arg3 toPath:(id)arg4;
 - (void)initWithSourcePath:(id)arg1 destinationPath:(id)arg2;
 - (void)main;
 - (void)setDelegate:(id)arg1;

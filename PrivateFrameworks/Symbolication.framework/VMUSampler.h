@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSMutableArray, NSConditionLock, VMUSymbolicator;
+@class NSConditionLock, VMUSymbolicator, NSMutableArray;
 
 @interface VMUSampler : NSObject {
     id _delegate;

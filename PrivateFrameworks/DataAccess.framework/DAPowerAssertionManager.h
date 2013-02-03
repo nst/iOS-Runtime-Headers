@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSMutableDictionary, NSString, NSCountedSet, NSMutableSet;
+@class NSCountedSet, NSMutableSet, NSString, NSMutableDictionary;
 
 @interface DAPowerAssertionManager : NSObject {
     struct __CFDictionary { } *_contextToGroupIdentifier;

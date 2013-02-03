@@ -5,7 +5,7 @@
 @interface DOMMessageEvent : DOMEvent {
 }
 
-@property(copy,readonly) NSString *data;
+@property(retain,readonly) NSString *data;
 @property(copy,readonly) NSString *lastEventId;
 @property(retain,readonly) DOMMessagePort *messagePort;
 @property(copy,readonly) NSString *origin;

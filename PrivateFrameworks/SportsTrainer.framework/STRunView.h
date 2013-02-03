@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SportsTrainer.framework/SportsTrainer
  */
 
-@class STRunCaloriesLabel, STRunProgressView, <STRunViewDelegate>, STRunDistanceLabel, STAnimatableButton, STRunPaceLabel, UIView, STShadowLabel, UIImageView, UIButton, STRunTimeLabel, NSTimer;
+@class STRunCaloriesLabel, STAnimatableButton, UIButton, STRunProgressView, STRunPaceLabel, UIView, STRunDistanceLabel, STRunTimeLabel, STShadowLabel, SWRunWorkoutProxy, <STRunViewDelegate>, NSString, UIImageView, NSTimer;
 
 @interface STRunView : UIView {
     struct { 
@@ -45,9 +45,11 @@
     STRunPaceLabel *_runPaceLabel;
     STRunProgressView *_runProgressView;
     STRunTimeLabel *_runTimeLabel;
-    NSInteger _throttledWorkoutState;
-    NSTimer *_timer;
+    NSTimer *_subsecondTimer;
+    NSString *_throttledWorkoutState;
     UIImageView *_transportControlsDivider;
+    NSTimer *_workoutInfoTimer;
+    SWRunWorkoutProxy *_workoutProxy;
 }
 
 @property <STRunViewDelegate> *delegate;
@@ -77,8 +79,8 @@
 - (void)_layoutBottomButtons;
 - (void)_layoutCaloriesInPosition:(NSInteger)arg1 isLandscape:(BOOL)arg2 isLockedMusicInterface:(BOOL)arg3 hasProgressView:(BOOL)arg4;
 - (void)_layoutLabel:(id)arg1 inPosition:(NSInteger)arg2 isLandscape:(BOOL)arg3 isLockedMusicInterface:(BOOL)arg4 hasProgressView:(BOOL)arg5;
-- (void)_layoutLabelsForWorkoutType:(NSInteger)arg1;
-- (void)_layoutMainButtonsForWorkoutType:(NSInteger)arg1;
+- (void)_layoutLabelsForWorkoutType:(NSInteger)arg1 presetGoal:(id)arg2;
+- (void)_layoutMainButtonsForGoalType:(id)arg1;
 - (void)_layoutNowPlayingLabelForWorkoutType:(NSInteger)arg1;
 - (void)_layoutPaceInPosition:(NSInteger)arg1 isLandscape:(BOOL)arg2 isLockedMusicInterface:(BOOL)arg3 hasProgressView:(BOOL)arg4;
 - (void)_layoutPrimaryLabelForWorkoutType:(NSInteger)arg1;
@@ -86,6 +88,7 @@
 - (void)_layoutRunTimeInPosition:(NSInteger)arg1 isLandscape:(BOOL)arg2 isLockedMusicInterface:(BOOL)arg3 hasProgressView:(BOOL)arg4;
 - (void)_layoutSecondaryLabelsForWorkoutType:(NSInteger)arg1;
 - (void)_layoutTransportControlsDivider;
+- (id)_mainButtonStringForGoalType:(id)arg1;
 - (void)_nextTrack;
 - (void)_nowPlayingChanged:(id)arg1;
 - (id)_orangeButtonDownImage;
@@ -98,27 +101,25 @@
 - (id)_powersongLandscapeButtonDownImage;
 - (id)_powersongLandscapeButtonImage;
 - (void)_previousTrack;
-- (void)_receiverStateChanged:(id)arg1;
 - (id)_redButtonDownImage;
 - (id)_redButtonImage;
 - (void)_resume;
 - (void)_resumeWorkoutForResume:(BOOL)arg1;
-- (void)_sportsInfoArrived:(id)arg1;
 - (void)_start;
-- (void)_startUpdateTimer;
+- (void)_startUpdateTimers;
 - (id)_startWorkoutButtonDownImage;
 - (id)_startWorkoutButtonImage;
 - (void)_startWorkoutEventFromRemote:(id)arg1;
 - (id)_startWorkoutLandscapeButtonDownImage;
 - (id)_startWorkoutLandscapeButtonImage;
 - (void)_stop;
-- (void)_stopUpdateTimer;
-- (void)_tick:(id)arg1;
+- (void)_stopUpdateTimers;
+- (void)_subsecondTimerTick:(id)arg1;
 - (void)_unthrottlePauseResume;
-- (void)_updateFromLatestWorkoutProgress;
 - (void)_updateProgressViewWithDictionary:(id)arg1;
-- (void)_workoutDidPause:(id)arg1;
-- (void)_workoutDidResume:(id)arg1;
+- (void)_workoutInfoTimerTick:(id)arg1;
+- (void)_workoutStateDidChange:(id)arg1;
+- (NSInteger)_workoutTypeForGoalType:(id)arg1;
 - (BOOL)animateForResumeEventsOnly;
 - (void)dealloc;
 - (id)delegate;

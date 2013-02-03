@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIFont, NSString;
+@class NSString, UIFont;
 
 @interface _UIDateLabelCache : NSObject {
     struct CGSize { 
@@ -15,6 +15,7 @@
     NSString *_amString;
     struct __CFDictionary { } *_dateSizeCache;
     struct __CFDictionary { } *_dateStringCache;
+    BOOL _designatorValid;
     double _noon;
     } _pmSize;
     NSString *_pmString;
@@ -30,8 +31,9 @@
     BOOL _use24HourTime;
 }
 
-- (void)_languageChanged;
 - (void)_loadDesignatorStrings;
+- (void)_localeDidChange;
+- (void)_localeWillChange;
 - (void)_significantTimeChange;
 - (BOOL)_timeDesignatorAppearsBeforeTime;
 - (void)_updateTodayAndNoon;
@@ -42,6 +44,7 @@
 - (void)dealloc;
 - (id)init;
 - (void)invalidateDateCache;
+- (void)invalidateDateSizeCache;
 - (struct CGSize { float x1; float x2; })mainTimeSizeForDateKey:(NSInteger)arg1;
 - (double)noonAbsoluteTime;
 - (struct CGSize { float x1; float x2; })pmSize;

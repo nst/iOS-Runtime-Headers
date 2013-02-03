@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class ICSDuration, ICSDateValue;
+@class ICSDateValue, ICSDuration;
 
 @interface ICSPeriod : NSObject <NSCoding> {
     ICSDuration *_duration;

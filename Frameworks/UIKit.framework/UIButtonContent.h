@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIColor, UIImage;
+@class UIColor, NSString, UIImage;
 
 @interface UIButtonContent : NSObject <NSCoding, NSCopying> {
     UIImage *background;

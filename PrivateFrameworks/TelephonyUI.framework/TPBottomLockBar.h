@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class UIView, NSArray, TPLockTextView, NSTimer, TPLockKnobView;
+@class NSArray, TPLockKnobView, NSTimer, UIView, TPLockTextView;
 
 @interface TPBottomLockBar : TPBottomBar {
     NSInteger _currentLabelIndex;
@@ -18,9 +18,23 @@
 }
 
 + (id)_backgroundImage;
++ (void)_initializeSafeCategory;
++ (float)defaultLabelFontSize;
 + (struct CGSize { float x1; float x2; })defaultSize;
 
+- (BOOL)_accessibilitySupportsActivateAction;
+- (void)_adjustKnobOrigin;
+- (void)_adjustLabelOrigin;
+- (BOOL)_canDrawContent;
 - (void)_setLabel:(id)arg1;
+- (void)accessibilityActivate;
+- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
+- (void)accessibilityElementDidBecomeFocused;
+- (void)accessibilityElementDidLoseFocus;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (id)accessibilityHint;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (NSInteger)currentLabelIndex;
 - (void)cycleToLabelAtIndex:(NSInteger)arg1;
 - (void)cycleToNextLabel;
@@ -29,13 +43,16 @@
 - (void)finishedCyclingLabelOut;
 - (float)fontSize;
 - (void)freezeKnobInUnlockedPosition;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initForIncomingCallWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 knobColor:(NSInteger)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 knobImage:(id)arg2;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isAnimating;
 - (id)knob;
 - (void)knobDragged:(float)arg1;
 - (float)knobTrackInsetLeft;
+- (float)knobTrackInsetRight;
 - (id)labels;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)relock;
@@ -44,6 +61,7 @@
 - (void)setFontSize:(float)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLabels:(id)arg1;
+- (void)setOrientation:(NSInteger)arg1;
 - (void)setRepresentedObject:(id)arg1;
 - (void)slideBack:(BOOL)arg1;
 - (void)startAnimating;

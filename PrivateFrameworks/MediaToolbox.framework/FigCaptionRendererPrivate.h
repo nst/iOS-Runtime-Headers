@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaToolbox.framework/MediaToolbox
  */
 
-@class NSMutableArray, NSString;
+@class NSString, NSMutableArray;
 
 @interface FigCaptionRendererPrivate : NSObject {
     id delegate;

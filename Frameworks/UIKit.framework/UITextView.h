@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMHTMLElement, UIDelayedAction, UIWebDocumentView, UIFont, UITextSelectionView, WebFrame, UITouch, UIColor, UITextInteractionAssistant;
+@class UIColor, UITouch, UIDelayedAction, WebFrame, UIFont, UIView, DOMHTMLElement, UITextSelectionView, UITextInteractionAssistant, UIWebDocumentView;
 
 @interface UITextView : UIScrollView <UITextInputTraits> {
     struct CGPoint { 
@@ -18,10 +18,14 @@
     UIFont *m_font;
     WebFrame *m_frame;
     BOOL m_handlingMouse;
+    BOOL m_hasExplicitTextAlignment;
+    UIView *m_inputAccessoryView;
+    UIView *m_inputView;
     UITextInteractionAssistant *m_interactionAssistant;
     UIDelayedAction *m_longPressAction;
     NSInteger m_marginTop;
     BOOL m_passMouseDownToOther;
+    BOOL m_readyForScroll;
     BOOL m_reentrancyGuard;
     BOOL m_scrollOnMouseUp;
     BOOL m_selecting;
@@ -38,6 +42,8 @@
 
 @property <UITextViewDelegate> *delegate;
 @property(retain) UIFont *font;
+@property(retain) UIView *inputAccessoryView;
+@property(retain) UIView *inputView;
 @property(copy) NSString *text;
 @property(retain) UIColor *textColor;
 @property NSInteger autocapitalizationType;
@@ -53,19 +59,33 @@
 @property _NSRange selectedRange;
 @property NSInteger textAlignment;
 
++ (void)_initializeSafeCategory;
+
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityBoundsForRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityChargedLineBoundsForRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilityCurrentSelectionRange;
+- (id)_accessibilityLineElements;
+- (id)_accessibilityLineNumberAndColumnForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilityRangeForLineNumberAndColumn:(id)arg1;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
+- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)_accessibilitySetValue:(id)arg1;
+- (id)_accessibilityTextViewTextOperationResponder;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (id)_automationValue;
+- (id)_keyboardResponder;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_setLtoRTextDirection:(id)arg1;
 - (void)_setRtoLTextDirection:(id)arg1;
-- (id)_syntheticTouch;
+- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (unsigned long long)accessibilityTraits;
+- (id)accessibilityValue;
+- (id)automaticallySelectedOverlay;
 - (BOOL)becomeFirstResponder;
 - (BOOL)becomesEditableWithGestures;
 - (void)beginSelectionChange;
 - (float)bottomBufferHeight;
-- (void)callSuperTouchBegan:(struct { BOOL x1; union { struct { id x_1_2_1; id x_1_2_2; } x_2_1_1; struct __GSEvent {} *x_2_1_2; } x2; }*)arg1;
-- (void)callSuperTouchEnded:(struct { BOOL x1; union { struct { id x_1_2_1; id x_1_2_2; } x_2_1_1; struct __GSEvent {} *x_2_1_2; } x2; }*)arg1;
-- (void)callSuperTouchMoved:(struct { BOOL x1; union { struct { id x_1_2_1; id x_1_2_2; } x_2_1_1; struct __GSEvent {} *x_2_1_2; } x2; }*)arg1;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)canResignFirstResponder;
@@ -75,7 +95,9 @@
 - (struct CGPoint { float x1; float x2; })constrainedPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)content;
 - (id)contentAsHTMLString;
+- (void)copy:(id)arg1;
 - (struct CGImage { }*)createSnapshotWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)cut:(id)arg1;
 - (NSUInteger)dataDetectorTypes;
 - (void)dealloc;
 - (void)delayedUpdateForKeyboardDidShow;
@@ -90,14 +112,16 @@
 - (id)font;
 - (void)forwardInvocation:(id)arg1;
 - (BOOL)hasText;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 font:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 webView:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)inputAccessoryView;
+- (id)inputView;
 - (void)insertText:(id)arg1;
 - (id)interactionAssistant;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isAccessibilityElementByDefault;
 - (BOOL)isEditable;
 - (BOOL)isEditing;
@@ -105,7 +129,6 @@
 - (BOOL)isFirstResponder;
 - (BOOL)isInteractingWithLink;
 - (void)keyboardDidShow:(id)arg1;
-- (NSInteger)keyboardInput:(id)arg1 positionForAutocorrection:(id)arg2;
 - (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
 - (BOOL)keyboardInput:(id)arg1 shouldReplaceTextInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 replacementText:(id)arg3;
 - (BOOL)keyboardInputChanged:(id)arg1;
@@ -114,22 +137,26 @@
 - (NSInteger)marginTop;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (BOOL)mightHaveLinks;
-- (void)mouseDown:(struct __GSEvent { }*)arg1;
-- (void)mouseDragged:(struct __GSEvent { }*)arg1;
-- (void)mouseUp:(struct __GSEvent { }*)arg1;
+- (struct CGImage { }*)newSnapshotWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGPoint { float x1; float x2; })offset;
+- (void)paste:(id)arg1;
 - (void)performBecomeEditableTasks;
+- (void)promptForReplace:(id)arg1;
 - (void)recalculateStyle;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSelection:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)registerForEditingDelegateNotification:(id)arg1 selector:(SEL)arg2;
 - (void)removeFromSuperview;
+- (void)replace:(id)arg1;
 - (void)resetDataDetectorsResultsWithWebLock;
 - (BOOL)resignFirstResponder;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (void)scrollRangeToVisible:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)scrollRectToVisibleInContainingScrollView;
 - (void)scrollSelectionToVisible:(BOOL)arg1;
 - (void)scrollToMakeCaretVisible:(BOOL)arg1;
 - (BOOL)scrollingEnabled;
+- (void)select:(id)arg1;
+- (void)selectAll:(id)arg1;
 - (void)selectAll;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })selectedRange;
 - (id)selectedText;
@@ -140,26 +167,30 @@
 - (void)setAllowsRubberBanding:(BOOL)arg1;
 - (void)setBecomesEditableWithGestures:(BOOL)arg1;
 - (void)setBottomBufferHeight:(float)arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setContentToHTMLString:(id)arg1;
 - (void)setDataDetectorTypes:(NSUInteger)arg1;
 - (void)setEditable:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1;
 - (void)setFont:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setInputAccessoryView:(id)arg1;
+- (void)setInputView:(id)arg1;
 - (void)setMarginTop:(NSInteger)arg1;
 - (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setScrollerIndicatorSubrect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setScrollingEnabled:(BOOL)arg1;
 - (void)setSelectedRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)setSelectedTextRange:(id)arg1;
 - (void)setSelectionToEnd;
 - (void)setSelectionToStart;
-- (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setShowScrollerIndicators:(BOOL)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextAlignment:(NSInteger)arg1;
 - (void)setTextColor:(id)arg1;
 - (BOOL)shouldStartDataDetectors;
 - (BOOL)showScrollerIndicators;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)startDataDetectorsWithWebLock;
 - (void)startInteractionWithLinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startLongInteractionWithLinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -170,11 +201,7 @@
 - (NSInteger)textAlignment;
 - (id)textColor;
 - (id)textInputTraits;
-- (void)textLoupeTimerAction;
 - (struct CGSize { float x1; float x2; })tileSizeForSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)touchBegan:(struct { BOOL x1; union { struct { id x_1_2_1; id x_1_2_2; } x_2_1_1; struct __GSEvent {} *x_2_1_2; } x2; }*)arg1 atLocation:(struct CGPoint { float x1; float x2; })arg2;
-- (void)touchEnded:(struct { BOOL x1; union { struct { id x_1_2_1; id x_1_2_2; } x_2_1_1; struct __GSEvent {} *x_2_1_2; } x2; }*)arg1 atLocation:(struct CGPoint { float x1; float x2; })arg2 loupeActive:(BOOL)arg3 loupeTerminalPoint:(struct CGPoint { float x1; float x2; })arg4;
-- (void)touchMoved:(struct { BOOL x1; union { struct { id x_1_2_1; id x_1_2_2; } x_2_1_1; struct __GSEvent {} *x_2_1_2; } x2; }*)arg1 atLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (id)undoManager;
 - (id)undoManagerForWebView:(id)arg1;

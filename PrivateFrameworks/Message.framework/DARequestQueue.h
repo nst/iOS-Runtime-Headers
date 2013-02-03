@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class DAMailAccount, NSString;
+@class NSString, DAMailAccount;
 
-@interface DARequestQueue : RequestQueue {
+@interface DARequestQueue : MFRequestQueue {
     double _invalidSyncKeyTimestamp;
     DAMailAccount *account;
     NSString *folderID;

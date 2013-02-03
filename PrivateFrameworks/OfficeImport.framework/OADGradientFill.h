@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, OADShade, OADRelativeRect;
+@class OADShade, NSMutableArray, OADRelativeRect;
 
 @interface OADGradientFill : OADFill {
     BOOL mAreStopsOverridden;
     NSInteger mFlipMode;
-    float mFocus;
     BOOL mIsFlipModeOverridden;
-    BOOL mIsFocusOverridden;
     BOOL mIsRotateWithShapeOverridden;
     BOOL mIsShadeOverridden;
     BOOL mIsTileRectOverridden;
@@ -27,16 +25,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (NSInteger)flipMode;
-- (float)focus;
+- (NSUInteger)hash;
 - (id)initWithDefaults;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isFlipModeOverridden;
-- (BOOL)isFocusOverridden;
 - (BOOL)isRotateWithShapeOverridden;
 - (BOOL)isShadeOverridden;
 - (BOOL)isTileRectOverridden;
 - (BOOL)rotateWithShape;
 - (void)setFlipMode:(NSInteger)arg1;
-- (void)setFocus:(float)arg1;
 - (void)setParent:(id)arg1;
 - (void)setRotateWithShape:(BOOL)arg1;
 - (void)setShade:(id)arg1;

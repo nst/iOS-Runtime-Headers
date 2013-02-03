@@ -18,7 +18,6 @@
 - (id)keyEnumerator;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectForKey:(id)arg1;
-- (void*)observationInfo;
 - (oneway void)release;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;

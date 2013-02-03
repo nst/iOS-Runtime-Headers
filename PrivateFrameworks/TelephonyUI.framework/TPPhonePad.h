@@ -19,10 +19,15 @@
     float _topHeight;
 }
 
++ (BOOL)__original_resolveClassMethod:(SEL)arg1;
 + (void)_delayedDeactivate;
++ (void)_initializeSafeCategory;
 + (BOOL)launchFieldTestIfNeeded:(id)arg1;
++ (BOOL)resolveClassMethod:(SEL)arg1;
 + (BOOL)shouldStringAutoDial:(id)arg1 givenLastChar:(BOOL)arg2;
 
+- (id)__original_forwardingTargetForSelector:(SEL)arg1;
+- (id)_accessibilityInternalChildren;
 - (void)_activateSounds:(BOOL)arg1;
 - (void)_appResumed;
 - (void)_appSuspended;
@@ -31,6 +36,7 @@
 - (void)_handleKeyPressAndHold:(id)arg1;
 - (NSInteger)_keyForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_keypadImage;
+- (struct CGPoint { float x1; float x2; })_keypadOrigin;
 - (void)_notifySoundCompletionIfNecessary:(unsigned long)arg1;
 - (void)_playSoundForKey:(NSInteger)arg1;
 - (id)_pressedImage;
@@ -38,11 +44,14 @@
 - (void)_stopAllSoundsForcingCallbacks:(BOOL)arg1;
 - (void)_stopSoundForKey:(NSInteger)arg1;
 - (float)_yFudge;
+- (id)accessibilityContainerElements;
 - (BOOL)cancelTouchTracking;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (void)movedFromWindow:(id)arg1;
 - (void)movedToWindow:(id)arg1;
 - (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;

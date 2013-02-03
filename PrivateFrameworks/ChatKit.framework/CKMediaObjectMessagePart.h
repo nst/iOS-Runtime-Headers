@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIImage, NSData, CKMediaObject;
+@class NSData, CKMediaObject, UIImage;
 
 @interface CKMediaObjectMessagePart : CKMessagePart {
     NSData *_composeData;

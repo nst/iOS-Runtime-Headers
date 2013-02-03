@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UINavigationController, UIViewController, UIView, UITabBar, NSMutableArray, <UITabBarControllerDelegate>;
+@class <UITabBarControllerDelegate>, NSMutableArray, UIView, UIViewController, UINavigationController, UITabBar, NSArray;
 
 @interface UITabBarController : UIViewController <UITabBarDelegate, NSCoding> {
     struct { 
@@ -13,6 +13,7 @@
     UIView *_containerView;
     NSArray *_customizableViewControllers;
     <UITabBarControllerDelegate> *_delegate;
+    NSUInteger _maxItems;
     UINavigationController *_moreNavigationController;
     UIViewController *_selectedViewController;
     UIViewController *_selectedViewControllerDuringWillAppear;
@@ -32,6 +33,8 @@
 @property(copy) NSArray *viewControllers;
 @property NSUInteger selectedIndex;
 
++ (void)_initializeSafeCategory;
+
 - (BOOL)_allowSelectionWithinMoreList;
 - (BOOL)_allowsAutorotation;
 - (BOOL)_allowsCustomizing;
@@ -40,15 +43,17 @@
 - (void)_ensureSelectedViewControllerIsDisplayed;
 - (id)_existingMoreNavigationController;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForViewController:(id)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; float x5; NSInteger x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
 - (BOOL)_isBarHidden;
 - (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
+- (void)_layoutViewController:(id)arg1;
 - (void)_populateArchivedChildViewControllers:(id)arg1;
 - (void)_prepareTabBar;
 - (BOOL)_reallyWantsFullScreenLayout;
 - (void)_rebuildTabBarItemsAnimated:(BOOL)arg1;
 - (void)_rebuildTabBarItemsIfNeeded;
 - (id)_selectedViewControllerInTabBar;
+- (void)_setMaximumNumberOfItems:(NSUInteger)arg1;
 - (void)_setSelectedTabBarItem:(id)arg1;
 - (void)_setSelectedViewController:(id)arg1;
 - (BOOL)_shouldPersistViewWhenCoding;

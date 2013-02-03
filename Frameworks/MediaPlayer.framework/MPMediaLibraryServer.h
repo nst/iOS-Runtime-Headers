@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaLibraryServerInternal;
+@class MPMediaLibraryRemoteServer;
 
 @interface MPMediaLibraryServer : NSObject {
-    MPMediaLibraryServerInternal *_internal;
+    MPMediaLibraryRemoteServer *_internal;
 }
 
 + (id)sharedInstance;
@@ -15,7 +15,6 @@
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)init;
-- (BOOL)isFilteringDisabled;
 - (id)methodSignatureForSelector:(SEL)arg1;
 
 @end

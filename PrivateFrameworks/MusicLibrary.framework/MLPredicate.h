@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface MLPredicate : NSObject <NSCoding> {
-    union $_161 { 
+    union $_612 { 
         NSString *stringValue; 
         unsigned long long unsignedValue; 
     unsigned int _matchesSubstring : 1;

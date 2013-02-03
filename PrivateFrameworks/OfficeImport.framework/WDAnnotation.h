@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDAnnotation, NSDate, NSString, WDText, WDCharacterRun;
+@class WDCharacterRun, WDAnnotation, NSString, WDText, NSDate;
 
 @interface WDAnnotation : WDRun {
     NSDate *mDate;
     WDAnnotation *mOtherEndOfRangedAnnotation;
     NSString *mOwner;
     WDCharacterRun *mReference;
+    BOOL mReferencePopertiesFixed;
     WDText *mText;
     NSInteger mType;
 }
@@ -20,10 +21,12 @@
 - (id)otherEndOfRangedAnnotation;
 - (id)owner;
 - (id)reference;
+- (BOOL)referencePropertiesFixed;
 - (NSInteger)runType;
 - (void)setDate:(id)arg1;
 - (void)setOtherEndOfRangedAnnotation:(id)arg1;
 - (void)setOwner:(id)arg1;
+- (void)setReferencePropertiesFixed;
 - (id)text;
 
 @end

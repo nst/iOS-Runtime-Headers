@@ -2,23 +2,25 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSArray, MFContactsSearchManager, ComposeRecipientView, UITableView, SearchShadowView, NSNumber, UIScroller, MFContactsSearchResultsModel;
+@class NSArray, MFContactsSearchManager, _MFComposeRecipientView, UITableView, MFContactsSearchResultsModel, MFSearchShadowView, UIScrollView, NSNumber;
 
-@interface CKRecipientSelectionView : UIView <UITableViewDataSource, UITableViewDelegate, CKOverlayViewProtocol, MFContactsSearchConsumer> {
+@interface CKRecipientSelectionView : UIView <UITableViewDataSource, UITableViewDelegate, CKOverlayViewProtocol, MFContactsSearchConsumer, _MFComposeRecipientViewDelegate> {
     NSArray *_abProperties;
     NSNumber *_currentSearchTaskID;
     id _delegate;
     MFContactsSearchManager *_searchManager;
     MFContactsSearchResultsModel *_searchResults;
     UITableView *_searchResultsTable;
-    SearchShadowView *_shadowView;
+    MFSearchShadowView *_shadowView;
     BOOL _showingSearchField;
-    ComposeRecipientView *_toField;
-    UIScroller *_toFieldScrollingView;
+    _MFComposeRecipientView *_toField;
+    UIScrollView *_toFieldScrollingView;
 }
 
 @property id delegate;
 @property(getter=isShowingSearchField,readonly) BOOL showingSearchField;
+
++ (void)_initializeSafeCategory;
 
 - (void)_hideSearchField:(BOOL)arg1;
 - (void)_searchWithText:(id)arg1;
@@ -35,6 +37,7 @@
 - (void)composeRecipientViewDidFinishEnteringRecipient:(id)arg1;
 - (void)composeRecipientViewDidFinishPickingRecipient:(id)arg1;
 - (void)composeRecipientViewRequestAddRecipient:(id)arg1;
+- (void)composeRecipientViewReturnPressed:(id)arg1;
 - (void)consumeSearchResults:(id)arg1 type:(NSInteger)arg2 taskID:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
@@ -45,9 +48,11 @@
 - (float)heightWithoutSeparator;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 ABProperties:(id)arg2;
 - (BOOL)isShowingSearchField;
+- (void)reallyResignFirstResponder;
 - (id)recipients;
 - (void)reflow;
 - (void)reset;
+- (void)setABProperties:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableString, NSString;
+@class NSString, NSMutableString;
 
 @interface EMNumberFormatter : NSObject {
      /* Encoded args for previous method: B8@0:4 */

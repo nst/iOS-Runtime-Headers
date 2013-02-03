@@ -9,7 +9,7 @@
     NSInteger _number;
 }
 
-+ (id)validDCFNameForName:(id)arg1 requiredLength:(NSInteger)arg2 nameLength:(NSInteger)arg3 number:(NSInteger*)arg4 numberRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg5;
++ (id)validDCFNameForName:(id)arg1 requiredLength:(NSInteger)arg2 nameLength:(NSInteger)arg3 number:(NSInteger*)arg4 numberRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg5 suffix:(id)arg6;
 
 - (NSInteger)compare:(id)arg1;
 - (void)dealloc;

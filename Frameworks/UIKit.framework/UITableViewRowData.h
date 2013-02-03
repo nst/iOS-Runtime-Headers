@@ -2,22 +2,34 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UISectionRowData, NSIndexPath, UITableView;
+@class NSIndexPath, UISectionRowData, UITableView;
 
 @interface UITableViewRowData : NSObject <NSCopying> {
+    float _heightForTableHeaderViewHiding;
     float _minimumRowHeight;
     NSInteger _numSections;
     NSIndexPath *_reorderedIndexPath;
     float _reorderedRowHeight;
     UISectionRowData **_sectionRowData;
     NSInteger _sectionRowDataCapacity;
+    float _tableBottomPadding;
     float _tableFooterHeight;
+    BOOL _tableFooterHeightValid;
     float _tableHeaderHeight;
+    BOOL _tableHeaderHeightValid;
+    float _tableSidePadding;
+    BOOL _tableSidePaddingValid;
+    float _tableTopPadding;
     UITableView *_tableView;
     float _tableViewWidth;
 }
 
+@property(readonly) float heightForAutohidingTableHeaderView;
+@property(readonly) float heightForTableHeaderViewHiding;
 @property float minimumRowHeight;
+@property float tableBottomPadding;
+@property float tableSidePadding;
+@property float tableTopPadding;
 
 - (void)_ensureSectionOffsetIsValidForSection:(NSInteger)arg1;
 - (void)_updateNumSections;
@@ -25,13 +37,17 @@
 - (void)addReorderGapFromIndexPath:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (void)ensureAllSectionsAreValid;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })floatingRectForFooterInSection:(NSInteger)arg1 visibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })floatingRectForHeaderInSection:(NSInteger)arg1 visibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (NSInteger)footerAlignmentForSection:(NSInteger)arg1;
 - (NSInteger)globalRowForRowAtIndexPath:(id)arg1;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })globalRowsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)hasFooterForSection:(NSInteger)arg1;
 - (BOOL)hasHeaderForSection:(NSInteger)arg1;
+- (NSInteger)headerAlignmentForSection:(NSInteger)arg1;
+- (float)heightForAutohidingTableHeaderView;
 - (float)heightForFooterInSection:(NSInteger)arg1;
 - (float)heightForHeaderInSection:(NSInteger)arg1;
 - (float)heightForRow:(NSInteger)arg1 inSection:(NSInteger)arg2;
@@ -39,11 +55,14 @@
 - (float)heightForTable;
 - (float)heightForTableFooterView;
 - (float)heightForTableHeaderView;
+- (float)heightForTableHeaderViewHiding;
 - (id)indexPathForRowAtGlobalRow:(NSInteger)arg1;
 - (id)indexPathsForRowsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithTableView:(id)arg1;
 - (void)invalidateAllSections;
 - (void)invalidateSection:(NSInteger)arg1;
+- (float)maxFooterTitleWidthForSection:(NSInteger)arg1;
+- (float)maxHeaderTitleWidthForSection:(NSInteger)arg1;
 - (float)minimumRowHeight;
 - (void)moveRowAtIndexPathFrom:(id)arg1 toIndexPath:(id)arg2;
 - (NSInteger)numberOfRows;
@@ -62,10 +81,17 @@
 - (id)reorderedIndexPath;
 - (NSInteger)sectionLocationForReorderedRow:(NSInteger)arg1 inSection:(NSInteger)arg2;
 - (NSInteger)sectionLocationForRow:(NSInteger)arg1 inSection:(NSInteger)arg2;
+- (void)setHeightForTableHeaderViewHiding:(float)arg1;
 - (void)setMinimumRowHeight:(float)arg1;
 - (void)setReorderedIndexPath:(id)arg1;
+- (void)setTableBottomPadding:(float)arg1;
+- (void)setTableSidePadding:(float)arg1;
+- (void)setTableTopPadding:(float)arg1;
+- (float)tableBottomPadding;
 - (void)tableFooterHeightDidChangeToHeight:(float)arg1;
 - (void)tableHeaderHeightDidChangeToHeight:(float)arg1;
+- (float)tableSidePadding;
+- (float)tableTopPadding;
 - (void)tableViewWidthDidChangeToWidth:(float)arg1;
 - (id)targetIndexPathForPoint:(struct CGPoint { float x1; float x2; })arg1;
 

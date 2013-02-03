@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableDictionary, NSArray, NSString, NSCountedSet, NSObject<ASAccountActorMessages>, DAAccount, DAMailbox, NSSet;
+@class NSObject<ASAccountActorMessages>, NSMutableDictionary, NSSet, NSCountedSet, NSString, DAAccount, MFDAMailbox, NSArray;
 
 @interface DAMailAccount : MailAccount {
     NSObject<ASAccountActorMessages> *_accountConduit;
     NSString *_cachedAccountID;
+    NSString *_cachedAccountPersistentUUID;
     BOOL _cachedCalendarEnabled;
     NSString *_cachedDisplayName;
     NSString *_cachedEmailAddress;
@@ -23,15 +24,15 @@
     NSMutableDictionary *_requestQueuesByFolderID;
     BOOL _startListeningOnHierarchyChange;
     NSInteger _supportsServerSearch;
-    DAMailbox *_temporaryInbox;
+    MFDAMailbox *_temporaryInbox;
     NSCountedSet *_userFocusMailboxIds;
     NSSet *_watchedFolderIds;
 }
 
 + (id)_URLScheme;
 + (void)_removeStaleExchangeDirectories:(id)arg1;
-+ (id)accountDirectoryPrefix;
 + (id)accountIDForDirectoryName:(id)arg1 isAccountDirectory:(BOOL*)arg2;
++ (id)accountTypeString;
 + (id)basicAccountProperties;
 + (id)displayedAccountTypeString;
 + (id)displayedShortAccountTypeString;
@@ -43,10 +44,11 @@
 - (BOOL)_canReceiveNewMailNotifications;
 - (id)_copyMailboxUidWithParent:(id)arg1 name:(id)arg2 attributes:(NSUInteger)arg3 existingMailboxUid:(id)arg4 permanentTag:(id)arg5 dictionary:(id)arg6;
 - (id)_copyMailboxWithParent:(id)arg1 name:(id)arg2 attributes:(NSUInteger)arg3 permanentTag:(id)arg4 dictionary:(id)arg5;
-- (id)_createMailboxWithParent:(id)arg1 name:(id)arg2 attributes:(NSUInteger)arg3 dictionary:(id)arg4;
+- (void)_ensureWeHaveLoadedInitialMailboxList;
 - (id)_inboxFolderID;
 - (id)_infoForMatchingURL:(id)arg1;
 - (void)_loadChildren:(id)arg1 forID:(id)arg2 intoBox:(id)arg3 replacingInbox:(id)arg4 withID:(id)arg5;
+- (id)_newMailboxWithParent:(id)arg1 name:(id)arg2 attributes:(NSUInteger)arg3 dictionary:(id)arg4;
 - (id)_specialMailboxUidWithType:(NSInteger)arg1 create:(BOOL)arg2;
 - (id)accountConduit;
 - (void)accountHierarchyChanged:(id)arg1;
@@ -66,20 +68,23 @@
 - (BOOL)finishedInitialMailboxListLoad;
 - (void)foldersContentsChanged:(id)arg1;
 - (id)hostname;
+- (id)iconString;
 - (id)initWithDAAccount:(id)arg1;
+- (id)initWithLibrary:(id)arg1 properties:(id)arg2;
 - (void)invalidate;
-- (BOOL)isEnabledForMeetings;
 - (BOOL)isRunningInPreferences;
 - (id)mailboxForFolderID:(id)arg1;
 - (id)mailboxPathExtension;
 - (id)mailboxUidForInfo:(id)arg1;
+- (id)meetingStorePersistentID;
 - (BOOL)moveMessages:(id)arg1 fromMailbox:(id)arg2 toMailbox:(id)arg3 markAsRead:(BOOL)arg4 unsuccessfulOnes:(id)arg5;
+- (BOOL)newMessagesContainReferences;
 - (void)performSearchQuery:(id)arg1 consumer:(id)arg2;
 - (id)primaryMailboxUid;
 - (void)pushedFoldersPrefsChanged:(id)arg1;
+- (id)pushedMailboxUids;
 - (BOOL)reconstituteOrphanedMeetingInMessage:(id)arg1;
 - (void)removeUserFocusMailbox:(id)arg1;
-- (void)resetFolderID:(id)arg1;
 - (void)resetSpecialMailboxes;
 - (void)setDAAccount:(id)arg1;
 - (void)setSyncAnchor:(id)arg1 forFolderID:(id)arg2 mailbox:(id*)arg3;
@@ -94,6 +99,7 @@
 - (id)syncAnchorForFolderID:(id)arg1 mailbox:(id*)arg2;
 - (id)syncAnchorForMailbox:(id)arg1;
 - (id)uniqueId;
+- (id)uniqueIdForPersistentConnection;
 - (id)username;
 
 @end

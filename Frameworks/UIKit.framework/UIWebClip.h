@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableData, NSString, NSURLConnection, UIImage, NSURL;
+@class UIImage, NSString, NSMutableData, NSURLConnection, NSURL;
 
 @interface UIWebClip : NSObject {
     struct CGPoint { 
@@ -10,8 +10,11 @@
         float y; 
     NSMutableData *_customIconData;
     NSMutableData *_customStartupImageData;
+    NSMutableData *_customStartupLandscapeImageData;
     NSURLConnection *_iconConnection;
     NSURLConnection *_startupImageConnection;
+    NSURLConnection *_startupLandscapeImageConnection;
+    BOOL classicMode;
     id delegate;
     BOOL fullScreen;
     UIImage *iconImage;
@@ -24,6 +27,8 @@
     } scrollPoint;
     UIImage *startupImage;
     NSURL *startupImageURL;
+    UIImage *startupLandscapeImage;
+    NSURL *startupLandscapeImageURL;
     NSInteger statusBarStyle;
     NSString *title;
 }
@@ -36,7 +41,10 @@
 @property(retain) NSURL *precomposedIconURL;
 @property(retain) UIImage *startupImage;
 @property(retain) NSURL *startupImageURL;
+@property(retain) UIImage *startupLandscapeImage;
+@property(retain) NSURL *startupLandscapeImageURL;
 @property(copy) NSString *title;
+@property BOOL classicMode;
 @property id delegate;
 @property BOOL fullScreen;
 @property BOOL removalDisallowed;
@@ -47,6 +55,7 @@
 + (id)_contentForMetaName:(id)arg1 inWebDocumentView:(id)arg2;
 + (id)pathForWebClipWithIdentifier:(id)arg1;
 + (id)urlForWebClipWithIdentifier:(id)arg1;
++ (BOOL)webClipClassicModeValueForWebDocumentView:(id)arg1;
 + (BOOL)webClipFullScreenValueForWebDocumentView:(id)arg1;
 + (NSInteger)webClipStatusBarStyleForWebDocumentView:(id)arg1;
 + (id)webClipWithIdentifier:(id)arg1;
@@ -61,6 +70,7 @@
 - (id)_initWithIdentifier:(id)arg1;
 - (void)_readPropertiesFromBundle:(struct __CFBundle { }*)arg1;
 - (BOOL)_writeImage:(id)arg1 toDiskWithFileName:(id)arg2;
+- (BOOL)classicMode;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
@@ -69,6 +79,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)fullScreen;
+- (id)getStartupImage:(NSInteger)arg1;
+- (id)getStartupImage;
 - (id)iconImage;
 - (id)iconImagePath;
 - (id)iconURL;
@@ -79,8 +91,11 @@
 - (BOOL)removeFromDisk;
 - (void)requestCustomIconUpdateWithDelegate:(id)arg1;
 - (void)requestCustomStartupImageUpdateWithDelegate:(id)arg1;
+- (void)requestCustomStartupLandscapeImageUpdateWithDelegate:(id)arg1;
+- (void)requestCustomStartupPortraitImageUpdateWithDelegate:(id)arg1;
 - (float)scale;
 - (struct CGPoint { float x1; float x2; })scrollPoint;
+- (void)setClassicMode:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFullScreen:(BOOL)arg1;
 - (void)setIconImage:(id)arg1;
@@ -93,13 +108,18 @@
 - (void)setScrollPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setStartupImage:(id)arg1;
 - (void)setStartupImageURL:(id)arg1;
+- (void)setStartupLandscapeImage:(id)arg1;
+- (void)setStartupLandscapeImageURL:(id)arg1;
 - (void)setStatusBarStyle:(NSInteger)arg1;
 - (void)setTitle:(id)arg1;
 - (id)startupImage;
 - (id)startupImageURL;
+- (id)startupLandscapeImage;
+- (id)startupLandscapeImageURL;
 - (NSInteger)statusBarStyle;
 - (void)stopLoadingCustomIcon;
 - (void)stopLoadingStartupImage;
+- (void)stopLoadingStartupLandscapeImage;
 - (id)title;
 - (void)updateCustomMediaLocationsFromWebDocumentView:(id)arg1;
 - (BOOL)updateOnDisk;

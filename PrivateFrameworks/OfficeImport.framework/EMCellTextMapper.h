@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDString, EDStyle;
+@class EDStyle, EDString;
 
 @interface EMCellTextMapper : CMMapper {
     EDString *edString;

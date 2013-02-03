@@ -2,33 +2,48 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIImageView, UIView, UITextLabel;
+@class UIImageView;
 
 @interface MPVideoBackgroundView : UIView {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     UIImageView *_backgroundPlaceholderImageView;
+    UIImageView *_backgroundPlaceholderView;
     UIImageView *_customBackgroundImageView;
-    UIView *_hackView;
     UIImageView *_iconView;
     UIImageView *_imageView;
-    UITextLabel *_infoSubTitle;
-    UITextLabel *_infoTitle;
-    NSInteger _orientation;
+    NSInteger _interfaceOrientation;
+    } _rectForIconCentering;
 }
 
 @property(retain) UIImage *backgroundPlaceholderImage;
+@property(readonly) UIView *backgroundPlaceholderView;
+@property NSInteger interfaceOrientation;
 
++ (void)_initializeSafeCategory;
+
+- (BOOL)_accessibilityIgnoresMouseEvents;
 - (void)_createInformationalTitleView:(id*)arg1 systemFont:(id)arg2 lineBreakMode:(NSInteger)arg3;
+- (id)accessibilityLabel;
+- (id)avController;
 - (id)backgroundPlaceholderImage;
+- (id)backgroundPlaceholderView;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (NSInteger)interfaceOrientation;
+- (BOOL)isAccessibilityElement;
 - (void)layoutForCurrentOrientation;
-- (void)layoutSubviews;
+- (id)qtIcon;
 - (void)setBackgroundPlaceholderImage:(id)arg1;
 - (void)setCustomBackgroundImage:(id)arg1;
-- (void)setInformationalTextShown:(BOOL)arg1;
-- (void)setInformationalTitle:(id)arg1 infoSubTitle:(id)arg2;
-- (void)setOrientation:(NSInteger)arg1;
+- (void)setInterfaceOrientation:(NSInteger)arg1;
+- (void)setRectForIconCentering:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setShowQTAudioOnlyUI:(BOOL)arg1;
-- (BOOL)shouldShowInformationalTextForOrientation:(NSInteger)arg1;
 
 @end

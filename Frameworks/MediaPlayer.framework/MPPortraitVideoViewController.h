@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UINavigationBar, MPPortraitInfoOverlay, MPReflectionImageView, MPPortraitTransportControls;
+@class MPPortraitInfoOverlay, MPPortraitTransportControls, UINavigationBar;
 
 @interface MPPortraitVideoViewController : MPVideoViewController <MPSwipableViewDelegate> {
     unsigned int _ownsTransportControls : 1;
-    MPReflectionImageView *_imageView;
+    unsigned int _waitingToShowOverlay : 1;
     UINavigationBar *_navigationBar;
     MPPortraitInfoOverlay *_overlayView;
     MPPortraitTransportControls *_transportControls;
@@ -15,31 +15,34 @@
 @property(retain) UINavigationBar *navigationBar;
 @property(readonly) BOOL ownsTransportControls;
 
++ (BOOL)supportsFullscreenDisplay;
+
 - (void)_handleSwipeRight;
 - (id)_overlayView;
-- (void)_reloadImageView;
 - (void)_removeOverlayView;
+- (void)_showOverlayView:(BOOL)arg1;
 - (BOOL)allowsDetailScrubbing;
-- (BOOL)canDisplayItem:(id)arg1 withOrientation:(NSInteger)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundViewSnapshotFrame;
+- (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(NSInteger)arg2;
 - (id)copyOverlayViewForTransitionToItem:(id)arg1;
-- (id)createAlternateTracksTransition;
 - (id)createChapterFlipTransition;
-- (id)createOverlayViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (void)displayVideoViewOnScreen;
 - (id)init;
 - (id)initWithTransportControls:(BOOL)arg1;
 - (void)loadView;
 - (id)navigationBar;
+- (id)newAlternateTracksTransition;
+- (id)newOverlayViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)ownsTransportControls;
 - (void)restoreOverlayViewAfterTransition:(id)arg1;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
+- (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2 force:(BOOL)arg3;
 - (void)setDesiredParts:(NSUInteger)arg1 animate:(BOOL)arg2;
 - (void)setDisabledParts:(NSUInteger)arg1;
 - (void)setItem:(id)arg1;
 - (void)setNavigationBar:(id)arg1;
 - (void)setOrientation:(NSInteger)arg1 animate:(BOOL)arg2;
-- (void)setTVOutEnabled:(BOOL)arg1;
 - (void)setVisibleParts:(NSUInteger)arg1 animate:(BOOL)arg2;
 - (void)showChaptersController;
 - (void)showOverlayView;
@@ -48,6 +51,9 @@
 - (void)swipableView:(id)arg1 swipedInDirection:(NSInteger)arg2;
 - (void)swipableView:(id)arg1 tappedWithCount:(NSUInteger)arg2;
 - (BOOL)transportControls:(id)arg1 tappedButtonPart:(NSUInteger)arg2;
+- (void)transportControlsDidResize:(id)arg1;
+- (BOOL)usePosterForTVOut;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 

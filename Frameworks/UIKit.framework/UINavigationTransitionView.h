@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
+@class UIWindow, UIView;
 
 @interface UINavigationTransitionView : UIView <NSCoding> {
     unsigned int _isTransitioning : 1;
@@ -10,11 +10,15 @@
     UIView *_firstResponderToRestore;
     UIView *_fromView;
     float _fromViewAlpha;
+    UIWindow *_originalWindow;
     UIView *_toView;
     NSInteger _transition;
+    BOOL _usesRoundedCorners;
 }
 
+@property(readonly) UIView *fromView;
 @property id delegate;
+@property BOOL usesRoundedCorners;
 
 + (double)defaultDurationForTransition:(NSInteger)arg1;
 
@@ -23,11 +27,14 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
+- (id)fromView;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isTransitioning;
 - (void)setDelegate:(id)arg1;
+- (void)setUsesRoundedCorners:(BOOL)arg1;
 - (BOOL)transition:(NSInteger)arg1 fromView:(id)arg2 toView:(id)arg3;
 - (BOOL)transition:(NSInteger)arg1 toView:(id)arg2;
+- (BOOL)usesRoundedCorners;
 
 @end

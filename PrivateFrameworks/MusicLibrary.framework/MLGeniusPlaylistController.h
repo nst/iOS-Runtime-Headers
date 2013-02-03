@@ -22,7 +22,7 @@
 + (BOOL)useFakeGeniusData;
 
 - (BOOL)_canIncludeTrackInGeniusPlaylist:(id)arg1;
-- (void)_createClusterPlaylistWithSeedTracks:(id)arg1 error:(id*)arg2;
+- (BOOL)_createClusterPlaylistWithSeedTracks:(id)arg1 error:(id*)arg2;
 - (BOOL)_fakePopulatePlaylist:(id)arg1 seedTrack:(id)arg2 playlistItemMin:(NSUInteger)arg3 playlistItemMax:(NSUInteger)arg4 error:(id*)arg5;
 - (BOOL)_populatePlaylist:(id)arg1 seedTrack:(id)arg2 playlistItemMin:(NSUInteger)arg3 playlistItemMax:(NSUInteger)arg4 error:(id*)arg5;
 - (id)_sharedBlobMutableData;

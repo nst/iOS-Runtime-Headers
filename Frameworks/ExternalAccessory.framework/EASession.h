@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class NSOutputStream, NSInputStream, NSString, EAAccessory;
+@class NSString, NSInputStream, NSOutputStream, EAAccessory;
 
 @interface EASession : NSObject {
     EAAccessory *_accessory;

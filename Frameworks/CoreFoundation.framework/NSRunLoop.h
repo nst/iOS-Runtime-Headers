@@ -4,21 +4,27 @@
 
 @interface NSRunLoop : NSObject {
     id _dperf;
+    id _info;
     id _perft;
-    void *_reserved[8];
+    id _ports;
+    void *_reserved[6];
     id _rl;
 }
 
-+ (void)_portInvalidated:(id)arg1;
-+ (void)_runLoop:(id)arg1 addPort:(id)arg2 forMode:(id)arg3;
-+ (BOOL)_runLoop:(id)arg1 containsPort:(id)arg2 forMode:(id)arg3;
-+ (void)_runLoop:(id)arg1 removePort:(id)arg2 forMode:(id)arg3;
-+ (void)_unmapRunLoop:(id)arg1;
++ (id)_mapkit_backgroundDrawingRunLoop;
++ (id)_mapkit_networkIORunLoop;
++ (id)_new:(id)arg1;
 + (id)currentRunLoop;
 + (id)mainRunLoop;
++ (void)set_mapkit_backgroundDrawingRunLoop:(id)arg1;
++ (void)set_mapkit_networkIORunLoop:(id)arg1;
 
-- (void)_init:(id)arg1;
+- (void)_addPort:(id)arg1 forMode:(id)arg2;
+- (BOOL)_containsPort:(id)arg1 forMode:(id)arg2;
+- (void)_enumerateInfoPairsWithBlock:(id)arg1;
 - (void)_invalidateTimers;
+- (void)_portInvalidated:(id)arg1;
+- (void)_removePort:(id)arg1 forMode:(id)arg2;
 - (void)_wakeup;
 - (void)acceptInputForMode:(id)arg1 beforeDate:(id)arg2;
 - (void)addPort:(id)arg1 forMode:(id)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableDictionary, NSArray, NSString, NSData;
+@class NSArray, NSString, NSData, NSMutableDictionary;
 
 @interface NSHTTPURLRequestParameters : NSObject {
     BOOL _pad1;

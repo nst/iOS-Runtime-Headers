@@ -10,6 +10,7 @@
 - (void)mergeRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 excludingRanges:(id)arg2;
 - (void)mergeRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)mergeRanges:(id)arg1 excludingRanges:(id)arg2;
+- (void)mergeRanges:(id)arg1;
 - (id)subtract:(id)arg1;
 - (unsigned long long)sumLengths;
 

@@ -6,6 +6,7 @@
 }
 
 @property(copy) NSString *media;
+@property(retain,readonly) DOMStyleSheet *sheet;
 @property(copy) NSString *type;
 @property BOOL disabled;
 

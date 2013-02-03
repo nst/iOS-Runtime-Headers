@@ -16,8 +16,10 @@
         double verticalAccuracy; 
         double speed; 
         double course; 
-        NSInteger confidence; 
         double timestamp; 
+        NSInteger confidence; 
+        double lifespan; 
+        NSInteger type; 
     struct { 
         double bestAccuracy; 
     struct { 
@@ -32,6 +34,7 @@
         double magnitude; 
         double inclination; 
         double timestamp; 
+        double machtimestamp; 
     } fCapabilities;
     BOOL fCapabilitiesValid;
     struct __CLClient { } *fClient;
@@ -40,6 +43,7 @@
     double fDistanceFilter;
     } fHeading;
     double fHeadingFilter;
+    NSInteger fHeadingOrientation;
     } fLocation;
     BOOL fUpdatingHeading;
     BOOL fUpdatingLocation;

@@ -11,6 +11,7 @@
 - (id)_MLPhoto;
 - (void)_applicationWillTerminate:(id)arg1;
 - (id)_createVideoView;
+- (void)_deleteTemporaryFiles;
 - (void)dealloc;
 - (id)initWithData:(id)arg1 pathExtension:(id)arg2;
 - (id)initWithData:(id)arg1;

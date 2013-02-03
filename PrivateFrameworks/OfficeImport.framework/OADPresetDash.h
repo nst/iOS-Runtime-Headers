@@ -3,15 +3,17 @@
  */
 
 @interface OADPresetDash : OADDash {
-    BOOL mIsTypeOverridden;
-    NSInteger mType;
+    unsigned int mIsTypeOverridden : 1;
+    unsigned char mType;
 }
 
 + (id)defaultProperties;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)equivalentCustomDash;
+- (NSUInteger)hash;
 - (id)initWithDefaults;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isTypeOverridden;
 - (void)setType:(NSInteger)arg1;
 - (NSInteger)type;

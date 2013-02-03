@@ -27,7 +27,9 @@
 - (float)endOpacity;
 - (float)endPosition;
 - (float)fadeDirection;
+- (NSUInteger)hash;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)rotateWithShape;
 - (void)setAlignment:(NSInteger)arg1;
 - (void)setBlurRadius:(float)arg1;

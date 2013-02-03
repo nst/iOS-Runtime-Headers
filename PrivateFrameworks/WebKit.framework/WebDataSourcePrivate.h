@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSURLResponse, <WebDocumentRepresentation>, NSError, NSURLRequest;
+@class NSURLResponse, NSURLRequest, NSError, <WebDocumentRepresentation>;
 
 @interface WebDataSourcePrivate : NSObject {
     struct WebDocumentLoaderMac { int (**x1)(); NSInteger x2; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x3; struct Frame {} *x4; struct RefPtr<WebCore::MainResourceLoader> { 
@@ -44,7 +44,8 @@
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
-                void*m_isValid; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolInHTTPFamily : 1; 
                 NSInteger m_schemeEnd; 
                 NSInteger m_userStart; 
                 NSInteger m_userEnd; 
@@ -64,7 +65,8 @@
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
-                void*m_isValid; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolInHTTPFamily : 1; 
                 NSInteger m_schemeEnd; 
                 NSInteger m_userStart; 
                 NSInteger m_userEnd; 
@@ -75,7 +77,7 @@
                 NSInteger m_pathEnd; 
                 NSInteger m_queryEnd; 
                 NSInteger m_fragmentEnd; 
-            } m_mainDocumentURL; 
+            } m_firstPartyForCookies; 
             struct String { 
                 struct RefPtr<WebCore::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
@@ -100,9 +102,13 @@
             struct RefPtr<WebCore::FormData> { 
                 struct FormData {} *m_ptr; 
             } m_httpBody; 
-            void*m_allowHTTPCookies; 
+            void*m_allowCookies; 
             void*m_resourceRequestUpdated; 
             void*m_platformRequestUpdated; 
+            void*m_reportUploadProgress; 
+            NSInteger m_priority; 
+            NSInteger m_targetType; 
+            void*m_mainResourceRequest; 
             struct RetainPtr<NSURLRequest> { 
                 NSURLRequest *m_ptr; 
             } m_nsRequest; 
@@ -126,7 +132,8 @@
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
-                void*m_isValid; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolInHTTPFamily : 1; 
                 NSInteger m_schemeEnd; 
                 NSInteger m_userStart; 
                 NSInteger m_userEnd; 
@@ -144,7 +151,8 @@
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
-                void*m_isValid; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolInHTTPFamily : 1; 
                 NSInteger m_schemeEnd; 
                 NSInteger m_userStart; 
                 NSInteger m_userEnd; 
@@ -163,7 +171,8 @@
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
-                void*m_isValid; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolInHTTPFamily : 1; 
                 NSInteger m_schemeEnd; 
                 NSInteger m_userStart; 
                 NSInteger m_userEnd; 
@@ -183,7 +192,8 @@
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
-                void*m_isValid; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolInHTTPFamily : 1; 
                 NSInteger m_schemeEnd; 
                 NSInteger m_userStart; 
                 NSInteger m_userEnd; 
@@ -194,7 +204,7 @@
                 NSInteger m_pathEnd; 
                 NSInteger m_queryEnd; 
                 NSInteger m_fragmentEnd; 
-            } m_mainDocumentURL; 
+            } m_firstPartyForCookies; 
             struct String { 
                 struct RefPtr<WebCore::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
@@ -219,9 +229,13 @@
             struct RefPtr<WebCore::FormData> { 
                 struct FormData {} *m_ptr; 
             } m_httpBody; 
-            void*m_allowHTTPCookies; 
+            void*m_allowCookies; 
             void*m_resourceRequestUpdated; 
             void*m_platformRequestUpdated; 
+            void*m_reportUploadProgress; 
+            NSInteger m_priority; 
+            NSInteger m_targetType; 
+            void*m_mainResourceRequest; 
             struct RetainPtr<NSURLRequest> { 
                 NSURLRequest *m_ptr; 
             } m_nsRequest; 
@@ -232,7 +246,8 @@
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
-                void*m_isValid; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolInHTTPFamily : 1; 
                 NSInteger m_schemeEnd; 
                 NSInteger m_userStart; 
                 NSInteger m_userEnd; 
@@ -252,7 +267,8 @@
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
-                void*m_isValid; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolInHTTPFamily : 1; 
                 NSInteger m_schemeEnd; 
                 NSInteger m_userStart; 
                 NSInteger m_userEnd; 
@@ -263,7 +279,7 @@
                 NSInteger m_pathEnd; 
                 NSInteger m_queryEnd; 
                 NSInteger m_fragmentEnd; 
-            } m_mainDocumentURL; 
+            } m_firstPartyForCookies; 
             struct String { 
                 struct RefPtr<WebCore::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
@@ -288,9 +304,13 @@
             struct RefPtr<WebCore::FormData> { 
                 struct FormData {} *m_ptr; 
             } m_httpBody; 
-            void*m_allowHTTPCookies; 
+            void*m_allowCookies; 
             void*m_resourceRequestUpdated; 
             void*m_platformRequestUpdated; 
+            void*m_reportUploadProgress; 
+            NSInteger m_priority; 
+            NSInteger m_targetType; 
+            void*m_mainResourceRequest; 
             struct RetainPtr<NSURLRequest> { 
                 NSURLRequest *m_ptr; 
             } m_nsRequest; 
@@ -301,7 +321,8 @@
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
-                void*m_isValid; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolInHTTPFamily : 1; 
                 NSInteger m_schemeEnd; 
                 NSInteger m_userStart; 
                 NSInteger m_userEnd; 
@@ -344,12 +365,21 @@
                     NSInteger m_deletedCount; 
                 } m_impl; 
             } m_httpHeaderFields; 
-            NSInteger m_expirationDate; 
             NSInteger m_lastModifiedDate; 
             unsigned int m_isNull : 1; 
-            unsigned int m_haveParsedCacheControl : 1; 
-            unsigned int m_cacheControlContainsMustRevalidate : 1; 
+            unsigned int m_haveParsedCacheControlHeader : 1; 
+            unsigned int m_haveParsedAgeHeader : 1; 
+            unsigned int m_haveParsedDateHeader : 1; 
+            unsigned int m_haveParsedExpiresHeader : 1; 
+            unsigned int m_haveParsedLastModifiedHeader : 1; 
             unsigned int m_cacheControlContainsNoCache : 1; 
+            unsigned int m_cacheControlContainsNoStore : 1; 
+            unsigned int m_cacheControlContainsMustRevalidate : 1; 
+            double m_cacheControlMaxAge; 
+            double m_age; 
+            double m_date; 
+            double m_expires; 
+            double m_lastModified; 
             struct RetainPtr<NSURLResponse> { 
                 NSURLResponse *m_ptr; 
             } m_nsResponse; 
@@ -377,22 +407,23 @@
             struct RetainPtr<NSError> { 
                 NSError *m_ptr; 
             } m_platformError; 
-        } x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; struct String { 
+        } x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; struct String { 
             struct RefPtr<WebCore::StringImpl> { 
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
-        } x23; struct String { 
+        } x22; struct String { 
             struct RefPtr<WebCore::StringImpl> { 
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
-        } x24; struct NavigationAction { 
+        } x23; struct NavigationAction { 
             struct KURL { 
                 struct String { 
                     struct RefPtr<WebCore::StringImpl> { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
-                void*m_isValid; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolInHTTPFamily : 1; 
                 NSInteger m_schemeEnd; 
                 NSInteger m_userStart; 
                 NSInteger m_userEnd; 
@@ -408,14 +439,15 @@
             struct RefPtr<WebCore::Event> { 
                 struct Event {} *m_ptr; 
             } m_event; 
-        } x25; struct ResourceRequest { 
+        } x24; struct ResourceRequest { 
             struct KURL { 
                 struct String { 
                     struct RefPtr<WebCore::StringImpl> { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
-                void*m_isValid; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolInHTTPFamily : 1; 
                 NSInteger m_schemeEnd; 
                 NSInteger m_userStart; 
                 NSInteger m_userEnd; 
@@ -435,7 +467,8 @@
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
-                void*m_isValid; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolInHTTPFamily : 1; 
                 NSInteger m_schemeEnd; 
                 NSInteger m_userStart; 
                 NSInteger m_userEnd; 
@@ -446,7 +479,7 @@
                 NSInteger m_pathEnd; 
                 NSInteger m_queryEnd; 
                 NSInteger m_fragmentEnd; 
-            } m_mainDocumentURL; 
+            } m_firstPartyForCookies; 
             struct String { 
                 struct RefPtr<WebCore::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
@@ -471,19 +504,23 @@
             struct RefPtr<WebCore::FormData> { 
                 struct FormData {} *m_ptr; 
             } m_httpBody; 
-            void*m_allowHTTPCookies; 
+            void*m_allowCookies; 
             void*m_resourceRequestUpdated; 
             void*m_platformRequestUpdated; 
+            void*m_reportUploadProgress; 
+            NSInteger m_priority; 
+            NSInteger m_targetType; 
+            void*m_mainResourceRequest; 
             struct RetainPtr<NSURLRequest> { 
                 NSURLRequest *m_ptr; 
             } m_nsRequest; 
-        } x26; struct Vector<WebCore::ResourceResponse,0ul> { 
+        } x25; struct Vector<WebCore::ResourceResponse,0ul> { 
             NSUInteger m_size; 
             struct VectorBuffer<WebCore::ResourceResponse,0ul> { 
                 struct ResourceResponse {} *m_buffer; 
                 NSUInteger m_capacity; 
             } m_buffer; 
-        } x27; void*x28; struct HashMap<WTF::RefPtr<WebCore::ResourceLoader>,WTF::RefPtr<WebCore::SubstituteResource>,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::SubstituteResource> > > { 
+        } x26; void*x27; struct HashMap<WTF::RefPtr<WebCore::ResourceLoader>,WTF::RefPtr<WebCore::SubstituteResource>,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::SubstituteResource> > > { 
             struct HashTable<WTF::RefPtr<WebCore::ResourceLoader>,std::pair<WTF::RefPtr<WebCore::ResourceLoader>, WTF::RefPtr<WebCore::SubstituteResource> >,WTF::PairFirstExtractor<std::pair<WTF::RefPtr<WebCore::ResourceLoader>, WTF::RefPtr<WebCore::SubstituteResource> > >,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::PairHashTraits<WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> >, WTF::HashTraits<WTF::RefPtr<WebCore::SubstituteResource> > >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> > > { 
                 struct pair<WTF::RefPtr<WebCore::ResourceLoader>,WTF::RefPtr<WebCore::SubstituteResource> > {} *m_table; 
                 NSInteger m_tableSize; 
@@ -491,7 +528,7 @@
                 NSInteger m_keyCount; 
                 NSInteger m_deletedCount; 
             } m_impl; 
-        } x29; struct Timer<WebCore::DocumentLoader> { 
+        } x28; struct Timer<WebCore::DocumentLoader> { 
             int (**_vptr$TimerBase)(); 
             double m_nextFireTime; 
             double m_repeatInterval; 
@@ -501,11 +538,11 @@
             struct { 
                 void**__pfn; 
             } m_function; 
-        } x30; struct OwnPtr<WebCore::ArchiveResourceCollection> { 
+        } x29; struct OwnPtr<WebCore::ArchiveResourceCollection> { 
             struct ArchiveResourceCollection {} *m_ptr; 
-        } x31; struct RefPtr<WebCore::SharedBuffer> { 
+        } x30; struct RefPtr<WebCore::SharedBuffer> { 
             struct SharedBuffer {} *m_ptr; 
-        } x32; struct HashSet<WebCore::String,WebCore::StringHash,WTF::HashTraits<WebCore::String> > { 
+        } x31; struct HashSet<WebCore::String,WebCore::StringHash,WTF::HashTraits<WebCore::String> > { 
             struct HashTable<WebCore::String,WebCore::String,WTF::IdentityExtractor<WebCore::String>,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::String> > { 
                 struct String {} *m_table; 
                 NSInteger m_tableSize; 
@@ -513,21 +550,23 @@
                 NSInteger m_keyCount; 
                 NSInteger m_deletedCount; 
             } m_impl; 
-        } x33; struct Vector<WebCore::String,0ul> { 
+        } x32; struct Vector<WebCore::String,0ul> { 
             NSUInteger m_size; 
             struct VectorBuffer<WebCore::String,0ul> { 
                 struct String {} *m_buffer; 
                 NSUInteger m_capacity; 
             } m_buffer; 
-        } x34; void*x35; struct RefPtr<WebCore::ApplicationCache> { 
-            struct ApplicationCache {} *m_ptr; 
-        } x36; struct ApplicationCacheGroup {} *x37; struct RefPtr<WebCore::ApplicationCache> { 
-            struct ApplicationCache {} *m_ptr; 
-        } x38; id x39; void*x40; void*x41; void*x42; unsigned int x43/* : ? */; void*x44; void*x45; void*x46; void*x47; unsigned short x48; out void*x49; const BOOL x50; void*x51; void*x52; void*x53; struct RetainPtr<objc_object*> { 
+        } x33; struct String { 
+            struct RefPtr<WebCore::StringImpl> { 
+                struct StringImpl {} *m_ptr; 
+            } m_impl; 
+        } x34; void*x35; struct OwnPtr<WebCore::ApplicationCacheHost> { 
+            struct ApplicationCacheHost {} *m_ptr; 
+        } x36; id x37; void*x38; void*x39; void*x40; unsigned int x41/* : ? */; void*x42; void*x43; void*x44; void*x45; unsigned short x46; out void*x47; const BOOL x48; void*x49; void*x50; void*x51; struct RetainPtr<objc_object*> { 
             id m_ptr; 
-        } x54; struct RetainPtr<objc_object*> { 
+        } x52; struct RetainPtr<objc_object*> { 
             id m_ptr; 
-        } x55; struct HashSet<long unsigned int,WTF::IntHash<long unsigned int>,WTF::HashTraits<long unsigned int> > { 
+        } x53; struct HashSet<long unsigned int,WTF::IntHash<long unsigned int>,WTF::HashTraits<long unsigned int> > { 
             struct HashTable<long unsigned int,long unsigned int,WTF::IdentityExtractor<long unsigned int>,WTF::IntHash<long unsigned int>,WTF::HashTraits<long unsigned int>,WTF::HashTraits<long unsigned int> > { 
                 unsigned long *m_table; 
                 NSInteger m_tableSize; 
@@ -535,7 +574,7 @@
                 NSInteger m_keyCount; 
                 NSInteger m_deletedCount; 
             } m_impl; 
-        } x56; } *loader;
+        } x54; } *loader;
     <WebDocumentRepresentation> *representation;
     BOOL representationFinishedLoading;
 }

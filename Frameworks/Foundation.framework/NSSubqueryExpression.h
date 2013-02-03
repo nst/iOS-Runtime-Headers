@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSExpression, NSPredicate;
+@class NSPredicate, NSExpression;
 
 @interface NSSubqueryExpression : NSExpression {
     NSExpression *_collection;

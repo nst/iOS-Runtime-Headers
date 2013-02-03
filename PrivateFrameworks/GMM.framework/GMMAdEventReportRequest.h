@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class GMMDateTime, NSString;
+@class NSString, GMMDateTime;
 
 @interface GMMAdEventReportRequest : PBRequest {
     GMMDateTime *_event_time;

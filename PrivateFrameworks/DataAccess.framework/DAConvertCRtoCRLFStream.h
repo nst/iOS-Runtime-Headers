@@ -13,13 +13,17 @@
         int (*copyDescription)(); 
     int (*_clientCallback)();
     } _clientContext;
-    NSData *_data;
     id _delegate;
+    BOOL _intendToStream;
     BOOL _lastByteCopiedWasCR;
+    NSData *_mimeData;
     BOOL _openEventSent;
+    NSData *_postflightData;
+    NSData *_preflightData;
     NSUInteger _readOffset;
     struct __CFRunLoopSource { } *_rls;
     NSUInteger _streamStatus;
+    NSUInteger _totalLength;
 }
 
 - (void)_scheduleCallback;
@@ -33,6 +37,7 @@
 - (BOOL)getBuffer:(char **)arg1 length:(NSUInteger*)arg2;
 - (BOOL)hasBytesAvailable;
 - (id)initWithData:(id)arg1;
+- (id)initWithMIMEData:(id)arg1 preflightData:(id)arg2 postflightData:(id)arg3 intendToStream:(BOOL)arg4;
 - (void)open;
 - (NSInteger)read:(char *)arg1 maxLength:(NSUInteger)arg2;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;

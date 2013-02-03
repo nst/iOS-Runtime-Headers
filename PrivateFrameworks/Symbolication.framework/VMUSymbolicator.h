@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSMutableArray, NSArray, NSString, VMUMachTaskContainer;
+@class VMUMachTaskContainer, NSArray, NSString, NSMutableArray;
 
 @interface VMUSymbolicator : NSObject {
     BOOL _isProtected;

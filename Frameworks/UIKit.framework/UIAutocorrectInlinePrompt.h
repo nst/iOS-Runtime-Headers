@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSString;
+@class NSString, UIView;
 
 @interface UIAutocorrectInlinePrompt : UIView <UIKeyboardCandidateList> {
     struct CGRect { 
@@ -29,8 +29,11 @@
     UIView *m_typedTextView;
 }
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calculateRectForExpandedHitRegion;
++ (void)_initializeSafeCategory;
+
 - (void)_candidateSelected:(id)arg1;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (void)candidateAcceptedAtIndex:(NSUInteger)arg1;
 - (id)candidateAtIndex:(NSUInteger)arg1;
 - (void)configureKeyboard:(id)arg1;
@@ -48,6 +51,7 @@
 - (NSUInteger)index;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAcceptableTextEffectsFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 afterScrollBy:(float)arg2;
+- (BOOL)isAccessibilityElement;
 - (void)layout;
 - (float)maximumCandidateWidth;
 - (void)mouseDown:(struct __GSEvent { }*)arg1;
@@ -70,8 +74,10 @@
 - (void)showNextCandidate;
 - (void)showNextPage;
 - (void)showPageAtIndex:(NSUInteger)arg1;
+- (void)showPreviousCandidate;
 - (void)showPreviousPage;
 - (NSInteger)textEffectsVisibilityLevel;
+- (NSInteger)textEffectsVisibilityLevelWhenKey;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

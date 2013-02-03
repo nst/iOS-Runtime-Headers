@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSArray, NSString, VMUCallTreeNode;
+@class VMUCallTreeNode, NSString, NSArray;
 
 @interface VMUCallTreeNode : NSObject {
     union { 

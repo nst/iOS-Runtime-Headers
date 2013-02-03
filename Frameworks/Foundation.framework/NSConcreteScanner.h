@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSCharacterSet, NSString;
+@class NSString, NSCharacterSet;
 
 @interface NSConcreteScanner : NSScanner {
     struct { 

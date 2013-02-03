@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSMutableArray, AVQueue;
+@class AVQueue, NSMutableArray;
 
 @interface AVPlaybackQueue : NSObject {
     AVQueue *_avItemQueue;

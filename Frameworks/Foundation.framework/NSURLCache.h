@@ -14,6 +14,7 @@
 + (id)sharedURLCache;
 
 - (struct _CFURLCache { }*)_CFURLCache;
+- (id)_cacheDirectory;
 - (struct { NSInteger x1; NSInteger x2; })_cacheStatistics;
 - (void)_diskCacheClear;
 - (BOOL)_diskCacheCreateDirectory;
@@ -51,6 +52,7 @@
 - (void)dealloc;
 - (NSUInteger)diskCapacity;
 - (id)init;
+- (id)initWithExistingSharedCFURLCache:(struct _CFURLCache { }*)arg1;
 - (id)initWithMemoryCapacity:(NSUInteger)arg1 diskCapacity:(NSUInteger)arg2 diskPath:(id)arg3;
 - (NSUInteger)memoryCapacity;
 - (void)removeAllCachedResponses;

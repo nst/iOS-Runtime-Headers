@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class GQHStyle, GQWrapPointSet, GQDSStyle, GQDWPContainerHint;
+@class GQDWPContainerHint, GQDSStyle, GQWrapPointSet, GQHStyle;
 
 @interface GQHPagesState : GQHState <GQWrapPointGenerator> {
     struct CGRect { 

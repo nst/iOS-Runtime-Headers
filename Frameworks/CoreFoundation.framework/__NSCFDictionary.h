@@ -5,4 +5,24 @@
 @interface __NSCFDictionary : NSMutableDictionary {
 }
 
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+
+- (Class)classForCoder;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (NSUInteger)count;
+- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
+- (void)finalize;
+- (NSUInteger)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)keyEnumerator;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)objectForKey:(id)arg1;
+- (oneway void)release;
+- (void)removeAllObjects;
+- (void)removeObjectForKey:(id)arg1;
+- (id)retain;
+- (NSUInteger)retainCount;
+- (void)setObject:(id)arg1 forKey:(id)arg2;
+- (void)setObservationInfo:(void*)arg1;
+
 @end

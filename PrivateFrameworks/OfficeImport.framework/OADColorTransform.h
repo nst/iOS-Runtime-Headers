@@ -6,8 +6,16 @@
     NSInteger mType;
 }
 
++ (float)applyAlphaTransform:(id)arg1 toAlpha:(float)arg2;
++ (id)applyExpTransformWithValue:(float)arg1 toColor:(id)arg2;
++ (id)applyHSLTransform:(id)arg1 toColor:(id)arg2;
++ (id)applyRGBTransform:(id)arg1 toColor:(id)arg2;
++ (id)applyTransforms:(id)arg1 toColor:(id)arg2;
+
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (NSUInteger)hash;
 - (id)initWithType:(NSInteger)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (NSInteger)type;
 
 @end

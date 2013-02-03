@@ -6,13 +6,18 @@
 }
 
 + (void)addToStack:(id)arg1 dontDimBackground:(BOOL)arg2;
++ (void)alertWindowAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
++ (BOOL)cancelAlertsAnimated:(BOOL)arg1;
++ (BOOL)cancelTopMostAlertAnimated:(BOOL)arg1;
++ (void)createAlertWindowIfNeeded:(BOOL)arg1 deferDisplay:(BOOL)arg2;
 + (void)createAlertWindowIfNeeded:(BOOL)arg1;
 + (void)hideAlertsForTermination;
 + (BOOL)hideTopMostAlertAnimated:(BOOL)arg1;
 + (void)hideTopmostMiniAlert:(NSInteger)arg1;
++ (void)initialize;
 + (void)noteOrientationChangingTo:(NSInteger)arg1;
 + (void)removeFromStack:(id)arg1;
-+ (void)reorientAlertWindowTo:(NSInteger)arg1 animated:(BOOL)arg2;
++ (void)reorientAlertWindowTo:(NSInteger)arg1 animated:(BOOL)arg2 keyboard:(id)arg3;
 + (void)showTopmostMiniAlert;
 + (void)sizeAlertWindowForCurrentOrientation;
 + (BOOL)stackContainsAlert:(id)arg1;

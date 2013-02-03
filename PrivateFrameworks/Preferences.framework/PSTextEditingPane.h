@@ -2,19 +2,22 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UITextField;
+@class PreferencesTextTableCell, UITextField, UITableView;
 
-@interface PSTextEditingPane : PSEditingPane {
+@interface PSTextEditingPane : PSEditingPane <UITableViewDelegate, UITableViewDataSource> {
+    PreferencesTextTableCell *_cell;
+    UITableView *_table;
     UITextField *_textField;
 }
 
-+ (struct CGSize { float x1; float x2; })defaultSize;
-
 - (BOOL)becomeFirstResponder;
-- (BOOL)drawLabel;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
 - (id)preferenceValue;
 - (void)setPreferenceSpecifier:(id)arg1;
 - (void)setPreferenceValue:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
 
 @end

@@ -6,19 +6,19 @@
    See Warning(s) below.
  */
 
-@class NSMutableArray, NSString, EDResources;
+@class NSString, NSMutableArray, EDResources;
 
 @interface EDConditionalFormattingRule : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
     NSUInteger mDifferentialStyleIndex;
     NSMutableArray *mFormulas;
     NSInteger mOperator;
@@ -39,7 +39,7 @@
 + (id)conditionalFormattingRuleWithResources:(id)arg1;
 
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)aboveAverage;
-- (void)addFormula:(id)arg1;
+- (void)addFormula:(id)arg1 worksheet:(id)arg2;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)bottom;
 - (NSInteger)compareToOtherRuleUsingPriority:(id)arg1;
 - (void)dealloc;

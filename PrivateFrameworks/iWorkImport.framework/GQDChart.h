@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDChartModel, GQDSStyle, GQDChartLegend;
+@class GQDChartLegend, GQDChartModel, GQDSStyle;
 
 @interface GQDChart : GQDGraphic {
     BOOL mIsLegendRetained;

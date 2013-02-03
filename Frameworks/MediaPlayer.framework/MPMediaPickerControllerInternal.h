@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString, CALayerHost, <MPMediaPickerControllerDelegate>, UIWindow;
+@class NSString, UIWindow, <MPMediaPickerControllerDelegate>, CALayerHost;
 
 @interface MPMediaPickerControllerInternal : NSObject {
     unsigned int _allowsPickingMultipleItems : 1;

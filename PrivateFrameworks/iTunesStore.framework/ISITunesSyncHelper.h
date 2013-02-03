@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSLock, NSDate;
+@class NSDate, NSLock;
 
 @interface ISITunesSyncHelper : NSObject <ISSingleton> {
     unsigned int _syncRequested : 1;
-    unsigned int _waitingForLock : 1;
     NSInteger _blockSyncCount;
     BOOL _checkedForPurchases;
     NSLock *_lock;
@@ -20,15 +19,14 @@
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
 
+- (void)_beginBlockingSync;
 - (id)_copyLastCheckForPurchasesDate;
-- (void)_syncDidEndWithReason:(NSInteger)arg1;
-- (void)_unblockSyncIfPossible;
+- (void)_endBlockingSync;
 - (void)beginBlockingSync;
 - (void)dealloc;
 - (void)endBlockingSync;
 - (BOOL)iTunesCheckedForPurchasesDuringSync;
 - (BOOL)iTunesIsSynching;
-- (void)iTunesSyncHasBeenBlocked;
 - (void)iTunesSyncHasCompleted:(NSInteger)arg1;
 - (void)iTunesSyncRequestedStart;
 - (id)init;

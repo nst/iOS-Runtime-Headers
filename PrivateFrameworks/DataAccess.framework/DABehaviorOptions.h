@@ -5,7 +5,8 @@
 @interface DABehaviorOptions : NSObject {
 }
 
-+ (BOOL)allowMultipleEASAccounts;
++ (BOOL)allIMAPServersSupportNotesSearch;
++ (BOOL)completelyIgnoreNotes;
 + (double)defaultEASTaskTimeoutOutWasFound:(BOOL*)arg1;
 + (BOOL)ignoreBadLDAPCerts;
 + (BOOL)ignoreSupportedCommands;

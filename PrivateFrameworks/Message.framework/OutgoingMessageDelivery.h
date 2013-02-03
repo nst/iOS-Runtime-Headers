@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSArray, NSString, MailDelivery, MutableMessageHeaders, MailAccount, Message, PlainTextDocument, DeliveryAccount;
+@class Message, MFMailDelivery, MailAccount, PlainTextDocument, MutableMessageHeaders, NSString, DeliveryAccount, NSArray;
 
-@interface OutgoingMessageDelivery : WRObject {
+@interface OutgoingMessageDelivery : MFWeakObject {
     MailAccount *_archiveAccount;
-    MailDelivery *_currentDeliveryObject;
+    MFMailDelivery *_currentDeliveryObject;
     id _delegate;
     DeliveryAccount *_deliveryAccount;
     MutableMessageHeaders *_headers;

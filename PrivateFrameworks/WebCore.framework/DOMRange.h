@@ -13,10 +13,11 @@
 @property(readonly) NSInteger endOffset;
 @property(readonly) NSInteger startOffset;
 
++ (id)rangeForFirstPosition:(id)arg1 second:(id)arg2;
+
 - (id)_text;
 - (id)asDomNode;
 - (id)asDomRange;
-- (id)attachmentURLs;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingBox;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
 - (BOOL)canShrinkDirectlyToTextOnly;
@@ -37,8 +38,12 @@
 - (id)description;
 - (void)detach;
 - (id)enclosingDocument;
+- (id)enclosingWordRange;
 - (id)endContainer;
 - (NSInteger)endOffset;
+- (id)endPosition;
+- (void)expand:(id)arg1;
+- (void)extend:(unsigned long)arg1 inDirection:(NSInteger)arg2;
 - (id)extractContents;
 - (void)finalize;
 - (void)insertNode:(id)arg1;
@@ -49,6 +54,9 @@
 - (id)largerParent;
 - (id)lineBoxRects;
 - (id)markupString;
+- (id)mf_attachmentURLs;
+- (id)mf_stringValue;
+- (void)move:(unsigned long)arg1 inDirection:(NSInteger)arg2;
 - (id)parentBlock;
 - (id)rangeOfContents;
 - (BOOL)rendersAsBlock;
@@ -65,10 +73,11 @@
 - (void)setStartBefore:(id)arg1;
 - (id)startContainer;
 - (NSInteger)startOffset;
+- (id)startPosition;
 - (BOOL)strictlyContainsBlock:(id)arg1;
-- (id)stringValue;
 - (void)surroundContents:(id)arg1;
 - (id)text;
+- (id)textRects;
 - (id)toString;
 - (void)unionWithRange:(id)arg1;
 - (id)webArchive;

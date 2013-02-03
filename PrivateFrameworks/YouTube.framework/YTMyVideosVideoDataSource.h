@@ -6,6 +6,5 @@
 }
 
 - (void)reloadData;
-- (void)removeAllVideos;
 
 @end

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class MFFont, NSColorStub, MFTransform, NSObject<MFDeviceDriver>, MFPen, MFBrush, MFPalette, MFPath;
+@class NSObject<MFDeviceDriver>, MFFont, MFBrush, NSColorStub, MFTransform, MFPalette, MFPen, MFPath;
 
 @interface MFDeviceContext : NSObject <NSCopying> {
     struct CGPoint { 

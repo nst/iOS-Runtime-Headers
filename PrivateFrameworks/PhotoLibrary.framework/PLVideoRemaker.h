@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString, AVRemaker, PLProgressView, NSTimer;
+@class AVRemaker, PLProgressView, NSString, NSTimer;
 
 @interface PLVideoRemaker : NSObject {
     id _delegate;
@@ -18,8 +18,10 @@
     NSString *_trimmedPath;
 }
 
++ (void)_initializeSafeCategory;
 + (double)maximumDurationForTrimMode:(NSInteger)arg1;
 
+- (void)_didEndRemakingWithTemporaryPath:(id)arg1;
 - (void)_remakerDidFinish:(id)arg1;
 - (void)_removeProgressTimer;
 - (void)_resetProgressTimer;

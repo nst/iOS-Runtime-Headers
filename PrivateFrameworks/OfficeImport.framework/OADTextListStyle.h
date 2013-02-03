@@ -12,7 +12,11 @@
 - (id)defaultProperties;
 - (void)flatten;
 - (id)init;
+- (id)initWithDefaults;
+- (void)overrideWithTextStyle:(id)arg1;
 - (id)propertiesForListLevel:(NSUInteger)arg1;
+- (void)removeUnnecessaryOverrides;
 - (void)setParentTextListStyle:(id)arg1;
+- (void)setPropertiesForListLevel:(NSUInteger)arg1 properties:(id)arg2;
 
 @end

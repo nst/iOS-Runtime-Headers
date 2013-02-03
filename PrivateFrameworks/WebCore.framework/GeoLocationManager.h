@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class GeoLocationManager, CLLocationManager;
+@class CLLocationManager, GeoLocationManager;
 
 @interface GeoLocationManager : NSObject <CLLocationManagerDelegate> {
     struct GeolocationServiceCoreLocation { int (**x1)(); struct GeolocationServiceClient {} *x2; struct RetainPtr<GeoLocationManager> { 
@@ -19,6 +19,7 @@
     double m_accuracy;
         } x5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x6; } *m_callback;
     CLLocationManager *m_locationMgr;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*m_isSuspended;
 }
 
 - (void)createOnMainThread;

@@ -2,15 +2,16 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPPortraitControlsOverlay, MPItem, MPTextView;
+@class MPItem, MPTextView, MPNowPlayingItemQueueInfoButton, MPPortraitControlsOverlay;
 
-@interface MPPortraitInfoOverlay : UIView {
+@interface MPPortraitInfoOverlay : UIView <MPPlaybackControlsDelegate> {
     unsigned int _transitioning : 1;
     unsigned int _allowsDetailScrubbing : 1;
     MPPortraitControlsOverlay *_controlsView;
     id _delegate;
     MPTextView *_displayableTextView;
     MPItem *_item;
+    MPNowPlayingItemQueueInfoButton *_itemQueueInfoButton;
     NSUInteger _visibleParts;
 }
 
@@ -19,19 +20,29 @@
 @property id delegate;
 @property NSUInteger visibleParts;
 
+- (BOOL)_configureNowPlayingQueueInfoButton:(id)arg1 item:(id)arg2 time:(double)arg3;
 - (id)_controlsView;
+- (void)_crossedTimeMarkerNotification:(id)arg1;
 - (void)_displayableTextAvailable:(id)arg1;
 - (void)_displayableTextRemovalAnimationDidStop;
 - (id)_displayableTextView;
 - (void)_hideControlsAndTextView;
 - (void)_hideSnapshotAnimationFinished;
+- (id)_itemQueueInfoButton:(BOOL)arg1;
 - (void)_playbackStateChanged:(id)arg1;
 - (void)_reloadDisplayableTextViewForItem:(id)arg1 animate:(BOOL)arg2;
 - (void)_reloadViews;
 - (void)_removeDisplayableTextWithAnimation:(BOOL)arg1;
+- (void)_updateAllItemDependenciesForItem:(id)arg1 animate:(BOOL)arg2;
+- (void)_updateDisplayableTextViewArtworkForItem:(id)arg1 time:(double)arg2;
 - (void)_updateDisplayableTextViewForItem:(id)arg1 animate:(BOOL)arg2;
+- (void)_updateItemQueueInfoButtonForItem:(id)arg1 atTime:(double)arg2 animate:(BOOL)arg3;
 - (BOOL)allowsDetailScrubbing;
 - (BOOL)controlsOverlay:(id)arg1 shouldUseDetailScrubberForItem:(id)arg2;
+- (void)controlsOverlayDetailSliderInstructionOverlayWillHide:(id)arg1;
+- (void)controlsOverlayDetailSliderInstructionOverlayWillShow:(id)arg1;
+- (void)controlsOverlayDetailSliderTrackingDidBegin:(id)arg1;
+- (void)controlsOverlayDetailSliderTrackingDidEnd:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)didMoveToSuperview;

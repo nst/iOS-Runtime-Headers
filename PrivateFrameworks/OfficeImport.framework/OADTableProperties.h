@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADTableStyle, NSString, NSArray;
+@class NSArray, NSString, OADTableStyle;
 
 @interface OADTableProperties : OADDrawableProperties <OADEffectsParent> {
     BOOL mBandColumn;

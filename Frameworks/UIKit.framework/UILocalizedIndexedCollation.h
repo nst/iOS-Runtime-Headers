@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, NSLocale;
+@class NSLocale, NSString, NSArray;
 
 @interface UILocalizedIndexedCollation : NSObject {
     NSLocale *_locale;

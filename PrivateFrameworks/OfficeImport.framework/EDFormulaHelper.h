@@ -6,30 +6,32 @@
    See Warning(s) below.
  */
 
-@class EDCell, EDWorkbook, ECMappingContext;
+@class ECMappingContext, EDWorksheet, EDWorkbook;
 
-@interface EDFormulaHelper : NSObject {
-     /* Encoded args for previous method: @20@0:4@8@12B16 */
-     /* Encoded args for previous method: @20@0:4@8@12B16 */
-    EDCell *mCell;
+@interface EDFormulaHelper : NSObject <EFHelper> {
+     /* Encoded args for previous method: B24@0:4I8I12I16I20 */
+    NSInteger mColumnNumber;
     ECMappingContext *mMappingContext;
+    NSInteger mRowNumber;
     EDWorkbook *mWorkbook;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mImporting;
+    EDWorksheet *mWorksheet;
 }
 
-+ (id)formulaHelperWithWorkbook:(id)arg1 withCell:(id)arg2 isImport:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3;
-
-- (NSUInteger)addExternalAddInName:(id)arg1;
+- (NSInteger)columnNumber;
+- (NSUInteger)createIndexWithType:(NSInteger)arg1 firstSheetIndex:(NSUInteger)arg2 lastSheetIndex:(NSUInteger)arg3;
 - (void)dealloc;
-- (id)initWithWorkbook:(id)arg1 withCell:(id)arg2 isImport:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3;
+- (id)initWithWorkbook:(id)arg1 worksheet:(id)arg2 rowNumber:(NSInteger)arg3 columnNumber:(NSInteger)arg4;
 - (BOOL)isCurrentSheet:(id)arg1;
-- (NSUInteger)resolveAddInLinkReference;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isThereContentOutsideOfLassoBoundsForRowMin:(NSUInteger)arg1 rowMax:(NSUInteger)arg2 columnMin:(NSUInteger)arg3 columnMax:(NSUInteger)arg4;
 - (NSUInteger)resolveFile:(id)arg1;
 - (NSUInteger)resolveFirstSheet:(id)arg1 lastSheet:(id)arg2;
+- (NSInteger)resolveFunctionName:(id)arg1;
 - (NSUInteger)resolveName:(id)arg1;
 - (NSUInteger)resolveSheet:(id)arg1;
 - (id)resolveTable:(id)arg1;
 - (NSUInteger)resolveTableColumn:(id)arg1 columnName:(id)arg2;
 - (NSUInteger)resolveTableToSheetId:(id)arg1;
+- (NSInteger)rowNumber;
+- (id)workbook;
 
 @end

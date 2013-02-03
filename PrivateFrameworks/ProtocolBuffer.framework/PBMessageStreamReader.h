@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class PBStreamReader, <PBMessageStreamDelegate>;
+@class <PBMessageStreamDelegate>, PBStreamReader;
 
 @interface PBMessageStreamReader : NSObject {
     Class _classOfNextMessage;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSKeyValueNonmutatingSetMethodSet, NSObject, NSString;
+@class NSObject, NSString, NSKeyValueNonmutatingSetMethodSet;
 
 @interface NSKeyValueSet : NSSet <NSKeyValueProxyCaching> {
     NSObject *_container;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMElement, WebFrame, NSMutableArray, NSMutableDictionary, DOMHTMLInputElement;
+@class DOMHTMLInputElement, NSMutableArray, NSMutableDictionary, DOMElement, WebFrame;
 
 @interface FormAutoFiller : NSObject {
     NSMutableArray *_autoFilledControls;

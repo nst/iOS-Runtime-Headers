@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObject, NSString, NSMutableSet;
+@class NSMutableSet, NSString, NSManagedObject;
 
 @interface _NSNotifyingWrapperMutableSet : NSMutableSet {
     NSManagedObject *_container;

@@ -13,10 +13,14 @@
 
 + (NSUInteger)defaultFormatterBehavior;
 + (void)initialize;
++ (id)localizedStringFromNumber:(id)arg1 numberStyle:(NSUInteger)arg2;
++ (id)mf_formatInteger:(NSInteger)arg1 withGrouping:(BOOL)arg2;
++ (id)mf_formatUnsignedInteger:(NSUInteger)arg1 withGrouping:(BOOL)arg2;
 + (void)setDefaultFormatterBehavior:(NSUInteger)arg1;
 
 - (void*)__Keynote_NOOP;
 - (void)_regenerateFormatter;
+- (void)_reset;
 - (BOOL)allowsFloats;
 - (BOOL)alwaysShowsDecimalSeparator;
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
@@ -33,8 +37,8 @@
 - (NSUInteger)formatWidth;
 - (NSUInteger)formatterBehavior;
 - (BOOL)generatesDecimalNumbers;
-- (BOOL)getObjectValue:(id*)arg1 forString:(id)arg2 errorDescription:(id*)arg3;
-- (BOOL)getObjectValue:(id*)arg1 forString:(id)arg2 range:(inout struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg3 error:(id*)arg4;
+- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
+- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 range:(inout struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg3 error:(out id*)arg4;
 - (id)groupingSeparator;
 - (NSUInteger)groupingSize;
 - (id)init;

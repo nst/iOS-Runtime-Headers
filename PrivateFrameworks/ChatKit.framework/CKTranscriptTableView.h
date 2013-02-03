@@ -5,6 +5,9 @@
 @interface CKTranscriptTableView : UITableView {
 }
 
++ (void)_initializeSafeCategory;
+
+- (BOOL)isAccessibilityElement;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

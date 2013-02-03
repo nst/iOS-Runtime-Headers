@@ -21,7 +21,7 @@
 
 @property(readonly) BOOL subtitlesAreForced;
 
-- (id)_createMarkupFromAttributedString:(struct __CFAttributedString { }*)arg1;
+- (id)_copyMarkupFromAttributedString:(struct __CFAttributedString { }*)arg1;
 - (id)_htmlColorForColor:(struct CGColor { }*)arg1;
 - (void)clearSubtitle;
 - (void)dealloc;

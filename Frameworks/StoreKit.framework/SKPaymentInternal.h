@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSData, NSString;
+@class NSString, NSData;
 
 @interface SKPaymentInternal : NSObject <NSCopying> {
     NSString *_productIdentifier;

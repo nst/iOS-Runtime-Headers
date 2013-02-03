@@ -11,9 +11,9 @@
 - (id)_history;
 - (void)_saveToDefaults;
 - (void)addVideo:(id)arg1;
+- (void)clearHistory;
 - (void)loadFromDefaults;
 - (NSUInteger)maxVideosToSave;
 - (void)reloadData;
-- (void)removeAllVideos;
 
 @end

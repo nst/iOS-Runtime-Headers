@@ -17,7 +17,7 @@
 - (id)initWithObjects:(id*)arg1 count:(NSUInteger)arg2;
 - (id)member:(id)arg1;
 - (id)objectEnumerator;
-- (void)release;
+- (oneway void)release;
 - (void)removeObject:(id)arg1;
 - (id)retain;
 - (NSUInteger)retainCount;

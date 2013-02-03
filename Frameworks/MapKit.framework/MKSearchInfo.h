@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray, NSString, NSError;
+@class NSError, NSString, NSArray;
 
 @interface MKSearchInfo : NSObject {
     struct CGPoint { 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class VMULinkedListEntry, VMUSymbolOwner;
+@class VMUSymbolOwner, VMULinkedListEntry;
 
 @interface VMULinkedListEntry : NSObject {
     VMULinkedListEntry *_next;

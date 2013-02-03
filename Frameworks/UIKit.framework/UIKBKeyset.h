@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSString;
+@class NSString, NSMutableArray;
 
 @interface UIKBKeyset : NSObject <NSCoding> {
     NSMutableArray *m_keylists;

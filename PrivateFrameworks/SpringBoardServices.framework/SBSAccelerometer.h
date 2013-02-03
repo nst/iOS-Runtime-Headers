@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-@class NSLock, NSThread, <SBSAccelerometerDelegate>;
+@class <SBSAccelerometerDelegate>, NSThread, NSLock;
 
 @interface SBSAccelerometer : NSObject {
     struct __CFRunLoop { } *_accelerometerEventsRunLoop;
@@ -27,7 +27,6 @@
 @property float zThreshold;
 
 - (void)_checkIn;
-- (void)_checkInInBackground;
 - (void)_checkOut;
 - (void)_orientationDidChange;
 - (id)_orientationEventsThread;

@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableArray, CKConversation, CKService;
+@class CKService, NSMutableArray, CKConversation;
 
 @interface CKConversationList : NSObject {
     NSMutableArray *_conversations;
     BOOL _fullyLoaded;
     NSMutableArray *_groupsToDelete;
     CKConversation *_pendingConversation;
+    BOOL _runningInAppIndexer;
     CKService *_service;
 }
 
@@ -17,8 +18,8 @@
 - (void)_addGroupToDeletionSchedule:(NSInteger)arg1;
 - (void)_conversationChanged;
 - (id)_conversationForMessage:(id)arg1 groupID:(NSInteger)arg2 create:(BOOL)arg3;
-- (id)_createConversationForMessage:(id)arg1 groupID:(NSInteger)arg2;
 - (void)_deleteGroups;
+- (id)_newConversationForMessage:(id)arg1 groupID:(NSInteger)arg2;
 - (id)_recipientForMessage:(id)arg1;
 - (id)activeConversations;
 - (void)addConversation:(id)arg1;
@@ -35,9 +36,11 @@
 - (id)initWithService:(id)arg1;
 - (id)loadedConversations;
 - (id)pendingConversation:(BOOL)arg1;
+- (void)reloadConversations;
 - (void)resetCaches;
 - (void)resort;
 - (id)service;
+- (void)setRunningInAppIndexer;
 - (void)unpendConversation;
 - (NSInteger)unreadCount;
 

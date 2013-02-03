@@ -2,19 +2,21 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-@class NSMutableArray, WebDataSource, WAKView, NSMutableSet;
+@class NSMutableSet, WAKView, WebDataSource, NSMutableArray;
 
-@interface WebPluginController : NSObject <WebPluginManualLoader> {
+@interface WebPluginController : NSObject <WebPluginManualLoader, WebPluginContainerCheckController> {
     NSMutableSet *_checksInProgress;
     WebDataSource *_dataSource;
     WAKView *_documentView;
     BOOL _started;
     NSMutableArray *_views;
+    NSMutableArray *_viewsNotInDocument;
 }
 
 + (void)addPlugInView:(id)arg1;
 + (BOOL)isPlugInView:(id)arg1;
 + (id)plugInViewWithArguments:(id)arg1 fromPluginPackage:(id)arg2;
++ (void)pluginViewHidden:(id)arg1;
 
 - (id)URLPolicyCheckReferrer;
 - (void)_cancelOutstandingChecks;
@@ -25,12 +27,14 @@
 - (void)addPlugin:(id)arg1;
 - (void)dealloc;
 - (void)destroyAllPlugins;
+- (void)destroyOnePlugin:(id)arg1;
 - (void)destroyPlugin:(id)arg1;
 - (id)initWithDocumentView:(id)arg1;
 - (BOOL)plugInsAreRunning;
 - (void)pluginView:(id)arg1 receivedData:(id)arg2;
 - (void)pluginView:(id)arg1 receivedError:(id)arg2;
 - (void)pluginView:(id)arg1 receivedResponse:(id)arg2;
+- (void)pluginViewCreated:(id)arg1;
 - (void)pluginViewFinishedLoading:(id)arg1;
 - (BOOL)processingUserGesture;
 - (void)setDataSource:(id)arg1;
@@ -38,6 +42,8 @@
 - (void)showURL:(id)arg1 inFrame:(id)arg2;
 - (void)startAllPlugins;
 - (void)stopAllPlugins;
+- (void)stopOnePlugin:(id)arg1;
+- (id)superlayerForPluginView:(id)arg1;
 - (id)webFrame;
 - (void)webPlugInContainerDidHideFullScreenForView:(id)arg1;
 - (void)webPlugInContainerLoadRequest:(id)arg1 inFrame:(id)arg2;

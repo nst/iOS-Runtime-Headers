@@ -12,8 +12,11 @@
                 long __sig; 
                 BOOL __opaque[40]; 
             } _m; 
+        } x3; id x4; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x5; unsigned char x6; void*x7; unsigned char x8; out in void*x9; void*x10; void*x11; void*x12; void*x13; NSUInteger x14; NSUInteger x15; id x16; void*x17; unsigned char x18; void*x19; unsigned long x20; void*x21; void*x22; void*x23; const void*x24; struct Context {} *x25; struct CGColorSpace {} *x26; struct __CFDictionary {} *x27; NSUInteger x28; NSUInteger x29; struct __CFMachPort {} *x30; struct __CFRunLoopSource {} *x31; struct Shmem {} *x32; struct Shmem {} *x33; float x34; struct Commit {} *x35; struct Generic { 
+            int (**_vptr$GenericContext)(); 
+            struct Context {} *_c; 
      /* Encoded args for previous method: @16@0:4@8B12 */
-        } x3; id x4; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x5; unsigned char x6; void*x7; unsigned char x8; out in void*x9; void*x10; void*x11; void*x12; void*x13; NSUInteger x14; NSUInteger x15; id x16; void*x17; unsigned char x18; void*x19; unsigned long x20; void*x21; void*x22; void*x23; const void*x24; struct Context {} *x25; struct CGColorSpace {} *x26; struct __CFDictionary {} *x27; NSUInteger x28; NSUInteger x29; struct __CFMachPort {} *x30; struct __CFRunLoopSource {} *x31; struct Shmem {} *x32; struct Shmem {} *x33; float x34; struct Commit {} *x35; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; } *_impl;
+        } x36; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; } *_impl;
 }
 
 - (struct CGColorSpace { }*)colorSpace;

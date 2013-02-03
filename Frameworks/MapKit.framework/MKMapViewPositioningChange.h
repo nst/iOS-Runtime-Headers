@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSValue, CLLocation, NSNumber;
+@class CLLocation, NSNumber, NSValue;
 
 @interface MKMapViewPositioningChange : NSObject {
     struct { 
         unsigned int hasFocus : 1; 
         unsigned int isStartVisible : 1; 
-        NSUInteger isEndVisible; 
-        NSUInteger hasComputedMetrics; 
-        NSUInteger shouldScrollToLocation; 
+        unsigned int isEndVisible : 1; 
+        unsigned int hasComputedMetrics : 1; 
+        unsigned int shouldScrollToLocation : 1; 
     NSNumber *_accuracy;
     NSNumber *_distance;
     } _flags;
@@ -41,7 +41,7 @@
 @property BOOL isEndVisible;
 @property BOOL isStartVisible;
 @property NSInteger locationSource;
-@property CGPoint position;
+@property CADoublePoint position;
 @property(readonly) NSUInteger runCount;
 @property BOOL shouldHalo;
 @property BOOL shouldHover;
@@ -77,7 +77,7 @@
 - (BOOL)isStartVisible;
 - (id)location;
 - (NSInteger)locationSource;
-- (struct CGPoint { float x1; float x2; })position;
+- (struct CADoublePoint { double x1; double x2; })position;
 - (id)positionObject;
 - (void)resetMetrics;
 - (NSUInteger)runCount;
@@ -89,7 +89,7 @@
 - (void)setIsStartVisible:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setLocationSource:(NSInteger)arg1;
-- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPosition:(struct CADoublePoint { double x1; double x2; })arg1;
 - (void)setShouldHalo:(BOOL)arg1;
 - (void)setShouldHover:(BOOL)arg1;
 - (void)setShouldScrollToLocation:(BOOL)arg1;

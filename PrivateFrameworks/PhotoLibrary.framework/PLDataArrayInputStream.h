@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSArray, NSMutableData, <PLDataArrayInputStreamProgressDelegate>;
+@class <PLDataArrayInputStreamProgressDelegate>, NSMutableData, NSArray;
 
 @interface PLDataArrayInputStream : NSInputStream {
     struct { 

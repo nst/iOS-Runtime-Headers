@@ -6,7 +6,14 @@
 }
 
 @property(retain,readonly) DOMAbstractView *view;
+@property(readonly) NSInteger charCode;
 @property(readonly) NSInteger detail;
+@property(readonly) NSInteger keyCode;
+@property(readonly) NSInteger layerX;
+@property(readonly) NSInteger layerY;
+@property(readonly) NSInteger pageX;
+@property(readonly) NSInteger pageY;
+@property(readonly) NSInteger which;
 
 - (NSInteger)charCode;
 - (NSInteger)detail;

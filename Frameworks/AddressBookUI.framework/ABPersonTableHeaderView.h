@@ -2,53 +2,94 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIView, <ABPersonTableHeaderViewDelegateProtocol>, ABPersonImageView, ABCardNameControl;
+@class ABPersonImageView, ABNamePropertyGroup, UIImageView, UIView, ABPersonNameDisplayView, ABMultiCellContentView, <ABPersonTableHeaderViewDelegate>, <ABStyleProvider>;
 
 @interface ABPersonTableHeaderView : UIView {
-    <ABPersonTableHeaderViewDelegateProtocol> *_delegate;
+    <ABPersonTableHeaderViewDelegate> *_delegate;
+    ABPersonNameDisplayView *_displayView;
+    BOOL _editing;
+    ABMultiCellContentView *_editingView;
+    UIView *_editingViewContainer;
     UIView *_extraHeaderView;
     ABPersonImageView *_imageView;
-    ABCardNameControl *_nameView;
-    void *_person;
+    UIImageView *_multiplePhotoBackdropView;
+    ABNamePropertyGroup *_namePropertyGroup;
+    BOOL _representsLinkedPeople;
+    BOOL _showsMultiplePhotoBackdropView;
+    <ABStyleProvider> *_styleProvider;
 }
 
 @property(copy) NSString *alternateName;
 @property(retain) UIView *customMessageView;
-@property <ABPersonTableHeaderViewDelegateProtocol> *delegate;
+@property <ABPersonTableHeaderViewDelegate> *delegate;
+@property(readonly) ABPersonNameDisplayView *displayView;
+@property(readonly) ABMultiCellContentView *editingView;
+@property(readonly) UIView *editingViewContainer;
 @property(retain) UIView *extraHeaderView;
 @property(readonly) ABPersonImageView *imageView;
 @property(copy) NSString *message;
 @property(copy) NSString *messageDetail;
 @property(retain) UIFont *messageDetailFont;
 @property(retain) UIFont *messageFont;
-@property(readonly) ABCardNameControl *nameView;
-@property void *person;
+@property(retain) ABNamePropertyGroup *namePropertyGroup;
+@property void *personForImageView;
+@property(retain) <ABStyleProvider> *styleProvider;
+@property BOOL representsLinkedPeople;
 
+- (id)_displayView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_displayViewFrameForWidth:(float)arg1;
+- (struct CGPoint { float x1; float x2; })_displayViewOrigin;
+- (float)_displayViewWidthForWidth:(float)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingViewFrameForWidth:(float)arg1;
+- (struct CGPoint { float x1; float x2; })_editingViewOrigin;
+- (float)_editingViewWidthForWidth:(float)arg1;
+- (float)_extraHeaderViewAvailableWidth;
+- (struct CGPoint { float x1; float x2; })_extraHeaderViewOriginForWidth:(float)arg1 whenEditing:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForEditingView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageViewFrameWhenEditing:(BOOL)arg1;
+- (BOOL)_isSpecialInternalHeaderView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_multiplePhotoBackdropViewFrame;
+- (id)_multiplePhotoBackdropViewImage;
+- (id)_newEditingViewContainerForWidth:(float)arg1;
+- (void)_updateRecordIfNeeded;
+- (void)_updateShowsMultiplePhotoBackdrop;
 - (id)alternateName;
-- (id)createDateMessageStringFromDates:(id)arg1 withMessageFormat:(id)arg2;
+- (BOOL)becomeFirstResponder;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)canResignFirstResponder;
 - (id)customMessageView;
 - (void)dealloc;
 - (id)delegate;
 - (void)deselectAnimated:(BOOL)arg1;
+- (id)displayView;
+- (id)editingView;
+- (id)editingViewContainer;
+- (id)entryFieldForRow:(NSUInteger)arg1;
 - (id)extraHeaderView;
 - (struct CGPoint { float x1; float x2; })extraHeaderViewOrigin;
 - (id)imageView;
 - (void)imageViewSelected:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isFirstResponder;
 - (void)layoutSubviews;
 - (id)message;
 - (id)messageDetail;
 - (id)messageDetailFont;
 - (id)messageFont;
-- (void)nameControlSelected:(id)arg1;
-- (id)nameView;
-- (void*)person;
+- (id)namePropertyGroup;
+- (void*)personForImageView;
+- (void*)personForName;
+- (void)reloadData;
 - (void)reloadImageData;
 - (void)reloadNameDataAnimated:(BOOL)arg1;
+- (void)reloadNameDataButNotModelAnimated:(BOOL)arg1;
+- (BOOL)representsLinkedPeople;
+- (BOOL)resignFirstResponder;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (void)setAlternateName:(id)arg1;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setCustomMessageView:(id)arg1;
-- (void)setDates:(id)arg1 withMessageFormat:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setExtraHeaderView:(id)arg1;
@@ -56,8 +97,12 @@
 - (void)setMessageDetail:(id)arg1;
 - (void)setMessageDetailFont:(id)arg1;
 - (void)setMessageFont:(id)arg1;
-- (void)setPerson:(void*)arg1;
+- (void)setNamePropertyGroup:(id)arg1;
+- (void)setPersonForImageView:(void*)arg1;
 - (void)setPrimaryProperty:(NSInteger)arg1 countryCode:(id)arg2;
-- (void)sizeToFit;
+- (void)setRepresentsLinkedPeople:(BOOL)arg1;
+- (void)setStyleProvider:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)styleProvider;
 
 @end

@@ -7,22 +7,23 @@
  */
 
 @interface EDProtection : NSObject <NSCopying> {
+     /* Encoded args for previous method: @16@0:4B8B12 */
      /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: @16@0:4B8B12 */
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mHidden;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mLocked;
 }
 
++ (id)protectionWithHidden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1 locked:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
+
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (NSUInteger)hash;
 - (id)init;
+- (id)initWithHidden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1 locked:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToProtection:(id)arg1;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isHidden;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isLocked;
-- (void)setHidden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setLocked:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 
 @end

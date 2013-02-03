@@ -22,6 +22,7 @@
 - (NSInteger)mediaType;
 - (id)newPreview:(NSInteger)arg1 highlight:(BOOL)arg2;
 - (id)newTranscodingForMMSWithMaxByteLength:(NSInteger)arg1;
+- (BOOL)shouldGeneratePreviewInBackground;
 - (BOOL)shouldTranscodeForMMS;
 
 @end

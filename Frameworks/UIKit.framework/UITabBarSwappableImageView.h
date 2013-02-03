@@ -9,6 +9,7 @@
     NSInteger _buttonTag;
     NSInteger _currentAnimation;
     BOOL _flipped;
+    float _scale;
     BOOL _showAlternate;
     UITabBar *_tabBar;
     id _value;
@@ -19,7 +20,6 @@
 - (void)dealloc;
 - (id)initWithImage:(id)arg1 alternateImage:(id)arg2;
 - (void)setCurrentImage;
-- (void)setFlipped:(BOOL)arg1;
 - (void)showAlternateImage:(BOOL)arg1;
 
 @end

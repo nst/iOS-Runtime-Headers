@@ -2,13 +2,16 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIImage, NSArray;
+@class NSArray, <ABStyleProvider>, UIImage;
 
 @interface ABClippingImageView : UIImageView {
     UIImage *_clippingImage;
     UIImage *_image;
     NSArray *_labelLines;
+    <ABStyleProvider> *_styleProvider;
 }
+
+@property(retain) <ABStyleProvider> *styleProvider;
 
 - (BOOL)_canDrawContent;
 - (void)dealloc;
@@ -16,5 +19,7 @@
 - (void)setClippingImage:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setLabel:(id)arg1;
+- (void)setStyleProvider:(id)arg1;
+- (id)styleProvider;
 
 @end

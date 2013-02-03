@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class <VMUMemory>, VMUMachTaskContainer, NSArray;
+@class VMUMachTaskContainer, NSArray, <VMUMemory>;
 
 @interface VMUTask : NSObject {
     NSArray *_headers;

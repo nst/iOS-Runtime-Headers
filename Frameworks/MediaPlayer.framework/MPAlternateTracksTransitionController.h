@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIImageView, MPVideoViewController;
+@class MPVideoViewController, UIImageView;
 
 @interface MPAlternateTracksTransitionController : MPTransitionController {
     UIImageView *_snapshotCoverImageView;

@@ -16,6 +16,5 @@
 - (struct { id x1; id x2; })_proxyLocator;
 - (void)_proxyNonGCFinalize;
 - (void)dealloc;
-- (void)finalize;
 
 @end

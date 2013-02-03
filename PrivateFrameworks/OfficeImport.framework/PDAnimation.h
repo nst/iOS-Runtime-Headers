@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class PDTimeListNodeList, NSMutableDictionary;
+@class PDTimeListNodeList, TSUNoCopyDictionary;
 
 @interface PDAnimation : NSObject {
-    NSMutableDictionary *mBuildMap;
+    TSUNoCopyDictionary *mBuildMap;
     PDTimeListNodeList *mTimeListNodeList;
 }
 

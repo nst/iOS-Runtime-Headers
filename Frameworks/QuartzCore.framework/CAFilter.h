@@ -4,8 +4,8 @@
 
 @class NSString;
 
-@interface CAFilter : NSObject <NSCopying, NSMutableCopying> {
-    struct _CAAttrList { } *_attr;
+@interface CAFilter : NSObject <NSCopying, NSMutableCopying, NSCoding> {
+    void *_attr;
     void *_cache;
     NSUInteger _flags;
     NSString *_name;
@@ -17,6 +17,7 @@
 @property BOOL cachesInputImage;
 @property(getter=isEnabled) BOOL enabled;
 
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)filterTypes;
 + (id)filterWithName:(id)arg1;
 + (id)filterWithType:(id)arg1;
@@ -25,8 +26,9 @@
 - (BOOL)cachesInputImage;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)didChangeValueForKey:(id)arg1;
 - (BOOL)enabled;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1;
 - (id)initWithType:(id)arg1;
 - (BOOL)isEnabled;
@@ -39,6 +41,5 @@
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)type;
 - (id)valueForKey:(id)arg1;
-- (void)willChangeValueForKey:(id)arg1;
 
 @end

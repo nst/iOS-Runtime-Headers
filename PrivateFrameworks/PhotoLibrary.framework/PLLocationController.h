@@ -2,35 +2,35 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableArray, NSDictionary, CLLocationManager, CLHeading, NSString;
+@class NSString, CLLocationManager, NSDictionary, NSMutableArray;
 
 @interface PLLocationController : NSObject <CLLocationManagerDelegate> {
     NSDictionary *_exifDictionary;
+    BOOL _isEnabled;
+    BOOL _isHeadingEnabled;
     BOOL _isUpdating;
-    CLHeading *_lastHeading;
     CLLocationManager *_locationManager;
-    NSMutableArray *_locationPendingPaths;
+    NSMutableArray *_locationPendingAssets;
     NSString *_locationStr;
-    NSInteger _managerRefCount;
-    NSMutableArray *_pendingPathTimestamps;
-    NSDictionary *_supportDOPInfo;
 }
 
 + (id)sharedInstance;
 
-- (BOOL)_addLocationToMediaPath:(id)arg1;
-- (BOOL)_isRunning;
-- (void)_locationlessImageFinishedWriting:(id)arg1 withError:(id)arg2 atPath:(id)arg3;
-- (void)_updatePendingImagePaths;
-- (void)addLocationToMediaAtPathWhenAvailable:(id)arg1;
+- (BOOL)_addLocationToAsset:(id)arg1;
+- (void)_albumsChanged:(id)arg1;
+- (void)_applicationStateChanged:(id)arg1;
+- (void)_startUpdating;
+- (void)_stopUpdating;
+- (void)_updateLocationRunState;
+- (void)_updatePendingAssets;
+- (void)addLocationToMediaWithAssetURLWhenAvailable:(id)arg1 deviceOrientation:(NSInteger)arg2 cameraWasRearFacing:(BOOL)arg3;
 - (void)dealloc;
-- (BOOL)isUpdating;
+- (id)init;
 - (id)location;
-- (id)locationEXIFDictionary;
-- (void)locationManager:(id)arg1 didUpdateHeading:(id)arg2;
-- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3 usingSupportInfo:(id)arg4;
+- (id)locationDictionaryForImageWithDeviceOrientation:(NSInteger)arg1 rearFacingCamera:(BOOL)arg2;
+- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
 - (id)locationString;
-- (void)start;
-- (void)stop;
+- (void)setEnabled:(BOOL)arg1;
+- (void)setHeadingEnabled:(BOOL)arg1;
 
 @end

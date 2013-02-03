@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class LBSGCellularProfile, LBSGLocation, LBSGGeocodeRequest;
+@class LBSGGeocodeRequest, LBSGCellularProfile, LBSGLocation;
 
 @interface LBSGLocRequestElement : PBRequest {
     LBSGCellularProfile *_cellularProfile;

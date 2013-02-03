@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface CAValueFunction : NSObject {
+@interface CAValueFunction : NSObject <NSCoding> {
     void *_impl;
     NSString *_string;
 }
@@ -15,9 +15,11 @@
 
 - (struct Object { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (id)_initWithName:(NSInteger)arg1;
-- (BOOL)apply:(const float*)arg1 result:(float*)arg2 parameterFunction:(int (*)())arg3 context:(void*)arg4;
-- (BOOL)apply:(const float*)arg1 result:(float*)arg2;
+- (BOOL)apply:(const double*)arg1 result:(double*)arg2 parameterFunction:(int (*)())arg3 context:(void*)arg4;
+- (BOOL)apply:(const double*)arg1 result:(double*)arg2;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (unsigned long)inputCount;
 - (id)name;
 - (unsigned long)outputCount;

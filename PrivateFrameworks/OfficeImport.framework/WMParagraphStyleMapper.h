@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class WDParagraphProperties, WDParagraph, WMParagraphStyle;
+@class WDParagraph, WMParagraphStyle, WDParagraphProperties;
 
 @interface WMParagraphStyleMapper : CMMapper {
      /* Encoded args for previous method: B16@0:4i8i12 */

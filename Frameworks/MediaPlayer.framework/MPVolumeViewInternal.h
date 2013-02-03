@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIButton, UILabel, MPAudioDeviceController, MPVolumeSlider;
+@class UIButton, UILabel, MPVolumeSlider, MPAudioDeviceController;
 
 @interface MPVolumeViewInternal : NSObject {
     MPAudioDeviceController *_audioDeviceController;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSString, UIImage, NSSet;
+@class UIImage, NSString, UIView, NSSet;
 
 @interface UITabBarItem : UIBarItem {
     struct UIEdgeInsets { 
@@ -43,9 +43,13 @@
 @property id target;
 @property BOOL viewIsCustom;
 
++ (void)_initializeSafeCategory;
+
 - (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2;
 - (id)_internalTemplateImage;
 - (id)_internalTitle;
+- (void)_setInternalTemplateImage:(id)arg1;
+- (void)_setInternalTitle:(id)arg1;
 - (void)_updateView;
 - (SEL)action;
 - (BOOL)animatedBadge;

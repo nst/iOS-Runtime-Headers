@@ -31,7 +31,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)name;
 - (NSInteger)port;
-- (id)protocolSpecificInformation;
 - (void)publish;
 - (void)publishWithOptions:(NSUInteger)arg1;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
@@ -39,7 +38,6 @@
 - (void)resolveWithTimeout:(double)arg1;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setProtocolSpecificInformation:(id)arg1;
 - (BOOL)setTXTRecordData:(id)arg1;
 - (void)startMonitoring;
 - (void)stop;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSMutableDictionary, GKContentView, NSString, NSMutableArray, UITableView, NSTimer;
+@class GKContentView, UITableView, NSString, NSTimer, NSMutableArray, NSMutableDictionary;
 
 @interface GKPeerPickerViewController : UIViewController {
     BOOL _alertPresented;

@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPItem, MPTransitionController, NSTimer, MPViewController;
+@class MPItem, MPViewController, MPTransitionController, NSTimer;
 
 @interface MPViewController : UIViewController {
     unsigned int _appearing : 1;
     unsigned int _observesApplicationSuspendResumeEventsOnly : 1;
     id _delegate;
     NSTimer *_idleTimerDisablerTimer;
+    NSInteger _interfaceOrientation;
     MPItem *_item;
-    NSInteger _orientation;
     MPTransitionController *_pushedTransitionController;
     MPViewController *_pushedViewController;
 }
@@ -21,19 +21,20 @@
 @property BOOL observesApplicationSuspendResumeEventsOnly;
 @property NSInteger orientation;
 
+- (BOOL)_canReloadView;
 - (void)_disableIdleTimer:(id)arg1;
 - (void)_popTransitionEnded:(id)arg1;
 - (void)_pushTransitionEnded:(id)arg1;
 - (void)applicationDidResumeEventsOnly;
 - (void)applicationDidSuspendEventsOnly;
 - (void)beginIgnoringChangeTypes:(NSUInteger)arg1;
-- (BOOL)canDisplayItem:(id)arg1 withOrientation:(NSInteger)arg2;
+- (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(NSInteger)arg2;
 - (void)clearWeakReferencesToObject:(id)arg1;
 - (id)copyOverlayViewForTransitionToItem:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)didChangeToOrientation:(NSInteger)arg1;
-- (NSInteger)displayableOrientationForOrientation:(NSInteger)arg1;
+- (void)didChangeToInterfaceOrientation:(NSInteger)arg1;
+- (NSInteger)displayableInterfaceOrientationForInterfaceOrientation:(NSInteger)arg1;
 - (void)endIgnoringChangeTypes:(NSUInteger)arg1;
 - (BOOL)idleTimerDisabled;
 - (id)init;
@@ -52,12 +53,11 @@
 - (void)setObservesApplicationSuspendResumeEventsOnly:(BOOL)arg1;
 - (void)setOrientation:(NSInteger)arg1 animate:(BOOL)arg2;
 - (void)setOrientation:(NSInteger)arg1;
-- (void)setView:(id)arg1;
 - (void)startTicking;
 - (void)stopTicking;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)willChangeToOrientation:(NSInteger)arg1;
+- (void)willChangeToInterfaceOrientation:(NSInteger)arg1;
 
 @end

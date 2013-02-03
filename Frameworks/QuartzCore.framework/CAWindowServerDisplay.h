@@ -10,18 +10,23 @@
 @property(copy) NSString *TVSignalType;
 @property(readonly) NSString *deviceName;
 @property(readonly) NSString *name;
+@property(copy) NSString *orientation;
 @property(getter=isBlanked) BOOL blanked;
 @property(readonly) CGRect bounds;
+@property float contrast;
 @property BOOL invertsColors;
+@property(getter=isMirroringEnabled) BOOL mirroringEnabled;
 @property(readonly) NSUInteger rendererFlags;
+@property NSInteger tag;
 
 - (id)TVMode;
 - (id)TVSignalType;
-- (id)_initWithCADisplayServer:(struct Server { int (**x1)(); struct SpinLock { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; struct Display {} *x3; struct __CFString {} *x4; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_5_1_1; } x5; struct Condition { struct _opaque_pthread_cond_t { long x_1_2_1; BOOL x_1_2_2[24]; } x_6_1_1; } x6; NSUInteger x7; struct Context {} **x8; NSUInteger x9; NSUInteger x10; struct SpinLock { struct { NSInteger x_1_2_1; } x_11_1_1; } x11; struct PendingOperation {} *x12; struct Context {} *x13; struct Context {} *x14; NSUInteger x15; struct Shape {} *x16; NSUInteger x17; struct _CARenderOGLContext {} *x18; double x19; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg1;
+- (id)_initWithCADisplayServer:(struct Server { int (**x1)(); struct SpinLock { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; struct Display {} *x3; struct __CFString {} *x4; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_5_1_1; } x5; struct Context {} **x6; NSUInteger x7; NSUInteger x8; struct SpinLock { struct { NSInteger x_1_2_1; } x_9_1_1; } x9; struct PendingOperation {} *x10; struct Context {} *x11; struct Context {} *x12; NSUInteger x13; struct Shape {} *x14; NSUInteger x15; struct Context {} *x16; double x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; }*)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (NSUInteger)clientPortAtPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (NSUInteger)contextIdAtPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (id)contextIdsWithClientPort:(NSUInteger)arg1;
+- (float)contrast;
 - (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toContextId:(NSUInteger)arg2;
 - (void)dealloc;
 - (id)description;
@@ -30,11 +35,18 @@
 - (void)invalidate;
 - (BOOL)invertsColors;
 - (BOOL)isBlanked;
+- (BOOL)isMirroringEnabled;
 - (id)name;
+- (id)orientation;
 - (NSUInteger)rendererFlags;
 - (void)setBlanked:(BOOL)arg1;
+- (void)setContrast:(float)arg1;
 - (void)setInvertsColors:(BOOL)arg1;
+- (void)setMirroringEnabled:(BOOL)arg1;
+- (void)setOrientation:(id)arg1;
 - (void)setTVMode:(id)arg1;
 - (void)setTVSignalType:(id)arg1;
+- (void)setTag:(NSInteger)arg1;
+- (NSInteger)tag;
 
 @end

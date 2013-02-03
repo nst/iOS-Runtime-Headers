@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectModel, NSMutableDictionary, NSString, NSData, NSEntityDescription;
+@class NSEntityDescription, NSMutableDictionary, NSString, NSData, NSManagedObjectModel;
 
 @interface NSEntityDescription : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
     struct __entityDescriptionFlags { 
@@ -13,7 +13,9 @@
         unsigned int _skipValidation : 1; 
         unsigned int _hasPropertiesIndexedBySpotlight : 1; 
         unsigned int _hasPropertiesStoredInTruthFile : 1; 
-        unsigned int _reservedEntityDescription : 25; 
+        unsigned int _rangesAreInDataBlob : 1; 
+        unsigned int _hasAttributesWithExternalDataReferences : 1; 
+        unsigned int _reservedEntityDescription : 23; 
     NSInteger _cd_rc;
     NSString *_classNameForEntity;
     } _entityDescriptionFlags;
@@ -49,14 +51,18 @@
 - (void)_createCachesAndOptimizeState;
 - (Class)_entityClass;
 - (void)_flattenProperties;
+- (BOOL)_hasAttributesWithExternalDataReferences;
 - (BOOL)_hasPropertiesIndexedBySpotlight;
 - (BOOL)_hasPropertiesStoredInTruthFile;
 - (id)_initWithName:(id)arg1;
 - (BOOL)_isEditable;
 - (BOOL)_isFlattened;
 - (BOOL)_isInheritedPropertyNamed:(id)arg1;
+- (void*)_leopardStyleAttributesByName;
+- (void*)_leopardStyleRelationshipsByName;
 - (id)_localRelationshipNamed:(id)arg1;
 - (long)_modelsReferenceID;
+- (id)_newDictionaryContainingPropertiesOfType:(NSUInteger)arg1;
 - (id)_newMappingForPropertiesOfRange:(NSUInteger)arg1;
 - (id)_new_implicitlyObservedKeys;
 - (unsigned long)_offsetRelationshipIndex:(unsigned long)arg1 fromSuperEntity:(id)arg2 andIsToMany:(BOOL)arg3;
@@ -82,6 +88,7 @@
 - (BOOL)_subentitiesIncludes:(id)arg1;
 - (id)_subentityNamed:(id)arg1;
 - (void)_throwIfNotEditable;
+- (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 uniquedMappings:(id)arg6 entities:(id)arg7;
 - (id)attributeKeys;
 - (id)attributesByName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -98,6 +105,7 @@
 - (BOOL)isAbstract;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isKindOfEntity:(id)arg1;
+- (id)knownKeysMappingStrategy;
 - (id)managedObjectClassName;
 - (id)managedObjectModel;
 - (id)name;

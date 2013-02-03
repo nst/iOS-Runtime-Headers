@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, NSString;
+@class NSString, NSMutableArray;
 
 @interface GMMDirectionsOptionDefinition : PBCodable {
     NSMutableArray *_allowableValuess;

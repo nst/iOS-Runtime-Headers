@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString;
+@class MPMediaItemCollection;
 
 @interface PLPhotosDefaults : NSObject {
-    NSString *_musicForSlideshow;
+    MPMediaItemCollection *_musicCollection;
     NSInteger _secondsPerSlide;
+    BOOL _shouldPlayMusic;
     BOOL _shouldRepeat;
     BOOL _shouldShuffle;
     NSInteger _transition;
@@ -15,9 +16,14 @@
 + (NSInteger)randomTransition;
 + (id)sharedInstance;
 
+- (void)dealloc;
 - (id)init;
-- (id)musicForSlideshow;
+- (id)musicCollection;
 - (NSInteger)secondsPerSlide;
+- (void)setMusicCollection:(id)arg1;
+- (void)setPhotoDefaultValues;
+- (void)setShouldPlayMusic:(BOOL)arg1;
+- (void)setTransition:(NSInteger)arg1;
 - (BOOL)shouldPlayMusic;
 - (BOOL)shouldRepeat;
 - (BOOL)shouldShuffle;

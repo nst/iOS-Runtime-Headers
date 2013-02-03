@@ -35,6 +35,8 @@
 @property BOOL isInPlayQueue;
 @property BOOL isPreparingForInspection;
 
++ (id)convertFigTimeDictionaryToTimeIntervalWithKey:(id)arg1 stringURLToNSURLWithKey:(id)arg2 inArrayOfDictionaries:(id)arg3;
+
 - (void)addFPListeners;
 - (BOOL)addToPlayQueue:(struct OpaqueFigPlayer { }*)arg1 afterItem:(struct OpaqueFigPlaybackItem { }*)arg2;
 - (void)applyAttributesFromAVItemToFPItem:(id)arg1;
@@ -44,10 +46,10 @@
 - (void)cacheCurrentDuration;
 - (void)cacheCurrentSize;
 - (id)chapterImageForImageID:(NSInteger)arg1;
-- (id)convertFigTimeDictionaryToTimeIntervalInArrayOfDictionaries:(id)arg1 withKey:(id)arg2;
 - (void)dealloc;
 - (void)ensureFPItem;
 - (id)evenlySpacedThumbnailTimesFromStartTime:(double)arg1 toEndTime:(double)arg2 maxCount:(NSInteger)arg3;
+- (id)formatDetailsForTracks;
 - (struct OpaqueFigPlaybackItem { }*)fpItem;
 - (void)fpItemNotificationInfo:(id)arg1;
 - (void)fpItemNotificationName:(id)arg1 userInfo:(id)arg2;
@@ -62,6 +64,7 @@
 - (id)nextThumbnailTimesStartingAt:(double)arg1 minimumInterval:(double)arg2 forwards:(BOOL)arg3 maxCount:(NSInteger)arg4;
 - (id)playToEndNotificationInfo;
 - (id)propertiesNeededForInspection;
+- (void)release;
 - (void)removeFPListeners;
 - (void)removeFromPlayQueue:(struct OpaqueFigPlayer { }*)arg1;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;

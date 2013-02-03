@@ -11,6 +11,8 @@
 @property NSUInteger connectionTypesMask;
 @property(getter=isVisible,readonly) BOOL visible;
 
++ (void)initialize;
+
 - (void)_createPicker;
 - (NSUInteger)connectionTypesMask;
 - (void)dealloc;

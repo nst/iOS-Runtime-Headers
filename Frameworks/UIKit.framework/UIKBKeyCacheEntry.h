@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBKeyplane, UIKBKey;
+@class UIKBKey, UIKBKeyplane;
 
 @interface UIKBKeyCacheEntry : NSObject {
     UIKBKey *m_key;
@@ -11,6 +11,8 @@
 
 @property(retain,readonly) UIKBKey *key;
 @property(retain,readonly) UIKBKeyplane *keyplane;
+
++ (id)entryWithKey:(id)arg1 keyPlane:(id)arg2;
 
 - (id)initWithKey:(id)arg1 keyPlane:(id)arg2;
 - (id)key;

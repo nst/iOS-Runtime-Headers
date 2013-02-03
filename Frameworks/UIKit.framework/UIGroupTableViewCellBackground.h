@@ -5,37 +5,60 @@
 @class UIView;
 
 @interface UIGroupTableViewCellBackground : UIView {
+    struct { 
+        unsigned int selected : 1; 
     NSInteger _animationCount;
-    BOOL _disableSeparator;
+    UIView *_bottomSeparatorView;
+    } _groupBackgroundFlags;
+    NSInteger _newSectionLocation;
     NSInteger _sectionLocation;
-    UIView *_separatorView;
+    NSInteger _selectionStyle;
+    NSInteger _separatorStyle;
+    UIView *_topSeparatorView;
 }
 
 @property NSInteger sectionLocation;
+@property(getter=isSelected) BOOL selected;
+@property NSInteger selectionStyle;
+@property NSInteger separatorStyle;
 
-+ (void)_flushCacheOnMemoryWarning:(id)arg1;
++ (void)_flushCacheOnNotification:(id)arg1;
 + (void)initialize;
 
 - (id)_backgroundColor;
-- (id)_borderColor;
-- (struct CGImage { }*)_cachedImageWithSize:(struct CGSize { float x1; float x2; })arg1 forBackgroundColor:(id)arg2 borderColor:(id)arg3 fillColor:(id)arg4 leftPhase:(float)arg5 rightPhase:(float)arg6 ignoreSectionLocation:(BOOL)arg7;
+- (id)_bottomShadowColor;
+- (id)_cachedImageForKey:(id)arg1;
+- (id)_contentMaskLayer;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectForContentHeight:(float)arg1;
-- (struct CGContext { }*)_createContextForCachingWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isOpaque:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentsCenter:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentsRect:(BOOL)arg1;
 - (void)_decrementAnimationCount;
 - (id)_fillColor;
 - (void)_incrementAnimationCount;
 - (void)_layoutSubviews:(BOOL)arg1;
+- (float)_pixelDisplayedImageHeight;
+- (id)_roundedRectBezierPathInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withSectionLocation:(NSInteger)arg2 forBorder:(BOOL)arg3 cornerRadiusAdjustment:(float)arg4;
+- (id)_sectionBorderColor;
+- (id)_separatorColor;
 - (void)_setSectionLocationAnimationDidStop;
-- (void)_updateContentsRectAndCenter;
-- (void)_updateSeparatorView;
+- (id)_topShadowColor;
+- (id)_topShadowViewWithColor:(id)arg1;
+- (void)_updateSeparatorViews;
 - (id)backgroundColor;
 - (void)dealloc;
+- (void)displayLayer:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isSelected;
 - (void)layoutSubviews;
 - (NSInteger)sectionLocation;
+- (NSInteger)selectionStyle;
+- (NSInteger)separatorStyle;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setSectionLocation:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)setSectionLocation:(NSInteger)arg1;
+- (void)setSelected:(BOOL)arg1;
+- (void)setSelectionStyle:(NSInteger)arg1;
+- (void)setSeparatorStyle:(NSInteger)arg1;
 
 @end

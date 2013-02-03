@@ -16,7 +16,11 @@
 @property(getter=_mapkit_isCLHeadingFailure,readonly) BOOL _mapkit_CLHeadingFailure;
 @property(getter=_mapkit_isCLLocationUnknown,readonly) BOOL _mapkit_CLLocationUnknown;
 
-+ (id)_errorWithDomain:(id)arg1 code:(NSInteger)arg2 URL:(id)arg3 userInfoObjectsAndKeys:(id)arg4;
++ (id)MCErrorWithDomain:(id)arg1 code:(NSInteger)arg2 description:(id)arg3 errorType:(id)arg4;
++ (id)MCErrorWithDomain:(id)arg1 code:(NSInteger)arg2 descriptionArray:(id)arg3 errorType:(id)arg4;
++ (id)MCErrorWithDomain:(id)arg1 code:(NSInteger)arg2 descriptionArray:(id)arg3 suggestion:(id)arg4 USEnglishSuggestion:(id)arg5 underlyingError:(id)arg6 errorType:(id)arg7;
++ (id)MCErrorWithDomain:(id)arg1 code:(NSInteger)arg2 descriptionArray:(id)arg3 underlyingError:(id)arg4 errorType:(id)arg5;
++ (id)_defaultDescriptionForCode:(NSInteger)arg1;
 + (id)_mapkit_unavailableError;
 + (void)_registerBuiltInFormatters;
 + (void)_registerFormatter:(int (*)())arg1 forErrorKey:(id)arg2 parameters:(const char *)arg3;
@@ -28,11 +32,27 @@
 + (id)_web_errorWithDomain:(id)arg1 code:(NSInteger)arg2 failingURL:(id)arg3;
 + (void)_webkit_addErrorsWithCodesAndDescriptions:(id)arg1 inDomain:(id)arg2;
 + (id)_webkit_errorWithDomain:(id)arg1 code:(NSInteger)arg2 URL:(id)arg3;
++ (id)errorWithCode:(NSInteger)arg1 calendar:(id)arg2;
++ (id)errorWithCode:(NSInteger)arg1 description:(id)arg2;
++ (id)errorWithCode:(NSInteger)arg1 param:(id)arg2;
++ (id)errorWithCode:(NSInteger)arg1;
 + (id)errorWithDomain:(id)arg1 code:(NSInteger)arg2 localizedDescription:(id)arg3;
 + (id)errorWithDomain:(id)arg1 code:(NSInteger)arg2 userInfo:(id)arg3;
 + (id)errorWithStreamDomain:(long)arg1 code:(long)arg2 localizedDescription:(id)arg3;
++ (id)genericErrorWithFile:(const char *)arg1 function:(const char *)arg2 lineNumber:(NSInteger)arg3;
++ (id)serverErrorForCode:(NSInteger)arg1 withReason:(id)arg2;
++ (id)serverErrorForCode:(NSInteger)arg1 withUserInfo:(id)arg2;
++ (id)userErrorForCode:(NSInteger)arg1 underlyingError:(id)arg2;
++ (id)userErrorForServerError:(id)arg1;
 
-- (NSInteger)POP3ResponseCode;
+- (BOOL)MCContainsErrorDomain:(id)arg1 code:(NSInteger)arg2;
+- (id)MCErrorType;
+- (id)MCFindPrimaryError;
+- (id)MCMakePrimaryError;
+- (id)MCUSEnglishDescription;
+- (id)MCUSEnglishSuggestion;
+- (id)MCVerboseDescription;
+- (unsigned long)_cfTypeID;
 - (id)_cocoaErrorString:(id)arg1 fromBundle:(id)arg2 tableName:(id)arg3;
 - (id)_cocoaErrorString:(id)arg1;
 - (id)_cocoaErrorStringWithKind:(id)arg1 variant:(id)arg2;
@@ -52,7 +72,6 @@
 - (id)_web_initWithDomain_nowarn:(id)arg1 code:(NSInteger)arg2 URL:(id)arg3;
 - (id)_web_localizedDescription;
 - (id)_webkit_initWithDomain:(id)arg1 code:(NSInteger)arg2 URL:(id)arg3;
-- (Class)classForCoder;
 - (NSInteger)code;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -60,10 +79,8 @@
 - (id)domain;
 - (void)encodeWithCoder:(id)arg1;
 - (id)errorBySettingFatalError:(BOOL)arg1;
-- (id)errorBySettingValue:(id)arg1 forUserInfoKey:(id)arg2;
 - (void)finalize;
 - (id)helpAnchor;
-- (BOOL)iCalIsEqualToError:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDomain:(id)arg1 code:(NSInteger)arg2 userInfo:(id)arg3;
 - (BOOL)isConnectivityError;
@@ -77,17 +94,15 @@
 - (BOOL)isSecurityError;
 - (BOOL)isServerError;
 - (BOOL)isStreamDomain:(long)arg1 error:(long)arg2;
-- (BOOL)isSubCalAuthError;
-- (BOOL)isSubCalReachabilityError;
-- (BOOL)isUserCancelledError;
 - (id)localizedDescription;
 - (id)localizedFailureReason;
 - (id)localizedRecoveryOptions;
 - (id)localizedRecoverySuggestion;
-- (id)moreInfo;
+- (BOOL)mf_isUserCancelledError;
+- (id)mf_moreInfo;
+- (id)mf_shortDescription;
+- (BOOL)mf_shouldBeReportedToUser;
 - (id)recoveryAttempter;
-- (id)shortDescription;
-- (BOOL)shouldBeReportedToUser;
 - (BOOL)shouldPresentErrorForTaskType:(NSInteger)arg1;
 - (id)userInfo;
 

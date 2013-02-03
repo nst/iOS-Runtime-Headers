@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADDrawable, CMDrawableStyle, NSData, NSString, OADOrientedBounds;
+@class OADOrientedBounds, NSString, NSData, OADDrawable, CMDrawableStyle;
 
 @interface CMDrawableMapper : CMMapper {
     struct CGRect { 

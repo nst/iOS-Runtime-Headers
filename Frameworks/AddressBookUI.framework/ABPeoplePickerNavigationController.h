@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABModel;
+@class NSArray, ABModel;
 
 @interface ABPeoplePickerNavigationController : UINavigationController {
     struct { 
@@ -10,8 +10,10 @@
         unsigned int allowsCancel : 1; 
         unsigned int allowsActions : 1; 
         unsigned int allowsSound : 1; 
+        unsigned int hidesSearchableStores : 1; 
     void *_addressBook;
     NSInteger _behavior;
+    NSArray *_defaultToolbarItems;
     struct __CFArray { } *_displayedProperties;
     } _flags;
     NSInteger _insertionProperty;
@@ -21,17 +23,32 @@
     id _reserved1;
     id _reserved2;
     id _reserved3;
+    id _reserved4;
 }
 
+@property(retain) NSArray *ab_defaultToolbarItems; /* unknown property attribute: Sab_setDefaultToolbarItems: */
 @property void *addressBook;
 @property(copy) NSArray *displayedProperties;
 @property <ABPeoplePickerNavigationControllerDelegate> *peoplePickerDelegate;
+@property(retain) <ABStyleProvider> *styleProvider;
 
 + (void)notifyPreferencesChanged;
 
 - (BOOL)_allowsAutorotation;
+- (void)_applicationEnteringForeground;
 - (void)_performCancel:(id)arg1;
+- (void)_setPopoverController:(id)arg1;
+- (BOOL)_shouldPreventCancelButtonsFromShowing;
 - (void)_updateViewControllerNavigationButtons;
+- (void)ab_changeViewControllerToolbarItemsIfEmpty:(id)arg1 animated:(BOOL)arg2;
+- (void)ab_changeViewControllersToolbarItemsIfEmpty:(BOOL)arg1;
+- (id)ab_defaultToolbarItems;
+- (BOOL)ab_ownsViewControllerToolbarItems:(id)arg1;
+- (void)ab_restoreViewControllerToolbarItems:(id)arg1 animated:(BOOL)arg2;
+- (void)ab_setDefaultToolbarItems:(id)arg1 animated:(BOOL)arg2;
+- (void)ab_setDefaultToolbarItems:(id)arg1;
+- (id)accountsAndGroupsViewController;
+- (void)addChildViewController:(id)arg1;
 - (void*)addressBook;
 - (BOOL)allowsActions;
 - (BOOL)allowsCancel;
@@ -39,8 +56,10 @@
 - (id)bannerTitle;
 - (id)bannerValue;
 - (NSInteger)behavior;
+- (BOOL)ckCanDismissWhenSuspending;
 - (void)dealloc;
 - (id)displayedProperties;
+- (void)hideSearchableStores;
 - (id)init;
 - (id)initAsAddressBook:(BOOL)arg1 withAddressBook:(void*)arg2;
 - (id)initAsAddressBook:(BOOL)arg1;
@@ -51,14 +70,18 @@
 - (BOOL)isDefaultViewControllerVisible;
 - (void)loadState;
 - (id)membersViewController;
+- (void)membersViewControllerClearEditDelegate:(id)arg1;
 - (id)model;
 - (void)notePreferencesChanged;
 - (id)peoplePickerDelegate;
+- (void)personViewController:(id)arg1 requestedLinkForPerson:(void*)arg2;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4 withMemberCell:(id)arg5;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
 - (void)popToDefaultViewController:(BOOL)arg1;
 - (id)promptForViewControllerType:(NSInteger)arg1;
 - (void)pushCleanGroupsAndMembersViewControllersAndLoadState:(BOOL)arg1;
+- (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)removeChildViewController:(id)arg1;
 - (void)saveState;
 - (void)setAddressBook:(void*)arg1;
 - (void)setAllowsCancel:(BOOL)arg1;
@@ -68,13 +91,18 @@
 - (void)setBehavior:(NSInteger)arg1;
 - (void)setDisplayedProperties:(id)arg1;
 - (void)setInsertionValue:(id)arg1 property:(NSInteger)arg2;
+- (void)setParentViewController:(id)arg1;
 - (void)setPeoplePickerDelegate:(id)arg1;
 - (void)setPrompt:(id)arg1 forViewControllerType:(NSInteger)arg2;
 - (void)setPrompt:(id)arg1;
+- (void)setStyleProvider:(id)arg1;
+- (void)setupInitialStackAndLoadState:(BOOL)arg1;
 - (BOOL)shouldShowGroups;
+- (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3 forceDisableEditing:(BOOL)arg4 personViewController:(id*)arg5;
 - (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3 forceDisableEditing:(BOOL)arg4;
 - (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3;
 - (void)showPerson:(void*)arg1;
+- (id)styleProvider;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 

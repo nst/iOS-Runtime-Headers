@@ -24,17 +24,21 @@
 @property(readonly) BOOL _mapkit_isChinaDevice;
 @property(readonly) BOOL _mapkit_isLiveScrollCapable;
 @property(readonly) BOOL _mapkit_isSensitiveUIEnabled;
+@property(readonly) BOOL _mapkit_isTileRequestThrottled;
 @property(readonly) float batteryLevel;
 @property(getter=isBatteryMonitoringEnabled) BOOL batteryMonitoringEnabled;
 @property(readonly) NSInteger batteryState;
 @property(getter=isGeneratingDeviceOrientationNotifications,readonly) BOOL generatesDeviceOrientationNotifications;
+@property(getter=isMultitaskingSupported,readonly) BOOL multitaskingSupported;
 @property NSInteger orientation;
 @property(readonly) NSInteger orientation;
 @property(getter=isProximityMonitoringEnabled) BOOL proximityMonitoringEnabled;
 @property(readonly) BOOL proximityState;
+@property(readonly) NSInteger userInterfaceIdiom;
 
 + (id)currentDevice;
 + (NSInteger)currentDeviceOrientationAllowingAmbiguous:(BOOL)arg1;
++ (id)modelSpecificLocalizedStringKeyForKey:(id)arg1;
 
 - (void)_enableDeviceOrientationEvents:(BOOL)arg1;
 - (BOOL)_mapkit_isChinaDevice;
@@ -42,6 +46,7 @@
 - (BOOL)_mapkit_isSensitiveUIEnabled;
 - (BOOL)_mapkit_isStreetViewEnabled;
 - (BOOL)_mapkit_isStreetViewPIPEnabled;
+- (BOOL)_mapkit_isTileRequestThrottled;
 - (void)_setBatteryLevel:(float)arg1;
 - (void)_setBatteryState:(NSInteger)arg1;
 - (void)_setProximityState:(BOOL)arg1;
@@ -52,17 +57,23 @@
 - (void)endGeneratingDeviceOrientationNotifications;
 - (BOOL)isBatteryMonitoringEnabled;
 - (BOOL)isGeneratingDeviceOrientationNotifications;
+- (BOOL)isMultitaskingSupported;
 - (BOOL)isProximityMonitoringEnabled;
+- (BOOL)isWildcat;
 - (id)localizedModel;
 - (id)model;
 - (id)name;
 - (NSInteger)orientation;
+- (void)playInputClick;
 - (BOOL)proximityState;
 - (void)setBatteryMonitoringEnabled:(BOOL)arg1;
+- (void)setIsWildcat:(BOOL)arg1;
+- (void)setOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)setOrientation:(NSInteger)arg1;
 - (void)setProximityMonitoringEnabled:(BOOL)arg1;
 - (id)systemName;
 - (id)systemVersion;
 - (id)uniqueIdentifier;
+- (NSInteger)userInterfaceIdiom;
 
 @end

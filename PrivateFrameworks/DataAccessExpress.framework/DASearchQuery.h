@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-@class <DASearchQueryConsumer>, NSString;
+@class NSString, <DASearchQueryConsumer>;
 
 @interface DASearchQuery : NSObject {
     struct _NSRange { 

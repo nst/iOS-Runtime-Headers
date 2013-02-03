@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableDictionary, NSArray, NSMutableSet;
+@class NSArray, NSMutableDictionary, NSMutableSet;
 
 @interface CKDraftManager : NSObject {
     NSMutableDictionary *_cachedDrafts;

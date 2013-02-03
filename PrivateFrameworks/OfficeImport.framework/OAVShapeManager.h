@@ -36,6 +36,7 @@
 - (BOOL)isStroked;
 - (BOOL)isWordArt;
 - (id)limo;
+- (id)movieRelId;
 - (id)packagePart;
 - (id)path;
 - (float)shadowAlpha;

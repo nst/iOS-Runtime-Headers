@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, CMArchiveManager, NSString;
+@class NSString, NSMutableArray, CMArchiveManager;
 
 @interface CSVMapper : CMMapper {
     CMArchiveManager *mArchiver;

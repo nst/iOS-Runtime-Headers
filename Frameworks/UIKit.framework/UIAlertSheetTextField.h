@@ -8,6 +8,9 @@
     UIThreePartImageView *_sheetBackgroundView;
 }
 
++ (void)_initializeSafeCategory;
+
+- (BOOL)_accessibilityIgnoresMouseEvents;
 - (id)backgroundView;
 - (void)dealloc;
 - (void)setBackgroundView:(id)arg1;

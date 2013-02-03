@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, NSString, OADColorMap, OADColorScheme;
+@class OADColorMap, NSString, OADColorScheme, NSMutableDictionary;
 
 @interface CMState : NSObject {
     NSInteger _textLevel;
@@ -12,6 +12,7 @@
     OADColorScheme *mColorScheme;
     BOOL mIsThumbnail;
     NSString *mResourceUrlPrefix;
+    id mResources;
     NSInteger mSrcFormat;
 }
 
@@ -27,12 +28,14 @@
 - (void)popTextLevel;
 - (void)pushTextLevel;
 - (id)resourceUrlPrefix;
+- (id)resources;
 - (void)setColorMap:(id)arg1;
 - (void)setColorScheme:(id)arg1;
 - (void)setComponentWithName:(id)arg1 value:(id)arg2;
 - (void)setHtmlResource:(id)arg1;
 - (void)setIsThumbnail:(BOOL)arg1;
 - (void)setResourceUrlPrefix:(id)arg1;
+- (void)setResources:(id)arg1;
 - (void)setSrcFormat:(NSInteger)arg1;
 - (NSInteger)sourceFormat;
 - (NSInteger)textLevel;

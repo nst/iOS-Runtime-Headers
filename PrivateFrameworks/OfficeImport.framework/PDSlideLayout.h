@@ -5,13 +5,13 @@
 @class PDSlideMaster;
 
 @interface PDSlideLayout : PDSlideChild {
-    BOOL mShowMasterPlaceholderAnimations;
     NSInteger mSlideLayoutType;
     PDSlideMaster *mSlideMaster;
 }
 
 - (void)dealloc;
 - (id)defaultTheme;
+- (void)doneWithContent;
 - (id)initWithSlideMaster:(id)arg1;
 - (id)masterGraphicForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (id)parentShapePropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
@@ -19,10 +19,8 @@
 - (id)parentTextBodyPropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (id)parentTextStyleForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2 defaultTextListStyle:(id)arg3;
 - (id)parentTextStyleForTables;
-- (void)setShowMasterPlaceholderAnimations:(BOOL)arg1;
 - (void)setSlideLayoutType:(NSInteger)arg1;
 - (void)setSlideMaster:(id)arg1;
-- (BOOL)showMasterPlaceholderAnimations;
 - (NSInteger)slideLayoutType;
 - (id)slideMaster;
 

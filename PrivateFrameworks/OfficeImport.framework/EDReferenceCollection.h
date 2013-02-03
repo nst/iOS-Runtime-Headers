@@ -7,12 +7,23 @@
  */
 
 @interface EDReferenceCollection : EDCollection {
+     /* Encoded args for previous method: @16@0:4I8B12 */
+     /* Encoded args for previous method: @12@0:4B8 */
      /* Encoded args for previous method: B16@0:4i8i12 */
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mCoalesce;
 }
+
++ (id)coalesceCollection;
++ (id)noCoalesceCollection;
 
 - (NSUInteger)addObject:(id)arg1;
 - (void)coalesce;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)coalesceReferenceAtIndex1:(NSInteger)arg1 index2:(NSInteger)arg2;
+- (NSUInteger)countOfCellsBeingReferenced;
+- (id)init;
+- (id)initWihNoCoalesce;
 - (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
+- (id)referenceToCellWithIndex:(NSUInteger)arg1 byRow:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
+- (id)reverseReferencesByRow:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class PDAnimationTargetElement, PDCommonTimeNodeData;
+@class PDCommonTimeNodeData, PDAnimationTargetElement;
 
 @interface PDCommonBehaviorData : NSObject {
     PDCommonTimeNodeData *mCommonTimeNodeData;

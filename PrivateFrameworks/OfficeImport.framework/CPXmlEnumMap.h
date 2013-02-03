@@ -2,10 +2,8 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMapTable;
-
 @interface CPXmlEnumMap : NSObject {
-    NSMapTable *mNameToValueMap;
+    struct __CFDictionary { } *mNameToValueMap;
 }
 
 - (void)dealloc;

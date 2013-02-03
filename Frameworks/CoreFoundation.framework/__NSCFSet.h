@@ -5,4 +5,25 @@
 @interface __NSCFSet : NSMutableSet {
 }
 
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+
+- (NSUInteger)_trueCount;
+- (void)addObject:(id)arg1;
+- (Class)classForCoder;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (NSUInteger)count;
+- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
+- (void)finalize;
+- (void)getObjects:(id*)arg1;
+- (NSUInteger)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)member:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)objectEnumerator;
+- (oneway void)release;
+- (void)removeAllObjects;
+- (void)removeObject:(id)arg1;
+- (id)retain;
+- (NSUInteger)retainCount;
+
 @end

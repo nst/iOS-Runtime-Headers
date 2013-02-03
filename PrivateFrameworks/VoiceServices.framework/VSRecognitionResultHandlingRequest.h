@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@class <VSRecognitionResultHandler>, NSArray, VSRecognitionAction;
+@class <VSRecognitionResultHandler>, VSRecognitionAction, NSArray;
 
 @interface VSRecognitionResultHandlingRequest : NSObject {
     VSRecognitionAction *_action;

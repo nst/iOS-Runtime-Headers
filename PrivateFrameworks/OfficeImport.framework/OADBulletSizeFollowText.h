@@ -5,4 +5,7 @@
 @interface OADBulletSizeFollowText : OADBulletSize {
 }
 
+- (NSUInteger)hash;
+- (BOOL)isEqual:(id)arg1;
+
 @end

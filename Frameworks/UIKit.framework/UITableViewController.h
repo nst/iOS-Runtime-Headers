@@ -3,18 +3,30 @@
  */
 
 @interface UITableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    struct { 
+        unsigned int clearsSelectionOnViewWillAppear : 1; 
     id _keyboardSupport;
+    } _tableViewControllerFlags;
     NSInteger _tableViewStyle;
 }
 
 @property(retain) UITableView *tableView;
+@property BOOL clearsSelectionOnViewWillAppear;
+
++ (void)_initializeSafeCategory;
 
 - (void)_adjustTableForKeyboardInfo:(id)arg1;
+- (id)_existingTableView;
+- (id)_tableView:(id)arg1 buttonCellWithTitle:(id)arg2 tintColor:(id)arg3;
+- (BOOL)clearsSelectionOnViewWillAppear;
 - (void)dealloc;
-- (id)existingTableView;
+- (void)encodeWithCoder:(id)arg1;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithStyle:(NSInteger)arg1;
 - (void)loadView;
+- (void)setClearsSelectionOnViewWillAppear:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

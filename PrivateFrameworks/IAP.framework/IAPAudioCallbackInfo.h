@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IAP.framework/IAP
  */
 
-@class NSLock, CPDistributedNotificationCenter;
+@class CPDistributedNotificationCenter, NSLock;
 
 @interface IAPAudioCallbackInfo : NSObject {
     int (*_deviceStateChangedCallback)();

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIViewController, UIMoreListController, UINavigationController;
+@class UIMoreListController, UINavigationController, UIViewController;
 
 @interface UIMoreNavigationController : UINavigationController {
     UIMoreListController *_moreListController;

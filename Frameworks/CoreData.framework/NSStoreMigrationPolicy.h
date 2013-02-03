@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectModel, NSMappingModel, NSString, NSDictionary, NSArray, NSPersistentStoreCoordinator, NSMigrationManager, NSURL;
+@class NSURL, NSMigrationManager, NSArray, NSDictionary, NSString, NSMappingModel, NSPersistentStoreCoordinator, NSManagedObjectModel;
 
 @interface NSStoreMigrationPolicy : NSObject {
     NSPersistentStoreCoordinator *_coordinator;

@@ -5,6 +5,4 @@
 @interface NSMutableParagraphStyleStub : NSObject {
 }
 
-- (void)shiftLayoutRight:(float)arg1;
-
 @end

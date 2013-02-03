@@ -2,24 +2,20 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class WebMediaPlayerHelper, WebCoreMediaPlayerNotificationHelper;
+@class NSObject, WebCoreMediaPlayerNotificationHelper;
 
 @interface WebCoreMediaPlayerNotificationHelper : NSObject {
-    struct MediaPlayerPrivateiPhone { int (**x1)(); struct MediaPlayer {} *x2; struct RetainPtr<WebMediaPlayerHelper> { 
-            WebMediaPlayerHelper *m_ptr; 
-        } x3; NSInteger x4; NSInteger x5; struct RetainPtr<WebCoreMediaPlayerNotificationHelper> { 
+    struct MediaPlayerPrivateiPhone { int (**x1)(); struct MediaPlayer {} *x2; struct RetainPtr<NSObject> { 
+            NSObject *m_ptr; 
+        } x3; struct RetainPtr<WebCoreMediaPlayerNotificationHelper> { 
             WebCoreMediaPlayerNotificationHelper *m_ptr; 
-     /* Encoded args for previous method: @12@0:4^{MediaPlayerPrivateiPhone=^^?^{MediaPlayer}{RetainPtr<WebMediaPlayerHelper>=@}ii{RetainPtr<WebCoreMediaPlayerNotificationHelper>=@}iifBBB}8 */
-        } x6; NSInteger x7; NSInteger x8; float x9; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x10; void*x11; void*x12; } *_client;
+        } x4; NSInteger x5; NSInteger x6; NSInteger x7; NSInteger x8; float x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; } *_client;
 }
 
 - (void)delayNotification:(NSInteger)arg1;
 - (void)deliverNotification:(id)arg1;
 - (void)disconnect;
-- (id)initWithClient:(struct MediaPlayerPrivateiPhone { int (**x1)(); struct MediaPlayer {} *x2; struct RetainPtr<WebMediaPlayerHelper> { id x_3_1_1; } x3; NSInteger x4; NSInteger x5; struct RetainPtr<WebCoreMediaPlayerNotificationHelper> { id x_6_1_1; } x6; NSInteger x7; NSInteger x8; float x9; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x10; void*x11; void*x12; }*)arg1;
+- (id)initWithClient:(struct MediaPlayerPrivateiPhone { int (**x1)(); struct MediaPlayer {} *x2; struct RetainPtr<NSObject> { id x_3_1_1; } x3; struct RetainPtr<WebCoreMediaPlayerNotificationHelper> { id x_4_1_1; } x4; NSInteger x5; NSInteger x6; NSInteger x7; NSInteger x8; float x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; }*)arg1;
+- (void)schedulePrepareToPlayWithOptionalDelay:(id)arg1;
 
 @end

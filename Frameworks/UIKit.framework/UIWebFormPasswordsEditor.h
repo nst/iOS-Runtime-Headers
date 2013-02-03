@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSMutableDictionary, NSDictionary;
+@class NSMutableDictionary, NSMutableArray, NSDictionary;
 
 @interface UIWebFormPasswordsEditor : NSObject {
     NSMutableDictionary *_credentialToProtectionSpaceMap;

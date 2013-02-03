@@ -23,6 +23,7 @@
 - (id)newMessageWithComposition:(id)arg1 forConversation:(id)arg2;
 - (id)placeholderMessageForConversation:(id)arg1 withDate:(id)arg2;
 - (void)sendMessage:(id)arg1;
+- (BOOL)supportsMediaAttachments;
 - (NSInteger)unreadConversationCount;
 - (NSInteger)unreadCount;
 - (NSInteger)unreadCountForConversation:(id)arg1;

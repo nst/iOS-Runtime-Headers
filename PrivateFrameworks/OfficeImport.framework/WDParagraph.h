@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDParagraphProperties, NSMutableArray;
+@class NSMutableArray, WDParagraphProperties;
 
 @interface WDParagraph : WDBlock {
     WDParagraphProperties *mProperties;
@@ -18,22 +18,21 @@
 - (id)addFieldMarker:(NSInteger)arg1;
 - (id)addFieldMarker;
 - (id)addFootnote;
-- (id)addFormField;
-- (id)addOfficeArt;
-- (id)addOfficeArtAtIndex:(NSInteger)arg1;
-- (id)addPicture;
 - (void)addRun:(id)arg1;
 - (id)addSpecialCharacter;
 - (id)addSymbol;
 - (NSInteger)blockType;
 - (NSInteger)characterCount;
+- (void)clearProperties;
+- (void)clearRuns;
 - (void)dealloc;
-- (NSInteger)indexOfRun:(id)arg1 offset:(NSInteger)arg2;
 - (id)initWithText:(id)arg1 string:(id)arg2;
 - (id)initWithText:(id)arg1;
+- (void)insertRun:(id)arg1 atIndex:(NSUInteger)arg2;
 - (BOOL)isContinuationOf:(id)arg1;
 - (BOOL)isEmpty;
 - (BOOL)isTextFrame;
+- (id)newRunIterator;
 - (id)properties;
 - (void)removeLastCharacter:(unsigned short)arg1;
 - (void)removeRun:(id)arg1;

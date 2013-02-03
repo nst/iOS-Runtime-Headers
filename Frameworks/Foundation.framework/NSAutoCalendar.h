@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSTimeZone, NSDate, NSCalendar, NSLocale;
+@class NSLocale, NSCalendar, NSDate, NSTimeZone;
 
 @interface NSAutoCalendar : NSCalendar {
     NSCalendar *cal;

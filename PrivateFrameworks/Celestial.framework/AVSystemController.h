@@ -2,8 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface AVSystemController : NSObject {
-    struct AVSystemControllerPrivate { BOOL x1; struct OpaqueFigPlayer {} *x2; } *_priv;
+    struct AVSystemControllerPrivate { BOOL x1; BOOL x2; float x3; id x4; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x5; inout unsigned short x6; unsigned short x7; void*x8; const NSInteger x9; in void*x10; void*x11; struct OpaqueFigPlayer {} *x12; } *_priv;
 }
 
 + (void)initialize;
@@ -27,6 +31,8 @@
 - (void)makeError:(id*)arg1 withDescription:(id)arg2 code:(long)arg3;
 - (BOOL)okToNotifyFromThisThread;
 - (id)pickableRoutesForCategory:(id)arg1;
+- (void)postEffectiveVolumeNotification:(void*)arg1;
+- (void)postFullMuteDidChangeNotification:(void*)arg1;
 - (id)routeForCategory:(id)arg1;
 - (BOOL)setActiveCategoryVolumeTo:(float)arg1 fallbackCategory:(id)arg2 resultVolume:(float*)arg3 affectedCategory:(id*)arg4;
 - (BOOL)setActiveCategoryVolumeTo:(float)arg1 forRoute:(id)arg2 andDeviceIdentifier:(id)arg3;

@@ -16,6 +16,7 @@
 + (id)archivedDataWithRootObject:(id)arg1;
 + (id)classNameEncodedForTrueClassName:(id)arg1;
 + (void)encodeClassName:(id)arg1 intoClassName:(id)arg2;
++ (void)initialize;
 
 - (id)archiverData;
 - (id)classNameEncodedForTrueClassName:(id)arg1;

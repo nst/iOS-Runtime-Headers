@@ -29,7 +29,7 @@
 - (BOOL)isSupersetOfSet:(id)arg1;
 - (BOOL)longCharacterIsMember:(unsigned long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)release;
+- (oneway void)release;
 - (id)replacementObjectForCoder:(id)arg1;
 - (id)replacementObjectForKeyedArchiver:(id)arg1;
 - (id)retain;

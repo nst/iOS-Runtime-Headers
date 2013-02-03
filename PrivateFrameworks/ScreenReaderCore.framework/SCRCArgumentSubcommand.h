@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class NSMutableArray, NSString;
+@class NSString, NSMutableArray;
 
 @interface SCRCArgumentSubcommand : NSObject {
     NSMutableArray *_optionArray;

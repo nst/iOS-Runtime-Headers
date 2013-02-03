@@ -8,6 +8,7 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (const void*)bytes;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)finalize;
 - (NSUInteger)hash;
 - (BOOL)isEqual:(id)arg1;

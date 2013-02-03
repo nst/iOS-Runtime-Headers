@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, UIColor;
+@class UIColor, UIImage;
 
 @interface UISearchBarBackground : UIView {
     unsigned int _isTranslucent : 1;

@@ -10,7 +10,6 @@
      /* Encoded args for previous method: v16@0:4r^{WrdFileShapeAddress=^^?iiiiiiiiiiBBBi}8@12 */
 }
 
-+ (void)processGroupChildContent:(id)arg1 document:(id)arg2;
 + (void)readFrom:(id)arg1 at:(long)arg2 textRun:(struct WrdCharacterTextRun { int (**x1)(); NSInteger x2; NSUInteger x3; NSUInteger x4; struct WrdCharacterProperties {} *x5; struct WrdCharacterProperties {} *x6; }*)arg3 paragraph:(id)arg4 to:(id)arg5;
 + (void)setShapeAddress:(const struct WrdFileShapeAddress { int (**x1)(); NSInteger x2; NSInteger x3; NSInteger x4; NSInteger x5; NSInteger x6; NSInteger x7; NSInteger x8; NSInteger x9; NSInteger x10; NSInteger x11; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x12; void*x13; void*x14; NSInteger x15; }*)arg1 to:(id)arg2;
 

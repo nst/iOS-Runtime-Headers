@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-@class WebView, DOMDocument, WAKWindow, DOMElement;
+@class WAKWindow, WebView, DOMDocument, DOMElement;
 
 @interface WebMarkup : NSObject {
     struct CGPoint { 

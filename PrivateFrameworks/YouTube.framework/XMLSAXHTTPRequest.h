@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableData, NSURLRequest, NSURLConnection;
+@class NSURLRequest, NSURLConnection, NSMutableData;
 
 @interface XMLSAXHTTPRequest : NSObject {
     struct _xmlSAXHandler { 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class GMMEfficientMapPoint, GMMPolygon, GMMPixelPoint, GMMPolyLine, GMMMapPoint;
+@class GMMPixelPoint, GMMPolygon, GMMEfficientMapPoint, GMMMapPoint, GMMPolyLine;
 
 @interface GMMGeometry : PBCodable {
     GMMEfficientMapPoint *_efficientMapPoint;

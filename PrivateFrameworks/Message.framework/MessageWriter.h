@@ -3,9 +3,7 @@
  */
 
 @interface MessageWriter : NSObject {
-    unsigned int _createsMimeAlternatives : 1;
     unsigned int _createsRichText : 1;
-    unsigned int _createsPlainTextOnly : 1;
     unsigned int _allows8BitMimeParts : 1;
     unsigned int _allowsBinaryMimeParts : 1;
     unsigned int _allowsAppleDoubleAttachments : 1;
@@ -15,6 +13,7 @@
     unsigned int _allowsQuotedPrintable : 1;
     id _delegate;
     NSUInteger _encodingHint;
+    Class _messageClassToInstantiate;
     NSUInteger _preferredEncoding;
 }
 
@@ -27,8 +26,6 @@
 - (id)createMessageWithHtmlString:(id)arg1 plainTextAlternative:(id)arg2 otherHtmlStringsAndAttachments:(id)arg3 headers:(id)arg4;
 - (id)createMessageWithPlainTextDocumentsAndAttachments:(id)arg1 headers:(id)arg2;
 - (id)createMessageWithString:(id)arg1 headers:(id)arg2;
-- (BOOL)createsMimeAlternatives;
-- (BOOL)createsPlainTextOnly;
 - (BOOL)createsRichText;
 - (void)dealloc;
 - (unsigned long)encodingHint;
@@ -39,12 +36,11 @@
 - (void)setAllowsAppleDoubleAttachments:(BOOL)arg1;
 - (void)setAllowsBinaryMimeParts:(BOOL)arg1;
 - (void)setAllowsQuotedPrintable:(BOOL)arg1;
-- (void)setCreatesMimeAlternatives:(BOOL)arg1;
-- (void)setCreatesPlainTextOnly:(BOOL)arg1;
 - (void)setCreatesRichText:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEncodingHint:(unsigned long)arg1;
 - (void)setEncryptsOutput:(BOOL)arg1;
+- (void)setMessageClassToInstantiate:(Class)arg1;
 - (void)setPreferredEncoding:(unsigned long)arg1;
 - (void)setSignsOutput:(BOOL)arg1;
 - (void)setWriteSizeDispositionParameter:(BOOL)arg1;

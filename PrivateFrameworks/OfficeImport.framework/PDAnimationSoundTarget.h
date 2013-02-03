@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface PDAnimationSoundTarget : PDAnimationTargetElement {
+@interface PDAnimationSoundTarget : PDAnimationShapeTarget {
     NSString *mSoundFile;
 }
 

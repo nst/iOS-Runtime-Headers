@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class PBStreamWriter, PBDataWriter;
+@class PBDataWriter, PBStreamWriter;
 
 @interface PBMessageStreamWriter : NSObject {
     PBDataWriter *_messageWriter;

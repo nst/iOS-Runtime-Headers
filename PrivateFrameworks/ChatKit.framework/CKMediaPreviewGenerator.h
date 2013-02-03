@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSData, CKMediaObject;
+@class CKMediaObject, NSData;
 
 @interface CKMediaPreviewGenerator : NSOperation {
     NSData *_composePreviewResult;

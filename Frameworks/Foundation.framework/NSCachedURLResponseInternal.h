@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSData, NSURLResponse, NSDictionary;
+@class NSURLResponse, NSData, NSDictionary;
 
 @interface NSCachedURLResponseInternal : NSObject {
     struct _CFCachedURLResponse { } *_cachedURLResponse;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSKeyValueMutatingCollectionMethodSet, NSKeyValueGetter;
+@class NSKeyValueGetter, NSKeyValueMutatingCollectionMethodSet;
 
 @interface NSKeyValueFastMutableCollection2Getter : NSKeyValueProxyGetter {
     NSKeyValueGetter *_baseGetter;
@@ -11,7 +11,6 @@
 
 - (id)baseGetter;
 - (void)dealloc;
-- (void)finalize;
 - (id)initWithContainerClassID:(id)arg1 key:(id)arg2 baseGetter:(id)arg3 mutatingMethods:(id)arg4 proxyClass:(Class)arg5;
 - (id)mutatingMethods;
 

@@ -2,91 +2,61 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIView, UINavigationBar, NSMutableArray, NSString, NSMutableSet;
+@class PSSpecifier, NSMutableSet;
 
-@interface PSRootController : NSObject <PSBaseView> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    UIView *_contentView;
-    NSMutableArray *_controllers;
+@interface PSRootController : UINavigationController <PSController> {
     BOOL _deallocating;
     unsigned char _hasTelephony;
-    NSString *_idStr;
-    UINavigationBar *_navBar;
-    BOOL _navBarRightButtonDirty;
-    NSInteger _navBarRightButtonStyle;
-    NSString *_navBarRightButtonTitle;
-    } _size;
+    PSSpecifier *_specifier;
     NSMutableSet *_tasks;
-    NSString *_title;
 }
 
-+ (BOOL)isOverlay;
++ (void)_initializeSafeCategory;
 + (id)readPreferenceValue:(id)arg1;
 + (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
 + (void)writePreference:(id)arg1;
 
-- (void)_insertController:(id)arg1 atIndex:(NSInteger)arg2;
-- (void)_popController;
-- (void)_pushController:(id)arg1;
-- (void)_removeController:(id)arg1;
 - (void)addTask:(id)arg1;
 - (BOOL)busy;
-- (id)contentView;
+- (BOOL)canBeShownFromSuspendedState;
 - (id)contentViewForTopController;
-- (id)controllers;
 - (void)dealloc;
 - (BOOL)deallocating;
+- (void)didDismissFormSheetView;
+- (void)didDismissPopupView;
 - (void)didLock;
 - (void)didUnlock;
 - (void)didWake;
 - (void)handleURL:(id)arg1;
-- (BOOL)hasTelephony;
-- (void)hideNavigationBarButtons;
-- (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)initWithTitle:(id)arg1 identifier:(id)arg2;
-- (void)insertNavigationItem:(id)arg1 atIndex:(NSInteger)arg2;
-- (void)insertNavigationItem:(id)arg1 atIndexFromEnd:(NSInteger)arg2;
-- (id)lastController;
 - (void)lazyLoadBundle:(id)arg1;
-- (void)navigationBar:(id)arg1 buttonClicked:(NSInteger)arg2;
-- (void)navigationBar:(id)arg1 poppedItem:(id)arg2;
-- (void)navigationBar:(id)arg1 pushedItem:(id)arg2;
-- (BOOL)navigationBar:(id)arg1 shouldPopItem:(id)arg2;
-- (id)navigationBar;
-- (void)navigationBarButtonClicked:(NSInteger)arg1;
-- (id)navigationItem;
-- (id)navigationTitle;
 - (id)parentController;
-- (void)popBackToTopController;
-- (BOOL)popController;
-- (BOOL)popControllerWithAnimation:(BOOL)arg1;
-- (void)popNavigationItem;
-- (void)popNavigationItemWithAnimation:(BOOL)arg1;
+- (id)popToRootViewControllerAnimated:(BOOL)arg1;
+- (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
+- (id)popViewControllerAnimated:(BOOL)arg1;
 - (void)pushController:(id)arg1;
-- (void)pushNavigationItem:(id)arg1;
-- (void)pushNavigationItemWithTitle:(id)arg1;
 - (id)readPreferenceValue:(id)arg1;
 - (id)rootController;
-- (void)setNavigationBarEnabled:(BOOL)arg1;
+- (void)sendWillBecomeActive;
+- (void)sendWillResignActive;
 - (void)setParentController:(id)arg1;
 - (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
-- (void)setPrompt:(id)arg1;
 - (void)setRootController:(id)arg1;
-- (void)setupRootListForSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSpecifier:(id)arg1;
+- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (void)showLeftButton:(id)arg1 withStyle:(NSInteger)arg2 rightButton:(id)arg3 withStyle:(NSInteger)arg4;
-- (void)showNavigationBarButtons:(id)arg1 :(id)arg2;
+- (id)specifier;
 - (id)specifiers;
+- (void)statusBarWillAnimateByHeight:(float)arg1;
+- (void)statusBarWillChangeHeight:(id)arg1;
 - (void)suspend;
 - (void)taskFinished:(id)arg1;
 - (BOOL)taskIsRunning:(id)arg1;
-- (void)updateNavButtons;
-- (id)view;
-- (void)viewDidBecomeVisible;
-- (void)viewTransitionCompleted;
-- (void)viewWillBecomeVisible:(void*)arg1;
-- (void)viewWillRedisplay;
+- (id)tasksDescription;
+- (void)willBecomeActive;
+- (void)willDismissFormSheetView;
+- (void)willDismissPopupView;
+- (void)willResignActive;
 - (void)willUnlock;
 
 @end

@@ -16,6 +16,7 @@
 - (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
 - (void)addParameter:(id)arg1 withRawValue:(id)arg2 options:(NSUInteger)arg3;
 - (void)addParametersFromDictionary:(id)arg1;
+- (id)allParameters;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

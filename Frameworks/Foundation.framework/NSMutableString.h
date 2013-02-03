@@ -6,6 +6,7 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)initialize;
 + (id)stringWithCapacity:(NSUInteger)arg1;
 
 - (void)_ICSEscapeParameterQuotedValue;
@@ -23,13 +24,12 @@
 - (void)_cfTrim:(struct __CFString { }*)arg1;
 - (void)_cfTrimWS;
 - (void)_cfUppercase:(const void*)arg1;
+- (NSUInteger)_replaceOccurrencesOfRegularExpressionPattern:(id)arg1 withTemplate:(id)arg2 options:(NSUInteger)arg3 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg4;
 - (void)_trimWithCharacterSet:(id)arg1;
 - (void)appendCharacters:(const unsigned short*)arg1 length:(NSUInteger)arg2;
 - (void)appendFormat:(id)arg1;
-- (void)appendString:(id)arg1 withSeparator:(id)arg2;
 - (void)appendString:(id)arg1;
 - (Class)classForCoder;
-- (void)convertLineEndingsTo:(id)arg1;
 - (void)deleteCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (id)initWithCapacity:(NSUInteger)arg1;
 - (void)insertCharacter:(unsigned short)arg1 atIndex:(unsigned short)arg2;
@@ -41,12 +41,10 @@
 - (void)replaceCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withCString:(const char *)arg2 length:(NSUInteger)arg3;
 - (void)replaceCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withCharacters:(const unsigned short*)arg2 length:(NSUInteger)arg3;
 - (void)replaceCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withString:(id)arg2;
+- (void)replaceNewlinesWithSpaces;
 - (NSUInteger)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2 options:(NSUInteger)arg3 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg4;
-- (void)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2;
 - (BOOL)replaceSubstr:(id)arg1 with:(id)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
 - (BOOL)replaceSubstr:(id)arg1 with:(id)arg2;
-- (void)searchAndReplaceInString:(id)arg1 withString:(id)arg2;
-- (void)searchAndReplaceSet:(id)arg1 withString:(id)arg2;
 - (void)setString:(id)arg1;
 - (void)standardizeWhitespace;
 

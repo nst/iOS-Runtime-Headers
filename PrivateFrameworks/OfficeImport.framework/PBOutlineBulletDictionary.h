@@ -10,6 +10,6 @@
 
 - (void)dealloc;
 - (id)initFromContainer:(id)arg1 objectType:(NSUInteger)arg2;
-- (id)objectForSlideId:(NSUInteger)arg1 textType:(NSInteger)arg2;
+- (id)objectForSlideId:(unsigned long)arg1 textType:(NSInteger)arg2 placeholderIndex:(unsigned long)arg3;
 
 @end

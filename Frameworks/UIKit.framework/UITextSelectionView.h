@@ -2,33 +2,37 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, UITextRangeView, UIView<UITextSelectingContainer>, NSTimer;
+@class UIView, NSTimer, UITextRangeView, UIView<UITextSelectingContainer>, UITextSelection;
 
 @interface UITextSelectionView : UIView {
+    BOOL m_activated;
     BOOL m_caretBlinks;
     BOOL m_caretNeedsColorUpdate;
     BOOL m_caretShowingNow;
     NSTimer *m_caretTimer;
     UIView *m_caretView;
     UITextRangeView *m_rangeView;
-    BOOL m_selectionChanging;
-    BOOL m_showRangedSelection;
-    NSInteger m_state;
+    UITextSelection *m_selection;
     UIView<UITextSelectingContainer> *m_view;
     BOOL m_visible;
+    BOOL m_wasShowingCommands;
 }
 
 @property(readonly) UIView *caretView;
 @property(readonly) UITextRangeView *rangeView;
+@property(readonly) UITextSelection *selection;
 @property(readonly) UIView<UITextSelectingContainer> *view;
 @property BOOL caretBlinks;
+@property(readonly) BOOL replacementCommandsShowing;
 @property(readonly) BOOL selectionCommandsShowing;
-@property BOOL showRangedSelection;
-@property(readonly) NSInteger state;
 @property BOOL visible;
 
++ (void)_initializeSafeCategory;
+
 - (void)activate;
-- (void)cancelDelayedSelectionCommandRequests;
+- (void)appearOrFadeIfNecessary;
+- (void)calculateAndShowReplacements:(id)arg1;
+- (void)cancelDelayedCommandRequests;
 - (void)caretBlinkTimerFired:(id)arg1;
 - (BOOL)caretBlinks;
 - (id)caretView;
@@ -36,46 +40,58 @@
 - (void)clearCaretBlinkTimer;
 - (void)clearRange;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clippedTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)configureForReplacementMode;
+- (void)configureForSelectionMode;
 - (id)convertedSelectionRects;
 - (void)deactivate;
 - (void)dealloc;
 - (void)detach;
-- (void)didRotate;
+- (void)didRotate:(id)arg1;
 - (void)doneMagnifying;
 - (void)hideCaret:(NSInteger)arg1;
 - (void)hideSelectionCommands;
 - (void)hideSelectionCommandsAfterDelay:(double)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithView:(id)arg1;
-- (void)install;
+- (void)inputViewDidAnimate;
+- (void)inputViewWillAnimate;
+- (void)installIfNecessary;
+- (void)layoutChanged;
 - (void)prepareForMagnification;
 - (id)rangeView;
 - (void)removeFromSuperview;
+- (BOOL)replacementCommandsShowing;
 - (void)scaleDidChange;
 - (void)scaleWillChange;
 - (id)scrollView;
+- (id)selection;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionBoundingBox;
+- (void)selectionChanged;
 - (BOOL)selectionCommandsShowing;
 - (void)selectionDidScroll:(id)arg1;
 - (void)selectionWillScroll:(id)arg1;
 - (void)setCaretBlinks:(BOOL)arg1;
-- (void)setShowRangedSelection:(BOOL)arg1;
 - (void)setVisible:(BOOL)arg1;
 - (void)showCaret:(NSInteger)arg1;
-- (BOOL)showRangedSelection;
+- (void)showCommandsWithReplacements:(id)arg1 replacementDictionary:(id)arg2;
+- (void)showCommandsWithReplacements:(id)arg1;
+- (void)showReplacements:(id)arg1 replacementDictionary:(id)arg2;
+- (void)showReplacements:(id)arg1;
+- (void)showReplacementsWithGenerator:(id)arg1 afterDelay:(double)arg2;
 - (void)showSelectionCommands;
 - (void)showSelectionCommandsAfterDelay:(double)arg1;
 - (void)startCaretBlinkIfNeeded;
-- (NSInteger)state;
 - (void)textSelectionViewActivated:(id)arg1;
 - (void)touchCaretBlinkTimer;
 - (void)updateBaseIsStartWithContentPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)updateSelection;
+- (BOOL)updateCalloutBarRects:(id)arg1 effectsWindow:(id)arg2;
+- (void)updateSelectionCommands;
 - (void)updateSelectionDots;
+- (void)updateSelectionRects;
 - (void)updateSelectionWithContentPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)updateWithMagnifierTerminalPoint:(BOOL)arg1;
 - (id)view;
 - (BOOL)visible;
-- (void)willRotate;
+- (void)willRotate:(id)arg1;
 
 @end

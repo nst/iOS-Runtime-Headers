@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel, NSString, UIViewController, <UITableViewDataSource>, UIView, UITableView, UISearchBar, <UISearchDisplayDelegate>, <UITableViewDelegate>;
+@class <UISearchDisplayDelegate>, UITableView, UISearchBar, UILabel, UIView, <UITableViewDataSource>, UIViewController, NSString, <UITableViewDelegate>, UIPopoverController;
 
 @interface UISearchDisplayController : NSObject {
     struct { 
@@ -12,20 +12,28 @@
         unsigned int hidNavigationBar : 1; 
         unsigned int noResultsMessageVisible : 1; 
         unsigned int noResultsMessageAutoDisplay : 1; 
+        unsigned int navigationBarHidingEnabled : 1; 
+        unsigned int dimTableViewOnEmptySearchString : 1; 
+        unsigned int isRotatingWithPopover : 1; 
+        unsigned int cancelButtonManagementDisabled : 1; 
     struct __CFArray { } *_containingScrollViews;
     <UISearchDisplayDelegate> *_delegate;
     UIView *_dimmingView;
+    float _lastFooterAdjustment;
     float _lastKeyboardAdjustment;
     UILabel *_noResultsLabel;
     NSString *_noResultsMessage;
+    UIPopoverController *_popoverController;
     UISearchBar *_searchBar;
     } _searchDisplayControllerFlags;
+    NSInteger _searchResultsTableViewStyle;
     UITableView *_tableView;
     <UITableViewDataSource> *_tableViewDataSource;
     <UITableViewDelegate> *_tableViewDelegate;
     UIViewController *_viewController;
 }
 
+@property(getter=_isCancelButtonManagementDisabled) BOOL cancelButtonManagementDisabled; /* unknown property attribute: S_setCancelButtonManagementDisabled: */
 @property <UISearchDisplayDelegate> *delegate;
 @property(copy) NSString *noResultsMessage;
 @property(readonly) UISearchBar *searchBar;
@@ -35,43 +43,62 @@
 @property(readonly) UITableView *searchResultsTableView;
 @property(getter=isActive) BOOL active;
 @property BOOL automaticallyShowsNoResultsMessage;
+@property BOOL dimTableViewOnEmptySearchString;
+@property(getter=isNavigationBarHidingEnabled) BOOL navigationBarHidingEnabled;
 @property BOOL noResultsMessageVisible;
 
++ (void)_initializeSafeCategory;
+
+- (void)_adjustTableViewContentInsets;
 - (void)_cleanUpSearchBar;
 - (void)_clearViewController;
 - (void)_configureNewSearchBar;
 - (void)_configureSearchBarForTableView;
 - (id)_containingTableView;
 - (id)_containingViewOfClass:(Class)arg1;
+- (id)_createPopoverController;
 - (void)_destroyManagedTableView;
 - (void)_disableParentScrollViews;
 - (void)_enableParentScrollViews;
 - (void)_indexBarFrameChanged:(id)arg1;
+- (BOOL)_isCancelButtonManagementDisabled;
+- (BOOL)_isSearchBarInBar;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)_managedTableViewDidScroll;
+- (id)_noResultsMessageLabel;
+- (void)_popoverClearButtonPressed:(id)arg1;
+- (void)_popoverKeyboardDidHide:(id)arg1;
+- (void)_popoverKeyboardDidShow:(id)arg1;
 - (void)_searchBarSuperviewChanged;
 - (void)_searchBarSuperviewWillChange;
+- (void)_setCancelButtonManagementDisabled:(BOOL)arg1;
 - (void)_setTableViewVisible:(BOOL)arg1 inView:(id)arg2;
+- (void)_setupNoResultsLabelIfNecessary;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_tableViewFrame;
 - (void)_updateNoSearchResultsMessageVisiblity;
 - (void)_updateSearchBarForTableViewIndexBar:(id)arg1;
 - (BOOL)automaticallyShowsNoResultsMessage;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)dimTableViewOnEmptySearchString;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithSearchBar:(id)arg1 contentsController:(id)arg2 searchResultsTableViewStyle:(NSInteger)arg3;
 - (id)initWithSearchBar:(id)arg1 contentsController:(id)arg2;
 - (BOOL)isActive;
+- (BOOL)isNavigationBarHidingEnabled;
 - (void)navigationControllerDidShowViewController:(id)arg1;
 - (void)navigationControllerWillShowViewController:(id)arg1;
 - (id)noResultsMessage;
 - (BOOL)noResultsMessageVisible;
+- (void)popoverController:(id)arg1 animationCompleted:(NSInteger)arg2;
 - (void)searchBar:(id)arg1 selectedScopeButtonIndexDidChange:(NSInteger)arg2;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (id)searchBar;
 - (void)searchBarCancelButtonClicked:(id)arg1;
+- (void)searchBarResultsListButtonClicked:(id)arg1;
 - (void)searchBarSearchButtonClicked:(id)arg1;
 - (void)searchBarTextDidBeginEditing:(id)arg1;
 - (id)searchContentsController;
@@ -82,6 +109,8 @@
 - (void)setActive:(BOOL)arg1;
 - (void)setAutomaticallyShowsNoResultsMessage:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDimTableViewOnEmptySearchString:(BOOL)arg1;
+- (void)setNavigationBarHidingEnabled:(BOOL)arg1;
 - (void)setNoResultsMessage:(id)arg1;
 - (void)setNoResultsMessageVisible:(BOOL)arg1;
 - (void)setSearchBar:(id)arg1;

@@ -2,22 +2,27 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class <ML3Entity>, ML3Query;
+@class ML3Query;
 
 @interface ML3QueryImpl : MLQueryImpl {
-    <ML3Entity> *_lastEntity;
-    NSUInteger _lastEntityIndex;
     ML3Query *_query3;
+    BOOL _treatCollectionAsVirtualTrack;
 }
 
++ (unsigned long)containedMediaTypesInQuery:(id)arg1;
+
+- (id)_entityForML3Entity:(id)arg1;
+- (unsigned long)containedMediaTypes;
 - (unsigned long)containedMediaTypesForEntityAtIndex:(NSUInteger)arg1;
 - (id)containingPlaylist;
 - (NSUInteger)countOfEntities;
 - (NSUInteger)countOfEntitiesGroupedByEntityAtIndex:(NSUInteger)arg1;
 - (BOOL)countOfEntitiesIsNonZero;
+- (NSUInteger)countOfEntitiesNoLoad;
 - (void)dealloc;
 - (id)description;
-- (id)directCollectionQuery;
+- (id)directCollectionQueryWithAggregateQuery:(id)arg1;
+- (BOOL)directQueryDisabledForBlankNameFiltering;
 - (id)entityAtIndex:(NSUInteger)arg1;
 - (BOOL)entityMatchesPredicate:(id)arg1 entityIndex:(NSUInteger)arg2;
 - (BOOL)entityMatchesPredicates:(id)arg1 entityIndex:(NSUInteger)arg2;
@@ -25,14 +30,15 @@
 - (void)evaluate;
 - (void)evaluateQuery:(id)arg1 withEntities:(id)arg2;
 - (BOOL)excludesEntitiesWithBlankNames;
+- (void)getValues:(id*)arg1 forProperties:(NSUInteger*)arg2 count:(NSUInteger)arg3 ofEntityAtIndex:(NSUInteger)arg4 sectionProperties:(BOOL)arg5;
 - (void)getValues:(id*)arg1 forProperties:(NSUInteger*)arg2 count:(NSUInteger)arg3 ofEntityAtIndex:(NSUInteger)arg4;
 - (NSUInteger)indexOfEntity:(id)arg1;
 - (NSUInteger)indexOfFirstEntityMatchingPredicate:(id)arg1;
 - (NSUInteger)indexOfFirstEntityMatchingPredicates:(id)arg1;
-- (id)init;
 - (void)loadAllEntities;
 - (id)representativeTrackForEntityAtIndex:(NSUInteger)arg1;
 - (id)representativeTrackOfEntityAtIndex:(NSUInteger)arg1;
+- (id)representativeTracksForAlbumsGetTrackCount:(NSUInteger*)arg1;
 - (id)sectionDataForStringProperty:(unsigned long)arg1;
 - (id)sectionTitleForStringProperty:(unsigned long)arg1 ofEntityAtIndex:(NSUInteger)arg2;
 - (id)stringValueForProperty:(unsigned long)arg1 ofEntityAtIndex:(NSUInteger)arg2;

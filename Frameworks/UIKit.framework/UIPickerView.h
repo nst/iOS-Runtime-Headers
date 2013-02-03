@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UIView, <UIPickerViewDataSource>, <UIPickerViewDelegate>;
+@class UIView, <UIPickerViewDelegate>, <UIPickerViewDataSource>, NSMutableArray;
 
 @interface UIPickerView : UIView <NSCoding> {
     struct { 
@@ -33,6 +33,7 @@
 @property(readonly) NSInteger numberOfComponents;
 @property BOOL showsSelectionIndicator;
 
++ (void)_initializeSafeCategory;
 + (struct CGSize { float x1; float x2; })defaultSizeForCurrentOrientation;
 
 - (id)_createTableWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forComponent:(NSInteger)arg2;
@@ -44,6 +45,7 @@
 - (float)_delegateWidthForComponent:(NSInteger)arg1 ofCount:(NSInteger)arg2 withSizeLeft:(float)arg3;
 - (BOOL)_isLandscapeOrientation;
 - (id)_orientationImageSuffix;
+- (id)_popoverSuffix;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_selectRow:(NSInteger)arg1 inComponent:(NSInteger)arg2 animated:(BOOL)arg3 notify:(BOOL)arg4;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectionBarRectForHeight:(float)arg1;
@@ -53,6 +55,7 @@
 - (void)_sendSelectionChangedFromTable:(id)arg1;
 - (float)_tableRowHeight;
 - (void)_updateSound;
+- (id)accessibilityContainerElements;
 - (BOOL)allowsMultipleSelection;
 - (id)cellForRow:(NSInteger)arg1 column:(NSInteger)arg2;
 - (NSInteger)columnForTable:(id)arg1;
@@ -66,6 +69,7 @@
 - (id)imageForPickerPiece:(NSInteger)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isAccessibilityElementByDefault;
 - (void)layoutSubviews;
 - (NSInteger)numberOfColumns;
@@ -95,6 +99,7 @@
 - (id)selectedTableCellForColumn:(NSInteger)arg1;
 - (void)setAllowsMultipleSelection:(BOOL)arg1;
 - (void)setAlpha:(float)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

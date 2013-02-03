@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIToolbar, _UISwappableImageViewAnimationProxy;
+@class _UISwappableImageViewAnimationProxy, UIToolbar;
 
 @interface UISwappableImageView : UIView {
     id _alternate;
+    NSInteger _barButtonItemStyle;
     BOOL _bezel;
     NSInteger _bezelStyle;
     UIToolbar *_buttonBar;
@@ -15,6 +16,7 @@
     id _didFinishTarget;
     BOOL _flipped;
     _UISwappableImageViewAnimationProxy *_proxy;
+    float _scale;
     BOOL _showAlternate;
     BOOL _updateImage;
     id _value;
@@ -23,7 +25,7 @@
 - (void)animateImage:(float)arg1 withButtonBar:(id)arg2 withTag:(NSInteger)arg3 target:(id)arg4 didFinishSelector:(SEL)arg5;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;
-- (id)initWithImage:(id)arg1 alternateImage:(id)arg2 barStyle:(NSInteger)arg3 tintColor:(id)arg4 bezel:(BOOL)arg5;
+- (id)initWithImage:(id)arg1 alternateImage:(id)arg2 barStyle:(NSInteger)arg3 barButtonItemStyle:(NSInteger)arg4 tintColor:(id)arg5 bezel:(BOOL)arg6;
 - (void)setBezelStyleForBarStyle:(NSInteger)arg1 tintColor:(id)arg2;
 - (void)setFlipped:(BOOL)arg1;
 - (void)setImage:(id)arg1;

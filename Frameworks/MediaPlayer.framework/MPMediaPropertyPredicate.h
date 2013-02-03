@@ -15,6 +15,7 @@
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2 comparisonType:(NSInteger)arg3;
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2;
 
+- (id)_MLPredicate;
 - (NSInteger)comparisonType;
 - (void)dealloc;
 - (id)description;

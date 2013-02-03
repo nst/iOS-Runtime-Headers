@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray, YTVideo, NSMutableString, NSMutableURLRequest;
+@class NSMutableURLRequest, NSMutableString, NSMutableArray, YTVideo;
 
 @interface YTCommentsRequest : XMLSAXHTTPRequest {
     NSMutableArray *_comments;

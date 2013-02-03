@@ -12,5 +12,7 @@
 - (id)init;
 - (BOOL)isEmpty;
 - (id)properties;
+- (void)removeUnnecessaryOverrides;
+- (void)setProperties:(id)arg1;
 
 @end

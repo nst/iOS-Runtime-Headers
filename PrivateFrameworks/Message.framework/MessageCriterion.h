@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSArray, NSString;
+@class NSString, NSArray;
 
 @interface MessageCriterion : NSObject {
     unsigned int _allCriteriaMustBeSatisfied : 1;
@@ -25,10 +25,12 @@
 + (NSInteger)criterionTypeForString:(id)arg1;
 + (id)defaultsArrayFromCriteria:(id)arg1;
 + (id)messageIsDeletedCriterion:(BOOL)arg1;
++ (id)messageIsServerSearchResultCriterion:(BOOL)arg1;
 + (id)stringForCriterionType:(NSInteger)arg1;
 
 - (id)SQLExpressionWithContext:(struct { NSUInteger x1; NSUInteger x2; BOOL x3; BOOL x4; }*)arg1 depth:(NSUInteger)arg2;
 - (id)SQLExpressionWithTables:(NSUInteger*)arg1 baseTable:(NSUInteger)arg2;
+- (id)_criterionForSQLWithAddressBook:(void*)arg1;
 - (BOOL)_evaluateAccountCriterion:(id)arg1;
 - (BOOL)_evaluateAddressBookCriterion:(id)arg1;
 - (BOOL)_evaluateAddressHistoryCriterion:(id)arg1;
@@ -46,7 +48,8 @@
 - (BOOL)allCriteriaMustBeSatisfied;
 - (NSUInteger)bestBaseTable;
 - (id)criteria;
-- (id)criterionForSQL;
+- (id)criterionByExpandingAddressCriteriaWithAddressBook:(void*)arg1;
+- (id)criterionForSQLWithAddressBook:(void*)arg1;
 - (id)criterionIdentifier;
 - (NSInteger)criterionType;
 - (BOOL)dateIsRelative;
@@ -58,8 +61,9 @@
 - (BOOL)doesMessageSatisfyCriterion:(id)arg1;
 - (id)emailAddressesForGroupCriterion;
 - (id)expression;
-- (id)fixOnce;
+- (id)fixOnceWithAddressBook:(void*)arg1;
 - (BOOL)hasNumberCriterion;
+- (BOOL)includesCriterionSatisfyingPredicate:(int (*)())arg1 restrictive:(BOOL)arg2;
 - (id)init;
 - (id)initWithCriterion:(id)arg1 expression:(id)arg2;
 - (id)initWithDictionary:(id)arg1 andRemoveRecognizedKeysIfMutable:(BOOL)arg2;

@@ -5,14 +5,12 @@
 @interface NSDate : NSObject <NSCopying, NSCoding> {
 }
 
-+ (BOOL)acceptsTopLevelLeaves;
++ (id)_mapkit_dateWithAbsoluteTime:(double)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)date;
 + (id)dateForDaysSince1970:(NSInteger)arg1;
-+ (id)dateWithActiveSyncString:(id)arg1;
-+ (id)dateWithActiveSyncStringFromYearMonthDay:(id)arg1;
-+ (id)dateWithActiveSyncStringWithoutSeparators:(id)arg1;
 + (id)dateWithDate:(id)arg1;
++ (id)dateWithISOFormatString:(id)arg1;
 + (id)dateWithNaturalLanguageString:(id)arg1 date:(id)arg2 locale:(id)arg3;
 + (id)dateWithNaturalLanguageString:(id)arg1 locale:(id)arg2;
 + (id)dateWithNaturalLanguageString:(id)arg1;
@@ -25,36 +23,34 @@
 + (NSInteger)daysSince1970;
 + (id)distantFuture;
 + (id)distantPast;
-+ (BOOL)frontingBasicTypes;
-+ (id)mf_createDateInCommonFormatsWithString:(id)arg1;
-+ (id)mf_createLenientDateInCommonFormatsWithString:(id)arg1;
-+ (BOOL)parsingLeafNode;
-+ (BOOL)parsingWithSubItems;
++ (id)mf_copyDateInCommonFormatsWithString:(id)arg1;
++ (id)mf_copyLenientDateInCommonFormatsWithString:(id)arg1;
 + (double)timeIntervalSinceReferenceDate;
 
 - (unsigned long)_cfTypeID;
 - (id)_web_RFC1123DateString;
 - (NSInteger)_web_compareDay:(id)arg1;
 - (BOOL)_web_isToday;
-- (id)activeSyncString;
-- (id)activeSyncStringForYearMonthDay;
-- (id)activeSyncStringWithoutSeparators;
 - (id)addTimeInterval:(double)arg1;
 - (Class)classForCoder;
 - (NSInteger)compare:(id)arg1;
 - (void)copyToWordDate:(struct WrdDateTime { int (**x1)(); NSInteger x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateByAddingTimeInterval:(double)arg1;
+- (id)dateForDayInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
+- (id)dateForDayInTimeZone:(id)arg1;
+- (id)dateForEndOfDayInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
+- (id)dateForEndOfDayInTimeZone:(id)arg1;
+- (id)dateInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
 - (id)dateWithCalendarFormat:(id)arg1 timeZone:(id)arg2;
+- (NSInteger)dayComponent;
+- (NSInteger)daysAgo;
 - (id)description;
-- (id)descriptionForMimeHeaders;
-- (id)descriptionInBSDMailboxFormat;
 - (id)descriptionWithCalendarFormat:(id)arg1 timeZone:(id)arg2 locale:(id)arg3;
 - (id)descriptionWithLocale:(id)arg1;
 - (id)earlierDate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)gmtDateToDateInTimeZone:(id)arg1;
 - (NSUInteger)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -67,14 +63,12 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToDate:(id)arg1;
 - (BOOL)isNSDate__;
-- (BOOL)isNSDate__;
 - (id)laterDate:(id)arg1;
-- (id)nearestMidnightPreferForwardLeap:(BOOL)arg1;
-- (id)replyPrefixForSender:(id)arg1 withSpacer:(BOOL)arg2;
+- (id)mf_descriptionForMimeHeaders;
+- (id)mf_replyPrefixForSender:(id)arg1 withSpacer:(BOOL)arg2;
 - (double)timeIntervalSince1970;
 - (double)timeIntervalSinceDate:(id)arg1;
 - (double)timeIntervalSinceNow;
 - (double)timeIntervalSinceReferenceDate;
-- (id)tzDateToDateInGMT:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray, NSManagedObject, NSPropertyDescription;
+@class NSPropertyDescription, NSMutableArray, NSManagedObject;
 
 @interface _NSFaultingMutableArray : NSMutableArray {
     struct _NSFaultingMutableArrayFlags { 

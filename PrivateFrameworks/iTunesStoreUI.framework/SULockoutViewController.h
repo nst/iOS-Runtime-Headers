@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIImage, NSString;
+@class NSString, UIImage;
 
 @interface SULockoutViewController : SUViewController {
     UIImage *_image;
@@ -14,6 +14,7 @@
 @property(retain) NSString *messageBody;
 @property(retain) NSString *messageTitle;
 
+- (id)copyArchivableContext;
 - (void)dealloc;
 - (id)image;
 - (id)init;

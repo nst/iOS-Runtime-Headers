@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface SMSComposeRecipientView : ComposeRecipientView {
+@interface SMSComposeRecipientView : _MFComposeRecipientView {
 }
 
 - (id)customOverlayContainer;

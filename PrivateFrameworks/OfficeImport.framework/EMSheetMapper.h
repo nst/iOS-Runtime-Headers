@@ -6,8 +6,8 @@
 }
 
 - (NSInteger)height;
-- (NSInteger)preprocessHeight;
-- (NSInteger)preprocessWidth;
+- (NSInteger)preprocessHeightWithState:(id)arg1;
+- (NSInteger)preprocessWidthWithState:(id)arg1;
 - (NSInteger)width;
 
 @end

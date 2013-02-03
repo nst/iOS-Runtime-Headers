@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSAffineTransform, NSObject<MFDeviceDriver>;
+@class NSObject<MFDeviceDriver>, NSAffineTransform;
 
 @interface MFTransform : NSObject <NSCopying> {
     struct CGPoint { 

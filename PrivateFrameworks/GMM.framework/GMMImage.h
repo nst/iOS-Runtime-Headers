@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSData, NSString;
+@class NSString, NSData;
 
 @interface GMMImage : PBCodable {
     NSData *_imageData;

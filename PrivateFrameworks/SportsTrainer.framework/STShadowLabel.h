@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SportsTrainer.framework/SportsTrainer
  */
 
-@class STShadowBlurRadiusAnimation, UIColor;
+@class UIColor, STShadowBlurRadiusAnimation;
 
 @interface STShadowLabel : UILabel {
     float _animatedAuxiliaryShadowBlurRadius;

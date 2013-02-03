@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CLHeading, MKRotationAnimation, NSNumber;
+@class NSNumber, MKRotationAnimation, CLHeading;
 
 @interface MKMapViewHeadingChange : NSObject {
     BOOL _animated;

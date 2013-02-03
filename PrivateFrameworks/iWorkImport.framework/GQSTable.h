@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDTOverlapCell, GQDTCell, GQDTTable;
+@class GQDTCell, GQDTTable, GQDTOverlapCell;
 
 @interface GQSTable : NSObject {
     BOOL mAlwaysPutReadCellsInArray;

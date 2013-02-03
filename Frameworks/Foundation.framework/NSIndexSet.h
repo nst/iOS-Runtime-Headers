@@ -25,9 +25,10 @@
 
 + (id)indexSet;
 + (id)indexSetWithIndex:(NSUInteger)arg1;
++ (id)indexSetWithIndexes:(NSUInteger*)arg1 count:(NSUInteger)arg2;
 + (id)indexSetWithIndexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 
-- (void)__000:(out struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg1;
+- (NSUInteger)__getContainmentVector:(out BOOL*)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (NSUInteger)_indexClosestToIndex:(NSUInteger)arg1 equalAllowed:(BOOL)arg2 following:(BOOL)arg3;
 - (NSUInteger)_indexOfRangeAfterOrContainingIndex:(NSUInteger)arg1;
 - (NSUInteger)_indexOfRangeBeforeOrContainingIndex:(NSUInteger)arg1;
@@ -36,6 +37,8 @@
 - (id)_numberEnumerator;
 - (void)_setContentToContentFromIndexSet:(id)arg1;
 - (Class)classForCoder;
+- (id)commaSeparatedString;
+- (id)commaSeparatedString;
 - (BOOL)containsIndex:(NSUInteger)arg1;
 - (BOOL)containsIndexes:(id)arg1;
 - (BOOL)containsIndexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
@@ -45,17 +48,28 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (void)enumerateIndexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 options:(NSUInteger)arg2 usingBlock:(id)arg3;
+- (void)enumerateIndexesUsingBlock:(id)arg1;
+- (void)enumerateIndexesWithOptions:(NSUInteger)arg1 usingBlock:(id)arg2;
 - (NSUInteger)firstIndex;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })firstRange;
 - (NSUInteger)getIndexes:(NSUInteger*)arg1 maxCount:(NSUInteger)arg2 inIndexRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg3;
 - (NSUInteger)hash;
 - (NSUInteger)indexGreaterThanIndex:(NSUInteger)arg1;
 - (NSUInteger)indexGreaterThanOrEqualToIndex:(NSUInteger)arg1;
+- (NSUInteger)indexInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 options:(NSUInteger)arg2 passingTest:(id)arg3;
 - (NSUInteger)indexLessThanIndex:(NSUInteger)arg1;
 - (NSUInteger)indexLessThanOrEqualToIndex:(NSUInteger)arg1;
+- (NSUInteger)indexPassingTest:(id)arg1;
+- (NSUInteger)indexWithOptions:(NSUInteger)arg1 passingTest:(id)arg2;
+- (id)indexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 options:(NSUInteger)arg2 passingTest:(id)arg3;
+- (id)indexesPassingTest:(id)arg1;
+- (id)indexesWithOptions:(NSUInteger)arg1 passingTest:(id)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIndex:(NSUInteger)arg1;
 - (id)initWithIndexSet:(id)arg1;
+- (id)initWithIndexes:(NSUInteger*)arg1 count:(NSUInteger)arg2;
 - (id)initWithIndexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (BOOL)intersectsIndexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -64,5 +78,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })rangeAtIndex:(NSUInteger)arg1;
 - (NSUInteger)rangeCount;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })rangeGreaterThanRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })rangeStartingAtLocation:(NSUInteger)arg1;
 
 @end

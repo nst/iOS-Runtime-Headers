@@ -2,23 +2,57 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class UIImageView, NSArray, UIBarButtonItem, UIWindow;
+
 @interface UIDimmingView : UIView {
+    UIImageView *_backgroundGlow;
     id _delegate;
-    struct CGGradient { } *_gradient;
+    BOOL _dimsStatusBar;
+    BOOL _displayed;
+    UIBarButtonItem *_highlightedBarButtonItem;
+    UIImageView *_highlightedImageView;
+    BOOL _ignoresTouches;
+    BOOL _inPassthroughHitTest;
+    NSArray *_passthroughViews;
+    UIWindow *_statusBarDimmingWindow;
 }
 
+@property(retain) UIBarButtonItem *highlightedBarButtonItem;
+@property(retain) NSArray *passthroughViews;
 @property id delegate;
+@property BOOL dimsStatusBar;
+@property BOOL displayed;
+@property BOOL ignoresTouches;
 
-+ (id)dimmingViewForView:(id)arg1;
++ (void)_initializeSafeCategory;
 
+- (BOOL)_accessibilityCoversScreen;
+- (BOOL)_accessibilityEscape;
+- (id)_accessibilityObscuredScreenAllowedViews;
+- (BOOL)_accessibilityObscuresScreen;
+- (void)accessibilityActivate;
+- (id)accessibilityHint;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (void)dealloc;
 - (id)delegate;
-- (void)display:(BOOL)arg1 withAnimationDuration:(float)arg2;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dimmingRemovalAnimationDidStop;
+- (BOOL)dimsStatusBar;
+- (void)display:(BOOL)arg1 withAnimationDuration:(float)arg2 afterDelay:(float)arg3;
+- (BOOL)displayed;
+- (id)highlightedBarButtonItem;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)ignoresTouches;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
+- (id)passthroughViews;
 - (void)setDelegate:(id)arg1;
+- (void)setDimsStatusBar:(BOOL)arg1;
+- (void)setDisplayed:(BOOL)arg1;
+- (void)setHighlightedBarButtonItem:(id)arg1;
+- (void)setIgnoresTouches:(BOOL)arg1;
+- (void)setPassthroughViews:(id)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)transitionDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 
 @end

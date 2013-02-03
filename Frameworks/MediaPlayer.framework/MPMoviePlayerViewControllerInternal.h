@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSURL, MPMoviePlayerController;
+@class MPMoviePlayerController;
 
 @interface MPMoviePlayerViewControllerInternal : NSObject {
-    NSURL *_contentURL;
-    MPMoviePlayerController *_moviePlayerController;
+    MPMoviePlayerController *_moviePlayer;
+    NSInteger _previousStatusBarStyle;
+    BOOL _statusBarWasHidden;
+    BOOL _wasDisplayedAnimated;
 }
 
 @end

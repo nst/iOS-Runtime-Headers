@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString;
+@class NSString, NSArray;
 
 @interface UIKeyboardEmojiCategory : NSObject {
     NSArray *_emoji;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDText, CMOutlineState;
+@class CMOutlineState, WDText;
 
 @interface WMState : CMState {
     CMOutlineState *currentListState;

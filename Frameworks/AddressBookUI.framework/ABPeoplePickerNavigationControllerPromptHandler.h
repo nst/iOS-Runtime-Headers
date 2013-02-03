@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSMutableArray, ABPeoplePickerNavigationController;
+@class ABPeoplePickerNavigationController, NSMutableArray;
 
 @interface ABPeoplePickerNavigationControllerPromptHandler : NSObject {
     ABPeoplePickerNavigationController *_ppnc;

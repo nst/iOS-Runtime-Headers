@@ -2,33 +2,29 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIView, UIKeyboard, PSEditingPane;
+@class PSEditingPane;
 
 @interface PSDetailController : PSViewController {
-    UIKeyboard *_keyboard;
-    BOOL _keyboardVisible;
     PSEditingPane *_pane;
-    UIView *_view;
 }
 
-- (void)_addKeyboardView;
-- (void)_updateNavBarButtons;
-- (void)cancelButtonClicked:(id)arg1;
+@property PSEditingPane *pane;
+
 - (void)dealloc;
-- (void)doneButtonClicked:(id)arg1;
-- (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)keyboardVisible;
-- (void)navigationBarButtonClicked:(NSInteger)arg1;
-- (id)navigationTitle;
+- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
+- (id)init;
+- (void)loadView;
 - (id)pane;
-- (BOOL)popController;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paneFrame;
 - (void)saveChanges;
-- (void)setKeyboardVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setPane:(id)arg1;
+- (void)statusBarWillAnimateByHeight:(float)arg1;
 - (void)suspend;
-- (id)view;
-- (void)viewDidBecomeVisible;
-- (void)viewWillBecomeVisible:(void*)arg1;
-- (void)viewWillRedisplay;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidUnload;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

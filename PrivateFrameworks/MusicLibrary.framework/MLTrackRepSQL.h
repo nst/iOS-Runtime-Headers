@@ -11,17 +11,21 @@
 @property BOOL hasChanges;
 
 - (BOOL)__dbRecordsEqual:(id)arg1;
+- (BOOL)_isFilePathPlayable;
+- (id)_sortStringValueForProperty:(NSInteger)arg1;
 - (unsigned long long)accountID;
 - (id)album;
 - (id)albumArtist;
+- (unsigned long long)albumPID;
 - (id)artist;
-- (unsigned long)artworkDBRecordID;
+- (unsigned long long)artistPID;
 - (unsigned long)audibleDRMGroupID;
 - (unsigned long)bpm;
 - (id)chapterTOC;
 - (id)comments;
 - (id)composer;
 - (id)contentRatingInfo;
+- (id)copyright;
 - (NSInteger)customStopTimeInMS;
 - (void*)dbRecord;
 - (NSInteger)dbRecordID;
@@ -32,8 +36,10 @@
 - (NSUInteger)episodeNumber;
 - (id)eqPresetName;
 - (id)filePath;
+- (unsigned long long)fileSize;
 - (void)gaplessHeuristicInfo:(NSUInteger*)arg1 duration:(NSUInteger*)arg2 lastPacketsResync:(NSUInteger*)arg3 encodingDelay:(NSUInteger*)arg4 encodingDrain:(NSUInteger*)arg5;
 - (id)genre;
+- (unsigned long long)genreID;
 - (unsigned long long)globalID;
 - (id)grouping;
 - (BOOL)hasChanges;
@@ -43,8 +49,10 @@
 - (BOOL)hasNominalAmountBeenPlayed;
 - (BOOL)hasVideoData;
 - (NSUInteger)hash;
+- (unsigned long)imageDBRecordID:(NSInteger)arg1;
 - (void)incrementSkipCount;
 - (id)infoDescription;
+- (id)infoShortDescription;
 - (id)initWithDBRecord:(void*)arg1;
 - (id)initWithTrackContext:(void*)arg1;
 - (BOOL)isAudibleAudioBook;
@@ -66,6 +74,7 @@
 - (BOOL)markHidden:(BOOL)arg1;
 - (void)markNominalAmountHasBeenPlayed;
 - (unsigned long)mediaType;
+- (id)movieInfo;
 - (unsigned long)numberOfDiscs;
 - (unsigned long)numberOfTracksInAlbum;
 - (unsigned long long)persistentUID;
@@ -87,6 +96,11 @@
 - (void)setVideoSubtitleTrackID:(NSUInteger)arg1;
 - (BOOL)shouldBookmarkLastPlayedTime;
 - (NSUInteger)skipCount;
+- (id)sortAlbum;
+- (id)sortAlbumArtist;
+- (id)sortArtist;
+- (id)sortComposer;
+- (id)sortTitle;
 - (NSInteger)startTimeInMS;
 - (unsigned long long)storeItemAdamID;
 - (unsigned long long)storePlaylistAdamID;
@@ -96,10 +110,12 @@
 - (unsigned long)uniqueID;
 - (void)updateLastPlayedBookmarkTimeInSeconds:(double)arg1;
 - (NSUInteger)videoAudioTrackID;
+- (id)videoCodecs;
 - (BOOL)videoHasAlternateAudio;
 - (BOOL)videoHasSubtitles;
 - (NSUInteger)videoSubtitleTrackID;
 - (float)volumeAdjustment;
 - (float)volumeNormalization;
+- (unsigned long)year;
 
 @end

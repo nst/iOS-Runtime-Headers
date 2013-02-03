@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-@class NSMutableDictionary, NSArray, NSMutableSet;
+@class NSArray, NSMutableDictionary, NSMutableSet;
 
 @interface WebPluginDatabase : NSObject {
     NSArray *plugInPaths;

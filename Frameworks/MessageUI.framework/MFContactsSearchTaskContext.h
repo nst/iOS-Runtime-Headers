@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSString, <MFContactsSearchConsumer>, NSMutableSet;
+@class NSMutableSet, NSString, <MFContactsSearchConsumer>;
 
 @interface MFContactsSearchTaskContext : NSObject {
     <MFContactsSearchConsumer> *_consumer;

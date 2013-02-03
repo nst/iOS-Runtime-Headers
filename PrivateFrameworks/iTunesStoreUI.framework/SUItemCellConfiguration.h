@@ -5,8 +5,9 @@
 @interface SUItemCellConfiguration : SUArtworkCellConfiguration {
 }
 
++ (void)_initializeSafeCategory;
 + (id)copyDefaultContext;
 
-- (id)artworkImageForFormat:(NSUInteger)arg1;
+- (id)_accessibilityVideoIconString;
 
 @end

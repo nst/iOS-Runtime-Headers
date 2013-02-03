@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITableViewCell, UITableView;
+@class UITableView, UITableViewCell;
 
 @interface _UITableViewSeparatorView : UIView {
     UITableView *_table;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBKeyboard, UIKBKey;
+@class UIKBKey, UIKBKeyboard;
 
 @interface UIKBKeyView : UIView {
     struct CGPoint { 

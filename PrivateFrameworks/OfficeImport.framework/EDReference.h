@@ -7,32 +7,51 @@
  */
 
 @interface EDReference : NSObject <NSCopying> {
+    struct EDAreaReference { 
+        NSInteger firstRow; 
+        NSInteger firstColumn; 
+        NSInteger lastRow; 
+        NSInteger lastColumn; 
+     /* Encoded args for previous method: B16@0:4i8i12 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: B12@0:4@8 */
-    NSInteger mFirstColumn;
-    NSInteger mFirstRow;
-    NSInteger mLastColumn;
-    NSInteger mLastRow;
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: B8@0:4 */
+    } mAreaReference;
 }
 
 + (id)reference;
++ (id)referenceWithAreaReference:(struct EDAreaReference { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; }*)arg1;
 + (id)referenceWithFirstRow:(NSInteger)arg1 lastRow:(NSInteger)arg2 firstColumn:(NSInteger)arg3 lastColumn:(NSInteger)arg4;
 
+- (struct EDAreaReference { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; })areaReference;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)containsRow:(NSInteger)arg1 column:(NSInteger)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (NSUInteger)countOfCellsBeingReferenced;
 - (NSInteger)firstColumn;
 - (NSInteger)firstRow;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)fullyAdjacentToReference:(id)arg1;
 - (NSUInteger)hash;
 - (id)init;
+- (id)initWithAreaReference:(struct EDAreaReference { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; }*)arg1;
 - (id)initWithFirstRow:(NSInteger)arg1 lastRow:(NSInteger)arg2 firstColumn:(NSInteger)arg3 lastColumn:(NSInteger)arg4;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isCellReference;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isColumnReference;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToReference:(id)arg1;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isRowReference;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isValidAreaReference;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isValidCellReference;
 - (NSInteger)lastColumn;
 - (NSInteger)lastRow;
 - (void)setFirstColumn:(NSInteger)arg1;
 - (void)setFirstRow:(NSInteger)arg1;
 - (void)setLastColumn:(NSInteger)arg1;
 - (void)setLastRow:(NSInteger)arg1;
-- (void)unionWithMaxRow:(NSInteger)arg1 maxColumn:(NSInteger)arg2;
+- (void)unionWithFirstRow:(NSInteger)arg1 lastRow:(NSInteger)arg2 firstColumn:(NSInteger)arg3 lastColumn:(NSInteger)arg4;
 - (void)unionWithReference:(id)arg1;
+- (void)unionWithRow:(NSInteger)arg1 column:(NSInteger)arg2;
 
 @end

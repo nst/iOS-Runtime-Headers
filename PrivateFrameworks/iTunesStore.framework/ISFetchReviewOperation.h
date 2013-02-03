@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISReview, NSURL;
+@class NSURL, ISReview;
 
 @interface ISFetchReviewOperation : ISOperation {
     NSInteger _assetType;

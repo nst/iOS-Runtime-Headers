@@ -2,35 +2,22 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMoviePlayerViewControllerInternal;
-
 @interface MPMoviePlayerViewController : UIViewController {
-    MPMoviePlayerViewControllerInternal *_internal;
+    id _internal;
 }
 
-@property(readonly) MPMoviePlayerController *moviePlayerController;
-@property NSInteger movieControlMode;
-@property NSInteger scalingMode;
+@property(readonly) MPMoviePlayerController *moviePlayer;
 
-- (void)_adjustToDeviceOrientation;
-- (void)_beginPlayback;
-- (void)_deviceOrientationChanged:(id)arg1;
-- (void)_playbackEnded:(id)arg1;
-- (void)_preloadedContent:(id)arg1;
-- (BOOL)_viewControllerShouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)_canReloadView;
+- (void)_playbackDidFinishNotification:(id)arg1;
+- (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
 - (void)dealloc;
-- (void)dismissAfterPlayback;
-- (id)initWithContentFile:(id)arg1;
+- (id)init;
 - (id)initWithContentURL:(id)arg1;
 - (void)loadView;
-- (NSInteger)movieControlMode;
-- (id)moviePlayerController;
-- (NSInteger)scalingMode;
-- (void)setMovieControlMode:(NSInteger)arg1;
-- (void)setScalingMode:(NSInteger)arg1;
+- (id)moviePlayer;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 

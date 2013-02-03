@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSArray, NSString;
+@class NSString, NSArray;
 
 @interface _CPPowerAssertion : NSObject {
     NSUInteger _assertion;

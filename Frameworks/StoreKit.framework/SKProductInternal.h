@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSDecimalNumber, NSString, NSLocale;
+@class NSLocale, NSString, NSDecimalNumber;
 
 @interface SKProductInternal : NSObject {
     NSString *_localizedDescription;

@@ -13,7 +13,9 @@
 
 - (NSInteger)alignment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (NSUInteger)hash;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)rotateWithShape;
 - (void)setAlignment:(NSInteger)arg1;
 - (void)setRotateWithShape:(BOOL)arg1;

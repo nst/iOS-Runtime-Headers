@@ -6,27 +6,36 @@
    See Warning(s) below.
  */
 
+@class MKTilePathArray;
+
 @interface MKRouteLoader : NSObject {
-     /* Encoded args for previous method: v12@0:4^{MKTileRequester=^^?i^{Connection}*BBBB^{TileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@^{__CFSet}}8 */
+    struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { 
+            long __sig; 
+            BOOL __opaque[40]; 
+     /* Encoded args for previous method: v16@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@}8@12 */
+     /* Encoded args for previous method: v12@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@}8 */
+     /* Encoded args for previous method: v12@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@}8 */
     id _delegate;
     BOOL _isLoading;
     NSUInteger _loadingCount;
-    struct __CFDictionary { } *_loadingTiles;
-    struct MKTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct TileResponse {} *x9; struct __CFRunLoop {} *x10; struct __CFRunLoopTimer {} *x11; NSUInteger x12; id x13; struct __CFSet {} *x14; } *_requester;
-    struct __CFArray { } *_tiles;
+        } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; } *_requester;
+    MKTilePathArray *_tilePaths;
 }
 
 @property id delegate;
+
++ (NSUInteger)maxTilesToPreload;
 
 - (void)_checkLoading;
 - (void)_setLoading:(BOOL)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithTiles:(struct __CFArray { }*)arg1;
+- (id)initWithTiles:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)startLoading;
 - (void)stopLoading;
-- (void)tileRequesterFailed:(id)arg1;
-- (void)tileRequesterProgress:(struct MKTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct TileResponse {} *x9; struct __CFRunLoop {} *x10; struct __CFRunLoopTimer {} *x11; NSUInteger x12; id x13; struct __CFSet {} *x14; }*)arg1;
+- (void)tileRequester:(struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; }*)arg1 failedWithError:(id)arg2;
+- (void)tileRequesterCompleted:(struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; }*)arg1;
+- (void)tileRequesterProgress:(struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; }*)arg1;
 
 @end

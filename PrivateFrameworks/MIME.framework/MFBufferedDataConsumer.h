@@ -2,18 +2,22 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSString;
+@class NSArray, NSMutableData, NSString;
 
-@interface MFBufferedDataConsumer : NSObject <MFDataConsumer> {
-    id _data;
+@interface MFBufferedDataConsumer : NSObject <MFCollectingDataConsumer> {
+    NSMutableData *_data;
     NSInteger _fd;
     NSString *_path;
+    NSArray *_stack;
 }
 
-- (void)appendData:(id)arg1;
+- (id)_data:(BOOL)arg1;
+- (NSInteger)appendData:(id)arg1;
 - (id)data;
 - (void)dealloc;
 - (void)done;
 - (id)init;
+- (id)initWithData:(id)arg1;
+- (id)mutableData;
 
 @end

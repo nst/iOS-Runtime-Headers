@@ -8,6 +8,7 @@
 + (id)layoutManagerForTableViewCellStyle:(NSInteger)arg1;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessoryRectForCell:(id)arg1 offscreen:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_adjustedBackgroundContentRectForCell:(id)arg1 forIndentedState:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_adjustedBackgroundRectForCell:(id)arg1 forIndentedState:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_backgroundRectForCell:(id)arg1 forIndentedState:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectForCell:(id)arg1 forEditingState:(BOOL)arg2 showingDeleteConfirmation:(BOOL)arg3;
@@ -32,6 +33,7 @@
 - (float)defaultDetailTextLabelFontSizeForCell:(id)arg1;
 - (id)defaultEditableTextFieldForCell:(id)arg1;
 - (id)defaultImageViewForCell:(id)arg1;
+- (id)defaultLabelForCell:(id)arg1 ofClass:(Class)arg2;
 - (id)defaultLabelForCell:(id)arg1;
 - (float)defaultTextLabelFontSizeForCell:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })deleteConfirmationRectForCell:(id)arg1;

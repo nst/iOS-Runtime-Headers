@@ -12,6 +12,7 @@
     unsigned int _preview : 1;
     unsigned int _isIgnoringSingleTap : 1;
     unsigned int _calloutRegistered : 1;
+    unsigned int _tapEnabled : 1;
     float _bubbleAlpha;
     id _delegate;
     CKMessagePart *_messagePart;
@@ -30,6 +31,7 @@
 + (id)defaultFont;
 + (struct CGSize { float x1; float x2; })defaultSize;
 + (float)fixedHeight;
++ (void)flushBalloonImageCache;
 + (float)heightForText:(id)arg1 width:(float)arg2 includeBuffers:(BOOL)arg3;
 + (float)heightForText:(id)arg1 width:(float)arg2 subject:(id)arg3;
 + (float)heightForText:(id)arg1 width:(float)arg2;
@@ -41,6 +43,7 @@
 + (struct CGSize { float x1; float x2; })sizeForMessagePart:(id)arg1 width:(float)arg2 withSubject:(BOOL)arg3;
 + (struct CGSize { float x1; float x2; })sizeForMessagePart:(id)arg1 width:(float)arg2;
 
+- (BOOL)_becomeFirstResponderWhenPossible;
 - (void)_hideCopyCallout;
 - (void)_setBalloonHighlight:(BOOL)arg1;
 - (void)_showCopyCallout;
@@ -48,11 +51,15 @@
 - (void)_temporarilyIgnoreSingleTapGesture;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_tightenedBounds;
 - (void)_toggleCopyCallout;
+- (void)_windowBecameKey;
+- (void)_windowResignedKey;
+- (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })balloonBounds;
 - (float)balloonContentBottomMargin;
 - (float)balloonContentHeadMargin;
 - (float)balloonContentTailMargin;
 - (float)balloonContentTopMargin;
+- (BOOL)becomeFirstResponder;
 - (void)calloutWillHide:(id)arg1;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canResignFirstResponder;
@@ -63,15 +70,19 @@
 - (id)delegate;
 - (void)drawBalloonImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)flashHighlight;
 - (BOOL)hasURLs;
 - (float)heightForWidth:(float)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2;
 - (BOOL)isPreview;
+- (BOOL)isTapEnabled;
 - (void)longPressGesture:(id)arg1;
 - (id)messagePart;
 - (void)oneFingerDoubleTap:(id)arg1;
 - (NSInteger)orientation;
 - (void)prepareForReuse;
+- (BOOL)resignFirstResponder;
+- (void)restoreBalloonStateAfterRotation;
 - (void)setBubbleAlpha:(float)arg1;
 - (void)setComposition:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -83,6 +94,7 @@
 - (void)setPreview:(BOOL)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setTapDelegate:(id)arg1;
+- (void)setTapEnabled:(BOOL)arg1;
 - (void)setText:(id)arg1;
 - (void)setTopMargin:(float)arg1;
 - (void)setupGestureRecognizers;

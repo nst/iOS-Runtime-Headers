@@ -5,6 +5,7 @@
 @class NSBundle, NSString, NSDictionary, NSURL;
 
 @interface NSValidationErrorLocalizationPolicy : NSObject <NSCopying> {
+    BOOL _hasSetLocalizationDictionary;
     NSBundle *_localizationBundle;
     NSDictionary *_localizationDictionary;
     NSString *_modelStringsFileName;
@@ -12,7 +13,8 @@
 }
 
 - (id)_cachedObjectForKey:(id)arg1 value:(void*)arg2;
-- (void)_ensureLocalizationDictionaryIsLoaded;
+- (void)_ensureFullLocalizationDictionaryIsLoaded;
+- (void)_ensureLocalizationDictionaryIsInitialized;
 - (id)_localizedPropertyNameForProperty:(id)arg1 entity:(id)arg2;
 - (id)_localizedStringForKey:(id)arg1 value:(void*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

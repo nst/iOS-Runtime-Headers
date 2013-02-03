@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSArray, UITabBarItem, <UITabBarDelegate>;
+@class NSArray, <UITabBarDelegate>, UIView, UITabBarItem;
 
 @interface UITabBar : UIView {
     struct { 
@@ -26,8 +26,10 @@
 @property UITabBarItem *selectedItem;
 
 + (float)_buttonGap;
++ (void)_initializeSafeCategory;
 + (float)defaultHeightForBarSize:(NSInteger)arg1;
 
+- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)_adjustButtonSelection:(id)arg1;
 - (void)_alertDidHide;
 - (void)_alertWillShow:(BOOL)arg1 duration:(float)arg2;
@@ -46,6 +48,7 @@
 - (void)_positionTabBarButtons:(id)arg1 ignoringItem:(id)arg2;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
 - (void)_tabBarFinishedAnimating;
+- (unsigned long long)accessibilityTraits;
 - (void)beginCustomizingItems:(id)arg1;
 - (id)buttonItems;
 - (void)dealloc;

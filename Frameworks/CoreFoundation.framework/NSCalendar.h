@@ -8,7 +8,11 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)autoupdatingCurrentCalendar;
 + (id)currentCalendar;
++ (id)gregorianCalendar;
++ (void)initialize;
 
+- (id)AMSymbol;
+- (id)PMSymbol;
 - (unsigned char)_addComponents:(double*)arg1 :(unsigned long)arg2 :(const char *)arg3 :(void*)arg4;
 - (unsigned long)_cfTypeID;
 - (unsigned char)_composeAbsoluteTime:(double*)arg1 :(const char *)arg2 :(void*)arg3;
@@ -31,18 +35,24 @@
 - (id)dateByAddingComponents:(id)arg1 toDate:(id)arg2 options:(NSUInteger)arg3;
 - (id)dateFromComponents:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)eraSymbols;
 - (NSUInteger)firstWeekday;
 - (id)gregorianStartDate;
 - (NSUInteger)hash;
 - (id)init;
 - (id)initWithCalendarIdentifier:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)locale;
+- (id)longEraSymbols;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })maximumRangeOfUnit:(NSUInteger)arg1;
 - (NSUInteger)minimumDaysInFirstWeek;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })minimumRangeOfUnit:(NSUInteger)arg1;
+- (id)monthSymbols;
 - (NSUInteger)ordinalityOfUnit:(NSUInteger)arg1 inUnit:(NSUInteger)arg2 forDate:(id)arg3;
+- (id)quarterSymbols;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })rangeOfUnit:(NSUInteger)arg1 inUnit:(NSUInteger)arg2 forDate:(id)arg3;
 - (BOOL)rangeOfUnit:(NSUInteger)arg1 startDate:(id*)arg2 interval:(double*)arg3 forDate:(id)arg4;
 - (void)setFirstWeekday:(NSUInteger)arg1;
@@ -50,6 +60,20 @@
 - (void)setLocale:(id)arg1;
 - (void)setMinimumDaysInFirstWeek:(NSUInteger)arg1;
 - (void)setTimeZone:(id)arg1;
+- (id)shortMonthSymbols;
+- (id)shortQuarterSymbols;
+- (id)shortStandaloneMonthSymbols;
+- (id)shortStandaloneQuarterSymbols;
+- (id)shortStandaloneWeekdaySymbols;
+- (id)shortWeekdaySymbols;
+- (id)standaloneMonthSymbols;
+- (id)standaloneQuarterSymbols;
+- (id)standaloneWeekdaySymbols;
 - (id)timeZone;
+- (id)veryShortMonthSymbols;
+- (id)veryShortStandaloneMonthSymbols;
+- (id)veryShortStandaloneWeekdaySymbols;
+- (id)veryShortWeekdaySymbols;
+- (id)weekdaySymbols;
 
 @end

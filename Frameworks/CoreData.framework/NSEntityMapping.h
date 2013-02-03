@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSExpression, NSMutableArray, NSString, NSDictionary, NSData;
+@class NSString, NSData, NSExpression, NSDictionary, NSMutableArray;
 
 @interface NSEntityMapping : NSObject {
     struct __entityMappingFlags { 

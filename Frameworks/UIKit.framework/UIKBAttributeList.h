@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSString;
+@class NSString, NSMutableDictionary;
 
 @interface UIKBAttributeList : NSObject <NSCoding, NSCopying> {
+    NSMutableDictionary *m_dict;
     BOOL m_explicit;
-    NSMutableArray *m_list;
     NSString *m_name;
 }
 
-@property(readonly) NSArray *list;
+@property(readonly) NSDictionary *dict;
 @property(copy) NSString *name;
 @property(readonly) NSArray *names;
 @property(readonly) NSUInteger count;
@@ -22,17 +22,19 @@
 - (NSUInteger)count;
 - (void)dealloc;
 - (id)description;
+- (id)dict;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)explicit;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)list;
+- (id)initWithDictionary:(id)arg1;
+- (NSInteger)intValueForName:(id)arg1;
 - (void)mergeAttributes:(id)arg1;
 - (id)name;
 - (id)names;
-- (void)setAttribute:(id)arg1;
 - (void)setBoolValueForName:(BOOL)arg1 forName:(id)arg2;
 - (void)setExplicit:(BOOL)arg1;
+- (void)setIntValueForName:(NSInteger)arg1 forName:(id)arg2;
 - (void)setName:(id)arg1;
 - (void)setValue:(id)arg1 forName:(id)arg2;
 - (id)stringValueForName:(id)arg1;

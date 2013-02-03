@@ -2,18 +2,24 @@
    Image: /System/Library/PrivateFrameworks/MobileWirelessSync.framework/MobileWirelessSync
  */
 
-@class NSString;
+@class NSSet, NSString;
 
 @interface MWSAccountRefresh : NSObject <AccountRefreshProtocol> {
+    NSString *_accountId;
+    NSSet *_subscribedCalendarIds;
     NSString *_username;
 }
 
 + (id)accountToRefreshForBasicAccount:(id)arg1;
 
+- (BOOL)_hasSubscribedCalendarWithIdentifier:(id)arg1;
+- (BOOL)_hasSubscribedCalendars;
 - (id)_initWithBasicAccount:(id)arg1;
 - (BOOL)_isConfiguredSyncAccount;
 - (struct __CFString { }*)_mwsDataclassNameForDataclass:(id)arg1;
 - (BOOL)_refreshDataclass:(id)arg1;
+- (BOOL)_refreshSubscribedCalendarWithIdentifier:(id)arg1;
+- (BOOL)_refreshSubscribedCalendars;
 - (id)_username;
 - (void)dealloc;
 - (id)defaultContainerIdentifierForDataclass:(id)arg1;

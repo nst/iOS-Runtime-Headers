@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIShadowView, NSArray, NSTimer;
+@class UIShadowView, NSTimer, NSArray;
 
 @interface _UITableReorderingSupport : NSObject {
     unsigned int _oldShowScrollerIndicators : 1;

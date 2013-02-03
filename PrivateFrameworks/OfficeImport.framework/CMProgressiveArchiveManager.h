@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, NSDate, NSMutableString;
+@class NSDate, NSMutableDictionary, NSMutableString;
 
 @interface CMProgressiveArchiveManager : CMArchiveManager {
-    BOOL mAutoCommit;
     struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); } *mCallBacks;
     void *mClient;
-    float mCommitInterval;
     NSMutableString *mCssString;
     NSMutableDictionary *mDataCache;
     NSMutableString *mHtmlLogString;
@@ -26,11 +24,10 @@
 - (id)cssStylesheetString;
 - (void)dealloc;
 - (id)initWithClient:(const void*)arg1 andCallBacks:(struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
+- (BOOL)isCancelled;
 - (BOOL)isProgressive;
 - (void)pushCssToPath:(id)arg1;
 - (void)pushData:(id)arg1 toPath:(id)arg2;
 - (void)pushText:(id)arg1 toPath:(id)arg2;
-- (void)setAutoCommit:(BOOL)arg1;
-- (void)setCommitInterval:(float)arg1;
 
 @end

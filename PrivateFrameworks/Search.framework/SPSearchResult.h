@@ -2,27 +2,42 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSDate, NSString, NSURL, NSNumber;
+@class NSString, NSDate, NSNumber, NSURL;
 
 @interface SPSearchResult : NSObject <SPSearchResult, SPSearchResultCursor> {
     NSURL *_URL;
+    NSString *_auxiliarySubtitle;
+    NSString *_auxiliaryTitle;
     NSNumber *_badge;
     NSDate *_date;
     NSInteger _domain;
     unsigned long long _identifier;
-    NSString *_subtitle[3];
+    NSString *_resultDisplayIdentifier;
+    NSInteger _resultDomain;
+    NSString *_subtitle;
+    NSString *_summary;
     NSString *_title;
 }
 
 @property(retain) NSURL *URL;
+@property(retain) NSString *auxiliarySubtitle;
+@property(retain) NSString *auxiliaryTitle;
 @property(copy) NSNumber *badge;
 @property(retain) NSDate *date;
+@property(retain) NSString *resultDisplayIdentifier;
+@property(retain) NSString *subtitle;
+@property(retain) NSString *summary;
 @property(retain) NSString *title;
 @property NSInteger domain;
 @property unsigned long long identifier;
+@property NSInteger resultDomain;
 
 - (id)URL;
 - (const char *)URLUTF8String;
+- (id)auxiliarySubtitle;
+- (const char *)auxiliarySubtitleUTF8String;
+- (id)auxiliaryTitle;
+- (const char *)auxiliaryTitleUTF8String;
 - (id)badge;
 - (id)date;
 - (void)dealloc;
@@ -32,16 +47,25 @@
 - (NSUInteger)hash;
 - (unsigned long long)identifier;
 - (BOOL)isEqual:(id)arg1;
+- (id)resultDisplayIdentifier;
+- (const char *)resultDisplayIdentifierUTF8String;
+- (NSInteger)resultDomain;
+- (void)setAuxiliarySubtitle:(id)arg1;
+- (void)setAuxiliaryTitle:(id)arg1;
 - (void)setBadge:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setDomain:(NSInteger)arg1;
 - (void)setIdentifier:(unsigned long long)arg1;
-- (void)setSubtitle:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setResultDisplayIdentifier:(id)arg1;
+- (void)setResultDomain:(NSInteger)arg1;
+- (void)setSubtitle:(id)arg1;
+- (void)setSummary:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setURL:(id)arg1;
-- (id)subtitleAtIndex:(NSUInteger)arg1;
-- (NSUInteger)subtitleCount;
-- (const char *)subtitleUTF8StringAtIndex:(NSUInteger)arg1;
+- (id)subtitle;
+- (const char *)subtitleUTF8String;
+- (id)summary;
+- (const char *)summaryUTF8String;
 - (id)title;
 - (const char *)titleUTF8String;
 

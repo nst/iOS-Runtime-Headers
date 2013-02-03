@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIImage, NSString;
+@class NSString, UIImage;
 
 @interface ABImageWellLabelView : UIView {
     UIImage *_editOverlayImage;

@@ -3,7 +3,7 @@
  */
 
 @interface OADMiterLineJoin : OADLineJoin {
-    BOOL mIsLimitOverridden;
+    unsigned int mIsLimitOverridden : 1;
     float mLimit;
 }
 

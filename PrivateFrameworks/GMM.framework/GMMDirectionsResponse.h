@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, GMMDateTime, NSString, GMMDirectionsIconResponse;
+@class GMMDateTime, NSString, NSMutableArray, GMMDirectionsIconResponse;
 
 @interface GMMDirectionsResponse : PBCodable {
     NSMutableArray *_agencys;

@@ -2,31 +2,39 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class PBDataReader, NSDictionary, NSString, NSArray, NSMutableArray, NSMutableData, NSURLConnection, NSURL, <PBRequesterDelegate>;
+@class NSArray, NSMutableData, <PBRequesterDelegate>, NSMutableArray, NSURLConnection, PBDataReader, NSURL, NSDictionary, NSString;
 
 @interface PBRequester : NSObject {
+    struct { 
+        unsigned int ignoresResponse : 1; 
+        unsigned int loading : 1; 
+        unsigned int silentLoading : 1; 
+        unsigned int needsCancel : 1; 
+        unsigned int responseStatusSet : 1; 
+        unsigned int parsedResponseHeader : 1; 
+        unsigned int delegateDidReceiveResponse : 1; 
+        unsigned int delegateDidFinish : 1; 
+        unsigned int delegateDidCancel : 1; 
+        unsigned int delegateDidFailWithError : 1; 
+        unsigned int paused : 1; 
+        unsigned int resuming : 1; 
     NSURL *_URL;
     NSArray *_clientCertificates;
     NSURLConnection *_connection;
     NSMutableData *_data;
     PBDataReader *_dataReader;
     <PBRequesterDelegate> *_delegate;
+    } _flags;
     NSDictionary *_httpRequestHeaders;
     NSDictionary *_httpResponseHeaders;
-    BOOL _ignoresResponse;
     NSMutableArray *_internalRequests;
     NSMutableArray *_internalResponses;
     NSUInteger _lastGoodDataOffset;
-    BOOL _loading;
     NSString *_logRequestToFile;
     NSString *_logResponseToFile;
-    BOOL _needsCancel;
-    BOOL _parsedResponseHeader;
     NSMutableArray *_requests;
     NSInteger _responseStatusCode;
-    BOOL _responseStatusSet;
     NSMutableArray *_responses;
-    BOOL _silentLoading;
     double _timeoutSeconds;
     struct __CFRunLoopTimer { } *_timeoutTimer;
 }
@@ -72,6 +80,7 @@
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (id)encodeData:(id)arg1;
 - (void)handleResponse:(id)arg1 forInternalRequest:(id)arg2;
 - (id)httpRequestHeaders;
 - (id)httpResponseHeaders;
@@ -79,14 +88,17 @@
 - (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
 - (id)internalRequests;
 - (BOOL)isLoading;
+- (BOOL)isPaused;
 - (id)logRequestToFile;
 - (id)logResponseToFile;
 - (BOOL)needsCancel;
+- (void)pause;
 - (BOOL)readResponsePreamble:(id)arg1;
 - (id)requestPreamble;
 - (id)requests;
 - (id)responseForInternalRequest:(id)arg1;
 - (id)responseForRequest:(id)arg1;
+- (void)resume;
 - (void)setClientCertificates:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -104,7 +116,7 @@
 - (BOOL)silentLoading;
 - (void)start;
 - (double)timeoutSeconds;
-- (id)tryReadResponseData:(id)arg1 forRequest:(id)arg2;
+- (id)tryReadResponseData:(id)arg1 forRequest:(id)arg2 forResponseClass:(Class)arg3;
 - (void)writeRequest:(id)arg1 into:(id)arg2;
 
 @end

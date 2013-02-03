@@ -2,6 +2,8 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+@class NSWeakCallback;
+
 @interface NSConcreteHashTable : NSHashTable {
     struct NSSlice { 
         void **items; 
@@ -14,12 +16,7 @@
         BOOL pointerPersonality; 
         BOOL integerPersonality; 
         BOOL simpleReadClear; 
-        struct auto_weak_callback_block { 
-            struct auto_weak_callback_block {} *next; 
-            int (*callback_function)(); 
-            void *arg1; 
-            void *arg2; 
-        } block; 
+        NSWeakCallback *callback; 
         int (*sizeFunction)(); 
         int (*hashFunction)(); 
         int (*isEqualFunction)(); 
@@ -50,8 +47,8 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)finalize;
-- (const void*)getItem:(const void*)arg1;
-- (NSUInteger)getKeys:(void**)arg1;
+- (void*)getItem:(const void*)arg1;
+- (void)getKeys:(void**)arg1 count:(NSUInteger*)arg2;
 - (NSUInteger)hash;
 - (void)hashGrow;
 - (id)init;

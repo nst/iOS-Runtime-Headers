@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSData, NSString;
+@class NSString, NSData;
 
 @interface MLSQLCodeBinding : NSObject {
-    union $_166 { 
+    union $_617 { 
         NSString *stringValue; 
         NSData *dataValue; 
         NSUInteger uint32Value; 

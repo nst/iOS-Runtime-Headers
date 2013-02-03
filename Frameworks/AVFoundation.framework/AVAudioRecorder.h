@@ -7,7 +7,7 @@
  */
 
 @interface AVAudioRecorder : NSObject {
-     /* Encoded args for previous method: ^{AudioRecorderImpl=@@@@I{AudioStreamBasicDescription=dIIIIIIII}^{OpaqueAudioFileID}^{OpaqueAudioQueue}qqqdddI*I^{AudioFormatListItem}BBBBBBB^{AudioQueueLevelMeterState}[4^{AudioQueueBuffer}]^{AudioQueueBuffer}BB}8@0:4 */
+     /* Encoded args for previous method: ^{AudioRecorderImpl=@@@@I{AudioStreamBasicDescription=dIIIIIIII}^{OpaqueAudioFileID}^{OpaqueAudioQueue}qqqdddI*I^{AudioFormatListItem}BBBBBBB^{AudioQueueLevelMeterState}[4^{AudioQueueBuffer}]^{AudioQueueBuffer}BIB}8@0:4 */
     void *_impl;
 }
 
@@ -27,15 +27,17 @@
 - (id)delegate;
 - (BOOL)deleteRecording;
 - (void)endInterruption;
+- (void)endInterruptionWithFlags;
 - (void)finalize;
 - (void)finishedRecording;
-- (struct AudioRecorderImpl { id x1; id x2; id x3; id x4; NSUInteger x5; struct AudioStreamBasicDescription { double x_6_1_1; NSUInteger x_6_1_2; NSUInteger x_6_1_3; NSUInteger x_6_1_4; NSUInteger x_6_1_5; NSUInteger x_6_1_6; NSUInteger x_6_1_7; NSUInteger x_6_1_8; NSUInteger x_6_1_9; } x6; struct OpaqueAudioFileID {} *x7; struct OpaqueAudioQueue {} *x8; long long x9; long long x10; long long x11; double x12; double x13; double x14; NSUInteger x15; char *x16; NSUInteger x17; struct AudioFormatListItem {} *x18; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; struct AudioQueueLevelMeterState {} *x26; struct AudioQueueBuffer {} *x27[4]; struct AudioQueueBuffer {} *x28; void*x29; void*x30; }*)impl;
+- (struct AudioRecorderImpl { id x1; id x2; id x3; id x4; NSUInteger x5; struct AudioStreamBasicDescription { double x_6_1_1; NSUInteger x_6_1_2; NSUInteger x_6_1_3; NSUInteger x_6_1_4; NSUInteger x_6_1_5; NSUInteger x_6_1_6; NSUInteger x_6_1_7; NSUInteger x_6_1_8; NSUInteger x_6_1_9; } x6; struct OpaqueAudioFileID {} *x7; struct OpaqueAudioQueue {} *x8; long long x9; long long x10; long long x11; double x12; double x13; double x14; NSUInteger x15; char *x16; NSUInteger x17; struct AudioFormatListItem {} *x18; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; struct AudioQueueLevelMeterState {} *x26; struct AudioQueueBuffer {} *x27[4]; struct AudioQueueBuffer {} *x28; void*x29; NSUInteger x30; void*x31; }*)impl;
 - (id)initWithURL:(id)arg1 settings:(id)arg2 error:(id*)arg3;
 - (BOOL)isMeteringEnabled;
 - (BOOL)isRecording;
 - (void)pause;
 - (float)peakPowerForChannel:(NSUInteger)arg1;
 - (BOOL)prepareToRecord;
+- (void)privCommonCleanup;
 - (BOOL)record;
 - (BOOL)recordForDuration:(double)arg1;
 - (void)setDelegate:(id)arg1;

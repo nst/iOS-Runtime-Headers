@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectModel, NSMappingModel, NSDictionary, NSMigrationContext, NSError, NSManagedObjectContext;
+@class NSMigrationContext, NSError, NSMappingModel, NSDictionary, NSManagedObjectContext, NSManagedObjectModel;
 
 @interface NSMigrationManager : NSObject {
     struct _migrationManagerFlags { 

@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIPushButton, LabelledAtomList, UITextLabel;
+@class MFLabelledAtomList, UITextLabel, UIPushButton;
 
-@interface CKAtomListView : UIView {
+@interface CKAtomListView : UIView <MFLabelledAtomListDelegate> {
     unsigned int _expanded : 1;
-    LabelledAtomList *_atomList;
+    MFLabelledAtomList *_atomList;
     id _delegate;
     UIPushButton *_detailsButton;
     UIPushButton *_hideDetailsButton;

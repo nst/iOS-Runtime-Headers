@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, CPNoCopyDictionary;
+@class SFUNoCopyDictionary, NSMutableArray;
 
 @interface WDFontTable : NSObject {
-    CPNoCopyDictionary *mFontTable;
+    SFUNoCopyDictionary *mFontTable;
     NSMutableArray *mFontsInOrderOfInsertion;
 }
 

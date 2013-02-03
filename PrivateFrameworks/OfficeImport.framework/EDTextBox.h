@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDString, EDAlignmentInfo, EDProtection;
+@class EDAlignmentInfo, EDProtection, EDString;
 
 @interface EDTextBox : NSObject {
     EDAlignmentInfo *mAlignmentInfo;

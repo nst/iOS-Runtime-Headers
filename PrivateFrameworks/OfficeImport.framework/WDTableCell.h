@@ -13,6 +13,8 @@
 }
 
 - (double)cellWidth;
+- (void)clearProperties;
+- (NSInteger)compareIndex:(id)arg1;
 - (void)dealloc;
 - (NSInteger)index;
 - (id)initWithRow:(id)arg1 at:(NSInteger)arg2;

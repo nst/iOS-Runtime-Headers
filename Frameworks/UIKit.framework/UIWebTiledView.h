@@ -9,27 +9,28 @@
     NSInteger _inGestureType;
     BOOL _layoutTilesInMainThread;
     NSInteger _tilingArea;
+    BOOL _tilingModeIsLocked;
     WAKWindow *_wakWindow;
 }
 
 - (void)_didScroll;
+- (void)_screenChanged:(id)arg1;
+- (void)_updateForScreen:(id)arg1;
 - (NSUInteger)adjustedMaxTileCount;
 - (void)dealloc;
 - (BOOL)drawsGrid;
-- (void)ensureDrawnRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)flushDirtyRects;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isTilingEnabled;
-- (void)layoutBeforeDraw;
 - (void)layoutSubviews;
 - (BOOL)layoutTilesInMainThread;
 - (void)layoutTilesNow;
+- (void)layoutTilesNowOnWebThread;
+- (void)lockTilingMode;
 - (BOOL)logsTilingChanges;
 - (NSUInteger)maxTileCount;
 - (void)removeAllNonVisibleTiles;
 - (void)removeAllTiles;
 - (void)setDrawsGrid:(BOOL)arg1;
-- (void)setFirstTileSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setInGesture:(NSInteger)arg1;
 - (void)setLayoutTilesInMainThread:(BOOL)arg1;
 - (void)setLogsTilingChanges:(BOOL)arg1;
@@ -48,8 +49,10 @@
 - (struct CGSize { float x1; float x2; })tileSize;
 - (BOOL)tilesOpaque;
 - (NSInteger)tilingArea;
+- (void)unlockTilingMode;
 - (void)updateTilingMode;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
-- (struct WKWindow { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; id x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct WKView {} *x4; struct WKView {} *x5; struct TiledSurface {} *x6; unsigned int x7 : 1; unsigned int x8 : 1; }*)wkWindow;
+- (void)willMoveToWindow:(id)arg1;
+- (struct WKWindow { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; id x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct WKView {} *x4; struct WKView {} *x5; struct WKView {} *x6; struct CGSize { float x_7_1_1; float x_7_1_2; } x7; struct CGSize { float x_8_1_1; float x_8_1_2; } x8; float x9; unsigned int x10 : 1; }*)wkWindow;
 
 @end

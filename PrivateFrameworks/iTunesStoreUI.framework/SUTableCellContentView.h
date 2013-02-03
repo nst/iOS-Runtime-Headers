@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIView, NSMutableArray, UIBezierPath, SUCellConfiguration;
+@class SUCellConfiguration, UIView, UIBezierPath, NSMutableArray;
 
 @interface SUTableCellContentView : UIView <SUCellConfigurationView> {
     unsigned int _drawAsDisabled : 1;
@@ -22,6 +22,8 @@
 @property(getter=isHighlighted) BOOL highlighted;
 @property BOOL usesSubviews;
 
++ (void)_initializeSafeCategory;
+
 - (id)_clipPath;
 - (id)_clippedImageForImage:(id)arg1;
 - (void)_reloadSubviewAlphasAnimated:(BOOL)arg1;
@@ -31,11 +33,16 @@
 - (void)_startUsingSubviewLayout;
 - (void)_stopUsingSubviewLayout;
 - (void)_updateDisabledStyleForSubviews;
+- (id)accessibilityHint;
+- (id)accessibilityLabel;
+- (id)accessibilityLanguage;
 - (NSInteger)clipCorners;
 - (id)configuration;
 - (void)dealloc;
+- (id)description;
 - (BOOL)drawAsDisabled;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isDeleteConfirmationVisible;
 - (BOOL)isHighlighted;
 - (void)layoutSubviews;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, GMMDateTime, NSString;
+@class NSMutableArray, NSString, GMMDateTime;
 
 @interface GMMStep : PBCodable {
     NSMutableArray *_alertIndexs;

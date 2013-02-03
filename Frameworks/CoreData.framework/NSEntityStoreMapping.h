@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSDictionary, NSString, NSEntityDescription;
+@class NSEntityDescription, NSArray, NSString, NSDictionary;
 
 @interface NSEntityStoreMapping : NSStoreMapping {
     NSEntityDescription *_entity;

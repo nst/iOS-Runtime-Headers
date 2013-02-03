@@ -2,18 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUSubtitledButton, UIAlertView, SULinkControl;
+@class UIAlertView, SUSubtitledButton, SULinkControl;
 
 @interface SUTermsAndConditionsView : UIView {
     UIAlertView *_accountButtonAlert;
     SUSubtitledButton *_button;
     BOOL _hideAccountButton;
+    float _rightMargin;
     NSInteger _style;
     SULinkControl *_termsAndConditionsControl;
 }
 
 @property BOOL hideAccountButton;
+@property float rightMargin;
 @property NSInteger style;
+
++ (void)_initializeSafeCategory;
 
 - (void)_accountsChangedNotification:(id)arg1;
 - (id)_button;
@@ -29,7 +33,9 @@
 - (BOOL)hideAccountButton;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (float)rightMargin;
 - (void)setHideAccountButton:(BOOL)arg1;
+- (void)setRightMargin:(float)arg1;
 - (void)setStyle:(NSInteger)arg1;
 - (void)sizeToFit;
 - (NSInteger)style;

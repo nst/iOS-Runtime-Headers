@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView<UITextSelectingContainer>, NSMutableArray, UILongPressGestureRecognizer;
+@class UILongPressGestureRecognizer, NSMutableSet, UITapGestureRecognizer, UIView<UITextSelectingContainer>, NSMutableArray, UITextChecker;
 
 @interface UITextInteractionAssistant : NSObject {
     struct CGPoint { 
@@ -21,16 +21,19 @@
     BOOL _autoscrolled;
     BOOL _inGesture;
     BOOL _isTryingToHighlightLink;
+    NSMutableSet *_linkGestures;
+    UILongPressGestureRecognizer *_loupeGesture;
     } _loupeGestureEndPoint;
     NSMutableArray *_recognizers;
+    UITapGestureRecognizer *_singleTapGesture;
+    UITextChecker *_textChecker;
     UIView<UITextSelectingContainer> *_view;
-    BOOL _wasShowingCommands;
-    UILongPressGestureRecognizer *loupeGesture;
 }
 
 @property(readonly) UIFieldEditor *fieldEditor;
 @property(retain) UILongPressGestureRecognizer *loupeGesture;
 @property(readonly) UIScrollView *scrollView;
+@property(retain) UITapGestureRecognizer *singleTapGesture;
 @property(readonly) UIView<UITextSelectingContainer> *view;
 @property CGPoint autoscrollUntransformedExtentPoint;
 @property BOOL autoscrolled;
@@ -56,18 +59,26 @@
 - (BOOL)autoscrolled;
 - (void)cancelAutoscroll;
 - (void)cancelInteractionWithLink;
+- (void)clearGestureRecognizers:(BOOL)arg1;
 - (void)clearGestureRecognizers;
+- (void)clearSelection;
 - (void)confirmMarkedText:(id)arg1;
 - (struct CGPoint { float x1; float x2; })constrainedPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)containerIsAtom;
+- (BOOL)containerIsPlainStyleAtom;
 - (BOOL)containerIsTextField;
 - (void)dealloc;
+- (void)detach:(BOOL)arg1;
 - (void)detach;
-- (void)didRotate:(id)arg1;
+- (float)distanceBetweenPoint:(struct CGPoint { float x1; float x2; })arg1 andRange:(id)arg2;
 - (void)doubleTapInUneditable:(id)arg1;
 - (id)fieldEditor;
+- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)inGesture;
 - (id)initWithView:(id)arg1;
+- (BOOL)isChineseInputEnabled;
 - (BOOL)isInteractingWithLink;
 - (void)longDelayRecognizer:(id)arg1;
 - (BOOL)longPressGestureCanTransitionToRecognizedState:(id)arg1;
@@ -82,12 +93,16 @@
 - (void)phraseBoundaryGesture:(id)arg1;
 - (struct CGPoint { float x1; float x2; })pointFromContainerToContent:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })pointFromContentToContainer:(struct CGPoint { float x1; float x2; })arg1;
+- (id)rangeForTextReplacement:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectFromContainerToContent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectFromContentToContainer:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)resignedFirstResponder;
+- (void)scheduleReplacementsForRange:(id)arg1 withOptions:(NSUInteger)arg2;
+- (void)scheduleReplacementsWithOptions:(NSUInteger)arg1;
 - (id)scrollView;
 - (void)selectAll;
 - (void)selectWord;
+- (void)selectWordWithoutShowingCommands;
 - (void)setAutoscrollUntransformedExtentPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setAutoscrolled:(BOOL)arg1;
 - (void)setFirstResponderIfNecessary;
@@ -95,19 +110,22 @@
 - (void)setInGesture:(BOOL)arg1;
 - (void)setLoupeGesture:(id)arg1;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)shouldHandleGestureAtLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setSingleTapGesture:(id)arg1;
+- (BOOL)shouldHandleFormGestureAtLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)shouldHandleOneFingerTapInUneditable:(id)arg1;
 - (BOOL)shouldIgnoreLinkGestures;
+- (id)singleTapGesture;
 - (void)smallDelayRecognizer:(id)arg1;
 - (void)startAutoscroll:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)swallowsDoubleTapWithScale:(float)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)tapAndAHalf:(id)arg1;
 - (BOOL)tapOnLinkWithGesture:(id)arg1;
+- (void)turnOffDrawsAsAtomIfPlainStyleAtom;
 - (void)twoFingerRangedSelectGesture:(id)arg1;
 - (void)twoFingerSingleTap:(id)arg1;
 - (void)updateAutoscroll:(id)arg1;
 - (BOOL)useGesturesForEditableContent;
 - (id)view;
 - (BOOL)viewCouldBecomeEditable:(id)arg1;
-- (void)willRotate:(id)arg1;
 
 @end

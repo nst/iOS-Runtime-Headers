@@ -2,20 +2,19 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class NSMutableData, EASession, NSLock, EAAccessory;
+@class EASession, NSThread, NSMutableData, NSLock, EAAccessory;
 
 @interface EAInputStream : NSInputStream {
     EAAccessory *_accessory;
     id _delegate;
     BOOL _hasNewBytesAvailable;
-    NSMutableData *_inData;
-    NSLock *_inDataLock;
-    NSInteger _infd;
+    char *_inputFromAccBuffer;
+    NSMutableData *_inputFromAccData;
+    NSInteger _inputFromAccFd;
+    NSLock *_inputFromAccLock;
+    NSThread *_inputFromAccThread;
     BOOL _isAtEndEventSent;
     BOOL _isOpenCompletedEventSent;
-    char *_readBuffer;
-    struct __CFFileDescriptor { } *_readCFFileDescriptor;
-    struct __CFRunLoopSource { } *_readRunLoopSource;
     struct __CFRunLoop { } *_runLoop;
     struct __CFRunLoopSource { } *_runLoopSource;
     EASession *_session;
@@ -24,7 +23,7 @@
 
 - (void)_accessoryDidDisconnect:(id)arg1;
 - (void)_performAtEndOfStreamValidation;
-- (void)_readData;
+- (void)_readInputFromAccThread;
 - (void)_scheduleCallback;
 - (void)_streamEventTrigger;
 - (void)close;

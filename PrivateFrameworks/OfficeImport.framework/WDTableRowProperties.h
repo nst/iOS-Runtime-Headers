@@ -7,45 +7,45 @@
 @interface WDTableRowProperties : NSObject <NSCopying> {
     struct { 
         short widthBefore; 
-        BOOL widthBeforeOverridden; 
         NSInteger widthBeforeType; 
-        BOOL widthBeforeTypeOverridden; 
         short widthAfter; 
-        BOOL widthAfterOverridden; 
         NSInteger widthAfterType; 
-        BOOL widthAfterTypeOverridden; 
         NSInteger height; 
-        BOOL heightOverridden; 
         NSInteger heightType; 
-        BOOL heightTypeOverridden; 
-        BOOL header; 
-        BOOL headerOverridden; 
+        unsigned int widthBeforeOverridden : 1; 
+        unsigned int widthBeforeTypeOverridden : 1; 
+        unsigned int widthAfterOverridden : 1; 
+        unsigned int widthAfterTypeOverridden : 1; 
+        unsigned int heightOverridden : 1; 
+        unsigned int heightTypeOverridden : 1; 
+        unsigned int header : 1; 
+        unsigned int headerOverridden : 1; 
     struct { 
         short widthBefore; 
-        BOOL widthBeforeOverridden; 
         NSInteger widthBeforeType; 
-        BOOL widthBeforeTypeOverridden; 
         short widthAfter; 
-        BOOL widthAfterOverridden; 
         NSInteger widthAfterType; 
-        BOOL widthAfterTypeOverridden; 
         NSInteger height; 
-        BOOL heightOverridden; 
         NSInteger heightType; 
-        BOOL heightTypeOverridden; 
-        BOOL header; 
-        BOOL headerOverridden; 
+        unsigned int widthBeforeOverridden : 1; 
+        unsigned int widthBeforeTypeOverridden : 1; 
+        unsigned int widthAfterOverridden : 1; 
+        unsigned int widthAfterTypeOverridden : 1; 
+        unsigned int heightOverridden : 1; 
+        unsigned int heightTypeOverridden : 1; 
+        unsigned int header : 1; 
+        unsigned int headerOverridden : 1; 
+    unsigned int mOriginal : 1;
+    unsigned int mTracked : 1;
+    unsigned int mResolved : 1;
     WDCharacterProperties *mCharacterProperties;
-    BOOL mOriginal;
     } mOriginalProperties;
-    BOOL mResolved;
     WDTableProperties *mTableProperties;
-    BOOL mTracked;
     } mTrackedProperties;
 }
 
 - (void)addProperties:(id)arg1;
-- (void)addPropertiesValues:(struct { short x1; BOOL x2; NSInteger x3; BOOL x4; short x5; BOOL x6; NSInteger x7; BOOL x8; NSInteger x9; BOOL x10; NSInteger x11; BOOL x12; BOOL x13; BOOL x14; }*)arg1 to:(struct { short x1; BOOL x2; NSInteger x3; BOOL x4; short x5; BOOL x6; NSInteger x7; BOOL x8; NSInteger x9; BOOL x10; NSInteger x11; BOOL x12; BOOL x13; BOOL x14; }*)arg2;
+- (void)addPropertiesValues:(struct { short x1; NSInteger x2; short x3; NSInteger x4; NSInteger x5; NSInteger x6; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; }*)arg1 to:(struct { short x1; NSInteger x2; short x3; NSInteger x4; NSInteger x5; NSInteger x6; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; }*)arg2;
 - (id)characterProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

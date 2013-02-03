@@ -2,17 +2,25 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSMutableArray, EDWorkbook;
 
 @interface EDProcessors : NSObject {
+     /* Encoded args for previous method: B8@0:4 */
     NSMutableArray *mProcessors;
+    EDWorkbook *mWorkbook;
 }
 
 - (void)addProcessorClass:(Class)arg1;
-- (void)applyProcessorsWithWorkbook:(id)arg1;
+- (void)applyProcessorsWithSheet:(id)arg1;
 - (void)dealloc;
-- (id)init;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)hasProcessors;
+- (id)initWithWorkbook:(id)arg1;
 - (void)markObject:(id)arg1 processor:(Class)arg2;
 - (void)removeAllObjects;
+- (void)removeProcessorClass:(Class)arg1;
 
 @end

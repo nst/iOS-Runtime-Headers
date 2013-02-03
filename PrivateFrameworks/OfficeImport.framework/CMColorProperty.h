@@ -9,6 +9,7 @@
 }
 
 + (struct CGColor { }*)createCGColorFromOADColor:(id)arg1 state:(id)arg2;
++ (struct CGColor { }*)createCGColorFromOADFill:(id)arg1 state:(id)arg2;
 + (id)cssStringFromNSColorStub:(id)arg1;
 + (id)cssStringFromOADColor:(id)arg1;
 + (id)cssStringFromOADGradientFill:(id)arg1 state:(id)arg2;

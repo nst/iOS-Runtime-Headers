@@ -15,7 +15,7 @@
             float width; 
             float height; 
         } size; 
-    struct $_159 { 
+    struct $_610 { 
         unsigned int _flags : 8; 
         unsigned int _pathState : 2; 
         unsigned int _unused : 22; 
@@ -91,7 +91,6 @@
 - (void)appendBezierPathWithArcWithCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(float)arg2 startAngle:(float)arg3 endAngle:(float)arg4 clockwise:(BOOL)arg5;
 - (void)appendBezierPathWithArcWithCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(float)arg2 startAngle:(float)arg3 endAngle:(float)arg4;
 - (void)appendBezierPathWithArcWithCenter:(struct CGPoint { float x1; float x2; })arg1 radiusSize:(struct CGSize { float x1; float x2; })arg2 startAngle:(float)arg3 endAngle:(float)arg4 clockwise:(BOOL)arg5;
-- (void)appendBezierPathWithArcWithCenter:(struct CGPoint { float x1; float x2; })arg1 radiusX:(float)arg2 radiusY:(float)arg3 startAngle:(float)arg4 endAngle:(float)arg5 clockwise:(BOOL)arg6;
 - (void)appendBezierPathWithArcWithRect:(struct CGPoint { float x1; float x2; })arg1 rightBottom:(struct CGPoint { float x1; float x2; })arg2 start:(struct CGPoint { float x1; float x2; })arg3 end:(struct CGPoint { float x1; float x2; })arg4 clockwise:(BOOL)arg5;
 - (void)appendBezierPathWithOvalInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)appendBezierPathWithPoints:(struct CGPoint { float x1; float x2; }*)arg1 count:(NSInteger)arg2;
@@ -105,8 +104,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (BOOL)cachesBezierPath;
 - (void)closePath;
-- (id)closedSubpaths;
-- (BOOL)containsClosedSubpaths;
 - (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })controlPointBounds;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -129,8 +126,6 @@
 - (BOOL)isHitByPath:(id)arg1;
 - (BOOL)isHitByPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)isHitByRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isSingleLineSegment;
-- (BOOL)isSquare;
 - (BOOL)isStrokeHitByPath:(id)arg1;
 - (BOOL)isStrokeHitByPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)isStrokeHitByRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -140,7 +135,6 @@
 - (float)lineWidth;
 - (float)miterLimit;
 - (void)moveToPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (NSInteger)numberOfClosedSubpaths;
 - (void)relativeCurveToPoint:(struct CGPoint { float x1; float x2; })arg1 controlPoint1:(struct CGPoint { float x1; float x2; })arg2 controlPoint2:(struct CGPoint { float x1; float x2; })arg3;
 - (void)relativeLineToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)relativeMoveToPoint:(struct CGPoint { float x1; float x2; })arg1;

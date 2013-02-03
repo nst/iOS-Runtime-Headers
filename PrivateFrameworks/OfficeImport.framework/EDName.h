@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDString, EDFormula, SFUPointerKeyDictionary;
+@class EDFormula, TSUPointerKeyDictionary, EDString;
 
 @interface EDName : NSObject {
     EDFormula *mFormula;
-    SFUPointerKeyDictionary *mMaxWorksheetReferences;
+    TSUPointerKeyDictionary *mMaxWorksheetReferences;
     EDString *mNameString;
     NSUInteger mSheetIndex;
 }
@@ -20,7 +20,7 @@
 - (BOOL)isEqualToString:(id)arg1;
 - (id)maxWorksheetReferences;
 - (id)nameString;
-- (void)setFormula:(id)arg1;
+- (void)setFormula:(id)arg1 workbook:(id)arg2;
 - (void)setNameString:(id)arg1;
 - (void)setSheetIndex:(NSUInteger)arg1;
 - (NSUInteger)sheetIndex;

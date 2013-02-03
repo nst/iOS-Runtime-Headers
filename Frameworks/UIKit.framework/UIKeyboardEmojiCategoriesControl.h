@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSArray, UIImage;
+@class UIImage, NSMutableArray, NSArray;
 
 @interface UIKeyboardEmojiCategoriesControl : UIControl {
     UIImage *_darkDivider;
@@ -17,6 +17,8 @@
 }
 
 @property NSInteger selectedIndex;
+
++ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;

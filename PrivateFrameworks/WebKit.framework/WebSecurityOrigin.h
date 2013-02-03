@@ -9,13 +9,13 @@
 @class WebSecurityOriginPrivate;
 
 @interface WebSecurityOrigin : NSObject {
-     /* Encoded args for previous method: @12@0:4^{SecurityOrigin=i{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}SBBB}8 */
-     /* Encoded args for previous method: ^{SecurityOrigin=i{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}SBBB}8@0:4 */
+     /* Encoded args for previous method: ^{SecurityOrigin=ii{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}SBBBB}8@0:4 */
+     /* Encoded args for previous method: @12@0:4^{SecurityOrigin=ii{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}SBBBB}8 */
     WebSecurityOriginPrivate *_private;
 }
 
-- (struct SecurityOrigin { NSInteger x1; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; unsigned short x5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x6; void*x7; void*x8; }*)_core;
-- (id)_initWithWebCoreSecurityOrigin:(struct SecurityOrigin { NSInteger x1; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; unsigned short x5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x6; void*x7; void*x8; }*)arg1;
+- (struct SecurityOrigin { NSInteger x1; NSInteger x2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; unsigned short x7; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x8; void*x9; void*x10; void*x11; }*)_core;
+- (id)_initWithWebCoreSecurityOrigin:(struct SecurityOrigin { NSInteger x1; NSInteger x2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; unsigned short x7; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x8; void*x9; void*x10; void*x11; }*)arg1;
 - (void)dealloc;
 - (id)domain;
 - (void)finalize;
@@ -29,5 +29,6 @@
 - (void)setQuota:(unsigned long long)arg1;
 - (id)toString;
 - (unsigned long long)usage;
+- (id)webui_userVisibleName;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIImage, NSString;
+@class NSString, UIImage;
 
 @interface SUArrayCellConfiguration : SUCellConfiguration {
     struct CGRect { struct CGPoint { 

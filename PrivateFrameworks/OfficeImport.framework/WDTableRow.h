@@ -12,12 +12,14 @@
 }
 
 - (id)addCell;
+- (id)addCellWithIndex:(NSInteger)arg1;
 - (id)cellAt:(NSInteger)arg1;
 - (NSInteger)cellCount;
 - (id)cellIterator;
 - (void)dealloc;
 - (NSInteger)index;
 - (id)initWithTable:(id)arg1 at:(NSInteger)arg2;
+- (id)newCellIterator;
 - (id)properties;
 - (id)table;
 

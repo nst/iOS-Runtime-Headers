@@ -6,13 +6,10 @@
 }
 
 + (id)dictionaryWithCapacity:(NSUInteger)arg1;
-+ (id)newDictionaryKeyString;
 + (id)nonRetainingDictionary;
-+ (id)nonRetainingKeyAndValueDictionary;
-+ (id)nonRetainingKeyDictionary;
 
-- (void)_addObject:(id)arg1 forKey:(id)arg2;
-- (void)_replaceObject:(id)arg1 forKey:(id)arg2;
+- (void)MCDeepCopyEntriesFromDictionary:(id)arg1;
+- (void)MCSetObjectIfNotNil:(id)arg1 forKey:(id)arg2;
 - (void)_web_setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)_web_setInt:(NSInteger)arg1 forKey:(id)arg2;
 - (void)_web_setObject:(id)arg1 forUncopiedKey:(id)arg2;
@@ -23,7 +20,9 @@
 - (void)_webkit_setObject:(id)arg1 forUncopiedKey:(id)arg2;
 - (void)_webkit_setUnsignedLongLong:(unsigned long long)arg1 forKey:(id)arg2;
 - (void)addEntriesFromDictionary:(id)arg1;
+- (void)addEntriesFromDictionaryWithRecursion:(id)arg1;
 - (void)addObject:(id)arg1 forKey:(id)arg2;
+- (void)addObjectsAndKeys:(id)arg1;
 - (id)addToCacheAndReturnCssString:(id)arg1;
 - (Class)classForCoder;
 - (id)initWithCapacity:(NSUInteger)arg1;
@@ -31,16 +30,25 @@
 - (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(NSUInteger)arg3;
 - (void)invert;
+- (void)mf_addObject:(id)arg1 forKey:(id)arg2;
 - (void)mf_fixupRFC2231Values;
 - (id)mf_objectForKey:(id)arg1 ofClass:(Class)arg2;
+- (void)mf_setBool:(BOOL)arg1 forKey:(id)arg2;
+- (void)mf_setInteger:(NSInteger)arg1 forKey:(id)arg2;
+- (id)objectForColonDelimitedKey:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeKeysForObject:(id)arg1;
+- (void)removeObjectForIntegerKey:(NSInteger)arg1;
+- (void)removeObjectForIntegerKey:(NSInteger)arg1;
 - (void)removeObjectForKey:(id)arg1;
+- (void)removeObjectsForIntegerKeys:(id)arg1;
+- (void)removeObjectsForIntegerKeys:(id)arg1;
 - (void)removeObjectsForKeys:(id)arg1;
-- (void)setBool:(BOOL)arg1 forKey:(id)arg2;
+- (void)replaceObject:(id)arg1 forKey:(id)arg2;
 - (void)setDictionary:(id)arg1;
-- (void)setInteger:(NSInteger)arg1 forKey:(id)arg2;
-- (void)setObject:(id)arg1 forInt:(NSInteger)arg2;
+- (void)setObject:(id)arg1 forColonDelimitedKey:(id)arg2;
+- (void)setObject:(id)arg1 forIntegerKey:(NSInteger)arg2;
+- (void)setObject:(id)arg1 forIntegerKey:(NSInteger)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 

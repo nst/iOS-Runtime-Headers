@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSArray, NSString;
+@class NSString, NSArray;
 
 @interface VMUProcInfo : NSObject <SafeVMUProcInfoProtocol> {
     struct timeval { 

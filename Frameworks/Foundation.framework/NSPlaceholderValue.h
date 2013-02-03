@@ -14,7 +14,7 @@
 - (id)initWithBytes:(const void*)arg1 objCType:(const char *)arg2;
 - (id)initWithCoder:(id)arg1;
 - (const char *)objCType;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (NSUInteger)retainCount;
 

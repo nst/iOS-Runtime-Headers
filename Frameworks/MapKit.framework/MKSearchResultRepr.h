@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableArray, GMMAdInfo, NSString, NSData, GMMKmlInfo;
+@class NSString, NSData, GMMAdInfo, NSMutableArray, GMMKmlInfo;
 
 @interface MKSearchResultRepr : PBCodable {
     NSUInteger _adActionsSent;
@@ -17,6 +17,7 @@
     NSString *_countryCode;
     NSString *_countryName;
     NSString *_dependentLocality;
+    NSString *_directionsPlacemarkToken;
     NSUInteger _flags;
     NSString *_formattedAddress;
     NSInteger _gmmContentType;
@@ -60,6 +61,7 @@
 @property(retain) NSString *countryCode;
 @property(retain) NSString *countryName;
 @property(retain) NSString *dependentLocality;
+@property(retain) NSString *directionsPlacemarkToken;
 @property(retain) NSString *formattedAddress;
 @property(retain) GMMKmlInfo *gmmKmlInfo;
 @property(retain) NSString *locality;
@@ -90,6 +92,7 @@
 @property(readonly) BOOL hasCountryCode;
 @property(readonly) BOOL hasCountryName;
 @property(readonly) BOOL hasDependentLocality;
+@property(readonly) BOOL hasDirectionsPlacemarkToken;
 @property(readonly) BOOL hasFlags;
 @property(readonly) BOOL hasFormattedAddress;
 @property(readonly) BOOL hasGmmContentType;
@@ -136,6 +139,7 @@
 - (id)dependentLocality;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)directionsPlacemarkToken;
 - (NSUInteger)flags;
 - (id)formattedAddress;
 - (NSInteger)gmmContentType;
@@ -151,6 +155,7 @@
 - (BOOL)hasCountryCode;
 - (BOOL)hasCountryName;
 - (BOOL)hasDependentLocality;
+- (BOOL)hasDirectionsPlacemarkToken;
 - (BOOL)hasFlags;
 - (BOOL)hasFormattedAddress;
 - (BOOL)hasGmmContentType;
@@ -200,6 +205,7 @@
 - (void)setCountryCode:(id)arg1;
 - (void)setCountryName:(id)arg1;
 - (void)setDependentLocality:(id)arg1;
+- (void)setDirectionsPlacemarkToken:(id)arg1;
 - (void)setFlags:(NSUInteger)arg1;
 - (void)setFormattedAddress:(id)arg1;
 - (void)setGmmContentType:(NSInteger)arg1;

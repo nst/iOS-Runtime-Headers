@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableDictionary, NSInvocation;
+@class NSInvocation, NSMutableDictionary;
 
 @interface RunLoopContinuation : NSObject {
     NSMutableDictionary *_context;

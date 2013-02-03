@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextFieldBackgroundView, UIView, UIColor, UIImage, UITextFieldAtomBackgroundView, UITextInputTraits, UILabel, NSString, UITextSelectionView, UIImageView, UITextFieldBorderView, UITextInteractionAssistant, UITextFieldLabel;
+@class UITextFieldBackgroundView, UITextInputTraits, UIImage, UIColor, UITextSelectionView, UILabel, UITextInteractionAssistant, UIView, UITextFieldBorderView, UITextFieldLabel, NSString, UIImageView, UITextFieldAtomBackgroundView;
 
 @interface UITextField : UIControl <UITextInputTraits, NSCoding> {
     struct _NSRange { 
@@ -30,6 +30,7 @@
         unsigned int fieldEditorAttached : 1; 
         unsigned int inBecomeFirstResponder : 1; 
         unsigned int becomingFirstResponder : 1; 
+        unsigned int inResignFirstResponder : 1; 
         unsigned int undoDisabled : 1; 
         unsigned int contentsRTL : 1; 
         unsigned int explicitAlignment : 1; 
@@ -46,6 +47,8 @@
     UITextFieldBorderView *_disabledBackgroundView;
     float _fullFontSize;
     UIImageView *_iconView;
+    UIView *_inputAccessoryView;
+    UIView *_inputView;
     UITextInteractionAssistant *_interactionAssistant;
     UILabel *_label;
     float _labelOffset;
@@ -82,6 +85,8 @@
 @property <UITextFieldDelegate> *delegate;
 @property(retain) UIImage *disabledBackground;
 @property(retain) UIFont *font;
+@property(retain) UIView *inputAccessoryView;
+@property(retain) UIView *inputView;
 @property(retain) UIView *leftView;
 @property(copy) NSString *placeholder;
 @property(retain) UIView *rightView;
@@ -104,21 +109,37 @@
 @property(getter=isSecureTextEntry) BOOL secureTextEntry;
 @property NSInteger textAlignment;
 
++ (void)_initializeSafeCategory;
+
+- (NSInteger)_accessibilityCountAccessibleChildren:(id)arg1;
+- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)_accessibilityInternalButton;
+- (id)_accessibilityInternalData;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
+- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)_accessibilityUpdateButtons;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_atomBackgroundViewFrame;
+- (void)_becomeFirstResponder;
+- (void)_becomeFirstResponderAndMakeVisible;
 - (void)_clearBackgroundViews;
 - (void)_clearButtonClicked:(id)arg1;
 - (void)_clearStyle;
 - (id)_copyFont:(id)arg1 newSize:(float)arg2 maxSize:(float)arg3;
+- (id)_createCSSStyleDeclarationForWebView:(id)arg1;
 - (void)_drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forLabel:(id)arg2;
 - (void)_endedEditing;
 - (id)_fieldEditor;
 - (BOOL)_fieldEditorAttached;
-- (id)_firstResponder;
+- (struct CGSize { float x1; float x2; })_fontMetrics:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForLabel:(id)arg1 inTextRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)_keyboardResponder;
 - (struct CGSize { float x1; float x2; })_leftViewOffset;
 - (float)_marginTopForText:(id)arg1;
+- (id)_placeholderColor;
 - (id)_placeholderView;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (BOOL)_requiresKeyboardResetOnReload;
+- (void)_resignFirstResponder;
 - (struct CGSize { float x1; float x2; })_rightViewOffset;
 - (id)_scriptingInfo;
 - (struct CGPoint { float x1; float x2; })_scrollOffset;
@@ -131,8 +152,10 @@
 - (void)_setRtoLTextDirection:(id)arg1;
 - (void)_setSystemBackgroundViewActive:(BOOL)arg1;
 - (BOOL)_shouldEndEditing;
+- (BOOL)_shouldSendContentChangedNotificationsIfOnlyMarkedTextChanged;
 - (BOOL)_showsAtomBackground;
 - (BOOL)_showsClearButton:(BOOL)arg1;
+- (BOOL)_showsClearButtonWhenEmpty;
 - (BOOL)_showsLeftView;
 - (BOOL)_showsRightView;
 - (void)_sizeChanged:(BOOL)arg1;
@@ -150,11 +173,19 @@
 - (void)_updateLabel;
 - (void)_updateTextColor;
 - (void)_updateTextLabel;
+- (void)_windowBecameKey;
+- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
+- (id)accessibilityElementAtIndex:(NSInteger)arg1;
+- (NSInteger)accessibilityElementCount;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
+- (id)accessibilityValue;
+- (id)actualFont;
+- (float)actualMinimumFontSize;
 - (BOOL)adjustsFontSizeToFitWidth;
 - (NSInteger)atomStyle;
 - (void)attachFieldEditor:(id)arg1;
 - (id)background;
-- (BOOL)becomeFirstResponder;
 - (void)beginSelectionChange;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })borderRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (NSInteger)borderStyle;
@@ -163,18 +194,15 @@
 - (BOOL)canResignFirstResponder;
 - (void)cancelAutoscroll;
 - (BOOL)caretBlinks;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRect;
 - (NSUInteger)characterOffsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (NSInteger)clearButtonMode;
 - (struct CGSize { float x1; float x2; })clearButtonOffset;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clearButtonRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clearButtonRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)clearSelection;
 - (void)clearText;
 - (BOOL)clearsOnBeginEditing;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })closestCaretRectForPoint:(struct CGPoint { float x1; float x2; })arg1 inSelection:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })closestCaretRectInMarkedTextRangeForPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)collapseSelection;
+- (void)configureFromScriptTextField:(id)arg1;
 - (struct CGPoint { float x1; float x2; })constrainedPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)content;
 - (void)copy:(id)arg1;
@@ -198,11 +226,8 @@
 - (BOOL)fieldEditor:(id)arg1 shouldInsertText:(id)arg2 replacingRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
 - (BOOL)fieldEditor:(id)arg1 shouldReplaceWithText:(id)arg2;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })fieldEditor:(id)arg1 willChangeSelectionFromCharacterRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 toCharacterRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
-- (void)fieldEditorDidBecomeFirstResponder:(id)arg1;
 - (void)fieldEditorDidChange:(id)arg1;
 - (void)fieldEditorDidChangeSelection:(id)arg1;
-- (void)fieldEditorDidResignFirstResponder:(id)arg1;
-- (BOOL)fieldEditorShouldEndEditing:(id)arg1;
 - (id)font;
 - (void)forwardInvocation:(id)arg1;
 - (BOOL)hasMarkedText;
@@ -210,17 +235,20 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })iconRect;
+- (NSInteger)indexOfAccessibilityElement:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)inputAccessoryView;
+- (id)inputView;
 - (void)insertText:(id)arg1;
 - (id)interactionAssistant;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isAccessibilityElementByDefault;
 - (BOOL)isEditable;
 - (BOOL)isEditing;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
-- (BOOL)isFirstResponder;
+- (BOOL)isReallyFirstResponder;
 - (BOOL)isUndoEnabled;
-- (NSInteger)keyboardInput:(id)arg1 positionForAutocorrection:(id)arg2;
 - (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
 - (BOOL)keyboardInputChanged:(id)arg1;
 - (void)keyboardInputChangedSelection:(id)arg1;
@@ -235,7 +263,7 @@
 - (void)mouseDown:(struct __GSEvent { }*)arg1;
 - (void)mouseDragged:(struct __GSEvent { }*)arg1;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
-- (void)moveSelectionToStartOrEndOfCurrentWord;
+- (NSUInteger)offsetInMarkedTextForSelection:(id)arg1;
 - (float)paddingBottom;
 - (float)paddingLeft;
 - (float)paddingRight;
@@ -243,9 +271,10 @@
 - (void)paste:(id)arg1;
 - (id)placeholder;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })placeholderRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)pointAtEndOfLine:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)pointAtStartOfLine:(struct CGPoint { float x1; float x2; })arg1;
+- (void)promptForReplace:(id)arg1;
+- (void)replace:(id)arg1;
 - (BOOL)resignFirstResponder;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (id)rightView;
 - (NSInteger)rightViewMode;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rightViewRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -257,12 +286,8 @@
 - (id)selectedText;
 - (void)selectionChanged;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionClipRect;
-- (NSInteger)selectionGranularity;
-- (BOOL)selectionGranularityIncreasing;
-- (NSUInteger)selectionOffsetInMarkedText;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })selectionRange;
-- (id)selectionRects;
-- (NSInteger)selectionState;
+- (id)selectionRectsForRange:(id)arg1;
 - (id)selectionView;
 - (BOOL)selectionVisible;
 - (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
@@ -288,6 +313,8 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIcon:(id)arg1;
 - (void)setInactiveHasDimAppearance:(BOOL)arg1;
+- (void)setInputAccessoryView:(id)arg1;
+- (void)setInputView:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLabelOffset:(float)arg1;
 - (void)setLeftView:(id)arg1;
@@ -300,17 +327,12 @@
 - (void)setPaddingTop:(float)arg1;
 - (void)setPlaceholder:(id)arg1;
 - (void)setProgress:(float)arg1;
-- (BOOL)setRangedSelectionExtentPoint:(struct CGPoint { float x1; float x2; })arg1 baseIsStart:(BOOL)arg2;
 - (void)setRightView:(id)arg1;
 - (void)setRightViewMode:(NSInteger)arg1;
 - (void)setSecureTextEntry:(BOOL)arg1;
-- (void)setSelectionGranularity:(NSInteger)arg1;
-- (void)setSelectionGranularityIncreasing:(BOOL)arg1;
+- (void)setSelectedTextRange:(id)arg1;
 - (void)setSelectionRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
-- (void)setSelectionToNextGranularity:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setSelectionVisible:(BOOL)arg1;
-- (void)setSelectionWithFirstPoint:(struct CGPoint { float x1; float x2; })arg1 secondPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
 - (void)setTextAlignment:(NSInteger)arg1;
 - (void)setTextAutorresizesToFit:(BOOL)arg1;
@@ -332,10 +354,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (id)undoManager;
-- (BOOL)webView:(id)arg1 shouldInsertText:(id)arg2 replacingDOMRange:(id)arg3 givenAction:(NSInteger)arg4;
 - (id)webView;
 - (void)willAttachFieldEditor:(id)arg1;
 - (void)willDetachFieldEditor:(id)arg1;
-- (id)wordAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

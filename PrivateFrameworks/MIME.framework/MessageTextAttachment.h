@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class MessageFileWrapper;
+@class MessageFileWrapper, NSMutableDictionary;
 
 @interface MessageTextAttachment : NSObject {
+    NSMutableDictionary *_cache;
     MessageFileWrapper *_fileWrapper;
 }
 
 - (BOOL)allowDownload;
 - (NSUInteger)approximateSize;
+- (id)cachedValueForKey:(id)arg1;
 - (id)contentType;
 - (id)contentTypeAndMimeType:(id*)arg1;
 - (void)dealloc;
@@ -17,20 +19,29 @@
 - (id)fileWrapper;
 - (id)fileWrapperForcingDownload:(BOOL)arg1;
 - (BOOL)hasBeenDownloaded;
+- (NSUInteger)imageScalingFlags;
+- (id)init;
 - (id)initWithWrapper:(id)arg1;
+- (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2 ignoreCachedData:(BOOL)arg3;
 - (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2;
 - (BOOL)isCalendarFile;
+- (BOOL)isContentDownloadable;
+- (BOOL)isContentOpenable;
 - (BOOL)isContentTypeDisplayableByMobileMail:(id)arg1;
 - (BOOL)isDisplayableInline;
 - (BOOL)isDisplayableInsidePlugin;
 - (BOOL)isPlaceholder;
 - (BOOL)isRestrictedMimeType:(id)arg1;
-- (struct CGSize { float x1; float x2; })markupSize;
-- (id)markupStringForComposition:(BOOL)arg1 prependBlankLine:(BOOL)arg2;
-- (id)markupURL;
+- (BOOL)isSinglePagePDFThatIsAllowedToBeInline;
+- (id)mf_copyMarkupURL;
+- (struct CGSize { float x1; float x2; })mf_markupSize;
+- (id)mf_markupStringForComposition:(BOOL)arg1 prependBlankLine:(BOOL)arg2;
 - (id)mimePart;
+- (void)scaleImageToFit:(NSInteger)arg1;
+- (void)setCachedValue:(id)arg1 forKey:(id)arg2;
 - (void)setDisplayableInline:(BOOL)arg1;
 - (void)setFileWrapper:(id)arg1;
+- (void)setImageScalingFlags:(NSUInteger)arg1;
 - (BOOL)shouldDownloadAttachmentOnDisplay;
 
 @end

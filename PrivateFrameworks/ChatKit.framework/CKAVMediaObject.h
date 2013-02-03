@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSString, AVRemaker;
+@class AVRemaker, NSString;
 
 @interface CKAVMediaObject : CKMediaObject {
     double _approximateDuration;
@@ -17,7 +17,7 @@
 + (void)_dequeueNextTranscodeOnMainThread;
 + (void)initialize;
 + (double)maxMMSTrimDurationForMediaType:(NSInteger)arg1;
-+ (id)transcodeOptionsWithMaxBytes:(NSInteger)arg1;
++ (id)transcodeOptionsWithMaxBytes:(NSInteger)arg1 forMediaType:(NSInteger)arg2;
 
 - (void)_beginRemakingOnMainThreadWithOptions:(id)arg1;
 - (void)_determineDurationOnMainThreadWithFile:(id)arg1;

@@ -5,7 +5,7 @@
 @interface ML3NegationPredicate : ML3UnaryPredicate {
 }
 
-- (id)SQLForEntityClass:(Class)arg1;
+- (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
 - (id)description;
 
 @end

@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSMutableArray, <DATask>, NSMutableSet;
+@class NSMutableArray, NSMutableSet, DAAccount, <DATask>;
 
 @interface DATaskManager : NSObject {
+    DAAccount *_account;
     <DATask> *_activeExclusiveTask;
     <DATask> *_activeModalTask;
     <DATask> *_activeQueuedTask;
@@ -18,6 +19,7 @@
     NSInteger _state;
 }
 
+@property DAAccount *account;
 @property(readonly) <DATask> *activeModalTask;
 @property(readonly) <DATask> *activeQueuedTask;
 @property(readonly) NSArray *allTasks;
@@ -32,6 +34,7 @@
 - (id)_getQueuedTasks;
 - (void)_makeStateTransition;
 - (void)_performTask:(id)arg1;
+- (void)_populateVersionDescriptions;
 - (void)_reactivateHeldTasks;
 - (void)_releasePowerAssertionForTask:(id)arg1;
 - (void)_requestCancelTasksWithReason:(NSInteger)arg1;
@@ -40,6 +43,11 @@
 - (void)_scheduleSelector:(SEL)arg1 withArgument:(id)arg2;
 - (void)_scheduleStartModal:(id)arg1;
 - (void)_startModal:(id)arg1;
+- (BOOL)_useFakeDescriptions;
+- (id)_version;
+- (id)account;
+- (id)accountID;
+- (id)accountPersistentUUID;
 - (id)activeModalTask;
 - (id)activeQueuedTask;
 - (id)allTasks;
@@ -47,8 +55,17 @@
 - (void)cancelTask:(id)arg1 withUnderlyingError:(id)arg2;
 - (void)cancelTask:(id)arg1;
 - (void)dealloc;
+- (id)deviceID;
+- (id)deviceType;
+- (id)identityPersist;
 - (id)init;
+- (id)initWithAccount:(id)arg1;
+- (id)password;
+- (NSInteger)port;
 - (id)queuedTasks;
+- (id)scheme;
+- (id)server;
+- (void)setAccount:(id)arg1;
 - (void)shutdown;
 - (id)stateString;
 - (void)submitExclusiveTask:(id)arg1 toFrontOfQueue:(BOOL)arg2;
@@ -60,5 +77,8 @@
 - (void)taskManagerDidAddTask:(id)arg1;
 - (void)taskManagerWillRemoveTask:(id)arg1;
 - (void)taskRequestModal:(id)arg1;
+- (BOOL)useSSL;
+- (id)user;
+- (id)userAgent;
 
 @end

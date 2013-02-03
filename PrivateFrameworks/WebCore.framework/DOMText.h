@@ -5,6 +5,8 @@
 @interface DOMText : DOMCharacterData {
 }
 
+@property(copy,readonly) NSString *wholeText;
+
 - (id)replaceWholeText:(id)arg1;
 - (id)splitText:(NSUInteger)arg1;
 - (id)wholeText;

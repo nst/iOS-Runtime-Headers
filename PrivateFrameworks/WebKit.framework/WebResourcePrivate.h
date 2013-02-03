@@ -15,7 +15,8 @@
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_string; 
-            /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*m_isValid; 
+            unsigned int m_isValid : 1; 
+            unsigned int m_protocolInHTTPFamily : 1; 
             NSInteger m_schemeEnd; 
             NSInteger m_userStart; 
             NSInteger m_userEnd; 
@@ -33,7 +34,8 @@
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
-                void*m_isValid; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolInHTTPFamily : 1; 
                 NSInteger m_schemeEnd; 
                 NSInteger m_userStart; 
                 NSInteger m_userEnd; 
@@ -76,16 +78,25 @@
                     NSInteger m_deletedCount; 
                 } m_impl; 
             } m_httpHeaderFields; 
-            NSInteger m_expirationDate; 
             NSInteger m_lastModifiedDate; 
             unsigned int m_isNull : 1; 
-            unsigned int m_haveParsedCacheControl : 1; 
-            unsigned int m_cacheControlContainsMustRevalidate : 1; 
+            unsigned int m_haveParsedCacheControlHeader : 1; 
+            unsigned int m_haveParsedAgeHeader : 1; 
+            unsigned int m_haveParsedDateHeader : 1; 
+            unsigned int m_haveParsedExpiresHeader : 1; 
+            unsigned int m_haveParsedLastModifiedHeader : 1; 
             unsigned int m_cacheControlContainsNoCache : 1; 
+            unsigned int m_cacheControlContainsNoStore : 1; 
+            unsigned int m_cacheControlContainsMustRevalidate : 1; 
+            double m_cacheControlMaxAge; 
+            double m_age; 
+            double m_date; 
+            double m_expires; 
+            double m_lastModified; 
             struct RetainPtr<NSURLResponse> { 
                 NSURLResponse *m_ptr; 
             } m_nsResponse; 
-            void*m_isUpToDate; 
+            /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*m_isUpToDate; 
         } x4; struct RefPtr<WebCore::SharedBuffer> { 
             struct SharedBuffer {} *m_ptr; 
         } x5; struct String { 

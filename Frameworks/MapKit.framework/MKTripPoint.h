@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CLHeading, CLLocation, NSError;
+@class CLLocation, NSError, CLHeading;
 
 @interface MKTripPoint : NSObject {
     NSInteger _commandType;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, NSString, OADBlip;
+@class OADBlip, NSString, NSMutableArray;
 
 @interface OADBlipRef : NSObject <NSCopying> {
     OADBlip *mBlip;
@@ -20,14 +20,19 @@
 - (void)dealloc;
 - (id)effectAtIndex:(NSUInteger)arg1;
 - (NSUInteger)effectCount;
+- (id)effects;
+- (NSUInteger)hash;
 - (long)index;
 - (id)init;
 - (id)initWithIndex:(long)arg1 name:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isNull;
 - (id)name;
 - (void)removeEffectAtIndex:(NSUInteger)arg1;
 - (void)setBlip:(id)arg1;
 - (void)setFilename:(id)arg1 data:(id)arg2;
+- (void)setFilenameAndDelayedContext:(id)arg1 context:(id)arg2 targetSize:(long)arg3;
+- (void)setIndex:(long)arg1;
 - (void)setName:(id)arg1;
 - (void)setPath:(id)arg1;
 

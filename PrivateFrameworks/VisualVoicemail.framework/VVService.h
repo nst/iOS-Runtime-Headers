@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
  */
 
-@class NSString, NSRecursiveLock, NSError, NSTimer;
+@class NSError, NSString, NSRecursiveLock, NSTimer;
 
 @interface VVService : NSObject {
     struct { 
@@ -115,6 +115,7 @@
 - (id)passwordIgnoringSubscription:(BOOL)arg1;
 - (void)progressiveDataLengthsForRecord:(void*)arg1 expected:(NSUInteger*)arg2 current:(NSUInteger*)arg3;
 - (id)provisionalPassword;
+- (void)removeAllNonDetachedRecords;
 - (void)removeAllRecords;
 - (void)reportError:(id)arg1;
 - (void)resetCounts;

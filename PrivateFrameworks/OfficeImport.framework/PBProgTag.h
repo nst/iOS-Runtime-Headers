@@ -10,9 +10,10 @@
 + (void)readBulletImagesFromDocumentList:(id)arg1 state:(id)arg2;
 + (id)readBulletStyleFromClientData:(id)arg1;
 + (void)readBulletStylesFromDocumentList:(id)arg1 state:(id)arg2;
-+ (id)readBulletStylesFromMainMaster:(id)arg1;
++ (void)readBulletStylesFromMainMaster:(id)arg1 state:(id)arg2;
 + (void)readClientData:(id)arg1 state:(id)arg2;
 + (void)readDocumentList:(id)arg1 state:(id)arg2;
++ (void)readHyperlinkScreenTipsFromDocumentList:(id)arg1 state:(id)arg2;
 + (id)readMacCharStyleFromClientData:(id)arg1;
 + (void)readMacCharStylesFromDocumentList:(id)arg1 state:(id)arg2;
 

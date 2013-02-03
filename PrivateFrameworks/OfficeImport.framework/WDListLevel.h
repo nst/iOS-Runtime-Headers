@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDOfficeArt, WDCharacterProperties, WDParagraphProperties, NSMutableString;
+@class WDOfficeArt, NSMutableString, WDParagraphProperties, WDCharacterProperties;
 
 @interface WDListLevel : NSObject {
     WDCharacterProperties *mCharacterProperties;

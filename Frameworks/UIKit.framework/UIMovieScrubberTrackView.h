@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, NSArray, NSDictionary, UIMovieScrubberTrackOverlayView, UIView, <UIMovieScrubberTrackViewDelegate>, <UIMovieScrubberTrackViewDataSource>;
+@class UIMovieScrubberTrackOverlayView, <UIMovieScrubberTrackViewDataSource>, <UIMovieScrubberTrackViewDelegate>, UIView, NSDictionary, NSMutableDictionary, NSArray;
 
 @interface UIMovieScrubberTrackView : UIView {
     struct CGSize { 

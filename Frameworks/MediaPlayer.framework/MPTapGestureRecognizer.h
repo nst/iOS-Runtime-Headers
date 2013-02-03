@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UITouch, NSTimer;
+@class NSTimer, UITouch;
 
 @interface MPTapGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
@@ -21,6 +21,7 @@
 - (void)_setTapTimerWithDuration:(double)arg1;
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (void)reset;
 - (void)setTapCount:(NSUInteger)arg1;
 - (NSUInteger)tapCount;

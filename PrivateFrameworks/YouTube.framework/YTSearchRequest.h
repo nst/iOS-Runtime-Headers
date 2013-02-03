@@ -17,7 +17,7 @@
 - (void)searchForVideoWithID:(id)arg1 withDelegate:(id)arg2;
 - (void)searchForVideosByAuthor:(id)arg1 startingAtIndex:(NSUInteger)arg2 maxResults:(NSUInteger)arg3 withDelegate:(id)arg4;
 - (void)searchForVideosMatchingString:(id)arg1 startingAtIndex:(NSUInteger)arg2 withDelegate:(id)arg3;
-- (void)searchForVideosRelatedToVideo:(id)arg1 withDelegate:(id)arg2;
+- (void)searchForVideosRelatedToVideo:(id)arg1 startingAtIndex:(NSUInteger)arg2 maxResults:(NSUInteger)arg3 withDelegate:(id)arg4;
 - (void)searchForVideosWithFeedURLBase:(id)arg1 startingAtIndex:(NSUInteger)arg2 maxResults:(NSInteger)arg3 withTimeQualifier:(id)arg4 authenticationRequired:(BOOL)arg5 withDelegate:(id)arg6;
 - (void)searchForVideosWithIDs:(id)arg1 withDelegate:(id)arg2;
 

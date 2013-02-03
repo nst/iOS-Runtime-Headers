@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableData, NSArray, NSData, MimePart;
+@class MimePart, NSMutableData, NSArray, NSData;
 
 @interface ProgressiveMimeParser : NSObject {
     struct { 

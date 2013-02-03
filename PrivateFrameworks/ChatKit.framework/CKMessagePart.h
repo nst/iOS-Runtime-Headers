@@ -13,6 +13,7 @@
 
 @property(readonly) NSData *highlightData;
 @property CKMessage *parentMessage;
+@property(readonly) NSUInteger rowID;
 
 + (id)_assembleTextPartFromRange:(id)arg1;
 + (id)_newPartForPartRepresentation:(id)arg1 previewPartRepresentation:(id)arg2;
@@ -34,11 +35,13 @@
 - (id)imageData;
 - (id)imageFilename;
 - (BOOL)isDisplayable;
+- (BOOL)isEqual:(id)arg1;
 - (id)mediaObject;
 - (id)parentMessage;
 - (id)previewData;
 - (id)previewImage;
 - (id)previewText;
+- (unsigned long)rowID;
 - (void)setParentMessage:(id)arg1;
 - (void)setRowID:(unsigned long)arg1;
 - (void)setUIHeight:(unsigned long)arg1 flags:(unsigned long)arg2 store:(BOOL)arg3;

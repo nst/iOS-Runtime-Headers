@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, ODDNodePoint, ODDTransitionPoint;
+@class ODDNodePoint, NSMutableArray, ODDTransitionPoint;
 
 @interface ODDNodePoint : ODDDataPoint {
     NSMutableArray *mChildren;

@@ -14,7 +14,6 @@
 - (void)_reloadHeaderView;
 - (void)_writeAReview:(id)arg1;
 - (void)dealloc;
-- (id)init;
 - (void)loadView;
 - (void)reloadData;
 - (void)reloadForChangedRowCount:(NSInteger)arg1;

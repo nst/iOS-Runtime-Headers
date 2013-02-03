@@ -21,6 +21,7 @@
 - (NSInteger)animation;
 - (NSInteger)compareIndexPaths:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)indexPath;
 - (id)initWithAction:(NSInteger)arg1 forIndexPath:(id)arg2 animation:(NSInteger)arg3;
 - (NSInteger)inverseCompareIndexPaths:(id)arg1;

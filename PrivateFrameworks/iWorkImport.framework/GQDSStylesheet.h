@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDSStylesheet, GQDRoot;
+@class GQDRoot, GQDSStylesheet;
 
 @interface GQDSStylesheet : NSObject {
     struct __CFDictionary { } *mIdentifiedStyles;

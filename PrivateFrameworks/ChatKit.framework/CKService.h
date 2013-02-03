@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKConversationList, NSString;
+@class NSString, CKConversationList;
 
 @interface CKService : NSObject {
     CKConversationList *_conversationList;
@@ -29,6 +29,7 @@
 - (id)headerTitleForComposeRecipients:(id)arg1 mediaObjects:(id)arg2 subject:(id)arg3;
 - (id)headerTitleForEntities:(id)arg1;
 - (id)initWithServiceID:(id)arg1;
+- (BOOL)isSMSDeliverableComposition:(id)arg1 forConversationWithRecipientCount:(NSUInteger)arg2 recipientsRequired:(BOOL)arg3;
 - (BOOL)isValidAddress:(id)arg1;
 - (id)lookupRecipientsForConversation:(id)arg1;
 - (void)markAllMessagesInConversationAsRead:(id)arg1;
@@ -36,12 +37,14 @@
 - (NSInteger)maxRecipientCount;
 - (double)maxTrimDurationForMediaType:(NSInteger)arg1;
 - (id)messagesForConversation:(id)arg1 limit:(NSInteger)arg2 moreToLoad:(BOOL*)arg3;
+- (id)newDeliverableMessageEncodingInfoWithComposition:(id)arg1;
 - (id)newMessageWithComposition:(id)arg1 forConversation:(id)arg2;
 - (id)newMessageWithMessage:(id)arg1 forConversation:(id)arg2 isForward:(BOOL)arg3;
 - (id)placeholderMessageForConversation:(id)arg1 withDate:(id)arg2;
 - (BOOL)restrictsMediaObjects;
 - (void)sendMessage:(id)arg1;
 - (id)serviceID;
+- (BOOL)supportsMediaAttachments;
 - (id)unknownEntity;
 - (NSInteger)unreadConversationCount;
 - (NSInteger)unreadCount;

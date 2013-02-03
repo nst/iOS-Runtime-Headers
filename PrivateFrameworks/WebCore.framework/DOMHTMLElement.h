@@ -21,12 +21,11 @@
 @property NSInteger tabIndex;
 
 - (void)absolutePosition:(NSInteger*)arg1 :(NSInteger*)arg2 :(NSInteger*)arg3 :(NSInteger*)arg4;
-- (void)blur;
 - (id)children;
 - (id)className;
 - (id)contentEditable;
 - (id)dir;
-- (void)focus;
+- (BOOL)draggable;
 - (id)idName;
 - (id)innerHTML;
 - (id)innerText;
@@ -42,6 +41,7 @@
 - (void)setClassName:(id)arg1;
 - (void)setContentEditable:(id)arg1;
 - (void)setDir:(id)arg1;
+- (void)setDraggable:(BOOL)arg1;
 - (void)setIdName:(id)arg1;
 - (void)setInnerHTML:(id)arg1;
 - (void)setInnerText:(id)arg1;

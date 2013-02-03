@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSError, <NSURLAuthenticationChallengeSender>, NSURLProtectionSpace, NSURLResponse, NSURLCredential;
+@class NSURLResponse, NSError, <NSURLAuthenticationChallengeSender>, NSURLProtectionSpace, NSURLCredential;
 
 @interface NSURLAuthenticationChallengeInternal : NSObject {
     NSError *error;

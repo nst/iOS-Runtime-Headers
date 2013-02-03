@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray, NSMutableDictionary, NSSQLEntity, NSNumber;
+@class NSNumber, NSSQLEntity, NSMutableArray, NSMutableDictionary;
 
 @interface _NSSQLTableMigrationDescription : NSObject {
     NSMutableArray *_addedEntityMigrations;
@@ -26,6 +26,7 @@
 - (id)_addedManyToManys;
 - (BOOL)_hasTransformedTableSchema;
 - (id)_removedManyToManys;
+- (id)_retainedRemovedSubEntitiesOfEntity:(id)arg1;
 - (id)_sourceRootEntity;
 - (id)_tempNameForTableName:(id)arg1;
 - (id)_transformedManyToManys;
@@ -38,6 +39,7 @@
 - (void)dealloc;
 - (id)initWithRootEntity:(id)arg1 migrationType:(NSInteger)arg2;
 - (NSInteger)migrationType;
+- (id)newCopyAndInsertStatementForToOne:(id)arg1 toManyToMany:(id)arg2 fromTableName:(id)arg3 invertColumns:(BOOL)arg4 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg5;
 - (id)rootEntity;
 
 @end

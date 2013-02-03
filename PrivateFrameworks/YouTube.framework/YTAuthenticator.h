@@ -17,7 +17,7 @@
 - (void)_addAccountAuthenticationObserers;
 - (void)_addDeferredRequest:(id)arg1 accountAuthRequired:(BOOL)arg2;
 - (void)_addDeviceAuthenticationObserers;
-- (void)_completeAuthentitcationForDeferredRequests;
+- (void)_completeAuthenticationForDeferredRequests;
 - (void)_didAuthenticateAccount:(id)arg1;
 - (void)_didAuthenticateDevice:(id)arg1;
 - (void)_failedToAuthenticateAccount:(id)arg1;
@@ -26,6 +26,7 @@
 - (void)_removeDefferredRequests;
 - (void)_removeDeviceAuthenticationObservers;
 - (void)addAuthenticationHeadersToRequest:(id)arg1 accountAuthRequired:(BOOL)arg2;
+- (BOOL)cachedCredentialsValid;
 - (void)clearAccountInfo;
 - (void)dealloc;
 - (id)init;

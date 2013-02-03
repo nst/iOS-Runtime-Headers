@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLStatement, NSMutableDictionary, NSSQLAdapter, NSSQLStoreMappingGenerator, NSMutableString, NSMutableArray;
+@class NSSQLAdapter, NSMutableArray, NSMutableString, NSSQLStoreMappingGenerator, NSSQLStatement, NSMutableDictionary;
 
 @interface _NSSQLGenerator : NSObject {
     NSSQLAdapter *_adapter;

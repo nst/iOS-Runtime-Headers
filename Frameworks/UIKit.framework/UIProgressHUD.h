@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UILabel, UIProgressIndicator, UIWindow;
+@class UIImageView, UIProgressIndicator, UILabel, UIWindow;
 
 @interface UIProgressHUD : UIView {
     struct { 

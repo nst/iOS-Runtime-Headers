@@ -33,6 +33,7 @@
 - (BOOL)suspend;
 - (NSInteger)suspendCount;
 - (void)terminate;
+- (NSInteger)terminationReason;
 - (NSInteger)terminationStatus;
 
 @end

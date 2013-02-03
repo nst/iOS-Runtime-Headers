@@ -11,6 +11,7 @@
 + (id)exceptionWithMessage:(struct CPTaggedMessageStructure { NSInteger x1; id x2; }*)arg1;
 + (id)exceptionWithUntaggedMessage:(id)arg1;
 + (void)initialize;
++ (id)nsError:(id)arg1 domain:(id)arg2;
 + (void)raise:(struct CPTaggedMessageStructure { NSInteger x1; id x2; }*)arg1;
 + (void)raiseUntaggedMessage:(id)arg1;
 

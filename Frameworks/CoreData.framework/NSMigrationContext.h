@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSPropertyMapping, NSMigrationManager, NSEntityMapping;
+@class NSMutableDictionary, NSMigrationManager, NSPropertyMapping, NSEntityMapping;
 
 @interface NSMigrationContext : NSObject {
     NSMutableDictionary *_byDestinationAssociationTable;

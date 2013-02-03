@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUDialogDelegate>, UIAlertView, ISDialog;
+@class UIAlertView, <SUDialogDelegate>, ISDialog;
 
 @interface SUDialog : NSObject <UIAlertViewDelegate> {
     UIAlertView *_alertView;
@@ -15,6 +15,7 @@
 
 - (id)_alertView;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)alertViewCancel:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)dialog;

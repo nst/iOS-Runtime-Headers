@@ -10,12 +10,9 @@
     NSInteger _entryViewInvisible;
     BOOL _mimeType;
     NSMutableArray *_partsToInsert;
-    NSMutableArray *_presetMessageParts;
-    BOOL _shouldReenableAutomaticKeyboard;
     NSMutableArray *_typesToInsert;
 }
 
-@property(retain) NSMutableArray *presetMessageParts;
 @property id delegate;
 @property BOOL mimeType;
 
@@ -26,24 +23,19 @@
 + (double)maxTrimDurationForVideo;
 
 - (void)_addPart:(id)arg1;
-- (void)_addPresetMessagePart:(id)arg1;
 - (BOOL)_insertMediaObject:(id)arg1;
 - (void)cancelButtonClicked:(id)arg1;
-- (void)dealloc;
 - (id)delegate;
 - (BOOL)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
 - (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
 - (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
 - (BOOL)mimeType;
-- (id)presetMessageParts;
 - (void)send:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMimeType:(BOOL)arg1;
-- (void)setPresetMessageParts:(id)arg1;
 - (void)setTextEntryContentsVisible:(BOOL)arg1;
 - (void)transitionFromNewMessageToConversation;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

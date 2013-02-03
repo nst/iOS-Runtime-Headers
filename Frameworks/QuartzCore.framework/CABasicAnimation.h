@@ -6,17 +6,23 @@
 }
 
 @property(retain) id byValue;
+@property(readonly) NSInteger direction;
 @property float endAngle;
 @property(retain) id fromValue;
+@property(readonly) BOOL isCurlAnimation;
 @property BOOL roundsToInteger;
 @property float startAngle;
 @property(retain) id toValue;
 
 - (struct Animation { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; NSUInteger x7; NSUInteger x8; }*)_copyRenderAnimationForLayer:(id)arg1;
+- (void)CA_prepareRenderValue;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
 - (id)byValue;
+- (NSInteger)direction;
 - (float)endAngle;
 - (id)fromValue;
+- (BOOL)isCurlAnimation;
+- (void)reverseValues;
 - (BOOL)roundsToInteger;
 - (void)setByValue:(id)arg1;
 - (void)setEndAngle:(float)arg1;

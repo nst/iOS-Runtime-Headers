@@ -22,7 +22,7 @@
 - (void)dealloc;
 - (NSUInteger)fastestEncoding;
 - (void)finalize;
-- (BOOL)getBytes:(char *)arg1 maxLength:(NSUInteger)arg2 usedLength:(NSUInteger*)arg3 encoding:(NSUInteger)arg4 options:(NSUInteger)arg5 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg6 remainingRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg7;
+- (BOOL)getBytes:(void*)arg1 maxLength:(NSUInteger)arg2 usedLength:(NSUInteger*)arg3 encoding:(NSUInteger)arg4 options:(NSUInteger)arg5 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg6 remainingRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg7;
 - (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (NSUInteger)length;
 - (const char *)lossyCString;

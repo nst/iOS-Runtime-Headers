@@ -11,14 +11,20 @@
 @property(copy,readonly) NSString *altDisplayString;
 @property(copy) NSString *border;
 @property(copy) NSString *longDesc;
+@property(copy) NSString *lowsrc;
 @property(copy) NSString *name;
 @property(copy) NSString *src;
 @property(copy) NSString *useMap;
+@property(readonly) BOOL complete;
 @property NSInteger height;
 @property NSInteger hspace;
 @property BOOL isMap;
+@property(readonly) NSInteger naturalHeight;
+@property(readonly) NSInteger naturalWidth;
 @property NSInteger vspace;
 @property NSInteger width;
+@property(readonly) NSInteger x;
+@property(readonly) NSInteger y;
 
 - (id)absoluteImageURL;
 - (id)align;
@@ -26,7 +32,7 @@
 - (id)altDisplayString;
 - (id)border;
 - (BOOL)complete;
-- (id)createNSDataRepresentation:(BOOL)arg1;
+- (id)dataRepresentation:(BOOL)arg1;
 - (NSInteger)height;
 - (NSInteger)hspace;
 - (BOOL)isMap;

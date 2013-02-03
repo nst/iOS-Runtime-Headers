@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIToolbar, NSMutableArray, UIImageView, UIBarButtonItem, UIBarButtonItemProxy;
+@class UIToolbar, UIImageView, UIBarButtonItem, UIBarButtonItemProxy, NSMutableArray;
 
 @interface UIToolbarCustomizeView : UIView {
     struct CGPoint { 

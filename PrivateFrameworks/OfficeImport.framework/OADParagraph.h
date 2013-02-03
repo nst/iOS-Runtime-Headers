@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADParagraphProperties, NSMutableArray, OADCharacterProperties;
+@class OADCharacterProperties, OADParagraphProperties, NSMutableArray;
 
 @interface OADParagraph : NSObject {
     OADCharacterProperties *mParagraphEndCharacterProperties;
@@ -11,19 +11,25 @@
 }
 
 - (id)addDateTimeField;
+- (id)addFooterField;
 - (id)addGenericTextField;
 - (id)addRegularTextRun;
 - (id)addSlideNumberField;
 - (id)addTextLineBreak;
+- (void)applyProperties:(id)arg1;
 - (id)bulletCharacterProperties;
 - (void)dealloc;
+- (id)findFirstTextRunOfClass:(Class)arg1;
 - (BOOL)hasBulletCharacterProperties;
 - (id)init;
 - (BOOL)isEmpty;
 - (id)paragraphEndCharacterProperties;
 - (id)plainText;
 - (id)properties;
+- (void)removeUnnecessaryOverrides;
+- (void)setParagraphEndCharacterProperties:(id)arg1;
 - (void)setParentTextListStyle:(id)arg1;
+- (void)setProperties:(id)arg1;
 - (id)textRunAtIndex:(NSUInteger)arg1;
 - (NSUInteger)textRunCount;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSArray, UIColor;
+@class NSMutableArray, UIColor, NSArray;
 
 @interface UIHighlightView : UIView {
     struct CGRect { 

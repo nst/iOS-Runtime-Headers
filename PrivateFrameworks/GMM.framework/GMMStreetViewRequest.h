@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSString, GMMMetadata, GMMOutgoingTile, GMMMapPoint;
+@class GMMOutgoingTile, NSString, GMMMetadata, GMMMapPoint;
 
 @interface GMMStreetViewRequest : PBRequest {
     BOOL _clientSideThrottlingSupported;

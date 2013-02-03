@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSNumber, NSString, ISAuthenticationContext;
+@class SSAuthenticationContext, NSNumber, NSString;
 
 @interface ISStoreURLOperation : ISURLOperation {
     NSNumber *_authenticatedDSID;
-    ISAuthenticationContext *_authenticationContext;
-    NSInteger _bagType;
+    SSAuthenticationContext *_authenticationContext;
     BOOL _needsAuthentication;
     BOOL _needsURLBag;
     NSString *_urlBagKey;
@@ -15,21 +14,23 @@
 }
 
 @property(retain) NSNumber *authenticatedDSID;
-@property(retain) ISAuthenticationContext *authenticationContext;
+@property(retain) SSAuthenticationContext *authenticationContext;
 @property <ISStoreURLOperationDelegate> *delegate;
 @property(retain) NSString *urlBagKey;
-@property NSInteger bagType;
 @property BOOL needsAuthentication;
 @property BOOL needsURLBag;
 @property BOOL urlKnownToBeTrusted;
 
++ (void)_addITunesStoreHeadersToRequest:(id)arg1 withBagContext:(id)arg2;
++ (id)_restrictionsHeaderValue;
 + (void)addITunesStoreHeadersToRequest:(id)arg1;
 + (void)handleITunesStoreResponseHeaders:(id)arg1;
 + (id)itemPingOperationWithIdentifier:(unsigned long long)arg1 urlBagKey:(id)arg2;
++ (id)pingOperationWithUrl:(id)arg1;
 + (id)propertyListOperationWithURLBagKey:(id)arg1;
-+ (void)setDefaultClientApplication:(id)arg1;
 
 - (id)_account;
+- (id)_accountIdentifier;
 - (void)_addStandardQueryParametersForURL:(id)arg1;
 - (BOOL)_authenticateReturningError:(id*)arg1;
 - (BOOL)_canSendTokenToURL:(id)arg1;
@@ -38,18 +39,16 @@
 - (id)authenticatedAccountDSID;
 - (id)authenticatedDSID;
 - (id)authenticationContext;
-- (NSInteger)bagType;
-- (id)createRequest;
 - (void)dealloc;
 - (BOOL)handleRedirectFromDataProvider:(id)arg1;
 - (void)handleResponse:(id)arg1;
 - (id)init;
 - (BOOL)needsAuthentication;
 - (BOOL)needsURLBag;
+- (id)newRequestWithURL:(id)arg1;
 - (void)run;
 - (void)setAuthenticatedDSID:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
-- (void)setBagType:(NSInteger)arg1;
 - (void)setNeedsAuthentication:(BOOL)arg1;
 - (void)setNeedsURLBag:(BOOL)arg1;
 - (void)setUrlBagKey:(id)arg1;

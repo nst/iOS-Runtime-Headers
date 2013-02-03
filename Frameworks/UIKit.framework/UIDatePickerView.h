@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIDatePicker, UILabel, NSCalendar, NSDateComponents, NSString, NSTimeZone, NSDate, NSLocale;
+@class NSCalendar, NSTimeZone, NSDateComponents, NSLocale, UILabel, NSString, NSDate, UIDatePicker;
 
 @interface UIDatePickerView : UIPickerView <UIPickerViewDelegate, UIPickerViewDataSource> {
     struct { 
@@ -54,10 +54,12 @@
 - (id)_createAccessoryViewWithText:(id)arg1 andFont:(id)arg2;
 - (id)_createLabelWithString:(id)arg1 above:(id)arg2;
 - (id)_datePickerCellFont;
+- (void)_datePickerReset:(id)arg1;
 - (NSInteger)_dayForRow:(NSInteger)arg1;
 - (void)_doneLoadingDateOrTime;
 - (NSUInteger)_elementForColumn:(NSInteger)arg1;
 - (void)_ensureTodayIsSet;
+- (NSInteger)_eraForRow:(NSInteger)arg1;
 - (id)_fadeLabel:(id)arg1 toNewLabelWithString:(id)arg2 ifAnimated:(BOOL)arg3;
 - (NSInteger)_hourForRow:(NSInteger)arg1;
 - (id)_hoursString;
@@ -84,6 +86,7 @@
 - (BOOL)_shouldEnableWeekMonthDayForCell:(id)arg1;
 - (BOOL)_shouldEnableYearForRow:(NSInteger)arg1;
 - (BOOL)_showingDate;
+- (id)_sizedPickerCellFont;
 - (float)_tableRowHeight;
 - (id)_todayTextColor;
 - (void)_updateBitsForDate:(id)arg1 andReload:(BOOL)arg2 animateIfNeeded:(BOOL)arg3;
@@ -92,6 +95,7 @@
 - (void)_updateLabels:(BOOL)arg1;
 - (void)_updateReferenceBits;
 - (void)_updateRowInColumn:(NSInteger)arg1 toValue:(NSInteger)arg2 withRepeatingAmount:(NSInteger)arg3 element:(NSUInteger)arg4 animated:(BOOL)arg5;
+- (NSInteger)_yearForRow:(NSInteger)arg1;
 - (id)calendar;
 - (double)countDownDuration;
 - (id)date;

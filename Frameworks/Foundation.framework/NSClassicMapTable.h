@@ -14,12 +14,10 @@
         int (*retain)(); 
         int (*release)(); 
         int (*describe)(); 
+    struct __CFBasicHash { } *_ht;
     } _keyCallBacks;
-    struct __CFDictionary { } *_table;
     } _valueCallBacks;
 }
-
-+ (void)initialize;
 
 - (id)allKeys;
 - (id)allValues;

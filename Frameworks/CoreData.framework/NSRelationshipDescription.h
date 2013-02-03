@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSString, NSEntityDescription, NSRelationshipDescription;
+@class NSRelationshipDescription, NSString, NSEntityDescription;
 
 @interface NSRelationshipDescription : NSPropertyDescription {
     NSUInteger _deleteRule;
@@ -25,8 +25,10 @@
 - (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
 - (NSUInteger)_propertyType;
 - (void)_setLazyDestinationEntityName:(id)arg1;
+- (void)_updateInverse:(id)arg1;
 - (BOOL)_validateValuesAreOfDestinationEntity:(id)arg1 source:(id)arg2;
 - (void)_versionHash:(char *)arg1;
+- (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(const id)arg6;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (NSUInteger)deleteRule;

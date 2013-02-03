@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DAVKit.framework/DAVKit
  */
 
-@class NSMutableArray, NSMutableData, DAVXMLNode;
+@class NSMutableData, NSMutableArray, DAVXMLNode;
 
 @interface DAVXMLTree : NSObject {
     NSMutableData *contentData;

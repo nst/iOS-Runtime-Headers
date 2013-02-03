@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSArray, NSString;
+@class NSString, NSArray;
 
-@interface ISHashedDownloadProvider : ISDataProvider {
+@interface ISHashedDownloadProvider : ISDataProvider <NSCopying> {
     struct CC_MD5state_st { 
         NSUInteger A; 
         NSUInteger B; 
@@ -36,7 +36,9 @@
 - (long long)_verifiedBytesByInitializingHashForFileSize:(long long)arg1;
 - (BOOL)_writeDataWithHashing:(id)arg1 returningError:(id*)arg2;
 - (BOOL)_writeDataWithoutHashing:(id)arg1 returningError:(id*)arg2;
+- (BOOL)canStreamContentLength:(long long)arg1 error:(id*)arg2;
 - (void)closeStream;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)hashes;
 - (id)init;
@@ -44,6 +46,7 @@
 - (id)localFilePath;
 - (long long)numberOfBytesToHash;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
+- (void)resetStream;
 - (void)setHashes:(id)arg1;
 - (void)setLocalFilePath:(id)arg1;
 - (void)setNumberOfBytesToHash:(long long)arg1;

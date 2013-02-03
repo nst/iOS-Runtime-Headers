@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSIndexSet;
+@class NSIndexSet, NSArray;
 
 @interface GQDTNumberFormat : NSObject <GQDNameMappable> {
     unsigned char mBase;

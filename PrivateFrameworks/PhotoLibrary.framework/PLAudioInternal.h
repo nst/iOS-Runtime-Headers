@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString, NSURL, PLVideoFileGroup;
+@class NSURL, NSString;
 
-@interface PLAudioInternal : MLPhoto {
+@interface PLAudioInternal : MLPhotoMemoryStorage {
     NSString *_temporaryPath;
     NSString *_title;
     NSURL *_url;
-    PLVideoFileGroup *_videoFileGroup;
 }
 
-- (void)dealloc;
-- (id)fileGroup;
+- (NSInteger)imageID;
+- (id)imageWithFormat:(NSInteger)arg1;
 - (BOOL)isAudio;
 - (BOOL)isVideo;
-- (id)pathForVideoFile;
 - (id)title;
 
 @end

@@ -2,35 +2,40 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABBannerView, UISearchDisplayController, UIViewController, UIView, NSMutableArray, NSOperationQueue, UISearchBar, NSIndexPath, <ABMembersControllerDelegate>;
+@class NSOperationQueue, UISearchDisplayController, <ABMembersControllerDelegate>, ABMembersDataSource, UISearchBar, NSIndexPath, UIView, <ABStyleProvider>, ABMembersFilteredDataSource, UIViewController, ABBannerView;
 
-@interface ABMembersController : ABContentController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UISearchDisplayDelegate, ABLocalSearchOperationDelegate, UISearchBarDelegate> {
-    void *_backgroundAddressBook;
+@interface ABMembersController : ABContentController <ABMembersDataSourceDelegate, UITextFieldDelegate, UISearchDisplayDelegate, ABSearchOperationDelegate, UISearchBarDelegate> {
     ABBannerView *_bannerView;
     NSUInteger _cellsCreated;
-    struct __CFDictionary { } *_displayableSectionHeaderToSectionHeader;
-    struct __CFDictionary { } *_displayableSectionIndexToSectionIndex;
     NSUInteger _memberCount;
     <ABMembersControllerDelegate> *_membersControllerDelegate;
+    ABMembersDataSource *_membersDataSource;
+    BOOL _needToClearOldResults;
     NSOperationQueue *_operationQueue;
     UIViewController *_parentViewController;
     BOOL _resumeForPhoneApp;
     UISearchBar *_searchBar;
     UISearchDisplayController *_searchController;
-    struct __CFArray { } *_searchResults;
+    ABMembersFilteredDataSource *_searchDataSource;
+    BOOL _searchEnabled;
     NSUInteger _searchSequenceNumber;
-    struct __CFDictionary { } *_sectionHeaderToDisplayableSectionHeader;
-    struct __CFDictionary { } *_sectionHeaderToSortingIndex;
-    NSMutableArray *_sectionIndexTitles;
-    struct __CFDictionary { } *_sectionIndexToDisplayableSectionIndex;
     NSIndexPath *_selectedIndexPath;
     BOOL _shouldRestoreScrollPosition;
     BOOL _showingCardFromSearch;
+    <ABStyleProvider> *_styleProvider;
     UIView *_tableAccessoryView;
     BOOL _wasKeyboardShowing;
 }
 
+@property <ABMembersControllerDelegate> *membersControllerDelegate;
+@property(retain) <ABStyleProvider> *styleProvider;
+@property(getter=isSearchEnabled) BOOL searchEnabled;
+@property(readonly) BOOL shouldShowImages;
+
++ (id)newNameSearchOperationWithString:(id)arg1 groupWrapper:(id)arg2 addressBook:(void*)arg3 delegate:(id)arg4 inOutSequenceNumber:(NSUInteger*)arg5;
+
 - (void)_deselectAllRowsWithAnimation;
+- (void)_reloadFontSizes;
 - (void)_reselectLastSelectedCellIfNeeded;
 - (void)_searchForWords:(id)arg1;
 - (void*)_selectedPerson;
@@ -38,26 +43,32 @@
 - (void)_updateCountString;
 - (void)_updateEmptyTableViewAnimated:(BOOL)arg1;
 - (void)_updateNoContactsViewAnimated:(BOOL)arg1;
+- (BOOL)abDataSource:(id)arg1 selectedPerson:(void*)arg2 atIndexPath:(id)arg3 withMemberCell:(id)arg4 animate:(BOOL)arg5;
+- (BOOL)abDataSource:(id)arg1 shouldAllowSelectingPerson:(void*)arg2;
+- (void)abDataSourceSelectedSearchInIndex:(id)arg1;
 - (id)accessoryView;
 - (void)cancelSearching:(id)arg1;
 - (void)cancelSearchingAnimated:(BOOL)arg1;
 - (NSUInteger)cellsCreated;
 - (id)contentView;
-- (void*)copyBackgroundAddressBook;
-- (void)createAllDisplayableSectionIndexAndHeaderCaches;
+- (id)currentSearchText;
 - (id)currentTableView;
 - (void)dealloc;
 - (void)deselectAllRowsWithAnimation:(BOOL)arg1;
-- (id)displayableSectionHeaderFromSectionHeader:(id)arg1;
-- (id)displayableSectionIndexFromSectionIndex:(id)arg1;
+- (void)didReceiveMemoryWarning;
 - (void)displayedMembersListChanged;
-- (id)initWithContentControllerDelegate:(id)arg1 addressBook:(void*)arg2;
+- (NSInteger)globalIndexOfMember:(void*)arg1;
+- (id)initWithAddressBook:(void*)arg1;
+- (BOOL)isSearchEnabled;
 - (BOOL)isSearching;
 - (void)loadState;
-- (void)localSearchOperation:(id)arg1 completedWithCopyOfMatchingRecordIDs:(struct __CFArray { }*)arg2;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (id)membersControllerDelegate;
+- (id)membersDataSource;
 - (id)operationQueue;
+- (void)photosEverywhereChanged;
 - (void)relayoutAccessoryView;
+- (void)reload;
+- (void)reloadCellForPerson:(void*)arg1;
 - (void)restoreScrollPosition;
 - (void)resume;
 - (void)saveScrollPosition:(void*)arg1;
@@ -67,29 +78,31 @@
 - (void)scrollTableViewToSearchFieldIfNotAlreadyScrolled;
 - (void)searchBarSearchButtonClicked:(id)arg1;
 - (void)searchBarTextDidBeginEditing:(id)arg1;
+- (id)searchDataSource;
 - (void)searchDisplayController:(id)arg1 didLoadSearchResultsTableView:(id)arg2;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (void)searchDisplayControllerWillBeginSearch:(id)arg1;
 - (void)searchDisplayControllerWillEndSearch:(id)arg1;
-- (struct __CFDictionary { }*)sectionHeaderSortingIndices;
-- (id)sectionIndexFromDisplayableSectionIndex:(id)arg1;
-- (id)sectionIndexTitlesForTableView:(id)arg1;
+- (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
+- (void)selectMember:(void*)arg1 animated:(BOOL)arg2;
+- (void)selectMemberOnlyInTable:(void*)arg1 scrollPosition:(NSInteger)arg2;
 - (id)selectedCell;
 - (void)setBannerTitle:(id)arg1 value:(id)arg2;
 - (void)setCellsCreated:(NSUInteger)arg1;
 - (void)setMembersControllerDelegate:(id)arg1;
 - (void)setParentViewController:(id)arg1;
+- (void)setSearchEnabled:(BOOL)arg1;
+- (void)setStyleProvider:(id)arg1;
+- (BOOL)shouldShowImages;
 - (BOOL)shouldShowIndex;
 - (BOOL)showCardForPerson:(void*)arg1 animate:(BOOL)arg2;
 - (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3;
 - (void)stopScrolling;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)styleProvider;
+- (void)suspend;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (NSInteger)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(NSInteger)arg3;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(NSInteger)arg2;
 - (id)tableView;
+- (id)tableViewPathToMember:(void*)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

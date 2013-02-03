@@ -5,6 +5,7 @@
 @interface UICachedDeviceWhiteColor : UIDeviceWhiteColor {
 }
 
+- (void)_forceDealloc;
 - (id)autorelease;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

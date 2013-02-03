@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableArray, NSString, MLSQLCode;
+@class MLSQLCode, NSString, NSMutableArray;
 
 @interface MLSQLCode : NSObject {
     unsigned int _isTextTerminated : 1;
@@ -25,12 +25,12 @@
 + (id)codeWithSQLFormat:(id)arg1;
 + (id)expressionToken;
 + (id)expressionTokenWhenJoinedToCodeClass:(Class)arg1 joinOp:(id)arg2;
-+ (unsigned long long)lastInsertionROWID:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; }*)arg1;
++ (unsigned long long)lastInsertionROWID:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; NSUInteger x8; }*)arg1;
 + (id)openParenCode;
 + (id)orOperatorCode;
 + (BOOL)ownsToken:(id)arg1;
 + (BOOL)performReadFromStore:(struct CPRecordStore { }*)arg1 code:(id)arg2;
-+ (BOOL)performWithConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; }*)arg1 sqlFormat:(id)arg2;
++ (BOOL)performWithConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; NSUInteger x8; }*)arg1 sqlFormat:(id)arg2;
 + (BOOL)performWrite:(BOOL)arg1 store:(struct CPRecordStore { }*)arg2 transactionType:(NSUInteger)arg3 arrayOfCode:(id)arg4;
 + (BOOL)performWriteToStore:(struct CPRecordStore { }*)arg1 transactionType:(NSUInteger)arg2 code:(id)arg3;
 
@@ -39,7 +39,7 @@
 - (id)__initWithSQLBindingCount:(long)arg1 sqlString:(id)arg2;
 - (NSUInteger)_bindParametersToSQLStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 initialBindingIndex:(NSUInteger)arg2;
 - (void)_checkValidFlattenedCodeText:(id)arg1 splitIntoMultipleIfNecessary:(BOOL)arg2;
-- (BOOL)_compiledSqliteStatementForConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; }*)arg1 preparedStatement:(struct CPSqliteStatement {}**)arg2 performStatement:(BOOL)arg3 splitIntoMultipleIfNecessary:(BOOL)arg4;
+- (BOOL)_compiledSqliteStatementForConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; NSUInteger x8; }*)arg1 preparedStatement:(struct CPSqliteStatement {}**)arg2 performStatement:(BOOL)arg3 splitIntoMultipleIfNecessary:(BOOL)arg4;
 - (id)_copyFlattenedCodeText;
 - (id)_copyFlattenedCodeTextByRequiringSemiColon:(BOOL)arg1;
 - (id)_copyFlattenedCodeTextByResolvingBindings;
@@ -62,7 +62,7 @@
 - (void)appendPredicate:(id)arg1 withBinaryOp:(id)arg2;
 - (void)appendSubexpression:(id)arg1 withBinaryOp:(id)arg2;
 - (void)appendSubexpression:(id)arg1;
-- (struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)copyCompiledSqliteStatementForConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; }*)arg1;
+- (struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)copyCompiledSqliteStatementForConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; NSUInteger x8; }*)arg1;
 - (long)countOfBindings;
 - (long)countOfSubexpressions;
 - (void)dealloc;
@@ -78,8 +78,8 @@
 - (id)joins;
 - (id)limitByCode;
 - (id)orderByCode;
-- (BOOL)performAsMultipleStatementsWithConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; }*)arg1;
-- (BOOL)performWithConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; }*)arg1;
+- (BOOL)performAsMultipleStatementsWithConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; NSUInteger x8; }*)arg1;
+- (BOOL)performWithConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; NSUInteger x8; }*)arg1;
 - (id)predicates;
 - (void)setBindingAtIndex:(long)arg1 toBooleanValue:(unsigned char)arg2;
 - (void)setBindingAtIndex:(long)arg1 toCFDataRef:(struct __CFData { }*)arg2;

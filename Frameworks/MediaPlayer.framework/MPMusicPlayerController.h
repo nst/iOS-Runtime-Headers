@@ -8,30 +8,51 @@
     MPMusicPlayerControllerInternal *_internal;
 }
 
+@property BOOL allowsRemoteUIAccess;
+@property NSUInteger currentChapterIndex;
+@property(readonly) NSUInteger indexOfNowPlayingItem;
+@property NSInteger playbackSpeed;
+
 + (id)applicationMusicPlayer;
 + (id)iPodMusicPlayer;
 
-- (void)_clientCheckInIfNecessary;
-- (void)_nowPlayingItemDidChange;
+- (void)_clientCheckIn;
+- (void)_musicPlayerDidLaunch;
+- (void)_nowPlayingItemDidChange:(unsigned long long)arg1;
 - (void)_playbackStateDidChange:(NSInteger)arg1;
+- (void)_registerForLaunchNotifications;
+- (void)_repeatModeDidChange:(NSInteger)arg1;
 - (void)_runMigServerOnPort:(NSUInteger)arg1;
 - (void)_serverDied:(id)arg1;
 - (void)_setUseApplicationSpecificQueue:(BOOL)arg1;
+- (void)_shuffleModeDidChange:(NSInteger)arg1;
 - (void)_stopMigServer;
 - (void)_systemVolumeDidChange:(id)arg1;
+- (void)_unregisterForLaunchNotifications;
+- (BOOL)allowsRemoteUIAccess;
 - (void)beginGeneratingPlaybackNotifications;
+- (NSUInteger)currentChapterIndex;
 - (double)currentPlaybackTime;
 - (void)dealloc;
 - (void)endGeneratingPlaybackNotifications;
 - (void)forwardInvocation:(id)arg1;
+- (NSUInteger)indexOfNowPlayingItem;
 - (id)init;
 - (BOOL)isGeniusAvailable;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (id)nowPlayingItem;
+- (id)nowPlayingItemAtIndex:(NSUInteger)arg1;
+- (NSUInteger)numberOfItems;
 - (void)pauseWithFadeoutDuration:(double)arg1;
+- (NSInteger)playbackSpeed;
 - (NSInteger)playbackState;
 - (NSInteger)repeatMode;
+- (void)setAllowsRemoteUIAccess:(BOOL)arg1;
+- (void)setCurrentChapterIndex:(NSUInteger)arg1;
 - (void)setCurrentPlaybackTime:(double)arg1;
+- (void)setPlaybackSpeed:(NSInteger)arg1;
 - (void)setQueueWithItemCollection:(id)arg1;
+- (void)setQueueWithQuery:(id)arg1 firstItem:(id)arg2;
 - (void)setQueueWithQuery:(id)arg1;
 - (BOOL)setQueueWithSeedItems:(id)arg1;
 - (void)setRepeatMode:(NSInteger)arg1;

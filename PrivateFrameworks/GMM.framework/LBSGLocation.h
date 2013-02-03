@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, NSString, LBSGLatLng;
+@class NSMutableArray, LBSGLatLng, NSString;
 
 @interface LBSGLocation : PBCodable {
     NSInteger _accuracy;

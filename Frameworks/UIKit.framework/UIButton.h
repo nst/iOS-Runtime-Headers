@@ -35,6 +35,7 @@
     struct __CFDictionary { } *_contentLookup;
     } _imageEdgeInsets;
     UIImageView *_imageView;
+    BOOL _initialized;
     } _titleEdgeInsets;
     UILabel *_titleView;
 }
@@ -59,9 +60,14 @@
 @property UIEdgeInsets titleEdgeInsets;
 @property CGSize titleShadowOffset;
 
++ (BOOL)__original_resolveClassMethod:(SEL)arg1;
 + (id)_defaultContentForType:(NSInteger)arg1 andState:(NSUInteger)arg2;
++ (void)_initializeSafeCategory;
 + (id)buttonWithType:(NSInteger)arg1;
++ (BOOL)resolveClassMethod:(SEL)arg1;
 
+- (id)__original_forwardingTargetForSelector:(SEL)arg1;
+- (id)_accessibilityImagePath;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (id)_archivableContent:(id*)arg1;
 - (id)_backgroundForState:(NSUInteger)arg1 usesBackgroundForNormalState:(BOOL*)arg2;
@@ -91,14 +97,19 @@
 - (id)_titleColorForState:(NSUInteger)arg1;
 - (id)_titleForState:(NSUInteger)arg1;
 - (struct CGSize { float x1; float x2; })_titleShadowOffset;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (BOOL)adjustsImageWhenDisabled;
 - (BOOL)adjustsImageWhenHighlighted;
 - (BOOL)autosizesToFit;
 - (id)backgroundImageForState:(NSUInteger)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (NSInteger)buttonType;
+- (void)configureFromScriptButton:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentEdgeInsets;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)crossfadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)crossfadeToImage:(id)arg1 forState:(NSUInteger)arg2;
 - (id)currentBackgroundImage;
 - (id)currentImage;
 - (id)currentTitle;
@@ -108,12 +119,14 @@
 - (unsigned long long)defaultAccessibilityTraits;
 - (void)encodeWithCoder:(id)arg1;
 - (id)font;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageEdgeInsets;
 - (id)imageForState:(NSUInteger)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)imageView;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isAccessibilityElementByDefault;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)layoutSubviews;

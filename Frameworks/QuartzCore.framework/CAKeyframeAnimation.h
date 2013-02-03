@@ -5,25 +5,35 @@
 @interface CAKeyframeAnimation : CAPropertyAnimation {
 }
 
+@property(copy) NSArray *biasValues;
 @property(copy) NSString *calculationMode;
+@property(copy) NSArray *continuityValues;
 @property(copy) NSArray *keyTimes;
 @property CGPath *path;
 @property(copy) NSString *rotationMode;
+@property(copy) NSArray *tensionValues;
 @property(copy) NSArray *timingFunctions;
 @property(copy) NSArray *values;
 
 - (struct Animation { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; NSUInteger x7; NSUInteger x8; }*)_copyRenderAnimationForLayer:(id)arg1;
+- (void)CA_prepareRenderValue;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
+- (id)biasValues;
 - (id)calculationMode;
+- (id)continuityValues;
 - (id)keyTimes;
 - (struct CGPath { }*)path;
 - (id)rotationMode;
+- (void)setBiasValues:(id)arg1;
 - (void)setCalculationMode:(id)arg1;
+- (void)setContinuityValues:(id)arg1;
 - (void)setKeyTimes:(id)arg1;
 - (void)setPath:(struct CGPath { }*)arg1;
 - (void)setRotationMode:(id)arg1;
+- (void)setTensionValues:(id)arg1;
 - (void)setTimingFunctions:(id)arg1;
 - (void)setValues:(id)arg1;
+- (id)tensionValues;
 - (id)timingFunctions;
 - (id)values;
 

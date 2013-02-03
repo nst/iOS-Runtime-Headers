@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class EDSheet, NSMutableDictionary, NSMutableArray, EDAnchor, EDTextBox, EDComment;
+@class EDComment, NSMutableDictionary, EDAnchor, EDSheet, EDTextBox;
 
 @interface EDOfficeArtClient : NSObject <OADClient, OADTextClient> {
     struct CGRect { 
@@ -19,34 +19,28 @@
             float height; 
         } size; 
      /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
     EDAnchor *mAnchor;
     } mBounds;
-    NSMutableArray *mColorLocators;
+    id mClientState;
     EDComment *mComment;
     EDSheet *mSheet;
     NSMutableDictionary *mTableModels;
     EDTextBox *mTextBox;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsBoundsSet;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mObjectReallyIsAChart;
 }
 
 - (id)anchor;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)areBoundsSet;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (id)colorLocators;
+- (id)clientState;
 - (id)comment;
 - (void)dealloc;
 - (BOOL)hasBounds;
 - (BOOL)hasText;
-- (id)init;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isObjectReallyIsAChart;
 - (void)setAnchor:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setColorLocators:(id)arg1;
+- (void)setClientState:(id)arg1;
 - (void)setComment:(id)arg1;
-- (void)setObjectReallyIsAChart:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 - (void)setSheet:(id)arg1;
 - (void)setTableModels:(id)arg1;
 - (void)setTextBox:(id)arg1;

@@ -7,7 +7,9 @@
 
 - (id)directoryAttributes;
 - (id)fileAttributes;
+- (NSUInteger)level;
 - (id)nextObject;
+- (void)skipDescendants;
 - (void)skipDescendents;
 
 @end

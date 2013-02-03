@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIToolbar, UILabel, UIWindow, NSMutableArray, UIView, <UIAlertViewDelegate>;
+@class UIToolbar, UILabel, UIView, UIWindow, <UIAlertViewDelegate>, NSMutableArray;
 
 @interface UIAlertView : UIView {
     struct CGPoint { 
@@ -48,6 +48,14 @@
         unsigned int delegateWillDismiss2 : 1; 
         unsigned int delegateDidDismiss : 1; 
         unsigned int delegateDidDismiss2 : 1; 
+        unsigned int forceHorizontalButtonsLayout : 1; 
+        unsigned int suppressKeyboardOnPopup : 1; 
+        unsigned int keyboardShowing : 1; 
+        unsigned int dontCallDismissDelegate : 1; 
+        unsigned int useAutomaticKB : 1; 
+        unsigned int shouldHandleFirstKeyUpEvent : 1; 
+        unsigned int forceKeyboardUse : 1; 
+        unsigned int cancelWhenDoneAnimating : 1; 
     float _bodyTextHeight;
     UILabel *_bodyTextLabel;
     NSMutableArray *_buttons;
@@ -82,11 +90,15 @@
 @property(getter=isVisible,readonly) BOOL visible;
 
 + (id)_alertWindow;
++ (void)_initializeSafeCategory;
 + (id)_popupAlertBackground:(BOOL)arg1;
++ (void)applyTransformToAllAlerts:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 + (struct CGSize { float x1; float x2; })minimumSize;
 
+- (void)_accessibilitySendAlert;
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2 buttonClass:(Class)arg3;
 - (id)_addButtonWithTitle:(id)arg1;
+- (void)_addSubview:(id)arg1 positioned:(NSInteger)arg2 relativeTo:(id)arg3;
 - (void)_adjustLabelFontSizes;
 - (void)_alertSheetAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_alertSheetTextFieldReturn:(id)arg1;
@@ -97,6 +109,7 @@
 - (void)_buttonClicked:(id)arg1;
 - (float)_buttonHeight;
 - (BOOL)_canShowAlerts;
+- (void)_cancelAnimated:(BOOL)arg1;
 - (void)_cleanupAfterPopupAnimation;
 - (void)_createBodyTextLabelIfNeeded;
 - (void)_createSubtitleLabelIfNeeded;
@@ -106,6 +119,7 @@
 - (id)_dimView;
 - (BOOL)_dimsBackground;
 - (void)_growAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
 - (BOOL)_isAnimating;
 - (void)_jiggleStage1AnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_jiggleStage2AnimationDidStop:(id)arg1 finished:(id)arg2;
@@ -113,6 +127,8 @@
 - (void)_jiggleStage4AnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_jiggleStage5AnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_jiggleStage6AnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_keyboardWillHide:(id)arg1;
+- (void)_keyboardWillShow:(id)arg1;
 - (void)_layoutIfNeeded;
 - (void)_layoutPopupAlertWithOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
 - (float)_maxHeight;
@@ -127,15 +143,19 @@
 - (void)_presentSheetStartingFromYCoordinate:(double)arg1;
 - (void)_removeAlertWindowOrShowAnOldAlert;
 - (void)_repopup;
+- (void)_repopupNoAnimation;
 - (void)_rotatingAnimationDidStop:(id)arg1;
 - (void)_setAlertSheetStyleFromButtonBar:(id)arg1;
 - (void)_setFirstOtherButtonIndex:(NSInteger)arg1;
+- (void)_setTextFieldsHidden:(BOOL)arg1;
 - (void)_setupTitleStyle;
+- (BOOL)_shouldOrderInAutomaticKeyboard;
 - (void)_slideSheetOut:(BOOL)arg1;
 - (void)_temporarilyHideAnimated:(BOOL)arg1;
 - (float)_titleHorizontalInset;
 - (float)_titleVerticalBottomInset;
 - (float)_titleVerticalTopInset;
+- (void)_truncateViewHeight:(id)arg1 toFitInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withMinimumHeight:(float)arg3;
 - (void)_updateFrameForDisplay;
 - (void)_useUndoStyle:(BOOL)arg1;
 - (id)addButtonWithTitle:(id)arg1 buttonClass:(Class)arg2;
@@ -144,13 +164,16 @@
 - (id)addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (NSInteger)alertSheetStyle;
 - (struct CGSize { float x1; float x2; })backgroundSize;
+- (BOOL)becomeFirstResponder;
 - (BOOL)blocksInteraction;
 - (NSInteger)bodyMaxLineCount;
 - (id)bodyText;
+- (id)bodyTextLabel;
 - (id)buttonAtIndex:(NSInteger)arg1;
 - (NSInteger)buttonCount;
 - (id)buttonTitleAtIndex:(NSInteger)arg1;
 - (id)buttons;
+- (BOOL)canBecomeFirstResponder;
 - (NSInteger)cancelButtonIndex;
 - (id)context;
 - (void)dealloc;
@@ -164,6 +187,7 @@
 - (void)dismissWithClickedButtonIndex:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (NSInteger)firstOtherButtonIndex;
+- (BOOL)forceHorizontalButtonsLayout;
 - (BOOL)groupsTextFields;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(NSInteger)arg3 delegate:(id)arg4 context:(id)arg5;
@@ -187,9 +211,9 @@
 - (void)presentSheetFromButtonBar:(id)arg1;
 - (void)presentSheetInView:(id)arg1;
 - (void)presentSheetToAboveView:(id)arg1;
-- (void)rePopupAlertAfterRotation;
 - (void)replaceAlert:(id)arg1;
 - (BOOL)requiresPortraitOrientation;
+- (BOOL)resignFirstResponder;
 - (BOOL)runsModal;
 - (void)setAlertSheetStyle:(NSInteger)arg1;
 - (void)setBlocksInteraction:(BOOL)arg1;
@@ -203,7 +227,9 @@
 - (void)setDestructiveButton:(id)arg1;
 - (void)setDimView:(id)arg1;
 - (void)setDimsBackground:(BOOL)arg1;
+- (void)setForceHorizontalButtonsLayout:(BOOL)arg1;
 - (void)setGroupsTextFields:(BOOL)arg1;
+- (void)setKeyboardShowsOnPopup:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setNumberOfRows:(NSInteger)arg1;
 - (void)setRunsModal:(BOOL)arg1;
@@ -221,10 +247,12 @@
 - (NSInteger)suspendTag;
 - (id)table;
 - (BOOL)tableShouldShowMinimumContent;
+- (id)taglineTextLabel;
 - (id)textField;
 - (id)textFieldAtIndex:(NSInteger)arg1;
 - (NSInteger)textFieldCount;
 - (id)title;
+- (id)titleLabel;
 - (NSInteger)titleMaxLineCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
 

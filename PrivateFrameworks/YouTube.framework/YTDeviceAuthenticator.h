@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableData, NSString, NSURLConnection, NSData;
+@class NSMutableData, NSString, NSData, NSURLConnection;
 
 @interface YTDeviceAuthenticator : NSObject {
     NSURLConnection *_connection;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSURLAuthenticationChallenge, NSURL;
+@class NSURL, NSURLAuthenticationChallenge;
 
 @interface NSURLConnectionInternal : NSObject {
     struct _CFURLConnection { } *cfConn;

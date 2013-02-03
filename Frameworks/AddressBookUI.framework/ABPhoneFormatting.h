@@ -6,5 +6,6 @@
 }
 
 + (id)abCopyPhoneNumberFromString:(id)arg1;
++ (id)abNormalizedPhoneNumberFromString:(id)arg1;
 
 @end

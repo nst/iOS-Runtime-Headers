@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class NSCondition, EASession, NSThread, EAAccessory;
+@class EASession, NSThread, NSCondition, EAAccessory;
 
 @interface EAOutputStream : NSOutputStream {
     EAAccessory *_accessory;

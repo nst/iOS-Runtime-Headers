@@ -19,7 +19,7 @@
 - (void)dealloc;
 - (id)fixedLocation;
 - (id)init;
-- (BOOL)isEqualToLocation:(id)arg1 source:(NSInteger)arg2;
+- (BOOL)isEqualToLocation:(id)arg1;
 - (BOOL)isUpdating;
 - (id)location;
 - (id)predictedLocation;
@@ -29,7 +29,6 @@
 - (void)setFixedLocation:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setPredictedLocation:(id)arg1;
-- (void)setSearchResult:(id)arg1;
 - (void)setSource:(NSInteger)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTimestamp:(double)arg1;

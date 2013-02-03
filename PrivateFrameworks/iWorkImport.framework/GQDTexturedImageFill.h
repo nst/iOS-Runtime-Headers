@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDFilteredImage, GQDColor;
+@class GQDColor, GQDFilteredImage;
 
 @interface GQDTexturedImageFill : NSObject <GQDNameMappable> {
     GQDColor *mColor;

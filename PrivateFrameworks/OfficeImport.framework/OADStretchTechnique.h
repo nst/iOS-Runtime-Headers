@@ -14,7 +14,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)fillRect;
+- (NSUInteger)hash;
 - (id)initWithDefaults;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isFillRectOverridden;
 - (void)setFillRect:(id)arg1;
 

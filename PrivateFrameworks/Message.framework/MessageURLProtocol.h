@@ -10,6 +10,7 @@
 + (void)initialize;
 + (BOOL)requestIsCacheEquivalent:(id)arg1 toRequest:(id)arg2;
 
+- (void)dealloc;
 - (void)startLoading;
 - (void)stopLoading;
 

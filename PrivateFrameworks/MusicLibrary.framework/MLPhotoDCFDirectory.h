@@ -5,11 +5,14 @@
 @class MLPhotoDCIMDirectory;
 
 @interface MLPhotoDCFDirectory : MLPhotoDCFObject {
+    BOOL _considerInvalidFileGroups;
     MLPhotoDCIMDirectory *_dcimDirectory;
     struct __CFDictionary { } *_fileGroupsByNumber;
     NSInteger _lastUsedFileGroupNumber;
     NSInteger _maxFileGroupNumber;
 }
+
+@property BOOL considerInvalidFileGroups;
 
 + (id)fileGroupRequiredEmptyExtensions;
 + (id)fileGroupRequiredEmptyPrefixes;
@@ -20,19 +23,21 @@
 - (BOOL)_canAddItemWithPrefix:(id)arg1;
 - (id)_lastUsedFileGroupUserInfoKey;
 - (id)_nextAvailableFileGroupWithPrefix:(id)arg1 extension:(id)arg2;
-- (NSInteger)_sortByDirectoryNumber:(id)arg1;
 - (BOOL)canAddFileGroupWithGroupNumber:(NSInteger)arg1;
 - (BOOL)canAddImage;
 - (BOOL)canAddVideo;
+- (BOOL)considerInvalidFileGroups;
 - (id)dcimDirectory;
 - (void)dealloc;
 - (void)ensureDirectoryExists;
 - (id)fileGroups;
 - (id)fullPath;
 - (id)initWithName:(id)arg1 number:(NSInteger)arg2 dcimDirectory:(id)arg3;
+- (BOOL)isEntensionValid:(id)arg1;
 - (id)nextAvailableFileGroup;
 - (id)nextAvailableVideoFileGroupWithExtension:(id)arg1;
 - (void)removeFileGroup:(id)arg1;
+- (void)setConsiderInvalidFileGroups:(BOOL)arg1;
 - (void)setWriteIsPending:(BOOL)arg1;
 
 @end

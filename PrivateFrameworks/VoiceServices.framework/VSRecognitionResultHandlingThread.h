@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@class NSMutableArray, <VSRecognitionResultHandlingThreadDelegate>, NSConditionLock;
+@class NSConditionLock, <VSRecognitionResultHandlingThreadDelegate>, NSMutableArray;
 
 @interface VSRecognitionResultHandlingThread : NSObject {
     struct { 

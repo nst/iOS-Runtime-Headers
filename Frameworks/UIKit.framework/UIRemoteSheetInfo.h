@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, UIRemoteView;
+@class UIRemoteView, UIView;
 
 @interface UIRemoteSheetInfo : NSObject {
     void *_context;

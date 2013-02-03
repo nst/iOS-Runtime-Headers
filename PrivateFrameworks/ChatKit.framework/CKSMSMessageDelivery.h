@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSString, CKSMSMessage;
+@class CKSMSMessage, NSString;
 
 @interface CKSMSMessageDelivery : NSObject {
     unsigned int _isSending : 1;

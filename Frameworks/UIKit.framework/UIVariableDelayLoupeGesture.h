@@ -2,14 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView<UITextSelectingContent>;
+@class UIView<UITextSelectingContainer>;
 
 @interface UIVariableDelayLoupeGesture : UILongPressGestureRecognizer {
-    UIView<UITextSelectingContent> *_textView;
+    UIView<UITextSelectingContainer> *_textView;
 }
 
-@property UIView<UITextSelectingContent> *textView;
+@property UIView<UITextSelectingContainer> *textView;
 
+- (void)invalidate;
 - (BOOL)isCloseToCaret;
 - (void)setTextView:(id)arg1;
 - (void)startTimer;

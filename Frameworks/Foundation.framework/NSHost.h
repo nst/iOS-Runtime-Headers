@@ -23,6 +23,7 @@
 - (void)dealloc;
 - (id)description;
 - (BOOL)isEqualToHost:(id)arg1;
+- (id)localizedName;
 - (id)name;
 - (id)names;
 

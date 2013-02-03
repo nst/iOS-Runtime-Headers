@@ -23,7 +23,7 @@
 
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithFunction:(int (*)())arg1 withArgument:(void*)arg2 andIsDetached:(BOOL)arg3;
+- (id)initWithFunction:(int (*)())arg1 withArgument:(void*)arg2 andPriority:(NSInteger)arg3;
 - (void)release;
 - (id)retain;
 - (NSUInteger)retainCount;

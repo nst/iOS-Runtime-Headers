@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIFont, NSString;
+@class NSString, UIFont;
 
 @interface UIAutocorrectTextView : UIView {
     BOOL m_animating;
@@ -12,10 +12,13 @@
     NSInteger m_type;
 }
 
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calculateRectForExpandedHitRegion;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 string:(id)arg2 type:(NSInteger)arg3 edgeType:(NSInteger)arg4;
 - (BOOL)needsWebDocumentViewEventsDirectly;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setAnimating:(BOOL)arg1;
 - (void)setEdgeType:(NSInteger)arg1;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSExpression, NSString, NSPropertyTransform;
+@class NSPropertyTransform, NSString, NSExpression;
 
 @interface NSPropertyTransform : NSObject {
     NSPropertyTransform *_prerequisiteTransform;

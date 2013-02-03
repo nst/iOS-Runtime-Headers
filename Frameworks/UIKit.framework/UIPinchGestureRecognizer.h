@@ -2,6 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class UITouch;
+
 @interface UIPinchGestureRecognizer : UIGestureRecognizer {
     struct CGAffineTransform { 
         float a; 
@@ -14,30 +16,36 @@
         float x; 
         float y; 
     unsigned int _scrollViewGesture : 1;
+    unsigned int _hasParentScrollView : 1;
     } _anchorPoint;
-    float _lastTouchDistance;
+    float _initialTouchDistance;
+    float _initialTouchScale;
     double _lastTouchTime;
     float _previousVelocity;
     float _scaleThreshold;
+    UITouch *_touches[2];
     } _transform;
     float _velocity;
 }
 
 @property(readonly) CGPoint anchorPoint;
-@property(readonly) float scale;
+@property float scale;
 @property float scaleThreshold;
 @property(getter=isScrollViewGesture) BOOL scrollViewGesture;
 @property(readonly) CGAffineTransform transform;
 @property(readonly) float velocity;
 
++ (void)addPinchGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
+
 - (float)_distanceBetweenTouches:(id)arg1;
-- (BOOL)_shouldSaveGestureFromExclusion:(id)arg1;
+- (void)_resetGestureRecognizer;
 - (struct CGPoint { float x1; float x2; })anchorPoint;
+- (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (BOOL)isScrollViewGesture;
-- (void)reset;
 - (float)scale;
 - (float)scaleThreshold;
+- (void)setScale:(float)arg1;
 - (void)setScaleThreshold:(float)arg1;
 - (void)setScrollViewGesture:(BOOL)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

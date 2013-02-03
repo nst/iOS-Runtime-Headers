@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMHTMLInputElement, NSMutableDictionary, NSString, DOMElement;
+@class NSMutableDictionary, NSString, DOMElement, DOMHTMLInputElement;
 
 @interface UIWebFormCompletionController : NSObject {
     DOMHTMLInputElement *_element;
@@ -32,6 +32,8 @@
 + (void)_saveCompletionDBSoon;
 + (void)actionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
 + (BOOL)addressBookCompletionEnabled;
++ (void)alertPrompt:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
++ (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
 + (BOOL)autoFillInWebView:(id)arg1;
 + (void)clearAutoFillStateForFrame:(id)arg1;
 + (void)clearPreviousDataDatabase;
@@ -72,7 +74,6 @@
 - (void)sourceFieldTextDidChange;
 - (void)sourceFieldTextDidEndEditing;
 - (struct { id x1; NSUInteger x2; })suggestionsForString:(id)arg1 inputIndex:(NSUInteger)arg2;
-- (BOOL)textField:(id)arg1 shouldHandleEvent:(struct __GSEvent { }*)arg2;
 - (id)unsortedListItemsWithQueryString:(id)arg1;
 - (id)webFrame;
 

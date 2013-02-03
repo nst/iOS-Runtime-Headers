@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSExpression, NSArray;
+@class NSArray, NSExpression;
 
 @interface NSFunctionExpression : NSExpression {
     NSArray *_arguments;

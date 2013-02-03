@@ -27,14 +27,15 @@
 
 @property CKConversation *conversation;
 @property(readonly) NSArray *messageParts;
+@property NSInteger groupID;
 
-- (id)_createParts;
 - (double)_loadDate;
 - (void)_loadFailedSendCount;
 - (BOOL)_loadOutgoing;
 - (void)_loadSubject;
 - (void)_loadText;
 - (void)_loadUIFlags;
+- (id)_newParts;
 - (void)_resetData;
 - (void)_storeUIFlags:(unsigned long)arg1;
 - (id)address;
@@ -49,6 +50,7 @@
 - (void)deleteMessagePart:(id)arg1;
 - (BOOL)failedSend;
 - (NSInteger)failedSendCount;
+- (BOOL)getCharacterCountNumerator:(NSUInteger*)arg1 denominator:(NSUInteger*)arg2;
 - (void)getUIHeight:(NSUInteger*)arg1 flags:(NSUInteger*)arg2;
 - (NSInteger)groupID;
 - (BOOL)hasBeenRead;
@@ -64,6 +66,7 @@
 - (void)loadParts;
 - (void)markAsRead;
 - (NSInteger)messageCount;
+- (id)messagePartWithRowID:(NSInteger)arg1;
 - (id)messageParts;
 - (BOOL)partiallyFailedSend;
 - (BOOL)pending;
@@ -75,6 +78,7 @@
 - (id)sender;
 - (NSInteger)sentCount;
 - (void)setConversation:(id)arg1;
+- (void)setGroupID:(NSInteger)arg1;
 - (void)setParts:(id)arg1;
 - (void)setUIHeight:(unsigned long)arg1 flags:(unsigned long)arg2;
 - (BOOL)smartForwardCapable;

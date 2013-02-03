@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, LBSAddress, NSString, LBSPoint;
+@class LBSAddress, NSString, LBSPoint, NSMutableArray;
 
 @interface LBSUserLocation : PBCodable {
     NSInteger _accuracy;

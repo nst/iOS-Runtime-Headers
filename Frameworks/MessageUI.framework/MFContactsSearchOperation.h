@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSString, NSNumber, NSSet, MFContactsSearchManager;
+@class MFContactsSearchManager, NSString, NSSet, NSNumber;
 
 @interface MFContactsSearchOperation : NSOperation {
     void *_addressBook;

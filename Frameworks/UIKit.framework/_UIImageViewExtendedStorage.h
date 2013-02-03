@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, NSArray;
+@class NSArray, UIImage;
 
 @interface _UIImageViewExtendedStorage : NSObject {
     double _animationDuration;

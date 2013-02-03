@@ -11,14 +11,17 @@
 + (id)dbPath;
 + (void)migrate;
 + (id)sharedSMSService;
++ (BOOL)willSendMMSByDefaultForConversation:(id)arg1;
 
+- (void)_appDidEnterBackground:(id)arg1;
+- (void)_appWillEnterForeground:(id)arg1;
+- (void)_databaseFull:(id)arg1;
 - (id)_newMMSMessageWithComposition:(id)arg1 forConversation:(id)arg2;
 - (id)_newMMSMessageWithParts:(id)arg1 forConversation:(id)arg2 subject:(id)arg3;
 - (id)_newSMSMessageWithText:(id)arg1 forConversation:(id)arg2;
 - (void)_receivedMessage:(struct __CKSMSRecord { }*)arg1 replace:(BOOL)arg2;
 - (void)_registerForCTNotifications;
 - (void)_sendError:(struct __CKSMSRecord { }*)arg1;
-- (BOOL)_sendMMSByDefaultForConversation:(id)arg1;
 - (void)_sentMessage:(struct __CKSMSRecord { }*)arg1;
 - (id)abPropertyTypes;
 - (BOOL)canAcceptMediaObject:(id)arg1 givenMediaObjects:(id)arg2;
@@ -36,6 +39,7 @@
 - (id)headerTitleForComposeRecipients:(id)arg1 mediaObjects:(id)arg2 subject:(id)arg3;
 - (id)headerTitleForEntities:(id)arg1;
 - (id)init;
+- (BOOL)isSMSDeliverableComposition:(id)arg1 forConversationWithRecipientCount:(NSUInteger)arg2 recipientsRequired:(BOOL)arg3;
 - (BOOL)isValidAddress:(id)arg1;
 - (id)lookupRecipientsForConversation:(id)arg1;
 - (void)markAllMessagesInConversationAsRead:(id)arg1;
@@ -44,11 +48,13 @@
 - (double)maxTrimDurationForMediaType:(NSInteger)arg1;
 - (NSInteger)messageCount;
 - (id)messagesForConversation:(id)arg1 limit:(NSInteger)arg2 moreToLoad:(BOOL*)arg3;
+- (id)newDeliverableMessageEncodingInfoWithComposition:(id)arg1;
 - (id)newMessageWithComposition:(id)arg1 forConversation:(id)arg2;
 - (id)newMessageWithMessage:(id)arg1 forConversation:(id)arg2 isForward:(BOOL)arg3;
 - (id)placeholderMessageForConversation:(id)arg1 withDate:(id)arg2;
 - (BOOL)restrictsMediaObjects;
 - (void)sendMessage:(id)arg1;
+- (BOOL)supportsMediaAttachments;
 - (id)unknownEntity;
 - (NSInteger)unreadConversationCount;
 - (NSInteger)unreadCount;

@@ -3,14 +3,19 @@
  */
 
 @interface TPBottomBar : UIView {
+    NSInteger _orientation;
 }
 
 + (id)_backgroundImage;
 + (float)defaultHeight;
++ (float)defaultHeightForOrientation:(NSInteger)arg1;
 + (void)preloadImages;
 
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithDefaultSize;
+- (id)initWithDefaultSizeForOrientation:(NSInteger)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (NSInteger)orientation;
+- (void)setOrientation:(NSInteger)arg1;
 
 @end

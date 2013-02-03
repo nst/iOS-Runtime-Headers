@@ -12,21 +12,35 @@
     NSInteger _currentTextLength;
     id _delegate;
     } _labelSize;
+    NSInteger _style;
     UITextField *_textField;
 }
 
-+ (float)defaultHeightForPosition:(struct { NSUInteger x1; NSUInteger x2; })arg1;
+@property(readonly) SUComposeTextFieldConfiguration *configuration;
+@property(retain) NSString *text;
+@property(readonly) UITextField *textField;
+@property(readonly) NSInteger composeReviewStyle;
+@property id delegate;
+@property(getter=isValid,readonly) BOOL valid;
+
++ (void)_initializeSafeCategory;
++ (id)labelColorForStyle:(NSInteger)arg1;
++ (id)labelFontForStyle:(NSInteger)arg1;
 
 - (void)_textChanged:(id)arg1;
+- (struct CGPoint { float x1; float x2; })_textFieldOrigin;
+- (NSInteger)composeReviewStyle;
 - (id)configuration;
 - (void)dealloc;
+- (id)delegate;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithConfiguration:(id)arg1;
+- (id)initWithConfiguration:(id)arg1 style:(NSInteger)arg2;
 - (BOOL)isValid;
 - (void)layoutSubviews;
 - (void)setDelegate:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)text;
 - (BOOL)textField:(id)arg1 shouldInsertText:(id)arg2 replacingRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
+- (id)textField;
 
 @end

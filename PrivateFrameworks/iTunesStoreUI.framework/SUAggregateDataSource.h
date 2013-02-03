@@ -7,9 +7,11 @@
 @interface SUAggregateDataSource : SUTableDataSource {
     NSMutableArray *_headerViews;
     NSMutableArray *_sources;
+    NSInteger _tableViewStyle;
 }
 
 @property(readonly) NSArray *sources;
+@property NSInteger tableViewStyle;
 
 - (NSInteger)_localIndexForSectionIndex:(NSInteger)arg1;
 - (void)addDataSource:(id)arg1 withHeaderView:(id)arg2;
@@ -24,11 +26,14 @@
 - (BOOL)deleteIndexPath:(id)arg1;
 - (id)headerViewForSection:(NSInteger)arg1;
 - (id)indexPathForRowIndex:(NSUInteger)arg1 inSectionIndex:(NSUInteger)arg2;
-- (NSInteger)numberOfItemsInSection:(NSInteger)arg1;
+- (NSInteger)numberOfColumnsInSection:(NSInteger)arg1;
+- (NSInteger)numberOfRowsInSection:(NSInteger)arg1;
 - (NSInteger)numberOfSections;
 - (void)reloadCellContexts;
 - (void)reloadData;
 - (void)setCellReuseSource:(id)arg1;
+- (void)setTableViewStyle:(NSInteger)arg1;
 - (id)sources;
+- (NSInteger)tableViewStyle;
 
 @end

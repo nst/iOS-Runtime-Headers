@@ -8,9 +8,11 @@
 
 @property <SKRequestDelegate> *delegate;
 
-- (id)_createIdentifier;
+- (void)_beginBackgroundTask;
 - (void)_daemonExited:(id)arg1;
+- (void)_endBackgroundTask;
 - (void)_mainThreadDaemonExited:(id)arg1;
+- (id)_newIdentifier;
 - (void)_registerForNotifications;
 - (void)_requestFailedNotification:(id)arg1;
 - (void)_requestFinishedNotification:(id)arg1;

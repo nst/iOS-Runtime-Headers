@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSMutableArray, NSString;
+@class NSString, NSMutableArray;
 
 @interface Alert : NSObject {
     NSString *_bodyText;

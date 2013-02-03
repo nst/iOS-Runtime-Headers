@@ -2,11 +2,47 @@
    Image: /System/Library/PrivateFrameworks/AccountSettingsUI.framework/AccountSettingsUI
  */
 
+@class UIBarButtonItem, UIProgressIndicator, NSTimer;
+
 @interface AccountSettingsUIDetailController : PSListController {
+    BOOL _addedToTaskList;
+    BOOL _appearedBefore;
+    UIBarButtonItem *_cancelButton;
+    UIBarButtonItem *_doneButton;
+    NSTimer *_idleJiggleTimer;
+    void *_powerAssertion;
+    UIProgressIndicator *_progressIndicator;
 }
 
++ (BOOL)shouldPresentAsModalSheet;
+
+- (id)_actionSheetWithButtons:(id)arg1 title:(id)arg2 destructive:(BOOL)arg3 cancelButtonIndex:(NSInteger)arg4 context:(id)arg5;
+- (id)_alertViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 cancelButtonIndex:(NSInteger)arg4 context:(id)arg5;
+- (void)_jiggleIdleTimer;
+- (void)_layoutProgressIndicator;
+- (void)_preventSleepAndDimming:(BOOL)arg1;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
 - (void)cancelButtonClicked:(id)arg1;
+- (id)confirmDeleteAccountWithDataclasses:(id)arg1 context:(id)arg2;
+- (void)confirmationView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)dealloc;
+- (void)dismissWithAnimation:(BOOL)arg1;
 - (void)doneButtonClicked:(id)arg1;
+- (id)init;
+- (BOOL)presentedAsModalSheet;
+- (void)reloadParentSpecifier;
+- (void)reloadParentSpecifiers;
+- (void)removeParentSpecifier;
+- (void)setCellsChecked:(BOOL)arg1;
+- (void)setTaskCompletionEnabled:(BOOL)arg1;
+- (BOOL)shouldReloadSpecifiersOnResume;
+- (id)showConfirmationViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 cancelButtonIndex:(NSInteger)arg5 context:(id)arg6;
+- (id)showConfirmationViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 context:(id)arg5;
 - (id)specifiers;
+- (void)startValidationWithPrompt:(id)arg1;
+- (void)stopValidationWithPrompt:(id)arg1 showButtons:(BOOL)arg2;
+- (void)updateValidationPrompt:(id)arg1;
+- (void)viewDidLoad;
 
 @end

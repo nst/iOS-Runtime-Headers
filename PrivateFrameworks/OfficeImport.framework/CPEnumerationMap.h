@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMapTable;
-
 @interface CPEnumerationMap : NSObject {
     BOOL m_caseSensitive;
-    NSMapTable *m_stringToValue;
-    NSMapTable *m_valueToString;
+    struct __CFDictionary { } *m_stringToValue;
+    struct __CFDictionary { } *m_valueToString;
 }
 
 - (void)dealloc;
-- (id)initWithStructs:(struct CPEnumerationStruct { NSInteger x1; id x2; }*)arg1 count:(NSInteger)arg2 caseSensitive:(BOOL)arg3;
-- (id)initWithStructs:(struct CPEnumerationStruct { NSInteger x1; id x2; }*)arg1 count:(NSInteger)arg2;
+- (id)initWithStructs:(const struct CPEnumerationStruct { NSInteger x1; id x2; }*)arg1 count:(NSInteger)arg2 caseSensitive:(BOOL)arg3;
+- (id)initWithStructs:(const struct CPEnumerationStruct { NSInteger x1; id x2; }*)arg1 count:(NSInteger)arg2;
 - (id)stringForValue:(NSInteger)arg1;
 - (NSInteger)valueForString:(id)arg1;
 

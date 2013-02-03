@@ -2,22 +2,26 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class <SASLSecurityLayer>, _NSSocket, NSData, NSMutableString;
+@class <MFSASLSecurityLayer>, NSData, NSMutableString, _MFSocket;
 
 @interface Connection : NSObject {
     unsigned int _isFetching : 1;
     unsigned int _allowFallbacks : 1;
+    unsigned int _compressionEnabled : 1;
     char *_buffer;
     NSUInteger _bufferLength;
     NSInteger _bufferRemainingBytes;
     NSUInteger _bufferStart;
+    struct z_stream_s { char *x1; NSUInteger x2; NSUInteger x3; char *x4; NSUInteger x5; NSUInteger x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; NSInteger x12; NSUInteger x13; NSUInteger x14; } *_deflater;
     NSUInteger _desiredBufferLength;
     NSUInteger _dontLogReads;
+    struct z_stream_s { char *x1; NSUInteger x2; NSUInteger x3; char *x4; NSUInteger x5; NSUInteger x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; NSInteger x12; NSUInteger x13; NSUInteger x14; } *_inflater;
     NSData *_logData;
     NSUInteger _readBytesNotLogged;
     NSMutableString *_readBytesToLog;
-    <SASLSecurityLayer> *_securityLayer;
-    _NSSocket *_socket;
+    <MFSASLSecurityLayer> *_securityLayer;
+    _MFSocket *_socket;
+    char *_zbuffer;
 }
 
 + (void)flushLog;
@@ -34,9 +38,8 @@
 + (void)setLogClasses:(id)arg1;
 + (BOOL)shouldTryFallbacksAfterError:(id)arg1;
 
-- (id)_createSocket;
-- (id)_nssocket;
-- (void*)_socket;
+- (id)_newSocket;
+- (id)_socket;
 - (BOOL)authenticateUsingAccount:(id)arg1 authenticator:(id)arg2;
 - (BOOL)authenticateUsingAccount:(id)arg1;
 - (id)authenticationMechanisms;
@@ -53,11 +56,13 @@
 - (BOOL)isValid;
 - (double)lastUsedTime;
 - (void)logReadChars:(const char *)arg1 length:(NSUInteger)arg2;
+- (BOOL)loginDisabled;
 - (BOOL)readBytesIntoData:(id)arg1 desiredLength:(NSUInteger)arg2;
 - (BOOL)readLineIntoData:(id)arg1;
 - (void)setAllowsFallbacks:(BOOL)arg1;
 - (void)setDesiredReadBufferLength:(NSUInteger)arg1;
 - (void)setIsFetching:(BOOL)arg1;
+- (BOOL)startCompression;
 - (BOOL)startTLSForAccount:(id)arg1;
 - (BOOL)writeData:(id)arg1 dontLogBytesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (BOOL)writeData:(id)arg1;

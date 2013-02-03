@@ -16,8 +16,10 @@
 - (id)_pluginsWithCommonSpecifierMode:(NSInteger)arg1;
 - (void)dealloc;
 - (id)initWithParentController:(id)arg1 includeNonAccountBundles:(BOOL)arg2;
+- (id)orderedPluginsForAdd;
 - (id)plugins;
 - (id)pluginsForAccountTypes:(id)arg1;
+- (id)pluginsWithCommonsSpecifiers;
 - (id)pluginsWithEagerlyLoadedCommonSpecifiers;
 - (id)pluginsWithLazilyLoadedCommonSpecifiers;
 

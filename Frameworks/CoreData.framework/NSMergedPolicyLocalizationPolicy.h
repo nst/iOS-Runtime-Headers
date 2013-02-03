@@ -8,13 +8,11 @@
     NSSet *_mergedPolicies;
 }
 
+- (void)_ensureFullLocalizationDictionaryIsLoaded;
 - (id)_localizedStringForKey:(id)arg1 value:(void*)arg2;
 - (void)addPolicy:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)localizedEntityNameForEntity:(id)arg1;
-- (id)localizedModelStringForKey:(id)arg1;
-- (id)localizedPropertyNameForProperty:(id)arg1;
 
 @end

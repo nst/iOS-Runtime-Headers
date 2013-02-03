@@ -41,6 +41,7 @@
 - (id)_image;
 - (id)_imageRect;
 - (id)_isContentEditable;
+- (id)_isInScrollBar;
 - (id)_isLiveLink;
 - (id)_isSelected;
 - (id)_spellingToolTip;

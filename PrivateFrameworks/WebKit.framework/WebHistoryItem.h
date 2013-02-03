@@ -31,16 +31,17 @@
 - (void)_setScrollPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setTransientProperty:(id)arg1 forKey:(id)arg2;
 - (void)_setViewportArguments:(id)arg1;
-- (void)_setVisitCount:(NSInteger)arg1;
 - (id)_transientPropertyForKey:(id)arg1;
 - (id)_viewportArguments;
-- (void)_visitedWithTitle:(id)arg1;
+- (void)_visitedWithTitle:(id)arg1 increaseVisitCount:(BOOL)arg2;
+- (oneway void)_webcore_releaseOnWebThread;
 - (id)alternateTitle;
 - (id)children;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)dictionaryRepresentationIncludingChildren:(BOOL)arg1;
 - (void)finalize;
 - (NSUInteger)hash;
 - (id)init;
@@ -55,6 +56,7 @@
 - (BOOL)lastVisitWasFailure;
 - (double)lastVisitedTimeInterval;
 - (id)originalURLString;
+- (oneway void)release;
 - (struct CGPoint { float x1; float x2; })scrollPoint;
 - (void)setAlternateTitle:(id)arg1;
 - (void)setAlwaysAttemptToUsePageCache:(BOOL)arg1;

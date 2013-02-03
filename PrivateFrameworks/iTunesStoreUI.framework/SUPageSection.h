@@ -2,26 +2,36 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSURL, NSString;
+@class ISURLRequest, NSString, UIImage;
 
 @interface SUPageSection : NSObject {
+    NSString *_identifier;
+    UIImage *_image;
     NSString *_title;
-    NSURL *_url;
+    ISURLRequest *_urlRequest;
     id _userInfo;
 }
 
+@property(retain) ISURLRequest *URLRequest;
+@property(retain) NSString *identifier;
+@property(retain) UIImage *image;
 @property(retain) NSString *title;
-@property(retain) NSURL *url;
+@property(readonly) id segmentedControlItem;
 @property(retain) id userInfo;
 
+- (id)URLRequest;
 - (void)dealloc;
+- (id)identifier;
+- (id)image;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)loadFromDictionary:(id)arg1;
+- (id)segmentedControlItem;
+- (void)setIdentifier:(id)arg1;
+- (void)setImage:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setUrl:(id)arg1;
+- (void)setURLRequest:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)title;
-- (id)url;
 - (id)userInfo;
 
 @end

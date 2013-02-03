@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString, MLMappedFileSegment;
+@class MLMappedFileSegment, NSString;
 
 @interface MLMappedFile : NSObject {
     BOOL _assumeFileIsFixedSize;

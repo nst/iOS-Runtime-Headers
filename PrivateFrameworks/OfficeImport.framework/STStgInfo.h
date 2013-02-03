@@ -15,9 +15,9 @@
     NSInteger m_creationTime;
     NSInteger m_modificationTime;
     NSString *m_pstrName;
-    NSUInteger m_size;
+    unsigned long m_size;
     NSInteger m_type;
-    NSUInteger m_userFlags;
+    unsigned long m_userFlags;
 }
 
 - (void)dealloc;

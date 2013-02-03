@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSLock, ML3Query;
+@class ML3Query, NSLock;
 
 @interface ML3QueryLoadOperation : NSOperation {
     ML3Query *_query;

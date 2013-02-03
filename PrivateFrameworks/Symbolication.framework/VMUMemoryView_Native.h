@@ -9,6 +9,7 @@
     } _addressRange;
     unsigned long _cursor;
     char *_data;
+    id _gcKeepAlive;
 }
 
 - (long long)LEB128;
@@ -28,7 +29,7 @@
 - (id)description;
 - (struct dyld_image_info_64 { unsigned long long x1; unsigned long long x2; unsigned long long x3; })dyldImageInfo64;
 - (struct dyld_image_info_64 { unsigned long long x1; unsigned long long x2; unsigned long long x3; })dyldImageInfo;
-- (id)initWithAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 data:(char *)arg2;
+- (id)initWithAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 data:(char *)arg2 memory:(id)arg3;
 - (short)int16;
 - (NSInteger)int32;
 - (long long)int64;

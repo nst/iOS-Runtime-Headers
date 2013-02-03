@@ -7,11 +7,17 @@
 @interface OADBlip : NSObject {
     OADSubBlip *mAltSubBlip;
     OADSubBlip *mMainSubBlip;
+    NSUInteger mReferenceCount;
 }
+
++ (id)pathExtensionForBlipType:(NSInteger)arg1;
 
 - (id)altSubBlip;
 - (void)dealloc;
+- (NSUInteger)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)mainSubBlip;
+- (NSUInteger*)referenceCount;
 - (void)setAltSubBlip:(id)arg1;
 - (void)setMainSubBlip:(id)arg1;
 

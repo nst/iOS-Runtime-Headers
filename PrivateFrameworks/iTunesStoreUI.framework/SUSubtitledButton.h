@@ -18,6 +18,7 @@
 - (id)_subtitleFont;
 - (NSInteger)_subtitleLineBreakMode;
 - (id)_subtitledContentForState:(NSUInteger)arg1;
+- (void)configureFromScriptButton:(id)arg1;
 - (id)currentSubtitle;
 - (id)currentSubtitleColor;
 - (id)currentSubtitleShadowColor;

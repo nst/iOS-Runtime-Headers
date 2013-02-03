@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, LBSGPlatformProfile, LBSGUserProfile;
+@class LBSGUserProfile, NSMutableArray, LBSGPlatformProfile;
 
 @interface LBSGLocRequest : PBRequest {
     NSMutableArray *_appProfiless;

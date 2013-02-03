@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDCharacterRun, WMStyle, NSString;
+@class WMStyle, NSString, WDCharacterRun;
 
 @interface WMCharacterRunMapper : CMMapper {
     WMStyle *mStyle;

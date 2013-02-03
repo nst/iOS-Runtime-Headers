@@ -9,7 +9,7 @@
 - (id)autorelease;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 
 @end

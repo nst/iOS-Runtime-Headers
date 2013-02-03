@@ -98,6 +98,8 @@
 - (void)_nilOutReservedCurrentEventSnapshot__;
 - (id)_originalSnapshot__;
 - (id)_persistentProperties__;
+- (void)_prepropagateDeleteForMerge;
+- (void)_propagateDelete:(BOOL)arg1;
 - (void)_propagateDelete;
 - (id)_referenceQueue__;
 - (id)_reservedCurrentEventSnapshot;

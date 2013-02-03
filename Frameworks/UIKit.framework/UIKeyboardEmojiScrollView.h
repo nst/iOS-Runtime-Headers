@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboardEmojiCategory, UIScrollView, UILabel, UIPageControl, NSMutableArray, <UIKeyboardEmojiController>;
+@class UIPageControl, UILabel, <UIKeyboardEmojiController>, UIScrollView, UIKeyboardEmojiCategory, NSMutableArray;
 
 @interface UIKeyboardEmojiScrollView : UIView <UIScrollViewDelegate> {
     UIKeyboardEmojiCategory *_category;
@@ -16,6 +16,9 @@
 
 @property <UIKeyboardEmojiController> *controller;
 
++ (void)_initializeSafeCategory;
+
+- (void)_accessibilityDelayedPost;
 - (void)clearPages;
 - (id)controller;
 - (NSInteger)currentPage;

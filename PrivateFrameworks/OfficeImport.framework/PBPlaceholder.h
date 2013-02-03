@@ -5,8 +5,11 @@
 @interface PBPlaceholder : NSObject {
 }
 
-+ (NSInteger)placeholderTypeFromInstance:(NSInteger)arg1;
++ (BOOL)isBodyPlaceholder:(NSInteger)arg1;
++ (BOOL)isTitlePlaceholder:(NSInteger)arg1;
 + (NSInteger)placeholderTypeFromTextType:(NSInteger)arg1;
++ (NSInteger)readPlaceholderOrientation:(NSInteger)arg1;
++ (NSInteger)readPlaceholderSize:(NSInteger)arg1;
 + (NSInteger)readPlaceholderType:(NSInteger)arg1;
 
 @end

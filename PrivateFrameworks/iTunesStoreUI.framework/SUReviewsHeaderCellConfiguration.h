@@ -5,8 +5,10 @@
 @interface SUReviewsHeaderCellConfiguration : SUItemCellConfiguration {
 }
 
++ (void)_initializeSafeCategory;
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 
+- (id)accessibilityLabel;
 - (id)colorForLabelAtIndex:(NSUInteger)arg1 withModifiers:(NSUInteger)arg2;
 - (id)fontForLabelAtIndex:(NSUInteger)arg1;
 - (BOOL)getShadowColor:(id*)arg1 offset:(struct CGSize { float x1; float x2; }*)arg2 forLabelAtIndex:(NSUInteger)arg3 withModifiers:(NSUInteger)arg4;

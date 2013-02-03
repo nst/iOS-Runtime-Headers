@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIView, CKSendingProgressView, NSString, CKConversation, NSTimer, NSMutableSet;
+@class CKSendingProgressView, UIView, NSString, CKConversation, NSTimer, NSMutableSet;
 
 @interface CKTranscriptStatusController : NSObject {
     CKConversation *_conversation;
@@ -28,6 +28,7 @@
 - (id)_generateStatusTitle;
 - (float)_generateVal;
 - (void)_hideName;
+- (id)_localizedTitleForSendingPart:(NSInteger)arg1 ofPart:(NSInteger)arg2;
 - (void)_refreshNavigationItemView;
 - (void)_refreshNavigationItemViewAnimate:(BOOL)arg1;
 - (void)_resetProgress;

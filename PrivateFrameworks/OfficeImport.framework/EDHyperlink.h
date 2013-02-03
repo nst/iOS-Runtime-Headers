@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDString, EDReference;
+@class EDReference, EDString;
 
 @interface EDHyperlink : NSObject {
     EDString *mDescriptionText;

@@ -2,36 +2,30 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SURatingAlertView, NSURL, SUComposeReviewView;
+@class SURatingAlertView, ISReview, SUComposeReviewView;
 
 @interface SUComposeReviewViewController : SUViewController <UIAlertViewDelegate> {
-    NSInteger _assetType;
     SUComposeReviewView *_composeView;
-    unsigned long long _itemIdentifier;
     SURatingAlertView *_ratingAlert;
-    NSURL *_url;
+    ISReview *_review;
+    NSInteger _state;
 }
-
-@property(retain) NSURL *url;
-@property NSInteger assetType;
-@property unsigned long long itemIdentifier;
 
 - (void)_cancel;
 - (void)_fetchReviewInfo;
+- (void)_setReviewByMergingWithReview:(id)arg1;
 - (void)_submit;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
-- (NSInteger)assetType;
+- (void)applicationDidEnterBackground;
 - (void)composeReviewViewValidityChanged:(id)arg1;
+- (id)copyReview;
+- (id)copyScriptViewController;
 - (void)dealloc;
 - (id)init;
-- (unsigned long long)itemIdentifier;
 - (void)loadView;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operationFinished:(id)arg1;
-- (void)setAssetType:(NSInteger)arg1;
-- (void)setItemIdentifier:(unsigned long long)arg1;
-- (void)setUrl:(id)arg1;
-- (id)url;
+- (void)setReview:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 

@@ -52,6 +52,7 @@
 - (void)sendDidReceiveData:(long)arg1;
 - (void)sendDidReceiveResponse:(struct _CFURLResponse { }*)arg1;
 - (void)sendDidStart:(struct _CFURLDownload { }*)arg1;
+- (unsigned char)sendDownloadShouldUseCredentialStorage;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)sendShouldDecodeDataOfMIMEType:(struct __CFString { }*)arg1;
 - (void)sendWillResumeWithResponse:(struct _CFURLResponse { }*)arg1 startingByte:(unsigned long long)arg2;
 - (struct _CFURLRequest { }*)sendWillSendRequest:(struct _CFURLRequest { }*)arg1 redirectResponse:(struct _CFURLResponse { }*)arg2;

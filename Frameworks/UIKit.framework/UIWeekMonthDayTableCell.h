@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel, NSDate;
+@class NSDate, UILabel;
 
 @interface UIWeekMonthDayTableCell : UIDateTableCell {
     NSDate *_date;

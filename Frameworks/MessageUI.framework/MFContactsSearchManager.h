@@ -2,17 +2,20 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSMutableDictionary, NSOperationQueue, NSSet;
+@class NSOperationQueue, NSArray, NSSet, NSMutableDictionary;
 
 @interface MFContactsSearchManager : NSObject <DASearchQueryConsumer> {
     void *_addressBook;
     NSUInteger _genNumber;
     NSSet *_properties;
     NSOperationQueue *_queue;
+    NSArray *_searchAccountIDs;
     NSUInteger _searchTypes;
     NSMutableDictionary *_taskContextsByTaskID;
     struct __CFDictionary { } *_taskIDsBySearchQuery;
 }
+
+@property(retain) NSArray *searchAccountIDs;
 
 - (void)_handleLocalSearchResults:(id)arg1 type:(NSInteger)arg2 operation:(id)arg3 taskID:(id)arg4;
 - (void)_handleSearchQueries:(id)arg1 forAccountIDs:(id)arg2 operation:(id)arg3 taskID:(id)arg4;
@@ -23,9 +26,11 @@
 - (void)cancelTaskWithID:(id)arg1;
 - (void)dealloc;
 - (id)initWithAddressBook:(void*)arg1 properties:(NSInteger*)arg2 propertyCount:(NSUInteger)arg3;
+- (id)searchAccountIDs;
 - (id)searchForText:(id)arg1 consumer:(id)arg2;
 - (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;
 - (void)searchQuery:(id)arg1 returnedResults:(id)arg2;
+- (void)setSearchAccountIDs:(id)arg1;
 - (void)setSearchTypes:(NSUInteger)arg1;
 
 @end

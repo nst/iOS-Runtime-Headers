@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, GMMDateTime, GMMDirectionsIconRequest, GMMMapInfo;
+@class GMMDirectionsIconRequest, GMMMapInfo, NSMutableArray, GMMDateTime;
 
 @interface GMMDirectionsRequest : PBRequest {
     BOOL _addStepNoticesToInstructionText;

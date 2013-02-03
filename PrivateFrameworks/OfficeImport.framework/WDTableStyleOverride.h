@@ -2,20 +2,20 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDCharacterProperties, WDTableRowProperties, WDTableCellProperties, WDParagraphProperties, WDDocument, WDStyle;
+@class WDCharacterProperties, WDTableRowProperties, WDTableCellProperties, WDStyle, WDParagraphProperties, WDDocument;
 
 @interface WDTableStyleOverride : NSObject <NSCopying> {
+    unsigned int mParagraphPropertiesOverridden : 1;
+    unsigned int mCharacterPropertiesOverridden : 1;
+    unsigned int mTableRowPropertiesOverridden : 1;
+    unsigned int mTableCellStylePropertiesOverridden : 1;
     WDCharacterProperties *mCharacterProperties;
-    BOOL mCharacterPropertiesOverridden;
     WDDocument *mDocument;
     WDParagraphProperties *mParagraphProperties;
-    BOOL mParagraphPropertiesOverridden;
     NSInteger mPart;
     WDStyle *mStyle;
     WDTableCellProperties *mTableCellStyleProperties;
-    BOOL mTableCellStylePropertiesOverridden;
     WDTableRowProperties *mTableRowProperties;
-    BOOL mTableRowPropertiesOverridden;
 }
 
 - (id)characterProperties;

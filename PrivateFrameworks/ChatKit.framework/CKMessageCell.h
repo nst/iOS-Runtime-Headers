@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKBalloonView, UIButton;
+@class UIButton, CKBalloonView;
 
 @interface CKMessageCell : UITableViewCell {
     CKBalloonView *_balloonView;
@@ -18,23 +18,27 @@
 + (id)_exclamationGlyphImage;
 + (id)_failImage;
 + (id)_failPressedImage;
++ (void)_initializeSafeCategory;
 
+- (BOOL)_accessibilitySupportsActivateAction;
+- (id)_accessibilityTextViewTextOperationResponder;
 - (void)_failPressed:(id)arg1;
 - (id)_multiselectBackgroundColor;
 - (void)_resetBalloonFrame;
+- (void)accessibilityActivate;
+- (id)accessibilityLabel;
 - (void)addBalloonView:(id)arg1;
 - (id)balloonView;
 - (void)dealloc;
 - (void)didTapBalloon:(id)arg1;
 - (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2;
+- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (id)replacementMessageBubbleData;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFailed:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setReplacementMessageBubbleData:(id)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setTopPadding:(float)arg1 bottomPadding:(float)arg2;
 
 @end

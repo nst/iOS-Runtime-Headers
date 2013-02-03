@@ -19,7 +19,7 @@
 - (void)invalidate;
 - (BOOL)isValid;
 - (id)name;
-- (void)release;
+- (oneway void)release;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)retain;
 - (NSUInteger)retainCount;

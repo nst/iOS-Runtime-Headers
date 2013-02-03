@@ -49,6 +49,5 @@
 - (struct CGSize { float x1; float x2; })transformSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct { float x1; float x2; float x3; float x4; float x5; float x6; })transformStruct;
 - (void)translateXBy:(float)arg1 yBy:(float)arg2;
-- (struct { double x1; double x2; double x3; BOOL x4; BOOL x5; })ttTransformStruct;
 
 @end

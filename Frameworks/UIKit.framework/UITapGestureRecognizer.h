@@ -2,35 +2,47 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
-
 @interface UITapGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
         float x; 
         float y; 
-    BOOL _gotEnoughTouches;
-    } _location;
-    NSInteger _numberOfFingers;
-    NSInteger _numberOfTaps;
-    NSMutableArray *_touches;
-    NSInteger _touchesAtMaxTaps;
+    id _imp;
+    } _locationInView;
 }
 
 @property(readonly) NSArray *touches;
+@property(readonly) CGPoint centroid;
 @property(readonly) CGPoint location;
-@property NSInteger numberOfFingers;
-@property NSInteger numberOfTaps;
+@property NSUInteger numberOfTapsRequired;
+@property NSUInteger numberOfTouchesRequired;
 
-- (void)_doubleTapTooSlow;
-- (void)_tapTooSlow;
++ (void)addTapGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 tapCount:(NSUInteger)arg4 touchCount:(NSUInteger)arg5;
++ (void)addTapGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 tapCount:(NSUInteger)arg4;
++ (void)addTapGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
+
+- (void)_appendSubclassDescription:(id)arg1;
+- (void)_resetGestureRecognizer;
+- (float)allowableMovement;
+- (BOOL)canPreventGestureRecognizer:(id)arg1;
+- (struct CGPoint { float x1; float x2; })centroid;
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (struct CGPoint { float x1; float x2; })location;
-- (NSInteger)numberOfFingers;
-- (NSInteger)numberOfTaps;
-- (void)reset;
-- (void)setNumberOfFingers:(NSInteger)arg1;
-- (void)setNumberOfTaps:(NSInteger)arg1;
+- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })locationOfTouch:(NSUInteger)arg1 inView:(id)arg2;
+- (double)maximumIntervalBetweenSuccessiveTaps;
+- (double)maximumSingleTapDuration;
+- (NSUInteger)numberOfTapsRequired;
+- (NSUInteger)numberOfTouches;
+- (NSUInteger)numberOfTouchesRequired;
+- (void)setAllowableMovement:(float)arg1;
+- (void)setMaximumIntervalBetweenSuccessiveTaps:(double)arg1;
+- (void)setMaximumSingleTapDuration:(double)arg1;
+- (void)setNumberOfTapsRequired:(NSUInteger)arg1;
+- (void)setNumberOfTouchesRequired:(NSUInteger)arg1;
+- (BOOL)tapIsPossibleForTapRecognizer:(id)arg1;
+- (void)tapRecognizerFailedToRecognizeTap:(id)arg1;
+- (void)tapRecognizerRecognizedTap:(id)arg1;
 - (id)touches;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

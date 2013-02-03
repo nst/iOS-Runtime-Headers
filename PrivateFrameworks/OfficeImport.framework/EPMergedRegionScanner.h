@@ -11,7 +11,7 @@
      /* Encoded args for previous method: B16@0:4@8@12 */
 }
 
-- (void)applyProcessorToObject:(id)arg1 withWorkbook:(id)arg2;
+- (void)applyProcessorToObject:(id)arg1 sheet:(id)arg2;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isObjectSupported:(id)arg1;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)processMergedRegion:(id)arg1 inWorksheet:(id)arg2;
 

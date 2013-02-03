@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray, NSString;
+@class NSString, NSMutableArray;
 
 @interface YTPersistentVideoList : NSObject {
     NSString *_categoryName;

@@ -2,14 +2,15 @@
    Image: /System/Library/PrivateFrameworks/AccountSettings.framework/AccountSettings
  */
 
-@class NSMutableDictionary, <AccountRefreshProtocol>;
+@class <AccountRefreshProtocol>, NSMutableDictionary, <AccountFullAccountProtocol>;
 
-@interface BasicAccount : NSObject {
-    id _fullAccount;
+@interface BasicAccount : NSObject <AccountFullAccountProtocol> {
+    <AccountFullAccountProtocol> *_fullAccount;
     NSMutableDictionary *_properties;
     <AccountRefreshProtocol> *_syncAccount;
 }
 
++ (id)_accountCreationMap;
 + (id)_creatorsInfo;
 + (id)_dataclassesProperties;
 + (BOOL)_isValidAccountType:(id)arg1;
@@ -27,35 +28,45 @@
 + (id)userActionsToEnableDataclass:(id)arg1 forAccountType:(id)arg2;
 + (BOOL)userConfirmationIsRequiredByDataclass:(id)arg1;
 
-- (id)_creatorClassNameForAccountType:(id)arg1 creatorType:(id)arg2;
+- (id)_cachedSyncAccount;
+- (id)_creatorClassNameForAccountType:(id)arg1 creatorType:(id)arg2 loader:(id)arg3;
+- (void)_forcedSetAccountProperty:(id)arg1 forKey:(id)arg2;
 - (id)_initWithType:(id)arg1 class:(id)arg2;
 - (id)accountClass;
+- (BOOL)accountClassStringIsIMAPSubclass;
 - (id)accountPropertyForKey:(id)arg1;
-- (void)createSyncAccount;
+- (BOOL)accountTypeStringCanOwnCalDAVAccounts;
+- (BOOL)accountTypeStringCanOwnCardDAVAccounts;
+- (BOOL)accountTypeStringIsIMAPSubclass;
+- (id)childAccountPropertiesArrayBySettingChildProperties:(id)arg1 forChildAccountType:(id)arg2;
+- (id)childPropertiesForAccountType:(id)arg1 defaultProperties:(id)arg2 outParentNeedsSave:(BOOL*)arg3;
 - (void)dealloc;
 - (id)defaultContainerIdentifierForDataclass:(id)arg1;
 - (id)displayName;
 - (id)enabledDataclasses;
-- (id)fullAccount;
-- (id)fullAccountCreatorClassNameForAccountType:(id)arg1;
+- (id)fullAccountCreatorClassNameForAccountType:(id)arg1 loader:(id)arg2;
+- (id)fullAccountUsingLoader:(id)arg1;
 - (id)identifier;
 - (id)init;
 - (id)initWithProperties:(id)arg1;
 - (BOOL)isEnabledForDataclass:(id)arg1;
+- (BOOL)isValidCalDAVChildAccount;
+- (BOOL)isValidCardDAVChildAccount;
 - (BOOL)isValidDAMMeAccount;
+- (BOOL)isValidIMAPNotesAccount;
 - (id)properties;
 - (id)propertiesToSave;
 - (BOOL)refreshContainerListForDataclass:(id)arg1;
 - (BOOL)refreshContainerWithIdentifier:(id)arg1 forDataclass:(id)arg2;
 - (BOOL)refreshContainersForDataclass:(id)arg1;
 - (void)removeAccountPropertyForKey:(id)arg1;
+- (void)renewAccountCredentialsWithHandler:(id)arg1;
 - (void)setAccountClass:(id)arg1;
 - (void)setAccountProperty:(id)arg1 forKey:(id)arg2;
 - (void)setDisplayName:(id)arg1;
 - (void)setEnabled:(BOOL)arg1 forDataclass:(id)arg2;
 - (void)setEnabledForDataclasses:(id)arg1;
 - (void)setFullAccount:(id)arg1;
-- (void)setSyncAccount:(id)arg1;
 - (id)shortTypeString;
 - (id)subscribedCalendarRecords;
 - (id)supportedDataclasses;

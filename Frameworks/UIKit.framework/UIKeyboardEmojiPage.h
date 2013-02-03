@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, UIKeyboardEmojiView, NSMutableArray, UITouch, <UIKeyboardEmojiController>;
+@class NSArray, NSString, <UIKeyboardEmojiController>, UITouch, NSMutableArray, UIKeyboardEmojiView;
 
 @interface UIKeyboardEmojiPage : UIControl {
     struct CGRect { 

@@ -2,15 +2,19 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableArray, NSMutableData, NSMutableDictionary;
+@class NSMutableDictionary, NSMutableData, NSMutableArray;
 
 @interface MLPhotoBakedThumbnails : NSObject {
+    struct CGSize { 
+        float width; 
+        float height; 
     NSInteger _count;
     NSInteger _format;
-    BOOL _isAlbumVideo;
+    BOOL _missingHeader;
     NSMutableDictionary *_options;
     BOOL _optionsAccessed;
     NSInteger _singleThumbnailImageLength;
+    } _size;
     NSMutableData *_thumbnailData;
     NSMutableArray *_thumbnailImages;
 }
@@ -19,6 +23,7 @@
 @property(readonly) NSUInteger bitmapInfo;
 @property(readonly) NSInteger bitsPerComponent;
 @property(readonly) NSInteger bytesPerPixel;
+@property(readonly) NSInteger format;
 @property(readonly) CGRect imageRect;
 @property(readonly) CGSize size;
 
@@ -32,14 +37,18 @@
 - (NSInteger)bytesPerPixel;
 - (NSInteger)count;
 - (void)dealloc;
+- (id)description;
+- (NSInteger)format;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRect;
 - (id)initWithAlbumVideo:(id)arg1 format:(NSInteger)arg2;
 - (id)initWithAlbumVideoImages:(id)arg1 format:(NSInteger)arg2 orientation:(NSInteger*)arg3 options:(id)arg4 delegate:(id)arg5;
 - (id)initWithContentsOfFile:(id)arg1 format:(NSInteger)arg2;
+- (id)initWithData:(id)arg1 format:(NSInteger)arg2;
 - (id)initWithImages:(id)arg1 format:(NSInteger)arg2 orientation:(NSInteger*)arg3 options:(id)arg4 delegate:(id)arg5;
 - (id)options;
 - (BOOL)saveToAlbumVideoFile:(id)arg1;
 - (BOOL)saveToFile:(id)arg1;
+- (id)serializedData;
 - (struct CGSize { float x1; float x2; })size;
 - (char *)thumbnailBytesAtIndex:(NSInteger)arg1;
 - (id)thumbnailDataAtIndex:(NSInteger)arg1;

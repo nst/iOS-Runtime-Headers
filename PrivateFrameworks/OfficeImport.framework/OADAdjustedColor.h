@@ -19,8 +19,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (BOOL)gray;
+- (NSUInteger)hash;
 - (id)initWithBaseColor:(id)arg1 adjustmentType:(NSInteger)arg2 adjustmentParam:(unsigned char)arg3 invert:(BOOL)arg4 invert128:(BOOL)arg5 gray:(BOOL)arg6;
 - (BOOL)invert128;
 - (BOOL)invert;
+- (BOOL)isEqual:(id)arg1;
 
 @end

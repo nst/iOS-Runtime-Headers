@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UISectionTable, UISectionIndex, NSSet;
+@class UISectionTable, NSSet, NSMutableArray, UISectionIndex;
 
 @interface UISectionList : UIView {
     struct { 

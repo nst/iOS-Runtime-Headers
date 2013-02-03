@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ActorKit.framework/ActorKit
  */
 
-@class NSConditionLock, NSInvocation;
+@class NSInvocation, NSConditionLock;
 
 @interface AKDeferredReply : NSObject {
     NSConditionLock *_blockingLock;

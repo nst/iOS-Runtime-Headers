@@ -2,20 +2,16 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CLLocation, NSDictionary;
+@class CLLocation;
 
 @interface GMMLocationShiftRequester : GMMRequester {
     CLLocation *_location;
-    NSDictionary *_supportInfo;
 }
 
 @property(retain) CLLocation *location;
-@property(retain) NSDictionary *supportInfo;
 
 - (void)dealloc;
 - (id)location;
 - (void)setLocation:(id)arg1;
-- (void)setSupportInfo:(id)arg1;
-- (id)supportInfo;
 
 @end

@@ -2,31 +2,46 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MLPhotoAlbum;
+@class MLAlbum, PLEmptyAlbumView, NSArray;
 
-@interface PLAlbumViewController : UIViewController {
-    unsigned int _didSetPreviousStatusBarMode : 1;
-    MLPhotoAlbum *_album;
-    NSInteger _newStatusBarMode;
-    NSInteger _previousStatusBarMode;
+@interface PLAlbumViewController : UIViewController <PLAlbumViewDataSource, PLAlbumViewDelegate> {
+    MLAlbum *_album;
+    NSInteger _currentFilter;
+    PLEmptyAlbumView *_emptyAlbumView;
+    NSArray *_filteredItems;
+    BOOL _shouldReloadWhenBecomingVisible;
 }
 
-@property(readonly) MLPhotoAlbum *album;
+@property(readonly) MLAlbum *album;
 @property(readonly) PLAlbumView *albumView;
-@property NSInteger previousStatusBarMode;
+@property NSInteger currentFilter;
 
-- (NSInteger)_imagePickerStatusBarMode;
++ (void)_initializeSafeCategory;
+
 - (id)album;
+- (void)albumDidChange:(id)arg1;
+- (id)albumView:(id)arg1 accessibilityHintForPhotoAtIndex:(NSUInteger)arg2;
+- (id)albumView:(id)arg1 accessibilityLabelForPhotoAtIndex:(NSUInteger)arg2;
+- (unsigned long long)albumView:(id)arg1 accessibilityTraitsForPhotoAtIndex:(NSUInteger)arg2;
+- (void)albumView:(id)arg1 imageCount:(NSUInteger*)arg2 videoCount:(NSUInteger*)arg3 otherCount:(NSUInteger*)arg4;
+- (id)albumView:(id)arg1 imageDataForPhotoAtIndex:(NSUInteger)arg2 imageWidth:(NSInteger*)arg3 imageHeight:(NSInteger*)arg4 bytesPerRow:(NSInteger*)arg5 dataWidth:(NSInteger*)arg6 dataHeight:(NSInteger*)arg7 imageDataOffset:(NSInteger*)arg8;
+- (id)albumView:(id)arg1 textBadgeForPhotoAtIndex:(NSUInteger)arg2;
 - (id)albumView;
 - (id)contentScrollView;
+- (NSInteger)currentFilter;
 - (void)dealloc;
+- (NSUInteger)filteredCount;
+- (id)filteredItems;
 - (id)init;
 - (id)initWithAlbum:(id)arg1;
+- (void)invalidateFilteredItems;
+- (void)libraryDidChange:(id)arg1;
 - (void)loadView;
-- (NSInteger)previousStatusBarMode;
+- (NSUInteger)numberOfPhotosForAlbumView:(id)arg1;
+- (void)reloadData;
 - (void)setAlbum:(id)arg1;
-- (void)setPreviousStatusBarMode:(NSInteger)arg1;
+- (void)setCurrentFilter:(NSInteger)arg1;
+- (void)showEmptyAlbumView:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

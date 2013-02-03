@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@class NSArray, NSString;
+@class NSString, NSArray;
 
 @interface VSRecognitionRecognizeAction : VSRecognitionAction {
     struct { 

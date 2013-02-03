@@ -16,7 +16,7 @@
 + (void)startOnBackgroundThread;
 
 - (void)_addOrSubtractMessageReceived:(id)arg1 userInfo:(id)arg2 addOrSubtract:(BOOL)arg3;
-- (void)_addScalar:(NSInteger)arg1 toKey:(id)arg2 useCurrentValue:(BOOL)arg3;
+- (void)_addScalar:(long long)arg1 toKey:(id)arg2 useCurrentValue:(BOOL)arg3;
 - (id)_argumentsFromMessage:(id)arg1;
 - (void)_initializeDistribution:(struct { double x1; double x2; double x3; double x4; NSInteger x5; }*)arg1 forDouble:(double)arg2;
 - (id)_keyFromMessage:(id)arg1;
@@ -33,7 +33,7 @@
 - (void)distributionReceived:(struct { double x1; double x2; double x3; double x4; NSInteger x5; }*)arg1 withDaysSince1970:(NSInteger)arg2 forKey:(id)arg3;
 - (id)init;
 - (void)pushMessageReceived:(id)arg1 userInfo:(id)arg2;
-- (void)scalarReceived:(NSInteger)arg1 withDaysSince1970:(NSInteger)arg2 forKey:(id)arg3;
+- (void)scalarReceived:(long long)arg1 withDaysSince1970:(NSInteger)arg2 forKey:(id)arg3;
 - (void)setValueForDistributionMessageReceived:(id)arg1 userInfo:(id)arg2;
 - (void)setValueForScalarMessageReceived:(id)arg1 userInfo:(id)arg2;
 - (BOOL)shouldCancelQuery;

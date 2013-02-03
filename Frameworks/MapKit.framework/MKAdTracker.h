@@ -19,6 +19,7 @@
 - (void)reportAction:(NSInteger)arg1 forSearchResult:(id)arg2 withDelegate:(id)arg3;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requester:(id)arg1 didReceiveResponse:(id)arg2 forRequest:(id)arg3;
+- (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
 - (void)saveDeferredRequestsToPath:(id)arg1;
 

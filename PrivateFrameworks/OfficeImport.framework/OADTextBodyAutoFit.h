@@ -6,7 +6,9 @@
     NSInteger mType;
 }
 
+- (NSUInteger)hash;
 - (id)initWithType:(NSInteger)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (NSInteger)type;
 
 @end

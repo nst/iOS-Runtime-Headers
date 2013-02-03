@@ -2,25 +2,27 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSSet;
+@class NSSet, NSMutableDictionary;
 
 @interface NSManagedObjectModel : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
     struct __managedObjectModelFlags { 
         unsigned int _isInUse : 1; 
         unsigned int _isImmutable : 1; 
-        unsigned int _reservedEntityDescription : 30; 
+        unsigned int _isOptimizedForEncoding : 1; 
+        unsigned int _reservedEntityDescription : 29; 
     NSMutableDictionary *_configurations;
+    id _dataForOptimization;
     NSMutableDictionary *_entities;
     NSMutableDictionary *_fetchRequestTemplates;
     id _localizationPolicy;
     } _managedObjectModelFlags;
-    void *_reserved2;
-    void *_reserved;
+    id *_optimizationHints;
     NSSet *_versionIdentifiers;
 }
 
 + (void)_deepCollectEntitiesInArray:(id)arg1 entity:(id)arg2;
 + (id)_modelPathsFromBundles:(id)arg1;
++ (id)_newModelFromOptimizedEncoding:(id)arg1 error:(id*)arg2;
 + (void)initialize;
 + (id)mergedModelFromBundles:(id)arg1 forStoreMetadata:(id)arg2;
 + (id)mergedModelFromBundles:(id)arg1;
@@ -35,13 +37,18 @@
 - (id)_entitiesByVersionHash;
 - (id)_entityForName:(id)arg1;
 - (void)_flattenProperties;
+- (BOOL)_hasPrecomputedKeyOrder;
 - (id)_initWithEntities:(id)arg1;
+- (BOOL)_isOptimizedForEncoding;
 - (id)_localizationPolicy;
 - (id)_modelForVersionHashes:(id)arg1;
+- (id)_optimizedEncoding:(id*)arg1;
+- (id)_precomputedKeysForEntity:(id)arg1;
 - (void)_removeEntities:(id)arg1 fromConfiguration:(id)arg2;
 - (void)_removeEntity:(id)arg1;
 - (void)_removeEntityNamed:(id)arg1;
 - (void)_restoreValidation;
+- (void)_setIsEditable:(BOOL)arg1 optimizationStyle:(NSUInteger)arg2;
 - (void)_setIsEditable:(BOOL)arg1;
 - (void)_setLocalizationPolicy:(id)arg1;
 - (id)_sortedEntitiesForConfiguration:(id)arg1;
@@ -64,6 +71,7 @@
 - (NSUInteger)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithContentsOfOptimizedURL:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1 forStoreMetadata:(id)arg2;
 - (id)initWithContentsOfURL:(id)arg1;
 - (BOOL)isConfiguration:(id)arg1 compatibleWithStoreMetadata:(id)arg2;

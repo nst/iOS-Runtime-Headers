@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptDebugDelegate, SUScriptInterface, SUWebViewDelegateProxy;
+@class SUScriptInterface, SUScriptDebugDelegate, SUWebViewDelegateProxy, NSMutableArray;
 
 @interface SUWebView : UIWebView <SUScriptInterfaceDelegate> {
     unsigned int _openURLsExternally : 1;
@@ -11,35 +11,52 @@
     SUScriptDebugDelegate *_debugDelegate;
     SUWebViewDelegateProxy *_delegateProxy;
     SUScriptInterface *_scriptInterface;
-    struct __CFDictionary { } *_widgets;
+    NSMutableArray *_scrollRequests;
+    NSInteger _synchronousLayoutCount;
 }
 
 @property <SUWebViewDelegate> *delegate;
+@property(readonly) OpaqueJSContext *globalExecutionContext;
+@property(readonly) SUScriptInterface *scriptInterface;
 @property(readonly) NSString *title;
+@property(readonly) WebDataSource *webDataSource;
+@property(readonly) WebView *webView;
 @property BOOL openURLsExternally;
 @property(getter=isScrollingEnabled) BOOL scrollingEnabled;
 @property BOOL sourceIsTrusted;
+@property(readonly) id windowScriptObject;
 
 - (id)_DOMDocument;
-- (id)_createImageViewForElement:(id)arg1;
-- (id)_createLabelForElement:(id)arg1 withText:(id)arg2;
-- (void)_didFinishLoadForFrame:(id)arg1;
-- (void)_injectScriptObjectsForWindow:(id)arg1;
+- (id)_callWebScriptMethod:(id)arg1 withArguments:(id)arg2;
+- (void)_finishActiveScrollRequest;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForElement:(id)arg1;
 - (id)_localStoragePath;
-- (void)_positionView:(id)arg1 forWidget:(id)arg2;
-- (id)_webView;
+- (id)_newImageViewForElement:(id)arg1;
+- (id)_newLabelForElement:(id)arg1 withText:(id)arg2;
+- (void)_performNextScrollRequest;
+- (void)_setRichTextReaderViewportSettings;
+- (void)beginSynchronousLayout;
 - (id)callWebScriptMethod:(id)arg1 withArguments:(id)arg2;
+- (BOOL)copyImage:(struct CGImage {}**)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 forElement:(id)arg3;
 - (void)dealloc;
+- (void)endSynchronousLayout;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForElementWithIdentifier:(id)arg1;
+- (struct OpaqueJSContext { }*)globalExecutionContext;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isScrollingEnabled;
+- (struct OpaqueJSContext { }*)javaScriptContextForScriptInterface:(id)arg1;
+- (void)loadArchive:(id)arg1;
 - (BOOL)openURLsExternally;
+- (id)parentViewControllerForScriptInterface:(id)arg1;
+- (void)reloadWindowScriptObject:(id)arg1;
+- (void)resetScriptInterface;
 - (void)scriptInterface:(id)arg1 animatePurchaseForIdentifier:(id)arg2;
 - (void)scriptInterface:(id)arg1 parsedPropertyList:(id)arg2 ofType:(NSInteger)arg3;
 - (void)scriptInterface:(id)arg1 receivedEventOfType:(NSInteger)arg2 userInfo:(id)arg3;
-- (void)scriptInterface:(id)arg1 registeredNativeWidget:(id)arg2;
-- (void)scriptInterface:(id)arg1 removedNativeWidgetWithIdentifier:(id)arg2;
+- (id)scriptInterface;
+- (void)scrollElementToVisible:(id)arg1 animated:(BOOL)arg2 delegate:(id)arg3;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)setOpenURLsExternally:(BOOL)arg1;
 - (void)setScrollingEnabled:(BOOL)arg1;
 - (void)setSourceIsTrusted:(BOOL)arg1;
@@ -47,5 +64,8 @@
 - (void)stopLoading;
 - (id)superviewForImageSheetForWebView:(id)arg1;
 - (id)title;
+- (id)webDataSource;
+- (id)webView;
+- (id)windowScriptObject;
 
 @end

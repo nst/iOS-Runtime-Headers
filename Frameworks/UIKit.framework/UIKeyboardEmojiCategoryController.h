@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, <UIKeyboardEmojiController>;
+@class <UIKeyboardEmojiController>, NSMutableDictionary;
 
 @interface UIKeyboardEmojiCategoryController : NSObject {
     NSMutableDictionary *_defaultsData;

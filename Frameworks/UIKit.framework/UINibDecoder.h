@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UINibStringIDTable, NSString;
+@class NSString, UINibStringIDTable;
 
 @interface UINibDecoder : NSCoder {
     struct UINibDecoderHeader { 

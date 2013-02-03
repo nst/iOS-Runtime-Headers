@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIFont, NSString;
+@class NSString, UIFont;
 
 @interface UIAutocorrectStringView : UIView {
     UIFont *m_font;

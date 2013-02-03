@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class UIImage, NSString;
+@class NSString, UIImage;
 
 @interface MFAttachmentImageGenerator : UIView {
     struct CGSize { 

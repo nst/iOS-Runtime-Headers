@@ -11,16 +11,18 @@
 }
 
 + (id)runWithCharIndex:(NSUInteger)arg1 font:(id)arg2 resources:(id)arg3;
++ (id)runWithCharIndex:(NSUInteger)arg1 fontIndex:(NSUInteger)arg2 resources:(id)arg3;
 + (id)runWithResources:(id)arg1;
 
 - (NSUInteger)charIndex;
 - (id)font;
 - (NSUInteger)fontIndex;
 - (id)initWithCharIndex:(NSUInteger)arg1 font:(id)arg2 resources:(id)arg3;
+- (id)initWithCharIndex:(NSUInteger)arg1 fontIndex:(NSUInteger)arg2 resources:(id)arg3;
 - (id)initWithResources:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToRun:(id)arg1;
-- (NSInteger)key;
+- (NSUInteger)key;
 - (void)setCharIndex:(NSUInteger)arg1;
 - (void)setFont:(id)arg1;
 - (void)setFontIndex:(NSUInteger)arg1;

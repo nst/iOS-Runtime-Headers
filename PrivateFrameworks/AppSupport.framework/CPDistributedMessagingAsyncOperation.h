@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSString, CPDistributedMessagingCenter, NSData, NSDictionary, NSThread, NSError;
+@class NSThread, NSString, NSData, NSDictionary, CPDistributedMessagingCenter, NSError;
 
 @interface CPDistributedMessagingAsyncOperation : NSOperation {
     NSThread *_calloutThread;
     CPDistributedMessagingCenter *_center;
     void *_context;
     NSError *_error;
+    BOOL _makeServer;
     NSString *_name;
     NSData *_oolData;
     NSString *_oolKey;
@@ -21,7 +22,7 @@
 - (void)_performCallout;
 - (void)_releaseSendingData;
 - (void)dealloc;
-- (id)initWithCenter:(id)arg1 messageName:(id)arg2 userInfoData:(id)arg3 oolKey:(id)arg4 oolData:(id)arg5 target:(id)arg6 selector:(SEL)arg7 context:(void*)arg8;
+- (id)initWithCenter:(id)arg1 messageName:(id)arg2 userInfoData:(id)arg3 oolKey:(id)arg4 oolData:(id)arg5 target:(id)arg6 selector:(SEL)arg7 context:(void*)arg8 makeServer:(BOOL)arg9;
 - (void)main;
 
 @end

@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class GenericAttachmentStore, NSArray, NSString;
+@class MFGenericAttachmentStore, NSString, NSArray;
 
 @interface MFMailCompositionContext : NSObject {
     struct { 
         unsigned int keyboardVisible : 1; 
-    GenericAttachmentStore *_attachments;
+    MFGenericAttachmentStore *_attachments;
     NSArray *_bccRecipients;
     NSArray *_ccRecipients;
     } _composeFlags;
@@ -17,7 +17,7 @@
     NSArray *_toRecipients;
 }
 
-@property(readonly) GenericAttachmentStore *attachments;
+@property(readonly) MFGenericAttachmentStore *attachments;
 @property(copy) NSArray *bccRecipients;
 @property(copy) NSArray *ccRecipients;
 @property(copy) NSString *sendingAddress;
@@ -32,7 +32,6 @@
 - (id)bccRecipients;
 - (id)ccRecipients;
 - (void)dealloc;
-- (id)init;
 - (id)initNewMessageWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isKeyboardVisible;

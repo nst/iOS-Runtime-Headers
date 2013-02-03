@@ -19,7 +19,9 @@
 - (id)foreignPersistentIDProperty;
 - (id)initWithUnitQuery:(id)arg1 aggregateEntityClass:(Class)arg2 foreignPersistentIDProperty:(id)arg3;
 - (id)persistentIDProperty;
+- (id)queryForUnitEntitiesAtIndex:(NSUInteger)arg1 directCollectionQuery:(id)arg2 ordered:(BOOL)arg3 usingSections:(BOOL)arg4;
 - (id)queryForUnitEntitiesAtIndex:(NSUInteger)arg1 usingSections:(BOOL)arg2;
 - (id)representativeUnitEntityAtIndex:(NSUInteger)arg1;
+- (void)visitGroupMembersOfEntityAtIndex:(NSUInteger)arg1 visitor:(int (*)())arg2 context:(void*)arg3;
 
 @end

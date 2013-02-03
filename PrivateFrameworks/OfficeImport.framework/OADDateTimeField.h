@@ -8,6 +8,7 @@
 
 - (NSInteger)format;
 - (id)init;
+- (BOOL)isEmpty;
 - (void)setFormat:(NSInteger)arg1;
 
 @end

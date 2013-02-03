@@ -2,21 +2,23 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSData, UINibDecoder;
-
 @interface UINib : NSObject {
-    NSData *archiveData;
-    BOOL instantiatingForSimulator;
-    UINibDecoder *nibDecoder;
+    id storage;
 }
 
++ (id)nibWithData:(id)arg1 bundle:(id)arg2;
++ (id)nibWithNibName:(id)arg1 bundle:(id)arg2;
+
 - (void)dealloc;
+- (void)didReceiveMemoryWarning:(id)arg1;
+- (id)effectiveBundle;
+- (id)initWithBundle:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
-- (id)initWithContentsOfURL:(id)arg1;
-- (id)initWithData:(id)arg1;
-- (id)instantiateWithOptions:(id)arg1 owner:(id)arg2 loadingResourcesFromBundle:(id)arg3;
-- (id)instantiateWithOwner:(id)arg1 loadingResourcesFromBundle:(id)arg2;
+- (id)initWithData:(id)arg1 bundle:(id)arg2;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)instantiateWithOwner:(id)arg1 options:(id)arg2;
 - (BOOL)instantiatingForSimulator;
+- (id)lazyArchiveData;
 - (void)setInstantiatingForSimulator:(BOOL)arg1;
 - (id)unarchiverForInstantiatingReturningError:(id*)arg1;
 

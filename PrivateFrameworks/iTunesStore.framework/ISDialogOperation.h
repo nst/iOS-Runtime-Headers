@@ -2,18 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISDialog, ISDialogButton;
+@class NSArray, ISDialog, ISDialogButton;
 
 @interface ISDialogOperation : ISOperation {
     ISDialog *_dialog;
     BOOL _performDefaultActions;
     ISDialogButton *_selectedButton;
+    NSArray *_textFieldValues;
     id _userNotification;
 }
 
 @property <ISDialogOperationDelegate> *delegate;
 @property(retain) ISDialog *dialog;
 @property(retain) ISDialogButton *selectedButton;
+@property(readonly) NSArray *textFieldValues;
 @property BOOL performDefaultActions;
 @property(retain) id userNotification;
 
@@ -21,6 +23,7 @@
 + (id)operationWithError:(id)arg1;
 
 - (void)_handleResponseForNotification:(struct __CFUserNotification { }*)arg1 responseFlags:(unsigned long)arg2;
+- (void)_run;
 - (void)_showUserNotification:(id)arg1;
 - (void)_waitForUserNotificationResponse:(struct __CFUserNotification { }*)arg1;
 - (void)cancel;
@@ -35,6 +38,7 @@
 - (void)setPerformDefaultActions:(BOOL)arg1;
 - (void)setSelectedButton:(id)arg1;
 - (void)setUserNotification:(id)arg1;
+- (id)textFieldValues;
 - (id)userNotification;
 
 @end

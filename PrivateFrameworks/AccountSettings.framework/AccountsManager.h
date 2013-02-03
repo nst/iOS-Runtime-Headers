@@ -2,57 +2,71 @@
    Image: /System/Library/PrivateFrameworks/AccountSettings.framework/AccountSettings
  */
 
-@class NSMutableArray, NSMutableDictionary, NSArray;
+@class NSArray, NSMutableDictionary, NSMutableArray;
 
 @interface AccountsManager : NSObject {
-    NSMutableArray *_accounts;
-    NSMutableDictionary *_accountsByID;
+    NSMutableDictionary *_childAccountIDToParentAccountID;
+    NSMutableDictionary *_childAccountsByID;
     NSUInteger _dataVersion;
+    NSMutableArray *_orderedTopLevelAccounts;
+    NSMutableDictionary *_originalAccountsByID;
     NSArray *_runtimeFixers;
+    NSMutableDictionary *_topLevelAccountsByID;
 }
 
 + (void)_migrateAccountsIfNeeded;
 + (BOOL)_oldDAAccountsInformationFound;
 + (BOOL)_oldMailAccountsInformationFound;
++ (void)_setShouldSkipNotifications:(BOOL)arg1;
 + (BOOL)accountSettingsNeedsToBeMigrated;
-+ (id)createAndLockMigrationLockToPerformMigration:(BOOL)arg1;
++ (id)createAndLockMigrationLock;
 + (NSUInteger)currentVersion;
 + (id)displayNameForGroupOfAccountType:(id)arg1 forBeginningOfSentence:(BOOL)arg2;
 + (id)fullPathToAccountSettingsPlist;
++ (void)killDataAccessIfNecessary;
 + (void)releaseMigrationLock:(id)arg1;
 + (void)removeNewAccountSettingsToMigrateOldAccountInformation;
 + (void)shouldMigrateOldMailAccounts:(BOOL*)arg1 oldDAAccounts:(BOOL*)arg2 newAccountSettings:(BOOL*)arg3;
 + (void)waitForMigrationToFinish;
 
+- (void)_addNotificationToDictionary:(id)arg1 forChangeType:(NSInteger)arg2 originalProperties:(id)arg3 currentProperties:(id)arg4;
 - (id)_createRuntimeFixers;
-- (id)_initInsideOfMigration;
 - (id)_initWithAccountsInfo:(id)arg1;
+- (void)_loadChildrenFromAccount:(id)arg1;
+- (id)_notifierClassNamesForAccountType:(id)arg1 dataclass:(id)arg2;
+- (void)_removeChildrenForAccountWithIdentifier:(id)arg1;
+- (void)_sendNotificationsForChangedAccounts;
+- (void)_setOriginalAccountDictionaries;
 - (id)accountWithIdentifier:(id)arg1;
-- (id)accountWithSyncIdentifier:(id)arg1;
+- (id)accountsWithTypes:(id)arg1 withLoader:(id)arg2;
 - (id)accountsWithTypes:(id)arg1;
 - (id)allBasicAccounts;
-- (id)allExchangeAccounts;
+- (id)allBasicSyncableAccounts;
 - (id)allMailAccounts;
+- (id)basicAccountsWithTypes:(id)arg1;
 - (NSUInteger)count;
 - (NSUInteger)countOfBasicAccountsWithTypes:(id)arg1;
 - (NSUInteger)dataVersion;
 - (void)dealloc;
 - (void)deleteAccount:(id)arg1;
 - (void)deleteAccountWithIdentifier:(id)arg1;
-- (id)displayNameForAccountWithIdentifier:(id)arg1;
-- (id)displayNameForAccountWithSyncIdentifier:(id)arg1;
-- (id)fullAccountWithIdentifier:(id)arg1;
+- (id)displayAccountWithSyncIdentifier:(id)arg1;
+- (id)fullAccountWithIdentifier:(id)arg1 loader:(id)arg2;
 - (id)fullDeviceLocalAccount;
+- (BOOL)hasActiveCalDAVChildAccounts;
+- (BOOL)hasActiveCardDAVChildAccounts;
 - (BOOL)hasActiveDAMMeAccounts;
+- (BOOL)hasActiveIMAPNotesAccounts;
 - (id)init;
+- (id)initInsideOfMigration;
 - (id)initWithAccounsInfoArray:(id)arg1;
 - (void)insertAccount:(id)arg1;
 - (id)legacyAccounts;
 - (void)replaceAccountsWithTypes:(id)arg1 withAccounts:(id)arg2;
-- (void)replaceExchangeAccountsWith:(id)arg1;
 - (void)saveAllAccounts;
 - (void)setDataVersion:(NSUInteger)arg1;
 - (void)setLegacyAccounts:(id)arg1;
+- (id)syncableAccountWithSyncIdentifier:(id)arg1;
 - (void)updateAccount:(id)arg1;
 
 @end

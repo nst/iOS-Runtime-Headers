@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, GMMClientCapabilities;
+@class GMMClientCapabilities, NSMutableArray;
 
 @interface GMMDirectionsIconRequest : PBRequest {
     NSMutableArray *_cachedIconIDs;

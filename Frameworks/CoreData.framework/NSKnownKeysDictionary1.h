@@ -25,6 +25,7 @@
 
 - (NSUInteger)_countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3 forKeys:(BOOL)arg4;
 - (void)_recount;
+- (void)_setValues:(id*)arg1 retain:(BOOL)arg2;
 - (NSUInteger)_valueCountByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
 - (void)addEntriesFromDictionary:(id)arg1;
 - (id)allKeys;
@@ -40,6 +41,7 @@
 - (void)getObjects:(id*)arg1;
 - (BOOL)isEqualToDictionary:(id)arg1;
 - (id)keyEnumerator;
+- (const id*)knownKeyValuesPointer;
 - (const id)mapping;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;

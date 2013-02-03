@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSKeyValueSetter, NSKeyValueGetter;
+@class NSKeyValueGetter, NSKeyValueSetter;
 
 @interface NSKeyValueSlowMutableSet : NSKeyValueMutableSet {
     BOOL _padding[3];

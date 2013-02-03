@@ -9,6 +9,7 @@
     id _delegate;
     NSUInteger _flags;
     NSInteger _genericKey;
+    id _helper;
     unsigned long long _len;
     id _nameClassMap;
     id _objRefMap;
@@ -18,7 +19,6 @@
     id _replacementMap;
     void *_reserved0;
     id _tmpRefObjMap;
-    id _white;
 }
 
 + (id)_mapkit_safeUnarchiveObjectWithData:(id)arg1;
@@ -29,10 +29,12 @@
 + (id)unarchiveObjectWithFile:(id)arg1;
 
 - (id)_blobForCurrentObject;
+- (NSUInteger)_currentUniqueIdentifier;
 - (id)_decodeArrayOfObjectsForKey:(id)arg1;
 - (id)_decodePropertyListForKey:(id)arg1;
 - (id)_initWithStream:(struct __CFReadStream { }*)arg1 data:(id)arg2 topDict:(struct __CFDictionary { }*)arg3;
 - (void)_replaceObject:(id)arg1 withObject:(id)arg2;
+- (void)_temporaryMapReplaceObject:(id)arg1 withObject:(id)arg2;
 - (id)allowedClasses;
 - (BOOL)allowsKeyedCoding;
 - (Class)classForClassName:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableDictionary, MPItem, NSDictionary;
+@class NSDictionary, NSMutableDictionary, MPItem;
 
 @interface MPAlternateTracks : NSObject {
     NSDictionary *_alternateTracks;

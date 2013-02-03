@@ -7,8 +7,10 @@
 
 + (void)empty;
 + (void)emptyInMemoryResources;
++ (void)initialize;
 + (BOOL)isDisabled;
 + (void)setDisabled:(BOOL)arg1;
++ (void)sizeOfDeadResources:(NSInteger*)arg1;
 + (id)statistics;
 
 @end

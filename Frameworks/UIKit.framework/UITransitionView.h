@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, UIResponder;
+@class UIResponder, UIWindow, UIView;
 
 @interface UITransitionView : UIView <NSCoding> {
     struct { 
@@ -10,16 +10,19 @@
         unsigned int ignoresInteractionEvents : 1; 
         unsigned int shouldNotifyDidCompleteImmediately : 1; 
         unsigned int shouldRestoreFromViewAlpha : 1; 
-        unsigned int reserved : 28; 
+        unsigned int shouldRasterize : 1; 
+        unsigned int reserved : 27; 
     id _delegate;
     UIResponder *_firstResponderToRemember;
     UIView *_fromView;
+    UIWindow *_originalWindow;
     UIView *_toView;
     } _transitionViewFlags;
 }
 
 @property BOOL shouldNotifyDidCompleteImmediately;
 
++ (void)_initializeSafeCategory;
 + (double)defaultDurationForTransition:(NSInteger)arg1;
 
 - (void)_didCompleteTransition:(BOOL)arg1;
@@ -36,8 +39,10 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isTransitioning;
 - (void)notifyDidCompleteTransition:(id)arg1;
+- (BOOL)rasterizesOnTransition;
 - (void)setDelegate:(id)arg1;
 - (void)setIgnoresInteractionEvents:(BOOL)arg1;
+- (void)setRasterizesOnTransition:(BOOL)arg1;
 - (void)setShouldNotifyDidCompleteImmediately:(BOOL)arg1;
 - (BOOL)shouldNotifyDidCompleteImmediately;
 - (id)toView;

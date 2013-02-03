@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSString, MFError, InvocationQueue, NSThread;
+@class NSThread, NSString, MFError, MailboxUid, InvocationQueue;
 
-@interface ActivityMonitor : PriorityDesignator {
+@interface ActivityMonitor : MFPriorityDesignator {
     unsigned int _key : 13;
     unsigned int _canCancel : 1;
     unsigned int _shouldCancel : 1;
@@ -20,6 +20,7 @@
     NSUInteger _expectedLength;
     BOOL _gotNewMessages;
     double _lastTime;
+    MailboxUid *_mailbox;
     NSUInteger _maxCount;
     InvocationQueue *_ourQueue;
     double _percentDone;
@@ -28,8 +29,9 @@
     NSString *_statusMessage;
     id _target;
     NSString *_taskName;
-    NSString *_uniqueID;
 }
+
+@property(retain) MailboxUid *mailbox;
 
 + (id)currentMonitor;
 + (void)destroyMonitor;
@@ -49,13 +51,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
+- (void)elevateDBPriority:(BOOL)arg1;
 - (id)error;
 - (NSUInteger)expectedLength;
 - (void)finishedActivity:(id)arg1;
 - (BOOL)gotNewMessages;
-- (void)incrementCurrentCount;
 - (id)init;
 - (BOOL)isActive;
+- (id)mailbox;
 - (void)notifyConnectionEstablished;
 - (double)percentDone;
 - (void)postActivityFinished:(id)arg1;
@@ -75,6 +78,7 @@
 - (void)setExpectedLength:(NSUInteger)arg1;
 - (void)setGotNewMessages;
 - (void)setInvocationQueue:(id)arg1;
+- (void)setMailbox:(id)arg1;
 - (void)setMaxCount:(NSInteger)arg1;
 - (void)setPercentDone:(double)arg1 withKey:(NSInteger)arg2;
 - (void)setPercentDone:(double)arg1;
@@ -87,12 +91,10 @@
 - (void)setStatusMessage:(id)arg1;
 - (void)setSupportsPerItemProgress:(BOOL)arg1;
 - (void)setTaskName:(id)arg1;
-- (void)setUniqueID:(id)arg1;
 - (BOOL)shouldCancel;
 - (void)startActivity;
 - (id)statusMessage;
 - (id)taskName;
-- (id)uniqueId;
 - (id)userInfoForNotification;
 
 @end

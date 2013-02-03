@@ -2,44 +2,37 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIView, UINavigationBar, UITableView, UIProgressIndicator, UITextLabel;
+@class UINavigationBar, UITableView, UIView, UIProgressIndicator, UITextLabel;
 
-@interface MPAlternateTracksViewController : MPViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface MPAlternateTracksViewController : MPAbstractAlternateTracksViewController <UITableViewDataSource, UITableViewDelegate> {
     UIView *_backgroundView;
     UITextLabel *_loadingLabel;
     UINavigationBar *_navigationBar;
-    NSUInteger _previousTracks[2];
     UIProgressIndicator *_progressIndicator;
-    NSUInteger _selectedTracks[2];
     UITableView *_table;
 }
 
-- (void)_addLoadingUI;
-- (id)_alternateTracks;
-- (void)_alternateTypesChangedNotification:(id)arg1;
-- (id)_arrayForGroup:(NSInteger)arg1;
++ (void)_initializeSafeCategory;
+
 - (void)_cancelButtonAction:(id)arg1;
 - (void)_doneButtonAction:(id)arg1;
 - (void)_exitAnimated:(BOOL)arg1;
-- (NSUInteger)_indexForGroup:(NSInteger)arg1;
-- (void)_reloadData;
-- (void)_removeLoadingUI;
-- (void)_saveChanges;
 - (void)_setCell:(id)arg1 isChecked:(BOOL)arg2;
-- (id)_titleForTrack:(id)arg1;
-- (NSUInteger)_typeForGroup:(NSInteger)arg1;
+- (void)addLoadingUI;
 - (void)dealloc;
-- (void)didChangeToOrientation:(NSInteger)arg1;
-- (id)init;
+- (void)didChangeToInterfaceOrientation:(NSInteger)arg1;
 - (void)loadView;
 - (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (void)reloadData;
+- (void)removeLoadingUI;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)willChangeToOrientation:(NSInteger)arg1;
+- (void)willChangeToInterfaceOrientation:(NSInteger)arg1;
 
 @end

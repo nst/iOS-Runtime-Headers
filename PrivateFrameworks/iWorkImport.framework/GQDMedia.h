@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDFilteredImage, GQDAffineGeometry, GQDPath, GQDImageBinary;
+@class GQDAffineGeometry, GQDFilteredImage, GQDPath, GQDImageBinary;
 
 @interface GQDMedia : GQDGraphic <GQDNameMappable> {
     GQDAffineGeometry *mCropGeometry;

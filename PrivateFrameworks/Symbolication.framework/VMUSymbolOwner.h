@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class <VMUMemory>, NSString, NSDictionary, NSArray;
+@class NSArray, <VMUMemory>, NSString, NSDictionary;
 
 @interface VMUSymbolOwner : NSObject <NSCopying> {
     NSUInteger _flags;

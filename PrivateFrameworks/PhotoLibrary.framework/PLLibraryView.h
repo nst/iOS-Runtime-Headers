@@ -2,26 +2,38 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLEmptyAlbumView, NSArray, UITableView;
+@class UITableView, NSArray, PLSyncProgressView, PLEmptyAlbumView;
 
 @interface PLLibraryView : UIView <UITableViewDataSource, UITableViewDelegate> {
     NSArray *_albums;
+    NSInteger _contentMode;
     id _delegate;
     PLEmptyAlbumView *_emptyLibraryView;
+    NSInteger _filter;
+    PLSyncProgressView *_syncProgressView;
     UITableView *_tableView;
 }
 
+@property NSInteger contentMode;
+@property NSInteger filter;
+
 - (BOOL)_hasContent;
-- (void)_pictureWasDeleted:(id)arg1;
-- (void)_pictureWasTaken:(id)arg1;
 - (void)_updateInterface;
-- (void)cameraAlbumDidChange;
+- (void)albumContentsDidChange:(id)arg1;
+- (void)cameraAlbumMayHaveChanged:(id)arg1;
+- (NSInteger)contentMode;
 - (void)dealloc;
+- (void)didMoveToWindow;
+- (NSInteger)filter;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)loadCurrentConfiguration:(id)arg1;
 - (void)setAlbums:(id)arg1;
+- (void)setContentMode:(NSInteger)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setFilter:(NSInteger)arg1;
+- (void)setShowSyncUI:(BOOL)arg1;
 - (void)storeCurrentConfiguration:(id)arg1;
+- (id)tableOffsetKey;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;

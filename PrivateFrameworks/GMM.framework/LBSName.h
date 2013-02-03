@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, NSString;
+@class NSString, NSMutableArray;
 
 @interface LBSName : PBCodable {
     NSMutableArray *_flags;

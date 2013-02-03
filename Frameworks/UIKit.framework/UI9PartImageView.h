@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, UIImage;
+@class UIImage, UIView;
 
 @interface UI9PartImageView : UIView {
     struct { 

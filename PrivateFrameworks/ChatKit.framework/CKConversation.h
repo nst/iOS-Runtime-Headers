@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableArray, NSArray, NSString, CKMessage, NSMutableDictionary, CKService;
+@class NSMutableDictionary, NSArray, NSString, CKService, CKMessage, NSMutableArray;
 
 @interface CKConversation : NSObject {
     NSMutableArray *_failedMessages;
@@ -57,6 +57,7 @@
 - (id)latestIncomingMessage;
 - (id)latestMessage;
 - (void)loadAllMessages;
+- (void)loadLastMessage;
 - (void)loadMoreMessages;
 - (void)markAllMessagesAsRead;
 - (id)messages;

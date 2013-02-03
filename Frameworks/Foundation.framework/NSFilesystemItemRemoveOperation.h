@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSString, NSError;
+@class NSError, NSString;
 
 @interface NSFilesystemItemRemoveOperation : NSOperation {
     id _delegate;
@@ -21,7 +21,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)error;
-- (void)initWithPath:(id)arg1;
+- (id)initWithPath:(id)arg1;
 - (void)main;
 - (void)setDelegate:(id)arg1;
 

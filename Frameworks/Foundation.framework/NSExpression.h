@@ -9,6 +9,7 @@
 
 + (id)_keyPathExpressionForString:(id)arg1;
 + (id)expressionForAggregate:(id)arg1;
++ (id)expressionForBlock:(id)arg1 arguments:(id)arg2;
 + (id)expressionForConstantValue:(id)arg1;
 + (id)expressionForEvaluatedObject;
 + (id)expressionForFunction:(id)arg1 arguments:(id)arg2;
@@ -35,6 +36,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)expressionBlock;
 - (NSUInteger)expressionType;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
 - (id)falseExpression;

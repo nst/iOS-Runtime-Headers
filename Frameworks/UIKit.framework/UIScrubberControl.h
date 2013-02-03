@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIImage, UIView;
+@class UIView, UIImage;
 
 @interface UIScrubberControl : UIOldSliderControl {
     union { 
@@ -50,6 +50,7 @@
     float _valueAvailable;
 }
 
++ (void)_initializeSafeCategory;
 + (BOOL)allowLayeredFillForKnob;
 
 - (BOOL)_notAllValueAvailable;
@@ -59,6 +60,7 @@
 - (void)_setValue:(float)arg1 andSendAction:(BOOL)arg2;
 - (void)_updateAvailableFill;
 - (void)_updateTimes:(BOOL)arg1;
+- (unsigned long long)accessibilityTraits;
 - (BOOL)beginTrackingAt:(struct CGPoint { float x1; float x2; })arg1 withEvent:(struct __GSEvent { }*)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)continueTrackingAt:(struct CGPoint { float x1; float x2; })arg1 previous:(struct CGPoint { float x1; float x2; })arg2 withEvent:(struct __GSEvent { }*)arg3;
@@ -92,6 +94,8 @@
 - (void)setShowDuration:(BOOL)arg1;
 - (void)setShowFullWidthComponents:(BOOL)arg1;
 - (void)setShowTimeCenteredInAvailableArea:(BOOL)arg1;
+- (void)setTimeColor:(id)arg1;
+- (void)setTimeShadowColor:(id)arg1;
 - (void)setValue:(float)arg1 animated:(BOOL)arg2 animationCurve:(NSInteger)arg3;
 - (void)setValueAvailable:(float)arg1;
 - (void)sizeToFit;

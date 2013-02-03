@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, CPZArchive;
+@class SFUZipArchive, NSMutableDictionary;
 
 @interface OCPZipPackage : OCPPackage {
-    CPZArchive *mArchive;
+    SFUZipArchive *mArchive;
     NSMutableDictionary *mParts;
 }
 
@@ -14,5 +14,6 @@
 - (id)initWithData:(id)arg1;
 - (id)initWithPath:(id)arg1;
 - (id)partForLocation:(id)arg1;
+- (void)resetPartForLocation:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, NSString, GMMMapInfo;
+@class GMMMapInfo, NSString, NSMutableArray;
 
 @interface GMMSearchResponse : PBCodable {
     BOOL _autoSpellingCorrected;

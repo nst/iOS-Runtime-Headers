@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, LBSGCell;
+@class LBSGCell, NSMutableArray;
 
 @interface LBSGCellularProfile : PBCodable {
     BOOL _hasPrefetchMode;

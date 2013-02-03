@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UITableView, NSArray, UINavigationController;
+@class UINavigationController, UITableView, NSArray;
 
 @interface CKLinksController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     id _delegate;
@@ -22,6 +22,7 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

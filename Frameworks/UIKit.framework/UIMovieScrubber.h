@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel, UIImageView, <UIMovieScrubberDelegate>, UIMovieScrubberEditingView, <UIMovieScrubberDataSource>, UIImage, UIMovieScrubberTrackView;
+@class UIMovieScrubberTrackView, <UIMovieScrubberDelegate>, UIImageView, UILabel, UIImage, <UIMovieScrubberDataSource>, UIMovieScrubberEditingView;
 
 @interface UIMovieScrubber : UIControl <UIMovieScrubberTrackViewDataSource, UIMovieScrubberTrackViewDelegate> {
     struct CGRect { 
@@ -35,13 +35,17 @@
         unsigned int editing : 1; 
         NSUInteger editingHandle; 
         NSUInteger rotationDisabled; 
+        unsigned int isInNavigationBar : 1; 
         unsigned int delegateValueDidChange : 1; 
         unsigned int delegateStartValueDidChange : 1; 
         unsigned int delegateEndValueDidChange : 1; 
         unsigned int delegateWillBeginRequestingThumbnails : 1; 
         unsigned int delegateDidFinishRequestingThumbnails : 1; 
+        unsigned int delegateWillBeginEditing : 1; 
         unsigned int delegateDidBeginEditing : 1; 
+        unsigned int delegateDidCancelEditing : 1; 
         unsigned int delegateEditingAnimationFinished : 1; 
+        unsigned int delegateWidthDeltaOriginXDelta : 1; 
     <UIMovieScrubberDataSource> *_dataSource;
     <UIMovieScrubberDelegate> *_delegate;
     BOOL _editable;
@@ -78,6 +82,7 @@
 @property double duration;
 @property(getter=isEditable) BOOL editable;
 @property(getter=isEditing) BOOL editing;
+@property(readonly) BOOL isInsideNavigationBar;
 @property double maximumTrimLength;
 @property double minimumTrimLength;
 @property BOOL showTimeViews;
@@ -87,8 +92,17 @@
 @property double value;
 @property float zoomDelay;
 
++ (void)_initializeSafeCategory;
 + (id)timeStringForSeconds:(NSInteger)arg1 forceFullWidthComponents:(BOOL)arg2 isElapsed:(BOOL)arg3;
 
+- (void)_accessibilityDecrementMockSlider:(id)arg1;
+- (void)_accessibilityIncrementMockSlider:(id)arg1;
+- (void)_accessibilityNotifyDelegateEditingEndValueDidChange:(double)arg1;
+- (void)_accessibilityNotifyDelegateEditingStartValueDidChange:(double)arg1;
+- (void)_accessibilityNotifyDelegateScrubberDidBeginScrubbingWithHandle:(NSInteger)arg1;
+- (void)_accessibilityNotifyDelegateScrubberDidEndScrubbingWithHandle:(NSInteger)arg1;
+- (void)_accessibilityNotifyDelegateWillBeginEditing;
+- (double)_accessibilitySliderDeltaForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (void)_animateAfterEdit:(BOOL)arg1;
 - (void)_beginTrackPressWithTouch:(id)arg1 touchesBegan:(BOOL)arg2;
@@ -99,6 +113,7 @@
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
 - (float)_editingFrameDeltaXForValue:(float)arg1 handle:(NSInteger)arg2;
+- (NSInteger)_editingHandleWithTouch:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingViewFrameForEndValueWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingViewFrameForStartValueWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -114,6 +129,7 @@
 - (void)_updateThumbLocation;
 - (void)_updateTimes;
 - (float)_valueForTouch:(id)arg1;
+- (id)accessibilityContainerElements;
 - (void)animateAfterEdit;
 - (void)animateCancelEdit;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -122,14 +138,18 @@
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
+- (void)didMoveToSuperview;
+- (void)didMoveToWindow;
 - (double)duration;
 - (BOOL)editable;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)init;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isAnimatingValueChange;
 - (BOOL)isContinuous;
 - (BOOL)isEditing;
+- (BOOL)isInsideNavigationBar;
 - (void)layoutSubviews;
 - (double)maximumTrimLength;
 - (double)minimumTrimLength;

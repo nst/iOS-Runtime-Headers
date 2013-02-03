@@ -11,11 +11,15 @@
 
 @property(retain) id cellContext;
 
++ (void)_initializeSafeCategory;
+
 - (id)cellContext;
 - (id)configurationForRow:(NSUInteger)arg1;
 - (void)dealloc;
 - (id)initWithClass:(Class)arg1 tableHeight:(float)arg2;
 - (void)reset;
+- (void)resetLayoutCaches;
 - (void)setCellContext:(id)arg1;
+- (void)setCellReuseSource:(id)arg1;
 
 @end

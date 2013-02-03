@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDBorders, EDAlignmentInfo, EDFont, EDProtection, EDContentFormat, EDFill;
+@class EDProtection, EDContentFormat, EDBorders, EDAlignmentInfo, EDFont, EDFill;
 
 @interface EDDifferentialStyle : NSObject <NSCopying> {
     EDAlignmentInfo *mAlignmentInfo;

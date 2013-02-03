@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray, NSManagedObject, NSMutableDictionary, NSSQLRow;
+@class NSManagedObject, NSSQLRow, NSMutableArray, NSMutableDictionary;
 
 @interface NSSQLOperation : NSObject {
     NSMutableArray *_adapterOps;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@class NSMutableArray, NSDictionary, NSLock, NSTimer;
+@class NSTimer, NSDictionary, NSMutableArray, NSLock;
 
 @interface VSCacheUpdateListener : NSObject {
     NSDictionary *_dataProviders;

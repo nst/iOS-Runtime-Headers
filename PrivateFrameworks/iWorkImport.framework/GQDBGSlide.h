@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDWPLayoutFrame, GQDBGMasterSlide;
+@class GQDBGMasterSlide, GQDWPLayoutFrame;
 
 @interface GQDBGSlide : GQDBGAbstractSlide {
     GQDBGMasterSlide *mMaster;

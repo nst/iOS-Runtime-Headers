@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class UIImageView, UILabel, UIButton, UITableView, NSArray, UIActivityIndicatorView;
+@class UIButton, UIImageView, UILabel, UITableView, NSArray, UIActivityIndicatorView;
 
 @interface GKContentView : UIView {
     UIActivityIndicatorView *_activityIndicator;

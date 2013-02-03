@@ -7,14 +7,17 @@
  */
 
 @interface NSData : NSObject <NSCopying, NSMutableCopying, NSCoding> {
-     /* Encoded args for previous method: @12@0:4r^{OcBinaryData=^^?III*B}8 */
+     /* Encoded args for previous method: @12@0:4r^{OcBinaryData=^^?IIII*B^{SsrwOOStream}}8 */
 }
 
++ (id)MCDataWithCFData:(struct __CFData { }*)arg1;
++ (id)MCDataWithHexString:(id)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)data;
 + (id)dataWithBytes:(const void*)arg1 length:(NSUInteger)arg2;
 + (id)dataWithBytesNoCopy:(void*)arg1 length:(NSUInteger)arg2 freeWhenDone:(BOOL)arg3;
 + (id)dataWithBytesNoCopy:(void*)arg1 length:(NSUInteger)arg2;
++ (id)dataWithCertificate:(struct __SecCertificate { }*)arg1;
 + (id)dataWithContentsOfFile:(id)arg1 options:(NSUInteger)arg2 error:(id*)arg3;
 + (id)dataWithContentsOfFile:(id)arg1;
 + (id)dataWithContentsOfMappedFile:(id)arg1;
@@ -23,11 +26,29 @@
 + (id)dataWithData:(id)arg1;
 + (id)dataWithHexString:(id)arg1 stringIsUppercase:(BOOL)arg2;
 + (id)dataWithHexString:(id)arg1;
-+ (NSUInteger)mf_quotedPrintableLengthOfHeaderBytes:(const char *)arg1 length:(NSUInteger)arg2;
-+ (id)nsDataWithOcBinaryData:(const struct OcBinaryData { int (**x1)(); NSUInteger x2; NSUInteger x3; NSUInteger x4; char *x5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x6; }*)arg1;
++ (id)dataWithHexString:(id)arg1;
++ (id)dataWithRandomBytes:(NSUInteger)arg1;
++ (id)nsDataWithOcBinaryData:(const struct OcBinaryData { int (**x1)(); NSUInteger x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; char *x6; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x7; struct SsrwOOStream {} *x8; }*)arg1;
 
-- (id)MD5Digest;
+- (const struct CDXTicket { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; struct { unsigned char x_5_1_1[6]; unsigned short x_5_1_2; } x5; NSUInteger x6; unsigned char x7[0]; }*)CDXTicket;
+- (id)CDXTicketExpirationDate;
+- (BOOL)CDXTicketIsHolePunch;
+- (BOOL)CDXTicketIsReflected;
+- (BOOL)CDXTicketIsRelatedToTicket:(id)arg1;
+- (BOOL)CDXTicketIsStub;
+- (NSInteger)CDXTicketPCNT;
+- (NSInteger)CDXTicketPID;
+- (NSUInteger)CDXTicketRevision;
+- (unsigned long long)CDXTicketSID;
+- (id)CDXTicketTrimmed;
+- (BOOL)CDXTicketWellFormed;
+- (id)CRAM_MD5DataWithKey:(id)arg1;
+- (id)CRAM_MD5HexStringWithKey:(id)arg1;
+- (id)MCHexString;
+- (id)SHA1Data;
+- (id)SHA1HexString;
 - (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
+- (id)_adlib_inflate:(NSUInteger)arg1;
 - (id)_asciiDescription;
 - (BOOL)_bytesAreVM;
 - (unsigned long)_cfTypeID;
@@ -42,28 +63,29 @@
 - (id)_webkit_guessedMIMEType;
 - (id)_webkit_guessedMIMETypeForXML;
 - (id)_webkit_parseRFC822HeaderFields;
-- (id)abDecodeBase64;
 - (id)abDecodedUTF7;
 - (id)abEncodeBase64DataBreakLines:(BOOL)arg1 allowSlash:(BOOL)arg2 padChar:(BOOL)arg3;
 - (BOOL)abIsUTF16EntourageVCard;
 - (id)abStringAtRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 inEncoding:(NSUInteger)arg2;
 - (id)base64Decoded;
 - (id)base64Encoded;
+- (id)base64Encoding;
 - (const void*)bytes;
-- (id)calculateMD5;
+- (struct __SecCertificate { }*)certificateFromData;
 - (Class)classForCoder;
 - (id)copyHexDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)digestForSubCal;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)fastWriteToFile:(id)arg1;
 - (void)getBytes:(void*)arg1 length:(NSUInteger)arg2;
 - (void)getBytes:(void*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (void)getBytes:(void*)arg1;
 - (NSUInteger)hash;
 - (id)hexString;
+- (id)hexString;
+- (id)hexStringOfBytes:(char *)arg1 withLength:(NSInteger)arg2;
 - (id)hexStringValue;
+- (id)initWithBase64Encoding:(id)arg1;
 - (id)initWithBytes:(const void*)arg1 length:(NSUInteger)arg2;
 - (id)initWithBytes:(void*)arg1 length:(NSUInteger)arg2 copy:(BOOL)arg3 freeWhenDone:(BOOL)arg4 bytesAreVM:(BOOL)arg5;
 - (id)initWithBytesNoCopy:(void*)arg1 length:(NSUInteger)arg2 freeWhenDone:(BOOL)arg3;
@@ -81,23 +103,23 @@
 - (BOOL)isEqualToData:(id)arg1;
 - (BOOL)isNSData__;
 - (NSUInteger)length;
+- (id)lowercaseHexStringWithoutSpaces;
 - (id)md5Digest;
-- (id)md5String;
-- (void)mf_appendBase64EncodedDataToData:(id)arg1;
+- (id)mf_MD5Digest;
+- (id)mf_copyHexString;
 - (id)mf_dataByConvertingUnixNewlinesToNetwork;
 - (id)mf_decodeBase64;
 - (id)mf_decodeBase64InRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg1;
 - (id)mf_decodeModifiedBase64;
 - (id)mf_decodeQuotedPrintableForText:(BOOL)arg1;
+- (id)mf_decodeUuencoded;
 - (id)mf_encodeBase64;
 - (id)mf_encodeBase64HeaderData;
 - (id)mf_encodeBase64WithoutLineBreaks;
 - (id)mf_encodeBase64WithoutLineBreaksOrPadding;
 - (id)mf_encodeModifiedBase64;
-- (id)mf_encodeQuotedPrintableForText:(BOOL)arg1 allowCancel:(BOOL)arg2;
 - (BOOL)mf_immutable;
-- (BOOL)mf_isValidBase64Data;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })mf_rangeOfByteFromSet:(id)arg1 options:(NSUInteger)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })mf_rangeOfByteFromSet:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })mf_rangeOfByteFromSet:(id)arg1;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })mf_rangeOfCString:(const char *)arg1 options:(NSUInteger)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })mf_rangeOfCString:(const char *)arg1 options:(NSUInteger)arg2;
@@ -107,9 +129,10 @@
 - (id)mf_subdataFromIndex:(NSUInteger)arg1;
 - (id)mf_subdataToIndex:(NSUInteger)arg1;
 - (id)mf_subdataWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
-- (id)mf_uudecodedDataIntoFile:(id*)arg1 mode:(NSUInteger*)arg2;
-- (id)mf_uuencodedDataWithFile:(id)arg1 mode:(NSUInteger)arg2;
+- (struct CDXTicket { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; struct { unsigned char x_5_1_1[6]; unsigned short x_5_1_2; } x5; NSUInteger x6; unsigned char x7[0]; }*)mutableCDXTicket;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned long long)myHashHack;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })rangeOfData:(id)arg1 options:(NSUInteger)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
 - (id)sha1Digest;
 - (id)subdataWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (id)uppercaseHexStringWithoutSpaces;

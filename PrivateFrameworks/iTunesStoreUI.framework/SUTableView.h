@@ -3,9 +3,14 @@
  */
 
 @interface SUTableView : UITableView {
+    BOOL _allowsHeaderAndFooterToFloat;
 }
 
+@property BOOL allowsHeaderAndFooterToFloat;
+
 - (BOOL)allowsFooterViewsToFloat;
+- (BOOL)allowsHeaderAndFooterToFloat;
 - (BOOL)allowsHeaderViewsToFloat;
+- (void)setAllowsHeaderAndFooterToFloat:(BOOL)arg1;
 
 @end

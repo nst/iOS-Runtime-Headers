@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class GMMDirectionsResponse, NSMutableArray, MKRoute;
+@class MKRoute, NSMutableArray, GMMDirectionsResponse;
 
 @interface MKDirectionsResponse : NSObject {
     NSInteger _mode;

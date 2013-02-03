@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIImage, UIView;
+@class UIView, UIImage;
 
 @interface UIOldSliderControl : UIControl {
     union { 
@@ -56,6 +56,7 @@
     float _value;
 }
 
+- (void)_accessibilityBumpValue:(BOOL)arg1;
 - (void)_controlMouseDown:(struct __GSEvent { }*)arg1;
 - (void)_controlMouseDragged:(struct __GSEvent { }*)arg1;
 - (void)_controlMouseUp:(struct __GSEvent { }*)arg1;
@@ -69,6 +70,10 @@
 - (void)_sliderBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 getLeftCapRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 rightCapRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 left:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4 right:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
 - (float)_validatedValue:(float)arg1;
 - (float)_validatedValueForPoint:(struct CGPoint { float x1; float x2; })arg1 includeTickMarks:(BOOL)arg2;
+- (void)accessibilityDecrement;
+- (void)accessibilityIncrement;
+- (unsigned long long)accessibilityTraits;
+- (id)accessibilityValue;
 - (void)animator:(id)arg1 stopAnimation:(id)arg2;
 - (BOOL)beginTrackingAt:(struct CGPoint { float x1; float x2; })arg1 withEvent:(struct __GSEvent { }*)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -89,6 +94,7 @@
 - (id)init;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 layeredFill:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isAnimatingValueChange;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maxValueImageBounds;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })minValueImageBounds;

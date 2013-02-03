@@ -8,7 +8,9 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)equivalentOuterShadowEffect;
+- (NSUInteger)hash;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (NSInteger)presetShadowType;
 - (void)setPresetShadowType:(NSInteger)arg1;
 

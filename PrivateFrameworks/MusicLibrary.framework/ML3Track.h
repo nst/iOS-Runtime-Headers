@@ -11,14 +11,20 @@
 + (id)albumsDefaultOrderingProperties;
 + (id)artistAllAlbumsDefaultOrderingProperties;
 + (id)artistsDefaultOrderingProperties;
++ (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
 + (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2;
 + (id)containerQueryWithContainer:(id)arg1;
 + (id)databaseTable;
 + (id)defaultOrderingProperties;
++ (id)genresDefaultOrderingProperties;
 + (void)initialize;
 + (id)joinClauseForProperty:(id)arg1;
-+ (id)orderingCollationForProperty:(id)arg1;
++ (id)orderingPropertiesForITTGTrackOrder:(unsigned long)arg1;
++ (id)podcastsDefaultOrderingProperties;
 + (id)podcastsEpisodesDefaultOrderingProperties;
++ (id)predisambiguatedProperties;
 + (id)sectionPropertyForProperty:(id)arg1;
++ (id)subselectPropertyForProperty:(id)arg1;
++ (id)subselectStatementForProperty:(id)arg1;
 
 @end

@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray, CALayer, MKUserLocationView;
+@class MKUserLocationView, CALayer, NSArray;
 
 @interface MKScrollView : UIScrollView {
-    struct $_239 { 
-        unsigned int willStartGesturesInView : 1; 
-        unsigned int didFinishGesturesInView : 1; 
-        NSUInteger firstTouchBegan; 
-        NSUInteger lastTouchEnded; 
-        NSUInteger shouldHandleTouchesMoved; 
-    id __delegate;
+    struct $_712 { 
+        unsigned int shouldHandleTouchesMoved : 1; 
+        unsigned int scrollViewWillHandlePinch : 1; 
+        unsigned int layoutScrollViewSubviews : 1; 
+        unsigned int touchesBegan : 1; 
+        unsigned int touchesCancelled : 1; 
+        unsigned int touchesEnded : 1; 
     BOOL _adjustContentOffsetDisabled;
     CALayer *_boundedLayer;
     NSArray *_boundsHitDetectionLayers;
@@ -20,6 +20,7 @@
     BOOL _enableBoundsHitDetection;
     NSUInteger _gestureCount;
     double _lastGestureEndedInterval;
+    id _mk_delegate;
     MKUserLocationView *_userLocationView;
 }
 
@@ -28,24 +29,39 @@
 @property(readonly) NSUInteger gestureCount;
 @property(readonly) double lastGestureEndedInterval;
 
-- (void)_firstTouchBegan:(id)arg1 withEvent:(id)arg2;
++ (void)_initializeSafeCategory;
+
+- (void)_accessibilityHandleScrollUpdate;
+- (float)_accessibilityScrollHeightDistance;
+- (id)_accessibilityScrollStatus;
+- (void)_accessibilityScrollToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forView:(id)arg2;
+- (float)_accessibilityScrollWidthDistance;
+- (BOOL)_accessibilityShouldAnimateScroll;
+- (BOOL)_accessibilityUsesScrollParentForOrdering;
+- (void)_cancelScrollingNotify:(BOOL)arg1;
 - (id)_hitTestForContentView:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)_lastTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_updateBoundsHitDetection;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (void)accessibilityScrollDownPage;
+- (void)accessibilityScrollLeftPage;
+- (void)accessibilityScrollRightPage;
+- (void)accessibilityScrollUpPage;
 - (id)boundsHitDetectionLayers;
 - (void)dealloc;
-- (void)didFinishGesturesInView:(id)arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)didMoveToWindow;
 - (BOOL)enableBoundsHitDetection;
 - (NSUInteger)gestureCount;
+- (void)handlePinch:(id)arg1;
 - (void)hideBoundsHitDetectionLayers;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (double)lastGestureEndedInterval;
+- (void)layoutSubviews;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setContentSize:(struct CGSize { float x1; float x2; })arg1 adjustOffset:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setEnableBoundsHitDetection:(BOOL)arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setUserLocationView:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
@@ -54,6 +70,5 @@
 - (void)userLocationAccuracyDidUpdate:(id)arg1;
 - (id)userLocationView;
 - (void)userLocationWillUpdate:(id)arg1;
-- (void)willStartGesturesInView:(id)arg1 forEvent:(struct __GSEvent { }*)arg2;
 
 @end

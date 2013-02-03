@@ -6,95 +6,41 @@
    See Warning(s) below.
  */
 
-@class OADDrawable, WDATextBox, NSString, WDABoundingBox;
+@class OADDrawable, WDATextBox, WDAAnchor;
 
 @interface WDAContent : NSObject <OADClient, OADTextClient> {
      /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-    BOOL mBehindText;
-    WDABoundingBox *mBoundingBox;
+    WDAAnchor *mAnchor;
     OADDrawable *mDrawable;
-    BOOL mFloating;
-    NSInteger mHorizontalPosition;
-    NSString *mId;
-    BOOL mMoveWithText;
-    NSInteger mRelativeHorizontalPosition;
-    NSInteger mRelativeVerticalPosition;
-    NSInteger mShapeRelativeHorizontalPosition;
-    NSInteger mShapeRelativeVerticalPosition;
     WDATextBox *mTextBox;
     NSInteger mTextType;
-    NSInteger mTextWrappingMode;
-    NSInteger mTextWrappingModeType;
-    NSInteger mType;
-    NSInteger mVerticalPosition;
-    double mWrapDistanceBottom;
-    double mWrapDistanceLeft;
-    double mWrapDistanceRight;
-    double mWrapDistanceTop;
-    NSInteger mZIndex;
-    NSInteger mZIndexTotal;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mShapeAddressSet;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mTopLevelObject;
 }
+
+@property(readonly) WDAAnchor *anchor;
 
 + (Class)classForType:(unsigned short)arg1;
 
-- (id)boundingBox;
+- (id)anchor;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (id)childWithType:(unsigned short)arg1;
+- (void)clearAnchor;
+- (id)createAnchor;
+- (id)createTextBoxWithDocument:(id)arg1 textType:(NSInteger)arg2;
 - (void)dealloc;
 - (id)drawable;
 - (BOOL)floating;
 - (BOOL)hasBounds;
 - (BOOL)hasText;
-- (NSInteger)horizontalPosition;
-- (id)id;
 - (id)init;
-- (BOOL)isBehindText;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isLine;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isShape;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isTopLevelObject;
-- (BOOL)moveWithText;
-- (NSInteger)relativeHorizontalPosition;
-- (NSInteger)relativeVerticalPosition;
-- (void)setBehindText:(BOOL)arg1;
-- (void)setBoundingBox:(id)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDrawable:(id)arg1;
-- (void)setFloating:(BOOL)arg1;
-- (void)setHorizontalPosition:(NSInteger)arg1;
-- (void)setId:(id)arg1;
-- (void)setMoveWithText:(BOOL)arg1;
-- (void)setRelativeHorizontalPosition:(NSInteger)arg1;
-- (void)setRelativeVerticalPosition:(NSInteger)arg1;
-- (void)setShapeAddressSet:(BOOL)arg1;
 - (void)setTextBox:(id)arg1;
 - (void)setTextType:(NSInteger)arg1;
-- (void)setTextWrappingMode:(NSInteger)arg1;
-- (void)setTextWrappingModeType:(NSInteger)arg1;
-- (void)setTopLevelObject:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setType:(NSInteger)arg1;
-- (void)setVerticalPosition:(NSInteger)arg1;
-- (void)setWrapDistanceBottom:(double)arg1;
-- (void)setWrapDistanceLeft:(double)arg1;
-- (void)setWrapDistanceRight:(double)arg1;
-- (void)setWrapDistanceTop:(double)arg1;
-- (void)setZIndex:(NSInteger)arg1;
-- (void)setZIndex:(NSInteger)arg1;
-- (void)setZIndexTotal:(NSInteger)arg1;
 - (id)textBox;
 - (NSInteger)textType;
-- (NSInteger)textWrappingMode;
-- (NSInteger)textWrappingModeType;
-- (NSInteger)type;
-- (NSInteger)verticalPosition;
-- (double)wrapDistanceBottom;
-- (double)wrapDistanceLeft;
-- (double)wrapDistanceRight;
-- (double)wrapDistanceTop;
-- (NSInteger)zIndex;
-- (NSInteger)zIndexTotal;
 
 @end

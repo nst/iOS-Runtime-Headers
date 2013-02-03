@@ -2,15 +2,18 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableArray, NSRecursiveLock;
+@class NSDictionary, NSMutableArray, NSRecursiveLock;
 
 @interface PLImageWriter : NSObject <MLPhotoBakedThumbnailsDelegate> {
+    NSDictionary *_getEmbeddedThumbnail;
     NSMutableArray *_jobs;
     NSRecursiveLock *_jobsLock;
+    BOOL _processingJob;
     BOOL _writerThreadRunning;
 }
 
 + (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
++ (void)decorateThumbnailInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2 duration:(id)arg3 inContext:(struct CGContext { }*)arg4 format:(NSInteger)arg5;
 + (id)sharedWriter;
 
 - (void)_decorateThumbnail:(id)arg1;
@@ -18,14 +21,21 @@
 - (NSInteger)_orientationForExifProperties:(id)arg1;
 - (void)_processImageJob:(id)arg1;
 - (void)_processJob:(id)arg1;
-- (void)_processVideoJob:(id)arg1 saveCameraRollPosterImage:(BOOL)arg2;
+- (void)_processVideoJob:(id)arg1;
 - (void)_processVideoSaveJob:(id)arg1;
-- (NSInteger)_subSampleFactorForImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_savePreviewWellImage:(id)arg1;
+- (NSInteger)_subSampleFactorForImageSize:(struct CGSize { float x1; float x2; })arg1 format:(NSInteger)arg2;
 - (BOOL)_sufficientDiskSpaceToCopyVideoAtPath:(id)arg1;
 - (void)_writerThread;
+- (BOOL)canEnqueueJob;
+- (void)createThumbnailsForImageRef:(struct CGImage { }*)arg1 lowResImageRef:(struct CGImage { }*)arg2 thumbnailData:(id)arg3 exifProperties:(id)arg4 isJPEG:(BOOL)arg5 createPreviewWellThumbnail:(BOOL)arg6 photo:(id)arg7;
+- (BOOL)createVideoThumbnailsForPhoto:(id)arg1 savePreviewWellThumbnail:(BOOL)arg2 creationDate:(id)arg3 modificationDate:(id)arg4 progressStack:(struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; }*)arg5 durationOut:(double*)arg6;
 - (void)dealloc;
 - (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (BOOL)enqueueJob:(id)arg1 forFileGroup:(id)arg2;
+- (BOOL)enqueueJob:(id)arg1;
+- (id)imageExtensionForImageType:(id)arg1;
 - (id)init;
+- (NSInteger)unfinishedJobsCount;
+- (void)writeableDataForImage:(id)arg1 previewImage:(id)arg2 imageData:(id)arg3 imageUTIType:(struct __CFString { }*)arg4 exifProperties:(id)arg5 imageRefOut:(struct CGImage {}**)arg6 lowResImageRefOut:(struct CGImage {}**)arg7 thumbnailDataOut:(id*)arg8 imageUTITypeOut:(const struct __CFString {}**)arg9 exifPropertiesOut:(id*)arg10 isJPEGOut:(BOOL*)arg11 imageDataOut:(id*)arg12;
 
 @end

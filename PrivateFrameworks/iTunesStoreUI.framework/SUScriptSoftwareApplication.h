@@ -4,7 +4,7 @@
 
 @class NSNumber, NSString;
 
-@interface SUScriptSoftwareApplication : NSObject {
+@interface SUScriptSoftwareApplication : SUScriptObject {
     NSNumber *_adamID;
     NSString *_bundleID;
     NSString *_bundleVersion;
@@ -20,12 +20,12 @@
 @property(getter=_storeFrontID,readonly) NSString *storeFrontID;
 @property(getter=_versionID,readonly) NSNumber *versionID;
 
-+ (BOOL)isKeyExcludedFromWebScript:(const char *)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
 
 - (id)_adamID;
 - (id)_bundleID;
 - (id)_bundleVersion;
+- (id)_className;
 - (id)_dsID;
 - (id)_storeFrontID;
 - (id)_versionID;

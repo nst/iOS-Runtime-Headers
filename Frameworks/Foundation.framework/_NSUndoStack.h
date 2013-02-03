@@ -16,7 +16,6 @@
 - (NSUInteger)count;
 - (void)dealloc;
 - (id)description;
-- (void)finalize;
 - (id)groupIdentifier;
 - (id)init;
 - (void)markBegin;

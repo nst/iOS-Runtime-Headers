@@ -2,15 +2,18 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSString;
 
 @interface MKAddressBookAddress : NSObject <HistoryItem> {
+    void *_addressBook;
     NSInteger _addressID;
     NSMutableDictionary *_info;
+    NSString *_lastValidatedAddress;
     void *_record;
     NSInteger _recordID;
 }
 
+@property(copy) NSString *lastValidatedAddress;
 @property(readonly) void *record;
 @property(readonly) NSString *singleLineAddress;
 @property(readonly) NSString *singleLineAddressWithHomeCountry;
@@ -24,11 +27,14 @@
 - (id)dictionaryRepresentation;
 - (NSUInteger)hash;
 - (id)initWithDictionaryRepresentation:(id)arg1;
+- (id)initWithRecord:(void*)arg1 addressID:(NSInteger)arg2 addressBook:(void*)arg3;
 - (id)initWithRecord:(void*)arg1 addressID:(NSInteger)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isValid;
+- (id)lastValidatedAddress;
 - (void*)record;
 - (NSInteger)recordID;
+- (void)setLastValidatedAddress:(id)arg1;
 - (id)singleLineAddress;
 - (id)singleLineAddressWithHomeCountry;
 - (NSInteger)type;

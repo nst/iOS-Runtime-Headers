@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UISectionList;
+@class UISectionList, NSMutableArray;
 
 @interface UISectionTable : UITable {
     struct _NSRange { 

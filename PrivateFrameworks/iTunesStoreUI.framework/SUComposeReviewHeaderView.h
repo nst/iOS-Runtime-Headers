@@ -2,29 +2,40 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIImageView, <SUComposeReviewHeaderDelegate>, ISReview, SUComposeTextFieldListView, SURatingControl;
+@class SURatingControl, UIImageView, <SUComposeReviewHeaderDelegate>, UILabel, ISReview, SUComposeTextFieldListView;
 
 @interface SUComposeReviewHeaderView : UIView {
     unsigned int _showNicknameField : 1;
     UIImageView *_backgroundView;
     <SUComposeReviewHeaderDelegate> *_delegate;
     SURatingControl *_ratingControl;
+    UILabel *_ratingLabel;
     ISReview *_review;
+    NSInteger _style;
     SUComposeTextFieldListView *_textFieldListView;
 }
 
 @property <SUComposeReviewHeaderDelegate> *delegate;
+@property(readonly) UIResponder *initialFirstResponder;
 @property(readonly) NSString *nickname;
 @property(retain) ISReview *review;
 @property(readonly) NSString *title;
+@property(readonly) NSInteger composeReviewStyle;
 @property float rating;
 
+- (void)_layoutSubviewsForPadStyle;
+- (void)_layoutSubviewsForPhoneStyle;
+- (void)_setupViewsForPadStyle;
+- (void)_setupViewsForPhoneStyle;
+- (NSInteger)composeReviewStyle;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(NSInteger)arg2;
+- (id)initialFirstResponder;
 - (void)layoutSubviews;
 - (id)nickname;
-- (NSUInteger)numberOfFieldsInTextFieldList:(id)arg1;
+- (NSInteger)numberOfColumnsInTextFieldList:(id)arg1;
+- (NSInteger)numberOfFieldsInTextFieldList:(id)arg1;
 - (float)rating;
 - (id)review;
 - (void)setDelegate:(id)arg1;

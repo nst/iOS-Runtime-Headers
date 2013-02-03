@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, UIRemoveControlMinusButton, NSString;
+@class NSString, UIRemoveControlMinusButton, UIView;
 
 @interface UIRemoveControl : UIView {
     struct { 
@@ -22,6 +22,7 @@
     UIView *_target;
 }
 
++ (void)_initializeSafeCategory;
 + (void)hideAllRemoveConfirmationsInView:(id)arg1;
 + (float)removeButtonWidth;
 + (BOOL)removeConfirmationsVisibleInView:(id)arg1;

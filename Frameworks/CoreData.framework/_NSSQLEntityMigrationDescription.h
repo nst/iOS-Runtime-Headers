@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSMutableArray, NSSQLEntity, NSEntityMapping;
+@class NSMutableDictionary, NSSQLEntity, NSMutableArray, NSEntityMapping;
 
 @interface _NSSQLEntityMigrationDescription : NSObject {
     NSMutableArray *_addedManyToManys;

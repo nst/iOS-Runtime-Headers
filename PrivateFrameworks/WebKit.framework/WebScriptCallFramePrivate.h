@@ -6,11 +6,18 @@
    See Warning(s) below.
  */
 
-@class WebScriptCallFrame, WebScriptObject;
+@class WebScriptObject, WebScriptCallFrame;
 
 @interface WebScriptCallFramePrivate : NSObject {
-    struct DebuggerCallFrame { struct ExecState {} *x1; struct JSValuePtr { 
-            struct JSCell {} *m_ptr; 
+    struct DebuggerCallFrame { struct ExecState {} *x1; struct JSValue { 
+            union $_728 { 
+                long long asEncodedJSValue; 
+                double asDouble; 
+                struct $_729 { 
+                    NSInteger payload; 
+                    NSInteger tag; 
+                } asBits; 
+            } u; 
     struct WebScriptDebugger { int (**x1)(); struct HashSet<JSC::JSGlobalObject*,WTF::PtrHash<JSC::JSGlobalObject*>,WTF::HashTraits<JSC::JSGlobalObject*> > { 
             struct HashTable<JSC::JSGlobalObject*,JSC::JSGlobalObject*,WTF::IdentityExtractor<JSC::JSGlobalObject*>,WTF::PtrHash<JSC::JSGlobalObject*>,WTF::HashTraits<JSC::JSGlobalObject*>,WTF::HashTraits<JSC::JSGlobalObject*> > { 
                 struct JSGlobalObject {} **m_table; 

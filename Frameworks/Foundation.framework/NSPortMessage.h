@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSPort, NSMutableArray;
+@class NSMutableArray, NSPort;
 
 @interface NSPortMessage : NSObject {
     NSMutableArray *components;

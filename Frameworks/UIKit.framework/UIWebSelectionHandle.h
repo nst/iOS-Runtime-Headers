@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UITouch, UIWebSelectionView;
+@class UIWebSelectionView, UIImageView, UITouch;
 
 @interface UIWebSelectionHandle : UIView {
     struct CGSize { 

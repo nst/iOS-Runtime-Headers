@@ -9,6 +9,8 @@
 + (id)localizedHeaders;
 + (id)localizedHeadersFromEnglishHeaders:(id)arg1;
 
-- (id)markupStringShowingHeaderDetailLevel:(NSInteger)arg1;
+- (void)appendHeaderMarkupForKey:(id)arg1 value:(id)arg2 toString:(id)arg3;
+- (id)copyFormattedHeaderValueFromAddressList:(id)arg1;
+- (id)markupString;
 
 @end

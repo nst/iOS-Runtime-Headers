@@ -9,8 +9,8 @@
 @class EDPivotTable;
 
 @interface EPPivotTableStyleFlattener : EPStyleFlattener {
-     /* Encoded args for previous method: B12@0:4@8 */
      /* Encoded args for previous method: i16@0:4i8B12 */
+     /* Encoded args for previous method: B12@0:4@8 */
     NSUInteger mColumnFieldsCount;
     NSInteger mFirstDataColumn;
     NSInteger mFirstDataRow;

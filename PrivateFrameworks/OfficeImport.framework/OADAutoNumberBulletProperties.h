@@ -9,6 +9,7 @@
 
 - (NSInteger)autoNumberSchemeType;
 - (id)initWithAutoNumberSchemeType:(NSInteger)arg1 startIndex:(NSUInteger)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (NSUInteger)startIndex;
 
 @end

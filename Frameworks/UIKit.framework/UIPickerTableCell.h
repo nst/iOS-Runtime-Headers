@@ -7,7 +7,12 @@
     unsigned int _reserved : 31;
 }
 
++ (void)_initializeSafeCategory;
+
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isChecked;
 - (void)layoutSubviews;
 - (void)setChecked:(BOOL)arg1;

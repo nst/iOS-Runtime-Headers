@@ -24,7 +24,6 @@
 - (void)setTextEffectColors:(id)arg1;
 - (void)setTextFillColors:(id)arg1;
 - (void)setTextLineColors:(id)arg1;
-- (void)simpleApplyToShapeStyle:(id)arg1 index:(NSUInteger)arg2;
 - (id)textEffectColors;
 - (id)textFillColors;
 - (id)textLineColors;

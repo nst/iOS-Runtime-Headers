@@ -5,6 +5,7 @@
 @interface NSConcreteFileHandle : NSFileHandle {
     unsigned short _activity;
     void *_avars;
+    struct dispatch_source_s { } *_dsrc;
     NSInteger _error;
     NSInteger _fd;
     unsigned short _flags;
@@ -28,6 +29,7 @@
 - (void)finalize;
 - (id)initWithFileDescriptor:(NSInteger)arg1 closeOnDealloc:(BOOL)arg2;
 - (id)initWithFileDescriptor:(NSInteger)arg1;
+- (id)initWithPath:(id)arg1 flags:(NSInteger)arg2 createMode:(NSInteger)arg3 error:(id*)arg4;
 - (id)initWithPath:(id)arg1 flags:(NSInteger)arg2 createMode:(NSInteger)arg3;
 - (unsigned long long)offsetInFile;
 - (void)performActivity:(NSInteger)arg1 modes:(id)arg2;

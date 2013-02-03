@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDSStylesheet, GQPProcessor, <GQWrapPointGenerator>, <GQUOutputBundle>, GQSTable, GQDRoot, GQZArchive;
+@class GQZArchive, GQDRoot, <GQUOutputBundle>, <GQWrapPointGenerator>, GQPProcessor, GQDSStylesheet, GQSTable;
 
 @interface GQSDocument : NSObject <GQWrapPointGenerator> {
     struct set<GQUtility::ObjcSharedPtr<GQDWrapPoint>,GQUtility::NSObjectComparator<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct _Rb_tree<GQUtility::ObjcSharedPtr<GQDWrapPoint>,GQUtility::ObjcSharedPtr<GQDWrapPoint>,std::_Identity<GQUtility::ObjcSharedPtr<GQDWrapPoint> >,GQUtility::NSObjectComparator<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { 

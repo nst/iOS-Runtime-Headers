@@ -10,10 +10,12 @@
 - (void)_ensureRangeCapacity:(NSUInteger)arg1;
 - (void)_incrementBy:(NSUInteger)arg1 startingAtIndex:(NSUInteger)arg2;
 - (void)_insertRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 inArrayAtIndex:(NSUInteger)arg2;
+- (void)_mergeOverlappingRangesStartingAtIndex:(NSUInteger)arg1;
 - (void)_removeAndDecrementBy:(NSUInteger)arg1 startingAtIndex:(NSUInteger)arg2;
 - (void)_removeRangeInArrayAtIndex:(NSUInteger)arg1;
 - (void)_replaceRangeInArrayAtIndex:(NSUInteger)arg1 withRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (void)addIndex:(NSUInteger)arg1;
+- (void)addIndexes:(NSUInteger*)arg1 count:(NSUInteger)arg2;
 - (void)addIndexes:(id)arg1;
 - (void)addIndexesFromIndexSet:(id)arg1;
 - (void)addIndexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;

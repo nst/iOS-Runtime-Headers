@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UILabel, MPItem, MPButton, MediaVolumeSlider;
+@class MPItem, UILabel, NSMutableIndexSet, MPButton;
 
 @interface MPTransportControls : UIView {
     unsigned int _forVideo : 1;
-    unsigned int _paused : 1;
+    unsigned int _playing : 1;
     MPButton *_alternatesButton;
     MPButton *_bookmarkButton;
     MPButton *_chaptersButton;
@@ -14,31 +14,38 @@
     MPButton *_devicePickerButton;
     NSUInteger _disabledParts;
     MPButton *_emailButton;
-    NSUInteger _heldPart;
+    NSMutableIndexSet *_heldParts;
     MPItem *_item;
     MPButton *_nextButton;
     MPButton *_playButton;
     MPButton *_previousButton;
+    MPButton *_rewind30SecondsButton;
     UILabel *_routeNameLabel;
+    MPButton *_scaleButton;
     id _target;
+    MPButton *_toggleFullscreenButton;
     NSUInteger _visibleParts;
-    MediaVolumeSlider *_volumeSlider;
+    id _volumeSlider;
 }
 
 @property(retain) MPItem *item;
+@property(readonly) NSString *pauseButtonImage;
+@property(readonly) NSString *playButtonImage;
+@property(readonly) NSString *playPauseButtonImage;
 @property NSUInteger desiredParts;
 @property NSUInteger disabledParts;
-@property(getter=isForVideo) BOOL forVideo;
 @property id target;
 @property NSUInteger visibleParts;
 
++ (void)_initializeSafeCategory;
++ (NSUInteger)defaultVisibleParts;
++ (id)onScreenVolumeControls;
+
+- (BOOL)_accessibilityObscuresScreen;
 - (void)_alternateTypesChangedNotification:(id)arg1;
 - (NSUInteger)_applyDesiredPartsToParts:(NSUInteger)arg1;
 - (void)_applyDesiredPartsWithAnimation:(BOOL)arg1;
 - (void)_availableRoutesChangedNotification:(id)arg1;
-- (id)_buttonForPart:(NSUInteger)arg1;
-- (id)_buttonImageForPart:(NSUInteger)arg1;
-- (id)_createButtonForPart:(NSUInteger)arg1;
 - (void)_handleHoldForPart:(NSUInteger)arg1;
 - (void)_handleReleaseForPart:(NSUInteger)arg1;
 - (void)_handleTapForPart:(NSUInteger)arg1;
@@ -48,25 +55,33 @@
 - (id)_updateAdditions:(id)arg1 removals:(id)arg2 forPart:(NSUInteger)arg3;
 - (void)_updateEnabledStates:(BOOL)arg1;
 - (void)_validityChangedNotification:(id)arg1;
+- (BOOL)alwaysHidesSystemVolumeHUD;
 - (void)buttonDown:(id)arg1;
+- (id)buttonForPart:(NSUInteger)arg1;
 - (void)buttonHeld:(id)arg1;
 - (void)buttonHoldReleased:(id)arg1;
+- (id)buttonImageForPart:(NSUInteger)arg1;
 - (void)buttonUp:(id)arg1;
+- (id)createButtonForPart:(NSUInteger)arg1;
 - (id)createRouteNameLabel;
 - (id)createVolumeSlider;
 - (void)dealloc;
 - (NSUInteger)desiredParts;
 - (void)didMoveToWindow;
 - (NSUInteger)disabledParts;
+- (id)highlightedButtonImageForPart:(NSUInteger)arg1;
 - (id)init;
-- (BOOL)isForVideo;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)item;
+- (id)pauseButtonImage;
+- (id)playButtonImage;
+- (id)playPauseButtonImage;
 - (void)reloadForAdditions:(id)arg1 removals:(id)arg2 animate:(BOOL)arg3;
 - (void)setAlpha:(float)arg1;
 - (void)setDesiredParts:(NSUInteger)arg1 animated:(BOOL)arg2;
 - (void)setDesiredParts:(NSUInteger)arg1;
 - (void)setDisabledParts:(NSUInteger)arg1;
-- (void)setForVideo:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setItem:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setVisibleParts:(NSUInteger)arg1 animated:(BOOL)arg2;

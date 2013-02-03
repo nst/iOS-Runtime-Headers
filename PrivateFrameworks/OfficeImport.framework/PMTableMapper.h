@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMDrawableStyle, CMTableGridInfo, OADTable, OADOrientedBounds;
+@class OADOrientedBounds, CMTableGridInfo, OADTable, CMDrawableStyle;
 
 @interface PMTableMapper : CMMapper {
     OADOrientedBounds *mBounds;
@@ -21,5 +21,7 @@
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapColumnGridAt:(id)arg1 withState:(id)arg2;
 - (void)mapTablePropertiesWithState:(id)arg1;
+- (NSUInteger)rowCount;
+- (id)tableBorderStyle;
 
 @end

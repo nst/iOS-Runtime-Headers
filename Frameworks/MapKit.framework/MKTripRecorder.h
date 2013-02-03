@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableString, NSDate;
+@class NSDate, NSMutableString;
 
 @interface MKTripRecorder : NSObject {
     NSMutableString *_buffer;
@@ -25,7 +25,7 @@
 - (BOOL)isRecording;
 - (id)lastRecordingDate;
 - (void)recordError:(id)arg1;
-- (void)recordLocation:(id)arg1 supportInfo:(id)arg2;
+- (void)recordLocation:(id)arg1;
 - (void)setBuffer:(id)arg1;
 - (void)setIsRecording:(BOOL)arg1;
 - (void)setLastRecordingDate:(id)arg1;

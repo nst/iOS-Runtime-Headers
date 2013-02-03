@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKAccuracyLayer, MKUserLocationView, CALayer, MKUserLocationLayer;
+@class MKUserLocationLayer, MKAccuracyLayer, MKUserLocationView, CALayer;
 
 @interface MKUserLocationViewInternal : NSObject {
     struct { 
@@ -16,6 +16,7 @@
         unsigned int stale : 1; 
         unsigned int delegateAccuracyDidUpdate : 1; 
         unsigned int delegateDidQuiesce : 1; 
+        unsigned int delegateIsZooming : 1; 
         unsigned int willAnimateProperty : 1; 
     float accuracy;
     MKAccuracyLayer *accuracyLayer;
@@ -49,7 +50,7 @@
 @property(getter=isHovering,readonly) BOOL hovering;
 @property NSUInteger mapType;
 @property(readonly) BOOL needsHalo;
-@property CGPoint position;
+@property CADoublePoint position;
 @property BOOL shouldDisplayAccuracy;
 @property BOOL shouldDisplayEffects;
 @property BOOL shouldDisplayHalo;
@@ -61,7 +62,7 @@
 + (id)bounceImages;
 + (id)dotImage;
 + (id)dotPressedImage;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })effectiveFrameWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })effectiveFrameWithFrame:(struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 + (struct CGSize { float x1; float x2; })effectsSize;
 + (void)frameLayer:(id)arg1 initialAccuracy:(float*)arg2 restAccuracy:(float*)arg3;
 + (id)greyDotImage;
@@ -108,13 +109,14 @@
 - (BOOL)isDotTeleporting;
 - (BOOL)isHovering;
 - (BOOL)isStale;
+- (BOOL)isZooming;
 - (NSUInteger)mapType;
 - (BOOL)needsHalo;
 - (void)orderInDotLayer;
 - (void)orderInLayer:(id)arg1 beginTime:(double)arg2;
 - (void)pauseHalo;
 - (void)pauseHover;
-- (struct CGPoint { float x1; float x2; })position;
+- (struct CADoublePoint { double x1; double x2; })position;
 - (id)positionAnimation;
 - (void)removeHover;
 - (void)removeSublayer:(id)arg1 animated:(BOOL)arg2;
@@ -125,11 +127,12 @@
 - (void)resumeHover;
 - (void)setAccuracy:(float)arg1;
 - (void)setAnimatedSublayers:(BOOL)arg1;
+- (void)setContentsScale:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisableAccuracyDidUpdate:(BOOL)arg1;
 - (void)setHeadingAccuracy:(double)arg1;
 - (void)setMapType:(NSUInteger)arg1;
-- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPosition:(struct CADoublePoint { double x1; double x2; })arg1;
 - (void)setShouldDisplayAccuracy:(BOOL)arg1;
 - (void)setShouldDisplayEffects:(BOOL)arg1;
 - (void)setShouldDisplayHalo:(BOOL)arg1;

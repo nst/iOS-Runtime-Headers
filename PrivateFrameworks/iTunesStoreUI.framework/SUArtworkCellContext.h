@@ -2,23 +2,27 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIImage, SUImageDataProvider, ISURLOperationCache;
+@class SUImageDataProvider, SUImageCache, UIImage, ISURLOperationPool;
 
-@interface SUArtworkCellContext : NSObject {
-    ISURLOperationCache *_imageCache;
+@interface SUArtworkCellContext : SUCellConfigurationContext {
+    SUImageCache *_imageCache;
+    ISURLOperationPool *_imagePool;
     SUImageDataProvider *_imageProvider;
     UIImage *_placeholderImage;
 }
 
-@property(retain) ISURLOperationCache *imageCache;
+@property(retain) SUImageCache *imageCache;
+@property(retain) ISURLOperationPool *imagePool;
 @property(retain) SUImageDataProvider *imageProvider;
 @property(retain) UIImage *placeholderImage;
 
 - (void)dealloc;
 - (id)imageCache;
+- (id)imagePool;
 - (id)imageProvider;
 - (id)placeholderImage;
 - (void)setImageCache:(id)arg1;
+- (void)setImagePool:(id)arg1;
 - (void)setImageProvider:(id)arg1;
 - (void)setPlaceholderImage:(id)arg1;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, ODDPresentationPoint;
+@class ODDPresentationPoint, NSMutableArray;
 
 @interface ODDPresentationPoint : ODDPoint {
     NSMutableArray *mChildren;

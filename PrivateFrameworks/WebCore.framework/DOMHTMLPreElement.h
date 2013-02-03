@@ -6,6 +6,7 @@
 }
 
 @property NSInteger width;
+@property BOOL wrap;
 
 - (void)setWidth:(NSInteger)arg1;
 - (void)setWrap:(BOOL)arg1;

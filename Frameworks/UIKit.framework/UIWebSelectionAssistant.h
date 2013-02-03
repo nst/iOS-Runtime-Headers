@@ -2,10 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWebDocumentView, UIWebSelectionView;
+@class UILongPressGestureRecognizer, UIWebDocumentView, UIWebSelectionView, UITapAndAHalfRecognizer;
 
-@interface UIWebSelectionAssistant : NSObject {
+@interface UIWebSelectionAssistant : NSObject <UILongPressGestureRecognizerDelegate> {
     BOOL _enabled;
+    UILongPressGestureRecognizer *_longPressGestureRecognizer;
+    UITapAndAHalfRecognizer *_tapAndAHalfGestureRecognizer;
     UIWebSelectionView *_tintView;
     UIWebDocumentView *_webView;
 }
@@ -14,15 +16,20 @@
 @property BOOL enabled;
 @property(readonly) CGRect selectionFrame;
 
+- (void)clearSelection;
 - (void)dealloc;
 - (void)didRotate:(id)arg1;
 - (void)doneDragging;
 - (BOOL)enabled;
+- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)hideCallout;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2 fromView:(id)arg3;
 - (id)initWithWebView:(id)arg1;
+- (BOOL)isSelectionGestureRecognizer:(id)arg1;
 - (void)layoutChanged;
-- (void)longPress:(id)arg1;
+- (void)makeWebSelection:(id)arg1;
 - (void)resignedFirstResponder;
 - (void)scaleChanged;
 - (id)selection;

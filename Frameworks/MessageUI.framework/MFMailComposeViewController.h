@@ -32,6 +32,7 @@
 - (void)setMessageBody:(id)arg1 isHTML:(BOOL)arg2;
 - (void)setSubject:(id)arg1;
 - (void)setToRecipients:(id)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)suspend;
 - (id)view;
 

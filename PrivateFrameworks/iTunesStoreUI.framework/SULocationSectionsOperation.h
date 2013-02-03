@@ -2,26 +2,26 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class CLLocation, NSArray;
+@class CLLocation, SUSectionsResponse;
 
 @interface SULocationSectionsOperation : ISOperation {
     CLLocation *_location;
-    NSArray *_sections;
+    SUSectionsResponse *_sectionsResponse;
     NSInteger _updateDistance;
 }
 
 @property(retain) CLLocation *location;
-@property(retain) NSArray *sections;
-@property NSInteger updateDistance;
+@property(readonly) SUSectionsResponse *sectionsResponse;
+@property(readonly) NSInteger updateDistance;
 
 - (id)_copyBaseOperation;
+- (void)_setSectionsResponse:(id)arg1;
+- (void)_setUpdateDistance:(NSInteger)arg1;
 - (void)dealloc;
 - (id)location;
 - (void)run;
-- (id)sections;
+- (id)sectionsResponse;
 - (void)setLocation:(id)arg1;
-- (void)setSections:(id)arg1;
-- (void)setUpdateDistance:(NSInteger)arg1;
 - (NSInteger)updateDistance;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSArray, NSString;
+@class NSString, NSArray;
 
 @interface CKMessageStandaloneComposition : CKMessageComposition {
     BOOL _isTextOnly;

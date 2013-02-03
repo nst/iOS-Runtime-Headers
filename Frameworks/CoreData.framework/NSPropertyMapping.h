@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSExpression, NSArray, NSString, NSDictionary;
+@class NSArray, NSString, NSExpression, NSDictionary;
 
 @interface NSPropertyMapping : NSObject {
     struct __propertyMappingFlags { 

@@ -17,6 +17,7 @@
 + (NSInteger)defaultItalic;
 + (id)defaultStyle;
 
+- (void)applyOverridesFrom:(id)arg1;
 - (NSInteger)bold;
 - (id)color;
 - (void)dealloc;
@@ -27,5 +28,6 @@
 - (void)setColor:(id)arg1;
 - (void)setFontReference:(id)arg1;
 - (void)setItalic:(NSInteger)arg1;
+- (id)shallowCopy;
 
 @end

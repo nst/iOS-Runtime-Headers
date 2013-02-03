@@ -2,32 +2,16 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSError, NSManagedObjectContext;
+@class NSArray;
 
-@interface NSPersistentStoreRequest : NSObject <NSPersistentStoreRequest> {
-    struct __objectStoreRequestFlags { 
-        unsigned int _requestSuccessful : 1; 
-        unsigned int _reservedObjectStoreRequest : 31; 
-    NSManagedObjectContext *_managedObjectContext;
-    } _objectStoreRequestFlags;
-    NSError *_requestError;
-    NSArray *_storeHint;
+@interface NSPersistentStoreRequest : NSObject <NSCopying> {
+    NSArray *_affectedStores;
 }
 
-+ (BOOL)accessInstanceVariablesDirectly;
-
+- (id)affectedStores;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)hasChanges;
-- (id)init;
-- (id)initForManagedObjectContext:(id)arg1;
-- (id)managedObjectContext;
-- (id)requestError;
-- (BOOL)requestSuccessful;
 - (NSUInteger)requestType;
-- (void)setManagedObjectContext:(id)arg1;
-- (void)setRequestError:(id)arg1;
-- (void)setRequestSuccessful:(BOOL)arg1;
-- (void)setStores:(id)arg1;
-- (id)stores;
+- (void)setAffectedStores:(id)arg1;
 
 @end

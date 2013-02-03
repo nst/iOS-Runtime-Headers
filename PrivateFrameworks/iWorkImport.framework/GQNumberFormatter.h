@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, NSMutableArray, NSString;
+@class NSMutableArray, NSMutableDictionary, NSString;
 
 @interface GQNumberFormatter : NSObject {
     struct __CFString { } *mAdditionalCurrencyCode;

@@ -13,6 +13,7 @@
 - (BOOL)disabled;
 - (id)itemTitle;
 - (id)label;
+- (void)populateCell:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (void)setLabel:(id)arg1;
 

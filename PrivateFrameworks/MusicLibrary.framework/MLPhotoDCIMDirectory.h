@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableArray, NSMutableDictionary, NSString;
+@class NSMutableDictionary, NSString, NSMutableArray;
 
 @interface MLPhotoDCIMDirectory : NSObject {
     struct flock { long long x1; long long x2; NSInteger x3; short x4; short x5; } *_dcimDirectoryLock;
@@ -20,11 +20,15 @@
 
 - (id)_userInfoPath;
 - (void)clearDCFDirectories;
-- (NSInteger)countOfAllPhotos;
+- (void)countOfAllPhotos:(NSInteger*)arg1 andVideos:(NSInteger*)arg2 stopAfterFirst:(BOOL)arg3;
+- (id)countOfAllPhotosAndVideos;
 - (id)dcfDirectories;
 - (id)dcimPath;
 - (void)dealloc;
+- (BOOL)hasChangedExternally;
 - (id)initWithDCIMPath:(id)arg1;
+- (BOOL)isValidImageExtension:(id)arg1;
+- (BOOL)isValidVideoExtension:(id)arg1;
 - (void)lockDirectory;
 - (id)miscPath;
 - (id)nextAvailableDirectory;
@@ -32,6 +36,7 @@
 - (void)recreateInfoPlist;
 - (void)reloadUserInfo;
 - (void)saveUserInfo;
+- (void)setHasChangedExternally:(BOOL)arg1;
 - (void)setUserInfoObject:(id)arg1 forKey:(id)arg2;
 - (void)unlockDirectory;
 - (id)userInfo;

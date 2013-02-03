@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSManagedObjectID, NSPersistentStoreMap, NSString;
+@class NSManagedObjectID, NSPersistentStoreMap, NSString, NSMutableDictionary;
 
 @interface NSStoreMapNode : NSObject {
     NSString *_entityName;
@@ -27,7 +27,7 @@
 - (id)initWithObjectID:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)key;
-- (id*)knownKeyValuesPointer;
+- (const id*)knownKeyValuesPointer;
 - (id)objectID;
 - (void)setDestinations:(id)arg1 forRelationship:(id)arg2;
 

@@ -7,6 +7,6 @@
 
 + (void)fillHTMLArchiveForOfficeData:(id)arg1 fileName:(id)arg2 xmlFlag:(BOOL)arg3 archiver:(id)arg4;
 + (void)fillHTMLArchiveForOfficeFile:(id)arg1 xmlFlag:(BOOL)arg2 archiver:(id)arg3;
-+ (id)readWordFileFrom:(id)arg1 xmlFlag:(BOOL)arg2 asThumbnail:(BOOL)arg3;
++ (id)readWordFileFrom:(id)arg1 xmlFlag:(BOOL)arg2 asThumbnail:(BOOL)arg3 archiver:(id)arg4;
 
 @end

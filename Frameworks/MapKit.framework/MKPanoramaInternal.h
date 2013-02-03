@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableDictionary, NSArray, NSString, MKStreetView, GMMMapPoint;
+@class NSArray, NSString, MKPanoramaLoaderProxy, GMMMapPoint, MKStreetView, NSMapTable;
 
 @interface MKPanoramaInternal : NSObject {
     struct CGSize { 
@@ -24,6 +24,7 @@
     double horizontalFOV;
     } imageSize;
     BOOL isDisabled;
+    MKPanoramaLoaderProxy *loaderProxy;
     struct CGImage { } *mapImageRef;
     GMMMapPoint *mapPoint;
     double maxVisiblePitch;
@@ -35,9 +36,9 @@
     NSUInteger throttleFlags;
     NSUInteger throttleTimeInterval;
     NSUInteger tileByteCount;
+    NSMapTable *tileDataTable;
     NSArray *tilePaths;
     } tileSize;
-    NSMutableDictionary *tiles;
     double tiltPitch;
     double tiltYaw;
     NSUInteger updateTime;

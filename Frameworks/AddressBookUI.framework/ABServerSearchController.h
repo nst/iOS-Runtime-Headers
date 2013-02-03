@@ -2,41 +2,29 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, UISearchDisplayController, UIViewController, ABGroupWrapper, NSMutableArray, DAContactsSearchQuery, UISearchBar;
+@class UISearchBar, UISearchDisplayController, UIViewController, ABServerSearchDataSource;
 
-@interface ABServerSearchController : ABContentController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, DASearchQueryConsumer, UISearchDisplayDelegate, UISearchBarDelegate> {
+@interface ABServerSearchController : ABContentController <ABServerSearchDataSourceDelegate, UITextFieldDelegate, UISearchDisplayDelegate, UISearchBarDelegate> {
     struct { 
         unsigned int showingCardForPerson : 1; 
-        unsigned int isSearching : 1; 
-        unsigned int hasResults : 1; 
-        unsigned int hasError : 1; 
         unsigned int wasKeyboardShowing : 1; 
-        unsigned int unused : 24; 
-    NSArray *_currentResultsAsPeople;
-    DAContactsSearchQuery *_currentSearchQuery;
-    NSArray *_currentSearchResults;
+    ABServerSearchDataSource *_dataSource;
     } _flags;
-    NSMutableArray *_incrementalSearchResults;
     UIViewController *_parentViewController;
     UISearchBar *_searchBar;
     UISearchDisplayController *_searchController;
-    ABGroupWrapper *_selectedGroupWrapper;
 }
 
+@property(retain) ABServerSearchDataSource *dataSource;
 @property(readonly) UIView *navigationTitleView;
 @property(retain) ABGroupWrapper *selectedGroupWrapper;
+@property(readonly) <ABStyleProvider> *styleProvider;
 
-- (void)_beginSearch;
 - (void)_clearSearchResults;
 - (void)_deselectAllRowsWithAnimation:(BOOL)arg1;
-- (NSInteger)_errorForDAStatusCode:(NSInteger)arg1;
-- (id)_localizedStringForError:(NSInteger)arg1;
-- (id)_searchString;
-- (void)_setCurrentSearchResults:(id)arg1 error:(NSInteger)arg2 callDelegate:(BOOL)arg3;
-- (void)_setCurrentSearchResults:(id)arg1 error:(NSInteger)arg2;
-- (void)_setCurrentSearchResults:(id)arg1;
 - (BOOL)_shouldDeactivateOnCancelButtonClicked;
 - (id)contentView;
+- (id)dataSource;
 - (void)dealloc;
 - (id)initWithContentControllerDelegate:(id)arg1 addressBook:(void*)arg2;
 - (id)navigationTitleView;
@@ -46,14 +34,14 @@
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (void)searchDisplayController:(id)arg1 willHideSearchResultsTableView:(id)arg2;
 - (void)searchDisplayController:(id)arg1 willShowSearchResultsTableView:(id)arg2;
-- (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;
-- (void)searchQuery:(id)arg1 returnedResults:(id)arg2;
 - (id)selectedGroupWrapper;
+- (void)serverSearchDataSource:(id)arg1 didSelectPerson:(void*)arg2 cell:(id)arg3;
+- (void)serverSearchDataSource:(id)arg1 didUpdateResultsWithLocalizedError:(id)arg2;
+- (id)serverSearchDataSourceStyleProvider:(id)arg1;
+- (void)setDataSource:(id)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setSelectedGroupWrapper:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (id)styleProvider;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

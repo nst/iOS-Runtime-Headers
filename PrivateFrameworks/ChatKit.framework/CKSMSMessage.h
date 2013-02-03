@@ -8,18 +8,20 @@
     NSInteger _associationID;
     CKSMSMessageDelivery *_delivery;
     NSMutableArray *_messages;
+    NSInteger _rowID;
 }
 
 @property(retain) CKSMSMessageDelivery *delivery;
 @property(readonly) NSInteger associationID;
+@property(readonly) NSInteger rowID;
 
-- (id)_createParts;
 - (double)_loadDate;
 - (void)_loadFailedSendCount;
 - (BOOL)_loadOutgoing;
 - (void)_loadSubject;
 - (void)_loadText;
 - (void)_loadUIFlags;
+- (id)_newParts;
 - (void)_setupDeliveryIfPending;
 - (void)_storeUIFlags:(unsigned long)arg1;
 - (void)addMessage:(struct __CKSMSRecord { }*)arg1;
@@ -35,8 +37,10 @@
 - (void)deliveryFailedForMessage:(id)arg1;
 - (void)deliveryPartiallyFailedForMessage:(id)arg1;
 - (BOOL)hasBeenRead;
+- (NSUInteger)hash;
 - (id)initWithCTMessage:(struct __CKSMSRecord { }*)arg1 messageParts:(id)arg2;
 - (id)initWithCTMessages:(id)arg1 messageParts:(id)arg2;
+- (id)initWithRowID:(NSInteger)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isForward;
 - (BOOL)isOnlyDisplayableMessagePart:(id)arg1;
@@ -46,6 +50,7 @@
 - (id)messages;
 - (void)permanentlyRemoveMessage;
 - (void)prepareToResend;
+- (NSInteger)rowID;
 - (id)sender;
 - (NSInteger)sentCount;
 - (void)setDelivery:(id)arg1;

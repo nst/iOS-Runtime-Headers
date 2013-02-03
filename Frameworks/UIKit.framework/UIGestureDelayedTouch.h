@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITouch, UIEvent;
+@class UIEvent, UITouch;
 
 @interface UIGestureDelayedTouch : NSObject {
     UIEvent *_event;

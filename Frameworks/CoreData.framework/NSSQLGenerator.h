@@ -13,6 +13,8 @@
 - (id)_predicateForSpecificEntity:(id)arg1;
 - (id)_predicateRestrictingSuperentitiesForEntity:(id)arg1;
 - (id)_predicateRestrictingToSubentitiesForEntity:(id)arg1;
+- (void)generateGroupByIntermediatesForProperties:(id)arg1 inContext:(id)arg2;
+- (void)generateHavingIntermediateForPredicate:(id)arg1 inContext:(id)arg2;
 - (void)generateIntermediateForLimit:(NSUInteger)arg1 inContext:(id)arg2;
 - (void)generateIntermediateForOffset:(NSUInteger)arg1 inContext:(id)arg2;
 - (id)generateIntermediatesForFetchInContext:(id)arg1 countOnly:(BOOL)arg2;

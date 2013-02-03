@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLForeignEntityKey, NSSQLForeignKey;
+@class NSSQLForeignKey, NSSQLForeignEntityKey;
 
 @interface NSSQLToOne : NSSQLRelationship {
     NSSQLForeignEntityKey *_foreignEntityKey;

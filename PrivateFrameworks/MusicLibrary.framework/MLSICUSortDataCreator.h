@@ -7,7 +7,7 @@
  */
 
 @interface MLSICUSortDataCreator : NSObject {
-    struct CPSqliteDatabase { struct __CFString {} *x1; struct CPSqliteConnection {} *x2; int (*x3)(); int (*x4)(); int (*x5)(); void *x6; int (*x7)(); int (*x8)(); int (*x9)(); /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x10; void *x11; NSInteger x12; struct $_347 { 
+    struct CPSqliteDatabase { struct __CFString {} *x1; struct CPSqliteConnection {} *x2; int (*x3)(); int (*x4)(); int (*x5)(); void *x6; int (*x7)(); int (*x8)(); int (*x9)(); /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x10; void *x11; NSInteger x12; struct $_799 { 
             unsigned int checkVersion : 1; 
             unsigned int checkedJournalPermissions : 1; 
             unsigned int propertiesDisabled : 1; 
@@ -23,6 +23,8 @@
             BOOL __opaque[40]; 
         } x14; NSInteger x15; int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); void *x20; NSInteger x21; struct __CFString {} *x22; } *_libraryDB;
 }
+
++ (void)setDatabaseLanguageToCurrentOnConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; NSUInteger x8; }*)arg1;
 
 - (void)createIndexesWithTransactionGranularity:(NSInteger)arg1;
 - (void)createSortDataWithThreadPriority:(double)arg1 transactionGranularity:(NSInteger)arg2;

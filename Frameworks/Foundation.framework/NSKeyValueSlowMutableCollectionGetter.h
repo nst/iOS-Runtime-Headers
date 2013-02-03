@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSKeyValueSetter, NSKeyValueGetter;
+@class NSKeyValueGetter, NSKeyValueSetter;
 
 @interface NSKeyValueSlowMutableCollectionGetter : NSKeyValueProxyGetter {
     NSKeyValueGetter *_baseGetter;
@@ -12,7 +12,6 @@
 - (id)baseGetter;
 - (id)baseSetter;
 - (void)dealloc;
-- (void)finalize;
 - (id)initWithContainerClassID:(id)arg1 key:(id)arg2 baseGetter:(id)arg3 baseSetter:(id)arg4 containerIsa:(Class)arg5 proxyClass:(Class)arg6;
 - (BOOL)treatNilValuesLikeEmptyCollections;
 

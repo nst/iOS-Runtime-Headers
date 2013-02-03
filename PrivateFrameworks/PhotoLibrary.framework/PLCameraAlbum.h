@@ -2,42 +2,28 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableArray, MLPhotoDCIMDirectory;
-
-@interface PLCameraAlbum : MLPhotoAlbum {
+@interface PLCameraAlbum : PLPhotoAlbum {
     BOOL _albumDidChange;
-    MLPhotoDCIMDirectory *_dcimDirectory;
     BOOL _ignoreNotifications;
-    NSMutableArray *_pendingImages;
+    NSUInteger _previousImageCount;
 }
 
-+ (void)clearSharedInstance;
 + (void)deletePreviewWellImage;
++ (id)photoAlbumWithDefaultValues;
 + (id)previewWellImage;
 + (BOOL)previewWellImageExists;
-+ (void)savePreviewWellImage:(id)arg1;
-+ (id)sharedInstance;
-+ (id)sharedInstanceIfExists;
++ (void)savePreviewWellImage:(id)arg1 shouldNotify:(BOOL)arg2;
 
-- (BOOL)_addImage:(id)arg1 withPreview:(id)arg2 type:(struct __CFString { }*)arg3 extension:(id)arg4 exifProperties:(id)arg5 date:(id)arg6 imageData:(struct __CFData { }*)arg7 notifyingTarget:(id)arg8 selector:(SEL)arg9 contextInfo:(void*)arg10 sendPath:(BOOL)arg11;
-- (void)_addImage:(id)arg1;
-- (id)_regeneratePosterImageAtPath:(id)arg1;
-- (BOOL)addImage:(id)arg1 withPreview:(id)arg2 exifProperties:(id)arg3 date:(id)arg4 jpegData:(struct __CFData { }*)arg5 notifyingTarget:(id)arg6 selector:(SEL)arg7 contextInfo:(void*)arg8;
-- (BOOL)addImage:(id)arg1 withPreview:(id)arg2 exifProperties:(id)arg3 date:(id)arg4 jpegData:(struct __CFData { }*)arg5 notifyingTargetWithPath:(id)arg6 selector:(SEL)arg7;
-- (BOOL)addImage:(id)arg1 withPreview:(id)arg2 type:(struct __CFString { }*)arg3 extension:(id)arg4 exifProperties:(id)arg5 date:(id)arg6 imageData:(struct __CFData { }*)arg7 notifyingTarget:(id)arg8 selector:(SEL)arg9 contextInfo:(void*)arg10;
-- (void)addVideoAtPath:(id)arg1 createCopy:(BOOL)arg2 notifyingTarget:(id)arg3 selector:(SEL)arg4 contextInfo:(void*)arg5;
-- (void)cameraImageFinishedSaving:(id)arg1;
-- (NSInteger)count;
-- (void)dcimContentsDidChange;
-- (void)dealloc;
-- (void)deleteImageAtIndex:(NSInteger)arg1;
-- (id)images;
+- (id)_slideshowSettingsPath;
+- (NSUInteger)count;
+- (BOOL)deletedWhenEmpty;
+- (NSInteger)indexOfPosterImage;
 - (id)init;
+- (BOOL)isEditable;
 - (id)name;
-- (id)nextAvailableVideoFileGroup;
 - (id)posterImage;
-- (BOOL)processVideoInFileGroup:(id)arg1 metadata:(id)arg2 thumbnailImage:(id)arg3 progressStack:(struct { id x1; float x2; struct __CFArray {} *x3; float x4; }*)arg4 target:(id)arg5 completionSelector:(SEL)arg6;
-- (BOOL)processVideoInFileGroup:(id)arg1 metadata:(id)arg2 thumbnailImage:(id)arg3;
-- (void)setIgnoreAlbumChangeNotifications:(BOOL)arg1;
+- (void)setSlideshowSettings:(id)arg1;
+- (BOOL)shouldSortImagesByDate;
+- (id)slideshowSettings;
 
 @end

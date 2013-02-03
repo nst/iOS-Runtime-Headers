@@ -5,9 +5,9 @@
 @interface PLPhotosMusicPlayer : NSObject {
 }
 
-+ (void)_setMusicPlaybackState:(NSInteger)arg1;
 + (void)continueMusic;
 + (void)pauseMusic;
++ (void)setShouldRepeatMusic:(BOOL)arg1;
 + (void)startMusicForAlbum:(id)arg1;
 + (void)stopMusic;
 

@@ -15,6 +15,7 @@
         unsigned int lineBreakMode : 3; 
         unsigned int highlighted : 1; 
         unsigned int autosizeTextToFit : 1; 
+        unsigned int autotrackTextToFit : 1; 
         unsigned int baselineAdjustment : 2; 
         unsigned int alignment : 2; 
         unsigned int enabled : 1; 
@@ -42,6 +43,7 @@
 @property(retain) UIColor *textColor;
 @property(readonly) float _lastLineBaseline;
 @property BOOL adjustsFontSizeToFitWidth;
+@property BOOL autotrackTextToFit;
 @property NSInteger baselineAdjustment;
 @property(getter=isEnabled) BOOL enabled;
 @property(getter=isHighlighted) BOOL highlighted;
@@ -53,8 +55,12 @@
 @property NSInteger textAlignment;
 @property(getter=isUserInteractionEnabled) BOOL userInteractionEnabled;
 
++ (void)_initializeSafeCategory;
 + (id)defaultFont;
++ (id)sectionHeaderLabelWithText:(id)arg1 tintColor:(id)arg2;
 
+- (BOOL)_allowAscentRounding;
+- (id)_attributes;
 - (void)_commonInit;
 - (id)_disabledFontColor;
 - (void)_drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 baselineCalculationOnly:(BOOL)arg2;
@@ -62,8 +68,12 @@
 - (float)_lastLineBaseline;
 - (id)_scriptingInfo;
 - (void)_setWordRoundingEnabled:(BOOL)arg1;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
+- (id)accessibilityValue;
 - (float)actualFontSize;
 - (BOOL)adjustsFontSizeToFitWidth;
+- (BOOL)autotrackTextToFit;
 - (NSInteger)baselineAdjustment;
 - (BOOL)centersHorizontally;
 - (id)color;
@@ -78,6 +88,7 @@
 - (id)highlightedTextColor;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isAccessibilityElementByDefault;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isEnabled;
@@ -89,6 +100,7 @@
 - (struct CGSize { float x1; float x2; })rawSize;
 - (void)setActualFontSize:(float)arg1;
 - (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
+- (void)setAutotrackTextToFit:(BOOL)arg1;
 - (void)setBaselineAdjustment:(NSInteger)arg1;
 - (void)setCentersHorizontally:(BOOL)arg1;
 - (void)setColor:(id)arg1;

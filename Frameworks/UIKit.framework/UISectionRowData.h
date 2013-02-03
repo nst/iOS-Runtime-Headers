@@ -4,10 +4,14 @@
 
 @interface UISectionRowData : NSObject <NSCopying> {
     NSInteger _arrayLength;
+    NSInteger _footerAlignment;
     float _footerHeight;
     float _footerOffset;
+    NSInteger _headerAlignment;
     float _headerHeight;
     float _headerOffset;
+    float _maxFooterTitleWidth;
+    float _maxHeaderTitleWidth;
     NSInteger _numRows;
     float *_rowHeights;
     float *_rowOffsets;
@@ -24,6 +28,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)deleteRowAtIndex:(NSInteger)arg1;
+- (id)description;
 - (void)insertRowAtIndex:(NSInteger)arg1 inSection:(NSInteger)arg2 rowHeight:(float)arg3 tableViewRowData:(id)arg4;
 - (void)invalidate;
 - (void)invalidateSectionOffset;

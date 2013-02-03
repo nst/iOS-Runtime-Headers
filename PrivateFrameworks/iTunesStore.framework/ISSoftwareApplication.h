@@ -8,7 +8,9 @@
     NSNumber *_accountDSID;
     NSString *_accountIdentifier;
     NSString *_bundleIdentifier;
+    NSString *_bundleShortVersionString;
     NSString *_bundleVersion;
+    NSString *_containerPath;
     NSNumber *_itemIdentifier;
     NSNumber *_storeFrontIdentifier;
     NSNumber *_versionIdentifier;
@@ -18,17 +20,23 @@
 @property(retain) NSNumber *accountDSID;
 @property(retain) NSString *accountIdentifier;
 @property(retain) NSString *bundleIdentifier;
+@property(retain) NSString *bundleShortVersionString;
 @property(retain) NSString *bundleVersion;
+@property(retain) NSString *containerPath;
 @property(retain) NSNumber *itemIdentifier;
 @property(retain) NSNumber *storeFrontIdentifier;
 @property(retain) NSNumber *versionIdentifier;
 @property(retain) NSArray *versionOrdering;
 
++ (id)lookupAttributeKeys;
+
 - (void)_loadMetadataFromContainer:(id)arg1;
 - (id)accountDSID;
 - (id)accountIdentifier;
 - (id)bundleIdentifier;
+- (id)bundleShortVersionString;
 - (id)bundleVersion;
+- (id)containerPath;
 - (void)dealloc;
 - (id)description;
 - (id)initWithMobileInstallationDictionary:(id)arg1;
@@ -36,7 +44,9 @@
 - (void)setAccountDSID:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
+- (void)setBundleShortVersionString:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
+- (void)setContainerPath:(id)arg1;
 - (void)setItemIdentifier:(id)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;
 - (void)setVersionIdentifier:(id)arg1;

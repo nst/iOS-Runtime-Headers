@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSDictionary, UIImagePickerController, UIImage, NSData;
+@class UIImagePickerController, UIImage, NSData, NSDictionary;
 
 @interface CKImagePickerMediaPreviewGenerator : CKMediaPreviewGenerator {
     NSDictionary *_editingInfo;
     UIImage *_image;
     NSData *_imageData;
     UIImagePickerController *_imagePickerController;
-    struct CGImage { } *_videoPreviewCGImage;
+    UIImage *_videoPreviewImage;
 }
 
 @property(retain) NSDictionary *editingInfo;

@@ -6,6 +6,8 @@
     void *_private;
 }
 
++ (void)_initializeSafeCategory;
+
 - (NSUInteger)_coverAtScreenPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_notifySelectionDidChange;
 - (void)_prefetch:(NSUInteger)arg1 atIndex:(NSUInteger)arg2;
@@ -49,6 +51,7 @@
 - (void)setImage:(void*)arg1 atIndex:(NSUInteger)arg2 type:(NSUInteger)arg3;
 - (void)setImage:(void*)arg1 atIndex:(NSUInteger)arg2;
 - (void)setInfoLayer:(id)arg1;
+- (void)setPlaceholderImage:(void*)arg1 atPlaceholderIndex:(NSUInteger)arg2 imageSubRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)setPlaceholderImage:(void*)arg1 atPlaceholderIndex:(NSUInteger)arg2;
 - (void)setPlaceholderIndicesForCovers:(NSUInteger*)arg1;
 - (void)transition:(NSUInteger)arg1 withCoverFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;

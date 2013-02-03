@@ -11,7 +11,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithTimeIntervalSinceReferenceDate:(double)arg1;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (NSUInteger)retainCount;
 - (double)timeIntervalSinceReferenceDate;

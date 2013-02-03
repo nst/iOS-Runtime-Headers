@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSMutableDictionary, <UIKeyboardEmojiController>;
+@class NSMutableDictionary, <UIKeyboardEmojiController>, NSMutableArray;
 
 @interface UIKeyboardEmojiRecentsController : NSObject {
     <UIKeyboardEmojiController> *_controller;

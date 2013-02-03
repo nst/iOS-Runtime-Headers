@@ -23,5 +23,6 @@
 - (id)richContentDelegate;
 - (void)setHTML:(id)arg1;
 - (void)setRichContentDelegate:(id)arg1;
+- (id)supportedPasteboardTypesForCurrentSelection;
 
 @end

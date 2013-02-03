@@ -13,14 +13,25 @@
 
 + (id)sharedConnection;
 
+- (BOOL)_appInstalled:(BOOL)arg1 withDisplayIdentifier:(id)arg2 withCategories:(id)arg3;
 - (void)_handleSendFailure:(NSInteger)arg1 inCodeNamed:(const char *)arg2;
+- (void)appWasInstalledOrUpgraded:(id)arg1 withCategories:(id)arg2;
+- (void)appWasSelected:(id)arg1 queryString:(id)arg2;
+- (void)appWasUninstalled:(id)arg1;
 - (void)cancelQuery:(id)arg1;
 - (void)dealloc;
+- (BOOL)endRecordUpdatesForApplication:(id)arg1 andCategory:(id)arg2;
+- (BOOL)indexUpdatedContent:(id)arg1;
 - (id)init;
 - (void)invalidateServerPort;
 - (void)preheat;
 - (NSUInteger)publicPort;
+- (BOOL)requestRecordUpdatesForApplication:(id)arg1 category:(id)arg2 andIDs:(id)arg3;
+- (BOOL)retrieveUpdateList:(id*)arg1;
+- (void)searchResultWasSelected:(unsigned long long)arg1 inDomain:(NSUInteger)arg2 queryString:(id)arg3;
 - (NSUInteger)serverPort;
 - (id)startQuery:(id)arg1;
+- (BOOL)startRecordUpdatesForApplication:(id)arg1 andCategory:(id)arg2;
+- (BOOL)willStartIndexingForDisplayID:(id)arg1 category:(id)arg2;
 
 @end

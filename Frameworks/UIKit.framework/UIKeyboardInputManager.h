@@ -13,7 +13,7 @@
 + (void)releaseSharedInstance;
 + (void)removeAllDynamicDictionaries;
 + (void)removeDynamicDictionaryForInputMode:(id)arg1;
-+ (id)sharedInstanceForInputMode:(id)arg1;
++ (id)sharedInstanceForInputMode:(id)arg1 inHardwareKeyboardMode:(BOOL)arg2;
 
 - (void)acceptInput;
 - (BOOL)acceptInputString:(id)arg1;
@@ -30,6 +30,7 @@
 - (void)clearDynamicDictionary;
 - (void)clearInput;
 - (void)clearKeyAreas;
+- (void)configureInputModeSpecificFeatures:(id)arg1;
 - (void)configureKeyboard:(id)arg1 forAutocorrection:(id)arg2;
 - (void)configureKeyboard:(id)arg1 forCandidates:(id)arg2;
 - (void)decreaseUserFrequency:(id)arg1;
@@ -45,8 +46,9 @@
 - (id)inputString;
 - (BOOL)isSentenceDelimiter:(unsigned short)arg1;
 - (NSInteger)keyCancel:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2 fromPath:(NSInteger)arg3 withIdentity:(NSInteger)arg4 forceShift:(BOOL)arg5;
-- (NSInteger)keyHitTest:(struct CGPoint { float x1; float x2; })arg1 touchStage:(NSInteger)arg2 atTime:(double)arg3 withPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; void *x7; }*)arg4 forceShift:(BOOL)arg5;
+- (NSInteger)keyHitTest:(struct CGPoint { float x1; float x2; })arg1 touchStage:(NSInteger)arg2 atTime:(double)arg3 withTouch:(id)arg4 forceShift:(BOOL)arg5;
 - (BOOL)keySlidIntoSwipe;
+- (void)lastAcceptedCandidateCorrected;
 - (NSUInteger)phraseBoundary;
 - (void)registerCentroid:(struct CGPoint { float x1; float x2; })arg1 forKey:(id)arg2;
 - (void)registerKeyArea:(struct CGPoint { float x1; float x2; })arg1 withRadii:(struct CGPoint { float x1; float x2; })arg2 forKeyCode:(unsigned short)arg3 forLowerKey:(id)arg4 forUpperKey:(id)arg5;
@@ -55,10 +57,13 @@
 - (void)setAutoCorrects:(BOOL)arg1;
 - (void)setAutoShift:(BOOL)arg1;
 - (void)setCalculatesChargedKeyProbabilities:(BOOL)arg1;
+- (void)setInHardwareKeyboardMode:(BOOL)arg1;
+- (void)setInput:(id)arg1 typedString:(id)arg2;
 - (void)setInput:(id)arg1;
 - (void)setInputIndex:(NSUInteger)arg1;
 - (BOOL)setInputMode:(id)arg1;
 - (id)setInputObject:(id)arg1;
+- (void)setKeyboardEventsLagging:(BOOL)arg1;
 - (void)setKeyboardMatchType:(NSInteger)arg1;
 - (void)setPhraseBoundary:(NSUInteger)arg1;
 - (void)setShallowPrediction:(BOOL)arg1;

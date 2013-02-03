@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWebDocumentView, UIWebTextRangeView, UIWebSelectionNode, UIWebSelectionHandle, UIWebSelectionGraph, UIView, UIWebSelectionOutline, NSTimer;
+@class UIWebSelectionNode, UIWebSelectionHandle, UIWebSelectionOutline, UIWebTextRangeView, UIWebSelectionGraph, NSTimer, UIView, UIWebDocumentView;
 
 @interface UIWebSelectionView : UIView {
     struct CGRect { 
@@ -127,5 +127,6 @@
 - (void)updateForChangedLayoutWhileManipulatingTextSelectionHandle;
 - (void)updateFrameAndHandles;
 - (void)updateSelectionCreationWithPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)updateSelectionRects;
 
 @end

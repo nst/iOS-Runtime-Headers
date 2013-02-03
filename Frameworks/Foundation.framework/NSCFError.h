@@ -7,6 +7,7 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (Class)classForCoder;
 - (NSInteger)code;
 - (id)domain;
 - (void)finalize;

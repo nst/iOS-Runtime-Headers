@@ -10,6 +10,7 @@
 + (id)clearColor;
 + (id)colorWithBGR:(unsigned long)arg1;
 + (id)colorWithBGRValue:(long)arg1;
++ (id)colorWithBinaryRed:(NSInteger)arg1 green:(NSInteger)arg2 blue:(NSInteger)arg3 alpha:(NSInteger)arg4;
 + (id)colorWithBinaryRed:(NSInteger)arg1 green:(NSInteger)arg2 blue:(NSInteger)arg3;
 + (id)colorWithCalibratedHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
 + (id)colorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
@@ -26,10 +27,12 @@
 + (id)whiteColor;
 
 - (float)alphaComponent;
+- (id)blendedColorWithFraction:(float)arg1 ofColor:(id)arg2;
 - (float)blueComponent;
 - (struct CGColor { }*)cgColorRef;
 - (id)colorSpaceName;
 - (id)colorUsingColorSpaceName:(id)arg1;
+- (id)colorWithAlphaComponent:(float)arg1;
 - (id)colorWithShadeValue:(double)arg1;
 - (id)colorWithTintValue:(double)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -53,6 +56,5 @@
 - (id)solidColoredPngImage;
 - (unsigned long)toBGR;
 - (struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; })ttColor;
-- (id)ttRgbColor;
 
 @end

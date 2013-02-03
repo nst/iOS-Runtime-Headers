@@ -8,6 +8,8 @@
 
 + (id)defaultProperties;
 
+- (NSUInteger)hash;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isTextBox;
 - (void)setIsTextBox:(BOOL)arg1;
 

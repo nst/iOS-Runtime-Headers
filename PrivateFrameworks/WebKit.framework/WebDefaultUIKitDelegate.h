@@ -8,6 +8,7 @@
 + (id)sharedUIKitDelegate;
 
 - (void)addInputString:(id)arg1;
+- (id)checkSpellingOfString:(id)arg1;
 - (struct CGPoint { float x1; float x2; })contentsPointForWebView:(id)arg1;
 - (void)deleteFromInput;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentVisibleRectForWebView:(id)arg1;
@@ -24,12 +25,14 @@
 - (void)webView:(id)arg1 didReceiveDocTypeForFrame:(id)arg2;
 - (void)webView:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)webView:(id)arg1 didReceiveViewportArguments:(id)arg2 forFrame:(id)arg3;
-- (void)webView:(id)arg1 eventRegionsChanged:(id)arg2;
+- (void)webView:(id)arg1 formStateDidBlurNode:(id)arg2;
+- (void)webView:(id)arg1 formStateDidFocusNode:(id)arg2;
 - (void)webView:(id)arg1 needsScrollNotifications:(id)arg2 forFrame:(id)arg3;
 - (id)webView:(id)arg1 plugInViewWithArguments:(id)arg2 fromPlugInPackage:(id)arg3;
 - (void)webView:(id)arg1 restoreStateFromHistoryItem:(id)arg2 forFrame:(id)arg3 force:(BOOL)arg4;
 - (void)webView:(id)arg1 saveStateToHistoryItem:(id)arg2 forFrame:(id)arg3;
 - (BOOL)webView:(id)arg1 shouldScrollToPoint:(struct CGPoint { float x1; float x2; })arg2 forFrame:(id)arg3;
+- (void)webView:(id)arg1 willAddPlugInView:(id)arg2;
 - (void)webView:(id)arg1 willCloseFrame:(id)arg2;
 - (void)webView:(id)arg1 willShowFullScreenForPlugInView:(id)arg2;
 - (void)webViewDidLayout:(id)arg1;

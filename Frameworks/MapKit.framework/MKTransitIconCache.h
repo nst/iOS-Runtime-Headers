@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableDictionary, NSMutableSet, NSString;
+@class NSString, NSMutableDictionary, NSMutableSet;
 
 @interface MKTransitIconCache : NSObject {
     NSMutableDictionary *_IDToImage;

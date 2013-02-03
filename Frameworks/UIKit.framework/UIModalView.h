@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIToolbar, UILabel, UIWindow, NSMutableArray, UIView, <UIModalViewDelegate>;
+@class UIToolbar, UILabel, UIView, <UIModalViewDelegate>, UIWindow, NSMutableArray;
 
 @interface UIModalView : UIView <UITextFieldDelegate> {
     struct { 
@@ -39,6 +39,10 @@
         unsigned int delegateDidDismiss : 1; 
         unsigned int popupFromPoint : 1; 
         unsigned int extra : 20; 
+        unsigned int dontCallDismissDelegate : 1; 
+        unsigned int useAutomaticKB : 1; 
+        unsigned int shouldHandleFirstKeyUpEvent : 1; 
+        unsigned int cancelWhenDoneAnimating : 1; 
     float _bodyTextHeight;
     UILabel *_bodyTextLabel;
     NSMutableArray *_buttons;
@@ -53,6 +57,7 @@
     UIView *_keyboard;
     } _modalViewFlags;
     UIWindow *_originalWindow;
+    UIView *_sheetView;
     float _startX;
     float _startY;
     UILabel *_subtitleLabel;
@@ -72,6 +77,7 @@
 @property(readonly) NSInteger numberOfButtons;
 @property(getter=isVisible,readonly) BOOL visible;
 
++ (void)_initializeSafeCategory;
 + (id)_popupAlertBackground;
 + (BOOL)atLeastOneAlertVisible;
 + (struct CGSize { float x1; float x2; })minimumSize;
@@ -91,6 +97,7 @@
 - (void)_buttonClicked:(id)arg1;
 - (float)_buttonHeight;
 - (BOOL)_canShowAlerts;
+- (void)_cancelAnimated:(BOOL)arg1;
 - (void)_cleanupAfterPopupAnimation;
 - (void)_createBodyTextLabelIfNeeded;
 - (void)_createSubtitleLabelIfNeeded;
@@ -100,8 +107,12 @@
 - (id)_dimView;
 - (BOOL)_dimsBackground;
 - (void)_growAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
+- (void)_hideAnimated:(BOOL)arg1;
 - (id)_initWithTelephoneNumber:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(NSInteger)arg3 delegate:(id)arg4 context:(id)arg5;
 - (BOOL)_isAnimating;
+- (void)_keyboardWillHide:(id)arg1;
+- (void)_keyboardWillShow:(id)arg1;
 - (void)_layoutIfNeeded;
 - (void)_layoutPopupAlertWithOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
 - (float)_maxHeight;
@@ -115,17 +126,22 @@
 - (void)_presentSheetStartingFromYCoordinate:(double)arg1;
 - (void)_removeAlertWindowOrShowAnOldAlert;
 - (void)_repopup;
+- (void)_repopupNoAnimation;
 - (void)_rotatingAnimationDidStop:(id)arg1;
 - (void)_setAlertSheetStyleFromButtonBar:(id)arg1;
 - (void)_setFirstOtherButtonIndex:(NSInteger)arg1;
 - (void)_setTextFieldsHidden:(BOOL)arg1;
 - (void)_setupInitialFrame;
 - (void)_setupTitleStyle;
+- (BOOL)_shouldOrderInAutomaticKeyboard;
 - (void)_slideSheetOut:(BOOL)arg1;
 - (void)_temporarilyHideAnimated:(BOOL)arg1;
 - (float)_titleHorizontalInset;
 - (float)_titleVerticalBottomInset;
 - (float)_titleVerticalTopInset;
+- (void)_truncateViewHeight:(id)arg1 toFitInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withMinimumHeight:(float)arg3;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (id)addButtonWithTitle:(id)arg1 buttonClass:(Class)arg2;
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (NSInteger)addButtonWithTitle:(id)arg1;
@@ -139,6 +155,7 @@
 - (NSInteger)buttonCount;
 - (id)buttonTitleAtIndex:(NSInteger)arg1;
 - (id)buttons;
+- (BOOL)canBecomeFirstResponder;
 - (NSInteger)cancelButtonIndex;
 - (id)context;
 - (void)dealloc;
@@ -146,7 +163,6 @@
 - (NSInteger)defaultButtonIndex;
 - (id)delegate;
 - (id)destructiveButton;
-- (void)dimmingViewWasTapped:(id)arg1;
 - (BOOL)dimsBackground;
 - (void)dismiss;
 - (void)dismissAnimated:(BOOL)arg1;
@@ -157,6 +173,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(NSInteger)arg3 delegate:(id)arg4 context:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isBodyTextTruncated;
 - (BOOL)isVisible;
 - (id)keyboard;
@@ -212,5 +229,6 @@
 - (id)title;
 - (NSInteger)titleMaxLineCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
+- (void)userDidCancelPopoverView:(id)arg1;
 
 @end

@@ -14,12 +14,14 @@
 + (id)sharedInstance;
 
 - (void)_dialogNotification:(id)arg1;
+- (void)_finishDialog:(id)arg1 withButtonIndex:(NSInteger)arg2;
 - (BOOL)_haveEquivalentDialog:(id)arg1;
 - (void)dealloc;
 - (void)dialog:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
+- (void)dialogDidCancel:(id)arg1;
 - (id)init;
 - (NSInteger)numberOfPendingDialogs;
-- (void)presentDialog:(id)arg1;
-- (void)presentDialogForError:(id)arg1;
+- (BOOL)presentDialog:(id)arg1;
+- (BOOL)presentDialogForError:(id)arg1;
 
 @end

@@ -9,7 +9,9 @@
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (NSUInteger)hash;
 - (id)initWithX:(float)arg1 y:(float)arg2 z:(float)arg3;
+- (BOOL)isEqual:(id)arg1;
 - (float)x;
 - (float)y;
 - (float)z;

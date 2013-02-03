@@ -2,22 +2,38 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface CADisplay : NSObject {
+     /* Encoded args for previous method: @12@0:4^{Display=^^?@^{__CFString}^{__CFString}{ModeSet=I[1I]}i{Bounds=iiii}BI}8 */
     void *_impl;
 }
 
+@property(readonly) NSArray *availableModes;
+@property(retain) CADisplayMode *currentMode;
 @property(readonly) NSString *deviceName;
 @property(readonly) NSString *name;
 @property(readonly) CGRect bounds;
+@property(getter=isSupported,readonly) BOOL supported;
+@property(readonly) NSInteger tag;
 
 + (id)TVOutDisplay;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)displays;
 + (id)mainDisplay;
 
-- (id)_initWithDisplay:(struct Display { int (**x1)(); id x2; struct __CFString {} *x3; struct __CFString {} *x4; }*)arg1;
+- (id)_initWithDisplay:(struct Display { int (**x1)(); id x2; struct __CFString {} *x3; struct __CFString {} *x4; struct ModeSet { NSUInteger x_5_1_1; NSUInteger x_5_1_2[1]; } x5; NSInteger x6; struct Bounds { NSInteger x_7_1_1; NSInteger x_7_1_2; NSInteger x_7_1_3; NSInteger x_7_1_4; } x7; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x8; NSUInteger x9; }*)arg1;
+- (void)_update;
+- (id)availableModes;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (id)currentMode;
 - (id)description;
 - (id)deviceName;
+- (BOOL)isSupported;
 - (id)name;
+- (void)setCurrentMode:(id)arg1;
+- (NSInteger)tag;
 
 @end

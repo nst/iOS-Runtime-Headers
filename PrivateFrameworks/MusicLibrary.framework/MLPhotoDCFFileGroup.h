@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSDate, MLPhotoDCFDirectory, NSString, NSMutableSet;
+@class NSMutableSet, NSString, NSDate, MLPhotoDCFDirectory;
 
-@interface MLPhotoDCFFileGroup : MLPhotoDCFObject <PLImageWriterDelegate> {
+@interface MLPhotoDCFFileGroup : MLPhotoDCFObject {
     unsigned int _hashComputed : 1;
     unsigned int _addedExtensions : 1;
     unsigned int _writeIsPending : 1;
@@ -19,33 +19,39 @@
     NSString *_videoFileExtension;
 }
 
-- (void)_invokeCompletionSelectorForJob:(id)arg1 error:(id)arg2;
++ (id)allMetadataFileExtensions;
++ (struct CGImage { }*)createThumbnailOfImage:(struct CGImage { }*)arg1 format:(NSInteger)arg2 fullPath:(id)arg3 orientation:(NSInteger)arg4 outThumbnailData:(id*)arg5;
+
 - (void)addExtension:(id)arg1;
 - (void)addExtensionsFromMetadataDirectory;
 - (NSInteger)compare:(id)arg1;
 - (void)createMetadataDirectoryIfNecessary;
+- (void)createWildcatThumbnailsFromImage:(struct CGImage { }*)arg1 orientation:(NSInteger)arg2 options:(id)arg3 delegate:(id)arg4;
 - (id)date;
 - (void)dealloc;
 - (id)delegate;
 - (void)deleteFiles;
+- (void)deleteObsoleteFiles;
 - (id)description;
 - (id)directory;
 - (id)extensions;
 - (void)forceAddExtensionsFromMetadataDirectory;
+- (BOOL)hasObsoleteFiles;
 - (BOOL)hasPrebakedLandscapeScrubberThumbnails;
 - (BOOL)hasPrebakedPortraitScrubberThumbnails;
 - (BOOL)hasPrebakedThumbnail;
+- (BOOL)hasPrebakedWildcatThumbnails;
 - (BOOL)hasThumbnail;
 - (BOOL)hasVideoFile;
 - (NSUInteger)hash;
 - (id)imageSourceTypeHint;
-- (void)imageWriterCompletedJob:(id)arg1 withError:(id)arg2;
-- (void)imageWriterCompletedVideoJob:(id)arg1 withError:(id)arg2;
 - (id)initWithName:(id)arg1 number:(NSInteger)arg2 directory:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isValid;
+- (BOOL)isValidImage;
 - (BOOL)isWritePending;
 - (id)lowResolutionFilename;
+- (id)pathForContainingDirectory;
 - (id)pathForFullSizeImage;
 - (id)pathForGroupWithoutExtension;
 - (id)pathForLowResolutionFile;
@@ -54,6 +60,7 @@
 - (id)pathForPrebakedLandscapeScrubberThumbnails;
 - (id)pathForPrebakedPortraitScrubberThumbnails;
 - (id)pathForPrebakedThumbnail;
+- (id)pathForPrebakedWildcatThumbnailsFile;
 - (id)pathForThumbnailFile;
 - (id)pathForTrimmedVideoFile;
 - (id)pathForVideoFile;
@@ -61,12 +68,9 @@
 - (id)prebakedLandscapeScrubberThumbnailsFilename;
 - (id)prebakedPortraitScrubberThumbnailsFilename;
 - (id)prebakedThumbnailFilename;
-- (void)processVideoAtPath:(id)arg1 createCopy:(BOOL)arg2 completionTarget:(id)arg3 completionSelector:(SEL)arg4 contextInfo:(void*)arg5;
-- (void)processVideoWithMetadata:(id)arg1 target:(id)arg2 completionSelector:(SEL)arg3 progressStack:(struct { id x1; float x2; struct __CFArray {} *x3; float x4; }*)arg4;
-- (void)regenerateVideoThumbnailsWithCompletionTarget:(id)arg1 creationDate:(id)arg2 completionSelector:(SEL)arg3 progressStack:(struct { id x1; float x2; struct __CFArray {} *x3; float x4; }*)arg4;
+- (id)prebakedWildcatThumbnailsFilename;
 - (void)setDate:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setImage:(id)arg1 previewImage:(id)arg2 type:(struct __CFString { }*)arg3 extension:(id)arg4 exifProperties:(id)arg5 date:(id)arg6 imageData:(struct __CFData { }*)arg7 completionTarget:(id)arg8 completionSelector:(SEL)arg9 contextInfo:(void*)arg10;
 - (void)setWriteIsPending:(BOOL)arg1;
 - (id)thumbnailFilename;
 - (id)videoPreviewFilename;

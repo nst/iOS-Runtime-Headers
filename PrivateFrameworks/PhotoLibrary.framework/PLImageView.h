@@ -2,111 +2,62 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MLPhoto;
+@class UIView, PLVideoView, NSString, UILabel;
 
-@interface PLImageView : UITiledView <PLItemView> {
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    BOOL _allowZoomToFill;
-    struct CGImage { } *_contentsImageRef;
-    } _contentsTransform;
-    id _delegate;
-    } _endContentSize;
-    float _endScale;
-    } _fullSize;
-    struct CGImage { } *_fullSizeImageRef;
-    NSInteger _imageOrientation;
-    } _imageTransform;
-    float _imageViewZoomScale;
-    double _lastTouchEventTimestamp;
-    MLPhoto *_modelImage;
-    id _orientationDelegate;
-    NSInteger _orientationWhenLastDisplayed;
-    BOOL _setOriginDuringAnimation;
-    } _startContentSize;
-    float _startScale;
-    struct CGImage { } *_thumbnailImageRef;
-    BOOL _useLessThanMinZoomForZoomedOutTest;
-    float _zoomProgress;
-    BOOL _zoomToFillInsteadOfToFit;
+@interface PLImageView : UIImageView {
+    unsigned int _shadowEnabled : 1;
+    unsigned int _suppressShadowDrawing : 1;
+    unsigned int _borderIsVisible : 1;
+    float _aspectRatio;
+    UIView *_borderView;
+    BOOL _edgeAntialiasingEnabled;
+    double _lastBorderAlphaTime;
+    double _lastShadowAlphaTime;
+    NSString *_name;
+    UILabel *_textBadge;
+    float _transitionProgress;
+    PLVideoView *_videoView;
 }
 
-+ (Class)tileClass;
+@property(copy) NSString *name;
+@property(retain) PLVideoView *videoView;
+@property float borderAlpha;
+@property(getter=isBorderVisible) BOOL borderVisible;
+@property(getter=isDimmed) BOOL dimmed;
+@property(getter=isShadowEnabled) BOOL shadowEnabled;
+@property float transitionProgress;
 
-- (BOOL)_alwaysHandleScrollerMouseEvent;
-- (float)_calculateZoomScale:(BOOL)arg1;
-- (BOOL)_canDrawContent;
-- (struct CGImage { }*)_createLayerContentsForTileFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contentsTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2 contentsGravity:(id*)arg3;
-- (void)_finishedLoadingImageRef:(id)arg1;
-- (void)_gestureChanged:(NSInteger)arg1 event:(struct __GSEvent { }*)arg2;
-- (BOOL)_getContentsTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg1 contentsGravity:(id*)arg2 forSize:(struct CGSize { float x1; float x2; })arg3;
-- (float)_minimumZoomScaleDelta;
-- (void)_prepareForAnimatedZoomToScale:(float)arg1 animated:(BOOL)arg2;
-- (struct CGSize { float x1; float x2; })_scrollerContentSize;
-- (void)_setImageViewZoomScale:(float)arg1;
-- (void)_setOriginForContentSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)_setZoomScale:(float)arg1 duration:(double)arg2;
-- (void)_updateLayerContents;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleRect;
-- (float)_zoomScale;
-- (void)_zoomToScrollPoint:(struct CGPoint { float x1; float x2; })arg1 scale:(float)arg2 duration:(float)arg3 event:(struct __GSEvent { }*)arg4;
-- (void)animator:(id)arg1 stopAnimation:(id)arg2;
-- (void)centerInScrollerIfNeeded;
++ (void)initialize;
++ (BOOL)shouldDrawShadows;
++ (id)textBadgeForString:(id)arg1 photoSize:(struct CGSize { float x1; float x2; })arg2;
+
+- (void)_updateShadowPath;
+- (float)borderAlpha;
 - (void)dealloc;
-- (float)defaultZoomScale;
-- (NSInteger)defaultZoomStyle;
-- (id)description;
-- (void)ensureFullSizeImageLoaded;
-- (BOOL)hasFullSizeImage;
-- (NSInteger)imageOrientation;
-- (struct CGImage { }*)imageRef;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isZoomedOut;
-- (float)minRotatedScale;
-- (float)minZoomScale;
-- (id)modelImage;
-- (void)mouseDown:(struct __GSEvent { }*)arg1;
-- (void)mouseDragged:(struct __GSEvent { }*)arg1;
-- (void)mouseUp:(struct __GSEvent { }*)arg1;
-- (void)movedFromSuperview:(id)arg1;
-- (NSInteger)orientationWhenLastDisplayed;
-- (void)setAllowsZoomToFill:(BOOL)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setFullSizeImageRef:(struct CGImage { }*)arg1 orientation:(NSInteger)arg2;
-- (void)setModelImage:(id)arg1;
-- (void)setOrientationDelegate:(id)arg1;
-- (void)setOrientationWhenLastDisplayed:(NSInteger)arg1;
-- (void)setThumbnail:(struct CGImage { }*)arg1;
-- (void)setTilingEnabled:(BOOL)arg1;
-- (struct CGPoint { float x1; float x2; })setZoomScaleWithoutZoomGesture:(float)arg1;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)updateZoomScales;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
-- (float)zoomToFillScale;
-- (void)zoomToScale:(float)arg1;
-- (void)zoomToWindowPoint:(struct CGPoint { float x1; float x2; })arg1 scale:(float)arg2 duration:(float)arg3 constrainScrollPoint:(BOOL)arg4 event:(struct __GSEvent { }*)arg5;
+- (BOOL)isBorderVisible;
+- (BOOL)isDimmed;
+- (BOOL)isShadowEnabled;
+- (void)layoutSubviews;
+- (id)name;
+- (void)parentDidLayout;
+- (void)renderSnapshotInContext:(struct CGContext { }*)arg1;
+- (void)setBorderAlpha:(float)arg1 forced:(BOOL)arg2;
+- (void)setBorderAlpha:(float)arg1;
+- (void)setBorderVisible:(BOOL)arg1;
+- (void)setBorderWidthScale:(float)arg1 heightScale:(float)arg2;
+- (void)setDimmed:(BOOL)arg1;
+- (void)setEdgeAntialiasingEnabled:(BOOL)arg1;
+- (void)setImage:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setShadowEnabled:(BOOL)arg1;
+- (void)setTextBadgeString:(id)arg1;
+- (void)setTransitionProgress:(float)arg1;
+- (void)setVideoView:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 allowRounding:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)textBadgeString;
+- (float)transitionProgress;
+- (id)videoView;
 
 @end

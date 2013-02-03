@@ -9,8 +9,10 @@
     UIButton *_rightButton;
 }
 
++ (void)_initializeSafeCategory;
+
 - (void)_buttonAction:(id)arg1;
-- (id)_createButton;
+- (id)_newButton;
 - (void)_reloadButtons;
 - (void)dealloc;
 - (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2;

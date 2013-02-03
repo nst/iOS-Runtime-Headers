@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UIBarButtonItem;
+@class UIBarButtonItem, UIImageView;
 
 @interface UIBarButtonItemProxy : NSObject {
     UIBarButtonItem *_item;

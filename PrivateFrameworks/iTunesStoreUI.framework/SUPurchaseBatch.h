@@ -16,14 +16,13 @@
 @property(retain) NSArray *errors;
 @property(readonly) NSArray *items;
 @property(retain) NSArray *validPurchases;
-@property BOOL applicationShouldSuspendWhenFinished;
+@property BOOL storeShouldExitWhenFinished;
 
 - (int (*)())errorEqualCallback;
 - (id)_copyModifiedErrorsFromDictionary:(struct __CFDictionary { }*)arg1;
 - (id)_copyUniqueErrorsFromErrors:(id)arg1;
 - (id)_copyValidPurchasesForItems:(id)arg1;
 - (void)_validateItems;
-- (BOOL)applicationShouldSuspendWhenFinished;
 - (id)continuations;
 - (id)copyContinuationsForPurchases:(id)arg1;
 - (id)copyFilteredItemsFromItems:(id)arg1;
@@ -33,11 +32,12 @@
 - (id)initWithItems:(id)arg1;
 - (id)items;
 - (id)mergedErrorForError:(id)arg1 withCount:(NSInteger)arg2;
-- (void)setApplicationShouldSuspendWhenFinished:(BOOL)arg1;
 - (void)setContinuations:(id)arg1;
 - (void)setErrors:(id)arg1;
 - (void)setPurchasesAndContinuationsFromPurchases:(id)arg1;
+- (void)setStoreShouldExitWhenFinished:(BOOL)arg1;
 - (void)setValidPurchases:(id)arg1;
+- (BOOL)storeShouldExitWhenFinished;
 - (id)validPurchases;
 
 @end

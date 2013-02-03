@@ -2,27 +2,53 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray;
+@class NSArray, ABStyleProvider, ABPersonIconImageView;
 
 @interface ABMemberCell : UITableViewCell {
     NSInteger _highlightIndex;
     BOOL _isGroup;
     void *_member;
     NSArray *_namePieces;
+    ABPersonIconImageView *_personImageView;
+    ABStyleProvider *_styleProvider;
 }
+
+@property(retain) <ABStyleProvider> *styleProvider;
+@property BOOL shouldPickBestImage;
+@property BOOL shouldShowImage;
+
++ (void)_initializeSafeCategory;
 
 - (void)_drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
 - (id)_scriptingInfo;
+- (id)accessibilityLabel;
+- (id)boldFont;
 - (void)dealloc;
 - (id)description;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)groupName;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2;
+- (BOOL)isAccessibilityElement;
+- (id)italicFont;
+- (void)layoutSubviews;
 - (void*)member;
+- (float)memberCellFieldSpacing;
+- (id)regularFont;
+- (void)reloadImageData;
+- (id)selectedNameColor;
+- (void)setBackgroundLoadingQueue:(id)arg1 addressBook:(void*)arg2 cache:(id)arg3;
 - (void)setGroup:(BOOL)arg1;
 - (void)setHighlightIndex:(long)arg1;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setMember:(void*)arg1;
 - (void)setNamePieces:(id)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setShouldPickBestImage:(BOOL)arg1;
+- (void)setShouldShowImage:(BOOL)arg1;
+- (void)setStyleProvider:(id)arg1;
+- (BOOL)shouldPickBestImage;
+- (BOOL)shouldShowImage;
+- (id)styleProvider;
 
 @end

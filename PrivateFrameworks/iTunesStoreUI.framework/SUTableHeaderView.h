@@ -2,47 +2,74 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, UIColor;
+@class UIFont, UIColor, NSString;
 
 @interface SUTableHeaderView : UIView {
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    struct CGSize { 
+        float width; 
+        float height; 
     struct CGSize { 
         float width; 
         float height; 
     UIColor *_bottomBorderColor;
+    } _edgeInsets;
     NSInteger _index;
     UIColor *_shadowColor;
     NSInteger _style;
     NSString *_subtitle;
+    UIFont *_subtitleFont;
     } _subtitleSize;
     UIColor *_textColor;
     NSString *_title;
+    UIFont *_titleFont;
+    } _titleSize;
 }
 
 @property(retain) UIColor *bottomBorderColor;
 @property(retain) UIColor *shadowColor;
 @property(retain) NSString *subtitle;
+@property(retain) UIFont *subtitleFont;
 @property(retain) UIColor *textColor;
 @property(retain) NSString *title;
+@property(retain) UIFont *titleFont;
+@property UIEdgeInsets edgeInsets;
 @property NSInteger index;
 @property NSInteger style;
 
++ (void)_initializeSafeCategory;
+
 - (struct CGSize { float x1; float x2; })_subtitleSize;
+- (struct CGSize { float x1; float x2; })_titleSize;
+- (id)accessibilityLabel;
 - (id)bottomBorderColor;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (NSInteger)index;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (void)setBottomBorderColor:(id)arg1;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setIndex:(NSInteger)arg1;
 - (void)setShadowColor:(id)arg1;
 - (void)setStyle:(NSInteger)arg1;
 - (void)setSubtitle:(id)arg1;
+- (void)setSubtitleFont:(id)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setTitleFont:(id)arg1;
 - (id)shadowColor;
 - (void)sizeToFit;
 - (NSInteger)style;
 - (id)subtitle;
+- (id)subtitleFont;
 - (id)textColor;
 - (id)title;
+- (id)titleFont;
 
 @end

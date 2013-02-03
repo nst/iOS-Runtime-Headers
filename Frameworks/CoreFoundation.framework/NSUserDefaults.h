@@ -7,9 +7,11 @@
     void *_reserved[4];
 }
 
+@property BOOL _mapkit_enabledMapTilePathDrawing;
 @property(getter=_mapkit_isHeadingRotationSticky,readonly) BOOL _mapkit_headingRotationSticky;
 @property(readonly) NSUInteger _mapkit_throttleFlags;
 @property(readonly) double _mapkit_throttleTimeInterval;
+@property(getter=isCompassEnabled) BOOL compassEnabled;
 
 + (void)_ensureAndLockPreferredLanguageLock;
 + (void)_web_addDefaultsChangeObserver;
@@ -19,12 +21,20 @@
 + (void)_webkit_defaultsDidChange;
 + (void)_webkit_ensureAndLockPreferredLanguageLock;
 + (id)_webkit_preferredLanguageCode;
++ (id)agentObjectForKey:(id)arg1;
++ (id)appObjectForKey:(id)arg1;
++ (id)objectForKey:(id)arg1 inDomain:(id)arg2;
 + (void)resetStandardUserDefaults;
++ (void)setAgentObject:(id)arg1 forKey:(id)arg2;
++ (void)setAppObject:(id)arg1 forKey:(id)arg2;
++ (void)setObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
 + (void)setStandardUserDefaults:(id)arg1;
 + (id)standardUserDefaults;
 
+- (id)URLForKey:(id)arg1;
 - (void)_adjustTimer:(id)arg1;
 - (void)_adjustTimerForAutosync;
+- (BOOL)_mapkit_enabledMapTilePathDrawing;
 - (BOOL)_mapkit_isHeadingRotationSticky;
 - (void)_mapkit_setTrackingAnimationDuration:(double)arg1;
 - (NSUInteger)_mapkit_throttleFlags;
@@ -42,6 +52,7 @@
 - (id)init;
 - (id)initWithUser:(id)arg1;
 - (NSInteger)integerForKey:(id)arg1;
+- (BOOL)isCompassEnabled;
 - (long long)longForKey:(id)arg1;
 - (id)objectForKey:(id)arg1 inDomain:(id)arg2;
 - (id)objectForKey:(id)arg1;
@@ -57,6 +68,8 @@
 - (void)removeVolatileDomainForName:(id)arg1;
 - (id)searchList;
 - (void)setBool:(BOOL)arg1 forKey:(id)arg2;
+- (void)setCompassEnabled:(BOOL)arg1 changed:(BOOL*)arg2;
+- (void)setCompassEnabled:(BOOL)arg1;
 - (void)setDouble:(double)arg1 forKey:(id)arg2;
 - (void)setFloat:(float)arg1 forKey:(id)arg2;
 - (void)setInteger:(NSInteger)arg1 forKey:(id)arg2;
@@ -65,8 +78,10 @@
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setPersistentDomain:(id)arg1 forName:(id)arg2;
 - (void)setSearchList:(id)arg1;
+- (void)setURL:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setVolatileDomain:(id)arg1 forName:(id)arg2;
+- (void)set_mapkit_enabledMapTilePathDrawing:(BOOL)arg1;
 - (id)stringArrayForKey:(id)arg1;
 - (id)stringForKey:(id)arg1;
 - (BOOL)synchronize;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, UITableViewCellReorderControl, UITableViewCell, UITableViewCellDeleteConfirmationControl, UITableViewCellEditControl;
+@class UITableViewCellDeleteConfirmationControl, UITableViewCellReorderControl, UITableViewCell, UIView, UITableViewCellEditControl;
 
 @interface UITableViewCellEditingData : NSObject {
     UITableViewCell *_cell;

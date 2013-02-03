@@ -5,6 +5,21 @@
 @interface DOMHTMLDocument : DOMDocument {
 }
 
+@property(retain,readonly) DOMElement *activeElement;
+@property(copy) NSString *alinkColor;
+@property(copy) NSString *bgColor;
+@property(copy,readonly) NSString *compatMode;
+@property(copy) NSString *designMode;
+@property(copy) NSString *dir;
+@property(retain,readonly) DOMHTMLCollection *embeds;
+@property(copy) NSString *fgColor;
+@property(copy) NSString *linkColor;
+@property(retain,readonly) DOMHTMLCollection *plugins;
+@property(retain,readonly) DOMHTMLCollection *scripts;
+@property(copy) NSString *vlinkColor;
+@property(readonly) NSInteger height;
+@property(readonly) NSInteger width;
+
 - (id)_createDocumentFragmentWithMarkupString:(id)arg1 baseURLString:(id)arg2;
 - (id)_createDocumentFragmentWithText:(id)arg1;
 - (id)activeElement;

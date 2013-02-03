@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableDictionary, RunLoopContinuation, NSString, NSMutableSet;
+@class NSMutableSet, NSString, RunLoopContinuation, NSMutableDictionary;
 
 @interface MLPurchasedContentFolder : NSObject {
     NSString *_basePath;
@@ -31,8 +31,8 @@
 - (void)clearWeakReference:(id)arg1;
 - (NSUInteger)countOfPurchasedContent;
 - (void)dealloc;
+- (id)description;
 - (id)initWithBasePath:(id)arg1 delegate:(id)arg2;
-- (id)mobileArtworkDBPath;
 - (id)purchasedContentXMLFilenames;
 - (BOOL)reloadPurchasedContentData;
 - (void)removeReferencesToAssetFilename:(id)arg1;

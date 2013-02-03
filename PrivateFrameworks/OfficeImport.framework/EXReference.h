@@ -2,9 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface EXReference : NSObject {
+     /* Encoded args for previous method: B16@0:4@8^{EDAreaReference=iiii}12 */
 }
 
++ (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)edAreaReferenceFromXmlReference:(id)arg1 areaReference:(struct EDAreaReference { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; }*)arg2;
 + (id)edDiscontinousReferencesFromXmlRanges:(id)arg1;
 + (id)edReferenceFromXmlReference:(id)arg1;
 

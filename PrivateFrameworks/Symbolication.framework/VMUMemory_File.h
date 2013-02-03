@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class VMUArchitecture, NSDate, NSString, NSMutableDictionary;
+@class VMUArchitecture, NSString, NSDate, NSMutableDictionary;
 
 @interface VMUMemory_File : VMUMemory_Base <VMUMemory> {
     struct _VMURange { 

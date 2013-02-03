@@ -2,23 +2,41 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView, MLPhotoAlbum, UITextLabel;
+@class UIImageView, UIImage, NSString, UITextLabel, MLAlbum;
 
 @interface PLEmptyAlbumView : UIView {
-    MLPhotoAlbum *_album;
-    UIImageView *_icon;
-    UITextLabel *_message;
-    UITextLabel *_title;
+    MLAlbum *_album;
+    NSInteger _currentOrientation;
+    NSInteger _filter;
+    UIImage *_image;
+    UIImageView *_imageView;
+    BOOL _isCameraAlbum;
+    BOOL _isWildcat;
+    UIImage *_landscapeImage;
+    NSString *_message;
+    UITextLabel *_messageLabel;
+    NSString *_title;
+    UITextLabel *_titleLabel;
 }
 
-- (id)_createLabelWithText:(id)arg1 font:(id)arg2 bottom:(float)arg3;
-- (id)_createTextViewWithText:(id)arg1 bottom:(float)arg2;
-- (id)_emptyRollImageForAlbum:(id)arg1;
+@property NSInteger filter;
+
+- (id)_createLabelWithText:(id)arg1;
+- (id)_createTextViewWithText:(id)arg1;
+- (id)_emptyRollImageForAlbum:(id)arg1 interfaceOrientation:(NSInteger)arg2;
 - (id)_messageForAlbum:(id)arg1;
 - (id)_titleForAlbum:(id)arg1;
 - (void)dealloc;
+- (NSInteger)filter;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isWildcat:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setAlbum:(id)arg1;
+- (void)setFilter:(NSInteger)arg1;
+- (void)setImage:(id)arg1;
+- (void)setIsCameraAlbum:(BOOL)arg1;
+- (void)setMessage:(id)arg1;
+- (void)setPortraitImage:(id)arg1 landscapeImage:(id)arg2;
+- (void)setTitle:(id)arg1;
 
 @end

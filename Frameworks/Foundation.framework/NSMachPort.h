@@ -29,7 +29,7 @@
 - (BOOL)isMemberOfClass:(Class)arg1;
 - (BOOL)isValid;
 - (NSUInteger)machPort;
-- (void)release;
+- (oneway void)release;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)retain;
 - (NSUInteger)retainCount;

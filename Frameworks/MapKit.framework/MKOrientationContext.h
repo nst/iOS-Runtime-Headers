@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableArray, NSArray, UIView;
+@class UIView, NSMutableArray, NSArray;
 
 @interface MKOrientationContext : NSObject {
     struct CGRect { struct CGPoint { 

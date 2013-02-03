@@ -6,6 +6,8 @@
    See Warning(s) below.
  */
 
+@class WebThreadCaller, CALayer;
+
 @interface WAKWindow : WAKResponder {
     struct WKWindow { struct _WKObject { 
             NSUInteger referenceCount; 
@@ -19,27 +21,90 @@
                 float width; 
                 float height; 
             } size; 
-        } x12; struct WKView {} *x13; struct WKView {} *x14; struct TiledSurface {} *x15; unsigned int x16 : 1; unsigned int x17 : 1; } *window;
+        } x12; struct WKView {} *x13; struct WKView {} *x14; struct WKView {} *x15; struct CGSize { 
+            float width; 
+            float height; 
+        } x16; struct CGSize { 
+            float width; 
+            float height; 
+    struct TileCache { struct RetainPtr<CALayer> { 
+            CALayer *m_ptr; 
+        } x1; id x2; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; NSInteger x8; in double x9; out void*x10; void*x11; struct RetainPtr<WebThreadCaller> { 
+            WebThreadCaller *m_ptr; 
+        } x12; NSInteger x13; NSInteger x14; id x15; void*x16; inout unsigned short x17; unsigned short x18; void*x19; const NSInteger x20; in void*x21; void*x22; struct IntPoint { 
+            NSInteger m_x; 
+            NSInteger m_y; 
+        } x23; struct IntSize { 
+            NSInteger m_width; 
+            NSInteger m_height; 
+        } x24; void*x25; void*x26; struct HashMap<WebCore::TileCache::TileIndex,WTF::RefPtr<WebCore::TileCache::Tile>,WebCore::TileCache::TileIndexHash,WebCore::TileCache::TileIndexHashTraits,WTF::HashTraits<WTF::RefPtr<WebCore::TileCache::Tile> > > { 
+            struct HashTable<WebCore::TileCache::TileIndex,std::pair<WebCore::TileCache::TileIndex, WTF::RefPtr<WebCore::TileCache::Tile> >,WTF::PairFirstExtractor<std::pair<WebCore::TileCache::TileIndex, WTF::RefPtr<WebCore::TileCache::Tile> > >,WebCore::TileCache::TileIndexHash,WTF::PairHashTraits<WebCore::TileCache::TileIndexHashTraits, WTF::HashTraits<WTF::RefPtr<WebCore::TileCache::Tile> > >,WebCore::TileCache::TileIndexHashTraits> { 
+                struct pair<WebCore::TileCache::TileIndex,WTF::RefPtr<WebCore::TileCache::Tile> > {} *m_table; 
+                NSInteger m_tableSize; 
+                NSInteger m_tableSizeMask; 
+                NSInteger m_keyCount; 
+                NSInteger m_deletedCount; 
+            } m_impl; 
+        } x27; struct Timer<WebCore::TileCache> { 
+            int (**_vptr$TimerBase)(); 
+            double m_nextFireTime; 
+            double m_repeatInterval; 
+            NSInteger m_heapIndex; 
+            NSUInteger m_heapInsertionOrder; 
+            struct TileCache {} *m_object; 
+            struct { 
+                void**__pfn; 
+            } m_function; 
+        } x28; struct Vector<WebCore::IntRect,0ul> { 
+            NSUInteger m_size; 
+            struct VectorBuffer<WebCore::IntRect,0ul> { 
+                struct IntRect {} *m_buffer; 
+                NSUInteger m_capacity; 
+            } m_buffer; 
+        } x29; struct Mutex { 
+            struct _opaque_pthread_mutex_t { 
+                long __sig; 
+                BOOL __opaque[40]; 
+            } m_mutex; 
+        } x30; struct Mutex { 
+            struct _opaque_pthread_mutex_t { 
+                long __sig; 
+                BOOL __opaque[40]; 
+            } m_mutex; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _cachedVisibleRect;
+    CALayer *_hostLayer;
+        } x31; } *_tileCache;
+        } x17; float x18; unsigned int x19 : 1; } *_wkWindow;
 }
 
-+ (id)_wrapperForWindowRef:(struct WKWindow { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; id x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct WKView {} *x4; struct WKView {} *x5; struct TiledSurface {} *x6; unsigned int x7 : 1; unsigned int x8 : 1; }*)arg1;
++ (id)_wrapperForWindowRef:(struct WKWindow { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; id x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct WKView {} *x4; struct WKView {} *x5; struct WKView {} *x6; struct CGSize { float x_7_1_1; float x_7_1_2; } x7; struct CGSize { float x_8_1_1; float x_8_1_2; } x8; float x9; unsigned int x10 : 1; }*)arg1;
 + (BOOL)hasLandscapeOrientation;
 + (void)setOrientationProvider:(id)arg1;
 
-- (BOOL)_needsToResetDragMargins;
-- (void)_setNeedsToResetDragMargins:(BOOL)arg1;
+- (id)_newFirstResponderAfterResigning;
 - (oneway void)_webcore_releaseOnWebThread;
-- (struct WKWindow { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; id x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct WKView {} *x4; struct WKView {} *x5; struct TiledSurface {} *x6; unsigned int x7 : 1; unsigned int x8 : 1; }*)_windowRef;
-- (id)attachedSheet;
+- (struct WKWindow { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; id x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct WKView {} *x4; struct WKView {} *x5; struct WKView {} *x6; struct CGSize { float x_7_1_1; float x_7_1_2; } x7; struct CGSize { float x_8_1_1; float x_8_1_2; } x8; float x9; unsigned int x10 : 1; }*)_windowRef;
+- (struct CGSize { float x1; float x2; })availableScreenSize;
 - (void)close;
 - (id)contentView;
 - (struct CGPoint { float x1; float x2; })convertBaseToScreen:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertScreenToBase:(struct CGPoint { float x1; float x2; })arg1;
-- (struct __GSEvent { }*)currentEvent;
 - (void)dealloc;
-- (void)endEditingFor:(id)arg1;
+- (void)didRotate;
 - (id)firstResponder;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (BOOL)hasPendingDraw;
+- (id)hostLayer;
+- (void)hostLayerSizeChanged;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithLayer:(id)arg1;
 - (BOOL)isKeyWindow;
@@ -47,24 +112,32 @@
 - (void)layoutTiles;
 - (void)layoutTilesNow;
 - (BOOL)makeFirstResponder:(id)arg1;
+- (void)makeKeyWindow;
 - (oneway void)release;
 - (void)removeAllNonVisibleTiles;
 - (void)removeAllTiles;
-- (void)sendGSEvent:(id)arg1 contentChange:(NSInteger*)arg2;
-- (void)sendGSEvent:(id)arg1;
+- (float)screenScale;
+- (struct CGSize { float x1; float x2; })screenSize;
+- (void)sendEvent:(id)arg1 contentChange:(NSInteger*)arg2;
+- (void)sendEvent:(id)arg1;
+- (void)setAvailableScreenSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setContentView:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 display:(BOOL)arg2;
 - (void)setNeedsDisplay;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setScreenScale:(float)arg1;
+- (void)setScreenSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTileMinificationFilter:(id)arg1;
 - (void)setTilesOpaque:(BOOL)arg1;
+- (void)setTilingDirection:(NSInteger)arg1;
 - (void)setTilingMode:(NSInteger)arg1;
 - (void)setUseOrientationDependentFontAntialiasing:(BOOL)arg1;
 - (id)tileMinificationFilter;
 - (BOOL)tilesOpaque;
+- (NSInteger)tilingDirection;
 - (NSInteger)tilingMode;
 - (BOOL)useOrientationDependentFontAntialiasing;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
-- (NSInteger)windowNumber;
+- (void)willRotate;
 
 @end

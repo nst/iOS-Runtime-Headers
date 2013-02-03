@@ -9,8 +9,11 @@
     NSString *_title;
 }
 
++ (void)_initializeSafeCategory;
+
 - (id)_scriptingInfo;
 - (void)_setSelected:(BOOL)arg1;
+- (id)accessibilityLabel;
 - (void)dealloc;
 - (id)initWithTitle:(id)arg1 selectedTitle:(id)arg2 withFont:(id)arg3 withBarStyle:(NSInteger)arg4 withStyle:(NSInteger)arg5 withTitleWidth:(float)arg6 possibleTitles:(id)arg7 withTintColor:(id)arg8;
 

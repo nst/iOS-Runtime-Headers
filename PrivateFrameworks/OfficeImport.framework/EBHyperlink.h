@@ -8,11 +8,8 @@
 
 @interface EBHyperlink : NSObject {
      /* Encoded args for previous method: @16@0:4^{XlHLink=^^?{XlHeader=IsC}^{XlRef}iBB^{XlString}^{XlString}^{XlString}^{XlString}^{XlString}S}8@12 */
-     /* Encoded args for previous method: ^{XlHLink=^^?{XlHeader=IsC}^{XlRef}iBB^{XlString}^{XlString}^{XlString}^{XlString}^{XlString}S}12@0:4@8 */
 }
 
-+ (struct XlHLink { int (**x1)(); struct XlHeader { NSUInteger x_2_1_1; short x_2_1_2; unsigned char x_2_1_3; } x2; struct XlRef {} *x3; NSInteger x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; struct XlString {} *x7; struct XlString {} *x8; struct XlString {} *x9; struct XlString {} *x10; struct XlString {} *x11; unsigned short x12; }*)xlHLinkFromEDHyperlink:(id)arg1;
-+ (struct XlHLinkToolTip { int (**x1)(); struct XlHeader { NSUInteger x_2_1_1; short x_2_1_2; unsigned char x_2_1_3; } x2; struct XlRef {} *x3; struct XlString {} *x4; }*)xlToolTipFromEDHyperLink:(id)arg1;
 + (void)addToolTip:(struct XlHLinkToolTip { int (**x1)(); struct XlHeader { NSUInteger x_2_1_1; short x_2_1_2; unsigned char x_2_1_3; } x2; struct XlRef {} *x3; struct XlString {} *x4; }*)arg1 toEdHyperLink:(id)arg2 edResources:(id)arg3;
 + (id)edHyperlinkFromXlHLink:(struct XlHLink { int (**x1)(); struct XlHeader { NSUInteger x_2_1_1; short x_2_1_2; unsigned char x_2_1_3; } x2; struct XlRef {} *x3; NSInteger x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; struct XlString {} *x7; struct XlString {} *x8; struct XlString {} *x9; struct XlString {} *x10; struct XlString {} *x11; unsigned short x12; }*)arg1 edResources:(id)arg2;
 + (NSInteger)edTypeFromXlHyperlinkType:(NSInteger)arg1;

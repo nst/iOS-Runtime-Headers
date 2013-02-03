@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class EDStylesCollection, EDContentFormatsCollection, EDTableStylesCollection, EDFontsCollection, EDLinksCollection, EDColorsCollection, EDCollection;
+@class EDStylesCollection, EDFontsCollection, EDTableStylesCollection, EDColorsCollection, EDLinksCollection, EDCollection, EDContentFormatsCollection;
 
 @interface EDResources : NSObject {
      /* Encoded args for previous method: @12@0:4B8 */

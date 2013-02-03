@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSDate, NSString, <VMUMemory>, NSArray;
+@class NSArray, NSString, <VMUMemory>, NSDate;
 
 @interface VMUMachOHeader : VMUHeader {
     unsigned long long _address;

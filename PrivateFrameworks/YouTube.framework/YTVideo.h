@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSArray, NSString, NSURL, NSCalendarDate;
+@class NSURL, NSArray, NSString, NSCalendarDate;
 
 @interface YTVideo : NSObject {
     NSString *_author;
@@ -17,6 +17,7 @@
     BOOL _isProcessing;
     NSUInteger _maxRating;
     NSUInteger _minRating;
+    NSString *_notificationName;
     NSUInteger _numberOfRatings;
     NSUInteger _numberOfViews;
     NSUInteger _rating;
@@ -32,7 +33,8 @@
 
 + (void)disableNotifications;
 + (void)enableNotifications;
-+ (NSUInteger)thumbnailWidth;
++ (void)playbackDidStall;
++ (void)reset3GPlaybackStallCount;
 + (id)unsupportedVideoError;
 + (id)videoIsProcessingError;
 + (id)videoNotFoundError;
@@ -62,10 +64,12 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPlayable;
 - (BOOL)isProcessing;
+- (struct CGImage { }*)largeThumbnailLoadIfAbsent:(BOOL)arg1;
 - (NSUInteger)maxRating;
 - (NSUInteger)minRating;
 - (NSUInteger)numberOfRatings;
 - (NSUInteger)numberOfViews;
+- (struct CGImage { }*)pluginThumbnailLoadIfAbsent:(BOOL)arg1;
 - (NSUInteger)rating;
 - (id)ratingsURL;
 - (struct CGImage { }*)roundedThumbnailLoadIfAbsent:(BOOL)arg1;

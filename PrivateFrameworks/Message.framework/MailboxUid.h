@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableArray, MailAccount, NSString, MailboxUid, MessageCriterion, NSMutableDictionary;
+@class NSMutableDictionary, NSString, MailboxUid, MailAccount, NSMutableArray, MessageCriterion;
 
-@interface MailboxUid : WRObject <WeakReferenceHolder> {
+@interface MailboxUid : MFWeakObject <MFWeakReferenceHolder> {
     MailAccount *_account;
     NSUInteger _attributes;
     NSMutableArray *_children;
     MessageCriterion *_criterion;
-    NSUInteger _numberOfGenericChildren;
+    NSUInteger _mailboxID;
     MailboxUid *_parent;
     NSString *_pathComponent;
     NSString *_permanentTag;
@@ -22,6 +22,8 @@
     NSString *uniqueId;
 }
 
++ (BOOL)isDraftsMailboxType:(NSInteger)arg1;
++ (BOOL)isOutgoingMailboxType:(NSInteger)arg1;
 + (id)specialNameForType:(NSInteger)arg1;
 
 - (id)URL;
@@ -33,6 +35,7 @@
 - (id)account;
 - (id)accountRelativePath;
 - (void)addToPostOrderTraversal:(id)arg1;
+- (BOOL)alwaysWriteFullMessageFile;
 - (id)ancestralAccount;
 - (NSUInteger)attributes;
 - (id)childAtIndex:(NSUInteger)arg1;
@@ -60,7 +63,6 @@
 - (id)initWithAccount:(id)arg1;
 - (id)initWithName:(id)arg1 attributes:(NSUInteger)arg2 forAccount:(id)arg3 permanentTag:(id)arg4;
 - (void)invalidate;
-- (void)invalidateCachedNumberOfGenericChildren;
 - (BOOL)isContainer;
 - (BOOL)isDescendantOfMailbox:(id)arg1;
 - (BOOL)isOutgoingMailboxUid;
@@ -69,11 +71,13 @@
 - (BOOL)isStore;
 - (BOOL)isValid;
 - (BOOL)isVisible;
+- (id)lastViewedMessageDate;
+- (id)lastViewedMessageID;
+- (NSUInteger)mailboxID;
 - (id)mutableCopyOfChildren;
 - (id)name;
 - (NSUInteger)nonDeletedCount;
 - (NSUInteger)numberOfChildren;
-- (NSUInteger)numberOfGenericChildren;
 - (void)objectWillBeDeallocated:(id)arg1;
 - (id)oldURLString;
 - (id)parent;
@@ -87,6 +91,7 @@
 - (void)setAttributes:(NSUInteger)arg1;
 - (BOOL)setChildren:(id)arg1;
 - (void)setCriterion:(id)arg1;
+- (void)setLastViewedMessageID:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setParent:(id)arg1;
 - (void)setPendingNameChange:(id)arg1;

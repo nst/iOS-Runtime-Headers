@@ -4,7 +4,7 @@
 
 @class DOMHTMLOptGroupElement;
 
-@interface UIDOMHTMLOptGroupSelectedItem : NSObject <UISelectedItemPrivate> {
+@interface UIDOMHTMLOptGroupSelectedItem : NSObject <UIWebSelectedItemPrivate> {
     DOMHTMLOptGroupElement *_node;
 }
 

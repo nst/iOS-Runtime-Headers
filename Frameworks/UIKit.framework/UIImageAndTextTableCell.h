@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UITextLabel;
+@class UITextLabel, UIImageView;
 
 @interface UIImageAndTextTableCell : UITableCell {
     UIImageView *_iconImageView;

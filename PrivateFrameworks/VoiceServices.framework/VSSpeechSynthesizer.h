@@ -51,6 +51,10 @@
 - (void)setVoice:(id)arg1;
 - (id)setVolume:(float)arg1;
 - (id)speechString;
+- (id)startSpeakingAttributedString:(id)arg1 toURL:(id)arg2 withLanguageCode:(id)arg3;
+- (id)startSpeakingAttributedString:(id)arg1 toURL:(id)arg2;
+- (id)startSpeakingAttributedString:(id)arg1;
+- (id)startSpeakingString:(id)arg1 attributedString:(id)arg2 toURL:(id)arg3 withLanguageCode:(id)arg4;
 - (id)startSpeakingString:(id)arg1 toURL:(id)arg2 withLanguageCode:(id)arg3;
 - (id)startSpeakingString:(id)arg1 toURL:(id)arg2;
 - (id)startSpeakingString:(id)arg1;

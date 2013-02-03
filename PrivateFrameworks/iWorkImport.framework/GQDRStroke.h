@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDRStrokePattern, GQDColor;
+@class GQDColor, GQDRStrokePattern;
 
 @interface GQDRStroke : NSObject <GQDNameMappable> {
     NSInteger mCap;

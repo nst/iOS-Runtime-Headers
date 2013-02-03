@@ -2,9 +2,11 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@interface DAAction : NSObject {
+@class <NSCoding><NSObject>;
+
+@interface DAAction : NSObject <NSCoding> {
     NSInteger _action;
-    id _context;
+    <NSCoding><NSObject> *_context;
 }
 
 - (void)_setContext:(id)arg1;
@@ -15,8 +17,10 @@
 - (id)deletedContactID;
 - (id)deletedEventID;
 - (id)description;
-- (struct ASEvent { Class x1; id x2; id x3; NSInteger x4; NSInteger x5; id x6; NSInteger x7; id x8; NSInteger x9; id x10; NSInteger x11; id x12; id x13; id x14; BOOL x15; BOOL x16; id x17; void *x18; id x19; id x20; id x21; id x22; id x23; id x24; id x25; id x26; id x27; id x28; id x29; id x30; id x31; id x32; id x33; id x34; id x35; id x36; id x37; id x38; id x39; NSInteger x40; BOOL x41; BOOL x42; BOOL x43; BOOL x44; BOOL x45; BOOL x46; }*)event;
+- (void)encodeWithCoder:(id)arg1;
+- (struct ASEvent { Class x1; id x2; id x3; NSInteger x4; NSInteger x5; id x6; NSInteger x7; id x8; NSInteger x9; id x10; NSInteger x11; id x12; id x13; id x14; BOOL x15; BOOL x16; id x17; void *x18; id x19; id x20; id x21; id x22; id x23; id x24; id x25; id x26; id x27; id x28; id x29; id x30; id x31; id x32; id x33; id x34; id x35; id x36; id x37; id x38; id x39; NSInteger x40; BOOL x41; BOOL x42; BOOL x43; BOOL x44; BOOL x45; BOOL x46; id x47; }*)event;
 - (id)initWithAction:(NSInteger)arg1 context:(id)arg2;
+- (id)initWithCoder:(id)arg1;
 - (id)message;
 
 @end

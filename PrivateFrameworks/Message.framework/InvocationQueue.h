@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableArray, NSConditionLock;
+@class NSConditionLock, NSMutableArray;
 
-@interface InvocationQueue : NSObject {
+@interface InvocationQueue : NSObject <WeaklyReferencedObject> {
     unsigned int _maxThreads : 16;
     unsigned int _numThreads : 16;
+    BOOL _isInvoking;
     NSMutableArray *_items;
     NSConditionLock *_threadRecycleLock;
     double _threadRecycleTimeout;
 }
 
++ (void)flushAllInvocationQueues;
 + (void)initialize;
 
 - (void)_drainQueue;
@@ -20,6 +22,7 @@
 - (void)didCancel:(id)arg1;
 - (id)init;
 - (NSUInteger)invocationCount;
+- (BOOL)isProcessingQueue;
 - (NSUInteger)maxThreadCount;
 - (void)removeAllItems;
 - (void)setMaxThreadCount:(NSUInteger)arg1;

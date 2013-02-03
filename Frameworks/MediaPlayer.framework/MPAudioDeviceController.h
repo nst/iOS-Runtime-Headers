@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, NSDictionary, AVController, NSString;
+@class NSArray, AVController, NSString, NSDictionary;
 
 @interface MPAudioDeviceController : NSObject {
     AVController *_avController;
     NSString *_category;
     id _delegate;
+    BOOL _fakeRouteAvailable;
     NSArray *_pickableRoutes;
     NSDictionary *_pickedRoute;
 }
@@ -22,10 +23,12 @@
 - (BOOL)_routeIsReceiver:(id)arg1;
 - (BOOL)_routeIsSpeaker:(id)arg1;
 - (BOOL)_routeIsWireless:(id)arg1;
+- (void)_sendFakeRouteChange;
 - (void)clearCachedRoutes;
 - (void)dealloc;
 - (BOOL)handsetRouteIsPicked;
 - (NSInteger)indexOfPickedRoute;
+- (id)init;
 - (id)initWithAVController:(id)arg1;
 - (void)invalidateAVController;
 - (id)nameOfPickedRoute;

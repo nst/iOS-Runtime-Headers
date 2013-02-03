@@ -3,15 +3,17 @@
  */
 
 @interface NSConcreteMutableData : NSMutableData {
+    unsigned int _reserved : 1;
+    unsigned int _needToZero : 1;
     unsigned int _hasVM : 1;
     unsigned int _retainCount : 29;
-    unsigned int _reserved : 2;
     void *_bytes;
     NSUInteger _capacity;
     NSUInteger _length;
 }
 
 - (BOOL)_bytesAreVM;
+- (void)_freeBytes;
 - (void)appendBytes:(const void*)arg1 length:(NSUInteger)arg2;
 - (void)appendData:(id)arg1;
 - (const void*)bytes;
@@ -21,6 +23,7 @@
 - (id)init;
 - (id)initWithBytes:(void*)arg1 length:(NSUInteger)arg2 copy:(BOOL)arg3 freeWhenDone:(BOOL)arg4 bytesAreVM:(BOOL)arg5;
 - (id)initWithCapacity:(NSUInteger)arg1;
+- (id)initWithLength:(NSUInteger)arg1;
 - (NSUInteger)length;
 - (void*)mutableBytes;
 - (void)replaceBytesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withBytes:(const void*)arg2;

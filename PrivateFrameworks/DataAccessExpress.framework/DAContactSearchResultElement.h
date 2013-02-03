@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-@class NSData, NSString;
+@class NSArray, NSString, NSData;
 
 @interface DAContactSearchResultElement : NSObject <NSCoding> {
     NSString *_alias;
+    NSString *_appleFloor;
     NSString *_buildingName;
     NSString *_city;
     NSString *_company;
     NSString *_country;
+    NSArray *_cuAddresses;
     NSString *_department;
     NSString *_displayName;
     NSString *_emailAddress;
@@ -24,6 +26,7 @@
     NSString *_office;
     NSString *_pagerNumber;
     NSString *_postalAddress;
+    NSString *_principalPath;
     NSString *_recordName;
     NSString *_serverSource;
     NSString *_state;
@@ -35,10 +38,12 @@
 }
 
 @property(copy) NSString *alias;
+@property(copy) NSString *appleFloor;
 @property(copy) NSString *buildingName;
 @property(copy) NSString *city;
 @property(copy) NSString *company;
 @property(copy) NSString *country;
+@property(copy) NSArray *cuAddresses;
 @property(copy) NSString *department;
 @property(copy) NSString *displayName;
 @property(copy) NSString *emailAddress;
@@ -53,6 +58,7 @@
 @property(copy) NSString *office;
 @property(copy) NSString *pagerNumber;
 @property(copy) NSString *postalAddress;
+@property(copy) NSString *principalPath;
 @property(copy) NSString *recordName;
 @property(copy) NSString *serverSource;
 @property(copy) NSString *state;
@@ -63,11 +69,12 @@
 @property(copy) NSString *zip;
 
 - (id)alias;
+- (id)appleFloor;
 - (id)buildingName;
 - (id)city;
 - (id)company;
 - (id)country;
-- (void*)createAddressBookRecord;
+- (id)cuAddresses;
 - (void)dealloc;
 - (id)department;
 - (id)description;
@@ -85,16 +92,20 @@
 - (id)jpegPhoto;
 - (id)lastName;
 - (id)mobilePhone;
+- (void*)newAddressBookRecord;
 - (id)office;
 - (id)pagerNumber;
 - (id)postalAddress;
+- (id)principalPath;
 - (id)recordName;
 - (id)serverSource;
 - (void)setAlias:(id)arg1;
+- (void)setAppleFloor:(id)arg1;
 - (void)setBuildingName:(id)arg1;
 - (void)setCity:(id)arg1;
 - (void)setCompany:(id)arg1;
 - (void)setCountry:(id)arg1;
+- (void)setCuAddresses:(id)arg1;
 - (void)setDepartment:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
@@ -109,6 +120,7 @@
 - (void)setOffice:(id)arg1;
 - (void)setPagerNumber:(id)arg1;
 - (void)setPostalAddress:(id)arg1;
+- (void)setPrincipalPath:(id)arg1;
 - (void)setRecordName:(id)arg1;
 - (void)setServerSource:(id)arg1;
 - (void)setState:(id)arg1;

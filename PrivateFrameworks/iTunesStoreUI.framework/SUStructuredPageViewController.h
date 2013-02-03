@@ -4,54 +4,46 @@
 
 @class SUStructuredPage, UILabel;
 
-@interface SUStructuredPageViewController : SUTableViewController <ISURLOperationDelegate> {
+@interface SUStructuredPageViewController : SUItemTableViewController <ISURLOperationDelegate> {
     Class _dataSourceClass;
-    NSInteger _dataSourceStyle;
     UILabel *_noItemsLabel;
     SUStructuredPage *_structuredPage;
 }
 
 @property(retain) SUStructuredPage *structuredPage;
 @property(retain) Class dataSourceClass;
-@property NSInteger dataSourceStyle;
 
++ (void)_initializeSafeCategory;
+
+- (void)_accessibilityClearTable:(id)arg1;
+- (BOOL)_gotoURLForItem:(id)arg1 withURLIndex:(NSInteger)arg2;
 - (BOOL)_handleLoadMoreForIndexPath:(id)arg1;
-- (BOOL)_handleSelectedURL:(id)arg1 ofType:(NSUInteger)arg2;
-- (void)_hidePurchaseConfirmationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (void)_hidePurchaseConfirmationForButton:(id)arg1;
 - (void)_loadMoreOperation:(id)arg1 finishedWithOutput:(id)arg2;
 - (void)_loadMoreWithURL:(id)arg1;
-- (void)_priceButtonAction:(id)arg1;
-- (void)_purchasedItemSetChangedNotification:(id)arg1;
 - (void)_reloadLoadMoreCellAtIndexPath:(id)arg1;
 - (void)_reloadNoItemsLabel;
 - (void)_reloadTermsAndConditions;
-- (void)_showPurchaseConfirmationForButton:(id)arg1;
-- (void)_touchCaptureAction:(id)arg1;
 - (void)bannerCell:(id)arg1 tappedButtonAtIndex:(NSInteger)arg2;
-- (id)createDataSource;
-- (id)createNoItemsOverlayLabel;
-- (id)createTermsAndConditionsFooter;
+- (BOOL)canSelectRowAtIndexPath:(id)arg1;
 - (Class)dataSourceClass;
-- (NSInteger)dataSourceStyle;
 - (void)dealloc;
 - (BOOL)handleSelectionForIndexPath:(id)arg1 tapCount:(NSInteger)arg2;
 - (BOOL)hasDisplayableContent;
 - (id)init;
 - (BOOL)loadMoreWithURL:(id)arg1;
+- (id)newDataSource;
+- (id)newNoItemsOverlayLabel;
+- (id)newTermsAndConditionsFooter;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
-- (BOOL)purchaseItemAtIndexPath:(id)arg1;
 - (void)reloadData;
 - (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
-- (id)rootSectionIdentifier;
 - (void)setDataSourceClass:(Class)arg1;
-- (void)setDataSourceStyle:(NSInteger)arg1;
 - (void)setLoading:(BOOL)arg1;
 - (void)setStructuredPage:(id)arg1;
+- (id)storePageProtocol;
 - (id)structuredPage;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIMovieChapterListView, MPVideoView, NSArray;
+@class MPVideoView, UIMovieChapterListView, NSArray;
 
 @interface MPVideoChaptersViewController : MPViewController <UITableViewDataSource, UITableViewDelegate> {
     unsigned int _haveThumbnails : 1;
@@ -42,6 +42,7 @@
 - (id)videoView;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidUnload;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

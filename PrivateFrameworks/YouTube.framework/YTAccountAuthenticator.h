@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSDate, NSString, NSMutableData, NSHTTPURLResponse;
+@class NSString, NSMutableData, NSDate, NSHTTPURLResponse;
 
 @interface YTAccountAuthenticator : NSObject {
     NSString *_account;
@@ -33,6 +33,7 @@
 - (void)_setPassword:(id)arg1;
 - (void)_setURLResponse:(id)arg1;
 - (id)accountYouTubeName;
+- (BOOL)cachedCredentialsValid;
 - (void)clearAccountInfo;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;

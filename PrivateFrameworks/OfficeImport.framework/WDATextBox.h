@@ -6,29 +6,27 @@
    See Warning(s) below.
  */
 
-@class WDAContent, NSString, WDText, WDDocument;
+@class WDAContent, WDText, WDDocument;
 
 @interface WDATextBox : NSObject {
     WDDocument *mDocument;
-    NSString *mNextTextBox;
+    NSUInteger mNextTextBoxId;
     WDAContent *mParent;
     WDText *mText;
-    NSInteger mTextId;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mOle;
 }
 
 - (void)dealloc;
 - (id)document;
+- (id)init;
 - (BOOL)isOle;
-- (id)nextTextBox;
+- (unsigned long)nextTextBoxId;
 - (id)parent;
 - (void)setDocument:(id)arg1;
-- (void)setNextTextBox:(id)arg1;
+- (void)setNextTextBoxId:(unsigned long)arg1;
 - (void)setOle:(BOOL)arg1;
 - (void)setParent:(id)arg1;
 - (void)setText:(id)arg1;
-- (void)setTextId:(NSInteger)arg1;
 - (id)text;
-- (NSInteger)textId;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSExpression, NSPredicateOperator;
+@class NSPredicateOperator, NSExpression;
 
 @interface NSComparisonPredicate : NSPredicate {
     NSExpression *_lhs;

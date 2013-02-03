@@ -8,7 +8,9 @@
 
 - (float)alpha;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (NSUInteger)hash;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (void)setAlpha:(float)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSURLAuthenticationChallenge, NSURLConnectionDelegateProxy;
+@class NSURLConnectionDelegateProxy, NSURLAuthenticationChallenge;
 
 @interface NSURLDownloadInternal : NSObject {
     struct _CFURLDownload { } *cfDownload;

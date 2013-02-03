@@ -9,6 +9,7 @@
 }
 
 + (id)collection;
++ (id)collectionWithObject:(id)arg1;
 
 - (NSUInteger)addObject:(id)arg1;
 - (NSUInteger)addOrEquivalentObject:(id)arg1;
@@ -18,6 +19,7 @@
 - (NSUInteger)hash;
 - (NSUInteger)indexOfObject:(id)arg1;
 - (id)init;
+- (id)initWithObject:(id)arg1;
 - (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToCollection:(id)arg1;

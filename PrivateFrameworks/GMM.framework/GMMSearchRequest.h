@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSString, GMMMapInfo, NSData, GMMClientCapabilities;
+@class GMMMapInfo, NSString, NSData, GMMClientCapabilities;
 
 @interface GMMSearchRequest : PBRequest {
     BOOL _addLabelToUnverifiedListings;

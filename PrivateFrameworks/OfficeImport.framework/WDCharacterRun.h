@@ -5,11 +5,15 @@
 @class NSMutableString, WDCharacterProperties;
 
 @interface WDCharacterRun : WDRun {
+    BOOL mBinaryWriterContentFlag;
     WDCharacterProperties *mProperties;
     NSMutableString *mString;
 }
 
 - (void)appendString:(id)arg1;
+- (BOOL)binaryWriterContentFlag;
+- (void)clearProperties;
+- (void)clearString;
 - (void)copyPropertiesFrom:(id)arg1;
 - (void)dealloc;
 - (id)initWithParagraph:(id)arg1 string:(id)arg2;
@@ -18,6 +22,7 @@
 - (id)properties;
 - (void)removeLastCharacter:(unsigned short)arg1;
 - (NSInteger)runType;
+- (void)setBinaryWriterContentFlag:(BOOL)arg1;
 - (void)setPropertiesForDocument;
 - (void)setString:(id)arg1;
 - (id)string;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaQuery, NSArray, MPMediaItem;
+@class MPMediaItem, MPMediaQuery, NSArray;
 
 @interface MPMediaItemCollectionInternal : NSObject {
     NSInteger _containedMediaTypes;

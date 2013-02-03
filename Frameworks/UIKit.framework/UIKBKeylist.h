@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSString;
+@class NSString, NSMutableArray;
 
 @interface UIKBKeylist : NSObject <NSCoding> {
     NSMutableArray *m_keys;
@@ -21,6 +21,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithName:(id)arg1 keys:(id)arg2;
 - (id)keyWithName:(id)arg1;
 - (id)keys;
 - (id)name;

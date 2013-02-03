@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSURL, NSString, NSNumber, ISURLBagContext, ISAuthenticationContext;
+@class ISURLBagContext, SSAuthenticationContext, NSString, NSNumber, NSURL;
 
 @interface ISDataProvider : NSObject <NSCopying> {
     NSNumber *_authenticatedAccountDSID;
-    ISAuthenticationContext *_authenticationContext;
+    SSAuthenticationContext *_authenticationContext;
     ISURLBagContext *_bagContext;
     long long _contentLength;
     NSString *_contentType;
@@ -15,20 +15,19 @@
 }
 
 @property(retain) NSNumber *authenticatedAccountDSID;
-@property(retain) ISAuthenticationContext *authenticationContext;
+@property(retain) SSAuthenticationContext *authenticationContext;
 @property(retain) ISURLBagContext *bagContext;
 @property(retain) NSString *contentType;
 @property(retain) NSURL *redirectURL;
 @property long long contentLength;
 @property(retain) id output;
-@property(getter=isStream,readonly) BOOL stream;
-@property(readonly) long long streamedBytes;
 
 + (id)provider;
 
 - (id)authenticatedAccountDSID;
 - (id)authenticationContext;
 - (id)bagContext;
+- (BOOL)canStreamContentLength:(long long)arg1 error:(id*)arg2;
 - (void)closeStream;
 - (void)configureFromProvider:(id)arg1;
 - (long long)contentLength;
@@ -40,6 +39,7 @@
 - (id)output;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
 - (id)redirectURL;
+- (void)resetStream;
 - (void)setAuthenticatedAccountDSID:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setBagContext:(id)arg1;

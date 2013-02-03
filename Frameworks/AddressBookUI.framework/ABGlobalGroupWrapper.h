@@ -3,12 +3,20 @@
  */
 
 @interface ABGlobalGroupWrapper : ABGroupWrapper {
+    BOOL _showLinkedPeople;
 }
 
-+ (id)createGlobalGroupWrapperWithAddressBook:(void*)arg1;
+@property BOOL showLinkedPeople;
 
++ (id)newGlobalGroupWrapperWithAddressBook:(void*)arg1 showLinkedPeople:(BOOL)arg2;
++ (id)newGlobalGroupWrapperWithAddressBook:(void*)arg1;
+
+- (id)description;
+- (BOOL)isEditable;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isGlobalWrapper;
 - (id)name;
+- (void)setShowLinkedPeople:(BOOL)arg1;
+- (BOOL)showLinkedPeople;
 
 @end

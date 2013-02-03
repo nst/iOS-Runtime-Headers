@@ -13,6 +13,8 @@
 @property(retain) NSString *sectionIdentifier;
 @property NSInteger type;
 
+- (NSInteger)_typeForTypeString:(id)arg1;
+- (id)_typeStringForType:(NSInteger)arg1;
 - (id)copyViewController;
 - (void)dealloc;
 - (id)description;

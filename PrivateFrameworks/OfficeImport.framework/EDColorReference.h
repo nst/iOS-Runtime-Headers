@@ -2,9 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class EDResources;
 
 @interface EDColorReference : NSObject <NSCopying> {
+     /* Encoded args for previous method: B8@0:4 */
     NSUInteger mColorIndex;
     EDResources *mResources;
     NSInteger mSystemColorID;
@@ -26,6 +31,7 @@
 - (id)initWithResources:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToColorReference:(id)arg1;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isValid;
 - (NSInteger)systemColorID;
 - (NSUInteger)themeIndex;
 - (double)tint;

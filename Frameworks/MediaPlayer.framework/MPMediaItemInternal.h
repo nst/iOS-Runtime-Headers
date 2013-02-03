@@ -5,7 +5,6 @@
 @class NSMutableDictionary;
 
 @interface MPMediaItemInternal : NSObject {
-    unsigned int _didPrefetchCommonProperties : 1;
     NSMutableDictionary *_storage;
     unsigned long long _uid;
 }

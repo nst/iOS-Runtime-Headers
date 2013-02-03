@@ -16,6 +16,7 @@
 - (NSUInteger)durationInMSOfGroupAtIndex:(NSUInteger)arg1 groupingProperty:(NSInteger)arg2;
 - (NSUInteger)groupIndexAtTimeLocationInMS:(NSUInteger)arg1 groupingProperty:(NSInteger)arg2;
 - (NSUInteger)groupIndexForChapterIndex:(NSUInteger)arg1 groupingProperty:(NSInteger)arg2;
+- (BOOL)hasDataForProperty:(NSInteger)arg1;
 - (id)imageDataForArtworkFormatID:(NSUInteger)arg1 chapterIndex:(NSUInteger)arg2 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { NSUInteger x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; NSUInteger x_1_1_4; NSInteger x_1_1_5; NSInteger x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg3;
 - (NSUInteger)timeLocationInMSOfChapterAtIndex:(NSUInteger)arg1;
 - (NSUInteger)timeLocationInMSOfGroupAtIndex:(NSUInteger)arg1 groupingProperty:(NSInteger)arg2;

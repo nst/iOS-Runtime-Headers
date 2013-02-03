@@ -2,12 +2,16 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@interface MLTrackQueryImpl_Array : MLTrackQueryImpl_SQL {
+@interface MLTrackQueryImpl_Array : MLTrackQueryImpl_SQL <NSCoding> {
 }
 
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (void)evaluate;
 - (void)evaluateQuery:(id)arg1 withEntities:(id)arg2;
 - (void)freeQueryResults;
+- (NSUInteger)hash;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

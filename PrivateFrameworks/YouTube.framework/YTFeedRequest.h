@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray, NSURL, NSMutableURLRequest;
+@class NSURL, NSMutableArray, NSMutableURLRequest;
 
 @interface YTFeedRequest : XMLSAXHTTPRequest {
     BOOL _accountAuthRequired;

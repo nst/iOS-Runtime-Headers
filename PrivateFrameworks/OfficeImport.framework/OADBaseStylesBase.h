@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADColorScheme, OADStyleMatrix, OADFontScheme;
+@class OADStyleMatrix, OADColorScheme, OADFontScheme;
 
 @interface OADBaseStylesBase : NSObject {
     OADColorScheme *mColorScheme;
@@ -10,9 +10,12 @@
     OADStyleMatrix *mStyleMatrix;
 }
 
+@property(retain) OADFontScheme *fontScheme;
+
 - (id)colorScheme;
 - (void)dealloc;
 - (id)fontScheme;
+- (void)setFontScheme:(id)arg1;
 - (id)styleMatrix;
 
 @end

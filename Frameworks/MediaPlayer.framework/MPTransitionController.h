@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIView, NSMutableSet, MPViewController;
+@class NSMutableSet, MPViewController, UIView;
 
 @interface MPTransitionController : NSObject {
     float _duration;
-    NSInteger _fromOrientation;
+    NSInteger _fromInterfaceOrientation;
     MPViewController *_fromViewController;
     struct __CFDictionary { } *_observers;
     NSMutableSet *_persistentViewsToFadeIn;
     NSMutableSet *_persistentViewsToFadeOut;
     UIView *_rootView;
-    NSInteger _toOrientation;
+    NSInteger _toInterfaceOrientation;
     MPViewController *_toViewController;
     NSMutableSet *_viewsToFadeIn;
     NSMutableSet *_viewsToFadeOut;
@@ -22,8 +22,8 @@
 @property(retain) UIView *rootView;
 @property(retain) MPViewController *toViewController;
 @property float duration;
-@property NSInteger fromOrientation;
-@property NSInteger toOrientation;
+@property NSInteger fromInterfaceOrientation;
+@property NSInteger toInterfaceOrientation;
 
 - (void)addObserver:(id)arg1 didEndSelector:(SEL)arg2;
 - (void)addViewToFadeIn:(id)arg1 restoreOnPop:(BOOL)arg2;
@@ -31,19 +31,19 @@
 - (void)dealloc;
 - (float)duration;
 - (void)fadeViewsForRestore:(BOOL)arg1;
-- (NSInteger)fromOrientation;
+- (NSInteger)fromInterfaceOrientation;
 - (id)fromViewController;
 - (id)init;
 - (void)messageObserversWithSuccess:(BOOL)arg1;
 - (void)removeObserver:(id)arg1;
 - (id)rootView;
 - (void)setDuration:(float)arg1;
-- (void)setFromOrientation:(NSInteger)arg1;
+- (void)setFromInterfaceOrientation:(NSInteger)arg1;
 - (void)setFromViewController:(id)arg1;
 - (void)setRootView:(id)arg1;
-- (void)setToOrientation:(NSInteger)arg1;
+- (void)setToInterfaceOrientation:(NSInteger)arg1;
 - (void)setToViewController:(id)arg1;
-- (NSInteger)toOrientation;
+- (NSInteger)toInterfaceOrientation;
 - (id)toViewController;
 - (void)transition:(NSUInteger)arg1;
 

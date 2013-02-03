@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@class NSMutableDictionary, NSString;
+@class NSString, NSMutableDictionary;
 
 @interface VSRecognitionDisambiguateAction : VSRecognitionRecognizeAction {
     NSMutableDictionary *_ambiguousPhoneticValues;

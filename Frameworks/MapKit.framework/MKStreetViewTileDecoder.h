@@ -2,26 +2,48 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableArray, NSConditionLock, EAGLContext, MKStreetView;
+@class NSConditionLock, MKStreetView, NSMutableArray, MKPanoramaDecoderRequest, EAGLContext, NSLock, <MKStreetViewTileDecoderDelegate>;
 
 @interface MKStreetViewTileDecoder : NSObject {
+    struct TextureNode { 
+        NSUInteger texture; 
+        struct TextureNode {} *next; 
     EAGLContext *_context;
+    BOOL _converterDie;
+    NSConditionLock *_converterLock;
+    MKPanoramaDecoderRequest *_converterRequest;
+    struct __IOSurface { } *_converterSrcSurface;
+    <MKStreetViewTileDecoderDelegate> *_delegate;
     BOOL _die;
+    struct TextureNode { NSUInteger x1; struct TextureNode {} *x2; } *_firstEmptyNode;
+    struct TextureNode { NSUInteger x1; struct TextureNode {} *x2; } *_firstFreeTexture;
+    NSLock *_freeTextureLock;
+    } _freeTextureNodes[8];
     NSUInteger _height;
+    struct TextureNode { NSUInteger x1; struct TextureNode {} *x2; } *_lastFreeTexture;
     NSConditionLock *_queueLock;
     NSMutableArray *_requestQueue;
-    unsigned short *_scratchBytes;
-    struct CGContext { } *_scratchContext;
     MKStreetView *_view;
     NSUInteger _width;
 }
 
-- (void)_loadImageData:(id)arg1 panorama:(id)arg2 tilePath:(id)arg3 context:(struct CGContext { }*)arg4 bytes:(unsigned short*)arg5;
-- (void)_runLoader;
+@property <MKStreetViewTileDecoderDelegate> *delegate;
+
+- (NSUInteger)_decodeTileData:(id)arg1 context:(struct CGContext { }*)arg2 bytes:(unsigned short*)arg3 level:(NSUInteger)arg4;
+- (void)_runHardwareConverterWithSurfaceProperties:(id)arg1;
+- (void)_runHardwareDecoder;
+- (void)_runSoftwareDecoder;
+- (void)addFreeTexture:(NSUInteger)arg1;
 - (void)dealloc;
-- (void)enqueueDecodeRequestsForPanorama:(id)arg1 tilePaths:(id)arg2 threaded:(BOOL)arg3;
+- (NSUInteger)decodeTileData:(id)arg1;
+- (id)delegate;
+- (void)enqueueDecodeRequests:(id)arg1;
+- (NSInteger)freeTextureCount;
+- (NSUInteger)getFreeTexture;
 - (id)initWithView:(id)arg1 sharegroup:(id)arg2;
+- (void)purgeFreeTextures;
 - (void)purgeRequests;
 - (void)releaseAndDie;
+- (void)setDelegate:(id)arg1;
 
 @end

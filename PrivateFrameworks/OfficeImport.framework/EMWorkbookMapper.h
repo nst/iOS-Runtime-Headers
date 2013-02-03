@@ -6,21 +6,35 @@
    See Warning(s) below.
  */
 
-@class NSMutableArray, EDWorkbook, NSString, CMArchiveManager;
+@class EDWorkbook, NSString, CMArchiveManager, OIXMLDocument, NSMutableArray, OIXMLElement;
 
 @interface EMWorkbookMapper : CMMapper <CMMapperRoot> {
      /* Encoded args for previous method: B8@0:4 */
     EDWorkbook *edWorkbook;
     CMArchiveManager *mArchiver;
+    OIXMLElement *mBodyElement;
     NSString *mFileName;
+    BOOL mHasPushedFirstSheet;
+    BOOL mHasPushedHeader;
     NSInteger mHeight;
+    BOOL mLoadingMessageVisible;
+    NSUInteger mNumberOfMappedSheets;
+    NSUInteger mRealSheetCount;
     NSString *mResourceUrlPrefix;
     NSString *mResourceUrlProtocol;
+    NSUInteger mSheetIndex;
+    NSMutableArray *mSheetURLs;
     NSString *mStyleSheetGuid;
+    OIXMLDocument *mTabBarDoc;
+    NSString *mTabBarURL;
+    float mTabPosition;
     NSInteger mWidth;
     NSMutableArray *mWorksheetGuids;
     NSMutableArray *mWorksheetNames;
     NSMutableArray *mWorksheetUrls;
+    OIXMLDocument *mXhtmlDoc;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsFirstMappedSheet;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsFrameset;
 }
 
 + (id)baseDate;
@@ -29,24 +43,25 @@
 + (id)cssStyleCache;
 + (void)setBaseDate1904:(BOOL)arg1;
 
+- (id)_createMainPageAndReturnFront;
+- (id)_createStringForSheet:(id)arg1 atIndex:(NSUInteger)arg2 withState:(id)arg3 andMapper:(id)arg4;
+- (id)_mainPageBack;
+- (void)_pushTabForSheet:(id)arg1 atIndex:(NSUInteger)arg2;
 - (id)archiver;
 - (id)blipAtIndex:(NSUInteger)arg1;
-- (id)createFramesetPage:(id)arg1;
-- (id)createMainDoc;
-- (id)createNavFrame;
 - (id)createSheetMapperWithEdSheet:(id)arg1;
 - (void)dealloc;
 - (id)documentTitle;
 - (id)fileName;
+- (void)finishMappingWithState:(id)arg1;
+- (BOOL)hasMultipleSheets;
 - (id)initWithEDWorkbook:(id)arg1 archiver:(id)arg2;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isMultiPage;
 - (void)mapBodyStyleAt:(id)arg1;
-- (void)mapGlobalStylesAt:(id)arg1 style:(id)arg2;
-- (void)mapWithState:(id)arg1;
-- (NSInteger)navFrameHeight;
+- (void)mapElement:(id)arg1 atIndex:(NSUInteger)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
 - (struct CGSize { float x1; float x2; })pageSizeForDevice;
 - (void)setFileName:(id)arg1;
-- (void)setHtmlDocumentSizeInArchiver;
+- (void)startMappingWithState:(id)arg1;
 - (id)styleMatrix;
 - (id)workbook;
 

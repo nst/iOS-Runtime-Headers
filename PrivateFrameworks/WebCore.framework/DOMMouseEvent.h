@@ -5,16 +5,22 @@
 @interface DOMMouseEvent : DOMUIEvent {
 }
 
+@property(retain,readonly) DOMNode *fromElement;
 @property(retain,readonly) <DOMEventTarget> *relatedTarget;
+@property(retain,readonly) DOMNode *toElement;
 @property(readonly) BOOL altKey;
 @property(readonly) unsigned short button;
 @property(readonly) NSInteger clientX;
 @property(readonly) NSInteger clientY;
 @property(readonly) BOOL ctrlKey;
 @property(readonly) BOOL metaKey;
+@property(readonly) NSInteger offsetX;
+@property(readonly) NSInteger offsetY;
 @property(readonly) NSInteger screenX;
 @property(readonly) NSInteger screenY;
 @property(readonly) BOOL shiftKey;
+@property(readonly) NSInteger x;
+@property(readonly) NSInteger y;
 
 - (BOOL)altKey;
 - (unsigned short)button;

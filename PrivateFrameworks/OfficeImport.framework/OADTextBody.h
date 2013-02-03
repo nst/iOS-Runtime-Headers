@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, OADTextBodyProperties, OADTextListStyle;
+@class OADTextListStyle, NSMutableArray, OADTextBodyProperties;
 
 @interface OADTextBody : NSObject {
     NSMutableArray *mParagraphs;
@@ -11,7 +11,10 @@
 }
 
 - (id)addParagraph;
+- (void)addParagraphsFromTextBody:(id)arg1;
+- (void)applyTextListStyle:(id)arg1;
 - (void)dealloc;
+- (id)findFirstTextRunOfClass:(Class)arg1;
 - (void)flattenProperties;
 - (id)init;
 - (BOOL)isEmpty;
@@ -20,8 +23,11 @@
 - (NSUInteger)paragraphCount;
 - (id)plainText;
 - (id)properties;
+- (void)removeAllParagraphs;
 - (void)removeTrailingNewlines;
+- (void)removeUnnecessaryOverrides;
 - (void)setParentTextListStyle:(id)arg1;
+- (void)setProperties:(id)arg1;
 - (id)textListStyle;
 
 @end

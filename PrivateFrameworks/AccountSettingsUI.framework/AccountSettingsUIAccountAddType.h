@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccountSettingsUI.framework/AccountSettingsUI
  */
 
-@class NSArray, PSSpecifier, NSString;
+@class PSSpecifier, NSString, NSArray;
 
 @interface AccountSettingsUIAccountAddType : NSObject {
     NSArray *_dataclasses;

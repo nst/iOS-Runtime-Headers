@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WMTableStyle, WMTableColumnInfo, WMBordersProperty, WDTable;
+@class WMTableStyle, WDTable, WMTableColumnInfo, WMBordersProperty;
 
 @interface WMTableMapper : CMMapper {
     WMTableColumnInfo *mColumnInfo;

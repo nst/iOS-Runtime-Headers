@@ -4,44 +4,76 @@
 
 @class ABMembersController;
 
-@interface ABMembersViewController : ABAbstractViewController <ABNewPersonViewControllerDelegate, ABMembersControllerDelegate, ABPropertyEditorViewControllerDelegate, ABViewControllerBannerViewProtocol, ABPersonNameDisplayChangeDelegate> {
+@interface ABMembersViewController : ABAbstractViewController <ABNewPersonViewControllerDelegate, ABMembersControllerDelegate, ABViewControllerBannerViewProtocol, ABPersonEditDelegate> {
+    id _insertionLabel;
+    NSInteger _insertionProperty;
+    id _insertionValue;
     ABMembersController *_membersController;
+    struct __CFArray { } *_personViewControllers;
+    NSInteger _rightButtonBehavior;
 }
 
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; float x5; NSInteger x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; }*)arg1;
+@property(retain) <ABStyleProvider> *styleProvider;
+@property(readonly) BOOL allowsCancel;
+@property(readonly) BOOL allowsCardEditing;
+@property(readonly) BOOL shouldShowGroups;
+
++ (void)_initializeSafeCategory;
+
+- (void)_applicationEnteringBackground;
+- (void)_applicationEnteringForeground;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
+- (void*)_personToUseForSavingState;
 - (void)_refreshAccount;
 - (NSInteger)abViewControllerType;
 - (void)addPerson:(id)arg1;
+- (BOOL)allowsCancel;
+- (BOOL)allowsCardEditing;
 - (void)applicationDidResume;
+- (void)applicationWillSuspend;
 - (BOOL)canHandleSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
 - (void)cancel:(id)arg1;
+- (void)cancelRefreshingAccount;
 - (void)cancelSearching:(id)arg1;
 - (void)dealloc;
 - (id)defaultPNGName;
-- (BOOL)dismissPropertyEditorViewController:(id)arg1 afterEditingConfirmed:(BOOL)arg2;
+- (void)didReceiveMemoryWarning;
+- (void)imageUpdatedForPerson:(void*)arg1;
 - (id)initWithModel:(id)arg1;
+- (void)insertProperty:(NSInteger*)arg1 insertValue:(id*)arg2 insertLabel:(id*)arg3;
 - (BOOL)isNavigationButtonEnabled:(NSInteger)arg1;
+- (void)linksUpdatedForPerson:(void*)arg1;
 - (void)loadState;
 - (void)loadView;
+- (id)localizedTitleForGroupWrapper:(id)arg1;
 - (void)membersController:(id)arg1 needsTitleUpdate:(id)arg2;
 - (void)membersController:(id)arg1 needsTitleViewUpdate:(id)arg2;
+- (BOOL)membersController:(id)arg1 shouldAllowSelectingPerson:(void*)arg2;
 - (id)membersController;
 - (void)membersControllerWillEndSearching:(id)arg1;
 - (void)membersControllerWillStartSearching:(id)arg1;
 - (id)model;
 - (void)modelDatabaseChange:(id)arg1;
 - (void)modelSelectedPersonWasDeleted:(id)arg1;
-- (void)nameDisplayChanged;
+- (void)nameChangedForPerson:(void*)arg1;
 - (BOOL)newContactViewControllerCompleted:(id)arg1 withNewPerson:(void*)arg2;
+- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2 informDelegate:(BOOL)arg3;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
+- (BOOL)personViewController:(id)arg1 shouldContinueAfterEditingConfirmed:(BOOL)arg2 forPerson:(void*)arg3;
+- (void)personViewControllerIsGoingAway:(id)arg1;
 - (void)personWasSelected:(void*)arg1;
-- (void)propertyEditorViewController:(id)arg1 confirmed:(BOOL)arg2 afterEditingProperty:(NSInteger)arg3;
-- (void)propertyEditorViewController:(id)arg1 confirmedAfterEditingName:(BOOL)arg2;
+- (void)preferredPersonDidChangeToPerson:(void*)arg1;
+- (void)resetInsertionData;
 - (void)setBannerTitle:(id)arg1 value:(id)arg2;
+- (void)setStyleProvider:(id)arg1;
+- (BOOL)shouldShowGroups;
 - (BOOL)showCardForPerson:(void*)arg1 animate:(BOOL)arg2;
 - (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3;
-- (void)showInsertEditorForPerson:(void*)arg1;
-- (void)updateNavigationButtons;
+- (void)showInsertEditorForPerson:(void*)arg1 animate:(BOOL)arg2;
+- (void)startRefreshingAccount;
+- (id)styleProvider;
+- (void)updateNavigationButtonsAnimated:(BOOL)arg1;
+- (void)updateNavigationButtonsInSearchMode:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)updateNavigationButtonsInSearchMode:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

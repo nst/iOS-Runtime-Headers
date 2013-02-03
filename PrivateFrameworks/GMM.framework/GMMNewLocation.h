@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class GMMGeometry, NSString;
+@class NSString, GMMGeometry;
 
 @interface GMMNewLocation : PBCodable {
     GMMGeometry *_geocode;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UILabel, NSString, PLCameraButton, UIImageView, UIView, UIButton, UIImage, PLCropOverlayBottomBarButton;
+@class PLCropOverlayBottomBarButton, PLCameraButton, UIImageView, UILabel, UIButton, UIView, UIImage, NSString;
 
 @interface PLCropOverlayBottomBar : UIView {
     unsigned int _takingPhotoView : 1;
@@ -23,6 +23,8 @@
     NSString *_title;
 }
 
++ (void)_initializeSafeCategory;
+
 - (void)_animateViewOriginDeltaX:(float)arg1;
 - (void)_createTakePhotoView;
 - (void)_didCapture;
@@ -32,7 +34,6 @@
 - (void)_prepareForPhotoEdit;
 - (void)_slideAnimationComplete:(id)arg1;
 - (void)_updatePlayPauseButtonImage:(id)arg1;
-- (void)adjustButtonWidths;
 - (void)cancelButtonClicked:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -43,6 +44,7 @@
 - (void)doneButtonClicked:(id)arg1;
 - (void)editCancelButtonClicked:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
 - (id)modeSwitch;
 - (void)prepareForVideoEdit;
 - (void)setCancelButtonTitle:(id)arg1;

@@ -18,6 +18,7 @@
 - (void)load;
 - (void)save;
 - (id)siteFile;
-- (BOOL)webView:(id)arg1 frame:(id)arg2 requestGeolocationPermissionForSecurityOrigin:(id)arg3 shouldClearCache:(BOOL)arg4;
+- (BOOL)webFrame:(id)arg1 decidePolicyForGeolocationRequestFromOrigin:(id)arg2;
+- (void)webView:(id)arg1 decidePolicyForGeolocationRequestFromOrigin:(id)arg2 frame:(id)arg3 listener:(id)arg4;
 
 @end

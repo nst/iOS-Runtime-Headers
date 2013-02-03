@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, WDDocument, WDStyle;
+@class WDStyle, NSMutableArray, WDDocument;
 
 @interface WDListDefinition : NSObject {
     WDDocument *mDocument;

@@ -17,7 +17,7 @@
 - (float)cellHeightForIndexPath:(id)arg1;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)dealloc;
-- (NSInteger)numberOfItemsInSection:(NSInteger)arg1;
+- (NSInteger)numberOfRowsInSection:(NSInteger)arg1;
 - (NSInteger)numberOfSections;
 - (id)objectForIndexPath:(id)arg1;
 - (id)objects;

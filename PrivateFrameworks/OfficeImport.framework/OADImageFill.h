@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADRelativeRect, OADImageFillTechnique, OADBlipRef;
+@class OADBlipRef, OADImageFillTechnique, OADRelativeRect;
 
 @interface OADImageFill : OADFill {
     OADBlipRef *mBlipRef;
@@ -24,9 +24,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (long)dpi;
+- (NSUInteger)hash;
 - (id)initWithDefaults;
 - (BOOL)isBlipRefOverridden;
 - (BOOL)isDpiOverridden;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isRotateWithShapeOverridden;
 - (BOOL)isSourceRectOverridden;
 - (BOOL)isTechniqueOverridden;

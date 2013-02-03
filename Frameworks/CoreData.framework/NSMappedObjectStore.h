@@ -9,26 +9,26 @@
 }
 
 - (void)_addObject:(id)arg1 objectIDMap:(id)arg2;
-- (BOOL)_obtainPermanentIDsForObjects:(id)arg1 withContext:(id)arg2;
 - (id)_pathFromURI:(id)arg1;
 - (void)_removeObject:(id)arg1 objectIDMap:(id)arg2;
 - (void)_setMap:(id)arg1;
 - (id)_theMap;
 - (void)_updateObject:(id)arg1 objectIDMap:(id)arg2;
-- (void)childContext:(id)arg1 didForgetObjectsWithObjectIDs:(id)arg2;
-- (void)childContext:(id)arg1 didRememberObjectsWithObjectIDs:(id)arg2;
 - (id)dataForKey:(id)arg1;
 - (void)dealloc;
 - (id)executeCountRequest:(id)arg1 withContext:(id)arg2;
 - (id)executeFetchRequest:(id)arg1 withContext:(id)arg2;
-- (id)executeRequest:(id)arg1 withContext:(id)arg2;
+- (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)executeSaveChangesRequest:(id)arg1 withContext:(id)arg2;
 - (id)getNewIDForObject:(id)arg1;
 - (id)identifier;
 - (id)init;
+- (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1;
+- (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1;
 - (id)metadata;
-- (id)retainedDataForObjectID:(id)arg1 withContext:(id)arg2;
-- (id)retainedRelationshipDataWithSourceID:(id)arg1 forRelationship:(id)arg2 withContext:(id)arg3;
+- (id)newValueForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
+- (id)newValuesForObjectWithID:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
+- (id)obtainPermanentIDsForObjects:(id)arg1 error:(id*)arg2;
 - (void)save;
 - (void)saveDocumentToPath:(id)arg1;
 - (void)setMetadata:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADTextListStyle, OADTheme, OADColorMap;
+@class OADColorMap, OADTheme, OADTextListStyle;
 
 @interface PDNotesMaster : PDSlideBase {
     OADColorMap *mColorMap;
@@ -13,6 +13,9 @@
 - (id)colorMap;
 - (id)colorScheme;
 - (void)dealloc;
+- (void)doneWithContent;
+- (id)drawingTheme;
+- (id)fontScheme;
 - (id)init;
 - (id)masterGraphicForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (id)notesTextStyle;
@@ -20,6 +23,8 @@
 - (id)parentSlideBase;
 - (id)parentTextBodyPropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (id)parentTextStyleForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2 defaultTextListStyle:(id)arg3;
+- (id)parentTextStyleForTables;
+- (id)placeholderWithType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (id)styleMatrix;
 - (id)theme;
 

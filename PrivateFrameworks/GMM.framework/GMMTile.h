@@ -14,7 +14,8 @@
 @property NSInteger tileXIndex;
 @property NSInteger tileYIndex;
 
-+ (void*)createImageRefFromTileData:(id)arg1;
++ (void*)createImageRefFromTileData:(const char *)arg1 length:(unsigned long)arg2;
++ (void*)createImageRefFromTileData:(id)arg1 isCompact:(BOOL)arg2;
 
 - (void)dealloc;
 - (id)description;

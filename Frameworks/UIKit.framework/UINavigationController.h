@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, UINavigationBar, UIToolbar, NSMutableArray, UIViewController, <UINavigationControllerDelegate>;
+@class UINavigationBar, UIToolbar, <UINavigationControllerDelegate>, NSMutableArray, UIView, UILayoutContainerView, UIViewController;
 
 @interface UINavigationController : UIViewController {
     struct UIEdgeInsets { 
@@ -28,8 +28,11 @@
         unsigned int didPreloadKeyboardAnimation : 1; 
         unsigned int didHideBottomBar : 1; 
         unsigned int isChangingOrientationForPop : 1; 
+        unsigned int pretendNavBarHidden : 1; 
+        unsigned int avoidMovingNavBarOffscreenBeforeUnhiding : 1; 
     float _bottomInsetDelta;
     UIView *_containerView;
+    UILayoutContainerView *_containerViewInSheet;
     } _currentScrollContentInsetDelta;
     <UINavigationControllerDelegate> *_delegate;
     UIViewController *_disappearingViewController;
@@ -45,6 +48,7 @@
 
 @property(readonly) UIViewController *bottomViewController;
 @property <UINavigationControllerDelegate> *delegate;
+@property(retain) UIViewController *detailViewController;
 @property(retain) UIViewController *disappearingViewController;
 @property(readonly) UINavigationBar *navigationBar;
 @property(readonly) UINavigationTransitionView *navigationTransitionView;
@@ -53,10 +57,16 @@
 @property(retain,readonly) UIViewController *topViewController;
 @property(copy) NSArray *viewControllers;
 @property(retain,readonly) UIViewController *visibleViewController;
+@property BOOL avoidMovingNavBarOffscreenBeforeUnhiding;
+@property BOOL isExpanded;
 @property(getter=isNavigationBarHidden) BOOL navigationBarHidden;
 @property BOOL needsDeferredTransition;
+@property BOOL pretendNavBarHidden;
 @property(getter=isToolbarHidden) BOOL toolbarHidden;
 
++ (void)_initializeSafeCategory;
+
+- (struct CGSize { float x1; float x2; })_adjustedContentSizeForPopover:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_allowsAutorotation;
 - (BOOL)_animationParametersForHidingNavigationBar:(BOOL)arg1 lastOperation:(NSInteger)arg2 edge:(NSInteger*)arg3 duration:(double*)arg4;
 - (void)_applyScrollContentInsetDelta:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 toScrollView:(id)arg2;
@@ -67,8 +77,9 @@
 - (NSInteger)_deferredTransition;
 - (BOOL)_doesTopViewControllerSupportInterfaceOrientation:(NSInteger)arg1;
 - (id)_existingToolbar;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 displyingTopView:(BOOL)arg2 andBottomView:(BOOL)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForViewController:(id)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; float x5; NSInteger x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
 - (BOOL)_hasTranslucentNavigationBarIncludingViewController:(id)arg1;
 - (void)_hideOrShowBottomBarIfNeededWithTransition:(NSInteger)arg1;
 - (void)_hideShowNavigationBarDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
@@ -76,6 +87,9 @@
 - (BOOL)_isNavigationBarVisible;
 - (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
 - (void)_layoutTopViewController;
+- (void)_layoutTopViewControllerInSheet;
+- (void)_layoutTopViewControllerInSheetWithPopoverView:(id)arg1;
+- (void)_layoutTopViewControllerOutOfSheet;
 - (void)_layoutViewController:(id)arg1;
 - (id)_moreListTitle;
 - (id)_navigationItems;
@@ -90,6 +104,8 @@
 - (void)_releaseContainerViews;
 - (void)_resetBottomBarHiddenState;
 - (void)_restoreOriginalInsetAndOffsetToScrollView:(id)arg1;
+- (float)_scrollViewBottomContentInset;
+- (void)_sendNavigationBarToBack;
 - (void)_setNavigationBarHidden:(BOOL)arg1 edge:(NSInteger)arg2 duration:(double)arg3;
 - (void)_setNavigationBarHidden:(BOOL)arg1 edgeIfNotNavigating:(NSInteger)arg2 duration:(double)arg3;
 - (void)_setToolbarHidden:(BOOL)arg1 edge:(NSInteger)arg2 duration:(double)arg3;
@@ -100,6 +116,7 @@
 - (BOOL)_shouldPersistViewWhenCoding;
 - (BOOL)_shouldPopFromLandscapeToPortraitOrientation;
 - (BOOL)_shouldUseOnePartRotation;
+- (struct CGSize { float x1; float x2; })_sizeForViewInPopoverView;
 - (id)_snapshotView;
 - (void)_startDeferredTransitionIfNeeded;
 - (void)_startTransition:(NSInteger)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
@@ -109,10 +126,14 @@
 - (void)_updateBottomBarHiddenState;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
 - (void)_updateToolbarItemsFromViewController:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)avoidMovingNavBarOffscreenBeforeUnhiding;
 - (id)bottomViewController;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)dealloc;
+- (id)defaultFirstResponder;
 - (id)defaultPNGName;
 - (id)delegate;
+- (id)detailViewController;
 - (void)didAnimateFirstHalfOfRotationToInterfaceOrientation:(NSInteger)arg1;
 - (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
 - (void)didShowViewController:(id)arg1 animated:(BOOL)arg2;
@@ -124,6 +145,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithRootViewController:(id)arg1;
+- (BOOL)isExpanded;
+- (BOOL)isModalInPopover;
 - (BOOL)isNavigationBarHidden;
 - (BOOL)isShown;
 - (BOOL)isToolbarHidden;
@@ -141,6 +164,7 @@
 - (void)navigationBarDidChangeOpacity:(id)arg1;
 - (void)navigationBarDidResizeForPrompt:(id)arg1;
 - (void)navigationTransitionView:(id)arg1 didEndTransition:(NSInteger)arg2 fromView:(id)arg3 toView:(id)arg4;
+- (void)navigationTransitionView:(id)arg1 didStartTransition:(NSInteger)arg2;
 - (double)navigationTransitionView:(id)arg1 durationForTransition:(NSInteger)arg2;
 - (id)navigationTransitionView;
 - (BOOL)needsDeferredTransition;
@@ -152,6 +176,8 @@
 - (id)popViewControllerAnimated:(BOOL)arg1;
 - (id)popViewControllerWithAnimationTransition:(NSInteger)arg1 duration:(double)arg2 curve:(NSInteger)arg3;
 - (id)popViewControllerWithTransition:(NSInteger)arg1;
+- (void)populateNavigationHistoryWithItems:(id)arg1;
+- (BOOL)pretendNavBarHidden;
 - (id)previousViewController;
 - (void)purgeMemoryForReason:(NSInteger)arg1;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
@@ -159,15 +185,20 @@
 - (void)pushViewController:(id)arg1 transition:(NSInteger)arg2;
 - (id)rotatingFooterView;
 - (id)rotatingHeaderView;
+- (void)setAvoidMovingNavBarOffscreenBeforeUnhiding:(BOOL)arg1;
+- (void)setContentSizeForViewInPopover:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDetailViewController:(id)arg1;
 - (void)setDisappearingViewController:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setIsExpanded:(BOOL)arg1;
 - (void)setNavigationBar:(id)arg1;
 - (void)setNavigationBarClass:(Class)arg1;
 - (void)setNavigationBarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setNavigationBarHidden:(BOOL)arg1;
 - (void)setNeedsDeferredTransition:(BOOL)arg1;
 - (void)setNeedsDeferredTransition;
+- (void)setPretendNavBarHidden:(BOOL)arg1;
 - (void)setToolbar:(id)arg1;
 - (void)setToolbarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setToolbarHidden:(BOOL)arg1;

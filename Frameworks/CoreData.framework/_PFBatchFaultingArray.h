@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectContext, NSFetchRequest, _PFArray;
+@class _PFArray, NSFetchRequest, NSManagedObjectContext;
 
 @interface _PFBatchFaultingArray : NSArray {
     struct _PFBatchFaultingArrayFlags { 
@@ -34,7 +34,9 @@
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (void)getObjects:(id*)arg1;
 - (id)initWithPFArray:(id)arg1 andRequest:(id)arg2 andContext:(id)arg3;
+- (BOOL)isEqualToArray:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)newArrayFromObjectIDs;
 - (id)objectAtIndex:(NSUInteger)arg1;
 - (void)release;
 - (id)retain;

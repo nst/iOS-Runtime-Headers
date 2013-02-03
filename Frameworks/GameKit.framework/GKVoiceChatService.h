@@ -15,12 +15,12 @@
 @property float remoteParticipantVolume;
 
 + (id)defaultVoiceChatService;
++ (void)initialize;
 
 - (BOOL)acceptCallID:(NSInteger)arg1 error:(id*)arg2;
 - (id)client;
 - (void)dealloc;
 - (void)denyCallID:(NSInteger)arg1;
-- (void)forceNoICE:(BOOL)arg1;
 - (float)inputMeterLevel;
 - (BOOL)isInputMeteringEnabled;
 - (BOOL)isMicrophoneMuted;

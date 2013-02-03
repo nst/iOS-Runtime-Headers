@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSDictionary, NSString;
+@class NSString, NSDictionary;
 
 @interface CKAudioMediaObject : CKAVMediaObject {
     NSDictionary *_transcodeOptions;

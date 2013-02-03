@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccountSettingsUI.framework/AccountSettingsUI
  */
 
-@class <AccountSettingsUIPlugin>, NSString, PSViewController, NSSet;
+@class PSViewController, NSString, NSSet, <AccountSettingsUIPlugin>;
 
 @interface AccountSettingsUIPluginBundle : NSObject {
     NSSet *_accountTypes;

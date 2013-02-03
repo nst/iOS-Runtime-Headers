@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, NSString, NSMutableString;
+@class NSString, NSMutableDictionary, NSMutableString;
 
 @interface CMDictArchiveManager : CMArchiveManager {
     NSMutableString *mCssString;

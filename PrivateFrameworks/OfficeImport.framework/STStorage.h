@@ -8,6 +8,7 @@
 
 - (void)close;
 - (void)dealloc;
+- (NSInteger)getChildType:(id)arg1;
 - (id)getChildrenInfo;
 - (id)getInfo;
 - (id)init;

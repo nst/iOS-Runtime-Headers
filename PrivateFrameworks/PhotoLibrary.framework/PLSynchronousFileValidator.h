@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class AVFileValidator, NSRecursiveLock;
+@class NSRecursiveLock, AVFileValidator;
 
 @interface PLSynchronousFileValidator : NSObject {
     AVFileValidator *_fileValidator;

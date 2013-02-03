@@ -5,15 +5,17 @@
 @class UIColor;
 
 @interface UITextInputTraits : NSObject <UITextInputTraits, UITextInputTraits_Private, NSCopying> {
+    unsigned int keyboardType : 8;
+    unsigned int keyboardAppearance : 8;
     BOOL acceptsEmoji;
     NSInteger autocapitalizationType;
     NSInteger autocorrectionType;
     BOOL contentsIsSingleValue;
+    NSInteger emptyContentReturnKeyType;
     BOOL enablesReturnKeyAutomatically;
     UIColor *insertionPointColor;
     NSUInteger insertionPointWidth;
-    NSInteger keyboardAppearance;
-    NSInteger keyboardType;
+    BOOL returnKeyGoesToNextResponder;
     NSInteger returnKeyType;
     BOOL secureTextEntry;
     NSInteger textLoupeVisibility;
@@ -28,10 +30,12 @@
 @property NSInteger autocapitalizationType;
 @property NSInteger autocorrectionType;
 @property BOOL contentsIsSingleValue;
+@property NSInteger emptyContentReturnKeyType;
 @property BOOL enablesReturnKeyAutomatically;
 @property NSUInteger insertionPointWidth;
 @property NSInteger keyboardAppearance;
 @property NSInteger keyboardType;
+@property BOOL returnKeyGoesToNextResponder;
 @property NSInteger returnKeyType;
 @property(getter=isSecureTextEntry) BOOL secureTextEntry;
 @property NSInteger textLoupeVisibility;
@@ -40,6 +44,7 @@
 
 + (id)defaultTextInputTraits;
 + (BOOL)keyboardTypeRequiresASCIICapable:(NSInteger)arg1;
++ (id)traitsByAdoptingTraits:(id)arg1;
 
 - (BOOL)acceptsEmoji;
 - (NSInteger)autocapitalizationType;
@@ -49,6 +54,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (NSInteger)emptyContentReturnKeyType;
 - (BOOL)enablesReturnKeyAutomatically;
 - (id)init;
 - (id)insertionPointColor;
@@ -57,16 +63,19 @@
 - (BOOL)isSecureTextEntry;
 - (NSInteger)keyboardAppearance;
 - (NSInteger)keyboardType;
+- (BOOL)returnKeyGoesToNextResponder;
 - (NSInteger)returnKeyType;
 - (void)setAcceptsEmoji:(BOOL)arg1;
 - (void)setAutocapitalizationType:(NSInteger)arg1;
 - (void)setAutocorrectionType:(NSInteger)arg1;
 - (void)setContentsIsSingleValue:(BOOL)arg1;
+- (void)setEmptyContentReturnKeyType:(NSInteger)arg1;
 - (void)setEnablesReturnKeyAutomatically:(BOOL)arg1;
 - (void)setInsertionPointColor:(id)arg1;
 - (void)setInsertionPointWidth:(NSUInteger)arg1;
 - (void)setKeyboardAppearance:(NSInteger)arg1;
 - (void)setKeyboardType:(NSInteger)arg1;
+- (void)setReturnKeyGoesToNextResponder:(BOOL)arg1;
 - (void)setReturnKeyType:(NSInteger)arg1;
 - (void)setSecureTextEntry:(BOOL)arg1;
 - (void)setTextLoupeVisibility:(NSInteger)arg1;

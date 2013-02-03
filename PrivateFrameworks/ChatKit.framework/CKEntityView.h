@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UILabel, CKEntity;
+@class CKEntity, UILabel;
 
 @interface CKEntityView : UITableViewCell {
     CKEntity *_entity;

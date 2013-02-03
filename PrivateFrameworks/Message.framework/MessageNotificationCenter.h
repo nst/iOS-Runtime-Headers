@@ -4,8 +4,7 @@
 
 @class NSMutableDictionary, NSMutableArray;
 
-@interface MessageNotificationCenter : NSNotificationCenter <WeakReferenceHolder> {
-    NSInteger _generationNumber;
+@interface MessageNotificationCenter : NSNotificationCenter <MFWeakReferenceHolder> {
     NSMutableDictionary *_notificationMapping;
     NSMutableArray *_queuedObjects;
 }

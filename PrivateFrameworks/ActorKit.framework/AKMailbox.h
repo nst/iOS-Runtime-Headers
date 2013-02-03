@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ActorKit.framework/ActorKit
  */
 
-@class AKDispatchQueue, Protocol;
+@class Protocol, AKDispatchQueue;
 
 @interface AKMailbox : NSProxy {
     AKDispatchQueue *_dispatchQueue;

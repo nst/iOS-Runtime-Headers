@@ -8,8 +8,6 @@
     PSTextViewTableCell *_cell;
 }
 
-- (void)mouseDragged:(struct __GSEvent { }*)arg1;
-- (void)scrollToMakeCaretVisible:(BOOL)arg1;
 - (void)setCell:(id)arg1;
 
 @end

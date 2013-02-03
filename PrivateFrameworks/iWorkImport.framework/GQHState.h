@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQHXML, GQHTableState, GQSDocument, <GQHContext>;
+@class GQSDocument, GQHXML, <GQHContext>, GQHTableState;
 
 @interface GQHState : NSObject {
     struct CGSize { 

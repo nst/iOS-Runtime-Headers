@@ -7,25 +7,27 @@
 @interface PSListItemsController : PSListController {
     BOOL _deferItemSelection;
     PSSpecifier *_lastSelectedSpecifier;
+    BOOL _restrictionList;
     NSInteger _rowToSelect;
 }
 
 - (void)_addStaticText:(id)arg1;
 - (void)dealloc;
+- (void)didLock;
+- (BOOL)isRestrictionList;
 - (id)itemsFromDataSource;
 - (id)itemsFromParent;
 - (void)listItemSelected:(id)arg1;
-- (BOOL)preferencesTable:(id)arg1 isRadioGroup:(NSInteger)arg2;
-- (BOOL)preferencesTable:(id)arg1 isRow:(NSInteger)arg2 checkedInRadioGroup:(NSInteger)arg3;
+- (void)prepareSpecifiersMetadata;
 - (void)scrollToSelectedCell;
+- (void)setIsRestrictionList:(BOOL)arg1;
 - (void)setRowToSelect;
-- (void)setSpecifiers:(id)arg1;
 - (void)setValueForSpecifier:(id)arg1 defaultValue:(id)arg2;
 - (id)specifiers;
 - (void)suspend;
-- (id)table:(id)arg1 cellForRow:(NSInteger)arg2 column:(id)arg3;
-- (void)tableSelectionDidChange:(id)arg1;
-- (void)viewWillBecomeVisible:(void*)arg1;
-- (void)viewWillRedisplay;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

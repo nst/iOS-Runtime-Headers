@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLRow, NSSQLCorrelation;
+@class NSSQLCorrelation, NSSQLRow;
 
 @interface NSSQLAdapterOperation : NSObject {
     NSUInteger _adapterOperator;

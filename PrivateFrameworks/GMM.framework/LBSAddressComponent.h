@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, LBSAddressRange, LBSFeatureId;
+@class LBSFeatureId, NSMutableArray, LBSAddressRange;
 
 @interface LBSAddressComponent : PBCodable {
     LBSFeatureId *_feature_id;

@@ -2,44 +2,29 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSDictionary, NSString, ISStoreURLOperation;
+@class SUSectionsResponse, ISStoreURLOperation, NSString;
 
 @interface SULoadNetworkSectionsOperation : ISOperation {
-    NSString *_actualVersionString;
     ISStoreURLOperation *_baseOperation;
-    BOOL _cacheable;
     NSString *_expectedVersionString;
-    NSDictionary *_rawOutput;
-    NSArray *_sections;
-    BOOL _shouldResetUserOrdering;
+    SUSectionsResponse *_sectionsResponse;
 }
 
-@property(retain) NSString *actualVersionString;
 @property(retain) ISStoreURLOperation *baseOperation;
 @property(retain) NSString *expectedVersionString;
-@property(retain) NSDictionary *rawOutput;
-@property(retain) NSArray *sections;
-@property(getter=isCacheable) BOOL cacheable;
-@property BOOL shouldResetUserOrdering;
+@property(readonly) SUSectionsResponse *sectionsResponse;
 
-- (id)_copyLoadedImageForURL:(id)arg1 returningError:(id*)arg2;
+- (id)_copyLoadedItemImage:(id)arg1 returningError:(id*)arg2;
+- (id)_itemImageForSection:(id)arg1 imageType:(NSInteger)arg2;
 - (BOOL)_loadArtworkForSections:(id)arg1 returningError:(id*)arg2;
-- (id)actualVersionString;
+- (void)_setSectionsResponse:(id)arg1;
 - (id)baseOperation;
 - (void)dealloc;
 - (id)expectedVersionString;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isCacheable;
-- (id)rawOutput;
 - (void)run;
-- (id)sections;
-- (void)setActualVersionString:(id)arg1;
+- (id)sectionsResponse;
 - (void)setBaseOperation:(id)arg1;
-- (void)setCacheable:(BOOL)arg1;
 - (void)setExpectedVersionString:(id)arg1;
-- (void)setRawOutput:(id)arg1;
-- (void)setSections:(id)arg1;
-- (void)setShouldResetUserOrdering:(BOOL)arg1;
-- (BOOL)shouldResetUserOrdering;
 
 @end

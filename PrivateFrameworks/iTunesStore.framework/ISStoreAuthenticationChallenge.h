@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSString, <NSURLAuthenticationChallengeSender>;
+@class <NSURLAuthenticationChallengeSender>, NSString;
 
 @interface ISStoreAuthenticationChallenge : ISAuthenticationChallenge {
     NSInteger _failureCount;

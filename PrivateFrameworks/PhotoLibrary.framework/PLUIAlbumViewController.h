@@ -3,13 +3,19 @@
  */
 
 @interface PLUIAlbumViewController : PLAlbumViewController {
+    unsigned int _didSetPreviousStatusBarMode : 1;
+    NSInteger _newStatusBarMode;
+    NSInteger _previousStatusBarMode;
 }
 
+- (NSInteger)_imagePickerStatusBarMode;
 - (void)_setImagePickerMediaTypes:(id)arg1;
-- (void)albumView:(id)arg1 selectedPhoto:(id)arg2;
+- (void)albumView:(id)arg1 didTapPhotoAtIndex:(NSUInteger)arg2;
 - (void)cancelButtonClicked:(id)arg1;
+- (void)dealloc;
 - (void)loadView;
 - (void)setAlbum:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

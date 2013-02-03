@@ -2,57 +2,75 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UINavigationBar, MPDetailSlider, UIView, MPVideoViewController, MPItem, MPFullScreenTransportControls, UINavigationButton, UINavigationItem;
+@class <MPVideoOverlayDelegate>, UINavigationButton, UILabel, MPTransportControls, UIView, MPNowPlayingItemQueueInfoButton, UINavigationBar, MPVideoViewController, MPDetailSlider, MPItem, UIImageView, UINavigationItem;
 
-@interface MPFullScreenVideoOverlay : MPSwipableView {
+@interface MPFullScreenVideoOverlay : MPSwipableView <MPNowPlayingItemQueueInfoButtonDelegate, MPVideoOverlay> {
     unsigned int _tvOutEnabled : 1;
     unsigned int _wantsTick : 1;
     unsigned int _allowsDetailScrubbing : 1;
     unsigned int _detailScrubbing : 1;
     UINavigationButton *_backButton;
+    <MPVideoOverlayDelegate> *_delegate;
     NSUInteger _desiredParts;
     NSUInteger _disabledParts;
+    NSInteger _interfaceOrientation;
     MPItem *_item;
+    MPNowPlayingItemQueueInfoButton *_linkInfoButton;
     UIView *_loadingMovieIndicatorView;
     UINavigationBar *_navigationBar;
+    UIImageView *_navigationBarBackground;
+    UIImageView *_navigationBarShadow;
     UINavigationItem *_navigationItem;
-    NSInteger _orientation;
     UINavigationButton *_scaleModeButton;
     MPDetailSlider *_scrubControl;
-    id _target;
-    MPFullScreenTransportControls *_transportControls;
+    UILabel *_scrubInstructionsLabel;
+    UILabel *_scrubSpeedLabel;
+    MPTransportControls *_transportControls;
     MPVideoViewController *_videoController;
     NSUInteger _visibleParts;
 }
 
+@property <MPVideoOverlayDelegate> *delegate;
 @property(retain) MPItem *item;
 @property(retain,readonly) UINavigationBar *navigationBar;
-@property(retain,readonly) MPFullScreenTransportControls *transportControls;
-@property MPVideoViewController *videoController;
+@property(retain,readonly) MPTransportControls *transportControls;
+@property MPVideoViewController *videoViewController;
 @property BOOL TVOutEnabled;
 @property BOOL allowsDetailScrubbing;
 @property NSUInteger desiredParts;
 @property NSUInteger disabledParts;
-@property NSInteger orientation;
-@property id target;
+@property NSInteger interfaceOrientation;
 @property NSUInteger visibleParts;
 
++ (void)_initializeSafeCategory;
+
 - (BOOL)TVOutEnabled;
+- (BOOL)_accessibilityAllowsSiblingsWhenOvergrown;
 - (void)_backButtonAction:(id)arg1;
 - (void)_bufferingStateDidChange:(id)arg1;
+- (void)_configureLinkButtonForCurrentItemTime;
+- (NSUInteger)_desiredPartsForTransportControlsWithParts:(NSUInteger)arg1;
+- (void)_hideScrubInstructions;
 - (void)_initNavigationBar;
 - (id)_loadingMovieIndicatorView;
+- (void)_reloadNavigationBarWithAnimation:(BOOL)arg1;
 - (void)_reloadTransportControls:(BOOL)arg1;
 - (void)_scaleButtonAction:(id)arg1;
+- (void)_scaleModeDidChangeNotification:(id)arg1;
 - (id)_scrubControlWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_showScrubInstructions;
 - (void)_statusBarHeightChanged:(id)arg1;
 - (void)_tickNotification:(id)arg1;
 - (void)_updateScrubControlWithAnimation:(BOOL)arg1;
 - (void)_updateTimeBasedValues;
 - (void)_validityChangedNotification:(id)arg1;
+- (NSUInteger)_visiblePartsForTransportControlsWithParts:(NSUInteger)arg1;
 - (BOOL)allowsDetailScrubbing;
+- (void)crossedURLTimeMarker:(id)arg1;
 - (void)dealloc;
+- (id)delegate;
 - (NSUInteger)desiredParts;
+- (void)detailSlider:(id)arg1 didChangeScrubSpeed:(NSInteger)arg2;
 - (void)detailSlider:(id)arg1 didChangeValue:(float)arg2;
 - (void)detailSliderTrackingDidBegin:(id)arg1;
 - (void)detailSliderTrackingDidCancel:(id)arg1;
@@ -60,31 +78,35 @@
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
 - (NSUInteger)disabledParts;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (void)hideAlternateTracks;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(NSInteger)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 interfaceOrientation:(NSInteger)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (NSInteger)interfaceOrientation;
 - (id)item;
 - (void)layoutSubviews;
 - (id)navigationBar;
-- (NSInteger)orientation;
-- (void)reloadNavigationBarWithAnimation:(BOOL)arg1;
+- (NSInteger)nowPlayingItemQueueInfoButton:(id)arg1 willDisplayInfoType:(NSInteger)arg2;
 - (void)restoreSanity;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
+- (void)setAlpha:(float)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setDesiredParts:(NSUInteger)arg1 animate:(BOOL)arg2;
 - (void)setDesiredParts:(NSUInteger)arg1;
 - (void)setDisabledParts:(NSUInteger)arg1;
+- (void)setInterfaceOrientation:(NSInteger)arg1;
 - (void)setItem:(id)arg1;
-- (void)setOrientation:(NSInteger)arg1;
 - (void)setTVOutEnabled:(BOOL)arg1;
-- (void)setTarget:(id)arg1;
 - (void)setVideoController:(id)arg1;
+- (void)setVideoViewController:(id)arg1;
 - (void)setVisibleParts:(NSUInteger)arg1 animate:(BOOL)arg2;
 - (void)setVisibleParts:(NSUInteger)arg1;
+- (void)showAlternateTracks;
 - (void)startTicking;
 - (void)stopTicking;
-- (id)target;
 - (id)transportControls;
-- (id)videoController;
+- (id)videoViewController;
+- (id)viewsToFadeOutWhenShowingBackside;
 - (NSUInteger)visibleParts;
 
 @end

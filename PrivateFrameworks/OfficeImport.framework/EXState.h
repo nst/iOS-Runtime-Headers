@@ -6,18 +6,15 @@
    See Warning(s) below.
  */
 
-@class EDSheet, NSMutableDictionary, ECColumnWidthConvertor, NSMutableArray, OCPPackagePart, EDWorkbook, EXOfficeArtState, NSMapTable, EDReference, EXOAVState, EDResources;
+@class EXOfficeArtState, CPImportTracing, <OCCancelDelegate>, ECColumnWidthConvertor, EDWorkbook, EDSheet, EXOAVState, EDResources, EDReference, OCPPackagePart, NSMutableDictionary, NSMutableArray;
 
 @interface EXState : OAVState {
      /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
     NSMutableArray *mArrayedFormulas;
+    <OCCancelDelegate> *mCancelDelegate;
     NSUInteger mCellStyleXfsOffset;
     ECColumnWidthConvertor *mColumnWidthConvertor;
     OCPPackagePart *mCurrentPart;
@@ -25,29 +22,31 @@
     NSUInteger mCurrentSheetIndex;
     double mDefaultColumnWidth;
     double mDefaultRowHeight;
-    BOOL mIsThumbnail;
     NSMutableArray *mLegacyDrawables;
     EXOAVState *mOAVState;
     EXOfficeArtState *mOfficeArtState;
     NSMutableDictionary *mReferenceForCommentTextBox;
     struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; } *mRelationshipNS;
     EDResources *mResources;
-    NSMapTable *mSharedFormulasMap;
+    struct __CFDictionary { } *mSharedFormulasMap;
     EDReference *mSheetDimension;
     NSUInteger mTotalCellsWithContentCount;
+    CPImportTracing *mTracing;
     EDWorkbook *mWorkbook;
     OCPPackagePart *mWorkbookPart;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsMaxNumberOfColumnsReached;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsMaxNumberOfRowsReached;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsPredefinedDxfsBeingRead;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsPredefinedTableStylesRead;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mMaxColumnsWarned;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mMaxRowsWarned;
 }
 
-- (void)addSharedFormula:(id)arg1 withIndex:(long)arg2;
+@property(readonly) <OCCancelDelegate> *cancelDelegate;
+
+- (void)addSharedBaseFormulaIndex:(NSUInteger)arg1 withIndex:(long)arg2;
 - (id)arrayedFormulas;
+- (id)cancelDelegate;
 - (NSUInteger)cellStyleXfsOffset;
+- (NSUInteger)cellsWithContentCount;
 - (id)columnWidthConvertor;
 - (id)currentPart;
 - (id)currentSheet;
@@ -55,18 +54,18 @@
 - (void)dealloc;
 - (double)defaultColumnWidth;
 - (double)defaultRowHeight;
-- (void)incrementCellWithContentCount;
-- (id)init;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isMaxNumberOfColumnsReached;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isMaxNumberOfRowsReached;
+- (void)incrementCellsWithContentCount;
+- (id)initWithWorkbookPart:(id)arg1 cancelDelegate:(id)arg2 tracing:(id)arg3;
+- (BOOL)isCancelled;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isPredefinedDxfsBeingRead;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isPredefinedTableStylesRead;
-- (BOOL)isThumbnail;
 - (id)legacyDrawables;
 - (id)oavState;
 - (id)officeArtState;
 - (void)relationshipNameSpaceForWorkbook:(struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)arg1;
 - (struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)relationshipNameSpaceForWorkbook;
+- (void)reportWarning:(struct CPTaggedMessageStructure { NSInteger x1; id x2; }*)arg1;
+- (void)reportWorksheetWarning:(struct CPTaggedMessageStructure { NSInteger x1; id x2; }*)arg1;
 - (void)resetForNewSheet;
 - (id)resources;
 - (void)setCellStyleXfsOffset:(NSUInteger)arg1;
@@ -75,17 +74,14 @@
 - (void)setCurrentSheetIndex:(NSUInteger)arg1;
 - (void)setDefaultColumnWidth:(double)arg1;
 - (void)setDefaultRowHeight:(double)arg1;
-- (void)setIsThumbnail:(BOOL)arg1;
-- (void)setMaxNumberOfColumnsReached:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setMaxNumberOfRowsReached:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setOfficeArtState:(id)arg1;
 - (void)setPredefinedDxfsBeingRead:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 - (void)setPredefinedTableStylesRead:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 - (void)setResources:(id)arg1;
 - (void)setSheetDimension:(id)arg1;
 - (void)setTextBox:(id)arg1 forReference:(id)arg2;
 - (void)setWorkbook:(id)arg1;
-- (void)setWorkbookPart:(id)arg1;
-- (id)sharedFormulaWithIndex:(long)arg1;
+- (NSUInteger)sharedBaseFormulaIndexWithIndex:(long)arg1;
 - (id)sheetDimension;
 - (id)textBoxForReference:(id)arg1;
 - (id)workbook;

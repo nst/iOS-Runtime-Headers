@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SportsTrainer.framework/SportsTrainer
  */
 
-@class UIView, UIButton, UILabel, <STLinkingViewDelegate>;
+@class UIButton, UIView, <STLinkingViewDelegate>, UILabel;
 
 @interface STLinkingView : UIView {
     BOOL _animateLayout;
@@ -25,10 +25,12 @@
 @property BOOL bordered;
 @property NSInteger linkingType;
 
-- (id)_createButton;
++ (void)_initializeSafeCategory;
+
 - (void)_done;
 - (void)_linkNewEmped;
 - (void)_linkNewRemote;
+- (id)_newButton;
 - (void)_receiverHideAnimationDidStop;
 - (void)_rescanForEmped;
 - (void)_rescanForRemote;

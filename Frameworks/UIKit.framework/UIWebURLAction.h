@@ -5,13 +5,14 @@
 @interface UIWebURLAction : NSObject {
 }
 
-+ (id)actionSheeForURL:(id)arg1 withAllowedTypes:(NSUInteger)arg2 inFrame:(id)arg3;
-+ (BOOL)performActionWithTag:(NSInteger)arg1 forURL:(id)arg2 withAllowedTypes:(NSUInteger)arg3 forFrame:(id)arg4 inView:(id)arg5 interactionDelegate:(id)arg6;
-+ (BOOL)performDefaultActionForURL:(id)arg1 withAllowedTypes:(NSUInteger)arg2 inFrame:(id)arg3;
++ (id)actionSheetForURL:(id)arg1 withAllowedTypes:(NSUInteger)arg2 inFrame:(id)arg3;
++ (BOOL)performActionWithTag:(NSInteger)arg1 forURL:(id)arg2 forFrame:(id)arg3 inView:(id)arg4 interactionDelegate:(id)arg5;
++ (BOOL)performActionWithTag:(NSInteger)arg1 forURL:(id)arg2 forFrame:(id)arg3 withPopoverController:(id)arg4 interactionDelegate:(id)arg5;
++ (BOOL)performDefaultActionForURL:(id)arg1 withAllowedTypes:(NSUInteger)arg2 forFrame:(id)arg3 inView:(id)arg4;
 + (id)sharedInstance;
-+ (BOOL)shouldImmediatelyShowActionSheetForURL:(id)arg1;
++ (BOOL)shouldImmediatelyShowActionSheetForURL:(id)arg1 forFrame:(id)arg2;
 
 - (void)dealloc;
-- (BOOL)performDefaultActionForURL:(id)arg1 withAllowedTypes:(NSUInteger)arg2 inFrame:(id)arg3;
+- (BOOL)performDefaultActionForURL:(id)arg1 withAllowedTypes:(NSUInteger)arg2 forFrame:(id)arg3 inView:(id)arg4;
 
 @end

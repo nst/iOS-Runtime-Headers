@@ -81,6 +81,7 @@
 - (void)setTopMargin:(float)arg1;
 - (void)setTopStroke:(id)arg1;
 - (id)stroke:(NSInteger)arg1;
+- (id)strokeNormalToDir:(NSInteger)arg1 bound:(NSInteger)arg2;
 - (NSInteger)textAnchor;
 - (BOOL)textAnchorCenter;
 - (NSInteger)textHorizontalOverflow;

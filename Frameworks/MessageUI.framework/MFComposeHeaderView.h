@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class HeaderLabelView, UIView, NSString;
+@class MFHeaderLabelView, NSString, UIView;
 
 @interface MFComposeHeaderView : UIView {
     id _delegate;
     NSString *_label;
-    HeaderLabelView *_labelView;
+    MFHeaderLabelView *_labelView;
+    NSString *_navTitle;
     UIView *_separator;
 }
 
@@ -22,10 +23,12 @@
 - (void)layoutSubviews;
 - (float)maxLabelX;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
+- (id)navTitle;
 - (void)setDelegate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLabelHighlighted:(BOOL)arg1;
+- (void)setNavTitle:(id)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 
 @end

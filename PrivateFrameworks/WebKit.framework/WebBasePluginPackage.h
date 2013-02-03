@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-@class NSMutableDictionary, NSBundle, NSString, NSDictionary, NSMutableSet;
+@class NSMutableDictionary, NSMutableSet, NSString, NSDictionary, NSBundle;
 
 @interface WebBasePluginPackage : NSObject <WebCorePluginInfo> {
     int (*BP_CreatePluginMIMETypesPreferences)();
@@ -25,6 +25,7 @@
 - (id)MIMETypeForExtension:(id)arg1;
 - (oneway void)_webcore_releaseOnWebThread;
 - (id)bundle;
+- (void)createPropertyListFile;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionForMIMEType:(id)arg1;

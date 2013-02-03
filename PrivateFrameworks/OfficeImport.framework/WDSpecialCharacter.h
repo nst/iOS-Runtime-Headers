@@ -10,6 +10,7 @@
 }
 
 - (NSInteger)characterType;
+- (void)clearProperties;
 - (void)dealloc;
 - (id)initWithParagraph:(id)arg1;
 - (id)properties;

@@ -11,6 +11,7 @@
 @property(copy) NSString *value;
 @property(readonly) BOOL specified;
 
+- (BOOL)isId;
 - (id)name;
 - (id)ownerElement;
 - (void)setValue:(id)arg1;

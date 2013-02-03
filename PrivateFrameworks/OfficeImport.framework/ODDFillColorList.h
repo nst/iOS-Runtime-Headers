@@ -18,7 +18,6 @@
 - (void)setColors:(id)arg1;
 - (void)setHueDirection:(NSInteger)arg1;
 - (void)setMethod:(NSInteger)arg1;
-- (id)simpleColorAtIndex:(NSUInteger)arg1;
 - (id)spanColorAtIndex:(NSUInteger)arg1 count:(NSUInteger)arg2 state:(id)arg3;
 
 @end

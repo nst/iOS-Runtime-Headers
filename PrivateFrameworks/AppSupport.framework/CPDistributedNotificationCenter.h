@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSMutableDictionary, NSLock, NSString;
+@class NSMutableDictionary, NSString, NSLock;
 
 @interface CPDistributedNotificationCenter : NSObject {
     NSString *_centerName;

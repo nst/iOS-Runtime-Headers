@@ -22,8 +22,10 @@
 - (NSInteger)alignment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (NSInteger)flipMode;
+- (NSUInteger)hash;
 - (id)initWithDefaults;
 - (BOOL)isAlignmentOverridden;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isFlipModeOverridden;
 - (BOOL)isOffsetXOverridden;
 - (BOOL)isOffsetYOverridden;

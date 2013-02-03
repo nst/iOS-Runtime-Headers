@@ -7,6 +7,7 @@
 }
 
 @property(readonly) NSArray *displays;
+@property(getter=isMirroringEnabled) BOOL mirroringEnabled;
 @property NSUInteger rendererFlags;
 
 + (id)context;
@@ -22,9 +23,11 @@
 - (id)displayWithName:(id)arg1;
 - (id)displays;
 - (id)init;
+- (BOOL)isMirroringEnabled;
 - (void)removeAllDisplays;
 - (void)removeDisplay:(id)arg1;
 - (NSUInteger)rendererFlags;
+- (void)setMirroringEnabled:(BOOL)arg1;
 - (void)setRendererFlags:(NSUInteger)arg1;
 
 @end

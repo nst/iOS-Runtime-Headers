@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray, NSSQLEntity, NSString;
+@class NSString, NSMutableArray, NSSQLEntity;
 
 @interface NSSQLStatement : NSObject {
     NSMutableArray *_bindVariables;

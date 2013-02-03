@@ -5,7 +5,4 @@
 @interface EBUnsupportedSheet : NSObject {
 }
 
-+ (void)readChildrenWithState:(id)arg1;
-+ (id)sheetWithState:(id)arg1;
-
 @end

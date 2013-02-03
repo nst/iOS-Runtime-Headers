@@ -15,10 +15,6 @@
 @property double timeout;
 @property(getter=isWatchingForAuthentication,readonly) BOOL watchingForAuthentication;
 
-- (void)_authenticationBeganNotification:(id)arg1;
-- (void)_authenticationFailedNotification:(id)arg1;
-- (void)_authenticationFinishedNotification:(id)arg1;
-- (void)_authenticationSubmittedNotification:(id)arg1;
 - (void)_authenticationTimeout:(id)arg1;
 - (void)_cancelTimeoutTimer;
 - (void)_sendFailureToDelegate;

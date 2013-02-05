@@ -41,6 +41,10 @@ Note that many other unique identifiers can be retrieved:
 
 #### Timeline
 
+- Green == public
+- Red == private
+- Blue == dylib
+
 ![iOS Frameworks](ios_frameworks.png)
 
 Nicolas Seriot

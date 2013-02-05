@@ -39,4 +39,8 @@ Note that many other unique identifiers can be retrieved:
     id deviceInfo = [[[AADeviceInfo alloc] init] autorelease];
     NSLog(@"-- wifiMacAddress: %@", [deviceInfo wifiMacAddress]);
 
+#### Timeline
+
+![iOS Frameworks](ios_frameworks.png)
+
 Nicolas Seriot
